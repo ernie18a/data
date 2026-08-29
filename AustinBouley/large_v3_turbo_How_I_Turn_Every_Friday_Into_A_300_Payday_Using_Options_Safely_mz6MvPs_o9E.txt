@@ -1,0 +1,187 @@
+[    0.00s ->     5.66s] Hey guys, this video I'm going to walk you through how I turn every single Friday into a $300 payday.
+[    5.94s ->    15.08s] I'm going to show you exactly how I do this, the strategy I use, the entry criteria rules, the exit rules, everything step by step.
+[   15.14s ->    22.06s] So that no matter where you are in your trading journey, you can implement this to start making $300 a day too.
+[   22.06s ->    31.14s] And there's only three numbers you ever need to know, 9, 1.5, and 200, the three numbers you can see here on your screen right now.
+[   31.42s ->    37.10s] And so again, I'm going to walk you through this and I'm even going to walk through a real trade example if you stay towards the end.
+[   37.20s ->    38.92s] So let's dive into it right now.
+[   39.62s ->    43.00s] So number one, what options approach are we using?
+[   43.12s ->    44.80s] We are using credit spreads.
+[   44.98s ->    46.08s] What are credit spreads?
+[   46.18s ->    49.98s] Credit spreads are essentially a bet that a stock will stay above a certain level.
+[   49.98s ->    55.34s] So let's say that the stock is trading up like this and I'm like, wow, look, it formed a low right here.
+[   55.44s ->    61.26s] That means that if I put my level right here and my stock stays above this level, I make money.
+[   61.40s ->    63.28s] So how exactly does this work?
+[   63.38s ->    65.28s] Well, it just means I pick a level.
+[   65.58s ->    67.28s] If the stock goes up, I make money.
+[   67.42s ->    69.28s] If the stock goes sideways, I make money.
+[   69.36s ->    73.04s] If the stock goes down but stays above my level, I still make money.
+[   73.12s ->    75.02s] That's the beauty of a put credit spread.
+[   75.34s ->    79.30s] Unlike stocks, we need to be super right on the direction with credit spreads.
+[   79.30s ->    80.54s] You only need to be kind of right.
+[   80.86s ->    86.52s] If it goes kind of in your favor or even goes kind of against you, you still make money.
+[   86.60s ->    89.54s] The only way you lose money is if it goes below that level you made.
+[   89.68s ->    92.56s] So that is what a credit spread is.
+[   92.80s ->    98.04s] I'll show you towards the end of this video how to actually execute one and put one on.
+[   98.28s ->   103.52s] But before I get into the three numbers you need to know, you need to be aware of what trend following is.
+[  103.96s ->   108.00s] Trend following is the idea of following the different waves in the market.
+[  108.00s ->   113.96s] If you've never realized what you get by looking at a chart, the market is either going up or down, up or down, up or down.
+[  114.06s ->   119.84s] And so with that, we can capitalize on that movement by using this credit spread approach.
+[  120.52s ->   124.30s] So number one, we need to know which way is the market trending.
+[  124.52s ->   126.24s] We're only going to take this trade.
+[  126.28s ->   128.84s] I'm going to walk you through if the market is trending up.
+[  128.96s ->   132.16s] So right here you can see I have a moving average installed on the chart.
+[  132.24s ->   136.90s] Whenever the moving average is moving up, that is going to be our criteria to enter this trade.
+[  136.90s ->   144.52s] When the moving average is trending up and the stock is above it, that is our entry to put on this trade.
+[  144.80s ->   149.50s] Again, you can see here this would be an entry criteria any one of these days.
+[  149.76s ->   151.56s] This right here would be an entry criteria.
+[  151.92s ->   153.40s] This right here would be an entry criteria.
+[  153.58s ->   155.34s] And this right here would be an entry criteria.
+[  155.52s ->   159.22s] Anytime the stock is above this line, it's an entry criteria.
+[  159.38s ->   160.32s] So that's what you need to know.
+[  160.32s ->   164.14s] Now, the three numbers that you need to know after knowing that.
+[  164.24s ->   168.22s] So now that we know when we're going to enter, we know how are we going to put this trade together.
+[  168.52s ->   171.14s] And that's these three numbers, 9, 1.5, and 200.
+[  171.40s ->   174.20s] So on the 9, we're going 9 days out.
+[  174.28s ->   180.06s] If you don't know anything about options, when you put on an options trade, you need to select your days until expiration.
+[  180.52s ->   183.54s] And so right here we're picking 9 days until expiration.
+[  183.54s ->   188.28s] That means whatever the day is, we're going to go out 9 days further, and that's our expiration date.
+[  188.30s ->   191.46s] I'll show you exactly what that looks like when I walk through a line trade example.
+[  191.82s ->   194.06s] Next is 1.5%.
+[  194.06s ->   198.30s] This is how far out of the money we're going to go here with an example.
+[  198.82s ->   205.30s] So let's say we're on this phase right here where I said when the stock is above and the line is moving higher.
+[  205.64s ->   209.38s] This is how we know that we are trending up, and this is our entry for criteria.
+[  209.38s ->   214.24s] Well, let's say we pick this stock to enter in on, or I should say this candle to enter in on.
+[  214.66s ->   217.20s] So let's say we pick this candle to enter in on.
+[  217.48s ->   224.52s] So what we're going to do is our level, the level that we're betting the stock will stay above, is going to be 1.5% below this candle.
+[  224.62s ->   226.20s] So we take this candle right here.
+[  226.38s ->   236.26s] We go 1.5% below it, 1.5% right here, and that's at 44432 if you can see the side bar of the chart.
+[  236.26s ->   240.66s] So that means our level that we're going to pick, rounding to the nearest whole number, is 444.
+[  240.94s ->   242.30s] So we're going to put on this trade.
+[  242.54s ->   244.84s] That means we're going to structure the trade around the level 444.
+[  245.08s ->   250.84s] It means as long as the stock stays above the $444 level, we will make money.
+[  250.92s ->   256.80s] And as you can see here, the stock is trending higher because that's our entry for criteria, our criteria for entry.
+[  257.36s ->   263.00s] And what we're seeing here is that if it stays above 444, we make money, which it clearly did in the next nine days.
+[  263.00s ->   264.76s] So that's an example of a trade right there.
+[  265.10s ->   271.38s] So again, 1.5% out of the money, OTM, away from the stock.
+[  272.10s ->   273.10s] Next, 200.
+[  273.26s ->   274.28s] What is 200?
+[  274.98s ->   278.60s] 200% is our stop loss.
+[  278.70s ->   279.68s] And so what does this mean?
+[  279.72s ->   282.78s] It means that we're going to try to enter a stock around 25 cents.
+[  283.06s ->   289.04s] Again, this level right here, the 1.5% out of the money, should get us very close to the $25 mark,
+[  289.04s ->   293.24s] which means we're going to collect $25 for putting this trade on.
+[  293.40s ->   295.12s] It doesn't quite make sense yet.
+[  295.22s ->   298.14s] Right after this point, I'm going to show you a real trade example.
+[  298.64s ->   303.16s] So we're going to be collecting around $25 for this trade.
+[  303.26s ->   305.02s] So what's a 200% of that?
+[  305.08s ->   306.22s] That means $50.
+[  307.00s ->   312.54s] So that means that we're going to exit the trade for a stop if it gets to $50.
+[  312.98s ->   313.80s] So what does this mean?
+[  313.80s ->   316.10s] That means our profit is $25.
+[  316.66s ->   320.28s] And if we're exiting at 50, from 25 to 50, what's the difference?
+[  320.38s ->   321.80s] A $25 loss.
+[  321.88s ->   328.86s] So we stand to make $25 and we stand to lose minus $25 as well.
+[  329.10s ->   335.00s] So with this approach, not only do we have a decently high win rate in the 70% to 80% range,
+[  335.16s ->   337.48s] we also have a one-to-one risk to reward.
+[  337.54s ->   342.72s] That means for every trade we are standing to make, the same amount we are standing to lose.
+[  342.72s ->   344.26s] And I'll walk you through that here in a second.
+[  344.40s ->   346.20s] Now, let's dive into a real trade example.
+[  346.90s ->   347.10s] All right.
+[  347.14s ->   352.60s] So if we go to the current day of the market, you can see right here, the line is trending up.
+[  352.68s ->   353.70s] The stock is above it.
+[  353.78s ->   356.68s] This is an instance where I would say the stock's a little too high above it.
+[  356.72s ->   360.22s] We'd like to see just barely above it to really start getting that momentum.
+[  360.56s ->   362.12s] But we're still going to use this for an example.
+[  362.52s ->   363.46s] So now it's trending up.
+[  363.68s ->   366.56s] So we're going to go 1.5% below the current price.
+[  366.64s ->   369.60s] Again, we like to wait for the stock to close, but this is for a current example.
+[  369.60s ->   376.04s] If we go 1.5% down, that gets us to the 430.5 level.
+[  376.42s ->   380.34s] So we're going to say 430, 431 is going to be our level.
+[  380.50s ->   381.44s] So how do we set this up?
+[  381.48s ->   384.60s] I'm going to go to Robinhood because I have a very easy-to-use platform.
+[  385.14s ->   389.54s] I'm going to go on to SPY, which is the ETF that I just had pulled up on this stock chart.
+[  390.16s ->   392.18s] I'm going to go into Trade SPY Options.
+[  392.72s ->   394.10s] From there, I'm going to go into Builder.
+[  394.42s ->   396.58s] And Builder, it's very simple to set up a credit spread.
+[  396.58s ->   398.62s] I just say put credit spread.
+[  398.96s ->   401.92s] This means I'm betting that a stock will say above a certain level.
+[  402.36s ->   403.24s] Now, remember what I said.
+[  403.30s ->   404.26s] What are those three numbers?
+[  404.44s ->   407.16s] 9, 1.5, and 200.
+[  407.56s ->   408.68s] So first off is 9.
+[  408.74s ->   410.00s] We're going to come here to the date.
+[  410.28s ->   412.66s] We're going to find something as close to 9 as we can.
+[  412.76s ->   415.36s] Look, November 16th, that is a 9.
+[  415.66s ->   416.02s] Sweet.
+[  416.54s ->   420.70s] Next, we're going to look for our level 1.5% below, right?
+[  420.76s ->   421.54s] That's our 1.5.
+[  421.54s ->   427.10s] We've done 9, now 1.5, so 1.5% below is going to be the 4.30, 4.31 level.
+[  427.22s ->   429.52s] So I'm going to scroll down until I hit that level.
+[  429.60s ->   432.54s] So you can see here, 4.31, 4.30.
+[  432.84s ->   435.54s] So you can see right here at this level, it's currently trading around $0.17.
+[  436.18s ->   438.44s] Like I said, we'd like to target $0.20.
+[  439.10s ->   442.56s] So I'll actually move that trade up to the 4.32, 4.31.
+[  442.72s ->   446.02s] This is close to $0.20 currently as trading.
+[  446.02s ->   449.66s] It's a very strong green day, so that's why it's very hard to get into this trade.
+[  450.04s ->   455.68s] During slower green days, smaller green days, and red days, you can easily enter these trades
+[  455.68s ->   461.90s] for $0.25 or more, but because it's a very strong green day, it's really hard to get into
+[  461.90s ->   465.52s] this trade around the $0.25 mark, but I'll have to take it around $0.20.
+[  465.94s ->   467.22s] So again, that's what we're going to do.
+[  467.28s ->   471.78s] I'd like to get in anywhere from $0.20 to $0.25, but I like collecting as close to $0.25 as
+[  471.78s ->   472.32s] possible.
+[  472.32s ->   476.32s] So 4.32, 4.31 is the structure of this trade.
+[  476.44s ->   479.26s] That's the level that I am betting on for this trade.
+[  479.68s ->   482.88s] So you can see here, I'm going to enter in at the $0.20 mark.
+[  482.96s ->   489.48s] I'm going to get in $0.20, and that means that whenever I see the spread hit $0.40, which
+[  489.48s ->   493.68s] is going to be my 200% stop loss, then that is going to be where I exit.
+[  494.00s ->   500.14s] So again, this is a very simple overview of my strategy, of what I use, so that every single
+[  500.14s ->   502.34s] Friday, I make that amount of money.
+[  502.64s ->   506.36s] Now, some people may be like, okay, Austin, how exactly do you set up the trade to make
+[  506.36s ->   508.26s] that much money every single Friday?
+[  508.46s ->   509.88s] And let me show you how that works.
+[  510.08s ->   513.94s] Like I said, all these trades have a nine days until expiration.
+[  514.36s ->   517.78s] And so if it has nine days until expiration, that means we can look at it like this.
+[  518.02s ->   519.96s] Let's say this is one week.
+[  520.22s ->   522.04s] Let's say we'll call this one week.
+[  522.30s ->   523.54s] This is the next week.
+[  523.58s ->   524.84s] We'll call this two week.
+[  524.90s ->   527.28s] We should really be week one, week two, week three, but you get the point.
+[  527.28s ->   529.26s] Now we go three week, okay, here.
+[  529.64s ->   534.68s] So in week one, let's say that's this week, I put on, my goal is to put on two trades every
+[  534.68s ->   535.52s] single week.
+[  535.78s ->   541.02s] And so when I put on those two trades every single week, then I have two trades expiring
+[  541.02s ->   542.40s] in the next week.
+[  542.46s ->   542.90s] So here we go.
+[  542.94s ->   545.70s] Let's say that this, I put on these trades, let's say on a Wednesday.
+[  546.12s ->   550.14s] So that means one Wednesday, it's going to be seven days and then two more days because
+[  550.14s ->   551.76s] nine days until expiration is Friday.
+[  552.28s ->   557.24s] So right here, if I put on two trades on this Wednesday, that means next Friday, these
+[  557.24s ->   559.86s] trades will expire, will be expiring.
+[  560.34s ->   564.04s] 75% of them will expire worthless, which means we get to keep all the money.
+[  564.12s ->   568.34s] So there's a 75% chance I have a $300 payday on this Friday.
+[  568.56s ->   569.94s] And how does this work out?
+[  570.12s ->   575.08s] Well, like I said, every single Wednesday, we're placing a trade for the next Friday.
+[  575.26s ->   581.18s] So as long as you're placing a trade on Wednesday, you will have a payday on Friday because that's
+[  581.18s ->   582.48s] how each trade rolls over.
+[  582.48s ->   588.04s] So we're going to have multiple trades in different periods so that we can get that $300 payday
+[  588.04s ->   589.10s] every single Friday.
+[  589.20s ->   593.30s] So if you're placing a trade on Wednesday, using this criteria, using this setup, there's
+[  593.30s ->   599.30s] a very good chance that you'll have a $300 payday depending on your size of your account
+[  599.30s ->   600.36s] and your trading size.
+[  600.62s ->   602.82s] You should have a decent payday on Friday.
+[  603.16s ->   604.44s] So that's how I use credit spreads.
+[  604.54s ->   605.34s] That's how I structure them.
+[  605.40s ->   606.74s] That's how I enter them.
+[  606.92s ->   609.10s] And I hope that made sense with the live example.
+[  609.10s ->   611.20s] Now, again, just some best practices.
+[  612.00s ->   617.72s] Remember, you want the stock to be very slow moving or a red day that just allows you to
+[  617.72s ->   619.10s] get in at a better price.
+[  619.54s ->   621.14s] Two, remember to follow the trend.
+[  621.48s ->   625.94s] And at number three, these are your key numbers, 9, 1.5, and 200.
+[  626.06s ->   627.34s] If you follow these, you should be set.
+[  627.42s ->   632.00s] If you want to learn more about the specifics of the strategy in depth, I have a completely
+[  632.00s ->   637.36s] free course in the first description link down below that will walk you through the actual
+[  637.36s ->   639.96s] specifics of the strategy instead of the overview.
+[  640.08s ->   643.20s] It's going to walk you through, hey, do this, do this, do this, do this in this order, and
+[  643.20s ->   645.28s] it will help you make a lot of money.
+[  645.50s ->   646.78s] All right, guys, see you in the next video.

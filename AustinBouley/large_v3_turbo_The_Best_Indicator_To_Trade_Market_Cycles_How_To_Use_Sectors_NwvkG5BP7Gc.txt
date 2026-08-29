@@ -1,0 +1,45 @@
+[    0.02s ->     5.64s] Alright guys, welcome to this video where I'm going to be discussing the best indicator to
+[    5.64s ->    10.72s] trade and invest in market cycles. So now you may be wondering what is a market cycle? Well,
+[   10.82s ->    15.10s] each market goes through its ebbs and flows and I'm going to show you how to identify
+[   15.10s ->    20.90s] what specific market and sector is doing well and which ones aren't and where you should be
+[   20.90s ->    25.92s] investing in trading. So if you haven't already, please hit that like button and subscribe and
+[   25.92s ->    31.06s] turn on those alerts to get notified every single time I make a video. Now I just recently in the
+[   31.06s ->    36.32s] past week released a video discussing different types of moving averages and why you should be
+[   36.32s ->    42.50s] using them. Now we're going to take it one step further and show you how to judge and know when
+[   42.50s ->    51.08s] a market is performing well. So first off, this is the SPY, which is the S&P 500 ETF. So this tracks
+[   51.08s ->    56.88s] the overall market. But what we want to be looking at when we're tracking individual market sectors and
+[   56.88s ->    64.10s] cycles is to be looking at those individual sectors and cycles. So for instance, XLK is the technology
+[   64.10s ->    72.40s] sector of SPY or the S&P 500. And what you can see here is as we discuss this simple moving average
+[   72.40s ->    79.28s] line, as you can see here, which we discussed in one of the past videos, is set at 200 because that is
+[   79.28s ->    86.74s] known as the industry average for determining the trend. So when a stock is above this 208 moving
+[   86.74s ->    92.58s] average, then the stock is actually an uptrend. When the stock is below this 208 moving average,
+[   92.68s ->    98.06s] then the stock is in a downtrend. And because of that, we can use that to assess different markets.
+[   98.54s ->   103.76s] So if you're an investor and you want to assess the market on a long-term time frame, then you're
+[  103.76s ->   110.00s] going to be using the daily chart with about a five-year look back. Now, if you're a swing trader,
+[  110.08s ->   115.80s] you want to be looking at the chart on a 15 or 30-minute chart so that you can see the shorter
+[  115.80s ->   120.22s] time frame. And if you are a day trader, as you already guessed, you want to be looking at this
+[  120.22s ->   126.76s] on a one-minute chart. So again, please adjust your charts accordingly to what type of investor
+[  126.76s ->   131.52s] and trader you are. But for now, I'm just going to show you how the concepts work on the daily chart.
+[  131.52s ->   138.52s] So this is XLK, which is the tech sector. And as we can see here, it's above the band. So we know
+[  138.52s ->   144.66s] the tech sector is in a bull market. So now we can start to get an opinion of what's happening in
+[  144.66s ->   150.88s] the market. But also an amazing feature is if we actually look back further into the history of
+[  150.88s ->   157.38s] the chart, then we can actually start to assess times in the market when this sector actually does
+[  157.38s ->   163.42s] not perform well. So for instance, we can see here that again, there's a bunch of different
+[  163.42s ->   169.86s] variations. So we have to look over the entire year, but we can be like, okay, towards the beginning of
+[  169.86s ->   174.38s] the year, it looks like there's a slight sell-off sometimes. But again, you're just looking for
+[  174.38s ->   179.52s] patterns and correlations in the market. So again, we can do that with every different type of sector.
+[  179.66s ->   184.36s] I'm actually going to list all these sectors below in the description of this video. So make sure
+[  184.36s ->   190.14s] you check that out. But another one is XLF, which is the financials. And we can see based on what
+[  190.14s ->   195.86s] we're seeing here, the financials are actually in a downtrend. So they're actually in a bear market.
+[  195.96s ->   201.08s] So they're not actually helping the overall market right now. We also have another stock like XLE,
+[  201.24s ->   207.38s] which is the energy sector. And so we can look at all these different types of sectors in the market.
+[  207.74s ->   212.30s] And we can also look at all the different types of futures, which shows the different types of
+[  212.30s ->   218.70s] markets. And we can start to get an idea of when each sector performs well and when each market
+[  218.70s ->   224.32s] actually performs its best. And you can invest in those. Remember, when a market as a whole is
+[  224.32s ->   231.12s] performing well on a daily timeframe and you move into a shorter timeframe, then you want to be able
+[  231.12s ->   236.96s] to go with the long-term trend. So the long-term trend is up and you're seeing a move down in like
+[  236.96s ->   242.74s] the 15-minute chart. Then that may be a great dip buying opportunity. Again, if the cycle is bullish.
+[  243.08s ->   249.26s] All right, guys, I hope this made sense on how to apply the moving averages to the trading the
+[  249.26s ->   253.10s] market cycle approach. All right, guys, thank you so much for watching. If you haven't already,
+[  253.20s ->   258.80s] hit that subscribe and like button and also check out all the free resources I have in the description
+[  258.80s ->   259.22s] below.

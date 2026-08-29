@@ -1,0 +1,215 @@
+[    0.00s ->     4.70s] Hey team, welcome to this four-part options trading masterclass, where in masterclass number two,
+[    4.78s ->     8.96s] I'm going to dive deep on how I sell puts and make more than a nine to five income.
+[    9.24s ->    13.94s] So if you're someone who's learning how to trade options, wants to make some more monthly income,
+[   13.94s ->    18.26s] or wants to replace your nine to five jobs income, this is the video for you.
+[   18.44s ->    23.46s] Here is what will be happening in this video. I'll be going over the strategy and explain it step by step.
+[   23.72s ->    27.98s] I'm going to show you a bag test to prove to you that it works and also shows you where it fails
+[   27.98s ->    31.80s] so that you can avoid the times in the market when this doesn't work best.
+[   32.10s ->    37.14s] I'll show you a real trade example so you know actually how to put on this trade so that you can do it for yourself.
+[   37.54s ->    43.20s] I'm going to show you how this trade performs in a bullish market, in a bearish market, and in all-time highs
+[   43.20s ->    47.02s] like the market is right now so that you can know how to manage this trade correctly.
+[   47.50s ->    50.74s] And I'm going to show you how to automate this trade so you don't have to worry about the stop loss,
+[   50.84s ->    55.74s] the take profit, the entering, the stress, and everything like that, and you can stop being stuck to your screen.
+[   55.74s ->    61.34s] So if you watch this entire video, you will learn how to use puts to create monthly income,
+[   61.34s ->    65.86s] and you'll also get my Selling Puts Strategy PDF guide for free.
+[   66.00s ->    69.20s] You'll get my When to Trade What Strategy guide for free,
+[   69.34s ->    74.02s] and you'll also get free access to my private community where you can ask me questions and see my real trade.
+[   74.12s ->    77.70s] So if you're interested in that, please stay tuned and watch the entire video.
+[   77.84s ->    81.44s] So let's jump right in. How does this strategy work?
+[   81.44s ->    85.78s] Selling Puts works by picking a level we think the stock will not go below.
+[   86.06s ->    90.00s] So let's say the market is trading here, and this is a pretty far level, so down here.
+[   90.26s ->    94.54s] This means that as long as the market stays above this level, we will make money.
+[   94.64s ->    95.86s] That's how Selling Puts works.
+[   95.96s ->   103.00s] Again, I'll get into the weeds here in a bit, but the high-level overview is as long as we stay above a level that we picked, we make money.
+[  103.26s ->   105.36s] And you can see here we're very far below the stock.
+[  105.36s ->   110.02s] We're 15% below the stock, so the stock can drop 15% and we'll still make money.
+[  110.12s ->   117.64s] So that's why Selling Puts is a really high win rate, really amazing trade for people who want to generate reliable and consistent monthly income.
+[  118.04s ->   120.80s] So again, if you're someone who wants to do that, this is the trade for you.
+[  120.90s ->   123.24s] Now, what does the backtest look like for this?
+[  123.52s ->   126.10s] Well, when we look at this trade, let me make my face smaller.
+[  126.22s ->   127.14s] It's taking up too much screen.
+[  127.14s ->   130.24s] This trade is a very consistent strategy.
+[  130.38s ->   141.66s] You can see here it has a 97% win rate, and we put on this trade twice a week, we'll end up making $253,000 or roughly $25,000 a year.
+[  142.10s ->   150.84s] And so that's how amazing this trade is, $25,000 a year, only putting this trade on twice a week with a 97% win rate.
+[  150.96s ->   156.96s] Now, what we really want to look at is where does this strategy fail and how can we make that better?
+[  157.14s ->   163.08s] Well, you can see here when the market dipped down here at the beginning of 2018, the strategy dipped quite a bit.
+[  163.40s ->   166.88s] Then when we had this downtrend move, the strategy underperformed as well.
+[  167.32s ->   173.86s] And then during 2020, which we all know what happened then, the market crashed hard and so did the strategy.
+[  174.04s ->   181.88s] It ended up outperforming the market and generating a 21% return a year, but still, we want to avoid those crashes.
+[  181.98s ->   183.00s] So how do we do that?
+[  183.00s ->   187.38s] Well, there's a very simple approach that I use, and I'll also show you how to automate this as well.
+[  187.46s ->   188.86s] But we go into our indicators.
+[  189.20s ->   192.82s] We go and type in Bollinger Bands, just like that.
+[  192.94s ->   194.08s] We add it to our charts.
+[  194.82s ->   197.64s] It may look a bit weird, but we're going to go into the settings.
+[  197.88s ->   200.48s] We're going to change the length to 200, which is going to make it a bit bigger.
+[  200.86s ->   203.36s] Then we're going to change the standard deviation to 2.1.
+[  203.36s ->   210.40s] Just like this, we have a great guess of when the market will be downtrending or crashing.
+[  210.56s ->   211.42s] And what is that guess?
+[  211.58s ->   215.56s] When the market breaks out of this level and then comes back into it.
+[  215.66s ->   218.28s] That means that a crash or a downtrend is likely.
+[  218.42s ->   221.70s] You can see here we went up and down, and then kind of nothing happened here.
+[  221.82s ->   227.38s] But we went up and down, and then the market went into a downtrend, which is not the best performance for short puts.
+[  228.06s ->   231.40s] And so what we do is we wait for the market to come up and crash back through.
+[  231.48s ->   235.16s] And when it does, we wait 21 days to give the market time to reset.
+[  235.58s ->   237.62s] So again, the 21-day mark would have been around here.
+[  237.68s ->   239.74s] Then we could have entered again, and then we would have exited.
+[  239.90s ->   243.70s] And then we would have waited 21 days, re-entered around here, and then started doing fine again.
+[  243.96s ->   246.42s] So that is how this trade is structured.
+[  246.76s ->   251.90s] And again, we can see here during those pivotal times in the backtest, as 2018 went when it crashed hard,
+[  252.14s ->   256.22s] we would have gotten out here, which would have saved us a good chunk of losses.
+[  256.22s ->   260.24s] We would have been able to get out before the major part of this downtrend started,
+[  260.36s ->   262.12s] which is where a huge chunk of losses came from.
+[  262.54s ->   266.28s] And in 2020, you can see here we would have been able to get out before the huge crash,
+[  266.44s ->   269.26s] and that would have also saved us a huge chunk of losses.
+[  269.46s ->   273.68s] So not only are we making the trading strategy more profitable,
+[  273.68s ->   277.16s] but we're making more money, losing less, and our emotions are more calm.
+[  277.54s ->   279.48s] So that is why we use this approach.
+[  280.18s ->   283.06s] So now, how do we actually do selling puts?
+[  283.06s ->   287.88s] Well, I like to do them on ES, which is a futures contract, because I have better leverage.
+[  288.04s ->   291.84s] But you can also do them on ETFs like SPY, the Qs, and things like that.
+[  292.36s ->   297.44s] So this trade is structured no matter what we traded on by going 45 days out into the future,
+[  297.50s ->   299.24s] which is called a 45 DTE.
+[  299.60s ->   301.78s] We're going to take a 10 delta short put.
+[  301.88s ->   306.44s] We're going to have a 25% profit target and a stop loss of 400%.
+[  306.44s ->   308.38s] This is exactly how the backtest was structured.
+[  308.38s ->   313.28s] Now, again, we like to put on this trade twice a week, but you can put on as many times as your buying power,
+[  313.38s ->   315.18s] the amount of money you have in your account allows.
+[  315.50s ->   317.40s] So let me show you what a real trade looks like.
+[  317.96s ->   322.92s] So looking at an options chain, which is what we see on our broker to actually place trades,
+[  322.96s ->   324.88s] we're going out to the 45-day mark.
+[  324.94s ->   327.42s] So the strikes, we look for the closest to 45 days.
+[  327.76s ->   329.86s] So right here, we have an exact 45-day match.
+[  329.90s ->   331.00s] I'm going to click on this.
+[  331.82s ->   334.18s] The puts is on the right side, so I'm going to go to the 10 delta.
+[  334.54s ->   338.06s] If delta isn't displaying, just click on this column and pick one of the things you want to look for.
+[  338.14s ->   338.80s] So 10 delta.
+[  339.22s ->   340.72s] We're going to come here, find a 10 delta.
+[  341.06s ->   342.84s] So you can see here there's three 10 deltas.
+[  342.90s ->   343.88s] So which one should we pick?
+[  343.92s ->   346.76s] We should always pick the one with the highest amount of open interest
+[  346.76s ->   349.02s] because that means there's volume, there's transactions.
+[  349.16s ->   351.08s] We'll be able to get in and out faster.
+[  351.08s ->   354.86s] So this 10 delta, we're going to sell it just like that.
+[  354.94s ->   355.58s] We sell one.
+[  355.92s ->   356.28s] Here we go.
+[  356.32s ->   359.22s] We have a 95% win rate on this trade.
+[  359.38s ->   366.34s] We're going to make $740, and we have to put up roughly $6,500 to put on this trade.
+[  366.50s ->   372.22s] So again, this is over a 10% return if we hold until expiration.
+[  372.36s ->   376.62s] What we like to do, because it increases our win rate and helps us get out of the trades faster,
+[  377.02s ->   379.04s] is doing a 25% profit target.
+[  379.04s ->   383.68s] So again, we like to take profit when this has hit 25% of the max potential.
+[  384.76s ->   386.34s] So that is how we structure this trade.
+[  387.26s ->   392.88s] So we simply click review and send, and that will enter this trade for a real live trade.
+[  393.56s ->   397.78s] Now the question is, after we've entered a trade, how do we manage it when it's a bullish,
+[  398.02s ->   399.50s] bearish, or an all-time high?
+[  399.56s ->   402.40s] Well, let me start with an all-time high because that's where the market is right now.
+[  402.64s ->   406.32s] You can see the market is shooting up quite hard, and if the market drops,
+[  406.32s ->   409.82s] it's going to not perform well for our short puts.
+[  409.92s ->   411.00s] So how do we manage this?
+[  411.42s ->   415.66s] Well, number one, we only like to enter short puts on red days.
+[  416.04s ->   416.42s] That's right.
+[  416.46s ->   419.66s] When the market dips down, enter short puts.
+[  419.76s ->   419.92s] Why?
+[  420.04s ->   423.98s] Because VIX goes up, which allows us to get a better entry, collect more credit,
+[  424.08s ->   427.16s] which means make more money, and everything's just a lot better.
+[  427.16s ->   432.14s] So if we have a red day in the market with an all-time high, that's when we enter.
+[  432.50s ->   438.04s] Up until a single point here, if the market gaps down or comes down far enough where it
+[  438.04s ->   442.62s] breaks this line right here, then we're going to want to get out of our positions,
+[  442.84s ->   447.72s] take our profits, and wait a bit for the market to reset or crash if it wants to do that.
+[  448.06s ->   451.14s] So you can see here, if the market has a small red day or any red day like that,
+[  451.28s ->   452.58s] enter in short puts.
+[  452.94s ->   455.50s] That is a great time to do it because the trend is up.
+[  455.50s ->   456.54s] We don't want to fight the trend.
+[  456.64s ->   459.44s] There's a lot of profits we can miss out on if we don't enter now.
+[  459.84s ->   464.36s] But we do have this hedge of protection where if the market comes and breaks this level,
+[  464.52s ->   468.44s] we're going to get out and avoid any crash or huge downtrend that starts.
+[  468.76s ->   470.96s] Then we'll let the market reset for 21 days and move on.
+[  471.02s ->   473.64s] So that's what we do at an all-time high like the market is right now.
+[  474.02s ->   478.80s] During a normal uptrend, let's say the market is inside this band and nothing crazy is going on
+[  478.80s ->   481.62s] and it's just trending up, this is a perfect time for short puts.
+[  481.70s ->   483.52s] We still like to enter on red days though.
+[  483.52s ->   486.88s] So, and then let's say the market is trending down.
+[  486.98s ->   492.16s] This is a great opportunity to enter as well, but wait for exaggerated red days.
+[  492.30s ->   494.60s] What do I mean by an exaggerated red day?
+[  494.72s ->   497.36s] You can see here, this was an exaggerated red day.
+[  497.44s ->   499.30s] See how huge this red candle is?
+[  499.64s ->   504.44s] Any large move to the downside is the best time to enter during a downtrend.
+[  504.70s ->   508.68s] If you see the first green candle in the middle of a downtrend, do not enter
+[  508.68s ->   512.94s] because you're getting the worst fill, a worst level, and it's not going to work out well.
+[  513.14s ->   514.42s] Wait for the red days.
+[  514.50s ->   516.34s] It's hard, but they work out better.
+[  516.74s ->   519.04s] So anyways, that's how we manage it in different environments.
+[  519.24s ->   522.18s] Now, let me show you how you automate the strategy so that it works best for you
+[  522.18s ->   524.72s] because if you're a dad, if you're a mom, if you're a parent,
+[  524.78s ->   528.50s] if you're a busy entrepreneur or busy professional,
+[  528.50s ->   533.00s] then what you do know is that staring at the screen is hard.
+[  533.38s ->   537.32s] Monitoring these positions is even harder and trying to do it while managing
+[  537.32s ->   541.28s] and being a good father is not as very, very hard and almost impossible.
+[  541.28s ->   543.18s] So let me show you how to set up an auto trader.
+[  543.26s ->   546.56s] So we'll do all the work for you so that it will make monthly income for you
+[  546.56s ->   549.16s] while you spend time with your family, work, and on your hobbies.
+[  549.34s ->   552.14s] So if I go in here and click on create a new auto trader,
+[  552.22s ->   554.92s] I'll show you how to get this auto trader in a second.
+[  555.32s ->   557.48s] Then I'm going to put in the details to connect to my broker.
+[  557.48s ->   560.14s] Just like that, after I've connected my broker,
+[  560.26s ->   562.22s] I can click on a preloaded strategy,
+[  562.42s ->   565.34s] which is like the Tasty Life selling puts, and I can mimic that.
+[  565.56s ->   567.66s] But I want to create my own, so I'm going to do sell puts.
+[  567.98s ->   571.20s] I'm going to do a delta of 10 like I walked through in this example.
+[  571.40s ->   572.34s] I can do it on SPY.
+[  572.44s ->   573.54s] I can do it on SPX.
+[  573.62s ->   574.70s] I can do it on ES futures.
+[  574.84s ->   575.88s] I'm going to select ES futures.
+[  576.46s ->   578.98s] I'm going to trade this weekly or twice a week if I wanted,
+[  579.14s ->   581.02s] Tuesday and Thursdays, however I want to do it.
+[  581.50s ->   583.70s] I'm going to have a 45 days until expiration,
+[  583.70s ->   587.06s] take profit of 25%, a stop loss of 400%,
+[  587.06s ->   588.90s] and now this will all be managed for me.
+[  589.84s ->   591.76s] Next, I'm going to enable some safeguards.
+[  592.16s ->   597.30s] So I want no more than $20,000 allocated to the strategy at any one time,
+[  597.32s ->   600.60s] which should be fine because I'm doing two trades a week.
+[  600.84s ->   604.92s] These trades only last about a week until I hit my max profit of 25%.
+[  604.92s ->   606.94s] So again, I'm not going to exceed $20,000,
+[  607.30s ->   609.08s] and I'll still be able to make a good return.
+[  609.34s ->   611.82s] So next, I'm going to enable the market safeguard.
+[  611.82s ->   614.22s] This means if the market shows like it's going to roll over,
+[  614.30s ->   615.38s] like I showed you in this video,
+[  615.48s ->   617.36s] where it looks like the market's going to roll over
+[  617.36s ->   618.60s] and turn into a crash or downtrend,
+[  618.88s ->   623.48s] it's going to get me out as well as stop me from entering any new trades
+[  623.48s ->   625.14s] because that would be a bad time to do so.
+[  625.48s ->   626.82s] So right there, I click enable,
+[  626.98s ->   628.70s] and now it protects my account from crashes.
+[  629.78s ->   631.56s] Just like that, I've created the auto trader,
+[  631.84s ->   632.76s] and it's been saved,
+[  632.88s ->   634.36s] and now I'm just going to save it.
+[  634.42s ->   635.42s] But if I turn it on,
+[  635.50s ->   637.92s] it's going to automatically enter these trades for me,
+[  637.92s ->   643.18s] monitor my stop loss and take profit in a way that market makers can't affect.
+[  643.28s ->   646.28s] So if you've ever tried to automate it on your broker,
+[  646.38s ->   649.30s] where you try to set up a take profit or stop loss,
+[  649.38s ->   650.74s] most brokers don't support it.
+[  650.98s ->   651.84s] But even if they do,
+[  651.88s ->   654.12s] you get faked out and tricked by market makers,
+[  654.18s ->   655.64s] end up losing hundreds of dollars.
+[  656.00s ->   657.94s] So now that won't happen with this auto trader.
+[  658.06s ->   660.72s] So if you want early access to this auto trader,
+[  660.86s ->   665.50s] which is going to be available on Monday, February 19th,
+[  665.50s ->   670.44s] if you want early access as well as access to the strategy guide
+[  670.44s ->   675.02s] to the other strategy PDF and my private community,
+[  675.24s ->   677.10s] then click the link down below.
+[  677.20s ->   678.98s] It will ask you to join this community,
+[  679.12s ->   680.88s] which is the wait list for the auto trader.
+[  681.00s ->   684.46s] You'll get early access to the auto trader to use it at a discount.
+[  684.80s ->   688.62s] You'll also get access to the PDF guides I showed you,
+[  688.62s ->   691.62s] and you'll get access to me to ask me questions and see my live trade.
+[  691.78s ->   693.58s] So click the link down below,
+[  693.58s ->   695.26s] and I will see you inside this community.
+[  695.46s ->   698.20s] And I hope you grab early access to the auto trader
+[  698.20s ->   701.58s] because it will literally change the way you are making money,
+[  701.88s ->   704.28s] providing for your family and spending time with them
+[  704.28s ->   705.72s] because now you won't be stuck to the screen
+[  705.72s ->   707.70s] and have a ton of crazy emotions all the time.
+[  708.02s ->   708.42s] All right, guys,
+[  708.52s ->   711.40s] see you in the next masterclass video coming up soon.

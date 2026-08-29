@@ -1,0 +1,730 @@
+[    0.46s ->     7.14s] Hey guys, Roman here, quantitative researcher and trader, founder of QuantGuild, and I want
+[    7.14s ->    11.92s] to welcome you to the second and final part of our QuantBuild, where we are covering how
+[   11.92s ->    18.38s] to build a live Markov chain regime switching model from scratch in Python using interactive
+[   18.38s ->    19.28s] brokers.
+[   19.58s ->    21.74s] This is the second part.
+[   21.86s ->    25.96s] I will leave a link to the first part in the description below if you would like to check
+[   25.96s ->    26.76s] that out first.
+[   26.76s ->    32.26s] In the first part, we established the live data feed and this user interface.
+[   32.72s ->    37.52s] If you'd like to pick up at this second part, where we're just going to be covering the Markov
+[   37.52s ->    43.24s] chain model itself and integrating it directly into this application, I'll leave a link in
+[   43.24s ->    48.64s] the description below to all of the source code from part one, so you can just pick up
+[   48.64s ->    51.70s] here with the second part in this two-part series.
+[   51.70s ->    56.46s] After we build out the Markov chain model herein, you'll be ready to create your own
+[   56.46s ->    62.42s] regime extensions to things like momentum, mean reversion, sentiment, so on and so forth,
+[   62.42s ->    69.22s] or you can even drop a model like this right into a live trading system or even your back
+[   69.22s ->    70.22s] tests.
+[   70.22s ->    75.58s] I highly encourage you to follow along as we modify the source code from the first part
+[   75.58s ->    77.42s] of this two-part series.
+[   77.42s ->    82.14s] This is certainly how you can learn the most, but if you would just like to access the final
+[   82.14s ->    83.38s] product, I can't blame you.
+[   83.38s ->    86.88s] I will also leave a link to it in the description below.
+[   86.88s ->    93.00s] It will also be posted to the Quant Guild library where I post all of my Quant builds and source
+[   93.00s ->    94.00s] code.
+[   94.00s ->    95.38s] Alright, here we are back in VS Code.
+[   95.38s ->   101.34s] If you recall from the first part, we've already set up this UI and live data feed.
+[  101.34s ->   104.58s] We just don't have any notion of a regime.
+[  104.58s ->   110.30s] We don't have the background color changing dynamically at each bar with the current regime
+[  110.30s ->   112.68s] dictated by our Markov chain model.
+[  113.10s ->   119.42s] We haven't updated the regime dynamics in our panel below here, and we need to actually build
+[  119.42s ->   122.98s] out now this Markov regime class.
+[  123.16s ->   129.40s] If you're unfamiliar with the theory behind Markov chains and hidden Markov models, I have
+[  129.40s ->   132.24s] two dedicated videos to this subject.
+[  132.24s ->   134.40s] I will leave them in the description below.
+[  134.40s ->   139.04s] I highly encourage you to check them out before tackling this part of the build because then
+[  139.04s ->   144.08s] you will have a fundamental understanding of the theory behind what it is we are doing
+[  144.08s ->   148.88s] in this calibration, likelihood, and regime acquisition process.
+[  148.88s ->   152.24s] Let's get started building out this Markov regime class.
+[  152.36s ->   157.04s] I'm operating with the video code from the first part of this series.
+[  157.04s ->   159.42s] Again, that is linked in the description below.
+[  159.42s ->   161.66s] Maybe you followed along from the first part.
+[  161.66s ->   166.04s] In any case, we're going to head on over to this Markov regime class and we're going to
+[  166.04s ->   170.08s] set up some fields in the constructor.
+[  170.08s ->   176.12s] So the first thing we need to do is dedicate a variable to the number of states that we have
+[  176.12s ->   178.76s] for this particular volatility regime.
+[  178.76s ->   183.68s] So I'm going to say self.nStates is equal to three.
+[  183.68s ->   188.70s] We're going to have three volatility regimes, low, mid, and high.
+[  188.84s ->   191.30s] This can be extended.
+[  191.30s ->   196.34s] You can expand this state space to any number of regimes that you would like.
+[  196.34s ->   201.34s] Once you've done this for effectively three states in a volatility regime, you could extend
+[  201.34s ->   205.40s] this to as many other types of regimes or states as you would like.
+[  205.40s ->   209.46s] Even a combination of different regimes and states.
+[  209.46s ->   215.08s] You could have, for example, volatility and momentum, and then you have different pairs
+[  215.08s ->   215.96s] of those states.
+[  215.96s ->   222.50s] You have high volatility and a high degree of momentum or high volatility, low degree of
+[  222.50s ->   223.80s] momentum, so on and so forth.
+[  223.94s ->   229.58s] Once you do this process once, you can extend it very easily to other state spaces.
+[  229.58s ->   235.44s] We're also going to dedicate a field to the current state.
+[  235.44s ->   239.20s] I'm going to leave it defaulting to zero for now.
+[  239.20s ->   245.38s] Then I'm going to define a whole bunch of colors dictating the color for each state, and that
+[  245.38s ->   249.38s] is going to be green, orange, and red.
+[  249.38s ->   268.48s] So I'll do 3FB950 for green, I'll do D29922 for orange, and I will do F85149 for red.
+[  268.48s ->   272.68s] That's going to be our low, mid, and high regime colors.
+[  272.68s ->   278.74s] And I'm also going to have some muted colors for the background of the bars.
+[  278.74s ->   285.06s] This is going to show us the regime for the bar at each point in our history of 10 bars
+[  285.06s ->   287.32s] that we are currently displaying.
+[  287.32s ->   295.36s] So I'm going to make these slightly muted variations, so 1A3D1A, that's a muted green.
+[  295.36s ->   303.75s] I will do a muted orange, 3D3319.
+[  303.75s ->   309.07s] And I will do a muted red, 3D1A1A.
+[  309.07s ->   320.26s] Alright, once we've done that, we need to define initial state probabilities.
+[  320.26s ->   329.66s] And I'm just going to use as a prior, uniform probabilities for each state.
+[  329.66s ->   338.10s] And I'm going to put these in a numpy array.
+[  338.10s ->   342.20s] And I believe we imported numpy, if I'm not mistaken.
+[  342.20s ->   343.20s] No we didn't.
+[  343.20s ->   344.62s] Alright, we're going to have to import numpy.
+[  344.62s ->   352.85s] So underneath tkinter, I'm going to say import numpy as mp.
+[  352.85s ->   358.67s] And I will now be able to create those initial state probabilities.
+[  358.67s ->   363.28s] Alright, now we need the Markov part.
+[  363.28s ->   367.38s] This is going to be the transition probability matrix.
+[  367.38s ->   374.80s] And I'm going to start with the transition matrix as predefined to be relatively sticky
+[  374.80s ->   376.98s] to the initial state.
+[  376.98s ->   382.18s] And what I mean by that is, as I define this transition matrix, I'm going to be defining
+[  382.18s ->   391.52s] the probabilities of entering and exiting each state, depending on what the current state
+[  391.52s ->   392.52s] is.
+[  392.52s ->   396.48s] That is exactly what a transition matrix is.
+[  396.48s ->   405.20s] So I'm going to say we have a 0.9 probability to go from low to low, a 0.08 probability to
+[  405.20s ->   412.24s] go from low to mid, and a 0.02 probability to go from low to high.
+[  412.24s ->   417.28s] And what this is doing is it's inducing a relatively sticky state space.
+[  417.28s ->   424.16s] So the likelihood of leaving a low volatility state and jumping too high immediately without
+[  424.16s ->   429.90s] kind of passing through that mid-vol regime is relatively low.
+[  429.90s ->   434.22s] And this kind of echoes the rest of this matrix here.
+[  434.22s ->   442.56s] I'm going to have 10% to go from mid to low, 80% to go from mid to mid, and 10% to go from
+[  442.56s ->   444.28s] mid to high.
+[  444.28s ->   448.76s] And then we're going to do the same thing for the high volatility regime.
+[  448.76s ->   452.07s] It's unlikely to jump from high to low.
+[  452.07s ->   455.47s] It's more likely to go from high to mid.
+[  455.47s ->   461.61s] And then it's much more likely to stay in a high regime once we are already there.
+[  461.61s ->   466.13s] And this kind of emulates the idea of volatility clustering, right?
+[  466.13s ->   470.47s] More volatility is likely to follow after some volatility.
+[  470.47s ->   473.89s] And that's exactly what we can see here in this transition matrix.
+[  473.89s ->   480.97s] This is our initial setup for the transition matrix and our initial setup for the state
+[  480.97s ->   482.33s] probabilities.
+[  482.33s ->   487.07s] We now need to define emission means and variances.
+[  487.07s ->   492.91s] Effectively, what we're doing is we're saying, hey, the market is going to be in one of these
+[  492.91s ->   494.85s] three regimes.
+[  494.85s ->   498.71s] And when it's there, it's going to operate with its own distribution.
+[  498.71s ->   504.87s] And this is a fantastic way to go about modeling the space because we know distributions are
+[  504.87s ->   505.87s] time variant.
+[  505.87s ->   510.87s] I talk about this in almost every single one of my videos, the lack of convergence, this
+[  510.87s ->   513.29s] idea of distributions changing across time.
+[  513.29s ->   518.15s] And we're able to capture this time variance using a Markov chain in this capacity.
+[  518.15s ->   522.61s] And what we're doing is we're going to say, hey, when we're in a low volatility regime,
+[  522.61s ->   529.09s] the likelihood of staying in that regime is given by our values within this transition
+[  529.09s ->   529.77s] matrix.
+[  529.77s ->   531.77s] And these are just the initial values.
+[  531.77s ->   537.67s] We're going to calibrate it to historic data, 60 bars of data from spot.
+[  537.67s ->   543.77s] But for now, we're just capturing what we would assume to be the case economically, theoretically.
+[  543.77s ->   547.77s] We would assume that there would be this relative stickiness to each state.
+[  547.77s ->   551.99s] It's reasonable to assume an equal distribution of initial state probabilities.
+[  551.99s ->   556.77s] Maybe it's more likely to be in a low or high volatility regime at any given time.
+[  556.77s ->   558.95s] But we're going to calibrate to that.
+[  558.95s ->   563.51s] Now, what we're going to do is we're going to say, hey, once we're in a state, we acknowledge
+[  563.51s ->   572.15s] that the volatility that we actually observe may be more or less likely coming from a different
+[  572.15s ->   572.95s] state.
+[  572.95s ->   579.19s] What that means is if we observe a whole bunch of market turbulence, right, in this bar, it's
+[  579.19s ->   582.09s] more likely that we are operating in which state?
+[  582.17s ->   584.87s] Well, that's going to be the high volatility state.
+[  585.11s ->   591.19s] If we don't observe as much turbulence, then it's more likely we are in the low volatility
+[  591.19s ->   591.69s] state.
+[  591.79s ->   598.45s] That is a very easy, intuitive, and qualitative way to understand what we are doing with this
+[  598.45s ->   599.83s] Markov chain model.
+[  599.83s ->   607.75s] And that is exactly why I define these emission means, which again will be calibrated to historical
+[  607.75s ->   608.11s] data.
+[  608.27s ->   619.05s] But for now, I'm just going to leave it as 0.0005, 0.002, and 0.005, and emission standard
+[  619.05s ->   621.15s] deviations or variances.
+[  621.15s ->   629.52s] This is going to be 0.0003, 0.001, and 0.003.
+[  629.70s ->   635.72s] And this is dictating the Gaussian, the mean and the variance for each state.
+[  635.88s ->   641.82s] You can see that the low volatility state has a much smaller mean and variance than the
+[  641.82s ->   643.62s] high volatility state.
+[  643.62s ->   648.70s] And what that means is as we observe more data, we're going to be able to ask and answer
+[  648.70s ->   656.82s] this question, which state is most likely to have produced the data that we just observed.
+[  656.98s ->   665.34s] And we can answer that in a quantitative way using this Gaussian likelihood and the Markov
+[  665.34s ->   669.08s] chain model, which we have calibrated to historical data.
+[  669.08s ->   675.30s] So that is exactly how we are producing the current regime, the current state.
+[  675.54s ->   680.66s] And this is, of course, going to aid in our downstream analysis of our P&L distributions,
+[  680.66s ->   686.14s] our entry and exit signals, as if we just throw all of them into the same distribution,
+[  686.14s ->   691.26s] we aren't actually capturing the dynamics producing those values.
+[  691.50s ->   696.74s] And I have a video dedicated to this topic where I talk about why your back tests are wrong
+[  696.74s ->   700.42s] and this idea of the Markov property in the context of quant trading.
+[  700.88s ->   703.58s] Effectively, everything is path dependent.
+[  703.80s ->   709.32s] So acknowledging that that is exactly what we are trying to mitigate in modeling these volatility
+[  709.32s ->   712.78s] states, we can move on to this calibration process.
+[  713.20s ->   719.88s] These are our initial values, but we want to inform these values from historical data.
+[  720.08s ->   722.86s] There isn't a right or wrong way to do this.
+[  722.86s ->   727.36s] There are quantitative and qualitative approaches to building your priors.
+[  727.36s ->   731.14s] We're going to take a quantitative one using historic data.
+[  731.14s ->   735.92s] That doesn't necessarily mean it's more correct than if you have a qualitative interpretation,
+[  735.92s ->   739.38s] but that is going to depend on your application.
+[  739.38s ->   745.52s] So for starters, we are going to ensure that we have enough historic data to begin this calibration
+[  745.52s ->   746.26s] process.
+[  746.26s ->   755.50s] So I'm going to say if the length of historic bars is less than 20, we are going to return
+[  755.50s ->   757.52s] out of this calibration function.
+[  757.52s ->   763.14s] We don't yet have enough data from TWS or the IB gateway.
+[  763.30s ->   767.00s] Interactive brokers has not provided us with enough data.
+[  767.22s ->   772.16s] But assuming we have enough data, we can begin this calibration process.
+[  772.16s ->   775.90s] I'm going to start by computing an array of volatilities.
+[  775.90s ->   779.56s] I'm going to say vols is equal to mp.array.
+[  780.40s ->   795.25s] And I'm going to create this array of the bar high less the bar low over the bars close.
+[  796.61s ->   803.87s] If the bar close is greater than zero, which means we have data returned.
+[  803.87s ->   808.37s] Otherwise, we will just make that entire value zero.
+[  808.37s ->   813.53s] And we're going to do this for each bar in the historical bars.
+[  814.88s ->   815.32s] All right.
+[  815.32s ->   820.26s] So the historical bars is effectively going to be a collection of bar dictionaries.
+[  820.26s ->   827.16s] And we are going to be using the high low close key to access those corresponding values and
+[  827.16s ->   829.44s] compute volatility in this way.
+[  829.56s ->   834.86s] This is just how I am computing volatility for the purposes of this tutorial.
+[  834.86s ->   837.10s] You can use some form of variance.
+[  837.10s ->   840.34s] You can use one of a dozen different measures of volatility.
+[  840.44s ->   845.68s] In fact, I would highly encourage you to use a whole bunch of different aggregate measures of
+[  845.68s ->   849.32s] volatility and then do some form of dimensionality reduction.
+[  849.74s ->   854.84s] Principal component analysis, maybe a nonlinear version with an auto encoder to compress all
+[  854.84s ->   862.32s] that information into a handful of useful in an orthogonal sense volatility features.
+[  862.32s ->   864.96s] But for now, we're just going to use this as an example.
+[  864.96s ->   870.56s] So I'll say vols is equal to that array and we're going to remove zero bars when there is
+[  870.56s ->   871.52s] no price movement.
+[  871.52s ->   876.62s] We're going to say vols is equal to vols where vols is greater than zero.
+[  876.88s ->   880.64s] That is just simple index notation for this array.
+[  881.91s ->   882.37s] All right.
+[  882.77s ->   889.19s] Now, there is a case where we don't have enough data after even removing these zero volatility
+[  889.19s ->   889.83s] values.
+[  889.83s ->   894.83s] So we're not going to be able to actually inform the parameters in our Markov chain model.
+[  894.93s ->   898.79s] If this is the case, we also need to break out of this calibration function.
+[  898.93s ->   905.29s] So if the length of vols is less than 20, I'm just going to break out of this function.
+[  906.41s ->   907.13s] All right.
+[  907.99s ->   913.45s] Now that we have a measure of volatility, I'm going to come up with percentiles to inform
+[  913.45s ->   914.57s] our states.
+[  914.57s ->   922.09s] And this is just how I am dictating the overall observation quantity of each state.
+[  922.17s ->   926.77s] You could do this again in one of a dozen different ways, but I'm just going to use historic
+[  926.77s ->   928.35s] percentiles of the volatilities.
+[  928.49s ->   934.29s] And there is reasonable justification for this because in the markets, right, volatility is
+[  934.29s ->   934.71s] relative.
+[  934.71s ->   942.53s] If we observe a period of very high volatility, what is considered low is relative to that
+[  942.53s ->   942.89s] period.
+[  942.99s ->   949.37s] If we were just in 50 for two weeks in the VIX, say, and now we're down to 30, that is
+[  949.37s ->   950.73s] low in the relative sense.
+[  950.81s ->   956.01s] So there is a reasonable theoretical economic justification to use percentiles.
+[  956.01s ->   957.55s] So that is what we're going to do here.
+[  957.69s ->   963.81s] I'll say P 33 and P 67 is equal to MP dot percentile.
+[  964.07s ->   965.59s] And we're going to look at vols.
+[  965.65s ->   967.61s] We're going to look at the 33rd percentile.
+[  967.77s ->   973.53s] We're going to do the same thing as well for the 67th.
+[  975.18s ->   975.62s] All right.
+[  975.94s ->   981.12s] Once we've done that, we can create an array for regime assignment.
+[  981.12s ->   986.66s] So I'm going to say regime assignments is equal to MP dot zeros.
+[  987.08s ->   994.14s] We're going to look at the length of vols and we are going to be using integer integers as
+[  994.14s ->   995.12s] the data type here.
+[  995.48s ->   997.50s] All right.
+[  997.90s ->  1006.76s] And what we're going to do is we're going to assign mid if the volatility is above the
+[ 1006.76s ->  1010.90s] 33rd percentile and high if it's above the 67th.
+[ 1010.90s ->  1018.12s] So I will say regime assignments, we are going to say where vol is greater than or equal to
+[ 1018.12s ->  1021.46s] P 33, this should be vols.
+[ 1021.82s ->  1025.18s] This is going to be equal to one.
+[ 1025.48s ->  1035.03s] Effectively, we are in that mid volatility regime and we will do the same thing, but for
+[ 1035.03s ->  1042.26s] the 67th percentile where we will assign a state of high volatility.
+[ 1042.26s ->  1047.44s] So we have 0, 1, and 2 for low, mid, and high volatility.
+[ 1049.26s ->  1049.72s] All right.
+[ 1050.52s ->  1055.22s] Now what we have to do is estimate the emission parameters.
+[ 1055.22s ->  1060.26s] That is the mean and variance in each regime.
+[ 1060.40s ->  1062.08s] That is exactly what we have here.
+[ 1062.28s ->  1069.78s] And this is going to dictate the likelihood of being in any one of these states.
+[ 1069.78s ->  1075.52s] This is exactly what we talk about in my video on hidden Markov models.
+[ 1075.96s ->  1080.42s] Effectively, we're assuming that we have some sort of state and it's going to be emitting
+[ 1080.42s ->  1080.94s] data.
+[ 1081.64s ->  1087.40s] And the likelihood of being in any one of these states at any given time can be determined
+[ 1087.40s ->  1093.24s] by looking at the likelihood of observing the values we did in each state and then just
+[ 1093.24s ->  1094.94s] picking the one with the highest likelihood.
+[ 1095.46s ->  1097.30s] So that is what we're going to be doing here.
+[ 1097.30s ->  1101.42s] We're going to be coming up first with these emission probabilities, and then we're going
+[ 1101.42s ->  1104.18s] to earn that emission probabilities, but emission parameters.
+[ 1104.36s ->  1110.44s] Then we will look at the probabilities of the data that we observed governed by each of
+[ 1110.44s ->  1112.60s] these emission parameters from each state.
+[ 1112.66s ->  1114.96s] And that will dictate our current state.
+[ 1114.96s ->  1123.47s] So I'll say for regime in range self dot end states, what we're going to do is we are going
+[ 1123.47s ->  1127.37s] to look at the regime vols, which is going to be the vols array.
+[ 1127.91s ->  1132.73s] And we're only going to be interested in the current regime assignment.
+[ 1133.39s ->  1138.27s] So we're going to look at the volatilities for each regime one at a time.
+[ 1138.27s ->  1141.01s] We're going to be looping through the number of states.
+[ 1141.01s ->  1142.75s] Remember, this is going to be three.
+[ 1142.93s ->  1147.79s] So in range, it's going to start at zero, go to two, right up to and including two zero
+[ 1147.79s ->  1148.45s] one, two.
+[ 1148.75s ->  1152.05s] And that is exactly how we defined our regime assignments.
+[ 1152.35s ->  1157.01s] So where we observe the current regime assignment, we're going to start in the low regime.
+[ 1157.29s ->  1158.47s] What are we going to do?
+[ 1158.47s ->  1165.73s] Well, if we have enough data, we can say if the length of regime vols is let's use greater
+[ 1165.73s ->  1173.94s] than or equal to three, then we can find the mean and variance of the volatility in this
+[ 1173.94s ->  1174.86s] particular state.
+[ 1174.86s ->  1181.52s] So we will say self dot emission means for the current regime is going to then just be
+[ 1181.52s ->  1188.76s] given by the mean of the regime volatilities that we just observed in this calibration process.
+[ 1188.76s ->  1197.46s] We are looking at the previous data that is the previous 60 bars of data from spot, and
+[ 1197.46s ->  1204.68s] we are just going to be taking the mean of that of that volatility array where the regime
+[ 1204.68s ->  1209.12s] has been identified as low and then mid and then high.
+[ 1209.42s ->  1213.28s] And that's how we're going to estimate each of these emission means from the data.
+[ 1213.28s ->  1219.96s] We're going to do the same thing then for variance, self dot emission variances, standard
+[ 1219.96s ->  1225.22s] deviation, same thing, just square rooted for this particular regime is just going to be
+[ 1225.22s ->  1231.20s] the max between the standard deviation of the regime that we just observed.
+[ 1231.64s ->  1236.46s] So the volatilities for the regime that we just observed, and in this case, just a very
+[ 1236.46s ->  1243.24s] small number, just in case the bars aren't moving at all and we're just observing flat tick data.
+[ 1243.90s ->  1244.26s] All right.
+[ 1246.50s ->  1251.88s] That will also aid in preventing division by zero errors if we're trying to compute some
+[ 1251.88s ->  1253.08s] form of likelihood.
+[ 1254.70s ->  1255.02s] Great.
+[ 1255.30s ->  1259.96s] So now that we've done this, we can ensure the means are properly sorted.
+[ 1260.26s ->  1264.38s] So we want to make sure that we are sorting the emission means by the correct regime.
+[ 1264.38s ->  1270.46s] In this case, I'm going to say sorted indices is equal to mp.arg sort.
+[ 1271.20s ->  1277.50s] And we are just going to sort the emission means by that index argument that corresponds
+[ 1277.50s ->  1282.60s] to each state zero low, one mid, two high.
+[ 1282.80s ->  1289.74s] And then the emission means is just going to be equal to the emission means, but given by
+[ 1289.74s ->  1290.72s] these sorted indices.
+[ 1291.42s ->  1293.82s] And we'll do the same thing for emission variances.
+[ 1294.38s ->  1297.14s] As they will correspond to one another.
+[ 1301.98s ->  1302.46s] All right.
+[ 1303.79s ->  1305.45s] So now what do we have here?
+[ 1305.53s ->  1306.89s] What have we done so far?
+[ 1307.09s ->  1314.95s] Well, we have used the observed volatility to come up with different percentiles.
+[ 1316.30s ->  1323.80s] And those percentiles are going to dictate the states that we have been in low, mid and
+[ 1323.80s ->  1324.64s] high volatility.
+[ 1324.64s ->  1332.12s] That is exactly how we went about assigning the regime over this historical interval, right?
+[ 1332.38s ->  1336.38s] If we are below the 33rd percentile, we are in low.
+[ 1336.64s ->  1338.62s] If we are above it, we are in mid.
+[ 1338.88s ->  1341.72s] And then if we are above the 67th, we are in high.
+[ 1341.72s ->  1343.10s] All right.
+[ 1343.10s ->  1347.88s] So we have historic regimes given this code here.
+[ 1348.08s ->  1353.56s] Then what we're doing is given those historic regimes, we are going to loop through each of
+[ 1353.56s ->  1357.14s] the states that we've been in, in those historic regimes.
+[ 1357.14s ->  1364.24s] And we are going to compute the mean of the observed volatility and the variance or standard deviation.
+[ 1364.68s ->  1369.54s] And what that's going to do is it's going to give us the emission means and emission standard
+[ 1369.54s ->  1371.58s] deviation estimates.
+[ 1371.58s ->  1379.32s] Then we can use those to determine the likelihood that we are in any one of these states, given
+[ 1379.32s ->  1381.86s] the current volatility information.
+[ 1382.74s ->  1383.06s] All right.
+[ 1384.29s ->  1390.27s] So now that we have all of this data, right, we are able to then estimate the transition
+[ 1390.27s ->  1391.63s] matrix itself.
+[ 1391.63s ->  1397.99s] And what we're going to do is just observe empirically how many times we transition to
+[ 1397.99s ->  1402.93s] and from each state across that series of historical bars.
+[ 1403.11s ->  1404.83s] So it's very easy.
+[ 1404.93s ->  1409.25s] That is the maximum likelihood estimator for the transition matrix.
+[ 1409.25s ->  1414.81s] If you were to actually write out that problem and you were to solve it, the solution is very
+[ 1414.81s ->  1415.27s] intuitive.
+[ 1415.27s ->  1417.47s] It's just the proportion of states traveled.
+[ 1417.47s ->  1422.37s] And it's effectively going to have all of those nice MLE properties.
+[ 1422.77s ->  1426.29s] So let's apply the MLE to the transition matrix.
+[ 1426.71s ->  1431.99s] And we are going to be able to find the estimated probabilities rather than just using the ones
+[ 1431.99s ->  1434.77s] that I have here from the initialization.
+[ 1434.93s ->  1441.36s] So what I'm going to do is I'm going to say transition counts is equal to MP dot zeros.
+[ 1443.99s ->  1447.35s] And we are going to be looking at a three by three.
+[ 1447.35s ->  1451.47s] So this is going to be self dot end states, self dot end states.
+[ 1452.86s ->  1460.46s] And we will say for T in range, we're going to go from one to the length of the regime
+[ 1460.46s ->  1461.18s] assignments.
+[ 1462.26s ->  1467.90s] Let's take a look at the previous regime, which is going to be the regime assignments
+[ 1467.90s ->  1470.38s] at time T minus one.
+[ 1470.58s ->  1471.94s] This is where we were.
+[ 1471.94s ->  1474.74s] Then we're going to look at the current regime assignment.
+[ 1475.00s ->  1478.42s] This is going to be the regime assignments at time T.
+[ 1478.82s ->  1480.22s] This is where we went.
+[ 1480.78s ->  1488.26s] And we are just going to record that as a transition count in our transition matrix for the index
+[ 1488.26s ->  1491.48s] of the previous regime to the current regime.
+[ 1491.48s ->  1499.76s] This is going to give us the regime assignment, whether we were in low to low, low to mid, low
+[ 1499.76s ->  1504.80s] to high, whatever it is, this is automatically going to increment the correct value within
+[ 1504.80s ->  1506.10s] the transition counts.
+[ 1506.22s ->  1511.90s] Then we can normalize it for the correct probability, which is given to us by the maximum likelihood
+[ 1511.90s ->  1512.52s] estimator.
+[ 1512.96s ->  1516.30s] This is going to be equal to I'm sorry, we're incrementing this plus equals one.
+[ 1516.30s ->  1517.60s] All right.
+[ 1517.72s ->  1520.30s] So that is going to give us the correct transition counts.
+[ 1520.44s ->  1524.56s] Then we just have to normalize it by the total number of transitions.
+[ 1524.66s ->  1529.80s] And that will give us a correct probability, a correct estimated probability.
+[ 1530.00s ->  1538.62s] So what we will say is for I in range self dot end states, we're going to go from zero,
+[ 1538.78s ->  1539.60s] one to two.
+[ 1539.60s ->  1546.65s] We're going to say row sum is equal to transition counts at row I dot sum.
+[ 1546.91s ->  1548.77s] And then we're just going to normalize.
+[ 1548.85s ->  1556.29s] So if row sum is greater than zero, right, we can't normalize by zero, then the transition
+[ 1556.29s ->  1566.42s] matrix at row I is going to be equal to the transition counts at I.
+[ 1566.42s ->  1572.74s] And in this case, we're going to do some Laplacian smoothing to ensure that all transitions are
+[ 1572.74s ->  1573.24s] possible.
+[ 1573.24s ->  1581.80s] We're going to add 0.1 and divide it by the row sum plus 0.3.
+[ 1585.68s ->  1586.24s] All right.
+[ 1586.32s ->  1592.82s] And we will then avoid zero division errors, zero probabilities.
+[ 1593.32s ->  1597.88s] And this will guarantee that all transitions are possible.
+[ 1598.88s ->  1599.40s] All right.
+[ 1599.40s ->  1603.60s] So you don't necessarily have to perform Laplacian smoothing.
+[ 1603.80s ->  1609.06s] However, if that's the case, you may not be able to transition from one state to another.
+[ 1609.06s ->  1616.06s] And I would posit that that is not necessarily an appropriate model in terms of an assumption
+[ 1616.06s ->  1622.30s] to make just because you haven't seen in the frequentist sense, a transition from low to
+[ 1622.30s ->  1623.10s] high volatility.
+[ 1623.50s ->  1627.48s] It doesn't mean that you should have a zero probability of that transition.
+[ 1627.48s ->  1630.98s] So that's why we've introduced Laplacian smoothing here.
+[ 1630.98s ->  1632.43s] Okay.
+[ 1632.43s ->  1642.14s] So now we can effectively, after calibration, reset these state probabilities just back to
+[ 1642.14s ->  1642.76s] uniform.
+[ 1642.76s ->  1649.60s] Okay.
+[ 1649.60s ->  1655.86s] And then we can print the calibrated emissions if we would like to the console.
+[ 1655.86s ->  1662.74s] And this will just let the user know that the calibration was performed successfully.
+[ 1663.10s ->  1668.33s] So I'm going to print calibrated emission means.
+[ 1668.71s ->  1671.31s] And we can just print that mean vector.
+[ 1671.31s ->  1676.39s] And I can do the same for the variance.
+[ 1676.39s ->  1685.24s] All right.
+[ 1685.24s ->  1690.11s] So that's going to do it for this calibration function.
+[ 1690.11s ->  1694.59s] At this point, we have initialized the Markov regime model.
+[ 1694.83s ->  1701.11s] We have everything we need to dictate states and transitions, along with emission means and
+[ 1701.11s ->  1702.33s] standard deviations.
+[ 1702.33s ->  1709.19s] We then wrote out this calibration function, which is going to be served historical bars.
+[ 1709.19s ->  1713.73s] We will come up with our estimate for the volatility path.
+[ 1714.23s ->  1718.69s] And then once we've done that, we will come up with percentiles dictating these states that
+[ 1718.69s ->  1719.97s] we have observed.
+[ 1720.11s ->  1726.39s] Then when we do that, we will estimate the emission mean and standard deviations of each state that
+[ 1726.39s ->  1727.29s] we have observed.
+[ 1727.29s ->  1733.43s] And then we will go through and increment our transition counts, given the counts that we've
+[ 1733.43s ->  1735.41s] observed in that historical batch.
+[ 1735.57s ->  1742.43s] Then we will normalize by the total number of transitions, whilst also applying Laplacian
+[ 1742.43s ->  1743.05s] smoothing.
+[ 1743.21s ->  1746.19s] So we have non-zero transition probabilities.
+[ 1746.19s ->  1749.21s] And so we do not divide by zero.
+[ 1749.49s ->  1756.53s] And then we will print to the console that we have effectively calibrated the emission means
+[ 1756.53s ->  1760.91s] and standard deviations to this particular Markov chain.
+[ 1761.09s ->  1761.51s] Awesome.
+[ 1761.89s ->  1765.71s] So that is going to do it for the calibration function.
+[ 1765.91s ->  1769.21s] We can now move on to the likelihood function.
+[ 1769.47s ->  1774.79s] And this is going to be the main component of this Markov regime class.
+[ 1774.79s ->  1780.45s] We are going to be determining the current state based on the likelihood of observing the
+[ 1780.45s ->  1786.51s] data that we have at this current state, having calibrated our Markov chain to that historic
+[ 1786.53s ->  1787.31s] data.
+[ 1787.31s ->  1790.45s] What we're doing here is we are answering the question.
+[ 1790.71s ->  1799.03s] If we are in the provided regime, how likely is it to see this volatility?
+[ 1800.58s ->  1806.80s] And this is a quantitative way to answer that given the calibration we just performed.
+[ 1806.96s ->  1809.34s] So the mean is going to be given by what?
+[ 1809.40s ->  1813.68s] Well, we have our emission means and we're providing the regime, right?
+[ 1813.68s ->  1816.52s] We know all of the regimes we could be in.
+[ 1816.72s ->  1824.20s] So we are going to provide each one, one by one, to come up with these likelihoods.
+[ 1824.24s ->  1828.90s] So I will find the mean of this regime, given the data we've calibrated to.
+[ 1829.04s ->  1836.10s] I will find the variance or standard deviation of this regime, given the data that we have calibrated
+[ 1836.10s ->  1836.46s] to.
+[ 1836.46s ->  1841.62s] And now I need to come up with a Gaussian probability density function.
+[ 1841.62s ->  1845.52s] This is because I am performing likelihood estimation.
+[ 1846.16s ->  1853.46s] What is the likelihood of observing this data, given we are in a state and it is emitting a
+[ 1853.46s ->  1859.72s] Gaussian draw with this mean and standard deviation governing that distribution.
+[ 1859.72s ->  1865.86s] So what I'm going to do is I'm going to say the coefficient of this density function is
+[ 1865.86s ->  1875.18s] given by one over the standard deviation of the regime times the square root of two times
+[ 1875.18s ->  1889.36s] pi and the exponent components is given by negative 0.5 times vol minus the mean over the standard
+[ 1889.36s ->  1891.98s] deviation squared.
+[ 1891.98s ->  1898.64s] This is literally just the Gaussian PDF.
+[ 1898.64s ->  1899.82s] That's all it is.
+[ 1899.82s ->  1906.94s] But we are giving it the correct regime and the correct volatility.
+[ 1906.94s ->  1918.73s] And we can then just go about returning the coefficient times the exponent, all right?
+[ 1918.73s ->  1923.83s] And that is effectively how we are going to be producing this likelihood function.
+[ 1923.83s ->  1927.43s] We are giving it a volatility that we are currently observing.
+[ 1927.43s ->  1932.87s] We are giving it the regime and the corresponding mean and standard deviations that we have observed.
+[ 1932.87s ->  1940.51s] And this is going to return the likelihood of having observed that volatility, given the distribution
+[ 1940.51s ->  1945.33s] is governed by this mean and standard deviation from our current regime.
+[ 1945.33s ->  1947.95s] So that is our Gaussian likelihood.
+[ 1947.95s ->  1952.67s] We can now use this to actually get the current regime.
+[ 1952.93s ->  1956.71s] So what I'm going to say is I'm going to say if not bars.
+[ 1956.87s ->  1961.03s] So if it's empty, we are just going to return the current state.
+[ 1961.35s ->  1963.95s] That is effectively what we're operating with now.
+[ 1964.03s ->  1968.79s] Anyway, we're saying, hey, you know, we don't have a way to go about estimating this in the
+[ 1968.79s ->  1970.69s] current shell that we built in part one.
+[ 1970.69s ->  1973.33s] So we're just going to keep it in a global state.
+[ 1973.41s ->  1977.93s] But now if we don't have any data in bars, we need to say this explicitly.
+[ 1978.13s ->  1984.77s] Otherwise, our Markov regime model is going to produce a broken regime or a broken calibration
+[ 1984.77s ->  1986.33s] or likelihood process.
+[ 1986.53s ->  1990.75s] So explicitly here, if we don't have data, we will just return the current state.
+[ 1990.87s ->  1998.33s] Otherwise, the current bar is equal to bars, the latest one minus one.
+[ 1998.33s ->  2004.57s] And the current volatility for the bar is given by the bars volatility.
+[ 2004.95s ->  2007.21s] We've already computed this, right?
+[ 2011.60s ->  2014.02s] Yes, we've already computed this as a property.
+[ 2014.46s ->  2022.60s] If we haven't observed any volatility, then we are just going to be operating in the current
+[ 2022.60s ->  2023.02s] regime.
+[ 2023.18s ->  2028.20s] So if vol is less than or equal to zero, there's no new information.
+[ 2028.20s ->  2034.78s] So the current bars regime is just going to be the current state, and we will just return
+[ 2034.78s ->  2036.12s] the current state.
+[ 2038.90s ->  2039.14s] All right.
+[ 2039.22s ->  2046.76s] But if we have observed some volatility, then we can go about fetching the regime from our
+[ 2046.76s ->  2050.62s] calibrated model using this Gaussian likelihood.
+[ 2051.48s ->  2051.88s] All right.
+[ 2052.02s ->  2056.75s] So the first step here is going to be a prediction step.
+[ 2056.75s ->  2057.83s] All right.
+[ 2057.87s ->  2068.78s] This is going to give us the priors given our calibrated model.
+[ 2068.92s ->  2077.70s] Our priors or the prior probabilities are equal to the transition matrix transposed matrix
+[ 2077.70s ->  2081.20s] multiplied with the initial state probabilities.
+[ 2081.62s ->  2087.34s] And this is where things get a little interesting because we have a uniform weight here for the
+[ 2087.34s ->  2094.56s] state probabilities, and that is going to impact our priors based on the transition matrix that
+[ 2094.56s ->  2095.46s] we calibrate to.
+[ 2095.76s ->  2103.52s] You could use the calibrated proportions that we observed in the recent historical data that
+[ 2103.52s ->  2105.92s] we've calibrated our Markov chain to.
+[ 2106.58s ->  2112.24s] But keep in mind, if you didn't observe one of the states, then the initial state is going
+[ 2112.24s ->  2114.30s] to have a zero probability of occurring.
+[ 2114.58s ->  2116.74s] And that certainly isn't true.
+[ 2116.74s ->  2120.32s] You're likely going to have to apply Laplacian smoothing as well.
+[ 2120.78s ->  2123.72s] I encourage you to work on that as an extension if you would like.
+[ 2123.88s ->  2131.14s] Just estimate these initial probabilities from the data that we observed and apply similar
+[ 2131.14s ->  2135.48s] Laplacian smoothing to ensure non-zero initial state probabilities.
+[ 2135.70s ->  2138.58s] I think that's a very nice extension you can work on.
+[ 2138.68s ->  2143.86s] But for now, we can just work on this prior probability as the matrix multiplication between
+[ 2143.86s ->  2151.62s] our calibrated transition matrix, transposed, of course, and the state probabilities.
+[ 2152.02s ->  2157.36s] And in this case, it's uniform, so it shouldn't really impact anything in that sense.
+[ 2158.22s ->  2161.82s] In the relative sense, it's just going to be proportional.
+[ 2161.82s ->  2167.88s] So if this is the case, then what is it that we're actually doing here?
+[ 2167.96s ->  2174.26s] Well, we're summing over all of the possible previous states, and we are weighting them by
+[ 2174.26s ->  2176.04s] the probability that they occur.
+[ 2176.40s ->  2183.00s] And in this case, we are just using the raw observed data to dictate the priors.
+[ 2183.00s ->  2186.62s] All right, so that's how we get our priors.
+[ 2186.96s ->  2190.92s] Now we're going to compute the emission likelihoods.
+[ 2191.04s ->  2193.32s] And that is our step two here.
+[ 2193.68s ->  2208.58s] To compute the emission likelihoods, all we have to do is find the probability of the volatility
+[ 2208.58s ->  2213.00s] that we just observed, given the regime.
+[ 2213.44s ->  2215.80s] It's just a conditional probability.
+[ 2215.80s ->  2218.64s] And we can use our Gaussian likelihood for this.
+[ 2219.20s ->  2226.76s] All right, so the likelihoods are given in an array, because each regime is going to have
+[ 2226.76s ->  2231.38s] a probability of having emitted the volatility that we just observed.
+[ 2231.58s ->  2237.92s] And that's going to be given by, with our Gaussian assumption, the Gaussian likelihood evaluated
+[ 2237.92s ->  2239.90s] at the observed volatility.
+[ 2239.90s ->  2249.74s] Remember, this is our current bar volatility for regime I, for every single regime I in range
+[ 2249.74s ->  2252.58s] the number of states that we have.
+[ 2252.72s ->  2257.46s] This is just going to iterate from zero to two, zero, one, two.
+[ 2257.60s ->  2263.64s] That's going to indicate a low, then a mid, then a high volatility regime.
+[ 2263.64s ->  2269.00s] We're going to parameterize this, then, with the correct spot volatility.
+[ 2269.36s ->  2270.34s] That's what we're doing here.
+[ 2270.54s ->  2276.74s] And the Gaussian likelihood function has it baked in such that the probability density function
+[ 2276.74s ->  2284.34s] that we are using is given by the regime provided with the calibrated emission means and standard
+[ 2284.34s ->  2285.14s] deviations.
+[ 2285.38s ->  2286.70s] Very elegant.
+[ 2287.40s ->  2287.76s] All right.
+[ 2288.00s ->  2290.32s] So now, what does this actually give us?
+[ 2290.32s ->  2301.35s] Well, this gives us the probability of observing the spot volatility given the regime.
+[ 2301.89s ->  2308.11s] This is literally going to produce a list of three values, and if that's the case, which
+[ 2308.11s ->  2309.73s] regime do we want to pick?
+[ 2312.70s ->  2316.08s] Step three is our update step.
+[ 2316.96s ->  2317.26s] Okay.
+[ 2318.06s ->  2325.06s] This is applying Bayes' rule to update the posterior probabilities to help us select
+[ 2325.06s ->  2333.90s] the current regime based on the prediction step and the emission likelihoods.
+[ 2334.14s ->  2340.14s] So we're going to put these two steps together now, and we are going to produce our posterior
+[ 2340.14s ->  2341.26s] probabilities.
+[ 2341.94s ->  2349.99s] This is just going to be the multiplication of the prior probabilities and the likelihoods.
+[ 2349.99s ->  2352.51s] Okay.
+[ 2352.51s ->  2360.07s] And in this case, we are just going to normalize them, so the probability sum to one, but this
+[ 2360.07s ->  2364.63s] is the way that we're going about producing the current regime.
+[ 2364.95s ->  2368.13s] We apply this prediction step to get our priors.
+[ 2368.33s ->  2377.07s] We compute the likelihoods, and then we update the posterior with the data that we observed and
+[ 2377.07s ->  2379.13s] the priors that we have.
+[ 2379.61s ->  2381.45s] This is a Bayesian update.
+[ 2381.65s ->  2384.35s] This is Bayesian probability.
+[ 2384.83s ->  2390.43s] This is exactly what we're doing just in the context of a Markov chain.
+[ 2390.43s ->  2398.06s] The selection of the regime is going to be indifferent to the normalization because really everything
+[ 2398.06s ->  2402.28s] is proportional anyway to these values.
+[ 2402.44s ->  2409.48s] What I mean by that is we're just normalizing them by the sum, and it's just going to ensure
+[ 2409.48s ->  2417.52s] that the values we get are between zero and one, and the sum corresponds to one, which
+[ 2417.52s ->  2423.26s] is the probability of the sample space occurring, satisfying all of those probability axioms.
+[ 2423.26s ->  2431.40s] But because we're just selecting the observation or the regime that has the highest probability
+[ 2431.40s ->  2438.54s] of producing the value that we did, it's proportional to the normalized value.
+[ 2439.16s ->  2444.44s] And what that means is the ordinal rankings of each of the regimes aren't going to change.
+[ 2444.44s ->  2451.74s] So this normalization step is really just like, it's really just aesthetic in the sense of
+[ 2451.74s ->  2458.56s] if we wanted to print the probability, then it would be the correct normalized probability.
+[ 2458.82s ->  2464.42s] So the probability sum is just going to be the sum of the posteriors.
+[ 2464.42s ->  2472.00s] And if the probability sum is greater than zero, then what we're going to do is just normalize
+[ 2472.00s ->  2474.32s] those posterior probabilities.
+[ 2475.10s ->  2482.24s] And if the prob sum is not greater than zero, then we have a very big problem because our
+[ 2482.24s ->  2484.90s] posterior probabilities are not correct.
+[ 2485.10s ->  2488.24s] Likely there's a problem with our data feed, so on and so forth.
+[ 2488.24s ->  2494.30s] Our priors are not going to be correct either in that case, because if we are summing
+[ 2494.30s ->  2500.78s] up these posteriors and we are normalizing, then this new sum is going to correspond to
+[ 2500.78s ->  2501.24s] one.
+[ 2501.74s ->  2504.18s] That's effectively what normalization is.
+[ 2504.68s ->  2512.10s] But if the prob sum from the sum of this posterior is less than or equal to zero, then we have
+[ 2512.10s ->  2512.90s] a data problem.
+[ 2512.90s ->  2520.99s] So in the case that we try this normalization and it doesn't work, then we can print to the
+[ 2520.99s ->  2525.82s] console that there was an error normalizing the posterior.
+[ 2528.32s ->  2537.42s] And as a fallback, I suppose we could set the posterior to the priors and that would just
+[ 2537.42s ->  2538.32s] be uniform.
+[ 2539.18s ->  2546.27s] And we would just default then to the calibrated emission means and standard deviations.
+[ 2546.27s ->  2552.87s] Um, and, and we would just select from those calibrated gaussians rather than the new data
+[ 2552.87s ->  2561.57s] that we've observed and updated via this likelihood and, and posterior or in prior, uh, combination.
+[ 2561.57s ->  2569.05s] So this is just a step that we are adding here for, for blanket normalization to ensure that
+[ 2569.05s ->  2571.85s] the posteriors are actual probabilities.
+[ 2571.85s ->  2579.67s] Again, this isn't going to impact the selection of the regime and to select the regime, all
+[ 2579.67s ->  2586.87s] we have to do is dictate the current state probabilities and select the arg max.
+[ 2586.87s ->  2593.33s] So before we actually select this arg max, we can finish this Bayesian updating step by
+[ 2593.33s ->  2597.29s] applying the posterior to the current state probabilities.
+[ 2597.29s ->  2601.61s] So this is going to be equal to the posterior probabilities.
+[ 2601.61s ->  2606.85s] This is of course, informed by our calibrated data.
+[ 2607.15s ->  2613.47s] So now when we go about getting the regime again, this is of course, iterative, right?
+[ 2613.57s ->  2615.05s] Bayesian updating is iterative.
+[ 2615.05s ->  2621.73s] As you observe more data, you are going to update your priors with your likelihoods.
+[ 2621.73s ->  2629.23s] And that is going to give you the posterior and what we're going to see here is the state
+[ 2629.23s ->  2636.09s] probabilities that we are updating as our posterior in this update step, step three here in the
+[ 2636.09s ->  2637.71s] get regime method.
+[ 2637.97s ->  2643.71s] When we go about calling the get regime method again, these posteriors are then going to be
+[ 2643.71s ->  2646.59s] used as the initial state probabilities.
+[ 2646.59s ->  2652.59s] Then we are going to observe the transition matrix, we'll take that matrix multiplication
+[ 2652.59s ->  2658.13s] to give us the priors, and we will just rinse and repeat with steps one, two, and three.
+[ 2658.37s ->  2664.59s] And then we will do the whole thing over again, we will constantly be updating our beliefs as
+[ 2664.59s ->  2666.23s] we observe new data.
+[ 2668.08s ->  2668.50s] All right.
+[ 2668.76s ->  2676.54s] So now that we've finished the update step, we can go about maximizing the probability of
+[ 2676.54s ->  2680.96s] having observed the data that we did from the current regime, and then that is how we will
+[ 2680.96s ->  2682.50s] select the regime.
+[ 2682.62s ->  2687.60s] So step four is to select the most likely regime.
+[ 2688.48s ->  2693.22s] And here, what I will say is self dot current state is just going to be what?
+[ 2693.32s ->  2700.36s] Well, this is just going to be the integer of the arg max of the posterior probabilities.
+[ 2700.36s ->  2708.36s] Hopefully now it's clear why it doesn't matter if we normalize the posterior probabilities in
+[ 2708.36s ->  2710.08s] the context of regime selection.
+[ 2710.08s ->  2715.32s] It does matter in the context of updating the state probabilities.
+[ 2715.32s ->  2721.40s] So I apologize if that was confusing, but it does not matter in this arg max because everything
+[ 2721.40s ->  2726.58s] is just proportional to the original ordinal, not the original ordinal rank, but the original
+[ 2726.58s ->  2732.42s] ordinal rank is unaffected by these new values, which are proportional to the unnormalized
+[ 2732.42s ->  2732.82s] ones.
+[ 2733.42s ->  2737.20s] And that's why the normalization isn't going to affect the regime.
+[ 2737.72s ->  2738.08s] Okay.
+[ 2738.18s ->  2741.74s] So we need it in the sense that we're updating the state probabilities.
+[ 2741.74s ->  2746.50s] We don't need it in the sense that we are selecting the most likely regime to occur.
+[ 2747.82s ->  2748.02s] Okay.
+[ 2748.42s ->  2753.64s] Then the current bar regime is just going to be the current state.
+[ 2753.64s ->  2760.02s] We've effectively updated the current state and our Markov chain model by selecting the
+[ 2760.02s ->  2765.20s] state that has the highest probability of emitting the volatility that we have just observed
+[ 2765.20s ->  2770.44s] in our five second bar, given the ticks that we've already observed within that bar.
+[ 2770.58s ->  2774.16s] And then we can update the bars regime here with the current state.
+[ 2774.76s ->  2775.36s] Okay.
+[ 2776.18s ->  2789.08s] Then after we've done that, we can just return the current state and that is going to do it
+[ 2789.08s ->  2791.14s] for this get regime function.
+[ 2791.14s ->  2795.80s] So that should actually even complete our Markov regime class.
+[ 2795.80s ->  2802.26s] So what we've done here is we have initialized our Markov chain model.
+[ 2802.58s ->  2807.40s] We have defined a method to calibrate to historical data.
+[ 2807.60s ->  2815.28s] We are effectively using percentiles and maximum likelihood estimation for the transition probabilities
+[ 2815.28s ->  2816.84s] for our transition matrix.
+[ 2816.84s ->  2821.62s] And the same is true for the emitted means and standard deviations.
+[ 2821.62s ->  2828.84s] We're assuming a Gaussian and we are using maximum likelihood estimation to find those particular
+[ 2828.84s ->  2830.46s] values under each regime.
+[ 2830.70s ->  2837.76s] And we've defined then our Gaussian likelihood, which is going to be the probability density function
+[ 2837.76s ->  2841.72s] given by each regime to emit a volatility.
+[ 2842.44s ->  2849.46s] And we will then apply Bayesian updating to not just predict, compute the emission and update
+[ 2849.46s ->  2856.44s] our state probabilities based on the data that we observe, but also to select the most likely
+[ 2856.44s ->  2857.18s] regime.
+[ 2857.54s ->  2859.00s] And that should do it.
+[ 2859.00s ->  2865.10s] So we can now move to the rest of our UI to integrate the current regime that we have
+[ 2865.10s ->  2871.34s] computed into the color of the background and the status panel at the bottom.
+[ 2871.34s ->  2875.14s] And we will have our live regime switching bot.
+[ 2875.36s ->  2884.42s] If we head on into our live market dashboard, then we're going to find a method to recalibrate
+[ 2884.42s ->  2895.36s] the Markov chain model, and we are going to actually have to write out this logic.
+[ 2895.36s ->  2901.48s] Now we already created the button in our user interface where we set up the UI.
+[ 2901.48s ->  2904.64s] If you recall, we have this recalibrate button.
+[ 2905.18s ->  2908.86s] The command is this recalibrate model method.
+[ 2908.86s ->  2918.86s] And now we just need to re query data from spot back, say 60 bars, and that's going to be 300
+[ 2918.86s ->  2922.34s] seconds for five seconds in this particular context.
+[ 2922.34s ->  2929.94s] And then we're just going to rerun the Markov chain models calibration function, which we already
+[ 2929.94s ->  2930.30s] wrote.
+[ 2930.52s ->  2938.12s] So what I'll say in this recalibrate model method is if not self dot streaming, we are going
+[ 2938.12s ->  2944.34s] to return if we are not streaming live data, then there is no purpose in providing a live
+[ 2944.34s ->  2945.74s] regime update.
+[ 2946.66s ->  2954.86s] Otherwise, we are going to specify our contract as a new contract given by whatever symbol the
+[ 2954.86s ->  2959.71s] user has specified, right?
+[ 2959.79s ->  2962.97s] And this is going to be using that create contract method.
+[ 2962.97s ->  2968.29s] This is going to specify the security request to interactive brokers to respond with historical
+[ 2968.29s ->  2969.07s] data for.
+[ 2969.07s ->  2972.65s] Or then what we will do is clear the stored historical data.
+[ 2972.65s ->  2977.75s] So I'll say self dot IB app dot historical data dot clear.
+[ 2977.75s ->  2982.05s] And I will also clear the hist done thread.
+[ 2982.05s ->  2985.39s] I will say hist done dot clear.
+[ 2985.89s ->  2993.38s] And now I will request data for Markov chain model calibration.
+[ 2993.38s ->  2996.96s] And this is going to be a new data request.
+[ 2996.96s ->  3000.06s] So I will say self dot IB app.
+[ 3000.06s ->  3004.06s] Remember, IB app implements both the e-wrapper and the e-client.
+[ 3004.06s ->  3006.96s] The e-client can make a request to the server.
+[ 3006.96s ->  3008.46s] The e-wrapper will receive it.
+[ 3008.46s ->  3010.96s] We've already written all that code in part one.
+[ 3010.96s ->  3015.68s] So what I'm going to say here is dot request historical data.
+[ 3015.68s ->  3020.80s] And within this historical data request, I'm going to give it a request ID three.
+[ 3020.80s ->  3027.28s] The contract, I will give it an end date time of nothing because we are specifying the duration,
+[ 3027.28s ->  3033.31s] which is going to be 300 seconds of five second bars.
+[ 3033.31s ->  3046.86s] If we are going to be looking for trades, we are going to format the date.
+[ 3046.86s ->  3052.56s] We are not going to keep it up to date and we are not going to provide any chart options.
+[ 3052.56s ->  3060.84s] OK, this is the same historical data request that we made in the first part of this series.
+[ 3060.84s ->  3064.39s] This is just going to, of course, be an update.
+[ 3064.39s ->  3085.73s] So if we are no longer waiting and we actually have received the data in our IB apps historical data, then what are we going to do?
+[ 3085.73s ->  3097.13s] Well, with self dot bar lock, we are going to be able to calibrate our Markov chain regime switching model and update the bar information.
+[ 3097.13s ->  3101.55s] So I'll say self dot regime model dot calibrate.
+[ 3101.55s ->  3107.19s] We are going to give it what the bars from the historical data request.
+[ 3107.19s ->  3113.82s] And we know that that is going to be stored in the key of the request ID.
+[ 3113.82s ->  3117.88s] And that is three as we specify there.
+[ 3117.88s ->  3123.69s] So that's how we know we're giving the model the correct data to calibrate to.
+[ 3123.69s ->  3135.17s] Once we've done that, we can just print to the console that we recalibrated the Markov chain model with.
+[ 3135.17s ->  3152.88s] And then I'll just give it the length of the historical data and that will specify how many bars we've calibrated to.
+[ 3152.88s ->  3154.08s] Cool.
+[ 3154.08s ->  3174.40s] So that should do it for the recalibrate model method, we can now move to updating the actual background of the chart so that we are going to display the correct color based on the regime.
+[ 3174.40s ->  3182.40s] So we're going to go down to the draw open, high, low, close chart method.
+[ 3182.40s ->  3192.16s] We are going to define the current bars regime based on what the Markov chain model produces.
+[ 3192.60s ->  3199.08s] And then we are going to assign the background color to each bars regime.
+[ 3199.08s ->  3220.04s] So first things first, if we aren't observing any data, then we cannot update that bars regime because we need to observe data to compute the correct posterior and then select the regime that has the highest likelihood of producing the data that we observed.
+[ 3220.04s ->  3222.82s] So if we don't observe data, we can't do that.
+[ 3222.82s ->  3227.52s] But if we do, then we can assign this current bar a regime.
+[ 3227.52s ->  3230.94s] So what I'll say then is current dot regime.
+[ 3230.94s ->  3233.84s] And that current is going to be our bar.
+[ 3233.84s ->  3240.88s] Remember, that is going to be this class that we defined the open, high, low, close bar class.
+[ 3241.24s ->  3249.78s] And what we're going to do is say current dot regime is equal to self dot regime model dot current state.
+[ 3250.16s ->  3253.44s] That is going to give us zero, one or two.
+[ 3253.60s ->  3257.26s] That is going to give us the state of this bar.
+[ 3257.26s ->  3264.68s] Then when we roll into a new bar, it is going to store the regime in that previous bar.
+[ 3264.90s ->  3266.80s] And that's what we're doing here.
+[ 3266.88s ->  3270.72s] We're painting each bar onto the chart.
+[ 3270.90s ->  3276.30s] So we need to update then the color of this background with the correct color.
+[ 3276.62s ->  3277.90s] How do we do that?
+[ 3277.90s ->  3281.86s] Well, we can get the color from our Markov regime class.
+[ 3281.94s ->  3285.92s] I'm going to say self dot regime model dot background colors.
+[ 3286.24s ->  3289.52s] And I'm going to get the color at the index of what?
+[ 3289.60s ->  3294.52s] Well, remember, we are iterating through all of our bars in this queue.
+[ 3294.52s ->  3302.44s] So we are going to have then a regime for each bar, because that's what we've done here.
+[ 3302.50s ->  3306.44s] We've assigned each of our current bars a regime.
+[ 3306.68s ->  3309.66s] Every five seconds, it rolls back in the queue.
+[ 3309.66s ->  3315.36s] And that means that that bar in our queue will have that regime property.
+[ 3315.52s ->  3319.34s] So we are going to then effectively get bar dot regime.
+[ 3319.76s ->  3328.12s] And we need to update then the alpha 2.4 so that it isn't transparent.
+[ 3328.12s ->  3336.72s] And with that, we should be ready to give everything a go and we should see our final product.
+[ 3336.88s ->  3341.30s] It wouldn't be a quant build without a couple of errors to debug.
+[ 3341.72s ->  3344.34s] I found one from part one.
+[ 3344.46s ->  3348.80s] It didn't impact the functionality at all from part one because we didn't need it.
+[ 3348.80s ->  3359.56s] But the historical data and implementation in our IB app class is actually spelt wrong.
+[ 3359.66s ->  3361.06s] It's historical.
+[ 3361.78s ->  3365.52s] It should be historical data end.
+[ 3365.88s ->  3376.85s] And I've also noticed that in the Markov regime class, where we go about assigning the volatility
+[ 3377.85s ->  3382.53s] vector values, this difference needs to be in parentheses.
+[ 3383.23s ->  3388.85s] Otherwise, we're not going to have anything to break down these states by in terms of percentiles.
+[ 3388.85s ->  3392.61s] We will never observe any of these states.
+[ 3392.87s ->  3397.07s] So once we make these changes, we should be good to go.
+[ 3397.17s ->  3404.55s] I think there might be one more that is in our recalibration button, but we can fix that
+[ 3404.55s ->  3405.99s] after we give this a test.
+[ 3406.17s ->  3409.01s] I think everything should function as intended.
+[ 3409.17s ->  3413.19s] Now we have our live regime switching dashboard here.
+[ 3413.19s ->  3414.85s] I connect to TWS.
+[ 3414.85s ->  3417.21s] I start my stream for Apple.
+[ 3417.47s ->  3420.35s] As you can see, I'm now painting the regime in the background.
+[ 3421.05s ->  3428.06s] I have my console telling me that I have the calibrated emission means and variances.
+[ 3428.06s ->  3436.46s] And after I observe a little bit of data, I should see a regime change, assuming that
+[ 3436.46s ->  3442.12s] the emission probability maximizes the likelihood of it coming from a different regime.
+[ 3442.16s ->  3443.50s] And that's exactly what we see here.
+[ 3443.56s ->  3447.96s] We see from low to mid volatility regime.
+[ 3447.96s ->  3452.56s] So everything is functioning as intended, except for this recalibrate button here.
+[ 3452.70s ->  3455.00s] Let's go ahead and fix that.
+[ 3455.10s ->  3459.64s] We need to find this recalibrate button.
+[ 3460.08s ->  3466.64s] It starts off as disabled.
+[ 3467.20s ->  3475.28s] And then as soon as we start the stream, we want the text not to change, but we want to
+[ 3475.28s ->  3478.04s] configure it as active.
+[ 3478.04s ->  3483.46s] So the state should be normal here, not the text.
+[ 3483.74s ->  3488.18s] This is roughly line 468 in the start stream function.
+[ 3488.70s ->  3491.62s] So that should be everything.
+[ 3492.40s ->  3499.32s] Now we can connect, start the stream, and we are able to recalibrate as we please.
+[ 3499.50s ->  3501.40s] As you can see here, I just keep recalibrating.
+[ 3501.48s ->  3504.98s] That changes the emission means and variances vector.
+[ 3504.98s ->  3509.70s] And then as we continue to observe more data, there's a little bit of a move there.
+[ 3509.88s ->  3513.14s] We might observe, yep, a high volatility regime change.
+[ 3513.54s ->  3516.52s] And that is our final product.
+[ 3516.68s ->  3521.64s] And that's going to do it for this two-part quant build, where we have implemented a live
+[ 3521.64s ->  3529.00s] Markov chain regime switching model from scratch in Python with Interactive Brokers API.
+[ 3529.20s ->  3529.96s] I hope you enjoyed.
+[ 3530.26s ->  3531.40s] I hope you learned something.
+[ 3531.40s ->  3535.62s] These quant builds certainly take a tremendous effort to put together.
+[ 3536.02s ->  3539.22s] So if you like this video and you want to see more like it in the future, please like,
+[ 3539.40s ->  3540.80s] comment, subscribe, and share.
+[ 3541.12s ->  3542.50s] It helps me out tremendously.
+[ 3542.80s ->  3544.90s] It is always greatly appreciated.
+[ 3545.36s ->  3548.70s] I'll leave a link to all of this source code in the description below.
+[ 3548.82s ->  3553.36s] I will also post it to the Quant Guild Library on GitHub, where you can find all of my YouTube
+[ 3553.36s ->  3556.56s] videos and source code for my quant builds.
+[ 3556.56s ->  3562.88s] Other than that, I want to thank you so much for watching, and I will see you in the next
+[ 3562.88s ->  3563.68s] video.

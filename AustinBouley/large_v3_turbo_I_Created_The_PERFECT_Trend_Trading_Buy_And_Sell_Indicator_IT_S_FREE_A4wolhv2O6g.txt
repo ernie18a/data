@@ -1,0 +1,124 @@
+[    0.00s ->     4.94s] If you like following the trend and this indicator does not blow your mind, I don't know what will.
+[    5.26s ->     8.42s] It shows you when to buy, when to sell, and when to stay out.
+[    8.50s ->    10.88s] If you're a trend trader, you know how hard that is.
+[   11.14s ->    17.08s] You can get in a trend, but sometimes it goes sideways, and you don't know when to get out until you end up losing money.
+[   17.36s ->    21.26s] It also gives you buy and sell signals and confirmation signals.
+[   21.58s ->    25.28s] So you have double confirmation that you know you're in the right trade.
+[   25.28s ->    30.58s] If you stay until the very end, not only will I show you how to use this indicator to make money,
+[   30.76s ->    35.62s] but I will show you and give you a backdoor link so that you can get access to this indicator for free.
+[   35.72s ->    41.32s] Most people have to pay $297 for this indicator, but I will let you get access for free.
+[   41.52s ->    42.94s] If you stay until the end, I'll show you how.
+[   43.04s ->    43.94s] So let's dive in.
+[   43.98s ->    45.66s] How do you use this indicator to make money?
+[   45.76s ->    49.40s] Well, if we're looking at it, let's understand what's going on here.
+[   49.54s ->    52.36s] First off, what do we need to look at when we're looking at the trend?
+[   52.48s ->    54.80s] Well, we need to look at multiple different time frames.
+[   54.80s ->    58.66s] We need to know what is the short-term trend and what is the long-term trend,
+[   58.70s ->    59.80s] and we need to combine them together.
+[   59.92s ->    64.24s] That's how you have the most success as a trend trader, and this does it for you.
+[   64.58s ->    69.52s] So, friends, you can see here this line that we're seeing on the chart is a simple 10-period moving average.
+[   69.92s ->    70.54s] What does that mean?
+[   70.74s ->    73.06s] It means it looks at the short-term trend.
+[   73.42s ->    73.66s] Why?
+[   73.76s ->    78.00s] Because it only looks at the last 10 candles, and so you can see here it adapts super quickly to the trend.
+[   78.24s ->    80.60s] When it starts moving up, the line starts moving up.
+[   80.64s ->    82.76s] When it starts moving down, the line starts moving down.
+[   82.76s ->    85.22s] And so this is how we measure short-term trend.
+[   85.32s ->    89.16s] If the stock is above this line, it is a short-term trend.
+[   89.50s ->    95.02s] Now, what we also need to look at, because this plays a huge factor on the direction, is the long-term trend.
+[   95.30s ->    96.98s] What is the long-term trend doing?
+[   97.10s ->    97.70s] Is it trending up?
+[   97.74s ->    98.24s] Is it trending down?
+[   98.30s ->    98.90s] Or is it sideways?
+[   99.04s ->   103.58s] Because that will impact eventually, if not immediately, the short-term trend.
+[  103.92s ->   105.72s] And so what this does is it combines it for you.
+[  105.72s ->   111.08s] I created a system that looks at the long-term trend, and it helps you know what's going on.
+[  111.14s ->   114.62s] And I put that inside this 10-period moving average.
+[  115.14s ->   121.78s] So if the short-term trend and long-term trend are both up, and that trend is supported, the line will be blue.
+[  121.96s ->   123.74s] So this is a bullish signal.
+[  123.86s ->   124.92s] It's a time to buy.
+[  124.92s ->   134.22s] If it's white, that means both the long-term trend and short-term trend are in agreement that a crash will happen, or that a pullback or a move down will happen.
+[  134.34s ->   135.80s] So white means short.
+[  136.20s ->   142.94s] Now, if the long-term and short-term trend are not in agreement, or something is going on, what it will give you is a gray signal.
+[  143.06s ->   144.42s] This is a signal to stay out.
+[  144.68s ->   146.02s] Why is this so helpful?
+[  146.02s ->   150.00s] Well, look, if you can see here, it gave a gray signal starting here.
+[  150.32s ->   157.10s] And so that means that if this was previously just white because it's moving down, so if you're just trading the short-term trend, you would have lost money.
+[  157.18s ->   158.34s] Because you would have been short.
+[  158.54s ->   164.66s] It would have immediately shot up against you, and then you would have been able to stop out and lose money on all those trades.
+[  164.74s ->   166.66s] So now it turned gray saying, hey, stay out.
+[  166.84s ->   168.18s] Something is happening here.
+[  168.42s ->   172.62s] It could go down further, but it appears that it could also turn around and go up.
+[  172.90s ->   175.08s] And so with that, it gave a gray signal.
+[  175.08s ->   178.62s] So blue is buy, white is sell, gray is stay out.
+[  178.70s ->   181.92s] How do we actually use those signals to make money?
+[  182.08s ->   183.82s] Blue, we can buy the stock.
+[  184.08s ->   188.30s] We can buy a call option, or we can sell a put credit spread option.
+[  188.56s ->   190.18s] We can also sell a put option.
+[  190.46s ->   193.38s] Those are four ways to make money when the line turns blue.
+[  193.90s ->   198.56s] Next, the white turns white, meaning that we're starting to roll over and starting to move down.
+[  198.88s ->   204.50s] We can go into inverse ETFs that make money as the original stock, this one, goes down.
+[  204.50s ->   205.60s] The other ones go up.
+[  206.00s ->   208.64s] Next, we can also buy a put, which makes money to the downside.
+[  209.18s ->   212.76s] And we can enter call credit spreads, which makes money to the downside as well.
+[  213.06s ->   215.54s] If it's gray, we stay out of the trade.
+[  215.74s ->   225.50s] If we really think we want to trade the direction, we only go in about 50% of our max size to understand because we don't know what's going to happen exactly.
+[  226.32s ->   229.18s] So that is the original buy and sell signal.
+[  229.30s ->   230.70s] So how do we add confirmation?
+[  231.16s ->   237.28s] Well, this indicator was built by a trend trader, trend trading over six years, for trend traders like you.
+[  237.62s ->   242.38s] And so I put in some of the four best trend trading indicators into it in one.
+[  242.48s ->   243.64s] Why is this so powerful?
+[  243.64s ->   246.94s] Well, because now you have your trend trading hub all in one spot.
+[  247.06s ->   256.34s] But two, if you're using TradingView on a free account, like most of you are, they only allow you to have two indicators on your chart at one time and volume counts as one.
+[  256.66s ->   259.40s] So now I put all these indicator into one.
+[  259.68s ->   264.12s] So you only have to add one indicator to your chart and you get access to the power of five.
+[  264.50s ->   268.20s] And so now you don't have to pay and you get all these indicators at the same time.
+[  268.20s ->   272.72s] So what I love here is enabling the super trend, which is an ATR-based trend.
+[  272.94s ->   275.90s] And why I like this is because it gives me confirmation.
+[  276.30s ->   280.08s] It shows me extra validation of what the long-term trend is.
+[  280.24s ->   285.40s] So you can see here at this area, this cloud is green and the line is blue.
+[  285.62s ->   287.64s] So both of these are signaling a buy signal.
+[  287.84s ->   291.66s] That's a very great time to enter a trade, a long trade.
+[  292.04s ->   292.96s] Same thing with this.
+[  292.96s ->   302.16s] If I'm getting a red cloud and it's moving down and then I get this white rollover, this white sell signal, then that means that it's rolling over and you see a huge crash.
+[  302.24s ->   303.22s] Same thing here, a huge crash.
+[  303.30s ->   308.14s] I was able personally to make a lot of money from these call credit spreads on the way down.
+[  308.50s ->   310.66s] And so, again, that is your confirmation signal.
+[  310.98s ->   314.46s] But not only that, there are so many other amazing indicators on here.
+[  314.68s ->   319.78s] One of them that I absolutely love as well is the predictive trend channels.
+[  319.78s ->   329.60s] You have to give it a second to calculate, but when you add these trending channels, it allows you to see exactly what is going on for the trend.
+[  329.86s ->   332.02s] Now, how does this work and how do I use them?
+[  332.34s ->   338.46s] Well, if I'm in this upper portion of this trend, I know that the trend is weak and so we're hitting resistance.
+[  339.06s ->   341.54s] And so I'm looking for a white rollover at that point.
+[  341.62s ->   342.40s] So that's confirmation.
+[  342.56s ->   346.10s] Hey, we're getting into a weak zone right here, a weak trending zone.
+[  346.18s ->   348.08s] We start to roll over, get this white signal.
+[  348.08s ->   350.96s] That's a great entry and now I have a target price.
+[  351.08s ->   353.00s] I have this first as my first target price.
+[  353.32s ->   354.84s] This is my second target price.
+[  355.22s ->   357.12s] Vice versa to the downside.
+[  357.28s ->   361.42s] You can see here when we hit and we're inside this range, I wait for a blue signal.
+[  361.76s ->   366.38s] The blue signal then gives me a take profit of this gray line, this red line, and then this red line.
+[  366.68s ->   371.18s] So now I know my take profits and I know the best time to enter as a value perspective.
+[  371.36s ->   374.02s] If I enter in this area, I have a greater value for buying.
+[  374.10s ->   376.24s] If I enter this area as a greater value for selling.
+[  376.24s ->   379.54s] And so like that, that's all available with one click of a button.
+[  379.62s ->   383.84s] It will automatically draw you trend lines and it will change with the trend, obviously.
+[  384.00s ->   386.78s] Now you can see here, it's bouncing into this top range.
+[  387.06s ->   388.10s] And so what does this mean?
+[  388.14s ->   389.80s] It means I'm looking for a rollover.
+[  390.12s ->   392.84s] And so again, at least a small pullback, at least to these ranges.
+[  393.08s ->   395.08s] And now I know that so I can take advantage of it.
+[  395.08s ->   400.76s] I'm personally in a call credit spread trade to make money here on a small dip.
+[  401.02s ->   406.20s] And so that's how I use all this together to be able to execute and place trades to make money.
+[  406.30s ->   410.64s] And so if you want free access to this indicator, most people have to pay for it.
+[  410.64s ->   415.20s] But if you click the third link down below, you can join.
+[  415.56s ->   419.80s] It does not say anything about an indicator because again, I'm giving you a free backdoor link.
+[  420.50s ->   429.34s] If you go into it and it says my free alerts plus three killer trading tools or something like that.
+[  429.34s ->   444.68s] You click that link and you start a free trial to my Discord membership, which is where people like you and me, trend traders, use this indicator to profit, to trade, and to make money on a monthly basis.
+[  444.86s ->   449.08s] And so if you grab your free trial to that, I will give you lifetime access to this indicator.
+[  449.20s ->   452.34s] There will be a backdoor link after you sign up for the free trial.
+[  452.56s ->   458.64s] This means that even if you cancel your free trial or you don't decide to stay, you'll still have lifetime access to this indicator.
+[  458.64s ->   466.30s] And this indicator is available on Thinkorswim and TradingView, and you will get access to any updates in the future, even if you're not a current member.
+[  466.42s ->   472.44s] But go click down below, start your free trial, and grab your backdoor free link to this amazing trend trading indicator.
+[  472.76s ->   473.82s] All right, guys, see you in the next video.

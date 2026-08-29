@@ -1,0 +1,50 @@
+[    0.94s ->     8.56s] Welcome to this video. We're going to discuss the TTM scalper alert. This is a great indicator that
+[    8.56s ->    13.38s] you can use to give you an advantage on knowing when a stock is going to reverse at a certain
+[   13.38s ->    17.74s] point. Alright guys, if you don't know who I am, I am the impeccable investor and I teach people
+[   17.74s ->    23.18s] how to day trade and invest in the stock market. Please hit that subscribe button and turn on those
+[   23.18s ->    27.82s] alert notifications because I promise you will love the content that is provided. If you want
+[   27.82s ->    31.92s] to know more information about all the stuff that I offer and all the stuff that I like to teach on
+[   31.92s ->    37.34s] this channel for free, then click on my YouTube account and look through it. I also have an
+[   37.34s ->    42.92s] Instagram and that is all linked below. Alright, so going into the video here, you can see that we
+[   42.92s ->    48.84s] have this TTM scalper. If you're on the TD Ameritrade Thinkerflim platform, you can see here that if we go
+[   48.84s ->    55.92s] to the study section, you can actually pull up TTM scalper. So if you do TTM, you have TTMLRC,
+[   55.92s ->    61.72s] the scalper alert, squeeze, trend, trend alert, and wave. I'm going to be doing a series over every
+[   61.72s ->    68.22s] single one. Today just happens to be the scalper alert one. So please tune in for all the other
+[   68.22s ->    71.86s] videos if you want to learn how the other ones work as well. These are some of the best indicators
+[   71.86s ->    77.68s] around. Alright, so you add the TTM scalper alert, you go into the settings, and you adjust it
+[   77.68s ->    86.26s] for .4. I have found the .4 setting works best on day trading stocks. So when you go out to a larger
+[   86.26s ->    92.40s] timeframe, then you may want to actually bump it up, but we'll talk about that in a bit. So going
+[   92.40s ->    97.48s] here, we're going to keep it as .4. So you can see here, it gives you an indication of where the
+[   97.48s ->   102.54s] highs are and where the lows are. Now if you look back and back test this with your eyes, you can see
+[  102.54s ->   106.96s] you're, wow, this thing was right every single time pretty much. If I just take a trade based off
+[  106.96s ->   112.92s] this, I'm going to do great. Well, I just wanted to mention one caveat about this indicator. It
+[  112.92s ->   120.64s] happens after two to three candles. So even though it alerted you to sell right here, you wouldn't have
+[  120.64s ->   126.06s] seen the sell mark until around this candle. However, it still works out great, but you still have to
+[  126.06s ->   130.16s] understand that it is not an instant candle. The minute this candle forms is not the minute you get
+[  130.16s ->   136.04s] this alert. It takes a few candles to form and then it does. Now the reason why we use .4 is because
+[  136.04s ->   143.66s] without it, it's going to show down on every little small bump, every little small buy on every little
+[  143.66s ->   149.92s] push up. So when you increase it to .4, you kind of decrease that lag for when a stock is in a moment
+[  149.92s ->   155.16s] of consolidation. Like here, it would be up, down, up, down, up, down. But instead, when you shrink it,
+[  155.16s ->   161.92s] or I mean you increase the number to .4, then you get a better result. So this is actually how you can
+[  161.92s ->   167.52s] day trade off of it. It can help you as a second form of indication. If you know that you have a
+[  167.52s ->   173.58s] resistance at this level, you get this resistance here. Then you get the scalper alert here. It's a
+[  173.58s ->   180.34s] second indication of, okay, I'm pretty right on this. We have a high probability of profit here on
+[  180.34s ->   185.52s] this one. Let's continue with this trade. Now, let's push it out to a 15-minute swing trading
+[  185.52s ->   190.02s] approach. So when we do that, you can see here that we get alerts left and right, but that's not
+[  190.02s ->   194.78s] going to help us on a swing trading day-to-day basis. So if we go in here to scalper alert, we can bump
+[  194.78s ->   201.82s] this up to usually around .8, and we can eliminate most of it if we can get it. I guess not. Let's try
+[  201.82s ->   209.02s] this again. Maybe we should go higher. Again, .8 usually works the best for me, but I guess we're not
+[  209.02s ->   215.66s] going to get it much lower. I don't usually use this on SPY, but it can be used on plenty of other
+[  215.66s ->   221.82s] stocks. And the way that you customize an indicator to each stock is you go through and you mess with
+[  221.82s ->   226.86s] the indicator settings until it matches that stock perfectly because sometimes each stock has a
+[  226.86s ->   233.52s] different settings it likes better. So if you can see here, we knew that SPY had a resistance here at
+[  233.52s ->   239.60s] this level, right? From this level and from a prior level, we know that we have a resistance
+[  239.60s ->   245.12s] coming up. You can see here that we got three sell signals on the downside. It just gave us that nice
+[  245.12s ->   250.40s] little push. Every time we get up to this resistance, it's saying sell, sell, sell. It's just giving us a
+[  250.40s ->   255.54s] good indication of where's the best time to sell. You can see here toward this trend line, we're getting
+[  255.54s ->   262.18s] that sell signal as well. So TTM scalper is one of the most up-to-date. It kind of shows faster than most
+[  262.18s ->   267.72s] because you usually have pivot stuff that goes on in most, but this one appears after three to four
+[  267.72s ->   272.86s] candles, which may seem slow, but it's really fast in the industry so far. So I really recommend you
+[  272.86s ->   278.58s] give it a try. If you don't like this, please stay tuned because I know you'll love the content coming
+[  278.58s ->   286.16s] next, which is TTM Wave or TTM Trend. It works amazing. All right, guys, thank you so much for tuning
+[  286.16s ->   291.56s] in. I hope to see you in the other videos. Please like, comment, and subscribe. See y'all in the next video.

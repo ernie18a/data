@@ -1,0 +1,321 @@
+[    0.04s ->     4.20s] Hey team, have you ever wanted to trade credit spreads and make monthly income in a way where
+[    4.20s ->     9.92s] you avoid market crashes, where you can understand the trend and profit from it, and in a way where
+[    9.92s ->    13.58s] you know the mechanical rules so that you know if this happens, this happens. If this happens,
+[   13.66s ->    17.78s] if the market crashed, this is how I handle it. If the market goes up, this is how I handle it.
+[   17.94s ->    21.84s] This is where my take profit is. This is where my stop loss is. I'm going to cover all that and more
+[   21.84s ->    27.32s] in this credit spreads masterclass. Now again, this is an extension of a credit spreads masterclass
+[   27.32s ->    32.44s] that I made at the beginning of 2023 and that literally thousands of y'all have already gone
+[   32.44s ->    35.80s] through and loved, and I've seen the profit reports from it, but I wanted to come in,
+[   36.14s ->    41.32s] update it and do a better job at explaining how to navigate certain markets that have presented
+[   41.32s ->    47.32s] themselves in 2023, like low volatile markets, like range bound markets and how you can profit
+[   47.32s ->    51.96s] from it. So I'm going to be covering credit spreads and all that in this video. So let me dive into it
+[   51.96s ->    57.24s] right now. Number one, what in the world are credit spreads? Credit spreads are the idea that
+[   57.24s ->    63.08s] you make money by betting on the direction of a stock. So if we look at this, let's just say,
+[   63.16s ->    66.18s] again, I'm not going to get into the specifics of the strategy just yet. I'm just explaining
+[   66.18s ->    71.26s] credit spreads. Let's say you're like, wow, look, this market is rolling over. I think it's going
+[   71.26s ->    76.32s] to head down further. If you think it's going to head down, for instance, like this, like move lower,
+[   76.40s ->    81.02s] let's see if I can bring up a withdrawing tool. If it's going to head lower like that, then you can take
+[   81.02s ->    84.68s] advantage of a call credit spread, which is a bet that the stock will stay below a certain level.
+[   84.68s ->    89.88s] So you pick a level, let's say this level, as long as the stock stays below it, you make money.
+[   90.16s ->    95.06s] That means that let's say the market goes up and then stays below it. You make money. If the markets
+[   95.06s ->    99.62s] go sideways, you make money. If the market drops like you're thinking, you make money too. So in
+[   99.62s ->   105.36s] all these scenarios, you make money. Now vice versa to the upside, you pick, let's say you try to put
+[  105.36s ->   109.24s] credit spread. That means that you think the stock will go higher. You're betting the stock will stay
+[  109.24s ->   113.32s] above a certain level. So let's say you put this level here. You think the stock will continue going
+[  113.32s ->   117.32s] higher. And so if it does, it stays above this level, you make money. That means if it goes down,
+[  117.40s ->   120.80s] it stays above your level, you make money. If it goes sideways, you make money. If it goes up like
+[  120.80s ->   125.60s] you're thinking, you make money. So again, put credit spread, you making money to the upside,
+[  125.74s ->   129.80s] call credit spread, you make money to the downside. You do this all by picking a level, you think the
+[  129.80s ->   136.16s] stock will not pass. So that's my very basic explanation of credit spreads. Now, something you do need to
+[  136.16s ->   141.30s] know about credit spreads is broker requirements. So again, depending on the broker you are using,
+[  141.30s ->   145.42s] there are some things you need to understand. Number one, you need to have a margin account. So that is
+[  145.42s ->   152.92s] number one, a margin account, which typically for most US brokers requires $2,000 minimum deposit. So
+[  152.92s ->   158.56s] if you have $2,000 in your account, you can typically apply for margin. When you do apply for margin, there
+[  158.56s ->   164.40s] is a questionnaire you have to go through. Make sure you say the right things. I'm not going to say live, but you do
+[  164.40s ->   170.32s] need to put on those lists, especially if you have near that limit around 2000. If you have more, they give you a bit
+[  170.32s ->   175.90s] more wiggle room. But if you're at 2000, then you say, yes, I have experience with options and all the
+[  175.90s ->   182.46s] other things that come with it. So once you do that, you'll get approved for margin. And then from there,
+[  182.46s ->   187.08s] you can start trading credit spreads. Depending on the broker you're with, you need the highest level
+[  187.08s ->   191.68s] of margin because you are selling an option when we put on these credit spreads. Again, I'll explain
+[  191.68s ->   196.74s] that a bit more in a second, but I just want to go through the bare bones basics, the foundation here,
+[  196.74s ->   200.64s] which is setting up a broker account with it. So once you do that, then you have credit spreads
+[  200.64s ->   205.82s] access. My favorite brokers to use are Robinhood and Weeple. If you have a small account because
+[  205.82s ->   211.66s] they do not charge commissions, your fills, AKA how fast your trade gets executed, gets executed
+[  211.66s ->   216.74s] will be slower. So it'll be harder to enter and exit trades, but you don't pay commissions outside of
+[  216.74s ->   223.98s] a few cents that's regulatory fees. Now, my favorite is tasty trade because they cap your commission.
+[  223.98s ->   229.02s] So when you start getting to a larger and larger account, you can move over to tasty trade.
+[  229.02s ->   233.64s] And then again, their commissions are a bit higher, but you don't pay to exit and they cap them. So
+[  233.64s ->   238.40s] those are the broker requirements that I like. Number three, okay, the next step is we talked
+[  238.40s ->   242.96s] about the basics. Now we're talking about broker number three, we're going to get into these specific
+[  242.96s ->   247.28s] strategies and how we set up these trades. So again, when we're looking at the market, there's a
+[  247.28s ->   253.68s] specific thing we look at. We want to take advantage of the current short-term trend. And so if we see
+[  253.68s ->   259.48s] this blue line here, this means we're having a short-term long trend that's supported by the
+[  259.48s ->   265.02s] long-term trend. If you see a white line, that means we have a short-term downtrend supported by
+[  265.02s ->   269.86s] the long-term trend as well. If you see a gray area, that is where our trends are conflicting.
+[  270.00s ->   274.14s] Our long-term trend, our short-term trend are different. And so if that's the case, we stay out.
+[  274.26s ->   282.04s] So blue, we buy, white, we sell, and gray, we stay out. So how does this translate into credit
+[  282.04s ->   286.36s] spread world? It translates blue. We're going to be entering put credit spreads. White, we're
+[  286.36s ->   291.46s] going to be entering call credit spreads. Gray, we're going to be staying out of the market or
+[  291.46s ->   296.52s] putting on a trades at our own discretion, aka whichever way we want to put it on, but doing
+[  296.52s ->   302.04s] so at half our normal trading size. Now that is what we're looking at with this indicator, which
+[  302.04s ->   306.64s] again, you'll get free access to at the end of this video. I'll show you how, but let's walk
+[  306.64s ->   310.98s] through the absolute specifics of this. So you can see, Hey, checklist style, how this
+[  310.98s ->   316.34s] works. So here's our criteria laid out in a PDF document, which is down in the bottom
+[  316.34s ->   320.38s] description of this video, but we're going to go to the bullish play. This is, this is
+[  320.38s ->   325.26s] where we're starting, AKA when this line is blue, what are we going to do? Again, that rhymes
+[  325.26s ->   329.56s] and I'm not a poet. So let's look in criteria. The stock price needs to be greater than the
+[  329.56s ->   333.30s] 200 day moving average. What does this mean? It means that if we pull up a moving average
+[  333.30s ->   337.84s] line on this chart, the 200 period moving average, it's greater than that. So if I go
+[  337.84s ->   342.42s] here to moving average and I pull up a simple moving average, moving average simple, and
+[  342.42s ->   349.22s] I make that to a 200 period like this 200, then it needs to be above it. You can see here
+[  349.22s ->   353.76s] we are above this line. So that's what we're looking at. Number one, greater than the 200
+[  353.76s ->   358.58s] day moving average. Number two, stock price is less than three standard deviations of the
+[  358.58s ->   362.38s] 200 day moving average. Again, if we go here into this line, it's going to show us that
+[  362.38s ->   366.16s] if I click here, enable proprietary trending ban. Again, this is on the indicator. I'm
+[  366.16s ->   369.60s] sure how to, how to get accurate at the end of this video. Again, you can see here that
+[  369.60s ->   374.50s] it's below this top line. Why do we care if it's below this top line? Well, because every
+[  374.50s ->   379.38s] time we break above it, it tends to start retracing. You can see here, especially the most notable
+[  379.38s ->   383.72s] strong case is when we held above it for a while in 2020, and then it crashed in almost every
+[  383.72s ->   388.64s] single crash. Since when it breaks above this region, it tends to crash hard. So if the stock
+[  388.64s ->   394.98s] is above this region, it's hit its resistance. So there's no point in us trying to get in that
+[  394.98s ->   402.16s] trade. So that is what we're looking at there. Next, SMA 10 is greater than yesterday's SMA 10
+[  402.16s ->   407.10s] price. So again, I'm just going to convert this SMA. I just added into a 10 period moving average. So
+[  407.10s ->   412.34s] again, I just make it a 10 period. And so again, you can't really see it because it's being overlapped
+[  412.34s ->   416.50s] by the one that I have here. So let me remove the white and blue gray line. All right. So you can
+[  416.50s ->   422.12s] see here, we have the 10 period moving average. When the line is moving up, when this 10 period
+[  422.12s ->   427.62s] moving average is pointing to the upside, AKA it's getting increasing amounts of value.
+[  428.28s ->   432.80s] If it's trending up, that means we have our buy. So if we're above the 200 day moving average,
+[  433.52s ->   438.62s] we're below this level, and the 10 period is trending up, that is our short term uptrend.
+[  438.84s ->   443.28s] Next, we need to make sure this is a small caveat that we have on the trade, that when you do this,
+[  443.28s ->   447.62s] it just increases your win rate, but you don't want to enter when the stock has crashed massively.
+[  447.62s ->   452.48s] It is great to enter on red days, but when it's starting to crash massively, you kind of want to
+[  452.48s ->   458.48s] stay away from it. So you want to make sure that the stock price is greater than 15. Why is that the
+[  458.48s ->   462.56s] case? Well, because if we're trading the trend up and it starts to massively drop, should we enter that?
+[  462.82s ->   467.68s] No, we want to wait till we start to see the dip form or we start to see a move back up. We're
+[  467.68s ->   472.46s] trading the trend. We're not buying on a low point and hoping and guessing it's going to rise against us.
+[  472.46s ->   478.26s] We're trading the trend. So those are our criteria right there to set up this trade. Again, that's
+[  478.26s ->   484.80s] all shown to you automatically when you have this indicator enabled right here. When you say enable
+[  484.80s ->   489.82s] blue white lines, when you see this here, it's enabled for you already. So again, but these are
+[  489.82s ->   494.86s] the specific criteria if you want to know them for yourself. Next, how do we set up the credit spread
+[  494.86s ->   500.48s] trade? Well, a credit spread trade is set up by selling one option and buying another. So let's walk
+[  500.48s ->   505.28s] through this as an example. So let's say we're going long on this. Let's say we're looking to
+[  505.28s ->   509.16s] trade long because it's breaking above resistance or something like that. Then what we're going to do
+[  509.16s ->   514.14s] is we're going to pick our level and we're going to sell a put option. So we're going to sell a put
+[  514.14s ->   518.48s] option here. So that means we collect money. When you sell an option, you collect money. Why? Well,
+[  518.52s ->   522.26s] because anytime you sell anything in the world, somebody has to give you money for that. So if you sell a
+[  522.26s ->   527.44s] bike, someone's paying you money for that bike. So we're giving someone an options contract and
+[  527.44s ->   532.20s] they're giving us money. So now we collect money. Let's say we collect, that's a terrible plus sign.
+[  532.46s ->   537.80s] Let's say we collect $100. Cool. Now we're going to have protection, right? Because credit spreads
+[  537.80s ->   545.02s] have a stop loss built into them. So we're going to buy another put right below it. When we do that,
+[  545.18s ->   552.16s] now we pay money for that contract, which is our protection. And let's say we pay $50. So we get
+[  552.16s ->   560.40s] $100 from the first contract we sell. And then we give up 50 to get that protective option. So that
+[  560.40s ->   565.86s] means our net difference is going to be $50. So that means if this trade goes well and stays above
+[  565.86s ->   571.56s] my level, I will make $50. That's why the spread comes in. It's the credit between the two options
+[  571.56s ->   579.02s] prices. That spread is what I make. So that's $50 in this example. So that's kind of how we see
+[  579.02s ->   584.44s] what the credit spread is. It's two different options set up to put on that order. Now,
+[  584.76s ->   588.10s] when we're setting up an option, we have to look at multiple different things. They have strike
+[  588.10s ->   592.14s] prices. They have expiration dates. They have deltas. They have different things like that. So
+[  592.14s ->   596.52s] when we're entering in this trade, this is what we're looking for. We're looking at the current date.
+[  596.68s ->   601.10s] Then we go out nine days around to the next Monday, Wednesday, or Friday. So we're looking to trade
+[  601.10s ->   608.98s] the Monday, Wednesday, Friday expiration dates nine days out. So when you go into the options chain and you see
+[  608.98s ->   614.18s] how far out each contract or each expiration period is, it says one day left, two days left,
+[  614.28s ->   618.62s] five days left. Look for one that is closest to nine days. And that's going to be the one that you
+[  618.62s ->   623.58s] trade. Next, you want to target a 30 Delta. This shows you how far away from the stock price you
+[  623.58s ->   629.72s] are. So 30 Delta is your key level to enter in at. Why? Well, because 30 Delta gives us a nice buffer,
+[  629.86s ->   634.14s] but also allows us to collect enough money for when we want to offset losses, which I'll be explaining
+[  634.14s ->   640.36s] here in a second. Next, you want to create a $1 wide strike put credit spread based on the 30 Delta
+[  640.36s ->   644.84s] short put. So what does this mean? It means that let's say we're going out to this level. We do the
+[  644.84s ->   651.02s] 30 Delta and this level is 445, for example. That means that I'm going to sell the 445 and I'm going
+[  651.02s ->   656.88s] to go $1 below it. So I'm going to buy the 444. So that's how I'm going to set up my credit spread
+[  656.88s ->   663.10s] trade on my broker. Again, in this course series, I'm going to put down below links to show you how to
+[  663.10s ->   667.12s] actually execute these credit spread trades, but I really just want to teach you these strategies
+[  667.12s ->   673.18s] in this video. All right, so let's remove this. Let's go into the bear play strategy again. That's
+[  673.18s ->   678.76s] when this line turns white. So if I come here again, I'm going to kind of come down. We can see
+[  678.76s ->   685.52s] the short play strategy here. So number one, we look for the SMA 10 price is less than yesterday's
+[  685.52s ->   691.34s] SMA 10 price. What does this mean? It means that the 10 period moving average is moving lower. It's
+[  691.34s ->   695.38s] moving down. When it's moving up, we're trending up. When it's moving down, we're trending down.
+[  695.46s ->   699.98s] So that's the first criteria we look for. Number two, we want the stock price to be less than the
+[  699.98s ->   705.74s] SMA 10. So not only do we want this line to be curving down, but we want the stock to be below this
+[  705.74s ->   711.56s] line, showing that momentum and strength is to the downside. Next, the stock price is greater than
+[  711.56s ->   717.30s] minus three standard deviations of the 200 day moving average. So this bottom line, it's the same
+[  717.30s ->   721.34s] reason for the upside when we stayed out of it when it was above this line, because this shows
+[  721.34s ->   726.16s] our support level. So let me get rid of the shawling. So that means that if the stock starts
+[  726.16s ->   732.14s] to break below it, there's a good likely chance, a good chance that it bounces. So you can see here
+[  732.14s ->   735.96s] that it went below and then it bounced. It went below and then it bounced. And so if we're trading
+[  735.96s ->   740.74s] a call credit spread, we want the stock to drop. So if there's a good chance that it bounces here,
+[  740.80s ->   745.22s] that's not a level we want to be in. So again, we want the 10 period moving average to be
+[  745.22s ->   749.34s] curving down. We want the stock to be below it, but we want the stock to be above this level
+[  749.34s ->   754.16s] because that is our mathematical support. Number one, we want the stock price to be no more than
+[  754.16s ->   761.70s] 1%, no less than 1%. So again, what we mean by that is no more than one, no less than minus one.
+[  761.78s ->   766.26s] So we're looking at that range, aka the daily moving range that just increases our win rate. It's
+[  766.26s ->   771.14s] something I noticed through thorough back testing. So again, it just means no significant moves. Why?
+[  771.14s ->   775.52s] Because significant moves mean that the trend could be changing or something like that. And we want to
+[  775.52s ->   779.40s] jump on a trend that's moving. Well, we don't want to jump on a trend that's potentially changing
+[  779.40s ->   786.04s] against us. Next, the stock price is not less than one standard deviation of the 200-day moving average,
+[  786.16s ->   791.34s] nor greater than the 200-day moving average. So this can complicate some people. So let me show you
+[  791.34s ->   797.52s] this visually. When we are within a certain level being the 200-day moving average, which is this gray line,
+[  797.52s ->   803.48s] and the one standard deviation, which is this light, faint gray line, if you can see that,
+[  803.80s ->   810.56s] when we're in this range right here, we do not want to be short. Just historically speaking,
+[  810.64s ->   817.12s] when we look at the data, if we get short in this period, we have a very low win rate. So when we
+[  817.12s ->   822.60s] stay out during this period, we not only increase our win rate from 72% win rate to 76% win rate,
+[  822.60s ->   828.46s] but we make more money in the long run. So why is this the case? Well, because when we get inside
+[  828.46s ->   833.88s] this range, there's a very high likelihood that the market will find support and bounce. And again,
+[  834.18s ->   837.26s] what are we looking for? We're not looking for the market to go against us. We're looking to trade
+[  837.26s ->   841.60s] the trend. So we do not want it to go against us. So since this has a high likelihood chance of going
+[  841.60s ->   846.84s] against us, we just stay out during that period. So that is something that we're doing as well.
+[  846.84s ->   851.40s] Next, how do we set up this trade? Well, it's the same way we set up a put credit spread,
+[  851.74s ->   856.04s] except to the upside. So let's say we're going short here. We're going to go out and we're going
+[  856.04s ->   862.06s] to put a level here where we think the stock will stay above. And then once the stock stays up,
+[  862.38s ->   868.14s] or I mean, the stock will stay below, and then we go $1 above that. And that's how we structure
+[  868.14s ->   874.16s] our call credit spread trade. Just like that. We sell a call option. We collect money. We buy an option
+[  874.16s ->   878.64s] above it because it's further away from the stock and we give up money. And that spread is our
+[  878.64s ->   883.66s] difference. And that's how we put on a call credit spread trade. The specifics of it, the same thing
+[  883.66s ->   889.48s] as before with our expiration date, we're looking for that nine days out expiration date. Next,
+[  889.50s ->   894.96s] we're going a bit further out. 25 Delta is further away from the stock price than a 30 Delta is. So
+[  894.96s ->   901.36s] we're looking to go 25 Delta out and we're creating a one wide strike, a $1 wide strike call credit
+[  901.36s ->   907.26s] based on the 25 Delta short. So the 25 Delta short, let's say is 450. So we're going to sell the 450
+[  907.26s ->   914.22s] call. Then we're going to go one above it, 451 and buy the 451. So again, that's exactly how this
+[  914.22s ->   920.02s] works. And that's how you can structure this trade to make money. So let's get into the specifics of
+[  920.02s ->   926.28s] sizing and more like that. Again, all that is explained here in this document, the exit rules
+[  926.28s ->   930.52s] and stuff like that. But I want to give you a visual explanation here. So let me remove
+[  930.52s ->   935.92s] all these drawings and get into it. So I think that's the drawing as well. Move that,
+[  936.02s ->   940.20s] remove that. Okay. So if we're looking at this, how do we manage different things? Well,
+[  940.26s ->   946.06s] our number one rule that will save us from a lot of headache is position sizing. We get position
+[  946.06s ->   950.74s] sizing, right? We will survive in this game no matter if the market crashes or not. And we're
+[  950.74s ->   955.60s] making money or not. We will survive. If you get position sizing wrong with credit spreads,
+[  955.60s ->   961.46s] you will blow up your account faster than you'll ever realize. And so again, I've seen this happen
+[  961.46s ->   967.32s] to too many great traders or too many traders in general, is that they size up way too much because
+[  967.32s ->   970.56s] they know that credit spreads have a high win rate. And so they want to take advantage of it.
+[  970.66s ->   975.04s] Then it goes against them and they lose almost all their money. So sizing is one of the most crucial
+[  975.04s ->   981.90s] things ever. So let's get into position sizing. So again, position sizing works based on your account.
+[  981.90s ->   988.60s] Now, let's say we have a $10,000 account. All right. What we need to determine is how much money
+[  988.60s ->   993.12s] are you willing to lose during a losing streak? When you're trading credit spreads, because of the
+[  993.12s ->   997.76s] high win rate, there tend to come losing streaks, not loser, winner, winner, winner, loser, winner,
+[  997.76s ->  1002.60s] winner, loser. It tends to be loser, loser, loser, and then a huge streak of winners too. So we tend to
+[ 1002.60s ->  1006.70s] get our losers and streaks. So when that happens, you need to understand for yourself, how much are you
+[ 1006.70s ->  1014.38s] willing to lose during a losing streak? So let's say I have $10,000, which means let's just say,
+[ 1014.44s ->  1022.26s] for example, I'm okay losing, let's say $2,000 on a losing streak. If I'm okay losing $2,000,
+[ 1022.80s ->  1029.34s] then that actually shows me how much I can stand to lose for every single trade. So our average
+[ 1029.34s ->  1035.62s] losing streak is roughly, I mean, when we have a super long losing streak, it's around seven.
+[ 1036.32s ->  1042.84s] So if we have seven losers in a row for our longest losing streak, and we are okay with losing $2,000,
+[ 1043.30s ->  1050.00s] then we're going to take the $2,000 divided by the seven trades in a row. So that shows us how much
+[ 1050.00s ->  1056.90s] we can risk per trade. So if I bring this in here, it shows us $2,000 divided by seven gives us $285.
+[ 1056.90s ->  1062.96s] So let's round up. So $300 is the amount of risk I can take per trade. If $300 is the amount of risk
+[ 1062.96s ->  1068.16s] I can take per trade in order to only lose this much money during my worst case scenario,
+[ 1068.52s ->  1073.52s] which is seven losers in a row, then I can only put on three trades. Why? Well, because for credit
+[ 1073.52s ->  1080.60s] spreads, especially a $1 wide credit spread, it takes $100 of risk to put on a trade or $100 of
+[ 1080.60s ->  1086.54s] collateral to put on a trade. And because of that, divided by 100, that means that we can put on
+[ 1086.54s ->  1093.00s] three spreads. So with a $10,000 account with the risk size that I am okay with, I can only put on
+[ 1093.00s ->  1098.58s] three spreads per trade. Now, again, I can be in multiple trades. I can be up to two trades a week.
+[ 1098.68s ->  1103.20s] I could be two trades one week, two trades another week, two trades another week. But again, as long
+[ 1103.20s ->  1110.70s] as I have three spreads per trade, then my risk will be managed correctly. And so again, three spreads
+[ 1110.70s ->  1116.68s] per trade is my risk management based on a $10,000 account and me being okay with losing $2,000 during
+[ 1116.68s ->  1120.46s] the worst case scenario. So again, you need to determine this and do this math for yourself
+[ 1120.46s ->  1125.80s] to determine where you stand. Because again, if you do not get sizing right, you will blow up your
+[ 1125.80s ->  1132.38s] account faster than blinking your eyes. So that is number one. Number two, how do we exit for a profit
+[ 1132.38s ->  1139.58s] or exit for a stop loss? Well, quite simple. Again, when the trend starts trending, when the trend
+[ 1139.58s ->  1144.12s] starts going in our favor, right? Like let's say we enter a put credit spread here, which makes money
+[ 1144.12s ->  1148.78s] to the upside. This is our level. As long as the stock stays above this, we make money. Then the
+[ 1148.78s ->  1154.18s] market goes up. The more the market goes up, the faster we make money or the more money we make,
+[ 1154.26s ->  1158.82s] right? Because it's moving away from our price, which means that we're more likely that the trade will
+[ 1158.82s ->  1163.88s] go in our favor. So we make money. And so we make money and we can exit early. So again, we're typically
+[ 1163.88s ->  1171.94s] entering credit spreads around $0.20 to $0.25, which means that when I enter a trade, I'm going to make
+[ 1171.94s ->  1180.90s] $0.20 to $0.25 per spread. And so that is my max profit. But I'll say the trend starts going in my favor.
+[ 1181.04s ->  1187.18s] I'm going to exit around $0.05, which means that if it's trading at $0.05 or less, I want to get out of the
+[ 1187.18s ->  1192.38s] trade. Why? Well, because I made most of my profit, I can get out and I don't have to worry about the
+[ 1192.38s ->  1195.70s] risk and instead can use that money I just made to put into the next trade and roll that into the
+[ 1195.70s ->  1201.08s] next trade and then compound my profits. So again, if the trade's going in your favor, you can close
+[ 1201.08s ->  1207.98s] it for $0.05 or less. Do it. You still make a great profit and you're reducing risk from your trading
+[ 1207.98s ->  1213.54s] size. So again, that's what we're looking to do. Enter around this level and exit around this level
+[ 1213.54s ->  1219.30s] for our take profit level. For a stop loss level, what do we do? When we put on a credit spread,
+[ 1219.40s ->  1223.20s] we are betting that the stock will stay above a certain level. In this instance, we're saying
+[ 1223.20s ->  1227.88s] that'll stay above this level. If that stock happens to go like this and then break this level,
+[ 1228.26s ->  1233.64s] why would we hold on to the credit spread? Is there a chance that it comes back up in our favor and
+[ 1233.64s ->  1237.74s] makes money? Yes, of course there's a chance, but there's also a chance it doesn't and we end up
+[ 1237.74s ->  1243.52s] losing a lot of money. So as soon as the stock breaks your level, exit out of the trade. In other
+[ 1243.52s ->  1249.46s] way that credit spreads work, the price you get for the credit spread shows your likelihood chance
+[ 1249.46s ->  1254.92s] of winning the trade. What do I mean by that? Well, if we're collecting a $0.20 spread, that means
+[ 1254.92s ->  1261.82s] we have an 80% chance of the market not coming down to our level. If we get to this level and we're here
+[ 1261.82s ->  1267.40s] at our level that we picked, what's the likelihood that it goes up versus goes down? Well, it's 50-50.
+[ 1267.72s ->  1272.12s] There's an equal likelihood chance that the trade makes money or not because it's at that level.
+[ 1272.12s ->  1278.18s] And so that means that the spread will be roughly priced at $0.50. $0.50 is our mid-price level.
+[ 1278.28s ->  1283.42s] Once we hit that strike price, it will be trading around $0.50. And so that's how we manage it. So
+[ 1283.42s ->  1290.02s] again, we enter in, we get about $0.20 to $0.25. If it goes up, we exit at $0.05 or we hold till
+[ 1290.02s ->  1296.98s] expiration. If it goes against us and hits our strike price, then we exit at $0.50, which means that if
+[ 1296.98s ->  1303.86s] we enter at $20, we stand to make $20. If we exit for a stop loss, that means we're closing at $50.
+[ 1304.20s ->  1309.98s] So that means a net loss of $30 because we entered at $20. So that's a great trade out here. You make
+[ 1309.98s ->  1314.48s] $20, you risk $30. That's a really good trade, especially when you manage risk. So that's how
+[ 1314.48s ->  1320.10s] you manage risk correctly using this system. Now, one thing we do have to talk about is something that
+[ 1320.10s ->  1324.72s] it's been prevalent in 2023. And again, can be prevalent in the future, depending on how the
+[ 1324.72s ->  1330.50s] market behaves is what is called range bound markets. So again, you can see here, if we zoom
+[ 1330.50s ->  1334.72s] out, we have trending markets. This is an uptrending market. This is a downtrending market. This is an
+[ 1334.72s ->  1338.92s] uptrending market. This is a downtrending market. This is an uptrending market. But sometimes we get
+[ 1338.92s ->  1344.14s] put into weird phases like this, where the market is range bound. When the market is range bound,
+[ 1344.14s ->  1350.68s] how do we trade this? Why? Well, because look, let's say I enable a CSCT indicator. I want to
+[ 1350.68s ->  1356.16s] see which way the market's trending. So I come over here and I enable this little white, gray,
+[ 1356.26s ->  1360.06s] blue line. Again, when it's blue, I enter a put credit spread. When it's white, I enter a call
+[ 1360.06s ->  1366.42s] credit spread. And so when I look at these levels, what I start to notice is that, let's say I'm
+[ 1366.42s ->  1371.88s] getting short here. So I do a call credit spread and then the trend reverses. And now my call credit
+[ 1371.88s ->  1375.58s] spreads here end up losing money because it reverses against me. And so again, when we're
+[ 1375.58s ->  1379.38s] in this range bound market, where it goes up, down, up, down, up, down, you can easily be in a lot
+[ 1379.38s ->  1383.02s] of uptrend trades and then it reverses against you when you have that losing streak. So how do you
+[ 1383.02s ->  1388.70s] avoid that? Well, number one is by making sure you monitor these gray points of the line, these areas
+[ 1388.70s ->  1393.08s] where we stay out of the market just because the risk is high. When we do that, we naturally increase
+[ 1393.08s ->  1399.34s] our win rate. But what else can we do? When we start seeing the market push into resistance,
+[ 1399.34s ->  1404.64s] what we should start doing is we should start taking off profits. If we have a profit on
+[ 1404.64s ->  1409.58s] trade, take off profits and we should enter in, if we do continue to enter in trades, enter
+[ 1409.58s ->  1415.30s] in half size. So when are these periods? Number one, when we break into this top line, when we
+[ 1415.30s ->  1420.00s] start hitting this, this top line, we should start taking profits. And if we do want to enter
+[ 1420.00s ->  1424.68s] trades, enter very light size and enter both a put credit spread and a call credit spread.
+[ 1424.68s ->  1429.92s] So we can make money on both sides if it starts to reverse against us. Next, another area.
+[ 1430.70s ->  1435.30s] When we start getting inside these two faint gray lines, this means that we are in a lot
+[ 1435.30s ->  1439.30s] of consolidation where we're going to go up and down and sideways a lot. So you can see
+[ 1439.30s ->  1444.70s] here, rejection, bounce, rejection, broke above and now it's trending up. But in this gray zone
+[ 1444.70s ->  1450.48s] right here, we need to trade support and resistance levels. We need to trade the bounces here, buy
+[ 1450.48s ->  1455.32s] put credit spreads or it's just a sell put credit spreads when we get to these levels, sell call
+[ 1455.32s ->  1461.04s] when we hold this resistance, put credit spreads when we enter here. And again, during, during
+[ 1461.04s ->  1464.70s] this period, because we're not following the trend, we want to do half size. So let's say
+[ 1464.70s ->  1469.34s] if I normally trade three spreads per trade, then I'm only going to trade one or maybe two,
+[ 1469.42s ->  1473.36s] but I'm not going to go full size in case I have a loss. So you can see here during these
+[ 1473.36s ->  1477.54s] gray periods, we just tend to go up and down. So we need to trade the low points and the high
+[ 1477.54s ->  1483.28s] points for our credit spread. And that can help us make money and avoid losing money during
+[ 1483.28s ->  1488.86s] these volatile periods. Now next, what is another market environment where credit spreads tend
+[ 1488.86s ->  1495.86s] to not do well? That is a low volatility market. Why? Well, when VIX, which is our volatility index
+[ 1495.86s ->  1501.26s] starts to come down, which is what we've been seeing since late October. So again, for the past
+[ 1501.26s ->  1507.12s] month, VIX has just been shrinking. This means that it's harder to get collect enough premium further
+[ 1507.12s ->  1513.16s] away from the stock. What does VIX do? VIX allows us to go further away from the stock price and still
+[ 1513.16s ->  1518.02s] collect a good amount of money, right? The further away we are from the stock, the higher our win
+[ 1518.02s ->  1523.44s] rate is because the less likely it is for the stock to drop that far, right? And so again, when we're
+[ 1523.44s ->  1527.26s] able to move far away and still collect a good amount of money, that is great. But when VIX is low,
+[ 1527.60s ->  1533.10s] we have to come close to it and set our levels closer to the stock price. So that is going to mess
+[ 1533.10s ->  1539.88s] with our win rate slightly. When VIX pops, we could have an issue. So something to understand is when
+[ 1539.88s ->  1545.42s] volatility is low, start sizing down a bit. When volatility pops up, you can increase back up to your
+[ 1545.42s ->  1551.38s] normal sizing and start sizing your positions based on the level of VIX and how far away from the stock
+[ 1551.38s ->  1557.04s] you can go. So those are two very important markets, range amount markets and low volatility
+[ 1557.04s ->  1563.04s] markets that you need to understand to help you increase your credit spread win rate. Now, congrats
+[ 1563.04s ->  1568.10s] on watching this whole video. Again, you can join our program where we teach credit spreads,
+[ 1568.18s ->  1573.54s] where we trade this exact setup, these rules, these systems, and a program in our private discord with
+[ 1573.54s ->  1580.36s] weekly coaching and algo alerts that based on this line, tell us when to get in and when to get out
+[ 1580.36s ->  1583.92s] and gives us these specific levels. So if you don't want to waste your time staring at a screen,
+[ 1584.00s ->  1588.72s] it shows you exactly what to do. So if you want to join that program today with a free trial,
+[ 1588.72s ->  1595.84s] which is again, a very limited access, you can do so clicking the link down below. And that is just
+[ 1595.84s ->  1601.78s] for you for people who have watched this course. Because you watch this course all the way through
+[ 1601.78s ->  1605.52s] and you've learned our system and you like it and hopefully put on some trades to learn how it works.
+[ 1605.68s ->  1612.82s] I want to give you a 50% off discount code that is only good until December 31st at midnight. So
+[ 1612.82s ->  1618.22s] thank you for watching this video. Here's your chance to save 50% on our algo alerts, our coaching,
+[ 1618.48s ->  1623.92s] and so much more. Again, you get access to our 10% credit spreads yearly program, which is normally
+[ 1623.92s ->  1631.38s] $997, but you get 50% off today with the discount code I'm about to show you. You get the CSCT indicator
+[ 1631.38s ->  1638.16s] for free, which I showed and we use in this video. Number two, as a bonus, you get the ISU lifetime access.
+[ 1638.16s ->  1641.88s] So if you're a swing trader and you want to learn how to research stocks and have that done for you
+[ 1641.88s ->  1647.54s] based on trending or trend following, you can do that with our ISU lifetime account, which is
+[ 1647.54s ->  1653.08s] another software that you get lifetime access to, which is a $5,000 value. You also get 48 weeks of
+[ 1653.08s ->  1658.08s] coaching so you can learn exactly how to put on credit spreads and how to trade them well. And so
+[ 1658.08s ->  1663.94s] again, if you click on the link over there on the next page, again, you can go over here to this and
+[ 1663.94s ->  1670.38s] go to your discount code and on the discount code, it is Christmas 50 Christmas because the
+[ 1670.38s ->  1679.84s] Christmas discount to get 50% off. And that changes your plan from $997 a year down to $498 and 51 cents.
+[ 1679.90s ->  1684.24s] So anyways, guys, I hope you enjoy that and take advantage of this coupon code. Thank you so much
+[ 1684.24s ->  1689.82s] for watching the video, regardless of if you sign up the information on this video, if applied can
+[ 1689.82s ->  1694.38s] actually make you a lot of money. And so my goal is for you to go and apply that, learn, see how it
+[ 1694.38s ->  1697.96s] works. And when it starts working, then you want to join our program so we can work closer together
+[ 1697.96s ->  1701.88s] and do so with a community of traders that are doing this just like you. So anyways, take advantage
+[ 1701.88s ->  1707.86s] of this 50% offer before it's too late and expires on December 31st at midnight. All right, guys, see you later.

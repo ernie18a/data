@@ -1,0 +1,61 @@
+[    0.72s ->     6.40s] All righty, hey everyone, how's it going? It's Roman LaQuant here, and nice to finally see
+[    6.40s ->    12.62s] everybody, or for everybody to see me at least. Today what I'd like to do is sort of talk about
+[   12.62s ->    18.02s] the library that I've been building out for the past couple months or so. I'm a quantitative
+[   18.02s ->    23.32s] research intern right now at Bloomberg, and I've been building out this library to assist in
+[   23.32s ->    28.42s] providing just a bunch of different utilities for quantitative research, mainly for equity alpha
+[   28.42s ->    34.18s] research, and theoretical pricing research. So we're going to go ahead and start on my GitHub here,
+[   34.18s ->    39.14s] and let's dive right in. So let's just go ahead and navigate on over to QFIN. That's what the
+[   39.14s ->    44.28s] library is called. It stands for quantitative finance. Back at college, I was a quantitative
+[   44.28s ->    49.14s] finance and mathematics double major, and we always referred to the program as QFIN, so
+[   49.14s ->    55.90s] paying a little homage to the old QFIN program there. And then if you want to go ahead and install
+[   55.90s ->    61.44s] this, this is persistent on PyPy, so all you got to do is run a pip install QFIN, and then all the
+[   61.44s ->    67.92s] other dependencies will be installed along with this library. Now this is a working library, so there
+[   67.92s ->    73.84s] are some features that are yet to be released, mainly surrounding the bond pricing, futures pricing,
+[   74.40s ->    81.36s] swaps, and such for theoretical pricing. And then for the equity alpha research, I am in the process
+[   81.36s ->    87.86s] of packaging the web scraper and natural language processing models for generating financial
+[   87.86s ->    93.46s] sentiment. So that will be released shortly, and that's the main driver for my equity alpha research,
+[   93.52s ->    98.30s] at least, is in the realm of natural language processing. So I'm very excited to share that
+[   98.30s ->   102.20s] with this library, and I'm very excited to release that in the next version.
+[  102.74s ->   107.58s] So let's go ahead and take a look at some of the modules that I have already publicly available.
+[  107.58s ->   113.70s] So for starters, we have Black-Scholes pricing. This is based on Black & Scholes, shockingly enough,
+[  114.08s ->   119.04s] from their 1973 paper, their closed form solution to European call and put pricing,
+[  119.30s ->   124.98s] based on an underlying stochastic process, geometric Brownian motion, which we will actually go ahead
+[  124.98s ->   129.86s] and talk about in a moment. But for now, yes, we have Black-Scholes pricing, so you can go ahead
+[  129.86s ->   134.74s] and instantiate a Black-Scholes call or a Black-Scholes put, provide the five parameters, and then
+[  134.74s ->   140.64s] you will end up with your appropriate price. Along with these prices, you can generate the Greeks
+[  140.64s ->   146.98s] to determine how the options value will change with respect to some of these inputs. So you have
+[  146.98s ->   152.82s] your Delta, which is sensitivity to underlying asset price, Gamma, which is the second order sensitivity
+[  152.82s ->   159.40s] to underlying asset price. Then you have your Vega, which is the sensitivity to underlying volatility
+[  159.40s ->   165.22s] changes, and then your Theta, which is sensitivity with respect to time to maturity.
+[  167.17s ->   173.17s] Now, as far as stochastic processes go, I also offer two stochastic processes with more to come. I'm
+[  173.17s ->   181.03s] working on an extension of the stochastic volatility model. I'm going to be working on the Bates and
+[  181.03s ->   189.15s] Merton, and they're essentially more complicated stochastic volatility models. So for now, we have
+[  189.15s ->   194.69s] geometric Brownian motion and a stochastic variance process offered by Heston in 1993. Essentially,
+[  195.15s ->   200.39s] the only difference between these two, and there are more complicated differences, but if you're
+[  200.39s ->   205.25s] relatively new to stochastic processes and you're only familiar with geometric Brownian motion,
+[  205.71s ->   212.31s] then the extension to a stochastic variance process is that instead of one Wiener term, there are two.
+[  212.31s ->   221.31s] So volatility in the model is also a function of randomness. So we have these two stochastic
+[  221.31s ->   228.79s] processes, and these are going to be used to aid as pretty much the engine to pricing exotic options.
+[  229.21s ->   234.91s] So in terms of exotic options, Monte Carlo simulations are going to be using those two stochastic processes
+[  234.91s ->   240.31s] as the primary driver of price. And if you take a look, it's relatively straightforward to price
+[  240.31s ->   245.19s] exotic options and even vanilla options as a baseline example. So you can see the convergence
+[  245.19s ->   251.19s] to a Black-Scholes price under the right parameter set. All you got to do is import the option you're
+[  251.19s ->   257.11s] looking to price via Monte Carlo simulation from the simulations module. Currently, I support vanilla
+[  257.11s ->   263.81s] options, binary options, barrier options, Asian options, and extendable options. And I'm going to go ahead
+[  263.81s ->   270.05s] and add a whole bunch more as well as time goes on. This next release, though, is going to be more
+[  270.05s ->   276.27s] oriented towards natural language processing and alpha research, as I had mentioned earlier. But it's
+[  276.27s ->   283.51s] very straightforward to go ahead and actually price these options. So all you got to do is import
+[  283.51s ->   290.69s] the appropriate option, and then you provide parameters based on the underlying stochastic process
+[  290.69s ->   295.89s] that you'd like to use to model the price after. So what I mean by that is if I only provide geometric
+[  295.89s ->   301.89s] Brownian motion parameters, then the Monte Carlo is going to automatically use that as the stochastic
+[  301.89s ->   307.49s] process that drives the price. If I provide more parameters beyond geometric Brownian motion,
+[  307.49s ->   314.21s] that is the Heston model parameters, then it's going to be using that as the underlying stochastic process
+[  314.21s ->   318.85s] to drive the price. Thank you so much for watching. I hope you enjoyed this introduction to my
+[  318.85s ->   324.13s] library and the first time that I was able to see everybody, or like I said, everybody can see me.
+[  324.61s ->   328.93s] I just wanted to touch on if you're unfamiliar with any of the topics that I had discussed today,
+[  328.93s ->   335.01s] I do have a lot of other repositories kind of walking through everything that I discussed from
+[  335.01s ->   341.89s] theoretical pricing to Monte Carlo pricing with accompanying articles on medium that goes ahead and
+[  341.89s ->   346.53s] explains line by line everything that's going on. So if you're unfamiliar with any of these topics,
+[  346.53s ->   349.57s] feel free to check those out. If you have any questions, you can always reach out to me.
+[  350.69s ->   357.60s] But yeah, thanks for watching. I'm excited to continue building out that library and I'm very
+[  357.60s ->   368.64s] excited to continue that other series that I had started on quantitative finance. So thanks and take care.

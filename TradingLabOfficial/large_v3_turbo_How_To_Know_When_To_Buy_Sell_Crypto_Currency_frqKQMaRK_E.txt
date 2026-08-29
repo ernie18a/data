@@ -1,0 +1,212 @@
+[    0.00s ->     4.30s] This tool has predicted the exact bottom of Bitcoin every single time.
+[    4.40s ->     8.18s] And if you follow just this one tool for the past five years on Bitcoin,
+[    8.42s ->    11.92s] meaning you bought when it said to buy and sold when it said to sell,
+[   12.08s ->    15.90s] you would have made 5,142%.
+[   15.90s ->    20.32s] Not only that, but I'll be sharing three secret tools that I use on a daily basis
+[   20.32s ->    22.86s] to know exactly when to buy and sell Bitcoin.
+[   23.68s ->    25.24s] Let's jump straight into it.
+[   25.26s ->    26.20s] Let me paint you a picture.
+[   26.36s ->    29.60s] Imagine a tool that could track all the wallets on the crypto network.
+[   29.60s ->    31.26s] Every single one.
+[   31.38s ->    33.18s] And while tracking all these wallets,
+[   33.32s ->    36.70s] it could see exactly when the majority of people were trading for a profit
+[   36.70s ->    39.66s] and when the majority of people were trading for a loss.
+[   39.72s ->    41.84s] Don't you think that could be some useful information?
+[   42.04s ->    45.32s] You see, fear and greed run the markets on a day-to-day basis.
+[   45.54s ->    50.10s] When the majority of people are trading for a profit in a specific asset like Bitcoin,
+[   50.26s ->    54.40s] that's a pretty good indication that specific level is filled with greed
+[   54.40s ->    56.78s] and will likely be the top of Bitcoin.
+[   56.78s ->    61.10s] As it's inevitable that people will start taking profits and start selling,
+[   61.38s ->    63.66s] creating a snowball effect to the downside.
+[   63.94s ->    65.62s] Same goes for purchasing Bitcoin.
+[   65.70s ->    69.46s] For a majority of the time, it's a pretty good idea to be purchasing Bitcoin
+[   69.46s ->    72.54s] when the majority of people are trading for a loss.
+[   72.70s ->    75.72s] If only there was a tool that could track all of this for you
+[   75.72s ->    78.44s] and give you the exact statistics in real time
+[   78.44s ->    81.74s] so you wouldn't have to look them up yourself and have to do all of that work.
+[   81.74s ->    83.36s] There is. There is a tool.
+[   83.58s ->    88.10s] Introducing our first tool, the MBRV Z-Score on Glassnode.
+[   88.20s ->    91.70s] First step, go to the description of the video, click this Glassnode link.
+[   91.76s ->    93.16s] That'll bring you to this website.
+[   93.42s ->    95.04s] Go up here and click charts.
+[   95.24s ->    98.00s] On the left-hand side, there should be a category called market.
+[   98.10s ->    98.46s] Click it.
+[   98.56s ->   101.50s] Scroll down till you see the subcategory, MBRV.
+[  101.72s ->   102.30s] Click that.
+[  102.40s ->   105.84s] Then finally, click the MBRV Z-Score tool.
+[  105.96s ->   107.98s] It'll bring up a chart that looks like this.
+[  107.98s ->   111.18s] The black line is Bitcoin's price.
+[  111.32s ->   114.92s] The orange line is the market value, realized value of Bitcoin,
+[  115.14s ->   120.44s] which is basically just fancy talk for the profit ratio of long-term holders of Bitcoin.
+[  120.72s ->   125.22s] Historically speaking, these long-term holders tend to take profits at the right time,
+[  125.30s ->   129.60s] while the short-term holders are the ones who get stuck with the bag and take the loss.
+[  129.68s ->   134.08s] So statistically speaking, we should be doing the same as the long-term holders.
+[  134.08s ->   138.46s] So if we take a closer look at this chart, you'll see a red zone and a green zone.
+[  138.62s ->   143.54s] Whenever we enter into this red zone, that means long-term holders are an extreme profit.
+[  143.74s ->   148.30s] When we enter into this green zone, that means the majority of people are trading for a loss.
+[  148.40s ->   150.86s] So this tool is pretty simple to use, actually.
+[  151.00s ->   155.28s] While looking at this chart, we can more or less just completely ignore this black line.
+[  155.36s ->   159.76s] What we are more interested in is the MBRV, which is the orange line.
+[  159.76s ->   164.32s] As you can see from looking at this chart, whenever this orange line goes into this red zone,
+[  164.44s ->   167.26s] it has been the absolute top of the Bitcoin cycle,
+[  167.38s ->   170.78s] as this is where the majority of greed is taking place.
+[  170.92s ->   172.86s] Same thing goes for the opposite direction.
+[  172.96s ->   175.50s] Whenever the orange line has touched this green zone,
+[  175.68s ->   178.38s] it has been the absolute bottom of the Bitcoin cycle.
+[  178.48s ->   181.32s] And just look how accurate this tool has been in the past.
+[  181.38s ->   183.02s] Orange line comes down to this green zone,
+[  183.30s ->   185.36s] goes up, comes back down to this green zone,
+[  185.44s ->   187.40s] goes up, comes back down to this green zone,
+[  187.50s ->   187.98s] goes up.
+[  187.98s ->   190.42s] Every time price has come down to this zone,
+[  190.56s ->   193.14s] it has been the absolute bottom of the Bitcoin cycle,
+[  193.36s ->   195.04s] and Bitcoin goes up afterwards.
+[  195.24s ->   197.56s] So to use this indicator, it's pretty simple.
+[  197.70s ->   200.90s] You want to be buying as much Bitcoin as humanly possible
+[  200.90s ->   203.78s] when this orange line comes down to this green zone,
+[  203.88s ->   208.18s] as every single cycle bottom has started to reverse at this green zone.
+[  208.26s ->   210.40s] Whenever the orange line comes to this red zone,
+[  210.40s ->   212.74s] you should start looking to close your positions,
+[  213.16s ->   215.18s] as this is where greed starts to kick in,
+[  215.26s ->   217.20s] and will likely be the top of the cycle.
+[  217.20s ->   220.30s] So yes, this is more of a long-term indicator.
+[  220.42s ->   223.48s] Price isn't going to go to this green and red zone very often.
+[  223.58s ->   226.52s] But with that said, it's definitely important to know,
+[  226.64s ->   230.66s] so when it does happen, you know exactly how to capitalize on it.
+[  230.66s ->   233.88s] Also, you don't even need to use just Bitcoin for this tool.
+[  234.04s ->   236.58s] You can use this tool for Ethereum, Solana,
+[  236.58s ->   239.84s] Tron, or basically any token for that matter.
+[  239.96s ->   241.54s] Great tool to know, moving on.
+[  241.62s ->   242.04s] Next tool.
+[  242.16s ->   244.42s] But before that, how does 10% sound?
+[  244.60s ->   246.44s] 10% for what, you might be asking?
+[  246.48s ->   247.66s] I want you to imagine something.
+[  247.80s ->   250.68s] Imagine going out to dinner and getting a big old hefty bill.
+[  250.76s ->   253.26s] You got the surf and turf, so it's pretty pricey.
+[  253.30s ->   254.54s] You pull your card out of your wallet,
+[  254.68s ->   257.46s] but not just any card, the new Bybit card.
+[  257.60s ->   260.80s] Yes, believe it or not, Bybit has came out with a debit card,
+[  260.80s ->   264.52s] and to top it off, you get 10% cash back with it.
+[  264.62s ->   265.58s] 10%!
+[  266.22s ->   269.04s] The norm for credit cards these days is like 2%.
+[  269.04s ->   271.24s] You get 10% with this bad boy,
+[  271.32s ->   273.68s] and you can choose whether you get your cash back
+[  273.68s ->   276.36s] in Bitcoin, USDT, or Ethereum.
+[  276.54s ->   279.88s] You can spend this puppy at any place that accepts MasterCard,
+[  279.98s ->   281.18s] which is basically everywhere.
+[  281.30s ->   282.28s] It's pretty simple.
+[  282.42s ->   285.18s] The funds are just deducted from your Bybit account automatically
+[  285.18s ->   288.28s] with seamless conversion from crypto to fiat.
+[  288.28s ->   291.36s] So you can literally spend crypto and easily convert it
+[  291.36s ->   293.52s] to real-world money basically anywhere.
+[  293.66s ->   296.94s] Not only that, but the more you use it, the more points you get.
+[  297.12s ->   299.94s] And with these points, you can buy crypto airdrops,
+[  300.14s ->   302.26s] gift cards, and a ton of other things.
+[  302.34s ->   305.04s] If you use crypto at all and don't have this card,
+[  305.18s ->   305.90s] what are you doing?
+[  306.10s ->   308.56s] If you're interested in getting this card and trying it out,
+[  308.68s ->   310.14s] I'll leave a link in my description.
+[  310.34s ->   311.82s] I mean, 10% cash back.
+[  311.86s ->   312.60s] How can you beat that?
+[  312.66s ->   313.62s] Okay, back to the video.
+[  313.66s ->   314.08s] Next tool.
+[  314.18s ->   317.04s] Go to my description and click this link by trading view.
+[  317.04s ->   318.54s] It'll bring you to this website.
+[  318.70s ->   320.54s] Click products, then superchart.
+[  320.62s ->   323.32s] First things first, we want to do our analysis on Bitcoin.
+[  323.60s ->   326.42s] So come up here to the search bar and type in Bitcoin
+[  326.42s ->   328.40s] and click this first result.
+[  328.54s ->   332.58s] Next, go to your indicators tab and search Bitcoin PowerLog Corridor.
+[  332.70s ->   334.78s] Make sure you choose this one by this guy.
+[  334.86s ->   336.28s] When you first add it to your chart,
+[  336.38s ->   337.88s] it should look something like this.
+[  337.96s ->   340.20s] Next, go to the bottom right-hand corner of your chart
+[  340.20s ->   342.26s] and click this little hexagon tool.
+[  342.38s ->   345.42s] You're going to want to switch from regular to logarithmic.
+[  345.42s ->   348.92s] So now we're viewing the Bitcoin chart as a logarithmic function.
+[  349.12s ->   351.24s] And if we look at the full history of Bitcoin,
+[  351.60s ->   354.72s] you can see just how accurate this tool has been in the past.
+[  354.76s ->   358.00s] Every time Bitcoin has come down to this bottom green line,
+[  358.22s ->   360.80s] it has been the absolute bottom of the cycle
+[  360.80s ->   363.22s] and Bitcoin skyrocketed afterwards.
+[  363.48s ->   365.00s] Same goes for the other direction.
+[  365.14s ->   367.20s] Whenever Bitcoin has touched this red line,
+[  367.32s ->   370.78s] it has been the absolute top and Bitcoin crashed afterwards.
+[  370.78s ->   374.74s] So knowing this, how can we use this tool to benefit our trading?
+[  374.94s ->   377.62s] So how I personally will use it is like this.
+[  377.70s ->   379.94s] If I'm currently in any crypto positions,
+[  380.16s ->   382.08s] I will start to get more and more wary
+[  382.08s ->   385.38s] as price gets closer and closer to this red line.
+[  385.44s ->   387.76s] It's the exact opposite for this green line.
+[  387.84s ->   390.30s] If price ever comes down and touches this green line,
+[  390.42s ->   394.06s] you should be looking to buy as much Bitcoin as humanly possible,
+[  394.20s ->   397.72s] as you're pretty likely to be buying Bitcoin at a huge discount
+[  397.72s ->   399.84s] if it ever comes down to this area.
+[  399.96s ->   403.36s] And again, just look how accurate this tool has been in the past.
+[  403.44s ->   406.36s] It uses this green line beautifully as a strong support.
+[  406.46s ->   408.80s] Then once we start getting closer to this red line,
+[  408.92s ->   409.96s] it starts to reverse.
+[  410.18s ->   414.16s] Now, we shouldn't use this red line as a telltale sign for take profit,
+[  414.24s ->   417.12s] as it's not guaranteed that Bitcoin will even reach
+[  417.12s ->   419.66s] all the way up to this red line in the first place.
+[  419.74s ->   421.44s] For example, back in 2021,
+[  421.90s ->   423.74s] Bitcoin came close to this red line,
+[  423.84s ->   426.44s] but didn't fully reach it and fell anyway.
+[  426.44s ->   429.68s] So you shouldn't use it as an exact take profit indicator,
+[  429.90s ->   432.18s] but more or less use it as an indicator
+[  432.18s ->   435.62s] to know when to start getting wary and start looking to sell
+[  435.62s ->   438.66s] or when you should start looking to get excited to buy.
+[  438.80s ->   439.86s] Very useful indicator.
+[  439.98s ->   441.16s] Now, like I said before,
+[  441.34s ->   444.56s] the one major drawback of the indicator we just went over
+[  444.56s ->   448.04s] is that it's pretty good at telling you exactly when to buy Bitcoin,
+[  448.36s ->   449.62s] but when it comes to selling,
+[  449.80s ->   452.32s] it can really happen anywhere in this red zone.
+[  452.42s ->   453.68s] If only there was an indicator
+[  453.68s ->   456.48s] that could tell you exactly when the top was occurring,
+[  456.64s ->   457.70s] well, there is.
+[  459.18s ->   461.24s] Go to the indicators tab on trading view,
+[  461.40s ->   463.34s] type in Bitcoin cycle master,
+[  463.54s ->   465.40s] click this one by this guy.
+[  465.54s ->   467.38s] Next, go to the settings of the indicator
+[  467.38s ->   471.28s] and uncheck all of these boxes besides plot terminal price.
+[  471.40s ->   474.68s] I will also be changing the color of this indicator to yellow.
+[  474.84s ->   476.02s] While using this indicator,
+[  476.02s ->   477.68s] I like to use it in conjunction
+[  477.68s ->   480.46s] with the Bitcoin power lock corridor indicator
+[  480.46s ->   481.64s] we just went over.
+[  481.82s ->   483.44s] It's pretty similar in the sense
+[  483.44s ->   486.50s] that every time Bitcoin reaches this yellow line,
+[  486.68s ->   488.14s] it's most likely to top
+[  488.14s ->   490.40s] and Bitcoin is likely to fall afterwards.
+[  490.50s ->   492.88s] And remember how I was saying back in 2021,
+[  493.34s ->   495.08s] the Bitcoin power lock corridor
+[  495.08s ->   497.44s] didn't catch the exact top of this move.
+[  497.54s ->   499.86s] Well, this Bitcoin cycle master indicator
+[  499.86s ->   501.72s] caught it absolutely perfect.
+[  501.72s ->   503.10s] And if we zoom out,
+[  503.34s ->   506.28s] just look how accurate this indicator has been in the past.
+[  506.36s ->   509.00s] Every single time Bitcoin has reached this yellow line,
+[  509.16s ->   511.32s] it has been the absolute top of Bitcoin
+[  511.32s ->   513.84s] and the price fell directly afterwards.
+[  513.94s ->   515.42s] If you use this in combination
+[  515.42s ->   517.40s] with the Bitcoin power lock corridor,
+[  517.66s ->   520.06s] it can give you some absolute beautiful setups
+[  520.06s ->   521.28s] for your future trade.
+[  521.38s ->   522.88s] So yes, all of these indicators
+[  522.88s ->   524.74s] are more long-term indicators.
+[  524.78s ->   527.66s] And I know it doesn't fit the whole make money fast scheme
+[  527.66s ->   530.68s] that the majority of YouTubers pump out on a daily basis.
+[  530.68s ->   533.90s] Sure, price may only come down to this green zone
+[  533.90s ->   535.38s] once every three years,
+[  535.38s ->   538.90s] or it may only touch this yellow line once every two years.
+[  538.90s ->   541.20s] But if you truly want to be profitable in trading,
+[  541.56s ->   545.26s] these tools will give you the absolute best chance to do so.
+[  545.32s ->   547.82s] And you're way more likely to not only buy
+[  547.82s ->   549.96s] in very highly discounted zones,
+[  550.04s ->   552.34s] but also sell in areas where price
+[  552.34s ->   554.34s] is most likely to be overextended.
+[  554.50s ->   557.38s] So yeah, these indicators don't give signals very often.
+[  557.44s ->   559.18s] But now that you watch this video,
+[  559.18s ->   560.38s] when it does happen,
+[  560.52s ->   562.36s] you'll be ready to capitalize on it.

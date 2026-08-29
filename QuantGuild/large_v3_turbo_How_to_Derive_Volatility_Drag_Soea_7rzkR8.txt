@@ -1,0 +1,171 @@
+[    0.00s ->     5.88s] What is volatility drag and why should you care about it? Well, regardless of the portfolio that
+[    5.88s ->    11.96s] you hold, you are subject to geometric compounding of your returns. And everybody thinks trading is
+[   11.96s ->    17.72s] about having an edge. Well, it's not just about having positive expected value. You very well can
+[   17.72s ->    24.94s] have a strategy or a portfolio with positive expectancy that blows out or has no geometric
+[   24.94s ->    33.10s] growth in the long run. And that can be because of volatility drag. This is your geometric mean
+[   33.10s ->    38.06s] return. What exactly do I mean by this? We're going to derive the whole thing from scratch.
+[   38.06s ->    42.62s] And we're going to talk about the implications in broader quantitative portfolio management,
+[   42.62s ->    48.36s] whether it is going to be some form of active tactical management or passive management.
+[   48.36s ->    54.62s] So let's start with this value of our portfolio. We're going to call it V sub N. That is the value
+[   54.62s ->    62.38s] at period N is just going to simply be the product of one plus each individual period's return.
+[   63.47s ->    70.11s] This isn't really a crazy idea, right? This is literally how returns are going to compound
+[   70.11s ->    76.67s] over the life of a particular strategy, investment, whatever. Okay. Well, how can we rewrite this
+[   76.67s ->    83.55s] equation here? Well, I can write it using this big pie here. That just means I'm going to multiply
+[   83.55s ->    88.83s] everything on the inside together. And what that means is I'm going to start at a particular index,
+[   88.83s ->    95.87s] in this case, one, go up to period N. And on the inside, I'm going to have one plus R sub I.
+[   95.87s ->   104.94s] And if I expanded out this guy here, I would just get that equation above. All right. Where do we go from
+[  104.94s ->   112.38s] here? Well, what I can do is because each individual period's return is different, I can come up with some
+[  112.38s ->   121.02s] arbitrary variable. Let's call it capital R sub G that is going to yield the actual same value of this
+[  121.02s ->   129.90s] product with different returns using that single R sub G. In other words, I can come up with an R sub G
+[  130.46s ->   141.20s] such that these are equivalent. That is the expression above is equivalent to this guy here. This is going to
+[  141.20s ->   149.36s] let me take all of the individual returns and just compress this entire expression into this guy. And
+[  149.36s ->   158.40s] they're going to yield the same value at the end, V sub N. All right. Well, this allows us to then what?
+[  158.40s ->   163.84s] Get rid of this pie here because this is just going to be effectively the product of one plus R sub G
+[  164.48s ->   174.56s] how many times? Well, N times. So I'm just going to raise it to the Nth power. One plus R sub G raised to
+[  174.56s ->   185.47s] the Nth power. Where do we go from here? Well, now that we have this guy raised to the Nth power,
+[  185.47s ->   193.07s] we're going to be able to substitute it in on the left-hand side of this equation with respect to our
+[  193.07s ->   200.03s] individual returns. Because remember, everything here is equal, this terminal value, these expressions
+[  200.03s ->   206.43s] here, and this guy. So I can set up whatever equation I want. And I want to compare this guy
+[  206.43s ->   210.43s] to this guy. So what I'm going to do is I'm going to write that expression here.
+[  211.55s ->   219.15s] One plus R sub G raised to the N is equal to, and then I have that product, that same original product
+[  219.87s ->   226.51s] of one plus R sub I. These are the individual period returns from I equals one period one,
+[  226.51s ->   235.69s] all the way to N. All right. Well, products are a pain to deal with. What makes it easier? Well,
+[  235.69s ->   241.61s] taking the log actually makes this significantly easier. So I'm going to take the log on the left
+[  241.61s ->   248.57s] and right-hand side of both of these expressions here of this equation. And I'm going to get the natural
+[  248.57s ->   258.28s] log of then one plus R sub G raised to the N, which is equal to the natural log of the product
+[  258.28s ->   266.14s] expression, one plus R sub I. And if we recall our log rules, we're going to be able to take
+[  266.14s ->   273.02s] this exponent to the outside here. And we're going to be able to turn this product into a sum,
+[  273.02s ->   280.30s] just using our classic log rules. If I have the log of AB, this is equal to the log of A plus the
+[  280.30s ->   285.98s] log of B. Remember, we're dealing with the natural log here, log base E. So I'm just applying this
+[  286.62s ->   292.86s] to this product here. All right. Just anything inside that is a product, which is effectively
+[  292.86s ->   298.54s] this guy here, I can just turn into a sum. So the right-hand side is going to turn into effectively a
+[  298.54s ->   309.93s] series. And this is going to be the natural log then of one plus R sub I, I equals one to N. Again,
+[  309.93s ->   314.89s] that's just using that rule. And then on the left-hand side, I'm just going to drag that
+[  314.89s ->   323.82s] exponent to the outside. I'm going to get N, the natural log of one plus R sub G. And then I can just
+[  323.82s ->   330.86s] divide that N over to the right-hand side. And I'm going to get one plus R sub G is equal to
+[  332.06s ->   337.74s] one over cap N. That is the total number of periods. And then we have this summation
+[  338.97s ->   346.48s] of the natural log of one plus R sub I. So we did a lot of algebra to get here, really nothing
+[  346.48s ->   354.72s] particularly fancy yet. Now we're going to introduce the Taylor series expansion of the natural log of
+[  354.72s ->   361.76s] one plus X and we're going to use it on both sides of the equation. So what does that entail? Well,
+[  361.76s ->   368.00s] if I write the Taylor series expansion of one plus X from calc two, this is going to be equal to
+[  368.56s ->   377.76s] X minus one half X squared plus one third X cubed. And this is just going to continue in definitely.
+[  378.40s ->   386.48s] Now we don't exactly just want to substitute this infinite expansion in to the equation that we
+[  386.48s ->   392.96s] derived above. That doesn't exactly make it tractable for practical use. So what should we do? Well,
+[  392.96s ->   401.12s] if we acknowledge that in this equation here, we're dealing with returns and returns are typically what
+[  401.12s ->   408.48s] going to be reasonably small, close to zero, then what happens to these higher order terms?
+[  408.48s ->   413.28s] Well, think of it this way, right? So let's just write mathematically what that means, right? If we
+[  413.28s ->   419.36s] have it that these returns, right? And maybe I'll just use X since that's what we're looking at here
+[  420.56s ->   427.68s] is reasonably small. Then think of it this way. If we have 0.02, a 2% return,
+[  427.68s ->   435.80s] and we square it, we're going to take 2% of 2%. If we cube it, we're going to take 2% of that.
+[  436.36s ->   441.48s] And we're just going to keep going out to infinity. Yeah. At some point, that's just going to be
+[  442.28s ->   448.76s] incredibly small and different from zero, even starting at like X cubed. And from a machine
+[  448.76s ->   453.96s] precision standpoint, you get out to those higher order terms, it's going to be completely
+[  453.96s ->   459.48s] indistinguishable from zero anyway. So we can effectively write this as an approximation. So
+[  459.48s ->   464.52s] if I separate this guy here, that's me acknowledging that X is sufficiently small,
+[  464.52s ->   473.93s] we can write this as X minus one half X squared. So that's going to be our approximation. And this
+[  473.93s ->   479.53s] isn't me saying like, oh, you know, E is roughly equal to pi, which is roughly equal to three. No,
+[  479.53s ->   486.17s] this is like a very reasonable approximation. Okay. So how are we going to use this? Well,
+[  486.17s ->   493.13s] we're going to use this approximation here and this equation that we just came up with.
+[  493.13s ->   498.33s] So we're going to do it for both the left and the right-hand side. What do they turn into? Well,
+[  498.33s ->   506.75s] the left-hand side is just going to turn into write it down here. L N of one plus R sub G
+[  507.63s ->   515.71s] is equal to, or I should say approximately equal to R sub G minus one half R sub G squared.
+[  516.51s ->   521.63s] And then the right-hand side is probably a little bit more interesting. If we plug it in,
+[  521.63s ->   528.75s] we're actually going to get X or I'm sorry, we're going to get R sub I minus one half R sub I squared.
+[  529.47s ->   535.95s] So I'll write that here. This is going to be the left-hand side. The right-hand side is going to be
+[  537.64s ->   546.20s] one over N, the sum of one plus R sub I from I equals one to N. This is going to be approximately
+[  546.84s ->   559.08s] one over N, the sum from I equals one to N of R sub I minus one half R sub I squared. All right,
+[  559.08s ->   565.16s] very good. So then we can just write the equation. Now, making these two roughly equivalent to each
+[  565.16s ->   576.27s] other, the left and the right-hand side there, we have R sub G minus one half R sub G squared is
+[  576.27s ->   586.72s] approximately equal to one over N. And we can distribute that summation to both of these terms
+[  586.72s ->   598.84s] here. We're going to have R sub I minus I equals one to N. And this is going to be one half R sub I
+[  598.84s ->   608.17s] squared. Now that we have this guy here, what can we do? Well, if we acknowledge from statistics that
+[  608.17s ->   615.93s] anytime we are just summing up all of the values across a particular variable, then dividing it by the
+[  615.93s ->   623.21s] total number of values, we are going to get the mean. And that is because we have it that X bar
+[  624.17s ->   628.73s] is going to be, and I'll do this in orange, actually, like I did the Taylor series expansion,
+[  628.73s ->   637.24s] X bar is equal to one over N, the sum of X sub I, I equals one to N. Okay, well, I see that right here.
+[  638.12s ->   648.44s] So that's just going to be R bar, that is going to be the mean of the return. All right. So if I plug
+[  648.44s ->   657.82s] that in, what do we get, we're going to get R sub G minus one half R sub G squared is approximately
+[  657.82s ->   666.41s] equal to, I'm just going to use this guy here, distribute then the one over N to the second term,
+[  666.97s ->   676.00s] and I'm going to get R bar minus one over N. And then if I take that two out,
+[  676.64s ->   684.56s] and factor that two out, I will have one over two N. And this is going to be then the sum from one to N
+[  685.20s ->   697.47s] of R sub I squared. All right, so we've made some tremendous progress here. Now we need to link this
+[  697.47s ->   706.43s] idea to the sum of squares, variance. So how do we do that? Well, similar to what we did here,
+[  706.43s ->   717.07s] I'm going to write out the terms for variance, variance, sigma squared, is equal to one over N,
+[  717.07s ->   737.42s] the sum of R sub I minus R bar squared. If I expand out this term, then I'm going to get one over N,
+[  738.06s ->   747.98s] the sum of I equals one to cap N. We're going to have R sub I squared minus two R sub I R bar
+[  747.98s ->   758.19s] plus R bar squared. Okay. And then I can just distribute this summation through to each of these
+[  758.19s ->   772.44s] terms. So I'm going to get one over N, the sum of R sub I squared minus one over N, the sum of two R sub I
+[  772.44s ->   792.68s] R bar, plus one over N, the sum of two R sub I R bar, and then one over N, the sum of R bar squared.
+[  794.59s ->   802.83s] All right. So now where do we go from here? Well, what we can notice is
+[  802.83s ->   811.79s] R bar doesn't depend on the index I. So I can always factor that out or just take the product
+[  811.79s ->   818.27s] instead of the sum. In other words, these are all from I equals one to N, nothing changed with the
+[  818.27s ->   825.63s] indexing here. However, if I take a look at the terms within each of these summations, right? This
+[  825.63s ->   833.95s] guy here, there's no index. That's literally me just summing R bar squared N times. So what happens?
+[  834.75s ->   845.50s] Well, I just sum it N times, I'm going to get N R bar squared. So I can rewrite this as N R
+[  847.13s ->   856.36s] bar squared, then the N's cancel. So I just have R bar squared. All right, that's pretty nice. What
+[  856.36s ->   863.10s] about this term in the middle here? Well, I can factor out the two and the R bar. And then what do
+[  863.10s ->   873.95s] I get? If I factor out the two and the R bar, I get one over N times the sum of R sub I hold on a
+[  873.95s ->   882.94s] second, we've seen that before too, right? If I factor out the two R bar to the front just for a
+[  882.94s ->   892.20s] second. What is this? That's literally our X bar formula. So I can just make that R bar. It's just
+[  892.20s ->   908.56s] the mean. So we have two R bar, R bar, what what? Hold on, that's just two R bar squared, two R bar
+[  908.56s ->   920.83s] squared. And then we have that quadratic up in the front, scaled by one over N. So what does this
+[  920.83s ->   937.95s] simplify to? Well, this is going to simplify to one over N, the sum of R sub I squared from I equals one
+[  937.95s ->   945.71s] to cap N, then I can just do arithmetic here. Remember, this is outside the summation, right?
+[  947.29s ->   958.03s] And I'm going to get minus R bar squared. So how is this useful to us? Because this is
+[  958.03s ->   965.31s] going to be equal to sigma squared, if we scroll on back up to this guy here, what do we notice?
+[  966.19s ->   973.47s] We noticed that we are dealing with one over N, right? And we can always factor out that one half,
+[  973.47s ->   979.71s] if we really wanted to, we're dealing with one over N, R sub I squared, where have we seen that before?
+[  980.43s ->   991.04s] Well, that's right here in this expression. And if we are to add over the R bar squared,
+[  991.04s ->  1002.59s] then we get that one over N, the sum from I equals one to cap N of R sub I squared is equal to sigma
+[ 1002.59s ->  1010.72s] squared plus R bar squared. How is this useful? Well, we can just make that substitution now,
+[ 1010.72s ->  1018.24s] can't we just take this guy here, plug it in right here, instead of that summation,
+[ 1018.24s ->  1022.72s] I would much rather deal with that than the summation. So what I'm going to be left with
+[ 1022.72s ->  1034.08s] effectively, if I make that substitution is R sub G minus one half R sub G squared is approximately
+[ 1034.08s ->  1045.29s] equal to R bar minus one half sigma squared plus R bar squared. We're very close to the big payoff
+[ 1045.29s ->  1052.09s] here. And that is the idea that we are going to be able to move this squared term to the right hand
+[ 1052.09s ->  1057.61s] side now. And we're going to be able to group the like terms together. So what do I mean by that?
+[ 1057.61s ->  1064.41s] I mean, we are going to be able to say that R sub G adding this guy over to the right hand side is
+[ 1064.41s ->  1073.21s] approximately equal to R bar minus one half sigma squared. I'm going to distribute that one half through
+[ 1073.21s ->  1079.61s] and the negative, and I'm going to distribute the negative to the sigma squared and the R bar squared.
+[ 1079.61s ->  1086.65s] That means I'm going to have one half R bar squared. And then I'm adding, remember this guy over to
+[ 1086.65s ->  1095.53s] the right hand side. So I get one half R sub G squared. Now I'm going to group these two returns.
+[ 1096.17s ->  1102.41s] So I'm going to say that this is approximately equal to R bar minus one half sigma squared.
+[ 1103.37s ->  1113.29s] Then I'm going to say plus one half R sub G squared minus R bar squared.
+[ 1116.43s ->  1123.95s] What do we know about our returns? Well, they're going to be reasonably small, reasonably close to zero.
+[ 1123.95s ->  1130.75s] And when we multiply them together, they're going to produce a smaller number. Remember 2% of 2% of 2%.
+[ 1130.75s ->  1138.99s] Here we have the geometric mean, and here we have the arithmetic mean. They're not the same,
+[ 1139.55s ->  1147.15s] right? However, when we square them and then take the difference, we're not only making them just
+[ 1147.15s ->  1154.03s] arbitrarily smaller, but they're going to be reasonably close for realistic financial returns.
+[ 1154.03s ->  1159.55s] So what does that mean for us? It means we can approximate this effectively, this entire term
+[ 1159.55s ->  1168.27s] here as roughly zero. If you'd like to try using real numbers to see how this is the case,
+[ 1168.27s ->  1178.35s] try using a high arithmetic mean of maybe 0.03 and a lower geometric mean of maybe 0.02, squaring them,
+[ 1178.35s ->  1184.59s] taking the difference, seeing that it is approximately zero, that will certainly help you convince yourself
+[ 1184.59s ->  1190.03s] that this is a reasonable approximation. We're not just canceling out this term because we don't
+[ 1190.03s ->  1198.09s] like it. What are we left with then? That means this is approximately equal to R bar minus sigma squared
+[ 1198.09s ->  1204.41s] over two. And if we wanted to write this just in terms of parameters, we could say that this is
+[ 1204.41s ->  1213.85s] approximately equal to mu minus sigma squared over two. And mu is going to be that arithmetic return,
+[ 1213.85s ->  1220.09s] right? That is effectively this R bar that we have been using throughout this derivation.
+[ 1220.89s ->  1230.49s] And this guy here is our volatility drag. This is telling us that the geometric growth rate here,
+[ 1230.49s ->  1240.01s] this R sub G that we started with at the beginning of this derivation is approximately the arithmetic
+[ 1240.01s ->  1249.68s] mean less the variance over two. If you were to apply this exact same logic, and I certainly encourage
+[ 1249.68s ->  1257.28s] you to do so with leverage, you would then find why leverage with volatility is more devastating to your
+[ 1257.28s ->  1265.21s] geometric growth rate, even with positive expectancy. So what does this tell us about our goals?
+[ 1266.09s ->  1272.49s] Why is this such an important idea and important construct? Why am I so particularly obsessed with
+[ 1272.49s ->  1279.05s] it as an idea? Because in finance, we're all about risk adjusted returns, right? We're looking at something
+[ 1279.05s ->  1285.61s] like the sharp ratio, right? We're looking at the sharp ratio to optimize the trajectory of our wealth.
+[ 1286.17s ->  1293.77s] Well, here is the important results of this. The max of a particular strategies parameter set
+[ 1293.77s ->  1304.64s] with respect to its risk adjusted return is not equivalent to the max of its parameter set of the
+[ 1304.64s ->  1313.58s] geometric growth rate. To a quant, that might be trivial because these are completely different optimization
+[ 1313.58s ->  1322.14s] problems and fair enough. But the implications are tremendous in portfolio construction and strategy
+[ 1322.14s ->  1331.50s] construction. So I want to continue on in the future about how I use these ideas in my own strategies and
+[ 1331.50s ->  1336.54s] portfolio construction. I have a lot of papers that I'm writing internally right now that cover this idea and
+[ 1336.54s ->  1341.74s] how I'm using it in the construction of those strategies and why it produces better equity
+[ 1341.74s ->  1346.62s] curves, lower risk, higher return, especially over long time horizons. If you're interested in that
+[ 1346.62s ->  1350.54s] type of content, please let me know. Like, comment, subscribe, share. It certainly helps me out
+[ 1350.54s ->  1355.58s] tremendously. It's always greatly appreciated. If you'd like to master your quantitative skills to
+[ 1356.22s ->  1361.10s] learn all of the math probability statistics required to engage in this space as a professional or
+[ 1361.10s ->  1366.30s] a hobbyist, check out QuantGuilt.com. We have an adaptive practice engine, lessons,
+[ 1366.30s ->  1374.41s] courses from A to Z, trading games, master classes, the list goes on. Other than that,
+[ 1374.41s ->  1379.37s] I want to thank you so much for watching this math video. I certainly enjoyed putting it together and
+[ 1379.37s ->  1386.97s] this result, though very technical, is spectacularly important in the entire finance industry because we
+[ 1386.97s ->  1404.52s] are all subject to geometric compounding. Thank you so much for watching and I will see you in the next video.

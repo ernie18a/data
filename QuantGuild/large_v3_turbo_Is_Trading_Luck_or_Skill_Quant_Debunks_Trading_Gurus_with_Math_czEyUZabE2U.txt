@@ -1,0 +1,381 @@
+[    0.46s ->    10.42s] I was debating whether or not to make this video, but after a simple YouTube search, I can no longer sit idly by.
+[   10.66s ->    18.30s] As a quantitative researcher who has built and deployed quantitative trading strategies for institutions,
+[   18.68s ->    28.44s] I am just outright shocked at the amount, the sheer amount of fraud and scams in this space.
+[   28.44s ->    38.48s] I've naively typed in profitable trading strategy, and immediately I get shorts that look like this, 100% win rate on a million dollar account.
+[   39.10s ->    46.58s] A crypto millionaire is revealing his money printing strategy with a 95% win rate, whatever that means.
+[   46.72s ->    54.72s] Some of these people are talking about how you have to quit your day job for any hope of making it in the trading space.
+[   54.72s ->    62.72s] Just scrolling on down a little bit here, you can see the only trading strategy you'll ever need.
+[   62.88s ->    67.12s] It's an 8-minute video. It's got 1.2 million views.
+[   67.76s ->    76.26s] You know, this is first day on the job at Citadel or Jane Street, and they set everyone up with this video.
+[   76.60s ->    79.26s] And then you're good to go. You trade with the firm's money.
+[   79.26s ->    82.60s] You know, it's just utterly outrageous.
+[   83.02s ->    92.68s] One of the interesting things to highlight is that these people never cite measures or metrics that traders would actually care about.
+[   93.14s ->    96.94s] They always cite things that pique your interest, right?
+[   96.98s ->   102.10s] They say, I'll make like $10,000, $20,000 a month trading, right?
+[  102.10s ->   109.74s] That's not how a trader would measure their performance in terms of absolute dollar amount like that.
+[  109.86s ->   111.56s] You look at things like win rate.
+[  111.56s ->   117.88s] I can give you a strategy right now that has a 99% win rate trading options.
+[  118.06s ->   126.00s] You can just sell options with some sort of crazy spread between strikes, and you'll have a near 100% win rate.
+[  126.14s ->   129.38s] That doesn't tell us anything about their strategy or performance.
+[  129.38s ->   137.06s] So largely all of this is just to prey on people that lack information, which is why it's so immensely frustrating.
+[  137.06s ->   156.54s] So one of the even crazier consequences of this type of behavior is if they do have some sort of trading school, and they teach people to trade, then statistically, if they have enough students, some of them are going to become consistently profitable.
+[  156.54s ->   160.66s] And it just feeds into itself as this crazy ruse.
+[  160.82s ->   165.44s] And I'm going to show you mathematically why that's the case in our Jupyter notebook.
+[  165.44s ->   184.70s] All right, we're back in our Jupyter notebook here, and the goal is going to be to develop this framework for understanding the trading space by taking a look at gambling versus poker and trading, taking a look at two different scenarios for day traders, one where they're trading with net zero EV, and one where they have net positive EV.
+[  184.70s ->   207.54s] If these ideas are foreign for you, at the top of this Jupyter notebook, you'll notice some related Quant Guild videos on ideas like applying statistics to trading, this idea of time variance, and how these statistics may vary over time, the idea of trading with an edge, optimal bet sizing, ergodicity, and whether or not some sort of stochastic process is ergodic or not.
+[  207.54s ->   214.02s] The difference between retail and institutional trading, and the difference between trading and investing.
+[  214.14s ->   220.70s] If any of those ideas are foreign to you, please check out those videos first before watching this one.
+[  220.82s ->   224.08s] As always, this Jupyter notebook will be available in the description below.
+[  224.08s ->   234.80s] I will also post it to the Quant Guild library on GitHub, where you can find all of my Jupyter notebooks and associated YouTube videos, along with the source code for my Quant builds.
+[  235.24s ->   252.80s] Moreover, if you would like to support the channel so I can continue to create videos just like this one, please like, comment, subscribe, check out channel membership, and unlike these trading gurus, if you would like to master your quantitative skills and learn something particularly useful, check out quantguild.com.
+[  252.80s ->   257.42s] Now, I'll never teach you how to trade, but what I will teach you is math, probability, and finance.
+[  257.54s ->   261.04s] We have over 90 quant lessons in each of those subjects.
+[  261.44s ->   267.40s] An adaptive practice engine that scales with your skill level so you can progress to more and more difficult questions.
+[  267.98s ->   269.84s] Interview questions with fully worked solutions.
+[  270.00s ->   275.60s] Coming soon, classes in math, statistics, probability, coding, all from the ground up.
+[  276.22s ->   279.56s] Everything's included with Quant Guild membership, and you can start now for free.
+[  279.56s ->   285.58s] So, if you'd like to support the channel and master your quantitative skills, check out quantguild.com.
+[  285.66s ->   288.48s] Let's begin with this idea of gambling.
+[  288.92s ->   293.36s] Now, gambling is fundamentally different from poker and trading.
+[  293.88s ->   297.32s] The reason for that comes down to this idea of edge.
+[  297.84s ->   306.56s] Any sort of game that has a house edge, where when you play it statistically, you are destined to lose money, that is gambling.
+[  306.56s ->   312.58s] It has negative connotations because no matter what you do, there is no optimal decision to make.
+[  313.06s ->   323.18s] The outcome is fully governed by some sort of probability mass function, and your expected value playing the game is always going to be negative.
+[  323.86s ->   325.80s] And this is true for things like roulette.
+[  325.92s ->   327.90s] This is true for things like the Powerball.
+[  327.90s ->   332.80s] If you buy a lottery ticket, your value is net negative.
+[  332.98s ->   338.16s] So, if you continue to play this game, then statistically, you will go bankrupt.
+[  338.98s ->   342.94s] And this doesn't say anything about one person's wealth path.
+[  343.38s ->   349.16s] It says something about the general trend of wealth paths over a series of plays.
+[  349.16s ->   353.98s] So, what I have here is a chart of people playing roulette at a casino.
+[  354.18s ->   358.86s] And what you can see here is this purple path actually does pretty well, right?
+[  359.28s ->   361.78s] This purple path makes almost $10,000.
+[  362.46s ->   365.84s] But everyone else is consistently losing money.
+[  365.94s ->   368.26s] Now, what happens if they continue to play?
+[  368.36s ->   370.92s] Well, take a look at what happens to everyone's wealth paths.
+[  371.54s ->   375.92s] Eventually, everybody ends up at this net zero wealth, and some even go negative here.
+[  375.92s ->   378.40s] So, this is the idea of gambling.
+[  378.54s ->   383.76s] No matter what you do, your decision is not going to influence your expected value.
+[  383.92s ->   386.10s] There is no optimal decision to make.
+[  386.20s ->   388.56s] Now, each outcome itself is random.
+[  388.74s ->   392.64s] So, in the short run, you may actually end up net positive.
+[  393.34s ->   396.38s] And you could stop playing before you actually accumulate a loss.
+[  396.46s ->   398.36s] But that turns into the gambler's room problem.
+[  398.44s ->   400.44s] And I have a video on that if you'd like to check it out.
+[  400.56s ->   404.86s] But the moral of this story is gambling has negative connotations.
+[  405.30s ->   406.16s] Rightfully so.
+[  406.46s ->   411.22s] No matter what you do, you are going to accumulate negative EV over a series of plays.
+[  411.84s ->   412.90s] And you're going to run out of money.
+[  412.98s ->   415.20s] Now, I want to be very clear here before we continue.
+[  415.34s ->   417.90s] I am not making a comment on ergodicity.
+[  418.40s ->   420.36s] Herein, we're looking at additive bets.
+[  420.48s ->   424.64s] But if you've studied stochastic processes or are interested in my remarks
+[  424.64s ->   428.64s] on whether or not a wealth path is ergodic or non-ergodic,
+[  428.98s ->   431.72s] please check out my video, How to Trade with the Kelly Criterion.
+[  431.72s ->   434.70s] I discuss optimal bet sizing there.
+[  434.90s ->   437.44s] I discuss additive versus multiplicative bets.
+[  437.64s ->   439.84s] That is going to be your best place to go.
+[  440.22s ->   443.68s] Nevertheless, herein, we're going to look at this idea of additive bets.
+[  444.14s ->   446.44s] In fact, if we were looking at multiplicative bets,
+[  446.52s ->   450.64s] this entire argument would just be magnified to an extreme.
+[  450.88s ->   451.08s] All right.
+[  451.16s ->   453.12s] Gambling, net negative EV.
+[  453.86s ->   454.36s] Bad.
+[  454.64s ->   455.68s] Negative connotations.
+[  455.68s ->   459.92s] No matter what I do, whatever decision I make, if I continue to play,
+[  460.42s ->   462.42s] I will eventually lose all my money.
+[  462.78s ->   464.26s] How is pokering trading any different?
+[  464.84s ->   466.04s] It's just gambling too, right?
+[  466.12s ->   466.52s] Well, no.
+[  467.04s ->   469.14s] They deal with uncertain outcomes, sure.
+[  469.66s ->   474.96s] But their outcomes aren't governed by a fixed probability mass function or density function.
+[  475.06s ->   479.64s] In this case, the concept of expected value still applies.
+[  479.64s ->   484.94s] But your action or inaction, whatever policy or strategy you're using,
+[  485.06s ->   487.84s] directly contributes to your expected value.
+[  488.58s ->   490.76s] And the tricky thing about this space is,
+[  491.40s ->   496.38s] just because it's difficult to learn a policy to play optimally,
+[  496.52s ->   501.58s] it doesn't mean that there's negative edge against you and that's fixed.
+[  501.58s ->   505.02s] It's a very, very critical distinction.
+[  505.50s ->   508.52s] Because if you look at poker bots, right,
+[  508.80s ->   514.18s] they can statistically outperform pretty much any average player.
+[  514.94s ->   517.12s] And you could argue that what?
+[  517.54s ->   520.62s] It's just random and poker is just random and it's just gambling.
+[  520.82s ->   524.28s] But why are those bots able to consistently outperform?
+[  524.40s ->   526.60s] They're clearly learning something and that's what they're learning.
+[  526.70s ->   528.64s] They're learning how to optimize for EV.
+[  528.64s ->   532.80s] In fact, poker is a very particular case of this
+[  532.80s ->   537.42s] because you don't even need to act with net positive EV.
+[  537.82s ->   542.14s] If you're playing at a table against somebody who's making terrible decisions
+[  542.14s ->   545.10s] because they don't know what positive EV looks like,
+[  545.44s ->   548.28s] you can take all of their expected value from them
+[  548.28s ->   550.94s] and you can profit from their poor decision making.
+[  551.46s ->   554.72s] This is a zero-sum game in that sense.
+[  554.72s ->   558.82s] You can always raise a huge hand and then fold.
+[  559.42s ->   561.88s] You can always act suboptimally.
+[  562.48s ->   566.68s] You can always load up with a crazy amount of leverage on a trade
+[  566.68s ->   571.08s] and then sell immediately when things go in the other direction.
+[  571.38s ->   572.88s] Just because you can act suboptimally,
+[  573.76s ->   577.06s] it doesn't mean that the entire space is gambling.
+[  577.56s ->   579.52s] We're dealing with expected value.
+[  579.52s ->   581.66s] The outcome itself is uncertain,
+[  582.30s ->   587.06s] but your action or inaction is going to influence the drift
+[  587.06s ->   591.38s] over a series of hands, trades, whatever it is.
+[  591.62s ->   594.40s] Are you accumulating wealth or not?
+[  594.50s ->   600.08s] I have a great example here of what it means to learn some sort of optimal policy.
+[  600.20s ->   603.04s] This is literally what reinforcement learning is doing.
+[  603.04s ->   607.56s] It's learning how to maximize some sort of expected value of a game
+[  607.56s ->   609.92s] based on some sort of policy.
+[  610.44s ->   613.68s] And it does this by exploring and exploiting the space.
+[  613.96s ->   616.46s] Here is a game of roulette.
+[  616.88s ->   621.16s] What I have is some players, 2, 3, and 4, who are just betting naively.
+[  621.42s ->   622.60s] They're betting randomly.
+[  622.82s ->   626.24s] And of course, over time, they're eventually going to lose all their money,
+[  626.28s ->   627.50s] just like in the first example.
+[  627.64s ->   630.96s] But what happened to players 0 and 1 here?
+[  630.96s ->   633.36s] They're starting to accumulate all this wealth.
+[  633.48s ->   636.88s] And eventually, over a large number of plays, what happened?
+[  636.94s ->   639.26s] They accumulated over a million dollars each.
+[  639.68s ->   645.34s] Well, that's because they're learning the optimal policy for this modified roulette.
+[  645.70s ->   648.82s] And this modified roulette, if it lands on red,
+[  649.22s ->   654.06s] then the next time around, it's more likely to land on black and vice versa.
+[  654.42s ->   658.26s] So these two players were able to figure out that optimal policy
+[  658.26s ->   661.24s] while everyone else was acting suboptimally.
+[  661.74s ->   665.72s] This is what changes the entire dynamics of the system.
+[  666.18s ->   668.94s] It's no longer a fixed probability mass function.
+[  669.38s ->   672.66s] It's about acting optimally in this uncertainty
+[  672.66s ->   675.72s] so you can accumulate that expected value over time,
+[  675.84s ->   678.40s] just like players 0 and 1.
+[  678.50s ->   680.00s] So why is this so hard to do?
+[  680.12s ->   684.40s] Why is it so difficult to learn some sort of optimal policy function
+[  684.40s ->   686.40s] to maximize your expected value?
+[  686.54s ->   689.78s] Well, let's take a look at these players.
+[  690.38s ->   692.24s] They're not without drawdowns.
+[  692.24s ->   694.24s] So if you look at any one case, right,
+[  694.28s ->   696.82s] they do go on losing streaks at some points.
+[  696.82s ->   700.30s] That's because the entire space is random.
+[  700.84s ->   702.80s] You're still operating with randomness.
+[  702.88s ->   706.52s] So even if you have some sort of optimal policy or strategy
+[  706.52s ->   708.40s] that you've learned through experience
+[  708.40s ->   710.62s] or through some sort of bot,
+[  710.98s ->   713.96s] some sort of reinforcement learning agent that figures it out,
+[  714.42s ->   717.32s] you still may accumulate losses at some point,
+[  717.64s ->   719.42s] even if you're acting optimally.
+[  719.90s ->   723.84s] But moreover, in each of poker and trading,
+[  724.20s ->   726.58s] the game is extremely dynamic.
+[  727.10s ->   730.16s] The entire system changes based on the people at the table,
+[  730.66s ->   732.30s] based on your initial bankroll,
+[  732.70s ->   734.08s] how you played your last hand.
+[  734.16s ->   735.92s] There's a psychological component too.
+[  735.92s ->   741.50s] There's way too much to go into what decides your overall EV
+[  741.50s ->   744.32s] to actually compute in a quantitative way.
+[  744.80s ->   746.88s] Now, sure, some factors may contribute
+[  746.88s ->   748.70s] to more variability than others.
+[  749.06s ->   752.26s] We're not talking about any sort of variance explained measure right now.
+[  752.34s ->   753.52s] Maybe we'll do that in the future.
+[  753.64s ->   757.76s] But if we understand the idea that these systems are so complicated
+[  757.76s ->   759.08s] with so many moving parts,
+[  759.18s ->   761.16s] like look at trading, the macro regime,
+[  761.26s ->   763.04s] the current administration, your last trade,
+[  763.14s ->   764.24s] your portfolio value,
+[  764.24s ->   768.06s] all of these things change the entire dynamics of the system.
+[  768.70s ->   772.26s] That's what makes it so difficult to trade, right?
+[  772.32s ->   774.08s] That's what makes it so difficult to play poker.
+[  774.18s ->   776.40s] You're trying to learn this optimal policy,
+[  776.56s ->   779.62s] but that optimal policy is going to change
+[  779.62s ->   782.62s] based on everything in the environment, right?
+[  782.90s ->   785.84s] So is there any justification for the abilities
+[  785.84s ->   787.94s] of these poker players and professional traders?
+[  788.06s ->   788.72s] Yeah, of course.
+[  789.32s ->   790.28s] A hundred percent.
+[  790.40s ->   791.64s] There absolutely is.
+[  791.64s ->   794.98s] But there are several considerations to discern
+[  794.98s ->   796.68s] whether or not it is skill or luck.
+[  797.04s ->   798.82s] This is not a trivial problem.
+[  799.56s ->   802.08s] A simple argument using poker bots
+[  802.08s ->   806.74s] shows you that it is possible to learn some sort of optimal policy
+[  806.74s ->   810.72s] to act with net positive or net zero EV.
+[  810.88s ->   812.98s] You're trying to maximize your expected value.
+[  813.06s ->   815.96s] The same is true in a trading capacity.
+[  815.96s ->   822.18s] In fact, there's literature now that is deploying reinforcement learning for delta hedging.
+[  822.30s ->   825.04s] You could go to deephedging.com and check this out.
+[  825.12s ->   829.32s] If there was no capacity to learn some sort of optimal policy,
+[  829.32s ->   832.84s] then literally we would all just be shooting in the dark.
+[  832.96s ->   835.88s] It would just be acting randomly in this space
+[  835.88s ->   839.28s] and some accumulate a crazy amount of wealth by accident,
+[  839.28s ->   845.48s] which is roughly akin to this purple path in this first roulette example.
+[  845.48s ->   849.90s] If you accumulate all that wealth before some sort of suboptimal decision making
+[  849.90s ->   851.58s] or negative edge kicks in,
+[  851.72s ->   854.48s] then you'll be able to brag about it to your friends.
+[  854.62s ->   855.90s] But for the rest of them,
+[  856.08s ->   859.08s] it's just going to be net negative EV, suboptimal EV,
+[  859.08s ->   861.56s] or at best breaking even.
+[  861.56s ->   864.24s] Now that we understand this idea of expected value
+[  864.24s ->   867.58s] and the difference between gambling and something like poker and trading,
+[  867.58s ->   871.66s] I would call something like poker and trading a game of incomplete information
+[  871.66s ->   876.98s] where our actions or inactions can contribute in a positive or negative way
+[  876.98s ->   878.56s] to our overall expected value.
+[  878.72s ->   882.18s] We're ready to approach this idea of day trading.
+[  882.52s ->   886.32s] And what we're going to do is we're going to look at a simulation of 100 day traders
+[  886.32s ->   892.22s] and I'm going to say each one of them is essentially trading a net zero EV strategy.
+[  892.42s ->   894.26s] So this is very generous.
+[  894.26s ->   898.78s] It's saying, hey, their strategy overall is just net zero EV.
+[  899.18s ->   902.32s] They're going to break even at best in the long run.
+[  902.42s ->   904.86s] Again, this is not a comment on ergodicity.
+[  905.16s ->   909.96s] If it was, in fact, this argument would go in my favor to an extreme.
+[  910.12s ->   913.10s] So we're going to focus on this more ergodic example.
+[  913.24s ->   917.22s] But again, if you're interested in that topic, go check out my other video.
+[  917.22s ->   921.26s] The implications are kind of crazy of this simulation.
+[  921.50s ->   923.54s] So I have 100 day traders.
+[  923.66s ->   925.34s] They're trading a thousand times.
+[  925.34s ->   928.76s] And you could see some finish up here with over an 80% gain,
+[  928.90s ->   931.82s] some finish with over an 80% loss.
+[  932.26s ->   936.46s] And there's no difference between any one of these traders.
+[  936.46s ->   938.10s] They're all trading the same strategy.
+[  938.10s ->   939.68s] It's a net zero EV strategy.
+[  939.68s ->   947.56s] But it just so happens that some walk a path that accumulates wealth and some walk a path that loses it.
+[  948.12s ->   952.06s] So what does that actually mean for this strategy?
+[  952.24s ->   955.22s] Well, the strategy itself is net zero EV.
+[  955.44s ->   958.20s] So on average, you shouldn't be accumulating wealth.
+[  958.20s ->   962.16s] That's this midline here, this white dashed line.
+[  962.30s ->   966.94s] But even still, we don't know which wealth path any one of these traders is going to walk.
+[  967.32s ->   969.14s] They may accumulate a whole bunch of wealth.
+[  969.32s ->   975.78s] That looks consistently profitable, even though the entire strategy is not.
+[  976.22s ->   977.84s] And some aren't so lucky.
+[  978.30s ->   981.80s] This is what I had mentioned earlier when I said this is a crazy cycle.
+[  981.90s ->   986.90s] Because if you have some sort of guru trader who has a school to teach you to trade,
+[  986.90s ->   989.64s] and they have, what is this, 100 students,
+[  990.04s ->   994.08s] and all of them trade this crappy net zero EV strategy,
+[  994.54s ->   997.70s] some are going to accumulate a crazy amount of wealth.
+[  997.80s ->  1000.80s] In fact, if the system is non-ergotic,
+[ 1001.20s ->  1004.42s] and there might be a slight positive edge in some cases,
+[ 1004.98s ->  1009.30s] then some people may experience extreme wealth on the upside,
+[ 1009.30s ->  1015.68s] while everyone else experiences accumulated negative EV and terrible wealth.
+[ 1015.68s ->  1018.42s] And what this is, is just survivorship bias.
+[ 1018.42s ->  1020.90s] And I may even be giving them too much credit,
+[ 1020.90s ->  1026.84s] because I'm arguing that, hey, if it is the case that they were able to accumulate wealth
+[ 1026.84s ->  1030.88s] in some sort of trading account, that it is in fact statistically possible,
+[ 1030.88s ->  1035.74s] and it still could be a fluke, but they also could just be outright lying.
+[ 1035.82s ->  1037.12s] That could also be the case too.
+[ 1037.50s ->  1040.16s] Let's continue to analyze this simulation.
+[ 1040.16s ->  1045.82s] Out of the 100 traders in this simulation, 7 finished with over 50% returns.
+[ 1046.48s ->  1053.02s] Now, this strategy is net zero EV, but still, 7 of them can parade around accounts that they were, what,
+[ 1053.40s ->  1055.80s] consistently profitable with this strategy?
+[ 1055.94s ->  1057.08s] What about everybody else?
+[ 1057.48s ->  1059.48s] Think about this in terms of a trading school now.
+[ 1059.54s ->  1065.60s] If I have 1,000 people, if this scales linearly, then what, I have 70 people I can show off to potential students,
+[ 1065.60s ->  1069.56s] and then the ones that don't make it, I can say, well, oh, hey, you know, you just weren't dedicated,
+[ 1069.96s ->  1074.86s] or you just, you know, didn't really quite get how to apply the course, right?
+[ 1074.90s ->  1079.02s] Like, all of these very ridiculous statements, just because statistically, yeah,
+[ 1079.06s ->  1081.72s] it's likely some of them are going to accumulate wealth.
+[ 1081.90s ->  1084.24s] But again, that is not the majority.
+[ 1084.86s ->  1090.12s] Now, they're appearing as consistently profitable, but in fact, the strategy is net zero EV.
+[ 1090.12s ->  1097.36s] Look at their sharp ratios, a sharp ratio of 1.3, 1.16, 1.06.
+[ 1098.26s ->  1102.50s] Maybe they're going to want to lever up on this strategy, but it's outrageous.
+[ 1102.82s ->  1108.98s] They were just walking a lucky sample path with this net zero EV strategy.
+[ 1109.34s ->  1118.22s] This is a crazy concept and a crazy idea for how it continues to feed into the cycle of guru trader trading school.
+[ 1118.22s ->  1123.54s] Trading school has students, some students do well, survivorship bias, let's show those off.
+[ 1123.98s ->  1129.36s] And then now, look, these guys had 1.3 sharps, 1.5, 2, 3 sharp ratios.
+[ 1129.50s ->  1134.34s] But yeah, you know, 99% of their students, maybe they'll all lose money.
+[ 1134.42s ->  1139.74s] But hey, it's also possible that none of that happened and they're just outright lying.
+[ 1139.96s ->  1143.72s] Now, of course, we can extend this to a profitable day trading operation.
+[ 1144.34s ->  1147.10s] Here, we're looking at a positive expected value.
+[ 1147.10s ->  1156.64s] So 100 traders are trading a winning strategy and they have a 52% win rate with the same amount earned versus risked on each trade.
+[ 1156.74s ->  1158.28s] So you'll see a positive drift here.
+[ 1158.64s ->  1162.46s] This white dashed line is no longer just net zero slope.
+[ 1162.62s ->  1165.12s] It actually has a positive slope.
+[ 1165.86s ->  1172.12s] And sure, the implications are the losers aren't going to lose as much and the winners are going to win more.
+[ 1172.12s ->  1178.50s] But in this context, I've seen absolutely crazy statements.
+[ 1178.94s ->  1191.78s] There was a day trader who I was watching not too long ago as I was investigating into two other traders in this space who cited the central limit theorem for his futures trading strategy.
+[ 1191.78s ->  1202.86s] That if you just continue to trade in an intraday capacity, that eventually your strategy is going to converge to this mean profitability.
+[ 1202.86s ->  1207.90s] And it is so, so wrong.
+[ 1208.44s ->  1211.54s] And it applies the theorem in such an incorrect way.
+[ 1212.34s ->  1214.94s] It was just unbelievable to watch.
+[ 1215.08s ->  1218.44s] And people don't know what the central limit theorem is, so they believe it.
+[ 1218.58s ->  1221.24s] And it is just outrageous.
+[ 1221.60s ->  1224.12s] So here we have a case of positive drift.
+[ 1224.12s ->  1230.34s] We have all of these traders trading 1,000 times, 100 traders trading this net positive EV strategy.
+[ 1230.84s ->  1231.38s] Check it out.
+[ 1231.66s ->  1234.84s] 32 out of 100 finished with over 50% returns.
+[ 1235.52s ->  1237.30s] But this is generous.
+[ 1238.00s ->  1243.88s] How many traders experienced a drawdown of greater than their initial principle?
+[ 1243.88s ->  1257.07s] 94% in this set of sample paths, 94 of the 100 traders lost money below their initial investment at one point throughout this simulation.
+[ 1257.57s ->  1259.30s] How many would continue?
+[ 1259.82s ->  1262.48s] You think all 100 are going to continue to the end?
+[ 1262.92s ->  1264.02s] There's no way.
+[ 1264.44s ->  1266.90s] Of this 94, how many were going to quit?
+[ 1267.76s ->  1270.64s] How many of this 94 were a part of this 32?
+[ 1270.64s ->  1276.10s] This is the type of analysis that you need to do when you think about this space.
+[ 1277.30s ->  1284.18s] Also, this is more than a generous case, but this is a positive EV strategy.
+[ 1285.20s ->  1287.24s] This has positive expected value.
+[ 1287.94s ->  1295.76s] Even still, 11 of the 100 traders lost money after 1,000 trades.
+[ 1295.76s ->  1311.74s] So, even if they traded optimally throughout the entire time following this strategy, assuming that it was stable and didn't change over time, and they didn't have any issues when they were losing money, and they continued to trade optimally, they still would have lost money.
+[ 1312.26s ->  1315.90s] 11 out of the 100 traders still would have lost money.
+[ 1316.04s ->  1317.92s] So, what's the deal here in reality?
+[ 1318.06s ->  1322.76s] Well, institutions don't go about constructing strategies in this way.
+[ 1322.76s ->  1345.34s] When you approach some sort of day trader, some sort of crypto millionaire, or whatever, whatever they want to portray themselves as, if you propose time series regressions, Fama-Macbeth regressions, the distinction between statistical mispricings and priced risk, they would have no idea what you're talking about.
+[ 1345.34s ->  1354.12s] The quantitative research methodology that goes into developing these institutional grade strategies, they have no idea what that looks like.
+[ 1354.58s ->  1366.54s] They have no idea the series of iterations that you go through, acquiring data, cleaning, pre-processing it, developing this data pipeline, backtesting engine.
+[ 1366.70s ->  1369.08s] They're unfamiliar with the entire process.
+[ 1369.08s ->  1380.92s] Alpha is such a foreign concept to them that, you know, they're just parading around win ratios and, what, dollars in per month?
+[ 1381.10s ->  1382.64s] Those aren't trading metrics.
+[ 1383.18s ->  1384.56s] Those are just traps.
+[ 1384.92s ->  1389.30s] So, is it at all possible to become a profitable day trader?
+[ 1389.90s ->  1391.94s] Well, what does that actually mean, right?
+[ 1392.00s ->  1393.10s] Like, how are you trading?
+[ 1393.22s ->  1394.68s] What kind of strategies are you trading?
+[ 1394.86s ->  1396.86s] Are you acting on different instruments?
+[ 1396.86s ->  1398.84s] Is it the same strategy every day?
+[ 1398.94s ->  1401.88s] Are you just acting in a discretionary capacity?
+[ 1402.02s ->  1408.74s] It's the same way that somebody would, what, learn to play poker, but they can take everyone else's negative EV.
+[ 1408.92s ->  1411.06s] You can't do that in a trading setting.
+[ 1411.68s ->  1413.12s] It's completely different, right?
+[ 1413.36s ->  1425.58s] So, the unsatisfying answer is it's very unlikely to find some sort of stable intraday alpha, some sort of statistical mispricing or unpriced risk that you're taking advantage of.
+[ 1425.58s ->  1427.16s] But is it possible?
+[ 1427.38s ->  1427.54s] Sure.
+[ 1428.06s ->  1437.86s] But also, statistically, it's possible, as I've shown you in here, to just, what, accumulate wealth with net zero, net negative, or net positive EV?
+[ 1438.40s ->  1440.20s] That's also equally possible.
+[ 1440.50s ->  1444.42s] It's not as easy to tease out as anyone makes it out to be.
+[ 1444.48s ->  1447.90s] It's a non-trivial problem, which is why people can fall for it.
+[ 1448.28s ->  1451.74s] It's a very difficult space to define in the first place.
+[ 1451.74s ->  1463.78s] So, if somebody's making a series of arbitrary trading decisions, they accumulate wealth, they're consistently profitable, but that says nothing of the overall EV of the strategy, and that's what we want to keep in mind here.
+[ 1463.84s ->  1473.06s] If you have some sort of true mispricing, some sort of true strategy, you should be able to conduct proper analysis on it.
+[ 1473.06s ->  1478.42s] You should be able to look at time series splits in a random capacity and observe this.
+[ 1478.82s ->  1484.14s] Observe this mispricing in a consistent capacity, and that's what an institution would do.
+[ 1484.56s ->  1488.32s] That's exactly how they would go about analyzing the efficacy of a strategy.
+[ 1488.32s ->  1492.58s] But, in this case, we're just throwing darts at a dartboard.
+[ 1492.78s ->  1493.90s] Too long didn't walk.
+[ 1494.22s ->  1495.52s] Here's your executive summary.
+[ 1495.72s ->  1504.06s] Games of chance are fundamentally different from games of incomplete information, where your decision-making impacts your outcome and, of course, your expected value.
+[ 1504.98s ->  1512.36s] Even if you act randomly, some can be consistently profitable and preach winnings to others, or they're just outright lying.
+[ 1512.36s ->  1529.18s] Some will act optimally, and their edge may be well-defined and well-traded, but you can still lose money in that capacity, and they're still operating in the same pool as other traders who may be uninformed and just lucky.
+[ 1530.22s ->  1534.62s] Discerning if you are acting optimally is not a trivial task.
+[ 1534.86s ->  1537.74s] Past performance is not indicative of future outcomes.
+[ 1537.74s ->  1549.36s] That's why, if you took a look at any of these sample paths, right, that one big, the expected returns of that sample path is not going to be stable.
+[ 1549.48s ->  1553.56s] You're not expecting to see similar performance in the future.
+[ 1554.16s ->  1557.06s] This is the expected performance, this white dashed line.
+[ 1557.44s ->  1565.72s] It's even more egregious for this simulation with net zero EV, because your expected performance is net zero.
+[ 1565.72s ->  1582.49s] Of course, anybody who is suggesting they have some sort of holy grail strategy, they are either lucky idiots or are just lying and trying to sell you some sort of trading lesson.
+[ 1583.19s ->  1588.03s] And ironically, if they teach a thousand people, some will randomly be successful.
+[ 1588.71s ->  1595.99s] And of course, that's going to look like a survivorship bias as they parade around their trading accounts and try to get more students themselves.
+[ 1595.99s ->  1608.35s] Pivoting now to future topics, deriving and solving the Black-Scholes equation has certainly been on the agenda to understand different option risk exposures and theoretically where they come from.
+[ 1608.51s ->  1610.55s] So I'd like to do a video on that topic.
+[ 1610.67s ->  1611.79s] We're going to do more quant builds.
+[ 1611.91s ->  1619.43s] We have to build that earnings dashboard for volatility crush from my how to trade option implied volatility crush video.
+[ 1619.55s ->  1623.55s] So look forward to that one and more quant builds with interactive brokers.
+[ 1623.55s ->  1631.85s] We also need to talk about calibrating stochastic models, stochastic volatility models to market implied volatility surfaces.
+[ 1632.21s ->  1644.55s] I'm going to use the Heston model as an example because we have efficient means of going about pricing options in that framework via the Fast Fourier transform after we discussed that research from Car Madden.
+[ 1644.87s ->  1651.23s] I would also like to extend to neural networks and machine learning approaches to approximating these pricing functionals.
+[ 1651.23s ->  1662.21s] I think that that is a nice extension after discussing calibration because it gets at the heart of the efficiency concerns when you move on to more complicated models.
+[ 1662.47s ->  1672.31s] And a passion project, of course, is methodology for simulating stochastic processes, fractional brownie emotions, Volterra processes, so on and so forth.
+[ 1672.37s ->  1675.49s] I certainly would like to do videos on those topics if there is interest.
+[ 1675.63s ->  1676.53s] They are more niche.
+[ 1676.91s ->  1679.65s] Nevertheless, I am looking to do those in the future.
+[ 1679.65s ->  1683.23s] And that's going to do it for this video on if trading is luck or skill.
+[ 1683.37s ->  1684.11s] I hope you enjoyed.
+[ 1684.29s ->  1685.35s] I hope you learned something.
+[ 1685.55s ->  1690.61s] If you like this video and you want to see more like it in the future, please comment, like, subscribe.
+[ 1690.73s ->  1691.99s] It helps me out a lot.
+[ 1692.35s ->  1696.73s] Join our Discord if you'd like to connect with me or anybody else from the Quant Guild community.
+[ 1697.23s ->  1700.15s] Check out quantguild.com to master your quantitative skills.
+[ 1700.89s ->  1704.65s] Other than that, thank you so much for watching, and I will see you in the next video.
+[ 1704.65s ->  1705.27s] We'll see you in the next video.

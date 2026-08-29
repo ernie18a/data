@@ -1,0 +1,116 @@
+[    0.00s ->     3.38s] Hey, IMP options traders. Thank you so much for watching this video. I want to walk you through
+[    3.38s ->     7.38s] one of my favorite monthly income strategies being selling puts. Why? It's incredibly simple
+[    7.38s ->    13.20s] to do and it can make you a lot of money in the process. Selling puts works best in markets that
+[   13.20s ->    18.24s] are trending up, up trending markets, and they also work best in oversold markets, meaning that
+[   18.24s ->    23.08s] markets that are coming down to its bottom and lows and going to bounce soon. These are two ways
+[   23.08s ->    28.28s] this strategy performs very well. The way that this strategy works is very simple to understand,
+[   28.28s ->    32.70s] especially for a beginner. You pick a level you think the stock won't get below. So let's say
+[   32.70s ->    38.12s] the stock is currently trading here. You're like, wow, this is really far down. This is how far of a
+[   38.12s ->    43.94s] move. This is the market has to drop 12% before we hit this level. So I think this is a safe level.
+[   44.26s ->    49.62s] I picked this level. As long as the market stays above this level, I will make money. So that means
+[   49.62s ->    54.52s] that the market can go up and I'll make money. The market can go sideways and I'll make money.
+[   54.52s ->    59.26s] The market can go down and I'll make money. The market can't even crash 12%. As long as it stays
+[   59.26s ->    65.18s] above my level, I will make money. And so that is how the strategy works. You're simply just picking
+[   65.18s ->    70.72s] a level. You want the market to stay above that level will be your strike price that we pick for
+[   70.72s ->    78.80s] the options contract. So that is what selling a put is. It's a very profitable strategy. And what I want
+[   78.80s ->    86.92s] to teach you here is how I trade it. I go, I try to target the 90 DTE level. So this means 90 days
+[   86.92s ->    93.70s] until expiration. Why do I like to target this level? Because it's the perfect blend between 120 days,
+[   93.76s ->   101.04s] which is three months out and 45 days, which is like a tasty trade at like lesson. And so 90 day mark
+[  101.04s ->   106.02s] will give me that extra credit that I want to collect, but also have enough data decay where I will
+[  106.02s ->   112.44s] make money decently fast and it will limit a lot of gamma risk. Gamma risk being how likely the options
+[  112.44s ->   119.58s] contract is to move during the day, meaning that my P&L will not fluctuate that much. So 90 days until
+[  119.58s ->   127.86s] expiration, I like to target a seven Delta, seven to 10 Delta. This is my range. Again, how do I change
+[  127.86s ->   133.06s] what Delta I'm picking? Well, again, the smaller the Delta number, the further away from the stock I'm
+[  133.06s ->   138.08s] going. Since the market is pushing into this upper band, which we'll learn more about in the indicators
+[  138.08s ->   143.82s] lesson, we are more likely for the market to pull back. And since we're likely for the market to go
+[  143.82s ->   149.30s] down, I'm targeting currently a seven Delta because that gives me more room to the downside for the
+[  149.30s ->   156.70s] market to fall. Next, I have a 25% take profit level. What does this mean? It means once my trading
+[  156.70s ->   163.54s] gets to a 25% profit, I will take it. And so let's say I collect a thousand dollars to put this trade
+[  163.54s ->   172.18s] on. That means I will close the trade. Once I see $250 and profits, then I will close it. Now a 400%
+[  172.18s ->   178.48s] is my stop loss. So that means that if I enter a trade at a thousand again, for the same example,
+[  178.48s ->   188.48s] once the trade gets to a $4,000 level, aka a $3,000 loss, then I will take that loss. So I
+[  188.48s ->   195.46s] either have a 250 gain or I have a 3000 loss. And you'll be saying, well, that's a huge loss, Austin.
+[  195.54s ->   199.36s] Yes, it is. But if you stay tuned, I'll show you how to mitigate those losses. But not only that,
+[  199.42s ->   205.38s] you have a 95% plus win rate on these trades. Now again, I don't like you taking my word for it.
+[  205.38s ->   210.32s] Let's walk through an actual back test. So here's the back test of exactly what I showed you. Let
+[  210.32s ->   216.36s] me just make my face smaller. You see here we have a 10 delta put. We're going 90 days until
+[  216.36s ->   221.12s] expiration. We're trading daily. This is how we get the best back test. Again, you'll probably do
+[  221.12s ->   228.62s] this once to twice a week. Max profit of 25% and a max loss a 400%. We're trading this on SPX. That's
+[  228.62s ->   233.32s] the best way to simulate trading it on futures. And this back test is from the last 10 years.
+[  233.32s ->   241.28s] So if we look at this, it has generated a profit of $1 million. Our average P&L per trade is $416.
+[  242.24s ->   250.72s] And you can see here that I make 290%. Now for average wise, we did this back test over 10 years. So
+[  250.72s ->   257.68s] that's roughly a 29% return a year. Now, what is the cons of this back test? Well, if we look at the
+[  257.68s ->   262.92s] back test, it moves pretty well, moves up. If we compare it to the overall market, it is outperforming
+[  262.92s ->   268.82s] the market compared to what the market did. However, where did this strategy fail? That's
+[  268.82s ->   275.62s] what we should always be focusing on and asking. And right here, we had this move down, this move
+[  275.62s ->   280.98s] down, and the COVID move down. And then we had some problems here when the market downtrended.
+[  281.32s ->   287.96s] So how can we prevent or mitigate these risks, right? If we can remove these huge down moves,
+[  287.96s ->   293.32s] then this will just be a straight line up. And it'll be a very profitable strategy. Although it
+[  293.32s ->   299.08s] already is, we can make it even more so. So even without making any adjustments, we have a 98% win
+[  299.08s ->   306.14s] rate on this trade. So this again, is an amazing trade 98% win rate to make $400 with the chance to
+[  306.14s ->   313.76s] lose about $4,000. And so that's kind of what our risk to reward scenario is. And now, how do we
+[  313.76s ->   319.12s] mitigate these risks? Oops, let me remove that line. We mitigate these risks by using this trending
+[  319.12s ->   324.66s] band indicator, which you'll unlock in the next course that you have from the leaderboard by being
+[  324.66s ->   331.84s] active in this community. But this is the trending band indicator. And once the market hits into the top
+[  331.84s ->   336.52s] portion of this range, like the candles hit the blue line, then we want to exit all of our long
+[  336.52s ->   342.22s] positions and wait for 21 days to help the market resettle. Why? Well, because when we do that,
+[  342.26s ->   349.12s] we're able to avoid most, if not all, well, not all, but most of these pullbacks in periods where the
+[  349.12s ->   353.54s] market did bad. You can see here that the market underperformed in this little downtrend, where we
+[  353.54s ->   359.50s] would have been able to avoid this bit of it by waiting that 21 day point. So we could have got out
+[  359.50s ->   364.12s] and avoided those losses. And then again, we would have had just a bit of a rough trading time, but we
+[  364.12s ->   369.54s] would have made money in this time. And then where else are we seeing it? Well, again, we didn't really
+[  369.54s ->   377.98s] hit it until 2020, the COVID crash. You can see here, not only did we break above or hit this blue line,
+[  378.02s ->   382.76s] we broke above it. And so again, this was a sign to get out of our long positions being our short puts
+[  382.76s ->   388.18s] at the long position. We would have got out here, wait 21 days, we would be able to reenter here and make
+[  388.18s ->   392.98s] money to the upside. So this would help us completely avoid the 2020 crash. And again,
+[  393.06s ->   397.00s] here as well, we wouldn't have been able to avoid it. Here's a situation where it wouldn't have
+[  397.00s ->   402.36s] actually hit the top band. So we would have just had those smaller losses here. This area is similar
+[  402.36s ->   408.26s] to or where this loss period, this loss period is. So not a large loss, but still something we could
+[  408.26s ->   412.02s] not have avoided. But this one right here, when the market broke above, we could have avoided all
+[  412.02s ->   417.06s] these losses down here, because we would have been able to get out in this scenario. So using this
+[  417.06s ->   422.22s] trending band will help us identify the best levels to get in and out. Why? Because it shows
+[  422.22s ->   426.32s] our risk, the closer we are to this blue line, the higher of a higher of a chance we have for a
+[  426.32s ->   430.26s] pullback, which is a higher of a risk we have selling puts. So that's why when we're selling
+[  430.26s ->   433.98s] puts toward these levels, we want to go further out. And we want to be more safe and make sure to
+[  433.98s ->   440.56s] manage quickly if we hit these top blue lines. Anyways, that is how you sell a put. And that is how you
+[  440.56s ->   447.18s] manage risk on it. Now that met managing risk isn't just about a stop loss and take profit,
+[  447.18s ->   452.00s] but it's also about understanding account size. And so what I mean by that is you shouldn't put
+[  452.00s ->   457.50s] your stop loss should not be more than 10% of your account. So if you're trading with a $10,000
+[  457.50s ->   463.72s] account, and 10% of that is $1,000, that means you should not be risking more than $1,000 on a single
+[  463.72s ->   470.10s] trade. And like I said, just trading one of these options, you'll have a $4,000 risk. So that means that
+[  470.10s ->   477.10s] you should have a $40,000 account if you want to trade a put to manage risk correctly. And if you
+[  477.10s ->   481.46s] don't have that large of an account, well, first off, you need to build up to that because that's
+[  481.46s ->   485.62s] how you sell options. You need a large account so that the insurance premium actually makes a good
+[  485.62s ->   491.12s] payoff. But also you can use, instead of using ES, which is the futures that we sell options on,
+[  491.38s ->   497.44s] you can also jump down to MES because it's a 10th of the price. So now instead of making $400 on
+[  497.44s ->   503.26s] profit, you'll make 40. And instead of a $4,000 loss, you'll see a $400 loss. But instead of
+[  503.26s ->   510.94s] needing $40,000, you'll only need $4,000. So it's a 10th of the price. So if you have a smaller account,
+[  511.08s ->   516.04s] look at using MES. Now that is what selling puts it. This is a very profitable strategy that a lot
+[  516.04s ->   520.40s] of great traders do every single week. They're trying to do it every single day because of how
+[  520.40s ->   526.22s] amazing this strategy is, especially as we get into this middle range of the market. It's amazing to
+[  526.22s ->   529.96s] sell because we have that upside and their downside is quite limited because we've already moved down
+[  529.96s ->   535.46s] a lot. And so selling puts is a strategy you should learn and add to your repertoire. If not,
+[  535.58s ->   540.22s] start paper trading. Now, how do we automate this strategy for people who work full time,
+[  540.30s ->   545.78s] who have a family, who don't want to be glued to the screen? How can we set this up here? Well,
+[  545.80s ->   551.50s] we go into our auto trader here. Again, this is still a beta form of it, but we go into,
+[  551.50s ->   557.86s] we click create a new auto trader. We connect our tasty trade account. After we connect our account,
+[  557.94s ->   564.40s] we click on selling puts as our strategy, and we can set it up exactly as we did earlier. We have
+[  564.40s ->   569.38s] 90 Delta. We can sell as many puts as we want. Let's just say one for now. Let's say I have a
+[  569.38s ->   575.30s] larger account size. I'll do it on the ES futures. I can do it once a week on Wednesdays, or I can do it
+[  575.30s ->   579.52s] twice a week on Tuesdays and Thursdays, which is a great strategy. I know a lot of great traders who do
+[  579.52s ->   585.44s] this. We're going to target, or I mean, a 10 Delta will be our target. Sorry. And 90 days until
+[  585.44s ->   590.96s] expiration will be the level or not, not the level, but our expiration period. We're going to do a take
+[  590.96s ->   598.74s] profit of 25% and a stop loss of 400%. This is what helps set us up for the exact same results we see
+[  598.74s ->   605.90s] here, a $1,000 profit. And so that's kind of how we're structuring this trade. Next, how do we avoid
+[  605.90s ->   610.00s] these market crash periods? Well, like I said, when the, when the, when you push into the band and
+[  610.00s ->   615.28s] we hit it and we want to avoid this selling off, like we did in 2016, 2018, in the 2020 crash,
+[  615.38s ->   619.72s] we all avoided those. Well, you can do that automatically here, but first off, let's set
+[  619.72s ->   624.98s] up our buying power allocation, 50,000. And then our market crash, we click enable now enabling the
+[  624.98s ->   630.48s] market, the market crash will take us out of our long positions and not allow us to enter any new ones
+[  630.48s ->   635.50s] when we are in that crash period and crash phase so that we don't have those massive losses. Like
+[  635.50s ->   640.94s] we see here, it will avoid that. So we have a much flatter and smoother profit curve. And so just
+[  640.94s ->   646.64s] like that, enable safeguards. And we've created the auto trader just like that. You can see here,
+[  646.64s ->   651.98s] we now have an auto trader for selling puts every single Tuesday and Thursday. That's how that works
+[  651.98s ->   655.94s] following this results. And so again, if we did this daily, we'd have a million dollar profit,
+[  655.94s ->   660.96s] if not more, because we're avoiding crashes. But again, that's what you can do. And that's how you
+[  660.96s ->   663.98s] automate and use this selling put strategy.

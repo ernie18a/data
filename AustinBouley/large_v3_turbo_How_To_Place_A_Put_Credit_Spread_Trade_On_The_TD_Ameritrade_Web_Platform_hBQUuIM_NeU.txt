@@ -1,0 +1,39 @@
+[    0.08s ->     4.04s] I'm going to walk you through how to place a put credit spread on the TD Ameritrade web
+[    4.04s ->     5.04s] platform.
+[    5.04s ->     8.36s] I'm going to walk you through step by step using the 10% credit spreads broker walkthrough
+[    8.36s ->     9.36s] method.
+[    9.36s ->    10.36s] So here we go.
+[   10.36s ->    14.28s] So we're going to click on here, go on TD Ameritrade web, and we're going to go through
+[   14.28s ->    17.46s] these simple steps it takes to place a put credit spread.
+[   17.46s ->    21.84s] Number one, you want to click on the trade tab, which is up here in your top corner,
+[   21.84s ->    24.84s] click on the trade tab and click on options.
+[   24.84s ->    30.08s] Step number two, you want to select vertical put credit spread on the options strategy
+[   30.08s ->    31.08s] type.
+[   31.08s ->    32.88s] By default, it's going to show single order.
+[   32.88s ->    35.56s] You want to click it and click on vertical put spread.
+[   35.56s ->    39.12s] Next, you want to type in the symbol that you're looking to trade.
+[   39.12s ->    43.72s] So for instance, type in the underlying symbol here and it should update by default right
+[   43.72s ->    47.52s] here showing that it is recognized that as a valid ticker.
+[   47.52s ->    51.92s] Step three, you want to select the strike prices for what you're going to be selling to open
+[   51.92s ->    53.44s] and buying to open.
+[   53.44s ->    57.86s] Remember the sell to open level is the level that you want the stock to stay above for
+[   57.86s ->    58.86s] a put credit spread.
+[   58.86s ->    60.36s] So you're going to do that there and there.
+[   60.36s ->    62.46s] And then you can do that there and there, strike prices here.
+[   62.46s ->    65.56s] And then next, you want to also select your expiration dates.
+[   65.56s ->    68.62s] Your expiration dates will be based on how long you want to hold that trade.
+[   68.62s ->    73.48s] If you're following this alert, it will be July 21, 2023, and you can put those expiration
+[   73.48s ->    74.94s] dates in right there.
+[   74.94s ->    78.72s] Step four is once you do that, you'll be able to scroll down and you'll be able to see
+[   78.72s ->    81.72s] that you want to make sure that the order type is net credit.
+[   81.72s ->    83.50s] If you've been following this, it will be.
+[   83.50s ->    86.14s] And number two, you want to make sure you can understand the premium.
+[   86.14s ->    90.44s] If the premium is greater than 0.15, then you can put this trade on.
+[   90.44s ->    91.44s] Why?
+[   91.44s ->    93.40s] Because the premium shows you how much money you're going to collect for putting that
+[   93.40s ->    94.40s] trade on.
+[   94.40s ->    97.64s] Once you do that, there's a button down below that clicks confirm or submit and confirm
+[   97.64s ->    99.14s] or confirm and submit, something like that.
+[   99.14s ->   101.14s] Then click submit and you are good to go.
+[  101.14s ->   106.92s] All right, that is how you can basically put credit spread trade on the TD Ameritrade web
+[  106.92s ->   107.42s] platform.

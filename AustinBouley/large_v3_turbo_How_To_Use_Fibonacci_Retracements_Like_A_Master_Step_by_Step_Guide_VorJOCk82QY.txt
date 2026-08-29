@@ -1,0 +1,98 @@
+[    0.27s ->     4.31s] All right, in this video, we're going to discuss Fibonacci retracements.
+[    4.73s ->     8.45s] So first, let me go over what a retracement is, and then I'm going to show you how to
+[    8.45s ->    14.29s] use this Fib retracement for both long-term and short-term use to find support and resistance
+[   14.29s ->    14.69s] levels.
+[   14.93s ->    19.77s] You can also find expected support and resistance levels as well, but we'll go into that in
+[   19.77s ->    20.17s] a second.
+[   20.63s ->    25.15s] So a retracement is when you see a minor correction in a trend.
+[   25.51s ->    28.89s] So for instance, the trend from here to here is an uptrend, right?
+[   28.89s ->    30.75s] Because it's constantly going up.
+[   31.07s ->    35.11s] The highs are getting higher, and the lows are also getting higher as well.
+[   35.57s ->    38.99s] So a retracement would be when it goes up and it pulls back.
+[   39.17s ->    44.97s] This small period right here would be what's known as a retracement, which is where it retraces
+[   44.97s ->    48.89s] back down just to push up higher, retraces back down to push up higher.
+[   49.21s ->    53.93s] We also call these pullbacks or pull-ups, depending if it's a downtrend, right?
+[   53.93s ->    58.97s] So for instance, it went down, it had a small retracement up, and then it continued going
+[   58.97s ->    59.47s] down.
+[   59.55s ->    61.77s] It's just a natural, healthy part of a move.
+[   62.21s ->    69.85s] But the Fib retracements help you find where these levels are going to bounce and the strongest
+[   69.85s ->    70.41s] levels.
+[   70.85s ->    76.29s] So when you're on the TOS platform, again, you can do this on almost all platforms as well
+[   76.29s ->    79.13s] as the tradingview.com platform.
+[   79.57s ->    84.41s] But you'll go here to your drawing tools, and you'll change it to this little percentage
+[   84.41s ->    88.23s] sign that if you hold your mouse over will say Fib Retracements.
+[   88.91s ->    94.89s] So from here, what you want to do in an uptrend is mark from the highest high down to the bottom
+[   94.89s ->    95.19s] low.
+[   95.29s ->    98.77s] So again, this shows a lot, but it's going to kind of mess it up.
+[   98.77s ->   102.21s] So I'm going to go on a shorter time frame real quick.
+[  103.21s ->   108.55s] So as you can see here, let's say that we were going up on this move, and we started
+[  108.55s ->   111.73s] to see it start to retrace, and we wanted to guess where it would bounce.
+[  111.91s ->   115.27s] So I would have got it from this high here, and I would have moved it to this low.
+[  115.55s ->   118.07s] So what I would have seen here are these levels.
+[  118.17s ->   126.37s] You have the 0% level, the 23.6, the 38.2, 50, 61.8, 78.6, and the 100% level.
+[  126.37s ->   128.75s] These are your strongest levels.
+[  129.13s ->   138.17s] Again, so your strongest levels will be the 61.8 and the 38.2.
+[  138.33s ->   143.67s] These are your two strongest levels when determining a bounce or rejection.
+[  144.15s ->   149.75s] So as you can see here, the SPY was uptrending, and if we would have pulled a Fib Retracement,
+[  149.89s ->   154.77s] we would have had an idea based on the 61.8 level that we would have bounced around here,
+[  154.77s ->   156.09s] and that's exactly what happened.
+[  156.37s ->   161.31s] Now remember, this doesn't always happen, and it shouldn't be used solely as your only
+[  161.31s ->   165.79s] trading indicator, but it does show you a good idea where it will bounce, because as
+[  165.79s ->   170.87s] you can see, it came down here and to this level, formed a Doji, which is talked about
+[  170.87s ->   177.17s] in the Everything Technical Analysis lesson, and then that is indicative of a reversal.
+[  177.61s ->   179.15s] So and then we saw it move back up.
+[  179.15s ->   185.09s] So again, this can be applied to both short-term and long-term usage, but let me show you more
+[  185.09s ->   191.99s] and also how to find what's called Fib Projections, which is where you can actually estimate where
+[  191.99s ->   194.09s] a stock will be going.
+[  194.09s ->   203.13s] So again, this works the same way on the downside, except I'm going to go from the bottom to the top
+[  203.13s ->   209.13s] here, so you can see how we have those little retracement levels, and you can see exactly how
+[  209.13s ->   209.87s] they fell in line.
+[  210.03s ->   214.67s] So let's say that this was our retracement, and we were wondering where it was going to
+[  214.67s ->   215.51s] retrace two.
+[  215.93s ->   221.99s] We would have gone from the bottom here up to the top, and then so we would have seen
+[  221.99s ->   227.49s] that, okay, so this level here, the 38.2, right, because I said the 61.8 and the 38.2
+[  227.49s ->   229.81s] are your strongest levels of support and resistance.
+[  230.13s ->   237.57s] Well, as you can see here, we got rejected all three times or all two times if you're drawing
+[  237.57s ->   243.47s] it from here to here at that 38.2% level, and then we saw it break through that 100%, and
+[  243.47s ->   244.83s] then it meet the Fib Projection.
+[  244.83s ->   247.79s] So this right here is known as a Fib Projection.
+[  247.79s ->   254.43s] Anything above 100% is known as a Fib Extension, or a Fib what I call Projection, because it's
+[  254.43s ->   257.19s] projecting where that next support level will be.
+[  257.19s ->   263.91s] So as you can see here, on SPY, it projected a Fib to go down to 161.8, and as you can see,
+[  263.91s ->   270.13s] this does correlate to the 61.8 level here, it's just the 100% version of it.
+[  270.13s ->   275.45s] So you can see that we had a nice bounce, but again, this not only applies to the downside,
+[  275.45s ->   277.49s] but to the upside as well.
+[  277.49s ->   282.89s] And yeah, so again, I'm showing you on the daily chart, and if I apply here, it'll show
+[  282.89s ->   287.91s] that the Fib Projection will be really high, but I don't want to do that right now.
+[  287.91s ->   292.81s] But since we are in this current market, let's actually apply the Fib Rejection right now and
+[  292.81s ->   294.13s] see what's going on.
+[  294.13s ->   299.57s] So again, our most recent trend is a downtrend, right, from here to here.
+[  299.57s ->   302.35s] So let's see if we can pull up our levels.
+[  302.35s ->   308.95s] So as you can see, this 38.2 level is our strongest level of resistance in a downtrend, right?
+[  308.95s ->   313.75s] We can see it come up here, get rejected and come down, or come up here and get rejected
+[  313.75s ->   315.52s] and come down.
+[  315.52s ->   322.46s] A way that I, when I was first learning this about a year ago, to be told is that, you know,
+[  322.52s ->   329.42s] the closer you get up is the likelihood that it won't actually come back down.
+[  329.70s ->   336.18s] So as you can see here, if it stays within this level, again, this isn't 100% true, but
+[  336.18s ->   338.36s] it's a good way to think about it, right?
+[  338.44s ->   343.18s] If it stays in this level, then you have like a 78.6 chance that it comes back down.
+[  343.18s ->   348.40s] If it stays in this level, you have a 61.8% chance that it will come back down, right?
+[  348.48s ->   352.82s] So again, that's not the correct way to think about it, because that's not how the math actually
+[  352.82s ->   356.64s] works, but it's something that is useful for those who don't understand numbers well.
+[  357.08s ->   362.36s] But anyways, as you can see here, this 38.2 was our strong level, and we're actually holding
+[  362.36s ->   363.98s] above it, which is a very good sign.
+[  364.18s ->   367.72s] Although we know that from our 200-day moving average, it's at this 300 level.
+[  368.00s ->   369.86s] So that's why we're having a lot of resistance.
+[  369.86s ->   377.86s] But again, we are at a strong resistance of 300, and at this 38.2% FIB, so who knows?
+[  378.14s ->   385.62s] But this is how you can use FIB on a long-term buy and hold investing type strategy, as well
+[  385.62s ->   391.34s] as the trend investing strategy, as well as on a daily chart if you go, I mean, on a day
+[  391.34s ->   396.62s] trading time frame, if you go out to a one minute or a 15 minute of a trend, you can actually
+[  396.62s ->   398.84s] see the same support and resistance lines.
+[  398.84s ->   401.82s] I hope this made sense of doing a FIB retracement.
+[  401.96s ->   406.20s] This is something that's very useful, because it helps point out where support and resistance
+[  406.20s ->   413.02s] levels are, as well as where some projections of a resistance will be, or some projections
+[  413.02s ->   415.40s] of where the support will be to the downside.
+[  415.80s ->   416.16s] All right, guys.
+[  416.26s ->   416.96s] Thanks for watching.
+[  417.32s ->   421.48s] FIB retracement's video on how to find key support levels of support and resistance.
+[  421.58s ->   424.08s] I don't really know what I'm naming this video yet, but I hope you enjoyed.

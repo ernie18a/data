@@ -1,0 +1,201 @@
+[    0.46s ->     9.04s] Welcome back. It's been quite some time. Today I want to talk to you about convex and non-convex
+[    9.04s ->    14.02s] optimization problems. I want to talk about why we should care about these problems in the first
+[   14.02s ->    18.58s] place. I want to talk about the different algorithms we can employ to solve these
+[   18.58s ->    24.86s] different types of problems. And I also want to talk about how I've used these algorithms in my
+[   24.86s ->    32.98s] own research and how productive each one has been in different types of problem spaces. So for
+[   32.98s ->    39.98s] starters, why should we care about any sort of optimization problem? Well, machine learning and
+[   39.98s ->    47.18s] artificial intelligence, the backbone of modern machine learning, artificial intelligence,
+[   47.42s ->    54.26s] Chack GPT, Gemini, Lama, whatever model, whatever large language model that you use to generate
+[   54.26s ->    62.32s] things, whatever image generation software you use to generate logos or pictures, all of these
+[   62.32s ->    72.24s] different models hinge on our ability to train them, right? Training is the process of trying to map a
+[   72.24s ->    81.96s] set of inputs to a target set of outputs. In the case of Chack GPT, the input is a prompt and the target
+[   81.96s ->    89.54s] is the output response that you expect Chack GPT to generate. Now that's a stochastic representation or
+[   89.54s ->    95.66s] more of a probabilistic map rather than deterministic. And by deterministic, I mean when you give it the
+[   95.66s ->   101.76s] same prompt, it may generate different responses. Deterministic is will generate the same response
+[  101.76s ->   113.20s] every single time. But nevertheless, our ability to train those models and decrease the error is what leads to
+[  113.20s ->   122.82s] better responses, okay? Convex and non-convex optimization is literally what's going on under the hood of the
+[  122.82s ->   127.76s] car. You get into a car, you turn your key, you don't even think about what's going on, right? Hop on track,
+[  127.76s ->   132.72s] GPT, you don't even think about what's going on. You don't even think about the several, probably
+[  132.72s ->   138.16s] obscene number of matrix products that are being paralyzed to compute your answer right in front
+[  138.16s ->   144.92s] of your eyes. But before we even get there, we have to train it. And training it is an optimization
+[  144.92s ->   154.58s] problem. So what's happening here? I made this app to help visualize the problem space. It's pretty
+[  154.58s ->   162.49s] abstract, but bear with me. I think it's going to make a little bit of sense. So let's talk about this
+[  162.49s ->   169.99s] surface that I have in front of me here. Let's suppose that this surface represents error. So X and
+[  169.99s ->   178.64s] Y are my input, and Z is the output. So clearly, if Z is my error, so suppose it's the error for, say,
+[  178.64s ->   183.74s] a large language model like track GPT, right? Where do I want to be? Do I want to be on this red point
+[  183.74s ->   189.87s] where error is really high? Probably not, right? I want to be all the way down here where error is
+[  189.87s ->   200.04s] really low. Now you may say, well, why don't we just look at the bottom of the bowl and pick those
+[  200.04s ->   206.62s] X and Y points, and we'll be done. And that's the parameters that we need for our model. And that's
+[  206.62s ->   213.56s] it. And we're done. That is true in this setting, right? We can just pick the X and Y down here.
+[  213.56s ->   223.16s] We can see it. Boom, just pick those two. But does track GPT only have two parameters, X and Y? I'm
+[  223.16s ->   231.12s] afraid not, right? That space is so incredibly large that we couldn't possibly visualize it. So what can
+[  231.12s ->   236.62s] we do? What hope do we have? If this is our error, right? This is just a representation of the error
+[  236.62s ->   243.76s] function, right? So that you can understand visually what's going on. How can we possibly find that lowest
+[  243.76s ->   249.97s] point on the surface? Well, what we can do is we can employ these different algorithms. We're going
+[  249.97s ->   256.05s] to talk about gradient descent, stochastic gradient descent, and simulated annealing today. And we're
+[  256.05s ->   260.89s] going to talk about them in this controlled setting so that even when you can't visualize what's going
+[  260.89s ->   265.89s] on in the higher dimensional spaces when you're training these neural networks, you can at least have
+[  265.89s ->   272.33s] an idea algebraically of what's going on in terms of the algebra and calculus so that you have,
+[  272.33s ->   278.01s] like I said, an idea of what's going on under the hood and how learning is actually occurring and
+[  278.01s ->   283.33s] why you might not be able to learn in some cases or why you might have some challenges learning.
+[  283.73s ->   289.15s] So what's the deal with gradient descent? Okay. Keep in mind, this is a multivariable function. We
+[  289.15s ->   295.95s] have X and Y as an input and Z as the output. Not multivariate, multivariable. Okay.
+[  295.95s ->   302.97s] Y is not a function of X. They're strictly orthogonal. Okay. At least in this setting.
+[  305.32s ->   311.75s] So gradient descent. X zero is a vector. It's a random starting point. So it's going to be an X
+[  311.75s ->   319.00s] and a Y. Random X and a Y. For each iteration T, and we specify the number of iterations we want to do,
+[  319.30s ->   324.40s] we're going to compute the gradient. And if your calculus three is rusty, all the gradient is is a
+[  324.40s ->   328.62s] collection of partial derivatives. So you partially differentiate in this case with respect to X
+[  328.62s ->   333.90s] and with respect to Y. It's going to give you a vector. It's going to point in the direction of
+[  333.90s ->   340.87s] greatest increase from the initial point. We're trying to minimize the error because we want good
+[  340.87s ->   347.19s] responses. We want to minimize the error of our responses, right? We're going to step negative that
+[  347.19s ->   352.91s] direction. Okay. So we're going to compute a new XT. It's going to overwrite the old one. And what we're
+[  352.91s ->   360.43s] going to do is we're going to subtract the gradient vector. Okay. Keep in mind, it's evaluated at the
+[  360.43s ->   366.47s] initial point that we're given, right? The previous iterations point. We're also going to scale it by
+[  366.47s ->   371.35s] a learning rate. And this is going to determine how much we should step in each iteration. All right.
+[  371.61s ->   377.55s] Remember, linear approximations for nonlinear functions get worse the further away you go from
+[  377.55s ->   383.03s] them. So it makes sense that you should have a learning rate that you can scale some sort of
+[  383.03s ->   389.02s] scalar in front of the gradient that you can control. So what's actually going on? If you
+[  389.02s ->   393.28s] don't understand the calculus, how can we understand what's going on? Well, this is gradient descent right
+[  393.28s ->   398.96s] here. See this, this path of points, that's literally what's happening. So we start at this
+[  398.96s ->   405.36s] green point and imagine we put a piece of paper up to that green point, a perfectly flat piece of paper.
+[  406.72s ->   413.50s] Alpha determines how much we step along that piece of paper. Okay. So when alpha is small, like it is right
+[  413.50s ->   418.26s] now, 0.1, we're going to step a little bit. If alpha is extremely large, we're going to step a lot
+[  418.26s ->   423.36s] of bit. Okay. But clearly we want to do this iteratively because if we stepped a piece of paper
+[  423.36s ->   429.88s] right away, all the way down, we would be off the function over here and we'd be back all the way up
+[  429.88s ->   435.30s] here on the Z, right? Because we would step in this direction and up over here. If we made a really
+[  435.30s ->   441.48s] large step, we would be back up here. Okay. So that's why the learning rate is relatively small
+[  441.48s ->   448.84s] in this case, right? And you can see, we do this iteratively until we get to the bottom and that
+[  448.84s ->   454.32s] produces the exact same minimum error. So now we have a way of finding the X and Y that produced
+[  454.32s ->   460.32s] the smallest error, even without knowing what the function looks like. We could literally do this
+[  460.32s ->   466.68s] purely algorithmically. I didn't need to visualize this surface in order to find the X and Y that give
+[  466.68s ->   475.18s] us the smallest error, the one that gets us to the bottom of this surface. It's a convex function.
+[  476.74s ->   484.33s] What's the problem, right? What's the problem with this? Well, if every error function was convex,
+[  484.77s ->   490.97s] that would be wonderful. We could train it quite easily. It wouldn't be computationally intensive.
+[  490.97s ->   496.95s] In most cases, it wouldn't be intractable. You'd literally just employ gradient descent until
+[  496.95s ->   502.73s] you get to the bottom and you minimize the error. What's the problem with this?
+[  503.61s ->   509.69s] Well, you know, we're going to disregard the idea of overfitting for now. We're going to disregard
+[  509.69s ->   516.07s] other concerns in the training process and just talk about the problem with actually training and trying
+[  516.07s ->   523.17s] to extract the information that we're looking for from a particular model representation.
+[  523.73s ->   531.87s] What's the problem here? Well, we may end up with a non-convex error function. And what a non-convex
+[  531.87s ->   542.94s] error function looks like is something like this. Clearly, we have this start point right here. We do
+[  542.94s ->   550.56s] gradient descent and we end up here at this low point. But is that the lowest low for error that
+[  550.56s ->   556.91s] we can get to? No, we could get all the way down here, right? That's a much better representation
+[  556.91s ->   563.39s] of the map of inputs to outputs if we can get to down here. But I ran gradient descent from this
+[  563.39s ->   567.95s] starting point and I ended up here. How on earth can I get here? Well, I could pick a random starting
+[  567.95s ->   575.30s] point, but if I don't have any heuristics to guide me, I'm going to be picking forever. I could
+[  575.30s ->   584.84s] literally pick for infinity. There's no guarantee, right? At infinity maybe, but, you know, nothing
+[  584.84s ->   593.48s] tractable. So what can I do, right? What can I do here? Now, the particularly keen among you may
+[  593.48s ->   599.14s] recognize that the z here is actually negative and error will most likely have some measure of
+[  599.14s ->   603.52s] distance. So it'll be squared or absolute valued. So it can't be negative, but bear with me. This
+[  603.52s ->   608.60s] is just a representation. Think of it as error shifted down if you have to. But how do we get
+[  608.60s ->   612.80s] to here, right? Remember, I can't visualize this function in a higher dimensional space.
+[  613.58s ->   619.14s] Algebraically, I need a way to get down here, right? Because I want to find a smaller error
+[  619.14s ->   629.73s] between my input and output target. One way, one potential way, I should say, is through
+[  629.73s ->   639.97s] stochastic gradient descent. Stochastic gradient descent is the exact same procedure. It's the
+[  639.97s ->   646.72s] exact same procedure. The only difference is we're adding noise to the gradient. So we're inducing
+[  646.72s ->   657.63s] randomness in each gradient step, all right? The scale of the step is still governed by alpha.
+[  657.63s ->   665.86s] And if alpha is arbitrarily large, then we can end up searching a lot of the space, okay? And what I'm
+[  665.86s ->   670.44s] going to do is I'm going to show you what this looks like in a convex setting. Looks quite similar,
+[  670.72s ->   675.30s] right? Because we're inducing a very small amount of noise. But again, we're still ending up where we
+[  675.30s ->   682.28s] should be at the bottom here, right? That's nothing surprising. Let's go on down to the
+[  682.28s ->   690.46s] non-convex function here, right? We see a similar thing happen. But what happens when we increase the
+[  690.46s ->   706.89s] learning rate, just as an example? Let's see what happens. Not too much. Maybe 2.5. Okay, now we're
+[  706.89s ->   713.75s] starting to explore more of the space. So instead of just diving right down into the local minimum,
+[  713.75s ->   718.71s] we started to explore up a little bit. Keep in mind, this is stochastic. Every time I run this,
+[  718.71s ->   727.19s] it's going to be different. I'll increase alpha to 0.7. We're exploring significantly more of this
+[  727.19s ->   738.94s] space now before we get to this local minimum here. What happens if I make it 0.88? Now we're
+[  738.94s ->   747.96s] exploring a significantly larger portion of this space, right? So this is quite interesting. And
+[  747.96s ->   753.56s] perhaps there is a way that we can extend this. Maybe if we have an arbitrarily high learning rate,
+[  753.56s ->   758.68s] we can keep a hash map of all the parameters and the corresponding errors and just pick the parameter
+[  758.68s ->   766.90s] set that yields the lowest error. But that's going to be pretty similar to the idea of simulated annealing.
+[  767.10s ->   771.54s] So we're going to get there in a moment. But just for illustration purposes, here it is with a
+[  771.54s ->   782.11s] learning rate of almost 1 from the same starting point. Okay. So that's exactly what's going on.
+[  782.11s ->   791.80s] Now, what about with this, this convex sort of representation here, right? Let's scroll back
+[  791.80s ->   798.02s] up to this convex representation. You can see that it's essentially just noise, right? We're going
+[  798.02s ->   803.08s] back and forth. It's pretty much just inducing random noise in the gradient. We're going to continue
+[  803.08s ->   810.16s] to step back and forth in that fashion. Okay. So clearly, the learning rate is a hyperparameter that
+[  810.16s ->   817.70s] has to be tuned to the problem. Okay. So stochastic gradient descent is one way to get over potential
+[  817.70s ->   823.74s] local minimums, right? Because if you are, let's say, sitting at the top of a hill, right? Let's say
+[  823.74s ->   828.38s] we're sitting at the top of this hill. If we compute the gradient, maybe we're going to step in this
+[  828.38s ->   833.16s] direction, right? That would be great. We would end up all the way down here. But maybe if we just
+[  833.16s ->   840.47s] compute it vanilla, we start going this direction. If we induce noise at the top here, then we have a
+[  840.47s ->   845.67s] probability greater than zero of stepping in this direction. Okay. Depending on how large the noise
+[  845.67s ->   851.41s] is, it's going to depend on the probability. It's going to change the probability of ending up
+[  851.41s ->   861.60s] actually at this global minimum down here. All right. So stochastic gradient descent is more of a
+[  861.60s ->   868.46s] probabilistic version of gradient descent in a way. We have no ability really to control what's going on
+[  868.46s ->   875.45s] because again, it's a probabilistic algorithm or not probabilistic, but it's a stochastic algorithm.
+[  876.17s ->   883.62s] But we do have the ability to potentially overcome these local minimums. Is there anything else we
+[  883.62s ->   889.31s] could do? I'm going to talk about one last one that's been particularly productive for me, and that is
+[  889.31s ->   896.94s] simulated annealing. I find it fascinating as an algorithm. Simulated annealing, we take a initial
+[  896.94s ->   901.00s] starting point. Again, it's still a vector, and we have some temperature T. And essentially what we're
+[  901.00s ->   905.18s] going to do is we are going to generate a random point in the neighborhood of our current point.
+[  905.74s ->   911.90s] We are going to compute a change in functional value. And if the change in functional value at that
+[  911.90s ->   918.90s] new point is less, then we're going to step there with certainty. If it's greater, then we are going to
+[  918.90s ->   926.74s] step there with a probability that's governed by the change and the temperature. And one way to
+[  926.74s ->   934.66s] interpret this is that as the temperature is high, we're bouncing around a lot. But then as the
+[  934.66s ->   942.54s] temperature starts to cool off, we're not bouncing around as much. So it's pretty sweet. It's a pretty
+[  942.54s ->   950.08s] cool algorithm. And if I was to say increase the number of iterations here, let's make it pretty big.
+[  950.08s ->   963.83s] Let's make it like 100. And then see if we can see the start, the end. Check out some of these local
+[  963.83s ->   973.70s] extrema. So we started at the same point here. Whoops, let me scroll down. So we started at the same
+[  973.70s ->   982.38s] green point. We run 100 iterations of simulated annealing. And all of these blue points represent
+[  982.38s ->   990.40s] minimums that we've observed. Or I guess this is nodes along the last path that we've observed, or the
+[  990.40s ->  1006.17s] optimal path. Yeah. So we observe 100 different minimums per iteration. You can see, compared to
+[ 1006.17s ->  1013.73s] stochastic gradient descent and gradient descent, we actually end up at the global minimum. So this is quite
+[ 1013.73s ->  1020.73s] interesting because we explored a significantly large fraction of the space just by doing this
+[ 1020.73s ->  1026.67s] a little bit differently. We didn't use any calculus. Instead, we did a probabilistic search where
+[ 1026.67s ->  1033.51s] essentially we are balancing exploration and exploitation based on our temperature and our
+[ 1033.51s ->  1040.77s] cooling rate. So for example, if I was to decrease this temperature right off the bat, right, let's make
+[ 1040.77s ->  1048.78s] the temperature one. Will we explore more of the space? No. We actually get very similar results,
+[ 1048.78s ->  1054.96s] if not the same minimum, as stochastic gradient descent and gradient descent, or at least stochastic
+[ 1054.96s ->  1066.48s] gradient descent with a low learning rate. But if we make temperature very large, then we explore much
+[ 1066.48s ->  1077.02s] more of the space, right? So here, we end up at this minimum right here. Okay, we actually don't end up
+[ 1077.02s ->  1082.98s] at this global minimum down here, but we end up at this minimum right here. And if we change the
+[ 1082.98s ->  1096.20s] cooling rate, maybe we cool at a lower rate, we get to a different one. So this is just a different
+[ 1096.20s ->  1101.66s] type of optimization algorithm. Again, it's quite interesting. So essentially, instead of updating
+[ 1101.66s ->  1109.02s] the gradient with, or instead of updating the initial starting point with the gradient times the
+[ 1109.02s ->  1114.64s] learning rate, or the gradient plus noise times the learning rate, this is the functional representation.
+[ 1115.76s ->  1123.12s] We say, update it as x prime if delta e is less than zero. So if the functional change is less than
+[ 1123.12s ->  1131.62s] zero, we update it in that direction. Otherwise, with probability, exponential negative delta e over t,
+[ 1131.62s ->  1138.44s] if delta e is greater than zero. So with some probability greater than zero, we are going to
+[ 1138.44s ->  1147.01s] explore a non-optimal step. And then if we don't hit, then we are going to just go with the original
+[ 1147.01s ->  1153.19s] point and choose a new random point and then do it again. And that's why we have 100 iterations here.
+[ 1154.13s ->  1161.46s] And that is how simulated annealing works. So it's more of a search algorithm, really. And it can be used
+[ 1161.46s ->  1167.98s] in a machine learning context. It can also be used in other types of search problems as well.
+[ 1169.55s ->  1175.27s] So it's quite interesting. So those are the three algorithms I wanted to talk about today.
+[ 1175.93s ->  1183.37s] There are different flavors of each that you can use. So you can use simulated annealing in the context
+[ 1183.37s ->  1189.59s] of stochastic gradient descent. Perhaps you even have some temperature and cooling rate for your noise,
+[ 1189.59s ->  1195.07s] and you scale it in that capacity. Then maybe you have a probabilistic rate of acceptance.
+[ 1196.03s ->  1201.55s] There's, I mean, really just an infinite number of ways that you could possibly establish these
+[ 1201.55s ->  1207.45s] optimization algorithms. But these are a couple of different flavors, and they're quite interesting.
+[ 1208.39s ->  1214.79s] So I've actually had a lot of luck employing simulated annealing in the context of training
+[ 1214.79s ->  1221.51s] variational autoencoders to learn arbitrage-free volatility surfaces. It actually preserved the
+[ 1221.51s ->  1228.13s] arbitrage-free nature of the surface, even when generating from the latent space a brand new
+[ 1228.13s ->  1235.83s] volatility surface. And that was quite useful in approximating pricing functionals using neural
+[ 1235.83s ->  1241.73s] networks, essentially, to learn the parameter set of a model to a volatility surface. It allowed us to use
+[ 1241.73s ->  1248.63s] significantly more data. So simulated annealing in conjunction with stochastic gradient descent
+[ 1248.63s ->  1255.03s] and other different optimizers, like other routines, like Atom, very, very productive.
+[ 1256.49s ->  1263.55s] That combination of having like a sort of a simulated annealing style learning rate was extremely
+[ 1263.55s ->  1270.89s] effective in sort of surpassing and overcoming those issues of getting stuck at a local minimum,
+[ 1270.89s ->  1276.01s] because really, that's, that's what was happening most of the time is, you know, we were trying to
+[ 1276.01s ->  1281.63s] learn some sort of optimal representation we wanted to be down here, we would get stuck like right here,
+[ 1281.63s ->  1288.43s] and the generated surfaces just wouldn't be any good. But eventually, we were able to learn really
+[ 1288.43s ->  1293.23s] great representation of those surfaces. And it was thanks to a combination of, like I said,
+[ 1293.23s ->  1301.50s] the simulated annealing style training with gradient descent. So that's going to do it for this video. I hope you
+[ 1301.50s ->  1309.76s] enjoyed. I just wanted to go over a couple of different algorithms in the context of deep learning,
+[ 1309.76s ->  1314.56s] machine learning, neural network training, you know, the the problem space of really artificial
+[ 1314.56s ->  1320.56s] intelligence in general. And, you know, different ways that we can start to think about how these
+[ 1320.56s ->  1325.76s] models are kind of built, you know, what's going on under the hood, because, you know, more and more
+[ 1325.76s ->  1332.80s] every day, I'm seeing, you know, adults, children alike using track GPT, Gemini llama,
+[ 1332.80s ->  1337.76s] maybe, maybe less Gemini and llama, but, you know, you get the gist that everyone seems to be using
+[ 1337.76s ->  1344.80s] artificial intelligence, but there isn't really a understanding about what's going on in the training
+[ 1344.80s ->  1350.72s] process. You know, this has nothing to even do with the reinforcement learning, or human, human feedback
+[ 1350.72s ->  1356.48s] with the reinforcement learning. We talk nothing about different types of learning structures,
+[ 1356.48s ->  1362.16s] right? There's, there's supervised unsupervised reinforcement learning. And, you know, there's,
+[ 1362.16s ->  1366.80s] there's also a reinforcement learning component as well. So this is kind of just the, the, the tip of
+[ 1366.80s ->  1374.16s] the iceberg here before we, we even start to, to get into more sophisticated training methodology. So
+[ 1374.16s ->  1379.68s] I hope you enjoyed it. I hope this, um, hopefully it was enlightening to see how essentially machines
+[ 1379.68s ->  1384.88s] learn, um, in the context of, you know, a 3d visualization of, of error, right? We want to
+[ 1384.88s ->  1388.56s] get to the lowest point and there are different algorithms that we can use to get to that lowest
+[ 1388.56s ->  1393.68s] point. So, you know, feel free to, you know, leave a comment. If you have any questions, you can
+[ 1393.68s ->  1400.96s] always reach out to me. I'll leave a link to this app in the description below. Otherwise I will see you in
+[ 1400.96s ->  1402.96s] the next one.

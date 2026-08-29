@@ -1,0 +1,113 @@
+[    0.00s ->     5.18s] It's Austin Booley again. I wanted to talk about my strategy and how I knew that BA was going to
+[    5.18s ->    11.20s] drop today. So the market looked pretty well today. I mean, as you can tell, everything is
+[   11.20s ->    17.78s] green. But again, when your options trading, it doesn't matter if it's green or red or sideways,
+[   18.56s ->    23.38s] you can still make money. So that's the brilliant thing about options. But what we're actually
+[   23.38s ->    28.60s] going to talk today is specifically why I knew that BA was going to drop. So it's more of a
+[   28.60s ->    33.70s] strategy video and why I know how to trade what I trade. So first thing I'm going to start
+[   33.70s ->    40.66s] off with is Netflix. So as you can check out my other video about my strategy, I'm going
+[   40.66s ->    47.66s] to talk about the early range breakout. So in that strategy video, I mentioned that I make
+[   47.66s ->    55.70s] sure my time frame is at 15 minutes. So we're going to hope this is not Netflix. So I go
+[   55.70s ->    60.76s] in 15 minutes and I draw a candle on the bottom of the 15 minute candle and on the top of
+[   60.76s ->    67.54s] the 15 minute candle. And I wait for it to close below. So the only stock I traded today
+[   67.54s ->    72.48s] was BA. But I'm going to show you everything that you could have traded but why I didn't
+[   72.48s ->    78.15s] trade. So if we look at this 15 minute range breakout, so you draw a line on the bottom
+[   78.15s ->    83.01s] and the top. And if it closes above, that is a position to buy a call. If it closes below,
+[   83.01s ->    88.67s] it's a position to buy a put. So it would close here and you would have had a nice little put
+[   88.67s ->    93.21s] range here. I don't know how much that would have been. But the reason why I didn't trade
+[   93.21s ->    98.11s] trade this is because I did not know how far it was going to go. I mean, obviously with
+[   98.11s ->   102.73s] gaps, gaps like to fill. So I knew it was going to be somewhere in this area, but I didn't
+[  102.73s ->   106.07s] know where and I wasn't comfortable because I didn't know where. I like to know where I'm
+[  106.07s ->   112.24s] going to take profits. The next one that worked out well was Facebook. So if we go
+[  112.24s ->   117.58s] into Facebook today, if you draw a top on the bottom or the top and the bottom and you
+[  117.58s ->   122.54s] wait for the close below. So the close below here was here. And we have this nice little
+[  122.54s ->   129.38s] dip. Let me go up to a few days. See, I also had no idea where how low this could actually
+[  129.38s ->   140.38s] go. Obviously, whole numbers are psychological levels in stock market trading. So 150 is like
+[  140.38s ->   145.72s] an even number. I mean, I know that sounds weird, but when you go, when people think about
+[  145.72s ->   150.94s] taking profits and buying and et cetera, they usually put even numbers in their head because
+[  150.94s ->   156.38s] people love even numbers. So if you want to sell or buy, it probably should be at an even
+[  156.38s ->   163.16s] number or 50 cents or something like that. I know people who trade only dollar resistance
+[  163.16s ->   167.96s] and supports, they wait to see if it breaks or whatnot. So I didn't exactly know how far
+[  167.96s ->   174.46s] that Facebook could go down. Next one would be Tesla. Tesla took a dip today. So if you
+[  174.46s ->   179.76s] can see here, you draw a line at the top and the bottom. That's the early range breakout.
+[  179.76s ->   184.64s] I didn't know how low this could go either because if I'm looking at my support line here,
+[  184.64s ->   189.44s] I knew that the support was here. So I knew that if I bought here, it could easily turn
+[  189.44s ->   195.32s] around in this area and I didn't want to buy here. Well, buy a put here wanting it to go
+[  195.32s ->   199.04s] down and then it hits the support and then bounces right back up. So that's why I didn't
+[  199.04s ->   203.92s] take the Tesla trade, but it ended up breaking straight through this support, hitting about
+[  203.92s ->   213.92s] the, what is it, 291 area, 290, 291.36. And then it bounced up above this support. The next
+[  213.92s ->   219.54s] one, which is a good example of, I don't know if I can see, oh, it's right here. This isn't
+[  219.54s ->   224.88s] an example of waiting for the close, okay? So if I draw at the top of the first 15 minute
+[  224.88s ->   232.42s] candle, try to make it even because I like even. Okay. Uh, sorry, taking up time here. Okay. So I
+[  232.42s ->   240.30s] draw these lines up below and whatnot. So if you would have waited for the close, hold on, I'm sorry,
+[  240.44s ->   249.78s] but I like even. So that's not even, but whatever. So if you would have bought, put here, you would
+[  249.78s ->   256.36s] have obviously lost some money or maybe if you took quick profits, but like, this is why you have to
+[  256.36s ->   262.96s] wait for it to close below or above the, these lines. If it just passes, it can easily go right
+[  262.96s ->   267.54s] back, back in as we saw here. So you want it to close. So obviously if you would have waited,
+[  267.64s ->   272.44s] it would have closed above this line. That would have been your entry, a nice little power hour
+[  272.44s ->   278.48s] trade, which is power hour is the last, um, hour or two of the day where volume comes back in.
+[  278.48s ->   284.00s] As you can see on all these charts, you have the volume. Um, another one would be Twitter that you
+[  284.00s ->   289.22s] have to wait, uh, Twitter and, uh, the bank of America are just examples. Well, Twitter,
+[  289.22s ->   296.76s] uh, is an example that the strategy is sometimes it just needs to be a quick date day trade. So
+[  296.76s ->   302.46s] like you see, uh, I drew my lines here. You would wait for the close here, but then it would shoot
+[  302.46s ->   308.00s] right, right, right back down. Twitter is a perfect example that you also need to take into consideration
+[  308.00s ->   314.68s] price action. Look how fast, look at the normal candle moves and all this healthy stuff. So if
+[  314.68s ->   320.72s] we go back, you can look, okay, so this is what's healthy. Okay. This is healthy movement. And then
+[  320.72s ->   326.48s] you have this shoot up. Okay. The shoot up is not natural. So you have to also take into consideration
+[  326.48s ->   330.62s] price action. So you're looking at a bit of everything when you're doing the early range
+[  330.62s ->   337.52s] breakout patterns, which is the first 15 minutes of the day. Um, now let me go to BA and explain
+[  337.52s ->   344.92s] what exactly I did on this trade. This was the trade of today. So this morning, um, let me get
+[  344.92s ->   351.77s] rid of everything that I didn't have. So I didn't have that. Um, I didn't have this. Okay. Yeah. So
+[  351.77s ->   356.19s] this is what I'm looking at. So this is what I know that BA is doing. I know it's on a downward
+[  356.19s ->   362.91s] trend. Um, so that's why if I'm going to buy in one of these areas, uh, but uptrending,
+[  362.91s ->   367.93s] I don't want to hold too long because I know that it will hit this, uh, resistance trend line
+[  367.93s ->   376.12s] here and then go back, back down. So obviously it's forming lower lows and higher, lower highs
+[  376.12s ->   382.70s] and lower lows. Um, so let's look in and see exactly what I saw here. So I, as you can see
+[  382.70s ->   388.52s] from the strat strategy video that I've made, I like to connect points. Okay. So as you can
+[  388.52s ->   394.32s] see, um, when the market opened, I connected this point here because I didn't have this
+[  394.32s ->   398.88s] point until the market open and I put my point here. We're going to solve that. And then I
+[  398.88s ->   404.98s] looked at the pre-market and the pre-market was right there. So, uh, I put my point here
+[  404.98s ->   408.86s] and then pre-market was here. So I made sure that my line touched that. And then I drew my line.
+[  408.86s ->   413.76s] So basically, cause I want to make sure I connect these two points and then basically what, what
+[  413.76s ->   419.49s] I did is I just extended this to the right. So when I saw it up here, people were talking
+[  419.49s ->   424.31s] about that it was going to break this little pattern here and go up, um, and explode or
+[  424.31s ->   430.99s] what, or what, whatever they thought that, um, Boeing was actually going to do. Now what
+[  430.99s ->   437.91s] I saw is I saw this heavy, strong resistance line that I talked about right here. So I, I
+[  437.91s ->   442.13s] knew that even if it did explode, it wasn't going to go that high. So I was looking for
+[  442.13s ->   449.21s] volume for the explosion. So as you can see, um, let's see, let's try to go back and see
+[  449.21s ->   457.45s] if time when it exploded here. So, um, let's see, exploded like right here. Okay. So exploded
+[  457.45s ->   464.15s] here. Um, that's not a good example. I'm basically just trying to show you how much volume we need
+[  464.15s ->   469.31s] for this thing to explode. So the volume here for this thing exploding, it went up, you know,
+[  469.37s ->   478.94s] the volume was decent. Okay. So the volume was pretty high. As we can see, it was about
+[  478.94s ->   485.30s] here. We didn't experience that amount of volume and we opened with a doji. A doji means indecision.
+[  485.50s ->   491.82s] So it doesn't actually know what it wants to do, but doji's or indecision candles right by
+[  491.82s ->   496.98s] have support or resistance. You usually means it's going to reverse. So I knew that I had
+[  496.98s ->   501.82s] my resistance lines here because I drew it, I drew, I drew it out. Um, and then we have
+[  501.82s ->   507.58s] this doji here. So that signifies to me, this is going down because it's at a resistance and
+[  507.58s ->   512.78s] we have a doji and okay. So I drew this trend line. So I'm like, okay, so where's it likely
+[  512.78s ->   518.60s] to bounce? Cause it's forming higher lows here. Okay. So it's forming higher lows. I connected
+[  518.60s ->   524.34s] these. So I waited for my 15 minute candle breakout right by resistance here. So it dropped
+[  524.34s ->   530.38s] below. Um, I, I know I didn't wait for clothes that you should, but it was so close to resistance
+[  530.38s ->   535.52s] that I knew that my risk to reward was so good. Cause if I bought it here, the risk of it going
+[  535.52s ->   541.10s] back up was so low or the probability of it going back up was so low because we were right
+[  541.10s ->   547.44s] here at resistance and it tried and failed. So I knew that. So I took a position here. Um,
+[  547.44s ->   553.18s] and then of course I like to know where am I going to get out? So I extended my trendline
+[  553.18s ->   558.48s] and when my, uh, trendline extended, I was like, all right. And I looked and I saw it was
+[  558.48s ->   568.22s] at the 324 area. So I was like, all right, so my exit will be 324. Um, I believe, um, what
+[  568.22s ->   576.06s] happened was, is we were showing some, um, support right here at this little, um, at the gap, at
+[  576.06s ->   581.88s] the gap up. Um, and so we were showing some support, um, here and it was starting to bounce
+[  581.88s ->   586.78s] and I was like, okay, well, I want my profits to stay profits. So I took them and I went on
+[  586.78s ->   592.42s] and then I went on to write another essay for college and all the other stuff that I had
+[  592.42s ->   598.82s] to do. And, um, that was good. But I checked back later and of course it ends up breaking
+[  598.82s ->   604.92s] through and going down and hitting 324, which was my plan in the beginning. Uh, of course
+[  604.92s ->   609.54s] I can't say, Oh man, I, I should have, but I just want to show you guys my reasoning and
+[  609.54s ->   615.42s] why I decided to do this and what my exit plan was and everything. So I was right here at resistance.
+[  615.42s ->   621.42s] It showed a doji. It broke below the 15 minute candle breakout pattern. I took a position.
+[  621.42s ->   627.58s] It broke below the EMA. It went down and my trend line showed that it was going to bounce
+[  627.58s ->   632.02s] at around 324. So that's how I knew what my exit was. The reason why I didn't trade all
+[  632.02s ->   635.80s] those other stocks that I showed you before was because I didn't know where I was going
+[  635.80s ->   642.07s] to exit. Boeing showed me exactly where I was going to exit. So that's why I took my position.
+[  642.07s ->   645.75s] Hopefully this helps. Hopefully you understand why I'm taking the positions that I'm taking
+[  645.75s ->   652.35s] and, uh, hopefully you can use this in your own trading strategy. Um, I hope it helped.
+[  652.35s ->   657.95s] Uh, I will link the strategy video that I made earlier below, uh, to help you out, but there's
+[  657.95s ->   664.25s] also the discord chat below if you want to reference that as good, um, quality group that will help
+[  664.25s ->   668.63s] you grow. Um, with all that, good luck trading the options market guys.

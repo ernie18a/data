@@ -1,0 +1,176 @@
+[    0.70s ->     1.54s] Hey guys, what's up?
+[    1.54s ->     3.06s] It's Austin with you again with Options Traders.
+[    3.06s ->     6.38s] Today we're gonna go over how I day trade on Tastyworks.
+[    6.38s ->     9.42s] So today we're going to cover stuff like the platform
+[    9.42s ->    11.70s] and how I get my orders executed
+[   11.70s ->    14.70s] and how I can capitalize on these trades that I do
+[   14.70s ->    17.50s] that are only like two minutes to a minute long
+[   17.50s ->    21.26s] and how am I able to handle my executions that fast.
+[   21.26s ->    23.34s] So I wanted to make sure I did this video
+[   23.34s ->    25.34s] while the market was open so that y'all could see it
+[   25.34s ->    29.62s] with the contract, the options prices that are changing.
+[   29.62s ->    30.90s] So let's go and look.
+[   30.90s ->    34.46s] So in the morning I usually get up
+[   34.46s ->    37.02s] and I have a normal assumption for the day
+[   37.02s ->    40.10s] or not for the day but for the first 15 minutes of the day
+[   40.10s ->    44.46s] I have an assumption about if it's going to go up or down.
+[   44.46s ->    47.34s] So I go to my trade tab, which is here.
+[   48.46s ->    53.82s] Oh, I forgot to add it, hold on, apologies guys.
+[   53.82s ->    55.88s] Let's show all the windows.
+[   55.88s ->    60.24s] I forgot to make sure this said, sorry for the delay.
+[   60.26s ->    63.02s] Float on top, all right.
+[   63.02s ->    67.38s] So I go to the trade tab and I look at,
+[   67.38s ->    72.58s] so I go to my strategy, which you scroll down here.
+[   72.58s ->    74.30s] And if you have a cash account, which is mine,
+[   74.30s ->    75.38s] you can only buy stuff.
+[   75.38s ->    77.14s] And I like to buy naked options,
+[   77.14s ->    78.42s] which are just single contracts.
+[   78.42s ->    80.10s] I don't like to do all these strategies.
+[   80.10s ->    83.02s] So I just go to the long option and if it says short,
+[   83.02s ->    85.02s] you just click on it and make it long.
+[   85.02s ->    87.62s] And then I just click go.
+[   87.62s ->    90.54s] If I want to do a call, I just click put and I change go
+[   90.54s ->    92.50s] and it brings me up to the calls.
+[   92.50s ->    95.90s] So of course my assumption for today was put or down.
+[   95.90s ->    97.74s] So I click call.
+[   97.74s ->   101.94s] And I look for the one that has a lot of open interest
+[  101.94s ->   103.62s] and has the most volume for the day.
+[  103.62s ->   106.74s] That's also around a hundred to two hundred to three,
+[  106.74s ->   109.50s] well, between a hundred and $300,
+[  109.50s ->   111.90s] which is $1 to $3 a contract.
+[  111.90s ->   114.14s] Those tend to move the best in my opinion.
+[  114.14s ->   116.70s] That's just what I saw, but you do whatever works for you.
+[  116.70s ->   119.38s] So I go to one that I think will work great.
+[  119.38s ->   122.14s] It automatically changes with the mid price here.
+[  122.14s ->   124.78s] As you can see, it's 130 right now.
+[  124.78s ->   127.46s] Let's see if it changes real quick.
+[  127.46s ->   132.86s] So we have the 120 and 140 and the mid price is 130.
+[  132.86s ->   136.22s] So let's see, this is the put, right?
+[  136.22s ->   138.78s] So let's say my entrance on this trade,
+[  138.78s ->   141.10s] if I was going to trade this,
+[  141.10s ->   143.74s] I would wait for the break below the EMA.
+[  143.74s ->   146.78s] Now, how would I get those quick pushes like I did here,
+[  146.78s ->   148.90s] like the break below the support level?
+[  148.90s ->   151.42s] Well, I already have my put trade set.
+[  151.42s ->   155.42s] You see, my put trade is set, so I just wait.
+[  155.42s ->   157.70s] So for instance, this morning,
+[  157.70s ->   159.58s] I was waiting for it to break below this line.
+[  159.58s ->   163.14s] I saw it break below this line with a great push.
+[  163.14s ->   164.30s] I go to the trade tab.
+[  164.30s ->   167.38s] I just click review and send and fill.
+[  168.30s ->   169.54s] Now, of course you have to make sure
+[  169.54s ->   173.86s] that this is only a one decimal place.
+[  173.86s ->   176.10s] So like if I try to do it right now,
+[  176.10s ->   180.14s] I would try to fill out 1.17 and it wouldn't work
+[  180.14s ->   182.94s] because they want it to be at a one decimal spot.
+[  182.94s ->   186.54s] So if I have time, if it's not like I did,
+[  186.54s ->   190.90s] that quick trade, I just did the straight mid price.
+[  190.90s ->   194.66s] But if I'm waiting, then I'll probably fill in five cents lower
+[  194.66s ->   197.62s] and wait and get filled just so I get the best fill.
+[  197.62s ->   198.90s] I want the market to come to me.
+[  198.90s ->   200.34s] I don't want to go to the market.
+[  200.34s ->   202.46s] I am in charge when I am trading.
+[  202.46s ->   203.78s] I am not a sheep.
+[  203.78s ->   206.66s] That is my mentality when I trade the markets.
+[  206.66s ->   209.58s] So that was how I do it.
+[  209.58s ->   212.26s] I would watch for it to happen.
+[  212.26s ->   214.74s] I would watch the breakthrough.
+[  214.74s ->   217.54s] I would click review, send, get filled,
+[  217.54s ->   219.82s] and then I would go back to this chart
+[  219.82s ->   223.70s] and wait until my ideal spot.
+[  223.70s ->   225.18s] So obviously, as you can see here,
+[  225.18s ->   228.18s] when I entered here, the put, it dropped so fast.
+[  228.18s ->   232.46s] I was like, I want to get out now just for safety.
+[  232.46s ->   235.06s] If you want to monitor your position, you can click accounts
+[  235.06s ->   237.74s] and it'll show you your net liquidity
+[  237.74s ->   240.78s] and it'll show you your P&L for the year
+[  240.78s ->   243.30s] and your P&L for the day.
+[  243.30s ->   245.42s] But you just go to positions here.
+[  248.33s ->   253.05s] Yes, and so you'll get on your positions
+[  253.05s ->   254.49s] and it'll look like this.
+[  255.85s ->   260.61s] And you'll just click on whatever position you'll have
+[  260.61s ->   263.29s] and it'll say the number of contracts you have right here.
+[  263.29s ->   266.17s] So when you're ready to close the position you watch
+[  266.17s ->   269.53s] and you're ready to close, I go to the positions tab.
+[  269.53s ->   271.21s] It'll look like this.
+[  271.21s ->   273.09s] I click on the stock.
+[  273.09s ->   276.69s] I left click, or if you're on a Mac,
+[  276.69s ->   279.09s] you have to do control and then you click it.
+[  279.09s ->   279.89s] It's not going to work
+[  279.89s ->   282.25s] because I don't have any contracts at the moment,
+[  282.25s ->   285.17s] but it'll pop up a tab that says roll position
+[  285.17s ->   289.01s] or close position or whatever, and I click close.
+[  289.01s ->   292.73s] And when I click close, it brings me to this,
+[  292.73s ->   297.81s] but to sell it, and then I just click review and send
+[  297.81s ->   299.81s] and get filled.
+[  299.81s ->   300.89s] So that's how I do it.
+[  300.89s ->   302.85s] That's how I quickly day trade.
+[  302.85s ->   304.25s] Now, if we're watching for this call,
+[  304.25s ->   305.85s] we just saw that spike up.
+[  305.85s ->   308.29s] You would have been prepared for a call.
+[  308.29s ->   309.69s] You would have been waiting.
+[  309.69s ->   312.69s] So 110, 120, click review and send
+[  312.69s ->   314.77s] because you just saw it break.
+[  314.77s ->   317.69s] You see how like if I wait for it to break
+[  317.69s ->   320.45s] and then I go to the trade tab and set this up,
+[  320.45s ->   322.33s] I miss my optimal entry.
+[  322.33s ->   327.17s] So I make sure I get and I set it, wait for that break,
+[  327.17s ->   329.93s] and then since it's already just following the mid price,
+[  329.93s ->   333.16s] I just click review and send and go.
+[  333.16s ->   335.56s] So when you get that order ready
+[  335.56s ->   337.20s] and you're just the mid price changes,
+[  337.20s ->   341.28s] you just wait for your entrance or whatever you're waiting
+[  341.28s ->   345.84s] for to happen to enter, you do it and you go to trade tab
+[  345.84s ->   348.76s] and you click review and send and it goes.
+[  348.76s ->   350.40s] And then when you're ready to close,
+[  350.40s ->   355.04s] you just go to the position tab and you right click, right?
+[  355.04s ->   355.84s] Yeah.
+[  355.84s ->   359.56s] Or control whatever, click on Mac, I don't know.
+[  359.56s ->   361.24s] You'll have to see which one works for you.
+[  361.24s ->   365.36s] You click close to the position and then review and send.
+[  365.36s ->   368.56s] Now let's do a quick overview of this platform.
+[  368.56s ->   371.88s] So the way that I do it is I, I mean,
+[  371.88s ->   373.88s] I've done this in previous videos,
+[  373.88s ->   379.42s] but I like to go to my one hour chart for this.
+[  379.42s ->   381.74s] So if you want to know just a quick understanding
+[  381.74s ->   383.90s] of how the trim lines work on here.
+[  383.90s ->   387.02s] So once you draw the trim line on Tastyworks,
+[  387.02s ->   389.02s] you cannot delete it without deleting
+[  389.02s ->   391.26s] every trim line you have.
+[  391.26s ->   392.54s] So be careful with that.
+[  392.54s ->   394.34s] But something to help you adjust these,
+[  394.34s ->   397.10s] like if you draw it out and you know it's a little off
+[  397.10s ->   399.66s] and that messes you up, which I don't like it,
+[  399.66s ->   400.78s] I like my lines to be straight,
+[  400.78s ->   402.66s] you just double click on the line.
+[  402.66s ->   405.02s] You can change the color, you can make it solid,
+[  405.02s ->   407.98s] but go to the coordinates, see what you're starting is,
+[  407.98s ->   412.46s] and then make sure your price number two is the exact same
+[  412.46s ->   416.14s] so that it's exactly, you click close and it adjusts it
+[  416.14s ->   418.42s] so now it's a perfectly straight line.
+[  418.42s ->   419.74s] So let's go over everything.
+[  419.74s ->   421.62s] So if you want to edit a watch list,
+[  421.62s ->   423.70s] you go to watch list, you go to settings.
+[  424.90s ->   426.46s] Oh, well, you can't make it on here.
+[  427.82s ->   430.42s] You go to this settings tab, no, that's where, yeah.
+[  430.42s ->   433.30s] You go to this setting tab here, you go to watch list,
+[  433.30s ->   437.22s] you go for lists, and you can add a list here,
+[  437.22s ->   441.42s] like add new list, and then you just add your symbols
+[  441.42s ->   444.95s] to the list here, of course, your general,
+[  444.95s ->   449.55s] how fast or how long do you want to show your notification
+[  449.55s ->   453.39s] that you've been filled or that you're waiting in a position.
+[  453.39s ->   456.59s] I just put five, five seconds, it's usually good,
+[  456.59s ->   460.59s] your account privacy, and all this good stuff.
+[  460.59s ->   462.63s] So usually, when my trade is set up,
+[  462.63s ->   465.19s] all I have is the chart I'm looking at,
+[  465.19s ->   467.27s] and I have my trade position set,
+[  467.27s ->   469.71s] and I'm waiting for my entry, and that's how I do it.
+[  469.71s ->   471.99s] All right, I hope that helped.
+[  471.99s ->   474.99s] People who want to know if they can day trade on CaseyWorks,
+[  474.99s ->   477.87s] which is completely doable, I do it, and it works great.
+[  477.87s ->   479.67s] I have a smaller account at the moment,
+[  479.67s ->   482.87s] but I'm still making those huge percentage gains,
+[  482.87s ->   484.11s] which is awesome.
+[  484.11s ->   486.59s] All right, if y'all want to see those percentage gains,
+[  486.59s ->   489.95s] just go over my recap playlist, and I'd love to show y'all.
+[  489.95s ->   490.79s] All right, bye.

@@ -1,0 +1,96 @@
+[    0.00s ->     4.56s] Hey guys, I'm going to walk you through credit spreads, assignment risk, what it looks like.
+[    4.60s ->     9.12s] I'm going to give you an example and I'm also going to show you how you can manage that
+[    9.12s ->    14.64s] assignment risk to protect yourself and end up with less of a loss or maybe not even a loss at
+[   14.64s ->    20.34s] all. I'm also going to walk you through how you know when to chill and when you should worry and
+[   20.34s ->    24.62s] the steps you should do when those comes up. So let's walk through this video. It's going to be
+[   24.62s ->    28.70s] super helpful. Smash the subscribe button. Let's get started. All right, guys, this video was
+[   28.70s ->    32.38s] inspired by a recent coaching call I did when someone asked this question. So I wanted to lay
+[   32.38s ->    36.70s] this out for you since you may be having the same question. What is assignment risk? What does it
+[   36.70s ->    42.90s] look like and how do I manage it? So if we're looking at this, essentially what assignment risk
+[   42.90s ->    49.52s] is, is the person that you've sold an option to wants you to pay out for it. And so again, this
+[   49.52s ->    56.82s] can happen whether it's on expiration day or anywhere before that. However, it is only profitable for the
+[   56.82s ->    63.58s] person who you sold the option to, to execute that option if it's in the money. Why? Well,
+[   63.68s ->    68.92s] when we're structure a credit spread, we have an option contract that we sold. So let's say we sold
+[   68.92s ->    76.54s] one put contract here and then we bought another. So we have one put that we sold and another put that
+[   76.54s ->    82.46s] we bought. This is how we structure a spread. And so with that, the one that you sold is at risk
+[   82.46s ->    89.06s] of assignment when this spread is in the money. Now, again, the further you are in the money,
+[   89.32s ->    96.48s] the more profitable it is for the person you sold this option to. If it's just barely in the money,
+[   96.48s ->   105.22s] then it's not profitable for that person to execute that contract. Why? Because they make
+[  105.22s ->   110.78s] the difference or they're saving the difference of where the stock is and the strike price that you
+[  110.78s ->   115.60s] pick. So the further of a distance between the stock and the strike price when it's in the money
+[  115.60s ->   121.50s] is the amount of money they will save and more advantageous for them to put on that trade or make
+[  121.50s ->   126.78s] depending on if it's a put or call credit spread. So that's why the further you are in the money,
+[  126.86s ->   131.74s] the higher of assignment risk you have. So first and foremost, if you are really far in the money,
+[  132.00s ->   136.78s] you should start to worry. You're at a high risk of assignment. If you're just barely in the money,
+[  136.78s ->   142.20s] your assignment risk is very, very low. And so that's not something you really have to worry
+[  142.20s ->   147.32s] about. So what is an example of assignment risk for someone who has never gone through it?
+[  147.64s ->   152.72s] All right, well, let's take a rough example. Let's say that the stock that we're looking at
+[  152.72s ->   161.68s] is the S&P 500 and is currently trading at $440. Let's say that we have a put credit spread on this,
+[  161.68s ->   168.78s] we want the stock to stay above the 435 level. Oops, why am I doing three first? 435. So that
+[  168.78s ->   176.56s] means that this 435 is a strike I'm selling and 434 is the one that I'm buying. Well, I do one good
+[  176.56s ->   182.04s] three, one bad three. Anyways, so that means that we're going to sell an option at 435 and we're going
+[  182.04s ->   188.56s] to buy an option here. Okay, we're currently at 440. So that means that the stock is trading above
+[  188.56s ->   193.32s] our strike price. We have nothing to worry about. But what happens if the stock goes down? What
+[  193.32s ->   198.62s] happens? Let's say the stock is now trading at 430. So if the stock is now trading at 430,
+[  198.88s ->   205.04s] I'm now under, I'm in the money because this stock is under all my levels that I want to stay above.
+[  205.62s ->   213.32s] So what does this look like? So let's say that the person sees the $5 difference between the 430 stock
+[  213.32s ->   218.14s] price that it's current, that it's currently at and the 435, and they want to get rid of their
+[  218.14s ->   225.08s] shares at 435 instead. So they have a $5 profit or less of a loss. So what is going to happen here
+[  225.08s ->   229.88s] is they're going to call their broker. They're like, yo, broker, I want to execute this option
+[  229.88s ->   234.48s] that I have. And the broker will be like, okay, let me see who owns that. And I will get the shares
+[  234.48s ->   241.12s] from them. So they're going to execute this. So in your account, you're going to get 100 shares.
+[  241.12s ->   245.46s] It's a put credit spread. So that's the ability for them to sell their shares at this price.
+[  246.06s ->   251.70s] So now they sold their shares. So that means that because they sold their shares, you took on those
+[  251.70s ->   259.48s] shares at that level. So now you have plus 100 shares for this put credit spread at a price of
+[  259.48s ->   267.60s] 435. So when you're in the money and you get executed, your option that you sold for a put credit
+[  267.60s ->   274.76s] spread gives you 100 shares at the strike price. Now remember, it's currently trading at 430 and you
+[  274.76s ->   283.60s] got it at 435, which means you now have a $5 loss per spread. Again, there's 100. Each spread
+[  283.60s ->   291.68s] represents 100 shares. So you're at a $500 loss approximately. All right. What happens to the
+[  291.68s ->   296.60s] plus one? Nothing. You can't get assigned on a contract that you own, one that you bought.
+[  296.60s ->   301.88s] You cannot be assigned. But what you can do, this is the first option for getting out of assignment
+[  301.88s ->   309.82s] risk is to simply do what that person did to you on your contract. Be like, yo, broker, I got this
+[  309.82s ->   315.98s] option. I got these shares. Can I execute my option so that I can get rid of these shares? That's what
+[  315.98s ->   322.54s] this protective put here is for. And they go, yes, let me see who owns this. So they're going to execute
+[  322.54s ->   329.70s] this option and sell you out of your 100 shares at 434. So now instead of the $5 difference between
+[  329.70s ->   336.04s] where you have the stocks and where it's trading, you're now only going to have a $1 loss because
+[  336.04s ->   342.56s] that's the difference between your 435 and 434 strike price. Because this will execute, which means
+[  342.56s ->   350.30s] minus 100 shares at 434. And so now you'll experience the max loss that you saw on your broker when you
+[  350.30s ->   358.96s] initially placed the trade. That is option number one. Option number two is quite simply this. Take
+[  358.96s ->   365.44s] these shares and get rid of them. Just sell them and then use the put option that you have and allow
+[  365.44s ->   370.66s] it to run and make money if you expect the stock to go down lower. Right. So we're going to get rid of
+[  370.66s ->   376.28s] these shares because this is a bullish position and obviously a bearish market. It's a put credit
+[  376.28s ->   381.14s] the stock is going down. So what happens here is we want to get rid of the bullish part of this
+[  381.14s ->   386.86s] position. We want to hold on to the bearish part, the put contract that's going to go up in value as
+[  386.86s ->   392.50s] the stock drops. And what does this mean? It means that I take a small loss here, but on this is going
+[  392.50s ->   398.94s] to recoup a lot of my losses. So I allow this to go up in price and this is going to offset a lot of my
+[  398.94s ->   404.90s] losses. So that's option number two. Again, this is for if you expect the stock to continue to go
+[  404.90s ->   410.00s] down. If you expect the stock to go up, if you see it's at support and you think it's going to
+[  410.00s ->   416.54s] bounce, what's going to happen? Well, quite simply, all you do is you do the inverse. You get rid of
+[  416.54s ->   421.10s] your short position, which means you get rid of the put credit spread you have because that's going
+[  421.10s ->   426.10s] to lose money as the market goes up. Then you're going to keep this position because it's bullish.
+[  426.10s ->   432.98s] And so as the market goes up, you won't have your bearish, but you won't have this put contract
+[  432.98s ->   438.10s] and said, you'll have this. So this will go up in value and then you can close it and offset any
+[  438.10s ->   445.14s] losses. So the reverse is going to be potential number three. Now by default, one of the easiest,
+[  445.24s ->   450.74s] easiest ways to manage risk. If you've been assigned is number four, just close out everything.
+[  450.74s ->   456.66s] Simply take the shares, sell them, take the put contract, sell them. Your loss is going to be
+[  456.66s ->   461.94s] really equivalent to your max loss, which is what you knew when you originally entered the position.
+[  462.38s ->   467.22s] So that's what can happen. That's what it looks like. That is assignment risk. So when do you worry?
+[  467.44s ->   471.10s] The further you are in the money, the more you should worry. If you were just barely in the money,
+[  471.22s ->   477.40s] there's no worrying at all. But I do want to mention a small caveat is with calls. Call credit
+[  477.40s ->   482.74s] spread. Just because you're barely in the money, you can still be at a super high risk of being
+[  482.74s ->   487.38s] assigned in a certain situation. It is called ex-dividend date. And I don't know if you are
+[  487.38s ->   495.00s] aware of ex-dividend date, but this is the date where let's say if you're trading a stock or ETF that
+[  495.00s ->   500.88s] offers a dividend, then the ex-dividend date is, hey, by this date, you have to own shares in order
+[  500.88s ->   507.82s] to get the dividend. So what people will do is they'll have a call option that they bought from
+[  507.82s ->   513.42s] you or the one that you sold. And if it's close to in the money, they'll execute that trade or
+[  513.42s ->   518.66s] they'll assign that risk so that they now own shares. And when they own shares, now they're
+[  518.66s ->   528.86s] eligible for the dividend. So one to two days before or on the ex-dividend date, if you're trading
+[  528.86s ->   533.62s] a call credit spread and you are close to in the money, you are at risk. That's something you need
+[  533.62s ->   537.98s] to worry about. So if you're trading call credit spreads, you also have to watch outside of in the
+[  537.98s ->   543.72s] money, the ex-dividend date because that will play a big factor. Anyways, that is assignment risk. Those
+[  543.72s ->   548.50s] are four ways to manage it. And then another tip, I hope you enjoyed it. Smash the subscribe button
+[  548.50s ->   552.04s] down below because I come up with videos just like this. If you want to learn more about credit
+[  552.04s ->   558.50s] spread trading and the exact strategy I use to have an 85% win rate, risk $3 to make one, then click
+[  558.50s ->   563.80s] the free link down below, which is my free credit spread trading course, literally over, I think it's
+[  563.80s ->   568.08s] like five hours of in-depth training to help you become a better credit spread trader for free.
+[  568.36s ->   570.18s] Anyways, guys, I will see you in the next video.

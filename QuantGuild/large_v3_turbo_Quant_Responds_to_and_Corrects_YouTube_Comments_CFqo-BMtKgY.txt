@@ -1,0 +1,106 @@
+[    0.46s ->     6.29s] Hey guys, Roman here, quantitative researcher and trader, founder of Quant Guild. Today,
+[    6.47s ->    12.41s] I'm going to be reading and responding to your YouTube comments. Hopefully you get some
+[   12.41s ->    18.83s] entertainment value out of it and maybe even learn something along the way. Let's go ahead
+[   18.83s ->    27.89s] and dive right in. Malundo asks, what software do you use for the backtests? It's a good question.
+[   27.89s ->    35.71s] Thank you for your comments. I do not like to rely on third-party software for my backtests. I don't
+[   35.71s ->    41.53s] like to use TradingView or QuantConnect. I like to build everything in-house. Now, where do I actually
+[   41.53s ->    49.57s] get the data? That's a combination of interactive brokers, DataBento, and Norgate, especially for
+[   49.57s ->    56.83s] delisted securities. I like to construct my equity universe. Then I construct my return panel point
+[   56.83s ->    64.03s] in time, and then I will go through my walk-forward methodology for evaluating a strategy.
+[   64.03s ->    70.75s] Matthew Chung, 1582, asks, what are your thoughts on Nancy Pelosi portfolio? How politics can affect
+[   70.75s ->    78.03s] on stocks? Just want to know your thought process on this because she is definitely an outlier. Thank
+[   78.03s ->    83.77s] you for your comment, Matthew. She certainly is an outlier. If I had known that politics could be
+[   83.77s ->    90.91s] that lucrative, perhaps I would have been a politician. But in any case, Matthew is actually
+[   90.91s ->    97.43s] asking a very important question. Now, he did make it very specific. He's talking about politics and
+[   97.43s ->   104.61s] stocks, but we can generalize this to really understand the space better. Politics is just
+[  104.61s ->   113.61s] one facet of risk. And stocks are really just one instrument. Now, a really good way to understand
+[  113.61s ->   119.87s] the space is in the context of the risks that you're including in your model to make informed
+[  119.87s ->   127.81s] decisions and the risks that you are kind of just sweeping under the rug and treating as noise.
+[  128.31s ->   133.29s] Anytime we're presented with a portfolio construction or a trading strategy problem,
+[  133.29s ->   140.31s] we're going to be building a model. And you can't incorporate everything into a model. You have an
+[  140.31s ->   147.05s] efficiency and efficacy trade-off with complexity. And at some point, you're going to be dismissing
+[  147.05s ->   153.53s] these other facets of risk that are contributing variation to your portfolio construction and your
+[  153.53s ->   162.31s] trading strategy as noise. Now, how correct that is, is going to depend on how violently that assumption
+[  162.31s ->   170.05s] is violated in practice. For example, if you don't incorporate any political risk into your model
+[  170.05s ->   177.87s] and you go about portfolio construction or developing a trading strategy as if that facet of risk didn't
+[  177.87s ->   184.75s] exist, and then all of a sudden there's a political crisis and you have a massive tail event, then you are
+[  184.75s ->   191.19s] going to be in for a world of hurt. So that's how I generally think about the space.
+[  191.19s ->   196.87s] In the context of both portfolio construction and trading strategy, you're not going to be able to
+[  196.87s ->   205.87s] model everything. Andreas SD4PR asks, do you have a working strategy you actually trade or are you just
+[  205.87s ->   214.39s] talking as a quant? Thank you for your comment, but it certainly can be both. I do enjoy trading
+[  214.39s ->   220.39s] cross-sectional equities, but a lot of the return that I generate comes from premium capture,
+[  220.77s ->   228.85s] effectively just trading volatility. I talk about this at length on my channel. We have gone through
+[  228.85s ->   235.11s] a variety of different short vol strategies. I've talked a lot about the volatility risk premium,
+[  235.21s ->   241.41s] the idea of harvesting this premium. You can do this with zero DTE options. There's plenty of ways to
+[  241.41s ->   247.35s] take advantage of that. And it's a very simple idea. Now, most like to critique that it is like
+[  247.35s ->   257.03s] collecting pennies in front of a steamroller. And to that, all I have to say is move out of the way.
+[  257.03s ->   266.49s] Ken Trader2489 asks, are you a quant? No. Dagestani handkerchief comments, bro, you only worked
+[  266.49s ->   273.07s] at Reuters. I never worked at Reuters. And not a quant firm. So you're not even qualified to
+[  273.07s ->   279.79s] comment, lol. Nick didn't cite central limit theorem, but it was law of large numbers. I don't
+[  279.79s ->   286.29s] know who Nick is, so I can't really comment if it was the CLT or the LLN, but I'll take his word for
+[  286.29s ->   292.87s] it. Quant firms use law of large numbers. It, as it guarantees that if the edge is real,
+[  292.87s ->   300.01s] it will surface with enough volume. I will call all HFT firms to stop trading because Roman has
+[  300.01s ->   307.79s] exposed them all. Lol. Thank you for your comment, Dagestani handkerchief. There's certainly a lot to
+[  307.79s ->   314.65s] work with here. First of all, my primary concern, I'll get into the work experience stuff in a moment,
+[  314.65s ->   324.03s] but the law of large numbers guarantees nothing. Volume over time doesn't imply convergence.
+[  324.29s ->   331.03s] Regimes change. There's non-stationarity. If you observe more data, it's encouraging,
+[  331.87s ->   338.01s] but just because you cite the law of large numbers and volume, it doesn't mean that the expectation
+[  338.01s ->   345.15s] that you're observing is actually governing the data generating distribution. So that's my primary
+[  345.15s ->   353.29s] concern. Now, as far as the work experience goes, I don't list every firm I've engaged with
+[  353.29s ->   360.55s] on my LinkedIn. I could care less about LinkedIn maxing, but I am proud to have worked with and for
+[  360.55s ->   369.45s] Bruno. So that will stay. 964 turbo asks, I just have one question with all this information you
+[  369.45s ->   376.29s] have gathered over the years. How are you not in a quant position at a top firm? Why do you choose to
+[  376.29s ->   381.83s] share this knowledge with others when you have amazing potential? Thank you for your comment. That
+[  381.83s ->   389.69s] is very kind, but that is not just one question. That is two, two questions. Um, but I don't think
+[  389.69s ->   396.57s] this is all that difficult for me to answer. There are really just three key points to discuss. Number
+[  396.57s ->   403.89s] one, I never went into quantitative finance for the money. I went into it for the math. I absolutely
+[  403.89s ->   411.47s] love financial mathematics. I love everything about trying to engage with the markets. Working for a firm
+[  411.47s ->   419.49s] was never the goal. Pivot to number two, my favorite thing in the entire world is teaching students that
+[  419.49s ->   425.03s] want to learn math, financial math, statistics, machine learning, you name it. If it's quantitative,
+[  425.03s ->   433.55s] I love to teach it. Hearing students learn from my materials and how they've used that in an interview
+[  433.55s ->   442.69s] or in their careers has done more for my utility function than any bonus ever has. And last, but
+[  442.69s ->   455.49s] certainly not least, I hate working for people and I will never be told what to do. S D A P O K W D comments,
+[  455.49s ->   461.33s] tell us proof of your results. You talk a lot and clearly know just stochastic calculus, which is
+[  461.33s ->   474.83s] by definition useless, at least in this field. Trillions of dollars of notional exposure rely on stochastic
+[  474.83s ->   483.99s] calculus. Now, is it true that some quants use it every single day and some never touch it? Absolutely.
+[  483.99s ->   494.95s] But that is like saying that a baseball bat or a baseball is useless because you play football. It doesn't make
+[  494.95s ->   501.67s] any sense. As far as telling you proof of my results, my results for what? I don't have to prove anything to you.
+[  501.73s ->   508.57s] I don't teach you how to trade. I teach you math and statistics. You can stay and learn or you can leave. I really do
+[  508.57s ->   513.63s] not care. Facts about everything asks, what is your advice to a mathematics major looking to move into
+[  513.63s ->   520.27s] finance after grad? Thank you for your comment. This is a great question. And the answer can certainly
+[  520.27s ->   526.29s] be tailored to your specific situation. If you're a pure math, applied math major, if you're looking to
+[  526.29s ->   533.15s] go into investment banking, private equity, S and T, maybe more quant rules, quant trading, dev research,
+[  533.15s ->   540.25s] it certainly will depend on where you're coming from and where you're going. But I can offer general
+[  540.25s ->   548.21s] wisdom for any role that you might be targeting. Build skills, build skills that can be applied to
+[  548.21s ->   554.45s] the role. Work on building models. If you don't know how to build models, then you have to learn the
+[  554.45s ->   559.95s] underlying skills. If you need to catch up on the probability and statistics, catch up on the probability
+[  559.95s ->   565.11s] and statistics. If you don't know how to do a DCF, you got to learn some finance. You got to
+[  565.11s ->   572.09s] understand how the financial statements work. What is enterprise value? How do we go about valuing
+[  572.09s ->   578.67s] companies? If I gave you effectively the accounting documents for a lemonade stand, could you forecast
+[  578.67s ->   586.77s] cash flows for me? What does that forecast actually imply about the share price? These are the questions
+[  586.77s ->   593.93s] that you should be able to answer using quantitative skills that you have in your toolbox.
+[  593.93s ->   601.05s] Depiction 3435 comments, lol, what a superficial understanding on my video lecture on Karmad in
+[  601.05s ->   608.07s] 1999, the notion of using a characteristic function to price options via a fast Fourier transform,
+[  608.57s ->   615.55s] in particular for the stochastic variance model. Arguably one of my favorite pieces of all time in the
+[  615.55s ->   623.31s] financial mathematics literature. To this comment, I will respond by saying your calibration will be
+[  623.31s ->   631.97s] extremely slow if you don't abide by this scheme or alternatives. Moreover, I would love to hear
+[  631.97s ->   639.47s] your take on the mathematics, assuming you can actually understand it. Tbone2157 comments,
+[  639.47s ->   648.57s] my mentor has a strategy with a 93% win percentage that he traded for 22 years on the Canadian stock
+[  648.57s ->   657.31s] exchange. It's possible. I currently trade at 90% all automated, but my risk is smaller than most.
+[  657.81s ->   667.71s] Thank you for your comment there, Tbone. I'm uncertain what the intent was, but 93%, 90%,
+[  667.71s ->   677.77s] even 100% is certainly possible. If you win a trade and only trade once for 22 years, you'll have a 100%
+[  677.77s ->   685.05s] win rate. But this goes back to even the idea of collecting pennies in front of a steamroller. Are you
+[  685.05s ->   693.33s] capable of moving out of the way? What do your average winners look like? What do your average losers
+[  693.33s ->   701.97s] look like? More importantly, what do those tails look like in your P&L distributions? If you have a 93%
+[  701.97s ->   709.03s] win rate, then your left tail and your loss distribution is likely going to be massive, again,
+[  709.49s ->   718.15s] unless you can move out of the way. Michael Than 6467 asks, is the notebook you used in this video
+[  718.15s ->   723.43s] available somewhere? Yes, every single video lecture is accompanied by a Jupyter notebook
+[  723.43s ->   730.71s] available in that video's description or on the Quant Guild library on GitHub. There's almost 100
+[  730.71s ->   739.71s] free open source Jupyter notebooks and lecture videos available on that repository. So if you're
+[  739.71s ->   745.35s] unfamiliar or you haven't checked it out yet, head on over to the Quant Guild library on GitHub.
+[  745.35s ->   751.09s] On that note, that's going to do it for this video reading and responding to your guys' YouTube
+[  751.09s ->   756.47s] comments. I hope you enjoyed. I hope you learned something along the way. If you like this video and
+[  756.47s ->   760.57s] you want to see more like it in the future, please like, comment, subscribe, share. It helps me out
+[  760.57s ->   766.67s] tremendously. It is always greatly appreciated. Check out quantguild.com to master your quantitative
+[  766.67s ->   772.83s] skills for trading and market making roles. Other than that, thank you so much for watching and I will
+[  772.83s ->   775.07s] see you in the next video.

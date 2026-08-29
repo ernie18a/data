@@ -1,0 +1,139 @@
+[    0.24s ->     5.12s] Hey guys, what's up? I'm Austin Booley, and we're going to talk about how I trade options.
+[    6.44s ->    10.46s] I used to try to find the most complex way, and of course it didn't work.
+[   10.82s ->    15.34s] So really, y'all are going to look at how I trade, and y'all are going to be like, seriously, it's that easy.
+[   15.68s ->    21.12s] It's not really that easy. It's just the way that I do it, you know, very simplistic.
+[   21.76s ->    24.54s] But I know as I found, the simpler the better, right?
+[   24.54s ->    32.80s] So for example here on BABA, I basically just connect higher highs and higher lows.
+[   33.22s ->    38.26s] So for example, I would connect this, and then I would draw it all the way out.
+[   38.34s ->    41.90s] So I put it to the right, for example, and obviously it doesn't match.
+[   42.32s ->    46.54s] But still, it gives me a good indication of where this thing is going, okay?
+[   46.90s ->    52.22s] And then I connect, because it would make a different higher low, right?
+[   52.22s ->    57.30s] So I would go there, and I would trace that out, and I would follow that out.
+[   57.82s ->    60.60s] And it would give me a good indication of bouncing points.
+[   61.44s ->    66.32s] So I'm going to show you exactly how I would do this one now.
+[   67.66s ->    70.92s] So I would trace this out there.
+[   71.82s ->    75.94s] That would have given me a good entry for short as it broke below with volume.
+[   75.94s ->    80.43s] And then I have my tops here, okay?
+[   80.51s ->    83.55s] And then I have my minor support and resistance.
+[   84.07s ->    87.35s] As you can see here, we're trading, we're trending up, we're trending up.
+[   87.39s ->    89.31s] We keep bouncing against this upper trend line.
+[   89.71s ->    93.83s] After we bounce up that trend line, we have a problem, though, because it breaks below.
+[   94.23s ->    99.51s] So that break below would be my entry point, and I know that's going to bounce off this support line.
+[   99.57s ->   100.35s] So that is my exit.
+[  100.35s ->   104.19s] And then, of course, you can trade the bounce off if you like.
+[  104.57s ->   110.43s] You can do the same thing here, where you connect this higher low, and oops, I'll put that later.
+[  113.24s ->   116.44s] Yeah, so you just connect these, and then it connects, it connects.
+[  117.32s ->   119.98s] And if it keeps forming higher or lower, it keeps bouncing off that, you see?
+[  120.08s ->   124.78s] So basically, how I would trade this is I would know that I have it there, so I would mark my line there,
+[  124.78s ->   128.74s] and then pre-market there, I would adjust my line, I would draw it out,
+[  129.08s ->   131.08s] so that I could see where it was adjusting to.
+[  131.60s ->   136.66s] So I basically just use support and resistance and trend lines, basically how I do it.
+[  136.72s ->   138.32s] We can look at some of my other charts.
+[  139.00s ->   143.66s] You see, like, literally, like, I just draw the trend line, and I see where it's bouncing.
+[  144.34s ->   149.12s] I haven't done anything with Netflix, because it's been way too choppy the past day.
+[  149.12s ->   155.84s] I mean, I traded it here, because I saw that I connected that line and connected that line,
+[  155.94s ->   157.96s] and I drew it out, and it bounced right off there.
+[  158.04s ->   162.44s] So I bought it right when it broke above this EMA, and I got it in about here,
+[  162.52s ->   165.64s] because that's where I saw resistance at.
+[  167.46s ->   171.53s] So let's look at Facebook, which is my commonly trade one.
+[  171.59s ->   177.95s] I traded a lot, because it bounces a lot in between support and resistance lines here.
+[  177.95s ->   183.39s] And so for trend lines, I established that on the 15-minute chart.
+[  183.87s ->   190.37s] I have my 15-minute going for 30 days, but now to establish support and resistance,
+[  190.55s ->   194.15s] I used the 180-day, 4-hour.
+[  195.27s ->   196.41s] So I used that.
+[  196.61s ->   202.99s] Obviously, we have support, support, support, support, support, support, resistance, resistance, etc.
+[  203.13s ->   206.53s] I mean, I could go more above, but it's nowhere near that, so I haven't had to do it.
+[  206.53s ->   212.89s] But now, of course, what I'm doing, oops, 30-minute, just another, oh, 50-minute, perfect.
+[  213.13s ->   213.27s] Okay.
+[  214.53s ->   220.07s] So as you can see, I connected the higher lows, and it just followed it.
+[  220.17s ->   223.75s] It bounced right off there, which is another confirmation that it's a good one.
+[  224.21s ->   225.37s] So then it went down.
+[  225.51s ->   227.91s] It showed some consolidation right here.
+[  227.91s ->   232.20s] So I entered here, and then, of course, I traded it.
+[  232.30s ->   242.04s] I like to trade to pre-market highs, and obviously, this high was inevitable right there, like that.
+[  242.14s ->   247.90s] You see, you can just connect, and you know, like, it just forms triangle patterns and all that good stuff.
+[  247.90s ->   251.34s] If you just, I basically just connect trend lines.
+[  251.86s ->   254.10s] Of course, you have to make sure that it follows like this.
+[  254.62s ->   261.92s] I see I connected it here, and so, for example, if you were doing it day by day, it would be like this,
+[  262.06s ->   264.86s] and you would wait for it to come back up, but at one end, it would make a new low,
+[  266.19s ->   267.91s] and then this time, it would go up.
+[  267.93s ->   270.65s] It would go up and hit that, so you would have an indication of why I put.
+[  270.65s ->   274.53s] It would go down, and this would follow the trend line, and whatnot.
+[  275.41s ->   278.07s] So that's how I basically do it.
+[  278.75s ->   279.47s] Let's look at BA.
+[  279.91s ->   280.87s] See, as you can tell.
+[  281.49s ->   286.43s] I bought a put here, and I was tracing out.
+[  286.53s ->   288.43s] I bought a put, I forget.
+[  288.89s ->   293.31s] Oh, yeah, I bought a put right under here when it broke this support here,
+[  293.95s ->   300.21s] and I was basically making sure that it would pass through all the supports.
+[  300.21s ->   305.13s] So I drew a line for support here, a line for support here, a line for support here,
+[  305.33s ->   309.87s] so that I knew that it was continually going down and that my put would be okay.
+[  310.51s ->   313.73s] But if you look overall, see, it's just like massive, like, trend lines.
+[  313.85s ->   314.89s] You see, I just draw trends.
+[  315.23s ->   319.21s] When it breaks trends, you know, when it keeps the trend, I buy calls.
+[  320.23s ->   322.45s] When it doesn't, I buy puts.
+[  323.39s ->   326.25s] Of course, you have to understand that my strategy is intraday.
+[  326.25s ->   335.29s] So another way, another strategy that I use, as you can tell, just support lines and whatnot.
+[  337.03s ->   345.15s] Another strategy I use is, just for more indication, is the first, this is the reason why I have 15-minute candles.
+[  345.51s ->   349.41s] The first 15 minutes of the day to 30 minutes of the day is usually the craziest,
+[  349.41s ->   355.45s] as you can tell by all the volume spikes as they decline and then they increase their power hour,
+[  355.59s ->   357.69s] which is the end of the day, the last hour of trading.
+[  359.59s ->   362.29s] I wait for 15-minute candle breakouts.
+[  362.39s ->   365.83s] If I'm not too sure, I just wait for 15-minute candle breakouts.
+[  366.49s ->   372.88s] So, like, here, it broke this, let's see, like, right here.
+[  372.88s ->   378.39s] Okay, so, like, I don't know what the heck it's doing here.
+[  378.63s ->   385.69s] Y'all can say it's forming a triangle, but, I mean, I'm not too sure because we just have this huge dip in this rally,
+[  385.77s ->   386.61s] and we're right here at support.
+[  386.81s ->   389.01s] So I really know what it's going to do for sure.
+[  389.63s ->   394.85s] Not like anybody ever does, but I want a better indication on this to make sure that I know what I'm doing.
+[  395.37s ->   398.67s] So, I take the 15-minute candle.
+[  398.79s ->   400.73s] I wait for the 15-minute candle to form.
+[  400.73s ->   406.65s] I do not take a position before that, and then I draw a line on the top of the 15-minute candle
+[  406.65s ->   408.59s] and on the bottom of the 15-minute candle.
+[  409.07s ->   415.47s] And when the next candle closes above one of these lines, it closes above the line, I buy a call.
+[  415.73s ->   417.57s] If it closes below the line, I do a put.
+[  418.15s ->   424.01s] Now, just inferencing, or just letting y'all know that this should be a little obvious,
+[  424.01s ->   430.63s] but if you're going to buy a call with this 15-minute breakout method,
+[  430.73s ->   435.55s] make sure you're not, like, make sure your resistance is not right right here
+[  435.55s ->   440.63s] because if you're buying and resistance is right here, that may, I'll probably just a little dumb.
+[  442.33s ->   445.71s] I'm just letting y'all know that I do it a lot just because you're like,
+[  445.79s ->   448.03s] oh, yeah, the 15-minute breakout, let's go.
+[  449.47s ->   450.43s] Resistance is right here.
+[  450.43s ->   453.09s] You might as well just wait, see if it does anything.
+[  453.25s ->   456.67s] Now, if it breaks out with volume, I'll buy a call.
+[  457.59s ->   462.01s] Now, if it starts to trim down and it breaks, if it holds this resistance,
+[  462.15s ->   468.53s] if it breaks below the support here, but just to let you know that this 15-minute candle high and low,
+[  468.59s ->   470.47s] it's just intraday support and resistance.
+[  470.47s ->   473.99s] It's not massive, so it's not like you're going to see a stock bounce off that a lot.
+[  473.99s ->   485.21s] So, yeah, so I use support and resistance, trend lines, and the 15-minute breakout pattern.
+[  485.47s ->   491.51s] Just to let y'all know, for people interested in options, I'm only trading naked options,
+[  491.59s ->   495.89s] which means I'm just buying a few contracts of a call, a few contracts of a put.
+[  496.29s ->   500.75s] I'm not, you know, buying strategies, such as strangle, straddle, condor.
+[  501.27s ->   507.61s] So, if that's your way of trading, I suggest you check out Tasty Trade and Tasty Works.
+[  507.61s ->   514.09s] The Tasty Works, it's a platform that Tasty Trade is who teaches and talks, and they have a live show.
+[  514.71s ->   515.65s] That's what they do.
+[  516.57s ->   519.97s] I do, you know, basically it's a stock substitution.
+[  520.61s ->   524.63s] So, instead of trading stocks at Twitter, you know, it's like $36.
+[  525.37s ->   531.31s] So, like, if I was to, I don't know, see the support and resistance here in this triangle breakout pattern,
+[  531.37s ->   532.53s] which is what I traded yesterday.
+[  532.53s ->   546.27s] And if I was to buy here like I did with my calls, and then sell here, I made 3%, like, 3% is crazy, low.
+[  546.83s ->   551.73s] So, like, I used calls because with the calls, I was able to make, what would I make?
+[  551.77s ->   553.57s] I made, like, 24% or something like that.
+[  553.63s ->   554.77s] I did sell, like, a little below.
+[  554.77s ->   557.45s] So, but, like, that's a lot better.
+[  557.53s ->   559.11s] Of course, you have to have risk management.
+[  559.27s ->   563.71s] I only use 10% to 20% of my account position in each trade.
+[  564.57s ->   568.53s] That's just safety because options are risky.
+[  568.75s ->   569.43s] So, be careful.
+[  569.67s ->   571.07s] I'm not a financial advisor.
+[  572.07s ->   574.43s] Do not, I'm not giving any trading options.
+[  574.55s ->   577.31s] I'm just showing you my opinion on how I trade the market.
+[  577.31s ->   584.71s] If you want to talk to people who also trade this way and others who, you know, do other things,
+[  584.93s ->   591.49s] the link below is for TechBuds Solutions, specifically the option group chat is where me and my buds will be.
+[  591.69s ->   594.55s] We trade specifically options like this.
+[  594.61s ->   595.43s] I don't know how they trade.
+[  595.51s ->   596.19s] This is how I trade.
+[  596.25s ->   598.73s] I made a video just to let you all know how that works.
+[  599.35s ->   600.19s] So, bye.
+[  600.33s ->   601.09s] Thanks for tuning in.
+[  601.09s ->   631.07s] Thanks for tuning in.

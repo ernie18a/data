@@ -1,0 +1,189 @@
+[    0.43s ->     5.87s] okay so welcome back in this new video this is another of the very important video i'm
+[    5.87s ->    13.47s] going to do on this youtube channel and yeah this one basically is portfolio analysis and
+[   13.47s ->    21.07s] i'm going to show you many things since recently i received a bigger amount of capital under
+[   21.07s ->    28.91s] management around 300 000 and then following another 100 000 so in total now is like 600 000
+[   28.91s ->    37.71s] you see so yeah i decided to put more effort in everything i'm doing and yeah basically i'll show
+[   37.71s ->    45.47s] you how i improved this portfolio so now you can see the equity line but i'm going to show you
+[   45.47s ->    53.71s] everything later basically this one was my previous portfolio the portfolio i'm using now it has like a
+[   53.71s ->    61.39s] good return on drawdown ratio drawdown and of course like other metrics now you see like a really low
+[   61.39s ->    68.51s] share ratio because of the big amount of trades but you have to think about that around 6000 trades
+[   69.07s ->    75.95s] with a profit factor of 1.5 this is like a good performance this is something that is statistically
+[   75.95s ->    84.11s] significant okay compared to someone that in eight years had two 300 trades with a huge profit factor
+[   84.11s ->    92.27s] this is not something statistically significant okay so yeah this was the first portfolio this is like
+[   92.27s ->   103.23s] the portfolio that made me in 2025 27 so yeah but recently i had three different mean reverse strategy
+[  103.23s ->   113.15s] and so as you can see the magic of diversification with uncorrelated logics uncorrelated strategies as you can see
+[  113.15s ->   120.27s] the main things you have to focus on drawdown and as you can see from let's say the dragon still is the
+[  120.27s ->   127.15s] same okay of course but and you can say why so it's the same where is the point on doing that okay but the
+[  127.15s ->   137.15s] thing is the thing is the return on drawdown ratio from 46 it went up to 72.6 okay so the total profit
+[  137.15s ->   149.31s] it's it increased by like 7 80 80 000 usd okay just adding those three strategy okay because all of them
+[  149.31s ->   156.27s] were mean reverse okay and as you can see those are still the same logics the one i add
+[  156.83s ->   166.67s] are this one gold and mr and then us 100 mr and then this one and those are mean reverse and ours is it's
+[  166.67s ->   175.55s] mean that okay so basically the goal now is not to increase the profit i'm not going to add all of those
+[  175.55s ->   184.83s] strategies without reducing the risk my goal is to keep the same amount of profit okay because now i don't
+[  184.83s ->   192.51s] really care about this type of profit here because the year you should only focus on a more asset under
+[  192.51s ->   199.63s] management so managing more money overall okay so you don't really have to care about how much total
+[  199.63s ->   206.51s] profit you're going to make okay you just need to focus on the return on the return ratio and basically
+[  206.51s ->   213.79s] what i'm the main goal is reached okay because i increased the return on the ratio kept my risk the
+[  213.79s ->   222.03s] same that's the main goal okay keeping the same return even more in this case so yeah this is like
+[  222.03s ->   231.15s] amazing stuff and guys trust me this is like the holy grail in investing and trading is like having
+[  231.15s ->   239.47s] uncorrelated strategies unrelated logics all together because they are going to reduce the performance
+[  239.47s ->   246.67s] fluctuation performance movement okay as you can see all of them are moving not in the same of course
+[  246.67s ->   251.79s] same direction because all of them make money but if you can see this one is like dropping and the
+[  251.79s ->   258.03s] other one is making money and yeah it's like this is uncorrelated strategies the logic behind that so
+[  258.03s ->   263.47s] basically this is like the the same balance curve this is not equity this is a balance curve
+[  263.47s ->   269.79s] it's built a little different but basically it's the same but actually here if you this is like with 100
+[  269.79s ->   278.99s] 000 euro you already see that like in two months you went up to 5k and then dropped to 2500 okay so you lost
+[  278.99s ->   287.71s] like in just one month to 2500 euro okay you could say oh whoa it's not that smooth anymore okay but actually
+[  287.71s ->   294.99s] it is i'm also showing you all of this type of analysis okay because i really think that you have to
+[  294.99s ->   304.19s] understand that with manual trading you cannot beat the markets okay just if you think that i never seen
+[  304.19s ->   311.79s] this type of analysis on youtube okay so i'm really happy to show and share all this type of logics okay
+[  311.79s ->   319.79s] on just not just logics but also showing you like how you can analyze or how you can think outside of
+[  319.79s ->   325.39s] walks not just doing back testing but testing is i think 20 percent of the process okay you have
+[  325.39s ->   332.19s] something that work well that's great but it's not that much okay it's easy finding something that work
+[  332.19s ->   338.75s] then you have to find at least like 10 strategies because you don't want to depend only on one source
+[  338.75s ->   347.95s] of income i'm talking like watching and seeing trading my trading performance and process as a business okay
+[  347.95s ->   356.11s] so you want to diversify also the all of your income if you see what i'm doing okay and i'm not even
+[  356.11s ->   364.99s] i think i'm like 10 percent or of what the real quant developer or maybe 20 20 let's say of what the
+[  364.99s ->   373.15s] real on developer quant analysts are doing in hedge fund in banks investment fund etc okay yeah that's why
+[  373.15s ->   380.19s] it's really hard to beat the market and also seeing something like this it i think it could motivate you
+[  380.19s ->   388.99s] to and improve your overall performance so basically analyzing my portfolio my new portfolio i i found out
+[  388.99s ->   398.43s] that my equity line so the one you saw before this one was the balance line balance curve so the same as
+[  398.43s ->   405.87s] this one the problem is the problem is that balance and equity are two different line okay two different
+[  405.87s ->   413.87s] things and as you can see from this new weight yeah this is maybe let's zoom on this here because there
+[  413.87s ->   422.43s] was the biggest equity delta from the balance so the blue line in this case is the balance line the balance
+[  422.43s ->   430.91s] is the actual closed profit the equity line is different is like the highest or lowest point reach
+[  430.91s ->   437.95s] during the open position time in this case in the example i showed you it was like 2500 that's the
+[  437.95s ->   445.87s] highest equity peak and so i found out that on my portfolio in certain year there were like this year
+[  445.87s ->   454.03s] here there were like huge equity drawdown okay but it's not the negative side if you're trading with
+[  454.03s ->   460.51s] prop firm etc you don't really care about the this type of drawdown because this is like positive equity
+[  460.51s ->   467.63s] drawdown what it means it means that your unrealized profit went up to in this case 8k
+[  467.63s ->   478.03s] here it say it says 11 and 300 but because from here to here is like other 3000 euro loss okay you
+[  478.03s ->   484.11s] just have to measure from this peak here of the balance to the to this peak of the equity so this
+[  484.11s ->   489.95s] is like 8 000 i measured that yeah just to showing you so the prop firm they don't care they don't really
+[  489.95s ->   497.47s] care about this but since i'm trading with darwinx darwinx is like measuring your performance also
+[  497.95s ->   505.31s] with the equity okay because if you're real if you are a real trader here you made of course 8k
+[  505.31s ->   513.55s] and then lost 8k back and give the 8k back to the market so that's not something good and of course
+[  513.55s ->   521.07s] i have to be that way okay since i sold it i decide okay let me think outside of the box let me think
+[  521.07s ->   526.91s] on this type of problem because of course like it wasn't all year even this year in the beginning
+[  526.91s ->   534.75s] in the beginning you see the balance here and then here two big peaks of the equity and then
+[  534.75s ->   541.95s] all of the two peaks went back to zero okay even in jordan because there was like higher volatility
+[  541.95s ->   551.39s] etc etc etc so basically after this type of analysis i decide okay let me think and build something
+[  551.39s ->   559.39s] something else okay and here it came out this type of analysis it's called equity if scenario okay
+[  559.39s ->   566.35s] it's like a basic scenario analysis without any type of machine learning and now the next thing i'm going
+[  566.35s ->   573.95s] to do is apply machine learning to this script here and analyze all of the different scenario like in a
+[  573.95s ->   579.95s] machine learning way so i'm not going to do each test singulary but like of course i'm going to let
+[  579.95s ->   590.35s] the algorithms work on his own but just with this script here i find out that here let's say i modified
+[  590.35s ->   599.79s] the logics and put like a 2500 equity tp okay that's like very simple thing so each time the equity line
+[  599.79s ->   607.63s] is reaching 2500 euro is going to trigger a take profit for all the position okay it's not it's like a
+[  608.19s ->   613.63s] bulk operation it's called like that so it means that it's going to close all of the deposition at the
+[  613.63s ->   624.43s] same time okay wait from here oh no this oh okay and here is the final result so guys this is a very
+[  625.07s ->   632.75s] small modif improvement okay very small improvement that i did here and as you can see from the final
+[  633.31s ->   642.67s] point here you can see that my overall performance with the baseline that is it was like 236 000 that is
+[  642.67s ->   650.03s] the same here the same number of course with the first rule okay i'm closing the total years okay
+[  650.59s ->   659.31s] report with actually 6000 euro more okay but i don't really care about increasing profit i can easily
+[  659.31s ->   666.35s] reduce the profit i don't really care why because the goal is to improve the performance and from here
+[  666.35s ->   676.43s] you can easily see that the maximum okay it went from 11 500 okay down to 5k so it dropped like even more
+[  676.43s ->   685.15s] than 50 less so that's awesome okay you can just you can see from the drawdown analysis that the blue one
+[  685.15s ->   692.19s] was the previous one that you saw and the green one is the new one so the green one it never went below
+[  692.91s ->   703.79s] 4000 okay so here it says 5000 i'm not that sure but basically also in this file here the text file
+[  703.79s ->   711.55s] you can see that yeah the overall performance it went up increased and yeah basically i did the same
+[  711.55s ->   719.79s] thing for each year so it's printing each year performance okay compare it together and of course
+[  719.79s ->   727.31s] like in some year like in 2018 the performance was exactly the same because in this case the this line
+[  727.31s ->   734.99s] here is the baseline so the base strategy with no any type of risk management rule and the blue one in
+[  734.99s ->   743.47s] this case is the improved one okay and basically this year was the same 2019 i think was even okay no was
+[  743.47s ->   754.83s] the same i think a little less profit than 2020 2020 wait in 2020 was even way bigger okay so this one here
+[  754.83s ->   763.23s] is the new strategy so it's like the portfolio plus the rule target at 2500 okay and this case was the
+[  763.23s ->   771.55s] baseline so you can see a big gap okay 2021 probably the same okay in 2021 the baseline did a better
+[  771.55s ->   777.23s] performance than mine okay but still you have to think about that overall you increase the performance
+[  777.23s ->   784.27s] even if some year you did less profit okay 2022 little over performance from the new rule
+[  784.99s ->   792.03s] than 2023 2023 2023 bigger performance okay and you think about that you here you reduce the one
+[  792.03s ->   798.19s] equity because this is the new rule the green one that is stopped here and this one was the old
+[  798.19s ->   805.15s] scenario okay so the baseline yeah this is like really nice to see that like after a few hours of
+[  805.15s ->   811.71s] thinking about the script thinking about how can you can improve your own performance you see something
+[  811.71s ->   821.87s] like this so the overall equity draw on it went from minus 11 000 to minus 3 500 okay that's also all
+[  821.87s ->   830.75s] the years are pretty much the same in this case baseline 24 25 the same 20 26 now i could be in bigger
+[  830.75s ->   836.83s] profit because this is the pace one this is the new rule with this type of analysis guys you could really
+[  836.83s ->   843.47s] improve your overall trading performance and of course like this is i think one percent of what
+[  843.47s ->   850.67s] i'm going to do with this script and with this portfolio maybe 10 let's say because i just analyzed
+[  850.67s ->   856.99s] this thing here now i'm gonna let machine learning to test each number from let's say 1000 to
+[  857.55s ->   865.95s] 300 3500 and then i'm going to analyze this second rule second rule is the global equity stop loss so
+[  865.95s ->   872.51s] it's going to close all the position if the equity is touching something some number okay and then of
+[  872.51s ->   880.27s] course i divide also the profit by asset but then i think about okay wait i have more strategy for each
+[  880.27s ->   887.79s] asset so it doesn't make any sense and but i let it there just to try okay then i decide okay let's see
+[  887.79s ->   896.75s] if i'm closing everything on friday at 21 pm and let's test that and then okay i divide everything by
+[  896.75s ->   904.83s] strategy name so now i'm going to test strategy name target okay and yeah that's the process i just i can
+[  904.83s ->   914.11s] show you an easy thing here so if i'm going to turn this through and test it friday at 21 closing all each
+[  914.11s ->   923.23s] trade open you can see that in this case here in 2023 you can easily see that i'm going to increase
+[  923.23s ->   931.95s] my overall performance by doing a simple thing okay that i could never seen that coming okay because like
+[  931.95s ->   939.63s] when you're testing 10 different strategies each one on their own okay of course is this is way different
+[  939.63s ->   948.11s] to analyze and optimize them all together okay there is no such a tool on mt5 okay not either on the
+[  948.11s ->   955.95s] content analyzer and all this software so you have to build everything you need by your own but you can
+[  955.95s ->   962.19s] see that in this case in 2023 where we have the biggest equity peak drawdown okay so from the equity
+[  962.19s ->   970.59s] from the balance okay this delta here so you see that on the 2nd of june we had some position open and
+[  970.59s ->   978.99s] then on the 3rd of june the portfolio opened way more position okay many more position and then actually
+[  978.99s ->   986.91s] 3rd of june 2023 was friday so you see this is the weekend of course from the 3rd of june to till the
+[  987.55s ->   997.15s] 5th june but what if we close each position at 21 pm so 9 pm it's around this number here so this was
+[  997.15s ->  1005.87s] like a big increase on the performance okay so now we just are we are just removing the equity target okay
+[ 1005.87s ->  1013.39s] we're just adding a new if scenario of course it's like very simple close closing everything at 9 pm
+[ 1013.39s ->  1021.55s] on a friday in today's update i'm going to show you how i'm applying the old grail of ray dalio to my
+[ 1021.55s ->  1030.19s] portfolio so basically here you can see the video online like youtube and like the logic behind this is
+[ 1030.19s ->  1037.39s] the lower correlation you have between different income stream but in this case income stream is
+[ 1037.39s ->  1044.03s] from strategy let's say that each single algorithm's strategy is generating alpha in this case my
+[ 1044.03s ->  1052.19s] portfolio it has around 12 strategies okay and actually 11 strategies each single strategy it made a
+[ 1052.19s ->  1059.47s] certain amount okay and basically the logics is that you see each single strategy is as like a return to
+[ 1059.47s ->  1065.47s] drawdown ratio that is like different because of course it depends on the efficiency of the
+[ 1065.47s ->  1072.75s] single algorithms and applied to that asset in this case is like on the ducks in this case is goal
+[ 1072.75s ->  1078.99s] three different strategies on goal and those are all of the return to the ratio and then
+[ 1079.63s ->  1086.03s] logics that ray dalio is talking about is like the lower correlation you have between
+[ 1086.03s ->  1094.83s] all of these type of algorithms that generate alpha the higher is going to be the return to risk okay
+[ 1094.83s ->  1101.71s] because of course if the correlation is low between all of those type of algorithms it means also that
+[ 1101.71s ->  1108.67s] each single algorithm is taking some type of trades not at the same time and same direction of the others
+[ 1108.67s ->  1115.87s] okay altogether they're going to reduce the overall drawdown but of course the aggregate profit is going to be
+[ 1116.19s ->  1125.47s] exactly the same so in this case i was able to achieve a 72.6 return to drawdown ratio and that's like
+[ 1125.47s ->  1134.19s] very good so basically i don't want to keep my drawdown like this high so the goal now is to reduce the
+[ 1134.83s ->  1140.43s] risk for each single strategy of course keeping the same return to return ratio because that's a simple
+[ 1140.43s ->  1147.07s] factor is dividing the total net profit by the biggest balanced drawdown in this case this one
+[ 1147.07s ->  1154.43s] so basically i'm going to reduce the risk by keeping the same return to return ratio so that's my goal now
+[ 1154.43s ->  1163.87s] and yeah basically everything i learned about how to increase your return to draw the ratio is from ray dalio
+[ 1163.87s ->  1171.95s] so there is like a lot of video like this and where he explained how this work and basically i'm using
+[ 1171.95s ->  1179.47s] right now colonizer to build like the aggregate portfolio but then i'm doing some of the analysis
+[ 1179.47s ->  1186.83s] maybe i'm doing most of the real analysis on python because like you have like many options like in this
+[ 1186.83s ->  1194.03s] case i'm analyzing i'm analyzing different if scenario so this is like a little different from
+[ 1194.03s ->  1201.15s] what i said before about correlation but also i'm trying to analyze also the correlation part because
+[ 1201.15s ->  1210.27s] in this case i'm yes here i'm analyzing the pyramiding okay pyramiding it mean if a strategy is opening
+[ 1210.27s ->  1216.59s] more than one trade at the same time okay this filter is going to try different scenarios so
+[ 1216.59s ->  1223.39s] if i put pyramiding max one per strategy it means that it's going to open just one trade at a time
+[ 1223.39s ->  1232.83s] no two three four and more yeah and also the same thing for each asset class so if on gold
+[ 1232.83s ->  1239.63s] one strategy is opening along and then like a few minutes later another strategy let's say in this
+[ 1239.63s ->  1246.83s] case those are yeah those are the strategy let's say that gold st and gold mr are opening like a
+[ 1246.83s ->  1254.83s] long position in a few minutes of distance this pyramiding tool okay is going to analyze okay let's say
+[ 1255.55s ->  1262.43s] only the first is opening the position and then if something else on gold same position same direction
+[ 1262.43s ->  1269.07s] is opening also i'm going to remove the second trade and let's see so this is like
+[ 1269.07s ->  1277.79s] reducing the overall correlation between each strategy okay so i think it could improve the
+[ 1277.79s ->  1285.39s] overall performance and this is just analyzing on a back test so the goal here is like to analyze first
+[ 1285.39s ->  1293.15s] on the first let's say so the goal here is to analyze the first four years of period and then see
+[ 1293.15s ->  1301.47s] how it performed on the last three four years okay so i'm trying to avoid overfitting and then if
+[ 1302.03s ->  1309.71s] something it showed results okay i'm gonna see all the results here like this maybe only five months
+[ 1309.71s ->  1315.31s] or six months yeah six months this is like at the back so when you start like a python code that is like
+[ 1315.31s ->  1322.19s] long you want to try it only on a few months period so it's not taking ages and in this case like i'm
+[ 1322.19s ->  1330.35s] running the full machine learning algorithm full code on full backtest period so seven or eight years
+[ 1330.35s ->  1336.11s] so it's taking a lot of time in this case i think it's like more than one hour but yeah it did many
+[ 1336.11s ->  1343.79s] steps and i tried with a grid search different type of scenario so yeah i think is like the best way to
+[ 1343.79s ->  1350.27s] improve your overall performance and last thing because like you're going to see different update in the
+[ 1350.27s ->  1356.43s] few video i'm going to few updates i'm going to attach to this video if you see something like
+[ 1356.43s ->  1363.15s] this that it seems like to be too good to be true okay yeah maybe it is but like you have to think
+[ 1363.15s ->  1369.07s] about that this is like the old period so it's eight years all together and then if you actually
+[ 1369.07s ->  1376.27s] zoom out on one year like in this case this is 2025 actually is not that smooth okay so this is like
+[ 1376.27s ->  1383.87s] something real uh if you had like a line straight line up you i think that could be like a red flag
+[ 1383.87s ->  1388.99s] because like you can trust you cannot trust something that is like perfect okay so you can
+[ 1388.99s ->  1396.43s] see here that okay this is like the drawdown equity drawdown and it touched like minus 1000 euro i think
+[ 1396.43s ->  1403.63s] i counted before like a few minutes ago i counted how many times i think it touched at least 13 times minus
+[ 1403.63s ->  1411.95s] 1000 euro of equity drawdown so actually it's not something insane something super profitable or maybe
+[ 1411.95s ->  1421.95s] like a crazy return because actually like for 13 times you had 1000 euro of profit and then like in a few
+[ 1422.51s ->  1429.15s] hours or maybe days you lost that for 13 times and then for i think three or four times this
+[ 1429.15s ->  1439.95s] drawdown reached the peak of minus 2000 and for let's say three four times minus one one 1500 okay so
+[ 1439.95s ->  1447.79s] yeah that's just to explain that okay maybe it could be like a red flag here because it seems way too good
+[ 1448.35s ->  1455.71s] but then if it zoom in like in a single month in a single period okay that is gonna change of course it's gonna
+[ 1455.71s ->  1461.87s] change so yeah that's pretty much it for this the beginning of this video you're going to see in the
+[ 1461.87s ->  1469.31s] the next updates everything explained much better
+[ 1469.31s ->  1471.31s] you

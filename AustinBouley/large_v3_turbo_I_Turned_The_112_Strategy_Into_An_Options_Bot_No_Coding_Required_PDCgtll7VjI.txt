@@ -1,0 +1,196 @@
+[    0.27s ->     4.31s] I turned the super profitable 112 options trading strategy
+[    4.31s ->     7.39s] into an options bot so that you can regain your time
+[    7.39s ->    10.67s] and still make the money you're making now from 112s.
+[   10.75s ->    12.25s] If you're watching this video right now,
+[   12.31s ->    14.83s] you know how profitable 112s are.
+[   15.15s ->    17.31s] For those who don't, let me quickly show you what it is.
+[   17.37s ->    19.13s] A 112 is an options strategy
+[   19.13s ->    22.89s] where if the market stays above a certain level,
+[   22.97s ->    24.89s] let's say this level right here, then I make money.
+[   25.31s ->    26.91s] And so again, it's structured like this.
+[   26.93s ->    28.73s] If the market goes up, I make money.
+[   28.73s ->    30.93s] If the market goes sideways, I make money.
+[   31.21s ->    32.35s] If the market goes down,
+[   32.41s ->    34.33s] but stays in what's called my bear trap level,
+[   34.59s ->    37.43s] I'll make three times the money I would normally make up here.
+[   37.71s ->    39.93s] And then I start losing when it breaks down this level.
+[   40.25s ->    42.23s] And so guys, this is one of the greatest strategies ever,
+[   42.33s ->    43.89s] but some of the issues with it
+[   43.89s ->    46.57s] is that it takes time to manage, time to enter,
+[   46.89s ->    49.67s] and you have to make sure you're managing your stop losses
+[   49.67s ->    51.37s] and turning the trades into hedges
+[   51.37s ->    52.65s] to further protect your trades.
+[   52.97s ->    54.87s] And so if you wanna know how to fully automate this,
+[   54.99s ->    56.31s] let me show you exactly how.
+[   56.31s ->    58.93s] Guys, look, here's my T-Strade account,
+[   59.05s ->    61.09s] and if I update it for the last, let's do 60 days,
+[   61.41s ->    63.85s] you can see here I made $12,200
+[   63.85s ->    66.21s] purely trading the 112 strategy,
+[   66.43s ->    67.59s] and it's been completely automated.
+[   67.71s ->    70.15s] I haven't touched entries, I have not touched exits,
+[   70.31s ->    72.43s] and it's turned my trades into hedges for me
+[   72.43s ->    73.69s] at the perfect time.
+[   74.05s ->    75.93s] And so let me show you exactly how this works
+[   75.93s ->    77.41s] so that you can do it too.
+[   77.89s ->    79.25s] Okay, so it's this tool
+[   79.25s ->    81.39s] that I spent literally seven months now building,
+[   81.55s ->    83.35s] and it's worked for over 100 people now.
+[   83.35s ->    85.35s] It's called the Options Auto Trader,
+[   85.41s ->    86.25s] and you can see here,
+[   86.33s ->    89.57s] here's my ES-112 and my CL-112.
+[   89.97s ->    91.43s] So you can see here my ES-112
+[   91.43s ->    94.41s] has made $15,000 so far,
+[   94.57s ->    97.45s] and it currently has $6,000 in open profits.
+[   97.89s ->    99.99s] And so again, you can see here my performance graph,
+[  100.05s ->   101.27s] which is unlike any broker,
+[  101.37s ->   102.73s] like brokers won't show you this.
+[  103.03s ->   104.53s] Also, you can see all my trades
+[  104.53s ->   106.27s] and how close they are to the take profit
+[  106.27s ->   108.17s] or how close they are to the stop loss,
+[  108.23s ->   108.89s] the amount it is.
+[  108.89s ->   110.75s] So I can see all the useful data I need
+[  110.75s ->   113.73s] for my 1-112 trades and literally one screen.
+[  113.87s ->   115.81s] And so it's not a confusing, tasty trade screen.
+[  116.33s ->   117.35s] Okay, not only that,
+[  117.47s ->   120.13s] it is completely automated from the entries
+[  120.13s ->   121.43s] to the exits to the hedges.
+[  121.53s ->   123.47s] Look, this trade was turned into a hedge for me,
+[  123.53s ->   124.99s] and I can see here what type of hedge
+[  124.99s ->   125.63s] it was turned into,
+[  125.73s ->   126.49s] the cost of the hedge,
+[  126.53s ->   128.27s] and so much more all in one spot.
+[  128.35s ->   129.15s] So if you're someone who's like,
+[  129.27s ->   130.27s] hedging confuses me,
+[  130.45s ->   131.43s] well, this is perfect for you.
+[  132.07s ->   132.91s] Okay, so let's dive in.
+[  132.97s ->   134.13s] How does this work?
+[  134.47s ->   135.65s] Well, in order to create
+[  135.65s ->   137.13s] or turn the 1-112 into a bot,
+[  137.13s ->   138.47s] this is all you need to do.
+[  138.61s ->   140.53s] First, click on create an auto trader,
+[  141.15s ->   142.81s] connect your taste rate account,
+[  142.89s ->   143.97s] which mine's already connected.
+[  144.81s ->   147.05s] Then you click on create an auto trader,
+[  147.43s ->   149.49s] and then you have your options to pick from.
+[  149.57s ->   150.23s] You can sell puts.
+[  150.35s ->   151.53s] You can do a 1-1-1, a 1-1-2,
+[  151.63s ->   152.49s] sell strangles, sell calls,
+[  152.59s ->   153.77s] credit spreads, ratio spreads, et cetera.
+[  154.11s ->   154.43s] And this video,
+[  154.49s ->   155.89s] we're going over a 1-1-2 strategy
+[  155.89s ->   156.53s] because that's literally
+[  156.53s ->   157.75s] the most profitable strategy ever.
+[  157.85s ->   158.99s] And if you put it on autopilot,
+[  159.13s ->   161.81s] now you get the profits on hands-free mode.
+[  162.17s ->   164.75s] So again, we can pick what we want to trade it on,
+[  164.75s ->   167.73s] E-S, M-E-S, C-L, G-C, N-Q, whatever it is.
+[  167.81s ->   170.37s] Again, E-S and M-E-S are the best.
+[  170.59s ->   172.57s] If you have a larger account above 20,000,
+[  172.63s ->   173.39s] you want to go E-S.
+[  173.53s ->   177.33s] If you have less than 20,000 in your account,
+[  177.43s ->   178.77s] then go M-E-S.
+[  179.51s ->   182.75s] Next, 90 days until expiration is recommended.
+[  182.89s ->   183.69s] But again, you can go anywhere
+[  183.69s ->   185.99s] from 45 to 120 days in the future.
+[  186.11s ->   188.75s] Again, set this up based on how you trade.
+[  189.15s ->   191.37s] And so again, if you want it to be 120, you can.
+[  191.75s ->   193.31s] Again, you can structure it as you want,
+[  193.39s ->   195.05s] like the 25, 23, five delta.
+[  195.17s ->   196.75s] This is a very safe 1-1-2
+[  196.75s ->   198.55s] where you buy the 25 delta,
+[  198.71s ->   200.85s] you sell the 23 delta, you see buy, sell,
+[  201.09s ->   202.81s] and then you sell two of the five delta.
+[  202.93s ->   203.57s] This is very safe.
+[  203.63s ->   205.23s] If you want to change the deltas or structures,
+[  205.41s ->   206.51s] you can do that as well.
+[  206.77s ->   208.79s] Again, this is a rules-based system.
+[  208.89s ->   210.05s] You're plugging in all the rules,
+[  210.13s ->   211.67s] how you want your auto trader to function,
+[  211.89s ->   213.71s] particularly how you trade now,
+[  214.05s ->   214.73s] and you can do it.
+[  214.73s ->   215.77s] And if you stay in for a second,
+[  215.83s ->   217.01s] I'll show you how you can preload it
+[  217.01s ->   218.39s] with all the best practices.
+[  219.03s ->   219.89s] Not only that here,
+[  219.89s ->   221.61s] you can say how often you want to enter,
+[  221.71s ->   223.77s] once a week, multiple times a week.
+[  224.17s ->   226.47s] So again, you can enter like Monday, Wednesday, Friday,
+[  226.53s ->   227.99s] or just once a week on Wednesday,
+[  228.11s ->   229.71s] which is what it's set up to right now.
+[  230.45s ->   232.79s] I can set my take profit and my stop loss
+[  232.79s ->   234.35s] and my early management,
+[  234.47s ->   235.79s] and I can also turn it into a hedge.
+[  236.17s ->   238.43s] So let's say I want to take profit at 90%.
+[  238.43s ->   242.11s] I want to have a stop loss at 300%.
+[  242.35s ->   245.91s] Yes, this system was built for 1-1-2 traders
+[  245.91s ->   247.13s] by a 1-1-2 trader.
+[  247.13s ->   250.03s] So you can manage the stop loss on the overall trade,
+[  250.29s ->   252.77s] and it does so without the stop loss being manipulated
+[  252.77s ->   254.53s] or exploited by market makers.
+[  254.65s ->   256.39s] So it's called a stealth stop loss system,
+[  256.69s ->   257.41s] and it's amazing.
+[  257.87s ->   258.47s] Not only that,
+[  258.59s ->   260.05s] once our trade hits this profit,
+[  260.11s ->   261.61s] we can also turn it into a hedge.
+[  261.67s ->   263.69s] We can turn it into a PDS hedge,
+[  263.93s ->   264.65s] a ratio hedge,
+[  264.67s ->   266.23s] or just close the entire position.
+[  266.57s ->   268.11s] So now you no longer have to worry about,
+[  268.19s ->   270.11s] am I converting this trade into a hedge correctly?
+[  270.49s ->   272.17s] You just set up what you want it to do,
+[  272.23s ->   272.79s] and it will.
+[  272.91s ->   275.07s] Most people like converting it into a PDS hedge,
+[  275.07s ->   275.79s] so you can do that.
+[  276.45s ->   278.63s] You can see here the buying power allocation.
+[  278.81s ->   281.73s] How much money do you want to allow this bot to trade with?
+[  281.99s ->   282.65s] And so again,
+[  282.73s ->   283.89s] if you're doing a 1-1-2,
+[  284.05s ->   286.77s] you want to kind of save you 50% of your buying power.
+[  286.87s ->   288.45s] So if you have a $10,000 account,
+[  288.55s ->   291.29s] then $5,000 is what you would want your allocation to be.
+[  291.67s ->   292.39s] Then click save it,
+[  292.53s ->   293.29s] saving it in you,
+[  293.33s ->   295.47s] and now it breaks down what this trade looks like.
+[  295.75s ->   297.81s] It takes about $800 of buying power
+[  297.81s ->   300.13s] since we're trading this on MES,
+[  300.53s ->   302.79s] and it will make us about $108 return
+[  302.79s ->   304.31s] with a 90% take profit.
+[  304.41s ->   306.85s] So that's what the 90% roughly will be.
+[  307.23s ->   309.43s] And this shows us how much we are risking per trade.
+[  309.71s ->   310.09s] And so again,
+[  310.13s ->   312.67s] explains in detail what this auto trader is doing for us
+[  312.67s ->   313.47s] so we can understand.
+[  313.59s ->   314.55s] This is a rules-based system.
+[  314.59s ->   315.85s] It will only ever follow your rules.
+[  316.19s ->   316.65s] Just like that,
+[  316.73s ->   317.85s] approve it and set it live.
+[  317.93s ->   318.09s] Again,
+[  318.09s ->   319.23s] I'm not going to set this live
+[  319.23s ->   321.87s] because I already have an ES-112
+[  321.87s ->   324.55s] that's making me $15,000,
+[  324.55s ->   328.51s] and I have a CL1 that's making me $1,150 so far.
+[  328.69s ->   328.97s] Again,
+[  329.03s ->   330.95s] I've only been using it for about three months now,
+[  331.01s ->   332.07s] so about $5,000 a month,
+[  332.11s ->   333.09s] which is not bad at all.
+[  333.13s ->   335.45s] So if you guys love the 112 strategy,
+[  335.65s ->   337.11s] but you want to get your time back,
+[  337.17s ->   338.75s] you want to have stop losses managed
+[  338.75s ->   340.29s] so that you're not waking up every morning
+[  340.29s ->   341.11s] and checking your screen,
+[  341.39s ->   343.45s] this is the perfect thing for you.
+[  343.51s ->   343.81s] So guys,
+[  343.81s ->   345.63s] I have literally spent seven months
+[  345.63s ->   347.55s] obsessing over this platform
+[  347.55s ->   348.39s] and making it perfect
+[  348.39s ->   350.89s] so that you can automate your 112 strategies
+[  350.89s ->   352.33s] and have more time with your family
+[  352.33s ->   353.89s] but still roll in the income.
+[  354.03s ->   354.67s] So if you're interested
+[  354.67s ->   355.81s] and you want to learn more,
+[  355.93s ->   357.29s] click the link down below,
+[  357.41s ->   359.13s] which is optionsautotrader.com
+[  359.13s ->   359.85s] slash start,
+[  359.97s ->   361.61s] and you guys can get started now.
+[  361.85s ->   362.13s] All right, guys,
+[  362.21s ->   363.25s] see you on the inside.

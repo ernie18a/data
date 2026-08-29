@@ -1,0 +1,111 @@
+[    0.00s ->     6.18s] Hey IMP option traders, I want to walk you through the 111 trade which is at its baseline a short
+[    6.18s ->    12.60s] put strategy that has a hedge involved with it. This way we can make money like normally selling
+[   12.60s ->    18.50s] puts but we'll also have that downside protection in case a crash does occur and that is great for
+[   18.50s ->    24.48s] people who not only want the consistent income of the puts but also want to limit risk. And now
+[   24.48s ->    30.26s] again this is the baby brother to the 112 trade that I'll be covering in the next lesson but this
+[   30.26s ->    34.48s] 11 trade is a great place to start off with especially if you have a smaller account. So
+[   34.48s ->    40.44s] how is a 111 structured? Well at its base it is selling a put so we're going to sell a put at a
+[   40.44s ->    45.04s] certain level meaning that we hope that the stock stays above this level. This makes money as long
+[   45.04s ->    48.68s] as the stock stays above it so if it goes up we make money if it goes sideways we make money if
+[   48.68s ->    54.06s] it goes down but stays above our level we'll make money. So at the baseline this is a super profitable
+[   54.06s ->    60.02s] strategy but not only do we have this put that we sold but we also create a put debit spread closer
+[   60.02s ->    64.58s] to the stock price. What in the world is a put debit spread? Well I put debit spread is structured
+[   64.58s ->    70.24s] like this oops didn't mean to do that it's structured like this where we buy a put and then sell a put
+[   70.24s ->    77.52s] and this put debit spread makes money as the market goes down. So that means that how we have this trade
+[   77.52s ->    85.46s] going is as the stock goes down this put option here will go down will lose money but this put
+[   85.46s ->    91.34s] debit spread will make money. So this will help us slow our losses and slowing our losses is good
+[   91.34s ->    97.48s] because as long as the stock stays above this level we make money and so now in the in-between
+[   97.48s ->   104.10s] our profit and loss as we're waiting to realize that profit at expiration will be mitigated will slow
+[  104.10s ->   109.74s] down we'll have less of a downside risk because of this hedge we have. And again this is how I
+[  109.74s ->   114.48s] structure this trade that you guys know exactly what's going on here. We structure the trade by
+[  114.48s ->   122.40s] going 90 days out like usual this eliminates gamma risk this this has a good data decay and it also
+[  122.40s ->   127.98s] allows us to collect a decent amount of money. So 90 days out we have the 10 delta put just like we
+[  127.98s ->   136.72s] did when we sold the put but we're also going to have a 30 28 that's not what I meant to do 30 28
+[  136.72s ->   142.80s] not the two 28 put debit spread and again this is going to be a trade we'll actually walk you through
+[  142.80s ->   146.50s] how to place it on a broker because it can be a bit complex but it's structured like this
+[  146.50s ->   151.96s] and then we targeting a 75 profit target which means we're holding a lot longer but we're collecting
+[  151.96s ->   159.72s] a lot more money and we have the same 400 stop loss. So for 400 stop loss oops lose stop loss and
+[  159.72s ->   166.00s] 75 profit and so again this means that if we collect a thousand dollars for this trade we take profit at
+[  166.00s ->   170.38s] seven hundred and fifty dollars if we collect a thousand then we're going to we're going to stop
+[  170.38s ->   176.42s] out at a three thousand dollar loss and so this is how we structure the trade. This trade has about a
+[  176.42s ->   181.90s] 95 percent win rate but again don't take my word for it let's walk through the back test. Here's the
+[  181.90s ->   186.96s] back test on e delta pro if you want to back test this for yourself but this is how it's structured
+[  186.96s ->   193.56s] just as I said 10 days I mean a 10 year back test we have the 10 delta put that we sell we have to put
+[  193.56s ->   199.54s] debit spread that we create here by buying the 30 delta and selling the 28 delta we go 90 days out
+[  199.54s ->   208.84s] we have a 75 percent max profit and a 400 stop loss. This gives us a profit over 10 years of almost
+[  208.84s ->   217.12s] two million dollars guys that's an insane profit two million dollars. Now again this return on capital
+[  217.12s ->   223.52s] 82 percent is incorrect because again it doesn't factor in some stuff here. This is taken as one
+[  223.52s ->   229.28s] trade and this is one trade so the buying power is equivalent to that of selling puts. So that means
+[  229.28s ->   233.60s] that we're kind of like doubling our return right because we're making a huge return but we have the
+[  233.60s ->   237.50s] same buying power as selling puts so we're making actually about a 40 to 50 percent return a year
+[  237.50s ->   243.76s] just trading these one one ones. What else about it has a 35 day average duration that means it takes
+[  243.76s ->   249.02s] about a month for you to realize profits on this trade so that means it's going to take a month to
+[  249.02s ->   254.96s] put this trade on so although you make a lot of money about $790 for your winning trades you're going
+[  254.96s ->   260.12s] to have to hold them for a month which is fine right because if you're making 75 percent on your money
+[  260.12s ->   266.34s] that is a great return right and so again that's kind of what we're targeting there. You can see
+[  266.34s ->   271.74s] here it's a very smooth and consistent uptrend unlike before when we saw the selling puts it was a bit
+[  271.74s ->   278.76s] more wild here but again this hedge right here helps prevent this. Now what I do want what I do want
+[  278.76s ->   285.58s] to highlight is yes this works that's the same pit pitfalls is during crash periods that it
+[  285.58s ->   290.56s] underperforms right so if we see here comparing it to the market it underperforms when the market
+[  290.56s ->   294.28s] crashes here the market crashes here and the market crashes here. Don't worry this is actually
+[  294.28s ->   299.36s] outperforming the market the back says just doesn't know how did I treat a one-on-one order
+[  299.36s ->   304.70s] based on buying based on buying power it thinks it requires more buying power than it does which is why
+[  304.70s ->   311.91s] it spies higher but don't worry this has the same profit graph as the short put alone. Okay so that's
+[  311.91s ->   317.35s] what we're looking at there now let me drag in my broker here so that you can actually take a look
+[  317.35s ->   322.39s] at what's going on. So let me hide accounts here so if we go into this we're going to structure this
+[  322.39s ->   328.79s] exactly as I said we're going to go target the 90 day level right here we're going to sell a 10 delta
+[  328.79s ->   333.95s] put so this one right here we're going to sell this one so here's a 10 delta put we're going to sell it
+[  333.95s ->   340.63s] this is going to bring in a $1,112 profit then we're going to do the 30 we're going to sell the 30 and
+[  340.63s ->   347.27s] buy the 28th this crazy put debit spread this is a $5,000 buying power almost exactly what it would
+[  347.27s ->   351.87s] be as if we're just normally selling the put but now we have downside protection so let's take a look
+[  351.87s ->   357.71s] at what this actually looks like so when we bring up a curve the curve will show us what our profit
+[  357.71s ->   363.41s] will be at expiration so if we see what our profit will be like at expiration it looks like this when
+[  363.41s ->   369.39s] we're selling a put we have a single consistent profit but with this put debit spread we now have this
+[  369.39s ->   375.33s] hedge here and how this works is once we get to our profit that we're trying to target then from
+[  375.33s ->   381.03s] there we're able to actually take off this put take our profit and leave on the hedge so what does that
+[  381.03s ->   386.63s] look like well let's say we put this straight on we make the 75 profit in roughly a month what we're
+[  386.63s ->   390.67s] going to do is most of that profit is coming from the short put so we're going to close that short put
+[  390.67s ->   395.01s] lock in our profits and we're going to leave on this downside hedge what in the world does this
+[  395.01s ->   400.51s] downside hedge do this downside hedge gives us a one thousand dollar profit to the downside which
+[  400.51s ->   405.53s] means that if the market drops down we're going to make about a thousand dollars and why is this
+[  405.53s ->   410.95s] great because when we leave this hedge on for the rest of our trade then this means that any other
+[  410.95s ->   416.39s] one-on-one trades any other short puts any other strangles that loses money because of the market
+[  416.39s ->   422.29s] dropping will be mitigated because we have this one thousand dollar hedge on that will make a thousand
+[  422.29s ->   428.65s] dollars when the market drops and so that's the beauty of keeping these hedges on is that it helps
+[  428.65s ->   434.37s] offset losses from any other short trades that we have on like selling puts selling strangles one one
+[  434.37s ->   441.05s] ones and other one one two trades another way to structure a hedge on this trade is simply instead
+[  441.05s ->   448.95s] of selling the uh the 10 delta put we sell the put that is attached to this put debit spread we sell this
+[  448.95s ->   458.13s] put right here if we sell that it creates a larger type of put debit spread here but again this is a
+[  458.13s ->   462.21s] put debit spread that when we when we put it on we'll actually have a bit of a loss because we don't
+[  462.21s ->   467.13s] have enough profits to cover it but this would give us a sixteen thousand dollar downside protection so
+[  467.13s ->   472.45s] why would you want to take a small loss to turn your one one one into this type of hedge you'd want to
+[  472.45s ->   478.19s] do that when the market is near its crucial levels meaning that it's hitting or breaking this blue line
+[  478.19s ->   482.81s] right now it's not hitting it but when it does we tend to see these pullbacks when it does we see
+[  482.81s ->   486.97s] huge crashes especially when it stays above it right when it stays above these levels then we have these
+[  486.97s ->   492.59s] huge crashes so if we're at or near these blue line levels then we can convert our one one one into a
+[  492.59s ->   499.41s] larger um hedge which could then give us sixteen thousand dollars of a downside move which can cover
+[  499.41s ->   504.33s] any and all losses we have from any other trades all right guys this is the one one one trade if you want
+[  504.33s ->   508.59s] to automate it we're going to do the same thing we've done before we're going to create a new auto
+[  508.59s ->   515.65s] trader in our beta system here i'm going to log into my tasty trade account after i have successfully
+[  515.65s ->   520.21s] connected my accounts or verified it then i'm going to create the strategy i'm going to go right here to
+[  520.21s ->   526.51s] the one one one strategy i'm going to structure it exactly as we did we're going to have a um oops that's
+[  526.51s ->   531.77s] the put debit spread so the debit spread is a 30 delta that we're buying a 28 delta that we're selling
+[  531.77s ->   536.69s] and we have the 10 delta put so this is what it looks like to structure the one one one trade
+[  536.69s ->   541.19s] we can do it on mes if we don't have a large account or es whatever one we want to do weekly
+[  541.19s ->   547.13s] on wednesdays we're going to target the 90 days until expiration we're going to have a 75 take profit
+[  547.13s ->   553.73s] target we're going to have a 400 stop loss and when we do a one one one or a one one two strategy we
+[  553.73s ->   558.47s] can turn it into a hedge and so i want to turn it into the pds hedge which is where i'm going to
+[  558.47s ->   563.77s] close out these short puts and that creates this hedge and so again if i don't want to turn it into
+[  563.77s ->   569.73s] a into a hedge when the trade is done i can just close the entire trade by keeping it on place select
+[  569.73s ->   574.39s] if i want to turn it into a hedge i just click on what hedge i want to turn it into and at the end
+[  574.39s ->   578.57s] once i hit my profit it will turn it into this hedge for me so now i can hedge my positions and
+[  578.57s ->   584.65s] take profits automatically which is decades neons above what most brokers are doing right now so
+[  584.65s ->   590.33s] that's why this auto trader is amazing i set my buying power out my buying power allocation i want
+[  590.33s ->   595.35s] to enable it to avoid market crashes so that i don't get in during market crashes and i also get
+[  595.35s ->   600.45s] out before them using our systems and just like that i've created an auto trader for the one one two
+[  600.45s ->   606.91s] trade on the in uh on the in on the mes so i have a right here in austin buley one one one trade
+[  606.91s ->   616.19s] mes 30 put 28 put 10 put delta 400 stop loss 75 profit that is how i set up this auto trader now
+[  616.19s ->   621.83s] i will automatically put on this short put strategy that also has a hedge so i can prevent any downside
+[  621.83s ->   626.89s] risk i can make good money and this trade takes actually a month to put on but still i make a great
+[  626.89s ->   631.65s] amount of money for the risk that i'm putting on anyways guys i hope you enjoyed this video and i'll see
+[  631.65s ->   632.27s] you in the next one

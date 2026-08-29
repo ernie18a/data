@@ -1,0 +1,96 @@
+[    0.94s ->     7.42s] okay welcome back in this new video i hope the audio is going to be good i'm in a common area
+[    7.42s ->    12.30s] so i don't know if there's noise on the background but i hope so in this video i'm going to show you
+[   13.42s ->    21.26s] these algorithms they built i call it risk engine tool so it's like it helps you to manage risk
+[   22.14s ->    29.98s] and protect the account from like unexpected losses or something that you didn't predict
+[   29.98s ->    38.30s] or maybe even in some cases when you let's say you can lose control and open more position if you're
+[   38.30s ->    45.26s] trading manually and so this one these algorithms it help in all of those scenario you can see from
+[   45.26s ->    51.90s] here i also have the code but i'm not gonna show everything because it took me like many hours to
+[   51.90s ->    60.70s] build it so that's why but basically those are the main settings we have on the first level here
+[   60.70s ->    67.18s] first line the equity target i told you on the last video okay that's much better so now it's like
+[   67.18s ->    73.74s] italian but i'm gonna translate it also in english in the last video i was saying that even in funded
+[   73.74s ->    82.62s] account it was much better in my opinion to have let's say a real profit target for the account because
+[   82.62s ->    89.74s] of the emotion this one is going to help not only in challenge phases but also when you trade on fond
+[   89.74s ->    96.70s] account or maybe even real account i'm gonna implement it i'm going to implement this argue on my live
+[   96.70s ->   104.86s] account so basically we have here this is target so now it's put on 1k just to show you i'm gonna show
+[  104.86s ->   112.86s] you now how does this one it work and then but you can put let's say a little more than a challenge
+[  112.86s ->   123.26s] target so maybe for ftmo is 10 you can put like 10 000 and 50 usd and i think that's something
+[  123.26s ->   128.78s] reasonable maybe because if you put 10 000 maybe the the algorithms is not gonna close everything in
+[  128.78s ->   138.22s] like a million seconds with little delay could ruin the target so you can put like one 10k plus 50 so
+[  138.22s ->   144.30s] it's going to be i think the ideal things to do then here we have this is this is a tool that can
+[  144.30s ->   152.46s] usually turn off and it's for high watermark on ftmo you don't see the highest level reach
+[  153.10s ->   160.86s] by the equity but only by the balance i built this function just to show you and i'm gonna show you
+[  160.86s ->   170.22s] later it's just to show to yourself where did you let's say the highest profit you get by the equity
+[  170.22s ->   177.34s] maybe during overnight period where you weren't at the pc so it's not useful but i think i'd like to
+[  178.22s ->   184.78s] know where and how much profit i was able to make but also not with profit but just with the equity
+[  185.66s ->   190.54s] then we here we have two other functions that now are not working well so this is
+[  191.71s ->   198.11s] notification and also this is like email and the basic idea is like when you reach this target here
+[  198.11s ->   205.79s] you're gonna receive an app notification and also an email but it's like complicated to implement this
+[  205.79s ->   215.63s] function with the app md5 app and also with email but probably it's like in a new version maybe p2
+[  215.63s ->   220.51s] i'm gonna implement that but now it's not very important i think the most important things are profit
+[  220.51s ->   227.95s] target and then this is also very important so it's like a max drawdown limit so let's say for in this
+[  227.95s ->   240.27s] case is 100k 100k ftmo free trial okay i just made it now to show you but we know that on this type of
+[  240.27s ->   248.51s] challenge here basically the daily loss limits is like probably on most of the prop firm is five percent
+[  248.51s ->   256.72s] if the target is like 10 you're not gonna put 5k here because that's the amount where you're gonna
+[  256.72s ->   262.24s] lose the account so maybe you can put like you you want to be really conservatives conservatives so you
+[  262.24s ->   270.24s] can put 4k basically my algo never reached that amount because it could be crazy so i manage my risk
+[  270.24s ->   278.80s] in order to never achieve this much but it's like you never know if something could happen on the
+[  278.80s ->   288.32s] algorithms or maybe the markets or maybe in slippage cases scenario so if something happen i have a like
+[  289.36s ->   298.80s] hard closure for every type of position at minus 4 000 USD so that's great then here this is like a very
+[  298.80s ->   307.28s] useful tool i put it now for 10 different asset class and basically the main goal is you can of
+[  307.28s ->   314.64s] course turn it off and on but basically you right here the name of the asset in this case those are the
+[  314.64s ->   321.84s] basic that i put it you can just delete and say let's say something like this okay if the name is
+[  321.84s ->   328.56s] different but now since it's like sunday and i cannot trade on all of the other assets i'm going to show
+[  328.56s ->   337.84s] you on bitcoin and ethereum so i'm going to put like the maximum lot size for each trade and you're going
+[  337.84s ->   347.60s] to see how this is going to work so basically here is half a lot and this is 0.33 lots and the concept
+[  347.60s ->   354.24s] behind is maybe sometimes you can touch something or maybe algorithms like it could get crazy i have
+[  354.24s ->   361.12s] no idea it never happened to me since january but i want to be sure that it's not going to happen and
+[  361.12s ->   368.64s] also this is very close to the risk engine made by taron x and i think this is very functional is also
+[  368.64s ->   375.12s] super useful useful because maybe sometimes you're going to open more position this thing is going to
+[  375.12s ->   381.28s] happen more if you're like the discretionary trader and you lose let's say control and so you're going
+[  381.28s ->   387.92s] to open like bigger lot size to do revenge trading okay something like that it happened to me like years
+[  387.92s ->   396.64s] ago but with this argue on you are going to be much more safe because if you put only let's say this much
+[  396.64s ->   404.08s] okay i'm going to show you now is okay that's on now this is like one lot size sell and as you can see
+[  404.88s ->   415.60s] it changed like in a few milliseconds we can check here on the journal so in like 400 milliseconds it
+[  415.60s ->   422.48s] changed the position so not even one second and that's really good of course like you're gonna you're
+[  422.48s ->   430.56s] gonna lose the commission in this case it's like crazy commission on btc i have no idea why but yeah that's
+[  430.56s ->   437.12s] the main thing and i think it's super useful of course all those con moments where you're gonna
+[  438.27s ->   450.37s] do crazy stuff but yeah and this is the same for ethereum so we put here we have here okay 0.33 and
+[  450.37s ->   458.14s] you're gonna see if you're opening one standard lot size perfect less than a second it changed
+[  459.10s ->   466.24s] and okay now i'm gonna show you like how the profit target is gonna work and also how the
+[  467.28s ->   475.52s] drawdown limit is working so we can put like 400 and here we can put 10 on the watermark
+[  475.52s ->   484.58s] and we can put like let's say 500 because like it's pretty moving pretty slow so i don't wanna like
+[  484.58s ->   494.50s] lose like hours here but basically yeah we have like a max drawdown of 400 and profit target of 500
+[  494.50s ->   505.50s] you see with a step let's say watermark step of 10 you see now we can increase the lot size here like
+[  505.50s ->   515.50s] this and now let's go short actually okay two sides yeah now it's like lagging a little bit i don't know
+[  515.50s ->   524.35s] why i think there is like a i'm having a really slow connection because of the study room where i am now
+[  524.35s ->   533.63s] like yeah it's not good but let's keep shorting here i'm just gonna show you
+[  535.82s ->   546.11s] okay okay yeah actually we're very far from the target because like we kind of lost hundreds of you
+[  546.11s ->   552.75s] see on commission yeah i cannot even see here commission but i know that yeah like
+[  552.75s ->   564.38s] every single lot size was 60 bucks so i think we have to wait a little let's go along now now
+[  565.42s ->   574.98s] but all of this position is not like me letting me open new trades because of the loss limits so
+[  576.02s ->   583.07s] yeah that's i wanted to show you the perfect setup but with those more i only have time today so that's
+[  583.07s ->   590.03s] why but basically the market are moving so slow but basically you see the loss limit complete it's
+[  590.03s ->   598.27s] like 50 percent italian 50 percent english but basically if you reach your minus 400 usd and in
+[  598.27s ->   606.29s] this case we really reach that but then i open new position and the commission let's say kill the rest of
+[  606.29s ->   615.57s] the profit but yeah yeah but that's i think it's gonna be all for this video i couldn't show you how the
+[  616.21s ->   625.74s] profit target work because like i didn't know about this crazy condition that is offering here because
+[  625.74s ->   633.10s] like i did of course i did many trades but here is like 1k in commissions that's crazy it's gonna work
+[  633.10s ->   641.84s] it is like exactly the same as the daily loss limit is gonna work in this case i just reached the daily
+[  641.84s ->   649.52s] loss limit so if i'm open like three lots of the ethereum and of course like we know that on ethereum
+[  649.52s ->   659.28s] now here we have maximum let's say 1.2 okay so basically the risk engine is going to cut this lot size
+[  659.92s ->   670.16s] but in this case since we already reached the target it's gonna close everything and yeah exactly what
+[  670.16s ->   678.88s] it did here and it's gonna work in the exact same way with the profit target so if you put let's say
+[  678.88s ->   688.61s] let's say as i showed you before 500 you see or maybe if you your let's say target is 500 you can put
+[  688.61s ->   697.49s] like five hundred and twenty okay and so as soon as the price the equity sorry as soon as the equity is
+[  697.49s ->   703.89s] going to reach that level of course you have to put like the amount of the equity total equity if you
+[  703.89s ->   712.13s] have 100k account you have to put your 100k plus the amount that you want to reach because it's based on
+[  712.13s ->   719.01s] the equity that's what is looking for these algorithms if you put just this amount it's not gonna work
+[  720.37s ->   727.81s] so yeah that's pretty much it and i wanted to see if there is also the high watermark but
+[  727.81s ->   738.45s] yeah it's kind of crazy with this market with btc during the weekend and all of the crazy commission
+[  738.45s ->   746.45s] so i think i'm gonna do a new video about this with normal market condition and on normal assets
+[  746.45s ->   758.13s] but yeah basically is working very really well and it's the main goal for this algorithms this algorithm
+[  758.69s ->   773.20s] is to help you protect the account from over trading and also from like possible problem that can happen
+[  773.92s ->   781.44s] without anything planned so maybe let's say an algorithm that start to open random trades or
+[  781.44s ->   789.68s] huge size trades okay this is going to help and the other thing is like it's gonna help also with the
+[  790.40s ->   799.44s] max stocks limit and the profit target so yep that's pretty much it and if you have any questions or
+[  799.44s ->   807.36s] or anything you want to ask me you can just like comment here on youtube leave a like

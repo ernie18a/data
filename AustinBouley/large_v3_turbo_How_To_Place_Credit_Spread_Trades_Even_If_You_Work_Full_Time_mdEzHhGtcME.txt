@@ -1,0 +1,81 @@
+[    0.00s ->     5.90s] Hey guys, I'm going to show you exactly how to enter a credit spread on a broker and how to exit.
+[    6.12s ->    10.92s] So we're going to learn how to actually do it in the weeds, opening up two different brokers.
+[   11.04s ->    15.62s] I'll be walking you through how to do it in a generic sense, then how to do it on Robinhood,
+[   15.70s ->    20.58s] then how to do it on TastyTrade. So let's dive in. Okay. So if you watched the last video where I
+[   20.58s ->    24.44s] covered what are credit spreads and how they're structured, that's exactly what we're doing here.
+[   24.44s ->    29.72s] We're selling one option and then buying another. So let's explain how that works here.
+[   29.72s ->    34.70s] Using a simple platform, and then we'll go to a more complex platform. Now, if you understand
+[   34.70s ->    40.08s] what I'm saying at a core level, then it will make sense no matter what broker you have. So
+[   40.08s ->    44.14s] let's dive into the easy way first. So let's say we have a stock that we want to trade. Let's say
+[   44.14s ->    48.02s] we're going to trade spy. Now, again, I do have to let you know that if you are new to the credit
+[   48.02s ->    53.52s] spread world, welcome. But second, you do need a margin account to trade credit spreads. That means
+[   53.52s ->    59.70s] that you need $2,000 in the account and you need to pass the survey required to become a
+[   59.70s ->    64.78s] margin account holder. Now, I'm not saying you necessarily need to lie, but you want to kind
+[   64.78s ->    70.50s] of say you have semi-decent experience and you want to take little risks because you're trading
+[   70.50s ->    74.84s] credit spreads. That's a small risk trade. So don't say you're going for high risk just to kind
+[   74.84s ->    79.06s] of make the broker happy and they'll approve you for margin. Anyways, diving in here. Hey guys,
+[   79.12s ->    82.34s] just want to hop in here real quick and let you know about a free training that I'm doing here
+[   82.34s ->    86.72s] very soon. If you click the link down below, you can access it and learn how I make $3,000 to $5,000
+[   86.72s ->    91.42s] every single month using the new mother credit spreads trading strategy. I'm going to walk you
+[   91.42s ->    94.04s] through it step-by-step. So by the end of the training, you'll walk through knowing how to
+[   94.04s ->   101.60s] actually implement it and use it for yourself. So you can risk $25 to make $25 with a 75% win rate.
+[  101.68s ->   105.32s] So if that is interesting to you, please make sure to click the link down below and save your spot.
+[  105.58s ->   109.00s] All right, enjoy the rest of this video. Now that we're going into the trade spy options,
+[  109.00s ->   114.72s] I want to show how easy it is with Robinhood. So this is the same with Webull. It also has a
+[  114.72s ->   119.26s] builder, I believe. But if we simply go down here to vertical spreads, which is another name for
+[  119.26s ->   124.72s] credit spreads, and we find the one we want to do. Let's say for this example, we're going to put on
+[  124.72s ->   128.76s] a call credit spread. So if I'm going to put on a call credit spread, I'm going to click on call
+[  128.76s ->   135.38s] credit spread. I'm going to go into here and find the expiration date that I am doing. So this is how
+[  135.38s ->   141.36s] far out I think my bet will be true. So remember, as I discussed last time for a call credit spread,
+[  141.36s ->   146.20s] you are betting that the stock will stay below a certain level. And so how long do I think that
+[  146.20s ->   151.96s] will work? Well, I think maybe I'll be right for 11 days. Let's say 11 days. Okay, cool. So what
+[  151.96s ->   156.20s] level do I think it will stay below? Let's just pick a random level here. Let's say I'll pick this
+[  156.20s ->   163.28s] one right here, 435. It's currently trading at $429. Let's say I think it will stay below 435.
+[  163.66s ->   169.70s] Again, in future modules, I'll walk you through how to know what level to pick. But again,
+[  169.70s ->   174.16s] this is just an example. Cool. So now I click this and now my credit spread is structured for
+[  174.16s ->   179.12s] me. It sells the one option and buys the other. It shows me the average price. And now I can put
+[  179.12s ->   184.34s] on this trade. So now you can see the bid price and the ask price. How do you get filled on this?
+[  184.72s ->   188.92s] Okay. When you are selling, that means you're trying to get rid of something. When you get rid of
+[  188.92s ->   192.96s] something, you need someone to take it from you. That's a buyer. You need to get rid of it to a buyer.
+[  193.30s ->   197.02s] And so what are the buyers? That's the bid price. The bid are the buyers, the ask is the sellers.
+[  197.02s ->   202.46s] So if you want to enter this credit spread almost instantly, you need to give it to what the buyers
+[  202.46s ->   208.74s] are willing to pay. Right here, the buyers are willing to pay 17 cents. So if I enter it at 17
+[  208.74s ->   213.68s] cents, just that's why it says high fill likely. Why? Because that's what the buyers are asking for
+[  213.68s ->   219.48s] and I'm giving it to them. So that's why, and that's how you can instantly enter a credit spread
+[  219.48s ->   225.12s] trade. Now, if you're not getting the price that you want, let's say you want to enter at 15 cents or
+[  225.12s ->   230.26s] something like that, but it's currently not there, then you can put in that price and then
+[  230.26s ->   234.90s] change it till good till cancel. And that, that order will stay open until it can fill you at that
+[  234.90s ->   240.60s] price. So these are two different ways to leverage the order types, but all you need to know is find
+[  240.60s ->   246.10s] the spread that you want based on the levels you picked, go in, put in the minimum credit you want.
+[  246.14s ->   250.88s] If you want an instant fill, fill it at the bid. And that's how you put on this using a simple
+[  250.88s ->   255.50s] platform like Robin hood. Now let's dive into something a bit more complex. Okay. This is
+[  255.50s ->   259.86s] tasty trade. And let me show you a bit around this. So we're looking at, at the same thing. Spy,
+[  260.04s ->   266.94s] let's go to the same expiration date, which I believe was October 16th. Um, we go in here and
+[  266.94s ->   270.96s] let's look at the same levels. I believe we're looking at the four 35. So remember in the last
+[  270.96s ->   276.14s] video, how I said struct, uh, structuring requires that we sell one and then we buy the one further away
+[  276.14s ->   280.48s] from the stock price. Well, let's do that. So that means we're going to click on the bid because we
+[  280.48s ->   284.14s] click on the bid. That means we want to give it away. So we're going to give it to us, uh, to a
+[  284.14s ->   288.22s] buyer. So we're going to click on that. So that becomes our sell price. So now we're selling the
+[  288.22s ->   292.62s] four 35 that hence why it's red. And then, like I said, we need to buy the one below it. So we're
+[  292.62s ->   297.00s] going to click on the ask price. And now we've structured the same thing. It's the same credit
+[  297.00s ->   301.48s] spread. It's all structured right here, trading the same price as the last one. We can see here,
+[  301.48s ->   306.68s] uh, the bid price, the bid price and the ask price. If we want to enter this trade in, uh, instantly,
+[  306.68s ->   311.46s] we're going to enter at the bid price or a bit lower. Again, we want to make sure we're collecting
+[  311.46s ->   316.94s] a net credit. That means that the money based on the two options is resulting in a credit as I showed
+[  316.94s ->   321.52s] you in the last video so that we make money credit means we're receiving money. Um, and then right
+[  321.52s ->   327.18s] there, you can change, uh, the time and frequency, uh, which means that the order is good for today or
+[  327.18s ->   332.44s] it's good to cancel, whatever you want to do. Either way, this are two different ways and two different
+[  332.44s ->   339.00s] brokers to structure and set up a credit spread trade. Now let's walk through how do we exit the
+[  339.00s ->   343.42s] trade? It's cross. It's quite easy for all platforms. You just simply click on the position
+[  343.42s ->   347.90s] you have, and then you get rid of it. So we'll walk through on this one right, right, right here.
+[  348.00s ->   353.98s] So you can see here, if I have an order, uh, a current spread right here, how do I get rid of this?
+[  354.12s ->   360.12s] Well, I just click on actions. Oops, my face is blocking this. I click on actions. I click on
+[  360.12s ->   367.16s] closed position and now it's already structured the trade for me. Again, I have an error because
+[  367.16s ->   372.14s] I have an order type on this already. Um, but again, it will set up the trade for you. You just
+[  372.14s ->   377.04s] click send and review and you close it. Just like before when we were entering a trade, we want to
+[  377.04s ->   382.26s] do it at the bid price. Now we're going to reverse it and do it on the exit price. So that means that
+[  382.26s ->   387.64s] if we want to exit quickly, we just simply put it at the ask price where we're trying to get rid of it
+[  387.64s ->   391.72s] at. And that's what sellers wanted at. And so that's how you get out of it. And simply anyways,
+[  391.72s ->   397.68s] that is how you put on and exit a credit spread. Super duper simple. Once you understand the
+[  397.68s ->   402.04s] structure of it. So if you didn't, please go back to the last module. If not, if you understood this,
+[  402.12s ->   404.32s] awesome. I will see you in the next lesson.

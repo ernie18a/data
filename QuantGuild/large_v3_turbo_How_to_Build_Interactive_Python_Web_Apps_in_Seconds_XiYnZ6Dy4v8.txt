@@ -1,0 +1,75 @@
+[    0.66s ->     8.81s] Hey, YouTube, it's Roman, and today I want to talk about building simple web applications in Python using Streamlit.
+[    9.43s ->    15.21s] Now, Streamlit is an incredibly easy way to set up some interactivity with your Python applications.
+[   15.85s ->    22.31s] You're not going to be building necessarily a full-fledged web application with, you know, tons of Git and Post requests if you're interested in doing that.
+[   22.31s ->    27.87s] And you can check out some of my other tutorials. You would really want to use Flask or Django for that.
+[   28.45s ->    31.23s] But today I want to illustrate what Streamlit can do.
+[   31.75s ->    37.03s] We're going to be using the best quantitative finance Python package out there, QFIN.
+[   37.53s ->    45.51s] I perhaps may be a little biased, but nevertheless, you're going to want to run a pip install QFIN and then a pip install Streamlit.
+[   45.71s ->    51.31s] And then after you install those, you can boot up your favorite text editor, and then we can go ahead and get started.
+[   51.31s ->    54.53s] All right, so we're going to start by importing some packages.
+[   54.53s ->    64.83s] We're going to import Pandas as PD, import Streamlit as ST, and then we're going to import Geometric Brownian Motion from QFIN.
+[   64.83s ->    71.33s] So we'll say from QFIN.Simulations, import Geometric Brownian Motion.
+[   71.33s ->    77.13s] Our goal here is going to be to visualize these Geometric Brownian Motion sample paths.
+[   77.13s ->    81.29s] And we know that we have a couple of parameters to play around with, right?
+[   81.29s ->    82.93s] We can adjust the drift.
+[   82.93s ->    86.81s] We can adjust the volatility, the time to which we're simulating to.
+[   86.81s ->    93.51s] And all of these are going to be different aspects of the application that we can kind of tinker with using Streamlit.
+[   94.31s ->    96.55s] Let's get to the part that everyone wants to see.
+[   96.63s ->    97.93s] How do we actually use Streamlit?
+[   97.93s ->   109.21s] Well, instead of going through all of these hoops to try to figure out the callbacks here, the callbacks there, we're just going to very simply say with ST.echo, code location is equal to below.
+[  109.21s ->   114.52s] And here we can place all of our Streamlit widgets.
+[  114.52s ->   120.22s] So, for example, we're going to want to adjust the initial stock price of Geometric Brownian Motion.
+[  120.52s ->   123.02s] So I'm going to create a Streamlit slider.
+[  123.02s ->   125.22s] So S is equal to ST.slider.
+[  126.02s ->   126.92s] We're going to name it.
+[  126.92s ->   132.62s] So we'll say the label for the slider is going to be initial stock price.
+[  133.42s ->   137.02s] And then we got to pass some parameters to the slider.
+[  137.02s ->   140.12s] So we're going to say the minimum value for the slider is going to be zero.
+[  140.52s ->   143.92s] We'll say the max is going to be 100.
+[  144.22s ->   149.22s] We'll say we're going to start at 50 and we'll increment by five.
+[  149.52s ->   151.82s] So that is the structure per slider.
+[  151.82s ->   156.62s] And then you can just go ahead and rinse and repeat with all of the parameters of Geometric Brownian Motion.
+[  157.02s ->   160.22s] And I'm going to save you me coding that.
+[  160.22s ->   162.02s] So there we go.
+[  162.02s ->   162.32s] Okay.
+[  162.32s ->   165.52s] So we have all of our parameters to Geometric Brownian Motion.
+[  165.52s ->   171.22s] What we're going to do now is create a data frame to save each simulated path to.
+[  171.22s ->   175.72s] So we'll say chart data is equal to PD dot data frame.
+[  175.72s ->   178.22s] And now we actually got to run the simulation.
+[  178.22s ->   181.42s] So we'll do for I in range N.
+[  181.42s ->   189.12s] We're doing N simulations and each column of our data frame is going to correspond to one sample path.
+[  189.12s ->   198.82s] So we'll say chart data STRI is equal to Geometric Brownian Motion.
+[  198.82s ->   204.52s] We'll pass the stock price, mu divided by 100, sigma divided by 100.
+[  204.52s ->   208.52s] Remember QFIN expects things quoted in percentages.
+[  208.52s ->   213.32s] And then we're going to do 252 uniform time steps.
+[  213.32s ->   218.52s] We'll do one divided by 252 and T divided by 12.
+[  218.52s ->   223.22s] And then we will retrieve the simulated path.
+[  223.22s ->   226.22s] We are just about ready to go with the Streamlit application.
+[  226.22s ->   228.22s] All we got to do now is add a line chart.
+[  228.22s ->   233.22s] We'll say ST dot line chart and we will pass the chart data.
+[  233.22s ->   234.52s] And that is it.
+[  234.52s ->   238.22s] We are now ready to launch our Streamlit application.
+[  238.22s ->   245.22s] Now head on over to your terminal and locate your folder that contains your Streamlit Python file.
+[  245.22s ->   251.92s] And to run your application, all you got to do is type streamlit run and then the name of your Python file.
+[  251.92s ->   255.22s] So mine is streamlitexample.py.
+[  255.22s ->   256.52s] It's going to host it for you.
+[  256.52s ->   258.42s] And boom, there we go.
+[  258.42s ->   264.02s] We have our fully functioning application for Geometric Brownian Motion.
+[  264.02s ->   265.72s] It's that easy.
+[  265.72s ->   274.22s] In a handful of lines of code, we have a pretty cool app where we can play with the Geometric Brownian Motion simulation.
+[  274.22s ->   276.32s] We can increase the volatility.
+[  276.32s ->   278.42s] We can increase the drift.
+[  278.42s ->   283.82s] We can increase the time horizon we're simulating to.
+[  283.82s ->   287.42s] Maybe decrease the volatility so we can better see that drift.
+[  287.42s ->   295.72s] And, you know, we built a pretty responsive interactive application in literally, I mean, what is this?
+[  295.72s ->   298.42s] It's like almost 20 lines of code.
+[  298.42s ->   300.92s] It's pretty bananas.
+[  300.92s ->   302.72s] It's pretty cool.
+[  302.72s ->   305.92s] So I hope you enjoyed this quick Python tutorial.
+[  305.92s ->   313.52s] I plan on doing more Python videos in the future, sort of mixed in with the mathematical finance and other quant topics.
+[  313.52s ->   318.42s] So, you know, feel free to drop a comment below to let me know what you'd like to see in future videos.
+[  318.42s ->   324.12s] I'd like to do more artificial intelligence, more machine learning, you know, more big data topics.
+[  324.12s ->   331.52s] If that's something that you're interested in seeing, you know, like I said, drop a comment for suggestions for future videos.
+[  331.52s ->   335.02s] If you want me to break down certain topics, I'd be more than happy to do so.
+[  335.02s ->   337.72s] Shoot me an email if you have any specific questions.
+[  337.72s ->   342.12s] But other than that, thank you so much for watching and I will see you in the next video.

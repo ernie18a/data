@@ -1,0 +1,73 @@
+[    0.24s ->     7.28s] okay welcome back in this new video i'm going to show you my last two payout this is really
+[    7.28s ->    14.10s] good performance over the past few months since october i was able to make like at least one payout
+[   14.10s ->    22.36s] each month as you can see here and now in december actually like this is i just got it but i make
+[   22.36s ->    29.84s] this amount in december so for the first two weeks of december i did make a few hundreds and then
+[   29.84s ->    37.52s] around the 15th of december i was able to secure this amount and then i stopped trading till 22
+[   37.52s ->    44.68s] of december and then like on the 23rd i start trading again and now i'm going to show you but
+[   44.68s ->    51.28s] around like the 26th of december so like after christmas i was able to make this amount so i
+[   51.28s ->    57.64s] stopped trading again oh actually i did it i did make that in two days because like i started in
+[   57.64s ->    66.88s] 24 of december and in 25 it was holiday so i couldn't trade and then in tennis on the 26th of
+[   66.88s ->    73.36s] december i was able to make this amount so right now you see all of my payout are the same amount
+[   73.36s ->    79.92s] because i got a target so it's like a different algorithm that is going to close all of the
+[   79.92s ->    85.88s] position now it's like closing each single position at the time and it's not great because i want the
+[   85.88s ->    90.88s] algorithm to close all the position like a bulk operation so all at the same time as you can see
+[   90.88s ->   100.64s] the amount here is 36 but my target was 740 dollars because that's the amount that if converted in euro
+[  100.64s ->   107.48s] is going to be 500 euro it was a great day i think most of the profit came from gold let me check
+[  107.48s ->   117.00s] so yeah big profit on gold and then still gold yeah most of the profit came from gold and some
+[  117.00s ->   127.64s] position oh wait also use dgby so yeah nasdaq gold and use dgby so yeah it was a great day and why i'm
+[  127.64s ->   135.48s] taking profit with this frequency and why i'm not looking for higher profit i'm going to show you
+[  135.48s ->   144.46s] why i'm doing this and what is the concept behind so what is the logic behind so since the beginning
+[  144.46s ->   151.80s] of october i was able to make each month a payout okay and i'm not surprised that i was able to make
+[  151.80s ->   159.58s] this okay because it seems maybe oh yeah i'm so good but it's not that thing is i analyzed the frequency
+[  159.58s ->   167.48s] my portfolio is achieving this type of amount okay so now you see all this number this is euro okay
+[  167.48s ->   176.12s] and this is the frequency this is italian so it's like frequency mfe so maximum favorable exposure daily
+[  176.12s ->   185.24s] so it means how many times the portfolio is gonna hit a certain amount x amount and those are the x amount
+[  185.24s ->   191.82s] okay so from zero to two hundred is going to be more than 500 times wait this is not in one year
+[  191.82s ->   199.34s] but this is overall it means over six years so you have to think about in this time horizon okay
+[  199.34s ->   206.70s] so 200 is like super common and also like i don't have here the yeah maybe oh yeah that's the one
+[  206.70s ->   215.70s] so this is the confidence level okay this is the the let's say not the mean but like the 70 percent
+[  215.70s ->   223.36s] confidence good enough okay and then this is the amount and this is the of course the probability so
+[  223.36s ->   234.30s] the odds okay and this is like odds of successful payout over 10 to 15 days of time horizon okay
+[  234.30s ->   241.96s] why i'm doing this because of course ftmo is giving 14 days of time horizon for payout okay that's what
+[  241.96s ->   251.14s] i analyzed okay and i was able to get out this i got like a 70 percent odds on average i won't be able
+[  251.14s ->   262.86s] to get let's say 1000 euro every single 15 days i won't be able to get this amount every 15 days so
+[  262.86s ->   268.32s] that's really good i'm not looking for 80 because most of the times it's going to be 15 days so this
+[  268.32s ->   274.76s] is like the average from 10 to 15 i don't care about lower payout also because if you reduce your
+[  274.76s ->   281.76s] payout you're also reducing the overall profit the yearly profit frequent but it's not worth we are
+[  281.76s ->   288.74s] looking for because we can with this we're going to leave a lot of money on the table and then we have
+[  288.74s ->   296.58s] 400 times because like of course you have to divide this amount by six years okay so it's going to be
+[  296.58s ->   306.28s] let's say 400 divided by six and that mean 66 payout each year okay this is also useless because like
+[  306.28s ->   315.42s] you are only able to make each single year you're only able to make 26 payout okay and why is that
+[  315.42s ->   326.64s] because like you have 365 days each year okay and only you can do 26 payout because with ftmo you're
+[  326.64s ->   333.80s] able to make withdrawal each 14 days okay if you want to withdraw frequently of course i'm let's say
+[  333.80s ->   342.38s] thinking about that it means around two payout each month okay i could easily do like only 12 payouts
+[  342.38s ->   351.10s] on the year and maybe i could get more money because you're getting like in this zone here but i don't
+[  351.10s ->   359.60s] care about that i care more about like the psychology and emotion i don't really care about big payout my
+[  359.60s ->   367.16s] goal is not to extract it as much money as i can from one account but actually is to have my account
+[  367.16s ->   374.52s] as long as long as i can trade and also not exceeding the max drawdown so with my risk now
+[  374.52s ->   382.16s] it's really hard to reach the max drawdown okay it could happen but it's like i know the odds okay
+[  382.16s ->   391.30s] and it's like probably it could be 15 to 20 percent scenario okay if something crazy happened
+[  391.30s ->   399.46s] there's a 20 to 15 chance for my account to blow okay and it's very low because like i did i run
+[  399.46s ->   407.32s] monte carlo simulation and it showed showed me this type of scenario so yeah i'm really confident and
+[  407.32s ->   413.86s] yeah that's it and i'm doing this type of update to show that all of my concept all of the things i
+[  413.86s ->   422.80s] i'm trying to explain to you in the other video like the one about python or mco5 are things that
+[  422.80s ->   430.58s] you can actually do by yourself and things that are really useful okay and you actually just saw it
+[  430.58s ->   438.30s] here with all the payouts for payout but i think the odds on average to get on the fourth payout
+[  438.30s ->   448.06s] is actually like probably 99 of the people that trade ftmo never get to the even second payout
+[  448.06s ->   455.58s] so it means something okay and yeah it's not too it's not to brag or like flex anything it's just to
+[  455.58s ->   461.76s] show that like what i'm doing and what i'm saying in the other video it actually makes sense okay and
+[  461.76s ->   468.72s] the other thing important for this video is like that you have to learn that you cannot put like a
+[  468.72s ->   476.96s] random target on your ftmo account okay you cannot say oh yeah i wanna get 2000 euro on this account in
+[  476.96s ->   484.64s] december okay because it doesn't make any sense you have to analyze your own data and extract other data
+[  484.64s ->   492.48s] data from that data then you analyze some type of critic criteria okay and then you find what is the
+[  492.48s ->   500.32s] odds for you to get this type of payout okay and for me with this risk and this account balance to get
+[  500.32s ->   509.84s] like a 2000 USD payout the odds were probably in in 14 days the odds are like 20 okay maybe if you
+[  509.84s ->   517.92s] increase your length to 30 days maybe you can think about something different but also when you are
+[  517.92s ->   524.88s] thinking about which type of payout you do you want and which type of target you want you think about
+[  524.88s ->   533.68s] the uh emotional level okay so it's going to be better have maybe frequent payout or once every month
+[  534.32s ->   540.88s] maybe a little bit bigger okay to me it's like way better to have more payout smaller but this is
+[  540.88s ->   548.08s] like the easiest let's say because i'm getting 80 of profit split so yeah that's it this is last thing
+[  548.08s ->   556.48s] for my youtube video for this update and i hope you enjoyed it and then of course you can ask me everything
+[  556.48s ->   563.44s] in the comment i'm not gonna show or explain the concept behind my algorithms but yeah that's it
+[  563.44s ->   571.36s] and subscribe leave a comment every type of question you have or if you need some explanation i'm really
+[  571.36s ->   573.36s] happy for that and see you in the next one

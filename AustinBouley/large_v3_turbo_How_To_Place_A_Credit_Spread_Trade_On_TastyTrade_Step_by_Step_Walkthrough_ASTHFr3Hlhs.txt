@@ -1,0 +1,59 @@
+[    0.02s ->     5.92s] In this video, I'm going to show you how to place a credit spread trade on TastyTrade platform.
+[    6.30s ->    11.66s] So this is going to work on both the trading platform that they have for your desktop,
+[   11.88s ->    15.08s] but as well as the mobile app and also the browser form.
+[   15.38s ->    17.28s] All these are set up the exact same way.
+[   17.34s ->    19.24s] So when you set up a credit spread, for this example,
+[   19.24s ->    23.94s] we're going to be setting up a credit spread on stock symbol or ETF symbol GLD.
+[   24.08s ->    26.60s] You can see here GLD is our stock symbol right here.
+[   26.60s ->    30.16s] We simply click on the trade tab and it brings us to the trade tab.
+[   30.28s ->    35.56s] Next thing we know, we want to pick the expiration date that we think this option
+[   35.56s ->    37.92s] or whatever strategy we're doing is going to expire by.
+[   37.98s ->    39.04s] So we're doing a credit spread.
+[   39.46s ->    42.84s] So what level do we think the stock is going to stay above?
+[   42.92s ->    46.36s] Let's say for a put credit spread by a certain date.
+[   46.44s ->    49.06s] So let's say our expiration is April 28th.
+[   49.34s ->    49.74s] All right, cool.
+[   49.82s ->    53.52s] Now that we have that, we can come in here and select the vertical one.
+[   53.52s ->    56.76s] We could do a short put vertical if you're doing a bullish position.
+[   56.76s ->    60.12s] If you think the stock will go up or stay up, then again, that's going to be put.
+[   60.24s ->    62.04s] If it's a call, you simply click on call.
+[   62.22s ->    64.26s] Now you're doing a call credit spread.
+[   64.38s ->    67.22s] So again, vertical is another word for credit spread.
+[   67.42s ->    70.94s] Now again, credit is meaning short, but vertical is the same thing as spread.
+[   71.04s ->    73.34s] So let's put on a short put credit spread.
+[   73.54s ->    76.26s] So again, we're going to be going out of the money on the put condition.
+[   76.38s ->    77.58s] So that's going to be on this side.
+[   77.70s ->    79.96s] You can see here, we can tell the delta on this level.
+[   80.06s ->    82.18s] But anyways, now we pick our strike prices.
+[   82.18s ->    84.08s] What level do we think it's going to stay above?
+[   84.32s ->    86.96s] That's going to be where we put our short strike price.
+[   87.02s ->    88.70s] So right here, we're going to put our short strike right here.
+[   89.02s ->    92.94s] We can put it there by simply holding with our mouse and dragging it around.
+[   93.30s ->    96.62s] Or we can actually remove this completely and set up the trade ourselves.
+[   96.98s ->    98.16s] Let's say 1882.
+[   98.40s ->    99.34s] So we're going to click on bid.
+[   99.42s ->   101.54s] When we click on bid, that makes it a sell order.
+[  101.80s ->   103.70s] When we click on ask, that makes it a buy order.
+[  104.04s ->   108.06s] So now we've set up a put credit spread by ourselves without using the strategy.
+[  108.06s ->   111.10s] And you can see here that it gets represented as one.
+[  111.64s ->   115.80s] So once we put this trade on, we can then use our quantity to up our quantity.
+[  116.28s ->   119.62s] See our probability of profit using our theoretical deltas.
+[  119.92s ->   123.16s] And then we can also see our max profit and our max loss.
+[  123.54s ->   126.18s] So this again is what you look at to determine your buying power effect.
+[  126.28s ->   129.38s] How much money do you need to put down in order to put this trade on?
+[  129.80s ->   130.08s] All right.
+[  130.14s ->   131.86s] And this is the money that you are collecting.
+[  132.16s ->   136.66s] Again, you can collect any amount of money you want or at least to put the order in at.
+[  136.66s ->   139.42s] Once the order is in, it is locked at this price.
+[  139.56s ->   141.62s] And so that's what you put in at and you hope to collect.
+[  142.02s ->   145.54s] Now, again, if the stock is trading below this level, then you will not get filled until
+[  145.54s ->   147.62s] the stock hits this price or goes above it.
+[  148.12s ->   150.40s] So this essentially, you click review and send.
+[  150.50s ->   152.94s] And this is how you put on a put credit spread trade.
+[  153.00s ->   154.42s] You can see all the details here.
+[  154.64s ->   156.06s] And that is how it gets put on.
+[  156.74s ->   163.04s] If you have any more questions about how to put on a TASY trade spread, then just simply
+[  163.04s ->   166.30s] comment down below and I'll make sure to answer your questions.
+[  166.66s ->   167.44s] Thank you.
+[  167.44s ->   168.02s] Thank you.
+[  168.02s ->   169.54s] Thank you.

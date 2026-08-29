@@ -1,0 +1,91 @@
+[    0.00s ->     5.78s] So you majored in finance and you've spent some time on an asset management team and you realize
+[    5.78s ->    12.78s] that it can just be handshakes and golf swings. The main driver of your portfolio is just
+[   12.78s ->    19.18s] bearing exposure to market risk. If you take a look at CAPM, this is what we use to explain
+[   19.18s ->    25.68s] returns in the cross-section in a one-factor model. Sure, there are other forms of undiversifiable
+[   25.68s ->    33.32s] risk, but you realize that if you just hold the SPY ETF or different variations of U.S. equity
+[   33.32s ->    39.12s] diversification, you're going to accumulate wealth over time. Maybe not in the most efficient way, but
+[   39.12s ->    46.06s] we take a look at these metrics over here. A Sharpe ratio of 0.77, a Sortino ratio of 1.06, a Beta of
+[   46.06s ->    52.92s] 1, a max drawdown of 25%, a total return over the last five years of 80%. What does this mean for
+[   52.92s ->    57.72s] you and your clients? Well, if your clients have no idea what market risk is, you're a
+[   57.72s ->    64.58s] hero. You've just generated them over five years an 80% return on their capital minus fees, but
+[   64.58s ->    71.50s] is this good? Is this what makes a good asset manager? Well, at the end of the day, it really
+[   71.50s ->    78.66s] depends on your goals. And the problem here is anyone can access the SPY ETF. The cat is
+[   78.66s ->    85.28s] certainly out of the bag. And the question really is, what are you getting paid for? Well,
+[   85.68s ->    92.08s] not all managers are created equally. There's a problem with this passive management, this
+[   92.08s ->    97.70s] passive exposure, and that is this idea of volatility drag. What do I mean by volatility
+[   97.70s ->   103.86s] drag? Well, when there is a market downturn, let's think about something like 2022 with a slow
+[  103.86s ->   111.06s] bleed or even when tariffs were imposed at the start of 2025, you may need capital. If you have
+[  111.06s ->   115.24s] an asset manager that is just bearing market exposure, you lose your job, your house value
+[  115.24s ->   122.46s] halves, you might need to get liquid and get liquid quick along with everyone else. And at that point in
+[  122.46s ->   128.20s] time, your portfolio value will have decreased substantially. The problem then is that it requires
+[  128.20s ->   134.92s] significantly more return to come back from that drawdown than it did the return that you lost
+[  134.92s ->   141.40s] during that drawdown. In other words, if you have a 10% loss, it is going to take more than a 10% gain
+[  141.40s ->   147.96s] to come back. This is volatility drag. I have a beautiful animation here to show you exactly what's going
+[  147.96s ->   155.30s] on. These two strategies have the exact same expected value. It's positive. They're both making money
+[  155.30s ->   161.70s] over time. But what's the difference? There's this gap that keeps on widening. This is convexity,
+[  161.70s ->   167.22s] the geometric compounding of returns. Roman, you kind of messed up this animation here. This looks
+[  167.22s ->   174.02s] thick relative to this blue line. Well, I actually didn't mess up the animation. This is volatility drag.
+[  174.02s ->   178.74s] If we take a look at the smooth path and the volatile path, the final value, there is a difference of
+[  178.74s ->   188.82s] roughly 8% between the two. Why is this thicker? This is because there's actually a jaggedness volatility
+[  188.82s ->   197.30s] to the orange path relative to the blue path. This is what is generating that drag effectively over time
+[  197.30s ->   204.50s] due to the geometric compounding of wealth. We are not generating as much return as we could
+[  204.50s ->   210.98s] with lower volatility. Now, you might be saying, why can't we just, you know, have returns compound
+[  210.98s ->   216.34s] arithmetically to avoid this volatility drag problem? Well, if you were to do that, you would
+[  216.34s ->   222.50s] be operating with fixed bet sizes. You would not be able to compound your wealth geometrically, meaning
+[  222.50s ->   229.06s] as your portfolio value increases, you're not going to be able to make larger bets. So geometric
+[  229.06s ->   235.62s] compounding comes from the desire to scale along with your portfolio value. This is the laws of
+[  235.62s ->   241.86s] nature. You're not going to get away from this volatility drag. So what can we do? How can we
+[  241.86s ->   247.62s] reduce this volatility drag? Well, something that I've long discussed on this channel, one of my
+[  247.62s ->   254.74s] favorite ideas in all of quantitative finance is the idea that structurally orthogonal bets are going to
+[  254.74s ->   263.22s] improve diversification, improve your overall risk adjusted return and enable the use of safe leverage.
+[  264.10s ->   273.30s] How do I mean? Well, if the, if the two strategies or two portfolios are structurally orthogonal,
+[  273.30s ->   277.86s] they are uncorrelated with one another, their correlation structure, their auto correlation,
+[  277.86s ->   284.18s] auto covariance structure is certainly going to be net zero across the board. And the sharp ratios actually
+[  284.18s ->   291.94s] become additive in the quadratic sense. Why is this useful? Well, if you take any retailer and they
+[  291.94s ->   298.02s] pull up KMLM and they take a look at this ETF over time, they're not going to want to buy it. This
+[  298.02s ->   304.82s] isn't up and to the right, like Apple or SPY or Google or Nvidia. This looks terrible. This has a sharp
+[  304.82s ->   314.10s] ratio of 0.02, a beta of negative 0.12, a max drawdown of 36%, a total return of negative 4.33%.
+[  314.90s ->   325.62s] Why would anyone invest in KMLM? This is getting into the idea of portfolio engineering. And this is
+[  325.62s ->   332.50s] really what the industry is all about. This is what you are being compensated for as an active manager,
+[  332.50s ->   338.98s] not somebody who is just holding a portfolio of the SPY ETF or a variation of it through
+[  339.94s ->   345.54s] stocks they selected from a top down or a bottom up approach. No, I'm talking about engineering a
+[  345.54s ->   353.46s] portfolio to reduce volatility drag, to have money when you need it. Essentially during violent market
+[  353.46s ->   359.30s] drawdowns, you are going to have heads, legs or sleeves or whatever in your portfolio that are going
+[  359.30s ->   365.22s] to be more capital efficient, reduce volatility drag, and give you the ability to start compounding
+[  365.22s ->   372.26s] returns again faster. So let's take a look now at a joint portfolio of the SPY, just like we saw at the
+[  372.26s ->   381.22s] start. But now we're going to compare it to a portfolio of 70% weight in SPY and 30% in KMLM. If we take
+[  381.22s ->   388.42s] a look at this animation here, we can see, hold on a second, right? The beta is roughly half that of
+[  388.42s ->   393.30s] the SPY. The SPY is a benchmark. Of course, it's going to have a beta of one. The sharp ratios are
+[  393.30s ->   400.74s] roughly comparable, 0.77, 0.76. But take a look at this max drawdown. The max drawdown of the SPY ETF
+[  400.74s ->   409.22s] is minus 25%. But if we take a look at the portfolio, it's minus 14%. That is vastly different
+[  409.22s ->   413.86s] in terms of a max drawdown. But what's the problem here? You might be saying, well, Roman, okay, but
+[  413.86s ->   420.58s] you know, you're paying for it in returns, right? The total return of SPY is roughly 80%. The total
+[  420.58s ->   427.78s] return for this portfolio is 50%. That's not good, right? Well, here, what you're doing is you're
+[  427.78s ->   434.98s] kind of comparing apples to oranges. This orange portfolio, right, doesn't bear the same amount of
+[  434.98s ->   444.10s] equity exposure as the SPY ETF. What happens when we engineer a portfolio to bear similar equity
+[  444.10s ->   451.62s] exposure, but also reduces volatility drag? This is the idea of not compromising your main return
+[  451.62s ->   456.58s] engine. Whether you're harvesting the variance risk premium, whether you're just bearing simple
+[  456.58s ->   462.50s] market exposure, whatever it is, if you have some sort of hedge leg or hedge sleeve, you're going to be
+[  462.50s ->   468.66s] compromising that return engine. But once you start to introduce leverage in an intelligent way,
+[  468.66s ->   473.06s] you're going to be bearing the same amount of exposure, you're going to generate more returns
+[  473.06s ->   478.66s] because you've reduced volatility drag, and you're going to have a lower max drawdown. That is exactly
+[  478.66s ->   485.94s] what you see here. This is a portfolio that beat the S&P 500 by literally almost every measure,
+[  485.94s ->   494.74s] a better risk, better risk adjusted return 0.79 to 0.77, a lower max drawdown, right, negative 22% to
+[  494.74s ->   501.86s] negative 25%, a higher total return. And this is a consequence of reducing that volatility drag,
+[  501.86s ->   506.74s] improving risk adjusted return, you have this diversification, if you will, I don't like just
+[  506.74s ->   512.98s] saying diversification, because you're still bearing exposure to undiversifiable risk to generate your
+[  512.98s ->   518.34s] return, that's your main return driver. But what you're doing is you're including this hedge leg,
+[  518.34s ->   523.30s] hedge sleeve, you're doing this in this capacity with a few different ETFs, you can do it with
+[  523.30s ->   528.50s] options as well that introduces the structure required to reduce these drawdowns to become
+[  528.50s ->   536.50s] more capital efficient. But that is the goal of portfolio engineering. And that is the objective,
+[  536.50s ->   542.98s] the stated objective, effectively of the fund that I am working on launching. With that,
+[  542.98s ->   546.98s] I hope you enjoyed, I hope you learned something. This is certainly one of my favorite topics,
+[  546.98s ->   551.94s] if not my most favorite topic, in all of quantitative finance, it's really amazing to see
+[  551.94s ->   558.42s] how you can outperform passive management quite easily with a little bit of strategy and an effective
+[  558.42s ->   564.74s] quantitative toolkit. And if you'd like to build that quantitative toolkit, check out quantguild.com.
+[  564.74s ->   569.62s] Whether you're looking for roles in the industry as a trader or a market maker, or you're just a
+[  569.62s ->   575.30s] hobbyist and you'd like to work on building portfolios like this one on your own, quantguild
+[  575.30s ->   579.38s] is certainly for you. We have an adaptive practice engine that scales with your skill level,
+[  579.38s ->   586.74s] lessons, games, courses from A to Z, and more. And you can get started right now for free. I'll leave a link
+[  586.74s ->   593.54s] in the description below if you'd like to get started on quantguild. Other than that, I want to thank you
+[  593.54s ->   598.42s] so much for watching and I will see you in the next video.

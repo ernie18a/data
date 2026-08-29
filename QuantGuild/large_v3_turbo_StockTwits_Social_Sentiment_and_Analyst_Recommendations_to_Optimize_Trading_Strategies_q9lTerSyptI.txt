@@ -1,0 +1,205 @@
+[    0.46s ->    12.09s] We're back. Welcome back. In this video, we're going to be talking about social sentiment and
+[   12.09s ->    20.22s] analyst recommendations. We are going to be using financial modeling preps API that is going to
+[   20.22s ->    27.40s] enable us to query some historical analyst recommendations for large cap tickers in tandem
+[   27.40s ->    33.04s] with the stock twits social sentiment. So if you would like to follow along with the code,
+[   33.04s ->    37.70s] I have an article I will link in the description of this video. If you're interested in financial
+[   37.70s ->    45.26s] modeling preps FMPs API, I will also leave a link in the description of this video. You're going to
+[   45.26s ->    53.54s] have to replace the API key variable in the code that you find in my articles with your own API key
+[   53.54s ->    59.60s] because I'm not going to give you mine. All right. So what I do here is I construct in this initial
+[   59.60s ->    64.22s] cell two functions, one to get the analyst recommendations and put them in an appropriate
+[   64.22s ->    74.54s] format. And I do the same for historical sentiment. Now, one thing to go ahead and note here is these
+[   74.54s ->    81.92s] functions, what I would like to do is make them a part of my QFIN module. FMPs API has a whole bunch
+[   81.92s ->    89.32s] of handy resources, uh, and data, namely, I mean, historical sentiment. That's the primary area of
+[   89.32s ->    96.32s] my research, but they have pretty much everything. I mean, they have institutional ownership, um,
+[   96.32s ->   102.94s] executive compensation, uh, just, just a ton, a massive amount of data. So highly recommend you
+[  102.94s ->   106.92s] go ahead and check them out. I'm going to be doing a whole bunch of videos like these investigating
+[  106.92s ->   112.36s] social sentiment and the relationship between, uh, social sentiment and a lot of these different
+[  112.36s ->   117.34s] types of variables. Maybe we'll do deeper analysis in the future. Maybe it'll turn into a full-blown
+[  117.34s ->   122.70s] publication. Um, if you're interested in some of my other articles, you can go ahead and check out,
+[  122.70s ->   128.50s] um, my author profile. I can also leave that in the description below, um, that are, you know,
+[  128.68s ->   135.00s] those are more formal academic articles, uh, based on, on social sentiment. All right. So that's a
+[  135.00s ->   139.64s] shameless plug there. Uh, nevertheless, let's just go ahead and talk about this relationship between
+[  139.64s ->   146.88s] analyst recommendations and social sentiment. All right. So this function here, get analyst recs,
+[  146.88s ->   151.98s] what it's going to do is it's going to take a symbol and it's going to use FMPs API endpoint to
+[  151.98s ->   158.10s] query, you guessed it, analyst stock recommendations. Uh, what I'm going to do is I'm going to create two
+[  158.10s ->   164.98s] or technically three new features. Uh, I'm going to aggregate the buy and strong buy ratings and the
+[  164.98s ->   173.40s] sell and strong sell ratings into buy and sell features. Okay. So really I'm not looking and I
+[  173.40s ->   176.78s] don't really care too much about the difference between a strong buy and a buy or a strong sell and
+[  176.78s ->   182.64s] sell. I just want to know, is it a buyer or sell? Okay. Should we look at a more granular level, um,
+[  182.68s ->   188.46s] into this, you know, spread? Maybe we should look at the strong buy or strong sell. Um, we probably
+[  188.46s ->   194.40s] should, but for the simplicity of this analysis, I'm just going to look at the aggregate buy and aggregate
+[  194.40s ->   200.16s] sell. And I'm going to construct a spread that I deem the difference between the total buys and the
+[  200.16s ->   206.90s] total cells. Okay. Simple enough. So this is going to be positive if there are more buys and if it is
+[  206.90s ->   211.76s] negative, then there are more cells, right? That's not exactly rocket science. Uh, and then I'm going
+[  211.76s ->   216.76s] to go ahead and convert the date variable to a pandas date time variable so I can merge it with
+[  216.76s ->   222.28s] the historic social sentiment. So that's going to do it for the get analyst recs function.
+[  222.28s ->   227.24s] The get historic sentiment function, this is exactly the same, um, function that we used
+[  227.24s ->   231.16s] in the last video. It's the exact same function that we used in my article. So if you've seen
+[  231.16s ->   236.54s] it before, uh, you should know exactly what's going on here, but really it's just going to
+[  236.54s ->   240.48s] take a ticker and it's going to take a certain number of pages. That's essentially how far back
+[  240.48s ->   248.28s] we should go to look for sentiment. Uh, and then it's going to construct a data frame for
+[  248.28s ->   257.31s] the particular ticker and it's going to return it with, uh, a date timestamp extracted from
+[  257.31s ->   263.07s] the timestamp. Uh, and that's going to allow us to merge other data, uh, on the day. Okay.
+[  263.07s ->   270.35s] What do I mean by that? Well, the timestamp variable is very granular. That is, it goes to the hour
+[  270.35s ->   276.61s] of the publication of the social sentiment, right? Because we can have social sentiment on the hour,
+[  276.61s ->   282.11s] essentially, right? We can just look at the aggregate number of, you know, stock twits or
+[  282.11s ->   287.29s] stock tweets, whatever you want to call them. Um, the messages on stock tweets every hour and
+[  287.29s ->   293.59s] construct a new sentiment. So we have a very granular measure of social sentiment. Um, but
+[  293.59s ->   298.09s] analyst recommendations are not that granular, right? They're published on the day. All right.
+[  298.13s ->   303.21s] Now, before I get a whole bunch of angry comments, um, that analyst recommendations are published
+[  303.21s ->   311.39s] daily. I did not say that I said that the date is the, or the day rather is how the, is about the
+[  311.39s ->   317.53s] granularity of the timestamp for the particular, uh, analyst recommendations. Okay. So when I say
+[  317.53s ->   323.79s] that the timestamp for the analyst recommendations is daily, I don't mean that the frequency of the
+[  323.79s ->   331.09s] publication is daily. Okay. The keyboard warriors can go home. Now the dates, okay. The granularity of
+[  331.09s ->   336.09s] the timestamp is daily. All right. We don't have the hour, we don't have the hour. It's not monthly.
+[  336.09s ->   344.75s] All right. That's the frequency, but the timestamp is a daily granularity. Okay. So we're just
+[  344.75s ->   353.56s] essentially constructing the same timestamp daily so that we can merge the two together. Okay. So both
+[  353.56s ->   357.62s] of these functions are going to return data frames, one for analyst recommendations, one for historic
+[  357.62s ->   363.54s] social sentiment and merging them together is going to be easy now because we have them at the same
+[  363.54s ->   370.54s] type of time, right? We're just merging them on the day. Now, this is really more of a measure of the
+[  370.54s ->   375.04s] response and social sentiment because we're aggregating the social sentiment on the day of
+[  375.04s ->   382.72s] the analyst recommendation publication. So you can think of this as like analyst recs get published.
+[  382.72s ->   388.52s] We're looking at the response before and after, uh, of social sentiment to see maybe if there's a
+[  388.52s ->   394.58s] relationship between the spread and the analyst recommendations, uh, and the historic social
+[  394.58s ->   398.84s] sentiment, uh, during that particular time period. Now we could do a whole bunch of different types
+[  398.84s ->   406.06s] of analysis here. We could do some sort of like regression discontinuity situation where maybe we look
+[  406.06s ->   415.24s] at cumulative abnormal, um, social sentiment, um, after the publication and then do some sort of like
+[  415.24s ->   422.72s] regression discontinuity situation. Um, we could do that to kind of do some sort of causal analysis to
+[  422.72s ->   431.06s] see if analyst recs affect social sentiment. Um, maybe we want to look at the social sentiment a week
+[  431.06s ->   437.44s] or a month before in aggregate. So we take the mean, um, social sentiment leading up to the analyst
+[  437.44s ->   441.52s] recommendation to see if it informs it. So there are a bunch of different ways we could do this analysis,
+[  441.66s ->   446.20s] right? We could look at the impact of the analyst recs on social sentiment. We could look at the impact of
+[  446.20s ->   450.86s] social sentiment on analyst recs. Um, here we're kind of doing a blend of both. So we're looking at the
+[  450.86s ->   459.42s] contemporaneous response and social sentiment for the given analyst recs. All right. We're going to do this for an
+[  459.42s ->   463.42s] arbitrary set of large cap takers. This is very similar to the last video on my contemporaneous trading
+[  463.42s ->   467.22s] signal. Um, we've got a whole bunch of different industries here, tech, healthcare, consumer
+[  467.22s ->   473.42s] discretionary, um, energy, financial services, whatever, whatever. Um, these are just an arbitrary
+[  473.42s ->   478.14s] set of large cap takers. Okay. This is just for the simplicity of the analysis to get you up and going
+[  478.14s ->   483.76s] with FMP's API so that we could do a pretty, um, you know, moderately intricate analysis without going
+[  483.76s ->   489.06s] all in. All right. Really, if you want to do some sort of scientific study, then you would want to use a
+[  489.06s ->   495.34s] larger equity universe, probably the R 3000, S&P 500. Um, you get the, you get the picture. Um,
+[  495.54s ->   502.94s] but in this case, this'll, this'll do. So what I'm going to do then after that, so I declare this set
+[  502.94s ->   508.66s] of large cap takers, I'm going to use my get analyst recs function. Okay. So I'm going to construct a list
+[  508.66s ->   516.26s] of data frames. So I'm going to construct this list right here. I'm going to do DFS.append get analyst recs
+[  516.26s ->   521.32s] for each ticker in this particular list. So essentially what I'm doing is I'm saying, Hey,
+[  521.68s ->   528.06s] Apple, get the analyst recs for Apple, take that data frame and append it to this list.
+[  528.94s ->   533.34s] All right. And I'm going to do that for every single ticker in this list. So I'll run this
+[  533.34s ->   543.44s] scroll on down here. Now we get a pool data frame of the analyst recommendations. Again,
+[  543.44s ->   551.20s] the granularity of the timestamp is on the daily level. The frequency of publication is on the
+[  551.20s ->   555.56s] monthly level. All right. We could see that very clearly eight, nine, 10, 11, 12, right?
+[  555.76s ->   562.78s] But the timestamp itself is on the daily level. We don't see hours and minutes here. Okay. So we're
+[  562.78s ->   568.72s] going to merge on social sentiment. And that's why we constructed a date field in the historical
+[  568.72s ->   576.20s] social sentiment data frame. That's exactly what we did right here. Okay. So we're going to be able
+[  576.20s ->   581.60s] to merge on date. So we're going to be able to find the contemporaneous analyst recommendations for
+[  581.60s ->   586.72s] the contemporaneous social sentiment. Of course, when I say contemporary in this context, I'm talking
+[  586.72s ->   597.36s] about back then. So the analysis is done at the appropriate time. All right. Cool. And if you go all
+[  597.36s ->   602.84s] the way to the right here, you can see our buy, sell and spread features that we added. All right.
+[  604.94s ->   609.16s] Next, we've got a query, some historic social sentiment. So I'm going to do literally the exact
+[  609.16s ->   612.60s] same thing that I just did with analyst recommendations with all the large cap tickers.
+[  612.96s ->   617.78s] I'm going to use a hundred pages of historical sentiment. And I am not interested in rerunning
+[  617.78s ->   622.76s] this query. It's going to take a hot second. So I'm just going to go ahead and use the saved data
+[  622.76s ->   626.20s] frame that I already have. So I'm just going to go ahead and load that in right here.
+[  626.20s ->   631.86s] And then I'm going to do a group buy mean. This is the exact same thing we did in the
+[  631.86s ->   636.24s] trading signal video. So if you didn't watch that video, go, go watch that video. All right.
+[  636.26s ->   640.44s] And then come back here. Um, if you're still here and you didn't watch it, then I'll just
+[  640.44s ->   645.90s] explain it to you really quickly. Uh, you're welcome. So date and symbol, we want to aggregate
+[  645.90s ->   652.64s] the social sentiment, uh, by a particular day for a particular symbol. What that means is all
+[  652.64s ->   658.66s] of Apple social sentiment in a particular day is going to be averaged. We, we specify that
+[  658.66s ->   663.10s] we want to do an average by the symbol, not just the day, because if we said, if we said
+[  663.10s ->   667.88s] just the day, then we're going to be aggregating all of the sentiment. So Apple sentiment, Google
+[  667.88s ->   673.26s] sentiment, Facebook sentiment, I'm sorry, meta sentiment. Um, and we don't want that. We want
+[  673.26s ->   677.60s] to do it on a date and a symbol level. Okay. So that's what we're doing here. And then if
+[  677.60s ->   683.05s] we go ahead and we run this guy, you should be at a concatenated data frame and that is
+[  683.05s ->   688.87s] going to be a pooled data frame of all of our symbols by date. Again, this is a daily timestamp
+[  688.87s ->   694.21s] granularity. Uh, and then if we go all the way over here, you can see this is a more granular
+[  694.21s ->   700.19s] timestamp that we converted into the, the daily timestamp over here. Um, but we do have our
+[  700.19s ->   706.15s] social sentiment right on the particular day averaged across all of these more granular measures.
+[  706.15s ->   715.42s] Okay. So hopefully that's clear. Um, if it's not go read my article, go watch my other video
+[  715.42s ->   720.20s] or leave a hasty comment and I'm happy to get back to you. Uh, now what we're going to do is
+[  720.20s ->   725.26s] we're going to merge on the daily timestamp and the symbol. So I'm going to go ahead and do a
+[  725.26s ->   732.18s] PD dot merge those two on date and symbol. And what this is going to do is this is going to join
+[  732.18s ->   740.14s] the previous analyst recommendations data frame with the data frame for the social sentiment.
+[  742.27s ->   745.65s] If we take a look at the head of this data frame, we're only interested in these four features,
+[  745.65s ->   751.45s] which we are only interested in. Then we get the analyst recommendation spread as defined by myself.
+[  751.69s ->   756.59s] We take a look at the stock to its social sentiment, the symbol and the date. Uh, and now we can actually
+[  756.59s ->   761.59s] do some, some basic visualizations. All right. Now, what are the implications of this? Why do we even
+[  761.59s ->   765.93s] care at all about analyst recommendations? Well, analyst recommendations have been studied to death,
+[  765.99s ->   772.51s] right? Because they're just such a prevalent feature in the finance industry. There's no shortage
+[  772.51s ->   779.95s] of papers, good and bad, uh, about the price impact of analyst recommendations. So in the context of
+[  779.95s ->   784.87s] social sentiment, what can this inform? How does this help us? Well, let's take a look at a social
+[  784.87s ->   790.95s] sentiment trading strategy, particularly an algorithmic social sentiment trading strategy. So let's
+[  790.95s ->   798.27s] consider that we go ahead and take a sample of social sentiment right before the market opens is
+[  798.27s ->   804.31s] how we, we would trade social sentiment or social sentiment trading strategy. We take a sample boom
+[  804.31s ->   811.11s] for the previous day. Okay. So it's nine 20. I take the previous 24 hours of social sentiment for my
+[  811.11s ->   816.39s] Russell 3000, and then I bucket them into quantiles and I go along the top bucket, short the bottom bucket.
+[  816.39s ->   822.13s] Okay. What could these analyst recommendations help us inform? Well, they could help us inform some
+[  822.13s ->   828.46s] interesting trading decisions. Maybe we could decrease portfolio turnover. So maybe we have a
+[  828.46s ->   834.42s] positive spread and price impact is going to be overwhelmingly positive because generally speaking,
+[  834.42s ->   840.56s] when analyst recommendations are good, then there's a positive price impact, right? Maybe the same goes
+[  840.56s ->   846.14s] for negative price, right? If the ratings are particularly bad. I don't know. This is purely
+[  846.14s ->   851.22s] speculation, but I'm just sharing with you how this could be useful. So if we know the price impact
+[  851.22s ->   855.54s] should be positive and we're getting a strong positive social sentiment signal, then maybe we're
+[  855.54s ->   859.86s] going to hang on to that a little longer. And then maybe we don't have to liquidate that from our
+[  859.86s ->   864.72s] portfolio and then purchase a whole new set of equities three days later, five days later,
+[  864.72s ->   870.66s] whatever it is. Maybe it's a weekly strategy, bi-weekly, who knows, whatever. It's just going
+[  870.66s ->   874.98s] to be based on the strategy that you're running, based on the social sentiment that you're using.
+[  876.12s ->   880.84s] That's one example. Maybe the social sentiment does not align with the analyst recommendations.
+[  880.84s ->   887.62s] That's another case. Maybe you don't enter into a position in a particular equity if they don't align.
+[  888.04s ->   894.20s] Maybe you exit early. Who knows? Those are other options as well. This is all grounds for future
+[  894.20s ->   899.68s] research, right? But that's how it can help inform our social sentiment trading strategies.
+[  900.54s ->   906.18s] Okay. So this is not just for kicks analysis. This is actually getting you set up to do these
+[  906.18s ->   910.48s] deeper sorts of analysis. Okay. Because once you merge these guys together, the only thing that
+[  910.48s ->   916.16s] you have to change is how you're merging the social sentiment right here, right? We're doing a group by
+[  916.16s ->   922.86s] mean on a date level, but why not do this on an hourly level, right? You can do this however you like
+[  922.86s ->   928.48s] to do it. And then maybe you do it on a weekly level and then you do a lag and you merge this
+[  928.48s ->   933.26s] on a lag with the analyst recommendations and you see if that informs that and whatever, blah, blah,
+[  933.30s ->   938.18s] blah. There's literally an infinite number of things we could do and an infinite number of ways we can
+[  938.18s ->   943.88s] analyze this problem space. But these are all just examples. So this could help us inform portfolio
+[  943.88s ->   950.20s] turnover, early exit, or lack of entry. So let's just consider that. And then we'll move on
+[  950.20s ->   955.94s] to the next section that is visualizing the spread as a function of social sentiment. So
+[  955.94s ->   960.74s] go ahead and run this guy here. And we get a pretty interesting looking chart, right?
+[  961.58s ->   968.96s] What we see here is very reminiscent of the chart that we saw with social sentiment and stock returns.
+[  969.20s ->   977.12s] That is in sentiment neutrality. That is when there's some uncertainty around 0.5, right? We see
+[  977.12s ->   985.38s] that the spread is both very large and very small in the analyst recommendations. Now, outside of that
+[  985.38s ->   991.82s] neutrality, you see this sort of like positive linear trend, right? Like, you know, I'm pretty sure I could
+[  991.82s ->   998.90s] pluck an AP stats student from high school, show them this chart and be like, hey, draw a line of best
+[  998.90s ->  1005.96s] fit. And even they would say that the slope is positive, even with no formal understanding of
+[ 1005.96s ->  1013.14s] regression. So this right here is relatively indicative of a positive linear relationship
+[ 1013.14s ->  1018.10s] between sentiment and analyst recommendations, at least contemporaneously. That is the day of the
+[ 1018.10s ->  1026.92s] publication of the analyst recommendations. So for kicks, we can go ahead and do a OLS printout here.
+[ 1026.92s ->  1033.58s] So I'm just going to use stats models. I'll run this guy. And lo and behold, we get a positive
+[ 1033.58s ->  1043.16s] and statistically significant T stat. And that kind of just matches what we would expect drawing a
+[ 1043.16s ->  1049.66s] line of best fit through that guy. And then right here, I'm just going to go ahead and actually draw
+[ 1049.66s ->  1057.16s] the line of best fit. So we'll take the coefficient. It's about 32. And then the, so the coefficient on
+[ 1057.16s ->  1067.18s] the social sentiment is about 32. And then the intercept is about six. So I'll run that. And then I get my
+[ 1067.18s ->  1076.39s] positive line through this, through this data. So that would be the line of best fit. So we would
+[ 1076.39s ->  1082.83s] say that maybe not strong, because the R squared value is particularly low, the correlation coefficient
+[ 1082.83s ->  1090.53s] is particularly low. So we'd say that there is some sort of positive linear relationship, weak,
+[ 1090.91s ->  1095.89s] moderate, whatever you want to say, linear relationship, positive linear relationship
+[ 1095.89s ->  1104.43s] between stock twits, sentiment and analyst rating spread. Okay. So where do we go from here? Where
+[ 1104.43s ->  1108.27s] should we go? Well, a couple of different places, right? There's a couple of different things we could
+[ 1108.27s ->  1114.81s] do. So we could take a look at the subsequent impact of analyst recommendations on price, right?
+[ 1114.83s ->  1118.75s] This has been studied to death. This is nothing that's particularly new, but that could help us
+[ 1118.75s ->  1126.85s] inform our decisions. All right. If we find that analyst recommendations are going to greatly impact
+[ 1126.85s ->  1133.10s] price in the near term, once they're published, then perhaps what we would like to do is take a look
+[ 1133.10s ->  1138.68s] at the social sentiment leading up to the analyst recommendations at a daily, weekly, and monthly
+[ 1138.68s ->  1147.14s] lag. And we could see which one best predicts the spread. And if we find a reasonable predictor of
+[ 1147.14s ->  1153.64s] spread, then perhaps we can inform the analyst recommendations before they come out and then make
+[ 1153.64s ->  1163.72s] positive decisions in terms of at least P&L in our strategies based on the impact of social
+[ 1163.72s ->  1169.48s] sentiment on the recommendations. So if social sentiment is particularly positive leading up to
+[ 1169.48s ->  1174.24s] it, and we know that positive sentiment's indicative of a positive spread, and then that's indicative
+[ 1174.24s ->  1179.52s] of positive price action, then we can go ahead and build that into our system accordingly.
+[ 1179.52s ->  1187.50s] So that would help us decrease portfolio turnover. Moreover, if on the flip side, we see things like,
+[ 1188.71s ->  1194.23s] let's say the social sentiment doesn't agree with the recommendation. So even though we're trying to
+[ 1194.23s ->  1199.93s] inform the recommendation, the decision, let's say that the sentiment does not agree with the
+[ 1199.93s ->  1205.05s] recommendation, right? What are the implications of that? Does return tend to be positive or negative?
+[ 1205.19s ->  1208.39s] Does it align with social sentiment? Does it align with the analyst recommendations,
+[ 1208.39s ->  1212.55s] right? That's grounds for research, because that's going to inform whether or not perhaps you
+[ 1212.55s ->  1217.87s] shouldn't even enter a trade, even if it's in the top or bottom bucket of your social sentiment
+[ 1217.87s ->  1222.71s] quantile breakdown. So these are all just a whole bunch of different places we can go with it. And
+[ 1222.71s ->  1226.99s] it's pretty cool that FMP's API gives us access to this sort of data so we can ask these kinds of
+[ 1226.99s ->  1234.07s] questions. All right. Well, that's going to do it for this video. I hope you enjoyed it. If you have
+[ 1234.07s ->  1237.97s] any questions, comments, or would like to throw some shade, you can feel free to do so in the
+[ 1237.97s ->  1246.23s] comments below. Buy my courses, go to quantile.com, help me out. Check out FMP's API, check out my
+[ 1246.23s ->  1253.59s] article. Shoot me an email, roman at quantile.com if you have any questions. Other than that, I will see
+[ 1253.59s ->  1255.25s] you in the next one.

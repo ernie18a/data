@@ -1,0 +1,111 @@
+[    0.00s ->     4.26s] The RSI, or if you're fancy, the Relative Strength Index.
+[    4.30s ->     7.88s] The RSI is one of the most popular trading indicators out there.
+[    8.02s ->    10.40s] Yeah, well, it wasn't popular until I made it popular.
+[   10.72s ->    15.18s] If you even have the slightest clue about trading, you have heard about this indicator.
+[   15.30s ->    21.10s] Books, websites, videos, there's tons of information about this one specific indicator.
+[   21.30s ->    24.02s] Hell, even your Uncle Rob probably knows about it.
+[   24.02s ->    30.78s] But with that said, 99% of people are actually using this indicator completely wrong.
+[   30.88s ->    37.22s] For example, if I could guess correctly, you probably have used the RSI for finding overbought and oversold areas.
+[   37.28s ->    41.14s] The lower line being oversold and the upper line being overbought.
+[   41.14s ->    50.64s] Now, if you've actually used it like this, you probably quickly figured out that, sure, it works sometimes, but half the time it doesn't work very well at all.
+[   50.64s ->    55.10s] But what if I told you this is the completely wrong way to use this indicator?
+[   55.36s ->    63.46s] And what if I also told you the default settings for the RSI that everybody uses are actually not the best settings?
+[   63.56s ->    70.40s] Well, I'm going to show you how to actually use this indicator correctly, and I'll also go over the most optimal settings for it.
+[   70.40s ->    71.50s] Let's get straight into it.
+[   71.54s ->    75.86s] Okay, so as a little history lesson, the RSI indicator measures strength.
+[   75.98s ->    78.66s] After all, it's called the Relative Strength Index.
+[   78.66s ->    81.12s] This indicator is a momentum oscillator.
+[   81.34s ->    87.92s] It measures the speed and change over a set number of bars, and it oscillates between 0 and 100.
+[   88.10s ->    90.72s] So here's where most traders run into a problem.
+[   90.86s ->    94.86s] They plop the RSI on their chart and use it for mean reversion strategies.
+[   95.14s ->    97.56s] For example, overbought and oversold.
+[   97.70s ->   103.04s] So if the RSI went like this, the normal average trader would consider this oversold.
+[  103.16s ->   105.62s] So they would enter into a long position here.
+[  105.62s ->   112.48s] But just because something is quote-unquote oversold, that doesn't mean it can't get more oversold.
+[  112.58s ->   115.46s] So there's an obvious flaw in this style of thinking.
+[  115.60s ->   117.84s] But it's not completely wrong.
+[  117.92s ->   119.18s] We just have to perfect it.
+[  119.24s ->   120.94s] So here's the RSI on a chart.
+[  121.02s ->   125.98s] And you can see if we were doing the original style of thinking, it gave us five signals.
+[  125.98s ->   130.40s] And if you look closely, four of those five signals were losing trade.
+[  130.48s ->   134.24s] Now, every indicator ever is going to provide false signals.
+[  134.44s ->   136.40s] That's just how the world works.
+[  136.90s ->   139.70s] I know, it's a sad world.
+[  139.78s ->   146.62s] But our goal is to limit those false signals so we don't get as many, so it provides more winning signals.
+[  146.62s ->   152.80s] A way I found to do this with the RSI is by making a couple tweaks to the settings specifically.
+[  153.00s ->   156.74s] But before we go over that, let me show you the site called Fintura.
+[  156.90s ->   161.34s] Fintura is a forex and crypto broker, but damn, it's a good one at that.
+[  161.40s ->   165.04s] First of all, they don't have KYC requirement, which is nice.
+[  165.12s ->   168.30s] So you can sign up literally if you're anywhere in the world.
+[  168.36s ->   171.68s] Even if you're on an island with a volleyball, you can use Fintura.
+[  171.68s ->   178.66s] They also have extremely low commissions and spreads, so you're not wasting money like you would with a normal broker.
+[  178.86s ->   182.72s] And to top it all off, they have a 100% deposit bonus.
+[  182.84s ->   190.04s] All you have to do is use the link in my description, and if it's your first time signing up, they will match whatever you first deposit.
+[  190.18s ->   192.58s] Yeah, I know, it's literally free money.
+[  192.70s ->   199.56s] Go create an account with them if you trade crypto or forex, and at the very least, get the deposit bonus and see if you like it.
+[  199.60s ->   200.60s] Okay, back to the video.
+[  200.60s ->   203.54s] To do this, go to the settings of the RSI.
+[  203.70s ->   209.20s] Now, the default settings are 70 and 30 for those overbought and oversold areas.
+[  209.40s ->   212.40s] I like to change these numbers to 80 and 20.
+[  212.68s ->   219.86s] Doing this will give us less signals, but these signals we do have are going to be stronger and less likely to be wrong.
+[  219.96s ->   224.52s] The next step I like to do is confirm these signals with multiple timeframes.
+[  224.60s ->   229.40s] For example, here this chart on the hourly timeframe gave us two signals.
+[  229.40s ->   235.02s] So we're also going to check the RSI on the daily timeframe and see what the signals are on that.
+[  235.08s ->   237.62s] As you can see here, we have zero signals.
+[  237.62s ->   243.62s] So we wouldn't enter any of these trades because we don't have any confirmation on the higher timeframe.
+[  243.62s ->   250.60s] So now that we've created a process to raise the quality of these signals, how can we use this to spot some great trades?
+[  250.66s ->   258.02s] Okay, so here we're in a one-minute timeframe, and it does a parabolic move upwards, and the RSI goes in the oversold area.
+[  258.08s ->   259.96s] A pretty good sign to enter a short.
+[  259.96s ->   265.46s] But then we do what we were talking about earlier and go to the next highest timeframe, the five-minute.
+[  265.58s ->   271.08s] Here, the RSI has not yet reached the oversold area, so we wait some more.
+[  271.14s ->   276.56s] We go back to the one-minute timeframe, and the price does a little pullback and continues to head upwards.
+[  276.86s ->   279.16s] So good thing we waited on that short.
+[  279.24s ->   281.58s] Price then hits the oversold area again.
+[  281.58s ->   288.54s] We then check the five-minute timeframe, and this time, the RSI is in the oversold area on the five-minute as well.
+[  288.68s ->   290.22s] So that's good confirmation.
+[  290.42s ->   296.34s] For good measure, we check the 15-minute timeframe as well, and it is also in the oversold area.
+[  296.46s ->   299.18s] So these are all good signs to enter a short.
+[  299.30s ->   306.58s] But just because the RSI is providing signals to enter a short on multiple timeframes, it doesn't quite mean it's time to enter yet.
+[  306.58s ->   312.80s] We still need some more confirmation on this trade to raise our odds of entering in a good quality trade.
+[  312.88s ->   315.98s] A nice way to do this is to add some price action confirmation.
+[  316.40s ->   321.66s] Here, the chart does a double bar break, meaning there are two candles here showing signs of hesitation.
+[  321.98s ->   325.82s] Then price breaks the low of both these bars to the downside.
+[  326.00s ->   330.26s] Also, as a side note, I do not wait for the close of this candle.
+[  330.40s ->   331.64s] We already have the confirmation.
+[  332.12s ->   335.12s] We just need price to break the low of these two candles.
+[  335.12s ->   336.98s] Once it does, we enter immediately.
+[  337.10s ->   342.28s] As the cherry on top, when this break happens, the RSI returns back to normal.
+[  342.44s ->   348.40s] So now instead of being overbought, it returned to the middle zone, which is also a bearish indication.
+[  348.58s ->   352.30s] What I like to do is set my stop loss right above this bar.
+[  352.40s ->   355.14s] Now, you can use your take profit in multiple ways.
+[  355.26s ->   357.00s] I personally like to do this.
+[  357.06s ->   359.80s] Go to your indicators tab and type in VWAP.
+[  359.86s ->   362.34s] The VWAP is now on your chart right here.
+[  362.34s ->   369.94s] So what I like to do is take partial profits, say 50% of my trade, when the price comes back to the midline of the RSI.
+[  370.34s ->   371.34s] So right here.
+[  371.42s ->   375.60s] I would have taken partial profits because the RSI returned to the midline.
+[  375.72s ->   379.76s] Then I would take the rest of my profits when price returns to the VWAP.
+[  379.76s ->   382.68s] But this isn't actually my favorite way to use it.
+[  382.74s ->   389.04s] The RSI actually wasn't made for finding overbought and oversold areas like how everyone uses it.
+[  389.10s ->   391.74s] It was actually made as a way to find strength.
+[  391.80s ->   394.98s] As the name suggests, relative strength index.
+[  395.16s ->   397.94s] So you can use the RSI for pullbacks.
+[  397.94s ->   407.32s] Now, when I started to use the RSI, I started to notice on very strong trends, the RSI would just live between 50 and 80.
+[  407.44s ->   414.20s] If the chart was strong, the RSI would live in the upper quadrant and just bounce from the midline to the upper line.
+[  414.28s ->   415.58s] Same thing with wheat charts.
+[  415.72s ->   417.50s] It would just live in the lower quadrant.
+[  417.58s ->   420.98s] Now, for the strategy to work, the chart needs to be trending.
+[  420.98s ->   425.66s] If the chart is moving sideways like this, this strategy will not work.
+[  425.70s ->   427.98s] We need the chart to be trending like this.
+[  428.74s ->   433.22s] While the price is going up, make sure it's living in this upper quadrant on the RSI.
+[  433.52s ->   437.60s] We then want price to come down to this midline on the RSI.
+[  437.98s ->   444.26s] Once it does, we can enter the trade, expecting this to be a pullback, and wait for price to bounce off this midline.
+[  444.34s ->   446.98s] And as you can see, it works absolutely beautifully.
+[  447.72s ->   448.70s] Same thing with shorting.
+[  448.70s ->   453.40s] You want to find a strong downtrend, and you want the RSI to be living in the lower quadrant.
+[  453.52s ->   460.86s] Then, wait for the RSI to hit the midline, enter the trade, expecting this to be a pullback, and boom, you have a glorious short trade.
+[  460.92s ->   464.90s] Just like the other strategy, though, you shouldn't use this strategy just by itself.
+[  465.00s ->   469.86s] What I found is if you incorporate some price action signals with this, it works phenomenal.
+[  470.06s ->   475.62s] Next, I'm going to show you some price action strategies you can use to pair with these RSI strategies.
+[  475.62s ->   483.80s] If you do both what I'm about to teach you in this video and combine it with these RSI strategies, your trading profits will skyrocket.
+[  483.90s ->   486.42s] Thanks for watching, and I'll see you guys next time.

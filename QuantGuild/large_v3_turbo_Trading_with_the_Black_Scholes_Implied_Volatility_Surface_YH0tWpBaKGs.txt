@@ -1,0 +1,291 @@
+[    2.10s ->     6.18s] Suppose you're a trader sitting on some sort of exotics desk and you got your Bloomberg
+[    6.18s ->    12.74s] terminal open and you get an IB from a repeat client. He's asking you to give him a quote
+[   12.74s ->    18.64s] for a down and out barrier option on Apple. How are you going to go about giving a quote
+[   18.64s ->    23.78s] in this capacity? Well, in this video, I want to talk about one of the most important structures
+[   23.78s ->    29.04s] in all of quantitative finance, financial engineering, and that is the implied volatility
+[   29.04s ->    35.60s] surface. Not much can happen without the implied volatility surface. Before we go about tackling
+[   35.60s ->    42.08s] this problem of giving our counterparty a quote for this trade, we need to understand the Black
+[   42.08s ->    46.94s] Shoals model. We need to understand implied volatility. We got to understand the implied
+[   46.94s ->    53.54s] volatility surface in general, the calibration problem and issues with the Black Shoals model
+[   53.54s ->    59.90s] when it comes to trading these exotic products and solutions to this calibration problem and
+[   59.90s ->    66.50s] extensions of the Black Shoals model. First up is the Black Shoals model. Now, I have plenty of videos
+[   66.50s ->    71.26s] discussing the derivation of the model, how to set up the differential equation. I have articles
+[   71.26s ->    75.76s] discussing the solution to that differential equation, and I'm going to leave all those resources
+[   75.76s ->    81.22s] in the description below. But for the purpose of this video, all we really need to know is that
+[   81.22s ->    85.68s] the Black Shoals model makes a whole bunch of assumptions about the environment that we're
+[   85.68s ->    92.90s] working with, specifically no arbitrage assumptions, continuous hedging assumptions. And when we set
+[   92.90s ->    99.20s] up and solve a differential equation in that context, we get a closed form solution to the price
+[   99.20s ->   105.86s] of a European call or put option, the price that we should pay based on five parameters. Those five
+[  105.86s ->   110.94s] parameters are the spot price, that is the price of the underlying asset for the contract in
+[  110.94s ->   116.48s] question, the strike price associated with that contract, the risk-free rate, the volatility and
+[  116.48s ->   123.06s] the time to expiration, the maturity of that contract. And when you go about solving that
+[  123.06s ->   128.48s] differential equation, you produce a closed form functional, which maps this vector of parameters.
+[  128.48s ->   134.56s] So there's just a vector that lives in R5. We can map that to the price of the corresponding option.
+[  134.98s ->   138.40s] So what I have here is I have a very simple function called the Black Shoals call.
+[  138.40s ->   144.26s] It takes all five of these parameters as inputs, and it's going to give us an option price.
+[  144.44s ->   150.82s] One thing we can do with this function is produce a price based on five inputs. That's very clear.
+[  150.94s ->   155.62s] If I give you a stock price, a strike price, a risk-free rate, a time to maturity, and a volatility
+[  155.62s ->   161.42s] in the Black Shoals framework, you can give me an option price for a call or a put option.
+[  161.88s ->   166.72s] But one thing you'll notice very quickly is that a lot of these parameters are actually dictated by
+[  166.72s ->   173.26s] the market. What I mean is we don't actually choose the spot price of the asset. That is dictated by
+[  173.26s ->   177.70s] supply and demand for whatever underlying we're trading. Maybe it's an option on Apple stock or
+[  177.70s ->   183.28s] Nvidia stock. The spot price is whatever the price the underlying asset that stock is trading at right
+[  183.28s ->   190.94s] now. The strike price is also fixed for the option in question. The risk-free rate is also dictated by
+[  190.94s ->   198.06s] the market. And the time to maturity is also baked into the option contract itself. So four of the
+[  198.06s ->   205.04s] parameters, four of the inputs into this Black Shoals function are already spoken for by the market or
+[  205.04s ->   211.76s] the contract itself. But one thing that's also very interesting is that the option price is also
+[  211.76s ->   218.36s] already spoken for. Supply and demand dictate the price of the option. And you can go out right now and
+[  218.36s ->   224.08s] check out an options chain and see how much that option is worth. So really the only thing that we
+[  224.08s ->   231.84s] don't have is volatility. Now volatility isn't directly observable. We can try to look historically
+[  231.84s ->   237.82s] at a return series, maybe look at some sort of square deviation from an expectation to measure volatility
+[  237.82s ->   245.48s] in hindsight looking backward. But there is no observed volatility. There is no true level of
+[  245.48s ->   253.18s] volatility. So this begs the question, what do we use as an input for this volatility term? This is
+[  253.18s ->   257.98s] exactly where the idea of implied volatility comes into play and is one of the things that makes the
+[  257.98s ->   264.46s] Black-Scholes model so incredible. It's that we have four of the five inputs, but we also have the
+[  264.46s ->   271.18s] output. So what we can do is back out this volatility term to figure out what volatility to put into the
+[  271.18s ->   277.38s] Black-Scholes function to get the price that we're observing in the market. And this is going to tell
+[  277.38s ->   283.56s] us something about the way that traders are pricing these options and volatility specifically in a
+[  283.56s ->   289.16s] forward looking sense. So what do I mean by this? Well, let me give you an example. So in this section
+[  289.16s ->   294.58s] of guessing implied volatilities, I'm kind of teeing up this idea of an inverse Black-Scholes function
+[  294.58s ->   300.92s] to retrieve this volatility, this implied volatility. So let's suppose we have an option contract on
+[  300.92s ->   307.12s] NVIDIA. Well, the underlying asset price, the NVIDIA stock price is very easy to observe. I can go out
+[  307.12s ->   312.50s] and I can find that right now. The strike price and the time to maturity of the contract is my choice. I
+[  312.50s ->   318.18s] can choose to trade whatever contract I like. We can proxy the risk-free rate through many different
+[  318.18s ->   324.56s] methodologies. We can use treasuries, etc. We also have the price of this option based on
+[  324.58s ->   329.32s] the market supply and demand for it. I can go out and I can figure out what the price of the option
+[  329.32s ->   335.52s] is. And now I got to figure out what the volatility is. Well, if I go and I use this Black-Scholes
+[  335.52s ->   340.54s] function, I'm just going to pick a random value for my implied volatility. I'll start with 0.2 or 20%.
+[  341.06s ->   348.40s] When I run it, I get an option price of 10.45. That doesn't match the option price that I'm observing
+[  348.40s ->   355.50s] in the market of 11.50. So I got to change this volatility term. Now, when volatility increases,
+[  355.50s ->   360.46s] your option price will increase. When volatility decreases, your option price will decrease. So
+[  360.46s ->   366.32s] what I'm going to do is I'm going to increase this from 0.2 to 0.5. Check out how it affects my option
+[  366.32s ->   373.14s] price. Wow. That's overshooting the target price by quite a bit. Now I'm going to make this 0.35.
+[  373.14s ->   384.52s] Run this. 16 closer, 0.25, and so on and so forth. But clearly this is impractical, right? We're not
+[  384.52s ->   390.52s] just going to keep guessing volatilities until we produce the correct implied volatility dictated by
+[  390.52s ->   396.36s] the market and supply and demand for all of these parameters for our option contract. Instead, we're
+[  396.36s ->   401.38s] just going to set up a minimization problem. And this minimization problem, the goal is to minimize
+[  401.38s ->   407.94s] the distance between the price that we're observing in the market and the price given by a Black-Scholes
+[  407.94s ->   412.18s] call. And there's a lot of different ways that you can set up this problem and solve it. I'm just going
+[  412.18s ->   417.78s] to show you a very simple way to set up this implied volatility function so that you can produce the
+[  417.78s ->   424.00s] correct implied volatility for your Black-Scholes call and put pricing functions. There's no shortage
+[  424.00s ->   431.04s] of schemes to use and methodologies of establishing this minimization problem. I'm just going to do it as
+[  431.04s ->   437.06s] a simple convex function. So what I'm doing is I'm just taking this difference and I'm squaring it
+[  437.06s ->   444.68s] and using scipy, I'm just going to minimize this objective function and this will produce the Black-Scholes
+[  444.68s ->   451.82s] implied volatility. And in very simple terms, assuming the rest of the parameters of the Black-Scholes
+[  451.82s ->   459.48s] function are fixed in this specific context, all we're really doing is creating an iterative way to
+[  459.48s ->   465.44s] solve for this Black-Scholes inverse function. So really all we have here is that the Black-Scholes
+[  465.44s ->   471.44s] function is a function of volatility because all of the other parameters are spoken for in the context
+[  471.44s ->   479.10s] of our option contract. And that's going to produce this Black-Scholes price. This implies that we can
+[  479.10s ->   486.18s] take the inverse of the Black-Scholes function itself to the price of the option and find the implied
+[  486.18s ->   490.72s] volatility. And that's precisely what we're doing here. So we can see this is just a chart of the
+[  490.72s ->   497.00s] convergence of the solution. You can see we start out with a moderately high error and we converge to
+[  497.00s ->   502.50s] near zero error. And once we've done that, we've successfully established this function that is this
+[  502.50s ->   507.82s] inverse Black-Scholes function, if you will. And what that means is we can go freely back and forth
+[  507.82s ->   514.04s] between a Black-Scholes price and a Black-Scholes volatility. Here's a simple example with a
+[  514.04s ->   518.98s] parameter set. And here what we're doing is we're just using everything we have available in the
+[  518.98s ->   524.00s] market to us. We have all of the inputs and the corresponding price, so all of the inputs except
+[  524.00s ->   529.48s] for volatility. And we're using this implied volatility function that we just built here to
+[  529.48s ->   536.20s] solve for the corresponding volatility of the option contract, the so-called implied volatility.
+[  536.20s ->   544.24s] So if I was to change this contract to, say, $15, then what would happen to implied volatility? Well,
+[  545.06s ->   550.98s] implied volatility would have to increase. So when I run this, I get 32.4% because the only way to
+[  550.98s ->   556.60s] achieve the higher option price, assuming all the other parameters are equal, is to quote it with a
+[  556.60s ->   561.90s] higher volatility term. That's exactly what we see here. And the same is true if I decrease the price
+[  561.90s ->   569.50s] down to 10. Implied volatility would have to fall. And that's exactly what we see here. We're just
+[  569.50s ->   574.82s] about ready to move on to the implied volatility surface. Before we do, I have a few more remarks for
+[  574.82s ->   581.72s] one regarding the consistency of implied volatilities. Typically, whenever we refer to implied
+[  581.72s ->   587.66s] volatility, we're talking about these Black-Scholes implied volatilities. That is, it is constructed in
+[  587.66s ->   593.30s] the manner that we have just gone about producing the implied volatility for one contract. That's how
+[  593.30s ->   598.90s] we're doing it for all of the contracts that we see. Should the context demand other implied
+[  598.90s ->   605.60s] volatilities? Usually, it will be very explicit, thinking about things in the space of approximating
+[  605.60s ->   610.52s] pricing functionals, some sort of calibration approach approximation using neural networks.
+[  610.84s ->   614.68s] I have some videos discussing those topics. You can feel free to check those out. But we'll digress from
+[  614.68s ->   620.60s] this idea of other implied volatilities and just talk about the Black-Scholes implied volatility.
+[  621.30s ->   628.62s] Moreover, in the context of these implied volatilities, they're important not just in that
+[  628.62s ->   636.42s] they provide a measure or a level for volatility in a forward-looking sense, but they tell us how we
+[  636.42s ->   643.68s] should go about pricing the option. That is, the volatility we need to use to go about pricing the option.
+[  644.68s ->   651.92s] Relative to a specific contract. So, suppose that I price an option contract in this Black-Scholes
+[  651.92s ->   662.01s] framework, just like we did above. So, I go about pricing a contract, I go and I observe all of these
+[  662.01s ->   667.59s] parameters in the market, and I find the implied volatility. So, let's say the implied volatility is
+[  667.59s ->   675.46s] 0.25, just for argument's sake. Okay, well, that's the implied volatility for this specific contract.
+[  676.10s ->   682.98s] What if I'm trading the exact same underlying, but I change the maturity? Or I change the strike price?
+[  683.70s ->   690.26s] Well, that's certainly going to change the option price. But, is the implied volatility going to stay
+[  690.26s ->   699.46s] the same? This model is assuming that the implied volatility is going to be constant. Clearly, this is
+[  699.46s ->   707.06s] not the case in practice, but it's very important to acknowledge because this is one of the reasons why
+[  707.06s ->   714.10s] the Black-Scholes model is so useful in that it gives us this implied volatility value, but it's also one of
+[  714.10s ->   721.70s] the reasons why we can't use it to consistently price all options because we will exhibit some arbitrage.
+[  721.70s ->   726.98s] And I'm going to give an example of that in a moment after we discuss the implied volatility surface.
+[  729.04s ->   733.52s] One of the last things we need to understand, and I'm going to skip this very simple example,
+[  733.52s ->   739.44s] you can feel free to read it if you like, is that we can freely go back and forth assuming a fixed
+[  739.44s ->   746.88s] parameter set between implied volatilities and option prices. That is, the volatility surface
+[  747.44s ->   753.36s] is constructed with implied volatilities, but we can replace those with prices if we wanted to.
+[  754.16s ->   760.40s] It's not typically how we look at a volatility surface, hence the volatility part of the surface.
+[  760.40s ->   767.36s] We don't call it a pricing surface, but we could produce Black-Scholes prices and visualize it as
+[  767.36s ->   773.52s] such. But the shape of the surface is going to be relatively the same because the implied
+[  773.52s ->   779.36s] volatilities themselves are one-to-one in the sense for producing the prices. So if you need a little
+[  779.36s ->   784.72s] refresher on how functions and inverse functions work, doesn't matter if you have the value in the
+[  784.72s ->   790.24s] range or the domain, if both the function and the inverse are well-defined, and in this case they are.
+[  790.80s ->   796.96s] So that is precisely why it doesn't matter if we're given the price or the implied
+[  796.96s ->   802.80s] volatility. But regardless, we're now ready to talk about the implied volatility surface.
+[  802.80s ->   809.52s] The implied volatility surface is simply a grid of different option contracts for the same underlying
+[  809.52s ->   814.16s] asset. So think about something like an option contract on Nvidia. You can have different strike
+[  814.16s ->   819.84s] prices, different time to maturities, and you can solve for all of those different contracts implied
+[  819.84s ->   826.48s] volatilities as we did above for just one example contract. You can do that for however many contracts
+[  826.48s ->   835.52s] you'd like. And once you set a fixed grid of strike prices and maturities, you can produce a three
+[  835.52s ->   841.68s] dimensional plot of those strikes and maturities relative to the implied volatilities that you solve
+[  841.68s ->   848.24s] for. And that's really all we're looking at here. That is, this is just the implied volatility
+[  848.24s ->   854.32s] that we solved for above just for a set of option contracts with different strike prices and
+[  854.32s ->   859.04s] maturity. So if you take a look at the strike prices, we have the at the money call and put,
+[  859.04s ->   864.56s] which share an implied volatility theoretically by put call parity. Then we also have the out of the
+[  864.56s ->   871.20s] money calls and the out of the money puts. And we also have the time to maturities. We have
+[  871.20s ->   878.64s] varying maturities here. And what you'll notice is this volatility surface is not flat, right? If it was flat,
+[  878.64s ->   884.80s] that would mean that the same implied volatility is being used to produce all of the market option
+[  884.80s ->   890.00s] prices that we are observing, but this is clearly not the case, right? If you take a look at the strike
+[  890.00s ->   898.08s] prices, the out of the money puts require a higher implied volatility than the out of the money calls.
+[  898.08s ->   905.44s] Essentially fear is on the downside, increasing the price of these puts, something like commodity options
+[  905.44s ->   910.48s] may exhibit different behavior where fear is more on the upside. So the skew might be on the other side,
+[  910.48s ->   914.88s] but this is really what we're talking about when we're observing the volatility surface. We're talking
+[  914.88s ->   921.20s] about implied volatilities for a set of options and we get to choose what those options are. So here,
+[  921.20s ->   928.88s] I've just chosen a fixed grid of five strikes and five maturities. Sometimes we call this moneyness as
+[  928.88s ->   936.16s] well. You can do 80%, 90%, 100%, 105%, 110%, whatever, whatever it is that you'd like to do.
+[  936.96s ->   943.52s] Sometimes you can refer to that as the moneyness of the option. But regardless, this is the implied
+[  943.52s ->   951.76s] volatility surface. Now the particularly keen among us will notice that this is not flat. This is in fact
+[  951.76s ->   956.64s] skewed. And if we take a look at a cross section of this, we could see skew and the term structure of
+[  956.64s ->   961.28s] volatility. This is certainly not flat. This is something that we would expect to see
+[  962.00s ->   967.12s] in some sort of equity option. That is some sort of option on stock like Apple or Nvidia.
+[  967.84s ->   973.92s] But this begs the question, what's the problem with using the Black-Scholes model to go about
+[  973.92s ->   980.56s] pricing something like an exotic contract that we were asked for in the beginning of this video?
+[  980.56s ->   984.96s] Remember, we're on our Bloomberg terminal, we're sitting on an exotics desk, and we have to quote
+[  984.96s ->   992.64s] this down and out barrier option. Well, the problem is if we use a Black-Scholes model, Black-Scholes
+[  992.64s ->  1002.64s] framework to go about quoting that option price, then we are going to subject ourselves to arbitrage.
+[ 1002.64s ->  1010.40s] What do I mean by this? Well, the Black-Scholes model is assuming that this is flat. This volatility
+[ 1010.40s ->  1016.96s] surface is flat. This certainly does not look flat based on the market option prices. That's because
+[ 1016.96s ->  1024.88s] the prices for different maturities and different strike prices are going to require different
+[ 1024.88s ->  1032.07s] volatilities to match according to the Black-Scholes function. Okay. Well, if this is the case,
+[ 1032.07s ->  1040.55s] what's the problem? Well, the problem is which volatility should I use to go about extrapolating
+[ 1040.55s ->  1050.88s] this exotic option price? I could use the at-the-money implied volatility. I could use the
+[ 1050.88s ->  1058.16s] out-of-the-money put implied volatility. I could use the out-of-the-money call implied volatility.
+[ 1059.12s ->  1067.20s] But all of those are not consistent with one another. And what we're really doing is we're
+[ 1067.20s ->  1073.12s] subjecting ourselves to volatility arbitrage. So what I've done here is I've established a very
+[ 1073.12s ->  1082.00s] simple example of some sort of kind of butterfly-esque spread arbitrage. And what I mean is if we have a
+[ 1082.00s ->  1087.76s] volatility surface that is not flat and any market volatility surface will not be flat,
+[ 1088.40s ->  1095.52s] then if we use a Black-Scholes implied volatility to go about pricing our options, assuming we're
+[ 1095.52s ->  1103.28s] sitting on a trading desk and we are transacting option contracts, then a trader who transacts with
+[ 1103.28s ->  1110.32s] our desk is going to be able to construct an arbitrage opportunity. So for example, if I have a call,
+[ 1110.32s ->  1117.28s] we can assume it's on the same underlying, say, on Nvidia stock at 90 and a call at 110,
+[ 1117.28s ->  1123.20s] then a savvy trader, assuming that I have a constant volatility, that is, I'm using this Black-Scholes
+[ 1123.20s ->  1129.92s] model to produce prices for these contracts for my desk, that is for sure not going to match the
+[ 1129.92s ->  1135.12s] market consensus, this market implied volatility surface, as seen in this example here.
+[ 1136.45s ->  1144.10s] What could happen is a trader could hit our bid on call A, and they could lift our offer on call B,
+[ 1144.10s ->  1151.62s] and then hedge directional exposure, and there would be some volatility arbitrage there. And what I've done
+[ 1151.62s ->  1157.30s] is I've simulated this, and that gives them edge in that direction. So you can see that they have
+[ 1157.30s ->  1163.54s] positive average P&L if we simulate this trade a significant number of times. So they have edge. I'm
+[ 1163.54s ->  1170.98s] going to do a very extensive video on this idea of edge in the future. But for now,
+[ 1170.98s ->  1176.74s] if you'd like an interactive game that exhibits this idea of edge in trading, you can check out
+[ 1176.74s ->  1181.54s] practicemarketmaking.com. It's an open source project. You can check it out on GitHub where
+[ 1181.54s ->  1187.94s] you can accumulate expected value over time to understand this idea of statistical arbitrage.
+[ 1189.75s ->  1196.63s] If you take a look at the wealth paths of the trader that is transacting with our desk relative to our
+[ 1196.63s ->  1202.71s] desk, you can see that over time they are accumulating wealth and we are losing wealth. So they have edge
+[ 1202.71s ->  1209.11s] in this trade. And if they hit this thousands of times, then they're going to be accumulating that
+[ 1209.11s ->  1213.91s] expected value. And that is certainly something that we do not want. We want to make sure that all of
+[ 1213.91s ->  1220.31s] our option prices that we are producing for our desk are consistent in that there is no egg should
+[ 1220.31s ->  1227.03s] a counterparty transact with our desk. We want to make sure that our prices are arbitrage-free, so they
+[ 1227.03s ->  1233.59s] say. In reality, we're sitting on this exotic options trading desk. The option price is not just
+[ 1233.59s ->  1239.35s] the risk-neutral price. We have adjustments that need to be made and there has to be room for profit for
+[ 1239.35s ->  1245.67s] the market maker as well. So we're not just going to be using whatever these functions spit out as
+[ 1245.67s ->  1252.71s] the price and use that to quote whatever market price for our counterparty, whatever they're requesting,
+[ 1252.71s ->  1258.15s] but that's going to be a video for another day where we actually talk about going about calibrating
+[ 1258.15s ->  1264.07s] these different models to a volatility surface. For now, we're just going to focus on this idea of
+[ 1264.07s ->  1272.47s] consistency. So clearly, we need a model that is going to produce consistent pricing for all of the
+[ 1272.47s ->  1278.87s] options on the implied volatility surface. Why do we need consistent prices? Well, I just showed you,
+[ 1278.87s ->  1284.87s] if we don't have pricing consistency, then we might be exhibiting arbitrage in prices that we're quoting,
+[ 1284.87s ->  1291.11s] and that's going to lead to counterparties abusing that edge and accumulating expected value at our expense
+[ 1291.11s ->  1297.27s] in this zero-sum game of financial derivatives. Okay, if that's the case, what can we do? Well,
+[ 1297.27s ->  1301.67s] the Black-Scholes models, assuming constant volatility, we can't use that because all of these
+[ 1301.67s ->  1307.75s] implied volatilities are different. What can we do? Well, fortunately, there are a variety of models
+[ 1307.75s ->  1313.59s] available to us. We can use something like a local volatility, discrete is Emmanuel Durman,
+[ 1314.23s ->  1320.71s] local volatility continuous time is Bruno Dupierre, you could use a stochastic volatility,
+[ 1320.71s ->  1326.07s] so you could use a heston, a saber, a jump diffusion, capturing more stylized facts and heuristics of
+[ 1326.07s ->  1333.75s] the market. Generally speaking, there is some sort of efficiency trade-off between the amount of
+[ 1333.75s ->  1339.11s] parameters and dynamics that your model is capturing and the efficiency for calibrating to
+[ 1339.67s ->  1345.75s] a market volatility surface. What is this calibration problem that I'm talking about? Well,
+[ 1345.75s ->  1352.79s] in the context of producing a price for this exotic option that we're being requested a quote for,
+[ 1353.51s ->  1359.27s] we need to go out and we need to take our model, whether it be a local volatility model,
+[ 1359.27s ->  1365.91s] a stochastic volatility model, or any model that's capable of producing consistent prices on the implied
+[ 1365.91s ->  1372.15s] volatility surface, and we need to take whatever parameters are available to us within that model's
+[ 1372.15s ->  1378.71s] framework and fit them to the model's volatility surface such that if I was to use that model to
+[ 1378.71s ->  1385.19s] produce the price for say this put option or the price for this call option, then I'm going to get
+[ 1385.19s ->  1392.39s] the market price in the exact same way that we solved for implied volatility in the context of the black
+[ 1392.39s ->  1398.07s] shoals model. We just need to figure out what parameters to use for these extensions,
+[ 1398.07s ->  1405.91s] these other models that will also go ahead and produce consistent prices for the options on this
+[ 1405.91s ->  1412.87s] volatility surface. And the big difference here is that when we fit the models, that is the models
+[ 1412.87s ->  1420.23s] that are capable of non-constant volatility terms, then we're going to be able to produce and reproduce
+[ 1420.23s ->  1426.55s] the prices that exhibit the market surface itself. That is, a black shoals model is going to exhibit
+[ 1426.55s ->  1432.55s] this arbitrage because it's assuming a constant volatility, but a model that is capable of fitting
+[ 1432.55s ->  1439.03s] this volatility surface will not be exhibiting arbitrage in that same sense, in that it's going
+[ 1439.03s ->  1446.07s] to produce the correct prices for all of these different maturities and strike prices. So we can see
+[ 1446.07s ->  1451.99s] this in action using one of these other models, and I've just implemented a Heston simply here,
+[ 1451.99s ->  1457.83s] in that we have this stock price process where volatility is not constant. It follows a separate
+[ 1457.83s ->  1463.99s] stochastic process, an Ornstein-Ollenbach mean reverting process. Both of these are stochastic
+[ 1463.99s ->  1469.67s] differential equations that govern the dynamics of the stock price over time, along with volatility over
+[ 1469.67s ->  1476.15s] time. And you'll see that there are other parameters here that we can include in our model. So we have
+[ 1476.79s ->  1483.51s] this mean reversion speed, long run variance, and volatility of volatility, the so-called vol of vol,
+[ 1483.51s ->  1489.27s] if you will. And the Brownian motions here are actually correlated. There's a correlation structure,
+[ 1489.27s ->  1496.31s] and this is what we see in the leverage effect. That is, as volatility tends to increase, we tend to see
+[ 1496.31s ->  1504.71s] asset prices decrease and vice versa, but disproportionately, of course. So if you would like to check out a way of
+[ 1504.71s ->  1509.83s] simulating these correlated Brownian motions, you can, of course, check out this Jupyter Notebook,
+[ 1509.83s ->  1514.95s] or you can go to the Gaussian Cookbook or check out my note on SSRN, which discusses the simulation of
+[ 1514.95s ->  1522.79s] stochastic processes with these covariance structures. Okay, so what does this actually look like? How is this
+[ 1522.79s ->  1528.31s] different from the Black-Scholes model that we implemented above to price an option contract and
+[ 1528.31s ->  1533.99s] back out an implied volatility? So this is a stock price path. This is something that we would see even
+[ 1533.99s ->  1540.31s] in a geometric Brownian motion in the Black-Scholes framework. And here in the Heston framework, we also
+[ 1540.31s ->  1547.27s] get a volatility path because volatility is not constant. It changes over time. So what I've done here is I've
+[ 1547.27s ->  1556.15s] actually priced two separate options. I've priced a put with a strike of 90, and I've priced a call with
+[ 1556.15s ->  1564.66s] a strike of 110. And what you'll remember is with a spot of 100, so a spot price of 100 in the underlying
+[ 1564.66s ->  1572.42s] asset, what we saw in the volatility surface here is that the put prices, they were more expensive
+[ 1572.42s ->  1578.34s] relative to the call prices. So this is $10 out of the money. This is $10 out of the money. This is
+[ 1578.34s ->  1584.18s] a put, this is a call, but the puts more expensive. Fear is on the downside. So they are priced more
+[ 1584.18s ->  1590.82s] expensively. And I haven't done anything in this Heston model, but go about simulating the price of
+[ 1590.82s ->  1597.38s] these options. So I haven't done anything to fit the parameters of the Heston model to that volatility
+[ 1597.38s ->  1603.14s] service yet. But look at the implied volatility for the put and the call respectively. The implied
+[ 1603.14s ->  1618.26s] volatility for the call is 17.54%. So it's exhibiting that skewness that we expect to see. And we can go
+[ 1618.26s ->  1624.82s] about fitting this Heston model to the market implied volatility surface, those market prices,
+[ 1624.82s ->  1630.74s] and then we can go about producing consistent prices for our desk. And then we can go about pricing that
+[ 1630.74s ->  1637.94s] exotic option and make some money for our desk. And that's really the goal at the end of the day.
+[ 1637.94s ->  1643.70s] So what is the application of this in the trading context? Well, the implied volatility surface is
+[ 1643.70s ->  1650.74s] impossible to trade without, because if we are not consistent in providing our prices with this implied
+[ 1650.74s ->  1656.74s] volatility surface, then we are subjecting ourselves to arbitrage. And as counterparties transact with us,
+[ 1656.74s ->  1661.14s] we will be getting killed, and we will lose a significant amount of money over time, we will
+[ 1661.14s ->  1667.86s] have negative edge. And that is not the goal. So one of the things that is a very reasonable question
+[ 1667.86s ->  1674.82s] is, what makes for a good model? There are so many to choose from. But I want to highlight a few key
+[ 1674.82s ->  1680.26s] points. Well, the first one is consistent pricing, we should be able to provide consistent pricing in the
+[ 1680.26s ->  1685.62s] market surface and in any prices that we go about extrapolating. That is one of the goals
+[ 1686.66s ->  1691.86s] in this arbitrage-free sense. Another one is efficiency in pricing. How efficiently can we
+[ 1691.86s ->  1697.62s] produce these prices? If I have to simulate 10 million paths over the course of an hour to produce
+[ 1697.62s ->  1704.74s] a price, then even if all of those consistencies and arbitrage-free guarantees are there, it's not going
+[ 1704.74s ->  1709.70s] to be useful for us. And that's what I had mentioned earlier with this trade-off between an efficiency
+[ 1709.70s ->  1716.42s] and a rich model in a parameter sense. So you have this trade-off, and you're going to need an
+[ 1716.42s ->  1721.14s] efficient model because you need to provide a quote relatively quickly. Moreover, you're going to want
+[ 1721.14s ->  1726.90s] to say as little as possible about the true market distribution. Remember, these are all models,
+[ 1726.90s ->  1735.46s] and models are for sure wrong, but some models are certainly more wrong than others. And we saw an
+[ 1735.46s ->  1741.06s] example of what that looked like in the Black-Scholes sense where we subjected our desk to arbitrage,
+[ 1741.06s ->  1745.46s] and that's not what we want. We want to ensure that we are providing quotes and prices that are
+[ 1745.46s ->  1751.14s] consistent with what we're observing in the market, and so that we are not subjecting ourselves to negative
+[ 1751.14s ->  1756.90s] EV over an accumulation of a significant number of trades because that is our business. We're going to
+[ 1756.90s ->  1763.30s] be trading a significant number of times, and that EV adds up as you continue to trade. So you need to
+[ 1763.30s ->  1769.62s] make sure that you have some positive edge so that you make money, not that you accumulate significant
+[ 1769.62s ->  1775.86s] loss over several iterations of your trading. So when it comes to what makes for a good model,
+[ 1775.86s ->  1784.10s] you really need to balance this idea of efficiency with the ability to remain consistent in pricing.
+[ 1785.22s ->  1789.14s] And you want to say as little about the true market distribution as possible. You don't want to go
+[ 1789.14s ->  1794.58s] about making assumptions that are unnecessary to provide these guarantees that you need to
+[ 1795.14s ->  1800.26s] provide quotes for your desk. In this video, we talked about the Black-Scholes model, we talked about
+[ 1800.26s ->  1806.58s] the implied volatility surface, and the problem with producing pricing quotes with the Black-Scholes model,
+[ 1806.58s ->  1812.50s] subjecting ourselves to arbitrage when we don't have consistent pricing, and solutions to this problem
+[ 1812.50s ->  1818.26s] by extending to different models. We can use a stochastic volatility model, a local volatility
+[ 1818.26s ->  1824.66s] model, so on and so forth. In a later video, we will go about pricing that exotic option that came
+[ 1824.66s ->  1829.86s] across our desk. We're going to go about calibrating a model to a volatility surface. We're going to go
+[ 1829.86s ->  1835.22s] about producing a price for this exotic option. We'll decompose the quote itself. Remember, it's not just
+[ 1835.22s ->  1840.98s] about providing a risk-neutral price under some model framework, but we also have adjustments that need to
+[ 1840.98s ->  1846.42s] be made. And perhaps we'll even talk about some hedging schemes. So that's going to do it for this
+[ 1846.42s ->  1852.58s] video. I hope you enjoyed it. I hope you learned something. If you liked, please subscribe, leave a like,
+[ 1852.58s ->  1859.06s] drop a comment below. Feel free to join our discord, check out quantguild.com. Other than that,
+[ 1859.06s ->  1863.78s] thank you so much for watching, and I will see you in the next video.

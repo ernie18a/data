@@ -1,0 +1,44 @@
+[    0.00s ->    12.04s] I'm just going to be frank with you. Zero DTE trades are killing your account, killing your performance, and stopping you from achieving the consistency in your results that you actually want, that you can depend on in retirement.
+[   12.16s ->    23.26s] Now, why am I saying this? I have seen so many traders that have a very consistent and reliable long-term strategy where they sell options between 45 to 120 days out in the future,
+[   23.26s ->    35.48s] having consistency only to ruin their performance by using zero DTE trading or by trading zero DTE options because they're bored of waiting on their long-term trades, okay?
+[   35.48s ->    45.40s] That's a long-winded way of saying zero DTE trades are great when you can make them work, but it's very hard to make them work because it's like picking up pennies in front of a steamroller, okay?
+[   45.80s ->    50.84s] You're trying to pick up small wins, small wins, small wins, and every day you're having small wins, which make you feel good.
+[   50.84s ->    57.94s] It's these small hits of dopamine every single day, but the problem is a steamroller is about to squash you into the ground.
+[   58.34s ->    66.22s] You have just one loss when the market changes, market shifts, something happens, and you end up losing hundreds if not thousands of dollars,
+[   66.38s ->    72.00s] giving back multiple weeks of profit from your zero DTE trades.
+[   72.00s ->    80.68s] And if you're trying to achieve consistency, you can't be trading a strategy that has that large of a loss attached to it.
+[   80.84s ->    86.24s] You want to have small wins, small wins, small loss, small wins, small loss, not small wins, small, large loss, okay?
+[   86.64s ->    90.24s] So this is my reminder to you guys of this.
+[   90.68s ->    98.10s] Zero DTE strategies brings in a lot of dopamine hits because every day you're able to see winners, which is great, until the loser comes.
+[   98.56s ->    99.92s] So here's what I want to teach you.
+[   99.92s ->   110.82s] If you're doing a zero DTE strategy now, the one simple thing you can do is really just adjust the DTE you're using, and it will increase your consistency.
+[  111.36s ->   119.78s] Let's say you're doing a put credit, which means that you sell a put, and then you buy a put below it.
+[  119.78s ->   129.30s] This creates a trade that makes money when the market goes up and loses money when the market goes down, but it has a defined risk point, defined profit point.
+[  129.70s ->   134.74s] Okay, if you're using a zero DTE trade, you have to be right on the direction.
+[  134.96s ->   137.08s] So you need to make sure you're picking the right direction.
+[  137.28s ->   142.12s] If the market happens to go down, you're then going to be losing money on the put credit spread.
+[  142.12s ->   153.78s] And because you only have that single day to be right, if the market's red because Trump said tariff or someone said something about the news, then the market's going to drop and you're going to lose this and it's going to be a large loss.
+[  154.14s ->   165.52s] You can literally keep the trade the exact same and change it to a 45 DTE, or you can even be bolder like I do and go to 90 DTE, something like this.
+[  165.78s ->   168.86s] And this alone will help you increase your win rate.
+[  168.86s ->   178.76s] Why? Because instead of having one day to be right, which anything can happen on that day, we now give ourselves a month, two months, three months for that trade to be right.
+[  178.90s ->   187.58s] Which means we can let the market fluctuate, move up and down, and we will still be able to see that long-term performance play out because we have more time to be right.
+[  187.88s ->   195.70s] And when you're using something like a put credit spread, you're already capping your losses, you're already capping your wins, which means that you can just let the trade play out.
+[  195.70s ->   198.88s] So here's my just tip to you guys.
+[  199.36s ->   208.82s] Understand that long-term consistency, long-term options selling between 90 to 120 DTEs is what builds the consistent income you're looking for.
+[  209.20s ->   211.90s] So be okay with not trading every day.
+[  212.26s ->   218.40s] Be okay with finding something to do in the meantime while your trades are playing out, okay?
+[  218.74s ->   220.22s] That means go into our retirement.
+[  220.44s ->   221.96s] Go play with your kid.
+[  222.42s ->   225.06s] And just do something that distracts you from trading.
+[  225.06s ->   228.20s] This is exactly what I teach my coaching clients.
+[  228.32s ->   237.32s] I say if you want to do a zero DTE strategy, make sure it's less than 5% of your account total, okay?
+[  237.56s ->   239.26s] I'm saying the loss, okay?
+[  239.66s ->   248.14s] It means that if your largest loss on a zero DTE would only make up less than 5%, ideally less, but less than 5%.
+[  248.14s ->   256.90s] That way, 95% of your portfolio or capital that you're actually trading with is dedicated to the bread and butter money-making.
+[  257.34s ->   260.12s] And that's honestly where I push all my coaching clients.
+[  260.24s ->   264.94s] I go long-term strategies, 1-1-2s, 1-1-1s, coupling it with a hedge.
+[  264.94s ->   267.14s] That's the way to have consistency.
+[  267.46s ->   268.98s] So here is my rant.
+[  269.10s ->   270.12s] I hope you enjoyed it.
+[  270.18s ->   273.06s] If you want to learn more about me, click on one of the links in the description below.
+[  273.36s ->   275.02s] And I hope to see you in an upcoming video.

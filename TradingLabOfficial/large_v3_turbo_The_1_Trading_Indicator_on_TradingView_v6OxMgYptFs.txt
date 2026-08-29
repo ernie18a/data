@@ -1,0 +1,167 @@
+[    0.16s ->     4.60s] I looked through hundreds of YouTube videos, trading blogs, and even some trading books
+[    4.60s ->     7.96s] to see if I could find the best indicator out there.
+[    7.96s ->    13.16s] The most efficient, effective, and highest win rate indicator in the trading world.
+[   13.16s ->    14.96s] And to be honest, it wasn't easy.
+[   14.96s ->    18.96s] Turns out, a lot of traders have different opinions on what the best indicator is.
+[   18.96s ->    19.96s] Not surprising.
+[   19.96s ->    21.80s] And there's not really a direct answer.
+[   21.80s ->    23.60s] All indicators have their ups and downs.
+[   23.60s ->    27.44s] On top of that, you should never really rely on just one indicator.
+[   27.44s ->    31.60s] So it's really tough saying one's better than another, but with that said, I think
+[   31.60s ->    32.60s] I found one.
+[   32.60s ->    33.80s] Now, I'm almost certain.
+[   33.80s ->    37.68s] If you've been in the trading game for a while, you have definitely heard of this indicator.
+[   37.68s ->    42.66s] But if you're like me, you might have overlooked it and never really took a deep dive into understanding
+[   42.66s ->    43.66s] it better.
+[   43.66s ->    44.66s] What's the indicator?
+[   44.66s ->    45.66s] The VWAP.
+[   45.66s ->    46.66s] VWAP?
+[   46.66s ->    47.66s] No, VWAP.
+[   47.66s ->    50.32s] If you say VWAP, I'm sorry, we can't be friends.
+[   50.32s ->    52.82s] If you haven't heard of it, well, you're in for a treat.
+[   52.82s ->    56.10s] If you have heard of it before, you're still going to want to watch this.
+[   56.10s ->    60.60s] If you're like me, you might have a slight ego and say, oh, that's preposterous, I know
+[   60.60s ->    62.62s] that indicator well enough already.
+[   62.62s ->    64.44s] I don't need to learn more about it.
+[   64.44s ->    67.16s] Well, fancy guy with a monocle, that's where you're wrong.
+[   67.16s ->    69.52s] That's actually where a lot of traders start to fail.
+[   69.52s ->    72.62s] They get comfortable with where they're at and stop trying to improve.
+[   72.62s ->    76.74s] So I deeply suggest watching this video because you'll probably learn something you didn't
+[   76.74s ->    77.74s] know before.
+[   77.74s ->    82.10s] Also, at the end of the video, I'll tell you a strategy to make the VWAP even more effective
+[   82.10s ->    83.60s] than it already is.
+[   83.60s ->    86.62s] So the VWAP, the volume weighted average price.
+[   86.62s ->    90.72s] Think of it as almost just a regular old moving average, but upgraded.
+[   90.72s ->    95.38s] The reason being it takes volume into consideration rather than just previous price.
+[   95.38s ->   103.15s] And if you've watched my videos before, you all know why we like volume so much.
+[  103.15s ->   104.15s] Volume is king.
+[  104.15s ->   106.33s] Now I want you guys to think of it like this.
+[  106.33s ->   107.41s] Say if we have a chart.
+[  107.41s ->   111.31s] Price A at $20 and price B is at $40.
+[  111.31s ->   114.09s] So just a normal uptrend, let me ask you something.
+[  114.09s ->   116.83s] What's the average price between the two points?
+[  116.83s ->   123.65s] It's $30.
+[  123.65s ->   128.21s] $30 is right in the middle of the two points and is the average price on the chart.
+[  128.21s ->   130.65s] What I just described is a moving average.
+[  130.65s ->   134.61s] A moving average just finds a certain amount of past candlesticks, looks at the prices of
+[  134.61s ->   137.65s] them, determines the average price, and draws a line there.
+[  137.65s ->   141.51s] Let's go back to the chart and we're going to keep the same exact price points, except
+[  141.51s ->   144.45s] this time we're going to add a little more information.
+[  144.45s ->   149.35s] Let's say at point A there was 100 shares of volume, but at point B there was 10,000
+[  149.35s ->   150.35s] shares of volume.
+[  150.35s ->   152.21s] Now let me ask you the same question again.
+[  152.21s ->   154.43s] Is the average price really $30?
+[  154.43s ->   157.63s] Well sure on the surface yeah, $30 is the average.
+[  157.63s ->   162.65s] But this volume metric can tell so much more of a story than an average price ever could.
+[  162.65s ->   167.31s] And if you're asking me, the impact on point B was so much more than point A, so in my
+[  167.31s ->   171.03s] mind the average price is actually up here closer to point B.
+[  171.03s ->   175.25s] So in other words the VWAP is saying, hey, I don't really care about this $30 number.
+[  175.25s ->   178.31s] I care where more people are entering and exiting.
+[  178.31s ->   181.65s] That's really the beauty of the VWAP, but those are just the basics.
+[  181.65s ->   185.77s] Let's take a deeper dive and get a little bit more advanced on why the VWAP is one of
+[  185.77s ->   187.85s] the best indicators out there.
+[  187.85s ->   192.33s] For starters, the VWAP is one of the most installed indicators in the trading world.
+[  192.33s ->   196.45s] So millions of traders have the same exact line on their chart as you do.
+[  196.45s ->   200.23s] So whenever trading, there's going to be a lot of eyes when that price hits the VWAP
+[  200.23s ->   201.23s] level.
+[  201.23s ->   203.15s] Hopefully you guys understand on why that's so important.
+[  203.15s ->   207.69s] Also one very important thing you must know about the VWAP is that a lot of institutional
+[  207.69s ->   211.59s] banks and mutual funds like to place their orders around the VWAP.
+[  211.59s ->   215.69s] Because typically the VWAP expresses the most amount of liquidity because there's more
+[  215.69s ->   217.99s] people willing to trade at that price.
+[  217.99s ->   222.27s] So the institutional banks and mutual funds can get in and out of their trades with the least
+[  222.27s ->   226.73s] amount of market impact as possible, which is pretty important for entities like this.
+[  226.73s ->   229.49s] So yeah, the big boys like the VWAP price.
+[  229.49s ->   233.37s] Which brings me to my next point, the confirmation of the VWAP.
+[  233.37s ->   237.51s] Now the only reason technical analysis works is because people believe it works.
+[  237.51s ->   241.31s] If people didn't believe it worked, it would just be a bunch of random lines on a chart.
+[  241.31s ->   245.11s] Now don't get me wrong, I already know there's a lot of people out there that believe technical
+[  245.11s ->   249.79s] analysis is just a bunch of bullsh**, and basically just a bunch of random lines anyways.
+[  249.79s ->   254.25s] But you can't deny the fact, if enough people believe in those certain lines, the price will
+[  254.25s ->   255.25s] react to them.
+[  255.25s ->   258.53s] For instance, the dollar bill, it's worth nothing, it's just a piece of paper.
+[  258.53s ->   262.61s] The only reason it's worth something is because we all believe it's worth something.
+[  262.61s ->   263.67s] Same goes with trading.
+[  263.67s ->   265.37s] Take support and resistance for example.
+[  265.37s ->   269.55s] The only reason a support works is because lots of people see past chart history and can
+[  269.55s ->   271.89s] pinpoint where those specific areas are.
+[  271.89s ->   275.85s] That's why I always say when drawing support and resistance lines, to pick the spots that come
+[  275.85s ->   280.49s] out to you first, the most obvious spots, because the more obvious they are, the more people
+[  280.49s ->   284.01s] drawing those same exact lines, giving those areas more power.
+[  284.01s ->   287.23s] But that is one of the drawbacks of support and resistance.
+[  287.23s ->   289.83s] Not everyone is drawing the same exact lines.
+[  289.83s ->   294.37s] Now I want you to think of it like this, if the VWAP is one of the most installed indicators
+[  294.37s ->   299.89s] in the world, and it's on the same exact level on everyone's screen, so there's absolutely
+[  299.89s ->   304.71s] no confusion on where it is, don't you think that gives it a higher chance of price respecting
+[  304.71s ->   305.71s] it?
+[  305.71s ->   307.51s] To figure this out, I did some testing.
+[  307.51s ->   308.55s] VWAP is dead simple.
+[  308.55s ->   310.81s] The price is either above it or below it.
+[  310.81s ->   313.83s] When it comes to day trading, simplicity often rules.
+[  313.83s ->   318.03s] Now as a type of backstory on trading with the VWAP, usually it determines if the market
+[  318.03s ->   320.71s] is considered an uptrend or a downtrend.
+[  320.71s ->   323.47s] The price is above the VWAP, it's considered an uptrend.
+[  323.47s ->   326.45s] The price is below the VWAP, it's considered a downtrend.
+[  326.45s ->   329.67s] So the VWAP can act as both a support and resistance.
+[  329.67s ->   331.83s] When the price is above, it'll act as a support.
+[  331.83s ->   334.17s] The price is below, it'll act as a resistance.
+[  334.17s ->   339.45s] Now I did some digging, and I checked so many charts just to see how powerful the VWAP
+[  339.45s ->   342.61s] actually was, and if price actually respected it.
+[  342.61s ->   347.21s] And to be honest, it's actually pretty scary on how much the price respects the VWAP.
+[  347.21s ->   351.65s] Like in this example, I was day trading, the market opened, and price did a huge spike,
+[  351.65s ->   354.07s] making it way above the VWAP, the purple line.
+[  354.07s ->   358.49s] It started heading back down, correcting itself, and guess where it bounces, the VWAP.
+[  358.49s ->   359.49s] Same thing here.
+[  359.49s ->   363.65s] The price fell below the VWAP, and when it started making its reversal, it headed all
+[  363.65s ->   368.33s] the way back up until it hit the VWAP as a resistance, and then it headed back down.
+[  368.33s ->   370.93s] And these types of plays happened a lot.
+[  370.93s ->   375.13s] Now, it's also important to note that VWAP is an intraday indicator.
+[  375.13s ->   379.45s] You can't really use it on daily charts, because it uses intraday candles and intraday
+[  379.45s ->   380.93s] volume to calculate the line.
+[  380.93s ->   385.61s] So, it's not really meant for long term investing, but more so for day trading and scalping.
+[  385.61s ->   390.03s] For day trading, it'll typically look like this, where the VWAP will have a huge exponential
+[  390.03s ->   394.51s] spike right when the market opens, then over the next couple of hours, it'll slowly start
+[  394.51s ->   395.51s] to level out.
+[  395.51s ->   397.43s] You can almost think of the VWAP as a magnet.
+[  397.43s ->   401.63s] The price always wants to go towards it, so if the price has a big huge spike and goes
+[  401.63s ->   405.23s] way above the VWAP, it'll naturally want to go back towards it.
+[  405.23s ->   409.15s] Same thing if it falls down too fast, it'll naturally want to go back up towards it.
+[  409.15s ->   413.55s] It's also important to note that the first time price touches the VWAP is the time you
+[  413.55s ->   415.19s] can have the most confidence.
+[  415.19s ->   419.31s] Whenever the price first comes near the VWAP, it'll more likely than not respect it.
+[  419.31s ->   421.49s] It'll rarely just break through the first time.
+[  421.49s ->   425.87s] As time goes on and price hits the VWAP more and more, it will become less and less likely
+[  425.87s ->   426.87s] to hold.
+[  426.87s ->   430.11s] So, when day trading, it can be a great support for the first bounce.
+[  430.11s ->   431.93s] Same thing goes for when price is below.
+[  431.93s ->   435.69s] The first time price comes up to it, the stronger the resistance will be.
+[  435.69s ->   437.63s] As time goes on, the weaker it'll be.
+[  437.63s ->   442.05s] Now of course price isn't always going to respect the VWAP exactly every single time.
+[  442.05s ->   445.57s] There are going to be times when it does these little false breakouts, where price breaks
+[  445.57s ->   449.95s] through making you think it's in an uptrend, but then slowly starts fading back down creating
+[  449.95s ->   450.95s] a bull trap.
+[  450.95s ->   455.41s] So, I think it is important to understand to not treat the VWAP or any indicator for that
+[  455.41s ->   457.25s] matter as an exact science.
+[  457.25s ->   458.97s] You should be treating it as a guide.
+[  458.97s ->   463.45s] So this whole false breakout thing is definitely one of the major problems with the VWAP.
+[  463.45s ->   467.95s] But luckily for you, there is a way to make the VWAP even more reliable and raise your
+[  467.95s ->   469.29s] win percentage using it.
+[  469.29s ->   470.55s] It's pretty simple actually.
+[  470.55s ->   474.87s] So usually when these false breakouts happen, it's because the overall stock is actually
+[  474.87s ->   475.87s] in a downtrend.
+[  475.87s ->   480.09s] So this is it trying to reverse, but the downwards momentum is just way too heavy.
+[  480.09s ->   483.59s] To fix this, all you're going to have to do is have your VWAP line, then you're also
+[  483.59s ->   486.45s] going to add a 200 exponential moving average.
+[  486.45s ->   491.25s] Now the only rule for this strategy is you will only trade if the price is above the
+[  491.25s ->   493.19s] 200 exponential moving average.
+[  493.19s ->   496.99s] So if you want to do, say, I don't know, a bounce trade, where you buy when the price
+[  496.99s ->   501.45s] dips and hits the VWAP for the first time as you're expecting it to head back up, you
+[  501.45s ->   506.33s] can only do that trade if the price is also above the 200 moving average.
+[  506.33s ->   508.59s] If it's below, you can't take that trade.
+[  508.59s ->   512.45s] This will greatly improve your chances of entering in a winning trade, as you're only
+[  512.45s ->   516.15s] trading in a true uptrend and you won't get as many false breakouts.
+[  516.15s ->   520.01s] So I told you a little bit on how to trade certain stocks with a VWAP, but how do you
+[  520.01s ->   522.01s] find good stocks in the first place?
+[  522.01s ->   527.45s] Well in this video, I tell you the exact characteristics of good stocks, and how to find stocks to day
+[  527.45s ->   532.33s] trade every single morning, so you can start with one foot in the right direction.
+[  532.33s ->   536.53s] Go check that out, thanks for watching, and I'll see you guys next time.

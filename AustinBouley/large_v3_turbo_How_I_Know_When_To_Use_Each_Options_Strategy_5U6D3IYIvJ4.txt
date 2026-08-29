@@ -1,0 +1,66 @@
+[    0.02s ->     5.16s] Hey team, I want to walk you through technical analysis 101. What in the world is this? It's
+[    5.16s ->    10.20s] essentially chart reading, but I want to break it down to its most essential and most basic forms
+[   10.20s ->    17.38s] so that anybody can understand it. This is a stock chart. It shows the history of the stock
+[   17.38s ->    22.64s] moving and the stock price. If we hover over anything, it will tell us the date and the
+[   22.64s ->    27.64s] price. So you can see here, this says February 18th, August, 2017, and it gives us a price on
+[   27.64s ->    36.94s] the right hand side or probably your left of $245. So in 2017 in August, it was trading at $245. So
+[   36.94s ->    43.94s] we can see the price over the lifetime of this stock. Now, what I'm looking at here is a daily
+[   43.94s ->    48.62s] chart. Why is it called that? Well, because number one, it has the daily set to days, but what does
+[   48.62s ->    55.18s] that mean? It means that each candle, each one of these little things you see here represents one
+[   55.18s ->    60.36s] day of trading action. So what does that mean? Well, that means that on this day right here,
+[   60.48s ->    68.26s] February 2nd, 2024, the market opened down here and closed up here. So the market went up. If you
+[   68.26s ->    74.08s] see a red candle, then it opened here and closed down. So this shows us not only the price action
+[   74.08s ->    80.54s] over the last so many years, we can see here back to 2015, but it also shows us what happened every
+[   80.54s ->    86.36s] single day because we have a set at a daily chart. We're looking at SPY, which the S&P 500.
+[   87.20s ->    92.48s] Now, I do not want to overcomplicate this because it actually is more simple than most people realize,
+[   92.84s ->    98.10s] but reading a stock chart is all about understanding the trend. Where is it trending?
+[   98.24s ->   104.56s] Now, here's the rule book to know. If the highs are getting higher and the lows are getting higher,
+[  104.56s ->   111.50s] you're in an uptrend. If the highs are getting lower and the lows are getting lower too, you're
+[  111.50s ->   116.24s] in a downtrend. If the highs and the lows are staying the same, you're in a neutral market.
+[  116.86s ->   121.66s] And I will lay out what strategies work best after I show you how to draw this.
+[  122.24s ->   131.00s] Well, the way we look at this is quite simple. You can see here that the stock is reaching a new high.
+[  131.00s ->   136.90s] Okay. So this is a high. Where's my last high? Well, the last high had topped out here. Where did
+[  136.90s ->   143.78s] it top out before that? Here. Wonderful. Highs are getting higher. First half of an uptrend confirmed.
+[  144.30s ->   148.80s] All right. Where's my next low? Well, we can say this was a low. Where was the low before that? We
+[  148.80s ->   153.22s] can say this was the low. Where was the low before that? We can say here or here. Either way,
+[  153.58s ->   159.82s] our lows are getting higher. So based on that, what type of trend are we in? We are in an uptrend.
+[  159.82s ->   165.44s] Once we see that our highs are getting higher and our lows are getting higher too, we draw a line
+[  165.44s ->   172.28s] from the bottom. Uptrends always draw a line from the bottom. So you can see here, we draw a line
+[  172.28s ->   177.88s] connecting all of the bottoms. Nice little bobs we line up. And so you can see here, bottom,
+[  177.98s ->   184.06s] bottom, bottom. And that is what defines an uptrend. Why did we draw a line? We drew a line,
+[  184.06s ->   189.84s] not only for us to remember that we're in an uptrend, but also for us to know where the uptrend
+[  189.84s ->   196.32s] will break. When this line breaks, when the stock goes below this line, we are now entering the
+[  196.32s ->   203.60s] opposite side or a downtrend. Let's look at the same thing, but for a downtrend. So we look at this,
+[  203.60s ->   211.37s] we can see the highs are getting lower and the lows are getting lower too. This is a downtrend.
+[  211.87s ->   216.69s] Once we know we're in a downtrend, once we see one, two highs getting lower, one, two lows getting
+[  216.69s ->   223.59s] lower, then we connect the highs. When we're doing downtrend, we connect the highs just like this.
+[  223.99s ->   230.17s] What do we see here? We see that we had a downtrend forming. Why? Because we saw this low and this low
+[  230.17s ->   235.39s] got lower. This, this high and this high got lower, this low and this low got lower. Then we
+[  235.39s ->   242.57s] connected the tops and these tops connected, then predicted this top, then showed us where the
+[  242.57s ->   247.77s] market reversed. You can see here why we draw the trend lines is to number one, remember what the
+[  247.77s ->   253.33s] trend is. And number two is to understand where it will reverse. So you can see here, the trend
+[  253.33s ->   259.61s] changed. The trend broke this trend line. It broke through it and actually at a good pace that shows
+[  259.61s ->   265.37s] that, Hey, we're reversing into an uptrend. We saw it break this. Now, what do we do? We go, Hey,
+[  265.37s ->   270.41s] look, this high is higher than that high. And Hey, look, this low is higher than that low uptrend,
+[  270.49s ->   277.41s] draw the new line. And now we have an uptrend until this line is broken. Now, what is uptrend and
+[  277.41s ->   284.51s] downtrend mean? It just means and shows where the market is going. The trend tends to continue until it
+[  284.51s ->   289.31s] breaks. And now we know where it's going to break. So once we know uptrend or downtrend or
+[  289.31s ->   296.15s] neutral, then we know what strategies to do. Strategies and an uptrending market would be
+[  296.15s ->   301.51s] selling puts, selling one, one, twos, selling one, one, ones, selling skewed shingles to the
+[  301.51s ->   307.95s] upside, buying stock, buying calls, things like that is what's going to be your uptrending strategies.
+[  307.95s ->   315.79s] Also things like triangle breakouts, things like MACD breaks, different things like that is what you're
+[  315.79s ->   321.77s] looking for. For downtrending markets, selling calls, selling call credit spreads. We're going
+[  321.77s ->   327.73s] to be buying puts. We're going to be getting out of our long, our, our long stock, right? We don't
+[  327.73s ->   332.96s] want to be in long stock. If the market's trend trending down, we also have things like breakout
+[  332.96s ->   339.30s] trades, RSI sell-off trades. If we're in a neutral market where the highs and lows are staying the
+[  339.30s ->   346.56s] same, we have strangles. We have very far out of the money puts and calls on different occasions,
+[  346.56s ->   352.15s] which is also a strangle. And what we have is we can create credit spreads on both sides,
+[  352.21s ->   356.51s] also known as an iron condor. But we're talking about indicator strategies. We're talking about
+[  356.51s ->   362.59s] MACD divergence plays, RSI divergence plays. Those are the two things that work, but only in range bound
+[  362.59s ->   368.09s] markets when the highs and lows are the same. So that's all I really want to show you because
+[  368.09s ->   374.23s] that's all that matters. Look at the chart, zoom way out. Look, what is the current trend?
+[  374.83s ->   382.55s] Where am I breaking? And now I know what strategy to do. If my trend changes, I get out of my trades
+[  382.55s ->   388.95s] that aren't in that direction. And I open trades that are going to benefit from the reverse trend.
+[  389.49s ->   394.71s] So that's how simple tactical analysis is. I know you've heard a lot of things before. I'm going to dive
+[  394.71s ->   401.55s] in a bit more about candlesticks and candle patterns in the next video, but that's how you read a stock
+[  401.55s ->   403.25s] chart. And that's how simple it is.

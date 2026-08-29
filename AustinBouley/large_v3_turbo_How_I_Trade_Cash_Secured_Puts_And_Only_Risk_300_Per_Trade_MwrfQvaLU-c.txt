@@ -1,0 +1,66 @@
+[    0.00s ->     4.76s] In this video, I'm going over how I trade cash secured puts and only risk $300 per trade.
+[    5.04s ->     9.86s] I'm going to walk you through step by step exactly how I make $608 every single month
+[    9.86s ->    14.92s] using this simple strategy. And I'm going to walk you through it step by step in a way that you
+[   14.92s ->    18.88s] will understand it and know how to do it by the end of this video, even if you're an absolute
+[   18.88s ->    23.62s] beginner. So let me dive in and show you exactly what a cash secured put is, the strategy I use,
+[   23.64s ->    27.68s] and how you can start implementing it today. Let me walk you through what a cash secured put is.
+[   27.68s ->    32.18s] This is not something I talk about a lot, but it's a very great strategy that I use and I want
+[   32.18s ->    36.42s] to share it with you. So a cash secured put is simply betting that a stock will stay above a
+[   36.42s ->    40.64s] certain level, but without having protection. So let me explain this. Let's say a stock is moving
+[   40.64s ->    45.04s] to the upside like this, and I think the stock will continue to move higher. I think the stock
+[   45.04s ->    49.96s] will not break this prior low that it made. So if that's true, I'm going to put a level right here
+[   49.96s ->    55.30s] and say, hey, if the stock stays above this level, then I'll make money. And so that's what a cash
+[   55.30s ->    60.52s] secured put is. You're selling a put at this level. You think the stock will stay above. If it stays
+[   60.52s ->    65.38s] above it, you make money. So the stock goes down, but still stays above it. You make money. The stock
+[   65.38s ->    71.04s] goes sideways. You make money. The stock goes up. You make money. So that's what a cash secured put
+[   71.04s ->    76.42s] is. So you're selling a put and that amount of money that you have on the line is secured by the
+[   76.42s ->    81.16s] amount of cash you have. So now let me walk you through this strategy. It's quite simple. You want to
+[   81.16s ->    87.28s] target a 22 days until expiration, which means that your contract is expiring in roughly 22 days.
+[   87.42s ->    92.52s] You're going to want to do it on spy and you want to do a 10 delta put. Again, I'll explain what all
+[   92.52s ->    98.50s] this means visually here in a second. So stay tuned. You want a 50% profit target, which means when you're
+[   98.50s ->   104.14s] a trade, it's 50% profit. You take the trade and close it. You want anyone a 400% stop loss, which means
+[  104.14s ->   110.90s] that if your trade grows by three X, you want to stop out. So let me explain exactly what this means here.
+[  110.90s ->   116.22s] First, let me show you a back test. So again, if you plug in all these details here and test it over
+[  116.22s ->   124.46s] the last 10 years, a 10 delta put 22 days until expiration, 50% max profit, 400% stop loss. If
+[  124.46s ->   130.72s] you test all this, you have a 95% win rate. You can see here, if we look at its comparison to the
+[  130.72s ->   137.82s] market, it does roughly the same. However, if we look at this, where does the strategy fail? Well,
+[  137.82s ->   143.40s] it fails during crashes. You can see here during downtrends. During this move here, we kind of went
+[  143.40s ->   149.56s] flat. During this huge crash, we dropped a lot. We went from a $20,000 profit all the way down to an
+[  149.56s ->   157.60s] $8,000 profit. That means you lost $12,000 during this crash. So when does the strategy fail? It fails
+[  157.60s ->   162.46s] during crashes. That's why my strategy and my approach is different. We're not just going to
+[  162.46s ->   167.16s] haphazardly put on these cash secured puts at random times. Like you may see other traders
+[  167.16s ->   172.00s] doing like tasty live and whatever. They just continually put on a trade every day. And then
+[  172.00s ->   177.46s] again, that subjects them to this risk. Instead, we're going to trade the trend, right? If you don't
+[  177.46s ->   182.38s] know how to read the trend, don't worry. I have the CSCT indicator that I use for this trading style
+[  182.38s ->   186.34s] where when the line's blue, it says the market's trending up. When the line's white, it means it's
+[  186.34s ->   191.44s] trending down. And when it's gray, the trend is unknown. So how do we do this? Well, when the line
+[  191.44s ->   196.26s] turns blue, we put on a cash secured put. Why? Because that means that the market is going to
+[  196.26s ->   200.24s] start trending up. You can see here, it trends up. This is the perfect environment for a cash secured
+[  200.24s ->   205.12s] put. And now we have to stay out of a cash secured put. When we start down trending during this white
+[  205.12s ->   208.86s] periods, we can stay out of losing periods. Not only that, you'd be like Austin, but you can't
+[  208.86s ->   213.16s] predict crashes. Yeah, you can't always predict crashes. You won't miss out on every single one.
+[  213.48s ->   219.26s] But for instance, the 2021 in March, you would have missed out on because it's banned new to stay out.
+[  219.26s ->   223.12s] So again, there are just some things that you're able to avoid. And if you're able to avoid all
+[  223.12s ->   228.78s] this, this flattens your PNL curve. So instead of having these huge dips, again, you're just going
+[  228.78s ->   235.76s] to have one more of a smooth uptrend PNL graph that you're profiting consistently and are not subject
+[  235.76s ->   241.50s] to these crashes, to large losses and other things like this. So when you trade the strategy with the
+[  241.50s ->   248.78s] trend, you will have a superior performance. So that is how it's set up. So again, a 22 days until
+[  248.78s ->   253.14s] expiration, SPY 10 delta put. So that means you're going to go on the option chain, you're going to
+[  253.14s ->   260.32s] look for a 10 delta put. You're going to do a 50% profit. That means that if you collected $100 for
+[  260.32s ->   266.66s] this trade and the trade is now at $50 because you make money when it goes down in price, that means
+[  266.66s ->   272.80s] that it goes from $100 to $50. So you collect $50. That's 50% profit. You exit out of the trade with
+[  272.80s ->   280.88s] a $50 profit. Now, if you entered for the 400% stop loss, if you entered at $100 and it's now 400%
+[  280.88s ->   287.66s] of that, so $400, then you're going to exit the trade too. So if you got in at 100 and you got
+[  287.66s ->   293.68s] out at 400, that means the difference is a $300 loss. This is how you have $300 losses with the chance
+[  293.68s ->   302.90s] to 95% of the time, make a $50 win. So that's how amazing the strategy is. You have a 95% plus win
+[  302.90s ->   310.22s] rate on this. You're avoiding crashes and you're going to stand to make $50 and risk 300, which is
+[  310.22s ->   315.96s] a great risk reward scenario. As you start to size up, you can look into better assets to do this with
+[  315.96s ->   322.04s] that have more tax advantages like SPX, or you can go straight to the futures, which has better
+[  322.04s ->   327.94s] leverage, which is ES futures. Anyways, that is my strategy. That's how I use it. That's how I
+[  327.94s ->   332.22s] outperform the market by looking at the trend. If you want that indicator and you want to join
+[  332.22s ->   337.46s] a program that everyone uses this indicator in these different strategies, click the link down
+[  337.46s ->   342.58s] below to grab my free alerts and bonuses. This is what it looks like. It is our program that has access
+[  342.58s ->   347.26s] to this indicator that shows us where the market's trending in real time and how to profit from it
+[  347.26s ->   351.90s] using credit spreads, using cash secured puts, and using skewed strangle. So if you want to join
+[  351.90s ->   356.16s] this program, free trial linked down below, this free trial will be ending soon. So make sure
+[  356.16s ->   358.80s] you take advantage of it now. All right, guys, see you in the next video.

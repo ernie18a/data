@@ -1,0 +1,99 @@
+[    0.24s ->     5.40s] This indicator predicts the exact future of the chart, and it's f***ing amazing.
+[    5.40s ->     9.88s] One day I was looking through the public library of indicators on TradingView for fun.
+[    9.88s ->    12.00s] Yeah, I searched trading indicators for fun.
+[   12.00s ->    13.08s] I have no life guide.
+[   13.08s ->    17.24s] But while I was doing this, I stumbled upon an indicator that claimed it could predict
+[   17.24s ->    19.24s] the exact future of the chart.
+[   19.24s ->    20.80s] Just as you are, I was intrigued.
+[   20.80s ->    25.72s] So I added the indicator to my chart and saw it added a projection line to what it thought
+[   25.72s ->    27.12s] the price will do next.
+[   27.12s ->    31.44s] When I first saw this, I laughed to myself thinking, wow, what an indicator.
+[   31.44s ->    34.12s] It can put a little line on my chart.
+[   34.12s ->    38.94s] But then a couple hours passed and I looked back at my chart and I saw the price followed
+[   38.94s ->    41.68s] the exact movement of the projection line.
+[   41.68s ->    45.02s] I mean, the line was literally spot on to its prediction, guys.
+[   45.02s ->    46.86s] I was instantly amazed.
+[   46.86s ->    51.46s] So I tested it and cooked up a beautiful strategy using this indicator.
+[   51.46s ->    53.36s] And let me tell you, it works amazing.
+[   53.36s ->    56.88s] And that's exactly why I'm making this video, to share it with you.
+[   56.88s ->    57.88s] I know.
+[   57.88s ->    58.88s] I'm amazing.
+[   58.88s ->    59.88s] Let's get straight to it.
+[   59.88s ->    62.50s] First things first, you need to get trading view.
+[   62.50s ->    64.88s] If you don't yet have it, I'll leave a link in my description.
+[   64.88s ->    68.50s] Go to the indicators tab and type in the next pivot.
+[   68.50s ->    73.10s] Once you do this, the indicator will be added to your chart and you will see two lines.
+[   73.10s ->    78.12s] The white line, which is the projection line of the exact price action, and the green line,
+[   78.12s ->    80.88s] which is the projection of the general price movement.
+[   80.88s ->    85.88s] But in order for this indicator to be successful, you have to add a little bit more to this
+[   85.88s ->    87.84s] strategy, which I'll cover in a bit.
+[   87.84s ->    90.56s] Now I'm sure you're wondering how this indicator works.
+[   90.56s ->    94.80s] Well, if you go to the settings, there will be a setting called correlated length.
+[   94.80s ->    98.28s] This number is how many candles the indicator will calculate.
+[   98.28s ->   103.70s] So it'll look at the past 20 candles and go through the entire chart history, and then
+[  103.70s ->   109.08s] try to find another pattern that closely resembles the one that is currently being provided.
+[  109.08s ->   112.78s] As what happens in the past is likely to happen in the future.
+[  112.78s ->   117.24s] Once it finds it, it will then put the projection on your chart as you see now.
+[  117.24s ->   119.76s] And as you can see, it works pretty damn well.
+[  119.76s ->   123.14s] But as I said earlier, there's a little bit more to it.
+[  123.14s ->   127.70s] Even though this indicator is amazing, you probably shouldn't use it by itself, as just
+[  127.70s ->   131.60s] because it happens in the past doesn't mean it will happen in the future.
+[  131.60s ->   137.08s] So we have to add a little bit more to the strategy so it raises the success of this indicator.
+[  137.08s ->   140.98s] Go back to the indicators tab and type in SSL hybrid.
+[  140.98s ->   143.10s] Make sure you add this one right here.
+[  143.10s ->   148.34s] Go to the settings of the indicator and change the SSL1 baseline length to 200.
+[  148.34s ->   150.76s] Then change the baseline type to McGinley.
+[  150.76s ->   155.08s] The McGinley baseline is just a moving average that was designed to track the market better
+[  155.08s ->   157.78s] than your typical normal moving average.
+[  157.78s ->   159.26s] Next click the styles tab.
+[  159.26s ->   164.10s] You're going to want to uncheck all these boxes besides the MA color and the bar color.
+[  164.10s ->   168.96s] Next go back to the indicators tab and add an indicator called the volume oscillator.
+[  168.96s ->   170.84s] Add this one by trading view.
+[  170.84s ->   175.16s] Go to the settings and I like to change the colors of these lines so they're a little bit
+[  175.16s ->   176.62s] more visible on my chart.
+[  176.62s ->   179.16s] So those are all the indicators that we need.
+[  179.16s ->   181.68s] Now let's go over the juicy strategy.
+[  181.68s ->   189.24s] But first I'm going to show you these are my trade results using Hankertrade.
+[  189.24s ->   194.32s] As you can see I have a $100,000 deposit and I have profited nearly $28,000.
+[  194.32s ->   199.38s] If you are looking for a broker to win more trades, I completely recommend clicking the
+[  199.38s ->   201.56s] link in my description for Hankertrade.
+[  201.56s ->   202.56s] Sign up with them.
+[  202.56s ->   207.44s] They are simply just a better broker than the others with lower commissions and fast execution
+[  207.44s ->   208.44s] times.
+[  208.44s ->   210.52s] It results in you winning more trades.
+[  210.52s ->   215.48s] They even just mitigated to their own in-house trading platform called AtTrader which has
+[  215.48s ->   218.20s] so many more benefits than MT5.
+[  218.20s ->   219.02s] Go check them out.
+[  219.02s ->   223.44s] If you use the link in my description, Hankertrade will match whatever you first deposit.
+[  223.44s ->   225.46s] Okay, so let's go over the strategy.
+[  225.46s ->   228.96s] So for a long trade, you're going to want this exact configuration.
+[  228.96s ->   232.44s] First, you want the projection of the chart to be heading upwards.
+[  232.44s ->   237.80s] Next, you want both the bars and the MA baseline to both be blue.
+[  237.80s ->   242.76s] If both of those are happening, finally you want the volume oscillator to be above the zero
+[  242.76s ->   243.76s] line.
+[  243.76s ->   246.28s] If all these conditions are met, you can enter a trade.
+[  246.28s ->   249.92s] You're going to set your stop loss right below the recent low and you're going to set
+[  249.92s ->   252.48s] your take profit at a recent high.
+[  252.48s ->   255.02s] And just like that, you have a winning trade.
+[  255.02s ->   257.92s] But there's a common problem using this strategy.
+[  257.92s ->   258.92s] Let me show you.
+[  258.92s ->   260.94s] Here, all the conditions are met.
+[  260.94s ->   265.28s] The projection line is moving upwards, the bar and the MA line are blue, and the volume
+[  265.28s ->   267.32s] oscillator is above the zero line.
+[  267.32s ->   269.76s] So we set our take profit and stop loss.
+[  269.76s ->   274.30s] But if we closely look at the projection line, it shows that it's going to hit our stop loss
+[  274.30s ->   276.32s] before hitting our take profit.
+[  276.32s ->   279.52s] So in this case, we do not enter the trade.
+[  279.52s ->   282.48s] And good thing we didn't, because this would have been a losing trade.
+[  282.48s ->   284.20s] Let's go over a short example.
+[  284.20s ->   286.74s] First you want the projection line to be going downwards.
+[  286.74s ->   290.36s] You then want both the bars and the MA line to be red.
+[  290.36s ->   295.08s] And then finally, you still want the volume oscillator to be above the zero line.
+[  295.08s ->   299.20s] If all these conditions are met, you're going to set your stop loss right above the recent
+[  299.20s ->   302.30s] high and set your take profit at a recent low.
+[  302.30s ->   304.98s] And again, just like that, you have some easy profits.
+[  304.98s ->   307.80s] I think this indicator is absolutely amazing.
+[  307.80s ->   311.08s] Try it out for yourself and let me know how it works for you on Instagram.
+[  311.08s ->   314.58s] Next, I'll show you exactly how to trade like banks.
+[  314.58s ->   317.70s] This will open your eyes on how to trade correctly.
+[  317.70s ->   320.20s] Thanks for watching, and I'll see you guys next time.

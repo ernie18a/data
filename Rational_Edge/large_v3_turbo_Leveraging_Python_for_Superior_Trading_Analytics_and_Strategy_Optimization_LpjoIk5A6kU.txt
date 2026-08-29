@@ -1,0 +1,157 @@
+[    0.00s ->     5.52s] okay so this is just a little intro about this video and i'm going to show you what you're going
+[    5.52s ->    14.56s] to see and basically is quantitative analysis about my portfolio and yep i i wrote some code
+[   14.56s ->    20.88s] i applied machine learning like in this case this is like just optimization and then this is the n
+[   20.88s ->    26.40s] equity curve and actually it increased the overall profit the profit is low but the recovery factor
+[   26.40s ->    33.28s] is high so it increases performance and yeah you're going to see also how i'm managing to
+[   33.28s ->    40.56s] analyze the maximum adverse exposure and maximum favorable exposure with this type of visual matrix
+[   40.56s ->    46.24s] and this is very useful insights if you're interested you can watch it i'm going to show you
+[   46.24s ->    55.44s] how to analyze data and how to build a like a robust portfolio over report that you can build on
+[   55.44s ->    63.04s] different software in this case i'm going to use mt5 so metatrader5 basically on metatrader5 you can
+[   63.04s ->    73.28s] run mql5 code so algorithm based on mql5 and yeah i mean it's very restricted on the report analysis
+[   73.28s ->    79.12s] because you don't have much let's say you don't have many possibilities you're very restricted on
+[   79.12s ->    87.12s] what you can do and so the best things to do is use quantum analyzer to upload all of your report
+[   87.12s ->    94.96s] so all of the single strategy and then you're going to have also the portfolio here and that's like useful
+[   94.96s ->   101.28s] but you cannot do much more here it seems very restricted so yeah you're going to see all those but
+[  101.28s ->   108.80s] like i don't think i mean it's useful of course but not as much as python because in python and if
+[  108.80s ->   116.32s] you have all the data you can analyze many different scenario and also more insights and also you can
+[  116.32s ->   125.04s] apply formula to everything so also like how to optimize well your risk for each single algorithm and
+[  125.92s ->   134.64s] many other things so basically what you want to do here is build a new view where you add i just did
+[  134.64s ->   141.20s] it so i'm good i'm not gonna show you again but basically you have the default here where you have
+[  141.20s ->   148.72s] the like ticket and all of the basic stuff but what you'll need because here you cannot distinguish
+[  148.72s ->   154.56s] different strategies you have the same symbol and everything looks the same of course the size is
+[  154.56s ->   162.85s] going to change but like it doesn't matter and also here you don't have any type of differentiation
+[  162.85s ->   172.37s] and so we have just to do adjust here and what you need is going to be number if you have it or just the
+[  172.37s ->   180.29s] strategy name this one here and yeah that's it i just did like view four and in this case i'll have
+[  180.29s ->   190.85s] here my okay this is strategy name and yep that's gold fv and then we have gold sf that's easy and that's
+[  190.85s ->   197.01s] enough for python to divide all of the different strategies yeah that's it and then you click here
+[  197.57s ->   205.81s] and it unload the csv file yep that's it what you're going to be to do next here basically on python on
+[  205.81s ->   214.37s] vs we're going to build a new folder okay in this case i did it on my pc because i'm on a mac now
+[  214.93s ->   220.05s] so i have all of the documents on icloud but actually it's not working well if you have
+[  220.69s ->   228.21s] data set and reports on icloud because it's taking so much time to exchange data from icloud to your
+[  228.21s ->   235.49s] machine so you actually have to build this folder inside your computer be sure that it's like on your
+[  235.49s ->   243.17s] computer and yeah that's pretty much it you have this is my mt6 i call it like just a random name and
+[  243.17s ->   253.25s] then on mt6 i have data scripts and then vnv and that's like the virtual environment so where you
+[  253.25s ->   261.01s] have all of the libraries and stuff for python to run and then data you have the it's better to divide
+[  261.01s ->   267.73s] everything because i'm not good in python but with ai you can easily become very good in python and it's
+[  267.73s ->   274.93s] telling me all of the let's say architecture work the best so if you are very organized it's going to
+[  274.93s ->   282.37s] be much easier for you to do everything and also for ai to solve your problem be careful on organize
+[  282.37s ->   290.13s] everything okay basically here we have data where we have data sets and reports data sets in this case
+[  290.13s ->   299.17s] it's like a high low close m5 from 2020 to 2025 and actually this one here is like beginning of 2020
+[  299.17s ->   309.49s] price of call was 1500 and then end of not end of 2025 but like we're close this is the price now so yeah
+[  309.49s ->   319.65s] it grew quite a while like 300 it's crazy but yeah that's like basic stuff you just upload here and you
+[  319.65s ->   328.21s] can wait okay and then you're going to run this basic code in this case i did it all with ai so it's
+[  328.21s ->   335.41s] like very easy if like it's showing you error you can just copy everything and put it in in the ai and
+[  335.41s ->   342.53s] it's going to give you give to you like something like the right code so use this just to see if
+[  342.53s ->   352.45s] everything is working well and then this one is the same this code here it's for the maximum adverse exposure
+[  352.45s ->   365.09s] and maximum favorable exposure so that's m a e and m f e okay i did it and it showed me like the perfect
+[  365.09s ->   373.81s] answer i changed the code two times because i needed the m like m a e and m f e in currency and not in
+[  373.81s ->   383.09s] points so basically you use this formula here to convert bits so point to usd in this case basically
+[  383.65s ->   391.57s] okay and how this is work how this worked i'm going back a little bit so here in the data we have also
+[  391.57s ->   399.97s] reports and this report here basically is the five report after strategy tester backtest okay basic
+[  399.97s ->   407.89s] stuff now you're not going to see all of my reports here because this is like an html and this is how it
+[  407.89s ->   415.81s] look like the behind the scene so it's every single box like this it's like actual trade in this case like
+[  415.81s ->   428.05s] it lost 103 usd and what this algo is going to do is to take both the dacet and also the report and then
+[  428.69s ->   436.69s] overlap the first on the second one and see when a position was open what time and what price when the
+[  436.69s ->   444.61s] position was closed and then measure the highest price and the lowest price and those two number are going to
+[  444.61s ->   452.05s] be printed as maximum adverse exposure so like the maximum negative exposure is going to be minus
+[  452.61s ->   459.01s] if that position was along and also the maximum favorable exposure and that's going to be like the
+[  459.01s ->   466.53s] highest price in this case during the position was open so like during that time and that's very useful
+[  466.53s ->   473.57s] because you can adjust your take profit and stop loss based on that thing so yeah that was my main goal
+[  473.57s ->   481.73s] and then my last line of code i mean my last scripts because those were the data then you close data
+[  481.73s ->   488.61s] and you have scripts wait okay like this you have scripts what's this scripts basically the scripts all
+[  488.61s ->   495.33s] of those are scripts it's like code that you can run to have output and the first is the one i showed
+[  495.33s ->   502.37s] you this one is for the of course maximum adverse exposure and maximum favorable exposure and then
+[  502.37s ->   510.05s] we have equity curve so why you can say what did you wrote a code just to have the equity curve and now
+[  510.05s ->   515.33s] i'm going to explain to you why basically when you run this code you're going to have this output here
+[  515.97s ->   522.61s] and this is the equity curve is way more different than the basic equity curve that you will have
+[  522.61s ->   531.09s] in the mt5 report because like here you just have the i'm going to show you just one let's say this one
+[  531.09s ->   538.53s] you just have it's going to be like a balance equity okay it's going to show you only the close price
+[  538.53s ->   545.65s] in not showing you the 500 of favorable exposure and i think that's very useful of course like if you
+[  545.65s ->   552.53s] use prop firm and if you want to manage your risk well you'll need to see all of those spike you see
+[  552.53s ->   559.01s] those are equity spike and not balance spike because the balance i mean in this graph here is not easy
+[  559.01s ->   565.25s] to see maybe i'm going to show you like a better quality one this equity curve is very useful because
+[  565.25s ->   572.37s] you're going to see all the moment when the balance was let's say in this case maybe low but the equity
+[  572.37s ->   580.61s] was very high so that's like a big piece of profit that you lost unrealized profit that you lost that's
+[  580.61s ->   588.05s] i think 400 usd okay and that's a lot of money for this strategy because it closed in five years
+[  588.61s ->   597.65s] like 22 000 with this type of risk and so if you think about 400 400 usd compared to 22 000 it's quite a
+[  597.65s ->   607.01s] lot for just one trade okay out of 500 and so you can think about and maybe wrote some new formula to
+[  607.01s ->   614.13s] adjust your take profit or maybe training stop based on those data i fixed the code and now this one is
+[  614.13s ->   623.25s] the one that is going to measure all of the mae and mfe about all of these strategies and then i
+[  623.25s ->   628.37s] there is like a different code it's like the strategies analysis and this is very useful i'm
+[  628.37s ->   635.25s] going to show you is i think one of the most useful code i use now because it's like measuring all of
+[  635.25s ->   643.01s] the maximum adverse exposure and maximum favorable exposure in this case is not minus but usually you
+[  643.01s ->   648.29s] don't need that because like you already know that if adverse is like with a minus but you don't need
+[  648.29s ->   654.45s] that to do analysis and actually this code is much quicker than the previous one i'll show you i think
+[  654.45s ->   662.45s] it's gonna take 30 seconds or something so that's it you see it's like super super quick and yeah i think
+[  662.45s ->   669.57s] like 20 seconds and that's awesome because all of them are correct and then you have the average here
+[  669.57s ->   676.93s] this is the profit of every single strategy and yeah then we have the other code this is the strategy
+[  676.93s ->   685.41s] analysis this is like a huge code 500 row but after this it's gonna take i think 15 to 20 minutes
+[  685.41s ->   694.85s] because it's like super heavy like you think about that this code is going to open each of those data
+[  695.73s ->   706.45s] that has around 500 000 lines okay with of course all of the price of those assets between 2020 to 2025.
+[  706.93s ->   714.85s] so it's like huge files to open and manage and then they're also going to open this wait this that's
+[  714.85s ->   723.01s] set here with all of the trade my portfolio of algorithm 2 okay yeah it's kind of heavy so it makes
+[  723.01s ->   730.21s] sense that it took like 15 to 20 minutes and then here we have the equity portfolio and so this script
+[  730.21s ->   736.93s] here is going to give this type of image so the equity and actually this is like
+[  736.93s ->   744.85s] i don't know why it looks like this but i think it measures also the euro usd change during the same
+[  744.85s ->   752.93s] period of time and so if you had the portfolio on usd you could have a bigger loss during the same period
+[  752.93s ->   761.33s] because like when you're not in position so when you're not trading you're all in on usd you have to
+[  761.33s ->   768.05s] think about this when you manage a lot of money okay maybe on 10k is different because you don't care
+[  768.05s ->   776.21s] much about the currency situation so if it agrees or decrease you don't care much because like just 10k
+[  776.21s ->   782.13s] but when you're managing when you're managing like hundreds of thousands of euro or usd of let's say
+[  782.13s ->   789.97s] capital you have to think about also the currency okay because if you see here this one has 14 000
+[  789.97s ->   802.13s] usd drawdown okay compared to the one i show you here that has only 3.5 around so 3 500 euro
+[  802.13s ->   808.13s] and that's why because the euro also grew with this during this time but then yeah i don't really care
+[  808.13s ->   816.13s] about this because like i already saw this report on quantanalyzer so yeah let's hit the real source
+[  816.13s ->   825.01s] in this case here we have the strategies analysis okay this is a huge help for me because you see here
+[  825.01s ->   833.81s] and this is the analysis of the argue on the ducks so the german index and basically this is just the
+[  833.81s ->   840.93s] equity curve it doesn't look very really pretty but like is still a good strategy and then all of those
+[  840.93s ->   850.37s] are mfe and mae graph that show how i'm actually using the mae and mfe okay and actually with this
+[  850.37s ->   858.05s] strategy i'm not using it in fact is you're going to see a recommendation and analysis and it says that
+[  858.05s ->   865.49s] i'm not using enough of the mfe so the favorable exposure and also i'm not having a nice win rate
+[  865.49s ->   873.97s] in this case like 34.7 for a long strategy is kind of bad okay and yeah basically the algorithm i showed
+[  873.97s ->   882.21s] you before is going to give you insights and like analysis about all of those strategies of course like
+[  882.21s ->   889.57s] i have many it is going to be very huge here but then you can see in this case i think i'm using it
+[  889.57s ->   896.85s] much more so i still have recommendation okay in this case like the win rate is good but i'm not using
+[  896.85s ->   905.73s] the mfe enough so like i thought my portfolio was good okay but actually if you only use nt5 or
+[  905.73s ->   913.73s] quantum analyzer you're not getting good insights okay so yeah i think the best thing to do is to
+[  913.73s ->   920.77s] actually understand and know how to use python okay because like you can easily have this type of
+[  920.77s ->   928.45s] insights with just a few hundreds line of code okay and you can also manipulate all of this data okay
+[  928.45s ->   934.45s] you can try now and see okay let's see the if scenario okay what if
+[  935.17s ->   942.69s] i close the position every day before midnight okay what's that mean it's going to change completely
+[  942.69s ->   951.49s] the performance because you already have the open time okay open price you only change the close time
+[  951.49s ->   957.73s] okay so the close price and you'll see all of the different change and also you can apply machine
+[  957.73s ->   965.73s] machine learning that's what i'm going to do next and see what are the parameters best to increase the
+[  965.73s ->   974.69s] performance and increase the usage of mfe okay so yeah and in the end here we have the strategies
+[  974.69s ->   981.41s] comparison and that's like another useful graph where it shows you all of the profit by strategy that's like
+[  981.41s ->   990.21s] like basic stuff that are already new and then efficiency efficiency of close trade and how much
+[  990.21s ->   998.13s] they're using the mfe in this case i know that this strategy here is like not using mfe at all it's like
+[  998.13s ->  1005.33s] really bad it's doing really bad yep oh wait as i told you before this is like a good graph that also
+[ 1005.33s ->  1012.69s] show you all of the strategy compared together okay and here you see here that i thought like i had a good
+[ 1013.25s ->  1019.41s] you can see here that i thought i had a good portfolio of trading algorithms and actually this year i'm
+[ 1019.41s ->  1028.05s] closing around 27 to 28 but with a drawdown of 6.5 but you see here that like i can easily increase the
+[ 1028.05s ->  1035.25s] performance because like here it says only this strategy that is using a good amount of maximum
+[ 1035.25s ->  1043.57s] favorable exposure so it's like maximizing the profit all of the other are not this one is like doing
+[ 1043.57s ->  1051.01s] really bad performance compared to what it could be okay and then with win rate that's useless and then
+[ 1051.01s ->  1057.73s] you have profit average profit by strategy okay and that's also not the useful insight but still
+[ 1058.61s ->  1066.77s] my goal was to analyze my mfe and with python i did it okay so yeah that's the last update for this video
+[ 1067.49s ->  1075.09s] the next analysis i'm going to do is to is going to be of course delete this performance here it is not
+[ 1075.09s ->  1082.05s] mine okay it's different also because like it's not calculating trades well so it's like i don't
+[ 1082.05s ->  1087.89s] need to look at this and then with this strategy here and this equity the thing is the thing i'm going to
+[ 1087.89s ->  1095.25s] do is like try to think outside of the box and that's the key because if you're managing money okay of
+[ 1095.25s ->  1102.37s] course you want to know the goal is not just to make money and make new strategies do many things
+[ 1102.37s ->  1109.17s] and trying to have like 20 algorithms because of course like you're not increasing the performance
+[ 1109.17s ->  1115.89s] overall if you only use the same type of algorithm and of course i'll need mean reverse strategies that
+[ 1115.89s ->  1122.93s] could increase my performance but i already know that i have a good portfolio okay and then also because
+[ 1122.93s ->  1130.45s] this year was completely forward testing and it did very well but i think of course like with new
+[ 1130.45s ->  1137.17s] strategies min reverse increase i'm going to increase the performance but i also know that there are so
+[ 1137.17s ->  1145.97s] many ways to increase the performance just by looking at your data and think outside of the box add
+[ 1145.97s ->  1154.37s] all of the asset class okay in the same period of time in this graph and see how my portfolio
+[ 1155.25s ->  1162.21s] performed during crisis of each single asset let's say during 2020 okay we have here
+[ 1162.21s ->  1170.37s] covet situation my portfolio did completely good the snp nasdaq lost like almost 30 percent
+[ 1171.01s ->  1180.05s] my portfolio didn't lose at all it make money okay good but then during five years wait during six years
+[ 1180.77s ->  1186.69s] of course we had many different condition of the market and so what i'm going to add is going to be
+[ 1186.69s ->  1196.29s] like cpi and then we have many other economic factors that can increase or decrease the performance of my
+[ 1196.29s ->  1202.29s] portfolio yeah that's the next thing and yeah that's pretty much it if you're interested in what i'm
+[ 1202.29s ->  1209.81s] doing now please leave me a comment and leave a like of course and subscribe and yeah of course if
+[ 1209.81s ->  1219.57s] you need more insights if you need advice and also if you want to learn how i'm doing this okay you can leave
+[ 1219.57s ->  1225.09s] me a comment and then we can get in touch that's it see you

@@ -1,0 +1,118 @@
+[    2.54s ->    20.32s] Hey YouTube, it's Roman. I'm back once again and today we have another paper review, this time on textual analysis, natural language processing, linguistics, financial, NLP, financial linguistics, however you fancy to say it, we are going to be looking at textual analysis.
+[   20.32s ->    40.56s] Now, this is probably my favorite topic in all of finance research and I'm a big fan of securities pricing, big fan of financial mathematics, anything related to that and or volatility with the intersection of machine learning and artificial intelligence, it's a chef's kiss for me.
+[   40.56s ->    69.80s] But natural language processing has a special place in my heart. It is probably my prime area of research and today we're going to be looking at an early paper in the field that is specifically going to look at news articles and this notion of a negativity or a pessimism factor as coined by Tetlock to essentially not only explain the sentiment associated with these stories,
+[   69.80s ->    76.56s] but to attempt to predict future stock returns, which I think we are always interested in.
+[   76.56s ->    99.74s] At this point, there really isn't much background in terms of empirics on textual analysis and finance. Really, the only paper before this or the most significant paper before this is Antweiler and Frank in 2004, where they're really the first to look at any sort of textual data and trying to extract meaningful information.
+[   99.74s ->   112.36s] From it using Yahoo finance and raging bull, which I've never even heard of, to attempt to extract sentiment and then try to see if there's any implications in any market variables.
+[  112.36s ->   131.68s] And they also are the first to document this really interesting idea of a skew and a shift in sentiment. They say, hey, like really most, if I'm in a very large portion, like 80 some odd percent of financial social sentiment is going to be positive.
+[  131.68s ->   137.30s] So in terms of background literature, that's really what we're working with here. There really isn't much.
+[  138.14s ->   152.48s] And Antweiler and Frank look at this notion of bullishness. They attempt to decipher whether or not these posts are going to be essentially conveying positive or bullish sentiment versus negative and bearish sentiment.
+[  152.48s ->   159.48s] But their bullishness factor really doesn't have any implications in the market variables that they look at.
+[  159.68s ->   164.92s] All right. So what is Tetlock looking at? What stories, what posts are you looking at?
+[  165.00s ->   170.26s] Well, he is looking at a very specific column of the Wall Street Journal called Abreast of the Market.
+[  170.26s ->   178.26s] And he's using a Harvard Psychosocial Dictionary with 77 predetermined GI categories.
+[  178.46s ->   187.52s] And from what I gather, those categories are essentially just going to be the classification of a word.
+[  187.68s ->   193.30s] So it's like if I say, hey, this is horrible, that's negative, unsurprisingly.
+[  193.30s ->   201.08s] If I say, like, I'm uncertain, perhaps that's a weak word, or maybe there's an uncertainty category.
+[  201.40s ->   206.28s] But really, these are just predetermined categories that words may fall into.
+[  207.10s ->   214.04s] And in essence, what he's going to do is he's going to say, hey, 77 dimensions, that's way too high.
+[  214.26s ->   215.78s] We can't really work with this.
+[  215.84s ->   218.12s] So what we're going to do is we're going to do a PCA.
+[  218.12s ->   223.60s] We're going to do a principal component analysis, and I want to look at the first principal component.
+[  224.10s ->   231.60s] And I want to look at the factor loadings on all of those other 77 dimensions to see which loadings are the highest
+[  231.60s ->   235.30s] and explain the common variation across all of these different dimensions.
+[  235.70s ->   243.00s] And it turns out the highest loadings are on weak, uncertain, negative words.
+[  243.22s ->   247.18s] So he constructs this idea of a pessimism factor.
+[  247.18s ->   255.68s] I know that was kind of a lot of technical speak, but really all principal component analysis is, is compression.
+[  256.00s ->   258.40s] You can think of it as kind of like a data compression.
+[  258.86s ->   261.04s] We have 77 categories.
+[  261.60s ->   268.24s] And what PCA is pretty much letting us do is it's letting us squeeze all of those 77 categories into one category.
+[  268.24s ->   274.40s] And it's pretty much just going to be the most important category.
+[  274.96s ->   280.30s] And it turns out that we can even look at other important categories.
+[  280.30s ->   284.34s] So we could squeeze the 77 down into two, three categories.
+[  284.34s ->   287.58s] But it reaches a point of diminishing return.
+[  287.70s ->   296.56s] It's like, well, if this first category is six times better than the second category, which is, you know, 10 times better than the third,
+[  296.68s ->   302.18s] then there's really no reason to extend into those other categories.
+[  302.18s ->   310.34s] But one thing you do have to worry about is whether or not if you squeeze that 77 categories down to one category,
+[  310.68s ->   313.28s] how does that category change over time?
+[  313.28s ->   323.04s] So if I, this year, squeeze those 77 categories to one category, let's say that one category that's being dominated is negative words,
+[  323.16s ->   324.88s] which is pretty much what we're seeing here.
+[  325.70s ->   333.02s] Next year, if I do the same thing, do I get positive words in that one category?
+[  333.74s ->   338.28s] That's really what PCA is doing here is it's letting us reduce the dimensionality.
+[  338.28s ->   340.90s] I mean, 77 is way too many to consider.
+[  341.06s ->   348.04s] So we're looking at one, the most important, that explains common variation across all the different categories.
+[  348.66s ->   356.70s] And it turns out that that negative category, that one negative category that we squeeze down to, is stable over time.
+[  356.80s ->   359.26s] So it's a pretty significant pessimism factor.
+[  359.78s ->   362.52s] And we're going to see what Tetlock can do with this.
+[  362.52s ->   370.78s] For those of you that want to get super technical, yes, we can do singular value decomposition or eigen decomposition of a covariance matrix, get the PCA.
+[  371.46s ->   382.30s] But in essence, we're just imposing factor analysis, assuming some unobservable underlying media factor that isn't directly observable.
+[  382.30s ->   388.40s] And then the variation in this factor over time generates the observed daily correlations between the various GI categories.
+[  388.58s ->   397.06s] Like, yeah, like that, that kind of tracks and the stability of the pessimism factor over time is a testament to that assumption.
+[  397.32s ->   399.74s] So everything here is pretty reasonable.
+[  400.42s ->   404.16s] And it's pretty standard in a principal component analysis.
+[  404.42s ->   406.78s] Let's get to why you clicked on this video.
+[  407.14s ->   409.04s] How are we trading with this?
+[  409.24s ->   410.24s] Where's the money?
+[  410.24s ->   417.52s] So he constructs this media factor using all the information available at time T minus one.
+[  418.28s ->   431.14s] So he's using the data that's available in the information set to traders today so that they could act on this pessimism factor should they so please to trade with it.
+[  431.14s ->   439.10s] The trading motivation is further pushed in table two, where we look at a pessimism factor at T minus one.
+[  439.10s ->   440.44s] And that's that bad news.
+[  440.44s ->   445.30s] So we're regressing Dow Jones returns on this pessimism factor.
+[  446.12s ->   456.18s] And we can see a one standard deviation shock to a pessimism factor leaves 8.1 bips of Dow Jones returns on the table for the next day.
+[  457.14s ->   458.38s] That's pretty significant.
+[  458.38s ->   472.48s] However, Tetlock does warn consistent with the model posited by Campbell Grossman Wang in 93 that this negative influence is only temporary and is almost fully reversed later in the trading week.
+[  472.48s ->   483.78s] Now, that is still plenty of time for me to get in and out of my trades, but nevertheless, this does have implication in the permanence of the value that's being contributed, right?
+[  483.78s ->   497.96s] So really, this gets at a bigger question, maybe with more of like a causal inference problem where it's like, is this news contributing novel information and is it being actualized in return?
+[  498.38s ->   500.74s] Is this a valuation channel where it can realize?
+[  501.62s ->   502.24s] I don't know.
+[  502.24s ->   509.70s] And maybe I don't really care because I'm just happy scraping my 8.1 basis points per day and I'm just making money living life.
+[  509.98s ->   515.50s] But, you know, if you want to answer these bigger questions, then you're going to have to consider those questions.
+[  515.68s ->   520.16s] But nevertheless, there's still this 8.1 basis points on the table.
+[  520.16s ->   522.16s] So what are we going to do about this?
+[  522.52s ->   524.60s] We're going to construct a trading strategy.
+[  524.72s ->   526.32s] What did you think we're going to do?
+[  526.60s ->   529.18s] That's exactly what Tetlock does, right?
+[  529.22s ->   538.28s] He looks at this pessimism factor trading strategy and he sees that it realizes an annualized return of 7.3%.
+[  538.28s ->   540.72s] He notes it's economically important.
+[  541.16s ->   546.20s] I would as well because the market return is barely higher than that on average.
+[  546.62s ->   548.84s] So that's pretty significant.
+[  548.84s ->   559.28s] If we go down further and look at yearly subsamples, in 12 of the 15 years, the estimated expected returns were positive.
+[  559.80s ->   565.94s] And he notes using some binomial distribution, I can only assume it's unlikely to occur by chance.
+[  566.10s ->   573.48s] So he suggests that this strategy is not only robust, but also relatively safe and stable over time.
+[  573.48s ->   582.64s] Now, I will say through COVID, we've seen some instability and sentiment-based trading strategies, but I'm going to cut him some slack because this is 2007.
+[  583.00s ->   584.58s] So this is pretty sweet.
+[  584.58s ->   587.20s] Now, don't go quitting your job quite yet.
+[  587.34s ->   589.10s] Don't go buying that Porsche quite yet.
+[  589.22s ->   591.36s] There's a bit of a caveat here.
+[  591.84s ->   599.00s] We aren't even considering any transaction costs, market frictions, slippage, scalability.
+[  599.00s ->   604.18s] We're not even considering really any sort of tax scheme either.
+[  605.18s ->   614.30s] And as Tetlock notes that like even modest transaction costs kind of just obliterate this profitability in terms of just roundtrip transaction costs.
+[  614.98s ->   620.52s] Now, what are the implications of this in terms of trading strategy development?
+[  620.52s ->   626.74s] Really, at the end of the day, this is a starting point, right?
+[  626.82s ->   629.00s] This doesn't use any machine learning.
+[  629.00s ->   636.56s] This isn't leveraging any of the modern alternative data sets, if you will, that we have access to today.
+[  637.04s ->   644.92s] This idea of a pessimism factor is just a wonderful starting point if you're looking to devise your own trading strategies.
+[  644.92s ->   652.00s] And that's what you're going to see a lot of times in finance literature, in maybe even the corporate side, mainly in investment.
+[  652.26s ->   654.36s] So you're going to see these trading strategies.
+[  654.86s ->   658.78s] And if they're profitable, fantastic.
+[  659.24s ->   663.78s] But most of the time, this profitability is going to be scraped away by generic market frictions.
+[  664.24s ->   674.00s] And it's going to be left to the researcher, the quant, the trader, whoever's in charge of this, to devise ways of optimizing this strategy.
+[  674.00s ->   676.96s] And that's kind of the job, right?
+[  677.04s ->   684.62s] At the end of the day, if you're working for a hedge fund or a quant fund or whatever, this is your job is to optimize these strategies.
+[  684.86s ->   696.94s] So at the end of the day, we get this amazing contribution, this idea of a pessimism factor, and this notion of a phenomenal starting point if we're trying to devise our own text-based trading strategies.
+[  696.94s ->   700.66s] So perhaps we have a novel text data set.
+[  701.34s ->   705.44s] Well, hey, maybe Tetlock's pessimism factor exists herein as well.
+[  705.74s ->   714.68s] So that's the exact kind of thought process that you should go through, especially when reading these papers and trying to apply them to your own problems and projects.
+[  714.68s ->   725.46s] I'm going to end this video on this wonderful chart that Tetlock has here showing how the equity prices follow the negative sentiment or the pessimism factor.
+[  725.96s ->   731.96s] And then they are fully reverted or almost fully, fully reverted within the short time after that.
+[  732.14s ->   734.76s] So that is going to do it for this video.
+[  735.00s ->   736.44s] Thank you so much for watching.
+[  736.54s ->   737.58s] I hope you enjoyed it.
+[  737.60s ->   739.62s] I want to thank Tetlock for his contribution.
+[  740.24s ->   743.62s] I really get a lot of joy out of reading these papers.
+[  743.62s ->   746.88s] I hope you enjoyed my commentaries and my reviews of them.
+[  747.38s ->   751.42s] If you ever have any questions, please feel free to leave them in the comments below.
+[  751.78s ->   757.40s] Suggestions, recommendations, anything more specific, feel free to email me, roman at quantgill.com.
+[  757.86s ->   758.68s] Very excited.
+[  759.00s ->   764.12s] We are still in development of machine learning and artificial intelligence that will be released very soon.
+[  764.82s ->   769.04s] Thank you so much for watching, and I will see you in the next video.

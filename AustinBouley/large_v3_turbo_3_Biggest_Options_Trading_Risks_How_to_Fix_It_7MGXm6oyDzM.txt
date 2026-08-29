@@ -1,0 +1,153 @@
+[    0.00s ->     3.64s] If you're an options trader who is struggling to generate consistent returns,
+[    3.98s ->     6.44s] it's probably because of one of these three trading risks.
+[    6.58s ->     9.28s] And the truth is, you probably have never heard of them before.
+[    9.40s ->    13.20s] These are silent killers that are sucking your profits, your consistency,
+[   13.52s ->    17.66s] and leading to small and small and small and large loss that wipes out months of profits.
+[   17.96s ->    21.92s] So let me explain to you what each one of these trading risks are and how to overcome them.
+[   22.26s ->    24.10s] Number one is manipulation risk.
+[   24.30s ->    26.08s] Number two is market crash risk.
+[   26.08s ->    29.68s] And number three is volatility risk.
+[   30.00s ->    31.46s] So here is the truth.
+[   31.82s ->    35.60s] If you do not manage risk in trading, then nothing else you do really matters
+[   35.60s ->    38.04s] because in the long run, you will just give back any profits.
+[   38.12s ->    42.50s] This is a quote from somebody called Steve Burns, who has a lot of followers on Twitter.
+[   42.50s ->    45.68s] But more importantly, he's been a professional trader for over 10 years.
+[   46.08s ->    48.36s] And I could not agree more with what he said.
+[   48.62s ->    51.56s] If you guys could just decrease your losses,
+[   51.94s ->    54.66s] options traders as a whole would be a lot more profitable.
+[   54.66s ->    57.90s] Option selling is amazing because the win rate is naturally high,
+[   57.90s ->    62.54s] but you're taking a lot of small wins and have one large loss that wipes out a ton.
+[   62.60s ->    66.88s] If you could just cut that loss in half, you could save yourself so much sanity,
+[   67.04s ->    72.04s] so many emotions, and save you so many profits that you're not giving back to the market.
+[   72.56s ->    74.72s] So what is manipulation risk?
+[   74.72s ->    81.66s] Manipulation risk is where market makers, hedge funds, and institutions are able to see your orders,
+[   82.06s ->    86.64s] manipulate the market to make sure that you get the short end of the stick.
+[   86.70s ->    89.26s] And this is happening every minute of every day.
+[   89.54s ->    95.46s] I guarantee that you're probably losing about $500 a month from this alone,
+[   95.62s ->    97.28s] given you trade a decent amount.
+[   97.42s ->    98.54s] So how does this work?
+[   98.54s ->   105.00s] Just like in the animal kingdom, when a hunter sees the prey, a lion sees a gazelle,
+[  105.10s ->   107.10s] it's going to go after it and kill it.
+[  107.36s ->   111.26s] That's exactly what happens in the market, which is undercover.
+[  111.46s ->   112.98s] We don't see it as well.
+[  113.32s ->   120.72s] But when a market maker, an institution, or a hedge fund sees your order sitting out on the market,
+[  120.80s ->   123.56s] because every order you put into the market, like,
+[  123.56s ->   126.12s] hey, I want to enter, I want to exit, I want to eliminate order, whatever.
+[  126.42s ->   130.74s] Those orders from the broker are sitting on the open market exchange.
+[  130.88s ->   132.06s] Anybody can see it.
+[  132.26s ->   136.14s] But institutions and hedge funds have systems that see it,
+[  136.42s ->   140.66s] manipulate the options price just slightly so that it triggers your order,
+[  140.98s ->   145.70s] you get stopped out, you take a loss, and they turn around and immediately profit.
+[  145.80s ->   151.18s] If you've ever had a stop loss that triggered too early or not at the right time
+[  151.18s ->   155.58s] or price jumped up for some reason, that's the reason why.
+[  155.84s ->   159.20s] They're taking advantage of you and they are profiting while you are losing.
+[  159.36s ->   161.68s] It's literally the system they're designed to do.
+[  161.98s ->   164.08s] And they're saying, Austin, how can they get away with this?
+[  164.32s ->   171.52s] Because the options market trades a lot less volume, fewer contracts than stock shares do.
+[  171.52s ->   177.02s] And so they can move the option price quickly and easily,
+[  177.24s ->   179.76s] just a microsecond to knock you out of that trade.
+[  179.76s ->   181.92s] So that's what manipulation risk is.
+[  181.98s ->   183.70s] And I'll talk about how to solve it here in a second.
+[  183.90s ->   186.78s] But you're also dealing with market crash risk.
+[  186.86s ->   190.66s] As we all know, options are amazing because they are leveraged.
+[  190.82s ->   192.72s] I get a huge return off a little money.
+[  193.02s ->   196.84s] But at the same time, I can have a huge loss off a little money as well.
+[  197.08s ->   201.60s] If the market overnight turns around and crashes, you could easily lose thousands of dollars.
+[  201.94s ->   205.58s] And so that's something we need to worry about and probably keeps you up as well.
+[  205.58s ->   209.02s] You also have to deal with volatility risk.
+[  209.46s ->   215.08s] All the knowing the gamma, delta, vega, whatever, if volatility spikes,
+[  215.32s ->   218.58s] your trade could be going in the right direction, but you'll still lose money.
+[  218.96s ->   223.50s] And it's frustrating and annoying and something that you need to learn how to master.
+[  223.64s ->   225.52s] Because if not, it's going to master you.
+[  226.20s ->   229.90s] And even if you get all those things right, you're still having to deal with yourself.
+[  229.90s ->   234.44s] You're battling your emotions, fear, greed, the roller coaster.
+[  234.56s ->   235.28s] Should I stay in?
+[  235.40s ->   236.06s] Should I get out?
+[  236.14s ->   237.08s] Should I chase this trade?
+[  237.20s ->   237.70s] Should I not?
+[  237.82s ->   238.16s] Made money?
+[  238.24s ->   239.16s] Why can't I do what they do?
+[  239.24s ->   244.62s] And you jump to different strategies and all of this emotional chaos that leads to inconsistent
+[  244.62s ->   245.38s] results.
+[  245.90s ->   248.90s] So that is what you're dealing with as an options trader.
+[  249.04s ->   250.70s] You've probably felt that before, right?
+[  251.10s ->   254.10s] That's exactly why we need to solve those problems.
+[  254.18s ->   255.68s] And now there's a lot of ways to do that.
+[  255.68s ->   259.50s] But the most efficient way is to use automation.
+[  260.06s ->   265.62s] Most brokers have a way to automate systems like Thinkorswim does and other tools like
+[  265.62s ->   265.88s] that.
+[  265.98s ->   271.26s] But if you are going to be a real trader who wants to invest in their trading and actually
+[  271.26s ->   274.54s] see results, you need a tool that is designed to work for you.
+[  274.58s ->   278.34s] So yes, you're going to have to pay some money, but it's going to save you way more than it
+[  278.34s ->   279.18s] ever cost you.
+[  279.52s ->   282.90s] And the tool that I'm talking about right now is called the Options Auto Trader.
+[  283.38s ->   284.28s] Yes, I'm biased.
+[  284.28s ->   285.80s] I am the founder of this.
+[  285.98s ->   290.86s] I created it, but I created it because of these three problems that were taking and
+[  290.86s ->   295.82s] making me lose so much money, not only just sleep at night and peace of mind, but making
+[  295.82s ->   297.10s] me lose money.
+[  297.30s ->   301.12s] And I created this tool called the Options Auto Trader, shameless plug, because we've
+[  301.12s ->   306.10s] helped over a thousand people so far automate their trading and finally see consistent results.
+[  306.64s ->   309.72s] So what does a tool like this allow us to do?
+[  309.96s ->   314.04s] Most importantly, it removes market maker risk.
+[  314.04s ->   316.04s] It removes manipulation risk.
+[  316.46s ->   321.84s] And it does this by putting a wall between your orders and the market makers.
+[  322.50s ->   326.36s] If a hunter in the animal kingdom cannot see the prey, it's not going to attack it.
+[  326.42s ->   327.40s] It's not going to kill it.
+[  327.96s ->   332.18s] That's why in the zoo, you can have a lion next to a gazelle, but there's a huge wall
+[  332.18s ->   334.48s] and an enclosure and they're not going to kill each other.
+[  335.06s ->   336.54s] Kill each other, the lion would kill the gazelle.
+[  336.74s ->   337.52s] But you get the point.
+[  337.52s ->   340.26s] They can't do anything because there's a barrier.
+[  340.42s ->   341.30s] There's a wall.
+[  341.66s ->   344.08s] That's exactly what happens here in the market.
+[  344.56s ->   351.66s] I, through this system, put a barrier, a wall between the market makers and your order so
+[  351.66s ->   353.32s] that they cannot see your orders.
+[  353.62s ->   355.24s] You might be wondering, how does that happen?
+[  355.36s ->   360.04s] Instead of your orders, like the broker does by sitting them out on the overall market to
+[  360.04s ->   365.20s] be seen, manipulated, and taken advantage of, I keep your orders through the options auto
+[  365.20s ->   370.56s] trader on our internal server, only to be instantly, in less than a millisecond, sent
+[  370.56s ->   374.18s] into the market to be close when it needs to be close.
+[  374.56s ->   382.60s] We have price detection algorithms that make sure that it's not a price spike, but a real
+[  382.60s ->   383.26s] price move.
+[  383.26s ->   387.92s] That way, we only send in the orders when it's time for you to exit, not some random
+[  387.92s ->   391.70s] price spike, not anything like that leads to a loss that you should have never had.
+[  391.80s ->   397.02s] This way, you can finally have stop losses, finally have protection, even overnight, especially
+[  397.02s ->   400.18s] if you're trading futures, where a lot of manipulation happens.
+[  401.29s ->   404.41s] But not only that, but we help you manage risk during crashes.
+[  404.73s ->   409.83s] The same way that new cars start automatically applying brakes when you get close to something
+[  409.83s ->   413.09s] that you're going to hit, this system does the exact same thing.
+[  413.09s ->   418.43s] When the market starts getting overextended, it starts applying the brakes for you by closing
+[  418.43s ->   421.11s] out your winners and adding hedges.
+[  421.25s ->   425.53s] Again, it's whatever settings you set, but you can set it so that it starts to slow down
+[  425.53s ->   430.93s] your momentum when the market's about to turn around and crash, so that instead of crashing
+[  430.93s ->   435.59s] with 10 open positions, you're only starting to crash with a couple positions, and you took
+[  435.59s ->   436.37s] profit already.
+[  436.83s ->   441.31s] And so that's where we use our market analysis system, and that's amazing.
+[  441.31s ->   447.73s] But not only that, we also are able to eliminate volatility risk by scaling your trades.
+[  448.15s ->   451.51s] As an options trader, you should be always looking at where VIX is.
+[  451.85s ->   453.67s] Volatility should determine how you're trading.
+[  454.03s ->   457.85s] Any advanced trader knows this, but most people don't know how to do it because they don't
+[  457.85s ->   458.69s] understand Greece.
+[  459.05s ->   462.27s] With a simple click of a button inside of the options auto trader, you can immediately
+[  462.27s ->   467.05s] scale your trading based on where VIX is so that you're taking advantage when the market
+[  467.05s ->   471.09s] is in your favor, and you're scaling down to have less risk when the market isn't.
+[  472.36s ->   475.84s] And now you might be saying, okay, that's awesome, but what about robots?
+[  475.96s ->   477.12s] I'll say, I don't trust bots.
+[  477.22s ->   478.40s] I don't trust systems.
+[  478.72s ->   480.84s] Like, what happens if something goes wrong?
+[  481.24s ->   483.90s] And that's why you need a bot that is rules-based.
+[  483.98s ->   487.32s] It's not AI, not a black box, not something you don't understand.
+[  487.62s ->   490.30s] A system that follows your rules.
+[  490.30s ->   494.76s] You say, do this, exit when this happens, enter when this happens, manage risk this way.
+[  495.04s ->   501.56s] And it actually does it, giving you full transparency and control over how much it's trading and what
+[  501.56s ->   502.02s] it's doing.
+[  502.34s ->   505.20s] And that's exactly what the options auto trader tool is.
+[  505.40s ->   511.60s] I want to give you a chance to actually start a trial to it, to go see how well it can work
+[  511.60s ->   512.20s] for you.
+[  512.40s ->   518.52s] Guys, I know this can work for you, and I don't typically share direct pitches to the options
+[  518.52s ->   521.10s] auto trader because my channel here is really to help traders grow.
+[  521.50s ->   525.74s] But the truth is, this is holding back so many traders, and I want to make sure you finally
+[  525.74s ->   527.30s] have a way to overcome it for good.
+[  527.72s ->   531.58s] So click the link down below and start your trial to the options auto trader.
+[  531.80s ->   535.70s] And I'll see you in the next video where I go deep and do strategies and education again.

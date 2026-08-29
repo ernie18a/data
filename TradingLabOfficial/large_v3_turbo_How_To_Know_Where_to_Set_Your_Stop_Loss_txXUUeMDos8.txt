@@ -1,0 +1,114 @@
+[    0.24s ->     1.76s] Has this ever happened to you?
+[    1.76s ->     6.60s] Your trading strategy gives you all the signals to enter a trade, so you enter.
+[    6.60s ->    11.76s] The chart is looking extremely nice and you're confident that the price is about to go up.
+[   11.76s ->    16.24s] You set your stop loss, set your take profit, and then you have your eyes glued to your
+[   16.24s ->    17.24s] monitor.
+[   17.24s ->    21.64s] It turns out you were right about the chart going up, but unfortunately the price barely
+[   21.64s ->    27.32s] hit your stop loss before doing so, resulting this as a losing trade, and most importantly
+[   27.32s ->    30.16s] missing out on all this profit.
+[   30.16s ->    34.90s] What if there was a way to know exactly where to set your stop loss, to have an indicator
+[   34.90s ->    40.20s] tell you the exact position where to set it, so it lowers the chance immensely of it ever
+[   40.20s ->    41.20s] getting hit?
+[   41.20s ->    45.92s] Well lucky for you, there is a way, and I'm going to tell you exactly how to execute it
+[   45.92s ->    48.12s] on all your trading strategies.
+[   48.12s ->    49.12s] Let's get straight to it.
+[   49.12s ->    50.88s] So here we have a rookie trader.
+[   50.88s ->    54.02s] They saw their indicators line up so they entered the trade.
+[   54.02s ->    57.26s] They then set their stop loss at the recent swing low.
+[   57.26s ->    60.98s] I was thinking it was a good idea, because if the price does go below the swing low, they
+[   60.98s ->    62.84s] want to be out of the trade anyways.
+[   62.84s ->    67.42s] Then we have our professional trader, who entered the trade at the same exact price,
+[   67.42s ->    71.84s] but used this special strategy I'm about to share with you to set their stop loss.
+[   71.84s ->    72.84s] Look what happened.
+[   72.84s ->    77.86s] The rookie trader ended up losing this trade, and the professional came out with a huge profit.
+[   77.86s ->    82.44s] Even though they entered at the same exact price, the only difference is the position
+[   82.44s ->    83.72s] of their stop loss.
+[   83.72s ->    88.38s] So what is this mysterious indicator that will help you place your stop loss in lowering
+[   88.38s ->    90.58s] the chance of it ever getting stopped out?
+[   90.58s ->    94.38s] It is the ATR, or the average true range.
+[   94.38s ->    99.44s] I use this indicator on basically all of my trading strategies to help decide where to place
+[   99.44s ->   100.44s] my stop losses.
+[  100.44s ->   105.18s] We're going to talk about what the ATR is, why you should be using it, and how to implement
+[  105.18s ->   110.06s] it in all your strategies so you can set your stop losses at the correct position every
+[  110.06s ->   111.06s] time.
+[  111.06s ->   112.06s] What is the ATR?
+[  112.06s ->   115.34s] The ATR is the average true range.
+[  115.34s ->   120.28s] What this indicator is doing is taking the past 14 candles and is telling us what the
+[  120.28s ->   123.36s] average size of those 14 candles is.
+[  123.36s ->   127.48s] Now whenever you add this indicator to your chart, you can change the settings of it to
+[  127.48s ->   128.64s] whatever you want.
+[  128.64s ->   133.94s] So you can make it look at the past 50 candles or 5 candles, whatever number you really wanted.
+[  133.94s ->   137.66s] Me personally, I like to keep it at the default of 14.
+[  137.66s ->   141.10s] So this indicator on the bottom is the ATR indicator.
+[  141.10s ->   145.18s] It's just a simple line chart that has a changing value in the top left.
+[  145.18s ->   151.28s] This number is presenting the average size of the past 14 candles of this specific security.
+[  151.28s ->   157.62s] So in this example, it's saying the average candle size of the past 14 candles for Ethereum
+[  157.62s ->   158.66s] is $17.32.
+[  158.66s ->   164.94s] Now why is it important to know the average candle size of the past 14 candles?
+[  164.94s ->   168.92s] The simple answer is knowing the recent volatility of the market.
+[  168.92s ->   170.12s] Let me show you an example.
+[  170.12s ->   173.88s] So say just for simplicity sake you wanted to enter right here.
+[  173.88s ->   178.50s] You want to set your stop loss right below this recent swing low, which is actually what
+[  178.50s ->   180.38s] a lot of other traders are doing.
+[  180.38s ->   184.76s] And let's say you think to prevent the price from hitting your stop loss, you're going
+[  184.76s ->   188.10s] to move your stop loss down $10 from the original.
+[  188.10s ->   193.20s] So if the price does go down to the recent swing low, it still has a chance to bounce off
+[  193.20s ->   194.20s] and go back up.
+[  194.20s ->   199.10s] While your strategy is somewhat in the right direction, let me tell you why this will not
+[  199.10s ->   200.10s] work.
+[  200.10s ->   204.96s] Every crypto, every stock, every currency is going to have different amounts of volatility.
+[  204.96s ->   210.36s] So Bitcoin is going to move up and down a lot more than a blue chip stock like Apple.
+[  210.36s ->   214.68s] You don't want to be moving your stop loss down the same amount for crypto as you would
+[  214.68s ->   219.90s] a blue chip stock, considering they are two completely different markets and have way different
+[  219.90s ->   220.90s] price movements.
+[  220.90s ->   225.56s] Depending on what you're trading, your stop loss might have to be larger or smaller.
+[  225.56s ->   227.02s] Same goes with different timeframes.
+[  227.02s ->   232.96s] Here you can see the average candle size of the past 14 candles for Bitcoin on the 15 minute
+[  232.96s ->   240.14s] timeframe is 300, but if we move to the daily timeframe, the average candle size is 2800.
+[  240.14s ->   245.76s] So this is a perfect example of why you need larger stop losses on higher timeframes compared
+[  245.76s ->   247.30s] to smaller timeframes.
+[  247.30s ->   251.64s] You also want your stop losses to be as effective as possible, like this.
+[  251.64s ->   257.46s] So let's say we know there's a great probability that the price will fall a lot if it goes below
+[  257.46s ->   262.98s] this line, but we also know that we have to take volatility into consideration.
+[  262.98s ->   268.48s] So we will say the price can go below this line, the amount of an average candle from the
+[  268.48s ->   270.30s] past 14 candles.
+[  270.30s ->   275.12s] But we don't want to just guess the average size, because if we do any more than what the
+[  275.12s ->   278.42s] actual size is, that's just wasting extra money.
+[  278.42s ->   281.64s] We want our stop loss to be as precise as possible.
+[  281.64s ->   284.08s] This is where ATR comes into play.
+[  284.08s ->   286.08s] First things first, get on your chart platform.
+[  286.08s ->   288.78s] I use trading view, I'll leave a link in the description.
+[  288.78s ->   293.86s] Go to the indicators tab and type in ATR for average true range.
+[  293.86s ->   296.68s] This will put the ATR on the bottom of your screen.
+[  296.68s ->   301.86s] Now it's also important to note, this value in the top left will change based on where
+[  301.86s ->   303.06s] your cursor is.
+[  303.06s ->   307.42s] So if you have your cursor in the middle of the chart, it's taking the past 14 candles
+[  307.42s ->   309.14s] to the left of that line.
+[  309.14s ->   314.56s] So when reading the ATR, make sure your cursor is all the way to the right of the price or off
+[  314.56s ->   315.72s] the chart completely.
+[  315.72s ->   322.50s] In this example, this number is the average candle size from the past 14 candles for Ethereum.
+[  322.50s ->   327.72s] Once you find where you want to place your stop loss, say this recent swing low for example,
+[  327.72s ->   332.42s] instead of dropping your stop loss a random amount below that level, you should be taking
+[  332.42s ->   334.42s] volatility into consideration.
+[  334.42s ->   339.74s] So what you do is take the price of the level of where your stop loss is and subtract it
+[  339.74s ->   341.52s] with this ATR value.
+[  341.52s ->   350.52s] So in this example, our stop loss level is at 4,339 and our ATR value is at 16.02.
+[  350.52s ->   361.30s] So what you do is take the 4,339 and subtract 16.02 from it, giving us 4,322.98.
+[  361.30s ->   365.86s] This is the new level of where we're going to be setting our stop loss.
+[  365.86s ->   370.30s] So all you have to do is move our stop loss from the old value to our new value.
+[  370.30s ->   374.66s] So yes we do have a larger stop loss, but that's the whole point.
+[  374.66s ->   378.58s] We don't want to get stopped out because the market is more volatile than we thought.
+[  378.58s ->   380.36s] Let's do one more example.
+[  380.36s ->   387.04s] So here we set our stop loss at the most recent swing low, which is at $310.75.
+[  387.04s ->   391.28s] We then see what the ATR value is, which is 2.58.
+[  391.28s ->   397.86s] We then do 310.75 minus 2.58, which equals 308.17.
+[  397.86s ->   402.56s] 308.17 is where we will move our new stop loss to.
+[  402.56s ->   407.50s] If you use this strategy for placing your stop losses, it's pretty safe to say your stop
+[  407.50s ->   411.66s] losses won't be hit as often, resulting in more winning trades.
+[  411.66s ->   416.44s] For all my strategies where I say to set your stop loss for a certain point, you should be
+[  416.44s ->   421.16s] adding the ATR to it to give it that extra amount of room for volatility.
+[  421.16s ->   424.90s] It will help your strategy perform so much better.
+[  424.90s ->   430.12s] Try it with this strategy, where I made a 130% return in just 2 months of trading with
+[  430.12s ->   431.12s] it.
+[  431.12s ->   433.60s] It's a crazy strategy and is insanely powerful.
+[  433.60s ->   436.44s] Thanks for watching and I'll see you guys next time.

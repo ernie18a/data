@@ -1,0 +1,73 @@
+[    0.18s ->    16.80s] Hey guys, what's up? It's A.B. Trades and I run a YouTube channel where I focus on day trading options and currently because people were asking me a lot of questions about the best day trading options courses out there, I thought I would just make one and update videos on YouTube for y'all.
+[   16.80s ->    32.16s] So this is the first one where we cover the strategy of RSI divergence. So if you like what I'm doing here and I have more videos to come on the different strategies that I'm doing, please like, please comment and please subscribe so I know what you want and that you stay tuned for the videos to come.
+[   32.16s ->    44.96s] Now let's get into RSI divergence. So RSI divergence works on all stocks but it works primarily well on the S&P 500 or SPY. So let's see exactly what RSI divergence is.
+[   44.96s ->    66.56s] So if you're on a trading platform, let's say it's tradingview.com, it's E-Trade, it's TOS, like what you're on here, you're just going to go to the indicators and study section, you're going to type in RRSI, which is the relative strength index, and you're going to add it to your chart and you're going to keep the preset settings.
+[   66.56s ->    80.52s] Okay, and then we're going to move on. So as you can see here, the RSI is on the bottom part of the chart. Now if your volume is also separated from the chart and you want more room in the settings here,
+[   80.52s ->    88.52s] so if it's like this and you want more room, just go to your settings on TOS or the Fingerswind platform and click Overlap and Apply.
+[   88.52s ->   100.52s] So this is what RSI is. RSI measures the relative strength index of the stock. So if you see that we're going up, the relative strength of the stock is in the upwards direction.
+[  100.52s ->   120.52s] However, when the relative strength gets above 70, it is known as oversold and it turns red. When it goes below 30, it is known as overbought and it turns red. When it goes under 30, it's known as oversold and it turns blue for a possible bounce.
+[  120.52s ->   131.52s] Now, again, this is all possible. But now, where does the RSI play into RSI divergence? Well, again, we talked about RSI, now divergence when you have two things doing the opposite.
+[  131.52s ->   140.52s] So for instance, I can only explain with an example here. If you can see here on SPY, we went up, we topped out, we came back down, and we pushed up.
+[  140.52s ->   156.52s] So the highs here are making an uptrend type thing where we have these higher highs, right? So we're pushing to the upside. However, the RSI is diverging against the natural path of this.
+[  156.52s ->   167.52s] The RSI highs made a lower high. So the RSI divergence pattern here is showing a divergence between the price and the RSI settings.
+[  167.52s ->   184.52s] So then we have usually a sell-off because of the divergence. Now, this can work if it's diverging to the upside here in the overbought, when it turns red, then it most likely or almost all the time with this strategy again.
+[  184.52s ->   193.52s] When I'm talking about all these strategies that I'll be showing you, none of them work 100% of the time, but they are ones just to play and factor and they have good risk to reward setups.
+[  193.52s ->   211.52s] So for instance, right here, we are at 268, which is a strong support and resistance level. So playing this RSI divergence reversal at a new high and at a resistance level is just like a triple threat, right?
+[  211.52s ->   225.52s] So let's look at past examples of an RSI divergence on SPY. So if we can look back here, the highs are making lower highs. You can see here that we went down, we pushed up, and we made a lower high, right?
+[  225.52s ->   238.52s] So we have a trend line that's pushing down. While the trend lines from these two spots on the RSI is pushing to the upside, now we have an RSI divergence because the two lines are diverging against each other.
+[  238.52s ->   250.09s] So since we are in the overbought section of the RSI, sorry, then we're going to see a sell-off. And again, this is a great example because it worked well.
+[  250.09s ->   254.09s] Remember, it doesn't work this well all the time, but let's continue to show examples of RSI divergence.
+[  254.09s ->   263.09s] And if you can see here, there are no good examples of an RSI divergence because again, one strategy does not work every day or every single time.
+[  263.09s ->   269.54s] So just stay on top of it and watch for the best setups. Let's see. I know I marked more.
+[  269.54s ->   276.54s] So we can see here on this bottom here, the bottoms are forming lower lows while the RSI formed a higher low.
+[  276.54s ->   287.54s] So we have the divergence there and the RSI, in addition to being at a support to 65, we saw that nice reversal that the RSI divergence was predicting.
+[  287.54s ->   292.54s] Again, when you trade strategies, you want to couple them next to each other, like next to a support or resistance.
+[  292.54s ->   298.54s] And it just adds to the validity of that strategy that it will indeed work.
+[  298.54s ->   305.54s] So now let's move on here. So if you can see here, this is not the best example because usually you want two tops and two bottoms.
+[  305.54s ->   315.54s] But this is consolidating down bottom, forming lower lows. And while the RSI is trending to the upside, that is an RSI divergence, and then we see a push to the upside.
+[  315.54s ->   322.54s] Again, you want to see two solid tops, two solid bottoms, and then two solid tops and two solid bottoms on the RSI, and the divergence in the trend.
+[  322.54s ->   333.02s] Let's see. Continuing on. Same thing here. We see we have a solid top, and we have another solid top, and the trend is to the upside.
+[  333.02s ->   339.02s] Now we have a solid top and a solid top in the divergence. The diverging trend here is what we're seeing.
+[  339.02s ->   349.02s] So the divergence in these trends and the overbought category is showing that we're more than likely going to go into a retracement.
+[  349.02s ->   359.02s] Now the reason why it works best on SPY is it works best at new high, high of days, and new low of days, which is known as N-L-O-D and N-H-O-D.
+[  359.02s ->   367.02s] New high of days, new low of days. So as you see here, as we push into a new high of day, we're getting this RSI divergence.
+[  367.02s ->   374.02s] And you'll see that when we get, more times than not, when we get an RSI divergence on the bottom, it's usually at a new low of day.
+[  374.02s ->   377.02s] So let's see if we can find an example of that.
+[  377.02s ->   384.79s] So as you can see here, when we have an RSI divergence on the bottom here, it's at a new low of day.
+[  384.79s ->   389.79s] So we have the trend line here of these two bottoms pushing, and the trend line is forming down.
+[  389.79s ->   395.79s] But the trend on the R RSI is pushing to the upside. So we have a nice push to the upside.
+[  395.79s ->   399.79s] Again, the same thing here. We're having two solid bottoms with the trend line down.
+[  399.79s ->   404.79s] And then we have the RSI diverging in the trend to the upside, which pushes a nice trend.
+[  404.79s ->   409.79s] Again, it's hard to say exactly that this will work because no strategy works all the time.
+[  409.79s ->   413.79s] But I know people who only trade this strategy on SPY and do exceedingly well.
+[  413.79s ->   419.08s] Let's see. Is there any more? I guess not more that we'll mention.
+[  419.08s ->   422.08s] Let's see if we can find any more in other stocks like Apple.
+[  422.08s ->   424.08s] So let's see Apple here. I know we have some here.
+[  424.08s ->   430.43s] So we have these two highs, right? And my face is blocking RSI.
+[  430.43s ->   434.43s] So we have a top here, a top here, and a top here.
+[  434.43s ->   438.43s] So if you just wanted to trade these two tops here, you could have done just fine.
+[  438.43s ->   443.43s] These two tops, one top, two top, traded the divergence and traded the pushback down.
+[  443.43s ->   447.43s] That could have also worked. But also you have this one and this one.
+[  447.43s ->   458.43s] With the trend line facing to the upside and the RSI on these two pointing downward.
+[  458.43s ->   461.43s] That is the divergence in the RSI diverging pattern.
+[  461.43s ->   463.43s] And you see the retracement.
+[  463.43s ->   469.43s] And also it's coupled with the NHOD, which is the new high of day that we're seeing this RSI divergence.
+[  469.43s ->   473.43s] So that's something also to watch out for.
+[  473.43s ->   477.43s] Do we see any here? No, this is about level, right?
+[  477.43s ->   481.43s] And again, as you look for these strategies, you're going to see them more and more.
+[  481.43s ->   483.43s] So just continue to watch out for this.
+[  483.43s ->   487.43s] And guys, as I mentioned strategies, just find the strategy that best fits you.
+[  487.43s ->   490.43s] So I hope you all understood what I was mentioning about the RSI divergence.
+[  490.43s ->   496.43s] And it works well because the relative strength is contradicting the movement of the stock.
+[  496.43s ->   499.43s] So because the movement of the stock is starting to slow down.
+[  499.43s ->   502.43s] And the RSI divergence is starting to show strength in the opposite direction.
+[  502.43s ->   504.43s] That's why we have that change.
+[  504.43s ->   508.43s] And that's why it mainly happens at the new high of day or low of day.
+[  508.43s ->   511.43s] Because we're approaching that support, that resistance or support.
+[  511.43s ->   512.43s] So we're seeing that reversal.
+[  512.43s ->   515.43s] So again, that was the RSI divergence for today.
+[  515.43s ->   517.43s] Again, please tune in next time.
+[  517.43s ->   519.43s] Tomorrow we're doing stochastic divergence.
+[  519.43s ->   525.43s] And the triangle, and the 10%, and the scalper alert, and the high connection, moving average, and the view up.
+[  525.43s ->   529.43s] I'm so excited to release these videos and see how it will help your trading.
+[  529.43s ->   531.43s] Alright guys, see y'all tomorrow.

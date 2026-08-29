@@ -1,0 +1,120 @@
+[    0.94s ->     6.46s] Monte Carlo pricing alrighty this is one of my favorite topics so let's dive right in
+[    7.58s ->    12.54s] when determining how to price a financial derivative we have a couple of options we
+[   12.54s ->    20.38s] can go for more of a closed form solution using a variation of the black shoals equation or we can
+[   20.38s ->    27.10s] use something called Monte Carlo pricing and what Monte Carlo pricing aims to do is generate a
+[   27.10s ->    34.30s] certain number of sample paths into the future and then determine the payoff of the financial
+[   34.30s ->    41.02s] derivative in question and then take all of those payoffs average them and then discount them to the
+[   41.02s ->    49.58s] present to find the current value of that derivative so for this example i just copied
+[   49.58s ->    55.58s] this call option for the spider on yahoo finance and as you can see the current price of the option
+[   55.58s ->    63.18s] is 154.46 now using Monte Carlo pricing we're going to be able to arrive at a price that's very
+[   63.18s ->    70.05s] similar to this so let's let's go ahead and get started alrighty so we're going to start with the
+[   70.05s ->    75.01s] geometric brownie emotion class that we've worked with before and and if you haven't seen this then
+[   75.01s ->    79.49s] i encourage you to go watch my video on geometric brownie emotion where i explain how we use and
+[   79.49s ->    87.66s] implement this so before we before we move on to actually creating a Monte Carlo simulation and talking
+[   87.66s ->    94.78s] more about what that means we need a way to model the payoff of the financial derivative or pricing so
+[   94.78s ->   102.06s] in this case we are pricing a standard call option a vanilla call option but this can be extended to
+[  102.06s ->   108.94s] more complicated derivatives any form of exotic or anything with a non-traditional non-standard payoff but
+[  108.94s ->   114.06s] as i said for for this example we're going to be using a vanilla call option so i will just create a
+[  114.06s ->   122.37s] class and i'll call it call and the only parameter we actually need to keep track of that results in a
+[  122.37s ->   131.41s] payoff is the strike price so within the constructor we're just going to take a strike price and then
+[  131.41s ->   145.09s] we'll assign it okay so this may seem redundant because we are pricing something that already has value
+[  145.09s ->   149.81s] so you know why do we need to price it if the market says it has this value well consider the
+[  149.81s ->   156.45s] case that we have an exotic maybe it's a barrier option or some complicated variation of that it
+[  156.45s ->   161.81s] doesn't necessarily have a vanilla equivalent in which you can derive a similar value so this is where
+[  161.81s ->   166.45s] Monte Carlo pricing really comes in handy because we're going to be able to determine the potential
+[  166.45s ->   173.41s] of the future payoff of that exotic and then discount it to the present to find its value so that's the
+[  173.41s ->   178.29s] general gist of what we're doing here so we started we're just going to use this call as an example so
+[  178.93s ->   186.13s] we started by modeling the call it's a very crude model of a call option but it'll do the job so now
+[  186.13s ->   193.17s] let's move on to the actual simulation portion so to go ahead and build this simulation we're going to
+[  193.17s ->   200.21s] need to build a class that accepts some parameters that allow us to generate sample paths for the geometric
+[  200.21s ->   205.65s] brownie motion that we're assuming the underlying asset follows so let's build out a class i'm going
+[  205.65s ->   214.29s] to call it euro call sim and the reason i'm specifying european for the call is because i'm just going to
+[  214.29s ->   221.57s] assume that the option will be exercise on expiration so if it's in the money then it's going to be exercised
+[  221.57s ->   228.45s] and there will be a payoff and if it is at the money or if it is out of the money then we're just going
+[  228.45s ->   234.61s] to have a payoff of zero so let's create a constructor and the constructor is going to take a couple of
+[  234.61s ->   239.81s] different parameters so that we can build this geometric brownie motion simulation so we're going
+[  239.81s ->   247.01s] to take a call option this is going to allow us to determine the payoff we're going to take n options so
+[  247.01s ->   252.85s] this is the number of options that we're going to simulate we're going to take an initial asset price
+[  253.81s ->   262.05s] this is for the stochastic process class and the stochastic process class also needs a drift a time
+[  262.05s ->   272.85s] step term a volatility term and now we also need two more two more parameters we need a time until
+[  272.85s ->   279.89s] expiration so this is so that we can generate the geometric brownie motion out to this time till
+[  279.89s ->   288.69s] expiration for the option so in the case of this call it was approximately 35 days so we're going
+[  288.69s ->   294.13s] to take a time till expiration and we're also going to take a risk-free rate and the risk-free rate is
+[  294.13s ->   301.33s] to help us discount the payoffs of all of the options in our simulation to the present now that we have
+[  301.33s ->   307.81s] all the parameters we can go ahead and actually build out this monte carlo simulation so what is this
+[  307.81s ->   313.33s] going to look like well for starters we need a list of stochastic processes we need to generate a
+[  313.33s ->   319.81s] set of stochastic processes that is of the same length as the number of options that we wish to
+[  319.81s ->   329.98s] simulate so to do this we're going to create a list called stochastic process and whoops we're going to
+[  329.98s ->   339.98s] generate a new stochastic process instance for each option so we'll do for i in range zero to n options
+[  342.98s ->   348.98s] stochastic process dot append and this is where we create our new instance of a stochastic process
+[  349.62s ->   355.62s] and we will assign all of the given parameters so this is where we assign our initial asset price
+[  355.62s ->   366.54s] this is where we assign the drift the time step or the change in time and the volatility all righty
+[  366.54s ->   374.30s] now that we have our stochastic processes generated we need to take time steps towards the time till
+[  374.30s ->   381.10s] expiration generating sample paths that the underlying asset may follow so to do this we're going to create
+[  381.10s ->   392.77s] a for each loop so for each stochastic process in stochastic processes whoops i'll call this stochastic
+[  392.77s ->   402.64s] processes because it's a set of stochastic processes so for each process in that set hope i got to change
+[  402.64s ->   412.37s] it here too for each process in that set the time till expiration is going to equal the given time till
+[  412.37s ->   420.77s] expiration so we'll just call this time till expiration i for instance and while this instance time till
+[  420.77s ->   431.31s] expiration less the stochastic processes time step is greater than zero we want to take a step forward
+[  431.31s ->   440.19s] in time meaning there's still time until the contract is expired so we will do tte is equal to sorry ttei
+[  440.83s ->   447.87s] is equal to ttei time till expiration for this instance is equal to the time till expiration for
+[  447.87s ->   455.87s] this instance less the stochastic processes time step and what that's doing is decrementing the time
+[  455.87s ->   461.31s] until expiration for this instance meaning we're taking a step closer to the options expiration and
+[  461.31s ->   470.02s] we're generating a new price when we say time step and what that's going to do is it's going to iterate
+[  470.02s ->   476.82s] through all of our stochastic process instances in the stochastic processes list and generate asset
+[  476.82s ->   484.42s] paths for each process and that's exactly what we want so now that we have our sample paths generated
+[  484.42s ->   490.66s] we can actually find the payoff of each of these prospective sample paths to do that we'll create
+[  490.66s ->   498.90s] another list called payoffs and we'll create another loop that iterates through each stochastic process
+[  498.90s ->   509.06s] so for stochastic process in stochastic processes we are going to determine the payoff so the payoff
+[  510.22s ->   516.83s] is going to equal the current stochastic process we're going to find the asset price
+[  518.64s ->   526.66s] at expiration which is going to be the length of asset prices less one so that's how we get the
+[  527.38s ->   534.42s] the price at expiration that was generated by the sample path then we're going to subtract
+[  535.38s ->   544.40s] the calls strike price what we're essentially doing here is saying okay we're going to take
+[  544.40s ->   550.56s] the asset price at expiration and subtract the strike and what that's going to do is that's going to
+[  550.56s ->   556.72s] generate the payoff of the call now obviously we don't know if it's in the money at the money or
+[  558.30s ->   566.14s] out of the money so we need to create a little ternary operator if you will so we'll say z is equal to
+[  566.14s ->   575.26s] payoff if the payoff is greater than zero otherwise the payoff will be zero because obviously we can't
+[  575.26s ->   581.02s] have a negative value for our payoff because it's an option it's the right to buy not the obligation
+[  581.58s ->   590.43s] so this is how we're going to handle that and then we're going to append that payoff to our payoffs list
+[  592.35s ->   597.79s] and now what we have is we have a set of payoffs for all of our sample paths
+[  598.91s ->   606.19s] alrighty so the last thing that we need to do is actually discount the payoffs the average value of
+[  606.19s ->   610.91s] the payoffs in the future to the present and to do that what we're going to do is we're going to say
+[  610.91s ->   617.55s] the price so the price of this call is going to equal the average so we'll use numpy for this
+[  618.19s ->   629.97s] the average of the payoffs times math.exponent so this is going to be the time discounted sum of
+[  629.97s ->   635.65s] the average payoff of the options and that's what we're saying the price of the call is equal to
+[  635.65s ->   639.73s] so we're going to discount it we're going to assume continuous time we'll say it's
+[  639.73s ->   648.34s] the e to the negative time till expiration times the risk-free rate and that is going to get us the
+[  648.34s ->   655.97s] price of the call option today so now we have everything we need to actually simulate the asset
+[  655.97s ->   662.93s] prices and find the potential payoffs for its respective derivative and to actually implement
+[  662.93s ->   669.65s] this Monte Carlo pricing all we have to do is create an instance of the euro call sim class so
+[  669.65s ->   676.13s] we will create an instance and then we'll create an instance of the call and if you recall from
+[  676.13s ->   686.00s] earlier the call has a strike price of 130 we are going to generate 1000 options the initial asset
+[  686.00s ->   694.08s] price is 195.48 just like from earlier and the drift we're going to assume is zero in this case because
+[  694.08s ->   702.08s] we want the risk neutral price so we're going to take time steps of days so one over 365 days
+[  703.94s ->   713.54s] and we're going to have a volatility of 106.25 percent or 1.0625 the time until expiration is
+[  713.54s ->   722.58s] exactly 36 days so we'll do 36 divided by 365 and for the risk free rate we're just going to assume that it is
+[  722.58s ->   731.46s] 8 percent now if we want to print the results of this pricing we can just select the price field in
+[  731.46s ->   739.06s] the euro call sim class and print it after all the simulation is done so now that we're all done here
+[  739.06s ->   749.44s] let's double check everything to make sure we're all ready to run this the strike has to be lowercase s and
+[  750.69s ->   760.00s] we need to append this to the payoffs and that should be it if we run this we get a price of 160
+[  760.56s ->   768.80s] dollars and 75 cents now it's not precisely 154 dollars and 46 cents and you might be wondering
+[  768.80s ->   776.40s] what the whole purpose of this the sort of pricing is and the the real benefit to this methodology this
+[  776.40s ->   782.72s] this method of pricing is when we don't have a vanilla equivalent so we obviously have a market
+[  782.72s ->   787.84s] for this call the market based on the law of supply and demand determines an equilibrium price
+[  788.40s ->   794.80s] and that price falls in line with all of the traditional closed form solutions such as the
+[  794.80s ->   802.32s] black shoals equation and and we're able to inversely apply that equation to find parameters like implied
+[  802.32s ->   807.68s] volatility but but where is monte carlo pricing helpful monte carlo pricing is is essentially
+[  807.68s ->   814.08s] the the good enough pricing solution so we're able to model different financial derivatives very
+[  814.08s ->   820.24s] complicated payoffs too very easily because we can just program it right into our simulation we have a
+[  820.24s ->   827.60s] call with a strike price but what if the asset didn't pay off after a certain value like a barrier
+[  827.60s ->   833.68s] option that would be also very easy to implement we could just simply take a barrier level as a
+[  833.68s ->   838.48s] parameter in our call and then all of a sudden we would have a call barrier and somewhere in our
+[  838.48s ->   844.56s] simulation we would say if the the current asset price exceeds the barrier level then the options
+[  844.56s ->   850.80s] payoff is zero and and this is really where monte carlo pricing comes in handy is is where we have these
+[  851.68s ->   857.20s] these non-standard payoffs for different financial derivatives and we need a way to determine
+[  857.20s ->   863.36s] what their present value is or their fair present value for sale so this has been an introduction
+[  863.36s ->   867.44s] to monte carlo pricing if you have any questions feel free to leave them in the comments below and
+[  867.44s ->   872.96s] if you want more information you can check out this article i wrote on medium about pricing exotic
+[  872.96s ->   879.12s] specifically i price a up and out barrier option uh for for more information or a more precise
+[  879.12s ->   884.08s] implementation of exotics pricing you can go check that out and it's also on my github so
+[  884.08s ->   886.48s] feel free to check all that stuff out

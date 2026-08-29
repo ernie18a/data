@@ -1,0 +1,176 @@
+[    0.00s ->     7.02s] At least when you walk into a casino, you know statistically if you keep playing, you're going to lose all of your money.
+[    7.02s ->    17.50s] The house has an edge, and just like the house has an edge, the market has an edge when it comes to stock picking.
+[   18.22s ->    30.88s] Stock picking is worse than gambling because, just like gambling, it can look like it's working and then all of a sudden stop working and completely blow out your account.
+[   31.44s ->    43.58s] You can't trade ephemeral gains relative to the market for some sort of quick hit of dopamine and then expect long-term results.
+[   44.38s ->    46.78s] You don't get something for nothing.
+[   46.90s ->    49.36s] Let's take a look at exactly what's going on here.
+[   49.60s ->    52.76s] The market versus your stock pick.
+[   53.30s ->    55.20s] This past year, you crushed it.
+[   55.74s ->    62.94s] When I say you crushed it, the market only returned, let's say, 18%, but your pick returned 35%.
+[   62.94s ->    71.74s] If we take a look at other performance metrics, max drawdowns are comparable, sharp ratios roughly equivalent, right, 1 and 1.25.
+[   71.74s ->    74.34s] So your risk-adjusted return is great.
+[   74.82s ->    77.04s] You can pick stocks, right?
+[   77.14s ->    82.04s] And maybe you do this for one year, two years, three years, right?
+[   82.08s ->    86.48s] We're not talking about a statistically significant sample size here, but does it really matter?
+[   87.40s ->    96.52s] Well, actually it doesn't because even if your picks are always right, there's a big problem.
+[   96.52s ->   105.32s] And that's because a significant portion of your return is just coming from passive beta exposure.
+[  105.72s ->   113.00s] Here's a hot stock that increased probably like 3,000% over the past couple years, VRT.
+[  113.60s ->   119.90s] Let's say that you're the best stock picker in the world and you saw this coming from 1,000 miles away.
+[  119.90s ->   124.31s] Look at your beta exposure, 2.22.
+[  125.45s ->   129.31s] I don't care how much idiosyncratic outperformance you have.
+[  129.77s ->   131.95s] What happens when there's a market crisis?
+[  132.85s ->   135.43s] Take a look at your drawdown.
+[  137.49s ->   138.17s] 61%.
+[  138.17s ->   154.97s] So if you put $100,000 into your pick, VRT, you would have had to face a $60,000 unrealized loss relative to the market, which had a max drawdown over the same period of 20%.
+[  154.97s ->   158.08s] Okay, but Roman, it came back.
+[  158.14s ->   158.92s] It came back.
+[  159.66s ->   161.52s] Yeah, but what about when it doesn't?
+[  161.52s ->   168.84s] That's just imposing survivorship bias as a general remark for stock picking.
+[  169.14s ->   171.38s] What if it lands on black again?
+[  172.54s ->   175.16s] It's the exact same argument.
+[  175.62s ->   181.26s] Not to mention the fact that this entire way down, you're going to have the conviction not to sell?
+[  181.26s ->   197.36s] When you have a 10, 20, 30, 40% drawdown in your pick, there are so many problems with stock picking, mathematically in the context of the edge that you have in the long run.
+[  197.36s ->   208.84s] But ephemerally, even for the net benefit of just outperforming the market in some sort of relative sense, you're subject to a severe drawdown.
+[  208.92s ->   215.14s] Because like I said, the outperformance isn't going to be driven purely by the idiosyncratic risk.
+[  215.18s ->   220.62s] It's going to also be the market risk as you see here.
+[  221.10s ->   223.54s] But Roman, that's a cherry-picked example.
+[  223.54s ->   227.16s] Well, no, it's a big fucking problem for stock picking.
+[  227.36s ->   236.38s] Because like I said, the return is not generated exclusively by that idiosyncratic component.
+[  236.50s ->   239.80s] We're not talking about market-neutral strategies, neutralizing beta.
+[  239.88s ->   242.38s] We're talking about stock picking.
+[  242.82s ->   256.64s] If we take a look at this animation here, I'm effectively showing you what happens if you expose yourself to the market for 10 years relative to trying to pick a stock every year.
+[  256.64s ->   262.96s] Or maybe hanging with the same stock for a couple years and then switching, so on and so forth.
+[  264.04s ->   268.60s] You look at the two charts and you're like, oh man, like, where do you want to be?
+[  269.12s ->   271.14s] I want to be the chart on the right.
+[  271.30s ->   272.26s] Look at that growth.
+[  272.46s ->   275.82s] It's exponential so much faster.
+[  275.82s ->   281.58s] It compounds so much quicker relative to the chart on the left.
+[  282.66s ->   289.82s] But the hidden pitfall of the chart on the right is this notion of volatility drag.
+[  289.96s ->   294.56s] The gap between your arithmetic return and the geometric return.
+[  294.66s ->   303.94s] In other words, there are outliers earlier on that are compounding at an exorbitant rate that are dragging up the arithmetic mean.
+[  303.94s ->   308.40s] In other words, let's take a look at your performance metric.
+[  308.64s ->   311.12s] So this is just exposure to the market.
+[  311.42s ->   320.20s] You have a compound annual growth rate of 13.9% relative to your stock picking, your hot stock.
+[  320.28s ->   324.28s] It has a 27.3% compound annual growth rate.
+[  324.28s ->   337.34s] So why on earth would I ever go with this portfolio on the left when the portfolio on the right more than doubles the compound annual growth rate?
+[  338.22s ->   342.92s] Well, you don't get to pick which sample path you walk.
+[  343.64s ->   346.92s] And that's a really big problem in the context of risk.
+[  347.06s ->   348.56s] Risk is boring to everyone.
+[  348.70s ->   350.16s] Everyone just wants to make money.
+[  350.16s ->   357.28s] And the irony is the only way to make money and generate a return is to expose yourself to risk.
+[  358.38s ->   361.42s] Mastering risk is how you master return.
+[  361.96s ->   367.14s] So when we take a look at these two charts, you ask me, okay, which one do I want to be on to the untrained eye?
+[  367.22s ->   369.66s] It's the one that's like, okay, well, this one has exponential growth.
+[  369.70s ->   370.20s] Let's go there.
+[  370.30s ->   371.48s] Well, all right.
+[  371.52s ->   374.10s] What if I told you you're going to have to walk a path at random?
+[  374.10s ->   394.57s] And the lowest paths on this chart on the right have over a 70% loss in value over 10 years relative to the chart on the left where you're sitting at roughly your original principle over 10 years.
+[  394.57s ->   399.72s] This is the idea of risk.
+[  400.04s ->   403.12s] This is the idea of geometric return compounding.
+[  403.20s ->   415.16s] This is the idea of volatility drag in action, how it impacts strategies that induce significantly higher volatility in our overall portfolio in the long run.
+[  415.52s ->   419.26s] In other words, you don't get something for nothing, right?
+[  419.26s ->   425.14s] In economics, we have this idea of no free lunch, but I rather say you don't get something for nothing.
+[  425.70s ->   427.48s] You never get something for nothing.
+[  427.66s ->   433.38s] If you want to operate effectively in this space, you need to understand what you're doing.
+[  433.84s ->   436.24s] Most of it is incredibly unsexy.
+[  436.80s ->   440.68s] It's not all about high frequency trading and statistical arbitrage.
+[  441.34s ->   446.32s] Most of it is just math, probability and statistics, finance.
+[  446.32s ->   460.36s] And if you're looking for a role in the industry as a trader, a market maker, a quant, then you need to master your quantitative skills, which is exactly why I built QuantGuild.com.
+[  460.36s ->   468.98s] No fluff, just everything you need to study to work professionally in the financial services industry.
+[  469.22s ->   478.32s] Courses from A to Z in coding, math, probability and statistics, data science, quant research, more on the way.
+[  478.84s ->   481.50s] An adaptive practice engine that scales with your skill level.
+[  481.76s ->   483.56s] Over 90 quant lessons.
+[  483.70s ->   488.42s] We're talking about hundreds and hundreds of hours of content.
+[  488.42s ->   493.16s] And I'm absolutely insane because I put it all together myself.
+[  493.30s ->   496.42s] Every single lecture is me talking to you.
+[  496.60s ->   503.58s] Everything that I've learned from my academic and industry experience, again, cutting out all of the nonsense.
+[  503.58s ->   513.98s] So if you're looking for roles in the financial services industry as a trader, market maker or a quant, master your quantitative skills on QuantGuild.
+[  514.20s ->   516.34s] You don't get something for nothing.
+[  516.34s ->   517.66s] There are no shortcuts.
+[  518.06s ->   521.02s] There's no easy way to go about it.
+[  521.14s ->   524.48s] Same is true in portfolio management.
+[  525.18s ->   532.42s] Let's take a look then at the impact of this volatility drag on the two portfolios.
+[  532.42s ->   541.56s] What we're going to do now is we're going to condition on the bottom 10% of worst paths in each portfolio.
+[  541.88s ->   546.26s] So remember, you don't get to choose which path you walk.
+[  546.26s ->   557.68s] And I want to show you what it means to have exorbitantly high volatility in a portfolio relative to forward looking returns.
+[  557.68s ->   568.40s] If you take a look at the worst 10% paths of just holding a market portfolio, then the average max drawdown is 50%.
+[  568.40s ->   579.20s] So what we're doing is we're conditioning this particular simulation here, just raw market exposure on the bottom 10% of worst paths we could possibly walk.
+[  579.20s ->   590.28s] And on average, we have a 50% drawdown, but a 10% compound average growth rate, compound annual growth rate.
+[  590.28s ->   592.82s] It's an average compound annual growth rate.
+[  593.50s ->   601.42s] When it comes to picking stocks, the bottom 10% average max drawdown is 80%.
+[  601.42s ->   609.84s] So if you happen to walk the bottom 10% of paths in this particular simulation of stock picking, right?
+[  609.92s ->   613.90s] Remember, you don't get to choose which path you walk.
+[  613.90s ->   621.50s] Even if you're the best stock picker in the world, you have beta exposure, you don't get to pick which path you walk.
+[  621.50s ->   636.10s] And if you happen to walk one in the bottom 10%, well, let me tell you, you're going to have an 80% average max drawdown, which means that $100,000, you're losing $80,000 somewhere along the way.
+[  636.10s ->   650.12s] Not to mention that the bottom 10% average compound annual growth rate is negative 1.9%, unlike our positive one when we have lower volatility, right?
+[  650.20s ->   651.94s] We have lower volatility drag.
+[  652.06s ->   658.36s] Subsequently, we have that positive geometric return relative to this simulation on the right.
+[  658.36s ->   665.36s] It's all about volatility drag because everyone is subject to their returns compounding geometrically.
+[  666.10s ->   667.66s] Growth on growth.
+[  669.07s ->   684.85s] Okay, so we take a look at this and I'm effectively showing you because we don't get to choose which path we walk, we need to come up with some sort of portfolio or strategy that's going to give us the best edge in the long run.
+[  684.87s ->   691.45s] We don't want to just bet the house on black because that's effectively what we do when we manage our own portfolios, right?
+[  691.55s ->   692.77s] It's our wealth.
+[  693.43s ->   694.69s] We walk one path.
+[  694.69s ->   699.89s] We don't want to blow out our wealth and have nothing for retirement, so on and so forth.
+[  700.43s ->   704.93s] You could get extremely lucky, extremely lucky, just like at a casino.
+[  705.09s ->   707.61s] You just bet on black, bet on black, bet on black.
+[  707.71s ->   714.11s] And yeah, you could, you know, double, double, double your money or you lose everything, right?
+[  714.17s ->   716.03s] And you're up shits creek without a paddle.
+[  716.17s ->   718.67s] We don't want that state of the world to come around, right?
+[  718.67s ->   738.49s] So let's say, right, after I show you all of this and I say, okay, well, you know, clearly stock picking is like gambling at a casino because the risk metrics, when you take a look, right, you'll just absolutely atrocious states of the world relative to a more conservative strategy.
+[  738.49s ->   744.61s] So given that you don't get to choose which path you walk, it makes sense to choose the more conservative strategy.
+[  744.61s ->   749.23s] But this is where, you know, everyone will be like, oh, you know, I want ephemeral returns.
+[  749.31s ->   750.25s] I want that 30%.
+[  750.25s ->   750.89s] I want this.
+[  750.97s ->   751.53s] I want that.
+[  752.41s ->   755.01s] And to that, I say you don't get something for nothing, right?
+[  755.03s ->   759.99s] If you want to sacrifice your long run portfolio growth for chasing short run returns, that's fine.
+[  759.99s ->   764.65s] But you're going to have to accept that you could face an 80% max drawdown.
+[  765.01s ->   779.01s] Not to mention that if you just want higher compound annual growth, meaning a higher compound annual growth rate, you know, you take a look at these two simulations and you're like, I'm not sold, Roman.
+[  779.17s ->   780.15s] You know, this is terrible.
+[  780.25s ->   780.95s] I'm not sold.
+[  781.39s ->   785.81s] This literally has double the average compound annual growth.
+[  785.91s ->   787.21s] Why would I ever go with this?
+[  787.21s ->   794.37s] I'd rather chase this return profile, even if I'm subject to these violent drawdowns, which I may never recover from.
+[  794.49s ->   797.19s] And to that, I say it doesn't stop here.
+[  797.59s ->   801.07s] This is what your passive wealth manager is going to expose you to.
+[  801.15s ->   809.99s] I'm effectively saying that passive management, all else equals better statistically than just arbitrary stock picking.
+[  811.36s ->   816.94s] Arbitrary stock picking is betting against the house and the house is the S&P 500.
+[  816.94s ->   819.46s] But it doesn't stop there.
+[  819.56s ->   825.08s] I've also talked at length about, I think, passive management is crazy.
+[  825.56s ->   827.04s] It's absolutely crazy.
+[  827.04s ->   833.44s] And I talk about, for a variety of reasons, volatility drag being one of them, just like we talked about herein.
+[  833.86s ->   837.82s] So how do we improve our compound annual growth rate?
+[  837.82s ->   841.46s] Wait, I still want to pick a stock is effectively what you're telling me.
+[  841.50s ->   842.74s] I still want to pick a stock.
+[  842.86s ->   845.50s] It has a higher compound annual growth rate.
+[  845.60s ->   846.74s] Well, check this out.
+[  847.10s ->   859.80s] Now, instead of just holding the S&P 500 on the left, we're going to introduce strategy layers, meaning we have that beta exposure as a primary driver.
+[  859.80s ->   873.12s] But we're also going to introduce different strategy sleeves, like, for example, a hedge sleeve, where when we have a drawdown, we're going to be able to monetize and buy assets cheaper.
+[  873.12s ->   877.97s] And then we're going to be able to improve our overall compound annual growth rate.
+[  878.03s ->   879.27s] That's exactly what you see here.
+[  879.39s ->   888.89s] We've taken the market portfolio on the left, which had much slower growth than stock picking.
+[  888.89s ->   893.35s] And we said, OK, let's introduce a hedge and monetization layer.
+[  893.61s ->   901.93s] Now, what's going to happen is we're going to achieve significantly more performative compound annual growth.
+[  902.11s ->   908.93s] But most importantly, most importantly, look at your 1% value.
+[  909.05s ->   912.21s] You still don't get to choose which path you walk.
+[  912.35s ->   916.99s] But suppose we walked a terrible path on this hedge portfolio.
+[  916.99s ->   937.89s] If we walk a terrible path on this hedge portfolio, the 1% over 10 years still yields a 50% increase in initial principal relative to the 1% in stock picking, which is going to yield a 70% drawdown.
+[  938.05s ->   944.69s] This is the exact strategy that I teach in my four week live class where I show you how to run a personal hedge fund.
+[  944.69s ->   954.21s] We're all triple long, our house, our job, our brokerage accounts, and we never know which direction the wind is going to blow.
+[  954.67s ->   958.49s] That is this idea of passive beta exposure.
+[  958.49s ->   977.23s] So what we need to do is engineer a portfolio for success so that whichever way the wind blows, whichever path we end up walking, we live in a state of the world where not only we can survive, but also thrive.
+[  977.23s ->   982.69s] I'll leave a link in the description below if you'd like to apply to the next cohort.
+[  982.69s ->   993.63s] If nothing else, check out the free quant research article on that page, which discusses exactly the risks that you're exposed to.
+[  993.63s ->  1000.35s] I believe everybody should at least understand what they face when they step up to the plate in the financial markets.
+[ 1000.35s ->  1010.87s] And it also goes into depth mathematically behind this idea of volatility drag and the justification for a long convexity position in a portfolio.
+[ 1011.09s ->  1016.21s] So again, I'll leave a link to that in the description below if you're interested.
+[ 1016.21s ->  1021.33s] And that's going to do it for this video on why stock picking is worse than gambling at a casino.
+[ 1021.51s ->  1022.25s] I hope you enjoyed it.
+[ 1022.25s ->  1023.13s] I hope you learned something.
+[ 1023.25s ->  1025.75s] This video certainly took a tremendous effort to put together.
+[ 1025.87s ->  1030.11s] So if you liked it and you want to see more like it in the future, please like, comment, subscribe, share.
+[ 1030.25s ->  1031.75s] It helps me out tremendously.
+[ 1031.93s ->  1033.59s] It is always greatly appreciated.
+[ 1034.23s ->  1037.99s] Check out quantguild.com to master your quantitative skills.
+[ 1038.37s ->  1044.97s] Other than that, I want to thank you so much for watching and I'll see you in the next video.

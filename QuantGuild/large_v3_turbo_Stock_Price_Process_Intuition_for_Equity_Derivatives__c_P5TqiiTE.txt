@@ -1,0 +1,147 @@
+[    2.45s ->     6.93s] Hey, how's it going, everyone? It's Roman. I'm back. And today I want to talk about equity
+[    6.93s ->    14.67s] derivatives, specifically why we develop the notion of a stock price process and what this
+[   14.67s ->    21.53s] does for us in modeling the price of these particular equity derivatives. Now, the simplest
+[   21.53s ->    27.37s] case is going to be the vanilla, the liquid instruments, ones that are traded all of the
+[   27.37s ->    33.63s] time, the ones that are standardized on exchanges. And that's the example that we're going to use
+[   33.63s ->    40.27s] for this video to develop intuition as to why we want to establish these processes in the first
+[   40.27s ->    45.65s] place. And then we can talk about the implications of these processes and what we can do to improve
+[   45.65s ->    51.47s] them. In this context, when I talk about equity derivatives, I'm talking about options. And for
+[   51.47s ->    56.37s] this particular example, to build our intuition, I'm going to be talking about European options.
+[   56.37s ->    61.89s] Now, if you haven't seen my previous video describing European options in detail, I highly
+[   61.89s ->    66.09s] recommend you check that out. We're going to do a brief crash course here before we start to build
+[   66.09s ->    72.09s] some intuition as to why these stock price processes are useful. Let's go ahead and start with an
+[   72.09s ->    78.17s] example European call option. So a European call option is going to give the holder of the contract
+[   78.17s ->    84.39s] the right but not the obligation to purchase the underlying asset at some time capital T in the
+[   84.39s ->    92.01s] future for a price called the strike price. Now, both of those things at the time the contract is
+[   92.01s ->    98.47s] purchased is known. So those are deterministic factors of the contract. If I go out to an exchange
+[   98.47s ->   103.29s] today, I know what the strike price is that I'm buying the contract at, and I know when that contract
+[  103.29s ->   109.79s] is going to expire. So if we know all these things, then we can go ahead and model the payoff
+[  109.79s ->   115.55s] of the contract at maturity. So what I'm going to do is I'm going to draw a graph to visualize our
+[  115.55s ->   120.93s] payoff. This is essentially how much money we make from this call option, this European call option.
+[  121.43s ->   127.45s] So on the x-axis, we're going to have S of capital T, and S of capital T is going to represent
+[  127.45s ->   135.59s] the stock price, assuming the underlying is a stock, at time capital T. Capital T is just some point
+[  135.59s ->   139.41s] in the future. This could be three months from now. This could be six months from now. This could be a
+[  139.41s ->   144.83s] year from now. It's just to denote the passage of time. This is at some time in the future whenever
+[  144.83s ->   151.83s] this particular contract expires. On the y-axis, we are going to have our payoff, and I'm just going
+[  151.83s ->   157.77s] to denote that P. Okay, great. Now I'm going to denote the strike price. That is the price that we can pay
+[  157.77s ->   166.21s] for the stock at this time capital T, and that is going to be K. And what this means is if we look at
+[  166.21s ->   175.65s] our payoff, this is going to be zero. And if we draw a horizontal line up to K, that is going to denote
+[  175.65s ->   181.45s] the range that we choose not to exercise this option contract, meaning we choose not to purchase
+[  181.45s ->   189.01s] at the strike price. Why is this the case? Well, at time capital T, anything within this region
+[  189.01s ->   199.02s] is going to mean that we can purchase the stock at a lower price just by going into the market and
+[  199.02s ->   205.04s] buying. So that is going to be buying at the spot price at this time capital T. So if that's the case,
+[  205.16s ->   211.26s] we don't want to just go out and pay a higher price for a stock. That's never going to be beneficial
+[  211.26s ->   217.84s] for us. So in this case, if we have that the stock price is less than the strike price and we have a
+[  217.84s ->   224.00s] European call option, we are not going to be exercising. Now in the case that the stock price
+[  224.00s ->   230.88s] at time capital T exceeds the strike price, then we are in fact going to choose to exercise. Not only
+[  230.88s ->   237.82s] that, but we are going to see this linear portion of the chart representing our payoff. And this is the
+[  237.82s ->   243.04s] typical hockey stick diagram that you would see from an elemental securities analysis or derivatives
+[  243.04s ->   250.42s] pricing course at time capital T. This is the payoff function for a European call. And you can just go
+[  250.42s ->   258.22s] ahead and represent this as the maximum between the difference in the stock price at time capital T
+[  258.22s ->   265.80s] less the strike price and zero. Meaning whichever value is greater, we are going to go ahead and pick
+[  265.80s ->   271.12s] that one. And that is the chart that we see right here representing the payoff of this European call
+[  271.12s ->   275.60s] option. Now that we've developed this notion of a payoff function for our European call option,
+[  276.12s ->   281.32s] there are a lot of interesting ways we can go with this. We can talk about long versus short positions.
+[  281.82s ->   287.08s] We could talk about European puts. We could talk about portfolios of options, straddle, strangles,
+[  287.08s ->   293.62s] iron condors. We can talk about these different option strategies, but that is not the sole focus of
+[  293.62s ->   299.02s] this video. The sole focus of this video is to build intuition as to why we want a stock price process
+[  299.02s ->   305.02s] to help us in modeling these equity derivative prices today. And that's going to be the key word
+[  305.02s ->   309.10s] here. So if you're interested in those other topics that I had mentioned, definitely check out my previous
+[  309.10s ->   313.96s] video on European options where I dive more in depth into European puts and calls and long and short
+[  313.96s ->   319.72s] positions, things of that nature. But here we're going to start to build this intuition now as to why we
+[  319.72s ->   326.04s] want a stock price process. To do this, we can simply draw a new chart. So what I want to do down
+[  326.04s ->   332.16s] here is I want to draw another chart. And what I'm going to do is draw a path of a stock price. Now,
+[  332.16s ->   335.48s] this is going to make sense in a moment. So go ahead and bear with me. What I'm going to do is I'm
+[  335.48s ->   343.29s] going to draw on the x-axis, we have time. And on the y-axis, we are going to have the stock price
+[  343.29s ->   351.39s] at a particular time t. Then I'm going to go ahead and draw one possible path that this stock takes
+[  351.39s ->   359.32s] just like that. So what do we have here? We have the underlying asset and how it moves throughout
+[  359.32s ->   366.16s] time. And we have the payoff function of the European call option above. How are these two
+[  366.16s ->   372.82s] things connected? Well, very simply, if we go down here and we mark the time capital T here,
+[  372.82s ->   380.90s] we can see at time capital T, we are going to have the right, but not the obligation to exercise
+[  380.90s ->   387.82s] that European call option. But what are we going to be exercising at? We're going to be exercising at
+[  387.82s ->   393.06s] the price K. So what I'm going to do now is I'm going to draw a horizontal line to represent the price
+[  393.06s ->   405.63s] K. And as you can see in this example, the stock price at time capital T is greater
+[  405.63s ->   417.78s] than K, meaning that the max of S sub capital T and K is going to be different and greater than zero.
+[  417.92s ->   424.68s] So this is where everything starts to come together. These two charts are linked by the stock price
+[  424.68s ->   432.30s] at time capital T. Now, what is the problem with that? Well, if you look at both of these charts,
+[  432.30s ->   440.28s] we are modeling this connection based on the stock price at time capital T right here.
+[  440.70s ->   447.40s] What's the problem with that? Well, we're not at time capital T. We are in fact at time zero or
+[  447.40s ->   455.11s] contemporaneous time right here. We are living in the present moment, baby. We do not know what the
+[  455.11s ->   462.65s] stock price is at time capital T. To put it in other words, nobody. Okay, if you're Warren Buffett or
+[  462.65s ->   467.85s] if you're Jimmy Buffett, nobody knows if the stock is going to go up, down sideways or in fucking
+[  467.85s ->   472.83s] circles, at least of all stockbrokers. Couldn't have said it much better myself. That is exactly
+[  472.83s ->   479.53s] why we want to develop this notion of a stock price process because we are at time zero. We are at
+[  479.53s ->   486.05s] time zero. We don't know this is the path that the stock price is going to take and we're going to
+[  486.05s ->   491.97s] end up here. That's what a stock price process is going to enable us to do by making a whole bunch
+[  491.97s ->   499.03s] of different assumptions about how the stock price behaves. We can go ahead and create a distribution
+[  499.03s ->   505.13s] of stock prices at time capital T. So we are going to have maybe one path that looks like
+[  505.13s ->   512.24s] this. Maybe we have another path that looks like this. Maybe we have a path that looks like this.
+[  512.74s ->   518.60s] Maybe we have a path that looks like this and so on and so forth. And we are going to get a
+[  518.60s ->   530.64s] distribution of stock prices at time capital T. And this distribution of stock prices is exactly what
+[  530.64s ->   541.50s] we are going to use to help us in determining what we should pay for the potential to realize some sort
+[  541.50s ->   549.68s] of payoff at time capital T based on the information available to us today at time zero. Okay, so we need
+[  549.68s ->   554.10s] a stock price process so that we can model this distribution of the stock price at time capital T
+[  554.10s ->   561.12s] to help us price our European call option today. But what stock price process should we choose?
+[  561.60s ->   566.78s] Should we choose an arithmetic Brownian motion, a geometric Brownian motion? Should we use a local
+[  566.78s ->   572.44s] volatility model? Should we use a Heston model? Should we use a Bergami model? Should we start to
+[  572.44s ->   578.52s] get into the rough model family? Should we look at a rough Bergami model? How should we actually develop
+[  578.52s ->   586.00s] the notion of our pricing functional? Should we use maybe Monte Carlo simulations? How do we solve this
+[  586.00s ->   591.88s] pricing problem? Well, these are all very complicated and very important topics to discuss.
+[  592.34s ->   596.60s] In fact, if you start to look at more of the current streams of research in the literature,
+[  597.22s ->   604.54s] the employment of neural networks and machine learning algorithms isn't to improve on the financial
+[  604.54s ->   610.58s] mathematics literature in the context of effectiveness, but rather efficiency, which I find
+[  610.58s ->   615.76s] to be incredibly interesting. And if you're interested in that topic, check out my video on deep learning
+[  615.76s ->   621.76s] rough volatility, where we look at exactly that the increase in efficiency for calibration and pricing
+[  621.76s ->   630.94s] of a rough Bergami model using a deep neural network. But that's all beyond the scope of this video
+[  630.94s ->   636.60s] beyond the point of this video. We've just developed this notion of the necessity of a stock price
+[  636.60s ->   641.58s] process. So what I want to do is kind of leave you with two processes. The first one is an arithmetic
+[  641.58s ->   646.92s] Brownian motion. The second one is a geometric Brownian motion, both of which I have solutions to
+[  646.92s ->   651.94s] on this channel. You can go ahead and check those out. But I want to talk briefly about both and sort of
+[  651.94s ->   657.76s] why the geometric is an improvement from an arithmetic in the context of the assumptions.
+[  657.76s ->   662.98s] Rewind some 123 years ago, and you'll find the father of financial mathematics toying around
+[  662.98s ->   668.18s] with an arithmetic Brownian motion to develop what we know today as the Bachelier model.
+[  668.38s ->   673.60s] That is, if we assume that this stock price process, this distribution here is governed by an
+[  673.60s ->   680.22s] arithmetic Brownian motion, we can go ahead and develop the pricing function at time zero, not the
+[  680.22s ->   686.12s] payoff function at time capital T that we see here, but rather the price that we should pay today for
+[  686.12s ->   694.41s] that call option using an arithmetic Brownian motion, Louis-Bachley 1900. This is the arithmetic Brownian
+[  694.41s ->   700.61s] motion for a model of the stock price process. And what does that look like? Well, we have an ABM,
+[  701.76s ->   713.18s] arithmetic Brownian motion, dx t is equal to mu dt plus sigma, dwt with wt is a standard Brownian motion.
+[  713.18s ->   722.18s] This is a continuous time representation. Perhaps it's driftless. And we have dx t is equal to sigma dwt,
+[  722.18s ->   730.18s] where the solution is quite simply found by integration. And we have this idea of some bounds,
+[  730.18s ->   740.18s] perhaps we have zero to capital T. And this is our process. This is our distribution at time capital T.
+[  740.18s ->   749.48s] If we were to integrate using these bounds, we would find x sub cap T less x sub zero is equal to sigma
+[  749.48s ->   760.48s] times w cap T less w of zero. And that can just be found by doing the telescoping sum argument where w of
+[  760.48s ->   770.16s] zero is typically defined as zero. We end up with this idea that x sub T is equal to x sub zero plus
+[  770.18s ->   779.48s] sigma times w sub cap T, where w sub cap T is a standard Brownian motion. Okay, so now we have a stock
+[  779.48s ->   784.48s] price process governed by a stochastic differential equation. We have a solution to that stochastic
+[  784.48s ->   790.04s] differential equation. We have the original stochastic differential equations here and the
+[  790.04s ->   795.38s] solution here. And this is going to give us that distribution of stock prices at time capital T. Now,
+[  795.38s ->   801.68s] we still need to go ahead and develop the notion of the pricing function for the European call or put
+[  801.68s ->   806.48s] option. And it turns out we can do that in close form with the arithmetic Brownian motion. We can also do
+[  806.48s ->   812.68s] it in close form with a geometric Brownian motion. And we have the FFT pricing for a Heston stochastic
+[  812.68s ->   817.68s] volatility model as well if you want to get a little more complex and talk about fitting skews and so on and so forth.
+[  817.68s ->   823.88s] But once again, beyond the scope of this video, we're going to talk about ABM arithmetic Brownian motion and the
+[  823.88s ->   830.28s] downfalls of it and the improvements made by geometric Brownian motion. And then we're going to go ahead and wrap up this
+[  830.28s ->   836.28s] video. If you're interested in deriving the pricing equation, you can go ahead and check out my previous video how to
+[  836.28s ->   841.78s] derive the Black-Scholes Merton partial differential equation, where we go ahead and assume a geometric Brownian motion,
+[  841.78s ->   847.78s] use it to Zlama and construct a Hegg's portfolio. And we go through the entire pricing argument. But here,
+[  847.78s ->   853.78s] let's go ahead and switch gears and talk about geometric Brownian motion. Okay, so why geometric Brownian motion and not an
+[  853.78s ->   859.78s] arithmetic Brownian motion? Well, simply put, arithmetic Brownian motion can generate negative asset prices, which can cause some
+[  859.78s ->   867.78s] issues in modeling our stocks as stocks cannot be negative. Now, we have seen some cases where assets can be negative, and a
+[  867.78s ->   875.78s] Bachelet model may be appropriate, or maybe a displaced model is more appropriate, which is most likely the case.
+[  875.78s ->   881.78s] Nevertheless, we're going to talk about a geometric Brownian motion, which generates asset prices that cannot be negative.
+[  881.78s ->   889.78s] So if we scroll down here, I'm going to go ahead and write a GBM. And this GBM, geometric Brownian motion, is governed by a
+[  889.78s ->   899.78s] stochastic differential equation, dxt over xt is equal to mu dt plus sigma dwt.
+[  899.78s ->   909.78s] Typically, this may be written as dxt is equal to mu xt dt plus sigma xt dwt.
+[  909.78s ->   915.78s] Now, I am not going to solve this one, because I've already solved this on my channel, and I don't want to break out E to Zlama,
+[  915.78s ->   919.78s] and I don't want to do a log transformation, and I'm not interested in doing that right now.
+[  919.78s ->   923.78s] So if you are interested in checking that out, check out my other video. I saw this. I have a whole write-up
+[  923.78s ->   929.78s] in LaTeX that you can check out. But this is the price process, the stock price process for a geometric Brownian motion.
+[  929.78s ->   935.78s] And this is the stock price process that we use to find the Black-Scholes Merton partial differential equation,
+[  935.78s ->   942.78s] and eventually the pricing function for European call and put options, the infamous Black-Scholes model.
+[  942.78s ->   949.78s] I want to thank you so much for watching this video. If you would like to support the channel, go ahead, leave a like, subscribe, join Discord,
+[  949.78s ->   954.78s] check out our courses on Quant Guild. If you'd like to, you can even join our Patreon.
+[  954.78s ->   961.78s] And if you have any comments, suggestions, questions, feel free to drop a comment, head to Discord.
+[  961.78s ->   966.78s] We have some interesting conversations there, even about current literature topics.
+[  966.78s ->   973.78s] If you have any more specific questions in terms of pricing, definitely reach out to me, always happy to discuss.
+[  973.78s ->   976.78s] Other than that, I'll see you in the next one.

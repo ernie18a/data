@@ -1,0 +1,129 @@
+[    0.00s ->     4.68s] Hey guys, what's up? It's AB Trades and I run a YouTube channel where I teach people how to day trade options.
+[    5.04s ->    13.20s] Today I want to talk about how I find new stocks to trade, stocks that have liquid options and that have great setups.
+[   13.84s ->    22.64s] I didn't even think about ever making a video on this or talking about it or discussing it until I was doing it just now.
+[   22.64s ->    30.08s] I was looking for stocks this way and I realized that this may be an arbitrary, weird way to find stocks, but I wanted to show y'all.
+[   30.46s ->    42.34s] So because we're trading on the ETF SPY, the S&P 500 index, I thought that came to me a while back was why not just look through all the tickers, all the stocks in the S&P 500 index.
+[   42.82s ->    47.66s] Well, there's a lot of those, so I'm not going to do that.
+[   47.92s ->    51.70s] However, TD Ameritrade makes it a lot easier for us to do that.
+[   51.70s ->    63.80s] So when you put up a watch list on TD Ameritrade, you can go in and you can click on public and you can go down to this one and go on the S&P 500 index.
+[   63.94s ->    67.10s] Okay, and then you go in and you adjust net change.
+[   67.50s ->    74.14s] You may need to add net change by going to the settings and doing a customized, but make sure you have net change.
+[   74.68s ->    77.80s] Why? Very explicit, self-explanatory.
+[   77.80s ->    81.26s] You adjust net change.
+[   82.00s ->    84.60s] Okay, if you want something that doesn't change, you don't want that.
+[   84.68s ->    85.62s] You want a stock that moves.
+[   85.94s ->    89.24s] You want to see a stock that either went to the moon or went down.
+[   89.38s ->    90.32s] And again, not to the moon.
+[   90.40s ->    90.96s] These are SBI.
+[   91.20s ->    92.14s] These aren't penny stocks.
+[   92.90s ->    97.96s] But still, look, if we go to the ones that have, oops, my bad.
+[   97.96s ->   103.50s] But if we use net net change to see which stocks have increased the most or decreased the most, and that's how we can do it.
+[  103.50s ->   108.44s] But let's start with the ones that have decreased the most because today was a red day.
+[  108.88s ->   111.96s] So I started there, and then I just started going through the stocks.
+[  112.06s ->   114.46s] And I was like, does this have a good setup?
+[  114.64s ->   114.90s] Yes.
+[  115.02s ->   118.14s] Is it in my options watch list that I watched for?
+[  118.24s ->   118.80s] Yes, it is.
+[  119.18s ->   120.38s] And I just keep going through.
+[  120.50s ->   120.98s] B&J.
+[  121.52s ->   122.44s] I don't like the setup.
+[  122.58s ->   123.38s] Look, it's too spread out.
+[  123.44s ->   124.26s] There's not enough volume.
+[  124.60s ->   124.94s] Next.
+[  125.64s ->   125.92s] Google.
+[  126.22s ->   127.14s] Yes, obviously.
+[  127.36s ->   127.54s] Google.
+[  127.70s ->   128.40s] Yes, obviously.
+[  129.16s ->   129.68s] ISFN.
+[  129.76s ->   130.26s] Good setup.
+[  130.96s ->   132.70s] Maybe not the best for me.
+[  132.70s ->   134.58s] Ooh, I like this setup.
+[  134.94s ->   135.38s] BlackRock.
+[  135.52s ->   136.42s] Go to the trade.
+[  137.26s ->   137.90s] Look here.
+[  138.86s ->   140.48s] No volume whatsoever.
+[  140.78s ->   141.18s] Skip.
+[  141.30s ->   142.66s] You move on to the next stock.
+[  143.02s ->   143.74s] You go down.
+[  144.02s ->   155.28s] And if you're wondering how I'm able to click the down arrow and continue to the next stock, that is because, if I drag this out more, I have this linked on one and this linked on one.
+[  155.28s ->   159.10s] So that wherever my arrow clicks, it goes on as well.
+[  159.10s ->   162.72s] So BA, obviously, I've done that.
+[  163.34s ->   164.06s] Do, do, do, do.
+[  164.36s ->   165.70s] No, not enough volume.
+[  166.12s ->   167.14s] Not enough volume.
+[  167.48s ->   168.54s] But then, like, you'll get to a good one.
+[  168.62s ->   170.22s] It's like, oh, this looks like a great stock.
+[  170.76s ->   172.34s] Then you go on to the trade.
+[  172.52s ->   178.63s] And you go, uh, option volume is decent, I guess, but not something that I want to handle.
+[  178.63s ->   181.85s] So then you just keep, keep going, keep going, keep going.
+[  181.97s ->   187.79s] I mean, I know this sounds weird and, like, like, this is a weird way of trying to find stocks.
+[  187.87s ->   188.73s] But really, it works well.
+[  188.81s ->   190.07s] I found amazing stocks.
+[  190.13s ->   194.05s] Like, I want to show you one that I just found where I'm like, why haven't I been trading this before?
+[  194.05s ->   196.99s] Or, um, let's see if I can get to it.
+[  197.99s ->   204.93s] Oh, this is what I found, BRK slash V, which is Brookshire Half Hathaway Class B Stock.
+[  205.65s ->   208.82s] Um, don't feel like, can't you guys just see this?
+[  209.12s ->   209.84s] Look at the setup.
+[  209.94s ->   211.76s] It clearly respects VWAP.
+[  212.08s ->   215.56s] It clearly respects support and resistance line from previous days.
+[  215.56s ->   217.32s] And it trades well.
+[  217.66s ->   219.08s] So I was like, wow, look at this.
+[  219.44s ->   221.40s] A decent amount of volume.
+[  221.70s ->   222.82s] It trades well.
+[  223.14s ->   224.12s] I go to the trading.
+[  224.50s ->   226.00s] Look, the volume.
+[  226.80s ->   228.62s] And the hundreds on multiple.
+[  228.78s ->   230.72s] And the thousands and hundreds on multiple.
+[  231.18s ->   232.62s] I can trade this, right?
+[  233.30s ->   235.46s] Um, so I added this to my list.
+[  236.14s ->   237.28s] And let's see.
+[  237.84s ->   240.96s] I want to show you all one more than I found, even though I could just tell you all.
+[  241.34s ->   242.56s] I want to show you all how fun it is.
+[  242.56s ->   245.84s] So you just, again, weird things like this excite me.
+[  245.90s ->   248.58s] I just love going through the stocks and being like, wow, look at that.
+[  248.68s ->   252.18s] Like, ooh, that looks good, but not enough options volume.
+[  252.18s ->   254.00s] And I'm just, I'm not just saying that.
+[  254.08s ->   255.32s] I actually mean it because that's the truth.
+[  256.68s ->   258.36s] I'm a Vago Cat.
+[  258.52s ->   259.82s] Cat was, look at Cat.
+[  260.18s ->   261.48s] This is a great stock, right?
+[  261.56s ->   262.64s] Look, it just moves well.
+[  262.80s ->   264.24s] There's enough volume.
+[  264.34s ->   265.76s] And the options volume is there as well.
+[  266.10s ->   267.08s] And you just keep going through.
+[  267.24s ->   269.20s] And I haven't made it past Cat yet.
+[  269.24s ->   270.38s] So these are all new stocks.
+[  270.38s ->   273.32s] But again, this is another way to look for stocks.
+[  273.78s ->   279.46s] Again, this is, I'm sure, someone who knows about searching through the F&B 500 index for
+[  279.46s ->   283.90s] stocks to trade is probably making you pay money for that.
+[  284.12s ->   287.08s] Again, guys, I'm not saying that I am the guru.
+[  287.24s ->   287.96s] I know everything.
+[  288.10s ->   290.24s] I'm just saying I'm trying to share everything I know for free.
+[  290.36s ->   292.72s] So please, like, comment, and subscribe.
+[  293.30s ->   294.00s] And do this.
+[  294.16s ->   294.64s] It's fun.
+[  294.90s ->   295.22s] Trust me.
+[  295.26s ->   295.72s] It is fun.
+[  295.92s ->   296.90s] Ooh, like, look at this.
+[  296.98s ->   297.28s] Wealthcare.
+[  297.90s ->   300.02s] Anyways, see y'all in the next video.
+[  300.02s ->   300.12s] See y'all in the next video.
+[  300.12s ->   300.64s] See y'all in the next video.
+[  300.64s ->   300.66s] See y'all in the next video.
+[  300.66s ->   301.02s] See y'all in the next video.
+[  301.02s ->   301.04s] See y'all in the next video.
+[  301.04s ->   301.26s] See y'all in the next video.
+[  301.26s ->   301.28s] See y'all in the next video.
+[  301.28s ->   301.30s] See y'all in the next video.
+[  301.30s ->   301.36s] See y'all in the next video.
+[  301.36s ->   301.90s] See y'all in the next video.
+[  301.90s ->   302.40s] See y'all in the next video.
+[  302.40s ->   302.90s] See y'all in the next video.
+[  302.90s ->   303.40s] See y'all in the next video.
+[  303.40s ->   304.40s] See y'all in the next video.
+[  304.40s ->   305.40s] See y'all in the next video.
+[  305.40s ->   306.40s] See y'all in the next video.
+[  306.40s ->   307.40s] See y'all in the next video.
+[  307.40s ->   308.40s] See y'all in the next video.
+[  308.40s ->   309.40s] See y'all in the next video.
+[  309.40s ->   310.40s] See y'all in the next video.

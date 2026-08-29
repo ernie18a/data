@@ -1,0 +1,28 @@
+[    0.00s ->     4.12s] This short video I'm going to walk you through how to exit a credit spread trade on the Robinhood
+[    4.12s ->     9.34s] platform. This is going to work on both the browser and mobile app platform. So if we come here you
+[    9.34s ->    14.72s] can see if you have a current credit spread trade open you will see that on your dashboard. You can
+[   14.72s ->    19.14s] visit the dashboard by clicking on the logo and seeing the dashboard and seeing what all is going
+[   19.14s ->    23.62s] on with your portfolio and also here in your positions section where if you have stock it'll
+[   23.62s ->    27.62s] show stock first and then typically options later. You have options right here you can see I have a
+[   27.62s ->    33.18s] TLC 102 101 put spread put put credit spread on right here. Let's say I want to close this I'm
+[   33.18s ->    39.20s] going to click on this trade. This trade is going to show me what my return is what my credit is what
+[   39.20s ->    44.48s] the market value is and what happened when I bought it. You can see here the expiration the expiration
+[   44.48s ->    51.04s] is 428. I own two credit to put credit spreads my break even price where I'm going to make money
+[   51.04s ->    56.60s] until it hits this price and then I have my average credit. What did I sell this credit spread for
+[   56.60s ->    61.78s] versus what is it trading at now which you can see right here is going to be your max cost or
+[   61.78s ->    67.84s] right here as well 0.14. So I bought it at 0.17 currently trading at 0.14 so I've made three
+[   67.84s ->    73.70s] cents per spread and I have two spreads so that's how I get the six dollars here. Anyways how do I
+[   73.70s ->    79.22s] exit this trade? Well now since I'm on this all I need to do is click on here and click on either open
+[   79.22s ->    84.58s] which it already is but by default I want to close this trade. So I simply just click close. I put in the
+[   84.58s ->    89.76s] number of contracts that I want to get rid of so I have two contracts so let's say two. The price I
+[   89.76s ->    96.34s] want to sell it at it's currently trading at 1.4 so we'll just do 0.14 as well and then we can say
+[   96.34s ->   101.52s] how long we want this trade to be on for good till cancel or good for the day and then I simply click
+[  101.52s ->   107.22s] review and exit the trade. That's how simple this is to exit. Now if you want to exit individually you
+[  107.22s ->   112.60s] can click into the individual option and then sell that as it is but again it's very hard to sell
+[  112.60s ->   118.12s] something by itself when you have them wrapped together in a credit spread because you don't
+[  118.12s ->   123.20s] want to have just be left with the single sell option. Robinhood as an example won't let you do
+[  123.20s ->   127.94s] that. So Robinhood is super easy to close the position you just go to the position just one
+[  127.94s ->   134.46s] recap you click on where you want to sell that and done you are you have sold your position given you
+[  134.46s ->   140.18s] gave a fair price. So anyways guys that is how you sell your credit spread position on Robinhood it's
+[  140.18s ->   144.28s] very simple nothing too complex to it but if you have any questions feel free to leave a comment
+[  144.28s ->   147.30s] down below and I'll make sure to answer as many as I can. See you in the next video.

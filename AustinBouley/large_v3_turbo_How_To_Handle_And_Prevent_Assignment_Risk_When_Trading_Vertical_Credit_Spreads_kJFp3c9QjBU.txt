@@ -1,0 +1,145 @@
+[    0.21s ->     3.61s] In this video, I want to walk through a question that I saw on Reddit.
+[    3.73s ->     7.39s] This was from two years ago, but walking through this will help you become a better credit
+[    7.39s ->     7.99s] spread trader.
+[    8.33s ->    13.07s] As you think about what should I do if the worst case happens, what if one of my stocks
+[   13.07s ->    15.93s] or contracts are assigned, what exactly do I do?
+[   16.01s ->    19.11s] So I'm going to walk you through this question and how you should handle it.
+[   19.41s ->    21.65s] Okay, so first off, let's read the question.
+[   22.13s ->    23.49s] Put credit spreads help, please.
+[   23.55s ->    26.33s] Can someone help me understand what's going on with my put credit spread?
+[   26.33s ->    30.47s] I bought six at $3.85 and sold six at $3.90.
+[   30.89s ->    32.99s] The contracts expire on $11.26.
+[   33.55s ->    35.25s] Beginning stock price was $2.72.
+[   35.49s ->    36.55s] Current price is $3.05.
+[   37.07s ->    40.85s] Two of the contracts were assigned last night and I was wondering what this means for me.
+[   41.15s ->    43.43s] What are my options for the two that were assigned?
+[   43.77s ->    48.41s] I'm trading on Robinhood and it looks like the other leg is pending exercise, but I didn't
+[   48.41s ->    49.19s] place this order.
+[   49.59s ->    53.43s] Also, what should I do with the remaining four contracts if I expect the stock price to continue
+[   53.43s ->    54.73s] rising on Friday?
+[   54.87s ->    55.49s] Thanks in advance.
+[   55.49s ->    57.49s] All right, let's walk through what is happening here.
+[   57.61s ->    59.51s] So step one, let's look at the stock price.
+[   59.63s ->    62.13s] So we're starting off at $2.72.
+[   62.49s ->    66.97s] So this is, well, that's not the best stop, but $2.72 is where we're starting.
+[   67.31s ->    68.89s] Stock does some stuff, whatever.
+[   69.25s ->    72.91s] We're now trading at $3.05.
+[   73.67s ->    75.75s] Okay, so the stock has gone up a bit.
+[   76.05s ->    78.07s] Now let's talk about where is our put credit spread?
+[   78.53s ->    81.13s] All right, well, sold at $3.90.
+[   82.18s ->    84.34s] Okay, so we sold at $3.90.
+[   84.80s ->    85.74s] So let's see here.
+[   85.84s ->    88.34s] We sold, it's currently beginning stock price at $2.99.
+[   88.76s ->    89.60s] Sold at $3.90.
+[   90.36s ->    93.16s] So $3.90 is way up here.
+[   97.27s ->    99.49s] And then bought some at $3.85.
+[  103.34s ->   105.22s] All right, so this is the put credit spread.
+[  105.76s ->   107.56s] This is the stock's trading price.
+[  107.92s ->   108.98s] This is what's going on.
+[  109.34s ->   109.90s] All right, cool.
+[  110.16s ->   111.24s] So now we're doing this.
+[  111.34s ->   113.04s] The contracts were signed, blah, blah, blah, blah.
+[  113.24s ->   115.88s] Now, let's look at this situation right here.
+[  115.94s ->   118.44s] We have the stock trading here, and we have the credit spread set up here.
+[  118.86s ->   122.68s] All right, so first off, this person must be very new to trading put credit spreads
+[  122.68s ->   123.96s] because let's walk through how this works.
+[  124.34s ->   128.70s] A put credit spread is essentially a bet that a stock price will stay above a certain level.
+[  128.70s ->   132.94s] It looks like, in the way this is set up, they're setting up a call credit spread
+[  132.94s ->   135.34s] where they're wanting the stock to stay below a certain level.
+[  135.44s ->   135.60s] Why?
+[  135.82s ->   137.96s] The level is here, and the stock is trading here.
+[  138.36s ->   142.30s] So that means that this put credit spread is by default losing money.
+[  142.68s ->   143.08s] Why?
+[  143.36s ->   149.02s] Well, because it's never going to go up above this level unless something dramatic happens,
+[  149.08s ->   149.20s] right?
+[  149.24s ->   157.52s] It's currently trading at $3.05, and it needs to get above $3.90 in order for it to make money.
+[  157.52s ->   160.16s] So it needs to go from here all the way up to here to make money.
+[  160.34s ->   161.46s] Well, more here to make money.
+[  161.84s ->   165.02s] And so, again, the likelihood of this trade making money is super unlikely.
+[  165.48s ->   167.16s] So, again, that's probably not going to happen.
+[  167.26s ->   169.80s] So, first off, the put credit spread was placed way too high.
+[  170.22s ->   173.86s] This whole thing, if I can move it, should be placed lower.
+[  174.48s ->   175.10s] Let's see if I can do this.
+[  175.44s ->   179.38s] Should be placed around here, especially if they took the trade at $2.72.
+[  180.08s ->   183.42s] The, this, I can move this now, should be placed here.
+[  183.48s ->   186.60s] The put credit spread trade should be placed around this level.
+[  186.60s ->   188.04s] Whoa, never done this before.
+[  188.52s ->   189.94s] Okay, highlight all these.
+[  190.42s ->   195.80s] This trade, or this put credit spread, should be placed below the current stock price, thus
+[  195.80s ->   200.06s] giving it room to move and to continue higher in order for this trade to make money.
+[  200.46s ->   203.86s] However, let's talk about the situation of getting assigned.
+[  204.06s ->   205.72s] What should you do if you get assigned?
+[  205.98s ->   211.64s] Okay, well, first off, this put credit spread was way above this level, so of course it got
+[  211.64s ->   212.46s] assigned, right?
+[  212.80s ->   217.40s] That means that they could sell the contracts early or take or assign them early and be able
+[  217.40s ->   218.22s] to do what they want.
+[  218.48s ->   225.70s] What happens is sell or contracts that you sold are susceptible to being assigned early.
+[  226.04s ->   227.88s] Highly unlikely with put credit spreads.
+[  228.04s ->   233.80s] More likely with call credit spreads if you're in the money near your dividend, your ex-dividend
+[  233.80s ->   235.34s] date, but still likely.
+[  235.34s ->   239.68s] So what happens is a sold one is likely to be assigned, which means you have to give them
+[  239.68s ->   240.42s] 100 shares.
+[  240.84s ->   246.94s] Now, what happens here in this situation, why the bought one was showing pending was because
+[  246.94s ->   253.84s] when you get this, when they're both in the money, then they both can be assigned.
+[  254.30s ->   261.38s] And so the person who you sold the $3.92 decided to claim their options or claim the shares.
+[  261.66s ->   263.56s] So you have to give up 100 shares.
+[  263.56s ->   269.40s] And then Robinhood thought, well, this option contract is also in the money, so we can claim
+[  269.40s ->   269.62s] that.
+[  269.76s ->   270.80s] We can assign it ourselves.
+[  270.98s ->   271.82s] So we're giving up.
+[  272.38s ->   278.00s] So essentially what happened here is because this was assigned, you gave up 100 shares or
+[  278.00s ->   280.78s] had to give them 100 shares.
+[  280.96s ->   283.42s] So there's a plus 100 shares, just like that.
+[  284.68s ->   289.32s] Now the $385, actually this is put, it's minus 100, minus 100.
+[  289.32s ->   296.36s] Now the $385, what happened is they were trying to get it assigned so that you could then become
+[  296.36s ->   302.38s] a positive 100 and thus balance each other out and be zero and experience the max loss
+[  302.38s ->   303.90s] on this instead of having to hold shares.
+[  303.96s ->   306.00s] Because as a credit spread trader, you don't really want to hold shares.
+[  306.00s ->   312.68s] Okay, so that's kind of why Robinhood took that approach with pending exercise, which is what
+[  312.68s ->   313.26s] you see here.
+[  313.84s ->   316.48s] But what do we do if one of our things gets assigned?
+[  316.66s ->   320.62s] Well, simply what we do is we try to sell the other contract as quickly as possible and
+[  320.62s ->   322.44s] sell the other shares as quickly as possible.
+[  322.82s ->   327.62s] Now again, you have to remember, your risk of assignment when a credit spread contract is
+[  327.62s ->   331.98s] out of the money, which means when the stock is above your put credit spread price, is
+[  331.98s ->   332.86s] 0%.
+[  332.86s ->   333.22s] Why?
+[  333.40s ->   334.70s] Or I should say 1%.
+[  334.70s ->   338.08s] Because there is a chance they can, but they're going to lose so much money that no one ever
+[  338.08s ->   338.38s] does.
+[  338.70s ->   342.44s] So if it's out of the money, you are completely safe on early assignment.
+[  342.56s ->   344.26s] You're also safe on letting that credit spread expire.
+[  344.56s ->   348.16s] If it's in the money, that's when you start to have risk and reasons why you should start
+[  348.16s ->   349.54s] taking trades off the table.
+[  349.96s ->   351.92s] So anyways, I hope I was able to explain this well.
+[  351.92s ->   358.14s] Number one, the biggest point is put credit spread should be below the stock price.
+[  358.58s ->   361.72s] Again, that is hopefully everyone knows that.
+[  362.18s ->   364.86s] Two, your risk increases.
+[  365.10s ->   367.88s] So risk goes up when you're in the money.
+[  368.84s ->   371.60s] So again, when you're in the money, that's when you need to monitor things.
+[  372.30s ->   377.34s] Number three, our last point here that we're going to make, make sure that you fully understand
+[  377.34s ->   381.00s] what's going on with shares and prices and all that stuff.
+[  381.00s ->   385.34s] But what you need to do, and like they're saying here, is they expect the stock price
+[  385.34s ->   386.40s] to continue to rise.
+[  386.72s ->   387.86s] You need to have an edge.
+[  387.94s ->   390.44s] You need to have an understanding where you expect the stock to go.
+[  391.08s ->   392.84s] Have a direction.
+[  393.30s ->   395.16s] So again, you can use indicators.
+[  395.46s ->   396.68s] You can use price action.
+[  396.80s ->   397.42s] You can use whatever.
+[  397.74s ->   399.64s] But have a clear direction to make money.
+[  399.72s ->   400.90s] You can see here the stock went up.
+[  400.96s ->   403.92s] And they thought it was going to go up and continue up.
+[  404.18s ->   405.40s] They just set up the trade wrong.
+[  405.66s ->   410.50s] If you have an idea of where the stock is going and you place a correct credit spread, for instance,
+[  410.50s ->   414.98s] put in a bullish market and calls in a bearish market, then you're going to bump up your
+[  414.98s ->   419.80s] theoretical win rate, win a lot more, and be able to become a profitable credit spread
+[  419.80s ->   420.10s] trader.
+[  420.46s ->   422.54s] All right, I hope walking through this kind of helped.
+[  422.62s ->   426.12s] I know this trade was a bit all over the place, and this was from two years ago.
+[  426.28s ->   429.72s] But I did just want to kind of give some context and do some advice for someone who's going
+[  429.72s ->   432.14s] through a tricky situation with their credit spreads right now.
+[  432.48s ->   436.04s] All right, guys, if you want to learn more, make sure to click the link down below to grab
+[  436.04s ->   440.20s] my free credit spreads trading handbook that will walk you through entry requirements,
+[  440.36s ->   442.84s] exit requirements, strategies, and so much more, all for free.
+[  443.10s ->   445.88s] All right, guys, smash that subscribe button, and I'll see you in the next video.

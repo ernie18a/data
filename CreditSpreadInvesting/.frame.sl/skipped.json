@@ -1,0 +1,56 @@
+[
+  {
+    "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:4",
+    "source_logic_id": "read51_l004",
+    "category": "non_strategy",
+    "reason": "這只有標的成交量與隱含波動率的候選標的篩選，沒有獨立的價格進場觸發或部位方向；而 IV 與選擇權成交量也不在 Frame 的 OHLCV/amount 資料中，不能任意以 ATR、標的成交量或其他指標替代。"
+  },
+  {
+    "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:6",
+    "source_logic_id": "read51_l006",
+    "category": "options_unobservable",
+    "reason": "信用價差進場核心要求 30–45 DTE、70%–75% POP 及可用最窄履約價間距；Frame 沒有期權鏈、DTE、POP、履約價或期權價格，不能以標的價格指標捏造這些進場條件。"
+  },
+  {
+    "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:8",
+    "source_logic_id": "read51_l008",
+    "category": "options_unobservable",
+    "reason": "唯一進場觸發是信用價差 POP=82%，而 POP 是期權模型／期權鏈資料；Frame 沒有 POP、履約價或期權價格，不能任意改用價格、均線或其他指標建立替代進場。"
+  },
+  {
+    "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:11",
+    "source_logic_id": "read51_l011",
+    "category": "options_unobservable",
+    "reason": "賣出賣權的核心進場同時依賴 IV>30%、選擇權成交量、30–45 DTE、POP 70%–80% 及權利金／最大抵押品報酬率；Frame 沒有 IV、期權成交量、DTE、POP 或期權權利金，不能用任意現貨訊號替代。"
+  },
+  {
+    "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:14",
+    "source_logic_id": "read51_l014",
+    "category": "options_unobservable",
+    "reason": "賣出認沽期權進場核心依賴 IV>30%、選擇權成交量、30–40 DTE 與 POP 70%–80%；這些 IV、期權量、DTE、POP 均不在 Frame 可觀測資料，不能任意改成標的價格或波動指標。"
+  },
+  {
+    "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:16",
+    "source_logic_id": "read51_l016",
+    "category": "options_unobservable",
+    "reason": "put 信用價差進場要求 IV 30%–55%、期權成交量、30–40 DTE、POP 或 Delta 70%–80%，並需依現價選擇最窄履約價寬度；Frame 沒有 IV、期權量、DTE、POP、Delta、履約價或期權價格，不能任意以現貨指標代換。"
+  },
+  {
+    "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:17",
+    "source_logic_id": "read51_l017",
+    "category": "options_unobservable",
+    "reason": "call 信用價差進場要求 IV 30%–55%、期權成交量、30–40 DTE、POP 或 Delta 70%–80%，並需依現價選擇最窄履約價寬度；Frame 沒有 IV、期權量、DTE、POP、Delta、履約價或期權價格，不能任意以現貨指標代換。"
+  },
+  {
+    "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:25",
+    "source_logic_id": "read51_l025",
+    "category": "non_strategy",
+    "reason": "這只描述下跌趨勢中形成較低高點並觸及支撐時『不進場、等待後續訊號』，沒有後續訊號的定義、獨立進場方向或可計算 entry；因此本身不構成 Frame 價格進場假說。"
+  },
+  {
+    "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:39",
+    "source_logic_id": "read51_l039",
+    "category": "options_and_account_state",
+    "reason": "備兌買權進場先依賴現金擔保賣權被指派並持有 100 股的帳戶／部位狀態，再依 30–45 DTE、15–20 Delta（或 POP）選擇履約價；Frame 沒有指派狀態、帳戶持股、期權 DTE、Delta、履約價或期權價格，不能建立忠實的價格進場假說或任意替代。"
+  }
+]

@@ -1,0 +1,59 @@
+[    0.50s ->     4.30s] Hey guys, what's up? It's ABTrade and today I want to talk about which contracts I pick,
+[    4.38s ->     9.02s] which contracts are the best, and how you can minimize your risk a lot when day trading
+[    9.02s ->    12.06s] options just by picking the right contract. So please stay tuned.
+[   19.42s ->    23.28s] So two things. First thing, why am I doing this video? Because I've been getting this
+[   23.28s ->    27.74s] question a lot with people who aren't trading SPX. They're trading like Netflix or like
+[   27.74s ->    33.42s] Facebook where the contract prices are like $0.20, $0.10, $0.05. Like Austin, I know you trade
+[   33.42s ->    38.70s] dollar contracts, but is it okay to trade this? Yes, it is and I want to show why.
+[   40.20s ->    45.60s] Second, I don't usually wear a muscle shirt, but I just came from a pool. It is Memorial Day and I
+[   45.60s ->    50.34s] hope y'all are enjoying your day and if you are of age to drink, make sure you're please drinking
+[   50.34s ->    56.56s] responsibly so that tomorrow we can hammer the market and that you are not hammered. So let's
+[   56.56s ->    63.40s] get started. So this is a chart of SPX. So if like let's say tomorrow if I want to do day
+[   63.40s ->    70.14s] trade a SPX put option, I would trade here because this is around dollar price, right?
+[   70.14s ->    82.03s] Okay, now I'm going to show you how if you right click on the options table here and you can, oh I
+[   82.03s ->    88.19s] can add it to watch list? I didn't know that. So this one is the examples. All right, sweet. So I added
+[   88.19s ->    95.93s] it there. Now versus a contract like this, that's priced at $5. So let's look at the difference
+[   95.93s ->   100.83s] here. All right, let's go to our charts and let's check this out. All right, so the option price
+[  100.83s ->   107.25s] that's around a dollar. So obviously you can see here that we have a strong base for this options
+[  107.25s ->   115.53s] contract placed around $0.83. Okay, so what does that mean? So if I'm getting in for a put and I get
+[  115.53s ->   122.09s] it around a dollar here, I'm risking it to go back down. So if I'm wrong, I can easily sell it
+[  122.09s ->   129.15s] around the $0.75, $0.83 level here. I know that if I'm wrong from this dollar, it will go back to
+[  129.15s ->   137.09s] this normal base here. Okay, so thus on a dollar, if I sell it at let's just say a low point of $0.75,
+[  137.09s ->   144.19s] I'm risking $0.25 a contract. Okay, but I know that if I'm right, I can easily get it up to this
+[  144.19s ->   151.79s] previous high or if it's a huge breakout, I can usually maybe get it up to $4.00. You see here?
+[  152.07s ->   157.63s] So I'm risking this much here on the contract price to get it all the way up to here, which is
+[  157.63s ->   163.51s] huge percentage. So now let's look at the same thing for here. So obviously we have a strong base
+[  163.51s ->   172.17s] that's at the $3.70 level. Okay, now if we go in and I buy it around this $5 level, I'm risking
+[  172.17s ->   184.17s] all the way down to $3.70. So $3.70 minus $5, I'm risking $1.30 a contract here to make the first
+[  184.17s ->   194.04s] resistance level would be around $7.70. So I'm risking $1.30 a contract to make about $3.70.
+[  194.04s ->   211.04s] So if we look at the first example, I'm risking $0.25 to make $3.00 or I'm risking $1.30 a contract
+[  211.04s ->   216.64s] to make $2.00. Obviously my risk to reward is a lot better with the dollar contract, so
+[  216.64s ->   221.84s] that's when you're trading SPX. Now let's look at an example from a stock that most people would
+[  221.84s ->   226.12s] actually trade. So let's look at something where the contract prices are super duper
+[  226.12s ->   231.70s] low like Facebook. So let's go into the trade tab and let's check this out real quick. So
+[  231.70s ->   238.38s] if I go into this week expiry, look, $0.75, all this good stuff. Obviously the open interest
+[  238.38s ->   245.78s] is huge, the volume is huge, you should be fine. But now let's take a look. So I've never looked
+[  245.78s ->   251.28s] at this for myself, but I just want to show you all if we go a few, let's just say here
+[  251.28s ->   263.14s] because that's, add this to the examples watch list as well. Oh, every day. Sorry. I should
+[  263.14s ->   269.42s] have been more prepared, but you know, it's Memorial Day and I'm spending time in the pool
+[  269.42s ->   277.26s] in with family. Okay. So here we go. We just checked out. Oops. Okay. Charts. So this is the
+[  277.26s ->   283.36s] one that's further out of the money. Let's go into this option chart here. So obviously we have
+[  283.36s ->   292.28s] a low point around $0.07. So if I want to get in here for around $0.09, I'm risking about, let's just
+[  292.28s ->   300.84s] say $0.03 a contract here, get it up to the first resistance level of $0.14 to go up to,
+[  300.84s ->   311.54s] of course, a high of $0.28. So I'm risking $0.03 here for a possible $0.04 move or risking
+[  311.54s ->   320.50s] $0.03 for a possible, I don't know what this is, like a $0.20 move. Or if we're getting in
+[  320.50s ->   328.16s] closer in, uh, to the, at, at, at the money, obviously, um, a support level would be around
+[  328.16s ->   334.26s] here and would be, uh, resistance would be here. So if we look at these contracts, oops,
+[  334.26s ->   338.50s] I need to be able to see this. Uh, if we look at the, these contracts, if I buy it here at
+[  338.50s ->   346.70s] $0.77, I'm risking it down to the $0.68 or I'm basically risking $0.10 to make, um, what
+[  346.70s ->   353.70s] is this to make, to make $0.20. So, I mean, you just have to look at your options contracts
+[  353.70s ->   358.14s] and look at where you have the biggest risk to reward. So when I'm looking at the contracts
+[  358.14s ->   365.14s] I want to play, I'm looking at ones that are near its base, uh, that are close to, uh, you
+[  365.14s ->   370.44s] know, the bottom of the contracts, because if I'm wrong, then I can easily sell it back
+[  370.44s ->   375.17s] at the support level. So I'm looking for the ones that are closest to the support. Therefore,
+[  375.17s ->   381.79s] I risk less and I have a better risk to reward. So obviously if we go further out of the money,
+[  381.79s ->   390.11s] I'm risking $0.03 for a potential, uh, $0.05 to $0.20 move or cent move, uh, not percent.
+[  390.11s ->   396.27s] And then here I'm risking $0.25 for a $3 move. So obviously you're just looking at the contracts
+[  396.27s ->   401.41s] that put you in the best situation for risk to reward. I hope that makes sense. If you
+[  401.41s ->   405.59s] liked it, please like, comment, and subscribe. And if you didn't like it, then dislike and
+[  405.59s ->   411.45s] tell me why. Thank y'all for tuning in. And if you're watching this on Memorial Day, stay safe.

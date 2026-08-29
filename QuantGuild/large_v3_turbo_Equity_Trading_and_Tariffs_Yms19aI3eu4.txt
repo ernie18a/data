@@ -1,0 +1,123 @@
+[    0.46s ->    14.37s] I want to talk about the lens that I look at the equity markets through, especially when there are significant regime changes such as with this new administration and policy on tariffs.
+[   14.37s ->    32.95s] In this video, I want to go through a basic quantitative argument. We're kind of dismissing all of the politics and nonsense and all of the different levers that we can pull to make different things happen and just try to look at what's going on in the equity market through a purely quantitative conjecture.
+[   33.87s ->    41.23s] And hopefully this is going to allow you to gain some intuition as to what could be going on in the equity markets.
+[   41.23s ->    46.33s] A popular model for equity valuation is the discounted cash flow analysis.
+[   47.17s ->    52.71s] All we do is forecast a company's future cash flows out to a certain point in time.
+[   53.23s ->    66.83s] And then every year beyond that, we just value it in perpetuity, discount all of those cash flows back to the present, get rid of some debt, divide by total shares outstanding, and you actually arrive at a model stock price.
+[   66.83s ->    76.23s] In this example, I want to talk about an equities price in the context of no tariffs and then in the context of tariffs.
+[   76.97s ->    90.13s] And the way that I view these sorts of macroeconomic changes is through a lens of where money is going, not necessarily whether or not value is created or destroyed.
+[   90.13s ->    96.47s] But we'll talk more about that in a moment, and we'll talk about some implications in equity trading.
+[   96.59s ->   100.05s] We're just going to walk through assuming that you're familiar with the DCF process.
+[  100.21s ->   102.59s] If you're not, I encourage you to check out QuantKill.com.
+[  102.67s ->   110.25s] We have lessons on the equity valuation process along with equity portfolio management and other finance probability and math related topics.
+[  110.79s ->   118.23s] Nevertheless, here is a set of assumptions for this DCF in the state of the world where we have no tariffs.
+[  118.23s ->   123.77s] This is very important because all of these levers here, we can pull them to make different things happen.
+[  123.87s ->   134.41s] But I'm going to assume that everything is held constant in this DCF relative to the next one, except for the idea that we now have tariffs.
+[  134.65s ->   137.33s] For simplicity's sake, let's say this is your business.
+[  137.55s ->   145.71s] You have a lemonade stand and you're currently importing a lot of the materials you need for your business to operate internationally.
+[  145.71s ->   151.09s] Let's go down here and take a look at the present value of the cash flows for your business out to year 10.
+[  151.17s ->   153.39s] Again, we don't know what those are actually going to be.
+[  153.49s ->   154.61s] We're forecasting them.
+[  155.15s ->   157.81s] Beyond that, we're going to value your company in perpetuity.
+[  158.13s ->   161.59s] The present value of those cash flows is going to be 245.78.
+[  161.69s ->   165.57s] Maybe this is in millions and you have a very successful lemonade stand.
+[  165.57s ->   171.61s] And the present value of your company in perpetuity beyond year 10 is 154.22.
+[  171.61s ->   177.17s] The total equity value is going to be 400 in the state of the world where there are no tariffs.
+[  177.67s ->   181.65s] And this nice bar chart here is going to essentially summarize this for us.
+[  181.71s ->   186.53s] We have the present value of each year's cash flow going out to year 10.
+[  186.59s ->   189.15s] And then beyond that, we value your company in perpetuity.
+[  189.61s ->   191.61s] Discount all these cash flows to the present.
+[  191.61s ->   192.85s] That's what each bar represents.
+[  192.95s ->   196.75s] We sum them all up and we get the value of 400.
+[  197.47s ->   202.37s] You've been running this business successfully for the past three, maybe four years under the previous administration.
+[  203.07s ->   206.53s] In doing so, you've IPO'd and now you have a duty to your shareholders.
+[  206.73s ->   208.21s] You need to maximize their value.
+[  208.41s ->   210.67s] To do that, you're going to maximize your company's profits.
+[  211.17s ->   213.27s] To do that, you must minimize cost.
+[  213.49s ->   217.85s] There is no way to pursue a maximum profit without minimizing your cost.
+[  217.85s ->   225.93s] To do this, you've been engaging in the international markets, growing your business year over year, minimizing your cost by importing goods.
+[  226.51s ->   236.23s] What do you think is going to happen to the present value of your future cash flows if there are tariffs on the trade that you have been doing internationally?
+[  236.23s ->   243.33s] Well, clearly, your profit generating capacity is going to decline, at least in the short run, because you need to re-optimize.
+[  243.55s ->   248.95s] You need to reorder and figure out whether or not it's still effective to import those goods or buy them domestically.
+[  249.71s ->   253.57s] And that is essentially what this next DCF is going to reflect.
+[  253.57s ->   266.11s] If you take a look, I've adjusted some of the model assumptions to reflect the tariffs in the market, and you'll see that initially our cash flow generating capacity declines relative to the previous DCF.
+[  266.35s ->   278.27s] But after reordering and re-optimizing, eventually we get back to that original cash flow generating capacity, and we're back to business with the value of our company in perpetuity after year 10.
+[  278.27s ->   290.85s] Again, this whole idea here is very important because companies aren't just going to roll over and accept that the tariffs are going to be a burden on their profit.
+[  290.99s ->   297.15s] They're going to re-optimize and reorder to ensure that they achieve their maximum cash flow generating capacity.
+[  297.77s ->   300.47s] And if that means transacting domestically, so be it.
+[  300.55s ->   303.39s] If that means transacting internationally, so be it.
+[  303.69s ->   305.93s] But that is the goal of the company.
+[  305.93s ->   309.07s] The goal of the company is to maximize profit.
+[  309.49s ->   313.79s] Again, they're not just going to sit there, roll over, and take these increased costs.
+[  314.09s ->   317.37s] But this is the only location that they can find that good.
+[  317.51s ->   318.41s] Okay, well, fine.
+[  318.49s ->   322.13s] They're going to have to optimize their cost function elsewhere.
+[  322.31s ->   327.53s] That means maybe somewhere in the labor market, maybe somewhere in cutting projects, whatever it may be.
+[  327.61s ->   332.25s] The whole purpose of these firms' existence is to generate profit.
+[  332.25s ->   336.81s] When you IPO, your duty is to maximize the value to the shareholder.
+[  337.33s ->   345.29s] You can go about suggesting that there's corruption or agency problems that make this process impure and fair enough.
+[  345.29s ->   352.31s] But overwhelmingly, the whole goal of all of these firms, whether it's in technology, healthcare, whatever it may be, is to make money.
+[  352.51s ->   362.19s] And if their cost function increases and they're making less money and executive compensation is going to fluctuate, maybe in a downward direction because of these increased costs,
+[  362.23s ->   367.89s] you better believe that they're going to attempt to offset them elsewhere in their company.
+[  368.25s ->   370.89s] Let's talk about the implications in the equity market.
+[  370.89s ->   376.21s] Now, regardless of your opinion on the previous administration or the current administration,
+[  376.21s ->   385.93s] I hope everybody has the wherewithal to at least understand that any administration in place does not have a goal of destroying the economy.
+[  386.67s ->   394.43s] The levers that are available to pull in fiscal policy vary based on the administration and the constituents that they serve.
+[  394.43s ->   403.55s] That is a very important idea because you'll see people crying in each regime, but the people that are crying in each regime are very different.
+[  403.77s ->   411.43s] And that's because they serve different constituents and the levers that they're pulling are fundamentally affecting different macro variables.
+[  411.75s ->   414.33s] Trading in general is very sentiment driven.
+[  414.75s ->   421.97s] So, of course, when there's news of tariffs impacting value, everything is going to go down to some capacity.
+[  421.97s ->   432.95s] But I want to paint a picture of what the administration is trying to do in a best case scenario and talk about sort of the implications of this relative to the previous administration's policy.
+[  433.33s ->   436.79s] We're not going to touch too much on the macro variables.
+[  437.09s ->   440.41s] We're not going to talk too much about interest rates and inflation and Fed policy.
+[  440.61s ->   443.29s] That's really a different topic for another day.
+[  443.49s ->   451.11s] But here what I have is I have the stock price that we have valued in the two previous DCFs in two states of the world.
+[  451.11s ->   455.21s] The first state of the world is this light blue line with no tariffs.
+[  455.39s ->   456.57s] That is the base case.
+[  457.05s ->   462.95s] And as you can see, the price is just merrily kind of moving along here and the upward trend that it was moving in.
+[  463.37s ->   466.63s] And in this other state of the world, we have this tariff price path.
+[  466.81s ->   470.61s] And this is the blue dashed line, this dark blue line.
+[  470.67s ->   474.57s] And this red vertical line is when tariffs have been imposed.
+[  474.57s ->   481.23s] And you can see that there's a massive value drop relative to the base case with no tariffs.
+[  481.49s ->   490.07s] Why would anybody choose to enact tariffs if they know that there's going to be this massive value drop and everyone's 401ks are out the window and whatever?
+[  490.07s ->   494.19s] Well, there's this period of reordering, restructuring, reoptimization.
+[  494.63s ->   501.31s] And the goal is that across the board, you're going to see this growth that outpaces the original base case with no tariffs.
+[  501.49s ->   509.69s] Not to mention that this original base case with no tariffs may not be serving other macro variables like inflation and interest rates domestically.
+[  509.69s ->   517.69s] The hope is that through this process, all of that shakes out in a positive direction or a net positive direction for the domestic economy.
+[  518.49s ->   524.95s] However, in the short run, traders have to respond to these shocks by trading equities at a lower relative level.
+[  525.15s ->   530.47s] And there's a theoretical value gap that you can capitalize on by taking a long position.
+[  530.71s ->   532.39s] This is not financial advice.
+[  532.55s ->   533.81s] This is how I trade.
+[  533.81s ->   538.71s] I take a look at what the market climate would have been like without an event.
+[  538.71s ->   549.07s] And I ask myself whether or not that event is the de facto binary 0 and 1 between whether or not that equity space will recover to the previous level.
+[  549.39s ->   554.19s] And if it's not, which it most likely isn't, then I'm going to take a net long position.
+[  554.57s ->   559.01s] This is very similar to event trading, but I'll make a video on that for another day.
+[  559.19s ->   568.19s] And after taking a net long position, you can kind of capitalize on this theoretical statistical arbitrage, if you will, across the board in the equities market.
+[  568.71s ->   574.09s] Now, that is essentially just buying the dip relative to a negative event.
+[  574.33s ->   581.99s] As the entire world preaches doomsday, you can kind of capitalize on this as a buying opportunity.
+[  582.27s ->   586.73s] Keep in mind, like every other model I discuss, this is just a model.
+[  587.09s ->   589.59s] DCFs are just a model for stock price.
+[  589.59s ->   599.01s] If you go on YouTube and search up NVIDIA DCFs before that massive stock price increase, you'll see that they were valued significantly less.
+[  599.09s ->   608.47s] And that's because when there are substantial information changes through events that are unforeseen, you don't know what the impact on the future cash flows is going to be.
+[  608.47s ->   615.39s] You're just essentially using a whole set of assumptions and a history to try to model cash flows going forward.
+[  615.89s ->   627.51s] So you're not going to be predicting these sort of idiosyncratic events that are going to be massively increasing one stock price or massively decreasing one stock price.
+[  627.51s ->   637.23s] This is using the idea of a DCF in a cross-section of equities across the board, suggesting, hey, you know, this creates a buying opportunity.
+[  638.07s ->   648.69s] Essentially, you're entering at a lower level in the market and you're able to invest or trade, getting it at a lower price per share for each of your equities that you are trading.
+[  648.69s ->   657.07s] Pretty much all of the algorithms that I trade on a daily basis have to do with this idea of an overreaction in a negative capacity.
+[  657.55s ->   659.61s] That is, trading is very sentiment driven.
+[  659.95s ->   671.85s] And when there is a negative set of information released for a cross-section of equities, I'm going to be entering at a lower level and then cashing out when everything inevitably recovers.
+[  672.09s ->   674.05s] But that's going to be a video for April.
+[  674.05s ->   684.67s] Stay tuned for how to build a trading bot that is going to implement that drawdown feature, along with some sort of AI component for portfolio management.
+[  685.09s ->   690.97s] You can even extend that to trading live news if you integrate some sort of live news feed API.
+[  691.77s ->   693.27s] So that's something to look forward to.
+[  693.55s ->   703.83s] To summarize my quantitative perspective, I see a value gap between what traders are currently pricing equities at and the value that they should be priced at.
+[  703.83s ->   708.63s] And in order to capitalize that, I am net long in a large cross-section of equities.
+[  709.15s ->   710.37s] I don't do this manually.
+[  710.53s ->   711.95s] I do this algorithmically.
+[  712.21s ->   714.27s] But again, a video for a later date.
+[  714.85s ->   716.67s] I hope you enjoyed this video.
+[  716.93s ->   721.49s] Again, all of these are models, assuming a lot of variables are fixed.
+[  721.91s ->   724.07s] These are very complicated environments.
+[  724.61s ->   727.45s] Nothing that a simple model can perfectly explain.
+[  727.87s ->   732.09s] But I think this is a reasonable conjecture for the current market climate.
+[  732.09s ->   736.33s] I hope you enjoyed this video and I will see you in the next one.

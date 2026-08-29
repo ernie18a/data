@@ -1,0 +1,90 @@
+[    0.02s ->     5.78s] This black line is the S&P 500. The blue line is job openings. If you look closely,
+[    5.98s ->    10.22s] they both seem to be very correlated. Very correlated. When the blue line goes up,
+[   10.30s ->    14.42s] the black line goes up. When the blue line goes down, the black line goes down. So in theory,
+[   14.52s ->    19.56s] you could predict what the stock market was about to do by solely just looking at what job
+[   19.56s ->    24.32s] openings are currently doing. But then the unthinkable happened. All of a sudden,
+[   24.32s ->    30.92s] it broke. So now something very odd is happening. Something that we've never seen before. Job
+[   30.92s ->    36.86s] openings are going down, but yet the stock market is going up. Hmm. Interesting, right? But you know
+[   36.86s ->    42.40s] what's even more interesting? We can mark the start of this break represented by this black dotted line.
+[   42.40s ->    48.62s] If we put a date on this black dotted line, this all started on November 30th, 2022.
+[   48.62s ->    57.24s] But what happened on November 30th, 2022? Oh my chat GPT was released. Which brings us to the
+[   57.24s ->    63.50s] scary question. As AI takes more and more jobs, which it inevitably will, what happens to the
+[   63.50s ->    68.78s] stock market? This isn't just strange. This is an anomaly the market has never seen before.
+[   68.96s ->    74.08s] And that's why there's so much uncertainty right now because nobody knows what's going on. And more
+[   74.08s ->    79.90s] importantly, what's going to happen next. Now, the moment I saw this graph, I shared it to the 40,000
+[   79.90s ->    85.56s] people in my newsletter. This newsletter is basically a place where I share all my insights on the market
+[   85.56s ->    91.40s] and the plays I'm currently watching. I shared this Nvidia trade, which is currently up 56%. I shared
+[   91.40s ->    99.82s] this AMD trade, which is up 70%. And I shared this trade, QBTS, that is currently up 400%. And unlike many
+[   99.82s ->   104.86s] other trading YouTubers, where they charge five grand for a course for this information, I made
+[  104.86s ->   109.70s] this newsletter completely free. If you want to check it out, I'll leave a link in the pinned comments.
+[  110.60s ->   111.78s] It's free real estate.
+[  111.86s ->   117.38s] But with a chart like this, we have to understand one key thing. You see, the job market has lost
+[  117.38s ->   126.20s] 1.2 million jobs in 2025 alone. 1.2 million. That's a lot of jobs. Actually, that is the most amount of
+[  126.20s ->   132.70s] jobs lost since the pandemic. And this number isn't slowing down. Oh no, it's going up rapidly.
+[  132.90s ->   137.92s] Even as you're watching this video now, this number is getting bigger and bigger. But I want
+[  137.92s ->   142.50s] to show you something else. Look at this chart. Why don't you just look at it? I mean, just look at it.
+[  142.52s ->   147.56s] I mean, just get a look at that. This chart is an unemployment chart. Now to you, this may seem like
+[  147.56s ->   153.74s] a normal everyday chart. Let me tell you, it's not. If we look closely, something very scary is starting
+[  153.74s ->   158.70s] to happen. You can see where we currently are. The chart is starting to rise. And this is something
+[  158.70s ->   164.28s] you need to take very seriously. Because let's grab an unemployment chart that goes all the way back
+[  164.28s ->   171.06s] to 1965. You can easily see that every time unemployment starts to rise, we had a major
+[  171.06s ->   177.28s] market crash after. Every time. Unemployment rises here, we had the corona crash. Unemployment rises here,
+[  177.40s ->   181.78s] we had the housing crisis. Unemployment rises here, we had the dot-com crash. Every time
+[  181.78s ->   187.18s] unemployment rises, we later had a recession. So now we're at a very interesting point in time.
+[  187.30s ->   192.46s] More and more people are losing their jobs. Yet more and more money is being invested into the
+[  192.46s ->   198.10s] stock market. Now this isn't all just because of AI or ChatGPT. Something else is happening in the
+[  198.10s ->   203.38s] background while all of this is occurring. Since unemployment is going up, the Federal Reserve,
+[  203.72s ->   208.78s] or in other words, this guy, Jerome Powell, the head of the Federal Reserve, has decided the
+[  208.78s ->   214.06s] government needs to step in and help the economy by cutting interest rates, which is exactly what
+[  214.06s ->   219.18s] he did. And he also made this decision at this black dotted line. Now cutting interest rates does
+[  219.18s ->   224.96s] one important thing. Big institutions and big money are now making less money on things like bonds
+[  224.96s ->   229.98s] because interest rates are going down. If interest rates are going down, they make less money. And
+[  229.98s ->   235.54s] simply by that occurring, it incentivizes them to put their money elsewhere. And where are they likely to
+[  235.54s ->   240.68s] put their money in the stock market? But what's weird is usually if they are cutting interest rates,
+[  240.82s ->   246.16s] it's because the economy is doing bad. And usually when the economy is bad, the market is going down
+[  246.16s ->   251.26s] with it. But that's not what's happening. The stock market is going up. So now we have to ask ourselves
+[  251.26s ->   256.72s] the important question. If you entered into the market right now, right at this very moment, are you
+[  256.72s ->   262.86s] entering in the midst of the best bull market of our lifetime? Or are you entering at the very top of
+[  262.86s ->   268.80s] the bubble so inflated they'll make the dot com crash look like a little wiener dog? To help answer
+[  268.80s ->   274.60s] this question, we need to figure out one key thing. Are companies actually making money even though they
+[  274.60s ->   280.08s] are hiring less people? You see, before every market crash in recent history, company earnings started
+[  280.08s ->   285.72s] going down, or in other words, they started not living up to their expectations. I mean, it makes sense.
+[  285.82s ->   291.46s] Every time the market crashes, company's earnings would go down alongside with it. And that's a very good
+[  291.46s ->   296.62s] indicator of when the market is in a bubble. If the stock market is going up, but companies aren't
+[  296.62s ->   302.74s] beating expectations, that is a very bad sign in a huge red flag and points to a bubble.
+[  302.80s ->   308.98s] Who blew this bubble? Which that fact proves itself time and time again. And you would think with
+[  308.98s ->   314.50s] unemployment at new record highs, company's earnings would start to go down alongside with it.
+[  314.60s ->   320.04s] But right now, that's not what's happening. Actually, it's quite the opposite. Companies aren't firing
+[  320.04s ->   325.04s] people because they're making less money. They're firing them for better efficiency. You see, even
+[  325.04s ->   331.20s] though unemployment is skyrocketing, for example, Amazon just laid off 30,000 employees, Meta just
+[  331.20s ->   337.60s] cut 10,000 jobs, and companies like BuzzFeed are firing their staff to use AI to write their articles.
+[  337.60s ->   343.70s] Even though all these companies are cutting jobs, companies are making more money than ever. Profits
+[  343.70s ->   349.94s] are up, like really up. In the past three years, earnings of companies in the S&P 500 have been
+[  349.94s ->   356.24s] going crazy. Like Britney Spears when she was bald type crazy. We're not talking some gradual incline
+[  356.24s ->   361.98s] like previous years. This is sharp, fast, upwards earnings movements. Companies are making more
+[  361.98s ->   368.10s] money than ever before and at a fast pace. Meaning the stock charts are going up due to massive amounts
+[  368.10s ->   373.56s] of hype, but the companies are actually backing up this hype with their insane earnings. With that,
+[  373.72s ->   378.72s] that means companies are getting more and more expensive. So what's my opinion? Are we in the
+[  378.72s ->   384.42s] midst of one of the best bull markets we've ever seen? Or is this the very top of the AI bubble?
+[  384.58s ->   388.82s] Right now, the market is actually rewarding companies that are firing people.
+[  388.82s ->   394.52s] You're fired. Why? Because markets are forward-looking. When companies cut jobs for AI
+[  394.52s ->   398.68s] replacements, they don't have to pay as much for workers. They don't have to deal with labor
+[  398.68s ->   404.66s] strikes. They are making more profit and earnings are going up. But this style of thinking only works
+[  404.66s ->   410.28s] if margins of companies are improving while this is happening, which currently they are. But how
+[  410.28s ->   415.48s] sustainable is that? And this is where things start to get tricky. If fewer people have jobs,
+[  415.48s ->   420.44s] who actually buys the products? That's the part the markets aren't really pricing in right now.
+[  420.50s ->   425.50s] In order for the market to do good, it needs to follow four simple rules. People earn money,
+[  425.60s ->   430.40s] people spend money, companies earn revenue, the stock goes up. But with job cuts rising,
+[  430.74s ->   436.32s] step one is getting removed completely. So if people don't have money to spend because they don't
+[  436.32s ->   441.20s] have a job, who's going to buy the products? And the market really hasn't dealt with anything
+[  441.20s ->   447.40s] like this before. So is the market simply rising just due to interest rates? Or is this genuine
+[  447.40s ->   452.62s] growth? In my humble opinion, I think the market does have more room to go up. As long as two
+[  452.62s ->   457.70s] things stay true, company earnings are growing and interest rates are going down. I think we look
+[  457.70s ->   462.58s] good in the short term. But is this sustainable for the long term? Probably not. The market is
+[  462.58s ->   467.60s] going to have to deal with a major problem. If people are getting fired and don't have money to buy
+[  467.60s ->   472.80s] stuff, this will affect the market sooner or later. And when that happens, we are going to be so
+[  472.80s ->   478.92s] inflated due to interest rate cuts and AI hype that if this comes crumbling down, it'll likely do it
+[  478.92s ->   484.58s] in a very aggressive manner. And what does the future look like? Can we continue using job openings
+[  484.58s ->   490.30s] as a metric to predict the markets? Or is this the old style of thinking and the market is slowly
+[  490.30s ->   496.80s] evolving into something completely different right in front of our eyes? Or even scarier, is this just a
+[  496.80s ->   502.08s] signal that the bubble is about? What do you guys think?

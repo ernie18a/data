@@ -1,0 +1,105 @@
+[    0.00s ->     3.96s] So you want to be a quant, or at least you think you want to be one. Well, I'm going to give you
+[    3.96s ->    10.86s] the unfiltered reality of the situation. Who the hell am I, and how am I qualified to comment? Well,
+[   11.22s ->    16.08s] who the fuck is qualified for anything? I worked in the industry as a quant researcher
+[   16.08s ->    23.04s] under the guy who came after Block and Scholz, and they say he's not a real quant. So you know
+[   23.04s ->    31.98s] nobody's a real quant. If you want the unfiltered reality, stick around. Otherwise, feel free to
+[   31.98s ->    42.90s] click away. First up, the money. You're not going to be rich. I promise. I promise. You're not going
+[   42.90s ->    47.38s] to be rich. And that free time you think you're going to have to go to the gym, hang out with
+[   47.38s ->    53.32s] friends, and spend all that money, which you're going to adjust to in exactly one pay cycle,
+[   53.32s ->    63.27s] a fallacy. You are spending all of your time at the firm. Math, probability, statistics, finance,
+[   64.15s ->    69.65s] low latency engineering. You better love it, because that's where all of your time is going to go.
+[   70.21s ->    75.51s] Your colleagues, you better get used to them. You better get used to them quick, because you're
+[   75.51s ->    81.47s] going to be spending a tremendous amount of time with all of them. You're not going to be rich. And
+[   81.47s ->    88.87s] the worst of it is you are going to be, you're going to think, right, that you're on this track,
+[   89.03s ->    94.27s] this elite track. And, you know, you're going to have the potential for this massive payoff down the
+[   94.27s ->    98.59s] line. And compared to most of the population, right, in the cross-section on average, you're
+[   98.59s ->   103.43s] doing pretty darn good. But you're going to see very quickly, if you were able to make it to this table,
+[  103.43s ->   114.29s] right? Absolute idiots. Idiots that don't know a fraction of what you know, making exorbitant amounts
+[  114.29s ->   119.81s] of wealth relative to you. They're going to be working less, making tremendously more. And it's
+[  119.81s ->   126.33s] all because they're in a position where they can exercise their soft skills. You don't need to be
+[  126.33s ->   133.11s] smart to exercise your soft skills, but you're not exercising them. You're doing math, probability,
+[  133.29s ->   140.13s] statistics, finance, low latency engineering. That's your job. Remember, if you're getting paid
+[  140.13s ->   147.67s] what people think is a lot of money, somebody upstream is significantly smarter than you because
+[  147.67s ->   155.05s] they're employing you to be smart and do that work. And they're taking a massive payday for everything
+[  155.05s ->   162.97s] that you produce. Now, if you love the role, then that's awesome. That's why I went into the industry.
+[  163.15s ->   170.17s] I loved math, probability, statistics, finance. I wanted to do it all of the time, right? If you go
+[  170.17s ->   177.13s] into it for the money, you're going to be miserable and you're not going to be rich. I promise.
+[  178.31s ->   185.97s] All right. Now, how much do you actually have to love this stuff? What does the role actually look
+[  185.97s ->   192.91s] like on a day-to-day basis? Yeah, it depends if you're in development, research, trading, whatever,
+[  193.57s ->   201.37s] but roughly, right? 80% of your time is going to be spent on tasks that you don't want to do.
+[  201.87s ->   208.49s] In the context of quant research, cleaning data, pre-processing it, trying to prepare it for some
+[  208.49s ->   217.05s] sort of back test, right? I swam in this giant pond of crazy alt data strategies for quite some time.
+[  217.69s ->   224.29s] And we're talking about hundreds of millions of observations per day, trying to clean all of this
+[  224.29s ->   231.15s] shit just to cram it into some back test. And even with randomized numerical linear algebra and all of
+[  231.15s ->   239.01s] this cutting edge capacity to try to increase or improve the efficiency of the process, it still
+[  239.01s ->   244.27s] took an insane amount of time. Sometimes these pipelines would take days to run. Absolutely
+[  244.27s ->   251.15s] outrageous. With institutional grade infrastructure, so tremendously boring, so tremendously boring.
+[  251.55s ->   256.81s] Not everything is just back testing and taking a look at performance metrics, right? It would be
+[  256.81s ->   262.67s] really nice if that was most of the role, but 80% of the time, 70, 80% of the time, you're going to be
+[  262.67s ->   271.98s] doing stuff that you don't want to do. And to make, I guess the cherry on top, right? The cherry on top
+[  271.98s ->   281.46s] here is 95% of the work that you produce, it's just going to be thrown out. It's not going to actually
+[  281.46s ->   290.51s] lead to anything at all. Now, yeah, is it worthless? No, absolutely not, right? It's experience. I like
+[  290.51s ->   297.65s] to think of research and work product in general as stepping on stones on a misty lake. You know,
+[  297.67s ->   303.97s] the goal is out there somewhere, but you don't know where to go. You only see a few stones in front of
+[  303.97s ->   310.69s] you. So you're going to hop, hop, hop, and you start hopping down that road and, well, geez,
+[  310.69s ->   315.09s] it's a dead end. Now we got to turn back, right? But you wasted all that time going, no, you really
+[  315.09s ->   319.67s] didn't waste anything, right? That's experience. You learned what doesn't work and maybe you'll have
+[  319.67s ->   325.97s] to come back there eventually when you go down the line again. But that's the reality of the situation
+[  325.97s ->   332.27s] is most of the time you're working on stuff you don't want to do. And most of the time your work
+[  332.27s ->   339.86s] product amounts to nothing, which is why you have to cling to that as experience, right? Otherwise it's
+[  339.86s ->   345.22s] just, wow, it's, it can be, it can be quite frustrating, quite frustrating, especially from
+[  345.22s ->   352.21s] a research perspective, right? All right. So that's not too bad, Roman. That's not too bad.
+[  352.55s ->   357.69s] You're not rich, but you're doing pretty well. Okay. I can, you know, manage the idiots making
+[  357.69s ->   361.85s] more money than me. I don't care about that. I love the role. Yeah. It's frustrating sometimes,
+[  361.85s ->   366.51s] but I really liked the math, probability, statistics, finance, and you know, that's why I'm there,
+[  366.51s ->   374.10s] right? All right. Well, there's an entire social layer that comes with all of this, or maybe anti-social
+[  374.10s ->   383.22s] layer, depending on the firm that you work at. What a vile industry for gatekeeping prestige and
+[  383.22s ->   390.28s] titles. Fucking vile. Who's a quant? Who's technically allowed to use the title as a quant? What does,
+[  390.50s ->   395.44s] what does that even mean? Or you're conducting buy side research. Now you're allowed to be a quant,
+[  395.44s ->   402.68s] but you're not actively managing risk. It's absolutely insane. The inter, inter-party
+[  402.68s ->   409.42s] politics, if you will, for what constitutes being a quant. Are you on the sell side or the buy side?
+[  409.48s ->   413.40s] If you're a sell side quant, you're not a real quant. If you're middle, middle office, you're not a real
+[  413.40s ->   419.41s] quant. If you're back office, you're not a real quant. Okay. Well, relative to what, what's the,
+[  419.41s ->   426.15s] what's the benchmark? What's the benchmark? Who cares? Right. But it is violence in this space.
+[  426.25s ->   431.03s] Absolutely violent. I've been at seminars. It's just a giant pissing contest, right? Oh,
+[  431.03s ->   437.15s] he works for whatever, whatever. He's a real, absolutely, absolutely outrageous. The pedigree
+[  437.15s ->   442.91s] and the gatekeeping for the role is just the role, the title, whatever is, is insane. Let alone like
+[  442.91s ->   448.83s] the pedigree of like the academic background that you have, who you studied under, what institution
+[  448.83s ->   454.33s] you went to. Did you go to an Ivy League university? Did you study under, you know, a renowned researcher?
+[  455.13s ->   461.85s] All of this stuff, right? Starts to play into some absolutely outrageous, ridiculous inter,
+[  462.23s ->   472.08s] inter-party politics. You know, most of what you see online, I think, is, you know, people that love
+[  472.08s ->   480.20s] to speculate and people that love to just pigeonhole others based on, you know, whatever particular
+[  480.20s ->   485.66s] sector they're working in. So it's like a quant developer, right? Isn't that really not a quant at
+[  485.66s ->   490.42s] all? It's not, not really a quant at all. They're really just a glorified software engineer, right?
+[  490.64s ->   494.66s] That's what I would say. And it's like, okay, well, Roman, you're not really a quant, right? Because
+[  494.66s ->   499.58s] you're just a quantitative researcher, right? Conducting, conducting pricing research,
+[  499.58s ->   504.98s] buy side alpha research, right? You're, you're not actively managing, managing risk, right? So that
+[  504.98s ->   509.26s] this is the game that you end up being a part of. And it's just a giant clusterfuck and
+[  509.26s ->   515.74s] honestly want no part of the industry and no part of that. So be prepared for the entire social
+[  515.74s ->   520.60s] component of it, right? Not to mention that a lot of the colleagues that you're going to end up
+[  520.60s ->   526.34s] working with, if you're anything like me, if you're anything who, you know, anyone who is, is a very
+[  526.34s ->   532.94s] social animal and isn't just necessarily going into the math, probability, statistics, finance to
+[  532.94s ->   539.92s] grind away behind a computer talking to nobody for, you know, 16 hours a day, prepare yourself for what
+[  539.92s ->   546.72s] that looks like, because you're surrounding yourself with people that are prepared to do that. So, you
+[  546.72s ->   552.51s] know, that's going to look exactly, by the way, how you think it's going to look. All right.
+[  552.51s ->   562.13s] Lastly, I'll just wrap up with this thought. It takes an insane amount of time to get a seat at
+[  562.13s ->   567.55s] this table. We're not talking about a year or two here, guys. We're talking about a very long time.
+[  567.63s ->   570.85s] If you have prior work experience, relevant work experience, that's not what I'm talking about.
+[  570.87s ->   577.29s] I'm talking about from the ground up, right? An insane amount of time. You need to really love
+[  577.29s ->   583.77s] this shit to do it for how long it takes to get a seat at the table. Right. And then, you know,
+[  584.03s ->   587.91s] that entire social component of, is it really a seat at the table? Are you really a quant? It's
+[  587.91s ->   593.99s] just absolute bullshit. But at the end of the day here, right, you're going to need to spend years
+[  593.99s ->   598.93s] studying math, probability, statistics, finance, the latency, engineering, coding, whatever,
+[  598.93s ->   611.63s] for even a shot at a seat at a table. So, after hearing all of that, if you're still stoked to be
+[  611.63s ->   617.51s] a quant, get after it. Go master your quantitative skills. Check out quantguild.com if you want to
+[  617.51s ->   623.23s] roll as a trader, a market maker, a quant. It's exactly why I built the platform. Over 100 hours
+[  623.23s ->   629.93s] of lecture content, everything that I've learned in the industry and academia, no fluff, cutting out all
+[  629.93s ->   636.47s] of the nonsense, getting you from A to Z, from academic to practitioner, as quickly as possible.
+[  636.57s ->   641.17s] There's a ton of stuff there in Adaptive Practice Engine, over 90 lessons in math, probability, finance.
+[  641.43s ->   649.73s] The list goes on. So, if none of this deterred you from your goal, then check out quantguild.com
+[  649.73s ->   658.11s] to master your quantitative skills. That's really going to do it for this one today. This is just
+[  658.11s ->   664.17s] the unfiltered reality of the unfiltered reality of the situation. The unfiltered reality of the
+[  664.17s ->   675.45s] situation is that all of the opportunity nowadays, right, is in applying some form of AI or LLMs
+[  675.45s ->   685.31s] and acquiring attention. So, keep that in mind as you go about making your optimal decisions under
+[  685.31s ->   695.05s] uncertainty, right? Optimizing that policy function of yours to make informed decisions. And other than
+[  695.05s ->   699.33s] that, I'm going to thank you so much for watching and I'll see you in the next video.

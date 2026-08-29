@@ -1,0 +1,76 @@
+[    0.00s ->     5.50s] In today's video I'm going to talk about building a quantitative edge from the idea to algorithm
+[    5.50s ->    13.90s] strategy. In trading everyone talks about having an edge but what does that actually mean and how
+[   13.90s ->    19.82s] do you build one? In this video I'm going to show you my full process of developing a quantitative
+[   19.82s ->    27.94s] edge from the idea generation to research, coding, testing and finally forward validation. I'm going
+[   27.94s ->    36.72s] to talk about volume inertia. The full code is like probably 1,000 lines. I'm going to talk about
+[   36.72s ->    45.46s] this strategy I developed explaining how it works but not in the details because I don't want to share
+[   45.46s ->    59.20s] exactly the strategy just the process. So let's begin. Okay so I noticed something that was that
+[   59.20s ->    67.38s] was happening over and over with volumes and also price movement and that's something that you can
+[   67.38s ->    74.82s] test with algorithms and see if that's something that generates alpha or it's not. Basically the
+[   74.82s ->    85.10s] logics is around the volumes and what happened over a period of time on those volumes. If you see here
+[   85.10s ->    93.88s] for example the bearish volumes increase and then the price from around here start to drop okay and
+[   93.88s ->   103.75s] that's something that you can test. If you see that thing up and over again you can build a code. So
+[  103.75s ->   115.63s] basically I built my first code on PineScript because it was the easiest way for me to extract data and this is not
+[  115.63s ->   129.47s] exactly my strategy of course because I changed it and also I modified the logic but not only also the parameters and that's because
+[  129.47s ->   146.00s] this is not optimized. Those profit and loss are based on the capital. We can do on 100,000 of capital for let's say 1% risks fixed and also
+[  146.00s ->   155.78s] yeah pyramid 0.3 like that. Okay so as you can see from that we can extract from data and like on the trade analysis
+[  155.78s ->   165.16s] we can see that we're actually having success. So for example here we see the win rate for long position
+[  165.16s ->   174.46s] and also for short position and then we see we can see other parameters. Now the performance seems to be much better.
+[  174.46s ->   200.46s] That's it. From the trade analysis we can see some of the metrics we're looking for and for example this is the average win loss ratio and also from here we can see that the overall profit is good but we can see that all the profit and more it came from long position and not from short position.
+[  200.46s ->   226.22s] So from this little code I made I noticed that strategy is working okay but only on long position so we can fix that and then the first process was to research and you can do research by reading books, read research papers or maybe like I did it here.
+[  226.22s ->   256.89s] After years of experience you start seeing some patterns in the price it are recurring over time you can think about like I did here and then you can start let's begin the phase two the development of this strategy. In this case I'm going to show you the first and
+[  256.89s ->   283.24s] this is the code that is the code that you can use on MT5 so MetaTrader 5 and it's very simple let's say the easiest one is Pinescript because the same algo I showed you before with 1200 lines on Pinescript was only 60 lines way way easier but of course not as sophisticated as this one.
+[  283.24s ->   305.75s] This is the basic EA so a simple expert advisor this is based on moving average crossover I think yes exactly buy if the price is higher than the moving average and sell if the price is lower than moving average.
+[  305.75s ->   335.77s] This is the easiest EA this is the easiest EA ever I think it's not working but it's just a way I'm showing you how those concept works those are the basics on concepts so we have variables and then we have function groups the function then we have the condition control logic like if the price let's say in the previous example was greater than the MA
+[  335.77s ->   362.73s] or SMA or SMA so we enter if or else we do something else and then we have the loops so the repeat function then this is the perfect example so you have to think about an EA like a robot that can start on and then watch the markets on tick and what is on tick tick is the smallest piece of movement
+[  362.73s ->   383.21s] and in time and in time and in price and the EA so the Aigo is going to be active and update every single tick so I think that's two seconds and then make decision with if for and stops.
+[  383.21s ->   409.74s] So now that you saw the basics of the development phase I'm not going to show you the full code and also the full logics behind but just the parameters now is in Italian but it's not a problem so those are the all of the inputs as you see here this is the SMA standard moving average
+[  409.74s ->   438.02s] so that those are like basic basic concepts when you do the testing and optimization test that's the third phase you're going to notice that the simple it is and the better the performance is going to be and why that is that because you can if you have too many parameters all together and you optimize them you're going to overfit the algorithm
+[  438.02s ->   465.67s] so overfit the Aigo previous data and that's not something we're looking for because we want to be more flexible to new data if you fit something to old data the Aigo is going to be super fitted on those type of data and if something is going to change the Aigo is not going to adapt okay that's the easiest way for me to explain that
+[  465.67s ->   496.70s] those are some other filters that those are some other filters that now like I notice after eight months of using this Aigo in real data testing I notice that all of those parameters are not useful because pyramiding is like adding position over and over if some other position are open and it's not something reliable and something that is increasing the performance overall is decreasing the performance
+[  496.70s ->   520.98s] so all of those parameters like this is the take profit multiplier and it's not fixed this is based on the stop loss length like 100 pips like here okay the take profit if the multiplier is 3 is going to be 300 pips okay because all of those parameters are flexible you can see
+[  520.98s ->   555.23s] the the this here input for long ATR and what that mean the stop loss of my trades are based on the average of the previous 14 bars so let's say from here you come back 14 bars okay like that and then the Aigo with a formula is going to calculate
+[  555.23s ->   584.58s] calculate the average and then multiply the average by a number in this case is 1.8 but it's just for the sample I optimized that and I think now is two times the ATR so that's something very flexible because as you can see here in this type of markets the stop loss is going to be bigger than the stop loss in some other let's say like in ranging markets in this case where the ATR
+[  584.58s ->   616.39s] ATR is very small because the the average movement is much lower it's just to showing you and explain to you that what I'm looking for is to be more flexible and also I don't want to be fixed on anything so every type of parameters is based on something that can change over the time so there is nothing fixed like 100 pips or
+[  616.39s ->   644.39s] 1% nothing is fixed so that's an important thing I learned during those eight months of real testing and then we have forced close on Friday because we don't want to get slippage this is the the start of the logics let's say we have also imbalance filter and yeah time trading time I'm not using this and also I'm not using the weekly filter
+[  644.39s ->   675.28s] filter only on Saturday in Sunday but of course gold is not trading on those days after the development phase we have the optimization phase is to understand how this thing work and by doing that you're going to start the genetics algorithm where you can test a set of parameters let's say I want to test the
+[  675.28s ->   705.75s] sma starting one starting choose the first number so let's say 10 and then the path is going to be 10 as well and then you click start and the I tester algorithms is going to take your algorithm and then trying all of the possibilities in this case is 900 and see which one performed well I'm going to do a really
+[  705.75s ->   734.51s] basically based sample here just to show you the process I don't like to fit the algorithms on the last day so today is the 9th of October and I don't like to optimize the algo until this day but usually I'm doing let's say 1 4th so the testing data is going to be from beginning of 2020
+[  734.51s ->   765.61s] until 2024 okay April yep May let's say because it's 29 I don't want to be overfitted on the third phase the optimization and testing I run historical simulation using out of sample data to see how the model perform the out of sample in this case is going to be the period and now this back test is already finished this is results from the set of parameters
+[  765.61s ->   796.40s] I made it after of course optimization and testing the out of sample is going to be the period from the end of that till let's say today that's the out of sample and then you are looking for metrics like sharp ratio this like this number here and then drawdown okay the drawdown never look this type of drawdown because this is the balance but you want to look at the
+[  796.40s ->   809.50s] maximum maximum matrix and then you are looking for the maximum alpha 양iro suite has not been to be the maximum maximum Chorte this is the equity as the blending it is and then you are going to look at some other metrics this is the win rate for short position and this is for long position this is for
+[  809.50s ->   822.38s] and then also there will be a fair point to rolling it for expected the ratio of a different points this is for long position and for both of them is actually very good and then also you're looking for the worst position this is the average losing position this is the average winning position
+[  822.38s ->   829.02s] winning position and this is the best winning position if you look the ratio between the best
+[  829.02s ->   835.42s] winning position and the worst one is kind of good because this is like one two three three to one
+[  835.42s ->   843.42s] and also the average position that's very good even if you have to think about swaps and commission
+[  843.42s ->   853.18s] but for this type of assets in this case is xau usd the commission is around one to two usd for
+[  853.18s ->   859.58s] every single trade so even in this case it's going to be profitable the optimization is delicate
+[  859.58s ->   870.43s] i'd adjust parameters i also use walk forward analysis to see if all the logics are working
+[  870.43s ->   878.83s] even with out of sample data and then on strategy quant i'm using the monte carlo simulation and
+[  878.83s ->   886.99s] stress tests this is the overall performance and this is from 2020 i started from 2018 the
+[  888.73s ->   898.57s] testing data so the in sample until i think end of 2024 like here and then yeah probably here and then
+[  898.57s ->   910.41s] the out of sample sets the auto sample data were from let's say end of 2024 till now and this
+[  910.41s ->   916.81s] strategy performed very well even without the testing on those data that happened because as i
+[  916.81s ->   926.52s] told you before all of the parameters i'm using are very flexible and that's the thing i was looking
+[  926.52s ->   937.40s] for so of course it showed me exactly what i wanted to see so another great matrix is the recovery factor
+[  937.40s ->   949.23s] that's the net profit compared to the max equity drawdown and also this is very good of course now you
+[  949.23s ->   959.71s] see a big number but because it's back tested on open high low close one minute and it's not on realtics data
+[  959.71s ->   969.07s] but i did it on realtics data and i think it's around 14 or 15 the recovery factor so that's still very good
+[  970.41s ->   978.97s] okay so now i'm going to show you the full strategy and how it's working those are the
+[  978.97s ->   986.17s] logics you're not going to understand much because i'm not showing you all of the condition on how
+[  986.17s ->   995.63s] is entering the position and etc etc but you're going to see how it works first is applying only position
+[  996.27s ->  1003.55s] sell stop or buy stop because i noticed that it was doing much better and then you just saw that the
+[ 1003.55s ->  1014.40s] stop loss move following the price because i'm using a atr based training stop the stop loss seems very big
+[ 1014.40s ->  1022.72s] but just because the price here did an insane movement so the stop loss is based on the atr and
+[ 1022.72s ->  1031.12s] in this case maybe you can think that it's going to be too much but after seven years of data i saw from
+[ 1031.12s ->  1041.34s] the optimization tests that was the best thing to do and also you saw that the order here expired after
+[ 1042.22s ->  1049.98s] some hours because that was also another condition i don't want buy stop sell stop there forever
+[ 1051.18s ->  1059.50s] and you saw the here that the stop loss was very small also now let's move it a little bit faster
+[ 1059.50s ->  1073.00s] so i think this was yeah 2020 is you can see here that in 2020 of course with covet with the pandemic we
+[ 1073.00s ->  1083.92s] saw insane movement on goal and this ago was able to catch most of the movement because of course it's
+[ 1083.92s ->  1094.11s] based on volumes and with a trading stop and the stock the take profit is not that close so i can take
+[ 1094.11s ->  1104.86s] like good amount of profit here for example it took like a losing trade but yeah that's pretty much it
+[ 1106.96s ->  1113.36s] in the end building a quantitative edge is not about guessing it's about testing validation and refining
+[ 1113.36s ->  1120.32s] every phase brings you closer to understanding how and why your strategy work if you enjoyed this
+[ 1120.32s ->  1128.56s] process and this breakdown make sure to subscribe if you are interested in algorithmic trading you can
+[ 1129.12s ->  1136.16s] ask me any question i will be very happy to respond to you and also leave a like

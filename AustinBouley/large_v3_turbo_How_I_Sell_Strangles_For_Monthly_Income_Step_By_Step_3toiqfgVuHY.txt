@@ -1,0 +1,83 @@
+[    0.06s ->     6.78s] Hey guys, welcome to lesson number three, which is on selling Strangle. So Strangle is an amazing
+[    6.78s ->    12.16s] option selling strategy and a great tool. To be completely honest, it's not something that I do
+[   12.16s ->    18.28s] because I'll explain here in a second. It kind of caps the upside of the market, which is a con for
+[   18.28s ->    23.14s] it. But again, this is still a great strategy, one that Tasty Live uses. That would be Tom
+[   23.14s ->    27.70s] Sosnop and those people that they love. So let's just dive into it because it's worked for me in
+[   27.70s ->    32.08s] the past, just not one of my personal favorites. Anyways, diving in, what are some things that
+[   32.08s ->    37.88s] you need to know? One, it works best in slow markets, markets that are slowly going up or
+[   37.88s ->    42.96s] slowly going down. And it works in sideways markets when markets are range bound. If the
+[   42.96s ->    47.64s] market is very explosive to the upside or very explosive to the downside, this strategy will
+[   47.64s ->    53.30s] not do well. Who this strategy works best for, for someone who wants slow, consistent profits
+[   53.30s ->    58.64s] and believes that the market is not going to move big in either one direction. So if you think the
+[   58.64s ->    65.66s] market is going slower, this is the strategy for you. Cons, one side of the Strangle tends to get
+[   65.66s ->    71.44s] hit, which means that your stop tends to get hit more than often, especially since the market tends
+[   71.44s ->    77.06s] to be bullish. Now, if you're trading it on an asset like gold that tends to be flat over time,
+[   77.06s ->    83.10s] you have an advantage. But the overall market tends to trend up over time. So it's harder to kind of
+[   83.10s ->    87.52s] make money, which strangles. Now, again, I'm just getting into the weeds right now. So I'm sorry,
+[   87.80s ->    92.58s] we'll do that in a second. Next trading account and sizing limits, you need full margin approvals.
+[   92.58s ->    99.16s] If you're trading with tasty trade, that requires the works account. ES will take about $6,000 of buying
+[   99.16s ->   107.18s] power. If you do MES, it's going to be 600 and spy takes about $10,000 in buying power. So how is the
+[  107.18s ->   113.08s] trade constructed? Well, like almost all strategies as mentioned in lesson number one, the base of
+[  113.08s ->   118.28s] it is selling a put. We sell a put and we receive income. That's what we do. Now, again, we're not
+[  118.28s ->   123.52s] only going to add to selling a put, but we're also going to sell a call. So how does this look on the
+[  123.52s ->   128.60s] chart? Well, selling a put means that we pick a level. We want the stock to stay above. So this
+[  128.60s ->   134.74s] is selling the put. Now, at the exact same time, what we do is we sell a call. We pick a level. We
+[  134.74s ->   140.80s] think the stock will stay below just like this. And now we create a box that we want this stock to
+[  140.80s ->   146.72s] trade in. That's why I said, if it moves slow and we do well, we'll make money, whether either up or
+[  146.72s ->   151.32s] down, it doesn't matter. But if we have an explosive move that breaks this upside or explosive down move
+[  151.32s ->   155.94s] that breaks this downside, either way, breaking one of these, that's where we lose money. So a
+[  155.94s ->   162.78s] strangle sells a put, which is betting that a stock will stay above a certain level and selling a call,
+[  162.92s ->   167.54s] which bets that a stock will stay below a certain level to create a range that we want the stock to
+[  167.54s ->   173.24s] stay between. So that is essentially what a strangle is. So again, we sell a put and we sell
+[  173.24s ->   179.88s] a call. The best deltas is about 5 to 220 delta for the put and about a 5 to, I would say more like
+[  179.88s ->   185.36s] 10 delta is best for the upper price point that you want to set. Combining the selling call and the
+[  185.36s ->   190.10s] selling put creates what we call a strangle. And again, the best days out in the future to do this
+[  190.10s ->   197.39s] is roughly 45 to 120 days. This is what it looks like. Again, like I said, we want it capped between a
+[  197.39s ->   201.73s] certain range. You can see here we are capped between a certain range. Once we start to break
+[  201.73s ->   207.89s] that range, then we start to go negative. So that is what a strangle is. What are some best practices
+[  207.89s ->   213.79s] around managing the strategy and managing the trades? So Tasty Live shows that early management
+[  213.79s ->   219.73s] is best, meaning that you close the trade out when there's 21 days left. So there's 21 days or less
+[  219.73s ->   225.07s] left in the position, then we'll close it. You can also do a normal stop loss about a 200 to 400
+[  225.07s ->   229.55s] percent stop loss is great for this trade. I've had success around a 300 percent stop loss level
+[  229.55s ->   235.61s] if you want to have a hard cutoff for your losses. Next, take profit. You typically manage your profits
+[  235.61s ->   240.29s] between 10 to 50 percent. That tends to be where it goes. When I was trading strangles in the past,
+[  240.33s ->   247.25s] I had a 300 percent stop loss and a 30 percent take profit, and I did well with that. Next, what are some
+[  247.25s ->   253.15s] of the best practices for the strategy? Well, you're going to sell the put at the 10 delta level.
+[  253.15s ->   258.87s] So you're going to come up a bit, and then you're going to sell the 5 delta call. So you're giving
+[  258.87s ->   264.77s] yourself more room to the upside. I personally like to skew this trade because it gives me more
+[  264.77s ->   269.31s] room to the upside. Why? The market tends to move up. So I want to give myself more room up here
+[  269.31s ->   274.05s] than down here because the market is continuously moving up. So I do about a 10 delta and a 5 delta.
+[  274.17s ->   278.89s] That's how I structure it. If you're following at Tasty Live Mechanics, they do 16 on both sides,
+[  278.89s ->   283.13s] which is the one standard deviation move. I just don't like that. I tend to have to manage
+[  283.13s ->   289.75s] it and close those trades sooner. So I like the 10 delta and 5 delta with a 30 percent take profit.
+[  290.39s ->   295.11s] But again, if we're following the Tasty Live Mechanics, which has been documented and they
+[  295.11s ->   304.05s] have back test four, you'll be doing 16 delta, 16 delta, 45 days until management, 21 days early
+[  304.05s ->   308.95s] management, which means that if there's 21 days or less left, you close it, and you do a 50 percent
+[  308.95s ->   315.73s] profit target. So again, we can automate this entire strategy through the options auto trader.
+[  315.79s ->   319.43s] It's actually quite simple. Again, if you have the document linked below, you can kind of walk
+[  319.43s ->   325.95s] through each step or I'll just do it for you. So again, we go into create auto trader. We select our
+[  325.95s ->   331.95s] Tasty Trade account. Again, I preloaded this in here for you. Like most strategies, if you go to our
+[  331.95s ->   337.21s] passive income strategies right here, there's a one standard deviation strangle strategy, which is what
+[  337.21s ->   343.97s] Tasty Live teaches. You can quickly enable that with one click. But again, for the sake of this,
+[  344.01s ->   347.21s] I'm going to create it from scratch so that you can kind of learn how it works. So we're going to
+[  347.21s ->   353.77s] sell a strangle as our strategy. We can pick our asset. MES is great for smaller accounts. 45 days
+[  353.77s ->   358.85s] out. Again, I plugged in my best practices here. So that's about a 10 delta and a 5 delta, 10 delta put,
+[  358.93s ->   365.50s] 5 delta call. It could give me more room to the upside. Next, you select how often you want to enter,
+[  365.50s ->   369.88s] once a week, three times a week, whatever that looks like. Right now, it's set up for once a week
+[  369.88s ->   378.41s] on Wednesday. So we'll leave that as is. Take profit percentage. Again, I like 30% just because
+[  378.41s ->   384.13s] I like to close trades faster. But again, 50% is what Tasty Trade shows for the best practice. So
+[  384.13s ->   390.99s] anywhere from 30 to 50% would be fine. And then early management of 21 days. Again, if you prefer a
+[  390.99s ->   396.39s] hard stop, then get rid of 21 days and just use a 300% stop loss. And it'll do roughly the same,
+[  396.39s ->   402.92s] but I'll give you a hard cut off. So that's kind of how that looks. Next, buying power allocation.
+[  403.12s ->   408.50s] How much money do I want the auto trader to trade with? So again, I'm trading MES, so it won't be
+[  408.50s ->   415.34s] much. So I would say 10,000 is always good with MES. If you're doing larger contracts, do 20, 25,000,
+[  415.70s ->   421.18s] you should be good. Just like that, you can see here, one strangle takes about $1,000 in MES
+[  421.18s ->   427.04s] and will make me about $75. So that's how we structure that trade. That's what it looks like.
+[  427.54s ->   433.36s] And again, that's what we can do with the options auto trader. If we like it, we agree with it,
+[  433.38s ->   437.08s] we're going to save the auto trader and then set it live and let it do its thing. All right, guys,
+[  437.38s ->   442.78s] that is selling strangles. A very easy, very systematic strategy. It can work great for many
+[  442.78s ->   447.14s] people. But remember, you want to be someone who believes that the market will not move
+[  447.14s ->   451.72s] dramatically in either direction. You're looking for a slower market and that's how you do it. Or
+[  451.72s ->   457.96s] you find assets that tend to trade sideways being metals. That's a great example. Wink, wink. So
+[  457.96s ->   463.36s] gold is a great example to trade strangles on. Anyways, guys, I hope that makes sense.
+[  463.62s ->   464.96s] I will see you in the next lesson.

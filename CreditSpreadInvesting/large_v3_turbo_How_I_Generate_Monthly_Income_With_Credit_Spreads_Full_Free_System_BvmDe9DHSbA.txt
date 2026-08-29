@@ -1,0 +1,1130 @@
+[    0.00s ->     4.82s] Credit spreads has been my go-to strategy that allowed me to compound my wealth while I was
+[    4.82s ->    10.96s] working at 9 to 5. Personally, without learning how to trade credit spreads, I probably wouldn't
+[   10.96s ->    16.08s] have been able to quit my job and retire late last year. But I also know that credit spreads
+[   16.08s ->    21.54s] can seem daunting. They are an advanced option strategy, but if you learn the risk and you learn
+[   21.54s ->    26.72s] how to harness credit spreads, you can actually grow your account a lot faster than you thought
+[   26.72s ->    32.38s] was possible. So this is why I made this video today. I'm going to show you step-by-step how to
+[   32.38s ->    37.92s] trade credit spreads the right way, from beginner strategies to more advanced concepts that I use
+[   37.92s ->    43.44s] even today. This video did take me a long time to make, and I'm sharing with you years of experience
+[   43.44s ->    48.58s] all for free. So if you guys like content like this, make sure you guys like the video and subscribe to
+[   48.58s ->    53.04s] the channel. It'll really help me out, and it'll also let YouTube know that this is content worth
+[   53.04s ->    57.92s] watching. And before we get started, I'm going to show you guys one of my larger accounts where I
+[   57.92s ->    63.71s] started trading credit spreads just so I can show you the performance for this video. So if you see
+[   63.71s ->    69.29s] right here, right, my account currently sitting around $740,000, give or take. And over the last
+[   69.29s ->    75.07s] three months, it's up 21%. And you can probably tell where I started selling credit spreads, right around
+[   75.07s ->    79.71s] the end of July to the beginning of August. And this is where the acceleration really happened.
+[   79.71s ->    84.51s] It's up $130,000 over the last three months. So not all $130,000 is attributed to credit spreads.
+[   84.67s ->    90.15s] Some of it is leaps, some of it is stocks, some of it is selling puts, and some of it is credit
+[   90.15s ->    93.51s] spreads. So in order to see the performance, I'm going to bring you over to a dashboard that I use
+[   93.51s ->    99.57s] to track how I trade credit spreads. Here's every single trade that I took since I started this
+[   99.57s ->   105.37s] experiment to show you guys how to trade credit spreads. My first spread was in July. That expired in
+[  105.37s ->   110.43s] August. And I lost on that one, you can see there's a there's a lot. There's a decent amount
+[  110.43s ->   116.97s] of spreads here. UNH, EIX, Lockheed Martin, and recently more TSMC are the only four stocks that
+[  116.97s ->   122.07s] have traded. You can see since the end of July, where I lost my first trade over the last two
+[  122.07s ->   129.45s] months, I'm actually up around $43,000. So just for context, in two months, I'm up $43,000 soon to be
+[  129.45s ->   133.83s] close to $50,000 because I have three spreads that are almost all decayed out planning to roll them
+[  133.83s ->   140.95s] very, very soon, which means that my actual performance over this last two months is close
+[  140.95s ->   147.30s] to 100%, which means I doubled my money in slightly more than two months. You'll see some metrics here
+[  147.30s ->   153.60s] that I use to track my trades. We will come back at a later part of this video to review some of these
+[  153.60s ->   157.46s] metrics so you guys can understand why these are important. If you trade credit spreads well,
+[  158.02s ->   162.50s] if you just follow a very simple strategy that we'll go through in this video in detail,
+[  162.50s ->   169.82s] understand your risks, and more importantly, how to minimize that risk, credit spreads really is
+[  169.82s ->   176.20s] a great tool to compound your earnings while you're working a nine-to-five. This video will be very
+[  176.20s ->   181.52s] comprehensive, so you may need to revisit this video many, many times. If you ever need to skip to a
+[  181.52s ->   188.89s] section or refer back to something, click on the chapter selection tool below. All right, let's get started.
+[  188.89s ->   194.79s] So what are credit spreads? Credit spreads is a defined loss and profit option strategy that
+[  194.79s ->   200.59s] involves simultaneously selling and buying an option on the same stock that expire at the same
+[  200.59s ->   206.07s] time. There are two main types of credit spreads, put credit spreads and call credit spreads. Generally
+[  206.07s ->   210.45s] speaking, a put credit spread means you think that the stock is going to go up and call credit spreads
+[  210.45s ->   213.73s] means you think the stock is going to go down. Don't worry, if that sounds a little complicated,
+[  213.73s ->   218.35s] we're going to go through a couple examples to really hone in the basics of what credit spreads
+[  218.35s ->   223.41s] are, and we're going to focus mainly on the put credit spread first because that's going to be the
+[  223.41s ->   227.93s] more widely used instrument, and then we'll come back to the call credit spread and also explain that
+[  227.93s ->   232.17s] briefly, but that'll be later on in the video. All credit spreads have three main parts, right? You
+[  232.17s ->   237.73s] have this underlying stock, you have the strike price, and you have days to expiration. So let's first
+[  237.73s ->   241.61s] take a look at put credit spreads by heading over to our trading platform. I'm using IBKR, but you can
+[  241.61s ->   247.27s] use Robinhood, Webull, Fidelity, Charles Schwab. They're all the same. And we're going to choose
+[  247.27s ->   252.51s] a stock first. For this demonstration, we're going to use Microsoft, and it's currently sitting at $510
+[  252.51s ->   258.51s] at market post today. Next, we're going to go over to the option chain. This option chain will look the
+[  258.51s ->   263.65s] same regardless of what brokerage or what platform you're on, and it will tell you all the same
+[  263.65s ->   269.47s] information. It'll tell you the days to expiration, how long before these options expire, as well as the
+[  269.47s ->   276.90s] calls and the puts, as well as the strike price. Now, for us, we're going to choose a day to expiration
+[  276.90s ->   283.12s] first. You can choose any of these, right? These extend pretty far out, but again, for simplicity's
+[  283.12s ->   289.22s] sake, we'll choose 13 days. And then we want to start setting up our put credit spread. When we're
+[  289.22s ->   296.10s] selling a put credit spread, we are selling a put first that is below the current stock price of $510,
+[  296.10s ->   302.88s] and then we will be buying an option right below the one that we just sold. So in this case,
+[  303.32s ->   308.36s] because Microsoft's at $510, we'll sell our put option below that. So we'll be around $505.
+[  308.96s ->   317.40s] When we sell the $505, we will be collecting close to $455. Now we have to then buy the long leg
+[  317.40s ->   324.46s] another put. So we'll buy it below $505, which is $500. Now when we're buying an option,
+[  324.46s ->   331.41s] we will be spending money. And we'll be spending close to around $320 for this one option,
+[  331.85s ->   338.53s] which means that we'll net out around $120 of credit. And the reason that we are collecting
+[  338.53s ->   344.67s] money is because we are selling an option that is closer to $510, and we're buying an option that is
+[  344.67s ->   351.21s] further away from $510. So we'll be collecting more money because $505 is closer to $510,
+[  351.21s ->   357.23s] and we'll be spending less money on buying an option at $500 because it's further away from $510.
+[  357.71s ->   361.87s] After all that, we'll collect around $120 that will show up in our brokerage account
+[  361.87s ->   364.51s] immediately after we open up this credit spread.
+[  365.32s ->   369.26s] I want to focus your attention to this one thing here too. This is what we call a bid-ask spread.
+[  370.14s ->   373.52s] The bid is basically the maximum amount of money that you can maybe get.
+[  373.88s ->   379.24s] Highly unlikely you'll get $150 here. The ask is the minimum you'll get, the least you'll get,
+[  379.24s ->   385.56s] so $120. Usually speaking, you'll get somewhere around the mid-price, so $138 is the logical or the
+[  385.56s ->   391.20s] most reasonable number you'll see. But for demonstration purposes, we'll get the most
+[  391.20s ->   397.17s] conservative number, which is $120 in this example. Again, just to reiterate, the moment you open up
+[  397.17s ->   402.37s] this trade, you'll collect $120 in your brokerage account for you to use immediately afterwards.
+[  403.73s ->   409.93s] So now that we opened up our first put credit spread, let's understand how we win and how we lose.
+[  409.93s ->   417.93s] There are three main outcomes for credit spreads. The best case scenario is if Microsoft stays above
+[  417.93s ->   424.39s] our $505 strike price. So in this case, if it stays above $510. What happens to both of these options
+[  424.39s ->   431.56s] is that they will both expire worthless after 13 days. That means they both go to zero.
+[  431.90s ->   437.12s] And we'll make our max profit of $120. Now, we're going to take a step back here.
+[  437.12s ->   443.40s] We're going to understand why both options, the short leg and the long leg, both are worthless
+[  443.40s ->   448.90s] by first understanding what it actually means to sell an option and buy an option.
+[  449.12s ->   454.64s] When we buy a put, what that means is the buyer of that option has the right but not the obligation
+[  454.64s ->   460.12s] to sell a stock at a given strike price on or before the expiration date. When we sell a put,
+[  460.12s ->   466.72s] the seller has then the same obligation to buy those shares at the same given strike price on
+[  466.72s ->   473.94s] or before the expiration date. So when we bought the $500 put, we have the right to sell our stock
+[  473.94s ->   484.04s] at $500. But Microsoft is at $510. So why would I want to sell my stock at $500 when I can go on the
+[  484.04s ->   490.64s] open market at that moment and sell it for $510? Making less, I would actually be better off not
+[  490.64s ->   501.16s] selling it at $500. And this is why those options are worth $0. The same logic applies. For the sold
+[  501.16s ->   508.34s] put at $505, I would have the obligation to buy 100 shares of Microsoft at $505. But why would someone
+[  508.34s ->   514.84s] sell me 100 shares of Microsoft at $505 when they can sell it at $510? That $505 put option that we
+[  514.84s ->   524.78s] sold is also worthless and therefore it is also worth $0. So what we see is when both options expire
+[  524.78s ->   533.02s] out of the money, which means they are above our $505 strike price, above both legs, we make our max
+[  533.02s ->   540.32s] profit, which is going to be the credit that we collected, in this case $120. Now let's examine
+[  540.32s ->   545.52s] the second scenario, which is the worst case scenario, when both options expire in the money,
+[  545.96s ->   553.36s] which means that the stock price is below $500, our long leg. Because the stock price is now worth
+[  553.36s ->   561.52s] below $500, for example, let's say $495. As the buyer of the $500 put option, I now have the right
+[  561.52s ->   570.80s] to sell 100 shares of Microsoft at $500. Therefore, I will go ahead and sell those shares at $500.
+[  571.26s ->   579.90s] At the same time, the $505 put, we will be forced to buy 100 shares at $505 because someone sold it to
+[  579.90s ->   586.82s] us at $505, which means that we will be spending $50,500 acquiring 100 shares of Microsoft shares at
+[  586.82s ->   594.62s] $505 a share. At the same time, we will be selling those same shares at $500 a share, which means that
+[  594.62s ->   604.12s] we will end up losing $500 on this one transaction. We're selling at $500, we bought it at $505. But
+[  604.12s ->   611.18s] before expiration, we also collected $120, right? So the final P&L for this one credit spread,
+[  611.18s ->   618.76s] if it were to go in the money, will be $500 minus $120, which means that we will be losing $380. And this
+[  618.76s ->   624.52s] is the worst case scenario. So our max loss will be $380. And let's talk about the third one. And this is the
+[  624.52s ->   628.92s] one that probably won't happen as often. And we will actually talk a little bit more about how to avoid
+[  628.92s ->   635.86s] this scenario. But there are certain times where the stock price goes in between your two strike prices. So for
+[  635.86s ->   644.62s] example, in this case, $503. If Microsoft were to be at $503, my 500 put option would be worthless, right? We've been
+[  644.62s ->   653.86s] over this, worth $0. But the $505 put option that we sold would be worth some money. At expiration, we would
+[  653.86s ->   664.38s] probably buy 100 shares of Microsoft at $505 a share, right? Again, we'll send $50,500 to buy those 100 shares. But
+[  664.38s ->   673.42s] because now we own 100 shares, we can then sell it that same time at $503 a share, meaning that we
+[  673.42s ->   681.84s] will make back $50,300. So after all that, we'll lose $200 on that transaction. Again, remember, we
+[  681.84s ->   689.70s] collected $100 to begin with, which means that after all that, we'll net out a loss of $80. When it's in
+[  689.70s ->   696.08s] between our legs, again, it is directly related to how far in the money it is to our short leg, our
+[  696.08s ->   701.20s] sold put. At the end of the day, our P&L will look something like this, where we make the max profit
+[  701.20s ->   709.20s] when it's above our short leg. We will make the max loss when it's below our long leg. The break-even
+[  709.20s ->   719.10s] point will be our short leg subtracted by our total credit collected. In this scenario, we'll be $503.80.
+[  719.10s ->   724.78s] Anything above that will make money. Anything below that will lose money. Okay, so this is how
+[  724.78s ->   729.74s] the put credit spread scenario pans out. Again, I'll pause right here. If you guys have any questions,
+[  729.88s ->   733.40s] let me know down in the comment section below, and I'll do my best to clarify even further.
+[  733.96s ->   737.64s] Now, let's move on to the call credit spread side, and that will be exactly the same,
+[  738.12s ->   743.40s] only flip to the other side. So we're going to head back to Microsoft's option chain, and we'll do the
+[  743.40s ->   747.98s] exact same thing. So instead of selling it below our strike price, now because we're selling a call
+[  747.98s ->   756.54s] credit spread, we want to sell it above our stock price. So for example, we'll sell a 515 call option,
+[  756.64s ->   761.64s] and again, we'll be collecting money around $625. So in this case, then we want to buy another option
+[  761.64s ->   769.16s] above the one that we just sold. So let's do 520. Again, because we're selling an option closer to our
+[  769.16s ->   775.24s] stock price, closer to the money, we will be collecting more money, right? $625, and then we
+[  775.24s ->   780.94s] will be spending some money, a little bit less, to buy an option. This call option is now what we
+[  780.94s ->   787.65s] will call a protection leg, as you can see from the put credit spread example. The 520 call option,
+[  787.77s ->   794.29s] we will spend around $420 to buy it, and in this case, we'll net out around $190 of credit
+[  794.29s ->   801.24s] for a 515, 520 call credit spread. Let's do the same exercise. We will take a look at the three
+[  801.24s ->   805.46s] scenarios. One is both out of the money, both in the money, and only one leg in the money.
+[  806.16s ->   812.22s] So in this case, Microsoft, let's assume that it stays at $510, right? Now they're both out of the
+[  812.22s ->   820.28s] money because it's below our 515 strike price. If it's below 515, both options are worthless. Again,
+[  820.28s ->   827.06s] let's go back to the definition of what it means to sell a call and buy a call. So when we buy a call
+[  827.06s ->   833.94s] option, the buyer of that option has the right, but not the obligation, to buy 100 shares of that
+[  833.94s ->   840.54s] stock at the specified strike price on or before the expiration date. Now when we're selling a call
+[  840.54s ->   846.92s] option is the inverse. We have that same obligation then to sell 100 shares of that option at that
+[  846.92s ->   854.42s] designated strike price. If Microsoft is at $510 and my strike price is at $520 as the buyer of an
+[  854.42s ->   862.82s] option, there is no reason why I would want to buy 100 shares of Microsoft at $520 when I can go out
+[  862.82s ->   870.78s] and buy it at $510, right? I would be spending less money not going through with my option. Therefore,
+[  870.78s ->   876.82s] that's why the bought option is worthless. The same exact logic applies to the $515 put option that we
+[  876.82s ->   883.52s] sold. There's no reason why anyone would want to buy 100 shares of Microsoft from us at $515 when they
+[  883.52s ->   889.08s] can go out and buy it at $510. Again, that's why that option is worthless. So in this case, same thing
+[  889.08s ->   894.18s] as the put credit spread, because they're both out of the money, we would take our max profit, which is
+[  894.18s ->   899.72s] the credit that we collected when we opened up this credit spread, which would be $190. Now let's examine
+[  899.72s ->   905.20s] the second scenario, which is where they're both in the money. So they're both in the money when the
+[  905.20s ->   912.50s] stock price goes past both of our strikes. So it goes past our short leg and our long leg. So in this
+[  912.50s ->   917.06s] case, let's assume that Microsoft goes to $550. So we would have to buy 100 shares of Microsoft
+[  917.06s ->   927.46s] at $520, spending $52,000 to buy 100 shares. But then our sold call, we can then sell that 100
+[  927.46s ->   935.98s] shares at $515 a share, which means that we will make back $51,500. It nets out to a loss of $500.
+[  936.46s ->   941.08s] What you see here, same thing with the put credit spread, is that it will be the difference between
+[  941.08s ->   946.84s] our legs, which would be $520 minus $515 times 100 shares. Therefore, the loss here will be $500.
+[  947.42s ->   954.92s] Again, we collected $190 initially upfront, which means that we would only end up losing $310
+[  954.92s ->   961.96s] if both options are in the money. This is again, our worst case scenario. Let's talk about scenario
+[  961.96s ->   966.42s] number three then, when it's in the money. In this case, let's assume that Microsoft is just slightly
+[  966.42s ->   974.52s] in the money. $516 is the final strike price. The $520 call option that we bought will expire out of
+[  974.52s ->   980.30s] the money, like we talked about earlier. The $515 strike price that we sold, we would be in the money.
+[  980.30s ->   985.02s] So what would happen here is we would have the obligation, right, to sell 100 shares, but we
+[  985.02s ->   991.02s] don't have those shares. So what we do is we go on to the open market, we'll buy 100 shares at $516 a
+[  991.02s ->   998.78s] share, which means we'll spend $51,600. And then we would then sell those shares immediately afterwards
+[  998.78s ->  1007.88s] at $515 a share, getting back $51,500. Netting out, again, $100. So very easy way to remember it is
+[ 1007.88s ->  1013.64s] just remember your stock price minus your strike price, which is $515 times 100 shares, there'll be
+[ 1013.64s ->  1022.86s] $100. Now, because we collected $190 initially, we actually ended up making $90 on this trade.
+[ 1022.86s ->  1033.82s] And that is because our break-even price is going to be $515 plus $1.90, which would be $516.90.
+[ 1034.28s ->  1041.48s] Anything below $516.90, like in this case, $516, will end up making money. Anything above $516.90,
+[ 1041.78s ->  1048.82s] like $519, will end up losing money. That $516.90 is our break-even point. So you can see from the
+[ 1048.82s ->  1058.10s] chart that anything below our short leg, $515, is going to be our max profit. Anything above $520,
+[ 1058.16s ->  1063.92s] which is our protection leg, will be our max loss. And anything below our break-even point will make
+[ 1063.92s ->  1068.00s] money. And anything above our break-even point will lose money. So just to reiterate,
+[ 1068.78s ->  1074.26s] on the put credit spread and call credit spread, we sell an option closer to the money, and then we
+[ 1074.26s ->  1080.02s] buy an option further away from money, which we'll call the long leg. That long leg is our protection
+[ 1080.02s ->  1084.58s] leg. And that's the difference between selling a naked put versus a credit spread, because that
+[ 1084.58s ->  1091.66s] bought option, that long option, will allow us to minimize our risk to whatever that width is.
+[ 1092.52s ->  1096.30s] Again, if you guys have any questions, let me down in the comment section below. But we still have
+[ 1096.30s ->  1100.82s] more to talk about, so let's get to it. So now that we know how to put and call credit spread works,
+[ 1100.82s ->  1107.78s] let's take a look at how pricing changes as the underlying stock moves up or down. We're only
+[ 1107.78s ->  1112.18s] going to do a put credit spread example here, but you can imagine on the call side, it's going to be
+[ 1112.18s ->  1117.74s] exactly the same thing, only flipped to the other side. So I want to take one of my actual trades that
+[ 1117.74s ->  1122.22s] I traded earlier this year to demonstrate this principle. So earlier this year, we sold a $400,
+[ 1122.40s ->  1128.92s] $395 put credit spread on Microsoft, 31 days out, and collected a total of $132 of total credit.
+[ 1128.92s ->  1135.38s] So during this time, Microsoft started at $421 and got to a low of $394, but it ended up out of
+[ 1135.38s ->  1142.46s] the money at $414. That as the stock dips around August 5th, our credit spread pricing peaked around
+[ 1142.46s ->  1152.02s] $250. Our P&L at that point in time will be negative $100 because we collected $130, but the credit
+[ 1152.02s ->  1157.78s] spread was worth $230. I think it's a little important for us to understand why at this very
+[ 1157.78s ->  1163.50s] moment, the credit spread isn't worth $500, even though both legs are in the money because there's
+[ 1163.50s ->  1169.50s] still 25 days left. So Microsoft still has a chance to be out of the money before expiration.
+[ 1169.78s ->  1177.08s] And as you can see, as soon as Microsoft rebounds and goes above $400, the profit on this credit
+[ 1177.08s ->  1183.50s] spread trade turned positive. And this is because of the concept called theta decay. Theta is how much
+[ 1183.50s ->  1189.32s] a contract decays or loses value each and every day, which means that the options contracts that
+[ 1189.32s ->  1194.68s] we sold and bought will be worth less and less each and every day. And then we as option sellers,
+[ 1194.68s ->  1198.86s] because credit spread is an option selling strategy, we'll end up making money as these options become
+[ 1198.86s ->  1204.66s] more and more worthless. After Microsoft recovered and went above both legs, the rest of the trade is
+[ 1204.66s ->  1210.33s] relatively uneventful with Microsoft ending at $414, which means that Microsoft doesn't even have to go
+[ 1210.33s ->  1216.69s] up and we can still make max profit. In this case, still return 36% a month. And this is exactly why
+[ 1216.69s ->  1221.07s] credit spreads are great for small accounts because you actually don't need that much money to run the
+[ 1221.07s ->  1225.61s] strategy and why it's great for people with full-time jobs or working professionals because it's actually
+[ 1225.61s ->  1231.11s] pretty hands-off and can be pretty passive. So now that we examined a winning trade, now let's look
+[ 1231.11s ->  1235.31s] at a losing trade because we're not going to win every single trade that we take. So we're going to use
+[ 1235.31s ->  1240.69s] the same timeframe for Microsoft, but instead of selling it at $400 and $395, we're going to be
+[ 1240.69s ->  1248.13s] selling it basically at the money at $420, $415. Microsoft again was at $421. With this increased
+[ 1248.13s ->  1253.77s] risk, because we're closer to the money, we collected $225 of spread. And as you can see again,
+[ 1253.83s ->  1258.95s] Microsoft dipped all the way down to $414 on August 5th. And at that point, our spreads are worth
+[ 1258.95s ->  1265.35s] actually $410, a lot more than our previous example. And the reason for that is because
+[ 1265.35s ->  1272.03s] $394 is really in the money. Our bottom leg is at $415. And the market is pricing in that it's going
+[ 1272.03s ->  1277.67s] to be a lot harder for Microsoft to get back above $420. Then you can see Microsoft recovered,
+[ 1277.97s ->  1283.29s] ended up at $414, which means that it is in the money on both our sold leg and our bought leg.
+[ 1283.29s ->  1290.25s] And then we will then be forced to take the max loss of $275, which would be $500 minus $225.
+[ 1291.05s ->  1297.39s] The beauty here is that your losses are defined, right? You're only risking $275, our max loss,
+[ 1297.49s ->  1304.09s] to make $225, which is our max profit. I'm going to compare a credit spread to selling a single put.
+[ 1304.37s ->  1312.07s] So here we have an AMD and we sold a $200, $195 put credit spread basically right at the money.
+[ 1312.07s ->  1317.63s] At the same time, we also sold a $200 put unprotected. So for the $200, $195 credit spread,
+[ 1317.71s ->  1325.59s] we collected $230. For the unprotected put, we collected $1,170. But as you can see, AMD fell
+[ 1325.59s ->  1333.45s] all the way down to $163. For our credit spread, we are limited by our max loss, no matter what the
+[ 1333.45s ->  1340.87s] price point of AMD is. AMD can be $195, it could be $163. We are going to lose $270. And we'll talk a
+[ 1340.87s ->  1344.47s] little bit more about this later on, but this is one of the benefits to selling credit spreads
+[ 1344.47s ->  1350.01s] because your losses are defined, as we said earlier on in this video. For the unprotected put,
+[ 1350.43s ->  1356.37s] we'll end up losing more and more and more money the further AMD falls in the money. And so when it
+[ 1356.37s ->  1367.59s] gets to expiration at $163, that unprotected put will end up losing us $2,492. So if AMD were to
+[ 1367.59s ->  1373.89s] continue to go down, for example, maybe to $153, then we'll lose another $1,000, which means we'll
+[ 1373.89s ->  1380.59s] end up losing $3,492. So let's just compare apples to apples, right? Let's sell five credit spreads to
+[ 1380.59s ->  1387.13s] match the same amount of credit we would receive from selling that $1,200 unprotected put. Even if
+[ 1387.13s ->  1392.39s] we were to sell five credit spreads and end up taking the max loss, we would still end up only losing
+[ 1392.39s ->  1401.85s] $1,350, which is still more than $1,000 less than if you were to sell that one standalone put.
+[ 1402.05s ->  1407.97s] Again, I want to really reiterate this point. The beauty of credit spreads is because we are buying
+[ 1407.97s ->  1414.25s] that extra leg as protection, our losses are always going to be defined, which makes it really easy for
+[ 1414.25s ->  1420.95s] us to understand our risk to reward. So let's move on to a beginner strategy on how to open up and trade
+[ 1420.95s ->  1424.71s] credit spreads. So credit spreads have four variables that we need to learn about. First
+[ 1424.71s ->  1431.83s] one is days to expiration. Second one is the strike price that we sell it at. Third is the width between
+[ 1431.83s ->  1437.73s] our two strike prices. And the fourth one is the underlying stock that we're selling our credit
+[ 1437.73s ->  1442.89s] spreads on. So let's now focus first on time to expiration. How many days out we want to sell our
+[ 1442.89s ->  1449.85s] credit spreads for? Here we charted out Tesla's $270, $265 put credit spread, the price point at
+[ 1449.85s ->  1455.91s] different days to expiry. So the one that is at 70 days out is going to be worth around $160.
+[ 1456.91s ->  1463.61s] The same credit spread, but with 10 days left to expiry will be around $50. The more time there is on
+[ 1463.61s ->  1469.83s] the spreads, the more credit we can collect because those options are going to be worth more. What I would
+[ 1469.83s ->  1476.02s] actually want you to focus on is actually focus on the curve. Do you see how the curve starts
+[ 1476.02s ->  1482.46s] accelerating downwards around 30 to 40 days to expiry? While before 40, the value of that contract
+[ 1482.46s ->  1489.44s] actually doesn't change too much. It goes from $160 to maybe $130. Only lost $40. But in a span of 10
+[ 1489.44s ->  1494.14s] days, it goes from like $130 all the way down to $100. So it's actually lost the same amount of value
+[ 1494.14s ->  1499.52s] in less time. And this is the perfect example to demonstrate what we call theta decay and how it speeds
+[ 1499.52s ->  1505.32s] up as it enters into the 30 to 45 day zone. And then it really accelerates when it gets to around
+[ 1505.32s ->  1510.50s] two weeks left. So what we want to do here, and the lesson and takeaway here, is that we want to
+[ 1510.50s ->  1515.26s] sell credit spreads around 30 to 40 days out to take advantage of this acceleration in theta decay.
+[ 1515.60s ->  1521.44s] Anything further out beyond 45 days, thinking 65 or 70 days, quote unquote be wasting time because
+[ 1521.44s ->  1526.38s] the value of those contracts are not decaying out as fast as it could be if we sold a little bit
+[ 1526.38s ->  1532.48s] closer to expiration. So I'll give you an example. 29 days left to expiry, Tesla is worth $115.
+[ 1533.74s ->  1539.76s] At 71 days to expiry, that Tesla credit spread is actually worth $167. So I would rather sell two
+[ 1539.76s ->  1545.94s] 29 days to expiry credit spreads than to sell 171 day to expiry because I would collect 230 if I sold
+[ 1545.94s ->  1553.22s] two 29 days to expiry as opposed to selling 171 days to expiry for 167. So going forward, especially for
+[ 1553.22s ->  1559.00s] this beginner strategy, we are going to be selling around 30 days to expiration credit spreads because
+[ 1559.00s ->  1566.86s] that is where we are optimizing data decay. So now let's move on to the next variable, which is the
+[ 1566.86s ->  1572.10s] strike price. Closer that our credit spreads are to the actual stock price, the more money that we're
+[ 1572.10s ->  1580.18s] going to make. In one example, we sold the 420, 415 credit spread by selling the 420 put and then by
+[ 1580.18s ->  1585.90s] buying the 415 put. For this one credit spread, in this scenario, 23 days out on Microsoft, we're
+[ 1585.90s ->  1590.06s] going to collect around $160. It's probably going to be slightly more just due to how the bid ask
+[ 1590.06s ->  1594.38s] credit works. And just remember this number at the bottom of the screen right here, probability of
+[ 1594.38s ->  1599.08s] profit. The probability of profit, otherwise known as POP, is 60%. We're slightly out of the money.
+[ 1599.34s ->  1604.80s] Microsoft only has to drop 1% for us to be in the money. If you want to decrease the risk and increase
+[ 1604.80s ->  1609.70s] the probability of winning, we will move further out of the money by selling further away. Sell the
+[ 1609.70s ->  1616.10s] 415 and we will buy the 410. And you can see the probability of profit went from 60% to 69%
+[ 1616.10s ->  1623.48s] and the amount of credit dropped from 130 to 115. We can do the same exercise again by going further
+[ 1623.48s ->  1629.66s] out of the money by selling the 410 and then buying the 405. You can see the probability of profit went
+[ 1629.66s ->  1635.54s] further up at 76% and now we're only going to collect $76 on the spread. Inverse relationship between
+[ 1635.54s ->  1640.54s] credit and probability of profit. The higher the chance of you guys winning, the less credit you're
+[ 1640.54s ->  1647.14s] going to collect. So what exactly is POP? POP stands for probability of profit, which is what
+[ 1647.14s ->  1653.34s] the brokerage thinks is the chance of you winning and making a profit on this trade. You might also
+[ 1653.34s ->  1662.20s] hear delta. It is usually used as an approximation for probability of profit. So for beginners, it's
+[ 1662.20s ->  1670.93s] okay to equate delta to POP. So the next logical question is what is a good POP for us to be selling
+[ 1670.93s ->  1675.23s] credit spreads on? If you see my put selling masterclass, it's going to be a very similar
+[ 1675.23s ->  1678.99s] explanation. When I first started, and I would recommend this to most beginners as well, is that
+[ 1678.99s ->  1685.09s] you choose a delta or a POP that is between 70 and 80%. The reason for that is because a normal
+[ 1685.09s ->  1691.33s] distributed bell curve covers about one standard deviation when it's between 70 and 80%. So
+[ 1691.33s ->  1698.31s] statistically speaking, it's a relatively conservative choice. Now later on this video, we will look at
+[ 1698.31s ->  1705.95s] ways to try and optimize the strike price. But for beginners, it is okay for us to use probability of
+[ 1705.95s ->  1711.97s] profit or delta as a good way to find a relevant strike price for us to enter. So going back to
+[ 1711.97s ->  1721.77s] our previous example, you can see a POP of around 76% will net you close to $93 on that one five-point
+[ 1721.77s ->  1727.31s] credit spread. So for simplicity's sake, we'll just say it averages out to $100 of credit, which means
+[ 1727.31s ->  1733.45s] that you would take $100 of profit divided by your max loss, which is going to be $400. And your total
+[ 1733.45s ->  1743.75s] return on risk will be 25%. In 23 days, you'll be making 25% if Microsoft stayed above 410. And so
+[ 1743.75s ->  1748.57s] that's a really good return. And that's also another reason why credit spreads are great to compound
+[ 1748.57s ->  1755.13s] smaller accounts. Now that we understand how to choose a relevant strike price for beginners. So
+[ 1755.13s ->  1760.77s] now let's take a look at what the width between our top leg and our bottom leg should be when we're
+[ 1760.77s ->  1766.65s] selling either a call or a put credit spread. So in this case, right, we're selling a 410, 405 put
+[ 1766.65s ->  1772.17s] credit spread. It's a five-point width. The return on investment here is 76 divided by 422. So it's
+[ 1772.17s ->  1778.13s] around 18%. Now what will happen if we were widened this to a 10-point spread as opposed to a five-point
+[ 1778.13s ->  1784.03s] spread? So we would still sell the 410, but now we're going to buy the 400. And for this one spread,
+[ 1784.03s ->  1791.11s] we're now going to collect $104 for this 10-point spread. Credit has actually increased, but so has
+[ 1791.11s ->  1799.91s] our max loss. 104 divided by 896, which would be 11.6%. So you can see the wider the width, the more
+[ 1799.91s ->  1804.85s] credit you're going to collect, but the actual return on investment will actually drop. So what
+[ 1804.85s ->  1810.51s] I would recommend, especially for beginners, is to keep those legs, those widths as short as possible.
+[ 1810.51s ->  1815.61s] So on Microsoft, for example, you see the shortest width possible was a five-point width. That's what
+[ 1815.61s ->  1822.15s] we're going to go with. Because what I would rather do is sell two five-point spreads as opposed to one
+[ 1822.15s ->  1828.71s] 10-point spread and collect 76 times two, which is $152, as opposed to selling one 10-point spread
+[ 1828.71s ->  1835.17s] and collecting $104. I will make more money selling those two five-point spreads. So now that we know
+[ 1835.17s ->  1840.93s] what width to choose for our credit spreads, let's move on to the next one, which is the underlying
+[ 1840.93s ->  1845.67s] stock. For simplicity's sake, what we care about when we're choosing a stock to sell credit spreads
+[ 1845.67s ->  1852.03s] on, liquidity and volatility. We're going to focus mainly on volatility because that is going to have
+[ 1852.03s ->  1857.61s] the largest impact on the amount of credit that we can collect when we're selling either a call or a
+[ 1857.61s ->  1863.55s] put credit spread. And we're going to show that by comparing two stocks with two very different
+[ 1863.55s ->  1869.37s] implied volatilities. So here is a five-point spread on Microsoft right at the money $4.20, $4.15.
+[ 1869.97s ->  1875.19s] Now, if you were to compare this spread to, let's take a look at something like Tesla.
+[ 1878.01s ->  1884.27s] Tesla's at $3.28. Let's do the same expiry, 23 days out. Our seller is slightly out of the money,
+[ 1884.61s ->  1891.63s] $3.20 and $3.15. We can actually collect more money here, $1.85, than the previous example with
+[ 1891.63s ->  1897.75s] Microsoft, even though the same five-point spread. And our spreads are actually further away from the
+[ 1897.75s ->  1904.96s] current stock price at Tesla. Even if I were to drop it further out of the money, you can see I still
+[ 1904.96s ->  1910.46s] collect around $1.60, even though we're about 12 points away from the stock price. And one of the
+[ 1910.46s ->  1914.90s] main reasons for that is what we would call implied volatility. The higher the implied volatility,
+[ 1915.58s ->  1920.72s] the more credit you can collect from your credit spreads. So you can see IV here for Tesla is around
+[ 1920.72s ->  1926.60s] 61%. And then for Microsoft, it's around 18%. So now that we understand generally how these
+[ 1926.60s ->  1931.66s] variables affect credit spreads, let's try and open up a credit spread live. What we're going to do
+[ 1931.66s ->  1936.42s] first is we're going to try and figure out a good stock to sell. And like we said, we need to find
+[ 1936.42s ->  1943.72s] stuff with high volatility and high liquidity. So most brokerages have what we call screeners where we
+[ 1943.72s ->  1949.50s] can put in these two main criterias and filter for stocks that fulfill what we're looking for. I already
+[ 1949.50s ->  1954.06s] have this set up, but I'm really only filtering for two main things, option implied volatility and
+[ 1954.06s ->  1958.44s] option volume. If you guys want to go in here and add your own filters, additional filters or change
+[ 1958.44s ->  1962.42s] the one I have in here, this is where you would go and selecting that select the ones that you think
+[ 1962.42s ->  1968.00s] are relevant. So let's just start off with option implied volatility. Usually speaking, we want to be
+[ 1968.00s ->  1975.52s] aiming around 30 to 55%. Anything above 55, it's a little it's very volatile price, there's going to be a lot
+[ 1975.52s ->  1980.40s] of price fluctuations. So especially if you're a beginner, that price fluctuation may be hard to
+[ 1980.40s ->  1984.44s] handle. And so I would just recommend that you don't do anything that's too volatile because it
+[ 1984.44s ->  1988.44s] could cause a lot of emotional distress. We'll talk more about the psychological part of trading later
+[ 1988.44s ->  1993.52s] on. Anything below 30, kind of like what we saw with Microsoft, it may not be worth your time because
+[ 1993.52s ->  1998.86s] you can be getting a lot more bang for your buck selling something else. So sweet spot 30 to 55%.
+[ 1998.86s ->  2005.44s] One caveat here, IBKR actually does a really weird way of setting limits. So you have like 0.02 and 0.04,
+[ 2005.44s ->  2011.20s] basically what that means is you're looking around 30% to at most 55% implied volatility here. Next thing
+[ 2011.20s ->  2015.76s] we're going to focus on is option volume. Option volume basically just means how many options have
+[ 2015.76s ->  2020.48s] changed hands within a certain amount of time. We want something that's relatively liquid, right? Highly
+[ 2020.48s ->  2025.36s] traded because as you'll see later on this video, we have to think about the worst case scenario, which
+[ 2025.36s ->  2031.60s] is being able to get in and out of a trade relatively quickly and unscathed when you have to take a loss.
+[ 2031.60s ->  2037.92s] I'm going to try anything above 100k and above volume. So you can see this is what it screens out to.
+[ 2037.92s ->  2044.00s] I'm filtering by a market cap right now. We see Nvidia, Amazon, Meta, Broadcom, Google, TSM, another Google,
+[ 2044.00s ->  2050.48s] Oracle, Netflix, Alibaba, Palantir, UnitedHealthcare. You can see some obvious ones that are left out like
+[ 2050.48s ->  2057.04s] Microsoft's not here. Apple was not here mainly because their option supply volatility is very, very low.
+[ 2057.04s ->  2061.84s] So now that we found one here, we can try and trade a credit spread on any of these. So for
+[ 2061.84s ->  2067.60s] simplicity sake, let's just do Nvidia. We'll click on it and we will go to the option chain like we
+[ 2067.60s ->  2076.78s] did last time. So what do we do here? We want to trade for 30 days out. So we'll click on the 32 day
+[ 2078.06s ->  2083.18s] expiry. And then what we're going to do here, we're going to be looking for again, 70 to 80%
+[ 2083.18s ->  2090.81s] probability of profit for our strike prices. That's around 76. That's perfect. So 170, 165
+[ 2090.81s ->  2095.53s] will be our probability profit. If you want to be a little bit more aggressive, be at like
+[ 2096.89s ->  2101.69s] 68, that's a little bit aggressive. It's past our range. If you want to be a little bit less aggressive,
+[ 2103.20s ->  2109.84s] you're at 83. It's a little bit, I guess, too conservative. So in this case, 170, 165 is the sweet
+[ 2109.84s ->  2116.56s] spot, right? Collect close to $100 on this one spread bid aspect is 98 to 106. So you can see
+[ 2116.56s ->  2120.48s] the bid aspect is very short because there's enough liquidity here. So you're probably going to get
+[ 2120.48s ->  2126.16s] around $102 on this one trip. You can just click in here and you go find your actual number. Let's
+[ 2126.16s ->  2131.92s] say more selling 20 here and then you can up the price here to usually I usually go around the mid
+[ 2131.92s ->  2137.36s] price. So one 102 and then you say buy order. So one thing you want to realize here, you're taking a
+[ 2137.36s ->  2141.60s] credit because it is a credit spread. So you're taking money in just reiterate, if it's above 170
+[ 2141.60s ->  2146.16s] on October 31st, you will make max profit. If it's below 165, you will take the max loss.
+[ 2146.16s ->  2149.84s] Let's do one more about opening up a call credit spread. So we'll go back to research,
+[ 2149.84s ->  2154.64s] go back to market screeners, and it's very simple. So let's choose one with really high option volume.
+[ 2154.64s ->  2160.40s] We'll go to Nvidia has the highest option volume. So we can go like, for example, let's do the friend AMD.
+[ 2161.20s ->  2167.52s] AMD's implied volatility is 46.6 with 500,000 shares of options. So we'll go to options here.
+[ 2168.60s ->  2173.80s] And we'll do basically the same thing. We'll find the 32 day DTE. And instead of selling a
+[ 2173.80s ->  2178.76s] put credit spread, we will now be selling a call credit spread. So maybe we start with 167.5 and
+[ 2178.76s ->  2193.34s] then 170. Probability of profit is 60, 67, 75. Perfect. The first thing you can see right here is
+[ 2193.34s ->  2196.78s] that the width is actually 2.5 points instead of five. So we're going to be selling the shortest
+[ 2196.78s ->  2201.42s] width possible. You can kind of tell the liquidity isn't as high as Nvidia. So you can see your bid-ask
+[ 2201.42s ->  2206.04s] spread is slightly larger, but we're still going to try and aim for the mid price
+[ 2206.04s ->  2215.32s] of $52. So we'll go in and we will say order. And let's go again, same thing as 20 credit.
+[ 2215.32s ->  2222.60s] We'll go to the mid price, which is around 53. And then we will say buy order. And then after
+[ 2222.60s ->  2225.88s] clicking buy order, the order get placed. And then you can have, you might have to readjust
+[ 2225.88s ->  2230.76s] your pricing in order for it to get filled. The same exact idea on the put credit spread
+[ 2230.76s ->  2234.76s] side on the call credit spread, at least in the beginner strategy. In the more advanced section
+[ 2234.76s ->  2239.00s] later on in this video, we will talk more about how to sell calls because selling calls,
+[ 2239.00s ->  2243.88s] in my honest opinion, is a little bit harder than selling puts, mainly because the market's
+[ 2243.88s ->  2248.52s] generally in an upswing most of the times. We've opened up two credit spreads, a put credit spread
+[ 2248.52s ->  2253.72s] and a call credit spread. We understand what DTEs are, what the right widths are, what the right strike
+[ 2253.72s ->  2257.56s] prices are. So you can theoretically go out there and sell your first credit spread.
+[ 2257.56s ->  2262.68s] Okay. So on this channel, we like to talk risks. So let's talk a little bit about the pros and cons
+[ 2262.68s ->  2267.16s] of credit spread, but we're really going to focus on the cons here because in the advanced section,
+[ 2267.16s ->  2272.52s] we want to take these cons, these weaknesses and try to cover them up. So the benefit is probably,
+[ 2272.52s ->  2276.84s] hopefully pretty obvious. You have a high probability of winning. You can make a decent
+[ 2276.84s ->  2281.48s] return every single month. You don't need a lot of money to do this. And lastly, it's actually
+[ 2281.48s ->  2286.84s] relatively passive and it can be pretty straight forward, which makes this ultimately a great
+[ 2286.84s ->  2291.08s] strategy again for people with small accounts and people with full-time jobs that have other
+[ 2291.08s ->  2297.80s] commitments. However, there are a couple of cons. The first one is probably the easiest to understand.
+[ 2297.80s ->  2304.22s] In most cases, because we're selling credit spreads out of the money, we can lose more money than we
+[ 2304.22s ->  2309.42s] can make. And all of the examples that we shared, those are all out of the money examples, which means
+[ 2309.42s ->  2316.30s] that we are collecting less credit. Our max profit is always less than our max loss. It is not unlikely
+[ 2316.30s ->  2321.90s] that you take a couple of bad trades, you lose the max loss, and it wipes out your account.
+[ 2322.62s ->  2329.26s] That is one of the biggest drawbacks to a selling option strategy because you will usually have a
+[ 2329.26s ->  2335.26s] larger max loss, a larger drawdown than you do a max profit or your upside. And number two,
+[ 2335.26s ->  2339.74s] credit spreads and selling puts are two very different strategies and they have two very different
+[ 2339.74s ->  2344.30s] ideologies. The first one is that when you're selling puts, you can see that even if you get assigned,
+[ 2344.30s ->  2348.78s] you will have shares to hold on to. So your consolation price is you'll have shares,
+[ 2348.78s ->  2353.12s] a hundred shares or something. However, when you're selling credit spreads, you don't really
+[ 2353.12s ->  2359.44s] have that luxury. You're basically trading that safety net of having shares for increased gains.
+[ 2359.44s ->  2363.20s] If you guys haven't seen my Puts Selling Masterclass, I'll link it in the upper right-hand corner here.
+[ 2363.20s ->  2366.08s] But essentially, when we're selling puts, we are acquiring stocks.
+[ 2366.08s ->  2372.48s] When we're selling credit spreads, we are trading. And so because of that, we have to have two very
+[ 2372.48s ->  2377.84s] different mentalities. When we're trading, we are actually actively managing our profit and loss
+[ 2377.84s ->  2383.60s] because there is no consolation price, right? We can't have shares as a fallback, which means that
+[ 2384.24s ->  2390.08s] a lot of times credit spreads can actually be more difficult to trade and usually is more difficult
+[ 2390.08s ->  2395.52s] to trade than selling puts because there is an emotional aspect to this. Which takes us to the
+[ 2395.52s ->  2400.00s] most important and probably the most interesting part of this video, which is talking about the
+[ 2400.00s ->  2406.80s] psychology behind trading. The real reason that most traders lose isn't because they don't understand
+[ 2406.80s ->  2413.13s] the concepts that we're going to talk about. It's because they're not able to follow a plan
+[ 2413.13s ->  2418.17s] consistently because they don't know how to control their emotions, right? If a trade goes red,
+[ 2418.17s ->  2422.65s] they panic. If a trade goes green, they get greedy. And if you're not able to control it,
+[ 2423.37s ->  2427.85s] then you're still going to lose in the long run. And there's actually a lot of behavioral research
+[ 2427.85s ->  2432.97s] that kind of explains a lot of our human behavior. In 1979, there's two psychologists,
+[ 2432.97s ->  2438.41s] Daniel Kahneman and Amos Tversky. They introduced a concept called prospect theory. And in this theory,
+[ 2438.41s ->  2446.41s] they introduced loss aversion, which is humans feel the pain of a loss two times as much as the joy from
+[ 2446.41s ->  2453.37s] winning. So an example is a $100 loss hits you twice as hard as a $100 gain. And for me, that's 100%
+[ 2453.37s ->  2458.25s] true, right? I can't tell you a lot of the wins that I've had, but I can tell you a lot of the losses
+[ 2458.25s ->  2462.25s] that have just stuck with me and nod at me for years. And that combined with something called
+[ 2462.25s ->  2467.85s] disposition effect, identified by two researchers, Scherfren, I might be pronouncing that wrong, and
+[ 2467.85s ->  2473.37s] Statman, which describes the behavior that I think we as investors or traders are pretty familiar with,
+[ 2473.37s ->  2478.57s] which is holding our losers way too long and then cutting our winners way too quickly.
+[ 2478.57s ->  2485.13s] And I honestly think that as option sellers, these two behaviors, loss aversion and disposition effect,
+[ 2485.13s ->  2490.17s] they're amplified because the people who gravitate towards selling options are people who are actually
+[ 2490.17s ->  2495.29s] more risk averse. I'm actually extremely risk averse. So when I first started, the reason that
+[ 2495.29s ->  2500.57s] selling credit spreads resonated so much with me is because someone was telling me that I can win most
+[ 2500.57s ->  2504.89s] of the time and at the same time is relatively passive and I can make decent amount of money by
+[ 2504.89s ->  2512.33s] doing so. That sounds great. When we win a lot, we are not accustomed to losing. And so when we do lose,
+[ 2512.33s ->  2516.73s] I actually think this loss aversion hits us even harder than maybe two times. We just don't want to
+[ 2516.73s ->  2522.97s] lose. We don't want to realize that loss. And so we have the disposition, right, to hold onto our losers
+[ 2522.97s ->  2529.37s] for as long as possible because we don't want to realize the pain of losing. And so what we end up doing
+[ 2529.37s ->  2533.45s] is we start rolling it out. We start spending money to roll it out, to delay the inevitable,
+[ 2533.45s ->  2537.61s] right? Hoping that one day the market will rebound and our trade will become green so that we don't
+[ 2537.61s ->  2544.33s] actually have to be wrong. From my experience, this is extraordinarily true. The worst losses that
+[ 2544.33s ->  2551.72s] I ever had in credit spreads are the ones where I keep trying to hold on and not take the actual loss
+[ 2551.72s ->  2558.36s] by rolling things out and hoping that the market recovers in my favor. And I'm rationalizing these
+[ 2558.36s ->  2564.76s] emotional responses. And this is how my small losses became very, very big ones. Let me know
+[ 2564.76s ->  2568.92s] down in the comment section below if you've ever had experiences like this. And this is why our
+[ 2568.92s ->  2573.32s] advanced strategy came about, right? These are all for my losses that I've taken over the years to try
+[ 2573.32s ->  2578.52s] and minimize the effect that fear and greed have on me. And so what we're learning on later on in this
+[ 2578.52s ->  2585.16s] video is all from controlling these psychological impulses. So keep that in the back of your mind
+[ 2585.16s ->  2588.36s] when you're going through the rest of the section, because I think it's going to put things in a lot
+[ 2588.36s ->  2592.92s] of context for you to understand why I trade the way that I do. So let's get to the more advanced
+[ 2592.92s ->  2599.40s] section by first understanding what a bad trader looks like and what a good trader looks like.
+[ 2599.40s ->  2603.48s] So let's head on over to our iPad and we'll just do some simple profit and loss analysis.
+[ 2603.48s ->  2608.68s] So let's assume that every time we win, we make 100 bucks. And every time we lose,
+[ 2612.14s ->  2620.86s] let's say we lose the max loss of 400, right? So maybe in this case, we win, let's say seven times,
+[ 2622.12s ->  2635.28s] but we lose three times, right? So you see here we'll make, sorry, here we'll make 700 bucks,
+[ 2635.28s ->  2647.68s] but we'll lose 1200 bucks when we lose, which means that we'll lose 500 bucks overall, right? So that's
+[ 2647.68s ->  2652.00s] not a very good risk or reward because every time we lose, we lose so much, but we're winning a lot.
+[ 2652.00s ->  2658.36s] We're winning 70% of the time, but overall we turn on negative. So this is why the previous strategy
+[ 2658.36s ->  2666.36s] sort of works. We'll take a win of $120 and we lose the max loss of 380.
+[ 2666.36s ->  2672.12s] So it's around a 80% win rate. So let's say we win four times and we lose one time.
+[ 2672.12s ->  2678.92s] So this comes out to be 480 and this comes out to be 380, which means that on average,
+[ 2678.92s ->  2685.92s] we'll make a hundred dollars, a hundred dollars, right? Profit over a span of five trades.
+[ 2686.88s ->  2691.12s] Why? Because we're winning enough to cover up this one loss.
+[ 2691.12s ->  2697.76s] So what we ideally want to do, especially as we get into the more advanced section, is we want to
+[ 2697.76s ->  2703.84s] make sure that when we win, we can take as much of the max profit as possible and that when we lose,
+[ 2703.84s ->  2711.12s] we don't lose nearly as much as the max loss, because that is how one trade wipes us out, right?
+[ 2711.12s ->  2718.88s] Even in this scenario, this one trade basically took more than 75% of our total gain on this one loss.
+[ 2718.88s ->  2722.08s] And this is true for everything with trading. It doesn't matter if it's credit spread,
+[ 2722.08s ->  2726.64s] it doesn't matter if you're trading leaps or day trading, how you manage losers is going to be
+[ 2726.64s ->  2731.28s] the most important thing. So I'm going to do one last example to show you that ideally speaking,
+[ 2731.28s ->  2735.20s] if you're able to reach this level, you'll be profitable in the long term.
+[ 2735.20s ->  2739.20s] What I'm doing nowadays is this, I win, maybe I win a little bit less, I keep the same win,
+[ 2739.20s ->  2745.44s] right? But when I lose, I only lose, I say 60. I get out really, really, really quickly.
+[ 2745.44s ->  2749.28s] So what happens is, let's assume that I just win five times and I lose five times. My win rate is
+[ 2749.28s ->  2752.80s] terrible, right? I only win 50% of the time, which is pretty bad when it comes to option selling.
+[ 2753.52s ->  2759.36s] What you'll see is, you'll end up making $600 here, you'll end up losing $300 here,
+[ 2759.36s ->  2767.20s] so you'll make a total of $300 after a span of 10 trades. But ideally speaking, if you're really
+[ 2767.76s ->  2772.00s] good at trading credit spreads, this is probably what your P&L is going to look like. And I'll show you
+[ 2772.00s ->  2776.96s] guys my results for over the last two months or so, so that you can see that this is actually
+[ 2776.96s ->  2780.64s] doable. On the channel, I show you the implementation of the trades and the results because that's how
+[ 2780.64s ->  2784.00s] you guys know you guys can trust the process and trust the results. So make sure you guys stay around
+[ 2784.00s ->  2787.84s] for that. Ideally speaking, what you want to do is let's assume that we keep the same win loss,
+[ 2787.84s ->  2796.16s] right, of 120 and 60. But we want to try and win seven and try to lose three, which means that this
+[ 2796.16s ->  2804.88s] will end up being 840. And this will end up being 180. Okay, which means that you'll net out $660
+[ 2806.43s ->  2811.79s] after 10 trades. This is what we're looking for. And after the more advanced section of the video,
+[ 2811.79s ->  2815.87s] if you stick around and gain more and more experience, and you tinker my strategy to
+[ 2815.87s ->  2820.75s] how you guys like to trade, you guys will be able to get here. I have no doubt about it. I know from
+[ 2820.75s ->  2826.03s] experience that when you're selling options, it is very hard for you to want to take a loss because the
+[ 2826.03s ->  2832.27s] chances of you winning are so high. All right, so let's move on to the more advanced section,
+[ 2832.27s ->  2837.77s] which is going to be about how we up that win rate as much as we can. And then more importantly,
+[ 2837.77s ->  2844.89s] how we up the average credit collected. And then most importantly, and this is hopefully the takeaway,
+[ 2844.89s ->  2851.21s] is how we manage those losers when they do show up. So now that we understand why we need to manage
+[ 2851.21s ->  2858.73s] losses, let's introduce the concept of setting up stop losses, which basically means that if something
+[ 2858.73s ->  2866.25s] hits a specific price, then I exit the trade and I take the loss and I move on. So in our case, the
+[ 2866.25s ->  2871.37s] number one rule when it comes to selling credit spreads for me is that I am never willing to risk
+[ 2871.37s ->  2877.69s] more than I can make. In simple terms is if I have a credit spread, a call credit spread, and it gave
+[ 2877.69s ->  2883.53s] me a hundred dollars of credit, I'm not willing to lose more than an additional one hundred dollars,
+[ 2883.53s ->  2889.93s] which basically means I'm risking a hundred dollars to make a hundred. So in application, how this would
+[ 2889.93s ->  2895.45s] work out is if my current credit spread is worth a hundred dollars, if the credit spread hits 200,
+[ 2895.45s ->  2901.77s] then I would take that loss of $200 and exit the trade. But because I already got a hundred dollars
+[ 2901.77s ->  2907.69s] up front, my final loss is only going to be a hundred dollars. This shows you, right? I'm not
+[ 2907.69s ->  2914.89s] willing to lose more than I can make. If the credit spread hits 150, never hits 200, I don't exit. If the
+[ 2914.89s ->  2922.01s] call credit spread hits 175, I don't exit. The moment it hits 200, I'm out. By setting up this initial
+[ 2922.01s ->  2928.73s] stop loss, right, we're already getting rid of the possibility of losing a large sum of money. For
+[ 2928.73s ->  2934.09s] example, $400 in this case. We're getting rid of that possibility so that we can maintain our P&L,
+[ 2934.09s ->  2939.13s] right? Because if I, like we said earlier, if I lose 400 bucks, I need to win four trades in a row to
+[ 2939.13s ->  2945.29s] make that money back. Second rule is that we never let a winning trade become a losing trade. What that
+[ 2945.29s ->  2951.85s] means is if my trade starts going in my favor, let's assume that my credit spread is now at $50. I'm up
+[ 2951.85s ->  2957.05s] 50 bucks. It feels good, but I still have like 20 days left. I'll move that stop loss up to break
+[ 2957.05s ->  2962.33s] even. So which means that if the credit spread ever got back to $100, then I exit the trade.
+[ 2962.33s ->  2967.13s] It also gets rid of the possibility of me losing money on this trade and maintains my P&L.
+[ 2967.13s ->  2972.57s] This is actually one of the hardest things to do because psychologically speaking, and if you guys
+[ 2972.57s ->  2976.57s] have traded even a little bit, you guys may understand this feeling. You have this feeling of
+[ 2976.57s ->  2980.97s] euphoria because I'm making money, right? And then the moment it drops below
+[ 2981.93s ->  2988.49s] break even, you might think, oh crap, I might need to sell, but because I was up on it, I'm not
+[ 2988.49s ->  2994.33s] willing to take a loss. And so you hold that asset, you hold this option, or you hold the stock,
+[ 2994.33s ->  3000.17s] hoping that it will go back above break even. But lo and behold, it sometimes never does, and you end
+[ 3000.17s ->  3007.29s] up taking again a giant L. By moving my stop loss up from $100 to break even, I'm willing to not make
+[ 3007.29s ->  3013.77s] any money, but I'm not willing to lose money. Now let's assume that this credit spread now is at $25,
+[ 3013.77s ->  3018.25s] so you're up $75. Now in this case, you definitely don't want to lose any money here, right? Because
+[ 3018.25s ->  3023.45s] you're already up so much money. So I move my stop loss from break even up to 50%, so it would just be
+[ 3023.45s ->  3030.81s] $50. The moment it breaks past 50%, then I lock in my profit and I make 50 bucks. Simple as that.
+[ 3030.81s ->  3036.33s] And then you keep this going. It hits $12.50, then you move it to 25% because every time it drops below
+[ 3036.33s ->  3042.01s] 25%, I'm not willing to lose. So the $75 profit that is currently unrealized, I'm going to realize
+[ 3042.01s ->  3047.13s] it. I call this a dynamic stop loss. It's not really a trailing stop loss. It's just you keep moving
+[ 3047.13s ->  3052.33s] it up as the market progresses, right? But you give yourself wiggle room so that you don't get stopped out
+[ 3052.33s ->  3057.45s] too quickly. Initial open, you set your stop loss at 100% of your credit collected. If you want to
+[ 3057.45s ->  3063.69s] set it at 50%, that's also completely fine. Just go from a range of 50 to 100%. Once it hits 50% in
+[ 3063.69s ->  3070.65s] credit, you move it up to break even. Once it hits 25% in credit, move it up to 50. Once it hits 12.5%
+[ 3070.65s ->  3077.29s] of credit, move it up to 25%. This way, you're continuously protecting your gains as the market
+[ 3077.29s ->  3080.33s] progresses. Shortly later on in the next couple of sections, I'll show you guys how you guys can even
+[ 3080.33s ->  3084.97s] refine this even further with technical analysis. But for beginners, this is actually a great way for
+[ 3084.97s ->  3088.97s] you to quote unquote, automate your spreads while you're doing something else. This is actually one
+[ 3088.97s ->  3093.61s] of the strategies that I've been using when I'm not looking at the charts to keep things relatively
+[ 3093.61s ->  3098.17s] passive. And just a caveat, right? You'll have some trades where you're up and you break even,
+[ 3098.17s ->  3101.69s] you might feel bad. And there's a certain trades where you stop out and the market reverses and you'll
+[ 3101.69s ->  3106.01s] feel even worse. This is just to make sure to protect your P&L to make sure you continue to win
+[ 3106.73s ->  3111.85s] as often as you can and to lose as little as you can when you do lose. So now that we understand
+[ 3111.85s ->  3117.93s] our stop loss strategy, we have to then learn how to exit these spreads. And we can do that by one,
+[ 3117.93s ->  3124.25s] closing out our spreads outright, or two, rolling them and extending the lifetime of those spreads.
+[ 3124.25s ->  3127.37s] So first, I'm just going to demonstrate how to close a spread. Let's take for example,
+[ 3127.37s ->  3133.05s] this UNH one that's up a decent amount. So we'll go in here, we'll click on it, and we'll click,
+[ 3133.05s ->  3139.45s] we'll go close position, right? Closing position just means that I'm buying back the short leg and
+[ 3139.45s ->  3145.37s] I'm selling the long leg, right? I'm basically doing the inverse of how I opened it. Now I have 12 in this
+[ 3145.37s ->  3152.49s] account. And you can see the bid aspect is about 27 to 40. I'll go to the mid price, probably to get
+[ 3152.49s ->  3158.65s] a good fill. And I'm just going to submit sell order to close out this spread. You may have to
+[ 3158.65s ->  3162.49s] tinker with the price a little bit, it's somewhere in between. But the worst you can do is 40 cents,
+[ 3162.49s ->  3168.01s] the best you can do probably at this moment is 27. So let's take this one step further and show you how
+[ 3168.01s ->  3174.57s] to roll a spread. Rolling by definition means that I am closing this current spread like we just talked
+[ 3174.57s ->  3182.81s] about and opening up a new one at a later date. We're extending the time left on our spreads.
+[ 3182.81s ->  3190.41s] So maybe instead of closing it where we want to roll. So I have this TSM put right here. Okay.
+[ 3190.41s ->  3195.93s] So instead of closing it, I'm gonna click on rollover. And because it expires October 17th,
+[ 3195.93s ->  3201.93s] 14 days out, I'm up like 70, 75% on this. I want to roll it out. So I want to give myself
+[ 3201.93s ->  3207.93s] a two week rollout. Let's keep it the same strike price, 260, 265. So we'll sell the 260 and we'll
+[ 3207.93s ->  3214.30s] buy the 255. In this case, right, the bid aspect is still relatively large, but I can probably get
+[ 3214.30s ->  3218.38s] around 25 cents for this one roll. And this is what we call rolling out. We're keeping the same strike
+[ 3218.38s ->  3223.66s] price, just extending the time. And this makes sense, right? Because there's more time on these
+[ 3223.66s ->  3227.82s] options. Now I should be getting a credit for it because of theta, right? There's more time on
+[ 3227.82s ->  3235.74s] these contracts. Now, if I want to roll it down to a lower strike price, let's do 250, 255. So we're
+[ 3235.74s ->  3242.12s] selling the 250 and we're buying the 245. Sorry. And now we're rolling it down. So it's, it seems like
+[ 3242.12s ->  3248.04s] we're going to have to pay money for this, a debit, even though we have more time, we're now further out
+[ 3248.04s ->  3253.48s] of the money. So we are reducing our risk to a certain extent. We're increasing our probability
+[ 3253.48s ->  3259.40s] of profit. Therefore, we're going to receive less money for it, right? And in order for me to close
+[ 3259.40s ->  3265.08s] out my initial spread and then open up a new spread at a later date, I'm going to spend more money
+[ 3265.08s ->  3270.52s] closing out my existing one, less money collected when I open up the new one. So one last thing we can
+[ 3270.52s ->  3276.04s] do instead of rolling down, maybe want to roll up because TSM has gone up in price point, which means
+[ 3276.04s ->  3283.28s] that instead of selling it at 260, I want to sell maybe one for 270 and buying back the 265 leg as
+[ 3283.28s ->  3289.54s] protection. Now, because we're rolling it up in strike prices, we're closer to the money and we're
+[ 3289.54s ->  3294.50s] extending it out. We should be getting even more credit, right? And you can see that I'm potentially
+[ 3294.50s ->  3300.74s] going to collect 64 or $65 of credit on this one roll. Now we have to understand when to roll.
+[ 3301.02s ->  3306.26s] So the first one is the easiest to understand. Rolling is a great way for us to
+[ 3306.26s ->  3313.88s] continuously compound and maximize the amount of credit that we're collecting. So my rule of thumb
+[ 3313.88s ->  3321.11s] is usually this. Let's assume that we have like a four week spread around a 30 DTE, right? When there's
+[ 3321.11s ->  3328.51s] two weeks left, 50% time remaining, I check to see if I have more or less than 75% of the credit
+[ 3328.51s ->  3335.77s] already decayed out. Am I up 75%? If the answer is no, then I'm going to keep the spread and let it
+[ 3335.77s ->  3340.73s] keep going. If the answer is yes, then I'm going to try and roll it. And usually in this case, I'm
+[ 3340.73s ->  3345.41s] going to roll it up, right? Because this usually means that the stock has moved up, causing our
+[ 3345.41s ->  3351.49s] spreads to be really far out of the money. Another checkpoint is when there's 25% left, or maybe in
+[ 3351.49s ->  3359.55s] this case, one week left on the spread. Do I have around 90% decayed out? Again, if the answer is no,
+[ 3359.75s ->  3365.99s] then I might leave it. If the answer is yes, then I'm definitely going to roll it out. The idea here
+[ 3365.99s ->  3371.31s] is really simple, right? If I have 50% of the time left, and I have only 25% left on my spreads
+[ 3371.31s ->  3377.45s] in terms of profit, then I actually am being less efficient with time, right? I'm only going to make
+[ 3377.45s ->  3383.33s] a quarter of the money in half the time. So I want to move on from that spread. Another way to look
+[ 3383.33s ->  3392.49s] at it is because I've already decayed out 75% of the spread, I'm risking a lot of profit for very
+[ 3392.49s ->  3398.04s] little reward, which would be a quarter of the total credit. Now, the reason why I don't set it
+[ 3398.04s ->  3405.72s] at 50-50 is because if it's 14 days left, that's usually when theta is increasing, right? And so I
+[ 3405.72s ->  3412.04s] actually have a better chance of making more money in the next two weeks because theta is now
+[ 3412.04s ->  3417.18s] working my favor. Again, I'm trying to squeeze as much money out of this as possible. Same thing
+[ 3417.18s ->  3423.60s] with the one week left, right? I only have 10% left. Let's move on. Number two is when we want to defend
+[ 3423.60s ->  3429.88s] a spread, which means that we are down on the spread. So according to our stop loss principle,
+[ 3430.00s ->  3434.18s] let's just take, for example, the first stop loss of 100% of your total credit. Once it hits that,
+[ 3434.18s ->  3438.40s] instead of closing it, you could potentially roll it out to a different date, right? You're
+[ 3438.40s ->  3444.60s] extending the timeframe of that spread to allow yourself more time to win. Let me give you an
+[ 3444.60s ->  3448.96s] example by showing you the charts and the pricing so that you guys can kind of understand why this
+[ 3448.96s ->  3453.00s] works. So we're going to do an example on the call side, actually, because we haven't done a lot of
+[ 3453.00s ->  3459.98s] that. So in this case, let's say that NVIDIA is at $119.51 and I'm thinking of selling a call credit
+[ 3459.98s ->  3466.14s] spread because I think the market might continue to go down. Fine. So let's just go to August 30th
+[ 3466.14s ->  3474.88s] and find a credit spread. So August 30th, there's no probability of profit here. So I'm just going to
+[ 3474.88s ->  3482.89s] estimate, I'm going to do 125, 130, because that gives me around seven points, which is, I think,
+[ 3482.93s ->  3489.41s] close to 80 or 70% probability of profit, give or take. So in this one case, this one spread,
+[ 3489.41s ->  3496.16s] I'll be collecting $170 of credit. Now let's fast forward a couple of days. Let's go to August 2nd,
+[ 3496.20s ->  3503.00s] just to see how it pans out. NVIDIA has dropped to $1.07, which means that my spread should be up,
+[ 3503.44s ->  3510.16s] right? In one week, I'm now to $99. I'm up close to $70 on this one trade, close to half.
+[ 3511.34s ->  3518.24s] Let's go forward one more week. NVIDIA is now at $1.06, so it's even further and dropped to $90,
+[ 3518.24s ->  3524.50s] which means that, so now we're at $70. We're above 50%, so what do we do? We move our stop loss from
+[ 3524.50s ->  3532.66s] what it was before to break even, which is $1.70. So on August 15th, NVIDIA has now shot back up,
+[ 3532.72s ->  3538.76s] right? It's continued its upstream now to $1.19, very close to where we sold it for. Now it's
+[ 3538.76s ->  3544.22s] basically back to where it was before, right? $1.62, basically $1.70. Let's assume that here,
+[ 3544.22s ->  3551.36s] you're thinking, let's hit our stop loss. Let's roll it out. Let's give myself more time so that
+[ 3551.36s ->  3557.20s] I can let this play out. So because there's only two weeks left and you're like, hey, I want to keep
+[ 3557.20s ->  3563.86s] that same buffer. Let's move it to September 20th, which is another two and a half weeks.
+[ 3564.48s ->  3569.98s] And this gives us $10 of credit. So it was $1.72. We were at $1.62. So by rolling it out,
+[ 3569.98s ->  3575.92s] I'm collecting $10 and extending my time. So I'm adding to my funds. So now my total credit
+[ 3575.92s ->  3583.68s] collected for this one trade is $172 instead of $162. That is usually how you would want to roll
+[ 3583.68s ->  3588.26s] things out in terms of defense. But the next question that I get all the time is, why don't
+[ 3588.26s ->  3593.00s] we roll it up or to a higher strike price to give us even more margin for error? And I'll show you
+[ 3593.00s ->  3600.54s] exactly why. So if you go to $135, $130, now you're collecting $137, which means that when you
+[ 3600.54s ->  3606.80s] roll this out, you're actually going to pay money to roll this out. So around $25 or so to give
+[ 3606.80s ->  3612.04s] yourself more room, right? Just in case NVIDIA continues to go up. The reason why I don't like
+[ 3612.04s ->  3619.12s] to do this is because now you're messing with your max profit and max loss, right? Your max profit
+[ 3619.12s ->  3628.02s] looked a lot better before. It was $170. Now it's at $137. And there's no guarantee that you'll win
+[ 3628.02s ->  3633.10s] in this trade because NVIDIA could continue to go up like it actually did, right? It went to $130.
+[ 3633.36s ->  3637.90s] This is where the next rule comes in when it comes to rolling is that I never roll if I can't get a
+[ 3637.90s ->  3643.32s] credit for it. If I'm paying a debit, never going to do it because I would rather just close the spread
+[ 3643.32s ->  3647.94s] out and move on. Well, let's continue talking about the topic of defense because I see that a lot in my
+[ 3647.94s ->  3652.86s] comments when I post about credit spreads. There's another way of trading credit spreads
+[ 3652.86s ->  3659.56s] where people break up the legs. So what that means is you have, for example, this $130, $135, right?
+[ 3659.60s ->  3665.48s] Expiring at the same time. One person might end up extending this one leg, just the sole leg,
+[ 3665.48s ->  3671.64s] so you can collect more money while leaving the top leg, the protection leg as stationary.
+[ 3672.08s ->  3677.12s] A lot of ways to mess with these legs. And honestly, these are really advanced topics,
+[ 3677.12s ->  3682.78s] really hard to do. But the reason that I don't really do this is because you're messing with your
+[ 3682.78s ->  3687.74s] defined risk and defined loss, right? You know for a fact that when you're selling credit spread,
+[ 3687.86s ->  3693.92s] your max risk is your total credit collected, subtracted by your width, right? That's my worst
+[ 3693.92s ->  3699.80s] case scenario. By breaking up the legs, you're introducing a lot more risk. But because that one
+[ 3699.80s ->  3705.72s] week, for example, where you have an unprotected put, if that stock continues to go against you,
+[ 3705.72s ->  3711.04s] for example, in this case, like Nvidia, where for demonstration purposes, it continues to go
+[ 3711.04s ->  3718.18s] up to like $129, then you'll start introducing a lot more risk and you'll start losing more and more
+[ 3718.18s ->  3723.28s] money all because you're not willing to take the loss. So my rule of thumb, and I like to keep things
+[ 3723.28s ->  3728.70s] as simple as possible because that's how you make things repeatable, is to just close out the spread
+[ 3728.70s ->  3734.16s] whenever you hit your stop loss. I don't even like rolling a spread in this manner, like we're talking
+[ 3734.16s ->  3738.82s] about right here, because it then just kind of delays the inevitable, especially on the call
+[ 3738.82s ->  3744.22s] side. One thing I do want to touch on, it's about early assignment. When your short leg goes in the
+[ 3744.22s ->  3753.82s] money, the option buyer has the right by definition to exercise that option, which means that you'll get
+[ 3753.82s ->  3757.28s] assigned. So if you're on the put side, you'll buy 100 shares. On the call side, you'll sell 100 shares.
+[ 3757.46s ->  3761.10s] That can happen at any time during the option contract. So that's why it's called early assignment
+[ 3761.10s ->  3766.68s] because it's not at the point of expiration. This is the in the money. This is the one option in the
+[ 3766.68s ->  3770.36s] money situation that we talked about in the beginning of this video. And it's a real risk
+[ 3770.36s ->  3774.72s] that happens. The first time it happened to me, I damn near lost my mind because I didn't really
+[ 3774.72s ->  3780.24s] comprehend what was happening. My brain kind of just blanked out. My honest advice here is to just
+[ 3780.24s ->  3786.72s] not deal with it, which means that if one leg of your option ever goes in the money, you close out
+[ 3786.72s ->  3791.92s] that spread immediately. Don't risk it. If you follow the stop loss principle that we talked about
+[ 3791.92s ->  3798.52s] earlier in this video, you should never have a leg that goes in the money. But if it does, do not risk
+[ 3798.52s ->  3803.04s] it. Just close it. It's not worth the headache. It's not worth the stress of early assignment because
+[ 3803.04s ->  3806.78s] when it happens, it will be very stressful. And I would just recommend that you guys avoid this
+[ 3806.78s ->  3811.42s] altogether. It's completely avoidable. It's much better to just take the loss and move on than it
+[ 3811.42s ->  3816.30s] is to have to stress about it. In my more advanced strategies, I actually don't use Delta in the same
+[ 3816.30s ->  3821.32s] way that we did in the beginner strategy. And let me explain to you why on both the put side and the
+[ 3821.32s ->  3825.68s] call side. I can't actually find this article anymore. I reference this a lot, even in my other
+[ 3825.68s ->  3831.34s] videos. I'm going to use one of my old videos. TastyTrade actually did a study from 2005 to all
+[ 3831.34s ->  3838.92s] the way to 2017, I believe. And they basically mapped out all the deltas on SPY using 45 days to
+[ 3838.92s ->  3844.78s] expiry and then measured what the actual percentages of it being in the money is. The overall takeaway here is
+[ 3844.78s ->  3850.04s] on the put side, you can see a 15 delta should usually equate to a 15% probability in the money.
+[ 3850.68s ->  3856.38s] But the call side is actually 19% and the put side is 8%. You see, same thing with 30, 40, and 50. The
+[ 3856.38s ->  3863.52s] calls are much higher than the deltas by 4%, 10%, 10%, 13%. The further out of the money you are, the higher
+[ 3863.52s ->  3872.72s] the percentage differences are. And on the put side, they're a lot lower 20, 26, 37 than the actual delta.
+[ 3872.72s ->  3877.60s] So the explanation for this is actually really simple, right? During that timeframe, S&P 500
+[ 3877.60s ->  3883.40s] and the overall market just in general has been in a general upswing, right? So it's more likely for
+[ 3883.40s ->  3888.02s] your options that are out of the money on the put side to be out of the money at the time of
+[ 3888.02s ->  3893.18s] expiration and your calls to be in the money by the time of expiration, just because the market
+[ 3893.18s ->  3897.56s] naturally goes up, right? This is just the natural flow of the market. And this is true for most
+[ 3897.56s ->  3902.82s] situations. The first thing we'll talk about is on the put side. What you're actually seeing here
+[ 3902.82s ->  3911.22s] is the market tends to overestimate the amount of risk associated with selling puts. And so this is
+[ 3911.22s ->  3917.04s] actually one of the main reasons why I do not like selling calls, mainly because the market is
+[ 3917.04s ->  3921.74s] underestimating the amount of risk that I'm taking on. I'll show you guys how I sell calls later on in
+[ 3921.74s ->  3929.49s] this video, but this experiment demonstrates two things. One is if I'm selling puts, I can actually
+[ 3929.49s ->  3933.65s] take on a lot more risk because the market technically always goes up, right? So I'm
+[ 3933.65s ->  3939.33s] actually bumping my probability of profit further into the money. On the flip side, I don't sell calls
+[ 3939.33s ->  3944.09s] very often because the market is underestimating risk. So I'm actually getting less reward for
+[ 3944.09s ->  3949.85s] more risk, which ultimately means that your put credit spread should be your dominant player
+[ 3949.85s ->  3955.03s] in generating income and generating gains, not your call side. The call side is very selective
+[ 3955.03s ->  3961.27s] and I'll show you exactly when to use them later on, which then leads me to, I guess, a more
+[ 3961.27s ->  3966.61s] technical part of trading. So by learning how to trade with technical analysis, not only can I bump up
+[ 3966.61s ->  3972.65s] my credit, I can also reduce that stop loss from the 50 to 100% that we said originally to something
+[ 3972.65s ->  3978.47s] that's even less. So let me show you how to do that first with TA. And this isn't going to be a
+[ 3978.47s ->  3985.47s] masterclass of TA. But if you want to learn how to trade technical analysis, I made a 75 minute
+[ 3985.47s ->  3990.67s] long video detailing everything there is to know about how to trade with TA. So make sure you guys
+[ 3990.67s ->  3995.41s] check that out linked in the upper right hand corner right here. With this section, with technical
+[ 3995.41s ->  3998.83s] analysis, I'm going to try and keep it as simple as possible. Keep this in the back of your mind.
+[ 3998.97s ->  4002.17s] One, we're trying to increase our win rate as much as possible. Two, we're trying to increase the credit
+[ 4002.17s ->  4006.85s] we can receive. And three, we're trying to reduce the amount of risk or the downside that we have
+[ 4006.85s ->  4011.63s] when we enter a spread. One of the best ways to use credit spreads as a way to trade momentum,
+[ 4012.35s ->  4016.43s] which means that if it's in an upswing, right, it's going up, I want to trade up. If it's going
+[ 4016.43s ->  4021.71s] down, I want to trade down. That sounds very obvious, right? And the easiest way to do that
+[ 4021.71s ->  4025.77s] is to find stocks that are very predictable, right? So I like to call this predictability.
+[ 4026.27s ->  4031.99s] So you head over to the charts and you can see what I mean. There are certain charts that have very
+[ 4031.99s ->  4037.63s] clean looking charts where you can go and see like, yeah, it's obvious that this chart is in an upswing,
+[ 4037.69s ->  4043.53s] it's going up. And it's obvious when things are going down. So if you look at this, the S&P 500,
+[ 4043.71s ->  4047.91s] right? Generally speaking, it's very obvious to identify uptrends, right? Downtrends, uptrends,
+[ 4047.91s ->  4053.05s] and downtrends. Take for example, this, this upstream right here. I saw that there is a lot of
+[ 4053.05s ->  4058.25s] buying power on this day right here on October 30th, 2023. So I decided to enter into put credit
+[ 4058.25s ->  4063.25s] spread. And if I had the simplest trading strategy, which is I sell credit spreads every
+[ 4063.25s ->  4069.05s] single week with a trend for a month out, it's highly probable that you will win every single
+[ 4069.05s ->  4074.09s] week until April 8th. Even if you sold right at the money, that's around a six month win streak just
+[ 4074.09s ->  4079.73s] by doing nothing but following the trend. However, if you didn't take into context the charts and you
+[ 4079.73s ->  4085.95s] decided to short the market on August 30th, and you sold out of the money every single week for a month
+[ 4085.95s ->  4091.89s] out, you would have lost every single trade for that six months. So this is why you have to be
+[ 4091.89s ->  4098.59s] able to one, identify the trend, and two, be able to have a chart that's predictable enough for you to
+[ 4098.59s ->  4103.91s] be able to write that wave up until the music stops. And this is why we have to learn a little bit about
+[ 4103.91s ->  4107.91s] technical analysis, because this allows us to find the right stocks to trade credit spreads on.
+[ 4108.21s ->  4113.87s] So I'll give you another example. A lot of blue chip stocks are usually very predictable, because they
+[ 4113.87s ->  4117.85s] usually have high correlation with the S&P 500. So Microsoft is another one, right? You can see
+[ 4117.85s ->  4122.47s] the chart's pretty relatively not volatile, pretty predictable. When it's in an upswing, you know it's
+[ 4122.47s ->  4127.07s] an upswing. When it's in a downswing, right here, you can see that it's in a downswing. Double top
+[ 4127.07s ->  4132.52s] random momentum ran down, right? When it's now in an upswing, it's in an upswing. If you go to like
+[ 4132.52s ->  4140.64s] meta, it's the same exact thing, right? Pretty predictable. You go to Nvidia, also very predictable.
+[ 4140.64s ->  4150.75s] Upswing, downswing, upswing. Compare that to a stock like Tesla. Tesla is very hard to identify trends,
+[ 4150.81s ->  4155.29s] right? It's sometimes an upswing, sometimes a downswing. I can't really tell you which side
+[ 4155.29s ->  4159.57s] of the trade to be on, because the charts are kind of messy. This is what happens when there's a lot of
+[ 4159.57s ->  4164.51s] volatility in the charts, right? It's very, very messy. And if you wanted to sell puts, you might lose.
+[ 4164.57s ->  4169.29s] If you sell calls, you also might lose. It's just not very clean. And so I stay away from charts like this,
+[ 4169.29s ->  4175.97s] because it makes my life a lot more difficult. And especially for beginners. With this many swings,
+[ 4176.31s ->  4181.29s] your spreads will change pricing a lot week by week, right? And so you sometimes will be caught going,
+[ 4181.39s ->  4186.39s] hey, should I exit? Should I not exit? Mainly because it's very hard to predict. And you don't
+[ 4186.39s ->  4190.33s] want to stress yourself out. You want to put yourself in those positions. So just stay away from charts that
+[ 4190.33s ->  4195.49s] are not very predictable. So the next logical question is, how do we identify how predictable a stock is?
+[ 4195.49s ->  4199.19s] And if you really want the whole story, go check out that masterclass that I'll link in the upper
+[ 4199.19s ->  4204.51s] right hand corner. But I'm going to give you guys the shortcut here. On my chart, I have the 20 period
+[ 4204.51s ->  4208.31s] moving average, the one in yellow, 50 period moving average is the one in blue, 200 period moving
+[ 4208.31s ->  4215.38s] average is the one in green. Keep in mind this chart right here, you can see how much the yellow one
+[ 4215.38s ->  4220.18s] moves and the blue one moves. It goes from a negative slope to a positive slope to a negative slope to a
+[ 4220.18s ->  4223.82s] positive. Kind of looks like a roller coaster, right? Same thing with the blue one. It's like a roller coaster.
+[ 4223.82s ->  4232.92s] If you go to Nvidia, you can see how less volatile the lines are. It's predominantly in an upswing going
+[ 4232.92s ->  4240.02s] upwards with small downturns that are not as steep as Tesla. And then it goes back up. The blue line
+[ 4240.02s ->  4245.16s] is always technically in an upswing. Next one is you go to TSMC, you can see the same thing, right? It's
+[ 4245.16s ->  4251.20s] up, blue is up, never turned negative. The yellow, when it turns negative, it's not as sharp as the other
+[ 4251.20s ->  4257.62s] one. And if you go to S&P 500, you can see the same thing, right? Now, if you want another example
+[ 4257.62s ->  4262.20s] of high volatility, that's not a very clean stock, you can take a look at it like AMD. AMD is very
+[ 4262.20s ->  4266.40s] volatile, right? It goes up, it goes down, it goes up, it goes down. Like it's hard for you to trade
+[ 4266.40s ->  4272.21s] this because you just don't know what side of the trade to be on. So avoid stocks that look like this,
+[ 4272.59s ->  4277.41s] find very stable moving averages to trade upwards. By doing this, you'll have a very high win rate.
+[ 4277.41s ->  4280.47s] You'll keep winning, winning, winning, winning, winning, winning, winning until you don't. And that's
+[ 4280.47s ->  4285.89s] fine. Okay, you can win 20 trades and then lose two. You still come out ahead. The next concept I
+[ 4285.89s ->  4292.17s] want to introduce is to help us increase the amount of credit that we collect when we do win. And there
+[ 4292.17s ->  4299.13s] are certain situations where you can get a lot of credit for maybe even less risk. And I want to
+[ 4299.13s ->  4303.93s] introduce this concept called volatility. I know we talked about volatility when we're choosing stocks,
+[ 4304.15s ->  4307.03s] right? Some stocks are more volatile than others. You can see that in the charts that we just
+[ 4307.03s ->  4313.49s] talked about. But this volatility on the stock also changes as stocks go up and down, right? As time
+[ 4313.49s ->  4317.15s] goes up. We want to head over to thinkorswim right now because thinkorswim actually has a really good
+[ 4317.15s ->  4322.63s] indicator for us to add that allows us to track implied volatility to show you how impactful this is.
+[ 4323.13s ->  4328.51s] If you're on thinkorswim, what you can do is you can go and chart out what the implied volatility is
+[ 4328.51s ->  4335.79s] by looking for the implied volatility indicator and adding that to any one of these. And you'll see that
+[ 4335.79s ->  4341.43s] pop up right now. And this is essentially what implied volatility looks like as stock markets
+[ 4341.43s ->  4346.87s] or stocks go up or down. Implied volatility will also go up or down depending on price action.
+[ 4347.03s ->  4351.77s] So one of the main things about IV to understand here is that when IV is high, your options are priced
+[ 4351.77s ->  4357.57s] higher, right? You get more bang for your buck. But when IV is low, you get less money because the
+[ 4357.57s ->  4365.45s] market is expecting less of a move. So in this case for a specific stock, if an IV on a stock increases,
+[ 4365.45s ->  4369.51s] because volatility increases, for example, when it comes to earnings, and we'll talk about earnings
+[ 4369.51s ->  4375.19s] in this video as well, then because the market is pricing in more of a move, your options are going
+[ 4375.19s ->  4380.87s] to be more expensive. If there is like no volatility, then your options are going to be priced cheaper.
+[ 4380.99s ->  4386.03s] So when you sell it, you won't get as much money. So a very simple concept here is theoretically,
+[ 4386.03s ->  4390.41s] if we can track implied volatility, you want to sell it when implied volatility is high,
+[ 4390.41s ->  4396.65s] so that when the IV drops, even if there's no change in price, your option prices will drop,
+[ 4396.81s ->  4402.25s] which means that option sellers will make money. A very simple action chart will be when IV is high,
+[ 4402.33s ->  4406.47s] you want to be selling options. And when IV is low, you want to actually be buying options. Then if
+[ 4406.47s ->  4409.85s] something were to happen, then your option prices will just increase in value.
+[ 4410.21s ->  4415.65s] And so by looking just at the implied volatility chart, how do we know when these peaks will happen?
+[ 4415.65s ->  4420.17s] Because we don't want to be selling here, we want to be selling here. But if you were to,
+[ 4420.57s ->  4423.95s] for example, go all the way back here, how do I know that this is not going to be the peak?
+[ 4424.55s ->  4429.35s] And that this isn't going to continue to go up? I can tell you that there's actually a very
+[ 4429.35s ->  4434.07s] relatively simple way to do so. So we're going to pull up implied volatility and want to look at
+[ 4434.07s ->  4437.55s] price action. So let's just look at this one here, because it's just easier to understand.
+[ 4437.85s ->  4443.21s] So this one is correlates to this candlestick right here. And what's special about this candlestick?
+[ 4443.21s ->  4448.24s] Right? This is what the low previously was. So that's an area of support. Let's take a look at
+[ 4448.24s ->  4456.16s] another one. Let's look at this one right here. Oh, this is potentially an area of support. Why?
+[ 4456.28s ->  4463.13s] This is a 200-week moving average. It's an area of support. What about this little peak right here?
+[ 4463.39s ->  4468.84s] Area of support, right? This is where it currently was, previously was. And what about this right here?
+[ 4468.90s ->  4474.46s] It peaked right here. Area of support. And it draws because the market went up. And what happened to
+[ 4474.46s ->  4480.57s] this one? Oh, this is a potential area of resistance. And then let's look at another
+[ 4480.57s ->  4484.87s] one. This one. Boom. What is this? Resistance, right? This is where it would use. This is the
+[ 4484.87s ->  4488.57s] resistance where it was before. The market entered this level. And they're like, hey, it might sell
+[ 4488.57s ->  4493.23s] off. We can do the same exercise on S&P 500. You can do the same exercise on any other stock that you
+[ 4493.23s ->  4496.83s] want. So you can see these peaks usually happen in areas of supports and resistances.
+[ 4497.57s ->  4501.39s] So you can see that there is some correlation between areas of supports and resistances
+[ 4501.39s ->  4506.93s] with increases in implied volatility. Now let's go back to the definition of implied volatility
+[ 4506.93s ->  4514.51s] to understand why that is. IV is the market's prediction or expectation of how much a stock
+[ 4514.51s ->  4521.39s] will move during a specific time. So when a stock enters these areas of supports and resistances,
+[ 4521.53s ->  4527.23s] otherwise known as supply and demand, the market is expecting that there's going to be a larger move
+[ 4527.23s ->  4530.21s] because that's an area where most people are going to be buying and selling their stocks.
+[ 4530.21s ->  4534.39s] And you can see that it is often correlated with an increase in volume, which is an increase in
+[ 4534.39s ->  4538.43s] activity. In general, we want to be selling in these areas of supports and resistances as
+[ 4538.43s ->  4542.93s] credit spread traders because we can then crush IV. The strategy is actually called IV crushing.
+[ 4543.57s ->  4549.81s] And it's very popular because when we're selling options, we want implied volatility to drop,
+[ 4549.93s ->  4554.43s] which means that it not only increases the amount of credit that we collect, but it also
+[ 4554.43s ->  4559.45s] increases our chances of winning because it decreases our risk. So we're going to jump back to the
+[ 4559.45s ->  4564.37s] charts and we're going to go back to the daily view. So let's assume that you had the wherewithal
+[ 4564.37s ->  4570.33s] on this day right here, which is August 5th, to want to sell a credit spread because why? It's
+[ 4570.33s ->  4576.23s] entered this layer area of support again, right? Which you saw on April 25th, 1, 2, and that's
+[ 4576.23s ->  4582.21s] re-entering this area. And so on August 5th, you're like, hey, I want to maybe potentially enter a trade.
+[ 4582.21s ->  4588.25s] So we'll go to August 5th, which is on Monday. And we're going to look and we'll jump to later
+[ 4588.25s ->  4592.03s] in the afternoon so we can take a look at the price action. And we're going to drop it down to
+[ 4592.03s ->  4598.99s] the 30 minutes. Let's assume here, 1130. So we'll drop back to 1130 that we were able to pick up that
+[ 4598.99s ->  4609.09s] spike on volatility right here. Volatility is at 38%. We're at 394.66. So let's assume here on this day
+[ 4609.09s ->  4614.55s] that we're going to trade, we'll do the 13, the 18 day out one. Let's just actually sell this in the
+[ 4614.55s ->  4620.60s] money just to demonstrate, right? We'll go to 395 here. So you're making around $250 on this trade,
+[ 4620.98s ->  4626.24s] which is pretty good as you would expect for being in the money. Let's jump forward one day
+[ 4626.24s ->  4632.54s] because we know the next day the market actually went up. So we'll go to the sixth at 1130. We'll
+[ 4632.54s ->  4637.12s] jump over to the chart just to double check. You can see implied volatility gets crushed. We're at 0.29.
+[ 4637.12s ->  4643.08s] It was at 394 before. Now we're at 404. And take a look at the pricing. We're at 162 now. I want
+[ 4643.08s ->  4648.96s] from 250 to 162. And see, by having this stock move in the right direction alongside with implied
+[ 4648.96s ->  4655.10s] volatility getting crushed, you made almost $100 per spread on this one day. And that's not even
+[ 4655.10s ->  4661.06s] the best part. Let me show you what happens when Ivy gets crushed and the stock actually moves
+[ 4661.06s ->  4665.66s] against you. This is actually one of my favorite strategies, my favorite ways to sell credit
+[ 4665.66s ->  4672.92s] spreads. On this day on 730, volatility spiked and it subsequently dropped. And the reason we want to
+[ 4672.92s ->  4679.10s] look at this one is because if you zoom in here, volatility dropped while stock price actually ended
+[ 4679.10s ->  4685.60s] up lower. So what we're going to do is we'll go to on demand on thinkorswim. And we're going to look
+[ 4685.60s ->  4691.32s] at the historical pricing for a credit spread on July 30th and July 31st. So we'll go to July 30th
+[ 4691.32s ->  4699.66s] here. And we're going to look at it at 10 AM. And I'll show you why. And we're going to drop it
+[ 4699.66s ->  4705.88s] down to 30 minutes. This implied volatility chart will work on any timeframe. And just to reiterate,
+[ 4706.06s ->  4710.74s] right, it enters a level of support, it spikes, enters a level of support, it spikes, enters a level
+[ 4710.74s ->  4717.26s] of support, which we're in, it will spike. So let's assume that at 10 AM, this is where it re-entered
+[ 4717.26s ->  4721.88s] this level of support, it hit the 4.17 low of the previous couple of days. And you're like,
+[ 4721.92s ->  4727.76s] hey, I want to trade this area of support because I like the price action. And on top of that,
+[ 4727.84s ->  4732.40s] volatility has peaked again at the same level as it was before. I think this might be a good trade.
+[ 4733.23s ->  4738.25s] So we'll go to trade. And just for simplicity's sake, we're going to look for something a little
+[ 4738.25s ->  4742.33s] bit closer. So let's just do the August 16th. And we're going to choose something relatively
+[ 4742.33s ->  4747.37s] aggressive, right? We're at 4.18. Let's just do 4.10 for demonstration purposes.
+[ 4748.52s ->  4752.02s] For this one, you'll collect around $190 for around two and a half weeks.
+[ 4753.29s ->  4758.51s] Remember, implied volatility is really high. It's at 38.34%. In around two weeks, you can get around
+[ 4758.51s ->  4764.91s] 70% ROI on this credit spread. Microsoft only has to draw up eight points and see what happens.
+[ 4765.51s ->  4771.15s] So we're going to move forward one day to July 31st. And we're going to take a look at the chart.
+[ 4771.93s ->  4777.73s] So remember, at 10 AM, it's at the low of the day. Again, it's around 4.14 and 55 cents.
+[ 4777.73s ->  4783.77s] So Microsoft actually lost four points in value. But what you will see is this day right here,
+[ 4784.07s ->  4790.87s] implied volatility plummeted from 33 all the way down to 25. So we lost three points. But look at
+[ 4790.87s ->  4796.25s] our option pricing. We actually end up making money. We're up $20 on this trade, even though
+[ 4796.25s ->  4803.29s] Microsoft fell by four points because implied volatility went from almost 40 to 25%. So let's do
+[ 4803.29s ->  4808.37s] the same example. Let's just go up one spread to 405, 400, just for another example. We're still
+[ 4808.37s ->  4815.55s] really aggressive, right? We're at $162 to spread. Let's move it forward one day and see what happens.
+[ 4816.39s ->  4822.13s] It's at 132 now. So we dropped another $30, even though Microsoft fell by four points.
+[ 4822.13s ->  4829.21s] And let me explain briefly what just happened. IV is the market's anticipation or expectation of how
+[ 4829.21s ->  4836.33s] much the underlying stock should move. And so if it doesn't move as much, even if it moves against
+[ 4836.33s ->  4841.15s] you, you're actually winning on your trade as an option seller because the option price should
+[ 4841.15s ->  4847.11s] decrease. The only real time you can lose in that situation is if the actual volatility is higher than
+[ 4847.11s ->  4852.31s] what implied volatility is projecting and the stock moves against you. The market anticipated,
+[ 4852.53s ->  4857.67s] for example, a five point move, but the market only moved two points. This is one of my favorite
+[ 4857.67s ->  4863.47s] ways to trade credit spreads. And this kind of leads us to a perfect segue into earnings, because
+[ 4863.47s ->  4868.39s] during earnings, IV actually spikes a lot. So selling into earnings is actually a mixed bag.
+[ 4868.87s ->  4872.89s] Some people love it. Some people hate it. Personally speaking, I actually don't mind it. There's
+[ 4872.89s ->  4879.53s] actually empirical evidence that has proven that the market tends to overestimate volatility
+[ 4879.53s ->  4883.99s] during earnings. There's this paper about how auction pricing fluctuates around earning
+[ 4883.99s ->  4889.51s] announcements. One of the largest takeaways for this is the market tends to overestimate volatility
+[ 4889.51s ->  4894.55s] when it comes into these significant events such as earnings. My favorite way to sell earnings is
+[ 4894.55s ->  4899.27s] actually when stocks are in these areas of support, like we just saw with that same example.
+[ 4899.27s ->  4904.15s] So the reason I love selling credit spreads during earnings when it's around these areas of support
+[ 4904.15s ->  4912.55s] is because from a technical perspective, there's a higher likelihood that buyers will step in and
+[ 4912.55s ->  4918.25s] push the price up, especially if earnings isn't as bad as expected. And even if earnings was worse
+[ 4918.25s ->  4923.63s] than anticipated, there could still be people that step in and buy. That support will often absorb
+[ 4923.63s ->  4927.19s] the move. I'm relying on market structure to help me as well.
+[ 4927.19s ->  4931.29s] So the last caveat here is when I'm selling credit spreads, I like to open up credit spreads
+[ 4931.29s ->  4937.05s] the week of earnings for four weeks out. However, I do not like leaving my options
+[ 4937.05s ->  4943.31s] during earnings. I only open up credit spreads. I close my credit spreads when they're the week of
+[ 4943.31s ->  4948.87s] earnings because I can't absorb the volatility. I don't sell credit spreads hoping for a drop in
+[ 4948.87s ->  4953.77s] volatility. I sell them where I believe buyers are waiting. That's essentially what trading with
+[ 4953.77s ->  4959.05s] structured trading with technical analysis helps us do and helps us refine our edge and push up that
+[ 4959.05s ->  4964.51s] win rate even more. And I want to demonstrate how I apply these principles, these technical analysis
+[ 4964.51s ->  4970.29s] principles into my own trading. So the first thing I want to kind of touch on here is as you can see
+[ 4970.29s ->  4977.63s] from my trades, all of these are put credit spreads. Not a single one of these trades here
+[ 4977.63s ->  4984.53s] is a call credit spread. And I kind of alluded to this earlier on in the video where I said I don't
+[ 4984.53s ->  4989.53s] like trading calls. I would much rather just be trading the trend, which in most cases is going
+[ 4989.53s ->  4995.39s] to be an uptrend. Hence why we still put credit spreads in most situations. However, there are two
+[ 4995.39s ->  5002.09s] very specific situations where I sell calls. So let's touch briefly on them. The main one is when the
+[ 5002.09s ->  5007.95s] trend is down. So as you can kind of see, and this is just the S&P 500, you can see most of the time
+[ 5007.95s ->  5012.55s] the market's in an uptrend. I don't want to beat that horse to death. But there are times where the
+[ 5012.55s ->  5018.09s] market pulls back right here, here, here. And these pullbacks are usually pretty quick. So from that,
+[ 5018.15s ->  5023.47s] you can tell, one, I have to be able to identify when the trend turns negative. And two, I have to be
+[ 5023.47s ->  5029.31s] able to get out pretty quickly because the downtrend usually moving a lot faster than the uptrend.
+[ 5029.31s ->  5033.97s] So this is where technical analysis really comes in, where you have to understand a little bit about
+[ 5033.97s ->  5039.43s] how market moves to be able to kind of time these trades. And this is why call credit spreads a lot
+[ 5039.43s ->  5043.71s] harder because it's a lot less forgiving. And so I'll give you guys a quick example. I'm not going
+[ 5043.71s ->  5049.27s] to go through a whole TA course. Again, if you guys want to check out how to trade using TA to find more
+[ 5049.27s ->  5056.07s] of these trades, link in the upper right hand corner like it was before. One of the main drivers of TA
+[ 5056.07s ->  5061.15s] is to look at candlestick patterns. Is there a pattern that will allow me to enter on the bear
+[ 5061.15s ->  5065.73s] side where it shows weakness? For example, right here, this is a very bearish signal, right? A
+[ 5065.73s ->  5069.91s] market goes up and it had a bearish engulfing candlestick. So on this candlestick open, I
+[ 5069.91s ->  5077.28s] probably sell a cost spread. I would enter the trade right here at 4540. And then I would basically
+[ 5077.28s ->  5087.24s] get out when it gets to 4,000. Maybe I might write it down to 3,500. But because this is a 20 period
+[ 5087.24s ->  5092.86s] moving average, and it has historically respected 20 period moving average as support, I probably
+[ 5092.86s ->  5101.66s] wouldn't take more risk on and wait until it falls all the way down to here. Another one is right here.
+[ 5101.74s ->  5106.34s] And this is what we would call a evening star pattern. So on this candlestick break right here,
+[ 5106.34s ->  5111.00s] once it breaks past this low at 5750, I would then enter a trade on the call side and again,
+[ 5111.06s ->  5116.82s] write it down to 5,300. And the main difference here is I would probably just take profit the moment
+[ 5116.82s ->  5124.56s] it hits 5,300, because I'm not sure if the market's going to rebound there or not. Because it moves so
+[ 5124.56s ->  5129.48s] much quicker, I need to spend less time in the trade. So I'm going to take the win and get out.
+[ 5129.94s ->  5136.34s] Now, the second situation is when I already have an existing put credit spread, and I want to sell
+[ 5136.34s ->  5141.44s] a call credit spread on top of it. This is what we call an iron condor. The reason that iron condors
+[ 5141.44s ->  5148.10s] are so popular is because if you sell it for the same date, you can't risk more money. So for example,
+[ 5149.06s ->  5155.32s] if I go to TSMC, if I give you an example, let's go to TSMC. And I, for example, have a 270,
+[ 5155.32s ->  5161.56s] 265 put credit spread. I'm risking maybe 400 bucks on this trade. And at the same time,
+[ 5161.58s ->  5168.74s] I open up a 300, 305 credit spread for the same date. I collect the same $100. And so I'm also
+[ 5168.74s ->  5175.82s] risking $400 on this call credit spread. If I open up them separately, I will be at a $400 risk
+[ 5175.82s ->  5182.18s] and a $400 risk and $100 profit and $100 profit on both. But if I open them together, since they
+[ 5182.18s ->  5189.46s] expire at the same time, my profit potential is now $200. So my risk is now at $300. And the reason
+[ 5189.46s ->  5195.74s] for that is very simple. Market can't both be above the call credit spread and be below the put credit
+[ 5195.74s ->  5200.86s] spread at the same time. So the worst case scenario is I only lose on one leg. Quote unquote, risk to
+[ 5200.86s ->  5207.14s] reward is lower. Now, for me, I don't necessarily agree with that, mainly because if I sell a call
+[ 5207.14s ->  5211.38s] credit spread and the market's in the uptrend, it's likelier that I'm going to lose on the call
+[ 5211.38s ->  5215.84s] credit spread than I am on the put credit spread. So that loss, let's assume that it's 50 bucks on
+[ 5215.84s ->  5220.66s] the cost side, and I'm still only collecting 100 on the put side. That means that I actually end up
+[ 5220.66s ->  5226.40s] only making 50 bucks overall, when I could have just made 100 bucks by not opening up the call
+[ 5226.40s ->  5230.84s] credit spread. However, that doesn't mean that I don't open up iron condors. I
+[ 5230.84s ->  5235.48s] do it at a very specific time. And so what I like to do is I like to open up a put credit spread
+[ 5235.48s ->  5241.56s] first. And once my put credit spread is decaying out, right, the market has moved up, then I like
+[ 5241.56s ->  5247.90s] to sell a call credit spread maybe 14 days into the put credit spread lifetime. So let's just take
+[ 5247.90s ->  5252.02s] this example right here. This one candlestick is a month. So let's assume that I take candlestick
+[ 5252.02s ->  5258.52s] open as when I open up my put credit spread. So at $185, $180. As the market moved up, let's assume
+[ 5258.52s ->  5263.78s] to move up to $220. My put credit spread is basically all decayed out to and we have two
+[ 5263.78s ->  5268.66s] weeks left. And so let's assume that I think that the market might have a chance of going
+[ 5268.66s ->  5274.46s] down on this candles on this candle. So I would then sell a call credit spread above that,
+[ 5274.58s ->  5283.28s] let's say $230, $235 to try and add on maybe another $50. So I collected $100 down here, and
+[ 5283.28s ->  5289.02s] I'm trying to win on an extra $50. With 14 days left, the market then comes back down
+[ 5289.02s ->  5294.88s] to $208, and then I win on both legs. $150 for both the put and the call. So I collect
+[ 5294.88s ->  5300.18s] $150 total. And you can see why I like doing it this way. Because as the market's moved up,
+[ 5300.26s ->  5305.22s] I'm basically guaranteed to win on the put side to a certain extent, right? And then on
+[ 5305.22s ->  5309.06s] the call side, I actually don't like to be very aggressive because I don't want to lose
+[ 5309.06s ->  5313.34s] money on the call spread, right? I just want to make a little bit more money. So I tend to be very
+[ 5313.34s ->  5319.06s] conservative when selling it. And when I went on that, then I increased my profit from $100 to $150.
+[ 5319.58s ->  5324.62s] So that's just how I like to sell iron condors, because it gives me a better chance to win on
+[ 5324.62s ->  5330.78s] both sides, right? My call strike price, it'd be a lot higher than what it was if TSM was at $185
+[ 5330.78s ->  5336.50s] and I had to open it up like an $80 or $90 delta, which would be like $200 and $205. I'm able to open
+[ 5336.50s ->  5342.44s] up at $230, which gives me a lot more margin for error. Okay, so let's now then finally wrap this
+[ 5342.44s ->  5346.84s] all up. And I'll give you guys a couple examples of my real life trades, how I apply TA, how I apply
+[ 5346.84s ->  5352.24s] these concepts to collect that $45,000. So if you see from this dashboard right here,
+[ 5352.86s ->  5360.20s] you can see that my P&L is $43,000. I went at a 94% clip, lost my first trade, but I won on every
+[ 5360.20s ->  5363.96s] other single one. Nothing spectacular. I'm just following the trend as you'll see later.
+[ 5363.96s ->  5369.50s] My average win is $2,600. My average loss is $1,900. You can see how my average loss is less
+[ 5369.50s ->  5374.60s] than my average win. Capture just means how much of the premium am I capturing. And so I've captured
+[ 5374.60s ->  5380.42s] 90% of all the premium. So if I have a $100 credit, then I'm profiting $89 every single trade
+[ 5380.42s ->  5387.38s] on average, which means you can see that I've taken some 75% stop losses. I don't maximize all of my
+[ 5387.38s ->  5391.44s] profit. I've rolled some out as I decayed out, like we talked about earlier on in this video.
+[ 5391.44s ->  5397.28s] My profit to risk is around 41%, which means I'm making 40% return on my risk every time I win.
+[ 5397.98s ->  5402.32s] And then my average time in the trade is around $22, 22 days, around three weeks, which means that
+[ 5402.32s ->  5409.32s] it's less than the four week DTs I'm opening, right? You can see that how like I'm rolling it
+[ 5409.32s ->  5413.34s] and I'm closing it much more aggressively. And this is why you see a compound a lot more because I'm
+[ 5413.34s ->  5418.58s] spending, I'm being more time efficient with my money. Again, you can see this. I have $21,000 in open
+[ 5418.58s ->  5422.20s] premium, which is actually my total risk because I'm only going to risk how much I can make.
+[ 5422.54s ->  5428.00s] But my open risk, if I didn't have any stop loss management is around $78,000. But my actual risk
+[ 5428.00s ->  5433.64s] is only around $21,000 because again, my premium is only $21,000. So I can see I'm significantly less
+[ 5433.64s ->  5438.92s] than 5%. I'm even at like four, four or 3% at the very moment. And let me know down in the
+[ 5438.92s ->  5443.02s] comment section below, if you find dashboards like this very helpful, I can talk more about it.
+[ 5443.02s ->  5448.70s] Or I'll give you guys more insights into the metrics in here. So what I want to do now is I
+[ 5448.70s ->  5453.12s] want to take you guys into just a couple of my trades. You can see that I'm not trading too many
+[ 5453.12s ->  5457.70s] tickers. I'm really only trading four tickers. So let's just go to Lockheed Martin because that's
+[ 5457.70s ->  5463.78s] one of my more widely traded ones. So you guys can see how this panned out. So one thing you'll notice,
+[ 5463.86s ->  5472.08s] right, is Lockheed Martin's chart is very, very, very stable, right? Very predictable. Up, down,
+[ 5472.08s ->  5476.56s] up, down, right? These 200 period moving averages always act as support. Historically speaking,
+[ 5477.22s ->  5482.78s] the slopes on these 2050 and 200 period moving average are just sloping up. It rarely ever slopes
+[ 5482.78s ->  5486.84s] down. Number two is as it falls into these 200 period moving averages, so the volatility will
+[ 5486.84s ->  5491.32s] rise. So what I want to do is I'm going to be selling at this level right here. So my first trade
+[ 5491.32s ->  5497.06s] on Lockheed Martin was at $728. So let's go back to the week real quick. So I can show you $728.
+[ 5497.06s ->  5502.34s] So you can see $728 is this week right here, right? As it fell into this area of support
+[ 5502.34s ->  5509.80s] right here, I decided to start selling credit spreads for this experiment. And can you see
+[ 5509.80s ->  5516.08s] how simple it was? As it went in, every single week or every other week, I just started selling
+[ 5516.08s ->  5521.96s] credit spreads as the market moved up. And at some point in time, I will lose, right? I will hit 50%
+[ 5521.96s ->  5527.94s] of my credit collected and I will stop out. But the beauty of that is that I'll lose maybe $2,000
+[ 5527.94s ->  5535.10s] or 1,500 bucks, but I've already collected a total of $12,000 of like realized profit. So even if I lose
+[ 5535.10s ->  5541.46s] 1,200 bucks or 1,500 bucks, so be it, right? I'm still up a lot. And that's the beauty of finding
+[ 5541.46s ->  5547.52s] stocks that are very predictable because as it bounced off of the 200 period moving average right
+[ 5547.52s ->  5552.44s] here, we, we can just ride this wave up and there's no, and this candlestick may very well
+[ 5552.44s ->  5556.34s] continue to go up. And if it continues to go up, I just continue to keep selling it until the market
+[ 5556.34s ->  5561.50s] tells me to stop. I'll talk about UNH briefly as well. UNH is the same idea. It fell into this 200
+[ 5561.50s ->  5567.22s] period moving average. You can see how I'm just repeating it. Historically speaking, UNH has been
+[ 5567.22s ->  5572.76s] very, very stable. It just recently because of all the controversies that it isn't. So my first trade
+[ 5572.76s ->  5577.30s] was July 8th, as it entered into this area of potential support, the market continued to go
+[ 5577.30s ->  5581.82s] down. So I lost on it. Fine. I got out. You see me cut my losses. Hopefully that shows you that you
+[ 5581.82s ->  5586.24s] just got to cut your losses. And then I waited for a little bit and the market then fell further into
+[ 5586.24s ->  5591.18s] this 200 period moving average. And then it started rebounding. And again, you can see how simple it is.
+[ 5591.24s ->  5597.06s] It started rebounding and I just took advantage of this ride up. And ever since then, I've just been
+[ 5597.06s ->  5600.92s] selling credit spreads every single week or every other week. And I rolled the wave up. And at some
+[ 5600.92s ->  5605.92s] point in time, again, like Lockheed Martin, I will lose. I'll lose again 50% of whatever credit I
+[ 5605.92s ->  5610.72s] collected. I'll take the loss and I'll just wait to see whether or not UNH is still a stock that I want
+[ 5610.72s ->  5615.02s] to continue trading. And ideally speaking, if UNH continues to go up, then I just keep trading and
+[ 5615.02s ->  5619.72s] trading and trading and trading it until the market tells me that I can't. Simple as that. So hopefully
+[ 5619.72s ->  5625.88s] with those two examples, you can see how combining technical analysis with a good understanding of credit
+[ 5625.88s ->  5630.64s] spreads, you can see how stable and how passive it can be. You don't have to overanalyze
+[ 5630.64s ->  5635.38s] charts. You don't have to overanalyze concepts. You basically just ride the momentum and you
+[ 5635.38s ->  5640.20s] volatility crush. There's a little bit more here that we can talk about in other more advanced
+[ 5640.20s ->  5646.46s] videos if you want. But this is essentially the strategy. Areas here are much less risky. Areas up
+[ 5646.46s ->  5652.54s] here are a lot more risky for the put side. But then once it gets to an area of resistance, then I
+[ 5652.54s ->  5657.08s] can start maybe selling calls and potentially predict that downtrend. So let me know down in the
+[ 5657.08s ->  5660.48s] comment section below if you have any questions about what I did. But hopefully that's a good
+[ 5660.48s ->  5666.06s] experiment for you to understand how to trade credit spreads and how these principles work in
+[ 5666.06s ->  5671.82s] live trading scenarios. And on top of that, if you guys want to see like additional examples going
+[ 5671.82s ->  5676.28s] forward or if you guys want to see a live series of me trading credit spreads, let me know down in
+[ 5676.28s ->  5680.22s] the comment section below and I'll see what I can do. So let's talk a little bit about risk
+[ 5680.22s ->  5685.26s] management. We're going to start off with account allocation. When we're trading credit spreads,
+[ 5685.26s ->  5691.14s] we do not want to use 100% of our account to trade credit spreads. I know it can be tempting,
+[ 5691.26s ->  5697.64s] right? Because you think you can't lose, but you're winning a lot all the time. So a lot of us will
+[ 5697.64s ->  5703.24s] think what's the risk and trust me, I used to use a lot of my account all in credit spreads is because
+[ 5703.24s ->  5708.74s] this is your whole account, your emotions take over and you tend not to be able to follow your rules
+[ 5708.74s ->  5715.18s] because of the stress, right? You're seeing your account move by 10 20% a day, either up or down.
+[ 5715.26s ->  5720.74s] So you get greedy and you get fearful and you act irrationally. And this is how you blow up
+[ 5720.74s ->  5726.42s] accounts. Exactly what happened to me back in 2018, when Trump announced his first rounds of tariffs,
+[ 5726.68s ->  5732.12s] I blew up that account because I had no risk management skills. So what we should be doing
+[ 5732.12s ->  5737.14s] with credit spreads is we're allocating a small portion of our account. My general rule of thumb
+[ 5737.14s ->  5743.74s] is do not use more than 20% of your account in credit spreads. So as you can see from the credit
+[ 5743.74s ->  5751.06s] spreads that I sold using one of my larger accounts, I'm really only using around seven to
+[ 5751.06s ->  5755.78s] 8% of my total account. My allowance is around 10%. So which means that I can actually trade more
+[ 5755.78s ->  5762.64s] spreads for context, I count $700,000. So I'll have around $70,000 of cash to trade. But at any one
+[ 5762.64s ->  5768.64s] point, I'm really only around five to 6% of my total account, which means I'm only trading around 35,000
+[ 5768.64s ->  5775.62s] to $40,000 in credit spreads at any one time. But even if I'm only using five to 7% of my account,
+[ 5775.68s ->  5780.16s] you can see how much money I made over a span of two months. And that's the impressive things about
+[ 5780.16s ->  5786.58s] the strategy is you don't actually need that much money to make large returns. And so let's just do
+[ 5786.58s ->  5792.36s] some simple math. Let's assume that I'm returning maybe 30% a year, which is amazing. The rest of the
+[ 5792.36s ->  5800.58s] account, let's assume it's just an S&P 500. You blend 10% of your account at 30% and then 90% at
+[ 5800.58s ->  5807.34s] 10%. And you'll get an annualized return around 12%. That's incredible because you're using credit
+[ 5807.34s ->  5812.46s] spreads to continuously compound and increase the overall returns of your portfolio. And the reason
+[ 5812.46s ->  5816.88s] I trade this way is obviously based on our past experiences. Also because advanced strategies like
+[ 5816.88s ->  5822.52s] this is hard, right? And it's risky. And so you do not want to be over encumbered on a
+[ 5822.52s ->  5826.82s] riskier strategy, right? Make sure that most of your money is still in safe stuff and use the
+[ 5826.82s ->  5832.74s] riskier options to make more money. That's it. Which leads us to number two, trade management.
+[ 5832.88s ->  5837.60s] How much am I willing to risk per trade? My rule of thumb is I'm never usually willing to risk more
+[ 5837.60s ->  5844.28s] than 2.5% per trade, which means that I am allowed to lose 40 trades in a row before I blow up my allowance.
+[ 5844.28s ->  5850.76s] If you look at my spreads, if I allow for a 50% drawdown or 100% drawdown,
+[ 5850.76s ->  5855.62s] and I'm collecting $2,000 of credit, then my max loss is going to be 2,000. That's how much
+[ 5855.62s ->  5862.06s] I'm willing to risk. 2,000 divided by $70,000 is around 2.5%. I'm only collecting $2,000,
+[ 5862.12s ->  5867.76s] $3,000 every trade. That's what my risk is allowing me to do. Do not trade to profit,
+[ 5868.06s ->  5873.10s] trade to risk. So do not over-index again, all in on one trade. Because I know we all want to make a lot
+[ 5873.10s ->  5877.80s] of money all at once, but we have to think of the worst case scenario. If we lose on that trade,
+[ 5877.80s ->  5883.56s] let's assume we lose 100%, we risk everything, then we're done. We can't trade in more. And that
+[ 5883.56s ->  5887.40s] is actually one of the biggest reasons as to why traders fail. And because you watch this channel,
+[ 5887.94s ->  5894.70s] you know how to manage those risks. Again, do not risk more than 2.5% per trade. Make sure you guys
+[ 5894.70s ->  5901.76s] are able to survive when things do not go according to plan, because they will not go according to plan
+[ 5901.76s ->  5906.52s] all the time. So this might be a little bit more challenging for smaller accounts, but let's walk
+[ 5906.52s ->  5909.72s] through it. It's actually not that complicated. Let's assume that you have a small account of
+[ 5909.72s ->  5914.36s] maybe like $5,000, and we're not going to use more than 20% of our account to trade credit spreads,
+[ 5914.74s ->  5920.72s] which means that we have around $1,000 to trade credit spreads. And at any one time,
+[ 5921.00s ->  5926.64s] we're not risking more than 2.5% of our account, which means we're not going to risk more than $125
+[ 5926.64s ->  5932.60s] per trade. Remember, we're trading to risk, not to profit, which allows me to lose at least eight times
+[ 5932.60s ->  5937.18s] before I run out of money to trade credit spreads with. And so let's just run through one example.
+[ 5937.30s ->  5942.78s] Let's assume that my stop loss is going to be 100%. That means I can collect one credit spread and get
+[ 5942.78s ->  5950.06s] $125. That's the credit that I'm going to try and aim for. If my stop loss is 50% and sell two of those
+[ 5950.06s ->  5957.18s] credit spreads on that one set of trade, I'm only going to risk 125 because my max drawdown per trade
+[ 5957.18s ->  5963.76s] is 50%, which is going to be $61-ish. So you can see how scalable it is. Once you start winning
+[ 5963.76s ->  5967.16s] on credit spreads, you'll see your account get bigger and bigger and bigger. And then you can
+[ 5967.16s ->  5971.40s] start selling three, selling four, selling five credit spreads. So when I first started my account,
+[ 5971.46s ->  5977.14s] maybe eight years ago, I was trading one, two, three, four, five spreads. Now I'm trading 30.
+[ 5977.70s ->  5981.30s] That's the amazing part about these option strategy is that as your account scales,
+[ 5981.78s ->  5986.74s] right, you keep those same rules, 2.5%, 20% of your account, you start trading more quantities,
+[ 5986.74s ->  5992.72s] to keep the same proportion. That's how you make sure you do not blow up your account on one bad
+[ 5992.72s ->  5997.12s] trade. Always give yourself a fighting chance. And the same is true for small accounts. And you'll
+[ 5997.12s ->  6002.24s] see that small account won't be so small if you keep this up. So we've gone through a lot in this
+[ 6002.24s ->  6006.02s] video, right? All the basics, the more advanced strategy, the psychological part of trading,
+[ 6006.08s ->  6010.30s] how to manage your accounts. We've gone through a lot. If you guys appreciate content like this,
+[ 6010.50s ->  6012.98s] make sure you guys like the video and subscribe to the channel. It'll really help me out.
+[ 6012.98s ->  6017.40s] I always get some questions on taxes. So let's talk a little bit about it.
+[ 6017.90s ->  6021.46s] Credit spreads is a short term option strategy, especially the way we're selling it. So there's
+[ 6021.46s ->  6026.36s] no inherent tax benefits. All of these are going to be short term gains. So the only thing I can say
+[ 6026.36s ->  6031.60s] is you make money, make sure you guys leave some money on the side to pay off your taxes. That's
+[ 6031.60s ->  6037.10s] really all there is to it. Now let's talk a little bit about how to get started, right? Because I think a
+[ 6037.10s ->  6041.44s] lot of us, you'll find credit spreads may be a little daunting. So let's go through how to start.
+[ 6041.44s ->  6046.64s] When I first started, I started with paper trading, right? I'm using fake money to practice.
+[ 6047.18s ->  6051.88s] I would recommend that everyone start with paper trading, mainly because credit spreads can be a
+[ 6051.88s ->  6056.14s] little bit complicated, right? You have to understand how the mechanics works, right? There's a lot to
+[ 6056.14s ->  6061.16s] learn, a lot to understand. But more importantly, you have to paper trade like it's real money.
+[ 6061.46s ->  6066.32s] Because the most important part, hopefully you guys understand from this video is the psychological
+[ 6066.32s ->  6073.28s] part. Are you able to follow these rules? Are you able to trust the process? I know from personal
+[ 6073.28s ->  6078.48s] experience that when I first started paper trading, I wasn't trading in like real money. I didn't feel
+[ 6078.48s ->  6083.06s] real connection to it. So when I cut, I cut. When I won, I won, right? It didn't really impact me anyway.
+[ 6083.06s ->  6090.92s] And so when I graduated to real trading, I wasn't ready for the emotional toll that losing money
+[ 6090.92s ->  6098.32s] had on me. That loss aversion was so much stronger when I was trading for real than it was when I was
+[ 6098.32s ->  6102.74s] paper trading. So when you're paper trading, when you're practicing, you have to pretend that it's
+[ 6102.74s ->  6108.62s] real or else you're not getting the right practice in. And number two tip is that credit spreads and
+[ 6108.62s ->  6113.46s] option trading is hard. So be kinder to yourself because you guys are spending the time and effort
+[ 6113.46s ->  6118.38s] to learn a new skill and it will take time and effort to learn it. That the more you practice,
+[ 6118.38s ->  6122.46s] the more you learn, the better you'll get at it. And sooner or later, you guys will develop your
+[ 6122.46s ->  6126.78s] own style that will be different than what you guys see here on this video. And that's completely
+[ 6126.78s ->  6132.68s] fine. What is important is that you guys find a style that works for you and your lifestyle and your
+[ 6132.68s ->  6139.38s] situation. Because the way I trade is what came out from me having to work a nine to five from my own
+[ 6139.38s ->  6146.20s] personality and my own risk aversion, right? This is how I trade. Modify it, change it, make it your
+[ 6146.20s ->  6150.26s] own. And that's how you guys are going to be even better than I am. Account requirements. What do
+[ 6150.26s ->  6154.52s] you need to in order to sell credit spreads? So the first thing you guys have to do is that you
+[ 6154.52s ->  6158.46s] guys have to apply for options permission. Every brokerage is slightly different with their
+[ 6158.46s ->  6164.12s] requirements. But generally speaking, you need to get a higher level permission. So for example,
+[ 6164.20s ->  6171.56s] on Fidelity, tier one does not allow you to sell credit spreads. But tier two allows you to sell
+[ 6171.56s ->  6175.56s] spreads up to four legs. So perfect. You can sell a put credit spread and a call credit spread,
+[ 6175.62s ->  6181.26s] iron corner of this. It's great. Tier three usually has more margin involved selling uncovered calls
+[ 6181.26s ->  6188.98s] and puts. So you really only need option two for Fidelity. They have four option levels. For IBKR,
+[ 6189.10s ->  6192.50s] you'll probably have to be at level three. You need the short call spread and short put spread.
+[ 6192.98s ->  6197.90s] And if you go to Robinhood, if you can see from my screen, in order for me to trade spreads,
+[ 6197.90s ->  6202.84s] I need to switch to a margin account, which will allow me to access level three options trading,
+[ 6202.98s ->  6207.60s] which is what I would need in order to sell calls and put spreads. Just check what your brokerage
+[ 6207.60s ->  6210.60s] requirements are. Apply for the correct level that allows you to sell credit spreads.
+[ 6210.76s ->  6215.08s] We've gone to the end of the video. Hope you guys learned a lot. Hope you guys have a better
+[ 6215.08s ->  6220.16s] and robust understanding of what credit spreads are. I'm just really just going to talk to the camera now
+[ 6220.16s ->  6225.98s] and give you guys a little bit of my experience so that you guys can hopefully refer back to this
+[ 6225.98s ->  6229.90s] video and this section to be like, hey, yeah, I'm experiencing that as well. And hopefully this
+[ 6229.90s ->  6235.62s] will help you along in your journey on selling credit spreads. First things first, like I said
+[ 6235.62s ->  6241.52s] in the beginner video, trading credit spreads is difficult. It is a form of trading. So you'll have
+[ 6241.52s ->  6246.58s] really high highs and you have really, really low lows. So the first and probably most important
+[ 6246.58s ->  6251.84s] tip, you guys haven't already inferred it from this video, is that emotional control is the most
+[ 6251.84s ->  6256.50s] important thing. We have to be able to learn how to control our emotions so that we can stick to our
+[ 6256.50s ->  6261.16s] plan. And there's another like theory called hot hand fallacy. And this happened to me as well,
+[ 6261.48s ->  6266.52s] where you win 10 trades in a row or you win 10 hands in a row at poker and you think you're on a
+[ 6266.52s ->  6272.32s] streak. So the next hand you size up. So instead of 2.5%, you go up to 10%. And then you lose that next
+[ 6272.32s ->  6277.22s] trade, which then leads to the next emotion that comes very often, which is revenge trading. You take a
+[ 6277.22s ->  6282.16s] large L and you go, I want to make that money back. So you enter ill-advised trade, you take more risk
+[ 6282.16s ->  6286.24s] on and you lose that one as well, right? You can see how the cycle repeats itself. And all of this
+[ 6286.24s ->  6290.46s] happens because you can't control your emotions. On the flip side, there's also going to be time
+[ 6290.46s ->  6294.34s] where you don't want to lose money. Trust me, I've been there, right? Because it hurts. It sucks,
+[ 6294.40s ->  6299.90s] right? It's real money. You've worked hard for that money. On top of that, you may not want to cut
+[ 6299.90s ->  6304.02s] your trade because you think there's more room to run, right? It hits your stop loss of 50%, but you're like,
+[ 6304.02s ->  6308.44s] hey, I was up 75% earlier. I want to get back up there. So you don't want to cut because
+[ 6308.44s ->  6314.24s] that perceived motion of losing unrealized gains hurts. Fear and greed will dictate a lot of your
+[ 6314.24s ->  6319.34s] actions. Make sure you guys do your best to tune those out, which leads me to number two. The best
+[ 6319.34s ->  6323.96s] losers are the best winners. Comparing myself now to where I was four years ago, I don't necessarily
+[ 6323.96s ->  6329.06s] think my understanding of credit spreads is that much better. Sure, I've learned a lot more over the
+[ 6329.06s ->  6334.00s] last four years or five years, but the main difference that I am now a much better loser.
+[ 6334.60s ->  6340.22s] Back then, I couldn't lose. I hated losing. The loss is not at me, right? But now I take the loss
+[ 6340.22s ->  6344.64s] and I move on. If you guys are able to develop this muscle, to develop this skill, you'll be
+[ 6344.64s ->  6347.92s] successful regardless of what you're trading. It doesn't matter if it's leaps, credit spreads,
+[ 6348.04s ->  6352.00s] debit spreads. And if you guys want more information on how I trade leaps, you guys want more information
+[ 6352.00s ->  6355.66s] on how I day trade, let me know down in the comment section below, which leads us to the third tip.
+[ 6355.66s ->  6361.80s] You do not need to overreach for gains. If you trade the right way, if you follow a plan,
+[ 6361.92s ->  6367.55s] if you make a plan and tailor it towards what you like to do, you'll be successful in the long run
+[ 6367.55s ->  6372.23s] as long as you play the probabilities. Think about it this way. I, my average on one trade,
+[ 6372.31s ->  6378.81s] 20% return. S&P 500 on average averages 10% a year. So on one trade, you're already doing better
+[ 6378.81s ->  6386.47s] than S&P 500. 20% annualized is 240%. That is better than any hedge fund out in the market right
+[ 6386.47s ->  6392.93s] now. So if you're able to do like 30%, 40% a year, dude, you're amazing. You're doing great.
+[ 6393.31s ->  6398.91s] As long as you're trading well, the gains will come. Simple as that. Don't reach. The next one,
+[ 6399.17s ->  6402.89s] like I said in the beginning of the video, be kind to yourself. Learning how to trade credit spreads or
+[ 6402.89s ->  6406.65s] learning how to trade in general is very difficult. You're going to make mistakes. You're going to lose
+[ 6406.65s ->  6410.67s] some money. You might make a lot of money, but make sure you guys take the time to congratulate
+[ 6410.67s ->  6413.71s] yourselves, right? If once you open your first credit spell, let me know in the comment section
+[ 6413.71s ->  6417.23s] below. I want to know, right? Because you guys are taking the time to learn a new skill. And that's
+[ 6417.23s ->  6422.43s] very, very admirable. Be kind to yourself because you will make mistakes. Mistakes are loud. They're
+[ 6422.43s ->  6427.17s] okay. I've made many throughout my trading career. And I can, I can tell you so many stories that you
+[ 6427.17s ->  6431.47s] can probably, that you'll probably get very bored of them. And the next one, which is probably the most
+[ 6431.47s ->  6435.99s] important tip if you want to improve, which is you guys have the journal. Write down all your trades.
+[ 6435.99s ->  6439.17s] Make sure you guys are tracking what you are learning, what you're not doing well, what you
+[ 6439.17s ->  6443.71s] are doing well. This channel actually started as a, as a way for me to journal video journaling,
+[ 6443.83s ->  6448.69s] but obviously it's grown a lot more than that. But journaling is really how you improve. Make sure
+[ 6448.69s ->  6452.43s] you guys journal, make sure you guys track those trades so that you guys can not make the same
+[ 6452.43s ->  6456.67s] mistakes over and over and over again. And lastly, don't compare yourself to others. You only have
+[ 6456.67s ->  6460.53s] to compare yourself to yourself. Everybody is at a different part in their life. Everyone's situation
+[ 6460.53s ->  6464.31s] is different. If you guys are comparing yourself to me, it may not be a fair comparison because I've
+[ 6464.31s ->  6467.89s] been doing this for much longer than you. Comparison is a thief of joy. Don't do it.
+[ 6468.41s ->  6471.89s] Thanks for listening to me ramble. Let me know if you guys have any comments or questions down in
+[ 6471.89s ->  6477.01s] the comments section below. If you guys enjoyed the content, I would really appreciate it if you
+[ 6477.01s ->  6481.19s] guys liked the video and then subscribe to the channel. I'm on a mission to really put out the
+[ 6481.19s ->  6486.03s] best content out there so that people can make a change in their life. Options has done really well
+[ 6486.03s ->  6491.31s] for me. Learning how to invest has really impacted my life. I can't imagine where I would be without it.
+[ 6491.31s ->  6495.15s] If you guys want to learn how to sell puts, much easier. I made a masterclass. I'll link in the
+[ 6495.15s ->  6498.71s] end screen right here. If you guys want to learn more about TA, I'll also link it in the end screen
+[ 6498.71s ->  6503.07s] right here. Until next time, stay safe. Wish you guys all the best. Peace.

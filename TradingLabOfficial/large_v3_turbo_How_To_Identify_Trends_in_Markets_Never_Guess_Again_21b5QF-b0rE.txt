@@ -1,0 +1,125 @@
+[    0.41s ->     6.27s] The supertrend indicator, known for its simplicity and its scary predictiveness of the market.
+[    6.27s ->    10.97s] Even by itself this indicator is pretty decent, but in this video I'm going to share one
+[   10.97s ->    16.53s] of my secret strategies I like to do with this indicator that makes it so much better.
+[   16.53s ->    17.53s] Let's get straight to it.
+[   17.53s ->    21.85s] If you haven't heard or used this indicator before, well it's pretty good at finding
+[   21.85s ->    24.27s] trends in the market, hence the name.
+[   24.27s ->    28.89s] Why this indicator is so powerful is because it does not only track the momentum of the
+[   28.89s ->    34.93s] market, but it also uses ATR, which basically means that it also takes volatility into consideration.
+[   34.93s ->    39.65s] I'm going to show you how to take advantage of this and make a lot of profitable trades.
+[   39.65s ->    42.09s] First, let's add this indicator to our chart.
+[   42.09s ->    46.19s] To do this, just go to the indicators tab on trading view, type in supertrend, and make
+[   46.19s ->    48.55s] sure you select this one right here.
+[   48.55s ->    51.91s] It's probably one of the easiest indicators to use on the planet.
+[   51.91s ->    55.57s] When the lines are green, you buy, when the line is red, you sell.
+[   55.57s ->    56.57s] Pretty self explanatory.
+[   56.57s ->    60.75s] But just like any other indicator, this indicator by itself has some problems.
+[   60.75s ->    61.75s] Let me explain.
+[   61.75s ->    65.71s] As you can see here, this indicator is doing a great job at finding the trend.
+[   65.71s ->    69.53s] It's great at showing when the market has high momentum in either direction.
+[   69.53s ->    74.73s] The problem is, the indicator is also giving buy and sell signals even when the market is
+[   74.73s ->    77.75s] moving sideways and doesn't have a lot of momentum.
+[   77.75s ->    83.05s] And as we all know, when the market is moving sideways with little momentum, it's very risky
+[   83.05s ->    86.01s] and very hard to predict which direction it will go.
+[   86.01s ->    90.71s] That's exactly why, if you just used this indicator by itself and went in every time
+[   90.71s ->    94.37s] it said buy, your portfolio probably wouldn't look too hot.
+[   94.37s ->    96.89s] But I'm going to show you a solution to this problem.
+[   96.89s ->   100.23s] So we only go in if the market is truly in a trend.
+[  100.23s ->   103.83s] The first strategy I'm going to share with you is a great one to have in your trading
+[  103.83s ->   104.83s] arsenal.
+[  104.83s ->   107.57s] And that involves adding 3 super trend indicators.
+[  107.57s ->   109.39s] Let's go a little more in depth.
+[  109.39s ->   113.25s] Once you have 3 super trend indicators added to your chart, you're going to want to change
+[  113.25s ->   114.31s] the settings a bit.
+[  114.31s ->   120.41s] Go to the inputs tab and change the ATR period to 12 and the ATR multiplier to 3.
+[  120.41s ->   123.23s] The next one you're going to set it as 10 and then to 1.
+[  123.23s ->   126.45s] Then the third one you're going to set it as 11 then 2.
+[  126.45s ->   130.37s] Then go to the style tab and turn off all these long and short icons.
+[  130.37s ->   133.05s] So when you're done, your chart should look something like this.
+[  133.05s ->   138.63s] Now how this strategy works is we will only go in if all the lines are the same color.
+[  138.63s ->   139.81s] Let me show you an example.
+[  139.81s ->   144.07s] So here you can see two of the lines are green, but one of the lines are red.
+[  144.07s ->   149.09s] This is telling us that the market isn't in full momentum yet, and it's moving sideways.
+[  149.09s ->   150.73s] So we don't go in yet.
+[  150.73s ->   154.09s] We wait for a little bit until all the lines turn green.
+[  154.09s ->   156.81s] We enter a long position here and look what happens.
+[  156.81s ->   157.81s] The chart goes up.
+[  157.81s ->   159.29s] Let's look at one more example.
+[  159.29s ->   160.81s] Here we're looking for a short trade.
+[  160.81s ->   164.19s] Two of the top lines are red, but the bottom line is still green.
+[  164.19s ->   167.15s] We wait it out until the lines all turn red.
+[  167.15s ->   169.07s] Enter a short trade here, profit.
+[  169.07s ->   172.81s] Now you may be asking yourself, but how do I know when to exit the trade?
+[  172.81s ->   174.63s] Well, that's a very good question.
+[  174.63s ->   178.31s] There are actually a lot of different ways to know when to exit the trade.
+[  178.31s ->   182.15s] You can do the classic set a take profit at 1.5 ratio.
+[  182.15s ->   184.95s] Whenever the price hits that mark you exit the trade.
+[  184.95s ->   188.45s] Another exit strategy is where one of the lines change color.
+[  188.45s ->   191.17s] So here you can see all the lines turn the same color.
+[  191.17s ->   192.17s] We entered.
+[  192.17s ->   193.17s] We got a bunch of profit.
+[  193.17s ->   196.55s] Then once one of the lines turn red, we exit the trade.
+[  196.55s ->   201.27s] Another strategy we can use is pairing the super trend indicator with the 200 day moving
+[  201.27s ->   202.27s] average.
+[  202.27s ->   207.29s] Why this strategy is so powerful is because the super trend indicator is very good at finding
+[  207.29s ->   208.89s] short term trends.
+[  208.89s ->   212.21s] And the 200 day is good at finding long term trends.
+[  212.21s ->   214.83s] That's why pairing both of these indicators is like magic.
+[  214.83s ->   217.15s] Let's add these indicators to our chart.
+[  217.15s ->   221.51s] Go to the indicators tab, add the super trend indicator, and just keep the default settings.
+[  221.51s ->   226.17s] Next, add the exponential moving average and change the length to 200.
+[  226.17s ->   230.07s] Now that we have the indicators set up, let's move to how to actually use this strategy.
+[  230.07s ->   231.73s] The strategy is pretty simple.
+[  231.73s ->   236.77s] We will only enter a long trade if the super trend line is green and the price is above
+[  236.77s ->   238.41s] the 200 day moving average.
+[  238.41s ->   243.69s] We only enter a short trade if the super trend line is red and the price is below the 200 day
+[  243.69s ->   244.69s] moving average.
+[  244.69s ->   245.83s] Let me show you an example.
+[  245.83s ->   250.19s] So here you can see the super trend line is green, but the price is not above the 200
+[  250.19s ->   251.49s] day moving average yet.
+[  251.49s ->   252.65s] So we wait.
+[  252.65s ->   257.47s] Once the price is over the 200 day and the line is still green, this is where we enter
+[  257.47s ->   258.91s] the trade.
+[  258.91s ->   264.07s] You can exit the trade by doing a 1.5 profit ratio or by selling simply when the super
+[  264.07s ->   265.39s] trend line turns red.
+[  265.39s ->   267.35s] Let's take a look at a short example.
+[  267.35s ->   271.95s] As you can see the super trend line is red, but the price is still above the 200 day.
+[  271.95s ->   274.35s] We wait for the price to go below the 200 day.
+[  274.35s ->   278.77s] Make sure the super trend line is still red and then we enter the trade.
+[  278.77s ->   282.37s] Next I'm going to show you a bonus strategy using the Ichimoku indicator.
+[  282.37s ->   286.31s] To add this indicator, go to the indicators tab and type in Ichimoku.
+[  286.31s ->   290.15s] We are also going to clean up our chart a bit because this indicator's default settings
+[  290.15s ->   291.39s] are really messy.
+[  291.39s ->   296.63s] Just uncheck the top 5 boxes and then change these plot backgrounds to purple so it's easier
+[  296.63s ->   297.63s] to read.
+[  297.63s ->   300.65s] If we have that set up, let me explain how the strategy works.
+[  300.65s ->   303.47s] So this purple area is called the Kumo cloud.
+[  303.47s ->   308.69s] We will only enter a long trade if the super trend line is green and the price is above
+[  308.69s ->   309.89s] the Kumo cloud.
+[  309.89s ->   313.95s] We will not enter the trade if the price is in or below the cloud.
+[  313.95s ->   316.37s] It's the exact opposite for shorting.
+[  316.37s ->   321.05s] We will only enter a short trade if the super trend line is red and the price is below the
+[  321.05s ->   322.05s] Kumo cloud.
+[  322.05s ->   323.19s] Let me show you an example.
+[  323.19s ->   327.85s] So here the super trend line is green but the price is still below the Kumo cloud.
+[  327.85s ->   329.03s] So we wait.
+[  329.03s ->   334.19s] Then the price enters the Kumo cloud but we still wait until it's above the Kumo cloud.
+[  334.19s ->   335.19s] We wait.
+[  335.19s ->   336.19s] Then it finally goes up.
+[  336.19s ->   340.37s] We make sure the super trend line is still green and then we enter the trade.
+[  340.37s ->   342.82s] Here's a short example.
+[  342.82s ->   344.32s] The super trend line is red.
+[  344.32s ->   347.66s] We don't enter until the price goes below the Kumo cloud.
+[  347.66s ->   350.40s] Once it does, we enter the trade.
+[  350.40s ->   355.84s] For exit strategies, you can again do the 1.5 profit ratio or you can exit the trade
+[  355.84s ->   358.82s] once the price goes inside the Kumo cloud.
+[  358.82s ->   363.40s] So here we entered a trade because the super trend line was green and the price was above
+[  363.40s ->   364.40s] the Kumo cloud.
+[  364.40s ->   368.16s] The price starts to go then heads back down into the Kumo cloud.
+[  368.16s ->   371.02s] The moment the price hits that cloud, we exit the trade.
+[  371.02s ->   375.54s] I just showed you 3 different strategies to use with the super trend indicator.
+[  375.54s ->   379.96s] All I ask in return is if you take 2 seconds out of your day and like this video.
+[  379.96s ->   383.38s] Try these 3 strategies and let me know which one works best for you.
+[  383.38s ->   388.92s] If you want to see 4 price action secrets that only the top 5% of traders know, watch this
+[  388.92s ->   392.46s] video because I give away some pretty insane secrets.
+[  392.46s ->   395.08s] Thanks for watching and I'll see you guys next time.

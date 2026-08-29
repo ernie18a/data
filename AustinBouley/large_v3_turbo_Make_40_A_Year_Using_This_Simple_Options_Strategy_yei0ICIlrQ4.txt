@@ -1,0 +1,146 @@
+[    0.14s ->     5.06s] Hey guys, this video I'm going to walk you through a plan that can make you 40% a year.
+[    5.40s ->     9.40s] Now this is very simple that anybody can do it even if you're new to options trading.
+[    9.54s ->    14.60s] So let me walk you through, show you the back test and show you step by step how to do this
+[   14.60s ->    16.88s] so that by the end of this video you too can do this as well.
+[   16.98s ->    18.30s] So let's dive in.
+[   18.58s ->    20.50s] This is the S&P 500.
+[   20.66s ->    21.90s] This is what we'll be trading on.
+[   21.98s ->    23.24s] We'll be selling puts.
+[   23.50s ->    25.04s] What the heck is selling puts?
+[   25.12s ->    28.80s] Well selling puts is the idea that you're betting that a stock will stay above a certain level.
+[   28.80s ->    34.66s] So let's say you move all the way down here and you bet that the stock, this stock, will stay above this level.
+[   34.98s ->    36.94s] Now how much room do we have for the market to drop?
+[   37.04s ->    40.10s] It could drop almost 19-20% and guess what?
+[   40.38s ->    41.82s] We would still make money.
+[   42.10s ->    50.74s] On selling puts, you make money as long as the stock stays above your level by the end of your expiration period.
+[   50.96s ->    56.34s] Now we'll be diving more into what that means here in a second, but that's how easy it is to sell puts.
+[   56.34s ->    64.08s] You pick a level that you think the stock will never hit, you sell puts against it, it's basically insurance, and you make a lot of money in the process.
+[   64.36s ->    67.44s] Now how can we structure this and have a statistical edge?
+[   67.80s ->    70.12s] And so that's exactly what this back test shows.
+[   70.32s ->    78.80s] You can see here that when we do it and we structure it in a certain way, we can have what we see here is a really, really great trade.
+[   78.80s ->    81.48s] I say that because we have a 99% win rate.
+[   82.18s ->    87.68s] Overall, they made $741,000, an average return of $700 per trade.
+[   88.18s ->    90.04s] And again, what was our loss size?
+[   90.10s ->    94.50s] Our loss average about $2,000 and our win average was about $750.
+[   94.74s ->    96.62s] That's a great risk to return.
+[   96.62s ->   106.72s] And this was backed us over the last 10 years, meaning the 2018 pullback, the 2019, the 2020, the 2022 little rough patch.
+[  106.82s ->   109.40s] And all that we can see here, we're still making money.
+[  109.54s ->   112.32s] So how do we structure this trade?
+[  112.60s ->   114.02s] Well, it's actually quite simple.
+[  114.10s ->   115.12s] So let's dive into it.
+[  115.16s ->   116.62s] This trade is structured like this.
+[  116.78s ->   118.72s] We go 120 days out.
+[  119.00s ->   121.14s] And now for those like Austin, I have no idea what this means.
+[  121.18s ->   124.80s] I will show you what this looks like on an options chart here in a second.
+[  124.80s ->   126.04s] I should say your broker.
+[  126.70s ->   128.72s] So again, we're going 120 days out.
+[  129.14s ->   133.16s] We're selling a 10 delta put, which gives us a lot of downside protection.
+[  133.32s ->   134.82s] So 10 delta put.
+[  135.36s ->   138.22s] We're going to take profit at 25%.
+[  138.22s ->   140.26s] So 25% take profit.
+[  141.08s ->   149.96s] Again, this means that if we opened a trade with the max profit of $100, once we see an unrealized profit of $25, we'll close the trade.
+[  149.96s ->   155.18s] We're going to close the trade early at 21 days, 21 DTE.
+[  155.48s ->   158.04s] This is an early management rule from Tasty Trade.
+[  158.16s ->   161.00s] This is going to help us kind of avoid a lot of vega risk.
+[  161.32s ->   169.46s] But also most of the time, we won't even get to this level or to this date because we've closed at 25% by that point.
+[  169.86s ->   171.76s] And that's exactly how we do this trade.
+[  171.82s ->   172.66s] It's that simple.
+[  172.66s ->   177.62s] Again, depending on your account size, you'll do it either on ES or if you have a smaller account, you'll do it on MES.
+[  178.08s ->   179.52s] So this is literally it.
+[  179.72s ->   181.52s] Literally write this down on a notebook.
+[  181.86s ->   182.68s] Pause the screen.
+[  183.12s ->   184.46s] This is what you need to know.
+[  184.68s ->   188.06s] 120 DTE, 10 delta, 25% take profit.
+[  188.58s ->   191.54s] And we're going to close it early at 21 DTE if we get there.
+[  191.78s ->   193.70s] And we're doing this on ES and MES.
+[  193.82s ->   196.44s] Now, how do we actually structure this?
+[  196.98s ->   199.54s] Well, if I go to Tasty Trade here, let's do this.
+[  199.68s ->   202.32s] We're going to go to our options chain, which is what this is.
+[  202.32s ->   205.26s] We see calls on this side and puts on this side.
+[  205.56s ->   207.50s] We see our days until expiration.
+[  207.68s ->   210.56s] We're going to go down and find the one that's closest to 120.
+[  211.02s ->   213.74s] So you can see here we have 128 and 129.
+[  213.84s ->   214.40s] This one's AM.
+[  214.60s ->   215.96s] I like to avoid AMs.
+[  216.30s ->   218.22s] So I'll just go with 129.
+[  218.40s ->   220.66s] So this is closest to 120 days.
+[  220.96s ->   223.90s] Now, I can see here I can change these to whatever I want.
+[  223.98s ->   224.76s] I'm picking delta.
+[  225.16s ->   229.34s] And I'm going to scroll until my puts on the put side right here gets to 10 delta.
+[  229.78s ->   231.06s] So 10 delta right here.
+[  231.06s ->   233.42s] Again, I'm going to go to, I'm going to change this to open interest.
+[  233.56s ->   233.84s] Why?
+[  234.12s ->   237.00s] Well, because I want to make sure that I'm trading the one with the highest open interest.
+[  237.10s ->   240.10s] That means there's a lot of contracts that have been traded at that strike price.
+[  240.14s ->   242.00s] So right here, 4650.
+[  242.48s ->   248.48s] So if I sell this level, 4650, I'm going to bring in $2,000 of credit.
+[  248.48s ->   252.68s] And it's going to cost me about $3,000 to put on this trade.
+[  252.82s ->   253.90s] It says $1,900.
+[  254.22s ->   261.72s] That's because I have other trades on an average trade for this right now, a buying power of about $3,000 to $3,500 per trade.
+[  262.32s ->   264.40s] So that's what we're looking at.
+[  264.44s ->   272.98s] If we're just looking at it from that perspective, making $2,000 on $3,000, that's literally a huge percentage return on our money.
+[  272.98s ->   276.00s] And, but again, what we have to factor in is risk.
+[  276.06s ->   278.10s] So let me talk about some risk rules here.
+[  278.46s ->   278.82s] All right.
+[  278.94s ->   282.84s] What I forgot to include here was that we, this strategy is amazing.
+[  282.84s ->   287.34s] It will make us a lot of money, but we should do it with no more than 30% of our account.
+[  287.34s ->   304.14s] Now, so let's say if we're trading with $100,000, 30,000 of it goes into trading this and the rest we leave in cash or we put it into T-bills to make some monthly dividend returns or maybe even a high interest savings account, something like that.
+[  304.34s ->   307.96s] But 30% of our account is trading and 70% is in cash.
+[  308.04s ->   308.54s] Now, why?
+[  308.84s ->   310.16s] Well, because we're going to make a great return.
+[  310.16s ->   317.28s] We're going to make like 16% to 20% return a month on this money, but we also have a lot of risk on it.
+[  317.28s ->   321.22s] And so, again, we can see here that during 2020, we had a lot of risk.
+[  321.26s ->   322.46s] And right here, we had some risk.
+[  322.62s ->   329.02s] You can see it dropping off quickly in the green line that shows while we were in the trade.
+[  329.78s ->   341.08s] And so in order to help smooth out that risk, in order to help stay in those positions longer, we want to only do 30% so that we save 70% of cash to withstand these drawdowns.
+[  341.86s ->   342.22s] All right.
+[  342.28s ->   342.46s] Sweet.
+[  342.72s ->   346.38s] So now that we have some buying power money set aside, we can do this.
+[  346.38s ->   347.44s] Now, what does this look like?
+[  347.46s ->   350.42s] Well, like I said, we're doing a 25% take profit.
+[  350.56s ->   354.32s] So we're going to make $2,170 on this trade.
+[  354.48s ->   356.78s] That translates into roughly $500.
+[  357.14s ->   360.54s] But let's just do the math here times 25.
+[  360.72s ->   360.80s] Yeah.
+[  360.86s ->   362.32s] Roughly $540.
+[  362.76s ->   362.98s] Okay.
+[  363.36s ->   365.78s] So we have the chance to make $540.
+[  366.36s ->   369.64s] And we're going to be using about $3,000 per trade.
+[  369.90s ->   372.42s] And so that's an 18% return on our money.
+[  372.42s ->   376.12s] Guys, 18% return in a matter of two weeks.
+[  376.18s ->   377.02s] Why do I say two weeks?
+[  377.06s ->   381.80s] Because this trade, on average, takes 16 days to close.
+[  382.16s ->   383.08s] That's insane.
+[  383.26s ->   391.10s] Literally two weeks, or I mean two weeks and two days, but basically two weeks, and we get an 18% return on our money.
+[  391.32s ->   399.42s] Which means if we're doing that every two weeks, we're making about a 36% return on our money every single month.
+[  399.42s ->   402.10s] Now, again, we're only using 30% of our account.
+[  402.24s ->   406.80s] So 36% a month times only 30% of our account.
+[  406.92s ->   410.86s] That gives us, what, roughly 9% a month on our account.
+[  411.22s ->   422.32s] And so if we factor in losses as well, that brings us close to a 40 to 50, if not even more, percent return every single year while playing this super safe.
+[  422.32s ->   428.10s] Because we still have 70% of our money set aside in a safe, non-invested way.
+[  428.10s ->   435.12s] And so that's exactly how we can do selling puts in a way that we structure where we give ourselves plenty of safety and things like that.
+[  435.34s ->   437.20s] And now if you're like, awesome, this is still too complicated.
+[  437.30s ->   438.60s] I want to automate the whole process.
+[  438.70s ->   442.10s] Well, you can use a tool like the Options Auto Trader to automate the entire process.
+[  442.94s ->   447.26s] You'll just simply set up the rules you want it to follow, and it will automate the entire process.
+[  447.46s ->   448.88s] Look, here's how it's done real fast.
+[  449.14s ->   452.80s] And the Options Auto Trader, I say I want to sell a put, which is what the strategy is.
+[  453.08s ->   454.82s] I'm going to do it on ES for this example.
+[  454.82s ->   456.52s] Again, if I have a smaller account, I'll do MES.
+[  456.84s ->   460.00s] Again, we're talking about how 120 DTE is the best.
+[  460.38s ->   461.92s] 10 Delta is the best here as well.
+[  462.28s ->   465.10s] I'll enter once a week on Wednesdays.
+[  465.14s ->   467.80s] Again, I can change that if I want, but let's save that for now.
+[  468.34s ->   472.54s] Again, Take Profit is 25%, and Early Management is 21 days.
+[  472.64s ->   475.72s] Okay, if we get 21 days, close the trade, save and continue.
+[  476.84s ->   479.32s] Buying Power Allocation, how much money do I want to put into it?
+[  479.32s ->   484.42s] Well, I can define that, or I can simply click this to change it to percentage and say 30% of my account.
+[  484.74s ->   487.60s] So I'll be trading with 30% of my account, save and continue.
+[  487.96s ->   490.04s] Just like that, now I'm trading with 30% of my account.
+[  490.14s ->   495.60s] I have all the rules set up, and it's going to follow that to a T, so that every single day, it's going to look, should I enter, should I exit?
+[  495.60s ->   504.32s] And it's going to do all the management trading for me, so that I can now make 40 to 50% return on my overall account every single year on autopilot without touching a thing.
+[  504.44s ->   512.12s] So, again, if you want to start doing this, go apply this right now, but make sure to do some paper trading, do your research, understand what's going on,
+[  512.32s ->   518.88s] and make sure to limit the amount you're trading with, 30% or less, because there is a lot of risk with selling just puts.
+[  519.40s ->   521.66s] Anyways, guys, like I said, I hope you enjoyed this video.
+[  521.78s ->   527.50s] If you want to learn more about the automation, click the link down below to check out how to join the Options Auto Trader.
+[  527.82s ->   528.58s] All right, guys, see you in the next video.

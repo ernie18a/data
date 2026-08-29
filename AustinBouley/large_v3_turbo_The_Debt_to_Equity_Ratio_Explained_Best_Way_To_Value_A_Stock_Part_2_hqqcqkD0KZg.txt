@@ -1,0 +1,79 @@
+[    0.00s ->     4.92s] Hey guys, what's up? It's the Impeccable Investor here and we're back on that mini-series of how to
+[    4.92s ->    10.82s] value a company. How to understand if a stock is worth it. To understand the value you're getting
+[   10.82s ->    16.16s] for the price you're paying. In the first video, we discussed price to earnings ratio, which is
+[   16.16s ->    20.86s] the ratio used to determine if you're actually getting value at the price you're buying the
+[   20.86s ->    25.98s] stock at. In today's video, we're doing one of my favorite ratios and that is the debt to equity
+[   25.98s ->    30.22s] ratio. So if you haven't already, please hit that subscribe button and turn on those alert
+[   30.22s ->    36.26s] notifications so you get notified every single time I release a new day trading or investing video.
+[   36.62s ->    40.46s] Now again, guys, we're going to get into it and I hope you're excited. So hit that thumbs up button.
+[   40.66s ->    47.66s] Here we go. This is the debt to equity ratio. This shows you a lot of things, helps you understand
+[   47.66s ->    55.04s] the company and is a good measure of leverage and financing and a company. Now what exactly is
+[   55.04s ->    61.84s] debt? Debt is when you borrow money in order to purchase things used for other assets and other
+[   61.84s ->    68.14s] things within the company. Equity is the money that the company actually has. It's the money that they
+[   68.14s ->    73.72s] own. They sold something. They now collected it after taxes, after everything. This is the money they
+[   73.72s ->    81.28s] get to keep. So this is simply a debt to equity ratio, which is dividing the debt by the equity. If we can
+[   81.28s ->    87.82s] see here, this is debt and we're dividing that by equity. So that is showing us exactly what's
+[   87.82s ->    94.54s] happening here. So this is debt divided by equity. What we're going for is for long term, you're looking
+[   94.54s ->   102.84s] for a lower debt to equity ratio. For instance here, the debt to equity ratio of this example is 0.5.
+[  102.84s ->   111.86s] 0.5 because it has $50,000 in debt and $100,000 in equity. When you divide, you get 0.5. That shows
+[  111.86s ->   118.08s] that it's less than one. Less than one means that the equity, the money that it has is greater than
+[  118.08s ->   124.24s] the debt. If the number is over one, then that means they have more debt than they have money.
+[  124.62s ->   130.66s] Now why is this important? Well, debt is a huge thing to consider when you're analyzing a company.
+[  130.66s ->   138.74s] Why? Because a company uses money to make more money. So for instance, if they make a 20%, I don't
+[  138.74s ->   145.56s] know if y'all can see this well, if they make a 20% return on their money and they are using $100,000,
+[  146.12s ->   151.66s] then that means that year they make $20,000. Well, if they can use debt to make more money,
+[  151.74s ->   156.84s] which means they get to take on $100,000 more, so that means they have this $100,000 plus another $100,000.
+[  156.84s ->   165.40s] So that means with debt, they have $200,000, but they get to make 20% still. So that means they're
+[  165.40s ->   172.28s] now making $40,000. Well, in this instance, debt is amazing because it helps them increase their
+[  172.28s ->   178.94s] profits tremendously from $20,000 to $40,000. All they have to do is pay interest on that money
+[  178.94s ->   184.84s] they're borrowing. Well, the problem is what if they don't make money? They still have to pay this
+[  184.84s ->   189.94s] interest rate. They still have to pay back the debt, and that puts them in a negative position,
+[  190.00s ->   194.72s] a position they don't want to be in, right? And they aren't making money. They don't want to have
+[  194.72s ->   200.50s] to be paying out to people who are trying to get money from them. So a debt to equity ratio needs
+[  200.50s ->   204.88s] to make sure, this is why this is my second favorite one to watch out for. You have to make
+[  204.88s ->   209.16s] sure you understand what's happening with this company. If there's too much debt, and there's a
+[  209.16s ->   213.26s] bear market, and they're not able to make money as a company, then they're going to have to pay
+[  213.26s ->   218.46s] out all their money as debts and have the potential for going bankrupt. All right, guys. So as we
+[  218.46s ->   224.86s] discussed here, how we affect this is the debt to equity ratio. You want it to be low, preferably
+[  224.86s ->   228.84s] under one, but it really just depends on the industry average. And if you hang in there, I'll
+[  228.84s ->   236.34s] give you a great example to look at. So if you see here, the way to that to decrease the debt to
+[  236.34s ->   245.74s] equity ratio is to do one thing here. You have to decrease debt, or you have to increase equity. So that
+[  245.74s ->   252.88s] means you either decrease the amount of money you are borrowing, or you increase the amounts of money
+[  252.88s ->   261.00s] you have. These are the two ways to affect the debt to equity ratio. Now let's look in exactly and go over a
+[  261.00s ->   265.96s] great example over how we can use this further. And this example here, this is
+[  265.96s ->   272.84s] research.tradeking.com. This is the go to place for finding fundamentals of a company, because it does
+[  272.84s ->   280.76s] all the math for you, and it shows you the industry range, which is a very crucial point of understanding
+[  280.76s ->   287.32s] the value of a stock, because you need to put all these numbers into relative view of what the market is
+[  287.32s ->   293.00s] doing. So this gives you an industry range where you can compare the numbers to. So we're going to be
+[  293.00s ->   298.58s] looking at two separate companies here right now. We're going to be looking at AT&T and Verizon. We're
+[  298.58s ->   304.46s] going to start off here with AT&T. So as you can see here with AT&T, the debt to equity ratio is right
+[  304.46s ->   309.50s] here underneath financial strength, because it shows actually how much money is paying out. It's
+[  309.50s ->   312.66s] basically the money that they have and the money that they don't have. So that's why it's under
+[  312.66s ->   321.58s] financial strength. So if you can see here, the debt to equity ratio is 105.54. So now, so you may be
+[  321.58s ->   327.38s] saying, well, Austin, the impeccable investor, whoever I want to call you, that is way over the
+[  327.38s ->   334.28s] one value that you said. That means they have way more debts than they have equity. Yes, you're so
+[  334.28s ->   339.38s] right with that. We don't want a number that high. But that's why I said we must compare it to the
+[  339.38s ->   344.70s] industry range. The industry range, it's on the low portion of this industry range, which meaning
+[  344.70s ->   351.52s] that it's actually good. So yes, 105.54 compared to the number one that we want is a lot higher.
+[  351.84s ->   358.10s] It means that they're using a lot more debt than the actual money that they have. It is very low
+[  358.10s ->   366.92s] compared to the industry average. The industry average goes up to 569.65. Considering we're at 105.54,
+[  366.92s ->   372.44s] AT&T seems like a good buy. So now we know where the industry range is. Let's also compare it to
+[  372.44s ->   379.20s] another stock that is in the industry. So if we go up here, we can type in VC or Verizon,
+[  379.36s ->   385.84s] however you want to get to it. And we can see here, we can look at the same thing. We have a debt
+[  385.84s ->   393.82s] to equity ratio of 236.20. And that is about in the middle portion of this industry range.
+[  393.82s ->   398.06s] So looking at the debt to equity ratio, we understand we want it the lowest to be,
+[  398.16s ->   403.58s] but we also have to compare it to the overall market. So if you can see here, this is a debt
+[  403.58s ->   415.06s] to equity ratio of 238, my bet. Now comparing this to AT&T of 105.54, it's a lot lower. It's on the
+[  415.06s ->   421.46s] lower portion of the industry range. So if we're completely valuing this off the debt to equity
+[  421.46s ->   427.76s] ratio, the buy here will be AT&T for that long-term growth. But if you can see here,
+[  427.80s ->   433.96s] if we're going to also take into consideration what we discussed in the last video, which is
+[  433.96s ->   440.56s] the price to earnings of 15.65, that is on the lower portion of the range. So if we go here,
+[  440.66s ->   447.60s] we cross that out. Whoops, my bad. If we go here and we go back to T and we start to look and bring
+[  447.60s ->   455.18s] in the price to earnings, you can see here that it also has a lower industry average of price to
+[  455.18s ->   460.24s] earnings. So now that we brought in these two ratios, we can see here that AT&T combined just
+[  460.24s ->   465.12s] on these two is the better buy over Verizon. So as you can see here, guys, this is how you pull in
+[  465.12s ->   469.34s] all the ratios together. Now, please hit that subscribe button if you haven't already. Please
+[  469.34s ->   473.04s] hit that like button if you found some value, because we're going to continue to go over some
+[  473.04s ->   477.38s] more rate ratios, the favorite ones that I think everyone should know. And then we'll make a video
+[  477.38s ->   482.42s] over combining them all and defining the best stock to invest in. All right, guys, thank you so much
+[  482.42s ->   482.92s] for watching.

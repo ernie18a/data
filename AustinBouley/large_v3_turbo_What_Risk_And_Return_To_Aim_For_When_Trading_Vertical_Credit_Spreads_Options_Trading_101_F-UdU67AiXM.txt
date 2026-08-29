@@ -1,0 +1,67 @@
+[    0.34s ->     5.50s] In this video, we're going over what risk and return to aim for when trading credit spreads.
+[    5.82s ->    10.08s] Before I get into the weeds and go into an options chain, I want to show you specifically
+[   10.08s ->    16.78s] what numbers you want to target and why. So first off, you need to know what strategy are you using?
+[   17.10s ->    23.94s] The strategy we're using will determine so much. And so again, let's say you went to the link in
+[   23.94s ->    28.56s] the description below this video, checked out the free trading handbooks guide and used one of those
+[   28.56s ->    33.96s] strategies. On average, they have a 95% win rate. Okay, cool. So for the sake of this video,
+[   34.14s ->    40.38s] we're going to use a 95% win rate as our ideal approach. So again, this is all based on the
+[   40.38s ->    45.74s] strategy that you're using. And again, I'll even show you at the end of the video how to determine
+[   45.74s ->    50.18s] your strategy based on these numbers as well. So anyways, you can see here, let's say we have a
+[   50.18s ->    56.64s] 95% win rate. So that means we need to be over this. So this table shows the win rate you need
+[   56.64s ->    61.12s] in order to break even based on your risk to return. So for instance, right here, if you're
+[   61.12s ->    68.28s] risking $1 to make $3 or risking 1% to make 3%, you need to have at least a 25% win rate to break
+[   68.28s ->    74.82s] even. Anything above that means you're going to win money long term. Now, credit spreads have the
+[   74.82s ->    81.64s] inverse relationship because by default, they're naturally a higher win rate. So again, if you're
+[   81.64s ->    89.42s] risking $5 to make $1, then what's going to happen is you need an 83% win rate to break even. So you
+[   89.42s ->    96.46s] win a lot more. Or again, if you win a lot more, then you can change that risk to reward. Now again,
+[   96.54s ->   104.28s] if I'm trading with a 95% win rate, I want anything below this number, anything below a risk of 10 and
+[  104.28s ->   111.38s] a reward of 1. Anything below this will yield a super positive long term return, right? Anything above
+[  111.38s ->   118.34s] or 50 above, I would be losing money. So I have a 95% win rate. Okay, so that's ideally what we're
+[  118.34s ->   123.62s] looking for. It's our risk to return. So this is what we'll be looking for. Let's say 10 to 1 or 5
+[  123.62s ->   131.28s] to 1. Let's just go 5 to 1. A 5 to 1 is a 20% return on the risk that we have. Okay, essentially,
+[  131.50s ->   138.06s] that's what we're looking at. You can either have a 10 to a 20% return on the risk that you have.
+[  138.06s ->   144.00s] That will come in handy here after I talk about this table. This table is very important. A lot
+[  144.00s ->   149.28s] of people overlook this step and don't know this math. It is the probability of a certain amount
+[  149.28s ->   158.64s] of losing trades based on your win rate. Okay, so a 95% win rate, we have a 99% chance of having
+[  158.64s ->   165.44s] one loss. We have a 22% chance of having two losers in a row. We have a 1% chance of having
+[  165.44s ->   172.08s] three losers in a row. And anything more than that, it's very, very, or almost 0% likely that
+[  172.08s ->   178.08s] we'll have any more than three losers in a row. And so again, this is statistically how it plays out.
+[  178.34s ->   184.54s] You can have more than this in real life trading. But statistically, you should expect no more than
+[  184.54s ->   190.74s] two to three losers in a row with this. What does this mean? Well, it helps you understand and define
+[  190.74s ->   198.24s] your risk, right? If you're risking $2,000 per trade, can you handle four losses in a row? Well,
+[  198.30s ->   204.52s] $2,000 per trade, four losses, can you handle an $8,000 loss before you start making money again?
+[  204.84s ->   209.88s] That is the question here. And so again, when you put this into perspective, maybe you can't handle
+[  209.88s ->   216.98s] an overall $8,000 loss, you should change what your max loss should be. So for instance, let's say
+[  216.98s ->   223.04s] you're comfortable with a $4,000 max loss, and you can have up to four losses in a row,
+[  223.42s ->   229.18s] then that means you would want to risk no more than $1,000 for each trade. Okay, cool. Now let's
+[  229.18s ->   234.08s] take all these numbers we just discussed and show you how it actually applies. Okay, cool. Remember here,
+[  234.08s ->   241.74s] we're looking to have a 10% of the risk or 20% of the risk for our return. Let's take a look at
+[  241.74s ->   247.14s] what that looks like. So for instance, let's go out about 18 days. Let's come here to put on a put
+[  247.14s ->   251.36s] credit spread, because in general, the market looks like it's moving higher. So I think it's just going
+[  251.36s ->   257.22s] to continue to move higher. So again, I'm going to go here, let's say we're going to sell this one
+[  257.22s ->   264.22s] and buy this one. Okay, let's look right here, a limit price of $0.07 credit of $0.07. Okay,
+[  264.28s ->   270.02s] how much money am I putting up for these $0.07? Well, again, you can see here, my options order
+[  270.02s ->   276.34s] default to 10 each. Let's go and default to one just for easy math. Okay, so I have a chance to
+[  276.34s ->   283.50s] make $7 with a risk of 93. Okay, cool. So let's simply do that math. Like I said, we need between
+[  283.50s ->   290.14s] 10 to 20%. 20% being greater than 10% for the overall return. Anyways, how do we do this math?
+[  290.20s ->   295.82s] We do 7 divided by 93. That gives us, and I guess you multiply 100 if you want to get the actual
+[  295.82s ->   301.22s] percentage number, 7.5%. Okay, not really what we want. So we have to move this trade a bit closer,
+[  301.38s ->   309.08s] 433, 432. Now we're at an $11 max profit with an 89 max loss. So let's see, what does this give us?
+[  309.08s ->   318.52s] 11 divided by 89 times 100. That gives us a 12.35%. This is us swinging in the ball range
+[  318.52s ->   324.66s] of the risk return that we want to have the win rate that we have or to keep the win rate that we
+[  324.66s ->   331.30s] have. And this is kind of how you put that trade on. You can see here a probability of 83% and a profit
+[  331.30s ->   337.52s] of 50% of 94%. So you can see this kind of lines up with the math that we're talking about. But when you
+[  337.52s ->   345.20s] put it with the strategy that we use, your 83% win rate bumps up a few points, bumps up about 7 to 10%.
+[  345.20s ->   350.68s] So now we're jumping around a 93% win rate because we're trading in the direction of the trend.
+[  350.96s ->   357.70s] When you trade credit spreads in the direction of the trend, this probability number increases.
+[  358.26s ->   363.28s] Anyway, so this is what you would know, what you would want to pick. This would be the strike prices
+[  363.28s ->   369.62s] for the put credit spread in order to have that type of risk to reward setup, which would give you
+[  369.62s ->   373.48s] the long term win rate. All right, I hope I didn't put too many numbers in front of you. But I wanted
+[  373.48s ->   379.20s] to show you guys, it all comes down to what do you want your win rate to be? Or what is your win rate
+[  379.20s ->   385.46s] when you know that number? Then you can define what your risk to reward will be. Then you use that
+[  385.46s ->   390.94s] risk to reward to pick the proper credit spread for you. So again, that's one way to pick credit spread
+[  390.94s ->   396.74s] strike prices, understanding your risk to reward. All right, guys, that was this video on what risk
+[  396.74s ->   402.06s] and return to aim for and what that looks like when applying it on the options chain. I hope that
+[  402.06s ->   406.74s] answered your questions. If you have any questions, please comment them down below. If you enjoyed this
+[  406.74s ->   411.44s] video, smash the thumbs up button and subscribe button as I post videos every single day to help
+[  411.44s ->   415.80s] you become a better credit spread trader. All right, guys, see you in the next video.

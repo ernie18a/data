@@ -1,0 +1,130 @@
+[    1.50s ->     8.88s] Hey there and welcome to chapter four. In this chapter we have a bonus section on multi-threading
+[    8.88s ->    14.00s] where we're going to be talking about infinite loops and why we would consider using multiple
+[   14.00s ->    20.00s] threads for execution. I want to motivate this idea of multi-threading through an example. So
+[   20.00s ->    26.06s] we're going to consider a scenario where you have a trading system and you want to constantly
+[   26.06s ->    32.00s] evaluate the current market data to determine whether or not you are going to buy or sell a
+[   32.00s ->    37.36s] position in perhaps an equity. So let's go ahead and start by building this trading signal function.
+[   37.48s ->    45.74s] So I'm going to say def trading signal. We are going to take a stock price as a parameter and I'm going
+[   45.74s ->    60.19s] to say if stock price is greater than 100 print sell. L if stock price is less than 90 we are going
+[   60.19s ->    70.19s] to buy and then else we are just going to hold our current position. Now we're going to want to evaluate
+[   70.19s ->    77.51s] this function every second or so. How can we do this in Python? Well we already have this notion
+[   77.51s ->    85.61s] of a loop and we know we can create an infinite loop by doing something like while true and then have
+[   85.61s ->    92.47s] stuff occur within this loop to an infinite capacity. But what if we wanted to introduce this notion of
+[   92.47s ->   101.59s] time? Well Python has a built-in package to add delays to your code. So what we're going to do is we're
+[  101.59s ->   107.41s] going to introduce this new idea of importing packages. We're going to say import time and what
+[  107.41s ->   114.31s] that's going to allow us to do is use time in our Python code. So within this while loop what I'm going
+[  114.31s ->   122.23s] to do is I'm going to call time.sleep and I'm going to pass one second through it. So now
+[  122.23s ->   129.27s] this loop is going to infinitely execute but with a delay in between each execution of one second.
+[  129.27s ->   136.95s] To see this in action I'm going to print ping above the sleep statement and if we run this we can see
+[  136.95s ->   145.19s] that every one second we get ping printing out to the console. Why is this useful? Well if we have an inflow
+[  145.19s ->   151.67s] of market data then instead of printing ping every second we can check our trading signal every second.
+[  151.67s ->   157.75s] So I could say trading signal and then pass through the stock price variable. In this case I'm going
+[  157.75s ->   165.11s] to pass a constant 95 but in reality you would have some live stream of data passing as a parameter to
+[  165.11s ->   172.71s] this function. Now if we run this we can see that we get that function call every second. Now that's all
+[  172.71s ->   179.67s] well and good but what is the problem with this setup? Well we know code flows in a linear fashion and if we
+[  179.67s ->   186.39s] ever wanted to execute code outside of this infinite loop we would be unable to. So if I wanted to print
+[  186.39s ->   192.87s] a buy signal perhaps under this loop and I ran it you'll see that we're never actually going to end up
+[  192.87s ->   200.55s] getting to this print statement. So what can we do about this? Well you can probably guess but in this
+[  200.55s ->   207.75s] case threads are going to allow us to both persist this infinite loop and pursue other execution.
+[  208.39s ->   214.47s] All right let's give a more practical example now. So in reality perhaps you have two different
+[  214.47s ->   219.35s] signals that you want to check at different time intervals. Instead of incrementing some index and
+[  219.35s ->   225.11s] creating say a couple of if statements within this loop trying to say like if five seconds have gone
+[  225.11s ->   230.63s] by check a different signal which is of course one way of doing this it makes more sense to try to
+[  230.63s ->   236.23s] manage two different things two different signals on two different threads. So let's see if we can
+[  236.23s ->   242.47s] motivate this with a simple example of two signals on two different time horizons. So what I'm going to do
+[  242.47s ->   251.38s] is I'm going to say def signal one and I am going to create a function that is an infinite loop and
+[  251.38s ->   259.14s] within this infinite loop I'm going to call the trading signal function and I am going to pass the stock
+[  259.14s ->   268.58s] price of a constant 95. Now under the trading signal function I'm going to call time.sleep with a one
+[  268.58s ->   274.98s] second delay. So this is very similar to the infinite loop we have above. Now what I'm also going to do
+[  274.98s ->   282.66s] is create a second signal called signal 2 and I'm going to create another infinite loop. I'm going to call
+[  282.66s ->   291.22s] the trading signal function once again but instead I'm going to call this on a five second delay. So as
+[  291.22s ->   298.58s] you can see here we have two different signals with two different time delays. To further illustrate
+[  298.58s ->   306.26s] the problem let's actually change this second trading signal to 101. So that means we're going to see
+[  306.26s ->   313.70s] a sell signal from our trading signal function. If we go ahead and we try to actually execute both of
+[  313.70s ->   321.06s] these signals we run into a similar problem as before. So I'm going to call signal one and signal two
+[  321.30s ->   328.18s] and if we run this you can see we never actually get to execute this second signal. We're always
+[  328.18s ->   335.86s] persisting this first infinite loop and we're never getting to the second infinite loop much like this
+[  335.86s ->   341.46s] example where we have this infinite loop and we never get to this print statement. Now let's get around
+[  341.46s ->   347.78s] this by using thread. So what we're going to do very similar to using the time import is we are going to
+[  347.78s ->   356.74s] import threading so I'm going to say import threading and now we can use python's threading package here
+[  357.30s ->   363.94s] and what I'm going to do is I'm going to create a new thread by saying thread one is equal to
+[  364.58s ->   371.94s] threading dot thread and we are just going to instantiate that as a blanket object. Now what's
+[  371.94s ->   378.42s] going to happen here is we are going to be taking a parameter and the parameter is the function that
+[  378.42s ->   385.06s] we want to target for this particular thread. In this case it is the signal function. So we have
+[  385.06s ->   392.90s] signal one and signal two. So what I'm going to do is I'm going to say target is equal to signal one.
+[  392.90s ->   400.50s] Now we can do the same thing with the second signal. So I'm going to say thread two is equal to threading
+[  400.50s ->   409.38s] dot thread target is equal to signal two. And if we run this you'll see we don't get any execution
+[  409.38s ->   415.78s] but we have established our threads. Running these threads is actually quite easy. All we got to do
+[  415.78s ->   425.30s] is call the thread and say start. So I'm going to say thread one dot start and thread two dot start.
+[  425.30s ->   433.22s] Now this is analogous to calling the functions directly but in this case we are using threads
+[  433.22s ->   441.14s] for their execution. Watch what happens when we run this. We get a hold and we get a cell and that cell
+[  441.14s ->   447.14s] is going to is going to execute every five seconds. So we're effectively running both infinite loops
+[  447.14s ->   454.26s] at the same time which is our desired functionality. Now a completely reasonable question to ask is how
+[  454.26s ->   460.10s] can we actually exit these threads? How can we terminate the execution of these infinite loops?
+[  460.10s ->   465.38s] We may be running this trading system and we may have these two signals running in an infinite capacity
+[  465.38s ->   470.74s] but what if we only want to run them for say an hour or so? Well we're going to need to break out
+[  470.74s ->   474.66s] of the loop and then perhaps switch to other signals and we don't want to have to restart our
+[  474.66s ->   480.66s] program every time to do that. So what we can do is we can specify a flag and this flag is going to
+[  480.66s ->   486.66s] allow us to break out of these loops whenever we change its value to true. So we're actually going to
+[  486.66s ->   493.62s] create these flags within the respective functions that the threads are targeting. So for starters I am going
+[  493.62s ->   499.30s] to create the two boolean variables that are going to allow us to control the execution of our threads.
+[  499.30s ->   508.02s] I'm going to say shutdown thread one is equal to false shutdown thread two is equal to false and
+[  508.02s ->   512.66s] these two boolean variables are going to determine whether or not we continue running these infinite
+[  512.66s ->   518.82s] loops. Now to access these variables we're going to use the global keyword. So within the function
+[  518.82s ->   526.26s] I'm going to say global shutdown thread one and then I can check the value of this variable by saying if
+[  527.14s ->   534.34s] shutdown thread one is equal to true then we're going to shut it down by breaking out of this loop otherwise
+[  534.34s ->   539.86s] we're going to repeat business as usual and then we're going to do the exact same thing in signal
+[  539.86s ->   551.72s] two. I'm going to say global shutdown thread two if shutdown thread two is equal to true break out of the
+[  551.72s ->   559.16s] loop otherwise check for that signal again and then sleep and do it in an infinite capacity. Heading on
+[  559.16s ->   566.12s] back down to our threads now that we've established these flags we can go ahead and reinstantiate these
+[  566.12s ->   572.52s] threads and down here where we start both infinite loops instead of having them run for an infinite
+[  572.52s ->   577.40s] duration we can have them run for say 10 seconds. So I'm going to say time.sleep
+[  577.40s ->   585.16s] 10 and that is going to allow us to run both loops for 10 seconds before changing the values of those
+[  585.16s ->   592.12s] flags to true to shut them down. So I'm going to say shutdown thread one is equal to true shutdown
+[  592.12s ->   598.04s] thread two is equal to true and then perhaps we wanted to continue the execution of our program.
+[  598.04s ->   606.04s] I could say print by for example. So now if we run this you can see that we have both threads starting
+[  606.60s ->   613.16s] and both threads are going to be persisted for 10 seconds and then we're going to change the value
+[  613.16s ->   619.64s] of the shutdown flags to true and that is going to terminate both infinite loops then we reach this
+[  619.64s ->   626.92s] print by statement here and that is what allows us to get by. I want to end this video with a very
+[  626.92s ->   632.52s] important concept especially with respect to threads in python and that is the idea of global interpreter
+[  632.52s ->   639.64s] lock. Global interpreter lock is going to essentially lock the value of the variable until a particular
+[  639.64s ->   648.04s] thread is done working with it. Now let me illustrate this idea to you with an example. So suppose you have
+[  648.04s ->   654.52s] a variable we're going to call it stock price and stock price is going to be equal to 100. Okay
+[  655.16s ->   665.32s] now we have a function called f1 def f1 of y is going to modify the stock price variable by saying global
+[  666.28s ->   675.83s] stock price and then stock price plus equals y and then we are just going to return the stock price.
+[  676.63s ->   681.43s] All right so that's going to be our first function then we're going to have def of f2
+[  681.43s ->   693.99s] f2 of y and we are going to say global stock price stock price plus equals y times 2 return
+[  694.63s ->   701.83s] stock price. All right so the setup for this example is a variable stock price that equals 100
+[  701.83s ->   708.79s] and then two functions one that's going to add y to the stock price variable and one that's going to add
+[  708.79s ->   717.27s] y times 2 to the stock price variable. What is the significance of these operations? Well let's take
+[  717.27s ->   725.35s] a look. If we call f1 and y is equal to 1 we know we're going to have 100 plus 1 and that is going to
+[  725.35s ->   735.11s] be 101. So if we call f1 we pass 1 as y the stock price is going to be 101. If we have f2 and we pass y
+[  735.11s ->   744.87s] as 1 we know we're going to have 100 plus 1 times 2 which is going to be 102. Now here is where the
+[  744.87s ->   751.91s] problem of global interpreter lock comes in. If we were to create two threads and we were to run these two
+[  751.91s ->   758.55s] functions at the exact same time in parallel would they be modifying the same stock price variable?
+[  759.19s ->   768.07s] The answer to that is no. If we start both threads one function is going to take advantage of the
+[  768.07s ->   776.23s] current value of the stock price variable and it is going to be locked until the execution of that
+[  776.23s ->   782.95s] particular function is finished then it's going to pass it to the next function. So if we were to in
+[  782.95s ->   789.59s] reality run these functions at the exact same time they should be accessing the same stock price variable
+[  789.59s ->   796.15s] and they should be modifying the value of that variable independently. But instead due to global
+[  796.15s ->   803.27s] interpreter lock the variable is locked by one function until it's finished with it then it passes
+[  803.27s ->   807.99s] on to the next function. Let's see if we can get an example of this by using some threads.
+[  809.03s ->   815.99s] So let's create some threads here I'm going to say t1 is equal to threading dot thread and the target is
+[  815.99s ->   822.23s] going to be the f1 function. Now we can target this function and pass arguments or parameters through
+[  822.23s ->   831.83s] it by saying args is equal to and then in parentheses we can say one comma surpass a one to the f1 function
+[  831.83s ->   841.03s] then t2 is equal to threading dot thread and we can do target is equal to f2 and then the args are going
+[  841.03s ->   851.43s] to be once again one. So we should get the value of 101 and 102 for the stock price variable after calling
+[  851.43s ->   861.59s] f1 and f2 respectively if they're operating independently on this stock price variable. Now instead if we call
+[  861.59s ->   872.87s] t1.start and t2.start and we run both of those threads and we print the value of the stock price variable you
+[  872.87s ->   882.23s] can see that it is 103 meaning that the first function executed with the variable ensuring that its value
+[  882.23s ->   892.95s] incremented to 101 then the second thread executed incrementing the 101 to 103. So if these threads
+[  892.95s ->   900.95s] didn't have the global interpreter lock issue they would have been able to access the same 100 concurrently
+[  900.95s ->   908.55s] but instead they operate in almost a linear fashion the variable locks until it is done being modified.
+[  909.19s ->   914.07s] That's going to do it for chapter four this bonus chapter on multi-threading. Now this was a very
+[  914.07s ->   920.87s] advanced chapter and it was almost a little premature as we haven't even covered objects in depth we haven't
+[  920.87s ->   928.07s] even covered other scientific programming libraries like numpy or scikit-learn those are in later chapters
+[  928.07s ->   934.55s] but nevertheless i wanted to introduce this idea early because it is a big idea in python the idea of this
+[  934.55s ->   941.67s] global interpreter lock and actually has a big effect on industry application especially when you try to
+[  941.67s ->   949.03s] scale up a lot of your programming so thank you for watching this section on multi-threading if you found
+[  949.03s ->   953.91s] any part of it confusing i would encourage you to come back after looking at those later chapters you can
+[  953.91s ->   966.55s] always reach out if you have any specific questions but without further ado i will see you in the next chapter

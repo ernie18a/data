@@ -1,0 +1,150 @@
+[    0.00s ->     5.68s] I have a three-step formula that I back-tested thousands of times and every single month that I tested it
+[    5.68s ->    11.20s] It was profitable in the long term. No indicators, no patterns, just pure price action, baby
+[   11.20s ->    17.62s] That really is a fun part of this whole technique. I have I have more pleasure just beating the brush than anybody in the country
+[   17.62s ->    22.52s] And by the end of this video you too will know the strategy and we'll be able to take
+[   22.76s ->    26.54s] Calculated trades just like this one and make insane amounts of money
+[   26.54s ->    31.49s] To jump right into it the first step involves market structure
+[   31.49s ->    38.41s] Now this is arguably one of the most important steps because if you even just slightly this part up it will ruin the whole strategy
+[   38.41s ->    40.79s] Come on now, dawg
+[   40.79s ->    42.21s] Come on, man
+[   42.21s ->    46.65s] One of the very first things you learn as a trader is uptrends and downtrends
+[   46.65s ->    51.51s] It's almost like the sippy cup of trading a chart that makes higher highs and higher lows is an uptrend
+[   51.51s ->    56.37s] A chart that makes lower lows and lower highs is a downtrend simple enough. Everybody knows this now
+[   56.37s ->    59.71s] You may be thinking why are you even going over this? I already know all this
+[   59.71s ->    64.13s] Well, what if I told you you're probably doing all this completely wrong? Let me explain
+[   64.13s ->    69.65s] So going back to our example the chart does this making higher highs and higher lows and as we already stated
+[   69.65s ->    74.55s] It's an uptrend, okay, but then something interesting happened the chart starts heading downwards
+[   74.55s ->    82.21s] Which in this process price makes this low and breaks right through it and this exact point is where I see the majority of traders make the mistake
+[   82.21s ->    87.73s] Since price broke this low a lot of traders think we are now in a reversal and price is in a downtrend
+[   87.73s ->    92.21s] So in return they start looking for short trades because they now think price is gonna head lower
+[   92.21s ->    96.21s] But what if I told you this chart is actually still fundamentally bullish?
+[   98.31s ->   100.07s] You see sure price made this low
+[  100.31s ->   104.31s] But this low is actually not a low at all or at least a valid one
+[  104.31s ->   108.07s] Why because price never broke the valid low which is right here?
+[  108.07s ->   113.75s] I want to make this very clear in order for a low to be validated it needs to break the previous high
+[  113.75s ->   117.91s] If you do not understand this part of the strategy, the strategy will not work
+[  122.87s ->   127.19s] So say if price does break this high we now know this is a valid low
+[  127.19s ->   127.91s] Okay, good
+[  127.91s ->   132.31s] So now price is in an uptrend which means we should only look for bullish trades
+[  132.31s ->   136.63s] The only time we should start looking for short trades is if price breaks this low
+[  136.63s ->   137.83s] It can do anything right here
+[  137.83s ->   143.75s] It can go up down sideways literally anything as long as it doesn't break this low we are in an uptrend
+[  143.75s ->   147.03s] Now say if instead of doing this price did end up breaking upwards
+[  147.03s ->   152.31s] Since price did break our previous high our new low will be transferred from this point to this one
+[  152.31s ->   156.23s] So that's the first step identifying if we are in an uptrend or a downtrend
+[  156.23s ->   157.35s] So what's next?
+[  157.35s ->   159.59s] That would be step two in the formula
+[  159.59s ->   162.71s] Step two is identifying supply and demand in the markets
+[  162.71s ->   164.63s] Demand zones take place in uptrends
+[  164.63s ->   166.63s] Supply zones take place in downtrends
+[  166.63s ->   171.67s] A good style of thinking is you want to buy from demand zones and sell from supply zones
+[  171.67s ->   173.91s] Here if we look closely the market is going up
+[  173.91s ->   176.87s] Since we saw a large push from the beginning of this move
+[  176.87s ->   181.43s] It simply shows us that a lot of people wanted to buy from this point onward
+[  181.43s ->   184.39s] So we can assume if price comes back down to this area
+[  184.39s ->   188.47s] Traders will have the same style of thinking and want to buy in the same area again
+[  190.98s ->   191.78s] Nice
+[  191.78s ->   194.10s] A supply zone is the exact opposite
+[  194.10s ->   197.14s] Since we saw a large downwards move from this point on
+[  197.14s ->   200.10s] It shows us that a lot of people want to sell at this area
+[  200.10s ->   202.26s] So if price ever retests this zone
+[  202.26s ->   206.02s] We can assume price will again move downwards from this point
+[  206.02s ->   208.82s] This supply and demand theory is the core of our strategy
+[  208.82s ->   212.10s] But we still have one more step in our three step formula
+[  212.10s ->   214.50s] But let me show you some trading profits real quick
+[  214.50s ->   217.22s] I made a video the other month saying I was going to try to use
+[  217.22s ->   222.42s] Hankertrade's copy trading feature where you can copy professional analysts by simply clicking a button
+[  222.42s ->   226.18s] Now when they first asked me to test this I was a little skeptical at first
+[  226.18s ->   226.98s] I'm not gonna lie
+[  226.98s ->   229.70s] But I decided I wanted to test it out for myself
+[  229.70s ->   232.10s] What I did was click this top performing section
+[  232.10s ->   234.50s] So I only saw the top performing analyst
+[  234.50s ->   237.78s] I then saw this guy that had an 86% win rate
+[  237.78s ->   239.70s] So I decided to test him out
+[  239.70s ->   243.62s] I tested this by depositing around $50,000 a month ago
+[  243.62s ->   250.10s] That $50,000 is now $160,000 just from clicking a follow button
+[  250.10s ->   250.82s] Pretty insane
+[  250.82s ->   254.58s] I'll proceed to update you guys on Instagram on how the copy trading is doing
+[  254.58s ->   256.90s] Your face filters on Instagram today
+[  256.90s ->   258.74s] This is my favorite one so far
+[  258.74s ->   259.78s] Nice job team
+[  259.78s ->   263.14s] But in the meantime if you want to test the copy trading feature too
+[  263.14s ->   265.62s] I'll leave a link in the description so you can check it out
+[  265.62s ->   270.58s] Okay, let's go back to the video to a real life example using the strategy I just taught you
+[  270.58s ->   275.78s] So looking at a real chart we see price moved upwards came down and then broke this previous high
+[  275.78s ->   280.02s] Which means we have higher highs and higher lows meaning we're in an uptrend
+[  280.02s ->   283.30s] Since we're in an uptrend we only look for long trades
+[  283.30s ->   288.26s] We do not look for any sell positions as shorting in an uptrend is just silly
+[  288.26s ->   290.58s] Since this low broke the previous high
+[  290.58s ->   295.86s] This is our valid low and price will only be in a downtrend if it breaks this point
+[  295.86s ->   300.10s] So now that we know we're in an uptrend we want to look for demand zone opportunities
+[  300.10s ->   306.02s] We can find our demand zones by finding an area of consolidation or a point where price moves sideways
+[  306.02s ->   307.86s] For having a sharp move upward
+[  307.86s ->   311.22s] As you can see from this chart we had some consolidation right here
+[  311.22s ->   313.30s] The price shot straight up afterward
+[  313.30s ->   317.86s] How I like to mark my demand zones is marking the candle right before the impulsive move
+[  317.86s ->   322.42s] So grab your rectangle tool on the side find the area of consolidation before the big move
+[  322.42s ->   327.06s] Then mark from the low to the high of the previous candle before the big move
+[  327.06s ->   328.74s] This is our area of demand
+[  328.74s ->   333.62s] Again we are not even considering areas of supply because we are in an uptrend
+[  335.62s ->   337.62s] So we don't even need to worry about that
+[  337.62s ->   341.70s] We wait for price to re-enter into the zone and this is where we would enter
+[  341.70s ->   346.42s] Set your stop loss right below the demand zone and set your take profit at the recent highs
+[  346.42s ->   348.50s] Boom we got an easy winning trade
+[  348.50s ->   351.14s] So that's an example of just one winning trade
+[  351.14s ->   354.66s] But I want to show you just how accurate the strategy really is
+[  354.66s ->   357.06s] So let's break it down with the real chart example
+[  357.06s ->   360.90s] Here we have an uptrend because price is making higher highs and higher lows
+[  360.90s ->   364.34s] So as we can see this low is what broke the previous high
+[  364.34s ->   368.18s] So this is where price needs to break in order to be in a downtrend
+[  368.18s ->   370.18s] Which is exactly what ends up happening
+[  370.18s ->   374.98s] So now we are in a downtrend and we only look for areas of supply or short trade
+[  374.98s ->   377.94s] So in return we mark our areas of supply
+[  377.94s ->   379.78s] Price comes back up to the zone
+[  379.78s ->   383.30s] We enter set our stop loss right above the area of supply
+[  383.30s ->   385.62s] And set our take profit at the recent lows
+[  385.62s ->   387.94s] Boom we got an easy winning trade
+[  387.94s ->   389.38s] But wait we're not done
+[  389.38s ->   392.18s] Price created another area of supply up here
+[  392.18s ->   393.86s] And we're still in a downtrend
+[  393.86s ->   396.50s] So we wait for price to come up to the supply
+[  396.50s ->   399.14s] Enter set our stop loss above the area of supply
+[  399.14s ->   400.42s] Target recent lows
+[  400.42s ->   401.62s] Another winning trade
+[  401.62s ->   403.46s] But again we're still not done
+[  403.46s ->   405.78s] Price created another area of supply
+[  405.78s ->   407.30s] Wait for price to come up to it
+[  407.30s ->   409.46s] Set stop loss above the area of supply
+[  409.46s ->   411.14s] Set take profit at recent lows
+[  411.14s ->   413.30s] And again we have another winning trade
+[  413.30s ->   414.58s] But wait there's more
+[  414.58s ->   416.66s] We got another area of supply
+[  416.66s ->   418.42s] Wait for price to come up here again
+[  418.42s ->   420.18s] Set your stop loss and take profit
+[  420.18s ->   421.94s] And we got another winning trade
+[  421.94s ->   423.46s] That's the power of this strategy
+[  423.46s ->   425.14s] It's extremely accurate for one
+[  425.14s ->   428.18s] And two you're only trading in the direction of the trend
+[  428.18s ->   431.94s] Which raises the probability of you winning a trade by a lot
+[  431.94s ->   435.30s] So now that you know just how powerful this strategy really is
+[  435.30s ->   439.70s] Let's go to the third and final step on how to improve the strategy even more
+[  439.70s ->   441.86s] The last step involves risk to reward
+[  441.86s ->   445.54s] Sometimes while using this strategy you'll get a trade that checks all the boxes
+[  445.54s ->   447.86s] But when you set up your stop loss and take profit
+[  447.86s ->   450.58s] It has a low risk to reward like in this example
+[  450.58s ->   455.22s] We only want to take trades if the risk to reward is above 2.5 to 1
+[  455.22s ->   459.94s] Meaning for every 250 dollars we're getting back we're only risking a hundred dollars
+[  459.94s ->   465.78s] So even if the chart follows both step 1 and 2 but the risk reward is under 2.5
+[  465.78s ->   467.54s] We do not take this trade
+[  467.54s ->   472.18s] This one rule by itself increases the profit rate of the strategy by a ton
+[  472.18s ->   476.42s] So for our final example we have price making higher highs and higher lows
+[  476.42s ->   479.86s] Meaning we're in an uptrend so we only mark areas of demand
+[  479.86s ->   483.46s] Price ends up consolidating right here before shooting upwards
+[  483.46s ->   484.74s] So we mark this area
+[  484.74s ->   487.14s] We wait for price to come to this area again
+[  487.14s ->   492.82s] And then we enter set our stop loss below the demand zone and set our take profit at the recent high
+[  492.82s ->   496.82s] Our last step is to check the risk to reward and make sure it's over 2.5
+[  496.82s ->   500.10s] Which in this example it's 3 so we're good to go there
+[  500.10s ->   503.70s] If it's anything under 2.5 we do not take the trade
+[  503.70s ->   506.90s] Wait for price to play out and we get a beautiful winning trade
+[  506.90s ->   509.38s] Then we just repeat the process forever

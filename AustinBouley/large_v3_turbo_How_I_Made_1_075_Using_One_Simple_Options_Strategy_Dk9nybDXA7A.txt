@@ -1,0 +1,127 @@
+[    0.00s ->     3.82s] Hey, my name is Austin Booley. In this video, I'm going to show you how I made over $1,000
+[    3.82s ->     8.22s] using one simple auction selling strategy. And in this video, I'm going to go through the real
+[    8.22s ->    12.58s] results, the proof from my broker, show you back tests. I'm going to show you step-by-step how to
+[   12.58s ->    17.72s] trade this strategy, why I picked this one over others, how you can lose with this strategy so
+[   17.72s ->    21.64s] you're aware of the downside and how to prevent it. And it'll also give you a free bonus gift at
+[   21.64s ->    25.98s] the end. So let's dive in. Proof, let me go to my TastyTrad account right here. You can see over
+[   25.98s ->    33.22s] the month of April 1st, April 30th. This has only been done on ES. You can see here I made $1,910
+[   33.22s ->    38.92s] about just by using this strategy, which is insanely awesome. But not only that, I want to show you the
+[   38.92s ->    43.72s] back test right here. So again, the back test shows that this strategy does very well. You can see here
+[   43.72s ->    51.26s] we have about a 92.4% win rate, which is awesome to see. So it's very high. We can also see on average,
+[   51.26s ->    56.78s] I'm making about $200 per trade. You can see here my average return per trade is about 7.6%.
+[   56.78s ->    61.64s] So overall it does very well. Obviously during bear markets, it doesn't do well, but we'll talk more
+[   61.64s ->    67.48s] about that here in a second. So what is this simple option strategy? One of the best option selling
+[   67.48s ->    73.08s] strategies there is in the market as a whole is something called short put strategy. What a short
+[   73.08s ->    79.12s] put strategy is it allows you to make money when the market drops slightly. So if the market drops,
+[   79.12s ->    83.24s] but stays above your strike price, you can still make money. It helps you make money if the stock
+[   83.24s ->    87.04s] market stays the same, meaning it stayed flat throughout a certain period of time. And it
+[   87.04s ->    90.84s] allows you to make money when the market moves higher. So if we're in a bullish trending market,
+[   91.02s ->    95.22s] most of the time the market is trending higher. We're in a bullish market and that tends to be
+[   95.22s ->   100.46s] where you make your money. So this strategy is typically reserved for bullish markets to perform
+[  100.46s ->   107.72s] so well in that type of market. So what exactly is the breakdown of this strategy? Let me explain
+[  107.72s ->   112.26s] to you right here. This is what we're looking at. Number one, you're going to be trading it on an
+[  112.26s ->   119.20s] asset like ES or MES. This is my go-to. Now, what is so amazing about using ES or MES? If you're not
+[  119.20s ->   125.58s] too aware of what these assets are, these are futures contracts, futures options. What this means is
+[  125.58s ->   132.22s] you actually get a significant advantage to using futures, which I'll talk about more in a second on why
+[  132.22s ->   137.66s] I use the strategy, but my preference is always going to be to futures options over stock and ETF
+[  137.66s ->   143.54s] options. Although you're welcome to use it on something like ES, MES, SPY, SPX, or XSP. Next,
+[  143.60s ->   150.84s] you're going to sell a put at 60 DTE on a five delta option. What does this mean? This means if I'm
+[  150.84s ->   156.04s] going to the broker, I'm going to go to the trade tab. I'm going to make sure I'm looking at ES. I'm
+[  156.04s ->   160.78s] going to go to this 60 day or one that's closest to it. So you can see right here, 61 days and 57 days.
+[  160.78s ->   166.92s] 61 is closer to 60 to 57. So I'm going to make the 61 DTE contracts, and I'm going to go closest
+[  166.92s ->   172.26s] to five delta. You can see I recently did a trade there. You can see here we go to five delta. We could
+[  172.26s ->   177.96s] also make sure that we're looking at volume. So we can do volume or we could do open interest. I
+[  177.96s ->   182.46s] prefer looking at open interest, but I'm only seeing volume right here for now. So I can pick the one that
+[  182.46s ->   187.88s] has the highest volume. So let's say five delta highest volume. I would sell this put. That's how I would
+[  187.88s ->   194.22s] pick the option for this strategy. Just like this, you can see, I'm going to make about an $865 profit.
+[  194.76s ->   201.66s] I'm going to have about a 99% win rate, and I'm putting up about $6,800. Now, that is why when
+[  201.66s ->   206.92s] we're using futures options, right? Because 865 divided by 6,800, because I'm going to make about
+[  206.92s ->   212.70s] a 12% return on my money. So that is what's so powerful about the strategy. Now, we do have some
+[  212.70s ->   218.50s] management rules around it. So we're not going to make the whole 865. For this to make this work
+[  218.50s ->   224.84s] well and have such a high win rate that it does, we're going to put a 25% take profit. So that means
+[  224.84s ->   229.06s] if we're going to make or we're going to collect about $1,000 in credit, then we're going to close
+[  229.06s ->   235.96s] out the trade once we've hit a $250 profit. Now for a 200% stop loss, that means if we're getting in
+[  235.96s ->   240.36s] at $1,000, we're going to get out at about $2,000. So that is kind of what that looks like there.
+[  240.86s ->   248.24s] Now, why do I use this strategy? A short put strategy is one of the most simple yet profitable
+[  248.24s ->   253.28s] strategies that there are in the auction selling world. It keeps everything clear, everything simple.
+[  253.58s ->   257.32s] Instead of having five different contracts that all interconnect in some weird way,
+[  257.60s ->   261.94s] you don't have to worry about that. A short put is super simple. You sell a put, it's just that one
+[  261.94s ->   265.56s] contract, that's it, that's all you do. Nothing else you really have to worry about.
+[  265.56s ->   271.54s] So here's what I personally break it down in my account. For every $100,000 I have in the account,
+[  271.64s ->   279.34s] this is how I run it. A $100,000 account, about 15% of it or 15,000 is going to go into the short put
+[  279.34s ->   285.80s] strategy, which alone is going to generate anywhere from $1,500 to $2,000 a month. Again, you can see
+[  285.80s ->   290.34s] here, this one's around $1,900 so far, but again, we haven't actually fully closed the trade yet.
+[  290.34s ->   295.22s] So we're more at around $1,075 closed profits so far for this month.
+[  295.56s ->   301.92s] But not only that, if we're using $15,000 on the push strategy, that gives us two trades a week,
+[  301.98s ->   306.80s] which is more than enough. Two trades if we're each making about $200 per trade. That's how we get
+[  306.80s ->   313.06s] to these numbers. But we don't want to put all our money into options, into the option strategy,
+[  313.06s ->   317.48s] because it's very high risk, especially when we do futures. There's a thing called span margin,
+[  317.48s ->   320.82s] which means the market could increase on you, so you need to have some caps set aside.
+[  320.82s ->   325.28s] So $15,000 is all we're using for the short put strategy, which is honestly more than enough
+[  325.28s ->   331.20s] to make $1,000 to $2,000 a month. Great return, right? But then we're going to put most of the
+[  331.20s ->   337.40s] rest that's not being used, the cash, into what's called ESCA, which is an ETF that follows the
+[  337.40s ->   343.74s] treasury bills and things like that. This pays out a monthly dividend, and overall pays about a 4%
+[  343.74s ->   352.48s] return per year. So this on a monthly basis comes out to be a little over $250 per month just by
+[  352.48s ->   360.60s] letting my cash sit safely in ESCA. So now with my allocation of a $100,000 account, I can put 15
+[  360.60s ->   366.98s] here and make about $1,500 a month, make about $250 a month from ESCA, and that will make me total
+[  366.98s ->   373.84s] around $2,000 per month or a 2% return all my money every single month. Now you might be saying,
+[  373.98s ->   381.08s] Austin, that doesn't seem like much. Guys, that's a lot of money, okay? Most people aim for a 68%
+[  381.08s ->   388.70s] return a year, but you're getting 2% a month. That equates out to about 24% a year. That's two,
+[  388.82s ->   395.96s] three, four times what the average market return does. So that's insanely great. Now what's also cool
+[  395.96s ->   400.70s] is now you have a goal to live by, right? Let's say you're going into retirement and you're like,
+[  400.76s ->   408.24s] okay, I need $2,000 to live off of. You know, you're $4,000 to live off of per month. If you want
+[  408.24s ->   412.46s] to live higher on the hog, you could do more, but let's just follow this math. $4,000 a month that
+[  412.46s ->   416.48s] you need, or maybe that's the same that you need to live now, or you're just younger and whatever,
+[  416.68s ->   420.66s] you know the amount of money you need to live. Let's say it's $4,000. Let's say you're older,
+[  420.78s ->   424.38s] so you're going to get social security, and you know you get about $2,000 of that,
+[  424.38s ->   428.82s] which means you need about another $2,000 to make up the difference, which means you need
+[  428.82s ->   434.80s] a $100,000 account. Now you can reverse engineer this, right? If you're trying to get to a $10,000
+[  434.80s ->   438.58s] a month budget that you want to spend each month that you want you're trading to make,
+[  438.96s ->   443.48s] okay, we're going to get to that. Let's say we're making $2,000 a month, and we want to get up that
+[  443.48s ->   447.74s] room to that five times. That means I need a $500,000 account. That's how you can reverse engineer it.
+[  447.92s ->   451.16s] Now I'd be saying, but also, what if my account's smaller? What if I have under $100,000?
+[  451.16s ->   456.80s] You can also do this on micro features as well, like MES, and do it for a 10th of the cost. You
+[  456.80s ->   463.70s] can do the same type of strategy with a $10,000 account. Now your return will be about 10x less,
+[  463.90s ->   468.68s] or a 10th of the price. So if I'm making about $2,000 a month, I'll make about $200,000. But still,
+[  468.74s ->   472.34s] it's a great way to start growing. Still a 20% return on your money overall for the year.
+[  473.10s ->   478.68s] Now, how can you lose in this strategy? You lose during bearish markets. So let's just make that
+[  478.68s ->   483.72s] clear. It takes a lot of money to get started, right? When we're talking about ES, you saw it
+[  483.72s ->   487.92s] takes about $7,000 to put on one trade. So if you're going to be putting on two trades on a
+[  487.92s ->   495.14s] weekly basis like I do, you'll need about $15,000 to do that with, ideally with more cushion cash on
+[  495.14s ->   499.78s] the side. So around 30, 40 at the bare minimum to do the way that I'm running it. Now, again,
+[  499.78s ->   504.24s] I like to be super safe. That's why I'm only doing 15 grand on 100K. That's just my personal risk
+[  504.24s ->   509.56s] tolerance. Now, again, you can do this with 10,000 easily if you're doing MES, because it's
+[  509.56s ->   515.60s] only going to take about $700 per trade. So you can do that. But MES doesn't have as liquid contracts,
+[  515.62s ->   521.62s] but it can still work, especially if you're just starting out. But it does take some money. And it
+[  521.62s ->   526.68s] also takes time. Okay. So how do we solve each of these problems? Okay. First off, bearish markets,
+[  526.68s ->   531.74s] this is super easy. Use an indicator, use a moving average, use something that helps you determine
+[  531.74s ->   535.54s] what type of market you're in, whether that's bullish, bearish, or sideways. Again, you can
+[  535.54s ->   540.14s] add a 50-day moving average. When the market's above it, you then know you're bullish. And so
+[  540.14s ->   544.08s] that's when you're going to trade these. So just make sure that you're only trading this in a bullish
+[  544.08s ->   549.32s] market and then have your stop losses to protect when it reverses. You can also leverage futures and
+[  549.32s ->   553.20s] micro futures if it takes too much money, right? If you were to do this same trade on SPX, it would
+[  553.20s ->   558.98s] take $60,000 per contract. But if you do this on futures, it only takes $6,000. So you can see there,
+[  558.98s ->   564.02s] you get a huge margin advantage just by using futures. And if you use micro futures, it's a
+[  564.02s ->   569.12s] 10th of that. Instead of using $6,000 to buy power per trade, it's only going to use about $600, $700.
+[  569.50s ->   574.30s] So it can definitely be leveraged, even if you have a small amount of money. And it takes time.
+[  574.50s ->   577.86s] Absolutely, it takes time. We're going 60 days out in the future. Now, again, on average,
+[  577.98s ->   583.06s] this trade closes in about seven days. Again, sometimes it goes two weeks, three weeks. Sometimes
+[  583.06s ->   587.26s] it closes in two days. But on average, about seven days. And so if you can't wait that long,
+[  587.26s ->   592.08s] get over yourself is one of the most consistent profitable strategies. I hate people who are just
+[  592.08s ->   598.12s] trying to get in get rich quick, have the zero DTE one DTE mindset, and then it messes with them
+[  598.12s ->   604.18s] because it's not a consistent approach to do such a short term data contract. So if you are not,
+[  604.18s ->   607.96s] are you bothered by how much time it's taking to be in a trade, although really not that long,
+[  608.00s ->   612.84s] there's one week you could put up with it. If not, go outside, touch grass, turn your computer off
+[  612.84s ->   617.20s] and get away from the market and just let this strategy work because it's a very good one.
+[  617.82s ->   622.08s] Now, that's all I have for this strategy. Go put it into action. It's a really great one. It's
+[  622.08s ->   626.90s] helped me make a lot of money selling puts and the put selling idea for option selling is what
+[  626.90s ->   631.24s] has made me all my money in my option selling space over the last three, four years. Again,
+[  631.30s ->   635.68s] I made about $40,000 last year from purely option selling and that mainly came from short put
+[  635.68s ->   640.38s] strategies. Now, I do have a free bonus gift since you guys stayed until the end. I have a free
+[  640.38s ->   644.18s] community where you can chat with other option sellers that also has over 10 different trading
+[  644.18s ->   649.24s] courses in there, some of which I used to sell for $1,000 each, but now they're all for free for
+[  649.24s ->   653.52s] that community. Also, this Google Doc, if you want to reference it so you can print it out and use it
+[  653.52s ->   657.28s] when you're trading so you know the exact rules and everything to follow portfolio allocation,
+[  657.40s ->   661.58s] things like that. You can actually get access to this exact Google Doc for free all inside that
+[  661.58s ->   665.26s] community. That should be the link, the first link down in the YouTube description down below.
+[  665.72s ->   669.38s] Anyways, guys, my name is Austin Billy. Thanks for watching this video. I'll see you in the next one.

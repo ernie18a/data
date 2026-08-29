@@ -1,0 +1,207 @@
+[    0.00s ->     5.56s] In this video, I'm going to show you eight things that will virtually eliminate volatility risk from your trading.
+[    5.70s ->     8.56s] You've been selling options or trading options for any amount of time.
+[    8.84s ->    13.90s] You know that at VIX spikes, you can easily lose thousands, if not tens of thousands of dollars.
+[   14.22s ->    20.38s] This happened to me. I lost $15,000 on a single trade overnight because of VIX.
+[   20.66s ->    24.38s] And so I want to show you some eight different tactics, or at least in this video,
+[   24.42s ->    28.70s] I'll be showing you eight different things that you can do to actually enhance your trading.
+[   28.70s ->    32.26s] And there are small little tweaks to your trading that, if done correctly,
+[   32.42s ->    36.26s] will dramatically reduce the amount of risk you have as a trader.
+[   36.56s ->    38.54s] So let's dive into number one.
+[   38.74s ->    45.28s] Okay, so the first thing you can do is change your buying power based on VIX, aka VIX-based buying power.
+[   45.58s ->    47.10s] What in the world does this mean?
+[   47.26s ->    49.46s] If you don't know what VIX is, this is a chart of VIX.
+[   49.52s ->    53.42s] It is the volatility index. It measures the volatility in the market.
+[   53.50s ->    57.74s] So if VIX is higher, then that means volatility and risk is higher.
+[   57.74s ->    61.64s] When VIX is lower, it means that volatility and risk are lower.
+[   62.02s ->    65.68s] Now, as option sellers, we prefer when VIX is high.
+[   65.84s ->    73.74s] Why? Because we collect more premium, our win rates are higher, and we profit from the volatility crash.
+[   73.80s ->    76.26s] When VIX comes down, we make money faster.
+[   76.68s ->    80.10s] And so when VIX is lower, that's actually when we're super risky,
+[   80.10s ->    85.48s] because the chance of VIX going higher is higher than it would be if it were already high.
+[   85.48s ->    90.18s] Correct. And so that's why what we can do is we can adjust our buying power based on VIX.
+[   90.52s ->    92.78s] Okay, so what exactly does this mean?
+[   92.82s ->    98.44s] If I draw out a certain section here, let's say we have down here $12, and we have right here, let's say $20.
+[   98.94s ->   101.72s] And then we can go up here all the way up to what? $30.
+[  102.32s ->   105.18s] And so we can map out these different zones on VIX, right?
+[  105.18s ->   110.24s] And so in this zone, maybe we should only be using 30% of our account.
+[  110.48s ->   115.46s] Why? That way, if the market were to spike up like it did here and like it did here,
+[  115.74s ->   122.90s] I still have 70% of my funds that I can use to help offset the losses and reinvest into other trades
+[  122.90s ->   126.54s] that will then have a higher win rate and a better chance of playing out.
+[  126.54s ->   131.04s] And so when my risk is the highest as an option seller is when VIX is down here,
+[  131.12s ->   135.54s] so I might as well use a smaller position sizing for my overall account.
+[  135.98s ->   138.70s] When VIX is up here, obviously my win rate is higher.
+[  139.02s ->   143.90s] I might want to do more like 50% of my account or however it is you want you allocated.
+[  144.06s ->   149.00s] But changing the amount of money you're using for your trading based on where VIX is
+[  149.00s ->   151.36s] can really help you as an option seller.
+[  151.36s ->   156.74s] So if you're selling options, be in a smaller percentage down here and being a higher percentage
+[  156.74s ->   162.64s] up here, and that could really help you shift the risk by not being fully invested at a time
+[  162.64s ->   165.02s] where you could lose a lot because VIX could spike.
+[  165.38s ->   166.56s] So that is the first thing.
+[  167.22s ->   170.82s] Next, what we could do here is we can also avoid market crashes.
+[  170.94s ->   174.44s] Now you might be saying, Austin, it's impossible to do this, and I agree.
+[  174.80s ->   179.88s] Okay, I'm not sure how to avoid all crashes, but I am going to show you a mathematical approach
+[  179.88s ->   182.90s] to determine if the market is overextending.
+[  183.30s ->   187.50s] And if it's overextended, then you have a good chance that the market might pull back.
+[  187.88s ->   189.42s] So let's go to SPY for this example.
+[  189.84s ->   192.84s] So on SPY, let me remove this drawing real fast.
+[  193.16s ->   197.12s] What we can see here is we can add a simple indicator that, based on math,
+[  197.22s ->   199.58s] shows us overextended levels.
+[  199.64s ->   206.30s] And so if you go to indicators, you can type in Bollinger Band, B-O-L-L-I-N-G-E-R,
+[  206.70s ->   208.62s] Bollinger Band, just like this.
+[  208.62s ->   210.08s] You can add it to your chart.
+[  210.40s ->   213.78s] Most people see it like this, but you need to make a small change to it.
+[  214.06s ->   218.16s] Go into the settings and make the length, turn it from 20 to 200.
+[  218.76s ->   222.80s] This way you can see a full comprehensive view of the indicator.
+[  222.96s ->   223.76s] Let's see, is it loading?
+[  224.38s ->   225.28s] Yeah, me here.
+[  225.78s ->   231.38s] All right, so what this is showing is it's showing what the natural range for the market is.
+[  231.42s ->   235.44s] It's showing a two standard deviation move, which means most of the time,
+[  235.44s ->   238.16s] the market should be within the green and within the red.
+[  238.50s ->   244.26s] And if it's not, then the chance of it pulling back or doing the opposite is very likely.
+[  244.38s ->   245.42s] What do I mean by this?
+[  245.74s ->   249.80s] If we break above the red line, the chance of it pulling back is very high.
+[  250.00s ->   252.20s] Make it above the red line, chance of pulling back is high.
+[  252.54s ->   254.44s] Make it above the red line, chance of pulling back is high.
+[  254.44s ->   256.98s] The same thing to the downside.
+[  257.10s ->   259.36s] If we break below the green, the chance of it bouncing is high.
+[  259.50s ->   261.88s] Break below the green, chance of it bouncing is high.
+[  262.36s ->   265.86s] And so again, most of the trade should happen inside of here.
+[  266.00s ->   270.18s] So every time we start to breach one of the two ranges, whether it's the red range or the
+[  270.18s ->   273.34s] green range, you can then know that a reversal is likely.
+[  273.74s ->   278.72s] And then what you could do is you can start to close out positions that may not be advantageous
+[  278.72s ->   279.56s] for a pullback.
+[  279.56s ->   283.42s] And you could even put on some hedges if the market is going to be going down.
+[  283.76s ->   286.36s] And so that way you can adjust your risk based on the market.
+[  286.52s ->   287.90s] This will not catch all pullbacks.
+[  288.22s ->   293.22s] It will not catch all losses, but it will help catch 80% of them, which is probably 80%
+[  293.22s ->   294.50s] better than what you're doing now.
+[  294.96s ->   296.36s] So that's how you can do that.
+[  297.12s ->   301.64s] Again, all this information that I'm teaching is taught more in depth inside the book that
+[  301.64s ->   304.48s] I wrote called Never Worry About Vol, Vol, Vol, Vol.
+[  304.56s ->   308.52s] Until again, you can see here we're talking about adjusting your buying power based on VIX
+[  308.52s ->   311.96s] using the Bollinger Band Indicator and all the other things that you'll be learning in
+[  311.96s ->   312.40s] this video.
+[  312.72s ->   317.28s] Again, it's on Amazon for 20 bucks, but you can get it down below for free, a free download
+[  317.28s ->   318.82s] below because I love you guys on YouTube.
+[  319.18s ->   320.76s] Anyways, let's dive into the rest of this.
+[  321.08s ->   323.06s] Reason number three, we can use longer DTE.
+[  323.30s ->   325.30s] So now you might be wondering what in the world is this?
+[  325.62s ->   325.78s] Okay.
+[  325.92s ->   328.72s] The further out in time you go, the less risk you have.
+[  329.06s ->   329.34s] Okay.
+[  329.62s ->   330.62s] And why is this?
+[  330.62s ->   335.60s] Because the further out in time you go, the longer you have to be right, the more time
+[  335.60s ->   336.58s] you have to be right.
+[  336.58s ->   341.06s] And because you have more time to be right, the risk of the market doing something crazy
+[  341.06s ->   343.82s] and scaring your contract is lower than it typically would.
+[  344.30s ->   348.94s] So for instance, if you're trading a 30 DTE contract or something like that, or maybe
+[  348.94s ->   354.14s] even a 45 DTE, if you're trading something like this, the example, if you go to your options
+[  354.14s ->   358.10s] chain, you'll see the Vega, depending on the Delta, let's just say for example, would
+[  358.10s ->   362.40s] be around 30, which means you have about a Vega risk of 30% or something around there.
+[  362.50s ->   366.52s] Again, I'm not going to get into the specifics of it, but basically a Vega risk or a volatility
+[  366.52s ->   367.82s] risk of let's say 30.
+[  368.08s ->   368.28s] Okay.
+[  368.62s ->   374.24s] Now, if you just go out to 90 days or down 120, which tends to be my sweet spot, so 90
+[  374.24s ->   380.76s] to 120 DTE, and you pick the same contract or the same Delta value, your Vega or your
+[  380.76s ->   388.94s] volatility risk will be 15, a little bit 50% decrease just by going out in time.
+[  388.94s ->   396.90s] So by going out in time, you get a lower volatility risk, but you also get some other fringe benefit
+[  396.90s ->   399.90s] like you get to collect more premium, more credit, more profit.
+[  400.36s ->   401.96s] You get to have a higher win rate.
+[  402.30s ->   405.44s] And then also, as mentioned, your volatility risk is lower.
+[  405.78s ->   408.56s] So going further out in time will help you a lot.
+[  408.64s ->   412.38s] So if you have a current strategy you're using that works, just move it and make it about
+[  412.38s ->   413.70s] a little further out in time.
+[  413.70s ->   416.12s] And that will help reduce your volatility risk as well.
+[  416.58s ->   418.78s] Now, number four is using lower Deltas.
+[  419.10s ->   424.20s] So again, the further away you are from the asset when you're selling your option, the
+[  424.20s ->   428.94s] lower your volatility risk is because the less likely it is for that to get.
+[  429.34s ->   434.90s] And so again, if this is a stock that's just trending up and we pick a 30 Delta, which is
+[  434.90s ->   435.44s] right here.
+[  435.76s ->   439.40s] Again, this is going to have a higher risk than is let's say we pick a 10 Delta, which is
+[  439.40s ->   443.76s] here where it's more likely for this to get hit than for this to get hit.
+[  443.88s ->   448.30s] And because of that, this has a higher volatility risk than this one.
+[  448.38s ->   450.64s] Let's say this has 30 and then this one would have half of it.
+[  451.10s ->   455.72s] And so that's why I love combining these two strategies by going a longer term and by going
+[  455.72s ->   460.62s] closer to 10 Delta, because by doing just these two things, I'm able to decrease my volatility
+[  460.62s ->   463.62s] risk just by 50% alone, which is amazing.
+[  463.78s ->   465.24s] It's just two small, simple tweaks.
+[  465.24s ->   472.53s] Next thing we can do number five is if you really want to wipe out volatility risk, then
+[  472.53s ->   476.19s] what you can do is you can convert your undefined trade into a defined trade.
+[  476.45s ->   477.63s] Now, what does that mean?
+[  478.03s ->   482.99s] Okay, so a undefined trade means that you have unlimited loss.
+[  483.11s ->   484.67s] There is no downside protection.
+[  485.33s ->   490.25s] And so that would be something like a strangle where you sell a call, you sell one call and
+[  490.25s ->   492.45s] you sell, that's a one, one put.
+[  492.45s ->   497.27s] But this creates a structure like this, where you make money when the market stays between
+[  497.27s ->   497.95s] these two levels.
+[  498.09s ->   499.81s] Sorry, that's a terrible profit and loss curve.
+[  500.15s ->   503.07s] I can see that when the market is inside these levels, you'll make money.
+[  503.43s ->   505.43s] When the market goes outside the levels, you lose money.
+[  505.79s ->   510.35s] Now, what you do is you can turn it into an iron condor, which has capped losses, which
+[  510.35s ->   511.07s] is like this.
+[  511.29s ->   514.27s] So that if it goes against us, eventually our loss will be capped.
+[  514.27s ->   520.33s] By capping your losses and doing a spread or doing an iron condor instead of a single
+[  520.33s ->   526.11s] option or instead of a strangle, or maybe you're doing a one, one, one, two, you can
+[  526.11s ->   530.47s] do a one, one, one, two, two by capping your risk on the downside.
+[  530.97s ->   534.47s] This way you can have defined risk and you're less impacted by volatility.
+[  535.31s ->   535.41s] Okay.
+[  535.83s ->   538.85s] Next, number six, we can use volatility hedges.
+[  538.97s ->   539.13s] Okay.
+[  539.13s ->   542.87s] There are certain hedges that profit when volatility increase.
+[  543.01s ->   548.83s] Again, a simple one is to do a VIX call to on a weekly or monthly basis, depending on
+[  548.83s ->   551.41s] where VIX is, you can buy a call.
+[  551.53s ->   552.29s] Why would you do this?
+[  552.37s ->   556.51s] Because calls increase in value as the underlying asset goes up.
+[  556.89s ->   559.67s] If VIX goes up, your call will go up and you'll make money.
+[  560.09s ->   566.25s] But my personal favorite to do is actually to sell, or I should say to buy a SPY put.
+[  566.59s ->   568.13s] So we're going to buy a SPY put.
+[  568.13s ->   569.71s] Now, why do I like this the best?
+[  569.85s ->   573.95s] Because it's not on SPY, but typically I do it on ES or MES.
+[  574.33s ->   575.71s] That gives me a tax advantage.
+[  575.93s ->   580.65s] But outside of that, when the market pulls back, a put will make money.
+[  580.75s ->   586.69s] But because of VIX increasing as well, this put can go up 200, 300, even 500% that I've
+[  586.69s ->   589.17s] seen sometimes on my trades, which is insane.
+[  589.39s ->   595.77s] So again, doing a buying a SPY put on maybe a weekly or monthly basis could really help,
+[  595.77s ->   598.51s] depending on how much money you have at risk in your account.
+[  599.58s ->   604.52s] Next, another way to do this is to diversify your risk based on VIX.
+[  604.86s ->   608.74s] This is going to be for people who start hitting $100,000 or more in their account.
+[  608.92s ->   609.06s] Okay.
+[  609.42s ->   614.60s] Once I give you under $100,000, there's really no point to diversify across different assets.
+[  614.78s ->   619.40s] You'll really just be doing SPY the entire time with some very reliable strategies.
+[  619.40s ->   623.28s] Now, once you start to exceed $100,000, you want to start diversifying.
+[  623.70s ->   628.84s] And so that diverse buying looks like still having a majority of your money in the S&P 500,
+[  629.02s ->   630.80s] which for me is the ES futures options.
+[  631.10s ->   636.96s] And then having 20% of my money in things like CL, things like GC.
+[  637.54s ->   640.56s] And then again, I can also do things like ZB bonds.
+[  640.76s ->   640.92s] Okay.
+[  641.36s ->   645.72s] So things like this for my 20% allocation is going to be great.
+[  646.00s ->   647.54s] And then 80% goes to this.
+[  647.54s ->   648.10s] Why?
+[  648.34s ->   653.16s] Because when there is risk in the market, people pull their money out of the market
+[  653.16s ->   657.72s] and they put it into things that they deem more stable, which tends to be commodities,
+[  658.42s ->   659.84s] metals, and bonds.
+[  660.20s ->   661.72s] Those tend to be where money moves.
+[  661.82s ->   666.28s] And so those tend to increase in profit or tend to make money during these risky points.
+[  666.44s ->   672.48s] So we want to make sure we have some exposure to these assets so that if VIX increases,
+[  672.78s ->   675.98s] we're also going to be making money from these assets over here.
+[  675.98s ->   681.54s] And so last but not least, we have one more thing we can do, and that is to leverage automation.
+[  681.54s ->   686.24s] You can use a tool like the Options Auto Trader to implement all these things.
+[  686.24s ->   691.12s] For instance, when you use the Options Auto Trader, which is the automation tool that I have made
+[  691.12s ->   695.32s] for options sellers, which again, you can start a trial through down below.
+[  695.32s ->   700.44s] In one click, you can enable VIX space buying power so that it does it for you.
+[  700.66s ->   704.62s] You can enable a setting that, as I showed you, looks at the chart.
+[  704.94s ->   709.88s] And if the market is above this level, it will automatically start to close out your positions
+[  709.88s ->   712.04s] and scale you out so that you have less risk.
+[  712.50s ->   716.70s] You will also default to trades to longer DTEs and longer Deltas.
+[  717.02s ->   720.68s] You can convert it into an undefined trade so that you're automating a defined risk trade.
+[  720.68s ->   726.08s] You can also create hedges that go once a week or once a month, depending on how you want
+[  726.08s ->   726.60s] to do that.
+[  726.96s ->   730.98s] And again, you can diversify your portfolio, leveraging automation to make sure that your
+[  730.98s ->   733.82s] account is protected literally 24-7.
+[  734.10s ->   739.44s] And so that is how those are the eight simple things you could do that will dramatically decrease
+[  739.44s ->   739.84s] your risk.
+[  739.88s ->   744.68s] So if you're looking for more consistency in your trading, more reliability, then make sure
+[  744.68s ->   746.44s] to implement these eight things.
+[  746.70s ->   748.16s] So again, I hope you enjoyed this video.
+[  748.16s ->   752.08s] If you did smash that subscribe button and the like button, and I'll see you in the next
+[  752.08s ->   752.26s] one.

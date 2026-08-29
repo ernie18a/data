@@ -1,0 +1,93 @@
+[    0.11s ->     4.51s] Hey guys, what's up? It's AB Trades and I run a YouTube channel that teaches people how to day trade options.
+[    4.65s ->     8.35s] Today is day one of the free options course that y'all have been looking forward to.
+[    8.67s ->    12.55s] Today we're going to talk about what is an options contract.
+[   13.17s ->    29.83s] So speaking purely on the definition, an options contract is the ability or the agreement between two buyers to buy a certain security stock or ETF at a certain price, known as the strike price, at a certain expiration date.
+[   30.37s ->    34.99s] So again, that is the technical jargon of it all, but let's explain it more in a common sense.
+[   35.49s ->    40.85s] So an options contract is basically what people use to hedge their positions.
+[   40.95s ->    53.67s] So for instance, institutions and banks that are long a certain stock, which means they bought the stock and they're hoping for it to go up, they buy a put contract, allowing them to sell it at a certain price.
+[   54.29s ->    58.01s] So let's say, let's bring up, I guess, the chart of cat right now.
+[   58.01s ->    63.96s] So let's say you bought in long here, which means you wanted the stock to go up, okay?
+[   64.10s ->    65.84s] Well, you want to hedge for the downside.
+[   66.02s ->    69.12s] There's always the possibility of the stock going down to the downside.
+[   69.58s ->    76.32s] So how are you going to hedge yourself for that or protect yourself against the downside?
+[   76.32s ->    81.62s] Well, you would go to the options chain and you would look at put contracts, okay?
+[   82.02s ->    89.30s] So put contracts would allow you to buy or sell a certain stock at the strike price.
+[   89.30s ->    94.68s] So let's say you bought in around here long, which means you bought stock.
+[   94.76s ->   101.78s] Let's say you bought a hundred stock around 139 and you wanted the ability to sell it at 138.
+[  101.92s ->   110.40s] So a contract is an agreement between two buyers to allow you to sell the stock at 138 regardless of where the stock is.
+[  110.40s ->   113.18s] So the stock right now is at 131.
+[  113.58s ->   121.88s] However, if you buy the contract and hold it through expiration, you have the right to sell it at 138.
+[  122.08s ->   126.44s] That is the ability of options contracts if you're holding through expiration.
+[  127.42s ->   131.50s] Now again, let's be a little more specific and get out of the deltas here.
+[  131.86s ->   133.86s] So I'm going to go to just the volume and open interest.
+[  133.86s ->   136.86s] So if we look, this is an options table.
+[  137.38s ->   142.18s] I know I should have probably done this video first, but tomorrow is how to read an options table.
+[  144.24s ->   145.16s] Whoops, my bad.
+[  145.34s ->   146.96s] I should have reversed the order.
+[  147.44s ->   150.42s] But right here are the bids and right here are the ask.
+[  150.72s ->   153.36s] The bids are how much these contracts are going for.
+[  153.44s ->   161.14s] Because again, if you want the right to sell it at 138, even though the stock price is all the way down here,
+[  161.74s ->   163.94s] that's like something that is in your favor, right?
+[  163.94s ->   171.42s] You have the ability to only lose a dollar per share versus losing almost $10 a share, right?
+[  171.94s ->   174.16s] So you're going to have to pay something for that.
+[  174.90s ->   177.10s] What you're paying for that is called premium.
+[  177.36s ->   180.98s] It's the premium of the contract, a.k.a. how much did the contract cost?
+[  181.92s ->   185.82s] So the contract, you know, explaining more about what a contract is,
+[  186.24s ->   190.44s] a contract is the ability to, you know, buy or blah, blah, blah, blah.
+[  190.44s ->   197.32s] But each contract is set with 100 shares or whatever of that security.
+[  197.82s ->   203.26s] So for instance, if you're trading contracts on SPY or SPY option contracts, which is what you see me doing a lot,
+[  203.26s ->   211.64s] I am trading the right to buy or sell, depending if it's a call or a put, 100 SPY contracts at the end of expiration.
+[  212.36s ->   218.42s] That's why when you see the bid and ask, you go, oh, wow, look, the cost or the premium of this contract is only $223.
+[  218.82s ->   221.30s] No, not really, because it's 100 shares.
+[  221.30s ->   226.12s] So you need to multiply the contract premium or contract price times 100.
+[  227.02s ->   234.82s] So the actual price or premium that you would pay in order to buy this contract, right, right here, the 129 strike,
+[  235.14s ->   243.98s] which means, and this is a put, so that means the ability to sell this contract at 129 if it expires in the money.
+[  243.98s ->   250.16s] Okay, and in the money now, the money will be in another video because, again, this takes a long time to explain.
+[  251.44s ->   254.16s] But right now, we're just going to focus on what exactly an option contract is.
+[  254.24s ->   256.92s] And I'm just trying to explain the contract specifics, right?
+[  257.24s ->   262.74s] So the contract would cost $223 because a contract is directed by 100 shares.
+[  263.36s ->   271.36s] Because, again, contracts were invented to hedge against positions for bank, financial institution, you know, Goldman Sachs.
+[  271.36s ->   279.58s] I can't think of other institutions at the moment, maybe J.B. Morgan, you know, just these institutions aren't trading one or two shares.
+[  279.84s ->   284.78s] They're trading thousands of shares, maybe even billions of shares, especially if you look at SPY.
+[  285.90s ->   290.42s] So these people, that's why the contracts are not based off one share.
+[  290.56s ->   291.66s] It's based off 100 shares.
+[  292.06s ->   299.06s] So when you look at the bid or ask, you take that value, for instance, of the 129 strike, that is $2.23.
+[  299.06s ->   306.20s] Multiply that by 100, you're going to have to pay $223 to hedge that position if you want to trade it there, right?
+[  307.56s ->   311.68s] So options contracts are basically that.
+[  312.08s ->   317.24s] Now, again, how to make money is just another video in itself.
+[  317.36s ->   320.76s] Sorry, guys, but options contracts are so hard to fully understand.
+[  320.76s ->   330.40s] And you don't need to fully understand it unless you're going to let it expire, which I don't recommend letting it expire because that's not where you make the real money.
+[  331.00s ->   333.40s] However, let's go back into explaining options contracts.
+[  333.52s ->   337.30s] I'm sorry that I'm getting discombobulated and not sticking on track.
+[  337.82s ->   341.90s] But options contracts also have a set expiration date.
+[  341.90s ->   347.72s] So when you look at the options tables, you have an expiration date, and in parentheses is when it expires.
+[  347.82s ->   352.52s] So this one expires on Friday, the 7th of December, 2018.
+[  353.30s ->   359.06s] So that's saying that these contracts will be executed on that day.
+[  359.06s ->   369.82s] So, for instance, if you know anything about houses and wholesaling, when you wholesale a house, which means you contract a house, you have the right to buy it, contracts are usually only good for a certain amount of time, correct?
+[  370.34s ->   373.04s] So this is the same thing with options contracts.
+[  373.46s ->   378.66s] You buy this contract or you fill out the ability to buy this contract, correct?
+[  378.66s ->   383.68s] And then you have an expiration date set on it, almost like trading bonds, right?
+[  383.82s ->   387.42s] You have an expiration date where this will get executed.
+[  387.92s ->   398.00s] So this, if you're trading these contracts here under the 7th, and that means on Friday, the 7th, these contracts will be executed, okay?
+[  398.10s ->   402.90s] Now, if they're in the money, which is this blue, will be explained later, or if they're out of the money,
+[  402.90s ->   413.48s] they will either be not executed, which means the contract prices will go to zero, or they will be executed and you will be given the 100 shares.
+[  415.14s ->   420.90s] So, again, just understand that options contracts are tricky, but you don't fully need to understand what they are.
+[  421.12s ->   425.98s] Again, I will do my best to explain it, which I have done my best in the videos to come.
+[  427.04s ->   431.74s] But just understand that each contract has a price and it has an expiration date.
+[  431.74s ->   439.14s] And based off the expiration date, it determines how volatile the options contract will be, which means how much the price of the contract will move.
+[  440.84s ->   442.12s] It also has a strike price.
+[  442.34s ->   443.54s] It doesn't really matter at the moment.
+[  443.66s ->   446.62s] We'll explain tomorrow in how to read the chart.
+[  446.82s ->   448.82s] But it also has premium.
+[  449.12s ->   453.44s] Premium is what, or the premium, the cost of the contract is what we trade.
+[  453.96s ->   458.78s] Let's say, I, so let's, just a brief example, right?
+[  458.78s ->   464.30s] Calls mean you make money in the long direction, which means if the stock goes up, your call increases in price.
+[  464.68s ->   471.84s] So, I buy a call contract at around $1, and as we know, you multiply that at 100, so I'm paying about $100 for this contract.
+[  471.84s ->   480.70s] The stock increases, the contract increases to $1.50, aka times 100, and increases to $150.
+[  481.34s ->   490.54s] So, I bought the contract at 100, and I sell it at 150, and I make the difference 50, so that I don't have to wait for it to expire, and I don't have to deal with the Greeks that we'll talk about later.
+[  490.54s ->   492.46s] Again, I hope that made sense.
+[  492.56s ->   503.00s] If it didn't, please either click on the link in the description, which will bring you up to Discord, and you can direct message me or message anybody in the group chat, or please comment on the video, guys.
+[  503.06s ->   509.86s] I want to help this make sense to you, but again, let's just finish out this series, and hopefully, options contracts will start to make more sense to you.
+[  510.18s ->   512.06s] Guys, thank you for tuning in.
+[  512.32s ->   515.44s] Please like, comment, and subscribe, and turn on notifications.
+[  515.74s ->   516.68s] Thank you. See you tomorrow.

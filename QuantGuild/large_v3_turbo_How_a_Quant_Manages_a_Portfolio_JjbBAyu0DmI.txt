@@ -1,0 +1,922 @@
+[    0.46s ->     7.84s] I have recently been horrified to learn that many people think beating the market is alpha,
+[    7.84s ->    15.06s] that is generating some sort of return in excess to a benchmark, the S&P 500, Russell 3000, NASDAQ,
+[   15.14s ->    22.92s] Dow, whatever. That is most certainly not the case. And it highlights the need for academic
+[   22.92s ->    28.64s] theory. Now, sure, there's a lot of high level math, probability statistics, economics, finance,
+[   28.64s ->    36.64s] even computer science that enable the research strategy and execution of such academic techniques
+[   36.64s ->    43.76s] in practice. But it typically takes a tremendous amount of time, not just in terms of formal
+[   43.76s ->    51.50s] classroom study, but in terms of experience as a practitioner to really understand these academic
+[   51.50s ->    59.32s] models and how they service industrial practice. That is exactly the purpose of today's video.
+[   59.78s ->    64.98s] I want to discuss how I go about managing my portfolio, how I think about risk,
+[   65.36s ->    70.86s] different quantitative tools and techniques available to us to go about making informed
+[   70.86s ->    76.84s] decisions in the face of uncertainty. We'll talk about spectral decomposition, the capital asset
+[   76.84s ->    84.08s] pricing model and extensions that enable the construction of portfolios based on different
+[   84.08s ->    90.66s] factors to achieve different investment goals. Like always, this Jupyter notebook will be linked in
+[   90.66s ->    94.68s] the description below. I'll also post it to the Quant Guild library on GitHub, where you can find
+[   94.68s ->    99.88s] all of my Jupyter notebooks and associated YouTube videos, along with all of the source code for my quant
+[   99.88s ->   104.20s] builds. At the top of this Jupyter notebook, you'll notice some related Quant Guild videos applying
+[  104.20s ->   110.38s] probability and statistics to finance and trading, this idea of time series analysis, retail versus
+[  110.38s ->   116.56s] institutional trading, trading versus investing, this idea of expected value and accumulating it over
+[  116.56s ->   122.56s] a series of trades over time, quant versus discretionary trading, and of course, busting three
+[  122.56s ->   128.08s] trading myths that these trading gurus love to propagate. If you're unfamiliar with any of these
+[  128.08s ->   133.88s] ideas, I highly recommend that you check these videos out first before tackling one like this.
+[  133.88s ->   137.74s] Moreover, these videos certainly take a lot of effort to create, so if you'd like to help support the
+[  137.74s ->   141.66s] channel so I can continue to create videos just like this one, please like, comment, subscribe,
+[  141.86s ->   147.34s] share. It helps me out tremendously. It is always greatly appreciated. And if you'd like to master
+[  147.34s ->   154.16s] your quantitative skills for trading and market making roles, check out quantguild.com. I have over
+[  154.16s ->   161.38s] 100 hours of lecture content covering topics that you would find at the university and post-grad level,
+[  161.38s ->   167.74s] stuff you'd find in a master's in financial engineering program specifically for roles in
+[  167.74s ->   175.14s] this industry. In addition to those lectures, we have an adaptive practice engine, 90 plus quant lessons,
+[  175.70s ->   182.38s] interview questions with fully worked solutions trading games, and even more on the way. And all
+[  182.38s ->   186.94s] that's included with Quant Guild membership, and you can get started right now for free.
+[  186.94s ->   192.90s] So if you'd like to help support the channel and master your quantitative skills, check out
+[  192.90s ->   198.54s] quantguild.com. Without further ado, let's get started by discussing the different facets of
+[  198.54s ->   204.78s] risk we're exposed to anytime we hold an equity portfolio, this idea of covariance and correlation
+[  204.78s ->   213.28s] structures, statistics over time, and diversification and market risk. Now, for the analysis herein,
+[  213.28s ->   219.86s] we're going to be looking at nine real stocks from three different sectors. If you're looking to run
+[  219.86s ->   226.82s] this Jupyter notebook, you're going to need access to market data. I can recommend no one else but
+[  226.82s ->   233.30s] interactive brokers and their API. I've been with them for over 10 years at this point, executing trades
+[  233.30s ->   239.62s] in C++, Java, even Python. I'll leave a link in the description below if you'd like to get started
+[  239.62s ->   246.90s] with them. Nevertheless, let's start by taking a look at this animation of the returns of each of
+[  246.90s ->   252.84s] these nine stocks across different sectors. So on the left, we have tech, in the middle, we have
+[  252.84s ->   259.38s] healthcare, and on the right, we have consumer staples. When it comes to the stocks that we're
+[  259.38s ->   266.20s] visualizing here, it's important to keep in mind that they will share some risks, and others will have
+[  266.20s ->   273.60s] nothing to do with each other. This is the idea of market, sector, and idiosyncratic risk. We're going
+[  273.60s ->   281.44s] to talk about each one and its broader place in a composite portfolio. So first up is this notion of
+[  281.44s ->   289.84s] idiosyncratic or firm-specific risk. What I'm going to do here is play this series of returns for the
+[  289.84s ->   297.46s] healthcare sector for these three stocks that I've selected. And overall, the sector doesn't do too
+[  297.46s ->   303.46s] bad, right? On average, if we held a composite portfolio of these three stocks, we certainly
+[  303.46s ->   313.44s] would have been in the green. But we can see that UNH does terribly. It has a 45%, negative 45% return
+[  313.44s ->   323.70s] by the end of the holding period. But this return is exclusive to UNH. This is idiosyncratic risk.
+[  323.90s ->   331.62s] If you hold an equity, you're subject to returns on the upside for positive firm performance and
+[  331.62s ->   337.60s] returns on the downside for terrible firm performance. And there are different facets of
+[  337.60s ->   343.92s] performance that can impact this risk in an individual equity sense. So it doesn't just
+[  343.92s ->   349.84s] have to be in terms of performance. If there's a massive CEO scandal or something else goes wrong
+[  349.84s ->   357.40s] for that particular company, the market is going to react and tends to overreact, especially on the
+[  357.40s ->   363.94s] downside. We'll formally talk about diversification in a moment, but we're about to see the full effect
+[  363.94s ->   371.68s] of it on an idiosyncratic basis in this brief discussion on industry or sector risk. What
+[  371.68s ->   377.38s] I'm going to do here is I'm going to create a composite portfolio for each sector. I'm going to
+[  377.38s ->   383.46s] hold a uniform weight in each of the three stocks across the three sectors, creating this sector
+[  383.46s ->   390.02s] portfolio. So I have a tech portfolio, I have a healthcare portfolio and a consumer staples portfolio.
+[  390.02s ->   397.20s] And like I said, a moment ago, if I were to hold a composite portfolio here, I would likely for this
+[  397.20s ->   404.18s] holding period be in the green. And that's exactly what we see here. That is effectively us starting
+[  404.18s ->   411.48s] to diversify away the idiosyncratic risk. We are exposed to this downside holding the composite
+[  411.48s ->   419.90s] portfolio, but not nearly as much as if we were just holding UNH. In a broader risk sense,
+[  419.90s ->   427.42s] here we're not focusing just on one specific firm, but an entire sector. If tech is having trouble due
+[  427.42s ->   434.86s] to new regulation, then all of the tech stocks are going to suffer, but not necessarily healthcare
+[  434.86s ->   441.56s] or consumer staples stocks. And the same is true for different facets of risk in healthcare and
+[  441.56s ->   450.20s] consumer staples. This is the idea of industry or sector risk, another form of diversifiable risk,
+[  450.20s ->   455.50s] because I don't just have to create a composite portfolio of tech stocks. I'm allowed to hold a
+[  455.50s ->   462.94s] uniform weight in maybe even all nine stocks that I've selected here. And when I do that, I'm going to
+[  462.94s ->   471.64s] diversify effectively away both idiosyncratic and industry risk. But then what am I left with? Well,
+[  472.04s ->   479.10s] effectively, I am left with market risk. This animation elegantly displays this notion of
+[  479.10s ->   484.82s] market risk. Effectively, we've diversified away the idiosyncratic firm specific risk by holding a
+[  484.82s ->   491.56s] sector portfolio. Then we said, okay, we want to diversify away that sector risk as well. So we're left
+[  491.56s ->   497.26s] with then just this market risk, a composite portfolio of our sector portfolios. Effectively,
+[  497.38s ->   503.92s] it's one giant portfolio of firms across a whole bunch of different sectors, but we are still subject
+[  503.92s ->   510.74s] to market risk. What I've done here is I've highlighted a particular period of interest when the
+[  510.74s ->   518.36s] economy was in distress after tariffs were announced at the start of 2025. What you're noticing here is
+[  518.36s ->   524.10s] what would otherwise be relatively uncorrelated, you can see maybe even some anti-correlation
+[  524.10s ->   530.08s] between consumer staples and tech, you can see everything becomes increasingly correlated during
+[  530.08s ->   538.64s] distress. This is market risk. This is the idea that market risk is not diversifiable. The statistical
+[  538.64s ->   546.30s] mechanism that you are trying to use to diversify away those different facets of risk are no longer
+[  546.30s ->   554.34s] available to you as correlation structures begin to break down. This leads our discussion now of
+[  554.34s ->   562.94s] covariance and correlation structures, not just in the formal classroom sense, but what it actually looks
+[  562.94s ->   570.58s] like in practice and what it means for our diversification that we are attempting in this broader portfolio
+[  570.58s ->   577.66s] construction. Correlation is effectively just normalized covariance, and covariance just tells us how two
+[  577.66s ->   584.94s] random variables tend to move together or apart. What I've done here is I've visualized the
+[  584.94s ->   593.20s] intrasector correlation matrix, and this is going to show us whether or not the individual stocks in
+[  593.20s ->   601.10s] each sector relative to one another move together or apart. And what you're observing here is within each
+[  601.10s ->   610.00s] sector, we see a positive correlation among the stocks. This makes sense. Tech stocks are going to tend to
+[  610.00s ->   616.74s] move together, healthcare stocks are going to tend to move together, and consumer staples stocks are going to
+[  616.74s ->   624.36s] tend to move together. This is a form of a linear relationship between each stock. More on that when we
+[  624.36s ->   631.06s] discuss spectral decomposition. So what we're doing here is we're starting to use statistical techniques
+[  631.06s ->   640.48s] available to us to express these relationships and risk. I want you to notice in the formula for both
+[  640.48s ->   651.62s] correlation and covariance. There are expectations, expected values, sample means effectively. We'll come back to
+[  651.62s ->   658.76s] that in a moment. But in the context of this intrasector correlation matrix, what do we think is going to
+[  658.76s ->   668.04s] happen if we look at the correlation between a tech stock and a healthcare stock or a healthcare stock and a
+[  668.04s ->   674.80s] consumer staple stock? Well, I've created that correlation matrix right here, I've picked a tech healthcare and
+[  674.80s ->   681.80s] staple stock. And what I want you to notice is the correlations between each individual stock with
+[  681.80s ->   689.42s] another from a different sector is almost statistically indifferent from zero, they're not correlated at all.
+[  689.60s ->   697.90s] Now, this is to be expected, to some extent, right? In terms of idiosyncratic risk, they have nothing to do
+[  697.90s ->   703.86s] with each other with each other, Walmart and Broadcom, right? What about the industry risk, tech and
+[  703.86s ->   712.68s] healthcare? Likely not. But what about broader market risk? Well, this is effectively the elephant
+[  712.68s ->   719.54s] in the room, we've just computed the correlation. So in the classroom, your professor will say, okay,
+[  719.54s ->   727.72s] what's the correlation between these two stocks in the same sector, or maybe these stocks across
+[  727.72s ->   738.22s] different sectors? But what he isn't going to say is, what is the correct set of data to use in
+[  738.22s ->   746.06s] estimating that correlation? Should you use 30 days? Should you use three months? Should you use data
+[  746.06s ->   754.26s] from a year ago? What is correct? The elephant in the room is, statistics in the real world do not
+[  754.26s ->   760.88s] converge, we can't apply the law of large numbers, the law of large numbers, ensures empirical mean
+[  760.88s ->   768.58s] convergence, the expectation will converge to the population mean, in whatever the population data
+[  768.58s ->   774.64s] generating distribution is, if we're dealing with stationarity, then we can apply the central limit
+[  774.64s ->   782.98s] theorem, all of those nice techniques from probability and statistics. But if we recall, our covariance and
+[  782.98s ->   790.48s] correlation structure do rely on the expectation, the expected values, so we need these theorems to
+[  790.48s ->   798.24s] hold. However, in reality, we are dealing with non-stationarity. These correlations will not
+[  798.24s ->   806.52s] converge. In fact, this is exactly what we saw earlier. What you're observing in this animation here is how
+[  806.52s ->   814.50s] the correlation structures jump during market distress. They change over time. I'll play this
+[  814.50s ->   820.10s] animation for us again here. Boom. Right when we end up in distress, we can see the correlation
+[  820.10s ->   827.28s] structures fundamentally change. Everything becomes increasingly correlated with each other until the
+[  827.28s ->   834.36s] volatility comes back down. It's a mean reverting process after all. And the correlation structures go back
+[  834.36s ->   840.94s] to their typical range. Typically, they are mean reverting in themselves around a particular level,
+[  841.02s ->   847.18s] similar to what we're seeing here after the distress. It should now be more clear from a quantitative
+[  847.18s ->   853.96s] perspective why we can't diversify away market risk. I'm not talking about buying a put. I'm not
+[  853.96s ->   861.70s] talking about hedging. I'm talking about diversification in its purest form. The only free lunch in economics,
+[  861.70s ->   868.82s] that's exactly what we're seeing here. We're seeing the statistical mechanism used for diversification
+[  868.82s ->   874.96s] break down. We can see during distress, everything becomes increasingly correlated. We don't get that
+[  874.96s ->   881.72s] benefit and we suffer from that market drawdown. Now, once everything normalizes, we will then be back to
+[  881.72s ->   890.74s] business as usual, our typical uncorrelated sectors and firms. But during market distress, we can see
+[  890.74s ->   899.76s] everything becomes increasingly correlated. So if we diversify away idiosyncratic and industry risk, what are we
+[  899.76s ->   907.14s] left with? Well, we're just left with market risk. In fact, I'm only holding an equally weighted portfolio of
+[  907.14s ->   918.90s] nine stocks across three different sectors. But look at how closely we track the S&P 500. It is just an echo of that
+[  918.90s ->   925.98s] price path. And the rolling correlation that is the correlation between this composite portfolio of nine stocks
+[  925.98s ->   937.02s] and the SPY ETF is incredibly close to one, even over time. That's because we've diversified away effectively
+[  937.02s ->   946.78s] all of the upside and downside potential from each individual firm and each individual industry. It's important to note here
+[  946.78s ->   955.00s] that if we hold a portfolio of just one equity, we're going to be subject to all of the gains on the upside, but also
+[  955.00s ->   963.54s] all of the losses on the downside. Whether or not this is a good idea isn't what I'm discussing. I'm not talking about it
+[  963.54s ->   972.72s] in a cross-sectional priced risk way. I'm talking about it just explicitly as holding one stock. If you hold one stock and
+[  972.72s ->   979.52s] you're not diversified yet, you are going to ride all of the upside and all of the downside. Now, whether or not
+[  979.52s ->   987.12s] this is a good idea, we can look in the cross-section at the idiosyncratic exposure. Typically, that is
+[  987.12s ->   993.06s] negative, meaning a lot of retailers are going out and they're just looking for this lottery ticket effect.
+[  993.20s ->   999.72s] They'll load up on a particular name and try to hit it big. But on average, it suggests that holding
+[  999.72s ->  1007.72s] a single equity is not a good idea. Again, that doesn't say anything for your particular situation. You could get lucky.
+[ 1008.14s ->  1009.86s] Maybe your fundamentals are
+[ 1009.86s ->  1014.54s] really rock-solid and you're going to ride a tremendous upside.
+[ 1015.10s ->  1018.28s] But in terms of pricing and
+[ 1018.28s ->  1020.10s] priced risk components,
+[ 1020.68s ->  1024.40s] the theory says that may not be a tremendous idea.
+[ 1024.40s ->  1026.46s] While we're here, we can also talk
+[ 1026.46s ->  1028.52s] about alpha. So I've constructed
+[ 1028.52s ->  1030.52s] this equally weighted portfolio of
+[ 1030.52s ->  1032.38s] nine stocks across three sectors
+[ 1032.38s ->  1034.40s] and I beat the market.
+[ 1034.60s ->  1036.74s] I returned 46%.
+[ 1036.74s ->  1038.16s] The market returned
+[ 1038.16s ->  1039.50s] 35%.
+[ 1039.50s ->  1042.34s] I generated alpha for
+[ 1042.34s ->  1044.42s] my clients, for my fund. Well,
+[ 1044.94s ->  1046.36s] no, not at
+[ 1046.36s ->  1048.12s] all. And we will see
+[ 1048.12s ->  1050.44s] explicitly why later
+[ 1050.44s ->  1052.52s] on in the context of CAPM.
+[ 1052.52s ->  1054.60s] But the important thing to
+[ 1054.60s ->  1056.16s] understand here is
+[ 1056.16s ->  1058.28s] if the market did not
+[ 1058.28s ->  1060.72s] perform, I would not have
+[ 1060.72s ->  1062.82s] received this return.
+[ 1063.00s ->  1064.58s] That is exactly
+[ 1064.58s ->  1066.32s] what alpha is
+[ 1066.32s ->  1068.90s] suggesting. Alpha is suggesting that
+[ 1068.90s ->  1070.56s] orthogonal to
+[ 1070.56s ->  1072.66s] perpendicular to without
+[ 1072.66s ->  1075.02s] any other performance
+[ 1075.02s ->  1076.18s] that is performance of
+[ 1076.18s ->  1078.48s] different facets of priced risk.
+[ 1078.64s ->  1080.24s] This market exposure,
+[ 1080.24s ->  1081.98s] I will be able to
+[ 1081.98s ->  1083.12s] generate that
+[ 1083.12s ->  1084.64s] return. It is
+[ 1084.64s ->  1085.36s] a return
+[ 1085.36s ->  1086.66s] uncorrelated
+[ 1086.66s ->  1088.02s] with the broader
+[ 1088.02s ->  1089.22s] market and other
+[ 1089.22s ->  1090.24s] facets of
+[ 1090.24s ->  1092.40s] risk. That is
+[ 1092.40s ->  1093.80s] alpha, not
+[ 1093.80s ->  1094.58s] excess
+[ 1094.58s ->  1095.54s] return.
+[ 1096.04s ->  1097.66s] Understanding now
+[ 1097.66s ->  1098.72s] these different components
+[ 1098.72s ->  1099.46s] of risk,
+[ 1099.70s ->  1101.56s] we can move on
+[ 1101.56s ->  1102.96s] and talk about
+[ 1102.96s ->  1104.24s] spectral decomposition
+[ 1104.24s ->  1106.38s] on this panel
+[ 1106.38s ->  1107.06s] of data
+[ 1107.06s ->  1107.94s] to really
+[ 1107.94s ->  1108.94s] understand
+[ 1108.94s ->  1110.48s] what these
+[ 1110.48s ->  1111.78s] risks look like
+[ 1111.78s ->  1113.26s] in the context of
+[ 1113.26s ->  1113.86s] advanced
+[ 1113.86s ->  1114.62s] quantitative
+[ 1114.62s ->  1116.06s] techniques. Based
+[ 1116.06s ->  1117.30s] on our analysis
+[ 1117.30s ->  1118.62s] above, we find
+[ 1118.62s ->  1119.66s] evidence of
+[ 1119.66s ->  1120.90s] linear relationships
+[ 1120.90s ->  1121.44s] between
+[ 1121.44s ->  1122.50s] these different
+[ 1122.50s ->  1123.34s] facets of
+[ 1123.34s ->  1124.32s] risk. We observed
+[ 1124.32s ->  1125.48s] this in
+[ 1125.48s ->  1126.56s] our covariance
+[ 1126.56s ->  1127.24s] and correlation
+[ 1127.24s ->  1128.52s] structures over time.
+[ 1128.62s ->  1129.18s] We saw
+[ 1129.18s ->  1130.26s] that during
+[ 1130.26s ->  1131.18s] market distress,
+[ 1131.40s ->  1131.92s] correlations
+[ 1131.92s ->  1133.18s] increased. We saw
+[ 1133.18s ->  1134.22s] when everything
+[ 1134.22s ->  1134.80s] normalized,
+[ 1135.22s ->  1135.94s] correlations went
+[ 1135.94s ->  1136.90s] back to business
+[ 1136.90s ->  1137.78s] as usual.
+[ 1138.50s ->  1139.84s] Now, the question
+[ 1139.84s ->  1141.24s] remains, is
+[ 1141.24s ->  1142.36s] there a way
+[ 1142.36s ->  1143.74s] to compress
+[ 1143.74s ->  1145.26s] the common
+[ 1145.26s ->  1146.86s] variation among
+[ 1146.86s ->  1147.74s] these returns
+[ 1147.74s ->  1149.86s] into independent
+[ 1149.86s ->  1151.04s] factors? In other
+[ 1151.04s ->  1152.26s] words, is there
+[ 1152.26s ->  1153.42s] a way to take
+[ 1153.42s ->  1154.92s] that panel of
+[ 1154.92s ->  1155.88s] data, those nine
+[ 1155.88s ->  1156.90s] stocks and all of
+[ 1156.90s ->  1157.56s] their returns,
+[ 1157.98s ->  1158.98s] and extract
+[ 1158.98s ->  1160.24s] one factor
+[ 1160.24s ->  1161.58s] that expresses
+[ 1161.58s ->  1162.98s] common variation
+[ 1162.98s ->  1164.72s] for one of those
+[ 1164.72s ->  1165.84s] facets of risk?
+[ 1165.84s ->  1166.80s] risk? Then
+[ 1166.80s ->  1167.46s] can I do it
+[ 1167.46s ->  1168.76s] again for a
+[ 1168.76s ->  1169.48s] different facet
+[ 1169.48s ->  1170.80s] of risk? So
+[ 1170.80s ->  1171.58s] on and so
+[ 1171.58s ->  1172.58s] forth. This
+[ 1172.58s ->  1173.58s] leads us to the
+[ 1173.58s ->  1174.72s] idea of
+[ 1174.72s ->  1175.46s] principal
+[ 1175.46s ->  1176.02s] component
+[ 1176.02s ->  1177.76s] analysis. This
+[ 1177.76s ->  1178.64s] comes from
+[ 1178.64s ->  1179.88s] linear algebra. We
+[ 1179.88s ->  1180.48s] can accomplish
+[ 1180.48s ->  1181.10s] this via
+[ 1181.10s ->  1182.34s] eigendecomposition
+[ 1182.34s ->  1182.84s] of the
+[ 1182.84s ->  1183.52s] covariance
+[ 1183.52s ->  1185.00s] matrix or
+[ 1185.00s ->  1186.10s] singular value
+[ 1186.10s ->  1187.32s] decomposition of
+[ 1187.32s ->  1188.58s] the data
+[ 1188.58s ->  1189.30s] matrix. We are
+[ 1189.30s ->  1190.44s] effectively doing
+[ 1190.44s ->  1192.32s] just that, and
+[ 1192.32s ->  1192.88s] what I've done
+[ 1192.88s ->  1193.56s] here is I've
+[ 1193.56s ->  1195.18s] visualized this
+[ 1195.18s ->  1195.70s] spectral
+[ 1195.70s ->  1196.94s] decomposition of
+[ 1196.94s ->  1198.10s] portfolio returns.
+[ 1198.10s ->  1198.82s] You're observing
+[ 1198.82s ->  1200.32s] different principal
+[ 1200.32s ->  1201.24s] components. These
+[ 1201.24s ->  1202.20s] are independent
+[ 1202.20s ->  1203.52s] factors,
+[ 1203.96s ->  1204.50s] effectively
+[ 1204.50s ->  1205.32s] compressing
+[ 1205.32s ->  1205.70s] common
+[ 1205.70s ->  1206.82s] variations from
+[ 1206.82s ->  1208.00s] these nine
+[ 1208.00s ->  1209.30s] stocks, and
+[ 1209.30s ->  1210.10s] we're seeing
+[ 1210.10s ->  1211.34s] across each
+[ 1211.34s ->  1212.60s] factor how
+[ 1212.60s ->  1213.72s] much variation
+[ 1213.72s ->  1214.90s] in the original
+[ 1214.90s ->  1216.18s] data is
+[ 1216.18s ->  1218.12s] explained as
+[ 1218.12s ->  1219.00s] an accumulation
+[ 1219.00s ->  1220.64s] of each
+[ 1220.64s ->  1222.42s] component, each
+[ 1222.42s ->  1223.14s] independent
+[ 1223.14s ->  1224.74s] factor. So
+[ 1224.74s ->  1225.86s] this first
+[ 1225.86s ->  1227.28s] component here
+[ 1227.28s ->  1228.80s] clearly explains
+[ 1228.80s ->  1230.08s] a lot of
+[ 1230.08s ->  1231.14s] variation in the
+[ 1231.14s ->  1231.90s] original data,
+[ 1232.00s ->  1234.34s] 27% to be
+[ 1234.34s ->  1235.36s] precise, and
+[ 1235.36s ->  1236.30s] once we include
+[ 1236.30s ->  1237.34s] the second and
+[ 1237.34s ->  1238.36s] third components,
+[ 1238.84s ->  1239.96s] we are explaining
+[ 1239.96s ->  1242.30s] 60% of the
+[ 1242.30s ->  1243.50s] variation in the
+[ 1243.50s ->  1245.14s] original data.
+[ 1245.40s ->  1246.78s] That is pretty
+[ 1246.78s ->  1248.00s] substantial. We
+[ 1248.00s ->  1248.76s] have nine
+[ 1248.76s ->  1249.76s] different stocks
+[ 1249.76s ->  1251.16s] and we've
+[ 1251.16s ->  1251.64s] effectively
+[ 1251.64s ->  1252.48s] compressed that
+[ 1252.48s ->  1253.86s] information into
+[ 1253.86s ->  1255.18s] three orthogonal
+[ 1255.18s ->  1256.78s] components that
+[ 1256.78s ->  1258.04s] explain in these
+[ 1258.04s ->  1259.58s] unique directions
+[ 1259.58s ->  1262.10s] 60% of the
+[ 1262.10s ->  1263.10s] original variation.
+[ 1263.26s ->  1263.72s] Now, certainly
+[ 1263.72s ->  1265.30s] this is a gradual
+[ 1265.30s ->  1267.52s] decay here. If it
+[ 1267.52s ->  1268.28s] was sharper, it
+[ 1268.28s ->  1269.16s] could be even more
+[ 1269.16s ->  1269.96s] impressive. Maybe
+[ 1269.96s ->  1271.48s] we get up to 80,
+[ 1271.58s ->  1272.62s] 90 in the first
+[ 1272.62s ->  1273.64s] couple components
+[ 1273.64s ->  1275.20s] here, but this is
+[ 1275.20s ->  1275.76s] effectively
+[ 1275.76s ->  1276.74s] dimensionality
+[ 1276.74s ->  1277.74s] reduction. This is
+[ 1277.74s ->  1279.46s] linear dimensionality
+[ 1279.46s ->  1280.56s] reduction. It's a
+[ 1280.56s ->  1281.58s] compression of
+[ 1281.58s ->  1282.98s] information. We're
+[ 1282.98s ->  1283.88s] compressing the
+[ 1283.88s ->  1284.88s] information from
+[ 1284.88s ->  1286.32s] those nine stocks
+[ 1286.32s ->  1287.88s] into three
+[ 1287.88s ->  1289.02s] perpendicular,
+[ 1289.38s ->  1290.60s] orthogonal, unique,
+[ 1291.10s ->  1291.60s] independent
+[ 1291.60s ->  1293.60s] components. So
+[ 1293.60s ->  1294.76s] what do these
+[ 1294.76s ->  1296.72s] actually mean? Well,
+[ 1296.78s ->  1297.98s] let's analyze the
+[ 1297.98s ->  1298.80s] loadings or
+[ 1298.80s ->  1300.54s] eigenvectors on
+[ 1300.54s ->  1301.60s] each of the first
+[ 1301.60s ->  1302.60s] three principal
+[ 1302.60s ->  1303.50s] components. Remember,
+[ 1303.60s ->  1304.86s] the first three are
+[ 1304.86s ->  1305.58s] going to account
+[ 1305.58s ->  1307.86s] for 60% of the
+[ 1307.86s ->  1309.16s] variation in our
+[ 1309.16s ->  1310.70s] original data.
+[ 1311.30s ->  1312.02s] What I've done
+[ 1312.02s ->  1312.90s] here is I've
+[ 1312.90s ->  1313.90s] spelt it out for
+[ 1313.90s ->  1315.54s] you effectively. I
+[ 1315.54s ->  1316.98s] have taken all of
+[ 1316.98s ->  1318.32s] the individual names
+[ 1318.32s ->  1319.58s] and I have color
+[ 1319.58s ->  1321.50s] coded each loading
+[ 1321.50s ->  1323.06s] that is coming from
+[ 1323.06s ->  1324.38s] the eigenvector.
+[ 1324.60s ->  1325.60s] What I want you to
+[ 1325.60s ->  1326.70s] notice is all of the
+[ 1326.70s ->  1327.92s] loadings have the
+[ 1327.92s ->  1329.18s] same sign in this
+[ 1329.18s ->  1329.88s] first principal
+[ 1329.88s ->  1331.62s] component. We can
+[ 1331.62s ->  1332.84s] infer that this is
+[ 1332.84s ->  1333.96s] the market
+[ 1333.96s ->  1334.92s] component. This is
+[ 1334.92s ->  1335.56s] the shared
+[ 1335.56s ->  1337.44s] market risk of
+[ 1337.44s ->  1338.36s] all of these
+[ 1338.36s ->  1340.20s] stocks. Then
+[ 1340.20s ->  1341.52s] if we move on to
+[ 1341.52s ->  1342.08s] the second
+[ 1342.08s ->  1343.52s] component, check
+[ 1343.52s ->  1344.30s] out what happens.
+[ 1344.42s ->  1345.92s] We have sector
+[ 1345.92s ->  1347.58s] risk. We can see
+[ 1347.58s ->  1348.32s] that all of the
+[ 1348.32s ->  1349.64s] tech stocks have
+[ 1349.64s ->  1351.20s] the same sign. The
+[ 1351.20s ->  1352.06s] healthcare stocks
+[ 1352.06s ->  1352.96s] have the same sign
+[ 1352.96s ->  1354.48s] and the staple
+[ 1354.48s ->  1355.38s] stocks have the
+[ 1355.38s ->  1356.30s] same sign and
+[ 1356.30s ->  1358.44s] sector risk is
+[ 1358.44s ->  1359.18s] going to even
+[ 1359.18s ->  1360.26s] spill over into
+[ 1360.26s ->  1361.50s] the third, maybe
+[ 1361.50s ->  1362.18s] even the fourth
+[ 1362.18s ->  1363.52s] or fifth principal
+[ 1363.52s ->  1364.50s] component, depending
+[ 1364.50s ->  1365.58s] on our sample of
+[ 1365.58s ->  1367.00s] data. What is the
+[ 1367.00s ->  1368.96s] rest? What are the
+[ 1368.96s ->  1369.88s] rest of these
+[ 1369.88s ->  1372.22s] components? These
+[ 1372.22s ->  1374.28s] are other facets
+[ 1374.28s ->  1376.04s] of variation
+[ 1376.04s ->  1377.56s] explained. This
+[ 1377.56s ->  1378.78s] encompasses even
+[ 1378.78s ->  1380.56s] idiosyncratic risk.
+[ 1380.96s ->  1382.20s] That is, it lives
+[ 1382.20s ->  1383.84s] somewhere spread out
+[ 1383.84s ->  1385.04s] among the rest of
+[ 1385.04s ->  1385.94s] these components,
+[ 1386.40s ->  1387.26s] along with other
+[ 1387.26s ->  1388.84s] facets of risk that
+[ 1388.84s ->  1390.20s] wasn't explained in
+[ 1390.20s ->  1391.50s] these first few
+[ 1391.50s ->  1392.78s] principal components.
+[ 1393.32s ->  1394.22s] This is effectively
+[ 1394.22s ->  1395.02s] an information
+[ 1395.02s ->  1396.66s] compression. All
+[ 1396.66s ->  1397.32s] we're doing is
+[ 1397.32s ->  1398.16s] we're taking our
+[ 1398.16s ->  1399.24s] theoretical risks,
+[ 1399.36s ->  1400.74s] our idiosyncratic,
+[ 1400.92s ->  1401.98s] our industry, and
+[ 1401.98s ->  1403.04s] our market risk, and
+[ 1403.04s ->  1404.72s] we're looking at a
+[ 1404.72s ->  1405.88s] very simple
+[ 1405.88s ->  1407.54s] decomposition of the
+[ 1407.54s ->  1408.40s] original return
+[ 1408.40s ->  1409.92s] data, and we're
+[ 1409.92s ->  1411.00s] doing so in a way
+[ 1411.00s ->  1412.98s] that is linear, and
+[ 1412.98s ->  1413.90s] we're just creating
+[ 1413.90s ->  1414.86s] effectively a new
+[ 1414.86s ->  1416.16s] basis on the data
+[ 1416.16s ->  1417.62s] to analyze it, and
+[ 1417.62s ->  1418.32s] what we're seeing
+[ 1418.32s ->  1419.52s] here is, you know,
+[ 1419.58s ->  1420.60s] we go out to
+[ 1420.60s ->  1421.68s] component five or
+[ 1421.68s ->  1423.00s] six, and we've
+[ 1423.00s ->  1423.86s] explained almost
+[ 1423.86s ->  1425.88s] 90% of the
+[ 1425.88s ->  1426.72s] variation in the
+[ 1426.72s ->  1428.62s] original data. So
+[ 1428.62s ->  1430.14s] that's how I go
+[ 1430.14s ->  1431.78s] about thinking of
+[ 1431.78s ->  1433.62s] risk relative to
+[ 1433.62s ->  1435.58s] the qualitative and
+[ 1435.58s ->  1436.74s] visual interpretations
+[ 1436.74s ->  1437.46s] we've already
+[ 1437.46s ->  1438.42s] analyzed. We have
+[ 1438.42s ->  1439.80s] now a quantitative
+[ 1439.80s ->  1441.22s] way to deal with
+[ 1441.22s ->  1442.04s] this. If we're
+[ 1442.04s ->  1443.74s] trading some form
+[ 1443.74s ->  1445.12s] of market exposure,
+[ 1445.12s ->  1446.66s] larger, then this
+[ 1446.66s ->  1447.64s] is quite literally
+[ 1447.64s ->  1448.82s] what it means. A
+[ 1448.82s ->  1450.30s] compression of all
+[ 1450.30s ->  1452.14s] of the returns is
+[ 1452.14s ->  1453.94s] going to be the
+[ 1453.94s ->  1455.12s] market risk that
+[ 1455.12s ->  1457.12s] we're exposed to in
+[ 1457.12s ->  1458.28s] our portfolio. The
+[ 1458.28s ->  1458.98s] same is true for
+[ 1458.98s ->  1460.38s] sector risk, and
+[ 1460.38s ->  1462.68s] the same is true for
+[ 1462.68s ->  1463.86s] other facets of
+[ 1463.86s ->  1464.86s] risk that we
+[ 1464.86s ->  1465.92s] haven't formally
+[ 1465.92s ->  1467.50s] discussed. Now,
+[ 1467.62s ->  1468.62s] what I've also done
+[ 1468.62s ->  1469.60s] here is I've shown
+[ 1469.60s ->  1471.40s] how much idiosyncratic
+[ 1471.40s ->  1474.28s] risk is unexplained by
+[ 1474.28s ->  1475.26s] the market and
+[ 1475.26s ->  1476.48s] sector factors. What
+[ 1476.48s ->  1477.10s] you're observing
+[ 1477.10s ->  1480.06s] here is UNH has
+[ 1480.06s ->  1480.98s] the highest
+[ 1480.98s ->  1482.70s] idiosyncratic risk
+[ 1482.70s ->  1484.34s] unexplained by the
+[ 1484.34s ->  1485.08s] market and sector
+[ 1485.08s ->  1485.96s] factors. They did
+[ 1485.96s ->  1486.98s] something that
+[ 1486.98s ->  1488.30s] absolutely blew up
+[ 1488.30s ->  1489.46s] their returns for
+[ 1489.46s ->  1490.92s] that year. Whereas
+[ 1490.92s ->  1492.58s] for the rest of the
+[ 1492.58s ->  1493.84s] names, we have a
+[ 1493.84s ->  1495.06s] relatively uniform
+[ 1495.06s ->  1496.74s] proportion of
+[ 1496.74s ->  1498.68s] unexplained variance,
+[ 1499.16s ->  1500.16s] an idiosyncratic
+[ 1500.16s ->  1501.60s] component that we can
+[ 1501.60s ->  1502.52s] kind of come to
+[ 1502.52s ->  1503.82s] expect from the rest
+[ 1503.82s ->  1505.56s] of these names. But
+[ 1505.56s ->  1508.14s] for UNH, most of
+[ 1508.14s ->  1509.32s] their return in this
+[ 1509.32s ->  1511.28s] particular period was
+[ 1511.28s ->  1512.30s] dominated by
+[ 1512.30s ->  1513.46s] variation, not from
+[ 1513.46s ->  1514.98s] these first components
+[ 1514.98s ->  1516.34s] here, but from
+[ 1516.34s ->  1518.28s] components beyond. And
+[ 1518.28s ->  1519.80s] that encompasses all
+[ 1519.80s ->  1521.22s] of idiosyncratic risk
+[ 1521.22s ->  1523.22s] as well. So when we
+[ 1523.22s ->  1524.26s] go back and we take a
+[ 1524.26s ->  1524.80s] look at this
+[ 1524.80s ->  1526.10s] idiosyncratic component
+[ 1526.10s ->  1528.36s] here, that is the
+[ 1528.36s ->  1530.94s] parallel in spectral
+[ 1530.94s ->  1533.40s] decomposition here, we
+[ 1533.40s ->  1534.56s] can see that we can't
+[ 1534.56s ->  1535.84s] explain that variation
+[ 1535.84s ->  1538.10s] just from market and
+[ 1538.10s ->  1540.52s] sector risk. This is
+[ 1540.52s ->  1542.58s] where everything ties
+[ 1542.58s ->  1544.32s] together. This is
+[ 1544.32s ->  1545.42s] certainly some nice
+[ 1545.42s ->  1546.66s] fancy math, but how
+[ 1546.66s ->  1548.26s] can we now construct a
+[ 1548.26s ->  1550.26s] model that explains
+[ 1550.26s ->  1551.52s] what we've identified
+[ 1551.52s ->  1552.64s] here in this
+[ 1552.64s ->  1553.94s] decomposition? Remember,
+[ 1554.46s ->  1556.18s] we can always diversify
+[ 1556.18s ->  1558.32s] away these sector risk
+[ 1558.32s ->  1559.16s] components, but what
+[ 1559.16s ->  1559.88s] about the broader
+[ 1559.88s ->  1561.70s] market component? How
+[ 1561.70s ->  1562.98s] do we actually go about
+[ 1562.98s ->  1564.46s] explaining that? And
+[ 1564.46s ->  1566.34s] how do we go about
+[ 1566.34s ->  1567.66s] explaining the
+[ 1567.66s ->  1569.98s] variation among the
+[ 1569.98s ->  1571.06s] rest of the components
+[ 1571.06s ->  1572.92s] that we haven't yet
+[ 1572.92s ->  1574.56s] interpreted? This is
+[ 1574.56s ->  1575.90s] where things get very
+[ 1575.90s ->  1577.42s] cool, and this is where
+[ 1577.42s ->  1578.92s] the capital asset pricing
+[ 1578.92s ->  1580.36s] model and other pricing
+[ 1580.36s ->  1582.82s] models come into play. What
+[ 1582.82s ->  1583.48s] we're going to do is
+[ 1583.48s ->  1584.64s] we're going to take our
+[ 1584.64s ->  1586.74s] asset or our portfolio,
+[ 1586.74s ->  1588.36s] and we're going to
+[ 1588.36s ->  1589.64s] regress it on the
+[ 1589.64s ->  1591.80s] excess return generated
+[ 1591.80s ->  1593.52s] by the market, that is
+[ 1593.52s ->  1594.78s] the market in excess of
+[ 1594.78s ->  1597.16s] the risk-free rate. One of
+[ 1597.16s ->  1598.34s] two things is going to
+[ 1598.34s ->  1599.86s] happen after we run this
+[ 1599.86s ->  1601.14s] regression. Either all of
+[ 1601.14s ->  1602.48s] the return is going to be
+[ 1602.48s ->  1605.06s] effectively just piggybacking
+[ 1605.06s ->  1606.62s] off of the market return,
+[ 1606.76s ->  1607.82s] meaning we need the market
+[ 1607.82s ->  1609.90s] to perform in order for
+[ 1609.90s ->  1611.72s] our asset or portfolio to
+[ 1611.72s ->  1614.80s] perform, or we are going
+[ 1614.80s ->  1616.56s] to have some or no
+[ 1616.56s ->  1618.46s] loading at all onto the
+[ 1618.46s ->  1620.80s] market excess return, and
+[ 1620.80s ->  1622.72s] we will effectively state
+[ 1622.72s ->  1624.42s] our asset or portfolio
+[ 1624.42s ->  1626.94s] return as alpha. That is,
+[ 1627.04s ->  1628.78s] it is return that has
+[ 1628.78s ->  1630.50s] nothing to do in a linear
+[ 1630.50s ->  1632.94s] capacity with the market. In
+[ 1632.94s ->  1634.44s] other words, it has nothing
+[ 1634.44s ->  1637.48s] to do with the market risk.
+[ 1637.66s ->  1639.48s] The market could go way
+[ 1639.48s ->  1641.18s] down, the market could go
+[ 1641.18s ->  1643.44s] way up, but the expected
+[ 1643.44s ->  1645.08s] return of our asset or
+[ 1645.08s ->  1647.08s] portfolio will be the
+[ 1647.08s ->  1649.76s] same. That is exactly
+[ 1649.76s ->  1651.88s] what alpha is. It's not
+[ 1651.88s ->  1654.52s] return generated beyond
+[ 1654.52s ->  1656.14s] the benchmark. What I've
+[ 1656.14s ->  1657.50s] done here is I've
+[ 1657.50s ->  1659.16s] constructed our composite
+[ 1659.16s ->  1661.08s] portfolios across different
+[ 1661.08s ->  1663.46s] sectors, and I've done
+[ 1663.46s ->  1665.04s] that CAPM regression to
+[ 1665.04s ->  1667.08s] observe if our portfolios
+[ 1667.08s ->  1669.54s] have any alpha. And if
+[ 1669.54s ->  1670.44s] you take a look at the
+[ 1670.44s ->  1672.24s] regression equations, we
+[ 1672.24s ->  1673.34s] are relatively
+[ 1673.34s ->  1674.74s] statistically indifferent
+[ 1674.74s ->  1677.38s] from zero, and pretty
+[ 1677.38s ->  1679.98s] much all of the return is
+[ 1679.98s ->  1681.80s] coming from that market
+[ 1681.80s ->  1684.82s] component. Now, what about
+[ 1684.82s ->  1686.82s] the variation itself?
+[ 1687.32s ->  1689.08s] Clearly, the R squared for
+[ 1689.08s ->  1690.40s] tech is going to be better
+[ 1690.40s ->  1691.50s] than healthcare, and
+[ 1691.50s ->  1693.06s] staples will be somewhere
+[ 1693.06s ->  1694.50s] in between. That is the
+[ 1694.50s ->  1695.38s] amount of variation
+[ 1695.38s ->  1697.66s] explained by the market
+[ 1697.66s ->  1700.20s] return. But what does this
+[ 1700.20s ->  1702.24s] mean in the context of our
+[ 1702.24s ->  1703.70s] exposure? We're not just
+[ 1703.70s ->  1706.60s] exposed to market risk, even
+[ 1706.60s ->  1708.76s] if we've diversified away
+[ 1708.76s ->  1710.64s] other components. No, there
+[ 1710.64s ->  1713.18s] are other components of risk.
+[ 1713.18s ->  1716.00s] And that's exactly what we're
+[ 1716.00s ->  1717.24s] observing here. We're
+[ 1717.24s ->  1718.74s] observing based on these
+[ 1718.74s ->  1721.58s] regression lines and how well
+[ 1721.58s ->  1724.60s] our portfolios fit that
+[ 1724.60s ->  1727.08s] particular market exposure, how
+[ 1727.08s ->  1729.14s] much variation is going to be
+[ 1729.14s ->  1732.30s] explained by this market
+[ 1732.30s ->  1735.80s] factor. This is where it gets
+[ 1735.80s ->  1737.48s] really cool because we can see
+[ 1737.48s ->  1739.38s] the market factor does not
+[ 1739.38s ->  1740.52s] account for all of the
+[ 1740.52s ->  1742.02s] variation in any of these
+[ 1742.02s ->  1744.54s] portfolios. That is exactly
+[ 1744.54s ->  1746.40s] what we see in our
+[ 1746.40s ->  1748.62s] decomposition. If this is our
+[ 1748.62s ->  1750.54s] market factor, that only
+[ 1750.54s ->  1753.24s] accounts for 27% of the
+[ 1753.24s ->  1754.48s] variation in this particular
+[ 1754.48s ->  1756.18s] sample, what about the
+[ 1756.18s ->  1758.12s] rest of it? That's going to
+[ 1758.12s ->  1759.28s] be other components of
+[ 1759.28s ->  1761.22s] priced risk that we haven't
+[ 1761.22s ->  1763.22s] included in our model. This
+[ 1763.22s ->  1764.62s] is where we can extend to
+[ 1764.62s ->  1765.96s] Fama French, three-factor,
+[ 1766.10s ->  1767.98s] five-factor, and other
+[ 1767.98s ->  1770.84s] components of alpha. This is
+[ 1770.84s ->  1772.28s] where the academics will tell
+[ 1772.28s ->  1773.78s] you if the market is
+[ 1773.78s ->  1775.16s] perfectly efficient and we
+[ 1775.16s ->  1776.34s] include all facets of
+[ 1776.34s ->  1777.98s] priced risk that investors
+[ 1777.98s ->  1780.68s] expect return for exposure
+[ 1780.68s ->  1782.94s] for, then we will
+[ 1782.94s ->  1784.80s] perfectly explain the returns
+[ 1784.80s ->  1786.44s] of our asset or portfolio. But
+[ 1786.44s ->  1788.72s] of course, in practice, we
+[ 1788.72s ->  1789.90s] don't actually observe that
+[ 1789.90s ->  1791.78s] there are inefficiencies. There
+[ 1791.78s ->  1793.20s] is alpha and that's going to
+[ 1793.20s ->  1795.30s] be baked into the remaining
+[ 1795.30s ->  1797.48s] variation beyond these
+[ 1797.48s ->  1799.46s] different factors here that
+[ 1799.46s ->  1801.82s] dominate the rest of the
+[ 1801.82s ->  1805.22s] panel. That is exactly how I
+[ 1805.22s ->  1808.34s] think about this CAPM model and
+[ 1808.34s ->  1809.70s] other pricing models, other
+[ 1809.70s ->  1811.46s] factor models in this
+[ 1811.46s ->  1812.86s] particular context. You're
+[ 1812.86s ->  1814.24s] effectively constructing a
+[ 1814.24s ->  1816.12s] portfolio with different
+[ 1816.12s ->  1818.46s] exposures. You can try to
+[ 1818.46s ->  1819.74s] assess your skill as a
+[ 1819.74s ->  1821.02s] manager in the context of
+[ 1821.02s ->  1823.82s] timing or selection based on
+[ 1823.82s ->  1825.32s] that alpha parameter. If you
+[ 1825.32s ->  1827.40s] have some intercept that is
+[ 1827.40s ->  1829.40s] statistically different from
+[ 1829.40s ->  1831.60s] zero, then maybe yes, your
+[ 1831.60s ->  1834.12s] ability to pick stocks has
+[ 1834.12s ->  1835.84s] statistical significance. But
+[ 1835.84s ->  1838.12s] broadly, in the context of
+[ 1838.12s ->  1840.22s] portfolio construction, we are
+[ 1840.22s ->  1842.22s] concerned with diversification
+[ 1842.22s ->  1844.90s] across factors and an optimal
+[ 1844.90s ->  1846.92s] construction that is going to
+[ 1846.92s ->  1850.12s] mitigate to some extent this
+[ 1850.12s ->  1852.42s] downside, even if we are
+[ 1852.42s ->  1855.32s] riding primarily on market
+[ 1855.32s ->  1857.28s] exposure. Now, what does this
+[ 1857.28s ->  1859.74s] actually mean? Let's revisit the
+[ 1859.74s ->  1861.30s] animation from earlier. Now
+[ 1861.30s ->  1862.46s] we're going to look at our
+[ 1862.46s ->  1864.82s] sector portfolios relative to the
+[ 1864.82s ->  1867.36s] broader market, the S&P 500. If
+[ 1867.36s ->  1869.82s] you were a portfolio manager and
+[ 1869.82s ->  1871.58s] you selected the tech
+[ 1871.58s ->  1874.70s] portfolio, then congratulations,
+[ 1874.96s ->  1878.16s] you outperformed the S&P 500. You
+[ 1878.16s ->  1880.26s] returned 87% for this holding
+[ 1880.26s ->  1881.90s] period. The S&P 500 only
+[ 1881.90s ->  1886.30s] returned 49%. But did you
+[ 1886.30s ->  1889.04s] generate alpha? Absolutely not. Maybe
+[ 1889.04s ->  1892.30s] you cite it as such for clients, but
+[ 1892.30s ->  1895.76s] all you did was piggyback off of
+[ 1895.76s ->  1898.84s] the market. Primarily, that tech
+[ 1898.84s ->  1900.08s] portfolio was just an
+[ 1900.08s ->  1901.74s] overexposure to the market
+[ 1901.74s ->  1903.92s] return. In fact, during
+[ 1903.92s ->  1906.26s] distress, you can see at its
+[ 1906.26s ->  1908.62s] lowest, it even matches the
+[ 1908.62s ->  1910.08s] lowest point of the market. That
+[ 1910.08s ->  1912.00s] is what overexposure looks like.
+[ 1912.50s ->  1915.42s] You can require a higher rate of
+[ 1915.42s ->  1918.66s] return to recover from a lower
+[ 1918.66s ->  1920.66s] rate of return. In other words, if
+[ 1920.66s ->  1922.60s] the market drops 20% and you're
+[ 1922.60s ->  1924.68s] overexposed, you are going to
+[ 1924.68s ->  1927.88s] need way more than 20% to
+[ 1927.88s ->  1929.96s] recover. And if you were that
+[ 1929.96s ->  1932.06s] portfolio manager during this
+[ 1932.06s ->  1933.90s] distress, you would have had to
+[ 1933.90s ->  1936.64s] explain a 40, what's that? Almost
+[ 1936.64s ->  1940.44s] a 45% drawdown to your client. I
+[ 1940.44s ->  1942.52s] am uncertain of anybody who would
+[ 1942.52s ->  1945.58s] want to stick with you after that
+[ 1945.58s ->  1947.20s] one. So when it comes to
+[ 1947.20s ->  1949.86s] portfolio construction, what do we
+[ 1949.86s ->  1951.96s] notice? Well, consumer staples
+[ 1951.96s ->  1953.82s] certainly didn't fall nearly as much
+[ 1953.82s ->  1956.32s] as tech and healthcare. Yeah, it
+[ 1956.32s ->  1957.58s] definitely underperformed,
+[ 1957.68s ->  1959.42s] especially with that particular
+[ 1959.42s ->  1961.42s] idiosyncratic component. However,
+[ 1962.00s ->  1964.94s] we can see that relative to the
+[ 1964.94s ->  1968.10s] market, it didn't fall as much. And
+[ 1968.10s ->  1970.58s] we're observing this actually in the
+[ 1970.58s ->  1973.36s] betas. So we can see that tech is
+[ 1973.36s ->  1975.54s] overexposed to the market, but
+[ 1975.54s ->  1977.48s] healthcare only has a quarter of
+[ 1977.48s ->  1980.74s] that exposure. And staples not far
+[ 1980.74s ->  1983.14s] behind it is roughly a third. So
+[ 1983.14s ->  1985.18s] that means that during distress,
+[ 1985.18s ->  1986.34s] even though the correlation
+[ 1986.34s ->  1988.24s] structure is likely to increase,
+[ 1988.24s ->  1989.54s] that is, everything will become
+[ 1989.54s ->  1992.44s] increasingly correlated. Tech is
+[ 1992.44s ->  1995.90s] certainly worse off than staples. And
+[ 1995.90s ->  1998.16s] staples is certainly worse off than
+[ 1998.16s ->  2000.72s] healthcare. That is exactly what we
+[ 2000.72s ->  2002.58s] see here. Our goal is then going to
+[ 2002.58s ->  2005.34s] be to try to come up with an optimal
+[ 2005.34s ->  2008.32s] allocation to take advantage of this
+[ 2008.32s ->  2010.56s] market exposure to ride the upside
+[ 2010.56s ->  2014.02s] similar to tech, but also match this
+[ 2014.02s ->  2017.30s] flatness, this lack of exposure during
+[ 2017.30s ->  2019.90s] distress. That is exactly what our
+[ 2019.90s ->  2022.42s] objective is when we construct these
+[ 2022.42s ->  2024.90s] portfolios based on different facets of
+[ 2024.90s ->  2027.60s] price risk. Now market risk and market
+[ 2027.60s ->  2030.66s] exposure isn't the only factor. We have
+[ 2030.66s ->  2032.76s] other factors too. There's sentiment
+[ 2032.76s ->  2034.72s] factors, which I've written about my
+[ 2034.72s ->  2037.04s] paper is available on SSRN. We have
+[ 2037.04s ->  2039.38s] Fama French, we have Carhartt, we have
+[ 2039.38s ->  2041.50s] momentum, small minus big, we have high
+[ 2041.50s ->  2043.68s] minus low. We have all of these, these
+[ 2043.68s ->  2045.80s] different factors that we can choose
+[ 2045.80s ->  2049.98s] for this construction and exposure. That's
+[ 2049.98s ->  2052.82s] our goal when we go about applying these
+[ 2052.82s ->  2055.34s] models in practice. So effectively,
+[ 2055.52s ->  2056.84s] depending on your goals, you can
+[ 2056.84s ->  2059.20s] construct a portfolio to bear the
+[ 2059.20s ->  2061.62s] necessary risks in efforts to achieve
+[ 2061.62s ->  2063.88s] that return. If you want crazy
+[ 2063.88s ->  2066.12s] overexposure to the market, then sure,
+[ 2066.20s ->  2068.10s] you can hold a primarily tech
+[ 2068.10s ->  2070.06s] portfolio. But if you want a smoother
+[ 2070.06s ->  2072.04s] return profile with a lower max
+[ 2072.04s ->  2074.42s] drawdown, maybe you are going to
+[ 2074.42s ->  2077.00s] combine more facets of staples and
+[ 2077.00s ->  2079.70s] healthcare to reduce your overall market
+[ 2079.70s ->  2082.82s] beta exposure, maybe overexposing or
+[ 2082.82s ->  2085.46s] increasing exposure to other facets of
+[ 2085.46s ->  2089.26s] priced risk. So in this particular
+[ 2089.26s ->  2091.48s] context, the most important thing to
+[ 2091.48s ->  2094.16s] take away is you are not trading an
+[ 2094.16s ->  2098.50s] alpha if you outperform a benchmark. What
+[ 2098.50s ->  2101.18s] this literally looks like is if we were
+[ 2101.18s ->  2104.20s] to play this bear market simulation and
+[ 2104.20s ->  2106.44s] we were holding this tech portfolio, we
+[ 2106.44s ->  2108.68s] can see here the market did well. So our
+[ 2108.68s ->  2110.54s] tech portfolio did well, even though we
+[ 2110.54s ->  2113.40s] had this period of distress in the middle. If
+[ 2113.40s ->  2116.02s] we had a bear market where the market was
+[ 2116.02s ->  2118.46s] just in a slow bleed, we would be
+[ 2118.46s ->  2121.08s] overexposed. That's exactly what it means
+[ 2121.08s ->  2123.24s] to have a higher beta than one were
+[ 2123.24s ->  2126.80s] overexposed to that particular factor. But
+[ 2126.80s ->  2129.12s] if we were trading an alpha and the market
+[ 2129.12s ->  2132.40s] was in that bleed, then it really wouldn't
+[ 2132.40s ->  2135.12s] matter at all for our strategy. That is the
+[ 2135.12s ->  2137.16s] fundamental difference between alpha and
+[ 2137.16s ->  2140.54s] beta. When it comes to the alpha itself, this
+[ 2140.54s ->  2143.28s] could be active trading, maybe you're trading a
+[ 2143.28s ->  2145.62s] particular strategy intraday, maybe you're
+[ 2145.62s ->  2148.02s] harvesting volatility premium, so on and so
+[ 2148.02s ->  2151.08s] forth. Maybe this is manager skill. And even
+[ 2151.08s ->  2152.68s] during this bear market, you're picking
+[ 2152.68s ->  2155.74s] winners more unlikely, but in the context of
+[ 2155.74s ->  2159.50s] these models, definitely plausible. Now, the
+[ 2159.50s ->  2162.52s] elephant in the room regarding these pricing
+[ 2162.52s ->  2166.12s] models is that these betas like what we've
+[ 2166.12s ->  2170.80s] computed above in these regressions are
+[ 2170.80s ->  2174.36s] statistics. And what do we know about
+[ 2174.36s ->  2176.08s] statistics? Well, in practice, they don't
+[ 2176.08s ->  2177.94s] converge. We don't have the law of large
+[ 2177.94s ->  2180.84s] numbers and we don't have the central limit
+[ 2180.84s ->  2182.54s] theorem. We don't have any of the nice
+[ 2182.54s ->  2185.56s] asymptotic guarantees that we do in the
+[ 2185.56s ->  2188.46s] classroom. And what you're seeing here is the
+[ 2188.46s ->  2192.50s] beta over time for each sector portfolio, tech,
+[ 2192.90s ->  2195.66s] healthcare, and consumer staples. And you're
+[ 2195.66s ->  2198.98s] going to notice a similar jump around the
+[ 2198.98s ->  2202.72s] period of distress. So even if you develop a
+[ 2202.72s ->  2205.62s] portfolio that has these beautiful exposures
+[ 2205.62s ->  2207.96s] based on data you've calibrated it to, maybe
+[ 2207.96s ->  2211.22s] you're extending CAPM to Fama, French 3, 5,
+[ 2211.34s ->  2214.14s] Carhartt, whatever, you come up with this nice
+[ 2214.14s ->  2216.36s] allocation so that you have these desired
+[ 2216.36s ->  2220.30s] exposures, they're going to change over time. And
+[ 2220.30s ->  2224.38s] that is why effectively we all have jobs. And
+[ 2224.38s ->  2227.22s] this is what portfolio management actually looks
+[ 2227.22s ->  2230.68s] like in practice. Our job is going to be to pick
+[ 2230.68s ->  2233.64s] some form of a goal, whether it's high growth
+[ 2233.64s ->  2236.88s] or low risk, whatever. And we're going to use
+[ 2236.88s ->  2239.48s] these quantitative tools and techniques to
+[ 2239.48s ->  2241.90s] develop allocations either based on historic
+[ 2241.90s ->  2244.80s] data to try to match different factors or, you
+[ 2244.80s ->  2247.84s] know, whatever the case may be in order to try to
+[ 2247.84s ->  2251.20s] inform the construction of the portfolio and
+[ 2251.20s ->  2253.74s] facilitate our investment goals. When it comes to
+[ 2253.74s ->  2256.66s] my portfolio, what I'm primarily concerned with is
+[ 2256.66s ->  2259.48s] not just developing the target allocation, because
+[ 2259.48s ->  2262.52s] that's the easy part. Once you develop a target
+[ 2262.52s ->  2265.52s] allocation with a return profile that you like, your
+[ 2265.52s ->  2268.58s] objective is to observe the stability of your
+[ 2268.58s ->  2272.66s] selection into the future. And that is what most of
+[ 2272.66s ->  2275.28s] the work I do on a daily basis is when it comes to
+[ 2275.28s ->  2279.04s] managing my portfolio, I'll have a particular selection,
+[ 2279.04s ->  2282.96s] and I'll continue to update on a rolling basis my
+[ 2282.96s ->  2286.60s] exposures under these different pricing frameworks so
+[ 2286.60s ->  2290.72s] I can continue to inform my decision making over time.
+[ 2290.88s ->  2293.24s] Too long to watch here is your executive summary. Basic
+[ 2293.24s ->  2296.64s] equity risks include market industry and idiosyncratic
+[ 2296.64s ->  2301.02s] exposures. We can diversify away industry and idiosyncratic
+[ 2301.02s ->  2304.32s] components, but we cannot diversify away that market
+[ 2304.32s ->  2306.98s] component because as we've seen here in the statistical
+[ 2306.98s ->  2311.00s] mechanism for diversification breaks down due to market
+[ 2311.00s ->  2314.44s] distress, increasing correlation structures in that
+[ 2314.44s ->  2318.16s] linear sense. Now, because we've observed these risk
+[ 2318.16s ->  2321.80s] factors in a linear way, we can use unsupervised machine
+[ 2321.80s ->  2324.80s] learning, principal component analysis via eigen
+[ 2324.80s ->  2328.40s] decomposition of a covariance matrix, singular value
+[ 2328.40s ->  2332.06s] decomposition of a data matrix. This is linear dimensionality
+[ 2332.06s ->  2336.80s] reduction to observe these risks quantitatively after we
+[ 2336.80s ->  2341.36s] have economically and qualitatively visualized them. The
+[ 2341.36s ->  2344.90s] variance explained by the first few principal components
+[ 2344.90s ->  2349.20s] comprise of the major facets of risk. It's not a shock to
+[ 2349.20s ->  2353.58s] see variation explained dominated by the market and sector
+[ 2353.58s ->  2357.08s] factors. But what about the rest? Well, that's where other
+[ 2357.08s ->  2362.52s] facets of priced risk live. And alpha, the excess variation not
+[ 2362.52s ->  2368.36s] explained by these factors of risk. Beyond PCA, we can model these
+[ 2368.36s ->  2372.14s] specific exposures using pricing frameworks like CAPM, Fama French
+[ 2372.14s ->  2377.44s] 3, 5, Carhartt, so on and so forth. Now, portfolio construction in
+[ 2377.44s ->  2381.56s] general is about developing target allocations to these different
+[ 2381.56s ->  2386.38s] exposures explained or unexplained, which would be considered manager
+[ 2386.38s ->  2391.30s] skill if statistically significant to meet an investment goal. But of
+[ 2391.30s ->  2397.62s] course, these allocations and targets are likely to change over time. So
+[ 2397.62s ->  2402.28s] with the efficacy of our constructions, along with the efficacy of our
+[ 2402.28s ->  2408.12s] quantitative techniques, and that is effectively how I go about managing my
+[ 2408.12s ->  2413.40s] portfolio. I develop target allocations based on these academic models. I
+[ 2413.40s ->  2419.56s] observe deviations in practice after calibration, and I adjust to ensure that I
+[ 2419.56s ->  2425.24s] am meeting my investment goals. Some future topics, technical videos and other
+[ 2425.24s ->  2428.76s] discussions to look forward to. Now that we've teed it up after talking about
+[ 2428.76s ->  2433.82s] portfolio management in general, I'd love to discuss Fama French 3, 5, Carhartt
+[ 2433.82s ->  2438.64s] factor modeling in general. This idea of even taking long short positions based on
+[ 2438.64s ->  2443.40s] particular factors, market neutral portfolio construction. We've already covered
+[ 2443.40s ->  2448.20s] the Poisson process. So I'd like to actually implement it in market making models,
+[ 2448.20s ->  2454.44s] Martin's jump diffusion, Bates with the stochastic variance, Hawks processes, the list
+[ 2454.44s ->  2460.20s] goes on. I'd like to get back into more qualitative videos if there's interest. My
+[ 2460.20s ->  2467.40s] first year as a quant, my thoughts on AI replacing quants, things of that nature. I did a video on
+[ 2467.40s ->  2473.88s] Volterra processes a little while ago. I'd like to continue with those non-Markovian models. Those
+[ 2473.88s ->  2479.40s] are certainly more technical videos, the SIG Vol model, calibration pricing, rough path theory in
+[ 2479.40s ->  2485.08s] general, but it will certainly be based on what you guys would like to see next. So let me know in
+[ 2485.08s ->  2492.04s] the comments below what you would like to see in the coming weeks as far as new topics to cover. And
+[ 2492.04s ->  2498.04s] don't worry, I haven't forgotten about our quant builds. In our last build, we built a live
+[ 2498.04s ->  2504.28s] volatility surface in interactive brokers with Python. And I would really like to get into this
+[ 2504.28s ->  2511.00s] idea of backtesting trading strategies and portfolios because I see it done tremendously
+[ 2511.00s ->  2517.24s] incorrectly. And if there's interest, I know I've been toying with this idea of an algorithmic
+[ 2517.24s ->  2523.96s] Volk trading system for quite some time. Perhaps we can talk about gamma scalping and
+[ 2523.96s ->  2530.84s] this idea of collecting data, but in an algorithmic way. Again, this will largely be based on you guys.
+[ 2530.84s ->  2534.92s] I'll leave a link in the description below, as I mentioned toward the start of this video,
+[ 2534.92s ->  2540.68s] to get started with interactive brokers. If you would like, I use them for all of my quant builds.
+[ 2540.68s ->  2546.12s] Again, can't recommend them or their API highly enough. And that's going to do it for this video
+[ 2546.12s ->  2550.92s] on how I go about managing my portfolio. I hope you enjoyed it. I hope you learned something.
+[ 2550.92s ->  2556.28s] This video certainly took a tremendous amount of time to put together. So if you enjoyed it,
+[ 2556.28s ->  2560.12s] and you want to see more like it in the future, please like comment, subscribe, share again.
+[ 2560.12s ->  2567.40s] It helps me out tremendously. It is always greatly appreciated. Check out quant guild.com to master
+[ 2567.40s ->  2573.32s] your quantitative skills for trading and market making roles. Other than that, I want to thank you
+[ 2573.32s ->  2578.12s] so much for watching and I will see you in the next video.

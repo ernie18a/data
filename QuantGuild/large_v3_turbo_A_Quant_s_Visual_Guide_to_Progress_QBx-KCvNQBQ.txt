@@ -1,0 +1,185 @@
+[    0.46s ->     8.10s] Welcome back. Today what I'd like to do is mix things up a little bit and talk about the idea
+[    8.10s ->    15.72s] of progress. A lot of what we do on this channel is heavy duty theory as it pertains to
+[   15.72s ->    23.14s] finance, statistics, computer science, data science, AI, what have you. And I want to point
+[   23.14s ->    29.22s] out that a lot of the different tools and techniques from traditional statistics can help
+[   29.22s ->    36.46s] really quantify and explain things that we try to do in our daily lives, not just in the context of
+[   36.46s ->    42.06s] P&L and trading and coming up with some sort of neural networks loss function whose converges for
+[   42.06s ->    48.98s] a particular type of classification problem, but rather the overarching idea of goal setting and
+[   48.98s ->    56.42s] progress can be essentially quantified as a time series. And I wanted to discuss this idea today
+[   56.42s ->    63.42s] with an example of what it looks like in this accumulation process to essentially achieve
+[   63.42s ->    70.48s] some sort of goal. Now if that sounds abstract, bear with me because I'm going to give you a practical
+[   70.48s ->    76.94s] example here. And really the practical example can be anything that you are trying to do. It doesn't
+[   76.94s ->    84.54s] have to be quantitative. We love numbers because it is essentially showing progress if we have an
+[   84.54s ->    91.78s] increase and regression if we have a decrease. But if you take something like I compete in Brazilian
+[   91.78s ->    98.84s] Jiu Jitsu for example, how can I quantify my progress? Just because I beat somebody else, does that mean that
+[   98.84s ->   105.22s] I'm better than I was yesterday? If I know more today, does that make me better than I was yesterday?
+[  105.78s ->   111.20s] Well clearly if I train for a year and I go a couple times a week, then I'm going to be better than I was
+[  111.20s ->   117.76s] last year. But what does that actually mean? What does that look like graphically? That's essentially
+[  117.76s ->   122.58s] what I'm going to show you today. Now if we're talking about something that is easily quantifiable
+[  122.58s ->   128.40s] like a timed run, then this is going to be even more applicable. If we're talking about something
+[  128.40s ->   133.38s] like weight loss, take this accumulation process that has a positive trend over time and make it
+[  133.38s ->   140.90s] negative. It's going to be the exact same interpretation. So my point is you can quantify progress even if it's
+[  140.90s ->   148.02s] intangible or at least interpret it in this way graphically. So let's take a look at this data
+[  148.02s ->   154.44s] here that I've generated. So the first column is an actual realization. Let's say I weigh myself this
+[  154.44s ->   160.76s] morning and I'm trying to lose weight. That could be a realization. Let's say I run a mile today and I
+[  160.76s ->   167.32s] get a time. That could be a realization of the data. And what you have to realize is that this realization
+[  167.32s ->   173.96s] is pretty noisy. Now what do I mean by noisy? Well, that may not be an accurate representation of
+[  173.96s ->   181.32s] the true level or the true expected level that you are currently residing at. If I go out and I run a
+[  181.32s ->   187.66s] mile right now at six minutes, does that mean that that is the best performance that I have? Or am I
+[  187.66s ->   195.66s] operating around a certain level with some give either way? Same thing with weight. If I have a weight of
+[  195.66s ->   201.02s] 200 pounds this morning, that doesn't necessarily reflect the true level that I'm at. What if I
+[  201.02s ->   205.78s] drank a lot of water before I weighed myself? All of these things play a factor into our interpretation
+[  205.78s ->   212.42s] of this realized data point. Now the fortunate thing for us is we can accumulate these data points
+[  212.42s ->   218.92s] over time and we can take the cumulative mean and the cumulative variance. Now the cumulative mean is
+[  218.92s ->   224.86s] hopefully going to give us an insight into the true level in which we are actually realizing data
+[  224.86s ->   231.16s] points about. So if I am roughly 200 pounds and that's my true level, then I'll expect some give
+[  231.16s ->   237.90s] either way on any given day, but my true level is 200 pounds. If I run a mile in six minutes, I might
+[  237.90s ->   243.54s] expect to give in either direction on any given day, but I know my true level is around six minutes.
+[  244.88s ->   253.34s] What does this mean for progress? Well, progress doesn't have to be linear. Progress also can look like
+[  253.34s ->   259.50s] regression. And I want to explain why, because it can be incredibly frustrating when you step on a scale
+[  259.50s ->   269.43s] and you see the weight increase when in reality it is part of the process of progress. Okay. Let's take
+[  269.43s ->   279.60s] a look at our first chart. This is a cumulative analysis of progress at time T equals capital T.
+[  279.60s ->   289.91s] Capital T is the end goal here. Let's say our end goal was, was 25. So this could mean anything. This
+[  289.91s ->   297.45s] could be, maybe I wanted to work my way up to 25 reps at a certain weight. Maybe I wanted to work my
+[  297.45s ->   305.53s] way up to 25 pounds in the gym. Maybe I wanted to work my way up to 25 rounds of sparring. This could
+[  305.53s ->   311.21s] mean a variety of different things. This could be any goal in which you set. Now, if this was weight,
+[  311.27s ->   316.19s] we would hope that the scatter plot would trend downward, but I don't want to focus too much on
+[  316.19s ->   322.29s] the actual example here. This could be any goal in which you set for yourself. I want to talk
+[  322.29s ->   329.71s] specifically about the analysis. Now to put it in relatively reasonable terms that is easy to
+[  329.71s ->   334.75s] interpret, we'll talk about test scores. So I want to keep in mind that this doesn't have to be
+[  334.75s ->   339.77s] strictly quantitative. This could be qualitative as well. Your progress does not have to be easily
+[  339.77s ->   347.35s] quantifiable for this chart to apply to the goal in which you are progressing towards. But let's take
+[  347.35s ->   353.77s] a look at each of these red dots as a practice test. And let's say that the score that we are trying to
+[  353.77s ->   364.64s] achieve is a 25. Well, when we start out, we're starting out at roughly a 10. But each test has a random
+[  364.64s ->   370.16s] set of questions. Our priors may influence our ability to answer those questions. If I have an
+[  370.16s ->   374.78s] engineering background, then questions about probability and statistics and mathematical
+[  374.78s ->   380.34s] questions are going to be easier for me to answer rather than perhaps qualitative questions about
+[  380.34s ->   388.76s] English or history. But as I continue to study, as I continue to improve, and I take more practices,
+[  388.76s ->   395.76s] you'll see that these red dots start to realize a bit higher. Now, right away, I take a 10 and then I jump up to
+[  395.76s ->   404.22s] like an 11. Then I jump up to like a 14, 14, then I go down to like a 13. So these realizations are random over
+[  404.22s ->   409.96s] time. But just like we said how there's given any direction for a mile that I run, or there's given any
+[  409.96s ->   417.48s] direction for my weight on a given day, what we really need to do is analyze this progress over time. We're trying to
+[  417.48s ->   425.64s] analyze this true level over time. And progress is measured by an increase in that true level. It's not any
+[  425.64s ->   434.34s] particular score. If I jumped from a 10 to a 17, and then my true level is really 13. If I continue to take
+[  434.34s ->   440.32s] tests, I'm not going to get to that 17. So clearly here, we would not expect a performance of a 17 on
+[  440.32s ->   446.76s] that test. Now, what I've done is I've also plotted the cumulative mean, which should represent the true
+[  446.76s ->   453.54s] level that you are currently residing at, along with the cumulative variance. So what this means is,
+[  453.84s ->   457.94s] as time progresses, you'll see, okay, these red data points are starting to trend up.
+[  458.52s ->   464.36s] What else is trending up is this cumulative mean that is hopefully a representation of your true
+[  464.36s ->   470.41s] level. Now, what you'll notice is the variance window tends to increase over this time frame.
+[  471.45s ->   476.45s] Now, why is that? Well, you can see that over this time frame, there's been significant deviation from
+[  476.45s ->   482.17s] this initial score of 10. Now, that's what we want, because that's what represents progress in this case,
+[  482.55s ->   488.73s] when these red dots start to trend upwards. We're increasing the score on our test. Now, the problem
+[  488.73s ->   494.83s] with this cumulative measure of mean and standard deviation is, hopefully you can see here, all of
+[  494.83s ->   501.05s] these red points are above this cumulative mean, except for this one, which is on the cumulative
+[  501.05s ->   505.59s] mean and these earlier points that are below it. But you can see that this cumulative mean trends
+[  505.59s ->   513.77s] upward over time. The problem is, there's this non-stationarity in the mean. This cumulative mean
+[  513.77s ->   521.39s] over time is not a good representation of the level that we're at, at time 40. If it was, then these
+[  521.39s ->   527.77s] points would be distributed about this cumulative mean value. Now, the upside is, if this cumulative
+[  527.77s ->   533.83s] mean value is positive in terms of the trend, then that means we're improving in the context of this
+[  533.83s ->   538.99s] problem. We want our test scores to improve. Now, what you'll also notice is, does everybody see the
+[  538.99s ->   545.79s] variance here? The variance tends to be significantly wider, but we have upside variance that's contributing
+[  545.79s ->   552.95s] to this massive considered downside variance with respect to the cumulative mean, which is just not
+[  552.95s ->   562.55s] the case. In other words, we've been testing around 20 since it looks like early 25. We've been testing
+[  562.55s ->   570.53s] around 20. So clearly, we're not going to expect a test score to be 15, 10, or even below 10 at this
+[  570.53s ->   575.79s] point, even though we have this upside deviation. We don't want to, we don't want that to contribute to
+[  575.79s ->   581.91s] the downside deviation in trying to understand our progress over time. So essentially what I'm saying
+[  581.91s ->   588.39s] is, if we take the cumulative mean over time, and that trend is positive, that's a good thing for us.
+[  588.39s ->   593.71s] That's a good thing for our progress. And in fact, as these data points realize, we could see the trend
+[  593.71s ->   599.63s] for these data points is overall positive, but our measure of variance seems to be wildly incorrect
+[  599.63s ->   607.39s] because we're not expecting any test scores below 15 past 40. That does not seem to be representative
+[  607.39s ->   615.65s] of what actual test scores we are practicing at. So what can we do to better offset this? Well,
+[  615.65s ->   620.43s] in terms of time series analysis, this non-stationarity means that we can't use the
+[  620.43s ->   625.51s] cumulative mean because over time, our level is changing. That's what quantifies progress.
+[  625.93s ->   632.28s] So instead of a cumulative analysis, I'm going to look at a windowed analysis. Now, when I look at a
+[  632.28s ->   637.40s] windowed analysis, I have a seven period rolling mean, and I'm looking at plus or minus one standard
+[  637.40s ->   642.58s] deviation away from this rolling mean. And you'll see, hey, this is actually a pretty good
+[  642.58s ->   648.06s] representation of the spread in our realized data points about the current level in which we're
+[  648.06s ->   655.74s] operating. So let's say that I'm testing currently around period, let's say seven, I'm testing around
+[  655.74s ->   663.22s] 14, plus or minus one standard deviation above or below this mean right here is going to be a
+[  663.22s ->   668.72s] representation of the spread on any given test around this time that I can expect to receive a
+[  668.72s ->   676.40s] score. So what I mean to say is if I'm currently testing on an average of 13, then plus or minus one
+[  676.40s ->   682.82s] standard deviation away from this mean is a reasonable approximation of how much on a great
+[  682.82s ->   690.22s] test at that time I can expect and how poorly on a bad test I can expect. So essentially here I'm
+[  690.22s ->   697.07s] looking at, okay, well at time equals seven, I'm testing at a level of roughly 13. But on the upside,
+[  697.07s ->   702.87s] I realized a 16 here that has no bearing on my current level, my current level really is closer
+[  702.87s ->   709.77s] to a 1314. But maybe I did particularly well on that test. Maybe that run I was feeling really,
+[  709.91s ->   716.29s] really good. Maybe I just so happened to not drink a lot of water yesterday, my weight declined more
+[  716.29s ->   720.97s] than it should have, my run was faster than it should have been represented representative of my
+[  720.97s ->   726.57s] true level. So that's contributing to the overall variance. Now, on the flip side, maybe there were
+[  726.57s ->   731.37s] concepts on that test that I didn't understand. Maybe I drank way too much water yesterday or ate
+[  731.37s ->   737.43s] too much food. Maybe I'm feeling super tired on my run. That contributes to downside variance. There's
+[  737.43s ->   743.03s] too many factors at play. But what we do know is this true level here is representative of our current
+[  743.03s ->   748.69s] progression. That is, you can see as we progress through time and we take this rolling mean, so we're
+[  748.69s ->   755.11s] only taking the mean of the past seven realizations at any given time. You can see that this positively
+[  755.11s ->   760.83s] trends up significantly more than the cumulative mean, which is weighed down by earlier observations.
+[  763.33s ->   770.11s] Moreover, I want you to notice something very specific about the variance window. And this is
+[  770.11s ->   776.25s] what contributes to a significant amount of frustration in progress. And that is, if we are
+[  776.25s ->   782.03s] at time seven, and I realize this 16. So I've been studying, studying, studying, I get a 16.
+[  782.03s ->   790.43s] What about my next test? I'm down to 12. Then I'm down to 12. I'm at the bottom of my variance
+[  790.43s ->   797.36s] window here. Now, does that mean that I'm not progressing? It does not. It does not mean that
+[  797.36s ->   802.52s] I'm not progressing. In other words, I'm still progressing. I'm just realizing points at the bottom
+[  802.52s ->   808.20s] of my potential. That doesn't mean that I don't have significant upside potential or that my true level
+[  808.20s ->   813.82s] is not progressing in a direction that I want it to be progressing in. In other words, you'll see I
+[  813.82s ->   818.42s] test it at the top of my variance window here. Then I test down, test down, I start to test up,
+[  818.48s ->   824.98s] I test down again. Imagine if this was weight loss over weeks. Talk about the frustration. You dropped
+[  824.98s ->   831.96s] five pounds, then you gain a pound, gain a pound, are neutral. Maybe you gain half a pound, half a pound,
+[  831.96s ->   837.26s] and then boom, up here you drop more weight, you drop more weight. So that's what I'm trying to say
+[  837.26s ->   843.48s] is this progress that you're accumulating over time is in terms of this rolling window, this level.
+[  844.36s ->   850.56s] And you can contribute pretty similarly to the idea of accumulating positive expected value over time
+[  850.56s ->   857.38s] in trading and finance. Now, if that means nothing to you, your progress alone is this black line.
+[  857.38s ->   863.08s] This black line is going to continue to trend up as you do things that move you towards your goal.
+[  863.52s ->   870.00s] You train every day. You eat appropriately every day. You run every day. You lift weights every day.
+[  870.16s ->   874.36s] You study every day. That's going to get this black line to trend in the right direction.
+[  874.86s ->   880.42s] Now, this variance window that is your potential upside and downside on any given day,
+[  880.42s ->   888.90s] that is always going to be a factor in whatever it is you are doing. So if I'm trying to weigh myself
+[  888.90s ->   894.36s] tomorrow, there's going to be some variance. That is, there's some deviation away from that true
+[  894.36s ->   900.12s] level that I'm sitting at. If I'm testing tomorrow, there's going to be some deviation away from what
+[  900.12s ->   905.58s] I'm currently testing at. Now, if I'm fortunate and lucky and the circumstances are on my side,
+[  905.58s ->   911.20s] then in the short run, I'm going to have upside deviation. If I'm not fortunate, then I'm going
+[  911.20s ->   916.74s] to have downside deviation. And that is a function of way too many factors to be able to play into
+[  916.74s ->   922.66s] a very basic model like this. But overwhelmingly, the progress is trending in the right direction.
+[  923.56s ->   929.14s] But hopefully now you're starting to see why the progress is nonlinear, why it's frustrating
+[  929.14s ->   935.64s] in some capacity, especially if you're working very hard. How do you know it's extremely frustrating?
+[  935.82s ->   942.66s] Well, we don't have this chart. This is the chart of progress after you've put in all of the work
+[  942.66s ->   948.88s] from zero to time 40. This is the cumulative chart from zero to time 40. You're looking at a chart,
+[  948.96s ->   953.42s] let's say you just started progressing towards a goal, you're looking at a chart that looks like this.
+[  953.42s ->   962.45s] It looks something like this. And imagine the frustration that you've been doing this for
+[  962.45s ->   969.25s] maybe 10 days, 10 weeks, the units of time themselves are arbitrary, but you start to see
+[  969.25s ->   976.55s] an improvement to 14, 14, 13, 15, 16. And now you're testing down again to 12, 12. But you're like,
+[  976.63s ->   986.03s] oh man, like this is day week eight. I was starting from 10. I was starting from 10. But we don't have
+[  986.03s ->   991.33s] a cluster of points here. 10 could have been the top of your variance window. The true level could
+[  991.33s ->   999.62s] have been way below 10. In reality, you've progressed. If your true level was, if you were operating at
+[  999.62s ->  1004.76s] the top of your variance window, then your true level was even below this. Your true level could
+[ 1004.76s ->  1013.02s] have been a seven. And you've accumulated this progress, but you don't see it. So all this is to
+[ 1013.02s ->  1018.40s] say is whenever you set a goal, whether it has quantitative metrics or qualitative metrics,
+[ 1018.40s ->  1025.26s] qualitative metrics are much more difficult to actually measure progress toward, it doesn't
+[ 1025.26s ->  1031.38s] matter, essentially, is what I'm saying. This picture, this graph, this interpretation is how
+[ 1031.38s ->  1037.06s] you should visualize progress. Even if you can't realize these data points over time, even if you
+[ 1037.06s ->  1043.08s] can't take a practice test, can't weigh yourself, can't go on a run and time yourself, whatever it be
+[ 1043.08s ->  1050.55s] your goal. This is what the interpretation of progress over time should look like. You're going
+[ 1050.55s ->  1055.45s] to have some variance around the level that you're currently operating on. And every step that you
+[ 1055.45s ->  1060.37s] take towards your goal is going to increase that level. And that variance window is always going to
+[ 1060.37s ->  1066.91s] be there. Now, there may be other factors that you can implement to decrease or increase your variance
+[ 1066.91s ->  1073.77s] window. So for example, maybe I have no nutrition plan when I run. Well, clearly, some days when I eat a lot,
+[ 1073.77s ->  1079.09s] the variance is going to be much higher. Maybe I eat really poorly or I eat really well. That's going to be
+[ 1079.09s ->  1085.13s] higher. Maybe I eat more consistently. That's going to contribute to a narrower variance window. All of this
+[ 1085.13s ->  1091.17s] is open to interpretation and discussion. But it was very important that, you know, I wanted to kind of branch
+[ 1091.17s ->  1098.87s] out and apply the mathematics to something that's a little more tangible in everyday life. Because I think we all
+[ 1098.87s ->  1106.45s] have goals, we all have things that we want to achieve. And progress is a very confusing idea. It
+[ 1106.45s ->  1110.99s] doesn't have to be fitness oriented. It doesn't have to be academic, it could be anything, it could be
+[ 1110.99s ->  1117.67s] progress in relationships and our personal skills, things that don't have quantitative measures, they will
+[ 1117.67s ->  1124.85s] still evolve over time in this capacity. Lecturing for me is a very good example. When I first started
+[ 1124.85s ->  1131.87s] lecturing, it was a mess. I had to have kind of a script, I had to know what I was going to say and
+[ 1131.87s ->  1139.83s] where I was going to go. But year over year, as I've continued to discuss different ideas, math,
+[ 1139.99s ->  1146.61s] code, statistics on the spot, answering questions extemporaneously, that is what contributes to my
+[ 1146.61s ->  1152.47s] success as a lecturer and the development and progress over time. I can't measure that. But I do know
+[ 1152.47s ->  1158.99s] on any given day, I may deliver a wonderful lecture, or I may deliver a terrible lecture relative to
+[ 1158.99s ->  1166.24s] this true level in which I reside at that black line. Now, the important thing for me is year over
+[ 1166.24s ->  1170.36s] year, I know that that black line has been improving. How do I know because I haven't been
+[ 1170.36s ->  1176.08s] able to quantify these red points? Well, take a look at my videos from years ago. Take a look at them
+[ 1176.08s ->  1181.88s] now. If I told you years ago, I needed a script to be able to write a video, to be able to record a
+[ 1181.88s ->  1190.00s] video, versus now where I just hop in front of a camera and coherently put together ideas that
+[ 1190.00s ->  1197.45s] essentially articulate what I'm trying to get across to my viewers. Well, I would say that that's
+[ 1197.45s ->  1204.15s] the black line going up into the right. Thanks for watching. I hope you enjoy this video.
+[ 1204.99s ->  1206.75s] And I'll see you in the next one.

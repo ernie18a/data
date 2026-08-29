@@ -1,0 +1,60 @@
+[    0.00s ->     6.14s] Hey guys, I'm going to walk you through a super simple call credit spread strategy step-by-step
+[    6.14s ->    12.80s] that can help you have a 72% win rate and make a 30% annualized return. That's right,
+[   12.90s ->    19.02s] you can 3x the average market return by following this one simple strategy that I'm going to give
+[   19.02s ->    24.80s] you step-by-step. So let's dive in and see how this works. So I'm going to go through the criteria
+[   24.80s ->    30.28s] what to look for. Then I'm going to show you on a stock chart so it makes sense. All right, so here
+[   30.28s ->    36.98s] we go. Number one, you want the SMA 10 period moving average price to be less than yesterday's
+[   36.98s ->    42.96s] value. You want the stock price to be underneath the 10 period moving average. You want the price
+[   42.96s ->    49.98s] to be greater than minus three standard deviations of the moving average. And you want the stock price
+[   49.98s ->    56.80s] that moved no more than 1% and no less than minus 1%. So let's look at this specifically.
+[   57.30s ->    60.34s] Hey guys, I just want to hop in here real quick and let you know about a free training that I'm
+[   60.34s ->    64.70s] doing here very soon. If you click the link down below, you can access it and learn how I make three
+[   64.70s ->    69.88s] to $5,000 every single month using the new mother credit spread trading strategy. I'm going to walk
+[   69.88s ->    72.58s] you through it step-by-step. So by the end of the training, you'll walk through knowing how to
+[   72.58s ->    79.96s] actually implement it and use it for yourself. So you can risk $25 to make $25 with a 75% win.
+[   79.96s ->    83.64s] So if that is interesting to you, please make sure to click the link down below and save your
+[   83.64s ->    88.06s] spot. All right. Enjoy the rest of this video here. Number one, what do we want to happen?
+[   88.16s ->    92.56s] Well, as listed here, we want the SMA price to be less than yesterday's. What does this mean?
+[   92.82s ->    97.32s] It means we want the short-term trend to be going down, right? We want to see that this little
+[   97.32s ->   104.66s] band here that we have, the blue one is pointing down. That means that yesterday's blue line value
+[  104.66s ->   111.94s] is less or should say greater than today's. So today's is less than yesterday's, which means
+[  111.94s ->   117.18s] it's going down. And so if it's going down, then we have a short-term trend, which we can capitalize on
+[  117.18s ->   125.08s] for call credit spreads. Next, we want the stock price to be under the 10-period moving average.
+[  125.16s ->   131.06s] So this blue middle line right here is the 10-period moving average, and we're below it. So that's
+[  131.06s ->   137.24s] check on that criteria. Next, we want the stock price to be greater than minus three standard
+[  137.24s ->   144.42s] deviations of two-period moving average. Sorry, I can't talk sometimes. Anyways, so we discussed
+[  144.42s ->   149.98s] last time in the put credit spread strategy, there's a recovery approach where the stock goes
+[  149.98s ->   156.44s] below this bottom yellow line, then it's highly likely mathematically to bounce and make money for
+[  156.44s ->   161.04s] you if you're trading to the upside. You see here, bounce, bounce, bounce, right?
+[  161.06s ->   168.02s] And so because of that, we trade a put credit spread approach in that scenario. So we don't want
+[  168.02s ->   173.94s] the stock to be below this yellow band because when it is, then now we know that the market is
+[  173.94s ->   177.82s] most likely going to recover. So we want to stay out of the market. We want to be in call credit
+[  177.82s ->   184.96s] spreads when the market is headed down. So we can do the call trading approach when it's above this
+[  184.96s ->   190.58s] bottom yellow line. Now, if you're wondering where this indicator comes from, you have it for free
+[  190.58s ->   196.74s] as a part of this course. So again, you can access it linked above or down below to get this for
+[  196.74s ->   203.42s] yourself. Okay. Number three. No, no, that was number three. Number four. So if we're looking at
+[  203.42s ->   208.56s] the daily price movement, which you can see for today, if we look up here in this corner, this
+[  208.56s ->   215.74s] little parentheses thing, it shows the daily price movement for today as minus 0.04%. We want to make
+[  215.74s ->   224.74s] sure that the movement of today is greater than minus 1% and less than 1%. So within a 1% range.
+[  225.14s ->   230.02s] Why? Well, because that just historically works best. You don't want to really enter on strong
+[  230.02s ->   234.34s] updates or strong down days because then that means the trends either changing or over, but instead,
+[  234.40s ->   239.86s] we're just going to get in safely in these types of positions. So that's what we're looking for in
+[  239.86s ->   244.90s] those setups. Next is the expiration date. What do we choose? It's the same for the put credit spread
+[  244.90s ->   249.86s] strategy where it's the current day plus nine. And we round up to Monday, Wednesday, or Friday,
+[  250.00s ->   254.52s] if plus nine ends us up on a Tuesday or Thursday. So for instance, when I record this video,
+[  254.60s ->   259.08s] that's October 5th. So if we had nine days, it makes it October 14th. And I believe that's a
+[  259.08s ->   264.86s] Wednesday. So we would stay there. So October 14th would be our expiration date. Next, our strike price
+[  264.86s ->   272.12s] would be roughly 1% above the stock price. That would be our call credit trade. But for this one,
+[  272.12s ->   277.44s] we're going to be using a 25 Delta, and we're going to be placing a $1 wide call credit spread
+[  277.44s ->   285.36s] trade based on this setup. Now, if we follow that to a T, then we'll have a 72% win rate with a 30%
+[  285.36s ->   291.06s] annualized return. This is historically since 2014, what the returns we could have expected. And it's
+[  291.06s ->   296.46s] working for us right now. It's the exact strategy that we're using in the market right now to make
+[  296.46s ->   303.50s] money. This strategy alone on my small account has made me almost $1,000 just by trading this
+[  303.50s ->   309.00s] downside portion right here. So this is a great call credit spread trading strategy when the market
+[  309.00s ->   315.76s] is recovering. I mean, when the market is heading down to the downside, because we pushed up too fast,
+[  315.78s ->   320.94s] and now we're starting to retrace. This is what that strategy is good for. Anyways, guys, you can
+[  320.94s ->   325.62s] implement this right now. Or you can have the algo do it for you where it looks for this criteria
+[  325.62s ->   331.56s] step by step already does all the math, all the calculations, all the chart reading, you just need
+[  331.56s ->   336.50s] to look for okay, this is the strategy the alert for today based on the setup, just place it and now
+[  336.50s ->   341.66s] you're good to go. You'll have a 72% win rate at 32% annualized return, and you can place the trade
+[  341.66s ->   345.36s] in seconds. All right, guys, I hope that makes sense. I'll see you in the next lesson.

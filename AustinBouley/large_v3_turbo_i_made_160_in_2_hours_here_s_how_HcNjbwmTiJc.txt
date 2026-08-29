@@ -1,0 +1,122 @@
+[    0.04s ->     5.10s] In this video, I'm going to walk you through exactly how I made $160 in less than two hours.
+[    5.20s ->     8.48s] I'm going to show you the exact strategy I used, so by the time you get done with this video,
+[    8.80s ->    10.58s] you can actually see exactly how it's done.
+[   10.80s ->    14.48s] Here's the actual trade history log from Tasty Trade itself,
+[   14.56s ->    16.98s] which doesn't have paper trading, so you know it's live right here.
+[   17.24s ->    20.72s] You can see I entered on September 22nd at 9.38 in the morning,
+[   21.04s ->    25.08s] closed it at 11.16 that same day, and made a $160 profit,
+[   25.20s ->    28.70s] roughly $155 when you factor in commissions and fees.
+[   28.70s ->    31.58s] Let me show you exactly how I did that to enter here and exit here.
+[   31.66s ->    34.12s] We'll walk you through everything so that you have the game plan and strategy
+[   34.12s ->    36.62s] so that you can do it yourself as soon as tomorrow.
+[   36.72s ->    37.66s] So let's dive into it.
+[   37.88s ->    39.52s] How did I know to enter this trade?
+[   39.58s ->    41.50s] First off, I am trading SPX.
+[   41.54s ->    44.80s] This is the S&P 500 index, and when you're trading options,
+[   44.96s ->    47.62s] SPX is a great alternative because cash is settled.
+[   47.90s ->    50.18s] So if you ever get caught in a trade overnight,
+[   50.34s ->    52.64s] it's going to settle the cash, and it won't give you the share.
+[   52.78s ->    53.98s] So that's one way I do.
+[   54.24s ->    58.12s] I also love SPX for this tax advantage, so I pay less on taxes.
+[   58.12s ->    60.38s] Now, let's dive into the actual strategy.
+[   60.72s ->    62.78s] How in the world did I trade this and know what to do?
+[   62.82s ->    64.12s] Let's break it down step by step.
+[   64.20s ->    68.62s] Number one, I follow for this strategy what's called an opening range breakout,
+[   68.98s ->    71.66s] which for short is called ORB or ORB.
+[   72.02s ->    75.92s] ORB stands for looking at the market at a certain period of time in the morning,
+[   76.26s ->    80.94s] waiting for a high to form, and then only entering the market once that high has been broken.
+[   81.12s ->    86.16s] So for instance, when I use this strategy, it's my 60-minute ORB strategy.
+[   86.16s ->    90.50s] So that means I wait for the first hour of the day to look for a high to form.
+[   90.60s ->    93.76s] So the market opens here at 9.30 a.m. Eastern Standard Time,
+[   93.88s ->    97.76s] and from there, what I'm going to look at is I'm going to look at until 10.30.
+[   97.86s ->    99.66s] So basically, I let the morning go by.
+[   99.76s ->   101.42s] I don't do anything for the first hour.
+[  101.54s ->   104.90s] This helps me avoid emotion, trades, other things like that
+[  104.90s ->   108.70s] because I'm not getting caught up in the volatility of the morning spike.
+[  108.70s ->   114.04s] I also give it time for people trading the shorter-term ORB strategies to get caught
+[  114.04s ->   118.76s] and get stuck in trades because, again, running a 15-minute ORB strategy doesn't work well long-term.
+[  119.14s ->   122.32s] Anyway, so when I go to the 60-minute, that means I wait until 10.30.
+[  122.42s ->   126.30s] So this becomes when I am looking to enter the trade.
+[  126.72s ->   130.88s] So right here, 10.30, this is my first hour of the day that I'm looking at.
+[  131.26s ->   132.82s] Now, I wait for the high to form.
+[  132.90s ->   135.66s] The high formed right where the market ended that time.
+[  135.66s ->   139.56s] And as soon as the market closed above this, which I hear about 10.36,
+[  139.78s ->   143.86s] but you can see right here, 38 actually, 9.38.
+[  144.02s ->   145.24s] This is Central Standard Time.
+[  145.34s ->   150.28s] So 9.38 right here, the market broke that high, and that's where I entered.
+[  150.38s ->   154.24s] It's actually slightly, if I can move this, you might hear this arrow.
+[  154.24s ->   159.00s] I enter right here as soon as it broke right above, got filled, and that's how I entered.
+[  159.12s ->   161.84s] So that's how I identify when I'm entering.
+[  161.96s ->   164.58s] I'm looking at the first hour, waiting for the high to break.
+[  164.58s ->   170.04s] As soon as the high closes above, meaning SPX breaks above it and closes there on the one-minute shark,
+[  170.42s ->   171.22s] that's when I enter.
+[  171.30s ->   172.68s] Now, what trade am I entering?
+[  172.96s ->   174.52s] I'm entering a put credit spread.
+[  174.62s ->   174.84s] Why?
+[  175.16s ->   177.18s] Because this takes advantage of the upward market.
+[  177.30s ->   181.48s] As the market goes up, it profits that way, but also because it helps limit my risk.
+[  181.78s ->   183.50s] So this is how I personally enter this trade.
+[  183.60s ->   184.24s] So take notes.
+[  184.32s ->   191.28s] So 30 delta trade, which means that once it breaks out, I enter, or I should say I sell a put at the 30 delta.
+[  191.28s ->   195.44s] So I find that level, and then what I do is I buy $20 below it.
+[  195.74s ->   198.18s] Now, again, you can change this based on the risk you want to take.
+[  198.24s ->   199.32s] So let me show you a real example.
+[  199.66s ->   202.02s] If we go over here to TC trade right now, I go to the trade tab.
+[  202.52s ->   204.02s] I look at SPX.
+[  204.34s ->   208.18s] I also make sure, just for reference, that this is a 1DTE trade.
+[  208.42s ->   211.74s] That means we go one day out in the future, and I'll be wondering why 1DTE instead of 0DTE.
+[  211.80s ->   216.56s] I back-tested this a lot, and I just found that 1DTE works a lot better because it gives me more time to be run.
+[  216.56s ->   222.44s] So anyway, so if I go to 1DTE, and let's say I'm entering the trade right now, I'm going to the delta column,
+[  222.74s ->   226.48s] and I'm looking for the one closest to 30 delta, which, again, you can see right here, 28.32.
+[  226.64s ->   227.70s] Let's just say I'm going to pick 32.
+[  228.18s ->   230.98s] So I'm going to sell this one, and I'm going to go to $20 below it.
+[  231.28s ->   236.48s] So if it's 6,635, and the one I'm going to buy is going to be minus 20, so 6,615.
+[  237.02s ->   238.04s] This is going to be the one that I buy.
+[  238.86s ->   240.80s] This gives me a max profit, about $400.
+[  241.18s ->   244.04s] Max loss, about $1,600, and I can put on this trade.
+[  244.04s ->   247.50s] Now, if you are trading with a smaller account, you can do a $10 difference.
+[  247.72s ->   253.64s] So from 6,635, you can go $25, and this will decrease your risk down to $780.
+[  253.74s ->   257.04s] It would also decrease your profit, but it depends on what account size you're trading with.
+[  257.86s ->   260.06s] Regardless, step one, we wait for a 60-minute or breakout.
+[  260.18s ->   264.44s] Number two, we enter a put credit spread, 1DTE, 30 delta, about $20 out of the money.
+[  264.80s ->   267.42s] This is going to set you up for a very great trade.
+[  267.50s ->   269.02s] Now, we need to manage the trade.
+[  269.08s ->   270.24s] So how do we manage this trade?
+[  270.24s ->   274.50s] We do a 40% take profit on this strategy, so that's quite simple.
+[  274.60s ->   277.44s] That means once our trade has reached a 40% profit, we're going to close the trade.
+[  277.68s ->   279.78s] That's what happened here at about $1,216.
+[  280.04s ->   283.54s] Again, if we look at the exact trade price, go back to history, activity.
+[  283.92s ->   286.92s] You can see here, $1,116 central, so $1,216.
+[  287.22s ->   290.48s] So right here, closed out that trade for the 40% profit.
+[  290.82s ->   294.54s] Now, for a stop loss, we're going to close at roughly a 50% stop loss,
+[  294.82s ->   296.62s] aka whenever our short strike gets hit.
+[  296.62s ->   300.50s] So whenever this option that we sold gets hit or gets broken down below,
+[  300.78s ->   303.06s] because the trend has changed, we're going to close out that trade,
+[  303.26s ->   305.62s] which equates roughly to 50%.
+[  306.14s ->   308.28s] Anyways, that's the exact trade breakdown.
+[  308.46s ->   309.10s] That's the strategy.
+[  309.22s ->   310.02s] That's how I did it.
+[  310.08s ->   312.08s] Now, because you stayed this long through the video,
+[  312.14s ->   316.08s] I wanted to give you a special hint of why I also love this trade so much.
+[  316.36s ->   319.42s] So this is the strategy that I do every single time on SPX.
+[  319.48s ->   320.46s] I wait for this to break.
+[  320.72s ->   325.84s] But something that also worked out in our favor here is what is called an opening range filled.
+[  325.84s ->   329.28s] So you have, if the morning time, when you have a gap between
+[  329.28s ->   333.96s] yesterday's close and the morning's open, it's called a gap fill.
+[  334.32s ->   337.26s] So it comes up and it fills this gap, this level.
+[  337.38s ->   338.58s] It's going to fill in this level.
+[  338.94s ->   342.42s] But typically, this level determines where it's going to be the rest of the day.
+[  342.54s ->   346.36s] The fact that we broke above where it closed and kept going higher
+[  346.36s ->   349.18s] gave an indication that, hey, the market is bullish.
+[  349.50s ->   352.72s] And so in addition to our normal opening range breakout structure,
+[  352.82s ->   355.50s] we wait 60 minutes, we trade the put credits for, we do all this.
+[  355.50s ->   358.56s] We also have this confirmed that it's going to be a very bullish market
+[  358.56s ->   362.32s] because instead of getting up to this close and pulling back like it typically does,
+[  362.44s ->   365.86s] it actually broke and held above, which gave us a very bullish day.
+[  366.18s ->   368.86s] So looking for other sources to confirm.
+[  369.08s ->   371.96s] So looking for bullish activity, BL,
+[  372.72s ->   375.62s] can help identify and give us a greater edge in this market.
+[  375.70s ->   379.56s] Anyways, that's exactly how I made $160 in less than two hours trading
+[  379.56s ->   380.36s] and how you can too.
+[  380.44s ->   381.76s] So make sure to deploy this strategy.
+[  381.76s ->   383.02s] And I'll see you in the next YouTube.

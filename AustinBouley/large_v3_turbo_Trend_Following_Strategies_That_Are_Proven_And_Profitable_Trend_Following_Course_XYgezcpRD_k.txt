@@ -1,0 +1,98 @@
+[    0.00s ->     4.98s] Video number two of trend following secrets where we'll go over everything about trend following.
+[    5.18s ->     9.34s] So in the last video we covered how to understand the chart and how to read it a bit better
+[    9.34s ->    14.58s] from a trend following perspective and now we're kind of going to get into the strategies of trend
+[   14.58s ->    21.44s] following and why it works. So again trend following is the idea that we follow the trends
+[   21.44s ->    27.96s] and the market. It's the idea of surfing. So when we surf our job is to catch a wave and ride it
+[   27.96s ->    31.60s] because that's where the momentum is that's where the strength is and when you're riding a wave
+[   31.60s ->    37.04s] it's easy. If you're trying to surf and stand on a board when there's no waves or going against the
+[   37.04s ->    42.02s] wave it's not going to work out well but if we can jump in a wave that already has power that's
+[   42.02s ->    47.72s] already moving then we'll be able to surf easily and that's the concept of this. We aren't looking
+[   47.72s ->    51.98s] for stocks and hoping to find the bottom like we're not trying to catch a bottom and hoping it's going
+[   51.98s ->    57.60s] to turn around or we're not trying to catch a top and short it and come down. What we're trying to do
+[   57.60s ->    62.38s] is we're trying to find stocks that are already building all already have momentum and strength
+[   62.38s ->    67.34s] to the upside. We join it and then we follow that nice ride up and then we sell it right because
+[   67.34s ->    72.30s] the stock's number one job is to make us money. So why would we be buying something that's falling
+[   72.30s ->    78.10s] lower? We want to make sure we are buying strength and there are a ton of ways to do that. So as we
+[   78.10s ->    83.88s] discussed in the last video we need to make sure that we're watching the trend. So we need to make
+[   83.88s ->    88.70s] sure that we're following the trend aka a line that is trending higher. So that is going to be
+[   88.70s ->    93.62s] our first step but again there are so many different ways to do this. So again as I mentioned
+[   93.62s ->   101.20s] in video number one your two top ways of following the trend once you know a stock is trending aka it's
+[  101.20s ->   104.88s] going from the bottom left hand corner to the top right hand corner is you want to make sure that
+[  104.88s ->   110.02s] you either buy the dip which is going to be your approach on using dojis. So for instance when you
+[  110.02s ->   116.26s] come in here and you see a candle with a long wick and a small body long wick small body forming at
+[  116.26s ->   122.08s] a support level or at a trend line that would be a perfect place to buy or dip buy a stock. You also
+[  122.08s ->   126.54s] want to buy the breakout so you want to buy above resistance levels and so that's going to be your
+[  126.54s ->   131.72s] second way to follow the trend. Find a stock that is trending up and buy above resistance levels. Here's
+[  131.72s ->   136.72s] a great example you can see if we chart this out that there was a resistance level right here we know
+[  136.72s ->   141.18s] the stock is trending up over time it broke above resistance we bought and we can follow the trend
+[  141.18s ->   146.36s] up. So again you can buy the dip which is a bit more risky unless you're following a doji candle
+[  146.36s ->   152.94s] or you can buy breakouts as well. Again there's pros and cons to each. You can also if you go into
+[  152.94s ->   158.38s] your indicator section again the trending band in indicator I don't have access to right now because
+[  158.38s ->   163.88s] this is my real account but it's the band that's used inside the impeccable stock software
+[  163.88s ->   170.00s] which works well. But I'm going to give you some other ways to do that and that is going to be a
+[  170.00s ->   175.10s] moving average. So if you go in here and type in moving average again by default it's going to give
+[  175.10s ->   178.94s] you a nine period moving average. We're going to go into the settings and adjust it a bit.
+[  178.94s ->   184.54s] So if I go into the inputs here and you adjust it to 200 your 200 moving average will also be a great
+[  184.54s ->   190.76s] way to see trend as well. So this is a very simple way to see trend. So here we can start combining
+[  190.76s ->   197.60s] things together to generate more of a trend following system. So the idea behind the 200 day
+[  197.60s ->   203.40s] moving average is that if the stock is above this line then it's trending higher and it's bullish.
+[  203.40s ->   209.94s] If the stock is below then it's bearish and going lower. So again that's a general thesis but how can
+[  209.94s ->   215.76s] we put this into a strategy? Well as you know we were kind of charting out trend lines in the last
+[  215.76s ->   220.40s] lesson. Well you can see here if we pair a trend line with the moving average you can see here
+[  220.40s ->   225.06s] the moving average will also act as support. So having the trend line here having a 200 day
+[  225.06s ->   232.98s] moving average here having a doji candle form this is a great area to dip by a stock because there's
+[  232.98s ->   237.94s] so many different factors building in to saying that hey there's there is support here on this
+[  237.94s ->   243.92s] level and it gives you just a better opportunity to know what's going on. So pairing a moving average
+[  243.92s ->   249.98s] with your trending lines is going to be the not a great way to do it. So again I'm going to show you
+[  249.98s ->   253.82s] a bunch of different indicators throughout this video to help you with this but remember price
+[  253.82s ->   258.64s] action is key. Understanding and charting out trend lines is going to be your number one key to success
+[  258.64s ->   265.02s] and so make sure you're always doing doing that because price is key indicators will help but
+[  265.02s ->   271.42s] they're not solid. So anyways the 200 day moving average works as well. If we go into our settings
+[  271.42s ->   284.76s] it's reloading the page sorry about that. Anyways let's see if we can okay now we're on spot which
+[  284.76s ->   291.04s] is a completely different stock. Anyways so we did the moving average let's do a moving average again
+[  291.04s ->   296.66s] but instead of using the 200 day moving average which is what we used at first we're going to come
+[  296.66s ->   301.78s] in here hey look I got my impeccable stock back. We're actually going to change that to a 50. So your
+[  301.78s ->   307.40s] next one is 50. So again 200 shows a longer term trend and 50 shows a shorter term trend. That's
+[  307.40s ->   313.42s] because our time that we're looking back is shorter. So for instance what 200 moving average means is
+[  313.42s ->   318.90s] that it's taking the average of the last 200 candles. So it factors in a lot more time. So that's why it
+[  318.90s ->   325.58s] moves slower and shows longer term trend. 50 MA shows the average price over the last 50 candles. So
+[  325.58s ->   333.20s] it's more adaptive and closer to recent trading prices. But as you can see here this also acts as a support
+[  333.20s ->   338.82s] level. You can see here we see it bouncing on these levels. So when we can start combining price action
+[  338.82s ->   345.10s] which is understanding for instance that this is a trending stock so we want to buy the dips. We have a doji
+[  345.10s ->   350.96s] and it's forming at a support level and that we can use that as a dip buy criteria. That is how we start
+[  350.96s ->   356.84s] combining moving averages and price action to find our trend following entries. Because it's easy to
+[  356.84s ->   361.20s] find a trending stock. A trending stock is going from the bottom left to the top right hand. The
+[  361.20s ->   367.10s] hardest part is knowing where to actually buy those stocks. And so again buying where we can find support
+[  367.10s ->   372.16s] is going to be our best levels for trend following especially on a moving average regard. The impeccable
+[  372.16s ->   380.26s] stock band here is probably the go-to method for following the trend. Again so you can actually
+[  380.26s ->   385.06s] check that out here by seeing that which is available in the impeccable stock software. But
+[  385.06s ->   390.46s] if you don't have that the moving averages works great. Trend lines work just as well. You should
+[  390.46s ->   395.70s] always be looking at trend lines. And then you can also use RSI to judge some other things. So if we
+[  395.70s ->   400.50s] come in here what we will be doing is looking at the relative strength index is what it's called.
+[  400.82s ->   406.44s] A relative strength index. You can see here what this does. This shows us how strong a move is.
+[  406.44s ->   412.04s] So you can see here that when our trend is starting to go up you can see here that we're starting to
+[  412.04s ->   418.16s] have some strength to the upside as the RSI moves higher. But again you can see there's too much
+[  418.16s ->   423.18s] strength here and it starts to wane out. Too much strength it wanes out. So basically what it's
+[  423.18s ->   429.82s] showing is that the market or the stock has strong movement to the upside when it's in this range from
+[  429.82s ->   435.30s] the middle to about 70 is when there's a great range which means there's movement and strength
+[  435.30s ->   440.02s] behind the move. Which you can see here this move is trending up and it stays within this range the
+[  440.02s ->   444.64s] whole time. When it gets above it that means that we're pushing a bit too much and it's too exhaustive
+[  444.64s ->   449.94s] so you'll probably see a sell off at that point. Here it means that the trend is weak and here means
+[  449.94s ->   456.34s] that it's so weak and at a good price that people may start buying. So again that's kind of how you use
+[  456.34s ->   462.52s] RSI to kind of break down the trend and seeing it from a from a strength and energy play because
+[  462.52s ->   468.78s] again trend is all about finding where the strength is and where momentum is and following that. So if
+[  468.78s ->   475.18s] we can use things to see how much or how strong this trend is that is another great way to put the odds
+[  475.18s ->   482.80s] of success in our favor. So again that's one more and then again I would say you know as always if
+[  482.80s ->   488.64s] you're following the trend your two type of entry criterias is I mentioned this before but this is
+[  488.64s ->   494.22s] crucial buying the dip or buying breakouts and you can identify those levels through trend lines
+[  494.22s ->   500.58s] through a 200-day moving average through a 50-day moving average and also through RSI. So again for
+[  500.58s ->   505.82s] trend following that is our regards it's actually much easier than you think. Again if you want a step-by-step
+[  505.82s ->   512.56s] system you can kind of play around with adding those together and messing around but again trend
+[  512.56s ->   516.68s] following really is not that hard. It's finding the strength and sticking with it. Statistics have
+[  516.68s ->   521.84s] shown that it's not really where you buy exactly that makes you all the money. It's knowing when to
+[  521.84s ->   527.14s] get out at the right time. So making sure you're getting in on strong points when the RSI is between
+[  527.14s ->   534.16s] those levels. Buying in on dips with the doji candle and with the trend line to support it and
+[  534.16s ->   539.10s] then getting out when the weakness or when the stock is starting to look weak. And so again that is
+[  539.10s ->   543.72s] kind of how trend following works and I hope that makes sense. Again if you want to make sure you
+[  543.72s ->   549.38s] got a full understanding of this re-watching video number one and video number two will do great.
+[  549.38s ->   551.94s] Anyways guys thanks for watching see you in the next video.

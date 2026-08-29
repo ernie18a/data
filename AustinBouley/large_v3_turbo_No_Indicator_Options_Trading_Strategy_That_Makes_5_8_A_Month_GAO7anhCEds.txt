@@ -1,0 +1,81 @@
+[    0.00s ->     3.94s] Hey guys, I'm going to walk you through a no indicator options trading strategy that can make
+[    3.94s ->     9.60s] you anywhere from 5 to 6% every single month. And you can do it on autopilot even if you have
+[    9.60s ->    13.54s] no options trading experience. And by the end of this video, I'm not only going to show you
+[   13.54s ->    17.82s] what the strategy is, why it works, but we can place a live trade together so you know exactly
+[   17.82s ->    22.10s] how to do this trade for yourself. So let's dive in and let me show you how this works.
+[   22.44s ->    28.38s] Let me first explain how the strategy works. You can do it on anything, stocks, ETFs, futures,
+[   28.38s ->    31.42s] whatever you'd like, this will still work and give you a really high win rate.
+[   31.78s ->    35.54s] For today's video, I'll be walking you through it on crude oil futures. And the reason being
+[   35.54s ->    40.72s] is because crude oil has dropped over 20% in the last couple of months. And so that's a great time
+[   40.72s ->    45.70s] to capitalize on this trade. But again, even if the thing that you want to trade is going up,
+[   45.78s ->    51.32s] going down or sideways, you can still use this no indicator strategy. So the reason why this
+[   51.32s ->    57.86s] strategy works is because it allows us to place a level way below the stock. Again, you can go like
+[   57.86s ->    63.88s] down to like $50 way below and we still make money. Meaning that if the stock goes up, we make
+[   63.88s ->    69.26s] money. If the stock goes sideways, we make money. If the stock drops 10%, we'll still make money.
+[   69.54s ->    73.48s] And this is an amazing strategy that we can use wherever. So let me show you how to set this up
+[   73.48s ->    79.90s] using the options chain. So looking at the crude oil futures options chain, I'm going to go out to
+[   79.90s ->    87.86s] between the 60 to 120 day mark. I like the 65 day mark because I like to get closer to 60 myself.
+[   88.16s ->    92.90s] If I come in here to the 60 day mark, it's exactly what you need to do. First, you want to make sure
+[   92.90s ->    97.64s] that one of your columns on your broker is showing the delta. So once we know the delta, then we can
+[   97.64s ->   101.88s] easily follow this trade. So what we're going to do is we're going to find the one that's closest
+[  101.88s ->   107.24s] to 30 delta. You can see here we have a 31 and a 29. So I'm going to pick the 31 and I'm going to buy
+[  107.24s ->   112.32s] this. Next, I'm going to pick the one right below it and sell it. This creates a put debit spread.
+[  112.56s ->   115.42s] You don't need to worry about these specifics. If you're new, I'll show you what this looks like
+[  115.42s ->   120.30s] here in a second. Then we're going to go to the seven delta and we're going to sell it. We're not
+[  120.30s ->   124.62s] just going to sell it. We're going to sell two of them. This is what it's called a one, one, two
+[  124.62s ->   130.58s] trade. And so what it looks is structured. If you look at a trade, a profit graph based on where the
+[  130.58s ->   137.82s] market goes, this is what it looks like. If the market, if crude oil futures goes up, we make about
+[  137.82s ->   146.66s] $650 for this trade. If the market goes down and falls in this level, I get to make $1,150.
+[  147.48s ->   154.66s] So this is a great trade that has a 95% win rate. That's right. A 95% win rate. Why? Because the market
+[  154.66s ->   162.54s] can drop as far as $54, which is over a 10% market drop, close to a 20% market drop, and you still make
+[  162.54s ->   170.20s] money. So again, if the market goes up, we make $600. If the market drops, we make over $1,000. This is a
+[  170.20s ->   177.36s] strategy we can use no matter what the stock is doing to profit from the market. And so again, this is
+[  177.36s ->   184.64s] how the trade is structured. It costs about $5,000 to put on to make about $600. And so
+[  184.64s ->   190.64s] again, that's really how we structure this trade. Now, if you want to make it even more efficient or
+[  190.64s ->   197.50s] cheaper to trade this, you can actually use some puts to offset the ones that you sold here. So
+[  197.50s ->   204.04s] you go down to a two delta level and you buy two puts. If you buy two puts, you offset the ones that
+[  204.04s ->   209.98s] you sold. So now instead of having to put up a little over $5,000, I now only need to put up $3,200
+[  209.98s ->   216.36s] to put on this trade and I make roughly the same profit. I make roughly $430. So it is less,
+[  216.58s ->   221.38s] but I put up less money. So if you have a smaller account, this can work for you. So this is how you
+[  221.38s ->   229.48s] put on a strategy that has a 95% win rate, makes roughly $400 and is just an amazing trade to do
+[  229.48s ->   233.34s] that you do not need an indicator for. You don't have to read complicated charts. You'll do anything
+[  233.34s ->   237.42s] like that. You can put on the street every single week and you can generate money every single week
+[  237.42s ->   242.60s] like that using options, time decay, futures, and everything to your advantage.
+[  242.60s ->   247.26s] If you want to learn the specifics of the strategy, the set rules that I follow for entry,
+[  247.42s ->   252.24s] exit, risk management, the first link down below, you can get a free PDF guide that walks you through
+[  252.24s ->   256.08s] how to do this. But what I want to show you today so you can walk through actually how to
+[  256.08s ->   261.46s] place this trade is you can't go. If I go and click review, send, I cannot place this strategy
+[  261.46s ->   266.96s] because futures doesn't allow you to do a complicated orders like this. So what you need to do is you need
+[  266.96s ->   272.24s] to split the trade up into two trades, the short puts and the put debit spread. So let's clear
+[  272.24s ->   276.92s] out the trades and start over. So again, if I bring back up this, I'm going to clear this order.
+[  277.60s ->   283.76s] I am going to sell these seven Delta puts. So I'm going to sell the seven Delta put right here.
+[  283.96s ->   290.04s] I'm going to sell two of them. Then I'm going to buy the two Delta puts to kind of offset it. So I'm
+[  290.04s ->   296.66s] going to buy these two and I can do this all in one order. So this creates what is known as a put
+[  296.66s ->   301.38s] credit spread. That's very far out. You can see here that it's going to make roughly $640, no matter
+[  301.38s ->   307.82s] what the market does. And I have defined risk, although the risk is quite large. This is how I
+[  307.82s ->   312.88s] structure this trait. So just like that, that is the first order that I will be placing. So I'm going
+[  312.88s ->   317.72s] to click review and send and see what we can get. If I get filled right off the bat, you can see here,
+[  317.72s ->   322.62s] the limit order is 32 and I put in the order for 32. So it may not get filled. I may have to
+[  322.62s ->   328.10s] adjust it a bit lower. Adjusting it a bit lower to 31, I should be able to get filled here. And so
+[  328.10s ->   335.50s] if I click that send order, just like that, I got filled on my initial put credit spread. Now I need
+[  335.50s ->   340.82s] to create the put debit spread. So now that I have the puts that I sold, I'm going to do the 30 Delta
+[  340.82s ->   346.86s] or close to it, put debit spread. I'm going to buy the next one. So this is what creates that huge
+[  346.86s ->   351.12s] profit where if the market drops, they actually make more. And so what I'm going to do is trading
+[  351.12s ->   354.82s] at 15. So as always, I'm going to try to send it in for the mid price, see if I can get filled.
+[  356.54s ->   360.74s] I'm not getting filled. So again, I'm going to adjust it a cent lower to see if I get filled there
+[  360.74s ->   365.76s] because they put debit spread and I'm buying it. I want to actually put it one cent higher so that
+[  365.76s ->   369.46s] I'm actually giving more advantage to the people who are selling it. So let's see if I can sell it for
+[  369.46s ->   374.78s] one cent higher, just like that. I feel instantly. So now we have created this order. If we want to see
+[  374.78s ->   380.00s] what it looks like all in one in the position tab, I go here to crude oil. I select all these
+[  380.00s ->   386.24s] on tasty trade. I click group position and position. It's a one, one, two trade with,
+[  386.34s ->   389.84s] I have the two puts on the sides. If you really want to put, you can be one, one, two, two, if you
+[  389.84s ->   395.90s] want. And then this trade, I'm going to do, I'm taking profit at 90% or when the Bollinger band breaks,
+[  395.98s ->   401.22s] but that's an indicator thing. You don't have to worry about that really 90% profit with a three X
+[  401.22s ->   407.40s] stop loss on your position is all that you need. So now this is all grouped as one trade. So I can
+[  407.40s ->   412.16s] see how it's doing, how it's performing. I have a 94% win rate. It shows me everything that's going
+[  412.16s ->   418.06s] on for this trade, which is awesome. Okay. So now how do we take profit? Well, again, I do talk about
+[  418.06s ->   422.50s] all that in the free PDF links down below. So if you want to learn more, put in your email, that's all
+[  422.50s ->   426.98s] that you need and you'll get free access to this PDF guide. All right guys, thank you so much for
+[  426.98s ->   430.90s] watching this video. I hope it helps you place a snow indicator trading strategy. If you have any
+[  430.90s ->   435.48s] questions, please comment down below. I answer every single comment that I can. So I can't wait
+[  435.48s ->   438.40s] to help you guys out. And I hope you're able to use this trade to make some money too.

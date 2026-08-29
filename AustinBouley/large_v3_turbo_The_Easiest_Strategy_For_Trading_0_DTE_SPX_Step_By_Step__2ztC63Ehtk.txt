@@ -1,0 +1,78 @@
+[    0.00s ->     3.96s] Are you tired of trading zero DTE options and not consistently making money?
+[    4.26s ->     8.46s] Or maybe you're trying to trade them but really have no idea how to do it or at least a simple
+[    8.46s ->    14.56s] way to do it? Well, I'm going to walk you through my simple and stress-free way to trade zero DTE
+[   14.56s ->    18.44s] SPX options. So let me dive in and show you exactly how it works and how you can start
+[   18.44s ->    23.66s] making money today. So this is the chart of SPX. I'm going to show you exactly how we do it. Number
+[   23.66s ->    28.68s] one, we need to pull up a charting platform. So I have up tradingview.com, which is a free platform.
+[   28.68s ->    33.10s] You can use your broker. You can use anything like that. Go to the indicator section and add
+[   33.10s ->    38.76s] this free indicator called the Bollinger Band Indicator. So Bollinger Bands. Once we add this,
+[   38.82s ->    44.08s] we need to make a couple adjustments into what the settings are. So if we go into the settings channel,
+[   44.34s ->    49.70s] we can see exactly how we're going to set this up. So we're going to set this up by doing a 200 as our
+[   49.70s ->    54.28s] length, saying that the middle line will be 200 period moving average. That's going to widen it
+[   54.28s ->    60.12s] out a tad. And it's going to give us what we want to see. So how do we make money from this? Well,
+[   60.16s ->    65.82s] I call it the range breakout approach. Okay. So the way that this works is if the market breaks
+[   65.82s ->    70.82s] above the top blue line, we're going to do a call credit spread. That means that we're going to make
+[   70.82s ->    76.78s] money to the downside. If it breaks to the bottom portion or the bottom part of this blue line,
+[   76.84s ->    82.88s] we're going to enter in a put credit spread. Again, this is only if it happens in the middle of the day.
+[   82.88s ->    88.64s] If this happens overnight, then we're going to avoid the trade. What do I mean by this? Well,
+[   88.68s ->    95.84s] let me give you two great examples. Number one, this stock opened up here that SPX the next day on
+[   95.84s ->   100.44s] Monday, or I should say over the weekend, opened and gapped way down below here. So it gapped down
+[  100.44s ->   106.56s] below this bottom blue line. So if it's saying it's below this bottom blue line, that would initially
+[  106.56s ->   111.58s] be a call credit spread trade. I mean, I mean, I put credit spread trade where we aim to make money to
+[  111.58s ->   117.34s] the upside. But the problem is it did that overnight and it gapped straight to it. We don't want it to
+[  117.34s ->   122.52s] gap to it. We want it through normal price action trading in the middle of the day to go below this
+[  122.52s ->   127.58s] blue line. So here's a great example. Right here, we gap down below it and then nothing happened. And
+[  127.58s ->   133.34s] then here we get a great trade. We're in the middle of the day. It broke to the upside. So we take a call
+[  133.34s ->   137.34s] credit spread trade, which means that we're betting for the market to go down. So we take the call credit
+[  137.34s ->   142.60s] spread trade and then it moves against us and we make money. Same thing here. It broke above. We
+[  142.60s ->   146.50s] take a call credit spread trade and ended up going back against us and us making money.
+[  147.24s ->   152.66s] So again, if it breaks in the middle of the day, you want to take a call credit spread trade. And so
+[  152.66s ->   156.64s] that's going to be the way it works. And trending markets, you want to be a bit more careful, but in
+[  156.64s ->   161.20s] the range around market that we find ourselves in today, what works best is trading these things.
+[  161.20s ->   165.20s] You can see here, it breaks down to the downside. We're going to turn a put credit spread breaks to the
+[  165.20s ->   169.66s] downside and trying to put credit spread breaks to the upside, break into a call credit spread.
+[  170.02s ->   174.16s] So again, that is what we're looking at a very simple, stress-free way of understanding what
+[  174.16s ->   179.26s] trade we're getting into and why. Now, how do we target these trades? Well, we're going to target
+[  179.26s ->   184.94s] a 30 Delta trade. So you can see here, once it breaks to the upside, we're going to look for a 30 Delta
+[  184.94s ->   189.86s] call credit spread. If it breaks the downside, we're going to look for a 30 Delta put credit spread.
+[  189.86s ->   194.92s] And so again, that's how it works. Now, what happens when it's in the middle, right? There's no trade in
+[  194.92s ->   199.56s] the middle, right? We're waiting for a break above or a break below for us to enter in the stress-free
+[  199.56s ->   206.26s] trade, which is a great trade to take. But how do we do this trade or handle this trade when the
+[  206.26s ->   212.06s] market's in the middle? When the market's in the middle, what you can implement is called the MEIC
+[  212.06s ->   219.96s] approach. What is the MEIC approach? Well, the MEIC is from this video, which is a super popular SPX
+[  219.96s ->   224.90s] trading strategy, which is where you do a multiple entry iron condor. And iron condor is where you
+[  224.90s ->   229.96s] bet above and below a price. And if the stock stays between it, then you make money. And again,
+[  229.96s ->   234.86s] you can watch this video by Tammy, which is going viral recently in the options world. And a lot of
+[  234.86s ->   240.74s] people are trading this on SPX. She'll walk you through the specifics of it. But when you combine
+[  240.74s ->   245.42s] the MEIC approach, which is basically an iron condor, and you use it within its levels,
+[  245.72s ->   251.60s] your win rate is going to grow up dramatically. So again, when we're trading within the Bollinger
+[  251.60s ->   257.30s] ban, as we have the settings, all we need to do is put on an iron condor where our call credit
+[  257.30s ->   263.00s] spread is around this level. And our put credit spread is around this blue level. When we do that,
+[  263.06s ->   269.72s] we structure an iron condor that has a really high chance of us making money around the 70 to 80%
+[  269.72s ->   274.70s] range of us making money. Then when it breaks out to the upside, we get rid of the put side and we take
+[  274.70s ->   278.36s] on a call credit spread. When it goes to the downside, we get rid of our call. We do a put credit
+[  278.36s ->   283.14s] spread. So either way, super simple. I know I've thrown a lot of information out to you. So let
+[  283.14s ->   293.24s] me condense it one more time. We open up SPX on our chart. Same deal. We're going to add the
+[  293.24s ->   299.38s] Bollinger Bands indicator. We're going to have a 200 period for the middle. If it breaks to the upside
+[  299.38s ->   305.62s] during normal trading hours, we're going to take a 30 delta call credit spread trade. If it breaks to
+[  305.62s ->   311.66s] the downside, we're going to get 30 delta put credit spread trade. We're going to have an ideal
+[  311.66s ->   320.00s] take profit of holding until expiration or 50%, whichever one you find best works for you. For
+[  320.00s ->   325.76s] our stop loss, we're going to use our strike price. Whenever the delta moves from 30 to 50 or roughly
+[  325.76s ->   332.38s] 30 to 60, when our contract moves to end the money, we're going to exit that position. So that's going to
+[  332.38s ->   339.82s] be around a 100% loss. So for instance, I'm just making up numbers. If we enter in at $100,
+[  340.16s ->   346.62s] which means we enter a credit spread and we collect $100, when it gets to 200 or 250, we're
+[  346.62s ->   351.26s] going to exit the trade. So that's kind of how that works. Now, the same way we're going to make
+[  351.26s ->   357.44s] about 50 to $100 per trade. And with this really high win rate, it works out. Now, when we're trading
+[  357.44s ->   361.34s] in the middle and we don't know really what to do, because we've been trading in the middle a while,
+[  361.58s ->   365.44s] not when we shot back into the middle, because if it's shot back into the middle, then we're
+[  365.44s ->   369.24s] already in a trade, right? So not when it immediately broke, but if it's been trading in the middle a
+[  369.24s ->   374.26s] while, then we're going to put on an iron condor where we put on the levels where these blue lines
+[  374.26s ->   378.40s] are. And that's how we structure the trade. And that's going to work out well for us. So anyways,
+[  378.40s ->   384.42s] this is the stress-free SPX zero DTE trading system. If you like it, if you want to learn
+[  384.42s ->   389.02s] more about how I trade options, if you want to trade this inside my group, where I can help you
+[  389.02s ->   393.78s] and guide you and teach you, and you can also use our alerts and software to do it, click the third
+[  393.78s ->   399.78s] link in the description down below to get free access to our program for our free trial. I don't
+[  399.78s ->   404.52s] typically offer it as a free trial, but you can click down below and get a free trial. And you also get
+[  404.52s ->   409.36s] three amazing free trading tools that you get to keep for life, even if you don't continue after
+[  409.36s ->   414.62s] the trial. All right, guys, hope to see you inside our private Discord group chat and on the next
+[  414.62s ->   419.46s] coaching call that you get as a part of for joining the trial. All right, guys, see you in the next video.

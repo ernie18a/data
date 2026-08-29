@@ -1,0 +1,125 @@
+[    0.10s ->     5.30s] I used to suck at selling covered calls and the worst part is I didn't even realize what I was
+[    5.30s ->     9.62s] doing wrong. I would go in and sell the covered call after a stock has run up only for the stock
+[    9.62s ->    15.60s] to continue to go up and then I would buy back that option at a loss. Or I will let that option
+[   15.60s ->    22.36s] get called away only for the stock to continue to go up and I would FOMO trying to get back into
+[   22.36s ->    26.96s] that stock at a better price point only to have that stock continue to go up and I've never had
+[   26.96s ->    31.68s] that opportunity to buy back in. And this may sound like a very similar experience to a lot of you but
+[   31.68s ->    36.92s] over time I gradually realized that I was viewing covered calls the wrong way. And so today I'm
+[   36.92s ->    42.08s] going to tell you guys all about that mind chip change and how I now sell covered calls in three
+[   42.08s ->    47.82s] different ways. So let's first take a step back and talk a little bit about why selling calls can be
+[   47.82s ->    52.30s] more difficult. We know that when we sell options the way we make money is when realized volatility
+[   52.30s ->    58.30s] is less than implied volatility. What that means is that the market moves less than what the option
+[   58.30s ->    64.14s] is priced for. That's what we call volatility risk premium. But selling puts and selling calls are two
+[   64.14s ->    68.68s] very different games. And the reason for that is actually really simple. The market tends to move up
+[   68.68s ->    74.58s] and then crash fast. Move up, crash fast. Move up, crash fast. And that crashing fast is actually one
+[   74.58s ->    79.74s] of the reasons why selling puts has such a great edge, right? Because that fear is baked in. So when we're
+[   79.74s ->    84.06s] selling puts, the gap between realized volatility and implied volatility is actually much, much higher.
+[   84.56s ->    89.54s] The market tends to overestimate the amount of times that the market will actually fall down.
+[   89.94s ->    96.04s] However, on the call side, you can see that because the market tends to go up, the market underestimate
+[   96.04s ->   101.80s] the amount of movement to the upside, right? So the difference between implied volatility and
+[  101.80s ->   106.86s] realized volatility is much thinner on the call side to a point where sometimes there isn't even much
+[  106.86s ->   113.92s] of an edge. TastyTrade actually did a study a while back that compared Delta to the probability
+[  113.92s ->   119.60s] that the option ended up in the money. And you can see Delta is underestimating the amount of times
+[  119.60s ->   123.30s] that the option actually ends up in the money. So when you're selling a call option, you're not
+[  123.30s ->   128.56s] actually collecting volatility risk premium. You're not collecting the difference between implies
+[  128.56s ->   133.84s] volatility and realized volatility. All you're doing is collecting a part of it because the chances of
+[  133.84s ->   138.50s] you getting assigned are actually higher than what the option is implying, which leads us to the second
+[  138.50s ->   144.88s] topic, which is assignment. There is a natural tension between selling calls and growth because
+[  144.88s ->   148.30s] when you're selling a call, what you're saying is I'm willing to sell a hundred shares of that stock
+[  148.30s ->   153.40s] at this specified strike price. Let's assume that right now Microsoft's at 380 and I sell a call
+[  153.40s ->   159.70s] option at 400. If Microsoft goes to 500, I'm selling it at 400. If Microsoft goes to 450, I'm selling
+[  159.70s ->   164.70s] out of 400. So I'm missing out on that unrealized gain, right? Whatever that difference between
+[  164.70s ->   169.34s] strike price and stock price is, which is fundamentally very different than what we do when we're selling
+[  169.34s ->   174.34s] puts. When we get assigned on puts, the stock can only really go to zero. If I invested $10,000
+[  174.34s ->   179.58s] selling puts, I can only lose $10,000. However, when I'm selling calls, the stock can appreciate
+[  179.58s ->   184.92s] to infinity. We've seen all these posts about if I was still in the womb and I invested $10,000
+[  184.92s ->   190.18s] in Apple, I'd be worth $4 billion right now, which goes to show you that when we're selling a call,
+[  190.28s ->   194.40s] what we're doing is we're limiting and we're capping that upside. And that is a fundamental
+[  194.40s ->   200.24s] tension between selling calls and growth. And in the paper, The Devil's Bargain, what you'll see is
+[  200.24s ->   205.70s] that most of the growth in the market actually comes from your equity appreciating. It's not from
+[  205.70s ->   210.72s] the volatility that we're selling, it's from the equity growing in value and compounding over time.
+[  211.20s ->   214.10s] And so that's the natural tension of selling calls, right? That's actually one of the
+[  214.10s ->   219.82s] reasons why I suck at selling calls. I'm not very good at managing mentally, psychologically,
+[  220.04s ->   227.44s] emotionally, the equity appreciating, and the want of getting 2%, 3% premium a month.
+[  227.86s ->   233.74s] Because that's basically a trade-off. The more premium I collect, the less appreciation I'm going
+[  233.74s ->   239.46s] to get because I'm closer to the money. I'm cutting off that upside. And the chances are I'm probably
+[  239.46s ->   245.82s] going to get assigned more often than what the option is implying. And that's when I realized
+[  245.82s ->   252.22s] that when you're selling calls, you need to either choose income or capital appreciation. You can't
+[  252.22s ->   258.36s] have both. So remember that story that I told you in the beginning of this video about how I sell calls
+[  258.36s ->   265.70s] and then as it gets closer to it, I buy them back at a giant loss or I let them get assigned and then I
+[  265.70s ->   271.16s] regret it because the stock keeps going up and then I keep telling myself that I'll get back in at the
+[  271.16s ->   278.98s] next pullback. Nowadays, when I'm selling calls, I understand that the devil's bargain is I need to
+[  278.98s ->   285.60s] choose either income or I need to choose equity appreciation. I cannot have both. And that decision
+[  285.60s ->   291.58s] ultimately comes down to one question that I ask myself every single time I enter a call trade.
+[  291.58s ->   298.52s] Is this a stock that I'm willing to hold long term? And depending on how you answer that question,
+[  299.02s ->   305.90s] you'll sell calls in three different ways. If the answer to your question is no, I don't care about
+[  305.90s ->   312.22s] long term appreciation, then you should be using calls as a way to generate income. And that is
+[  312.22s ->   317.38s] because you're accepting the devil's bargain. And so the way you would go about doing this is actually
+[  317.38s ->   324.10s] pretty simple. You would basically go in and sell call options as close to the money as possible,
+[  324.10s ->   329.36s] because that is how you can generate the most amount of income. So as an example, we talked about
+[  329.36s ->   334.78s] this in our public portfolio a couple of weeks ago. I want to demonstrate it here. IP care is not a stock
+[  334.78s ->   341.18s] that I really want to own long term. So I've basically been using IP care as a way to generate income
+[  341.18s ->   345.48s] on both the put side and the call side, right? It's part of my wheel. And so you can see right now,
+[  345.48s ->   349.76s] because I haven't gotten assigned yet on my put side, I don't yet own a hundred shares of that
+[  349.76s ->   356.58s] stock. And when and if this gets assigned, what I will end up doing is I will actually go in and
+[  356.58s ->   362.04s] sell on call option basically right at the money. And that's something that it gets signed around 69
+[  362.04s ->   369.27s] bucks a share. IP care is currently sitting at $72 and 31 cents. So I would just go in and I will try
+[  369.27s ->   375.05s] to farm as much income as possible. So as an example, let's do 30 days and I'm just going to sell it
+[  375.05s ->   381.75s] right at my $70 price point, which will end up netting me close to maybe $275, right? Close to
+[  381.75s ->   389.35s] four or 5% return on yield. Again, I am accepting that when I get assigned, I am trading yield for
+[  389.35s ->   394.45s] income, right? And if IP care continues to go above 70, it goes all the way up to its peak of 79.
+[  394.97s ->   400.87s] I'm okay with it because I'm willing to trade that $9 a share difference for the $275 of credit that I'm
+[  400.87s ->   404.79s] going to collect right away. If that is your mindset, then you accept the devil's bargain
+[  404.79s ->   411.45s] and you sell calls as a way to generate income. Now, number two is if you answer to the question,
+[  411.73s ->   417.41s] yes, I do care about the stock appreciation. I want to own a long-term. The devil's bargain
+[  417.41s ->   424.17s] paper shows us that what we should be doing, we should be aiming around a 0.1 to 0.2% monthly yield.
+[  424.33s ->   428.43s] That is how far out of the money we need to sell. And if I own a hundred shares of video and I
+[  428.43s ->   435.57s] want to get a 0.1 to 0.2% monthly yield, NVIDIA right now is sitting at $182 a share.
+[  435.79s ->   440.99s] If I'm targeting a 0.1 to 0.2%, what that means is trying to get around 20 to maybe $30
+[  440.99s ->   448.13s] of credit, which means I'm selling basically at $210 a share for a month out, which means that
+[  448.13s ->   456.57s] NVIDIA has to appreciate close to $25 a share or around 15%. Doable, but more unlikely. And this is
+[  456.57s ->   462.11s] your IV can be greater than realized volatility. And this is the area you want to stay in because
+[  462.11s ->   467.75s] this is where you can actually harvest a little bit of that income while trying to balance the
+[  467.75s ->   475.17s] equity appreciation. And so I am really unwilling to trade any income for capital appreciation,
+[  475.29s ->   479.39s] right? I don't want to cut off that growth. So you can see in most of my accounts, I don't
+[  479.39s ->   483.93s] actually sell a lot of calls just from this public portfolio that we share on this channel.
+[  484.27s ->   492.57s] I've sold 89 cash secured puts, only 14 covered calls, and I made $14,623 on cash secured puts
+[  492.57s ->   501.01s] and only $550 on covered calls. I'm very selective of when I sell cover calls into how far out of the
+[  501.01s ->   508.87s] money I sell for cover calls. If you take a look at my TSM, I've only recently started selling calls on
+[  508.87s ->   512.17s] them. And when I sell calls, you can see I'm selling it very, very, very, very far out of
+[  512.17s ->   521.79s] the money, right? $105 for $430, $67 for $420, $57 for $425, $109 for $400, right? 0.1 to 0.2%.
+[  521.79s ->   527.55s] And you can tell from the cash secured puts, I've collected $4,415 and covered calls only $556.
+[  528.61s ->   533.87s] But because the stock has appreciated so much when it got signed at $1,95 and $200,
+[  533.87s ->   541.83s] TSM is currently sitting at close to $370, that if it gets signed at $400, I will make a total of
+[  541.83s ->   549.77s] $45,000 on this wheel, right? Because the amount of credit I collected on top of the amount that
+[  549.77s ->   555.71s] the stock has appreciated combined gave me more money. And you guys may think 0.1 to 0.2% is not
+[  555.71s ->   560.99s] a lot of money. That annualizes out to around 2.4% a year. That combined with everything else that
+[  560.99s ->   564.81s] you're doing will make a substantial difference in the future. So the last way to sell covered
+[  564.81s ->   571.93s] calls is if you answered yes to the question, do I want to hold this stock long-term? But now the
+[  571.93s ->   580.47s] answer becomes, no, I don't. Whether it's because of a thesis change or a short-term run-up that you
+[  580.47s ->   586.15s] want to take profit on, if the answer is no longer yes and is now no, the third way to sell covered
+[  586.15s ->   592.55s] calls is as a way to exit your position. So a good example here is hood. Last year, I wanted to exit
+[  592.55s ->   598.97s] my hood position at $150 a share because the stock has run up so much. And so I went in and I started
+[  598.97s ->   603.57s] selling hood covered calls around the 140 mark. And you can see right here, right? I started selling
+[  603.57s ->   608.93s] covered calls on hood at 140, right? And this is a little trickier because you're trying to time the
+[  608.93s ->   614.41s] market, but I essentially use selling covered calls as a way to take profit because the thesis has
+[  614.41s ->   619.39s] changed, right? The stock has gone up a hundred percent and I want to take profit on the stock.
+[  619.83s ->   626.21s] Really simply put, the one thing that really helped me is to understand what my goal is with
+[  626.21s ->   630.67s] these stocks. Am I trying to generate yield on them or am I trying to let them appreciate?
+[  631.13s ->   633.87s] Depending on your answer, the way you trade covered calls will be very different.
+[  634.23s ->   638.65s] There is no right answer. There is no wrong answer. As long as you guys understand the trade-offs,
+[  639.35s ->   644.39s] knowing full well that if you want to make as much money selling calls as you do,
+[  644.41s ->   648.89s] from the stock market naturally appreciating, it will be very hard to do. But some people,
+[  649.03s ->   654.33s] again, may want to maximize income. Everyone lives different lives, right? And everyone has
+[  654.33s ->   658.33s] different goals. And so as long as you understand that trade-off, you can then stick with the plan
+[  658.33s ->   664.49s] and don't be like me where I would buy back that option at a loss because I don't actually want to
+[  664.49s ->   668.59s] get assigned. Only sell covered calls on stocks that you're willing to part with
+[  668.59s ->   673.43s] at the specified price point that you're willing to sell those stocks at.
+[  673.43s ->   677.35s] Okay. That's about it. Let me know if you guys have any questions or comments down in the
+[  677.35s ->   683.53s] conversation below. Let me know how you guys sell covered calls. And if you guys want to use the
+[  683.53s ->   688.91s] analytics dashboard that I share in this video, try out Premium Insights link down below. If you guys
+[  688.91s ->   692.55s] like this video, learn something, make sure you guys click that thumbs up button and subscribe to
+[  692.55s ->   696.81s] the channel. If you guys want to learn how to sell puts like I do, and if you guys want to learn how
+[  696.81s ->   702.45s] to sell another version of covered calls called poor man covered calls that require less, much less
+[  702.45s ->   706.41s] capital, make sure you guys check out these two videos linked in the end screen right here. Like
+[  706.41s ->   708.99s] always, until next time, stay safe in the market. Peace.

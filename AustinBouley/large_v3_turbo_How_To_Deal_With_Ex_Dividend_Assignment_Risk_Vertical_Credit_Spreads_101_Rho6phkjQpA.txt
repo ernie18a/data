@@ -1,0 +1,135 @@
+[    0.27s ->     4.43s] In this video, I want to go over an important topic, which is ex-dividend and assignment
+[    4.43s ->     6.65s] risk when it comes to trading credit spreads.
+[    6.99s ->     9.95s] Again, if you're someone who just trades options, this will apply to you too.
+[   10.37s ->    14.43s] But anyways, this is important because this can lose you a ton of money if you don't do
+[   14.43s ->    14.97s] it correctly.
+[   15.27s ->    19.59s] So I want to show you what options this applies to, how to protect yourself, and what the
+[   19.59s ->    20.07s] risk is.
+[   20.41s ->    21.61s] All right, so let's jump into it.
+[   21.65s ->    25.65s] First off, which options have ex-dividend and assignment risk?
+[   25.93s ->    27.61s] Well, only calls do.
+[   27.61s ->    30.69s] So if you're trading a call credit spread, you have risk.
+[   30.85s ->    32.91s] If you're trading a put credit spread, you do not.
+[   33.05s ->    33.31s] Why?
+[   33.61s ->    37.41s] Well, because a put is essentially giving someone the right to sell 100 shares.
+[   37.77s ->    40.75s] So if you're selling 100 shares, you don't actually own any shares.
+[   41.11s ->    44.27s] So if you don't own shares, you can't receive a dividend.
+[   44.71s ->    45.91s] So puts don't count.
+[   46.31s ->    50.37s] Calls, on the other hand, give someone the right to own 100 shares.
+[   50.71s ->    53.51s] And again, if you are a shareholder, you get the dividend.
+[   53.51s ->    58.23s] So therefore, if you have the right to own 100 shares, this is where people will execute
+[   58.23s ->    58.61s] early.
+[   58.95s ->    65.45s] So ex-dividend risk only applies to call options, specifically call credit spreads for the context
+[   65.45s ->    65.95s] of this video.
+[   66.37s ->    68.53s] Now, what the heck is ex-dividend?
+[   68.67s ->    69.65s] What is that day?
+[   69.79s ->    70.55s] What does it mean?
+[   70.67s ->    71.47s] What's going on?
+[   71.71s ->    75.11s] Well, let's say we have a Monday, Wednesday, Friday scenario.
+[   75.11s ->    83.74s] If I can draw on this, Monday, Tuesday, Wednesday, I mean, Monday, Tuesday, Wednesday, just like
+[   83.74s ->    84.02s] this.
+[   84.38s ->    84.64s] All right.
+[   84.84s ->    88.84s] So we're going to explain essentially how this works by going over this.
+[   89.06s ->    91.60s] Let's say Wednesday, the company pays out a dividend.
+[   91.80s ->    96.32s] Now, for those who have no idea what a dividend is, if you are a stockholder, a shareholder,
+[   96.64s ->   101.00s] a company will pay you out a dividend if they elect to, to say, hey, thank you for investing
+[  101.00s ->   101.52s] in our company.
+[  101.68s ->   104.00s] Here's some of the extra profits that we wanted to give you.
+[  104.32s ->   105.86s] So that's essentially what a dividend is.
+[  105.86s ->   108.64s] But you can only receive the dividend if you are a shareholder.
+[  109.06s ->   112.44s] So Wednesday, let's say they are paying the dividend.
+[  112.62s ->   114.32s] Wednesday, they are paying the dividend.
+[  114.58s ->   116.06s] But they only pay the dividend to shareholders.
+[  116.22s ->   117.90s] So how do they know who a shareholder is?
+[  118.28s ->   121.38s] Well, on Tuesday, would be called the ex-dividend day.
+[  121.74s ->   125.78s] This means that you've got to own shares of the stock by this day.
+[  126.04s ->   131.32s] Because on this day, they're going to pull a record of who all owned shares of this company.
+[  131.74s ->   135.08s] And then on Wednesday, they're going to pay out to all those shareholders that existed
+[  135.08s ->   135.66s] on Tuesday.
+[  135.86s ->   137.14s] So what does this mean?
+[  137.80s ->   142.36s] It means that assignment risk is going to be greatest on Monday.
+[  142.56s ->   143.70s] This is your risk.
+[  143.84s ->   144.76s] Ah, risk.
+[  145.16s ->   145.46s] Why?
+[  145.96s ->   152.00s] Because they're going to want to execute their call option on Monday so that it gets converted
+[  152.00s ->   156.36s] in the shares on Tuesday, thus becoming a shareholder on Tuesday and get the dividend.
+[  156.78s ->   157.98s] So you understand the concept here?
+[  157.98s ->   163.96s] So again, assignment risk coming up to the ex-dividend date is likely.
+[  164.14s ->   168.64s] So again, on the previous Friday or the previous Thursday, it's likely to be early assigned.
+[  169.10s ->   174.10s] But Monday has the highest risk because that's the last day and last chance they have in order
+[  174.10s ->   177.92s] to get on the ex-dividend date, which will allow them the dividend.
+[  178.42s ->   182.40s] Now, what type of call option is more risky than another?
+[  182.40s ->   190.05s] Well, again, if you are in the money, in the money is a lot greater.
+[  190.13s ->   191.61s] It has a lot greater risk.
+[  191.69s ->   192.87s] So be very careful.
+[  193.07s ->   193.33s] Why?
+[  193.67s ->   199.07s] Well, because when you're in the money, it now has intrinsic value, which means that
+[  199.07s ->   200.89s] they can execute their option.
+[  200.89s ->   205.71s] And by default, they're making money because of the way they get to buy and the stock price
+[  205.71s ->   206.25s] is higher.
+[  206.61s ->   208.71s] So by default, they already are making money.
+[  209.17s ->   209.31s] Okay?
+[  209.61s ->   215.89s] So let's say the strike price that they sold their call option at or whatever was $300.
+[  216.29s ->   218.21s] So they sold a strike of $300.
+[  218.65s ->   220.23s] It's going to be on like DIA or SPY or something.
+[  220.85s ->   225.67s] And now the call option is in the money because the stock is currently trading at, let's say,
+[  226.03s ->   228.07s] $310, which would be really in the money.
+[  229.15s ->   230.11s] So what happens?
+[  230.11s ->   231.43s] Well, they can execute this.
+[  231.51s ->   232.61s] They'd be more than happy to.
+[  232.99s ->   233.39s] Why?
+[  233.59s ->   235.45s] Well, because they get to buy it at $300.
+[  235.73s ->   237.39s] It's currently trading at $10.
+[  237.81s ->   240.59s] Now, they automatically have a $10 profit per share.
+[  241.19s ->   244.33s] Call options or all options are equivalent to 100 shares.
+[  244.69s ->   245.23s] So guess what?
+[  245.27s ->   249.87s] They already have a $1,000 profit for executing this option early.
+[  250.41s ->   257.10s] And now the dividend owner, so they get a dividend, let's say, $0.50 plus $0.50.
+[  257.52s ->   257.76s] Yeah.
+[  257.86s ->   259.10s] Now they're making money.
+[  259.10s ->   263.94s] So you can see here, when it's in the money, it's more advantageous because you're making money.
+[  264.26s ->   269.62s] Now vice versa, if it's out of the money, the risk is substantially lower and it almost never happens.
+[  269.92s ->   270.66s] Why is this?
+[  270.72s ->   273.32s] Well, the exact opposite reason that we discussed.
+[  273.32s ->   288.84s] If their strike price is $300, that's supposed to be a money sign, $300, and then let's say it's trading at $290, so it's trading at $290, and they assign it at $300, so they get the right to buy at $300.
+[  288.84s ->   297.58s] Well, now they're minus $10, and again, that's not just $10, that's times the 100 shares, so they're minus $1,000.
+[  298.20s ->   300.66s] So again, you can see here, no one would put on that.
+[  300.74s ->   300.90s] Why?
+[  301.00s ->   304.32s] Because they're not getting a dividend that's greater than $1,000.
+[  304.72s ->   305.96s] Their dividend's only going to be like $5.
+[  306.40s ->   309.46s] And because of that, it's not even going to offset the losses.
+[  309.68s ->   315.08s] So most likely, your risk goes up as you're closer to in the money.
+[  315.38s ->   322.00s] So again, if you're in the money, very in the money, your assignment risk and ex-dividend risk jump up dramatically.
+[  322.36s ->   325.24s] If you're out of the money, it's almost something that never happens.
+[  325.24s ->   328.90s] It's still likely, but almost never happens because they would have to assume a large loss.
+[  329.56s ->   331.56s] Anyways, that is what's going on here.
+[  331.70s ->   335.80s] Ex-dividend risk and assignment risk only applies to call options.
+[  336.50s ->   339.92s] You must be aware of it the day before the ex-dividend date.
+[  340.40s ->   343.38s] If you are out of the money, you typically have nothing to worry about.
+[  343.64s ->   345.52s] If you are in the money, then you do.
+[  345.84s ->   347.46s] How do you adjust to this?
+[  347.60s ->   351.60s] Well, if you're coming up, you can simply just get rid of the option.
+[  352.42s ->   357.24s] Or what you can do is you can buy an equal put option to offset any risk.
+[  358.22s ->   361.10s] Or you can just hold through it, right?
+[  361.18s ->   362.74s] And so holding through is an option.
+[  362.74s ->   372.44s] Now, as we have and as we trade vertical credit spreads, what's going to happen here is we have two different types of options, right?
+[  372.56s ->   376.74s] We have a call option that we sell and a call option that we buy.
+[  376.82s ->   380.16s] And that's what creates the credit spread that we want the stock to stay below, right?
+[  380.16s ->   382.54s] So we sell this call and we buy that call.
+[  382.88s ->   384.34s] So we have two different calls.
+[  384.74s ->   388.64s] And so, again, if we are really in the money, we have nothing to worry about.
+[  388.74s ->   388.90s] Why?
+[  389.00s ->   394.38s] Because if both of our strike prices are in the money for this call credit spread, then guess what?
+[  394.44s ->   399.22s] The sell one has a likelihood of being assigned and it may get assigned.
+[  399.22s ->   407.04s] But the one that we bought for protection is now also in the money, which means we can execute it ourselves early and make money.
+[  407.46s ->   414.42s] So, again, you don't have much risk when you have a call credit spread in the money unless execution happens after hours.
+[  414.86s ->   419.32s] More times than not, you should ideally be trading credit spreads already that are out of the money.
+[  419.70s ->   422.56s] So this ex-dividend and assignment risk should not affect you.
+[  422.82s ->   427.36s] If you are trading call credit spreads outside of the money, this will not affect you.
+[  427.36s ->   430.28s] Anyways, guys, I hope you enjoyed this video, learned something new.
+[  430.54s ->   432.86s] This is understanding ex-dividend risk and assignment risk.
+[  432.92s ->   441.20s] If you're trying to become a better vertical credit spreads trader, check out the description below where I have my free trading handbook for credit spreads.
+[  441.56s ->   442.74s] It's completely free.
+[  442.88s ->   448.18s] It walks you through my strategy step-by-step, exit rules, entry rules, and everything you need to make money.
+[  448.58s ->   450.66s] Anyways, see you guys in the next video.
+[  450.98s ->   453.06s] Please smash that thumbs up and subscribe button.

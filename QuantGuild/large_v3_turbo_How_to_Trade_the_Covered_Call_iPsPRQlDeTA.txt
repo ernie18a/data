@@ -1,0 +1,363 @@
+[    1.26s ->     6.55s] Hey guys, Roman here, quantitative researcher and trader, founder of Quant Guild. Today,
+[    6.61s ->    10.73s] we're going to talk about the covered call options trading strategy. I'm going to take
+[   10.73s ->    15.33s] you from theory all the way to practice placing a live trade in interactive brokers, trader
+[   15.33s ->    21.09s] workstation with this particular strategy. This is one of my favorite strategies of all times
+[   21.09s ->    27.59s] for both beginners and advanced traders. Beginners get an opportunity to explore the options chain
+[   27.59s ->    34.35s] and really understand this idea of long and short contracts and effectively securing a short
+[   34.35s ->    40.19s] contract with stock that they would like to own anyway. And more seasoned traders will be able to
+[   40.19s ->    47.17s] implement this in an algorithmic capacity, maybe algorithmically selling 20 to 30 delta options
+[   47.17s ->    55.51s] for a set of underlyings, diversifying the risk across maybe stock and futures options, the list
+[   55.51s ->    61.75s] goes on. So what we're going to do is start in the classroom, I'm going to give you all of the tools
+[   61.75s ->    66.79s] to understand this cover call strategy, we're going to take a look at a few different simulations
+[   66.79s ->    73.05s] to understand the different states of the world that we may end up in trading this particular type
+[   73.05s ->    78.29s] of strategy. And like I said, we are going to head on over to interactive brokers trader workstation
+[   78.29s ->    85.47s] to place this trade live to understand how we may go about it. And then of course, in the context of
+[   85.47s ->    92.01s] our future quant builds, we can even build an algorithmic system to implement this across a set
+[   92.01s ->    98.39s] of diversified underlyings, but that will largely be based on your guys interest. So if you're
+[   98.39s ->   104.59s] interested in videos like that in the future, please like comment, subscribe, certainly let me know.
+[  104.59s ->   111.23s] Let's get started here first by understanding exactly what a European option contract is. A European
+[  111.23s ->   117.35s] options contract is a financial derivative. That means that the contract itself derives all of its
+[  117.35s ->   123.95s] value from an underlying asset. In this case, we are looking at equity options. That means the options
+[  123.95s ->   132.07s] contract derives all of its value from an equity. So what is the contract specifying? The contract is
+[  132.07s ->   142.15s] specifying terms for a payout in the future. We have a call and a put contract, an options contract, and the
+[  142.15s ->   149.45s] payoff in the future is well defined as the max function. Here you can see the call option on the left and the
+[  149.45s ->   157.07s] put option on the right. The vertical line here is going to be the strike price of the European options contract. If the
+[  157.07s ->   163.15s] underlying expires for the call option above the strike price, then we're going to make money.
+[  163.79s ->   169.87s] So the call option is effectively a bet that the stock price is going to increase past that strike
+[  169.87s ->   175.15s] price K. The same is true for the put option, but on the downside, it is a bet that the stock price is
+[  175.15s ->   183.23s] going to decrease relative to that strike price K. And of course, these options contracts have a maturity.
+[  183.23s ->   190.53s] At time capital T, this payoff is going to be realized. T may be a week from now, a month from now, you get to choose
+[  190.53s ->   199.29s] the contract that you are going to trade. It's very important to understand that these contracts, they are not like
+[  199.29s ->   207.43s] equities. If you buy an options contract, and it expires, and it expires worthless, either you buy a call and it expires
+[  207.43s ->   215.59s] below the strike, or you buy a put and it expires above the strike, then that is it. The trade is over, you lose
+[  215.59s ->   224.95s] all of your money that you put into that particular contract. It is not like an equity. Okay, so this is a call
+[  224.95s ->   232.39s] option. This is a put option. We also need to establish the difference between owning the contract or writing
+[  232.39s ->   240.03s] the contract. That is going long or short the contract itself. This is going to be the payoff for going long a call
+[  240.03s ->   246.55s] option. That means that you own the call. This is going to be the payoff for going long a put option. That means that you
+[  246.55s ->   255.61s] own the put. What about the other side of the trade? You're more than welcome to go short a call or short a put, but that is
+[  255.61s ->   263.46s] going to flip the payoff diagram. That's exactly what you see here. We can see the original call
+[  263.46s ->   270.52s] in the upper left and the other side of the trade. That is a short call. And it makes sense because
+[  270.52s ->   278.28s] financial derivatives are a zero-sum game. You can see that if the short call position loses $12, the long
+[  278.28s ->   285.56s] call position is going to gain $12. That's exactly what it means for these types of contracts to be a zero-sum
+[  285.56s ->   291.52s] game. The same is true for the put option. You can see here that if we are long a put and it is going
+[  291.52s ->   298.98s] to pay out $8, then the short put is going to lose $8. But what I want you to recognize here, and this is
+[  298.98s ->   305.44s] probably the most important part of understanding the difference between a long and a short call or put,
+[  305.92s ->   312.84s] is let's take a look at the two different states of the world for the short call and short put. So we can
+[  312.84s ->   316.68s] go into the market right now. We could buy a call option. We can buy a put option. But what about the
+[  316.68s ->   321.66s] short call and short put positions? Yeah, we can go into the market and we can sell a call and sell
+[  321.66s ->   328.16s] a put. But here's what I want you to notice. If we're short a call and the underlying expires,
+[  329.06s ->   336.40s] let's say out of the money, we don't receive any cash flow. Okay, well, that's not exactly a bad thing.
+[  336.40s ->   346.52s] But if it expires in the money, then we lose money. So if we're short a call, we're guaranteed to
+[  346.52s ->   353.12s] either lose money or make nothing. Same is true with the short put. We're going to either lose money
+[  353.12s ->   362.30s] or we are going to make nothing. What is our incentive for taking this short position? This
+[  362.30s ->   368.80s] seems like a terrible idea. At least with the long position, we have the potential to make an upside
+[  368.80s ->   373.62s] here, right? An upside if the stock price goes up for a call or the upside if the stock price goes
+[  373.62s ->   380.76s] down for the put. Well, this comes down to the price of the contract itself. We are looking at the
+[  380.76s ->   390.22s] payoff at time capital T in the future, but we're not at time capital T in the future. How much is this
+[  390.22s ->   398.49s] contract worth today? This is exactly what I've been talking about on my channel for a long time.
+[  398.49s ->   404.81s] And at length, I have dozens of hours of content related to pricing. I talked about the Black
+[  404.81s ->   409.19s] Scholes portfolio replication argument, the connection to the stochastic world with the
+[  409.19s ->   416.57s] Feynman-Cack theorem from physics. And, you know, most of the, most of the reactions to those types of
+[  416.57s ->   420.39s] videos is that, oh, you know, the Black Scholes model doesn't work in practice, but it's fundamentally
+[  420.39s ->   426.55s] misguided. That is not the intent of the Black Scholes model. It is not a prediction model.
+[  426.55s ->   433.25s] It is an explaining model. It's explaining exactly why we're observing the prices that we are in the
+[  433.25s ->   439.83s] market according to that particular framework and subsequently the volatility surface and skew.
+[  439.95s ->   445.41s] If all that makes absolutely no sense, then fret not because we're going to focus on the practical
+[  445.41s ->   453.49s] applications of the price here in the value that we either buy the contract at or the value we receive
+[  453.49s ->   458.95s] selling it. So this breaks down to a fundamental question. We obviously don't know what the
+[  458.95s ->   462.89s] underlying is going to be at some time in the future, right? We don't have a crystal ball. So
+[  462.89s ->   470.23s] we have no idea where on either of these diagrams we are going to be. So how much should we pay for that
+[  470.23s ->   475.07s] contract today? Well, here's a simulation to show you exactly what we're dealing with, right? We have
+[  475.07s ->   480.69s] no idea where the stock price is going to end. So here's our call option. Let's say that we own this
+[  480.69s ->   485.85s] call option. Well, clearly we want this stock price to end above the strike price to make money.
+[  486.33s ->   493.61s] But in this particular sample path that we walk, it did not. So this contract expires worthless and we
+[  493.61s ->   497.93s] make no money. Okay, but what's a different state of the world? Let's see what happens here.
+[  497.93s ->   502.33s] All right. Well, it looks like the stock price might. Oh, nope. It expires out of the money again.
+[  502.41s ->   509.82s] We don't make anything. Let's run this one. See what happens. Expires worthless. One more time.
+[  512.24s ->   519.54s] This one expires in the money. So we receive a payoff. Okay. Well, in the past few simulations,
+[  519.54s ->   525.68s] you saw some where we made no money holding this contract and some where in this particular case,
+[  525.68s ->   533.32s] one where we did. So what should we be willing to pay for this potential for this contract?
+[  534.12s ->   538.58s] Well, supply and demand are going to create an equilibrium price. And the Black-Scholes
+[  538.58s ->   543.38s] portfolio replication argument is going to give us the ability to back out the implied volatility.
+[  543.38s ->   548.26s] And it's going to establish different types of pricing models that we may use in the financial
+[  548.26s ->   554.36s] markets. And that is going to break down to the current price being a function of a risk-neutral
+[  554.36s ->   559.64s] conditional expectation. I have a ton of videos discussing this on my channel, if you're interested,
+[  559.64s ->   566.50s] but all that is to say is we have the Black-Scholes pricing function, and that is going to dictate the
+[  566.50s ->   575.62s] price that we pay for this contract or the value that we receive going short. What I want you to
+[  575.62s ->   582.48s] notice about the Black-Scholes price itself is throughout the life of the contract, it is going to continue
+[  582.48s ->   590.42s] to change. And eventually at maturity, it is going to converge to that hockey stick diagram, the hockey stick
+[  590.42s ->   596.58s] payoffs that we saw toward the start of this video for the call. And the same is going to be true for the put
+[  596.58s ->   603.80s] and the short call and short put. Why is this important? Because I want you to notice the price of the
+[  603.80s ->   613.16s] contract is not static. It changes throughout the life of the contract itself. You can see that if we sold
+[  613.16s ->   621.82s] the contract here, we would receive, what is this, roughly $13 for this particular contract. But then as
+[  621.82s ->   629.98s] time marches on, we're going to be able to sell it for, let's say here, $27. I would have much preferred
+[  629.98s ->   637.66s] to sell it there for $27 than I would have for $13. That's because I would have received $27 now,
+[  638.06s ->   643.84s] taking a short position, versus $13. But we can see that the underlying, when I sold it at $13,
+[  644.14s ->   652.12s] was much closer to the strike price. That's exactly why we couldn't sell it for this higher price.
+[  652.56s ->   659.14s] The underlying was not moving all that much. This chart here, if you are unfamiliar with the
+[  659.14s ->   665.28s] dynamics of options prices, is going to be very useful for you. I'm going to leave a link to this
+[  665.28s ->   670.40s] Jupyter Notebook in the description below. You can check it out on the Quant Guild library. Play around
+[  670.40s ->   677.00s] with this chart. You can see the option price evolve over time with the underlying asset. You can see
+[  677.00s ->   684.14s] here, as it starts to go back down to the strike price, we're back here. And instead of being able to
+[  684.14s ->   690.48s] sell it for $13, like we could around this point, time has decayed and it's eaten away at this option
+[  690.48s ->   698.30s] value. We can now only sell it for roughly $5. There's a lot going on in the context of options
+[  698.30s ->   704.36s] pricing and understanding the position value over time. This is a phenomenal way to go ahead and get
+[  704.36s ->   711.36s] started. But like I said in previous videos, I'm going to do more in-depth guides on the Greeks,
+[  711.36s ->   716.86s] understanding this value over time, and different options trading strategies in the future. This one
+[  716.86s ->   722.36s] is particularly dedicated toward the covered call. All we really need to understand here is this idea
+[  722.36s ->   728.46s] that the price is going to evolve over time. It is not fixed. It is not fixed for an underlying.
+[  728.92s ->   735.00s] It's not fixed for a maturity. It is going to continue to evolve dynamically as the underlying
+[  735.00s ->   739.82s] continues to change throughout the life of the options contract. And this is true also
+[  739.82s ->   746.38s] for all of the Greeks and anything that is going to be a function of spot and time.
+[  747.08s ->   752.26s] So the price is going to be a function of supply and demand equilibrium. We are going to back out
+[  752.26s ->   758.82s] those parameters, back out those explainers, the Greeks, so on and so forth using the Black-Scholes
+[  758.82s ->   765.98s] framework. And that is where we get those values from. They are not predictive values. They are
+[  765.98s ->   771.04s] explainers. We know the markets don't evolve via geometric Brownian motion like you're seeing here.
+[  771.04s ->   776.86s] We understand this. That is not what we are currently using these models for. It's a very
+[  776.86s ->   783.22s] important distinction. Okay. So now that we understand that the price of the options contract
+[  783.22s ->   788.68s] itself comes from the Black-Scholes model, and the Black-Scholes model is going to use the current
+[  788.68s ->   794.18s] market supply and demand to back out the appropriate price or the appropriate implied volatility that
+[  794.18s ->   800.82s] creates the equilibrium price, we then realize that these contracts, these payoffs here, these did
+[  800.82s ->   806.50s] not take into account the amount that we had to pay for the contract that is in the long call or the
+[  806.50s ->   813.38s] long put, or the amount that we would receive from going short the contract in the short call or the
+[  813.38s ->   822.98s] short put. So in other words, if the price of the option was $4, and we had this underlying asset price
+[  822.98s ->   831.08s] at expiration, that is, we're down $4, they would offset. So effectively, the short diagrams are
+[  831.08s ->   836.62s] going to shift up by the price of the option, whatever it is you are receiving in terms of
+[  836.62s ->   842.90s] premium, according to the Black-Scholes model. And of course, these are going to shift down because
+[  842.90s ->   850.26s] you're going to have to pay the short position for that right but not obligation. Understanding the
+[  850.26s ->   857.60s] fundamentals of those European options contracts, we can approach the covered call. So we talked about
+[  857.60s ->   865.92s] the payoff of the European call and European put options, but why are they given by the max functions
+[  865.92s ->   874.96s] themselves? Well, that is because it is the right but not obligation to buy or sell the underlying asset
+[  874.96s ->   880.66s] at a predetermined price called the strike price at some time in the future capital T, call it a month,
+[  880.66s ->   889.08s] whatever you like. There is not necessarily a cash flow to realize yet. Where does the cash flow come
+[  889.08s ->   896.04s] from? Where does this payoff come from? We're actually buying the stock cheaper relative to the market
+[  896.04s ->   902.54s] value. And that's where this payoff comes from. So for example, if we expire in the money here,
+[  902.54s ->   909.48s] then we are going to be able to buy the stock at 100, immediately go into the market and sell it at 120.
+[  909.48s ->   916.36s] That is where the cash flow comes from. The same is true with the put option. If we own this put option
+[  916.36s ->   924.94s] and we have an expiration and at the expiration, the underlying is roughly 80 bucks, then we are going
+[  924.94s ->   932.34s] to be able to sell it at 100. And then we are going to be able to buy it back at 80. And that is going
+[  932.34s ->   941.66s] to create that payoff there. So if we take a look at the short call, we'll notice that we are going to
+[  941.66s ->   950.52s] be obligated to buy. If we have the right but not obligation to sell on the long leg, then we are going
+[  950.52s ->   957.44s] to have the obligation, not the obligation, not the right to buy on the short leg. Whenever you are
+[  957.44s ->   968.10s] short options, you are obligated to buy or sell. What exactly does that mean? It means if the underlying
+[  968.10s ->   977.98s] asset expires at, let's say 120, then we are going to be forced to buy the stock at 120 in the market
+[  977.98s ->   989.10s] and then sell it to the long owner of the contract at 100, realizing this negative 20 payoff. Okay,
+[  989.18s ->   997.82s] well, hold on a second. Hold on a second. We are forced to sell to the long contract owner at 100.
+[  997.82s ->  1006.12s] But what if we already own the stock? In this example here, I said we have to go into the market
+[ 1006.12s ->  1016.11s] and buy it at 120 to sell it to the long contract holder for 100. But what if we already own the stock?
+[ 1017.61s ->  1023.81s] Well, we don't have to go into the market then. If we already own the stock, then we can just sell
+[ 1023.81s ->  1031.03s] it to them comfortably at $100. And whether or not we make or lose money is going to be based on the
+[ 1031.03s ->  1041.43s] cost basis for the stock itself. That is this idea of the covered call strategy. Let's suppose that I
+[ 1041.43s ->  1049.99s] already bought the stock at $90. My cost basis for the stock is $90. And it's currently trading
+[ 1049.99s ->  1060.22s] at maybe $95. If I was to sell a call option at $100, then I would have the obligation,
+[ 1060.50s ->  1069.38s] not the right, to sell it at $100 at time capital T in the future should the long owner of the contract
+[ 1069.38s ->  1079.60s] choose to exercise his right. But do I actually care about that as somebody who already owns the stock?
+[ 1079.60s ->  1088.16s] Well, not exactly, right? Because my cost basis is lower than the strike price. And this diagram here
+[ 1088.16s ->  1094.50s] really nicely illustrates the combined payoff functions here of owning the stock at a cost
+[ 1094.50s ->  1102.34s] basis of $90 and being short the option at a strike price of $100. We can see here this vertical line is
+[ 1102.34s ->  1107.66s] going to dictate a few different states of the world. So we can see here if our cost basis is $90 for the
+[ 1107.66s ->  1114.04s] stock and the strike price is $100. If we stay between our cost basis and the strike price,
+[ 1114.18s ->  1121.50s] then we are good. We are making money. We're making money because the stock is appreciating in value
+[ 1121.50s ->  1127.76s] relative to our cost basis. If I bought it for $90 and it's currently trading at $95, then I have a $5
+[ 1127.76s ->  1135.30s] profit. But not only that, I'm short the call option. So I'm going to receive a premium based on
+[ 1135.30s ->  1140.92s] whenever I chose to sell the contract, just like we saw in this animation here. It's going to depend
+[ 1140.92s ->  1147.78s] on where the underlying is throughout the life of that contract. But once I choose to sell it, the premium
+[ 1147.78s ->  1155.93s] that I collect is fixed. So this seems pretty good. What if it goes above the strike price? Well, hold on a
+[ 1155.93s ->  1162.75s] second. If we notice here, when we're above the strike price, we're not losing money in this case like we
+[ 1162.75s ->  1170.45s] were in the short call. Why? That's because we don't have to go into the market and buy at, for example,
+[ 1170.59s ->  1180.49s] 120 to sell it back to the long owner at 100. We already own the stock at a cost basis of 90. So if
+[ 1180.49s ->  1186.79s] it shoots up to 120, then we're missing out on the upside shore, but we're not going to have to go into
+[ 1186.79s ->  1192.99s] the market and overpay for the stock and then give it to the long contract owner at 100. Instead,
+[ 1193.29s ->  1199.93s] I can just give them the shares that I bought at 90 bucks. And I'm actually going to make a profit
+[ 1199.93s ->  1206.73s] on that trade as well. So when I'm short a call option, I'm going to collect the premium
+[ 1206.73s ->  1213.49s] based on whenever I sell it. And then if I own the stock at a lower cost basis relative to the strike,
+[ 1213.49s ->  1220.87s] I may get what's called assigned. And if I'm assigned, I'm going to have to give the owner
+[ 1220.87s ->  1227.25s] of the long contract, my shares at the strike price, but I'm not giving it to them for free.
+[ 1227.63s ->  1235.67s] They are literally going to buy them from me at the strike price. So if I bought this stock for 90
+[ 1235.67s ->  1242.79s] and it goes up to 120, sure. I miss out on that upside. But if the long owner exercises his contract,
+[ 1242.79s ->  1249.59s] I'm just going to sell him the shares at 100. I don't have to go into the market and I don't have
+[ 1249.59s ->  1255.47s] to buy at 120 and then sell for the lower price, creating that negative cashflow. Instead, I'm
+[ 1255.47s ->  1263.91s] covered. I already own the shares. So this strategy seems great. What is the downside, right? The
+[ 1263.91s ->  1273.33s] downside is if the stock decreases below our cost basis, then our account value is going to decrease
+[ 1273.33s ->  1281.71s] and we may not be able to sell options near our cost basis. This is a problem because the whole
+[ 1281.71s ->  1289.63s] purpose of the cover call strategy is to be able to collect premium, to be able to collect the value
+[ 1289.63s ->  1295.81s] of going short a call in this particular case. And that is going to be based on whenever you choose
+[ 1295.81s ->  1300.35s] to sell it throughout the life of this contract, based on a whole bunch of different factors,
+[ 1300.35s ->  1305.89s] as you can see here, wherever the underlying moves, the implied volatility, so on and so forth.
+[ 1306.21s ->  1316.74s] But if it decreases too low, we cannot sell an option at this new level. If it decreases,
+[ 1316.74s ->  1324.10s] let's say the underlying to roughly, I don't know, call it 70, I cannot sell a covered call around 70
+[ 1324.10s ->  1330.68s] because I'm nowhere near my cost basis. I run into the same issue as this original short call
+[ 1330.68s ->  1335.98s] position. I'm going to have to go into the market then, and I'm going to have to buy it for a higher
+[ 1335.98s ->  1343.16s] price and then sell it to the long holder of the contract. And I'm going to lose money with that
+[ 1343.16s ->  1348.68s] particular trade. More importantly here, if I am going to sell a contract, sell a call contract
+[ 1348.68s ->  1354.60s] here, I am emulating that with this covered position, that behavior of going into the market
+[ 1354.60s ->  1362.26s] and buying it more expensive. If I have a higher cost basis, that's to say, if I was to sell a call
+[ 1362.26s ->  1369.00s] at maybe 80, and then I got assigned, I already bought it at 90. So now I have a negative 10 cashflow.
+[ 1369.00s ->  1375.46s] So this covered call is far from a free lunch. There are effectively three states of the world.
+[ 1375.68s ->  1382.12s] The first state of the world is you have the underlying expire between your cost basis and
+[ 1382.12s ->  1388.80s] the strike price. You collect the premium and you still have positive cashflow, positive account value
+[ 1388.80s ->  1394.66s] from being above the cost basis for the stock. The other state of the world that you could end up in
+[ 1394.66s ->  1401.66s] is one where you are assigned. And now you're going to have to give up your stock at a lower cost basis
+[ 1401.66s ->  1407.40s] for the strike. You've effectively capped your upside, but you are still making a profit, not only
+[ 1407.40s ->  1414.36s] on the stock position, but also on your premium that you received for taking that short call.
+[ 1414.80s ->  1421.87s] The third and probably least favorable state of the world is the stock depreciates below your cost
+[ 1421.87s ->  1428.99s] basis. And now you're stuck holding that stock. Effectively, a covered call is going to give you
+[ 1428.99s ->  1435.39s] the downside risk of owning the stock while potentially capping your upside for guaranteed
+[ 1435.39s ->  1445.53s] cashflow of the premium. That is your short call position. If you do this effectively and you don't
+[ 1445.53s ->  1451.81s] have a massive regime change in your underlying, or you want to hold the stock for a long period of time,
+[ 1451.81s ->  1458.13s] this can be a very useful trading strategy because you're just going to hold the stock anyway. So
+[ 1458.13s ->  1464.03s] if it decreases below your cost basis, heck, you're going to collect the premium and you may even buy
+[ 1464.03s ->  1469.65s] more. If you buy more, you'll decrease your cost basis. Then you can get back to selling the covered
+[ 1469.65s ->  1475.49s] call anyway. There's a lot you can do with this strategy. You can combine it with cash secured puts.
+[ 1475.49s ->  1483.51s] You can diversify across a series of different underlyings. The list goes on, but those are
+[ 1483.51s ->  1490.71s] effectively the situations that you can find yourself in with this covered call. I have a few
+[ 1490.71s ->  1497.33s] different animations here that we can take a look at to see exactly what it looks like with the
+[ 1497.33s ->  1503.73s] underlying asset relative to the cover call position itself and the PNL that we are going to generate from
+[ 1503.73s ->  1510.13s] the trade. So what I have here is I have a covered call position. I am going to simulate a few
+[ 1510.13s ->  1514.59s] different States of the world, and we're going to take a look at and analyze the cash flows to really
+[ 1514.59s ->  1520.35s] understand what's going on in the different States of the world that we had analyzed here. So
+[ 1520.35s ->  1525.35s] I'm going to take this covered call position. I'm going to play this animation and we can see that
+[ 1525.35s ->  1532.37s] the underlying asset is going to expire in this case in the money. What does that mean? That means
+[ 1532.37s ->  1540.39s] that we are assigned. We are assigned. We bought the stock at 90. That is our cost basis. We sold our
+[ 1540.39s ->  1548.19s] call option at a strike of 100. So the stock PNL from this trade is going to be 10 bucks sold in lots
+[ 1548.19s ->  1558.48s] of 100. So we are going to get a thousand bucks from this trade. What about the option leg? The premium
+[ 1558.48s ->  1566.76s] that we received was 1686, regardless of where the option expires, we are going to be able to maintain
+[ 1566.76s ->  1576.24s] that premium. So we received a premium of $1,686 again, sold in lots of 100. So this trade made 2686.
+[ 1577.49s ->  1583.51s] That's pretty good for this covered call trade. What did we miss out on? We missed out on an upside.
+[ 1583.51s ->  1590.01s] That is exactly what it means when you are assigned in this particular trade. That means that you missed
+[ 1590.01s ->  1599.07s] out on potential upside. In this case, 4102. Again, we have 100 shares that would have been $4,102.
+[ 1600.19s ->  1609.37s] So we missed out on four grand, but we were able to make out with $2,686 in this particular cover call
+[ 1609.37s ->  1615.33s] trade. Again, I think with this particular trade, one of the most important things to keep in mind
+[ 1615.33s ->  1620.41s] is you're not going to be able to call tops and bottoms. This is a part of a larger portfolio of
+[ 1620.41s ->  1626.91s] strategies, a great way to get involved with the markets, understanding how you can use your active
+[ 1626.91s ->  1634.77s] positions or stocks that you want to buy and hold, or even buy more of to generate cash in the form of
+[ 1634.77s ->  1640.83s] premium taking these short call positions. You're not necessarily going to miss out on a tremendous
+[ 1640.83s ->  1646.51s] amount of upside. Like we see here, it's very possible that the stock is going to expire just
+[ 1646.51s ->  1651.25s] roughly in the money. There are a lot of different states of the world. It's more continuous, but I
+[ 1651.25s ->  1656.71s] want to cover the big ones. In this case, we got assigned that would be like the stock moving up in
+[ 1656.71s ->  1663.43s] this case to maybe 140. So that is one possible state of the world. This is what it looks like.
+[ 1663.43s ->  1667.19s] This is the cashflow. Let's see if we can generate another state of the world.
+[ 1667.55s ->  1672.49s] I'm going to go ahead and run this guy here. In this case, it looks like the stock is going down
+[ 1672.49s ->  1678.15s] and we can see, okay, let's check out this state of the world here. In this state of the world,
+[ 1678.23s ->  1683.97s] we are unassigned. That means that the option did not expire above the strike price. We're short it.
+[ 1684.55s ->  1689.89s] So nothing happens. The option is going to expire worthless. There's no reason for the person who
+[ 1689.89s ->  1697.79s] owns the contract to exercise it. So our cost basis was 90 bucks. The final value that is at
+[ 1697.79s ->  1706.55s] time capital T, the value of the underlying asset was 83.96. So we actually lost money in terms of
+[ 1706.55s ->  1714.85s] account value in terms of our net lick minus 604. So that's going to be in lots of 100, 604 bucks.
+[ 1714.85s ->  1726.43s] But in terms of our option leg, our premium was 1686. We get to keep that regardless of whether or not
+[ 1726.43s ->  1734.95s] the option expires in the money or out of the money. So if we combine these two legs, 1686 is $1,686.
+[ 1735.41s ->  1742.45s] We made 1082, 1082 bucks on this covered call trade. Effectively, that's this middle state of the world
+[ 1742.45s ->  1750.98s] here. We are ping ponging back and forth between our cost basis and the strike price of the option
+[ 1750.98s ->  1757.04s] that we sold. Now, in this case, we were a little bit below, but the premium was able to shift this
+[ 1757.04s ->  1764.12s] diagram up, keeping our P&L in the green, just like you see here. See if we can generate a more
+[ 1764.12s ->  1773.51s] negative state of the world. Now let's see if we can do so here. Okay. So this one expired just barely
+[ 1773.51s ->  1780.43s] in the money. Let's see if we can generate another draw. All right, here we go. This one expires
+[ 1780.43s ->  1788.75s] far below the strike price. So far below our cost basis that now we're actually losing money. That
+[ 1788.75s ->  1795.21s] is going to be this state of the world here where we are expiring so far away from our cost basis.
+[ 1795.95s ->  1800.49s] We're kind of in trouble. And what do I mean by in trouble? Well, the stock leg,
+[ 1800.49s ->  1807.31s] our cost basis was 90. The current stock value is 6736. So our unrealized P&L is minus 2264
+[ 1807.31s ->  1815.11s] in lots of 100 minus two grand. The option premium that we received is going to be 1686 and lots of
+[ 1815.11s ->  1827.35s] 11686, 1686 bucks. We combine those two legs were down. What's that? $578. Why is this an issue?
+[ 1827.35s ->  1836.31s] The current stock price is 6736? So if we take a look at this diagram here, 6736 is going to be
+[ 1836.31s ->  1845.09s] roughly around here. This is very far away from our cost basis. We cannot sell an option with a strike
+[ 1845.09s ->  1851.73s] price near the current level that it's trading at in the market. Otherwise, we are going to be running
+[ 1851.73s ->  1857.19s] into the same issue as with our vanilla short call position. Remember with the vanilla short call
+[ 1857.19s ->  1862.77s] position. If we're naked, that means we don't have the underlying asset in our portfolio at a lower
+[ 1862.77s ->  1869.21s] cost basis, then we're going to have to go into the market, buy at a higher price, and then sell it
+[ 1869.21s ->  1876.69s] back at the lower price. That's why we lose money. Notice if we are trading currently at 67 and our cost
+[ 1876.69s ->  1884.87s] basis is 90, we've effectively done that before we have to. What that means is we already own the stock
+[ 1884.87s ->  1891.45s] at a higher cost basis. So that means if we sell a call around here and we get assigned, then we're
+[ 1891.45s ->  1898.29s] going to be buying at 90, which we already have, and we're going to give it to them at a lower price,
+[ 1898.39s ->  1904.05s] and that's going to create a negative cash flow. So when you get stuck on this side of the trade,
+[ 1904.33s ->  1909.77s] this is where you start to run into trouble. And this is what it means to effectively have the
+[ 1909.77s ->  1916.47s] downside risk of the stock and capping your profit potential. We got to see a few different states of
+[ 1916.47s ->  1923.35s] the world here in terms of PNL, and that is going to cover exactly this trade. You're going to end up
+[ 1923.35s ->  1927.53s] in one of these three states of the world. You're either going to ping pong back and forth in
+[ 1927.53s ->  1931.97s] profitability, you're going to get assigned, or you are going to be deep out of the money,
+[ 1931.97s ->  1938.31s] and you're going to have your underlying depreciate below your cost basis. And this is where you get
+[ 1938.31s ->  1944.45s] into trouble. Now, if your underlying depreciates below your cost basis, what can you do? Well,
+[ 1945.03s ->  1950.69s] if you are still bullish on the stock, then you can buy more to decrease your cost basis and then
+[ 1950.69s ->  1956.41s] start trading this cover call position again. Is it a good idea? Well, that is certainly subject for
+[ 1956.41s ->  1960.29s] discussion, and it's going to be depending on the instrument that you are trading. That is the
+[ 1960.29s ->  1967.25s] particular equity in this case. But this is why I like the strategy for beginners. Because if you do
+[ 1967.25s ->  1973.21s] this on Apple, you sell a covered call on Apple, and it moves against you, and there's a significant
+[ 1973.21s ->  1980.77s] move below your cost basis, you still hold Apple. Yes, it's below your cost basis. Yes, you are not
+[ 1980.77s ->  1987.33s] liquid, you would have to realize a negative PNL should you want to move to cash and trade other things.
+[ 1987.33s ->  1992.77s] But if you are looking to combine active management with your investment portfolio,
+[ 1992.77s ->  2000.29s] this is a great way to get started. Because worst case scenario, you just hold the stock through a
+[ 2000.29s ->  2009.33s] drawdown. This is exactly the theory, the classroom component of this covered call trading strategy.
+[ 2009.57s ->  2014.49s] We've covered literally every single state of the world, what it means to be long or short,
+[ 2014.49s ->  2023.05s] a call or a put, and how the price based on the Black-Scholes model is going to dictate the value
+[ 2023.05s ->  2028.57s] of the option and what we receive in a short position, what we pay in a long position, and of
+[ 2028.57s ->  2036.01s] course, how this covered call here functions itself. Remember, the actual value of the options contract is
+[ 2036.01s ->  2044.97s] based on the stock that is exchanged at different values. It's not just cash settled. If you have an
+[ 2044.97s ->  2052.65s] interactive brokers account, and you are short a call option, then if you are assigned, you are going
+[ 2052.65s ->  2059.77s] to have to go and buy the shares, and then sell it back at that strike price. The same is true if you
+[ 2059.77s ->  2066.25s] are going to be doing some sort of cash secured put strategy, but we will do that another day.
+[ 2066.25s ->  2070.57s] We're now going to bridge the gap between theory and practice. Here we are in Interactive Brokers
+[ 2070.57s ->  2074.33s] Trader Workstation. I'll leave a link in the description below if you'd like to get started
+[ 2074.33s ->  2079.37s] with Interactive Brokers. They're the only broker I use. I've been with them for over 10 years in an
+[ 2079.37s ->  2085.85s] investing and trading capacity. We use them for every single quant build on this channel. Their API,
+[ 2085.85s ->  2092.57s] Python, Java, C is fantastic. I wouldn't recommend anyone else. I even have a dedicated video to get
+[ 2092.57s ->  2097.77s] you started with them and their historic and live market data. I'll leave a link to that video in the
+[ 2097.77s ->  2102.33s] description below if you'd like to check it out. But once you boot up your Trader Workstation,
+[ 2102.33s ->  2108.33s] you are going to see tabs on the bottom for Mosaic and Classic. I am a fan of the Classic view,
+[ 2108.33s ->  2114.65s] so that is where I am going to head over. We're going to look to trade this covered call strategy
+[ 2114.65s ->  2118.41s] specifically on NVIDIA. So what I'm going to do is I'm going to go over to this financial
+[ 2118.41s ->  2123.85s] instrument column. I'm going to type NVDA and I'm going to enter it as a stock. And what you
+[ 2123.85s ->  2129.61s] can see here is the current price that NVIDIA is trading at. It certainly was ripping today,
+[ 2129.61s ->  2136.81s] trading at a new all-time high, roughly 215, 216 here. So we're going to trade this covered call
+[ 2136.81s ->  2142.33s] strategy. I'm going to look to push it out past earnings. May 15th is earnings for NVIDIA,
+[ 2142.33s ->  2148.81s] but I'm going to look to cap my upside to receive guaranteed cash now. And I'm going to secure that
+[ 2148.81s ->  2155.05s] call with this stock at this current price. So what I'm going to start by doing is I'm going to
+[ 2155.69s ->  2162.41s] buy the stock. So I'm going to buy it and my cost basis is going to be roughly looks like 216.55.
+[ 2162.41s ->  2168.65s] And I have to buy it in a lot of 100. Options contracts are going to be bought and sold in lots
+[ 2168.65s ->  2176.09s] of 100. So if I'm looking to cover my short call position, I need to buy this stock and have 100
+[ 2176.09s ->  2181.29s] shares. Otherwise, when I'm assigned, I'm going to have to go into the market and that is going to
+[ 2181.29s ->  2186.01s] increase my cost basis and of course, decrease my P and L. So what I'm going to do is I'm going to
+[ 2186.01s ->  2193.53s] transmit this order and I'm going to look to purchase 100 chairs of NVIDIA. All right, cool.
+[ 2194.09s ->  2199.93s] That is my 100 chairs that I'm going to use effectively in this short call position to make
+[ 2199.93s ->  2204.49s] it a covered call. Now I'm going to go to the options trader and in the options trader in the
+[ 2204.49s ->  2210.33s] upper left hand corner here, I am going to enter NVIDIA as the underlying. So I'm going to go on over
+[ 2210.33s ->  2216.97s] here, go to NVIDIA and I can also just type it in whatever security I'd like as a stock.
+[ 2217.85s ->  2223.05s] I have a current existing tab that I'm going to use here and I'm going to look to trade after
+[ 2223.05s ->  2227.13s] earnings. So I go to more, I'm going to check weeklies and quarterlies if you have it currently
+[ 2227.13s ->  2233.05s] disabled. And instead of trading, trading an earlier dated option, I'm going to trade out 25 days
+[ 2233.05s ->  2239.69s] again, past earnings. And what you're going to see here is the current strikes of the at the money
+[ 2239.69s ->  2244.57s] options. And if we head on out a little bit more, you can see some 40, 30 delta options. And
+[ 2244.57s ->  2252.97s] what's crazy is the 30 delta options earlier today were these two 10s, two 15s. But ever since
+[ 2252.97s ->  2258.09s] the underlying ripped up, we can see that that has changed. This is exactly what I meant in the
+[ 2258.09s ->  2263.61s] simulation earlier when I said it's going to change throughout the life of the underlying option of
+[ 2263.61s ->  2268.17s] the underlying stock for the options contracts, all of these parameters, not just the price,
+[ 2268.17s ->  2273.29s] but also the Greeks. I'm going to do a video later on on exactly what these Greeks mean and how to
+[ 2273.29s ->  2278.09s] interpret them, how to use them as a model for your trading. But for now, we're going to look to
+[ 2278.09s ->  2282.65s] establish this position. So we can see we have the bid and the ask here. I'm going to be able
+[ 2282.65s ->  2286.89s] to sell at the bid, buy at the ask if you're unfamiliar with how the options chain is structured.
+[ 2286.89s ->  2291.21s] I also have a dedicated video for that topic. I'll leave a link to it in the description below,
+[ 2291.21s ->  2299.21s] but I'm going to take a short position in this 225 Nvidia call 25 days out. This is roughly a 40 delta
+[ 2299.21s ->  2307.05s] call and I'm going to transmit it. And I am going to receive a credit right now of $720. So that is
+[ 2307.05s ->  2313.69s] going to be my guaranteed premium to collect for this call option. As soon as that order is filled.
+[ 2313.69s ->  2321.37s] Once that order is filled, I have effectively engaged in a covered call position. Should the underlying go
+[ 2321.37s ->  2329.13s] up way up past 225, then I am going to be able to provide the shares that I purchased at a cost basis
+[ 2329.13s ->  2338.41s] of looks like 216 to that call option. Then I'm going to be able to collect a profit from that call
+[ 2338.41s ->  2346.01s] option selling at the strike price. So I'm going to sell at 225. My cost basis was 216. I have a $9 or
+[ 2346.01s ->  2354.01s] $900 profit to collect. If I am assigned, if the option expires in the money, if I didn't own the
+[ 2354.01s ->  2360.17s] shares, then I would have to go into the market and I'd have to buy Nvidia at the current market
+[ 2360.17s ->  2365.93s] price, which is above 225, and then provide it to the contract at the lower price, I would lose money.
+[ 2365.93s ->  2370.97s] But here we are effectively covering that call position, covering that upside. Yes,
+[ 2370.97s ->  2377.77s] our upside is capped at 225, but we are able to collect that $700 in premium today. So where does
+[ 2377.77s ->  2382.57s] this strategy fall apart? It can't be that much of a free lunch, right? Well, like we discussed in the
+[ 2382.57s ->  2390.57s] classroom, should the stock price decrease below your cost basis, then you are going to start to
+[ 2390.57s ->  2396.73s] lose money, your account value, your net lick. That is, should you sell that stock back to the market?
+[ 2396.73s ->  2404.41s] If it is below your cost basis, the current trading price, then you will lose money on this trade.
+[ 2404.41s ->  2411.21s] You have all of the downside risk of owning the stock while you cap your upside, of course,
+[ 2411.21s ->  2417.53s] trading that uncertain upside for the certainty of the option contracts premium.
+[ 2418.25s ->  2424.17s] This strategy works very well with cash secured puts, trading them together creates the wheel,
+[ 2424.17s ->  2431.37s] and that is a beautiful strategy to trade in an algorithmic capacity, especially when you have
+[ 2431.37s ->  2437.61s] the intent on holding the underlying stock anyway. So this is what we are building towards.
+[ 2437.61s ->  2442.25s] I hope you enjoyed this video. I hope you learned something. These videos certainly take a tremendous
+[ 2442.25s ->  2446.17s] effort to put together. So if you enjoyed it and you want to see more like it in the future, please
+[ 2446.17s ->  2451.61s] like comment, subscribe. It helps me out tremendously. It's always greatly appreciated.
+[ 2451.61s ->  2458.33s] Check out quantguild.com to master your quantitative skills. Check out interactive brokers to trade
+[ 2458.33s ->  2464.33s] this covered call strategy live. Other than that, I want to thank you so much for watching
+[ 2464.33s ->  2475.05s] and I'll see you in the next video.

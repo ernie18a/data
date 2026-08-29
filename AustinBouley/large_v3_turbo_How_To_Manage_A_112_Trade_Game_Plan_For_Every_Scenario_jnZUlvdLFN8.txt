@@ -1,0 +1,151 @@
+[    0.26s ->     4.68s] Hey guys, what's up in this video? I'm going to show you exactly how to manage a 1-1-2 trade.
+[    4.78s ->    11.08s] If the market goes up, you know what to do. If the market goes down and pulls back a bit into the bear trap range, you know what to do.
+[   11.38s ->    14.90s] And if the market majorly crashes, you'll know how to manage that trade.
+[   14.98s ->    21.46s] I'll also go over the best percentages for taking profit, for doing stop losses, and the different options you have for hedges.
+[   21.50s ->    25.28s] So let's dive in and explain how to properly manage a 1-1-2.
+[   25.28s ->    29.76s] I've been trading 1-1-2s on ESNCL for the past three months now.
+[   30.80s ->    34.24s] That's the only strategy I do, and I made $21,000 from it.
+[   34.28s ->    40.46s] So it's literally a great strategy, but I've been testing and trading and perfecting and backtesting 1-1-2s for the last six months.
+[   40.60s ->    44.06s] So let's dive into all the research and kind of things that I found with it.
+[   44.18s ->    46.34s] So let's take a look at a real scenario.
+[   46.56s ->    52.72s] This is the S&P 500 ES futures contracts, and so we're going to look at some scenarios.
+[   52.72s ->    58.22s] So scenario number one is how do we manage a trade if the market continues to go up, right?
+[   58.22s ->    61.46s] Because that's what the market does most of the time, so let's cover that first.
+[   61.90s ->    64.62s] So again, let's say we enter a 1-1-2 trade right here.
+[   64.78s ->    70.08s] So that will give us a payoff graph of something like this, where if the market goes up, we'll make money.
+[   70.46s ->    71.58s] So this is making money.
+[   72.20s ->    75.96s] And then we'll come down here, and then once we get to about here, we'll have a further profit.
+[   76.56s ->    77.92s] And then it'll look something like this.
+[   77.92s ->    80.84s] So this is a sideways profit graph, just so you can kind of understand it.
+[   80.84s ->    85.72s] Okay, if the market stays in this level right here, we'll make about $1,000.
+[   86.08s ->    90.16s] That tends to be what a 1-1-2 does if you're trading it on ES.
+[   90.38s ->    94.36s] And then if it drops down into this bear trap, it'll make about $3,000.
+[   95.42s ->   100.54s] And then if it crashes down below, then you have potentially unlimited loss here.
+[  100.80s ->   102.98s] So let's talk about each one of these scenarios.
+[  103.18s ->   108.12s] If the market, just like normal, continues to trend up, how do we manage this trade?
+[  108.12s ->   112.32s] Well, we do scenario number one, just a normal uptrending market.
+[  112.54s ->   114.40s] We want to take profit.
+[  114.58s ->   114.80s] Why?
+[  115.12s ->   120.28s] Well, because as the stock goes up, we're going to be able to realize that profit faster.
+[  120.62s ->   124.20s] And that's because the base of the 1-1-2 trade is we're selling two puts.
+[  124.42s ->   128.02s] And as the market goes up, those puts will get cheaper, which means we make money,
+[  128.04s ->   129.22s] and we should close that out early.
+[  129.66s ->   136.52s] So this is typically how you play out, an 80% to 90% take profit on those two puts.
+[  136.52s ->   139.88s] So on the naked puts, I'm going to call that NP, so naked puts.
+[  139.94s ->   142.22s] So 80% to 90% profit on the naked puts.
+[  142.24s ->   144.40s] If you get to that, you can close out the trade.
+[  144.70s ->   147.92s] Now, when you close out the trade and a market that is going up,
+[  148.18s ->   152.54s] typically what you want to do is you want to convert it into a hedge to protect future downside.
+[  152.68s ->   152.88s] Why?
+[  153.16s ->   156.38s] Because you're probably overlapping these 1-1-2 trades,
+[  156.38s ->   159.74s] as you have one and then one every week or something like that.
+[  160.14s ->   162.24s] And so you want a hedge to protect the downside.
+[  162.24s ->   166.90s] So what you can do with a 1-1-2 is turn it into either a put debit spread hedge,
+[  167.64s ->   171.02s] or you can turn it in to a ratio hedge.
+[  171.24s ->   175.30s] Again, I'll be making other videos in the future that explain this more in depth
+[  175.30s ->   177.90s] and exactly what this is, but these are kind of your two options.
+[  178.20s ->   180.42s] Or you can just close the entire position.
+[  180.78s ->   183.98s] Once you have a hedge on, you can probably close the entire position,
+[  184.34s ->   188.98s] but it's recommended to have some hedges on just to protect future downside.
+[  188.98s ->   193.08s] Okay, so that's what we do in scenario number one if the market is headed higher.
+[  193.56s ->   200.10s] Now, how do we manage our losses if the market pulls back and starts coming down into a bear trap?
+[  200.20s ->   201.74s] Why do I say manage losses?
+[  202.12s ->   206.52s] The reason being is because just because we get a larger payoff in this area
+[  206.52s ->   210.34s] where we can make $3,000 if the market gets into it,
+[  210.58s ->   217.42s] the market dropping into this level will still show us a temporary loss on those trades.
+[  217.42s ->   220.94s] Why? Because the market's dropping, so it's not going in our favor,
+[  221.10s ->   222.52s] so we're going to lose money because of that.
+[  222.86s ->   227.62s] And volatility is going to spike, which is also going to lead to larger losses for this trade.
+[  228.14s ->   234.42s] So what we do is we're looking for into this bear trap to manage it at a stop loss of around 300%.
+[  235.06s ->   238.02s] So again, we're looking for a 300% stop loss.
+[  238.32s ->   240.58s] So I'm just going to put SL for that. I know my spelling is terrible.
+[  240.88s ->   243.12s] But anyways, we're looking for a 300% stop loss.
+[  243.12s ->   248.42s] If it never hits the 300% stop loss and it stays in this level, then guess what?
+[  248.56s ->   252.26s] If it expires in this level, then we get our huge payout.
+[  252.46s ->   255.90s] But we need to make sure to manage risk because, again, the 1-1-2,
+[  256.24s ->   261.08s] despite being in the max profit zone, will still show a negative result.
+[  261.18s ->   264.80s] So we need to manage those trades correctly because this will increase buying power
+[  264.80s ->   268.06s] and lead to a lot of issues with your account if you don't manage the trade correctly.
+[  268.34s ->   270.38s] So you're looking at a 300% stop loss.
+[  270.38s ->   275.48s] Now, like mentioned before, if you do have some 1-1-2 trades that you were able to close
+[  275.48s ->   281.26s] around this profit level and then turn into a hedge, then this will soften the blow as
+[  281.26s ->   282.06s] the market drops.
+[  282.22s ->   287.84s] And so this 300% stop loss will be able to get moved a bit because we have profits being
+[  287.84s ->   288.96s] generated from our hedges.
+[  289.12s ->   291.36s] So that's one of the benefits of using hedges.
+[  291.48s ->   295.36s] So we covered what happens if it goes up or stays the same, what happens if it drops into
+[  295.36s ->   296.08s] the bear trap.
+[  296.08s ->   300.50s] Now, what happens if the market just falls off the face of the planet?
+[  300.84s ->   306.28s] Well, this is going to just be where you just use your same default, 300% stop loss.
+[  306.40s ->   306.54s] Okay.
+[  306.92s ->   307.26s] Why?
+[  307.40s ->   311.08s] Well, because we don't know what falling off the face of the planet is.
+[  311.22s ->   315.68s] Again, if you want to use some technical indicator like a moving average to kind of justify when
+[  315.68s ->   317.14s] to exit, you can do that as well.
+[  317.60s ->   322.10s] But again, a 300% stop loss is pretty solid to know when to do that.
+[  322.10s ->   325.42s] And so we can exit out of that and be able to do that.
+[  325.62s ->   330.20s] Also, if you're expiring and you're out of the money here and you got that far, so if
+[  330.20s ->   335.16s] you're expiring out, I mean, in the money, which is what these two short puts are going
+[  335.16s ->   340.74s] to be, expiring ITM, which means in the money, then you want to close out that trade.
+[  340.82s ->   344.90s] So close out that trade because you don't want risk of assignment on a futures contract.
+[  345.10s ->   347.16s] So you should just close that out.
+[  347.16s ->   351.74s] Now, if we're talking like you're a few days until expiration and you're pretty far in the
+[  351.74s ->   353.70s] money, then you might as well just close out those trades.
+[  353.80s ->   355.94s] But most likely you'll hit the stop loss level first.
+[  356.38s ->   360.04s] So again, that's exactly how you want to manage these 1-1-2 trades in every scenario.
+[  360.40s ->   362.40s] But if you're someone who's like, Austin, I have a busy job.
+[  362.50s ->   363.08s] I have a family.
+[  363.18s ->   363.58s] I have kids.
+[  363.62s ->   364.94s] I don't want to spend time on the screen.
+[  365.10s ->   367.62s] Like, is there a way to have all this managed for me?
+[  367.92s ->   369.10s] And well, yeah, actually there is.
+[  369.14s ->   371.00s] I built this tool called the Options Auto Trader.
+[  371.00s ->   376.82s] You can see here, I've been using it for my 1-1-2s and I made $17,700 with it.
+[  376.82s ->   380.30s] And again, this has automated my entire 1-1-2 strategy.
+[  380.60s ->   381.74s] It's gotten in for me.
+[  381.82s ->   382.74s] It's managed trades.
+[  382.84s ->   383.36s] It's exited.
+[  383.48s ->   385.42s] It's turned them into hedges and all that for me.
+[  385.88s ->   389.24s] So you can see here all the trades that it's entered.
+[  389.74s ->   395.04s] And then again, the hedges that has turned it into automatically.
+[  395.38s ->   397.08s] So you may be like, Austin, okay, how does this work?
+[  397.52s ->   399.98s] Because I don't want a bot that's doing something that I don't know.
+[  400.28s ->   403.28s] Well, again, this is something that you have full control over.
+[  403.38s ->   404.56s] So let me set one up for you.
+[  404.84s ->   406.22s] First thing you do is you connect your broker.
+[  406.82s ->   409.40s] Then you create a 1-1-2 Auto Trader.
+[  409.54s ->   412.28s] So again, this Auto Trader will only do what to tell it to do.
+[  412.34s ->   413.06s] So let's set up the rule.
+[  413.16s ->   414.14s] So 1-1-2 strategy.
+[  414.36s ->   415.92s] I pick what I want to trade it on.
+[  416.00s ->   417.82s] ES, MES, CL, GC, whatever.
+[  418.28s ->   419.66s] Let's pick MES for this example.
+[  420.04s ->   422.52s] I pick how far out in the future I want to go.
+[  422.66s ->   427.44s] Best practice is 90 days where you buy the 25 Delta, you sell the 23 Delta.
+[  427.86s ->   429.96s] And then again, you can sell two of the seven Deltas.
+[  429.98s ->   433.08s] Or you can change this to be whatever matches how you trade right now.
+[  433.08s ->   434.34s] And then save and continue.
+[  434.34s ->   436.86s] So that tells the Auto Trader how to enter these trades.
+[  437.56s ->   440.24s] Next, we want to define how often we want to enter trades.
+[  440.54s ->   442.16s] We can do once a week on Wednesdays.
+[  442.18s ->   442.92s] It's pretty standard.
+[  443.30s ->   449.18s] But again, if you want to enter multiple times a week or maybe only once a month, you can set that up too.
+[  449.42s ->   453.02s] You can also set up to only enter during red days or different things like that.
+[  453.02s ->   456.18s] Next, we need to manage take profit and stop loss.
+[  456.28s ->   459.94s] So again, 80% to 90% is your take profit range or stop loss.
+[  460.00s ->   461.16s] You can set it at 300%.
+[  461.16s ->   467.22s] Now we'll manage the stop loss for you on the entire trade because this manages entire trades.
+[  468.10s ->   471.70s] Next, you can also turn it into a hedge at the profit target.
+[  471.80s ->   475.16s] So once it hits an 80% profit, we can close the entire trade.
+[  475.46s ->   477.68s] We can turn it into a PDS hedge or a ratio hedge.
+[  477.76s ->   480.58s] But again, I'll be having a video soon that explains how to do that manually.
+[  480.58s ->   483.72s] And then how much money we want to trade with.
+[  483.76s ->   485.52s] Let's just say $5,000 for this example.
+[  486.24s ->   492.72s] And just like that, you can see here I created a 112 auto trader that will enter for me, manage my trades,
+[  492.88s ->   497.50s] turn them into hedges, and just do everything for me as I set it up.
+[  497.74s ->   501.44s] And if you just want to make sure you understand what it's doing, you can read what you set up on the settings.
+[  501.52s ->   506.12s] And you can see here that these 112s do exactly what I told them to do, and they're making me good money.
+[  506.20s ->   508.98s] Why? Because the 112 strategy is profitable in and of itself.
+[  508.98s ->   512.86s] And so if you automate the entire process, it's basically free cash flow every single month.
+[  513.10s ->   518.98s] So if you're interested in that, click the link down below to get started or watch a masterclass on how to automate any strategy.
+[  519.28s ->   521.42s] All right, guys, see you in the next video, and I hope you enjoyed it.

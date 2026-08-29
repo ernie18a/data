@@ -1,0 +1,219 @@
+[    0.20s ->     5.34s] In this short video, I will share a consistent rules-based strategy that's been working since the 1980s
+[    5.34s ->    10.32s] and something I've been personally trading over the last three months called the 1DT ORB strategy.
+[   10.60s ->    17.80s] I will even be showing you real trade examples from my broker of how I make anywhere from $100 to $500 a day completely hands-free.
+[   18.14s ->    22.64s] And if you stay until the end, I'll even give you access to this exact trading plan in the PDF form
+[   22.64s ->    27.06s] so you know how to enter, how to exit, and how to do everything. So make sure you stay tuned.
+[   27.06s ->    34.82s] Also, as always, disclaimer, I'm not a financial expert. Trading is risky. Do your own research and you're responsible for what you do.
+[   35.10s ->    40.86s] Alright, so what exactly is the 1DT ORB strategy and how do you make money with it?
+[   40.96s ->    44.72s] It all started in the 1980s with a guy named Toby Crabble.
+[   44.96s ->    50.12s] He entered the trading space and was like, let me see if I can use my statistics knowledge
+[   50.12s ->    53.40s] to look at patterns in the market and see what happens.
+[   53.40s ->    62.00s] He was a young buck, but he had a one amazing idea, and that was applying statistics and pattern research to the market.
+[   62.14s ->    67.70s] And he discovered one amazing thing called the morning hypothesis, which was this.
+[   68.02s ->    71.12s] The morning tended to predict the rest of the day.
+[   71.30s ->    75.40s] Whatever happened in the first 30 minutes to the hour of the stock market,
+[   75.44s ->    79.14s] whatever happened in the first hour, tend to predict the trend for the rest of the day.
+[   79.14s ->    83.80s] Now, we all know this, right? If we have a bad morning, we wake up on the wrong side of the bed, per se,
+[   84.08s ->    85.78s] we didn't have a bad rest of the day.
+[   85.88s ->    92.30s] Since the stock market is driven by human and human emotion, still, we're not in the full AI world yet,
+[   92.54s ->    94.34s] our emotions dictate the market.
+[   94.48s ->    99.10s] And so what happens in the first hour tends to make the sentiment of the market,
+[   99.20s ->   104.02s] the sentiment of the traders, and that tends to carry out and develop a trend throughout the rest of the day.
+[  104.02s ->   108.96s] That's exactly what Crabble discovered, and he wrote about it in his book called
+[  108.96s ->   112.58s] Day Trading with Short-Term Price Patterns and Opening Range Breakout.
+[  112.90s ->   118.52s] It outlined exactly what he found, that the morning showed what the rest of the day would be,
+[  118.66s ->   124.40s] and he showed exactly how to trade it, the rules of how to trade it, and real trade examples was so much more.
+[  124.48s ->   128.88s] And that's exactly what I'll be teaching you in this video today, is what was discovered in that book.
+[  129.32s ->   130.68s] Now, this is the coolest part.
+[  130.68s ->   133.74s] He regretted putting that book together.
+[  133.98s ->   139.98s] It sold so many copies, so many traders started deploying this strategy that he regretted,
+[  140.06s ->   144.72s] because he's, oh my gosh, this amazing strategy, and now everyone knows about it, I'm going to lose my edge.
+[  145.04s ->   152.22s] And so actually what he started doing is he started buying back books and canceling new books from being published
+[  152.22s ->   155.92s] so that he could keep this strategy for himself and a few close traders.
+[  156.24s ->   159.04s] Here are some people who have actually used this strategy.
+[  159.04s ->   165.88s] So Crabble himself created Crabble Capital Management, and he went on to have a positive year 11 years in a row.
+[  166.16s ->   171.18s] Now, that's really cool, but we also need to consider when he was making those positive returns.
+[  171.52s ->   176.54s] Between 1991 and 2002, he had a positive year every single year.
+[  176.70s ->   177.54s] What does that mean?
+[  177.80s ->   181.78s] During the worst-case scenario, we're talking dot-com bubble crash,
+[  181.92s ->   186.48s] where people lost their life savings, houses, everything went berserk.
+[  186.48s ->   193.40s] He actually made money every single year using the opening range breakout strategy that I'll be teaching here in this video.
+[  193.74s ->   194.86s] But he wasn't the only one who used it.
+[  194.90s ->   200.56s] People like Monroe Trout, Mark Fisher, Paul Tudor Jones, deemed one of the greatest traders in the world,
+[  200.76s ->   206.76s] they are all known to use either the exact strategy he created or a version of the opening range breakout.
+[  206.76s ->   209.26s] So what is this strategy? Let me explain it.
+[  209.44s ->   210.80s] Well, it's broken up into three parts.
+[  210.90s ->   211.80s] Number one, the breakout.
+[  211.96s ->   214.40s] You're looking for one chart set up every single day.
+[  214.62s ->   216.24s] Look for this one single chart set up.
+[  216.30s ->   217.38s] When you see it, you're good to go.
+[  217.76s ->   220.62s] Once that chart set up is there, you then enter the same trade.
+[  220.70s ->   222.06s] So we're going to enter a trade.
+[  222.18s ->   226.78s] Then from there, we're going to exit based on two exit rules, take profit or stop loss.
+[  226.84s ->   228.92s] So let's dive into each specific concept.
+[  229.28s ->   230.48s] So talking about the breakout.
+[  230.48s ->   235.44s] Now, step one, we're going to look at the market during the first hour of the day.
+[  235.50s ->   237.34s] So we're going to wake up.
+[  237.46s ->   239.14s] We're going to let the market do its thing.
+[  239.24s ->   245.18s] After the market has been over for about an hour, we're going to come in and we're going to look at what has the market done in that first hour.
+[  245.18s ->   251.34s] We're going to draw a little box around it and we're going to figure out the high that the market reached during that first hour.
+[  251.48s ->   255.98s] This becomes our resistance point that is known as our breakout level.
+[  255.98s ->   262.86s] So we look at the first hour of the day, find the highest point, draw that out, and that becomes our breakout line.
+[  262.92s ->   267.24s] A.K.A. whenever the market breaks above that line, that's where we're going to enter.
+[  267.54s ->   270.60s] So we're looking for a high and we're waiting for it to break.
+[  270.82s ->   273.88s] That is the breakout condition of the opening range breakout.
+[  274.08s ->   275.20s] Next is the entry.
+[  275.64s ->   278.10s] What is the ideal way to enter a trade?
+[  278.42s ->   281.42s] Now, back in the day, they were just entering and buying stock.
+[  281.68s ->   284.46s] But there are ways to do this in options that make it even more amazing.
+[  284.46s ->   292.24s] After backtesting over like a thousand different strategies, this is the best one I found, the best option strategy that pairs with this breakout.
+[  292.64s ->   293.38s] And it is this.
+[  293.80s ->   302.36s] Once we reach that breakout point, A.K.A. right here, once it breaks above that resistance level and closes above it, we're going to enter a put credit spread.
+[  302.60s ->   305.22s] This put credit spread is going to be done on SPX.
+[  305.68s ->   307.34s] We're going to have a 1DTE.
+[  307.34s ->   313.82s] Yes, 1DTE had a way higher performance and more consistent return compared to a 0DTE or something longer.
+[  314.22s ->   318.96s] So 1DTE was the sweet spot, which means we're going to go out one day in the future with our expiration date.
+[  319.30s ->   325.10s] It's a put credit spread where we're going to sell the 30 Delta put and we're going to buy $20 below it.
+[  325.36s ->   326.16s] So it looks like this.
+[  326.16s ->   327.50s] We're going to sell a 30 Delta.
+[  327.68s ->   329.10s] So let's say that ends up being right here.
+[  329.10s ->   331.28s] So let's say the strike price is $400.
+[  331.70s ->   333.82s] Then we're going to buy $20 below that.
+[  333.88s ->   336.76s] So we're going to sell the 400 and buy the 380.
+[  337.10s ->   339.30s] So that's how we create our put credit spread.
+[  339.50s ->   341.60s] That is the entry of the trade.
+[  341.68s ->   342.28s] Super simple.
+[  342.82s ->   347.06s] Now that we have the breakout and we know what trade to enter, how do we exit this trade?
+[  347.42s ->   348.46s] Well, let's say I'll be breakout.
+[  348.80s ->   356.18s] We enter that we're going to monitor for either a 40% take profit or a stop loss when our short strike is hit.
+[  356.18s ->   364.36s] So again, 40% take profit, which means whenever our credit spread, we're able to collect 40% of the credit and close out that trade.
+[  364.44s ->   368.48s] We're going to close the trade out for the stop loss whenever our short strike gets hit.
+[  368.56s ->   374.16s] So that's going to be wherever we bought that 30 Delta or if they sold that 30 Delta put contract.
+[  374.60s ->   378.78s] Whenever that level or strike price gets hit, we're going to close the trade out.
+[  379.18s ->   382.96s] This is roughly equivalent to a 50% stop loss, but it varies.
+[  383.08s ->   384.84s] Could be 40, could be 50, could be 60.
+[  384.84s ->   386.74s] Right. Those are the levels that we're looking at.
+[  387.14s ->   392.50s] Now you might be wondering, Austin, what happens if it goes until the end of the day and we don't hit either to take profit or stop loss?
+[  392.54s ->   393.48s] Do we hold that trade?
+[  393.80s ->   398.32s] Yes, you'll hold it overnight and you'll be able to see either a profit or a loss depending.
+[  398.46s ->   399.52s] But again, it's a credit spread.
+[  399.60s ->   400.90s] So our risk is always defined.
+[  401.28s ->   403.66s] Again, there's more things you can do, but we'll get into that later.
+[  403.74s ->   406.52s] So you might be wondering, what are the results of deploying the strategy?
+[  406.62s ->   407.30s] Great question.
+[  407.64s ->   410.90s] Here's a real trade I did on July 17th, 2025.
+[  410.90s ->   419.08s] You can see here the morning, found the high, got the breakout, entered the trade, set my take profit, stop loss, and it hit the take profit.
+[  419.54s ->   425.24s] And right here from my broker, my Tiki Trade account, you can see I made a $190 profit.
+[  425.46s ->   429.54s] So almost a $200 profit in three hours.
+[  430.20s ->   435.92s] But not only that, you can see here I did the trade again and I made $470 in a day.
+[  435.92s ->   444.68s] I entered here at the breakout of the high, I traded, the market didn't close, the next morning it gapped up, and I was able to close a huge profit.
+[  445.12s ->   447.28s] The next day, I did the same thing.
+[  447.36s ->   450.74s] It gapped up, I was running, the first hour high was right here.
+[  451.02s ->   456.86s] Once it broke, I entered, and I was able to make $113 in a matter of 26 minutes.
+[  457.18s ->   462.38s] That's the power of having one simple setup, the same trade, every single day on the same asset.
+[  462.38s ->   469.62s] So SPX for watching it, first hour of the day, enter the breakout, manage all these rules, do that same thing every single day, and that's what it does.
+[  470.06s ->   475.82s] But I also did the same thing here, where I entered above the breakout, and then I had a $270 loss.
+[  476.04s ->   477.40s] So again, nothing is perfect.
+[  477.48s ->   479.22s] You will still lose, but I wanted to show you that.
+[  479.30s ->   481.14s] But let's talk about the risk, okay?
+[  481.52s ->   482.86s] So what about large losses?
+[  482.86s ->   490.50s] If you've been trading options for any amount of time, especially my 0DTE traders, you know that you tend to make $50, $100, and then you lose $1,000, right?
+[  490.50s ->   492.26s] So can we prevent against that?
+[  492.34s ->   493.14s] And the answer is yes.
+[  493.20s ->   494.06s] I'll show you how in a second.
+[  494.74s ->   495.70s] What about overnight risk?
+[  495.78s ->   497.38s] Also, you said we're holding overnight.
+[  497.76s ->   499.00s] Can that lead to huge losses?
+[  499.34s ->   499.64s] Yes.
+[  499.72s ->   500.84s] So let's address that as well.
+[  501.12s ->   502.14s] And market crash risk.
+[  502.22s ->   503.80s] What if the market just keeps going down?
+[  504.02s ->   506.46s] Am I just going to get destroyed and have a series of losers?
+[  506.74s ->   508.00s] Let's talk about how to prevent that as well.
+[  508.32s ->   516.14s] So if you are tired of large losses, if you're an options trader who's just tired of having small win, small win, small win, large loss, this is how we fix it with this strategy, okay?
+[  516.58s ->   520.24s] First off, we're using a credit spread strategy when we trade this.
+[  520.24s ->   527.60s] Which means that our max risk, the maximum amount of money we can lose, is already defined to a set point, okay?
+[  528.16s ->   534.40s] Because we go $20 below the put that we sold, that is our risk, $20.
+[  534.94s ->   537.78s] If we want to change that to $10, we go $10 below.
+[  538.06s ->   541.88s] If we want to change that to $5, so we have a $500 risk, we can go $5 below.
+[  542.24s ->   547.08s] Obviously, that's going to impact how much money you make, but the win rate will still stay about the same.
+[  547.08s ->   551.04s] Which is going to impact how much money you win when you win and how much money you lose when you lose.
+[  551.22s ->   553.84s] You can tighten it or shorten it or long it, whatever you want.
+[  554.16s ->   558.40s] $20 was the level that I found that gave me the risk that I was okay with.
+[  558.64s ->   559.82s] But keep that in mind.
+[  559.88s ->   565.02s] You can adjust this credit spread to whatever risk tolerance you're okay with as long as you're selling the $30 to put.
+[  565.02s ->   569.78s] Also, our management rules help prevent losses massively.
+[  569.98s ->   570.80s] Huge losses, right?
+[  571.04s ->   578.44s] So, if we look at our back, as we'll show you here in a second, our average profit is $252 per trade and our average loss is $311.
+[  578.92s ->   582.20s] So, we're making a lot of money and we're not losing as much.
+[  582.26s ->   583.82s] We're losing about as much as we make.
+[  583.88s ->   588.58s] And this is amazing and gives us the ability to have a stable, consistent return.
+[  588.58s ->   597.10s] Instead of having small win, small win, small win, one large loss that wipes out 10 or 20 trades, now one loss wipes out a good trade and a half, one and a half good trades.
+[  597.10s ->   600.22s] Which makes surviving and being profitable long term better.
+[  600.82s ->   605.20s] So, large losses have been fixed with this issue because of our management rules and the way we use credit spread.
+[  605.58s ->   608.24s] Now, if you're tired of waking up to losses, which I know I have.
+[  608.30s ->   612.70s] One time I woke up to a $15,000 loss just because I didn't manage something correctly.
+[  613.00s ->   614.00s] Let's talk about this.
+[  614.14s ->   617.20s] We only trade with the trend.
+[  617.20s ->   624.86s] A lot of you guys are just entering iron condors or credit spreads at some random time in the market and not based on the actual trend.
+[  625.00s ->   627.24s] We use the opening range breakout.
+[  627.56s ->   632.92s] We set the height and we trade when it breaks out above it so that we make sure we're following the intraday trend.
+[  633.00s ->   634.40s] And this helps us avoid crashes.
+[  634.84s ->   643.30s] But if we do happen to get stuck in an overnight crash, that's why we have the credit spread to define our risk.
+[  643.30s ->   647.48s] It's to make sure that we're only losing what we are comfortable with losing so that our risk is always defined.
+[  647.82s ->   651.90s] So, no more overnight stress with this system because everything is in our control.
+[  652.14s ->   655.12s] We may not be able to control the market, but we can control the outcome either way.
+[  655.82s ->   658.06s] Now, if you're tired of market crashes, I get it.
+[  658.40s ->   661.34s] What's great about this is we're only trading with the trend.
+[  661.40s ->   664.74s] So, if we're having a series of red days, we just keep going down like this.
+[  664.74s ->   668.96s] Guess what? We're not going to be entering because we look at the first hour, we chart the high.
+[  669.22s ->   673.76s] Now, if the market's not a consistent downtrend, it's not going to break above that high, so we're not going to enter the trade.
+[  674.04s ->   679.18s] So, this is great because it keeps us out of consistent red days, leading to fewer losing streaks.
+[  679.52s ->   685.90s] Are they possible? Yes, but way fewer because we're waiting for the breakout, which only happens in uptrending markets.
+[  686.18s ->   692.62s] If we do happen to get caught in a market crash, though, that's why we have our exit rules and that's why we have defined risk from the credit spread.
+[  692.62s ->   694.46s] So, market crashes now solve as well.
+[  694.74s ->   696.50s] Now, what about the PDT rule?
+[  696.84s ->   697.48s] Great question.
+[  697.62s ->   707.54s] A lot of traders under $25,000 who are trying to scale their accounts are limited by this, meaning if you have under $25,000 in your account, you can't trade more than three trades a week.
+[  707.80s ->   708.54s] Here's the good news.
+[  708.66s ->   715.82s] Solution number one, we only enter trades when we have a specific opening range breakout, meaning when it breaks above the high.
+[  716.10s ->   717.88s] This does not happen every single day.
+[  718.18s ->   721.28s] So, by default, we average three trades a week.
+[  721.40s ->   722.62s] So, you don't have to do anything.
+[  722.62s ->   729.28s] By default, the strategy is PDT friendly because we don't really enter more than three trades a week.
+[  729.38s ->   730.74s] If we do, we can adjust.
+[  730.88s ->   731.76s] We'll talk about that later.
+[  732.10s ->   735.34s] But on average, you're not going to be exceeding the PDT rule.
+[  735.90s ->   743.42s] But if you want to get around it, you can use things like futures options, which are not subject to the PDT rule to trade this.
+[  743.42s ->   748.64s] So, instead of trading it on SPX, you could trade it on ES futures or MES futures.
+[  749.06s ->   751.94s] And that way, you can get around the PDT rule as well.
+[  752.68s ->   755.06s] So, the PDT rule is not a problem with this strategy.
+[  755.40s ->   761.02s] So, can you see how simple, using the same setup every single time, and powerful the strategy is?
+[  761.06s ->   763.38s] There's no guessing, no emotions, no crazy rules.
+[  763.38s ->   766.42s] Just a proven trading system backed by data.
+[  767.08s ->   772.42s] And it's even been backed across the last three years, and 500 traders have about a 65% win rate.
+[  772.72s ->   775.26s] Now, you may say, Austin, that's not as high as I'd like.
+[  775.40s ->   776.38s] Look at the return.
+[  776.66s ->   782.52s] Again, we're not seeing exponential growth and overnight return that's going to make you rich, because that's not what this is.
+[  782.72s ->   785.90s] But you can see here a slow up and down growth over the years.
+[  785.98s ->   791.34s] You might be stagnant for a month or two, but you're going to have that consistent move higher.
+[  791.34s ->   793.54s] And so, that's what I like about this strategy.
+[  793.66s ->   797.60s] No huge drops, no huge spikes, just a consistent movement up.
+[  797.82s ->   799.60s] You can see our average win is $252.
+[  799.96s ->   804.42s] Our average loss, $311, about a 63% win rate, which is what we're seeing in our live accounts.
+[  804.76s ->   809.72s] With one contract, you can see here, we can make as much as $2,000 or $1,500 in a single month.
+[  809.94s ->   814.50s] And we can lose, obviously, as much as $1,200, $900, $400 in a month as well.
+[  814.60s ->   816.30s] So, again, you can see the variance there.
+[  817.12s ->   820.76s] And our traders are seeing similar results in their live accounts, which is awesome as well.
+[  820.76s ->   833.02s] But quick question, if you had the ability to wake up every morning and make either $350 or lose $500 and you had a 70% chance of winning, would you take that bet every single day?
+[  833.26s ->   834.36s] And the answer is yes.
+[  834.42s ->   836.68s] And that's exactly what this opening range breakout is.
+[  836.68s ->   841.70s] It's giving you the same odds, the same probability, and you just need to take it.
+[  841.92s ->   849.12s] So, with that said, are you willing to promise me that you'll take the opening range breakout trade when you see this setup happen next?
+[  849.12s ->   852.98s] If so, I'm so glad because you're going to see some great results.
+[  853.18s ->   856.96s] Again, over time, look at about a month's time frame, you should be able to see some great results.
+[  857.40s ->   865.86s] Now, if you want to get this exact trade plan masterclass that's attached to this book as well, in the first link in the description down below, you can learn more about this.
+[  865.92s ->   867.70s] But I've given you everything you need in this video.
+[  867.70s ->   879.18s] So, if you want the actual trade plan to keep with you while you trade, make sure to click the link, the first link in the description down below, and you'll be able to get my trade plan on exactly how to do this, which is everything I laid out in this video just written out for you there.
+[  879.54s ->   881.02s] Anyways, guys, thanks for watching this video.
+[  881.16s ->   882.42s] I will see you in the next one.

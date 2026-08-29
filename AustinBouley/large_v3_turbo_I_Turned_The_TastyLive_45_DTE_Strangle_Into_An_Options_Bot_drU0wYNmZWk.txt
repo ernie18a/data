@@ -1,0 +1,92 @@
+[    0.00s ->     5.66s] The 20 Delta short strangle is an absolute no-brainer over X number of years.
+[    6.42s ->     9.86s] Tasty Live and Tasty Trade love the strangle strategy and I think it's great.
+[   10.10s ->    11.80s] Again, all the data backs it up.
+[   11.90s ->    15.32s] The question is, is there a way to completely automate the process
+[   15.32s ->    19.08s] so no matter if you're working, you're busy, you have kids or whatever it is,
+[   19.34s ->    23.06s] you can enter strangles, have it exit for you at 21 days
+[   23.06s ->    26.34s] and have it managed for you for your take profit and everything like that
+[   26.34s ->    28.12s] without you needing to do a thing.
+[   28.12s ->    32.26s] Well, that's what started this journey and I want to show you exactly how I built a way
+[   32.26s ->    36.24s] to automate the entire strangle strategy even if you hate tech and can't code.
+[   36.38s ->    37.70s] So let me show you because this is awesome.
+[   38.75s ->    42.41s] Before we dive in, I want to explain what a strangle strategy is for those who don't know.
+[   42.55s ->    45.65s] Simply, you're betting that a stock will stay in between two levels.
+[   46.03s ->    48.85s] So the stock stays in between this level, you make money.
+[   48.97s ->    51.41s] So as long as it stays in between those two levels, you make money
+[   51.41s ->    54.81s] and what you do is you exit when you get to a 50% take profit.
+[   54.91s ->    55.75s] I know that looks terrible.
+[   55.75s ->    59.33s] And you also close when you get to 21 days left, which means that
+[   59.33s ->    62.61s] when there's 21 days or less left in the trade, then you close it.
+[   62.67s ->    64.25s] So the question is, can we automate this?
+[   64.31s ->    65.51s] And the answer is now, yes.
+[   65.81s ->    69.85s] Guys, look, I've been using TastyTrade here and you can see that over the last,
+[   69.89s ->    71.47s] we changed this to the last 30 days.
+[   71.81s ->    75.33s] You can see that I've made $2,443 completely automated.
+[   75.43s ->    77.59s] I haven't done a thing because of what I've just made.
+[   77.85s ->    81.85s] Guys, it's been me seven months of building this to make this so that you guys can do this with ease.
+[   81.85s ->    86.65s] Let me show you exactly how to automate a TastyLive strangle strategy.
+[   87.05s ->    89.21s] First, I need to click on create an auto trader.
+[   89.63s ->    92.93s] Then I need to connect my TastyTrade account, which is super simple.
+[   93.43s ->    97.69s] Next, I'm going to create an auto trader and I want to automate the selling strangle.
+[   97.95s ->    99.31s] So again, there's so many things I can do.
+[   99.39s ->   101.21s] Like I can do the TastyLive selling puts.
+[  101.25s ->   104.43s] I can do a one-on-one, one-on-two, selling strangle, selling calls, credit spreads, ratio spreads, etc.
+[  104.57s ->   106.59s] But we're going to do the strangle strategy.
+[  106.83s ->   109.47s] Now, what they recommend is a 20 delta strangle.
+[  109.79s ->   113.69s] And what that means is that they go out 45 days in the future.
+[  113.81s ->   117.95s] So our DTE is 45 days and our deltas are going to be 20 delta.
+[  118.09s ->   121.09s] So if you have a hard time, you're like, Austin, I don't know what they mean when they say 20 delta.
+[  121.21s ->   121.57s] Well, don't worry.
+[  121.65s ->   123.35s] You just put in 20 here and they'll do it for you.
+[  123.37s ->   126.01s] And it'll pick the perfect strikes at the 20 delta range.
+[  126.53s ->   130.67s] Next, you can trade this on futures, SPX, ETFs, etc.
+[  130.83s ->   131.91s] They traded on SPY.
+[  132.01s ->   132.79s] So let's do SPY.
+[  132.79s ->   141.23s] So now we set this up, SPY selling strangle, 45 days until expiration with 20 delta wide wings.
+[  141.53s ->   141.81s] Perfect.
+[  141.95s ->   144.15s] Set this up exactly as their data shows.
+[  144.73s ->   148.81s] Next, we're going to decide how often we want to enter this.
+[  149.07s ->   152.69s] Guys, this system is a rules-based system, which means that it will only ever follow your rules.
+[  152.75s ->   154.11s] So we need to tell it what to do.
+[  154.11s ->   159.87s] So again, let's say that you like the strategy, you do it once a week and you start to size up your account.
+[  160.01s ->   165.19s] You can do it multiple times a week or even dial it back to once a month, depending on how often.
+[  165.27s ->   168.35s] For now, I'll just leave it at once a week on Wednesdays.
+[  168.43s ->   174.57s] If you want to enter during red days, you can enable that so that you can kind of take advantage of the counter trend and collect more profit.
+[  174.69s ->   176.27s] But let's just keep it simple for this video.
+[  176.27s ->   179.03s] Next, take profit and early management.
+[  179.23s ->   183.09s] Tasty Live, their numbers show you best if you take profit at 50%.
+[  183.09s ->   186.29s] So I just put in 50 here and now I'll exit at a 50% profit.
+[  186.77s ->   189.75s] And my early management, I'll put in 21 days.
+[  189.91s ->   194.39s] This means that I enter at 45 days when there's 45 days until the contract expires.
+[  194.73s ->   199.79s] When I get until there's 21 days left or less, then I'll close the trade because I'm putting in 21 days.
+[  199.79s ->   207.87s] If I want to change it, I can, but I'm just going to follow the Tasty Live stats so that I can have a proven system running based on backtests and based on the numbers they show.
+[  208.99s ->   209.89s] We're going to continue.
+[  210.01s ->   212.61s] How much money do we want to allocate to this bot?
+[  212.71s ->   217.11s] Again, how much money do we want to allow it to trade with based on all the open trades?
+[  217.43s ->   221.61s] Well, if you want to set it at 50% of your account, it's pretty much of a safe rule.
+[  221.61s ->   225.09s] Or you can follow more of the Tasty Live approach, which is trade small, trade often.
+[  225.41s ->   226.75s] So we can have a smaller amount.
+[  226.75s ->   231.61s] Now, let's just say, let's just set it for $10,000 for now and that we can move on.
+[  231.73s ->   235.35s] And so again, we can set it for $10,000, but again, you can change it based on how you want.
+[  235.75s ->   241.57s] So right here, if I am selling strangles, this gives me my approximate numbers for this auto trader.
+[  241.87s ->   246.35s] It says that each trade will take about $6,500 of buying power.
+[  246.47s ->   251.51s] And I'll make with my 50% stop loss, I will make about a $500 return, which is nice.
+[  251.51s ->   256.83s] And based on my risk, I'll lose about $10,000 in the worst case scenario.
+[  257.33s ->   262.71s] If you don't understand these settings, if you're new to Tasty Trade or Tasty Live or options trading in general,
+[  262.87s ->   267.71s] you can just read this for an easy explanation of what this auto trader will do for you.
+[  267.95s ->   270.87s] Again, you just authorize it and set the auto trader live.
+[  270.87s ->   278.87s] Again, you can see here, I've been using this one for the ES112 and it's made me $15,000 over the last three months.
+[  278.93s ->   279.71s] Now, why is this?
+[  279.75s ->   283.59s] Again, I'm not saying that you can make these same returns because it's the market and I can't promise that.
+[  283.85s ->   288.63s] But what I am saying is, guys, option selling is one of the most consistent, most profitable trading strategies around.
+[  289.03s ->   293.17s] And if you're able to automate it and regain your time and spend more time with your family
+[  293.17s ->   298.79s] and able to actually use a system step-by-step where your emotions don't get in the way,
+[  298.85s ->   300.69s] you'll see even way more success.
+[  300.87s ->   305.95s] So many times you see us as traders, like we're like, we know what we should do, but we don't because of emotions.
+[  306.09s ->   311.77s] But now we can let this system follow a proven method like the Tasty Live strangle and let it run and make us money.
+[  311.85s ->   316.59s] So guys, if you want to remove your emotions, if you want to regain your time and automate your option selling,
+[  316.85s ->   322.57s] this is the only platform on the internet right now that lets you do it and in a way that's super duper easy.
+[  322.57s ->   328.43s] So you can click the link down below to get started or go to optionsautotrader.com slash start.
+[  328.43s ->   333.23s] If you have any questions, let me know down below.
+[  333.49s ->   333.79s] All right, guys.
+[  333.87s ->   335.41s] Thanks for watching and I'll see you in the next video.

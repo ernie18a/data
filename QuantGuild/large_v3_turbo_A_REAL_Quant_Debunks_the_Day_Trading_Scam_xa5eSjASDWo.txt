@@ -1,0 +1,189 @@
+[    0.00s ->     4.98s] Economics tells us there's no free lunch. You know what that means in normal people language?
+[    5.08s ->    10.94s] You don't get something for nothing. You never get something for nothing. There's no shortcuts,
+[   10.94s ->    17.62s] and I'm sick and fucking tired of all of this day trading shit I see online. Someone very close to
+[   17.62s ->    22.90s] me just recently fell for this scam. They ended up with a crazy bill and a whole bunch of indicators
+[   22.90s ->    27.88s] that don't do anything. We're going to talk about the math that makes this scam possible,
+[   27.88s ->    34.12s] and hopefully I can save you guys a lot of time and frustration and, oh yeah, money
+[   34.12s ->    42.02s] avoiding these scams. We're going to start with one of the first problems, this idea of the
+[   42.02s ->    48.92s] lottery ticket effect. Unfortunately, a lot of these individuals are in need of cash and quickly,
+[   48.92s ->    54.78s] and they want to do it at a low effort. What is a good return in the financial markets? They don't
+[   54.78s ->    61.24s] know. We take it for granted if you swim in this pond that we understand the space, what it means
+[   61.24s ->    67.96s] to have an abnormal risk-adjusted return, to take unnecessary risks, but they don't. They don't
+[   67.96s ->    78.40s] know if 20%, 50%, 1,000% is good, and they don't know what risk they're taking. So if we take a look
+[   78.40s ->    85.86s] at these indicators relative to what should happen in some sort of trading strategy or effective
+[   85.86s ->    93.12s] stock portfolio, we see on the left that these strategies produce incredibly volatile paths.
+[   93.26s ->   100.94s] You might have crazy swings, manic highs and lows of 50%, 60%, 80% gains, and then massive 50%, 60%,
+[  100.94s ->   107.98s] 80% drawdowns, and the volatility drag alone is going to massacre your growth. Eventually,
+[  107.98s ->   113.18s] you're just going to blow out with these strategies, especially if you don't understand sizing. Whereas
+[  113.18s ->   119.26s] on the right, if you do it correctly, it's boring. You're just accumulating growth over time.
+[  119.54s ->   126.84s] In fact, the rule of 72 says that if we have this boring growth, roughly every five years,
+[  126.84s ->   133.90s] our portfolio value is going to double. That's what compound growth is. That's the goal in the
+[  133.90s ->   140.66s] financial markets. That insane convexity there, growth on growth. Whereas falling prey to these
+[  140.66s ->   147.34s] very volatile trading strategies just yields an abnormal amount of volatility drag on your compound
+[  147.34s ->   153.96s] growth, and you don't actually grow at all. It's very, very misleading because you can see on the left
+[  153.96s ->   162.12s] here we go from what? 100 to 350 very early on by year two. And we're not even at 200 by year two
+[  162.12s ->   168.34s] on this slow growth path on the right, but the convexity hasn't kicked in yet. We're doing it
+[  168.34s ->   173.42s] correctly. You don't get something for nothing. When you do it the right way, you achieve that compound
+[  173.42s ->   177.26s] growth over time versus on the left, you have no geometric growth, no convexity. Eventually,
+[  177.26s ->   183.72s] you're just going to blow out your account. I talk about the math debunking these clowns.
+[  183.92s ->   190.20s] This is exactly what they don't want you to see. Here, check it out. I'm in check GPT. I drop this
+[  190.20s ->   196.42s] return and I say, what would be the compound annual growth rate? And the compound annual growth rate,
+[  196.42s ->   207.98s] if it was over one year, would be 9,897%. Okay, so is this over one year? Or is this over a single
+[  207.98s ->   214.58s] trade? Right? Is this the type of performance that you can produce consistently? If not, what's the
+[  214.58s ->   220.74s] point? Okay, well, what if you can produce it consistently? Well, then, after 20 years, this is
+[  220.74s ->   228.80s] how much money you're going to have. More money than is available in the entire fucking world.
+[  229.54s ->   235.32s] All right? That's the math debunking this. The math is telling you, okay, either you can produce this
+[  235.32s ->   241.26s] consistently and you're going to be the richest person in the entire universe, or you can't produce
+[  241.26s ->   248.96s] this consistently and it's a one-off cherry-picked result to sell all of your nonsense. Winners in this
+[  248.96s ->   255.34s] space, they're the casino. They're not the player. Let me show you this simulation here. On the left
+[  255.34s ->   261.88s] is the casino's wealth path, and on the right are just players in the casino. And wow, look at this.
+[  261.88s ->   266.74s] Some players win really, really big, sometimes doubling, even tripling, quadrupling their money
+[  266.74s ->   274.20s] before what? They lose everything. Every single player, 75 out of 75 players in this simulation
+[  274.20s ->   280.10s] completely blew out in this casino. That's because the house has an edge. The markets have an edge
+[  280.10s ->   286.64s] against the uninformed. If you don't know proper position sizing, what risks you're exposed to,
+[  286.84s ->   291.54s] then you're effectively just a player in a casino. You're just going to give all of your money to the
+[  291.54s ->   297.50s] house like you see here. All right? The most effective agents in this space are the ones that
+[  297.50s ->   302.96s] operate as the casino, not the player. They understand the risk they're exposed to, how to manage it,
+[  302.96s ->   308.94s] how to size bets appropriately, how to engineer a portfolio. All right? A big problem also with this
+[  308.94s ->   316.74s] space is the fact that it is statistical at best. Statistics is hard. It's hard to study.
+[  317.18s ->   322.58s] It's elusive in the real world because even if you understand it in the classroom, in the frequentist
+[  322.58s ->   327.80s] sense, you start to study this idea of Bayesian statistics, this idea of having priors,
+[  327.80s ->   333.68s] kind of a vibe version of statistics, then you approach the real world and nothing works.
+[  334.00s ->   339.10s] There's no convergence, right? Let's take a look at an example of what I mean by this. This is a big
+[  339.10s ->   343.80s] problem in the finance literature as well, where if you're trying to show some sort of causality,
+[  343.80s ->   350.10s] you don't have a counterfactual. So let's suppose that you have a buy indicator from one of these day
+[  350.10s ->   357.84s] traders, right? It tells you to buy and oh, look, there's a gap up. All right. But we can't replay that
+[  357.84s ->   365.92s] day a thousand times, 10,000 times to see how that indicator would have performed statistically.
+[  366.30s ->   372.62s] There's no counterfactual. Everything happens in the financial markets one time. There's one path
+[  372.62s ->   379.92s] that we walk. And very well, when we saw that buy indicator, the market could have just entered into
+[  379.92s ->   385.36s] a bear cycle, a downtrend. We have no idea what's going to happen next. It doesn't matter what kind
+[  385.36s ->   391.16s] of idiosyncratic edge this indicator gives you. If something happens to the macro economy, it's going
+[  391.16s ->   399.40s] to impact that stock. So what do we do? Is all hope lost? No. What we try to do is, you know, we try to
+[  399.40s ->   405.28s] come up with proxies for what that probability would be, what that statistic would be. We say, okay, let's
+[  405.28s ->   411.86s] condition on all of these different times we've seen the indicator. And let's take a look at if there's
+[  411.86s ->   419.04s] any edge and then we can trade it. But the problem is without counterfactuals, probabilities are messy.
+[  419.68s ->   425.30s] Statistics and the subsequent distributions are messy. Let's take a look at this simulation. On the
+[  425.30s ->   433.16s] left, you see the in-sample data. We take a look at that buy indicator over the past five, 10 years.
+[  433.66s ->   441.34s] And wow, take a look. There's an edge, 57% win rate. That's pretty good. We should trade that buy
+[  441.34s ->   447.18s] indicator with appropriate position sizing. But okay. Now, after taking a look at this historic
+[  447.18s ->   452.94s] distribution, we decide to trade it. We trade it at a sample and there's no more edge. The win rate
+[  452.94s ->   459.06s] is 46%. And there's a negative mean. And even with appropriate position sizing here,
+[  459.68s ->   468.23s] the wins don't outpace the losses and we're just on track to lose money. This is a consequence of
+[  468.23s ->   474.53s] acting in the real world, all models being wrong, but some being useful. These probability statistics
+[  474.53s ->   480.69s] distributions don't converge in the real world. We don't have nice classroom asymptotic convergence.
+[  481.03s ->   486.65s] This is all about distributions, probability statistics, stability, and position sizing. I have
+[  486.65s ->   493.43s] a really cool app here effectively that allows us to see what happens as these probabilities and
+[  493.43s ->   500.81s] subsequent wins and losses for these trades change over time. So what happens if we have a 55% win rate
+[  500.81s ->   507.59s] and our win size is 2%, our loss size is 1.5? Well, we're going to be able to accumulate that edge
+[  507.59s ->   512.93s] over a series of trades. But what happens as my win rate drops? If you notice in the bar chart here,
+[  512.93s ->   519.57s] as I decrease this win rate, our edge is going down and down and down and down until it becomes
+[  519.57s ->   525.91s] zero. Then effectively, we're just operating at random. We're just going to indefinitely oscillate
+[  525.91s ->   530.45s] around zero. There's no growth there. And to make matters worse, if our loss size increases,
+[  530.45s ->   535.39s] we're going to actually have a negative edge and we're just going to lose money. The more we trade
+[  535.39s ->   540.75s] this strategy, that's exactly what happened in this example. When we backtest the indicator,
+[  540.95s ->   546.87s] it looks good. Then when we try to use it, it does not work because there's no structure there.
+[  546.87s ->   552.71s] You're not trading anything. You're not trading anything substantive. There's literally nothing
+[  552.71s ->   557.99s] in terms of market structure that you're trying to take advantage of. You're not trying to ride
+[  557.99s ->   564.81s] some sort of driver of return like just pure market beta or commodities trend following or
+[  564.81s ->   570.03s] some sort of like crisis alpha overlay. You're not doing anything here. This is probably just some
+[  570.03s ->   576.71s] technical indicator that was overfit to historical data that's being sold to you for an exorbitant fee.
+[  576.71s ->   585.85s] Right? Really, any fee is exorbitant for that. Effectively, the bigger problem here, right? And the
+[  585.85s ->   592.81s] big idea to understand in all of this is that probability statistics and distributions, they don't
+[  592.81s ->   600.13s] converge. All right? What I mean by that is suppose that they did and we observed this behavior, then out
+[  600.13s ->   605.17s] of sample going forward, this distribution on the right would perfectly match this distribution on the
+[  605.17s ->   609.91s] left. But that's not the case. So for example, here on the left, I'm going to show you convergence
+[  609.91s ->   614.93s] of a coin flip. And on the right, I'm going to show you what happens in the live market. So on the left
+[  614.93s ->   620.51s] here, we see, okay, well, if we keep flipping a coin, right, when we get enough data, at some point,
+[  620.55s ->   626.99s] we reach a critical mass of data, we're really approaching that theoretical 50% mean for a coin flip.
+[  626.99s ->   634.13s] It's 50-50, right? The probability of the coin flip never changes, right? There's no regime that's
+[  634.13s ->   638.69s] going to magically change the probability of flipping a heads, right? But on the right here,
+[  638.81s ->   644.67s] we can see the market changes regimes all of the time. We can never actually observe the true
+[  644.67s ->   650.67s] distribution. If we did, we wouldn't need a model in the first place. So what you're seeing here is
+[  650.67s ->   656.99s] this running win rate, this probability, right? It's just oscillating indefinitely. We can see this
+[  656.99s ->   664.23s] pink line as the true probability. The orange line is never going to converge to it or anything. It's
+[  664.23s ->   670.59s] always going to change over time. We can try to proxy for these different regimes, but there's still
+[  670.59s ->   676.19s] not going to be convergence. Our models are going to break. They're always going to be wrong. Now,
+[  676.19s ->   682.21s] interestingly, and if you understand enough probability and statistics, our models do not
+[  682.21s ->   691.31s] need to be correct to make money. They just need to be sufficiently not wrong. Something I talk a lot
+[  691.31s ->   698.15s] about in the context of market making. I'll leave a link to that video in the description below if you're
+[  698.15s ->   706.14s] interested. The reality is everything is about positioning and survival, not exclusively profits.
+[  706.14s ->   711.74s] So we really don't care about just raw trading P and L. We care about what risk we're exposed to
+[  711.74s ->   716.68s] over time because nobody knows what's going to happen. We don't know if a bear cycle is going to
+[  716.68s ->   722.88s] hit tomorrow. Not me, not you, not Citadel, not Jane Street, not the president of the United States.
+[  723.26s ->   727.46s] Nobody knows what's going to happen. Certainly not the Fed after all the disaster they've caused over
+[  727.46s ->   733.78s] the years, right? Nobody knows anything that's going to happen. It's all about optimizing for
+[  733.78s ->   740.06s] positioning and survival. If it sounds unsexy, it's because it is. This isn't about high frequency
+[  740.06s ->   745.42s] trading and making a ton of money. It's about just trying to make it to the long run to get that
+[  745.42s ->   755.54s] convexity to kick in, to get this compound growth to kick in. But these folks who are engaging in
+[  755.54s ->   760.64s] these day trading activities, that isn't the objective. It's not positioning and survival. It's a
+[  760.64s ->   765.08s] quick payday. You don't get something for nothing. How can we expect that type of growth in the long
+[  765.08s ->   770.22s] run with behavior like that in the short run? It's outrageous. Let's take a look at an example
+[  770.22s ->   774.82s] of what proper positioning and survival looks like and the implications in your long-term portfolio
+[  774.82s ->   778.28s] value. Whether you like it or not, you're going to have to see your portfolio through to the long
+[  778.28s ->   784.50s] run. So why sacrifice long run growth for ephemeral gains? Doesn't make any sense, especially when
+[  784.50s ->   789.42s] those ephemeral gains put you at risk of blowing out. So in 2021, let's take a look at market returns
+[  789.42s ->   795.20s] versus hedged portfolio returns. So on the left, you can see the market return 28.8%. It's pretty
+[  795.20s ->   800.20s] darn good. On the right, only 14.3% with a hedge sleeve. It's like, Roman, why would I ever run that
+[  800.20s ->   806.70s] portfolio on the right? It's terrible. Literally half the return. Absolutely garbage. A sharp of 1.27.
+[  807.06s ->   812.36s] The market had a sharper two and a max drawdown of 5.4%, right? In fact, the max drawdown of the
+[  812.36s ->   818.62s] hedge portfolio was 6%. Terrible. Absolutely atrocious. Okay. Well, nobody knows what's going to happen.
+[  818.62s ->   823.20s] This is just raw passive beta exposure. What your wealth manager is going to play golf with you for.
+[  823.56s ->   827.84s] Whereas on the right, this is a hedge portfolio, right? This is going to be indicative of some form
+[  827.84s ->   833.50s] of active management. What that means is, right? What you don't get something for nothing. What do
+[  833.50s ->   842.26s] you get when you're paying 14% return for this type of portfolio? Well, in 2022, when there was a slow
+[  842.26s ->   848.36s] bleed, what happens to that portfolio? Well, check it out. On the right now, instead of,
+[  848.36s ->   855.12s] losing, right? On the left here, we can see the market returned to negative 20% over that period.
+[  855.12s ->   863.90s] On the right, we returned negative, what is it? 2%. That's what you get. You're capping your upside
+[  863.90s ->   873.64s] to some capacity such that what? When there is a massive equity bleed, you don't bleed as much or at
+[  873.64s ->   880.98s] all. The market ended 20% down over 2022. I know passive wealth managers that tried tactical
+[  880.98s ->   887.32s] allocations. It's actually hilarious. They did worse trying to trade out of this passive beta
+[  887.32s ->   891.60s] because you know why? They weren't positioned for that type of market. They were positioned to just
+[  891.60s ->   897.28s] ride the passive beta exposure. On the right here with this particular hedge leg, right? You only lose
+[  897.28s ->   903.10s] 2%. You don't lose 20%, right? That is what you get. You don't get something for nothing, right?
+[  903.66s ->   909.88s] So that is what you get in return for having effectively that hedge in place to have a hedge
+[  909.88s ->   915.54s] portfolio. But okay, you're still not convinced. We lost 2%. Why would I do this? Why would I bother?
+[  915.54s ->   923.66s] I rather have that exposure because look, I made 28% in a good year, right? I only made 14% in this year.
+[  923.66s ->   933.54s] Again, short-run gains, right? Do not equal long-run growth. Those two things are not the same. If we
+[  933.54s ->   939.36s] take a look at the returns over the same period for both portfolios, check it out. The one that has
+[  939.36s ->   946.68s] the hedge in place actually has a higher return relative to just raw market exposure. Why is that
+[  946.68s ->   952.44s] the case? Volatility drag, something I talk about a ton on this channel. I never get sick of it. I
+[  952.44s ->   957.16s] derived it from scratch. If you watch that one, you're a real one. That's the real math that's
+[  957.16s ->   962.58s] going to make you rich. None of this nonsense with selling indicators. That's the good shit right
+[  962.58s ->   968.20s] there. If you watch that math, you guys got to watch more of my math videos, all right? I'm
+[  968.20s ->   972.30s] particularly biased, but you got to watch more of those. That's what makes all of this stuff make
+[  972.30s ->   983.76s] sense, all right? All that aside, check it out. You're not sacrificing short-run gains for long-term
+[  983.76s ->   990.92s] growth when you have a hedge in place. You actually have a better return relative to the unhedged
+[  990.92s ->  1001.32s] portfolio, which achieved higher gains in 2021, but has a worse drawdown in 2022, whereas your entire
+[ 1001.32s ->  1007.50s] range from 2020 to the end of 2022 for this hedge portfolio, you actually have positive return over
+[ 1007.50s ->  1014.84s] the period, right? Of 6% versus the 1.8%, right? And that is what is going to play into the convexity
+[ 1014.84s ->  1022.22s] in the long run. That's how you get growth on growth on growth on growth and achieve that type of return
+[ 1022.22s ->  1030.02s] profile, right? Over the course of 5, 10, 15, 20 years. You don't get it by chasing gains in an
+[ 1030.02s ->  1036.34s] ephemeral capacity, right? That's just a way to blow out your account. But people don't want to
+[ 1036.34s ->  1041.32s] think about the long run. They want to think about indicators in the short run to print money, right?
+[ 1041.52s ->  1046.96s] You're not going to take a thousand dollar account and bring it to a million dollars without taking
+[ 1046.96s ->  1051.26s] exorbitant risk that you are just going to lose all your money. You're going to what? Trade deep out
+[ 1051.26s ->  1058.32s] of the money calls and hope to hit it big? That's not how it works, all right? And this brings us to
+[ 1058.32s ->  1066.18s] effectively the big problem in the space. The big problem in the space is that learning is hard.
+[ 1066.84s ->  1071.94s] Learning is hard, man. It takes a long time. And when I say it takes a long time, I mean,
+[ 1071.98s ->  1078.90s] it takes years just to figure out what the fuck everything is called. And then after that,
+[ 1079.20s ->  1084.74s] you got to put all the pieces of the puzzle together. And then after that, you got to use it to do shit.
+[ 1084.74s ->  1090.88s] You need to stay for a significant amount of time for it to pay off. But that is where the payoff
+[ 1090.88s ->  1096.94s] grows at an increasing rate. You get convexity from your learning as well. You can see here,
+[ 1097.00s ->  1100.90s] if you just quit after a few years, fuck, people probably don't even make it to a few years. They
+[ 1100.90s ->  1107.36s] make it to month one or two and then drop off. But if you stick with this, then you're going to see
+[ 1107.36s ->  1113.26s] that compound growth. And when you grow your knowledge on your knowledge in that capacity,
+[ 1113.82s ->  1120.20s] the sky is really the limit for engaging in this space, whether it be in the industry as a trader,
+[ 1120.38s ->  1127.90s] a market maker, or a quant, or actively managing your own portfolio. If you are looking to do something
+[ 1127.90s ->  1133.54s] like that, then you need to master your quantitative skills. And that's exactly why I built QuantGuilt.
+[ 1133.54s ->  1139.76s] It is everything that I wish I knew when I was coming up to become a quant, to make this part
+[ 1139.76s ->  1147.64s] of the learning curve as steep as possible, to get you from A to Z, from first principles to
+[ 1147.64s ->  1152.70s] practitioner as quickly as possible, over 100 hours of electric content taught by myself. I'm
+[ 1152.70s ->  1156.88s] absolutely crazy. I put everything together, everything that I learned from industry and
+[ 1156.88s ->  1162.04s] academia, an adaptive practice engine that scales with your skill level, over 90 quant lessons in math,
+[ 1162.04s ->  1168.76s] finance, and probability, 70 interview questions, a thousand practice questions. God, the list goes
+[ 1168.76s ->  1172.58s] on. If you want to master your quantitative skills for a role in the financial services industry as a
+[ 1172.58s ->  1177.50s] trader, a market maker, or quant, check out quantguild.com. Mastering these difficult concepts
+[ 1177.50s ->  1183.20s] creates these nonlinear payoffs. It is difficult. There are no shortcuts. There are no shortcuts to
+[ 1183.20s ->  1188.60s] anything, whether it be trying to master your quantitative skills or achieving an optimal risk
+[ 1188.60s ->  1194.82s] adjusted return from the financial markets. Don't fall for these scams. Don't pay for indicators.
+[ 1195.34s ->  1199.04s] Just master your quantitative skills and make your own decisions.

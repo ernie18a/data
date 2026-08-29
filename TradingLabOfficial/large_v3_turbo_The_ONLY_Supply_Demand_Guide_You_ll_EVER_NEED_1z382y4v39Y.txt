@@ -1,0 +1,184 @@
+[    0.16s ->     1.28s] Supply and demand.
+[    1.28s ->     6.24s] Absolutely everybody is talking about it, including this hedge fund manager that explains
+[    6.24s ->     8.80s] exactly how he uses it in an interview.
+[    8.80s ->    10.64s] But we'll get to that in a little bit.
+[   10.64s ->    13.60s] So why should we learn supply and demand in the first place?
+[   13.60s ->    18.64s] To understand that, we have to dive deeper into the core concepts of why the market moves.
+[   18.64s ->    21.44s] Why does the market move in the way that it does?
+[   21.44s ->    26.88s] The only way a chart will move up is if there's more buying pressure than selling pressure.
+[   26.88s ->    28.24s] Now, I know what you're thinking.
+[   28.24s ->    30.72s] Oh trading lab, that is so obvious.
+[   30.72s ->    33.36s] Why are you wasting our time and even telling us this?
+[   33.36s ->    35.20s] Well lady, I was about to get to that.
+[   35.20s ->    38.48s] Because a lot of people don't really sit down and think about the basics.
+[   38.48s ->    40.56s] A lot of people will watch a YouTube video,
+[   40.56s ->    45.12s] get told to draw some fancy rectangle on their chart by a random trading guru,
+[   45.12s ->    46.64s] because they say it works.
+[   46.64s ->    49.84s] But in reality, the viewer has no idea why it works.
+[   49.84s ->    52.40s] But not my viewers, you guys are smart.
+[   52.40s ->    53.84s] You actually want to learn.
+[   53.84s ->    55.84s] You know how long I've been waiting for this?
+[   55.84s ->    58.32s] I'm about to make a name for myself here.
+[   58.32s ->    60.08s] So look at this picture.
+[   60.08s ->    62.88s] Here we have all the buyers and sellers in the market.
+[   62.88s ->    67.04s] The red represents the sellers winning, the green represents the buyers winning.
+[   67.04s ->    72.16s] When you have a lot of sellers, like in this area, price will drop fast and sharp.
+[   72.16s ->    73.28s] Something like this.
+[   73.28s ->    75.84s] Because sellers are in complete control.
+[   75.84s ->    80.56s] As price starts to go down, more and more buyers will start to fight against the sellers,
+[   80.56s ->    82.24s] slowly gaining back control.
+[   82.24s ->    86.72s] Now, as more and more buyers are entering, this can cause little pullbacks on the chart.
+[   86.72s ->    89.92s] But the chart's momentum is still overall bearish.
+[   89.92s ->    95.44s] Price will only fully reverse once there's a large majority of buyers compared to sellers,
+[   95.44s ->    96.64s] like in this area.
+[   96.64s ->   100.56s] And once that happens, there will be a fast sharp move to the upside,
+[  100.56s ->   102.96s] and then the whole process repeats itself.
+[  102.96s ->   105.04s] Going on forever in the future.
+[  106.00s ->   107.52s] Now, why am I telling you this?
+[  107.52s ->   110.72s] You see, one day I got bored and read a financial article.
+[  110.72s ->   111.52s] Yeah, I know.
+[  111.52s ->   113.36s] I read financial articles when I'm bored.
+[  113.36s ->   113.84s] I'm a nerd.
+[  113.84s ->   118.48s] But on a rainy afternoon, I was reading an article that interviewed a hedge fund manager
+[  118.48s ->   120.16s] and how he looked at the market.
+[  120.16s ->   122.72s] And he said something that really stuck out to me.
+[  122.72s ->   125.44s] But before we get to what he said, let me show you something.
+[  125.44s ->   128.80s] One of my sponsors, Hankertrade, has a copy trading feature.
+[  128.80s ->   133.28s] Before sharing it with you guys, I wanted to test it out for myself to see if it actually worked.
+[  133.28s ->   136.96s] So I funded my trading account with $50,000 for testing.
+[  136.96s ->   140.56s] I checked the top trader leaderboard to see who had the best win rate.
+[  140.56s ->   144.40s] I found this guy who seemed to be pretty good and had a high win rate.
+[  144.40s ->   146.96s] So all I had to do was click this follow button,
+[  146.96s ->   152.24s] and my account would automatically take all the trades this specific trader took automatically.
+[  152.24s ->   157.52s] The analyst has taken five trades since I followed them, and all five of them were winners.
+[  157.52s ->   161.52s] So far, my account is up $7,646.
+[  161.52s ->   164.00s] Not bad for just clicking a follow button.
+[  164.00s ->   167.44s] Not saying the system is perfect and you will only get winning trades,
+[  167.44s ->   171.92s] but I'll proceed to update you guys throughout the weeks to let you know how my account is doing.
+[  171.92s ->   173.76s] If you would like to copy trades as well,
+[  173.76s ->   176.24s] I'll leave a link in my description so you can check it out.
+[  176.24s ->   177.28s] Okay, back to the video.
+[  177.28s ->   179.12s] So when reading this financial article,
+[  179.12s ->   182.32s] this hedge fund manager said something that really stuck out to me.
+[  182.32s ->   185.60s] You need to focus on who is on the other side of the trade.
+[  185.60s ->   189.76s] Whenever you buy a position, there's always a seller on the other side of the trade,
+[  189.76s ->   194.48s] which means there's always someone who thinks the chart is going to go in the opposite direction
+[  194.48s ->   195.44s] than what you think.
+[  195.44s ->   199.04s] Now, this is a very, very important concept to understand.
+[  199.04s ->   201.52s] If you're always buying from someone who is selling,
+[  201.52s ->   204.64s] would you rather buy from a good trader or a bad trader?
+[  204.64s ->   209.36s] When you're buying a position, you want to be buying from someone who is inconsistently profitable.
+[  209.36s ->   213.68s] If you start thinking like this when trading, it'll change the way you take trade.
+[  213.68s ->   216.56s] If you don't know where these profitable traders are selling,
+[  216.56s ->   219.92s] you might just be one of those bad traders that you're selling to.
+[  219.92s ->   223.60s] But how do we know where these profitable traders are buying and selling?
+[  223.60s ->   228.00s] Going back to this chart, the only way we know a large group of sellers or buyers
+[  228.00s ->   230.80s] are in complete control is if there's a sharp move.
+[  230.80s ->   232.56s] So take this chart for instance.
+[  232.56s ->   235.44s] When I look at this chart, I'm not trying to predict the future.
+[  235.44s ->   238.72s] I'm just trying to look at where the majority of buyers and sellers are.
+[  238.72s ->   241.92s] Here, the chart had a sharp downwards move from this point,
+[  241.92s ->   245.84s] meaning there were way more sellers than buyers from this point on.
+[  245.84s ->   248.00s] In other words, an area of supply.
+[  248.00s ->   250.80s] Now, you may ask, how do we know there are more sellers?
+[  250.80s ->   253.68s] If there wasn't drastically more sellers at this point,
+[  253.68s ->   256.08s] price would just continue to move sideways here.
+[  256.08s ->   257.52s] But that doesn't happen.
+[  257.52s ->   259.36s] It moves sharp to the downside.
+[  259.36s ->   260.96s] Here, the opposite is true.
+[  260.96s ->   262.80s] There was a sharp move to the upside,
+[  262.80s ->   266.96s] meaning there is way more buyers than sellers or an area of demand.
+[  266.96s ->   269.04s] Another way to look at this is like this.
+[  269.04s ->   270.56s] You know the company Costco?
+[  270.56s ->   272.00s] Ah, I love that company.
+[  272.00s ->   273.12s] You can buy anything from there.
+[  273.12s ->   275.20s] But what is Costco's business plan?
+[  275.20s ->   278.80s] They buy a large amount of inventory in bulk at a cheap price.
+[  278.80s ->   279.84s] Then what do they do?
+[  279.84s ->   282.64s] They sell it to a retail buyer for a higher price.
+[  282.64s ->   287.68s] The only way Costco can make money is if they sell to a quote unquote bad buyer,
+[  287.68s ->   291.84s] or someone who is willing to pay more than what they did for the product.
+[  291.84s ->   294.32s] You should look at trading the exact same way.
+[  294.32s ->   297.12s] If you're Costco, where are you buying your inventory in bulk?
+[  297.12s ->   298.64s] Obviously at a low price.
+[  298.64s ->   300.56s] Where are you selling to a retail buyer?
+[  300.56s ->   301.68s] At a high price.
+[  301.68s ->   303.76s] Now remember that statement I made before?
+[  303.76s ->   307.28s] In order to be a winning trader, you have to sell to a losing trader.
+[  307.28s ->   310.56s] Now when you look at this chart, where will the losing trader be buying?
+[  310.56s ->   312.88s] A lot of retail traders will buy in this area,
+[  312.88s ->   315.20s] maybe because they see some momentum building up,
+[  315.20s ->   318.56s] an indicator tells them to enter, or whatever the reasoning is.
+[  318.56s ->   321.36s] But they are missing a very important key point.
+[  321.36s ->   323.60s] Supply exceeds demand in this area.
+[  323.60s ->   326.88s] Meaning there are drastically more sellers than buyers here.
+[  326.88s ->   329.76s] Only a bad trader would buy when there are more sellers.
+[  329.76s ->   333.36s] So when looking at this chart, you should be asking yourself two questions.
+[  333.36s ->   336.88s] Where are the major points where there are drastically more buyers than sellers?
+[  336.88s ->   339.36s] And where are the bad traders buying and selling?
+[  339.36s ->   343.44s] If you answer these two questions correctly, you will be a profitable trader.
+[  343.44s ->   346.08s] So where are the majority of buyers and sellers?
+[  346.08s ->   349.92s] Well, we can see from this point on, there was a sharp move to the upside.
+[  349.92s ->   354.16s] This could only happen if there is drastically more buyers than sellers.
+[  354.16s ->   356.56s] So we mark the beginning of this move.
+[  356.56s ->   358.56s] Now where are there more sellers than buyers?
+[  358.56s ->   360.40s] Here we have a sharp downwards move,
+[  360.40s ->   363.76s] which could only happen if there were more sellers than buyers.
+[  363.76s ->   365.76s] So we mark the beginning of this move.
+[  365.76s ->   367.52s] If the chart looks something like this,
+[  367.52s ->   372.00s] we don't have a clear area of supply and demand because there were no sharp moves.
+[  372.00s ->   374.08s] Sure, the chart moved down from this area,
+[  374.08s ->   377.20s] but that just shows there are slightly more sellers than buyers,
+[  377.20s ->   378.88s] which we're not really interested in.
+[  378.88s ->   382.16s] We want to know areas where there are drastically more sellers than buyers,
+[  382.16s ->   385.28s] which we can only tell if there's a drastic sharp move.
+[  385.28s ->   387.84s] Please take note of this because it's very important.
+[  387.84s ->   389.60s] Then we have to ask the final question.
+[  389.60s ->   392.40s] Where are the bad traders most likely to enter and exit?
+[  392.40s ->   396.32s] A bad trader is going to sell when there are more buyers than sellers.
+[  396.32s ->   398.32s] So we have our supply and demand areas.
+[  398.32s ->   400.16s] Wait for price to come to our demand.
+[  400.16s ->   403.92s] We buy from the retail trader who is inconsistently profitable.
+[  403.92s ->   406.56s] Set our stop loss below the area of demand.
+[  406.56s ->   409.28s] Set our take profit at the area of supply.
+[  409.28s ->   410.48s] Watch the trade play out.
+[  410.48s ->   412.72s] Price eventually hits the area of supply,
+[  412.72s ->   416.80s] and we sell to the inconsistently profitable trader who buys up here.
+[  416.80s ->   418.48s] Since you made it this far in the video,
+[  418.48s ->   422.72s] here's two extra tips to make your supply and demand zones even stronger.
+[  422.72s ->   427.52s] First trick, you want price to slowly approach your supply or demand zone.
+[  427.52s ->   431.92s] For example, if price goes up aggressively and you draw your demand zone like normal,
+[  431.92s ->   436.72s] you want price to slowly come down to that demand zone when it returns.
+[  436.72s ->   439.36s] The slower and the more steady, the better.
+[  439.36s ->   444.00s] If price returns to your zone like this in a very aggressive and sharp manner,
+[  444.00s ->   446.24s] you would not enter into this trade.
+[  446.24s ->   449.20s] You want price to slowly come down to your zone.
+[  449.20s ->   451.44s] This tip in itself is a game changer.
+[  451.44s ->   455.12s] Tip two, you want a fair value gap at the beginning of the move.
+[  455.12s ->   461.04s] So remember how I told you you mark your zone off the previous candle before the big aggressive move?
+[  461.04s ->   464.48s] You want a fair value gap connected to that candle.
+[  464.48s ->   471.12s] So here you can see price jumped up super fast after this candle and created an imbalance right here.
+[  471.12s ->   473.52s] This is exactly what we want.
+[  473.52s ->   477.76s] If this happens, it'll improve the chance of your zones working even more.
+[  477.76s ->   484.56s] If something like this happens when price just slowly creeps up after the candle, this would not be good.
+[  484.56s ->   491.20s] The zone still might work, but it has a way higher chance of working if it has a fair value gap like this example.
+[  491.20s ->   494.80s] So here's a final recap of the perfect supply and demand trade.
+[  494.80s ->   498.40s] Here we have a strong move to the upside starting from this candle.
+[  498.40s ->   499.84s] So we mark our demand zone.
+[  499.84s ->   503.92s] Notice how there's also a fair value gap connected to this demand zone.
+[  503.92s ->   508.00s] Giving us insight, there are way more buyers than sellers in this area.
+[  508.00s ->   510.08s] We wait for price to see what it does next.
+[  510.08s ->   512.32s] A similar thing starts happening up here.
+[  512.32s ->   515.52s] Price is starting to reverse with a strong downwards move.
+[  515.52s ->   517.36s] This is our area of supply.
+[  517.36s ->   520.88s] This move also has a fair value gap connected to it as well.
+[  520.88s ->   522.08s] So that's good too.
+[  522.08s ->   526.16s] Which is showing there are a lot more sellers than buyers up in this area.
+[  526.16s ->   526.64s] Perfect.
+[  526.64s ->   530.48s] Next, we want price to slowly come down to our area of demand.
+[  530.48s ->   532.32s] Slowly being the key word.
+[  532.32s ->   534.40s] Once it hits our zone, we enter.
+[  534.40s ->   539.36s] Set our stop loss below the area of demand and set our take profit at the area of supply.
+[  539.36s ->   541.76s] And just like that, you got a winning trade.
+[  541.76s ->   545.04s] Start looking for areas where bad traders are buying and selling,
+[  545.04s ->   547.60s] and it'll change the way you trade forever.

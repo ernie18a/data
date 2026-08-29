@@ -1,0 +1,229 @@
+[    0.04s ->     3.82s] If you're a 1-1-2 trader, you're probably asking yourself, where do I go from here?
+[    4.24s ->    10.40s] Volatility spiked over 300%, causing most of us to stop out or at least massively mess up our positions
+[   10.40s ->    15.16s] because of how much buying power was being taken up that we had to close some things to stay in trades.
+[   15.44s ->    20.82s] Anyways, as a 1-1-2 trader, there's a lot of risk that goes into the market, especially when we're trading at all-time highs.
+[   21.08s ->    25.32s] That's the exact question that one of the people on my recent Q&A asked me.
+[   25.40s ->    28.10s] Austin, as a 1-1-2 trader, how do I continue from here?
+[   28.10s ->    32.94s] And so I'm going to share the recording that I did from that meeting to walk you through step-by-step
+[   32.94s ->    38.70s] what you need to do as a 1-1-2 trader from here to continue to profit, but also massively reduce your risk.
+[   39.08s ->    41.92s] And hint, it has something to do with this chart. So let's dive in.
+[   42.82s ->    48.98s] If I'm going to do this again, I'm just playing with MES for maybe a year or so.
+[   49.46s ->    53.94s] So would you still recommend 1-1-2 with MES or something else?
+[   53.94s ->    62.88s] Yeah, so I think MES is fine if you understand that you're not going to always have a stop-loss on it.
+[   64.28s ->    71.92s] In a normal market, and I say normal, like 2022, the market slowly sold off.
+[   72.42s ->    77.32s] I mean, slowly. There were a couple 2-3% days, but I'm talking about the volatility.
+[   77.32s ->    83.62s] It was very normal. And so a stop-loss in that scenario would have easily been covered.
+[   84.30s ->    92.22s] But the fact that this happened and MES is already a lower liquidity asset, all the volume just went away.
+[   92.70s ->    93.80s] And so that was the issue.
+[   94.50s ->   101.58s] But anyways, I say that to say I pulled up the VIX chart to talk about how to look at it going forward.
+[  101.58s ->   105.02s] And again, you can pick your own number.
+[  105.50s ->   110.34s] But let's just, for this example, say $15 is the number, okay?
+[  110.70s ->   118.68s] So if we're trading on VIX below $15, $16, let's say that we only use 25% of our buying power.
+[  118.92s ->   124.04s] I say that because, again, I have access to a lot of the trading data, which is cool.
+[  124.04s ->   137.46s] And I saw that for the people who held through, the buying power increased about 150 to roughly 175% of where it was trading.
+[  138.10s ->   148.16s] So that means if you were trading at, if it took $1,000 of buying power, it jumped up to about $2,000, $2,500 roughly.
+[  148.16s ->   163.57s] And so what you're looking at in that scenario is the key reason that was, it's not only because we had a super huge spike, but also because the VIX was so low that there was no buying power risk factored in.
+[  164.45s ->   172.15s] And so one way to withstand this is to change your buying power allocation based on VIX location.
+[  172.15s ->   188.29s] And I say that as in, well, before I say that, let me say that if you would have held through the 112, like, for instance, Lorna did and a couple of others did, because they understood a spike this big in volatility will not last long.
+[  188.67s ->   192.15s] If we look at it, it's a, you know, this one even took a bit to get up there.
+[  192.25s ->   194.83s] So that's why it lasted longer, but it still didn't last too long.
+[  196.01s ->   198.85s] But a VIX spike that big just can't last that long.
+[  198.85s ->   202.71s] And so they just let the market reset.
+[  203.21s ->   207.31s] And so all their 112s are back in profit already because of that.
+[  207.65s ->   211.01s] And so they were able to do that because of buying power.
+[  211.35s ->   217.07s] And so if we can hold through our trades longer, then we can avoid those types of losses.
+[  217.97s ->   221.41s] And so the question is, how do we manage our buying power better?
+[  222.19s ->   225.25s] And so, again, in general, a 50% rule is really good.
+[  225.25s ->   227.73s] If we have a 200% stop loss, that makes sense.
+[  227.73s ->   233.37s] By the time we hit our 200% stop loss, we're around our 100% account value if we started at 50%.
+[  233.37s ->   238.23s] But if we want to hold through, then we need to have more buying power available.
+[  239.37s ->   249.01s] So something that I'm looking at is like, hey, if VIX is under $15, which means volatility is very low, maybe only trade with 25% of your buying power.
+[  249.01s ->   256.65s] I say this because we saw volatility or I should say the buying power requirements go up about 100%, 150%.
+[  256.65s ->   269.65s] So if you're only trading with 25% of your value and it goes up 150%, I should say 150% to 200%, well, now you have about 75% of your buying power being used.
+[  269.65s ->   272.29s] And so now you still have extra cash left over.
+[  272.29s ->   281.53s] And now you have room for this buying power to adjust and for you to stay in this trade longer to see it through and to let the volatility reset.
+[  282.25s ->   289.03s] So I think something moving forward is looking at where is VIX and adjusting your buying power allocation according to it.
+[  289.03s ->   294.83s] And then again, if we're over this level, you could get closer to 50% because more risk is baked in.
+[  294.89s ->   296.07s] So it's not going to go up as high.
+[  296.29s ->   306.45s] Again, you can do that for what you wish, but this is just kind of like ways to continue to sell options, whether it's on MES, ES, whether it's a 1-1-2 or just a straight up short put.
+[  307.37s ->   314.75s] Just kind of basing how much money you allocate to that trade based on your bigger risk, essentially.
+[  316.30s ->   317.94s] Did that answer the question or no?
+[  317.94s ->   319.88s] Yeah, kind of.
+[  319.88s ->   327.04s] But going forward, how are we going to still stick with our 1-1-2 MES the way we do hedging?
+[  329.54s ->   334.88s] Or are there any changes on strategy-wise after this week?
+[  336.10s ->   336.56s] Yeah, for sure.
+[  337.48s ->   346.75s] Yeah, so I would say step one is doing buying power based on VIX because that's going to save you a lot of headache.
+[  346.75s ->   349.95s] And then outside of that is hedging.
+[  350.65s ->   354.37s] And so when you do hedging, there's a couple of ways to do this.
+[  354.69s ->   357.25s] I can't spell, so I'm just going to call it HD, whatever.
+[  357.25s ->   369.91s] Is, again, if we're trading around an all-time high, so like a very risky resistance level, the market, all-time high.
+[  369.91s ->   373.25s] Is that how you say it?
+[  373.29s ->   374.05s] I don't even know how you say it.
+[  374.09s ->   374.61s] ATH, maybe.
+[  375.17s ->   382.89s] All-time high versus, you know, normal market, terrible acronyms, whatever.
+[  382.89s ->   390.41s] So if we're at a higher risk, which is basically based on VIX or based on where the market is, we want to have more long puts.
+[  390.41s ->   395.53s] So, for instance, a couple of weeks ago, we would have wanted to do that.
+[  396.55s ->   400.09s] And so I say long puts by, we can do a 3-5.
+[  400.51s ->   402.97s] We can just close when we get to A1-1-2.
+[  403.07s ->   408.21s] We can simply just close all of the short options we have instead and leave for that one long put.
+[  408.21s ->   414.27s] But, or you can just go out there and buy, you know, a single.
+[  417.15s ->   426.95s] Yeah, I think, I think, I think in one of your video, like probably two weeks ago, you mentioned that, you know, for ES or MES, long put 45 days with a certain delta.
+[  428.00s ->   431.58s] I think, I think that's what, that was one of your response in your Discord group.
+[  431.68s ->   432.16s] Oh, probably.
+[  432.16s ->   432.56s] Yeah.
+[  434.20s ->   434.60s] Yeah.
+[  434.60s ->   442.64s] So, I mean, if we look at this, when the market's trading at, at all-time highs, because that means that at the same time, VIX is very low.
+[  442.76s ->   448.36s] And so outside of adjusting our buying power for VIX, we should also adjust our hedges for it.
+[  449.10s ->   453.84s] And so that means, like I mentioned, step one is controlling your buying power.
+[  453.84s ->   471.60s] And then step two is if we are at a point where VIX is really low and the market's just continuously all green days on an, on an all-time high, then you want to have some long puts, whether that's a super far out of the money, seven DTE out of the money put, DTE, that's a long put.
+[  471.60s ->   478.84s] Or you just close all your short, short positions and leave you with just that one plus one on the one, one, two.
+[  480.52s ->   491.96s] Either way, having a long put when you're at an all-time high level would have helped a lot in your buying power and your intraday losses for this type of event.
+[  491.96s ->   496.02s] So moving forward, same type of structure.
+[  496.32s ->   498.10s] If you want to take less risk, do MES.
+[  498.84s ->   503.46s] Or if you want to still trade ES, but you want less risk, move to a one, one, one.
+[  503.76s ->   508.46s] It's going to be roughly the same trade structure, same win rate, but you'll have half the buying power risk.
+[  509.76s ->   513.00s] And then, you know, just base your hedges and buying power off of VIX.
+[  516.56s ->   516.88s] I see.
+[  518.32s ->   519.18s] So Austin?
+[  519.62s ->   520.02s] Yeah.
+[  520.02s ->   529.94s] Did we really get stopped out because of our buying power loss?
+[  530.10s ->   537.04s] Or was it we got stopped out because it hit our stop loss on profit loss?
+[  538.04s ->   538.52s] Yeah.
+[  538.64s ->   541.40s] So we won't stop you out for buying power.
+[  541.84s ->   547.30s] We'll only stop you out for, you know, the rules that you set, which is whatever that is.
+[  547.94s ->   548.18s] Okay.
+[  548.70s ->   553.86s] All right, Vera, do you have any questions?
+[  554.66s ->   556.18s] Before we jump to others back again?
+[  556.66s ->   557.36s] Yeah, sorry.
+[  557.56s ->   558.64s] I joined late.
+[  558.74s ->   560.00s] Like, I see this recording.
+[  560.12s ->   561.30s] Where are these recordings available?
+[  562.10s ->   564.40s] Yeah, I end up putting it on my YouTube channel.
+[  564.64s ->   568.66s] So either the options auto trader YouTube or the main channel, depending on.
+[  569.34s ->   569.60s] Okay.
+[  569.68s ->   574.54s] So and the links for this Zoom call is only on Discord or somewhere else?
+[  574.92s ->   578.40s] Yeah, it's on Discord under the events.
+[  578.40s ->   578.94s] Where is it?
+[  579.08s ->   579.62s] Yeah, events.
+[  579.90s ->   581.80s] Yeah, it took some time to figure out where.
+[  581.84s ->   582.52s] Oh, sorry about that.
+[  582.64s ->   583.20s] It was there.
+[  583.20s ->   585.34s] Yeah, that's fine.
+[  586.28s ->   592.34s] And when you say that, okay, adjust your buying power based on VIX, what are we adjusting?
+[  592.46s ->   597.46s] Actually, the buying power that we allocate to the 112 trade on the auto trader?
+[  598.02s ->   598.36s] Correct.
+[  598.66s ->   598.80s] Yeah.
+[  598.80s ->   603.01s] So yeah, so saying like 25%.
+[  603.01s ->   608.43s] So, you know, typically, just for easy numbers, let's say you have $100,000 accounts, where
+[  608.43s ->   613.13s] you're saying do no more than 50%, which I would say now that's fine, because of how high VIX is.
+[  613.45s ->   615.51s] So it's already baked into it.
+[  615.73s ->   620.59s] So that would have been around $50,000, which is fine now, I think.
+[  620.59s ->   624.97s] But when VIX is down around $5,000, $10,000, that mega risk is really high.
+[  625.37s ->   629.59s] So instead of doing that, maybe go closer to a $20,000 allocation for the 112s.
+[  631.01s ->   631.35s] Okay.
+[  631.97s ->   632.15s] Yeah.
+[  633.29s ->   634.85s] 20, 25, something like that.
+[  634.85s ->   641.25s] So I guess my issue with that is that you've got a lot of cash there, not earning you any money, right?
+[  642.36s ->   643.44s] Yeah, that's true.
+[  643.90s ->   646.54s] You do have to understand that, yeah, you don't.
+[  646.76s ->   650.90s] But I mean, and there's ways to deal with that, which I'll cover next.
+[  651.00s ->   655.60s] But the first thing is, this $20,000 is still making you a lot of money.
+[  656.02s ->   660.28s] I say that because, you know, these trades take about 45 days.
+[  660.28s ->   664.54s] And so every 45 days, we're making about a 12% return on that money.
+[  666.22s ->   676.86s] So despite the fact that we have a lot of extra cash, we're still making 12% every month and a half, which is very good.
+[  677.58s ->   680.16s] So this money is making 12%.
+[  680.16s ->   687.46s] And so, again, if there's only 20% of that, you know, you're still making around a 3%, 4% return with a very low amount of money.
+[  687.46s ->   710.24s] But then that's where, which is the recent discussion that we had in Discord, which is about, like, something like T-bill, which is where, you know, the three, I believe it's the three-month treasury bond asset, which, I mean, you know, it varies based on what the interest rates are.
+[  710.64s ->   712.76s] But, you know, it's very stable.
+[  713.36s ->   717.38s] Is that liquid or is that you have to commit for three months at a time?
+[  717.86s ->   718.22s] Yeah, no.
+[  718.32s ->   720.26s] So this is a tradable ETF.
+[  721.22s ->   725.80s] So you can get in and out of it whenever you want, given the market's open, obviously.
+[  726.86s ->   741.16s] And so, again, the way that you would structure something like this to kind of help with that is so, for instance, here, let's say, you know, we're only doing 20% on 112 because we're afraid of this vega risk.
+[  741.16s ->   743.22s] Let's say, you know, volatility is at $5.
+[  743.66s ->   745.86s] So the risk that it's very high.
+[  746.28s ->   747.76s] So we're only using 20% here.
+[  747.76s ->   753.06s] Well, then we could get closer to maybe, like, you know, depending on how much you want to do.
+[  753.22s ->   757.48s] But, you know, 40% to 50% could go into T-bill.
+[  757.48s ->   764.10s] You know, you still want to leave some for when the buying power needs to increase for the 112 trades.
+[  764.98s ->   770.70s] But, you know, if that starts to happen, like, you know, the market slowly starts to sell off here, then you can see that coming.
+[  770.70s ->   777.62s] And so then you can slowly cut this trade back to 20% and then keep cutting it back as needed so that you can free up buying power for this.
+[  778.12s ->   781.76s] But in the meantime, this extra money is making 5% a year.
+[  781.86s ->   785.50s] Or, you know, if you only keep doing it for a month, it's 0.4% or something like that.
+[  785.90s ->   786.26s] Okay.
+[  786.72s ->   786.94s] Yeah.
+[  788.51s ->   799.37s] But, yeah, so I guess the key thing is here, just make sure that you have enough room for the 112s to expand before, you know, you have time to take off T-bill positions.
+[  799.37s ->   804.96s] Does T-bill pay you monthly?
+[  805.62s ->   805.86s] Yeah.
+[  806.06s ->   807.18s] Monthly dividend.
+[  807.46s ->   807.58s] Yeah.
+[  808.22s ->   808.42s] Wow.
+[  808.68s ->   811.68s] So it's about 0.4% every month, I think, or something similar.
+[  813.66s ->   814.10s] That's good.
+[  814.24s ->   814.58s] Good to know.
+[  814.58s ->   814.94s] Let's see.
+[  816.86s ->   818.34s] Oh, here is the detail.
+[  821.05s ->   823.27s] Can you educate me a little bit about the VIX?
+[  823.45s ->   828.79s] Because I thought when the VIX was low, that's when we had less volatility.
+[  830.18s ->   834.30s] I mean, I don't really know how to say that other than that's wrong.
+[  834.30s ->   835.14s] I'm sorry.
+[  835.50s ->   835.74s] Okay.
+[  836.46s ->   836.94s] Yeah, no.
+[  837.28s ->   843.82s] When VIX is low, volatility is low because, you know, VIX is volatility.
+[  844.50s ->   844.90s] Yeah, right.
+[  844.90s ->   848.12s] VIX stands for the volatility index, so V-A-I-X.
+[  848.12s ->   853.84s] And so you can see here, obviously, during major crashes, that's when volatility is high.
+[  856.48s ->   858.18s] But the VIX jumped up too, right?
+[  858.58s ->   863.06s] Yeah, the VIX jumped up over 300% in a single day, which from-
+[  863.06s ->   865.28s] The day was up around 65 or 70.
+[  865.76s ->   868.26s] Yeah, it got up here to 65, 66, yeah.
+[  868.36s ->   868.60s] Yeah.
+[  868.60s ->   875.26s] And so this is what most of the issue was with the 1-1-2 trade.
+[  875.48s ->   879.84s] It wasn't necessarily where the market was, although that would have hurt because the market
+[  879.84s ->   880.46s] was down.
+[  880.72s ->   883.34s] But the main pain came from this VIX.
+[  883.80s ->   889.46s] And so, again, this is something we do need to understand and do need to account for.
+[  889.92s ->   893.38s] But also, at the same time, we can't let it scare us out of not taking trades because
+[  893.38s ->   897.66s] this was an event, Casey Trade did research, I think it was David who shared it or somebody
+[  897.66s ->   902.56s] else in the group, where this was like ranked in the top 10 for the last 30 or 50 years or
+[  902.56s ->   902.84s] something.
+[  903.24s ->   906.28s] So this can happen, but it's, you know, this is a very rare case.
+[  906.96s ->   910.28s] But it's still something, you know, we need to be aware of and be able to, you know, plan
+[  910.28s ->   915.40s] for, which, again, is more like if VIX is down here very low and we're at all-time highs,
+[  915.40s ->   921.82s] maybe just having more long puts on and then, you know, dialing back our buying power.
+[  921.82s ->   929.52s] But also, another way to do it is, you know, we always aim for an 80% to 90% profit, you
+[  929.52s ->   932.00s] know, on those trades, which is very good.
+[  932.68s ->   935.74s] But an event like this, it could be a little far-reaching.
+[  936.42s ->   939.18s] And by that, I mean, remove drawings.
+[  939.88s ->   945.88s] By that, I mean, we know that VIX is really low and that we're reaching all-time highs
+[  945.88s ->   946.96s] very quickly here.
+[  947.14s ->   949.50s] And then we see the market start to sell off.
+[  949.50s ->   954.72s] And by that time, I know we have some trades that are maybe around 10, 20%, 20% profit,
+[  954.82s ->   957.22s] something like that, you know, on the very low end of profit.
+[  957.50s ->   963.12s] Well, we can understand that, hey, the market's starting to come down and VIX is really low.
+[  963.24s ->   966.44s] So the chance of us crashing and seeing a volatility spike is higher.
+[  966.78s ->   971.76s] So maybe I'll take off those small winners to free up buying power to allow my really good
+[  971.76s ->   972.82s] trades to stay on.
+[  972.82s ->   973.82s] So, yeah.
+[  973.82s ->   974.82s] So, yeah.
+[  974.82s ->   975.82s] So, yeah.
+[  975.82s ->   976.82s] So, yeah.
+[  976.82s ->   977.82s] So, yeah.
+[  977.82s ->   978.82s] So, yeah.
+[  978.82s ->   979.82s] So, yeah.
+[  979.82s ->   980.82s] So, yeah.
+[  980.82s ->   981.82s] So, yeah.
+[  981.82s ->   982.82s] So, yeah.
+[  982.82s ->   983.82s] So, yeah.
+[  983.82s ->   984.82s] So, yeah.
+[  984.82s ->   985.82s] So, yeah.
+[  985.82s ->   986.82s] So, yeah.
+[  986.82s ->   987.82s] So, yeah.
+[  987.82s ->   988.82s] So, yeah.
+[  988.82s ->   989.82s] So, yeah.
+[  989.82s ->   990.82s] So, yeah.
+[  990.82s ->   991.82s] So, yeah.
+[  991.82s ->   992.82s] So, yeah.
+[  992.82s ->   993.82s] So, yeah.
+[  993.82s ->   994.82s] So, yeah.
+[  994.82s ->   995.82s] So, yeah.

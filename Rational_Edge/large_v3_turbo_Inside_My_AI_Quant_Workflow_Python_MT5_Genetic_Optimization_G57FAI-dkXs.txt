@@ -1,0 +1,134 @@
+[    0.00s ->     7.12s] in this video you're going to see how i'm developing the full workflow of research and
+[    7.12s ->    14.88s] building new algorithms new trading strategies in this case i built this workflow that is called
+[   14.88s ->    22.56s] alpha this is my folder strategy factory where i can develop a full working strategy new logics
+[   22.56s ->    30.96s] or new idea and test them into different asset classes i can test this idea on real data because
+[   30.96s ->    36.88s] it's the same data i'm trading on and also you should confront each type of backtest like this
+[   36.88s ->    44.16s] scenario here you should test this on different data because this is the euro usd chart over
+[   44.16s ->    49.36s] six seven years okay in this case this is the performance it went really good but of course
+[   49.36s ->    55.76s] two years maybe two years and a half almost three of trollon it's not great but that's the first
+[   55.76s ->    63.44s] step okay this is the full quant research engine i'm using this tool to achieve what once i was
+[   63.44s ->    72.00s] achieving like in 10 to 15 hours now i can have the same output maybe in 30 minutes yeah it's really
+[   72.00s ->    79.20s] helpful in this case this is like just an example i decide to search alpha on euro usd i decide
+[   79.68s ->    87.36s] which data set the main logics idea and i have a section for that and then the workflow is built
+[   87.36s ->    94.72s] with different engine that works all together so the first one is giving you the daily returns
+[   94.72s ->   102.40s] hourly returns and different pattern of the price of the data in this case it's like our distribution
+[  102.40s ->   110.64s] daily distribution and then intraday volumes and then we have like weekday per hour heat map okay so
+[  110.64s ->   116.08s] it says on the broker hours but on which day for which hour is the price moving the most in this case
+[  116.08s ->   124.64s] for euro dollar and then you have the autocorrelation and then we have the full strategy construction so
+[  124.64s ->   132.56s] it's like just testing if those idea are working okay in this case this is like very basic logics okay
+[  132.56s ->   139.92s] after this is taking the survivor of course so it's like the only strategy that worked and have like
+[  139.92s ->   147.20s] certain parameters that i decide so it's like more than 300 trades a profit factor more than one and in
+[  147.20s ->   154.16s] this case this is like the first uh and probably the best performer over this period of time and of
+[  154.16s ->   160.80s] course it's not taking all of the data set but it's like splitting the data set in two so of course in
+[  160.80s ->   168.64s] sample and out of sample so it's giving me all of these data based on in sample and should be i think it
+[  168.64s ->   175.52s] should be like until 2024 this is in sample and this is all of sample in the next report you're going
+[  175.52s ->   184.08s] to see even better the in sample and auto sample this is the drawdown and also the monthly panel heat
+[  184.08s ->   192.72s] map also like the yearly performance so basically that was the first step okay how this software is
+[  192.72s ->   199.36s] going to work how this workflow is going to work basically i have the idea i think i can show you
+[  199.92s ->   209.04s] the structure i have the idea where i can decide uh the logics i can decide how to find alpha or maybe
+[  209.04s ->   216.64s] like i saw a youtube video and i decided to build a algorithm on that okay i should first test the
+[  216.64s ->   222.64s] strategy if there is alpha without optimization i need to see if this third strategy is working or is
+[  222.64s ->   231.44s] not this tool is made for that previously i was coding my algorithm in mql5 and then taste once
+[  231.44s ->   239.04s] and then multiple times now i can with one prompt uh i decide on which asset i want to test it and
+[  239.68s ->   246.96s] on what type of logics in this case is building everything in python first because it's way faster
+[  246.96s ->   254.40s] than good five so that's the first step then when i found the best performer is like this strategy here
+[  254.40s ->   263.12s] that has some criteria i can then decide to do optimization and design this is genetic optimization
+[  263.12s ->   270.48s] and as you can see on this report here i decide to test of course that was your usd but i decided to
+[  270.48s ->   277.52s] test this type of logic on different asset class in this case we have your usd gold and then we have
+[  277.52s ->   284.16s] brand the oil and then we have use the gpy so as you can see it's not just testing but it's also
+[  284.72s ->   292.80s] optimizing everything of course optimizing only on the in sample never optimized for the full data set
+[  292.80s ->   299.84s] as you can see this is the optimized equity line okay it seems really good because it optimized until 2024
+[  299.84s ->   307.36s] and that was way better than the previous one as you can see here okay that was the raw raw logic okay
+[  307.36s ->   313.60s] with no optimization this is with optimization okay it's way better in this case is in sample out of
+[  313.60s ->   321.60s] sample and as you can see on the gray line here that's the euro usd equity line okay so of course as
+[  321.60s ->   328.56s] you can see in these strategies like long and short because like this strategy is long only even when the
+[  328.56s ->   334.88s] price drop many percentage point the strategy still managed to make money that seemed solid this the
+[  334.88s ->   341.36s] drawdown analysis the maximum drawdown was bigger sample and out of sample it was a little bit lower
+[  341.36s ->   349.76s] we optimize these logics on different time frame mostly the best performer were on the h1 but on brand it
+[  349.76s ->   357.44s] was two hour and then we have a tr tpsl this is the max holding bar and then we have different
+[  357.44s ->   365.52s] criteria so in this case side in this case it means that you on usd gpy is taking also short okay so all
+[  365.52s ->   373.92s] of them have more than 300 trades so that's still good and then we have the sharp ratio so in this case
+[  373.92s ->   382.48s] on gold was really good but of course because gold it did an insane performance from 2024 until now so this
+[  382.48s ->   389.68s] in this case was the second rank still really good and then we have in this case gold okay so as you
+[  389.68s ->   396.08s] can see the performance on gold it's really good and even better in the out of sample but of course it
+[  396.08s ->   404.40s] means nothing because the gold price as you can see from 2024 till now it almost overperformed the strategy
+[  404.40s ->   412.48s] by itself okay you should consider the performance not only in the out of sample because it's going
+[  412.48s ->   420.40s] to be really good because that's long only when the price did maybe 130 or 200 so of course it's good
+[  420.40s ->   426.24s] but you should also consider the in sample because the price here did a little percentage but still the
+[  426.24s ->   434.08s] strategy managed to make a lot of money that's the main thing now in this case this is like different
+[  434.08s ->   440.88s] parameters still good and in this case it's taking both sides so it's taking long and short trades okay
+[  440.88s ->   447.76s] and still it managed to make a lot of money in this case also the auto sample is really good we can also
+[  447.76s ->   456.08s] consider all the metrics so auto sample 400 trades the in sample profit factor was good and also in the
+[  456.08s ->   462.56s] auto sample really good but of course because it makes a lot of gain this asset win rate same
+[  462.56s ->   470.24s] expected by even better of course jordan is good and also the max jordan in usd this is a particular
+[  470.24s ->   477.36s] case because of the performance that made xia usd gold in the same period of time this workflow it did
+[  477.36s ->   485.60s] this type of optimization and test and built this type of matrix and output equity curve for each asset
+[  485.60s ->   492.88s] i decide okay i think for me now one of the most powerful tool that i'm having because it's kind
+[  492.88s ->   500.24s] of insane for me to have this type of output in 30 minutes or something i think it took me 50 minutes
+[  500.24s ->   507.60s] and now i can test something like test a new idea test a new logic or something else it's taking me 15
+[  507.60s ->   514.40s] minutes for the first part so it's like the alpha research in this time i'm deciding type of research
+[  514.40s ->   521.76s] papers i want to take in or analyze then i write the logic and maybe i'm writing different type of
+[  521.76s ->   531.76s] logics then i let the ai agent start and the workflow begin so it's testing configuration loading the data
+[  531.76s ->   540.88s] since everything is already done the ai agent start here and then is giving me the html report in the
+[  540.88s ->   546.88s] end it's like mt5 style because i decide that as you can see it's running walk forward after the in
+[  546.88s ->   553.84s] sample it's a really good workflow then genetic optimization winner and mt5 style report with the
+[  553.84s ->   561.60s] html basically this entire workflow is taking 15 minutes and is giving me this first report i think
+[  561.60s ->   567.84s] if i want to test the first alpha research for multiple asset class it's not taking me like hours but
+[  567.84s ->   574.96s] still 30 minutes for 10 asset class and is giving me this type of report for 10 different asset class
+[  574.96s ->   583.52s] then i can run the second engine the second engine is like the genetic and multi asset class report one
+[  583.52s ->   591.36s] important thing here one of the main criteria is that every position should be open and close in the
+[  591.92s ->   598.40s] end or the beginning of the one minute open high low close that's it because like it's really hard to
+[  598.40s ->   605.04s] build something that work if you want to test hit candle if you want to have this equity line also
+[  605.04s ->   613.36s] on the mt5 report with the mql5 algorithm you should build something in python that can mimic 99
+[  614.24s ->   620.96s] the mql5 style algorithm so you should have very simple logics every time you build something in
+[  620.96s ->   629.12s] python and the end goal is to translate that for mql5 you should have a very simple logic let's say you buy
+[  629.12s ->   635.60s] on the first minute of one hour time frame and you close at the end that's simple you can mimic that
+[  635.60s ->   642.00s] from python to mql5 of course it's not going to be the same but i think it's going to be 95 to 99
+[  642.72s ->   650.16s] the same but you'll have the spread and some other slippage other hidden cost the simple it is
+[  650.80s ->   657.36s] the easiest is going to be for you to translate something from python to mql5 this is used the gpy
+[  657.36s ->   663.76s] and it's really good in this case it's long only it didn't perform that well in the auto sample but you
+[  663.76s ->   669.84s] have to understand that in the in sample it performed really well but you have to check of
+[  669.84s ->   676.80s] the asset class in this case the asset did really well okay so you have to understand that you cannot
+[  676.80s ->   683.36s] be delusional to think that this algorithm here is going to perform really well if the market crash
+[  683.36s ->   690.56s] okay in this case it did not crash okay still it made gain it made a good gain okay and also the
+[  690.56s ->   696.48s] algorithm made gain to me it doesn't make a sense have something that is long only if the price could
+[  696.48s ->   704.80s] easily drop okay it's not like an index that overall should go up all the time forever forever so i think
+[  704.80s ->   712.96s] in this case we have short only it performed really well so what i could do in this case is considering
+[  712.96s ->   721.84s] both okay so long side plus short side and build a long short portfolio so it's like an algorithm maybe
+[  721.84s ->   729.36s] they have different parameters but that's something i could easily do okay so build a long short algorithm
+[  729.36s ->   737.68s] so yeah basically that's it i'm really happy that i managed to finish this entire workflow and i think
+[  737.68s ->   743.52s] that's an institutional level workflow of course like this is like just the beginning is really
+[  743.52s ->   752.24s] simple but still now i can easily decide a logic idea type of a way to generate alpha and test it in
+[  752.24s ->   759.44s] one hour i could easily have a record like this one in one hour the idea tested on multiple asset class
+[  759.44s ->   766.96s] on multiple time frame this is tested on many asset class many time frame with all of those parameters
+[  766.96s ->   775.12s] optimized in under one hour to me it's i think it's it's insane okay because i built the old engine
+[  775.12s ->   782.96s] okay and now after i built the own like the o engine i'm letting the ai agent in this case is cloud code
+[  782.96s ->   791.36s] but i also use codex i let the ai agent work for me i have to run other engine and they are going to
+[  791.36s ->   800.88s] translate the python logic to mtl5 okay so i think right now i shift from making three four hundreds click
+[  800.88s ->   807.92s] on the mouse on my computer to reach something like this because i had to decide the logics code the
+[  807.92s ->   816.16s] entire algorithm and then optimize the algorithm as you can see guys this is mtl5 strategy tester this
+[  816.16s ->   824.24s] is the optimize wait yeah if i'm deciding here i could run a genetic algorithm okay and you can see
+[  824.24s ->   831.92s] that this is all of the input i can decide to turn on to test okay you can see i'm clicking times and
+[  831.92s ->   840.40s] then i have to decide which step i should do so i can say eight and here two or two okay and then i can
+[  840.40s ->   847.68s] decide don't trade on weekends exit on the end of the day and then test different hours so it was
+[  847.68s ->   854.80s] taking me at least like 500 clicks and multiple hours to build something basic okay now i'm going
+[  854.80s ->   862.96s] to show you a quick backtest and now the same thing okay so in this case we have the same graph and then
+[  862.96s ->   869.60s] in this case this is the report okay uh in this case i already built the algorithm so of course it did
+[  869.60s ->   878.40s] the backtest in 10 clicks and 15 seconds okay but the thing is to optimize this and also to build the
+[  878.40s ->   886.72s] logics and test it on multiple asset class it was taking ages so i think for each asset to reach
+[  886.72s ->   893.60s] something like this so optimized report optimized parameters i think it was taking me at least five
+[  893.60s ->   902.40s] five hours and 300 clicks and then you multiply that for each asset class i think i cut the time cost
+[  902.40s ->   909.60s] so the time i was spending on building something like this from multiple hours like 10 hours for
+[  910.24s ->   918.80s] completed new algorithm tested in realtics data to right now maybe one hour okay because i already have
+[  918.80s ->   926.16s] the amplified algorithm of this and i just should test it right now i think this is a really big step
+[  926.16s ->   933.84s] for me because i'm managing all of the money with daronex and other profit but building strategies that's
+[  933.84s ->   941.60s] always a big thing so it's really time consuming but with something like this i can easily cut by 10
+[  941.60s ->   947.28s] or maybe even more the time spending on this and i think i'm going to build a software out of this because
+[  947.28s ->   956.24s] i'd like to remove all of the vs thing here and just have a chat where i can write i want okay and
+[  956.24s ->   965.92s] also receiving all the output already on my pc now it's taking me still 10 to 20 clicks okay but still i
+[  965.92s ->   973.60s] receive report like this but i'd like to simplify the process even more okay and also of course implement
+[  973.60s ->   985.20s] multiple data feed i'd like to test some strategies on cpi or fomc or maybe nfp or maybe some geopolitical
+[  985.20s ->   992.08s] news okay so i'm going to implement everything on this software here at that point is going to be a
+[  992.08s ->  1000.32s] real institutional type workflow okay so yeah that's it for this video if you like the video you can leave
+[ 1000.32s ->  1006.64s] and maybe you can ask me something on the comment section something that you'd like to see or you
+[ 1006.64s ->  1013.28s] can give me advice or say something you could have done differently that's it see you

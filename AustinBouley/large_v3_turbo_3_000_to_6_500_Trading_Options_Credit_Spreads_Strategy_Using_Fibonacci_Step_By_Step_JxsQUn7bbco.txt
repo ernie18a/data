@@ -1,0 +1,310 @@
+[    0.04s ->     6.44s] Hey guys, welcome to today's video. I am going and doing a video with Jeff who is inside our
+[    6.44s ->    11.68s] program because I want to share with you that you don't just have to follow this algo systematic
+[   11.68s ->    16.46s] approach. You can actually add your own type of charting flair to it and I'm really excited to
+[   16.46s ->    20.00s] see what he has here. He's been posting a lot of great stuff in the chat where he's using a lot of
+[   20.00s ->    26.44s] levels, support levels and Fibonacci levels. Anyways, this video is not about me talking,
+[   26.44s ->    31.18s] it's about Jeff. So Jeff, thank you so much for being on this video and doing this with me. I'm
+[   31.18s ->    37.64s] so excited. To get started, let's start off with some basic questions and then we'll get into the
+[   37.64s ->    44.22s] charting. So what brought you to trading in the first place? Just kind of like a side job, you
+[   44.22s ->    49.40s] know, just kind of for some reason I love trading. So just before COVID, I kind of got a little more
+[   49.40s ->    54.64s] serious about it and then plus we had time at home. But then I started going down the Twitter route
+[   54.64s ->    60.12s] and you see all these profits and I went through some of the discords. I never went big. So I was
+[   60.12s ->    66.68s] always cautious, but it was just this endless kind of like continuation that finally somehow I think
+[   66.68s ->    71.82s] maybe through Twitter is that I found out more about credit spreads. And that's where it really
+[   71.82s ->    77.62s] changed the whole game for me because I came from kind of day trading and just buying like spy options
+[   77.62s ->    82.94s] or the call outs, you know, on different groups and it worked. You can make good money. That's really
+[   82.94s ->    89.46s] kind of like the hook was like consistent $300 days just trading spy options, but it takes a lot
+[   89.46s ->    96.12s] of work. And so the next level I got to, and when you read Mark Douglas's book, you see that selling
+[   96.12s ->   103.22s] options and even chat GPT, I asked it, is the way that the majority make their profits, you know,
+[  103.26s ->   107.76s] in options. When you understand options, it's a little complicated, but once your brain gets it,
+[  107.76s ->   112.60s] it's like magic. The light bulb goes on in your head and you're like, all I want to do is basically
+[  112.60s ->   119.00s] sell premium and stay as far away from the stock as possible. And that's the whole idea. And then
+[  119.00s ->   124.10s] it didn't, I wasn't up at six 30 in the morning, sweating bullets online trading because I'm over
+[  124.10s ->   129.38s] here in California. So it's early. It's hard to get your brain up and running that early. So credit
+[  129.38s ->   135.82s] spreads much more kickback, much more like a swing trade where you just kind of watch it and you have
+[  135.82s ->   140.86s] to check in that really hands off kind of work to it. So that's where I've kind of landed as,
+[  141.04s ->   145.38s] as my home plate here. So. Yeah, that's awesome. I mean, a lot of people have different backgrounds
+[  145.38s ->   148.96s] when they're coming into, especially selling options. That's typically not what the stuff is
+[  148.96s ->   154.88s] the first thing that most people do. So what was that transition from day trading to credit spreads
+[  154.88s ->   161.34s] like? It was, it was actually really good because it was, it was tough to make it with all the
+[  161.34s ->   166.90s] different elements of trying to trade. And I have another book that I was reading about selling
+[  166.90s ->   172.10s] options. And it explains that exactly. It says, when you get down to the nitty gritty of trading
+[  172.10s ->   179.48s] options, you're a skill trying to make money. Whereas with credit spreads, the probability and the profit
+[  179.48s ->   186.08s] is baked into it. The second you put in the trade, you sell that premium, it's a box. And that's the only
+[  186.08s ->   191.72s] factor that you control. Now you're like, here I am. And that's it. There's no, okay, well,
+[  191.78s ->   196.40s] maybe I did this wrong kind of thing. Like it is what it is. And that's, what's really cool about it
+[  196.40s ->   201.76s] was like, it gives you more of a peace of mind because you realize that you're just mathematically
+[  201.76s ->   207.00s] putting on, putting on a trade like this, you know, and then like tasty trades, it'll tell you
+[  207.00s ->   212.24s] the probability down there. It'll say 90% probability of success. I never had that with day trading.
+[  212.24s ->   217.56s] Day trading was like, if it went bad, it was your fault because then you get back on Twitter and
+[  217.56s ->   222.92s] discord and everybody else is like, yeah, such and such exploded. And so you always blamed yourself
+[  222.92s ->   230.34s] where with credit spreads, it's, it's automatic. You're selling something, just hoping it to decay
+[  230.34s ->   235.94s] and go away. Not appreciate like a rocket or drop like a rock. Definitely. You know, so much more
+[  235.94s ->   242.34s] peace of mind, you know, be the, you know, the moral of the story. That's awesome. Yeah. So obviously
+[  242.34s ->   246.10s] what people are here for is the charting. So we'll dive into that, but real quick, isn't it true
+[  246.10s ->   250.40s] that you took a lot of your trading profits recently and went on a hiking trip that you've
+[  250.40s ->   255.42s] been wanting to go on? Yeah. So kind of a cool little story that happened was like, I started
+[  255.42s ->   261.56s] kind of consistently getting into the spreads like in April, June, May. And one of the goals I had for
+[  261.56s ->   266.66s] that year was to go hiking in Colorado. I finished college in there at Colorado state, studied environmental
+[  266.66s ->   271.70s] health. And then I left to come back to California where my family is at, and we have kids. So I got
+[  271.70s ->   277.98s] two boys that are 15 and 12 in school, you know, so I'm a working dad. I work from home and work at
+[  277.98s ->   284.94s] university too. Um, but really I took the profits from that to go hiking as sort of a promise to
+[  284.94s ->   289.64s] myself. I said, when I leave Colorado, these mountains are beautiful. I'm promising to myself,
+[  289.64s ->   294.52s] I'm coming back. And like during COVID and everything else, nothing works. And then I was like,
+[  294.52s ->   299.80s] okay, can I fly? Can I drive? So finally the opportunity came and the prop from the profits
+[  299.80s ->   305.08s] from the credit spreads, I could pay for that whole trip. So it really kind of worked out,
+[  305.52s ->   310.22s] you know, and then I did smart things. Like when I went to Colorado, I didn't do any credit spreads.
+[  310.38s ->   316.64s] I was like, I was in Austin's group hanging out, but it was time for like, I want to be present for
+[  316.64s ->   322.70s] it. It does take that bit of concern because like, say like, like a small thing, like on Webull,
+[  322.70s ->   328.46s] I don't have stop losses. It doesn't have a function in that. So I can't just fully automatically,
+[  328.46s ->   333.36s] you know, execute a trade. So I took the money out, did the Colorado trip and it was amazing.
+[  333.46s ->   337.98s] It was just the best ever went to Rocky Mount National Park. And just the, it's kind of cool
+[  337.98s ->   343.58s] because really the credit spreads and that work and that journey that takes to get there to take
+[  343.58s ->   348.12s] those profits and use it towards a dream trip really pays for itself because it shows the hard
+[  348.12s ->   352.52s] work. Like I look back and I'm like, holy moly, I can't believe I used to trade spy every day.
+[  352.52s ->   357.44s] Like as an option, it was so exhausting, you know, but you grind and you learn and you kind
+[  357.44s ->   362.70s] of see how that works. So that's cool. Awesome. Yeah. So, um, before we get into it, I just want
+[  362.70s ->   366.50s] to explain for people who don't know a credit spread at the bare minimum, it's basically betting
+[  366.50s ->   371.84s] that a stock will stay above or below a certain level. And so if you're right, then you make money.
+[  371.84s ->   375.30s] If not, then you, then you lose. And now there's a lot of different ways to do this.
+[  375.30s ->   380.96s] I use trend following. Um, Jeff does some of that, but he also adds his own twist to it. So Jeff,
+[  381.10s ->   385.74s] walk me through what it is, how you look at stocks. What's your type of strategy here?
+[  386.90s ->   392.84s] Okay. So what I look at is I like sort of charting on trading view. So I use Webull as my options
+[  392.84s ->   399.62s] trader. I've tried different platforms for me. Webull is the bomb because I like the way the option
+[  399.62s ->   406.86s] chain looks and I like the bright green numbers. So the, the, the bright green just sort of like an
+[  406.86s ->   412.62s] emotional thing, but I can envision a larger balance when I see bright green colors. And so
+[  412.62s ->   417.82s] I like the way that Webull works. Um, but what I'll show you guys, I'll share my screen real quick.
+[  418.97s ->   425.33s] Yes, we can see your screen. Okay. Green share. You got it. Yep. You're good. Okay. All right.
+[  425.33s ->   430.57s] So for those of you guys that are watching, I use trading view and what I like to do with the credit
+[  430.57s ->   437.03s] spreads is since a credit spread really looks like a rectangle, it really fits well with what I was
+[  437.03s ->   442.95s] already doing, which was charting, um, sort of the daily support and resistant levels based on the
+[  442.95s ->   447.95s] Fibonacci. So, and so you mean like when you set up the credit spread trade, like, cause, cause you
+[  447.95s ->   452.29s] have those two different levels, you're saying like, it's basically a rectangle of an area that you want
+[  452.29s ->   457.39s] the stock to stay away from. Right. Yeah. So it's a real, so like, if you have spy going up,
+[  457.39s ->   462.13s] if when I'm with your group and I put on a credit spread, like say it's a put credit spread,
+[  462.21s ->   469.37s] I make a little yellow box below the stock and it'll say 438, 432 expiring this date.
+[  469.81s ->   476.13s] And then I can visually see how much space I have. And then you can kind of see like with the
+[  476.13s ->   480.43s] Fibonacci's, there are a series of levels, you know, he was an Italian mathematician,
+[  480.43s ->   485.59s] but he came up with these series of levels and on trading view, and you can do this on
+[  485.59s ->   491.19s] Weevil too, um, any, or any charting software, you can basically kind of plot the high to the low.
+[  491.81s ->   497.39s] And so that gives you these levels. And what I learned from a different discord is a lot of the
+[  497.39s ->   503.43s] wall street, all those run off of Fibs. They're basically controlled to see these inflection points.
+[  503.57s ->   509.53s] So before we get into the specifics of it, um, walk me through on this chart, how to add the Fib,
+[  509.53s ->   512.89s] the Fibonacci and where to trace it out. If I'm an absolute beginner.
+[  513.81s ->   518.89s] Okay. So this is what I do. So you, you can go put in spy right here.
+[  519.73s ->   525.13s] Okay. And then we have the spy. Since that's our favorite, I'll click on the daily chart right here.
+[  526.01s ->   531.99s] And then what I can do is, or actually I have it right here. So I'll take it off.
+[  533.09s ->   536.13s] So watch, I'll kind of show you how to, this is how you chart a Fib.
+[  536.13s ->   543.54s] And then this was a note I made to myself. So Fibonacci. So say we have the August high up here,
+[  544.10s ->   549.00s] August 1st, you go to the left Fibonacci retracement. So you're going from high to low.
+[  549.44s ->   549.84s] Okay.
+[  550.04s ->   554.82s] And then I'll draw one of my boxes. So now you suddenly have all these levels. You have the
+[  554.82s ->   561.28s] seven, eight, the six, the five is the halfway point, three, two, and zero. And then like Austin said,
+[  561.28s ->   569.42s] the way I chart sort of a spread would be to draw a small box down here. So like, say this is a put
+[  569.42s ->   576.81s] credit spread. And then I know how to sort of edit them. You can do the coordinates, like say it's,
+[  576.81s ->   584.15s] you know, 443. So this would be like an example of a one wide put credit spread. So 442.
+[  584.15s ->   595.70s] And then you can put some text inside of there too. Yeah. 443, 444. And then so this is kind of a good
+[  595.70s ->   604.20s] example. We'll move him down here. And then this is how we kind of look at it. And then like,
+[  604.22s ->   610.60s] I'll have an example here on the 15 minute chart. So then I chart on the 15. I chart the Fibs on the,
+[  610.60s ->   619.55s] on the daily chart on SPY. And then that's pretty much it. So right now I'm not in any credit spreads
+[  619.55s ->   625.97s] because I have a lot of work going on. So, but this is how you kind of draw. And then I can make
+[  625.97s ->   633.71s] notes to myself on when I get in and out of a trade. So today I could say, uh, four contracts,
+[  633.71s ->   643.16s] uh, four, four, three, four, four, two, you know, um, call a credit spread, call spread.
+[  643.66s ->   650.24s] And then I add the date, like say it's the 20th. And then you can say, uh, what I would say is like
+[  650.24s ->   659.06s] in at 0.20, which is the premium you want to collect. And then I'll go, you know, ask for,
+[  659.06s ->   671.43s] uh, um, 0.18. And then if I'm in Austin's trade, I'll say Austin in at, say he did a great job.
+[  671.79s ->   680.01s] He's in at 30. And then that's my notes to myself. So I know when I got in, I can see my Fib levels
+[  680.01s ->   685.79s] and I can see where my, you know, ideally this would be a call spread. So it would be up here.
+[  685.79s ->   691.82s] Say we were today, a call spread came out. So this would be a trade. And then this is what,
+[  691.94s ->   697.14s] how I kind of represent it visually. It is all you have to do. Now you've made your premium.
+[  697.50s ->   702.88s] You've sold those calls to somebody. Now all the stock has to do is stay below your box.
+[  703.24s ->   708.64s] And then what I do is as the leak goes on, I just pull the box over here until you finally get it down
+[  708.64s ->   715.53s] to your expiration date. And then Austin has other rules about say spy starts dumping here.
+[  715.53s ->   721.13s] Then your spread is going to suddenly become profitable. You're still going to have extrinsic
+[  721.13s ->   726.53s] value that you have to kind of deal with. But if you get to somewhere like 0.5 or 0.3,
+[  726.53s ->   732.93s] then you can get out early. So your spread might, um, sort of collapse. I don't know what the exact
+[  732.93s ->   737.13s] term is it, but basically it would shrink down to where it's profitable. You can still have time,
+[  737.17s ->   742.51s] but out you go. But this is, this is way better than day trade. You put in the spread,
+[  742.51s ->   748.55s] you collect the premium at the second that you get in, and then you can still see how you perform.
+[  748.87s ->   754.13s] You can say, okay, the, the algo came out. I obeyed the algo. This is where I got in.
+[  754.31s ->   759.63s] And then there's different aspects. Like if say the stock ran up close to your box
+[  759.63s ->   766.73s] and you wanted to add position to get a bigger, bigger premium out of it, and then it drops down.
+[  766.73s ->   773.27s] And you can do that too. I've done that before. Sometimes it's more of a trade because you see
+[  773.27s ->   777.47s] like the market has dropped. So I have like a technique where I'll kind of scale in.
+[  777.91s ->   783.13s] Let's now go into that. So obviously visually seeing the credit spreads are nice and knowing
+[  783.13s ->   787.65s] the levels and tracking is actually super important. I've noticed over the years of teaching people
+[  787.65s ->   794.49s] that people actually track things, um, improve faster. Um, what a surprise, but, um, show me now
+[  794.49s ->   798.39s] that we know how to chart the fib levels, show me how you actually read them, like what each level
+[  798.39s ->   803.67s] is and how you actually tell what the stock's doing. Okay. So the way I kind of look at it
+[  803.67s ->   809.43s] and then I'm active in the discord. So I post these occasionally. So what we would look at is
+[  809.43s ->   815.97s] for me is the Fibonacci really is these bounce plays and it helps give you confidence on what's
+[  815.97s ->   820.83s] going to happen. So like a small rule I have is I don't like any diagonal lines.
+[  820.83s ->   827.05s] So no diagonal lines, because in my day trading world, I realized that diagonal lines are a bias.
+[  827.33s ->   832.82s] You're seeing something that's not there, but that's just like trend lines kind of. Yeah. Like
+[  832.82s ->   841.62s] that, like an uptrend channel. Like, so I prefer to eyeball fibs. Then I don't feel like I have a bias
+[  841.62s ->   847.46s] towards something happening. I go, okay, where's my bounce play? But there's times where that doesn't
+[  847.46s ->   851.96s] work out where like, you could see an obvious trend and I'm looking for a bounce and then it
+[  851.96s ->   857.62s] doesn't happen because it is actually trending. And then I lose that spot, but this seems to work
+[  857.62s ->   863.68s] out well. And the horizontal nature of these fibs works with the spread boxes. So we're all little
+[  863.68s ->   869.14s] boxes and lines just going horizontal. So the way I look at it, like today, if we can go through this
+[  869.14s ->   875.82s] last week was you have market coming down since August, you know, you know, August and September
+[  875.82s ->   882.52s] are rough month. Anyways, the feds coming up and, you know, here comes inflation data and what's
+[  882.52s ->   889.44s] happening. Gas prices are high and who knows about unemployment. So what you have is you can, you basically
+[  889.44s ->   896.08s] mark the top and as the market goes down, I'm moving this zero line down here because I don't know where
+[  896.08s ->   902.38s] the bottom is. That's really the nature of fibs is you don't know if this is the bottom or if the real
+[  902.38s ->   910.48s] prophecy is way down here, but you go as far as it basically had as the bulls have pushed it. And
+[  910.48s ->   916.18s] that's, then you read your bounce levels. So when we hit this bottom here a few weeks ago, I kept moving
+[  916.18s ->   925.74s] this around because originally this fib was over here. It was with these candles and this was the base
+[  925.74s ->   932.32s] and then Wall Street really pushed down below that fib and then bounced up, you know, like a
+[  932.32s ->   939.34s] trampoline. And so we use the highs and lows for the fib levels and those keep changing, but what are
+[  939.34s ->   946.40s] all the levels in between and how do you use them? Yeah. So those in between what you'll see is the 50
+[  946.40s ->   953.92s] is a medium point between the high and the low. So if you look at this whole maneuver, the 0.5 is like
+[  953.92s ->   959.42s] almost like being flat on a trampoline. You're not overbought and you're not oversold. So when the
+[  959.42s ->   963.92s] market gets to that point, you have a kind of a balance, like the bears and the bulls, they're both
+[  963.92s ->   969.34s] happy. You know, you're not in either direction. So like a good example of that is like where the
+[  969.34s ->   975.40s] queues are at right now. So the queues, or they were, they were kind of sitting, but they're sitting
+[  975.40s ->   983.00s] closer right now on, you know, on today's date, closer to the 0.5. So you can see that the tech is
+[  983.00s ->   990.66s] basically ran up and now it's neutral and it's sort of floating. Whereas SPY is still working to
+[  990.66s ->   996.14s] get up to five. It's still oversold. So this is kind of like this, where the fibs kind of show you
+[  996.14s ->  1006.72s] a little disparency. And so what you have is on these levels, then you have like the 0.78 and the 0.68.
+[ 1007.08s ->  1012.20s] Those are common areas where there's a lot of, where the bears will push the market up and slam it down.
+[ 1012.20s ->  1018.82s] Once you get to five, the bears are happy. So you can see in this pattern, although we're technically
+[ 1018.82s ->  1024.78s] still in a bull market, since August, we're in a downtrend. So what do you expect the little ball
+[ 1024.78s ->  1032.06s] to do? It slams down. You know, it just happened to find this 3.82, this level right here. And then it
+[ 1032.06s ->  1037.28s] goes right up to the 7.8. And then it gets slammed back down. You don't know how far it's going to go.
+[ 1037.28s ->  1043.92s] Sometimes it can go here, but it always goes to levels. And that's where you can see. And like,
+[ 1043.98s ->  1050.02s] it's sort of like now, like everything goes level to level. The SPY doesn't hang out in these big
+[ 1050.02s ->  1056.08s] zones. It's just, there's nothing there. And that's what I've learned through charting. It sort of
+[ 1056.08s ->  1062.58s] proves itself true. And then from the other elements that I've learned where they explain that a lot of
+[ 1062.58s ->  1068.62s] Wall Street algos actually run off fibs. And you can see it. I've seen days where it happened this
+[ 1068.62s ->  1074.36s] summer where we had days on SPY where nothing happened. It was almost like no one at Wall Street
+[ 1074.36s ->  1080.56s] was at home. And the algos were just running SPY up and down to make money. Because they're like,
+[ 1080.60s ->  1085.94s] well, what else are we going to do? And I charted the day. And that's all the algos did. They didn't
+[ 1085.94s ->  1090.12s] stop in the middle ground. They're like, we're going to shoot it up to seven. And then we're going to
+[ 1090.12s ->  1095.28s] rocket it down. And if no other money comes in to move it, this is the program they're going to
+[ 1095.28s ->  1104.66s] play out. So another way to say this is essentially the Fibonacci is like mathematically based support
+[ 1104.66s ->  1109.94s] and resistance levels that a lot of people follow and is accurate more times than not. Right?
+[ 1110.48s ->  1116.90s] Exactly. Yeah. And, and so it's, it's not based on a bias at all. It basically is just these levels.
+[ 1116.90s ->  1122.52s] So you can know, and since in, with the spreads, we're basically just have boxes at levels.
+[ 1122.98s ->  1130.58s] It's really nice to see when the algo puts the spread below a support. I go, ha ha. It's a sneaky
+[ 1130.58s ->  1137.36s] trick. But I, when I plot it, I can see it and it gives me confidence. So like if I was on one of
+[ 1137.36s ->  1142.66s] these, you know, I could say, okay. And that's what I'll post in the discord sometimes for the groups.
+[ 1142.66s ->  1150.48s] Okay. If anybody's in the 434s, we're sitting right below key support. So if you have this area
+[ 1150.48s ->  1156.72s] where Spy can bounce between the Fib levels, that's where you don't panic. It's like a chop zone
+[ 1156.72s ->  1162.66s] because Spy either wants to go to that level and reject, or wants to go down here and test it in a
+[ 1162.66s ->  1167.96s] bounce. But if you're sitting down here, you don't care what happens up here. You're like, great,
+[ 1167.96s ->  1174.08s] but you do have to know. And this is what's cool about the Fibs. You know, that range of bounce,
+[ 1174.08s ->  1180.70s] where is this sort of untethered ball going to go? And with the, that's the only concern you have
+[ 1180.70s ->  1186.04s] pretty much all day, because like, then you have your box, which is a predetermined sort of reality.
+[ 1186.42s ->  1190.08s] And then you just watch Spy go. So that's your day trade day.
+[ 1190.74s ->  1194.72s] Yeah. So, I mean, so you're looking at this from a daily perspective, which gives you the long-term
+[ 1194.72s ->  1199.60s] timeframe, but you're mentioning a lot about the day. Do you also chart Fibonacci on like a one
+[ 1199.60s ->  1206.41s] minute chart or something that's closer in? No, really, I don't. So, because that's a little
+[ 1206.41s ->  1212.85s] bit too intraday. Like, I don't need to know where the movement is per day. So my game plan is like
+[ 1212.85s ->  1219.75s] the Spy daily with the Fibs, and then I'll watch Spy on a 15 minute, just with kind of like the smaller
+[ 1219.75s ->  1225.55s] support and resistance lines. So you say, and that's more of just kind of like an eyeball skill,
+[ 1226.13s ->  1231.05s] but you basically say, okay, where does Spy look like it's bouncing? But I do have here,
+[ 1231.11s ->  1239.01s] like if I'm sharing this screen here, I have notes on the 15 that like 382.57 is a 0.618 on the
+[ 1239.01s ->  1245.47s] daily Fib. So it's just, and then I have another one up here. So I am sort of transcribing
+[ 1245.47s ->  1252.73s] the big Fib to my 15 minute. And that just lets me know that that yellow line I'm looking at is
+[ 1252.73s ->  1258.87s] the reason I put it there. And it tends to extend for a while. And then a little trick I have is I
+[ 1258.87s ->  1264.65s] use the dotted lines for temporary support and resistance. And then I'll go back and delete
+[ 1264.65s ->  1270.83s] those. So the big yellow lines are big trends, big levels, I mean. And then these little small
+[ 1270.83s ->  1276.71s] hash ones are kind of like the local, maybe like a daily thing that Spy is kind of going around and
+[ 1276.71s ->  1283.19s] testing. So that's kind of the visual that I like. For me, it kind of works. And I think for the group,
+[ 1283.23s ->  1290.01s] it's kind of an easy learning lesson versus, you know, like the ripter clouds or something like that,
+[ 1290.37s ->  1293.05s] ripster clouds, you know, so you can get complicated.
+[ 1293.71s ->  1298.63s] Yeah, I love your charts. They're always super simple. And they make sense. Like every time you post
+[ 1298.63s ->  1303.47s] in the discord, I'm like, Oh, let me go check out what Jeff posted. But anyway, so you taught a lot
+[ 1303.47s ->  1308.53s] on Fibonacci, which has been great. Like I've learned a lot. But let's bring it all together.
+[ 1308.53s ->  1315.33s] And like how, let's, let's just say you had to put on a trade today. Obviously, it may not be ideal
+[ 1315.33s ->  1319.57s] to put one on right now. But let's say you have to, how would you structure it? How would you go
+[ 1319.57s ->  1324.23s] through and think about it? Yeah, so what I would go through is obviously, I'm looking at the
+[ 1324.23s ->  1333.11s] discord, I'm looking at the, the alerts. I have the first is the first question I have is do I have
+[ 1333.11s ->  1338.83s] an expiration for that week? So I look at it and like, I'll go shopping, I'll say, Okay, I want one
+[ 1338.83s ->  1344.47s] per week, or one per expiration. So with the mother of all credit spreads, you might have a Monday
+[ 1344.47s ->  1351.09s] expiration, a Wednesday or Friday. So it kind of depends on what you want to put. But I'll try to
+[ 1351.09s ->  1357.35s] at least have two or three per week. And so you want to load them up one per each. And
+[ 1357.35s ->  1361.83s] really, the name of the game is to size small. So that's really where you kind of like you
+[ 1361.83s ->  1366.95s] work on sizing to do risk and management. That was probably the biggest lesson I had with
+[ 1366.95s ->  1371.79s] the spreads is really, and that's what's cool about the spreads, you have a defined loss.
+[ 1372.17s ->  1378.91s] So if you have a stop loss at 50, and you collect a credit of 20, you have 30 bucks over here
+[ 1378.91s ->  1383.19s] and 20. So you almost have a one to one relationship. And that's what's beautiful
+[ 1383.19s ->  1390.87s] about the one $1 spread or the two is basically Austin's method for saying that this is my risk
+[ 1390.87s ->  1395.49s] to reward. So then you know, like I had to learn this kind of a little bit later, because
+[ 1395.49s ->  1399.65s] I was like, what's max loss? They're like, you got to pay attention to that. And I was
+[ 1399.65s ->  1403.93s] just out there, you know, buying spreads at the beginning. But then as I started to learn
+[ 1403.93s ->  1408.91s] these intricacies, because it takes a minute, like, it's almost like learning in the cockpit
+[ 1408.91s ->  1413.75s] of an airplane. It's a little crazy at first with the languages and the selling and getting
+[ 1413.75s ->  1419.09s] credits. But once you get it, the light bulb goes on. So my method then is basically to shop
+[ 1419.09s ->  1425.89s] per week or per expiration. And then what I like to do is either it's an Austin trade, or
+[ 1425.89s ->  1431.55s] if I take it from the algo, it's sitting under support of some reason. I just like that idea,
+[ 1431.55s ->  1437.51s] because the algo might then give me another one later, that's closer to what I like. And
+[ 1437.51s ->  1443.07s] then so I kind of marry that with the fifths. And so putting on the trades, then I'll have
+[ 1443.07s ->  1450.47s] like a little notepad, I go into Weevil to put on the credit spread. And one thing you
+[ 1450.47s ->  1456.67s] have to then look at is like, really understanding, getting that minimum credit, it's critical,
+[ 1456.67s ->  1461.53s] because you might want to go shop for something that's further out. But then you get into
+[ 1461.53s ->  1466.61s] not having a positive risk to reward. Like, you know, like an example, I was like, why
+[ 1466.61s ->  1472.95s] wouldn't anybody just buy them like a two cent spread, you know, that has a 99% probability
+[ 1472.95s ->  1479.97s] of like success. And it's because you have to put up your credit for that two bucks, you're
+[ 1479.97s ->  1484.41s] exposing all that money. And that doesn't you that never plays into like a day trade kind
+[ 1484.41s ->  1489.79s] of scenario. It's either cash in or cash out. So there's a there's, you know, there's no free
+[ 1489.79s ->  1494.93s] lunch for everything. So yeah, that's what you kind of get. And then what I do is then
+[ 1494.93s ->  1500.61s] I post in the discord what I put on the trade, I make my notes on my trading view, I think
+[ 1500.61s ->  1505.07s] that's probably one of the best things to do. Because then you'll go back to the day, like
+[ 1505.07s ->  1510.55s] my little clouds, that allows me to know, what was I reading? And then how did it play
+[ 1510.55s ->  1516.71s] out? Like did spy start heading towards my, my spread? And then you'll kind of learn like
+[ 1516.71s ->  1521.49s] you'll see your account go down. Because now your spread is widening. And you're like,
+[ 1521.53s ->  1526.73s] Oh, no, I'm read it all day. Don't panic. We're here for the long haul. Then theta starts
+[ 1526.73s ->  1531.63s] to work. And you start to see cool things to like, like, say you own spreads over the
+[ 1531.63s ->  1536.81s] weekend. And now you're at like 18. You come back around on Monday, Monday, and after theta
+[ 1536.81s ->  1543.25s] is decaded a bit, and boom, you've already made money. You know, like, and then as the spread
+[ 1543.25s ->  1547.65s] gets closer to expiration, you see how the case starts to eat away at spy's movement.
+[ 1548.19s ->  1554.01s] It starts to eat it out where it spy would have to move tremendously for your spread to
+[ 1554.01s ->  1558.89s] actually, you know, become improper, improperable. And so that kind of gives you your assurance
+[ 1558.89s ->  1564.65s] as your spread goes towards expiration, almost more confidence. So that's what I like. It's
+[ 1564.65s ->  1569.31s] just a different method of, of trading. And that basically then I'll post some of that
+[ 1569.31s ->  1574.63s] on the group. I watched, you know, then Weevil on my phone. And then a small thing I do is
+[ 1574.63s ->  1578.93s] I like to be around on Fridays to kind of see if we have expiration Friday to work on
+[ 1578.93s ->  1584.97s] the trades. And then I don't trade on mobile. Like that's one of my things I want to graphically
+[ 1584.97s ->  1589.61s] see it, but you shouldn't have to, there shouldn't be anything where there's an alert midday and
+[ 1589.61s ->  1594.83s] you have to get in, you know, like, you know, it's you, you can always have it roll the
+[ 1594.83s ->  1599.61s] next day because these are longer place. So it doesn't have to be kind of a hurry up
+[ 1599.61s ->  1605.27s] thing. And then the biggest advice is basically just start small because there's a lot of
+[ 1605.27s ->  1610.09s] mechanics to how these work, how these spreads work. And that's why it's kind of cool to
+[ 1610.09s ->  1614.27s] see it visually, but whatever broker you have, like I've had friends that do this and they
+[ 1614.27s ->  1620.13s] do debit puts and debit spreads. And sometimes they're backwards, you know, and it has to
+[ 1620.13s ->  1625.95s] do with how each one of your trading platforms executes. You know, Schwab is different than
+[ 1625.95s ->  1631.97s] tasty trades. You know, Robinhood is real simple. I like Weevil just because it's like a middle
+[ 1631.97s ->  1637.07s] ground. It's visually really nice, but I can still see the option trade. I have a tasty trade
+[ 1637.07s ->  1643.07s] account too, which I like, but to me, it's a little more, it's about the option chain. Like
+[ 1643.07s ->  1649.57s] if you're looking at IV and Delta and that's really how you're almost shopping for them, it's
+[ 1649.57s ->  1653.81s] kind of looking for that imbalance, then that's what a tasty trade is good for. But
+[ 1653.81s ->  1660.27s] a lot of people like it and the online stuff is good too. So, but that's pretty much in
+[ 1660.27s ->  1667.63s] a nutshell. Then I pretty much have just kind of worked my way through taking those base
+[ 1667.63s ->  1673.69s] hits. I'll post those online. You know, you might make, say you have like a four contracts
+[ 1673.69s ->  1678.61s] at one wide, you make like $80 that goes back into your account. And then you just do the
+[ 1678.61s ->  1683.51s] compounding of your account. And that's how I kind of trade. And this just keeps going
+[ 1683.51s ->  1687.31s] and keeps going. You can take your occasional losses. You understand those, you know, you
+[ 1687.31s ->  1691.89s] have a win loss rate. And so you just like a sort of a battle. You understand you're going
+[ 1691.89s ->  1697.77s] to lose a few to make a lot. And as the stock starts trending in my spy, that's where all
+[ 1697.77s ->  1701.14s] the green starts to come in. So that's it in a nutshell.
+[ 1702.14s ->  1706.04s] Awesome. Yeah. I mean, you covered a lot, but I really think that this video in this interview
+[ 1706.04s ->  1711.86s] here and your teaching will be really beneficial to our current members just to be like, Hey,
+[ 1711.90s ->  1716.02s] this is another way to look at it. And also I think a lot of people on YouTube will find
+[ 1716.02s ->  1720.22s] this interesting too. If you do, if you're on YouTube watching this, let me know in the
+[ 1720.22s ->  1725.56s] comments, what you think. Anyways, I think that's all I have. Is there any parting advice
+[ 1725.56s ->  1729.74s] you want to give? I know you said stay small, which is super important, but if there's anything
+[ 1729.74s ->  1735.24s] else, feel free to let them know. I just say what I've looked at from going through
+[ 1735.24s ->  1740.62s] the Twitters and the discords is you'll probably end up somewhere in the credit spread world,
+[ 1740.74s ->  1746.42s] either selling covered calls, cash secured puts. It's what wall street does to make money.
+[ 1746.78s ->  1751.84s] When the big asset managers do that, this is what they do. They sell it and it's much more
+[ 1751.84s ->  1757.30s] peaceful. You just have to understand the mechanics of it. And so stick with Austin's group. He's the
+[ 1757.30s ->  1762.70s] best thing that I've found the group online with discord is super helpful. This is more like swing
+[ 1762.70s ->  1767.78s] trading, but with appropriate sizing, you'll just have a peace of mind. And it's something I'm going
+[ 1767.78s ->  1773.78s] to teach my kids to do. So it sounds like a cliche, but I got two boys and I'm like, Hey, you can do
+[ 1773.78s ->  1779.70s] this. You guys understand technology. This is the way it works. You sell options to people and collect
+[ 1779.70s ->  1785.32s] a premium way better than day trading. So that's my two cents. That's awesome. Your kids are going to be
+[ 1785.32s ->  1792.30s] so far ahead in life when they're like 25. So that's awesome. Anyways, thank you once again for
+[ 1792.30s ->  1796.52s] jumping on this call and making the time. I appreciate it. And I know everyone else does
+[ 1796.52s ->  1799.90s] too. So thank you, Jeff. Okay. All right. Thanks, Austin. All right. See you guys.

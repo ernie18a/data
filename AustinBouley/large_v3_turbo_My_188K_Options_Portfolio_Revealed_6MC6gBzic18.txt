@@ -1,0 +1,91 @@
+[    0.24s ->     4.62s] In this video, I'm going to walk you through the three option strategies that I use to generate
+[    4.62s ->    12.18s] consistent monthly income in my $188,000 account. You can see here in Tasty Trade that over the
+[   12.18s ->    19.28s] last 60 days, two months, I've made and collected about $12,000 in options premium just by using
+[   19.28s ->    25.52s] these three strategies. So that's about $6,000 a month in options premiums purely from these
+[   25.52s ->    29.18s] three strategies. So let me dive in and show you exactly how they work. So by the end of this video,
+[   29.18s ->    32.98s] you can actually implement this for yourself, no matter if you have a small account, large account,
+[   33.02s ->    37.62s] or whatever your goals are. So let's dive in. Here's exactly how I run it. I run three strategies,
+[   37.76s ->    43.32s] my bullish strategy, my bear strategy, and a daily income strategy. Let me break down why I do each
+[   43.32s ->    48.62s] one of these things. Here's the truth. The market is always in some phase. It's either going up,
+[   48.86s ->    54.26s] it's going down, or it's going nowhere, sideways. And so because we already know that the market
+[   54.26s ->    59.04s] can be in either one of those phases, I need to have an option strategy that's tailored for
+[   59.04s ->    64.74s] each one of those markets. And the easiest way to know which market phase we are in is by using a
+[   64.74s ->    68.98s] simple indicator. Now I built one for myself and my clients, but I'll show you how to replicate it
+[   68.98s ->    73.84s] using a free indicator. So go on to whatever charting platform we're using, whether that's
+[   73.84s ->    80.34s] trading you or your broker or whatever, go to indicators, type in Bollinger Bands. And from here,
+[   80.38s ->    83.08s] it'll get added to your chart. But we're going to do something a little different. We're going to go to
+[   83.08s ->    90.01s] the settings of it. And the length is by default 20. We're going to make it 200. And this is going
+[   90.01s ->    94.47s] to show us everything we need to know. When we are in this top zone, we are trading bullish strategies.
+[   94.89s ->    99.69s] We are in this bottom zone, we're trading bearish strategies. When we're below this bottom zone,
+[   99.73s ->   103.23s] we're trading bullish because the market is going to bounce and head higher. And when we're above it,
+[  103.23s ->   107.81s] we trade bearish because it's going to go down. So very simple. Here is bullish because the market
+[  107.81s ->   113.63s] is trending up. Here is bearish because the market is headed down. Below here, the market is going to
+[  113.63s ->   118.09s] bounce and head higher. So we're going to run bullish. And up above here, the market's too
+[  118.09s ->   122.33s] overextended. So it's going to pull back. So we're going to run bearish. May seem complicated, but it's
+[  122.33s ->   127.93s] super simple. Bearish, bullish, bearish, bullish little sequence there. Now, what strategy am I
+[  127.93s ->   132.47s] running for each one of these type of markets? Now that I know how to identify the type of market,
+[  132.55s ->   136.39s] like right now it's a bullish market. It's in this phase. So I know exactly what strategies to deploy.
+[  136.39s ->   141.61s] Okay. Let's dive into that now. Okay. So we have a bullish strategy, which is quite simple.
+[  142.07s ->   147.83s] This is going to be my one, one, one strategy. Now, if you're running or have the ability to
+[  147.83s ->   154.05s] futures options, one, one, one is my favorite bullish strategy by far. It helped me to find
+[  154.05s ->   159.25s] my risk. It gives me a lot of credit potential. It's run on futures, which means I'm protected from
+[  159.25s ->   164.21s] overnight crashes because I can get out still. And I have tax advantages. So one, one, one is my main
+[  164.21s ->   171.47s] strategy. This looks like doing a put debit spread plus selling a put at roughly 10 Delta
+[  171.47s ->   175.99s] is how I run this trade. Now, if you don't have the ability to futures options and you just want to do
+[  175.99s ->   181.05s] it on spy or something like that, then doing a simple put credit spread is amazing. Something
+[  181.05s ->   187.35s] like 30 Delta or 10 Delta that you're selling and then defining your risk, however, is a simple way to
+[  187.35s ->   192.21s] run a put credit spread. Now, when I run this bullish strategy, I do know that the market's trending
+[  192.21s ->   197.21s] higher. So it can't give me an advantage. So I do have it take profit about 50%. That way I'm closing
+[  197.21s ->   201.71s] my trades quickly. Why? Because the way that I like to do these trades, I like to do the further
+[  201.71s ->   207.31s] out in time. I'm talking like 90 days out in the future. And so when I do 90 days out for my trades,
+[  207.31s ->   212.33s] it means that I can have a lot of trades open at one time. In order to reduce my risk, I need to be
+[  212.33s ->   217.61s] getting out of trades quickly. So that's why I do a 50% take profit, which allows me to get in and out
+[  217.61s ->   222.53s] of trades quickly because I'm rolling through trades quicker. For a stop loss, I always have
+[  222.53s ->   226.51s] a stop loss on these trades. It's going to vary depending on how much risk I want to take in the
+[  226.51s ->   231.65s] account, but anywhere from 200 to 300% per trade. So that is all I structure my bullish strategy,
+[  231.75s ->   235.41s] either a 1-1-1, which I have more videos on in my YouTube channel, more in depth,
+[  235.57s ->   239.79s] or a put credit spread. Either way, these are both bullish strategies designed to take advantage of the
+[  239.79s ->   245.29s] bullish market. So what a surprise when we run a bullish option strategy and a bullish market that
+[  245.29s ->   252.67s] we're defining by this trend, we tend to do very well. Now, next is the bearish strategy. The bearish
+[  252.67s ->   257.53s] strategy only runs when the market is above this zone or inside this zone because we only want to
+[  257.53s ->   261.47s] pair the right strategy with the right type of market. That's why a lot of traders lose because
+[  261.47s ->   266.13s] they use the same strategy for every type of trend. Anyways, the bearish strategy is something simple,
+[  266.19s ->   271.25s] just a put debit spread. You can do something even more simple, just like buying a put. So again,
+[  271.25s ->   276.51s] you can purchase a put, which again will help give you a lot of downside risk profit as well.
+[  276.83s ->   281.01s] But I like the put debit because it allows me to define my risk and I get to know my numbers a bit
+[  281.01s ->   285.73s] better. But purchasing a put can give you the chance to have a 10x payout, especially when the
+[  285.73s ->   290.39s] market crashes very heavily. So a bullish strategy is very simple, just like that. It's really kept
+[  290.39s ->   294.57s] through the fruition of the trade. You don't really have to take profit or stop loss on it. You just let
+[  294.57s ->   299.65s] the trade go through and that acts as your hedge and your ability to protect your account while the
+[  299.65s ->   304.87s] market is dropping. Now, when it comes down to something like a daily income bot, here's the
+[  304.87s ->   310.29s] thing. For literally the last year, I've been running this exclusively, a bullish strategy and
+[  310.29s ->   316.57s] a bearish strategy and pairing it with the right trend. And so that alone has done me very well.
+[  316.81s ->   321.01s] The problem is when you start running these strategies, they take a couple of weeks to three
+[  321.01s ->   326.97s] weeks for a trade to close. And so you can get bored, maybe get ADHD like me and you want more
+[  326.97s ->   331.99s] activity to happen. So that's why I created the daily income strategy, which gives me a bit of
+[  331.99s ->   337.49s] daily activity. I get to see some daily trading stuff and it's a very good trade setup. So again,
+[  337.57s ->   342.75s] this is not going to generate the most of my money. The daily income bot is just there for a cherry on
+[  342.75s ->   350.87s] top. Where my money is coming from is these consistent, long-term, long-dated option strategies.
+[  350.87s ->   356.77s] So if you are someone who is tired of the mundane strategies like this, get over yourself because
+[  356.77s ->   362.81s] this is where the money is made. This is where consistency is. All the zero DTE and one DTE
+[  362.81s ->   368.97s] strategies are fun, but they're not as consistent, not as profitable as we see with the bullish and
+[  368.97s ->   374.63s] bearish strategies. Now the daily income is still a great strategy. I've made about $1,300 from it in
+[  374.63s ->   379.31s] the last two months using just one contract. That's really not bad at all. So it does help increase my
+[  379.31s ->   384.87s] returns and just give me something to do with my ADHD. So the daily income is a 1DT ORB strategy.
+[  385.67s ->   390.11s] So what this means is we wait for the opening range of breakout. We watch the first hour of the day,
+[  390.21s ->   394.87s] and then we get in once that high is broken. I have another video on my channel explaining the
+[  394.87s ->   399.33s] strategy more in depth. And if you want the actual trading plan that I follow for this strategy,
+[  399.45s ->   404.49s] the link is the first link down below in the description. You can get my 1DT ORB trade plan.
+[  404.49s ->   412.69s] That's the way I do it with a 40% take profit and roughly a 50% stop loss. And it gives me overall a good
+[  412.69s ->   420.35s] trade. So here's the key lessons from this video. Have some way to mathematically decipher the trend
+[  420.35s ->   426.35s] in the market. Don't guess. Don't have some charting idea that's not consistent, that changes every day
+[  426.35s ->   432.29s] based on how you draw lines. Find an indicator, find math, find something, use this Bollinger band to
+[  432.29s ->   436.73s] know. Okay. At this point, I'm in a bullish market. At this point, I'm in a bearish market and all that
+[  436.73s ->   441.77s] stuff. Make sure you know which market you're in and then find your favorite strategies and pair them
+[  441.77s ->   446.21s] with the different types of markets. Okay. So have a bullish strategy, whether that's one that you're
+[  446.21s ->   450.41s] using now and you love, make sure to continue it, right? I'm not going to have you stop doing what's
+[  450.41s ->   454.53s] already making you money. Just make sure you're doing it in the right market. Then have a bearish strategy
+[  454.53s ->   458.89s] that runs in bearish markets and then have something to juice up your returns or what I
+[  458.89s ->   465.69s] call my daily income strategy. So that's how I run my $188,000 option strategy account right now and
+[  465.69s ->   470.39s] how I use it to make $12,000 in premium over the last two months. So again, I hope you enjoyed this
+[  470.39s ->   472.63s] video. If you did hit subscribe and I'll see you in the next one.

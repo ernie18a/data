@@ -1,0 +1,88 @@
+[    0.00s ->     3.66s] Do you like that you're making money because the market keeps hitting all-time highs but at the
+[    3.66s ->     7.76s] same time you're a little nervous because you think the market could crash? Anytime we're at
+[    7.76s ->    12.32s] an all-time high we are just as likely for the market to crash so although I think we should
+[   12.32s ->    17.00s] always go with the trend to make money it would be wise of us to make sure we have hedges on.
+[   17.30s ->    20.90s] I've been talking about a lot of different hedges we can put on recently on my YouTube channel but
+[   20.90s ->    24.90s] a lot of people have been saying Austin these hedges cost thousands of dollars is there a
+[   24.90s ->    28.40s] hedge that I can put on that's cheaper? Well if you have a smaller account and you want to hedge
+[   28.40s ->    33.44s] your account because you feel like the next World War III or something catastrophic is right
+[   33.44s ->    37.10s] around the corner and you want to protect your account but you don't have that much money I'm
+[   37.10s ->    41.20s] going to show you exactly how to get thousands of dollars of downside protection for just a few
+[   41.20s ->    45.92s] hundred dollars. So let me walk you through in this video how a small account can hedge their
+[   45.92s ->    52.52s] account too. So where is hedging most needed? So if we look at the market right here this is the S&P 500
+[   52.52s ->    58.12s] hedging is most needed when the market is making all-time highs which is the level we are at
+[   58.12s ->    64.52s] right now. Why? Because every time we hit an all-time level or an all-time high then the market
+[   64.52s ->    68.84s] not only has the ability to trend up higher and faster and make us a lot of money but at the same
+[   68.84s ->    75.30s] time it has the greatest potential of reversing. We can see here in 2022 we can see here in 2020 with
+[   75.30s ->    80.60s] the COVID crash we can see here we can see here every time we make all-time highs it is great for
+[   80.60s ->    88.72s] our portfolio until it isn't. So how do we hedge against these different scenarios? 2018, 2018, 2020,
+[   88.98s ->    93.98s] 2022 these are things that happen a lot and guess what we are now going into it again right now. So
+[   93.98s ->    99.58s] let's bring up my broker and let's talk about it. I'm showing how to hedge on futures because futures
+[   99.58s ->   104.70s] not only have the ability to give us a lot of return on the money that we're putting up because of
+[  104.70s ->   110.40s] advanced buying power called span margin but it also gives us the ability to have a tax advantage.
+[  110.40s ->   114.70s] We are taxed less when we trade futures so we're going to make thousands of dollars. If the market
+[  114.70s ->   118.98s] were to crash we want to make sure that we're not paying a lot of tax on that money that we're going
+[  118.98s ->   125.26s] to make and so because of that I love using futures. So the way that I show it is I go on ES and I
+[  125.26s ->   129.40s] structure a hedge. Here is a very simple hedge. This is not one that I've taught but it's just the
+[  129.40s ->   137.18s] idea of going some days out and some delta and buying a put. When you buy a put as the market drops
+[  137.18s ->   144.18s] the put goes up in value and it could even be dramatically. It could go up 1x, 2x, 3x, 5x, 10x.
+[  144.26s ->   150.40s] It could go up in value just by the market dropping but if we can see here to buy this put it costs
+[  150.40s ->   159.10s] $10,600. Okay so it costs $10,000 of our money to put on this trade. Now the next question is if I
+[  159.10s ->   164.86s] have to put up $10,000 how much money am I going to make if the market drops? So let me show you if the
+[  164.86s ->   171.78s] market keeps dropping like this you can see here I can start making $10,000. I can make 17, 26, 30,
+[  171.86s ->   180.34s] 32, 35,000, $50,000 if the market drops. So again you can see here that this gives us a huge potential
+[  180.34s ->   185.82s] yet we have to put up $10,000 but we have the chance to make 5x our money if the market starts
+[  185.82s ->   190.80s] crashing. And so again a lot a lot of people be like Austin it's a great payoff but I don't have
+[  190.80s ->   196.26s] $10,000. Totally understand I was where you were and it was hard to trade different types of
+[  196.26s ->   200.52s] strategies but I want to show you how you can trade futures and hedge even if you have a small
+[  200.52s ->   207.50s] account. And the secret is called MES. Micro futures. Guys if we check out micro futures they're the exact
+[  207.50s ->   213.80s] same as the main asset but are a tenth of the price. So if we go here we go roughly to 30 days out
+[  213.80s ->   219.72s] the same thing we just did 30 delta put if we buy that for the downside protection. Now instead of
+[  219.72s ->   226.36s] spending $10,000 we only need to spend $1,000. And so just like that we've dropped our buying power
+[  226.36s ->   232.94s] by a tenth and if we look at the curve where the profit is not only that but we can still have
+[  232.94s ->   240.52s] upwards of a thousand dollar return if not even more up to $1,200. And guys this is the amazing part
+[  240.52s ->   247.08s] I didn't zoom out that's why. You can see here up to $1,000, $2,000, $3,000, $4,000, $5,000 profit
+[  247.08s ->   253.38s] from this return and now we only have $1,000 instead of $10,000. So now that you know that MES is the
+[  253.38s ->   260.72s] secret weapon for small accounts let me show you my favorite hedges using MES. So diving into it how do
+[  260.72s ->   265.98s] we structure these hedges? Well if I come in here the first hedge I like is the Sweet Bobby hedge. This is
+[  265.98s ->   271.24s] one that you can put on once a month and it will actually prevent a lot of downside risk for any
+[  271.24s ->   275.92s] other trades you currently have open. So a once a month trade we're going to go out to roughly the
+[  275.92s ->   282.40s] 90 day mark so this is 84 days out. We're going to go in here and around the 15 delta what we're going
+[  282.40s ->   287.44s] to do is we're going to sell two of these. We're going to sell two then we're going to come in here
+[  287.44s ->   292.30s] and we're going to the next one below we're going to end up buying but we're going to buy three.
+[  292.30s ->   296.68s] So I'm going to highlight this and do one more three. Now what does that look like? That looks
+[  296.68s ->   302.70s] like this. So basically we have three long puts which means that if the market drops these three
+[  302.70s ->   307.32s] long puts are going to go to the moon. They're going to explode with a ton of profit but what do
+[  307.32s ->   314.34s] we do at the same time? We sell two puts to offset the money that it costs. Remember one put cost us
+[  314.34s ->   319.62s] about a thousand dollars to put on. Well now when we structure it like this it only takes six hundred
+[  319.62s ->   324.58s] dollars to put on this trade but if the market were to crash we could make nine hundred, a thousand,
+[  324.90s ->   329.64s] fifteen hundred, two thousand, two thousand, seven hundred. You can see here the beauty of this
+[  329.64s ->   335.32s] trade on MES. It only takes six hundred dollars with the ability to make three, four, five times
+[  335.32s ->   341.10s] that money. So if you have a small account no worry do MES this sweet Bobby hedge. It will set you up
+[  341.10s ->   345.46s] great. So again this is something you put on once a month and it can help cover your downside
+[  345.46s ->   351.28s] protection. Even if you have other trades on the ES futures you can use the MES to hedge against it
+[  351.28s ->   355.68s] because it costs less money. All right let's walk through another hedge. It's called a ratio spread.
+[  356.00s ->   362.02s] I really love ratio spreads when I take a 1-1-2 trade and then I take the profits from that and
+[  362.02s ->   366.90s] convert it into a ratio spread. Now what in the world is this ratio spread that Austin is talking
+[  366.90s ->   372.50s] about? Well if we come in here we look at the 30 delta we buy the 30 delta. We come out here we can do
+[  372.50s ->   377.24s] the 10 delta something. We'll do 10 delta for the example and we're going to sell two of them. That's
+[  377.24s ->   382.58s] why it's a ratio spread. It's like a spread but we're a bit off even on the 1-2. So just like that
+[  382.58s ->   386.66s] now if we look at the curve what are we looking at? Well we're looking at this right here. The buying
+[  386.66s ->   394.20s] power guys for this trade is only $160. Do you see that? It only takes $160 to put this one trade on
+[  394.20s ->   402.48s] and it gives me up to $1,500 of protection. That is 10 times my money in protection. So guys if
+[  402.48s ->   409.04s] you have a small account and you want to hedge this is how to do it. No money basically and you
+[  409.04s ->   414.88s] have 10 times your money in protection. So that is why I like putting on these hedges on MES for
+[  414.88s ->   421.26s] small accounts. So we can see here that again as the market drops past the long put that we bought
+[  421.26s ->   430.58s] then again we'll make $270, $500, $700, $1,000, $1,200, $1,600 is our max. So that is how a ratio spread
+[  430.58s ->   437.00s] is structured just like that. Amazing trade. So again remember that you will have the $160 loss
+[  437.00s ->   441.98s] if the market stays flat or goes basically nowhere to the downside. But again that's why this is a
+[  441.98s ->   446.88s] great hedge to the downside when we're at all-time high level because it's a cheap thing to put on
+[  446.88s ->   453.34s] and it will give us great downside protection if that were to come our way. Anyways guys this is how
+[  453.34s ->   459.10s] I would hedge a small account that I recommend you do it. If you want to learn more about how I trade
+[  459.10s ->   465.68s] options selling and hedges please join my free school community. Link to join this community
+[  465.68s ->   473.58s] is down below it says options trading auto trader waitlist. Click on that link watch the video learn
+[  473.58s ->   478.82s] about what I'm working on and you can get free access to this community with 232 members which
+[  478.82s ->   483.70s] we've had in the first seven days of opening this program. It's free you have classrooms with
+[  483.70s ->   489.20s] different courses you have a community that's very very active here. If you want to join a
+[  489.20s ->   495.78s] thriving option selling community to learn how to make monthly income to retire your spouse to help
+[  495.78s ->   501.12s] your parents whatever it is this is the community for you. Alright guys see you in the next video.

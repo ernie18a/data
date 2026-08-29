@@ -1,0 +1,326 @@
+[    0.46s ->    14.88s] By the end of this video, you will fully understand the Black Trolls model and its place in modern options trading, whether as a market maker, a retail trader, the list goes on.
+[   14.88s ->    28.64s] Trading is about positioning and survival. There is no crystal ball. There is no price prediction. It is about positioning and survival.
+[   29.38s ->    41.20s] I find that nobody understands how to implement models in practice because they treat it like a crystal ball rather than a basis for decision making.
+[   41.20s ->    54.90s] The entire purpose of this video is to combat the dozens of comments that I see all over, a whole bunch of videos that I have on the Black Trolls model, the fact that it's useless, it doesn't predict anything.
+[   54.90s ->    71.34s] Yeah, no kidding. It does not predict anything. It is a model used to explain and understand effectively as a filter for decision making, relative pricing, and probability based on what the market is currently thinking.
+[   71.34s ->    84.68s] That's what we're going to talk about in this video. I'm Roman, founder of Quant Guild. Check out Quant Guild to master your quantitative skills and learn real math, probability, and statistics for the financial markets.
+[   84.96s ->    89.48s] We're going to use interactive brokers for this video. We're going to bridge the gap between theory and practice.
+[   89.70s ->    97.14s] We'll talk first about the Black Trolls model in the classroom to understand exactly what's going on and why it seems to fall apart in practice.
+[   97.14s ->   103.80s] And then we'll head on over to the trader workstation, take a look at some real options contracts, and talk about what's going on there.
+[  103.90s ->   110.82s] We'll first start with this idea of relative pricing. I'm going to assume that you understand European call and put options.
+[  111.04s ->   118.14s] If you're unfamiliar, I just put out a video this week on how to trade the covered call, and I cover all of those fundamentals within that video.
+[  118.30s ->   122.70s] I'll leave a link to it in the description below. If you'd like to check it out, I highly recommend you look at that video first.
+[  122.70s ->   128.32s] If you don't understand the dynamics of these contracts. If you do, I'm going to ask you this question.
+[  129.06s ->   134.62s] What sense can we make of a market price for these contracts if they are apples to oranges?
+[  135.32s ->   140.42s] What do I mean by this? If the price of an at-the-money 15-day Google call is $11,
+[  140.90s ->   146.60s] and the price of an at-the-money 15-day NVIDIA call is also $11,
+[  146.60s ->   150.78s] I'm going to ask you, which one is more expensive?
+[  152.49s ->   154.85s] You might be saying, wait a second, they're the same price.
+[  154.97s ->   157.43s] What do you mean, which one is more expensive?
+[  157.73s ->   160.77s] Well, we're not dealing with the same underlying here.
+[  160.85s ->   163.59s] What I have is a simulation. We're going to take a look at NVIDIA.
+[  163.69s ->   166.89s] It's currently trading roughly $214, Google roughly $340.
+[  166.95s ->   169.91s] If I play this simulation for you, you're going to see, sure,
+[  169.99s ->   175.71s] the dynamics of the call option itself will remain the same for each underlying, right?
+[  175.71s ->   180.07s] Pretty much the exact same contract specification, but the underlying itself,
+[  180.31s ->   181.77s] they are not the same.
+[  182.27s ->   187.81s] NVIDIA is trading at $214, Google at $340, and they are completely different companies.
+[  188.67s ->   192.29s] And the size of the spot is completely different.
+[  192.87s ->   196.71s] Yet the at-the-money contract price is the same.
+[  197.77s ->   199.95s] So this is really apples to oranges.
+[  199.95s ->   206.23s] What sense can we make of these prices without some sort of way to turn this into
+[  206.23s ->   208.77s] apples to apples or oranges to oranges?
+[  209.45s ->   213.23s] This is exactly where the Black-Scholes model comes into play.
+[  213.31s ->   215.09s] I'm not talking about risk-neutral pricing.
+[  215.23s ->   218.59s] I spent my entire professional life focusing on the risk-neutral pricing argument,
+[  218.99s ->   221.89s] pricing financial derivatives, coming up with the implied volatility surface,
+[  222.01s ->   224.89s] calibrating to that surface, extrapolating exotic prices.
+[  224.89s ->   233.35s] I have dozens of videos on this channel and more formal courses and bizarre items on QuantGuild
+[  233.35s ->   236.39s] if you'd like to cover the more formal mathematics.
+[  236.59s ->   240.05s] But we're going to talk about the practical implications within this video,
+[  240.11s ->   243.01s] and that is that supply and demand is going to create that price.
+[  243.93s ->   246.99s] The $11 that we see on our terminal.
+[  246.99s ->   252.95s] The Black-Scholes model is going to allow us to back out what is known as the implied volatility
+[  252.95s ->   255.03s] within the framework of that model.
+[  255.51s ->   259.19s] That is, assuming that the underlying is following a geometric brand new motion.
+[  259.83s ->   265.27s] And that is going to allow us to compare these contracts, that is the prices,
+[  265.93s ->   269.75s] relatively speaking, in terms of apples to apples, oranges to oranges.
+[  269.89s ->   275.63s] So what I have here is a simulation of the underlying based on what the market is currently pricing,
+[  275.63s ->   277.75s] those at-the-money options at.
+[  278.13s ->   283.75s] And what you'll see here is the implied volatility for Google is much lower than the implied volatility
+[  283.75s ->   284.57s] for NVIDIA.
+[  284.69s ->   290.77s] So the implications of this in a forward-looking sense are that the market is expecting more
+[  290.77s ->   293.95s] turbulence for NVIDIA than it is for Google.
+[  294.17s ->   301.85s] So even though they have the same prices, that is the same prices for the at-the-money contracts,
+[  301.85s ->   306.69s] which one is currently more expensive, well, that is going to be NVIDIA.
+[  306.85s ->   313.43s] It has a higher implied volatility, and that is going to raise the contract's price relative
+[  313.43s ->   314.51s] to Google.
+[  314.67s ->   320.75s] So when we just had the prices, we really didn't know which one the market was considering to
+[  320.75s ->   327.07s] be more expensive, more volatile in terms of the volatility that that contract was worth.
+[  327.07s ->   333.47s] But now with the Black-Jules model, we have a measure of apples to apples, oranges to oranges.
+[  333.81s ->   334.89s] Is it wrong?
+[  335.13s ->   336.17s] Yes, you're a scholar.
+[  336.33s ->   336.83s] Congratulations.
+[  337.29s ->   339.83s] The market does not follow a geometric brownie emotion.
+[  340.05s ->   341.83s] We all understand this.
+[  342.17s ->   350.21s] But now we can see in the market on our terminal screen, which contract is relatively more expensive
+[  350.21s ->   352.81s] in terms of volatility.
+[  353.37s ->   356.65s] Without a model, we don't have that information.
+[  356.65s ->   362.67s] Understanding this idea of apples to apples or oranges to oranges pricing, what is the
+[  362.67s ->   364.83s] most important thing to understand?
+[  365.09s ->   367.71s] Well, that is this implied volatility.
+[  367.99s ->   369.03s] You know what it's good for?
+[  369.49s ->   371.55s] It's good for right now.
+[  372.03s ->   374.11s] It is not good for an hour from now.
+[  374.57s ->   378.03s] It's not good for a day from now or a week from now.
+[  378.11s ->   384.75s] This is something that everybody seems to misunderstand about the market trading these types of contracts,
+[  384.75s ->   385.77s] especially in a retail capacity.
+[  385.77s ->   391.47s] This implied volatility is subject to change whenever it wants.
+[  392.09s ->   395.79s] The other day, NVIDIA went from $208 to $216 to $18.
+[  396.29s ->   399.51s] And now it's back down to $208 to $213.
+[  399.93s ->   406.09s] The implied volatility is going to swing wildly alongside the price intraday.
+[  406.09s ->   409.79s] Everything gets repriced every second.
+[  410.76s ->   416.08s] That is the misconception with these models is that there's some sort of predictability.
+[  416.64s ->   422.82s] No, it is telling you what is going on in the market right now.
+[  423.46s ->   430.61s] This leads us to probably the most misunderstood idea coming from the Black Choles model.
+[  430.61s ->   437.83s] And that is this idea of delta and delta being the probability, roughly, of an option expiring in the money.
+[  438.15s ->   442.37s] We're going to hop on the trader workstation in a moment and actually take a look at some real options
+[  442.37s ->   445.37s] and talk about what this interpretation means.
+[  445.55s ->   447.69s] But I want you to see it in the classroom.
+[  448.43s ->   452.85s] This is what should happen, but in reality does not.
+[  452.85s ->   461.55s] What I have here is a simulation of that option contract, a 15-day NVIDIA call at the money.
+[  461.93s ->   463.53s] We're going to compute the delta.
+[  463.65s ->   466.09s] The delta is 0.53.
+[  467.27s ->   468.35s] What does that mean?
+[  468.45s ->   472.21s] Well, according to the Black Choles framework, it's the cumulative normal distribution.
+[  472.41s ->   476.83s] It is roughly the probability that this contract expires in the money.
+[  477.41s ->   482.39s] So if I was to play this contract out a very large number of times, right?
+[  482.39s ->   483.79s] This is what we're seeing in this simulation.
+[  484.21s ->   487.05s] Each path is just going to be a contract outcome.
+[  487.49s ->   491.33s] You're going to see, oh, take a look over here at these bar charts, right?
+[  491.93s ->   495.35s] You can see the ones that expire in the money, the ones that expire out of the money.
+[  495.43s ->   497.69s] It's not 53.47.
+[  498.61s ->   500.25s] That's because this is a sample.
+[  500.93s ->   504.85s] By the law of large numbers, when we have a large enough sample size,
+[  505.13s ->   507.95s] it's going to converge to that 53%.
+[  507.95s ->   511.69s] And all the way at the end of this simulation, you can see it's really starting to get there.
+[  511.69s ->   514.99s] 52.4%, 47.6%.
+[  514.99s ->   519.13s] By the law of large numbers, asymptotic convergence is guaranteed.
+[  519.97s ->   521.53s] You know what that means for real life?
+[  522.19s ->   523.01s] Literally nothing.
+[  523.43s ->   528.31s] The central limit theorem, the law of large numbers, none of that holds in real life.
+[  528.67s ->   531.77s] So when you take a look at an option that has a delta of 0.53,
+[  532.39s ->   538.11s] if it's an at-the-money call and the stock plummets 3% over the next couple hours,
+[  538.11s ->   540.41s] that delta is going to be like 0.1.
+[  540.81s ->   546.27s] There's going to be no chance of it, relatively speaking, of it expiring within the money.
+[  546.63s ->   550.65s] That's because the market is going to reprice that contract.
+[  551.35s ->   553.83s] This is what everybody thinks is going to happen.
+[  554.25s ->   559.85s] Why, when I buy a 30 delta call, 30% of the time, it doesn't expire in the money?
+[  559.91s ->   562.19s] That's because the probabilities are amorphous.
+[  562.19s ->   564.87s] It's explaining what's going on in the market.
+[  564.97s ->   567.09s] It is not a prediction model.
+[  567.33s ->   569.31s] It is a filter at best.
+[  569.41s ->   572.65s] You're playing poker, whether you like it or not.
+[  573.03s ->   576.45s] Some people are far better at playing poker than others.
+[  577.37s ->   584.63s] These models are used as a basis for decision making in a discretionary or systematic capacity.
+[  584.63s ->   590.63s] They are not to be used with the intent of achieving classroom asymptotic convergence.
+[  591.47s ->   594.79s] Understanding these ideas, we're ready to approach the live markets.
+[  594.93s ->   596.69s] I've cracked open my trader workstation here.
+[  596.81s ->   600.57s] I'll leave a link in the description below if you'd like to get started with interactive brokers.
+[  600.73s ->   601.75s] They're the only broker I use.
+[  601.81s ->   605.75s] I've been with them for over 10 years in a trading and investing capacity,
+[  605.75s ->   610.01s] and we use them for all of my quant builds on this channel.
+[  610.19s ->   613.83s] Once you crack open the trader workstation here, it's going to launch you into Mosaic View,
+[  613.83s ->   616.77s] but I am a fan of the classic view, so we're going to click on that guy,
+[  616.89s ->   620.83s] and you can see I have NVIDIA and Google ready to go.
+[  621.23s ->   624.91s] These are the underlyings, but we want to take a look at the options contract,
+[  624.91s ->   628.05s] so I'm going to open up the option trader on this top bar here,
+[  628.19s ->   631.61s] and I've already selected Google as my underlying.
+[  631.77s ->   634.61s] If you go to the upper left-hand corner here, you can type in Google,
+[  634.61s ->   638.57s] and you will pull up the options chain for that particular underlying.
+[  638.75s ->   640.97s] If you're unfamiliar with how an options chain is structured
+[  640.97s ->   643.37s] or what it is exactly you are looking at,
+[  643.37s ->   646.85s] I'll leave a link to a dedicated video on reading the options chain
+[  646.85s ->   649.23s] in the description below.
+[  649.65s ->   651.45s] So if we take a look at Google here,
+[  651.49s ->   655.39s] I'm going to select an expiration of roughly the contract that I had in the classroom.
+[  655.49s ->   656.93s] This is going to be 16 days,
+[  657.07s ->   659.19s] and if we take a look at the at-the-money call,
+[  659.31s ->   662.05s] we're going to look at $345, $1145,
+[  662.05s ->   665.99s] roughly $12 for this contract, sold in lots of $100,
+[  666.15s ->   668.43s] so that's going to be $1,200.
+[  670.59s ->   673.81s] Okay, if we go on over to NVIDIA now,
+[  676.18s ->   678.56s] I'm going to type NVIDIA, head on over to the at-the-money call.
+[  678.56s ->   686.54s] This is trading for roughly, what's that, $690, $700 for the at-the-money call.
+[  687.16s ->   690.50s] Same expiration, roughly the same contract parameters.
+[  690.68s ->   691.92s] Both are trading at the money.
+[  692.02s ->   694.20s] Which one is more expensive?
+[  695.79s ->   700.11s] Well, that question we know is not one of price necessarily.
+[  700.49s ->   703.41s] It can be one of volatility.
+[  703.41s ->   705.23s] And what we have here,
+[  705.37s ->   708.17s] if you take a look at the upper right-hand corner of the options chain,
+[  708.31s ->   711.69s] is a measure of that at-the-money implied volatility.
+[  711.93s ->   714.25s] So we are comparing apples to oranges.
+[  714.25s ->   719.15s] If we just take a look at the price arbitrarily of the at-the-money contracts
+[  719.15s ->   721.15s] for different underlyings,
+[  721.33s ->   725.61s] but what can we compare to make it apples to apples?
+[  725.87s ->   727.79s] That's going to be this implied volatility.
+[  727.79s ->   731.65s] So for the 16-day at-the-money call, we can see 40.8%.
+[  731.65s ->   735.81s] We can see NVIDIA is 40.3%.
+[  735.81s ->   737.93s] So the Google contract, relatively speaking,
+[  737.93s ->   740.81s] is more expensive in terms of volatility.
+[  741.13s ->   743.39s] Forward-looking variants.
+[  744.53s ->   744.91s] Okay.
+[  745.05s ->   746.97s] That's one facet of the Black Scholes model.
+[  747.01s ->   750.49s] But we know that that is subject to change whenever it likes.
+[  750.85s ->   754.73s] If this price decides to gap up, gap down,
+[  755.09s ->   756.45s] this is going to adjust.
+[  757.21s ->   759.91s] And what was more expensive may be cheaper.
+[  759.91s ->   763.49s] And what was cheaper may be more expensive.
+[  763.85s ->   766.73s] It is a relative measure for your positioning,
+[  766.97s ->   769.61s] for your intent on survival.
+[  769.61s ->   773.37s] That is what makes for effective trading.
+[  773.87s ->   774.88s] Okay.
+[  775.00s ->   776.76s] That's one facet of the Black Scholes model.
+[  776.76s ->   780.66s] That is this apples to apples, oranges to oranges comparison.
+[  780.66s ->   782.94s] We're not just going to look at necessarily raw price.
+[  783.10s ->   785.72s] We're going to look at something like implied volatility.
+[  786.28s ->   786.84s] Great.
+[  786.84s ->   789.36s] What about Delta?
+[  789.68s ->   792.56s] Delta is roughly the probability of an option expiring in the money.
+[  792.66s ->   793.04s] Is it not?
+[  793.14s ->   793.60s] Well, certainly.
+[  793.74s ->   796.52s] And this is also going to give us a relative measure.
+[  796.62s ->   800.66s] Because over time, the underlying price is going to change.
+[  800.84s ->   802.32s] Right now, it's trading at 210.
+[  802.82s ->   804.50s] If you watch this video a year from now,
+[  804.54s ->   807.52s] I guarantee you it's going to be at 250, 260,
+[  807.76s ->   811.24s] whatever the price target is for this particular equity.
+[  811.24s ->   816.46s] That's not me predicting anything just by the nature of growth stocks
+[  816.46s ->   819.46s] and the accumulation of risk premia over time.
+[  819.62s ->   823.56s] It would not shock me to see 250, 260 one year from now.
+[  823.70s ->   826.88s] But the point of this is not my arbitrary prediction.
+[  827.26s ->   831.06s] The point of this is understanding that the at-the-money contract
+[  831.06s ->   833.42s] is going to change over time.
+[  833.42s ->   839.78s] So if you are trying to buy and sell options in a consistent way
+[  839.78s ->   842.24s] to at least understand your strategy,
+[  842.24s ->   844.66s] then what are you going to do?
+[  844.70s ->   845.74s] Are you going to look at price?
+[  845.82s ->   848.90s] Well, we just said price is really not apples to apples.
+[  848.90s ->   852.78s] If we go five points up and five points down
+[  852.78s ->   854.92s] in terms of this options chain,
+[  854.92s ->   858.08s] then that is not necessarily going to yield
+[  858.08s ->   862.63s] the same option dynamics as five points up
+[  862.63s ->   866.01s] and five points down on something like Google.
+[  866.25s ->   868.69s] This turns into that same pricing problem.
+[  868.79s ->   872.19s] It's not just about the price of the option itself,
+[  872.19s ->   874.45s] but also the relative price of the underlying.
+[  874.59s ->   875.51s] So what can we do?
+[  875.71s ->   879.07s] We can use delta as a relative measure
+[  879.07s ->   881.85s] because the delta of all of these options contracts
+[  881.85s ->   884.29s] is going to be priced consistently,
+[  884.29s ->   887.95s] consistently relative to the at-the-money contract.
+[  888.17s ->   889.35s] What do I mean by this?
+[  889.39s ->   890.51s] Well, let's go back to NVIDIA.
+[  892.30s ->   894.94s] If we go back to NVIDIA, we take a look at the delta.
+[  895.40s ->   896.22s] Come on down here.
+[  896.30s ->   899.74s] We see this is a roughly 30 delta call.
+[  900.63s ->   902.81s] That means the market is currently pricing it
+[  902.81s ->   906.01s] in a Black-Scholes framework of having a 30% probability
+[  906.01s ->   907.17s] of expiring in the money.
+[  907.37s ->   909.05s] Is it actually 30%?
+[  909.45s ->   909.73s] No.
+[  909.99s ->   912.73s] This is going to jump up to 40%, 50%
+[  912.73s ->   917.33s] as the underlying approaches to 222.5,
+[  917.33s ->   921.09s] or it's going to decrease as the underlying moves down.
+[  921.27s ->   923.45s] These are going to constantly be repriced.
+[  923.53s ->   925.41s] Just like that animation I showed you.
+[  925.49s ->   929.37s] If you treat this as something that is going to converge in reality,
+[  929.37s ->   931.77s] you're going to lose a tremendous amount of money.
+[  931.77s ->   933.35s] This is for relative pricing.
+[  934.17s ->   935.09s] Relative pricing.
+[  935.21s ->   936.15s] What do I mean by that?
+[  936.27s ->   938.21s] If you take a look at the current price,
+[  938.27s ->   938.59s] what is this?
+[  938.65s ->   939.41s] Roughly 211.
+[  939.61s ->   942.03s] We'll just use 210 as an anchor.
+[  942.15s ->   944.41s] This is 12.5 points up.
+[  944.87s ->   945.21s] Okay.
+[  945.41s ->   948.87s] So we have roughly a 30 delta call, right?
+[  948.93s ->   951.01s] This just moved down to 29, right?
+[  951.39s ->   953.89s] Roughly a 30 delta call, 12.5 points up.
+[  954.49s ->   958.69s] What does a 30 delta call look like for Google?
+[  958.81s ->   960.07s] Is it 12.5 points up?
+[  960.37s ->   961.27s] Let's go to Google.
+[  962.63s ->   966.65s] And if we take a look at a 30 delta call for Google, right?
+[  966.75s ->   968.81s] We're going from, look at this.
+[  969.15s ->   972.92s] We go from 346, which is current.
+[  972.98s ->   973.96s] We go 12 points up.
+[  974.02s ->   974.84s] That would be 58.
+[  975.14s ->   977.36s] That is not a 30 delta call.
+[  977.76s ->   980.82s] That is a 38 delta call.
+[  981.64s ->   984.20s] If you go to a 30 delta call, that's 365.
+[  985.26s ->   989.52s] That is completely different in terms of price.
+[  990.26s ->   992.06s] It is not 12 points up.
+[  992.72s ->   994.24s] It is, what is this going to be?
+[  994.30s ->   997.60s] Roughly 20 points up from 346.
+[  998.59s ->  1002.81s] This is how you use the model in practice
+[ 1002.81s ->  1005.43s] for relative selection, relative pricing,
+[ 1005.99s ->  1008.47s] filtering your discretionary decision making.
+[ 1008.71s ->  1010.25s] It is not a prediction model.
+[ 1010.59s ->  1013.05s] This is not something where you can just pull up
+[ 1013.05s ->  1014.35s] this options chain and go,
+[ 1014.35s ->  1016.91s] oh, I'm going to sell all of these 30 delta calls
+[ 1016.91s ->  1019.07s] and I know 30% of all those calls
+[ 1019.07s ->  1020.15s] are going to expire in the money.
+[ 1020.25s ->  1021.55s] I'm going to do a little bit of arithmetic
+[ 1021.55s ->  1023.51s] and I'm good to go.
+[ 1023.61s ->  1026.05s] That's my edge and we're off to the races.
+[ 1026.19s ->  1028.05s] No, this is poker at best.
+[ 1028.71s ->  1030.77s] This is a filter for your discretionary
+[ 1030.77s ->  1032.69s] systematic decision making.
+[ 1033.09s ->  1035.51s] This is how the model is used in practice.
+[ 1035.69s ->  1036.69s] All models are wrong.
+[ 1037.19s ->  1038.71s] Some are useful.
+[ 1038.71s ->  1042.19s] They are useful for decision making under uncertainty.
+[ 1042.83s ->  1044.33s] Without this model, right?
+[ 1044.39s ->  1045.79s] You can kick and scream all you like
+[ 1045.79s ->  1047.87s] that the markets don't follow a geometric brownie motion.
+[ 1048.03s ->  1048.73s] It's not predictive.
+[ 1049.23s ->  1050.59s] Your delta hedge isn't perfect.
+[ 1050.85s ->  1052.35s] You need a back of the napkin adjustment
+[ 1052.35s ->  1054.31s] like every trading desk in the entire world.
+[ 1054.41s ->  1056.01s] Yes, we all understand this.
+[ 1056.53s ->  1057.65s] We all understand this.
+[ 1057.81s ->  1059.47s] But without this model,
+[ 1059.61s ->  1062.39s] you do not have any relative basis,
+[ 1062.73s ->  1064.39s] any concrete relative basis
+[ 1064.39s ->  1066.71s] for your decision making.
+[ 1067.67s ->  1070.53s] That is the purpose of the Black-Scholes model.
+[ 1070.87s ->  1072.85s] And that is how you trade options
+[ 1072.85s ->  1075.75s] with the Black-Scholes model.
+[ 1075.93s ->  1077.05s] That's going to do it for this video.
+[ 1077.19s ->  1077.89s] I hope you enjoyed.
+[ 1078.01s ->  1078.95s] I hope you learned something.
+[ 1079.05s ->  1080.75s] This video certainly took a tremendous effort
+[ 1080.75s ->  1081.41s] to put together.
+[ 1081.51s ->  1082.15s] So if you liked it
+[ 1082.15s ->  1083.47s] and you want to see more like it in the future,
+[ 1083.59s ->  1085.51s] please like, comment, subscribe, share.
+[ 1085.59s ->  1086.71s] It helps me out tremendously.
+[ 1086.89s ->  1088.77s] It's always greatly appreciated.
+[ 1089.07s ->  1090.49s] I'll leave a link to this Jupiter notebook
+[ 1090.49s ->  1091.57s] in the description below
+[ 1091.57s ->  1093.23s] if you would like to check it out
+[ 1093.23s ->  1095.65s] alongside all of my other Jupyter notebooks
+[ 1095.65s ->  1097.27s] and open source quant builds
+[ 1097.27s ->  1099.77s] available on the Quant Guild library on GitHub.
+[ 1100.31s ->  1101.65s] Check out quantguild.com
+[ 1101.65s ->  1103.65s] to master your quantitative skills.
+[ 1104.11s ->  1105.31s] Check out Interactive Brokers
+[ 1105.31s ->  1106.71s] if you would like to get started
+[ 1106.71s ->  1107.75s] with the creator workstation
+[ 1107.75s ->  1110.49s] and engage with the live markets.
+[ 1111.01s ->  1111.63s] Other than that,
+[ 1111.71s ->  1114.09s] I want to thank you so much for watching
+[ 1114.09s ->  1117.07s] and I'll see you in the next video.

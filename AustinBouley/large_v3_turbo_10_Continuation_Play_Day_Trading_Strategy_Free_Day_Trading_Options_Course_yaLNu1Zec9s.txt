@@ -1,0 +1,143 @@
+[    0.00s ->     4.90s] Hey guys, what's up? It's ABTrades and I run a YouTube channel to teach people how to day trade options.
+[    5.34s ->     8.46s] So today is day four of the seven-day strategy release.
+[    8.58s ->    15.96s] So each day I have been releasing a new strategy and there's seven of them that I use and that I trade off of.
+[   16.34s ->    22.54s] So today is day four, which is the top or bottom 10% play, also known as a 10% play.
+[   22.96s ->    26.10s] So if you want to see the past videos, go back on the YouTube channel.
+[   26.10s ->    31.34s] And if you want to be notified of future videos, please subscribe and turn on those alerts.
+[   31.64s ->    37.48s] Also, please like and comment so I know that y'all are liking the content and comment so I know what exactly y'all want to see more of.
+[   37.80s ->    39.90s] So let's get into the 10% plays.
+[   40.08s ->    45.04s] The 10% plays I first learned from S&B Capital, which is a proprietary trading firm in New York.
+[   45.48s ->    48.44s] So they are basically the best in the biz when it comes to this stuff.
+[   49.04s ->    55.54s] So knowing that they did it, I started to implement it into my own trading and it has been phenomenal.
+[   56.10s ->    57.46s] I love this strategy.
+[   57.64s ->    63.76s] It's not necessarily a 100% strategy because none is, but I have made other videos on my YouTube channel about it.
+[   63.78s ->    66.40s] But now that we're doing this seven-day strategy, I just wanted to include it in it.
+[   66.98s ->    69.78s] So basically, I can pull up any stock and show you how this works.
+[   70.38s ->    76.36s] So a top or a 10% play means that when you have a trading range for the day, for example,
+[   76.36s ->    85.97s] on BA, we have a trading range between 3.10.82 and 3.18.6.62.
+[   86.39s ->    89.75s] So right here is the trading range for the day, right?
+[   90.15s ->    92.33s] This is our trading range for the day.
+[   93.03s ->   100.25s] Now, where it closes on the day will determine if it qualifies at a top or bottom 10% play.
+[  100.25s ->   102.45s] Why? Well, it's in the name.
+[  102.53s ->   110.35s] If the stock closes within the top 10% of the range, so the range, again, when I say top 10%, that's what they said.
+[  110.59s ->   115.37s] I don't bring it down to perfect, you know, percentage-wise.
+[  115.51s ->   121.57s] It's just if it closes near the top of the range, then more than likely it will continue up the next day.
+[  121.67s ->   127.69s] If it closes on or near the bottom of the range, it will most likely continue to the downward side the next day.
+[  127.69s ->   133.89s] So as we can see here on BA, on the trading range of this day, we closed to the upside.
+[  134.39s ->   137.29s] And then we had that continuation run to the upside.
+[  137.87s ->   141.87s] And I'm going to show you how to trade that multiple different ways.
+[  143.04s ->   147.66s] So as you can see, if we want to scroll, let's see, let's go on a 15-minute chart.
+[  148.48s ->   153.80s] So we have a trading range, you know, you just pick a trading range and it works.
+[  154.14s ->   155.98s] Let's look at SPY, for instance.
+[  155.98s ->   158.92s] So let's see if we can pick up a few days at once.
+[  159.38s ->   160.78s] So let's see if we can find it.
+[  161.96s ->   162.94s] So here's one.
+[  164.70s ->   167.20s] I would call that close to the bottom range.
+[  168.28s ->   170.72s] But I want to find a better example for y'all.
+[  171.10s ->   175.10s] So here is an example where the strategy doesn't always work.
+[  175.38s ->   177.58s] That's why you're not using this as a swing trade.
+[  177.58s ->   180.90s] You're using it to help you in regards to day trading.
+[  182.38s ->   190.38s] For instance, see like this, the range is here and here and it closed near the top, but it didn't break above this resistance.
+[  190.60s ->   192.76s] So we had a continuation to the downside.
+[  192.76s ->   195.92s] But the next day is a good example, right?
+[  196.24s ->   205.08s] Because the trading range for SPY on this day is from here to – that's an extraneous thing.
+[  205.24s ->   207.00s] I would just say from here to here.
+[  207.00s ->   211.32s] So it closed near the bottom portion of the range.
+[  211.84s ->   213.98s] And why am I not including this on SPY?
+[  214.08s ->   216.74s] Because SPY is an ETF and blah, blah, blah, blah, blah, blah, blah.
+[  216.80s ->   219.30s] That was probably a hiccup in the way that the math works.
+[  220.06s ->   221.00s] It could be right.
+[  221.08s ->   223.66s] I'm sure it's not because there would have been more of a sell-off.
+[  223.66s ->   229.60s] So the range for the day was between here and here, and it closed near the bottom of the range.
+[  230.18s ->   233.54s] So more likely than not, we're going to see a continuation.
+[  234.04s ->   239.56s] So what do we look for after we see that it closes within either the top or the bottom percent of the range?
+[  240.28s ->   242.24s] Well, we look to see if it's breaking through supports.
+[  242.72s ->   243.14s] Oh, look.
+[  243.46s ->   244.94s] It's breaking through supports.
+[  245.88s ->   252.62s] Your support will usually be based off the previous days or the day that we're checking the lows of that day.
+[  252.62s ->   254.20s] We broke below those lows.
+[  254.72s ->   256.42s] So now how do you trade that?
+[  256.78s ->   257.10s] Easy.
+[  257.28s ->   259.82s] You find the low during pre-market.
+[  260.76s ->   261.42s] So let's see.
+[  261.52s ->   262.28s] This is Tuesday.
+[  262.66s ->   263.46s] How far back are we?
+[  265.48s ->   266.62s] One, two, three, four.
+[  267.28s ->   268.86s] Yeah, I can go five days.
+[  269.82s ->   270.30s] Time frame.
+[  270.64s ->   271.20s] Sorry, guys.
+[  271.24s ->   272.14s] I should have been more prepared.
+[  273.02s ->   273.64s] Here we go.
+[  274.40s ->   278.70s] I just want to show you all a better intraday time frame of what I'm talking about.
+[  278.70s ->   286.19s] Okay, so as you can see here, we used the bottom portion of the previous range to determine our support.
+[  286.81s ->   289.67s] And during pre-market, we broke through that support.
+[  290.61s ->   292.95s] Now the real question is, how do we trade that?
+[  293.31s ->   293.65s] Easy.
+[  293.99s ->   298.43s] So we have an assumption based on the previous day that it qualifies as a 10% play.
+[  298.77s ->   301.61s] We also see it break through support during pre-market.
+[  301.61s ->   306.85s] That means we are weak as heck in this stock, which means we are expecting it to retrace.
+[  307.27s ->   309.05s] However, how do you trade it?
+[  309.31s ->   311.61s] Well, you find pre-market support.
+[  312.05s ->   315.93s] Pre-market support is right here, right here at 265.
+[  316.13s ->   318.41s] Now what do you expect when you have a massive sell-off?
+[  318.51s ->   319.93s] Always expect a quick push up.
+[  320.07s ->   320.27s] Why?
+[  320.37s ->   323.01s] Because there are a bunch of short sellers shorting the market.
+[  323.19s ->   325.43s] And then when the market opens, they quickly sell.
+[  325.43s ->   327.69s] And in order to get out of a short sell position, you have to buy.
+[  329.17s ->   330.63s] That's negligent.
+[  330.81s ->   335.57s] You can forget about that because it's not really in the top 10% strategy or the bottom 10% strategy.
+[  336.15s ->   337.49s] So you see we have the support.
+[  337.65s ->   340.81s] Once it breaks through the support, we trade, right?
+[  340.95s ->   343.51s] We enter here, and this is our risk.
+[  343.59s ->   347.35s] So if it comes back up through here, we close it, and that's where our risk is at.
+[  347.41s ->   351.63s] So we know our risk is minimum, but our reward is this far.
+[  351.63s ->   356.67s] Again, if you just hold it through this or through this, that's a quick, easy 5%, 10%.
+[  356.67s ->   359.07s] That's all you need to make every single day.
+[  359.27s ->   367.83s] If you trade these setups every single day, make 10% to 5%, you can grow your account by 2,000% in a year.
+[  367.95s ->   368.21s] I don't know.
+[  368.29s ->   369.23s] It's just like it's crazy, right?
+[  369.51s ->   372.09s] So that's how you would trade that, for instance.
+[  372.49s ->   376.27s] That is an example of a bottom 10% play.
+[  376.63s ->   378.61s] Let's see what else we can find there.
+[  378.61s ->   388.61s] So for instance, I would qualify, so Apple, we can see it twice right here.
+[  388.71s ->   389.75s] So let's see this one.
+[  390.27s ->   398.74s] So for instance, the trading range for this day was in between here and here, and obviously close on the bottom portion of the range.
+[  399.04s ->   401.10s] So we draw out support, which is right here.
+[  401.10s ->   415.14s] It breaks through support during pre-market, and then we chart out our support during pre-market, and we can see here that our support during pre-market is right here.
+[  415.48s ->   416.16s] So we go in.
+[  416.26s ->   417.46s] We have a sell-off.
+[  417.64s ->   418.90s] We enter here.
+[  419.06s ->   428.66s] Again, you could have entered here seeing weakness in the stock because there are so many things to explain, but it's not meant for this video.
+[  428.66s ->   432.80s] But like I said, when short sellers sell off, they're going to sell off.
+[  432.86s ->   439.60s] It's going to get weak into the previous support that it just broke through, and then you enter here for your best risk to reward.
+[  439.96s ->   443.00s] But that's another explaining probably for another video I'll do.
+[  443.68s ->   451.10s] But then again, if you just want to follow this rule, you would enter here, and you could hold it straight through this.
+[  451.10s ->   459.38s] This is probably 5%, 10%, and then if you hold through this triangle pattern, which is what we mentioned yesterday, you would have probably ended up with at least 30%.
+[  459.38s ->   469.04s] So that's how it would have worked on Apple on that day, and then on today or the previous trading day, our range is here to here.
+[  469.16s ->   475.46s] I would say this closed within the top portion of the range, and then as we can see here, this is going in reverse.
+[  475.46s ->   478.60s] Because the past two examples we looked at is when it fell below.
+[  479.08s ->   487.14s] So before we marked the lowest low of the day to see if it would break through that support to determine how weak the stock was.
+[  487.46s ->   493.04s] Well, this time we're going to do that with the high of that day, and we're going to see if it measures strength.
+[  493.38s ->   497.06s] So during pre-market, we break above this resistance line.
+[  497.18s ->   500.76s] Therefore, this stock is strong, not weak like the other ones.
+[  500.76s ->   510.16s] So we chart out stuff, and then we chart, and then since it's the opposite, we're no longer checking the pre-market lows.
+[  510.24s ->   511.52s] We're checking pre-market highs.
+[  512.00s ->   513.74s] So pre-market high right here.
+[  514.36s ->   520.60s] So we trade, again, this is the same concept as short sellers.
+[  520.60s ->   529.12s] But when a stock gaps up, there are going to be people who are holding overnight, so they're going to sell to cover profits.
+[  529.28s ->   532.68s] You get a bit of consolidation, and then you break above.
+[  533.56s ->   533.72s] Okay.
+[  534.58s ->   539.24s] The real question is how do you know when the top 10% play is no longer valid?
+[  539.24s ->   553.56s] If you're going to the downside, right, and it starts to break above the previous lows, if it's going down or it starts to break below the previous highs, then the 10% rule is no longer valid.
+[  553.92s ->   563.22s] But since we held above this support of the previous day's high, then we know we're still in for the top 10% once it breaks above a pre-market high, which is what it did here.
+[  563.22s ->   569.54s] Or we know that we're still in because it didn't cross above here, so we broke below, and then, you know, it's all game.
+[  570.04s ->   572.44s] So I hope the 10% play makes sense.
+[  572.88s ->   581.88s] It is helping you quantify and understand which way the stock will move the next day based off strength during pre-market and using the pre-market levels to trade off of.
+[  582.14s ->   586.04s] This is basically a simple support and re-usis since play, playing with the trend.
+[  586.10s ->   587.30s] The trend is always your friend.
+[  587.68s ->   588.10s] All right, guys.
+[  588.14s ->   590.68s] I hope that made sense on day four.
+[  590.90s ->   593.08s] We're going to go on to day five, so see you all tomorrow.
+[  593.22s ->   594.32s] See you all tomorrow.
+[  618.70s ->   618.74s] See you all tomorrow.

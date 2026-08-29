@@ -1,0 +1,309 @@
+<!-- tradingview-pine-id: PUB;470f47f3130c4ea09a1fe7741dfdf341 -->
+<!-- tradingviewscripts-format: 1 -->
+# Supply & Demand Zones + Market Letter Levels
+
+Source: https://www.tradingview.com/script/UVVOWJ2i-Supply-Demand-Zones-Market-Letter-Levels/
+
+## Description
+
+Supply & Demand Zones + Confluence Alerts
+
+Overview
+
+This indicator automatically detects Supply and Demand zones from price structure and combines them with manually entered key levels (e.g. from a daily market brief) to generate long/short reaction alerts — including a dedicated "confluence" signal when both sources agree.
+
+How the automatic zones work
+
+Demand zones are built from the base candle preceding a confirmed swing low, provided the subsequent up-move exceeds a minimum ATR-multiple (filters out weak consolidations)
+Supply zones are built the same way around confirmed swing highs
+Zones extend forward until price closes (or wicks, configurable) through them, at which point they're invalidated and removed
+A configurable pivot length controls how significant a swing must be to qualify
+
+Manual levels
+
+Up to 4 support and 4 resistance levels (single price or range) can be entered manually — useful for plotting levels from external analysis, newsletters, or your own discretionary read of the market. These render as separate zones on the chart alongside the automatic ones.
+
+Confluence logic
+
+When an automatic Demand zone overlaps a manually entered support level (or a Supply zone overlaps a resistance level) and price reacts within it, the indicator flags a stronger "LONG+" / "SHORT+" signal — highlighting the highest-probability setups where structural and discretionary levels align.
+
+Alerts
+
+Six independent alert conditions are available:
+
+Long / Short on automatic zone reaction only
+Long / Short on manual level reaction only
+LONG+ / SHORT+ on confluence between the two
+
+Inputs
+
+Pivot length, minimum impulse (×ATR), zone extension, mitigation mode (close/wick), max active zones per side
+Manual support/resistance levels (top/bottom pairs)
+Full color and label customization
+
+Disclaimer
+
+This tool is for educational and analytical purposes only. It does not constitute financial or investment advice. Past zone reactions are not indicative of future price behavior. Always combine with your own risk management and due diligence.
+
+---
+
+## Source Code
+
+````pine
+//@version=6
+indicator("Supply & Demand Zones + Market Letter Levels", overlay=true, max_boxes_count=500, max_lines_count=500, max_labels_count=500)
+
+// ============================================================
+// TEIL A: AUTOMATISCHE SUPPLY/DEMAND ZONEN (unverändert)
+// ============================================================
+pivotLen      = input.int(5, "Pivot-Länge (Swing-Erkennung)", minval=2, group="Auto-Zonen")
+zoneExtend    = input.int(60, "Zonen-Verlängerung (Bars)", minval=5, group="Auto-Zonen")
+minImpulseATR = input.float(1.0, "Mindest-Impuls (x ATR)", minval=0.1, step=0.1, group="Auto-Zonen")
+atrLen        = input.int(14, "ATR-Länge", group="Auto-Zonen")
+mitigateMode  = input.string("Close", "Zone invalidieren bei", options=["Close", "Wick"], group="Auto-Zonen")
+maxZones      = input.int(6, "Max. aktive Zonen je Richtung", minval=1, maxval=20, group="Auto-Zonen")
+showLabels    = input.bool(true, "Auto-Zonen beschriften", group="Auto-Zonen")
+
+colDemand   = input.color(color.new(color.green, 75), "Demand-Zone Farbe", group="Auto-Zonen")
+colSupply   = input.color(color.new(color.red, 75), "Supply-Zone Farbe", group="Auto-Zonen")
+colDemandB  = input.color(color.green, "Demand Rand", group="Auto-Zonen")
+colSupplyB  = input.color(color.red, "Supply Rand", group="Auto-Zonen")
+
+atrVal = ta.atr(atrLen)
+ph = ta.pivothigh(high, pivotLen, pivotLen)
+pl = ta.pivotlow(low, pivotLen, pivotLen)
+
+var box[]   demandBoxes  = array.new_box()
+var box[]   supplyBoxes  = array.new_box()
+var float[] demandTop    = array.new_float()
+var float[] demandBot    = array.new_float()
+var float[] supplyTop    = array.new_float()
+var float[] supplyBot    = array.new_float()
+
+f_trimOldest(boxArr, topArr, botArr) =>
+    if array.size(boxArr) > maxZones
+        box.delete(array.shift(boxArr))
+        array.shift(topArr)
+        array.shift(botArr)
+
+if not na(pl)
+    pivotBarIndex = bar_index - pivotLen
+    impulse = close[pivotLen - 1] - low[pivotLen]
+    if impulse > minImpulseATR * atrVal
+        zTop = math.max(open[pivotLen], close[pivotLen])
+        zBot = low[pivotLen]
+        newBox = box.new(left=pivotBarIndex, top=zTop, bottom=zBot, right=pivotBarIndex + zoneExtend,
+                     bgcolor=colDemand, border_color=colDemandB, border_width=1, extend=extend.none)
+        if showLabels
+            label.new(pivotBarIndex, zBot, "Demand", style=label.style_label_up, color=color.new(color.green, 0), textcolor=color.white, size=size.small)
+        array.push(demandBoxes, newBox)
+        array.push(demandTop, zTop)
+        array.push(demandBot, zBot)
+        f_trimOldest(demandBoxes, demandTop, demandBot)
+
+if not na(ph)
+    pivotBarIndex = bar_index - pivotLen
+    impulse = high[pivotLen] - close[pivotLen - 1]
+    if impulse > minImpulseATR * atrVal
+        zTop = high[pivotLen]
+        zBot = math.min(open[pivotLen], close[pivotLen])
+        newBox = box.new(left=pivotBarIndex, top=zTop, bottom=zBot, right=pivotBarIndex + zoneExtend,
+                     bgcolor=colSupply, border_color=colSupplyB, border_width=1, extend=extend.none)
+        if showLabels
+            label.new(pivotBarIndex, zTop, "Supply", style=label.style_label_down, color=color.new(color.red, 0), textcolor=color.white, size=size.small)
+        array.push(supplyBoxes, newBox)
+        array.push(supplyTop, zTop)
+        array.push(supplyBot, zBot)
+        f_trimOldest(supplyBoxes, supplyTop, supplyBot)
+
+testPriceHigh = mitigateMode == "Close" ? close : high
+testPriceLow  = mitigateMode == "Close" ? close : low
+
+autoLong  = false
+autoShort = false
+// Konfluenz-Merker: true, wenn die reagierende Auto-Zone sich mit einem manuellen Level überschneidet
+demandConfluence = false
+supplyConfluence = false
+
+// ============================================================
+// TEIL B: MANUELLE BÖRSENBRIEF-LEVEL (täglich editierbar)
+// ============================================================
+// Trage hier morgens die Werte aus deinem Börsenbrief ein.
+// Bei Einzelwerten (z.B. 26.301) Top = Bottom setzen.
+// Bei Ranges (z.B. 26.212-26.229) Top = 26229, Bottom = 26212.
+// Nicht genutzte Slots auf 0 lassen -> werden ignoriert.
+
+s1t = input.float(0.0, "Support 1 - Top",  group="Börsenbrief - Support", inline="s1")
+s1b = input.float(0.0, "Bottom",           group="Börsenbrief - Support", inline="s1")
+s2t = input.float(0.0, "Support 2 - Top",  group="Börsenbrief - Support", inline="s2")
+s2b = input.float(0.0, "Bottom",           group="Börsenbrief - Support", inline="s2")
+s3t = input.float(0.0, "Support 3 - Top",  group="Börsenbrief - Support", inline="s3")
+s3b = input.float(0.0, "Bottom",           group="Börsenbrief - Support", inline="s3")
+s4t = input.float(0.0, "Support 4 - Top",  group="Börsenbrief - Support", inline="s4")
+s4b = input.float(0.0, "Bottom",           group="Börsenbrief - Support", inline="s4")
+
+r1t = input.float(0.0, "Widerstand 1 - Top", group="Börsenbrief - Widerstand", inline="r1")
+r1b = input.float(0.0, "Bottom",             group="Börsenbrief - Widerstand", inline="r1")
+r2t = input.float(0.0, "Widerstand 2 - Top", group="Börsenbrief - Widerstand", inline="r2")
+r2b = input.float(0.0, "Bottom",             group="Börsenbrief - Widerstand", inline="r2")
+r3t = input.float(0.0, "Widerstand 3 - Top", group="Börsenbrief - Widerstand", inline="r3")
+r3b = input.float(0.0, "Bottom",             group="Börsenbrief - Widerstand", inline="r3")
+r4t = input.float(0.0, "Widerstand 4 - Top", group="Börsenbrief - Widerstand", inline="r4")
+r4b = input.float(0.0, "Bottom",             group="Börsenbrief - Widerstand", inline="r4")
+r5t = input.float(0.0, "Widerstand 5 - Top", group="Börsenbrief - Widerstand", inline="r5")
+r5b = input.float(0.0, "Bottom",             group="Börsenbrief - Widerstand", inline="r5")
+
+colManualSup = input.color(color.new(color.lime, 55), "Support-Level Farbe", group="Börsenbrief - Darstellung")
+colManualRes = input.color(color.new(color.orange, 55), "Widerstand-Level Farbe", group="Börsenbrief - Darstellung")
+manualExtend = input.int(40, "Level-Verlängerung (Bars nach rechts)", group="Börsenbrief - Darstellung")
+
+var supArrTop = array.new_float()
+var supArrBot = array.new_float()
+var resArrTop = array.new_float()
+var resArrBot = array.new_float()
+
+if barstate.isfirst or bar_index == 0
+    array.clear(supArrTop), array.clear(supArrBot)
+    array.clear(resArrTop), array.clear(resArrBot)
+
+// Bei jedem Bar aktuell halten (falls Werte während der Session geändert werden)
+array.clear(supArrTop), array.clear(supArrBot)
+array.clear(resArrTop), array.clear(resArrBot)
+if s1t != 0
+    array.push(supArrTop, s1t), array.push(supArrBot, s1b == 0 ? s1t : s1b)
+if s2t != 0
+    array.push(supArrTop, s2t), array.push(supArrBot, s2b == 0 ? s2t : s2b)
+if s3t != 0
+    array.push(supArrTop, s3t), array.push(supArrBot, s3b == 0 ? s3t : s3b)
+if s4t != 0
+    array.push(supArrTop, s4t), array.push(supArrBot, s4b == 0 ? s4t : s4b)
+if r1t != 0
+    array.push(resArrTop, r1t), array.push(resArrBot, r1b == 0 ? r1t : r1b)
+if r2t != 0
+    array.push(resArrTop, r2t), array.push(resArrBot, r2b == 0 ? r2t : r2b)
+if r3t != 0
+    array.push(resArrTop, r3t), array.push(resArrBot, r3b == 0 ? r3t : r3b)
+if r4t != 0
+    array.push(resArrTop, r4t), array.push(resArrBot, r4b == 0 ? r4t : r4b)
+if r5t != 0
+    array.push(resArrTop, r5t), array.push(resArrBot, r5b == 0 ? r5t : r5b)
+
+// Zonen zeichnen (nur auf dem letzten Bar neu, damit sie nicht bei jedem Tick x-fach entstehen)
+var box[] manualSupBoxes = array.new_box()
+var box[] manualResBoxes = array.new_box()
+
+if barstate.islast
+    for b in manualSupBoxes
+        box.delete(b)
+    array.clear(manualSupBoxes)
+    for b in manualResBoxes
+        box.delete(b)
+    array.clear(manualResBoxes)
+
+    for i = 0 to array.size(supArrTop) - 1
+        t = array.get(supArrTop, i)
+        bt = array.get(supArrBot, i)
+        bx = box.new(left=bar_index - manualExtend, top=t, bottom=bt, right=bar_index + manualExtend,
+             bgcolor=colManualSup, border_color=color.new(color.green, 30), border_width=1, border_style=line.style_dashed, extend=extend.none)
+        array.push(manualSupBoxes, bx)
+        label.new(bar_index + manualExtend, (t+bt)/2, "Brief-Support " + str.tostring(t, "#.##"), style=label.style_label_left, color=color.new(color.green, 30), textcolor=color.white, size=size.tiny)
+
+    for i = 0 to array.size(resArrTop) - 1
+        t = array.get(resArrTop, i)
+        bt = array.get(resArrBot, i)
+        bx = box.new(left=bar_index - manualExtend, top=t, bottom=bt, right=bar_index + manualExtend,
+             bgcolor=colManualRes, border_color=color.new(color.orange, 30), border_width=1, border_style=line.style_dashed, extend=extend.none)
+        array.push(manualResBoxes, bx)
+        label.new(bar_index + manualExtend, (t+bt)/2, "Brief-Widerstand " + str.tostring(t, "#.##"), style=label.style_label_left, color=color.new(color.orange, 30), textcolor=color.white, size=size.tiny)
+
+// ============================================================
+// TEIL C: ALARM-LOGIK MIT KONFLUENZ
+// ============================================================
+f_overlaps(aTop, aBot, bTop, bBot) =>
+    aTop >= bBot and bTop >= aBot
+
+// Demand-Zonen prüfen
+if array.size(demandBoxes) > 0
+    for i = array.size(demandBoxes) - 1 to 0
+        bx  = array.get(demandBoxes, i)
+        top = array.get(demandTop, i)
+        bot = array.get(demandBot, i)
+        if low <= top and low >= bot and close > open
+            autoLong := true
+            box.set_border_color(bx, color.new(colDemandB, 0))
+            for j = 0 to array.size(supArrTop) - 1
+                if f_overlaps(top, bot, array.get(supArrTop, j), array.get(supArrBot, j))
+                    demandConfluence := true
+        if testPriceLow < bot
+            box.delete(bx)
+            array.remove(demandBoxes, i)
+            array.remove(demandTop, i)
+            array.remove(demandBot, i)
+        else
+            box.set_right(bx, bar_index + 5)
+
+// Supply-Zonen prüfen
+if array.size(supplyBoxes) > 0
+    for i = array.size(supplyBoxes) - 1 to 0
+        bx  = array.get(supplyBoxes, i)
+        top = array.get(supplyTop, i)
+        bot = array.get(supplyBot, i)
+        if high >= bot and high <= top and close < open
+            autoShort := true
+            box.set_border_color(bx, color.new(colSupplyB, 0))
+            for j = 0 to array.size(resArrTop) - 1
+                if f_overlaps(top, bot, array.get(resArrTop, j), array.get(resArrBot, j))
+                    supplyConfluence := true
+        if testPriceHigh > top
+            box.delete(bx)
+            array.remove(supplyBoxes, i)
+            array.remove(supplyTop, i)
+            array.remove(supplyBot, i)
+        else
+            box.set_right(bx, bar_index + 5)
+
+// Eigenständiger Alarm, wenn Preis ein manuelles Level berührt (auch ohne Auto-Zone)
+manualLong  = false
+manualShort = false
+if array.size(supArrTop) > 0
+    for i = 0 to array.size(supArrTop) - 1
+        t = array.get(supArrTop, i)
+        bt = array.get(supArrBot, i)
+        if low <= t and low >= bt and close > open
+            manualLong := true
+if array.size(resArrTop) > 0
+    for i = 0 to array.size(resArrTop) - 1
+        t = array.get(resArrTop, i)
+        bt = array.get(resArrBot, i)
+        if high >= bt and high <= t and close < open
+            manualShort := true
+
+// ============================================================
+// TEIL D: PLOTS / ALARME
+// ============================================================
+plotshape(autoLong and not demandConfluence,  title="Long (Auto-Zone)",  style=shape.triangleup,   location=location.belowbar, color=color.green, size=size.small)
+plotshape(autoShort and not supplyConfluence, title="Short (Auto-Zone)", style=shape.triangledown, location=location.abovebar, color=color.red,   size=size.small)
+plotshape(demandConfluence, title="Long (Konfluenz: Auto-Zone + Brief-Level)", style=shape.triangleup,   location=location.belowbar, color=color.new(color.lime, 0),   size=size.large, text="LONG+")
+plotshape(supplyConfluence, title="Short (Konfluenz: Auto-Zone + Brief-Level)", style=shape.triangledown, location=location.abovebar, color=color.new(color.orange, 0), size=size.large, text="SHORT+")
+
+alertcondition(autoLong,  title="Long-Alarm (Auto Demand-Zone)",  message="LONG: Demand-Zonen-Reaktion auf {{ticker}} @ {{close}}")
+alertcondition(autoShort, title="Short-Alarm (Auto Supply-Zone)", message="SHORT: Supply-Zonen-Reaktion auf {{ticker}} @ {{close}}")
+alertcondition(manualLong,  title="Long-Alarm (Börsenbrief-Support)",  message="LONG: Reaktion an Börsenbrief-Support auf {{ticker}} @ {{close}}")
+alertcondition(manualShort, title="Short-Alarm (Börsenbrief-Widerstand)", message="SHORT: Reaktion an Börsenbrief-Widerstand auf {{ticker}} @ {{close}}")
+alertcondition(demandConfluence, title="LONG+ Konfluenz-Alarm", message="LONG+ KONFLUENZ: Auto-Demand-Zone deckt sich mit Börsenbrief-Support auf {{ticker}} @ {{close}}")
+alertcondition(supplyConfluence, title="SHORT+ Konfluenz-Alarm", message="SHORT+ KONFLUENZ: Auto-Supply-Zone deckt sich mit Börsenbrief-Widerstand auf {{ticker}} @ {{close}}")
+
+if demandConfluence
+    alert("LONG+ KONFLUENZ auf " + syminfo.ticker + " @ " + str.tostring(close), alert.freq_once_per_bar_close)
+else if autoLong
+    alert("LONG (Auto-Zone) auf " + syminfo.ticker + " @ " + str.tostring(close), alert.freq_once_per_bar_close)
+if manualLong and not demandConfluence
+    alert("LONG (Brief-Support) auf " + syminfo.ticker + " @ " + str.tostring(close), alert.freq_once_per_bar_close)
+
+if supplyConfluence
+    alert("SHORT+ KONFLUENZ auf " + syminfo.ticker + " @ " + str.tostring(close), alert.freq_once_per_bar_close)
+else if autoShort
+    alert("SHORT (Auto-Zone) auf " + syminfo.ticker + " @ " + str.tostring(close), alert.freq_once_per_bar_close)
+if manualShort and not supplyConfluence
+    alert("SHORT (Brief-Widerstand) auf " + syminfo.ticker + " @ " + str.tostring(close), alert.freq_once_per_bar_close)
+````

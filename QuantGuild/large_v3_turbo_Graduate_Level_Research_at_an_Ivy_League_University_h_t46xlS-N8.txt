@@ -1,0 +1,278 @@
+[    1.34s ->    10.87s] Alrighty, welcome back everybody. In this video, I would like to talk about what professional grade
+[   10.87s ->    18.35s] or doctoral level research looks like, at least in the field of finance slash quantitative finance
+[   18.35s ->    25.61s] from my experience. So this is a project that I've been working on for quite some time, I'd say
+[   25.61s ->    32.77s] since maybe 2022 or so. And, you know, I've gone to and from this project to other projects, but
+[   32.77s ->    40.91s] this is kind of a long-term project at a relatively high level. So this project actually began from my
+[   40.91s ->    47.67s] general interest in social sentiment. So I was always curious about natural language processing
+[   47.67s ->    55.86s] and I wanted to know about the relationship between social text and stock returns.
+[   55.96s ->    64.12s] So what I ended up doing was I ended up creating a query system using Twitter before it was X and
+[   64.12s ->    73.80s] before the acquisition, using Twitter's academic API. And I was able to query over 100, let's see,
+[   74.34s ->    84.53s] over 100 million tweets for Russell 3000 constituents. So pretty much, and I can, and I have a whole
+[   84.53s ->    89.78s] bunch of user data and all this other stuff as well. I'm going to talk a little bit about what I'm,
+[   89.82s ->    95.98s] what I'm kind of putting together here. But the way that this ended up working out was the Russell 3000
+[   95.98s ->   105.45s] rebalances in the summer. So around this end of June, beginning of July mark here. So what I did was I
+[  105.45s ->   112.41s] took the constituents list here and I used that to create my set of equities that I would query tweets
+[  112.41s ->   119.85s] for. And I queried the entire set of tweets from Twitter for that particular equity universe. So
+[  119.85s ->   130.71s] from summer 2014 to summer 2015, I used this point in time collection of Russell 3000 firms to create
+[  130.71s ->   139.57s] this particular set of tweets. And as you can see, prior, I would use the 2013 to 2014 constituents list
+[  139.57s ->   147.93s] to develop this particular set. So if you look, you know, we have roughly in 2014, so that 2013 to 2014
+[  147.93s ->   154.13s] period, roughly, I would say about, you know, 5 million tweets here. And as you can see, you know,
+[  154.17s ->   163.91s] year over year, we just keep increasing. There's a slight dip in the year of 2018 to 2019. And then
+[  163.91s ->   173.53s] the biggest jump was what would appear to be very similar to the 2014 to 2015 mark right here is the
+[  173.53s ->   181.93s] 2020 to the 2021 mark. And that's almost 20 million tweets for the Russell 3000 constituents in that
+[  181.93s ->   189.67s] year. So this is an absolutely massive data set. There are, like I said, in aggregate, roughly 100
+[  189.67s ->   196.53s] million tweets. All right, and that's a lot of data to process. So a lot went into formatting that from
+[  196.53s ->   203.35s] raw JSON into pandas data frames, into pandas data frames into compressed numpy files so that I can do
+[  203.35s ->   209.05s] this sort of, you know, kind of quick and easy analysis here. And the paper that I'm starting to put
+[  209.05s ->   216.07s] together is kind of just a raw analysis of a lot of open ended questions that we can answer using this
+[  216.07s ->   222.39s] particularly large sample. So some of the questions that I'm looking at answering right now. Well,
+[  222.39s ->   227.77s] first of all, there are some, there are some firms that are missing data. And this is due to a variety
+[  227.77s ->   235.93s] of reasons, right? So the the Twitter API that I was using the v2 API before it was retired, it had a
+[  235.93s ->   241.11s] specific rate buffer, a specific query limit. And at some point, my machine would just run out of data
+[  241.11s ->   248.29s] trying to store all of the information. So that didn't happen all that much. In fact, it only
+[  248.29s ->   255.13s] happened a handful of times. For example, when there's an excessive amount of references to a
+[  255.13s ->   260.51s] particular equity, like with the GameStop fiasco. So, you know, I'm missing some GameStop data around
+[  260.51s ->   264.83s] that particular timeframe. But otherwise, I'm really not missing that much data. You know, there's the AMC,
+[  264.99s ->   270.87s] the Bed Bath & Beyond situation as well. But otherwise, I would just have sort of like a reverse
+[  270.87s ->   277.21s] chronological sample of those firms, not necessarily entirely missing sets, but I don't have the
+[  277.21s ->   282.93s] entire set. And obviously, now I can't get the entire set. But nevertheless, I do have, like I said,
+[  282.97s ->   288.73s] roughly 100 million tweets for this analysis. So I have tweet data and user data. This section is kind
+[  288.73s ->   294.89s] of just describing the features of interest. So for each tweet, there is a unique author ID. And I was able
+[  294.89s ->   300.15s] to query all the user information, you know, like their follower count, whether or not they're verified, so on
+[  300.15s ->   306.29s] and so forth. And that was before you could purchase verification. So that's quite interesting. So there's a
+[  306.29s ->   310.25s] lot of features of interest that we can kind of explore with this Twitter data. And now I'm starting to put
+[  310.25s ->   315.51s] together, you know, some statistics, some sentiment analysis, stock return stuff, the evolution of financial
+[  315.51s ->   321.63s] language, and then I have this appendix for facts and figures. So let's kind of just walk through what I'm like
+[  321.63s ->   326.69s] kind of exploring in each of these sections. So, you know, natural questions that arise, like, what is the average
+[  326.69s ->   333.65s] message length? Does the average message length evolve year over year? And we can do this analysis
+[  333.65s ->   340.63s] here. And this is going to be the distribution of message length. So this is actually quite
+[  340.63s ->   346.83s] interesting, right? So in 2013, 2014, this first kind of sample year here, we can see it's, you know,
+[  347.09s ->   352.89s] kind of centered around this like 12 to 15 mark. And then it kind of evolves to the extent where like,
+[  352.89s ->   359.19s] we actually have some messages in 2020 to 2021 period here, that reached the the character limit,
+[  359.31s ->   365.04s] right? They kind of go out and they, and I'm not actually sure off the top of my head with the
+[  365.04s ->   372.52s] the explicit character limit was at this time. But it does look to be an entirely different distribution
+[  372.52s ->   377.66s] this year than than this year. And you can just see that by the the location of the center of the
+[  377.66s ->   382.72s] distribution, right? This is kind of centered around 15 is kind of centered around 25. So it does appear
+[  382.72s ->   388.82s] that length increases, at least over this particular timeframe, in the context of exchange and
+[  388.82s ->   397.66s] distribution. And then then here, this is really where it becomes, you know, this statement of it
+[  397.66s ->   402.80s] appears that message length is increasing, this is kind of just conjecture, because, you know, this is
+[  402.80s ->   410.64s] just 2013 2014, this is 2020 2021, we don't necessarily know what happened in between. So that's what I
+[  410.64s ->   417.98s] graph here. And it is kind of shocking to see it's it's a very interesting result. Message length was
+[  417.98s ->   428.70s] relatively stable. And then in 2017 2018, it shot up to a new average, new average word limit of roughly
+[  428.70s ->   435.14s] 20. And then it continued to increase up to up to 26. So it should be noted that these are actually
+[  435.14s ->   442.90s] words, they're not characters, maybe characters would be more granular and more informative. But
+[  442.90s ->   448.60s] nevertheless, you would still get the same result that length arbitrarily increases. So, you know,
+[  448.64s ->   452.10s] this is the sort of thing that we're interested in, right? So out of these 100 million tweets year
+[  452.10s ->   457.02s] over year, we can see that, you know, the tweet, the number of tweets increase year over year, that's
+[  457.02s ->   461.68s] what we saw in this particular chart. But the length of those tweets also increased. So maybe there's more
+[  461.68s ->   469.30s] information content in current years than there was in the beginning stages of this sort of analysis
+[  469.30s ->   475.10s] here. So that's a pretty interesting question that we can answer. Another really interesting question
+[  475.10s ->   481.14s] is around duplicates. Now, I'm not talking about retweets, but I'm talking about tweets that contain
+[  481.14s ->   489.96s] the exact same text as another tweet. So, you know, I tweet by Apple, you know, by cash tag Apple,
+[  489.96s ->   498.36s] and then by cash tag, I just mean dollar sign and then the ticker AAPL. So, you know, if I say buy
+[  498.36s ->   502.52s] Apple, and then there's another tweet that says buy Apple, but it's not a retweet of my tweet, I would
+[  502.52s ->   509.30s] consider that a duplicate. So, you know, what ratio of these tweets year over year are duplicates? And
+[  509.30s ->   514.30s] that's another question we can answer. That's another question I've explored here. So this chart's
+[  514.30s ->   520.24s] quite interesting. It's quite telling. We can see that, you know, this red line here is the number
+[  520.24s ->   527.02s] of unique tweets. And this is going to be pretty much exactly the same. It's a scaled version of
+[  527.02s ->   533.72s] this guy here, because what we're doing is we are multiplying by the fraction of unique tweets year
+[  533.72s ->   541.32s] over year to get the number of unique tweets derived from this graph. So what I do is I come up with a
+[  541.32s ->   548.38s] ratio, so this duplicate percentage here, I do one minus that times the total number of tweets,
+[  548.60s ->   553.42s] and that's going to give me the unique number of tweets. So you can see that, you know, roughly
+[  553.42s ->   560.24s] around, you know, 12, 13 percent of tweets in this first year were duplicates. And then that shot up
+[  560.24s ->   570.32s] to almost 22 percent in the following year, 2014 to 2015. And it started to trend down 2016, 2017,
+[  570.32s ->   579.12s] and we had a lower number of duplicate tweets. And then we kind of stabilize around this mean here.
+[  579.22s ->   583.84s] So this is the mean duplicate percentage, the average duplicate percentage across this particular
+[  583.84s ->   589.32s] time series. And it kind of looks like it's just reverting to this sort of mean here.
+[  590.08s ->   595.42s] Obviously, there aren't enough data points to confirm that notion, but it does appear relatively
+[  595.42s ->   602.18s] stable around, you know, I would say roughly 15 percent on average. So that's an interesting
+[  602.18s ->   610.20s] heuristic of this particular data that the, you know, roughly 15 to 20 percent of tweets in a given
+[  610.20s ->   614.88s] year are just duplicates. Now, I'm not talking about retweets. I'm talking about the exact same message
+[  614.88s ->   620.76s] again and again and again, sometimes 20, 100 times. So that's pretty interesting.
+[  620.76s ->   626.70s] And a question that we can kind of derive from this sort of other question is, you know,
+[  626.74s ->   631.46s] how does that affect the information quality, you know, that we're trying to do in downstream
+[  631.46s ->   636.28s] analysis? So if we're trying to use tweets to predict like cross-sectional equity returns or
+[  636.28s ->   641.38s] something of that nature, you know, how do these duplicate returns affect that analysis?
+[  641.38s ->   648.76s] Okay. A lot of a lot of what this is, you know, studying this particular paper is a high level
+[  648.76s ->   653.80s] impact of these different elements. So the idea of message length, the idea of duplicates
+[  653.80s ->   660.04s] on downstream analysis. So like, you know, does the downstream analysis change because, you know,
+[  660.04s ->   666.42s] as a function of, you know, how many duplicates there are as a function of length, right? So this
+[  666.42s ->   671.38s] paper is outlining things that could have major implications in in that particular
+[  671.38s ->   677.14s] downstream analysis. Another really important question is this idea of single cash tags versus
+[  677.14s ->   683.56s] multiple cash tags. And I think in my paper, I actually lump these two together. Yeah, so I do
+[  683.56s ->   694.45s] end up doing single and multiple cash tags. So I can do single and multiple cash tags in one section.
+[  696.09s ->   703.61s] And this idea is actually a very interesting idea that the tweet itself is being queried because it
+[  703.61s ->   710.73s] contains one or more cash tag, cash tags for Russell 3000 constituents for a particular year, right?
+[  711.61s ->   718.57s] Now, what that means is somebody put a dollar sign and then an equity ticker for a member of the
+[  718.57s ->   724.15s] Russell 3000, right? For that particular time period, end of June, early July to end of June,
+[  724.23s ->   730.43s] early, early July. That's why this time series is, you know, you see in between each start of the year
+[  730.43s ->   735.31s] instead of rebalancing at the start of the year, we rebalance when the index rebalances.
+[  736.35s ->   742.61s] So that's exactly why we have that sort of rebalancing pattern. But the idea here is a little
+[  742.61s ->   751.09s] more, you know, we're not exactly certain whether or not a tweet is being queried because it contains one
+[  751.09s ->   760.87s] reference to one ticker or if somebody's spamming tickers. So like buy Apple, buy Amazon, buy Google,
+[  761.07s ->   767.87s] et cetera, right? So we don't know how many tickers are in one particular tweet. So what this section
+[  767.87s ->   775.23s] is sort of analyzing is the idea of single versus multiple cash tag tweets. So, you know, what ratio
+[  775.23s ->   780.49s] of these tweets contains a single cash tag? And really what I'm getting at here is does the
+[  780.49s ->   787.87s] information embedded in one tweet apply to all of the cash tags that are being mentioned or is the
+[  787.87s ->   794.05s] information quality diluted for all of those cash tags? Do we get better information content when we
+[  794.05s ->   800.37s] have a single equity ticker? So for example, if this was a tweet by Apple, the information is relatively
+[  800.37s ->   806.45s] clear. This guy wants you to buy Apple to some capacity, right? So he's taking sort of a long
+[  806.45s ->   813.83s] position on the stock. Okay. And that doesn't necessarily become immediately clear if we have
+[  813.83s ->   823.88s] buy Apple and then we have, you know, I hate Amazon sell AMZN. You know, if we were to use some sort of
+[  823.88s ->   829.58s] very fresh out the gate sentiment model, and I'm not talking about a transformer model. I'm not talking
+[  829.58s ->   836.26s] about something that can process the sequence of texts effectively enough to parse that Amazon
+[  836.26s ->   841.86s] is the one that should be sold and Apple is the one that should be bought. I'm talking about just
+[  841.86s ->   847.02s] like a basic out of the box, like Vader sentiment methodology or a dictionary based sentiment model.
+[  847.48s ->   854.84s] This probably would be interpreted as overall negative when in reality, the Apple ticker has a
+[  854.84s ->   860.94s] positive financial context, right? They want you to buy, but they want you to sell Amazon. But because
+[  860.94s ->   866.18s] there's this word hate, this message would most likely be perceived as overall negative. And that
+[  866.18s ->   872.12s] would apply not just to Amazon, but to also Apple. So, you know, that's what I mean by diluted information
+[  872.12s ->   879.84s] quality or a noisy information quality to the particular tickers it's referencing. So this question
+[  879.84s ->   884.86s] that we're looking to answer here is, you know, what ratio of tweets is, uh, contains only one
+[  884.86s ->   891.86s] hashtag. Okay. So we're not talking about multiple cash tags, but just one single cash tag like this.
+[  891.86s ->   898.50s] And it turns out, um, roughly, I would say, you know, 50 to, to maybe 60%. And again, this kind of
+[  898.50s ->   904.04s] looks like it's mean reverting around the 55% mark here to some capacity. Um, you know, you could make an
+[  904.04s ->   909.94s] argument that it's 60, 50%, what have you, but nevertheless, I would say roughly 55 to 60%
+[  909.94s ->   915.38s] of tweets in a given year are single cash tag tweets, which means the rest of them are multi
+[  915.38s ->   920.50s] cash tag tweets. Those could be duplicates. So that's something else that, you know, we,
+[  920.50s ->   926.18s] we have to ask ourselves here is, you know, what percentage of, and maybe I should make note of
+[  926.18s ->   944.72s] this here. Um, what percentage of unique tweets, unique tweets are single cash tag tweets. So the figure
+[  944.72s ->   958.51s] above analyzes for the entire set, including duplicates, the proportion of single cash tag tweets,
+[  960.01s ->   973.55s] but after removing duplicate messages, what is the ratio of single cash tag tweets? In other words,
+[  976.11s ->   991.53s] do duplicate messages contain multiple hashtags more often than unique messages? So that is another
+[  991.53s ->   996.97s] question that we are interested in answering. And that would be an extension of this particular figure,
+[  996.97s ->  1002.57s] right? So this is looking at the entire set of tweets. But then what we're going to want to do is we're
+[ 1002.57s ->  1008.17s] going to want to look at the duplicates, right? We're going to want to throw out these 15 to 20%
+[ 1008.17s ->  1014.65s] duplicate tweets and then rerun this analysis because most likely, and I would hypothesize,
+[ 1014.65s ->  1021.21s] this proportion is going to be higher. So we're going to see maybe 80, 90% single cash tag tweets
+[ 1021.21s ->  1027.95s] in unique tweets. Okay. And that kind of makes sense, right? Because if I am a unique tweeter,
+[ 1027.95s ->  1032.59s] right? So I'm not going to duplicate a message, maybe I'm not a bot, then I'm going to try to
+[ 1032.59s ->  1038.75s] reference maybe only one equity at a time in a given tweet to convey some sort of sincere information
+[ 1038.75s ->  1046.59s] about that equity. Now, this idea that a tweet that contains the exact same text as another tweet
+[ 1046.59s ->  1052.99s] that contains multiple cash tags, so, you know, Amazon, Apple, Google, Meta, what have you,
+[ 1052.99s ->  1061.58s] if that is the case, then we may have a decent proxy for the number of bot users year over year.
+[ 1061.58s ->  1068.22s] So perhaps we can say that the duplicate tweets or tweets that contain multiple cash tags, so people
+[ 1068.22s ->  1076.06s] just spamming cash tags, maybe that is a reasonable proxy for a bot account. And there are other reasonable
+[ 1076.06s ->  1081.34s] proxies as well. So, you know, I have a whole section here on bot accounts. Within the user information,
+[ 1081.34s ->  1087.58s] we also have like posting frequency, total number of tweets posted. So if the total number of tweets
+[ 1087.58s ->  1092.38s] posted is like, you know, five million or whatever, then we clearly have some sort of bot account,
+[ 1092.38s ->  1097.66s] but that could be another proxy, or at least a lower level proxy for accounts that don't have millions
+[ 1097.66s ->  1103.10s] of tweets. That could be a reasonable proxy for a bot account as well, if they have duplicate messages
+[ 1103.10s ->  1109.58s] and they're just spamming cash tags. Okay, so that's pretty interesting. Another interesting question
+[ 1109.58s ->  1116.46s] could be how many people are adding or mentioning another user in a tweet. So that would be single
+[ 1116.46s ->  1127.71s] multiple cash tags here, emojis, maybe underneath here, we can say mentions. So that could be something
+[ 1127.71s ->  1154.48s] interesting to add below this particular section. I would like to add this here. So mentions being,
+[ 1154.48s ->  1160.64s] you know, how many people in these tweets are trying to refer to another author, right? And we can do
+[ 1160.64s ->  1164.40s] that with a regular expression. So let's actually go over to Python and give this a try right now. So
+[ 1164.40s ->  1169.20s] I'm going to create a new notebook. And there's just one environment I have, obviously I have like
+[ 1169.20s ->  1173.28s] hundreds and hundreds of notebooks for the formatting of this, this capacity of information here.
+[ 1173.84s ->  1181.92s] So let us just kind of steal these imports. So this is how I've been importing everything so far.
+[ 1181.92s ->  1189.77s] This is going to be mentioned, I'll import necessary libraries. And this is how I'm going to read in
+[ 1189.77s ->  1196.33s] all of the tweet information that I've queried, I've stored on a drive here. And then what I'm going to
+[ 1196.33s ->  1203.96s] do is I'm going to use a regular expression. So this was looking for a single, this is using regular
+[ 1203.96s ->  1209.16s] expression to look for the cash tag. So in that multiple cash tag analysis here, single multiple
+[ 1209.16s ->  1214.60s] cash tags, I use this regular expression to see if we only have one cash tag. That's how,
+[ 1214.60s ->  1218.44s] you know, I searched through all of the tweets to figure out whether or not
+[ 1218.44s ->  1223.72s] we had one cash tag or multiple cash tags. But what we can do now is instead of using the
+[ 1224.60s ->  1231.56s] dollar sign, we can use the app to see if there's any mention. I should note that this is going to be
+[ 1231.56s ->  1238.68s] only for handles with that begin with a letter. And I believe that, you know, you may be able to use
+[ 1242.36s ->  1249.58s] you may be able to use numbers first, but this could give a reasonable proxy. So I'll say
+[ 1252.30s ->  1260.65s] contains mention, and then we're going to match because we want to find multiple mentions as well.
+[ 1260.65s ->  1275.44s] And then if return match. So let's give this a try. We'll say contains mention at Roman,
+[ 1285.34s ->  1296.20s] we could say find all and then return length of find all greater than zero, or length of match greater
+[ 1296.20s ->  1303.50s] than zero. All right, cool. So now it finds that if it doesn't have a mention, then it's not gonna,
+[ 1303.50s ->  1309.42s] it's not gonna say there's a mention. So that's how we can figure out if it contains a mention. And
+[ 1309.42s ->  1319.93s] of course, this is going to be specifically for the case, case that a user has an at and then
+[ 1321.52s ->  1328.57s] followed by a letter. So I'd have to adjust this regular expression to include numbers,
+[ 1328.57s ->  1332.89s] but I'm not sure off the top of my head, if you can do in like a Twitter handle,
+[ 1333.61s ->  1339.69s] I don't know if you can do like, at one Roman, like, I don't know if that's allowed, I'd have to look.
+[ 1341.93s ->  1346.97s] So we'll start with this just as a reasonable proxy. And then what I'm going to do here is I'm just
+[ 1346.97s ->  1352.33s] going to copy this code that I did with the cache tags. And I'm going to say, we're going to vectorize
+[ 1352.33s ->  1358.94s] for convenience contains mention. And then instead of single tweet count, this is going to be,
+[ 1360.62s ->  1366.70s] let's take a look here. So data indices. So we're going to find all of the indices in our particular
+[ 1367.34s ->  1383.29s] data where we have a mention. So this is going to be mention count. Okay, that's good.
+[ 1385.02s ->  1392.54s] So let's do this for, and I'm just going to comment this out just to test it. Let's do this for
+[ 1392.54s ->  1404.06s] the first item. So 2013 to 2014. And then we can just check to see how this looks. So I'm going to
+[ 1404.06s ->  1413.77s] run this, run this for range one. Okay, so let's take a look and see if that contains mentioned
+[ 1413.77s ->  1422.17s] function worked. So I'll say data indices indices. Yeah, so check it out. So we have,
+[ 1422.17s ->  1426.49s] and this is a duplicate, right? So this is another thing that we want to filter, right? Because we have
+[ 1426.49s ->  1433.21s] at stockaholics, at stockaholics, those are two separate messages. But look, we have at Rupert Murdoch
+[ 1433.21s ->  1439.37s] at 82 starts with 2.6 billion for deals, Bloomberg News. And then look, there's a, you know,
+[ 1439.37s ->  1444.25s] collection of cash tags. So hopefully, you can see now the different tiers of analysis that need
+[ 1444.25s ->  1450.49s] to be done. We need to get rid of duplicates, do this again, we need to isolate single cash tag
+[ 1450.49s ->  1454.89s] tweets and multiple cash tag tweets, do this again, so on and so forth. Because for example,
+[ 1454.89s ->  1461.52s] here's a tweet with a mention and a single cash tag. Okay, so we need summary statistics on all of
+[ 1461.52s ->  1466.96s] those informations as well. Right? So let's just take a look then, let's take a look at the mention count,
+[ 1466.96s ->  1478.64s] how many tweets, there were 843,000 tweets that contained a mention. And of course, I think this
+[ 1478.64s ->  1484.00s] is a lower bound, because I think usernames can start with a number. But I'm not entirely sure.
+[ 1484.00s ->  1493.85s] And in that particular year, how many tweets were there total? There were 5 million, right? And that
+[ 1493.85s ->  1504.43s] that aligns with what we did, tweets, that aligns with no, not tweets, introduction here. That aligns
+[ 1504.43s ->  1509.55s] with this chart, right? 5 million here for that first year. So that's like 5.7 million actually on
+[ 1509.55s ->  1515.24s] this chart. If we go back, we can see that that is the case 5.7 million. Okay, perfect. So this is
+[ 1515.24s ->  1518.28s] doing exactly what it's intended to do. What I'm going to do is I'm going to run this for every single
+[ 1518.28s ->  1523.80s] year now. And then we're going to create a time series of mention counts. Okay, and maybe what I'll do now
+[ 1523.80s ->  1539.13s] is I'll Google, can Twitter handles start with a number? With the exception of underscores, check to
+[ 1539.13s ->  1557.53s] make sure it does our number. So I think that it is the case. I believe it is. Let me go ahead and
+[ 1557.53s ->  1593.32s] open up a new window here. So I'm just looking up the documentation now for regular expression.
+[ 1594.20s ->  1615.93s] I think we're going to use W plus. So let's do, we'll go back to that single example.
+[ 1617.37s ->  1625.85s] And this was mentions with just a character after. So now we're going to use W plus.
+[ 1625.85s ->  1650.78s] And then this should increase. So it's not W plus. Slash W plus. I want to see if it's
+[ 1652.24s ->  1673.77s] an underscore number brackets, the brackets slash W maybe. Let's test it here. Contains mention
+[ 1673.77s ->  1687.53s] at underscore. Okay, that's good. At good. At a good one. Good. At space. Okay, good. So that works.
+[ 1687.53s ->  1697.13s] That's what we're looking for. Good. And I'm going to do this. And if you recall, this was just with
+[ 1697.13s ->  1704.25s] letters. This is with everything else. Okay, so that is true. The case is, there are some mentions,
+[ 1704.81s ->  1713.45s] and we can look at the data indices as well to see this. There are some handles here that are going to
+[ 1713.45s ->  1723.61s] have, there are some handles that are going to start with a number or an underscore, something that's an
+[ 1723.61s ->  1728.97s] ampersand. So it's not the ampersand, sorry, it's the at, followed by a number or an underscore,
+[ 1728.97s ->  1734.97s] something that's not a letter. So that's why we had to change this contains mention function here.
+[ 1736.09s ->  1741.72s] Okay, cool. So like here's somebody at Tim Cook. So these are mentions, right? So that's great.
+[ 1741.72s ->  1746.20s] So what I'm going to do now is I'm going to create a time series of these mentions.
+[ 1746.20s ->  1756.17s] So I'm going to do this for all of my data. Okay, I am going to run this. And what I'm going to do is
+[ 1756.17s ->  1761.85s] I'm going to store each mention count in a list and the total tweet count. And then I'm going to
+[ 1761.85s ->  1766.65s] display it. So it's going to do this. And it's going to take kind of a bit of time, not too long,
+[ 1766.65s ->  1771.61s] but you know, keep in mind, we're going through 100 million tweets. Now I did just upgrade the RAM
+[ 1771.61s ->  1780.33s] on my computer. So I got 128 gigs of RAM, which makes Jupyter function super fast, which is awesome.
+[ 1780.33s ->  1784.33s] So now I'm going to go over here, I'm going to collect that time series chart that I
+[ 1785.21s ->  1794.84s] absolutely love. This one, this one, let me go back over here. We're almost done. And then we can
+[ 1794.84s ->  1800.44s] visualize the year over year mentions. So the values are going to be,
+[ 1800.44s ->  1814.84s] we're going to take the mentions. So we have mention count. Maybe I should do the total tweets
+[ 1814.84s ->  1823.47s] too. Nah, just mentions. That's fine. So good. Now we have a time series of the mentions. And you can
+[ 1823.47s ->  1827.23s] see that they arbitrarily increase year over year. And we kind of expect that to be the case,
+[ 1827.23s ->  1832.03s] because the number of tweets increase. But it's not necessarily clear whether or not that's going to
+[ 1832.03s ->  1836.75s] be the case, right? So here we'll do mentions in millions. So that's why I divide by a million.
+[ 1836.75s ->  1842.35s] That's broadcasting because otherwise you can't divide a vector by millions. Come down here.
+[ 1843.88s ->  1853.08s] The Y label is number of mentions in millions. And then instead of annual tweets, we have,
+[ 1853.08s ->  1865.77s] let's see, so we have tweets for R3000, mentions in tweets for R3000 constituents. And then the horizontal
+[ 1865.77s ->  1874.94s] line is average number of mentions. Hopefully, I think mention is the correct terminology anytime that
+[ 1874.94s ->  1879.42s] you reference another account with an app, with an app. So I think that's, that's the case here.
+[ 1879.42s ->  1891.42s] And then the label for the first plot here is going to be annual mention. So let's run this.
+[ 1894.97s ->  1901.05s] Values tweets. We don't have a Kim sum. That's why we don't need this. We'll just use values.
+[ 1905.21s ->  1912.35s] There is no seconds plot. There we go. All right, cool. So then we can see in terms of millions,
+[ 1912.35s ->  1917.47s] how many mentions there have been. And this kind of actually looks very similar to the user chart. So
+[ 1917.47s ->  1924.86s] I have a chart here and this is something that I'm doing on the fly. But these are the unique
+[ 1924.86s ->  1929.98s] number of users year over year. And it's kind of interesting that it looks very similar to the
+[ 1929.98s ->  1934.62s] number of mentions, right? There's kind of a stable number of mentions and that shoots up.
+[ 1935.18s ->  1938.62s] It kind of looks like users. There's like a stable number of users and then it shoots up,
+[ 1939.34s ->  1945.10s] which I think is actually quite interesting. So I'm just going to take this as a placeholder here.
+[ 1945.10s ->  1948.14s] So this is the number of mentions year over year. I'm just going to throw this in my paper.
+[ 1949.18s ->  1955.93s] Let's go to mentions, come down here. And then this is something that I'm going to discuss more
+[ 1955.93s ->  1961.85s] in this particular section. Okay. But I think we just crossed the half hour threshold. So I'm just
+[ 1961.85s ->  1969.53s] going to kind of press pause here. We can resume this sort of paper another time. I hope this was
+[ 1969.53s ->  1974.81s] informative because I know a lot of people are like, you know, it seems very mystical research
+[ 1974.81s ->  1979.77s] at a high level. And like, at least empirical research, you know, this is like, this isn't
+[ 1979.77s ->  1985.61s] me sitting here theorizing, right? Trying to, you know, prove a conjecture or something like that.
+[ 1985.61s ->  1991.45s] But, you know, this is just like a raw research analysis, right? This is data science at the
+[ 1991.45s ->  1995.93s] highest level. I have 100 million tweets and I'm asking interesting questions that nobody knows about.
+[ 1995.93s ->  2000.17s] And I just so happen to have the data to be able to answer it. Okay. So this is what research in
+[ 2000.17s ->  2004.97s] a doctoral program that's, you know, heavily focused on empirics would look like, you know,
+[ 2004.97s ->  2010.41s] some sort of empirical shop, at least. You know, I hope you found this informative. This is kind of
+[ 2010.41s ->  2013.77s] like what quantitative research at the highest level looks like too. You know, you're going to have
+[ 2013.77s ->  2017.37s] an arbitrarily large data set, most likely a time series of sorts like this one.
+[ 2018.17s ->  2023.05s] And you're going to be tasked with answering interesting questions, most likely
+[ 2023.85s ->  2028.25s] questions that can be used to generate some sort of money for your, for your firm.
+[ 2029.61s ->  2034.65s] But yeah, no, please, if you have any questions, leave them in the description box below or not
+[ 2034.65s ->  2039.05s] the description box. That's where I put stuff. Leave them in the comment section below. You can email me
+[ 2039.05s ->  2043.77s] roman.pelucci at columbia.edu or roman at quantgill.com.
+[ 2046.22s ->  2049.58s] Yeah, you know, feel free to reach out if you want to work together on something.
+[ 2049.58s ->  2054.22s] I may have the capacity to work on a project if you, you know, if you're interested. So
+[ 2055.60s ->  2071.52s] other than that, thank you so much for watching and I will see you in the next one.

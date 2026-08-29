@@ -1,0 +1,205 @@
+[    0.00s ->     4.66s] Hey guys, what's up? In this training, I'm going over how to turn simple credit spreads into a
+[    4.66s ->     9.26s] mathematically guaranteed money machine. I'm going to walk through what are credit spreads,
+[    9.32s ->    15.34s] both the call credit spreads and the put credit spreads, how to set them up, what environments
+[   15.34s ->    19.16s] they make money in, and different types of situations like that. I'm also going into knowing
+[   19.16s ->    23.80s] what level to use for your credit spreads, knowing what strike prices to select and why,
+[   24.06s ->    29.12s] going over both a delta and a technical analysis perspective. Then I'm going into using a secret
+[   29.12s ->    35.32s] hidden strategy trend following that can turn a 20 delta into a 90% plus win rate, which is insane.
+[   35.42s ->    40.42s] I'll explain all that in this video. Also, the proven mathematical strategy. I'm going to show
+[   40.42s ->    45.20s] you how and why that works. Let's jump into the video. Number one is what are credit spreads. If
+[   45.20s ->    50.12s] you've never traded credit spreads before, welcome to this training. This is for you. A credit spread
+[   50.12s ->    55.74s] is a simple option strategy that allows you to make money in different scenarios. Scenario number one,
+[   55.74s ->    61.32s] let's say we're trading a call. I know I'm terrible at doing this, but let's say it's a call credit
+[   61.32s ->    68.62s] spread. A call credit spread makes money when the stock goes down, makes money when the stock stays
+[   68.62s ->    73.30s] the same, and makes money when it goes up slightly. The reason being is because when you're putting on
+[   73.30s ->    78.96s] a call credit spread, you select a level. Let's say it's this level and the stock is currently trading
+[   78.96s ->    85.56s] right here. You make money as long as the stock stays below the level you select it. If I selected
+[   85.56s ->    89.46s] this, I make money if the stock stays below it. I make money if the stock stays the same and it's
+[   89.46s ->    94.72s] still below it. I make money if it goes up but still stays below it. That's the beauty of credit
+[   94.72s ->   100.54s] spreads, especially a call credit spread. You have so much more potential to make money. Why? Because
+[  100.54s ->   106.16s] when you buy a stock, it's 50-50. Either it goes up or it goes down. But a call credit spread or any type
+[  106.16s ->   112.90s] of credit spread, you sell it up front and you have way more chances to make money. Because if
+[  112.90s ->   118.98s] it stays the same or goes down or even goes against you, the light goes up, but doesn't go
+[  118.98s ->   123.74s] all the way into your level, then you make money. You have three different ways to make money,
+[  123.82s ->   129.58s] which is a stock. You just have one direction. The put credit spread works the exact opposite.
+[  129.88s ->   133.38s] We have put credit spread. It's going to work. Let's say the stock is currently trading here.
+[  133.38s ->   138.98s] For a put, I make money to the upside. Because of the upside, I need to select a level below it.
+[  139.32s ->   144.02s] I put credit spread. Let's say I select this level as my level. As long as the stock right
+[  144.02s ->   148.50s] here stays above this level, I make money. That means if the stock goes up, I make money. If the
+[  148.50s ->   154.10s] stock stays the same, I make money. If the stock goes down a bit but stays above my level,
+[  154.46s ->   159.70s] I make money as well. This is the option of a call credit spread, which makes money mainly to the
+[  159.70s ->   165.24s] downside. And they put credit spread, which makes money to the upside. So those are how credit
+[  165.24s ->   170.06s] spreads work. You structure a credit spread by selling one option at the level you want,
+[  170.34s ->   175.04s] and then buying the one below it or above it, depending on if it's put or call, to protect
+[  175.04s ->   179.90s] your downside risk. So let me walk you through this as an example. If I pull up my trading broker here,
+[  180.14s ->   185.08s] and I go to, let's say, SPY, and I click on trade and on the trade tab, let's just go to this right
+[  185.08s ->   189.88s] here, a seven days right here. Okay, so like I said, what you're doing is you're picking a level
+[  189.88s ->   195.00s] where you think the stock will stay above. Let's say I think it's going to stay above. Well, okay,
+[  195.42s ->   199.06s] first off, you need to have an idea of which direction you think it's going. Do I think it's
+[  199.06s ->   203.46s] going up or staying the same, or do I think it's going down and staying the same? Well, if it's going
+[  203.46s ->   207.20s] up and staying the same, which is what I'll say, because it seems pretty red, so it's most likely to
+[  207.20s ->   211.30s] rebound. But again, I'll be talking about strategy later in this training. Let's say I think the level
+[  211.30s ->   217.42s] is 400. Okay, cool. So I'm going to sell that 400 level. So I'm selling this option first. But again,
+[  217.42s ->   223.68s] when I sell an option up front, there's a lot of max loss right here, looking at almost a $400,000
+[  223.68s ->   229.78s] max loss and a buying effect, which means I have to put up $76,000 to put this trade on
+[  229.78s ->   235.68s] with a max profit of 2,500. So again, that's a lot of risk. Nobody wants to put on this kind of risk.
+[  235.68s ->   242.20s] So to define your risk, you're going to buy the one right below it. So again, that's this one right
+[  242.20s ->   246.12s] here. Since it's 400, this is 399, it's below it, even though it's above it on the options chain.
+[  246.66s ->   254.94s] Now, my max profit is 270, but my max loss is 720. So now again, my loss is defined. So I do have a
+[  254.94s ->   261.36s] smaller profit because of that. But now I only have to put up $720. And that's the beautiful part of
+[  261.36s ->   266.98s] this trade. So I make 280. And I risk about 700. But again, as I'll show you in this training,
+[  267.00s ->   271.62s] I'll show you ways so that you only lose maybe one out of 10 times so that you're going to make
+[  271.62s ->   276.52s] money in the long run. Now again, that is how you set up a put credit spread trade. Now if we go to
+[  276.52s ->   281.20s] the call side of the table, which is on the left side, let's say I think it's going to stay below
+[  281.20s ->   286.54s] 410. I'm going to sell the 410. And then I'm going to buy the one right above it. And that's going
+[  286.54s ->   294.80s] to define my risk. And which means I can make $350 while risking $650. So that is how you set up
+[  294.80s ->   300.12s] these trades. You sell at the level you think it's going to either stay at or say below or above,
+[  300.22s ->   305.52s] depending on if it's call or credit spread. I mean, a call or put credit spread, then you're
+[  305.52s ->   309.56s] going to define your risk by buying the one next to it. All right, cool. Now let's jump back to the
+[  309.56s ->   315.64s] whiteboard. Okay, cool. So now that we know what credit spreads are and how they're structured and how
+[  315.64s ->   320.78s] they make money, that should be fairly simple. Again, next, we're going to learn, okay, what level
+[  320.78s ->   326.02s] do I use, right? Like I showed you, you select a level. How do you know what level to use? Well,
+[  326.16s ->   330.34s] there is one method called technical analysis. And there's another method called using delta.
+[  330.70s ->   335.26s] So let's start off with with technical analysis. So if I jump into the to the chart here, you can see
+[  335.26s ->   341.48s] this is a chart of the S&P 500. So when I'm looking at this chart, I'm going to look at what is
+[  341.48s ->   345.52s] happening with this chart. What are the levels? What are the trends? What's going on here? And to assess
+[  345.52s ->   351.16s] that, I simply just bring up this chart or this indicator, and it shows me what's going on. The
+[  351.16s ->   354.86s] stock is above this line, it's trending up. If the stock is below this line, it's trending down.
+[  355.10s ->   359.26s] And it shows me different scenarios like that. But to keep it super simple, let's remove this and
+[  359.26s ->   363.70s] let's do it from scratch. So if I go here and I add moving average to my chart, moving average,
+[  364.70s ->   368.26s] just like that. And then I'm going to come over here and I'm going to edit this moving average.
+[  370.40s ->   377.74s] Okay, let's reload the screen just to fix it real quick. Yeah, it didn't even save it. That's
+[  377.74s ->   383.46s] how much off it is. Okay, here we go. Now let's fix this moving average. Go here to moving average,
+[  383.78s ->   390.34s] be able to change the settings. And we're going to change this length to 200. Perfect. Just like
+[  390.34s ->   396.84s] this. All right, so how this works, if it in general, if the stock that we're looking at is below this
+[  396.84s ->   402.42s] blue line or below the 200 day moving average, the market is going to be bearish. What type of trade do
+[  402.42s ->   408.22s] we place when the market is bearish? A call credit spread. When the stock is above this line,
+[  408.28s ->   412.86s] it's known to be bullish, which we put on a put credit spread because that makes money mainly to
+[  412.86s ->   417.98s] the upside. So that's one way to determine trend. But another way is by looking at technical analysis
+[  417.98s ->   422.74s] or different types of levels. So when we chart out our support and resistance levels, we look at for
+[  422.74s ->   427.26s] support, we look at our lows. Where are our lows? We have a low here and a low here. So let's put a
+[  427.26s ->   434.61s] support here. Where is another low? Well, we've had another low right here. I guess we can say that
+[  434.61s ->   438.79s] might as well. But we're just basically double lapping our support. Anyways, basically, we have
+[  438.79s ->   443.13s] a strong support level in this region. Next, where's our resistance? Well, we look at our highs,
+[  443.19s ->   446.63s] you can see here, we have your resistance right here, because we hit it over and over and over
+[  446.63s ->   451.33s] right here. But if we zoom in, we also have one right here. Why right here? Well, because you can see
+[  451.33s ->   456.57s] we had consolidation right here. We've hit it here a few times, we've stopped and rejected right here,
+[  456.57s ->   460.51s] we've rejected right here. And we've rejected right here again. So you can see here that we
+[  460.51s ->   465.11s] have resistance and support levels. So when we're looking at this, what's another way to know where
+[  465.11s ->   469.21s] to put our levels when trading credit spreads is, let's say we're trading into this level and
+[  469.21s ->   473.51s] starting to turn around. Well, what are we going to do? We know we're hitting a resistance level and
+[  473.51s ->   477.97s] we're starting to turn around and that seems to happen. So we can put on a call credit spread right
+[  477.97s ->   483.55s] here with our level being above this right with our higher right here, because we think it's going to
+[  483.55s ->   487.27s] stay above this previous high. So if we think it's going to stay above here, set the call credit,
+[  487.43s ->   492.27s] set the call credit spread here and let it run lower. Now to the same way to the downside, let's
+[  492.27s ->   496.29s] say it's bouncing here, what are we going to do? We're going to put up on a put credit spread with
+[  496.29s ->   502.41s] our level below this low so that we can kind of make money and ensure that it kind of works out in
+[  502.41s ->   508.43s] our favor. So that is how we set up different levels. But another way to trade credit spreads is based
+[  508.43s ->   513.47s] on Delta, not even looking at the chart at all. So we go back to our trading platform. You can see
+[  513.47s ->   518.93s] here we have a tab right here that we can change among all these things called Delta. Delta gives
+[  518.93s ->   526.79s] us our theoretical win rate based on math, like based on the expected moves and how much volatility
+[  526.79s ->   532.67s] there is. It shows us what we can expect the stock to do over the next certain amount of days.
+[  532.67s ->   537.95s] So let's take a look at this. All right. So our Delta right here changes. The closer it is to the
+[  537.95s ->   543.79s] stock, the closer to 50 it will be. So again, you can see here we have it close to it's around 50
+[  543.79s ->   548.97s] where the current price is. Why? Well, because that means it has a 50-50 chance of doing something,
+[  549.05s ->   553.65s] right? The same way with the stock. When we buy a stock, we have a 50-50 chance of it doing something.
+[  554.13s ->   562.65s] The further we move away, that shows us the odds of it expiring below the price.
+[  562.67s ->   568.27s] Or the stock price getting below it. So for instance, right here at a 0.17 Delta,
+[  568.79s ->   574.47s] that tells us there's a 17% chance that the stock will get below this level. So how can we use this
+[  574.47s ->   579.37s] as a credit spread trader? Well, putting on our trades, we can put on a trade like with the 0.17
+[  579.37s ->   585.01s] Delta, meaning that we have a 17% chance that the stock hits this level. So what's the inverse of
+[  585.01s ->   590.43s] that? If there's a 17% chance it hits that level, that means that there's an 83% chance that it doesn't
+[  590.43s ->   594.27s] and we make money. So that means that we can put on this trade just by looking at the Delta,
+[  594.39s ->   600.47s] knowing that it has an 83% chance of making money. And we can sell and then buy. And now we can collect
+[  600.47s ->   608.25s] 13 cents or $130 and have an 83% win rate. So again, that seems pretty good. But again,
+[  608.29s ->   612.91s] you have to factor out is the max profit worth it with the win rate and all that stuff to see if
+[  612.91s ->   619.61s] you'll make money long-term. And that's kind of how you determine either using technical analysis
+[  619.61s ->   624.67s] or Delta, what type of stock you're going to be or what type of level you're going to be trading at.
+[  625.33s ->   629.75s] All right. Next is outside of the levels. How else can we do this? For instance,
+[  629.87s ->   633.73s] is there a strategy where I can know for certain that I'm going to have a certain win rate,
+[  633.85s ->   639.57s] but also collect enough money to offset it in the future? Why? Well, because let me just pull up
+[  639.57s ->   643.89s] this. I can't really do math on here, but like, look, let's say we have a hundred trades and you
+[  643.89s ->   649.27s] have an 80% win rate. Let's use the example that we just pulled from the trading chart, right? There's
+[  649.27s ->   655.63s] an 83% chance of winning using the Delta and you collect 13 cents. That means on the downside,
+[  655.89s ->   663.23s] you're going to risk, um, 87 cents. So let's take a look at this. Let's take a basket of one of 100
+[  663.23s ->   667.83s] trades. So out of 100 trades, let's say you have an 83% win rate. That means you're going to win
+[  667.83s ->   675.50s] 83 trades. So on each of the 83 trades, you're going to make what? 13 cents. Okay, cool. But now
+[  675.50s ->   680.64s] how many losing trades will you have? You'll have 17 losing trades out of a hundred trade basket.
+[  680.86s ->   686.14s] And how much do you lose per, uh, per losing trade? Well, you're going to lose 87 cents per losing
+[  686.14s ->   691.50s] trade. What does this gives us? This gives us a minus four. That means that in the long run,
+[  691.50s ->   699.06s] if we take this trade with an 83% win rate and only 13, um, um, a 13 cent credit, we're going to
+[  699.06s ->   703.90s] lose money in the long run. So again, that's something that we do not want to do. Minus four
+[  703.90s ->   709.88s] is not a long-term expected win rate. So how can we pick the right levels that gives us a high win
+[  709.88s ->   716.30s] rate and delivers great returns in the long run? That is what is known as a trend following strategy.
+[  716.62s ->   721.34s] Again, what we do is we look at where is the market going? So before we were charting out
+[  721.34s ->   725.76s] levels and we were looking at stuff like that. So let me remove all these drawings. And instead,
+[  725.76s ->   731.10s] let me look at what is the market currently doing? So we do that by fact, by factoring in
+[  731.10s ->   734.76s] one simple thing. Remember I said, you can look at this 200 day moving average and say,
+[  734.84s ->   740.42s] is it, is it above or is it below, right? If it's above the market's bullish, if it's below the
+[  740.42s ->   745.78s] market's bearish. And so when we do that, now we know, okay, the market is above this blue line.
+[  745.78s ->   750.82s] So even though it's coming down, this is a bullish market. So I'm going to put on a put credit spread.
+[  750.82s ->   755.34s] So now we're going to put on a put credit spread. So what we're going to do, we're going to go into
+[  755.34s ->   761.41s] our platform. Again, you want to give it about two weeks to put the trade on. So it's about two
+[  761.41s ->   766.93s] weeks right here, May 10th. So again, we have about 14 days left. What we're going to do is we're going
+[  766.93s ->   774.51s] to put on a put credit spread. So let's see here if we have about a 20 Delta, going to be right here,
+[  774.51s ->   779.61s] about a 20 Delta. That's about $10 wide. Let's, I mean, I already have one on right here. You can see the
+[  779.61s ->   783.71s] trade that I have on right now, but let's move it right here. Okay, cool. So let's, we're about two,
+[  783.79s ->   788.51s] we're about two weeks out and we have about a 20 Delta right here. You can see here, 0.2 is our
+[  788.51s ->   792.41s] 20 Delta. So we put on this 20 Delta, which means we're selling this one and we're buying this one.
+[  793.96s ->   802.18s] That means that we collect 16 cents and we have a theoretical win rate based on Delta of roughly 80%,
+[  802.18s ->   805.90s] right? Because it's a 20 Delta, which means we have a 20% chance of it hitting our level.
+[  805.90s ->   810.04s] So that means we have an 80% chance of it not. So we have an 80% chance on this trade of making
+[  810.04s ->   815.26s] money. So that is the theoretical win rate, but I can tell you based on back tests I've run,
+[  815.30s ->   818.52s] which I'm going to show you in a little bit what these back, what these back tests are,
+[  818.88s ->   826.50s] then when we're trading with the trend, this 80% win rate historically jumps up to 90%. So let's take a
+[  826.50s ->   831.96s] look at, at those numbers again, what happens if we're trading a Delta of, we just were, but instead of
+[  831.96s ->   839.44s] an 83 or an 83% win rate, we have a 90% win rate. So let's jump this up to 90 trades. We're going to
+[  839.44s ->   846.56s] make money. And this means that 10 trades were not. Well, now guess what? With keeping the return the
+[  846.56s ->   850.74s] same. Now we have a positive return. We have a positive three, which tells us in the long run,
+[  850.84s ->   857.40s] we're going to make a positive $300 for this trade. So that means out of 100 trades we do,
+[  857.40s ->   861.90s] we're going to make $300. But if you didn't notice, we're actually collecting 16 cents,
+[  862.16s ->   864.84s] which means we're actually going to have a lower wing, which means we're actually going to collect
+[  864.84s ->   871.02s] $600. So that is the beautiful part of using this trend following approach. When you're trading with
+[  871.02s ->   874.86s] the trend, when you're going with the trend and looking at what the market's doing and put on a
+[  874.86s ->   880.14s] put and call credit spread in relation to that, you can actually really increase your win rate by a
+[  880.14s ->   887.24s] massive percentage and change a net loser into a net winner. So what is the strategy? What is the
+[  887.24s ->   891.86s] backtest? What am I talking about? Okay, cool. Well, I put all together the backtest right here. So
+[  891.86s ->   898.64s] let's look at the S&P 500 historical performance. Okay. So we're looking at a $1 whiff and we're
+[  898.64s ->   902.22s] looking at, for instance, right here, the true turtle strategy, which is an uptrending strategy.
+[  902.44s ->   909.36s] So when the market is trending up, this is how we put on the strategy. We look at a market that is
+[  909.36s ->   912.72s] trending up. So for instance, right here would be an example of a market that is trending up.
+[  912.72s ->   920.46s] We go out two weeks. We put on this trade. We go 3% below the current market price. And that's how
+[  920.46s ->   927.18s] we put on a trade. So that is how those trades are put on. Now, if we look at that since 2007,
+[  927.84s ->   939.86s] since 2007 to 2023, we had an almost 6,000% return. That is an annualized return of roughly 35%.
+[  939.86s ->   945.06s] Who here would like to make a 35% return every single year? That's the beauty of putting the
+[  945.06s ->   950.74s] correct credit spread in your favor. You can see here, we're collecting about the credit we saw
+[  950.74s ->   956.98s] on the example I just gave. And again, you have a 95% win rate. So you will have these losers,
+[  957.16s ->   961.18s] but long-term you can go even years without even experiencing a loss. You can see here,
+[  961.48s ->   967.36s] no loss, loss, loss, loss, loss, loss. But you can see here, you can go forever without experiencing a
+[  967.36s ->   972.60s] loss and end up with a net profit. That's the beauty of this. Again, these are all backtests
+[  972.60s ->   976.58s] and proven and works. Again, I use this for myself and so do my members. But you see here,
+[  976.90s ->   982.90s] this is the beauty of trading with the trend. So this is called the true turtle strategy and it's
+[  982.90s ->   986.80s] the way to make money. Now, again, if you click the link in the description below, I'm actually
+[  986.80s ->   991.20s] going to give you my trading handbook for free, which is going to walk you through how to implement
+[  991.20s ->   995.26s] this strategy. So that you can know, okay, how do I use the turtle strategy in during uptrending
+[  995.26s ->  1000.72s] markets? How do I use this short play strategy in short and bearish markets for a call credit
+[ 1000.72s ->  1004.70s] spread? I'm going to walk you through exactly how to place all these trades and I'm giving it all
+[ 1004.70s ->  1009.88s] to you for free because I want you to have access to it. If you want access to this platform though,
+[ 1010.18s ->  1014.70s] right here, which will give you the trades and tell you exactly what to do step by step to have
+[ 1014.70s ->  1020.24s] these high win rates and collect at least a 15% return per trade, right here is the trade ideas
+[ 1020.24s ->  1024.76s] algo, which I'll link below as well and give you a discount for watching this video and staying
+[ 1024.76s ->  1028.98s] through to the end. Again, I'll link that below as well. So all this is available to you. If you're
+[ 1028.98s ->  1031.84s] still on the fence and you're trying to trade credit spreads for the first time and you're
+[ 1031.84s ->  1036.28s] still learning and trying to understand what's going on here, well, I'm going to give you the
+[ 1036.28s ->  1042.02s] opportunity today to actually get trades for free. So if you click the link below with that discount,
+[ 1042.10s ->  1046.56s] again, you'll be able to join the credit spreads inner circle program. But even if you don't scroll
+[ 1046.56s ->  1051.18s] all the way down to the bottom and click on this link right here, want to test our alerts.
+[ 1051.18s ->  1057.00s] It is a, I give you three free alerts that you can start in place today so that you can
+[ 1057.00s ->  1062.26s] actually start making money. So whether you have no experience in this market or have no
+[ 1062.26s ->  1066.50s] options experience, no credit spread experience, or maybe you have experience, but you want more
+[ 1066.50s ->  1070.60s] consistency, you want to be more profitable. You can follow these alerts here that I'll send
+[ 1070.60s ->  1075.56s] straight to your email so that you can take advantage of these trades. All right, guys, I hope you
+[ 1075.56s ->  1081.46s] enjoyed this video. If you did, please smash that thumbs up button and subscribe button as I walked
+[ 1081.46s ->  1087.16s] you through the credit spread trading strategy. Now, again, if you want to learn more about credit
+[ 1087.16s ->  1091.30s] spreads and see other quick training videos, make sure to smash that subscribe button because I have
+[ 1091.30s ->  1095.32s] so much more coming. All right, I hope you guys enjoyed this video. I will see you in the next one.

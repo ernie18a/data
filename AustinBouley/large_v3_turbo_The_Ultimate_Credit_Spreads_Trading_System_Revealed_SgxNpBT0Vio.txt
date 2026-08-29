@@ -1,0 +1,579 @@
+[    0.00s ->     5.96s] lesson last week is trend following is a systematic investment strategy that seeks to prove from long
+[    5.96s ->    12.20s] medium and short-term trends in the market based on the assumption that price trends tend to endure
+[   12.20s ->    19.04s] or simply meaning that trends continue until they don't and as we showed in the last training is that
+[   19.04s ->    26.08s] we can we can show an uptrend based on connecting the lows and that trend will continue until that
+[   26.08s ->    30.28s] trend line is broken then we'll see a reversal a downtrend will happen which we connect the highs
+[   30.28s ->    34.74s] and vice versa if you want to learn more about that you can go back to that video or we can cover it in
+[   34.74s ->    41.88s] the questions and answers if you have that them here's some articles and papers written on trend
+[   41.88s ->    48.58s] following if you want to go through the math of it not not required at all but again there's one paper
+[   48.58s ->    53.76s] that wrote a centuries of evidence on trend following investing that shows that it consistently beats the
+[   53.76s ->    59.34s] market and then there's also another report done in 2014 that shows two centuries of trend following
+[   59.34s ->    64.88s] data that also shows that it outperforms the market specifically in times of uncertainty which is kind
+[   64.88s ->    71.88s] of the market that we're in right now okay how are you how are you feeling personally oh i'm unfazed
+[   71.88s ->    78.06s] because i know my plan will change based on what the market what the market does currently we're bullish
+[   78.06s ->    82.44s] so i'm following the bullish strategy if that changes of course i'm going to take a couple losses but
+[   82.44s ->    87.60s] then my strategy switches like the system tells me which we'll be covering in today's video but no
+[   87.60s ->    92.98s] i'm i'm unfazed i don't really care what what the market does up down crash so so you you still you
+[   92.98s ->    97.50s] know given the crazy market situation right now you're still feeling that you just follow your
+[   97.50s ->   104.52s] trade a trend you know trend following trading platform system algorithm just sticking to it yep
+[  104.52s ->   114.66s] perfect thank you um yeah so uh looking at the indicator here um this is the backbone of the
+[  114.66s ->   119.70s] strategies that we use and so i want to make sure that i cover this end up first all coaching clients
+[  119.70s ->   125.46s] have lifetime access to this uh which is something that i never do but now you guys have access to it
+[  125.46s ->   129.52s] so if you don't currently have access to it just send me your trading your username and i will give you
+[  129.52s ->   135.56s] access um but when we're looking at uh at this here um we need to break down some important points
+[  135.56s ->   141.36s] as we mentioned or as i talked about in last week's training of how to kind of chart out support and
+[  141.36s ->   148.90s] resistance and trend lines and stuff like that uh this indicator this mathematical basis which we'll
+[  148.90s ->   153.92s] talk about here in a second does a great way to visualize the trend and so what i mean by that
+[  153.92s ->   160.32s] is simply if the stock is above this green line and we're in this little range here the market is
+[  160.32s ->   166.22s] bullish so the market is bullish all and in this range that we are in right now when the market's in
+[  166.22s ->   172.72s] this middle range this gray area it is in a gray area where it's very sideways unpredictable it can go
+[  172.72s ->   178.64s] up or down in an instant this is typically where we see those movements where it goes up down up down
+[  178.64s ->   182.24s] up down up down where it gaps up then goes down or gaps down and goes up and then we just see those
+[  182.24s ->   187.72s] weird price actions most of that happens during sideways range bound price action which is found
+[  187.72s ->   194.98s] inside this middle two lines below the red line is indicative that we are trending down we are now in
+[  194.98s ->   201.00s] a bearish market or trending down and so again that's what we see here below the red line so again
+[  201.00s ->   207.08s] what we see here is this visually shows the trend but again mathematically what does this mean
+[  207.08s ->   213.60s] well if we see here this gray line that we see going uh cutting through the middle of the chart is
+[  213.60s ->   222.60s] the 200 day moving average line this line indicates the average price over the last 200 periods since
+[  222.60s ->   227.90s] this chart is a daily chart where each candle represents one day that means that this price right
+[  227.90s ->   236.44s] here roughly around 410 is the average price for this stock over the last 200 days and so again we can just
+[  236.44s ->   242.34s] see what the average price is and this is just a very good indication why well because as we know
+[  242.34s ->   249.98s] the stock market is very psychology based and has a lot of um what everyone thinks will happen happens
+[  249.98s ->   257.06s] type of philosophy to the stock market and so a lot of people who don't know who don't know how to read
+[  257.06s ->   263.76s] a chart will go in and understand that hey there is some type of movement to a market and most of the
+[  263.76s ->   268.94s] financial sector will look at the 200 day moving average and be like okay if it's above that uh that
+[  268.94s ->   274.14s] that line we're more bullish if it's below that line we're more bearish and because most people look
+[  274.14s ->   278.86s] at that for their common assumption of bullish and bearish that's what we base our framework off of
+[  278.86s ->   284.38s] you can also look into those math articles and papers and reports written that i showed you at the
+[  284.38s ->   289.26s] beginning the 200 day moving average is something that is always there just because it's a consistent way
+[  289.26s ->   293.80s] that everyone uses to assess trend and when everyone uses something that means they're all watching it
+[  293.80s ->   298.18s] most likely it's going to happen and so again that's why the 200 day moving average is our basis
+[  298.18s ->   306.52s] for this in this indicator then what we do is based on the volatility of that stock we determine what the
+[  306.52s ->   313.86s] normal distribution curve is for the current price so for instance it looks at over the last year and
+[  313.86s ->   319.56s] over that last year we understand okay what is the volatility over that last year between the high and the low
+[  319.56s ->   326.34s] and what's going on then once we have that we determine the the distribution so this green line is a plus
+[  326.34s ->   333.76s] one standard deviation of this middle line the red line is a minus one standard deviation so this is where
+[  333.76s ->   339.86s] most price activity will fall and then we have the range where it starts trending outside of that then we have
+[  339.86s ->   347.04s] these yellow lines on the upper and lower range that's going to be our three standard deviation lines
+[  347.04s ->   353.32s] why once you hit outside of three standard deviations you're pretty much exceeding what's acceptable
+[  353.32s ->   364.16s] so again you're roughly trading outside of the 99.5% somewhere in their normal trading range and so when you break
+[  364.16s ->   370.48s] out of out of that typically there's a rejection back down so that's why you can see here when we
+[  370.48s ->   375.98s] hit this yellow line we tend to see bounces in the stock when we hit up here we tend to see some type of
+[  375.98s ->   381.92s] retracement or at least a pullback and so that's kind of what we're seeing here and this idea of
+[  381.92s ->   389.94s] mathematically using normal distribution to understand trend up down too far down too uh too too far up and
+[  389.94s ->   395.78s] then more of a sideways market as the basis for our trend following approach um this is the system
+[  395.78s ->   401.30s] and indicator that i've used um to kind of trade stocks for the last five years and now recently
+[  401.30s ->   405.06s] apply credit spreads to it and that's the strategies and rules that we'll be discussing this is the
+[  405.06s ->   410.16s] backbone of it and we'll come back to this chart after sketching each strategy after that but with
+[  410.16s ->   417.60s] that what questions do you have with the yellow green red and yellow again right yellow green yellow green
+[  417.60s ->   424.66s] so so like you you mentioned that you have been using this um indicator to trade stock and recently
+[  424.66s ->   431.68s] moved to you know indexes um could you share you know i know now you preach about you know just trading
+[  431.68s ->   439.82s] using this indicator trade etfs you know um s&p 500 etc so why did you decide to start doing that
+[  439.82s ->   448.26s] instead of applying this to stock again may i understand why um like why am i keeping it on
+[  448.26s ->   452.62s] spy and not going to like a stock stock again because you mentioned that four or five years ago
+[  452.62s ->   458.62s] you're using this strategy for stock but i think now you're just doing indexes right yeah what do you
+[  458.62s ->   463.26s] have learned and all that if you don't mind sharing yeah so even when i was trading this approach with
+[  463.26s ->   470.94s] stocks i was still primarily using it on spot like 80 percent of my account was in spy and that's what
+[  470.94s ->   476.88s] i've always traded um but then i would venture off into into into different ones um we can definitely
+[  476.88s ->   482.16s] um when i get out of the slideshow at the end of questions and answers we can pull up stocks with
+[  482.16s ->   487.46s] this indicator on it and look at it some stocks are more advantageous than others to trade this with
+[  487.46s ->   494.00s] um but no i've i've always been in and so so so basically you have applied this strategy in the
+[  494.00s ->   500.60s] past four or five years on s&p 500 as well and you have been successful yeah spy is my primary asset
+[  500.60s ->   505.58s] i've watched awesome awesome got it got it so in the past four or five years we see upturn downturns
+[  505.58s ->   511.20s] you know like crazy market even these days so based on what you have learned it works based on your
+[  511.20s ->   517.32s] okay good good thank you thank you that that's important for me yeah absolutely all right
+[  517.32s ->   523.64s] so diving into the handbook the handbook is available um at app.10 credit spreads.com
+[  523.64s ->   529.12s] slash credit spreads trading handbook um i'll send that link out in the email as well if you don't
+[  529.12s ->   535.04s] know where that is um or also link it in discord if you can't find it uh but essentially this is the
+[  535.04s ->   541.88s] system and when i mean system a strategy with rules that's been proven this is the system that i use
+[  541.88s ->   546.90s] for credit spreads trading that i built based on the trend following system that i just showed
+[  546.90s ->   551.30s] so anyways let's dive into the different types of strategies and break them down to kind of walk
+[  551.30s ->   555.42s] through that so if we're looking here the first one that we're going to discover is the squirrel
+[  555.42s ->   561.96s] strategy um um and again it's named this because uh it's a weird it's a weird name but i wanted to
+[  561.96s ->   566.88s] come up with weird names that it's memorable uh but it's essentially if if you've ever been driving
+[  566.88s ->   571.78s] down a road and a squirrel starts to cross the road and then it goes back and forth until like the
+[  571.78s ->   576.04s] last minute we think you're going to run over it and then it picks a direction squirrels don't know
+[  576.04s ->   582.02s] what they're doing in situations especially on the road and so with that is the idea of this
+[  582.02s ->   587.14s] strategy the strategy works best and neutral and sideways markets when the market doesn't exactly
+[  587.14s ->   593.02s] know what's what's going on now again what is this phase this is when we're in the gray area this is
+[  593.02s ->   598.98s] the phase that we're talking about between the plus and minus one standard deviation is where we see
+[  598.98s ->   606.02s] this play out typically when i was trading stock and i say stock spy mainly of the strat of the
+[  606.02s ->   612.08s] strategy i had to stay out of the market during the gray period because there was no clear direction
+[  612.08s ->   616.60s] and i could not trade it but now because we're using credit spreads we can go out we can be safer
+[  616.60s ->   621.36s] we can trade credit spreads in this environment and this is a strategy that allows us to do it
+[  621.36s ->   627.30s] so we look here it says number one sets up the criteria of what we're looking for we want to wait
+[  627.30s ->   632.32s] till the stock is inside the trending band again as i just discussed that is plus one and minus one
+[  632.32s ->   638.24s] standard deviation of the 200 day moving average step two is determine your short strike price for
+[  638.24s ->   643.76s] the put credit thread that's going to be the closed price times 96 so let's look let's look at that here
+[  643.76s ->   650.26s] so we're going to wait until the stock gets inside this band essentially just means wait for the stock
+[  650.26s ->   656.18s] or wait for the etf to be range bound wait for it to show some sideways action when we do that
+[  656.18s ->   661.42s] now we're going to look at the current closing price so again let's say the current close uh closing
+[  661.42s ->   666.12s] price is a hundred dollars just for easy math um then again like it says here we're going to
+[  666.12s ->   673.20s] multiply the closed price one 100 times 96 or 0.96 so essentially we're taking four percent away
+[  673.20s ->   680.92s] and we get 96 so now our short strike price for this put credit spread will be 96 and then again
+[  680.92s ->   686.30s] we're just going to naturally take one under as our protective put if we're doing a one dollar wide
+[  686.30s ->   692.40s] and so that means we're going to sell the 96 strike price and buy the 95 okay so those are our strike
+[  692.40s ->   697.24s] prices now how do we determine our expiration date for this what's found to work best has taken
+[  697.24s ->   704.62s] numerous months of testing to figure out the best days is the current date plus 14 days and then round
+[  704.62s ->   710.24s] to the next friday so essentially wherever we are now add about two weeks and round up to the next
+[  710.24s ->   714.98s] friday and that's going to be the expiration date you want to pick um that gives us enough time to
+[  714.98s ->   719.98s] collect enough credit allow the trade to work in our favor and just statistically back testing wise
+[  719.98s ->   725.68s] has worked out in our favor and over the last six months i've used the strategy that works as well
+[  725.68s ->   731.12s] and so again that's what i see and that's that's what works best and so again we're going to take that
+[  731.12s ->   736.84s] expiration date that we have now we're going to take the short and long strike uh strike rates that we
+[  736.84s ->   742.94s] determine the 96 and 95 level again if the stock close price is at a hundred dollars and then we're
+[  742.94s ->   747.82s] going to go to the broker and set up our trade now rough numbers we'll get into this in the rules here
+[  747.82s ->   752.80s] and in a second it's just try to collect at least 15 cents if you can collect 15 cents for this credit
+[  752.80s ->   757.76s] then it's a good trade to put on so that is the squirrel strategy and how you walk through it so when
+[  757.76s ->   763.34s] the market is neutral we're going to go out four percent from the current price set up a put credit
+[  763.34s ->   768.30s] spread go about 14 days out and then we're going to trade that and that's how we're going to do it
+[  768.30s ->   774.34s] now why does this work why are we taking a more bullish approach in a sideways undetermined market
+[  774.34s ->   780.64s] well when we're trading in a bullish market as we'll see in the next strategy we can go less out
+[  780.64s ->   785.18s] because that's how we're going to collect them the normal credit but when we're going in a sideways
+[  785.18s ->   788.84s] market we need to go further out and so that's why we're going four percent out so we're going
+[  788.84s ->   796.22s] a very safe distance out of the money and allowing the stock to work but overall the s&p 500 has a
+[  796.22s ->   803.18s] bullish sentiment over the years the market always increases and so even if we have these weird phases
+[  803.18s ->   809.68s] of these sideways markets unpredictable action long term there is more of a bullish leaning to
+[  809.68s ->   815.74s] sideways action and so because of that it's safe to take a further output credit spread and put on
+[  815.74s ->   820.26s] those trades and so that's how this strategy is structured were there any there's any questions
+[  820.26s ->   827.24s] you have over that strategy so far um not right now i actually spend almost an entire week go through
+[  827.24s ->   833.10s] your entire trading platform i have like 22 pages of notes but um three yeah then i'll get through
+[  833.10s ->   839.34s] thanks for thanks but but thanks for explaining especially that part where where you do we where we
+[  839.34s ->   844.36s] we're going to put credit spread because it's you're explaining the s&p is usually a bull market
+[  844.36s ->   851.56s] so i kind of get it i kind of get it all right i'll kind of get through the rest of these and
+[  851.56s ->   855.20s] we'll go into q a since i assume that's gonna be where a lot of the questions get filtered out here
+[  855.20s ->   860.66s] um so here we go so strategy number two is the true turtle strategy this is our up trending strategy this
+[  860.66s ->   867.04s] is when the stock is above the the green line but also below this yellow portion meaning that it's not
+[  867.04s ->   873.74s] quite overextended yet and this range is when we'll be using oh the turtle strategy so again this is based
+[  873.74s ->   880.38s] on um the the people called the turtle traders uh back with richard dennis who was one of the
+[  880.38s ->   886.28s] founding fathers of trend following and what he did is he made a bet with one of his trading buddies
+[  886.28s ->   891.20s] he's like i bet i can teach someone who has no mark market experience simple trend following rules
+[  891.20s ->   898.62s] and they can become profitable and he did and he hired people uh like teachers accountants people off
+[  898.62s ->   903.68s] the street just random people and he got a group of 14 people um some who had mark experience some
+[  903.68s ->   907.86s] who didn't and they went on to make over a hundred million dollars trading simple trend following
+[  907.86s ->   912.62s] rules and so that's called the turtle strategy so this strategy is based off that idea of buying
+[  912.62s ->   919.10s] breakouts and bullish markets so this is our bullish up trending market strategy and so again this is the
+[  919.10s ->   924.62s] strategy that will occur the most number of times you will see come up a lot why well because the market
+[  924.62s ->   929.82s] as we just previously discussed is more bullish than bearish we see it playing out a lot and because
+[  929.82s ->   936.18s] of that um this strategy has way more occurrences anyways like i said number one we want to wait for
+[  936.18s ->   942.00s] the stock to be um between the green and yellow line the plus one and plus four basically just trending
+[  942.00s ->   949.34s] higher we're going to determine our short strike price by doing 97 if we could do 96 like previously
+[  949.34s ->   954.62s] mention where we go down four percent then we then we will why because the further you go out the
+[  954.62s ->   962.84s] safer you are however when the market is successfully or or reliably trending up what happens a lot of
+[  962.84s ->   969.52s] fear comes out of the market so we have a higher fear and index um or i should say volatility index
+[  969.52s ->   974.30s] when we're in this gray area than we do when we're above here why because when the market's consistently
+[  974.30s ->   977.82s] trending up no one's scared that something's going to happen like oh yeah the market's up blah blah blah
+[  977.82s ->   982.78s] but we have this up down sideways action no one knows what's going on volatility is increased when
+[  982.78s ->   989.00s] volatility is increased we can go out further and collect that credit the same credit that we want
+[  989.00s ->   995.04s] at a further strike strike price out so when we're in this range we can easily go out to 96 percent or
+[  995.04s ->  1001.16s] four percent below the price and collect our minimum credit when we're trading and an uptrend it's very
+[ 1001.16s ->  1006.42s] unlikely that we can go down for four percent and still collect the minimum credit because the
+[ 1006.42s ->  1011.86s] volatility is lower and so we can't collect as much credit so that's why on this one we're going down
+[ 1011.86s ->  1016.70s] three percent below the price to collect that credit because that's where that credit is and that's the
+[ 1016.70s ->  1021.12s] furthest we can go out that's kind of the plan for that so we're going out three percent so again if
+[ 1021.12s ->  1026.06s] the stock's close price is a hundred dollars for that day then we're going to multiply by 0.97 which
+[ 1026.06s ->  1031.42s] gives us 97 dollars as the short strike which is 96 dollars we're going to buy for the protective put
+[ 1031.42s ->  1036.54s] strike then again our expiration date it's a bit different we're going to add 12 days and then
+[ 1036.54s ->  1041.18s] round up to the next friday so a bit different than 14 and that's going to give us our expiration
+[ 1041.18s ->  1045.36s] date once we have all these how we set up the spread and our expiration date we're going to set
+[ 1045.36s ->  1050.58s] up in the broker in general if we can collect 15 cents that's a good trade we put it on and we move
+[ 1050.58s ->  1055.64s] on to to the next trade in the next few days and so that's how the turtle strategy works
+[ 1055.64s ->  1063.50s] hey austin yeah so let me just because i think this this part is important so um with the with
+[ 1063.50s ->  1071.24s] the previous strategy um which is the uh the squirrel strategy where the market's going sideways usually
+[ 1071.24s ->  1076.52s] at that time the fix is a little bit higher meaning the volatility is a little bit higher and because
+[ 1076.52s ->  1084.52s] of that you are going out of to i think 96 percent right is it 96 percent yeah just so now for four
+[ 1084.52s ->  1093.68s] percent below so that we can at least collect um 0.15 credits right 0.15 credits because it's more
+[ 1093.68s ->  1104.04s] volatile however um with the turtle strategy because we are in the uptrending section of the graph
+[ 1104.04s ->  1110.84s] and because of that the vix is usually not as high right compared to that so therefore we to collect
+[ 1110.84s ->  1116.14s] enough credit enough enough enough credits which is 0.15 and maybe more you are suggesting to go
+[ 1116.14s ->  1122.52s] with 97 percent um of the short strength price right i think i think that's what you meant yeah
+[ 1122.52s ->  1129.72s] okay good good yeah thanks yeah so as volatility changes you have to go out further or closer to
+[ 1129.72s ->  1136.38s] collect the uh um enough credit so and in the uptrending market i would love to go down four percent
+[ 1136.38s ->  1141.80s] and collect that credit but most of the time it's not possible because the vix is lower um so yeah
+[ 1141.80s ->  1147.64s] a good range where we see it working historically and whether that i've seen working is 97 percent
+[ 1147.64s ->  1154.28s] 97 percent got it got it appreciate it absolutely great question all right so first we had our
+[ 1154.28s ->  1159.16s] sideways strat uh strategy then we had our uptrending strategy now we have our down trending strategy so we
+[ 1159.16s ->  1164.02s] can make money in every single facet of the market or area of the market this is the short play
+[ 1164.02s ->  1168.06s] very simple short play short is when you're shorting a stock you make money as the stock goes
+[ 1168.06s ->  1173.24s] down and so this is our short strategy this is in bearish and downtrending markets this has the least
+[ 1173.24s ->  1178.44s] number of occurrences if you look at our back test if you look at the amount of times we trade it
+[ 1178.44s ->  1186.86s] why well because a stock or the market whatever you're trading stock etf etc always drops faster than
+[ 1186.86s ->  1192.72s] it rises so what we see is we see it drops super quickly we take some advantages maybe four or so
+[ 1192.72s ->  1200.68s] short play strategies as it's dropping and then from there we hit a rebound and we start to trade
+[ 1200.68s ->  1206.38s] it back up so again this does work but it's more of a quicker faster paced type of strategy just because
+[ 1206.38s ->  1213.38s] stocks drop faster than they rise it's just a common pattern but the rules on this is as mentioned
+[ 1213.38s ->  1219.32s] before what we're looking at is for it to get below this red line but also above this yellow anything
+[ 1219.32s ->  1225.78s] down here is our short play strategy that fits this criteria next just like we mentioned in the
+[ 1225.78s ->  1231.90s] short play or i should say the sideways action which is a squirrel strategy we went below it for uh four
+[ 1231.90s ->  1236.96s] percent well now we're doing a call credit spread so now we need to go above it four percent and so
+[ 1236.96s ->  1244.28s] again we're going above by four percent again we're able to go above by four by four percent and not
+[ 1244.28s ->  1249.86s] three percent like we were doing on the uptrend uptrend strategy because as the market is dropping
+[ 1249.86s ->  1255.62s] volatility is dramatically higher so we can collect way more credit so honestly we could probably
+[ 1255.62s ->  1261.74s] collect the same amount of credit um as we would on a turtle strategy going three three percent below
+[ 1261.74s ->  1269.46s] the current uh the the current price as if we did five percent above the current stock price because of
+[ 1269.46s ->  1274.98s] how much volatility is there however what we found works best is going four percent above the current
+[ 1274.98s ->  1280.86s] price for our call credit spread so that means if the if the close price during this criteria when
+[ 1280.86s ->  1285.92s] it's trending down is a hundred dollars that means that we're going to we're going to sell the 104
+[ 1285.92s ->  1291.12s] call and then we're going to buy the 105 call because we got to go above it so we're going to buy the
+[ 1291.12s ->  1296.48s] 105 and that's going to be how we structure our call credit spread now because this moves faster
+[ 1296.48s ->  1300.94s] again what we see here is our expiration date is going to be a bit shorter end time so that's going
+[ 1300.94s ->  1305.00s] to be about nine days and then going up to the next friday and that's going to be our expiration date
+[ 1305.00s ->  1308.80s] we're going to plug that into the broker with all the details we determined if we can collect
+[ 1308.80s ->  1313.58s] at least 15 cents which we're more than able to at four percent in this high volatile period
+[ 1313.58s ->  1318.08s] um then again we collect the 15 cents and place that trade and that's how we do the short play
+[ 1318.08s ->  1323.06s] and you can you show the graph again if you like yeah of course and which section are you
+[ 1323.06s ->  1333.01s] referring to below the red above yellow so any all these down moves got it thank you yeah so we have
+[ 1333.01s ->  1338.23s] these down moves here which is anything below the red showing that hey we're moving down
+[ 1338.23s ->  1342.71s] market sentiment is down but as soon as we hit this yellow line as we'll discuss here in the next
+[ 1342.71s ->  1347.03s] strategy uh then we start to get into bounce territory so once it breaks below this yellow and
+[ 1347.03s ->  1351.19s] starts recovering now we're in a recovery mindset so we're not going to be shorting so that's why
+[ 1351.19s ->  1357.45s] shorting only takes places in this area or like this area um this area here it would trigger as
+[ 1357.45s ->  1361.69s] well this area here would trigger um but again those are short places these are more of like
+[ 1361.69s ->  1367.00s] dip bounces which we'll discuss here in this next strategy so we have the winning whale strategy this
+[ 1367.00s ->  1373.76s] is because whales are um just in the investment world known as big buyers whether hedge funds investment
+[ 1373.76s ->  1381.00s] firms insider knowledge where they go in after crashes or after bad bad news and buy up a huge portion
+[ 1381.00s ->  1386.20s] of the stock or e or etf and they see that recovery those people are called whales and that's how
+[ 1386.20s ->  1391.02s] they're trading this is the same idea where we're going to come in after a market crash or recovery
+[ 1391.02s ->  1397.26s] and kind of buy that dip and make money on the movement up and so again this is our bullish strategy
+[ 1397.26s ->  1402.78s] that cat that that capitalizes on the market recovery uh when big institutions and investors
+[ 1402.78s ->  1410.04s] typically buy into so our entry for this is is going to cross back above the bottom yellow line or the
+[ 1410.04s ->  1415.46s] minus 3.8 standard deviations um which is going to be the 200 day moving average so it's essentially
+[ 1415.46s ->  1419.68s] this bottom yellow line right here that's pre-programmed into the chart once we break below
+[ 1419.68s ->  1425.56s] this and then break back above it so again we cross below and then cross back above that is the entry
+[ 1425.56s ->  1430.70s] sign that we're going to be looking for a recovery and entering put credit spreads for that that's the
+[ 1430.70s ->  1437.28s] criteria next is we're going to determine our short strike price by going out four percent um from the
+[ 1437.28s ->  1442.02s] current price so the stock's trading at 100 we're going to go to the 96 um strike price and then we're
+[ 1442.02s ->  1447.08s] going to buy the 95 for our projected put our expiration date is going to be set up exactly like
+[ 1447.08s ->  1452.66s] we do for the for the sideways market it's going to be 14 days um then round up to the next friday so
+[ 1452.66s ->  1456.96s] that could mean that it's the expiration date it's 14 days could be 15 16 17 something like that
+[ 1456.96s ->  1462.30s] next is we're going to plug in all these details into our broker if we can collect 15 cents that's a good
+[ 1462.30s ->  1467.82s] trade and we put it on uh but that is the dip buy strategy where we're looking to look for a huge
+[ 1467.82s ->  1473.20s] crash we see that recovery after it comes back above it and that's the movement up and that's the put
+[ 1473.20s ->  1482.72s] credit spread bounce trade any questions on that um no i think i think you just covered it well right
+[ 1482.72s ->  1488.74s] you're still at the well winning well strategy right okay good good good i think it's like when i read
+[ 1488.74s ->  1494.10s] the notes i think the willing well winning well and the the next one which is the elastic bounce
+[ 1494.10s ->  1500.52s] it's quite similar is it identical or was it identical no they're not and i'll i'll cover how
+[ 1500.52s ->  1504.78s] they're different here in a second yeah all right yeah so next we have the one that you just mentioned
+[ 1504.78s ->  1511.32s] which is the elastic bounce strategy um again this is when a stock has mathematically hit its low
+[ 1511.32s ->  1517.14s] and it's not projected to go lower and so this is different though we have a bounce strategy where
+[ 1517.14s ->  1521.42s] we think the market is going to recover and then we have levels where we think the stock is just
+[ 1521.42s ->  1526.02s] overextended and probably won't go much lower and so that's the main difference so if we're looking at
+[ 1526.02s ->  1530.98s] the chart here this is how it's shown you can see here we have this period where the market gets get
+[ 1530.98s ->  1537.28s] uh gets below this would trigger a short a short play strategy we trade call credit spreads down
+[ 1537.28s ->  1543.16s] then it breaks below this yellow line as soon as it breaks below this yellow line mathematically we are
+[ 1543.16s ->  1550.24s] outside of 99 point basically five percent of our trading range and so there's a 0.5 chance that we
+[ 1550.24s ->  1557.10s] really massively crash after breaking below this line and so because of that once we break below this
+[ 1557.10s ->  1563.96s] bottom yellow line we are in the elastic bounce ruling and so what that means is we're going to
+[ 1563.96s ->  1569.64s] start entering put credit spreads that are further out with a lot of time why well because it doesn't
+[ 1569.64s ->  1574.32s] stay below this line for long you can see here this is probably the longest period here in this
+[ 1574.32s ->  1580.50s] um outcome but again we can show uh uh over hit uh over the history that it only stays below this
+[ 1580.50s ->  1586.54s] bottom yellow line for maybe a half of a month a month max right so if we go out with a put credit
+[ 1586.54s ->  1592.94s] spread trade where we go out quite far and give us time then we're going to actually profit underneath
+[ 1592.94s ->  1597.82s] this yellow line and so that is kind of what more of the bounce slash winning well strategy is right
+[ 1597.82s ->  1602.16s] because i think it is here yeah across below the bottom of the yellow which is the standard deviation
+[ 1602.16s ->  1606.90s] that triggers this and so again we're going to do what we normally do which is the same as the stuff
+[ 1606.90s ->  1613.34s] as the last time which is a 96 14 days out sub that trade and broker if you can collect 15 cents
+[ 1613.34s ->  1622.64s] that's a good trade i was comparing the notes the two entry rules for elastic bands and i think this one
+[ 1622.64s ->  1630.20s] yeah it's identical and elastic is it i'm sorry i got a little confused um which two do we just
+[ 1630.20s ->  1635.94s] cover elastic bands yeah so the winning well i think they're identical the entry rules yeah so
+[ 1635.94s ->  1642.54s] most of these rules are identical except in the fact that here on the winning well we have we want
+[ 1642.54s ->  1649.26s] to cross back above the bottom yellow line versus this one is crossed below the bottom yellow line
+[ 1649.26s ->  1655.86s] so in the chart here hold on hold on i just want to make sure um could you sorry because i i didn't
+[ 1655.86s ->  1662.22s] catch that um okay um so the winning well can you can i'm sorry can you go over it again the winning
+[ 1662.22s ->  1668.18s] well um yeah so the winning well as stated here in our criteria of the entry rules you're waiting for
+[ 1668.18s ->  1674.66s] the stock to cross back above the bottom yellow line so that means it's crossed below it already and now
+[ 1674.66s ->  1681.72s] we're waiting for it to return and come back above that line versus the bounce we're just waiting
+[ 1681.72s ->  1688.48s] for it to cross below that bottom line so for here okay going below would would trigger the bounce
+[ 1688.48s ->  1695.34s] coming back above would trigger the winning well below below the bottom yellow line that's the elastic
+[ 1695.34s ->  1700.42s] sorry sorry could you go over i'm so sorry you went a little bit too fast what was the
+[ 1700.42s ->  1709.32s] yellow line is the elastic bounce below right across below the yellow line thank you thanks
+[ 1709.32s ->  1715.20s] and then as soon as after it's been below and then it breaks back above that's the winning well
+[ 1715.20s ->  1720.18s] but the entry um okay so that's only difference between the two that's the only difference everything
+[ 1720.18s ->  1726.36s] else is set up exactly the same okay good because yep i didn't catch it if you want to you could
+[ 1726.36s ->  1733.38s] combine them into one but i just like to segment them okay awesome thank you yeah when you say if
+[ 1733.38s ->  1736.64s] i like to when you combine to what what what does that mean what were you what are you implying
+[ 1736.64s ->  1742.36s] well i'm saying like they have the same entry criteria as in we go down i mean not criteria but
+[ 1742.36s ->  1748.76s] same put credit spread structure as in we go down four percent we have the same expiration date so as
+[ 1748.76s ->  1753.72s] soon as the stock breaks below the yellow line you could just keep trading that same the entire way
+[ 1753.72s ->  1759.48s] um there's just a difference here between yeah go ahead yeah because i think i think it will cross
+[ 1759.48s ->  1764.96s] down the yellow line we can use the same entry rules as it bounce up we we use the same entry rules
+[ 1764.96s ->  1774.51s] again right that's what you that's what you imply good thank you okay um the last strategy here is the
+[ 1774.51s ->  1780.41s] elastic rejection so if we look here we have an area where the stock hits outside of its normal trading
+[ 1780.41s ->  1785.63s] range and then it bounces back into it here we have it bounces outside of its normal range to the
+[ 1785.63s ->  1791.25s] upside and kind of pulls back which is what we're in right now we were trading outside of the range for
+[ 1791.25s ->  1796.07s] almost two weeks and then now we're kind of recovering because we were outside that range for too long
+[ 1796.07s ->  1802.67s] and so now we're in that pullback phase and so this is the elastic rejection hence why if you were
+[ 1802.67s ->  1808.47s] watching the algo over the last week or so you've seen a couple elastic rejection plays come in
+[ 1808.47s ->  1815.53s] um for spy and qqq and that's because of this setup right here um and so one we wait for the stock to
+[ 1815.53s ->  1820.17s] cross above the top yellow line so it's going to be plus three standard deviations so one across above
+[ 1820.17s ->  1826.73s] here uh that's that's where we trigger this from there what we see is that we want to set up this
+[ 1826.73s ->  1832.07s] by going three percent above the current price why don't we go four percent like we do on most of our
+[ 1832.07s ->  1837.03s] call credit spread strategies well because like i said when we're trending up and naturally moving higher
+[ 1837.03s ->  1843.35s] volatility is lower so we need to move closer into the current stock price to and uh in order to
+[ 1843.35s ->  1847.59s] collect that credit so three percent so if we're trading at a hundred dollars then we're going to
+[ 1847.59s ->  1855.23s] sell the 103 strike uh strike price call then we're going to buy the 104 for for protection the
+[ 1855.23s ->  1860.35s] difference here this one is the longest one that we have trading going on so when we're trading this
+[ 1860.35s ->  1866.15s] elastic rejection we're going to be in this trade for almost three weeks if not more why if you look at
+[ 1866.15s ->  1871.09s] this year we have a 19 days which is more than what is most recommended why well because stocks
+[ 1871.09s ->  1875.91s] can continuously trend up um but stocks won't continuously crash you can see we have crash
+[ 1875.91s ->  1880.53s] periods and then it just it gets tired and the market just has like okay we need to at least
+[ 1880.53s ->  1885.23s] bounce somewhere and that just happens more frequently when we come in here and the market's
+[ 1885.23s ->  1891.89s] trending up it is quite hard to kind of reverse it and so we need enough time in our trade to allow
+[ 1891.89s ->  1896.85s] it to reverse back down at least have a small pullback and so just i've tested it in nine and
+[ 1896.85s ->  1901.95s] 19 days it's just the best days out so we use our expiration date with the call credit spread
+[ 1901.95s ->  1907.21s] structure we plug it into our broker we can collect at least 15 cents and that's the trade and that's
+[ 1907.21s ->  1916.05s] what and then that's what we put on and any questions with that one no it so the the nice thing is you
+[ 1916.05s ->  1924.97s] can place your trade any time of the week it doesn't have to be the first week first day of
+[ 1924.97s ->  1931.05s] the week trading week or anything like that correct yeah let's say it's but your exiting rules is no no
+[ 1931.05s ->  1937.41s] but the expiry date is usually has a map on it so it's a friday i think yeah yeah just fridays are
+[ 1937.41s ->  1942.01s] just because that's where most expiration dates the most popular ones are and so it just works out best
+[ 1942.01s ->  1949.19s] that way plus uh you can't especially when we're looking at spy the integration of monday and
+[ 1949.19s ->  1955.39s] wednesday expiration dates the new concept so we can't back test on monday and wednesday x uh on
+[ 1955.39s ->  1963.10s] on expiration dates because they don't go that far back so fridays is the expiration date anyways
+[ 1963.10s ->  1969.47s] all right let's dive into the rules here there are a few rules uh first off is credit collection you've
+[ 1969.47s ->  1974.97s] noticed in most of these strategies i said collect 15 cents that is not a lie but it is a bit
+[ 1974.97s ->  1979.55s] higher than what we typically collect we do like to collect 15 cents if we can but essentially here
+[ 1979.55s ->  1983.99s] i'll just read it and then explain it you want to make sure you're collecting enough credit based on
+[ 1983.99s ->  1989.35s] your historical win rate to give you a long-term positive expectancy this means you need to make
+[ 1989.35s ->  1994.51s] enough money on your winners to offset your infrequent but larger losses that occur the minimum
+[ 1994.51s ->  1998.95s] credit you should aim to collect varies based on the win rate i provide this minimum credit in the
+[ 1998.95s ->  2004.37s] program with the algo on each algo alert it shows you the minimum credit you want to collect based on
+[ 2004.37s ->  2009.85s] the win rate but again a rough rule of thumb if you're placing the strategy and you don't know
+[ 2009.85s ->  2015.15s] the historical win rate is to collect 15 cents and you'll more or less be safe with that but again
+[ 2015.15s ->  2020.89s] there are strategies in the 96 win rate that you can collect 11 cents and still end up with the same
+[ 2020.89s ->  2027.25s] return long term but again as always if you can collect more credit absolutely go for it um sticking
+[ 2027.25s ->  2033.07s] with the rules then you'll be more than set but 15 cents is roughly where we're at and the algo shows
+[ 2033.07s ->  2042.22s] the specifics any questions on that rule no all right trade sizing rules uh this is just for risk
+[ 2042.22s ->  2047.34s] management just because as we know with credit spreads our winners are small we have a lot of them
+[ 2047.34s ->  2053.28s] they are small and our losers are a lot bigger and now again as we'll be going next week and do how
+[ 2053.28s ->  2058.44s] to manage losers and risk management and credit spreads the first rule we want to look at is how are
+[ 2058.44s ->  2063.36s] we sizing in each one of our trades and so again this is an important and an important rule and
+[ 2063.36s ->  2067.38s] lesson to remember when trading credit spreads because of how large your max loss tends to be
+[ 2067.38s ->  2071.44s] this is why you should strive to trade small and trade often to increase your number of occurrences
+[ 2071.44s ->  2076.82s] and decrease the amount one single loss impacts you the general rules to put no more than 10 percent of
+[ 2076.82s ->  2081.50s] your total account size in the one position this rule is subjective and can change based on your
+[ 2081.50s ->  2087.36s] trading experience and risk tolerance again when i say subjective i mean less than 10 percent i do not
+[ 2087.36s ->  2093.72s] recommend exceeding 10 um so subjective means like it can be anywhere from one two to ten based on your
+[ 2093.72s ->  2098.92s] comfort level with of the max loss um if you're brand new i would encourage you to trade with five
+[ 2098.92s ->  2104.72s] percent of your trading capital until you build up experience and confidence i again this comes down to a
+[ 2104.72s ->  2108.64s] lot of different factors number one what's your experience with trading and credit spreads if you are
+[ 2108.64s ->  2113.12s] comfortable with that you're comfortable with risk you can definitely put on more if you're not start
+[ 2113.12s ->  2118.70s] off with way less maybe one to two percent of your account and then slowly size up but also if you have
+[ 2118.70s ->  2123.52s] a larger account and you're just more i want to safely grow my account then do a five percent range
+[ 2123.52s ->  2128.24s] if you're like i have a large a large account but i want to grow it as fast as possible then yeah
+[ 2128.24s ->  2134.00s] maybe be closer to 10 just understand the risk that you're taking me i personally i i personally stay at
+[ 2134.00s ->  2139.30s] the four to six percent range roughly five percent of my account goes into each trade and that's how
+[ 2139.30s ->  2148.24s] i do it uh we'll get more into other things later but that's that that's all i do anything on that
+[ 2148.24s ->  2156.02s] okay all right then we get into some early exit rules so we first started off i created this strategy i
+[ 2156.02s ->  2162.40s] was using it for spy for a few elect stocks that we can probably discuss about here after afterwards
+[ 2162.40s ->  2167.68s] of this trend following approach then i brought in credit spreads and i was just holding until
+[ 2167.68s ->  2174.38s] expiration and i was still having roughly a 90 win rate then i was like all right because every single
+[ 2174.38s ->  2179.76s] tuesday for those who don't know i take ideas that i've heard from inside the uh from inside the group
+[ 2179.76s ->  2185.76s] from other traders that i listen to on youtube and i test adding different ideas rules and stuff like
+[ 2185.76s ->  2191.00s] that to see if the win rate and long-term return can improve um and this is one of the early
+[ 2191.00s ->  2197.38s] improvements that i made is an early exit rule it will actually increase your win rate long term but
+[ 2197.38s ->  2204.62s] again we're talking by a matter of increasing it by two percent or three percent nothing massive so if
+[ 2204.62s ->  2208.22s] you want to hold until expiration because you pay a lot of commissions and you don't want to pay
+[ 2208.22s ->  2213.80s] commission to exit then it's completely fine not to um but again i personally exit early because i'm
+[ 2213.80s ->  2220.40s] using tasty trade or tasty works now no tasty works not tasty trade and um they don't charge me to exit
+[ 2220.40s ->  2226.22s] so uh if this exit criteria happens then i join it anyways here's the exit rule exiting positions
+[ 2226.22s ->  2229.86s] can statistically help you increase your win rate take profits sooner and allow you to redeploy
+[ 2229.86s ->  2236.06s] your money into another trade faster that's just what we do when we take profits early um but there are
+[ 2236.06s ->  2241.56s] some rules with exiting the trade early so the strategies mentioned above assuming you're holding
+[ 2241.56s ->  2248.22s] until expiration here is the rule and there's a two-point part and i now realize that the second
+[ 2248.22s ->  2254.28s] bar in here is not in this document at the time that i screenshotted so it will be updated by the time i
+[ 2254.28s ->  2259.30s] do this um but i've said this numerous times in the chat and i realize it's different here but
+[ 2259.30s ->  2266.22s] it is this not number one which is here if you can buy the credit spread back for five cents or less
+[ 2266.22s ->  2275.98s] than you should but the second part is and if there's more than five days left until expiration
+[ 2275.98s ->  2281.68s] so if you're at five days good if you're at six days good if you're at 10 days good if you're at four
+[ 2281.68s ->  2287.52s] days you shouldn't apply the early exit rule so again that's kind of how how this plays out if you
+[ 2287.52s ->  2292.66s] have five days or more left until expiration and you can close the credit spread trade for five cents
+[ 2292.66s ->  2299.16s] then it's best to to take your profits and roll in now why is this the case why why would you not just
+[ 2299.16s ->  2306.06s] let it happen well okay once you get to roughly five cents or 0.05 left on the credit spread
+[ 2306.06s ->  2312.28s] and you have more than five days left you've collected most of the profit you're ever going
+[ 2312.28s ->  2318.92s] to collect the rest is due to intrinsic value in that extra and that extrinsic value breakdown you've
+[ 2318.92s ->  2323.78s] you've collected most of the profit you can the rest it's just going to hover around four or five
+[ 2323.78s ->  2328.98s] cents even if it's super far out of the money just because that's what it does with so much
+[ 2328.98s ->  2334.84s] time left there's just value in the contract because of time and so you've collected the most
+[ 2334.84s ->  2341.04s] of the profit that you can so it's best to just close out and re-roll if you're let's say oh it's
+[ 2341.04s ->  2346.64s] now four days until expiration it's trading at five cents should you close out early unless you're super
+[ 2346.64s ->  2351.40s] fearful no why well because you only have four days left in the trade if it's trading at four cents
+[ 2351.40s ->  2356.34s] you're far enough out of the money that you can just let it expire worthless typically if you're super
+[ 2356.34s ->  2360.54s] scared or you're going somewhere and you can't monitor and you can't monitor the trade then close
+[ 2360.54s ->  2365.34s] that trade out for instance there was one instance you can actually look back in the discord and the
+[ 2365.34s ->  2371.30s] trading alerts i don't typically break this rule but i did one time where it was a wednesday i think
+[ 2371.30s ->  2376.56s] and i had some trades that closed on friday and i was leaving and i was going to a conference i was
+[ 2376.56s ->  2380.18s] meant to be in a plane i was going to be busy i wouldn't be checking the market much and it was trading
+[ 2380.18s ->  2384.40s] at three cents so i closed it out that was purely because something could happen and i'm not there to
+[ 2384.40s ->  2389.12s] manage it so that's one way if you want to break it that makes sense but that is the early exit rule
+[ 2389.12s ->  2397.52s] questions on that cool all right last but not least is the counter trend trading rule so this comes in
+[ 2397.52s ->  2403.08s] when we're talking about trading against the trend most of the time we are trading with the trend that
+[ 2403.08s ->  2408.26s] involves trading the turtle strategy we're trading up we're trading the sideways market when the market's
+[ 2408.26s ->  2411.78s] trading sideways we're trading with it we're trading a strategy i don't i don't think this is in
+[ 2411.78s ->  2420.96s] your handbook it should be oh i i just i just pulled the screenshot this morning really did i
+[ 2420.96s ->  2427.22s] missed it hmm my goodness that's interesting yeah it's it's it's the last thing on the very bottom
+[ 2427.22s ->  2434.28s] of the handbook okay yeah um we can take a look at it again after i i cover this because it's my last
+[ 2434.28s ->  2439.92s] slide um so yeah so uh we have counter trend rules so for and if we're trading with the trend then
+[ 2439.92s ->  2443.74s] obviously our success rate is going to be high we're going to win because we're trading with the
+[ 2443.74s ->  2448.24s] trend uh we will have losses of course that happens but we're very safe when we're trading with the
+[ 2448.24s ->  2453.68s] trend however there are times when we trade against the trend for instance currently what we're doing
+[ 2453.68s ->  2459.70s] now we have an elastic rejection setup which is what we're having right now in spy and kick a cute we
+[ 2459.70s ->  2464.30s] also have elastic bounce so for instance these are betting on the market to reverse like hey i think
+[ 2464.30s ->  2469.46s] we're overextended we're going to try to make that move down or back up so we're trading against the
+[ 2469.46s ->  2473.98s] trend although we have a mathematical assumption that it's going to return back down it still is
+[ 2473.98s ->  2478.92s] against the trend so we need to place some rules and to help better protect ourselves because when
+[ 2478.92s ->  2483.94s] you're going all in on these reversal plays you can definitely mess yourself up fast a lot of members
+[ 2483.94s ->  2489.94s] have done this so i wanted to make sure that i had clear rules these rules um have been added to the
+[ 2489.94s ->  2496.16s] trading handbook uh maybe two weeks ago so it is newer um but again it should be there anyway okay
+[ 2496.16s ->  2502.76s] maybe maybe i downloaded two weeks when you first joined so yeah um okay the first rule is to only
+[ 2502.76s ->  2508.60s] enter the trade on a strong green day for the rejection strategy or a strong red day for the bounce
+[ 2508.60s ->  2516.14s] strategy so what does this mean it means that we're looking for a very strong move in the current trend
+[ 2516.14s ->  2523.38s] direction why because if we're already overextended and another dramatic move happens that's outside of
+[ 2523.38s ->  2529.78s] normal range spy the the chance of spy moving over two percent in a single day is very unlikely and
+[ 2529.78s ->  2535.52s] doing that multiple days in a row is very unlikely as well so if we're already in our overextended
+[ 2535.52s ->  2542.14s] territory which means we're above or below those yellow lines and then another dramatic move happens
+[ 2542.14s ->  2547.78s] the likelihood of it continuing in that direction is quite low so that's why if we're doing the elastic
+[ 2547.78s ->  2553.00s] rejection we want to look for a strong green day when it's already over that yellow line or a strong
+[ 2553.00s ->  2558.10s] red day when it's already below that yellow line for the bounce strategy and again we're always going
+[ 2558.10s ->  2562.30s] to prioritize going further out of the money over collecting more credit why because we're betting
+[ 2562.30s ->  2567.82s] against the trend the trend will continue so during these periods um especially during the bounce
+[ 2567.82s ->  2572.84s] our volatility is high so we can typically go out further and still collect a lot of money or the
+[ 2572.84s ->  2579.16s] credit that we need um so we can go out further so let's say we follow this system we go out 96 percent
+[ 2579.16s ->  2585.98s] if we're going down or we go out 103 percent for the calls right and you can go out further go out
+[ 2585.98s ->  2592.54s] further that is the safest way to trade these next the second rule is to size down and only trade with
+[ 2592.54s ->  2598.38s] 50 percent of your typical size so if you're typically using 10 of your account stick to only
+[ 2598.38s ->  2603.80s] using five percent of your of your account for that trade why well because these trades have one of the
+[ 2603.80s ->  2609.02s] lower win rates i mean still in the 90 range but lower win rates because like i said we're betting
+[ 2609.02s ->  2614.10s] against the trend now again if you go further out than recommended you will increase that win rate
+[ 2614.10s ->  2621.88s] but it's still better to be safe than sorry um size down yeah it makes any loss less devastating
+[ 2621.88s ->  2627.28s] makes your losses less devastating to your account and allows you to emotionally see
+[ 2627.28s ->  2633.90s] the trade through to completion easier all right the third rule is to immediately close out any open
+[ 2633.90s ->  2638.58s] counter-trend positions if one of the counter-trend trades expires in the money so what this means is
+[ 2638.58s ->  2643.06s] let's say we have a current trade and it's friday and expires in the money that was the counter-trend
+[ 2643.06s ->  2648.72s] trade it was a elastic rejection or elastic bounce trade and what happened was it expired in the money
+[ 2648.72s ->  2655.08s] or we lost on uh on that uh on that trade and we have a trade that's going to expire next week that's
+[ 2655.08s ->  2660.04s] also a counter-trend trade it is best for us to close out that trade now take a super small loss
+[ 2660.04s ->  2666.04s] because the likelihood of that turning into a loss is high as well because the trend is shown to
+[ 2666.04s ->  2671.14s] continue just statistically it's not going to work out so it's best to close that next trade um and
+[ 2671.14s ->  2675.34s] again we take a way smaller loss than letting that expire in the money which has like an 80 chance of
+[ 2675.34s ->  2679.64s] doing um so that's that's kind of what we're doing so it says right here yeah for instance yeah here's
+[ 2679.64s ->  2684.10s] here's the actual number for instance there's a 75 chance that one rejection trade expiring in the
+[ 2684.10s ->  2688.42s] money will result in the next trade that next week being a loss as well so that means it's best
+[ 2688.42s ->  2693.06s] to close that next trade early and that's the counter-trend trading rules any questions on that
+[ 2693.06s ->  2699.28s] right now no i think i need to reread the nelson and will you understand this part yeah um so yeah
+[ 2699.28s ->  2704.98s] the creating treads uh the credit spreads trading handbook is available at app.10percentcreditspreds.com
+[ 2704.98s ->  2709.50s] slash credit spreads trading handbook dot pdf uh if you want access to it and for some reason you
+[ 2709.50s ->  2713.10s] can't type this in just message me on discord or i'll include it in the email with this recording
+[ 2713.10s ->  2718.98s] um so it'll be down there too um again the algo does all this math and work for you it looks at
+[ 2718.98s ->  2723.38s] the indicator that i showed you it breaks it down does all the math whatever and now we have this
+[ 2723.38s ->  2728.84s] it shows us our historical win rates it's 2005 it gives us the annualized return it gives us the
+[ 2728.84s ->  2733.70s] credit collected based on the win rate you can see here a 90 win rate will be around a 15 credit
+[ 2733.70s ->  2738.44s] collection but if you make a higher win rate roughly nine nine 93 you don't need to collect
+[ 2738.44s ->  2742.92s] as much again if you can collect more wonderful but you don't need to to have the same long-term
+[ 2742.92s ->  2749.32s] return and that's kind of what we're seeing here i i do have a question here yeah actually i i i i was
+[ 2749.32s ->  2753.28s] supposed to have a list of questions but i deleted accidentally but i remember i have a question here
+[ 2753.28s ->  2759.84s] um these are the um these are the um the alerts that you gave us why do you show us the
+[ 2759.84s ->  2767.84s] why do you give us the historical win rates and the annualized return with a percentage if we're
+[ 2767.84s ->  2773.86s] going to follow the system all i care is you know what dates of alert expiry dates details
+[ 2773.86s ->  2780.74s] collect at least blah you know just just click it why would you give me the information of the
+[ 2780.74s ->  2786.50s] historical win rates and the annualized return i'm not gonna i'm not if i follow your system i'm not
+[ 2786.50s ->  2790.68s] gonna care i'm not gonna care about those two numbers am i correct or or am i reading something
+[ 2790.68s ->  2796.60s] wrong i mean yeah that's yeah if you have complete belief in the system for sure however a lot of
+[ 2796.60s ->  2801.38s] people will just want to look at okay what's going on with this alert what does this strategy do why
+[ 2801.38s ->  2806.84s] because they've never like you deep dived into the strategies why they work and how and how they work
+[ 2806.84s ->  2812.54s] but also a lot of people let's say they're trading smaller accounts like a five thousand dollar account
+[ 2812.54s ->  2817.00s] and they can only take three trades a week or something they have to look at at the algorithm
+[ 2817.00s ->  2822.94s] be like okay there's six trades here which ones am i going to take like i'm gonna i'm gonna take this
+[ 2822.94s ->  2827.44s] one it has the highest win rate so highest win rates right it's the win rate so that they can make
+[ 2827.44s ->  2833.22s] a better decisions right yeah i know okay so it's definitely not required but it's a good way to filter
+[ 2833.22s ->  2838.08s] down if you can't take all the trades you know what that's that's that's very legitimate it makes sense
+[ 2838.08s ->  2842.00s] to me because i thought that you know what if i'm gonna follow your system i'm gonna follow it
+[ 2842.00s ->  2847.18s] anyway anyway right i i just need to know the strategy blah blah blah and then just move on
+[ 2847.18s ->  2855.29s] but i think you have a good point um so yeah the homework as always start taking small trades from
+[ 2855.29s ->  2859.05s] the algal learn by doing which i think most of y'all are doing um read through the credit spread
+[ 2859.05s ->  2863.85s] trading handbook if you have any questions on it or have what i mentioned in this training please let
+[ 2863.85s ->  2870.65s] me know um we're going to have the next coaching call on monday at 12 p.m central standard time so it's
+[ 2870.65s ->  2876.97s] going to be in one week from now so it's going to be the 21st um we're going to also if optional i'm
+[ 2876.97s ->  2881.95s] going to be covering all different types of risk management approaches in the next training video or
+[ 2881.95s ->  2886.79s] in our next coaching call but i do have a couple short videos on youtube if you do want to watch
+[ 2886.79s ->  2890.79s] those on risk management for our credit spreads not required though i'll be getting into that here
+[ 2890.79s ->  2896.55s] soon but anyways that is the end of this lesson i know it's been a while here but we definitely i want
+[ 2896.55s ->  2899.99s] to make sure we have time for questions i know you have a lot of those um let's go into questions
+[ 2899.99s ->  2903.85s] and whatnot and i guess uh you will be the one for questions here if you're watching this recording
+[ 2903.85s ->  2908.79s] and you and you have questions just email me or discord anyways sure um i guess you were saying
+[ 2908.79s ->  2914.27s] that you'll send us a couple videos for uh risk management as well right i can i wasn't planning to
+[ 2914.27s ->  2920.47s] but i can okay please um send it to us if you don't mind um i have a few questions um okay let me see
+[ 2920.47s ->  2927.64s] um um um what what was i i think i think you mentioned that you have been trading you know
+[ 2927.64s ->  2933.48s] credit spread using spx in the past five years and i think you know obviously you know i think
+[ 2933.48s ->  2938.98s] three years ago when there's a pandemic there's a big downturn um would you mind sharing with us
+[ 2938.98s ->  2945.80s] what is your annualized return in the past five years per year if if you do remember approximately
+[ 2945.80s ->  2952.52s] approximately um i can uh i i can actually find those real numbers by going through brokers i've
+[ 2952.52s ->  2958.08s] changed i was doing most of my stock stuff on toss and then now the credit spread stuff on tasty work
+[ 2958.08s ->  2963.00s] so it's not whatever but i will look through to get you an act and an accurate number i can tell you
+[ 2963.00s ->  2972.94s] um that during let's see we're time okay whatever um here we go um so i was trading so i started this
+[ 2972.94s ->  2982.76s] strategy around here this december 16th 2016 yeah around here um because i remember um trading this
+[ 2982.76s ->  2988.64s] up i remember trading this this this whole way and then looking at this crash so i was in this
+[ 2988.64s ->  2999.12s] movement here um uh this was really good this took obviously a big hit um on the account but again i
+[ 2999.12s ->  3006.62s] made enough moving up so kind of balance it kind of balanced out this market was tough um why because
+[ 3006.62s ->  3013.40s] for a good portion of it from march until oh like the end the the end of may i wasn't in any positions
+[ 3013.40s ->  3019.38s] when i was trading spy with the strategy just spy shares um i would completely stay out of the market
+[ 3019.38s ->  3025.86s] when it was in the gray zone so this part of the year was very flat and neutral and not much happened
+[ 3025.86s ->  3031.80s] um this part i'm sorry did you trace by during that part or no you did not yeah yeah yeah i was
+[ 3031.80s ->  3038.74s] trading spy so during here i had a great year uh during here was a very um very break even year i
+[ 3038.74s ->  3044.12s] think it was around maybe four percent or something um because you know from what was it around yeah
+[ 3044.12s ->  3050.88s] january from around here to here it was roughly the same um this one uh i did well on but but but but
+[ 3050.88s ->  3056.01s] but but you should be able to still make money with your strategy with a spy you know it should
+[ 3056.01s ->  3060.73s] be more than four percent if you were following your system that your credit your credit spread
+[ 3060.73s ->  3067.71s] system for on spy right yeah so i mean like i was trading here so we can see like the beginning of
+[ 3067.71s ->  3071.85s] the year started around here or whatever then again i was i didn't close out my position till about
+[ 3071.85s ->  3078.39s] here so i had about a five a five percent loss around here then again um i traded this and it kind of
+[ 3078.39s ->  3082.51s] went like up and down so it wasn't really much right it went up and then down and up and then
+[ 3082.51s ->  3087.29s] down so not like nothing much was here i don't remember making much here and then here i just
+[ 3087.29s ->  3092.95s] remember sitting on my hands i i wasn't in the market and then here you know i made but it wasn't
+[ 3092.95s ->  3098.01s] much right it was only like what like yeah two two percent or something and then this trade here for
+[ 3098.01s ->  3103.59s] the rest of the year that took it to maybe about six percent so maybe i made around six i don't i i i'll
+[ 3103.59s ->  3108.77s] i'll get you the exact numbers but i just i just remember that uh this year compared to this one
+[ 3108.77s ->  3117.05s] being a lot less um this year i uh remember doing well i really liked this year um primarily because
+[ 3117.05s ->  3122.03s] i stayed out of the market here and then when it dips below and then broke back above i bought into
+[ 3122.03s ->  3126.27s] the market here because of like i said the dip buy strategies that we use right it's over
+[ 3126.27s ->  3131.85s] extended so i i bought in spy here um and wrote up shares there i did that on spy
+[ 3131.85s ->  3139.63s] and um paypal where was it in the same period was it this year 2020 no that's not right
+[ 3139.63s ->  3145.65s] um same period no it was 2020 then that was so that was a different scenario but yeah i traded that
+[ 3145.65s ->  3150.67s] um anyways but we're going we're going back to spy um yeah so i traded this bounce here and then
+[ 3150.67s ->  3156.61s] wrote that bounce up and then just followed the strategy here and then here in this sideways market
+[ 3156.61s ->  3161.81s] here about 2022 um is when i started looking in and exploring credit spreads and i started
+[ 3161.81s ->  3167.09s] messing with ideas and then around here is when i started actually back testing and proving out
+[ 3167.09s ->  3173.15s] the uh those strategies why well because i'm not in any trades during this period right when i do my
+[ 3173.15s ->  3179.11s] just shares trading because it's downtrending and i don't short so um i wasn't in any trades during
+[ 3179.11s ->  3183.83s] this period so i got bored and i was like oh yeah i can use call credit spreads instead and then so
+[ 3183.83s ->  3188.37s] that's when i started testing options and then now we're kind of in that mode but oh no thanks
+[ 3188.37s ->  3192.89s] thanks thanks for sharing um and then other questions i have is what what other books or
+[ 3192.89s ->  3201.55s] papers would you recommend us to read or to look into to master this course or to master your
+[ 3201.55s ->  3208.27s] credit spread credit spread uh trading system yeah so i mean the credit spread trading system is
+[ 3208.27s ->  3214.21s] quite quite easy to follow like i said it's pretty laid out for you it's really easy to understand
+[ 3214.21s ->  3222.65s] credit spreads themselves right they're just a high win rate trade um but the underlying approach is
+[ 3222.65s ->  3227.39s] where it all comes down into what is the trend how do i follow the trend how can i know the trend
+[ 3227.39s ->  3236.15s] works um one of the best resources on trend following is trendfollowing.com um michael covell um
+[ 3236.15s ->  3240.07s] it's not required all the stuff that i mentioned now it's not required you don't need to do any extra
+[ 3240.07s ->  3246.87s] reading or stuff for this course but if you want to michael covell has a trend following book and it
+[ 3246.87s ->  3253.99s] is it is huge it is massive and it is comprehensive um you can definitely check that book out um so he
+[ 3253.99s ->  3259.05s] has a lot but the one that i'm referring to is this one trend following um how to make a fortune
+[ 3259.05s ->  3266.39s] bull bear and black swan markets michael covell um that's a great book um but also he has podcasts you
+[ 3266.39s ->  3274.51s] can listen to him um but anyways all those books but what i want to showcase here is one of my
+[ 3274.51s ->  3280.25s] favorite sources i believe i linked this in the discord um earlier was the performance him going
+[ 3280.25s ->  3286.87s] through the different reports here that have been done um bill done which is a uh an investment firm
+[ 3286.87s ->  3292.77s] it's called done capital um and they have continuously outperformed the market since the 70s
+[ 3292.77s ->  3300.09s] um using trend following um again here here's one point from wolvaney capital uh he has them being
+[ 3300.09s ->  3308.01s] updated since the mid 1999s and midnight that's not mids it's late 1900s um and so again you can see
+[ 3308.01s ->  3313.45s] here most of their years they're winning you can do see losers though here and here but i also love
+[ 3313.45s ->  3319.93s] just like during these crazy markets like 2020 they have an 18 they have 32 89 um just these different
+[ 3319.93s ->  3325.97s] phases like we can see 2008 which is a bad market they had 108 return why because when you follow
+[ 3325.97s ->  3331.19s] the trend it just tends to work but there's these are a lot of great stories metrics firms that use
+[ 3331.19s ->  3336.87s] trend following that you can study and and look into to build the confidence and system for trend
+[ 3336.87s ->  3342.19s] following but outside of that for the strategies that we use is all laid out in the handbook and
+[ 3342.19s ->  3349.61s] that's kind of what what what we do here i understand um that's all the question i have but i i have a
+[ 3349.61s ->  3354.25s] special request if you don't mind um yeah could you help if you don't mind could you help me to set
+[ 3354.25s ->  3361.77s] up my indicator in toss i i i tried to click on your link but um it didn't quite work yeah you're good
+[ 3361.77s ->  3365.49s] yeah i'll stop sharing now this is kind of this is kind of this kind of the end and i'll give you
+[ 3365.49s ->  3369.49s] permission to share your screen and we'll walk through it thank you very much one second
+[ 3369.49s ->  3370.33s] um

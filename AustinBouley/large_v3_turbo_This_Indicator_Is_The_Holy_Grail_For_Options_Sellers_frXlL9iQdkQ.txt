@@ -1,0 +1,69 @@
+[    0.00s ->     4.40s] I've been using a lot of indicators over the last eight years of trading and this one by far is my
+[    4.40s ->     9.08s] go-to that has made me the most money hands down. And now I'm going to get some hypey scammy show
+[    9.08s ->    15.24s] you where to enter type of indicator but because it breaks down exactly what the market trend is
+[   15.24s ->    21.40s] right now and a way that uses math and not a lagging type of math that most indicators use
+[   21.40s ->    27.46s] but a math that shows mathematically statistically where the trend is where the market is and where
+[   27.46s ->    32.64s] it's likely to go. This has saved me so much money from preventing me from crashes helping me make
+[   32.64s ->    36.72s] money to the upside and so much more. So let's dive in. This indicator is something that everybody has
+[   36.72s ->    40.94s] access to no matter what type of platform you're using. So whether you're using your broker platform
+[   40.94s ->    46.64s] or you're using TradingView or using something like that you can still access it. So go to indicators
+[   46.64s ->    53.02s] type in Bollinger Bands. That's the way to spell it B-O-L-L-I-N-G-E-R Bands. You can see right here
+[   53.02s ->    57.30s] Bollinger Bands. This is not going to be how we're going to use it. This is what most of the
+[   57.30s ->    61.56s] market knows Bollinger Bands ads. We're going to make a few different changes. Number one,
+[   61.92s ->    66.60s] we need to make sure that we're looking at the daily chart, meaning that each candle represents
+[   66.60s ->    71.74s] one day of trading at TIB. So I'm going to make sure that it says one day here, which it does.
+[   72.04s ->    76.92s] Now I'm going to go to the settings of the Bollinger Band and I'm going to change the length to 200
+[   76.92s ->    83.44s] and that's going to make a huge change already. What is this showing mathematically speaking? Okay.
+[   83.74s ->    87.28s] I don't know if you remember from statistics or math class, but there's something called the
+[   87.28s ->    92.26s] Bell Curve. I'm going to keep this as simple as I can. Okay. Bell Curve looks like this and it shows
+[   92.26s ->    99.04s] that for any amount of data, any amount of statistical sampling, there falls a point where
+[   99.04s ->   105.38s] all the data will be within or 99% of data will be within a certain range. And that's about two
+[  105.38s ->   113.50s] standard deviations or about 96% of the trading volume will always be within this level. So 96% of
+[  113.50s ->   117.94s] trading will happen here. What does that mean when we go outside of these ranges? If we go outside of
+[  117.94s ->   122.76s] these ranges, that means that's a 2% chance that it actually stays there for any amount in time.
+[  123.20s ->   128.78s] So if we get outside of these ranges, that's something we can bet on with very large statistical
+[  128.78s ->   134.92s] significance to have a very high win rate. So let me break down how this is shown inside of the
+[  134.92s ->   138.56s] Bollinger Band indicator. These are the two standard deviation levels.
+[  138.56s ->   144.90s] So inside of here is where 96% of trading volume happens roughly. And if we break out below here,
+[  144.96s ->   150.10s] which we do occasionally, we break out above here. This is 2% of trading volume. What does this mean?
+[  150.28s ->   154.44s] This means that as soon as we break out to the downside, we have almost a hundred percent chance
+[  154.44s ->   160.08s] it's going to go back in. It can be a 98% chance, right? Because everything above it is a 98% chance.
+[  160.44s ->   164.98s] So all you need to take away from here is something simple. If we break out to the bottom,
+[  164.98s ->   169.84s] we're going to play long. If we break out to the top, we're going to play short. Okay. So you can
+[  169.84s ->   174.20s] see here, we broke out to the bottom, myself included, a lot of my coaching clients. What we
+[  174.20s ->   179.36s] did is we put on options bots that were bullish so that we could take advantage of the market move
+[  179.36s ->   184.10s] to the upside right here. Same thing to the downside. Same thing to the downside. When we broke
+[  184.10s ->   189.94s] up to the upside, we play the downside because we have a 98% chance of winning. And when we put these
+[  189.94s ->   195.22s] trades out longer term, AKA, we give ourselves two months, three months to be right on this trade,
+[  195.68s ->   199.48s] I basically have a hundred percent win rate on these trades over the last few years. They do not
+[  199.48s ->   204.22s] happen often, but when they do very high chance of winning. And so that's how I structure those
+[  204.22s ->   209.38s] trades. I call them my free money trade because they have an almost 100% win rate. And so that's
+[  209.38s ->   214.68s] exactly what I teach inside my coaching program. Again, you can see here underneath my four type of bots
+[  214.68s ->   219.14s] that I run. The free money bot is this one at extreme levels. If you want to learn more about how you
+[  219.14s ->   223.68s] can implement this for yourself, click the first link down below. I'd love to jump on a call and
+[  223.68s ->   228.46s] actually show you how this is implemented. But anyways, that's the first way that you can use
+[  228.46s ->   233.54s] this band. The second way to use this band is by classifying this section of the bullish section
+[  233.54s ->   238.32s] and this section as a bear section. So when it's in here, it's bullish, meaning that we're going to
+[  238.32s ->   242.74s] use bullish strategies. When it's in here, it's bearish, meaning we're going to use bearish strategies
+[  242.74s ->   247.88s] and take advantage of the market that way. Okay. As you can see, the market is almost always within this
+[  247.88s ->   251.98s] range, which means we can make money using bearish bullish strategies most of the time. And when we
+[  251.98s ->   256.94s] enter the bearish market, we can then use bearish strategies. So this shows us just using math,
+[  256.98s ->   263.12s] using statistics, where the optimal points in the market are to put on certain strategies so that
+[  263.12s ->   267.06s] we have a playbook to run. Hey, if it's in here, run the bullish playbook. Hey, if it's in here,
+[  267.16s ->   271.70s] run the bearish playbook. If it's above here, run bearish. If it's in here, run bullish. So that's that
+[  271.70s ->   275.74s] way. Now, outside of options trading, what I do want to mention, because this has made me a lot of
+[  275.74s ->   281.00s] money as well in my longer term accounts is I save up money that I want to long term invest to the
+[  281.00s ->   285.44s] S&P 500. Because again, I think you should split, you should have some of your money into an account
+[  285.44s ->   290.06s] that you use to generate options income. And then another portion of the account that's just
+[  290.06s ->   295.36s] long term investments, okay, that you do that you never touch. And so these long term investments,
+[  295.52s ->   302.04s] I just build up money in the account that I'm ready to deploy and waiting when the market when the
+[  302.04s ->   308.24s] S&P 500 hits this bottom green zone. Why? As we know, it only stays here 2% of the time. So this
+[  308.24s ->   313.30s] is the optimal place to buy. And this is amazing because I loaded up on spice shares here and then
+[  313.30s ->   317.72s] it ripped. I loaded up on spice shares here and then it ripped. And I loaded up a bit more spice
+[  317.72s ->   321.60s] shares here, not as many as here and here. But I bought more spice shares for my long term
+[  321.60s ->   326.64s] investment portfolio. And now I'm averaging in at literally the bottom level at the lowest point
+[  326.64s ->   333.20s] that you can. And so that's how you can use this indicator, the holy grail, I call it to do so many
+[  333.20s ->   338.68s] things. Know when the market is overextended, know the trend for the market and be able to average it
+[  338.68s ->   343.64s] at the best levels as a long term investor. If you found this helpful, I hope you smash the
+[  343.64s ->   348.04s] subscribe button and I hope to see you in another video. But remember, the Bollinger Band indicator is
+[  348.04s ->   349.50s] the way if you set it up correctly.

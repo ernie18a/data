@@ -1,0 +1,173 @@
+[    0.12s ->     5.48s] I studied for the past week testing divergences, and to my surprise, I found some pretty groundbreaking
+[    5.48s ->     6.48s] information.
+[    6.48s ->    11.12s] Look, I make tons of videos on different trading strategies, different indicators, and trading
+[   11.12s ->    15.32s] tips in general, and a lot of those said strategies use divergences in them.
+[   15.32s ->    19.50s] So it got me thinking, if my strategies use divergences, I think it would be safe to say
+[   19.50s ->    23.72s] I should test them to make sure they actually work, not just believe they work because some
+[   23.72s ->    28.63s] guy on the internet told me they would.
+[   28.63s ->    30.07s] So that's exactly what I did.
+[   30.07s ->    33.21s] I wanted to know exactly what you're thinking right now.
+[   33.21s ->    34.85s] Do divergences actually work?
+[   34.85s ->    36.91s] Can you use them to predict market reversals?
+[   36.91s ->    39.89s] And most importantly, do they make money?
+[   39.89s ->    45.35s] To test divergences, we need to go deep down to the core of what they actually are.
+[   45.35s ->    47.39s] What is a divergence?
+[   47.39s ->    52.39s] Google says, Divergence, the process or state of diverging.
+[   52.39s ->    53.39s] Thanks Google.
+[   53.39s ->    57.85s] A divergence is simply when price is moving in one direction on the chart, and an indicator
+[   57.85s ->    59.35s] is moving in the opposite direction.
+[   59.35s ->    64.25s] So for example, the market here is making higher highs, and the RSI indicator is making
+[   64.25s ->    65.35s] lower highs.
+[   65.35s ->    67.19s] This is an example of divergence.
+[   67.19s ->    68.19s] Divergence.
+[   68.19s ->    74.60s] See, when price is going up, it should only make sense that the indicator is going up
+[   74.60s ->    75.60s] with it.
+[   75.60s ->    76.60s] That would be a strong uptrend.
+[   76.60s ->    80.98s] When that doesn't happen, the indicator is out of phase, which in return creates a dilemma.
+[   80.98s ->    84.96s] This is usually a sign that the market has hit a wall, and is likely to reverse in the
+[   84.96s ->    85.84s] opposite direction.
+[   85.84s ->    87.84s] Divergences work with momentum indicators.
+[   87.84s ->    92.74s] So, whenever the price swings and the indicator doesn't correlate, the price is losing momentum,
+[   92.74s ->    95.84s] which can be either upwards momentum or downwards momentum.
+[   95.84s ->   100.92s] And what this does is hints a reversal is about to happen, even if it's just a temporary
+[  100.92s ->   101.92s] retracement.
+[  101.92s ->   105.74s] If you use divergences, you could have predicted the reversal of the COVID-19 crash.
+[  105.74s ->   110.64s] As you can see, price was making lower lows, but the RSI indicator was making higher lows,
+[  110.64s ->   115.32s] which indicates strength and reversal is about to happen, which is exactly what did happen.
+[  115.32s ->   117.98s] You could have predicted this crash on the S&P 500.
+[  117.98s ->   122.32s] The chart was making higher highs, but the RSI was making lower highs, showing signs of
+[  122.32s ->   126.68s] losing momentum, which if we look forward, it crashed pretty hard after this, and you
+[  126.68s ->   129.94s] could have entered a short at the very beginning of that crash.
+[  129.94s ->   132.02s] Well, they seem pretty convenient.
+[  132.02s ->   136.64s] So if divergences actually work, that would make them extremely helpful, as you can literally
+[  136.64s ->   140.30s] predict when the market is about to move in the opposite direction.
+[  140.30s ->   141.84s] That's a lot of power at your fingertips.
+[  141.84s ->   146.22s] Now, this is where I hit a roadblock in my testing.
+[  146.22s ->   150.76s] As said before, a divergence looks at what direction price is moving, but then it also
+[  150.76s ->   154.02s] looks at the momentum indicator to see what direction that is heading.
+[  154.02s ->   156.56s] Now you may be asking, how is that a problem?
+[  156.56s ->   160.62s] That's a problem because how do we know what momentum indicator to use?
+[  160.62s ->   163.60s] Many momentum oscillators generate different divergence signals.
+[  163.60s ->   169.24s] You could use price-based indicators like RSI, stochastics, commodity channel index, MACD,
+[  169.24s ->   170.24s] rate of change.
+[  170.24s ->   175.46s] Or you could even use volume-based indicators like on-balance volume, volume RSI, shock and
+[  175.46s ->   181.38s] money flow, volume price trend indicator, negative volume index, horse index, money flow index,
+[  181.38s ->   182.38s] ease of movement indicator.
+[  182.38s ->   183.38s] Okay, I'm done.
+[  183.38s ->   188.02s] My main point is there's a lot of choices, and every indicator is going to give different
+[  188.02s ->   189.02s] results.
+[  189.02s ->   192.80s] So I'd recommend choosing one you prefer and backtest the sh** out of it.
+[  192.80s ->   196.64s] Test it on markets you trade the most and see what works best for that specific market.
+[  196.64s ->   200.70s] RSI may work well for stocks, but not so well for commodity futures.
+[  200.70s ->   205.76s] In the same way, stochastic or CCI may work well for commodity trading, but perform poorly
+[  205.76s ->   206.96s] for stock trading.
+[  206.96s ->   208.96s] Only backtesting can sort this out for you.
+[  208.96s ->   210.12s] So yeah, do that.
+[  210.12s ->   214.14s] In these backtests, I use the RSI indicator for my divergences.
+[  214.14s ->   219.02s] As you might imagine, backtesting divergence strategies with specific, quantifiable trading
+[  219.02s ->   220.90s] rules is not an easy task.
+[  220.90s ->   225.82s] Actually, when I made this video testing the MACD to see if it actually made money or not,
+[  225.82s ->   228.56s] divergences were a part of one of the MACD strategies.
+[  228.56s ->   232.60s] And what I decided to do was completely take it out as a whole, just because it was way
+[  232.60s ->   236.12s] too complicated to test, and to be honest, I was too lazy.
+[  236.12s ->   240.00s] But I've gained some courage over these past months, and said, f**k it, let's do
+[  240.00s ->   241.00s] it.
+[  241.00s ->   251.61s] It's now time you've all been waiting for, the backtest data.
+[  251.61s ->   253.65s] But before we get to that, check this out.
+[  253.65s ->   257.19s] I found this indicator from ChartPrime, which is actually today's sponsor.
+[  257.19s ->   262.25s] How I would describe this indicator is like the mega ultra version of everything divergence.
+[  262.25s ->   266.51s] It will basically find any and all divergences, no matter how big or small.
+[  266.51s ->   270.41s] But this indicator basically does all the work for you when it comes to divergences.
+[  270.41s ->   276.11s] For example, it will automatically identify all bullish and bearish normal and hidden divergences.
+[  276.11s ->   278.09s] So you don't even have to look for them yourself.
+[  278.09s ->   282.41s] It will tell you when there's a multi-indicator divergence detected by this blue dot.
+[  282.41s ->   286.87s] Which means if there's a divergence on RSI, MACD, and a bunch of different oscillators
+[  286.87s ->   288.55s] all at once, you'll know about it.
+[  288.55s ->   291.87s] It'll tell you when there's a high chance of reversal by displaying this triangle, which
+[  291.87s ->   293.97s] signals the market is getting ready to reverse.
+[  293.97s ->   298.29s] It'll give you entry and take profit points based on divergences themselves.
+[  298.29s ->   299.67s] And this is really just the beginning.
+[  299.67s ->   302.67s] It comes with over 12 points of confluence, 12.
+[  302.67s ->   307.25s] So if you use divergences and one another tool to up your charting game, I would definitely
+[  307.25s ->   309.05s] recommend checking their indicator out.
+[  309.05s ->   310.95s] It's a game changer when it comes to divergences.
+[  310.95s ->   313.05s] I'll leave ChartPrime's link in my description.
+[  313.05s ->   314.39s] Okay, back to the video.
+[  314.39s ->   316.19s] Now, I want to say this right from the start.
+[  316.19s ->   318.13s] This is a very simple backtest.
+[  318.13s ->   322.93s] I'm not this huge hedge fund that can hire thousands of analysts to check different quantifiable
+[  322.93s ->   327.67s] strategies and use different formulas to, no, I'm just a guy with the trading YouTube.
+[  327.67s ->   332.37s] But with that said, I think I found a ton of useful metrics and powerful information while
+[  332.37s ->   333.55s] doing this testing.
+[  333.55s ->   338.95s] What I did was tested different divergences on the S&P 500, the SPY to be more specific.
+[  338.95s ->   343.67s] So one of the hardest parts for this backtest was trying to figure out how to quantify a
+[  343.67s ->   344.67s] divergence.
+[  344.67s ->   348.47s] It's kind of hard to tell a computer, hey, this right here, this is a divergence.
+[  348.47s ->   350.63s] But I think I found a pretty simple way to do it.
+[  350.63s ->   353.67s] I had to quantify what a divergence actually was.
+[  353.67s ->   356.67s] First, the close is setting a new days low.
+[  356.67s ->   359.73s] Second, the RSI indicator is not setting a new low.
+[  359.73s ->   362.69s] Third, we sell at the close based on mean reversion.
+[  362.69s ->   365.93s] The first column in this backtest is the number of days.
+[  365.93s ->   369.61s] So as you can see, I tested up to 30 days for a divergence.
+[  369.61s ->   374.83s] So say for example we were on 5, a divergence would only be calculated if it closed at the
+[  374.83s ->   380.29s] 5 day low and the RSI indicator did not make a new low within those 5 days.
+[  380.29s ->   381.57s] Hopefully that makes sense.
+[  381.57s ->   383.79s] The second column is number of trades.
+[  383.79s ->   388.11s] This is how many trades it took, or in other words, how many divergences it found.
+[  388.11s ->   389.39s] Pretty self explanatory.
+[  389.39s ->   392.83s] This next column is where it starts getting juicy.
+[  392.83s ->   394.03s] The profit factor.
+[  394.03s ->   398.77s] The profit factor is just calculated as the gross profit divided by the gross loss.
+[  398.77s ->   402.15s] So basically the amount of profit per unit of risk.
+[  402.15s ->   406.21s] Which means values greater than 1 indicate a profitable system.
+[  406.21s ->   411.95s] In general, I like my trading strategies to have a profit factor of 1.75 or higher.
+[  411.95s ->   415.75s] Which as you can see, a lot of these were higher than 1.75.
+[  415.75s ->   419.87s] With 2 day divergences being the highest at 4.93.
+[  419.87s ->   423.91s] Also notice how all of these had a profit factor above 1.
+[  423.91s ->   425.57s] Next we have the sharp ratio.
+[  425.57s ->   428.59s] Sharp ratio compares the return of investment with its risk.
+[  428.59s ->   430.67s] Here's the formula if you want to check it out.
+[  430.67s ->   432.75s] Basically the higher the number is, the better.
+[  432.75s ->   438.05s] Which again, the 2 day divergence took the lead with a sharp ratio of 4.01.
+[  438.05s ->   439.73s] Which is really impressive.
+[  439.73s ->   441.65s] Next column is percent of winners.
+[  441.65s ->   443.95s] Which this one was really surprising.
+[  443.95s ->   445.21s] Like really surprising.
+[  445.21s ->   446.21s] Boom.
+[  446.21s ->   448.61s] Look at the amount of times the divergences were right.
+[  448.61s ->   455.15s] Again, the 2 day divergence took the lead at being right 81.16% of the time.
+[  455.15s ->   459.83s] Let me say that again, 81.16% of the time.
+[  459.83s ->   461.69s] Which is absolutely insane.
+[  461.69s ->   465.67s] And if you look at all of these, they all had insanely high win percentages.
+[  465.67s ->   467.21s] Which I found pretty interesting.
+[  467.21s ->   470.29s] Then the last column is the one that you've all been waiting for.
+[  470.29s ->   473.53s] The average profit or loss percentage.
+[  473.53s ->   475.83s] In other words, how much money did it make?
+[  475.83s ->   480.29s] 3, 2, 1, nothing crazy.
+[  480.29s ->   481.45s] But let me explain.
+[  481.45s ->   487.29s] So the highest again was the 2 day divergence with a profit of 1.09% gain.
+[  487.29s ->   490.45s] But the cool thing was, none of these traded for a loss.
+[  490.45s ->   495.27s] Which is pretty impressive for just following a strategy blindly based off zero price action
+[  495.27s ->   497.45s] or any other trading techniques.
+[  497.45s ->   500.07s] But with that said, the earnings weren't absolutely crazy.
+[  500.07s ->   504.61s] Here's the equity curve of the highest performing one, which was the 2 day divergence.
+[  504.61s ->   507.55s] Pretty steady, but not any insane profit returns.
+[  507.55s ->   512.03s] Now the key thing to take away from all this, divergences are correct a huge percentage of
+[  512.03s ->   513.03s] the time.
+[  513.03s ->   514.41s] So the idea is right.
+[  514.41s ->   518.89s] But what I found from these tests is the profit taking could have been improved by a lot.
+[  518.89s ->   523.45s] So if you implemented a strategy and mixed divergences with other trading techniques like
+[  523.45s ->   528.81s] price actions, support and resistances, trend lines, level 2 data, you can make it an insanely
+[  528.81s ->   531.21s] profitable trading strategy using them.
+[  531.21s ->   533.17s] So do divergences actually work?
+[  533.17s ->   534.37s] I'm gonna say yeah.
+[  534.37s ->   535.37s] Hell yeah.
+[  535.37s ->   539.07s] I did the same type of video with the MACD indicator to see if it actually made money or
+[  539.07s ->   540.07s] not.
+[  540.07s ->   541.35s] And the results were pretty surprising.
+[  541.35s ->   544.41s] If you use MACD, you have to watch this video.
+[  544.41s ->   545.41s] I'm warning you right now.
+[  545.41s ->   546.41s] Watch it.
+[  546.41s ->   547.41s] Go check that out.
+[  547.41s ->   549.41s] Thanks for watching and I'll see you guys next time.

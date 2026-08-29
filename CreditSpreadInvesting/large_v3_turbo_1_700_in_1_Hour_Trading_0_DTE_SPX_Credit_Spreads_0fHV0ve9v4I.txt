@@ -1,0 +1,179 @@
+[    0.00s ->     6.20s] I made $1,700 trading 0DT options in slightly less than an hour.
+[    6.56s ->     9.36s] Today, I'm going to show you guys the most important trait
+[    9.36s ->    14.28s] that we need to develop in order to become a consistently profitable trader.
+[   14.48s ->    16.36s] So first, let's talk about the trait.
+[   16.54s ->    18.84s] So on February 11th, I traded two credit spreads.
+[   18.94s ->    20.80s] The first one I traded was on SPX.
+[   21.38s ->    29.70s] It was a 60-55, 60-50 put credit spread, and I sold 10 of them.
+[   30.12s ->    34.66s] For each of these credit spreads, I collected $200 of credit.
+[   35.43s ->    40.47s] So times 10, which means that my total maximum profit will be $2,000.
+[   41.55s ->    49.38s] So our max loss in this case will be 60-55 minus 60-50 times 10 and then times another 10.
+[   49.62s ->    54.88s] So it'll come out to be around $3,000 or another easy way is 5,000 minus 2,000,
+[   54.96s ->    55.84s] which will be 3,000.
+[   55.90s ->    56.82s] This is our max loss.
+[   57.54s ->    60.34s] And so for those of you who don't know how credit spreads work,
+[   60.54s ->    65.24s] I will link a video that I made explaining what credit spreads are in the upper right-hand corner.
+[   65.52s ->    67.44s] Make sure you guys check that out and then come back to this video.
+[   67.44s ->    72.40s] SPX, which is the S&P 500, ends up above 60-55.
+[   73.20s ->    75.14s] We'll make this max profit of $2,000.
+[   75.50s ->    80.08s] If it's below 60-50, we'll take this max loss of $3,000.
+[   80.08s ->    87.98s] Calculate our potential return on investment and it will be 2,000 divided by 3,067%.
+[   87.98s ->    92.18s] You'll see later on in this video, we'll never risk this $3,000.
+[   92.52s ->    93.28s] That's a little bit too much.
+[   93.34s ->    95.14s] We'll risk around $500 to $600 or so.
+[   95.50s ->   101.58s] And so our actual risk to reward is actually 500 to 2,000, which is a one-to-four risk-to-reward ratio.
+[  101.58s ->   106.34s] And this is actually the ratio that we're going to be trying to get every single time we trade.
+[  106.54s ->   108.64s] So I'm basically risking $1 to make $4.
+[  109.04s ->   110.88s] And I'll show you guys in this video how to do that.
+[  111.18s ->   116.34s] So for this trade, I bought it back for $150, $115 debit,
+[  116.80s ->   121.83s] which means that I made $50 per spread times this by 10.
+[  121.99s ->   124.77s] So I made around $500 on this one trade.
+[  124.77s ->   128.95s] We'll move on to trade number two, which will be later on in the day.
+[  129.29s ->   134.75s] The OB 60-60, 60-55, same on SPX, which is the S&P 500 index.
+[  134.87s ->   135.63s] They will put credit spread.
+[  136.15s ->   143.33s] And for this one, I sold 10 again and I collected $235 per spread times 10,
+[  143.33s ->   147.25s] which means that I've had a max profit potential of $23.50.
+[  147.51s ->   152.29s] Again, this is our potential max profit.
+[  154.08s ->   154.14s] Okay.
+[  154.62s ->   155.60s] So really easy.
+[  155.92s ->   158.32s] Our max loss will be $5,000 minus this.
+[  158.42s ->   160.86s] So our max loss is going to be $2,650.
+[  161.46s ->   164.76s] And this again occurs when it's below $60,55.
+[  165.02s ->   167.62s] And our max profit occurs when we're above $60,60.
+[  167.82s ->   170.88s] I exited at $115.
+[  171.58s ->   176.08s] So I paid a debit of $115 to exit this trade.
+[  176.28s ->   184.13s] So I made $235 minus $115, which equals to $120 per spread times this by 10,
+[  184.35s ->   185.97s] which equals to $1,200.
+[  185.97s ->   190.63s] So we're going to drop it down to the hour to kind of get the short-term trend
+[  190.63s ->   191.59s] because we are day trending.
+[  191.69s ->   192.97s] The short-term trend actually matters a lot.
+[  193.29s ->   196.93s] The short-term trend, it's kind of an uptrend, but over the last week or so,
+[  196.97s ->   198.13s] it's been consolidating.
+[  198.37s ->   200.59s] 200-period moving average, which is this orange line right here,
+[  200.59s ->   201.71s] it's going up.
+[  201.71s ->   205.15s] Same thing with the green line, which is the 50-period moving average, is going up.
+[  205.59s ->   207.21s] But you can see that it peaked here, right?
+[  207.25s ->   209.57s] It got higher and then kind of went down a little bit, but now it's going back up.
+[  209.79s ->   213.07s] Another way to find the trend is to look at market structure.
+[  213.55s ->   215.97s] The market was at a low here.
+[  216.21s ->   219.35s] It formed a higher high, reached $61.28.
+[  219.35s ->   223.93s] And after it hit $61.28, it swung low, formed a higher low,
+[  224.19s ->   227.13s] but then it's having trouble finding that higher high.
+[  227.61s ->   231.23s] So now that we know the trend, let's map out some areas that we want to trade in.
+[  231.53s ->   235.95s] I like to drop it down to the 30, start mapping out our areas of supports and resistances.
+[  236.35s ->   237.11s] $60.20.
+[  237.45s ->   240.25s] That is an area where the market bounced off of.
+[  240.43s ->   242.69s] So if the market ever retraces back to $60.20,
+[  242.85s ->   244.75s] then we could take potentially a bullish trade.
+[  244.75s ->   246.83s] But there are also some microstructures here.
+[  247.05s ->   252.17s] You can see that at this level right here on Monday, $2.10,
+[  252.33s ->   258.57s] there is a support here at $60.45 where the market bounced up, retested, bounced up, and retested.
+[  258.65s ->   260.17s] So there's an area of support at $60.45.
+[  260.97s ->   265.35s] If it enters into the $60.45 area, I am interested in taking a bullish trade.
+[  265.51s ->   270.51s] If the C criteria of entry is fulfilled, or if it enters this area of $60.20,
+[  270.89s ->   272.71s] then potentially I'm going to look for a bullish trade.
+[  272.71s ->   276.19s] Now let's move on to the day of.
+[  276.45s ->   277.83s] So I'm going to drop it down to the five.
+[  278.39s ->   281.69s] The market opened low at $60.48.
+[  282.09s ->   283.97s] It pushed all the way down to $60.42.
+[  284.29s ->   287.07s] And the market bought it all the way up to $60.53.
+[  287.27s ->   289.89s] In this area of support, there was actually a lot of buying power.
+[  290.29s ->   291.87s] So the market went all the way up.
+[  292.45s ->   295.71s] And then it hit this area of resistance that was previously found the day before,
+[  296.01s ->   297.97s] because the market started taking profits.
+[  298.57s ->   302.33s] Here, it re-entered into the $60.50 area of support.
+[  302.33s ->   303.37s] And we talked about this.
+[  303.39s ->   305.31s] This is an area of support that I'm interested in trading.
+[  305.79s ->   307.97s] So what would allow us to trade in the bullish direction?
+[  308.11s ->   310.09s] We need to see some strength.
+[  310.31s ->   312.73s] Kind of like if you look back here, there's this candlestick here.
+[  312.81s ->   313.87s] There's this candlestick here.
+[  314.25s ->   317.41s] That is showing a lot of strength because of how long the wicks are.
+[  317.57s ->   318.69s] The market tried pushing it down.
+[  319.31s ->   322.27s] And then on the next candlestick, the market tried pushing it down again.
+[  322.37s ->   324.45s] And it failed to, and it went all the way up.
+[  324.45s ->   329.57s] So at 12.17 Eastern Time, which is around here, once it broke past this high, this wick,
+[  329.73s ->   330.81s] I decided to enter the trade.
+[  331.09s ->   331.39s] Why?
+[  331.51s ->   333.17s] Because it has fulfilled my criteria of entry.
+[  333.31s ->   335.91s] The market came down, and it's showing signs of reversal, right?
+[  335.93s ->   339.69s] This is a doji, and it showed a lot of buying power off this area of support.
+[  339.95s ->   340.57s] So let's review.
+[  340.95s ->   342.73s] MAC M, the trend is up.
+[  343.27s ->   344.99s] A, it entered our area of support.
+[  345.41s ->   350.39s] And C, which is criteria of entry, is we're looking for some bullish confirmation.
+[  350.39s ->   353.53s] And this candlestick right here fulfilled it, and so we entered this trade.
+[  354.37s ->   356.49s] And then now, this is where we talk about S.
+[  356.99s ->   359.89s] Every trade we enter won't be a winning trade.
+[  360.55s ->   362.33s] Maybe, potentially, the market went up, right?
+[  362.35s ->   365.09s] Instead of continuing to go up, maybe it reversed and went all the way down.
+[  365.47s ->   368.89s] A good way to do this is I like to use this term called ATR, average true range.
+[  368.95s ->   371.95s] Average true range just tells you the average movement over a 14-day period.
+[  372.41s ->   373.77s] Okay, so I'm going to go in here.
+[  374.05s ->   375.85s] And if you guys don't know how to find ATR, very simple.
+[  375.93s ->   376.91s] Right-click like you did earlier.
+[  376.91s ->   382.47s] Go to edit studies, and then you just type in ATR here, and you add selected.
+[  382.85s ->   384.91s] And then you'll see it show up on the right-hand side.
+[  385.37s ->   388.47s] So I'm going to move this one up so that we can get it closer, and we'll show you.
+[  389.11s ->   390.65s] So you can see right here, there's ATR.
+[  390.81s ->   392.15s] I entered around 60.54.
+[  392.51s ->   394.31s] And you can see ATR right here is around 4.
+[  394.67s ->   396.79s] I would take my entry 60.53.
+[  397.25s ->   403.11s] And if it fell by 4 points to 60.49, which would be all the way down here,
+[  403.65s ->   404.89s] then I would exit the trade.
+[  404.89s ->   408.57s] I'm expecting it to go up, but it didn't.
+[  409.01s ->   411.57s] And so therefore, I want to take the loss and exit.
+[  411.91s ->   414.29s] So now that this has pushed up, it's now officially a winner, right?
+[  414.33s ->   415.83s] It's going in the direction that I want.
+[  415.99s ->   417.25s] And so this is a good lesson for all of us.
+[  417.87s ->   420.81s] Not every trade is going to pan out the way that you want to.
+[  420.89s ->   422.87s] I'm expecting this trade, if we zoom out a little bit,
+[  423.96s ->   426.92s] after it bounced down here, I'm expecting it to go all the way up.
+[  427.02s ->   428.44s] But that's not always going to happen.
+[  428.78s ->   429.74s] The market goes up.
+[  429.74s ->   433.84s] I want to move my stop loss from here for one ATR below this candlestick.
+[  433.92s ->   435.60s] So this candlestick formed at 60.54.
+[  435.72s ->   436.66s] Now we're at 60.53.
+[  437.16s ->   438.18s] Okay, this is my stop loss.
+[  438.58s ->   440.76s] Now it went all the way up, 60.61.
+[  441.30s ->   444.72s] We subtract 4, which is around 60.59.
+[  445.66s ->   447.82s] And as it hits 60.59, then we're going to be out.
+[  448.18s ->   451.66s] And so as you can clearly see, it hits 60.59 right here at 12.35.
+[  452.30s ->   454.78s] And so when that happened, I exited the trade.
+[  455.85s ->   461.55s] And as you can see, the market then decided to kind of slow down a little bit, right?
+[  461.59s ->   463.03s] It entered this 60.53.
+[  463.11s ->   465.91s] Instead of continuing to go down, there seemed to be some buying power here.
+[  466.43s ->   469.23s] And so once we're in this area of support again, right?
+[  469.23s ->   471.49s] Well, I'm looking for a C, criteria of entry.
+[  471.67s ->   474.05s] And I saw a criteria entry at 105 Eastern time.
+[  474.05s ->   475.21s] So right on this candlestick again.
+[  475.45s ->   476.31s] There is some selling power.
+[  476.37s ->   477.93s] There's some bullish buying power right here.
+[  478.03s ->   479.71s] It broke past the high of the previous candle.
+[  479.87s ->   481.23s] I entered right here at 106.
+[  481.37s ->   485.91s] And I sold a 60.60, 60.55 credit spread right at the money.
+[  486.59s ->   487.79s] I entered around 60.56.
+[  487.99s ->   489.33s] So subtract around 3.
+[  489.67s ->   490.41s] So 60.53.
+[  491.25s ->   494.69s] Okay, and so as the market went up, move that stop loss up.
+[  494.93s ->   496.19s] It's around 60.69.
+[  496.53s ->   498.25s] So subtract 3.60.66.
+[  499.17s ->   502.13s] So right around here on this candlestick right here as I broke it.
+[  502.13s ->   505.83s] I take the profit and I got around $120, $115.
+[  506.15s ->   510.17s] And this allowed me to make $1,700 in around an hour.
+[  510.51s ->   511.69s] This tiny upstream right here.
+[  511.73s ->   512.93s] And I traded this upstream right here.
+[  513.19s ->   517.37s] You can make the argument that sure, I could have made max profit on this trade by not buying
+[  517.37s ->   517.69s] it back.
+[  517.73s ->   521.75s] And I could have just doubled down when the market came back in and went up, forms a lower
+[  521.75s ->   525.23s] high, that it continued to push it all the way down and broke past this area of support.
+[  525.55s ->   527.49s] I would take a large, large, large loss.
+[  527.49s ->   532.23s] And so I'd rather take a little bit of profit as opposed to having to take a large loss.
+[  532.69s ->   534.21s] Follow max and see where it takes you.
+[  534.53s ->   536.35s] Hopefully that's going to lead you to consistent profits.
+[  536.49s ->   541.49s] If you want to see an even easier way of setting stop losses in the max system, where you can
+[  541.49s ->   545.09s] make another $1,200 a day, make sure you guys click on this video right here.
+[  545.25s ->   549.13s] And if you guys like the content and you guys want to learn how to create our secondary income,
+[  549.43s ->   551.55s] make sure you guys like and subscribe to this channel.
+[  551.69s ->   556.33s] I'm on a mission to teach you guys how to quit your nine to five by focusing on your five
+[  556.33s ->   556.71s] nights.

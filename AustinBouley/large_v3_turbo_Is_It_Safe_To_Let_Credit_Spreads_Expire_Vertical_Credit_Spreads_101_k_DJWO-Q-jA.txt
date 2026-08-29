@@ -1,0 +1,85 @@
+[    0.00s ->     3.30s] hey guys what's up in this video I'm going to show you why it's safe to let
+[    3.30s ->     7.76s] your credit spread expire and I'm also at the end going to show you one case
+[    7.76s ->    11.76s] where it is not safe and how to prevent this so you're never stuck in that
+[   11.76s ->    15.18s] scenario alright so if you've never heard of a credit spread what a credit
+[   15.18s ->    18.54s] spread is is basically you're selling one option and buying the other as
+[   18.54s ->    22.56s] protection for the first option and what it does is it allows you to set up
+[   22.56s ->    27.76s] directional based plays or trades and it gives you a high win rate why well
+[   27.76s ->    31.42s] because let's say we pick a price we think this stock won't go let's say we
+[   31.42s ->    34.96s] don't think because it looks like let's just say just in general it looks like
+[   34.96s ->    38.44s] it's trending up this looks like a support level so let's say alright I'm
+[   38.44s ->    42.86s] gonna sell this level right here the the 405 level okay so I'm gonna sell the
+[   42.86s ->    47.00s] first option up at 405 it's gonna be a put option then I'm gonna buy the one
+[   47.00s ->    51.16s] below it right here okay cool this is what my levels would be if I were to sell
+[   51.16s ->    56.02s] a put credit spread right here which means that I make money by the end of
+[   56.02s ->    61.36s] expiration for this spread if the stock is above this first line if it's above
+[   61.36s ->    65.32s] this line I get to keep all the money they gave me and so that's how a credit
+[   65.32s ->    69.74s] spread works but now the question is is it okay to let my credit spread expire
+[   69.74s ->    75.04s] I'm gonna explain three scenarios here number one the option or the spread
+[   75.04s ->    80.14s] expires out of the money meaning that let's say it's expiration day and the stock
+[   80.14s ->    83.78s] is trading right here the stock is trading right here which is above this line
+[   83.78s ->    87.98s] then you can let it expire why well because this is going to expire
+[   87.98s ->    91.16s] worthless and this is going to expire worthless each of these options
+[   91.16s ->    95.54s] contracts price right here are going to expire worthless which means that you are
+[   95.54s ->    98.72s] not responsible for anything you don't have to give anybody shares you're not
+[   98.72s ->   103.70s] giving you anything they're just gone these contract expire they are done and so
+[  103.70s ->   107.60s] nothing has to be handled here scenario number two so that means in scenario and
+[  107.60s ->   112.80s] which is just just to clarify and scenario number one if the stock at expiration
+[  112.80s ->   117.02s] closes above this stock price then you're fine nothing happens it's safe to let it
+[  117.02s ->   124.82s] expire okay number two if the stock closes on expiration day below both of these then
+[  124.82s ->   131.36s] guess what it's okay to let it expire why well because if you let a stock go below
+[  131.36s ->   135.86s] here this is what's going to happen if it goes below both of your options both this one
+[  135.86s ->   141.32s] and this one if it goes below both those and closes on expiration then this one is
+[  141.32s ->   146.00s] going to get executed which means you're going to be responsible if it's a put
+[  146.00s ->   150.62s] credit spread to give someone or this or to sell shares at a certain level and so
+[  150.62s ->   155.60s] because of that because you're selling shares at a certain level there's a lot of
+[  155.60s ->   159.56s] risk but that's why you bought the one below it you bought this option which gives
+[  159.56s ->   163.16s] you the right to buy shares so in this one you're selling shares in this one
+[  163.16s ->   167.24s] you're buying they offset each other you experience the max loss as shown when you
+[  167.24s ->   171.40s] set up the trade and then it's fine to let expire why because this one is
+[  171.40s ->   174.68s] protecting that one there's nothing you need to you you need to worry about so in
+[  174.68s ->   180.68s] scenario number two if the stock closes below both of your options it's a safe
+[  180.68s ->   185.30s] to let it expire because nothing's going to happen because they protect each
+[  185.30s ->   189.80s] other now this is the scenario that I was talking about scenario number three
+[  189.80s ->   194.00s] where you can run into a lot of trouble now again this is you've seen YouTube
+[  194.00s ->   199.16s] videos there is one that says $30,000 loss on a $1 wide credit spread and this
+[  199.16s ->   203.42s] is what they're talking about heart first off hardly ever happens the very rare
+[  203.42s ->   206.48s] case but I want to show you how to protect yourself from it just in case
+[  206.48s ->   210.86s] you're starting to experience this okay so scenario number three one was it
+[  210.86s ->   215.18s] close above these levels to it close below these levels so number three is
+[  215.18s ->   220.28s] between these levels if the stock is trading in between or on expiration day
+[  220.28s ->   223.58s] about to close between these levels that's where you can experience a
+[  223.58s ->   228.08s] problem why is this well let's say it closes in between that means the one
+[  228.08s ->   231.70s] below it this option this option right here at market close will expire
+[  231.70s ->   235.82s] worthless because it is out of the money it expires worthless so there's no
+[  235.82s ->   240.38s] protection but now you're still responsible for this option because it is
+[  240.38s ->   245.48s] is in the money which means that it can be executed the reason why this hardly
+[  245.48s ->   249.32s] ever happens is because unless you have a super widespread most things don't
+[  249.32s ->   253.10s] fall trade in between these dollar ranges or at least when I'm trading a
+[  253.10s ->   259.76s] credit spread but also when it does the person who bought the spread from you or
+[  259.76s ->   265.04s] bought this option from you pay you some money so it's only advantageous for
+[  265.04s ->   269.18s] them to execute this option if it's down quite a bit and so it has to be like
+[  269.18s ->   272.84s] roughly in the middle near this low for it to actually happen which seems to not
+[  272.84s ->   278.36s] happen often however that nightmare case can happen you can be on the hook for
+[  278.36s ->   282.26s] thirty thousand dollars or more when it expires in the middle so let me tell
+[  282.26s ->   288.56s] you how to protect yourself if it is expiration day expiration day afternoon
+[  288.56s ->   294.92s] towards market close sometime in that ending day of expiration if the stock is
+[  294.92s ->   298.68s] trading in between this level and looks like it may close between this level
+[  298.68s ->   304.62s] what you can do is you simply buy the credit spread back you typically get to
+[  304.62s ->   308.94s] because of theta decay get to buy it back at a cheaper price if not you're
+[  308.94s ->   312.48s] taking a loss but it's not going to be your max loss which would be if you let it
+[  312.48s ->   317.22s] expire so either way it's gonna help you come out more positive whether you're
+[  317.22s ->   321.18s] losing less or actually somebody making money just depends on where on where you
+[  321.18s ->   326.14s] bought it's just safest if the stock looks like it's about to expire in the
+[  326.14s ->   331.84s] middle of credit spreads to buy that credit spread back that so that are those
+[  331.84s ->   335.50s] are your three scenarios number one if the stock closes above it's safe to let
+[  335.50s ->   340.00s] expire number two if it closes below it is safe to let expire and number three if
+[  340.00s ->   344.68s] it's in the middle it's not the safest but you could let it expire most
+[  344.68s ->   348.08s] companies will handle it fine but if you want to be extra safe you can buy back
+[  348.08s ->   352.36s] your credit spread and that's the way to get around that alright guys I hope you
+[  352.36s ->   356.14s] enjoyed this video if you enjoyed it and you like credit spreads make sure to
+[  356.14s ->   359.08s] smash that subscribe button and the thumbs up button if you want to learn
+[  359.08s ->   364.06s] about the exact strategies I use to have a 95% win rate on credit spreads while
+[  364.06s ->   369.70s] collecting 15 to 20 cents then again you can click the link below and the end in
+[  369.70s ->   373.48s] the description I have all my strategies away for free alright guys see you in
+[  373.48s ->   376.26s] the next video

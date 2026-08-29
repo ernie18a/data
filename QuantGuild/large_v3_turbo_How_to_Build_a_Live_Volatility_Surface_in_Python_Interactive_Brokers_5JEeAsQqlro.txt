@@ -1,0 +1,555 @@
+[    0.46s ->     7.84s] Hey guys, Roman here, quantitative researcher and trader, founder of Quant Guild. I have a
+[    7.84s ->    15.62s] really cool one for you today. We're going to be building a live implied volatility surface
+[   15.62s ->    24.92s] using Python and Interactive Brokers API. What you're seeing here is the final product. This
+[   24.92s ->    30.92s] is going to plot in real time for whatever name we would like. In this case, we're using the
+[   30.92s ->    39.72s] SPY ETF, the implied volatility surface, and the front month SKU, in this case, for zero DTE
+[   39.72s ->    47.74s] options. And this, of course, is going to update in real time as new quotes flow in. We can use the
+[   47.74s ->    53.22s] implied volatilities supplied by Interactive Brokers, or we can back them out using the Black
+[   53.22s ->    60.88s] Scholz model on our own. And of course, we can use these surfaces to calibrate our stochastic models
+[   60.88s ->    67.52s] and inform our options trading decisions. Now, there's certainly a lot of financial mathematics
+[   67.52s ->    74.10s] that goes into the volatility surface, understanding it and its construction. If you're looking for a
+[   74.10s ->    80.08s] place to learn all of the necessary probability, statistics, mathematics, finance, and of course,
+[   80.08s ->    86.46s] financial mathematics to understand the volatility surface for trading and market-making roles,
+[   86.86s ->    93.48s] check out quantguild.com. In any case, we'll start with a brief discussion of what the volatility
+[   93.48s ->   100.48s] surface actually is and what it's made of before we dive into the code for this live build.
+[  100.48s ->   106.40s] So, the volatility surface itself, what are we looking at? Well, we are looking at effectively
+[  106.40s ->   115.78s] implied volatilities indexed by strike price and maturity. But what are these strike prices for?
+[  115.92s ->   122.34s] They're for European exchange-listed options. In this case, I'm looking at out-of-the-money calls,
+[  122.44s ->   128.22s] that's going to be anything above the at-the-money strike price, and out-of-the-money puts,
+[  128.22s ->   135.92s] everything below the at-the-money strike price. We're also indexing by time to maturity. That's
+[  135.92s ->   142.70s] what makes it a three-dimensional plot. We have a zero day to expiration here, then we have a one day,
+[  142.92s ->   149.04s] and we're going to continue to go down the line. We're allowed to specify this grid as anything we
+[  149.04s ->   156.88s] would like. But I want you to notice this skew here. You'll notice that for options expiring on
+[  156.88s ->   164.60s] the same day, expiring today, we have different implied volatilities, even though the absolute
+[  164.60s ->   171.32s] move up or down away from the at-the-money strike price is the same. Why is this the case? Well,
+[  171.32s ->   179.56s] this is the smile that our stochastic models are trying to fit. Effectively, downside protection
+[  179.56s ->   187.04s] is priced more. Traders are requiring a higher implied volatility in the Black-Scholes model
+[  187.04s ->   194.76s] to reproduce the equilibrium price for that contract. And you'll notice the upside is priced
+[  194.76s ->   203.14s] lower. This is effectively what contributed to the 1987 crash after the Black-Scholes model was
+[  203.14s ->   208.74s] initially developed, and then the race to develop all of these models that can effectively fit this
+[  208.74s ->   216.28s] skew. We see in 94, we have the local volatility model. We also have the discrete time version of it.
+[  216.54s ->   222.00s] We have the Heston model, a stochastic volatility that looks to fit this skew, so on and so forth.
+[  222.00s ->   229.92s] But what is this chart on the right here? Well, this is effectively a slice of the volatility
+[  229.92s ->   236.68s] surface. Instead of just plotting all of the slices here, we're going to be just looking at this one
+[  236.68s ->   245.28s] slice for zero DTE options. That is what produces this chart here on the right. And we're just using a
+[  245.28s ->   254.62s] simple linear interpolation between strike prices. There are a lot of ways to improve this project.
+[  254.62s ->   260.62s] You can add stochastic models. You can improve the interpolation. You can even calibrate your
+[  260.62s ->   266.82s] stochastic models to extrapolate exotic prices as an exercise. There is so much you can do to turn this
+[  266.82s ->   273.08s] into a live trading engine to inform options trading decisions. But of course, we are going to focus
+[  273.08s ->   279.80s] primarily on building this live volatility surface in this video. If there's interest in the future,
+[  280.26s ->   287.06s] maybe we can create some extensions for calibration and even volatility trading. But certainly let me
+[  287.06s ->   292.70s] know in the comments below if there would be interest in that. Now, since this is a quant build,
+[  292.78s ->   297.08s] we're going to be writing every single line of code together from scratch. I'll explain what
+[  297.08s ->   302.20s] everything does and the intended functionality. I certainly encourage you to follow along. That is
+[  302.20s ->   308.18s] how you can learn the absolute most. But if you're just looking to build and run this project on your
+[  308.18s ->   314.18s] own or create your own extensions right away, I can't blame you, which is why I will leave a link to
+[  314.18s ->   320.50s] the source code in the description below. And I'll also post it to the quant guild library where you can
+[  320.50s ->   328.06s] find all of my quant builds and source code before you build and run this application on your own.
+[  328.06s ->   335.92s] I will make a note about the trader workstation or the IB gateway, however you choose to connect to
+[  335.92s ->   341.20s] interactive brokers on your own. You will need an interactive brokers account to build and run this
+[  341.20s ->   346.14s] project. I will leave a link in the description below to get started with them. I highly recommend
+[  346.14s ->   351.80s] them and their API. I've been using them for well over 10 years at this point. But if you're looking
+[  351.80s ->   359.10s] to connect to the trader workstation to produce this live volatility surface based on the source code
+[  359.10s ->   365.64s] that I provide you in the description, you must go to configure and then you will pull up your
+[  365.64s ->   374.26s] account settings window. You can then head on over to API settings, enable active X and socket clients,
+[  374.26s ->   380.14s] and then you can disable the read only API if you're looking to execute trades and then ensure that
+[  380.14s ->   387.38s] the socket port is set correctly. Now, also, when it comes to volatility, you can look up in your
+[  387.38s ->   394.78s] settings via the search bar up here, volatility and analytics. Make sure if you're using interactive
+[  394.78s ->   402.36s] brokers supplied units of volatility that they are annualized, not daily. This is going to be
+[  402.36s ->   409.42s] important because if you are scaling annual units twice, you are going to be getting some massive,
+[  410.00s ->   416.16s] massive volatilities. So that is what I will say if you're looking to run the source code right away. In
+[  416.16s ->   421.48s] any case, if you're looking to follow along, do make sure you are configured in this way as well. And
+[  421.48s ->   427.96s] then you'll be ready to get started. All right, here we are in VS code. Before we get started, and really with
+[  427.96s ->   434.60s] any project, you want to think about what it is you need to produce the final result from an
+[  434.60s ->   441.52s] architectural standpoint. And what I mean by that is we need some data feed, some live data feed. Our
+[  441.52s ->   448.54s] solution for that is interactive brokers. We're going to need to produce the 3D surface itself,
+[  449.02s ->   457.70s] strikes and maturities. How do we get those? We can't just hard code them. That's the lazy man approach.
+[  457.70s ->   464.78s] But what's the problem? Tomorrow, the zero DTE expiration is unusable. There are no options to
+[  464.78s ->   471.90s] quote because those options expired. What about the strike prices if we hard code those? Well, the price
+[  471.90s ->   478.24s] of any stock or ETF, anything we're trying to produce the implied volatility surface of, is certainly going
+[  478.24s ->   485.70s] to change over time. When we run this application, we want it to produce the current implied volatility
+[  485.70s ->   491.88s] surface for a range of moneynesses in terms of the strike prices and a range of maturities that are
+[  491.88s ->   499.66s] relevant. And that is what we are going to do within this particular build. We're going to be solving those
+[  499.66s ->   505.18s] problems along the way. And that, of course, is really what these quant builds are all about. To show
+[  505.18s ->   510.92s] you some examples of how you would go about building these projects from scratch to go about solving the
+[  510.92s ->   517.34s] problems that you are going to find along the way. So let's get started with some imports. We're going
+[  517.34s ->   522.38s] to need some packages to build this application and, of course, the associated visualizations.
+[  522.66s ->   528.16s] We're going to start with threading in order to be able to make API calls. We're going to import time.
+[  528.24s ->   534.38s] We're dealing with a live dashboard, so we're going to want to display the current time, maybe even times
+[  534.38s ->   542.68s] of updates. We'll also have pandas for helping us handle some data frames. That is, as we receive data
+[  542.68s ->   548.44s] from Trader Workstation, we need some place to put it, maybe even to look it up by strike price and
+[  548.44s ->   556.66s] maturity. We're going to use NumPy for numerical operations, working with the grid, maybe even
+[  556.66s ->   564.36s] interpolation. And we also need components for visualization. So I'm going to import matplotlib.pyply,
+[  564.36s ->   573.30s] as plt. I'm also going to import 3d axes. So I'll say from mpltoolkits.3dplot, we're going to
+[  573.30s ->   582.66s] import axes 3d, and we'll also add a button. So I'm actually going to import a widget from matplotlib,
+[  583.02s ->   589.94s] and this is going to allow us to lock the volatility surface from updates. So when I click that lock
+[  589.94s ->   596.52s] button, I can explore the implied volatility surface at that particular point in time without
+[  596.52s ->   601.52s] having to worry about it updating on me, if I wanted to investigate a particular portion of it,
+[  601.88s ->   607.06s] so on and so forth. Now, since we're using Interactive Brokers to get our data, we're going
+[  607.06s ->   614.40s] to need to import some things from the Interactive Brokers IB API package as well, specifically eClient,
+[  614.40s ->   623.06s] a wrapper, and of course, the contract. So I'm going to say from ibapi.client, import eClient. This is how
+[  623.06s ->   629.38s] we're going to be making requests to the server. And this is how we can request a connection, we can
+[  629.38s ->   636.32s] request data, we can request our strike prices and maturities. But where is the server going to send
+[  636.32s ->   642.40s] that information back? Well, it's going to send it back to us in the wrapper. So we're going to say
+[  642.40s ->   650.44s] from ibapi.wrapper, import eWrapper. And now we have this nice dynamic where eClient is going to send
+[  650.44s ->   659.58s] requests to the server, where does it send it back to the eWrapper. We also need from ibapi.contract,
+[  659.70s ->   666.52s] the contract module. This is how we can specify what instruments we are going to be getting data for.
+[  666.52s ->   672.44s] In this case, we're going to be looking at the SPY ETF and the subsequent volatility surface.
+[  672.70s ->   676.84s] The last thing we're going to do before we build the core functionality, the main class of this
+[  676.84s ->   684.80s] application is change maplotlib to dark mode. I'll say plt.style.use. We're going to use a dark
+[  684.80s ->   691.50s] background. You're of course free to use whatever style you would like. Now let's build out the main
+[  691.50s ->   700.96s] class. I'm going to say class live surface app, and we are going to make this a subclass of eClient
+[  700.96s ->   707.20s] and eWrapper. If we recall, eClient is going to allow us to request data from the server,
+[  707.46s ->   713.48s] and eWrapper is going to be the place to receive it. All we're saying is that the live surface app
+[  713.48s ->   722.26s] is going to be an implementation of both. We can both send and receive data. Okay, let's go ahead
+[  722.26s ->   728.66s] and create this constructor now for the live surface app. I'm going to say def init, and in the
+[  728.66s ->   735.58s] constructor, we of course have self, but now I'm actually going to initialize the parent constructor
+[  735.58s ->   746.91s] eClient.client.init, and I'm going to use as the eClient and wrapper for that particular superclass
+[  746.91s ->   756.11s] constructor, self and self. That's because eClient is initialized by a client and a wrapper. This is
+[  756.11s ->   763.49s] effectively telling this superclass, hey, the live surface app is going to be the one both requesting
+[  763.49s ->   770.47s] the data. That is our eClient implementation, and it's going to be receiving data. That is our
+[  770.47s ->   779.16s] eWrapper implementation. So that is the main initialization of the API client itself. Now we
+[  779.16s ->   785.12s] can go about constructing some necessary variables to store data once we receive it from the server.
+[  785.24s ->   791.26s] So the first thing we're going to do is create a dictionary for implied volatilities. This is going
+[  791.26s ->   798.30s] to be based on the request ID. So we are going to create an implied volatility request from the
+[  798.30s ->   806.52s] server. That request has an ID. Each ID is going to map to a volatility. But how do we map it to a
+[  806.52s ->   816.02s] strike price and expiration? Well, we're also going to create a map of request IDs to a tuple of strike
+[  816.02s ->   823.90s] prices and expirations. Now we actually need a list for our expirations and strike prices. I'll say
+[  823.90s ->   830.88s] self.expirations is equal to an empty list. Self.strikes is equal to an empty list. And we need
+[  830.88s ->   836.82s] to figure out a way to populate these dynamically based on the instrument that we're looking to
+[  836.82s ->   845.01s] construct a surface for. We're going to start with some placeholder variables for the spot price.
+[  845.01s ->   851.01s] I'll set it equal to zero. You could also set it equal to minus one if you want a non-positive
+[  851.01s ->   862.51s] value. We can also do self.underlying contract ID is equal to zero. This is going to be the variables
+[  862.51s ->   870.47s] that track the underlying asset state itself. And now we're going to have two specific thread events.
+[  870.47s ->   878.43s] We'll have resolved. And this is going to be a threading event. And we're also going to have
+[  878.43s ->   884.85s] a chain resolved. And this is also going to be a threading event. This is going to allow us to
+[  884.85s ->   892.07s] ensure that as we run the application and we make these requests to the server, that we are not
+[  892.07s ->   898.71s] messing up the flow of our program. And of course, the intended functionality in constructing
+[  898.71s ->   904.61s] that live surface. Now we actually get to build some functionality. We're going to start with
+[  904.61s ->   912.73s] a very simple callback function from the trader workstation called the connect act. And what
+[  912.73s ->   919.01s] this is going to do is it is going to provide evidence that we have connected to the trader
+[  919.01s ->   924.87s] workstation, IB gateway, interactive brokers, before we go about requesting data. In other words,
+[  924.87s ->   933.05s] the only way that this function is called is if interactive brokers and our clients are connected.
+[  933.29s ->   943.16s] So I will just print to the console, TWS acknowledged the connection. All right. So when we run this
+[  943.16s ->   949.32s] application, we should see that we have effectively connected to the server. Then this callback will be
+[  949.32s ->   957.60s] pings and we'll print this to the console. We also need to handle errors that is in our request. Our
+[  957.60s ->   965.80s] server may respond to us with some form of an error message. If our request is misspecified or we pass
+[  965.80s ->   971.72s] incorrect variables to a request, then we're going to need to handle that in this error function. So I'm
+[  971.72s ->   978.04s] going to say self rec ID for the particular request that there's an error in the specific error code
+[  978.04s ->   987.14s] and the error string. Now we don't need to worry about some error codes due to fractional shares,
+[  987.14s ->   994.54s] different things associated with our account. Effectively, if the error code is not in this list
+[  994.54s ->  1004.26s] of 2104, 2106 and 2158, then we have an error with one of our requests. And we're just going to go
+[ 1004.26s ->  1012.52s] ahead and print the request ID. So I'm just going to go ahead and print the rec ID. I'm going to print the error
+[ 1012.52s ->  1022.96s] code and the error string. All right. So that's how we're going to handle errors in our requests to trader
+[ 1022.96s ->  1031.72s] workstation, IB gateway, interactive brokers. Anytime we have an issue, if we specify a security incorrectly or anything
+[ 1031.72s ->  1038.02s] like that, it's going to go here, it'll print the ID for the request, the error code and associated
+[ 1038.02s ->  1043.42s] string telling us what is wrong with our request. So that's how we're going to handle errors. We're just
+[ 1043.42s ->  1049.20s] going to print it to the console. In reality, if this was a larger system, this is where you would handle
+[ 1049.20s ->  1056.94s] those errors more carefully to ensure that your system doesn't just explode when a request is denied
+[ 1056.94s ->  1064.34s] or you receive stale quotes, so on and so forth. Anytime this callback function or really it's a
+[ 1064.34s ->  1072.70s] callback method is hit from the server, we're going to want to be handling those errors very dynamically
+[ 1072.70s ->  1079.50s] in some form of a live trading system. But in this case, this will suffice for the project.
+[ 1079.50s ->  1090.48s] We now need a callback method to handle contract details. And this is going to be for our underlying.
+[ 1090.64s ->  1096.06s] So if I want an implied volatility surface for SPY, I need to handle those contract details. So I'll say def
+[ 1096.06s ->  1104.62s] contract details. This is going to take, of course, a request ID, and it's going to return the contract
+[ 1104.62s ->  1110.70s] details themselves. So when the server responds, it'll give me back that request ID. And of course,
+[ 1110.70s ->  1116.38s] the contract details, I should probably specify it as contract details. And now I can just set the
+[ 1116.38s ->  1125.96s] underlying contract ID to contract details dot contract dot ID or con ID. And this is effectively
+[ 1125.96s ->  1131.20s] going to tell me the underlying that is going to produce then, of course, all of the relevant
+[ 1131.20s ->  1137.68s] options contracts. And we're going to fetch then the strikes and the expirations dynamically.
+[ 1137.68s ->  1144.28s] Now we've effectively resolved this particular call. We need this before we construct the
+[ 1144.28s ->  1149.92s] volatility surface. So I'm going to go back to that thread events. I'm going to say set.
+[ 1149.92s ->  1160.98s] All right. And anytime that we set this flag to true, all threads waiting for it to true will be
+[ 1160.98s ->  1168.08s] effectively awakened released. So if threads are waiting, once this flag is true, there's not going to be
+[ 1168.08s ->  1177.22s] any blocking. All right. Now, in order to construct our strikes, what do we need? Well, we have our
+[ 1177.22s ->  1184.64s] contract here for the underlying. We need the spot price that it's trading at. We don't want to just
+[ 1184.64s ->  1192.98s] query strikes way too low or way too high from where the current at the money options are sitting.
+[ 1192.98s ->  1198.84s] So we need the spot price. And that's why we're going to implement the tick price method. I'm going
+[ 1198.84s ->  1206.60s] to say def tick price. And we're going to take as a response from the server, rec ID, tick type,
+[ 1206.80s ->  1217.08s] we're going to take the price and the attribute. Now, if the request ID is equal to 999, and this can
+[ 1217.08s ->  1227.36s] just be a fixed ID for our purposes here, and the tick type is in four or nine, and the price is greater
+[ 1227.36s ->  1234.76s] than zero, what have we just received? Well, we've received the spot price for our underlying asset.
+[ 1234.76s ->  1239.88s] When we actually go about querying this, we are going to query it such that we are making a request
+[ 1239.88s ->  1246.04s] ID of 999. There's a lot of different ways to do this. You could start at one, increment up from there.
+[ 1246.04s ->  1252.06s] You can make this some fixed arbitrarily large value that you'll never actually get to. I'll leave that
+[ 1252.06s ->  1261.02s] up to you. In this case, I'm just going to use 999 self dot spot price is equal to price. This is how
+[ 1261.02s ->  1269.94s] we're going to construct our grid of strikes. Now, we need to actually go about receiving the list of
+[ 1269.94s ->  1278.24s] strikes and expirations for this particular asset that we have contract details for. How do we do
+[ 1278.24s ->  1287.54s] that? Well, we are going to use def security definition option parameter as a callback and to
+[ 1287.54s ->  1294.56s] avoid just auto completing the whole thing. I'll say definition option parameter. Let's talk about what
+[ 1294.56s ->  1302.00s] we're actually receiving from the server here. So we are receiving effectively the request ID for the option
+[ 1302.00s ->  1308.56s] that we are just sending a request for information about. We are going to get the exchange, the underlying
+[ 1308.56s ->  1321.92s] contract ID, which we know what it is. It's going to be this guy here. We have the trading class, the multiplier,
+[ 1321.92s ->  1332.34s] the expirations, and of course the strikes. All right. If the exchange is equal to smart, then what we're
+[ 1332.34s ->  1342.67s] going to do is set the expirations themselves in our live surface app to a sorted list of the
+[ 1342.67s ->  1355.01s] expirations that the server returns. And we're going to do the same for the strikes. Okay. Then in the
+[ 1355.01s ->  1363.94s] same way that we set the resolved event, we're going to do the same for the chain. All right. So
+[ 1363.94s ->  1368.14s] there's not going to be any blocking from that request. Once we've received the data, if we don't
+[ 1368.14s ->  1374.64s] have this, the program can't continue to flow. We can't construct that volatility surface without
+[ 1374.64s ->  1384.34s] waiting for these events to resolve. All right. So now we're going to handle the implied volatility
+[ 1384.34s ->  1392.88s] surface data itself. What we're going to do is in the tick option computation callback method,
+[ 1392.88s ->  1399.88s] we are going to receive not just, of course, the request ID, the tick type, the tick attribute,
+[ 1400.56s ->  1409.24s] the implied vol, the delta, the option price, the dividends, the gamma, the vega, the theta,
+[ 1409.24s ->  1417.66s] and the underlying price. But we are going to map the implied volatility to our IV dictionary.
+[ 1418.46s ->  1426.30s] What is a really cool exercise and extension? Well, that would be to take the option price
+[ 1426.30s ->  1432.70s] and the associated parameters for the Black-Scholes model. Remember, five parameters in a Black-Scholes
+[ 1432.70s ->  1438.98s] model, volatility, strike, underlying price, time to maturity, and of course, a proxy for the risk-free
+[ 1438.98s ->  1448.15s] rate. You can try to produce the implied volatility on your own. They should be the same. All right.
+[ 1449.79s ->  1455.15s] Now, what we're going to do here is if the tick type is equal to 13, then we are going to be
+[ 1455.15s ->  1463.43s] getting the model's implied volatility. So tick type equals 13 and implied volatility is not none.
+[ 1463.43s ->  1470.69s] We have effectively received the model implied volatility from TWS, interactive brokers. And this
+[ 1470.69s ->  1478.94s] is going to be the Black-Scholes implied volatility. Self.ivdict, we are going to take the request ID
+[ 1478.94s ->  1486.76s] and use it as the key for this particular implied volatility that we have just received.
+[ 1486.76s ->  1495.74s] And that is going to do it for our live surface app. We are able to make those requests out of the box.
+[ 1495.74s ->  1503.34s] That is a part of the e-client module. This is how we request information from the server. We can request
+[ 1503.34s ->  1511.84s] contract details, the price of our underlying. We can request option parameters. We can request
+[ 1511.84s ->  1520.76s] a flow of option data for implied volatility. This is where all of those requests are going to respond
+[ 1520.76s ->  1530.78s] to. These are implementations of methods of the e-wrapper class. And that is how the interactive
+[ 1530.78s ->  1536.96s] brokers API functions. We have trader workstation or IB gateway running. We've configured it such that we
+[ 1536.96s ->  1544.06s] can connect our client and we have e-client and e-wrapper to request and receive data. Let's now
+[ 1544.06s ->  1549.62s] move to building some wrappers to actually implement this live surface app class that we just built.
+[ 1549.86s ->  1556.90s] We're going to start with one to just run the main loop for processing messages within the live
+[ 1556.90s ->  1562.04s] surface app between our client and the trader workstation, IB gateway, interactive brokers.
+[ 1562.04s ->  1568.54s] We'll say def run loop. We'll take an app as an input. This is just an instance of our live surface
+[ 1568.54s ->  1577.08s] app and we will call app dot run. We'll do the same for actually starting the app. And here we're going
+[ 1577.08s ->  1584.38s] to have a default symbol of SPY. Just using an ETF here, you're free to use, of course, anything you
+[ 1584.38s ->  1591.16s] would like. And within this start app wrapper, we're going to go ahead and create a new live
+[ 1591.16s ->  1599.86s] surface app. And we're going to look to connect to the trader workstation at the local host and the
+[ 1599.86s ->  1607.42s] port that we specified. In this case, I'm using the paper trading port 7497, as you saw at the start of
+[ 1607.42s ->  1614.02s] this video in the config. And the client ID for this particular client, I'm going to list as 35.
+[ 1614.44s ->  1619.98s] You can list it as zero. You can list it as one. If you have a master client ID, you can match it to
+[ 1619.98s ->  1626.42s] that as well. It is whatever you choose to do for your particular interactive brokers setup.
+[ 1627.42s ->  1633.04s] Now we need to create the API thread. This is going to be equal to threading dot thread.
+[ 1633.04s ->  1641.68s] The target is going to be the run loop. That is the wrapper that we created here. What we're going
+[ 1641.68s ->  1651.72s] to do is set args equal to the app that we just created above here. So that will be our app. And
+[ 1651.72s ->  1661.83s] we will also have pass through set to trip. All right, we're going to start that thread. And we are
+[ 1661.83s ->  1668.37s] going to wait for that thread to initialize. Okay. So effectively, we are running this application
+[ 1668.37s ->  1674.57s] on this API thread here. And to ensure that we can continue with the flow of our execution,
+[ 1674.57s ->  1687.89s] we have established it in this way. And it looks like I'm missing a comma here. Okay. So this is our
+[ 1687.89s ->  1694.27s] main thread for the API communication. This is the live surface app, we can now build the contract that
+[ 1694.27s ->  1706.60s] we're going to specify in the start app wrapper. So we're going to say underlying is equal to contract.
+[ 1707.56s ->  1713.72s] And we're now going to specify the contract parameters. So again, I'm using spy, you could
+[ 1713.72s ->  1721.48s] use whatever you like, I'm going to use underlying dot symbol to be the symbol that I have in the start
+[ 1721.48s ->  1733.98s] app function as an input. And the security type in this case is going to be stock. The exchange is
+[ 1733.98s ->  1744.28s] going to be smart. And the currency is going to be USD. All right. Now we actually need to make some
+[ 1744.28s ->  1750.16s] requests before we request options data. What do we need? We need underlying data so we can construct
+[ 1750.16s ->  1757.58s] an appropriate grid of moneynesses and maturities via the call back method for the option security
+[ 1757.58s ->  1764.66s] definitions themselves. So I'm going to say app dot rec contract details. I'm going to call this rec ID
+[ 1764.66s ->  1772.82s] one. And I'm going to request contract details for the underlying. This is going to give me what this is
+[ 1772.82s ->  1779.42s] going to give me the contract ID. Okay, we can't just use spy. If we say spy, are we talking about the
+[ 1779.42s ->  1785.04s] stock itself? Are we talking about something else an option on that another instrument that is a
+[ 1785.04s ->  1795.96s] derivative of the spy ETF, it's very important that we have the details specifically for that ETF. So
+[ 1795.96s ->  1801.70s] can we function until we receive that? No. So I'm going to set resolve to wait, and the timeout is
+[ 1801.70s ->  1812.40s] going to be five, we're going to do the same now for requesting the spot price of that contract. If you
+[ 1812.40s ->  1821.82s] recall, the request ID that I specified for the underlying live data feed is 999. So to make sure
+[ 1821.82s ->  1829.74s] that that matches, when I request data in this start app wrapper, I am going to say app dot rec market data.
+[ 1829.74s ->  1841.10s] And I'm going to set the request ID to 999. I'm requesting it for the underlying contract. And I
+[ 1841.10s ->  1848.56s] have built the underlying contract object here. So I passed that through. Now I'm also going to pass
+[ 1848.56s ->  1856.48s] for the generic tick list and empty string. I'm not looking for a snapshot, I am looking for a live
+[ 1856.48s ->  1864.94s] data feed. And I'm going to set the rest of the parameters to empty set. So now while the app dot spot
+[ 1864.94s ->  1871.42s] price is equal to zero, or if you set it to negative one or anything else to indicate that you don't have
+[ 1871.42s ->  1878.92s] data, or you're operating with stale quotes, you set that equal to that here, we used zero above. While we
+[ 1878.92s ->  1886.00s] are operating with a zero spot price, we are just going to sleep. Point one, this is going to wait
+[ 1886.00s ->  1893.96s] effectively until we get that spot price. Once we receive it, spot will be equal to app dot spot price.
+[ 1895.26s ->  1905.66s] All right. Now that we have this particular spot price, we are going to request the options data for
+[ 1905.66s ->  1918.43s] this particular contract are underlying. To do that, I am going to say app dot rec security def option
+[ 1918.43s ->  1924.73s] parameters as we defined above in the callback method. This request ID can be two, that's totally
+[ 1924.73s ->  1931.03s] fine. We're just going to increment it from one, the symbol that we are looking to receive data for
+[ 1931.03s ->  1939.79s] is the symbol that we have at the top of our wrapper here, start app, it's the input. Then we're going
+[ 1939.79s ->  1948.13s] to leave the next few parameters blank, we'll specify this is a option written on stock. And we have,
+[ 1948.13s ->  1957.46s] of course, the relevant underlying contract ID. All right, we need to wait for this data. So I'm going
+[ 1957.46s ->  1968.22s] to set chain resolved now to wait, and the timeout will be five. All right. Now notice, in both of these
+[ 1968.22s ->  1976.64s] cases, we request data. And we are setting that threading event to wait. But when the server actually
+[ 1976.64s ->  1983.24s] responds, what happens? We set it, and then we have passed through. So we're just going to continue on with the
+[ 1983.24s ->  1993.06s] program. That's true for both of these. All right. So we're going to get all of these expirations,
+[ 1993.06s ->  1999.68s] we're going to get all of these maturities. But we don't want to use all of them, we don't want to
+[ 1999.68s ->  2005.70s] center our surface on deep out of the money puts deep out of the money calls, we want to be about the
+[ 2005.70s ->  2013.54s] money at the money. And that's exactly why we requested the spot price. This is where we solve that
+[ 2013.54s ->  2020.30s] problem. And this is exactly what it looks like to do it dynamically. Now that we have all of the live
+[ 2020.30s ->  2028.40s] parameters, strikes, and maturities, we can curate it based on the spot price to produce the implied
+[ 2028.40s ->  2038.48s] volatility surface. Today is equal to time dot, we are going to string format time, we are going to have
+[ 2038.48s ->  2050.00s] year, month, day, and the target expirations, these are going to be E for E and app dot expirations.
+[ 2050.36s ->  2057.86s] Remember, we have already stored the expirations after we've requested the option parameters here.
+[ 2058.18s ->  2066.36s] So for each expiration in that list, if E is greater than or equal to today, we are going to get a list,
+[ 2066.36s ->  2074.74s] this is going to filter all of the expirations for us by today. So this is going to ensure that we
+[ 2074.74s ->  2080.66s] don't have any expirations from yesterday, so on and so forth. These are only live options,
+[ 2081.08s ->  2087.94s] nothing that's expired. Is it sorted? Well, yes. If we go back to our callback method, if you recall,
+[ 2088.54s ->  2094.84s] we sorted both the strikes and the expirations. So now I'm going to use slice notation and just get the
+[ 2094.84s ->  2103.50s] first five. Okay. Yes. I typed six. We go up to, but not including. Okay. I'm going to do the same
+[ 2103.50s ->  2114.62s] for the target strikes. I'm going to say S for S in app dot strikes. If the spot times 0.98 is less than
+[ 2114.62s ->  2121.98s] or equal to S, which is less than or equal to the spot times 1.02. What is this going to do?
+[ 2121.98s ->  2128.96s] This is going to curate my strikes. It's going to make sure that I'm not going to be pulling strikes
+[ 2128.96s ->  2135.22s] way too deep out of the money, way too deep out of the money on really either side of the current spot
+[ 2135.22s ->  2142.02s] price out of the money puts and out of the money calls. If you look to try to construct an implied
+[ 2142.02s ->  2148.86s] volatility surface way too far out, you're going to be dealing with liquidity issues and whether or not
+[ 2148.86s ->  2154.76s] you are receiving the appropriate quotes for those implied volatilities is going to be subject for
+[ 2154.76s ->  2160.58s] discussion. It's something you are going to have to work around and construct for the reason that that
+[ 2160.58s ->  2167.34s] is a separate problem and project in itself. We're just going to be using the most liquid strikes 0.98 to
+[ 2167.34s ->  2174.68s] 1.02. We have the parameters. Now we need to actually set up the live data feed for the implied
+[ 2174.68s ->  2181.40s] volatility. We need to make that request. We can't just request a volatility surface. That would be
+[ 2181.40s ->  2189.64s] very nice, but instead we have to request the implied volatility for the grid that we establish
+[ 2189.64s ->  2195.34s] and that we're going to visualize. In order to do this, we need to set a request ID that we can iterate
+[ 2195.34s ->  2202.50s] from. We know that if we set it to 1000, we can build off of that request ID. Every other request we've
+[ 2202.50s ->  2210.88s] made up to this point has had an ID less than 1000. So I'm going to say rec ID is equal to 1000.
+[ 2211.36s ->  2218.12s] Now I'm going to iterate through my expirations and strikes. I'm going to say for expiration in
+[ 2218.12s ->  2226.36s] target expirations, for strike in target strikes. This is a nested for loop. We're going to have
+[ 2226.36s ->  2234.80s] O N squared. That's the time complexity of this particular operation. But fortunately for us,
+[ 2234.80s ->  2241.06s] this isn't going to grow in an unbounded sense. We're going to have a reasonably sized set of
+[ 2241.06s ->  2247.84s] strikes and expirations to actually query. So I'm going to say opt is equal to contract. This is going
+[ 2247.84s ->  2253.28s] to be the contract for this particular set of parameters. Looks like I forgot a colon here.
+[ 2253.28s ->  2259.33s] I'm going to say opt dot symbol is equal to the symbol we provide this wrapper function.
+[ 2259.33s ->  2267.29s] The security type in this case is going to be an option. We're going to use the smart exchange.
+[ 2267.29s ->  2277.26s] And we're going to say the currency is US dollars. What is the last trade date or contract month? The
+[ 2277.26s ->  2283.68s] maturity of the expiration that is given by our loop. We're going to say opt dot last trade date or contract
+[ 2283.68s ->  2292.50s] month is equal to expiration. What is the strike? That's equal to the strike. We're iterating through
+[ 2292.50s ->  2300.54s] both of these lists. And we are going to be effectively constructing a data feed for each
+[ 2300.54s ->  2307.68s] option contract. As those option contracts quotes change, the implied volatility will be updated.
+[ 2307.68s ->  2315.60s] And that's when we are going to hit our callback method, tick option computation, and we'll store
+[ 2315.60s ->  2323.08s] the updated implied volatility and display it to the user in that nice 3D plot. And of course,
+[ 2323.14s ->  2330.68s] the 2D plot for the skew. We now need to specify the right of the options contract. Remember,
+[ 2330.90s ->  2336.64s] for the implied volatility surface, we're dealing with out of the money puts and calls. So to specify the
+[ 2336.64s ->  2342.60s] right, we need to use the spot price as our reference. Effectively, what I'm going to do here is I'm
+[ 2342.60s ->  2350.46s] going to say the option right is going to be a call if what, if the strike price is greater than or equal
+[ 2350.46s ->  2360.42s] to the spot. Otherwise, we are going to be getting a put contract. Now we can actually create this map,
+[ 2360.58s ->  2367.08s] right? We're going to create this map of the request ID to the expiration and the strike. If you
+[ 2367.08s ->  2375.10s] recall, in our ID map, we have as an input the request ID, and this will be equal to now a tuple
+[ 2375.10s ->  2383.29s] of the expiration and the associated strike. We can now use the request ID that we're iterating.
+[ 2383.45s ->  2389.37s] Remember, we're creating this nested for loop. We're iterating through request IDs. We can now go
+[ 2389.37s ->  2395.23s] ahead and actually use that request ID to make this data stream request. I'm going to say
+[ 2395.23s ->  2403.25s] app.rec market data. And I am going to use the rec ID for this iteration. I'll use the option contract
+[ 2403.25s ->  2414.14s] that I just constructed here. And I'm also going to set the particular tick tag to 106 for implied
+[ 2414.14s ->  2422.80s] volatility. And I will just use the same parameters as our previous request. And now I'm going to
+[ 2422.80s ->  2435.79s] increment the request ID and then I will also sleep very briefly. And that will allow us to create all
+[ 2435.79s ->  2445.49s] of the live data streams for the option contracts that we are specifying by this particular set of
+[ 2445.49s ->  2453.51s] strikes and expirations or maturities. What's really nice here is this is completely dynamic. If I close
+[ 2453.51s ->  2460.11s] this program and I run it again next week, I am going to rebase it at whatever the particular
+[ 2460.11s ->  2471.06s] contract or underlying is currently trading app. So that is how we establish the data streams for each
+[ 2471.06s ->  2477.02s] of those option contracts, the implied volatilities. Now we are just going to return the app itself.
+[ 2477.02s ->  2488.18s] And that will do it for the start app wrapper. We're now going to work on the plotting. The plotting is
+[ 2488.18s ->  2495.28s] going to require a few different classes. And we're going to also incorporate that idea of a locked
+[ 2495.28s ->  2501.90s] state so we can explore the surface and skew without it updating on us if we would like to lock the
+[ 2501.90s ->  2506.56s] current state. We're now going to look to build out the visual component of the application. We'll start
+[ 2506.56s ->  2512.76s] with the actual plot state whether it's locked or not. If we lock it, we can explore the volatility
+[ 2512.76s ->  2518.46s] surface and skew without worrying about it updating. When we unlock it, data is going to continue to flow
+[ 2518.46s ->  2524.72s] to both the surface and the skew. So I'll say class. We're going to call it plot state. In the
+[ 2524.72s ->  2532.36s] constructor, I really only care about creating one field and that is self.isLocked. We are going to
+[ 2532.36s ->  2539.28s] begin by setting it equal to false. We're going to let data flow freely until the user locks it. I'm
+[ 2539.28s ->  2545.84s] going to say def toggle self event. This is going to be called on a specific event. And we know what
+[ 2545.84s ->  2551.44s] that event is because we already imported it. And it's going to be a button click from matplotlib
+[ 2551.44s ->  2559.10s] widgets. So the first thing we're going to do once we call this particular method here is we are going
+[ 2559.10s ->  2565.48s] to toggle that is locked Boolean. I'm going to say self.isLocked and I want to flip it from false
+[ 2565.48s ->  2571.72s] to true or true to false. How do I do that? Well, I'm just going to get what it originally was and I'm
+[ 2571.72s ->  2577.86s] going to negate it. I'm just going to say not whatever it used to be. So if it was true, not true
+[ 2577.86s ->  2584.82s] would be false. If it was false, then not true or then not false would be true. So that is how we are
+[ 2584.82s ->  2591.24s] just going to flip it. Then I'm going to set the button label itself, which we're going to have
+[ 2591.24s ->  2597.74s] to create and I'm just going to create it globally below button label dot set text. This is going to
+[ 2597.74s ->  2608.28s] be unlock updates. If self dot is locked, else we are going to say lock updates. So this is going to
+[ 2608.28s ->  2616.02s] allow you to lock and unlock updates based on what this flag is currently sitting at. Then I'm going
+[ 2616.02s ->  2623.76s] to draw the plot. Okay. So once we click it, we are just going to draw the plot based on the current
+[ 2623.76s ->  2629.42s] data. And when we unlock it, we're just going to iteratively update it in a later function call.
+[ 2629.84s ->  2638.14s] So that's going to do it for the plot state. We're going to implement this after we build a wrapper
+[ 2638.14s ->  2649.56s] for the application plot itself. So let's go ahead and do that. Def live desktop plot. This is going to
+[ 2649.56s ->  2659.56s] take an app as an input. PLT dot I O N is going to be our basis for plotting. Fig is equal to PLT dot
+[ 2659.56s ->  2671.95s] figure. Fig size is going to be 16 by nine. And then the canvas itself, we are going to set the window
+[ 2671.95s ->  2687.39s] title to the quant guilds live volatility surface. And I'm also just going to set a face color.
+[ 2687.39s ->  2700.78s] I'll create a patch to zero B zero D zero F. All right. Keeping everything in dark mode.
+[ 2701.50s ->  2708.46s] Now I need to create the 3d plot itself to do this. I need to specify a 3d plot and a 2d plot,
+[ 2708.46s ->  2714.92s] and I need to place it on our application window in two different locations. So I'm going to specify
+[ 2714.92s ->  2720.60s] the number of rows and columns to take up and where to actually place it on the grid of our application.
+[ 2720.60s ->  2729.98s] So I'm going to say ax three D is equal to PLT dot subplot to grid. And I'm going to first set the
+[ 2729.98s ->  2736.90s] shape of the chart. I'll make it one and three. And I'm also going to give it a location of zero comma
+[ 2736.90s ->  2747.71s] zero. I'll give it a column span of two and I will make the projection 3d. All right. And for the skew
+[ 2747.71s ->  2754.99s] itself, I am going to do the same thing. Subplot to grid, I'll give it the same shape,
+[ 2755.55s ->  2760.51s] but I'm going to move it to the right. I'll make it zero comma to give it a little space in between,
+[ 2760.51s ->  2766.67s] because remember, we're spanning two columns on the 3d plot here, the column span, and the rest will
+[ 2766.67s ->  2775.52s] suffice for the skew as default. So those are going to be our subplots where we're actually going to place
+[ 2775.52s ->  2782.56s] the data in terms of a visualization. Now we can go ahead and initialize the plot state for locking
+[ 2782.56s ->  2790.18s] based on our button. So I'm going to say state is equal to plot state. And then I'm going to create
+[ 2790.18s ->  2797.86s] a button, give it some dimensions and place it on the chart. I'll say ax button is equal to PLT dot axes.
+[ 2797.86s ->  2811.20s] And I'm going to use 0.42, 0.03, 0.12 and 0.04. I'm going to create the actual button now as a global
+[ 2811.20s ->  2818.04s] variable so that we can access it here through the button label. So what I'll say is button label
+[ 2818.04s ->  2826.50s] is a global. And the button is going to be equal to a new button that we've imported from the map plot
+[ 2826.50s ->  2833.56s] lib widgets. And here I am going to specify it as the ax button that we've placed. And I'm going to
+[ 2833.56s ->  2840.58s] have it default to lock updates. This makes sense because we are defaulting to data flowing to the
+[ 2840.58s ->  2847.68s] visualization. So the button is going to allow us to lock that data flow. It is going to block the data.
+[ 2847.68s ->  2861.92s] We will set a consistent color. So it's on theme 1F2329. And the hover color is going to be just
+[ 2861.92s ->  2872.74s] slightly different to D333B, keeping the nice dark mood theme here. And now I'm going to say the button
+[ 2872.74s ->  2881.03s] label locally is equal to the button label globally. And the button label here, we are going to set
+[ 2881.03s ->  2895.62s] the color to white, set the color to white for the text and the font size. I'm just going to set to nine
+[ 2895.62s ->  2908.49s] and button dot on clicked. What are we going to do? Well, we are going to toggle the state. So I'm going to
+[ 2908.49s ->  2918.11s] say state.toggle. That is going to be what we are targeting effectively. This method here in our plot
+[ 2918.11s ->  2928.18s] state object, which we've created right here. All right, cool. So now we're going to effectively print
+[ 2928.18s ->  2937.74s] to our console that we are going to launch effectively the live implied volatility surface.
+[ 2937.74s ->  2957.98s] Okay. Now we need to construct the main logic in the chart itself and fetching the data from our
+[ 2957.98s ->  2964.10s] app. Because if you recall, the live surface app, isn't just our requests, or it's also our data
+[ 2964.10s ->  2972.04s] warehouse. And at this point we've started the app, the flow of data is already there. We've effectively
+[ 2972.04s ->  2979.66s] started the data streams for each of the options in our implied volatility surface. Now we just need
+[ 2979.66s ->  2986.36s] to get them from the dictionaries in our live surface app, and then use that information to
+[ 2986.36s ->  2991.52s] create our plots, our surface and our skew. So that's what we're going to do. I'm going to say, try
+[ 2991.52s ->  2998.90s] while true, which is going to do this indefinitely until the application closes. The current data is going
+[ 2998.90s ->  3005.12s] to be equal to an empty list. And now I'm going to effectively just get a snapshot of the current
+[ 3005.12s ->  3012.66s] implied volatility dictionary keys to iterate safely. This is just to avoid any issues or misalignment.
+[ 3012.66s ->  3023.92s] So I'm going to say rec IDs is equal to list app dot IV dict dot keys. Keep in mind, we stored in this
+[ 3023.92s ->  3032.00s] IV dictionary by request ID, the implied volatility. So we're getting the keys, which are the request IDs
+[ 3032.00s ->  3041.09s] for all of the request IDs in rec IDs. What are we going to do? Well, the IV is equal to app dot
+[ 3041.09s ->  3052.48s] IV dict for that particular request ID, the expiration and the strike is equal to the app dot ID map for that
+[ 3052.48s ->  3058.18s] particular request ID. This is what's linking everything together. If you remember, when we created these
+[ 3058.18s ->  3066.77s] dictionaries in the live surface app, we said we would be storing the implied volatility by our request ID. And we
+[ 3066.77s ->  3075.29s] would also be storing the ID map by request ID. And what that means is we can link them together using
+[ 3075.29s ->  3083.47s] that request ID. So that's effectively what we're doing here. And this was done in this loop here.
+[ 3083.85s ->  3090.71s] If you do recall, when we go here to request the market data, we give it a valid request ID.
+[ 3090.71s ->  3098.17s] And that request ID is used to store the strike and expiration. Then the server is going to respond
+[ 3098.17s ->  3105.67s] with that exact same request ID to the callback method. And that is why we're able to link them
+[ 3105.67s ->  3112.58s] together very, very easily. Because the callback method is going to have the same request ID
+[ 3112.58s ->  3118.82s] for the parameters of that particular contract that we requested at that iteration of the nested
+[ 3118.82s ->  3127.17s] for loop. Wonderful. So current data, we are then just going to append and I'm going to sort this as a
+[ 3127.17s ->  3140.41s] dictionary, the expiry as the XP, the strike as the strike, and the implied volatility as the IV.
+[ 3143.52s ->  3152.10s] Cool. So now we are going to just add some housekeeping stuff. If the length of the current data is
+[ 3152.10s ->  3159.12s] greater than 10, we are going to progress to the visualization. If it's not, we're going to say
+[ 3159.12s ->  3165.94s] there's insufficient data. Okay. So this is going to be effectively our threshold for visualization.
+[ 3169.17s ->  3179.72s] We're going to create a new data frame so that we can better work with the indices for the implied
+[ 3179.72s ->  3188.10s] volatility. I'm going to say pivot is equal to df.pivot table. And in this case, the index is going to be
+[ 3188.24s ->  3200.67s] the expiry. The columns are going to be the strike. And the values are going to be the implied
+[ 3200.67s ->  3208.83s] volatility. And we are going to sort by the index. And we are going to sort by the index on the other
+[ 3208.83s ->  3216.62s] axis as well. Okay. So effectively, what we're doing here is we are sorting the expiry and the
+[ 3216.62s ->  3225.60s] strike. And this is going to give us then a pivot table of implied volatility by what? By our expiry
+[ 3225.60s ->  3230.94s] and strike. What does that sound like? It's an implied volatility surface, right? Just in a tabular
+[ 3230.94s ->  3237.60s] format. So our goal now is to actually visualize this and raise the values on that z-axis. And we'll
+[ 3237.60s ->  3245.90s] have the corresponding indexing on the so-called x and y axes there, creating that 3D plot. So that's
+[ 3245.90s ->  3253.78s] our pivot table. In order to accomplish that, I'm going to add interpolation. Now I'm going to say pivot
+[ 3253.78s ->  3261.40s] equals pivot dot interpolate method. And we're just going to use linear interpolation here. The axis
+[ 3261.40s ->  3274.46s] will be zero. And I will say b fill and f fill. This can turn into a very interesting data imputation
+[ 3274.46s ->  3280.34s] problem very quickly. Certainly goes beyond the scope of this video starts to get into a data science
+[ 3280.34s ->  3285.42s] discussion, a financial mathematics discussion, the no arbitrage, the arbitrage free nature of the
+[ 3285.42s ->  3290.08s] implied volatility surface calendar versus butterfly arbitrage. But here, what we're doing is effectively
+[ 3290.08s ->  3294.90s] saying, Hey, we're going to interpolate. And if we're missing any values, let's just backfill and
+[ 3294.90s ->  3301.16s] forward fill. And we're going to do both because if we just backfill, we might have NAs or NAN values
+[ 3301.16s ->  3305.42s] going forward, in which case we would need to forward fill. So we're just going to do both.
+[ 3305.88s ->  3310.06s] And that is going to be the interpolated pivot table. If you don't know what interpolation is,
+[ 3310.34s ->  3316.04s] effectively, if I have two points, one here and one here to connect them, I'm going to draw a line.
+[ 3316.60s ->  3323.08s] That is linear interpolation. There are plenty of ways to interpolate. That is simply one way. And
+[ 3323.08s ->  3328.24s] this does turn into more of a data imputation problem where, you know, it turns into how do you go
+[ 3328.24s ->  3334.32s] about filling those missing values. And this is what I had even said with the illiquid strikes,
+[ 3334.50s ->  3339.28s] right? If we take a look at this range of strikes here, these are our target strikes. Once you start
+[ 3339.28s ->  3343.06s] to go further and further and further out, you're going to have some missing data issues. And you're
+[ 3343.06s ->  3349.72s] going to see, and you can test this on your own. If you make that maybe 0.5 and 1.5, then you're
+[ 3349.72s ->  3355.72s] going to have some really funky looking plots due to the way that we're handling the interpolation
+[ 3355.72s ->  3360.96s] there. It's effectively going to backfill, which of course is not going to be appropriate in some
+[ 3360.96s ->  3367.06s] cases, depending on even what's returned by the server. So I'll digress before I go down too much
+[ 3367.06s ->  3372.18s] of a rabbit hole discussing this idea of data imputation and interpolation. In any case, what
+[ 3372.18s ->  3379.28s] this is going to allow us to do is construct the surface and the skew. We don't have a continuous set
+[ 3379.28s ->  3384.18s] of strikes. We have discrete sets of strikes. So it's going to be, you know, in this case,
+[ 3384.18s ->  3388.92s] we're looking at increments of one and then another increment of one. That's the space
+[ 3388.92s ->  3396.56s] between the strikes that we are looking at in this case. So in order to draw a smooth skew
+[ 3396.56s ->  3403.56s] or a volatility surface, instead of just points in space, we have to interpolate. All right. So
+[ 3403.56s ->  3408.66s] that's what we're doing here. Otherwise we just have points. That's all an implied volatility surface
+[ 3408.66s ->  3414.00s] would be, but we're going to be interpolating here. Now we're going to create the mesh grid
+[ 3414.00s ->  3422.68s] itself for the 3d visualization, but I'm noticing here that we actually haven't included the logic
+[ 3422.68s ->  3431.46s] to not update the charts if we're locked. So what I'm going to do is I'm going to say,
+[ 3432.78s ->  3442.64s] if state dot is locked, then what are we going to do? We are going to pass. So really it's,
+[ 3442.64s ->  3449.37s] if not state is locked, then we're going to look to update everything. So that's what we're doing
+[ 3449.37s ->  3459.56s] here. And I will tab the rest of this in. All right, cool. So now we've considered the state.
+[ 3459.64s ->  3463.74s] We're not just going to arbitrarily update it indefinitely. We're only going to do that
+[ 3463.74s ->  3477.18s] if we are not currently locked. Now let's create the mesh grid. We're going to say X and Y index.
+[ 3477.18s ->  3486.93s] This is going to be equal to MP dot mesh grid. We are going to use the pivot columns and MP dot a range,
+[ 3486.93s ->  3500.02s] the length of the pivot index. All right. So this is going to give us our X and Y index. Now we can go
+[ 3500.02s ->  3507.42s] ahead and say Z is equal to pivot dot values, where Z is going to be our collection of implied
+[ 3507.42s ->  3518.04s] volatilities. All right, cool. Now we're going to save the current camera angle so that when we
+[ 3518.04s ->  3525.24s] redraw the 3d surface, it doesn't just jump back to a default position. This will be an issue
+[ 3525.24s ->  3531.52s] when you try to go and update different visualizations in three dimensions, the camera
+[ 3531.52s ->  3536.96s] angle is subject to change similar to how you can change where you're zoomed in on a 2d plot.
+[ 3536.96s ->  3542.38s] If you don't consider where the camera currently is and the chart updates, it could jump around. So
+[ 3542.38s ->  3557.47s] I'm going to say current elevation, current camera angle in general is equal to X 3d dot E L V X 3d dot
+[ 3557.47s ->  3569.16s] A Z I M. Okay. So we're going to use this for when we actually redraw the plot. So I'm going to say
+[ 3569.16s ->  3587.92s] X 3d dot clear, X 3d dot set face color, and we're going to make it 0 B 0 D 0 F X 3d dot plot surface.
+[ 3591.20s ->  3600.08s] And to plot the surface, we are going to give it X, Y index, Z, a color map. I'm going to use magma to
+[ 3600.08s ->  3612.48s] stay on the dark theme, the edge color. In this case, I'm going to choose white and I'm going to set
+[ 3612.48s ->  3627.29s] the line width to be 0.1 and have some slight opacity 0.9. Okay. Now we need to set the labels
+[ 3627.29s ->  3637.66s] and title for the three dimensional plot. So I'll say X 3d dot set Y ticks. This is going to be MP dot
+[ 3637.66s ->  3650.30s] a range, the length of the pivot index. And for the labels themselves, we're just going to use
+[ 3650.30s ->  3659.50s] the pivot index. So I'm going to say X 3d dot set Y tick labels. This is just going to be pivot dot index.
+[ 3660.56s ->  3668.24s] All right. And then we're going to set the title to be live volatility surface with the current time.
+[ 3680.43s ->  3690.33s] So we're going to get the current time is time string format time. We are going to do our minute
+[ 3693.48s ->  3702.46s] seconds, our minute seconds. And then the color of this, of course, will be white for the text.
+[ 3706.51s ->  3714.75s] Now we set the camera angle. So after we clear the plot, we repaint everything. We don't just jerk
+[ 3714.75s ->  3724.67s] it back to a standard position. I'm just going to say view in it. The elevation is going to be the
+[ 3724.67s ->  3741.93s] current elevation. And then the A Zim is going to be the current A Zim. Great. So that is going to
+[ 3741.93s ->  3749.13s] effectively repaint the 3d plot canvas, and it's going to update it with the implied volatilities
+[ 3749.93s ->  3757.21s] based on what we have here in X, Y index and Z. And we're, of course, pulling the most relevant data
+[ 3757.21s ->  3768.04s] here. All right. Nice. Now, what we're going to do is the same thing for the skew plot. We're going to
+[ 3768.04s ->  3773.16s] clear it. But in that case, we don't have an interactive chart, so we don't have to worry about
+[ 3773.16s ->  3779.64s] a camera angle. So I'm just going to clear the skew plot and plot everything for the shortest dated
+[ 3779.64s ->  3785.16s] maturity. And what we have here, it's going to be a zero DTE option. So I'm going to say
+[ 3785.16s ->  3798.81s] xsq.clear, xsq.setFaceColor. We're going to say, keep everything on theme, 161B22.
+[ 3801.08s ->  3808.28s] The nearest expiration is going to be the zeroth value or the zeroth index in the pivot index.
+[ 3811.61s ->  3814.89s] And the skew data is going to be
+[ 3814.89s ->  3825.77s] the pivot.iloc. This is the entire row zero. All right. So what we're actually looking at here is,
+[ 3825.77s ->  3832.33s] do you remember for our pivot table, right? What are we indexing by? We're indexing by maturity.
+[ 3832.33s ->  3838.17s] We get the zeroth maturity. That is the latest dated one. Because if you recall, we sorted everything
+[ 3839.05s ->  3847.93s] when we retrieved the list of strikes and maturities. So we come on down here, we set the nearest
+[ 3847.93s ->  3854.01s] expiration to the zeroth value in this particular index, which is going to be in this case today.
+[ 3854.65s ->  3863.37s] And we're going to locate what the implied volatilities for that nearest dated set.
+[ 3863.37s ->  3869.69s] All right. So it's going to be for the strikes that we have listed, all of the implied volatilities on
+[ 3869.69s ->  3887.84s] this expiration. Very cool. I will set the title to be the front month skew of the nearest expiration.
+[ 3888.72s ->  3900.60s] We'll make it white. I'm going to say, we are going to
+[ 3902.20s ->  3911.98s] plot last. We'll say, let's put a vertical line. So we'll do on this skew, let's plot the vertical
+[ 3911.98s ->  3916.70s] line for the current spot price. So we can see where everything is relative to the out of the money
+[ 3916.70s ->  3929.15s] calls inputs. We'll say, um, acts V line. And we will say X is equal to app dot X is equal to app dot
+[ 3929.15s ->  3942.52s] spot price. The color is going to be red and we can do F F three E three E and the line style is going to
+[ 3942.52s ->  3950.28s] be dotted dashed. Could you dotted if you like as well? Now we actually need to plot the data. So we
+[ 3950.28s ->  3957.56s] have our vertical line. We have our title. Let's actually plot it. I'll say skew data dot index skew
+[ 3958.12s ->  3964.76s] data dot values. Remember we're getting that from our pivot table. It's exactly why we imported pandas here.
+[ 3965.56s ->  3980.59s] And now we are going to set the marker to be circles and we'll choose a nice blue color for this.
+[ 3985.12s ->  3999.50s] Cool. So the updates don't just roll in continuously effectively with incredibly small timeframes. I'm
+[ 3999.50s ->  4009.44s] just going to say PLT dot pause in between repainting each chart. We'll sleep maybe 0.5 seconds.
+[ 4010.00s ->  4016.00s] All right. Just so we don't spam our user interface with updates. You can make this as small as it needs
+[ 4016.00s ->  4022.64s] to be. I think in terms of visual action, if you're trying to actually observe a surface, it really
+[ 4022.64s ->  4029.04s] doesn't need to be as it doesn't need to be much smaller than this. Uh, this is very close to real time
+[ 4029.04s ->  4035.20s] updates. Now, if you did need real time updates, then you wouldn't be visualizing this. Everything
+[ 4035.20s ->  4040.08s] would be done computationally, right? You have the pivot table, you would run calibration on the
+[ 4040.08s ->  4046.00s] pivot table. You don't visualize your calibration, right? If you wanted to ensure it was arbitrarily
+[ 4046.00s ->  4050.64s] correct and the fit was reasonable, you would do that in the research phase here. Then you would look
+[ 4050.64s ->  4058.48s] at, you know, your, in terms of how many vol points, um, your, your error is to calibrating your stochastic
+[ 4058.48s ->  4065.44s] vol model or any, um, stochastic model to your volatility surface to assess its efficacy. But
+[ 4066.24s ->  4073.39s] in the context of updates, you know, we don't need real time here for calibration. Sure. All right.
+[ 4073.95s ->  4079.15s] Um, if we do have an error, right, we have, uh, some, some form of a keyboard interrupt here,
+[ 4080.27s ->  4090.20s] let's say, except a keyboard interrupt, we are going to disconnect the app and we are going to
+[ 4090.20s ->  4104.65s] close the block. Cool. Now we can create our main load function here. If name is equal to main,
+[ 4105.61s ->  4111.10s] what do we do? Well, we need to create an instance of our app. So I'm going to say,
+[ 4111.10s ->  4117.02s] call that wrapper function, start app. What symbol are we going to use? Let's just default to SPY for
+[ 4117.02s ->  4125.74s] now. I'm going to print that the app has started. And now I am going to sleep to allow it to populate
+[ 4125.74s ->  4132.30s] with not only the data, but initialize all of the live data streams. I'll say time.sleep will sleep for
+[ 4132.30s ->  4141.02s] 10 seconds. And then I will create my live desktop plot with that app instance. And that should be
+[ 4141.02s ->  4147.10s] everything. We are now ready to give this a test run. It wouldn't be a quant build without a little
+[ 4147.10s ->  4155.74s] bit of debugging. What I've noticed here is when I give this a run, I get an error and it tells me,
+[ 4156.54s ->  4164.14s] did you mean resolved? I certainly did. So we'll go on over to line 70, where we find our threading
+[ 4164.14s ->  4172.38s] event and we will say app.resolved, which is what we defined in the constructor. The next issue
+[ 4173.02s ->  4178.38s] that I've noticed is if we go ahead and try to run this again, we are going to acknowledge the
+[ 4178.38s ->  4185.90s] connection, but we are going to get an error when we try to construct the user interface because the
+[ 4185.90s ->  4194.46s] button that we set globally, the button label needs to be equivalent to the button's actual label. So if
+[ 4194.46s ->  4208.01s] we go into our user interface, we're going to find button label is equal to button label. In reality,
+[ 4208.01s ->  4215.93s] this should be the buttons labeled btn dot label. So we're actually setting this variable to be the
+[ 4215.93s ->  4222.57s] buttons label. So we can then effectively update it via the toggle method in the plot state.
+[ 4223.69s ->  4229.37s] The last thing that I noticed is that when we actually create the pivot table,
+[ 4230.62s ->  4235.98s] we have not populated the data frame with any data. So it's looking for expiration,
+[ 4235.98s ->  4242.94s] strike and implied volatility for an empty data set. So I need to give it the current data of
+[ 4242.94s ->  4248.78s] expiration, strike and implied volatility. So I'll do that right here, current data. And now
+[ 4249.74s ->  4257.34s] everything should work as intended. So I'm going to give this a run here. We have acknowledged the
+[ 4257.34s ->  4262.78s] connection to trader workstation, the IB gateway, whichever you choose to use interactive brokers.
+[ 4263.42s ->  4271.58s] And now we need to construct the data feeds themselves. So we should get an app started
+[ 4271.58s ->  4278.14s] notification here in our terminal. There we go. And now it's going to start all of those live data
+[ 4278.14s ->  4285.74s] feeds for the contract parameters that we have specified or really requested from the server. And
+[ 4285.74s ->  4294.78s] now we have successfully launched our live implied volatility surface. This is going to update in real
+[ 4294.78s ->  4300.22s] time, you can see the spot price moving over here. This is our 3d surface. Again, we have the
+[ 4300.22s ->  4306.22s] interpolation there is going to be a linear interpolation. You're also observing it here in
+[ 4306.22s ->  4313.50s] the skew that is a byproduct of what we did with the pivot table. And we can also choose to lock it.
+[ 4313.50s ->  4319.10s] So now we will not have any updates to the surface if we would like to investigate it.
+[ 4320.06s ->  4328.22s] And that is effectively the final product. This is a live volatility surface that we built
+[ 4328.22s ->  4335.58s] from scratch using Python and interactive brokers. That's going to do it for this quant build. I hope
+[ 4335.58s ->  4341.02s] you enjoyed. I hope you learned something. This quant build took a tremendous effort to put together.
+[ 4341.02s ->  4344.70s] So if you enjoyed it and you want to see more like it in the future, please like comment,
+[ 4344.70s ->  4351.10s] subscribe, share. It helps me out tremendously. It is always greatly appreciated. If you'd like to see
+[ 4351.10s ->  4357.82s] extensions and applications of this live volatility surface, more dedicated videos discussing the
+[ 4357.82s ->  4364.38s] volatility surface in general and short dated skews, certainly let me know in the comments below.
+[ 4364.38s ->  4370.70s] If you'd like to master your quantitative skills, check out quantguild.com. Other than that,
+[ 4370.70s ->  4384.38s] I want to thank you so much for watching and I will see you in the next video.

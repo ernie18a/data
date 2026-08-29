@@ -1,0 +1,147 @@
+[    0.00s ->     3.18s] So today, let's talk a little bit about the wheel.
+[    3.58s ->     7.90s] The wheel is probably one of the most common and most popular option strategies on the internet
+[    7.90s ->    11.88s] to help generate additional income. So today, I want to talk to you guys about what the wheel is,
+[   12.06s ->    17.46s] a really beginner-friendly way to trade it, and more importantly, some of the risks and trade-offs
+[   17.46s ->    22.48s] that we're making when we're selling wheels so that you can understand how to successfully sell
+[   22.48s ->    27.54s] this for the long term. If you guys want more advanced strategies or ways to refine the wheel,
+[   27.54s ->    31.28s] make sure you guys subscribe to the channel. So get a pen and paper route. Let's get ready.
+[   31.62s ->    39.88s] So first things first, what is the wheel? The wheel is just a fancy way of saying we sell cash-secured
+[   39.88s ->    45.50s] puts, we keep rolling them, or we keep opening up new ones after they expire until the day that our
+[   45.50s ->    51.62s] cash-secured puts get assigned. At that point, we own 100 shares of a stock, which means that we can
+[   51.62s ->    56.92s] turn around and start selling covered calls on it. Again, we sell covered calls, we roll them out
+[   56.92s ->    62.46s] until they get assigned, which means that the 100 shares that we have then get called away,
+[   62.56s ->    68.42s] we sell them away. And at that point, we will have quote-unquote made money, theoretically speaking.
+[   68.50s ->    71.96s] We'll talk about the risks later on in this video. So let's just reiterate. Number one,
+[   72.00s ->    77.66s] when we're selling puts, when we get assigned, we own 100 shares of that stock. And when we sell calls,
+[   77.66s ->    82.96s] and then we get assigned, we sell those 100 shares of stock, which means that there are two ways
+[   82.96s ->    90.42s] we make money in this strategy. One is from the stock being bought and sold when those options
+[   90.42s ->    96.86s] get assigned. And two is from the credit we collect when we sell options. And so when we're wheeling,
+[   96.94s ->   102.50s] we have to succeed in both aspects. We have to collect enough credit from the options that we sell.
+[  103.10s ->   109.96s] And we should theoretically make money from the equity appreciating when we buy it and sell it.
+[  109.96s ->   114.20s] Now, that's not always the case. This is why you guys tune into this channel because we will talk
+[  114.20s ->   119.20s] about situations later on in this video about when the wheel breaks. So now that we know what
+[  119.20s ->   124.88s] the wheel is, let's talk a little bit about the beginner-friendly strategy on how to sell the wheel.
+[  125.12s ->   130.36s] You have to choose a stock that you're willing to hold if you get assigned because the whole point
+[  130.36s ->   136.02s] of the wheel is that you are going to get assigned at some point in time and that then you can then flip
+[  136.02s ->   141.32s] it to start selling calls on it. I highly recommend you guys sell this on larger caps,
+[  141.82s ->   145.52s] fundamentally sound, profitable companies because those are usually the most consistent.
+[  146.52s ->   151.30s] And you'll see another reason as to why later on in this video. But for now, I'll just say that I
+[  151.30s ->   156.86s] really, really like ServiceNow because of its valuation and the potential growth that it has
+[  156.86s ->   162.02s] as cloud AI servers continue to propagate out into the future. So for me, when I like the wheel,
+[  162.02s ->   166.04s] I like to sell around 30 to 45 days because it's a monthly strategy for me. Obviously,
+[  166.12s ->   172.54s] you guys have tinkered a ton. And this is IBKR option chain. So right now we're on the IBKR option
+[  172.54s ->   179.64s] chain for ServiceNow and 29 days to expiration. So what we want to do here is then choose a strike
+[  179.64s ->   184.98s] price. A very simple way to understand strike prices is to look at this one thing called probability
+[  184.98s ->   190.64s] of profit, otherwise known as, for example, delta. A 20 delta means approximately 80% probability of
+[  190.64s ->   196.74s] profit. So you can see 19.7 equates to around 82% probability of profit, give or take. So I like
+[  196.74s ->   203.14s] to choose around 75 to 80%, give or take. So we'll just do 80%. It's close enough. If you want to be
+[  203.14s ->   207.70s] a little more aggressive, you can go to 85, right? Then at that point, you're at closer you are to the
+[  207.70s ->   213.66s] money, the lower your probability of profit because you're closer to the strike price. So for me, I like
+[  213.66s ->   220.92s] to go around 80 just because it's safer. And for this one, I will collect around $183. So what that
+[  220.92s ->   227.62s] means is when this closes, when I open up this one option, I will collect $183 of credit up front.
+[  227.90s ->   236.92s] And if ServiceNow expires out of the money, which is it's above $80 by June 12th, I keep the 183.
+[  236.92s ->   247.20s] For example, it goes to $78. Then theoretically, I will get assigned and I will then buy 100 shares
+[  247.20s ->   253.40s] of that stock at $80 a share. Now, if this expires out of the money, you keep doing this month after
+[  253.40s ->   260.02s] month by selling it at your 20 delta or 15 delta, 80% probability until you get assigned. And you see
+[  260.02s ->   264.24s] month after month, you're collecting credit. Now, let's assume that on this one, I got assigned on
+[  264.24s ->   270.04s] June 12th because ServiceNow fell to $78 a share. You turn around and you own 100 shares of that
+[  270.04s ->   276.58s] stock, right? Which means that you can then turn around and start selling calls on that one option.
+[  277.10s ->   283.98s] So let's assume that today I own 100 shares of ServiceNow. I then do the same thing on the call
+[  283.98s ->   291.88s] side. I go and I go, let me find the 75 to 80% probability of profit on the call side. So I'm
+[  291.88s ->   298.50s] assuming it's going to be around $100. That's pretty good. 77%. When I sell this one call,
+[  298.64s ->   304.92s] I will collect around $290 on this one call option. ServiceNow goes above 100. Then I sell my 100 shares
+[  304.92s ->   312.06s] at $100 a share. If ServiceNow is below 100 at the time of expiration, then I keep the 290. I keep
+[  312.06s ->   317.46s] doing this over and over and over again until it gets assigned. Now, you can see there are two ways to
+[  317.46s ->   325.44s] make money here from the credit that I collect, the 310 plus the 185. So I'll collect $450. And let's
+[  325.44s ->   332.66s] assume I buy ServiceNow at $80 a share and I sell it at $100 a share. So I collect $450 in premium
+[  332.66s ->   340.34s] while I make $2,000 on the equity appreciation between 80 and 100. Okay? So total out for this
+[  340.34s ->   348.12s] one wheel, you'll make $2,450. So let me show you this in reality by giving you an example of
+[  348.12s ->   353.30s] one wheel that has not yet been assigned. So I can demonstrate this concept called cost basis.
+[  353.72s ->   361.04s] So take a look at NVIDIA. I've collected $69,000, a premium up 38.1%. And I'm currently selling at a
+[  361.04s ->   366.30s] strike price of 180. NVIDIA is currently like 220 right now. So you can see I started at 100 all the
+[  366.30s ->   371.28s] way down, roll, roll, roll, roll, roll, and now I'm at 180. And throughout this whole time, I have
+[  371.28s ->   376.42s] not yet been assigned. And this is a really good idea to share with you guys a concept that is
+[  376.42s ->   381.98s] called adjusted cost basis, which is the average price of an option after your premium is accounted
+[  381.98s ->   389.18s] for. So right now, because I'm selling at $180 a share, and I've collected or close to $7,000 of
+[  389.18s ->   398.44s] premium, my cost basis is at $111.50. So the way the math works out is each option is 100 shares,
+[  398.52s ->   405.72s] right? And so by dividing this number by 1000, I'm at $68.50 a share. And I subtract that from the
+[  405.72s ->   413.00s] strike price I'm currently selling it at. So 180 minus 68.5 is $111.50. So when I get assigned,
+[  413.00s ->   421.16s] and I start selling calls on NVIDIA, as long as I sell it above my cost basis, I will be profitable.
+[  421.54s ->   425.44s] So you can tell by running the wheel relatively successfully, you don't really have to worry
+[  425.44s ->   431.20s] about your product, your cost basis. Because even if I were to get assigned $180, if I were to sell a
+[  431.20s ->   437.00s] call at $180, I will still be up, right? I will collect credit, and I'll make money on my equity.
+[  437.36s ->   442.12s] Okay, so let me give you another example. Here's a TSM wheel. I sold some puts,
+[  442.12s ->   449.48s] I got assigned, my cost basis was at $195.200. So I got two puts that I got assigned. So my average
+[  449.48s ->   455.38s] cost basis at assignment was $186.76 because it took into account the amount of credit that I
+[  455.38s ->   460.50s] collected. Now, if I were to sell calls on top of it, as long as I sell above my cost basis,
+[  460.52s ->   466.12s] I will make money. So you can see here, I've been selling covered calls all over and I'm at $460 now.
+[  466.42s ->   472.08s] But you can see even as I sell calls right here, my cost basis continues to lower.
+[  472.66s ->   478.10s] Right? From $186 all the way down to $105. Every amount of dollar credit that I collect will go
+[  478.10s ->   485.90s] into reducing my adjusted cost basis in theory. And you can see, if these $460 call options were
+[  485.90s ->   493.08s] assigned, they get assigned, how much money would I make? From the equity alone, I'll be up $52.5,000
+[  493.48s ->   498.94s] plus my $2,600 in premium, which equals to around $55,000 on this one wheel.
+[  498.94s ->   502.90s] Now, there's a good segue. It started talking about the risk to the wheel strategy, because
+[  502.90s ->   506.64s] this is why you subscribe to the channel. We talk about the risk so that you can overcome these
+[  506.64s ->   512.10s] risks and understand them and not blow up your account. So the first risk is that your equity
+[  512.10s ->   516.70s] performance, the stock that you're buying is going to outweigh the amount of credit that you
+[  516.70s ->   521.64s] collect. Said in another way, the credit you collect from these options is going to be a lot
+[  521.64s ->   525.98s] less than the equity performance, whether or not it goes up or down. So you can see from both my
+[  525.98s ->   533.42s] examples from TSMC, as well as just the ServiceNow example, the equity appreciation is much larger
+[  533.42s ->   537.88s] than the credit that we collected, which means that the stock that you choose is going to be
+[  537.88s ->   542.66s] extremely important because the inverse is also true. In both examples, you saw that the stock
+[  542.66s ->   549.46s] rose, but what happens is the stock drops. That is where things get a little tricky. And there is a
+[  549.46s ->   555.88s] really good example here of a guy trying to sell puts and wheel a stock called Riot way back in like
+[  555.88s ->   562.22s] 2021, 2022. He was selling it basically close to all time highs at like 40, let's just say $40 a share.
+[  562.34s ->   566.32s] I think actually Riot did a consolidation. They did two to one consolidation because back then it was
+[  566.32s ->   571.38s] around 80 bucks. Let's say that he got assigned close to $40 a share. He's tried selling calls, but you can
+[  571.38s ->   577.70s] see all the way down to this downswing, you're unable to sell calls. Why? Because your adjusted cost basis
+[  577.70s ->   584.34s] is now above the strike price. So if my adjusted cost basis, for example, is around $40 a share and
+[  584.34s ->   590.16s] Riot is at $20 a share, in order for me to be profitable, I have to sell it above 40. If I'm
+[  590.16s ->   596.60s] further away from the money, I get a lot less credit. And so when I'm selling puts or calls at $40 a share,
+[  596.60s ->   601.64s] number one, I'm getting very little credit. And two, because the credit is so little, my adjusted
+[  601.64s ->   610.50s] cost basis is reducing very slowly. Even today, back up to $24.81. And if he had held trying to get
+[  610.50s ->   616.24s] above his cost basis, he would still be below $40 a share, right? Let's just even say $30 a share. He
+[  616.24s ->   620.48s] still be below it. So he's not even profitable on the wheel, which means that if he held throughout all
+[  620.48s ->   625.88s] of this, he would have lost four years of just putting the money in the stock market at the S&P 500
+[  625.88s ->   631.68s] at a 15% annualized clip. And so the underlying is extremely, extremely important. And if he
+[  631.68s ->   637.32s] decided to get out at the bottom, you can see he lost close to 90% of his total asset value. So no
+[  637.32s ->   642.40s] amount of premium that he's collecting from the calls or the puts is going to make back that 90%
+[  642.40s ->   649.92s] loss. We should only be selling puts on stocks that are consistent, profitable. And that is why I
+[  649.92s ->   656.40s] said earlier on in this video that we are only selling puts and wheel on companies that are very
+[  656.40s ->   664.48s] stable, preferably mid cap to large cap companies that have profit margin and large free cash flow.
+[  664.78s ->   669.24s] And there are other examples on Reddit, on the internet for this specific scenario where your
+[  669.24s ->   675.08s] strike is below your adjusted cost basis. And it just makes selling calls very difficult on the wheel
+[  675.08s ->   680.64s] side. So let's talk about the second pain point when it comes to wheeling. So let's go back to
+[  680.64s ->   685.42s] premium insights and take a look at this example. So this is a wheel that actually my wife completed.
+[  685.78s ->   692.42s] She had a cash secured put at $710, $710, $700, got assigned at $700 a share, right? Her adjusted cost
+[  692.42s ->   700.80s] basis was $637.61. Perfect. Right? She turned around and sold a covered call at $685. $685 is above your
+[  700.80s ->   707.48s] adjusted cost basis of $637.61. Right? And so if it gets called away, you'll make money. So see what
+[  707.48s ->   714.86s] happens. Her adjusted cost basis is now $614.61. And it got called away at $685. So she made a total
+[  714.86s ->   722.96s] of $7,000. Her net premium is $8,500. But she lost money on the equity here, which is $1,500. As for a
+[  722.96s ->   730.72s] total net gain of $7,000, a 10.1%. And here you might think that's pretty good. ASML now is at $15,871.
+[  730.80s ->   736.84s] So if she had not sold a covered call on ASML, and just continued to sell it very far away,
+[  736.96s ->   744.10s] or just didn't sell covered calls at all, the equity appreciation from $700 a share to $1,587
+[  744.10s ->   755.52s] is close to $887 a share, which means that she would be up on just the equity $80,000. $8,000 premium,
+[  755.52s ->   762.48s] $80,000 in equity appreciation. So the downsides to the wheel is that you have to actively continually
+[  762.48s ->   767.40s] do this. When the calls go in the money, right? A lot of people tend to try to roll them out. You'll
+[  767.40s ->   771.18s] see this on Reddit. I'll post a couple posts here just so you guys can take a look. But because the
+[  771.18s ->   775.68s] calls are now in the money, you're missing out on the equity appreciation, right? So a lot of people
+[  775.68s ->   780.68s] continue to roll out the options, hoping that the stock will retrace. And you have to understand that
+[  780.68s ->   785.22s] you are not trying to maximize profit here. Because when you're selling calls, just with any
+[  785.22s ->   789.88s] call option strategy, you are cutting off your equity appreciation. You have to let those shares
+[  789.88s ->   796.56s] go. If now, if you don't want to let those shares go, you can adjust your wheel to start selling your
+[  796.56s ->   802.38s] calls a lot later on in the cycle, like you saw with my TSMC wheel, right? I started selling calls
+[  802.38s ->   809.06s] when the TSM shares got to $430 a share, a price that I'm willing to park at. And we'll talk more
+[  809.06s ->   814.40s] about that in a more advanced video on how to sell the wheel. So make sure you guys subscribe. And so the
+[  814.40s ->   823.48s] downsides to your wheel is that the equity will be less than what it can be. But because of that, you have
+[  823.48s ->   830.02s] to let those options go so that you can free up the capital to start wheeling again, right? So once this wheel
+[  830.02s ->   836.74s] goes away at $685, you start selling again at $700, getting assigned, and then wheeling it again,
+[  836.84s ->   842.06s] right? Doing it as often as possible so you can make as much return as possible, right? You're going
+[  842.06s ->   847.10s] to lose out on equity and that's okay. Let those shares go. All right. So this is a beginner-friendly
+[  847.10s ->   852.02s] version of how to sell the wheel. If you guys want to learn more about wheels, make sure you guys
+[  852.02s ->   855.22s] subscribe to the channel. And if you guys want me to make a masterclass, let me know down in the
+[  855.22s ->   859.94s] comments section below. So let me do what I did with the put selling and the credit spared masterclasses.
+[  860.32s ->   863.00s] Now, if you guys have any questions, let me know down in the comment section below.
+[  863.40s ->   867.90s] And if you guys want to try out premium insights, link is down below as well. Now, if you guys want
+[  867.90s ->   871.36s] to check out those two masterclasses, I'll link them in the end screen right here. And like always,
+[  871.40s ->   875.50s] if you have any questions, drop them down below and stay safe in the market until next time. Peace.

@@ -1,0 +1,105 @@
+[    0.00s ->     5.82s] I have a deep in-the-money put option that I sold weeks ago that's now down over 300%.
+[    5.82s ->    10.90s] And a lot of people in this same position panic and end up making the worst decision you can make
+[   10.90s ->    15.92s] when it comes to selling puts. So today I'm going to show you what that mistake is,
+[   16.48s ->    21.70s] why it happens, and more importantly, how to deal with it properly. So that you too can learn how
+[   21.70s ->    26.80s] to sell puts the right way to supplement your income and eventually build towards retirement.
+[   26.80s ->    32.14s] The same way I've done with options. So if you care about building repeatable systems,
+[   32.44s ->    37.44s] avoiding mistakes that wipe out long-term gains, then you guys might want to stick around.
+[   37.86s ->    42.86s] So the biggest mistake that people can make when their options are really deep in the money
+[   42.86s ->    50.02s] is to close and buy back that option. That one big loss wipes out months of small gains. And I've
+[   50.02s ->    55.72s] seen this a lot in my comment section. So let's first explore why this mistake happens so that we
+[   55.72s ->    60.90s] can build a system to prevent it from happening again. Why is it that people end up taking these
+[   60.90s ->    66.36s] massive losses when it comes to selling puts? And in my experience, there's really only two main
+[   66.36s ->    72.44s] reasons. The first one is forced liquidation. Second one is fear. So let's talk about forced
+[   72.44s ->    79.14s] liquidation first. A lot of people sell puts on margin, which means that they don't have enough
+[   79.14s ->    85.80s] money to buy a hundred shares of that stock if they were to get assigned. So when that stock drops,
+[   85.98s ->    95.24s] that option price rises, like you saw with my 300 plus percent option, the brokerage decides to close
+[   95.24s ->   101.44s] that option for them because they don't have enough money to buy a hundred shares. And often they close
+[  101.44s ->   107.10s] them at the worst time possible. A lot of people sell puts thinking of the best case scenario, which is
+[  107.10s ->   111.70s] the option expires out of the money and not to the worst case scenario, which is when they get assigned.
+[  112.00s ->   119.08s] And that is exactly why in our put selling masterclass, we only sell using cash secured puts. We only sell
+[  119.08s ->   126.28s] puts on stocks that we can afford to buy a hundred shares of at that specified strike price. So that 300
+[  126.28s ->   133.56s] and 200 plus percent option that I'm down on, I will never get liquidated. The only way I will lose on
+[  133.56s ->   139.14s] that trade is if I decide to close it myself. However, a lot of people might look at that 300%
+[  139.14s ->   146.34s] and be very fearful, which leads us to the second reason, which is fear. They see that 300%. All they
+[  146.34s ->   152.44s] see is a massive red number that is about to ruin their P&L. Think about this one. I only collect around
+[  152.44s ->   157.94s] a hundred bucks on this one option, but right now I'm down close to $400, which means that I need to win
+[  157.94s ->   163.62s] four trades in order to make up this one loss. A lot of people may not want to close this trade
+[  163.62s ->   168.66s] because it'll ruin that P&L. But as that stock continues to drop, your loss will get larger and
+[  168.66s ->   173.06s] larger and larger until one day you may not have enough emotional strength to hold on and you'll
+[  173.06s ->   178.20s] close that trade out at a loss. And the reason people do that is because they use selling puts
+[  178.20s ->   185.26s] as a way of trading. This strategy actually makes no sense because selling puts as a strategy has a
+[  185.26s ->   190.98s] capped upside and an unlimited downside. On that one option trade, my potential downside is actually
+[  190.98s ->   197.32s] close to $4,000. That's just a terrible trade setup. If you want to trade, buying debit spreads,
+[  197.62s ->   202.88s] buying options, selling credit spreads are all better strategies. But you're not leveraging the
+[  202.88s ->   208.10s] strengths of selling puts. And one of the massive strengths about puts is that even in the worst case
+[  208.10s ->   213.04s] scenario, you will end up buying a hundred shares of that stock. In that 90-minute masterclass,
+[  213.04s ->   219.92s] we try to leverage that strength by using puts as a way to acquire great companies at fair prices.
+[  220.52s ->   228.22s] And once you view puts as a way to acquire stocks, that negative 300% changes its meaning. And this is
+[  228.22s ->   235.22s] why in our system, we never buy back an option at a loss. That will never happen because we would much
+[  235.22s ->   241.02s] rather get assigned and buy a hundred shares of that stock than to spend a lot of money to close
+[  241.02s ->   247.98s] a position that is very, very, very in the money. And by doing it this way, you're reframing what the
+[  247.98s ->   252.60s] risks actually are and what they mean. Because another reason as to why people buy back their
+[  252.60s ->   257.76s] options is because of the fear of assignment, right? You're forced to buy a hundred shares of that stock
+[  257.76s ->   262.82s] and the stock, if it continues to drop, you'll end up losing more and more money. I know from personal
+[  262.82s ->   267.46s] experience that sometimes I go, oh, it's in the money. I may not want to acquire the stock at this price
+[  267.46s ->   274.46s] point. So think about it right now. I sold my put at $42 on Samsara. Now it's at $39. I may not want
+[  274.46s ->   280.64s] to buy a hundred shares of Samsara anymore because now it's at $39, way past my $42, right? And I think
+[  280.64s ->   285.64s] to myself, what happens if Samsara continues to go down? And that is the third and final reason as
+[  285.64s ->   291.24s] to why people tend to buy back their option at a loss is because they may not want to get assigned.
+[  291.56s ->   296.44s] So yes, let's touch a little bit about this first risk, the risk of the equity itself dropping.
+[  296.44s ->   302.80s] And that's why earlier I said we only sell puts on great companies at a fair price. Companies that
+[  302.80s ->   307.98s] are cashflow positive and have real competitive advantages. And we talk about that in depth in
+[  307.98s ->   313.62s] our portfolio updates that we'll link in the upper right-hand corner right here to really understand
+[  313.62s ->   321.02s] how to evaluate and acquire great companies. And by learning how to do that, you will minimize that
+[  321.02s ->   328.24s] equity risk as much as possible. I want to reframe what the risk of assignment actually is. And almost
+[  328.24s ->   334.76s] no one really talks about this. The second risk is that you don't get assigned and the stock recovers
+[  334.76s ->   341.60s] and rips higher, right? You miss out on the equity itself appreciating. That is actually the biggest
+[  341.60s ->   346.42s] trade-off of selling puts. And that's, in my opinion, the biggest risk. So if you view it from that
+[  346.42s ->   352.60s] framework, the risk isn't getting assigned. The risk is not getting assigned. So let me give you
+[  352.60s ->   359.64s] an example from my actual real public portfolio. I have 200 shares of TSM that I got assigned on
+[  359.64s ->   366.48s] earlier on this year when I was selling puts. Before I got assigned, I collected around $2,147
+[  366.48s ->   374.30s] in total of credit on just TSM. And then on these two put options, I got assigned on an average cost
+[  374.30s ->   384.52s] basis of $186. Right now, TSM is at $289 a share, which means that I'm up almost 60%. And this is
+[  384.52s ->   389.78s] only possible because I got assigned. I was able to purchase 200 shares of these stocks. I would still
+[  389.78s ->   396.82s] be collecting what we talk about 1.5 to 2% a month. And that will probably total out to around 14% year
+[  396.82s ->   404.44s] to date on option premiums as opposed to this 58% equity gain. So we are trading for, let's just say
+[  404.44s ->   410.94s] 15% premium, but instead we got 60% equity gain. What we're risking is if we don't get assigned,
+[  411.30s ->   418.88s] we're missing out on the 60% stock appreciation if we ended up buying that option off back at a loss.
+[  419.04s ->   424.54s] And these two options way back in March were very deep in the money because TSM fell all the way down
+[  424.54s ->   430.92s] to like $160, $170. Again, I want to reiterate here, assignment wasn't the risk. Missing the
+[  430.92s ->   436.14s] recovery is the risk. If I hadn't gone and signed and I bought back that option at a loss,
+[  436.48s ->   441.52s] that would have been the worst case scenario. So let me see if I can reframe this with another
+[  441.52s ->   446.30s] example because in application, it can be kind of difficult. Over the last six months or so,
+[  446.40s ->   451.64s] NVIDIA has kind of been stagnating between the $170 price point all the way up to $210. And since
+[  451.64s ->   458.06s] this six month period, we've been selling puts on our public account, trying to get that 1.5 to 2.5%
+[  458.06s ->   464.76s] a month of monthly yield. And over those last six months, we've collected close to $1,500 in premium
+[  464.76s ->   470.26s] waiting for NVIDIA to drop. And if you see every single one of our trades, we are trying to collect
+[  470.26s ->   478.76s] around 1.5 to 2.5% a month in premium, all around the $165, $160, $170 strike price. Why is that?
+[  478.76s ->   484.98s] It's because at one point in time, NVIDIA were to ever drop below the $170 price point, which is
+[  484.98s ->   489.76s] where my last put is sold, I will happily buy 100 shares of NVIDIA $170 because I believe that the
+[  489.76s ->   497.20s] upside is a lot greater. Even if it will go to $210, that's a $40 a share difference, which is close
+[  497.20s ->   504.80s] to a 24% upside. That would take me around 12 months of income just to make up. That's why during these
+[  504.80s ->   509.60s] scenarios, I don't mind selling puts on these companies because I actually want to get assigned.
+[  509.76s ->   514.12s] I don't mind being very, very close to the money. These are the opportunities I'm looking to buy into
+[  514.12s ->   520.46s] the market. So I want to reiterate this, right? The real risk here isn't assignment. The real risk
+[  520.46s ->   527.22s] is missing out on the move because you bought back an option that is in the money. Like the NVIDIA
+[  527.22s ->   532.22s] example, if it broke past $170 or $180, whatever my put strike price is, I will never buy back that option
+[  532.22s ->   536.42s] because I'm looking to get acquired because I believe NVIDIA, the equity itself will appreciate
+[  536.42s ->   541.30s] more than what I'm able to collect in terms of premium. But if it doesn't, I'm happy to sit
+[  541.30s ->   547.24s] along the sidelines collecting that $2,000 in premium over the last six months to wait for a
+[  547.24s ->   552.58s] better buying opportunity. And if you guys watch my masterclass, I'll show you exactly how to even
+[  552.58s ->   557.80s] minimize this risk by being able to dollar cost average into a position using the credit that you
+[  557.80s ->   562.18s] collect. So make sure you guys check out that masterclass that I linked earlier. And lastly, we'll touch a
+[  562.18s ->   567.32s] little bit on rolling. A lot of times you can end up rolling these options that are deep in the money
+[  567.32s ->   573.04s] out. When we're rolling, we're trying to target that one to 2% return every single month. And if
+[  573.04s ->   577.96s] you're not able to get that, then potentially you don't roll it and just let that option get assigned.
+[  578.22s ->   582.14s] So let me know down in the comment section below if you guys have any questions about how all this
+[  582.14s ->   586.46s] works. Let me know if you guys have experienced this before in your own trading career. And like
+[  586.46s ->   591.44s] always, if you guys like the content, learn something, click that like button and consider subscribing to the
+[  591.44s ->   595.48s] channel. It will really help me out. To all my channel members, thank you again so much for your
+[  595.48s ->   600.28s] support. I really appreciate you guys going above and beyond to help support this channel. If you guys
+[  600.28s ->   603.48s] want to see my real live trades, follow this public portfolio that I'll link in the end screen right
+[  603.48s ->   608.18s] here. And if you guys want to learn a better way to trade instead of selling puts, check out this
+[  608.18s ->   613.70s] masterclass in credit spreads that I'll link in the end screen right here as well. Like always, stay safe in
+[  613.70s ->   615.82s] the market. Until next time. Peace.

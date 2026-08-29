@@ -1,0 +1,39 @@
+[    2.16s ->    11.30s] Hey guys, what's up? It's AB Trades and I have not filmed an instructional educational video in a while, so I thought, hey, it's study Saturday. Let's do it.
+[   11.66s ->    21.96s] So today I wanted to talk about Fibonacci retracements. Again, this is not anything that is necessary to trading, but it is beneficial to look at when we have huge swings intraday.
+[   21.96s ->    37.78s] So I was talking about Fib retracements in the premium group and I realized that they didn't really know what Fib retracements were. Considering this came into effect on SPY, I thought, you know what, let's just discuss Fib retracements on the YouTube channel for everyone.
+[   37.78s ->    47.92s] So starting out, Fib retracements is a mathematical type of structure set up from the Fibonacci numbers. So you have the different retracement levels.
+[   48.28s ->    60.74s] How we get to the Fibonacci retracement tool is we go to the drawings and you go to drawing tools and you'll click this percentage and if you hover over it for a bit, it says Fibonacci retracement.
+[   60.74s ->    68.88s] So click on that and now you're all set. So Fibonacci retracements work best when you have a huge swing up or a huge swing down.
+[   69.06s ->    75.86s] When you have this huge swing up or down like we did, we have this huge swing low. I then took Fibonacci retracements.
+[   76.00s ->    84.60s] You start from the height of the day and you go to that low of day. So if we can start here and we carry it down to the low of day here and we mark it.
+[   84.60s ->    98.51s] Then we have our Fib retracement levels here. We have the 0% because that's where it at the bottom is and we have the 23.6, we have 38.2, we have 50% retracement, we have 61.8 and we have 71.8.
+[   98.81s ->   109.21s] So basically what these levels are saying is it's saying if you can get up above this level, it has a 23.6% chance of reaching back to the highs.
+[  109.21s ->   119.35s] If we can break above this level, then we have a 38.2% chance of it getting to highs. If we can break above this level, we have a 50% chance of it breaking and going up higher.
+[  119.87s ->   128.57s] So that's basically what we're looking at. But we don't really care about how high it goes. We just want to know where resistance is going to come into play on this stock.
+[  128.57s ->   139.77s] So looking here, when I drew this Fib retracement, I said, hey guys, look, we have resistance here at 275.08 and they were all like, well, how do you know it's 08?
+[  139.83s ->   148.61s] That's pretty precise. Like, did that come in from a previous day's level? It's like, no, it came in from the 38.2 Fib projections on this recent downturn.
+[  148.61s ->   162.61s] So as you can see here, it does actually help if you're playing when, again, Fib retracements work super well when they've had a huge move to the downside or huge move to the upside.
+[  162.97s ->   168.59s] So when you have that huge move to the upside, instead of going from high to low, you're going to go from low to high.
+[  168.59s ->   176.55s] So looking here, as you can see, we had this dip and then we pushed up. We went through the 23.6 and then we got rejected perfectly.
+[  176.83s ->   187.07s] I think the high printed was actually 275.08, which was actually the exact right on the money of that Fib retracement.
+[  187.53s ->   191.65s] And then we started to reverse here and then we came up and we hit this resistance again.
+[  191.65s ->   197.59s] And then we started to break above and then we broke above and we started going after, you know, we had this like wedge type.
+[  198.59s ->   202.63s] But then again, as you can see here, these Fib retracements are holding.
+[  202.79s ->   209.13s] So that's how you can see after we've had a massive sell off or a massive push where it's going to actually find resistance or support.
+[  209.55s ->   211.83s] We can actually, I just want to show you all this the opposite way.
+[  211.89s ->   219.71s] Again, this isn't the best huge push up to measure, but just to show, we're going to go from bottom to high of the most recent swing here.
+[  220.13s ->   223.31s] And then if you can see, we're going to have some retracement.
+[  223.31s ->   227.39s] As you can see, we had some indecision here after we passed through the 23.6%.
+[  227.39s ->   231.13s] And then we just dropped through and then we found some support here.
+[  231.49s ->   232.71s] And then we started falling through.
+[  232.81s ->   237.07s] Again, this isn't the best example because this wasn't a huge push up.
+[  237.11s ->   238.31s] It was a slow turn up.
+[  239.09s ->   242.47s] But as you can see, Fib retracement still worked to the downside.
+[  242.97s ->   247.41s] So again, guys, once again, Fib retracements are not key or necessary to trading.
+[  247.41s ->   251.85s] But after you've had a huge push down, when you don't really know what's going on in the market,
+[  252.15s ->   255.67s] you can use Fib retracements to help you find the next resistance or support levels.
+[  256.09s ->   261.59s] And that may be actually crucial, considering like we traded calls when we were looking for our next resistance point.
+[  262.03s ->   265.47s] So again, guys, this is Fib retracements with AB Trades.
+[  265.71s ->   267.71s] Please like, comment, and subscribe.
+[  268.29s ->   271.19s] See you next trading week and enjoy your long weekend.
+[  271.19s ->   301.17s] See you next time.

@@ -1,0 +1,33 @@
+[    0.00s ->     5.12s] walk you through how to place a credit spread trade order on Robinhood. So it's quite simple.
+[    5.26s ->    10.22s] We're going to use one of the trade algo ideas for our example for this video. Let's use this
+[   10.22s ->    16.06s] one right here, SPY. So again, we need to be able to find this ticker symbol, SBY. So the first thing
+[   16.06s ->    20.36s] we do is we come into here into the search tab. You can do this on both mobile and desktop. Simply
+[   20.36s ->    25.72s] type in SPY and find the stock symbol. Right here we have SPY and we pull it up and now we know what
+[   25.72s ->    29.62s] we're looking at. Next thing we want to do is we want to click on trade SPY options. If you're on
+[   29.62s ->    34.08s] the mobile app, you click on trade, you'll see multiple pop-up tabs and you click trade SPY
+[   34.08s ->    40.22s] options. So next we go into the trade SPY options and then we can use a very helpful tool called the
+[   40.22s ->    44.98s] builder. So again, we're placing a put credit spread. We know that because it's listed here as
+[   44.98s ->    50.24s] a put credit spread. If it's not, then it'll say a call. Instead, we're seeing details of a put credit
+[   50.24s ->    55.70s] spread. So that's the order that we're going to place. So here we go to builder. A put credit
+[   55.70s ->    59.90s] spread is a bullish strategy. So we're going to click the up arrow. We're going to scroll down
+[   59.90s ->    64.66s] and right here we have put credit spread. We're going to click on put credit spread and we're
+[   64.66s ->    69.26s] going to let the builder do its work for us. Now we're going to go and we're going to find where
+[   69.26s ->    75.72s] exactly do we want this trade to be placed. You can see here we have the 383, 382. This means that
+[   75.72s ->    81.62s] we're going to sell the first put contract at the strike price of 383 and buy the next one at 382.
+[   81.62s ->    86.16s] So this is what we're going for 383, 382. Now with the builder, it sets that up for us.
+[   86.28s ->    91.06s] We also need to take note of the expiration date. The expiration date is March 10th, 2023.
+[   91.52s ->    97.48s] So now that we know the expiration date, let's go into the expiration date, March 10th, 2023.
+[   97.90s ->   101.70s] Now that we're on the expiration date, we want to make sure the width is a dollar wide. We're
+[  101.70s ->   107.58s] going to go to a dollar wide and now we're going to look for 383, 382. So if I scroll down here,
+[  107.58s ->   114.92s] scroll down, scroll down, scroll down. We have right here, 383, 382. Right here is roughly two
+[  114.92s ->   119.94s] cents to put on this trade. Now when this trade was initially alerted, you could have put it on
+[  119.94s ->   124.86s] for roughly 15 cents. So again, you would have made your money, but again, it's been about a week. So
+[  124.86s ->   129.34s] this trade's about done. Now, again, if you have a more recent trade order, you're going to be looking
+[  129.34s ->   134.74s] to put a trade on for at least 15 cents, if not more. That makes sure the math works out in our favor.
+[  134.74s ->   138.90s] But anyways, this is an example of how to place a trade. This is not one to place right now,
+[  139.00s ->   143.66s] but that is an example. You simply come on here, you would click buy, you would see here all this,
+[  143.74s ->   147.62s] you would adjust and you would click continue and put on your put credit spread trade order.
+[  147.90s ->   152.04s] Now, again, you do the exact same thing for the call side, except for the builder, you would select
+[  152.04s ->   157.12s] the down arrow, you would scroll down, you would do a call credit spread and you would do the exact
+[  157.12s ->   164.10s] same thing looking for exactly what the trade alerts, whether on discord, email, mobile text alerts,
+[  164.10s ->   168.32s] or simply the trade algo and simply follow it to place your order on Robinhood.

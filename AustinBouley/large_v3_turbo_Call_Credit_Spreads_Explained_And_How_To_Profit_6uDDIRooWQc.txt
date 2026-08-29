@@ -1,0 +1,64 @@
+[    0.00s ->     4.06s] What's up? My name is Austin. I'm here with 10% credit spreads. My whole goal is to help you
+[    4.06s ->     8.58s] understand how to trade credit spreads and to make at least 10% a month with them. I'm giving
+[    8.58s ->    12.80s] you my strategy step-by-step so that in hopes one day you'll join me in my Inner Circle program.
+[   13.14s ->    17.36s] All right, let's jump into what are call credit spreads. I want to explain how they work and how
+[   17.36s ->    21.12s] you can make money with them. And the best way to do that is to show you how to set up a call
+[   21.12s ->    25.40s] credit spread trade for yourself. Before we get into it though, there are three ways call credit
+[   25.40s ->    30.48s] spreads make money. First off, call credit spreads are a bearish play. And so again,
+[   30.56s ->    35.52s] our three ways we make money is if the stock goes down, if the stock stays the same, trade sideways,
+[   35.74s ->    41.24s] or number three, it goes up a bit. So that is how call credit spreads make money. You're hoping that
+[   41.24s ->    46.04s] the stock moves down, but you make money if it moves down, stays sideways, or even goes up a
+[   46.04s ->    51.02s] slight bit. And so that is what a call credit spread trade is and how you put one on and your
+[   51.02s ->    56.78s] kind of thesis behind it. Now, how do we set it up? Well, most brokers have a builder like Robinhood
+[   56.78s ->    63.56s] does or something like that, where you can select a call credit spread or a call vertical. But again,
+[   63.62s ->    66.76s] I want to show you how to set it up from scratch because it's going to explain a lot more how the
+[   66.76s ->    71.66s] strategy works. So we're going to go to about seven days out, let's say March 27th, which is seven
+[   71.66s ->    75.66s] days out at the moment. We're going to click on sell because the first thing we do is sell and we
+[   75.66s ->    80.44s] want to make sure it's a call because we're doing a call credit spread. All right, so how a call credit
+[   80.44s ->    84.56s] spread works is you typically sell the first strike price out of the money. So again, when we're
+[   84.56s ->    89.88s] looking at it, the stock here is currently trading at around 394. So that means that any of the prices
+[   89.88s ->    96.56s] below it are in the money and any of the prices above it for your strike price is out of the money
+[   96.56s ->   102.40s] because it hasn't quite hit that yet. And so what we do is we go to a price that we think SPY will not
+[  102.40s ->   108.12s] get above by our expiration date. Now, again, there's a bunch of different strategies to know how and what
+[  108.12s ->   114.14s] to buy, but this is just a general statement. So let's say it's currently trading at 394. I don't
+[  114.14s ->   119.88s] think it's going to get above 404 in the next seven days. Let's say I just a bit more neutral or am a
+[  119.88s ->   125.64s] bit more bearish on this trade. What I'm going to do is I'm going to sell the strike price that I think
+[  125.64s ->   129.86s] the stock will not get above. So 404, I'm going to sell this and then I'm going to come in here
+[  129.86s ->   136.64s] because when you sell a call, you have the price you make, but you also have unlimited risk because the
+[  136.64s ->   141.62s] stock could potentially go up and run against you. And so what you do to cap this risk is you come in
+[  141.62s ->   147.02s] here and you click on buy and you buy the strike price above it. So if I sell the 404, I'm going to
+[  147.02s ->   154.36s] buy the 405. This caps my risk. So now I have a defined risk trade, which is where I can make a
+[  154.36s ->   159.10s] certain amount of money, but I can also only lose so much instead of an infinite loss. So this is how
+[  159.10s ->   163.50s] I call credit spread structure. Like I said, it's more of a bear strategy. You make money as the stock
+[  163.50s ->   167.54s] goes down or stays neutral. You can see here, the stock is currently trading right here, which means
+[  167.54s ->   171.66s] the stock goes down. I make money. If the stock trades sideways, I make money. If the stock goes
+[  171.66s ->   178.90s] down, even about two, 3%, I still make or goes up two or 3%, I still make money. And so that's the
+[  178.90s ->   183.44s] beauty of a call credit spread. That's how it's structured. You define your risk and you're making
+[  183.44s ->   188.28s] money to the downside. Now I put together this article for those who want to kind of look at it more in
+[  188.28s ->   193.48s] depth, but basically the stock price is trading roughly here. We sell a call strike with a strike
+[  193.48s ->   198.60s] around here. And then we buy to define our risk. So we make money as the stock drops, stay neutral
+[  198.60s ->   205.30s] or goes down or goes up. And then we make, and then we have a max loss here. So call credit spreads
+[  205.30s ->   210.90s] are a simple bearish strategy. And it really, it's quite simply to sell a call and then you buy a call
+[  210.90s ->   216.78s] to define your risk. Now let's get into the specifics of what is your max loss and your max profit.
+[  216.96s ->   222.14s] So anyways, you can see here a total credit of 21 cents. That means that because I'm selling this one
+[  222.14s ->   227.38s] and buying this one, I'm getting a credit of 21 cents because this one costs more than that one.
+[  227.48s ->   233.50s] So I'm getting $1.10 for putting on this trade, but I'm having to pay around 90 cents, but that gives
+[  233.50s ->   239.22s] me a return of about 21 cents per spread. Now, if you don't know this about options, options are like
+[  239.22s ->   243.30s] controlling 100 shares of stock. So if you want to know how much money you're actually making, you take
+[  243.30s ->   248.28s] this credit 21 cents and multiply by a hundred, which means they pay you $21 for putting on this trade.
+[  248.28s ->   254.18s] So you get paid $21 for putting on this trade and you get to keep the whole $21 regardless of what
+[  254.18s ->   261.00s] happens. Now, the ideal scenario is that the stock stays below 404. If the stock stays below 404,
+[  261.12s ->   266.82s] you get to keep the 21 cents and nothing else happens. That's a 21 cents for free. If you're
+[  266.82s ->   271.48s] putting up a hundred dollars to put on this trade, that's a 21% return in seven days. That's incredible.
+[  271.48s ->   279.76s] Now, what is your max loss? So you can see your max loss right here of $78. Now, why is this? Well,
+[  279.78s ->   285.88s] because your max loss is the difference of the two strikes. So 404 and 405. What's 405 minus 404?
+[  285.96s ->   290.98s] That's $1. But remember each options contract controls 100 shares. So $1 times a hundred,
+[  291.08s ->   298.36s] it's going to be a hundred dollars of risk per spread. Now, why is our max loss not $100? Well,
+[  298.36s ->   307.02s] because although we have a $100 risk, we get paid around 21 or saying here $22 for putting on this
+[  307.02s ->   314.38s] trade. So the $100 we are putting up as collateral for this trade, we also make $22. And so when we
+[  314.38s ->   322.40s] take 100 minus 22, our actual risk is $78. So that shows us our max profit and our max loss. And that
+[  322.40s ->   327.74s] is kind of how you trade credit spreads. The whole goal is more of a bearish, but placing it above a
+[  327.74s ->   332.38s] strike price you think the stock won't get to by expiration date. If you want to learn more about
+[  332.38s ->   338.02s] the strategies that can help you trade call credit spreads with a 90% plus win rate, then again,
+[  338.10s ->   341.80s] make sure to watch other videos on this channel. All right, guys, see you in the next video.
+[  341.92s ->   343.88s] Smash subscribe because I got a lot of great content coming.

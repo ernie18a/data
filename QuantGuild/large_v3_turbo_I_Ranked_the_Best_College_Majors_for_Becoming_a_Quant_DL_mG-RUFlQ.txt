@@ -1,0 +1,112 @@
+[    1.32s ->     6.85s] What's going on guys, Roman here, quantitative researcher and trader, founder of Quant Guild.
+[    7.31s ->    14.99s] Today, we're going to go over a college major tier list for those of you interested in pursuing a career in quant finance.
+[   14.99s ->    20.69s] When it comes to choosing what to study in college, you have a lot of choices.
+[   21.35s ->    27.25s] But when it comes to your selection of quantitative majors, some are certainly better than others.
+[   27.25s ->    31.79s] And you want to select a major with the highest possible EV.
+[   32.43s ->    35.29s] And that is exactly the purpose of this tier list.
+[   35.37s ->    47.65s] We're going to go through some of the most popular quantitative majors, talk about each one of them, their place on this list, and the intended career outcome if you select that major to study.
+[   47.91s ->    50.29s] Up first, we have this statistics major.
+[   50.29s ->    57.87s] And yes, I know this is Mike from Suits, but he was good with numbers on the show, so that's going to be good enough for our tier list today.
+[   58.49s ->    62.09s] The statistics major is a solid choice.
+[   62.55s ->    73.43s] You get exposure to probability, random variables, important theorems like the central limit theorem, law of large numbers, even basic machine learning with linear regression.
+[   73.43s ->    80.55s] And statistics is the backbone of all modern data science, machine learning, and artificial intelligence.
+[   80.55s ->    95.83s] But the problem with these statistics major is if you have a weak math background, and to make matters worse, if you don't know how to code, you're really not going to understand anything that's going on.
+[   95.83s ->   105.25s] Moreover, very rarely do the theorems and all of the assumptions that you make in the classroom hold in practice.
+[  105.25s ->   113.45s] So, if you don't understand it in the lab, in the classroom, then how can you ever hope to apply it in the real world?
+[  113.61s ->   122.31s] So, statistics, a solid major, but due to those shortcomings, it's earned itself a spot on the B tier.
+[  122.31s ->   131.23s] Up next, we have the finance major, and I know what you might be thinking, is the finance major really a quantitative major?
+[  131.39s ->   135.13s] And the answer to that question is, it depends.
+[  135.73s ->   145.21s] Some programs are becoming increasingly quantitative, demanding that these students be capable of coding in Python or R,
+[  145.21s ->   149.95s] being capable of running regressions, doing their own research.
+[  149.95s ->   161.81s] But in reality, a majority of these programs just demand that their finance majors have a little bit of exposure to investment products and can work in Excel.
+[  162.01s ->   167.87s] So, due to that fact, the finance major has earned its spot on the D tier.
+[  167.99s ->   170.19s] Now, we're getting into our quant majors.
+[  170.19s ->   176.93s] That is a major in operations research, financial engineering, computational finance, quantitative finance.
+[  176.93s ->   186.95s] And my major in college was actually quantitative finance, and I double majored with another item on this list that we're going to get to.
+[  187.11s ->   190.71s] But in any case, the quant major is a solid choice.
+[  190.71s ->   200.13s] You're going to be applying a lot of math, probability, statistics, coding to the financial markets, but you're not going to be researching equity alpha.
+[  200.13s ->   202.69s] You're going to be learning about pricing theory.
+[  202.69s ->   213.03s] You're going to learn about CAPM, binomial trees, black shoals, and you're not really focusing on the application in the industry today.
+[  213.03s ->   226.17s] So, it's a strong choice of major to get caught up on the literature, but it's not necessarily preparing you for a role as a quant in today's markets.
+[  226.17s ->   233.47s] So, for that lack of industrial application, I'll leave this on the B tier.
+[  233.65s ->   240.01s] Up next, we have the data analytics, data science, machine learning, or artificial intelligence major.
+[  240.23s ->   245.13s] And this is one of my favorite selections in a degree program.
+[  245.31s ->   252.45s] And that's because everything that we do in quant trading or quant research is effectively a data science problem.
+[  252.45s ->   269.37s] If you understand the model development pipeline, the entire life cycle from start to finish, then you're going to be able to conduct your own research for trading signals, and you're going to be able to understand the results of your analysis.
+[  269.65s ->   279.29s] So, due to the practicality, that is the raw practicality in industry, this major has earned itself a spot on the A tier.
+[  279.29s ->   287.21s] A close cousin to the data science major is the computer science major, and let me tell you, this is a rough one.
+[  287.69s ->   297.15s] Unless you only have the desire to become a software engineer or a quant dev, this major is not a good selection.
+[  297.15s ->   309.51s] And the reason I say that is because every other major on this list can very easily pivot into a software engineering role or even a quant dev role.
+[  309.65s ->   315.63s] It is not that hard to master leak code or hacker rank for a technical interview.
+[  315.63s ->   321.15s] But computer science majors, they can't pivot to these other spaces.
+[  321.15s ->   334.89s] After you've studied only computer science for four years, it's very difficult to catch up on the math, probability, and statistics required for other roles in this industry.
+[  334.89s ->   343.23s] So, the computer science major, due to its lack of versatility, has earned its spot on the D tier.
+[  343.23s ->   346.59s] Now up, the physics major. Shout out to Feynman.
+[  346.71s ->   350.07s] This week I covered the Feynman-CAC theorem and its place in quant finance.
+[  350.23s ->   353.75s] So, if you're interested, I highly recommend you check that video out.
+[  354.15s ->   358.15s] But there's a reason why Wall Street loves hiring physicists.
+[  358.85s ->   366.25s] And that's because they're not just capable of the math, but they're capable of applying it, building models.
+[  366.25s ->   370.11s] And that is the entire skill set of a quant.
+[  370.59s ->   374.69s] Nobody cares if you can just solve a differential equation.
+[  374.69s ->   382.15s] You need to be able to think critically about the models that you're building, what works, what doesn't work, and why.
+[  382.29s ->   385.07s] And how can I improve what I've built?
+[  385.59s ->   390.57s] And the physics major is the perfect example of that skill set.
+[  390.57s ->   402.21s] Now, I will say, you can teach a physicist finance, you can't teach a finance guy physics, but it's still tangentially related to the quant space.
+[  402.37s ->   405.53s] So, it hasn't quite earned itself a spot on the A tier.
+[  406.03s ->   413.51s] And due to that, it has earned itself a spot next to the quant major and the statistics major on the B tier.
+[  413.63s ->   416.17s] The math major. I've been waiting for this one.
+[  416.25s ->   418.55s] This was my second major of choice in college.
+[  418.55s ->   422.31s] I studied quantitative finance and math, a double major.
+[  422.53s ->   428.53s] And the math major is the strongest major selection on this list.
+[  428.69s ->   430.11s] It is the most versatile.
+[  430.87s ->   432.21s] You have the most options.
+[  432.35s ->   438.57s] You can go into some sort of quant dev role, some sort of quant trading role, some sort of quant research role.
+[  438.95s ->   446.37s] It gives you flexibility into every industry that these other majors don't necessarily have.
+[  446.37s ->   453.59s] Now, I will say, when it comes to the math major, there is a right way to do it, and there's a wrong way to do it.
+[  453.59s ->   457.97s] Many of the folks in my cohort approached it in the wrong way.
+[  458.13s ->   460.01s] They were just trying to study to get by.
+[  460.43s ->   463.09s] They had no intention of learning and understanding.
+[  463.23s ->   465.25s] They just wanted the degree.
+[  465.25s ->   479.57s] The way to approach the math major correctly is to understand and learn and then begin to apply it to the world around you, whether that's to finance, whether that's to sports, whatever it may be.
+[  479.67s ->   485.49s] But your ability to apply the math is what makes it such a strong choice in major.
+[  485.49s ->   489.59s] Now, I will say, that being said, it is a double-edged sword.
+[  489.69s ->   493.59s] If you do it poorly, it is a terrible choice of major.
+[  493.71s ->   499.49s] But if you do it correctly, you will never have a shortage of career options.
+[  499.65s ->   504.69s] It's game-breaking, and that's why it's earned itself a spot on the S tier.
+[  504.85s ->   506.95s] What about other applied math majors?
+[  507.05s ->   513.35s] Not applying math directly to statistics or quant finance like we've seen in our quant major and the statistics major,
+[  513.35s ->   521.51s] but something like physics, where we see the electrical engineering major and other engineering majors that just apply math outright.
+[  521.51s ->   531.97s] Well, the problem that I have with these applied math majors in general is very similar to the problem that I have with physics, but not about coding.
+[  532.11s ->   534.27s] It's more about the application of the math.
+[  534.47s ->   540.51s] If you focus too much on the application of the math without fully understanding it first,
+[  540.51s ->   546.25s] then, again, you're just going to be computing things that you don't actually understand.
+[  546.77s ->   551.61s] And then when it comes to critical thinking in a model development sense, you have no sense.
+[  551.73s ->   552.89s] You don't understand the pipeline.
+[  553.03s ->   554.41s] You don't understand what you're doing.
+[  554.61s ->   561.57s] So the applied math majors are, again, a solid choice for exposure to that model development.
+[  561.79s ->   568.21s] But if you lack the underlying math necessary, you're not going to be able to think critically about what it is you're doing.
+[  568.21s ->   575.85s] So these applied math majors, electrical engineering, and alternates have earned themselves a spot on the B tier.
+[  575.97s ->   580.15s] Last but certainly not least is this economics degree program.
+[  580.51s ->   584.99s] I've had a lot of exposure to economics in my day as a student.
+[  585.21s ->   589.71s] In my quantitative finance program, we had to study micro, macro, intermediate, advanced.
+[  589.83s ->   592.47s] I've even taken PhD courses in micro and macro.
+[  592.47s ->   600.85s] It's very important to understand the dynamics, specifically in the macro environment if you're looking to approach the markets.
+[  601.49s ->   606.51s] And this major is more quantitative, I will say, than the finance major.
+[  606.67s ->   608.15s] You do have to run regressions.
+[  608.27s ->   610.49s] You have to code in R or Python.
+[  610.75s ->   614.41s] But it still isn't a quantitative major.
+[  614.41s ->   624.17s] If you want to be an economist, a politician, or an investment banker, then you would choose this as your degree.
+[  624.75s ->   630.53s] But we still borrow a lot of important topics from it, more so even than finance.
+[  630.67s ->   639.63s] This study of econometrics, these different regression frameworks that we would use to analyze some sort of equity trading strategy.
+[  639.63s ->   651.25s] So for that study of game theory, causality, and all that under the umbrella of econometrics, economics has earned itself a spot on the C tier.
+[  651.39s ->   657.27s] And that's going to complete our college major tier list, specifically for a career in quant finance.
+[  657.41s ->   664.35s] Now, I will say math is your strongest choice in major, but it is a double-edged sword.
+[  664.59s ->   669.17s] If you study it incorrectly, it will not be useful to you.
+[  669.17s ->   680.33s] But if you study it correctly, there isn't a topic in any of these other degree programs that you can't understand with a little bit of self-study.
+[  680.41s ->   683.99s] It is the most powerful major by far.
+[  684.09s ->   685.95s] That being said, that'll do it for this video.
+[  686.07s ->   686.77s] I hope you enjoyed.
+[  686.97s ->   687.91s] I hope you learned something.
+[  688.29s ->   694.27s] I'll leave a link in the description below if you'd like to join our Discord to connect with me and other quants in the Quant Guild community.
+[  694.27s ->   698.83s] If you'd like to master your quantitative skills, check out quantguild.com.
+[  699.13s ->   704.47s] Other than that, thank you so much for watching, and I will see you in the next video.

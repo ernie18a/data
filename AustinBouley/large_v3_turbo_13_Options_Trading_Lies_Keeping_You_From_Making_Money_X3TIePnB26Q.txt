@@ -1,0 +1,201 @@
+[    0.00s ->     5.70s] And I'm going to break down 13 options trading lies that you've been told and that you probably
+[    5.70s ->    10.58s] believe that is the reason why you're not consistently profitable. These are 13 things
+[   10.58s ->    15.02s] that I've looked at and I thought about that over the last eight years, I realized has kept me stuck
+[   15.02s ->    21.14s] and has kept most of my students stuck as well. So let's dive in, which is number one is 90% of
+[   21.14s ->    25.86s] options trades expire worthless. How many times have you heard this where you say option selling
+[   25.86s ->    32.20s] has an edge because most options expire worthless. There is actual data to back this up to say that's
+[   32.20s ->    40.08s] not true. 10% of trades are exercised, which means that the person who owes the contract decides to
+[   40.08s ->    46.28s] call in the shares, but that doesn't mean that it doesn't expire worthless. It can still expire in
+[   46.28s ->    50.94s] the money and you can be on the hook. It doesn't mean that contract gets exercised. So if you're
+[   50.94s ->    56.50s] a believer that by selling options, you naturally have a 90% win rate, no matter what option you're
+[   56.50s ->    62.20s] selling or how you're doing it, that's a flat out lie. So option selling in and of itself does not
+[   62.20s ->    67.20s] have any advantages because it still has the same win rate. It's still a trade set. We still need to
+[   67.20s ->    72.54s] make sure that you're running the right risk to reward scenario with the right win rate and not
+[   72.54s ->    76.54s] just assuming that you've heard this thing that option selling gives you a natural edge because it
+[   76.54s ->    80.66s] doesn't. It's still a strategy that you need to win and perfect in order to make money with.
+[   80.66s ->    86.58s] So that is lie. Number one is that 90% of options expire worthless. Not true. Number two is that
+[   86.58s ->    92.70s] selling data is an edge. What does this mean? This means that the idea that as time goes on,
+[   92.78s ->    97.76s] I make money as an option trader. That's what data decay is. As time goes on, I make money.
+[   98.22s ->   104.44s] Now time in and of itself is not an edge. It's not an advantage. Anything can happen throughout time
+[  104.44s ->   110.60s] making your trade a winner or a loser. It doesn't mean just as time passes, I make money. There are
+[  110.60s ->   116.12s] so many more factors into it that play into it that leads to a profit or a loss for your options
+[  116.12s ->   121.62s] trading, such as trend, such as volatility, such as market movements, such as news. There are so
+[  121.62s ->   128.46s] many things impacting the trade. So just because you're trading theta or you're selling theta and
+[  128.46s ->   133.38s] you're making that money from beta decay doesn't mean that's what gives you a statistical edge or
+[  133.38s ->   138.50s] an advantage over any other trader. Time passes and that's true for everyone, no matter what strategy
+[  138.50s ->   142.26s] you use. So if you believe that you have an advantage because you're an options seller and
+[  142.26s ->   147.30s] you're selling theta, that's not necessarily true. You still need a proven system. Guys,
+[  147.36s ->   150.94s] if you're struggling to be consistent because you don't have a proven system and you're believing
+[  150.94s ->   155.34s] some of these lies, they click a link, the first link down below. And I'd love to put a call with you
+[  155.34s ->   161.00s] to show you how to implement the correct system at the right time to increase your consistency as an
+[  161.00s ->   166.60s] options trader. So that is number two. Next is to sell puts on stocks that you want to own so that you can
+[  166.60s ->   171.98s] get them at a discount and collect premium at the same time. This is something that I hear a lot.
+[  172.06s ->   177.98s] And they use the example of how Warren Buffett sold puts on Coca-Cola, made a million or so dollars,
+[  177.98s ->   183.82s] and then was able to buy the stock at a discount, selling puts to collect premium and then being able
+[  183.82s ->   190.00s] to enter the stock at a discount. That is not really true. Yes, that story is true, but Warren Buffett
+[  190.00s ->   196.86s] wasn't doing it for that reason. Here's how this works. If the market is trading here and you sell
+[  196.86s ->   201.88s] a put here, so you're collecting premium by selling this put. And if the market drops down to here,
+[  201.96s ->   207.88s] then you're able to enter the stock at a better level. Better in quotes, because sure, it's better
+[  207.88s ->   213.64s] than where it was here. But by the time you entered, the market's probably crashing. So you're entering it
+[  213.64s ->   218.90s] around here and you got in the shares here, but it's still trading here. So you're still at a huge
+[  218.90s ->   223.92s] loss on the shares. So you're not actually getting it at a discount of where it's currently trading.
+[  224.06s ->   229.42s] You're getting it at a discount of where it was when you sold the option. And this premium is not
+[  229.42s ->   234.58s] enough to offset typically the cost that comes from crashing markets. So what you're doing here is
+[  234.58s ->   239.76s] you're entering premium and you're getting in at a worse point and getting in at a loss without
+[  239.76s ->   244.04s] enough premium to offset the loss. And this is a problem that I see with a lot of people, which is
+[  244.04s ->   248.46s] why I think if you want to enter a stock, you just enter a stock. If you want to sell puts,
+[  248.46s ->   253.68s] put a structure and system around it where you have a take profit, a stop loss rules and management
+[  253.68s ->   258.58s] rules to keep it actually a consistently profitable trade and not something that you just hope and
+[  258.58s ->   262.00s] guess. And maybe I'll roll it. Maybe I'll do the wheel, maybe something like that, because that
+[  262.00s ->   268.68s] doesn't work. All right. That is number three. Number four is you make money when you buy options,
+[  268.68s ->   274.32s] as long as the stock is at or above your level, depending on how you're doing it. Long options do not
+[  274.32s ->   279.98s] matter where the strike price is. If it is out of the money, you will make no money, depending on how
+[  279.98s ->   285.20s] far in the money it is, depending on how much money you'll make. But it doesn't actually matter. If you
+[  285.20s ->   290.50s] are buying an option, treat it like a stock. You want to buy it at a lower price and sell it at a
+[  290.50s ->   296.62s] higher price. There are so many different Greeks that impact the price of an option. And so if you want
+[  296.62s ->   302.40s] to have consistency, if you want to make money from a long option, assume that it is a stock and make
+[  302.40s ->   307.20s] money on the direction of the trade. AKA, if you're going to buy a put to make money from it,
+[  307.42s ->   312.62s] wait for the market to drop, see a bearish flag or something that indicates the market is going to go
+[  312.62s ->   317.40s] down and trade it in a downward direction. If you want to make money buying a call,
+[  317.72s ->   323.78s] wait for the market to trend up or look for a spike up or a flag that's pushing up and buy a call so that
+[  323.78s ->   328.72s] you can buy low and sell high. The fact that you're going to make money on different strike prices when you
+[  328.72s ->   333.90s] buy options is not true. That really only applies to selling options. So that is lie number one.
+[  334.28s ->   339.42s] Lie number five is you can't go broke taking profits. Boy, have I heard this one way too many
+[  339.42s ->   344.30s] times of people who have been in a trade way too long and they've been feeling the pain of having
+[  344.30s ->   349.58s] losses. And as soon as they see some profit, they take that profit and move on. I know if you've been
+[  349.58s ->   353.20s] trading for any amount of time, you've experienced this and you've done this yourself. And that's just
+[  353.20s ->   358.38s] because of emotions that get in the way. But what this means is that if you only take small profits,
+[  358.72s ->   364.72s] but yet you take large losses, long term, you're not going to win. Okay. You need to be able to
+[  364.72s ->   371.70s] collect enough profit when you win to be able to offset your losses and more. If you can't offset
+[  371.70s ->   376.42s] your losses, which tend to be larger anyway, because you're not cutting your losses fast enough,
+[  376.42s ->   382.56s] you're not going to profit long term. So taking small wins, small win followed by a large loss,
+[  382.58s ->   387.42s] which is what most options traders do is the reason why you're not consistent and not profitable.
+[  387.42s ->   392.64s] Most option sellers lose money and at the worst, the break even. And it's because of this,
+[  392.70s ->   398.26s] they take small with small win. You need to be able to take up enough profit so that when you lose,
+[  398.48s ->   405.24s] you're able to cover it and more. So lie number five is that taking small profits can help you win.
+[  405.48s ->   410.30s] Lie number six is that buying is better than selling options or selling options is better than
+[  410.30s ->   415.78s] buying options. But the truth is both are good and it depends on what the market is doing.
+[  415.78s ->   421.14s] Okay. I talk about how you can have a strategy, but if you're not trading it in the right market,
+[  421.14s ->   425.38s] you're going to lose money. You need to align the right strategy with the right market. And that is
+[  425.38s ->   431.44s] true of options trading. If you are buying options and you're in a low volatility environment,
+[  431.44s ->   437.06s] you have a chance of doing better than if you were to sell options. If you are selling options,
+[  437.06s ->   440.56s] when volatility is high, you actually have a higher chance of winning.
+[  440.56s ->   446.96s] So buying options and selling options can both do well. It just depends on what the volatility of
+[  446.96s ->   452.26s] the market currently is. I talk a lot about this in my coaching program. When volatility is high,
+[  452.52s ->   458.48s] we then go to credit based strategies. And when volatility is low, we go to debit based strategies.
+[  458.48s ->   464.30s] So that not only are we playing off the direction of the trend, but we're also playing on the
+[  464.30s ->   469.78s] volatilities movement so we can profit faster and have higher win rates. And if you're interested in
+[  469.78s ->   474.60s] helping me or allow me to implement this for you or showing you what to do, click the first link
+[  474.60s ->   480.40s] down below. Lie number seven is that options are a zero sum game. You probably heard in the stock
+[  480.40s ->   485.38s] market that for every buyer, there is a seller. And so there's a zero sum game, which is a loser
+[  485.38s ->   491.12s] loses a certain amount of money and the buyer makes or loses a certain amount of money. Now to an
+[  491.12s ->   494.96s] extent, the same is true in options. If you buy an option, there must be a seller. If you sell an
+[  494.96s ->   499.14s] option, there must be a buyer. But the truth is, it's not a zero sum game. There are not equal
+[  499.14s ->   504.06s] winners and losers because options, you're not betting on one single thing like a stock. It's
+[  504.06s ->   508.26s] only one thing that you're betting on. You're betting on numerous factors. You're betting on
+[  508.26s ->   513.18s] an expiration date. You're betting on a strike price and you're betting on a certain price of the option.
+[  513.70s ->   519.16s] So if the option price is not right, the strike price is not right, the expiration date is not right,
+[  519.16s ->   525.54s] you will lose money. So sure, the transaction is a zero sum, but the fact of you winning is not a
+[  525.54s ->   531.14s] zero sum game because of all the factors that go into it. Guys, option selling is way more complicated
+[  531.14s ->   534.78s] than stock. So you have to understand there's all these other factors that if you don't have them
+[  534.78s ->   539.62s] lined up correctly can lead to you losing. So if you're not being a consistently profitable trader,
+[  539.86s ->   544.32s] that may be why. Option selling is not a zero sum game because you're betting on a ton of different
+[  544.32s ->   549.14s] factors. Time, strike, and price. Lie number eight is that in order to be a successful
+[  549.14s ->   556.58s] trader, you need to model and emulate what high frequency traders, hedge funds, and institutions
+[  556.58s ->   563.46s] do. This is true to an extent. Number one, what they have that you don't is that they have a trading
+[  563.46s ->   568.80s] plan. They know what they do, when they do it, why they do it, and a reasoning for it that actually
+[  568.80s ->   573.90s] makes sense. Most of you guys are just entering trades because you think it's a good idea. You may
+[  573.90s ->   577.94s] have solved something. You don't have a solid plan. That plan was not backtested. That plan has not
+[  577.94s ->   581.24s] actually been tested with real money. For all those reasons, this is why you're not having
+[  581.24s ->   585.78s] consistency. So yes, you need to be like a hedge fund or market maker for that reason to actually
+[  585.78s ->   591.32s] have a plan. But when it comes to what they do, that's not what you should do. A lot of these funds
+[  591.32s ->   598.16s] are manipulating the market, changing and doing high frequency trading to actually take advantage of
+[  598.16s ->   603.94s] your orders, get in and get micro deals and things like that. You will not be able to do that. Do not play
+[  603.94s ->   608.98s] that game. Instead, as an option seller who's doing it yourself, you want to go for longer dated
+[  608.98s ->   615.30s] options. I'm talking 90 DTE, 120 DTE, or something like that. The further out in time you go, I found
+[  615.30s ->   618.96s] that you have a larger advantage because your win rate increases. You don't care what happens in the
+[  618.96s ->   623.54s] short term, so you can't really be faked out of trades and things like that. So if you are trading
+[  623.54s ->   628.54s] yourself, do not mimic what the hedge funds are doing who are trading super short because, again, I've also
+[  628.54s ->   633.12s] found that 0DT traders also have the most stress and the highest losses, and so you probably don't want to do
+[  633.12s ->   639.82s] that either. Go longer dated. So have a plan, but go longer dated. Lie number nine is that making X
+[  639.82s ->   646.88s] number of dollars per week is super easy. This is not true. Your returns vary based on the volatility,
+[  647.16s ->   651.86s] which you can't control, based on the market, which you can't control, based on the setup, which you
+[  651.86s ->   657.00s] don't always control. There are so many factors going into it that you can't be like, I want to make
+[  657.00s ->   662.36s] this much money every single week and actually hit it. Now you can have targets, you can have goals,
+[  662.36s ->   667.28s] you can aim for ideas, but the idea that you're going to make the same amount of money every single
+[  667.28s ->   672.64s] month is not true. You can have the same systematic plan where you do the same trading every time,
+[  672.70s ->   677.46s] but the market might change, the volatility might change, the movement might change, pricing might
+[  677.46s ->   683.64s] change, bid-ass spread might change. So the idea of being super consistent is a great idea and something
+[  683.64s ->   688.68s] we should strive for by aligning both the strategy and the market together. But the idea that we will
+[  688.68s ->   692.40s] always set a certain dollar amount is not something that you should rely on. And if you
+[  692.40s ->   696.42s] are, it's because you're chasing money and you're not thinking about trading from a fundamental game.
+[  696.76s ->   702.76s] Your wins and losses combined with your win rate need to produce a net positive number and that
+[  702.76s ->   707.16s] long-term will make you money. Lie number 10 is that this new strategy you saw on YouTube will
+[  707.16s ->   712.74s] actually work. Guys, here's the thing. Too many of you guys are so obsessed with shiny object syndrome.
+[  712.92s ->   716.74s] You see a new strategy and you're like, I was trading this, but I don't really know. I'm going to try
+[  716.74s ->   720.74s] this instead because it looks like it works. Here is the truth that a lot of people don't want to tell
+[  720.74s ->   727.32s] you. Every strategy works given there's some rules to it. It's consistent and it has a good risk to
+[  727.32s ->   732.26s] reward is going to work, which most option selling strategies are designed to do by default. Okay.
+[  732.60s ->   737.82s] The problem is number one, your emotions get in the way. So you don't actually follow the strategy
+[  737.82s ->   742.90s] exactly as you should every time. So there is no consistency because your consistent use of the
+[  742.90s ->   747.26s] strategy is different. And then number two is because you're not using it in the right market.
+[  747.58s ->   752.90s] Guys, I'm a believer that every strategy works, but it only works in the market that it was designed
+[  752.90s ->   756.64s] for. This is something that a lot of people don't tell you is that this strategy is great, but they
+[  756.64s ->   760.70s] don't tell you only use it in bullish markets or this strategy is great, but only use it in bearish
+[  760.70s ->   766.46s] markets. Okay. So make sure the strategy you're using aligns with what market you're in. Okay. And the
+[  766.46s ->   772.42s] easiest way to know if this is true is by back testing a strategy and to see on that performance graph
+[  772.42s ->   779.34s] over time, what parts did it do very well? And what parts did it do bad? The parts and timeframes
+[  779.34s ->   783.76s] that it did well map out on the chart. Was it a bullish market? Was it a bearish market? Was it
+[  783.76s ->   789.06s] a sideways market? What markets did the strategy perform well and make sure to only trade that
+[  789.06s ->   793.54s] strategy during that time? And that will help you boost your win rates, profits, and lower your
+[  793.54s ->   799.24s] stress. Line number 11 is that rolling options avoids losses. Boy, have I heard this one a lot and it's so
+[  799.24s ->   804.02s] not true. Guys, when you roll an option, you're taking the loss and you're reopening another
+[  804.02s ->   809.22s] position. Okay. That you could absolutely lose on. You're not turning it into a winning trade.
+[  809.22s ->   814.06s] You're not rolling the losses and moving them away. What you're doing is you're taking a loss and
+[  814.06s ->   818.32s] you're closing another trade that has enough profit to offset it and more. But that just means
+[  818.32s ->   823.20s] there's more money to lose on this trade. You're essentially doubling down on a trade and there's
+[  823.20s ->   829.44s] no reason to do that. Guys, if a car is in the middle and it's crashing and it's not on fire,
+[  829.60s ->   832.82s] you're not going to double down and be like, oh, if we put more people in the car and go faster,
+[  832.86s ->   836.46s] it's going to be better. No, you're going to kill more people. Okay. So that's a crazy analogy and
+[  836.46s ->   841.34s] probably should have thought of it better. But basically when you double down, you're double
+[  841.34s ->   846.80s] hurting your portfolio. The only reason I might consider rolling an option, which across the board,
+[  846.80s ->   853.30s] I don't, is if the trend is still the same. Okay. If I know the trend that's continuing most of the
+[  853.30s ->   857.66s] time though, if you're doing anything less than a 20 Delta on the options you're selling,
+[  857.72s ->   861.06s] so you're selling a 20 Delta, 15 Delta, 10 Delta, five Delta, something like that.
+[  861.36s ->   867.10s] And you break that level, then it's because the trend has changed. And so you don't want to roll
+[  867.10s ->   870.70s] the option because you're just going to keep losing and now you're going to lose more on more money.
+[  871.12s ->   875.58s] But instead, what you want to do is take the loss and move on. This is the biggest lesson you guys
+[  875.58s ->   880.12s] need to learn. If you're losing and you don't know why, you don't know what to do. The easiest
+[  880.12s ->   884.78s] thing to do is to take the loss, understand you lost because you didn't have a game plan
+[  884.78s ->   890.16s] and make sure that never happens again, because you put a game plan in place. XYZ, I do this every
+[  890.16s ->   895.90s] time. Line number 12 is that trading is hard. Here's the truth. If you have a mechanical trading
+[  895.90s ->   903.38s] system where you follow XYZ every time, it's not hard. You know exactly what you need to do.
+[  903.38s ->   909.00s] Okay. Step one, I do this. Step two, I do this. Step three, I do this. Step four, I do this. And
+[  909.00s ->   913.94s] every single time I do this, and I understand that the numbers game, if you have no emotions,
+[  914.06s ->   919.24s] that makes it super simple. That's where emotions come in and make it hard. Maybe I lost a trade.
+[  919.32s ->   923.34s] So then I stopped believing in the strategy. So then I start changing it, start tweaking it,
+[  923.38s ->   927.88s] start doing something different, which gives me poorer and poorer results. And it doesn't work out.
+[  927.88s ->   932.40s] Or maybe I win. Maybe I slightly do something different because I think I'm great and I win.
+[  932.70s ->   938.04s] And that trains me to think, cool, I can trade. I can change the strategy however I want. And I'm
+[  938.04s ->   943.10s] still going to win. It teaches you to deviate from the strategy. The truth is, if you're following a
+[  943.10s ->   947.28s] simple mechanical strategy, you do the same thing every time. It's not hard. It's just a numbers game,
+[  947.50s ->   951.90s] but you let emotions get in the way. Losses happen. You doubt yourself. You doubt the strategy. And
+[  951.90s ->   957.14s] then trading gets hard because you're no longer putting consistent input into the system. Guys,
+[  957.14s ->   961.88s] you have to think about this like a numbers person. That's really what options are. They are a numbers
+[  961.88s ->   968.40s] game. Okay. If you put in one, say you put in three inputs and you get this certain output. Okay. You
+[  968.40s ->   972.74s] get that every single time. Awesome. What happens when you put in four inputs, you get a different
+[  972.74s ->   976.88s] output. If what happens when you put in five inputs, you get a different output. Okay. The thing is,
+[  977.10s ->   982.56s] you guys are putting in different inputs every time expecting the same result. That's not how this
+[  982.56s ->   988.30s] happens. You put in the same input every single time and then track the numbers game. Okay. So
+[  988.30s ->   993.64s] that's all option selling is. And lie number 13 is that you can be successful without help. Sure. You
+[  993.64s ->   998.06s] might be able to have some success and sure some people have been able to teach themselves, but they
+[  998.06s ->  1002.84s] are outliers. I myself have even learned from others and I paid for coaches. I paid for mentors
+[ 1002.84s ->  1009.56s] to learn what I do now. And so that is how I did it. Now I also learned a lot myself, but I did
+[ 1009.56s ->  1014.12s] learn a lot from others. And so if you want to speed up the rate at which you learn, you want to
+[ 1014.12s ->  1018.70s] speed up and stop going through the same old muck of the beginner trading mistakes that you keep
+[ 1018.70s ->  1022.94s] making over and over. You need a mentor. You need someone better. Now, the thing is, if you enjoyed
+[ 1022.94s ->  1027.18s] this video and you like the way I talk, then I would love to be able to help you out. So click the first
+[ 1027.18s ->  1031.96s] link down down below and I'll tell you about exactly how I can help you out. We'll jump on. We'll look at
+[ 1031.96s ->  1036.42s] your training strategy and we'll see if you're a good fit to work together. I worked with over 800 people
+[ 1036.42s ->  1041.00s] so far or currently. I'd love to work with you next. So I hope you book a call down below and
+[ 1041.00s ->  1041.96s] I hope that you enjoyed this video.

@@ -1,0 +1,597 @@
+[    0.46s ->     9.44s] If you're looking to get involved in the quant research or quant trading space, you need to be capable of building your own models.
+[    9.44s ->    17.90s] In this video, what I want to do is present to you a generalized framework for building specifically these statistical learning models.
+[   18.08s ->    30.72s] We'll talk about how these models learn from data, what it is exactly that they are learning, and then we'll discuss a very specific type of learning model that is this neural network.
+[   30.82s ->    48.82s] Which is the basis for a lot of complicated architectures for models that we use now every day, from unlocking our phone with facial recognition to language modeling, that is these large language models like Chack GPT and that transformer architecture.
+[   48.82s ->    57.82s] From there, we'll look at applications in Quant Finance and we'll see how we can train a neural network to go about pricing options.
+[   57.82s ->    62.82s] As we'll see in this video, models that we build in this space are necessarily wrong.
+[   62.82s ->    66.82s] This is a function of what it is they are learning from data.
+[   66.82s ->    72.82s] This means we'll never be able to build a model with 100% accuracy.
+[   72.82s ->    78.82s] I've only seen that one time, and it was a model trained on a classification problem.
+[   78.82s ->    83.82s] Whether or not you'll have access to a Jupyter notebook with a new Quant Guild video.
+[   83.82s ->    86.82s] And we know that that is always true.
+[   86.82s ->    89.82s] This Jupyter notebook will be linked in the description below.
+[   89.82s ->    99.82s] I will also post it to the Quant Guild library on GitHub, where you can find all of my Jupyter notebooks and associated YouTube videos, along with all of the source code for my Quant builds.
+[   99.82s ->   106.82s] At the top of this Jupyter notebook, you'll notice some related Quant Guild videos applying probability and statistics to finance and trading.
+[  106.82s ->   108.82s] This idea of time series analysis.
+[  108.82s ->   110.82s] Retail versus institutional trading.
+[  110.82s ->   111.82s] Trading versus investing.
+[  111.82s ->   117.82s] This idea of accumulating expected value over a series of trades to generate P&L.
+[  117.82s ->   119.82s] Quant versus discretionary trading.
+[  119.82s ->   126.82s] And of course, busting three trading myths that these trading gurus love to propagate.
+[  126.82s ->   133.82s] If you're unfamiliar with any of these ideas, I highly recommend you check these videos out first before tackling one like this.
+[  133.82s ->   136.82s] Moreover, these videos certainly take a lot of effort to create.
+[  136.82s ->   142.82s] So if you'd like to help support the channel so I can continue to create videos just like this one, please like, comment, subscribe, share.
+[  142.82s ->   143.82s] It helps me out tremendously.
+[  143.82s ->   145.82s] It is always greatly appreciated.
+[  145.82s ->   150.82s] And if you'd like to master your quantitative skills, check out QuantGuild.com.
+[  150.82s ->   157.82s] Maybe you come from a background in business, economics, computer science, and aren't too sure where to get started on your Quant journey.
+[  157.82s ->   163.82s] Maybe you're an aspiring Quant or a working professional looking to sharpen your quantitative skills.
+[  163.82s ->   166.82s] In any case, Quant Guild is for you.
+[  166.82s ->   170.82s] We have over 90 Quant lessons in math, probability, finance.
+[  170.82s ->   179.82s] An adaptive practice engine that scales with your skill level so you can progress to more and more difficult topics with gamified rank based progress.
+[  179.82s ->   183.82s] Interview questions with fully worked solutions.
+[  183.82s ->   184.82s] Trading games.
+[  184.82s ->   192.82s] Courses from A to Z in coding, math, probability statistics, and more on the way.
+[  192.82s ->   196.82s] And all that's included with Quant Guild membership.
+[  196.82s ->   198.82s] And you can get started right now for free.
+[  198.82s ->   204.82s] So if you'd like to help support the channel and master your quantitative skills, check out QuantGuild.com.
+[  204.82s ->   212.82s] Without further ado, let's get started by discussing this idea of a generalized framework for these statistical learning models.
+[  212.82s ->   215.82s] And there are a lot of models to choose from.
+[  215.82s ->   222.82s] We can choose a linear, logistic regression, random forest, support vector machines, neural networks, the list goes on.
+[  222.82s ->   232.82s] But it's important to understand that regardless of the model that you select, you're dealing with the same problem in this Quant data science space.
+[  232.82s ->   243.82s] All you're effectively trying to do is select an optimal set of parameters for the model that you choose to produce the best possible prediction.
+[  243.82s ->   249.82s] And we'll talk about why I don't like the term prediction later on, but I'm going to use it for now.
+[  249.82s ->   253.82s] Effectively, the framework is as follows.
+[  253.82s ->   258.82s] You have some sort of model M and you can choose this to be whatever you like.
+[  258.82s ->   265.82s] Your goal is to produce some prediction for available data X.
+[  265.82s ->   271.82s] OK, well, we can't just combine model M with available data X.
+[  271.82s ->   279.82s] We also need some way to inform that model to be able to produce a good prediction.
+[  279.82s ->   282.82s] And we do that by selecting parameters.
+[  282.82s ->   289.82s] So effectively, every model M is going to have some sort of set of parameters that I'm going to call theta.
+[  289.82s ->   293.82s] We can choose whatever we want for theta.
+[  293.82s ->   307.82s] And when we combine the available data X with parameters theta that we get to select, we will get some sort of prediction that is typically denoted Y hat.
+[  307.82s ->   314.82s] OK, that is the general framework for these statistical learning models.
+[  314.82s ->   317.82s] We can call any of these machine learning models.
+[  317.82s ->   326.82s] Neural networks, as we're going to see later on, are a specific type of machine learning model that facilitate deep learning or artificial intelligence.
+[  326.82s ->   330.82s] But we'll see that later on in this video.
+[  330.82s ->   339.82s] Now that we understand this generalized framework, let's apply it to a simple problem before moving on to more advanced topics.
+[  339.82s ->   347.82s] In this example, all I'm trying to do is build a model capable of predicting the max football throwing distance for a particular individual.
+[  347.82s ->   352.82s] There is a reason why I'm not using stock prices or stock returns here.
+[  352.82s ->   359.82s] We do not apply statistical learning models directly to the price series or the return series.
+[  359.82s ->   361.82s] And we will see why later on.
+[  361.82s ->   365.82s] For now, let's focus on applying this generalized framework.
+[  365.82s ->   369.82s] So I'm going to pick a model.
+[  369.82s ->   371.82s] I can pick whatever model I like.
+[  371.82s ->   373.82s] I'm going to call it M.
+[  373.82s ->   376.82s] That model M is going to have a set of parameters.
+[  376.82s ->   378.82s] I'll call it theta.
+[  378.82s ->   387.23s] And what we're going to do is observe the stats of players before they throw the ball.
+[  387.23s ->   393.23s] Maybe we look at things like their height, their weight, their max bench press, their age.
+[  393.23s ->   398.23s] We can select whatever features we like before that event occurs.
+[  398.23s ->   402.23s] That is, before they actually throw the football.
+[  402.23s ->   409.23s] And what this looks like now is a set of data that we can learn from.
+[  409.23s ->   414.23s] Effectively, we can learn the parameters for our predictive model.
+[  414.23s ->   421.87s] So in a diagram, effectively, what we have here is X as our player stats.
+[  421.87s ->   425.87s] We have Y as an observed distance.
+[  425.87s ->   431.87s] And what's going to happen is we're going to let a whole bunch of people throw this football as far as they can.
+[  431.87s ->   434.87s] We're going to record their stats before they throw it.
+[  434.87s ->   437.87s] Then we will record the observed distance.
+[  437.87s ->   439.87s] We'll pair those together.
+[  439.87s ->   443.87s] That is the player stats with the observed distance.
+[  443.87s ->   458.87s] And what we're going to do is we're going to learn parameters from the data that is this theta hat here to produce the best possible prediction for this distance based on player stats.
+[  458.87s ->   462.87s] Keep in mind, I didn't explicitly select a model.
+[  462.87s ->   464.87s] I didn't say M is a linear regression.
+[  464.87s ->   467.87s] I didn't say it was a random forest, a neural network.
+[  467.87s ->   471.87s] This goes for any statistical learning model.
+[  471.87s ->   479.87s] That's why I think it's very important to understand the framework in general so that you can apply it to any model that you select.
+[  479.87s ->   482.87s] And that's going to be on a case by case basis.
+[  482.87s ->   489.87s] But in any case, now that we understand the general framework, what we have is a set of data, right?
+[  489.87s ->   491.87s] We have our player stats here.
+[  491.87s ->   494.87s] And remember, this is a set of features that I chose.
+[  494.87s ->   497.87s] I could add how many pull ups they could do in a minute.
+[  497.87s ->   505.87s] I could add really whatever features that I want to aid in predicting their max football throwing distance.
+[  505.87s ->   509.87s] But in any case, I have this data set now.
+[  509.87s ->   512.87s] How do I learn from it?
+[  512.87s ->   514.87s] I have my model.
+[  514.87s ->   518.87s] I know that that model has some parameter set theta.
+[  518.87s ->   522.87s] And I get to choose whatever I want for that parameter set.
+[  522.87s ->   534.87s] How can I choose the best possible theta to come up with the best possible predictions for the observed distances based on player stats?
+[  534.87s ->   549.19s] Well, machines effectively learn by minimizing distance or error from their predictions to the observed values.
+[  549.19s ->   553.19s] We can represent this as typically a loss function.
+[  553.19s ->   556.19s] In this case, I'm looking at the mean squared error.
+[  556.19s ->   570.83s] And all you're observing here is the sum of the actual distances that we observe minus the predicted distances from our model squared.
+[  570.83s ->   573.83s] That's it. It's a measure of distance.
+[  573.83s ->   581.83s] And what you'll notice here is the predictions for our model are given to us by some sort of theta.
+[  581.83s ->   585.83s] But we get to select whatever we want for that theta.
+[  585.83s ->   586.83s] So what does that mean?
+[  586.83s ->   591.83s] What is the only thing that we can adjust in this error function?
+[  591.83s ->   594.83s] Well, we can adjust the model parameters.
+[  594.83s ->   596.83s] We can't change the data.
+[  596.83s ->   599.83s] I can't change how far somebody threw the football.
+[  599.83s ->   604.83s] But I can select whatever model and whatever parameters I would like.
+[  604.83s ->   608.83s] So this turns into a minimization problem.
+[  608.83s ->   618.83s] Really what I'm trying to do is minimize this error for whatever model I select based on the parameter set theta.
+[  618.83s ->   622.83s] And really what I'm looking for is this theta star.
+[  622.83s ->   629.83s] My objective is to find the argument theta that minimizes the mean squared error.
+[  629.83s ->   635.83s] That is the distance between my model's predictions and the actual observed values.
+[  635.83s ->   638.83s] Because remember, what is y hat?
+[  638.83s ->   645.66s] Well, all y hat is, is my model's prediction.
+[  645.66s ->   650.66s] That's what we talked about when we introduced this generalized framework.
+[  650.66s ->   653.66s] So this turns into an optimization problem.
+[  653.66s ->   656.66s] We're trying to minimize error.
+[  656.66s ->   660.66s] This goes for every single statistical learning model.
+[  660.66s ->   664.66s] Specifically, this is called a supervised learning model.
+[  664.66s ->   666.66s] But we will digress from that notion for now.
+[  666.66s ->   677.66s] In the quant data science space, the act of solving these minimization problems is known as training, model fitting, or model calibration.
+[  677.66s ->   684.66s] And we can visualize it effectively as two classes of minimization problems.
+[  684.66s ->   689.66s] We have convex problems and non-convex problems.
+[  689.66s ->   695.66s] If we look at the convex problem, then it's actually very easy to solve.
+[  695.66s ->   699.66s] If we're trying to minimize it, we can really just look at it as a slide.
+[  699.66s ->   708.66s] If I start anywhere on the function, eventually I will slide all the way down to the global minimum.
+[  708.66s ->   714.66s] And keep in mind, this global minimum is the parameters for our model that minimizes error.
+[  714.66s ->   719.66s] It is the smallest possible error for our model that we select.
+[  719.66s ->   721.66s] And that's what we're after.
+[  721.66s ->   723.66s] We're after this theta star.
+[  723.66s ->   728.56s] In reality, we aren't dealing with convex problems.
+[  728.56s ->   731.56s] We're dealing with non-convex problems.
+[  731.56s ->   736.56s] And you'll notice here, if we start somewhere on this function and we slide down,
+[  736.56s ->   743.56s] we can get stuck in what's called a local extrema or a local minimum.
+[  743.56s ->   746.56s] And we can't claw our way back up.
+[  746.56s ->   750.56s] That is how these optimization algorithms function.
+[  750.56s ->   755.56s] They effectively are stepping across the function in some sort of dimension.
+[  755.56s ->   760.56s] And it's going to slide down in efforts to make the overall error smaller.
+[  760.56s ->   765.56s] But you can get stuck here because what happens when you get all the way down to here?
+[  765.56s ->   769.56s] Well, if you start going in either direction, the error starts to increase.
+[  769.56s ->   772.56s] You may be saying, well, Roman, like we can see this, right?
+[  772.56s ->   775.56s] Why don't we just not select this parameter set?
+[  775.56s ->   778.56s] Let's just select this one.
+[  778.56s ->   780.56s] This is an abstraction.
+[  780.56s ->   786.56s] I never specified a model and I never specified the dimensionality of parameter set theta.
+[  786.56s ->   791.56s] This holds in two dimensions, three, so on and so forth.
+[  791.56s ->   794.56s] This idea of a convex or non-convex function.
+[  794.56s ->   797.56s] And the minimization problem that we're dealing with.
+[  797.56s ->   802.56s] But it's important to understand, we can't actually visualize the functions
+[  802.56s ->   807.56s] and just pick the parameter set that's O all the way down here.
+[  807.56s ->   810.56s] This is useful to understand why.
+[  810.56s ->   814.56s] Because we can get stuck at these local extrema.
+[  814.56s ->   821.56s] And since we can't visualize the function, we can't just pick the parameter set that gives us the lowest error.
+[  821.56s ->   826.56s] So we need to get clever with how we go about solving these minimization problems.
+[  826.56s ->   829.56s] There are a lot of techniques we can use.
+[  829.56s ->   833.56s] There's stochastic gradient descent, all of the variations, so on and so forth.
+[  833.56s ->   839.56s] If there's interest in this topic, specifically non-convex optimization, it's very niche.
+[  839.56s ->   844.56s] One of my favorite topics, I'd be very happy to do a video on different optimization schemes.
+[  844.56s ->   846.56s] Just let me know in the comments below.
+[  846.56s ->   854.56s] But the key takeaway here to understand is minimization is effectively model training, model fitting, model calibration.
+[  854.56s ->   857.56s] And we're dealing with one of two classes of problems.
+[  857.56s ->   859.56s] We have convex, non-convex optimization.
+[  859.56s ->   861.56s] Now, convex is ideal, right?
+[  861.56s ->   866.56s] We can just effectively slide down the function in any number of dimensions.
+[  866.56s ->   869.56s] If it's convex, we'll just slide down to the minimum.
+[  869.56s ->   874.56s] But we don't deal with these in reality, we deal with these.
+[  874.56s ->   878.56s] And this is a much harder problem to solve.
+[  878.56s ->   881.56s] That is finding the global minimum.
+[  881.56s ->   883.56s] That is the parameter set theta.
+[  883.56s ->   885.56s] Remember, that is what we're after here.
+[  885.56s ->   894.56s] The parameter set theta for our selected model that is going to minimize the error across all of the observed data.
+[  894.56s ->   902.56s] Now that we have a good understanding of the model training, fitting, calibration process, we need to ask an important question.
+[  902.56s ->   906.56s] Do we want to be at this global minima?
+[  906.56s ->   909.56s] And the answer is not always yes.
+[  909.56s ->   913.56s] What I have here is a great animation to illustrate this.
+[  913.56s ->   919.56s] I have the same sample of data that is these blue scatterplot points here.
+[  919.56s ->   922.56s] And I have three different models.
+[  922.56s ->   928.56s] I have an underfit model, an overfit model, and a robust model.
+[  928.56s ->   933.56s] What I'm going to do is I'm going to introduce new points of data.
+[  933.56s ->   938.56s] That is, I'm going to use these models to create a prediction.
+[  938.56s ->   941.56s] And I'm effectively going to horse race them.
+[  941.56s ->   948.56s] I'm going to see which model produces the best predictions on average.
+[  948.56s ->   952.56s] And you'll see here, these yellow dots are the new observed data points.
+[  952.56s ->   960.56s] The red lines represent the distance from the model predicted value to the actual observed value.
+[  960.56s ->   972.85s] And what I want you to observe here is that what the robust model has the lowest error relative to the overfit and the underfit model.
+[  972.85s ->   974.85s] This is not by accident.
+[  974.85s ->   976.85s] This is the core objective.
+[  976.85s ->   983.85s] When you go about training a model, when you look to find a parameter set theta,
+[  983.85s ->   988.85s] you can always overfit your model to observed data.
+[  988.85s ->   994.85s] This does not mean it will perform well on new or unseen data.
+[  994.85s ->  1003.85s] Our objective is to build a model that generalizes well, not just works for a specific sample of data.
+[ 1003.85s ->  1012.85s] So when you look at this overfit model here, what I've done is I've selected a parameter set theta that may be at this global minima.
+[ 1012.85s ->  1021.85s] But when we introduce new data, the out of sample accuracy, that's what we call it when we observe new samples of data and look at the accuracy.
+[ 1021.85s ->  1029.85s] The out of sample accuracy relative to even the underfit or robust model is terrible, almost three times higher.
+[ 1029.85s ->  1033.85s] If we look at the underfit model, it performs relatively better.
+[ 1033.85s ->  1035.85s] That's not necessarily always the case.
+[ 1035.85s ->  1047.85s] But of course, we're after this robust model, one that learns the general trends from the data that we've seen before to try to make informed predictions about what's to come.
+[ 1047.85s ->  1050.85s] And that's exactly what we see here in this animation.
+[ 1050.85s ->  1059.85s] You see, as we observe new points, the robust model on average always produces the best prediction.
+[ 1059.85s ->  1065.85s] And that is what we are after when we go about training our models.
+[ 1065.85s ->  1073.85s] We're looking for some parameter set theta that doesn't just fit the data that we've observed well.
+[ 1073.85s ->  1081.85s] We want it to generalize when we observe new data, when we observe new player stats.
+[ 1081.85s ->  1092.85s] We want to be able to come up with the best possible prediction, not just based on what we've seen before, but using that information to generalize well.
+[ 1092.85s ->  1095.85s] That is what we see here in this animation.
+[ 1095.85s ->  1098.85s] So how do we build a robust model?
+[ 1098.85s ->  1110.85s] Well, we can avoid over and under fitting our models by coming up with a training validation and testing split for our observed data.
+[ 1110.85s ->  1114.85s] Effectively, let's say I observe 1000 people throw that football.
+[ 1114.85s ->  1121.85s] I'll chop it up and I'll use 60% of the data to train the model and I will validate on 20% of it.
+[ 1121.85s ->  1126.85s] And then I will save 20% of it to test it out of sample.
+[ 1126.85s ->  1134.85s] What that means is I'm going to have an entire portion of my data reserved that I never show the model to test the model with.
+[ 1134.85s ->  1139.85s] And I can see effectively how it would perform on new data.
+[ 1139.85s ->  1143.85s] And that's how we can avoid over fitting our model.
+[ 1143.85s ->  1155.85s] So when we go about solving this minimization problem, we're going to get a series of errors based on the parameter set that we select.
+[ 1155.85s ->  1161.85s] And what we're going to do is we're going to look at the error, not just for the training set.
+[ 1161.85s ->  1170.85s] So you can see here, I have training loss over a series of steps and I have validation loss over a series of steps.
+[ 1170.85s ->  1172.85s] These are two different samples of data.
+[ 1172.85s ->  1184.78s] I'm only informing my parameter set theta in this minimization problem with the training set of data.
+[ 1184.78s ->  1191.78s] And what that means is I can keep training it and I can even over train it and over fit it.
+[ 1191.78s ->  1201.78s] But what's going to happen to the validation model, the validation accuracy as soon as I start to over fit to that training set of data?
+[ 1201.78s ->  1203.78s] Well, the error is going to increase.
+[ 1203.78s ->  1205.78s] And that's exactly what you see here.
+[ 1205.78s ->  1210.78s] You can see that both the validation and training errors are going to go down.
+[ 1210.78s ->  1218.78s] But eventually the training error continues down and the validation error begins to increase.
+[ 1218.78s ->  1226.78s] What I really want to do is stop training here and use that parameter set theta for my model.
+[ 1226.78s ->  1234.78s] Then I can use that model and parameter set on the testing data and see what my out of sample performance looks like.
+[ 1234.78s ->  1242.78s] If it looks like the training and validation set, then I have a very nice and robust model.
+[ 1242.78s ->  1249.78s] I'm producing the best possible predictions that I can given the set of data that I have observed.
+[ 1249.78s ->  1252.78s] And that is always your objective.
+[ 1252.78s ->  1254.78s] OK, so we've covered a lot of ground here.
+[ 1254.78s ->  1256.78s] We understand we can pick whatever model we want.
+[ 1256.78s ->  1261.78s] Our goal is to find the parameters for that model to produce a good prediction.
+[ 1261.78s ->  1262.78s] We don't want an under fit.
+[ 1262.78s ->  1264.78s] We don't want an over fit model.
+[ 1264.78s ->  1265.78s] We want a robust model.
+[ 1265.78s ->  1270.78s] We chop up our data into training validation testing sets to accomplish this.
+[ 1270.78s ->  1276.78s] When we go about solving that minimization problem, eventually we stop and we use that parameter set.
+[ 1276.78s ->  1279.78s] And that is going to give us our robust model.
+[ 1279.78s ->  1283.78s] But what is our model actually learning?
+[ 1283.78s ->  1285.78s] How do we interpret those predictions?
+[ 1285.78s ->  1289.78s] What is it that these models are learning?
+[ 1289.78s ->  1295.78s] Well, let's take a look at a very simple example to understand what's going on.
+[ 1295.78s ->  1298.78s] I have this idea of a dice roll here.
+[ 1298.78s ->  1301.78s] We all know that a dice roll is random.
+[ 1301.78s ->  1307.78s] I can't actually predict the outcome of that random variable.
+[ 1307.78s ->  1314.78s] OK, well, if that's a random variable, then we can compute statistics and probabilities.
+[ 1314.78s ->  1320.38s] OK, well, what is the average value of a dice roll?
+[ 1320.38s ->  1322.38s] That's going to be three point five.
+[ 1322.38s ->  1326.38s] If we apply the definition of the expectation here, you can see we just get what?
+[ 1326.38s ->  1327.38s] Three and a half.
+[ 1327.38s ->  1328.38s] All right.
+[ 1328.38s ->  1336.38s] Well, let's use a machine learning approach to try to predict the outcome of a dice roll.
+[ 1336.38s ->  1343.38s] I'm going to roll just like I did with the player stats and the football throwing example above here.
+[ 1343.38s ->  1350.38s] I am going to roll ten thousand dice and I'm going to record all of the outcomes.
+[ 1350.38s ->  1367.96s] And what I'm going to do is I'm going to pick a model M and I'm going to try to learn a parameter set theta by solving this minimization problem to predict the outcome of a dice.
+[ 1367.96s ->  1372.96s] So what you're observing here is I'm actually training my model.
+[ 1372.96s ->  1375.96s] Each step, what happens to the error?
+[ 1375.96s ->  1377.96s] It's going down, right?
+[ 1377.96s ->  1380.96s] That is the training fitting calibration process.
+[ 1380.96s ->  1386.89s] Eventually, I get my predicted value.
+[ 1386.89s ->  1391.89s] In this case, my model that I selected was a neural network and the value it predicted was what?
+[ 1391.89s ->  1394.89s] Three point five.
+[ 1394.89s ->  1398.89s] What is the theoretical expectation that we computed above?
+[ 1398.89s ->  1400.89s] Three point five.
+[ 1400.89s ->  1403.89s] And this isn't by accident.
+[ 1403.89s ->  1411.89s] Neural networks models in this capacity are learning some form of an expectation.
+[ 1411.89s ->  1414.89s] This is what I had said at the start of the video.
+[ 1414.89s ->  1416.89s] This is why I don't like the term prediction.
+[ 1416.89s ->  1419.89s] You are not producing a prediction.
+[ 1419.89s ->  1423.89s] Effectively, you are just producing an expectation.
+[ 1423.89s ->  1427.89s] And the expectation is necessarily wrong.
+[ 1427.89s ->  1430.89s] It is minimizing the error.
+[ 1430.89s ->  1434.89s] It is not producing a prediction as if you had a crystal ball.
+[ 1434.89s ->  1437.89s] In fact, let me ask you this question.
+[ 1437.89s ->  1441.89s] Can a die even land on three point five?
+[ 1441.89s ->  1444.89s] No, the prediction will always be wrong.
+[ 1444.89s ->  1449.89s] But that is the value that minimizes the mean squared error.
+[ 1449.89s ->  1460.89s] So in this space, when you implement these statistical learning models, understand you are learning an expectation function.
+[ 1460.89s ->  1463.89s] There is no such thing as a prediction.
+[ 1463.89s ->  1465.89s] It is necessarily wrong.
+[ 1465.89s ->  1474.89s] The degree to which that statistical learning model is wrong will be based on too many factors to even discuss herein.
+[ 1474.89s ->  1478.89s] But you can look at it just in terms of robustness.
+[ 1478.89s ->  1487.89s] If you use an overfit underfit model, your predictions are going to be arbitrarily worse than if you had some form of a robust model.
+[ 1487.89s ->  1492.89s] So that is why I don't like the term prediction.
+[ 1492.89s ->  1497.89s] You should think of everything in this space as some form of an expectation.
+[ 1497.89s ->  1505.14s] And if you just look at a dice roll as an example, you'll realize why you can't actually predict anything.
+[ 1505.14s ->  1507.14s] You're minimizing error.
+[ 1507.14s ->  1513.14s] The value that minimizes error for a dice roll is not a possible outcome for a dice roll.
+[ 1513.14s ->  1521.14s] So that is a very important idea to understand, especially when it comes to interpreting these models.
+[ 1521.14s ->  1535.14s] Now, it should be clear why this will not work on stock prices or stock returns, especially given how much I discuss on this channel about randomness versus uncertainty.
+[ 1535.14s ->  1543.14s] At this point, we should see exactly why these models do not work on stock prices or returns.
+[ 1543.14s ->  1546.14s] We have some sort of statistical learning model.
+[ 1546.14s ->  1553.14s] We want to choose a parameter set data for that model to develop the best predictions possible.
+[ 1553.14s ->  1554.14s] We can overfit.
+[ 1554.14s ->  1555.14s] We can underfit.
+[ 1555.14s ->  1565.14s] But if we chop up our data in the correct way and we stop calibrating, fitting or training the model when our validation error begins to increase,
+[ 1565.14s ->  1570.14s] we will have a robust enough model for unobserved data.
+[ 1570.14s ->  1573.14s] OK, but what is it that that model is learning?
+[ 1573.14s ->  1582.14s] Well, we saw that it's effectively learning some form of an expectation function as with this dice roll example here.
+[ 1582.14s ->  1586.14s] Is the expectation of a dice roll ever going to change?
+[ 1586.14s ->  1589.14s] The answer to that is no.
+[ 1589.14s ->  1597.50s] But does the expectation for a stock price or the returns for that stock change?
+[ 1597.50s ->  1598.50s] Absolutely.
+[ 1598.50s ->  1608.50s] And if you try to apply these statistical learning models directly to either the price series or the return series, you're going to observe something like this.
+[ 1608.50s ->  1614.50s] You're going to see, OK, well, maybe I fit my model and you could see the blue stock price path here.
+[ 1614.50s ->  1617.50s] You can see the green model and in sample.
+[ 1617.50s ->  1618.50s] OK, it performs pretty well.
+[ 1618.50s ->  1621.50s] I fit it in a relatively robust way.
+[ 1621.50s ->  1625.50s] And this vertical line represents unseen data.
+[ 1625.50s ->  1628.50s] This red dashed line is my model prediction.
+[ 1628.50s ->  1629.50s] How does it do?
+[ 1629.50s ->  1631.50s] Well, it does terribly.
+[ 1631.50s ->  1645.50s] And that's because the data that I have trained my model on is not it is not reflecting the distribution for the data that I observe when I implement my model in practice.
+[ 1645.50s ->  1647.50s] Why is this the case?
+[ 1647.50s ->  1654.50s] If we take a look at this animation, I'm going to show you this is the distribution of stock returns over time.
+[ 1654.50s ->  1658.50s] This is the distribution of dice rolls over time.
+[ 1658.50s ->  1662.50s] OK, well, clearly the dice roll distribution is not changing.
+[ 1662.50s ->  1673.88s] But the unobservable data generating distribution that governs stock returns, that is this stock price path here, that's always changing.
+[ 1673.88s ->  1675.88s] It's driven by some latent processes.
+[ 1675.88s ->  1677.88s] We can't observe it directly.
+[ 1677.88s ->  1680.88s] We can only observe this empirical distribution.
+[ 1680.88s ->  1688.88s] That is why it's so important to understand this general framework, because it doesn't matter what model we select.
+[ 1688.88s ->  1690.88s] It's not about selecting a better model.
+[ 1690.88s ->  1693.88s] It's not even about selecting better parameters.
+[ 1693.88s ->  1699.88s] You need to understand that the data generating distribution changes over time.
+[ 1699.88s ->  1702.88s] And if the distribution changes over time, so do what?
+[ 1702.88s ->  1705.88s] All of the probabilities and statistics.
+[ 1705.88s ->  1707.88s] What does our model actually learn?
+[ 1707.88s ->  1710.88s] It learns some statistic.
+[ 1710.88s ->  1713.88s] It's exactly what we saw in this example.
+[ 1713.88s ->  1722.88s] So that is why we can't naively just apply these learning models to the price series or the return series.
+[ 1722.88s ->  1727.88s] The data exhibits severe non-stationarity.
+[ 1727.88s ->  1730.88s] We are always going to get something that looks like this.
+[ 1730.88s ->  1736.88s] That is not how these statistical learning models are implemented in practice.
+[ 1736.88s ->  1744.88s] That's something that we will discuss later on, but we don't apply them directly to prices or returns.
+[ 1744.88s ->  1746.88s] It's a very important idea to understand.
+[ 1746.88s ->  1753.88s] And it has to do with the severe non-stationarity that we actually observe in the data.
+[ 1753.88s ->  1759.88s] If the data was reasonably stable, then yeah, the models would learn a lot and they would do great.
+[ 1759.88s ->  1761.88s] But that is not the case.
+[ 1761.88s ->  1771.88s] And this goes for any underlying data generating distribution that exhibits this severe instability, this severe non-stationarity.
+[ 1771.88s ->  1778.88s] Knowing now this generalized framework for statistical learning models, we can discuss neural networks.
+[ 1778.88s ->  1786.88s] And the actual inner workings aren't all that important if you understand the general framework.
+[ 1786.88s ->  1789.88s] We know we're picking a model M.
+[ 1789.88s ->  1791.88s] In this case, it's a neural network.
+[ 1791.88s ->  1795.88s] Now we have a set of parameters to select.
+[ 1795.88s ->  1796.88s] Okay.
+[ 1796.88s ->  1798.88s] We train, fit, calibrate.
+[ 1798.88s ->  1800.88s] We don't want to overfit, underfit.
+[ 1800.88s ->  1802.88s] We want a robust model.
+[ 1802.88s ->  1805.88s] And then we're going to be capable of producing predictions.
+[ 1805.88s ->  1811.88s] And that's not just true for neural networks, but that's true for any model that we select in this capacity.
+[ 1811.88s ->  1818.88s] In any case, let's discuss how a neural network actually gets to those final prediction values.
+[ 1818.88s ->  1825.33s] Effectively, all a neural network is, is a giant composite function.
+[ 1825.33s ->  1831.33s] And what we're doing is we're selecting a whole bunch of weight matrices and bias matrices.
+[ 1831.33s ->  1836.33s] And we're just going to be gluing all of them together with matrix products.
+[ 1836.33s ->  1841.33s] And we're going to be mixing in some form of an activation function.
+[ 1841.33s ->  1845.33s] So what we're doing is we're taking the original set of features.
+[ 1845.33s ->  1852.33s] You can think of even the player stats from the football throwing example above here.
+[ 1852.33s ->  1860.81s] And what we're going to do is we're going to take that set of data and we are going to multiply it by this weight matrix.
+[ 1860.81s ->  1863.81s] And then we're going to add a bias matrix.
+[ 1863.81s ->  1869.81s] Then we apply an activation function element wise to every element in that matrix.
+[ 1869.81s ->  1874.81s] Then we do it again and again, and eventually we get our output.
+[ 1874.81s ->  1878.81s] Now, this is just a function.
+[ 1878.81s ->  1881.81s] The products here are matrix products.
+[ 1881.81s ->  1887.81s] They look something like this, but really it's just a function.
+[ 1887.81s ->  1890.81s] We are selecting a theta.
+[ 1890.81s ->  1895.81s] In this case, theta is a series of weight and bias matrices.
+[ 1895.81s ->  1901.81s] And we're gluing all of them together such that we get a vector of outputs.
+[ 1901.81s ->  1905.81s] So all I'm saying is, hey, you give me a set of inputs.
+[ 1905.81s ->  1910.81s] I throw it through this function and I will give you a set of outputs.
+[ 1910.81s ->  1912.81s] That is all a neural network is.
+[ 1912.81s ->  1916.81s] In this particular architecture, we're dealing with a feed for neural network.
+[ 1916.81s ->  1922.81s] In this visualization here, there's only one what's called hidden layer.
+[ 1922.81s ->  1931.81s] And if we have more than one hidden layer, as we see in this composite function example here, we're dealing with a deep learning model.
+[ 1931.81s ->  1938.81s] That's all deep learning is, is it's a giant composite function for a statistical learning model.
+[ 1938.81s ->  1944.81s] And our theta is effectively representing all of the weight and bias matrices.
+[ 1944.81s ->  1946.81s] Our objective then is to what?
+[ 1946.81s ->  1957.81s] It's to learn the best theta possible, the best weight and bias matrices for this set of observed data to produce the best possible prediction.
+[ 1957.81s ->  1960.81s] Now, there's something special about neural networks.
+[ 1960.81s ->  1970.81s] We know that these statistical learning models are effectively trying to learn the expectation function, whether it's unconditional or conditional.
+[ 1970.81s ->  1974.81s] Unconditional in the case of the dice roll example.
+[ 1974.81s ->  1979.81s] Conditional in the case of the max football throwing distance.
+[ 1979.81s ->  1986.51s] I'm conditioning on age, max bench press, weight, height.
+[ 1986.51s ->  1996.51s] The catch here is not every statistical model is going to be capable of learning that expectation function.
+[ 1996.51s ->  2000.51s] For example, here, do you see how there's this, this curvature?
+[ 2000.51s ->  2003.90s] A linear model can't capture that.
+[ 2003.90s ->  2014.90s] But a neural network, regardless of the shape of the expectation function, will always be able to capture that.
+[ 2014.90s ->  2018.90s] And that is because of the universal approximation theorem.
+[ 2018.90s ->  2024.90s] Effectively, neural networks are universal function approximators.
+[ 2024.90s ->  2030.90s] They can approximate any continuous function to arbitrary accuracy on compact sets.
+[ 2030.90s ->  2034.90s] And that is what it means for them to be a universal function approximator.
+[ 2034.90s ->  2039.90s] I have a great animation that illustrates exactly what this means.
+[ 2039.90s ->  2048.90s] Here I have a set of data and the orange dashed line represents the expectation that I want to learn.
+[ 2048.90s ->  2051.90s] I don't know what that is outright analytically, right?
+[ 2051.90s ->  2056.90s] What is that expectation function for the max football throwing distance?
+[ 2056.90s ->  2057.90s] I don't know what that is.
+[ 2057.90s ->  2061.90s] I'm trying to learn what that is using my statistical model.
+[ 2061.90s ->  2069.90s] And a neural network is effectively going to calibrate, fit or train on the observed data.
+[ 2069.90s ->  2072.90s] And it's going to produce something like this.
+[ 2072.90s ->  2079.90s] And as you can see, it's fitting itself to that expectation function.
+[ 2079.90s ->  2085.90s] And we know it's capable of doing that thanks to the universal approximation theorem.
+[ 2085.90s ->  2092.18s] In other words, a linear regression, for example, a line of best fit, it could not do this.
+[ 2092.18s ->  2097.18s] It could not calibrate, fit or train to that true function.
+[ 2097.18s ->  2100.18s] But a neural network can.
+[ 2100.18s ->  2104.18s] This is now putting all of the pieces of the puzzle together.
+[ 2104.18s ->  2108.18s] We know exactly how these statistical models learn.
+[ 2108.18s ->  2110.18s] We know what it is they're learning.
+[ 2110.18s ->  2118.18s] And we now know that some are and some are not capable of learning the desired function.
+[ 2118.18s ->  2122.18s] And that is why neural networks are so powerful.
+[ 2122.18s ->  2128.18s] They always can learn any shaped continuous function.
+[ 2128.18s ->  2136.18s] At this point, we should be saying something like this is great, but we don't use statistical learning models on random variables.
+[ 2136.18s ->  2138.18s] We know those dynamics outright.
+[ 2138.18s ->  2141.18s] We know what these statistics are associated with them.
+[ 2141.18s ->  2147.18s] We don't need to approximate the expectation function for like a coin flip or a dice roll.
+[ 2147.18s ->  2152.18s] And you're saying we can't use it on something like stock returns or anything that's uncertain.
+[ 2152.18s ->  2157.18s] Anything where the underlying data generating distribution changes over time.
+[ 2157.18s ->  2159.57s] But isn't that everything?
+[ 2159.57s ->  2162.57s] Isn't that the fundamental idea of an uncertain system?
+[ 2162.57s ->  2166.57s] That is, there's no convergence in statistics, probabilities, distributions.
+[ 2166.57s ->  2168.92s] That is largely correct.
+[ 2168.92s ->  2180.17s] And this brings us to the idea of solved or nearly solved problems versus unsolved problems.
+[ 2180.17s ->  2188.17s] Effectively, what I'm saying here is the violence of the non-stationarity dictates how productive
+[ 2188.17s ->  2193.17s] these statistical learning models are at actually producing predictions.
+[ 2193.17s ->  2195.17s] What do I mean by this?
+[ 2195.17s ->  2196.17s] I have two charts here.
+[ 2196.17s ->  2200.17s] On the left, I have the latent space of a facial recognition model.
+[ 2200.17s ->  2205.17s] And on the right, I have, of course, me trying to predict the stock price path.
+[ 2205.17s ->  2210.17s] On the left, what you're observing here is the model hyperplane.
+[ 2210.17s ->  2215.17s] This is separating what is denoted as successful classes.
+[ 2215.17s ->  2220.17s] That is, this is certainly the face that you're trying to classify from unsuccessful classes.
+[ 2220.17s ->  2224.17s] This is definitely not the face that we're trying to classify.
+[ 2224.17s ->  2225.17s] What do you notice?
+[ 2225.17s ->  2229.17s] There is a clear separation bound.
+[ 2229.17s ->  2239.17s] In other words, the model has the capacity to be so confident that it is secure enough for your
+[ 2239.17s ->  2243.17s] Apple wallet, your passwords, so on and so forth.
+[ 2243.17s ->  2250.17s] There's never a time where you have to worry about a false positive or a false negative.
+[ 2250.17s ->  2253.17s] Sure, you may get those false negatives, right?
+[ 2253.17s ->  2254.17s] All the time.
+[ 2254.17s ->  2258.17s] You'll unlock your phone and oh, you got to punch your passcode in, right?
+[ 2258.17s ->  2261.17s] But it doesn't care too much about those false negatives.
+[ 2261.17s ->  2263.17s] You just try again.
+[ 2263.17s ->  2269.17s] It's waiting for almost as, as statistical certain, as statistically certain as it can
+[ 2269.17s ->  2270.17s] possibly be.
+[ 2270.17s ->  2275.17s] And in other words, you're never worried about that certainty drifting over into this bound
+[ 2275.17s ->  2277.17s] and vice versa.
+[ 2277.17s ->  2281.17s] You'll never really have to worry about that false positive.
+[ 2281.17s ->  2285.17s] And that's not to say that the underlying data generating distribution doesn't change,
+[ 2285.17s ->  2286.17s] right?
+[ 2286.17s ->  2287.17s] Your face changes over time.
+[ 2287.17s ->  2291.17s] Maybe when you grow a beard, the face ID doesn't work as well.
+[ 2291.17s ->  2296.17s] Maybe you need to add that and rescan your face, right?
+[ 2296.17s ->  2301.17s] The underlying data generating distribution there does change, but the stability is still
+[ 2301.17s ->  2302.17s] there.
+[ 2302.17s ->  2308.17s] It's not changing as violently as the stock price stock returns distribution.
+[ 2308.17s ->  2311.17s] And that's a really important idea to understand.
+[ 2311.17s ->  2319.17s] The efficacy of any statistical learning model is only going to be as good as the stability
+[ 2319.17s ->  2322.17s] of the underlying data generating distribution.
+[ 2322.17s ->  2330.17s] If the underlying data generating distribution is stable, then you have a very reasonable expectation
+[ 2330.17s ->  2334.17s] function to approximate and it's not going to change over time.
+[ 2334.17s ->  2339.17s] But if it's violently unstable and exhibits severe non-stationarity as we observe here,
+[ 2339.17s ->  2345.17s] then you're always going to be trying to fit your model to a moving target.
+[ 2345.17s ->  2350.17s] And that is this idea of a solved or nearly solved problem versus an unsolved problem,
+[ 2350.17s ->  2351.17s] right?
+[ 2351.17s ->  2355.17s] You're never worried about your face ID not working, right?
+[ 2355.17s ->  2357.17s] You're going to get into your phone, right?
+[ 2357.17s ->  2363.17s] But your model isn't necessarily going to be producing a reasonable expectation for the
+[ 2363.17s ->  2364.17s] stock prices.
+[ 2364.17s ->  2370.17s] And that is fundamentally the difference here is we're dealing, yes, with the same uncertain
+[ 2370.17s ->  2371.17s] system, right?
+[ 2371.17s ->  2378.17s] Nothing converges, probabilities, statistics, distributions do not converge, but there's far more stability
+[ 2378.17s ->  2385.17s] in the facial recognition space than there is in the stock price path space.
+[ 2385.17s ->  2390.17s] Let's now move on to discuss some applications in quant finance.
+[ 2390.17s ->  2396.17s] And there are a lot of applications of these statistical learning models, machine learning models,
+[ 2396.17s ->  2400.17s] neural networks, deep learning models, artificial intelligence, whatever you want to call it.
+[ 2400.17s ->  2406.17s] But we've only covered one class of problems in this video.
+[ 2406.17s ->  2409.17s] We've talked about this idea of a supervised learning problem.
+[ 2409.17s ->  2413.17s] And that's where we have some sort of set of data.
+[ 2413.17s ->  2417.17s] We observe some sort of targets like those football throwing distances,
+[ 2417.17s ->  2424.17s] and we're trying to fit a model or calibrate it, train it by minimizing the error, right?
+[ 2424.17s ->  2426.17s] And we want that model to be robust.
+[ 2426.17s ->  2429.17s] We want to find effectively that expectation function.
+[ 2429.17s ->  2433.17s] But there are other types of machine learning as well.
+[ 2433.17s ->  2437.17s] We have unsupervised and reinforcement learning.
+[ 2437.17s ->  2442.17s] If you're interested in videos on these topics, please let me know in the description below.
+[ 2442.17s ->  2447.17s] I would love to do videos on these different types of machine learning algorithms.
+[ 2447.17s ->  2452.17s] Specifically, maybe we can talk about linear and nonlinear dimensionality reduction in unsupervised learning.
+[ 2452.17s ->  2456.17s] We can talk about reinforcement learning for maybe optimal delta hedging.
+[ 2456.17s ->  2459.17s] In any case, if there's interest, please let me know.
+[ 2459.17s ->  2465.17s] But in this particular case, how can we apply what we've learned already to quant finance?
+[ 2465.17s ->  2469.17s] Well, we can use this for quant trading signal generation.
+[ 2469.17s ->  2479.17s] And I'm going to do a video in the future on what I will call artificial intelligence for quant trading to show you exactly how these models are implemented in that space.
+[ 2479.17s ->  2485.17s] Again, it is not directly on the price path or the return series.
+[ 2485.17s ->  2487.17s] So we can use it for quant trading.
+[ 2487.17s ->  2492.17s] We can also use it for efficient approximation of option pricing functionals.
+[ 2492.17s ->  2498.17s] I'm going to show you in a moment how we can train a neural network to learn to price options.
+[ 2498.17s ->  2505.17s] This is particularly useful for models that don't have an analytical solution, which is pretty much all of them.
+[ 2505.17s ->  2510.17s] And this is useful for efficient calibration and extrapolating exotic prices.
+[ 2510.17s ->  2522.17s] We can also use different architectures involved with neural networks, such as variational autoencoders, GANs, for experimental portfolio risk measures.
+[ 2522.17s ->  2533.17s] There's a lot of work being done in this space, in the literature, a lot of really interesting streams for new value at risk measures, so on and so forth.
+[ 2533.17s ->  2544.17s] But here in we're going to look at this idea of a narrow network learning the Black-Scholes pricing functional, the Black-Scholes model.
+[ 2544.17s ->  2555.17s] And really all the Black-Scholes model is, is yes, in the framework of the Black-Scholes argument, we have this continuous time delta Higgs.
+[ 2555.17s ->  2558.17s] We're operating with this risk neutrality, right?
+[ 2558.17s ->  2567.17s] It is a portfolio replication argument, and that is what yields the partial differential equation, which we can solve to get the model here.
+[ 2567.17s ->  2573.17s] But this is also equivalent to the risk neutral discounted expectation.
+[ 2573.17s ->  2577.17s] And if we're dealing with an expectation, what does that mean?
+[ 2577.17s ->  2580.17s] Our neural network is a universal function approximator.
+[ 2580.17s ->  2582.17s] Can it approximate that function?
+[ 2582.17s ->  2583.17s] Oh, it sure can.
+[ 2583.17s ->  2590.17s] So what we're going to do is, we're going to generate a whole bunch of parameters for this Black-Scholes model.
+[ 2590.17s ->  2592.17s] Then I'm going to produce the Black-Scholes price.
+[ 2592.17s ->  2595.17s] Effectively, that's the same thing as what?
+[ 2595.17s ->  2598.74s] Observing player stats and recording distance, right?
+[ 2598.74s ->  2602.74s] Instead of stats, I have model parameters.
+[ 2602.74s ->  2606.74s] Instead of distance, I have option price.
+[ 2606.74s ->  2617.95s] And now what I'm going to do is, I'm going to train a neural network to learn this Black-Scholes model here.
+[ 2617.95s ->  2619.95s] And I'm going to train that neural network here.
+[ 2619.95s ->  2636.04s] And what you'll observe below is a chart of the analytical Black-Scholes solution that we have here, and the neural network approximation of that pricing functional.
+[ 2636.04s ->  2643.04s] And I've only trained it for a few epochs, and it is starting to converge very rapidly.
+[ 2643.04s ->  2645.04s] Now, why is this useful?
+[ 2645.04s ->  2648.04s] This isn't useful in this particular case.
+[ 2648.04s ->  2663.04s] But if I didn't have the ability to produce this analytical functional here, then this would save me a tremendous amount of time if I was to train this neural network offline.
+[ 2663.04s ->  2672.04s] This gets into the idea of extrapolating exotic prices using these pricing functionals that were approximated by neural networks.
+[ 2672.04s ->  2674.04s] This is a favorite topic of mine.
+[ 2674.04s ->  2680.04s] This is where you can start to effectively learn volatility for the rough model family.
+[ 2680.04s ->  2687.04s] All of these different non-Markovian models, all of these models that have no analytical solutions.
+[ 2687.04s ->  2691.04s] If there's interest in this topic, I would love to do more videos on it.
+[ 2691.04s ->  2699.04s] But this is effectively the basis for extrapolating exotics in those more advanced, more complicated frameworks.
+[ 2699.04s ->  2706.04s] We don't have this part of the equation if we operate beyond Black-Scholes.
+[ 2706.04s ->  2716.04s] So if we can simulate prices and teach a neural network this expectation, then that neural network will be able to produce prices very quickly.
+[ 2716.04s ->  2720.04s] And that is fundamentally the stream of literature there.
+[ 2720.04s ->  2723.04s] So let me know in the comments below if you'd like to see that topic.
+[ 2723.04s ->  2725.04s] Would love to discuss more on it.
+[ 2725.04s ->  2731.04s] Would love to discuss more on non-Markovian models, the fractional Brownian motion, Volterra process, so on and so forth.
+[ 2731.04s ->  2735.04s] But but definitely let me know that's certainly a niche topic.
+[ 2735.04s ->  2738.04s] But of course, a favorite topic of mine.
+[ 2738.04s ->  2739.04s] Too long didn't watch.
+[ 2739.04s ->  2743.04s] Here's your executive summary data is the oil of the 21st century.
+[ 2743.04s ->  2749.04s] Models require data to learn anything, whether it's a statistical learning model, a parametric model.
+[ 2749.04s ->  2755.04s] You can't get by without using data to inform your parameters.
+[ 2755.04s ->  2762.04s] All models learn by minimizing the distance between some prediction and some observed target of interest.
+[ 2762.04s ->  2766.04s] Specifically, these are supervised learning models.
+[ 2766.04s ->  2769.04s] We can always overfit or underfit these models.
+[ 2769.04s ->  2777.04s] We use training validation and testing splits to ensure our model is learning in a robust manner.
+[ 2777.04s ->  2783.04s] While we can also emulate out of sample performance on unseen testing data.
+[ 2783.04s ->  2790.04s] Our models are only going to be as effective as the stability of the space.
+[ 2790.04s ->  2796.04s] Remember, effectively, we are just producing some form of an expectation.
+[ 2796.04s ->  2802.04s] And if the distribution producing our sample values changes violently over time,
+[ 2802.04s ->  2806.04s] that expectation is not going to be a good prediction.
+[ 2806.04s ->  2814.04s] The stability of the space will dictate how effective our models are at producing predictions.
+[ 2814.04s ->  2821.04s] Neural networks are a very popular statistical learning model to effectively learn these expectation functions,
+[ 2821.04s ->  2825.04s] because they are a universal function approximator.
+[ 2825.04s ->  2830.04s] There is no smooth continuous shape that these cannot model.
+[ 2830.04s ->  2833.04s] In any case, these neural networks are just functions.
+[ 2833.04s ->  2841.04s] They're just giant composite functions where the parameter set is a series of matrices, weight matrices.
+[ 2841.04s ->  2851.04s] And we're looking for some optimal set of these matrices through the training process to produce the best possible predictions that we can.
+[ 2851.04s ->  2856.04s] Now, these neural networks are the basis for a variety of other models.
+[ 2856.04s ->  2863.04s] This could be for some form of image recognition, some form of text generation.
+[ 2863.04s ->  2866.04s] We could use convolutional networks, transformer models.
+[ 2866.04s ->  2867.04s] The list goes on.
+[ 2867.04s ->  2873.04s] They are the basis for a lot of more advanced architectures that we use every single day,
+[ 2873.04s ->  2882.04s] not just from face ID to even spam filtering, but also, of course, with our LLMs, something like JackGBT.
+[ 2882.04s ->  2889.04s] In quantitative finance, we implement these models for a variety of regression and classification tasks.
+[ 2889.04s ->  2895.04s] In the example above, we looked at approximating the Black-Scholes pricing functional using a neural network.
+[ 2895.04s ->  2900.04s] And we know in that case, it's not particularly useful because we have the analytical solution.
+[ 2900.04s ->  2909.04s] But for more intricate models with more complicated dynamics, that is going to make calibration extremely efficient.
+[ 2909.04s ->  2911.04s] And that's just one use case.
+[ 2911.04s ->  2920.04s] We use these models in experimental portfolio risk measures, value at risk measures using generative models, generative extensions to the neural networks.
+[ 2920.04s ->  2925.04s] And we even use them for quantitative trading signal development.
+[ 2925.04s ->  2928.04s] And that is going to be a video for a later date.
+[ 2928.04s ->  2932.04s] If that's something that you'd like to see, please let me know in the comments below.
+[ 2932.04s ->  2936.04s] Some future topics, technical videos and other discussions to look forward to.
+[ 2936.04s ->  2946.04s] I'd like to discuss alternate structures, that is, extensions to this basic idea of a neural network, variational autoencoders, GANs, CNNs, transformers.
+[ 2946.04s ->  2958.04s] I'd like to discuss the use of artificial intelligence in quant trading, approximating pricing functionals for NAR, Markovian, Markovian, or rough volatility models.
+[ 2958.04s ->  2969.04s] I would also like to get back into maybe breaking out the iPad and discussing maybe the idea of advanced Markov chains, something that you would see in a class on stochastic processes.
+[ 2969.04s ->  2979.04s] I would also like to do a deep dive into the fractional Brownian motion, the Volterra process, and talk about how we can discretize these processes that exhibit this long-term memory.
+[ 2979.04s ->  2986.04s] I think it is definitely my favorite topic in all of the study of quantitative finance there.
+[ 2986.04s ->  2998.04s] I would also like to derive the Black-Scholes equation, the PDE, analytical numerical solutions, and then maybe extend that into the idea of the delta neutral trading system, which has been on the docket for quite some time.
+[ 2998.04s ->  3011.04s] Also, in the context of non-stationarity, as we've seen in this video, we've got to tackle the Kalman filter and then maybe even implement that into a live model with regime dynamics, since we've already talked about Markov chains, hidden Markov models.
+[ 3011.04s ->  3022.04s] I would also like to discuss maybe binomial trees, risk-neutral measures, reinforcement learning for delta hedging, you know, a lot of really exciting technical discussions.
+[ 3022.04s ->  3025.04s] And I have a great deal of interest in all of these.
+[ 3025.04s ->  3027.04s] So, you know, it certainly helps me out a lot.
+[ 3027.04s ->  3032.04s] If you let me know in the comments below what you would be interested in seeing next.
+[ 3032.04s ->  3035.04s] And that's going to do it for this video on neural networks for quant finance.
+[ 3035.04s ->  3036.04s] I hope you enjoyed.
+[ 3036.04s ->  3037.04s] I hope you learned something.
+[ 3037.04s ->  3040.04s] This video certainly took a lot of effort to create.
+[ 3040.04s ->  3044.04s] So if you enjoyed it and you want to see more like it in the future, please like comment, subscribe, share.
+[ 3044.04s ->  3046.04s] Again, it helps me out tremendously.
+[ 3046.04s ->  3048.04s] It is always greatly appreciated.
+[ 3048.04s ->  3049.04s] Check out QuantGuild.com.
+[ 3049.04s ->  3054.04s] If you'd like to master your quantitative skills, I'll leave a link to our discord in the description below.
+[ 3054.04s ->  3057.04s] If you'd like to connect with me and other quants in the QuantGuild community.
+[ 3057.04s ->  3063.04s] Other than that, thank you so much for watching and I will see you in the next video.
+[ 3063.04s ->  3064.04s] I'll see you in the next video.

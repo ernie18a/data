@@ -1,0 +1,97 @@
+<!-- tradingview-pine-id: PUB;e2d17792015442b3be3b4c73d867d714 -->
+<!-- tradingviewscripts-format: 1 -->
+# Kloom Session Levels
+
+Source: https://www.tradingview.com/script/8Si9e0te-Kloom-Session-Levels-NY-and-London-Sessions-PDH-PDL/
+
+## Description
+
+New York and London session ranges plus previous-day high/low, all timezone-correct.
+
+How it works
+• Sessions are computed in America/New_York time regardless of the chart or exchange timezone - the usual source of session-indicator bugs.
+• Live session high/low lines are drawn while each session is open, with a marker at the session open.
+• PDH/PDL come from the daily timeframe and are labeled at the right edge of the chart.
+
+How to use it
+Session opens concentrate volume and breakouts; PDH/PDL are the most-watched intraday reference levels. A classic combination: a London-range break during the NY open. Session hours are configurable for both sessions.
+
+---
+
+## Source Code
+
+````pine
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © KloomStudio
+
+//@version=6
+indicator("Kloom Session Levels", shorttitle="K.Session", overlay=true, max_lines_count=500, max_labels_count=100)
+
+// ── Inputs ─────────────────────────────────────────────────────────────────────
+grpNY  = "New York session"
+showNY = input.bool(true, "Show NY session", group=grpNY)
+sesNY  = input.session("0930-1600", "NY hours (exchange tz America/New_York)", group=grpNY)
+
+grpLDN  = "London session"
+showLDN = input.bool(true, "Show London session", group=grpLDN)
+sesLDN  = input.session("0300-1130", "London hours (in America/New_York time)", group=grpLDN)
+
+grpLvl   = "Levels"
+showPDHL = input.bool(true, "Show previous day high/low (PDH/PDL)", group=grpLvl)
+showOpen = input.bool(true, "Show session open line", group=grpLvl)
+
+// ── Session detection (all computed in America/New_York) ───────────────────────
+inNY  = not na(time(timeframe.period, sesNY,  "America/New_York"))
+inLDN = not na(time(timeframe.period, sesLDN, "America/New_York"))
+
+nyStart  = inNY  and not inNY[1]
+ldnStart = inLDN and not inLDN[1]
+
+// ── Session high/low tracking ──────────────────────────────────────────────────
+var float nyHi = na
+var float nyLo = na
+var float nyOpen = na
+if nyStart
+    nyHi := high
+    nyLo := low
+    nyOpen := open
+else if inNY
+    nyHi := math.max(nyHi, high)
+    nyLo := math.min(nyLo, low)
+
+var float ldnHi = na
+var float ldnLo = na
+if ldnStart
+    ldnHi := high
+    ldnLo := low
+else if inLDN
+    ldnHi := math.max(ldnHi, high)
+    ldnLo := math.min(ldnLo, low)
+
+// ── Previous day high/low ──────────────────────────────────────────────────────
+pdh = request.security(syminfo.tickerid, "D", high[1], lookahead=barmerge.lookahead_on)
+pdl = request.security(syminfo.tickerid, "D", low[1],  lookahead=barmerge.lookahead_on)
+
+// ── Plots ──────────────────────────────────────────────────────────────────────
+bgcolor(showNY  and inNY  ? color.new(color.blue,   93) : na, title="NY session")
+bgcolor(showLDN and inLDN ? color.new(color.purple, 93) : na, title="London session")
+
+plot(showNY and inNY ? nyHi : na, "NY High", color=color.new(color.blue, 30), style=plot.style_linebr)
+plot(showNY and inNY ? nyLo : na, "NY Low",  color=color.new(color.blue, 30), style=plot.style_linebr)
+plot(showNY and inNY and showOpen ? nyOpen : na, "NY Open", color=color.new(color.blue, 55), style=plot.style_circles)
+
+plot(showLDN and inLDN ? ldnHi : na, "London High", color=color.new(color.purple, 30), style=plot.style_linebr)
+plot(showLDN and inLDN ? ldnLo : na, "London Low",  color=color.new(color.purple, 30), style=plot.style_linebr)
+
+plot(showPDHL ? pdh : na, "PDH", color=color.new(color.orange, 35), style=plot.style_cross)
+plot(showPDHL ? pdl : na, "PDL", color=color.new(color.orange, 35), style=plot.style_cross)
+
+// ── Labels on last bar ─────────────────────────────────────────────────────────
+if barstate.islast and showPDHL
+    var label lPdh = na
+    var label lPdl = na
+    label.delete(lPdh)
+    label.delete(lPdl)
+    lPdh := label.new(bar_index + 3, pdh, "PDH " + str.tostring(pdh, format.mintick), style=label.style_label_left, color=color.new(color.orange, 60), textcolor=color.white, size=size.small)
+    lPdl := label.new(bar_index + 3, pdl, "PDL " + str.tostring(pdl, format.mintick), style=label.style_label_left, color=color.new(color.orange, 60), textcolor=color.white, size=size.small)
+````

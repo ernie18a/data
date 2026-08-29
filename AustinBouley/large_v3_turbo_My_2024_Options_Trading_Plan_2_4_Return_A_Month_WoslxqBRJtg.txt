@@ -1,0 +1,95 @@
+[    0.00s ->     4.18s] Hey guys, welcome to this video. I'm going to walk you through my 2024 trading plan.
+[    4.28s ->     8.36s] It's going to show you exactly what I am doing step-by-step to make money in this market.
+[    8.48s ->    14.54s] And I follow this plan to a T and so far this year in the first 23 days of the new year of 2024,
+[   14.86s ->    20.78s] I've made roughly $3,000. So I'm going to walk you through exactly how this works by showing
+[   20.78s ->    25.26s] you what the trading plan is and also showing you step-by-step what it looks like on a chart
+[   25.26s ->    28.66s] and how we can take advantage of this. Anyways, to show some proof here,
+[   28.66s ->    36.82s] here is my P&L year-to-date, $3,128 so far for this year for 2024, following this plan to a T.
+[   36.90s ->    39.78s] So now let me show you how you can use this plan to make money too.
+[   40.00s ->    43.94s] First things first, we need to set up our chart so that it can look like what we are doing here.
+[   44.06s ->    49.10s] So you can use tradingview.com, Yahoo Finance, your broker, whatever charting platform you want to
+[   49.10s ->    54.10s] use, this will work. Simply go into the indicators section. And so again, if I go in here to indicators
+[   54.10s ->    61.00s] and I type in Bollinger Band, B-O-L-L-I-N-G-E-R, Bollinger Bands, and I add that to my chart,
+[   61.10s ->    64.92s] it will look like this. I want to make some additions to it. So I'm going to go into the
+[   64.92s ->    70.20s] settings. I'm going to change the length to 200. I can keep the standard deviation as 2 or 2.1,
+[   70.26s ->    74.72s] whatever I want to use. I'm going to bump it up to 2.1 here and I'm going to click OK.
+[   74.72s ->    80.60s] So now I have this rough band approximation of what you're seeing here on the trading plan.
+[   80.70s ->    83.66s] Don't worry if you sit until the end of this video. I'll show you how to do this trading
+[   83.66s ->    88.70s] plan for free. So if we look in here, we have two things going on. Either the market,
+[   88.84s ->    95.24s] the S&P 500 is inside this band or it's outside of it. When it's inside this band,
+[   95.32s ->    99.30s] the market is trading like normal. What do I mean? We're going to be using normal strategies.
+[   99.30s ->   103.84s] When the market is outside of this band, either to the upside or the downside,
+[  104.40s ->   109.14s] we have hit overextension points in the market. So if we're going here, we are overextended to
+[  109.14s ->   116.72s] the upside. So we're probably going to snap back and pull down. Again, we saw that back here in 2023
+[  116.72s ->   121.40s] when we kind of had that sell off. We saw that here when we pushed into this level and sold off back
+[  121.40s ->   128.16s] in 2021 and 2022. And the famous COVID crash, we held above this overextension level for so long that
+[  128.16s ->   132.88s] we just snapped down to the downside and saw this COVID crash. So also when we go to the downside,
+[  133.02s ->   137.20s] when we're below this band, we tend to see that movement up. So when we break down to the downside,
+[  137.38s ->   141.98s] we're going to be playing reversals. However, inside this band, we'll be playing normal strategies.
+[  142.16s ->   149.10s] As you can see here, if SPY and ES is trading inside of the band, use the 112 strategies. This is a
+[  149.10s ->   153.74s] strategy that I've been talking about recently for long-term trades. Also forgot to include here that I
+[  153.74s ->   159.46s] use my normal credit spreads trades. So again, my 10% credit spreads trades is what I use there as
+[  159.46s ->   166.34s] well as the 112 trades when the market is inside of the band. So again, you can see here 90 days out
+[  166.34s ->   171.66s] using ES or MES to set up a 112 trade. If you want to learn more about how to structure this trade,
+[  172.00s ->   175.54s] again, you can watch them on other YouTube videos that explain it in depth. But we're going to be
+[  175.54s ->   183.40s] placing a 112 trade inside of these bands. Also, there's different ways that we can turn the 112 trade
+[  183.40s ->   188.12s] into different hedges. So we can turn it into a triangle hedge or we can turn it into a put debit
+[  188.12s ->   193.40s] spread hedge. And so again, by default, I'll be using the triangle hedge because it allows me to
+[  193.40s ->   200.42s] make a lot of money and kind of offset any other 112 trades I have. So again, inside the bands,
+[  200.48s ->   206.82s] I'm using the 112 strategy and I'm using the triangle hedge once I've made a max profit on my short put.
+[  206.82s ->   213.12s] So that's how I manage my 112 trades. Now next, if SPY is trading inside of the band,
+[  213.40s ->   219.44s] and IVR at least doubles, then I will use a strangle strategy. And again, this is one that
+[  219.44s ->   225.36s] I've actually used last week when you can see here, the market took a little dip down. And when
+[  225.36s ->   232.12s] the market dipped down, IVR doubled, it was currently around seven on the ES and jumped up to 15. So it
+[  232.12s ->   237.08s] doubled. So I put on a strangle because when you're doing strangles, you're selling a lot of options.
+[  237.08s ->   242.38s] You're selling both a call and a put. So when you sell, you want the IV to go down. So when IV increases,
+[  242.38s ->   247.50s] you can sell strangles and not only will the price go in your favor, but also IV will come down making
+[  247.50s ->   252.72s] or allowing you to make a lot of money quickly. Hence, I'm up 21% on my strangles trade in the last
+[  252.72s ->   259.18s] four days. And that's all because I was able to enter in when IVR doubled. And so again, that's the
+[  259.18s ->   265.94s] next strategy, the strangle strategy. When the market is inside of the band, use a strangle strategy
+[  265.94s ->   271.54s] when IVR doubles. It's a 45 days out. We're going to be selling a five to 10 Delta and a five Delta call
+[  271.54s ->   277.62s] for the put in the call and then take profit at 25% with a stop loss at four X the credit. So
+[  277.62s ->   283.36s] that is the strangle strategy. Now, when the market breaks outside of this range, what we're going to
+[  283.36s ->   288.70s] do is we're going to be using our long put or short call strategy. So SPY is trading outside of the
+[  288.70s ->   293.56s] trending band. The number one, we want to exit any long positions. Why? Well, because that means that
+[  293.56s ->   299.00s] the market is overextended. A pullback is likely. So the way that I treat this is I wait for the market
+[  299.00s ->   303.20s] to break above and then to come back down through it. So you can see how the market is kind of
+[  303.20s ->   307.70s] breaking above is on the ball and on the Bollinger band. I usually use the trending band, but this is
+[  307.70s ->   312.22s] for your example, the trending band is only a private indicator for my students. But again,
+[  312.22s ->   315.36s] if you want to, if you want to replicate it, I showed you the way to do that here with the ball,
+[  315.48s ->   319.58s] with the Bollinger band. But anyways, you can see here, it's above it. When it breaks above the
+[  319.58s ->   324.22s] trending band, I wait for it to come back down through it. Once it does, I exit my long positions.
+[  324.22s ->   331.04s] I keep my hedges on and I also use my long put or short call strategy. The long put strategy is
+[  331.04s ->   339.42s] dictated here. It's a 45 day long put that I buy on ES or MES. I buy the 30 delta put. And again,
+[  339.52s ->   344.56s] this is a Hail Mary strategy where I'm either going to lose all the money that I just used to purchase
+[  344.56s ->   350.52s] that put, or the market's going to drop and come down like we had here or here, or maybe even go crazy
+[  350.52s ->   356.28s] and here and I'll make an a thousand plus percent return. So that's why it's a Hail Mary trade for
+[  356.28s ->   361.30s] the long put strategy. And so again, that's a great strategy for when the market is overextended.
+[  361.42s ->   365.94s] You can do the same thing to the downside, but I prefer just to get into a one, one, two,
+[  366.04s ->   370.18s] two trades when the market is recovering because it's still a great way to profit from it.
+[  370.72s ->   375.10s] All right. So those are the strategies that I look at for different phases of the market. Why?
+[  375.18s ->   379.82s] Because almost every strategy you've ever heard of works, but only in its own respective type of
+[  379.82s ->   384.26s] market. And so this is how I use a band to determine what market is what and how to take
+[  384.26s ->   392.08s] advantage of those strategies. Again, when we have risk management here, we have 50% of max buying
+[  392.08s ->   396.50s] power when VIX is below 25. So what is that? Well, if we go to VIX chart, you can see here VIX,
+[  396.56s ->   400.40s] it jumped up to around 15. Hence why I was able to enter the strangle and now I'm making good money
+[  400.40s ->   407.76s] on it because VIX is declining. But VIX is trading at $12.85 right now, which is below 25 because we're
+[  407.76s ->   412.88s] trading futures. It has span margins. We want to be safe. So no more than 50% of my buying power in
+[  412.88s ->   419.76s] trades. When VIX is less than 20, if VIX is over 20 span margin is accounting for the volatility.
+[  420.08s ->   426.76s] So I can go up to 75% of my max buying power. Always have a stop loss on my trades, either manual
+[  426.76s ->   432.68s] or mental, AKA I have the broker monitoring it for me, or I have a mental loss. Like, Hey, once it gets
+[  432.68s ->   438.14s] here, I'm going to exit that can all be done right there. Next, the trade rules plan your trade and
+[  438.14s ->   442.94s] trade your plan. Never trade without a plan for exit and entry. Have patience and trust the strategy.
+[  443.08s ->   448.56s] Never modified the plan during a trade. Only enter a trade when your rules are met. Never chase a trade
+[  448.56s ->   453.14s] except the fact the market is always right. Never revenge trade. And there's nothing wrong with
+[  453.14s ->   459.86s] closing a winner. All right, guys, this is my plan, my trading plan for 2024 and how I am profiting
+[  459.86s ->   467.10s] this month over 3% on my accounts, which is insane and amazing. Again, my goal is 2% a month. So again,
+[  467.14s ->   472.00s] if I'm hitting three, 3%, I still have a week left in this month that I'm doing really, really well.
+[  472.36s ->   477.92s] So again, if you want to make some money this month, if you have at least five to $10,000 in your
+[  477.92s ->   482.88s] trade, in your trading account or more, I highly recommend that you use this trading plan. If you
+[  482.88s ->   487.94s] want it, it's for free for all my 10% credit spread members. And you can actually get this plan for
+[  487.94s ->   492.32s] free by joining the free trial linked down below. That's right. You can go and start a 14 day free
+[  492.32s ->   497.54s] trial to our program, get access to all the courses and resources like this trade, this trading plan
+[  497.54s ->   501.22s] and download it. And if you never want to continue after the trial, that's fine, but at least you
+[  501.22s ->   505.56s] have all these resources. All right, guys, thank you so much for watching and I will see you in the next
+[  505.56s ->   506.00s] video.

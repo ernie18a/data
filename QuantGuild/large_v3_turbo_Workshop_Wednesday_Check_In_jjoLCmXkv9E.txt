@@ -1,0 +1,25 @@
+[    0.62s ->     7.36s] Hey YouTube, it's Roman. Welcome back to Workshop Wednesday. We're still in the art studio. Thank
+[    7.36s ->    12.64s] you for bearing with me. Next week we're going to be back to the original audio setup and I'm
+[   12.64s ->    18.10s] going to have a brand new office. But nevertheless, I want to do something a little bit different
+[   18.10s ->    23.68s] today and get started by hopping on GitHub. For those of you that don't know, I have a public
+[   23.68s ->    28.82s] GitHub account with a whole bunch of projects that are open source and free for you to access
+[   28.82s ->    34.50s] whenever you like. I have some related to algorithmic trading system development. I have
+[   34.50s ->    41.64s] Qfin, which is a packaged Python library. You can run a pip install Qfin to download it. But the main
+[   41.64s ->    48.34s] idea here is I just want to illustrate a whole bunch of the projects that I have worked on in the past
+[   48.34s ->    55.26s] and see if there's anything that you're interested in doing a deep dive into in future Workshop
+[   55.26s ->    62.36s] Wednesdays based on these different projects. So perhaps we can compile a series of research
+[   62.36s ->    69.14s] notebooks in the Quantkill repository or perhaps you'd like me to walk through in detail or extend
+[   69.14s ->    74.52s] any of these projects. But I kind of wanted to open the forum and see what you guys wanted to see.
+[   74.86s ->    81.02s] Maybe it's surrounding the crypto world. We're looking to start a new series very soon. Trading
+[   81.02s ->    85.82s] Tuesdays where we're going to actively manage a crypto portfolio together. And then in the future,
+[   85.82s ->    93.04s] we're also looking at developing a crypto bot course on Quant Guild. So if you're interested in
+[   93.04s ->    99.32s] these things, be sure to let me know, leave a like, subscribe, comment, and I'll be happy to develop
+[   99.32s ->   104.54s] them for you guys. That's all I really had in mind for this Workshop Wednesday as I'm in the final stages
+[  104.54s ->   111.10s] of moving my entire setup to my new office space. I wanted to check in with you guys and see where
+[  111.10s ->   116.56s] we're at and where we'd like to go. Do we want to keep doing these sort of one-off Workshop Wednesdays
+[  116.56s ->   122.00s] where we cover maybe a unique topic every time? Or do we want to do a deep dive into a project
+[  122.00s ->   127.94s] together? So like I said, be sure to let me know. Thank you so much for checking in with this Workshop
+[  127.94s ->   133.06s] Wednesday. Be sure to check out quantguild.com. We just launched our first course, Introduction to
+[  133.06s ->   139.74s] Python. Use code SUMMER2022 to get $50 off. Currently, we're developing our next course on
+[  139.74s ->   145.84s] machine learning and artificial intelligence. But until then, once again, thank you so much
+[  145.84s ->   149.44s] for watching and checking in, and I'll see you in the next video.

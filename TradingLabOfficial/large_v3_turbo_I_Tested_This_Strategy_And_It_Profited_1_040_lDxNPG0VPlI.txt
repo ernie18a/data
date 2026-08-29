@@ -1,0 +1,85 @@
+[    0.00s ->     5.76s] Ok, so one of the trading analysts in my discord named Kruger found an absolutely amazing trading
+[    5.76s ->    11.04s] strategy. When he first found it, it performed extremely well. So well that he had to backtest
+[   11.04s ->    15.84s] the strategy himself to see if it actually was as good as he thought it was. He himself personally
+[   15.84s ->    20.64s] took tons of trades within real markets to see how this strategy would perform in the long term.
+[   20.64s ->    26.88s] The results were absolutely incredible. The moment he realized how powerful this
+[   26.88s ->    31.76s] strategy actually was, he instantly shared it with me and all the premium members in the discord.
+[   31.76s ->    37.44s] And when I say this thing is powerful, it's powerful. So good that a robot from the year 2075
+[   37.44s ->    42.32s] would top of the line weaponry, would personally fly down to planet earth just to destroy it with
+[   42.32s ->    48.40s] a 20 ton nuclear bomb because of the pure chaos this strategy would cause. I'm gonna have to edit
+[   48.40s ->    61.23s] this in now huh? I swear I spend way too much time on these videos. Now we were originally going to
+[   61.23s ->    66.43s] keep this strategy between just us and the premium members in the discord. But we decided it,
+[   66.43s ->    70.51s] let's share it with the whole community. So here we are, sharing it with the whole community. Now
+[   70.51s ->    74.35s] I'm gonna share how this strategy works, all the settings you need to know, and we'll also be
+[   74.35s ->    78.11s] sharing the backtest results with you at the end of the video. Let's get straight to it.
+[   78.11s ->    81.79s] Alright, to start us off, we're gonna go over the settings of the strategy. The strategy
+[   81.79s ->    90.34s] utilizes the Fibonacci retracement tool. So let's start there. Click the Fibonacci retracement tool,
+[   90.34s ->   100.90s] place it on your chart, click on it, then click settings. Have 0, 0.88, 0.382, 0.5, 0.618, 0.786,
+[  100.90s ->   106.10s] and 1 enabled. Also, feel free to pause the video and make sure to have all the same colors as mine,
+[  106.10s ->   110.10s] so you know what lines I'm talking about when we go over the actual strategy later.
+[  110.10s ->   114.90s] So now that we have all the settings in place, it's now time to go over the actual strategy itself.
+[  114.90s ->   119.78s] We will be trading with Forex, as that's what all the backtests and trades were taken on when testing this
+[  119.78s ->   124.74s] strategy. Speaking of Forex, if you need a broker for Forex, I would definitely recommend Hangar
+[  124.74s ->   129.06s] Trade, as that's what I personally use myself. They have some of the lowest fees on the market,
+[  129.06s ->   134.34s] and that's really saying something. Their spreads go as low as 0.0 pips,
+[  134.34s ->   138.98s] and if you're an absolute maniac, you can use up to 500x leverage with them.
+[  138.98s ->   144.26s] Five. Hundred. X. They also have negative balance protection, and to top it off,
+[  144.26s ->   151.06s] they have 100% deposit bonus. So if you deposit say $500, an additional $500 will be credited to
+[  151.06s ->   156.34s] your trading account. How cool is that? How neat is that? That's pretty neat.
+[  156.34s ->   160.82s] I can sincerely say they are one of the best brokers out there. If you haven't tried them yet,
+[  160.82s ->   165.14s] I would definitely recommend it. You will not regret it. Now, let's go over how to actually
+[  165.14s ->   170.18s] calculate entries with this strategy. So this first example is going to be for a long trade. This
+[  170.18s ->   176.10s] strategy has four parts. I'm going to call them A, B, C, and D. The very first thing you want to do
+[  176.10s ->   181.70s] is find a large bullish trend moving upwards. Once you find one, grab your Fibonacci retracement tool
+[  181.70s ->   187.30s] and draw a Fibonacci level from the bottom to the top of the trend like this. This creates step A.
+[  187.30s ->   192.34s] Once you have drawn your Fibonacci levels, you're going to draw up a rectangle between the 0.5 level
+[  192.34s ->   198.58s] to the 0.618 level. This is a very important level. In order for this to be a successful trade,
+[  198.58s ->   203.46s] we're going to need Price to enter into this rectangle area and not go past it. Price should
+[  203.46s ->   208.58s] come down and reach this rectangle. If Price goes out of the rectangle or creates a wick that goes
+[  208.58s ->   213.94s] outside the rectangle, the trade will no longer be valid. We want a full candle or at least a wick
+[  213.94s ->   219.46s] to enter into the rectangle and not go past it. Once this has been done, we have successfully passed
+[  219.46s ->   226.26s] step B. If step B is confirmed, we will then draw another rectangle from 0.382 to 0. It's the same
+[  226.26s ->   231.30s] type of idea. We want Price to enter this area without going past the zero level. If it does
+[  231.30s ->   236.98s] go past the zero level, the entry is no longer valid. This creates step C. If all the conditions
+[  236.98s ->   244.82s] are met from every single step, we will enter once Price reaches the 0.88 level. This is step D.
+[  244.82s ->   249.78s] Price should come to this level, stop, then reverse and head towards your take profit which should be
+[  249.78s ->   254.90s] placed at the top of the original move. You will be setting your stop loss right below the low of the
+[  254.90s ->   259.14s] entire move as well. Then wait for that profit baby. Here's how you would do a short trade.
+[  259.14s ->   263.78s] Find a big trend moving downwards, grab the Fibonacci tool, mark from the high to the low.
+[  263.78s ->   270.66s] Draw a rectangle between 0.5 and 0.618. This is where Price has to get to and reject. If it goes
+[  270.66s ->   277.06s] past this rectangle, it's an invalid entry. Once it reaches, then draw another rectangle area from 0
+[  277.06s ->   283.22s] to 0.382. Price then has to head here, reverse yet again. If it goes past, it's a false signal.
+[  283.22s ->   289.46s] Once it reaches this area, wait for Price to come all the way back up to 0.88. This is where you
+[  289.46s ->   294.18s] enter your trade. Set your take profit at the low and set your stop loss right above the high.
+[  294.18s ->   297.70s] Then wait for that profit baby. Okay, so that's the strategy summed up.
+[  297.70s ->   301.94s] Let's go over a real trade example that I took in a real market so you can get a better
+[  301.94s ->   306.42s] understanding of how to use this strategy. Then we'll go over the backtest results and some
+[  306.42s ->   311.94s] extra tips you can use to make this strategy even better. Here's the perfect example of a long trade on
+[  311.94s ->   317.30s] USDJPY on the 30 minute time frame. So here you can see Price made an uptrend.
+[  317.30s ->   322.02s] So we grab our Fibonacci tool and drag from the low to the high of the move. After that,
+[  322.02s ->   328.98s] we want the price to come to the 0.5 and the 0.618 area, which it ends up barely wicking in,
+[  328.98s ->   335.62s] but it still counts as a successful signal. Next we want price to come to the 0.382 to the 0 area,
+[  335.62s ->   341.30s] which it does. Then finally we want price to come all the way back down to the 0.88 level
+[  341.30s ->   346.26s] to be able to enter the trade. We wait a little bit and price ends up coming all the way back down
+[  346.26s ->   351.94s] to the 0.88 level. Considering all the steps were met perfectly, we enter the trade, set our take
+[  351.94s ->   356.66s] profit at the top of the move, then set our stop loss right below the bottom of the move. And look
+[  356.66s ->   361.46s] what happens, it was a winning trade. Here's a short example. We have a downtrend, mark it from the top
+[  361.46s ->   367.78s] to the bottom with the Fibonacci tool. We then want price to come back up to the 0.5 to the 0.618
+[  367.78s ->   372.74s] level. We wait a little bit and the very top of this candle's wick gets to this area, which we can
+[  372.74s ->   377.78s] still count it as long as it doesn't go past the area. Next we need price to reverse back down to
+[  377.78s ->   384.18s] the 0.382 to the 0 level. We wait a little bit and price does just that. Now the price has completed
+[  384.18s ->   389.46s] most of the steps, we then have to wait for price to come back all the way up to the 0.88 level,
+[  389.46s ->   394.66s] which it does, so we enter the trade. Set our take profit at the low, then set our stop loss right
+[  394.66s ->   399.14s] above the high. Then look what happens, it was a winning trade. Now it's time to go over the back
+[  399.14s ->   405.78s] test results. So we ended up testing the strategy with 77 trades. 48 were winners, 29 were losers,
+[  405.78s ->   414.58s] giving this a 62% win rate. Out of all the trades, the strategy profited 1,040%, which is absolutely insane.
+[  414.58s ->   418.66s] If you want to see the rest of the back test results, like the time frame, consecutive wins,
+[  418.66s ->   423.30s] consecutive losses, I'll be leaving the rest of the back test results in my discord. I'll leave a
+[  423.30s ->   427.54s] link in the description. Here are some extra tips you can incorporate into the strategy to make it
+[  427.54s ->   433.70s] perform so much better. First tip, I found that if you take partial take profits at the 0.5 level,
+[  433.70s ->   439.22s] this strategy's win rate and the profit rate go way up. So I would recommend taking some profit off the
+[  439.22s ->   445.70s] table at the 0.5 level to guarantee those profits. The next tip I want to share is how to know exactly where
+[  445.70s ->   450.74s] to place your stop loss. If you incorporate this tip, your stop loss will be hit way less often
+[  450.74s ->   455.38s] and will save you from losing a ton of trades you shouldn't. Incorporate this video's stop loss
+[  455.38s ->   460.50s] strategy into this and it'll make this strategy perform so much better.
+[  460.50s ->   463.38s] Thanks for watching and I'll see you guys next time.

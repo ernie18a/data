@@ -1,0 +1,62 @@
+[    0.00s ->     4.32s] Hey guys, what's up? In this video, I want to show you how I trade SPY options on a small account
+[    4.32s ->    11.02s] and was able to make 10% this month. So in the month of April, I ended up making about 10.33%.
+[   11.02s ->    14.74s] Again, the end of the day is not over, so it could be a bit lower, it could be a slightly
+[   14.74s ->    22.16s] bit more, but roughly 10% this month and roughly we're at 27, almost 28% year to date. So if you
+[   22.16s ->    26.62s] want to learn exactly how I do this with a small account, less than $1,000, I'm going to walk you
+[   26.62s ->    32.46s] through exactly what I do. So number one, what I do is I trade credit spreads. If you have no idea
+[   32.46s ->    37.18s] what credit spreads are, it's a simple strategy like this, where you go in and you look at highly
+[   37.18s ->    46.62s] liquid stocks. So for instance, I trade SPY, I trade IWM, I trade DIA, TLT, QQQ, GLD, stuff like this.
+[   46.88s ->    53.28s] Let's go into an example of a stock that I do not own a position on. So I currently have a SPY and
+[   53.28s ->    59.26s] TLT spread on, but so let's look at, let's say DIA. So if we're looking at DIA, the way we set this
+[   59.26s ->    65.38s] trade up is I simply go on to my broker, right now I'm using Robinhood, I go on to trade DIA options,
+[   66.36s ->    71.24s] and from here I go on to builder, and from builder I select put credit spread, which is under the
+[   71.24s ->    76.04s] vertical credit spread section. I'm about to explain how this works here in a second, but I want to show
+[   76.04s ->    82.28s] you the profit chart so that it makes more sense. What I do is I go out on my expiration date, I look for
+[   82.28s ->    88.30s] anything close to 14 or a little over. So anyways, May 12th looks like we're about 14 days out, so that
+[   88.30s ->    94.34s] means a 14-day DTE. So I click on that, now we have a 14-day DTE, we're going to look at where the stock
+[   94.34s ->   100.40s] price is currently. Here we go, we need to shift this to a dollar wide spread. Here we go. So the stock is
+[  100.40s ->   105.56s] currently trading right here. I want to go out to a price point where I think the stock won't hit.
+[  105.98s ->   110.32s] So what I'm doing is I'm looking for the stock to move higher. I make money with put credit spreads when
+[  110.32s ->   114.84s] the stock goes up. So for instance, let me just pull up a trading view chart right now, trading
+[  114.84s ->   121.47s] view. Sorry about this, should have had this pre-made already, but you know, we work with it.
+[  121.87s ->   126.59s] So what we do is let's go on to the stock symbol DIA, so that's the one that we are looking at.
+[  126.87s ->   131.77s] A put credit spread makes money when you stay above that level. Let's say I like this level because it
+[  131.77s ->   136.13s] dipped down to here and then it came back up. So let's say we have a level of 332. All right,
+[  136.13s ->   143.39s] so 332 is now our level. So I make money in this trade if the stock basically stays above this
+[  143.39s ->   148.99s] buyer expiration date, which is roughly 14 days out. So this means that I make money if the stock
+[  148.99s ->   155.37s] goes up. I make money if the stock is flat. I make money if the stock goes down as long as it doesn't
+[  155.37s ->   161.47s] go below this level. So I make money way more ways than a stock trader could make money. But also the
+[  161.47s ->   165.37s] reason why I love this trade is because it has defined risk. I know what I'm going to lose.
+[  165.69s ->   172.69s] Unlike if you were to buy a call contract to make money on the upside, not only could you not make
+[  172.69s ->   177.71s] money if the stock dropped, but you would also be losing a lot because options values decay a lot
+[  177.71s ->   183.31s] over time. And so you'd be losing a lot of money. And instead of making money in these three different
+[  183.31s ->   189.23s] ways, you would have to make money only if the stock went instantly up, which is hard to
+[  189.23s ->   195.63s] predict. So let's say, let's go down. Let's say, okay, this is 332. That looks like a solid level.
+[  195.77s ->   201.25s] Let's give ourselves some more room. Let's say 331 is our level. So we're going to go down here to 331
+[  201.25s ->   206.27s] 30. You can see here, this is 331 30. So I would go here. Now look, you can see here that I would,
+[  206.43s ->   209.45s] okay, the total credit's about eight. That's not something we want to do. You ideally want to,
+[  209.55s ->   215.50s] or the total credit says seven. This also says 11, 12. I don't know exactly where it's sitting.
+[  215.50s ->   220.08s] Um, let's just take these numbers for example, what you ideally want to target though, is you
+[  220.08s ->   225.54s] ideally want to target a 15 cent credit. So again, you can come here 15 cents. Um, and that's kind of
+[  225.54s ->   230.40s] shows you what you're going to target 15, 14 cents, something like that. So anyways, this is the trade
+[  230.40s ->   234.08s] that you're putting on. You're going to make 15 cents. And how this works is the stock price is
+[  234.08s ->   237.72s] currently trading at this little level. If you go up, you make money. If it goes down, you make,
+[  237.72s ->   241.96s] you make money. If it stays the same, you make money. You put, you, you put this trade on and you move
+[  241.96s ->   246.02s] on. That's how simple this trade is. So again, guys, you're really just looking, where do I think
+[  246.02s ->   250.82s] this stock will not go above? And then placing a trade like that. Again, you can do this by a ton
+[  250.82s ->   258.14s] of different ways like Delta by using technical analysis to, to determine your levels. Or my
+[  258.14s ->   264.46s] favorite, you can simply just wake up and do it yourself. So if you go to, um, app dot the, uh,
+[  264.46s ->   270.84s] app dot 10% credit, uh, credit spreads.com, you can actually scroll down to the bottom of this page
+[  270.84s ->   275.94s] and click on test our alerts. And I'll send you three alerts for free that I'm personally taking,
+[  275.94s ->   281.58s] but these alerts come from the dashboard, which shows you exactly what to do based on historical
+[  281.58s ->   286.08s] win rates. It shows you what your, your win rate is. So if you want a win rate of over 90%,
+[  286.08s ->   291.46s] which is insane and nobody else is getting, plus you can also see your, your annualized return based
+[  291.46s ->   296.34s] on actual per performance. That's about a 21% return a year. That means you can two, almost three X the
+[  296.34s ->   301.66s] market return just by taking this trade. So it tells you DIA, it tells you the expiration date,
+[  301.88s ->   306.32s] it tells you the levels, and it tells you how much credit to collect. It tells you everything
+[  306.32s ->   310.48s] you want to know all in one place. So if you want to learn more about this or get three free trades,
+[  310.82s ->   314.98s] click the link in the, in the, in the description below. These are the exact trades that I've been
+[  314.98s ->   321.34s] using and following to grow my account by 10% in April, but throughout year to date, about 27,
+[  321.44s ->   326.22s] almost 28%. Anyways, guys, if you enjoyed this video, smash that subscribe button. I am your
+[  326.22s ->   330.90s] credit spreads expert and I share a ton of videos on how to trade credit spreads and so much more.
+[  331.24s ->   334.32s] So smash that thumbs up button and subscribe button. I'll see you in the next video.

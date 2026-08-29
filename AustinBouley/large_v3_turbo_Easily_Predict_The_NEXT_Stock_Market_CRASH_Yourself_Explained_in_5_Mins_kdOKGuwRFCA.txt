@@ -1,0 +1,104 @@
+[    0.00s ->     5.82s] Hey guys, welcome to this video where we are going to discuss how to predict the next market crash,
+[    5.88s ->     9.34s] whether that be the next recession or the next Great Depression.
+[    9.50s ->    14.14s] I'm going to show you exactly a secret trick that no one talks about,
+[   14.28s ->    15.66s] probably because they don't even know.
+[   15.96s ->    17.18s] It's really very simple.
+[   17.48s ->    20.68s] If you've never been to my YouTube channel, I am the Impeccable Investor,
+[   20.72s ->    23.30s] and I teach people how to invest in the stock market.
+[   23.68s ->    25.98s] Please hit that subscribe button, then that bell,
+[   25.98s ->    30.44s] so you get alerted to every video that I make.
+[   30.84s ->    32.72s] All right, guys, so if you can see here,
+[   33.20s ->    38.66s] what we are looking at is there is a thing called the 200-day moving average.
+[   38.98s ->    42.92s] What that is, it is a simple line that goes on the chart.
+[   43.04s ->    48.22s] You can go to tradingview.com for free, type in the name of any stock you want,
+[   48.52s ->    53.94s] go to indicators, and type in moving average with a period of 200 days, right?
+[   53.94s ->    56.48s] So you get this line on your chart.
+[   56.72s ->    58.72s] It's just this blue line right here.
+[   59.02s ->    61.06s] This is known as the 200-day moving average,
+[   61.16s ->    64.02s] and it just shows the general trend of a stock.
+[   64.48s ->    66.96s] So, for instance, when this line is headed down,
+[   67.06s ->    69.04s] you know the trend of the stock is downward.
+[   69.48s ->    72.08s] When the trend or when the line is pointing up,
+[   72.16s ->    74.44s] you know that this trend is upward.
+[   74.66s ->    75.48s] It's an uptrend.
+[   75.48s ->    78.56s] So right now, you can see we're in an uptrend, all right?
+[   78.78s ->    83.72s] And this little blue little line here that you can see is SPY.
+[   83.84s ->    86.02s] It is the S&P 500 ETF.
+[   86.74s ->    89.46s] So basically, this is the market as a whole.
+[   89.60s ->    93.08s] When you hear about the Dow Jones dropping so many points
+[   93.08s ->    96.18s] or the S&P 500 dropping so many points on the news,
+[   96.58s ->    99.16s] this is what they are talking about,
+[   99.22s ->   101.48s] either the S&P 500 index or SPY.
+[  101.48s ->   105.66s] Now, the key feature here that no one discusses,
+[  105.74s ->   106.82s] maybe because they don't even know,
+[  107.24s ->   110.72s] is this stock chart right here, MMTH.
+[  111.02s ->   113.26s] That can be found on tradingview.com.
+[  113.70s ->   117.40s] MMTH is the percent of stocks above the 200-day moving average.
+[  118.02s ->   122.48s] So there are so many different stocks on the stock market exchange,
+[  123.04s ->   124.96s] like thousands, right?
+[  125.12s ->   128.58s] Thousands upon thousands of stocks listed on stock exchanges.
+[  128.58s ->   133.72s] Well, the 200-day moving average shows the general trend of the markets, right?
+[  133.84s ->   139.48s] So if the price is above the 200-day moving average or this line,
+[  139.86s ->   141.32s] the stock market is bullish.
+[  141.50s ->   141.86s] It's great.
+[  141.96s ->   142.56s] It's going higher.
+[  142.72s ->   145.74s] Well, if it's below, then it's actually going lower.
+[  146.20s ->   148.96s] So what this stock actually shows you
+[  148.96s ->   151.52s] is it shows you the percentage of stocks
+[  151.52s ->   154.00s] that are above that 200-day moving average.
+[  154.26s ->   154.96s] What does that mean?
+[  155.00s ->   157.06s] It shows you the percent of stocks that are bullish.
+[  157.06s ->   160.42s] So how can you use this to your advantage?
+[  161.04s ->   165.36s] Well, if more stocks are not above the 200-day moving average,
+[  165.54s ->   168.82s] well, then that means we're kind of about to go into a bear market, right?
+[  169.14s ->   173.28s] Because all like the S&P 500, the Dow, the NASDAQ,
+[  173.36s ->   176.84s] they're trading prices based on the average of all the stock prices.
+[  177.08s ->   180.48s] So if we can see what all the stock prices are doing in one spot,
+[  180.56s ->   181.96s] that's the way that we're going to do it.
+[  181.96s ->   185.62s] So let's break this down a little bit further and see what we are discussing.
+[  186.30s ->   193.24s] So once again, this is the chart of the percent of stocks above the 200-day moving average.
+[  193.76s ->   197.60s] And on this chart, we have the 200-day moving average, which predicts trend.
+[  197.60s ->   206.14s] All right, so as you can see here, these two drops here in the S&P 500
+[  206.14s ->   211.40s] was during the 2015-2016, we had a minor recession, right?
+[  211.82s ->   217.44s] And then back here in the beginning or the end of 2018, we had that drop, right?
+[  217.72s ->   222.08s] Well, this, I'm going to show you exactly how you could have predicted that beforehand.
+[  222.08s ->   227.48s] If you can see here, leading up to this drop in the S&P 500 market,
+[  228.14s ->   231.54s] MMTH, or the percent of stocks above the 200-day moving average,
+[  231.70s ->   236.78s] broke below the 200-day or the 200-day moving average line.
+[  236.98s ->   238.96s] It broke below right here.
+[  239.06s ->   243.88s] That would have been your indication that the stock market is headed down.
+[  244.00s ->   245.34s] It's going to have a drop.
+[  245.72s ->   250.74s] So if you can see here, it got alerted to that about a month or two before the actual drop.
+[  250.74s ->   252.04s] So what does that mean?
+[  252.10s ->   255.94s] That means that you can actually get out of stocks, pick more defensive stocks,
+[  255.98s ->   260.28s] or maybe even get into bonds during the time that you know that you're about to see a crash in the stock market.
+[  261.29s ->   263.21s] Now, this also holds true here.
+[  263.31s ->   266.51s] You can see that it's holding below this 200-day moving average.
+[  266.81s ->   268.25s] Right here, it comes down.
+[  268.35s ->   269.61s] Right here, it comes down.
+[  269.89s ->   274.63s] And it starts to come down before the stock market actually drops, right?
+[  274.79s ->   276.49s] So that's the amazing feature.
+[  276.63s ->   279.21s] Not only can you see when the stock market is about to drop,
+[  279.21s ->   285.21s] but you can actually get a good estimate before the stock itself drops.
+[  285.87s ->   291.51s] Now, so if you can see here, this is back in the 2008-2009 housing market crisis.
+[  291.69s ->   298.49s] As you can see here that we had that huge, basically, borderline depression recession there in 2008-2009.
+[  298.49s ->   310.11s] Well, if you can see here, back here of June of 2007, you can see here that we got alerted that MMTH broke below the 200-day moving average.
+[  310.55s ->   314.93s] Thus, that means that the percent of stocks above the 200-day moving average dropped.
+[  315.03s ->   317.65s] That means a majority of the stocks are starting to go red.
+[  317.75s ->   319.95s] They're starting to go into bearish territory.
+[  320.43s ->   323.43s] Well, we got alerted to that in July slash June.
+[  323.43s ->   327.01s] So, when did the stock market actually start crashing from that?
+[  327.11s ->   329.75s] Well, it didn't start crashing until April, May of 2008.
+[  330.09s ->   337.25s] That means you had a whole six months to prepare for the crash of 2008-2009 just by following this MMTH,
+[  337.45s ->   339.55s] or the percent of stocks above the 200-day moving average.
+[  340.07s ->   341.97s] So, let me recap this video real quick.
+[  342.07s ->   343.91s] Sorry if I got too in-depth for y'all.
+[  343.91s ->   350.01s] But basically, what is happening here is this stock shows us if the majority of stocks are bullish or bearish.
+[  350.15s ->   354.65s] When it breaks below the 200-day moving average, we know the majority of stocks are bearish.
+[  354.67s ->   357.69s] So, we know to watch out for a big drop in the S&P 500 market.
+[  358.05s ->   358.57s] All right, guys.
+[  358.65s ->   363.33s] If you learned from this video, if you liked this video, please hit that thumbs up button.
+[  363.43s ->   367.79s] If you haven't already, please hit subscribe and drop any comments down below if you have any questions.
+[  368.19s ->   368.55s] All right, guys.
+[  368.61s ->   369.69s] Thank you so much for watching.
+[  369.89s ->   370.93s] See you in the next video.

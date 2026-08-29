@@ -1,0 +1,27 @@
+[    0.00s ->     8.30s] Austin, I had is managing positions when both strike prices have been breached, but you still
+[    8.30s ->    15.46s] have plenty of time. So like, say, for example, I'm like, I'm in the 371 QQQ. I think you're in
+[   15.46s ->    24.98s] that as well. Yeah. So like we're sitting at 373, 374 today, and we still have until August 18th,
+[   24.98s ->    30.72s] right? So what happens if later this week, after some economic data comes out on Thursday, Friday,
+[   31.36s ->    40.01s] we dip into the high 360s? Like, what's your personal thoughts about how far are you willing
+[   40.01s ->    46.34s] to let it go down based on how much time has left to expiration before you kind of like start to get
+[   46.34s ->    51.98s] a little concerned? Yeah. So I'll show you the data, and then I'll show you why I have the rules
+[   51.98s ->    56.10s] based on it. So we're looking at QQQ. These are true triple strategies that we're that we are
+[   56.10s ->    64.88s] looking at. So we're looking at roughly a 90% win rate at around, I guess, a 27% annualized return.
+[   65.36s ->    71.38s] Okay, so 90 and 27 is what we're looking at. This is if we hold until expiration day, and let it expire
+[   71.38s ->    76.96s] worthless or expire and in the money for max loss. So that is what we're looking at in this scenario.
+[   76.96s ->    83.08s] If we come in here into our profile settings, anybody has access to this, you can change the
+[   83.08s ->    89.68s] risk management preference to exit when it breaks below your strike price. So when it breaks below
+[   89.68s ->    94.78s] your strike price, we can also see the data on that. So we come over here to queues again, let it
+[   94.78s ->   102.62s] refresh with the new settings. Go over here to spot, I mean, the QQQ hurdle strategy. So we were looking
+[  102.62s ->   114.82s] at a 90% win rate at a 27% annualized return. Now we're looking at a 75% win rate with a 7%
+[  114.82s ->   123.94s] annualized return. Does it still work? Yes, it does. But it doesn't work out as well. The reason being
+[  123.94s ->   130.76s] is because these trades tend to break our strike prices a decent amount of times or can it's roughly
+[  130.76s ->   137.92s] 30% range will break. Like 30% of the times our trade will break below that price. But a high
+[  137.92s ->   143.28s] percentage of those times that it breaks below, it comes back because we're trading with the trend
+[  143.28s ->   150.58s] and it dips. So if you want to sell when it breaks your strike price, you can do that. Here's the data
+[  150.58s ->   156.10s] for it. But again, I found, well, obviously the statistics work out better if I just hold until
+[  156.10s ->   161.96s] expiration day. Yes, that means I have a larger losses for sure. You definitely have a lot of
+[  161.96s ->   166.58s] smaller losses here with this approach. But if you hold until expiration, you will have a larger
+[  166.58s ->   169.96s] losses. But in the long run, it works out better because you have a higher win rate.
+[  170.88s ->   172.80s] I see. Okay. That's fair enough.
+[  172.80s ->   177.04s] In this table, I see something.

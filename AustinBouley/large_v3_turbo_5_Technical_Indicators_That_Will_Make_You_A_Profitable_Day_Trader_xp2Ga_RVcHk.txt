@@ -1,0 +1,47 @@
+[    0.43s ->     6.21s] Welcome to the Impeccable Investor Guys. Today we are going for some of the easiest day trading
+[    6.21s ->    11.87s] strategies. These could be practiced to have a better chance of earning profit. For those who
+[   11.87s ->    17.41s] don't know what day trading is, it is the buying and selling of financial instruments on a single
+[   17.41s ->    22.71s] day. There can be multiple times on a single day where you could do it. This is the game where you
+[   22.71s ->    28.83s] have to take advantage of a small movement in the price. The day trading can be even a dangerous one
+[   28.83s ->    34.93s] for those who aren't new to it. Well, moving on to our strategies. But before that, be sure to
+[   34.93s ->    39.17s] subscribe to our channel and hit the bell icon to get notified of our future videos.
+[   39.91s ->    46.83s] Number 1 is TTM Scalper. This one is a day trading indicator that is used in stock or other trading
+[   46.83s ->    52.83s] markets. It works based on pivot level against which you have to determine to either buy or sell
+[   52.83s ->    58.81s] a certain specific product. The pivot level is marked by a white paint bar. These include either
+[   58.81s ->    66.09s] the pivot high or the pivot low. The confirmation speed in TTM Scalper depends on the time frame
+[   66.09s ->    71.63s] speed. One of the major advantages of this strategy is that it is a great help for the
+[   71.63s ->    76.87s] newbies. This is because you just have to enter the trades at the beginning and then set the exit
+[   76.87s ->    81.91s] points. This is because you just have to enter the trades at the beginning and then set the exit
+[   81.91s ->    87.57s] points. The other benefit is that you don't have to monitor it frequently. The only drawback of this
+[   87.57s ->    93.81s] strategy is that you have to perform at least 100 of trade to make the result a profitable one.
+[   94.31s ->    97.81s] Still, this one is loved by many, especially the newbies.
+[   98.63s ->   104.09s] Number 2 is a triangle breakout. Being one of the most common patterns in day trading,
+[  104.63s ->   112.45s] there are several types of the importance of it as well. It helps in determining the fluctuations
+[  112.45s ->   118.23s] and volatility of trade. You can get many trading opportunities from this one, either during its
+[  118.23s ->   124.41s] forming or even after it gets completed. In this strategy, you just have to buy when the asset price
+[  124.41s ->   129.51s] goes beyond the upper trend line. When the price of the asset drops below the lower trend line,
+[  129.83s ->   136.31s] you can do short sell as well. Number 3 is MACD. This strategy is also known as moving average
+[  136.31s ->   142.25s] convergence divergence. Despite its long and complicated name, the actual strategy is quite
+[  142.25s ->   148.29s] easy. It is also a popular one and is known for its simplicity and flexibility. For the trading
+[  148.29s ->   154.11s] divergence, one goes for the MACD histogram. The moving average is calculated in this one,
+[  154.47s ->   160.17s] where a closing price is in a certain period is used. When the histogram is above the 9-day EMA,
+[  160.17s ->   166.83s] it is positive and vice versa. The MACD histogram is the major cause of the popularity of this strategy.
+[  167.51s ->   173.13s] This is because of the speed of the movement of price. It is majorly used for determining the
+[  173.13s ->   181.33s] strength of price movement rather than the direction of the trend. Number 4 is RSI. RSI or relative
+[  181.33s ->   187.07s] strength indicator strategies is majorly used to determine stock performance. This is done by
+[  187.07s ->   193.55s] comparing the strength of stock during the time it was up versus when it was done. The range of this
+[  193.55s ->   199.65s] number is between 0 and 100. The bullish and bearishness are the term which is commonly used
+[  199.65s ->   205.65s] in this strategy. The former is used when the reading is above 70, while the latter is used when
+[  205.65s ->   211.39s] the reading goes below 30. There is also a formula associated with this technique, which should be gone
+[  211.39s ->   217.11s] through if you are looking to go for this strategy. Being a straightforward strategy, it is an easy
+[  217.11s ->   223.47s] one. However, the market may have several uncertainties, so you should take care of it as well.
+[  224.21s ->   231.87s] Number 5 is VWAP. Volume, weight, average price strategy is used by the majority of traders.
+[  232.55s ->   238.19s] There is a calculation that has to be done in this strategy which makes it be used one time a day.
+[  238.19s ->   245.13s] The strategy will provide you with an average with volume as its major aspect. Due to the involvement
+[  245.13s ->   251.83s] of the volume, you get a more accurate average price of the instruments. This strategy can maximize
+[  251.83s ->   257.75s] your profit to a great extent. One of the most valuable information provided by the strategy is
+[  257.75s ->   263.89s] that it will let you know whether you achieved more or less than the average price. That's it from us,
+[  263.89s ->   268.95s] guys. Do not forget to like and share this video with your friends who are involved in the trading
+[  268.95s ->   273.93s] sector. Tell us in the comment section if you know about more of these strategies which are easy
+[  273.93s ->   279.23s] to follow. Also, subscribe to our channel to watch more informative videos in the future.
+[  279.23s ->   282.07s] Thanks for watching it. See you next time.

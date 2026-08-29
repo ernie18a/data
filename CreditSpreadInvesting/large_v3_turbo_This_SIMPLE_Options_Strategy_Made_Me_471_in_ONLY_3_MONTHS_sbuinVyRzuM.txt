@@ -1,0 +1,221 @@
+[    0.30s ->     4.30s] Having trouble knowing when to get out of a losing trade or when to take profit?
+[    4.48s ->     8.32s] Have situations where one large loss wipes out all your gains and more.
+[    8.76s ->    14.92s] Today, I'll share with you all a very simple but effective stop-loss and take-profit strategy that anyone can use.
+[   15.30s ->    18.78s] If you find this content helpful, please don't forget to hit the like button and subscribe.
+[   19.08s ->    23.96s] Knowing when to get out of a trade, whether on a winning trade or a losing trade, is the hardest part of trading.
+[   24.14s ->    27.12s] It's what differentiates a successful trader from one who isn't.
+[   27.12s ->    33.46s] But before we discuss the specific strategy, let's first put it into context with the two biggest sins in trading.
+[   33.96s ->    37.36s] The first one is sitting in a losing position for way too long.
+[   38.00s ->    40.52s] The second one is letting a winning trade become a losing trade.
+[   40.92s ->    44.04s] First, sitting in a losing position for way too long.
+[   44.60s ->    46.96s] This is where you buy an option, let's say, for $100.
+[   47.34s ->    49.34s] It goes down to $75 and then to $50.
+[   50.06s ->    52.96s] And you don't really know when to exit. You don't want to take the loss, right?
+[   53.00s ->    54.64s] And then all of a sudden, it goes to like zero.
+[   54.82s ->    56.48s] Your options expire worthless.
+[   57.12s ->    58.56s] You're unable to take the loss.
+[   58.72s ->    61.72s] Now we have to think about why does this happen, right?
+[   61.72s ->    71.78s] We know from research the psychological pain of making unrealized loss realized is often so frustrating and or painful that we as humans tend to push it off.
+[   71.92s ->    77.44s] How many times have you, myself included, told yourself, let's give it a couple more minutes, a couple more days.
+[   77.60s ->    79.20s] It might actually turn out in my favor.
+[   79.20s ->    84.48s] These are the type of behavior that causes you to win, let's say, $100 a day for a couple days.
+[   84.64s ->    88.22s] And then you have $1,000, $2,000, $3,000 loss where it wipes you out.
+[   88.62s ->    92.34s] And this is why this strategy will help you learn how to take losses until it becomes second nature.
+[   92.70s ->    96.48s] So in the future, you don't necessarily have to use this strategy.
+[   96.60s ->    99.86s] You can start setting those mental stop losses and actually abide by them.
+[   99.98s ->   102.36s] Second sin, letting a winning trade become a losing trade.
+[  102.36s ->   105.44s] This one is actually very similar to the first one, if you think about it.
+[  105.78s ->   108.02s] Let's say, again, you're up $100 on a trade.
+[  108.58s ->   110.82s] You see that profit go down a bit to, let's say, $80.
+[  111.62s ->   114.16s] And you're like, well, it was at $100.
+[  114.36s ->   116.60s] I don't want to sell until it gets back to $100.
+[  116.90s ->   119.20s] I'll just wait until it gets back to $100, and then I'll sell.
+[  119.34s ->   123.32s] And then lo and behold, it goes to $60, $40, and then break even.
+[  123.48s ->   125.26s] And then all of a sudden, you're down $100 on the trade.
+[  125.44s ->   129.36s] Again, it's very similar to the first one because you don't want to, quote unquote, lose out when it was at $100.
+[  129.36s ->   133.88s] Again, the pain of losing the money is causing you to lose out on even more money.
+[  134.10s ->   136.42s] This is what take profits and stop losses are going to do for you.
+[  136.84s ->   144.80s] And this is why the strategy is going to help you learn and become a habit on taking profits and stop losses and getting rid of that emotional baggage.
+[  145.14s ->   147.46s] Now, here's the strategy, and I'll explain to you why this works.
+[  148.16s ->   151.52s] I'm mainly an option seller, so let's just start with that first.
+[  151.66s ->   153.58s] But the same idea can be applied to option buying.
+[  153.88s ->   159.16s] I'm going to use an example to demonstrate the principle, and I'm just going to summarize the strategy shortly after this.
+[  159.16s ->   162.66s] We're selling options here, so you can apply this to buying options, the same idea.
+[  162.90s ->   169.54s] Let's assume that initially you collected $100 on your credit spread, right?
+[  169.80s ->   177.12s] You set your stop loss to be 50% or 100% of your total credit collected, right?
+[  177.12s ->   181.90s] You don't ever want to lose more than your potential of winning, right?
+[  181.92s ->   185.06s] In the best case scenario, you make this $100 when the options expire.
+[  185.06s ->   192.28s] You don't ever want to risk more than 100, so I would never recommend you set your stop loss greater than 100% of your total credit collected.
+[  192.52s ->   194.52s] So in this case, I usually do 50% to 100%.
+[  194.52s ->   198.06s] I would say your stop loss would be 150% to 200%, right?
+[  198.08s ->   201.66s] If it hits $200, if it hits $150, you're automatically out of the trade.
+[  201.74s ->   202.28s] It doesn't matter.
+[  202.64s ->   204.60s] You take the loss and move on to the next trade.
+[  205.08s ->   208.18s] So in this case, your P&L will be negative 50% to 100%.
+[  208.18s ->   211.64s] You would have lost 50 bucks up to 100 bucks.
+[  212.04s ->   214.28s] And that's the worst case scenario because the trade went against you.
+[  214.60s ->   216.16s] You entered a good trade, right?
+[  216.36s ->   217.98s] And the trade actually went in your favor.
+[  218.46s ->   220.44s] Now your current price point is 50 bucks.
+[  220.58s ->   221.84s] Remember thinking about send number two.
+[  221.96s ->   224.18s] You don't want to let a winning trade become a losing trade.
+[  224.26s ->   227.68s] Now in this case, it is now a winning trade and you don't want to ever lose money on this.
+[  227.96s ->   230.56s] But you still think that you can probably make more money, right?
+[  230.56s ->   232.30s] You think you can probably realize all 100 bucks.
+[  232.40s ->   233.38s] You want all 100 bucks.
+[  233.38s ->   239.66s] So you would set your stop loss at 100 bucks, which means that if the market does tend to
+[  239.66s ->   243.86s] go in the opposite direction of what you're looking for, especially in a very fast manner,
+[  244.48s ->   247.04s] you'll get stopped out and your P&L would be zero.
+[  247.26s ->   249.22s] You will not lose a single dime on this trade, right?
+[  249.26s ->   252.56s] You cannot lose money and never let a winning trade become a losing trade.
+[  252.64s ->   253.34s] This is very important.
+[  253.62s ->   257.92s] This is probably what I've seen to be the hardest one for people to abide by because you've made
+[  257.92s ->   258.24s] money.
+[  258.58s ->   259.66s] You want to make more money.
+[  259.70s ->   261.70s] So you tend to remove the stop loss.
+[  261.82s ->   262.44s] Don't do it.
+[  262.44s ->   263.72s] Just keep it at negative 100.
+[  264.26s ->   265.76s] Make sure you never lose money on this trade.
+[  266.24s ->   267.64s] You can always buy back in later.
+[  268.00s ->   271.58s] Now let's assume the trade again continues to go in your favor, right?
+[  271.76s ->   273.10s] And now you're at $25.
+[  274.48s ->   277.48s] Continuously move that stop loss down to $50.
+[  277.96s ->   279.08s] Again, protect yourself.
+[  279.26s ->   281.76s] You can also take profit here at 25 bucks, but that's the same.
+[  281.88s ->   283.26s] Let's just take that out of the equation.
+[  283.38s ->   285.50s] It makes things too complicated, especially for beginners.
+[  286.20s ->   287.96s] Just move your stop loss up to 50 bucks.
+[  287.96s ->   294.16s] And now if anything were to happen out of the ordinary, you at least would have made 50 bucks.
+[  294.94s ->   296.44s] 50% ROI is pretty good.
+[  296.84s ->   300.90s] Now, again, you'll see as the trade continues to go in your favor, move it down.
+[  301.00s ->   302.46s] Now you're at 12.5%.
+[  302.46s ->   303.20s] Move it up.
+[  303.34s ->   306.24s] Move your stop loss down to $25, right?
+[  306.24s ->   307.84s] So now you make $75.
+[  308.82s ->   310.94s] Same thing goes with $5.
+[  311.34s ->   312.42s] Move it up to $10.
+[  313.04s ->   315.84s] And now your total profit is, again, $90.
+[  316.48s ->   321.76s] I tend to never go more than 10 bucks or 10%, but you can depending on the profit, right?
+[  321.76s ->   323.82s] Depending on how much you want to do and how much you want to manage it.
+[  324.04s ->   325.48s] And all until it goes down to zero.
+[  325.74s ->   328.30s] The moment it hits zero, your total P&L is 100 bucks, right?
+[  328.30s ->   329.34s] You made max profit.
+[  330.06s ->   331.46s] The strategy is not very complicated.
+[  331.46s ->   336.14s] By doing this, you're basically minimizing your losses here and you're able to protect
+[  336.14s ->   339.70s] yourself all throughout this time here, right?
+[  339.72s ->   342.50s] No matter what happens, you'll never lose money.
+[  343.04s ->   346.74s] Trading, again, this is a mindset change that's not about making as much money as possible.
+[  347.04s ->   351.32s] It's about not losing massive amounts of money in one loss.
+[  352.42s ->   355.42s] So to summarize it, the strategy is very easy.
+[  355.68s ->   359.26s] When we enter trades, set your stop loss of 50% to 100% of credit, right?
+[  359.82s ->   361.62s] Never lose more than you can make.
+[  362.16s ->   364.58s] When it becomes 50% unrealized profit, move it to break even.
+[  364.78s ->   366.98s] 25% unrealized profit, 50%, right?
+[  367.10s ->   369.36s] And such and so and so, right?
+[  369.36s ->   372.44s] Move it all the way down until it becomes expired out of the money.
+[  373.18s ->   375.06s] Step ladder function, very simple to do.
+[  375.62s ->   376.20s] Automate it.
+[  376.48s ->   380.60s] And this takes all the thinking and emotion out of it and just keep doing this over and
+[  380.60s ->   384.20s] over and over again until you get used to losing money because this will happen.
+[  384.46s ->   385.70s] This will definitely happen.
+[  386.14s ->   389.18s] And you got to get used to losing money because you won't win every trade that you're in.
+[  389.76s ->   390.44s] Get used to this.
+[  390.44s ->   395.66s] And you'll also be able to get used to avoiding set number two, which is getting out of trades
+[  395.66s ->   397.06s] even though you're up on it, right?
+[  397.10s ->   400.76s] You want to make sure that you're able to realize that profit even though it's not the
+[  400.76s ->   403.06s] maximum amount of gains that you have seen, right?
+[  403.06s ->   405.32s] That's also two very important skills to have.
+[  405.38s ->   407.18s] And this strategy helps you achieve that.
+[  407.18s ->   408.92s] So let's just do the math here.
+[  409.16s ->   411.92s] Let's say that every time you lose, you lose a hundred bucks.
+[  412.40s ->   416.96s] Every time you win, let's do something like 75, $75, 75%, right?
+[  416.96s ->   419.00s] Because you aren't taking the max amount of profit.
+[  419.00s ->   425.64s] Let's assume here that you traded 10 times and you went around 70% at the time, okay?
+[  425.64s ->   430.55s] Which means that you win seven and you lose three.
+[  432.70s ->   438.96s] After three trades, you would have lost $300, but you would have made $75 every time you
+[  438.96s ->   445.38s] win for seven trades, which means that your ending P&L would be $225.
+[  445.38s ->   453.18s] So after 10 trades, using $100, you would have made $225.
+[  454.50s ->   455.62s] Really not bad, right?
+[  455.78s ->   462.06s] So let's assume that you are a little bit more aggressive in taking your stop losses.
+[  462.46s ->   463.42s] So negative 50.
+[  464.52s ->   468.52s] And let's just say you keep the same profit when you do win.
+[  470.11s ->   474.29s] But because you're more aggressive in taking those stop losses, your win rate drops a little bit.
+[  474.31s ->   475.29s] Let's just go to 60%.
+[  475.29s ->   478.41s] So in this case, you win six and you lose four.
+[  479.73s ->   485.71s] So the final P&L means when you lose those six, you'll lose a total of $600, $200, right?
+[  486.25s ->   493.81s] But when you win, you make the same amount of money, $75 times six, which means you actually
+[  493.81s ->   500.27s] make $250 after 10 trades, which is actually, if you look at it, better than the $225 that
+[  500.27s ->   500.87s] you made above.
+[  501.89s ->   506.05s] This is why it's so important in controlling this number right here.
+[  506.51s ->   508.95s] Win rate matters a lot as well.
+[  509.15s ->   513.55s] And if you want to learn how to improve your win rate by entering trades the right way,
+[  513.93s ->   516.81s] make sure you click on the video linked in the upper right hand corner.
+[  516.99s ->   522.21s] But you have to make sure that you don't lose large amounts of money on a single trade.
+[  522.21s ->   527.03s] Let's do another example where you don't abide by the strategy and you YOLO, therefore doing
+[  527.03s ->   528.47s] both of the sins that we talked about.
+[  528.99s ->   535.51s] Let's say that you YOLO, you don't follow the principle, you lose $400 every trade, but
+[  535.51s ->   541.51s] you're so good, you take max profit every single time you win against the same 10 trades.
+[  541.51s ->   545.59s] And you're such a good trader, you have an 80% win rate.
+[  547.58s ->   549.24s] So therefore you win eight and you lose two.
+[  550.59s ->   554.79s] In those two losses, $400 each, you would have lost 800 bucks.
+[  555.59s ->   562.07s] In those eight wins, you would have made 100 bucks every win times eight times, which is
+[  562.07s ->   562.87s] actually 800 bucks.
+[  562.87s ->   564.27s] So you actually come out to be break even.
+[  564.51s ->   570.03s] So as you can see from just this example, even though you make more money, you win more
+[  570.03s ->   577.05s] often, but you lose way more money when you do lose, you actually come off to be worse
+[  577.05s ->   582.51s] off than our first situation where you win seven times, minimize your losses and make less
+[  582.51s ->   582.77s] money.
+[  583.09s ->   586.95s] So this is why it's really important to understand why this strategy exists.
+[  587.11s ->   592.07s] It is to avoid sin number one and sin number two and affecting your win loss as well as your
+[  592.07s ->   593.41s] overall loss number.
+[  593.41s ->   598.57s] When you do lose, I'm going to head over to the charts and explain briefly why a percent
+[  598.57s ->   601.91s] based stop loss strategy theoretically works.
+[  602.05s ->   603.37s] A good example could be right here.
+[  603.49s ->   606.87s] Let's assume that I decided to take a bull side trade here on 818.
+[  607.21s ->   610.43s] Everything looks good every day up until 824.
+[  610.65s ->   613.41s] On 824, you probably already made a good amount of profit.
+[  613.53s ->   614.97s] Let's assume that you made 50% profit.
+[  615.09s ->   619.21s] However, there's a large red day that could have changed the overall momentum of the market.
+[  619.21s ->   624.51s] So instead of holding the bag and wondering, well, will the market actually continue its
+[  624.51s ->   626.23s] uptrend or will it continue downward?
+[  626.43s ->   629.37s] You just get out the trade first at no loss, right?
+[  629.37s ->   631.71s] Because you don't want to be thinking, oh, well, it could go back up.
+[  631.75s ->   632.47s] It could go back down.
+[  632.55s ->   633.73s] No, just get rid of all that thoughts.
+[  634.05s ->   638.53s] Just take the break even or to take the L and get out and reevaluate later.
+[  639.66s ->   641.34s] So in this case, the market went back up.
+[  641.36s ->   643.84s] But what happened about what happens if it was here?
+[  644.36s ->   647.96s] Instead of you bought in here and the market continued to go down, right?
+[  647.98s ->   650.58s] Instead of thinking about it, you just take 100% of that loss.
+[  651.14s ->   652.12s] You bought an option.
+[  652.22s ->   655.74s] It was 300 bucks and it got to 150 on this candlestick right here.
+[  656.20s ->   660.32s] Just get out of it and you can always rebuy back in at a later time.
+[  660.62s ->   661.92s] So let's just take this example here, right?
+[  661.92s ->   665.96s] Let's assume I entered this trade here on this day because it hit this previous support
+[  665.96s ->   666.76s] and it's a green day.
+[  666.84s ->   667.34s] Seems valid.
+[  667.48s ->   668.90s] The next day it went down, right?
+[  668.96s ->   670.62s] You're like, oh shit, what's going to happen?
+[  670.78s ->   671.94s] Should I exit or should I not exit?
+[  671.94s ->   673.02s] Is this a false breakout?
+[  673.22s ->   674.02s] Is this a bear trap?
+[  674.12s ->   674.84s] Is this a bull trap?
+[  674.96s ->   676.10s] You don't know, right?
+[  676.36s ->   677.56s] So you're thinking about all this stuff.
+[  678.42s ->   683.08s] But because your stop loss is at a negative 150 and negative 50 and negative 100,
+[  683.28s ->   684.70s] you haven't hit your stop loss yet.
+[  685.24s ->   687.50s] The next day, oh, went down a little bit lower.
+[  687.86s ->   689.64s] Next day, oh, it's even.
+[  689.84s ->   691.18s] So I haven't hit my stop loss yet.
+[  691.18s ->   693.40s] And then boom, it went up, right?
+[  693.44s ->   696.70s] If you didn't have a stop loss, you could have very well exited here.
+[  696.90s ->   700.16s] You could have exited here and you exit it and it went back up, right?
+[  700.16s ->   703.14s] And you're like, oh shit, I lost out on that trade, on the potential earnings.
+[  703.26s ->   707.40s] So that negative 50 to negative 100 allows you enough wiggle room to let the market play out.
+[  707.56s ->   708.84s] This is just a couple examples, right?
+[  709.14s ->   711.30s] That shows you why this strategy works.
+[  711.74s ->   716.10s] If you guys found this content helpful, please like this video and subscribe to the channel
+[  716.10s ->   717.86s] so that you guys don't miss another video like this.
+[  717.86s ->   722.58s] And if you guys want to see how effective the strategy can be when combined with great entries,
+[  722.82s ->   725.64s] click on this video in the end screen to see how I put the strategy in action
+[  725.64s ->   730.70s] and turn $500 into almost $3,000 by trading only SPY credit spreads.

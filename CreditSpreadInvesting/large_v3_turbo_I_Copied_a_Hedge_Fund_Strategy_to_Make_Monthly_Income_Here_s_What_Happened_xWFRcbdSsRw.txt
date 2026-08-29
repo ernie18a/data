@@ -1,0 +1,98 @@
+[    0.00s ->     5.30s] Welcome back. In my last video, I talked about paper, The Art of Put Selling by Goldman Sachs
+[    5.30s ->    11.42s] and how that describes to us the right way or the best way to sell puts. But the most common
+[   11.42s ->    16.82s] question that I got is how do we actually implement this? So today I'm going to walk
+[   16.82s ->    22.10s] you guys through an actual trade that I took on my public portfolio here on this channel
+[   22.10s ->    26.64s] to demonstrate the principles laid out in that paper. So if you guys haven't watched that video,
+[   26.74s ->    29.96s] I would highly recommend it. I'll link it in the upper right hand corner so that you guys can get
+[   29.96s ->    36.46s] an understanding of how to sell puts the Goldman Sachs way. Okay, so here's a really, really
+[   36.46s ->    43.22s] brief recap. What that paper found was that when we combine fundamental analysis with selling options
+[   43.22s ->    49.26s] that our risk adjusted rate of return increases. And the way that Goldman Sachs does this is by
+[   49.26s ->    55.48s] using this metric called free cash flow yield, which is essentially finding companies with really high
+[   55.48s ->    63.48s] free cash flow, profit, aka sort of, and companies that have fair valuations. And by doing that,
+[   63.96s ->    70.18s] they can increase their risk adjusted returns far beyond what the S&P 500 returns because they are
+[   70.18s ->    75.68s] lowering their risk. And then after finding that company, then we are trying to sell at a strike price
+[   75.98s ->    83.24s] where the market is overestimating risk so that we can arbitrage or take this volatility risk premium
+[   83.24s ->    87.84s] with as little risk as possible. And so you'll see this in the paper, one times your monthly free
+[   87.84s ->    93.28s] cash flow yield. We talk about a whole lot more in that video about sharp ratios, how to manage it,
+[   93.74s ->    97.24s] and what it means for our portfolio. So if you guys haven't checked out that video, I would highly
+[   97.24s ->   102.32s] recommend you guys check out that video right now. Today, I want to demonstrate to you guys how I
+[  102.32s ->   109.78s] leverage the information in this paper to sell puts by basically selling it exactly, almost, how the paper
+[  109.78s ->   114.34s] tells us to do it. And then later on, at the end of this video, I'll tell you guys a little bit of
+[  114.34s ->   118.54s] adjustments that I made. And if you guys want to see even more live real examples, make sure you guys
+[  118.54s ->   122.42s] let me know down in the comment section below and subscribe to the channel so you guys can see all
+[  122.42s ->   127.50s] the updates as they come in. So if you guys are ready, let's get to it. So let's head on over to
+[  127.50s ->   133.26s] premium insights so that we could take a look on how we implemented our put selling strategy.
+[  133.44s ->   138.10s] So let me collapse this first. And the first thing I'm going to point out is the stock that I'm selling
+[  138.10s ->   144.60s] this on is IBKR, Interactive Brokerage. And you can tell that I have been selling puts since September
+[  144.60s ->   152.80s] 3rd, 2025, all the way up to the current one that's active, March 18th, 2026, one cash secured put and
+[  152.80s ->   158.31s] a lot of roles that I continue to just roll out. Over that six month timeframe, I've collected around
+[  158.31s ->   165.33s] 1200 bucks in premium. And my adjusted cost basis are projected if I were to get assigned at $70,
+[  165.33s ->   171.97s] which might be possible because IBKR sitting at like 65 right now, is at $57.80. Which means that
+[  171.97s ->   176.91s] as long as it's above that adjusted cost basis, I'll be quote unquote profitable, right? IBKR is a
+[  176.91s ->   181.87s] high cash flow yield company. If you head on over to finance charts, they have a good way of
+[  181.87s ->   187.57s] understanding what free cash flow yield is. Free cash flow yield for IBKR is sitting around 14.5%
+[  187.57s ->   193.73s] trailing 12 months. But if you look at it from a three-year perspective or a five-year perspective,
+[  193.73s ->   198.81s] it's around 13 to 11. So let's say it's around 12, 12%. And so what we're going to do here is
+[  198.81s ->   203.99s] because that 13% year to date, or your 13% on average, right? A one times monthly free cash flow
+[  203.99s ->   209.29s] yield is around 1%, which means that we're trying to get around 60 to 70 bucks, give or take every
+[  209.29s ->   215.71s] single quote unquote month. So if you go back to this, right, what we're doing here is we are
+[  215.71s ->   221.95s] looking at this net column here. My first IBKR is around 108. So it's around two times free cash flow
+[  221.95s ->   228.49s] yield. And then you can see it ranges from 2% to around 1%, right? Give or take, depending on the
+[  228.49s ->   235.13s] situation. The reason we want to do that is because as the paper has said, we are looking for one times
+[  235.13s ->   240.17s] to three times free cash flow yield, ideally around one times, because that's where we get the highest
+[  240.17s ->   245.05s] risk adjusted returns. But even if you were to go up to two times or three times, your risk adjusted
+[  245.05s ->   250.31s] returns does not diminish that much. And so depending on the situation, I don't mind going a little bit
+[  250.31s ->   256.07s] higher just so that I can take advantage of, for example, earnings or technical pattern that I see.
+[  256.31s ->   262.07s] One, I found a free cash flow yield company that's really, really high. IBKR, right? And two, we are
+[  262.07s ->   269.29s] selling at a one times to three times free cash flow yield, trying to get as much return for as little
+[  269.29s ->   274.29s] risk as possible. Now let's take this one step further and go, how do we find these companies?
+[  274.49s ->   278.69s] So there's actually not that many great screeners for free cash flow yield. I might build one into
+[  278.69s ->   283.45s] premium insights in the next couple months. One of the current ones that I use is Finviz. Finviz has
+[  283.45s ->   287.41s] really good screeners. And instead of free cash flow yield, they have this price divided by free
+[  287.41s ->   292.09s] cash flow, which is the inverse of free cash flow yield. For free cash flow yield, you want it to be
+[  292.09s ->   298.19s] as high as possible. For price to free cash flow, you want it to be as low as possible. So low is good.
+[  298.19s ->   302.43s] So you want it to be, for example, less than 15. And then one thing that we learned from this paper
+[  302.43s ->   306.55s] is that we want companies that are large caps, right? We don't want anything below that because
+[  306.55s ->   310.87s] anything that is a small cap to medium cap, we actually underperform the market. Again,
+[  310.89s ->   314.19s] we're layering on things on top of each other. And so you can see right here, if you filter by
+[  314.19s ->   320.53s] market cap and by price to free cash flow, we are getting a lot of good companies. JP Morgan
+[  320.53s ->   327.07s] Trace, Bank of America, Shell, Morgan Stanley, Goldman Sachs, United Healthcare, World Bank of Canada,
+[  327.27s ->   333.81s] Verizon Communications, American Express, Citibank, Salesforce. Sony's on here, Anheuser-Busch,
+[  333.81s ->   340.67s] Dell, Capital One, Adobe's on here, CVS. If we filter by price to free cash flow, this is where
+[  340.67s ->   345.45s] we found IBKR, right? It's around $28 billion in market cap, right? Again, a large company
+[  345.45s ->   352.37s] that we want to focus on. That's how you find companies based off of price to free cash flow
+[  352.37s ->   357.35s] or free cash flow yield. So let's talk a little bit about adjustments. Paper, again, I want to restate,
+[  357.45s ->   362.31s] does not say that we have to be at the very tip top of the free cash flow yield conversation.
+[  362.31s ->   367.21s] We just need to be in the upper echelon. Okay. And so one thing that I do is that I actually
+[  367.21s ->   375.39s] increase this free cash flow yield to anything under 30, right? We want companies that have very
+[  375.39s ->   380.17s] good free price to free cash flow, but we don't necessarily need to be that restrictive as long
+[  380.17s ->   386.07s] as it's profitable and fairly valued. Okay. And so by doing that, and we filter by market cap,
+[  386.11s ->   389.71s] you can see we have a lot more options now. We have Apple, we have Meadow, we have JP Morgan,
+[  389.71s ->   395.83s] Chase. Again, we have J&J, Visa, MasterCard, Chevron, right? Procter and Gamble, Home Depot.
+[  395.83s ->   402.59s] We have a lot more options to take a look at. And that's why at the same time for one times to two
+[  402.59s ->   407.13s] times or three times free cash flow yield, I'm not necessarily always going to be at the one time,
+[  407.19s ->   411.31s] right? And in most cases, yes, I will be, but there'll be certain situations where I don't mind
+[  411.31s ->   416.01s] increasing my risk. And this is where you kind of layer on technical analysis, a little bit of like
+[  416.01s ->   422.33s] valuation analysis to get more bang for your buck. Now, with that being said, right? Like when I
+[  422.33s ->   429.33s] increase my risk, for example, IBKR, right? I might very well get assigned, but the idea here is I'm
+[  429.33s ->   435.05s] able to collect enough volatility risk premium to overcome the tail risk, which is when the market
+[  435.05s ->   442.29s] does end up moving more than what implied volatility implies. And so we're seeing that right now,
+[  442.29s ->   447.41s] actually in this day and age with the oil shocks and the energy shocks that comes with the Strait of
+[  447.41s ->   452.59s] Hormuz and the Iranian war, what this paper should theoretically hopefully tell us that IBKR in the
+[  452.59s ->   460.03s] future will not move as much and should rebound when the situation is over, whether it's a recession or
+[  460.03s ->   464.91s] not, right? Hopefully this age is like fine wine. We don't know, but at least we followed the paper and
+[  464.91s ->   471.55s] we collected a good amount of premium to really lower our cost basis to below the $60 mark. That gives
+[  471.55s ->   477.17s] us a really good chance to come out ahead, even if, or even when we get assigned. And to take this
+[  477.17s ->   481.37s] one step further, when we do get assigned, there's two options. We can either wheel that aggressively
+[  481.37s ->   485.49s] or just try to collect a little bit of premium to wait for the stocks to naturally appreciate.
+[  485.59s ->   488.15s] And it's what we call equity risk premium. If you guys want to check out the video I made on
+[  488.15s ->   491.05s] covered calls, make sure you guys check out this video. I'll link in the upper right-hand corner as
+[  491.05s ->   496.15s] well. That's about it. Hopefully you guys can see how we implemented these strategies from
+[  496.15s ->   499.77s] Goldman Sachs. And if you guys want more trades like this, make sure you guys let me know down in the
+[  499.77s ->   503.43s] comment section below. I'll continue this in my public portfolio. So make sure you guys subscribe.
+[  504.07s ->   507.49s] And if you guys are interested in trying out premium insights, the link is below.
+[  507.73s ->   512.73s] We are very close to launching. So love to hear your feedback and get your insights on how to make
+[  512.73s ->   517.61s] this product even better. And if you guys are interested in learning how to sell puts my way,
+[  517.79s ->   521.81s] I'll link the masterclass and the end screen right here, as well as the public playlist for every
+[  521.81s ->   525.89s] single video that I made on my public account right here as well. Until next time, stay safe in the
+[  525.89s ->   526.91s] market. Peace.

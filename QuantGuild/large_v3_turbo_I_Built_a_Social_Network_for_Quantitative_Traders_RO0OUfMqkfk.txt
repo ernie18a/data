@@ -1,0 +1,65 @@
+[    0.46s ->     6.78s] I'm currently managing a $113,000 position in NVIDIA.
+[    6.90s ->     7.68s] We're doing great today.
+[    7.76s ->    14.84s] We're up about five grand, and I just posted about it to Discourses.io, Instagram, but
+[   14.84s ->    16.02s] for trading.
+[   16.52s ->    22.00s] Every single trading strategy that I've touched as a quantitative researcher in an institutional
+[   22.00s ->    25.04s] capacity dealt with social sentiment.
+[   25.04s ->    32.12s] Every single trade that I place on a daily basis is based on social sentiment.
+[   32.66s ->    40.78s] This is what motivated me to build Discourses.io, the platform to be the most advanced real-time
+[   40.78s ->    45.40s] financial social sentiment engine available to us all.
+[   45.82s ->    49.68s] My objective here is really twofold.
+[   49.96s ->    55.58s] The first is to continue to study the impact of social sentiment on the financial markets,
+[   55.66s ->    60.14s] and what better way to do that than to own the social platform itself?
+[   60.26s ->    66.10s] If I have a question that requires a feature, I don't need to dial up Elon Musk and ask him
+[   66.10s ->    66.68s] myself.
+[   66.84s ->    70.00s] I can just build the feature into the platform.
+[   70.42s ->    76.24s] That study of social sentiment and the relationship with stock returns will enhance my trading
+[   76.24s ->    77.12s] decisions.
+[   77.12s ->    83.48s] My second objective is based on probably my largest critique that I get on this channel,
+[   83.70s ->    86.22s] that I am too theoretical.
+[   88.07s ->    89.47s] And the irony, right?
+[   89.55s ->    94.59s] Because you see all these other trading guru YouTubers taking screenshots of their accounts,
+[   95.01s ->    98.49s] talking about making $5,000, $10,000 a day, whatever.
+[   99.13s ->   100.41s] I never wanted to be that.
+[  100.49s ->   105.39s] I never wanted to be just a trading guru YouTuber, but I may have taken it a little too far because
+[  105.39s ->   108.79s] I literally never talk about the live markets.
+[  108.87s ->   115.13s] I never talk about the risk that I'm taking and managing, and that is doing you guys a disservice.
+[  115.25s ->   119.53s] So that is the second key reason for discourses.
+[  120.03s ->   126.06s] In this video today, I'm talking about not only my equity position in NVIDIA, but also my equity
+[  126.06s ->   128.40s] options position, specifically in that same underlying.
+[  128.40s ->   137.08s] I was able to close a short put this morning for $440, and I'm doing the exact same thing, the exact same signal,
+[  137.16s ->   144.04s] the exact same trade, pushed out beyond earnings, and I'm looking to close at around that same target level as well.
+[  144.50s ->   150.46s] I'm going to take a screenshot here of this trade log and post about it on discourses,
+[  150.46s ->   154.26s] and I will continue to discuss how this position evolves over time.
+[  154.42s ->   156.04s] So I'm going to go ahead and save this.
+[  156.52s ->   159.90s] I'm going to create a post for NVIDIA.
+[  160.52s ->   163.43s] I'm going to add an image.
+[  164.09s ->   171.32s] I'm going to be able to drag and drop that trade log in there.
+[  172.10s ->   175.06s] Close a short put for $440.
+[  175.52s ->   176.44s] Doing it again.
+[  178.33s ->   180.73s] And then I will post this to NVIDIA.
+[  180.73s ->   185.39s] And if you head on over to the stream, you'll be able to see that post there.
+[  185.63s ->   190.61s] And if you head on over to the analysis section, you will see the real-time social sentiment analysis.
+[  190.85s ->   192.89s] But what is this model based on?
+[  192.97s ->   195.63s] Why would I share it with you if it's useful at all?
+[  195.67s ->   202.53s] It's because if you don't know how to use it, and you don't have the data to use it on, it's not useful at all.
+[  202.71s ->   208.01s] This is to give you an idea of what the current sentiment is based on the stream of tweets.
+[  208.01s ->   209.55s] It is not a one-to-one signal.
+[  209.55s ->   216.11s] If you see 0.5 buy, if you see minus 0.5 sell, it is not an entry signal.
+[  216.33s ->   219.89s] If you don't know what you're doing with this model, it is not going to be useful.
+[  220.25s ->   224.03s] I'm very happy to open source it, and that's exactly what I've done.
+[  224.11s ->   225.63s] You can pip install discourses.
+[  225.81s ->   228.57s] You can head on over to GitHub and see the full Python SDK.
+[  228.97s ->   232.21s] The entire model methodology is available here.
+[  232.47s ->   234.17s] This is exactly what's going on.
+[  234.17s ->   240.41s] This is literally, line by line, the mathematics of what's happening to create the error score for the model.
+[  240.41s ->   250.31s] If you want to check out the full white paper that details the current model that's being implemented, and this is effectively what it's based on, you are also able to do that.
+[  250.57s ->   258.09s] But without the data and without proper implementation of a strategy, it is not going to be much use to you.
+[  258.09s ->   269.39s] My objective with the symposium and discussing the active positions that I am managing is to continue to bridge the gap between theory and practice.
+[  269.39s ->   273.29s] And hopefully, this is steps in the right direction.
+[  273.41s ->   283.45s] I want to continue to educate in a purely academic capacity, but also continue to take steps outside of the classroom where I actually talk about the positions that I'm taking.
+[  283.45s ->   302.65s] And I will be able to answer questions, not only on YouTube, but in discourses based on the replies to my post on what it is exactly I'm doing, what I'm thinking about, how it is I go about choosing positions to take when I close them, the list goes on.
+[  303.09s ->   307.09s] So with that, I hope you enjoyed this video.
+[  307.25s ->   309.33s] Check out discourses.io.
+[  309.33s ->   327.95s] Let me know in the comment section below if you would like to see more real-time trading discussions and analysis about the live markets so I can continue to bridge that gap between theory and practice and maybe take it away from the extreme of never discussing my holdings and what it is that I'm doing.
+[  327.95s ->   334.27s] But other than that, I want to thank you so much for watching, and I'll see you in the next video.

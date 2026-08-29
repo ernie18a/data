@@ -1,0 +1,188 @@
+[    0.30s ->     6.30s] Bonjour YouTube, c'est Romain, et aujourd'hui je vais discusser...
+[    6.30s ->    12.34s] Yeah, I don't know all that much French, but what I do know all that much of is the Bachelier model.
+[   12.52s ->    19.50s] So today what we're going to be talking about is the closed-form analytical solution to a call price under the Bachelier model.
+[   20.24s ->    28.28s] It's a very elegant solution. It's a very simple solution to derive if you have a little bit of prior knowledge in stochastic calculus.
+[   28.28s ->    35.52s] If you haven't checked out my videos on Brownian motion and geometric Brownian motion in the analytical sense
+[   35.52s ->    39.82s] and you haven't seen the mathematics behind those processes, definitely check those out
+[   39.82s ->    43.78s] because I think it'll make this significantly easier for you to understand.
+[   44.74s ->    53.64s] But without further ado, let's just go ahead and dive right into talking about the closed-form call option price under the Bachelier model.
+[   53.64s ->    61.66s] So for starters, we have the Bachelier model, which is representing a forward price process as a stochastic differential equation.
+[   62.16s ->    65.74s] And you'll see that t is going to be in this interval 0 to cap t.
+[   65.74s ->    75.20s] Now what I would say to make this explanation a little more concrete for you is to, though this is in continuous time,
+[   75.66s ->    80.88s] I would suggest considering a discretization of that continuous time.
+[   81.52s ->    86.90s] So you can just think of 0 to cap t as being one time step.
+[   86.90s ->    91.62s] So we are stepping cap t into the future.
+[   92.10s ->    93.82s] So dt is equal to cap t.
+[   94.42s ->   100.76s] And we're essentially just taking one step to the time to maturity here.
+[  101.90s ->   107.64s] OK, so now that we have that idea in place, let's solve for the forward price process.
+[  107.74s ->   112.04s] To do that, we can just integrate both sides of that stochastic differential equation.
+[  112.04s ->   114.92s] We have our limits of integration given by the interval above.
+[  115.56s ->   122.74s] And we very simply have this forward price process at time cap t, the initial forward price in the forward price process.
+[  123.26s ->   129.20s] And then if you saw my video on Brownian motion, this will be very intuitive for you because we visualize this in Python.
+[  129.66s ->   140.00s] You'll know that the increments, it's also important to note that this is an independent stationary increment that's distributed normally with a variance of cap t.
+[  140.00s ->   151.06s] So even though this w of 0 goes away because it is 0 by the definition of Brownian motion, it's important to acknowledge that this is still an increment.
+[  151.52s ->   162.18s] And it's distributed normally with that variance of delta t, which, as I said momentarily, just a few moments ago, was cap t.
+[  162.44s ->   163.60s] So that's our time step.
+[  165.41s ->   165.95s] OK, great.
+[  166.07s ->   168.81s] So that makes this, that's it.
+[  168.87s ->   169.51s] That's our solution.
+[  169.51s ->   171.93s] We have a solution to our forward price process here.
+[  172.05s ->   176.05s] We have f of cap t is equal to f of 0 plus sigma w cap t.
+[  176.61s ->   185.53s] And if you wanted to make this a little more general, we have f of t plus 1 is equal to f of t plus sigma w t plus 1.
+[  186.03s ->   188.97s] So that is the solution for our forward price process.
+[  189.05s ->   192.09s] It's a solution to the stochastic differential equation given here.
+[  193.61s ->   198.21s] Significantly shorter than the geometric Brownian motion solution.
+[  198.21s ->   198.71s] Right.
+[  198.71s ->   206.19s] But this is an incredibly elegant way to price the call option and you'll see why momentarily.
+[  206.37s ->   211.19s] But before we dive into pricing that call option, I want to just show that f of t is a martingale.
+[  211.39s ->   213.19s] And to do that, we're going to consider a filtration.
+[  213.47s ->   213.55s] Right.
+[  213.55s ->   224.87s] So if you're unfamiliar with the idea of a sigma algebra, I would definitely suggest looking into that first, which would make this proof a little more concrete for you.
+[  224.87s ->   233.93s] But, you know, if you don't want to get too technical into the definition of a martingale, then just kind of follow along and I'll walk you through this expectation really quickly.
+[  233.93s ->   242.51s] But to satisfy that f of t is a martingale, we want to say that f of t plus 1, so the forward price process at some point in the future.
+[  242.87s ->   246.43s] And this future is relative to this filtration at time t.
+[  246.73s ->   248.43s] So we have a filtration at time t.
+[  248.75s ->   251.67s] We have some forward price process at t plus 1.
+[  251.67s ->   255.46s] That expectation is going to be f of t.
+[  255.50s ->   266.60s] So we're saying that, hey, our best guess for this forward price process for apparently plus 1 in the future is going to be just one step back in that forward price process, which is f of t.
+[  266.86s ->   269.04s] So f of t is our best guess for the future.
+[  269.50s ->   276.06s] So our latest point in that price process is going to be our best guess for the next future price.
+[  276.70s ->   281.86s] And to do this, we can very simply substitute in our solution here for f of t plus 1.
+[  281.86s ->   284.24s] We have f of t plus sigma w of t plus 1.
+[  284.66s ->   289.70s] Given that filtration of t, we know Brownian motion means 0, variance delta t.
+[  290.30s ->   294.40s] That very trivially goes to 0, and then we're left with this f of t here.
+[  294.52s ->   296.90s] So we are, in fact, working with a martingale.
+[  297.12s ->   299.70s] So f of t is a martingale.
+[  301.07s ->   301.59s] Okay, terrific.
+[  301.71s ->   310.23s] So now that we know that the forward price process under the Bachelet model is a martingale, then we can go about pricing a call option.
+[  310.23s ->   320.47s] And to do so, we are going to start by considering the payoff at maturity, the terminal time cap t.
+[  322.07s ->   326.17s] So in equity derivatives, mainly options, right?
+[  326.17s ->   330.93s] We don't know what the future holds for our derivative.
+[  330.93s ->   341.89s] But we do know what the value of that derivative could be at expiration, meaning at some time cap t in the future.
+[  341.89s ->   349.41s] We are certain that the payoff is going to look like a hockey stick diagram, at least for our vanilla options, right?
+[  349.73s ->   355.89s] We know that a call is going to yield plus or minus max function, and a put is going to yield plus or minus min function.
+[  355.89s ->   373.41s] So if we have a call option at time cap t, then we're given f, that forward price process at time cap t, less the strike, the max between this and 0, which is also going to be represented by this little plus just to make it a little more concise.
+[  373.41s ->   381.75s] So we're certain this is a, this is not a stochastic representation, right?
+[  381.81s ->   385.53s] This is deterministic because this is at time cap t.
+[  385.77s ->   387.55s] This is at the expiration of the option.
+[  387.79s ->   388.49s] It's go time.
+[  388.59s ->   390.45s] We're trying to figure out if we're exercising or not.
+[  390.83s ->   392.91s] This is a very simple mathematical way to do so.
+[  393.11s ->   395.73s] A little more intuitive is looking at the hockey stick diagrams, right?
+[  395.73s ->   403.71s] So this is, this is deterministic in nature, but we don't know what, where we're going to be at time cap t.
+[  403.79s ->   405.95s] We, we're, we're not certain where we're going to be.
+[  406.39s ->   409.21s] We're not certain where the, the forward price process is going to be.
+[  409.21s ->   425.43s] So what we can do is, you know, at least the best thing we can do today is find the expectation of that payoff and then hope to, to derive some sort of, some sort of closed form solution to that call price.
+[  425.43s ->   440.52s] So essentially what I'm saying is at time cap t, we have this deterministic payoff function and at time zero, which is right now, the best we can do is the expectation of this payoff function, which is also represented by this with little plus.
+[  440.52s ->   443.34s] So the max is just this little plus to make it more concise.
+[  443.50s ->   445.96s] And we have the expectation of that payoff function.
+[  447.44s ->   451.14s] So our goal is to solve for this expectation, right?
+[  451.20s ->   454.26s] And to do so, we're going to make some clever substitutions here.
+[  454.34s ->   456.46s] So for starters, we know what f of cap t is, right?
+[  456.86s ->   458.74s] f of cap t, we just solved for right here.
+[  458.82s ->   464.26s] So we're just going to boom, take f of zero plus sigma w cap t, and we're going to throw it right in here.
+[  464.46s ->   466.66s] And then we're still left with this less to strike price.
+[  466.76s ->   468.32s] And this is all under that max function.
+[  469.66s ->   473.84s] Well, remember what I said about w cap t.
+[  475.28s ->   479.74s] W cap t is still an increment in Brionian motion.
+[  479.74s ->   488.14s] So we know that w cap t is distributed normally with a mean zero and a variance of delta t.
+[  488.14s ->   493.38s] And remember, delta t is just cap t, as given by that increment right here, right?
+[  493.44s ->   497.44s] Because this is just going to be the step in time, which is just cap t, because this is zero.
+[  497.84s ->   500.30s] t minus zero is t.
+[  500.30s ->   504.84s] So this is where it starts to get a little clever.
+[  506.14s ->   508.58s] We know that variance is standard deviation squared.
+[  508.86s ->   516.66s] So what we can do is we can substitute in negative sigma square root of cap t minus zero.
+[  516.66s ->   522.70s] So that's our dt times z, where z is distributed standard normal.
+[  522.84s ->   524.54s] So it's a standard normal random variable.
+[  525.38s ->   530.46s] And this is exactly the same thing as saying sigma w cap t.
+[  531.32s ->   531.58s] Okay.
+[  532.10s ->   544.19s] I know that's a very, it can be a confusing substitution, but it is going to be incredibly useful because now we have access to our normal distribution.
+[  545.95s ->   548.01s] We know quite a bit about the normal distribution.
+[  548.01s ->   551.31s] So, okay, I'm going to rearrange some terms here.
+[  551.41s ->   552.27s] Just bear with me.
+[  552.37s ->   556.15s] We have f of zero less this Brownian motion.
+[  556.27s ->   557.83s] You can still think of this as the Brownian motion.
+[  558.53s ->   559.87s] And then we have this strike price.
+[  559.97s ->   566.55s] So I'm just going to make this the difference between the forward price process initially and the strike price less this Brownian motion over here.
+[  566.63s ->   570.43s] And we're still operating in the max function world, right?
+[  570.45s ->   571.93s] So that doesn't go away quite yet.
+[  571.93s ->   580.83s] But speaking of this max function, we are going to want to operate with something that is a little more algebraic.
+[  581.39s ->   585.43s] And what I mean by that is we want to use more mathematical tools to help solve this expectation.
+[  585.63s ->   591.63s] So what we're going to use is an indicator function to essentially substitute in for that max function.
+[  591.63s ->   596.89s] And what I mean by that is the max function is simply saying, hey, if we have a positive payoff, take it.
+[  597.37s ->   600.13s] And if we don't, then don't take it, right?
+[  600.59s ->   603.49s] And we can accomplish the exact same thing with the indicator function.
+[  603.67s ->   611.47s] So the indicator function is going to yield a one if the condition of X is true or a zero if the condition of X is false.
+[  611.47s ->   623.64s] And to accomplish the exact same thing as a max function, we can just say, hey, yield a one if Z is less than or equal to F sub zero minus K divided by this Brownian motion.
+[  625.14s ->   632.84s] I'm sorry, not the Brownian motion, but the volatility times the square root of the standard deviation with respect to or square root of the cap T here.
+[  633.84s ->   638.22s] And zero if the standard normal variable is greater than that, that same exact quantity.
+[  638.22s ->   648.66s] And you'll notice if you substitute both of these in for Z, then it's going to yield the exact output that we want as if it is a max function.
+[  649.30s ->   664.92s] So the indicator function, if mathematically or numerically it doesn't do it for you, then you can just think of it as effectively substituting the max function so that we have better access to more mathematical operations.
+[  664.92s ->   672.20s] So it's a function now that we can start to do more with, especially with respect to the normal distribution.
+[  673.88s ->   680.72s] Okay, so we have this indicator function now that's going to be substituted in for this max function here, right?
+[  680.80s ->   682.58s] So that's exactly what we're going to do.
+[  683.48s ->   687.48s] We get rid of that plus and we're going to say, hey, take this indicator function instead, okay?
+[  687.48s ->   691.78s] And now we're going to distribute that indicator function through.
+[  691.98s ->   696.04s] We're still operating in this expectation, so don't forget that expectation.
+[  696.72s ->   703.24s] But now what we can do is we can say, hey, we know that Z is distributed standard normally, right?
+[  703.30s ->   704.88s] So it's a standard normal random variable.
+[  704.88s ->   724.26s] Well, if we wanted to know the expectation that Z is less than or equal to this quantity, then all we need to do is use the cumulative distribution function for the normal distribution and we'll have that probability.
+[  724.64s ->   732.56s] So we can effectively get rid of this indicator function and just throw right into the equation the cumulative distribution function.
+[  733.00s ->   734.70s] And that's exactly what we do right here.
+[  734.70s ->   739.12s] You can see the expectation, this is irrelevant, right?
+[  739.18s ->   750.22s] Because these are deterministic, but even though this is stochastic, we take the expectation and we say, hey, well, we've seen this before from an intro to statistics course, right?
+[  750.72s ->   759.42s] You could think of it as integrating as well to this quantity, the probability density function, if that is a better interpretation for you.
+[  759.42s ->   765.06s] But either way, that integral representation or the CDF, it is exactly the same thing.
+[  765.06s ->   773.72s] So we can distribute the expectation through that gets rid of this indicator function and we substitute it with a CDF of that quantity.
+[  773.72s ->   787.90s] And we also realize that sigma and we also realize that sigma and we're just left with this Z, which is standard normal, it's a standard normal random variable, so we can't pull that outside the expectation quite yet.
+[  787.90s ->   790.26s] And this indicator function as well.
+[  790.64s ->   795.72s] So we just have this expectation of the Z multiplied by the indicator function.
+[  795.72s ->   801.92s] And once we solve for that, we have our closed form solutions because this first term is already taken care of.
+[  801.96s ->   802.94s] This is all deterministic.
+[  803.80s ->   810.10s] So now let's consider the following property of a normal distribution here.
+[  810.36s ->   816.42s] So if we have the cumulative distribution function, cap phi right here, we take the derivative.
+[  816.42s ->   821.78s] That's going to be equal to negative x, lowercase phi of x, okay?
+[  822.52s ->   836.70s] And if we have this lowercase phi, which is the probability density function of the normal distribution here, then we can go through and say, okay, through that variable, essentially substitution here,
+[  836.70s ->   845.90s] if we integrate from negative infinity to y of x phi x dx, then we get negative phi of y.
+[  845.90s ->   854.02s] Now, I'm going to pull a math professor, and I hated when mine did this, so I can't imagine that you would be too happy either.
+[  854.52s ->   857.86s] But I am going to leave this to you to prove.
+[  858.00s ->   866.56s] So if you would like to, you can solve this integral by just plugging in the PDF here, and you'll end up with negative phi of y.
+[  867.48s ->   870.14s] So that's a little more than my professors even gave me.
+[  870.14s ->   875.56s] So hopefully that rings true or sits well with you.
+[  875.90s ->   878.40s] And if it doesn't, then you can always just take my word for it as well.
+[  878.40s ->   882.86s] So we have this nice relationship here.
+[  883.34s ->   890.90s] We know that y is f of 0 minus k divided by sigma root cap t, and that was given to us right here.
+[  891.48s ->   901.22s] So we can just throw that right into phi of y, and we get the closed-form solution of a call price under the Bachelet model.
+[  901.22s ->   904.16s] This is now completely deterministic, right?
+[  904.38s ->   905.82s] We have f of 0.
+[  906.28s ->   908.90s] So that's a forward price process now.
+[  909.06s ->   910.74s] And then we have the strike price k.
+[  911.00s ->   914.76s] We have the cumulative distribution function for the normal distribution.
+[  915.06s ->   918.20s] And we have the probability density function of a normal distribution.
+[  919.02s ->   920.14s] And that is it.
+[  920.14s ->   926.44s] That is going to be the call price, the analytical solution to a call price under the Bachelet model.
+[  927.28s ->   934.82s] Now, a fun exercise that you could do on your own is deriving the put price, which is going to follow an analogous argument.
+[  935.08s ->   939.08s] So if you would like to, I would definitely recommend checking that out.
+[  939.08s ->   946.26s] In future videos, we're going to be implementing the Bachelet model and the analytical solution to the call and the put price.
+[  946.34s ->   948.46s] So you can even double-check there in that video.
+[  948.66s ->   950.22s] It's going to be a Python implementation.
+[  951.24s ->   957.26s] I think it's going to be very nice to – it's very similar to how I did the geometric variety of motion video,
+[  957.26s ->   962.00s] where I derived the analytical solution and talked about simulating the process.
+[  962.76s ->   966.68s] I'm trying to do the exact same thing here, where we derive the analytical solution
+[  966.68s ->   975.20s] and then kind of go into more of a hopefully intuitive programming session to derive that price.
+[  976.46s ->   979.36s] But, yeah, so as you can see, it's an extremely elegant solution.
+[  979.48s ->   982.78s] It's nothing like Black-Scholes, which is significantly longer, right?
+[  982.78s ->   987.52s] Even geometric Barney in motion, like when we solved that stochastic differential equation,
+[  987.66s ->   992.06s] it took a page or two of math to get to the solution.
+[  992.06s ->   994.18s] But here, it's a couple of lines.
+[  994.42s ->   998.46s] And it's very reminiscent of arithmetic Brownian motion, right, except we don't have that drift.
+[  998.96s ->  1002.86s] So it's a very elegant model, very elegant solution.
+[ 1004.92s ->  1010.94s] Yeah, if you have any questions about this derivation, please leave a comment below.
+[ 1011.24s ->  1015.50s] If you have any suggestions for future videos, definitely leave a comment in the description as well.
+[ 1016.22s ->  1020.94s] I'm going to post the reference that I used to help me make this Overleaf document.
+[ 1020.94s ->  1031.00s] So I created this PDF, which is a little more in-depth into the mathematical explanation of the Bachelet model and the Bachelet call price.
+[ 1031.56s ->  1036.54s] I'm going to leave the reference that I used, which is definitely more general.
+[ 1036.54s ->  1051.28s] It's missing a lot of the math that we discussed throughout this video, but I wanted to kind of use that as a guide and then talk more in-depth about certain aspects of the call price derivation.
+[ 1051.44s ->  1055.72s] So hopefully you found the math relatively intuitive in my explanation of it.
+[ 1055.72s ->  1062.88s] If there's anything that doesn't make sense, please, please definitely let me know in the comments and I'll do my best to, to, to fix it or walk through it.
+[ 1064.44s ->  1067.80s] But yeah, as always, thanks for watching and I will see you in the next video.

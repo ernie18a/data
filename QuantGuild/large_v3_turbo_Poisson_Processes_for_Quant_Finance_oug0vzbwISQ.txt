@@ -1,0 +1,352 @@
+[    0.46s ->     8.08s] There are a few things I love as much as quantitative finance, and phishing is certainly
+[    8.08s ->    13.74s] up there. Every time I'm out, I can't help but to think to model my catch rate as a Pusan
+[   13.74s ->    20.46s] random variable. Hey guys, Roman here, quantitative researcher and trader, founder of Quant Guild.
+[   20.86s ->    26.40s] In this video, we're going to talk about Pusan processes specifically for Quant Finance. We're
+[   26.40s ->    30.74s] not going to be modeling any catch rates in this video. We're going to get started with
+[   30.74s ->    37.44s] this idea of a Pusan distribution. We'll talk about the idea of stationarity and non-stationarity,
+[   37.60s ->    43.94s] the impact in our models, subsequent probabilities, and statistics. We'll then talk about the
+[   43.94s ->    50.20s] exponential distribution, this memoryless property, and how it connects to the idea of a Pusan
+[   50.20s ->    56.04s] process. We'll define a Pusan process, look at some simulations, really understand this
+[   56.04s ->    62.94s] idea of independent and stationary increments, how the exponential distribution plays a role
+[   62.94s ->    71.60s] in the waiting times. And then we'll look at an implementation of a time inhomogeneous Pusan process,
+[   72.10s ->    78.24s] the Hawks process in practice. Of course, when you go fishing, there's a non-zero probability that
+[   78.24s ->    84.30s] you walk away with nothing. That's why they call it fishing and not catching. Unlike my YouTube videos,
+[   84.30s ->    90.24s] where you will always have a 100% probability of walking away with a Jupyter notebook, this Jupyter
+[   90.24s ->    94.80s] notebook will be linked in the description below. I'll also post it to the Quant Guild library on
+[   94.80s ->    99.56s] GitHub, where you can find all of my Jupyter notebooks and associated YouTube videos, along with
+[   99.56s ->   104.12s] all of the source code for my Quant builds. At the top of this Jupyter notebook, you'll notice some
+[  104.12s ->   110.36s] related Quant Guild videos applying probability and statistics to finance and trading, this idea of
+[  110.36s ->   117.30s] Monte Carlo simulation and why it works, stochastic differential equations for pricing financial
+[  117.30s ->   123.44s] derivatives, the central limit theorem, one of the main results in probability and statistics that we
+[  123.44s ->   130.98s] often use in practice, why quant models break at the end of the day and why everyone still has a job,
+[  131.30s ->   136.36s] this idea of Brownian motion, which is going to be the driver for many of our stochastic models,
+[  136.36s ->   144.16s] and of course, the five papers that built modern quant finance, all implementing the previous
+[  144.16s ->   149.54s] topics. If you're unfamiliar with any of these ideas, I highly recommend you check these videos
+[  149.54s ->   155.64s] out first before tackling one like this. Moreover, these videos certainly take a lot of effort to
+[  155.64s ->   159.64s] create, so if you'd like to help support the channel so I can continue to create videos just like
+[  159.64s ->   164.14s] this one, please like, comment, subscribe, share. It helps me out tremendously. It is always greatly
+[  164.14s ->   170.14s] appreciated. And if you'd like to master your quantitative skills, check out quantguild.com.
+[  170.50s ->   175.42s] Maybe you come from a background in business, economics, computer science, and aren't too sure
+[  175.42s ->   180.92s] where to get started on your quant journey. Maybe you're an aspiring quant or a working professional
+[  180.92s ->   187.04s] looking to sharpen those technical skills. In any case, Quant Guild is for you. We have over 90
+[  187.04s ->   193.70s] quant lessons in math, probability, finance, an adaptive practice engine that scales with your skill
+[  193.70s ->   199.72s] level so you can progress to more and more difficult topics with gamified rank-based progress,
+[  200.20s ->   207.98s] interview questions with fully worked solutions, trading games, courses from A to Z in probability
+[  207.98s ->   215.22s] and statistics, coding, math, and more on the way. And all that's included with Quant Guild membership.
+[  215.44s ->   219.46s] And you can get started right now for free. So if you'd like to help support the channel
+[  219.46s ->   226.14s] and master your quantitative skills, check out quantguild.com. Without further ado, let's get
+[  226.14s ->   232.80s] started by talking about this idea of a Poisson distribution or a Poisson random variable. What
+[  232.80s ->   239.76s] is it actually used for? Well, this particular random variable is used to model rare events over a
+[  239.76s ->   245.16s] particular time interval. In the context of Quant Finance, you can think of things like the number
+[  245.16s ->   251.66s] of trades in a given window on a particular exchange, the number of credit defaults in a
+[  251.66s ->   260.70s] fixed period among a portfolio of bonds, the number of operational risk loss events, fraud, so on and so
+[  260.70s ->   268.98s] forth, per quarter, things like that. We're modeling events over a particular time interval. Now, a random
+[  268.98s ->   273.84s] variable is fully specified by one of four things. It's probability, mass, or density function.
+[  273.84s ->   279.64s] It's distribution function, it's characteristic function, or it's moment generating function.
+[  279.80s ->   286.56s] I've given you here the probability mass function and distribution function of a Poisson random variable,
+[  286.56s ->   294.86s] and I have visualized them here. Now, this particular parameterization is using a lambda value of four.
+[  294.98s ->   302.70s] That is how we parameterize the Poisson random variable. In fact, lambda is going to be the average
+[  302.70s ->   310.64s] number of events over that fixed interval. So, if we look at this as the number of trades over maybe
+[  310.64s ->   317.54s] 100 milliseconds on a particular exchange, and I chose a lambda value of four, that would mean on
+[  317.54s ->   324.30s] average over that particular interval, I would observe four trades. Now, notice what happens in the
+[  324.30s ->   329.88s] probability mass function here. We can see the probability mass is going to increase
+[  329.88s ->   338.82s] up to that value of four. Then, beyond the value of four, the probability mass is going to begin to
+[  338.82s ->   347.12s] decay, and it's going to decay very rapidly. Now, why is this the case? In fact, if we go on all the way
+[  347.12s ->   355.88s] out here, we can see the probability is almost indifferent from zero. What is the support of this random
+[  355.88s ->   363.98s] variable? What are valid outcomes of a Poisson distribution? Well, we certainly can have zero
+[  363.98s ->   370.94s] events over the particular time interval. That can be more or less likely depending on our parameterization
+[  370.94s ->   377.76s] of lambda. But yeah, zero is certainly possible. You could catch zero fish when you go out fishing.
+[  377.76s ->   387.39s] But what does it go to? Can we have one event? Two events? Yeah, sure. Three, four. Is there a cap
+[  387.39s ->   393.53s] on the number of events that we can have? Well, certainly not. In fact, we could technically have
+[  393.53s ->   400.15s] an infinite number of events in that particular time interval. But notice, the probability of that
+[  400.15s ->   407.49s] occurring is going to decay rapidly until it is indifferent from zero. That is the support of our
+[  407.49s ->   415.29s] Poisson random variable. It is countably infinite. We cannot have fractions of events over a particular
+[  415.29s ->   423.75s] time interval. I can't catch 1.2 fish over a particular time interval. If I'm trying to estimate
+[  423.75s ->   430.03s] a parameter of lambda, then I certainly may get a fractional value there. But when it comes to the
+[  430.03s ->   437.93s] actual outcomes, I cannot have fractional events. Let's talk about the key assumptions of the Poisson
+[  437.93s ->   445.39s] distribution. Independence. Events are not linked. There's no covariance structure. And one happening
+[  445.39s ->   453.07s] doesn't make another more or less likely. This is a necessary and most of the time reasonable assumption.
+[  453.57s ->   459.73s] But depending on what we're modeling, this is going to be more or less violently violated
+[  459.73s ->   467.99s] in practice. In fact, the Hawks process acknowledges that in finance in particular, we have these
+[  467.99s ->   476.47s] clusters of activity. When a panic occurs and there's a sell-off, we get a cluster. Those events are not
+[  476.47s ->   482.25s] independent. And we're going to see how to deal with that in practice after we define the Poisson
+[  482.25s ->   489.59s] process itself. Stationarity. There is a constant rate lambda over time. That is, this distribution
+[  489.59s ->   497.77s] is fixed. If we're trying to model events as a Poisson random variable, if it is not fixed over time,
+[  498.09s ->   504.45s] the probabilities that we derive of particular events occurring may or may not be accurate.
+[  504.45s ->   511.95s] Simultaneity. Two events cannot happen at the same exact infinitesimal instant, more of a technical
+[  511.95s ->   519.57s] assumption, and discrete counts. Event counts over the time interval are going to be in the natural
+[  519.57s ->   525.25s] numbers, including zero, depending on how you want to define the natural numbers. In other words,
+[  525.35s ->   532.23s] that is the support that we have already discussed. We cannot have fractions of events.
+[  532.23s ->   537.19s] So that is the Poisson distribution. Those are the key assumptions. Of course,
+[  537.59s ->   542.61s] these are violated in practice. And we're going to talk about the implications of those violations
+[  542.61s ->   549.97s] and other models that implement solutions down below. Before that, let's take a look at this idea
+[  549.97s ->   557.97s] of simulating Poisson distributions using an estimation method that is the maximum likelihood estimation,
+[  557.97s ->   564.85s] and seeing what we can use it for in the context of stock price jumps. Many things in the financial
+[  564.85s ->   571.25s] markets don't evolve continuously over time. For example, a news article breaks and all of a sudden
+[  571.25s ->   579.13s] for a particular equity price is gapped down or up. There is a jump in the price. And that can be
+[  579.13s ->   586.45s] considered a rare event over a fixed time interval, whatever you specify. That is exactly what we would
+[  586.45s ->   597.01s] do. So what I'm going to do here is I'm going to find the maximum likelihood estimation of the parameter
+[  597.01s ->   604.29s] for our Poisson distribution lambda. And it turns out to be just the simple average of the number of
+[  604.29s ->   611.01s] events I've observed over a particular interval. So what I'm going to do is I am going to observe the
+[  611.01s ->   618.53s] number of jumps in a stock price over a five-day period. I'm going to do this many times and then take the
+[  618.53s ->   627.81s] average. That is going to be my choice of lambda estimated from historic data. What do I get when I
+[  627.81s ->   636.37s] produce this estimation? Well, I'm going to have a calibrated Poisson distribution. Now I can ask and answer
+[  636.37s ->   644.17s] questions. I can say, hey, what is the probability of one jump in the stock price over the next week? What is the
+[  644.17s ->   654.01s] probability of two, three, four, five, no jumps, so on and so forth. I can use this model to inform my decision
+[  654.01s ->   663.65s] making. If I don't consider jumps or shocks in this capacity in a non-continuous capacity, I'm going to be either
+[  663.65s ->   671.65s] grossly over or underestimating my risk. This is the purpose of building more intricate models. What I
+[  671.65s ->   679.49s] have here is a simulation for you showing what happens as the number of jumps that I observe historically
+[  679.49s ->   687.41s] increase relative to my calibrated Poisson distribution. If you notice, as I observe more jumps
+[  687.41s ->   695.81s] historically, the Poisson distribution calibrated to this historic data is going to shift outward.
+[  695.81s ->   704.21s] I am going to have a higher expected frequency of jumps. That is the intentional behavior. Notice,
+[  704.21s ->   713.49s] as there are fewer jumps in the process here, the distribution is going to calibrate all the way down
+[  713.49s ->   722.13s] to zero. This is exactly what it looks like to implement a Poisson distribution in the real world
+[  722.13s ->   729.89s] on data. I observe some phenomenon and I observe these rare events over a particular time interval.
+[  729.89s ->   735.89s] And what I'm going to do then is calibrate that distribution to the data and I can then derive
+[  735.89s ->   742.05s] probabilities and statistics to inform my decision making. Now, of course,
+[  742.77s ->   750.05s] this is not without its flaws because we are assuming that what history is going to repeat itself,
+[  750.05s ->   758.13s] that this calibrated distribution reflects the dynamics not only of the data that I've observed,
+[  758.13s ->   767.49s] but data that I'm going to observe. And this certainly may not be the case. This gets into the idea of
+[  767.49s ->   775.33s] non-stationarity, which is what we deal with when we create models for the real world. Nothing is fixed.
+[  775.33s ->   782.61s] Nothing operates with independent and identical draws from the same population distribution. In other words,
+[  782.61s ->   789.01s] just because it may have followed this distribution in the past, we don't even know if it did or not,
+[  789.01s ->   794.05s] but just because it may have followed this distribution, it doesn't mean that it is going
+[  794.05s ->   801.01s] to follow it in the future. We'll take a look at the implications of this in a moment. I'm going to
+[  801.01s ->   808.77s] show you exactly what I mean by this and the impact of non-stationarity in probabilities and statistics.
+[  808.77s ->   817.33s] But first, as an aside, I wanted to mention that Poisson distributions and processes are helpful for
+[  818.13s ->   825.25s] many things, not just modeling real-world phenomenon, but also in the context of even
+[  825.25s ->   833.49s] game development. So, on QuantGuild.com, I have a variety of market-making games available to
+[  833.49s ->   841.41s] play. And when the user sets a bid-ask spread, if they set the spread way too wide, in practice,
+[  841.41s ->   847.57s] what's going to happen? Well, nobody's going to want to transact with you. How do I encourage
+[  847.57s ->   856.05s] that behavior in the game where nobody is going to transact with the user for setting the spread way
+[  856.05s ->   864.21s] too wide? Well, I actually create it as a Poisson process, but the parameter value lambda for the
+[  864.21s ->   869.97s] arrivals, that is people who are going to transact with you as a user playing the game, are going to
+[  869.97s ->   878.45s] be a function of the spread that you set. This is really cool because now when you're playing this game,
+[  878.45s ->   885.17s] you're going to have people choose to transact with you when your spread is set reasonably. If you set
+[  885.17s ->   891.09s] it way too wide, you're not going to be making any money as the market maker. This is a very
+[  891.09s ->   897.01s] interesting application of just the Poisson distribution. We haven't formalized the idea
+[  897.01s ->   903.89s] of a Poisson process quite yet, but we can still talk about the Poisson distribution using now a
+[  903.89s ->   911.81s] functional parameter for lambda. That is, lambda is now a function of the spread that you set as the
+[  911.81s ->   919.73s] market maker. Take a look at what happens to the distribution for different choices of the spread
+[  919.73s ->   925.09s] value. We have on the left here, again, the probability mass function for this Poisson random
+[  925.09s ->   932.13s] variable and the distribution function on the right. As I increase my spread, what happens? Well,
+[  932.13s ->   939.81s] these bars represent what? Those are going to be people transacting with us over a particular time
+[  939.81s ->   945.25s] interval. What happens as my spread continues to increase? Well, take a look. All the way at this
+[  945.25s ->   953.33s] value for the spread, we're observing that there is over a 40% probability that we are going to observe
+[  953.33s ->   960.77s] nobody transacting with us. But as I decrease the spread, let's take a look at what happens. We can
+[  960.77s ->   969.49s] see the probability mass is now shifting outward. The value that is the parameter value lambda for this mass
+[  969.49s ->   977.09s] function is going to depend on our spread size. As it gets tighter and tighter, more and more people
+[  977.09s ->   988.13s] are going to choose to transact with us. And that is the beauty of using a functional value for lambda.
+[  988.13s ->   996.13s] This is going to get into the idea of a time homogeneous versus a time inhomogeneous Poisson process.
+[  996.77s ->  1004.61s] We already observed a constant value for a Poisson random variable, a Poisson distribution. We saw that
+[ 1004.61s ->  1015.73s] here. Lambda was fixed to be four. Now we're letting it vary based on spread size. This is just one way
+[ 1016.37s ->  1026.37s] to parameterize the Poisson distribution as a function of another exogenous factor. Going back to this
+[ 1026.37s ->  1033.89s] idea of real world modeling, we're kind of in this catch 22 situation because we're dealing with
+[ 1033.89s ->  1043.65s] non-stationarity, right? If you recall, we calibrated our Poisson distribution to historic data, but this
+[ 1043.65s ->  1051.49s] distribution is only trying to estimate what we have observed. It's not indicative necessarily of what's to
+[ 1051.49s ->  1060.05s] come. And the impact of this on the probabilities and statistics that we derive can be devastating.
+[ 1060.05s ->  1067.89s] So what I'm showing you here is we have this Poisson distribution. This is going to be estimated from
+[ 1067.89s ->  1073.57s] historic data. You can think of it just as what we've done up here. We've calibrated this
+[ 1073.57s ->  1081.89s] Poisson distribution to this stock price process. This is data we've already observed. Now in the next
+[ 1081.89s ->  1088.21s] period of stock prices that we're going to observe, instead of the jumps following this
+[ 1088.21s ->  1096.05s] distribution that we estimated, it's actually going to follow this green distribution. We never have
+[ 1096.05s ->  1103.41s] access to the true population data generating distribution. Otherwise, we wouldn't need to be
+[ 1103.41s ->  1111.41s] building a model. What I want to show you here is how misparameterization, that is misspecifying the
+[ 1111.41s ->  1119.25s] parameters in your model, can be devastating to your probabilities and statistics. So what I'm observing
+[ 1119.25s ->  1126.37s] here is going to be data in the next period, I've already calibrated this model to historic data. Now I'm
+[ 1126.37s ->  1134.29s] going to observe new data, and I'm going to plot the frequency over each interval that I observe here as a
+[ 1134.29s ->  1143.01s] histogram. And what I'm going to do is I'm going to observe the probability of finding a frequency greater
+[ 1143.01s ->  1154.37s] than the minimum value in this new set of data using my old calibrated model. What is the probability given
+[ 1154.37s ->  1163.17s] by this model? Well, it is less than 0.01%. My old calibrated model said, hey, the probability of you
+[ 1163.17s ->  1171.09s] observing data greater than the smallest frequency that you observe next period is less than 0.01%.
+[ 1171.09s ->  1181.01s] In reality, our calibrated model is not doing a good job of modeling the real world. The true distribution
+[ 1181.01s ->  1188.45s] is all the way out here. This can occur for one of a variety of reasons. We could have a structural break
+[ 1188.45s ->  1195.89s] in our data. This non-stationarity for different events can be more violent than others. The list goes
+[ 1195.89s ->  1202.85s] on. So this is something that we always have to keep in mind. Anytime we create a model, we are
+[ 1202.85s ->  1211.57s] sensitive to these non-stationary dynamics in practice. And this is the implication of those
+[ 1211.57s ->  1221.25s] dynamics in our models. We can see the probability that our model produces is grossly, grossly underestimated.
+[ 1221.25s ->  1227.97s] Now that we understand the Poisson random variable, we understand this idea of stationarity and non-stationarity
+[ 1227.97s ->  1233.41s] when we go about using it to model the real world. We saw an interesting use case in the context of a
+[ 1233.41s ->  1242.61s] game. We're almost ready to move on to the idea of a Poisson process. We just need to cover this idea of an
+[ 1242.61s ->  1250.61s] exponential distribution. And I've listed here now the probability density function and the distribution
+[ 1250.61s ->  1258.93s] function of an exponential random variable. This random variable is typically used to model waiting times.
+[ 1258.93s ->  1266.61s] Now, when we actually take a look at a Poisson process, we're going to notice that it is a jump process. We are going to
+[ 1266.61s ->  1278.05s] be accumulating, effectively, arrivals of these events over time. But how long do we wait in between arrivals?
+[ 1278.77s ->  1284.77s] This is given by the exponential distribution. So what you're observing here is just the probability
+[ 1284.77s ->  1290.53s] density function and the distribution function of an exponential random variable. Do keep in mind,
+[ 1290.53s ->  1298.77s] it is a continuous random variable. This makes sense. If we wait one minute and an event doesn't occur,
+[ 1298.77s ->  1308.61s] that doesn't mean we just jump to two minutes. No, it can occur at 1.01 minutes, 1.001, so on and so
+[ 1308.61s ->  1315.73s] forth. That is why it makes sense as a continuous random variable. And of course, because we're dealing
+[ 1315.73s ->  1322.13s] with a continuous random variable here, the density function does not give you the probability. Anytime
+[ 1322.13s ->  1329.57s] you plug in a value, that is not going to correspond to a probability. It'll correspond to a likelihood
+[ 1329.57s ->  1337.41s] and an epsilon neighborhood around whatever point you plug in. That is, points around this value of
+[ 1337.41s ->  1344.29s] point three have a higher likelihood of occurring in terms of a draw from this distribution. That is a
+[ 1344.29s ->  1351.65s] waiting time relative to points around 2.25 for this particular parameterization. If you're looking for
+[ 1351.65s ->  1359.09s] a probability, you must integrate. And that is exactly what the distribution function is doing here.
+[ 1359.09s ->  1366.21s] An important property associated with this exponential distribution that's going to model our waiting times
+[ 1366.21s ->  1373.41s] is this idea of the memoryless property. The memoryless property is saying just because
+[ 1373.41s ->  1380.13s] you've waited a certain amount of time, it doesn't mean that the distribution producing the wait time
+[ 1380.13s ->  1387.33s] is going to change. In other words, if you've waited five minutes, what is the probability of having to
+[ 1387.33s ->  1394.77s] wait another two minutes? Well, it's going to be the same as just the raw probability of having to wait
+[ 1394.77s ->  1403.17s] more than two minutes. This is fundamentally different from the Poisson distribution. We parameterized the
+[ 1403.17s ->  1410.53s] Poisson distribution by lambda. If we say the average number of events over a particular time interval,
+[ 1410.53s ->  1417.41s] in this case, we could think of trades in 100 milliseconds is four. If we've already observed,
+[ 1417.41s ->  1424.77s] let's say, three trades, what is the probability of observing three more? That is completely different
+[ 1424.77s ->  1432.21s] than if we have, what, not observed any trades? That is completely different for the Poisson distribution.
+[ 1432.21s ->  1441.41s] It is not memoryless. But for the exponential distribution, if we've waited, for example, five minutes,
+[ 1442.29s ->  1447.89s] what is the probability that we have to wait an additional two? It's going to be the same if we didn't wait at all.
+[ 1447.89s ->  1454.21s] And that's exactly what you're seeing here. The unconditional is equivalent to the conditional in the sense of
+[ 1454.21s ->  1463.01s] an additional waiting time. That is exactly what the memoryless property suggests. The reason why this is
+[ 1463.01s ->  1472.77s] important is because if we observe an arrival, this isn't going to influence the waiting time for another
+[ 1472.77s ->  1481.09s] arrival. That is the implication in our Poisson process. We're now ready to put all of these pieces
+[ 1481.09s ->  1487.49s] together. We're going to talk about the definition, take a look at a simulation and visualization to
+[ 1487.49s ->  1495.81s] really understand this idea. A Poisson process is technically a continuous time stochastic process.
+[ 1495.81s ->  1503.65s] Now that sounds complicated, but all a stochastic process is, is a random variable, just like we've
+[ 1503.65s ->  1510.69s] already observed in the exponential distribution and the Poisson distribution. Those are both random
+[ 1510.69s ->  1518.85s] variables. A stochastic process is just a collection of random variables, typically indexed over something
+[ 1518.85s ->  1527.01s] like time. So every single time index is just going to be a draw from a distribution, like the exponential
+[ 1527.01s ->  1535.25s] distribution or like the Poisson distribution. Now, a Poisson process in particular isn't going to have
+[ 1535.25s ->  1542.85s] discrete steps. That's because the waiting time for these events occurring are given by the exponential
+[ 1542.85s ->  1550.45s] distribution. So the Poisson process, what actually is it? Well, it's a counting process of the number of
+[ 1550.45s ->  1559.89s] events over some particular duration. And we are going to define a frequency parameter, lambda,
+[ 1559.89s ->  1567.09s] that is going to dictate how often we see these events occur. So how is this process formally defined?
+[ 1567.09s ->  1574.45s] Well, we have this set here, n as a function of t, where t is greater than or equal to zero for
+[ 1574.45s ->  1580.13s] some lambda greater than zero that is going to parameterize that Poisson distribution.
+[ 1580.13s ->  1588.13s] We start at zero at time zero. So we don't start with any events at all. The process itself is going to
+[ 1588.13s ->  1595.09s] have independent increments, which we're going to take a look at in a moment visually. The number of events
+[ 1595.89s ->  1603.49s] in any length of interval that is for any time interval is going to follow a Poisson distribution.
+[ 1604.05s ->  1611.09s] This makes sense. This is a Poisson process. A stochastic process is a random variable indexed by
+[ 1611.09s ->  1617.97s] typically something like time. So if we take a look at some time interval for this Poisson process,
+[ 1617.97s ->  1623.49s] what distribution should it follow? It's going to follow a Poisson distribution. But notice,
+[ 1624.13s ->  1631.89s] lambda is now going to be scaled by time. That is going to be the fundamental difference
+[ 1631.89s ->  1638.13s] in our Poisson distribution. It's not just going to be lambda as a constant. It's going to be lambda
+[ 1638.13s ->  1646.05s] as a function of time. This is going to allow the distribution to continue to shift over time and
+[ 1646.05s ->  1653.65s] adjust with the process. But do keep in mind, the increments themselves are both independent, but also
+[ 1653.65s ->  1662.53s] stationary. This looks very similar to the idea of the memoryless property that we just saw above.
+[ 1663.73s ->  1671.65s] Effectively, if we're looking at the time interval of s, then s plus t, this is going to follow the same
+[ 1671.65s ->  1680.45s] distribution as the time interval 0 to t. What that is saying is, if I look at the time interval between,
+[ 1680.45s ->  1688.45s] let's say 10 days and 11 days and 9 days and 10 days, they're going to follow the same
+[ 1688.45s ->  1695.41s] distribution. Those increments are stationary. That's a one day increment. So the probability
+[ 1695.41s ->  1702.93s] distribution is going to be fixed. Now, this certainly sounds pretty complicated, but when you
+[ 1702.93s ->  1709.97s] visualize it, it makes it so much easier. So let's check out this animation to really understand
+[ 1709.97s ->  1718.13s] what's going on here. This is a simulation of a Poisson process. What you're observing here is
+[ 1718.13s ->  1726.37s] the accumulation of events over time. We go out to time 100 and we're observing these little jumps.
+[ 1726.37s ->  1733.81s] Those are the arrivals of particular events. Those can be whatever we specify. They could be trades over a
+[ 1733.81s ->  1739.89s] particular interval. They could be fish caught over a particular interval. Whatever the event is,
+[ 1739.89s ->  1746.85s] we choose. That is what we're modeling. And we also pick the time interval that dictates the parameter
+[ 1746.85s ->  1756.05s] choice lambda. What you're noticing here on the right is going to be the distribution of potential
+[ 1756.05s ->  1764.61s] counts at that particular time. The distribution of potential counts is going to change over time.
+[ 1764.61s ->  1771.89s] So what you're observing here is in the cross section, we're looking at the distribution of events
+[ 1772.45s ->  1780.45s] at that particular time. So if I was to simulate a whole bunch of Poisson processes for this selected
+[ 1780.45s ->  1789.65s] parameter lambda and I was to plot a histogram of all of those event frequencies at this particular point
+[ 1789.65s ->  1798.21s] in time, I would get this green histogram over here. And notice it matches the theoretical distribution
+[ 1798.21s ->  1805.81s] at that value. That is not by accident. That is by the law of large numbers. You can see for any slice
+[ 1806.45s ->  1814.93s] of this Poisson process simulation. We are going to observe that empirical convergence to the theoretical
+[ 1814.93s ->  1825.81s] distribution. That is a feature of this process and the way that it is defined. So this is exactly what
+[ 1825.81s ->  1833.81s] the implications of this definition are. If we were to simulate a whole bunch of Poisson processes,
+[ 1834.37s ->  1839.97s] this is what it would look like. We don't get to choose which sample path we walk. This purple path here is
+[ 1839.97s ->  1846.77s] just an example path. And we can see that in the cross section of all of these sample paths, every single time
+[ 1846.77s ->  1853.97s] index is going to follow a distribution. Just like I said at the start of this particular section.
+[ 1853.97s ->  1858.61s] That's all a stochastic process is. It is going to be a random variable
+[ 1859.25s ->  1864.93s] index, typically over time, in a discrete or continuous sense. And here we're just looking
+[ 1864.93s ->  1872.61s] at it in a continuous sense because a Poisson process is a continuous time stochastic process.
+[ 1872.61s ->  1879.25s] What about the waiting times? How long do we have to wait in between these different arrivals? Well,
+[ 1879.25s ->  1887.89s] what if we took the time in between events and we plotted it as a histogram just as we did here,
+[ 1887.89s ->  1897.17s] but this time for all of the paths as the simulation continues? That's exactly what I've done here. And what you'll
+[ 1897.17s ->  1906.77s] notice is convergence to the exponential distribution governing the waiting time between arrivals.
+[ 1906.77s ->  1914.69s] Again, this is by construction. This is the intentional waiting time between arrivals. It's
+[ 1914.69s ->  1920.37s] going to follow this exponential distribution. Again, this convergence is going to be guaranteed
+[ 1921.09s ->  1928.05s] by the law of large numbers. As we continue to observe more and more waiting times,
+[ 1928.05s ->  1935.01s] we are going to observe the empirical distribution converge to this theoretical one.
+[ 1935.01s ->  1940.77s] Now, if you recall, in the definition of our Poisson process here, we said that lambda was greater than
+[ 1940.77s ->  1949.09s] zero, but we can see that lambda itself is fixed. Sure, in our probability statement here,
+[ 1949.09s ->  1958.13s] it scales by time, but lambda itself as a rate is constant. Does this make sense in practice? Well,
+[ 1958.13s ->  1963.25s] certainly not. Think of something trivial like a restaurant, right? If you have maybe a pub,
+[ 1963.25s ->  1971.09s] are they going to observe more customer arrivals in the morning over a one-hour increment versus
+[ 1971.09s ->  1978.05s] at night over a one-hour increment? Well, certainly not, right? Likely, we should have a lambda for
+[ 1978.77s ->  1989.97s] those two different times. This gets into the idea of a time homogeneous versus a time inhomogeneous
+[ 1989.97s ->  1999.73s] Poisson process. And the logic is exactly as I just explained. Instead of making lambda constant,
+[ 1999.73s ->  2007.49s] we're going to make lambda a function of time. This is very similar to what I did in the market making
+[ 2007.49s ->  2013.09s] games on Quant Guild. Instead, lambda is not constant there. It's a function of spread.
+[ 2013.73s ->  2018.53s] Here, we're going to observe lambda as a function of time. This is the difference between a time
+[ 2018.53s ->  2025.49s] homogeneous process, Poisson process, and a time inhomogeneous Poisson process. Let's see what
+[ 2025.49s ->  2033.09s] happens to this distribution. Now, you can see it is going to change over time, not just in the sense
+[ 2033.09s ->  2040.53s] that the arrivals are going to be scaled by time, producing this distribution shift effectively and
+[ 2040.53s ->  2049.97s] spread, but it's also going to change the shape of the distribution over time. Importantly,
+[ 2049.97s ->  2058.29s] this is the distinction. The process itself is not stationary in the sense that the distribution
+[ 2058.29s ->  2063.41s] is constant. Now, of course, you could argue that it's stationary in the sense that we know the
+[ 2063.41s ->  2071.25s] distribution for the increments. This gets into a more technical discussion that is necessary for
+[ 2071.25s ->  2077.09s] this particular idea. Really, what we're just saying here is now not only is the distribution going to
+[ 2077.09s ->  2084.69s] change over time as defined by the Poisson process itself, but it's also going to vary over time in the
+[ 2084.69s ->  2091.25s] way that we would want it to, for example, change in the morning for a restaurant and at night for a
+[ 2091.25s ->  2098.29s] restaurant, just like how we may have a lull in trades in the early afternoon versus at market open.
+[ 2098.29s ->  2106.45s] The time inhomogeneous Poisson process is going to allow us to make that lambda parameter, the expected
+[ 2106.45s ->  2113.89s] frequency, a function of time. Let's take a look at an example of this in practice with the Hawks process.
+[ 2113.89s ->  2119.57s] Now, I certainly would like to create a longer video specifically on the Hawks process if there's
+[ 2119.57s ->  2126.53s] interest. I'll get to that idea at the end of this video, but the Hawks process is effectively a time
+[ 2126.53s ->  2135.97s] inhomogeneous Poisson process. What we're doing is we are making the arrival rate, that lambda parameter,
+[ 2135.97s ->  2144.77s] a function of intensity in a cluster. Now, what I mean by that is, and I love to use this analogy,
+[ 2144.77s ->  2151.97s] this boating analogy. Shocker, I'm a big fisherman. So, you know, imagine you're on a very calm lake and
+[ 2151.97s ->  2157.81s] you see a whole bunch of boats, right? There's just you out there. It's very calm. And all of the sudden,
+[ 2157.81s ->  2164.53s] somebody starts to boat away pretty aggressively. And then somebody sees that they start to boat away.
+[ 2164.53s ->  2170.61s] Then everybody starts to boat away. And that nice, calm lake just became super choppy. That is
+[ 2170.61s ->  2175.49s] effectively a volatility cluster. When somebody starts to panic sell, other people start to panic
+[ 2175.49s ->  2182.37s] sell and it creates that cluster. This is what we observe in practice with volatility clustering,
+[ 2182.37s ->  2190.05s] fat tails, excess kurtosis. What we're doing here is we're allowing the arrival rate, this intensity
+[ 2190.05s ->  2197.33s] parameter to be a function effectively of that cluster. So what does this look like? Well, the
+[ 2197.33s ->  2205.33s] parameter itself is going to have this volatility, this residual effect where when it spikes,
+[ 2205.33s ->  2212.21s] it can continue to spike until effectively that lake calms down again. If I play this animation
+[ 2212.21s ->  2217.01s] for you here, this is exactly what you're observing. You can see, okay, here, somebody started their boat
+[ 2217.01s ->  2223.33s] and they drove away, but nobody else was panicking. It starts to calm down here. Somebody started their
+[ 2223.33s ->  2228.21s] boat. They drove away. Somebody started getting concerned. Another person drove away and again
+[ 2228.21s ->  2234.77s] and again, and now the waters are particularly choppy and then everything calms down again and so on and
+[ 2234.77s ->  2243.81s] so forth. This is a very, very useful model in practice. This captures that dynamic very elegantly.
+[ 2243.81s ->  2249.89s] Of course, this is just one application of the Poisson process. I would love to either create a longer
+[ 2249.89s ->  2256.13s] video on this topic or even discuss other implementations like in the Merton jump diffusion
+[ 2256.13s ->  2262.13s] model. Certainly, let me know in the comments below what you would like to see next. Too long didn't
+[ 2262.13s ->  2267.49s] watch. Here's your executive summary. Poisson distributions or random variables are typically
+[ 2267.49s ->  2274.93s] used to model rare events over a particular time interval. We specify what both of those are.
+[ 2274.93s ->  2281.97s] Now, beyond just modeling the natural world, these processes and distributions have implications even
+[ 2281.97s ->  2288.77s] in game development for modeling and inducing arrivals. A very cool connection to make. Now,
+[ 2288.77s ->  2294.53s] of course, when we're modeling the real world, distributions are going to change over time and
+[ 2294.53s ->  2301.33s] some events are going to violate these necessary assumptions more violently than others. In other words,
+[ 2301.33s ->  2308.29s] the probabilities and statistics that we derive via these models will be more correct for some events
+[ 2308.29s ->  2315.33s] and less correct for others depending on how violently they change over time. This seems like a
+[ 2315.33s ->  2322.45s] bit of a catch-22 since we're modeling events over a time interval, but that distribution generating those
+[ 2322.45s ->  2329.89s] events is going to change over time. This is what we have to deal with in reality. The exponential
+[ 2329.89s ->  2337.01s] distribution is typically used to model waiting times and in our Poisson process, this is going to
+[ 2337.01s ->  2345.09s] govern the waiting time between the arrivals of our events. The Poisson processes themselves are
+[ 2345.09s ->  2353.17s] accumulation or counting processes for these events over a simulated or analytically selected time
+[ 2353.17s ->  2361.01s] interval. They have independent and stationary increments, which makes solving for probabilities, statistics,
+[ 2361.01s ->  2369.41s] so on and so forth, analytically tractable and very easy. We also observe nice convergence guarantees
+[ 2369.41s ->  2376.21s] as with our standard random variables, the law of large numbers, probabilistic statistical and distribution
+[ 2376.21s ->  2383.41s] convergence, and of course the central limit theorem. Real world applications range from the pricing of
+[ 2383.41s ->  2388.85s] financial derivatives to risk modeling, and as I mentioned earlier, if there is interest in future
+[ 2388.85s ->  2398.45s] videos on these subjects, I would love to extend this idea since this base process has now been covered.
+[ 2398.45s ->  2403.17s] Some future topics, technical videos, and other discussions to look forward to. I've
+[ 2403.17s ->  2408.77s] already mentioned the Hawks process, this Merton jump diffusion model, and maybe even the characteristic
+[ 2408.77s ->  2413.89s] function for pricing. Carr Madden, one of my favorite pieces in the academic literature,
+[ 2413.89s ->  2420.37s] is a natural next step. Based on interest, would love to do videos on these topics. I'd also like to do
+[ 2421.01s ->  2426.77s] more on market making models and simulation. Of course, this is one of the most well-known pieces of
+[ 2426.77s ->  2432.85s] literature in the space, projects that made me a quant, my first year as a quant, why hedge funds are so
+[ 2432.85s ->  2438.05s] secretive, more qualitative videos if there's interest. I'll keep doing now these technical
+[ 2438.05s ->  2444.85s] lectures, the Kalman filter, non-Markovian models, risk-neutral measures. I would also like to maybe
+[ 2444.85s ->  2451.49s] discuss more on rough path theory, this gets into my own personal research, the Sigvold model, calibration,
+[ 2452.05s ->  2457.73s] the Rough Heston model, quadratic Rough Heston model. There's a lot of really cool literature
+[ 2457.73s ->  2461.89s] in this space right now. I would love to do videos on these topics depending on interest.
+[ 2461.89s ->  2467.49s] They are certainly high level, they are certainly niche, but maybe I will selfishly create a few
+[ 2467.49s ->  2472.13s] videos on those topics. And of course, I haven't forgotten about our quant builds. I'll leave a link
+[ 2472.13s ->  2476.13s] in the description below to get started with interactive brokers. I highly recommend them,
+[ 2476.13s ->  2482.29s] I use them for all of my quant builds. I've been using them in their API for over 10 years at this
+[ 2482.29s ->  2490.05s] point. And the next idea I have for a quant build is how to backtest a trading strategy with interactive
+[ 2490.05s ->  2497.09s] brokers correctly, because I see way too many of the times when folks come to me with back tests,
+[ 2497.09s ->  2503.81s] very inappropriate methodology. So I would love to formalize this in a quant build. But of course,
+[ 2503.81s ->  2509.49s] all of these topics are going to largely be based on interest. So please let me know in the comments
+[ 2509.49s ->  2514.61s] below what you would like to see next. That's going to do it for this video on Poisson processes
+[ 2514.61s ->  2519.41s] for quant finance. I hope you enjoyed. I hope you learned something. I had a ton of fun putting this
+[ 2519.41s ->  2524.29s] video together, but it certainly took a tremendous amount of effort. So if you enjoyed it and you want
+[ 2524.29s ->  2529.25s] to see more like it in the future, please like comment, subscribe, share. Again, it is always
+[ 2529.25s ->  2533.25s] greatly appreciated. I'll leave a link in the description below. If you'd like to join the
+[ 2533.25s ->  2538.53s] quant guild discord server, you can connect with me and other quants in the quant guild community.
+[ 2538.53s ->  2543.89s] Check out quant guild.com to master your quantitative skills. Other than that,
+[ 2543.89s ->  2557.17s] thank you so much for watching and I will see you in the next video.

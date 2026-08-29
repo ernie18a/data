@@ -1,0 +1,202 @@
+[    0.00s ->     6.30s] Hey guys, Roman here, Quantitative Researcher and Trader, founder of Quant Guild and Discourses.
+[    6.86s ->    15.52s] Play the markets like an RPG. Today, I want to talk about this idea of selecting a passion.
+[   16.22s ->    22.62s] I've received a lot of comments over the past couple months about this idea of picking a topic
+[   22.62s ->    29.12s] and sticking with it for the long haul. How do you know what it is that you want to do?
+[   29.12s ->    39.12s] I'm not just talking about history, science, math, finance, but in general, once you select a subject matter,
+[   39.32s ->    47.58s] there's a very, very large landscape within each that you can focus on and specialize in.
+[   47.98s ->    55.42s] How do you choose what to do on a daily basis to ensure you're on a trajectory towards long-term goals?
+[   55.42s ->    62.26s] What should those long-term goals be? And I figure what better way to explain my point of view
+[   62.26s ->    70.00s] than with the story of how I got to where I am today. Now, it's no secret. I was a quant.
+[   70.34s ->    76.50s] I did a video on my life as a quant. And if you're interested in a little bit more of that specific
+[   76.50s ->    80.82s] story, you can head on over there. But I want to talk about this idea, kind of full circle,
+[   80.82s ->    86.78s] of selecting a passion, how I got to where I am today, building, creating these video lectures
+[   86.78s ->    94.20s] for you guys, so on and so forth. So, it started very young. I'm going to go all the way back.
+[   94.42s ->   102.10s] So, if there are some of you who are in middle, high school, even college, this could be particularly useful
+[  102.10s ->   110.88s] to you. But if we go way back to middle school, I knew what subject I liked. I wasn't, oh, I'm going
+[  110.88s ->   117.66s] to be a quant and, you know, that's my trajectory. That's my ultimate ambition. That wasn't where it
+[  117.66s ->   124.76s] started at all. In fact, I didn't think at all like that. I was focusing more on how I wanted to spend
+[  124.76s ->   134.50s] my time. And that time was spent primarily on coding. So, in middle school, I was coding mods
+[  134.50s ->   140.50s] for games, flash games, if you can believe that, all the way back in the day, Visual Basic,
+[  140.92s ->   149.04s] embedding Flash games into Visual Basic, modifying code from like addictinggames.com and mini clips,
+[  149.04s ->   154.74s] if you go way, way back, and kind of just flexing to all my friends that, you know, I had max money,
+[  154.96s ->   160.16s] max health, whatever. I love to be able to do things that other people couldn't in that capacity.
+[  160.28s ->   164.50s] I thought it was so cool. And I've actually graduated to more intricate languages, Java,
+[  165.28s ->   169.16s] eventually Python, settling on my absolute favorite language. We'll get to that.
+[  170.10s ->   176.60s] But when I graduated from just modding games, I started building my own ideas. So, I do remember
+[  176.60s ->   183.60s] when my father was working, I built a messaging client for me and him. He thought it was so cool.
+[  183.60s ->   188.12s] I built like a little Java applet where we could connect to a server and message each other on
+[  188.12s ->   194.48s] that private applet. Like really early on, just building as much as I could. It's an iterative
+[  194.48s ->   200.80s] process. And I think that's what this entire video is really going to be focused on is selecting a
+[  200.80s ->   206.80s] passion, selecting what it is that you want to focus on on a daily basis, and setting a trajectory
+[  206.80s ->   212.94s] and achieving goals is about iteration. It's not about getting it right on the first time. It's
+[  212.94s ->   220.14s] about trying and continuing to try over a long stretch of time. And we'll get into all of the
+[  220.14s ->   227.50s] things that I've tried. I haven't even shared a lot of what I have tried in the past. So, I am eager
+[  227.50s ->   234.60s] to share that with you as well in this video. So, started young, started by coding, started by building
+[  234.60s ->   239.90s] things. And I thought the things that I were building, the things that I was building back
+[  239.90s ->   246.26s] in the day, they were so cool. They were so cool. Stack Overflow was my best friend. There was no
+[  246.26s ->   252.78s] TrackGPT, no Gemini, no Vibe coding. I spent thousands and thousands of hours coding all of this
+[  252.78s ->   262.08s] stuff by hand, if you will. Okay, so coding only gets you so far. You got to high school, computer
+[  262.08s ->   268.42s] science was a drag naturally. You're building, what, calculators. You're not exactly modding games
+[  268.42s ->   275.36s] or building cool pieces of software. So, took all the computer science classes and eventually found
+[  275.36s ->   283.10s] math as something that I absolutely love to spend time on, working on problems analytically and solving
+[  283.10s ->   288.08s] them. Now, here is the ultimate irony, and this is kind of a break from this subject of discussion,
+[  288.08s ->   293.38s] the passion subject of discussion, is I loved math for the same reason that most people do.
+[  294.10s ->   298.06s] It's like there's one answer, right? You work through an analytical problem and there's one
+[  298.06s ->   303.76s] answer, but then what happens? You get to the highest level of math possible and it's just
+[  303.76s ->   309.92s] subjective at some point. Again, statistics, applied statistics, applied math, mathematical
+[  309.92s ->   314.82s] modeling in the real world, it's a filter for decision making. Everything collapses to a zero or one
+[  314.82s ->   322.04s] outcome. It's subjective once again. So, that's the ultimate irony in my initial appreciation for math
+[  322.04s ->   327.66s] and then where it ends up at the highest level for those of you who are curious where it ends up, but
+[  327.66s ->   333.70s] that's really when I started to get involved in the math space. So, then I started to combine those two
+[  333.70s ->   339.92s] things together. So, I was like, okay, I can code and I really like math. What can I do with these two
+[  339.92s ->   345.18s] skill sets? I spent so much time coding. I spent so much time doing math. I took the highest level math
+[  345.18s ->   352.62s] possible for me in my public high school and one of the areas of application for all this stuff that
+[  352.62s ->   358.30s] I thought was so interesting was finance. Now, not because I wanted to make a tremendous amount of
+[  358.30s ->   366.48s] money, but because it didn't make any sense to me at all, right? Like how do you make money with this
+[  366.48s ->   370.30s] thing that we call the market? There are so many different products at the time in high school. You
+[  370.30s ->   374.22s] have no idea what they are, right? You don't know the difference between equities, fixed income, other
+[  374.22s ->   382.72s] derivative products, but people were making money in that space and they were using computer science.
+[  382.88s ->   390.62s] They were using math to do so and as a high schooler, I remember I was like, what are they doing with this
+[  390.62s ->   396.40s] stuff that I know a lot about, right? I know integration, right? I know how to build an application. I know
+[  396.40s ->   403.30s] math and computer science to the extent that you can at that age. What are they doing to make money,
+[  403.52s ->   408.94s] right? And of course, my statistical background was nowhere near where it was today or nowhere near
+[  408.94s ->   414.24s] where it is today. So I didn't quite understand that it wasn't like functional, right? Like the whole space
+[  414.24s ->   421.76s] of trading in the markets can be viewed at best as poker, right? You're applying mathematical models.
+[  422.16s ->   428.22s] You are operating in a discretionary, semi-systematic, systematic capacity, and it's a filter. You don't
+[  428.22s ->   433.22s] know what the future holds, right? There is no stationarity in the real world, but if things are
+[  433.22s ->   437.86s] reasonably stable, you can apply this math in the real world and use it to make money. It's poker at
+[  437.86s ->   444.38s] best, right? You never know for certain if somebody's fluffing and even if they are, maybe on the river,
+[  444.46s ->   448.78s] they get the card they need. So you never really know how the space is going to shake out. But of course,
+[  448.78s ->   451.90s] I didn't know all this at the time. I just really liked math and computer science and
+[  451.90s ->   457.40s] I didn't understand the market. I wanted to understand the market. So I went off to college
+[  457.40s ->   465.78s] and learned as much as I possibly could about math, statistics, probability, the markets,
+[  465.88s ->   472.10s] all these different financial derivatives. And that background in math and computer science that
+[  472.10s ->   477.94s] I loved so much and I cultivated so much continued to allow me to iterate on my interests, what I
+[  477.94s ->   484.64s] consider to be my passion. Now, I think the most important thing to remember in all of this is,
+[  485.64s ->   490.84s] right, it's about breathing curiosity. It's not about a paycheck and chasing a paycheck. That's not
+[  490.84s ->   496.30s] what breeds excellence. And excellence is the only way to stick with something long-term. That's what's
+[  496.30s ->   501.16s] meant by passion. There's nothing else that I'd rather be doing right now than recording this video
+[  501.16s ->   506.02s] lecture for you guys. And that was an iterative process. And we're going to get to how I got to here,
+[  506.02s ->   510.76s] but I want you to keep that in mind is throughout this entire process, I never had the end goal
+[  510.76s ->   516.92s] in mind. I just wanted to continue to iterate and make progress, learn and understand. And that is
+[  516.92s ->   525.41s] really what it's all about in my opinion. And I read this blog. I wish I remembered. I wish I
+[  525.41s ->   531.41s] remembered what it was. It was probably in 2014 or something when I was still in high school, but
+[  531.41s ->   540.65s] it talked about this idea of working on your passion and actually executing on that. And this
+[  540.65s ->   546.27s] guy, he was writing a blog and that was his passion. That's what he did for a living. And he wrote about
+[  546.27s ->   550.25s] how everybody says they wish they had their own business. They wish they did this. They wish they
+[  550.25s ->   559.90s] did that. And they don't. And he was like, you know how you spend your time, right? You know what
+[  559.90s ->   566.28s] you're interested in, right? You do something in a day, whatever that is. You, you get home from work
+[  566.28s ->   572.90s] or school, you do something that you want to do, right? Whatever it is, you have to occupy that time
+[  572.90s ->   580.12s] somehow. Have you ever tried to do that professionally? Oh, I can't make money doing that. He's like,
+[  580.44s ->   586.70s] fuck you. You totally have not even tried. If you asked me whether or not I could make money writing,
+[  586.70s ->   592.38s] I would have said no, but here I am. Right. And that doesn't mean you're going to love it all the
+[  592.38s ->   596.58s] time. He's like, you know, 70% of the time I like it 30% of the time. I absolutely hate it. And,
+[  596.66s ->   600.76s] you know, I kind of share a similar sentiment with these video lectures when like, maybe I pull an
+[  600.76s ->   605.14s] all nighter trying to code something. I'm building a project, working on discourses, for example.
+[  605.98s ->   612.52s] And I feel that 30%. I'm like, oh man, I have to record a lecture. But, you know, it's,
+[  612.52s ->   617.50s] it's a consequence of working on this long-term. That's what is meant by passion. You know, you're
+[  617.50s ->   621.08s] not, you're not going to love every single moment of every single day all the time. Like you're going
+[  621.08s ->   625.40s] to have to deal with stuff. Right. So keeping that in mind, I think is very important, but
+[  625.40s ->   631.56s] that, that blog stuck with me very young about, you know, really just honing in on what it is that
+[  631.56s ->   635.70s] you like and what you want to do and making that your priority. Cause that's how you can really
+[  635.70s ->   640.28s] achieve the next level. So fast forward a little bit, right. I'm in college and learning as much as
+[  640.28s ->   648.94s] possible. And I did not have the objective of running a startup or starting my own business
+[  648.94s ->   654.26s] at the time. I just really liked math, probability, statistics, finance, coding. I just loved all this
+[  654.26s ->   658.06s] stuff. It was really hard. Some of it made a lot of sense to me. Some of it made no sense to me.
+[  658.64s ->   664.06s] And, you know, I did, I fell into the typical, like what happens when you're in a cohort in college
+[  664.06s ->   668.70s] sort of situation. It's like, everyone's grinding for interviews. So I'm going to grind for interviews
+[  668.70s ->   676.24s] too. Right. And I ended up getting a role working for, for Bruno at Bloomberg as a quantitative
+[  676.24s ->   682.40s] researcher. And, you know, I go into this more in my life as a quant. So if you want to hear a little
+[  682.40s ->   686.20s] bit more about that story, you certainly can, but that was never the objective, right? The objective
+[  686.20s ->   692.78s] was to continue to do math, probability, finance, statistics, coding, and, and continue to learn,
+[  692.78s ->   698.26s] continue to understand. And, you know, that was, that was always what had gotten me.
+[  700.05s ->   705.99s] That is always what had gotten me to the next stone, if you will. And that's kind of how I
+[  705.99s ->   710.97s] visualize this entire space is like, you're on a lake and it's pretty misty and there are stones
+[  710.97s ->   716.09s] and you can start hopping ahead. And if you try to cast too far forward, it's too misty. You really
+[  716.09s ->   720.89s] can't see, but every time you take a step, you kind of reveal some more stones and you may have to
+[  720.89s ->   726.47s] backtrack, you may have to backtrack and then backtrack even more, but you never would have
+[  726.47s ->   736.02s] known what was down that set of stones if you hadn't tried. Okay. So when I was at Bloomberg
+[  736.02s ->   742.20s] working as a quant, focusing mainly on pricing financial derivatives, that was my primary research,
+[  742.28s ->   748.22s] I would say, along with mining equity alpha using large alternative data sets, primarily focusing on
+[  748.22s ->   753.40s] social sentiment, I started to build Quant Guild. I started to do these video lectures because I
+[  753.40s ->   758.92s] really liked producing them. I really liked learning or sharpening my understanding of topics
+[  758.92s ->   764.18s] and lecturing. It helped me with my work. And that was, again, how I ended up there in the first place.
+[  764.24s ->   769.24s] It's just, you know, through college, I loved everything I was doing so much. I would always try new
+[  769.24s ->   775.02s] things. I would be building projects, writing on my medium blog, so on and so forth.
+[  775.02s ->   780.65s] Um, you know, it was, it was really no different when I was at Bloomberg. I just kind of continued
+[  780.65s ->   786.25s] that when I was, you know, after hours from, from work, started to put together these video lectures
+[  786.25s ->   790.97s] for Quant Guild. I started to build Quant Guild out as a site. And here's the craziest part.
+[  793.62s ->   802.43s] The craziest part is I ended up trying to tear it to the ground, which is kind of crazy for me to talk
+[  802.43s ->   814.26s] about. But some of you may remember if you were around 2000, maybe 20, um, 2021, maybe I actually
+[  814.26s ->   821.06s] hid my channel and I shut down my blog and I was like, this is not what I'm doing. And I don't want
+[  821.06s ->   831.46s] to be found in this capacity. Um, I was like, I'm just going to focus on being a Quant. And thinking
+[  831.46s ->   837.04s] about that now it's like, I can't believe I did that. I can't believe I did that. And I think maybe
+[  837.04s ->   845.34s] that was due in part to my, my peers or colleagues, but that, that was a crazy thing. I put so much
+[  845.34s ->   850.80s] work into these video lectures. I put together the Quant Guild website and, and I shut it, I shut it
+[  850.80s ->   858.58s] all down. So, okay. What happened after that? Well, I ended up leaving Bloomberg and I joined a PhD
+[  858.58s ->   866.48s] program. Okay. With the blessing of my mentors and the head of that department, um, who wrote me
+[  866.48s ->   872.68s] letters of recommendation, very kind letters of recommendation. When I was in the PhD program,
+[  872.68s ->   877.94s] it was like pulling teeth. I disagreed with a lot of the methodology. I disagreed with the program in
+[  877.94s ->   886.08s] general. Um, it was not for me. You know, I had ideas of the way that things should be and things
+[  886.08s ->   894.70s] should be run. Um, and I disagreed and I left after a semester after that, I was a part of a master's
+[  894.70s ->   903.40s] degree program. Right. And after that, I took on independent contracts, um, in a, like a consulting
+[  903.40s ->   910.32s] capacity, right. Just trying to work in, in any capacity in the industry that I could. Um, and while
+[  910.32s ->   917.06s] I was doing those, those contracts, that's really when, that's really when I was like, you know what,
+[  917.08s ->   923.46s] I think I can do this Quant Guild thing. That's 70%, 30% of the time. Right. Let's, let's give this
+[  923.46s ->   934.83s] a shot. And I remember, I remember the day that I decided to, to focus on it full time. And dude,
+[  934.83s ->   943.59s] I was like, I was scared. Like, it's a scary thing. Kind of like pulling the plug on guaranteed
+[  943.59s ->   951.71s] cashflow and working on something that you really believe in and really love and maybe hate 30% of
+[  951.71s ->   960.20s] the time. But I was like, you know what? Like, we're going to make it work or we're, we're going
+[  960.20s ->   968.13s] to make it work. We're going to make it happen. So I think with this, the whole, the whole point of
+[  968.13s ->   974.86s] this like trajectory and story is, is me telling you it's iterative, right? You don't have to get it
+[  974.86s ->   980.52s] right on the first time, but you do know what you like. And there are some things that you would
+[  980.52s ->   989.19s] prefer to spend your time doing than not doing. And it's about iteration. It's about continuing to
+[  989.19s ->   997.02s] try. I can't help you if you're not going to try. It's hard. I've stayed up all night working on
+[  997.02s ->  1004.92s] Quant Guild a lot, working on discourses many of times being driven solely by passion with
+[ 1004.92s ->  1012.24s] literally no paycheck at the end of the day. And that's what creates all of this opportunity.
+[ 1012.24s ->  1017.34s] It's because who is willing to do that? Who is willing to do that? I'm not saying it's going to
+[ 1017.34s ->  1021.50s] work out. And for me, I've, I've tried in a lot of different ways and it hasn't worked out with
+[ 1021.50s ->  1025.76s] things that I've poured a tremendous amount of life into breathing life into different projects and
+[ 1025.76s ->  1032.23s] products that never really went anywhere, but it's about iteration. It's not about getting it right
+[ 1032.23s ->  1039.19s] on the first time. It's about continuing to try, continuing to iterate. And that's what ultimately
+[ 1039.19s ->  1043.89s] leads you to understand what, what it is that you like and what it is that you don't, right? If you,
+[ 1044.01s ->  1049.29s] and I've said this in a previous fireside chat, if you ask any high schooler who has an interest in
+[ 1049.29s ->  1055.81s] business, right, business or finance, what they want to do, what they're going to say there,
+[ 1056.17s ->  1060.95s] they want to be a trader, they want to be investment banker, they, they have no idea what goes into
+[ 1060.95s ->  1066.37s] those roles, they have no idea at all what it looks like, right? That's not actually selecting a
+[ 1066.37s ->  1071.65s] passion, right? They're not executing the work product. If they're at home conducting fundamental
+[ 1071.65s ->  1076.81s] analysis on their own building DC apps, obsessed with those types of models and the infrastructure of
+[ 1076.81s ->  1081.07s] the business, that's a completely different story. But if you talk to anybody, they're like, oh, I want
+[ 1081.07s ->  1087.73s] to be a lawyer. Like, I'm gonna be a lawyer. Do you know what that looks like? Have you even looked at
+[ 1087.73s ->  1094.47s] the LSAT? Have you taken a practice LSAT? Right? I've taken a practice LSAT. I've done two iterations of
+[ 1094.47s ->  1100.77s] thinking about the lawyer thing, right? Coming from quant, I was like, I'll be a lawyer, right? Focusing on
+[ 1100.77s ->  1107.19s] securities. It's kind of sick, right? Took the LSAT in college for fun on a bet. Took it again.
+[ 1107.61s ->  1111.09s] While I was working in a contractual capacity. And I was like, shoot, I could get a full ride.
+[ 1111.71s ->  1120.55s] And, you know, be a lawyer. It's iterative. It's iterative. And you have to make these trade-offs
+[ 1120.55s ->  1125.65s] and decisions. But that's walking down the path I spent. I don't even know how many hours prepping
+[ 1125.65s ->  1131.58s] for the LSAT to take it. But I walked down that path. And I was willing to check it out and see
+[ 1131.58s ->  1139.38s] what's going on and shamelessly walk back. There's no shame in backtracking and walking back. You have
+[ 1139.38s ->  1146.90s] to try. Otherwise, how is it that you will know what you want to be doing? Right? All of this trying,
+[ 1147.26s ->  1155.06s] all of this failing, leaving academic programs, multiple academic programs, leaving your job when
+[ 1155.06s ->  1166.70s] it's not right. Leaving multiple jobs when it's not right. Trying, continuing to try. Now, it's not
+[ 1166.70s ->  1173.80s] going to be easy. It is going to take a tremendous amount of effort. But the reward is you get to
+[ 1173.80s ->  1178.38s] really hone in on what it is you like to do and what it is you want to be doing. And once you master
+[ 1178.38s ->  1184.76s] that as a skill, you get to continue to iterate. And that is the amazing thing. That is really what
+[ 1184.76s ->  1191.02s] it's all about. It's not about picking investment banking when, you know, you're a second year in
+[ 1191.02s ->  1194.64s] middle school and they start recruiting you, right? Because that's how early recruiting starting now.
+[ 1195.00s ->  1206.00s] But it's really about iteration to select a passion. And I got to tell you, I haven't felt as good as I
+[ 1206.00s ->  1213.02s] do in my entire life, having selected really what it is that I want to be doing on a daily, weekly
+[ 1213.02s ->  1219.86s] basis like this. Producing these video lectures, building apps, educational apps, products like
+[ 1219.86s ->  1225.60s] QuantGuild and Discourses for you guys. It gives me the most utility that I could possibly ask for.
+[ 1227.36s ->  1232.64s] So that is, that is my two cents. That is my two cents on the subject of selecting a passion.
+[ 1233.76s ->  1241.56s] And I'm happy to answer questions about this idea. If you want to run anything by me, if you,
+[ 1241.56s ->  1248.42s] you know, want to create a thread, do it on Discourses. That's where I am effectively spending
+[ 1248.42s ->  1254.58s] all of my time engaging with you guys now. Create a thread in the comments. Mark it as off topic and
+[ 1254.58s ->  1258.76s] talk about, hey, you're, you're in high school trying to select a program. What should you do?
+[ 1259.14s ->  1265.32s] Maybe you like math and aren't sure that you want to go into higher level maths and you should focus
+[ 1265.32s ->  1270.38s] on computer science. You know, I can speculate about one of 10,000 different trajectories, but
+[ 1270.38s ->  1277.38s] you know, hop on Discourses, drop me a line. You can ping me on Discourses and I'll answer via DMs. But
+[ 1277.38s ->  1283.86s] that's really what it's all about. It's all about iteration. So I hope you enjoyed this week's
+[ 1283.86s ->  1291.72s] fireside chat. I hope you learned something maybe about selecting your passion or maybe learned a little
+[ 1291.72s ->  1300.52s] bit more about myself. Um, with that, I want to thank you so much for watching. Check out Discourses.io.
+[ 1301.16s ->  1308.25s] Leave a link in the description below. Other than that, I will see you in the next video.

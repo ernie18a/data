@@ -1,0 +1,87 @@
+[    0.00s ->     4.04s] hey guys i'm going to walk you through the three five hedge or the sweet bobby hedge and this would
+[    4.04s ->     9.22s] have saved you in the monday market crash now the thing is we all hate losing money i know because
+[    9.22s ->    13.94s] i personally lost twenty thousand dollars on this market crash and so again i want to show you a
+[   13.94s ->    19.56s] hedge that would have covered most of your losses and covered most of the risk that you had on in
+[   19.56s ->    24.34s] the account and exactly how you can structure this whether you have a large or small account
+[   24.34s ->    29.26s] so again it's called the three five trade and why is this well most of the problems that people ran
+[   29.26s ->    35.48s] into with one one two is one one short strategies in this market with this crash and vault and vault
+[   35.48s ->    42.08s] and volatility expansion is what's called vega risk all their positions were in shorts and so when the
+[   42.08s ->    47.38s] volatility increased they had nothing that would increase in price with it to offset those values
+[   47.38s ->    53.44s] and so with that the best way to do that is to have long options to offset the volatility risk which is
+[   53.44s ->    59.04s] kind of known as vega and so what we do here is we need to put on some long puts but how do we put
+[   59.04s ->    65.06s] on long puts in a way where we can do so in a cost effective manner that also gives us good
+[   65.06s ->    69.36s] protection and that is what a three five trade is so let me walk you through exactly how a three five
+[   69.36s ->    75.60s] trade works again i'm going to do it on es and then i'll show you how to replicate this on mes and
+[   75.60s ->    81.22s] spy if you have smaller accounts all right again mes will actually be for the smallest account so
+[   81.22s ->    85.16s] first let's go to the table here this is what a three five structure is a three five structure
+[   85.16s ->    90.62s] gives you five long puts and then you use three short puts to offset the cost which gives you net
+[   90.62s ->    96.10s] two long puts so that when vol when vol when volatility increases you have two long puts that
+[   96.10s ->   102.04s] will skyrocket and help cover cost and so let's dive in and look at this you can do this on a monthly
+[  102.04s ->   108.78s] basis and if you do it every month you can enter around a 30 dte or maybe even 33 or 35 so that it
+[  108.78s ->   113.98s] overlaps a bit with each time but again this will be like a monthly tranche that you kind of put on
+[  113.98s ->   120.80s] so let's go in just to this 34 era um just to kind of give an example here so what we'll be doing
+[  120.80s ->   124.20s] here we'll go out to about the 30 delta point and what we're going to do is we're going to come in
+[  124.20s ->   128.70s] here and we're going to let's go again i'll show you how we can play around with these numbers but
+[  128.70s ->   133.30s] for now we'll start here so what i'm going to do is i'm going to buy around 28 delta this is just
+[  133.30s ->   138.50s] numbers for now i'm going to i'm going to buy five and i'm going to sell three so this leaves me with
+[  138.50s ->   145.30s] net two long puts and again i want long puts in order to help with with the vega risk with the
+[  145.30s ->   150.92s] volatility with the vault with the volatility expansion risk okay um let's look at the analysis
+[  150.92s ->   156.72s] page on the curve let me remove my other positions here for now and show you how this is structured
+[  156.72s ->   162.72s] so this is what it looks like i have the five puts that will dramatically go up in value if the
+[  162.72s ->   168.16s] market drops and a volatility increases but i have these three short puts that will help kind of
+[  168.16s ->   173.62s] offset my cost because it would cost me a lot more just to go out and buy five puts but now i kind of
+[  173.62s ->   179.52s] get um the the profit of them without having to bear the whole cost and so you can see here this is
+[  179.52s ->   183.82s] still a very expensive trade right here it's going to cost me five thousand five hundred dollars
+[  183.82s ->   188.50s] and so if you want this to i mean but at the same time it's going to give you a lot of protection
+[  188.50s ->   196.74s] look if the market drops 600 points like it did um earlier this week slash month um if it would drop
+[  196.74s ->   202.20s] 500 points we'd be up thirty thousand dollars from this hedge and that's about the same even if
+[  202.20s ->   209.14s] volatility expands right just to show you what that looks like here um if volatility were to expand
+[  209.14s ->   215.22s] um on let's see what two positions are we looking at the september 11th um let's not really get these
+[  215.22s ->   223.86s] too if volatility were to go up by 25 let's just go 30 each what would this new profit graph look like
+[  223.86s ->   233.80s] just like this look at that the profit got even higher even if the stock stays where it is but
+[  233.80s ->   242.08s] volatility goes up i'm now making 20 to 21 000 on this trade and so that's why this hedge could have
+[  242.08s ->   249.58s] saved you so much money when um we experienced that on monday because volatility skyrocketed skyrocketed
+[  249.58s ->   254.34s] which means our one one twos went dramatically up in value which is not good and if we had this hedge
+[  254.34s ->   259.18s] we could have offset a lot of those losses to allow us to stay in these trades longer so if you're still
+[  259.18s ->   263.36s] going for the one one two trade which is a very profitable very amazing trade put on a hedge like
+[  263.36s ->   269.72s] this that will increase in value when volatility goes up as well um so let's reset this and let me show you
+[  269.72s ->   275.66s] how to actually um make this cost cheaper uh depending on what you want to do so again if
+[  275.66s ->   280.98s] we push these two puts out and again we put this up with it um this will make it cheaper because you
+[  280.98s ->   288.72s] know we're going further away you can see here also the closer we put together um these um these two
+[  288.72s ->   294.38s] uh options together and what the which means the less of the spread we have uh the cheaper it gets
+[  294.38s ->   298.92s] so again by pushing this out and making the spread smaller here we went we are we already went from
+[  298.92s ->   304.18s] five thousand five five hundred uh to two thousand eight hundred dollars so still you have to consider
+[  304.18s ->   309.28s] here that this you can see the orange line it's still giving you amazing protection as the market
+[  309.28s ->   314.56s] drops and a volatility increase is going to make you even more so again if you're actively trading
+[  314.56s ->   320.86s] one one twos on es um again in a month you'll make anywhere um from i mean depending on how much
+[  320.86s ->   325.28s] you're trading but you can make from four thousand eight thousand ten thousand dollars somewhere in there
+[  325.28s ->   329.72s] and then now you can put on one one of these so again you'll you'll be giving up about 20 of your
+[  329.72s ->   334.40s] profits but now you have a solid hedge now for those of you like okay this is too expensive how do
+[  334.40s ->   339.32s] i do this well that's why we always have the alternative which is mes so again even if you're
+[  339.32s ->   344.36s] trading es one one twos but you don't want to pay that much money uh you can for the hedge you can
+[  344.36s ->   349.58s] go to mes um and you can even do this hedge more often because it's cheaper but let's structure this
+[  349.58s ->   355.70s] roughly the same way okay so let's go here to the trade table we're going to go to roughly a 42 day
+[  355.70s ->   361.38s] out that's a little past 30 so we can do this on a monthly basis again um yeah so we can just set
+[  361.38s ->   367.14s] this up on a monthly basis let's go out here to roughly the 30 delta point i'm gonna buy um let's
+[  367.14s ->   373.10s] just set this up here and sell so i'm gonna click on the buy here we're gonna buy five and then we're
+[  373.10s ->   379.36s] going to sell three to help offset losses but still give us a lot of money all right so if we
+[  379.36s ->   386.02s] go to the analysis page uh we go to the curve all right we can see here um that now we're paying 600
+[  386.02s ->   393.46s] dollars um for this trade it costs 600 to put this trade on about 700 actually uh to put this trade on
+[  393.46s ->   398.30s] and buying and buying power but you can see like this we're still making a lot of money so again um if
+[  398.30s ->   405.92s] the market were to uh drop um and go down 700 i mean uh 600 points like we did from you know this
+[  405.92s ->   411.00s] month uh then we're looking at about a two thousand dollar profit which again is decent but it's only
+[  411.00s ->   418.04s] going to cover maybe um one of our one one two so we might have to move this closer uh so we generate
+[  418.04s ->   423.34s] more of a profit it's going to cost more but you can see here this is going to cost about eight hundred
+[  423.34s ->   429.24s] dollars um but it's going to give us some good protection to the downside about three thousand
+[  429.24s ->   434.26s] six hundred um so this is one that that you can put on on a monthly basis because not only do we get
+[  434.26s ->   440.60s] that downside protection but it's a vega risk hedge as well because we have the long put so if volatility
+[  440.60s ->   447.02s] were to increase by 30 percent um then we would also be looking at a great profit as well let's double
+[  447.02s ->   451.98s] check this here so if volatility were to increase in the market were to stay the same well we're already
+[  451.98s ->   456.88s] making two thousand dollars and if the volatility increased and dropped about 300 400 points which
+[  456.88s ->   463.24s] is what happened we'd be down around here and we would have a profit and loss of four thousand dollars
+[  463.24s ->   468.86s] so that would still help offset our losses a lot and so i highly encourage you to check out this three
+[  468.86s ->   475.52s] five strategy or simply just buying puts because that's going to be a volatility risk hedge and also
+[  475.52s ->   480.42s] hedge your account in the process and so this will allow you to stay in one one two longers to see the
+[  480.42s ->   485.70s] volatility decrease in your positions to stabilize anyways i hope this made sense i hope you enjoyed
+[  485.70s ->   490.10s] this video if you want to learn more please smash that subscribe button and i'll see you in the next
+[  490.10s ->   491.02s] video bye guys

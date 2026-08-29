@@ -1,0 +1,377 @@
+[    1.26s ->     7.78s] Welcome back. Today what I'd like to do is talk about delta hedging and option.
+[    8.42s ->    17.80s] If you haven't seen my previous video on the Black-Scholes model where I actually derive the partial differential equation, that is the Black-Scholes equation,
+[   18.54s ->    25.34s] the argument itself for that equation is based on a continuous-time delta hedge.
+[   25.68s ->    30.98s] In this video, what we're going to do is we're going to take a look at the delta hedging strategy itself.
+[   31.30s ->    37.38s] And hopefully by the end of the video, you'll have a better idea of what a delta hedge actually is
+[   37.38s ->    44.22s] and the intuition behind the price that gets generated from the Black-Scholes model.
+[   44.70s ->    51.30s] Now regardless of if you understand the derivation itself of the Black-Scholes equation and solution which yields the Black-Scholes model,
+[   51.30s ->    61.26s] this right here is going to give you the price of a European call according to their assumptions and arguments, that is, of the Black-Scholes model.
+[   61.30s ->    67.79s] I've implemented this equation in Python to generate prices based on a specific parameter set,
+[   67.79s ->    77.57s] and I've also created this nice chart to help us visualize the price of an option based on the underlying asset price
+[   77.57s ->    80.73s] and the corresponding delta of the option.
+[   80.73s ->    91.85s] Delta is the first-order sensitivity of the option's price with respect to the underlying asset's price.
+[   92.57s ->    94.87s] Now, in layman's terms, what does this mean?
+[   94.87s ->   102.55s] This means as the underlying asset or the stock that our option contract is written with respect to changes,
+[  102.93s ->   107.81s] we can expect a subsequent change in the option price of approximately delta.
+[  107.81s ->   117.35s] It is a linear approximation of the change in an option's price based on a unit change in the underlying asset price.
+[  117.35s ->   123.59s] Long story short, it is how we can expect the option's price to change when the stock price changes.
+[  124.21s ->   131.17s] This red line here represents delta itself, and it's also sometimes used as an approximation for the probability
+[  131.17s ->   134.63s] that an option expires in the money.
+[  134.63s ->   138.83s] So you can read into delta in a variety of different ways,
+[  138.97s ->   142.73s] and you can see that as we change some of the parameters,
+[  143.53s ->   148.91s] the pricing function for the option along with the delta function changes.
+[  148.91s ->   156.51s] So as our time to maturity increases, you can see the subsequent change in the option pricing function
+[  156.51s ->   161.93s] and the delta function with respect to, of course, the underlying asset price.
+[  162.15s ->   166.63s] If we narrow this time window, this starts to look like a classic hockey stick diagram,
+[  166.63s ->   171.81s] and we get this almost sigmoid-looking function situation for our delta.
+[  171.81s ->   178.69s] That is, there are more significant changes when we have fluctuation around the strike price
+[  178.69s ->   181.29s] when we are very close to expiration.
+[  181.95s ->   189.43s] And this is relatively intuitive because you will see that if you are hovering around the strike price to expiration,
+[  190.07s ->   195.83s] then there is going to be a lot of variation in the option price
+[  195.83s ->   202.85s] depending on whether or not it is changing towards in the money or towards out-of-the-money status.
+[  203.75s ->   207.91s] Let's look at a quick example of the two interpretations of delta.
+[  208.51s ->   211.25s] So suppose I have this option contract,
+[  211.59s ->   215.59s] and this option contract currently has an underlying asset price of $100.
+[  216.19s ->   220.17s] That means I will pay roughly $10 for this option.
+[  220.17s ->   224.13s] The delta of this option, according to these parameters,
+[  224.65s ->   229.81s] if we go up to this red line, is roughly 60%, 0.6.
+[  229.81s ->   235.99s] What this means is if the underlying asset price was to move from $100 to $101,
+[  236.37s ->   240.73s] we would expect a option price change of 0.6.
+[  241.15s ->   245.37s] In other words, we would expect the option price to increase by approximately 0.6.
+[  245.37s ->   254.59s] Moreover, the other interpretation is that the option has roughly a 60% chance of expiring in the money.
+[  255.25s ->   261.11s] This model, of course, assumes that the dynamics of the stock follow a geometric Brownian motion
+[  261.11s ->   265.03s] that is characterized by this stochastic differential equation.
+[  265.65s ->   270.13s] And this stochastic differential equation is parameterized by a volatility term,
+[  270.13s ->   273.97s] by a drift term, and a wiener process.
+[  273.97s ->   276.35s] That is the Brownian motion itself.
+[  276.83s ->   281.32s] I have written a function here to simulate a geometric Brownian motion.
+[  281.80s ->   286.10s] In my Python library Qfin, I also have this capability,
+[  286.10s ->   290.54s] so you can just import the process itself and simulate it if you would like to do it that way.
+[  291.24s ->   298.08s] And every time we run this, we will get a different path according to that process.
+[  298.08s ->   303.76s] According to the process that is assumed by a Black-Scholes model.
+[  304.18s ->   307.44s] Let's pause right here and talk about delta hedging.
+[  308.30s ->   314.38s] The argument for the Black-Scholes equation revolves around a continuous time delta hedge.
+[  315.56s ->   318.98s] That is, if we hold a portfolio of stock and option,
+[  319.46s ->   322.80s] and we hold a particular quantity of stock,
+[  322.80s ->   330.02s] we can ensure that an instantaneous change in our portfolio value is essentially risk neutral.
+[  330.44s ->   333.36s] That is, we remove the randomness from our portfolio.
+[  334.08s ->   336.18s] In turn, we must earn a risk-free rate,
+[  336.32s ->   339.10s] and that establishes the Black-Scholes equation,
+[  339.78s ->   341.80s] whose solution yields the Black-Scholes model.
+[  342.83s ->   345.89s] Now, that delta hedge is clearly impossible to do
+[  345.89s ->   348.45s] because we can't continuously hedge a portfolio.
+[  348.87s ->   351.19s] We would accumulate way too many transaction costs.
+[  351.19s ->   355.75s] We can, you know, dive into all of the assumptions that are violated by the model,
+[  355.85s ->   359.47s] but if you have a model that doesn't make any assumptions,
+[  359.47s ->   360.89s] and you have the true density,
+[  361.09s ->   363.67s] then we wouldn't need to develop a model in the first place.
+[  363.79s ->   368.05s] If you had the true density function for the price of all options,
+[  368.23s ->   370.27s] I would ask you, what are you doing here?
+[  370.41s ->   373.95s] You should be making money with that true density that you have access to.
+[  374.47s ->   378.85s] Nevertheless, this delta hedging argument is what allows us to establish
+[  378.85s ->   380.99s] the Black-Scholes model price.
+[  381.45s ->   384.61s] What we're going to do is we're going to conduct a delta hedge,
+[  384.77s ->   386.79s] but not in continuous time.
+[  386.97s ->   389.33s] We're going to conduct it on a daily basis.
+[  389.87s ->   394.21s] So what's going to happen is we are going to sell an option,
+[  394.73s ->   397.21s] and then we are going to delta hedge that position,
+[  397.59s ->   402.81s] which means we're going to buy stock to ensure that our portfolio is delta neutral.
+[  402.81s ->   406.15s] We have that risk-neutral portfolio.
+[  406.67s ->   410.29s] In other words, an instantaneous change in our portfolio value
+[  410.29s ->   412.93s] is not going to yield a change in our portfolio value.
+[  413.21s ->   415.73s] Therefore, we must earn the risk-free rate.
+[  416.43s ->   420.29s] What we will see is throughout the life of this delta hedge,
+[  420.71s ->   422.87s] we are going to accumulate P&L.
+[  423.49s ->   426.47s] Now, we could accumulate P&L in a positive sense.
+[  426.63s ->   428.91s] We could accumulate P&L in a negative sense.
+[  429.01s ->   430.19s] We could end up making money.
+[  430.19s ->   435.25s] We could end up losing money, but the amazing thing about the numerical argument,
+[  435.35s ->   437.93s] which we are about to conduct for a delta hedge,
+[  438.41s ->   442.03s] is as you approach continuous time hedging,
+[  442.11s ->   446.91s] that is, as you approach this idea of continuously hedging your portfolio,
+[  447.09s ->   448.87s] which is, of course, only theoretical,
+[  449.81s ->   452.73s] before I get a thousand comments about transaction costs,
+[  452.97s ->   454.73s] I know there are transaction costs.
+[  454.81s ->   455.73s] I trade myself.
+[  455.87s ->   457.13s] I understand how this works.
+[  457.13s ->   464.33s] The theory itself suggests that as we approach the continuous time,
+[  464.33s ->   469.95s] we will approach the expected value of the option,
+[  470.23s ->   472.53s] which is the Black-Scholes model price.
+[  472.61s ->   476.13s] In other words, if we do a continuous time delta hedge,
+[  476.59s ->   479.07s] on average, if we take a look at P&L,
+[  479.15s ->   483.63s] we should see that we get approximately the Black-Scholes model price.
+[  483.81s ->   487.01s] And that is the incredible thing about this numerical argument
+[  487.01s ->   488.29s] that we're about to take a look at.
+[  488.63s ->   491.93s] And then the subsequent idea of taking a position
+[  491.93s ->   494.21s] based on violations of these assumptions
+[  494.21s ->   497.29s] is how we can, in turn, make some money.
+[  497.39s ->   500.19s] So let's take a look at these different arguments here.
+[  500.71s ->   502.71s] Let's take a look at delta hedging
+[  502.71s ->   505.75s] in the context of a short European call position.
+[  505.75s ->   508.73s] I'm going to sell a European call option,
+[  509.21s ->   512.39s] which means my net delta position is going to be negative.
+[  512.99s ->   515.25s] In other words, if the option price increases,
+[  515.59s ->   517.83s] this is good for the guy who holds the option.
+[  517.97s ->   519.65s] He wants the option price to go up.
+[  520.15s ->   522.67s] I don't necessarily want the option price to go up.
+[  523.09s ->   524.07s] If it does go up,
+[  524.11s ->   526.99s] that means the value of my option is going to decrease.
+[  527.45s ->   528.85s] Now, what can I do
+[  528.85s ->   533.27s] if I know that if the option was to go down in value
+[  533.27s ->   536.23s] when there's an increase in the underlying price?
+[  538.30s ->   540.30s] Well, I can go ahead and buy stock.
+[  540.56s ->   541.88s] If I buy stock,
+[  542.30s ->   544.88s] then if the underlying asset increases,
+[  545.28s ->   547.10s] I'll make money on my stock,
+[  547.26s ->   549.56s] even though I lose money on my option.
+[  550.60s ->   552.84s] So how much stock should I buy?
+[  553.42s ->   557.36s] Well, I'm going to buy delta shares of stock.
+[  557.36s ->   560.88s] This is going to ensure that they perfectly offset.
+[  561.60s ->   563.96s] So if I buy delta shares of stock,
+[  564.32s ->   566.92s] my option price is going to go down by delta.
+[  567.44s ->   571.06s] My stock price will go up by delta and vice versa.
+[  573.04s ->   574.84s] Now, of course, of course,
+[  575.10s ->   581.23s] we see that delta and the option price
+[  581.23s ->   583.35s] are nonlinear functions,
+[  583.65s ->   585.93s] which means our linear approximation
+[  585.93s ->   587.61s] is going to get worse and worse
+[  587.61s ->   590.91s] as we move away from our initial point
+[  590.91s ->   592.63s] in which we are hedging about.
+[  593.27s ->   595.93s] Therefore, we must continue to rebalance the hedge
+[  595.93s ->   597.09s] throughout the life of the option.
+[  597.63s ->   599.27s] This is the continuous time
+[  599.27s ->   600.95s] or the continuous hedging argument
+[  600.95s ->   602.91s] made for the Black-Scholes equation,
+[  603.09s ->   605.15s] which we cannot do.
+[  605.25s ->   607.13s] So we will do it on a daily basis.
+[  607.87s ->   608.97s] Then what we will do is
+[  608.97s ->   611.25s] we will calculate the P&L from our stock position
+[  611.25s ->   615.27s] and then take a look at the ending P&L
+[  615.27s ->   617.23s] in a variety of different situations.
+[  617.61s ->   620.01s] So I have this function to simulate a delta hedge.
+[  620.43s ->   621.19s] I'm going to run it.
+[  621.33s ->   624.25s] I'm going to run it under this parameter set here.
+[  624.53s ->   627.35s] So I have a spot price of 100,
+[  627.59s ->   628.41s] strike of 100,
+[  629.01s ->   630.39s] time to maturity of a year,
+[  630.93s ->   632.15s] 5% risk-free rate,
+[  632.81s ->   633.71s] 20% vol,
+[  634.47s ->   636.59s] and then an 8% drift.
+[  637.15s ->   639.61s] Our option price is going to be 10.45.
+[  639.61s ->   643.81s] Our initial delta is roughly 64%.
+[  643.81s ->   646.87s] And here is one possible outcome.
+[  647.17s ->   648.71s] This is one possible outcome.
+[  649.27s ->   653.05s] Our final P&L from delta hedging is 44.05.
+[  653.51s ->   655.07s] If I was to run this again,
+[  655.97s ->   659.07s] this is going to be another one of 44.05,
+[  659.41s ->   662.76s] 44.03.
+[  664.52s ->   666.90s] Here we have accumulated negative P&L.
+[  666.98s ->   669.16s] We have negative 55.95.
+[  669.82s ->   670.80s] You get the gist.
+[  670.80s ->   673.40s] So every time we conduct a delta hedge,
+[  673.44s ->   675.62s] what we're doing is we are going to say,
+[  675.76s ->   676.84s] on this day today,
+[  677.28s ->   680.24s] let us purchase delta shares of stock.
+[  680.84s ->   683.98s] Tomorrow, I'm going to buy or sell stock
+[  683.98s ->   688.10s] to ensure that I hold delta shares on that day.
+[  688.50s ->   689.96s] And I'm going to continue to do that
+[  689.96s ->   691.16s] throughout the life of the option.
+[  691.68s ->   694.06s] And then at the end of the option's life,
+[  694.22s ->   696.86s] I'm going to accumulate a P&L from the stock
+[  696.86s ->   698.24s] and the option position.
+[  698.24s ->   701.90s] And that may be positive or negative.
+[  703.06s ->   703.20s] Okay.
+[  703.28s ->   706.72s] So knowing that each time we simulate a stock price path,
+[  706.78s ->   708.42s] according to the geometric Brownian motion
+[  708.42s ->   709.72s] and conducted delta hedge,
+[  709.88s ->   711.56s] we accumulate a P&L.
+[  711.78s ->   714.28s] What happens if we repeat the simulation
+[  714.28s ->   715.78s] a large number of times,
+[  715.88s ->   717.12s] say 10,000 times,
+[  717.12s ->   719.60s] and then take the average P&L?
+[  719.84s ->   721.18s] Well, it turns out,
+[  721.18s ->   724.90s] depending on how frequently we delta hedge,
+[  724.90s ->   726.28s] that is on a daily basis,
+[  726.44s ->   727.06s] twice a day,
+[  727.40s ->   728.44s] so on and so forth,
+[  728.58s ->   729.90s] we are going to get a price
+[  729.90s ->   731.46s] that closer and closer reflects
+[  731.46s ->   733.96s] that of the Black Scholes model price.
+[  734.32s ->   735.16s] In other words,
+[  735.28s ->   736.86s] the model price is 1045.
+[  737.32s ->   740.46s] If I was to repeat this daily delta hedge,
+[  742.14s ->   743.02s] in this case,
+[  743.08s ->   745.48s] I get a mean P&L of 5.72.
+[  746.99s ->   749.37s] If I was to increase the frequency of hedging,
+[  749.37s ->   751.45s] you can see that the mean P&L
+[  751.45s ->   753.05s] is going to start to approach
+[  753.05s ->   755.57s] that Black Scholes option price.
+[  755.95s ->   756.93s] In other words,
+[  757.49s ->   758.97s] the expected P&L,
+[  759.19s ->   761.93s] should we be hedging in a continuous sense,
+[  762.45s ->   765.93s] is going to be the Black Scholes model price in general.
+[  766.07s ->   769.55s] So we can expect to be just collecting the premium
+[  769.55s ->   771.55s] for the option price.
+[  771.87s ->   774.79s] We are not going to earn any excess P&L,
+[  774.79s ->   776.89s] should we be selling that option short.
+[  777.59s ->   778.05s] In essence,
+[  778.05s ->   779.59s] this is connecting all the dots
+[  779.59s ->   783.53s] for it to be the risk-neutral price.
+[  784.33s ->   787.11s] So how can we use this idea to actually trade?
+[  787.51s ->   787.83s] Well,
+[  788.25s ->   789.41s] we have to have an opinion
+[  789.41s ->   791.49s] on the parameter set
+[  791.49s ->   793.09s] that we're assuming to be constant.
+[  793.85s ->   796.25s] So in our current simulation,
+[  796.55s ->   798.09s] we have the spot price,
+[  798.55s ->   799.19s] the strike price,
+[  799.29s ->   800.13s] the time to maturity,
+[  800.13s ->   801.39s] the risk-free rate,
+[  801.53s ->   803.71s] and the volatility term.
+[  804.45s ->   806.19s] So if I had an opinion on volatility,
+[  806.37s ->   807.97s] let's say that right now
+[  807.97s ->   811.01s] NVIDIA is trading at 40% implied vol.
+[  811.77s ->   814.47s] And I think that the realized vol
+[  814.47s ->   816.79s] is going to be substantially less
+[  816.79s ->   819.81s] than the current market implied volatility,
+[  819.99s ->   821.55s] which is quite probable.
+[  821.89s ->   823.15s] There are papers on the idea
+[  823.15s ->   824.83s] of the volatility risk premium.
+[  825.19s ->   828.01s] I think AQR wrote one of the first on those.
+[  828.95s ->   831.05s] So clearly there's a way
+[  831.05s ->   833.31s] that we can capitalize on this idea to make money.
+[  833.31s ->   834.35s] Should we have an opinion
+[  834.35s ->   837.17s] that the volatility realized is going to be less,
+[  837.17s ->   839.63s] there's going to be some sort of theoretical,
+[  839.87s ->   840.27s] statistical,
+[  840.47s ->   841.33s] whatever you want to call it,
+[  841.43s ->   841.73s] edge.
+[  841.99s ->   844.75s] So how can we simulate to reflect this?
+[  844.83s ->   846.69s] Well, essentially what I'm going to do
+[  846.69s ->   849.03s] is I am going to fix
+[  849.03s ->   851.11s] the parameter set
+[  851.11s ->   853.79s] for the geometric brownie emission
+[  853.79s ->   856.07s] under the condition of my opinion.
+[  856.33s ->   857.29s] In other words,
+[  857.33s ->   859.41s] I'm going to simulate the stock price
+[  859.41s ->   860.53s] with the idea
+[  860.53s ->   861.73s] that we are going to achieve
+[  861.73s ->   863.53s] a lower implied volatility,
+[  863.99s ->   864.39s] or I'm sorry,
+[  864.39s ->   866.51s] a lower realized volatility
+[  866.51s ->   868.67s] throughout the life of the option.
+[  869.37s ->   869.77s] However,
+[  869.77s ->   871.89s] I will price the Black-Scholes option
+[  871.89s ->   874.51s] with the current market implied volatility.
+[  875.09s ->   875.77s] So in other words,
+[  875.81s ->   877.01s] I'm going to collect a premium
+[  877.01s ->   879.55s] based on that 40% implied vol today,
+[  879.55s ->   881.63s] and then I'm going to realize
+[  881.63s ->   882.87s] stock price paths
+[  882.87s ->   884.25s] that actually follow
+[  884.25s ->   886.37s] something with less vol,
+[  886.49s ->   888.27s] maybe 10, 20% vol.
+[  888.93s ->   890.23s] And on average,
+[  890.29s ->   890.77s] what you'll see
+[  890.77s ->   891.45s] is there's going to be
+[  891.45s ->   892.87s] some sort of discrepancy
+[  892.87s ->   894.23s] that we can capitalize on
+[  894.23s ->   895.27s] to make money.
+[  895.45s ->   896.53s] So in other words,
+[  896.57s ->   897.31s] we should be seeing
+[  897.31s ->   898.69s] a theoretical price
+[  898.69s ->   901.95s] that is the expected P&L
+[  901.95s ->   903.91s] at the end of the simulations
+[  903.91s ->   905.41s] that is larger than
+[  905.41s ->   907.75s] the original option price
+[  907.75s ->   910.19s] that we collected a premium for.
+[  910.85s ->   911.51s] So let's go ahead
+[  911.51s ->   912.39s] and check this out
+[  912.39s ->   914.17s] if I was to run this simulation here.
+[  925.05s ->   926.41s] 23.50,
+[  926.41s ->   927.21s] that seems like
+[  927.21s ->   928.79s] it's significantly more
+[  928.79s ->   931.37s] than what I had going on
+[  931.37s ->   933.29s] back over here.
+[  933.61s ->   934.91s] So in essence,
+[  934.97s ->   935.99s] what we're doing is
+[  935.99s ->   936.97s] we are selling
+[  936.97s ->   938.61s] a European call option
+[  938.61s ->   939.93s] for more than
+[  939.93s ->   940.87s] it's actually worth.
+[  941.55s ->   942.79s] And we are collecting
+[  942.79s ->   943.83s] a pretty penny
+[  943.83s ->   945.59s] based on the alternative.
+[  945.59s ->   946.07s] That is,
+[  946.15s ->   946.73s] we're realizing
+[  946.73s ->   947.85s] a price path
+[  947.85s ->   949.25s] or a series of price paths
+[  949.25s ->   951.23s] that have the same parameters
+[  951.23s ->   953.87s] set as the Black-Scholes model,
+[  954.13s ->   955.21s] which was used to price
+[  955.21s ->   956.91s] the premium that we collected.
+[  957.25s ->   958.07s] In this case,
+[  958.07s ->   958.51s] we're saying,
+[  958.63s ->   958.85s] hey,
+[  959.27s ->   960.17s] those price paths
+[  960.17s ->   961.71s] are not going to be realized
+[  961.71s ->   963.77s] according to the parameter set
+[  963.77s ->   965.31s] that the model
+[  965.31s ->   967.17s] is pricing the options at.
+[  967.65s ->   968.41s] So in other words,
+[  968.43s ->   969.13s] we can collect
+[  969.13s ->   970.79s] more money right now
+[  970.79s ->   972.13s] than we should be allowed
+[  972.13s ->   973.99s] to do theoretically
+[  973.99s ->   977.11s] because when the option expires,
+[  977.43s ->   978.91s] we are not going to realize
+[  978.91s ->   980.05s] as much volatility
+[  980.05s ->   981.59s] as the market thinks.
+[  982.21s ->   983.39s] And that is how
+[  983.39s ->   984.21s] you can capitalize
+[  984.21s ->   985.55s] on an opinion
+[  985.55s ->   986.69s] on volatility
+[  986.69s ->   990.13s] using the idea
+[  990.13s ->   991.63s] of delta hedging
+[  991.63s ->   994.13s] and the Black-Scholes model.
+[  994.67s ->   996.05s] So what's the big picture
+[  996.05s ->   996.91s] key takeaway
+[  996.91s ->   998.29s] of this video?
+[  998.93s ->   999.67s] It's that
+[  999.67s ->  1000.53s] any time
+[ 1000.53s ->  1001.35s] that you think
+[ 1001.35s ->  1002.83s] that the realization
+[ 1002.83s ->  1004.63s] of a path
+[ 1004.63s ->  1005.75s] or a series of paths
+[ 1005.75s ->  1006.53s] is going to have
+[ 1006.53s ->  1008.01s] a different parameter set
+[ 1008.01s ->  1009.23s] that is your opinion
+[ 1009.23s ->  1010.07s] is the parameters
+[ 1010.07s ->  1010.93s] should be higher,
+[ 1011.05s ->  1011.73s] they should be lower,
+[ 1011.83s ->  1012.71s] they will be higher,
+[ 1012.71s ->  1013.57s] they will be lower,
+[ 1014.13s ->  1015.01s] then according
+[ 1015.01s ->  1016.41s] to this argument,
+[ 1016.99s ->  1017.91s] you can capitalize
+[ 1017.91s ->  1019.11s] on those opinions
+[ 1019.11s ->  1021.45s] by conducting a hedge.
+[ 1021.55s ->  1021.89s] That is,
+[ 1021.95s ->  1023.65s] you can sell an option today
+[ 1023.65s ->  1024.59s] for more than you think
+[ 1024.59s ->  1025.07s] it's worth
+[ 1025.07s ->  1026.95s] or buy an option today
+[ 1026.95s ->  1027.95s] for less than you think
+[ 1027.95s ->  1028.43s] it's worth.
+[ 1028.91s ->  1030.19s] And should you do this
+[ 1030.19s ->  1031.19s] a large quantity
+[ 1031.19s ->  1032.37s] of times over time,
+[ 1032.47s ->  1033.31s] you will accumulate
+[ 1033.31s ->  1034.91s] a positive expected value
+[ 1034.91s ->  1036.81s] and P&L for your firm.
+[ 1036.81s ->  1038.81s] I hope you enjoyed
+[ 1038.81s ->  1039.41s] this video.
+[ 1040.09s ->  1040.91s] Thank you so much
+[ 1040.91s ->  1041.49s] for watching
+[ 1041.49s ->  1043.01s] and I will see you
+[ 1043.01s ->  1044.07s] in the next one.

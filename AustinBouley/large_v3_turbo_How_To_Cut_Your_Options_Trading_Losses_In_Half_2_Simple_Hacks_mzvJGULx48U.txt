@@ -1,0 +1,61 @@
+[    0.04s ->     3.36s] In this video, I'm going to show you how to cut your losses in half.
+[    3.66s ->     9.74s] If you've ever experienced a huge loss, like a $10,000 or $15,000 loss overnight on there
+[    9.74s ->    11.38s] with you, the same thing has happened to me.
+[   11.54s ->    15.20s] Option selling is amazing, it's consistent, but you can have a lot of large losses.
+[   15.32s ->    19.00s] I'm going to show you two small tweaks you can make to your trading to decrease your
+[   19.00s ->    21.44s] risk and cut your losses in half dramatically overnight.
+[   21.68s ->    23.90s] So let me show you exactly what those are.
+[   24.26s ->    27.66s] Number one, what we're going to do is we're going to be looking at understanding what
+[   27.66s ->    28.86s] volatility is.
+[   28.86s ->    32.94s] So again, VIX is something that measures volatility.
+[   33.18s ->    38.46s] When VIX goes up, us as option sellers, our trades lose money.
+[   38.74s ->    41.64s] Okay, so when VIX spikes, we get in trouble.
+[   41.96s ->    47.54s] So the easiest way to decrease our losses is to make sure we control or manage VIX risk.
+[   47.88s ->    49.96s] And there are two simple ways to do this.
+[   50.26s ->    56.80s] Number one is by pushing out the DTE and going out further in time.
+[   56.80s ->    60.24s] Now you can see this if you use a Greek called Vega.
+[   60.58s ->    66.62s] If you go to a 45 DTE options contract, you can see that Vega might be somewhere around
+[   66.62s ->    66.96s] 100.
+[   67.48s ->    74.02s] But if you go out to a 90 DTE contract, then Vega could be closer to something like 50.
+[   74.32s ->    78.78s] So again, Vega shows you how much risk you have compared to VIX.
+[   78.78s ->    83.86s] So if VIX is impacted, this shows you how directly your option will be impacted as well.
+[   84.20s ->    90.40s] And so just by going out further in time, you have way less risk from a volatility perspective,
+[   90.40s ->    94.30s] which will allow you to cut your losses in half, will give you more time to figure out
+[   94.30s ->    97.98s] what's going on in the trade, to be able to manage it, roll it, whatever it is you want
+[   97.98s ->    98.30s] to do.
+[   98.76s ->   102.94s] And so my first helpful tip here is to go further out in time.
+[  102.94s ->   108.00s] Now, in addition to volatility risk being lower, the further out in time you go, you
+[  108.00s ->   109.54s] also get two other benefits.
+[  109.72s ->   113.34s] Number one, your win rate goes up because you have more time to be right.
+[  113.88s ->   119.96s] And number two, you have the ability to make more money because you're collecting more credit,
+[  120.02s ->   121.22s] you're collecting more premium.
+[  121.22s ->   125.08s] And that as a result is allowing you to make more money on the trade.
+[  125.46s ->   130.98s] So the first way we can decrease our risk massively is just by going out further in time.
+[  131.06s ->   134.02s] So if you're trading 45 DTE, you can keep the strategy the exact same.
+[  134.28s ->   135.60s] Just go out to a 90 DTE.
+[  136.34s ->   142.26s] Number two thing we can do to decrease VIX risk a ton is by changing our deltas.
+[  142.32s ->   142.56s] Okay.
+[  142.86s ->   147.74s] If you ever follow Tasty Live and things like that, they push you to do something like a
+[  147.74s ->   149.76s] 30 to 16 delta mark.
+[  149.76s ->   154.82s] Now, again, the 30 to 16 delta mark may have something like 100 vega, but if you go something
+[  154.82s ->   159.04s] like a 10 delta instead, you're going to be closer to 75 delta.
+[  159.34s ->   165.24s] So you can basically cut your vega risk or your volatility risk, you're losing risk and
+[  165.24s ->   169.36s] basically by a quarter just by changing the delta.
+[  169.88s ->   173.50s] And so again, when you combine these two things together, you go further out in time, like
+[  173.50s ->   178.60s] a 90 to 120 DTE delta, and you make sure the options are selling around the 10 delta
+[  178.60s ->   185.84s] mark, you take your volatility risk from about 100 down to 50, aka you half your risk.
+[  185.84s ->   189.16s] You can go check out the options chain and see this yourself.
+[  189.50s ->   193.72s] But if you're trying to decrease your risk, number one, have a trading plan.
+[  193.88s ->   198.58s] Always know when you're going to enter, when you're going to exit, and what the plan is,
+[  198.62s ->   202.18s] and make sure you're trading in the right markets at the right time.
+[  202.18s ->   206.74s] But in addition to that, if you're looking for some extra safety, make sure you're controlling
+[  206.74s ->   209.50s] VIX risk, which is number one, going out further in time.
+[  209.58s ->   211.02s] Number two, using a 10 delta.
+[  211.34s ->   214.06s] If you want to do number three, you can even throw in a VIX hedge.
+[  214.36s ->   216.04s] But again, this is probably going to cost you some money.
+[  216.10s ->   221.04s] But a VIX hedge is simply just buying a put, which means when VIX spikes, option prices
+[  221.04s ->   221.64s] will go up.
+[  221.86s ->   225.12s] You'll make more on the put, and then you'll be able to offset risk as well.
+[  225.12s ->   231.90s] Anyways, those are the two and bonus one trick you can do to cut your losses in half as an
+[  231.90s ->   235.76s] option seller overnight by changing nothing but these two small tweaks.
+[  236.02s ->   238.92s] All right, guys, I hope you enjoyed this video, and I'll see you in the next one.

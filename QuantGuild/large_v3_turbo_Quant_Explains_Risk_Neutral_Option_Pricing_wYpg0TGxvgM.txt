@@ -1,0 +1,512 @@
+[    1.34s ->     7.04s] Let's say that you and I are trying to make a market on an options contract.
+[    7.18s ->    14.94s] You think that the underlying asset is going to the moon, and I don't believe that to be the case.
+[   15.44s ->    21.56s] How can we come to an agreement on what the price of that contract should be?
+[   21.56s ->    30.18s] What is the fair price for that contract if we have two different beliefs about the underlying asset?
+[   30.18s ->    35.96s] Hey guys, Roman here, quantitative researcher and trader, founder of QuantGuild.
+[   36.16s ->    46.44s] Today, we're going to answer that question and discuss the framework used to evaluate the fair price of these derivatives contracts.
+[   46.44s ->    48.92s] We're going to talk about European options.
+[   48.92s ->    55.70s] We're going to talk about this idea of the P versus the Q measure, this idea of risk-neutral pricing,
+[   55.70s ->    64.30s] and what the basis is for it, both in the academic literature and in practice.
+[   64.44s ->    69.54s] Anytime we make a market, we're playing a game of statistics applied to the real world.
+[   69.54s ->    75.98s] We don't have those nice classroom guarantees, stationarity, those nice asymptotic results.
+[   76.48s ->    80.58s] We never actually know what sample path we're going to walk.
+[   80.58s ->    86.74s] Unlike any time I release a new QuantGuild video, you know you'll have access to a Jupyter Notebook.
+[   86.74s ->    89.62s] This Jupyter Notebook will be linked in the description below.
+[   89.62s ->    94.90s] I'll also post it to the QuantGuild library on GitHub, where you can find all of my Jupyter Notebooks
+[   94.90s ->    99.86s] and associated YouTube videos, along with all of the source code for my Quant builds.
+[   99.86s ->   107.64s] At the top of this Jupyter Notebook, you'll notice some related QuantGuild videos applying probability and statistics to finance and trading.
+[  107.64s ->   115.48s] This idea of Monte Carlo simulation and why it works, the law of large numbers, stochastic differential equations,
+[  115.62s ->   122.08s] specifically for quant finance, the central limit theorem and its limitations in practice,
+[  122.08s ->   129.26s] why it is QuantModels break, that is due to model misspecification and misparameterization,
+[  129.26s ->   135.38s] which we will discuss herein, Brownian Motion, again, specifically for quant finance,
+[  135.58s ->   139.80s] and the five papers that built modern quant finance.
+[  139.80s ->   148.06s] If you're unfamiliar with any of these ideas, I highly recommend that you check these videos out first before tackling one like this.
+[  148.20s ->   150.64s] Moreover, these videos certainly take a lot of effort to create,
+[  150.64s ->   154.94s] so if you'd like to help support the channel so I can continue to create videos just like this one,
+[  155.00s ->   156.68s] please like, comment, subscribe, share.
+[  156.68s ->   160.00s] It helps me out tremendously. It is always greatly appreciated.
+[  160.26s ->   166.14s] And if you'd like to master your quantitative skills, check out QuantGuild.com.
+[  166.24s ->   170.68s] I am so stoked to announce a massive update to QuantGuild,
+[  171.30s ->   175.90s] not only with the release of our latest member course, QuantStats,
+[  175.90s ->   182.62s] but also with the release of masterclasses and a new live class session.
+[  183.14s ->   186.50s] If you're interested in learning more or seeing some student testimonials
+[  186.50s ->   193.30s] about how they leveraged the technical skills they learned on QuantGuild to acquire trading and market-making roles,
+[  193.82s ->   196.06s] check out QuantGuild.com.
+[  196.10s ->   201.00s] Without further ado, let's get started with this idea of risk-neutral options pricing
+[  201.00s ->   204.40s] by discussing European option contracts.
+[  204.56s ->   209.66s] These contracts are typically used as hedging or speculative instruments.
+[  210.36s ->   212.92s] And if you recall, we're trying to make a market.
+[  213.44s ->   216.68s] You think the stock price is going to go to the moon?
+[  217.18s ->   218.60s] I really don't think so.
+[  219.02s ->   222.08s] What should we agree to transact at?
+[  222.56s ->   227.98s] Well, let's get started by actually looking at the payoff of one of these contracts.
+[  227.98s ->   229.76s] Now, this is a simple payoff.
+[  229.92s ->   235.28s] This idea will extend to more complicated payoffs, but we will discuss that later on.
+[  235.36s ->   238.52s] For now, let's take a look at the call and the put.
+[  239.08s ->   244.78s] The payoff of any of these contracts is known at maturity.
+[  245.52s ->   248.10s] If we take a look at these different functions here,
+[  248.46s ->   252.58s] we can see it's just a function of the spot price at time capital T
+[  252.58s ->   258.00s] and the strike price that goes for both the call and the put.
+[  258.92s ->   260.66s] But what's the problem here?
+[  260.66s ->   266.30s] We don't know what the spot price is going to be at time capital T.
+[  266.42s ->   272.08s] If we did, we would just plug it into this function and we would get a payoff.
+[  272.36s ->   275.14s] This is what makes it statistical in nature.
+[  275.32s ->   278.00s] There's a degree of uncertainty here.
+[  278.00s ->   283.46s] And I have a simulation that really illustrates this idea nicely.
+[  283.76s ->   290.14s] You can see that the stock price path is going to wander until time capital T
+[  290.14s ->   296.10s] and we don't actually get to realize a payoff throughout the life of this contract.
+[  296.66s ->   299.68s] You can see here the stock price goes down.
+[  299.88s ->   307.26s] And if the contract expired, then we would be right here in the payoff function.
+[  307.26s ->   315.06s] As the stock price continues to move, you'll notice at some points it's above the strike price.
+[  315.56s ->   319.32s] And if the contract expired there, we would receive a payoff.
+[  319.68s ->   323.86s] But at maturity, the stock price expires underneath it.
+[  324.18s ->   329.06s] And this particular sample path realizes a zero payoff.
+[  329.36s ->   335.16s] So how should we price this payoff potential?
+[  335.16s ->   342.70s] If we're trying to transact, then what should we consider the fair price of the contract
+[  342.70s ->   348.72s] if we both have different opinions about the trajectory of the underlying asset?
+[  348.96s ->   353.08s] To answer this question, we look toward stochastic modeling.
+[  353.44s ->   360.10s] Before we even consider pricing, we need to build a model capable of assessing the uncertainty
+[  360.10s ->   363.84s] of the underlying asset at time capital T.
+[  364.46s ->   367.10s] Yes, these models are wrong.
+[  367.58s ->   372.78s] There are risk dynamics that aren't captured by them, even more intricate models.
+[  373.00s ->   375.98s] But we will discuss that later on.
+[  376.16s ->   379.48s] For now, let's take a look at a very simple stochastic model.
+[  379.58s ->   381.46s] We have a geometric Brownian motion here.
+[  381.46s ->   387.10s] We can say that the underlying asset is going to follow these dynamics.
+[  387.10s ->   394.42s] And we can simulate this process using a very simple discretization, the Euler-Mariama discretization,
+[  394.42s ->   401.38s] to determine where the stock price might be at time capital T.
+[  401.78s ->   406.86s] But what do you notice about this simple stochastic model?
+[  407.00s ->   410.52s] Well, we have parameters to estimate.
+[  410.52s ->   415.14s] We need to estimate mu and sigma.
+[  415.66s ->   421.52s] This is going to be the drift and the volatility of the process.
+[  422.06s ->   427.20s] Now, if you recall, you think the stock price is going to the moon.
+[  427.36s ->   429.58s] I really don't think it will.
+[  429.72s ->   431.76s] So what is that going to impact?
+[  432.06s ->   435.24s] Well, that's going to impact our drift.
+[  435.24s ->   450.08s] If I don't think the stock price is going to go up all that much, I might pick a drift value of 0.05, whereas you might pick a drift value of 0.2.
+[  450.80s ->   459.06s] So that is arbitrarily going to change where the stock price is capable of ending up.
+[  459.06s ->   466.40s] And I have a very simple animation here to illustrate this idea.
+[  466.40s ->   476.32s] We can see with a low parameterization of mu and sigma, we have a very, very shallow trajectory.
+[  476.78s ->   489.10s] Whereas with a higher trajectory of mu and sigma, we definitely have a higher possible trajectory for the stock price at time capital T.
+[  489.10s ->   493.60s] But also notice here, the volatility is arbitrarily higher.
+[  494.22s ->   507.82s] And if we take a look at the distribution of possible stock prices at time capital T, remember, that's what we are interested in for this particular contract, the distribution of stock prices at time capital T.
+[  507.82s ->   520.58s] We don't know what the price is at time capital T, so the best we can do is come up with a distribution representing possible states of the world, and that is effectively what we have here.
+[  521.42s ->   524.64s] Now, which one is correct?
+[  525.50s ->   535.60s] And this gets into the idea of parameter estimation, misparameterization, and model misspecification.
+[  535.60s ->   551.50s] In the classroom, if we assume that the stock price actually does follow a geometric Brownian motion, then we can use a variety of statistical techniques available to us to estimate those parameters.
+[  552.14s ->   559.68s] So, for example, let's say that I assume data, that is the stock prices, are actually generated via a geometric Brownian motion.
+[  559.68s ->   569.56s] If I apply maximum likelihood estimation for mu and sigma, then I will get these two estimators.
+[  570.12s ->   576.24s] And I then have all of these nice asymptotic guarantees of the MLE.
+[  576.98s ->   579.08s] But what is the problem there?
+[  579.74s ->   585.26s] That's only true if we generate the data from a geometric Brownian motion.
+[  585.26s ->   592.20s] In practice, the stock price doesn't actually perfectly follow those dynamics.
+[  592.90s ->   600.50s] To illustrate this idea, I want to show you two different parameter estimates.
+[  601.10s ->   607.14s] For example, what if we estimated parameters during a bull run?
+[  607.82s ->   611.00s] Well, we'll have a higher value from you, won't we?
+[  611.00s ->   615.98s] Maybe the trajectory of our stock price is going to look something like this.
+[  616.42s ->   619.16s] You can see a whole bunch of sample paths here on the right.
+[  619.74s ->   623.86s] And the ones in green expire above the strike price.
+[  624.10s ->   627.74s] And the ones in red expire below the strike price.
+[  628.34s ->   634.56s] You can see for this particular simulation, if we estimated parameters during a bull run,
+[  634.56s ->   642.68s] then more of the stock prices are going to end above the strike price.
+[  643.22s ->   653.27s] We likely would say if the market will evolve this way, the option price should probably be higher, right?
+[  653.35s ->   659.83s] Because there's a higher likelihood of this stock ending above the strike price.
+[  659.95s ->   663.99s] And then you'll actually be able to realize the payoff of this call option.
+[  663.99s ->   677.62s] Okay, but what if we estimated instead the parameters from a period of distress, not a bull run, but the financial crisis or COVID?
+[  678.64s ->   683.86s] Well, the trajectory of the stock price is going to be completely different.
+[  683.98s ->   688.84s] You can see here all of the paths that end below the strike price are in red.
+[  689.00s ->   692.70s] And all the paths that end above the strike price are in green.
+[  692.70s ->   700.86s] Here we can see significantly more and below the strike price, realizing a zero payoff.
+[  701.40s ->   704.48s] In this case, we would likely say what?
+[  704.86s ->   709.92s] If the market were to evolve in this way, we should pay less for the option.
+[  710.06s ->   717.24s] There's less opportunity, less potential to realize that cash flow, that payoff at time capital T.
+[  717.24s ->   723.50s] Okay, well, this is directly relevant to us making a market.
+[  723.84s ->   730.42s] If you think the stock price is going sky high, maybe it's parameterized in this capacity.
+[  730.52s ->   735.58s] And if I don't think so, maybe it's parameterized in this capacity.
+[  735.58s ->   751.20s] Okay, well, before we actually discuss anything to do with the option price, we need to talk about the reality of modeling and parameter estimation.
+[  751.20s ->   763.58s] In reality, when it comes to modeling the real world, parameter estimation, misparameterization, and model misspecification breaks models.
+[  763.94s ->   771.82s] This is something that is rarely discussed explicitly or in the classroom, which is why I think it's so important to talk about.
+[  771.82s ->   780.28s] Now, anytime we build a model, right, we don't know what the true dynamics of the process or whatever it is we're trying to model are.
+[  780.64s ->   785.02s] If we did, we wouldn't be building a model in the first place.
+[  785.20s ->   789.60s] So there are a few different risks associated with building a model.
+[  789.76s ->   794.82s] We have model misspecification and model misparameterization.
+[  794.82s ->   804.16s] Misspecification is saying, hey, stock prices evolve as a geometric Brownian motion when in reality they don't.
+[  804.70s ->   808.32s] That is misspecified for the process we're trying to model.
+[  808.44s ->   811.22s] There are jumps, there's memory, so on and so forth.
+[  812.90s ->   818.66s] Misparameterization arises when we have a model, but then we pick parameters.
+[  818.66s ->   829.30s] Like, think about for our geometric Brownian motion, we pick parameters for mu and sigma, maybe using some estimator like this, that are incorrect.
+[  830.30s ->   835.26s] All right, that's the difference between misparameterization and misspecification.
+[  836.24s ->   839.86s] And the implications are absolutely massive.
+[  840.40s ->   846.59s] Now, it's worth noting, when we build a model, based on whatever it is we're modeling,
+[  846.59s ->   852.79s] some models will break more violently than others, some break faster than others.
+[  853.31s ->   858.07s] Sometimes it's not just a misparameterization, but model misspecification.
+[  858.71s ->   867.29s] This applies not just to pricing, modeling stock returns, but this generalizes across model development.
+[  867.77s ->   871.95s] Facial recognition, language modeling, the list goes on.
+[  871.95s ->   880.05s] I have a really nice animation here to illustrate the idea of misparameterization and misspecification.
+[  880.41s ->   884.29s] What I have here on the left is our model.
+[  884.91s ->   891.71s] So effectively, you can think of this as, okay, I've selected a model and I have estimated parameters.
+[  891.85s ->   897.03s] So maybe I select a geometric Brownian motion and I select mu and sigma.
+[  897.03s ->   901.89s] On the right here, I have the true market process.
+[  902.13s ->   913.01s] What I want you to notice as I go about playing this animation here for you is the way that the stock prices evolve for our model
+[  913.01s ->   921.85s] do not nearly match the dynamics of what we consider to be the true market process on the right.
+[  922.09s ->   926.15s] The reason for that is because the model on the left is too simple.
+[  926.15s ->   931.07s] It does not capture the dynamics that we observe in the market.
+[  931.25s ->   936.33s] Stock prices have jumps, stochastic volatility, the list goes on.
+[  936.75s ->   938.29s] This is a component of risk.
+[  938.39s ->   940.99s] We can't just model everything.
+[  941.33s ->   946.13s] If we had the true process, we wouldn't need to build a simple model.
+[  946.43s ->   948.17s] This is a really important idea.
+[  948.37s ->   955.13s] And in the context of risk-neutral pricing, this gets into the idea of unhedgable risk.
+[  955.13s ->   963.07s] And we're going to talk about that when we talk about inferring a risk-neutral measure from the market.
+[  963.29s ->   970.29s] But before we get there, this is why modeling is such a difficult task.
+[  970.51s ->   976.27s] We're not at risk of just model misspecification like we saw here.
+[  976.27s ->   983.09s] But if we have a reasonable model, we're also at risk of misparameterization.
+[  983.87s ->   990.97s] That is, if I have a stochastic model that maybe is a reasonable representation of the real world,
+[  991.15s ->   993.21s] how do I pick parameters for it?
+[  993.51s ->   997.17s] There's no way those parameters are constant over time.
+[  997.55s ->  1002.25s] They're going to be completely different based on different regimes, based on different factors.
+[ 1002.25s ->  1010.05s] There's so much that's going to go into that joint distribution actually producing the model parameter value.
+[ 1010.19s ->  1011.59s] It's going to change over time.
+[ 1012.19s ->  1020.57s] In other words, if I have the same model during COVID versus the same model during a massive bull run,
+[ 1021.03s ->  1026.47s] there's no way the parameterization of each of those models is going to be the same.
+[ 1026.47s ->  1036.97s] So in the context of our pricing problem, we'll digress from the data science problem that is model misspecification and misparameterization
+[ 1036.97s ->  1043.31s] and now discuss this idea of choosing parameters for our stochastic model.
+[ 1043.41s ->  1053.61s] So if we really understand this idea of misparameterization as a risk, how should we choose our model's parameters?
+[ 1053.61s ->  1058.11s] If you recall, we were dealing with a geometric Brownian motion.
+[ 1058.31s ->  1062.59s] We have this mu term and this sigma term, our drift and our volatility.
+[ 1063.37s ->  1064.95s] How should we pick those?
+[ 1065.03s ->  1066.21s] We're trying to make a market.
+[ 1066.79s ->  1068.35s] You think the price is going way up.
+[ 1068.43s ->  1070.17s] I really don't think so.
+[ 1070.25s ->  1072.89s] So what is a fair price for this contract today?
+[ 1072.89s ->  1083.61s] Well, this gets into the idea of risk neutrality and the change of measure.
+[ 1083.77s ->  1090.09s] That is the real world measure P and the risk neutral measure Q.
+[ 1090.31s ->  1094.97s] I find this is where a lot of students get confused because of the terminology
+[ 1094.97s ->  1102.59s] and the clashing of all of these different subjects, the statistics, the finance, so on and so forth.
+[ 1102.59s ->  1107.43s] But a change of measure is just a change in distribution.
+[ 1108.25s ->  1114.59s] And if we think back to what a distribution is, it's just going to be a set of possible outcomes
+[ 1114.59s ->  1122.13s] with associated probabilities or likelihoods, depending on if we're dealing with a discrete or continuous random variable.
+[ 1122.13s ->  1123.93s] So here it's continuous.
+[ 1124.17s ->  1127.25s] A change of measure is just a change in distribution.
+[ 1127.95s ->  1135.07s] We're going to be reassigning all of the probabilities in the P measure to different ones in the Q measure
+[ 1135.07s ->  1138.39s] for each of the possible outcomes.
+[ 1138.55s ->  1140.87s] What does this look like visually?
+[ 1141.51s ->  1148.41s] Well, if I run this animation for you here, you can see on the left, our real world measure P.
+[ 1148.41s ->  1153.65s] Here we're saying in expectation that drift term mu is 15%.
+[ 1153.65s ->  1162.29s] Okay, the terminal price distribution here is then in blue, but the risk neutral measure says what?
+[ 1162.73s ->  1169.57s] It says that in expectation, we are going to earn 5% the risk free rate.
+[ 1169.79s ->  1174.91s] That is all a risk neutral measure is.
+[ 1174.91s ->  1179.23s] We are effectively earning the risk free rate in expectation.
+[ 1179.23s ->  1184.79s] This does not get rid of volatility or the randomness associated with the process.
+[ 1184.91s ->  1189.77s] It has to do with the trajectory of the price process.
+[ 1189.91s ->  1196.66s] What you'll notice is the distribution changes at time capital T.
+[ 1197.18s ->  1198.78s] Change of measure.
+[ 1199.34s ->  1200.46s] Change of distribution.
+[ 1200.62s ->  1203.74s] That's exactly what we're seeing here.
+[ 1203.74s ->  1210.29s] All right, so this is the idea of a risk neutral measure.
+[ 1210.45s ->  1215.09s] We're going from this real world measure P to this risk neutral measure Q.
+[ 1215.63s ->  1217.23s] I have a couple of remarks.
+[ 1218.07s ->  1221.25s] When it comes to this real world measure P, what is it?
+[ 1221.45s ->  1224.63s] Well, we already discussed what this is in the context of parameter estimation.
+[ 1225.19s ->  1230.47s] We can estimate it from historic data during a bull run, during a period of distress.
+[ 1230.47s ->  1232.49s] Yes, we're at a high risk of what?
+[ 1233.31s ->  1237.19s] Model misspecification, model missparameterization.
+[ 1237.57s ->  1237.81s] Okay.
+[ 1238.35s ->  1244.77s] When we go to this risk neutral measure here, we're only dealing with the risk neutral or
+[ 1244.77s ->  1246.85s] the risk free rate in expectation.
+[ 1247.41s ->  1249.13s] We change our distribution.
+[ 1249.31s ->  1250.11s] We change our measure.
+[ 1251.47s ->  1253.19s] Why are we allowed to do this?
+[ 1253.19s ->  1261.67s] Why can we go from this real world measure P to this risk neutral measure Q?
+[ 1262.86s ->  1270.56s] Well, this comes from the Black-Scholes argument and a series of financial mathematics literature
+[ 1270.56s ->  1277.84s] by some of the brightest financial economists this world has ever seen to be capable of constructing
+[ 1277.84s ->  1280.76s] a framework like this.
+[ 1280.76s ->  1289.04s] It pains me to see in YouTube comments, TikTok comments, Instagram comments, the genius of
+[ 1289.04s ->  1294.66s] the Black-Scholes argument reduced to it doesn't work in practice.
+[ 1294.80s ->  1300.80s] We've already discussed model misspecification and misparameterization.
+[ 1300.80s ->  1309.44s] These folks tremendously miss the mark and have a fundamental lack of understanding of the space.
+[ 1310.00s ->  1313.54s] The genius comes from the replication argument.
+[ 1313.88s ->  1320.78s] If we look back to our original stochastic model, we have a geometric Brownian motion.
+[ 1321.38s ->  1324.70s] This not working in practice is not because of their argument.
+[ 1325.10s ->  1328.10s] It's because of model misspecification.
+[ 1328.10s ->  1336.42s] We are all very well aware that the true dynamics of the market do not follow a geometric Brownian motion.
+[ 1337.02s ->  1346.54s] But in any case, their argument posits that we can hold a portfolio that effectively cancels out the randomness.
+[ 1347.14s ->  1348.74s] What does that mean we're left with?
+[ 1348.86s ->  1353.36s] Well, this drift term is going to vanish entirely.
+[ 1353.36s ->  1360.70s] And if we construct a portfolio based on their argument, we get the Black-Scholes equation.
+[ 1361.32s ->  1362.92s] This is a parabolic PDE.
+[ 1363.00s ->  1367.34s] Once solved, we'll yield the Black-Scholes model.
+[ 1367.84s ->  1374.12s] A key point of confusion here for students is if mu cancels out with the replication,
+[ 1374.12s ->  1381.08s] then in the context of Feynman-CAC, and I have a video on Feynman-CAC if you'd like to check that out,
+[ 1381.84s ->  1386.10s] why do we simulate with a drift equivalent to the risk-free rate?
+[ 1387.35s ->  1390.35s] This is a necessary sidebar here.
+[ 1390.91s ->  1396.11s] But the replicating portfolio that the Black-Scholes argument produces is risk-free.
+[ 1396.27s ->  1398.73s] We've canceled out the randomness.
+[ 1398.73s ->  1402.87s] So we must earn then the risk-free rate.
+[ 1403.21s ->  1406.11s] And if we earn the risk-free rate, we are operating in what?
+[ 1407.36s ->  1408.62s] This risk-neutral world.
+[ 1409.58s ->  1413.10s] And that is why in expectation, we earn the risk-free rate.
+[ 1413.46s ->  1421.44s] And in simulation, we must represent this by this process here, not with a zero drift process.
+[ 1421.44s ->  1432.05s] In other words, if I was to then simulate this process here, I would observe convergence to the Black-Scholes price,
+[ 1432.15s ->  1433.31s] just as you're seeing here.
+[ 1433.47s ->  1444.37s] If I simulated it without the drift parameterized by the risk-free rate, we would not observe this convergence.
+[ 1444.83s ->  1449.01s] This is the core idea of risk-neutral pricing.
+[ 1449.01s ->  1456.51s] But if it feels a little confusing, and as if the cart was put before the horse,
+[ 1457.13s ->  1463.45s] you would be correct, because we don't get to choose how the academic literature evolves.
+[ 1463.71s ->  1471.43s] To explain this to you, I've effectively jumped around different results from academic papers over the years
+[ 1471.43s ->  1474.39s] that have come out year over year.
+[ 1474.39s ->  1480.25s] There's no beautiful timeline of the development of this risk-neutral measure.
+[ 1480.83s ->  1489.49s] No, it started with this argument, and I look to discuss this idea of the impact of a risk-free portfolio
+[ 1489.49s ->  1495.01s] evolving at a risk-free rate and expectation, as we observed here in the change of measure,
+[ 1495.23s ->  1499.65s] that wasn't even formalized until after Black and Scholes.
+[ 1499.65s ->  1508.31s] We're using the Feynman-CAC result to even explain convergence to the Black-Scholes price
+[ 1508.31s ->  1515.57s] that is guaranteed to be the no-arbitrage price given by the fundamental theorem of asset pricing.
+[ 1516.15s ->  1521.01s] This is a very intricate study with a lot of moving pieces.
+[ 1521.01s ->  1529.79s] So, I certainly felt that way when I was a student, but it wasn't explained explicitly for me in that capacity.
+[ 1529.97s ->  1534.73s] So, I hope that sheds some light on this space.
+[ 1534.97s ->  1538.49s] This is going to be where all of the pieces of the puzzle fit together,
+[ 1539.05s ->  1545.81s] and this is where the really cool implication in practice comes into play.
+[ 1545.81s ->  1551.79s] If we look at the Black-Scholes argument and their geometric Brownian motion,
+[ 1552.01s ->  1557.15s] we construct a hedge, we create this risk-free portfolio, it's a hedge portfolio,
+[ 1557.57s ->  1562.39s] and we must earn a risk-free rate, but in the geometric Brownian motion,
+[ 1562.53s ->  1567.19s] there's only one source of randomness, and we can perfectly hedge that away.
+[ 1567.89s ->  1570.99s] There's only one facet of risk there.
+[ 1571.49s ->  1574.43s] In reality, is there only one facet of risk?
+[ 1574.43s ->  1576.99s] No, absolutely not.
+[ 1577.43s ->  1581.27s] This is the difference between a complete market and an incomplete market,
+[ 1581.47s ->  1585.61s] whether or not you can hedge away those facets of risk.
+[ 1585.89s ->  1590.15s] When it comes to the original transaction between you and I,
+[ 1590.79s ->  1594.79s] it doesn't matter what you think, it doesn't matter what I think about the underlying asset.
+[ 1595.37s ->  1600.93s] The risk-neutral dynamics are going to dictate, then, the price of the option,
+[ 1601.35s ->  1603.97s] as we saw above in the Black-Scholes argument.
+[ 1603.97s ->  1607.51s] If the underlying asset has to evolve at a risk-free rate,
+[ 1607.71s ->  1614.75s] then we are just going to choose a model to determine the distribution of the terminal stock prices,
+[ 1615.21s ->  1619.63s] and that's going to guide us in pricing that particular instrument,
+[ 1619.75s ->  1625.61s] whether it's a European option, like we saw above, or a more exotic instrument.
+[ 1625.61s ->  1631.85s] So, we don't care about speculation that real-world measure P is now out of the window.
+[ 1632.35s ->  1639.83s] We care about now efficiency and consistency in our risk-neutral measure.
+[ 1639.83s ->  1644.55s] That is, there's only one risk-neutral measure in a complete market.
+[ 1644.75s ->  1646.87s] There's only one facet of risk to hedge away.
+[ 1647.29s ->  1652.57s] There's only one parameterization that makes sense, that is consistent.
+[ 1652.81s ->  1655.19s] But, in the real world, we said what?
+[ 1655.75s ->  1658.99s] The market doesn't follow a geometric Brownian motion.
+[ 1660.24s ->  1662.36s] Okay, what are the implications of that?
+[ 1662.36s ->  1667.80s] Well, there are infinitely many risk-neutral measures.
+[ 1668.28s ->  1670.08s] So, which should we choose?
+[ 1670.62s ->  1673.00s] We can't use a geometric Brownian motion.
+[ 1673.14s ->  1679.40s] We need to choose a more intricate model capable of capturing dynamics we observe in the market,
+[ 1679.40s ->  1683.84s] if we're trying to do something like extrapolate exotic prices.
+[ 1684.52s ->  1686.12s] So, what do we do?
+[ 1686.12s ->  1691.20s] Well, if we have an infinite number of risk-neutral measures we could select,
+[ 1691.94s ->  1696.46s] we are going to infer them, instead, from the market.
+[ 1696.88s ->  1699.92s] This is the idea of model calibration.
+[ 1700.56s ->  1708.54s] And this is the really, really cool implication of this no-arbitrage pricing technique,
+[ 1708.66s ->  1711.00s] this risk-neutral pricing technique.
+[ 1711.00s ->  1716.20s] Effectively, what I'm going to do is, instead of using a Black-Scholes model,
+[ 1716.88s ->  1719.62s] I'll use a different model, a more intricate one.
+[ 1720.12s ->  1725.22s] And I am going to find the parameters for that model
+[ 1725.22s ->  1730.48s] that are consistent with what I'm observing in the market.
+[ 1731.14s ->  1732.92s] So, for my geometric Brownian motion,
+[ 1732.92s ->  1737.88s] I'm no longer going to be estimating parameters from historic data,
+[ 1737.88s ->  1741.96s] like we saw above here, in these two different states of the world,
+[ 1742.04s ->  1743.34s] where we estimate parameters.
+[ 1744.18s ->  1748.20s] Instead, what I'm going to do is,
+[ 1748.32s ->  1753.26s] I am going to infer those parameters about the risk-neutral measure
+[ 1753.26s ->  1758.24s] from the market and the way that it's pricing liquid instruments.
+[ 1758.50s ->  1763.36s] I am going to calibrate my model to the implied volatility surface.
+[ 1763.36s ->  1767.36s] This will be a collection of options contracts,
+[ 1767.84s ->  1770.28s] indexed by strike and maturity.
+[ 1771.08s ->  1772.02s] And what I'll do is,
+[ 1772.08s ->  1774.92s] I will fit my stochastic model to these liquid instruments.
+[ 1775.62s ->  1778.82s] Then, I can use the fine-min-cac result to simulate.
+[ 1779.46s ->  1781.38s] And that is how I can produce a fair price
+[ 1781.38s ->  1785.72s] for us to transact at beyond these liquid instruments.
+[ 1786.10s ->  1787.84s] This is a really important idea
+[ 1787.84s ->  1792.30s] because we are effectively selecting a risk-neutral measure,
+[ 1792.62s ->  1797.58s] which is consistent with what we are observing in the market.
+[ 1798.04s ->  1800.22s] Unlike Black-Scholes in a complete market
+[ 1800.22s ->  1801.96s] where we can hedge away all risk,
+[ 1802.54s ->  1804.42s] is that the case in reality?
+[ 1804.54s ->  1804.88s] Well, no.
+[ 1805.52s ->  1809.36s] And that's exactly why we observe a skew.
+[ 1809.68s ->  1811.58s] If we take a look at the volatility surface,
+[ 1811.58s ->  1818.86s] it isn't flat like geometric Brownian motion and Black-Scholes implies.
+[ 1819.22s ->  1822.02s] There isn't one selection of volatility.
+[ 1822.50s ->  1825.98s] There are many selections of volatility.
+[ 1826.62s ->  1829.96s] And what we've done is we've calibrated our model
+[ 1829.96s ->  1832.72s] to the observed implied volatilities
+[ 1832.72s ->  1836.96s] to capture those unhegable facets of risk.
+[ 1837.14s ->  1840.80s] That is how we've selected this risk-neutral measure.
+[ 1840.80s ->  1843.08s] That is why we observe a skew.
+[ 1843.90s ->  1845.96s] These are going to be out-of-the-money puts.
+[ 1846.36s ->  1848.28s] These are going to be out-of-the-money calls.
+[ 1848.92s ->  1852.90s] And we're trading about this at-the-money option here,
+[ 1852.96s ->  1855.60s] which could be a call or a put.
+[ 1856.10s ->  1857.08s] And I want you to notice,
+[ 1858.47s ->  1861.73s] prices and implied volatility are arbitrarily higher for puts
+[ 1861.73s ->  1863.99s] than they are for calls.
+[ 1864.71s ->  1866.95s] Risk is priced differently.
+[ 1867.75s ->  1870.99s] You cannot hedge away some of this downside risk
+[ 1870.99s ->  1874.09s] So, how must you be compensated for it?
+[ 1874.75s ->  1875.87s] With higher prices.
+[ 1876.45s ->  1878.63s] Is there a component of mispricing here?
+[ 1879.55s ->  1880.15s] Absolutely.
+[ 1880.89s ->  1883.71s] Fear is always going to dominate equilibrium price.
+[ 1884.15s ->  1885.51s] Agents aren't rational.
+[ 1885.65s ->  1888.67s] Equilibrium price is not always the fair price.
+[ 1889.15s ->  1890.41s] And that's why prices move.
+[ 1890.51s ->  1892.15s] The markets aren't perfectly efficient.
+[ 1892.67s ->  1894.51s] There is room for alpha,
+[ 1895.01s ->  1898.93s] despite what the pure academics would like to say.
+[ 1898.93s ->  1901.93s] In any case, that is why we observe this skew.
+[ 1902.11s ->  1906.69s] A great way to think about this is in the context of what we observe in practice, right?
+[ 1906.93s ->  1910.01s] We don't just have model misspecification risk,
+[ 1910.31s ->  1912.23s] model misparameterization risk,
+[ 1912.23s ->  1917.67s] but we also have risk that we don't know and can't hedge away.
+[ 1917.67s ->  1920.33s] Effectively, in the context of this surface,
+[ 1920.89s ->  1924.89s] we're saying, hey, the Black-Scholes argument, the math says,
+[ 1925.57s ->  1929.91s] we should evolve an expectation at R, the risk-free rate.
+[ 1930.01s ->  1934.89s] But I can't hedge those jump risks or other facets of risk
+[ 1934.89s ->  1937.05s] that we're going to observe in reality.
+[ 1937.05s ->  1940.19s] So I'm going to charge you more on the downside.
+[ 1940.69s ->  1943.41s] And that is effectively what we're seeing here.
+[ 1943.57s ->  1946.83s] This is directly relevant to the 1987 crash
+[ 1946.83s ->  1951.17s] and the necessity for models, that is pricing models,
+[ 1951.17s ->  1954.33s] to be capable of fitting this skew.
+[ 1956.52s ->  1957.70s] Now, ironically, right?
+[ 1958.22s ->  1961.68s] We talked about misspecification and misparameterization.
+[ 1961.88s ->  1967.08s] This becomes, again, a process where you actually have to what?
+[ 1967.08s ->  1970.44s] Select a model and then parameterize it.
+[ 1971.18s ->  1974.46s] So we just need to acknowledge that
+[ 1974.46s ->  1978.32s] because we're no longer selecting a model
+[ 1978.32s ->  1983.14s] and parameterizing it in the real world, P, right?
+[ 1983.52s ->  1985.20s] We're not operating here anymore.
+[ 1985.56s ->  1989.12s] We're operating here in this risk-neutral world,
+[ 1989.28s ->  1991.78s] thanks to the portfolio replication argument.
+[ 1991.78s ->  1998.16s] But we can't get away from model specification
+[ 1998.16s ->  2000.06s] and parameterization.
+[ 2000.80s ->  2001.72s] We are modeling.
+[ 2002.16s ->  2005.48s] That is always going to be a component of risk
+[ 2005.48s ->  2010.18s] whenever we make decisions in a quantitative capacity.
+[ 2010.72s ->  2014.66s] And that, I think, is a really cool and important connection.
+[ 2014.66s ->  2017.34s] Just because we've gone from the real world measure
+[ 2017.34s ->  2018.44s] to the risk-neutral measure,
+[ 2018.44s ->  2021.24s] it doesn't mean we're devoid of what?
+[ 2021.84s ->  2024.18s] Model misspecification and misparameterization.
+[ 2024.32s ->  2027.54s] If you'd like to study more on this topic on YouTube,
+[ 2027.80s ->  2030.10s] the top five papers that built modern quant finance,
+[ 2030.44s ->  2032.66s] walk you through a timeline of this literature,
+[ 2032.66s ->  2035.36s] which could be very helpful for framing this topic.
+[ 2035.78s ->  2038.98s] And if you want to see how large financial institutions
+[ 2038.98s ->  2040.26s] make money with this idea,
+[ 2040.76s ->  2043.94s] check out my video on explaining algorithmic market making.
+[ 2043.94s ->  2049.22s] And if you want more formal study of the underlying statistical topics
+[ 2049.22s ->  2052.28s] necessary for this particular industry
+[ 2052.28s ->  2053.68s] that is trading and market making,
+[ 2053.92s ->  2055.78s] these ideas discussed herein,
+[ 2055.82s ->  2058.04s] you can check out QuantStats on QuantGuild
+[ 2058.04s ->  2061.92s] and the Financial Mathematics Masterclass.
+[ 2062.28s ->  2065.14s] TooLongDidn'tWatch, here is your executive summary.
+[ 2065.58s ->  2066.90s] In the context of modeling,
+[ 2067.12s ->  2069.06s] anytime we create a model,
+[ 2069.22s ->  2072.82s] we suffer from the consequences of operating in the real world.
+[ 2072.82s ->  2075.78s] Non-stationarity, no nice classroom assumptions.
+[ 2076.38s ->  2082.08s] Specifically, model misspecification and misparameterization.
+[ 2082.52s ->  2085.84s] Misspecification coming from selecting the incorrect model
+[ 2085.84s ->  2087.80s] to model a particular phenomenon
+[ 2087.80s ->  2092.22s] and misparameterization coming from inappropriately selecting parameters
+[ 2092.22s ->  2093.30s] for that model.
+[ 2093.78s ->  2097.18s] And do keep in mind, in reality, model parameters don't converge.
+[ 2097.30s ->  2099.16s] So even if you have a really nice model,
+[ 2099.16s ->  2102.56s] the parameters you select will likely change over time.
+[ 2102.82s ->  2107.26s] We still need to develop a price for derivative contracts, right?
+[ 2107.34s ->  2109.50s] If we're trying to make a market here, we need to transact.
+[ 2110.06s ->  2111.74s] Some think the price will go to the moon.
+[ 2111.94s ->  2113.86s] Some think it'll sell for pennies on the dollar.
+[ 2114.08s ->  2118.00s] In any case, we need a consistent framework for pricing
+[ 2118.00s ->  2122.00s] that mitigates, not entirely, but in a controlled way,
+[ 2122.54s ->  2125.62s] this raw speculation and capacity for,
+[ 2125.74s ->  2129.00s] of course, misspecification and misparameterization.
+[ 2129.00s ->  2133.14s] Now, Black-Scholes produce a portfolio replication argument
+[ 2133.14s ->  2137.06s] showing in a complete market with randomness that is hedgeable.
+[ 2137.18s ->  2141.66s] That is, we're operating in this market where we have all known facets of risk
+[ 2141.66s ->  2142.74s] hedged away.
+[ 2143.24s ->  2148.72s] The price of the option is the same as maintaining a continuous hedge.
+[ 2148.72s ->  2151.87s] Clearly, there is no risk.
+[ 2152.03s ->  2155.45s] So the portfolio by a no arbitrage assumption must earn the risk-free rate.
+[ 2155.91s ->  2159.93s] This produces the Black-Scholes equation and the solution, the Black-Scholes model.
+[ 2160.47s ->  2165.01s] This is the idea of moving from the real world measure to the risk neutral measure.
+[ 2165.69s ->  2167.57s] Remember, we're no longer speculating here.
+[ 2167.87s ->  2172.95s] We know what the fair price of the option is because of this replication argument.
+[ 2173.21s ->  2174.05s] It doesn't matter.
+[ 2174.15s ->  2177.31s] You think it's going to the moon or I think it'll sell for pennies on the dollar.
+[ 2177.31s ->  2182.95s] We transition now from P to Q, this change of measure, change in distribution.
+[ 2183.61s ->  2187.87s] We say the underlying will then evolve necessarily by a no arbitrage assumption
+[ 2187.87s ->  2191.61s] in expectation at the risk-free rate.
+[ 2191.85s ->  2196.07s] There are connections here to Martin Gales and, of course, the change of measure,
+[ 2196.19s ->  2197.81s] the Grznov change of measure.
+[ 2198.09s ->  2201.03s] We'd love to cover this in the future if there is interest.
+[ 2201.37s ->  2204.33s] We are certainly getting into more technical topics here.
+[ 2204.33s ->  2213.11s] Now, as I just mentioned, in a complete market, there's only one source of risk to hedge away,
+[ 2213.17s ->  2214.31s] and we could perfectly hedge it away.
+[ 2214.59s ->  2216.33s] So there's only one risk neutral measure.
+[ 2216.47s ->  2219.91s] It's relatively easy to produce a price, but in reality, markets are not complete.
+[ 2220.49s ->  2224.77s] There isn't just one risk neutral measure, but infinite to choose from.
+[ 2224.77s ->  2233.07s] Instead of wandering around infinity, we infer the risk neutral measure and the premium from unhedgeable risk
+[ 2233.07s ->  2236.07s] by calibrating models to the market liquid instruments.
+[ 2236.55s ->  2239.61s] This is what produces skew and the implied volatility surface.
+[ 2240.19s ->  2242.09s] This is also what produces what?
+[ 2242.87s ->  2245.13s] Mispricings that you can capitalize on.
+[ 2245.45s ->  2247.07s] This is what produces alpha.
+[ 2247.45s ->  2249.93s] This is quite literally how it functions.
+[ 2249.93s ->  2254.47s] We have facets of risk that we can't perfectly hedge away.
+[ 2255.11s ->  2258.61s] The market's going to create a price, a premium for bearing that risk.
+[ 2258.91s ->  2264.65s] Whether or not you're compensated for it in the cross-section in general is subject for discussion,
+[ 2264.79s ->  2268.97s] but this is quite literally functionally what is going to create alpha.
+[ 2270.47s ->  2274.47s] Ironically, as I highlighted toward the end of this video,
+[ 2274.47s ->  2278.49s] we are back to a misspecification and misparameterization problem.
+[ 2278.49s ->  2282.95s] Only now in the risk neutral world, we'll never be able to get away from that.
+[ 2283.33s ->  2285.21s] That is what modeling entails.
+[ 2285.99s ->  2289.21s] Certainly, some things will be easier to model than others.
+[ 2289.43s ->  2293.75s] This is going to depend on a variety of different factors.
+[ 2293.93s ->  2300.47s] Facial recognition is an entirely different problem than producing cross-sectional return predictability.
+[ 2300.47s ->  2308.47s] For more videos on this topic, you can check out my YouTube videos on the papers that built modern quant finance,
+[ 2308.61s ->  2312.43s] algorithmic market making, and if you'd like formal classroom study from the ground up,
+[ 2312.91s ->  2317.65s] check out quant stats and financial mathematics on Quant Guild.
+[ 2317.79s ->  2321.89s] Some future topics, technical videos, and other discussions to look forward to.
+[ 2321.89s ->  2328.99s] We've already discussed the Poisson process, so we can now extend two more intricate and useful models,
+[ 2329.17s ->  2336.35s] the Hawks processes, Mertin, and Bates jump diffusion models with the stochastic variance process.
+[ 2336.57s ->  2341.13s] I'd like to discuss more market making models if there's interest.
+[ 2341.13s ->  2347.69s] I would also like to do more qualitative videos, projects that made me a quant, my first year as a quant,
+[ 2348.13s ->  2353.87s] my thoughts on AI and its place in the financial services industry,
+[ 2354.39s ->  2360.25s] why hedge funds are actually secretive, and some more technical topics as well.
+[ 2360.25s ->  2369.05s] That is, these non-Markovian models, the change of measure more formally, rough path theory, and the SigVol model.
+[ 2369.25s ->  2373.73s] But as I've mentioned in the past, those are certainly more niche topics.
+[ 2373.85s ->  2380.01s] It will largely be based on what you guys would like to see next, so please let me know in the comments below.
+[ 2380.43s ->  2383.25s] And I have not forgotten about our quant builds.
+[ 2384.01s ->  2388.47s] I'll leave a link to Interactive Brokers in the description below if you'd like to get started with them.
+[ 2388.47s ->  2390.43s] I highly recommend them in their API.
+[ 2390.61s ->  2396.05s] I've been using them for over 10 years at this point, and of course for all of my quant builds.
+[ 2396.45s ->  2402.31s] I have this idea of how to backtest a trading strategy, specifically with Interactive Brokers,
+[ 2402.89s ->  2405.51s] really illustrating the proper methodology.
+[ 2405.93s ->  2414.71s] I see far too many times proper scientific method just completely dismissed from the process.
+[ 2414.71s ->  2419.51s] And I still have this idea for a volatility trading system.
+[ 2419.69s ->  2423.61s] I'm always hesitant about propagating actionable code.
+[ 2423.93s ->  2428.13s] But if this is something that you guys would like to see, or at least the framework of,
+[ 2428.57s ->  2431.45s] please again, let me know in the comments below.
+[ 2431.73s ->  2435.13s] And that's going to do it for this video on risk-neutral options pricing.
+[ 2435.25s ->  2435.97s] I hope you enjoyed.
+[ 2436.31s ->  2437.35s] I hope you learned something.
+[ 2437.43s ->  2437.95s] I apologize.
+[ 2438.25s ->  2441.63s] I'm a little sick, so my voice certainly is not all there.
+[ 2441.63s ->  2444.27s] But this video was a lot of fun to put together.
+[ 2444.39s ->  2446.01s] It certainly took a tremendous effort.
+[ 2446.15s ->  2449.05s] So if you enjoyed it, and you'd like to see more like it in the future,
+[ 2449.45s ->  2451.01s] please like, comment, subscribe, share.
+[ 2451.15s ->  2453.13s] Again, it helps me out tremendously.
+[ 2453.33s ->  2455.45s] It is always greatly appreciated.
+[ 2456.05s ->  2460.27s] Check out QuantGuild.com to master your quantitative skills.
+[ 2460.83s ->  2463.93s] Other than that, thank you so much for watching.
+[ 2464.37s ->  2467.13s] And I will see you in the next video.
+[ 2467.13s ->  2473.47s] I'll see you in the next video.
+[ 2473.61s ->  2474.47s] You

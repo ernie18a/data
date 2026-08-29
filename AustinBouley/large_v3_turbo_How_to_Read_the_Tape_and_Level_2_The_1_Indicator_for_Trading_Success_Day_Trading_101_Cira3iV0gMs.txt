@@ -1,0 +1,138 @@
+[    0.40s ->     5.38s] Hey guys, what's up? It's AB Trades and I was requested by someone to do a video on
+[    5.38s ->    11.90s] learning how to read the tape, which is also known as the level 2 and the time in sales
+[   11.90s ->    19.52s] on a stock. So knowing, reading, how to read the transactions of who's buying, who's selling,
+[   19.64s ->    27.92s] how many shares, and etc. It just, the tape or reading that specifically of a stock is
+[   27.92s ->    33.06s] what is known as a leading indicator versus a lagging indicator. So to explain what that
+[   33.06s ->    41.96s] is, is for example, like a moving average or an exponential moving average or VWAP or
+[   41.96s ->    48.56s] you know, just all the indicators that we use such as MACD, they're all lagging indicators
+[   48.56s ->    54.70s] because they're based off price. They use price and volume and some equation to determine what
+[   54.70s ->    61.96s] that actually is. What the tape is, is the tape is showing transactions that has gone
+[   61.96s ->    68.26s] through. It shows how many people are buying shares of a stock at a certain time exactly
+[   68.26s ->    72.56s] when it happens. If they're selling into the ask or if they're selling into the bid, which
+[   72.56s ->    77.46s] I will explain later. And it just shows what is happening immediately. So it's known as
+[   77.46s ->    82.50s] a leading indicator. It's showing what's happening right then and there before the chart even adjusts
+[   82.50s ->    87.14s] for that, you can see it happening in the tape, in the transaction list. It's like reading
+[   87.14s ->    93.06s] a receipt as it's printing of what is happening in the stock. I am not an expert at reading
+[   93.06s ->    97.52s] the tape. I'm nowhere near an expert. I know enough to get by. I would really love to learn
+[   97.52s ->   105.50s] more. But one of the top experts I would believe in reading the tape is a company, a proprietary
+[  105.50s ->   113.76s] trading firm based out of Manhattan called SMB Capital. They have an SMB blog and it was written
+[  113.76s ->   118.80s] by Mike Bella Fury who has written a few good books such as One Good Trade and The Trading
+[  118.80s ->   126.18s] Playbook. I've read One Good Trade and I will attest that it is a great read for any trader,
+[  126.34s ->   134.70s] inexperienced or novice. I will include the link to the review video that I did once over that book
+[  134.70s ->   143.26s] and I will also leave a link below to this blog that I'm going to be referencing to teach you
+[  143.26s ->   151.26s] all about this subject. So let's first mention what is a bid and what is an ask. So if you're
+[  151.26s ->   157.38s] doing this on the Thinkerswim platform, you go and you can click on here. You can click on time
+[  157.38s ->   164.38s] in sales and you can click on level two. Okay. So the level two on the left side shows the bid.
+[  164.72s ->   173.74s] Let me pull this up for y'all. Oops. My B shows the level. Come on. I guess you don't like me today.
+[  173.88s ->   179.32s] That's okay. So the left side is the bid. The right side is the ask. The bid is everyone who's buying.
+[  179.32s ->   187.66s] The ask is everyone who's selling. So let's say you put in a limit order for 171.92. Your order will
+[  187.66s ->   192.58s] show up here along with everyone else's saying that, hey, there's someone who wants to buy 500
+[  192.58s ->   199.52s] shares at 171.92. That is the buyers. These are the people who want to buy. Ask are the people who
+[  199.52s ->   206.38s] want to sell. So when I reference that and I say they're hitting the ask, that means they're hitting
+[  206.38s ->   212.48s] the people who are selling. They are buying from the people who want to sell. There's always a
+[  212.48s ->   218.24s] difference in price from the bid and the ask from the buyers and the sellers. For example, the ask here
+[  218.24s ->   230.24s] is 172.29 and the bid here is 171.92. So the difference is around 40 cents. The reason why the difference
+[  230.24s ->   235.88s] is so big is because right now we're in pre-market. The difference is a little less during the actual
+[  235.88s ->   241.70s] trading because there's a lot of liquidity in the market. The more liquidity, the more people
+[  241.70s ->   247.02s] buying and selling, the closer that bid and ask spread will be, which just helps you as a trader.
+[  247.78s ->   252.16s] So the bid and ask price is always different because if you're buying something, you want to buy it at a
+[  252.16s ->   255.98s] cheaper price. If you're selling something, you want to sell it at the highest price that you can get.
+[  255.98s ->   261.82s] So usually the ask is more than the bid. And I hope that makes sense. If you're just thinking about
+[  261.82s ->   268.72s] common business and supply and demand, you want to buy it at the lowest point so that you can sell it
+[  268.72s ->   273.99s] at the highest point. So the ask will always be higher than the seller. The ask will always be higher
+[  273.99s ->   282.29s] than the bid. Level two is the time in sales. This shows the time, the price, and the number of shares
+[  282.29s ->   288.15s] they are buying. This will keep printing every time a transaction goes through and it just keeps going
+[  288.15s ->   291.37s] and going and going and going so you can read this. This is what is known as the leading end indicator because
+[  291.37s ->   297.11s] it will show this and then the chart will start to adjust. Yes, it moves fast and it takes a while
+[  297.11s ->   304.69s] to develop the skill to read the tape effectively. I know that SMB traders, they can sit and watch the
+[  304.69s ->   311.17s] tape like a movie. That's how they learn it. They don't need the chart. They don't need anything.
+[  311.31s ->   317.55s] They can just watch the time in sales. Now that is ridiculous, but it works. And it gives you a huge
+[  317.55s ->   322.05s] edge in trading. But now I want to discuss, okay, yes, you can watch the time in sales and stuff go
+[  322.05s ->   330.32s] through, but how do you know what to look for if you're going to be a buyer or a seller? So that's
+[  330.32s ->   338.58s] why I'm going into this. This right here. So his blog, if you email him and you ask him a question
+[  338.58s ->   342.68s] and you think it's worthy of being on the blog, he'll answer blah, blah, blah. So he compiled this for
+[  342.68s ->   349.88s] reading the tape. Okay. If you want to go long, which means in our sense is buying. So for options
+[  349.88s ->   356.62s] trading, that's buying a call contract or selling a put contract. Bids are stepping up, which means
+[  356.62s ->   364.62s] if you have a bid at $171.90, the bids are starting to go to $171.92 to $93 to $94 to $95. It means people
+[  364.62s ->   370.68s] are willing to pay more. And that of course means the stock is increasing in price. Most transactions are
+[  370.68s ->   375.20s] on the ask. What does that mean? It means that people are buying from the sellers. They can't
+[  375.20s ->   383.34s] get enough of these shares. Think about supply and demand. The demand is there from the buyers. So
+[  383.34s ->   386.66s] they will buy it from whoever they can get it from because that's how much that they want to buy,
+[  386.92s ->   390.08s] which means they're buying straight from the ask, straight from the ask, straight, straight from the
+[  390.08s ->   398.74s] ask. Then on the ask offer. So that means on the bid where you can see the number of asks you have
+[  398.74s ->   406.02s] or how many people that are trying to sell shares at a certain price is low. So let's say we only
+[  406.02s ->   410.96s] have 20 sellers and we have 100 buyers. That obviously means supply and demand. The buyers
+[  410.96s ->   416.60s] are in charge. The buyers want contracts, shares, and the buyers are after it. They are attacking
+[  416.60s ->   423.63s] those sellers. And that is what is making the price go up. Buyers holding the bid. That means the bid
+[  423.63s ->   428.89s] is strong. We have a lot of people who are trying to hit the bid and buy these shares. We are having
+[  428.89s ->   437.81s] an uptrend, which means higher highs and higher lows. Big prints on the ask. Ask spoofing. Ask spoofing
+[  437.81s ->   445.17s] is when someone puts in a large order on the ask. So you see like 2,500 shares they want to sell
+[  445.17s ->   451.05s] at a certain price. And then when it gets close to that price, it disappears. They just put
+[  451.05s ->   456.49s] that ask there to scare people away from trying to buy it because there's a huge sell there. When
+[  456.49s ->   461.25s] in reality there was no seller there. They were just trying to scare you from bringing the price
+[  461.25s ->   465.77s] up that high. But it went and it disappeared. That means that there is no one there to actually
+[  465.77s ->   471.61s] hold down the price and the buyers will keep driving it up. Low resistance to go up. Spy is
+[  471.61s ->   479.57s] higher. Spy is a market in. Indicator is the S&P 500 index. And if that's go, go, go, if the market
+[  479.57s ->   484.39s] is going up, more than likely every other stock is going, is going over well and it will just help
+[  484.39s ->   490.03s] in your favor. Sector higher. So let's just say you're trading X, which is U.S. Steel. If steel and
+[  490.03s ->   496.59s] metals are going, like that whole sector is doing well, most likely X, the ETF of U.S. Steel will go
+[  496.59s ->   502.81s] higher. Lack of downticks, meaning that we're not going down much, but we're going up, right?
+[  502.93s ->   509.59s] So up candles. Buyers accumulating. Again, just on the bid, we have a lot of buyers. Time and
+[  509.59s ->   516.03s] sales accelerating, but price does not go down. Blah, blah, blah, blah, blah. I hope that all
+[  516.03s ->   522.33s] makes sense with the long. I know I'm talking fast, but if I don't, this video will last forever.
+[  522.33s ->   527.43s] I see videos on YouTube going at least 30 minutes just trying to explain this. That's
+[  527.43s ->   532.13s] why I'm going to link this below. Okay, now if we're going short, which is short selling,
+[  532.39s ->   536.17s] making money on the way down. For us as option sellers, that means buying a put or selling
+[  536.17s ->   543.13s] a call. Okay, ask are stepping down. So bids, you know how they're trying to step up. Well,
+[  543.19s ->   548.79s] ask are stepping down. So they're slowly selling. So they want to sell at 170, 190. Now they want
+[  548.79s ->   559.50s] to sell it. 170, 89, 87, 86. That means it's going down. Most transactions on the bid, that
+[  559.50s ->   566.16s] means that they are selling from the people buying. It's hard to explain exactly, but it
+[  566.16s ->   573.20s] just means that the people who are buying, they're selling from them. Okay, because we talked
+[  573.20s ->   577.84s] about how the bid will be lower than the ask. So the people who want to sell are selling it
+[  577.84s ->   582.02s] at a lower price because they want to get rid of this stock. They want to get rid of it
+[  582.02s ->   585.74s] so bad that they are selling it at a lower price, which is driving it down further and
+[  585.74s ->   591.08s] further and further. Sellers hold the ask, which means there are a lot of shares wanting
+[  591.08s ->   598.08s] to be sold. And you can see that from here, the ask, which means like the ask is 100 and
+[  598.08s ->   602.32s] the bid is 50. That means there are 100 people who want to sell, but only 50 who want to buy.
+[  602.32s ->   611.00s] Obviously, the sellers are outnumbering the buyers, so we're going to go down. So this is
+[  611.00s ->   616.68s] obvious of a downtrend. We're having lower lows and higher lows. We're trending down. Big prints
+[  616.68s ->   623.62s] on the bid. Bid spoofing, the same thing as ask spoofing, where the bid has like 2,000, 5,000
+[  623.62s ->   628.02s] shares want to be bought at this price. But the closer we get to that price, the more that
+[  628.02s ->   633.78s] that bid disappears and goes away because they were just trying to scare them that there
+[  633.78s ->   638.48s] was a support there. But actually, the sellers are going to dominate and continue the way
+[  638.48s ->   643.78s] down. Low reads. This is on the way down. SPY is lower. Sector lowers. Same thing as
+[  643.78s ->   649.92s] sector higher. Lack of upticks, which means that candles are mainly red. And time and sell
+[  649.92s ->   660.00s] is accelerating, price does not go up. So that's basically it right here that we mentioned.
+[  660.00s ->   665.76s] It will all be like you can save this photo if you want, but I will link it below. And
+[  665.76s ->   670.94s] he gives two examples, so I would like to discuss those examples. So he said, so what if you wanted
+[  670.94s ->   676.94s] to do a Fay Trade NLSN? So let's go to NLSN for a sec, even though this was like two weeks
+[  676.94s ->   688.34s] ago. Let's kind of love this on this take. Too many texts. Okay, that sounds really fun.
+[  688.34s ->   694.34s] I don't know. Did you know when we get closer? No, just don't come. With the community theater,
+[  694.34s ->   697.34s] you just purchase your tickets directly from the theater. It's cheaper to call during office
+[  697.34s ->   701.34s] hours more than one over the theater, blah, blah, blah. Make sure they know your student and
+[  701.34s ->   710.23s] I'll give you a discount. Oh my gosh, I hate this. Whatever. Moving on. Not dealing with
+[  710.23s ->   719.23s] this. Okay. So you wanted to fade NLSN on the app and open for the gap, squeeze and fill,
+[  719.23s ->   725.23s] playbook trade. So your thesis going into this trade is that this news that came out for this
+[  725.23s ->   731.23s] stock sucks. It's gapping up too much. It needs to hit a top and it needs to get re-rejected.
+[  731.23s ->   736.23s] So what does that mean? You're looking for the tape to be heavy. You're looking for resistance
+[  736.23s ->   740.23s] on the tape. When you're looking for resistance on the tape, you are looking for, actually,
+[  740.23s ->   745.23s] I should just flip back to this. You're looking for short. You're looking for ass stepping down.
+[  745.23s ->   750.23s] You're looking for most transactions happening on the bid and blah, blah, blah. You're looking
+[  750.23s ->   757.23s] for these things. Okay. So this is what they saw. We saw on the open around 2565 area. The offers
+[  757.23s ->   763.23s] were heavy and the stock was not lifting this area as it had all the areas at the open. Now,
+[  763.23s ->   768.23s] we had a set up in our playbook and we see it on the tape to put together a short trade. So they
+[  768.23s ->   776.23s] saw that offers were heavy. Offers were stacking up. So like 2,000 ask and only 500 bids showing that the
+[  776.23s ->   781.23s] sellers are there and they're hitting that bid and they are driving the buyers down.
+[  781.23s ->   788.23s] Roku. Roku reported solid earnings and was a stock in play last week. Let's say you wish to play this
+[  788.23s ->   793.23s] for momentum trade on the open. Momentum trade is in our playbook. Roku opens at 54 and holds
+[  793.23s ->   801.23s] the offer. Holds the offer means that the bids are staying strong, right? With a buyer paying the offer
+[  801.23s ->   808.23s] with velocity. That means the ask, the people selling, the buyers are just buying straight
+[  809.23s ->   813.23s] from those sellers even though there's a price difference because they want as many shares
+[  813.23s ->   816.23s] as they can get as fast as they can. And with velocity means that's happening fast. They
+[  816.23s ->   822.23s] are buying, buying, buying straight from the sellers, obviously pushing that up. This buying
+[  822.23s ->   827.23s] of the offer with velocity is a bullish signal as you outlined above. Roku pulls in 50 cents but
+[  827.23s ->   833.23s] then retest 54. So that's just something interesting if you want to read through. They have a lot
+[  833.23s ->   840.23s] more on tape reading and good stuff like that. Again, I'm not an expert but I can explain to
+[  840.23s ->   846.23s] the best of my ability and I will later do a video of actually showing it with a stock in
+[  846.23s ->   849.23s] play. Alright guys, thank y'all for watching. I hope you learned something. Please like, comment,
+[  849.23s ->   851.23s] and subscribe and share if you like the video.

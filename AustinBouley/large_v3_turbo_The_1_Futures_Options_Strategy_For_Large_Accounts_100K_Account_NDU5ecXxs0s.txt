@@ -1,0 +1,190 @@
+[    0.00s ->     3.86s] In this video, I'm going to show you the number one futures option strategy for large accounts.
+[    3.96s ->     9.74s] I'm talking $100,000 plus size account. Now, this is the same strategy that I'm using to make about
+[    9.74s ->    16.92s] $4,000 every month on average, and that I taught over 10,000 other traders to generate a reliable
+[   16.92s ->    22.48s] side income through options trading and options selling. So let's dive in. This is the plan for
+[   22.48s ->    26.88s] the video. Basically, I'm going to talk about futures options trading basics. Then I'm going
+[   26.88s ->    31.46s] to go into the options income strategy, the backtest, the entry rules, the exit. This is
+[   31.46s ->    36.28s] going to be how we actually generate income from this portfolio, but then also how do we hedge it
+[   36.28s ->    41.38s] so that it stays secure and crashes and volatile markets and things like that. Then I'll talk
+[   41.38s ->    46.08s] about where to put the extra cash in your account. If you have some that's not invested because not
+[   46.08s ->    51.80s] all your money should be invested into your trade, you should have a good margin, a buffer on the side.
+[   51.80s ->    56.30s] So where do you put that money and then how to automate the strategy so that you can actually
+[   56.30s ->    60.64s] enjoy retirement or whatever your goal is instead of being stuck to the screen because we're going
+[   60.64s ->    63.50s] to be doing a lot of different things with this account. This is the same way that I'm running
+[   63.50s ->    67.94s] mine right now. So let's start off with the very basics in case you're new to futures options.
+[   68.26s ->    73.08s] So again, if we're talking about the options basics here is if a futures is trading up,
+[   73.14s ->    78.16s] so if it's the ES, which is the S&P 500 futures, let me make my face smaller, so I have more screen space,
+[   78.36s ->    83.96s] then it's going to work like this. If you sell a put on futures, you're betting that the future
+[   83.96s ->    88.24s] stays above a certain level. So that means that the futures goes up, then you make money. The
+[   88.24s ->    92.78s] futures go sideways, you make money. If the futures goes down, but stays above your level, you make
+[   92.78s ->    99.40s] money. So selling puts on futures works like this. Now it's the opposite for selling calls on futures.
+[   99.84s ->   104.12s] So for instance, if you sell a call on a future, you're betting that the future will stay below a
+[  104.12s ->   109.26s] certain level. So the future goes down, you make money. If the future goes sideways, you make money.
+[  109.26s ->   114.24s] If the future goes up, but stays below the level, you make money. So again, this is why you naturally
+[  114.24s ->   118.36s] have a higher win rate when doing options on futures. But the one thing that you have to
+[  118.36s ->   124.92s] consider is and the reason why it's so cool is that futures of like in themselves are a leveraged
+[  124.92s ->   130.70s] asset. And then options on futures are basically leveraged on leverage, which is why we use a little
+[  130.70s ->   136.80s] bit of money and make a lot. But with that, we also introduce a lot of risk. And that risk is
+[  136.80s ->   141.12s] something that we need to account for. And so when you're doing futures options, you should never do
+[  141.12s ->   147.16s] more than 30% of your account into trades. During this instance, we have a $100,000 account. You
+[  147.16s ->   153.62s] should have no more than 30,000 in trades, meaning that you have an extra $70,000 sitting off to the
+[  153.62s ->   158.78s] side that you're doing nothing with. So remember to keep in mind that selling a put is betting that
+[  158.78s ->   165.08s] the future stay above a certain level. Selling a call is betting the future stay below a certain level.
+[  165.08s ->   169.72s] And you should be trading with no more than 30% of your money because you're leveraged on leverage
+[  169.72s ->   174.82s] and you want to make sure that your account has enough money to handle any movements against you.
+[  175.30s ->   180.60s] Sweet. So those are the basics. Now let's dive in. What is the income strategy? Okay. This is going
+[  180.60s ->   185.38s] to be the strategy that I run. It's a strangle strategy, meaning that you're selling both a put
+[  185.38s ->   190.96s] and a call. So you're betting that the futures stays below or stays between a certain level.
+[  190.96s ->   196.36s] As you can see here, this back test strategy brings a lot of consistent returns through the
+[  196.36s ->   201.24s] returns to the upside in almost all markets. Obviously there are some dips when stop losses
+[  201.24s ->   206.44s] are hit, but we're going to use different mechanics and hedges to help smooth out these curves so that
+[  206.44s ->   211.16s] if they do happen, our losses are a lot smaller. So this can actually be something that slowly and
+[  211.16s ->   216.84s] safely grows. All right, sweet. So this is a strategy. This is how it works. Okay. This is how we run a
+[  216.84s ->   222.46s] strangle strategy, right? So let's say a futures is trading. Let's say ES, which is the S&P 500
+[  222.46s ->   228.26s] futures, which is ES, the ES futures is slowly trending up, which it does on average. And so
+[  228.26s ->   232.28s] we're going to sell a call up here and sell a put down here. This means we're betting that the future
+[  232.28s ->   236.88s] stays above this level and below this level. So as long as the future stays within this range,
+[  236.90s ->   241.86s] no matter what it does, we're going to make money. So that's what happens. Now here's how the trade
+[  241.86s ->   247.90s] is structured. Okay. You're going to sell one call at the five Delta level. This is very far away.
+[  248.06s ->   253.62s] Again, we go very far away on the call or the upside because in general, the market trends higher.
+[  253.74s ->   258.24s] So we want to give it plenty of room to the upside. So it doesn't hit that level. Cause if it hits this
+[  258.24s ->   264.80s] level, then we lose and we don't want to do next, we'll sell a put at the 10 Delta level. So not as far
+[  264.80s ->   269.86s] away because in general, the market trends higher. And so we're going to use this as our main income or
+[  269.86s ->   276.56s] premium collection source. And then ideally you go between 90 to 120 days. I like 120. This is how
+[  276.56s ->   281.00s] you structure the trade. This is how you enter the trade. And then for the entry rules, you're going
+[  281.00s ->   284.98s] to be based on your account size. So down with a hundred thousand dollars, with a hundred thousand
+[  284.98s ->   291.34s] dollars, $100,000 account, we should have no more than $30,000 in trades. And so in this instance,
+[  291.42s ->   299.28s] if each trade costs me about $5,000 to put on, that means I can have up to six trades. Now this strategy,
+[  299.28s ->   304.86s] we'll open and close trades every two weeks on average. Sometimes it'll be faster. Sometimes
+[  304.86s ->   311.34s] it'll be a bit longer, but on average two weeks. And so if that's the case, then if I want to fit
+[  311.34s ->   318.42s] in six trades within two weeks, then I'm going to be doing roughly two trades a week. And so my entry
+[  318.42s ->   326.00s] rules will be, I'm going to enter one trade on Tuesday and another on Thursday. So twice a week,
+[  326.00s ->   331.60s] ideally on red days, because that's going to help me increase my credit more and then just
+[  331.60s ->   335.88s] collect more profits. So that's how you're going to enter. How you're going to exit is you're going
+[  335.88s ->   341.34s] to do a 25% take profit. And you might be like, awesome. That does a small amount. Why 25%?
+[  341.54s ->   346.78s] Because if you stretch that out to maybe 50% profit, now it takes you a month to close that
+[  346.78s ->   350.78s] trade, which means you can have four, five, six, seven, eight different positions on for eight
+[  350.78s ->   354.90s] different weeks. And so you don't want to do that because then you have so many trades open
+[  354.90s ->   358.92s] that the market moves against you. You're going to have a lot of stop losses being hit. It's going
+[  358.92s ->   364.70s] to be a very huge loss. So 25% allows you to close the trade faster and at the same time have less
+[  364.70s ->   369.38s] positions on. So you have less concentrated risk. Also, what we're going to do is we're going to do
+[  369.38s ->   375.40s] 300% stop loss is what we'll do here. And so this means that we're going to cap our losses if it really
+[  375.40s ->   380.52s] goes against us. And so again, this is what the trade looks like for exit reasons. So this is how we
+[  380.52s ->   385.30s] structure the trade. This is how we enter the trade. And this is how we exit the trade.
+[  386.04s ->   390.30s] So this is going to be where all your income comes from. This is going to be where your profits come
+[  390.30s ->   396.22s] from, where you make money from this $100,000 account. Now it depends. The market changes. We
+[  396.22s ->   404.10s] can't control it. Can't promise returns. But running this strategy on ES on average, I am making
+[  404.10s ->   411.76s] about a 5% to 10% return on my money. Now I'm talking about a 5% to 10% return on the 30% I'm
+[  411.76s ->   418.84s] using. So on my overall account, I'm making about a 1% to 2% return on the whole $100,000. So again,
+[  418.96s ->   424.82s] I'm making 5% to 10% on the $30,000 invested. And so again, making about that. And so what this
+[  424.82s ->   431.80s] translates into is it translates into about $3,000 currently on average over the last few months
+[  431.80s ->   438.40s] about, again, we're having wins and losses this month. So it's a good average about $3,500 a month
+[  438.40s ->   443.84s] around here may actually be a bit less than that, depending because it depends on your account size.
+[  444.50s ->   451.36s] So again, this is where the income is coming from. And so this is going to lose you money if the market
+[  451.36s ->   456.98s] drops or goes against you. And so what we're going to do is we also want to combine this with a hedging
+[  456.98s ->   463.76s] strategy. Okay, the hedging strategy is very simple. We're just going to use 10% of the credit
+[  463.76s ->   469.98s] that we receive every month and use it to buy puts during a specific point in time. Now this specific
+[  469.98s ->   475.32s] lesson is coming from my newest book that I wrote called Never Worry About Volatility Again. It's on
+[  475.32s ->   480.46s] Amazon for 20 bucks or you can just get the instant free download down below in the description because
+[  480.46s ->   484.66s] I love you YouTube guys and I want you to have all the great content. But here's the book. Again,
+[  484.66s ->   489.64s] there's a checklist on everything you could do to dramatically decrease your risk as an option
+[  489.64s ->   495.82s] seller. But for this specific video, I'm going to be diving into how to use the Bollinger Band. So
+[  495.82s ->   504.30s] strategy number two here, diving into it, is using the Bollinger Band to avoid market crash risk. And so
+[  504.30s ->   511.00s] how we do this is like this. If we're looking at the S&P 500 and we're looking at the chart, what we can do
+[  511.00s ->   515.86s] is we can add an indicator. This indicator will be available whether you use TradingView, whether
+[  515.86s ->   521.48s] you use your broker or any other charting platform. It's a very popular one. So we're going to go on to
+[  521.48s ->   527.94s] indicators, type in Bollinger Bands. We're going to add it to our chart and this is how most people use
+[  527.94s ->   532.50s] it and it's raw. So what you want to do is you want to actually change the settings and you want to make
+[  532.50s ->   541.62s] the length from 20 to 200. This way, this shows us an accurate representation based on math where
+[  541.62s ->   549.06s] the market should be trading. So in between the green and red zone, this blue background on the
+[  549.06s ->   555.16s] indicator is where the market should be trading. So if it breaks out above the red line, it means
+[  555.16s ->   560.76s] it's overextended and the market is likely to pull back or crash. So you can see here, during points like
+[  560.76s ->   567.90s] this, during points like this, near the red line, at the red line, risk of a pullback, risk of a crash
+[  567.90s ->   573.90s] is very high. And so in these scenarios, we're going to scale back. We're going to take off trades and not
+[  573.90s ->   580.60s] put on new ones. And we can even enter in hedges. Now this saves us a lot of money because hedges most
+[  580.60s ->   588.84s] of the time just cost us money. But if we only put on hedges around this red line, then this dramatically
+[  588.84s ->   594.24s] decreases our losses because we're only putting on hedges when our risk of a crash is high. So we're
+[  594.24s ->   600.02s] not having to pay out this insurance cost when we don't need to. And so when it's near this red line,
+[  600.12s ->   606.02s] that is when we do hedges. Now, how do we do hedges? So again, first we rate for around the red line of
+[  606.02s ->   611.42s] the Bollinger band. I'm going to put BB for that. And then what we do is we take 10% of the credit and we
+[  611.42s ->   618.58s] turn that into a hedge. So let's say I'm making $2,000 a month with my main income strategy,
+[  618.66s ->   623.46s] right? I'm making 2,000. That means I'm going to take, again, you can do more. 10% is just a rough
+[  623.46s ->   628.78s] average that I do. There's no reason behind it, but you could do up to 20, 25, however you're
+[  628.78s ->   635.08s] comfortable. But just for the example of 10%, you take 10% of the money you're making on a monthly basis
+[  635.08s ->   641.24s] and you multiply it by 10%. So this instance, I'll get $200, which means I have $200 to hedge
+[  641.24s ->   646.24s] with. So what I'm going to do is I'm going to go out and I'm going to buy a put on ES that costs
+[  646.24s ->   653.92s] about $200. I'll be going between 7 to 30 DTE. And then what I'll be doing with that is from there,
+[  653.92s ->   660.92s] I will then be looking for something between the 20 to 40 Delta level, depending on what I can buy
+[  660.92s ->   666.14s] with the amount that I have. So about $200 here is what I'll be buying. And so typically that leads
+[  666.14s ->   672.94s] to me buying 14 DTE and it tends to be around the 20 Delta is what I can tend to buy. And so that's
+[  672.94s ->   679.00s] typically what I go for. And so that allows me to put on a hedge near the risky points where if the
+[  679.00s ->   684.60s] market drops, this put that I'm buying is going to dramatically increase in value. These puts can
+[  684.60s ->   692.00s] easily increase in value 100% to 500% depending on the size of the crash. So this is going to generate
+[  692.00s ->   696.66s] a substantial amount of profit from the small little hedge that I have so that I can help
+[  696.66s ->   703.16s] offset any losses that I have from the main income strategy. So this right here will only bring on,
+[  703.28s ->   710.56s] depending on how I do it at max, another $10,000 of buying power. Might be a little less, might be a
+[  710.56s ->   715.34s] little more depending on how much you're hedging. So right here, the income, I'm using 30,000. So let's
+[  715.34s ->   724.44s] break this down at a $100,000 account. 30,000 of it is being put into income, being put into profit
+[  724.44s ->   732.78s] trades. 10,000 is being put into hedges to help protect me from downside risk. This leaves a good
+[  732.78s ->   739.46s] portion of money. This leaves $60,000 left. That's just sitting in cash. And so this leads me to the
+[  739.46s ->   746.48s] next step of what I wanted to talk about, which is what do I do with the extra cash. And so futures
+[  746.48s ->   752.72s] options are very risky. The buying power of a futures options can increase dramatically. So we
+[  752.72s ->   759.92s] want to make sure that we have a good cash reserve available so that we can actually withstand the
+[  759.92s ->   765.28s] buying power changes. So what I do from here is I split this 50-50. It's just a personal preference.
+[  765.28s ->   773.88s] I do 30,000. I leave in cash. This will help cover any buying power increase. So in this example,
+[  774.10s ->   781.14s] buying power can increase up to a hundred percent or basically QX the buying power, and I'll still have
+[  781.14s ->   789.96s] the money available to cover that. Now I'll also split that up into another 30K. And this 30K will go
+[  789.96s ->   798.52s] into an ETF called T-Bill. T-Bill is a treasury bill ETF. This thing makes, or I should say returns
+[  798.52s ->   806.64s] and a dividend currently 4% dividend per year. So that means that this money that's just sitting here
+[  806.64s ->   813.22s] will make money for me at about a 4%. That means it's going to make me about nothing crazy,
+[  813.22s ->   821.40s] but about $1,200 in extra profit from just having the cash sit there. And now if I ever need more
+[  821.40s ->   827.04s] money to cover buying power requirements, because I need more than the 30, then I'll just close out
+[  827.04s ->   832.50s] T-Bill. I would still have been receiving dividends monthly because it pays out monthly. And then I can
+[  832.50s ->   837.38s] use that money to help offset anything that I need from the income strategies. But again, the hedges
+[  837.38s ->   842.12s] should help with that as well. So I should really only need 30 and then I can have the rest in T-Bill.
+[  842.12s ->   846.46s] So again, what do we do here and how does this break down from a tax basis?
+[  847.22s ->   852.44s] The 30K is making money. This money is done through futures options. So it's taxed efficiently.
+[  852.82s ->   857.50s] The 60-40 tax, which means I get a tax advantage. You can learn more about that in one of my tax
+[  857.50s ->   864.92s] videos. The $10,000, if I make any money, will be taxed at 60-40 tax advantage. But most likely it's
+[  864.92s ->   869.80s] just going to be a write-off for this. So it's going to help me decrease my profits, pay less taxes
+[  869.80s ->   873.62s] on that. Again, only do it during the red band so you don't have to pay too much money on that.
+[  873.96s ->   878.98s] And then T-Bill is done through a dividend, which a dividend pays a lot lower tax burden
+[  878.98s ->   883.90s] than a normal profit and loss as you're just buying and holding this. So then again, you pay
+[  883.90s ->   889.04s] almost zero if you're in the US, depending on how much you're making from the dividend. But if you're
+[  889.04s ->   894.66s] making this much, you're probably going to pay roughly 0% tax on that. So just like that,
+[  894.66s ->   899.34s] a $100,000 plus account can be structured like this. Now you have your income. Now you have your
+[  899.34s ->   903.62s] hedging. Now you have cash being allocated elsewhere. So you're not letting any money go
+[  903.62s ->   908.40s] to waste and you're being able to do so in a tax efficient manner. Now, the next thing is this can
+[  908.40s ->   912.80s] take a lot of time doing all these things together, having to worry about the income strategies and
+[  912.80s ->   917.82s] monitoring them and doing the hedges. And you might not want to worry about all that, which is why
+[  917.82s ->   923.84s] there are automation tools like the options auto trader. Now I'm completely biased when I say it's the
+[  923.84s ->   928.64s] best one because I built it. This is my tool, what I run my run my account off of. This is my
+[  928.64s ->   933.18s] business, but I'm saying it's the best because one, I use it too. I built it. But number three,
+[  933.18s ->   939.52s] it's the only platform that supports futures options automation. It's the only one around.
+[  939.94s ->   945.42s] And so here's how simple it is. Okay. I basically go in and I plug in all the rules that I had here,
+[  945.46s ->   950.70s] right? You can see my, let's just start off with my income strategy, right? I take all these things of
+[  950.70s ->   955.88s] how to structure the trade, how to enter, how to exit. I tell the bot, Hey, do this. And it does
+[  955.88s ->   960.60s] it for me. It follows the exact rules that I set. So I know that I'm in control of the account at all
+[  960.60s ->   966.34s] times. So let me just start. Well, if I click on create auto trader, I click on create my own
+[  966.34s ->   972.00s] can ask you what strategy I'm doing the income strategy here. That's a strangles trade. And so
+[  972.00s ->   977.18s] I'm going to do that on ES. What I'm going to do is I'm going to do 120 days out. Cause it's like
+[  977.18s ->   981.24s] going further out. I'm going to do a put. I'm going to sell that at the 10 Delta. So minus one
+[  981.24s ->   985.62s] put at 10 Delta. I'm going to sell the call at a five Delta to give me more upside room.
+[  985.82s ->   989.76s] Just like that. Now I've structured the trade based on the rules. Now, how am I going to enter
+[  989.76s ->   994.80s] the trade? Well, like I said, I like to enter, I can do this multiple times a week and I can do this
+[  994.80s ->  1000.10s] on Tuesday and Thursday based on my account size, just like that. And now obviously I said that you can
+[ 1000.10s ->  1004.68s] get better returns if you prioritize entry on red days. So just like that, I can enable red days,
+[ 1004.68s ->  1011.10s] which will prioritize entering on red days. Next. Now that I structured the trade, I said how I want
+[ 1011.10s ->  1017.78s] to enter. I just say, Hey, this is when I want to exit. Again, I do a 25% take profit, 300% stop loss.
+[ 1018.87s ->  1023.59s] And that's how I exit my trade. Next, I set up some safeguards. How much money do I want to trade
+[ 1023.59s ->  1027.47s] with? Obviously I mentioned for a hundred thousand dollar account size, I'll be wanting to do about
+[ 1027.47s ->  1032.49s] 30,000. I'm going to be able to do this amount because I have other trades allocated. Cool. It works.
+[ 1032.49s ->  1036.39s] All right, sweet. So that's the shingle trade tells me a bit of review about it,
+[ 1036.63s ->  1042.41s] but now I've created my strangles bot. And so then I'll do the same exact process to create the hedging
+[ 1042.41s ->  1047.57s] bot and only put the hedging bot on during that band. And when I do that, now I have my income
+[ 1047.57s ->  1051.45s] strategy and my hedging strategy that's fully automated. It'll put it on. It'll take it off.
+[ 1051.53s ->  1057.73s] It'll manage it for me based on all the rules that you just set, which is awesome. And then again,
+[ 1057.73s ->  1062.91s] you, you, you periodically have T bill. And just like that, you now are using a large account
+[ 1062.91s ->  1068.53s] to generate reliable income without all the crazy risk. So again, if you want to check out the
+[ 1068.53s ->  1073.49s] options, auto trader, click the link down below to start your triumph. Anyways, guys,
+[ 1073.55s ->  1075.29s] see you in the next video. Hope you enjoyed this.

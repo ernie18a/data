@@ -1,0 +1,72 @@
+[    0.00s ->     5.18s] Hey guys, what's up? I want to show you in this video a strategy that can help you make a 94%
+[    5.18s ->     9.36s] return when trading dip buys. It's called the winning whale strategy. I'm going to explain
+[    9.36s ->    13.20s] the back test to show you that it works. I'm going to explain the theory behind it so you
+[   13.20s ->    16.46s] understand why it works when you're trading it. You're like, oh yeah, this makes sense.
+[   16.90s ->    21.90s] And then I'm going to show you step-by-step how to place this trade. So step number one is what
+[   21.90s ->    28.60s] is the back test? You can see here with SPY or the S&P 500 ETF, we have a 94% win rate with a 63%
+[   28.60s ->    33.02s] yearly return. Now again, this trade does not happen every single day or every single week.
+[   33.44s ->    38.48s] Maybe once or twice a year do we get a string of these trades. Now again, that's because it's a
+[   38.48s ->    42.70s] dip buy strategy. So that means the market needs to sell off in order for the strategy to happen.
+[   42.86s ->    47.50s] But I'll explain more about that in the step-by-step process. All right. So you can also trade this on
+[   47.50s ->    53.22s] DIA. If we go to DIA, you can see it has a 93% win rate and you can also change it for other stocks
+[   53.22s ->    60.06s] as well. TLT will typically have more occurrences. But again, you can see here, but again, your win
+[   60.06s ->    65.82s] rate is a lot lower with that. Anyways, you can make the stock you want to trade on, but SPY and DIA
+[   65.82s ->    71.32s] tends to be the best stocks for the strategy. Okay. Moving in with the winning whale strategy with a
+[   71.32s ->    77.62s] 63% yearly return, I'm going to explain the theory behind why this works. Also, quick side note,
+[   77.62s ->    83.42s] if you want access to the backtest, you can become an inner circle member or just leave a comment down
+[   83.42s ->    91.20s] below and I'll send you a CSV file of the entire backtest if you want it. Okay. So if we see here,
+[   91.48s ->    95.82s] the way that we structure this trade or the way that this trade works is what the winning whale is.
+[   95.92s ->   101.68s] So if you've never heard of a whale in the market or in the trading game, a whale is somebody with a
+[  101.68s ->   108.86s] ton of money. It's typically a hedge fund, a bank, an institution, or something like that, which has
+[  108.86s ->   118.34s] enough money to move the market. It also could be insider traders like the CEO or the CFO who buys
+[  118.34s ->   123.70s] or sells a large portion of their company stock because they know something. So this typically
+[  123.70s ->   130.52s] happens around lows. When the stock reaches a low, then you'll see the CFO of a company
+[  130.52s ->   135.98s] or a big institution by a large portion and then it'll trade up. And so that's what this winning
+[  135.98s ->   141.70s] whale strategy is. It's buying the dip, but also knowing how to buy it. So again, when you're trading
+[  141.70s ->   146.12s] put credit spreads, your whole goal is to make money on the upside, right? A put credit spread
+[  146.12s ->   150.22s] makes money as the stock goes up, as it stays the same or goes down a little bit. And so when we're
+[  150.22s ->   154.56s] trading put credit spreads, we're looking for an opportunity for the stock to move higher. And when
+[  154.56s ->   158.86s] dip buys, that's the perfect opportunity. So that's, that is the theory behind it and why this works.
+[  158.86s ->   165.24s] Now to explain the strategy step-by-step, this is how it works. First off, we want to make sure
+[  165.24s ->   168.88s] that the stock is bouncing. That's what this criteria is right here. It says, is this stock
+[  168.88s ->   173.62s] bouncing? And so what it looks like is we're, is we're waiting for the stock to go below this bottom
+[  173.62s ->   181.82s] yellow line, which is 3.8 standard deviations below the 200 day moving average. Once it breaks below that
+[  181.82s ->   186.78s] and then breaks back above and closes above it after being below it, that is our dip buy entry. And that
+[  186.78s ->   193.22s] is what satisfies this as a dip buy. Because statistically, when that happens, the stock
+[  193.22s ->   199.10s] recovers shortly after. So that's what the setup is. Now we need to determine our short strike price
+[  199.10s ->   204.26s] for our put credit spread. So that's going to look like this. We're going to take the stock's current
+[  204.26s ->   211.48s] close price and multiply that by 96%. So let's say this was our entry right here, because you know,
+[  211.48s ->   216.30s] this is where it closed back above. So if our entry is right here, then we're going to take 36. Let's
+[  216.30s ->   227.22s] see what the close was. 365.97. So 365.97 times 96%, which we can see here, 96%. So we're going to
+[  227.22s ->   232.08s] multiply that times 0.96. And that's where we're going to get our short strike. Now we're going to
+[  232.08s ->   237.92s] round that. It says 351.33. We're going to round that to the nearest whole number. So we're going to say
+[  237.92s ->   245.20s] 351. So our goal is to short the put contract at 351 strike and then buy the one right below it at
+[  245.20s ->   251.44s] 350. So that's how we're going to going to set up our put credit spread. Now again, this is an example
+[  251.44s ->   255.44s] way below where the stock currently is. So it's going to be hard to set that up on a real example. But
+[  255.44s ->   261.22s] before we do, we need to determine our expiration date. Our expiration date, again, this is the best
+[  261.22s ->   267.64s] expiration expiration date based on the strategy being optimized a lot of different times is 14 days.
+[  268.02s ->   274.12s] So what you do is you take the current date, which is currently March 31st. You add 14 days. So
+[  274.12s ->   280.04s] April 13th, and you round to the nearest Friday, which would be April 14th. So again, we're going
+[  280.04s ->   287.00s] to go and we're going to set up this trade. You can see here we go into Robinhood, we go to trades by
+[  287.00s ->   292.88s] options, we go into builder, we go into put credit spread because the trade word, the spread we're
+[  292.88s ->   297.46s] trading, we're going to go into the expiration and the expiration date that we determined. So it's going to
+[  297.46s ->   302.46s] be April 14th, just like that. Now again, we're probably not going to be able to find the exact
+[  302.46s ->   306.42s] strike price of what we found because it's way lower than where the price currently is at the
+[  306.42s ->   314.44s] moment. So we would need to go all the way down to what was it 353? Yeah, 351. So yeah, going it
+[  314.44s ->   319.58s] doesn't go down that low on here, just because there's no value in it. But again, that's because
+[  319.58s ->   323.68s] we're not near that we were just giving an example from way low is currently trading at 408.
+[  323.68s ->   328.44s] Anyways, that's the example of how you would set up the trade. Now the next thing you need to know
+[  328.44s ->   332.52s] is that you want to collect at least 15 cents in credit. Now what you do have going for your
+[  332.52s ->   337.48s] advantage that is not shown here is when you're trading like this, when the market is dipping
+[  337.48s ->   345.10s] down to new all time lows or lows that it has been to in roughly a year, then your IV rank is going to
+[  345.10s ->   349.68s] be very high. When your IV rank is high, you can collect more credit. So your goal is to collect 15
+[  349.68s ->   356.48s] cents minimum, but you should be able to easily collect 20 to $25. You can see here the average
+[  356.48s ->   362.42s] roughly 22 to $26 in credit. And that would be an amazing credit because the IV rank is very high.
+[  363.12s ->   369.18s] Anyways, that is the idea of buying the dip and using put credit spreads to profit from it. So if
+[  369.18s ->   373.16s] you're someone who wants to take advantage of this, make sure to click the link below to check out this
+[  373.16s ->   379.58s] article that lays out step by step so that when a dip comes, you know how to profit from it. If you want
+[  379.58s ->   385.46s] these alerts sent straight to your phone via text, email, discord, whatever, then check out the 10% credit
+[  385.46s ->   389.66s] spreads inner circle program where I share my personal trade alerts where I trade for a full for a full time
+[  389.66s ->   394.34s] job. That's what I do with credit spreads and other things like that. So if you want to learn more, smash the
+[  394.34s ->   399.66s] thumbs up button and smash the subscribe button to a more strat more strategy videos coming. I hope this makes
+[  399.66s ->   402.40s] sense. And I hope this helps you profit using put credit spreads.

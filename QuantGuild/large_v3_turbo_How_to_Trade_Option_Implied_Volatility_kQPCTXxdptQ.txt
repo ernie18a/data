@@ -1,0 +1,364 @@
+[    0.46s ->     7.07s] In this video and Jupyter Notebook, we're going to walk through how to trade option implied
+[    7.07s ->    12.81s] volatility. I've broken it down into three key components. The first being understanding what
+[   12.81s ->    18.91s] volatility even is, different measures of volatility and how we might be able to develop
+[   18.91s ->    25.47s] an aggregate measure of volatility using all of these different ways to represent this notion
+[   25.47s ->    32.53s] of dispersion. The second being understanding the impact of volatility on an options price.
+[   33.03s ->    37.83s] And the third being developing some sort of statistical basis for your trading. Now,
+[   38.31s ->    42.77s] it's very important to keep in mind that whenever you develop a trading model,
+[   42.95s ->    49.53s] one thing is certain. And that one thing is that your model is incorrect. But hopefully you've seen
+[   49.53s ->    54.09s] some of my other videos on how to trade or maybe that the expectation doesn't exist.
+[   54.09s ->    59.17s] And you're starting to see that even though our model is incorrect, it does not mean that we
+[   59.17s ->    66.79s] cannot profit from it. Let's start with this idea of what volatility even is. Volatility is this notion
+[   66.79s ->    73.23s] of quadratic variation on the return series. All that really means is we're looking at the
+[   73.23s ->    78.39s] statistical variance or the standard deviation to come up with some sort of measure of dispersion
+[   78.39s ->    85.33s] of those returns. Now, hopefully you've seen some of my other videos on how to trade or that the expected
+[   85.33s ->    92.61s] return of a stock doesn't exist. Because when we use this measure, it's already wrong. What I mean
+[   92.61s ->   100.15s] is we're relying on this, this mean, this mean return to develop a notion of distance from return.
+[  100.15s ->   107.29s] That's what dispersion is in a statistical sense. But that mean return doesn't converge to one value.
+[  107.47s ->   115.37s] So what might be an outlier in one period might be very common in another. There are several reasons
+[  115.37s ->   121.81s] why this is the case. One being that this return distribution just changes over time. That's
+[  121.81s ->   128.11s] confusing. Just think about a company in the early 2000s. And in 2025, 25 years later, clearly,
+[  128.11s ->   134.23s] that company is going to be a completely different company. Macro regimes don't just change. Administrative
+[  134.23s ->   139.01s] regimes don't just change. But even within that company, leadership changes. So there are a lot of
+[  139.01s ->   146.87s] different factors that contribute to this measure of volatility being wrong in general. Moreover, this
+[  146.87s ->   153.07s] true volatility process that we're trying to measure is always going to be backwards looking,
+[  153.07s ->   160.19s] right? We need the return to develop this measure. So the volatility itself is not actually observable,
+[  160.19s ->   165.91s] at least in this sort of backward looking sense here. Some firms have proprietary measures and this
+[  165.91s ->   171.85s] or that. But, you know, quadratic variation and variance is a very, very simple way that is typically
+[  171.85s ->   179.37s] highly correlated with these very, very proprietary measures of volatility. Knowing that volatility is
+[  179.37s ->   186.69s] this difficult to measure unobservable quantity, how can we go about modeling what the value actually
+[  186.69s ->   192.53s] is? Well, there's a couple of different things we can do. And the first thing we can do is develop a
+[  192.53s ->   199.05s] simplified state of the world where volatility is constant. Then we can impose this structure of a
+[  199.05s ->   205.97s] standard deviation on the historic returns, so the returns that we've already realized, and see
+[  205.97s ->   213.15s] what the standard deviation is of those returns relative to some true measure of volatility that
+[  213.15s ->   219.39s] was used to generate that process. What do I mean by this? Well, here I have a nice looking chart that
+[  219.39s ->   227.73s] simulates a stock price, and it simulates a stock price based on a constant volatility of 0.2 or 20%.
+[  227.73s ->   233.67s] So what I've done here is I've imposed that structure of a 30-day rolling quadratic variation,
+[  233.67s ->   239.81s] and I've annualized that value by just multiplying by the square root of 252, but we won't get into the
+[  239.81s ->   248.13s] details right now. The important thing to know is volatility here. We know what that true value is.
+[  248.37s ->   255.17s] In real life, we don't know what the true volatility value is generating that price process. However,
+[  256.45s ->   263.11s] here we do. So we can see essentially how that standard deviation does at coming up with a number.
+[  263.11s ->   268.71s] Pretty much coming up with a number out of thin air, because again, that volatility value is
+[  268.71s ->   273.57s] non-observable. We can't actually see what it is. So what we're going to do here is we're going to
+[  273.57s ->   278.65s] impose this 30-day rolling quadratic variation, and we can see, okay, on a rolling basis, we get
+[  278.65s ->   284.69s] somewhere between 0.1 and 0.2. Certainly better than nothing, because we don't know if it's going to
+[  284.69s ->   290.51s] be close to 0.01 or if it's going to be close to 1.2. We have no idea where that vol might actually
+[  290.51s ->   297.97s] reside. Here we know it's 0.2, and imposing this structure of a 30-day rolling quadratic variation,
+[  298.09s ->   303.63s] we see that it's between 0.1 and 0.2. Certainly better than nothing, maybe a reasonable measure for
+[  303.63s ->   310.19s] what the true volatility of the underlying process is. I say that it is not bad. There are certainly
+[  310.19s ->   316.19s] things we could do to improve this, but at a cursory level, this is definitely a reasonable way
+[  316.19s ->   321.95s] about going about measuring historic realized volatility. Now, of course, in this example,
+[  322.11s ->   328.87s] volatility is constant. This is not the case in real life. Volatility itself is a stochastic
+[  328.87s ->   335.67s] process. So let's increase the complexity of that simulation. It's all about starting with the base
+[  335.67s ->   341.79s] case and increasing complexity, because if you can't profit in a pretend world where everything is
+[  341.79s ->   347.87s] simple, how on earth are you going to profit in the real world where everything is incredibly
+[  347.87s ->   355.50s] complex? Here, volatility is not constant. Volatility is a stochastic process. It's a mean reverting
+[  355.50s ->   360.78s] process. This is a Heston model, which assumes an Ornstein-Ullenbach mean reverting process for the
+[  360.78s ->   368.00s] volatility path. What we have here is this blue path is the stock price. This green path is the true
+[  368.00s ->   374.40s] volatility path. This is starting to look more like real life. Volatility is not a constant 0.2. It's
+[  374.40s ->   382.06s] not a constant 20% like in this simplified example here. Volatility is now a stochastic process. So when
+[  382.06s ->   388.80s] we impose this 30-day rolling quadratic variation, you can see this red line is trying to track this
+[  388.80s ->   396.30s] green line. And though it is incorrect, it's incorrect probably all of the time, it is certainly better
+[  396.30s ->   401.44s] than nothing at discerning a level of volatility. Now, of course, it's lagged, it's backwards looking,
+[  401.52s ->   409.44s] all of these things. However, remember, this is a random variable that evolves over time. This is a
+[  409.44s ->   416.08s] very simple measure. We're taking the standard deviation of the previous 30 days of returns.
+[  417.44s ->   423.64s] A very simple rolling measure is trying to capture the dynamics of this very complicated,
+[  423.64s ->   430.20s] unobservable process. So it's certainly doing a relatively reasonable job. Of course, there's
+[  430.20s ->   434.22s] going to be issues with it. It's backwards looking in that sense. So it's always going to be delayed
+[  434.22s ->   441.04s] and this and that. However, in terms of trying to discern a level, it's doing a pretty good job
+[  441.04s ->   448.38s] because this red path is relatively in line with this green path. When I say it's better than nothing,
+[  448.38s ->   454.36s] it's certainly better than nothing. And moreover, it evolves with time. So remember, in real life,
+[  454.44s ->   459.66s] volatility is not going to be constant. It's going to evolve over time randomly. And here we can see
+[  459.66s ->   465.76s] this red line is doing its best at tracking this true vol measure. So again, we won't see this green
+[  465.76s ->   470.94s] path in real life. We'll only have this red path. And it's certainly doing a reasonable job. This is
+[  470.94s ->   477.10s] definitely not a model that I would use in real life. This is a very simplified, again, simplified example,
+[  477.10s ->   483.74s] simplified model. But what we're trying to do here is we're trying to understand why volatility is difficult
+[  483.74s ->   491.46s] to model. And that's due mainly to the fact that it's unobservable and evolving randomly through time. So
+[  491.46s ->   498.88s] here, 30 day rolling quadratic variation on a volatility price path that is more reflective of something that
+[  498.88s ->   504.62s] you would see in the real market, it does a reasonable job. In the context of modeling volatility, we face
+[  504.62s ->   511.26s] several challenges, I've discussed a few of them, and I've listed some of them here. But there's a lot we can do to
+[  511.26s ->   517.62s] try to develop a better model than just this simple rolling 30 day average. And there's a lot of different models for
+[  517.62s ->   524.30s] volatility. And in fact, each one probably merits a lecture for each model. Nevertheless, I figured I would discuss the
+[  524.30s ->   531.12s] different tasks from time series analysis and some of the models for volatility so that if anyone wanted to continue
+[  531.12s ->   537.76s] doing some research, they certainly could. So in terms of time series analysis tasks, remember, if volatility is a
+[  537.76s ->   545.12s] random process that evolves over time, this is going to be relevant to the entire study of time series. So there are
+[  545.12s ->   551.76s] three tasks, essentially, that you can do in a time series setting, you can filter smooth or forecast. And all that really
+[  551.76s ->   559.52s] means and I've broken it down here is filtering is where the heck is vol at now. So what is the reasonable
+[  559.52s ->   568.08s] level of volatility now? That's what we try to accomplish with filtering. Smoothing is where the heck was vol.
+[  568.80s ->   575.36s] So in a backwards looking setting, where the heck was volatility at this at this time at this time, of course,
+[  575.36s ->   581.44s] this is in the backwards looking setting. And then of course, forecasting where the heck will vol be, all of
+[  581.44s ->   586.56s] these are very relevant. If you have any hope to forecasting vol, you should sure as heck know where
+[  586.56s ->   592.80s] it was and where it is now, right? That seems a very, very important and necessary component of
+[  592.80s ->   598.48s] forecasting is smoothing and filtering. But, you know, that that is something that I will leave to
+[  598.48s ->   604.08s] further study. And perhaps these are lectures again of their own, because these are certainly some some
+[  604.08s ->   609.76s] very important topics. I figured I'd also list some volatility models here, we have arch garch models,
+[  609.76s ->   615.76s] of course, a garch model is going to be a more parsimonious representation of a higher order arch
+[  615.76s ->   622.48s] model. We have some sort of mean reverting process, as I've visualized earlier in the Heston setting.
+[  622.48s ->   626.96s] And then you can do some sort of exponentially weighted moving average, which this may have
+[  626.96s ->   633.12s] been redundant to list. But regardless, I figured I would include it in the volatility model section.
+[  633.12s ->   641.36s] So, in the context of modeling volatility, the keys are that, again, volatility is unobservable,
+[  641.92s ->   647.60s] and these statistical measures change over time. And we're always going to be trying to figure out
+[  647.60s ->   654.88s] where the heck volatility was, where is it now, and where it will be. Knowing now that there are
+[  654.88s ->   661.12s] several models for volatility, and there are a variety of different tasks related to this
+[  661.68s ->   667.60s] volatility measurement process, I was just going to include another simple example of
+[  668.24s ->   673.68s] a different measure for volatility. That is, we have this Heston price path, we have this true
+[  673.68s ->   679.76s] volatility path. And now I've included a new measure of volatility, I have this 30 day rolling quadratic
+[  679.76s ->   686.48s] variation. And I also have a 15 day rolling quadratic variation, which one is correct. And that's exactly
+[  686.48s ->   692.00s] my point. So, here we have two different measures of volatility objectively in a backwards looking
+[  692.00s ->   698.48s] setting, which one is more correct to use. That is why the study of time series is so relevant,
+[  698.48s ->   704.40s] along with all of these volatility models. So, something to keep in mind is, which one is more
+[  704.40s ->   711.20s] correct might change at different times. So, this is going to be the moving target, right? There's no
+[  711.20s ->   717.36s] set and forget in a volatility trading setting. There's no such thing as a set and forget. Things
+[  717.36s ->   722.64s] dynamically change on a daily basis all the time. So, one measure might be more correct than another
+[  722.64s ->   728.48s] during any given time period. Something to understand and something to consider. Up until
+[  728.48s ->   733.76s] this point, we've been looking at realized volatility. What that means is we're looking at this price
+[  733.76s ->   740.16s] path and a series of returns associated with this price path. And we're measuring the quadratic variation
+[  740.16s ->   746.48s] of this return series. That is the realized volatility, the realized volatility. There's also
+[  746.48s ->   752.72s] a measure of implied volatility, and this is directly related to an option contract. So, what implied
+[  752.72s ->   759.52s] volatility is, is it takes some sort of pricing function. Usually, unless stated otherwise,
+[  759.52s ->   767.04s] it is going to be a Black-Scholes pricing model. Nevertheless, you can also develop this notion
+[  767.04s ->   772.56s] of implied volatilities with any other pricing function that takes volatility as an input. So,
+[  772.56s ->   776.88s] just want to leave that there as a disclaimer. There are such things as like Heston implied
+[  776.88s ->   782.29s] volatilities, for example. Not everything is just a Black-Scholes implied volatility. But,
+[  782.29s ->   786.93s] nevertheless, implied volatility, what it does is it takes the pricing model,
+[  786.93s ->   793.65s] along with all of the assumptions. And it takes the market price of an option, which is determined
+[  793.65s ->   800.85s] by supply and demand. And it says, hey, what volatility input to this model gives us the market
+[  800.85s ->   808.61s] price? That's all volatility is. Essentially, it tells us the volatility that traders are pricing
+[  809.87s ->   816.59s] current options in the market at. So, I take whatever volatility, whatever that implied volatility
+[  816.59s ->   821.47s] number is, based on the current market supply and demand. I put it into this pricing function,
+[  821.47s ->   830.64s] and it'll spit out the market price that I'm seeing anyway. So, this problem of pricing options
+[  830.64s ->   836.16s] seems a little redundant if the market's going to determine the price anyway, right? Why do we care
+[  836.16s ->   843.28s] so much? Well, really, the important number is that implied volatility, right? That makes everything
+[  843.28s ->   854.24s] apples to apples, if you will. We can see what the uncertainty measure is in terms of market prices
+[  854.24s ->   860.08s] right now in a forward-looking setting. That's this sort of very impressive, important aspect of these
+[  860.08s ->   867.20s] pricing functions. Why is this even more important and impressive? Well, the implied volatility itself is
+[  867.20s ->   873.68s] directly observable. I can observe the implied volatility right now. I can pull up a path of the implied
+[  873.68s ->   881.44s] volatility over time. So, implied volatility is very different from realized volatility. Implied volatility
+[  881.44s ->   886.72s] is directly related to the option price. In fact, you can usually swap them out on some sort of volatility
+[  886.72s ->   893.68s] surface visualization. I'm sure I'm going to do another video on the volatility surface in the near future,
+[  893.68s ->   899.84s] probably in terms of some sort of model calibration for price extrapolation. But regardless, these are
+[  899.84s ->   906.64s] two separate quantities. It's very important to distinguish them because here, in these examples,
+[  906.64s ->   911.76s] in the simplified example and the more complex examples, even this example using two different
+[  911.76s ->   917.52s] models for volatility, we're looking at realized volatility. We're not looking at the option implied
+[  917.52s ->   923.20s] volatility. It's very important to discern these two quantities. Here, I outline, you know,
+[  923.20s ->   928.88s] the methodology of deriving implied volatility, what it tells us. And it's also very important to know
+[  928.88s ->   934.40s] that you can come up with different types of implied volatilities. But remember, unless stated otherwise,
+[  934.40s ->   941.76s] it's going to be in terms of a Black-Scholes implied volatility. Things get a little tricky because
+[  941.76s ->   949.20s] there's this notion of implied volatility and realized volatility. Sometimes people say realized
+[  949.20s ->   956.24s] volatility is historic volatility. However, there's also a notion of historic implied volatility.
+[  957.04s ->   962.88s] Wow, that's a lot. What do I mean by this? Well, in all of these examples above, we've looked at
+[  962.88s ->   969.76s] historic realized volatility. We're looking at volatility in a backward setting, historic, and we're
+[  969.76s ->   974.40s] looking at the realized volatility. We're looking at quadratic variation of the return series.
+[  975.28s ->   980.96s] That's the historic realized volatility. And I've simulated another example of this. This is just the
+[  980.96s ->   986.96s] true volatility path relative to the 30-day rolling quadratic variation. But we can also
+[  986.96s ->   992.56s] look at the historic implied volatility. What do I mean by this? Well, if we do that process of taking
+[  992.56s ->   997.52s] some sort of pricing function, determining the volatility to put into that pricing function that
+[  997.52s ->  1003.36s] spits out the current market prices, we can just lock in that value recorded at a certain point in
+[ 1003.36s ->  1010.40s] time and do that on a daily basis. Then we have a series of implied volatilities. And in a backwards
+[ 1010.40s ->  1016.24s] looking setting, that's historic implied volatility. So very important to understand these ideas.
+[ 1016.24s ->  1023.28s] This is the true path of implied volatilities. It's very important to understand this. Of course,
+[ 1023.28s ->  1029.04s] it's going to depend on how you aggregate it. Are you looking at one option? Yes, there's a lot that
+[ 1029.04s ->  1035.92s] goes into this quantity here, but it's observable. We don't have to do any sort of filtering or anything
+[ 1035.92s ->  1041.68s] like that. This could be some sort of aggregate measure across at the money options. Whatever it may
+[ 1041.68s ->  1049.04s] be, you can observe this quantity of implied volatility. This is the true historic implied
+[ 1049.04s ->  1055.92s] volatility path that we're looking at. In fact, this is for Nvidia. I've queried the data and I've also
+[ 1055.92s ->  1062.56s] included a script if you would like to query the data yourself, but I've also included the data in
+[ 1062.56s ->  1070.32s] this repository with the Jupyter notebook. Which volatility measure is then correct? We know they're
+[ 1070.32s ->  1076.96s] inherently different. We know that the models that we're imposing are inherently wrong. Nevertheless,
+[ 1076.96s ->  1083.44s] do they track a similar level? Are they useful in the sense that we're coming up with some sort of
+[ 1083.44s ->  1089.92s] actual measure for volatility? Let's take a look. What I've done is I've queried this information for
+[ 1089.92s ->  1097.84s] Nvidia from 2020 to 2025. We're looking at the implied volatility. We're looking at a proprietary measure
+[ 1097.84s ->  1104.24s] of realized volatility and we're going to simply look at the quadratic variation just as we had done
+[ 1104.24s ->  1111.28s] in the simple examples above with a constant volatility and a mean reverting volatility in that
+[ 1111.28s ->  1120.16s] Heston sense. So here I've visualized each of these over time and you can see that they track relatively
+[ 1120.16s ->  1126.40s] well some level of volatility. What I mean is, you know, implied volatility isn't out here at 120%
+[ 1126.40s ->  1131.68s] with realized volatility down here at 20%, right? That's not at all what's happening. These are
+[ 1131.68s ->  1140.00s] tracking some sort of level in a reasonable sense. Now that level will change over time, right? Just
+[ 1140.00s ->  1146.96s] because it's about 40% here and it's about 60% here and it comes back down to 40% here does not mean that
+[ 1146.96s ->  1154.88s] it's going to always revert down to this, this mean 40%. And that's a very important idea. This mean level
+[ 1154.88s ->  1163.28s] is going to change over time, right? The only certainty in this trading space is that your assumptions are
+[ 1163.28s ->  1170.75s] wrong and things are going to change over time. That's trading. That is why it's a full-time job
+[ 1171.39s ->  1176.99s] to develop and deploy these models because it's not a set and forget print money. You have to
+[ 1176.99s ->  1184.99s] understand that these dynamics change over time. And it's a very easy to see that in something like
+[ 1184.99s ->  1192.37s] this time series of volatilities. Okay. So which one's correct? Well, obviously they measure different
+[ 1192.37s ->  1199.41s] things, but they track a level relatively well with respect to one another. If we're trying to do some
+[ 1199.41s ->  1205.25s] sort of feature engineering, I figured I would sprinkle this idea in. If we're taking a look at all of these
+[ 1205.25s ->  1212.29s] measures of volatility, what can we do to develop an aggregate measure, an aggregate measure?
+[ 1213.01s ->  1221.65s] I've had a video in the past on principle component analysis. It's a deep dive into PCA in the context of
+[ 1221.65s ->  1226.37s] the return space. So I highly encourage you check that out. But one thing we can do is we can develop
+[ 1226.37s ->  1231.97s] a whole bunch of different measures for volatility. Maybe we're looking at realized volatility measures,
+[ 1231.97s ->  1236.69s] different implied volatility measures. Maybe we're using different pricing models. We're looking
+[ 1236.69s ->  1242.61s] at implied volatilities across different pricing models. We're looking at different ways to filter
+[ 1242.61s ->  1249.09s] and smooth realized volatility. And we have maybe 30 measures of volatility. Here, I only have three.
+[ 1249.09s ->  1256.21s] But what we can do is we can conduct a principle component analysis to try to determine if there's a way to
+[ 1256.21s ->  1264.85s] combine all of those volatility features in some linear way to essentially reduce the dimensionality.
+[ 1265.49s ->  1271.41s] And that's exactly what I've done here. So what I've done is I've taken this this series of different
+[ 1271.41s ->  1277.89s] volatility features. And I said, hey, I want to compress this into, say, one or maybe two features.
+[ 1277.89s ->  1283.65s] I could have 30 different measures of volatility. But what I've done is I've done this PCA on these three
+[ 1283.65s ->  1290.69s] measures. And you can see that within the first two principal components, I capture roughly 97%
+[ 1290.69s ->  1301.33s] of the variation in that space. So using only two features, I capture 97% of the variation in this
+[ 1301.33s ->  1308.13s] series. That is quite an impressive number, but it's not at all unexpected, right? If you had more
+[ 1308.13s ->  1313.09s] volatility features, you could probably compress it down to maybe like, you know, three or five,
+[ 1313.09s ->  1317.89s] whatever it is. And you can capture a significant amount of variation within that volatility space.
+[ 1317.89s ->  1323.81s] You could also take a look at the loadings on each of the implied and realized volatilities to see
+[ 1324.45s ->  1331.01s] which one contributes to more on each of the principal components in the PC space. But again,
+[ 1331.01s ->  1336.85s] this is going to be more related to the idea of dimensionality reduction and principal component
+[ 1336.85s ->  1341.49s] analysis specifically for feature engineering of volatility feature. If you're doing some sort of
+[ 1341.49s ->  1346.85s] machine learning model for trading, I'm going to create a separate series on this, but I certainly
+[ 1346.85s ->  1352.53s] wanted to include it because in the context of volatility, which one is correct is a very reasonable
+[ 1352.53s ->  1357.73s] question to ask. And we know that, you know, the implied volatility is inherently different from
+[ 1357.73s ->  1362.61s] realized volatility. So if we have all of these different measures, is there anything that we can
+[ 1362.61s ->  1367.89s] do to combine them into one sort of powerful signal? And there certainly is, you could do some sort of
+[ 1367.89s ->  1373.41s] PCA like this. And then you would just ensure that the loadings are relatively stable over time
+[ 1373.41s ->  1378.13s] to be able to use that feature. And of course, that's, that's the game, right? If these loadings
+[ 1378.13s ->  1383.33s] change next month, then that feature is going to be entirely different, right? The feature capturing,
+[ 1383.33s ->  1388.45s] say 97% of the variance. If all of these loadings are different next month, it's a completely different
+[ 1388.45s ->  1393.41s] feature. So it's just important to keep that in mind in terms of compressing all of these volatility
+[ 1393.41s ->  1398.29s] features. Figured I'd sprinkle this in. It's certainly something that is very useful, especially
+[ 1398.29s ->  1403.97s] in a machine learning setting. We can now start to discuss trading volatility. We have these different
+[ 1403.97s ->  1409.49s] measures of volatility. We know how implied volatility is calculated. The only thing that we
+[ 1409.49s ->  1415.09s] really need to understand now is how that implied volatility impacts price, and then come up with some
+[ 1415.09s ->  1422.21s] sort of statistical model to justify our trades. So we know that anytime uncertainty increases,
+[ 1422.21s ->  1427.57s] volatility increases and prices are higher, right? Doesn't that make sense? If you had some
+[ 1427.57s ->  1433.81s] contract or insurance, then if uncertainty is higher, is that contract going to be cheaper?
+[ 1434.45s ->  1438.37s] No way, right? That contract is going to be more expensive. The person who's issuing that
+[ 1438.37s ->  1443.41s] insurance for you is going to be like, whoa, I don't know what's going to happen even more now.
+[ 1443.41s ->  1449.49s] So you have to pay me more in terms of premium. That just makes sense, right? So in terms of volatility,
+[ 1449.49s ->  1456.61s] what we're trying to do is we're trying to figure out, okay, if option prices tend to be higher when
+[ 1456.61s ->  1463.01s] implied volatility is higher and lower when implied volatility is lower, is there any sort of
+[ 1463.01s ->  1469.01s] statistical model that we can come up with to trade that idea? Of course, that's assuming all else is
+[ 1469.01s ->  1472.77s] equal. We're not looking at time decay. We're not looking at trend. We're not looking at anything else.
+[ 1472.77s ->  1478.21s] We're just looking at this idea of volatility. This is a lecture on how to trade option implied
+[ 1478.21s ->  1482.93s] volatility, and that's all we're looking at. Let's come up with some sort of statistical model to
+[ 1482.93s ->  1493.49s] trade this. What I've done here is I've plotted two implied volatility paths. The first one here is
+[ 1493.49s ->  1500.37s] going to be the implied volatility paired with the following 30-day average implied volatility.
+[ 1501.47s ->  1509.79s] What you'll see is this red line is the regression line. The black dotted line is y equals x. So if the
+[ 1509.79s ->  1516.91s] implied volatility was correct, we would see all of these blue dots along this black line. Clearly,
+[ 1516.91s ->  1523.95s] this is not the case. Moreover, here, this is a high volatility period regime. This effect is more
+[ 1523.95s ->  1530.99s] pronounced. You can see this slope is more shallow in this second chart. So this is going to be the
+[ 1530.99s ->  1537.31s] implied volatility relative to the 430-day average volatility in terms of implied volatility, not
+[ 1537.31s ->  1543.71s] realized volatility. And you can see that what happens here is there's an intersection between
+[ 1543.71s ->  1551.23s] y equals x and this regression line. So what that means is here, anytime you are to the left of this
+[ 1551.23s ->  1559.07s] intersection, a lower vol tends to map, a lower implied vol now tends to map to a higher average
+[ 1559.07s ->  1567.41s] implied vol later. But the flip side is true on the other side of the line. This is a very, very
+[ 1567.41s ->  1575.41s] interesting dynamic. So what we're observing here is, wow, when volatility or implied volatility is
+[ 1576.13s ->  1585.17s] lower, again, everything's relative. When it's lower, the forward average implied volatility tends to be
+[ 1585.17s ->  1593.81s] higher. Moreover, when the current implied volatility is higher, the forward average implied volatility is
+[ 1593.81s ->  1601.17s] lower. Doesn't that sound like some sort of statistical arbitrage? Well, maybe it is. Maybe we can sell
+[ 1601.17s ->  1607.89s] options when they're overvalued and vol is higher. Then when vol tracks lower, we cover that position and
+[ 1607.89s ->  1615.01s] buy it cheaper, collect that difference. Same thing here. We buy it when vol is lower and sell it when it's
+[ 1615.01s ->  1622.21s] higher. So this intersection is essentially telling us when we should go long or short an option,
+[ 1622.21s ->  1629.17s] and then at some point in the future, if the value doesn't get eaten by theta or if trend doesn't kill
+[ 1629.17s ->  1634.61s] us and all this other stuff, perhaps we can collect that difference. And this effect is even more
+[ 1634.61s ->  1641.73s] pronounced in a high vol period setting, hence the shallower regression line. So this is, in fact,
+[ 1641.73s ->  1648.77s] a valid volatility trading strategy. Again, within any trading strategy, this model, of course,
+[ 1648.77s ->  1653.49s] this model is wrong. There's going to be cases where you get absolutely killed. Volatility is
+[ 1653.49s ->  1659.09s] going to spike after you sell that premium, or it's going to vanish as you buy that option.
+[ 1659.65s ->  1667.73s] That will definitely happen for sure. However, on average, it does look like there is an opportunity to
+[ 1667.73s ->  1674.21s] essentially buy low, sell high, sell high, buy low. And that justifies this trading strategy
+[ 1674.21s ->  1679.97s] to some capacity. So this is how we might go about choosing to trade the option implied volatility on
+[ 1679.97s ->  1684.85s] Nvidia. This is a quant trading strategy, option trading strategy, whatever you want to call it.
+[ 1684.85s ->  1692.77s] This is a valid, very simple way to begin to research and implement and develop this option
+[ 1692.77s ->  1699.01s] trading strategy. Let's focus only on this idea of high volatility, right? We've noticed that volatility
+[ 1699.01s ->  1703.73s] tends to be mean reverting. What do I mean by that? If we go back up to this volatility series,
+[ 1703.73s ->  1708.85s] we know that vol isn't going to continue to increase like a price series. It's inherently different,
+[ 1708.85s ->  1714.69s] right? What happens here is this volatility is going to continue to go up and down and up and
+[ 1714.69s ->  1721.57s] down in times of uncertainty and less uncertainty and more uncertainty. And it's important to understand
+[ 1721.57s ->  1729.49s] this because in the context of vol being high, it's not going to stay high forever. Moreover,
+[ 1729.49s ->  1735.65s] in the context of vol being low, it's not going to stay low forever, right? If it gets too low,
+[ 1735.65s ->  1742.13s] any news that comes out is going to spike vol. If it gets too high, then eventually prices are going
+[ 1742.13s ->  1746.61s] to be too high and it's going to normalize and drop back down when uncertainty is actualized and
+[ 1746.61s ->  1751.65s] everyone says, Oh, well, we kind of panicked and set prices too high. And that is kind of the,
+[ 1752.45s ->  1758.13s] the economic interpretation of this strategy. So it's important that anytime you come up with some sort of
+[ 1758.13s ->  1763.09s] statistical model, you're not just trading it blindly, but there is economic intuition into
+[ 1763.09s ->  1768.69s] why this would be the case, right? Why we might be able to sell options when they're overvalued and
+[ 1768.69s ->  1773.57s] buy options when they're undervalued, because this dynamic for implied volatility economically makes
+[ 1773.57s ->  1778.45s] sense in terms of high uncertainty, right? We're going to jack prices up because we're afraid,
+[ 1778.45s ->  1783.25s] boom, sell them when prices are high. Then when the real path of implied volatility is,
+[ 1783.25s ->  1788.05s] is actualized. We can buy it back and cover that position and collect that difference.
+[ 1788.05s ->  1793.25s] Same thing. When vol is too low, when vol is too low, anything can rock the boat, right?
+[ 1793.25s ->  1797.89s] If you're on a glass lake and you're on a canoe, there's a gust of wind that's going to rock the
+[ 1797.89s ->  1801.81s] boat and it's going to create all these ripples. Vol is going to increase. You can buy low and you can
+[ 1801.81s ->  1808.69s] sell high. So here, we're just going to look at this high volatility period and it's kind of deceptive,
+[ 1808.69s ->  1815.57s] right? This is a very productive chart, I will say, because of this Y equals X line. But if we
+[ 1815.57s ->  1821.97s] just take the forward difference and we look at the difference between the volatility at spot and
+[ 1821.97s ->  1828.29s] then the forward realized implied volatility, the effect is far more pronounced, right? We can see that,
+[ 1828.29s ->  1834.21s] wow, at somewhere around 0.64, and in fact, I solved for it here at 64%,
+[ 1834.21s ->  1842.29s] volatility tends to decrease over the next 30 days. So anything above 64.2575%,
+[ 1843.17s ->  1848.61s] we tend to see the average implied volatility over the next 30 days decrease. What does that mean?
+[ 1848.61s ->  1853.73s] Well, that means we can buy high or we can sell, sell high, buy low. So we're essentially collecting
+[ 1853.73s ->  1859.01s] that difference. And this chart hopefully makes it more concrete. Whereas this chart shows the dynamic
+[ 1859.01s ->  1867.73s] on both the long and short side, this will show the dynamic on simply just that sell high, buy low side.
+[ 1867.73s ->  1876.29s] So anything above 64%, that's saying, hey, traders are valuing this option way too high for what is
+[ 1876.29s ->  1882.29s] anticipated in terms of the realized volatility. Let's go ahead and sell it and we can go ahead and buy
+[ 1882.29s ->  1888.13s] it back when vol drops. And then we're going to collect that spread there. Now, it is important to
+[ 1888.13s ->  1893.97s] understand that this is simply just looking at the math, right? This is a statistical basis for
+[ 1893.97s ->  1901.09s] trading. It says nothing of the actual dynamics of the market, right? If tariffs are rocking the
+[ 1901.09s ->  1907.01s] heck out of the boat, and we haven't seen tariffs from an administration in quite a long time,
+[ 1907.01s ->  1913.81s] maybe it's not a good idea to use this strategy. Maybe we should consider different shocks. Maybe they're
+[ 1913.81s ->  1918.93s] more idiosyncratic or industry-based shocks that we're more confident we'll normalize in the next
+[ 1918.93s ->  1923.73s] 30 days. Whereas something like tariffs rocks the heck out of the boat, we sell and vol spikes,
+[ 1923.73s ->  1931.09s] we get killed. Something to consider is it's not just about the statistical basis for these trades.
+[ 1931.09s ->  1936.77s] What makes for it is also the economic interpretation. It's that, okay, we've seen
+[ 1936.77s ->  1945.81s] the idiosyncratic boat rocked and vol normalize. We've seen the industry boat rock and vol normalize.
+[ 1945.81s ->  1952.61s] We've seen the macro boat rock and vol normalize. But what is causing the spike in volatility?
+[ 1953.49s ->  1957.57s] Is it going to normalize over the next 30 days? Or are we going to have a prolonged effect that we need to
+[ 1958.21s ->  1961.33s] we need to be concerned about? And then we're not going to be able to collect that
+[ 1962.05s ->  1967.65s] that profit. So it's very important to understand not just the statistical basis for trading the
+[ 1967.65s ->  1973.09s] strategy, but also the economic basis for trading the strategy. Based on the analysis above, I've
+[ 1973.09s ->  1980.05s] developed a simple entry execution exit criteria for our trading strategy. I've simplified it
+[ 1980.05s ->  1985.73s] significantly for this simulation. And what I've done is I've just used the historic implied volatility
+[ 1985.73s ->  1992.53s] of Nvidia to essentially execute trades on this basis of, oh, when it's far too high, I think I
+[ 1992.53s ->  1997.97s] use a vol of like 0.8. We're going to sell. And then eventually when vol comes down, we'll
+[ 1997.97s ->  2003.81s] cover that position. And you can see, this is what the equity curve looks like for such a strategy.
+[ 2003.81s ->  2009.25s] And it's up into the right. We're geniuses. We're rich. Yeah, I know. I understand the situation,
+[ 2009.25s ->  2013.73s] right? We're not considering a lot of different facets of the market and prices.
+[ 2013.73s ->  2020.45s] What I've done is I've fixed the other parameters of the pricing function to visualize this capture of
+[ 2021.01s ->  2027.25s] vol being too high at one point in time and then normalizing and then covering and collecting that
+[ 2027.25s ->  2035.89s] that PNL, right? You're subject to a lot of other, a lot of other factors. This PNL curve is subject to a
+[ 2035.89s ->  2039.89s] lot of other factors. You're going to be subject to the dynamics of the underlying. You're going to be
+[ 2039.89s ->  2044.45s] subject to whether vault actually normalizes time decay. You're going to be subject to a lot
+[ 2044.45s ->  2049.65s] of different, different factors impacting this overall equity curve. And that's what I've listed
+[ 2049.65s ->  2055.97s] out here in terms of consideration in any trading strategy. You're always going to have those other
+[ 2055.97s ->  2064.53s] factors. It's never going to be a set and forget. This is one trading strategy. There are an innumerable
+[ 2064.53s ->  2071.65s] number of trading strategies. And that's the whole point is we understand the statistical basis for
+[ 2071.65s ->  2077.81s] this trading strategy. We understand the economic basis, the economic interpretation of fear and
+[ 2077.81s ->  2084.61s] pricing too high or maybe pricing too low. We understand the economic basis for it. We also
+[ 2084.61s ->  2090.45s] need to understand the risks associated with achieving some sort of equity curve that looks like
+[ 2090.45s ->  2097.09s] this. And I've, I've listed those out here. That being said, this is certainly a place to start.
+[ 2097.09s ->  2105.17s] If you can't make money in a simplified world, how on earth are you going to make money in the real world?
+[ 2105.17s ->  2110.61s] So what we've done here is actually extremely productive. This is something that you would do
+[ 2110.61s ->  2116.13s] at some sort of trading firm. You start with a simplified base case state of the world. You say,
+[ 2116.13s ->  2120.69s] okay, I have this hypothesis. You go about collecting your data. You have some sort of
+[ 2120.69s ->  2124.85s] simple model. You increase the complexity of the model. You get your real world data.
+[ 2124.85s ->  2130.93s] You visualize an effect of something like this. And you say, wow, I noticed that at some points
+[ 2130.93s ->  2136.77s] vol is statistically way too high or way too low. Something's going to rock the boat in either direction.
+[ 2136.77s ->  2141.49s] I can collect money on the upside or the downside, depending on the longer short position I take and
+[ 2141.49s ->  2147.41s] where vol is and where it will be. And what I'm going to do is I'm going to simulate and back test
+[ 2147.41s ->  2153.01s] that strategy and see what happens. So I can hedge away my risk factors, see what happens if there's
+[ 2153.01s ->  2158.13s] any actual profit to be had. If, you know, maybe my transaction costs you to weigh at it, maybe,
+[ 2158.13s ->  2162.53s] maybe all these other, other factors kind of destroy the profitability of the strategy.
+[ 2162.53s ->  2167.97s] Um, but if it doesn't, then you keep going, or maybe it does. And you continue to optimize and you
+[ 2167.97s ->  2173.81s] get to a place where you do have an equity curve that looks like this, but overwhelmingly, you know,
+[ 2173.81s ->  2179.17s] that's the space. The space is dynamic. It changes over time. You're never going to have a set and
+[ 2179.17s ->  2184.37s] forget. So when I say this is a video on how to trade option implied volatility, it certainly is
+[ 2184.37s ->  2189.41s] a video on how to trade option implied volatility. I'm giving it to you completely straight. I'm saying,
+[ 2189.41s ->  2194.29s] Hey, you can go about measuring volatility in these different ways. There's realized measures of
+[ 2194.29s ->  2199.17s] volatility. There's implied measures of volatility. We can come up with some sort of statistical basis
+[ 2199.17s ->  2205.97s] for what happens to maybe say implied volatility and its impact on an options price. We can come up
+[ 2205.97s ->  2211.81s] with some sort of way to profit on that statistical tendency. We also have some sort of economic
+[ 2211.81s ->  2217.73s] interpretation for that statistical tendency, which is solid gold. Otherwise you're kind of just
+[ 2217.73s ->  2221.81s] shooting in the dark, finding some sort of correlation and hoping that it actually sticks.
+[ 2221.81s ->  2226.53s] If you have an economic interpretation, it's tends to be very important, very useful.
+[ 2226.53s ->  2232.93s] That's how you can ensure stability over some course of time or over some different regimes.
+[ 2232.93s ->  2237.41s] And then of course comes the back testing, looking at simplified states where you have fixed,
+[ 2237.97s ->  2242.85s] fixed parameters, looking at dynamic states where you're using actual data. And then that's where
+[ 2242.85s ->  2249.01s] you optimize your, your strategy and tinker with it until you have a reasonable, reasonable strategy that
+[ 2249.01s ->  2254.77s] you can deploy. Lastly, in terms of this strategy, some considerations, right? We're selling when the
+[ 2254.77s ->  2260.21s] option is overvalued. We're buying it when VOL normalizes, when it's at a lower value, what could
+[ 2260.21s ->  2267.17s] kill our profit time decay, some sort of volatility contraction issue. VOL could just keep going higher.
+[ 2267.17s ->  2272.21s] Like I said, maybe the uncertainty that rocks the boat is so much uncertainty that it's not going to
+[ 2272.21s ->  2277.97s] normalize within a reasonable time and we're going to get killed. Maybe we have gap risk, margin
+[ 2277.97s ->  2285.01s] requirements, correlation risks. These are all facets of, of risk that might impact the overall
+[ 2285.01s ->  2289.89s] equity curve, this beautiful up into the right equity curve. So with that, I want to thank you so
+[ 2289.89s ->  2296.13s] much for watching. I hope you enjoy the video. I hope you learned something and I will see you in the next one.

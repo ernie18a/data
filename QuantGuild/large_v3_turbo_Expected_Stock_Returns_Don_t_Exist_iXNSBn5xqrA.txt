@@ -1,0 +1,399 @@
+[    0.46s ->     6.32s] I've been wanting to make a video on this topic for a while, so here we are.
+[    6.32s ->     8.92s] Expected stock returns don't exist.
+[    8.92s ->    14.58s] You begin to study finance, maybe you come from a math CS stats background, very quickly
+[   14.58s ->    18.74s] you begin to realize you can't get away from this notion of expected returns.
+[   18.74s ->    23.88s] It seems like in order to do anything, you need some notion of expected return.
+[   23.88s ->    28.00s] You look at portfolio optimization, you need a mean vector of returns.
+[   28.00s ->    32.82s] You look at CAPM, you need expected return, value at risk, expected return, heck, even
+[   32.82s ->    39.32s] for the underlying asset in a Black-Scholes model, you need a drift parameter, which is
+[   39.32s ->    42.64s] typically estimated via an expected return.
+[   42.64s ->    50.72s] Now a reasonable question to ask is, does this expected return exist?
+[   50.72s ->    54.68s] You can ask this question, it's a very reasonable question.
+[   54.68s ->    58.50s] In any class that you take, whether it's some sort of stochastic processes class, time
+[   58.50s ->    61.98s] series class, one of the first things they're going to do is they're going to say, hey, all
+[   61.98s ->    66.64s] of the processes herein, we're going to assume weak stationarity.
+[   66.64s ->    69.52s] That's not helpful, largely.
+[   69.52s ->    74.96s] That really ensures that these parameters that we're trying to estimate, right, these population
+[   74.96s ->    81.58s] parameters, this mean of some sort of return distribution, it ensures that it exists and
+[   81.58s ->    84.52s] it's constant, but really that's not the case, right?
+[   84.52s ->    89.20s] So this argument that expected returns don't actually exist, I'm going to construct it using
+[   89.20s ->    90.72s] a very simple example.
+[   90.72s ->    95.72s] We're going to look at an example where the mean exists, where it doesn't exist, where
+[   95.72s ->    99.04s] it might exist in some sort of time sense.
+[   99.04s ->   103.40s] So there's an ensemble average, a time average, we're going to talk about ergodicity, then we're
+[  103.40s ->   107.58s] going to move on to this idea that stock returns don't actually exist.
+[  107.58s ->   112.34s] And we're going to have to get creative figuring out different ways that we might be able to
+[  112.34s ->   117.52s] model such a process, because at the end of the day, these returns, they don't converge
+[  117.52s ->   118.52s] to a value.
+[  118.52s ->   119.92s] It's going to be a random process.
+[  119.92s ->   124.52s] I have plenty of free resources available to discuss the definition of moments, moment
+[  124.52s ->   129.28s] generating functions, and so on, so I will keep this short.
+[  129.28s ->   134.34s] The definition of an expectation is essentially just the probability weighted average of all outcome
+[  134.34s ->   135.34s] values.
+[  135.34s ->   140.16s] In a discrete sense, we can just multiply the probability by some value in a continuous
+[  140.16s ->   141.16s] sense.
+[  141.16s ->   144.80s] We typically integrate, but this is exactly what you would expect to see for something
+[  144.80s ->   145.80s] like a coin flip.
+[  145.80s ->   146.80s] It's 50-50.
+[  146.80s ->   151.10s] If heads is one, tails is zero, then your expectation is 0.5.
+[  151.10s ->   155.58s] Moreover, if you have a dice and you're going to roll that dice, the expected value is going
+[  155.58s ->   161.02s] to be all of those values, one through six summed up, divided by, of course, six.
+[  161.02s ->   162.28s] So that's exactly what I do here.
+[  162.28s ->   164.28s] I say, okay, we have some sort of dice roll.
+[  164.28s ->   165.28s] What is the average?
+[  165.28s ->   172.00s] Well, we can compute the average by just applying the definition here and we get this 3.5.
+[  172.00s ->   175.66s] Now this 3.5 is the expectation, certainly.
+[  175.66s ->   181.88s] So what I mean to say is if I was to roll a million dice and I take the cumulative mean
+[  181.88s ->   187.06s] of all of those dice rolls, it would converge to this 3.5.
+[  187.06s ->   188.52s] How can I guarantee this?
+[  188.52s ->   191.26s] Well, this is where simulation comes into play.
+[  191.26s ->   193.26s] We have something called the law of large numbers.
+[  193.26s ->   200.22s] Now, there is the weak law of large numbers and there is the strong law of large numbers.
+[  200.22s ->   205.26s] They have different convergence guarantees, convergence in probability or convergence almost
+[  205.26s ->   206.26s] surely.
+[  206.26s ->   207.76s] Now, we're not going to dive into what that means.
+[  207.76s ->   211.70s] We're not going to dive into Slutsky's or any sort of theorem like that.
+[  211.70s ->   220.44s] So the point of this theorem is as the sample average increases, as the quantity for our sample
+[  220.44s ->   223.84s] average increases, we get some sort of guarantee.
+[  223.84s ->   229.40s] As we continue to draw from that random variable, that random distribution, now the key here
+[  229.40s ->   232.80s] is that that random distribution that we're drawing from does not change, right?
+[  232.80s ->   234.84s] We're just going to keep drawing from it.
+[  234.84s ->   241.84s] But as we keep drawing from it, we're going to get a value as we take the average of all
+[  241.84s ->   245.80s] of those draws that approaches the true analytical mean.
+[  245.80s ->   247.80s] Now, how can we see this in action?
+[  247.80s ->   253.48s] Well, we can just roll a dice and then roll a dice again and again and again, very large
+[  253.48s ->   255.80s] number of times and take the cumulative mean.
+[  255.80s ->   260.74s] And what you'll see is the cumulative mean starts out at say six, right?
+[  260.74s ->   262.12s] That's our initial roll.
+[  262.12s ->   265.86s] But I roll again and I roll again and I roll again and I keep rolling, keep rolling.
+[  265.86s ->   269.80s] And eventually it starts to level out here and stabilize around this red line.
+[  269.80s ->   274.34s] And then lo and behold, that red line is going to be three and a half.
+[  274.34s ->   278.18s] So that is going to match the analytical expectation here.
+[  278.18s ->   280.84s] So you say, hey, I have a dice.
+[  280.84s ->   282.28s] It's a random variable.
+[  282.28s ->   285.48s] What is the average value, the mean, the expectation?
+[  285.48s ->   288.96s] I say we can compute that analytically and it's 3.5.
+[  288.96s ->   292.44s] Moreover, let's say I'm not good at applying the definition.
+[  292.44s ->   293.98s] I'm just going to simulate it, right?
+[  293.98s ->   295.22s] We can go ahead and simulate it.
+[  295.22s ->   299.76s] I'm just going to roll a dice a very large number of times and take that cumulative mean
+[  299.76s ->   304.40s] and you'll see, yeah, it's going to eventually converge to that analytical value.
+[  304.40s ->   305.84s] Why does it do this?
+[  305.84s ->   307.20s] Why is this guaranteed?
+[  307.20s ->   310.96s] Well, it's guaranteed in this case by the law of large numbers.
+[  310.96s ->   314.00s] We keep sampling from the same distribution.
+[  314.00s ->   320.88s] So that mean estimator is going to approach the true population mean with certainty, with certainty.
+[  320.88s ->   324.56s] Of course, depending on whether or not you're using the weak or strong law of large numbers,
+[  324.56s ->   326.00s] you're going to have a different convergence guarantee.
+[  326.00s ->   328.88s] But nevertheless, it's going to look something like this.
+[  328.88s ->   333.52s] As the number of iterations of dice roll increase, this mean value converges.
+[  333.52s ->   339.04s] This is really what it means to have a mean or average or expectation
+[  339.04s ->   345.52s] in that if I continue to draw from this distribution, this density, this dice roll,
+[  345.52s ->   349.28s] then I'm going to have some sort of guarantee asymptotically.
+[  349.28s ->   353.76s] That is, as I continue to repeat trials of this same experiment,
+[  353.76s ->   356.40s] then there's some sort of tendency that I can expect.
+[  356.40s ->   360.80s] And in this case, it's convergence to this value 3.5 for the expectation.
+[  360.80s ->   363.60s] Moreover, you have other probabilistic guarantees, right?
+[  363.60s ->   370.16s] So you expect the proportion of ones, twos, threes, fours, fives, and sixes that you see in a dice roll
+[  370.16s ->   376.00s] at infinity to approach, well, whatever their probabilities are, one sixth.
+[  376.00s ->   380.48s] You would expect to see them all roughly one sixth of the time, right?
+[  380.48s ->   385.76s] That is this whole idea of a frequency-based interpretation of probability.
+[  385.76s ->   390.00s] We're not talking about some sort of Bayesian interpretation with the subjective prior,
+[  390.00s ->   395.44s] but here there's a concrete frequency-based interpretation that we're clinging to that
+[  395.44s ->   400.08s] ensures that these values actually have merit in some sort of analysis.
+[  400.08s ->   403.20s] There is no notion of time in a dice roll.
+[  403.20s ->   406.96s] We're just talking about repeating iterations of the same experiment.
+[  406.96s ->   411.44s] A dice roll, a coin flip, the experiment and that distribution is fixed.
+[  411.44s ->   417.04s] But what if there's this element of time, or maybe accumulation of wealth over time,
+[  417.04s ->   418.56s] or plays of a game?
+[  418.56s ->   419.92s] How does this change things?
+[  419.92s ->   424.96s] Well, this is where ergodic and non-ergodic processes come into play.
+[  424.96s ->   426.72s] So let's think of two games now.
+[  426.72s ->   428.96s] We're familiar with this idea of a dice roll.
+[  428.96s ->   431.12s] We're familiar with this idea of a coin flip.
+[  431.12s ->   432.96s] Let's talk about two games, okay?
+[  432.96s ->   436.72s] The first game is what I call the ergodic dice game.
+[  436.72s ->   438.16s] So we're going to roll a standard dice.
+[  438.16s ->   440.56s] We're going to win one dollar for rolling a six,
+[  440.56s ->   443.36s] and we're going to lose 20 cents for any other number.
+[  443.36s ->   447.52s] The expected value per roll is going to be zero dollars.
+[  447.52s ->   450.72s] So if we take what's called the ensemble average,
+[  450.72s ->   457.20s] that is I simulate this game, right, for any individual at any point in their wealth process,
+[  457.20s ->   462.56s] then I'm going to expect to see zero on average for all of those games played.
+[  462.56s ->   467.28s] But over time, as the wealth accumulates from playing this game,
+[  468.08s ->   472.16s] since this process is ergodic, I am going to see that the average,
+[  472.16s ->   476.64s] that is the time average, is going to be equivalent to this ensemble average.
+[  476.64s ->   478.16s] We're going to visualize this in a moment,
+[  478.16s ->   482.64s] but I think it's important to contrast this with the idea of a non-ergotic process.
+[  482.64s ->   486.96s] And that is the game of something that looks like maybe a Russian roulette,
+[  486.96s ->   490.32s] where you begin with 100 dollars, you flip a fair coin.
+[  490.32s ->   493.52s] On heads, you're going to multiply your wealth by 1.5,
+[  493.52s ->   498.00s] but on tails, you're going to multiply your wealth by 0.6.
+[  498.00s ->   502.56s] So the expected multiplier looks pretty good, 1.05, right?
+[  502.56s ->   505.28s] You're accumulating that wealth on average.
+[  505.28s ->   512.96s] But in reality, in reality, the ensemble average is going to grow across the players exponentially,
+[  513.52s ->   517.36s] but the time average for individual players is going to decay towards zero.
+[  517.36s ->   521.04s] So some players are going to be dominating all of the wealth,
+[  521.04s ->   526.16s] but the tendency for most of the wealth paths is going to be to approach zero.
+[  526.16s ->   530.32s] I've gone about simulating these processes, and the first is this dice roll game,
+[  530.32s ->   534.24s] where I roll a six, I get one dollar, I roll anything else, I lose 20 cents.
+[  534.24s ->   538.72s] You can see we started with 100 bucks, some people move all the way up to 130,
+[  538.72s ->   540.64s] some people move down to 80.
+[  540.64s ->   545.76s] That is what is meant by the time value, if you will, or the time average.
+[  545.76s ->   551.92s] So when we look at the terminal state of wealth, this distribution here at 1000 iterations,
+[  551.92s ->   559.60s] you can see that the time average value of 100 is equivalent to the ensemble average of 100.
+[  559.60s ->   567.12s] So the wealth at any point in the distribution is going to be equivalent to the time or ensemble
+[  567.12s ->   567.68s] average.
+[  567.68s ->   569.60s] That is a very important idea here.
+[  569.60s ->   572.72s] So it doesn't matter if we play this game a thousand times,
+[  572.72s ->   575.28s] or if we're just doing it once in the cross section,
+[  576.00s ->   580.00s] the average is going to be the same, and that average is going to be zero.
+[  580.00s ->   583.68s] Now, what about for the Russian roulette style game?
+[  583.68s ->   586.48s] Well, this is exactly what we expected to see.
+[  586.48s ->   591.20s] The ensemble average is not equivalent to the time average,
+[  591.20s ->   596.24s] in that you can see that most of these wealth paths are decaying towards zero from 100, right?
+[  596.88s ->   599.28s] But that's not the entire picture here.
+[  599.28s ->   603.36s] You're not seeing the wealth paths that generate an obscene amount of wealth, and
+[  603.36s ->   604.64s] this is a histogram.
+[  605.20s ->   610.88s] And if you look all the way out here, you can see that a couple of samples dominate
+[  610.88s ->   612.64s] with an extreme amount of wealth.
+[  613.60s ->   618.40s] So the time average and the ensemble average, so the cross sectional average at any point,
+[  618.40s ->   620.80s] and the time average are not equivalent.
+[  620.80s ->   623.28s] This is a non-ergotic process.
+[  623.28s ->   630.80s] So the idea of a mean exists not just in the ensemble average sense, that is this cross section,
+[  630.80s ->   633.36s] but also in the time sense, right?
+[  633.36s ->   635.36s] What is the tendency over time?
+[  635.36s ->   641.36s] And does the tendency over time change the distribution or the expectation?
+[  641.36s ->   646.08s] And in the case of an ergodic system or an ergodic process, it doesn't, right?
+[  646.08s ->   649.28s] But in a non-ergotic process, it sure does.
+[  649.28s ->   655.28s] And that's made evident by this distribution relative to the processes themselves.
+[  655.28s ->   660.16s] And again, relative to the ergodic system here, you can see it is night and day in
+[  660.16s ->   664.88s] terms of the distribution and expectation of both processes.
+[  664.88s ->   669.92s] By now, we have a pretty good idea of what the expectation, the mean, the average actually is.
+[  669.92s ->   674.64s] We looked at an example applying the definition analytically to a dice roll.
+[  674.64s ->   677.60s] It's just a probability weighted average of all of the outcomes.
+[  677.60s ->   681.84s] We looked at the simulation example, where we're just going to draw from that same distribution
+[  681.84s ->   687.36s] a large number of times, take that cumulative average, and you get some sort of convergence
+[  687.36s ->   687.92s] guarantee.
+[  687.92s ->   692.48s] That is, if you simulate it or you keep running iterations of the same experiment
+[  692.48s ->   698.32s] using this frequency-based interpretation, you're expecting that mean value to converge,
+[  699.28s ->   701.12s] to converge to a constant.
+[  701.12s ->   702.96s] It's a very important idea.
+[  702.96s ->   708.00s] Moreover, we saw it not just in the sense of independent experiments, but in the context of
+[  708.00s ->   713.04s] accumulation of wealth via the games, we have this idea of an ergodic and non-ergodic process,
+[  713.04s ->   718.56s] the difference between the cross-sectional average, the ensemble average, and the time
+[  718.56s ->   723.92s] average, that is, as you continue to accumulate the wealth from that game, the difference in those
+[  723.92s ->   724.88s] expectations.
+[  724.88s ->   726.72s] So we have a good idea of what this is.
+[  726.72s ->   731.52s] It's also very important to get a good idea of what it means to have no mean.
+[  731.52s ->   735.44s] And it's very easy to construct an example of that via the St. Petersburg paradox.
+[  735.44s ->   740.88s] So, essentially, what I'm going to do is, if the expectation is just the probability-weighted
+[  740.88s ->   744.64s] sum of all outcomes, and the outcome is a certain payout, what I'm going to do is,
+[  744.64s ->   747.84s] I'm just going to ensure that the payout is always going to be one.
+[  747.84s ->   752.24s] And I'm going to say that our series goes out to infinity, and that's exactly what this is.
+[  752.24s ->   757.36s] So I'm going to flip a coin, and I'm going to count however many coins it takes for me to get
+[  757.36s ->   758.48s] a heads.
+[  758.48s ->   762.88s] Theoretically, this could go on to infinity, but we know that this is a geometric distribution,
+[  762.88s ->   765.76s] that it converges from calculus.
+[  765.76s ->   770.32s] So how can I ensure that this payout, this expected payout diverges?
+[  770.32s ->   774.48s] Well, if it's the probability-weighted sum of all outcomes, I just got to make the outcome
+[  774.48s ->   778.80s] equal to some sort of value that ensures the expectation blows up.
+[  778.80s ->   785.84s] And it's very easy to do that by just making the payout equal to 2 to the n, because each
+[  785.84s ->   791.60s] coin flip has a probability of one-half, and a series of coin flips required to see the first
+[  791.60s ->   796.24s] heads, if it takes, say, n coin flips, it's one-half to the n power.
+[  796.96s ->   800.32s] And if you multiply that by 2 to the n payout, you will get one.
+[  800.88s ->   806.40s] And if you do that for infinity, you will just be accumulating ones, and you will have an infinite
+[  806.40s ->   806.72s] mean.
+[  808.00s ->   813.60s] Okay, so if the mean is infinity, then how do we compute the average?
+[  814.16s ->   818.24s] Well, somebody said, all we got to do is simulate it.
+[  818.24s ->   823.52s] Just play that game via simulation, say a thousand times, and then take the average,
+[  823.52s ->   823.68s] right?
+[  823.68s ->   828.32s] We can just record all those payouts, take the average, and boom, we'll have the mean.
+[  828.96s ->   830.32s] Okay, well, let's do that.
+[  831.82s ->   833.74s] We should see some convergence, right?
+[  834.46s ->   836.06s] We don't see any convergence.
+[  836.06s ->   837.90s] This looks absolutely crazy.
+[  837.90s ->   838.78s] We see jumps.
+[  839.66s ->   843.10s] This is exactly what it means to not have a mean.
+[  843.10s ->   849.18s] So we know what it looks like when a process or a game has an expectation, an average,
+[  849.18s ->   855.10s] a mean value to converge to in the time sense, in the ensemble sense, in the analytical and
+[  855.10s ->   856.46s] simulation sense.
+[  856.46s ->   859.02s] This is what it looks like when it doesn't exist.
+[  859.02s ->   861.18s] There's no convergence guarantee.
+[  861.18s ->   864.94s] So if I'm trying to figure out how to price this game, I'm going to start to bring in the
+[  864.94s ->   868.30s] notion of a utility function, which is extremely dissatisfying.
+[  868.30s ->   872.78s] No kidding, it's up to the risk preferences of whoever is going to pay for the game.
+[  872.78s ->   876.94s] If I have a lot of money and I have a high risk tolerance, then I'll pay whatever for this game,
+[  876.94s ->   878.06s] right?
+[  878.06s ->   881.90s] It's not satisfying to bring utility functions into the discussion, which is why I'm going to
+[  881.90s ->   882.30s] digress.
+[  882.30s ->   885.74s] But this is what it looks like when the expectation doesn't exist.
+[  885.74s ->   890.46s] If you try to simulate this process, the law of large numbers doesn't apply, right?
+[  890.46s ->   892.86s] It's got an infinite expectation.
+[  893.50s ->   897.34s] It's not going to converge to any specific value.
+[  897.90s ->   898.54s] Okay.
+[  898.54s ->   900.06s] So that's this idea.
+[  900.06s ->   903.10s] When the mean is infinite, the mean doesn't exist.
+[  903.10s ->   906.22s] You're not going to have any sort of convergence guarantee.
+[  906.22s ->   907.66s] Oh man, we finally made it.
+[  907.66s ->   909.90s] Do stocks have expected return?
+[  910.62s ->   914.86s] Well, clearly in order to do anything, we need some notion of expected return.
+[  914.86s ->   916.46s] But what is the problem?
+[  916.46s ->   917.42s] What is the problem?
+[  917.42s ->   919.66s] Is there convergence over time?
+[  920.98s ->   922.58s] Largely the answer is no.
+[  923.14s ->   924.34s] So what do I mean by this?
+[  924.34s ->   928.98s] Well, what I'm going to do is I'm going to plot NVIDIA returns.
+[  928.98s ->   934.02s] I'm going to plot the cumulative NVIDIA return across the life of the stock.
+[  934.02s ->   934.74s] What does that mean?
+[  934.74s ->   940.74s] Well, just as I repeated iterations of rolling a dice, if I plot the cumulative mean return
+[  940.74s ->   944.34s] for NVIDIA, I would hopefully see some convergence, right?
+[  944.34s ->   947.86s] I'm drawing from that same return distribution, aren't I?
+[  947.86s ->   949.46s] Well, here's the thing.
+[  949.46s ->   953.94s] That return distribution for NVIDIA, it changes over time.
+[  954.90s ->   956.10s] I would hope it does.
+[  956.10s ->   960.90s] NVIDIA in the early 2000s is not the same company as it is now.
+[  960.90s ->   962.34s] Hell, I would hope it's not.
+[  962.90s ->   964.90s] But that's the point of this discussion.
+[  964.90s ->   970.90s] Is that mean expected return, average return, whatever it is you want to call it, does it exist?
+[  971.70s ->   976.26s] That's a very reasonable question to ask, especially if you're going to be so hand wavy
+[  976.26s ->   978.98s] with all of these applications that require it.
+[  979.70s ->   984.74s] Does historical data, is it indicative of a future return?
+[  984.74s ->   986.98s] Is historical return indicative of future return?
+[  986.98s ->   990.50s] It's a very reasonable question to ask, but how else are we going to go about measuring
+[  991.14s ->   992.90s] the quantity of an expected return?
+[  992.90s ->   994.18s] So does it exist?
+[  994.18s ->   994.82s] Probably not.
+[  994.82s ->   995.54s] Let's look.
+[  995.54s ->   998.42s] So what I'm going to do is I'm going to plot this cumulative return value.
+[  998.42s ->  1002.74s] This is the return series, and I'm going to plot the cumulative mean return.
+[ 1002.74s ->  1004.98s] So this is for the entire timeline.
+[ 1004.98s ->  1010.42s] You can see this does kind of looks like it's starting to trail off over here and maybe it's
+[ 1010.42s ->  1014.98s] starting to converge, but this is largely because of the immense volatility in the early
+[ 1014.98s ->  1016.26s] days of NVIDIA.
+[ 1016.26s ->  1023.14s] So what I've done is I've isolated 2008, 2016 and 2024, and you do not see any sort of
+[ 1023.14s ->  1024.82s] convergence whatsoever.
+[ 1024.82s ->  1028.42s] This is the cumulative mean return of the stock.
+[ 1028.42s ->  1034.10s] So if we're drawing from the same NVIDIA return distribution, we need a measure, a stable measure
+[ 1034.10s ->  1038.42s] of expected return in order to use any of the aforementioned models.
+[ 1038.42s ->  1040.34s] You want to do portfolio optimization.
+[ 1040.34s ->  1042.66s] You need expected return value at risk.
+[ 1042.66s ->  1046.18s] You need expected return cap M, you need expected return.
+[ 1046.18s ->  1050.42s] Well, does this look like it converges to any sort of value here?
+[ 1050.42s ->  1056.26s] If you assumed that the mean return was 0.003, well, by the end of 2008, you would be wrong.
+[ 1056.26s ->  1062.58s] Moreover, 2016, if you assumed it was 0.00185, by the end, you would be wrong.
+[ 1062.58s ->  1064.50s] Same thing with 2024.
+[ 1064.50s ->  1067.62s] Turns out the expected return is a stochastic process.
+[ 1068.34s ->  1072.42s] Not too much of a shock there, because as I said, that distribution of NVIDIA returns,
+[ 1072.42s ->  1075.62s] I sure as heck hope it's changing over time.
+[ 1076.18s ->  1082.42s] Nevertheless, a very important idea that is rarely discussed in the classroom.
+[ 1082.42s ->  1085.54s] So keep in mind, this is the all-time cumulative mean return.
+[ 1085.54s ->  1088.50s] So I'm looking from the start of NVIDIA till 2025.
+[ 1088.50s ->  1090.74s] That's probably not appropriate, right?
+[ 1090.74s ->  1095.62s] The, surely the distribution of returns stabilizes for a period of time and changes.
+[ 1095.62s ->  1100.10s] So maybe we should just look at the cumulative mean return since 2024,
+[ 1100.10s ->  1101.78s] or maybe the beginning of 2025.
+[ 1101.78s ->  1103.62s] Let's take a look at what that looks like.
+[ 1103.62s ->  1107.70s] So this is the all-time cumulative mean return for just the year of 2025.
+[ 1107.70s ->  1110.18s] You can see it's kind of bouncing around here, right?
+[ 1110.18s ->  1116.18s] We started at 0.00216, dipped all the way down to 0.00209.
+[ 1116.18s ->  1118.50s] Now we're back up to 0.00213.
+[ 1118.50s ->  1119.86s] You get the gist, right?
+[ 1119.86s ->  1124.66s] Now this is the all-time cumulative mean, but there's no convergence guarantee.
+[ 1124.66s ->  1130.58s] And largely the distribution has changed vastly since the IPO of NVIDIA.
+[ 1130.58s ->  1135.38s] So if I isolate this cumulative return window to just 2025, what does it look like?
+[ 1135.38s ->  1136.90s] It gives you a better picture, doesn't it?
+[ 1136.90s ->  1141.54s] Don't you remember the beginning of 2025 was a bloodbath for NVIDIA with tariffs.
+[ 1141.54s ->  1144.26s] So you see this cumulative mean return go negative.
+[ 1144.74s ->  1146.74s] You don't get that picture here.
+[ 1146.74s ->  1147.94s] You don't get that picture here.
+[ 1147.94s ->  1151.54s] In fact, which measure of expected return is correct?
+[ 1151.54s ->  1155.14s] Does the expected return actually exist?
+[ 1155.14s ->  1157.70s] A very reasonable question because,
+[ 1157.70s ->  1161.14s] okay, you want to use this level for expected return?
+[ 1161.78s ->  1165.06s] What if I want to use this level for expected return?
+[ 1165.06s ->  1166.42s] This is the whole point.
+[ 1166.42s ->  1170.50s] This is the whole point of the discussion, the whole point of the argument.
+[ 1170.50s ->  1176.58s] It is not as easy as it seems to estimate expected return.
+[ 1176.58s ->  1179.22s] Clearly expected return is a stochastic process then.
+[ 1179.22s ->  1180.58s] It's a random function of time.
+[ 1180.58s ->  1184.74s] If this NVIDIA distribution is in fact changing over time,
+[ 1184.74s ->  1188.42s] then the expectation of that distribution surely will as well.
+[ 1188.42s ->  1193.86s] And with that, it's very easy to prove that the higher order moments are also stochastic processes
+[ 1193.86s ->  1198.58s] because every single higher order moment depends on the expectation.
+[ 1198.58s ->  1203.78s] And if that is a stochastic process, then all of those other moments, variance,
+[ 1203.78s ->  1208.98s] skewness, kurtosis, et cetera, will also be stochastic processes.
+[ 1209.54s ->  1210.74s] So what do we do?
+[ 1211.54s ->  1213.38s] Welcome to the space.
+[ 1213.38s ->  1217.86s] We need to figure out how to go about estimating these quantities in a reasonable way.
+[ 1217.86s ->  1221.14s] The problem is there is no convergence guarantee.
+[ 1221.14s ->  1222.50s] And that's something to keep in mind.
+[ 1222.50s ->  1226.58s] That's why when I say the stock return expectation doesn't exist,
+[ 1226.58s ->  1228.50s] it's a very reasonable statement.
+[ 1228.50s ->  1233.78s] It does not exist in the finite converged static constant value sense.
+[ 1233.78s ->  1234.98s] It's always moving.
+[ 1234.98s ->  1237.06s] It's a stochastic process, right?
+[ 1237.06s ->  1240.74s] That level is going to constantly change the appropriate window,
+[ 1240.74s ->  1243.54s] the appropriate window to view that level.
+[ 1243.54s ->  1244.90s] What lens do we use?
+[ 1245.78s ->  1248.90s] All of that changes with time.
+[ 1248.90s ->  1251.86s] So we need to figure out an appropriate way to measure it.
+[ 1251.86s ->  1257.22s] And the answer largely is that there is no one size fits all approach.
+[ 1257.22s ->  1260.34s] It's almost equivalent to somebody asking you,
+[ 1260.34s ->  1265.14s] Hey, like, you know, can you teach me to trade so that I can make money?
+[ 1265.14s ->  1267.86s] That that's also equivalent to me asking somebody,
+[ 1267.86s ->  1270.82s] Hey, can you teach me how to be a linebacker in the NFL?
+[ 1270.82s ->  1271.38s] Do you hear that?
+[ 1271.38s ->  1273.70s] How that sounds, right?
+[ 1273.70s ->  1276.10s] That doesn't make any sense.
+[ 1276.10s ->  1278.26s] It's not a reasonable question.
+[ 1278.26s ->  1281.30s] So in the same way, it's like, how do I estimate this mean level?
+[ 1281.30s ->  1284.02s] That's, that's not really a reasonable question.
+[ 1284.02s ->  1290.98s] You can come up with a proxy for it and then use that proxy for some things that may or may not work.
+[ 1290.98s ->  1293.46s] But that is this research component, right?
+[ 1293.46s ->  1298.26s] You need to figure out how you're estimating this quantity, if it's going to work, if it's robust,
+[ 1298.26s ->  1299.54s] so on and so forth.
+[ 1299.54s ->  1300.58s] So what are our options?
+[ 1300.58s ->  1305.78s] We can do something like a Kalman filter, some sort of regime switching model, some modified Garch model.
+[ 1306.82s ->  1312.90s] You know, I've worked out a Kalman filter here where I've used 2024 as sort of a fitting
+[ 1312.90s ->  1319.30s] period for the return distribution of Nvidia and then the filtration available at time T to roll forward
+[ 1319.30s ->  1323.38s] the T plus one to try to predict what the level is going to be.
+[ 1323.38s ->  1326.34s] Keep in mind, we're not predicting returns, guys.
+[ 1326.34s ->  1329.14s] We're predicting the expected return.
+[ 1329.14s ->  1333.46s] If this sounds like a whole lot of work to predict that quantity, remember what I said earlier,
+[ 1333.46s ->  1337.46s] to do anything in this industry, we need some measure of expected returns.
+[ 1337.46s ->  1341.38s] Is it really reasonable to use historic data to estimate that quantity?
+[ 1342.10s ->  1343.46s] Maybe, maybe not.
+[ 1344.10s ->  1348.66s] Is a Kalman filter appropriate to estimate this mean level, this cumulative mean level?
+[ 1348.66s ->  1349.06s] Maybe.
+[ 1350.02s ->  1351.78s] And that's exactly my point.
+[ 1351.78s ->  1356.90s] So when somebody asks me, do stock return expectations actually exist?
+[ 1356.90s ->  1358.58s] I say no, for this reason.
+[ 1358.58s ->  1364.10s] Largely, this is similar to the idea of St. Petersburg Paradox, where we can simulate this game again,
+[ 1364.10s ->  1369.54s] but we have no information about the distribution that we're going to be drawing from, right?
+[ 1369.54s ->  1372.90s] We have no idea what this, this expectation is going to be.
+[ 1372.90s ->  1377.46s] Similarly, with the, the expected return is we don't really have a measure of what this,
+[ 1377.46s ->  1382.10s] this cumulative expectation is going to be, whether the system itself, that is the market
+[ 1382.10s ->  1383.38s] is ergotic, non-ergotic.
+[ 1383.38s ->  1389.14s] That is not something I'm commenting on, but in any sense of an expectation, right?
+[ 1389.70s ->  1391.14s] Does it actually exist?
+[ 1391.78s ->  1393.78s] How should we go about modeling it?
+[ 1393.78s ->  1398.10s] These are all reasonable, open-ended questions, which is surprising because
+[ 1398.74s ->  1403.38s] many of these models require us to use expected returns.
+[ 1403.38s ->  1408.66s] What window do we use daily, monthly, weekly, hourly, minutely.
+[ 1408.66s ->  1412.82s] Secondly, depends on what we're doing, depends on what we're trying to do.
+[ 1412.82s ->  1418.90s] But it's important to keep in mind that as time marches on, these distributions will certainly
+[ 1418.90s ->  1419.70s] change.
+[ 1419.70s ->  1422.02s] And so will that expectation.
+[ 1422.02s ->  1423.06s] Thank you so much for watching.
+[ 1423.06s ->  1424.26s] I hope you enjoyed.
+[ 1424.26s ->  1428.50s] Keep in mind, all models are wrong, some are useful.
+[ 1428.50s ->  1433.86s] What I mean by this, and this is something you'll hear all the time in the modeling space,
+[ 1433.86s ->  1438.90s] is that just because your model makes assumptions that are invalid does not mean that it's not
+[ 1438.90s ->  1441.86s] informing you and your decision making.
+[ 1441.86s ->  1447.70s] You just need to be aware of these implications, which is why I think they should be discussed
+[ 1447.70s ->  1452.58s] more openly instead of hand-waving away the idea of stationarity.
+[ 1452.58s ->  1457.86s] It should really be openly discussed in more of a seminar forum setting.
+[ 1458.50s ->  1460.74s] But that is exactly why I made this video.
+[ 1460.74s ->  1462.26s] So I hope you enjoyed.
+[ 1462.26s ->  1467.22s] Check out QuantKill.com, and I will see you in the next video.

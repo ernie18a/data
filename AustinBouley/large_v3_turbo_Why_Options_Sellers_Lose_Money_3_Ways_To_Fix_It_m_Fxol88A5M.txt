@@ -1,0 +1,156 @@
+[    0.24s ->     5.08s] In this video, I'm going to walk you through why most option sellers lose money and three rules to fix it.
+[    5.14s ->     9.18s] So by the end of this video, you know exactly what you need to do as well as the steps to implement it.
+[    9.44s ->    12.10s] I'm also going to give you this Google Doc at the very end, so stay tuned.
+[   12.44s ->    16.74s] Look, I've helped over 5,000 options traders trade the market and make money.
+[   16.86s ->    22.62s] What I found, no, this is no survey done, but in general what I found is that 50% of the traders that I helped were break-even.
+[   23.02s ->    28.70s] Why? Well, we hear that option selling is very consistent, but a lot of people do it where they have small win, small win, small win, small win,
+[   28.70s ->    31.74s] followed by one large loss that wipes out all their profits.
+[   31.94s ->    37.60s] So they basically, at the end of a year, two years, three years of selling options, they've actually made no real progress.
+[   37.82s ->    40.20s] So here are the three things you need to fix if that is you.
+[   40.28s ->    44.20s] Number one, you need a good strategy, and I'll explain what that is, and I'll give you mine.
+[   44.50s ->    45.84s] Number two, you need great risk management.
+[   45.96s ->    48.54s] Number three, you need trend and strategy alignment.
+[   48.54s ->    52.98s] This is the biggest issue that I see across all the option traders that I worked with, okay?
+[   53.38s ->    55.98s] Number one is you need a good strategy, okay?
+[   55.98s ->    59.78s] You need something that is consistent, but not too consistent.
+[   59.94s ->    66.82s] A lot of traders over-leverage the fact that this strategy has a 99% win rate, and I'm going to do that.
+[   66.90s ->    71.78s] But the problem is the higher your win rate, the larger your one-off losses.
+[   72.32s ->    83.50s] So it's okay to maybe have a 70, 80, 90% win rate strategy, but your losses are smaller than they were if you did a 90% strategy where you had a huge loss.
+[   83.50s ->    94.34s] You want to keep your losses intact, and so if you want to know what a good strategy is, here's one of my favorites, and the one that I use is a simple short put strategy, and I'll explain why I like it so much.
+[   94.34s ->   104.12s] Essentially, I sell a put 60 days out in the future, a five-delta trade, I manage at 25%, and I take profit at 200%.
+[  104.12s ->   105.84s] Why is this a great trade?
+[  105.90s ->   120.34s] Because when I structure this trade in a way, or in the way that I just said, I end up with a $250 profit and a about $1,750 loss.
+[  120.34s ->   125.42s] This is very manageable with a 94% win rate.
+[  125.52s ->   130.66s] So yes, this is on the higher win rate side, but the stop loss is managed, and it's consistent.
+[  131.08s ->   141.08s] But not only that, I can actually improve my returns a ton by aligning the right strategy with the right market so that I no longer have a huge string of losers.
+[  141.36s ->   143.44s] But we'll get into that in step number three.
+[  143.44s ->   146.74s] So, and the first thing you need to do is you need to have a great strategy.
+[  146.74s ->   148.80s] If you want to model a good one, this one's mine.
+[  148.88s ->   153.94s] You basically just want something where your losses, in my opinion, don't exceed $2,000 per contract.
+[  154.06s ->   160.68s] So if you're selling futures options, and you have a strategy that's really above $2,000, that is very risky, okay, one contract.
+[  160.90s ->   167.76s] And so that's why I like to keep my risk per trade down to under $2,000, and that's how I sell short options on futures.
+[  167.76s ->   172.70s] Now, if you want to know the breakdown of it, again, you need to have good risk management.
+[  172.96s ->   176.44s] Let me just walk you through, first off, how to place this trade in case you're new to futures options.
+[  176.84s ->   180.46s] So again, you can see here over the last 30 days, I've been using this exact same strategy.
+[  180.62s ->   185.12s] I made about $1,960, so $1,960.
+[  185.64s ->   187.48s] But I want to show you how to actually place this trade.
+[  187.54s ->   188.24s] You go to the broker.
+[  188.38s ->   190.96s] You can do this on TastyTrade, Charles Schwab, whatever it is.
+[  191.00s ->   191.86s] I love TastyTrade.
+[  191.86s ->   193.10s] You can go to ES.
+[  193.62s ->   196.46s] You find a contract that's 60 days out in the future.
+[  197.22s ->   200.22s] From here, you're going to find the five delta on the right side.
+[  200.30s ->   201.22s] The right side are puts.
+[  201.66s ->   205.09s] So you find the five delta, and then you sell that.
+[  205.69s ->   209.57s] So just like this, you can see here, my profit is going to be about $950.
+[  210.33s ->   216.09s] So if I have my max loss of 2x, it's going to be about a $1,900 loss.
+[  216.31s ->   220.95s] If I do my take profit of 25%, it's going to be about a $240 profit.
+[  220.95s ->   223.03s] So just like that, that's the strategy.
+[  223.15s ->   224.71s] You can see here, 99% win rate.
+[  224.93s ->   226.51s] And so you need a good strategy.
+[  226.69s ->   228.31s] This is the best one to start out with.
+[  228.85s ->   230.73s] Number two, you need good risk management.
+[  230.89s ->   232.61s] So many times people have a good strategy.
+[  232.81s ->   237.05s] Honestly, you probably have a good strategy right now, but your risk management is off.
+[  237.13s ->   239.11s] You're putting too much into every single trade.
+[  239.55s ->   244.01s] Look, as an option seller, you have the ability to have huge losses.
+[  244.49s ->   246.97s] And if that's not managed, number one, you have an issue to fix it.
+[  247.01s ->   250.35s] But number two, that means that if you have all your money to trade, you have all these huge
+[  250.35s ->   255.81s] losses, you're going to end up putting 50, 60, 70% down on your account in a single week
+[  255.81s ->   258.75s] due to one market crash or one volatility spike.
+[  258.87s ->   260.47s] So here's how I structure it.
+[  260.73s ->   262.61s] I usually determine how much risk you're willing to put in.
+[  262.67s ->   266.67s] If you're a higher risk person versus a low risk person, most of you guys would be medium
+[  266.67s ->   266.91s] risk.
+[  266.97s ->   270.51s] So if that's the case, I like to allocate about 40% of the account, right?
+[  270.91s ->   275.77s] And so if we're trading for easy numbers, $100,000 account with medium risk, that means we're
+[  275.77s ->   278.77s] going to have $40,000 in trades actively.
+[  279.17s ->   279.41s] Okay.
+[  279.85s ->   280.99s] Why is this important?
+[  281.09s ->   284.91s] Well, because we've already limited our losses in the first step, having a strategy that keeps
+[  284.91s ->   285.79s] our losses small.
+[  285.99s ->   290.07s] And when we make sure we don't put all our money into it, now we just lose a very small
+[  290.07s ->   291.17s] portion of the account, right?
+[  291.37s ->   296.59s] Let's say I have two trades open with this $40,000 in trades and each one of my trades
+[  296.59s ->   297.99s] loses, let's say 2000, right?
+[  298.23s ->   302.89s] That means I lose 4,000 bucks, but that's only 4% of the overall account if all my trades at
+[  302.89s ->   303.19s] zero.
+[  303.53s ->   304.27s] So that's amazing.
+[  304.35s ->   308.71s] I've only lost 4% and I have the ability to make two to 3% a month.
+[  308.71s ->   314.13s] So that's the beauty of this strategy and running at this system and making sure you're
+[  314.13s ->   315.31s] not using too much buying power.
+[  315.45s ->   319.17s] So number one, have a great strategy where your losses are intact and smaller.
+[  319.33s ->   323.75s] Number two, follow this to determine how much money of your account should actively be
+[  323.75s ->   324.37s] in trades.
+[  324.71s ->   327.59s] Also, something I do want to say is you might be wondering, okay, Austin, if I'm only putting
+[  327.59s ->   331.99s] 40% of my money into trades, 40,000, what happens to the other 60,000 that should go
+[  331.99s ->   336.57s] into something like S-Gov or T-Bill or dividend ETF that can consistently generate monthly
+[  336.57s ->   340.13s] dividends for you so that you can actually have that cash generating a return.
+[  340.83s ->   343.93s] Next and most importantly is trend and strategy alignment.
+[  344.35s ->   348.17s] Look, I want you to get access to this Google Doc is the first link down below because I
+[  348.17s ->   350.51s] have it linked my indicator here.
+[  350.89s ->   354.31s] Again, this indicator is amazing and I want to walk you through it because it can be super
+[  354.31s ->   354.87s] beneficial.
+[  355.37s ->   360.39s] If you put this indicator on the chart, it essentially uses math to tell you where the market is.
+[  361.05s ->   362.71s] And so if we're in green, we're bullish.
+[  362.81s ->   363.85s] If we're red, we're bearish.
+[  364.19s ->   368.01s] Here, we're overextended, which means we are continuing bullish, but we're getting a little
+[  368.01s ->   368.57s] too high.
+[  368.95s ->   372.49s] And so you can go get this indicator for free right now by going to the first link down
+[  372.49s ->   374.29s] below and going to the Google Doc.
+[  374.59s ->   378.29s] But what I want to tell you is that if you align your strategy with the right market,
+[  378.53s ->   380.61s] you're actually going to save yourself a ton of losses.
+[  381.05s ->   382.13s] Look, here's the thing.
+[  382.13s ->   385.81s] You can see here, this is a bullish market because it's in the green zone.
+[  385.89s ->   389.09s] So what I'm doing, I'm going to be selling my short put strategy where I sell puts.
+[  389.09s ->   391.03s] Now, where do most people get in trouble?
+[  391.35s ->   394.59s] That's when they keep selling puts and the market's crashing.
+[  394.75s ->   399.95s] If you do a back test, all your losses really come from this point right here, come from
+[  399.95s ->   403.45s] when the market is dropping and you're still selling puts.
+[  403.63s ->   406.07s] This is where a lot of the losses come from.
+[  406.45s ->   411.53s] And so if you can stay out of the market during these times, you by default are going to increase
+[  411.53s ->   414.13s] your win rate and decrease your losses overall.
+[  414.13s ->   420.05s] So since that is the case, I only sell my short put strategy when I'm in a bullish market.
+[  420.31s ->   425.25s] Anytime it's in the red here, this red zone, this area, I'm not going to enter the trade
+[  425.25s ->   429.79s] and that by default will save me a lot of losses, increase my win rate and things like that.
+[  429.87s ->   431.49s] Now, you'll be wondering, well, what happens up here?
+[  431.55s ->   432.31s] This is a red zone.
+[  432.39s ->   433.07s] Do you trade this?
+[  433.15s ->   437.43s] When we're trading this, what we're looking at is, okay, we always want to align ourselves
+[  437.43s ->   438.05s] with the trend.
+[  438.13s ->   440.15s] The trend is up, so we don't want to fight it.
+[  440.15s ->   444.83s] However, we are at a point where the market is very likely to pull back, right?
+[  445.09s ->   449.63s] If we look at it, historically speaking, when we break into the red, we tend to pull back.
+[  449.69s ->   451.39s] When we hit into the red, we pull back.
+[  451.65s ->   453.23s] When we hit into the red, we pull back.
+[  453.33s ->   456.35s] So this is just a sign that the market is overextended.
+[  456.45s ->   459.57s] So what I'm going to do, I'm going to continue being bullish, but I'm going to decrease my
+[  459.57s ->   461.29s] position sizing in half, okay?
+[  461.79s ->   464.71s] So typically, I do four trades open at a time.
+[  465.01s ->   467.53s] And this period, I'm going to do two trades open at a time.
+[  467.53s ->   471.93s] So that way, I cut my risk down, I'm still in the market, I'm still making money, still
+[  471.93s ->   474.67s] generating returns, because I don't want to not do that.
+[  474.91s ->   479.69s] I want my capital making money, but I also want to decrease my risk in case we do have
+[  479.69s ->   480.33s] that pullback.
+[  480.39s ->   484.15s] And if we have a pullback, now I have the extra cash to put back in and start making
+[  484.15s ->   484.77s] money as well.
+[  484.87s ->   489.17s] So those are the three things you need to do if you've been trading for a while and
+[  489.17s ->   490.45s] are just at break even.
+[  490.63s ->   492.71s] Number one, you need a good strategy.
+[  493.05s ->   494.51s] Most of you probably have this.
+[  494.59s ->   496.41s] Just make sure your stop loss is intact.
+[  496.41s ->   500.03s] You can do that by doing a defined spread or something like that, or even stealing the
+[  500.03s ->   500.45s] strategy.
+[  500.85s ->   502.23s] Number two, you need great risk management.
+[  502.33s ->   506.25s] The best way to do that is to only allocate a portion of your account to trades and the
+[  506.25s ->   510.65s] rest are going to something risk-free that generates monthly returns like S-Gov, a T-bill
+[  510.65s ->   511.03s] ETF.
+[  511.61s ->   515.29s] And then next, make sure your trend strategy are in alignment.
+[  515.63s ->   518.11s] I don't know how much I can harp on this, but it's super important.
+[  518.33s ->   520.03s] Again, I've helped over 5,000 option traders.
+[  520.23s ->   523.67s] This is the biggest thing right here is that they're trying to sell the put credit spread and
+[  523.67s ->   525.95s] the market's dropping and they're like, why am I not making money?
+[  526.23s ->   529.13s] Because you need to align the right strategy with the right market.
+[  529.53s ->   533.39s] Anyways, guys, if you want access to this Google Doc and to 10 other free trading courses,
+[  533.83s ->   537.15s] go down and click the first link in the description to join my free school community.
+[  537.53s ->   538.57s] All right, guys, I'll see you in the next video.

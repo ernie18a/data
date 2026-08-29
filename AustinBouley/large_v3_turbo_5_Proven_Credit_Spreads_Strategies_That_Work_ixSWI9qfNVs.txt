@@ -1,0 +1,519 @@
+[    0.08s ->     6.48s] Hey guys, what's up? This is a strategy masterclass that goes into five different strategies to help
+[    6.48s ->    12.04s] you profit in any phase of the market. Uptrending, downtrending, sideways, whatever. It's going to
+[   12.04s ->    16.46s] help you profit. This is going to be one of the most comprehensive strategy videos you have ever
+[   16.46s ->    20.56s] watched on YouTube and ones that I have ever made. So if you're an options trader or a credit spread
+[   20.56s ->    25.70s] trader or you're an absolute beginner and you want to have a strategy and trading strategy that has
+[   25.70s ->    31.96s] a historical win rate over the last 15 years to make sure that you make money, I'm going to walk
+[   31.96s ->    38.14s] you through each one of these strategies, what market it works in, what stocks it works best on
+[   38.14s ->    44.72s] and step-by-step how to trade it. So again, close out all distractions, grab a notepad and a pen.
+[   44.82s ->    49.56s] You're going to want to pay attention and probably watch this a few times. If you truly understand
+[   49.56s ->    54.70s] and apply these strategies in this video, you can grow your small account quickly. You can build a
+[   54.70s ->    60.18s] side income for you and your family and you can even turn this into a full-time job if you really,
+[   60.32s ->    64.60s] really want to, because that's what I do as well. All right, guys, thank you for tuning into this
+[   64.60s ->    69.26s] video. Please put away all distractions and focus. This is going to be a great video. All right, guys,
+[   69.38s ->    74.00s] enjoy. Hey guys, what's up? I'm going to show you how to use credit spreads and this strategy to make
+[   74.00s ->    79.64s] a 90% win rate on all your trades. I'm going to show you how this is backtested, how the theory works,
+[   79.68s ->    83.96s] the step-by-step how you can do it yourself so you can actually, at the end of this video,
+[   83.96s ->    87.96s] have a strategy that you can actually apply for yourself and not only apply and use,
+[   88.04s ->    92.42s] but something that you understand. So let's jump into how and why this works. So if we want to look
+[   92.42s ->    96.18s] at the backtest of this specific strategy, you can see here, it's the squirrel strategy that we're
+[   96.18s ->   101.66s] going over today on the S&P 500 as a 90% historical win rate. You can actually look at all the past
+[  101.66s ->   107.48s] trades for this over the years, all the way back until 2003. You can see here, again, if you want to
+[  107.48s ->   112.18s] kind of slow down the video, you can look at it's actually all the way back till 2007. You can see here,
+[  112.18s ->   117.96s] all the results we have with this strategy. Again, it works and it works not only for SPY,
+[  118.24s ->   123.68s] but it works for all the major options trades you could do or options symbols. We have DIA,
+[  123.88s ->   134.62s] a 91% win rate, IWM, an 85% win rate, GLD, a 93% win rate, NTLT, the bond market, a 96% win rate.
+[  134.90s ->   139.04s] Now, why is the win rate so high on this credit spread strategy? Well, let me walk you through the
+[  139.04s ->   143.14s] theory and then I'll show you step by step. So the theory behind this trade is quite simple.
+[  143.70s ->   149.44s] When we look at a market, a market can only be in one of three different phases. The market can
+[  149.44s ->   152.94s] either be trending up, which means it's moving higher, which means highs are getting higher and
+[  152.94s ->   157.96s] lows are getting higher as well. Or number two, we can be in a downtrending market, which is where
+[  157.96s ->   162.76s] the highs are getting lower and the lows are getting lower as well. But number three is a neutral
+[  162.76s ->   165.88s] market sideways and the market is doing nothing. When the market is doing nothing,
+[  165.88s ->   170.06s] that means anything can happen. It can go, it can shoot up one day, it can shoot down one day,
+[  170.06s ->   175.74s] there's no clear direction. And so this strategy plays off a sideways market where there is no
+[  175.74s ->   180.66s] clear direction. And so again, how do we measure that? Well, we can measure that and measure the
+[  180.66s ->   185.36s] market being sideways by one of two ways. One is we can look at the highs and lows. Are they
+[  185.36s ->   189.72s] roughly the same? Are we staying within a trading range? So for instance, if I were to draw what I'm
+[  189.72s ->   193.58s] currently seeing here on the chart, you can see how I have a high here. And if we look at the
+[  193.58s ->   197.28s] S&P 500, again, it's on the daily chart, that's where you should be drawing most of your lines,
+[  197.66s ->   202.50s] we have a high and low here. And now the stock is staying between the slides. It's not making any
+[  202.50s ->   207.24s] higher highs, it's not making any higher lows. But at the same time, mathematically, we can look at it
+[  207.24s ->   213.46s] and see that the stock is just not moving. But also it's within this gray area. And this gray area
+[  213.46s ->   217.72s] is known as a neutral market. Again, if you want access to the trending band indicator, again,
+[  217.80s ->   221.52s] you can click below to get access to it. But it's a custom indicator that I programmed
+[  221.52s ->   227.56s] on TradingView. Anyways, we look at this and for in the middle, that's when we execute this. Why?
+[  227.84s ->   231.88s] Well, because the market can't do it. The market can't do anything. We're going to go out to a
+[  231.88s ->   237.92s] roughly 15 delta or roughly 4% below the close and put on a put credit spread. If you don't want to
+[  237.92s ->   242.98s] put credit spread is it simply means you make money as the stock stays the same or goes higher. So again,
+[  242.98s ->   247.78s] we'll be looking at the stock will be entering in around the 200 day moving average. And then from there,
+[  247.78s ->   252.68s] we'll be looking to put on put credit spreads 4% below the price. And so the reason why this works
+[  252.68s ->   260.26s] is because net neutral and the long term, the market, the Dow Jones, the S&P 500, gold, etc.
+[  260.70s ->   266.50s] They are all bullish stocks, bullish ETFs, bullish indexes, which means long term, they're going to
+[  266.50s ->   270.62s] turn up. So even though we're in a neutral territory where the market is going sideways,
+[  271.02s ->   276.18s] there's still a bullish sentiment. And so with that, we place put credit spreads to make money to
+[  276.18s ->   280.40s] the upside. And with that, that's how we're kind of capitalizing on this. But in order to give us
+[  280.40s ->   285.10s] an extra range of safety, we're going up 4% below the price. And that's kind of how we how we do that.
+[  285.40s ->   289.90s] Now, let me show you step by step here is the strategy. If you want to take a look at this
+[  289.90s ->   295.50s] article that I wrote about the strategy and depth, the reasoning behind it working, etc. And the and
+[  295.50s ->   299.94s] the step by step instructions, you can click the link in this description, the description of this
+[  299.94s ->   305.08s] video. But anyways, I'll walk you through it. Step number, step number one is we want the market to
+[  305.08s ->   310.22s] be sideways sideways, sideways, meaning that again, it's not making any higher highs or any higher
+[  310.22s ->   316.40s] lows, it's just saying sideways. Again, we can see that mathematically by looking at it being plus
+[  316.40s ->   321.84s] one and minus one standard deviation of the 208 moving average. Number two, once we know the market
+[  321.84s ->   325.64s] is sideways, then we know the strategy is good, we're going to move on to the next step. We're going
+[  325.64s ->   331.20s] to wait for the market to close. And once it closes, we're going to go 96% of the current stock
+[  331.20s ->   336.52s] value. So if I look at the current stock value being 40370. Again, I'm just going to pull up my
+[  336.52s ->   344.54s] little calculator, my calculator and go 40370, multiply that by 96% or 0.96, that gives me 387.55,
+[  344.70s ->   348.52s] we're going to round up to the nearest whole number. So it's going to be three. So that means I'm looking
+[  348.52s ->   356.02s] for a put credit spread, where I'm selling 38 is as my strike price. Next, we need to determine the
+[  356.02s ->   361.58s] next one. So if I'm selling the 388 strike, then I'm going to buy the one right below. So the 387.
+[  361.70s ->   368.38s] Now, what is my expiration? Simply put my expiration, my expiration date is the current date. So
+[  368.38s ->   375.62s] today is March 30, plus 14 days, and then round up to the nearest Friday. So again, from right now,
+[  375.90s ->   380.90s] this is almost the end of March, it's going to be roughly April 14. April 14 is a Friday,
+[  380.90s ->   386.44s] that's going to be our expiration date. Now we're going to set up the trade and our broker. So now
+[  386.44s ->   391.24s] let me just actually pull up Robinhood right now. So this is an easy platform to use. I'm trading
+[  391.24s ->   395.36s] credit spreads on a small account here, but I also have a large account with Tasty trade worth
+[  395.36s ->   400.72s] that's roughly six figures. But anyways, we go into spy, we go into our stock, we go into our trades by
+[  400.72s ->   405.92s] options, using everything that we determined, you can either set the trade yourself, or go to builder,
+[  406.28s ->   410.22s] I like builder, and go to put credit spread, which is this, or I put vertical spread,
+[  410.22s ->   414.72s] whatever you want to call it, right here. Then we're going to go to our expiration date, which we
+[  414.72s ->   422.59s] determined to be April 14, right here. And then we're going to go a width of $1. And then we're
+[  422.59s ->   427.19s] going to go what was our first strike price that we calculated, which is the close price times 0.96
+[  427.19s ->   436.73s] is 388. Go here 388387 right here. So now we can enter this trade for roughly 11 cents. Now again,
+[  436.83s ->   440.63s] in order for the numbers to work out long term in our favor, what we want to see is we want to collect
+[  440.63s ->   445.89s] at least 15 cents. So we can't collect 15 cents, then we're not putting this trade on. That's the
+[  445.89s ->   450.09s] next step. And sure, you can collect 15 cents in credit for putting on this put credit spread.
+[  450.21s ->   456.05s] If you can collect 14 to 15 cents, then put on then put on the trade. If not wait for the stock to drop
+[  456.05s ->   460.61s] and then reenter when you can get at least 15 cents of credit. Now again, that is how you put on this
+[  460.61s ->   467.21s] trade. And that is the statistical backtest of how we got a 96% win rate on TLT and a 90% win rate on
+[  467.21s ->   472.15s] SPY. And again, you can step back just at all the way back to 2007. It's exactly how my members do
+[  472.15s ->   476.97s] it except my members get alerted exactly when these trades occur. You can see here the most recent one
+[  476.97s ->   484.55s] on SPY was a 383.79. This trade is currently sitting in 80% profit on trades. That's how this
+[  484.55s ->   489.15s] trade works. And it's very simple to put on. Again, if you want to see the specifics behind it,
+[  489.15s ->   493.59s] you can click on the description below to check out this article that I wrote. But just want to
+[  493.59s ->   498.11s] clarify, in order to make this trade more accurate and to increase your win rate, you want you want
+[  498.11s ->   501.95s] to do a couple things, which is the special criteria right here. Number one, wait until the
+[  501.95s ->   506.27s] market has been inside the trending band for at least one day. Make sure it's sideways. Confirm
+[  506.27s ->   511.73s] that it's sideways before you enter the sideways strategy. Number two is make sure the daily change
+[  511.73s ->   516.45s] is less than 0.5. Don't enter when the stock is super green. Why? Because when the stock is super
+[  516.45s ->   520.77s] green, it's going to be really hard to collect that 15 cents on credit. And you give yourself way more
+[  520.77s ->   525.57s] room for the stock to drop in the future. Again, this is a sideways market, which means it can do
+[  525.57s ->   531.53s] anything. So if you're in a sideways market, you're more likely than not going to experience a red day
+[  531.53s ->   536.75s] at least once a week, if not two or three, three times a week because of how volatile it is. So just
+[  536.75s ->   541.07s] wait to enter on a red day. That's when you're going to get the highest premium. And that's also
+[  541.07s ->   546.89s] going to increase your max profit and decrease your loss. Anyways, if you want to learn more about how
+[  546.89s ->   550.69s] you get these alerts sent straight to your phone so you never miss out on one of these traits, you can
+[  550.69s ->   556.29s] check out my 10% credit spreads in a circle program link below. But if not, regardless of whether you
+[  556.29s ->   561.81s] sign up for any of my programs, this strategy will help you make money every single week using put credit
+[  561.81s ->   565.63s] spreads in a sideways market. If you want to learn more about my other strategies, smash that subscribe
+[  565.63s ->   569.89s] button because I have so many more coming. Thank you for watching and I'll see you in the next video.
+[  569.89s ->   577.64s] Hey guys, what's up? I want to show you exactly how to have a 90% plus win rate when trading put
+[  577.64s ->   582.60s] credit spreads. This strategy is designed to help you make money in uptrending markets. I'm going to
+[  582.60s ->   587.62s] show you a back test to prove to you that it works. I'm going to explain the theory behind why it works
+[  587.62s ->   591.60s] so you can understand it so you can understand what you're trading. I'm going to show you the best
+[  591.60s ->   597.40s] stocks it works on and step by step how to place this trade so that every single week you can place it
+[  597.40s ->   602.84s] and consistently make money. So let me walk you through step one, which is the back test so you
+[  602.84s ->   607.98s] can understand how this works. So we come here to the back test. You can see here on the S&P 500
+[  607.98s ->   614.68s] as a 92% win rate. Now that is the beauty of using the strategy. If you can have a 92% win rate,
+[  614.74s ->   618.94s] then you're going to be doing very, very well when it comes to credit spreads. That's why you have a
+[  618.94s ->   627.38s] 295% yearly return back tested since 2003. Now it also works well on DIA. DIA has a
+[  627.40s ->   634.74s] 90% win rate with roughly a 295% yearly return as well. And so that's the beautiful part of the
+[  634.74s ->   643.38s] strategy. Now again, it also works on IWM, GLD, and TLT, but they have roughly an 85% to 86% win
+[  643.38s ->   648.82s] rate. Still wins, but again, not as high as SPY and DIA. So I just wanted to make sure you know
+[  648.82s ->   653.68s] the best stocks that this works on. And it's also great because SPY and DIA are very liquid
+[  653.68s ->   659.18s] option stocks. You can get input credit spreads with no problem. All right, next, let's explain
+[  659.18s ->   665.24s] the theory behind why this works. If you don't know this yet, there's only three phases a market
+[  665.24s ->   670.30s] can be in or a stock can be in. Number one, it can be in an uptrending market. What is an uptrending
+[  670.30s ->   674.98s] market? It is where the stock is continuously going higher. That is defined by higher highs
+[  674.98s ->   680.56s] and higher lows. This is an uptrending market right here. Number two, it can be in a downtrending
+[  680.56s ->   685.86s] market, which is the opposite, where the stock is going lower. That is defined by lower highs
+[  685.86s ->   691.94s] and lower lows, where the stock is moving lower. And number three, it can be in a sideways or
+[  691.94s ->   696.68s] neutral market. That is where the stock is staying within the same range. And how do we identify
+[  696.68s ->   700.18s] that? Well, when the highs are roughly the same and the lows are the same and the stock
+[  700.18s ->   705.76s] is going nowhere over multiple months, that is a neutral or sideways market. Now again, what
+[  705.76s ->   710.44s] most people on YouTube and most trading gurus don't tell you is they're like, this strategy
+[  710.44s ->   715.18s] works, but it only works in one of those three markets. And if you trade a strategy outside
+[  715.18s ->   719.46s] of the market it's designed to work in, you're going to lose money. So I want to tell you this
+[  719.46s ->   725.92s] strategy I'm teaching you today, the true turtle strategy is built for uptrending markets. So
+[  725.92s ->   730.36s] do not trade the strategy unless the market is uptrending. Now you may be asking next, well,
+[  730.36s ->   735.26s] what is an uptrending market? Well, I just gave you a definition for it with higher highs and
+[  735.26s ->   740.20s] higher lows. But if you want to add an indicator on the chart to see it, put on the 208 moving
+[  740.20s ->   745.38s] average line. That's this gray line right here. When you put that line on, you can see if the
+[  745.38s ->   750.70s] market is trending up or trending down. The industry regards any stock above the 208 moving average as
+[  750.70s ->   756.54s] a bullish stock and any stock below that line as a bearish stock. So that's how that works to identify
+[  756.54s ->   762.76s] bullish and bearish tendencies. So why does this work? Well, because put credit spreads, make money as the
+[  762.76s ->   768.02s] stock goes up, makes money if the stock stays the same, or makes money if it comes down a bit. So when
+[  768.02s ->   773.82s] we're combining a bullish directional option strategy and an uptrending market where the market typically
+[  773.82s ->   779.88s] goes higher, then we can have a win rate of 92%. So let me show you exactly how to set this trade up
+[  779.88s ->   783.78s] now that you've seen the backtest, now that you know the theory behind trading with the trend, and
+[  783.78s ->   787.64s] understanding the trend is your friend, and you just follow that when you put credit spreads. Now I'm going to
+[  787.64s ->   792.90s] show you step by step how to put this trade on. All right, so let's go into the specifics. If you want access
+[  792.90s ->   797.90s] to this article right here, it's going to be linked in the description below. But I write an article for every single
+[  797.90s ->   804.78s] strategy that I backtest, that I work and that I use, so that one, you can understand why it works, but also do it for
+[  804.78s ->   812.10s] yourself. I'm giving you this strategy completely for free in hopes that you make money with it like I am. And then with that
+[  812.10s ->   818.36s] money, you join the 10% credit spreads inner circle program, where I work with you exclusively. Again,
+[  818.44s ->   824.40s] it's a super cheap price for the amount of value you get. You also get access to my text, email, and
+[  824.40s ->   830.02s] discord alerts in real time on both my small and large account. And you just get instant access to these
+[  830.02s ->   834.78s] trades. So if you work full time, you don't have to worry about missing out on these trades. Anyways, let's
+[  834.78s ->   841.96s] structure how to set up this trade. So this trade again, the bullet point number one is all about waiting
+[  841.96s ->   846.12s] for an uptrending market. Make sure the stock is trending higher. So again, that's going to look
+[  846.12s ->   850.12s] like waiting for the stock to break above this green line, which shows us that the market is
+[  850.12s ->   855.90s] uptrending, which is plus one standard deviation of the during the day moving average. Next, you want
+[  855.90s ->   860.98s] to determine what your put credit spread strike prices are. So if you never placed a put credit
+[  860.98s ->   865.56s] spread, I made a video on it before, which I'll link somewhere around here. But anyways, you want to
+[  865.56s ->   871.86s] make sure your stock close price is that you multiply that by 97%. So let's take
+[  871.86s ->   877.44s] this, for example, the current price of today, let's assume the stock is above this green
+[  877.44s ->   883.38s] line, and that the current price is our close price. So we go in 407. Oops, sorry, we're going
+[  883.38s ->   888.74s] to come in here. We're going to take 407, which is our theoretical close price for this video.
+[  889.50s ->   894.32s] 407, we're going to multiply that by actually, let's just jump up and grab a calculator. Oops,
+[  895.24s ->   902.16s] calc you later. Sure, this is calculator.com. Oh, perfect. Here we go. We're going to take 407,
+[  902.16s ->   908.44s] 407. It's currently trading at 407.12. And then we're going to multiply that by 97%. So it's going
+[  908.44s ->   915.44s] to be 0.97 in decimal form. And we're going to get 394.9. So again, we're going to round up to the
+[  915.44s ->   919.74s] nearest whole number. So that's going to be 395. So the put credit spread strike prices, we're going
+[  919.74s ->   924.80s] to sell the 395. And then we're going to buy the one right below it. So we're going to buy the 394.
+[  925.14s ->   930.80s] All right, cool. Now we have our strike prices. Next, we need to determine our expiration date.
+[  930.80s ->   937.02s] Our expiration date is going to be the current date, plus 12 days, then round up to the next
+[  937.02s ->   942.84s] Friday. So right now it is March 31st. So plus 12 days is going to be roughly April 11th. Round up
+[  942.84s ->   948.00s] to the nearest Friday, that's going to be April 14th. All right, cool. Let's go into a credit spread
+[  948.00s ->   952.22s] trade. Let's just start from scratch. All right, this is my small account that I trade credit spreads
+[  952.22s ->   957.48s] on. I have my larger account, a six-figure account at Tasty Trade. But anyways, if we move over here,
+[  957.48s ->   962.32s] we're going to go to spy. We're going to collect spy options. We're going to go on to builder.
+[  963.00s ->   968.17s] This sets up the trade for us easier. We're going to click on put credit spread. We're going to go
+[  968.17s ->   975.18s] to the expiration date that we determined April 14th. There you are. We're going to go to a width of one
+[  975.18s ->   984.62s] because that's what this strategy works best on. We're going to scroll down to 395, 394 because that
+[  984.62s ->   989.66s] is what we determined our strike price right here. 395, 394 right here. If we click on that,
+[  989.70s ->   994.34s] it's currently trading at 14 cents of credit. This is a perfect trade. One new one to place and move
+[  994.34s ->  1000.36s] on. So what makes a trade a good one to trade? We know how to set it up. We know the expiration date,
+[ 1000.40s ->  1004.78s] but what should be the total credit you're trying to target? Well, right here, I didn't leave you
+[ 1004.78s ->  1009.78s] high and dry just yet. You want to make sure you're collecting at least a 15 cents in credit. So
+[ 1009.78s ->  1015.00s] roughly it's going to be 13, 14, 15 cents is going to be your bare minimum, but anything more will be
+[ 1015.00s ->  1019.54s] great. So anyways, you're going to be trying to collect this credit. Why? Because although you
+[ 1019.54s ->  1026.72s] have a super high win rate of 92%, if you want to have a long-term positive expectancy and you want
+[ 1026.72s ->  1031.76s] to cover your max loss when that occurs, you want to make sure you're collecting 14 to 15 cents in
+[ 1031.76s ->  1039.24s] credit. Now again, because the strong green day, it's roughly 0.3, what is it? 0.13 cents right now.
+[ 1039.30s ->  1043.90s] Yeah. 13 cents in credit. But again, if you're trading this or you're entering on a red day,
+[ 1043.90s ->  1050.98s] which is ideal, then the put options are going, the volatility will be a bit higher. And so the
+[ 1050.98s ->  1056.70s] premium will be higher as well. And so you can easily collect 15, 17, 19 cents of credit, and that's
+[ 1056.70s ->  1061.56s] going to be your ideal sweet spot. But because the market is so green today, it's quite hard to enter on
+[ 1061.56s ->  1065.94s] that. Anyways, that is how you put on this trade. This is the true turtle strategy. It works best for
+[ 1065.94s ->  1069.88s] opportunity markets. But if you want to know how to define your win rate and make it a bit better,
+[ 1069.88s ->  1074.92s] you can add the special entry of criteria. Again, I've been backtesting this strategy for years,
+[ 1075.04s ->  1081.12s] and this is the best ways to increase your win rate. Make sure the stock, essentially what this
+[ 1081.12s ->  1087.76s] first one here is, make sure that the stock is roughly the candle for that day is small or
+[ 1087.76s ->  1092.56s] slight or slightly red, not a huge green candle. Why? Because it's just harder to get that credit
+[ 1092.56s ->  1097.68s] collected that you're aiming for. Number two is make sure that the market has been uptrending for at least
+[ 1097.68s ->  1103.88s] one candle. So for instance, if the stock breaks in on here, we're not going to buy on here, we're going to
+[ 1103.88s ->  1109.20s] wait until it comes down one candle and then buy that just to give us some confirmation that the market is
+[ 1109.20s ->  1114.92s] actually trending up. So that is the best way to place a two turtle strategy to have a 92% win rate, go use
+[ 1114.92s ->  1122.16s] that strategy, use the strategy now, sorry, and make some money. Join me in my Inner Circle program and I would
+[ 1122.16s ->  1126.24s] love to help you out further. If you're someone who works full time, the Inner Circle program may be just right
+[ 1126.24s ->  1131.46s] for you. So check out my description. Why may it be right for you? Because I show you exactly how to trade credit
+[ 1131.46s ->  1137.04s] spreads, even if you have a full time job and don't have time to place trades during market hours. And I give you
+[ 1137.04s ->  1142.32s] access to all my trades that I use to trade full time. So anyways, guys, this is the credit spread
+[ 1142.32s ->  1147.12s] strategy. If you liked it, smash that thumbs up button and the subscribe button. I've got a lot
+[ 1147.12s ->  1151.66s] more strategy videos coming. And trust me, if you like this one, you're going to like those two. It's
+[ 1151.66s ->  1156.30s] going to show you how to profit and those other phases of the market step by step. All right, guys,
+[ 1156.38s ->  1165.22s] see you in the next video. Hey, guys, what's up? I want to show you exactly how to have an 88% win rate
+[ 1165.22s ->  1170.12s] win trading call credit spreads. Now, again, this is all about trading call credit spreads in the
+[ 1170.12s ->  1175.18s] direction the stock is going. And so again, I'm going to show you how this strategy works. I'm
+[ 1175.18s ->  1179.70s] going to show you the back test of it to prove that it works. Then I'm going to show you and explain
+[ 1179.70s ->  1183.98s] the theory behind why this works. You can have an understanding so that you know what you're
+[ 1183.98s ->  1188.38s] trading. And then I'm going to show you step by step how to place this trade so that when the market
+[ 1188.38s ->  1194.30s] is trending down, instead of losing money, you know what to do to make money. So let's jump into it.
+[ 1194.30s ->  1198.98s] How does this make money? Well, you can see here the back test of this strategy, which is called
+[ 1198.98s ->  1205.94s] the short play strategy, is an 88% win rate and roughly a 15% yearly return. Now, again, it does
+[ 1205.94s ->  1211.60s] not happen every year. You can see here from the dates. It only happens when the market is trending
+[ 1211.60s ->  1216.06s] down, but it also works on DIA. If we come here to DIA, which is the Dow Jones Industrial Average,
+[ 1216.16s ->  1221.62s] you can see another example of what it works with, but it has a 96% win rate. So again, if we're coming
+[ 1221.62s ->  1227.30s] into a rough market, you want to be trading SPY or particularly DIA with this short put strategy.
+[ 1227.66s ->  1232.34s] There's also other stocks that it works with here as well. And if you want access to any of
+[ 1232.34s ->  1237.44s] these back tests, just let me know in the comments below and I will give you full access. But again,
+[ 1237.68s ->  1242.34s] this is mainly for inner circle members. Anyways, that is a back test to prove that it works. Again,
+[ 1242.42s ->  1248.08s] this is all about the theory, which I'll explain here about trending with where the market is going or
+[ 1248.08s ->  1253.34s] trading with the trend. Now, if you don't know this, the market can be in one of three different
+[ 1253.34s ->  1258.56s] phases. One, the market can be trending up. That is defined as higher highs and higher lows. Like
+[ 1258.56s ->  1263.16s] here, the market is trending up. The highs are getting higher and the lows are getting higher as
+[ 1263.16s ->  1268.34s] well. Number two, you have a downtrending market, which is where the market is going down. That's
+[ 1268.34s ->  1272.64s] where the highs are getting lower and the lows are getting lower as well. And number three, you have
+[ 1272.64s ->  1277.44s] a sideways or neutral market where over months, the market goes nowhere, right? You can see here,
+[ 1277.50s ->  1282.08s] the highs are roughly the same and the lows are roughly the same. So long term, it's going nowhere.
+[ 1282.20s ->  1288.02s] It's pretty flat. It's stuck in a range. The strategy, the short play strategy that we're talking
+[ 1288.02s ->  1294.48s] about in today's video is all about making money to the downside, making money when the market is going
+[ 1294.48s ->  1299.74s] down. Now, why is this? Well, because if you're trading a call credit spread, that's a bearish
+[ 1299.74s ->  1305.56s] directional play, which means you're betting on the stock to go down, to stay the same or go up
+[ 1305.56s ->  1310.82s] very slightly to make money with a call credit spread. And so when we're hoping the stock will
+[ 1310.82s ->  1315.48s] go lower and we combine that with the fact that it's actually trending down, then that's how we're
+[ 1315.48s ->  1320.38s] going to make money. Okay. So that is the theory behind it is when the market is trending down,
+[ 1320.48s ->  1326.66s] which again, we can judge by a lot of different factors. For instance, the highs and lows getting
+[ 1326.66s ->  1333.00s] lower or looking at the stock being below the 200 day moving average line, which is this gray line.
+[ 1333.40s ->  1337.00s] Again, there's just different ways to tell when the market is bearish and that's the way you do it.
+[ 1337.34s ->  1342.08s] Okay. So now that we know that trading with the trend is the most profitable way to trade credit
+[ 1342.08s ->  1348.44s] spreads, let's talk about the specifics of the strategy. So right here is the short play strategy.
+[ 1348.72s ->  1354.12s] Again, depending on what you trade, it's going to have roughly an 88 to a 96% win rate. So again,
+[ 1354.12s ->  1359.36s] let's just say a 94% win rate. All right. So again, the first criteria for putting this trade
+[ 1359.36s ->  1363.92s] on is all about understanding is the market down trending, is the market moving lower? Because
+[ 1363.92s ->  1367.46s] if it's not, then we don't want to put on the trade, but if it is, then we will. So anyways,
+[ 1367.48s ->  1371.46s] this is all about waiting for it to cross below the red line, which is below here, which is one
+[ 1371.46s ->  1377.82s] standard deviation below the 200 day moving average. And so that's how we calculate a short
+[ 1377.82s ->  1384.62s] interest or a, or a downtrending market in this back test. All right. Number two for the checklist
+[ 1384.62s ->  1389.40s] is we need to determine how we're going to set up a call credit, a call credit spread. What strike
+[ 1389.40s ->  1393.58s] price are we selling and what are we buying to protect ourselves? So we're going to go, we're
+[ 1393.58s ->  1399.72s] going to take the stock close price and we're going to multiply it by 104% or essentially just add
+[ 1399.72s ->  1405.06s] 4% to the current price. And so what this looks like is this, let's give it, let's give an example.
+[ 1405.06s ->  1411.64s] Let's say the current trade, the current trade price is where the stock is. And let's say that
+[ 1411.64s ->  1416.00s] the current price is below this red line. So let's just say we've mapped, we've, we have matched the
+[ 1416.00s ->  1425.68s] setup for a downtrending market. Let's take this price 40734. All right. So 407.34 is our current
+[ 1425.68s ->  1433.82s] close price for this example. And then from there, we're going to multiply it by 4% or add 4%, which is
+[ 1433.82s ->  1443.76s] going to look like multiplying it by 1.04. We're going to create a 423. So that's going to be our
+[ 1443.76s ->  1448.90s] sale strike price for our call or the strike price we're going to sell. And so again, we're going to
+[ 1448.90s ->  1453.08s] round up to the nearest whole number. So that's 423.6. So we're going to, we're going to round up
+[ 1453.08s ->  1458.30s] to 424. So that means our first strike price that we're selling is 424. And then we're going to buy the
+[ 1458.30s ->  1464.52s] one right above it. So 425. So we're going to sell the 424 and buy the 425. Okay, cool. Now we have
+[ 1464.52s ->  1468.68s] our strike prices. Now let's determine our expiration. That's going to be the current date
+[ 1468.68s ->  1475.08s] plus nine days, then rounding up to the next Friday. So the current day is March 31st. So if we
+[ 1475.08s ->  1480.58s] round up, that's going to be April 8th. And so again, if we round to the next Friday, it's going to be
+[ 1480.58s ->  1487.58s] April 14th, I believe. Sounds right. We'll see. April 14th. Let's just say that's correct. I'm not
+[ 1487.58s ->  1492.84s] good with dates. But anyways, you can just follow that method to get there. Anyways, so that is how
+[ 1492.84s ->  1497.16s] we find our expiration date. Next, we go to a broker and we set it up. So anyways, I trade credit
+[ 1497.16s ->  1502.22s] spreads on both a small account, which is less than a thousand and also on an account with over six
+[ 1502.22s ->  1507.02s] figures to show to myself and my members on my full account on my large account, I trade full time,
+[ 1507.02s ->  1512.06s] but just to show that it's possible no matter your account size. Anyways, let's go into spy and set
+[ 1512.06s ->  1516.30s] up this trade. So we're going to go into spy, trade spy options. We're going to go into builder to set
+[ 1516.30s ->  1522.58s] up a put credit spread for us right here, put credit spread, click on this, go to the expiration
+[ 1522.58s ->  1528.70s] date we talked about, which I believe is April 14th. It's the next Friday. Then we're going to go to a
+[ 1528.70s ->  1533.80s] width of $1 because the $1 width is what works best for this strategy. And then next, we're going to
+[ 1533.80s ->  1543.12s] scroll up to the 424-425. I believe that's it, right? Yeah, 424-425. So come up here. Oh, I must
+[ 1543.12s ->  1551.75s] have passed it. Yeah, 424-425. So right here, we're going to be selling 424-425. Oh, I put,
+[ 1552.23s ->  1556.67s] duh, my bad. I'm just going to leave this in there just because you can see that I'm human and make
+[ 1556.67s ->  1562.67s] mistakes. That was a put credit spread. We're actually setting up a call credit spread, which is
+[ 1562.67s ->  1566.11s] why it was so high. So a call credit spread because we're making money to the downside,
+[ 1566.23s ->  1573.39s] not the upside. All right, here we go. Now let's find 424-425. Okay, 424-425 right here. 424,
+[ 1573.53s ->  1579.29s] we're selling the 424 and we have the 425 as our, oops, we're not on the right expiration date.
+[ 1580.31s ->  1584.09s] Whoops, I guess this video is all a lot about learning how Austin can mess up. Okay, here we go.
+[ 1584.33s ->  1591.37s] The right expiration date, the right width. All right, wonderful. Try this again. 424-425,
+[ 1591.37s ->  1596.89s] 424-425 right here. You're currently trading at 8 cents or 7 cents. So this is how you would put
+[ 1596.89s ->  1600.81s] the trade on. Now the reason why this trade works and you're like, Austin, you're only collecting
+[ 1600.81s ->  1604.97s] 7 cents. That's not enough. You are correct. Right here, as stated in here, you want to collect at
+[ 1604.97s ->  1611.63s] least 15 cents in credit. Now, what the market is not factoring in right now and what does factor in
+[ 1611.63s ->  1619.15s] later is that right now the IV rank for SPY or how volatile SPY is, is quite low. Why? Because it's
+[ 1619.15s ->  1625.99s] trending up. So VIX is going to be lower. When VIX is low, you collect less credit. When VIX is high,
+[ 1626.05s ->  1632.43s] you collect more credit. When the market is in a downtrending phase, the implied volatility is a
+[ 1632.43s ->  1637.85s] lot higher. So you're going to be able to easily collect 15 cents, if not 20 cents. If we look here
+[ 1637.85s ->  1646.65s] on the back test, the average here for a short play strategy on the S&P 500 is $17 to $22 in that range
+[ 1646.65s ->  1652.35s] because of how high the implied volatility rank is. So you need to make sure you take that in into
+[ 1652.35s ->  1658.99s] account. We're looking at implied volatility as well. So anyways, that is the short play strategy.
+[ 1659.23s ->  1663.55s] That is how you use it to make money. Now remember, if you can't collect at least 15 cents of credit,
+[ 1663.65s ->  1669.89s] then do not trade. All right, guys, that is how you make money. To the downside, you can call credit
+[ 1669.89s ->  1676.05s] spreads in the strategy to have a 90% plus win rate or a 96% win rate on the Dow Jones Industrial Average.
+[ 1676.05s ->  1680.81s] I hope this made sense. If you have any questions, put them down below. If you enjoyed this video,
+[ 1680.97s ->  1685.71s] smash that thumbs up and subscribe button. If you want to get alerts to these trades as they happen
+[ 1685.71s ->  1690.91s] in real time, as I take them, and also just as they happen on other stocks, you want them via text,
+[ 1690.99s ->  1696.19s] email, discord, whatever, sign up for the 10% credit spreads inner circle program, or just click
+[ 1696.19s ->  1700.13s] below to learn more. Anyways, guys, see you in the next video. I have so many more strategy videos
+[ 1700.13s ->  1704.54s] coming and I know you'll enjoy it. Hey guys, what's up? I want to show you in this video,
+[ 1704.54s ->  1710.54s] a strategy that can help you make a 94% return when trading dip buys. It's called the winning
+[ 1710.54s ->  1715.16s] whale strategy. I'm going to explain the back test to show you that it works. I'm going to explain the
+[ 1715.16s ->  1718.40s] theory behind it so you understand why it works when you're trading it. You're like, oh yeah,
+[ 1718.42s ->  1722.80s] this makes sense. And then I'm going to show you step-by-step how to place this trade. So
+[ 1722.80s ->  1728.08s] step number one is what is the back test? You can see here with SPY or the S&P 500 ETF,
+[ 1728.08s ->  1734.58s] we have a 94% win rate with a 63% yearly return. Now again, this trade does not happen every single
+[ 1734.58s ->  1740.60s] day or every single week. Maybe once or twice a year do we get a string of these trades. Now again,
+[ 1740.66s ->  1744.62s] that's because they dip buy strategy. So that means the market needs to sell off in order for the
+[ 1744.62s ->  1749.26s] strategy to happen. But I'll explain more about that in the step-by-step process. All right. So you
+[ 1749.26s ->  1755.10s] can also trade this on DIA. If we go to DIA, you can see it has a 93% win rate, and you can also
+[ 1755.10s ->  1760.34s] change it for other stocks as well. TLT will typically have more occurrences, but again,
+[ 1760.66s ->  1766.84s] you can see here, but again, your win rate is a lot lower with that. Anyways, you can make the stock
+[ 1766.84s ->  1772.58s] you want to trade on, but SPY and DIA tends to be the best stocks for the strategy. Okay. Moving in
+[ 1772.58s ->  1778.36s] with the winning whale strategy with a 63% yearly return, I'm going to explain the theory behind why
+[ 1778.36s ->  1783.56s] this works. Also, quick side note, if you want access to the back test, you can become an inner
+[ 1783.56s ->  1790.74s] circle member, or just leave a comment down below and I'll send you a CSV file of the entire back
+[ 1790.74s ->  1796.74s] test if you want it. Okay. So if we see here, the way that we structure this trade or the way that
+[ 1796.74s ->  1801.86s] this trade works is what the winning whale is. So if you never heard of a whale in the market or in
+[ 1801.86s ->  1808.32s] the trading game, a whale is somebody with a ton of money. It's typically a hedge fund, a bank,
+[ 1808.32s ->  1814.88s] an institution, or something like that, which has enough money to move the market. It also could
+[ 1814.88s ->  1823.76s] be insider traders like the CEO or the CFO who buys or sells a large portion of their company stock
+[ 1823.76s ->  1829.32s] because they know something. So this typically happens around lows. When the stock reaches a low,
+[ 1829.68s ->  1837.08s] then you'll see the CFO of a company or a big institution buy a large portion and then it'll
+[ 1837.08s ->  1842.20s] trade up. And so that's what this winning whale strategy is. It's buying the dip, but also knowing
+[ 1842.20s ->  1847.18s] how to buy it. So again, when you're trading put credit spreads, your whole goal is to make money
+[ 1847.18s ->  1851.26s] on the upside, right? A put credit spread makes money as the stock goes up, as it stays the same,
+[ 1851.32s ->  1855.10s] or goes down a little bit. And so when we're trading put credit spreads, we're looking for an
+[ 1855.10s ->  1859.68s] opportunity for the stock to move higher. And when dip buys, that's the perfect opportunity. So that's,
+[ 1859.68s ->  1865.00s] that is the theory behind it and why this works. Now to explain the strategy step-by-step,
+[ 1865.00s ->  1869.88s] this is how it works. First off, we want to make sure that the stock is bouncing. That's what this
+[ 1869.88s ->  1874.14s] criteria is right here. It says, is this stock bouncing? And so what it looks like is we're
+[ 1874.14s ->  1881.26s] waiting for the stock to go below this bottom yellow line, which is 3.8 standard deviations below
+[ 1881.26s ->  1886.88s] the 200-day moving average. Once it breaks below that and then breaks back above and closes above it
+[ 1886.88s ->  1892.40s] after being below it, that is our dip buy entry. And that was, that is what satisfies this as a dip buy
+[ 1892.40s ->  1899.08s] because statistically when that happens, the stock recovers shortly after. So that's what the setup
+[ 1899.08s ->  1904.46s] is. Now we need to determine our short strike price for our put credit spread. So that's going to look
+[ 1904.46s ->  1911.50s] like this. We're going to take the stock's current close price and multiply that by 96%. So let's say
+[ 1911.50s ->  1916.62s] this was our entry right here, because you know, this is where it closed back above. So if our entry
+[ 1916.62s ->  1927.20s] is right here, then we're going to take 36, let's see what the close was, 365.97. So 365.97 times 96%,
+[ 1927.20s ->  1933.38s] which we can see here, 96%. So we're going to multiply that times 0.96. And that's where we're
+[ 1933.38s ->  1938.96s] going to get our short strike. Now we're going to round that. It says 351.33. We're going to round
+[ 1938.96s ->  1944.84s] that to the nearest whole number. So we're going to say 351. So our goal is to short the put contract
+[ 1944.84s ->  1951.42s] at 351 strike, and then buy the one right below it at 350. So that's how we're going to set up our
+[ 1951.42s ->  1956.52s] put credit spread. Now, again, this is an example way below where the stock currently is. So it's
+[ 1956.52s ->  1960.64s] going to be hard to set that up on a real example. But before we do, we need to determine our expiration
+[ 1960.64s ->  1967.82s] date. Our expiration date, again, this is the best expiration date based on the strategy being
+[ 1967.82s ->  1972.90s] optimized a lot of different times is 14 days. So what you do is you take the current date,
+[ 1973.00s ->  1980.60s] which is currently March 31st, you add 14 days, so April 13, and you round to the nearest Friday,
+[ 1980.72s ->  1984.74s] which would be April 14. So again, we're going to go and we're going to set up this trade.
+[ 1985.42s ->  1991.82s] You can see here we go into Robinhood, we go to trades by options, we go into builder,
+[ 1992.20s ->  1997.06s] we go into put credit spread, that's the trade word, the spread we're trading, we're going to go into
+[ 1997.06s ->  2003.26s] the expiration date that we determined. So it's going to be April 14, just like that. Now again,
+[ 2003.26s ->  2007.04s] we're probably not going to be able to find the exact strike price of what we found because it's
+[ 2007.04s ->  2011.78s] way lower than where the price currently is at the moment. So we would need to go all the way down
+[ 2011.78s ->  2021.14s] to what was it 353? Yeah, 351. So yeah, it doesn't go down that low on here, just because there's no value
+[ 2021.14s ->  2025.62s] in it. But again, that's because we're not near that we were just giving an example from way low is
+[ 2025.62s ->  2030.26s] currently trading at 408. Anyways, that's the example of how you would set up the trade. Now
+[ 2030.26s ->  2034.38s] the next thing you need to know is that you want to collect at least 15 cents in credit. Now what
+[ 2034.38s ->  2039.40s] you do have going for your advantage that is not shown here is when you're trading like this,
+[ 2039.48s ->  2046.22s] when the market is dipping down to new all time lows or lows that it has been to in roughly a year,
+[ 2046.62s ->  2051.34s] then your IV rank is going to be very high. When your IV rank is high, you can collect more credit.
+[ 2051.34s ->  2058.14s] So your goal is to collect 15 cents minimum, but you should be able to easily collect 20 to $25.
+[ 2058.50s ->  2063.86s] You can see here the average roughly 22 to $26 in credit. And that would be an amazing credit
+[ 2063.86s ->  2070.36s] because the IV rank is very high. Anyways, that is the idea of buying the dip and using put credit
+[ 2070.36s ->  2074.98s] spreads to profit from it. So if you're someone who wants to take advantage of this, make sure to click
+[ 2074.98s ->  2080.46s] the link below to check out this article that lays it out step by step so that when a dip comes,
+[ 2080.54s ->  2085.50s] you know how to profit from it. If you want these alerts sent straight to your phone via text, email,
+[ 2085.74s ->  2090.38s] discord, whatever, then check out the 10% credit spreads inner circle program where I share my
+[ 2090.38s ->  2095.04s] personal trade alerts where I trade for a full-time job. That's what I do with credit spreads and other
+[ 2095.04s ->  2098.98s] things like that. So if you want to learn more, smash the thumbs up button and smash the subscribe
+[ 2098.98s ->  2104.26s] button until I have more strategy videos coming. I hope this makes sense and I hope this helps you profit
+[ 2104.26s ->  2109.62s] using put credit spreads. Guys, what's up? In this video, I want to show you how to have a 94% win
+[ 2109.62s ->  2115.94s] rate trading put credit spreads on a dip buy bounce strategy. So this strategy, I call it the elastic
+[ 2115.94s ->  2120.38s] bounce and I'll explain more of why that is. But to give you an understanding of what's being covered
+[ 2120.38s ->  2125.90s] in this video is I'm going to show you a back test so you can see that it works. Then I'm going to
+[ 2125.90s ->  2130.82s] explain the theory behind it so that it makes logical sense that you understand what you're trading.
+[ 2130.82s ->  2135.30s] And then the third step is I'm going to show you step-by-step how to place this trade so that
+[ 2135.30s ->  2140.82s] you're ready during the next crash. All right, so let's jump into it. The back test here, oops,
+[ 2140.88s ->  2147.04s] that's the step-by-step, back test first is right here. So on the S&P 500, you have a 94% historical
+[ 2147.04s ->  2155.58s] win rate since 2003 with an average of a 62% yearly return. Now, we're looking at this trade right here
+[ 2155.58s ->  2162.46s] and you can see you're collecting roughly $29 to $30 per spread. And that's because of how high
+[ 2162.46s ->  2167.36s] the IV is. So the reason why this works well is because during a period of a crash, for instance,
+[ 2167.44s ->  2173.04s] like this, when the market is dipping low, your implied volatility or VIX is going to be higher
+[ 2173.04s ->  2177.56s] than it typically is. So that's just a caveat that I wanted to share. That's why it works out so well.
+[ 2177.92s ->  2183.24s] Anyways, but you have the 94% win rate. So regardless, you're doing well. Anyways, this is the back test.
+[ 2183.24s ->  2189.76s] This is your yearly return. And this is your return since 2003. You can see here, you do have
+[ 2189.76s ->  2194.92s] streaks of losers. It does happen. But again, it's very rare. And you'll understand why when I
+[ 2194.92s ->  2199.70s] explain the strategy. If you want access to this back test for yourself, just comment down below
+[ 2199.70s ->  2205.02s] and I'll send you a CSV file of the back test. But to explain why this strategy works, it's quite
+[ 2205.02s ->  2210.94s] simple. If you've ever had a rubber band and you were stretching that rubber band out so much that it
+[ 2210.94s ->  2215.44s] snapped, that's exactly what is happening in this strategy. That's the theory behind it.
+[ 2215.70s ->  2221.22s] You have a rubber band, which is the market. And the market is getting so overextended, meaning that
+[ 2221.22s ->  2227.30s] the market is going outside of its reach of how far it should normally go, that it snaps back into place.
+[ 2227.34s ->  2233.00s] So that's what happens here. We're basically creating on this chart a normal distribution. If
+[ 2233.00s ->  2238.04s] you've never seen that, that just shows how much price should fluctuate. And so you can see here,
+[ 2238.04s ->  2243.48s] this is the middle. This is our one standard deviation. This is roughly 3.8. So you can see
+[ 2243.48s ->  2248.26s] here, once we get outside this 3.8 range, the rubber band is so extended that it's just ready
+[ 2248.26s ->  2253.04s] to snap. So once we get into below this range, it's just going to snap back. You can see here,
+[ 2253.10s ->  2257.38s] it snaps back. You can see here, it snaps back. You can see here, it snaps back. Just historically,
+[ 2257.54s ->  2263.04s] that's what happens. And so that's the idea that this trade is based on. A rubber band snapping is the
+[ 2263.04s ->  2269.56s] stock going outside of its range and snapping back, also known as a mean reversion strategy.
+[ 2270.10s ->  2276.16s] So anyways, let's show you how to take advantage of this trade. So here's the step-by-step steps to
+[ 2276.16s ->  2280.02s] take advantage of this strategy. If you want to check this out for yourself, feel free to click
+[ 2280.02s ->  2285.72s] the description below. This is an article I wrote on the strategy and why it works. Anyways, first off,
+[ 2285.80s ->  2290.76s] you want to wait for the stock to cross below the bottom yellow line, which is 3.8 standard deviations
+[ 2290.76s ->  2295.34s] below the 200-day moving average. You want to wait for it to cross below this yellow line,
+[ 2295.42s ->  2301.02s] which is exactly the math I just showed you. So once it's below that, then this trade entry is
+[ 2301.02s ->  2307.02s] satisfied and we start to enter using the rules here. So we're placing a put credit spread trade,
+[ 2307.10s ->  2310.90s] which is a bullish strategy, and we need to figure out where our short strike will be.
+[ 2311.24s ->  2316.68s] So first, we need to take the stock close price and multiply that by 0.96. So for instance,
+[ 2316.68s ->  2322.30s] let's say we're trading this example right here. This was the first time it closed below. So again,
+[ 2322.34s ->  2331.78s] the close price right here is 364.31. So let's go here, 364.31. We're going to multiply this by 0.96 or
+[ 2331.78s ->  2338.18s] 96%, and we're going to get 349.7. Now we're going to round to the nearest whole number because again,
+[ 2338.28s ->  2342.60s] you can't trade credit spreads on strike prices. That's 0.7. So round to the nearest whole number.
+[ 2342.60s ->  2347.18s] That's how this back test was determined. So you have a strike price that you're selling of 350,
+[ 2347.54s ->  2353.32s] and then you're going to buy the one right below it to protect yourself with 349. So that's how we
+[ 2353.32s ->  2357.58s] set up a credit spread. Next thing we need to know is what is our expiration date? Well,
+[ 2357.84s ->  2362.94s] our expiration date is going to be the current date plus 14 days and then rounding up to the next Friday.
+[ 2363.36s ->  2367.74s] Now again, this date has been tested, but it works best for two weeks. Why? Because when we're
+[ 2367.74s ->  2373.20s] extended in this range, it typically does not stay below this range for more than two weeks.
+[ 2373.58s ->  2378.48s] And so that's why this trade works. Now again, the string of losers you saw was from 2008,
+[ 2378.60s ->  2381.54s] a super large guy. As you can see here, it breaks through and then snaps right back up. It breaks
+[ 2381.54s ->  2386.40s] through and snaps right back up. It breaks here, snaps up, breaks here, snaps up. It doesn't stay down
+[ 2386.40s ->  2393.96s] there longer than two weeks, except for when we get into these ranges right here for 2008. But again,
+[ 2393.96s ->  2399.08s] that doesn't happen all the time. Regardless, you have a 94% win rate, so your wins will way outweigh
+[ 2399.08s ->  2404.76s] your losses. Anyways, that's just an example that I wanted to show you. So now that we have our
+[ 2404.76s ->  2408.86s] expiration date, which is the current date. So again, if we were to structure this now, for instance,
+[ 2409.26s ->  2413.90s] it would be today's date is March 31st plus 14 days. That'd be April 13th and round up to the next
+[ 2413.90s ->  2418.74s] Friday, which would be April 14th. So that would be our expiration date. So we're going to set up this
+[ 2418.74s ->  2423.58s] trade in a broker. This is not something I can really do here because the example that we use,
+[ 2424.20s ->  2431.24s] the strike price, as you can see here, $3.50 is too low to take advantage of, but you're just going
+[ 2431.24s ->  2435.65s] to go to builder. You're going to go to put credit spread. You're going to go to the expiration date
+[ 2435.65s ->  2441.13s] that you determined, April 14th. You're going to go to a width of $1 because that's what works best
+[ 2441.13s ->  2446.71s] for the strategy. Then you're going to go and scroll all the way down to the $3.50 strike price with
+[ 2446.71s ->  2452.57s] three 47. So three, five, five, three, four, uh, three, five, zero, three, uh, four, nine. Um,
+[ 2452.57s ->  2456.99s] and then again, you want to collect right here, at least a 15 cent credit. Now, again, that should
+[ 2456.99s ->  2461.51s] be possible with a high IV. Um, but again, that's exactly what's going on here. Make sure you collect
+[ 2461.51s ->  2467.69s] at least 15th in the credit to have a long term expected or a positive expectancy. Anyways, that is
+[ 2467.69s ->  2472.27s] this dip by strategy. If you want the alerts and straight to your phone, straight to your email,
+[ 2472.27s ->  2478.23s] where, uh, or discord, when this setup happens, you can join the 10% inner circle program. You get
+[ 2478.23s ->  2484.61s] alerted to all the best trades with that that have over 90% win rates as they occur. And also my alerts
+[ 2484.61s ->  2489.35s] that I personally trade with these credit spreads on my, both my six figure account and my small
+[ 2489.35s ->  2492.77s] account, which you just saw on Robin hood. Anyways, guys, thank you so much for watching.
+[ 2492.85s ->  2496.97s] If you liked this video, if you got value from it, smash that thumbs up button, smash the subscribe
+[ 2496.97s ->  2501.25s] button. I have more strategy videos coming. And so if you hit the subscribe button, you will get
+[ 2501.25s ->  2506.38s] notified of the next one. All right, guys, see you in the next video. Hey guys, what's up in this
+[ 2506.38s ->  2513.16s] video. I want to show you how to make money trading call credit spreads and have a 90% plus win win
+[ 2513.16s ->  2518.68s] rate. So again, I'm going to explain one, the back test. You can understand this, this strategy.
+[ 2518.68s ->  2523.54s] Number two, I'm going to talk about the theory behind it and why it works. And then I'm going to
+[ 2523.54s ->  2528.78s] show you step-by-step how to place this trade so that you're ready the next time this trade setup comes.
+[ 2528.78s ->  2534.56s] So first off, let's look at the back test. So this is called the elastic rejection strategy.
+[ 2534.76s ->  2542.08s] I'll explain why I gave it that name and a second, but you can see here you have a 95% historical win
+[ 2542.08s ->  2549.34s] rate since 2003 with a 65% yearly return, which is insane and really good. Now, if we're looking at
+[ 2549.34s ->  2555.50s] this return, you can see here, we're going to collect roughly $19 in credit to $21 in credit,
+[ 2555.50s ->  2560.32s] somewhere on that average. And that's how we're going to make this return. Now, again, this is a
+[ 2560.32s ->  2564.82s] call credit spread trading strategy. So you're making money to the downside or hoping the stock
+[ 2564.82s ->  2571.06s] moves lower. Now let's talk about the theory behind the strategy. So the theory comes up like the
+[ 2571.06s ->  2575.86s] elastic bounce strategy that I mentioned in the last video, the last strategy and last strategy
+[ 2575.86s ->  2581.52s] breakdown. What happens is a rubber band can only stretch so far. And then once it's reached its
+[ 2581.52s ->  2587.02s] breaking point, it snaps. And so we talked about that during the bounce one where it's reached its
+[ 2587.02s ->  2592.62s] low, it can't go any lower and it snaps back up. Well, the same way that it happens to the downside,
+[ 2592.62s ->  2598.78s] it happens to the upside. When we get to above a certain level, the stock just can't hold that it's
+[ 2598.78s ->  2604.28s] it's too high, it's too far above its range. And then it just snaps back. So again, that is what this
+[ 2604.28s ->  2611.22s] snapback is the elastic rejection where it pushes up to a to a level that it cannot sustain and then
+[ 2611.22s ->  2617.20s] it rejects back down. It doesn't always turn into a full fledged crash, but it does at least pull back
+[ 2617.20s ->  2621.74s] enough for us to make money using call credit spreads. So that's the theory and the idea behind
+[ 2621.74s ->  2626.36s] the strategy. Now how to put on the strategy and then how to put on the strategies like this.
+[ 2627.08s ->  2633.88s] One, we need to make sure the stock is reaching an elastic rejection point, which means that the top
+[ 2633.88s ->  2639.88s] yellow line is above three standard deviations above the 208 moving average. So you want to
+[ 2639.88s ->  2644.62s] make sure you're waiting for the stock to get up outside of its three standard deviation range.
+[ 2645.22s ->  2650.86s] After that, then again, we need to determine what our short strike price is for our call credit spread.
+[ 2651.16s ->  2658.16s] So we're going to take the stock close price and multiply it by 103% or simply add 3% to the stock
+[ 2658.16s ->  2662.84s] close. So what that looks like here, if we're giving this example where it broke above it right here or
+[ 2662.84s ->  2673.92s] here, let's just say here, the close price for here is $332.86. So $332.86. So if we go $332.86 and then
+[ 2673.92s ->  2683.50s] we add 103%, which turns into $1.03, then we get $342.845. Now again, we round to the nearest whole
+[ 2683.50s ->  2689.22s] number. So that's going to be $343. So that is the call strike price that we're selling. And then we're
+[ 2689.22s ->  2695.26s] going to have to buy the one above it. So that means $344. So again, we're going to sell the $343 and buy
+[ 2695.26s ->  2699.90s] the $344. And that's what our call credit spread would look like. Now we need to determine our
+[ 2699.90s ->  2708.42s] expiration date. According to the back test and found the best days for this is 19 days out. So take the
+[ 2708.42s ->  2714.52s] current date plus 19 days and then go up to the nearest Friday. If plus 19 days ends on Friday,
+[ 2714.52s ->  2721.29s] perfect. If it's not, then round up to the next Friday. Next, you want to set up this trade. So
+[ 2721.29s ->  2725.63s] again, it's going to look weird to set it up here because we're talking about levels that SPY currently
+[ 2725.63s ->  2729.65s] is not at. So it's going to be hard to do that, but I'm still just going to try my best to show you an
+[ 2729.65s ->  2733.77s] example. You're going to go to builder. Then you're going to scroll down here to call credit spread
+[ 2733.77s ->  2738.43s] because it's a bearish move. You're going to put on a call credit spread. You're going to go to the
+[ 2738.43s ->  2743.73s] date discuss. So say roughly April 21st. I don't know. This is just a guess. And then again,
+[ 2743.73s ->  2748.97s] you'll use the call where I said, um, what was it? It was a, um, three, four, three, three, four,
+[ 2749.05s ->  2754.15s] four. So three, four, three, let's see if we can get this. It's probably not. Yeah. We're out of
+[ 2754.15s ->  2759.95s] range, but yeah. A, a three, four, three, three, four, four is what you'd be looking for and looking
+[ 2759.95s ->  2766.85s] to collect, um, at least a, uh, a 15 cent credit, right? Right here. You want to collect at least 15
+[ 2766.85s ->  2772.63s] cents in credit. Now, again, um, this is going to be the ideal range because if you want a long-term
+[ 2772.63s ->  2778.03s] positive expectancy, you need to at least collect 15 cents in credit so that your wins will offset
+[ 2778.03s ->  2783.13s] any max losses that do occur. Since this is a set and forget a strategy, uh, strategy where you plan
+[ 2783.13s ->  2788.61s] to hold until expiration. So anyways, that is the strategy, uh, the strategy to make money using the
+[ 2788.61s ->  2793.75s] elastic rejection strategy. If this made sense to you, if you liked it, if you want to use the article,
+[ 2793.75s ->  2798.17s] or if you want to check out the step-by-step tips, check out the article linked below. If you want
+[ 2798.17s ->  2803.33s] access to the back test, just comment down below and I'll give it to you and an ACSB file. Um,
+[ 2803.37s ->  2807.91s] anyways, if you enjoy this, please, uh, please press the thumbs up and subscribe button. Cause I
+[ 2807.91s ->  2812.11s] always have more strategy and helpful tip videos coming. If you want to trade credit spreads,
+[ 2812.11s ->  2817.55s] if you want access to alerts being sent straight to your phone via text, email, and discord,
+[ 2817.55s ->  2821.87s] when this trade setup happens, as well as the other ones that I trade, then make sure to join the
+[ 2821.87s ->  2826.91s] 10% credit spreads inner circle program, um, to join me and get my alerts and training and
+[ 2826.91s ->  2831.93s] everything to help you become a full-time trader as well as grow your account. Even if you work
+[ 2831.93s ->  2835.27s] full-time. All right, guys, thank you so much for watching this video. I can't wait to see you in
+[ 2835.27s ->  2835.73s] the next one.

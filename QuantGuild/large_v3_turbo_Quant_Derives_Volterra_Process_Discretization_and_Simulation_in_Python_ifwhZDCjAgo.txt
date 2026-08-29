@@ -1,0 +1,553 @@
+[    0.46s ->    18.40s] In recent years in the financial mathematics literature, the rough model family has gotten a lot of attention and its ability to fit the implied volatility surface skew, especially for zero DTE options.
+[   18.40s ->    30.86s] A particular class of Gaussian processes, a subclass that is of interest to us in studying these models, is given by the Volterra process.
+[   31.18s ->    44.90s] It is a causal representation of a Gaussian process, and it allows us to induce a covariance structure with a long-term memory that we would see in this rough model family.
+[   44.90s ->    50.10s] What we're going to do today is talk about this Volterra process.
+[   50.34s ->    52.60s] I am going to show you how to discretize it.
+[   52.92s ->    60.76s] We're going to talk about what everything within this integral means and how we can go about simulating it in Python.
+[   60.76s ->    72.20s] If you're looking for a place to catch up on the necessary math, probability, statistics, and finance required to understand this discretization and simulation, check out QuantGuild.com.
+[   72.20s ->    94.48s] We have over 90 quant lessons in math, probability, finance, an adaptive practice engine that scales with your skill level so you can progress to more and more difficult topics with gamified rank-based progress, courses from A to Z in probability, statistics, coding, math, with more on the way, and all that's included with QuantGuild membership.
+[   94.48s ->   100.60s] We even have masterclasses to get you interview and industry ready.
+[  100.72s ->   105.48s] So if you're looking to master your quantitative skills, check out QuantGuild.com.
+[  106.26s ->   113.20s] If you recall quite some time ago, I made a video about fractional Brownian motion simulation via the Davies Hart scheme.
+[  113.62s ->   118.74s] This is a relatively efficient scheme for simulating a fractional Brownian motion.
+[  118.74s ->   122.08s] However, the process itself is not causal.
+[  122.24s ->   128.84s] It requires global path knowledge, which is a problem when we're trying to go about pricing financial derivatives.
+[  129.02s ->   137.12s] Now, this Volterra process is in fact a subclass of Gaussian processes that admit this causal representation,
+[  137.90s ->   144.14s] meaning we don't need to simulate the entire global path to induce the desired covariance structure.
+[  144.14s ->   150.36s] Rather, we can do it iteratively using this Volterra kernel.
+[  150.54s ->   156.86s] Let's observe how our selection of a Volterra kernel induces a desired covariance function,
+[  157.14s ->   159.62s] and then we can go about discretization.
+[  159.82s ->   166.98s] So what I'm going to start by doing here is writing out the covariance between two points within this process.
+[  166.98s ->   175.60s] I'm going to say S and T, and we can write this effectively as the autocovariance gamma S and T.
+[  175.92s ->   184.26s] By definition, this is going to be the expectation of the Gaussian process evaluated at S
+[  184.26s ->   195.50s] less the expectation evaluated at time S multiplied by the process at time T
+[  195.50s ->   200.14s] less the expectation of the process at time T.
+[  200.44s ->   208.62s] Now, fortunately for us, we know what the expectation is of this process at S and T.
+[  208.72s ->   209.80s] That's going to be zero.
+[  209.94s ->   216.06s] We're dealing with a standard Brownian motion, and we know that the expectation is going to be zero.
+[  216.06s ->   225.54s] So we will be able to write the expectation of X sub S is equal to the expectation of X sub T,
+[  225.74s ->   228.08s] which is equal to zero.
+[  228.22s ->   231.32s] That simplifies our blue expectation very nicely,
+[  231.32s ->   240.50s] and that means we are going to have the expectation of the product now of X sub S, X sub T.
+[  240.50s ->   247.25s] All right, well, we know what to plug in for X sub S and X sub T.
+[  247.37s ->   250.85s] That is going to be given by our Volterra process here.
+[  250.95s ->   254.33s] So let's substitute in these integrals.
+[  254.45s ->   261.59s] I'm going to use U and V effectively as dummy variables for both S and T,
+[  261.59s ->   270.97s] and that way we are going to be able to pick S and T and then use U and V as our dummy variables.
+[  271.17s ->   273.59s] So I will make that substitution here.
+[  273.69s ->   285.83s] I'm going to say that this is equal to now the expectation of the integral from zero to S of K, S, U.
+[  285.83s ->   298.80s] Then we have our increment and Brownian motion, and this is going to be the product with the integral to V of K, T, V, D, W, V.
+[  298.80s ->   309.82s] So we have this nice expanded representation here of the Volterra process for both S and T.
+[  309.92s ->   314.38s] Remember, we're still after the covariance structure.
+[  315.06s ->   320.20s] And as you can see here, clearly our choice of K, the Volterra kernel,
+[  320.48s ->   326.02s] is going to play a big role in what the actual covariance structure is.
+[  326.02s ->   328.78s] So how can I reduce this expression, right?
+[  328.80s ->   331.86s] I'm dealing with randomness within the expectation.
+[  331.86s ->   334.98s] If I wasn't, then I could just remove the expectation altogether.
+[  334.98s ->   339.66s] But I have two stochastic integrals, and there's some Volterra kernel
+[  339.66s ->   343.84s] that is going to induce a weighting scheme across those Brownian increments.
+[  344.36s ->   346.00s] What can I do here?
+[  346.24s ->   351.78s] Well, fortunately for us, we've taken stochastic calculus, and we remember Ito isometry.
+[  352.10s ->   354.50s] So what is Ito isometry?
+[  354.50s ->   366.77s] It is effectively the idea that if I have the expectation of the product of two stochastic
+[  366.77s ->   387.12s] integrals, I can effectively write this as the expectation of the double integral of the product
+[  387.12s ->   395.15s] then of the functions doing the weighting, and then the respective Brownian increments.
+[  395.15s ->   403.88s] All right, but what do we know about these Brownian increments?
+[  404.22s ->   408.24s] Well, because now we're dealing with the product of the increments themselves,
+[  408.24s ->   413.90s] rather than the product of the stochastic integrals, we can just use linearity of expectation.
+[  413.90s ->   421.70s] So this is going to be equal to, not the expectation anymore, but the double integral from 0 to cap T
+[  421.70s ->   431.52s] of the functions doing the weighting, now multiplied by the expectation of each Brownian increments.
+[  432.28s ->   434.54s] But what do we know about Brownian motion?
+[  434.80s ->   443.06s] Well, if the time indices are not equivalent, then this in expectation is going to be 0.
+[  443.06s ->   447.42s] But when they are equivalent, we're dealing with that quadratic variation.
+[  447.62s ->   456.50s] We're going to have effectively that idea of the Brownian increment squared going to the time increment.
+[  457.08s ->   462.76s] So effectively, if I write this as a piecewise function, I'm going to have that in the expectation
+[  462.76s ->   476.94s] of these two Brownian increments, I'm going to get du, the time increment, when u is equal to v,
+[  477.16s ->   480.98s] and 0 when u is not equal to v.
+[  481.38s ->   488.98s] And that tremendously simplifies this double integral, because effectively, what am I dealing with now?
+[  489.12s ->   491.62s] I'm only dealing with one accumulation.
+[  491.62s ->   494.48s] When u is equal to v, it's going to be one integral.
+[  494.66s ->   502.62s] So I can effectively write this now as the integral from 0 to cap T, u is always going to have to be equal to v.
+[  502.74s ->   504.22s] Otherwise, we have a trivial case.
+[  504.28s ->   505.92s] It's just going to be 0 weighting.
+[  506.36s ->   511.44s] And I'm going to get f of u, g of u, du.
+[  511.44s ->   518.30s] So this is, of course, by Ito isometry and what we know about Brownian motion.
+[  518.74s ->   528.62s] Now we can use this to simplify our expectation of the product of two stochastic integrals
+[  528.62s ->   531.52s] that take advantage of this Volterra kernel.
+[  531.70s ->   534.08s] That is effectively what is doing our weighting.
+[  534.16s ->   539.60s] This is our f, this is our g, and we're dealing with the same Brownian increment.
+[  539.60s ->   544.60s] Let's apply this result to simplify our covariance structure and then discuss causality.
+[  544.80s ->   553.52s] So what I'm going to do is just apply this result here directly to the covariance structure that we have here by definition.
+[  553.98s ->   556.68s] And we know what the weighting functions are.
+[  556.80s ->   558.84s] This is effectively playing the role of our f.
+[  559.18s ->   561.34s] This is playing the role of our g.
+[  561.72s ->   563.28s] We have our Brownian increments.
+[  563.28s ->   573.54s] The only thing that we really need to discuss in terms of this covariance structure is the upper limit of integration relative to causality.
+[  573.70s ->   576.40s] So let's go ahead and write this out.
+[  576.80s ->   581.04s] I know that I have this covariance function here.
+[  582.40s ->   587.54s] And I have this expectation that we have derived above.
+[  587.54s ->   600.24s] If I apply this result directly, I am going to get the integral from 0 to time capital T of the product K.
+[  600.64s ->   607.64s] And then I still have S and U with K of T, but now not V.
+[  607.84s ->   609.86s] It's also going to be U.
+[  610.16s ->   614.46s] And we are no longer dealing with that Brownian increment.
+[  614.46s ->   617.14s] We are dealing with DU.
+[  617.80s ->   619.54s] Effectively, that time increment.
+[  619.72s ->   621.66s] That is what we are going to be accumulating.
+[  621.84s ->   622.84s] And this makes sense, right?
+[  622.90s ->   626.86s] Because this is no longer a stochastic integral.
+[  627.24s ->   634.52s] And if we're dealing with a covariance structure, then we can't possibly have randomness.
+[  634.72s ->   640.89s] In fact, by definition, right, we're dealing with an expectation.
+[  640.89s ->   648.13s] And an expectation is going to compress that randomness down to effectively this statistical representation.
+[  648.33s ->   656.77s] What it's doing is it's taking every single possible state of the world, the corresponding probabilities of each index, not just one index.
+[  656.77s ->   667.93s] And it's compressing it down into one statistical value that tells you how these two processes at two different indices tend to move together or apart.
+[  667.93s ->   676.45s] Like I said at the start of this video, Volterra processes are a subset of Gaussian processes that admit a causal representation.
+[  676.85s ->   683.99s] What that means is I don't require global path knowledge to produce the desired covariance structure.
+[  683.99s ->   686.31s] That is a very important idea.
+[  686.31s ->   701.91s] What that is effectively saying is instead of me having to simulate processes all the way to time capital T and then induce a waiting scheme, knowing what all of these points are into the future.
+[  701.91s ->   711.15s] So, for example, maybe to produce the proper waiting scheme here at time S, I need to know what these values in the future are.
+[  711.35s ->   717.13s] That could be the case, but that is not the case with a causal representation.
+[  717.69s ->   730.25s] So, if you recall, and as I mentioned at the start of this video, when I discussed Davies Hart scheme for simulating fractional Brownian motion, this is effectively what is going on.
+[  730.25s ->   735.53s] We require global path knowledge to produce that desired covariance structure.
+[  736.17s ->   744.59s] But here, in this case, that is the case of Volterra processes, we admit a causal representation.
+[  745.19s ->   746.47s] So, what does that mean?
+[  746.53s ->   753.91s] If I drew out the indices for this process as a timeline, I have S and T.
+[  754.35s ->   758.25s] Remember, that's what I'm looking for, this covariance function here.
+[  758.25s ->   763.13s] And I have this nice representation after we applied the result from Ito isometry.
+[  764.01s ->   765.67s] Now, what are we dealing with?
+[  765.81s ->   774.08s] Well, S will be less than or equal to T, but the Volterra kernel is defined in the relative sense.
+[  774.66s ->   783.72s] What that means is if I plug in S and I'm looking at information now backward, I'm going to have some structure.
+[  783.72s ->   787.94s] This Volterra kernel will be non-zero.
+[  789.10s ->   804.28s] However, if S is the point that I have information up to, and I haven't seen past S quite yet, and I look into the future, then I'm going to get a trivial value of zero.
+[  804.62s ->   807.02s] That is what it means to have a causal representation.
+[  807.02s ->   809.26s] I don't require that global path knowledge.
+[  809.66s ->   821.06s] If I only have information up to time little t, then to produce the desired covariance, I do not need information at time, say, T plus one.
+[  821.88s ->   822.24s] All right?
+[  822.30s ->   825.00s] That is effectively what is going on here.
+[  825.18s ->   826.58s] What does that mean for us?
+[  826.58s ->   840.26s] We'll notice, if we evaluate the Volterra kernel at a value U, given information S or T, we demand that U must be before either S or T.
+[  840.56s ->   841.76s] What does this look like?
+[  841.84s ->   844.60s] Well, we have K of S and U.
+[  845.14s ->   847.20s] We only have information up to S.
+[  847.80s ->   856.92s] So, clearly, if U is greater than S, this kernel value must be zero.
+[  856.92s ->   862.36s] Otherwise, we're using future information to inform the structure at S.
+[  862.74s ->   865.70s] And that's not what it means to admit a causal representation.
+[  866.02s ->   868.70s] Now, the same is true for T.
+[  877.59s ->   886.55s] So, what that means for us is, in order for this covariance structure to be non-zero, we need a value for U.
+[  886.63s ->   889.01s] Remember, we're sharing the value U now.
+[  889.45s ->   892.35s] We need a value for U that is what?
+[  892.35s ->   897.15s] Well, less than or equal to both S and T.
+[  897.57s ->   911.03s] If I pick a value for U that's above T, well, then, we're going to see that this Volterra kernel and this Volterra kernel at S and T are going to both be zero.
+[  911.39s ->   911.57s] Right?
+[  911.73s ->   915.01s] U is greater than S and U is greater than T.
+[  915.01s ->   918.61s] Okay, well, if I pick U in between, what happens?
+[  919.41s ->   921.75s] Well, that's fine for this guy here.
+[  922.29s ->   925.31s] We can have a non-trivial value for that kernel.
+[  925.71s ->   926.69s] But what about this one?
+[  928.50s ->   928.84s] No.
+[  929.06s ->   931.22s] U is clearly still bigger than S.
+[  931.58s ->   931.86s] Right?
+[  932.48s ->   934.38s] It's exactly what's happening if it's in between.
+[  934.38s ->   943.68s] So, if this is zero, then, in this covariance function here, we're just going to be multiplying by zero.
+[  943.84s ->   945.08s] We'll be accumulating nothing.
+[  946.46s ->   948.10s] So, what does that mean for us?
+[  948.64s ->   953.18s] We need a value for U that is less than both S and T.
+[  953.18s ->   958.24s] Logically, to produce that, we can just use a min function.
+[  958.24s ->   982.53s] So, this covariance structure here is going to become the integral from zero to the min of S and T, the Volterra kernel at S, the Volterra kernel at T.
+[  985.22s ->   987.62s] And that is what we are going to be effectively accumulating.
+[  987.62s ->   994.98s] This is going to give us the structure of our process relative to past indices.
+[  995.62s ->  1001.96s] This is the autocovariance covariance function for our stochastic process.
+[ 1002.38s ->  1009.36s] We can pick now a kernel to produce a whole bunch of different dynamics that we would desire.
+[ 1009.50s ->  1015.72s] We can reproduce a mean reverting process, an Ornstein-Ollenbach process, if we have some form of exponential decay.
+[ 1015.72s ->  1019.58s] If we choose it trivially, we'll just have a Brownian motion.
+[ 1019.82s ->  1034.16s] If we have some form of a Hurst exponent, we will have that nice fractional Brownian motion behavior, that path-dependent, long-range dependency on values that the literature posits better fits the skew.
+[ 1034.28s ->  1041.20s] Now that we understand the Volterra process itself, discretization and simulation is very easy.
+[ 1041.20s ->  1057.56s] We can effectively just build this process from the origin, continuing to take steps, very small steps, not continuous steps because we don't have infinite memory on our computer, but we can take very small steps to build the process correctly.
+[ 1057.56s ->  1073.44s] Then if we simulate a tremendous number of these processes, we will observe that, of course, in the cross-section, we have produced the correct covariance structure for two different time indices.
+[ 1073.94s ->  1076.14s] What does this look like visually?
+[ 1076.14s ->  1094.26s] Well, what we're going to be doing is picking a time to simulate this process to, in the future, we can say, maybe capital T, we'll start at an origin, and we are going to take, and this is not drawn to scale, but a very small step in time.
+[ 1094.26s ->  1102.94s] Then we will produce a value for this process, keep in mind, this is effectively a distribution.
+[ 1103.44s ->  1112.70s] At this point in time, once we've taken a step, delta T, the process can be one of any number of values, right?
+[ 1112.78s ->  1114.50s] It is a stochastic process.
+[ 1114.74s ->  1117.94s] We don't have the same path every time we simulate.
+[ 1118.10s ->  1121.72s] That's exactly what it means for it to be a stochastic process.
+[ 1121.72s ->  1122.94s] It's a random process.
+[ 1123.12s ->  1127.56s] At each time step, you'll have a distribution of possible values.
+[ 1127.76s ->  1129.08s] What do we do here?
+[ 1129.18s ->  1133.10s] Well, remember, we're not dealing with an infinitely small value.
+[ 1133.28s ->  1136.98s] So, since this is a discretization, we need to interpolate.
+[ 1137.34s ->  1140.12s] We will use piecewise linear interpolation.
+[ 1140.32s ->  1142.74s] It is effectively connect the dots.
+[ 1142.88s ->  1151.38s] Then we take another small time step, get a value, play connect the dots, and we do this all the way to time.
+[ 1151.38s ->  1161.10s] If I do this a tremendous number of times, I will have a whole bunch of paths simulated to time capital T.
+[ 1161.38s ->  1174.15s] If I take two indices then, maybe I take, oh, I don't know, s and little t, and I observe then the covariance structure,
+[ 1174.55s ->  1180.49s] it will match the structure by definition.
+[ 1180.49s ->  1185.93s] That is how we can ensure that we have discretized and simulated it correctly.
+[ 1186.21s ->  1192.55s] We will see then two sources of error in the theoretical covariance structure.
+[ 1192.71s ->  1201.35s] From our empirical covariance structure, we will have discretization error, which goes to zero as our steps become arbitrarily small.
+[ 1201.35s ->  1203.87s] And we also have simulation error.
+[ 1204.01s ->  1214.17s] So, as we make the steps smaller and we simulate more paths, we will get closer and closer to that desired theoretical covariance structure.
+[ 1214.81s ->  1216.27s] So, that is the idea.
+[ 1216.51s ->  1225.85s] Let's actually talk about how we create the time grid and then build this process iteratively as I demonstrated in that visualization.
+[ 1225.85s ->  1231.91s] To build the time grid, I need to decide when I want to simulate this process too.
+[ 1232.41s ->  1237.55s] In practice, maybe this is going to be the expiration of an option contract, for example.
+[ 1238.07s ->  1239.17s] This is known.
+[ 1239.77s ->  1243.67s] What is random is the process value at that particular time.
+[ 1244.07s ->  1246.23s] Don't get those two ideas confused.
+[ 1246.77s ->  1251.89s] Time itself and where we are going is going to be deterministic.
+[ 1251.89s ->  1256.87s] So, one month from now and discretizing that grid, that's deterministic.
+[ 1257.03s ->  1262.85s] But the value of our process at those times in the future, we don't know what that is going to be.
+[ 1263.05s ->  1265.61s] So, how do we actually produce this discretization?
+[ 1265.77s ->  1279.48s] Well, if I want to go to time capital T from time zero, then I'm going to need to step delta T, delta T, all the way until I get to time capital T.
+[ 1279.96s ->  1281.70s] So, what should my selection be?
+[ 1281.70s ->  1285.30s] Well, it's going to be a function of how many steps I want to take.
+[ 1285.50s ->  1298.00s] So, what I'm going to do is I'm going to define delta T as, if I have total time capital T, I'm going to divide total time capital T by n.
+[ 1298.38s ->  1305.76s] And n is going to be defined as the number of steps that we're going to take until time capital T.
+[ 1305.76s ->  1313.50s] This ensures that no matter how we go about stepping through time, we will end at time capital T.
+[ 1313.70s ->  1315.20s] How do I know this for sure?
+[ 1315.64s ->  1324.58s] Well, if I define delta T sub i to be i times capital T over n, then I look at this process here.
+[ 1324.58s ->  1330.22s] Here, I have zero is equal to delta T sub zero.
+[ 1330.72s ->  1334.06s] If I plug in zero for i, I'm going to get zero for that.
+[ 1334.58s ->  1335.54s] That's my origin.
+[ 1336.18s ->  1341.90s] Then, if I go to delta T sub one, I get T over n.
+[ 1342.42s ->  1345.08s] That is effectively my delta T.
+[ 1345.48s ->  1347.28s] That is one step in time.
+[ 1347.28s ->  1351.46s] What happens if I do delta T sub two?
+[ 1352.22s ->  1356.88s] Well, delta T sub two is just going to be two delta T's.
+[ 1357.93s ->  1359.99s] And I am going to do this until what?
+[ 1360.13s ->  1363.03s] I'm going to do this until delta T sub n.
+[ 1363.23s ->  1366.23s] That is going to be n T over n.
+[ 1366.69s ->  1371.49s] That is going to be capital T, which will be the same as delta T capital T.
+[ 1371.59s ->  1374.33s] Effectively, that is our final step.
+[ 1374.33s ->  1379.49s] These indices here are accumulating the change in time.
+[ 1379.99s ->  1384.51s] We are literally just adding delta T i times.
+[ 1384.87s ->  1387.77s] That is how we are producing this grid.
+[ 1388.25s ->  1392.47s] So, that is going to be our discretization of the time grid.
+[ 1392.95s ->  1401.29s] Do keep in mind here that i must be within this set from zero, one, all the way to n.
+[ 1401.29s ->  1407.99s] Otherwise, we are outside of the bounds that we are trying to simulate the process for.
+[ 1409.01s ->  1411.15s] So, this is going to be our time grid.
+[ 1411.41s ->  1415.07s] We can use NumPy very easily to construct this grid in Python.
+[ 1415.51s ->  1420.05s] Now, how do we actually build the Volterra process itself?
+[ 1420.39s ->  1423.79s] Well, I'm just going to start at time zero.
+[ 1423.79s ->  1432.53s] And I am going to produce the next value as a weighted sum of the covariance kernel.
+[ 1432.67s ->  1437.25s] Really, I should say more precisely the Volterra kernel and the Brownian increment.
+[ 1437.45s ->  1438.95s] That is all we're doing.
+[ 1439.11s ->  1441.63s] We have this very nice causal representation.
+[ 1441.63s ->  1457.34s] So, what's going to happen is if I define this Volterra process, I can discretize it by starting at time zero.
+[ 1457.96s ->  1459.88s] We'll say that's equal to zero.
+[ 1460.20s ->  1462.38s] Now, I'm going to take a step.
+[ 1463.87s ->  1464.37s] All right.
+[ 1464.67s ->  1467.15s] So, if I take a step, how much am I stepping by?
+[ 1467.77s ->  1470.43s] Well, I'm going to be stepping by delta T.
+[ 1470.43s ->  1480.88s] But I'm accumulating delta T's as I continue to step up to the max time, capital T.
+[ 1481.30s ->  1487.96s] So, I'm going to index the value of this process by delta T sub 1.
+[ 1488.42s ->  1491.54s] That is going to be the first value for our process.
+[ 1492.02s ->  1495.02s] Effectively, that is what we have here.
+[ 1496.82s ->  1499.26s] We are coming up with this value.
+[ 1499.26s ->  1502.84s] And keep in mind, that value is a distribution.
+[ 1503.48s ->  1504.94s] We don't know what it's going to be.
+[ 1505.56s ->  1509.78s] So, in terms of discretization, how do I produce that value?
+[ 1510.14s ->  1514.36s] This is going to be equal to, well, the previous value, right?
+[ 1514.48s ->  1519.96s] So, we're looking at x sub 0 plus now a change.
+[ 1520.38s ->  1522.78s] What is that change determined by?
+[ 1523.28s ->  1526.90s] Well, it's going to be determined by this integral.
+[ 1526.90s ->  1529.16s] That is effectively what we are doing.
+[ 1529.26s ->  1535.24s] We are looking to sum, remember, a discrete integral is just a sum.
+[ 1535.24s ->  1550.86s] We are summing from i is equal to 0 to, in this case, 1, the Volterra kernel evaluated at what time?
+[ 1550.86s ->  1566.50s] Well, this is effectively our S and U or our T and U as we saw in our covariance representation here for the Volterra process.
+[ 1566.50s ->  1571.24s] So, what's happening is we are fixing the time of interest.
+[ 1571.32s ->  1573.30s] In this case, that is going to be our T.
+[ 1573.58s ->  1574.58s] That is 1.
+[ 1574.68s ->  1581.06s] So, we'll say delta T sub 1 to keep it consistent with the notation that I've been using herein.
+[ 1581.34s ->  1586.08s] And delta T sub i is going to be allowed to vary.
+[ 1586.08s ->  1592.02s] Now, of course, when i is equal to 1, we are just dealing with the variance, right?
+[ 1592.02s ->  1594.16s] At that particular index.
+[ 1595.63s ->  1597.09s] But there's nothing random here.
+[ 1597.41s ->  1599.63s] Where does the randomness come in?
+[ 1600.21s ->  1604.03s] The randomness comes in with our Brownian motion.
+[ 1604.37s ->  1609.77s] We are going to be effectively drawing from a Brownian motion.
+[ 1609.77s ->  1614.27s] But do keep in mind as well that this is going to be path dependence.
+[ 1614.87s ->  1618.51s] So, this is going to be the Brownian motion at time what?
+[ 1619.07s ->  1624.35s] At time delta T sub i.
+[ 1624.99s ->  1629.91s] So, we are going to be looking at Brownian motion accumulating through the entire process.
+[ 1629.91s ->  1634.41s] But I'm not re-simulating this every single step.
+[ 1634.99s ->  1638.29s] Otherwise, I would not achieve the desired covariance structure.
+[ 1638.29s ->  1645.39s] Effectively, I am going to be simulating those Brownian motions as I continue to build the process.
+[ 1645.91s ->  1647.17s] And that is my history.
+[ 1647.55s ->  1651.67s] That I am going to continue to wait by this Volterra kernel.
+[ 1652.15s ->  1656.21s] Now, I can very easily build this in Python with some loops, right?
+[ 1656.27s ->  1661.75s] This is just going to be iteratively building the next step from the previous step.
+[ 1661.99s ->  1666.53s] But what I want you to notice now is as I generalize this, right?
+[ 1666.53s ->  1670.33s] I can generalize this as delta T sub i.
+[ 1670.49s ->  1674.75s] This will be then x sub delta T sub i minus 1.
+[ 1675.21s ->  1680.91s] Plus, now we have the arbitrary version of this discrete integral.
+[ 1681.17s ->  1682.05s] I equals 0.
+[ 1682.37s ->  1684.93s] All the way to time, let's say.
+[ 1685.07s ->  1687.93s] Or I should use j here now since i is what we're stepping to.
+[ 1687.93s ->  1701.47s] j equals 0 to i, k of delta T sub, in this case, we're simulating to i, delta T sub j, delta W sub delta T sub j.
+[ 1701.89s ->  1713.16s] I want you to notice, if we look at this generalization here, this is exactly where we can observe the non-Markovian structure.
+[ 1713.46s ->  1716.54s] What does the non-Markovian structure imply?
+[ 1716.54s ->  1723.06s] Well, it implies that the current state isn't all that matters to produce the next state.
+[ 1723.60s ->  1725.28s] How can I prove this?
+[ 1725.34s ->  1730.60s] Well, if I'm dealing with a non-trivial Volterra kernel, what's going to happen?
+[ 1731.00s ->  1742.08s] I'm going to have, if I take the difference of, let's look at x sub delta T i and x sub delta T i minus 1.
+[ 1742.08s ->  1754.12s] I'm going to say that this is equal to, I'll just plug in this general formula for this guy here.
+[ 1754.12s ->  1772.76s] I then get x sub delta T i minus 1 plus the summation from j equals 0 to i, k, delta T i, delta T j, the Brownian motion, and then minus what?
+[ 1772.76s ->  1781.77s] Right, minus delta T sub i minus 1, or x sub delta T i minus 1.
+[ 1781.77s ->  1797.07s] So then, this is the increment, this is going from the state x sub delta T i minus 1 to x sub delta T i.
+[ 1797.29s ->  1810.64s] We are literally innovating from, if I look at this as a chart, I am going from delta T sub i minus 1 to delta T sub i.
+[ 1810.64s ->  1813.72s] This is what I'm currently trying to innovate towards.
+[ 1813.88s ->  1818.54s] I need to draw the correct, I need to draw from the correct distribution.
+[ 1818.96s ->  1827.28s] To produce this distribution to get a new point at that point in time, what do I need to consider?
+[ 1828.28s ->  1836.21s] Well, according to this increment, the previous state cancels as intended, but what am I left with?
+[ 1836.21s ->  1844.09s] I am left with something that depends on the entire path history.
+[ 1844.61s ->  1859.76s] I require everything before this particular point to produce a draw from the correct distribution at time, delta T sub i.
+[ 1860.26s ->  1866.86s] This is really important because this is very computationally expensive to simulate.
+[ 1866.86s ->  1875.74s] Effectively, as I continue to build out the path, every single step I take requires me to survey the entire path history
+[ 1875.74s ->  1882.10s] to create a new draw to play connect the dots with from the correct distribution.
+[ 1882.70s ->  1889.22s] Otherwise, I am not going to be achieving the desired covariance structure.
+[ 1889.68s ->  1896.08s] So this is the idea of a non-Markovian process.
+[ 1896.08s ->  1903.96s] If I'm dealing with a Markovian process, then effectively, I can just draw from this distribution directly.
+[ 1904.24s ->  1907.74s] The path history doesn't have any impact on that distribution.
+[ 1907.90s ->  1911.52s] The increment itself comes from this distribution directly.
+[ 1911.66s ->  1913.32s] It's not a function of the path.
+[ 1914.76s ->  1922.52s] And an example of a Volterra process where that's the case is if I choose a trivial Volterra kernel.
+[ 1922.52s ->  1927.84s] If I set the Volterra kernel equal to 1, then what am I dealing with here?
+[ 1928.66s ->  1935.50s] I'm just dealing with, right, if this is 1, this goes away, I'm dealing with the sum of Brownian innovations.
+[ 1937.59s ->  1939.97s] That's just the Brownian motion process.
+[ 1940.45s ->  1946.01s] So effectively, in the case that, and I'll just copy this, I want you guys to notice this here.
+[ 1946.01s ->  1957.86s] If I'm dealing with the case that, I'm looking at this increment, I'm left with this summation.
+[ 1961.51s ->  1977.12s] If I selected K to be 1, then I'm just looking at the sum of Brownian motions that are fixed in time history, sure.
+[ 1977.12s ->  1984.36s] But more importantly, right, the variance of each of these Brownian motions is dictated by the time step.
+[ 1984.78s ->  1988.78s] I'm just accumulating change until time capital T.
+[ 1989.24s ->  1995.88s] This is distributed normally with a mean of 0 and a variance of time capital T.
+[ 1996.08s ->  1998.72s] This is just the standard Brownian increment.
+[ 1999.52s ->  2002.00s] That is literally all it is.
+[ 2002.30s ->  2006.46s] So this Volterra process, in a sense, is a generalization, right?
+[ 2006.46s ->  2010.04s] It admits a causal representation, sure, it's a subset of Gaussian processes.
+[ 2010.66s ->  2014.22s] But we've just shown two cases of the Volterra process.
+[ 2014.38s ->  2022.90s] One where if you select a Volterra kernel where memory induces changes to the distribution in your innovation,
+[ 2023.40s ->  2027.50s] the path is necessary to produce a draw from the correct distribution.
+[ 2027.50s ->  2033.52s] But if you choose a kernel, a Volterra kernel, that isn't path dependent, maybe in this case,
+[ 2033.56s ->  2037.36s] I choose 1 to reproduce a standard Brownian motion, what do we observe?
+[ 2038.24s ->  2041.58s] We observe we're just accumulating Brownian increments.
+[ 2042.04s ->  2044.80s] By definition, right, we're going to time capital T.
+[ 2044.88s ->  2048.96s] That's just going to be the increment from 0 to time capital T.
+[ 2048.96s ->  2054.78s] And of course, these two representations are mathematically equivalent.
+[ 2054.98s ->  2057.78s] That is, they follow the same distribution.
+[ 2058.48s ->  2063.08s] They are the same random variable at that time index capital T.
+[ 2063.24s ->  2073.16s] So we really don't need this whole expression to simulate the process to time capital T if we only need the value there.
+[ 2073.16s ->  2078.94s] That's because it exhibits this Markovian structure due to the independent increments.
+[ 2079.14s ->  2081.94s] That is how Brownian motion is defined.
+[ 2082.20s ->  2091.44s] But if we choose a kernel that requires the path to produce a draw from the correct distribution at a particular time index,
+[ 2091.56s ->  2093.14s] that is non-Markovian.
+[ 2093.50s ->  2094.94s] We require the path history.
+[ 2095.14s ->  2096.76s] It doesn't just depend on the current state.
+[ 2097.02s ->  2102.12s] It doesn't just depend on the increment like this case with Brownian motion.
+[ 2102.12s ->  2108.10s] Let's head on over to Python now, and I'll show you how we can discretize this Volterra process
+[ 2108.10s ->  2114.46s] to simulate effectively a standard Brownian motion, an Orenstein-Ollenbach process,
+[ 2114.58s ->  2119.40s] and then a more complicated process that exhibits those rough volatility dynamics
+[ 2119.40s ->  2123.12s] that we see in the financial mathematics literature.
+[ 2123.42s ->  2124.58s] All right, here we are in Python.
+[ 2124.84s ->  2128.58s] Like with all of my videos, this Jupyter Notebook will be linked in the description below.
+[ 2128.58s ->  2133.62s] I will also post it to the QuantGuild library on GitHub, where you can find all of my Jupyter Notebooks
+[ 2133.62s ->  2138.54s] and associated YouTube videos, along with all of the source code for my quant builds.
+[ 2138.76s ->  2142.92s] If we scroll on down here to the first section of this Jupyter Notebook,
+[ 2143.14s ->  2150.56s] you'll notice I actually have the LaTeX deriving not only the covariance function from the Ito isometry
+[ 2150.56s ->  2155.94s] that we used earlier, but I also have that discretization of the time grid,
+[ 2156.10s ->  2162.56s] and then I put the pieces together for this generalization of the discretization of that Volterra process.
+[ 2163.04s ->  2167.76s] What we're going to do now is take a look at how we can actually select a Volterra kernel
+[ 2167.76s ->  2172.32s] to emulate different stochastic processes with this causal representation,
+[ 2172.32s ->  2175.88s] and we're going to start with a Brownian motion.
+[ 2176.10s ->  2182.38s] So if I select the Volterra kernel to be one, we already saw this over on the iPad.
+[ 2182.66s ->  2185.66s] We could see that effectively the increment cancels out,
+[ 2185.78s ->  2189.86s] but then we're left with this summation that is just Brownian increments.
+[ 2190.50s ->  2193.14s] And by the definition of Brownian motion,
+[ 2193.36s ->  2198.42s] that is just going to be one big increment with a variance of the time step.
+[ 2198.42s ->  2201.94s] So using this nice causal representation,
+[ 2202.60s ->  2208.04s] I'm able to not only just define a function for the Volterra kernel,
+[ 2208.54s ->  2211.86s] but I'm also very easily able to simulate it.
+[ 2211.98s ->  2215.52s] Here is our time grid that I discretized on the iPad.
+[ 2215.70s ->  2218.92s] You can also find it here in the Jupyter Notebook.
+[ 2219.10s ->  2224.56s] And then I can just iteratively build this stochastic process.
+[ 2224.56s ->  2229.88s] That is effectively what I'm doing, is implementing this discretization here.
+[ 2230.18s ->  2235.46s] All I have to do is loop through the time grid at each time.
+[ 2235.58s ->  2240.52s] I am going to take the sum of that kernel evaluated at the current time
+[ 2240.52s ->  2244.40s] with the grid at that particular loop index.
+[ 2244.60s ->  2248.20s] And then I will find the Brownian motion for that particular index.
+[ 2248.46s ->  2251.94s] And that is what is going to allow me to create the next step.
+[ 2251.94s ->  2255.64s] Just like I wrote out for you visually on the iPad.
+[ 2256.16s ->  2259.82s] What we're going to see here is single simulated paths.
+[ 2260.04s ->  2261.62s] So I have on the left here,
+[ 2261.70s ->  2265.86s] this green path is the Volterra process simulation of the Brownian motion.
+[ 2265.86s ->  2268.78s] And then this is just going to be Brownian increments.
+[ 2269.00s ->  2272.60s] Now we can't really tell much from a single path.
+[ 2272.68s ->  2275.84s] We don't really know if the processes are behaving in the same way.
+[ 2275.90s ->  2278.64s] Are we actually emulating that Brownian motion correctly?
+[ 2278.64s ->  2283.42s] Well, what we can do is we can take a look at the terminal distribution
+[ 2283.42s ->  2287.70s] as a first step in analyzing if they are similar.
+[ 2287.92s ->  2289.50s] And they certainly are.
+[ 2289.68s ->  2291.40s] And that is not by a coincidence.
+[ 2291.40s ->  2293.80s] We are going to observe by the law of large numbers,
+[ 2294.28s ->  2295.60s] distribution convergence,
+[ 2295.60s ->  2300.12s] not only for the Brownian motion that we are simulating directly
+[ 2300.12s ->  2301.86s] withdraws from a normal distribution,
+[ 2302.18s ->  2306.08s] but also the Volterra process representation.
+[ 2306.08s ->  2308.54s] They are, in fact, the same process.
+[ 2308.70s ->  2311.16s] We are doing functionally the exact same thing.
+[ 2311.70s ->  2313.16s] In this blue path here,
+[ 2313.28s ->  2315.50s] we are accumulating Brownian increments.
+[ 2315.70s ->  2317.02s] In this green path here,
+[ 2317.10s ->  2319.46s] we are accumulating Brownian increments.
+[ 2319.62s ->  2321.50s] So that is why they are equivalent.
+[ 2321.66s ->  2323.76s] They exhibit the same covariance structure.
+[ 2324.18s ->  2325.58s] But of course, in reality,
+[ 2325.58s ->  2328.72s] we would never actually simulate Brownian motion in this way.
+[ 2328.80s ->  2330.24s] We have independent increments.
+[ 2330.24s ->  2333.50s] If we wanted a distribution at a particular point,
+[ 2333.50s ->  2335.40s] and we didn't worry about the path,
+[ 2335.48s ->  2338.56s] we're not dealing with path dependency for some sort of pricing problem,
+[ 2339.10s ->  2341.50s] we would just look at the terminal distribution, right?
+[ 2341.52s ->  2344.66s] If we think about something like a European option contract,
+[ 2345.16s ->  2346.42s] we don't need the path there.
+[ 2346.62s ->  2348.26s] We just need the terminal distribution.
+[ 2348.94s ->  2352.84s] And that's exactly why we wouldn't simulate the process directly.
+[ 2352.84s ->  2356.92s] If we were dealing with something like a barrier option that is path dependent,
+[ 2357.26s ->  2360.28s] then we would need to simulate the entire path.
+[ 2360.28s ->  2364.28s] And then we could do so via the Volterra representation here.
+[ 2365.18s ->  2365.60s] All right.
+[ 2365.72s ->  2368.14s] So that is an example of a Brownian motion.
+[ 2368.36s ->  2370.32s] A Brownian path is a Volterra process.
+[ 2370.54s ->  2373.40s] Let's take a look now at another representation,
+[ 2373.58s ->  2375.54s] a mean reverting Volterra kernel,
+[ 2375.96s ->  2378.56s] emulating this Ornstein-Ullenbach process,
+[ 2378.70s ->  2380.08s] this mean reverting process.
+[ 2380.32s ->  2385.62s] So the OU process solves the SDE given by this guy here.
+[ 2385.62s ->  2391.72s] And we are given that if we have a Volterra kernel that has this exponential decay factor
+[ 2391.72s ->  2395.08s] by theta, we have our two time indices, T and S,
+[ 2395.24s ->  2398.32s] we are going to observe mean reverting behavior.
+[ 2398.54s ->  2401.22s] If we use the discretization that we found earlier,
+[ 2401.34s ->  2402.82s] it's going to look like this.
+[ 2402.90s ->  2407.00s] That is how we are going to be constructing the process in that causal way.
+[ 2407.10s ->  2410.24s] We're just going to continue to build the process from left to right effectively.
+[ 2410.24s ->  2417.22s] And what I'm going to do here is select two as my selection for the mean reverting parameter.
+[ 2417.48s ->  2420.74s] I'll define my Volterra kernel with that exponential decay.
+[ 2420.88s ->  2423.98s] That is what is going to emulate that mean reverting dynamic.
+[ 2424.18s ->  2429.54s] And then I'm going to simulate the Volterra process in the exact same way.
+[ 2429.98s ->  2432.10s] This is effectively a generalization.
+[ 2432.10s ->  2434.88s] When we looked at it on the iPad and above here,
+[ 2435.32s ->  2438.72s] this is going to be for any Volterra kernel that we select.
+[ 2438.72s ->  2440.50s] So I'm going to scroll on down.
+[ 2440.56s ->  2442.08s] I'll take a look at the simulation.
+[ 2442.86s ->  2446.66s] And you can see we are observing that mean reverting behavior here.
+[ 2446.84s ->  2452.72s] The paths are going to go oscillate indefinitely around this mean value of zero.
+[ 2453.18s ->  2455.76s] And if you take a look at the covariance structure,
+[ 2455.88s ->  2459.94s] we can see that the empirical covariance for a thousand paths
+[ 2459.94s ->  2464.50s] is not precisely the theoretical covariance.
+[ 2464.76s ->  2467.40s] And that's due to two sources of error.
+[ 2467.40s ->  2469.84s] Discretization error and simulation error.
+[ 2470.04s ->  2474.04s] As the discretization becomes more granular and we simulate more paths,
+[ 2474.24s ->  2478.62s] this will converge to the theoretical covariance structure.
+[ 2479.08s ->  2483.54s] So that is another way to use the Volterra process.
+[ 2483.78s ->  2489.66s] We select a Volterra kernel capable of emulating the mean reversion dynamics.
+[ 2489.66s ->  2495.72s] The last one that we will discuss is a fractional Volterra kernel.
+[ 2496.08s ->  2499.76s] This is going to emulate those long-range dependencies.
+[ 2500.08s ->  2502.14s] We have something like a fractional Brownian motion.
+[ 2502.80s ->  2504.54s] And like I mentioned at the start of this video,
+[ 2504.54s ->  2508.48s] I've already discussed fractional Brownian motion in a variety of different capacities.
+[ 2508.48s ->  2513.06s] In the context of Davies Hart and simulation requiring global path knowledge,
+[ 2513.06s ->  2519.48s] I've talked about it in terms of approximating pricing functionals using these sorts of rough models.
+[ 2519.80s ->  2521.14s] Here, we're going to take a look.
+[ 2521.22s ->  2527.24s] I haven't really explicitly discussed quite yet how to simulate it in a causal way via this particular process.
+[ 2527.24s ->  2533.68s] So what we're going to do is select a fractional kernel for that desired covariance structure.
+[ 2534.76s ->  2537.12s] Then we're given this particular Volterra process,
+[ 2537.12s ->  2541.38s] and we can just discretize it using that same discretization that I came up with,
+[ 2541.58s ->  2545.94s] again, above for the Brownian motion and the mean reverting process,
+[ 2546.08s ->  2548.46s] that OU process that we were emulating.
+[ 2548.86s ->  2552.38s] So if I come on down here, I'm going to select my Hurst exponents.
+[ 2552.38s ->  2554.74s] I'm going to select my Hurst parameter.
+[ 2555.64s ->  2559.86s] And now I am going to simulate the fractional Brownian motion.
+[ 2560.02s ->  2563.64s] We can see the empirical covariance and theoretical covariance structure,
+[ 2563.86s ->  2567.00s] just as we saw above with the mean reverting process.
+[ 2567.20s ->  2573.10s] And we can see the fractional Volterra process simulated here in that way.
+[ 2573.16s ->  2576.02s] If I change the value for H, notice what happens.
+[ 2576.08s ->  2577.60s] I'll make it 0.9.
+[ 2577.88s ->  2580.26s] I'll rerun this simulation here.
+[ 2580.26s ->  2586.98s] Here we are going to observe significantly smoother paths like this.
+[ 2587.58s ->  2600.24s] And then that roughness that we are trying to capture is demonstrated by a smaller parameter.
+[ 2602.70s ->  2604.80s] And that's exactly what we see here.
+[ 2604.98s ->  2611.06s] And we're observing this convergence eventually to this theoretical covariance structure there.
+[ 2611.06s ->  2614.98s] All right, clearly there was something wrong with that theoretical covariance structure.
+[ 2615.20s ->  2616.44s] I went back into my code.
+[ 2616.54s ->  2621.24s] Turns out I defined the Volterra kernel incorrectly for this fractional process.
+[ 2621.24s ->  2624.38s] And that is used to construct the covariance.
+[ 2624.60s ->  2625.94s] So I fixed it.
+[ 2626.04s ->  2628.40s] And now we can actually observe that empirical convergence.
+[ 2628.78s ->  2631.32s] And just to make sure I simulated 10,000 paths.
+[ 2631.48s ->  2635.76s] And you can see the only source of error is, of course, that discretization and simulation error.
+[ 2635.84s ->  2639.14s] But this is much closer to the theoretical one.
+[ 2639.14s ->  2649.44s] And as we reduce the error from both of those sources, it will almost surely converge to that theoretical structure as implied by the law of large numbers.
+[ 2649.44s ->  2656.78s] And that's our goal anytime we simulate a stochastic process is we have these population dynamics that we specify for our model.
+[ 2656.78s ->  2674.68s] And when we simulate them for, you know, a large number of sample paths, we should observe empirical convergence to the population statistics, as we see here with this fractional process, with this mean reverting process, and even with this standard Brownian motion.
+[ 2674.78s ->  2678.70s] It just turns out the covariance structure here is not all that interesting.
+[ 2678.90s ->  2683.02s] It's just going to be the min function between the time indices.
+[ 2683.58s ->  2686.58s] So why is this causal representation so important?
+[ 2686.58s ->  2698.26s] While I've dug up my notebook on fractional Brownian motion in financial modeling, this is a video that I made a very long time ago implementing the Davies Hart scheme for efficient simulation of the fractional Brownian motion.
+[ 2698.26s ->  2715.00s] But the core difference between the Volterra approach that is that causality and the Davies Hart scheme is that when we go about producing the simulation via Davies Hart, we have a desired auto covariance function.
+[ 2715.00s ->  2733.40s] And we know in our Volterra process, if we can emulate this covariance function for our stochastic process, we just need to select the correct kernel, just like we saw with Brownian motion, the Ornstein-Ullenbach, the mean reverting process, and an example of a fractional process.
+[ 2733.40s ->  2737.04s] But in the context of Davies Hart, what are we doing?
+[ 2737.16s ->  2739.26s] We're using this circulant embedding trick.
+[ 2739.66s ->  2742.64s] We find the eigenvalues using fast Fourier transform.
+[ 2743.20s ->  2754.26s] This is effectively the coherent law of expansion, decomposition, to be able to produce the stochastic process with that desired auto covariance structure, the covariance structure.
+[ 2754.26s ->  2758.80s] And what that means is we need to simulate the entire path.
+[ 2758.80s ->  2781.38s] So what you'll notice is, as we go about producing this argument here, what we're doing is building these vectors and matrices, and we are going to be taking the matrix product with that decomposed version of the covariance structure, the desired covariance structure for our stochastic process, and a Gaussian vector.
+[ 2781.38s ->  2784.62s] But that Gaussian vector is not causal.
+[ 2785.14s ->  2791.36s] I am effectively simulating out that Gaussian vector to a predetermined time.
+[ 2791.86s ->  2803.58s] And then I am producing the process using that simulated vector and the decomposed covariance matrix to actually emulate that covariance structure.
+[ 2803.58s ->  2810.58s] Then, by the law of large numbers, if I continue to simulate paths, I will observe empirical and theoretical convergence.
+[ 2810.58s ->  2813.64s] But it's not causal.
+[ 2814.08s ->  2818.58s] And that has major implications in the pricing of financial derivatives.
+[ 2818.92s ->  2825.34s] Certainly a video for another day, but let me know in the comments if that is something that you may be interested in.
+[ 2825.58s ->  2826.32s] Too long, didn't watch.
+[ 2826.38s ->  2827.62s] Here is your executive summary.
+[ 2827.76s ->  2837.24s] Volterra processes are a subset of Gaussian processes emitting a causal representation capable of simulating stochastic processes with a desired covariance structure.
+[ 2837.24s ->  2841.58s] Now, the covariance structure itself is decided by a Volterra kernel.
+[ 2841.74s ->  2850.68s] We can select a kernel to emulate any covariance structure we would like, and by construction herein, this process is going to be causal.
+[ 2850.68s ->  2868.62s] What that means is we can simulate dynamics like the rough dynamics we observe in the financial mathematics literature in the context of pricing path-dependent options, something that we can't do with a Davies Hart scheme due to global path knowledge and spectral methods.
+[ 2868.78s ->  2872.42s] That's how, in the past, we've simulated fractional Brownian motion.
+[ 2872.54s ->  2878.46s] If you go way back to my video on simulating fractional Brownian motion via Davies Hart, you will also observe this.
+[ 2878.46s ->  2892.82s] Herein, we saw examples of selections of the Volterra kernel that yielded a standard Brownian motion, a mean reverting process, that Ornstein-Olenbach style process, and a fractional process as in the fractional Brownian motion.
+[ 2892.96s ->  2897.40s] But we can construct many more processes in this capacity.
+[ 2897.40s ->  2910.34s] In future videos, I would like to discuss implications and applications in more modern pricing models, like the Quadratic Rough Heston, Lifted Variations, and the Quadratic Rough Heston Plus.
+[ 2910.76s ->  2918.90s] That is a great note that an old Bloomberg colleague of mine recently wrote for the pricing and hedging of zero DTE options.
+[ 2918.90s ->  2926.24s] If there's interest in these more technical cutting-edge topics, certainly let me know in the comments below.
+[ 2926.42s ->  2930.20s] Some future topics, technical videos, and other discussions to look forward to.
+[ 2930.36s ->  2934.90s] I would like to implement the Poisson process since we've now covered it on this channel.
+[ 2935.00s ->  2938.44s] Hawks processes, jump diffusion models, market-making models.
+[ 2938.80s ->  2942.02s] Let me know in the comments below what you would like to see next.
+[ 2942.34s ->  2947.06s] This certainly helps me figure out what order to create videos in.
+[ 2947.06s ->  2950.06s] I'd like to get back to more qualitative videos as well.
+[ 2950.18s ->  2957.44s] Projects that made me a quant, my first year as a quant, why hedge funds are actually secretive, so on and so forth.
+[ 2957.58s ->  2964.40s] And of course, more technical videos like this on cutting-edge research, like I've already mentioned.
+[ 2964.66s ->  2971.80s] Rough path theory, sig vol model calibration and pricing, all are of significant research interest to me.
+[ 2972.00s ->  2975.58s] And of course, I haven't forgotten about our quant builds.
+[ 2975.58s ->  2982.10s] Last week, we built a live volatility surface in Python with interactive brokers.
+[ 2982.80s ->  2988.76s] And naturally, that's going to extend to stochastic model calibration and trading.
+[ 2988.96s ->  2991.98s] So certainly let me know if you would like to see those videos.
+[ 2992.38s ->  2994.10s] I'll leave a link in the description below.
+[ 2994.22s ->  2997.30s] If you'd like to get started with interactive brokers, I highly recommend them.
+[ 2997.36s ->  3001.28s] I've been using them and their API for over 10 years at this point.
+[ 3001.28s ->  3004.68s] I use them for all of my quant builds.
+[ 3005.18s ->  3010.00s] And some future ideas here, how to backtest a trading strategy with interactive brokers.
+[ 3010.46s ->  3014.80s] Actually, correctly, I see a lot of missteps in this process.
+[ 3014.98s ->  3021.50s] And this idea of an algovol trading system, this idea of algorithmically delta hedging.
+[ 3021.50s ->  3029.32s] If there's interest in building an actionable system like that, again, certainly let me know in the comments below.
+[ 3029.46s ->  3033.88s] And that's going to do it for this video on deriving the Volterra process, discretization, and simulation.
+[ 3034.10s ->  3034.80s] I hope you enjoyed.
+[ 3035.16s ->  3036.18s] I hope you learned something.
+[ 3036.28s ->  3038.80s] This video certainly took a tremendous effort to put together.
+[ 3039.02s ->  3042.90s] So if you liked it and you want to see more like it in the future, please like, comment, subscribe, share.
+[ 3043.02s ->  3044.50s] It helps me out tremendously.
+[ 3044.50s ->  3046.58s] It is always greatly appreciated.
+[ 3047.06s ->  3050.90s] Check out QuantGuild.com to master your quantitative skills.
+[ 3051.30s ->  3054.24s] Other than that, I want to thank you so much for watching.
+[ 3054.56s ->  3057.04s] And I will see you in the next video.

@@ -1,0 +1,127 @@
+[    0.00s ->     5.00s] In this video, I'm going to dive into why position sizing matters more than the perfect strategy.
+[    5.22s ->    10.50s] Most option sellers ignore this and it bites them. Look, I personally helped over 5,000 options
+[   10.50s ->    15.36s] traders generate consistent returns from the market and I made over $50,000 last year by
+[   15.36s ->    20.26s] selling options myself. I've seen this way too many times. So many of you guys are in search
+[   20.26s ->    25.34s] of the perfect strategy on YouTube or yourself or backtesting or whatever and you tend to overlook
+[   25.34s ->    30.90s] the most important thing which is position sizing. So let me explain it using a mathematical proof.
+[   31.22s ->    36.78s] I'll keep this super short and hopefully simple. If you have a $10,000 account and you're trading a
+[   36.78s ->    46.44s] spread where each contract, each trade has a $500 max loss and each win has a $100 win, let's break
+[   46.44s ->    53.68s] this down. If you are trading one spread, it means your max profit is 100 and your max loss is 500
+[   53.68s ->    59.52s] which means based on if you lose a percentage of your account, you only lose 5% of your account.
+[   60.40s ->    67.06s] So that's awesome. You go from $10,000 down to $9,500 if you lose a trade. That's something you
+[   67.06s ->    73.24s] can easily come back from. If you are sizing aggressively and you do 10 spreads because
+[   73.24s ->    78.92s] that's what your account can handle, you can easily do that. It's only $5,000 max loss. It's
+[   78.92s ->    86.44s] only 50% of your account, right? But if you do hit a max loss, you now have a 50% deficit which
+[   86.44s ->    93.60s] means your account goes from $10,000 to $5,000. Now it may seem cool I lost 50%. I need to make
+[   93.60s ->    99.44s] another 50% to get back to $10,000. That's not true. You now need a 100% return on your money
+[   99.44s ->   104.80s] to get from $5,000 back to $10,000. So here's how it works. If you have the same strategy,
+[  104.80s ->   110.42s] the same edge, the same win rate, your position sizing will lead to a totally different outcome.
+[  111.26s ->   115.72s] And look, you have to understand the recovery metrics. If you are down 50%, you don't need to
+[  115.72s ->   122.48s] make 50% to get back to break even. If you're down 50%, you need 100% to get back just to break
+[  122.48s ->   129.86s] even before you ever make money again. If you lose 75%, you need a 300% gain just to break even.
+[  129.86s ->   136.50s] And if you go down 90% loss, you need a 900% gain to recover. We're not even talking about making
+[  136.50s ->   143.02s] money. So that is the part of keeping losses small, keeping position sizing small, and just
+[  143.02s ->   148.74s] running it that way. So with that said, as an option seller, what are the three best ways to manage
+[  148.74s ->   155.56s] risk? Number one is early management. Now, what is early management? To explain, early management is
+[  155.56s ->   161.74s] where you let the trade go all the way to expiration or to a certain date. If you've ever followed Tasty
+[  161.74s ->   168.46s] Trade or Tasty Live methodology before, they say, hey, we sell around 45 days out. So they sell an
+[  168.46s ->   174.70s] option that's 45 days out in the future, and they close slash manage the trade when it's 21 days left.
+[  174.90s ->   181.94s] So that's an early management of 21 days. That means that the trade could go up a lot in your favor,
+[  181.94s ->   187.58s] could go down a lot against you, but you're not going to manage it until 21 days. Now, for shorter
+[  187.58s ->   193.72s] term trades like 7DTE, 0, or even 1DTE, you could actually just let the trade expire. You could manage
+[  193.72s ->   199.14s] risk based on the width of the spread or the width of the condor, whatever you're trading, and you can
+[  199.14s ->   205.36s] just let it go to expiration. Here are the pros with this. You get a high win rate. Why? Because you let
+[  205.36s ->   209.80s] the trade come back in your favor. So many times you spike up and melt down. We have a meltdown,
+[  209.80s ->   213.90s] and then we have a pushback up. And so throughout the period of a day, or even throughout the period
+[  213.90s ->   218.32s] of 30 days, it can go against you and then come back in favor. And by holding through that whole
+[  218.32s ->   222.66s] time, you give yourself the opportunity for it to come back, which leads to a higher win rate.
+[  222.86s ->   226.78s] This is also the recommended approach by Tasty Trade, and they've been doing a ton of research.
+[  227.06s ->   231.98s] So that is one way. Now, here are the cons and why I don't do early management. It's because
+[  231.98s ->   237.92s] there's huge profit and loss swings. So from an emotional aspect, it's quite hard to endure that.
+[  237.92s ->   242.30s] What do I mean by that? The market drops pretty hard. You could be down five, 10 grand,
+[  242.64s ->   246.16s] and then you have to wait for it to kind of recover. And most people are probably going to
+[  246.16s ->   250.80s] close out in that time, leading to bigger losses. But not only that, if you're holding, let's say you
+[  250.80s ->   254.82s] get in at 30 days, you're going to hold all the way to expiration. That's a 30 day trade. So that's
+[  254.82s ->   261.52s] a very long hold time. You're tying up your capital for a very long time. So that is option number one.
+[  261.58s ->   265.78s] It can definitely be used. We also have large stop losses as the second option.
+[  265.78s ->   271.18s] I'll explain when to use each one here in a second, so don't worry. But you can also use a larger stop loss.
+[  271.28s ->   278.04s] What is defined by a larger stop loss? It means anything that's 200% or greater. So 200%, 250%, 300%
+[  278.04s ->   283.58s] are the most common larger stop losses that people can use. Why do they do this? Because it allows
+[  283.58s ->   289.68s] the trade to move without you getting knocked out of just small turnarounds. It allows for bigger moves
+[  289.68s ->   294.56s] to happen without you getting kicked out of them. Pros, you have a higher win rate. It tends to be
+[  294.56s ->   298.94s] around the same win rate as an early management because you give the trade enough time to move.
+[  299.28s ->   305.28s] However, the huge con is that you have a large loss that when you do lose, it is a very big loss.
+[  305.54s ->   312.06s] Okay. Next are small stop losses. That's going to be under 200%. Anywhere from 50% to 100%
+[  312.06s ->   317.80s] is typically where smaller stop losses lie. And so again, this is your goal is to just cut losses early.
+[  317.80s ->   323.20s] You're okay with having more losses because they're smaller. And so the pro with this is you tend
+[  323.20s ->   327.90s] to have more consistent returns, but the problem is that there's very, or I should say the pro,
+[  328.20s ->   333.14s] very minimal risk in short hold times because you're closing quickly. But the con is more frequent losses.
+[  333.14s ->   338.58s] So if you do like a 90, 95% win rate trade, you're not really going to have that with this type of
+[  338.58s ->   343.84s] approach because the take profit is so small and you can get kicked out of trades a lot faster.
+[  344.24s ->   349.52s] Now, here's how I structure my favorite option strategy. All of these work. You can use every
+[  349.52s ->   353.00s] single one of these. I know traders who are making money with all of these types of management
+[  353.00s ->   357.24s] approaches. You just got to find which works for you based on the pros and cons. Now, here's how I do it.
+[  357.28s ->   362.32s] Okay. I use a simple short put strategy because it's simple. It's one contract. I can generate a lot of
+[  362.32s ->   367.22s] money, especially in futures options. I use it with an indicator to make sure that I'm only trading it in
+[  367.22s ->   371.66s] bullish markets, which helps me increase my win rate already too. And that's something you can keep in mind
+[  371.66s ->   377.28s] for risk management is by sizing your positions based off where the market is, right? So if you want to get this
+[  377.28s ->   381.28s] indicator, again, I will give you access to this cool talk at the end of the video. And inside the
+[  381.28s ->   384.94s] Google doc right here, there's a link to this indicator. You can use it for free. That's one
+[  384.94s ->   389.72s] that I built. But you can see here when the markets in green were bullish market, when the markets red
+[  389.72s ->   393.78s] were bearish, when we're here, we're overextended, which means we're likely to pull back down. We're
+[  393.78s ->   398.48s] here, we're likely to bounce. You can see here, bounce, hit here, pull back. So different things like
+[  398.48s ->   404.10s] that. So you can size your position sizing, how many contracts you go in based on where the market is.
+[  404.10s ->   409.88s] If we had just entered this green zone from above, you know, that the uptrend is just really starting.
+[  410.28s ->   414.48s] So this is the time where you can load up on positions and be a little heavier. Now, if we've
+[  414.48s ->   418.92s] been hitting this top portion, you might want to size back your positions, knowing that we're probably
+[  418.92s ->   423.76s] going to drop down here soon, because we've been pushing up against the high a lot. And so you can
+[  423.76s ->   428.18s] change your position sizing based on where the market is at. So that's ways to align yourself with
+[  428.18s ->   433.10s] the trend, but also adjust your position sizing based off that. But to break down my strategy,
+[  433.10s ->   439.32s] I love doing it on the S&P 500, because by default, it's diversified, it looks at the top 505 stock or
+[  439.32s ->   444.98s] something like that. The asset I primarily use is ES, the futures S&P 500, because I get leverage
+[  444.98s ->   452.38s] built into it. I sell a put at 60 DTE, I sell the put around five delta, and I do a 25% take profit and
+[  452.38s ->   456.20s] 200% stop loss. Now, I don't want to assume you guys know what this means. So let me show you exactly
+[  456.20s ->   461.90s] what this looks like. So if I go here to the broker, again, this works on any broker, whether it's Charles
+[  461.90s ->   467.22s] Swab, TradeStation, TastyTrade, which is what I'm using here, basically, you'll just type in the
+[  467.22s ->   472.00s] asset you want to do, let's say ES, for example, it'll pull up the options chain, you want to look
+[  472.00s ->   477.70s] for the strike price as closest to 60 DTE or 60 days out in the future. So you can see here, the
+[  477.70s ->   484.38s] closest one right here is 59 days with 59 and 66 59 is closer. We go to 59, I didn't look at the delta and
+[  484.38s ->   488.28s] I look for a five delta. So about right here, you can see I already have a position right here.
+[  488.28s ->   495.40s] You can see if we sell this options contract, we have about a 99% win rate, we have a max profit of
+[  495.40s ->   502.60s] 1000 bucks, and we put about $6,600 to get into this trade. So what does this look like a 25% take
+[  502.60s ->   507.96s] profit and a 200% stop loss, which are my management rules that I found work very well for me. Again,
+[  508.06s ->   512.52s] use your own, I gave you three great ones, pick between the pros and the cons. This is how I structure
+[  512.52s ->   518.00s] my trades. 25% take profit to 200% stop loss. And the reason why I do this here, I'll explain in a sec,
+[  518.00s ->   523.98s] but if I'm receiving $1,000 in credit, $1,000 max profit, that means I'm going to close out the trade
+[  523.98s ->   528.96s] at a 200% stop loss or two excess. So when I have a $2,000 loss, I'll close out the trade.
+[  529.78s ->   537.50s] Now, when I have a $250 profit, I'm going to close the trade for a profit. Now, because my stop loss is
+[  537.50s ->   542.28s] on the smaller side, around 200% in that large category, but the smaller side of that, and because
+[  542.28s ->   547.74s] my take profit is small, 25%, I get out of these trades and turn over these trades on average every
+[  547.74s ->   553.32s] seven days. So once a week, I'm in and out of these trades. Again, some trades I've had close in as few
+[  553.32s ->   558.86s] as one day, about 24 hours, and I have others take eight, nine, 10 days, but on average around seven
+[  558.86s ->   564.02s] days. Why is this awesome? Because if I put on two trades a week, on average, those trades are going to
+[  564.02s ->   568.84s] close by the end of that week before the next trade is put on. So on average, I'm only going to have
+[  568.84s ->   575.40s] two or three trades open at a time, which means that of the $2,000 max risk I have per trade,
+[  575.46s ->   580.34s] I'm only ever going to have it on two trades versus someone who has a longer out trade has a higher
+[  580.34s ->   585.42s] take, take profit, meaning it takes a longer to be in that trade. You start building up a position
+[  585.42s ->   591.44s] sizing of five, six, seven, eight, 10 positions open at one time. And if the market crashes, all of
+[  591.44s ->   597.24s] them hit their stop loss. Then it's a $2,000 loss and you have 10 trades. Now you're down to a $20,000
+[  597.24s ->   602.56s] loss versus me because I keep everything shorter and close faster. This is the benefit of a smaller
+[  602.56s ->   607.50s] take profit and smaller stop loss. I get out of the trade quicker, which means that I only have
+[  607.50s ->   611.68s] two trades open at a time. So sure, I'm going to hit my losses more frequently, but only on two
+[  611.68s ->   616.24s] open trades at a time. So instead of having a $20,000 max risk, because I have 10 open positions
+[  616.24s ->   622.58s] all overlapped. Now I only have two positions open. So my max loss is only $4,000. So that's how you
+[  622.58s ->   626.72s] would do it on the broker. Again, why don't I use this strategy? It's simple. It's profitable. It
+[  626.72s ->   632.04s] makes sense. By using futures options, you get leverage, right? I put up 6,600 bucks for a trade
+[  632.04s ->   638.30s] and I'm making about 250, which if you want to do the math, that's about a 3.7% return on my money
+[  638.30s ->   642.24s] in a matter of a week. Crazy. If you want to look at how I structure my account, again, I have more
+[  642.24s ->   649.44s] videos on this to go more in depth, but about a $100,000 account for easy numbers, about 15,000 would go
+[  649.44s ->   654.84s] to the short put strategy, which generate about 1,500 a month. Then I put the rest in Sgov, which
+[  654.84s ->   660.90s] is a risk-free, basically interest system. It's a T-bill that generates about 250 a month, which comes
+[  660.90s ->   667.92s] out to about $2,000 a month just by using the system as a 2% return on my money. So that's how this works.
+[  668.04s ->   671.72s] Pick from one of these management styles, whether it be early management, large stopwatch, or small
+[  671.72s ->   677.46s] stopwatch, or even actually follow this exact strategy that I do. It works. Go model it. Again, if you want
+[  677.46s ->   681.52s] access to this Google Docs, you can get access to the indicator, and you just want to reference this
+[  681.52s ->   686.14s] in the future, it's completely free. Just go to the first link in the description for the school,
+[  686.44s ->   690.82s] and you can actually go access this YouTube doc there, as well as all my other trainings from
+[  690.82s ->   694.94s] my YouTube videos. So anyways, guys, hope you enjoyed this video. I will see you in the next one.

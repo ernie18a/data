@@ -1,0 +1,128 @@
+[    0.27s ->     5.73s] In this video, I'm going to walk you through the only strategy I would use if I had to start over from scratch.
+[    6.09s ->     9.53s] And again, this has never failed me over the last five years of trading.
+[    9.61s ->    13.27s] I've used the same general strategy. I'm going to walk you through how to do it.
+[   13.51s ->    18.71s] Now, when I started trading, I lost and blew up my account literally two times.
+[   18.85s ->    21.45s] And it's something that has stuck with me and something I don't want to do.
+[   30.57s ->    36.49s] In this video, I'm going to walk you through the only simple strategy that I would use if I had to start over today.
+[   36.49s ->    41.71s] This same strategy is the one that I've been using for over five years and has not failed me yet.
+[   41.81s ->    44.89s] And I've even survived two different market crashes.
+[   44.97s ->    54.37s] So let me walk you through exactly how the strategy works, how you can use it to grow your account and also generate monthly income, even if you're starting with a small account.
+[   54.43s ->    57.73s] So let's dive in and I'll show you step by step how to do this.
+[   69.12s ->    71.78s] First things first, we need a charting platform.
+[   71.96s ->    75.90s] So for this video, I'm using tradingview.com, which is completely free to use.
+[   75.90s ->    80.50s] You can use your broker as well, Yahoo Finance or whatever you have available to you.
+[   80.88s ->    84.02s] So what you're going to want to do is you want to go to the indicators tab.
+[   84.16s ->    86.30s] You're going to want to search up Bollinger Bands.
+[   86.48s ->    88.42s] So just like this, Bollinger Bands.
+[   88.80s ->    91.40s] Click on this and it's going to add something like this.
+[   91.44s ->    93.94s] We're going to go into the settings and we're going to change this a bit.
+[   94.02s ->   102.28s] The length will be changed to 200 and the standard deviation will be changed to 2.1 just to be a little fancy.
+[  102.28s ->   103.88s] So here we go.
+[  104.20s ->   107.16s] This is what I do when I trade this approach.
+[  107.26s ->   110.54s] I'm also on the daily chart where each candle represents one day.
+[  110.68s ->   113.40s] So here is the high level strategy.
+[  113.64s ->   122.02s] When we are inside these bands, the market is trading within its normal accepted levels, which means that I'm going to be selling options.
+[  122.02s ->   128.06s] So I'm going to be doing things like selling puts, selling strangles, and selling a 1-1-2 or 1-1-1 strategy.
+[  128.18s ->   131.46s] I'll walk you through these strategies here in a bit, but I just want to go through the high level.
+[  131.78s ->   137.28s] So I'll be selling options, which helps me collect income with a win rate of around 90% plus.
+[  137.54s ->   139.74s] So again, I'm safely collecting money.
+[  140.10s ->   146.06s] Now, what do I do when the market breaks these ranges, when it breaks above or breaks below these ranges?
+[  146.06s ->   155.14s] That means the market is trading outside of its normal expected range, which tells me that we're going to have a snap pullback either to the downside or to the upside.
+[  155.32s ->   157.18s] You can see here when we break below, we snap up.
+[  157.26s ->   158.88s] When we break below, we snap up.
+[  158.92s ->   161.22s] When we break down, I mean break up, we snap down.
+[  161.30s ->   162.48s] When we break up, we snap down.
+[  163.20s ->   168.14s] The most severe cases being back here starting in 2018.
+[  168.56s ->   171.20s] We had this crash here after being above it for way too long.
+[  171.58s ->   172.36s] Same thing is here.
+[  172.42s ->   174.16s] We broke above it, then we crashed down.
+[  174.16s ->   176.22s] And then same thing for the COVID crash.
+[  176.28s ->   179.30s] We were above it for almost two, three, four, five months.
+[  179.44s ->   185.46s] And then it was just above the normal expected range for too long that we snapped to the downside, having a huge crash.
+[  185.56s ->   188.04s] So what do I do in these situations?
+[  188.22s ->   193.04s] Well, when the market breaks above or below my levels, I stop selling options.
+[  193.16s ->   196.42s] What I do from there is I get out of all my positions, right?
+[  196.44s ->   199.84s] Because that means that if we're above this, a huge move is expected.
+[  199.84s ->   203.82s] When you're selling options, you don't want huge moves because that spikes the volatility.
+[  204.16s ->   209.08s] So instead, when we break above these ranges, I instead go into buying options.
+[  209.22s ->   215.84s] And so what I do, especially in this range, when we break back below, let's say we break above and then we break down below again.
+[  215.84s ->   218.84s] So here and here, I buy puts.
+[  218.84s ->   220.76s] I make money on the downside.
+[  220.76s ->   226.48s] I kind of do so exponentially because when you buy puts, they can go up 5, 10x during a crash like this.
+[  226.56s ->   228.80s] And so that's how you can easily generate money.
+[  228.88s ->   230.42s] The same way to the downside here.
+[  230.48s ->   236.74s] If we break to the downside and then we start breaking back up again, I'm going to buy calls to profit on the upside move.
+[  237.00s ->   241.24s] Now, again, calls don't typically move as fast, but there's still a great opportunity to profit from it.
+[  241.24s ->   249.92s] And so what do I do here and what I have done is I follow this exact same approach, even with my long-term investment portfolio, that I don't trade.
+[  249.98s ->   251.30s] And I say trade very loosely.
+[  251.46s ->   253.52s] I don't actively manage it.
+[  253.52s ->   257.72s] Instead, when it breaks above these levels, I get out of my investment portfolio.
+[  258.08s ->   260.68s] I wait for it to break back below this line.
+[  260.76s ->   263.92s] When it does, I reinvest back in because I get in at a better price.
+[  264.10s ->   274.54s] And so with my investment portfolio, I don't manage it much except for these periods that help me lose less and end up making more because I get a better cost basis on my trade.
+[  274.62s ->   275.92s] So, again, I do this with trading.
+[  276.00s ->   276.84s] I do this with investments.
+[  277.30s ->   281.68s] This is how I do it by watching and understanding my normal expected ranges.
+[  281.68s ->   284.30s] When I break out of it, then I need to do something.
+[  284.42s ->   287.68s] But inside the middle of it, I'm trading reliable strategies.
+[  287.86s ->   290.74s] So one of these reliable strategies is selling puts.
+[  290.88s ->   293.02s] So, again, number one is to sell puts.
+[  293.16s ->   294.72s] And what does this look like?
+[  294.74s ->   298.94s] Well, if I go here to the brush tab, number one is going to be to sell puts.
+[  299.02s ->   300.86s] So, again, I'm going to put NP for naked put.
+[  301.16s ->   302.76s] And so what this means is that I pick a level.
+[  302.84s ->   305.74s] I think the stock will stay above, and that's how I trade this.
+[  306.00s ->   309.92s] So let's say the market is quite high right now, almost breaking above this range.
+[  309.92s ->   312.54s] So that means that I could be wanting to buy a put soon.
+[  312.64s ->   315.78s] But right now it's still inside of this level.
+[  315.90s ->   320.04s] So that means that I'm going to be selling puts or using a selling strategy.
+[  320.04s ->   321.68s] So with that, I'm going to pick a level.
+[  321.84s ->   327.32s] Like, let's say here, I think this could be a safe drop level where as long as the market stays above this level, I make money.
+[  327.32s ->   331.98s] And so if the market goes down and then curves up, stays flat or go higher, I will make money.
+[  332.84s ->   336.40s] And so I do a naked put option where I sell a put.
+[  336.68s ->   341.28s] And then from there, what I do is I manage around 25% to 50% profit.
+[  341.28s ->   344.66s] And I have about a 3x stop loss.
+[  344.82s ->   348.68s] So this is how a rough understanding of how I just sell puts.
+[  348.92s ->   352.42s] My second approach is a strangle, which is the same thing.
+[  352.46s ->   356.06s] I'm going to sell a put like at this level where I think the market will stay above.
+[  356.46s ->   359.30s] And then I also pick a level I think the market will stay below.
+[  359.62s ->   361.50s] And so I pick a level like somewhere here.
+[  361.84s ->   362.66s] Why do I do this?
+[  362.66s ->   366.02s] Well, because when I sell a call, I'm able to collect more money.
+[  366.48s ->   372.32s] And at the same time, it requires no more buying power because only one side can break at a time.
+[  372.76s ->   375.56s] So with that, I only have to put up collateral for one side.
+[  375.70s ->   377.64s] And so I do the same type of approach.
+[  377.76s ->   379.30s] It's called selling a strangle.
+[  379.70s ->   384.52s] Again, all these strategies I have listed step by step in my YouTube channel.
+[  384.68s ->   386.68s] So I highly recommend you go watch that.
+[  386.74s ->   391.88s] But again, I also manage around the 25 to 50% profit level just because it increases my win rate.
+[  391.88s ->   393.58s] And I can collect money faster.
+[  394.06s ->   395.70s] And I also have a 3x stop loss.
+[  396.02s ->   398.56s] Recently closed a position on that for $500.
+[  399.40s ->   405.98s] Next and last, we have the 111 and 112 trades, which again is also on my channel with a PDF trading guide.
+[  406.74s ->   409.68s] But again, what this is, is I pick a level it's going to stay above.
+[  409.96s ->   411.56s] As long as the market goes up, I make money.
+[  411.64s ->   416.10s] If the market drops, I actually make even more money because it's called a bear trap.
+[  416.22s ->   418.78s] Which means if the bears come in, I'm going to make more money.
+[  418.78s ->   421.64s] And so that's what the 112 trade is.
+[  421.88s ->   426.76s] And so that's my three great options to make money during inside this range.
+[  426.80s ->   431.62s] When we break above it, again, we're looking at LP, which is long puts, buying a put.
+[  431.78s ->   435.22s] When we go below it, we're looking at LC, long calls.
+[  436.58s ->   438.70s] Or we can do any other type of strategy.
+[  438.82s ->   441.04s] Like we can even sell puts here or a naked put.
+[  441.32s ->   441.60s] Why?
+[  441.72s ->   444.20s] Because the chance of it going lower is very unlikely.
+[  444.74s ->   446.00s] And so then we can push higher.
+[  446.00s ->   449.58s] Now, I do have to say, again, we're talking in general sense and math playing out.
+[  449.96s ->   453.32s] We do have instances where this doesn't always happen.
+[  453.52s ->   459.36s] Like we have right here in 2008 and 2009, where it just kind of continuously downtrodden through it.
+[  459.68s ->   466.06s] That's why you want to wait for the market to not only crash below it, but wait until it bounces back up above it to kind of like reset the market.
+[  466.06s ->   468.82s] Anyways, that is my go-to strategy.
+[  469.02s ->   470.66s] Very simple, very easy.
+[  470.82s ->   474.12s] One indicator, put it on any chart and understand what you should be doing.
+[  474.22s ->   482.66s] Should you be using safe, reliable income strategies or should you be getting out and being ready to diversify to profit from the downside move or the upside move?
+[  482.90s ->   483.78s] That is how I do it.
+[  483.96s ->   486.46s] This is the one strategy that has never failed me.
+[  486.56s ->   489.90s] And I highly recommend that you use it if you feel a little lost or overwhelmed.
+[  489.90s ->   503.86s] If you like trading like this or want to learn more about it, click the first link in the description down below and start your free trial to our community where we trade just like this to generate monthly income, grow our accounts and do so safely so we are out of the market during crashes.
+[  504.16s ->   505.88s] All right, guys, I will see you in the next video.

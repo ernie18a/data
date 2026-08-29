@@ -1,0 +1,84 @@
+[    0.90s ->     5.10s] Welcome to this video. Have you ever wondered how you can scan for the top stocks? Well,
+[    5.12s ->     9.22s] I'm going to show you exactly how to do that in this video. So please stay tuned,
+[    9.30s ->    12.40s] even though I'm going to do a little quick intro here. All right, guys, if you don't know who I am,
+[   12.48s ->    16.28s] I am the impeccable investor and I teach people how to day trade options, how to swing trade,
+[   16.34s ->    22.12s] and how to invest. You can find me on Instagram on tradingview.com for my nightly stock analysis,
+[   22.32s ->    25.94s] and you can also find me at the blog, all linked below. So please check those out.
+[   26.12s ->    30.58s] All right, now going back to the content at hand, this is how you can scan for the top stocks
+[   30.58s ->    36.50s] using the Thinkorswim platform. So if you can see here, if you're on the Thinkorswim platform,
+[   36.68s ->    42.44s] all you need to do is go here to this scan tab. So you just click on scan, it brings this up for you,
+[   42.52s ->    47.48s] and you got everything you want. Now, how do you find specifically what you want to edit? Well,
+[   47.48s ->    54.84s] you go up here to this first one right here, you go up to load scan query. If you want to create your
+[   54.84s ->    60.06s] own, you go here and click create scan query. But what I personally love to do is I don't like to
+[   60.06s ->    65.70s] reinvent the wheel. No one likes to do that. It takes too much time. So I go up here to public
+[   65.70s ->    72.08s] and I find exactly what I want to look for. I can either go through the top 10, through public,
+[   72.18s ->    77.44s] whatever I want. I just pick a template I want to start with. So for instance, if this is scanning
+[   77.44s ->    82.52s] for stocks for a swing trade or an investing hold, I'm going to go up here and I'm going to select
+[   82.52s ->    88.96s] upcoming dividends. And it's going to give me the default for upcoming dividends. So that's exactly
+[   88.96s ->    92.56s] the way you do it for that. And then we can start to build on top of that, which is what I'm going to
+[   92.56s ->    97.96s] be showing you in this video. So if you can see here, this is the dividends one it gives you.
+[   98.18s ->   103.86s] It uses the study of the dividends, has the next dividend date and the next five bars. And the next
+[  103.86s ->   110.18s] five bars are categorized here, if you can see, as dates. So that means that it's one day. So five bars
+[  110.18s ->   115.38s] means coming up in the next five days. But now we can add whatever we want. So we wanted to build
+[  115.38s ->   120.94s] off dividends. So we can add filters for stocks. So the way that it works is it just adds one and
+[  120.94s ->   125.02s] then we can go through and select what we'd like. So the first thing I want to select is volume.
+[  125.14s ->   130.36s] Volume is hugely important for the value of liquidity. You want to make sure your stock is
+[  130.36s ->   135.22s] highly liquid so you can get in and out. So you go here, you select volume. You can have a min or a
+[  135.22s ->   139.48s] max, just start it. I don't care where. And then you can have a max. And then once you do that,
+[  139.54s ->   145.08s] you should have some filters pop up in a bit. Now we're going to go into adding a study filter.
+[  145.08s ->   151.06s] So you can see here, actually, let's make the minimum just for the sake of this video,
+[  151.24s ->   156.88s] we can make it 50,000. And then for the upper bounds, we don't really care as high as we can
+[  156.88s ->   162.10s] go because the more liquidity there is, the better. I know this liquidity is low for the
+[  162.10s ->   165.20s] minimum, but I wanted to give a huge range so you can see all the stocks that pulls up.
+[  165.94s ->   172.70s] So on the study for, if you click add a study filter, you get an indicator, right? That's an
+[  172.70s ->   176.60s] amazing feature. Because now you know the indicators that you use to trade, whether you use
+[  176.60s ->   182.64s] RSI, MACD, a moving average, you can incorporate that into here. So you can see here, you can go
+[  182.64s ->   187.50s] into custom if you'd like. And when you go into custom, you can select exactly everything you want.
+[  187.88s ->   194.30s] But for instance, you can also use a predefined one. But predefined are much easier to use as you
+[  194.30s ->   198.28s] go through and find exactly what you want. So let's go through and let's select custom.
+[  198.28s ->   202.90s] So on custom here, it's going to have what you want to use. We're going to delete this,
+[  203.00s ->   205.64s] the default. We don't want to use it. We want to use what we're going to make.
+[  205.98s ->   211.88s] Click add a condition and go here and select what you want. Well, I want this to be a study.
+[  212.44s ->   216.56s] Okay. So you go here and you do study, which is basically going to be all of your indicators.
+[  217.30s ->   223.26s] So moving on here, you can see, let's select a simple one like a Bollinger Band. So now we have
+[  223.26s ->   228.26s] everything preset. You can even change the settings you want. So when the Bollinger Band
+[  228.26s ->   234.86s] crosses price, so I want it to cross below price. That means it's pushing price above it.
+[  235.20s ->   240.98s] I want price to close. I want the close. I want it to cross above the close. So now that I can see
+[  240.98s ->   248.66s] that a Bollinger Band with this settings needs to cross, let's say below the close. That means that
+[  248.66s ->   253.84s] the price is going up above the Bollinger Band, meaning that the stock is going above it, which is
+[  253.84s ->   257.84s] going to be a nice indication that this stock is seeing some momentum. We're going to go here.
+[  258.12s ->   263.12s] We're going to click save, and then we're going to be okay. And now we're done. Now we have this
+[  263.12s ->   268.06s] study added. That's how you add a study for a specific indicator. That is huge, right? All right.
+[  268.08s ->   271.74s] Now moving on, because you want to learn about more than that. You also have fundamental filter
+[  271.74s ->   278.60s] and a pattern filter. A pattern filter will be looking for like a triangle, a rectangle, whatever setup
+[  278.60s ->   283.38s] you like. So if you like those consolidation type play patterns, that's going to be hugely for you.
+[  283.80s ->   289.30s] All right. So moving on, fundamental filter, that's going to be more of if you're pursuing, for instance,
+[  289.50s ->   295.64s] the book value per share. So I know you may not know what the book value per share is, but that doesn't
+[  295.64s ->   300.88s] really matter. That's more tailored toward investors. But something that I also like to see for an investing
+[  300.88s ->   309.78s] standpoint is I do like to see price to book ratio, price to book value ratio. I want it to be relatively high
+[  309.78s ->   314.42s] because that means that this is going to be a liquid stock. All right. So now we can go here, set it.
+[  314.64s ->   320.24s] You can also set a bunch of different things in the filter stock, such as percent gain, percent loss, how much
+[  320.24s ->   326.54s] it's moved, and much, much more. But we're just going to stick with this for now. And I click scan, and you wait a bit
+[  326.54s ->   331.38s] because it's scanning a lot. And because of all the complex filters I had on it, this is all I'm
+[  331.38s ->   341.34s] getting. MCD, CTL, FLO, CRI, and EFC. Now, I know you don't want to manually type this into a study. So
+[  341.34s ->   345.82s] this is what we're going to do. We're going to come up here. We're going to click save scan query. We're
+[  345.82s ->   351.34s] going to name it whatever we want, such as because I have plenty. I'm going to go here, and I'm going to
+[  351.34s ->   356.52s] delete this. I'm going to click YouTube test. So now we have a YouTube test. We click save.
+[  357.10s ->   362.62s] And now it is saved. And that's the beautiful part of this. We can go over here. We can go to our
+[  362.62s ->   369.32s] personal watch list, and we can go here, and we can find it. So it's a YouTube test. So I go down
+[  369.32s ->   375.34s] here, go under personal, and I find YouTube test right here. The purple spot here is going to notify
+[  375.34s ->   380.74s] you that it is a scan. So you go up here. I click it. It's going to pull everything from that scan.
+[  381.22s ->   386.38s] So now that if you don't know how to do this, you can link your chart. So I have the red one and the red one
+[  386.38s ->   390.98s] here. So now when I click, I can see them. Now I can go through all the charts just using my little
+[  390.98s ->   396.28s] mouse pad here by clicking the down arrow, right? So now I have Sentry Link. Look how much it gapped
+[  396.28s ->   400.94s] up, right? Now this is a good candidate for a 10% continuation play because it's up above
+[  400.94s ->   404.74s] the Bollinger Band. So now I know that it's cruising, right? So it's just great things to
+[  404.74s ->   409.70s] be able to see. Sorry, that's my alarm. I should probably stop that. Sorry for the intrusion.
+[  410.06s ->   416.42s] All right. So EFC, FLO, MCD. Again, this was more taking an investing approach, but it's just amazing
+[  416.42s ->   420.14s] things that you can do. You can do this for swing trading, day trading, and everything else. Now guys,
+[  420.18s ->   424.58s] if you haven't already, please hit that thumbs up button. Please hit that subscribe notification. I'm
+[  424.58s ->   429.10s] releasing fresh content every single day pretty much, and you don't want to miss out. All right,
+[  429.10s ->   433.08s] guys, thank you so much for watching. Please like, comment, and subscribe if you haven't already.
+[  433.08s ->   439.10s] And please, below, find another way to follow me, whether it's Instagram, trading view, blog,
+[  439.34s ->   443.96s] YouTube. There's a bajillion ways to follow me. I love answering questions. Hit me up,
+[  444.44s ->   447.80s] the comments below, anywhere you want to. All right, guys. See you tomorrow.

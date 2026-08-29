@@ -1,0 +1,52 @@
+[    0.24s ->     4.72s] In this video I'm going to show you a simple scalping strategy that works perfect for the
+[    4.72s ->     9.84s] 1 minute time frame. It uses a special indicator called the Williams Fractals Indicator. We're
+[    9.84s ->    14.16s] going to combine it with some other indicators to make it that much more effective. It's
+[   14.16s ->    19.20s] easy to use, works in almost all markets, and most importantly, it works. Let's dive straight
+[   19.20s ->    24.16s] into it. First things first, get on trading view or whatever trading chart platform you use. Right
+[   24.16s ->    29.28s] now I have my time frame set to 1 minute, but this strategy will work for almost all time frames.
+[   29.28s ->    33.92s] Let's add the Williams Fractals indicator first. To do that, go to the indicators tab,
+[   33.92s ->    38.88s] type in Williams Fractals, and it's going to be the one right here. The default settings will work
+[   38.88s ->    44.80s] perfect, just make sure the period is set to 2, and for the colors it's originally red then green,
+[   44.80s ->    49.84s] but I flipped them to green then red so it's easier to understand when reading the chart.
+[   49.84s ->    55.52s] Next we're going to add some moving averages. Go back to the indicators tab and type in 3 moving
+[   55.52s ->    60.72s] averages. It should be this one by advent trading. Once you have that added, we're going to change
+[   60.72s ->    65.68s] the settings a bit. Go up to the settings of that indicator, change length 1 to 20,
+[   65.68s ->    71.76s] change length 2 to 50, and length 3 to 100. Then for simplicity sake, I'm going to change the colors
+[   71.76s ->    77.12s] of the lines to green, yellow, and red in that order. Now that we have the indicators added,
+[   77.12s ->    83.52s] let's go on to how the strategy actually works. The first rule of the strategy is you can only go long
+[   83.52s ->    90.40s] if the 20 day, the green line, is above the 50 day, the yellow line, and the 50 day is above the 100
+[   90.40s ->    95.28s] day. If they are crossing each other like this, then you should not enter the trade. It's the
+[   95.28s ->   100.72s] complete opposite for a short trade, so the 100 should be on the top, the 50 in the middle, and
+[  100.72s ->   105.52s] the 20 on the bottom. Now that we know how the moving averages should look, let's move on to know
+[  105.52s ->   111.84s] when to enter into a trade. To enter a long trade, the price has to pull back under the 20 day moving
+[  111.84s ->   118.08s] average or under the 50 day moving average. Then you also have to see a Williams fractal green
+[  118.08s ->   123.52s] arrow. This will be your entry signal. Let me show you an example so you can better understand what
+[  123.52s ->   128.88s] I'm talking about. So first things first, we made sure the moving averages are in the correct order
+[  128.88s ->   134.48s] and they are not crossing each other. Then we wait for the price to cross under the 20 day moving
+[  134.48s ->   140.00s] average. We keep waiting till the Williams fractal indicator gives us the green arrow for the go ahead
+[  140.00s ->   145.68s] to enter the trade. Once it does, we create a long position, put the stop loss right below the 50 day
+[  145.68s ->   151.84s] and then have a 1.5 profit ratio. As you can see in this example, the strategy worked out perfect
+[  151.84s ->   156.96s] and we made money. If the price keeps moving down before the Williams fractal gives a green arrow
+[  156.96s ->   161.84s] and crosses the 50 day then gives a green arrow, you're going to do the same thing and enter the
+[  161.84s ->   169.12s] trade here, but this time you're going to add a stop loss right below the 100 day and still set a 1.5 ratio.
+[  169.12s ->   174.80s] Now there's a very important rule you must follow for this trading strategy to be profitable.
+[  174.80s ->   180.24s] If the price moves below the 100 day moving average, you do not enter a trade on the green
+[  180.24s ->   185.92s] arrow from the Williams fractal indicator. So as you can see here, the price moves below the 100 day,
+[  185.92s ->   190.48s] then the Williams fractal gives a green arrow, and as you can see, the price drops again.
+[  190.48s ->   195.68s] So if the price ever closes below the 100 day, just disregard the next green arrow,
+[  195.68s ->   199.28s] because the chance that it will drop even more is a lot higher.
+[  199.28s ->   202.48s] Now let's take an example of a short trade with this strategy.
+[  202.48s ->   206.48s] First, make sure all of the lines are in the correct order with the 100 day on top
+[  206.48s ->   211.28s] and the 20 on bottom. Then we wait for the price to cross above the 20 day,
+[  211.28s ->   215.84s] then wait for a red arrow from the Williams fractal indicator. Once we get the signal,
+[  215.84s ->   222.56s] we enter the trade here, add a stop loss right above the 50 day, and then set a 1.5 profit ratio.
+[  222.56s ->   227.76s] You should also understand that you have to trust this strategy. It may take some time before the
+[  227.76s ->   231.60s] price hits your profit mark, you have to trust this strategy and stay in it.
+[  231.60s ->   236.48s] As an important note, you should also realize that you will get a ton of buy signals,
+[  236.48s ->   241.68s] especially if you're trading on the 1 minute time frame. If you are, it's extremely important
+[  241.68s ->   247.60s] you make sure that your broker or exchange has very low fees, otherwise the fees will ruin the gains
+[  247.60s ->   249.92s] because of the volume of trades you're taking.
+[  249.92s ->   255.04s] I just showed you a winning strategy using moving averages and Williams fractal indicator.
+[  255.04s ->   259.20s] All I ask in return is if you take 2 seconds out of your day and like this video.
+[  259.20s ->   263.68s] If you want to see one of my top favorite strategies I use on a daily basis,
+[  263.68s ->   266.80s] check out this video and I'll see you guys next time.

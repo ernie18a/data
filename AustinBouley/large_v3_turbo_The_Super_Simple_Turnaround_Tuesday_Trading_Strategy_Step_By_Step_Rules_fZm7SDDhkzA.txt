@@ -1,0 +1,59 @@
+[    0.14s ->     4.70s] In today's video, I'm going to walk you through the super simple Tuesday turnaround strategy.
+[    4.92s ->    10.90s] There are only about four steps you have to follow, and this has a super high win rate that can help you grow your account.
+[   10.98s ->    12.10s] So let's walk into it.
+[   12.34s ->    16.70s] First off, this strategy came from the ultimate list of SPY trading strategies that I put together.
+[   17.14s ->    21.36s] Again, I scoured the internet to find the most profitable back-setted strategies on SPY.
+[   21.46s ->    23.26s] Again, if you want this whole list, it's completely free.
+[   23.36s ->    26.04s] Link down in the description below, which is a PDF download.
+[   26.04s ->    31.50s] But anyways, you can see strategy number one, the turnaround Tuesday strategy.
+[   32.10s ->    37.02s] Again, today is Monday as I record this video, so it works out perfect for the strategy.
+[   37.16s ->    37.36s] Why?
+[   37.66s ->    46.04s] Well, because the strategy number one is found from quantifiedstrategies.com, just to give the plug, because they are the ones who back-tested and made this research.
+[   46.66s ->    55.76s] But again, the strategy is based on a common occurrence that they noticed, and then they put together a back-test for it, and then here are the rules, and here is the outcome.
+[   56.24s ->    57.80s] Obviously, it works well long-term.
+[   57.88s ->    60.60s] It will help you grow your account, but how exactly does this work?
+[   60.86s ->    62.34s] Well, let's walk through the trading rules.
+[   62.92s ->    65.68s] First off, you can only place this trade on Mondays.
+[   66.06s ->    71.98s] So again, today in the market, in real time, it is Monday, and because of that, we'll be able to walk through the strategy perfectly.
+[   72.10s ->    72.88s] So today is Monday.
+[   73.30s ->    76.58s] The previous trading candle was last Friday, and this is how it's going to work.
+[   76.96s ->    79.86s] What we do is we say, so today is Monday, good check.
+[   79.94s ->    84.38s] Number two, Monday's close must be at least 1% lower than Friday's close.
+[   84.74s ->    85.84s] How do we determine this?
+[   85.84s ->    90.84s] Well, we're going to hover over, again, this charting platform is called TradingView.com, free for anyone to use.
+[   91.22s ->    94.78s] But again, you can do this on most charting platforms online or your broker.
+[   95.20s ->   100.08s] You hover over the candle, and then up here in this section, it's going to point to, you can see there's a C.
+[  100.38s ->   101.72s] The C is the close price.
+[  101.84s ->   105.28s] So it says the close price is $433.21.
+[  105.28s ->   111.60s] So we're going to come here to our handy-dandy calculator, $433.20.
+[  112.06s ->   118.66s] Then we need to be 1% lower, so it's going to be 0.99, because it's 100% minus 1%, so that gives us 0.99.
+[  118.66s ->   126.48s] So we want today's close in order to enter this trade to be lower than 428.86.
+[  126.72s ->   129.38s] So let's go 428.9.
+[  129.54s ->   136.69s] So let's put a line there, 428.9 trend line, 428.9.
+[  136.69s ->   156.42s] Now, I hope that's actually quite lower, 428.9, so again, it says we need to be at least lower than 1% lower than Friday's close.
+[  156.88s ->   161.06s] So if this is true, so that means if it's Monday, that is true.
+[  161.06s ->   169.36s] And if today, by the end of the close period, this stock, it's down below this white line I have right here, then guess what?
+[  169.42s ->   170.66s] I simply buy the stock.
+[  170.96s ->   175.62s] So again, let's say we're in the last 15 minutes of the trading day, and it's below this white line.
+[  175.96s ->   176.80s] What am I going to do?
+[  176.92s ->   183.68s] I'm going to go in and buy SPY shares, buy SPY stock, or shares really because it's an ETF, so buy SPY shares.
+[  184.06s ->   189.36s] Then I'm going to hold it, and I'm going to, so again, if I enter, then I'm going to exit on the close of Tuesday.
+[  189.36s ->   197.94s] So I'm going to wait for a full trading day on Tuesday, then I'm going to exit in the last 5 to 10 minutes of the trading day on Tuesday.
+[  198.22s ->   200.02s] And that is how this strategy works.
+[  200.08s ->   205.34s] It's a simple Monday type of dip, and then you buy the recovery on Tuesday.
+[  206.10s ->   209.30s] So again, we can see this kind of play out in different levels.
+[  209.68s ->   210.68s] Let's see if we can find one.
+[  210.76s ->   215.78s] So here's a Monday that didn't satisfy, because again, we're looking for Monday to be below Friday's close.
+[  216.10s ->   219.26s] So again, Friday's close is right here, and then Monday right here, probably one of the close.
+[  219.26s ->   228.06s] Here, I wish I would have thought a bit more in advance and planned out and showed you a few scenarios of when it entered.
+[  228.42s ->   232.02s] But this, again, is just simply how the strategy works.
+[  232.08s ->   235.78s] It doesn't happen every single day because it's super simple and super easy to follow.
+[  236.08s ->   241.02s] But when it does, this may be something you want to add to your strategy trading repertoire where you go,
+[  241.02s ->   246.10s] okay, I know this, I know it has a high win rate, I see it set up, I should enter it.
+[  246.38s ->   252.08s] And so again, if you're seeing a very red Monday in the trading market in the S&P 500, trigger,
+[  252.24s ->   256.60s] okay, there's a turnaround Tuesday trading strategy that has a high win rate, maybe I should go after.
+[  257.02s ->   259.36s] Okay, guys, so that is what this is.
+[  259.36s ->   265.78s] If you want to learn more about this strategy and others, click the link down below and grab the SPY trading strategies sheet
+[  265.78s ->   267.94s] because it's going to be super beneficial for you.
+[  268.24s ->   270.86s] All right, guys, please hit that thumbs up button.
+[  270.96s ->   274.14s] If you enjoyed this, smash that subscribe button, and I'll see you in the next video.

@@ -1,0 +1,118 @@
+[    0.63s ->     1.63s] Hey guys, what's up?
+[    1.63s ->     5.99s] It's Austin, and today I wanted to do a video, an informational video, instructional video
+[    5.99s ->    12.11s] over which contracts to buy when day trading or swing trading options.
+[   12.11s ->    15.99s] So I wanted to give you a perfect example from today, this is why it came up.
+[   15.99s ->    20.95s] Everybody asked me, well almost everybody has asked me, Austin, which contracts do you
+[   20.95s ->    21.95s] buy?
+[   21.95s ->    23.63s] How do you know which strike price to buy?
+[   23.63s ->    29.15s] So I wanted to show you exactly how and why I know where to buy or what contracts to buy.
+[   29.15s ->    38.53s] So today obviously was a huge day in the SPX and SPY, or the SP500, again I only had the
+[   38.53s ->    44.65s] morning to trade because I had finals in college again this week, or today, it was calculus
+[   44.65s ->    47.43s] too so I really had to study for that one.
+[   47.43s ->    51.77s] But in the morning we had a lot of consolidation and then we broke through and then we made
+[   51.77s ->    57.43s] this long term up trend line, where did this trend line come from?
+[   57.43s ->    62.31s] If we go down to the 15 minute time frame, we have a low here, and then we made a new
+[   62.31s ->    65.99s] low and we started to bounce, so that would have formed our trend line up.
+[   65.99s ->    71.93s] So we knew that we're still validating this up trend, but let's look at exactly, based
+[   71.93s ->    75.95s] off my characteristics, where to buy in.
+[   75.95s ->    82.15s] So we're going in at about 1040, I would say around 1050.
+[   82.15s ->    86.49s] We have this triangle, I wouldn't say it's the best one, and then we have this push up,
+[   86.49s ->    93.39s] and then this is an ascending uptrend triangle with a solid top, and we're consolidating and
+[   93.39s ->   101.39s] moving up into this corner, followed by the EMA is right under it, signifying an uptrend,
+[  101.39s ->   106.15s] also near this little medium term trend line.
+[  106.15s ->   108.43s] So we had this push up.
+[  108.43s ->   111.65s] So basically, yes, this is my pattern, this is what I look for.
+[  111.65s ->   115.43s] Now what contracts do I go to to buy it?
+[  115.43s ->   119.21s] I like to stick to contracts that are around $1.
+[  119.21s ->   121.09s] The closest to $1 the better.
+[  121.09s ->   122.09s] Why?
+[  122.09s ->   129.13s] Because I have the best risk to reward with $1 contracts, and I want to show you why here.
+[  129.13s ->   132.69s] So if I pull up a photo, this is from TD Ameritrade.
+[  132.69s ->   137.19s] It shows the previous history and contract price movement from today.
+[  137.19s ->   140.65s] So I took a screenshot of it because I just wanted to show you all why.
+[  140.65s ->   141.69s] So here we go.
+[  141.69s ->   143.41s] This is throughout the day.
+[  143.41s ->   148.25s] You can see how in SPX we have this turned down, and then in SPX Calls Contract we have
+[  148.25s ->   150.63s] it turned down, and we start to...
+[  150.63s ->   154.89s] Right here, this little bottom part of the contract price, this is where this triangle
+[  154.89s ->   157.09s] right here is forming.
+[  157.09s ->   160.05s] This triangle is forming right here around $1.
+[  160.05s ->   167.05s] So I go into the options table, and I look for $1 or something close to $1, so like $0.90,
+[  167.05s ->   170.93s] $0.95, $1, $1.05, something close to that.
+[  170.93s ->   173.37s] And when I went, I saw this contract right here.
+[  173.37s ->   175.29s] It was sitting at around $1.
+[  175.29s ->   177.59s] So why do I like these dollar ones?
+[  177.59s ->   180.91s] Because look, I'm anticipating this breakout right here.
+[  180.91s ->   187.91s] So if I buy a call contract at $1, look at where it's previously traded when it went down.
+[  187.91s ->   193.63s] It has previously traded a low of 0.35, but usually it's traded around 0.5.
+[  193.63s ->   195.95s] So I can easily sell it at 0.5.
+[  195.95s ->   202.91s] So if I bought it at $1, and I sell at 0.5, then I'm risking $50 for one contract.
+[  202.91s ->   205.91s] Okay, but what is my reward?
+[  205.91s ->   212.91s] Well, I would say that expecting a normal move on a triangle breakout would be up to the next
+[  212.91s ->   214.91s] support level, right?
+[  214.91s ->   217.03s] So that would be a normal target.
+[  217.03s ->   221.91s] So if you were going based off the normal target, then it went up to $3 a contract.
+[  221.91s ->   223.91s] So I went up to $300 a contract.
+[  223.91s ->   229.91s] So for a normal move, my risk is $50 and my reward is $200.
+[  229.91s ->   231.91s] So that's a nice risk to reward.
+[  231.91s ->   234.91s] It's about a one to four risk to reward.
+[  234.91s ->   240.91s] But again, based on that exit and entrance and how to enter and exit trades video I did,
+[  240.91s ->   245.91s] the EMA is really my prime indication for when to get out.
+[  245.91s ->   250.91s] So obviously, we jump in on this pattern here, breakout, we ride it.
+[  250.91s ->   251.91s] Do we sell here?
+[  251.91s ->   252.91s] No.
+[  252.91s ->   253.91s] Why?
+[  253.91s ->   256.91s] Because previously mentioned why I would not sell is because of the EMA.
+[  256.91s ->   257.91s] It has not broken.
+[  257.91s ->   259.91s] The EMA is still showing an uptrend.
+[  259.91s ->   262.91s] We're still holding this uptrend line here.
+[  262.91s ->   264.91s] So we continue to hold and we hold.
+[  264.91s ->   266.91s] Do we hold through here?
+[  266.91s ->   268.91s] If it was my contract, I would.
+[  268.91s ->   269.91s] Why?
+[  269.91s ->   272.91s] Because we did not close below the EMA line, okay?
+[  272.91s ->   274.91s] We bounce off of it perfectly.
+[  274.91s ->   277.91s] Now again, if we broke through here, you would sell.
+[  277.91s ->   279.91s] But we bounced and then we held.
+[  279.91s ->   281.91s] We bounced and then we held and we went up.
+[  281.91s ->   282.91s] And then...
+[  282.91s ->   285.91s] Yeah, that's the closing bell.
+[  285.91s ->   290.91s] And then when we broke through, let's look at what the contract prices were when it broke
+[  290.91s ->   291.91s] through.
+[  291.91s ->   294.91s] So when it broke through the EMA line, again, these are not correlated to each other, this
+[  294.91s ->   297.91s] EMA and that EMA because it's contract prices.
+[  297.91s ->   298.91s] But it was right here.
+[  298.91s ->   300.91s] It was this one right here.
+[  300.91s ->   303.91s] It was between $10 and $9.
+[  303.91s ->   306.91s] So you could have sold it at low end $9.
+[  306.91s ->   313.91s] So if you would have followed the how to enter and exit video as well as my triangle patterns
+[  313.91s ->   318.91s] video, your risk to reward would have been $50.
+[  318.91s ->   321.91s] You would have risked $50 per contract.
+[  321.91s ->   326.91s] And if you would have sold it as it broke through this EMA line and closed below it, you
+[  326.91s ->   331.91s] would have sold at on the low end $9 a contract, so $900 a contract.
+[  331.91s ->   335.91s] So you would have made $800 is your reward for a risk of $50.
+[  335.91s ->   338.91s] Again, $800 is not a normal target.
+[  338.91s ->   339.91s] That doesn't always happen.
+[  339.91s ->   341.91s] It's not always your profit.
+[  341.91s ->   346.91s] But again, as I showed you, this right here is a normal triangle pattern move and it went
+[  346.91s ->   347.91s] up to $3 a contract.
+[  347.91s ->   351.91s] So you would have made $200 of a $100 contract.
+[  351.91s ->   359.91s] I hope this explained enough of why I love to buy around $1 because again, my risk is down
+[  359.91s ->   360.91s] to $0.50, right?
+[  360.91s ->   367.91s] If it breaks and it fails, I'm sure I can usually sell it for around $0.70, $0.80 a contract
+[  367.91s ->   369.91s] risking about $20 to $30.
+[  369.91s ->   371.91s] But at max, I risk $50, right?
+[  371.91s ->   376.91s] And then I can easily, these dollar contracts are so volatile and they have so much room
+[  376.91s ->   384.91s] to move that again, a normal move, I could have sold it for $3 and made $200 and 2, 4,
+[  384.91s ->   386.91s] 6, 8, 10, 12 minutes, right?
+[  386.91s ->   393.91s] And then if you would have held onto the idea of the EMA line closing below, you could have
+[  393.91s ->   397.91s] sold it at $900 to contract for an $800 profit.
+[  397.91s ->   401.91s] Again, I hope you all understand why I know to pick the contracts I'm picking.
+[  401.91s ->   402.91s] It's the same thing for a put.
+[  402.91s ->   407.91s] When I go to the put, when I'm looking for a continuation downward, I look for around $1
+[  407.91s ->   410.91s] for the same reason because my risk to reward is amazing.
+[  410.91s ->   412.91s] I hope you all can understand that and grasp it.
+[  412.91s ->   415.91s] And of course not, the link is below for the Discord group to contact me.
+[  415.91s ->   418.91s] There's a lot of other great, great traders in there.
+[  418.91s ->   421.91s] Alright guys, please like, comment and subscribe and I'll see you all in the next video.
+[  421.91s ->   422.91s] I'll see you all in the next video.

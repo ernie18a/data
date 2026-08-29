@@ -1,0 +1,84 @@
+[    0.91s ->     7.85s] Hey guys, it's Austin Booley with Options Traders, and today we're going to do a how-to tutorial video on stock trading.
+[    8.03s ->    12.93s] But it's not how to stock trade, it's how to use the Momentum Indicator, okay?
+[   13.21s ->    18.03s] The reason why I want to talk about the Momentum Indicator is because it was crucial for today's trading.
+[   18.55s ->    26.67s] So, Momentum Indicator, if you're on the Tastyworks platform or TD Ameritrade or any other, you go to your indicators.
+[   26.67s ->    33.05s] You can either search up Momentum or you can search it alphabetically.
+[   34.33s ->    39.89s] It's basically just Momentum or Momentum Indicator or Intraday Momentum Index.
+[   40.69s ->    46.09s] Just find something related to that and something that looks roughly like this, okay?
+[   46.33s ->    52.73s] So, I want to show you all how the Momentum Indicator would have helped you all trade today, okay?
+[   52.73s ->    57.55s] So, Momentum is the strength behind the movement of stocks, okay?
+[   58.07s ->    69.87s] So, for example, obviously the reason why I don't trade between 10.30 and 1.30 is because if you look, our Momentum, the strength behind our plays definitely slows down.
+[   70.17s ->    72.45s] If we look at the morning, huge Momentum.
+[   72.49s ->    77.33s] If we look at the evening, it's a lot of Momentum just to the downside, okay?
+[   77.37s ->    80.43s] So, this is Upside Momentum, this is Downside, okay?
+[   80.43s ->    84.75s] So, if we look at our play, obviously we had a gap up.
+[   84.85s ->    95.31s] We have strong Momentum pushing up, but obviously we have the textbook play that I mentioned in one of my SBX recaps of how to trade these, but that's not what we're going over in this video.
+[   95.79s ->    99.33s] So, the indicator obviously shows we're having a strong push up.
+[   99.33s ->   104.25s] So, I believe that you can use the Momentum Indicator, that you can personally see it.
+[  104.47s ->   110.27s] If you've watched the market so much like I have, I don't need the Momentum Indicator because to me, I just see it.
+[  110.33s ->   113.27s] I just understand when there's strength and whatnot.
+[  113.65s ->   118.55s] But if you haven't watched the market as long as I have, the Momentum Indicator can definitely help with that.
+[  118.55s ->   129.17s] So, why I wanted to bring it up is obviously we're having this great push in the morning, and that's just obvious because it's morning and great plays happen in the morning.
+[  129.41s ->   135.89s] So, obviously in lunchtime we start to consolidate here, but how do you know if we're going to break higher or lower?
+[  135.89s ->   142.64s] So, if we look in the middle of the day here, we have the Momentum Indicator.
+[  142.98s ->   147.28s] It's consolidating on this range, meaning we're not having much strength.
+[  148.18s ->   155.00s] Okay, and then we go into the day, we break below this EMA line, and we start building up some momentum here.
+[  155.10s ->   156.76s] Okay, we continue to watch.
+[  156.86s ->   157.90s] We break through this support.
+[  158.02s ->   162.58s] When we break through this support, that's when we start to get the downside momentum.
+[  162.58s ->   167.18s] So, downside momentum or the downside force slash strength is starting to build up.
+[  167.40s ->   169.86s] So, that will definitely be an indication.
+[  170.38s ->   178.02s] We're semi-getting rejected by this EMA line, but on the two-minute, it's showing that it's holding above.
+[  178.52s ->   182.04s] Obviously, if you want to zoom out to the five-minute here, it got rejected.
+[  182.78s ->   185.04s] So, obviously, look at multiple time frames.
+[  186.00s ->   187.50s] So, it gets rejected.
+[  187.50s ->   192.74s] And then we have this huge push of momentum to the downside.
+[  193.48s ->   199.64s] So, obviously, you would have focused on this, and it would have been the momentum pointing down for the second half of the day.
+[  199.70s ->   201.42s] So, you would have known that it would have been at put play.
+[  202.96s ->   204.32s] Okay, now let's talk.
+[  204.72s ->   208.82s] Let's look at what exactly the Momentum Indicator is here.
+[  208.82s ->   213.18s] So, if you pull up this website, which will be linked below, so you can read the whole thing if you'd like.
+[  214.60s ->   220.96s] The calculation of the Momentum Indicator, the description, there are several variations, blah, blah, blah.
+[  221.20s ->   226.78s] The Momentum compares the current closing price and the closing price end periods ago.
+[  227.30s ->   229.20s] So, this can be set by you.
+[  229.28s ->   234.44s] So, if you want it to be set 10 candles ago and you're on the one-minute chart, then that's going to be 10 minutes ago.
+[  234.44s ->   240.98s] Okay, so basically, if you have a strong move and then the next move, 10 candles away, is super strong,
+[  241.08s ->   245.12s] then the Momentum is obviously going to be big because there's a lot of distance in between.
+[  245.50s ->   246.74s] So, that's how it's calculated.
+[  247.20s ->   252.22s] So, you can read this on Momentum Indicator Trading Use, even though I talked about it some.
+[  252.66s ->   257.00s] You can use Crossover and Divergence with it, but I mainly just use the Momentum.
+[  257.56s ->   262.94s] So, that basically, if you want, I like to see how indicators are calculated.
+[  262.94s ->   265.88s] I like to know the math behind stuff, but that is just me personally.
+[  266.46s ->   271.64s] So, if you don't like to know the math, then I'm sorry for putting this in there and wasting your time.
+[  272.14s ->   275.42s] But if you want to read through this, I think that would be definitely beneficial.
+[  276.12s ->   279.20s] But Momentum Indicators, that's what it is.
+[  279.66s ->   286.52s] And another way that it helps you trade is, let's say, let's pull up a triangle breakout pattern, okay?
+[  286.52s ->   292.82s] So, if we pull up a good triangle breakout, let's pull up these two here, okay?
+[  292.88s ->   300.22s] For triangle breakouts, if you have a triangle breakout forming and you have the Momentum Indicator consolidating,
+[  300.60s ->   304.38s] you know that that is a confirmed triangle and that when it breaks, it will be huge, okay?
+[  304.46s ->   308.20s] Because the strength is dying down, pushing into a corner.
+[  308.60s ->   313.66s] And when something's being pushed into a corner over and over, it's like being pushed and pushed and pushed.
+[  313.66s ->   314.62s] You're going to fight back.
+[  314.98s ->   315.98s] So, that's what happened there.
+[  316.06s ->   318.84s] And if we look at this triangle, it's being consolidated into a corner.
+[  319.40s ->   323.88s] And from down here, the Momentum, it's beginning to consolidate along this period.
+[  324.22s ->   325.80s] So, obviously, we're going to have that break.
+[  326.30s ->   327.32s] And the same thing here.
+[  328.45s ->   328.75s] Oops.
+[  329.19s ->   331.75s] I'm going to have to somehow edit that out so you don't see that number.
+[  334.21s ->   336.41s] So, we have this triangle break.
+[  336.41s ->   339.33s] And then the Momentum starts to consolidate.
+[  339.65s ->   342.21s] And then, of course, when it consolidates, we have that strong break.
+[  342.21s ->   348.23s] So, the Momentum Indicator can be used to help you show when the momentum is strong,
+[  348.29s ->   350.35s] when the strength is strong, and in what direction.
+[  350.53s ->   352.93s] And also, it helps you trade the triangle patterns.
+[  353.29s ->   353.51s] All right.
+[  353.55s ->   354.69s] I hope you all learned a lot.
+[  355.07s ->   362.51s] If you want to contact me directly, please like the video if you can or subscribe.
+[  362.77s ->   363.57s] I post a lot.
+[  363.57s ->   367.09s] But if you want to comment, that would be cool.
+[  367.27s ->   368.67s] I would usually get to those.
+[  368.75s ->   373.57s] The fastest way to contact me would be to click on that Discord link below and message me.
+[  373.87s ->   374.15s] All right.
+[  374.65s ->   375.85s] I hope you all learned a lot.
+[  375.99s ->   378.63s] And now you all can use the Momentum Indicator.

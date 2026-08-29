@@ -1,0 +1,318 @@
+[    0.46s ->     9.72s] we've all heard it before right trading is just gambling an utterly outrageous statement from
+[    9.72s ->    15.60s] people who have no understanding of what probability and statistics not just in the lab
+[   15.60s ->    21.72s] in academia but in practice looks like in this video i'm going to prove to you mathematically
+[   21.72s ->    27.88s] that if you consider trading to be gambling then you also have to consider buying gas for your car
+[   27.88s ->    34.00s] buying groceries and anything similar to also be gambling to understand why this is the case we're
+[   34.00s ->    39.02s] going to look at random variables we'll look at stochastic processes we'll understand this idea of
+[   39.02s ->    44.48s] probabilistic statistical and distribution convergence we'll move out of the classroom
+[   44.48s ->    51.26s] then into the real world we'll look at this idea of uncertainty and what actual gambling looks like
+[   51.26s ->    56.76s] relative to a game of incomplete information then we'll actually take a look at this idea of buying
+[   56.76s ->    63.40s] groceries and trading in any case whether we're dealing with a random or an uncertain system
+[   63.40s ->    70.48s] nobody can predict what the outcome of any one event will be it's never safe to bet your entire
+[   70.48s ->    78.60s] portfolio value on just one event that's not how the trading space works the only event that is safe
+[   78.60s ->    85.00s] to bet your entire portfolio on every single time is access to my jupiter notebooks this jupiter notebook
+[   85.00s ->    89.26s] will be linked in the description below i will also post it to the quant guild library on github
+[   89.26s ->    93.86s] where you can find all of my jupiter notebooks and associated youtube videos along with all of
+[   93.86s ->    97.82s] the source code for my quant builds at the top of this jupiter notebook you'll notice some related
+[   97.82s ->   103.26s] quant guild videos applying probability and statistics to finance and trading this idea of time series
+[  103.26s ->   109.42s] analysis retail versus institutional trading trading versus investing this idea of accumulating expected
+[  109.42s ->   116.08s] value over time quant versus discretionary trading and of course busting three popular trading myths
+[  116.08s ->   122.26s] that these trading gurus love to propagate if you're unfamiliar with any of these ideas i highly
+[  122.26s ->   127.48s] recommend that you check these videos out first before tackling one like this moreover these videos
+[  127.48s ->   131.36s] certainly take a lot of effort to create so if you'd like to help support the channel so i can continue
+[  131.36s ->   136.80s] to create videos just like this one please like comment subscribe share it helps me out tremendously it is always
+[  136.80s ->   142.70s] greatly appreciated and if you'd like to master your quantitative skills check out quant guild.com
+[  142.70s ->   147.90s] maybe you come from a background in business economics computer science and aren't too sure where to get
+[  147.90s ->   153.58s] started on your quant journey maybe you're an aspiring quant or a working professional looking to sharpen
+[  153.58s ->   159.42s] your quantitative skills in any case quant guild is for you this is the platform that i wish i had
+[  159.42s ->   165.56s] when i was studying to become a quant we have over 90 quant lessons in math probability finance
+[  165.56s ->   171.06s] an adaptive practice engine that scales with your skill level so you can progress to more and more
+[  171.06s ->   177.66s] difficult topics with gamified rank based progress interview questions with fully worked solutions trading
+[  177.66s ->   186.14s] games courses from a to z in coding math probability statistics and more on the way and you can get
+[  186.14s ->   191.12s] started right now for free so if you'd like to help support the channel and master your quantitative
+[  191.12s ->   197.16s] skills check out quant guild.com without further ado let's get started by discussing this idea of a
+[  197.16s ->   203.66s] random and an uncertain system this is going to allow us to bridge the gap between theory and practice
+[  203.66s ->   209.42s] we can see exactly where things start to break down and where all of the misconceptions and
+[  209.42s ->   215.12s] misinterpretations come from we're going to start with this idea of a random variable and a stochastic
+[  215.12s ->   224.36s] process all a random variable is is a set of possible outcomes with associated probabilities or likelihoods
+[  224.36s ->   231.16s] of those specific events occurring so what i have here is a random variable x this is going to represent
+[  231.16s ->   238.10s] a dice roll this is a discrete uniform random variable we can define a random variable in terms of
+[  238.10s ->   244.18s] either its probability mass or density function its distribution function or its characteristic function that is
+[  244.18s ->   250.98s] effectively just the derivative and integral or the fourier transform of any of those objects once we
+[  250.98s ->   258.50s] have the definition then we can effectively see the probability or likelihood of different events we can draw
+[  258.50s ->   265.02s] them from that distribution so this brings us to the idea of a population versus an empirical
+[  265.02s ->   272.74s] distribution what i have on the left here is the population distribution of a dice roll everything has the same
+[  272.74s ->   278.00s] probability of occurring one through six and on the right here what i'm going to do is i'm going to
+[  278.00s ->   285.44s] roll a couple of die and i'm going to record the results and what you see on the right is a sample it doesn't
+[  285.44s ->   292.70s] perfectly reflect the population distribution and that's because every sample is effectively random we don't
+[  292.70s ->   298.42s] know what the outcome of any one dice roll is going to be but what we record on the right here will
+[  298.42s ->   305.78s] eventually look like the probability mass function that is this population distribution so long as we
+[  305.78s ->   314.16s] have enough dice rolls that is a very important idea to understand this is a small sample if we increase the
+[  314.16s ->   322.28s] sample size then eventually these blue bars will look like these green bars but that's only the case
+[  322.28s ->   330.94s] in theory in the lab when we move on to the real world we'll see when we model things as random events
+[  330.94s ->   339.06s] that will not be the case probabilities then in the random system sense literally represent a frequency
+[  339.06s ->   348.22s] of outcomes in other words if i was to roll a dice 1000 times on average one sixth of the time i would
+[  348.22s ->   355.50s] see a six then one sixth of the time i would see five four three and so on and so forth that is the
+[  355.50s ->   365.14s] interpretation of probability that we use in the context of random variables this is also why we know
+[  365.14s ->   372.32s] that the distribution the empirical distribution will eventually converge to the population or the
+[  372.32s ->   379.80s] theoretical distribution that is given to us by the law of large numbers this is the idea of
+[  379.80s ->   387.46s] statistical convergence all random variables have associated statistics a mean a variance skewness
+[  387.46s ->   392.96s] kurtosis higher order moments we can generate those with a moment generating function or we can
+[  392.96s ->   400.16s] apply analytical formula outright in any case the law of large numbers is effectively telling us if we look
+[  400.16s ->   407.36s] at the statistics associated with the empirical distribution they will converge to the population
+[  407.36s ->   416.04s] value what does that actually look like well if i roll a large number of dice then eventually the mean
+[  416.04s ->   424.04s] is going to converge to the theoretical value of 3.5 that is not by accident that is given to us by
+[  424.04s ->   431.90s] the law of large numbers it's ensuring statistical convergence now if the mean converges then so will
+[  431.90s ->   437.80s] the variance so will the skewness and so will the kurtosis they're all functions of a mean so if they are
+[  437.80s ->   445.48s] finite and the mean converges as we see in this particular example then all of the other statistics will converge
+[  445.48s ->   452.12s] as well now that's great but what does that have to do with probabilities and distributions right we're
+[  452.12s ->   459.48s] talking about convergence of these sample statistics to their population value that's effectively what
+[  459.48s ->   467.24s] we see here this horizontal line is at 3.5 that is the population mean value and the cumulative mean
+[  467.24s ->   473.08s] the cumulative empirical mean is converging to that population value but that says nothing of the
+[  473.08s ->   479.56s] distribution that says something about the statistics of the distribution the mean the variance the skewness the
+[  479.56s ->   486.52s] kurtosis how do we know that the empirical distribution and probabilities associated with it
+[  486.52s ->   493.72s] will converge to the population distribution well that's also given by the law of large numbers and
+[  493.72s ->   500.76s] that's because we can represent any event outcome as a Bernoulli random variable a Bernoulli random variable is
+[  500.76s ->   507.08s] just a binary random variable you can think of like a coin flip zero or one they're independent trials
+[  507.08s ->   515.16s] and the expected value the mean of a Bernoulli random variable is just a probability and if the mean
+[  515.16s ->   520.92s] converges and the mean is a probability then that means the probability converges and that's what
+[  520.92s ->   527.64s] we're seeing here we're saying effectively if we continue to sample from this population distribution
+[  527.64s ->   535.08s] eventually the empirical distribution will converge to the population one not just the distribution itself
+[  535.08s ->   542.60s] but also probabilities associated with different events drawn from that population that is an absolutely
+[  542.60s ->   549.16s] critical idea especially in the context of monte carlo simulation if there's some sort of complicated
+[  549.16s ->   555.48s] composite event that you're trying to find the probability of you can just simulate it and then you can
+[  555.48s ->   564.04s] find an approximate probability for that outcome by this construction that is the law of large numbers g is
+[  564.04s ->   569.00s] roaming convergence law of large numbers what's the point well the point is if you understand these
+[  569.00s ->   575.56s] mathematical and statistical objects you can use them to inform your decision making in randomness
+[  575.56s ->   580.52s] to accumulate wealth and i have a market making example of this for you here what we're going to
+[  580.52s ->   586.12s] do is we're going to make a market on a dice roll effectively what that means is i'm going to allow
+[  586.12s ->   592.76s] people to buy or sell at a certain price i'm going to quote a bid offer and then the realization so
+[  592.76s ->   600.92s] the outcome of my dice roll will dictate pnl so for example if i sell to somebody at one and the outcome
+[  600.92s ->   610.60s] is then six they make five bucks all right now what do i know about a dice roll well each outcome itself
+[  610.60s ->   620.36s] is random but based on what we saw above here i know that the mean value is 3.5 i also know that the
+[  620.36s ->   628.60s] empirical mean will converge with probabilistic certainty to that theoretical value so what can
+[  628.60s ->   635.32s] i do well i can apply this knowledge here and use it to quote a bid offer so what i'm going to do is
+[  635.32s ->   642.20s] i'm going to put that theoretical mean value in the center and i am going to quote a spread around it
+[  642.20s ->   650.12s] and effectively every time i engage in a transaction i am going to be up for an opportunity to collect
+[  650.12s ->   657.48s] that edge every single trade will allow me then to accumulate that edge over time so what do i do i
+[  657.48s ->   662.84s] quote a bid offer i'm going to effectively have four and two here so somebody can buy at four they can
+[  662.84s ->   670.76s] sell at two that is my dice market now if i run the statistics then what's going to happen well i can
+[  670.76s ->   678.76s] apply the formula here for expected value or mean and i can see that the mean is what it's 0.5 so i
+[  678.76s ->   686.44s] have a positive edge per trade what do we know well the law of large numbers will ensure that each
+[  686.44s ->   695.08s] empirical outcome will eventually converge then to this theoretical one and if i run this simulation for
+[  695.08s ->   700.60s] you here this is going to be a simulation of the dice market that we are making i'm going to have
+[  700.60s ->   706.20s] people arrive they're going to buy they're going to sell and you can see i'm going to generate a
+[  706.20s ->   712.04s] whole bunch of wealth paths if i was to quote this bid offer and what you see here is i don't get to
+[  712.04s ->   718.76s] choose which sample path i walk everything is effectively still random remember we're saying that
+[  718.76s ->   725.80s] in the long run if i continue to draw from the same distribution everything will converge to what that
+[  725.80s ->   731.72s] theoretical path value and that's what you're seeing here is the empirical paths are converging
+[  731.72s ->   738.36s] too they're tracking that theoretical path and over time i'm going to continue to accumulate wealth
+[  738.36s ->   745.00s] that is exactly the purpose of these random variables and these statistics i know for certain
+[  745.00s ->   753.40s] that if i continue to make this market i will statistically continue to generate wealth over a series of
+[  753.40s ->   758.84s] trades a few important considerations for you just because you have an edge it doesn't mean that you
+[  758.84s ->   763.64s] are going to automatically be making money in every case you can see that our sample path here that we
+[  763.64s ->   770.12s] walked actually went negative at one point in the long run we will accumulate wealth but in the short
+[  770.12s ->   777.24s] run you can still blow out it's a very important concept moreover this is not a remark on ergodicity the
+[  777.24s ->   783.24s] time versus ensemble average i have a video dedicated to this topic in the context of optimal bet sizing
+[  783.56s ->   788.28s] additive versus multiplicative bets i'll leave a link to it in the description below if you're interested
+[  788.28s ->   795.16s] in that topic again this is not a course or a lesson on stochastic processes this is simply an application
+[  795.16s ->   802.52s] of probability and statistics now lastly probably one of the more important ideas here is that this
+[  802.52s ->   810.28s] convergence is only guaranteed in a random system in other words the dice roll is not going to change over
+[  810.28s ->   816.04s] time that's what we talked about up here with the idea of the empirical convergence and the statistical
+[  816.04s ->   822.76s] and probabilistic convergence this market that we're making isn't going to change that right there is what
+[  822.76s ->   830.92s] ensures our theoretical profitability in the long run this is not the case in reality this is where most of
+[  830.92s ->   836.60s] the confusion comes from for both students and professionals in this space when we go about applying
+[  836.60s ->   844.36s] these models in practice we use the same constructs we still have distributions we still have statistics
+[  844.36s ->   852.92s] and probabilities but we no longer have this idea of convergence and that's because unlike with a dice
+[  852.92s ->   858.36s] roll where everything is fixed we can keep rolling the dice it's not going to change things change over
+[  858.36s ->   865.08s] time and this is where the idea of non-stationarity starts to come into play this is what we would call
+[  865.08s ->   871.24s] an uncertain system i'll play for you this animation here and what you'll see is the difference between
+[  871.24s ->   877.24s] the two on the left i'm effectively observing the same thing i observed in the the market making example
+[  877.24s ->   883.08s] above right for that dice market we have this theoretical expected value line i don't get to choose
+[  883.08s ->   888.92s] the sample path that i walk but they're all tracking that theoretical line and that's because there's
+[  888.92s ->   896.04s] convergence but on the right here what do we see we see a whole bunch of crazy sample paths
+[  896.04s ->   902.76s] and there is no convergence at all some do very well some do very poor and that's because the overall
+[  902.76s ->   909.72s] expected value of the process is changing and it's going to change over time and it's never going to
+[  909.72s ->   915.64s] converge you can think of this roughly in the context of stock returns as the idea that what
+[  915.64s ->   923.72s] nvidia is an entirely different company now than it was in what early 2000s moreover the entire
+[  923.72s ->   929.72s] environment was different the macro environment the administration so on and so forth there is no
+[  929.72s ->   935.80s] convergence and that's because the population distribution the data generating distribution is
+[  935.80s ->   945.08s] always changing and that is a big problem for our quant models and that is also why these probability
+[  945.08s ->   953.32s] statistics and distributions do not converge and it's also why we can't just have a fixed trading strategy
+[  953.32s ->   960.20s] that is not how the space functions there is no one golden goose trading strategy that will indefinitely
+[  960.20s ->   966.76s] print money the space is dynamic it's constantly changing that is effectively why everybody still
+[  966.76s ->   973.56s] has a job knowing now the difference between a random system and probabilistic statistical and distribution
+[  973.56s ->   981.00s] convergence and an uncertain system the lack thereof we can talk about this idea of gambling what it
+[  981.00s ->   989.32s] actually is the idea of a game of chance versus a game of incomplete information now in any case
+[  989.32s ->   998.28s] we will never be able to predict the outcome of one event that is never our goal our goal is instead
+[  998.28s ->  1005.80s] to figure out if we can act with positive expected value the expected value in any of these systems
+[ 1005.80s ->  1012.12s] is going to dictate the trajectory of our wealth path so again i don't know what the outcome is going to be
+[ 1012.12s ->  1018.92s] in any case but if i'm acting with positive expected value just as i was in that market making example
+[ 1018.92s ->  1026.92s] above we will accumulate that wealth over time that's this idea of accumulating expected value ev or edge
+[ 1026.92s ->  1034.04s] if we're acting with negative expected value then we will be losing money over time the question you should
+[ 1034.04s ->  1041.96s] be asking yourself now is what dictates then our expected value that is going to be either the system
+[ 1041.96s ->  1051.00s] itself that we are interacting with or our actions this brings us to the idea of a policy function
+[ 1051.00s ->  1059.24s] a policy function is a collection of actions that we can take based on our current state in efforts to
+[ 1059.24s ->  1065.88s] maximize our expected value what does this actually look like i'm going to show you two examples here i have
+[ 1065.88s ->  1073.40s] a nice animation for you i will play both an optimal policy function and a sub optimal policy function
+[ 1073.40s ->  1079.56s] what you will find is in this case i'm acting with an optimal set of actions that influences my expected
+[ 1079.56s ->  1086.52s] value trajectory in the positive direction again i don't get to dictate which sample path i walk but over
+[ 1086.52s ->  1094.28s] time i will accumulate that edge i will be generating wealth if i act sub optimally as i do in this bottom
+[ 1094.28s ->  1102.12s] chart you will see that i accumulate losses over time that set of actions is dynamic it is time variant
+[ 1102.12s ->  1110.76s] this is not a trading strategy this is not one simple set of steps this is a series of actions
+[ 1110.76s ->  1116.76s] i can go long short any instrument i choose i could trade options i could trade futures i could trade options
+[ 1116.76s ->  1124.84s] on futures this isn't just one input output this is a collection of actions that i can choose to make
+[ 1124.84s ->  1132.20s] informed decisions in the face of uncertainty and maximize my expected value sounds abstract it is
+[ 1132.20s ->  1139.16s] this is a very high dimensional space this itself is an abstraction on the left what i'm showing you here
+[ 1139.16s ->  1146.52s] is what the expected value per play this function itself has concavity that is to say it's
+[ 1146.52s ->  1153.48s] very easy to always act with what negative ev negative edge negative expected value
+[ 1153.48s ->  1161.64s] just because it is very difficult to find this optimal policy function it does not mean that the
+[ 1161.64s ->  1172.12s] entire space in itself is gambling that is the main purpose of this chart our actions may or may not
+[ 1172.12s ->  1179.00s] influence our expected value in some sort of system that set of actions is dictated by
+[ 1179.56s ->  1186.28s] our policy function let's give a concrete example of a policy function we already have one in our market
+[ 1186.28s ->  1193.56s] making example our policy is to quote what two at four that's how we made our market for the dice roll
+[ 1194.20s ->  1199.24s] and that is an example of a policy function but is it the optimal policy function well no
+[ 1199.80s ->  1206.84s] because really what we're doing is we're acting somewhere above this x axis here but we're not at
+[ 1206.84s ->  1213.80s] the optimal policy we can quote an even more aggressive spread and we can have a stronger expected
+[ 1213.80s ->  1218.92s] value but what's going to happen if we quote a really wide spread are we going to have anybody
+[ 1218.92s ->  1226.12s] transacting with us no and that's really hard to account for functionally so this entire space hopefully
+[ 1226.12s ->  1232.68s] you're starting to get the idea is about acting optimally but choosing a series of actions not
+[ 1232.68s ->  1239.48s] necessarily in a fixed capacity but in a time variant capacity to enable the accumulation of this edge it is
+[ 1239.48s ->  1246.60s] not a fixed space if you go on interactive brokers and you look at the bid offer for apple is it fixed
+[ 1246.60s ->  1252.52s] no it's changing literally every single second that is how markets are made things change over time
+[ 1252.52s ->  1257.48s] we're dealing with this non-stationarity this is where all of the pieces of the puzzle start to
+[ 1257.48s ->  1263.72s] fit together understanding now that our actions are dictated by some sort of policy function and
+[ 1263.72s ->  1269.80s] that policy function can effectively influence our expected value we can talk about this idea of a game
+[ 1269.80s ->  1278.20s] of chance and what gambling actually is gambling occurs anytime that you willfully and unnecessarily
+[ 1278.20s ->  1286.36s] engage with a system that has a fixed negative edge against you this is not an uncertain system there is
+[ 1286.36s ->  1295.24s] statistical convergence we are operating with a random system some examples roulette slots lottery tickets
+[ 1295.24s ->  1303.24s] craps all of those have statistical convergence you are guaranteed if you continue to engage with that
+[ 1303.24s ->  1311.08s] system to lose all of your money regardless of the actions that you take now if we take a look at an
+[ 1311.08s ->  1317.88s] example of what this looks like we have two charts one on the left where we have an unconditional expected
+[ 1317.88s ->  1325.24s] value and one on the right where we have a conditional expected value and we're acting optimally it doesn't
+[ 1325.24s ->  1331.40s] matter in either case if we choose an optimal set of actions or a suboptimal set of actions we will
+[ 1331.40s ->  1337.00s] statistically eventually lose all of our money mathematically what does this look like
+[ 1337.00s ->  1343.56s] the unconditional expected value is equivalent to the conditional expected value even if we have
+[ 1343.56s ->  1351.80s] this magical pi star function that is our optimal policy that is what it means to gamble you are basing
+[ 1351.80s ->  1359.80s] your wealth path trajectory solely on luck if you want to argue for idiosyncratic instances like martin
+[ 1359.80s ->  1367.32s] galing roulette you can that's banned at pretty much every single casino the point here is there is nothing that you can do
+[ 1367.32s ->  1375.80s] to influence the trajectory of your wealth path games of incomplete information are fundamentally different
+[ 1375.80s ->  1385.48s] your policy function dictates the trajectory of your wealth path and how much wealth you accumulate over time
+[ 1385.48s ->  1392.76s] crucially in these systems we don't observe convergence we don't have this notion of the law of large
+[ 1392.76s ->  1399.64s] numbers so unlike with the case of gambling where there is statistical convergence you are guaranteed to lose
+[ 1399.64s ->  1405.08s] all of your money if you continue to engage with that system in the case of a game of incomplete
+[ 1405.08s ->  1413.56s] information everything changes over time including that optimal policy function some examples of this
+[ 1413.56s ->  1420.68s] include the idea of election betting sports betting poker trading and grocery shopping okay more
+[ 1420.68s ->  1429.08s] specifically the unconditional expectation or the conditional on a random action is not equivalent to
+[ 1429.08s ->  1437.64s] the expectation conditional on our policy function whether it be optimal or suboptimal in other words
+[ 1437.64s ->  1447.64s] our actions influence the trajectory of our wealth path unlike in a game of chance otherwise known as gambling
+[ 1447.64s ->  1453.88s] what i have here is a chart to illustrate this on the left we have an ineffective policy function we're
+[ 1453.88s ->  1461.08s] accumulating losses but on the right we have an effective policy function and we are accumulating edge
+[ 1461.08s ->  1468.76s] accumulating expected value or this wealth over time some crucial considerations for you here acting with
+[ 1468.76s ->  1475.16s] an optimal policy function or even an effective policy function may be easy or difficult depending on the
+[ 1475.16s ->  1482.20s] system that you are engaging with but the complexity of your policy function outright and its time variance
+[ 1482.20s ->  1491.40s] does not make the system or the game of incomplete information gambling outright there is no fixed negative edge
+[ 1491.40s ->  1500.04s] against you your decisions optimal or suboptimal directly influence your wealth path i can always raise a huge
+[ 1500.04s ->  1508.60s] hand in poker and fold i can always trade an indefinite number of times to accumulate an absurd amount of
+[ 1508.60s ->  1516.36s] transaction costs i can always buy things at the grocery store that i do not need i can buy a tank of gas
+[ 1516.36s ->  1524.36s] and dump it all out i can act sub optimally in all of those systems in fact there is a stochastic or uncertain
+[ 1524.36s ->  1531.16s] component to grocery shopping and buying a tank of gas as well when you leave your house you do not know
+[ 1531.16s ->  1537.48s] what the price of the food that you're going to buy or the price of gas at the gas station is going to be
+[ 1537.48s ->  1542.52s] outright that is the market price that's the spot price effectively it's the same idea if you go on
+[ 1542.52s ->  1546.84s] the exchange and you look at the apple stock you know what the price is that's the spot price you
+[ 1546.84s ->  1550.84s] don't know what it's going to be next week you don't know if you would have been better off waiting
+[ 1550.84s ->  1555.48s] maybe there's going to be a coupon maybe there's a discount that is precisely the point that i'm trying
+[ 1555.48s ->  1562.68s] to make here just because in some cases it's easier to act optimally than it is in other cases
+[ 1562.68s ->  1568.84s] it doesn't make the entire system gambling let's look at our wealth path buying groceries with a
+[ 1568.84s ->  1574.12s] simple policy function what i have here is a policy function i am going to effectively buy
+[ 1574.12s ->  1579.88s] the only things that i need from the store at the lowest price possible that is my policy
+[ 1579.88s ->  1586.20s] function and i am going to attempt to accumulate this positive expected value that is the cumulative
+[ 1586.20s ->  1591.56s] savings as i continue to engage with transactions at the grocery store what you're going to see on the
+[ 1591.56s ->  1598.44s] left here is the grocery cost function i'm trying to get as low as possible on this theoretical cost
+[ 1598.44s ->  1604.76s] function every single trip to the store that i make and the lower i get the more theoretical savings that
+[ 1604.76s ->  1610.84s] i will accumulate what you're going to observe here is i'm going to be darting around the cost function
+[ 1610.84s ->  1618.28s] that's because what i end up actually buying is going to be a combination of where i go the discounts
+[ 1618.28s ->  1624.60s] that are running that day and all of the other available stores whether it's online that i could
+[ 1624.60s ->  1629.48s] have purchased those goods at and what you're going to see on the right here is you're going to see a
+[ 1629.48s ->  1637.88s] series of sample paths and what i want you to focus on now is this purple dashed line that is now the
+[ 1637.88s ->  1647.40s] theoretical expected value what do you notice it's it itself is stochastic it is random effectively when we
+[ 1647.40s ->  1653.70s] find this pi star function and i defined it above here as the arg max of the expected value this
+[ 1653.70s ->  1664.02s] optimal policy function is not maximizing the value of the path outright it's maximizing the expected
+[ 1664.02s ->  1671.14s] value if i act with the optimal policy function it would have yielded this path here it's not just
+[ 1671.14s ->  1676.90s] going to yield the absolute best path outright again we can't choose the path we walk we're trying to
+[ 1676.90s ->  1684.34s] maximize or optimize for expected value we want to be correct on average that's how we accumulate
+[ 1684.34s ->  1690.58s] wealth we act with positive ev we make small incremental bets small incremental decisions and
+[ 1690.58s ->  1696.10s] accumulate that edge over time we don't know what the outcome of any one of these trips is going to be
+[ 1696.10s ->  1701.62s] are we going to be saving a whole bunch of money this trip or are we overpaying we don't know we will
+[ 1701.62s ->  1708.02s] never know that outright the same way we will never know the outcome of one trade instead we're trying
+[ 1708.02s ->  1713.54s] to act optimally so what i'm going to do is i'm going to instill this policy function and in this case
+[ 1714.10s ->  1720.98s] it's fixed but maybe it shouldn't be fixed maybe it should be time variant they're running a deal now
+[ 1720.98s ->  1728.02s] right so i'm not just going to buy the minimum amount that i need i'm going to buy more that'll allow
+[ 1728.02s ->  1736.02s] me to save more on future trips that is the perfect example of a time variant policy function in this
+[ 1736.58s ->  1744.34s] framework and this exact same logic applies to suboptimal actions and trading critically again
+[ 1744.34s ->  1749.54s] here there is no convergence right this entire system is a game of incomplete information our
+[ 1749.54s ->  1755.38s] policy function is going to dictate our wealth path trajectory and that is necessarily going to change
+[ 1755.38s ->  1763.30s] over time which is what makes the space so elusive so i ask you this simple question now is grocery
+[ 1763.30s ->  1770.42s] shopping gambling i can always act suboptimally can't i i can always just accumulate a massive
+[ 1770.42s ->  1777.14s] amount of spend on things i don't need i can waste money i can always do this that's very easy i can come up
+[ 1777.14s ->  1785.14s] with a terrible policy function and i can lose a ton of money and i can do that trading i can do that in
+[ 1785.14s ->  1790.98s] poker i could do that sports betting election betting but really at the end of the day your policy
+[ 1790.98s ->  1796.74s] function dictates the wealth path trajectory there is no fixed negative edge against you you're not
+[ 1796.74s ->  1803.62s] gambling you're making poor decisions in the face of uncertainty fundamentally missing the purpose of
+[ 1803.62s ->  1810.34s] this idea of accumulating positive expected value over time moving to the trading space we observe the
+[ 1810.34s ->  1814.98s] same lack of convergence right when we have a random system we have the law of large numbers
+[ 1814.98s ->  1821.22s] statistics probabilities distributions converge when it comes to uncertain systems games of incomplete
+[ 1821.22s ->  1826.18s] information we don't have that luxury unlike of course in the case of gambling where things do
+[ 1826.18s ->  1831.14s] converge and there's a negative fixed edge against you when we're looking at the trading space now we
+[ 1831.14s ->  1837.30s] think of a policy function and the associated wealth path trajectory what you can see here is we're not
+[ 1837.30s ->  1843.14s] going to want to fix a policy function you can see sometimes certainly it's optimal sometimes it's
+[ 1843.14s ->  1850.18s] positive ev other times it's net zero ev or even negative and you can see the consequence in our wealth
+[ 1850.18s ->  1857.62s] paths on the right side here we're accumulating edge on some trades on others it's net zero or even
+[ 1857.62s ->  1863.78s] negative ev and you can see consequently in our wealth path that it's just effectively flat we can't just
+[ 1863.78s ->  1869.54s] fix our policy function we can't come up with some sort of set of actions an optimal set of actions
+[ 1869.54s ->  1875.46s] today that will for certain work one year from now that's not how this space functions we need to
+[ 1875.46s ->  1883.22s] constantly and iteratively revisit our models update our assumptions to make optimal decisions in the face of
+[ 1883.22s ->  1891.94s] uncertainty to accumulate that expected value that is not gambling there is no fixed edge against you
+[ 1891.94s ->  1898.26s] and if you consider this to be gambling then you would also have to consider grocery shopping to be
+[ 1898.26s ->  1902.42s] gambling too long didn't watch here is your executive summary random variables define a set of
+[ 1902.42s ->  1908.02s] possible outcomes with accompanying probabilities and likelihoods by the law of large numbers
+[ 1908.02s ->  1915.38s] probability statistics and distributions converge we tend to model uncertain systems or events
+[ 1915.38s ->  1921.62s] non-stationary events or processes with random variables or models that use them functionally
+[ 1921.62s ->  1928.34s] even though in practice these quantities lack convergence this leads to a lot of confusion
+[ 1928.34s ->  1933.78s] about the efficacy of statistics and the real world for both students and professionals alike the
+[ 1933.78s ->  1940.02s] purpose of models isn't to perfectly replicate what we're observing in the real world but rather to
+[ 1940.02s ->  1946.34s] aid in making informed decision making in the face of uncertainty games of chance and games of
+[ 1946.34s ->  1952.18s] incomplete information are examples of systems that both impact our wealth over a series of plays or
+[ 1952.18s ->  1959.30s] time in either case we never know what the outcome of any one event is the expected value of the system
+[ 1959.30s ->  1967.86s] is going to dictate the overall trajectory of our wealth path and sometimes our actions dictated by a policy
+[ 1967.86s ->  1975.54s] function may influence the trajectory of our wealth path in a game of chance it does not that is where
+[ 1975.54s ->  1982.98s] gambling comes from and all of the negative connotations rightfully so if we engage willfully in a game of
+[ 1982.98s ->  1990.34s] chance with a fixed negative edge against us there's nothing we can do statistically we will lose all of our
+[ 1990.34s ->  1996.50s] money the only optimal action to take is to not engage with that system versus a game of incomplete
+[ 1996.50s ->  2003.06s] information where our actions where our actions our optimal actions can influence the trajectory of our
+[ 2003.06s ->  2012.42s] wealth path over time just because there is difficulty in optimizing that policy function that set of actions
+[ 2012.42s ->  2019.86s] that will influence our wealth path it does not make that system gambling it is a game of incomplete
+[ 2019.86s ->  2026.90s] information we can make optimal choices to adjust the wealth path trajectory if we're going shopping for
+[ 2026.90s ->  2035.14s] gas or groceries trading playing poker sports betting so on and so forth we can always accumulate
+[ 2035.14s ->  2041.46s] an infinite sum of transaction costs we can buy things we don't need we can be wasteful just because
+[ 2041.46s ->  2048.98s] you can act sub optimally it doesn't mean the entire space is gambling that is the purpose of this
+[ 2049.54s ->  2053.86s] video some future topics technical videos and other discussions to look forward to this idea of
+[ 2053.86s ->  2060.82s] advanced markov chains breaking out the ipad pretty much a lecture in stochastic processes class this idea
+[ 2060.82s ->  2064.90s] of geometric brownie motion we've already talked about standard brownie emotion and the affine
+[ 2064.90s ->  2070.10s] transformation that arithmetic process i'd like to extend to this multiplicative process and then get
+[ 2070.10s ->  2075.46s] into the black tools partial differential equation we could talk about the analytical and numerical solution
+[ 2075.46s ->  2081.30s] and then we can start to extend into this idea of the greeks and operating an automated delta neutral
+[ 2081.30s ->  2086.18s] trading system with interactive brokers i'll leave a link to interactive brokers in the description if
+[ 2086.18s ->  2092.26s] you'd like to get started i use them for all of my quant builds i'd also like to do this video on
+[ 2092.26s ->  2098.66s] kalman filters and non-stationarity we talked about that in this video an uncertain system is dealing with
+[ 2098.66s ->  2106.10s] this issue of non-stationarity it's a big problem in quant modeling there are things we can do to
+[ 2106.10s ->  2111.86s] model exogenous factors that could impact the mean of some sort of process that we're analyzing and i
+[ 2111.86s ->  2117.06s] discussed that in my video on time series analysis i'll leave a link to it in the description below
+[ 2117.06s ->  2123.46s] if you would like to check out that topic i'd also like to maybe do more qualitative videos most popular
+[ 2123.46s ->  2128.02s] quant models for informed trading buy side versus sell side quants i've toyed with this idea of a
+[ 2128.02s ->  2133.46s] quant roadmap let me know in the comments below what you'd like to see next that's gonna do it for
+[ 2133.46s ->  2138.74s] this video on proving that trading is not gambling with math i hope you enjoyed i hope you learned
+[ 2138.74s ->  2142.90s] something this video certainly took a lot of effort to create so if you enjoyed it and you'd like to see
+[ 2142.90s ->  2147.78s] more like it in the future please like comment subscribe share again it helps me out tremendously it is
+[ 2147.78s ->  2154.58s] always greatly appreciated check out quantguild.com to master your quantitative skills other than that
+[ 2154.58s ->  2159.22s] thank you so much for watching and i will see you in the next video

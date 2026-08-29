@@ -1,0 +1,186 @@
+[    0.46s ->     6.58s] When it comes to the pricing of financial derivatives, whether it be an option contract
+[    6.58s ->    12.56s] or some contract with a more complicated payout structure, it's hard to think of something more
+[   12.56s ->    19.42s] important than Ito's Lemma in this space. And the reason for that is because the payout function
+[   19.42s ->    26.40s] of these contracts are driven by some sort of underlying asset. And typically that underlying
+[   26.40s ->    32.34s] asset, whether it be a stock or something else, is usually modeled as a stochastic differential
+[   32.34s ->    39.52s] equation. That is, the price path evolves randomly throughout time. In the context of a regular
+[   39.52s ->    45.64s] differential equation, we need the idea of a derivative. The big difference between a
+[   45.64s ->    51.62s] differential equation and a stochastic differential equation is we have to deal with this idea of
+[   51.62s ->    57.48s] randomness. In this video, I want to walk through Ito's Lemma. I want to clearly explain the
+[   57.48s ->    62.74s] difference between the traditional derivative and this idea of Ito calculus. I'm going to do this
+[   62.74s ->    67.76s] graphically, going to do this as explicitly as possible. Hopefully by the end of the video,
+[   67.76s ->    73.92s] you'll understand why we go about deploying Ito's Lemma to solve for this differential of a time
+[   73.92s ->    79.50s] dependent function of a stochastic process. Let's start with this idea of the derivative from
+[   79.50s ->    85.46s] traditional calculus. So the derivative is defined in terms of a limit, and this limit definition can
+[   85.46s ->    91.06s] be used to prove all sorts of useful theorems, from the power rule to the product rule, so on and so
+[   91.06s ->    97.10s] forth. And typically, when we first learn about the derivative, we learn about it in the context of
+[   97.10s ->   103.20s] instantaneous rate of change and the slope of a tangent line. So I've just gone about plotting the
+[  103.20s ->   109.40s] derivative of this very simple function, x squared, and at this point, the derivative gives us the slope
+[  109.40s ->   115.94s] of the tangent line, the instantaneous rate of change. But the derivative is so much more than
+[  115.94s ->   121.54s] that in traditional calculus. We can solve all sorts of problems using it. We can solve differential
+[  121.54s ->   128.36s] equations, optimization problems, just to name a few. But this idea of a derivative starts to break down
+[  128.36s ->   134.54s] when we introduce the idea of randomness. And the reason for that is because when we have randomness,
+[  134.54s ->   139.36s] we're saying that there's some sort of random variable that follows a distribution with an
+[  139.36s ->   146.14s] expectation and a variance. If we make the same assumptions about the deterministic functions that
+[  146.14s ->   152.64s] we're operating on on the stochastic functions that we're operating on, that is a function of a random
+[  152.64s ->   158.60s] variable, then things aren't going to add up. And we're going to see why in a moment. Before we talk about
+[  158.60s ->   164.36s] this idea of calculus with randomness, we need to understand a differential and a Taylor series expansion.
+[  164.54s ->   173.36s] A differential is very simply just a very small change. And critically, it's non-zero. It's a small
+[  173.36s ->   180.00s] change. Those are not the same thing. So what I've done is I've written explicitly out what this small
+[  180.00s ->   187.70s] change is. That is this dx term. That is the differential. And I'm saying that it's equal to x plus delta x
+[  187.70s ->   196.16s] minus x. So what happens if I plug in zero for delta x? Well, we don't have a small change anymore.
+[  196.52s ->   203.98s] We just have zero, right? It's going to be x minus x. That is not the idea of a differential. We're saying
+[  203.98s ->   213.44s] as delta x approaches zero, it follows that dx is also going to approach zero. It represents an
+[  213.44s ->   220.26s] infinitely small change, but it's not precisely zero. Otherwise, mechanically, it wouldn't work
+[  220.26s ->   227.00s] as intended. So now that we acknowledge that dx is a differential, it represents an infinitely small
+[  227.00s ->   233.40s] change, we can move on to the Taylor series and better understand why it functions the way it does.
+[  233.76s ->   238.66s] Before we do that, I've plotted out this differential to show you this idea. That is,
+[  238.66s ->   245.58s] this delta x term, as it gets closer and closer to zero, we can see this blue line, that is this
+[  245.58s ->   255.10s] dx term, this differential, also approach zero. But very critically, this dx term will never actually be
+[  255.10s ->   263.32s] zero. Delta x is approaching zero. Moreover, dx is also approaching zero, representing a very, very small
+[  263.32s ->   269.44s] change that will never precisely be zero. Now that we understand the idea of a differential, we need to
+[  269.44s ->   276.10s] consider this Taylor series expansion. And the Taylor series expansion is going to confirm what we
+[  276.10s ->   282.82s] suggested earlier about the derivative. But it's very important to make the distinction between the
+[  282.82s ->   291.22s] linear approximation that is the derivative, and the actual functions change at that particular point.
+[  291.22s ->   298.12s] What I mean by this is, let's take a look at this Taylor expansion here. We have f of x plus some
+[  298.12s ->   308.48s] small change is equal to f of x plus f prime of x times dx plus one half second derivative of f of x
+[  308.48s ->   318.48s] times dx squared. Now what I'm not saying is I'm not saying that these terms are negligible in the context of
+[  318.48s ->   325.38s] the change in function value at x plus dx. That is not what I'm saying at all. If you have to rewatch
+[  325.38s ->   331.86s] that portion of this video 10 times to understand it, please do. Because here, we're saying that this
+[  331.86s ->   341.26s] precise change in the function is equal to this infinite series of function derivatives, multiplied by
+[  341.26s ->   348.06s] some differential, maybe a higher order differential. And that is precisely true. But we're
+[  348.06s ->   354.18s] interested in the linear approximation, the slope of the tangent line given by the derivative, we're
+[  354.18s ->   360.56s] not interested in this precise change, we're interested in this first derivative. So what we
+[  360.56s ->   368.46s] can do is we can take this Taylor expansion, and we can go ahead and plug it in to the definition of a
+[  368.46s ->   375.44s] derivative. And what you'll see here is if we plug in this Taylor series expansion into the definition of a
+[  375.44s ->   381.88s] derivative, we have this limit here, and it's the limit as dx approaches zero. And what you'll see
+[  381.88s ->   389.38s] very clearly is if we plug in this expansion, then f of x cancels out with f of x, and we're left with
+[  389.38s ->   396.96s] this limit as dx approaches zero, we can divide out the dx from this first order term, the second order
+[  396.96s ->   404.20s] term, and so on. And then we're just going to be left with the limit as dx approaches zero of f prime of x
+[  404.20s ->   412.24s] plus one half second derivative of f times this differential term, but we haven't applied the
+[  412.24s ->   418.12s] limit yet. So when we apply the limit, you'll see that we actually just end up with the derivative.
+[  418.32s ->   425.70s] So what's happening here? Well, this is confirming the idea that the higher order terms are going to
+[  425.70s ->   433.04s] become negligible as the dx, the differential, becomes arbitrarily small. That's exactly what we see
+[  433.04s ->   438.70s] here. We're saying, okay, if we have this Taylor expansion, we plug it into the definition of a
+[  438.70s ->   445.03s] derivative, you can see that the limit as the differential approaches zero, the higher order
+[  445.03s ->   449.67s] terms, that is the second derivative, third derivative, so on and so forth, will drop out
+[  449.67s ->   456.39s] because you just plug in zero for this differential for taking this limit, and you end up with just the
+[  456.39s ->   463.57s] original derivative. So this is probably the most complicated component of this video, but this is
+[  463.57s ->   469.75s] confirming everything that we were trying to propose based on the idea of a differential. That is, in the
+[  469.75s ->   475.83s] context of the derivative, higher order differentials are going to drop out. They're going to become
+[  475.83s ->   483.65s] negligible in computing the precise first order derivative of this function f of x, and I've plotted it for you
+[  483.65s ->   490.59s] here to see. We're not trying to model the change in the function's value. If we were doing that, we would
+[  490.59s ->   497.01s] probably want a higher order representation, second, third, fourth order, to capture curvature and inflection
+[  497.01s ->   502.49s] and all of that good stuff, and you can see that in this green dotted line. The third order approximation
+[  502.49s ->   509.71s] hugs that green curve, the true change, but this red dotted line, remember, that is the derivative, the slope of
+[  509.71s ->   516.19s] the tangent line. That's the first order approximation given by this Taylor series when dx is very small,
+[  516.19s ->   525.29s] and it is approximating it very, very well precisely, and that is because of this argument here. Long story
+[  525.29s ->   533.39s] short, if we apply the definition of a derivative to the Taylor series expansion, then we see that as the
+[  533.39s ->   539.69s] differential becomes arbitrarily small, the higher order terms are going to go to zero, and we're just
+[  539.69s ->   547.63s] going to be left with the derivative. And all the derivative is, is a linear approximation of change at a
+[  547.63s ->   554.85s] particular point. And because it's linear, you can see the further we get away from this original point, the worse we do,
+[  555.01s ->   561.87s] especially if the function has a lot of curvature. And that's why if you're trying to actually model the true change in the
+[  561.87s ->   568.69s] function, you probably need more terms. But remember, here, we're only interested in the derivative because we're interested in
+[  568.69s ->   575.63s] solving all of the things that the derivative is used for solving. So we're interested in the differential equations,
+[  575.63s ->   582.69s] the optimization problems, and so on. So we're interested in the derivative here, not the true change in the function. And in this
+[  582.69s ->   591.69s] case, the function is deterministic, there is no randomness in the differential. So when we have a time dependent function of a
+[  591.69s ->   598.49s] dependent function of a stochastic process, so think of a function of a random variable or a variable that evolves
+[  598.49s ->   606.43s] randomly over time, we have to consider the derivative in this case, it's actually quite different. Because if you look at
+[  606.43s ->   613.45s] this argument, what's going to happen is all of the higher order terms for that function and that derivative are not
+[  613.45s ->   620.05s] going to drop out. So very nicely here, if we just plug in zero, you can see that this higher order term
+[  620.05s ->   626.97s] drops out, the third derivative term will drop out and so on and so and so forth. But when there is
+[  626.97s ->   632.19s] randomness, this is not the case. And we're going to see why. Now we're ready to deviate away from
+[  632.19s ->   637.57s] traditional calculus to this idea of stochastic calculus. And it'll be relatively intuitive coming
+[  637.57s ->   645.19s] from the Taylor series expansion of the derivative above. And that's because when we're looking at
+[  645.19s ->   651.69s] randomness over time, we have a small increment in the randomness, and a small increment in time,
+[  651.69s ->   658.75s] those are our differentials. And if we take a look at the differentials, we can see that in the same way
+[  658.75s ->   666.21s] that dx squared drops out in the first derivative, dt squared is going to drop out too, as that differential
+[  666.21s ->   672.77s] becomes arbitrarily small. It's acting just like those higher order differentials above, just like we saw
+[  672.77s ->   678.45s] in this argument here with the limit, you can see these higher order terms are all going to continue to drop
+[  678.45s ->   686.19s] out when you evaluate that limit, and we're just going to be left with the derivative. The same is true here
+[  686.19s ->   692.23s] with the product of the differential of time and the differential of the Brownian motion, that is also going
+[  692.23s ->   699.59s] to go to zero as the differential becomes arbitrarily small. But there's a big difference here. The big
+[  699.59s ->   706.31s] difference is when we take a look at the squared differential of Brownian motion. So these aren't too
+[  706.31s ->   712.79s] much of a surprise, this is exactly what we saw above with the Taylor series expansion for that first order
+[  712.79s ->   718.23s] derivative. But the big difference here is when we take a look at this term here, this differential of
+[  718.23s ->   724.23s] Brownian motion squared, this is actually going to go to dt. This is saying something about the
+[  724.23s ->   732.31s] quadratic variation, the variance of the Brownian motion. Now this is a big deal because all of the
+[  732.31s ->   738.47s] terms in the Taylor series expansion, those higher order terms, dropped out for our first derivative. But
+[  738.47s ->   745.75s] here, because this dwt squared term doesn't go to zero, that means this isn't going to drop out. So where
+[  745.75s ->   752.55s] does this come from? Why does this go to dt? Well, less formal, but more intuitively, we can understand
+[  752.55s ->   759.43s] that the increments in Brownian motion, that is, if we evaluate the Brownian motion at this point in time,
+[  759.43s ->   765.43s] and then we wait some delta t, maybe one day and evaluate the Brownian motion at this point in time,
+[  765.43s ->   772.87s] then that increment is going to be a random variable. It'll be distributed normally with a mean zero
+[  772.87s ->   780.23s] and a variance of that time step, that delta t, that change in time. And essentially, all dwt is,
+[  780.23s ->   787.43s] is when this becomes arbitrarily small, when that increment becomes arbitrarily small. So as that delta
+[  787.43s ->   793.67s] t approaches zero, essentially, we have that this differential here is going to be distributed
+[  793.67s ->   802.39s] normally with a mean zero and a variance of dt, that infinitesimally small change in time. And if it
+[  802.39s ->   810.15s] wasn't the case, if this wasn't the case, and we have that dwt squared went to zero, then this would
+[  810.15s ->   818.31s] just be mean zero with a variance of zero. We need to account for this quadratic variation
+[  818.31s ->   832.71s] that is exactly why, and hopefully it's intuitively why, this dwt squared term can't go to zero.
+[  832.71s ->   839.75s] Otherwise, we wouldn't be accounting for this variation, this randomness in the change over time.
+[  839.75s ->   848.07s] A pretty elegant way to see why this dwt squared term doesn't go to zero, is by taking a look at Brownian
+[  848.07s ->   855.83s] motion from zero to some time cap t in the future. If we partition the space into cap n increments,
+[  855.83s ->   863.19s] then we have that w of t minus w of zero is distributed normally with a mean zero and a
+[  863.19s ->   869.11s] variance of delta t. The time step is just going to be to capital T in the future. So that means that
+[  869.11s ->   877.99s] this distribution is mean zero with a variance of capital T. Now, if dwt squared was zero,
+[  878.47s ->   884.47s] like in the ordinary differentials in the context of the derivative, then it would follow that the
+[  884.47s ->   893.51s] variance here, given by this equation, would be simply zero. And that's because dwt squared,
+[  893.51s ->   901.27s] all of these dwt squareds would be zero, and the expectation is already zero. So the variance would
+[  901.27s ->   908.23s] be zero plus zero, which is zero, but that's not going to be the variance that's demanded of
+[  908.79s ->   916.63s] this process over this interval, which is what? It's capital T. So that is more formally a way to see
+[  916.63s ->   925.99s] why dwt squared has to go to dt because if we were to sum up all of those increments, that is those dt's
+[  925.99s ->   933.11s] from one to cap n, we would end up with this desired distribution that characterizes the Brownian motion
+[  933.11s ->   938.47s] by construction. Using the idea of traditional calculus in the Taylor series expansion, we saw
+[  938.47s ->   944.79s] what happened to higher order differentials in the context of the derivative. They all dropped out.
+[  944.79s ->   951.19s] From stochastic calculus, we see that that's not necessarily the case. We saw that dwt squared term,
+[  951.19s ->   959.59s] that differential of the Brownian motion squared, go to dt. So what's the deal here? Well, we need to
+[  959.59s ->   967.03s] correct the interpretation from traditional calculus using a new interpretation from stochastic calculus,
+[  967.03s ->   973.19s] and that is precisely Ito's Lemma. So what I've done here is I've defined a function that involves
+[  973.19s ->   979.11s] randomness. So remember, from traditional calculus, we have a function of a deterministic quantity.
+[  979.11s ->   985.35s] Here, we have a function of a random quantity, that is this Brownian motion, and it's Brownian motion
+[  985.35s ->   991.03s] over time. So if we apply the Taylor expansion, then we're going to get this differential of the
+[  991.03s ->   997.83s] function is equivalent to this series of partial derivatives scaled by their respective differentials.
+[  997.83s ->  1003.75s] But we know how to handle these differentials now from the original Taylor series in traditional
+[ 1003.75s ->  1008.95s] calculus along with our rules from stochastic calculus. So what can we say about this
+[ 1008.95s ->  1016.55s] equation? Well, as dt squared goes to zero, we can simplify this expansion and just say that this term
+[ 1016.55s ->  1024.55s] involving dt squared goes to zero. Because remember, we're after the derivative. Okay, what about the
+[ 1024.55s ->  1031.75s] differential of Brownian motion squared? Well, here, it's going to approach dt. So we can substitute in
+[ 1031.75s ->  1046.24s] dt for dwt squared. Moreover, the product of dt and dwt is going to approach zero, leaving this cross term
+[ 1046.24s ->  1055.76s] here to be zero. So after simplifying, we can go ahead and then factor out the dt. And we are left with
+[ 1055.76s ->  1063.12s] this, this is going to be the solution given by Ito's Lemma. The differential of a time dependent
+[ 1063.12s ->  1069.52s] function of a Brownian motion will be given by this quantity. And this is applying the idea
+[ 1069.52s ->  1074.48s] from the Taylor series expansion in traditional calculus and how to deal with the differentials
+[ 1074.48s ->  1081.52s] in tandem with the stochastic calculus rules that allow us to drop out these higher order terms
+[ 1081.52s ->  1089.76s] and transform this differential of Brownian motion squared into that quadratic variation accounted for by dt.
+[ 1089.76s ->  1095.84s] Now, everything we've discussed up until this point is showing precisely with the mathematics what is
+[ 1095.84s ->  1102.32s] going on. But I think a simulation to illustrate this idea makes it a little more tangible. So what
+[ 1102.32s ->  1108.72s] I have here is I have a sample path of Brownian motion. I've zoomed in and I've looked at the
+[ 1108.72s ->  1115.84s] differential given by Ito's Lemma and the Taylor series. So that's from traditional calculus. And I've
+[ 1115.84s ->  1121.44s] also looked at the actual differential given by this Brownian motion path. And what you'll see
+[ 1121.44s ->  1129.28s] is Ito's Lemma and the Taylor series differential, they're not precisely equivalent. There's some space
+[ 1129.28s ->  1134.72s] between the two, otherwise it would be perfectly overlaid, but they don't line up with this actual
+[ 1134.72s ->  1141.36s] differential. Why is that not the case? Well, remember we're dealing with randomness. Whenever we're
+[ 1141.36s ->  1147.04s] dealing with randomness, we're not looking at predicting a path. We're not looking at predicting
+[ 1147.04s ->  1152.64s] an increment. We're looking at characterizing the distribution, that is the expectation and the
+[ 1152.64s ->  1160.48s] variance associated with that randomness. So this is just one sample path of the Brownian motion.
+[ 1160.48s ->  1167.04s] So why is Ito's Lemma and the Taylor series useful at all if it's not lining up with the actual
+[ 1167.04s ->  1173.20s] differential? Well, the reason why it's useful is because if we do this for a series of sample
+[ 1173.20s ->  1179.84s] paths and then take the average differential, then we are going to match Ito's Lemma. And I've
+[ 1179.84s ->  1187.73s] done that below in this chart. What I've done is I've compared the differential for over a thousand
+[ 1187.73s ->  1193.97s] simulations of the Brownian motion. And you can see that the red line is the average actual
+[ 1193.97s ->  1201.09s] differential. And the green dotted line that tracks it almost perfectly is Ito's Lemma,
+[ 1201.81s ->  1208.66s] is the Ito's Lemma differential. But take a look at the Taylor differential with no correction term
+[ 1208.66s ->  1215.30s] from that Brownian motion, that differential of Brownian motion squared being dt. You can see that
+[ 1215.30s ->  1222.50s] it is nowhere near the correct value. And that is the source of the Ito correction term. We need to
+[ 1222.50s ->  1230.02s] shift that up. And that's precisely what Ito's Lemma does. Now, why doesn't this perfectly match the
+[ 1230.02s ->  1235.70s] actual average differential? That is because this is by the law of large numbers going to converge as
+[ 1235.70s ->  1242.98s] we iteratively sample from the same distribution. But this is precisely what Ito's Lemma is doing.
+[ 1242.98s ->  1248.98s] Ito's Lemma is going to tell us how the process, the differential of that time-dependent
+[ 1248.98s ->  1254.74s] function of a stochastic process, in this case, just the Brownian motion, is going to behave when
+[ 1254.74s ->  1262.66s] you take a look at the average differential. So the average difference of all of these Brownian
+[ 1262.66s ->  1268.66s] motion paths. And that's what we're seeing in this chart. That's going to do it for this video on Ito's
+[ 1268.66s ->  1274.02s] Lemma. I hope you enjoyed. We're now ready to tackle more complicated topics involving stochastic
+[ 1274.02s ->  1279.22s] differential equations. If you'd like to see some more videos on those topics, please leave a comment
+[ 1279.22s ->  1285.78s] below, like, subscribe, check out QuantGuild.com, follow us on all of our socials. Other than that,
+[ 1285.78s ->  1290.82s] thank you so much for watching, and I will see you in the next video.

@@ -1,0 +1,164 @@
+[    0.00s ->     6.52s] Now for some proof. You can see here year to date, I've made $2,570. That again is for the
+[    6.52s ->    13.68s] first month of 2024. That's a 2.57% return on my money, which is amazing. I aim for 1% and
+[   13.68s ->    19.80s] anything better is bonus. So I made a 2.5% return. Now, if we want to actually look at more of my
+[   19.80s ->    23.76s] history, we can go into history. We can look at the last 30 days. You can see here $2,600
+[   23.76s ->    29.76s] of money that I've collected. So yes, this is something that I'm actually doing in real life.
+[   29.76s ->    34.64s] I'm going to walk you through what this trade is that made up almost all the profits and how you
+[   34.64s ->    39.80s] can do it too, as well as managing risk. So the strategy comes straight from my 2024 trading plan,
+[   39.88s ->    44.88s] which is the 112 strategy. So in this video, I'm going to walk you through what this strategy is,
+[   44.98s ->    49.36s] how to put it on, how to manage risk and any downside associated with it. So to put on this
+[   49.36s ->    55.84s] trade, we do a 120 day option on either ES, gold, or oil. We're going to put on a put debit spread
+[   55.84s ->    60.76s] with a 25 Delta long and 23 Delta short. We're going to put on two short puts to pay for it.
+[   60.96s ->    65.74s] We're going to have a take profit of 75% and a stop loss of 4X. And we also have the options of
+[   65.74s ->    71.08s] turning these into hedges if we think the market will pull back some. So pulling up a live example
+[   71.08s ->    77.26s] here, we go to the expiration that's closest to 120. So right here, we have 120. From there,
+[   77.26s ->    83.04s] we're going to sell two put options at the seven Delta. So right here, seven Delta sell two.
+[   83.44s ->    88.78s] So if we sell two of these options, it shows here that we're going to make a max profit of $2,100,
+[   89.26s ->    94.54s] which is great for us. That's a lot of money we get to make. But what we're also going to do is add
+[   94.54s ->    98.82s] a put debit spread. So we're going to use some of the money they're giving us. They're giving us $2,100
+[   98.82s ->   103.38s] to put this trade on. We're going to use some of that money to add a put debit spread at the 25,
+[  103.38s ->   110.08s] 23 Delta level. So this one, 26 is closest to the 25. So I'm going to buy this. I'm going to sell
+[  110.08s ->   114.38s] the 23. And this is how I create it. First off, I'm going to move these down to one option each.
+[  114.60s ->   119.76s] So we have one option each for the put debit spread, and then two on the put that we're selling.
+[  120.12s ->   126.08s] You can see here, I have a buying power of 7,300 with a max profit of 4,000. So I'm putting up 7,000
+[  126.08s ->   130.86s] with the potential of making 4,000. But let's look at the curve. So we can see right here,
+[  130.86s ->   137.50s] this is what the trade looks like. At expiration, if the market stays where it's at or drops a bit
+[  137.50s ->   146.50s] or goes up forever, I'm going to make $1,680. That's right, $1,600 on $7,000. It's a great return.
+[  147.02s ->   152.72s] Now, if the market drops into this level where my put debit spread starts at expiration,
+[  153.00s ->   159.30s] I'll make around $4,200. So that's a great return as well. So that shows me how much money I can make
+[  159.30s ->   164.82s] if the market drops. Now, my profit that's currently open will change and fluctuate as the
+[  164.82s ->   170.14s] market's open, whether the market goes down or up. But this green line shows me what will happen
+[  170.14s ->   176.96s] at expiration. So this is an amazing payoff for the money that I'm putting up. Now, if you can't put
+[  176.96s ->   182.66s] up that much money, don't worry, go to slash MES futures, and you can do it for a 10th of the price.
+[  182.66s ->   189.04s] So you'll only have to put up $730 for the chance to make $417. So same percentage returns,
+[  189.32s ->   195.18s] just a different buying power required. So this is what a 112 trade is. Now, how do we manage it
+[  195.18s ->   201.16s] for risk? Number one, what we do is we have a 75% profit target. So you can see here, my max profit
+[  201.16s ->   210.86s] in this little tail is $1,700. So once I get to a 75% profit, so around $1,300, then I will take profit.
+[  210.86s ->   217.44s] So this trade, I'm going to make $1,300 as my profit. And my risk, how much am I going to lose?
+[  217.70s ->   221.96s] Well, you can see here that it shows green all the way around. So you would think that, wow,
+[  222.00s ->   228.98s] you're going to make money all the way up until it dropping to $4,100, which is roughly 20% below
+[  228.98s ->   234.46s] the current market price. So the market can drop 20% and I'll still make money. That's true at
+[  234.46s ->   239.68s] expiration. You can see here, this orange line will show you how much money you'll lose in the middle of
+[  239.68s ->   246.48s] the trade before expiration. So you can see here, you, you can be down as much as $7,000 for that
+[  246.48s ->   252.58s] trade, depending on how it's performing during the market timing or when you're in the trade.
+[  253.26s ->   259.98s] So what I like to target is what Tom King does, who's the inventor of the 112 trade, great trader,
+[  260.10s ->   266.14s] great guy, is you want to have your loss be the max that you could make. So you can see here,
+[  266.14s ->   275.70s] 4,200 would be my max loss. So once I see an open PNL loss of roughly 4,200, then I will exit this
+[  275.70s ->   284.12s] position. This trade has a 98% win rate with my chance to make 1,400, 300 with the chance of losing
+[  284.12s ->   290.38s] 4,000. So obviously a very good trade. My losses can add up quickly, but I'll show you how to prevent
+[  290.38s ->   295.28s] against that. So that is how we structure it from a take profit and stop loss method. Now, how do we deal
+[  295.28s ->   303.46s] with buying power? Well, a 112 trade should only make up 5% of your buying power, 10% max. So what
+[  303.46s ->   308.88s] I mean by that is if you were trading one of these trades with a $7,000 buying power, you should have
+[  308.88s ->   315.90s] at least $70,000 in your account, right? For a 10%, right? You need to have at least 70,000 to trade
+[  315.90s ->   322.02s] properly. Again, if you don't have that much money, trade slash MES, and then you'll only need 7,000 in
+[  322.02s ->   326.58s] your account to trade these properly. Now with the number of 112 trades that you're putting on,
+[  326.84s ->   334.58s] like you put on one every single week, you do not want your total buying power to exceed your
+[  334.58s ->   342.52s] 50% of your account value. So if you're at $100,000, which is what my account is right now,
+[  342.84s ->   350.94s] then I want to use no more than 50% of my buying power. I currently are using $22,000. So I have more
+[  350.94s ->   355.80s] money to use. So I have more trades that I can put on. So that's how that looks. So now that we
+[  355.80s ->   361.18s] talked about risk and management and different things like that, once we hit that $75 profit,
+[  361.22s ->   365.92s] there's a lot of different things we can do. Number one, what we can do is we can just close
+[  365.92s ->   372.32s] the whole position and take that $1,300 profit and move on to the next trade. However, if we want
+[  372.32s ->   376.46s] some downside protection, because we think the market's going to start dropping, there are some
+[  376.46s ->   382.58s] hedges that we can turn this into. So number one option is we can just close out these two short
+[  382.58s ->   387.62s] puts. Why? Well, because these two short puts is what's taking up all this buying power, the $7,300.
+[  387.88s ->   394.16s] If we remove the two puts, our buying power will drop down to about $700, $800. So now we have all
+[  394.16s ->   399.18s] this buying power that we can use to apply to another trade. And if we do that, if we get rid of
+[  399.18s ->   406.42s] these two puts, we also create a put debit spread hedge, which gives us $2,000 of downside protection
+[  406.42s ->   412.64s] after we break this $4,600 level. So once we break below this, then we get this huge protection to the
+[  412.64s ->   417.10s] downside. And that's great for if the market's dropping or just to hedge against any other
+[  417.10s ->   425.52s] any other 1-1-2 trades that we have on. Another way to hedge is to simply remove this short put from
+[  425.52s ->   433.18s] we put debit spreads. So removing this one, if we remove that at 75% profit, now what we do is we
+[  433.18s ->   440.98s] turn this into a triangle hedge, which gives us up to $22,000 of downside protection. So this gives us
+[  440.98s ->   446.02s] a huge downside protection. It's called a ratio spread. And when we get this downside protection,
+[  446.02s ->   451.28s] now we can cover a lot of the losses from 1-1-2s, right? Like let's say the market drops,
+[  451.28s ->   457.30s] the 1-1-2 would have a four or a $4,000 loss. Let's say we have a couple of them that lose.
+[  457.40s ->   463.94s] Now we have a $12,000 loss on our account. Well, this thing will make, you know, 8,000 to 25,000
+[  463.94s ->   469.80s] to 16,000 anywhere in here profit to cover all those losses. So I love to do our, I love to have at least
+[  469.80s ->   477.40s] one of these triangle hedges on again, which is for free because it's paid for by the profit I made
+[  477.40s ->   485.68s] from this put. So that is how you handle and manage a 1-1-2 trade. I had about six of these trades
+[  485.68s ->   493.78s] on this month for January, 2024. And so three of those trades, I took a 50% profit because I wanted
+[  493.78s ->   500.04s] to lock in profits to set me up and give me a good cushion for the beginning of 2024. So I built that
+[  500.04s ->   505.60s] cushion with three trades at a 50% profit. And then I kept these three trades on. I'm trying to target
+[  505.60s ->   511.54s] that 75% range again, was doing better yesterday until Jay Powell and Foam C decided to knock the
+[  511.54s ->   520.06s] market down, but whatever you can see here, 21%, 42% minus 17% total $471 that I have open in these
+[  520.06s ->   524.98s] three trades. Again, these are trades that are just going to continue to make money as time goes on.
+[  524.98s ->   530.20s] And that is how I traded the first month of 2024. Now, if you want to learn how to completely
+[  530.20s ->   535.32s] automate this system, your entries, your exit, your stop losses, your profits, and everything
+[  535.32s ->   540.26s] like that, let me show you a quick demo of an option selling software that I just built.
+[  540.26s ->   545.20s] And I'm starting to beta test with my own account. Hey team and waitlist. I'm super excited to share
+[  545.20s ->   549.66s] with you the first ever walkthrough and demo of the option selling auto traders. So for people who want
+[  549.66s ->   556.64s] to sell options on stock or futures, like selling puts, selling strangles, 1-1-2s, 1-1-1s, and more,
+[  556.76s ->   561.88s] you can now do that in a passive and automated way so that you can sit back, focus on your family,
+[  561.88s ->   566.52s] work, whatever it is you need to do, and your portfolio will generate monthly income for you.
+[  566.70s ->   570.90s] Let me dive in and show you how easy this is. Step number one is connect your broker.
+[  571.18s ->   574.22s] Right now, we only support Tasty Trade, but we have more coming soon.
+[  574.46s ->   578.60s] After you have successfully connected to your account, then you're going to select or create
+[  578.60s ->   582.82s] a strategy. You can select from a list of proven strategies that work well, like my strangle
+[  582.82s ->   588.92s] strategy, Tom King's 1-1-2, Tasty Live Selling Puts, and Sweet Bobby's Black Swan Hedge for
+[  588.92s ->   594.14s] downside protection. You can click it and it will preload exactly how they trade it. And you can
+[  594.14s ->   599.70s] automate that by replicating them. Or you can create your own strategy. You can sell puts,
+[  599.80s ->   604.60s] a 1-1-1 strategy, a 1-1-2, or selling strangles. These are the ones that we support as of right now.
+[  604.74s ->   609.68s] So I'm going to create a 1-1-2 strategy. I'm going to follow my rules. So for the put debit spread,
+[  609.76s ->   616.02s] this 1-1, I'm going to buy the 25, sell the 23, and the delta will be a 7 delta that I sell.
+[  616.02s ->   620.84s] This is how I structure my 1-1-2 trades. I can pick the symbol I'm going to trade on. I'm going
+[  620.84s ->   625.68s] to trade on ES. Again, if you have a smaller account, you can do this on MES as well. I have
+[  625.68s ->   630.34s] more future symbols coming soon, like so I can support gold and oil and more for people who
+[  630.34s ->   635.36s] want to do 1-1-1 trades or sell puts on those. I want to enter the trade every single week. I can
+[  635.36s ->   641.28s] do daily, weekly, twice a month, or once a month. And I'm going to go weekly on Wednesday. So that's
+[  641.28s ->   646.02s] when I like to enter these trades. I like to target a 90 days until expiration,
+[  646.16s ->   650.86s] but you can target whatever you'd like. This will help find the closest expiration to this
+[  650.86s ->   656.04s] target, plus or minus, whichever one is closest to 90. I need to make my face smaller because
+[  656.04s ->   661.06s] I'm in the way. Take profit. So I like to target a 75% profit target, and I like to have a stop loss
+[  661.06s ->   667.04s] of 400%. Now for the 1-1-2 trades only, because they're so versatile and you can convert them
+[  667.04s ->   672.14s] into hedges, the 1-1-2 trade when selected has this bonus option of turn into a hedge.
+[  672.48s ->   677.50s] So you can select if you want to turn this into a hedge or not, or just close as is. You can just
+[  677.50s ->   684.10s] close it at a 75% profit, closing the whole trade, or you can keep on the PDS hedge, or you can create
+[  684.10s ->   690.70s] the triangle hedge or the fat bastard hedge, which is a huge put credit spread hedge. Regardless of
+[  690.70s ->   694.74s] what you want to do, if you want to turn the 1-1-2 trade into a hedge, it will do this for you
+[  694.74s ->   699.96s] automatically. So I'm just going to say that by default, the PDS hedge. Then I need to settle
+[  699.96s ->   704.86s] some safeguards on my account. Number one is buying power. I don't want to exceed a certain
+[  704.86s ->   710.10s] amount of money in one single strategy. So for 1-1-2s, you should never exceed 50% of your buying
+[  710.10s ->   714.76s] power. So I have $100,000 in my account, so I shouldn't exceed $50,000. So that's going to be
+[  714.76s ->   721.28s] my buying power. This automation cannot use more than $50,000 of buying power. Next is enable market crash
+[  721.28s ->   725.98s] safeguards. So I've created a system that predicts when the market will crash. And again, it's done
+[  726.50s ->   732.04s] 2016, 2018, 2020, and an early warning in 2023 before that downtrend. And so if you would like
+[  732.04s ->   737.80s] to get out of your positions or not put on any new ones, when a crash is likely, this will do that
+[  737.80s ->   742.22s] for you. You can also put in the max money you want to lose and your max trade size, how many trades
+[  742.22s ->   749.14s] you want open at a time. You enable those safeguards. It shows you what's going on. You're buying power
+[  749.14s ->   753.76s] requirements and everything like that here. You can either turn the auto trader on now,
+[  753.76s ->   758.26s] or you can save the auto trader for now. I'm just going to save it. Now we can see here how I have
+[  758.26s ->   762.94s] my auto trader. I'm just going to rename it. So I kind of know more what's going on. It's a 90 DTE
+[  762.94s ->   768.94s] 112 trade, and I'm taking a profit at 75%. And this is how I know what I'm doing with the trade.
+[  769.80s ->   775.06s] Next, let's take a look at this actual trade. So right now it's not turned on, but I can turn it
+[  775.06s ->   779.80s] on by clicking on turn on auto, turn on auto trader, which now means my automations are going
+[  779.80s ->   785.88s] to run and check and set alerts and, and I mean, enter trades as you want. Again, there's always a
+[  785.88s ->   789.98s] kill switch here with every automation. If you want to turn off an automation, because you don't
+[  789.98s ->   794.18s] like the way it's performing, or you just want to get out of it, or you don't want any new trades to
+[  794.18s ->   799.82s] enter, click on kill switch. And that will turn off that automation from entering any new trades.
+[  800.06s ->   804.34s] Now, for now, I would like to enter a trade right now. I don't want to wait on the automation to run.
+[  804.34s ->   808.72s] So I'm just click on enter a trade right now, clicking that it says right here, your order is
+[  808.72s ->   812.80s] now sitting in the queue and should be sent to the market in the next couple of minutes. So again,
+[  812.80s ->   818.72s] I'm going to pull up my broker here and we're going to take a look at it happening. And just like that
+[  818.72s ->   824.40s] is entered and got the best bills for this 112 position automatically, just like that. As you can
+[  824.40s ->   830.32s] see here, I have the 112 trade open and available. So now I have this trade active. If I want to go to
+[  830.32s ->   835.24s] the analyze tab, I can check this out just like that. Here is my 112 trade. I have a
+[  835.24s ->   843.40s] max profit of $1,300, a little bear trap of 2,600. And it's structured for me automatically
+[  843.40s ->   848.38s] just like that. And the stop loss is even being handled too. And refreshing my dashboard page
+[  848.38s ->   853.62s] here, you can see the 112 trade that has now been placed. You can see here that it is filled,
+[  853.62s ->   859.22s] all the details about it, and so much more all listed here. Refreshing my page, you can see the
+[  859.22s ->   863.78s] trade has been updated here with the expiration date, with the trade legs, with the mark, the trade price,
+[  863.78s ->   870.02s] the open, everything here for me. I can close the trade right now if I want to by clicking here,
+[  870.12s ->   874.90s] but this is how the automation works. It will now monitor closing positions and everything like
+[  874.90s ->   879.72s] that. You can now see here in the notifications that it's told me that I created an auto trader.
+[  879.92s ->   884.88s] I turned an automation on, an automated trade was placed, and an automated trade was filled.
+[  884.98s ->   889.02s] It tells you success or failure, everything that is happening with your account so that you are up to
+[  889.02s ->   892.54s] date. Not only that, it sends you an email. You can see here, I created the auto trader.
+[  892.54s ->   897.68s] I turned on the automation, placed and filled so that you stay up to date with your account and
+[  897.68s ->   903.26s] know exactly what is going on. If for any reason you want to end it, just click on kill switch and
+[  903.26s ->   907.54s] you will stop that automation. Anyways, guys, I'm so excited for this. It's going to change
+[  907.54s ->   912.94s] the way that option sellers use futures, use stocks, and trade because it's now going to take no time
+[  912.94s ->   918.20s] at all. All right, guys, I hope you enjoyed this and please comment down below to share your
+[  918.20s ->   922.64s] interest. But this is now open for testing for my account so that I can make it better,
+[  922.88s ->   927.22s] work out all the tweaks, and make sure it's perfect before I open it up to 10 beta users.
+[  927.54s ->   932.02s] So if you are interested in being a beta user, please let me know in the comments down below.

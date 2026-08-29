@@ -1,0 +1,209 @@
+[    0.00s ->     4.76s] In this video, I'm going to walk you through how I built a simple options income system for slow
+[    4.76s ->     9.46s] and reliable cash flow. Preface, this will be boring, but it actually works. I've talked to
+[    9.46s ->    14.58s] over 5,000 options traders already, and they're using it to crush it. Now, to show you some proof,
+[   14.62s ->    18.76s] here's my TastyTrade account, which we all know only has live accounts. This is a live account
+[   18.76s ->    27.12s] here. You can see that I made about $2,565 in the last 30 days by using this system. This was
+[   27.12s ->    31.32s] completely hands-free. I didn't touch it. I didn't do a thing. By the end of this video,
+[   31.46s ->    34.60s] you will know exactly how to do this. I'll show you my chart, my TastyTrade account,
+[   34.86s ->    39.14s] and a secret tool I used to help me automate the entire thing. Let's dive into it right now.
+[   39.22s ->    42.54s] What is the core thesis behind this? It's Proverbs 1311, which is,
+[   42.88s ->    48.20s] wealth gained hastily will dwindle, but whoever gathers little by little will increase it.
+[   48.20s ->    53.18s] That is the goal here. Most people chase quick wealth, get rich quick overnight, zero DTE,
+[   53.18s ->    59.08s] insane leverage, debt, and all this stuff. But the truth is, slow, consistent income compounds
+[   59.08s ->    64.72s] way faster than aiming for home run swings every single time. That's why this system is built around
+[   64.72s ->    71.28s] selling options for weekly small profits, using futures options to leverage our returns safely
+[   71.28s ->    77.34s] and be tax efficient, and using automation to remove emotion, as well as giving our extra cash
+[   77.34s ->    82.50s] just sitting in the account, a boosted return. So with that said, I dived into it. The whole goal
+[   82.50s ->    88.18s] is to generate a 1% to 2% return on our account per month. That is the goal. Now, again, that's still
+[   88.18s ->    92.44s] two to three times better than the average market. Now, it's not going to be insane, but it still is
+[   92.44s ->    98.60s] amazing, especially if you're compoundingly consistent at 30%, 20% a year, you can make some
+[   98.60s ->   102.66s] good money in the next 10 years. All right. Again, we're building for retirement, or if you're already
+[  102.66s ->   106.76s] at the stage to retire, this is a great way to supplement your income. So you can see here,
+[  106.76s ->   113.60s] just in this account, minus commissions and fees, $2,533. And that was, again, of a 100K account,
+[  113.68s ->   119.50s] that's 2.5% return. So definitely within the goal. Now, through this, we are leveraging futures options.
+[  120.02s ->   125.56s] Futures are basically what tracks things like commodities and currencies and equities. For
+[  125.56s ->   133.42s] the sake of this strategy, we use ES futures, which is the S&P 500, the top 505 stocks that tracks all 11
+[  133.42s ->   139.00s] different sectors in the market. Those are on futures and essentially using options to bet on
+[  139.00s ->   143.62s] the futures contract. So what is so amazing about this and why is it different from using stock
+[  143.62s ->   149.04s] options? Two things. Number one, they trade 24.5, meaning they trade overnight. Why is this good?
+[  149.30s ->   153.68s] Because most of the times the market starts crashing overnight. So if you can get out overnight before
+[  153.68s ->   157.50s] everyone else, you can save yourself a ton of headache and a ton of losses. Not only that,
+[  157.50s ->   163.48s] is you get access to higher margin. What does this mean? This means that it inherently allows
+[  163.48s ->   168.64s] you to put up less money and make a lot more. So you can make 10X what you typically could if you
+[  168.64s ->   175.12s] were to trade SPY options or SPX options. That's why we use futures options. Now, what is the exact
+[  175.12s ->   181.20s] option strategy I use for this system? It's all built around one simple strategy called a short put
+[  181.20s ->   186.02s] strategy. If you've never heard of a short put strategy before, essentially you sell a put contract,
+[  186.02s ->   189.90s] which means you're betting that the market in general will go higher. And when it does,
+[  189.94s ->   194.38s] you make money. So whether the market stays flat or goes higher, you make money. That's how selling
+[  194.38s ->   198.96s] puts work. Now, here's a particular look at the breakdown and then I'll show you what it looks like
+[  198.96s ->   204.18s] when we look at a chart and when we look at tasty trade or aka any broker to actually place this option
+[  204.18s ->   210.76s] contract. So the asset is done on ES or MES. Again, preferred futures because you get the margin built in
+[  210.76s ->   218.16s] and you get tax efficiency. But it's selling a put at 60 DTE with a five delta, which makes it very
+[  218.16s ->   226.16s] safe. Then we manage tightly at a 25% take profit and a 200% stop loss. So that's exactly what we're
+[  226.16s ->   230.94s] doing here. Now, let me dive into the chart real fast. Okay. When we look at the overall market,
+[  231.04s ->   235.02s] what we're going to look at is we're going to go to ES. Let me actually clear out my chart.
+[  235.54s ->   241.36s] So looking at trading view here, what we can see is when we go to the market, we can type in slash ES
+[  241.36s ->   248.68s] and it will actually show us what the S&P 500 futures are doing. So we can now see what's going on. Now,
+[  248.72s ->   252.92s] when we're looking at this, it's super simple. We're going to sell a put. So let's say the market
+[  252.92s ->   258.56s] is trading right here at this time. We're going to sell a put like way down here, which means as long
+[  258.56s ->   263.64s] as the market stays above this level, we make money. So if the market goes up, we make money. If the market
+[  263.64s ->   268.74s] goes sideways, we make money. If the market goes down, but stays above our level, our strike price
+[  268.74s ->   273.98s] will make money as well. And we always have a stop loss, a take profit so that a risk is always
+[  273.98s ->   280.02s] managed. And the way that we structure these trades tend to come out with a $250 profit and about an
+[  280.02s ->   287.02s] $1,800 loss. So very manageable, especially since it has a 99% win rate. So again, looking at the chart,
+[  287.26s ->   291.18s] this is a bullish strategy. So we're only going to want to trade it in bullish markets. How do I
+[  291.18s ->   296.40s] personally determine bullish markets? That's a great question. I put on a simple moving average.
+[  296.40s ->   301.20s] So I come here, I type in simple moving average onto the indicator. You can do this with any charting
+[  301.20s ->   307.26s] platform. I pull it up on the indicator. I then make an adjustment to the change and I turn it into
+[  307.26s ->   313.30s] a 100 period moving average. And just like that, you can see here, this is a 100 period moving average.
+[  313.44s ->   318.72s] If the market is above it, we're in a bullish market. If the market's below it, we're trending down
+[  318.72s ->   323.94s] and we're going to stay out. Why is this helpful? A short put is a bullish only strategy. So if you
+[  323.94s ->   328.28s] want to make money consistently, you have to trade in the right market. So when we're in this market,
+[  328.28s ->   332.10s] we're trading a short put strategy that I just laid out. So we're only going to be trading it
+[  332.10s ->   336.02s] above the moving average. Now, if we're above the moving average like we are right now,
+[  336.08s ->   340.02s] how do we actually put on this trade? We're going to go to trade again. We can do this on Charles
+[  340.02s ->   344.68s] Swab, TradeStation, whatever supports futures options. We're going to come into here. We're going to type
+[  344.68s ->   352.58s] in ES. And we're going to go to the days in the future DTE that's closest to 60. So if I go down
+[  352.58s ->   357.68s] here, I can see that I have a 57 day and 64 days. This one is four days from 60. This one's three
+[  357.68s ->   363.60s] days from 60. So I'll go with 57. On 57, I'm going to look at the right side, which is our put contracts.
+[  364.00s ->   368.06s] I'm going to make sure delta is selected as one of the columns. I'm going to find a five delta,
+[  368.16s ->   373.88s] which is 0.05. So for that five delta right here, I'm going to pick that. Five delta essentially
+[  373.88s ->   379.08s] means I have a 5% chance of being wrong and the trade is going to go against me because of how
+[  379.08s ->   383.00s] far away I am. I have so much room for the stock to move before it hits my strike price.
+[  383.60s ->   389.82s] So with that said, if I sell this put right now, I have a 99% win rate. I'm going to make a $900
+[  389.82s ->   399.00s] profit and I put up $6,800 in order to be in this trade. So just look at this. $900 is a great profit
+[  399.00s ->   404.52s] on the amount I'm putting up, but we have to factor in that I'm taking a 25% profit and I'm
+[  404.52s ->   410.62s] also doing a 200% stop loss. So if we're collecting 900 bucks, that means I'm going to close the trade
+[  410.62s ->   417.66s] out once I hit a profit of $225. So once the trade makes 225, I'm going to close out the trade. But not
+[  417.66s ->   423.38s] only that, we also have to multiply it by 2x. So if it loses $1,800, then I'm going to close out that
+[  423.38s ->   428.96s] trade. So this is amazing. Why? Because obviously I have a 99% win rate. So that's very high. And I'm
+[  428.96s ->   434.76s] going to make 225 and I'm going to lose $1,800. Very manageable on both sides and very consistent.
+[  435.20s ->   438.96s] This is something because we're managing our take profit and stop losses so short,
+[  439.22s ->   443.82s] okay, so small, the trades close quickly. On average, they close every seven days.
+[  444.08s ->   447.96s] So sometimes I've had a trade close in one day. I've had a trade close in four days. I've had a trade
+[  447.96s ->   453.08s] close in 10 days, but on average seven days. So you're actually turning over trades every single week
+[  453.08s ->   457.50s] which is awesome, as I'll explain in a second, because it means we won't have trade upon trade.
+[  457.58s ->   461.40s] We'll only have two or three trades open at a time because they close so quickly, which means our
+[  461.40s ->   467.90s] max risk, the chance of all our trades hitting their stop losses is quite low. So that's one of
+[  467.90s ->   472.66s] the benefits of it. So next, now that you know how to when to place the trade, which is only in
+[  472.66s ->   477.76s] bullish markets, now that you know how to put on the trade, 60DTE5 Delta, how to manage the trade,
+[  477.76s ->   481.88s] the next question is how do you allocate and manage risk? So when it comes down to, you need to
+[  481.88s ->   485.78s] understand what type of risk tolerance level you are. If you're someone who's lower risk or higher
+[  485.78s ->   489.96s] risk, or like the average person, medium risk, then we can decide what you are. So if you're
+[  489.96s ->   493.46s] medium risk, like most people like me, you're probably gonna do 40%. That means if you have
+[  493.46s ->   500.02s] $100,000 account size, 40,000 of it's going to be in trades. Okay, so let's break this down a little
+[  500.02s ->   505.72s] bit. Why do we do it this way? Because when it comes to futures options or option selling in general,
+[  505.72s ->   509.08s] there's a ton of risk, and we never want to put all our money into a single trade or
+[  509.08s ->   513.20s] all our money in trades at the same time, especially when it comes to futures options,
+[  513.20s ->   517.36s] which have something called span margin. The reason why span margin is important is because
+[  517.36s ->   522.58s] span margin could actually increase how much money you need to stay in a trade if the market goes
+[  522.58s ->   526.84s] against you. And so you need to have some cash set aside. So if we're going to break this down,
+[  526.90s ->   531.88s] we'll make it super simple. This is how I kind of allocate funds and help people do it as well.
+[  532.24s ->   538.06s] What you want to do is you want, let's pull up a chart here, drawing. If we have a $100,000 account,
+[  538.06s ->   544.40s] I'm using this for easy math numbers, $100,000 account, $40,000 of it will be in trades. Now
+[  544.40s ->   550.88s] let's break this down. How many trades should you have then? If each trade takes about $7,000 for a
+[  550.88s ->   557.20s] trade, then we can have about three to six trades. Okay, five to six trades. If we have six trades,
+[  557.54s ->   561.88s] and again, we probably only want to get it done in a week period since the average close time is one
+[  561.88s ->   568.24s] week, how can we fit six trades or six contracts in a one week period? What we would do is we'd split
+[  568.24s ->   571.60s] it up because we don't want to do it all in one day. So we do Tuesday and Thursday, split up the
+[  571.60s ->   577.72s] days. And on each day, we would do one trade of three contracts each that would get us to the six
+[  577.72s ->   584.08s] contract mark or about $40,000 of buying power use. Now, keep in mind that is $40,000, but we need to
+[  584.08s ->   589.34s] make sure we always know our max risk. So if all these trades hit their stop loss, that's six trades
+[  589.34s ->   597.12s] hitting a stop loss with a stop loss of $1,800. That means max risk is $10,000, about $11,000.
+[  597.64s ->   602.26s] So with $11,000 of the max rates, you need to be comfortable with that. If you're not dial it back
+[  602.26s ->   606.88s] to two contracts each day. If you're not dial it back to one contract each day. And that's a really
+[  606.88s ->   613.52s] great way to have those consistent returns. So with $11,000 as our max rates, that's about 10% of
+[  613.52s ->   618.06s] our accounts, that's pretty hefty. So just make sure you understand that. So with that said, 40% of our
+[  618.06s ->   622.72s] account goes into trades, the $40,000, we split it up into trades like this. Now, what do we do with
+[  622.72s ->   628.54s] the extra $60,000? We're going to put almost all of it, like 90% of it, so I'm going to say of this
+[  628.54s ->   637.78s] amount, $50,000, would go into something like S-GUB, which is a risk-free monthly dividend maker.
+[  638.20s ->   645.30s] S-GUB is an ETF based on T-bills, based on treasury bills, based on back to secure by the government.
+[  645.30s ->   652.88s] This pays out about 3.5 to 4% a year, and it's a monthly dividend that pays out monthly. My personal
+[  652.88s ->   661.02s] S-GUB pays me anywhere from $250 to $300 a month just for my cash that's sitting there. So now I
+[  661.02s ->   666.50s] have $40,000 actively at work to make me money that can make me anywhere from $1,000 to $3,000,
+[  666.58s ->   671.76s] $4,000 a month. And then I have my extra cash that's just sitting there on the side, invested in
+[  671.76s ->   677.28s] a highly liquid asset called S-GUB that's paying me a monthly dividend. Now, this is amazing from
+[  677.28s ->   681.58s] a tax perspective, which is what we're going to dive into next. How is this tax efficient?
+[  681.92s ->   685.76s] Not only do we need to consider making money, reducing our risk, which we're already doing
+[  685.76s ->   690.10s] with futures options, because number one, we have a stop loss. Number two, futures options trade
+[  690.10s ->   694.46s] overnight. So that means that as the market starts crashing overnight, we can get out before everyone
+[  694.46s ->   699.56s] else to reduce our risk. But also, we get to keep more of the money we're making, because futures options
+[  699.56s ->   704.78s] are taxed using IRS section 1256, which means we need to keep more of the money that we're making.
+[  705.10s ->   711.22s] You can see here, if we made a $50,000 profit, and we do the same exact trade on SPY, we're going to
+[  711.22s ->   716.92s] be taxed about $16,000. If we do the same trade on ES futures, and we make the same amount of profit,
+[  717.00s ->   724.02s] we're only going to be taxed $11,000, which means we save $4,500 in taxes just by doing the same
+[  724.02s ->   728.84s] strategy, but on ES futures. So that's the power of it. So now we're actually being taxed more
+[  728.84s ->   733.20s] efficiently. And you might be saying, Austin, what about, okay, that's the profits coming from
+[  733.20s ->   738.02s] the futures options trade here, the $40,000 we're using. I'm taxed cheaper, which is awesome. But
+[  738.02s ->   743.98s] what about S-Gov? Again, I'm not a tax expert. Please go seek one. But when you're trading S-Gov or
+[  743.98s ->   750.00s] any dividend ETF, most people in the United States, unless you're making over $80,000 in dividends,
+[  750.00s ->   755.00s] if you're making less than $80,000 a year from dividends, it's essentially tax-free. So now all this
+[  755.00s ->   760.84s] money here is tax-free. This is tax-less. So now I'm making more money with less money, generating
+[  760.84s ->   765.66s] that 1% to 2%, maybe even more. As you can see this month, I made 2.5%. So you're able to do it
+[  765.66s ->   770.38s] just consistently. So how much money do you need to replace your job, aka what account should you be
+[  770.38s ->   776.46s] building to? Okay. Again, like I mentioned, the target is 2% per month. Again, that's 2% on the
+[  776.46s ->   781.86s] entire account as a whole. So if you make $140,000 a year, which would be in one of the most expensive
+[  781.86s ->   787.46s] states, California, their average is $140,000 a year, you would need a $70,000 account size to
+[  787.46s ->   792.30s] get there. Now, if you're a Tennessee resident, one of the cheaper states, $72,000 a year is the
+[  792.30s ->   798.06s] average. Then you would need about $360,000 in your account. So again, that is the beauty of it. Now,
+[  798.08s ->   803.10s] if you're trading with a $100,000 account, just for easy numbers, you know you'd make about $2,000 a
+[  803.10s ->   807.56s] month. So I know if you want $8,000, you're going to need a $400,000 account, right? 4X, 4X.
+[  807.56s ->   812.48s] So that is what you need to understand what your goal is. If you don't have that yet, because you're
+[  812.48s ->   818.00s] not ready to retire, no worries. Now you know the account size you need to build to. If you're someone
+[  818.00s ->   825.22s] who's, I want $72,000 a year in retirement, I know I need to build to a $360,000 account. If that's the
+[  825.22s ->   829.54s] truth, you now know what you need to work towards. So you can come to something like a compound interest
+[  829.54s ->   835.56s] calculator, put in the money you have now, maybe you have $10,000 now, right? Let's say that you have
+[  835.56s ->   842.34s] $10,000 now. And you have, until your retirement age, you have about, let's say, 20 years. And
+[  842.34s ->   849.16s] then your estimated growth is about 24% a year. That's 2% per month, 24% a year. And then let's
+[  849.16s ->   854.58s] do no contributions at first, just to see the math. This means a compounded annually. So with
+[  854.58s ->   859.24s] that, you can see here, we're going to get to about 738,000 if we do nothing else, but just take
+[  859.24s ->   863.30s] that 10 grand and over 20 years, grow it. Now I was saying, Austin, 20 years is far out there. I only
+[  863.30s ->   868.40s] have 10 years. Okay. If I do 10 years out in the future, and I'm starting with $10,000 using this
+[  868.40s ->   873.90s] system, I'm only going to get to about 85 grand, 86 grand. You're like, that's not enough. That's
+[  873.90s ->   877.98s] where you go into, you can't really make more. This is already our slow and consistent returns.
+[  877.98s ->   882.10s] Again, already doing so much better than the overall market. So don't be greedy here, but you're
+[  882.10s ->   885.34s] going to have to start compounding. So this, you're going to start entering how much money do you need
+[  885.34s ->   891.12s] to deposit monthly to get you to that goal. And so you can see here, just by adding 500 bucks a month,
+[  891.12s ->   896.40s] you will get it up to 295,000. Remember if your goal is to get to 360, that may not be it.
+[  896.66s ->   902.20s] So let's change that to 600. Oh, maybe not it. Let's change that to maybe 650. Again,
+[  902.24s ->   907.22s] I'm playing this with you in real time. So if I deposit $650 a month into my broker account,
+[  907.54s ->   913.32s] starting with 10 grand, making 2% a month, just like that, I can get up to my retirement goal in
+[  913.32s ->   920.60s] 10 years. And at 10 years, now I'm at my retirement goal. And my 2% a month is making me 72,000 a year,
+[  920.60s ->   925.12s] which comes out to what, about 5,000, 6,000 a month. So that is the power of understanding
+[  925.12s ->   930.34s] your number and reverse engineering it. So please go do that. But what I did want to show you next
+[  930.34s ->   935.56s] is how I automate this entire system. I use a tool called the Options Auto Trader. This tool is
+[  935.56s ->   941.54s] amazing. I'm completely biased. I want to be clear. I built this tool. So that's why, but it also has
+[  941.54s ->   947.22s] over $40 million connected to it over 2000 different trading accounts. And there's over a thousand
+[  947.22s ->   950.66s] different users. So literally people are using this tool and they're crushing it every day.
+[  950.94s ->   955.88s] And I know that until I go to the leaderboard, I can see here from this month alone, this is live
+[  955.88s ->   960.96s] account trading. This is Options Bots on this platform. I can see here someone made 6,500,
+[  961.18s ->   966.72s] someone made 6,300, 6,000, 4,000, 4,000. So people are crushing it. Real money, real accounts,
+[  966.86s ->   970.98s] real trades are not paper, all that stuff. Okay. So if I jump over to the dashboard here,
+[  971.62s ->   975.40s] we can look at all my accounts. But really, what I really want to look at is my TastyTrade account,
+[  975.40s ->   979.46s] where I'm running this system right now. I just started it a month ago. You can see here
+[  979.46s ->   985.92s] that I'm up about 200 bucks with this strategy. So this is the 60DTE ES strategy I was talking about.
+[  986.64s ->   991.24s] You can see right here, this bot just runs the entire system. So you can see here,
+[  991.30s ->   996.66s] it's placed trades. It's managed trades overnight during the day, all for me. And you can see right
+[  996.66s ->  1001.24s] here, put on this trade. I don't even know when to put on this trade. I put on this trade the 19th,
+[ 1001.24s ->  1006.44s] so about two days ago. I put on this trade, I'm already up almost 200 bucks. And when it gets
+[ 1006.44s ->  1012.18s] to $238, my 25% take profit is going to close the trade for me. If you look at all my performance
+[ 1012.18s ->  1015.66s] metrics, you can see here, again, I only have 10 trades so far, so we have more time to go, right?
+[ 1015.90s ->  1022.80s] But 100% win rate, making, I made about 1,400 one month, $700 another month. You can see here my
+[ 1022.80s ->  1028.08s] average days in trade, 4.2. So I'm closing trades very quickly, but it's been a very bullish month. So
+[ 1028.08s ->  1031.20s] again, I can't really complain there. Now, if you're wondering how you would set this up for
+[ 1031.20s ->  1036.16s] yourself, it's super simple. All you need to do is click on create your options, auto trader account,
+[ 1036.68s ->  1041.00s] connect your broker. If you want to do futures, TastyTrade is the best one for that. So click on
+[ 1041.00s ->  1046.32s] TastyTrade, you'll connect your broker. And then once you've connected your broker, all you have to do
+[ 1046.32s ->  1051.20s] is click on create, or I should say go to bot library. And you can look at all the bots, and then you
+[ 1051.20s ->  1056.80s] can get my money or main money maker. This is the 60DT strategy I told you. If you clicked on start using
+[ 1056.80s ->  1061.96s] this bot, this preloads that bot with all the rules I just told you, 25% take profit,
+[ 1062.10s ->  1066.74s] all these management, ES, all that stuff. You can actually click on start using this bot,
+[ 1067.12s ->  1071.00s] and you would start using it instantly, and it would start rolling. So if you want the same bot
+[ 1071.00s ->  1076.72s] that I'm running, aka if you want this whole system, income system installed that just works
+[ 1076.72s ->  1081.54s] in the background for you, it's consistent, reliable, and doesn't require your time and energy,
+[ 1081.98s ->  1086.04s] go click the link down below to join the options auto trader and implement this. If you're
+[ 1086.04s ->  1090.90s] against the options bots, then I don't, you probably hate money, and you love wasting time.
+[ 1091.02s ->  1095.28s] Just kidding. But no worries. Go implement this strategy. It's a great strategy, even if you
+[ 1095.28s ->  1099.46s] trade it by hand. But if you want your time back, this is the way to do it. Anyways, I hope you guys
+[ 1099.46s ->  1104.12s] enjoyed this video. All the resources will be inside our free school community, including this document,
+[ 1104.46s ->  1108.24s] and all the links you need are down below in the YouTube description. I will see you in the next video.

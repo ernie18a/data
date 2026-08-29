@@ -1,0 +1,151 @@
+[    0.00s ->     5.34s] I've been thinking a lot about equity portfolio management recently, I guess just quantitative
+[    5.34s ->    14.92s] portfolio management in general, and I just wrote an internal research note on this idea of slaying
+[   14.92s ->    22.64s] the volatility drag gun, volatility drag, and subtitle, dragon slayers don't work for free. I
+[   22.64s ->    27.32s] mean, if you could slay dragons, I doubt you would work for free too, but this is about the idea
+[   27.32s ->    37.08s] of what it is you're paying for in your portfolio in the context of long-term geometric growth that
+[   37.08s ->    45.22s] we're all subject to in these types of multi-asset portfolios, and just the quantitative objective
+[   45.22s ->    51.92s] of maximizing that return. A lot of people think it's just about sharp ratio, and probably one of
+[   51.92s ->    57.46s] my favorite figures I've ever produced, and you know, I edit my videos, so if I'm not lazy, I'm
+[   57.46s ->    62.76s] going to put it right here. One of my favorite figures that I've ever produced, and maybe I'll
+[   62.76s ->    68.76s] stay out of the way so you can see it, is this efficient frontier in classic mean variance
+[   68.76s ->    75.80s] optimization where you have this tangency line and the optimal portfolio in the context of risk
+[   75.80s ->    82.94s] adjuster return that is your sharp ratio, that's not the same thing as the portfolio that maximizes
+[   82.94s ->    90.66s] your geometric growth. And to a quant, they may say, you know, Roman, that's trivial. You know,
+[   90.78s ->    95.56s] there are different objective functions, and of course, they're not necessarily going to yield
+[   95.56s ->   101.48s] the same solution. And to that, I say that's nice that you understand the implications mathematically,
+[  101.48s ->   108.14s] but practically, what are the implications? Well, the implications are in how you design and structure
+[  108.14s ->   116.18s] your portfolio. If you're just blindly optimizing for risk return, you're not going to necessarily
+[  116.18s ->   122.52s] achieve what it is that we are all after that is maximizing, especially over long time horizons,
+[  123.00s ->   132.60s] your geometric growth rate. I've been thinking a lot about this recently in a lot of my more recent
+[  132.60s ->   138.62s] videos where I talk about portfolio management with this, you know, hedge sleeve designed to
+[  138.62s ->   146.44s] reduce volatility drag. And, you know, the initial, I guess, reaction, the initial response, the knee
+[  146.44s ->   152.12s] jerk reaction to anybody who's managing some sort of portfolio or trading in this space is, well,
+[  152.12s ->   159.30s] Roman, you know, you're talking about adding a convexity layer to your portfolio. That is the fee that
+[  159.30s ->   165.68s] you're paying the dragon slayer that's going to drag down your overall equity returns on average.
+[  166.54s ->   172.22s] Maybe that is the case on average, but are we talking about in an arithmetic sense or a geometric
+[  172.22s ->   176.88s] sense? That's a really important idea because when we talk about adding that convexity layer,
+[  176.98s ->   182.46s] we're typically talking about the volatility variance risk premia. That is, relatively speaking,
+[  182.68s ->   189.06s] the insurance for downside protection is always overpriced. And subsequently, right, if you just
+[  189.06s ->   194.30s] constantly subject yourself to that portfolio bleed, you're just going to be losing money relative
+[  194.30s ->   201.00s] to the benchmark year over year. That might be true, but again, it's very sample dependent. And are we
+[  201.00s ->   206.58s] talking about in terms of geometric growth or are we talking about on average in a particular cross
+[  206.58s ->   212.50s] section, in a particular simulation, in a particular subset of returns for an index? Are we talking about
+[  212.50s ->   220.10s] the volatility drag and the subsequent geometric growth? That is really the, in my opinion, more
+[  220.10s ->   227.62s] interesting topic of discussion here? Because recently, a lot of the research that, and eventually
+[  227.62s ->   232.82s] I'll, you know, make these papers available to you guys, a lot of the research that I'm conducting
+[  232.82s ->   240.64s] internally on my own in the context of my own multi-asset portfolios is, there is a substantial case,
+[  240.64s ->   246.88s] and it shouldn't be too much of a shock, but there is a substantial case for adding these convexity
+[  246.88s ->   255.12s] layers, paying the dragon slayers fair fees to effectively solve this volatility drag problem, and
+[  255.12s ->   262.40s] of course, optimize your geometric growth relative to just buy and hold. You actually can outperform
+[  262.40s ->   269.02s] just traditional buy and hold on, like, diversified U.S. equities or even a diversified multi-asset
+[  269.02s ->   276.54s] portfolio if you effectively introduce these hedge sleeves with appropriate use of leverage. And the
+[  276.54s ->   284.06s] reason why that's so critical is because if you induce leverage without trying to slay the volatility
+[  284.06s ->   290.46s] dragon, then what you're going to end up with is this non-linear effect where the leverage could cause
+[  290.46s ->   300.87s] you to blow out, it could cause you to just, you're going to effectively just induce severe portfolio
+[  300.87s ->   308.87s] drawdown when you don't have to. You can pay the dragon slayer a fee and the leverage is going to
+[  308.87s ->   314.55s] produce that non-linear effect with the convexity layer to avoid those severe drawdowns, avoid
+[  314.55s ->   322.07s] an increased probability or increased likelihood of having to withstand those drawdowns and, of course,
+[  322.07s ->   327.99s] the probability of blowing out your portfolio or account. And that is kind of this idea that I've been
+[  328.55s ->   336.47s] recently really obsessed with. I know a lot on this channel we talk about the mathematics, right,
+[  336.47s ->   343.99s] we talk about the theory, we talk about the structure, right, of this amorphous expected value,
+[  343.99s ->   350.71s] right, that is whatever portfolio you construct or even in the the sense of trading where you have
+[  350.71s ->   356.95s] some sort of strategy and you're accumulating edge over time. But a lot of what I'm focusing on
+[  357.83s ->   366.07s] in in practice right now is this idea of structuring these dynamic overlays favorably,
+[  366.07s ->   369.67s] right, not getting ripped off by the dragon slayer essentially is what I'm saying.
+[  369.67s ->   379.35s] So the reason why this works and the reason why in general this is, you know, how larger institutions
+[  379.35s ->   384.71s] are going to structure their bets is because it is going to not just improve your overall risk
+[  384.71s ->   390.87s] adjuster return, not necessarily like formally maximizing that objective, but it's going to
+[  391.99s ->   396.71s] optimize effectively your geometric growth, which is what your portfolio is subject to
+[  397.88s ->   402.20s] at the end of the day, especially over a long time horizon. So let me give you an example, right?
+[  403.40s ->   410.76s] Suppose that I'm trading like us equities. Okay. And suppose, and this is like been my conjecture for,
+[  410.76s ->   416.68s] you know, a thousand years effectively at this point is like, if you're trading us equities and you have
+[  416.68s ->   420.76s] this, you know, trading strategy and you know, it's long, you know, you're long, sometimes you're short,
+[  420.76s ->   423.96s] sometimes whatever you have this trading signal, you're discretionary, semi-systematic,
+[  423.96s ->   430.44s] systematic, whatever. And you run a regression on those returns relative to benchmark and you just
+[  430.44s ->   437.16s] have a beta that's roughly one. You are entirely dependent on that as your return driver. I'm not
+[  437.16s ->   442.60s] saying that you can't outperform buy and hold in that capacity as well. But what I am saying is
+[  442.60s ->   448.20s] you're dependent on that as a return driver. If the market goes down, your returns are also going to go
+[  448.20s ->   454.60s] down too, unless you run that regression over that same period that the market returns as your primary
+[  454.60s ->   460.52s] driver were negative, you find a zero beta. And you know, there's no loadings maybe on any other
+[  460.52s ->   466.44s] factor. And you just have some raw alpha there that you're trading. But that is a subject for
+[  466.44s ->   472.68s] another discussion. Really, my point here is you're subjecting yourself to that one driver for return,
+[  472.68s ->   479.32s] market risk. That market risk is the wind blowing. You don't get to dictate the direction the wind
+[  479.32s ->   484.84s] blows. It could go up, it could go down. You look at other forms of risk premia, you look at other
+[  484.84s ->   491.24s] forms of undiversifiable risk factors, and it's the same situation. You get to choose or target exposure,
+[  491.24s ->   494.84s] right? It's not going to be perfect, it's going to be rolling, things are going to swap in and out of
+[  494.84s ->   499.24s] the different quantiles in terms of what you need to turn over in your portfolio to maintain
+[  499.24s ->   507.90s] those targets. But at the end of the day, right, it's the wind blowing. So where does the leverage
+[  507.90s ->   514.14s] come in? Where does the volatility drag come in? And why am I so obsessed with these like structurally
+[  514.14s ->   519.50s] orthogonal bets or even negatively correlated products that you can include in a multi-asset
+[  519.50s ->   526.94s] portfolio to optimize this geometric growth that we're all subject to? Well, let's just start with
+[  526.94s ->   533.50s] another really crazy visualization, another one of my probably most favorite visualizations. I'll put
+[  533.50s ->   538.54s] it right here again, okay? I want you to notice there are two strategies here, one with a net zero,
+[  538.54s ->   548.06s] okay, zero percent geometric growth over 10 years, 15% average return, 30% standard, or was it 30, 40?
+[  548.62s ->   551.66s] I think it's 30%. I'd have to look back at my simulation, whatever.
+[  551.66s ->   557.82s] Um, and it's got a positive arithmetic mean, but we're not subject to the arithmetic mean,
+[  557.82s ->   562.86s] we're subject to the geometric mean. So it's got zero percent geometric growth. The other strategy is
+[  562.86s ->   570.86s] a hedge sleeve. It's got negative 2.5% geometric growth. So you put the zero percent with the negative
+[  570.86s ->   579.18s] 2.5% together and you're producing now positive geometric growth. That is, that is insane. That is an
+[  579.18s ->   588.38s] insane consequence of observing and being obsessed with this particular structure, okay? So that's a
+[  588.38s ->   592.54s] really important idea because now we're talking about return drivers and we're talking about the
+[  592.54s ->   598.38s] structure behind these return drivers. So the macro economy, for example, is one driver of the returns,
+[  598.38s ->   603.34s] right? If the market tanks and you go from peak to trough recession, you don't get to choose,
+[  604.06s ->   608.54s] right? If you're generating returns primarily with that exposure, you don't get to choose
+[  608.54s ->   613.02s] where in the business cycle we are. And this is often what is meant by being triple long, right?
+[  613.02s ->   618.62s] So it's like your long, your house, your job, your, um, your stock portfolio, and then the market
+[  618.62s ->   623.02s] starts to tank. You lose your job, your house equity gets cut in half and your portfolio is,
+[  623.02s ->   627.74s] you know, pennies on the dollar, perhaps of original principle. You need liquidity when everyone
+[  627.74s ->   634.30s] else needs liquidity. No bueno. I don't like that. I would much rather engineer a portfolio for success.
+[  634.30s ->   639.42s] And that's this idea of structurally orthogonal bets. So now my return driver isn't just the
+[  639.98s ->   645.58s] macro economy. Okay. That's not my only source of return. It's not just raw beta exposure with
+[  645.58s ->   649.50s] leverage. Oh my God, forget about it. If you have just leverage with this exposure, you have that
+[  649.50s ->   653.74s] nonlinear effect, you could make your life substantially worse, especially depending on,
+[  654.30s ->   659.98s] you know, the path that you walk. But my point is here, what if in addition to this,
+[  659.98s ->   667.18s] this broader market exposure, you're also carrying another leg in a multi-asset portfolio that is
+[  667.18s ->   672.70s] making markets on prediction markets, right? Structurally, those contracts have what I would
+[  672.70s ->   681.50s] consider to be like physical resolution has nothing to do, literally nothing to do with the macro economy,
+[  681.50s ->   686.94s] right? The physical resolution of each of those contracts is going to be completely orthogonal to
+[  686.94s ->   692.54s] the broader market returns. You could say that maybe the volume is correlated, right? Maybe the volume
+[  692.54s ->   697.66s] people participating in those transactions are going to be substantially more or less based on
+[  697.66s ->   703.82s] the current state of the macro economy. But I'm talking about like the literal contract resolution,
+[  703.82s ->   709.90s] right? Like if you have a particular like political race that you're making a market for in terms of like
+[  709.90s ->   716.86s] just the prediction market contracts or even like sports betting contracts, then that has quite
+[  716.86s ->   720.86s] literally the physical resolution, the actual resolution of those contracts is completely
+[  720.86s ->   726.62s] structurally, physically, stochastically independent from the broader market, right? If you have a crisis,
+[  726.62s ->   731.10s] right? Maybe there's information leakage and the contract value shoots up or down based on your
+[  731.10s ->   737.58s] inventory, you have this inventory risk, whatever, that risk is completely separate from the broader
+[  737.58s ->   741.82s] market risk. And sure, you could probably come up with one of 10,000 different cases where like,
+[  741.82s ->   747.02s] oh, Roman, it's not perfect, whatever, but that's, we're talking about the practical implications here.
+[  747.02s ->   753.90s] So now you have this, this beta as one, one factor, one facet of your portfolio driving returns.
+[  753.90s ->   758.46s] Maybe you also have prediction markets. Maybe you also have, oh man, I just coughed up a lung, but
+[  759.34s ->   764.22s] maybe you have some alternative assets. This is what I'm talking about is these are all structurally
+[  764.22s ->   769.98s] uncorrelated with one another. Maybe you have a sleeve that harvests the volatility risk premium
+[  770.86s ->   777.42s] in different periods of risk on, risk off based on the structure of implied volatility, right?
+[  777.42s ->   782.46s] Is implied volatility increasing over time, decreasing over time? These are the different
+[  782.46s ->   788.78s] types of strategies that I'm talking about holding in some sort of like diversified multi-asset portfolio
+[  788.78s ->   796.18s] to optimize risk-adjusted return and geometric growth. And at the end of the day, right, it's not
+[  796.18s ->   803.94s] just about these structurally uncorrelated strategies or structurally uncorrelated products that are going
+[  803.94s ->   811.21s] to not, like they're not exclusively going to improve your risk-adjusted returns and geometric growth,
+[  811.21s ->   818.41s] but also like products that are structurally negatively correlated, right? So you can think of something like
+[  818.41s ->   823.85s] being long convexity, holding some sort of like put, and this is where like the counter,
+[  825.05s ->   830.01s] it's somewhat counterintuitive. At least when I started to approach this research,
+[  831.29s ->   838.65s] I just anticipated that the bleed would significantly outweigh any long-term compound growth benefits,
+[  838.65s ->   845.53s] but that's why this video is called Slaying the Volatility Drag Gun, because it turns out that it's
+[  845.53s ->   852.60s] it's not necessarily the case. And this is something in real time that I'm continuing to
+[  852.60s ->   858.20s] structure in an optimal capacity for a quantitative portfolio, but it's just something that I think is
+[  858.20s ->   864.28s] so tremendously interesting. And a very trivial visualization, like these two trivial visualizations
+[  864.28s ->   869.64s] that I've shown you here, albeit trivial to like, you know, some quant or mathematician,
+[  870.36s ->   875.88s] the actual implications in reality are substantial. If you are responsible for
+[  878.12s ->   888.04s] allocating risk, it is substantial. So that is pretty much everything on my mind today. I've been producing
+[  888.04s ->   895.32s] a lot of like pure quantitative research in this capacity, and it is kind of
+[  895.32s ->   903.32s] in tandem with the empirical leg of it. And I just think it's, it's crazy how well it works together,
+[  903.32s ->   909.16s] because it really explains everything that's going on from a strategy standpoint, from a leverage
+[  909.16s ->   916.84s] standpoint, from an overall portfolio, like objective or goal standpoint, for long-term growth,
+[  916.84s ->   922.04s] right? This isn't about just like, like trading, right? Trading.
+[  922.04s ->   927.00s] We're talking about like quite literally, you know, tens of millions of dollars optimizing
+[  927.00s ->   935.88s] the long-term geometric growth of that portfolio on a risk-adjusted return basis. So with that,
+[  935.88s ->   939.16s] you know, that's going to do it for today's Fireside Chat. I hope you enjoyed it. I hope you
+[  939.16s ->   945.88s] learned something. I will make the internal research that I'm producing available once everything is all
+[  945.88s ->   951.48s] polished. And, you know, I'll probably create a dedicated video on that topic, or I'll just, you
+[  951.48s ->   955.72s] know, weave it into, to everything that we're discussing at that particular point in time.
+[  956.44s ->   971.72s] Other than that, I want to thank you so much for watching, and I will see you in the next video.

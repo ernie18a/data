@@ -1,0 +1,64 @@
+[    0.66s ->     1.66s] Hey guys, what's up?
+[    1.66s ->     6.06s] It's Austin Booley again today with Options Traders and I wanted to go over another example
+[    6.06s ->     7.06s] of options pinning.
+[    7.06s ->    10.46s] It was super prevalent in today's trading activity.
+[   10.46s ->    14.70s] As we can see here, I have the SPX pulled up but when I searched up, I went to that
+[   14.70s ->    19.10s] website that I mentioned before in my options pinning videos but I will link it again in
+[   19.10s ->    20.46s] the description below.
+[   20.46s ->    24.90s] You go to this website, you type in the ticker or the stock that you want to look at the
+[   24.90s ->    29.94s] options pinning for and then you also put in the expiration date.
+[   29.94s ->    35.18s] So if we look at SPY, today it had an expiration, today was one of the days that the options
+[   35.18s ->    36.18s] expired.
+[   36.18s ->    38.18s] Let's see if we can get to Friday.
+[   38.18s ->    41.78s] Sorry, I mainly trade SPX and my SPY is a little out of date.
+[   41.78s ->    44.10s] Okay, so let's look here.
+[   44.10s ->    51.86s] So I went on to Max Payne this website this morning and it gave me a SPY that the market
+[   51.86s ->    57.94s] makers want it to close around 266.5.
+[   57.94s ->    64.06s] So as we can see, we closed the day at 266.82, so 32 cents off.
+[   64.06s ->    66.54s] But how could this have helped you trade in the morning?
+[   66.54s ->    68.50s] Okay, well let's look at this.
+[   68.50s ->    73.28s] Let's draw a line here at where we thought or well first of all, let me show you an example
+[   73.28s ->    75.18s] of 266.5.
+[   75.18s ->    78.18s] Let's just do this right here real quick.
+[   78.18s ->    80.78s] Let's just say this is 266.5.
+[   80.78s ->    84.30s] But first I want to show you proof because you can't go back on this website.
+[   84.30s ->    85.78s] So I screenshotted it.
+[   85.78s ->    92.78s] So this is, I put in the ticker symbol SPY and the day, April 23rd, 2018.
+[   92.78s ->   101.16s] And it gave us a 266, no it's actually a 267, my bad, a 267 expiration price.
+[  101.16s ->   104.88s] So close the day at 2667, my bad.
+[  104.88s ->   110.02s] So let's go back, let's take a look, 267, let me move this up a bit.
+[  110.02s ->   111.56s] Okay, here we go.
+[  111.56s ->   117.34s] So we knew that we're going to start around or we want, that's going to close around 267.
+[  117.34s ->   121.18s] That is what our assumption is in the morning.
+[  121.18s ->   125.64s] So as you can see, we opened here in the morning at around 267.
+[  125.64s ->   130.32s] So of course we're going to have some consolidation here, some choppiness in the market because
+[  130.32s ->   132.20s] we want to stay around this price.
+[  132.20s ->   136.02s] Then we have a huge shoot up, but we need to stay near this price.
+[  136.02s ->   139.84s] So we pull back down and then we have another choppiness in the market.
+[  139.84s ->   144.80s] Then we have another spike down and then we have a pull back up to the 267 area.
+[  144.80s ->   146.64s] So how do we trade this?
+[  146.64s ->   148.06s] It's pretty simple.
+[  148.06s ->   155.86s] If we are super far away from where the market makers want to pin this stock, then we buy
+[  155.86s ->   156.86s] in the opposite direction.
+[  156.86s ->   160.86s] So it's super far up, so we buy a put and if it's super far down, we buy a call.
+[  160.86s ->   164.88s] Now this should not be your only thing you're basing your trade off of.
+[  164.88s ->   171.40s] So if we go to SPX, again we want it to close around 2670, which is where we got it to close
+[  171.40s ->   172.40s] today.
+[  172.40s ->   176.44s] So as you can see, we have some choppiness here and then we have some up and then we hit
+[  176.44s ->   180.86s] this resistance level and then we got rejected and then we went under the EMA.
+[  180.86s ->   185.08s] So that would have been an entrance for a put because we have the options pinning as
+[  185.08s ->   185.66s] one reason.
+[  185.66s ->   193.24s] We have the resistance level, it got resisted from it and we have the break of the EMA line
+[  193.24s ->   194.30s] as our third reason.
+[  194.30s ->   197.30s] Then let's go down here, it's shot down under it.
+[  197.30s ->   199.08s] We have a bounce on support.
+[  199.08s ->   203.50s] We have a break above the EMA line and we have that options pinning.
+[  203.50s ->   205.50s] We know it's going to close somewhere around that price.
+[  205.50s ->   209.84s] So that's again another example of how you can use options pinning in day trading or in
+[  209.84s ->   213.52s] any type of options trading or stock trading that you participate in.
+[  213.52s ->   215.50s] Alright, I hope you all learned something from this.
+[  215.50s ->   220.02s] This is a quick video as I am at school and if you want to learn more, there's a Facebook
+[  220.02s ->   222.08s] group link below and there's a Discord link below.
+[  222.08s ->   228.00s] I am mainly in the Discord but Facebook has a lot of awesome members in it as well.
+[  228.00s ->   231.08s] Hopefully you all learned something and hopefully you all can become better traders because of
+[  231.08s ->   231.54s] this video.

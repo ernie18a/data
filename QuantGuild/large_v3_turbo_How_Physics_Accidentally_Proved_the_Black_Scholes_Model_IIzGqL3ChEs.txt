@@ -1,0 +1,3146 @@
+[    0.46s ->     6.45s] How do we know that the Black-Scholes model is correct?
+[    7.13s ->     9.53s] Sure, we make a whole bunch of assumptions.
+[   10.15s ->    16.57s] We assume no arbitrage, the existence then of a risk-neutral measure, which may or may not be unique.
+[   16.57s ->    22.87s] But on almost all of my videos discussing any sort of model, I get comments,
+[   22.99s ->    26.95s] hey, this doesn't hold in practice, your assumptions are violated.
+[   26.95s ->    32.19s] And to that I say, yeah, no kidding, that's why we're building models in the first place,
+[   32.19s ->    34.75s] but they completely miss the point.
+[   35.29s ->    42.31s] Just because you make assumptions, it doesn't mean that you've established an argument that's internally consistent.
+[   42.31s ->    47.09s] So how do we know that the Black-Scholes model is correct?
+[   47.35s ->    51.31s] Fortunately for us, physics accidentally solved this problem,
+[   51.31s ->    57.03s] proving that the Black-Scholes model is in fact correct relative to its own framework
+[   57.03s ->    60.89s] and the fundamental theorem of asset pricing.
+[   61.17s ->    64.35s] And that's exactly what we're going to talk about in this video.
+[   64.53s ->    71.51s] In this context, a risk-neutral measure just tells us how we can expect an asset to grow over time,
+[   71.95s ->    76.89s] similar to how you can expect access to my Jupyter notebooks.
+[   77.01s ->    79.45s] This Jupyter notebook will be linked in the description below.
+[   79.45s ->    82.21s] I'll also post it to the QuantGuild library on GitHub,
+[   82.63s ->    86.05s] where you can find all of my Jupyter notebooks and associated YouTube videos,
+[   86.43s ->    89.33s] along with all of the source code for my quant builds.
+[   89.51s ->    92.55s] At the top of this Jupyter notebook, you'll notice some related QuantGuild videos
+[   92.55s ->    97.47s] applying math, probability, statistics, stochastic calculus to pricing,
+[   97.89s ->   101.37s] this idea of ETO integration, stochastic differential equations,
+[  101.85s ->   104.99s] finite differences, the Heston stochastic volatility model,
+[  104.99s ->   107.33s] and the fast Fourier transform.
+[  107.95s ->   112.31s] And of course, this idea of Brownian motion, also borrowed from physics,
+[  112.69s ->   115.91s] which is the driver for many of our stochastic models.
+[  116.21s ->   117.99s] If you're unfamiliar with any of these topics,
+[  118.09s ->   120.37s] I highly encourage you to check these videos out first,
+[  120.71s ->   123.01s] before tackling one like this.
+[  123.17s ->   125.57s] Moreover, these videos certainly take a lot of effort to create,
+[  125.65s ->   128.73s] so if you'd like to help support the channel so I can continue to create videos
+[  128.73s ->   131.51s] just like this one, please like, comment, subscribe, share.
+[  131.51s ->   134.61s] It helps me out tremendously, it is always greatly appreciated,
+[  134.89s ->   139.51s] and if you'd like to master your quantitative skills, check out QuantGuild.com.
+[  139.91s ->   143.41s] Maybe you come from a background in business, economics, computer science,
+[  143.47s ->   147.29s] and aren't too sure where to get started on your quant journey.
+[  147.77s ->   150.65s] Maybe you're an aspiring quant or a working professional
+[  150.65s ->   152.85s] looking to sharpen those technical skills.
+[  153.45s ->   155.51s] In any case, QuantGuild is for you.
+[  155.59s ->   159.31s] We have over 90 quant lessons in math, probability, finance,
+[  159.31s ->   163.27s] an adaptive practice engine that scales with your skill level
+[  163.27s ->   166.03s] so you can progress to more and more difficult topics
+[  166.03s ->   168.61s] with gamified rank-based progress,
+[  169.11s ->   172.09s] interview questions with fully worked solutions,
+[  172.67s ->   176.31s] trading games, courses from A to Z in coding,
+[  176.67s ->   180.93s] math, probability, and statistics with more on the way,
+[  181.13s ->   184.87s] and all that's included with QuantGuild membership.
+[  185.35s ->   187.55s] And you can get started right now for free.
+[  187.55s ->   189.57s] So if you'd like to help support the channel
+[  189.57s ->   194.37s] and master your quantitative skills, check out QuantGuild.com.
+[  194.43s ->   197.19s] Without further ado, let's set the stage for physics
+[  197.19s ->   200.11s] accidentally proving the Black-Scholes model
+[  200.11s ->   203.71s] by discussing this idea of a European option contract.
+[  203.93s ->   207.59s] Now, these derivative contracts derive their value
+[  207.59s ->   209.89s] from some sort of underlying asset.
+[  210.11s ->   213.47s] And as it turns out, for this particular contract type,
+[  213.47s ->   217.25s] we only care about the value of that underlying asset
+[  217.25s ->   219.57s] at some time in the future.
+[  219.57s ->   222.73s] Now, this could be one week, it could be a month,
+[  222.85s ->   224.49s] six months, a year, it doesn't matter.
+[  224.61s ->   227.87s] We're just gonna call that time in the future, capital T.
+[  228.09s ->   229.99s] That's going to be the expiration
+[  229.99s ->   233.05s] or the maturity of this contract.
+[  233.21s ->   237.19s] And the payoff of this contract at that point in the future
+[  237.19s ->   240.21s] is just going to be this max function.
+[  240.57s ->   243.47s] And I've plotted it here on a chart for you.
+[  243.47s ->   246.49s] And what we can see effectively is with this slider,
+[  246.67s ->   248.81s] how much the contract is worth
+[  248.81s ->   252.33s] based on where the underlying asset moves.
+[  252.45s ->   254.03s] So in this case, it's a stock.
+[  254.15s ->   258.51s] If the underlying asset moves up to here, 1025,
+[  258.93s ->   263.23s] then the payoff for this contract is going to be 1025,
+[  263.55s ->   265.71s] typically sold in lots of 100.
+[  265.83s ->   268.69s] So we would just multiply that value by 100.
+[  268.85s ->   269.75s] That would be our payoff.
+[  269.75s ->   274.49s] Now, this is telling us the value of the contract at what time?
+[  275.09s ->   277.39s] At time, capital T in the future.
+[  277.53s ->   279.23s] But what's the problem?
+[  279.83s ->   282.67s] We don't know what the stock price is going to be.
+[  282.89s ->   285.75s] If we did, then yeah, we would just plug it in
+[  285.75s ->   288.57s] to this equation and we would have the payoff,
+[  288.73s ->   290.41s] the value of that contract.
+[  290.75s ->   293.55s] But we don't know what it's going to be in the future.
+[  293.67s ->   295.07s] We don't have a crystal ball.
+[  295.17s ->   297.99s] So we need to come up with some argument.
+[  297.99s ->   303.33s] We need to come up with some way to value this contract today
+[  303.33s ->   306.49s] to figure out how much it should be worth
+[  306.49s ->   311.89s] based on where the future underlying asset price could be.
+[  312.01s ->   314.21s] Turns out this is a tricky problem.
+[  314.41s ->   317.07s] And I have two charts here to help us visualize
+[  317.07s ->   319.07s] exactly what's going on.
+[  319.17s ->   322.47s] So on the left here, I have the underlying stock
+[  322.47s ->   326.41s] that the option contract is deriving its value from.
+[  326.41s ->   332.13s] And on the right here, I have the option value over time.
+[  332.33s ->   334.17s] And what are you noticing here?
+[  334.27s ->   339.33s] Well, the option contract's value is going to change over time
+[  339.33s ->   342.41s] as the underlying stock also changes.
+[  342.55s ->   344.11s] If I run this simulation again,
+[  344.53s ->   346.87s] you're going to see the stock has a different value
+[  346.87s ->   349.09s] and so does the option contract.
+[  349.25s ->   350.37s] And if I keep running this,
+[  350.67s ->   354.09s] I'm going to get different values for where the stock could be
+[  354.09s ->   357.51s] and where the option contract could be.
+[  357.51s ->   360.79s] So effectively, what I'm saying here is
+[  360.79s ->   363.55s] at this time, one, in the future,
+[  363.95s ->   365.21s] this is our maturity.
+[  365.57s ->   367.23s] This is time capital T.
+[  367.59s ->   368.89s] And at this point,
+[  368.89s ->   373.65s] I don't need to value the option anywhere else throughout time.
+[  373.81s ->   375.99s] This is time capital T.
+[  376.35s ->   378.31s] I can just plug in the stock price
+[  378.31s ->   381.09s] into this equation and get the payoff.
+[  381.09s ->   385.29s] But if I'm not at time capital T
+[  385.29s ->   389.47s] and I'm at time 0.5 or 0.2,
+[  389.65s ->   392.31s] then I need some way to figure out
+[  392.31s ->   396.19s] what the option price is going to be.
+[  396.55s ->   399.93s] Effectively, I need to find a function or a functional
+[  399.93s ->   404.13s] that is going to tell me based on this underlying stock price
+[  404.13s ->   406.11s] and some other parameters,
+[  406.11s ->   409.43s] how much I should pay for this option contract.
+[  409.79s ->   413.07s] Then I'll be able to price the contract
+[  413.07s ->   416.23s] at any point throughout the contract's life,
+[  416.39s ->   421.27s] not just at the maturity like we have in this equation.
+[  421.45s ->   423.53s] So effectively, what we're after
+[  423.53s ->   427.09s] is some function functional V
+[  427.09s ->   431.93s] that is going to give us the option price at any time T.
+[  432.15s ->   435.23s] So how do we find this magic function V?
+[  435.23s ->   437.81s] Well, we need to build a model
+[  437.81s ->   442.95s] and propose an argument for what this function V should be.
+[  443.59s ->   445.57s] And one such proposition is given
+[  445.57s ->   447.69s] by the Black-Scholes framework.
+[  448.27s ->   449.29s] So in this framework,
+[  449.29s ->   452.07s] we construct a portfolio replication argument
+[  452.07s ->   455.43s] under no arbitrage, no transaction costs,
+[  455.63s ->   456.99s] so on and so forth.
+[  457.03s ->   460.85s] And we end up with this Black-Scholes equation.
+[  460.85s ->   464.27s] And if we solve this Black-Scholes equation,
+[  464.27s ->   466.43s] it's just a partial differential equation,
+[  466.43s ->   468.55s] we end up with a function,
+[  469.15s ->   472.05s] a function V that is going to tell us
+[  472.05s ->   474.81s] the price of our option contract,
+[  475.03s ->   478.27s] not at time capital T in the future,
+[  478.65s ->   481.69s] like we saw above,
+[  482.23s ->   486.31s] but right now at time little t
+[  486.31s ->   490.13s] or whenever throughout the life of the contract.
+[  490.13s ->   493.57s] So what you're observing here in this chart
+[  493.57s ->   496.15s] is we can input the stock,
+[  496.19s ->   499.15s] not at time capital T at maturity.
+[  499.15s ->   500.85s] We don't know what that is,
+[  500.93s ->   503.93s] but the stock price right now,
+[  503.93s ->   506.37s] we do know we can just go out into the market
+[  506.37s ->   507.79s] and look at the spot price.
+[  507.89s ->   510.75s] We plug that into the Black-Scholes function here,
+[  511.07s ->   512.29s] the Black-Scholes model,
+[  512.29s ->   515.19s] we get the option price.
+[  515.69s ->   518.75s] And that's exactly how in this chart here,
+[  518.91s ->   522.05s] I go about finding these option prices
+[  522.05s ->   523.95s] every step of the way.
+[  524.31s ->   527.15s] Otherwise, I would just know the price at what time?
+[  527.73s ->   530.15s] Capital T, that's just going to be the payoff.
+[  530.65s ->   532.95s] But now that I have this Black-Scholes model,
+[  533.21s ->   536.45s] I can determine the price at any time
+[  536.45s ->   538.67s] throughout the life of the contract.
+[  538.67s ->   542.71s] So that is given to us by this Black-Scholes model.
+[  542.83s ->   544.95s] Effectively, it gives us this function V.
+[  545.45s ->   547.13s] And if I plug in the stock price
+[  547.13s ->   548.61s] and some other parameters,
+[  548.81s ->   552.49s] I get the value of the option right now
+[  552.49s ->   556.63s] or at any point throughout the life of that contract.
+[  556.79s ->   559.67s] So that's one model or argument
+[  559.67s ->   562.97s] for the function V that we were after.
+[  563.27s ->   564.83s] Are there any others?
+[  564.83s ->   569.03s] Well, what about the fundamental theorem of asset pricing?
+[  569.77s ->   572.07s] The fundamental theorem of asset pricing says
+[  572.07s ->   573.69s] if there's no arbitrage,
+[  574.17s ->   577.69s] then the fair present price of a contingent claim
+[  577.69s ->   582.09s] is just going to be the risk-neutral discounted expectation
+[  582.09s ->   584.81s] of the claim's payoff.
+[  584.99s ->   586.59s] In other words,
+[  586.71s ->   588.01s] what we can do is
+[  588.01s ->   591.77s] we can find the price of this option
+[  591.77s ->   595.45s] by just simulating the underlying asset.
+[  595.61s ->   597.25s] And that's exactly what I've done here.
+[  597.43s ->   598.35s] What I've done is
+[  598.35s ->   600.19s] I've simulated a whole bunch of paths
+[  600.19s ->   602.13s] of the underlying asset
+[  602.13s ->   606.41s] and I've computed the value of our option
+[  606.41s ->   607.83s] at time capital T.
+[  608.53s ->   610.91s] And what you're seeing here on the right
+[  610.91s ->   614.41s] is how as I continue to simulate more paths,
+[  614.41s ->   617.83s] the error of the option price
+[  617.83s ->   620.91s] is going to converge to zero.
+[  621.23s ->   622.37s] In other words,
+[  622.43s ->   624.89s] as I continue to simulate more paths,
+[  625.09s ->   627.27s] my option price is going to become
+[  627.27s ->   628.71s] more and more accurate
+[  628.71s ->   631.25s] thanks to the law of large numbers.
+[  631.37s ->   633.07s] So it's no accident.
+[  633.07s ->   637.69s] If I continue to simulate new samples of paths,
+[  637.77s ->   639.65s] you're going to see every single time
+[  639.65s ->   644.11s] the option price is going to converge
+[  644.11s ->   647.01s] to the theoretical value proposed
+[  647.01s ->   650.25s] by the fundamental theorem of asset pricing.
+[  650.39s ->   653.61s] So this is a different framework, right?
+[  653.67s ->   656.47s] This is a different framework and argument
+[  656.47s ->   660.59s] for the function V that we were after.
+[  660.77s ->   664.79s] So a reasonable question arises, right?
+[  664.79s ->   669.81s] Which choice of V is correct?
+[  669.97s ->   673.45s] We have this Black-Scholes framework here
+[  673.45s ->   675.47s] that produces this Black-Scholes model.
+[  676.15s ->   679.09s] And in the fundamental theorem of asset pricing,
+[  679.23s ->   681.65s] we have this choice of V.
+[  682.67s ->   684.83s] So which one is it?
+[  685.35s ->   687.37s] Well, let's plot both of them
+[  687.37s ->   690.55s] and see how their prices differ.
+[  690.87s ->   692.21s] So what I've done here
+[  692.21s ->   694.73s] is I've plotted the option prices
+[  694.73s ->   697.83s] generated by both of these frameworks.
+[  698.07s ->   701.51s] I have this proposed function V on the left
+[  701.51s ->   704.79s] and this proposed function V on the right.
+[  704.99s ->   707.31s] And I'm showing the option prices
+[  707.31s ->   711.23s] for the same underlying asset price
+[  711.23s ->   713.39s] at the same point in time.
+[  713.49s ->   714.65s] So we're at time here,
+[  715.11s ->   716.51s] T is equal to 0.5.
+[  716.55s ->   717.53s] We're not at maturity.
+[  718.11s ->   720.17s] We're not at time capital T.
+[  720.17s ->   722.85s] We're at some time little t
+[  722.85s ->   725.17s] before the contract expires,
+[  725.29s ->   726.13s] before maturity.
+[  726.87s ->   728.79s] And what do you observe?
+[  729.09s ->   732.13s] Well, they look very similar, don't they?
+[  732.19s ->   736.09s] And it turns out that they are actually exactly the same.
+[  736.23s ->   738.41s] Now, this isn't a proof.
+[  738.73s ->   743.01s] What we've shown is for this selected set of asset prices
+[  743.01s ->   744.93s] at this particular point in time,
+[  745.03s ->   747.79s] yes, both of these frameworks yield
+[  747.79s ->   749.87s] the same option prices.
+[  750.69s ->   755.93s] But is this true for any parameter set?
+[  756.33s ->   758.65s] In other words, if I pick a different time,
+[  759.07s ->   761.19s] maybe I do T is equal to 0.2.
+[  761.63s ->   765.13s] Then are these going to be equal to each other then?
+[  765.69s ->   767.45s] It turns out they are.
+[  767.75s ->   770.17s] And if we pick any parameter set,
+[  770.23s ->   772.09s] we're going to see that both of these functions
+[  772.09s ->   775.29s] are going to look exactly the same.
+[  775.77s ->   778.47s] But we can't just do this out to infinity.
+[  778.67s ->   781.95s] We need some way to prove mathematically
+[  781.95s ->   786.73s] that these two functions in two separate frameworks
+[  786.73s ->   789.55s] are actually equivalent.
+[  790.49s ->   792.21s] How can we do that?
+[  792.35s ->   793.45s] Fortunately for us,
+[  793.57s ->   795.51s] physics has accidentally proven
+[  795.51s ->   800.21s] that these two frameworks are equivalent to one another.
+[  800.21s ->   801.85s] In other words,
+[  802.07s ->   804.33s] thanks to the Feynman-Cack theorem,
+[  804.69s ->   807.93s] we have this idea of a partial differential equation
+[  807.93s ->   809.83s] that if it holds,
+[  810.21s ->   814.65s] implies that the expectation is also the solution
+[  814.65s ->   816.41s] to the option pricing problem
+[  816.41s ->   818.95s] and vice versa.
+[  819.51s ->   820.57s] In other words,
+[  820.83s ->   822.49s] using the Feynman-Cack theorem,
+[  822.49s ->   825.05s] we are showing that our choice of V,
+[  825.15s ->   826.91s] if we use the argument
+[  826.91s ->   829.37s] given by the fundamental theorem of asset pricing
+[  829.37s ->   831.77s] or the Black-Scholes argument
+[  831.77s ->   832.99s] that yes,
+[  833.57s ->   835.49s] all of them are equivalent
+[  835.49s ->   837.69s] to this function V
+[  837.69s ->   840.79s] that we were after at the start of this video.
+[  841.31s ->   842.77s] So what I'm going to do now
+[  842.77s ->   844.87s] is I'm going to move over to the iPad
+[  844.87s ->   847.03s] and prove to you step by step
+[  847.03s ->   849.87s] that these are indeed equivalent
+[  849.87s ->   853.05s] thanks to this Feynman-Cack theorem.
+[  853.37s ->   853.65s] All right,
+[  853.69s ->   856.15s] it feels good to be back on the iPad here.
+[  856.29s ->   859.33s] As far as prerequisites for this theorem goes,
+[  859.33s ->   862.27s] you really just need general knowledge
+[  862.27s ->   864.49s] of partial differential equations
+[  864.49s ->   867.31s] because all the Black-Scholes equation is
+[  867.31s ->   871.31s] is a transformed version of the heat equation.
+[  871.63s ->   874.55s] You also need knowledge of Brownian motion
+[  874.55s ->   875.91s] and of course,
+[  876.15s ->   877.63s] Ito's lemma.
+[  877.63s ->   879.85s] But if you're looking for resources
+[  879.85s ->   882.73s] on where to learn about these prerequisites,
+[  882.85s ->   886.49s] look no further than the top of this Jupyter notebook.
+[  886.65s ->   889.17s] Again, that'll be linked in the description below.
+[  889.35s ->   892.73s] I have videos on literally all of these topics
+[  892.73s ->   896.91s] in the context of the Black-Scholes model.
+[  897.47s ->   899.61s] So what we're trying to do here,
+[  899.67s ->   901.57s] let's not lose sight of the goal,
+[  901.57s ->   905.41s] is to say that if we have the Black-Scholes equation
+[  905.41s ->   909.39s] given by the portfolio replication argument,
+[  909.55s ->   913.43s] this is our model for that function V that we're after,
+[  913.53s ->   916.57s] we get this partial differential equation here
+[  916.57s ->   920.39s] and this is just a transformed version
+[  920.39s ->   922.67s] of the heat equation.
+[  923.13s ->   928.52s] If we solve this equation for V,
+[  929.02s ->   931.90s] then we get the Black-Scholes model.
+[  931.90s ->   935.66s] We denoted that as V sub BS for Black-Scholes.
+[  936.16s ->   938.26s] In other words, I can tell you now
+[  938.26s ->   941.72s] the price of our option contract at any time little t,
+[  942.14s ->   944.72s] not just at maturity time capital T.
+[  945.16s ->   947.78s] So this is one proposed framework.
+[  947.98s ->   952.00s] We also have the fundamental theorem of asset pricing.
+[  952.68s ->   958.52s] We said that the fundamental theorem of asset pricing
+[  958.52s ->   960.84s] proposes that if there's no arbitrage,
+[  961.38s ->   964.84s] then the fair price of our contingent claim today,
+[  964.94s ->   967.28s] that is our European call option,
+[  967.70s ->   971.80s] must be equal to the discounted,
+[  972.80s ->   975.80s] risk-neutral, expected payoff.
+[  975.94s ->   977.56s] And we know what the payoff is.
+[  978.08s ->   980.04s] The payoff is just that max function
+[  980.04s ->   982.08s] like we saw at the start of this video.
+[  982.62s ->   985.30s] The max of S at what time?
+[  985.94s ->   986.76s] Capital T.
+[  987.18s ->   988.92s] That is a random variable.
+[  988.92s ->   990.34s] We don't know what the stock price
+[  990.34s ->   993.02s] is going to be in the future.
+[  993.54s ->   994.74s] It's going to be the max
+[  994.74s ->   996.78s] between the stock price in the future,
+[  997.44s ->  1000.94s] less the strike price, and zero.
+[ 1001.76s ->  1003.00s] Effectively, what we're doing
+[ 1003.00s ->  1005.16s] is we're eliminating the randomness here
+[ 1005.16s ->  1008.18s] by taking the risk-neutral expectation.
+[ 1008.56s ->  1011.12s] This is a deterministic quantity.
+[ 1011.88s ->  1013.16s] So what we're trying to do
+[ 1013.16s ->  1014.58s] is we're trying to connect
+[ 1014.58s ->  1020.06s] the solution to this parabolic partial differential equation
+[ 1020.06s ->  1025.44s] to this probabilistic interpretation.
+[ 1025.44s ->  1028.24s] We're trying to show that effectively
+[ 1028.24s ->  1031.17s] all of these representations
+[ 1031.17s ->  1036.35s] are in fact equivalent
+[ 1036.35s ->  1038.33s] to that one function
+[ 1038.33s ->  1040.11s] that we're after,
+[ 1040.77s ->  1040.95s] V.
+[ 1040.95s ->  1042.05s] More specifically,
+[ 1042.37s ->  1043.69s] we're trying to prove
+[ 1043.69s ->  1045.23s] that the solution to
+[ 1045.23s ->  1047.49s] the Black-Scholes equation
+[ 1047.49s ->  1049.75s] is precisely
+[ 1049.75s ->  1053.67s] the arbitrage-free price
+[ 1053.67s ->  1055.93s] that the fundamental theorem
+[ 1055.93s ->  1058.03s] of asset pricing says
+[ 1058.03s ->  1060.09s] must exist.
+[ 1060.51s ->  1061.65s] And that's essentially
+[ 1061.65s ->  1063.57s] what we are suggesting here.
+[ 1063.77s ->  1065.13s] So let's walk through
+[ 1065.13s ->  1066.45s] the Feynman-Cack theorem
+[ 1066.45s ->  1069.43s] to show precisely why this is the case.
+[ 1069.43s ->  1071.99s] The first thing that we have to do
+[ 1071.99s ->  1073.39s] is define the dynamics
+[ 1073.39s ->  1075.67s] of our underlying asset
+[ 1075.67s ->  1077.23s] in a Black-Scholes framework.
+[ 1077.85s ->  1079.07s] We assume the underlying,
+[ 1079.17s ->  1081.29s] in this case we've been talking about stock,
+[ 1081.67s ->  1084.01s] follows a geometric Brownian motion.
+[ 1084.19s ->  1084.83s] So we say
+[ 1084.83s ->  1086.95s] the dynamics are given by
+[ 1086.95s ->  1088.95s] this risk-neutral
+[ 1088.95s ->  1091.15s] geometric Brownian motion.
+[ 1091.27s ->  1092.87s] Now, in this case,
+[ 1093.93s ->  1096.55s] risk neutrality is just referring to
+[ 1096.55s ->  1099.89s] how the process evolves over time
+[ 1099.89s ->  1101.79s] in the expectation.
+[ 1102.03s ->  1103.75s] We're in the expectation
+[ 1103.75s ->  1105.69s] earning the risk-free rate.
+[ 1105.79s ->  1106.51s] That's all
+[ 1106.51s ->  1109.19s] the risk-neutral measure implies.
+[ 1109.61s ->  1111.69s] So once we have defined
+[ 1111.69s ->  1112.87s] these dynamics,
+[ 1113.15s ->  1114.49s] we can move on
+[ 1114.49s ->  1116.59s] to this idea
+[ 1116.59s ->  1119.29s] of a discounted process.
+[ 1120.73s ->  1122.21s] So what is the process
+[ 1122.21s ->  1123.67s] that we are discounting?
+[ 1123.67s ->  1125.89s] Well, I'm going to call this process
+[ 1125.89s ->  1126.43s] V tilde.
+[ 1127.91s ->  1129.81s] We can find it at any time,
+[ 1130.05s ->  1130.51s] little t.
+[ 1130.87s ->  1132.43s] This is going to be equal
+[ 1132.43s ->  1134.53s] to the continuous discounting
+[ 1134.53s ->  1136.67s] of that function
+[ 1136.67s ->  1137.55s] that we're after
+[ 1137.55s ->  1139.27s] at time, little t.
+[ 1139.71s ->  1140.47s] So remember,
+[ 1140.61s ->  1141.89s] this is going to tell us
+[ 1141.89s ->  1144.51s] the value of our stock,
+[ 1144.77s ->  1145.45s] not our stock,
+[ 1145.53s ->  1146.63s] our option price
+[ 1146.63s ->  1148.85s] at any time, little t.
+[ 1148.85s ->  1151.53s] But we're discounting this
+[ 1151.53s ->  1153.33s] by little t
+[ 1153.33s ->  1154.53s] back to the present.
+[ 1154.69s ->  1155.65s] Why are we doing this?
+[ 1155.75s ->  1157.53s] Well, let's just look at a chart.
+[ 1160.32s ->  1161.38s] I'll draw this function
+[ 1161.38s ->  1162.60s] V sub T.
+[ 1164.77s ->  1165.79s] On this axis,
+[ 1165.93s ->  1166.47s] we have time.
+[ 1166.71s ->  1167.33s] And, you know,
+[ 1167.39s ->  1168.19s] this is just like
+[ 1168.19s ->  1169.17s] I showed you in Python.
+[ 1169.17s ->  1169.93s] I had the chart
+[ 1169.93s ->  1171.51s] with the stock price process
+[ 1171.51s ->  1172.81s] and then next to it,
+[ 1172.87s ->  1174.33s] the option price process.
+[ 1174.55s ->  1176.79s] This is the option price process.
+[ 1176.91s ->  1178.13s] I believe it was in red.
+[ 1178.35s ->  1180.49s] And we saw how the option price
+[ 1180.49s ->  1181.57s] is going to change
+[ 1181.57s ->  1182.33s] throughout the life
+[ 1182.33s ->  1183.07s] of the contract.
+[ 1183.25s ->  1184.85s] Now, we can look at this.
+[ 1185.03s ->  1186.03s] Maybe this is time,
+[ 1187.00s ->  1189.00s] capital T here, right?
+[ 1189.42s ->  1190.58s] What if we have
+[ 1190.58s ->  1192.74s] time, little t, zero
+[ 1192.74s ->  1194.28s] and little t, one?
+[ 1195.49s ->  1196.71s] How do we compare
+[ 1196.71s ->  1198.37s] these prices?
+[ 1198.37s ->  1199.97s] Well, sure,
+[ 1200.39s ->  1201.87s] we can just use
+[ 1201.87s ->  1207.48s] our pricing function, right?
+[ 1208.26s ->  1209.36s] Our function V.
+[ 1210.56s ->  1212.50s] But there's a problem here.
+[ 1216.64s ->  1218.34s] Cash at time T, zero
+[ 1218.34s ->  1220.62s] is not equal to cash
+[ 1220.62s ->  1222.54s] at time T, one.
+[ 1223.16s ->  1225.16s] So we can't just compare
+[ 1225.16s ->  1228.02s] the values outright.
+[ 1229.10s ->  1232.06s] We need some consistent time frame
+[ 1232.06s ->  1233.58s] to compare these cash flows.
+[ 1233.70s ->  1234.88s] So what we can do
+[ 1234.88s ->  1235.76s] is we can effectively
+[ 1235.76s ->  1236.74s] just discount it
+[ 1236.74s ->  1237.60s] back to the present.
+[ 1238.06s ->  1239.10s] So I'm going to take
+[ 1239.10s ->  1240.24s] the option price
+[ 1240.24s ->  1241.38s] at time T, zero,
+[ 1241.94s ->  1242.92s] discount it back
+[ 1242.92s ->  1244.66s] to the present.
+[ 1244.66s ->  1246.06s] Then I will take
+[ 1246.06s ->  1247.46s] the option price
+[ 1247.46s ->  1248.06s] at T, one,
+[ 1248.80s ->  1249.64s] discount it back
+[ 1249.64s ->  1250.24s] to the present,
+[ 1250.32s ->  1251.52s] and then I can compare them
+[ 1251.52s ->  1252.92s] as long as everything
+[ 1252.92s ->  1257.58s] is in present dollars.
+[ 1258.20s ->  1258.68s] Okay?
+[ 1258.82s ->  1260.60s] So T equals zero dollars.
+[ 1260.96s ->  1262.20s] That is really all
+[ 1262.20s ->  1263.28s] we're doing with this
+[ 1263.28s ->  1265.20s] discounted process here.
+[ 1265.20s ->  1266.52s] So this is really
+[ 1266.52s ->  1267.22s] equal to
+[ 1267.22s ->  1272.54s] the option price
+[ 1272.54s ->  1273.68s] at time T
+[ 1273.68s ->  1275.16s] but in
+[ 1275.16s ->  1278.66s] T equals zero dollars.
+[ 1278.88s ->  1280.18s] Now I want to find
+[ 1280.18s ->  1281.34s] the differential
+[ 1281.34s ->  1283.26s] of this discounted process,
+[ 1283.44s ->  1284.76s] an infinitesimally
+[ 1284.76s ->  1286.04s] small change.
+[ 1286.44s ->  1287.70s] And we need to keep
+[ 1287.70s ->  1288.46s] in mind, right,
+[ 1288.52s ->  1289.78s] that this function V
+[ 1289.78s ->  1291.44s] is not just a function
+[ 1291.44s ->  1292.18s] of time,
+[ 1292.34s ->  1293.90s] but it's also a function
+[ 1293.90s ->  1296.84s] of the underlying dynamics
+[ 1296.84s ->  1298.14s] that we assumed, right?
+[ 1298.18s ->  1299.38s] Our option contract
+[ 1299.38s ->  1302.20s] literally derives its value
+[ 1302.20s ->  1303.18s] from the underlying.
+[ 1303.42s ->  1304.72s] It's a derivative contract.
+[ 1305.06s ->  1307.22s] So what we really have here
+[ 1307.22s ->  1311.08s] is that V is a function
+[ 1311.08s ->  1313.50s] of that stock price process
+[ 1313.50s ->  1314.70s] and time.
+[ 1314.82s ->  1316.48s] It's a time-dependent function
+[ 1316.48s ->  1319.08s] of a stochastic process.
+[ 1319.08s ->  1321.42s] So if I want to find
+[ 1321.42s ->  1322.40s] the differential,
+[ 1322.66s ->  1324.22s] I need to use Ito's lemma,
+[ 1324.22s ->  1325.42s] but I need to use
+[ 1325.42s ->  1326.50s] a modified version
+[ 1326.50s ->  1327.32s] because I have
+[ 1327.32s ->  1328.48s] a product here.
+[ 1328.66s ->  1329.98s] So that is exactly
+[ 1329.98s ->  1331.06s] what I'm going to do.
+[ 1331.12s ->  1331.78s] I'm going to be looking
+[ 1331.78s ->  1334.20s] at the product rule version
+[ 1334.20s ->  1341.09s] of Ito's lemma,
+[ 1341.47s ->  1344.19s] all right?
+[ 1345.05s ->  1346.45s] And what we're going to do
+[ 1346.45s ->  1348.69s] to better understand
+[ 1348.69s ->  1349.61s] what's going on here
+[ 1349.61s ->  1350.91s] is we're going to define
+[ 1350.91s ->  1352.31s] two separate processes.
+[ 1352.51s ->  1353.47s] I have A sub T.
+[ 1353.89s ->  1354.97s] We're going to make this
+[ 1354.97s ->  1356.23s] E to the negative RT.
+[ 1356.43s ->  1356.99s] That's going to be
+[ 1356.99s ->  1358.23s] this first component here.
+[ 1360.18s ->  1361.12s] Then we'll say
+[ 1361.12s ->  1365.04s] B sub T is equal to V,
+[ 1366.86s ->  1368.24s] that second component there.
+[ 1368.92s ->  1370.32s] And just keep in mind,
+[ 1370.42s ->  1371.50s] right, this function V
+[ 1371.50s ->  1372.96s] is what we're after
+[ 1372.96s ->  1374.36s] all along, right?
+[ 1374.38s ->  1375.10s] That is going to be
+[ 1375.10s ->  1376.18s] the function pricing,
+[ 1376.66s ->  1377.82s] our option contract
+[ 1377.82s ->  1378.66s] at any time,
+[ 1378.72s ->  1379.10s] little t,
+[ 1379.20s ->  1380.24s] not just at maturity.
+[ 1380.74s ->  1381.78s] So now,
+[ 1382.46s ->  1383.96s] this discounted process,
+[ 1384.08s ->  1384.60s] V tilde,
+[ 1385.38s ->  1386.38s] is equal to what?
+[ 1386.38s ->  1393.81s] A sub T times B sub T.
+[ 1394.29s ->  1395.67s] If I want to find
+[ 1395.67s ->  1396.27s] the differential,
+[ 1399.23s ->  1401.27s] I just now have to apply
+[ 1401.27s ->  1403.17s] the product rule version
+[ 1403.17s ->  1404.05s] of Ito's lemma.
+[ 1404.19s ->  1407.72s] I get A sub T
+[ 1407.72s ->  1408.98s] DBT
+[ 1408.98s ->  1411.67s] plus B sub T
+[ 1411.67s ->  1412.81s] DAT.
+[ 1413.35s ->  1414.65s] That's just going to be
+[ 1414.65s ->  1415.79s] the derivative
+[ 1415.79s ->  1416.71s] of the second
+[ 1416.71s ->  1417.65s] times the first,
+[ 1418.17s ->  1420.15s] then the derivative
+[ 1420.15s ->  1421.29s] of the first
+[ 1421.29s ->  1422.91s] times the second.
+[ 1422.91s ->  1425.10s] And I also have
+[ 1425.10s ->  1426.56s] this cross term here.
+[ 1427.00s ->  1435.54s] So now we can solve
+[ 1435.54s ->  1437.10s] for each of these values
+[ 1437.10s ->  1438.08s] individually.
+[ 1438.56s ->  1439.32s] The only things
+[ 1439.32s ->  1440.52s] we need to solve for
+[ 1440.52s ->  1442.38s] are these differentials
+[ 1442.38s ->  1444.74s] and this cross term here.
+[ 1444.84s ->  1445.70s] Well, the cross term
+[ 1445.70s ->  1446.34s] is easy.
+[ 1446.52s ->  1447.40s] It's deterministic.
+[ 1447.40s ->  1449.58s] So we end up with
+[ 1449.58s ->  1453.04s] zero.
+[ 1453.92s ->  1455.12s] The differential
+[ 1455.12s ->  1456.16s] of the process
+[ 1456.16s ->  1456.68s] A
+[ 1456.68s ->  1458.16s] is again
+[ 1458.16s ->  1459.16s] very easy.
+[ 1459.28s ->  1460.18s] It's just going to be
+[ 1460.18s ->  1461.46s] the differential
+[ 1461.46s ->  1462.04s] of
+[ 1462.04s ->  1462.92s] E to the negative
+[ 1462.92s ->  1463.40s] RT.
+[ 1464.18s ->  1465.42s] And this is going
+[ 1465.42s ->  1466.00s] to be
+[ 1466.00s ->  1466.98s] equal to
+[ 1466.98s ->  1469.85s] E to the negative
+[ 1469.85s ->  1470.29s] RT
+[ 1470.29s ->  1471.51s] derivative of
+[ 1471.51s ->  1472.31s] E to the anything
+[ 1472.31s ->  1473.73s] is just E to the anything.
+[ 1474.09s ->  1475.25s] Then we also have
+[ 1475.25s ->  1476.01s] this idea of
+[ 1476.01s ->  1476.91s] the chain rule.
+[ 1477.03s ->  1477.75s] So we're going to have
+[ 1477.75s ->  1479.17s] negative R
+[ 1479.17s ->  1480.61s] and then, of course,
+[ 1480.93s ->  1481.99s] DT.
+[ 1482.59s ->  1483.87s] So here
+[ 1483.87s ->  1484.53s] we have
+[ 1484.53s ->  1485.25s] the
+[ 1485.25s ->  1486.35s] differential
+[ 1486.35s ->  1487.01s] of process
+[ 1487.01s ->  1487.35s] A
+[ 1487.35s ->  1488.01s] is negative
+[ 1488.01s ->  1488.43s] R
+[ 1488.43s ->  1489.23s] E to the negative
+[ 1489.23s ->  1489.65s] R
+[ 1489.65s ->  1490.27s] DT.
+[ 1490.57s ->  1491.67s] We have zero
+[ 1491.67s ->  1493.69s] for that cross term.
+[ 1494.79s ->  1496.21s] Now all we need
+[ 1496.21s ->  1497.55s] is
+[ 1497.55s ->  1498.41s] DB.
+[ 1499.49s ->  1501.70s] This is going
+[ 1501.70s ->  1502.16s] to be
+[ 1502.16s ->  1503.18s] the differential
+[ 1503.18s ->  1504.00s] then of that
+[ 1504.00s ->  1504.70s] function V
+[ 1504.70s ->  1505.46s] which is a
+[ 1505.46s ->  1506.32s] time-dependent
+[ 1506.32s ->  1506.68s] function
+[ 1506.68s ->  1508.08s] of a stochastic
+[ 1508.08s ->  1508.56s] process.
+[ 1508.56s ->  1509.12s] But here
+[ 1509.12s ->  1510.18s] we don't need
+[ 1510.18s ->  1510.62s] to apply
+[ 1510.62s ->  1511.12s] the product
+[ 1511.12s ->  1511.74s] rule version
+[ 1511.74s ->  1512.38s] of E to the
+[ 1512.38s ->  1512.60s] lemma.
+[ 1512.68s ->  1513.10s] We can just
+[ 1513.10s ->  1514.04s] apply E to the
+[ 1514.04s ->  1514.68s] lemma outright.
+[ 1515.20s ->  1515.76s] I'm going to give
+[ 1515.76s ->  1516.42s] you a little
+[ 1516.42s ->  1517.04s] refresher.
+[ 1517.26s ->  1517.80s] I'll write out
+[ 1517.80s ->  1518.42s] a bunch of
+[ 1518.42s ->  1518.98s] terms of the
+[ 1518.98s ->  1519.88s] expansion so you
+[ 1519.88s ->  1520.36s] can see how
+[ 1520.36s ->  1521.18s] they drop out
+[ 1521.18s ->  1522.32s] so we can
+[ 1522.32s ->  1523.12s] see exactly
+[ 1523.12s ->  1524.04s] what E to the
+[ 1524.04s ->  1524.82s] lemma leaves
+[ 1524.82s ->  1525.30s] us with.
+[ 1525.36s ->  1526.04s] If you recall
+[ 1526.04s ->  1527.36s] from stochastic
+[ 1527.36s ->  1528.00s] calculus
+[ 1528.00s ->  1528.98s] DT squared
+[ 1528.98s ->  1530.02s] is equal
+[ 1530.02s ->  1530.54s] to zero
+[ 1530.54s ->  1530.98s] which is
+[ 1530.98s ->  1531.58s] equal to
+[ 1531.58s ->  1532.30s] DT
+[ 1532.30s ->  1533.92s] DWT
+[ 1533.92s ->  1535.38s] and of
+[ 1535.38s ->  1535.72s] course
+[ 1535.72s ->  1536.84s] DWT
+[ 1536.84s ->  1537.32s] squared
+[ 1537.32s ->  1537.92s] is equal
+[ 1537.92s ->  1538.20s] to
+[ 1538.20s ->  1538.76s] DT
+[ 1538.76s ->  1540.00s] the so-called
+[ 1540.00s ->  1540.58s] quadratic
+[ 1540.58s ->  1541.38s] variation.
+[ 1541.64s ->  1542.52s] So what we
+[ 1542.52s ->  1543.12s] end up with
+[ 1543.12s ->  1543.64s] here is
+[ 1543.64s ->  1544.10s] if we look
+[ 1544.10s ->  1544.38s] at the
+[ 1544.38s ->  1545.02s] expansion
+[ 1545.02s ->  1547.21s] DVT
+[ 1547.21s ->  1547.75s] we have
+[ 1547.75s ->  1548.07s] this
+[ 1548.07s ->  1548.91s] time
+[ 1548.91s ->  1549.45s] component
+[ 1549.45s ->  1552.57s] we have
+[ 1552.57s ->  1552.91s] this
+[ 1552.91s ->  1553.57s] stock
+[ 1553.57s ->  1554.19s] component
+[ 1554.19s ->  1555.19s] then we
+[ 1555.19s ->  1555.61s] have our
+[ 1555.61s ->  1556.17s] higher order
+[ 1556.17s ->  1556.59s] terms
+[ 1556.59s ->  1556.81s] right
+[ 1556.81s ->  1557.13s] this is
+[ 1557.13s ->  1557.27s] our
+[ 1557.27s ->  1557.57s] second
+[ 1557.57s ->  1557.87s] order
+[ 1557.87s ->  1558.21s] term
+[ 1558.21s ->  1558.41s] it's
+[ 1558.41s ->  1558.59s] the
+[ 1558.59s ->  1558.93s] cross
+[ 1558.93s ->  1559.29s] term
+[ 1559.29s ->  1560.59s] of
+[ 1560.59s ->  1561.17s] time
+[ 1561.17s ->  1561.61s] and
+[ 1561.61s ->  1561.95s] the
+[ 1561.95s ->  1562.45s] stock
+[ 1562.45s ->  1564.87s] then we
+[ 1564.87s ->  1565.03s] have
+[ 1565.03s ->  1565.19s] our
+[ 1565.19s ->  1565.49s] second
+[ 1565.49s ->  1566.01s] order
+[ 1566.01s ->  1566.47s] time
+[ 1566.47s ->  1566.91s] term
+[ 1566.91s ->  1570.43s] then we
+[ 1570.43s ->  1570.61s] have
+[ 1570.61s ->  1570.75s] our
+[ 1570.75s ->  1571.05s] second
+[ 1571.05s ->  1571.47s] order
+[ 1571.47s ->  1572.39s] stock
+[ 1572.39s ->  1573.03s] term
+[ 1573.03s ->  1577.91s] then we
+[ 1577.91s ->  1578.19s] have
+[ 1578.19s ->  1578.53s] our
+[ 1578.53s ->  1579.01s] higher
+[ 1579.01s ->  1579.35s] order
+[ 1579.35s ->  1579.85s] terms
+[ 1579.85s ->  1580.23s] but
+[ 1580.23s ->  1580.61s] we
+[ 1580.61s ->  1580.87s] know
+[ 1580.87s ->  1581.05s] that
+[ 1581.05s ->  1581.23s] these
+[ 1581.23s ->  1581.51s] higher
+[ 1581.51s ->  1581.79s] order
+[ 1581.79s ->  1582.15s] terms
+[ 1582.15s ->  1582.35s] are
+[ 1582.35s ->  1582.59s] all
+[ 1582.59s ->  1582.77s] going
+[ 1582.77s ->  1582.85s] to
+[ 1582.85s ->  1583.15s] drop
+[ 1583.15s ->  1583.39s] out
+[ 1583.39s ->  1583.59s] they're
+[ 1583.59s ->  1583.79s] all
+[ 1583.79s ->  1583.93s] going
+[ 1583.93s ->  1584.03s] to
+[ 1584.03s ->  1584.17s] go
+[ 1584.17s ->  1584.37s] to
+[ 1584.37s ->  1584.67s] zero
+[ 1584.67s ->  1584.99s] because
+[ 1584.99s ->  1585.55s] they
+[ 1585.55s ->  1585.89s] have
+[ 1585.89s ->  1586.11s] some
+[ 1586.11s ->  1586.39s] sort
+[ 1586.39s ->  1586.55s] of
+[ 1586.55s ->  1587.09s] product
+[ 1587.09s ->  1587.47s] that
+[ 1587.47s ->  1587.87s] is
+[ 1587.87s ->  1588.49s] DT
+[ 1588.49s ->  1589.45s] DWT
+[ 1589.45s ->  1590.61s] that
+[ 1590.61s ->  1590.75s] will
+[ 1590.75s ->  1590.93s] go
+[ 1590.93s ->  1591.11s] to
+[ 1591.11s ->  1591.39s] zero
+[ 1591.39s ->  1591.79s] or
+[ 1591.79s ->  1591.97s] they
+[ 1591.97s ->  1592.19s] have
+[ 1592.19s ->  1592.37s] some
+[ 1592.37s ->  1592.59s] sort
+[ 1592.59s ->  1592.71s] of
+[ 1592.71s ->  1593.15s] product
+[ 1593.15s ->  1593.79s] DT
+[ 1593.79s ->  1594.21s] squared
+[ 1594.21s ->  1594.93s] and
+[ 1594.93s ->  1595.11s] that
+[ 1595.11s ->  1595.31s] will
+[ 1595.31s ->  1595.73s] also
+[ 1595.73s ->  1596.01s] go
+[ 1596.01s ->  1596.19s] to
+[ 1596.19s ->  1596.45s] zero
+[ 1596.45s ->  1596.73s] so
+[ 1596.73s ->  1597.41s] all
+[ 1597.41s ->  1597.55s] of
+[ 1597.55s ->  1597.73s] these
+[ 1597.73s ->  1597.99s] higher
+[ 1597.99s ->  1598.29s] order
+[ 1602.89s ->  1603.77s] they
+[ 1603.77s ->  1604.01s] will
+[ 1604.01s ->  1604.49s] all
+[ 1604.49s ->  1605.13s] be
+[ 1605.13s ->  1605.95s] zero
+[ 1605.95s ->  1607.89s] because
+[ 1607.89s ->  1608.33s] of
+[ 1608.33s ->  1608.85s] these
+[ 1608.85s ->  1609.43s] rules
+[ 1609.43s ->  1610.43s] and
+[ 1610.43s ->  1610.69s] you'll
+[ 1610.69s ->  1610.97s] notice
+[ 1610.97s ->  1611.23s] that
+[ 1611.23s ->  1611.47s] some
+[ 1611.47s ->  1611.63s] of
+[ 1611.63s ->  1611.85s] these
+[ 1611.85s ->  1612.21s] terms
+[ 1612.21s ->  1612.39s] are
+[ 1612.39s ->  1612.71s] actually
+[ 1612.71s ->  1612.97s] going
+[ 1612.97s ->  1613.13s] to
+[ 1613.13s ->  1613.47s] drop
+[ 1613.47s ->  1613.83s] out
+[ 1613.83s ->  1614.15s] as
+[ 1614.15s ->  1614.37s] well
+[ 1614.37s ->  1614.55s] so
+[ 1614.55s ->  1614.69s] what
+[ 1614.69s ->  1614.75s] do
+[ 1614.75s ->  1614.87s] we
+[ 1614.87s ->  1615.15s] notice
+[ 1615.15s ->  1615.39s] here
+[ 1615.39s ->  1615.55s] we
+[ 1615.55s ->  1615.77s] see
+[ 1615.77s ->  1616.11s] the
+[ 1616.11s ->  1617.29s] DT
+[ 1617.29s ->  1617.77s] squared
+[ 1617.77s ->  1619.24s] we
+[ 1619.24s ->  1619.44s] know
+[ 1619.44s ->  1619.62s] this
+[ 1619.62s ->  1619.88s] goes
+[ 1619.88s ->  1620.10s] to
+[ 1620.10s ->  1620.44s] zero
+[ 1620.44s ->  1620.72s] so
+[ 1620.72s ->  1620.94s] this
+[ 1620.94s ->  1621.30s] term
+[ 1621.30s ->  1621.46s] is
+[ 1621.46s ->  1621.60s] going
+[ 1621.60s ->  1621.70s] to
+[ 1621.70s ->  1621.94s] drop
+[ 1621.94s ->  1622.14s] out
+[ 1622.14s ->  1622.64s] entirely
+[ 1622.64s ->  1622.96s] now
+[ 1622.96s ->  1623.56s] what
+[ 1623.56s ->  1623.78s] about
+[ 1623.78s ->  1624.06s] this
+[ 1624.06s ->  1624.46s] cross
+[ 1624.46s ->  1624.74s] term
+[ 1624.74s ->  1624.98s] here
+[ 1624.98s ->  1625.16s] we
+[ 1625.16s ->  1625.32s] have
+[ 1625.32s ->  1625.90s] DT
+[ 1625.90s ->  1626.86s] DS
+[ 1626.86s ->  1627.72s] well
+[ 1627.72s ->  1628.28s] how
+[ 1628.28s ->  1628.52s] is
+[ 1628.52s ->  1628.92s] DS
+[ 1628.92s ->  1629.62s] defined
+[ 1629.62s ->  1630.78s] DS
+[ 1630.78s ->  1631.12s] is
+[ 1631.12s ->  1631.60s] defined
+[ 1631.60s ->  1632.20s] as
+[ 1632.20s ->  1632.98s] that
+[ 1632.98s ->  1633.36s] risk
+[ 1633.98s ->  1634.58s] geometric
+[ 1634.58s ->  1635.06s] Brownian
+[ 1635.06s ->  1635.46s] motion
+[ 1635.46s ->  1635.66s] that
+[ 1635.66s ->  1635.76s] we
+[ 1635.76s ->  1636.06s] talked
+[ 1636.06s ->  1636.34s] about
+[ 1636.34s ->  1636.74s] earlier
+[ 1636.74s ->  1637.12s] so
+[ 1637.12s ->  1638.12s] really
+[ 1638.12s ->  1638.40s] this
+[ 1638.40s ->  1638.56s] is
+[ 1638.56s ->  1638.72s] going
+[ 1638.72s ->  1638.90s] to
+[ 1638.90s ->  1639.10s] be
+[ 1639.10s ->  1639.50s] R
+[ 1639.50s ->  1640.96s] SDT
+[ 1640.96s ->  1641.66s] plus
+[ 1641.66s ->  1642.22s] sigma
+[ 1642.22s ->  1645.84s] SDWT
+[ 1645.84s ->  1646.22s] and
+[ 1646.22s ->  1646.36s] if
+[ 1646.36s ->  1646.48s] you
+[ 1646.48s ->  1646.76s] notice
+[ 1646.76s ->  1647.12s] we're
+[ 1647.12s ->  1647.78s] multiplying
+[ 1647.78s ->  1649.64s] that
+[ 1649.64s ->  1650.72s] DS
+[ 1650.72s ->  1651.22s] term
+[ 1651.22s ->  1651.74s] by
+[ 1651.74s ->  1652.22s] DT
+[ 1652.22s ->  1653.52s] so
+[ 1653.52s ->  1653.66s] if
+[ 1653.66s ->  1653.78s] we
+[ 1653.78s ->  1654.24s] distribute
+[ 1654.24s ->  1654.94s] DT
+[ 1654.94s ->  1656.47s] to
+[ 1656.47s ->  1656.75s] both
+[ 1656.75s ->  1656.87s] of
+[ 1656.87s ->  1657.07s] those
+[ 1657.07s ->  1657.41s] terms
+[ 1657.41s ->  1657.61s] what
+[ 1657.61s ->  1657.69s] do
+[ 1657.69s ->  1657.81s] we
+[ 1657.81s ->  1658.07s] get
+[ 1658.07s ->  1658.37s] well
+[ 1658.37s ->  1659.47s] we're
+[ 1659.47s ->  1659.57s] going
+[ 1659.57s ->  1659.63s] to
+[ 1659.63s ->  1659.81s] get
+[ 1659.81s ->  1660.19s] DT
+[ 1660.19s ->  1660.59s] squared
+[ 1660.59s ->  1661.21s] and
+[ 1661.21s ->  1661.37s] that
+[ 1661.37s ->  1661.59s] goes
+[ 1661.59s ->  1661.79s] to
+[ 1661.79s ->  1662.09s] zero
+[ 1662.09s ->  1663.23s] then
+[ 1663.23s ->  1663.41s] we're
+[ 1663.41s ->  1663.51s] going
+[ 1663.51s ->  1663.61s] to
+[ 1663.61s ->  1663.93s] get
+[ 1663.93s ->  1665.01s] DT
+[ 1665.01s ->  1665.41s] times
+[ 1665.41s ->  1666.29s] DWT
+[ 1666.29s ->  1668.31s] and
+[ 1668.31s ->  1668.43s] that
+[ 1668.43s ->  1668.71s] also
+[ 1668.71s ->  1668.97s] goes
+[ 1668.97s ->  1669.17s] to
+[ 1669.17s ->  1669.47s] zero
+[ 1669.47s ->  1670.94s] in
+[ 1670.94s ->  1671.14s] other
+[ 1671.14s ->  1671.54s] words
+[ 1671.54s ->  1674.57s] that
+[ 1674.57s ->  1674.83s] term
+[ 1674.83s ->  1674.95s] is
+[ 1674.95s ->  1675.07s] going
+[ 1675.07s ->  1675.15s] to
+[ 1675.15s ->  1675.45s] drop
+[ 1675.45s ->  1675.71s] out
+[ 1675.71s ->  1675.95s] too
+[ 1675.95s ->  1677.90s] and
+[ 1677.90s ->  1678.04s] if
+[ 1678.04s ->  1678.16s] we
+[ 1678.16s ->  1678.50s] just
+[ 1678.50s ->  1679.14s] had
+[ 1679.14s ->  1679.62s] applied
+[ 1679.62s ->  1679.86s] E
+[ 1679.86s ->  1679.96s] to
+[ 1679.96s ->  1680.12s] his
+[ 1680.12s ->  1680.34s] lemma
+[ 1680.34s ->  1680.76s] directly
+[ 1680.76s ->  1681.04s] we
+[ 1681.04s ->  1681.22s] would
+[ 1681.22s ->  1681.40s] end
+[ 1681.40s ->  1681.62s] up
+[ 1681.62s ->  1681.86s] with
+[ 1681.86s ->  1682.24s] then
+[ 1682.24s ->  1682.78s] these
+[ 1682.78s ->  1683.02s] three
+[ 1683.02s ->  1683.42s] terms
+[ 1683.42s ->  1683.72s] here
+[ 1683.72s ->  1694.37s] right
+[ 1694.37s ->  1694.51s] and
+[ 1694.51s ->  1694.65s] this
+[ 1694.65s ->  1694.85s] should
+[ 1694.85s ->  1696.16s] be
+[ 1696.16s ->  1696.78s] DS
+[ 1696.78s ->  1697.24s] squared
+[ 1697.24s ->  1697.62s] there
+[ 1697.62s ->  1699.14s] so
+[ 1699.14s ->  1699.42s] now
+[ 1699.42s ->  1699.62s] we
+[ 1699.62s ->  1699.80s] can
+[ 1699.80s ->  1700.48s] find
+[ 1700.48s ->  1701.30s] DS
+[ 1701.30s ->  1701.62s] very
+[ 1701.62s ->  1702.16s] easily
+[ 1702.16s ->  1702.60s] and
+[ 1702.60s ->  1703.10s] DS
+[ 1703.10s ->  1703.56s] squared
+[ 1703.56s ->  1703.84s] right
+[ 1703.84s ->  1704.08s] that's
+[ 1704.08s ->  1704.26s] just
+[ 1704.26s ->  1704.58s] our
+[ 1704.58s ->  1705.48s] risk
+[ 1705.48s ->  1705.96s] neutral
+[ 1705.96s ->  1706.76s] geometric
+[ 1706.76s ->  1707.18s] Brownian
+[ 1707.18s ->  1707.50s] motion
+[ 1707.50s ->  1707.72s] as
+[ 1707.72s ->  1707.84s] we
+[ 1707.84s ->  1708.16s] defined
+[ 1708.16s ->  1708.32s] it
+[ 1708.32s ->  1708.64s] earlier
+[ 1708.64s ->  1711.28s] okay
+[ 1711.28s ->  1711.48s] so
+[ 1711.48s ->  1711.60s] we
+[ 1711.60s ->  1711.72s] can
+[ 1711.72s ->  1711.88s] make
+[ 1711.88s ->  1712.10s] that
+[ 1712.10s ->  1712.72s] substitution
+[ 1712.72s ->  1713.22s] there
+[ 1713.22s ->  1714.14s] DS
+[ 1714.14s ->  1714.64s] squared
+[ 1714.64s ->  1715.58s] well
+[ 1715.58s ->  1715.84s] that's
+[ 1715.84s ->  1715.98s] just
+[ 1715.98s ->  1716.20s] going
+[ 1716.20s ->  1716.36s] to
+[ 1716.36s ->  1716.66s] be
+[ 1716.66s ->  1719.66s] these
+[ 1719.66s ->  1720.24s] dynamics
+[ 1720.24s ->  1720.66s] squared
+[ 1720.66s ->  1721.98s] and
+[ 1721.98s ->  1722.20s] what
+[ 1722.20s ->  1722.30s] do
+[ 1722.30s ->  1722.44s] we
+[ 1722.44s ->  1722.78s] observe
+[ 1722.78s ->  1723.14s] well
+[ 1723.14s ->  1723.42s] we're
+[ 1723.42s ->  1723.52s] going
+[ 1723.52s ->  1723.62s] to
+[ 1723.62s ->  1724.02s] create
+[ 1724.02s ->  1724.78s] effectively
+[ 1724.78s ->  1726.84s] three
+[ 1726.84s ->  1727.26s] terms
+[ 1727.26s ->  1727.44s] in
+[ 1727.44s ->  1727.60s] this
+[ 1727.60s ->  1728.04s] expansion
+[ 1728.04s ->  1728.34s] here
+[ 1728.34s ->  1729.76s] and
+[ 1729.76s ->  1730.18s] if
+[ 1730.18s ->  1730.34s] we
+[ 1730.34s ->  1730.74s] square
+[ 1730.74s ->  1731.00s] this
+[ 1731.00s ->  1731.30s] first
+[ 1731.30s ->  1731.60s] term
+[ 1731.60s ->  1731.76s] what
+[ 1731.76s ->  1731.84s] do
+[ 1731.84s ->  1731.96s] we
+[ 1731.96s ->  1732.20s] get
+[ 1732.20s ->  1733.52s] we're
+[ 1733.52s ->  1733.62s] going
+[ 1733.62s ->  1733.70s] to
+[ 1733.70s ->  1733.86s] get
+[ 1733.86s ->  1734.16s] zero
+[ 1734.16s ->  1734.52s] because
+[ 1734.52s ->  1734.86s] we're
+[ 1734.86s ->  1734.94s] going
+[ 1734.94s ->  1735.00s] to
+[ 1735.00s ->  1735.30s] have
+[ 1735.30s ->  1735.76s] dt
+[ 1735.76s ->  1736.18s] squared
+[ 1736.18s ->  1736.86s] so
+[ 1736.86s ->  1737.02s] that
+[ 1737.02s ->  1737.30s] entire
+[ 1737.30s ->  1737.60s] first
+[ 1737.60s ->  1737.80s] term
+[ 1737.80s ->  1738.02s] goes
+[ 1738.02s ->  1738.20s] to
+[ 1738.20s ->  1738.46s] zero
+[ 1738.46s ->  1739.02s] if
+[ 1739.02s ->  1739.12s] we
+[ 1739.12s ->  1739.26s] look
+[ 1739.26s ->  1739.36s] at
+[ 1739.36s ->  1739.48s] the
+[ 1739.48s ->  1739.82s] cross
+[ 1739.82s ->  1740.12s] term
+[ 1740.12s ->  1740.28s] what
+[ 1740.28s ->  1740.36s] do
+[ 1740.36s ->  1740.46s] we
+[ 1740.46s ->  1740.72s] get
+[ 1740.72s ->  1741.04s] we
+[ 1741.04s ->  1741.22s] get
+[ 1741.22s ->  1741.64s] dt
+[ 1741.64s ->  1742.64s] times
+[ 1742.64s ->  1743.86s] dwt
+[ 1743.86s ->  1744.88s] so
+[ 1744.88s ->  1745.06s] that's
+[ 1745.06s ->  1745.16s] going
+[ 1745.16s ->  1745.24s] to
+[ 1745.24s ->  1745.42s] go
+[ 1745.42s ->  1745.70s] to
+[ 1745.70s ->  1746.54s] zero
+[ 1746.54s ->  1747.58s] the
+[ 1747.58s ->  1747.78s] only
+[ 1747.78s ->  1748.06s] term
+[ 1748.06s ->  1748.24s] that
+[ 1748.24s ->  1748.70s] survives
+[ 1748.70s ->  1749.00s] is
+[ 1749.00s ->  1749.20s] going
+[ 1749.20s ->  1749.36s] to
+[ 1749.36s ->  1749.48s] be
+[ 1749.48s ->  1749.68s] this
+[ 1749.68s ->  1750.00s] last
+[ 1750.00s ->  1750.26s] term
+[ 1750.26s ->  1750.54s] here
+[ 1750.54s ->  1751.28s] if
+[ 1751.28s ->  1751.46s] we
+[ 1751.46s ->  1751.82s] square
+[ 1751.82s ->  1752.08s] it
+[ 1752.08s ->  1752.84s] the
+[ 1752.84s ->  1753.20s] Brownian
+[ 1753.20s ->  1753.52s] motion
+[ 1753.52s ->  1753.94s] squared
+[ 1753.94s ->  1754.14s] is
+[ 1754.14s ->  1754.26s] going
+[ 1754.26s ->  1754.34s] to
+[ 1754.34s ->  1754.50s] go
+[ 1754.50s ->  1754.72s] to
+[ 1754.72s ->  1755.04s] dt
+[ 1755.04s ->  1756.44s] so
+[ 1756.44s ->  1756.92s] if
+[ 1756.92s ->  1757.06s] we
+[ 1757.06s ->  1757.30s] square
+[ 1757.30s ->  1757.52s] this
+[ 1757.52s ->  1757.78s] last
+[ 1757.78s ->  1758.04s] term
+[ 1758.04s ->  1758.36s] here
+[ 1758.36s ->  1759.16s] we
+[ 1759.16s ->  1759.38s] end
+[ 1759.38s ->  1759.58s] up
+[ 1759.58s ->  1759.84s] with
+[ 1759.84s ->  1760.26s] sigma
+[ 1760.26s ->  1760.70s] squared
+[ 1760.70s ->  1761.04s] s
+[ 1761.04s ->  1761.46s] squared
+[ 1761.46s ->  1763.90s] dt
+[ 1763.90s ->  1765.48s] so
+[ 1765.48s ->  1765.62s] we
+[ 1765.62s ->  1765.76s] can
+[ 1765.76s ->  1766.40s] substitute
+[ 1766.40s ->  1766.74s] that
+[ 1766.74s ->  1767.04s] in
+[ 1767.04s ->  1767.84s] for
+[ 1767.84s ->  1768.08s] this
+[ 1768.08s ->  1768.32s] guy
+[ 1768.32s ->  1768.66s] here
+[ 1768.66s ->  1770.12s] and
+[ 1770.12s ->  1770.26s] if
+[ 1770.26s ->  1770.40s] we
+[ 1770.40s ->  1770.58s] do
+[ 1770.58s ->  1770.82s] that
+[ 1770.82s ->  1771.00s] we're
+[ 1771.00s ->  1771.28s] just
+[ 1771.28s ->  1771.74s] really
+[ 1771.74s ->  1772.22s] applying
+[ 1772.22s ->  1772.72s] eto's
+[ 1772.72s ->  1772.96s] lemma
+[ 1772.96s ->  1773.26s] here
+[ 1773.26s ->  1774.02s] we're
+[ 1774.02s ->  1774.12s] going
+[ 1774.12s ->  1774.22s] to
+[ 1774.22s ->  1774.40s] end
+[ 1774.40s ->  1774.66s] up
+[ 1774.66s ->  1775.02s] with
+[ 1775.02s ->  1789.46s] this
+[ 1789.46s ->  1789.80s] time
+[ 1789.80s ->  1790.42s] component
+[ 1790.42s ->  1794.05s] plus
+[ 1794.05s ->  1797.32s] so
+[ 1797.32s ->  1797.52s] that's
+[ 1797.52s ->  1797.66s] our
+[ 1797.66s ->  1797.88s] drift
+[ 1797.88s ->  1798.40s] component
+[ 1798.40s ->  1799.14s] plus
+[ 1799.14s ->  1799.44s] this
+[ 1799.44s ->  1800.02s] stochastic
+[ 1800.02s ->  1800.56s] component
+[ 1800.56s ->  1806.97s] of
+[ 1806.97s ->  1807.31s] course
+[ 1807.31s ->  1807.87s] all
+[ 1807.87s ->  1808.01s] in
+[ 1808.01s ->  1808.13s] the
+[ 1808.13s ->  1808.53s] context
+[ 1808.53s ->  1808.87s] of
+[ 1808.87s ->  1809.27s] the
+[ 1809.27s ->  1809.79s] risk
+[ 1809.79s ->  1810.09s] neutral
+[ 1810.09s ->  1810.47s] measure
+[ 1810.47s ->  1814.13s] all right
+[ 1814.13s ->  1814.85s] so
+[ 1814.85s ->  1815.23s] we've
+[ 1815.23s ->  1815.65s] applied
+[ 1815.65s ->  1816.07s] eto's
+[ 1816.07s ->  1816.33s] lemma
+[ 1816.33s ->  1816.65s] now
+[ 1816.65s ->  1818.27s] to
+[ 1818.27s ->  1818.47s] that
+[ 1818.47s ->  1818.81s] dv
+[ 1818.81s ->  1819.09s] term
+[ 1819.09s ->  1819.27s] to
+[ 1819.27s ->  1819.43s] find
+[ 1819.43s ->  1819.59s] this
+[ 1819.59s ->  1820.07s] differential
+[ 1820.07s ->  1820.87s] keep
+[ 1820.87s ->  1821.03s] in
+[ 1821.03s ->  1821.29s] mind
+[ 1821.29s ->  1821.75s] we're
+[ 1821.75s ->  1822.33s] just
+[ 1822.33s ->  1822.59s] looking
+[ 1822.59s ->  1822.75s] for
+[ 1822.75s ->  1822.91s] the
+[ 1822.91s ->  1823.31s] differential
+[ 1823.31s ->  1823.73s] of
+[ 1823.73s ->  1824.29s] this
+[ 1824.29s ->  1824.93s] discounted
+[ 1824.93s ->  1825.25s] value
+[ 1825.25s ->  1825.83s] process
+[ 1825.83s ->  1826.17s] I know
+[ 1826.17s ->  1827.15s] we went
+[ 1827.15s ->  1827.37s] down
+[ 1827.37s ->  1827.83s] a rabbit
+[ 1827.83s ->  1828.03s] hole
+[ 1828.03s ->  1828.29s] there
+[ 1828.29s ->  1828.49s] to
+[ 1828.49s ->  1828.89s] apply
+[ 1828.89s ->  1829.35s] eto's
+[ 1829.35s ->  1829.63s] lemma
+[ 1829.63s ->  1829.93s] to
+[ 1829.93s ->  1830.35s] of
+[ 1830.35s ->  1830.57s] course
+[ 1830.57s ->  1830.79s] this
+[ 1830.79s ->  1830.93s] is
+[ 1830.93s ->  1831.09s] going
+[ 1831.09s ->  1831.27s] to
+[ 1831.27s ->  1831.63s] be
+[ 1831.63s ->  1834.28s] that
+[ 1834.28s ->  1835.60s] dbt
+[ 1837.91s ->  1838.65s] but
+[ 1838.65s ->  1838.85s] now
+[ 1838.85s ->  1839.05s] we
+[ 1839.05s ->  1839.33s] have
+[ 1839.33s ->  1839.87s] everything
+[ 1839.87s ->  1840.21s] right
+[ 1840.21s ->  1840.39s] we
+[ 1840.39s ->  1840.69s] can
+[ 1840.69s ->  1841.09s] plug
+[ 1841.09s ->  1841.35s] in
+[ 1841.35s ->  1841.79s] for
+[ 1841.79s ->  1842.65s] a
+[ 1842.65s ->  1842.87s] sub
+[ 1842.87s ->  1843.23s] t
+[ 1843.23s ->  1844.31s] dbt
+[ 1844.31s ->  1845.07s] bt
+[ 1845.07s ->  1845.51s] da
+[ 1845.51s ->  1846.45s] and
+[ 1846.45s ->  1846.67s] this
+[ 1846.67s ->  1847.01s] cross
+[ 1847.01s ->  1847.29s] term
+[ 1847.29s ->  1847.49s] here
+[ 1847.49s ->  1847.75s] which
+[ 1847.75s ->  1848.03s] is
+[ 1848.03s ->  1848.53s] zero
+[ 1848.53s ->  1848.87s] so
+[ 1848.87s ->  1849.63s] that
+[ 1849.63s ->  1849.77s] is
+[ 1849.77s ->  1849.93s] what
+[ 1849.93s ->  1850.11s] we're
+[ 1850.11s ->  1850.37s] going
+[ 1850.37s ->  1850.57s] to
+[ 1850.57s ->  1850.77s] do
+[ 1850.77s ->  1850.99s] we're
+[ 1850.99s ->  1851.19s] going
+[ 1851.19s ->  1851.35s] to
+[ 1851.35s ->  1851.63s] plug
+[ 1851.63s ->  1851.83s] in
+[ 1851.83s ->  1852.07s] now
+[ 1852.07s ->  1852.41s] for
+[ 1852.41s ->  1852.75s] all
+[ 1852.75s ->  1852.91s] of
+[ 1852.91s ->  1853.21s] these
+[ 1853.21s ->  1853.99s] values
+[ 1853.99s ->  1854.35s] which
+[ 1854.35s ->  1854.71s] we've
+[ 1854.71s ->  1855.11s] found
+[ 1855.11s ->  1855.77s] so
+[ 1855.77s ->  1855.95s] we
+[ 1855.95s ->  1856.11s] can
+[ 1856.11s ->  1856.31s] get
+[ 1856.31s ->  1856.53s] the
+[ 1856.53s ->  1857.05s] differential
+[ 1857.05s ->  1857.43s] of
+[ 1857.43s ->  1857.69s] this
+[ 1857.69s ->  1858.57s] discounted
+[ 1858.57s ->  1859.21s] value
+[ 1859.21s ->  1860.17s] process
+[ 1860.17s ->  1860.61s] for
+[ 1860.61s ->  1860.81s] the
+[ 1860.81s ->  1861.07s] sake
+[ 1861.07s ->  1861.35s] of
+[ 1861.35s ->  1861.83s] brevity
+[ 1861.83s ->  1862.31s] I've
+[ 1862.31s ->  1863.03s] aggregated
+[ 1863.03s ->  1863.53s] everything
+[ 1863.53s ->  1863.81s] that
+[ 1863.81s ->  1864.13s] we've
+[ 1864.13s ->  1864.73s] solved
+[ 1864.73s ->  1865.21s] for
+[ 1865.21s ->  1865.45s] up
+[ 1865.45s ->  1865.73s] until
+[ 1865.73s ->  1866.01s] this
+[ 1866.01s ->  1866.33s] point
+[ 1866.33s ->  1866.53s] I
+[ 1866.53s ->  1866.79s] haven't
+[ 1866.79s ->  1867.05s] solved
+[ 1867.05s ->  1867.23s] for
+[ 1867.23s ->  1867.51s] anything
+[ 1867.51s ->  1867.91s] new
+[ 1867.91s ->  1868.43s] and
+[ 1868.43s ->  1868.59s] we're
+[ 1868.59s ->  1868.79s] just
+[ 1868.79s ->  1868.93s] going
+[ 1868.93s ->  1869.01s] to
+[ 1869.01s ->  1869.27s] plug
+[ 1869.27s ->  1869.41s] it
+[ 1869.41s ->  1869.67s] into
+[ 1869.67s ->  1869.89s] the
+[ 1869.89s ->  1870.43s] differential
+[ 1870.43s ->  1870.85s] of
+[ 1870.85s ->  1871.17s] that
+[ 1871.17s ->  1871.93s] discounted
+[ 1871.93s ->  1872.45s] value
+[ 1872.45s ->  1873.01s] process
+[ 1873.01s ->  1873.91s] so
+[ 1873.91s ->  1874.21s] let's
+[ 1874.21s ->  1874.51s] go ahead
+[ 1874.51s ->  1874.81s] and do
+[ 1874.81s ->  1875.07s] this
+[ 1875.07s ->  1875.35s] we have
+[ 1875.35s ->  1875.79s] dv
+[ 1875.79s ->  1876.15s] tilde
+[ 1876.15s ->  1876.87s] of
+[ 1876.87s ->  1877.19s] t
+[ 1877.19s ->  1878.05s] this
+[ 1878.05s ->  1878.19s] is
+[ 1878.19s ->  1878.51s] equal
+[ 1878.51s ->  1878.91s] to
+[ 1878.91s ->  1879.47s] let's
+[ 1879.47s ->  1879.79s] start
+[ 1879.79s ->  1880.25s] with
+[ 1880.25s ->  1880.55s] the
+[ 1880.55s ->  1880.89s] first
+[ 1880.89s ->  1881.33s] term
+[ 1881.33s ->  1881.73s] a
+[ 1881.73s ->  1881.95s] sub
+[ 1881.95s ->  1882.27s] t
+[ 1882.27s ->  1883.11s] this
+[ 1883.11s ->  1883.27s] is
+[ 1883.27s ->  1883.43s] our
+[ 1883.43s ->  1883.69s] a
+[ 1883.69s ->  1883.85s] sub
+[ 1883.85s ->  1884.09s] t
+[ 1884.09s ->  1884.49s] term
+[ 1884.49s ->  1884.73s] so
+[ 1884.73s ->  1884.87s] we
+[ 1884.87s ->  1885.07s] have
+[ 1885.07s ->  1885.35s] that
+[ 1885.35s ->  1886.43s] discounting
+[ 1886.43s ->  1887.19s] e
+[ 1887.19s ->  1887.37s] to
+[ 1887.37s ->  1887.53s] the
+[ 1887.53s ->  1887.91s] negative
+[ 1887.91s ->  1888.51s] rt
+[ 1888.51s ->  1889.59s] then
+[ 1889.59s ->  1889.79s] we
+[ 1889.79s ->  1890.39s] have
+[ 1890.39s ->  1892.42s] dbt
+[ 1892.42s ->  1893.56s] that
+[ 1895.76s ->  1896.24s] differential
+[ 1896.24s ->  1896.94s] eto's
+[ 1896.94s ->  1897.38s] lemma
+[ 1897.38s ->  1897.88s] has
+[ 1897.88s ->  1898.16s] given
+[ 1898.16s ->  1898.54s] us
+[ 1898.54s ->  1899.24s] so
+[ 1899.24s ->  1899.44s] we
+[ 1899.44s ->  1899.98s] have
+[ 1899.98s ->  1901.20s] effectively
+[ 1901.20s ->  1902.46s] this
+[ 1902.46s ->  1902.90s] entire
+[ 1902.90s ->  1903.26s] guy
+[ 1903.26s ->  1903.66s] here
+[ 1903.66s ->  1903.84s] I'm
+[ 1903.84s ->  1904.00s] just
+[ 1904.00s ->  1904.12s] going
+[ 1904.12s ->  1904.24s] to
+[ 1904.24s ->  1904.58s] copy
+[ 1904.58s ->  1904.90s] it
+[ 1904.90s ->  1906.77s] and
+[ 1906.77s ->  1906.89s] I
+[ 1906.89s ->  1907.03s] will
+[ 1907.03s ->  1907.43s] paste
+[ 1907.43s ->  1907.65s] it
+[ 1907.65s ->  1907.93s] in
+[ 1907.93s ->  1911.43s] and
+[ 1911.43s ->  1911.61s] I
+[ 1911.61s ->  1911.75s] will
+[ 1911.75s ->  1912.03s] make
+[ 1912.03s ->  1912.31s] it
+[ 1912.31s ->  1913.03s] the
+[ 1913.03s ->  1913.27s] same
+[ 1913.27s ->  1913.63s] color
+[ 1913.63s ->  1914.83s] so
+[ 1914.83s ->  1915.31s] that
+[ 1915.31s ->  1915.51s] is
+[ 1915.51s ->  1915.73s] going
+[ 1915.73s ->  1915.95s] to
+[ 1915.95s ->  1916.39s] be
+[ 1916.39s ->  1919.43s] it
+[ 1919.43s ->  1919.59s] for
+[ 1919.59s ->  1919.83s] this
+[ 1919.83s ->  1920.23s] first
+[ 1920.23s ->  1920.73s] term
+[ 1920.73s ->  1921.03s] now
+[ 1921.03s ->  1921.21s] we
+[ 1921.21s ->  1921.53s] have
+[ 1921.53s ->  1922.57s] bt
+[ 1922.57s ->  1923.25s] which
+[ 1923.25s ->  1923.41s] is
+[ 1923.41s ->  1923.61s] given
+[ 1923.61s ->  1923.89s] by
+[ 1923.89s ->  1924.23s] v
+[ 1924.23s ->  1925.61s] and
+[ 1925.61s ->  1926.39s] d
+[ 1926.39s ->  1926.85s] a
+[ 1926.85s ->  1927.45s] t
+[ 1927.45s ->  1928.37s] which
+[ 1928.37s ->  1928.53s] is
+[ 1928.53s ->  1928.73s] given
+[ 1928.73s ->  1929.33s] by
+[ 1929.33s ->  1930.23s] negative
+[ 1930.23s ->  1930.71s] r
+[ 1930.71s ->  1930.97s] e
+[ 1930.97s ->  1931.09s] to
+[ 1931.09s ->  1931.23s] the
+[ 1931.23s ->  1931.53s] negative
+[ 1931.53s ->  1932.09s] rt
+[ 1932.09s ->  1932.45s] dt
+[ 1932.45s ->  1933.57s] so
+[ 1933.57s ->  1934.19s] I'll
+[ 1934.19s ->  1934.63s] add
+[ 1934.63s ->  1937.32s] that
+[ 1937.32s ->  1937.68s] beneath
+[ 1937.68s ->  1937.98s] it
+[ 1937.98s ->  1938.64s] we
+[ 1938.64s ->  1938.90s] have
+[ 1938.90s ->  1939.30s] v
+[ 1939.30s ->  1941.57s] that's
+[ 1941.57s ->  1941.71s] going
+[ 1941.71s ->  1941.89s] to
+[ 1941.89s ->  1942.05s] be
+[ 1942.05s ->  1942.47s] bt
+[ 1942.47s ->  1944.12s] and
+[ 1944.12s ->  1944.24s] then
+[ 1944.24s ->  1944.40s] we
+[ 1944.40s ->  1944.74s] have
+[ 1944.74s ->  1945.62s] negative
+[ 1945.62s ->  1946.02s] r
+[ 1946.02s ->  1946.30s] e
+[ 1946.30s ->  1946.44s] to
+[ 1946.44s ->  1946.60s] the
+[ 1946.60s ->  1946.92s] negative
+[ 1946.92s ->  1947.66s] rt
+[ 1947.66s ->  1948.52s] dt
+[ 1948.52s ->  1949.86s] that
+[ 1949.86s ->  1950.04s] is
+[ 1950.04s ->  1950.28s] going
+[ 1950.28s ->  1950.50s] to
+[ 1950.50s ->  1950.92s] be
+[ 1950.92s ->  1952.02s] dat
+[ 1952.02s ->  1953.66s] which
+[ 1953.66s ->  1953.82s] we
+[ 1953.82s ->  1954.00s] have
+[ 1954.00s ->  1954.32s] there
+[ 1954.32s ->  1954.82s] and
+[ 1954.82s ->  1954.96s] of
+[ 1954.96s ->  1955.16s] course
+[ 1955.16s ->  1955.42s] this
+[ 1955.42s ->  1955.64s] goes
+[ 1955.64s ->  1955.84s] to
+[ 1955.84s ->  1956.14s] zero
+[ 1956.14s ->  1956.78s] so
+[ 1956.78s ->  1956.98s] we
+[ 1956.98s ->  1957.12s] are
+[ 1957.12s ->  1957.48s] left
+[ 1957.48s ->  1957.90s] with
+[ 1957.90s ->  1958.68s] this
+[ 1958.68s ->  1959.22s] expression
+[ 1959.22s ->  1959.70s] here
+[ 1959.70s ->  1961.16s] for
+[ 1961.16s ->  1961.46s] the
+[ 1961.46s ->  1962.02s] differential
+[ 1962.02s ->  1962.42s] of our
+[ 1962.42s ->  1963.02s] discounted
+[ 1963.02s ->  1963.42s] value
+[ 1963.42s ->  1963.88s] process
+[ 1963.88s ->  1964.12s] but
+[ 1964.12s ->  1964.44s] what do
+[ 1964.44s ->  1964.56s] we
+[ 1964.56s ->  1964.86s] know
+[ 1964.86s ->  1967.06s] what
+[ 1967.06s ->  1967.26s] do
+[ 1967.26s ->  1967.42s] we
+[ 1967.42s ->  1967.78s] know
+[ 1967.78s ->  1968.82s] well
+[ 1968.82s ->  1969.14s] we
+[ 1969.14s ->  1969.48s] know
+[ 1969.48s ->  1969.72s] that
+[ 1969.72s ->  1969.86s] we
+[ 1969.86s ->  1970.06s] can
+[ 1970.06s ->  1970.64s] factor
+[ 1970.64s ->  1971.24s] out
+[ 1971.24s ->  1972.97s] e
+[ 1972.97s ->  1973.07s] to
+[ 1973.07s ->  1973.19s] the
+[ 1973.19s ->  1973.53s] negative
+[ 1973.53s ->  1974.03s] rt
+[ 1974.03s ->  1974.63s] and
+[ 1974.63s ->  1974.89s] then
+[ 1974.89s ->  1975.11s] we
+[ 1975.11s ->  1975.25s] can
+[ 1975.25s ->  1975.43s] just
+[ 1975.43s ->  1975.63s] take
+[ 1975.63s ->  1975.79s] the
+[ 1975.79s ->  1976.17s] product
+[ 1976.17s ->  1976.85s] and
+[ 1976.85s ->  1977.19s] put
+[ 1977.19s ->  1977.33s] it
+[ 1977.33s ->  1977.83s] inside
+[ 1977.83s ->  1978.21s] this
+[ 1978.21s ->  1978.69s] expression
+[ 1978.69s ->  1979.97s] so
+[ 1979.97s ->  1980.21s] let's
+[ 1980.21s ->  1980.37s] do
+[ 1980.37s ->  1980.61s] that
+[ 1980.61s ->  1981.11s] first
+[ 1981.11s ->  1982.85s] e
+[ 1982.85s ->  1982.97s] to
+[ 1982.97s ->  1983.09s] the
+[ 1983.09s ->  1983.39s] negative
+[ 1983.39s ->  1983.89s] rt
+[ 1983.89s ->  1985.27s] right
+[ 1985.27s ->  1985.53s] then
+[ 1985.53s ->  1985.67s] what
+[ 1985.67s ->  1985.75s] do
+[ 1985.75s ->  1985.89s] we
+[ 1985.89s ->  1986.21s] get
+[ 1986.21s ->  1986.85s] we
+[ 1986.85s ->  1987.13s] get
+[ 1987.13s ->  1987.61s] everything
+[ 1987.61s ->  1987.95s] that's
+[ 1987.95s ->  1988.41s] inside
+[ 1988.41s ->  1988.77s] here
+[ 1988.77s ->  1993.84s] really
+[ 1993.84s ->  1994.10s] going to
+[ 1994.10s ->  1994.26s] go
+[ 1994.26s ->  1994.62s] step
+[ 1994.62s ->  1994.78s] by
+[ 1994.78s ->  1995.10s] step
+[ 1995.10s ->  1995.36s] here
+[ 1995.36s ->  1996.68s] and
+[ 1996.68s ->  1997.00s] now
+[ 1997.00s ->  1997.48s] what else
+[ 1997.48s ->  1997.64s] is
+[ 1997.64s ->  1998.10s] inside
+[ 1998.10s ->  1998.58s] well
+[ 1998.58s ->  1998.98s] we
+[ 1998.98s ->  1999.44s] factored
+[ 1999.44s ->  1999.82s] out
+[ 1999.82s ->  2001.56s] e
+[ 2001.56s ->  2001.68s] to
+[ 2001.68s ->  2001.82s] the
+[ 2001.82s ->  2002.10s] negative
+[ 2002.10s ->  2002.54s] rt
+[ 2002.54s ->  2002.82s] so
+[ 2002.82s ->  2003.00s] we
+[ 2003.00s ->  2003.44s] have
+[ 2003.44s ->  2004.46s] v
+[ 2004.46s ->  2005.00s] negative
+[ 2005.00s ->  2005.36s] r
+[ 2005.36s ->  2005.66s] dt
+[ 2005.66s ->  2013.70s] now
+[ 2013.70s ->  2013.94s] what
+[ 2013.94s ->  2014.10s] do
+[ 2014.10s ->  2014.24s] you
+[ 2014.24s ->  2014.66s] notice
+[ 2014.66s ->  2019.44s] we
+[ 2019.44s ->  2019.62s] can
+[ 2019.62s ->  2020.02s] again
+[ 2020.02s ->  2020.56s] factor
+[ 2020.56s ->  2020.82s] the
+[ 2020.82s ->  2021.14s] dt
+[ 2021.14s ->  2021.60s] s
+[ 2021.60s ->  2023.38s] okay
+[ 2023.38s ->  2023.94s] so
+[ 2023.94s ->  2024.08s] what
+[ 2024.08s ->  2024.16s] do
+[ 2024.16s ->  2024.28s] we
+[ 2024.28s ->  2024.60s] get
+[ 2024.60s ->  2034.10s] we're
+[ 2034.10s ->  2034.38s] going
+[ 2034.38s ->  2034.58s] to
+[ 2034.58s ->  2034.92s] get
+[ 2034.92s ->  2048.85s] this
+[ 2048.85s ->  2049.39s] expression
+[ 2049.39s ->  2049.85s] here
+[ 2049.85s ->  2052.90s] all
+[ 2052.90s ->  2053.16s] right
+[ 2053.16s ->  2053.94s] but
+[ 2053.94s ->  2054.24s] what
+[ 2054.24s ->  2054.46s] do
+[ 2054.46s ->  2054.68s] we
+[ 2054.68s ->  2055.32s] notice
+[ 2055.32s ->  2056.22s] what
+[ 2056.22s ->  2056.42s] do
+[ 2056.42s ->  2056.60s] we
+[ 2056.60s ->  2057.06s] get
+[ 2057.06s ->  2058.26s] inside
+[ 2058.26s ->  2058.84s] this
+[ 2058.84s ->  2059.44s] expression
+[ 2059.44s ->  2059.98s] here
+[ 2059.98s ->  2061.55s] this
+[ 2061.55s ->  2061.83s] looks
+[ 2061.83s ->  2062.23s] very
+[ 2062.23s ->  2062.77s] familiar
+[ 2062.77s ->  2068.19s] that
+[ 2068.19s ->  2068.39s] is
+[ 2068.39s ->  2068.67s] our
+[ 2068.67s ->  2069.13s] black
+[ 2069.13s ->  2069.77s] scholls
+[ 2069.77s ->  2070.47s] equation
+[ 2070.47s ->  2072.57s] and
+[ 2072.57s ->  2073.03s] the
+[ 2073.03s ->  2073.35s] black
+[ 2073.35s ->  2073.77s] scholls
+[ 2073.77s ->  2074.21s] equation
+[ 2074.21s ->  2074.85s] says
+[ 2074.85s ->  2075.31s] if
+[ 2075.31s ->  2075.67s] v
+[ 2075.67s ->  2075.89s] is
+[ 2075.89s ->  2076.09s] a
+[ 2076.09s ->  2076.49s] solution
+[ 2076.49s ->  2076.77s] then
+[ 2076.77s ->  2077.01s] this
+[ 2077.01s ->  2077.53s] expression
+[ 2077.53s ->  2077.93s] must
+[ 2077.93s ->  2078.35s] be
+[ 2078.35s ->  2079.83s] zero
+[ 2079.83s ->  2084.48s] so
+[ 2084.48s ->  2084.80s] we
+[ 2084.80s ->  2084.98s] can
+[ 2084.98s ->  2085.26s] say
+[ 2085.26s ->  2085.64s] then
+[ 2085.64s ->  2086.14s] is
+[ 2086.14s ->  2089.13s] assuming
+[ 2089.13s ->  2089.69s] v
+[ 2089.69s ->  2091.49s] solves
+[ 2091.49s ->  2092.55s] the
+[ 2092.55s ->  2092.87s] black
+[ 2092.87s ->  2093.27s] scholls
+[ 2093.27s ->  2093.81s] equation
+[ 2093.81s ->  2096.48s] this
+[ 2096.48s ->  2097.04s] entire
+[ 2097.04s ->  2098.80s] term
+[ 2098.80s ->  2099.08s] here
+[ 2099.08s ->  2099.34s] this
+[ 2099.34s ->  2099.66s] drift
+[ 2099.66s ->  2100.04s] term
+[ 2100.04s ->  2100.52s] must
+[ 2100.52s ->  2100.80s] be
+[ 2100.80s ->  2101.30s] zero
+[ 2101.30s ->  2106.72s] so
+[ 2106.72s ->  2106.90s] we
+[ 2106.90s ->  2107.12s] have
+[ 2107.12s ->  2107.94s] dramatically
+[ 2107.94s ->  2108.84s] simplified
+[ 2108.84s ->  2111.73s] this
+[ 2111.73s ->  2112.67s] discounted
+[ 2112.67s ->  2113.37s] value
+[ 2113.37s ->  2114.23s] expression
+[ 2114.23s ->  2114.71s] here
+[ 2114.71s ->  2116.39s] dramatically
+[ 2116.39s ->  2117.09s] simplified
+[ 2117.09s ->  2117.45s] it
+[ 2117.45s ->  2119.68s] but
+[ 2119.68s ->  2120.18s] how
+[ 2120.18s ->  2120.42s] is
+[ 2120.42s ->  2120.84s] this
+[ 2120.84s ->  2121.70s] useful
+[ 2121.70s ->  2122.06s] for
+[ 2122.06s ->  2122.40s] us
+[ 2122.40s ->  2123.26s] we've
+[ 2123.26s ->  2123.54s] made
+[ 2123.54s ->  2123.74s] a
+[ 2123.74s ->  2124.22s] connection
+[ 2124.22s ->  2124.62s] now
+[ 2124.62s ->  2125.04s] to
+[ 2125.04s ->  2125.80s] the
+[ 2125.80s ->  2126.14s] black
+[ 2126.14s ->  2126.60s] scholls
+[ 2126.60s ->  2127.14s] equation
+[ 2127.14s ->  2127.56s] but
+[ 2127.56s ->  2128.20s] how
+[ 2128.20s ->  2128.42s] is
+[ 2128.42s ->  2128.74s] this
+[ 2128.74s ->  2129.06s] now
+[ 2129.06s ->  2129.62s] connected
+[ 2129.62s ->  2130.04s] to
+[ 2130.04s ->  2130.38s] the
+[ 2130.38s ->  2130.86s] risk
+[ 2130.86s ->  2131.32s] neutral
+[ 2131.32s ->  2132.06s] discounted
+[ 2132.06s ->  2132.70s] expectation
+[ 2132.70s ->  2133.14s] from
+[ 2133.14s ->  2133.78s] the
+[ 2133.78s ->  2134.32s] fundamental
+[ 2134.32s ->  2134.78s] theorem
+[ 2134.78s ->  2135.18s] of
+[ 2135.18s ->  2135.70s] asset
+[ 2135.70s ->  2136.28s] pricing
+[ 2136.28s ->  2136.76s] it
+[ 2136.76s ->  2137.18s] turns
+[ 2137.18s ->  2137.54s] out
+[ 2137.54s ->  2138.08s] that
+[ 2138.08s ->  2139.34s] this
+[ 2139.34s ->  2140.10s] discounted
+[ 2140.10s ->  2140.56s] value
+[ 2140.56s ->  2141.40s] process
+[ 2141.40s ->  2142.26s] is
+[ 2142.26s ->  2142.50s] in
+[ 2142.50s ->  2143.06s] fact
+[ 2143.06s ->  2143.96s] adapted
+[ 2143.96s ->  2144.64s] to
+[ 2144.64s ->  2146.16s] a
+[ 2146.16s ->  2146.84s] filtration
+[ 2146.84s ->  2147.44s] at
+[ 2147.44s ->  2148.14s] time
+[ 2148.14s ->  2148.40s] little
+[ 2148.40s ->  2148.74s] t
+[ 2148.74s ->  2149.96s] we
+[ 2149.96s ->  2150.32s] aren't
+[ 2150.32s ->  2150.74s] using
+[ 2150.74s ->  2151.06s] any
+[ 2151.06s ->  2151.66s] information
+[ 2151.66s ->  2152.56s] beyond
+[ 2152.56s ->  2152.98s] time
+[ 2152.98s ->  2153.20s] little
+[ 2153.20s ->  2153.52s] t
+[ 2153.52s ->  2154.18s] to
+[ 2154.18s ->  2154.72s] produce
+[ 2154.72s ->  2154.96s] the
+[ 2154.96s ->  2155.36s] value
+[ 2155.36s ->  2155.68s] for
+[ 2155.68s ->  2155.88s] the
+[ 2155.88s ->  2156.86s] discounted
+[ 2156.86s ->  2157.66s] process
+[ 2157.66s ->  2158.92s] we
+[ 2158.92s ->  2159.32s] also
+[ 2159.32s ->  2159.68s] have
+[ 2159.68s ->  2159.80s] it
+[ 2159.80s ->  2160.02s] that
+[ 2160.02s ->  2160.54s] options
+[ 2160.54s ->  2161.04s] have
+[ 2161.04s ->  2162.88s] finite
+[ 2162.88s ->  2163.72s] payoffs
+[ 2163.72s ->  2166.84s] in
+[ 2166.84s ->  2167.06s] other
+[ 2167.06s ->  2167.40s] words
+[ 2167.40s ->  2167.72s] they
+[ 2167.72s ->  2168.00s] have
+[ 2168.00s ->  2169.06s] integrability
+[ 2169.06s ->  2171.76s] and
+[ 2171.76s ->  2171.98s] we
+[ 2171.98s ->  2172.36s] also
+[ 2172.36s ->  2172.68s] have
+[ 2172.68s ->  2172.82s] it
+[ 2172.82s ->  2173.20s] that
+[ 2173.20s ->  2173.76s] the
+[ 2173.76s ->  2174.86s] risk
+[ 2174.86s ->  2175.66s] neutral
+[ 2175.66s ->  2177.32s] expectation
+[ 2177.32s ->  2177.86s] of
+[ 2177.86s ->  2178.26s] this
+[ 2178.26s ->  2178.94s] differential
+[ 2178.94s ->  2179.36s] is
+[ 2179.36s ->  2179.72s] what
+[ 2179.72s ->  2180.46s] if
+[ 2180.46s ->  2180.72s] I
+[ 2180.72s ->  2181.08s] take
+[ 2181.08s ->  2181.38s] the
+[ 2181.38s ->  2182.04s] expectation
+[ 2182.04s ->  2182.72s] of
+[ 2182.72s ->  2183.06s] this
+[ 2183.06s ->  2183.70s] process
+[ 2183.70s ->  2183.90s] in
+[ 2183.90s ->  2184.06s] a
+[ 2184.06s ->  2184.34s] risk
+[ 2184.34s ->  2184.72s] neutral
+[ 2184.72s ->  2185.10s] sense
+[ 2185.10s ->  2185.30s] what
+[ 2185.30s ->  2185.44s] do
+[ 2185.44s ->  2185.58s] I
+[ 2185.58s ->  2185.98s] get
+[ 2185.98s ->  2186.96s] well
+[ 2186.96s ->  2187.44s] I
+[ 2187.44s ->  2187.76s] just
+[ 2187.76s ->  2188.38s] have
+[ 2188.38s ->  2189.78s] this
+[ 2189.78s ->  2190.38s] Brownian
+[ 2190.38s ->  2190.92s] motion
+[ 2190.92s ->  2191.90s] supplying
+[ 2191.90s ->  2192.18s] the
+[ 2192.18s ->  2192.82s] randomness
+[ 2192.82s ->  2193.08s] and
+[ 2193.08s ->  2193.62s] if
+[ 2193.62s ->  2193.70s] we
+[ 2193.70s ->  2193.90s] take
+[ 2193.90s ->  2194.06s] the
+[ 2194.06s ->  2194.66s] expectation
+[ 2194.66s ->  2194.88s] of
+[ 2194.88s ->  2195.02s] a
+[ 2195.02s ->  2195.38s] Brownian
+[ 2195.38s ->  2195.80s] motion
+[ 2195.80s ->  2196.00s] then
+[ 2196.00s ->  2196.20s] we're
+[ 2196.20s ->  2196.48s] going
+[ 2196.48s ->  2196.70s] to
+[ 2196.70s ->  2197.06s] get
+[ 2197.06s ->  2197.96s] zero
+[ 2197.96s ->  2199.28s] and
+[ 2199.28s ->  2199.76s] that's
+[ 2199.76s ->  2200.18s] exactly
+[ 2200.18s ->  2200.62s] what we
+[ 2200.62s ->  2200.88s] have
+[ 2200.88s ->  2201.22s] here
+[ 2201.22s ->  2203.65s] the
+[ 2203.65s ->  2204.33s] differential
+[ 2204.33s ->  2205.17s] in
+[ 2205.17s ->  2205.61s] that
+[ 2205.61s ->  2206.15s] continuous
+[ 2206.15s ->  2206.63s] sense
+[ 2206.63s ->  2206.87s] has
+[ 2206.87s ->  2207.09s] a
+[ 2207.09s ->  2207.45s] zero
+[ 2207.45s ->  2208.35s] expectation
+[ 2208.35s ->  2209.19s] now
+[ 2209.19s ->  2209.47s] what
+[ 2209.47s ->  2209.71s] does
+[ 2209.71s ->  2210.01s] that
+[ 2210.01s ->  2210.81s] imply
+[ 2210.81s ->  2212.19s] this
+[ 2212.19s ->  2212.87s] implies
+[ 2212.87s ->  2213.35s] in
+[ 2213.35s ->  2213.59s] a
+[ 2213.59s ->  2213.91s] risk
+[ 2213.91s ->  2214.41s] neutral
+[ 2214.41s ->  2215.03s] sense
+[ 2215.03s ->  2215.81s] the
+[ 2215.81s ->  2216.71s] discounted
+[ 2216.71s ->  2217.29s] value
+[ 2217.29s ->  2218.19s] process
+[ 2218.19s ->  2219.33s] at
+[ 2219.33s ->  2219.65s] any
+[ 2219.65s ->  2220.21s] time
+[ 2220.21s ->  2220.73s] s
+[ 2220.73s ->  2221.47s] given
+[ 2221.47s ->  2221.71s] a
+[ 2221.71s ->  2222.33s] filtration
+[ 2222.33s ->  2222.85s] at
+[ 2222.85s ->  2223.19s] time
+[ 2223.19s ->  2223.41s] little
+[ 2223.41s ->  2223.75s] t
+[ 2223.75s ->  2225.24s] the
+[ 2225.24s ->  2225.64s] risk
+[ 2225.64s ->  2225.92s] neutral
+[ 2225.92s ->  2226.52s] expectation
+[ 2226.52s ->  2226.96s] is just
+[ 2226.96s ->  2227.16s] going
+[ 2227.16s ->  2227.64s] to be
+[ 2227.64s ->  2228.96s] the
+[ 2228.96s ->  2229.68s] discounted
+[ 2229.68s ->  2230.08s] process
+[ 2230.08s ->  2230.40s] at
+[ 2230.40s ->  2230.76s] time
+[ 2230.76s ->  2231.22s] little
+[ 2231.22s ->  2231.62s] t
+[ 2231.62s ->  2232.70s] and
+[ 2232.70s ->  2233.24s] really
+[ 2233.24s ->  2233.52s] what
+[ 2233.52s ->  2233.96s] we're
+[ 2233.96s ->  2234.82s] suggesting
+[ 2234.82s ->  2235.32s] here
+[ 2235.32s ->  2236.52s] the
+[ 2236.52s ->  2237.96s] result
+[ 2237.96s ->  2238.80s] is that
+[ 2238.80s ->  2241.24s] v
+[ 2241.24s ->  2241.60s] tilde
+[ 2241.60s ->  2242.16s] this
+[ 2242.16s ->  2242.98s] discounted
+[ 2242.98s ->  2243.38s] value
+[ 2243.38s ->  2244.02s] process
+[ 2244.02s ->  2245.88s] is a
+[ 2245.88s ->  2247.12s] martin
+[ 2247.12s ->  2247.98s] gale
+[ 2247.98s ->  2249.98s] that
+[ 2249.98s ->  2250.54s] is
+[ 2250.54s ->  2250.96s] the
+[ 2250.96s ->  2251.58s] big
+[ 2251.58s ->  2252.30s] result
+[ 2252.30s ->  2252.70s] here
+[ 2252.70s ->  2252.94s] we're
+[ 2252.94s ->  2253.14s] not
+[ 2253.14s ->  2254.00s] accumulating
+[ 2254.00s ->  2254.40s] any
+[ 2254.40s ->  2255.14s] change
+[ 2255.14s ->  2256.02s] in
+[ 2256.02s ->  2256.40s] the
+[ 2256.40s ->  2256.84s] risk
+[ 2256.84s ->  2257.24s] neutral
+[ 2257.24s ->  2258.00s] expectation
+[ 2258.00s ->  2258.54s] sense
+[ 2258.54s ->  2259.22s] so
+[ 2259.22s ->  2259.46s] the
+[ 2259.46s ->  2259.72s] risk
+[ 2259.72s ->  2260.06s] neutral
+[ 2260.06s ->  2260.86s] expectation
+[ 2260.86s ->  2261.40s] of
+[ 2261.40s ->  2261.94s] the
+[ 2261.94s ->  2262.58s] discounted
+[ 2262.58s ->  2262.88s] value
+[ 2262.88s ->  2263.34s] process
+[ 2263.34s ->  2263.56s] at
+[ 2263.56s ->  2263.80s] any
+[ 2263.80s ->  2264.32s] time
+[ 2264.32s ->  2265.04s] s
+[ 2265.04s ->  2265.76s] such
+[ 2265.76s ->  2266.20s] that
+[ 2266.20s ->  2267.02s] s
+[ 2267.02s ->  2267.24s] is
+[ 2267.24s ->  2267.52s] greater
+[ 2267.52s ->  2267.82s] than
+[ 2267.82s ->  2268.10s] t
+[ 2268.10s ->  2269.06s] for
+[ 2269.06s ->  2269.42s] some
+[ 2269.42s ->  2270.06s] filtration
+[ 2270.06s ->  2270.50s] right
+[ 2270.50s ->  2270.68s] the
+[ 2270.68s ->  2271.18s] information
+[ 2271.18s ->  2271.68s] we have
+[ 2271.68s ->  2272.12s] available
+[ 2272.12s ->  2272.64s] to us
+[ 2272.64s ->  2273.04s] now
+[ 2273.04s ->  2273.94s] the
+[ 2273.94s ->  2274.18s] risk
+[ 2274.18s ->  2274.62s] neutral
+[ 2274.62s ->  2275.68s] expectation
+[ 2275.68s ->  2276.42s] is just
+[ 2276.42s ->  2276.60s] going
+[ 2276.60s ->  2277.08s] to be
+[ 2277.08s ->  2278.08s] v
+[ 2278.08s ->  2278.48s] tilde
+[ 2278.48s ->  2278.92s] at
+[ 2278.92s ->  2279.36s] time
+[ 2279.36s ->  2280.10s] t
+[ 2280.10s ->  2280.90s] it
+[ 2280.90s ->  2281.16s] is
+[ 2281.16s ->  2281.34s] in
+[ 2281.34s ->  2281.66s] fact
+[ 2281.66s ->  2282.10s] a
+[ 2282.10s ->  2282.84s] martin
+[ 2282.84s ->  2283.44s] gale
+[ 2283.44s ->  2283.96s] the
+[ 2283.96s ->  2284.38s] implication
+[ 2284.38s ->  2284.90s] of this
+[ 2284.90s ->  2285.30s] result
+[ 2285.30s ->  2285.72s] is
+[ 2285.72s ->  2286.38s] huge
+[ 2286.38s ->  2286.76s] we can
+[ 2286.76s ->  2287.00s] now
+[ 2287.00s ->  2287.50s] use
+[ 2287.50s ->  2287.82s] this
+[ 2287.82s ->  2288.38s] martingale
+[ 2288.38s ->  2288.88s] property
+[ 2288.88s ->  2289.44s] we worked
+[ 2289.44s ->  2290.04s] so hard
+[ 2290.04s ->  2290.60s] to find
+[ 2290.60s ->  2291.84s] to prove
+[ 2291.84s ->  2292.72s] that the
+[ 2292.72s ->  2293.20s] solution
+[ 2293.20s ->  2293.76s] to the
+[ 2293.76s ->  2294.10s] black
+[ 2294.10s ->  2294.32s] scholes
+[ 2294.32s ->  2295.02s] equation
+[ 2295.02s ->  2295.40s] that
+[ 2295.40s ->  2296.24s] pricing
+[ 2296.24s ->  2296.88s] pde
+[ 2296.88s ->  2297.24s] the
+[ 2297.24s ->  2297.60s] subsequent
+[ 2297.60s ->  2298.16s] function
+[ 2298.16s ->  2298.50s] v
+[ 2298.50s ->  2299.28s] is
+[ 2299.28s ->  2299.78s] equivalent
+[ 2299.78s ->  2300.50s] to the
+[ 2300.50s ->  2301.26s] arbitrage
+[ 2301.26s ->  2301.82s] free
+[ 2301.82s ->  2302.62s] pricing
+[ 2302.62s ->  2303.14s] function
+[ 2303.14s ->  2304.04s] that the
+[ 2304.04s ->  2304.58s] fundamental
+[ 2304.58s ->  2305.12s] theorem
+[ 2305.12s ->  2306.02s] of asset
+[ 2306.02s ->  2306.48s] pricing
+[ 2306.48s ->  2307.12s] implies
+[ 2307.12s ->  2308.32s] exists
+[ 2308.32s ->  2309.30s] so
+[ 2309.30s ->  2309.86s] let's
+[ 2309.86s ->  2310.06s] do
+[ 2310.06s ->  2310.42s] this
+[ 2310.42s ->  2311.16s] we can
+[ 2311.16s ->  2311.42s] look
+[ 2311.42s ->  2311.98s] at the
+[ 2311.98s ->  2313.04s] discounted
+[ 2313.04s ->  2313.40s] value
+[ 2313.40s ->  2313.94s] process
+[ 2313.94s ->  2314.18s] at
+[ 2314.18s ->  2314.42s] time
+[ 2314.42s ->  2314.88s] capital
+[ 2314.88s ->  2315.20s] t
+[ 2315.20s ->  2315.92s] this
+[ 2315.92s ->  2316.28s] is going
+[ 2316.28s ->  2316.64s] to be
+[ 2316.64s ->  2316.96s] equal
+[ 2316.96s ->  2317.54s] to e
+[ 2317.54s ->  2317.78s] to the
+[ 2317.78s ->  2318.06s] negative
+[ 2318.06s ->  2318.36s] r
+[ 2318.36s ->  2318.68s] cap
+[ 2318.68s ->  2319.00s] t
+[ 2319.00s ->  2319.92s] v
+[ 2319.92s ->  2321.00s] then
+[ 2321.00s ->  2321.56s] of the
+[ 2321.56s ->  2321.92s] stock
+[ 2321.92s ->  2322.24s] price
+[ 2322.24s ->  2322.40s] at
+[ 2322.40s ->  2322.62s] time
+[ 2322.62s ->  2322.86s] cap
+[ 2322.86s ->  2323.12s] t
+[ 2323.12s ->  2323.44s] time
+[ 2323.44s ->  2323.72s] cap
+[ 2323.72s ->  2324.04s] t
+[ 2324.04s ->  2324.58s] but
+[ 2324.58s ->  2324.80s] what
+[ 2324.80s ->  2325.02s] do
+[ 2325.02s ->  2325.18s] we
+[ 2325.18s ->  2325.56s] know
+[ 2325.56s ->  2326.32s] right
+[ 2326.32s ->  2326.62s] at
+[ 2326.62s ->  2326.94s] time
+[ 2326.94s ->  2327.22s] cap
+[ 2327.22s ->  2327.56s] t
+[ 2327.56s ->  2328.24s] this
+[ 2328.24s ->  2328.64s] must
+[ 2328.64s ->  2328.94s] be
+[ 2328.94s ->  2329.22s] our
+[ 2329.22s ->  2329.66s] max
+[ 2329.66s ->  2330.28s] function
+[ 2330.28s ->  2331.22s] this
+[ 2331.22s ->  2331.38s] is
+[ 2331.38s ->  2331.60s] our
+[ 2331.60s ->  2332.10s] max
+[ 2332.10s ->  2333.00s] s
+[ 2333.00s ->  2333.36s] sub
+[ 2333.36s ->  2333.76s] t
+[ 2333.76s ->  2334.12s] minus
+[ 2334.12s ->  2334.52s] k
+[ 2334.52s ->  2334.90s] and
+[ 2334.90s ->  2335.52s] zero
+[ 2335.52s ->  2336.68s] right
+[ 2336.68s ->  2337.26s] because
+[ 2337.26s ->  2337.96s] at
+[ 2337.96s ->  2338.24s] time
+[ 2338.24s ->  2338.66s] capital
+[ 2338.66s ->  2338.94s] t
+[ 2338.94s ->  2339.70s] there's
+[ 2339.70s ->  2339.88s] no
+[ 2339.88s ->  2340.14s] more
+[ 2340.14s ->  2340.82s] randomness
+[ 2340.82s ->  2341.16s] we know
+[ 2341.16s ->  2341.34s] the
+[ 2341.34s ->  2341.70s] payoff
+[ 2346.96s ->  2347.24s] time
+[ 2347.24s ->  2347.78s] little
+[ 2347.78s ->  2348.06s] t
+[ 2348.06s ->  2348.78s] this
+[ 2348.78s ->  2348.92s] is
+[ 2348.92s ->  2349.08s] going
+[ 2349.08s ->  2349.22s] to
+[ 2349.22s ->  2349.38s] be
+[ 2349.38s ->  2349.68s] equal
+[ 2349.68s ->  2350.02s] to
+[ 2350.02s ->  2350.62s] e
+[ 2350.62s ->  2350.76s] to
+[ 2350.76s ->  2350.92s] the
+[ 2350.92s ->  2351.34s] negative
+[ 2351.34s ->  2351.72s] r
+[ 2351.72s ->  2352.04s] t
+[ 2352.04s ->  2353.00s] v
+[ 2353.00s ->  2353.62s] s
+[ 2353.62s ->  2353.84s] sub
+[ 2353.84s ->  2354.04s] little
+[ 2354.04s ->  2354.36s] t
+[ 2354.36s ->  2355.18s] little
+[ 2355.18s ->  2355.46s] t
+[ 2355.46s ->  2356.22s] and
+[ 2356.22s ->  2356.44s] we
+[ 2356.44s ->  2356.72s] know
+[ 2356.72s ->  2356.92s] that
+[ 2356.92s ->  2357.18s] this
+[ 2357.18s ->  2357.36s] is
+[ 2357.36s ->  2357.62s] then
+[ 2357.62s ->  2357.86s] going
+[ 2357.86s ->  2358.04s] to
+[ 2358.04s ->  2358.18s] be
+[ 2358.18s ->  2358.38s] the
+[ 2358.38s ->  2358.80s] solution
+[ 2358.80s ->  2359.20s] to
+[ 2359.20s ->  2359.76s] the
+[ 2359.76s ->  2360.24s] black
+[ 2360.24s ->  2360.68s] scholes
+[ 2360.68s ->  2361.34s] equation
+[ 2361.34s ->  2362.00s] that
+[ 2362.00s ->  2362.30s] is
+[ 2362.30s ->  2362.98s] necessary
+[ 2362.98s ->  2363.40s] for
+[ 2363.40s ->  2363.62s] this
+[ 2363.62s ->  2363.80s] to
+[ 2363.80s ->  2364.04s] be
+[ 2364.04s ->  2364.40s] a
+[ 2364.40s ->  2365.38s] martingale
+[ 2365.38s ->  2367.06s] just
+[ 2367.06s ->  2367.22s] as
+[ 2367.22s ->  2367.36s] we
+[ 2367.36s ->  2367.66s] have
+[ 2367.66s ->  2367.98s] here
+[ 2367.98s ->  2368.84s] so
+[ 2368.84s ->  2369.34s] given
+[ 2369.34s ->  2370.02s] these
+[ 2370.02s ->  2370.30s] two
+[ 2370.30s ->  2370.94s] discounted
+[ 2370.94s ->  2371.38s] processes
+[ 2371.38s ->  2371.66s] at
+[ 2371.66s ->  2371.82s] two
+[ 2371.82s ->  2372.10s] different
+[ 2372.10s ->  2372.38s] time
+[ 2372.38s ->  2372.82s] indices
+[ 2372.82s ->  2373.72s] what
+[ 2373.72s ->  2373.90s] can
+[ 2373.90s ->  2374.08s] we
+[ 2374.08s ->  2374.38s] do
+[ 2374.38s ->  2375.28s] well
+[ 2375.28s ->  2376.04s] we
+[ 2376.04s ->  2376.40s] know
+[ 2376.40s ->  2378.15s] time
+[ 2378.15s ->  2378.45s] cap
+[ 2378.45s ->  2378.69s] t
+[ 2378.69s ->  2378.89s] is
+[ 2378.89s ->  2379.15s] after
+[ 2379.15s ->  2379.43s] time
+[ 2379.43s ->  2379.65s] little
+[ 2379.65s ->  2379.91s] t
+[ 2379.91s ->  2380.59s] we
+[ 2380.59s ->  2380.77s] can
+[ 2380.77s ->  2381.21s] apply
+[ 2381.21s ->  2381.59s] the
+[ 2381.59s ->  2382.03s] martingale
+[ 2382.03s ->  2382.53s] property
+[ 2382.53s ->  2382.77s] and
+[ 2382.77s ->  2383.05s] take
+[ 2383.05s ->  2383.55s] the
+[ 2383.55s ->  2384.25s] discounted
+[ 2384.25s ->  2384.83s] expectation
+[ 2384.83s ->  2385.39s] so
+[ 2385.39s ->  2385.91s] what
+[ 2385.91s ->  2386.01s] do
+[ 2386.01s ->  2386.11s] I
+[ 2386.11s ->  2386.31s] mean
+[ 2386.31s ->  2386.47s] by
+[ 2386.47s ->  2386.81s] this
+[ 2386.81s ->  2387.61s] if
+[ 2387.61s ->  2387.77s] I
+[ 2387.77s ->  2388.21s] apply
+[ 2388.21s ->  2388.59s] the
+[ 2388.59s ->  2388.87s] risk
+[ 2388.87s ->  2389.27s] neutral
+[ 2389.27s ->  2389.97s] expectation
+[ 2389.97s ->  2390.37s] to
+[ 2390.37s ->  2391.35s] this
+[ 2391.35s ->  2391.73s] value
+[ 2391.73s ->  2392.27s] process
+[ 2392.27s ->  2392.51s] at
+[ 2392.51s ->  2392.81s] time
+[ 2392.81s ->  2393.63s] capital
+[ 2393.63s ->  2393.93s] t
+[ 2393.93s ->  2395.65s] what
+[ 2395.65s ->  2396.25s] information
+[ 2396.25s ->  2396.77s] am I
+[ 2396.77s ->  2397.29s] operating
+[ 2397.29s ->  2397.59s] with
+[ 2397.59s ->  2397.79s] well
+[ 2397.79s ->  2397.95s] I'm
+[ 2397.95s ->  2398.43s] operating
+[ 2398.43s ->  2398.65s] at
+[ 2398.65s ->  2398.87s] time
+[ 2398.87s ->  2399.09s] little
+[ 2399.09s ->  2399.37s] t
+[ 2399.37s ->  2400.09s] maybe
+[ 2400.09s ->  2400.39s] this
+[ 2400.39s ->  2400.55s] is
+[ 2400.55s ->  2400.73s] t
+[ 2400.73s ->  2401.09s] equals
+[ 2401.09s ->  2401.45s] zero
+[ 2401.45s ->  2401.75s] right
+[ 2401.75s ->  2401.97s] now
+[ 2401.97s ->  2402.25s] maybe
+[ 2402.25s ->  2402.51s] this
+[ 2402.51s ->  2402.65s] is
+[ 2402.65s ->  2403.27s] 0.5
+[ 2403.27s ->  2403.45s] in
+[ 2403.45s ->  2403.57s] the
+[ 2403.57s ->  2403.85s] future
+[ 2403.85s ->  2404.03s] who
+[ 2404.03s ->  2404.33s] knows
+[ 2404.33s ->  2404.83s] we're
+[ 2404.83s ->  2405.07s] not
+[ 2405.07s ->  2405.25s] at
+[ 2405.25s ->  2405.69s] maturity
+[ 2405.69s ->  2406.55s] we
+[ 2406.55s ->  2406.75s] have
+[ 2406.75s ->  2407.29s] information
+[ 2407.29s ->  2407.55s] at
+[ 2407.55s ->  2407.77s] time
+[ 2407.77s ->  2408.01s] little
+[ 2408.01s ->  2408.31s] t
+[ 2408.31s ->  2409.07s] so
+[ 2409.07s ->  2409.25s] I'll
+[ 2409.25s ->  2409.41s] say
+[ 2409.41s ->  2409.57s] we
+[ 2409.57s ->  2409.79s] have
+[ 2409.79s ->  2409.99s] this
+[ 2409.99s ->  2410.51s] filtration
+[ 2410.51s ->  2411.61s] at
+[ 2411.61s ->  2411.89s] time
+[ 2411.89s ->  2412.11s] little
+[ 2412.11s ->  2412.39s] t
+[ 2412.39s ->  2413.19s] but
+[ 2413.19s ->  2413.47s] by
+[ 2413.47s ->  2413.65s] the
+[ 2413.65s ->  2414.11s] martingale
+[ 2414.11s ->  2414.67s] property
+[ 2414.67s ->  2415.89s] this
+[ 2415.89s ->  2416.27s] must
+[ 2416.27s ->  2416.73s] be
+[ 2416.73s ->  2417.85s] v
+[ 2417.85s ->  2418.19s] tilde
+[ 2418.19s ->  2419.03s] little
+[ 2419.03s ->  2419.35s] t
+[ 2419.35s ->  2420.51s] this
+[ 2420.51s ->  2420.99s] is
+[ 2420.99s ->  2422.33s] the
+[ 2422.33s ->  2422.91s] huge
+[ 2422.91s ->  2423.85s] result
+[ 2423.85s ->  2424.65s] because
+[ 2424.65s ->  2425.45s] now
+[ 2425.45s ->  2425.99s] we can
+[ 2425.99s ->  2426.17s] make
+[ 2426.17s ->  2427.09s] substitutions
+[ 2427.09s ->  2427.71s] for
+[ 2427.71s ->  2427.99s] these
+[ 2427.99s ->  2428.59s] values
+[ 2428.59s ->  2430.60s] I
+[ 2430.60s ->  2430.78s] have
+[ 2430.78s ->  2431.02s] this
+[ 2431.02s ->  2431.46s] substitution
+[ 2431.46s ->  2431.84s] to
+[ 2431.84s ->  2432.12s] make
+[ 2432.12s ->  2433.04s] and
+[ 2433.04s ->  2433.52s] this
+[ 2433.52s ->  2434.16s] substitution
+[ 2434.16s ->  2434.44s] to
+[ 2434.44s ->  2434.72s] make
+[ 2434.72s ->  2435.82s] so
+[ 2435.82s ->  2436.02s] let's
+[ 2436.02s ->  2436.22s] make
+[ 2436.22s ->  2436.46s] those
+[ 2436.46s ->  2437.28s] substitutions
+[ 2437.28s ->  2439.36s] I
+[ 2439.36s ->  2439.54s] now
+[ 2439.54s ->  2439.76s] have
+[ 2439.76s ->  2439.96s] this
+[ 2439.96s ->  2440.26s] risk
+[ 2440.26s ->  2440.68s] neutral
+[ 2440.68s ->  2441.52s] v
+[ 2441.52s ->  2441.80s] tilde
+[ 2441.80s ->  2442.18s] t
+[ 2442.18s ->  2443.52s] v
+[ 2443.52s ->  2443.78s] tilde
+[ 2443.78s ->  2444.10s] cap
+[ 2444.10s ->  2444.32s] t
+[ 2444.32s ->  2445.18s] is
+[ 2445.18s ->  2445.38s] going
+[ 2445.38s ->  2445.54s] to
+[ 2445.54s ->  2445.66s] be
+[ 2445.66s ->  2445.80s] the
+[ 2445.80s ->  2446.06s] max
+[ 2446.06s ->  2446.50s] function
+[ 2446.50s ->  2448.06s] discounted
+[ 2448.06s ->  2448.70s] back
+[ 2448.70s ->  2448.88s] to
+[ 2448.88s ->  2449.06s] t
+[ 2449.06s ->  2449.40s] 0
+[ 2449.40s ->  2450.48s] so
+[ 2450.48s ->  2450.64s] I
+[ 2450.64s ->  2450.86s] have
+[ 2450.86s ->  2451.22s] e
+[ 2451.22s ->  2451.48s] to
+[ 2451.48s ->  2451.62s] the
+[ 2451.62s ->  2451.88s] negative
+[ 2451.88s ->  2452.14s] r
+[ 2452.14s ->  2452.36s] cap
+[ 2452.36s ->  2452.62s] t
+[ 2452.62s ->  2453.78s] max
+[ 2453.78s ->  2454.14s] of
+[ 2454.14s ->  2454.52s] s
+[ 2454.52s ->  2454.80s] sub
+[ 2454.80s ->  2455.06s] cap
+[ 2455.06s ->  2455.28s] t
+[ 2455.28s ->  2455.54s] minus
+[ 2455.54s ->  2455.82s] k
+[ 2455.82s ->  2455.96s] and
+[ 2455.96s ->  2456.26s] 0
+[ 2456.26s ->  2458.47s] alright
+[ 2458.47s ->  2458.73s] so
+[ 2458.73s ->  2458.83s] I
+[ 2458.83s ->  2458.99s] make
+[ 2458.99s ->  2459.15s] the
+[ 2459.15s ->  2459.61s] substitution
+[ 2459.61s ->  2460.09s] there
+[ 2460.09s ->  2460.33s] this
+[ 2460.33s ->  2460.49s] is
+[ 2460.49s ->  2460.89s] just
+[ 2460.89s ->  2462.92s] my
+[ 2462.92s ->  2463.56s] v
+[ 2463.56s ->  2463.82s] tilde
+[ 2463.82s ->  2464.14s] cap
+[ 2464.14s ->  2464.38s] t
+[ 2464.38s ->  2465.89s] this
+[ 2465.89s ->  2466.07s] is
+[ 2466.07s ->  2466.37s] then
+[ 2466.37s ->  2466.67s] equal
+[ 2466.67s ->  2467.03s] to
+[ 2467.03s ->  2468.86s] make
+[ 2468.86s ->  2469.08s] this
+[ 2469.08s ->  2469.56s] substitution
+[ 2469.56s ->  2470.06s] here
+[ 2470.06s ->  2473.07s] e
+[ 2473.07s ->  2473.23s] to
+[ 2473.23s ->  2473.39s] the
+[ 2473.39s ->  2473.75s] negative
+[ 2473.75s ->  2474.07s] r
+[ 2474.07s ->  2474.33s] t
+[ 2474.33s ->  2475.59s] v
+[ 2475.59s ->  2476.21s] s
+[ 2476.21s ->  2476.43s] sub
+[ 2476.43s ->  2476.65s] little
+[ 2476.65s ->  2476.99s] t
+[ 2476.99s ->  2478.27s] little
+[ 2478.27s ->  2478.67s] t
+[ 2478.67s ->  2479.61s] and
+[ 2479.61s ->  2480.07s] now
+[ 2480.07s ->  2480.45s] I
+[ 2480.45s ->  2480.73s] can
+[ 2480.73s ->  2481.09s] what
+[ 2481.09s ->  2481.95s] pull
+[ 2481.95s ->  2482.21s] out
+[ 2482.21s ->  2482.49s] this
+[ 2482.49s ->  2483.17s] expectation
+[ 2483.17s ->  2483.47s] there's
+[ 2483.47s ->  2483.69s] nothing
+[ 2483.69s ->  2484.19s] random
+[ 2484.19s ->  2484.55s] here
+[ 2484.55s ->  2485.29s] the only
+[ 2485.29s ->  2485.97s] randomness
+[ 2485.97s ->  2486.31s] is the
+[ 2486.31s ->  2486.85s] stock price
+[ 2486.85s ->  2487.19s] at time
+[ 2487.19s ->  2487.59s] capital
+[ 2487.59s ->  2487.89s] t
+[ 2487.89s ->  2489.17s] and
+[ 2489.17s ->  2489.37s] then
+[ 2489.37s ->  2489.59s] I
+[ 2489.59s ->  2489.79s] can
+[ 2489.79s ->  2490.21s] divide
+[ 2490.21s ->  2490.67s] over
+[ 2490.67s ->  2491.29s] e
+[ 2491.29s ->  2491.39s] to
+[ 2491.39s ->  2491.53s] the
+[ 2491.53s ->  2491.81s] negative
+[ 2491.81s ->  2492.03s] r
+[ 2492.03s ->  2492.25s] t
+[ 2492.25s ->  2493.43s] and
+[ 2493.43s ->  2493.71s] what
+[ 2493.71s ->  2493.81s] am
+[ 2493.81s ->  2493.93s] I
+[ 2493.93s ->  2494.17s] left
+[ 2494.17s ->  2494.49s] with
+[ 2494.49s ->  2495.31s] after
+[ 2495.31s ->  2495.51s] a
+[ 2495.51s ->  2495.65s] little
+[ 2495.65s ->  2495.91s] bit
+[ 2495.91s ->  2496.29s] of
+[ 2496.29s ->  2496.81s] algebra
+[ 2496.81s ->  2498.05s] right
+[ 2498.05s ->  2498.45s] so keep
+[ 2498.45s ->  2498.81s] in mind
+[ 2498.81s ->  2499.19s] this is
+[ 2499.19s ->  2499.53s] my
+[ 2499.53s ->  2500.39s] v
+[ 2500.39s ->  2500.75s] tilde
+[ 2500.75s ->  2501.07s] little
+[ 2501.07s ->  2501.35s] t
+[ 2501.35s ->  2503.16s] what
+[ 2503.16s ->  2503.26s] am
+[ 2503.26s ->  2503.40s] I
+[ 2503.40s ->  2503.64s] left
+[ 2503.64s ->  2503.98s] with
+[ 2503.98s ->  2506.70s] I
+[ 2506.70s ->  2507.06s] have
+[ 2507.06s ->  2507.60s] v
+[ 2507.60s ->  2508.50s] s
+[ 2508.50s ->  2508.68s] sub
+[ 2508.68s ->  2508.86s] little
+[ 2508.86s ->  2509.22s] t
+[ 2509.22s ->  2509.58s] little
+[ 2509.58s ->  2509.88s] t
+[ 2509.88s ->  2510.92s] is
+[ 2510.92s ->  2511.32s] equal
+[ 2511.32s ->  2511.74s] to
+[ 2511.74s ->  2512.96s] e
+[ 2512.96s ->  2513.12s] to
+[ 2513.12s ->  2513.28s] the
+[ 2513.28s ->  2513.60s] negative
+[ 2513.60s ->  2514.08s] r
+[ 2514.08s ->  2514.78s] cap
+[ 2514.78s ->  2515.00s] t
+[ 2515.00s ->  2515.38s] minus
+[ 2515.38s ->  2515.68s] t
+[ 2515.68s ->  2518.48s] times
+[ 2518.48s ->  2518.66s] the
+[ 2518.66s ->  2518.88s] risk
+[ 2518.88s ->  2519.32s] neutral
+[ 2519.32s ->  2520.24s] expectation
+[ 2520.24s ->  2520.80s] of
+[ 2520.80s ->  2521.84s] the
+[ 2521.84s ->  2522.38s] max
+[ 2522.38s ->  2523.95s] of
+[ 2523.95s ->  2524.23s] s
+[ 2524.23s ->  2524.43s] sub
+[ 2524.43s ->  2524.65s] cap
+[ 2524.65s ->  2524.83s] t
+[ 2524.83s ->  2525.09s] minus
+[ 2525.09s ->  2525.29s] k
+[ 2525.29s ->  2525.45s] and
+[ 2525.45s ->  2525.69s] zero
+[ 2525.69s ->  2527.92s] and
+[ 2527.92s ->  2529.44s] what
+[ 2529.44s ->  2529.64s] do
+[ 2529.64s ->  2529.80s] we
+[ 2529.80s ->  2530.16s] know
+[ 2530.16s ->  2537.79s] this
+[ 2537.79s ->  2538.43s] must
+[ 2538.43s ->  2538.77s] be
+[ 2538.77s ->  2539.01s] the
+[ 2539.01s ->  2539.47s] solution
+[ 2539.47s ->  2542.74s] to
+[ 2542.74s ->  2543.24s] the
+[ 2543.24s ->  2543.72s] black
+[ 2543.72s ->  2544.52s] shoals
+[ 2544.52s ->  2546.31s] equation
+[ 2546.31s ->  2548.88s] we
+[ 2548.88s ->  2549.14s] have
+[ 2549.14s ->  2549.54s] just
+[ 2549.54s ->  2550.28s] proven
+[ 2550.28s ->  2552.29s] that
+[ 2552.29s ->  2553.11s] the
+[ 2553.11s ->  2553.73s] solution
+[ 2553.73s ->  2554.39s] to
+[ 2554.39s ->  2555.11s] the
+[ 2555.11s ->  2555.61s] black
+[ 2555.61s ->  2556.23s] shoals
+[ 2556.23s ->  2557.01s] equation
+[ 2557.01s ->  2557.99s] is
+[ 2557.99s ->  2559.17s] precisely
+[ 2559.17s ->  2560.17s] the
+[ 2560.17s ->  2561.13s] arbitrage
+[ 2561.13s ->  2561.65s] free
+[ 2561.65s ->  2562.49s] price
+[ 2562.49s ->  2563.65s] implied
+[ 2563.65s ->  2564.57s] by the
+[ 2564.57s ->  2565.29s] fundamental
+[ 2565.29s ->  2566.03s] theorem
+[ 2566.03s ->  2566.45s] of
+[ 2566.45s ->  2566.99s] asset
+[ 2566.99s ->  2567.47s] pricing
+[ 2567.47s ->  2568.19s] this
+[ 2568.19s ->  2568.47s] is
+[ 2568.47s ->  2569.35s] literally
+[ 2569.35s ->  2570.11s] the
+[ 2570.11s ->  2570.47s] right
+[ 2570.47s ->  2570.77s] hand
+[ 2570.77s ->  2571.23s] side
+[ 2571.23s ->  2571.49s] of
+[ 2571.49s ->  2571.67s] the
+[ 2571.67s ->  2572.31s] equation
+[ 2572.31s ->  2573.29s] via
+[ 2573.29s ->  2573.57s] the
+[ 2573.57s ->  2574.17s] martingale
+[ 2574.17s ->  2574.73s] property
+[ 2574.73s ->  2575.05s] we
+[ 2575.05s ->  2575.67s] applied
+[ 2575.67s ->  2576.67s] below
+[ 2576.67s ->  2577.37s] that
+[ 2577.37s ->  2577.61s] is
+[ 2577.61s ->  2578.13s] exactly
+[ 2578.13s ->  2578.37s] what
+[ 2578.37s ->  2578.53s] we
+[ 2578.53s ->  2578.77s] get
+[ 2578.77s ->  2579.03s] here
+[ 2579.03s ->  2579.21s] but
+[ 2579.21s ->  2579.49s] now
+[ 2579.49s ->  2579.67s] on
+[ 2579.67s ->  2579.79s] the
+[ 2579.79s ->  2580.01s] left
+[ 2580.01s ->  2580.27s] hand
+[ 2580.27s ->  2580.75s] side
+[ 2580.75s ->  2581.31s] we
+[ 2581.31s ->  2581.55s] don't
+[ 2581.55s ->  2581.79s] just
+[ 2581.79s ->  2582.23s] have
+[ 2582.23s ->  2582.89s] V
+[ 2582.89s ->  2583.19s] of
+[ 2583.19s ->  2583.39s] the
+[ 2583.39s ->  2583.87s] fundamental
+[ 2583.87s ->  2584.29s] theorem
+[ 2584.29s ->  2584.47s] of
+[ 2584.47s ->  2584.77s] asset
+[ 2584.77s ->  2585.19s] pricing
+[ 2585.19s ->  2585.49s] by
+[ 2585.49s ->  2585.77s] this
+[ 2585.77s ->  2586.25s] argument
+[ 2586.25s ->  2586.53s] we
+[ 2586.53s ->  2587.05s] showed
+[ 2587.05s ->  2587.71s] that
+[ 2587.71s ->  2588.21s] V
+[ 2588.21s ->  2589.23s] must
+[ 2589.23s ->  2590.29s] satisfy
+[ 2590.29s ->  2590.87s] the
+[ 2590.87s ->  2591.25s] black
+[ 2591.25s ->  2591.87s] shoals
+[ 2591.87s ->  2592.61s] equation
+[ 2592.61s ->  2593.39s] and
+[ 2593.39s ->  2593.75s] this
+[ 2593.75s ->  2593.99s] of
+[ 2593.99s ->  2594.35s] course
+[ 2594.35s ->  2595.09s] is
+[ 2595.09s ->  2595.45s] the
+[ 2595.45s ->  2596.11s] Feynman
+[ 2596.11s ->  2596.65s] CAC
+[ 2596.65s ->  2597.33s] theorem
+[ 2597.33s ->  2598.19s] just
+[ 2598.19s ->  2598.81s] applied
+[ 2598.81s ->  2599.53s] directly
+[ 2599.53s ->  2599.97s] to
+[ 2599.97s ->  2600.39s] the
+[ 2600.39s ->  2600.77s] case
+[ 2600.77s ->  2600.97s] of
+[ 2600.97s ->  2601.13s] the
+[ 2601.13s ->  2601.49s] black
+[ 2601.49s ->  2601.87s] shoals
+[ 2601.87s ->  2602.83s] equation
+[ 2602.83s ->  2603.53s] this
+[ 2603.53s ->  2603.79s] holds
+[ 2603.79s ->  2604.01s] for
+[ 2604.01s ->  2604.15s] an
+[ 2604.15s ->  2604.47s] entire
+[ 2604.47s ->  2604.95s] class
+[ 2604.95s ->  2605.17s] of
+[ 2605.17s ->  2605.69s] parabolic
+[ 2605.69s ->  2606.47s] PDEs
+[ 2606.47s ->  2606.95s] an
+[ 2606.95s ->  2607.57s] absolutely
+[ 2607.57s ->  2608.31s] incredible
+[ 2608.31s ->  2608.89s] result
+[ 2608.89s ->  2609.41s] from
+[ 2609.41s ->  2610.11s] physics
+[ 2610.11s ->  2610.61s] helping
+[ 2610.61s ->  2610.81s] us
+[ 2610.81s ->  2611.07s] bridge
+[ 2611.07s ->  2611.27s] the
+[ 2611.27s ->  2611.53s] gap
+[ 2611.53s ->  2612.01s] between
+[ 2612.01s ->  2612.39s] the
+[ 2612.39s ->  2612.79s] no
+[ 2612.79s ->  2613.43s] arbitrage
+[ 2613.43s ->  2613.89s] price
+[ 2613.89s ->  2614.45s] implied
+[ 2614.45s ->  2614.69s] by
+[ 2614.69s ->  2614.85s] the
+[ 2614.85s ->  2615.25s] fundamental
+[ 2615.25s ->  2615.59s] theorem
+[ 2615.59s ->  2615.75s] of
+[ 2615.75s ->  2616.03s] asset
+[ 2616.03s ->  2616.39s] pricing
+[ 2616.39s ->  2616.71s] and
+[ 2616.71s ->  2616.89s] the
+[ 2616.89s ->  2617.37s] solution
+[ 2617.37s ->  2617.89s] to
+[ 2617.89s ->  2618.55s] the
+[ 2618.55s ->  2619.11s] black
+[ 2619.11s ->  2619.67s] shoals
+[ 2619.67s ->  2620.47s] equation
+[ 2620.47s ->  2620.79s] too
+[ 2620.79s ->  2620.99s] long
+[ 2620.99s ->  2621.23s] didn't
+[ 2621.23s ->  2621.49s] watch
+[ 2621.49s ->  2621.65s] here
+[ 2621.65s ->  2621.79s] is
+[ 2621.79s ->  2621.91s] your
+[ 2621.91s ->  2622.47s] executive
+[ 2622.47s ->  2623.23s] summary
+[ 2623.23s ->  2623.59s] finding
+[ 2623.59s ->  2623.83s] the
+[ 2623.83s ->  2624.21s] value
+[ 2624.21s ->  2624.41s] of
+[ 2624.41s ->  2624.67s] any
+[ 2624.67s ->  2625.07s] derivative
+[ 2625.07s ->  2625.63s] contract
+[ 2625.63s ->  2625.87s] at
+[ 2625.87s ->  2626.25s] maturity
+[ 2626.25s ->  2626.67s] is
+[ 2626.67s ->  2627.11s] trivial
+[ 2627.33s ->  2628.13s] the
+[ 2628.13s ->  2628.67s] payoff
+[ 2628.67s ->  2629.03s] for
+[ 2629.03s ->  2629.27s] that
+[ 2629.27s ->  2629.77s] contract
+[ 2629.77s ->  2629.99s] the
+[ 2629.99s ->  2630.19s] real
+[ 2630.19s ->  2630.77s] question
+[ 2630.77s ->  2631.23s] here
+[ 2631.23s ->  2632.05s] is
+[ 2632.05s ->  2632.39s] what
+[ 2632.39s ->  2632.61s] should
+[ 2632.61s ->  2632.77s] we
+[ 2632.77s ->  2633.05s] pay
+[ 2633.05s ->  2633.71s] today
+[ 2633.71s ->  2634.59s] for
+[ 2634.59s ->  2634.87s] that
+[ 2634.87s ->  2635.45s] potential
+[ 2635.45s ->  2635.95s] payoff
+[ 2635.95s ->  2636.13s] the
+[ 2636.13s ->  2636.37s] black
+[ 2636.37s ->  2636.61s] shoals
+[ 2636.61s ->  2637.13s] framework
+[ 2637.13s ->  2638.05s] introduces
+[ 2638.05s ->  2638.43s] a
+[ 2638.43s ->  2638.93s] portfolio
+[ 2638.93s ->  2639.63s] replication
+[ 2639.63s ->  2640.43s] argument
+[ 2640.43s ->  2641.21s] under
+[ 2641.21s ->  2641.51s] no
+[ 2641.51s ->  2642.23s] arbitrage
+[ 2642.23s ->  2642.79s] assumptions
+[ 2642.79s ->  2643.37s] and
+[ 2643.37s ->  2643.71s] finds
+[ 2643.71s ->  2643.87s] a
+[ 2643.87s ->  2644.21s] pricing
+[ 2644.21s ->  2645.07s] PDE
+[ 2645.07s ->  2645.95s] specifically
+[ 2645.95s ->  2646.61s] for
+[ 2646.61s ->  2647.15s] European
+[ 2647.15s ->  2647.53s] option
+[ 2647.53s ->  2648.19s] contracts
+[ 2648.19s ->  2648.79s] that
+[ 2648.79s ->  2649.33s] yield
+[ 2649.33s ->  2649.81s] this
+[ 2649.81s ->  2650.57s] function
+[ 2650.57s ->  2650.89s] of
+[ 2650.89s ->  2651.53s] interest
+[ 2651.53s ->  2652.27s] V
+[ 2652.27s ->  2653.03s] telling
+[ 2653.03s ->  2653.25s] us
+[ 2653.25s ->  2653.45s] the
+[ 2653.45s ->  2653.77s] price
+[ 2653.77s ->  2654.11s] of
+[ 2654.11s ->  2654.35s] a
+[ 2654.35s ->  2654.71s] European
+[ 2654.71s ->  2655.19s] option
+[ 2655.19s ->  2655.83s] contract
+[ 2655.83s ->  2656.25s] today
+[ 2656.25s ->  2656.57s] now
+[ 2656.57s ->  2657.11s] the
+[ 2657.11s ->  2657.61s] fundamental
+[ 2657.61s ->  2657.99s] theorem
+[ 2657.99s ->  2658.19s] of
+[ 2658.19s ->  2658.51s] asset
+[ 2658.51s ->  2658.97s] pricing
+[ 2658.97s ->  2659.79s] suggests
+[ 2659.79s ->  2660.51s] that
+[ 2660.51s ->  2660.83s] the
+[ 2660.83s ->  2661.55s] payoff
+[ 2661.55s ->  2662.41s] is
+[ 2662.41s ->  2662.69s] the
+[ 2662.69s ->  2663.11s] risk
+[ 2663.11s ->  2663.47s] neutral
+[ 2663.47s ->  2664.13s] discounted
+[ 2664.13s ->  2664.83s] expectation
+[ 2664.83s ->  2665.91s] of that
+[ 2665.91s ->  2666.63s] contingent
+[ 2666.63s ->  2667.05s] claim
+[ 2667.05s ->  2667.31s] at
+[ 2667.31s ->  2667.79s] maturity
+[ 2667.79s ->  2668.15s] giving
+[ 2668.15s ->  2668.39s] us
+[ 2668.39s ->  2669.19s] another
+[ 2669.19s ->  2669.67s] way
+[ 2669.67s ->  2670.03s] to
+[ 2670.03s ->  2670.53s] value
+[ 2670.53s ->  2671.03s] that
+[ 2671.03s ->  2671.47s] European
+[ 2671.47s ->  2671.87s] option
+[ 2671.87s ->  2672.53s] contract
+[ 2672.53s ->  2673.27s] as a
+[ 2673.27s ->  2673.57s] function
+[ 2673.57s ->  2673.89s] V
+[ 2673.89s ->  2674.23s] but
+[ 2674.23s ->  2674.85s] which
+[ 2674.85s ->  2675.11s] one
+[ 2675.11s ->  2675.31s] do
+[ 2675.31s ->  2675.51s] we
+[ 2675.51s ->  2676.05s] choose
+[ 2676.05s ->  2676.39s] which
+[ 2676.39s ->  2676.83s] is
+[ 2676.83s ->  2677.81s] correct
+[ 2677.81s ->  2678.77s] we
+[ 2678.77s ->  2679.25s] observe
+[ 2679.25s ->  2679.69s] that
+[ 2679.69s ->  2680.15s] if we
+[ 2680.15s ->  2680.67s] compute
+[ 2680.67s ->  2681.33s] the value
+[ 2681.33s ->  2681.71s] of our
+[ 2681.71s ->  2682.07s] option
+[ 2682.07s ->  2682.71s] contract
+[ 2682.71s ->  2683.41s] using
+[ 2683.41s ->  2683.71s] each
+[ 2683.71s ->  2683.85s] of
+[ 2683.85s ->  2684.01s] these
+[ 2684.01s ->  2684.41s] approaches
+[ 2684.41s ->  2684.67s] we
+[ 2684.67s ->  2685.03s] get
+[ 2685.03s ->  2685.59s] the
+[ 2685.59s ->  2685.85s] same
+[ 2685.85s ->  2686.51s] quantities
+[ 2686.51s ->  2686.81s] but
+[ 2686.81s ->  2686.99s] how
+[ 2686.99s ->  2687.19s] can
+[ 2687.19s ->  2687.35s] we
+[ 2687.35s ->  2688.03s] prove
+[ 2688.03s ->  2688.63s] that
+[ 2688.63s ->  2689.13s] these
+[ 2689.13s ->  2690.23s] values
+[ 2690.23s ->  2690.55s] these
+[ 2690.55s ->  2691.29s] functions
+[ 2691.29s ->  2691.75s] V
+[ 2691.75s ->  2692.49s] are
+[ 2692.49s ->  2692.77s] in
+[ 2692.77s ->  2693.11s] fact
+[ 2693.11s ->  2693.67s] equivalent
+[ 2693.67s ->  2694.55s] well
+[ 2694.55s ->  2694.83s] we
+[ 2694.83s ->  2695.17s] walked
+[ 2695.17s ->  2695.55s] through
+[ 2695.55s ->  2695.73s] an
+[ 2695.73s ->  2696.23s] application
+[ 2696.23s ->  2696.45s] of
+[ 2696.45s ->  2696.63s] the
+[ 2696.63s ->  2696.99s] Feynman
+[ 2696.99s ->  2697.29s] CAC
+[ 2697.29s ->  2697.85s] theorem
+[ 2697.85s ->  2698.85s] explicitly
+[ 2698.85s ->  2699.63s] to show
+[ 2699.63s ->  2699.95s] that
+[ 2699.95s ->  2700.59s] the
+[ 2700.59s ->  2701.15s] solution
+[ 2701.15s ->  2701.77s] to
+[ 2701.77s ->  2702.43s] the
+[ 2702.43s ->  2702.85s] pricing
+[ 2702.85s ->  2703.71s] PDE
+[ 2703.71s ->  2703.99s] that
+[ 2703.99s ->  2704.15s] is
+[ 2704.15s ->  2704.35s] the
+[ 2704.35s ->  2704.67s] Black
+[ 2704.67s ->  2704.91s] Scholes
+[ 2704.91s ->  2705.53s] equation
+[ 2705.53s ->  2706.39s] is
+[ 2706.39s ->  2707.45s] precisely
+[ 2707.45s ->  2708.31s] the
+[ 2708.31s ->  2708.61s] no
+[ 2708.61s ->  2709.29s] arbitrage
+[ 2709.29s ->  2709.89s] price
+[ 2709.89s ->  2710.51s] implied
+[ 2710.51s ->  2711.05s] by the
+[ 2711.05s ->  2711.49s] fundamental
+[ 2711.49s ->  2711.87s] theorem
+[ 2711.87s ->  2712.07s] of
+[ 2712.07s ->  2712.49s] asset
+[ 2712.49s ->  2712.97s] pricing
+[ 2712.97s ->  2713.13s] an
+[ 2713.13s ->  2713.61s] absolutely
+[ 2713.61s ->  2714.23s] incredible
+[ 2714.23s ->  2714.73s] result
+[ 2714.73s ->  2715.07s] borrowed
+[ 2715.07s ->  2715.29s] from
+[ 2715.29s ->  2715.73s] physics
+[ 2715.73s ->  2716.21s] thanks
+[ 2716.21s ->  2716.53s] to
+[ 2716.53s ->  2716.93s] the
+[ 2716.93s ->  2717.57s] Feynman
+[ 2717.57s ->  2718.07s] CAC
+[ 2718.07s ->  2718.85s] theorem
+[ 2718.85s ->  2719.53s] some
+[ 2719.53s ->  2719.81s] future
+[ 2719.81s ->  2720.27s] topics
+[ 2720.27s ->  2720.67s] technical
+[ 2720.67s ->  2721.13s] videos
+[ 2721.13s ->  2721.35s] and
+[ 2721.35s ->  2721.59s] other
+[ 2721.59s ->  2722.05s] discussions
+[ 2722.05s ->  2722.33s] to
+[ 2722.33s ->  2722.49s] look
+[ 2722.49s ->  2722.77s] forward
+[ 2722.77s ->  2723.09s] to
+[ 2723.09s ->  2723.71s] I've
+[ 2723.71s ->  2723.93s] broken
+[ 2723.93s ->  2724.21s] back
+[ 2724.21s ->  2724.41s] out
+[ 2724.41s ->  2724.57s] the
+[ 2724.57s ->  2724.99s] iPad
+[ 2724.99s ->  2725.35s] I'd
+[ 2725.35s ->  2725.47s] like
+[ 2725.47s ->  2725.61s] to
+[ 2725.61s ->  2725.81s] talk
+[ 2725.81s ->  2726.03s] about
+[ 2726.03s ->  2726.37s] advanced
+[ 2726.37s ->  2726.81s] Markov
+[ 2726.81s ->  2727.21s] chains
+[ 2727.21s ->  2727.49s] something
+[ 2727.49s ->  2727.83s] you would
+[ 2727.83s ->  2728.01s] see
+[ 2728.01s ->  2728.23s] in a
+[ 2728.23s ->  2728.47s] class
+[ 2728.47s ->  2728.65s] on
+[ 2728.65s ->  2729.13s] stochastic
+[ 2729.13s ->  2729.69s] processes
+[ 2729.69s ->  2730.51s] maybe
+[ 2730.51s ->  2730.85s] talk
+[ 2730.85s ->  2731.11s] about
+[ 2731.11s ->  2731.37s] non
+[ 2731.37s ->  2731.93s] Markovian
+[ 2731.93s ->  2732.47s] models
+[ 2732.47s ->  2733.57s] approximating
+[ 2733.57s ->  2733.89s] pricing
+[ 2733.89s ->  2734.47s] functionals
+[ 2734.47s ->  2734.69s] with
+[ 2734.69s ->  2734.95s] neural
+[ 2734.95s ->  2735.49s] networks
+[ 2735.49s ->  2736.01s] I'm
+[ 2736.01s ->  2736.49s] uncertain
+[ 2736.49s ->  2736.89s] of the
+[ 2736.89s ->  2737.15s] level
+[ 2737.15s ->  2737.33s] of
+[ 2737.33s ->  2737.67s] interest
+[ 2737.67s ->  2737.85s] in
+[ 2737.85s ->  2738.01s] these
+[ 2738.01s ->  2738.21s] more
+[ 2738.21s ->  2738.45s] niche
+[ 2738.45s ->  2738.85s] topics
+[ 2738.85s ->  2739.11s] I would
+[ 2739.11s ->  2739.29s] love
+[ 2739.29s ->  2739.43s] to
+[ 2739.43s ->  2739.57s] do
+[ 2739.57s ->  2739.93s] videos
+[ 2739.93s ->  2740.11s] on
+[ 2740.11s ->  2740.25s] them
+[ 2740.25s ->  2740.39s] but
+[ 2740.39s ->  2740.57s] let
+[ 2740.57s ->  2740.69s] me
+[ 2740.69s ->  2740.97s] know
+[ 2740.97s ->  2741.39s] in
+[ 2741.39s ->  2741.53s] the
+[ 2741.53s ->  2741.93s] comments
+[ 2741.93s ->  2742.45s] below
+[ 2742.45s ->  2742.89s] what
+[ 2742.89s ->  2743.03s] you
+[ 2743.03s ->  2743.17s] would
+[ 2743.17s ->  2743.35s] like
+[ 2743.35s ->  2743.53s] to
+[ 2743.53s ->  2743.85s] see
+[ 2743.85s ->  2744.65s] next
+[ 2744.65s ->  2744.87s] I'd
+[ 2744.87s ->  2745.01s] like
+[ 2745.01s ->  2745.17s] to
+[ 2745.17s ->  2745.57s] tackle
+[ 2745.57s ->  2746.33s] Kalman
+[ 2746.33s ->  2746.85s] filters
+[ 2746.85s ->  2747.21s] this
+[ 2747.21s ->  2747.53s] idea
+[ 2747.53s ->  2747.87s] of
+[ 2747.87s ->  2748.65s] models
+[ 2748.65s ->  2748.87s] that
+[ 2748.87s ->  2749.27s] capture
+[ 2749.27s ->  2749.49s] this
+[ 2749.49s ->  2749.79s] non
+[ 2749.79s ->  2750.51s] stationarity
+[ 2750.51s ->  2750.85s] we know
+[ 2750.85s ->  2751.05s] this
+[ 2751.05s ->  2751.17s] is
+[ 2751.17s ->  2751.31s] a
+[ 2751.31s ->  2751.51s] big
+[ 2751.51s ->  2751.99s] problem
+[ 2751.99s ->  2752.21s] in
+[ 2752.21s ->  2752.49s] quant
+[ 2752.49s ->  2753.07s] modeling
+[ 2753.07s ->  2753.85s] maybe
+[ 2753.85s ->  2754.27s] get
+[ 2754.27s ->  2754.67s] into
+[ 2754.67s ->  2755.35s] more
+[ 2755.35s ->  2755.67s] on
+[ 2755.67s ->  2756.27s] pricing
+[ 2756.27s ->  2757.07s] complete
+[ 2757.07s ->  2757.43s] versus
+[ 2757.43s ->  2757.95s] incomplete
+[ 2757.95s ->  2758.71s] markets
+[ 2758.71s ->  2759.47s] unique
+[ 2759.47s ->  2760.23s] risk
+[ 2760.23s ->  2760.57s] neutral
+[ 2760.57s ->  2761.19s] measures
+[ 2761.19s ->  2762.05s] deriving
+[ 2762.05s ->  2762.23s] the
+[ 2762.23s ->  2762.47s] black
+[ 2762.47s ->  2762.67s] trolls
+[ 2762.67s ->  2763.23s] equation
+[ 2763.23s ->  2763.59s] the
+[ 2763.59s ->  2764.15s] PDE
+[ 2764.15s ->  2764.59s] analytical
+[ 2764.59s ->  2765.01s] numerical
+[ 2765.01s ->  2765.65s] solutions
+[ 2765.65s ->  2766.41s] but
+[ 2766.41s ->  2766.79s] again
+[ 2766.79s ->  2767.05s] this
+[ 2767.05s ->  2767.19s] is
+[ 2767.19s ->  2767.37s] all
+[ 2767.37s ->  2767.51s] going
+[ 2767.51s ->  2767.57s] to
+[ 2767.57s ->  2767.69s] be
+[ 2767.69s ->  2767.99s] largely
+[ 2767.99s ->  2768.33s] based
+[ 2768.33s ->  2768.49s] on
+[ 2768.49s ->  2768.79s] interest
+[ 2768.79s ->  2768.99s] let
+[ 2768.99s ->  2769.09s] me
+[ 2769.09s ->  2769.35s] know
+[ 2769.35s ->  2769.89s] what
+[ 2769.89s ->  2770.07s] you'd
+[ 2770.07s ->  2770.21s] like
+[ 2770.21s ->  2770.37s] to
+[ 2770.37s ->  2770.63s] see
+[ 2770.63s ->  2770.83s] in
+[ 2770.83s ->  2770.97s] the
+[ 2770.97s ->  2771.37s] comments
+[ 2771.37s ->  2771.73s] below
+[ 2771.73s ->  2771.95s] and
+[ 2771.95s ->  2772.29s] I
+[ 2772.29s ->  2772.57s] haven't
+[ 2772.57s ->  2772.93s] forgotten
+[ 2772.93s ->  2773.53s] about
+[ 2773.53s ->  2773.85s] our
+[ 2773.85s ->  2774.41s] quant
+[ 2774.41s ->  2774.93s] builds
+[ 2774.93s ->  2775.65s] I'd
+[ 2775.65s ->  2775.81s] like
+[ 2775.81s ->  2775.97s] to
+[ 2775.97s ->  2776.31s] do
+[ 2776.31s ->  2776.81s] a
+[ 2776.81s ->  2777.21s] neural
+[ 2777.21s ->  2777.67s] network
+[ 2777.67s ->  2778.29s] stochastic
+[ 2778.29s ->  2778.53s] vol
+[ 2778.53s ->  2779.15s] calibration
+[ 2779.15s ->  2779.79s] exercise
+[ 2779.79s ->  2780.23s] maybe
+[ 2780.23s ->  2780.43s] a
+[ 2780.43s ->  2780.69s] live
+[ 2780.69s ->  2781.01s] Kalman
+[ 2781.01s ->  2781.31s] filter
+[ 2781.31s ->  2781.79s] model
+[ 2781.79s ->  2782.55s] after
+[ 2782.55s ->  2782.77s] we
+[ 2782.77s ->  2783.09s] tackle
+[ 2783.09s ->  2783.29s] the
+[ 2783.29s ->  2783.57s] Kalman
+[ 2783.57s ->  2783.93s] filter
+[ 2783.93s ->  2784.63s] and
+[ 2784.63s ->  2784.79s] I'm
+[ 2784.79s ->  2785.17s] still
+[ 2785.17s ->  2786.01s] developing
+[ 2786.01s ->  2786.43s] this
+[ 2786.43s ->  2787.23s] delta
+[ 2787.23s ->  2787.57s] neutral
+[ 2787.57s ->  2788.09s] trading
+[ 2788.09s ->  2788.63s] system
+[ 2788.63s ->  2789.03s] idea
+[ 2789.03s ->  2789.33s] so
+[ 2789.33s ->  2790.09s] again
+[ 2790.09s ->  2790.37s] if
+[ 2790.37s ->  2790.55s] any
+[ 2790.55s ->  2790.69s] of
+[ 2790.69s ->  2790.85s] these
+[ 2790.85s ->  2791.15s] sound
+[ 2791.15s ->  2791.61s] exciting
+[ 2791.61s ->  2791.85s] to
+[ 2791.85s ->  2792.01s] you
+[ 2792.01s ->  2792.17s] for
+[ 2792.17s ->  2792.43s] future
+[ 2792.43s ->  2792.79s] topics
+[ 2792.79s ->  2793.17s] please
+[ 2793.17s ->  2793.81s] let
+[ 2793.81s ->  2793.93s] me
+[ 2793.93s ->  2794.13s] know
+[ 2794.13s ->  2794.29s] in
+[ 2794.29s ->  2794.41s] the
+[ 2794.41s ->  2794.81s] comments
+[ 2794.81s ->  2795.17s] below
+[ 2795.17s ->  2795.47s] I
+[ 2795.47s ->  2795.93s] have
+[ 2795.93s ->  2796.05s] a
+[ 2796.05s ->  2796.19s] lot
+[ 2796.19s ->  2796.27s] of
+[ 2796.27s ->  2796.71s] interests
+[ 2796.71s ->  2797.17s] and
+[ 2797.17s ->  2797.41s] it's
+[ 2797.41s ->  2797.73s] difficult
+[ 2797.73s ->  2797.99s] to
+[ 2797.99s ->  2798.19s] figure
+[ 2798.19s ->  2798.57s] out
+[ 2798.57s ->  2799.03s] what
+[ 2799.03s ->  2799.21s] to
+[ 2799.21s ->  2799.47s] talk
+[ 2799.47s ->  2799.87s] about
+[ 2799.87s ->  2800.49s] next
+[ 2800.49s ->  2800.79s] and
+[ 2800.79s ->  2800.97s] that's
+[ 2800.97s ->  2801.07s] going
+[ 2801.07s ->  2801.15s] to
+[ 2801.15s ->  2801.25s] do
+[ 2801.25s ->  2801.35s] it
+[ 2801.35s ->  2801.43s] for
+[ 2801.43s ->  2801.59s] this
+[ 2801.59s ->  2801.89s] video
+[ 2801.89s ->  2802.09s] on
+[ 2802.09s ->  2802.23s] how
+[ 2802.23s ->  2802.71s] physics
+[ 2802.71s ->  2803.37s] accidentally
+[ 2803.37s ->  2803.99s] proved
+[ 2803.99s ->  2804.29s] the
+[ 2804.29s ->  2804.71s] black
+[ 2804.71s ->  2805.17s] Scholes
+[ 2805.17s ->  2805.69s] model
+[ 2805.69s ->  2806.13s] I
+[ 2806.13s ->  2806.31s] hope
+[ 2806.31s ->  2806.43s] you
+[ 2806.43s ->  2806.83s] enjoyed
+[ 2806.83s ->  2807.05s] I
+[ 2807.05s ->  2807.19s] hope
+[ 2807.19s ->  2807.31s] you
+[ 2807.31s ->  2807.55s] learned
+[ 2807.55s ->  2807.93s] something
+[ 2807.93s ->  2808.51s] this
+[ 2808.51s ->  2808.83s] video
+[ 2808.83s ->  2809.13s] certainly
+[ 2809.13s ->  2809.37s] took
+[ 2809.37s ->  2809.55s] a
+[ 2809.55s ->  2810.03s] tremendous
+[ 2810.03s ->  2810.45s] effort
+[ 2810.45s ->  2810.63s] to
+[ 2810.63s ->  2810.79s] put
+[ 2810.79s ->  2811.19s] together
+[ 2811.19s ->  2811.65s] so
+[ 2811.65s ->  2811.79s] if
+[ 2811.79s ->  2811.89s] you
+[ 2811.89s ->  2812.17s] enjoyed
+[ 2812.17s ->  2812.35s] it
+[ 2812.35s ->  2812.49s] and
+[ 2812.49s ->  2812.59s] you
+[ 2812.59s ->  2812.71s] want
+[ 2812.71s ->  2812.79s] to
+[ 2812.79s ->  2812.91s] see
+[ 2812.91s ->  2813.05s] more
+[ 2813.05s ->  2813.27s] like
+[ 2813.27s ->  2813.39s] it
+[ 2813.39s ->  2813.47s] in
+[ 2813.47s ->  2813.59s] the
+[ 2813.59s ->  2813.81s] future
+[ 2813.81s ->  2814.17s] please
+[ 2814.17s ->  2814.51s] like
+[ 2814.51s ->  2814.87s] comment
+[ 2814.87s ->  2815.23s] subscribe
+[ 2815.23s ->  2815.67s] share
+[ 2815.67s ->  2816.37s] again
+[ 2816.37s ->  2816.59s] it
+[ 2816.59s ->  2816.81s] helps
+[ 2816.81s ->  2816.99s] me
+[ 2816.99s ->  2817.21s] out
+[ 2817.21s ->  2817.79s] tremendously
+[ 2817.79s ->  2818.35s] it
+[ 2818.35s ->  2818.49s] is
+[ 2818.49s ->  2818.85s] always
+[ 2818.85s ->  2819.29s] greatly
+[ 2819.29s ->  2820.03s] appreciated
+[ 2820.03s ->  2820.59s] I'll
+[ 2820.59s ->  2821.05s] leave a link
+[ 2821.05s ->  2821.43s] below
+[ 2821.43s ->  2821.81s] to our
+[ 2821.81s ->  2822.17s] discord
+[ 2822.17s ->  2822.61s] if you'd
+[ 2822.61s ->  2822.87s] like to
+[ 2822.87s ->  2823.13s] connect
+[ 2823.13s ->  2823.63s] with me
+[ 2823.63s ->  2824.27s] and other
+[ 2824.27s ->  2824.67s] quants
+[ 2824.67s ->  2824.93s] in the
+[ 2824.93s ->  2825.15s] Quant
+[ 2825.15s ->  2825.29s] guild
+[ 2825.29s ->  2825.89s] community
+[ 2825.89s ->  2826.51s] check
+[ 2826.51s ->  2826.65s] out
+[ 2826.65s ->  2826.89s] quant
+[ 2826.89s ->  2827.05s] guild
+[ 2827.05s ->  2827.63s] com
+[ 2827.63s ->  2827.81s] if
+[ 2827.81s ->  2827.93s] you'd
+[ 2827.93s ->  2828.03s] like
+[ 2828.03s ->  2828.17s] to
+[ 2828.17s ->  2828.43s] master
+[ 2828.43s ->  2828.63s] your

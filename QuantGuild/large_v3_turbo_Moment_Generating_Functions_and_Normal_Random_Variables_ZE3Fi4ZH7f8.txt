@@ -1,0 +1,616 @@
+[    0.46s ->     7.62s] We are back, and today we're going to talk about moment-generating functions.
+[    8.28s ->    12.56s] We're going to talk about it in the context of a normal random variable.
+[   12.70s ->    16.12s] We're going to start with a standard normal random variable.
+[   16.66s ->    23.84s] Then we'll talk about the general case of a moment-generating function with an arbitrary definition for mu and sigma.
+[   23.84s ->    34.58s] That is, we use really any random variable that is defined in terms of the normal density.
+[   35.56s ->    44.62s] Then once we have effectively established that idea, we can go ahead and talk about the place of the moment-generating function
+[   44.62s ->    50.76s] in that of finding the statistical moments for a normal random variable.
+[   50.76s ->    57.77s] Then after that, we can go ahead and apply it to a Brownian motion because, after all,
+[   57.81s ->    66.29s] Brownian motion is just going to be a normal random variable with some time index where the variance scales with time.
+[   67.49s ->    73.79s] Of course, this is not exclusive to normal random variables, but in this context,
+[   73.95s ->    77.59s] that is what we are interested in any time we're looking at a Brownian motion.
+[   77.59s ->    82.75s] So let's just go ahead and get started here with the idea of a moment-generating function.
+[   84.82s ->    87.64s] Well, what is a moment-generating function?
+[   87.80s ->    90.60s] Well, it's defined in terms of an expectation.
+[   91.48s ->    99.34s] So we would say M of random variable Z, so the moment-generating function of random variable Z
+[   99.34s ->   112.10s] with parameter theta is equal to the expectation of E to the power of theta Z.
+[  116.08s ->   122.14s] And now our job is to evaluate this expectation to find some function of theta
+[  122.14s ->   125.40s] that is this moment-generating function here.
+[  125.40s ->   132.96s] Now, this is actually relatively easy to do in the context of a standard normal density
+[  132.96s ->   137.02s] because what we have here is we have some random variable Z,
+[  137.28s ->   144.22s] which we are going to say is distributed normally with mean zero variance standard deviation 1.
+[  144.78s ->   151.73s] This is the so-called standard normal random variable,
+[  151.73s ->   156.21s] and it has an accompanying probability density function.
+[  156.39s ->   160.55s] That is, it is defined in terms of a unique probability density function.
+[  161.17s ->   165.37s] F of cap Z, and we'll just use little Z as the parameter,
+[  166.37s ->   181.24s] is equal to 1 over the square root of 2 pi E to the negative 1 half Z squared.
+[  181.24s ->   187.08s] Okay, so this is the normal probability density function here,
+[  187.20s ->   190.20s] specifically the standard normal probability density function,
+[  190.40s ->   194.54s] and you can always tell the difference because we don't have any mu's or sigmas.
+[  195.34s ->   201.40s] So typically, this function is going to be parameterized by a general mu and sigma,
+[  202.02s ->   205.06s] but it's not going to be a part of the density function itself.
+[  205.18s ->   209.82s] It's just going to be an implicit parameter for some arbitrary mu and sigma.
+[  209.82s ->   211.48s] But here we define mu and sigma.
+[  211.72s ->   214.40s] Mu is 0 and sigma is 1.
+[  214.70s ->   216.32s] Sigma squared is also 1.
+[  216.86s ->   219.56s] So standard deviation and variance of 1, mean of 0.
+[  220.30s ->   225.58s] This is our corresponding probability density function for this random variable Z.
+[  227.59s ->   233.89s] All right, so how do we go about finding the moment generating function?
+[  233.99s ->   236.09s] Well, we know the definition here, right?
+[  236.09s ->   237.99s] And we also have our density function.
+[  238.61s ->   241.65s] We know that anytime we're given an expectation,
+[  242.39s ->   243.87s] I'm just going to go ahead and put that here.
+[  245.09s ->   249.99s] Recall, anytime we are looking for an expectation,
+[  249.99s ->   255.49s] a function, a function of a random variable.
+[  256.07s ->   258.09s] Because at the end of the day, that's all this is.
+[  258.17s ->   261.13s] E to the theta Z is a function of random variable Z.
+[  261.89s ->   265.49s] Here, we're going to suggest, or essentially recall,
+[  265.49s ->   271.27s] that math BDE, the expectation of H of Z
+[  271.27s ->   277.47s] is going to be given by the integral over the support
+[  277.47s ->   283.89s] of the function of the random variable times the density function.
+[  286.25s ->   286.43s] Okay?
+[  286.93s ->   294.41s] So this is pretty straightforward probability and statistics 101 here.
+[  294.81s ->   296.69s] Anytime we were looking for an expectation,
+[  296.69s ->   299.23s] so if we're looking for the expectation of Z,
+[  299.67s ->   301.81s] we would have H of Z is just Z.
+[  301.99s ->   304.59s] And it would be Z times the density function here.
+[  304.97s ->   307.21s] And that would give us the expectation.
+[  307.39s ->   311.49s] Of course, if we have a standard normal probability density function,
+[  312.01s ->   316.21s] then we have that the expectation is just going to be 0.
+[  316.61s ->   316.83s] Right?
+[  316.87s ->   317.77s] The expectation of Z.
+[  317.87s ->   319.79s] But here we have a function of Z, H of Z.
+[  320.23s ->   324.27s] And the moment generating function is essentially that H of Z here, right?
+[  324.31s ->   325.69s] We have E to the theta Z.
+[  325.69s ->   331.43s] So what we're going to do is to derive the standard normal moment generating function,
+[  331.67s ->   334.47s] we are going to use this equation here,
+[  334.59s ->   338.39s] this general transformation equation here
+[  338.39s ->   340.43s] to find the expectation of a random variable
+[  340.43s ->   342.07s] that's being transformed by another function.
+[  342.79s ->   346.45s] And we are going to go ahead and use that equation
+[  346.45s ->   349.75s] with this definition of the moment generating function.
+[  349.87s ->   352.03s] So really all we're doing is we're plugging in
+[  352.03s ->   355.43s] E to the theta Z for H of Z here.
+[  356.43s ->   356.65s] Okay?
+[  356.97s ->   359.01s] And that's going to allow us to solve this expectation.
+[  359.35s ->   361.07s] Or more specifically, this expectation.
+[  361.43s ->   364.77s] And we're using this idea right here to solve it.
+[  364.77s ->   370.43s] So what we're going to do is we are going to set up this equation.
+[  370.85s ->   374.55s] We're going to say that the moment generating function
+[  374.55s ->   378.83s] is equal to the expectation outlined right here.
+[  379.17s ->   383.41s] But now we are going to say this is equal to the integral over the support.
+[  383.41s ->   387.85s] And if you know the support of the standard normal random variable,
+[  387.85s ->   395.42s] we know it's negative infinity all the way to infinity.
+[  397.23s ->   401.49s] Then we are going to throw in the E to the theta Z,
+[  401.61s ->   403.41s] which is acting as our H of Z.
+[  403.99s ->   407.41s] And then we're going to have the rest of our probability density function
+[  407.41s ->   412.33s] for a normal random variable, which we defined earlier.
+[  413.13s ->   413.39s] Okay?
+[  415.36s ->   419.04s] So if we just quickly break this down, where are we getting everything from?
+[  419.58s ->   422.22s] Well, we have this definition here to find the expectation
+[  422.22s ->   424.32s] of the transformation of a random variable.
+[  424.32s ->   425.78s] That is, we take the transformation,
+[  425.98s ->   428.28s] we multiply it by the probability density function,
+[  428.54s ->   430.10s] and we integrate over the support.
+[  430.92s ->   431.14s] All right?
+[  432.23s ->   434.75s] The transformation is given by E theta Z.
+[  434.91s ->   437.55s] That is the definition of our moment generating function here.
+[  437.91s ->   438.23s] All right?
+[  438.27s ->   439.49s] So we throw that in here.
+[  439.59s ->   442.25s] That is our H of Z that we're getting from right here.
+[  442.63s ->   445.29s] Then our FZ of Z is the probability density function
+[  445.29s ->   447.85s] for a standard normal random variable.
+[  448.41s ->   453.09s] And we have to solve over the support that is infinity to negative infinity
+[  453.09s ->   456.49s] for the standard normal random variable.
+[  457.41s ->   457.51s] Okay?
+[  457.85s ->   459.95s] So really what we have to do now is solve this integral.
+[  461.13s ->   461.51s] All right?
+[  461.85s ->   468.05s] And this integral looks kind of spooky, but it's really not too bad.
+[  468.05s ->   472.39s] And that's because we can go ahead and throw this E to the theta Z
+[  472.39s ->   476.55s] into this E to the negative one half Z squared.
+[  477.45s ->   482.36s] And if we do that, just go ahead and distribute that guy through.
+[  482.36s ->   489.30s] So we have minus one half Z squared.
+[  489.30s ->   496.57s] And then we're going to take this theta Z and we will add it on in there.
+[  496.87s ->   503.33s] We can notice something about this exponent here, this exponential function.
+[  503.63s ->   508.99s] That is, we have negative one half Z squared plus theta Z.
+[  509.57s ->   513.85s] We can actually factor this if we complete the square.
+[  513.85s ->   521.53s] So we just need to subtract by one half theta squared and add one half theta squared.
+[  521.93s ->   523.39s] And then we'll be able to factor it.
+[  523.89s ->   526.31s] But let's break this up into more steps.
+[  526.83s ->   530.67s] So I'm going to have completing the square here.
+[  532.48s ->   534.62s] And I'm going to take what's in that exponential function
+[  534.62s ->   536.80s] and show you how we complete the square.
+[  536.80s ->   544.54s] So we have this guy in our exponential function right here.
+[  545.44s ->   561.18s] And what we're going to do is we are going to add one half theta squared.
+[  561.84s ->   567.50s] And we're also going to subtract one half theta squared.
+[  568.51s ->   568.77s] Okay.
+[  568.93s ->   571.25s] And that is going to be an equivalent statement.
+[  571.39s ->   573.35s] So I have this implies error right here.
+[  573.35s ->   576.39s] But really these two are equivalent statements, right?
+[  576.45s ->   580.43s] Because all we're doing is adding and subtracting by the same value.
+[  581.37s ->   584.65s] And algebraically, that's just adding zero to the right hand side.
+[  584.95s ->   588.31s] But what we can do now is factor, right?
+[  588.35s ->   594.95s] We can factor this guy here because this is just going to be Z minus theta squared
+[  594.95s ->   598.09s] squared times negative one half, of course.
+[  599.98s ->   600.30s] All right.
+[  601.00s ->   612.43s] So this little trick here allows us to rewrite this as negative one half Z minus theta squared
+[  612.43s ->   618.56s] plus one half theta squared.
+[  619.78s ->   620.24s] Okay.
+[  620.24s ->   621.18s] So we started here.
+[  621.66s ->   624.16s] We completed the square here.
+[  624.16s ->   626.90s] And then we factored here.
+[  628.30s ->   633.16s] And now we have this plus one half theta squared on the outside.
+[  634.89s ->   635.25s] Okay.
+[  638.38s ->   639.76s] Let me just double check this.
+[  639.90s ->   641.04s] This looks good.
+[  642.34s ->   644.08s] Factor out negative one half.
+[  646.52s ->   650.80s] We get Z squared plus two minus two.
+[  650.92s ->   651.22s] Yep.
+[  652.58s ->   654.06s] Plus theta squared.
+[  654.66s ->   654.90s] Yep.
+[  654.98s ->   655.20s] Perfect.
+[  656.38s ->   656.82s] All right.
+[  657.24s ->   659.96s] So that is how we're going to complete the square.
+[  659.96s ->   664.46s] And what this means is we have three equivalent statements here.
+[  664.60s ->   668.06s] We can just substitute this one in for what's in our exponential function.
+[  668.64s ->   672.92s] So that's exactly what I'm going to do here is I'm going to copy this work that we had done
+[  672.92s ->   673.38s] prior.
+[  673.86s ->   679.04s] And I'm going to delete everything up until where we started to complete the square.
+[  679.76s ->   683.36s] And I'm going to get rid of everything in that exponential function and replace it with
+[  683.36s ->   686.24s] the equivalent statement that we derived right here.
+[  686.24s ->   690.28s] So we have this guy, which is equivalent to this guy.
+[  692.85s ->   693.01s] Okay.
+[  694.22s ->   699.94s] So all we did is we went from here, we completed the square, and then we were able to factor.
+[  700.34s ->   702.12s] And then we got to here.
+[  702.20s ->   707.80s] So I just replaced what was in the exponential function here with what we derived here as
+[  707.80s ->   708.82s] it's an equivalent statement.
+[  708.82s ->   709.52s] Okay.
+[  709.74s ->   714.42s] So now what you'll notice is we have this extra exponential function because we can take this
+[  714.42s ->   715.94s] guy out as a product, right?
+[  716.14s ->   724.18s] So this is going to be equal to, I'm just going to copy this whole thing right here, paste it.
+[  725.48s ->   729.68s] I'm going to get rid of this one half theta squared.
+[  729.68s ->   734.94s] I'm going to put it in its own exponential function, and we're going to be able to take
+[  734.94s ->   736.40s] that outside of the integral.
+[  737.06s ->   744.16s] So we're going to have E to the one half theta squared outside of the integral because it doesn't
+[  744.16s ->   745.06s] depend on Z.
+[  746.58s ->   746.82s] Okay.
+[  748.16s ->   750.02s] Now, how do we deal with the rest of this?
+[  751.46s ->   757.58s] Well, fortunately for us, we know that this is just a normal density function that's being
+[  757.58s ->   764.68s] integrated over its entire support, and here what you'll notice is we actually have a random
+[  764.68s ->   765.36s] variable.
+[  765.72s ->   771.66s] So we can consider a different random variable X, which is distributed normally with a mean
+[  771.66s ->   775.84s] theta and a variance and standard deviation of one.
+[  778.47s ->   786.19s] What you'll notice about this guy here is this random variable has the corresponding density
+[  786.19s ->   789.35s] function given by this guy.
+[  789.35s ->   791.29s] What is inside of the integral?
+[  791.97s ->   796.71s] And if that is the case, then we know the integral over the entire support negative infinity to
+[  796.71s ->   802.33s] infinity is going to have to be one necessarily by the definition of the density function.
+[  804.11s ->   815.09s] So we know this implies that F of X of X is equal to, it's actually what's left in our integral.
+[  815.09s ->   827.93s] We just replaced the Z's with the X's and we know that this has to integrate to one.
+[  828.37s ->   842.50s] So we know that the integral from negative infinity to positive infinity of F of X DX has to be one.
+[  842.50s ->   846.91s] Okay, and that's exactly what we have here.
+[  847.57s ->   856.51s] So what this implies is that this moment generating function here, if we use this fact, it implies that
+[  856.51s ->   870.29s] it is just simply, since this is now one, the moment generating function for a standard normal random
+[  870.29s ->   876.41s] variable, MZ of theta is given by E to the one half theta squared.
+[  879.95s ->   880.43s] All right.
+[  880.73s ->   883.57s] So that was a lot of math, but it's looking pretty good.
+[  883.79s ->   886.93s] So that is the case for a standard normal random variable.
+[  886.93s ->   891.50s] But we need the general case, right?
+[  891.60s ->   892.84s] What about the general case?
+[  893.78s ->   904.78s] Fortunately, we can write Y as being mu plus sigma Z.
+[  906.40s ->   910.22s] And we can go ahead and go through this entire argument here again.
+[  910.48s ->   917.08s] But you'll see that using the linearity of expectation, it actually allows us to just go ahead and apply
+[  917.08s ->   925.00s] what we know about the standard normal moment generating function here to the general normal
+[  925.00s ->   931.30s] moment generating function given by mu plus sigma times the standard normal random variable Z.
+[  932.96s ->   933.30s] All right.
+[  934.28s ->   940.20s] More specifically, we can say that this is very similar to like a density transformation.
+[  940.20s ->   946.42s] If you had a cumulative distribution function and you were trying to transform a random variable
+[  946.42s ->   951.82s] into a new cumulative distribution function, it's a very similar logic.
+[  952.00s ->   955.16s] It's also very similar to the logic of standardization here, right?
+[  955.22s ->   957.76s] Because we have Y equals mu plus sigma Z.
+[  958.52s ->   963.46s] If we subtract over mu and divide by sigma, then that's just standardization.
+[  964.30s ->   966.06s] But we don't have to harp on that too much.
+[  966.06s ->   976.34s] Here we can just go ahead and say the moment generating function is given by math BBE, so
+[  976.34s ->   981.98s] it's the expectation of E to the theta.
+[  982.72s ->   989.68s] And then here we have mu plus sigma Z.
+[  989.68s ->  1008.37s] And now if we distribute this data through, then we get theta mu plus theta sigma Z.
+[ 1008.85s ->  1013.91s] And then we can break this up into two exponential functions because we have a sum there.
+[ 1014.05s ->  1021.79s] So this would be E to the theta mu times E to the theta sigma Z.
+[ 1021.79s ->  1045.54s] And recall by linearity of the expectation here, if we were given A, Z, or let's just do A plus BZ, right?
+[ 1045.64s ->  1052.08s] We were looking at the expectation of A plus BZ.
+[ 1052.08s ->  1066.46s] We have that this is equivalent to A math BBE of Z plus BZ.
+[ 1068.19s ->  1072.69s] Really, all this is saying is that we can distribute this expectation to just the random variable.
+[ 1073.17s ->  1076.81s] And this is going to be a function of the definition of the expectation.
+[ 1076.81s ->  1080.33s] That is, that it's just a summation over the probability space.
+[ 1081.79s ->  1084.11s] Again, we don't have to focus too much on that.
+[ 1084.59s ->  1086.87s] I do have a separate video discussing this idea.
+[ 1087.39s ->  1093.19s] Where I talk about the expectation, the variance, independence, covariance, and correlation.
+[ 1093.39s ->  1095.71s] So I recommend that you check that out if this is unclear.
+[ 1096.83s ->  1106.47s] But really, in this case, what we're suggesting is that E to the theta mu being a constant is just going to act as B.
+[ 1106.47s ->  1109.43s] So we have B times this random variable Z.
+[ 1109.67s ->  1111.87s] Here we have a function of random variable Z.
+[ 1111.87s ->  1114.67s] And that is distributing this expectation through.
+[ 1114.87s ->  1123.11s] We are going to be able to get E to the theta mu on the outside times expectation of E theta sigma times Z here.
+[ 1124.92s ->  1125.24s] Okay.
+[ 1125.38s ->  1126.86s] So let's just go ahead and do that.
+[ 1127.00s ->  1129.04s] Let's apply this linearity here.
+[ 1129.04s ->  1137.78s] So we will say now this expectation gets moved to the inside.
+[ 1144.26s ->  1144.46s] Okay.
+[ 1146.95s ->  1152.73s] So if this is the case, right, this is almost of the same form as what we had earlier.
+[ 1152.73s ->  1155.43s] The only difference is that Z is being scaled by sigma.
+[ 1155.43s ->  1178.43s] So what we can do is, and this is kind of bad notation, but really what I can say is I can say let, maybe I'll just use a hack or a bar, theta is equal to theta sigma.
+[ 1178.43s ->  1180.46s] Okay.
+[ 1180.46s ->  1202.41s] So if theta bar is equal to theta sigma, then we have here the moment generating function for Y is going to be given by E theta mu times the expectation of E theta bar Z.
+[ 1202.67s ->  1208.37s] But we know E theta bar Z is given by what we had just derived earlier for the standard normal density.
+[ 1208.37s ->  1216.61s] That is, it is given by E to the one half theta squared, and here theta in our expectation is going to be theta bar.
+[ 1217.23s ->  1220.59s] So then we have this equivalent statement.
+[ 1221.25s ->  1238.63s] It is going to be the product of E to the theta mu with E to the theta bar that we had derived earlier for the standard normal situation squared.
+[ 1238.63s ->  1244.50s] But we also have that one half out in front.
+[ 1244.68s ->  1252.48s] So we have one half theta bar squared, and that is not a negative two, that is just theta bar squared.
+[ 1252.96s ->  1256.68s] And then if we sub back in for theta bar, we have our theta times sigma.
+[ 1257.14s ->  1261.24s] This is going to be equal to the product of these two exponentials.
+[ 1261.90s ->  1267.46s] And then instead of bar theta, it is going to be theta sigma squared.
+[ 1267.46s ->  1291.70s] So then we have E theta mu times one half theta sigma squared, and then this together is just going to be, we can combine the exponential functions here, and then we're going to have E theta mu plus one half theta sigma squared.
+[ 1291.70s ->  1305.08s] Okay, so that is a nice and dandy way to find the minimum generating function for an arbitrary mean and variance here.
+[ 1305.14s ->  1315.46s] You can see that it's given by, and we can even factor that theta out perhaps if we wanted to, but this is probably just an okay way of expressing it here.
+[ 1315.46s ->  1321.14s] So we have, what have we went in and derived so far?
+[ 1321.22s ->  1322.62s] Let's just go ahead and do a quick recap.
+[ 1323.26s ->  1328.86s] We have the minimum generating function given by E to the, or the expectation of E to the theta Z.
+[ 1329.96s ->  1333.68s] We have some standard normal random variable with mean zero variance one.
+[ 1334.04s ->  1336.54s] And then we have the corresponding density function.
+[ 1336.54s ->  1345.50s] We looked at the expectation of a function of a random variable that is defined by some function H on Z.
+[ 1345.92s ->  1352.94s] Given the density function, we multiply the transformation with the density, and we integrate over the support.
+[ 1353.44s ->  1359.44s] And that's exactly how we found the minimum generating function for the standard normal random variable Z.
+[ 1359.44s ->  1367.84s] And we did that by completing the square, substituting the complete square back in to the exponential function.
+[ 1368.22s ->  1374.10s] Then we go ahead and factor out the exponential function that lacks a Z.
+[ 1374.50s ->  1381.28s] And we acknowledge that if we have a random variable that's distributed normally with mean theta and variance one,
+[ 1381.54s ->  1386.10s] that implies that the density function is given by what's left in our integral.
+[ 1386.10s ->  1391.08s] And over the entire support, that should be negative infinity.
+[ 1393.11s ->  1401.58s] So let me quickly fix that from negative infinity to positive infinity.
+[ 1401.58s ->  1404.45s] If we have X, there we go.
+[ 1405.81s ->  1409.89s] So it implies that if we integrate over the entire support that we're just going to get one.
+[ 1410.05s ->  1411.15s] And that's exactly what we get.
+[ 1411.29s ->  1417.03s] We get the moment generating function for a standard normal random variable is given by E to the one half theta squared.
+[ 1417.03s ->  1422.45s] So M of theta for random variable Z is E to the one half theta squared.
+[ 1424.09s ->  1428.39s] Then this is very similar to just standardization, kind of just the reverse.
+[ 1429.07s ->  1431.99s] We have Y is equal to mu plus sigma Z.
+[ 1432.35s ->  1436.91s] And then we go ahead through this argument and use the linearity of the expectation
+[ 1436.91s ->  1442.57s] to go ahead and find that if we transform theta sigma into theta bar,
+[ 1442.97s ->  1449.19s] then this expectation of theta bar Z looks exactly the same as the expectation of theta Z.
+[ 1449.19s ->  1450.31s] So E to the theta Z.
+[ 1451.03s ->  1457.23s] And then we're left with this guy down here, which is E to the theta mu plus one half theta sigma squared.
+[ 1457.23s ->  1464.56s] Now, I don't have a reference, but I'm like 99% sure that this is correct.
+[ 1466.08s ->  1473.20s] Now, let's talk about the Taylor series expansion and moments by the moment generating function.
+[ 1473.32s ->  1475.64s] So really what I'm trying to say is like, we have this.
+[ 1476.48s ->  1478.42s] How is this useful, right?
+[ 1478.48s ->  1482.16s] Like what is the point of having this moment generating function?
+[ 1482.16s ->  1486.78s] Well, it turns out that if we take a look at the Taylor series expansion,
+[ 1490.85s ->  1496.59s] we can go ahead and suggest, or really this is a recall sort of situation.
+[ 1496.73s ->  1499.31s] You should have learned this in a calculus class probably a long time ago.
+[ 1499.31s ->  1520.28s] So recall that the sum from I equals zero all the way to infinity of X to the I divided by I factorial
+[ 1520.28s ->  1524.27s] is equal to E to the X.
+[ 1526.56s ->  1526.86s] Okay.
+[ 1532.60s ->  1533.16s] Alrighty.
+[ 1533.30s ->  1539.80s] So if this is the case, that is, we have that E to the X is equal to the infinite sum
+[ 1539.80s ->  1544.04s] from I equals zero of this ratio of X to the I divided by I factorial.
+[ 1544.60s ->  1551.26s] Then we can go ahead and plug this guy in to the definition of the moment generating function.
+[ 1551.76s ->  1554.06s] So what does that look like?
+[ 1554.16s ->  1561.43s] Well, we have M of, and then maybe here I should start to use,
+[ 1564.55s ->  1565.47s] now I'll just keep Z.
+[ 1565.47s ->  1584.20s] Z of theta is equal to math BB, E to the, and then here the definition is given by theta Z, right?
+[ 1584.72s ->  1585.18s] Whoopsie.
+[ 1585.78s ->  1587.00s] That should be outside of it.
+[ 1589.12s ->  1592.52s] E, there we go.
+[ 1593.36s ->  1594.40s] E to the theta Z.
+[ 1595.70s ->  1599.78s] But if we have this Taylor series expansion for E, we can go ahead and plug that in.
+[ 1599.78s ->  1610.55s] So we could say that this is equal to the infinite sum, but not of X to the I, but rather we have
+[ 1610.55s ->  1614.31s] theta Z to the I.
+[ 1616.35s ->  1625.10s] So this is really why it's called a moment generating function, because what you'll notice here,
+[ 1625.22s ->  1628.56s] and whoops, I forgot to include the expectation.
+[ 1628.72s ->  1630.28s] We can't drop that expectation.
+[ 1630.28s ->  1637.16s] This is why it's called a moment generating function, because now what I want to do is
+[ 1637.16s ->  1639.32s] I want to expand this summation.
+[ 1640.04s ->  1642.44s] So what I'm going to do is I'm going to start writing out some terms.
+[ 1643.06s ->  1652.28s] I'm going to say that this is equal to, and then let's just start doing some terms.
+[ 1652.70s ->  1654.94s] So when I is zero, what happens?
+[ 1655.62s ->  1656.98s] Zero factorial is one.
+[ 1657.56s ->  1659.16s] Anything to the zero power is one.
+[ 1659.32s ->  1659.88s] We have one.
+[ 1660.30s ->  1661.38s] So it starts with one.
+[ 1661.38s ->  1669.89s] Then when I is one, we have theta Z, and then we have one factorial, which is just one, right?
+[ 1670.25s ->  1673.10s] So we have theta Z.
+[ 1673.84s ->  1680.27s] But keep in mind, this is still wrapped in an expectation, okay?
+[ 1680.83s ->  1683.85s] So there's our first term one.
+[ 1683.91s ->  1684.91s] Then we have theta Z.
+[ 1685.17s ->  1689.83s] Then once it's two, we have two factorial, and then we have theta squared Z squared.
+[ 1689.83s ->  1702.74s] So then we have theta squared Z squared, and that is going to be divided by two, okay?
+[ 1703.18s ->  1704.76s] And this just keeps going on.
+[ 1706.08s ->  1711.46s] Maybe I'll just write out the first four terms and show you how we can find the first four moments,
+[ 1711.66s ->  1715.54s] the expectation, variance, skewness, and kurtosis here.
+[ 1715.54s ->  1718.54s] So then we have three factorial, right?
+[ 1718.60s ->  1720.02s] So that's going to be cubed.
+[ 1721.28s ->  1729.00s] So then we're going to have three factorials, three times two, which is six.
+[ 1729.70s ->  1733.16s] And then we have Z cubed and theta cubed.
+[ 1733.68s ->  1739.52s] And then the last term that I'll write is the fourth term here.
+[ 1740.18s ->  1744.24s] And then I'll just have dots because this pattern does go on forever.
+[ 1744.24s ->  1749.70s] And then we have to the fourth, to the fourth.
+[ 1750.46s ->  1752.58s] And then instead of six, we have four factorial.
+[ 1752.82s ->  1755.56s] Four times three is 12, times two is 24.
+[ 1758.46s ->  1759.58s] So two, six, 24.
+[ 1760.00s ->  1762.80s] So that's two factorial, three factorial, and four factorial.
+[ 1763.68s ->  1765.70s] And then this is just going to go ahead and keep going.
+[ 1768.66s ->  1770.74s] So that's the moment generating function here.
+[ 1770.74s ->  1777.48s] And this is using the Taylor series expansion of the exponential function e to the x here.
+[ 1777.70s ->  1780.60s] But we're using it in the definition of our moment generating function.
+[ 1781.74s ->  1784.42s] So what is the implication of this?
+[ 1784.52s ->  1785.90s] Why is this a moment generating function?
+[ 1786.04s ->  1788.58s] Well, recall with linearity of the expectation operator,
+[ 1788.70s ->  1794.54s] we can just distribute this expectation through to each of these random variable terms.
+[ 1795.50s ->  1795.68s] Okay?
+[ 1796.00s ->  1797.66s] So that's exactly what I'm going to do now.
+[ 1797.66s ->  1804.24s] I'm going to distribute this expectation exclusively to the random variable terms.
+[ 1806.18s ->  1817.42s] So to the z to the z squared, to the z cubed, to the z to the fourth, so on and so forth.
+[ 1818.08s ->  1822.24s] And I'll get rid of that guy right there.
+[ 1825.18s ->  1825.52s] All right.
+[ 1825.52s ->  1833.70s] So now the expectation only resides on z to the first power, then z to the second power,
+[ 1833.90s ->  1839.00s] then z to the third power, then z to the fourth power, so on and so forth.
+[ 1839.20s ->  1842.34s] This is where the magic kind of comes into play here.
+[ 1843.80s ->  1849.44s] Notice that each of these are the moments of our random variable.
+[ 1849.74s ->  1851.92s] We have the expectation of z.
+[ 1852.04s ->  1852.82s] That's the first moment.
+[ 1852.82s ->  1855.54s] Expectation of z squared, second moment.
+[ 1856.24s ->  1858.66s] Expectation of z cubed, third moment.
+[ 1859.22s ->  1862.66s] So this is why it's a moment generating function.
+[ 1863.60s ->  1863.78s] Okay?
+[ 1863.82s ->  1867.76s] That is because we have all of the statistical moments in this expansion.
+[ 1867.98s ->  1868.72s] That's kind of crazy.
+[ 1871.28s ->  1874.81s] So how do we actually use this?
+[ 1874.91s ->  1878.55s] Well, to find each of the moments, watch this.
+[ 1878.55s ->  1880.39s] We can go ahead and differentiate.
+[ 1881.35s ->  1885.64s] So I'll say, maybe I'll add some cells here just so we can scroll more.
+[ 1887.22s ->  1910.66s] To find the moments, we may differentiate mz of theta with respect to theta n times to find the nth moment.
+[ 1910.66s ->  1912.52s] Okay?
+[ 1912.52s ->  1914.70s] And that's really where the magic comes in here.
+[ 1915.26s ->  1932.01s] If we differentiate with respect to theta and then also set theta to zero, we can find the nth moment.
+[ 1932.01s ->  1934.37s] So let's just do that.
+[ 1934.73s ->  1944.90s] What I'm going to do is I'm going to take this expansion that is the moment generating function here.
+[ 1945.74s ->  1950.00s] And I'm going to differentiate this with respect to theta once.
+[ 1950.40s ->  1951.70s] Then I'm going to set theta to zero.
+[ 1952.18s ->  1956.36s] Because remember, when we differentiate with respect to theta, we have the derivative function.
+[ 1956.36s ->  1986.16s] So if I differentiate, set theta to zero, then what we end up with is we have m prime z of theta, right?
+[ 1986.22s ->  1991.65s] Or we can also write this as mz of theta.
+[ 1992.19s ->  2000.70s] Then we have this differential here, d theta, d d theta, right?
+[ 2000.70s ->  2005.10s] Theta is equal to, if we differentiate, then one becomes zero.
+[ 2006.57s ->  2007.83s] This theta goes away.
+[ 2009.80s ->  2015.72s] And then we are left with, we would have to differentiate this guy too.
+[ 2017.06s ->  2022.46s] But what we're going to be left with is we would take this two, put it out in front, then we would have theta e to the z.
+[ 2022.70s ->  2027.86s] But I'm going to instead find where theta is zero.
+[ 2029.94s ->  2033.96s] So we'll parameterize, whoopsie, parameterize theta by zero.
+[ 2033.96s ->  2042.64s] And then what you'll notice is all the higher order terms drop out.
+[ 2043.10s ->  2048.30s] So we actually just get plus zero, plus zero, all the way to infinity.
+[ 2049.54s ->  2057.94s] So when we differentiate with respect to theta once and we set theta to zero, we're left with the first moment.
+[ 2059.91s ->  2060.83s] What if we do it again?
+[ 2062.95s ->  2066.71s] Well, I think you'll find that this pattern continues.
+[ 2066.71s ->  2089.60s] So if we differentiate 2, d2, theta, or we can just do m double prime of z of zero, let's take a look at the original expansion.
+[ 2093.18s ->  2099.16s] So now we need to differentiate this guy twice with respect to the parameter theta.
+[ 2099.16s ->  2102.92s] So what happens when we differentiate 1 twice with respect to theta?
+[ 2103.76s ->  2105.54s] Zero and then zero.
+[ 2105.88s ->  2107.42s] So 1 drops out completely.
+[ 2108.06s ->  2110.88s] Differentiate the first moment here, right?
+[ 2112.40s ->  2116.48s] Once we get e of z, twice this becomes zero.
+[ 2117.32s ->  2117.50s] Okay?
+[ 2117.74s ->  2119.78s] So those first two terms drop out completely.
+[ 2125.36s ->  2126.60s] What about the second guy here?
+[ 2127.20s ->  2128.98s] What happens when we differentiate twice?
+[ 2128.98s ->  2136.88s] Well, we differentiate once, the 2 cancels out the 2 on the denominator, so we can drop that guy out.
+[ 2141.53s ->  2145.09s] Then if we differentiate again, we just have 1 theta there.
+[ 2145.19s ->  2152.34s] So we can get rid of the theta, and we're actually just left with, hopefully this isn't very shocking,
+[ 2153.18s ->  2155.80s] but we are just left with the second moment.
+[ 2156.22s ->  2163.52s] Then if you notice, if we differentiate all the other terms twice, we still have at least 1 power of theta.
+[ 2163.52s ->  2171.10s] So theta's, all these higher order terms are going to remain, and we parameterize theta by zero,
+[ 2171.34s ->  2173.00s] so they're all going to drop out completely.
+[ 2173.32s ->  2177.96s] So they're going to be zero plus zero plus dots.
+[ 2180.67s ->  2185.91s] So that means if we differentiate the moment generating function twice, set theta to zero,
+[ 2186.37s ->  2189.15s] we get, check it out, the second moment.
+[ 2189.15s ->  2198.13s] And if we just continue doing this, you'll find that the third derivative, prime, prime, prime,
+[ 2198.13s ->  2208.80s] we're going to get the third moment, and then, of course, the fourth moment, prime, prime, prime, prime.
+[ 2208.80s ->  2213.56s] And then really, this is just going to go ahead and continue indefinitely.
+[ 2213.76s ->  2221.22s] So we can just say to the nth derivative here is going to give us the nth moment
+[ 2221.22s ->  2228.52s] via the moment generating function, which is pretty cool.
+[ 2228.92s ->  2233.26s] So this is the connection of all of these things here, right?
+[ 2233.28s ->  2234.78s] We talked about the standard normal density.
+[ 2234.78s ->  2240.08s] We talked about deriving the moment generating function with a standard normal random variable.
+[ 2240.34s ->  2243.94s] We talked about the general case where mu and sigma are not zero and one.
+[ 2244.14s ->  2245.48s] We have some arbitrary mu and sigma.
+[ 2247.20s ->  2252.82s] Then we talked about the idea of the Taylor series expansion of e to the x,
+[ 2252.88s ->  2254.12s] that is the exponential function.
+[ 2254.66s ->  2260.36s] And we applied that Taylor series expansion to the definition of the moment generating function
+[ 2260.36s ->  2265.00s] and showed that we can use it to derive all of the statistical moments for a random variable.
+[ 2267.11s ->  2275.35s] So now we can actually use this, this fact here, to find the statistical moments, right?
+[ 2275.61s ->  2279.87s] Because don't we have the moment generating function for our random variable,
+[ 2280.31s ->  2281.75s] whether it be standard or not?
+[ 2282.19s ->  2285.20s] It's given by this guy right here.
+[ 2288.60s ->  2292.82s] So let's start off basic.
+[ 2292.82s ->  2299.34s] If z is distributed normally with mean 0, variance 1,
+[ 2300.08s ->  2306.70s] then find the first two moments using the moment generating function.
+[ 2308.59s ->  2322.64s] We know that mz of theta is given by e to the 1 half theta squared,
+[ 2322.64s ->  2327.00s] as we derived earlier for a standard normal random variable.
+[ 2329.44s ->  2341.65s] And we also know the first moment is given by differentiating with respect to theta
+[ 2341.65s ->  2350.03s] and setting theta equal to 0, okay?
+[ 2350.33s ->  2352.29s] And that's exactly what we did here, right?
+[ 2352.31s ->  2355.89s] We differentiated the moment generating function with respect to theta,
+[ 2355.89s ->  2358.37s] set theta equal to 0, or set theta equal to 0,
+[ 2358.85s ->  2360.69s] and we find the first statistical moment.
+[ 2360.97s ->  2363.89s] So now that we have the moment generating function,
+[ 2364.03s ->  2366.13s] all we need to do is find this quantity right here,
+[ 2366.29s ->  2368.19s] and that will be our first statistical moment.
+[ 2369.17s ->  2373.93s] So we come on down here, and we're going to differentiate m with respect to theta.
+[ 2373.93s ->  2385.32s] So we get m prime z theta is equal to e to the 1 half theta squared, right?
+[ 2385.40s ->  2389.20s] The derivative of e to the x is e to the x times the chain rule.
+[ 2389.40s ->  2393.74s] So we need to differentiate theta squared times 1 half.
+[ 2394.08s ->  2401.75s] So theta squared becomes 2 theta times 1 half, which is just going to be theta, okay?
+[ 2401.75s ->  2403.91s] So this is the first derivative here.
+[ 2405.58s ->  2407.08s] If we want to find the first moment,
+[ 2407.32s ->  2409.96s] then what we have to do is parameterize theta by 0.
+[ 2414.36s ->  2420.10s] And this is going to be equal to e to the 1 half theta squared times theta.
+[ 2420.90s ->  2430.78s] So we actually get e to the 0, which is 1, times 0, okay?
+[ 2430.82s ->  2431.98s] And this is just going to be 0.
+[ 2431.98s ->  2444.08s] But this is going to be equal to the first statistical moment of that random variable z, okay?
+[ 2446.20s ->  2447.20s] All right, this looks great.
+[ 2447.94s ->  2449.52s] So why is this the case?
+[ 2449.60s ->  2451.26s] Well, that's exactly what we derived here, right?
+[ 2451.30s ->  2456.28s] We have m prime z of theta, and we have m prime z of theta,
+[ 2456.38s ->  2459.02s] where theta is 0 in both of these guys here.
+[ 2459.80s ->  2465.25s] We solved for this quantity by plugging in 0 for theta
+[ 2465.25s ->  2470.67s] into the first derivative with respect to theta of our moment-generating function for z,
+[ 2470.81s ->  2473.39s] which we derived earlier, and that gave us 0.
+[ 2473.83s ->  2477.35s] And that is the first moment, the expectation, the mean, average,
+[ 2477.77s ->  2480.75s] so on and so forth for our random variable z.
+[ 2481.33s ->  2487.61s] And this makes sense because z is distributed normally with a mean 0 and a variance of 1.
+[ 2487.61s ->  2492.53s] And if this was not 0, then that would mean we did something very wrong along the way.
+[ 2492.53s ->  2497.27s] Okay, so that is how we can find the first moment using the moment-generating function.
+[ 2497.49s ->  2498.85s] Now let's find the second moment.
+[ 2499.27s ->  2507.11s] So we're going to have m prime prime z of theta is equal to...
+[ 2507.11s ->  2509.53s] Now we need to differentiate the derivative.
+[ 2510.23s ->  2516.50s] So we have e to the 1 half theta squared times theta.
+[ 2516.76s ->  2518.88s] We're going to need to use the product rule here.
+[ 2518.88s ->  2525.62s] So the derivative of the first guy here is just going to be the same quantity.
+[ 2526.40s ->  2531.30s] So the derivative of e to the 1 half theta squared is e to the 1 half theta squared times theta.
+[ 2532.02s ->  2533.48s] So we'll throw that in there.
+[ 2533.70s ->  2536.58s] Then we need to multiply by the second term.
+[ 2537.06s ->  2538.86s] So that's going to turn into theta squared.
+[ 2540.39s ->  2544.19s] Plus the derivative of theta is just going to be 1.
+[ 2544.49s ->  2547.45s] Then we'll have the original quantity there as well.
+[ 2547.45s ->  2556.31s] So this is going to be the second derivative of the moment-generating function with respect to theta.
+[ 2556.89s ->  2560.97s] And what you'll notice here is when we parameterize theta by 0.
+[ 2561.51s ->  2571.48s] So this implies that m prime prime z of 0 is equal to...
+[ 2572.32s ->  2573.78s] And take a look here.
+[ 2573.78s ->  2590.82s] We're going to have e to the 0 times theta squared, but theta is 0, plus e to the 0, which is going to be 1.
+[ 2593.87s ->  2605.07s] So if m prime prime z of 0 is 1, then that means that the expectation of z squared or the second moment or variance is going to be 1 as well.
+[ 2605.07s ->  2609.29s] And we can keep doing this for skewness, kurtosis, and the higher order moments as well.
+[ 2609.77s ->  2616.65s] But really, I just wanted to demonstrate this with the first two moments because now I need to go ahead and do the product rule again.
+[ 2617.43s ->  2621.17s] And then, you know, this term is going to have another two terms.
+[ 2621.77s ->  2623.33s] It's just going to keep kind of expanding.
+[ 2623.33s ->  2632.95s] But nevertheless, this is how we can go ahead and solve for the statistical moments or the higher order moments of a random variable that would happen to be normal.
+[ 2633.55s ->  2640.71s] So now what I would like to do is pivot to the idea of applying this to the first two moments of Brownian motion.
+[ 2641.35s ->  2644.09s] So what I want to do is I want to come down here.
+[ 2644.57s ->  2648.37s] And I would like to say that b is going to be a standard Brownian motion.
+[ 2648.37s ->  2653.29s] So we'll say it's distributed normally with a mean 0 and a variance of t.
+[ 2654.46s ->  2656.66s] And we can just index this as b of t.
+[ 2659.67s ->  2664.43s] And now we can go ahead and find the first two moments.
+[ 2664.43s ->  2672.91s] So we should get 0 and t using the general formula for the moment generating function given by this guy here.
+[ 2674.16s ->  2674.42s] Okay.
+[ 2674.82s ->  2676.82s] So let's just go ahead and do this.
+[ 2676.82s ->  2689.68s] First, we would say that the moment generating function, now, of course, this is, you know, you could look at this Brownian motion as being b of t minus b of 0.
+[ 2689.90s ->  2694.44s] And then you would have this difference t minus 0.
+[ 2695.16s ->  2702.30s] But, you know, this is pretty standard notation from what I understand as the evolution of the Brownian motion over time.
+[ 2702.62s ->  2704.48s] But I'm not going to harp too much on that notation.
+[ 2704.48s ->  2719.33s] Nevertheless, what we're going to do is we're going to define this moment generating function for b of theta as being, and let's go ahead and grab what we had derived earlier, mainly this guy right here.
+[ 2722.76s ->  2724.56s] And this is for the general case.
+[ 2725.40s ->  2734.69s] And this definition implies that mu is equal to 0 and sigma squared is equal to t.
+[ 2734.69s ->  2749.96s] So if this is the case here, then we would have 0 plus we would have t theta squared times 1 half.
+[ 2750.40s ->  2762.48s] And this would just be equal to, very clearly, e to the 1 half theta squared t.
+[ 2769.67s ->  2771.23s] So how do we find the first moment?
+[ 2772.33s ->  2775.75s] Well, this is, again, nothing particularly new here.
+[ 2775.75s ->  2778.13s] We just have this constant now, t.
+[ 2780.17s ->  2782.31s] Yeah, we're just going to differentiate.
+[ 2784.38s ->  2792.86s] We have m prime b of theta is equal to, and I'm just going to steal this from earlier.
+[ 2793.60s ->  2796.20s] It's the exact same derivative, just scaled by t.
+[ 2796.74s ->  2800.04s] So now, whenever I see a theta squared, I'll throw in a t as well.
+[ 2800.04s ->  2809.74s] Okay, and then over here, you'll notice that theta squared is going to be parameterized by 0, and 0 squared is 0.
+[ 2810.10s ->  2817.12s] Multiply by t is still 0, and that is going to give us the first moment of this Brionian motion.
+[ 2818.26s ->  2818.46s] Okay.
+[ 2818.46s ->  2825.51s] So I went through this part a little fast, but really all I'm doing is I'm taking this moment-generating function here.
+[ 2825.91s ->  2836.77s] I'm saying the first derivative with respect to theta is going to be e to the 1 half theta squared t times theta, and then really this should be theta t.
+[ 2838.56s ->  2843.62s] Okay, because the 2 cancels out the fraction, and then we're just left with theta times t.
+[ 2843.62s ->  2850.28s] But then if we parameterize theta as 0, then this whole quantity just turns into 0.
+[ 2850.56s ->  2854.28s] So the expectation of the Brionian motion is going to be 0, right?
+[ 2854.34s ->  2859.30s] And that makes sense because we say b of t is distributed normally with mean 0, variance t.
+[ 2859.90s ->  2868.64s] And again, that variance can be the difference that is the step t from the origin, but we're not going to, again, harp too much on the notation.
+[ 2868.80s ->  2869.70s] Like I said, that's pretty standard.
+[ 2870.85s ->  2872.91s] All right, now let's find the second moment.
+[ 2872.91s ->  2878.22s] So this is the first moment of Brionian motion.
+[ 2879.92s ->  2883.63s] How about the second moment?
+[ 2885.09s ->  2888.43s] Well, the second moment is going to be given by the exact same quantity.
+[ 2889.85s ->  2897.61s] We're going to say m prime prime of b of theta is equal to, and then I'm just going to go ahead and steal this derivative here.
+[ 2899.19s ->  2900.69s] Okay, because we have this product rule.
+[ 2900.69s ->  2909.00s] So we have e to the theta, theta squared.
+[ 2910.00s ->  2911.72s] Take this whole guy here.
+[ 2912.72s ->  2914.36s] Copy, paste it in.
+[ 2914.36s ->  2922.36s] And then now what we can notice here is we need to distribute, or maybe I should just differentiate it from scratch.
+[ 2923.12s ->  2924.60s] Maybe that would be a little more clear.
+[ 2925.28s ->  2926.58s] Let's just differentiate it from scratch.
+[ 2928.37s ->  2930.69s] So we'll take the moment generating function here.
+[ 2930.69s ->  2935.22s] So this is the original moment generating function.
+[ 2936.72s ->  2942.21s] We have this guy, e to the one half theta squared t.
+[ 2942.21s ->  2954.62s] So this is going to be equal to, once we differentiate, so we would apply this guy here, d, theta, d.
+[ 2955.32s ->  2961.52s] This is going to be equal to, e to the x is e to the x times the chain rule.
+[ 2961.52s ->  2964.52s] And then we take the derivative of theta squared.
+[ 2964.72s ->  2967.38s] That's going to be two theta times one half is one.
+[ 2967.58s ->  2968.96s] So then we just get theta t.
+[ 2971.14s ->  2972.48s] All right, so that's the first derivative.
+[ 2972.64s ->  2980.09s] We still need to apply the derivative operator again, d theta, d.
+[ 2981.27s ->  2986.59s] So if you notice here, this quantity is that first derivative, which we get right here.
+[ 2987.17s ->  2988.85s] Now we're going to differentiate again.
+[ 2988.93s ->  2990.75s] We're going to use the product rule.
+[ 2990.75s ->  2996.83s] So if we differentiate this first term, we're just going to get the exact same thing that we get here.
+[ 2997.01s ->  3003.75s] Then we add the second term, the derivative of the second term, which is just t, times the product of this term.
+[ 3003.99s ->  3020.62s] So that is going to be equal to, right, we have t times the product of this term, times t, plus the entire product.
+[ 3021.04s ->  3033.51s] So first times the derivative of the second, first times the derivative of the second is t.
+[ 3033.51s ->  3037.35s] Yep, that's right here, plus second times the derivative of the first.
+[ 3038.25s ->  3043.39s] And the derivative of the first guy is going to be that same quantity here.
+[ 3044.37s ->  3050.76s] Yeah, so that needs to be theta squared, t squared.
+[ 3051.24s ->  3055.64s] Okay, perfect.
+[ 3055.64s ->  3074.92s] So now what you'll notice here is if we parameterize theta as 0, m prime prime of theta as 0 is equal to,
+[ 3075.06s ->  3080.92s] and if we plug in 0 everywhere we have a theta,
+[ 3080.92s ->  3100.43s] then we get e to the 0 times t, e to the 0 times 0, e to the 0 is 1, e to the 0 times 0 is 0, we just get t.
+[ 3102.33s ->  3105.05s] And that is the second moment.
+[ 3115.99s ->  3118.97s] All right, that is going to do it for this video.
+[ 3119.05s ->  3119.75s] Let's do a quick recap.
+[ 3119.75s ->  3123.17s] So what did we do in this video?
+[ 3123.71s ->  3126.69s] Well, we defined the moment generating function here,
+[ 3126.75s ->  3131.99s] and we talked about how to derive the moment generating function for the standard normal density.
+[ 3132.49s ->  3137.81s] Then we talked about how to derive it for a normal density, the general case.
+[ 3138.21s ->  3144.17s] That is, essentially, we have this reverse standardization for the z variable.
+[ 3144.17s ->  3147.59s] And we go ahead and use the linearity of the expectation,
+[ 3148.31s ->  3152.17s] and we set theta bar equal to the scaling of theta by sigma
+[ 3152.17s ->  3158.87s] to go ahead and find the general case e to the theta mu plus 1 half theta sigma squared.
+[ 3159.21s ->  3165.09s] That is going to be the moment generating function for a general random normal variable.
+[ 3167.00s ->  3171.34s] Then we talked about the Taylor series expansion for the exponential function e to the x.
+[ 3171.54s ->  3174.66s] That is, this infinite series is equal to e to the x.
+[ 3174.66s ->  3179.86s] If we substitute that in for the definition of our moment generating function,
+[ 3180.48s ->  3183.16s] we see that through the linearity of expectation,
+[ 3183.68s ->  3188.34s] if we differentiate the moment generating function with respect to theta,
+[ 3188.62s ->  3189.94s] set theta equal to 0,
+[ 3190.46s ->  3193.84s] then we are going to be able to find all of the statistical moments.
+[ 3194.24s ->  3196.94s] So this is sort of like a chicken and an egg thing.
+[ 3197.08s ->  3199.56s] Like, if you have the moment generating function,
+[ 3200.02s ->  3203.02s] then you're going to be able to find all the statistical moments.
+[ 3203.02s ->  3208.28s] Rather than going ahead and trying to find all of the statistical moments
+[ 3208.28s ->  3213.56s] through some sort of transformation or random variable and integration over the support,
+[ 3213.68s ->  3216.62s] because this can become quite complicated very quickly,
+[ 3216.80s ->  3220.10s] depending on the transformation, especially higher order transformations, right?
+[ 3220.12s ->  3224.78s] If you have like a, you know, whatever, z to the eighth here, right?
+[ 3224.82s ->  3227.64s] The eighth moment, like, how are you going to integrate that?
+[ 3227.64s ->  3230.20s] You're not necessarily going to be able to analytically.
+[ 3230.72s ->  3234.44s] But the moment generating function makes the analytical solution to that quite easy.
+[ 3235.28s ->  3237.24s] So then that's exactly what we did here.
+[ 3237.30s ->  3244.64s] We showed that the taking the derivative with respect to theta of the moment generating function
+[ 3244.64s ->  3251.22s] and then parameterizing theta by 0 yields each of the statistical moments for the random variable.
+[ 3251.22s ->  3256.92s] And then we showed how to find the first two moments of a standard normal random variable
+[ 3256.92s ->  3259.20s] using the moment generating function.
+[ 3259.38s ->  3266.34s] Then we applied the general moment generating function to the case of a Brownian notion
+[ 3266.34s ->  3269.64s] that is a mean 0 and a variance of time step t.
+[ 3270.18s ->  3274.74s] And then we showed here that the first two moments are, in fact, 0 and t.
+[ 3277.36s ->  3278.04s] All right.
+[ 3278.28s ->  3281.22s] I would say this is a pretty successful video lecture.
+[ 3281.22s ->  3282.72s] So I hope you enjoyed.
+[ 3283.36s ->  3288.42s] If you have any questions, comments, concerns, please feel free to email me, roman at quantgill.com
+[ 3288.42s ->  3289.76s] or leave a comment below.
+[ 3290.62s ->  3293.00s] Other than that, thank you so much for watching.
+[ 3293.12s ->  3296.68s] I've been really excited about the growth of the channel over the past month or so.
+[ 3297.84s ->  3299.12s] You know, check out quantgill.com.
+[ 3299.20s ->  3299.88s] Check out our courses.
+[ 3300.06s ->  3303.90s] We've got stuff on Python, algorithmic trading, more in the works.
+[ 3304.94s ->  3308.39s] But yeah, other than that, thank you so much for watching.
+[ 3308.49s ->  3309.27s] I'll see you in the next one.

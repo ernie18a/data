@@ -1,0 +1,298 @@
+[    1.34s ->     6.49s] There's a big difference between quantitative trading and quantitative investing.
+[    6.75s ->     9.87s] Quantitative trading may involve a variety of different strategies.
+[   10.13s ->    14.09s] Maybe you have a large amount of alternative data or you're doing something at a low latency
+[   14.09s ->    17.67s] and you're going to be executing a large number of trades,
+[   17.67s ->    23.63s] maybe trying to predict returns in the cross-section of a large number of financial instruments.
+[   24.63s ->    27.93s] But quantitative investing is an entirely different animal.
+[   27.93s ->    33.37s] So in this video, what I want to do is I want to talk about quantitative investing strategies for beginners.
+[   33.77s ->    35.89s] I'm not telling you what stocks to buy.
+[   35.99s ->    40.11s] Rather, what I want to do is I want to discuss the underlying financial mathematics
+[   40.11s ->    45.95s] so that you have an idea of what's going on when you involve yourself in the market in any capacity.
+[   46.25s ->    50.11s] We're going to look at different facets of risk, talk about diversification,
+[   50.33s ->    54.31s] and look at some nice charts to really understand the big picture.
+[   54.31s ->    57.73s] Let's begin by discussing this idea of portfolio risk.
+[   57.93s ->    62.71s] There are a lot of different types of portfolio risk, and depending on the financial instrument,
+[   62.87s ->    64.65s] you may have different types of exposures.
+[   65.23s ->    67.97s] We're going to focus on equities and equity portfolios.
+[   68.25s ->    73.25s] And in this case, like I said, you can narrow all the way down to something like, you know,
+[   73.33s ->    78.29s] regulatory risk and say, hey, you know, this is a brand new company that recently IPO'd
+[   78.29s ->    79.91s] and they're using emerging technology.
+[   79.91s ->    83.79s] We don't yet know if the government is going to aim to regulate,
+[   83.79s ->    86.83s] if this business can continue to operate as they are.
+[   87.45s ->    89.79s] That's a very narrow component of risk.
+[   90.23s ->    94.03s] What I want to do is I want to kind of zoom out and throw it into one of three buckets.
+[   94.23s ->    99.23s] We have idiosyncratic risk, we have industry risk, and we have market risk.
+[   99.97s ->   103.15s] So idiosyncratic risk refers to firm-specific risk.
+[  103.15s ->   109.53s] So if I hold Apple in my stock portfolio, it's risks associated with that specific firm.
+[  110.45s ->   117.07s] Industry risk is sector risk or sector-specific risk, and that could be all of healthcare.
+[  117.39s ->   119.15s] That could be all of technology.
+[  119.47s ->   121.07s] That could be all of utilities.
+[  121.57s ->   122.37s] Things of that nature.
+[  122.53s ->   124.41s] It's things that affect a specific industry.
+[  124.41s ->   129.37s] So, you know, you can look at that regulatory risk that was discussed a moment ago
+[  129.37s ->   133.23s] in the context of maybe idiosyncratic and industry risk,
+[  133.37s ->   137.01s] because regulation could impact an entire industry as a whole.
+[  137.45s ->   140.57s] And lastly, we also have this idea of market risk.
+[  140.57s ->   143.53s] And this is really driven by a lot of different factors.
+[  143.81s ->   149.57s] You can look at macro factors to help guide your understanding of the current market climate.
+[  149.57s ->   155.21s] Things like GDP, things like the current rate of inflation, interest rates.
+[  155.61s ->   161.19s] Those type of metrics will give you an idea of the current market climate at a high level.
+[  161.49s ->   164.71s] Why do we care about these elements of portfolio risk?
+[  164.99s ->   168.55s] Well, you need to assume some risk in order to earn a return.
+[  168.65s ->   171.57s] That is the fundamental idea behind investing.
+[  171.75s ->   175.11s] But you don't need to assume unnecessary risk.
+[  175.11s ->   179.79s] Moreover, this quantitative investing strategy we're discussing in this video
+[  179.79s ->   183.99s] is not about optimizing some sort of risk-return metric.
+[  184.57s ->   187.61s] This is not some sort of crazy quantitative trading strategy,
+[  187.75s ->   190.83s] but rather we're trying to see if there's anything we can do
+[  190.83s ->   195.33s] about these different components of equity risk in our portfolio.
+[  195.77s ->   198.23s] This is where diversification comes into play.
+[  198.89s ->   201.31s] I could put all of my eggs into one basket.
+[  201.31s ->   204.79s] I could take my entire retirement account and put it into NVIDIA stock.
+[  205.11s ->   210.61s] That will give me exposure to idiosyncratic risk, industry risk, and market risk.
+[  210.97s ->   217.19s] But it's important to note that this risk is not equally split among that one investment.
+[  217.41s ->   221.81s] So if I only hold NVIDIA stock, it's not like I have an equal split of risk
+[  221.81s ->   225.31s] across the idiosyncratic risk, industry risk, and market risk.
+[  225.75s ->   229.55s] Maybe you try to proxy this risk using some historical data,
+[  229.55s ->   233.01s] but historical data is not indicative of future performance.
+[  233.01s ->   238.83s] Yes, if NVIDIA has an incredible year, then I could make a lot of money.
+[  239.25s ->   243.21s] But on the flip side, if tech does poorly or NVIDIA does poorly,
+[  243.33s ->   246.17s] maybe new technology comes out and outpaces NVIDIA,
+[  246.35s ->   250.35s] then I'm going to be down a significant amount of money.
+[  250.47s ->   253.33s] And this just turns into a game of stock picking.
+[  253.45s ->   254.57s] And that's not our goal.
+[  254.93s ->   256.21s] That's not a good strategy.
+[  256.55s ->   259.01s] We need a better quantitative investing strategy.
+[  259.01s ->   264.29s] Our strategy is going to be to diversify away the first two components of risk,
+[  264.37s ->   266.93s] leaving us only with a market risk exposure.
+[  267.69s ->   272.25s] Now, fundamentally, if we were to neutralize all components of risk,
+[  272.49s ->   274.55s] then we wouldn't be assuming any risk.
+[  274.81s ->   279.63s] And in the finance literature, we would assume that we are earning some sort of risk-free rate.
+[  279.75s ->   282.93s] It's essentially the equivalent of just buying a U.S. treasury.
+[  282.93s ->   285.29s] So that's not our goal here.
+[  285.39s ->   288.17s] We are trying to run some sort of quant investing strategy.
+[  288.31s ->   290.05s] So we want some risk exposure.
+[  290.37s ->   293.79s] But like I said earlier, we don't want unnecessary risk exposure.
+[  294.03s ->   298.73s] So here, what we're going to do is we're going to look to diversify away these components of risk,
+[  298.81s ->   302.91s] the idiosyncratic and industry risk, leaving us only with the market risk.
+[  303.39s ->   308.13s] Let's take a look now at some charts that's going to illustrate this fundamental idea
+[  308.13s ->   314.43s] of diversification and how we can go about building a diversified equity portfolio.
+[  314.43s ->   318.25s] I've written some code to help us understand this diversification strategy
+[  318.25s ->   320.53s] and what goes into selection.
+[  321.27s ->   324.13s] What we have here is 30 equity price paths.
+[  324.67s ->   328.17s] All of these price paths are going to exhibit a drift of 7%,
+[  328.17s ->   332.09s] but they're also going to have 20% annualized volatility.
+[  332.09s ->   339.71s] That volatility is a shock to the expected return based on different facets of risk exposure.
+[  340.21s ->   346.21s] Now, the volatility itself in this context is not necessarily just the market risk,
+[  346.39s ->   349.63s] but also the industry and idiosyncratic risk.
+[  350.03s ->   355.41s] There is some correlation component here among the randomness that I've baked into this simulation,
+[  355.73s ->   358.85s] but we'll focus a little bit on the bigger picture
+[  358.85s ->   363.35s] before narrowing back into what that means for selection in our portfolio.
+[  364.43s ->   368.11s] If you take a look at this picture, I have 30 equity price paths.
+[  368.89s ->   375.51s] Now, according to my simulation, the average drift or return for any stock in this portfolio is 7%.
+[  375.51s ->   382.91s] Each stock starts at 100, and you'll notice that not every stock ends at 107.
+[  382.91s ->   386.75s] It's because that return is expected or on average.
+[  387.19s ->   388.99s] Some stocks finish well above.
+[  389.35s ->   392.81s] Maybe they did well idiosyncratically or via their industry.
+[  393.35s ->   397.53s] Maybe they did poorly via that idiosyncratic or industry component.
+[  397.91s ->   401.31s] We don't necessarily know where any of the equities are going to be.
+[  401.63s ->   408.35s] However, what we do know is that average return that I have baked into my simulation is roughly 7%.
+[  408.35s ->   412.17s] Now, that 7%, you can kind of look at that as a market return.
+[  412.17s ->   417.57s] That is, you know, if the market does well in a given year, we expect a positive return.
+[  418.31s ->   426.79s] And what we can do to gain exposure to just that market return is invest in a well-diversified selection of equities.
+[  427.27s ->   433.53s] And then if we take the average return at the end of the year, yes, some may underperform, some may overperform,
+[  433.65s ->   438.35s] but on average, we will get exposure to just that market return component.
+[  438.35s ->   444.35s] So, this one stock that did the worst of the bunch is not going to weigh down our portfolio.
+[  444.93s ->   456.67s] However, on the flip side, this one stock that did astronomically well will not bring our portfolio value up as significantly as it would if we had all of our eggs in that one basket.
+[  456.67s ->   459.67s] So, what does the overall portfolio value look like?
+[  459.73s ->   462.37s] So, these are the individual equities in our portfolio.
+[  462.55s ->   468.49s] But if I run this cell here, we can see the value of our equally weighted portfolio over time.
+[  469.15s ->   477.91s] That is, if I have, say, $30,000 to invest and I have 30 stocks, I allocate $1,000 to each one of those stocks.
+[  477.91s ->   483.25s] That creates an equally weighted portfolio, and this is the value of that portfolio over time.
+[  483.67s ->   493.17s] You'll notice from the original chart that we just looked at, some outperformed, some underperformed, but we expected a 7% return on average.
+[  493.87s ->   495.77s] That's exactly what we get here.
+[  495.97s ->   500.73s] We're essentially diversifying away all the components of the industry and idiosyncratic risk.
+[  500.73s ->   514.25s] That is, the stocks that did extremely well and the stocks that didn't do so well, maybe underperformed or lost money in a given year, we're diversifying away those two facets of risk, and we're just going to be left with the market component.
+[  514.25s ->   530.45s] So, here we can say that the market may be returned roughly 7%, and this is going to be the proxy for how we can expect our portfolio to perform over time because we are not looking to make crazy bets and pick stocks.
+[  530.45s ->   538.93s] We are looking to just accumulate wealth, and to do this, we're going to try to diversify away as much risk as we can, but we're not going to be riskless.
+[  539.01s ->   542.87s] If you want to be entirely riskless, then you can go invest in treasuries.
+[  543.37s ->   550.37s] Here, we're maintaining market risk exposure, and we're trying to accumulate this positive market drift over time.
+[  550.85s ->   559.79s] Diversifying away idiosyncratic and industry risk, leaving us only with market risk exposure, does not ensure that we will make money.
+[  560.45s ->   566.91s] In the previous example, there was an overall positive drift associated with the return for each of those equities.
+[  567.05s ->   569.77s] That is, the market did well that year.
+[  570.51s ->   573.39s] In this setting, I have the flip side.
+[  573.51s ->   575.79s] I have the market is doing poorly.
+[  576.01s ->   586.35s] So, if we scroll down and take a look at this simulation, you'll see that on average, everything is tending around the initial entry price and generating negative returns.
+[  586.35s ->   589.47s] If you take a look, some are actually outperforming, right?
+[  589.51s ->   595.77s] We have this green path, orange path, maybe this blue and pink path are actually generating roughly 20%.
+[  595.77s ->   611.35s] But remember, we are diversifying away those facets of industry and idiosyncratic risk, meaning that not one particular stock in our portfolio is going to be responsible for carrying positive returns or negative returns.
+[  611.35s ->   619.17s] We are equally weighting this portfolio of 30 equities, and we're going to be looking at the average performance at the end of the year.
+[  619.51s ->   622.75s] And that's going to be the return that we expect for our portfolio.
+[  623.27s ->   629.21s] In this case, you would expect it to accumulate roughly a negative 7% return, and that's exactly what we have here.
+[  629.21s ->   637.39s] So, just because we have only market risk exposure by implementing this diversification strategy, it does not mean we will make money.
+[  637.95s ->   647.49s] On average, however, if the market drift component tends to be positive, then we can accumulate that positive drift over time, accumulate that wealth.
+[  647.83s ->   650.23s] And this is exactly what we've seen historically.
+[  650.41s ->   655.91s] Otherwise, nobody would be interested in investing in the U.S. stock market.
+[  655.91s ->   668.73s] Having discussed different elements of our portfolio risk and the idea of the investment strategy diversifying away the first two components of our portfolio risk to try to accumulate this market return over time,
+[  668.89s ->   676.49s] I want to talk about the role of correlation and how this plays into selection in this sort of quant investing strategy.
+[  676.49s ->   680.45s] And this is really what makes it, you know, a quantitative investing strategy.
+[  680.45s ->   686.09s] I want to talk about the financial mathematics, but I also don't want to get too far in the weeds.
+[  686.61s ->   690.55s] So, to do that, we're going to look at some very simple examples of correlation.
+[  690.93s ->   695.37s] We're going to talk about the idea of a statistic and a statistic changing over time.
+[  695.53s ->   703.23s] Then we're going to look at some real-life examples using the portfolio visualization tool, which I will link in the description below.
+[  703.71s ->   708.49s] Generally speaking, we want to pick equities that are inversely correlated with one another.
+[  708.49s ->   712.87s] That is, as one equity goes up, the other one tends to go down.
+[  713.23s ->   722.61s] This can even look like having a relatively neutral correlation as both equities are also going to exhibit positive returns from that market component over time,
+[  722.67s ->   724.37s] or at least we would hope that they do.
+[  725.39s ->   730.61s] But what is the issue with measuring correlation in the real world?
+[  731.03s ->   734.37s] Well, there's two cases, and I want to show you what both may look like.
+[  734.37s ->   740.53s] So, here what I have is I have a simulation where I fixed the correlation to be roughly 0.5.
+[  741.01s ->   748.87s] That is, on average, when one asset moves up, the other one tends to move up relative to that one by 0.5, that increment.
+[  749.47s ->   750.67s] What does it look like in a chart?
+[  750.79s ->   752.73s] Well, it looks something like this.
+[  752.79s ->   757.27s] We have asset one, which is, you know, trending down a little bit, and then it starts to rebound.
+[  757.27s ->   760.33s] And we have asset two, which is kind of just moving sideways.
+[  760.63s ->   765.91s] But you can see that the moves at any point in time are relatively correlated to one another.
+[  766.03s ->   769.69s] This kind of looks like an imprint, this blue one of the orange one and vice versa.
+[  770.05s ->   772.79s] That's because there's some positive correlation there.
+[  773.23s ->   781.01s] We expect that when there is a given move in one of the assets that the other one moves in the similar capacity, but by 50%.
+[  781.01s ->   785.21s] Having a positive correlation means they tend to move in the same way.
+[  785.21s ->   790.21s] If I were to make it a negative correlation, these would be mirror images of each other.
+[  790.83s ->   797.25s] Given everything we've discussed about this diversification strategy, it should be easy to implement, right?
+[  797.29s ->   807.41s] We just go about finding equities that are reminiscent of this 30 stock equity portfolio that exhibit these types of pairwise correlations with one another.
+[  807.41s ->   812.07s] And we can go about accumulating this positive market return over time.
+[  812.59s ->   816.05s] Well, it's not quite that simple.
+[  816.39s ->   823.71s] And that's because in this simulation and the simulation before, what I've done is I've fixed this correlation coefficient.
+[  824.19s ->   827.35s] So I've fixed the correlation coefficient to be 0.5.
+[  828.07s ->   834.23s] In real life, equities don't have a constant correlation with other equities.
+[  834.23s ->   841.47s] Their pairwise correlations, that is their tendency to move together or away from each other over time, changes over time.
+[  841.77s ->   847.75s] I've built another simulation here to visualize this, and we're also going to look at some real examples in a moment.
+[  848.35s ->   853.15s] Here, you can see these two paths do exhibit some sort of correlation with one another.
+[  853.15s ->   860.59s] But over time, you can see they tend to be more correlated in their movements at some periods more than others.
+[  860.73s ->   865.63s] And that's exactly what this time-varying correlation coefficient is indicative of.
+[  865.89s ->   875.77s] So if we compute this correlation over time, you can see the average is roughly 0.7 or 70%, but it shoots up closer to 80, it goes down to 60.
+[  875.77s ->   879.91s] So over time, the correlation is changing.
+[  880.41s ->   889.79s] Now, there's nothing that says that this correlation also has to be stationary, which means you can see it kind of revolves around this 70% correlation.
+[  890.01s ->   897.09s] So on average, we expect these assets to move together in a correlation coefficient of roughly 0.7.
+[  897.09s ->   906.55s] But if we look at another example here, you can take a look at this time-varying correlation where there's this non-stationarity in the correlation coefficient,
+[  906.97s ->   915.83s] and we have asset 1 drifting further and further away from asset 2, even though over time, the correlation coefficient is actually increasing.
+[  916.75s ->   923.11s] So just because we have this measure of correlation, it does not mean it is constant over time.
+[  923.11s ->   933.49s] In fact, it is always changing every single day, and it's going to depend how you compute the correlation coefficient with respect to daily return, monthly return, annual return.
+[  933.85s ->   938.71s] And we're going to take a look at a moment of some examples of real equity correlations over time.
+[  939.17s ->   942.43s] But this is what makes this a quantitative investing strategy.
+[  942.71s ->   950.53s] You have to consider these correlations, these correlations of equities in your portfolio, how they evolve over time.
+[  950.53s ->   956.47s] And you also have to consider different elements of rebalancing in your equally weighted portfolio.
+[  956.61s ->   962.45s] Just as an anecdotal example, another consideration is, let's say that I had two stocks in my portfolio.
+[  962.89s ->   966.01s] I have NVIDIA and I have Cigna.
+[  966.91s ->   970.17s] Let's say I put $100 into Cigna, $100 into NVIDIA.
+[  970.53s ->   972.37s] Next year, NVIDIA doubles.
+[  973.29s ->   974.31s] Okay, that's pretty good.
+[  974.89s ->   975.79s] I made $150.
+[  975.79s ->   981.40s] All right, let's say Cigna stays the same.
+[  982.45s ->   984.81s] Now, I don't have an equally weighted portfolio anymore.
+[  984.91s ->   988.35s] So I have to go and I have to rebalance that portfolio.
+[  988.35s ->   994.21s] So it's very important that you understand that just because this whole idea of diversification
+[  994.21s ->  1000.99s] and this quantitative investing strategy diversifying away the two components of risk we talked about
+[ 1000.99s ->  1005.79s] in an equity portfolio, the idiosyncratic and industry risk exists, does not mean that
+[ 1005.79s ->  1007.09s] it is a set and forget.
+[ 1007.61s ->  1014.05s] In fact, that's what makes this more of a quantitative investing strategy than just a blanket, you
+[ 1014.05s ->  1016.69s] know, buy and hold the market portfolio strategy.
+[ 1016.69s ->  1021.51s] You are essentially determining, you're twisting the knobs based on the equities you select
+[ 1021.51s ->  1026.95s] of how much idiosyncratic industry and market exposure your portfolio is going to have.
+[ 1027.67s ->  1032.57s] And that's going to be based on the equities that you select and the amount of money you
+[ 1032.57s ->  1034.41s] put into each equity in that portfolio.
+[ 1035.33s ->  1041.03s] Given all of this, you're going to want to select assets in that portfolio or equities
+[ 1041.03s ->  1045.65s] in that portfolio that have a net neutral or negative correlation with one another such
+[ 1045.65s ->  1049.87s] that, you know, you can diversify away those idiosyncratic and industry components.
+[ 1050.61s ->  1055.75s] The overall pairwise correlation, the average pairwise correlation of equities in your portfolio
+[ 1055.75s ->  1059.91s] may be a reasonable measure of how diversified your portfolio is.
+[ 1060.35s ->  1064.25s] And of course, you can take a look at your overall portfolio beta to see what it actually
+[ 1064.25s ->  1067.35s] looks like relative to the market return.
+[ 1067.35s ->  1070.63s] Rebalancing and cap M are topics for another day.
+[ 1070.63s ->  1074.79s] What I want to do now is talk about some real world correlations.
+[ 1075.43s ->  1077.77s] We're going to do this on Portfolio Visualizer.
+[ 1077.91s ->  1082.43s] So you can head on over to PortfolioVisualizer.com, go to their correlation tool, and you can enter
+[ 1082.43s ->  1084.53s] some equity tickers here to get started.
+[ 1084.87s ->  1090.09s] And it's going to show you the pairwise correlations between the asset price paths.
+[ 1090.77s ->  1095.99s] Here, what I've done is I've entered Johnson & Johnson and Chipotle, two seemingly unrelated
+[ 1095.99s ->  1100.51s] stocks, and we're going to take a look at their correlation coefficient to see if we can confirm
+[ 1100.51s ->  1101.39s] this idea.
+[ 1101.89s ->  1107.75s] So if we go on down here to the asset correlations matrix, you can see that relative to its own
+[ 1107.75s ->  1111.73s] price path, each price path will have a perfect correlation.
+[ 1112.27s ->  1117.93s] This makes sense because if you compare the same price path with itself, then they should
+[ 1117.93s ->  1119.13s] move perfectly together.
+[ 1119.41s ->  1125.49s] But if you compare a price path to a different price path, so in this case, it's Johnson & Johnson
+[ 1125.49s ->  1137.04s] relative to Chipotle, we have a 0.01 correlation, so 0.1% correlation, seemingly no correlation
+[ 1137.04s ->  1139.06s] between the two price paths.
+[ 1139.60s ->  1143.04s] This could be a reasonable candidate to include in a well-diversified portfolio.
+[ 1143.50s ->  1146.14s] But keep in mind, this is just for the annual return.
+[ 1146.26s ->  1147.84s] What if we look at the monthly returns?
+[ 1148.66s ->  1151.34s] Well, there's not just one way to compute a monthly return.
+[ 1151.46s ->  1153.00s] You can do it on a rolling basis.
+[ 1153.00s ->  1155.00s] So let's look at the 12-month rolling correlation.
+[ 1155.64s ->  1158.86s] Here, we get the correlation coefficient over time.
+[ 1158.98s ->  1167.06s] So that 0.01 changed to 0.13 here on average, and this is going to be the path of the correlation
+[ 1167.06s ->  1168.30s] coefficient over time.
+[ 1168.46s ->  1170.56s] This is exactly what I was showing you here.
+[ 1171.55s ->  1176.01s] This is an example of a relatively stationary correlation coefficient.
+[ 1176.21s ->  1180.03s] We can draw this horizontal line here, and you can see on average there's a tendency
+[ 1180.03s ->  1182.49s] for this correlation to stick around 0.7.
+[ 1183.39s ->  1189.87s] There is no natural tendency for the correlation to stick around any value for any equity.
+[ 1190.37s ->  1195.71s] This is what the 12-month rolling correlation coefficient looks like for this equity pair.
+[ 1196.27s ->  1199.49s] You have to keep this in mind as you build your portfolio.
+[ 1200.03s ->  1203.99s] The correlations between your equities will change over time.
+[ 1204.41s ->  1205.67s] This is with monthly returns.
+[ 1205.77s ->  1206.71s] Look at daily returns.
+[ 1206.71s ->  1207.79s] It's completely different.
+[ 1208.51s ->  1213.05s] This may look a little bit more stationary, kind of hovering around this 0.2 here, but
+[ 1213.05s ->  1217.25s] there are periods where there is negative correlation, where there's significant correlation.
+[ 1217.47s ->  1218.53s] Look, 0.7.
+[ 1219.47s ->  1220.33s] It's pretty remarkable.
+[ 1220.57s ->  1222.57s] So you have to keep all of this in mind.
+[ 1222.65s ->  1224.85s] This is the 60-day rolling correlation.
+[ 1225.39s ->  1228.09s] If we go to 120 days, this is what it looks like.
+[ 1228.17s ->  1229.63s] It kind of smooths it out a little bit.
+[ 1230.01s ->  1232.51s] If we go to 20 days, it'll probably be even noisier.
+[ 1232.69s ->  1233.65s] It looks something like this.
+[ 1233.65s ->  1238.05s] This may be a little bit more, I don't even know if this would be centered around 0.
+[ 1238.35s ->  1243.11s] It's kind of got this positive, almost cyclical nature to it here.
+[ 1243.61s ->  1247.01s] But regardless, we're not analyzing this time series.
+[ 1247.31s ->  1252.67s] I'm simply trying to show you that this statistic, correlation is a statistic that is time varying.
+[ 1252.77s ->  1253.73s] It changes over time.
+[ 1253.73s ->  1262.85s] And even though this equity pair is seemingly unrelated, if we go to the 60-day correlation, you can see at some points, the correlation was 0.7.
+[ 1264.66s ->  1265.40s] Here it was.
+[ 1265.46s ->  1267.66s] I think this was even 0.735.
+[ 1268.16s ->  1274.86s] That's a significantly high correlation between two seemingly unrelated equities on that particular set of days.
+[ 1274.86s ->  1283.72s] So important to understand that the correlation coefficient is a means for implementing this type of quantitative investing strategy.
+[ 1283.72s ->  1292.88s] That is, you can look at the overall portfolio beta, like I had mentioned earlier, or you can even look at the average pairwise correlation between equities in your portfolio.
+[ 1292.88s ->  1298.66s] But you have to acknowledge the window in which you are doing that, because they will change over time.
+[ 1298.76s ->  1300.72s] Here, the daily average is 0.17.
+[ 1301.22s ->  1307.34s] That's quite different from 0.13, which is quite different from 0.01.
+[ 1308.80s ->  1311.58s] Okay, so these are two seemingly unrelated equities.
+[ 1311.70s ->  1313.60s] What about two seemingly related equities?
+[ 1313.92s ->  1321.48s] Here I have the annual return of Apple and Amazon, and this is quite a high correlation, something that we might expect because both of them are in the technology sector.
+[ 1321.48s ->  1323.60s] Here, we have 0.52.
+[ 1324.28s ->  1326.53s] That is quite a high correlation.
+[ 1326.69s ->  1331.11s] That's exactly actually the correlation that I used in generating this example here.
+[ 1331.81s ->  1340.87s] So this is a real-world example of this implementation, this implementation that was generated with a constant correlation coefficient.
+[ 1341.23s ->  1344.57s] This is the annual return correlation coefficient, which is 0.52.
+[ 1345.05s ->  1347.47s] Again, if we go to monthly, this is going to change.
+[ 1347.47s ->  1352.29s] So this is 0.31 in a monthly capacity, and this is the correlation over time.
+[ 1353.11s ->  1355.75s] If we take a look at the daily correlation, that will also be different.
+[ 1356.23s ->  1362.67s] You can see it's kind of exhibiting that sort of cyclical nature as well, to some degree, I would say.
+[ 1362.67s ->  1366.13s] But it's not stationary, right?
+[ 1366.23s ->  1372.15s] It doesn't look like it's being drawn around a central value like this one.
+[ 1372.21s ->  1374.63s] It's really evolving over time.
+[ 1375.09s ->  1380.15s] And that is a consideration you have to make when you're deploying this type of investment strategy.
+[ 1380.15s ->  1384.03s] These are just considerations in general.
+[ 1384.13s ->  1390.15s] Anytime you involve yourself with an equity portfolio is, how do your equities play with one another?
+[ 1390.67s ->  1393.25s] How do those relationships evolve over time?
+[ 1393.87s ->  1400.91s] And do you need to rebalance your portfolio to ensure that you have the exposure that you think you have?
+[ 1400.91s ->  1412.63s] Because, you know, just with that Cigna NVIDIA example I gave earlier, in a given year, if one stock explodes, all of a sudden you don't have the same risk profile that you did at the start of the year.
+[ 1412.85s ->  1416.89s] So all of those are considerations in this overall quantitative investing strategy.
+[ 1418.17s ->  1424.01s] And that is going to do it for this video on quant investing strategies for beginners.
+[ 1424.01s ->  1440.51s] This strategy is about trying to accumulate the positive drift associated with market returns over time by diversifying away the different elements of risk associated with your equity portfolio, mainly the idiosyncratic and industry risk.
+[ 1441.17s ->  1449.41s] Of course, this is no guarantee of a positive return, but this will reduce your overall exposure to crazy gains and crazy losses.
+[ 1449.41s ->  1456.27s] And we would hope that over time, if you bet on the U.S. economy, that you will be able to accumulate wealth.
+[ 1457.69s ->  1460.21s] That being said, I hope you enjoyed this video.
+[ 1460.57s ->  1464.17s] Thank you so much for watching, and I will see you in the next one.

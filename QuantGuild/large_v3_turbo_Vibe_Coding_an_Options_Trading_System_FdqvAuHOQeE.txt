@@ -1,0 +1,530 @@
+[    0.46s ->     9.79s] yeah we're gonna vibe code a wheel trading system today from scratch i have a great idea about how
+[    9.79s ->    14.69s] to build the ux so that it's easy to read exactly what all your positions are doing
+[   14.69s ->    23.29s] but i want to preface this entire video with the question that is inevitable why would i share this
+[   23.29s ->    30.11s] if it worked why would i share my alpha if it worked you have no idea what alpha is i promise
+[   30.11s ->    35.05s] if you think it's excess return to the market you have no idea what you're talking about if you think
+[   35.05s ->    39.65s] it's uncorrelated exposure to the market factor you have no idea what you're talking about
+[   39.65s ->    46.99s] it is arbitrary it's a moving goal post that is not the point of this video okay the point of this
+[   46.99s ->    53.67s] video is to offer you a system that you can use to take risk in the financial markets if you would
+[   53.67s ->    59.11s] like we're going to build it from scratch we'll walk through the logic of the system it does work well
+[   59.11s ->    65.67s] in sideways markets it does generate cash and you can use that cash market generated cash to take
+[   65.67s ->    72.75s] riskier positions effectively just using house money all right whether or not it works i don't know
+[   72.75s ->    78.67s] it's going to be entirely based on the positions that you take and the risk that you are willing
+[   78.67s ->    85.41s] to manage but until then we're going to start with what this system is in general so this is the idea
+[   85.41s ->    96.70s] of the wheel system the idea is you are going to own stock when you own stock you are going to be able
+[   96.70s ->   106.21s] to sell a call this is a covered call one of two things is going to happen you are either going to
+[  106.21s ->   115.15s] get assigned in which case you no longer have stock or the option is going to expire and you are going to
+[  115.15s ->   124.24s] collect your premium in which case you are going to go back to selling another call should you get
+[  124.24s ->   133.14s] assigned you are going to move on to selling a put one of two things is going to happen you are either
+[  133.14s ->   146.93s] going to get assigned in which case you are now going to own stock or it is going to expire in which
+[  146.93s ->   154.77s] case you are going to sell another put i wonder why this is called the wheel we're just going to
+[  154.77s ->   161.09s] continue to do this in a circle now you can do this for one stock and load up on a massive stock position
+[  161.09s ->   168.75s] but what is the problem this is a mildly bullish strategy meaning if the stock let's say that this
+[  168.75s ->   175.95s] is your cost basis and the stock is currently trading about here if the stock plummets below your cost
+[  175.95s ->   185.63s] basis then any premium that you can collect for the call is going to be below your cost basis meaning
+[  185.63s ->   191.07s] you are not going to receive premium if you try to sell calls up here you're not going to get any
+[  191.07s ->   197.23s] premium all right so in order to collect premium you're going to have to sell calls near the new
+[  197.23s ->   204.83s] level for the price if the price drops significantly you won't be receiving premium here so you're going
+[  204.83s ->   211.71s] to have to look to decrease your cost basis you can increase your position size so on and so forth so
+[  211.71s ->   221.95s] this is far from a free lunch this is the wheel system now on its own it is useful but in a semi
+[  221.95s ->   231.47s] systematic capacity i find it is tremendously more useful so what kind of ux should we build for this
+[  232.19s ->   238.03s] strategy all right well i'm going to draw this out for you kind of what i've been thinking and what i
+[  238.03s ->   246.98s] would want to see to better understand our cost basis i was thinking of something more like a bar chart
+[  246.98s ->   258.58s] so maybe i have a position here call this nvidia and i'm going to have a cost basis for this position
+[  258.58s ->   271.63s] that's going to be this fixed horizontal line how much that i paid for the stock then the bar itself
+[  272.83s ->   281.38s] is going to represent the spot price for nvidia so this is our cost basis for the position
+[  284.50s ->   290.74s] and that is the spot price so for example if i bought it at 200 that is my cost basis
+[  290.74s ->   297.14s] if it's currently trading at 200 then the bar is going to be in line with my cost basis
+[  297.70s ->   305.94s] and we are good to go the interpretation would then be if the spot is trading above i have a positive
+[  305.94s ->   313.14s] pnl associated with that stock position if the bar is trading below i'm going to have a negative pnl
+[  313.14s ->   318.18s] associated with that stock position and as this bar gets smaller and smaller we are moving further and
+[  318.18s ->   322.98s] further away from our cost basis this is exactly what i just drew for you here if this is our cost
+[  322.98s ->   327.94s] basis and we were trading around here and it plummets then that would be the same as this bar
+[  328.50s ->   334.18s] decreasing significantly so what is the purpose of this user interface well i like this because i
+[  334.18s ->   338.42s] don't want to see a chart i have no interest in trying to pattern find that is not the objective of
+[  338.42s ->   347.30s] this strategy instead i'm trying to determine whether or not a certain delta option is going to be above
+[  347.30s ->   352.90s] or below my cost basis just very visually and intuitively especially if i want to do this in
+[  352.90s ->   358.58s] a semi-systematic capacity which is the entire point of this video today so what i want to do then is i
+[  358.58s ->   375.14s] want to effectively have two lines i want to plot one line that is going to be the strike price of a
+[  375.14s ->   393.89s] we will say c delta call and then i want another line which is going to be the strike price of a p delta put
+[  396.50s ->   404.02s] so this is where the semi-systematic capacity comes in because i am going to be able to then specify a delta
+[  404.02s ->   413.12s] threshold and that is going to let me plot these lines here all right so that's going to be the
+[  413.12s ->   420.80s] objective now what is the point of this well the point of this is now i can very easily see where
+[  420.80s ->   430.48s] relative to my cost basis that say 2030 delta call or 2030 delta put is and if i'm going to be effectively
+[  430.48s ->   439.44s] compensated for it so for example if i am working with a 30 delta call and i see this blue dash line
+[  439.44s ->   446.56s] here is above my cost basis then i am good to sell that call i know if i get assigned i'm going to make
+[  446.56s ->   454.88s] money but if this blue line is below my cost basis i cannot sell that call i am going to lose money so
+[  454.88s ->   460.96s] a 30 delta call at one point in time is not equivalent to a 30 delta call at another point in
+[  460.96s ->   470.16s] time in other words as this spot price moves up and down these lines are going to move up and down what
+[  470.16s ->   477.44s] will not change is my cost basis and that is going to dictate whether or not i want to sell the call or
+[  477.44s ->   485.58s] sell the put all right so this is kind of the idea of the user interface for this particular strategy
+[  485.58s ->   492.94s] that i have that i would like to see i would also like different things maybe i would like my time
+[  492.94s ->   503.10s] to maturity i would like the delta threshold i would also like my option p l if i have an active option
+[  503.10s ->   510.14s] position i would also like my stock p l and i know this is for one underlying so maybe we're also going
+[  510.14s ->   524.40s] to want tabs for this system here all right so that is the objective we're going to work on building
+[  524.40s ->   532.54s] that now in cursor all right the first thing that we're going to have to do is and if you don't
+[  532.54s ->   537.74s] already have one you're going to need an interactive broker's account so i'll leave a link in the
+[  537.74s ->   541.66s] description below to go ahead and get started with interactive brokers if you would like they're the only
+[  541.66s ->   548.30s] broker i use i've been with them for over 10 years in a trading and investing capacity and we use
+[  548.30s ->   554.86s] their api for every single quant build on this channel just like this one so what is our goal now
+[  554.86s ->   559.58s] that we have this kind of idea of what we're trying to build let's head on over to the option trader so
+[  559.58s ->   565.34s] we can really understand what it is i meant by that 30 delta call so what i'm going to do is i'm going
+[  565.34s ->   571.95s] to open this options trader we're going to use nvidia as an example and the reason i'm using nvidia as
+[  571.95s ->   578.99s] an example is because i've been trading a lot of nvidia recently i've been talking about it on
+[  578.99s ->   584.99s] discourses i just sold a put this morning to get out of a mess of a short covered call
+[  588.26s ->   595.62s] but we're riding the upside so if you're curious about anything that i'm doing in the live markets
+[  595.62s ->   601.54s] you can head on over to discourses it's pretty much instagram for trading and you can also ask questions
+[  601.54s ->   607.86s] about back tests trading strategies um engage in like social prediction markets that sort of
+[  607.86s ->   613.54s] situation so this is a brand new app this is pretty much where i'm going to be responding to and
+[  614.18s ->   620.50s] creating new threads about the live markets and just methods in general so we want to build this
+[  620.50s ->   627.78s] wheel system here is the options trader all right i don't have a cost basis yet so what i really want
+[  627.78s ->   632.90s] to do is i kind of want to paint this picture for you guys of of what this is going to look like by
+[  632.90s ->   637.94s] first taking a stock position and understanding our cost basis and then taking a look at the
+[  638.98s ->   643.54s] different options that we can sell above or below that cost basis so what i'm going to do is
+[  643.54s ->   653.34s] i'm going to buy nvidia i'm going to buy 100 shares just one one lot and our cost basis is 216.82
+[  653.34s ->   662.30s] or not 216.82 that is the 52 week high let's look at the price 217.08 all right that is our cost basis
+[  663.65s ->   675.33s] so for our green line here it would be 217.08 the current spot price is now it's still roughly 217.08 but
+[  675.33s ->   681.33s] you get the idea it's going to be the mid between the bid and the ask that is going to be this bar height
+[  681.33s ->   685.49s] so we're going to be able to see if we have a positive or negative stock position relative to
+[  685.49s ->   692.61s] this bar now what about the strike of the c delta call or the strike of a p delta put well let's go
+[  692.61s ->   701.46s] back to this options trader here we're going to be able to see that with this seven day expiration
+[  702.02s ->   708.42s] let's look at a 30 delta call this is going to be roughly we'll call it 225. all right
+[  709.38s ->   716.02s] so if we look at this chart 225 would be above our cost basis so selling that call is certainly
+[  716.02s ->   723.38s] viable and if i sold this call at 225 i would collect 189 so 189 bucks remember sold in lots of 100
+[  723.38s ->   729.38s] and i would be able to pocket that premium if i get assigned then i would realize a cash flow of
+[  729.38s ->   736.22s] the difference between my cost basis which in this case is 217 we'll get to cursor in a moment
+[  736.22s ->   746.67s] but which is going to be pull up the cost basis 217.08 it'll be the difference between the cost
+[  746.67s ->   753.63s] basis and the strike of that call so in this case 225 all right so we'll receive that cash flow
+[  754.19s ->   761.63s] roughly eight bucks right times 100 so 800 bucks and then we are also going to be able to pocket that
+[  761.63s ->   767.31s] premium so roughly a thousand dollar trade there if we get assigned if we don't get assigned now we have
+[  767.31s ->   774.75s] to manage the stock position because if the stock drops too far below our cost basis this blue line
+[  774.75s ->   784.11s] is going to continue to shift downward and for example if our cost basis was let's say 240 not 217
+[  784.11s ->   790.27s] in this case what would that mean well if we take a look at the options chain right a 30 delta call
+[  790.27s ->   798.59s] is roughly if we take a look at the spot price of 216 in this case it is a few points up but if we have
+[  798.59s ->   806.43s] a massive loss or unrealized loss in our stock position let's say it was 240 then we would want
+[  806.43s ->   815.79s] to sell calls at or above this strike price but take a look at the premium you're getting for this 245 strike
+[  815.79s ->   826.11s] call it's going to be 13 dollars abysmal relative to your unrealized loss in the equity position so
+[  826.11s ->   835.33s] again this is far from a free lunch right this is a trading strategy okay so this is what we're building
+[  835.33s ->   843.65s] toward let us first start in cursor by building the strike resolvers so the first thing we're going to
+[  843.65s ->   853.57s] want to do is we're going to want to be able to pick an expiration and then resolve a strike that is
+[  853.57s ->   862.13s] very close to the delta threshold that we specify so what do i mean by this well i want to pick a 30 delta
+[  862.13s ->   870.85s] call and if you look at the delta column here we have 31 25 this is going to be pretty much just a very
+[  870.85s ->   878.45s] light minimization exercise which one is going to be the smallest distance to that value of 30 so
+[  878.45s ->   885.25s] is it going to be 225 5 and then in that case do i really want to trade this or should it be weighted
+[  885.25s ->   891.01s] by volume because i don't know about you but if you take a look at the bid and ask volume right you have
+[  891.01s ->   900.45s] 5 000 8 000 here but if you look at the increments of five we're dealing with like 4x and 10x the volume
+[  901.25s ->   909.89s] right so you know which one do you actually want to trade um i would likely prefer to trade the
+[  909.89s ->   915.73s] one that has more volume in terms of just sheer liquidity it's not going to be too much of an
+[  915.73s ->   921.41s] issue but just something to think about and uh i think i'm definitely going to focus on the one that
+[  921.41s ->   927.89s] has the most volume so we'll we'll take a look at the delta threshold relative to the increments of five
+[  928.61s ->   933.25s] um and then as far as the time to maturity goes and that can even be an option in the system too
+[  933.25s ->   940.69s] if we wanted it to be so you know do you want to do um increments of five or not to encourage that
+[  940.69s ->   947.65s] sort of volume could be entirely up to you the other thing is what is the maturity that we're going to
+[  947.65s ->   952.85s] be using do we want to use weeklies quarterlies that is another thing to think about so the first
+[  952.85s ->   960.13s] thing we have to do is build a strike resolver so i'm going to go into cursor here i have my ai agent
+[  960.13s ->   964.69s] open right here and what i'm going to do is i'm going to first ask it for a python script
+[  965.57s ->   978.27s] that is going to be this strike resolver so using ib api build a strike resolver effectively for a
+[  978.27s ->   991.18s] set of maturities find the top three options calls and puts closest to a delta threshold
+[  992.22s ->  1007.49s] so for example i give you a threshold of 30 for delta you return the next 10
+[ 1009.18s ->  1017.76s] contract maturities each with three candidates for resolving the option
+[ 1023.20s ->  1030.40s] so this is plucking out systematically algorithmically the option from this options chain
+[ 1031.04s ->  1037.76s] and i made it a little more general because i want just a set of contract maturities and then the top
+[ 1037.76s ->  1052.61s] three um top three candidates based on those maturities so we should have five seven ten
+[ 1052.61s ->  1057.97s] maybe not even ten contract maturities i suppose if we're doing individual names we can just do like
+[ 1057.97s ->  1072.99s] maybe three that'll give us nine candidates that's probably fine okay so instead of ten maturities do
+[ 1073.71s ->  1093.41s] the most recent upcoming three use my general my global environment here this guy cool all right let's
+[ 1093.41s ->  1100.05s] take a look at what's going on here created a data class of the option good got our e-wrapper e-clients
+[ 1104.61s ->  1111.26s] next valid id these are just basic callback methods options chain metadata
+[ 1111.90s ->  1122.94s] this is the actual tick computation so this is where the options data is returned to bid ask last
+[ 1123.66s ->  1136.50s] okay build options contract everything look good looks good here's the strike resolver itself
+[ 1138.70s ->  1146.86s] okay calls and puts all right let's give this a run here and see what kind of errors we get
+[ 1151.31s ->  1158.75s] strike all right it's a terminal it's a command line operation here so let's get it to write this
+[ 1158.75s ->  1170.62s] code for us to launch it from the terminal um write this to launch for nvidia nope that's not it we need
+[ 1170.62s ->  1192.70s] this guy um okay so strike resolver we're going to run it with the arguments nvidia delta 30 that's
+[ 1192.70s ->  1199.50s] our target threshold maturity is three per side three calls and puts so we're going to get three out of
+[ 1199.50s ->  1205.26s] the money calls three out of the money puts and that's our local host port client id give this a run
+[ 1209.31s ->  1223.20s] let's see how we're doing all right we got timeout exceeded for next valid id let's make sure
+[ 1224.08s ->  1232.18s] everything in ib's api is set up nope disabled of course let's enable it okay give this another try
+[ 1237.95s ->  1245.15s] there we go all right that's exactly what we want to see strike resolver nvidia target delta 30. it looks
+[ 1245.15s ->  1254.21s] like it connected okay um but it didn't have any candidates with model delta all right so this is
+[ 1254.21s ->  1273.41s] clearly untrue we need to query the delta and fix print spot delta prices to the terminal so this is for
+[ 1274.13s ->  1286.91s] 0 5 22 that maturity let's go to the options trader this is post earnings this is out out here
+[ 1288.48s ->  1293.36s] we obviously have some candidate deltas especially even in increments of five at 230 that's where most
+[ 1293.36s ->  1300.56s] of the volume is here so there are definitely options available to us we just need to figure out
+[ 1300.56s ->  1313.87s] what's going on with the maturities looks like we have some more debugging stuff now let's see what we
+[ 1313.87s ->  1330.67s] got going on okay we got our spot price it says maturity 2026 05 22 no call candidates with model delta no
+[ 1330.67s ->  1346.08s] put candidates with model delta we need to fix the query for options data use the more recent maturities
+[ 1346.08s ->  1408.24s] first there are plenty of candidates we also need to improve the logging all right this
+[ 1408.24s ->  1431.30s] looks promising let's try this guy here can always use my uh i was gonna say i have a live volatility
+[ 1431.30s ->  1439.38s] surface i already have all the code for it if we really wanted to just do it from a previous script
+[ 1439.38s ->  1449.38s] but this is fine it looks like it's working so here we have um strike 162 delta 0.99
+[ 1449.38s ->  1460.98s] um clearly this is is pulling it from the absolute just bottom of the stack 162 not sure why so let's
+[ 1460.98s ->  1478.24s] see if we can figure out why this is the case i'm going to tell it that it's pulling it's pulling extremely
+[ 1478.24s ->  1485.79s] far in the money and out of the money for the puts and for the calls and puts respectively
+[ 1491.23s ->  1509.26s] it should search first at the money so for whatever reason it's diving to the bottom of the chain 162
+[ 1509.82s ->  1518.94s] and resolving that as the optimal contract for a 30 delta target threshold um that is that is clearly
+[ 1518.94s ->  1526.94s] not what we want we want to start at the money and look around the out of the money puts out of the money
+[ 1526.94s ->  1544.26s] calls for those contracts let's try this this is um going from 162 to 162 why that is
+[ 1545.46s ->  1561.23s] that is not what we want at all okay i see we should really be going plus or minus i mean it's going to
+[ 1561.23s ->  1568.99s] depend on the underlying which is you know why typically you use implied volatility because just
+[ 1568.99s ->  1574.91s] raw price isn't a good measure of deviation from at least the at the money options for where the 30
+[ 1574.91s ->  1585.23s] delta call is going to lie um but we can just make it plus or minus maybe 30 from spot the strike range
+[ 1585.87s ->  1598.03s] is 162 that's wrong so the reason why it's tough to just do a raw price and we'll probably do a
+[ 1598.03s ->  1609.90s] percentage in a moment um is because if you look at something like google let's look at google right 30
+[ 1609.90s ->  1614.86s] points for google is going to be completely different than 30 points for nvidia right this is
+[ 1614.86s ->  1628.72s] roughly what i mean this is like let's see give this a shot here but if we take a look right seven
+[ 1628.72s ->  1636.72s] day expiration 30 points up from google just call it 4 30 right that is not the same thing as 30 points
+[ 1636.72s ->  1649.30s] up for nvidia if we look up this is really 35 it's going to be roughly a 3 delta call let's do 30 for
+[ 1649.30s ->  1666.69s] nvidia so we'll go to 245 that is a 0.13 delta so not the same at all very different oh this is 14 days
+[ 1666.69s ->  1674.96s] i was gonna say that doesn't make much sense um we need seven days there we go 30 45 there we go it's
+[ 1674.96s ->  1695.23s] a 2 2 delta call right not the same not equivalent um all right let's take a look here um looks like
+[ 1695.23s ->  1707.22s] we have three maturity selected 08 that's a zero dte 11 and then 13 the window is 185 to 245 scan wave
+[ 1707.22s ->  1721.49s] one strikes 216 to 218 okay still no candidates for this delta um i'd be error samples validating
+[ 1721.49s ->  1728.13s] requests snapshot market data is not applicable i don't care about all that um this should be
+[ 1733.87s ->  1744.32s] the strikes selected are still wrong this should not be 216 to 218 that's closer i guess
+[ 1767.97s ->  1816.32s] we really should only scan out the money we're still not receiving any options from the resolver
+[ 1819.44s ->  1860.13s] we found some at 162 for the 22 expiration all right there we go so now we actually have some options
+[ 1860.13s ->  1878.78s] here so we have 25 delta call for zero dte if we take a look at three days from now we have
+[ 1878.78s ->  1894.53s] a 0.56 0.438 delta call um these are certainly on the chain but they are not optimizing for that threshold
+[ 1895.65s ->  1934.19s] distance so let's fix that so we're gonna take the set of return contracts for the out of the money calls
+[ 1934.19s ->  1943.23s] and puts look at the distance to our threshold delta and then return that set of options to
+[ 1943.23s ->  1946.83s] each of these subsequent maturities this is just going to be a dictionary pretty much
+[ 1947.79s ->  1956.05s] and then once we have those securities we're going to be able to um algorithmically place long or short
+[ 1956.05s ->  1986.30s] positions cool let's give this a go 213 219 217 okay we're starting to get somewhere now because
+[ 1987.92s ->  2000.58s] 0508 there's a roughly 30 delta call 30 delta put talk about the expiration in three days 40 delta but
+[ 2000.58s ->  2029.26s] clearly if we go to yeah we have better candidates certainly for those for those maturities top per
+[ 2029.26s ->  2053.97s] side by delta distance out of the money calls strikes it's very close um and then i think we want to do
+[ 2058.90s ->  2066.24s] do we want to do weeklies yeah i suppose we want to do weeklies no zero dts
+[ 2099.58s ->  2159.68s] the zero dte delta does look pretty pretty on it's a lot of options there we go now we're talking so we
+[ 2159.68s ->  2171.47s] get our 220 217 222 13 30 23 delta that's pretty much what we're looking for is trying to split it so
+[ 2171.47s ->  2184.64s] here's our put two there's our 30 that's good um let's look at that's great that's very good cool
+[ 2190.26s ->  2203.71s] so now we want to rank i think by volume and the delta so we can do rank in each maturity
+[ 2205.18s ->  2237.47s] by volume and delta distance let's only do weekly options as well so after this i think we're ready
+[ 2237.47s ->  2245.70s] to approach then the user interface we're going to query our stock position from our portfolio
+[ 2245.70s ->  2259.70s] and our cost basis first and then i think we'll do a tab for each equity position instead of doing
+[ 2259.70s ->  2268.19s] it all on one i think it would just be a mess on one maybe we'll do panels for each stock position
+[ 2275.57s ->  2290.16s] that could be reasonable so this is going to have to evolve dynamically based on the selected strike here
+[ 2290.16s ->  2299.54s] that we're going to rank by volume and then once we take an active position um the option pnl is really
+[ 2299.54s ->  2305.86s] like this will be fixed the dash lines will be fixed and then we'll track our option pnl
+[ 2306.74s ->  2313.98s] and of course assignment so maybe we can even just start doing that in a new agent tab that's fine
+[ 2319.36s ->  2324.16s] and thankfully cursor just allows us to use images so we can just copy
+[ 2324.88s ->  2343.87s] take a screenshot of this throw it in here start there will be a tab for each equity position start
+[ 2343.87s ->  2356.88s] by displaying a live bar chart we need a live market data subscription for the underlying whatever our
+[ 2356.88s ->  2377.57s] holdings are and have a horizontal line for the cost basis of that equity position and how many shares we
+[ 2377.57s ->  2391.28s] have in the title so that'll be a separate program that's going to use the strike resolver in it okay let's
+[ 2391.28s ->  2429.44s] see if we can get this strike resolver up and running with the volume ranking so in this positions dashboard
+[ 2429.44s ->  2436.48s] we're going to want to now i want to use t kinter i don't want to deal with the web app
+[ 2447.28s ->  2451.52s] we're going to query the portfolio information from the server so if you go to your account
+[ 2452.56s ->  2457.68s] then you're going to be able to see the portfolio information here and we're going to query then if you
+[ 2457.68s ->  2464.56s] take a look um at nvidia it looks like we have an average price i guess i already had a position
+[ 2464.56s ->  2472.24s] so we have 200 um and the average entry the cost basis is going to be 216.82
+[ 2472.24s ->  2481.12s] um market price is 215.23 right now so we do have a stock loss that bar is going to be lower than our
+[ 2481.12s ->  2497.06s] cost basis so that's what we're building right now let's take a look here png i don't want pngs
+[ 2503.62s ->  2517.73s] all right this looks promising live underlying versus cost basis waiting for life quote it's having
+[ 2517.73s ->  2531.82s] trouble launching it in a thread typical there we go returned our strikes weighted by volume
+[ 2539.25s ->  2546.21s] so there's our volume 63 000 so this has a little bit more of a distance to our delta threshold but
+[ 2546.21s ->  2553.87s] it's got 10x the volume something to keep in mind as we're building this out that's what i was saying
+[ 2553.87s ->  2565.54s] with the increments of five earlier all right let's give this a go waiting for live quote oh look at this
+[ 2569.71s ->  2576.35s] 215 36 38 all right this looks pretty good the cost basis is 200 that's obviously wrong it's not
+[ 2576.35s ->  2584.67s] querying our portfolio information plus i think this is just laggy as all hell so um that's because it's uh
+[ 2587.14s ->  2600.10s] it's t kinter so do we want to do it in something like flask not really i know it's it's not built for
+[ 2600.10s ->  2608.58s] this but no we don't want to edit via holdings json that's terrible architecture but hey it knows what
+[ 2608.58s ->  2616.26s] it's doing it's going to take over the world right um okay let's just do it as a live flask app to give
+[ 2616.26s ->  2644.18s] it a shot unless there's another we're going to query the portfolio holdings from interactive brokers
+[ 2644.18s ->  2660.62s] we're not gonna have a static json file that we have to update every every day um let's do this
+[ 2661.34s ->  2707.28s] instead of plotly it's javascript plotly all right so the strike resolver looks good that's going to
+[ 2707.28s ->  2714.56s] help us find the strikes of the the calls that we'll plot here and then once this is ready to go
+[ 2714.56s ->  2722.19s] we're gonna have pretty much everything we need to visualize this guy and then we can start placing
+[ 2722.19s ->  2736.08s] trades at the options that we're plotting above and below the cost basis let's give this a go
+[ 2740.30s ->  2745.42s] there that looks fantastic all right and this is much better understood all right no plotly and t
+[ 2745.42s ->  2756.56s] canter map plotlib only um we will now do not use holdings json query stock positions
+[ 2757.20s ->  2781.62s] from my portfolio on ib and create tabs for each stock okay so the resolvers going in the right
+[ 2781.62s ->  2789.86s] direction now that we have the resolver i want to build a specific version of it that allows us to
+[ 2790.50s ->  2799.74s] resolve for a dedicated maturity so what i'd like to do is i'd like a more specific version of this
+[ 2803.10s ->  2819.17s] effectively in our positions dashboard have a drop down for maturities and a button to generate
+[ 2819.17s ->  2833.06s] maturities this will query say 10 maturities for the underlying on that tab then have a separate button
+[ 2833.06s ->  2850.96s] for um resolving contracts next to a text field for a delta threshold this will be much faster to resolve
+[ 2853.12s ->  2868.86s] and this will be much faster to resolve and i want to then receive three candidates in a table
+[ 2868.86s ->  2887.76s] and when i select them their strikes will be plotted as h lines green for call red for put cool this
+[ 2887.76s ->  2894.85s] should have now the live stock position boom there we go apparently i have 500 shares of gdx in this paper
+[ 2894.85s ->  2902.58s] trading account so it looks like we're doing pretty good let's see we have a some sort of pnl on this
+[ 2903.38s ->  2915.58s] 24.78 good that's correct nvidia aha here we go this is looking good this is exactly what i want to see
+[ 2915.58s ->  2931.34s] for this wheel here cool uh we'll also display the stock pnl and options pnl if we have any for the same
+[ 2931.34s ->  2938.53s] for this specific underline we can also show the greeks for our options positions as well very
+[ 2939.97s ->  2945.57s] it could be very useful too great there's our cost yeah this is just this is awesome uh let's increase
+[ 2945.57s ->  2955.54s] the y-axis so we can get a better view of where we are maybe we'll go um plus or minus 20 percent
+[ 2955.54s ->  2964.82s] from our cost basis and then we'll change the color of the bar too so let's do um change the color of the
+[ 2964.82s ->  2976.66s] bar of the stock bar red below cost basis green above cost basis orange plus or minus maybe point
+[ 2976.66s ->  2989.12s] five percent of cost basis so we're like right at the cost basis and then for the y limb make the y limb
+[ 2989.12s ->  2999.92s] on the chart a fixed plus or minus 20 percent of the cost basis if there is no cost basis information
+[ 3000.48s ->  3009.76s] make it plus or minus 20 percent from the spot and that will give us a better view more like this as
+[ 3009.76s ->  3023.47s] intended all right so now we have can we generate our maturities sure can that's working nicely
+[ 3024.51s ->  3031.33s] um this is cool this is exactly what we're looking for this is great choose our target delta threshold
+[ 3031.33s ->  3037.41s] to resolve contracts get our candidates i kind of want two separate tabs for calls and puts here too
+[ 3038.67s ->  3050.02s] probably want to do that okay give this a run let's see how we're doing so for nvidia
+[ 3050.02s ->  3056.90s] um we're trading roughly five points below our call or not five points two points below our cost basis
+[ 3056.90s ->  3066.66s] we have 200 shares let's generate maturities let's look this is 15 good let's resolve contracts for that 15
+[ 3071.36s ->  3082.80s] probably take a second and it's gonna throw it in this table allegedly aha look at that so now we have
+[ 3082.80s ->  3095.38s] put call put click on the call click on the put look at that it's displaying beautifully great so now what
+[ 3095.38s ->  3110.19s] i want to do is i want to show the premium for both positions and i also want i want to separate these into
+[ 3110.19s ->  3117.79s] two separate tables for calls and puts so let's let's do both of those things um this is fantastic good
+[ 3117.79s ->  3133.26s] let's do do two tabs for calls and puts which one did i do that's that yeah let's do this one when i click
+[ 3133.26s ->  3156.02s] a call it saves the selection and same for the put to show both green red lines on the chart create also
+[ 3156.02s ->  3172.54s] a separate section for active stock p l um and then premium uh selected call premium selected put premium
+[ 3178.11s ->  3190.45s] and then i also want what happens after assignment so let's do call assignments p l um excluding premium
+[ 3192.77s ->  3206.72s] use the cost basis and then put assignments cost basis using current cost basis generate the new one
+[ 3208.90s ->  3219.18s] also for put assignments showed cash obligation so this is going to give us pretty much the entire
+[ 3219.18s ->  3229.42s] overview of the what happens at assignments or if it expires the premium we can expect to collect from
+[ 3229.42s ->  3235.34s] the caller put or our cash obligation and our new cost basis if we get assigned with the put and then
+[ 3235.34s ->  3262.29s] um our p and l if we get assigned with the call so that's going to be very useful to us then we
+[ 3262.29s ->  3270.08s] actually have to manage the positions themselves so let's keep this give this guy a run here look at that
+[ 3270.08s ->  3282.29s] that looks very pretty all right you probably format this a little better nvidia generate maturities let's
+[ 3282.29s ->  3300.29s] look at 15th 30 delta call resolve contracts we'll get our calls and put separately we should live
+[ 3300.29s ->  3305.17s] update the that's something that i didn't actually add we need a market data stream for the live update
+[ 3305.17s ->  3313.97s] of these guys to pick this 29 delta put pick this 37 delta call that's not resolving nicely we we need more
+[ 3315.60s ->  3323.36s] we need more for calls and puts um okay so if we take a look here the call premium is 588 the put premium
+[ 3323.36s ->  3333.95s] is 454 um and then the call assignment we get 635 so that would be what we get in terms of stock p and l if
+[ 3333.95s ->  3342.11s] we're assigned um plus the 588 so a thousand one hundred bucks and then if we are to sell
+[ 3342.11s ->  3349.58s] the put at this level here then we are going to collect the 454 if we get assigned
+[ 3350.70s ->  3356.30s] then we are going to have a 42 000 cash obligation and our new cost basis is 213
+[ 3356.30s ->  3361.82s] so that blue line is actually going to shift down which may be helpful for selling more calls
+[ 3362.70s ->  3365.42s] it's just going to depend on whether or not um
+[ 3365.42s ->  3374.61s] um you know the the stock price goes way below that new cost basis or not all right so this is
+[ 3374.61s ->  3391.52s] certainly on the right track um we need we need more calls and puts start querying close to
+[ 3395.10s ->  3399.74s] i guess we you know we really don't even necessarily need to target the delta
+[ 3399.74s ->  3408.14s] um since we're doing this in more of a semi-systematic way because realistically you
+[ 3408.14s ->  3414.86s] only need the resolver if you actually need it to pluck out the delta and like select one for you
+[ 3415.66s ->  3424.88s] so we could just query the options close to at the money for the calls and puts so let's just do that
+[ 3424.88s ->  3432.86s] instead i think this is just pretty much a brain dump of an idea that i had so you know i hope you're
+[ 3432.86s ->  3443.63s] enjoying building it from scratch we need more calls and puts instead of resolving a target delta query
+[ 3443.63s ->  3458.77s] the five closest maybe maybe 10 closest out of the money um calls and puts into the table when the
+[ 3458.77s ->  3472.35s] resolve button is clicked when and store the contract details if a contract is then selected from the table
+[ 3473.39s ->  3487.15s] all of the information is to update then live on its own market data sub live streaming the pricing etc
+[ 3487.15s ->  3503.18s] same premium etc also importantly use bid for premium not mid because we want worst case scenario
+[ 3503.18s ->  3507.82s] here we don't want best case scenario for execution price you might be able to get mid but i rather just
+[ 3507.82s ->  3513.10s] work with the bid probably going to set it to ask if you place the order like we'll place a limit order
+[ 3513.10s ->  3533.44s] at the ask but you might not get filled so we'll we'll see 12 20 okay let's see what we got here what
+[ 3533.44s ->  3555.34s] else we could probably make that look nicer i would imagine so make it look elite don't make it look like
+[ 3555.34s ->  3565.36s] halloween like a bloomberg terminal make it readable actually look useful don't need this don't need this
+[ 3565.36s ->  3584.46s] then we actually just need to execute the trades and then showcase we'll do the stock and stock and
+[ 3584.46s ->  3617.28s] option pnl in the upper right hand corner probably okay put the stock and option ah we'll do it in a
+[ 3617.28s ->  3628.54s] second let's just make sure this works because we're going to need the new contract details for when we
+[ 3628.54s ->  3634.06s] actually place the trade and then it's going to sit in our portfolio um if i take a look here do i have
+[ 3634.06s ->  3665.14s] any i want to close this position fine fine i'll buy at the ask order filled okay my swiss francs
+[ 3666.10s ->  3680.62s] all right let's uh let's see if this is good i think it certainly looks nicer but it's it's absolutely
+[ 3680.62s ->  3687.52s] massive very difficult to uh i don't even think i could get it on camera that's what it drew out for
+[ 3687.52s ->  3695.86s] me in terms of it looks awesome looks awesome but it's difficult to see so i'm gonna shrink it maybe
+[ 3695.86s ->  3704.48s] put it in a different tab yeah we'll do that generate maturities 15th resolve the options chain
+[ 3705.52s ->  3710.56s] we'll get the 10 nearest out of the money calls and puts from spot up this is not for nvidia this is
+[ 3710.56s ->  3724.27s] for gdx same difference we'll see if it works or not yeah looks good calls delta yeah this is great
+[ 3724.75s ->  3744.99s] let's just make sure it works i'll select a 30 delta 30 delta put and then a 30 delta call
+[ 3747.26s ->  3751.98s] very nice so this is a different state of the world actually than nvidia this is a very good thing
+[ 3751.98s ->  3757.66s] so if you take a look our cost basis is below 90 and it's currently trading at 93.67 so if i was to sell
+[ 3757.66s ->  3763.10s] a call up here then i have all of that upside potential for the stock and that's this distance
+[ 3763.10s ->  3768.14s] between our cost basis and that green line so that works tremendously in our favor as well
+[ 3768.86s ->  3775.02s] that's what makes this a mildly bullish strategy you're capping upside sure kind of but how far up
+[ 3775.02s ->  3781.26s] is it going to get how actively are you trading you know people will just continue to to moan that
+[ 3781.26s ->  3785.66s] you're just going to cap your upside but i mean if you're doing this on a weekly basis what are you
+[ 3785.66s ->  3792.14s] going to miss a two percent move up or you're actively capturing premium whatever um we're
+[ 3792.14s ->  3797.98s] going to create a tab here and we'll have tabs for calls and puts and then a tab for scenario analysis
+[ 3798.86s ->  3810.80s] which i think will be very useful so now create two tabs was that being live streamed actually i didn't
+[ 3810.80s ->  3819.68s] even check were the contracts let's use nvidia now we got to make sure that the contract details were
+[ 3819.68s ->  3829.23s] saved and that the delta would update live so effectively when i select a call or a put i want
+[ 3829.23s ->  3856.00s] to continue to live stream the quotes so let's pick a 30 delta yeah this is the liquidity this is a
+[ 3856.00s ->  3862.56s] liquidity thing all right um let's do we'll do this guy here no this guy here's good
+[ 3863.04s ->  3870.66s] 222.5 is updating live yeah it is all right great great so that means we save the contract details
+[ 3871.78s ->  3890.86s] do we do in increments of two and a quarter probably so starting at the nearest five and
+[ 3890.86s ->  3908.45s] increments of two and a quarter we'll do larger for calls it's the nearest multiple of five larger for
+[ 3908.45s ->  3918.21s] calls smaller for puts so they're both out of the money generate in increments of two and a quarter
+[ 3919.39s ->  3945.73s] no two uh two and a half right yeah that's good and then we'll create tabs for this scenario analysis
+[ 3954.29s ->  3967.06s] so we'll put the calls and puts table in one tab then scenario analysis showing the premium
+[ 3969.18s ->  3993.78s] and assignments obligations and pnl and basis in the other which coding gets reduced to legos now it's
+[ 3993.78s ->  4002.18s] this is what it is i guess all right there we go let's see if we got our increments of two and a half
+[ 4003.30s ->  4028.85s] resolve the chain easy ui fix nice two and a half there we go we got our 20 yeah this is perfect
+[ 4028.85s ->  4036.61s] this is exactly what we're looking for um selection can be based on minimize like a minimization threshold
+[ 4036.61s ->  4041.57s] to a target delta if you wanted to do this like purely algorithmically but like i'm gonna touch this
+[ 4042.13s ->  4049.09s] pretty much every day so you know there's no reason to make it purely systematic if speed was
+[ 4049.09s ->  4057.09s] more of a concern i'd be more focused on doing something like that but not too concerned uh cool
+[ 4057.09s ->  4063.73s] so now you'll be able to see then the scenario analysis window much nicer so we go to scenario analysis
+[ 4063.73s ->  4087.42s] and boom there we go it's still really really long i would like to make this far more compact we'll
+[ 4087.42s ->  4093.34s] make it far more vertically compact uh and now we get to work on the actual execution so let's do
+[ 4094.22s ->  4120.03s] 200 shares of nvidia we'll generate our maturities we will resolve the chain so here's our call
+[ 4120.03s ->  4129.09s] pick a 30 delta call there's our puts pick a 30 delta put very nice go to scenario analysis and here
+[ 4129.09s ->  4139.41s] we go we can see the cover call premium is 414 the cash secured put position the premium is 466. if we
+[ 4139.41s ->  4147.25s] get called away at that threshold we're going to receive stock x premium stock p and l of 1135.
+[ 4148.72s ->  4157.84s] if the put is assigned then our new cost basis is 213 our current one is 216 and then our put cash at
+[ 4157.84s ->  4165.04s] strike the cash obligation is 42 000 so this should be more vertically compact now let's take a look here
+[ 4166.83s ->  4193.65s] okay we'll go boom generate maturities resolve the options chain cool we'll go to scenario analysis
+[ 4193.65s ->  4212.48s] this far more vertically compact far more vertically compact that is good enough for me see our put leg
+[ 4217.60s ->  4243.20s] nice so now if we trade one of these i want to lock that leg so let's add commands next to generate
+[ 4243.20s ->  4274.99s] maturities to sell the call or sell the put so so next to the generate maturities button we're going to
+[ 4274.99s ->  4279.63s] have buttons to sell the selected call sell the selected put then we're going to place an order with
+[ 4279.63s ->  4284.91s] the trader workstation for the mid price we'll set it as a limit price for the selected contract and then
+[ 4285.55s ->  4303.47s] once executed we no longer display the we no longer resolve for or display a dashed line we display
+[ 4303.47s ->  4316.94s] a solid one and in the upper and i guess next to in line with the buttons to buy and sell
+[ 4317.50s ->  4329.02s] the stock and option pnl we'll have a main page too that's just going to show this in table format we'll
+[ 4329.02s ->  4334.94s] see the delta of all of our positions and see our assignment risk and our pnl and whatever we'll we'll do
+[ 4334.94s ->  4340.46s] that in a minute but i want to just focus on the individual names first so this should be exactly
+[ 4340.46s ->  4345.90s] what we're looking for so this is so that we can actually place a trade at the selected
+[ 4346.94s ->  4354.75s] um selected calls or puts because we have the contract details we've started the market data
+[ 4354.75s ->  4360.51s] subscription so if you take a look we go to nvidia generate maturities we resolve the chain
+[ 4361.39s ->  4370.11s] all of the contract details are being saved on the back end as intended so now if we go ahead and
+[ 4370.75s ->  4376.43s] select it we will see everything update live just like our stock pro stock price and stock position
+[ 4376.43s ->  4382.59s] here so here's our 30 delta call we go into our scenario analysis the premium is updating live you can
+[ 4382.59s ->  4389.31s] see 428 426 so what that means is we are going to be able to very easily place an order
+[ 4391.14s ->  4409.89s] with the trader workstation for that particular contract no resolve display okay and then we want
+[ 4409.89s ->  4418.35s] to show the pre the total premium collected and the pnl so i want to also emphasize that we're
+[ 4418.35s ->  4423.63s] collecting this premium regardless and assignment is kind of part of the game plan with this entire
+[ 4423.63s ->  4429.55s] strategy so i don't want that to be lost on us it's just going to show a negative options position
+[ 4429.55s ->  4434.75s] negative stock position but you still own the stock and you still collect the premium so that's kind
+[ 4434.75s ->  4440.27s] of what i also want to display up here and then we'll display everything just like a global table
+[ 4440.27s ->  4463.38s] view as well create a tab for global portfolio view that shows the shows a table of stock positions
+[ 4463.38s ->  4475.34s] the delta of the corresponding option it will be i guess we really want to see what we want to see
+[ 4476.06s ->  4494.56s] the last price our cost basis current position we're either going to be sure to call or sure to put
+[ 4494.56s ->  4513.36s] or none if short call show the well we want to show the delta show the delta of the option position
+[ 4516.27s ->  4526.85s] so that is the probability then probability of assignments short call short put if we're short
+[ 4526.85s ->  4531.01s] the call what do we want to see what do we want to see we want to see our potential stock pnl
+[ 4532.05s ->  4558.34s] if short call show x premium stock pnl if assigned if short put show um and then if short put if short put
+[ 4558.34s ->  4571.07s] show show new cost basis after assignment um and we also want to see if short put show cash obligation
+[ 4576.91s ->  4586.35s] of the corresponding option position of course this is indexed by symbol all right we'll come back to
+[ 4586.35s ->  4594.62s] that in a minute keep this guy here see if we can actually place orders now so we'll come here nvidia
+[ 4594.62s ->  4606.42s] generate we are going to i do not want i do not want to be able to buy stock here in lots of 100
+[ 4606.42s ->  4613.79s] that is not something that i want all right we'll resolve i guess we really should be able to enter
+[ 4613.79s ->  4622.22s] our quantity actually should be based on how many shares we have maybe it is fine that we can i don't
+[ 4622.22s ->  4628.94s] i don't know it's not really the intention whatever it doesn't really matter okay uh 30 delta cool
+[ 4629.90s ->  4636.86s] so if i sell the call at mid how many let's see if it automatically scales to my position size let's
+[ 4636.86s ->  4648.34s] see if if chat wants me to uh to be perfectly hedged here so sell call at mid ah here we go sell to open
+[ 4648.34s ->  4663.73s] to call ah e-trade only order attribute is not supported all right well this seems like a
+[ 4670.90s ->  4686.64s] easy fix let's create that global tab too if i buy stock buy 200 now i don't want to be able to buy
+[ 4686.64s ->  4713.98s] stock here all right i mean it's tough in lots of 100 nah it's just it's just i don't want i don't want
+[ 4713.98s ->  4719.26s] to be able to buy or sell stock here you should be able to close your stock position on trader workstation
+[ 4720.85s ->  4729.73s] it's not it's not a self-contained ecosystem this is a tool for live trading all right that's fine
+[ 4729.73s ->  4744.02s] we'll keep that let's see what happens here that looks pretty nice there's our cost basis
+[ 4745.62s ->  4760.30s] our short option assigns we should have um proportion of capital locked too probably to the
+[ 4765.76s ->  4769.84s] yeah let's let's add that so that we know the proportion of capital lock to each position
+[ 4771.17s ->  4788.19s] um proportion of capital tied to each position if we are short a put you must include that in the
+[ 4788.19s ->  4804.21s] calculation use raw cash slash margin available not net like margin
+[ 4804.21s ->  4823.66s] margin really just cash see if we can place a trade generate our maturities resolve the chain
+[ 4846.69s ->  4855.04s] 30 delta call scenario analysis sell for 400 sell call at mid are you sure you want to yes
+[ 4856.24s ->  4862.00s] okay order tif was set today based on order time and force was set today
+[ 4863.26s ->  4879.76s] good until cancelled probably fine we don't need to make a day order filled um oh there we go it worked
+[ 4880.64s ->  4890.50s] pushed it today i don't know why i got the error that's fine what's the size of this position
+[ 4890.50s ->  4929.22s] too nice nice that works good cool so for proportion of cash include the uh we need a new column that shows
+[ 4929.22s ->  4937.70s] the cat the principle associated with with each position create a new column before cost basis for stock
+[ 4938.66s ->  4958.06s] principle that shows the amount of cash in the position this is cost basis times um number of shares
+[ 4972.24s ->  4986.70s] sweet that looks good let's see if the global uh missing currency currency and a request
+[ 4990.53s ->  4995.17s] and then i want to make sure that since we now have an active contract it queries correctly
+[ 4995.97s ->  5011.26s] from our portfolio let's try that all right so this looks good let's see if we have principle
+[ 5011.26s ->  5025.39s] where is there it is percentage of cash 639 percent oh i mean of total cash dude like of the principle
+[ 5025.39s ->  5036.13s] available all right no i mean not cash available where's where did i put this there where's proportion
+[ 5036.13s ->  5050.30s] of cash proportion of cash proportion of cash whatever i'll do it here proportion of cash should be based
+[ 5050.30s ->  5075.82s] on should be based on the principle cash available plus total position principle sum of all positions
+[ 5080.43s ->  5093.06s] show cash above the table we want raw cash available above the table let's see what happens to that
+[ 5093.06s ->  5105.66s] nvidia chart with our position i wonder what happens if i resolve the chain now is that gonna work i think
+[ 5105.66s ->  5115.66s] we have to automatically pull after we query the stock we need to query the options positions that we also
+[ 5115.66s ->  5125.04s] have yeah because if we resolve here if we go to puts we're not gonna wait if i click on 30 yeah this is
+[ 5125.04s ->  5140.80s] not what i wanted so let's do after querying the underlines query all options positions and load them into the
+[ 5141.68s ->  5157.65s] respective charts slash scenario analysis for each name querying the underlines do not let them resolve
+[ 5159.84s ->  5179.57s] do not let them generate new maturities or resolve any strikes lock the maturity field to be the maturity
+[ 5180.90s ->  5193.49s] of their current position in that stock so this way we'll automatically query then the
+[ 5193.49s ->  5207.47s] will automatically query the position now to get started with this like wheel strategy you don't have
+[ 5207.47s ->  5215.87s] to buy stock in fact it just depends on what you're trying to do but like you could sell puts and then like
+[ 5215.87s ->  5222.67s] get assigned or force yourself to get assigned to buy at that price that's that's reasonable too
+[ 5222.67s ->  5242.90s] uh it's just going to depend on what what it is exactly that you'd want to do all right then after
+[ 5242.90s ->  5250.03s] that i think we're pretty much done um ib handles all assignment so then we can just continue to
+[ 5252.05s ->  5258.05s] continue to work on the we'll continue to actively trade and manage risk on this particular strategy
+[ 5258.69s ->  5263.01s] you could also make this purely systematic if you wanted to you can do this for
+[ 5263.01s ->  5269.73s] um in fact how i trade this is on a set of diversified underlying structurally it's not
+[ 5269.73s ->  5274.85s] really structurally uncorrelated but like if you trade uncorrelated underlyings you're going to have
+[ 5275.41s ->  5284.69s] um a significantly easier time now are you subject to individual name risk yeah 100 um
+[ 5285.33s ->  5290.45s] do you want to hold this overnight is this something that you're comfortable with owning anyway these are
+[ 5290.45s ->  5295.01s] questions that you have to ask yourself it depends on how active you're trading dailies weeklies this
+[ 5295.01s ->  5306.48s] is just weeklies um it'll get you started certainly get you started we just need to resolve this active
+[ 5306.48s ->  5313.92s] position once we resolve the active position this system should be ready to trade should be good to go
+[ 5321.28s ->  5334.75s] cool thank you for the thank you for the documentation all right there we go
+[ 5336.38s ->  5349.38s] so pretty much all of our capital is tied up here if you take a look 44 000 so we have seven thousand
+[ 5349.38s ->  5356.98s] dollars in raw cash available we have no put obligations we really can't sell a put here
+[ 5356.98s ->  5362.10s] because we don't have the cash to cover that position it's not a cash secured put in that case
+[ 5362.10s ->  5367.78s] so if you take a look here right we have this gdx position we can sell a call that's what we're going
+[ 5367.78s ->  5371.70s] to do with gdx so i'll show you how to run it like formally with the gdx but let's just make sure this
+[ 5371.70s ->  5377.70s] works yeah this works great so this is our live position right now that's our covered call at two
+[ 5377.70s ->  5384.66s] and a quarter and that is our cost basis so we're losing money in terms of our stock p l minus 300
+[ 5385.22s ->  5392.18s] but we have collected on the premium if we go back to this table here you can see if we get assigned then
+[ 5392.18s ->  5403.06s] we get 1135 from the stock position we have already collected a premium of 400 which i would like to
+[ 5403.06s ->  5419.07s] display somewhere um let's do well that would be the the cost basis um of the option position
+[ 5419.07s ->  5425.71s] so let's add that as a column here too and then we'll we'll walk through an example with gdx to wrap
+[ 5425.71s ->  5440.46s] up add next to delta the premium collected for the op the actively traded option on the global tab
+[ 5447.65s ->  5456.42s] should i make it color colorized by positive or negative p l and make it
+[ 5458.19s ->  5461.15s] it's gonna be too hard to read whatever if you want to add that as styling you certainly can
+[ 5467.86s ->  5499.28s] and then that should be everything that we want for this guy cool i'll even post about this on uh
+[ 5499.28s ->  5510.70s] on discourses then so let's go keep run this guy here this looks great um the premium for the call
+[ 5510.70s ->  5573.23s] is not 39k i want the cost basis times the position size times 100. all right so while that is
+[ 5573.23s ->  5581.31s] loading i'm going to go over to the commons i'm going to create a new thread here on options and volatility
+[ 5582.27s ->  5598.13s] and just walked through building a semi-systematic wheel trading system for a new youtube video
+[ 5598.13s ->  5618.82s] so to get it into action let me know if you guys would like the source code going to add a screenshot
+[ 5618.82s ->  5649.94s] of this guy here that is uh i don't know if i saved the output that is certainly not our premium try that
+[ 5649.94s ->  5668.61s] again 39 000 now the this is am i multiplying by 100 again by accident let's take a look 418 399 yeah
+[ 5668.61s ->  5681.25s] we're multiplying by 100 again um all right and then that should be it and we should be good to go
+[ 5681.25s ->  5696.29s] let's add this guy here um nice start a thread here for the wheels cool um and it looks like if we take a
+[ 5696.29s ->  5708.94s] look at the baked in prediction market here for nvidia i said greater than 209 it looks like we're
+[ 5708.94s ->  5714.54s] going to close the day at definitely above 209 so i'm going to get some points there it's pretty cool
+[ 5716.59s ->  5729.89s] all right keep all give this a run there we go we got our premium collected we got our delta
+[ 5729.89s ->  5741.86s] spot probability of being assigned and receiving that stock pnl we have our last our cost basis
+[ 5743.30s ->  5757.73s] we should probably display our stock pnl next to the cost basis we probably want it to go
+[ 5757.73s ->  5792.34s] last cost basis pnl so we'll add the stock pnl that's great all right cool let's go to gdx now
+[ 5792.34s ->  5797.95s] and let's actually trade this i'm going to generate maturities let's look at the 15th
+[ 5798.75s ->  5803.55s] how would i trade this well my cost basis is significantly below the stock so i'm looking for
+[ 5803.55s ->  5811.31s] exits and i'm looking to um take advantage of that stock move up i'll resolve this chain and i really
+[ 5811.31s ->  5820.83s] don't mind getting assigned on the upside i really am looking to generate that cash i have a 2600 pnl with
+[ 5820.83s ->  5832.38s] the stock already from buying it below 90. after resolving the chain we can see we can pick calls
+[ 5832.38s ->  5840.37s] so i'm going to sell a call and i have assignment risk with this call meaning if the stock price goes
+[ 5840.37s ->  5847.73s] and touches the screen line then i'm going to be forced obligated to sell at that strike and you'll
+[ 5847.73s ->  5853.89s] notice that the further away we get the less likely it is hence the delta goes down and our premium goes
+[ 5853.89s ->  5860.13s] down that is of course how the options markets work and what i'm going to do is i am going to
+[ 5861.57s ->  5869.89s] pick this 42 delta call this is this has a lot of premium but i have significant assignment risk
+[ 5869.89s ->  5878.05s] markets pricing roughly a 42 percent probability as of right now that we will get assigned i don't
+[ 5878.05s ->  5882.05s] think that's a bad thing i really don't care about either state of the world that is kind of the name
+[ 5882.05s ->  5888.29s] of the game with the wheel so i am going to sell this call at mid and this is going to automatically
+[ 5888.29s ->  5895.33s] sell five calls right that's the objective here let's go into the api tab we'll place that trade
+[ 5895.33s ->  5909.97s] boom at mid wow look at that spread 171 to 186 that is that is terrible that is terribly uh terribly wide
+[ 5910.53s ->  5925.95s] so just want to nudge this along for the sake of the video um fine even still even so even still fine
+[ 5925.95s ->  5934.43s] all right all right um selling at the bid right conceding from mid to the bid we filled that and
+[ 5934.43s ->  5943.15s] you can see here now we have this fixed contract we are going to be in this position go to our portfolio
+[ 5943.15s ->  5952.03s] boom if we get assigned our stock pnl is 3332 our current stock pnl is 2567.
+[ 5952.59s ->  5960.91s] so if we get assigned at 95 then we're going to get an extra roughly 800 bucks but we've just
+[ 5960.91s ->  5970.51s] collected 855 dollars in premium so that upside is pretty good right the only time that this doesn't
+[ 5970.51s ->  5976.75s] work in our favor is when what well if this rips to 105 then we're missing all that upside but again
+[ 5976.75s ->  5981.79s] if you're trading this short term how much upside are you actually missing and then what's
+[ 5981.79s ->  5990.19s] the problem like longer term is well what if this drops to 185 right this bar here we need to be
+[ 5990.19s ->  5998.75s] above our cost basis right or we need the premium or really it's it's the strike price to be above
+[ 5999.47s ->  6008.14s] this cost basis so the problem is if this bar this green bar drops too low then any calls that i
+[ 6008.14s ->  6013.90s] select here are actually going to be below my cost basis and i'm going to lose money if i get assigned
+[ 6013.90s ->  6019.74s] that's not what we want um if we're on the put side so we get assigned and we no longer have a stock
+[ 6019.74s ->  6025.90s] position then what i'm going to look to do is i'm going to look to decrease my cost basis or really just
+[ 6025.90s ->  6034.21s] enter into that stock position at a lower price by selling the the right but not obligation to buy
+[ 6034.21s ->  6039.41s] from me at a particular price and that means it's my obligation to buy at that price so here for
+[ 6039.41s ->  6046.93s] example um if i solo put it 90 then it would be the obligation to buy at 90. so let's say that this
+[ 6046.93s ->  6052.69s] gets assigned right this call that i'm currently in i get assigned i have no more stock then i would be
+[ 6052.69s ->  6059.33s] the spot would currently be roughly 95 and this would probably be closer to a 20 delta call maybe 15
+[ 6059.33s ->  6064.93s] but you get the picture then i can sell that pick up the premium and then i will have cash obligation
+[ 6064.93s ->  6071.01s] to that position um and then the cycle begins anew but then you can do this not just for one
+[ 6071.01s ->  6076.13s] not just for two you could do this for a series of underlyings which is what i would encourage you
+[ 6076.13s ->  6082.77s] to do because if you have an equity drawdown in one of 30 of these positions that is very different
+[ 6082.77s ->  6087.57s] than having an equity drawdown in one of five of these positions because
+[ 6087.57s ->  6093.41s] you do not know how long it's going to take for it to come back up right or if it will ever come back
+[ 6093.41s ->  6100.77s] up so you can diversify in that way right risk to reward you don't get something for nothing so if you
+[ 6100.77s ->  6105.97s] concentrate your position and for whatever reason the way that the wind was blowing is working in the
+[ 6105.97s ->  6111.57s] favor of the wheel for that particular time then boom you'll make a significant amount of money
+[ 6111.57s ->  6117.49s] concentrating in one position if you are wrong or if for whatever reason the market is
+[ 6117.49s ->  6123.97s] bearish and or even extremely bullish then you could be in for a world of hurt there
+[ 6125.55s ->  6130.67s] all right so that is going to do it for this wheel trading strategy i hope you enjoyed this
+[ 6130.67s ->  6135.79s] video certainly a different video we just built this guy from scratch i didn't even access any of
+[ 6135.79s ->  6141.87s] my other code snippets which is awesome let me know in the comments below if you guys would like to see
+[ 6141.87s ->  6147.71s] more of these kinds of videos maybe i can even do these live i would absolutely love to do that i can take
+[ 6147.71s ->  6152.51s] input from you guys in real time and build it into these systems we could trade with them live the
+[ 6152.51s ->  6161.07s] list goes on check out discourses.com if you guys are interested in discussing the live markets
+[ 6161.07s ->  6168.75s] quantitative methods in the comments you can start a thread the list goes on you can participate in
+[ 6168.75s ->  6174.43s] the prediction market i'd like to do more videos on this as well and if we get enough users on
+[ 6174.43s ->  6183.26s] discourses then we can even use these implied probabilities in a trading system so with that
+[ 6183.26s ->  6188.78s] a different one for you today i hope you enjoyed i hope you learned something i want to thank you
+[ 6188.78s ->  6194.22s] so much for watching and i'll see you in the next video

@@ -1,0 +1,74 @@
+[    0.04s ->    15.90s] Hey guys, in this video I'm going to talk about how to roll a credit spread trade which will allow us to recoup losses or minimize our losses to eventually or maybe even zero so that when we're trading credit spreads we can actually make money without the fear of losing a lot of money, which is what we all want to do, right?
+[   15.92s ->    18.08s] We want to make money without the fear of losing a lot.
+[   18.14s ->    20.96s] So let me show you how to do that here with credit spreads.
+[   20.96s ->    31.46s] Again, it's laid out here exactly how we do it in our trading guide, but let me show you a visual example of how rolling a trade works if you've never rolled it before, this is your first time hearing about rolling a trade.
+[   32.06s ->    39.46s] All right, let's say, because let's say we're trading, for instance, a put credit, oops, let me bring that back, that was me playing with some stuff.
+[   40.08s ->    41.80s] Let's say we're trading a put credit spread.
+[   41.92s ->    46.36s] So a put credit spread means that we make money as the stock goes up.
+[   46.42s ->    48.10s] So if the stock goes down, we lose money.
+[   48.10s ->    57.50s] So let's say the stock is trading here, and let's say this is our put credit spread level, which means that as long as the stock stays above this level, we make money.
+[   57.80s ->    72.42s] So if we follow the criteria and set up in this course that I've taught so far, what we do is we have a $25 going to be our profit, which is where we enter the trade roughly, and then we're going to exit when it hits 50.
+[   72.90s ->    75.86s] So these are just for easy numbers, 25, 50.
+[   76.14s ->    76.96s] Well, what does this mean?
+[   76.96s ->    79.14s] It means that if we win, we win 25.
+[   79.98s ->    81.96s] If we lose, we lose 25.
+[   82.80s ->    83.00s] Why?
+[   83.08s ->    85.28s] Because we got in at 25 and we sold at 25.
+[   85.38s ->    86.40s] That's a $25 difference.
+[   86.92s ->    88.60s] So when we win, we win 25.
+[   88.74s ->    90.06s] When we lose, we lose 25.
+[   90.34s ->    92.02s] All right, so the stock stays above.
+[   92.16s ->    93.46s] We make money awesome.
+[   93.56s ->    97.22s] But let's say the stock breaks this price, which triggers our stop loss.
+[   97.28s ->   102.42s] Our stop loss is triggered when our short strike is broken, which means that we sell at roughly 50 cents.
+[  102.42s ->   107.60s] So now we've experienced the max loss if we're going to stop, stop out.
+[  107.60s ->   118.14s] So we can stop out and experience the max loss, or we can roll a trade, which is essentially meaning that we're going to place another trade up on the same expiration date.
+[  118.38s ->   120.46s] So we're going to go out roughly 1% lower.
+[  120.46s ->   136.04s] And so once your strike price, with this specific strategy, again, this isn't in general, this is with this strategy specifically when we're following the trend, if it breaks your strike price, you have an 88% chance that it's going to stay above this next level.
+[  136.04s ->   139.24s] This next level is only 1% down, okay?
+[  139.40s ->   143.04s] So that is the numbers that I know based on running comprehensive backtest.
+[  143.90s ->   154.60s] So when we move the strike price down 1% and the same expiration date, so the same expiration date, that means we're going out the same distance.
+[  154.72s ->   158.42s] So whatever this expired in, the next one will expire on that too.
+[  158.56s ->   160.40s] So we're going to restructure the trade.
+[  160.40s ->   166.86s] However, since the trade has less time in the trade, we're not going to be able to get a setup this good.
+[  167.14s ->   174.40s] So our setup may look like we're entering the trade, let's say around 15, and we still have the stop loss at 50.
+[  174.80s ->   175.84s] So what does this mean?
+[  176.14s ->   185.04s] This means that we're going to win $15 on this trade, and we're going to lose 35 if we lose this trade, okay?
+[  185.04s ->   190.22s] So we're setting up another trade below it once the other one hits our stop loss.
+[  190.40s ->   197.92s] Now, again, we can do this all in one full sweep called a roll, but I want to show you it as two separate trades so that you can understand what's going on here.
+[  198.20s ->   203.18s] So the first trade, the strike price was hit, so our stop loss was hit, so we lost $25.
+[  203.74s ->   208.52s] Then we immediately went in and entered another trade, which has an 88% chance of winning.
+[  208.90s ->   210.90s] And let's say we win on this, that means we win 15.
+[  211.18s ->   218.60s] So if we lose on the first one and win on the other trade that we opened up, what is our net profit?
+[  218.88s ->   222.40s] Our net profit is going to be minus $10, right?
+[  222.42s ->   226.14s] Because we lost 25 on the first go-round.
+[  226.32s ->   230.18s] We won 15 on the next, so that means we have a loss of $10.
+[  230.62s ->   231.68s] So what does this mean?
+[  231.74s ->   236.60s] This means that we turned a minus $25 loss into a minus $10 loss.
+[  236.60s ->   237.96s] In my book, that is a lot better.
+[  238.06s ->   241.06s] If you can limit your losses or make them smaller, you're doing great.
+[  241.12s ->   243.92s] So we turned a $25 loss into a $10 loss.
+[  244.28s ->   249.66s] However, what happens if it's the 12% of the time where it also breaks this one too?
+[  250.26s ->   252.62s] Well, what is our loss in that scenario?
+[  252.92s ->   259.06s] Well, we still have a stop loss up in this position, which means that when our strike gets hit for this new trade, then we exit.
+[  259.06s ->   262.66s] So we exit at $0.50, so we see the max loss on this trade.
+[  262.88s ->   264.14s] We don't roll anymore.
+[  264.28s ->   271.34s] We only roll once because if it's broken twice, then we're really in a huge grasp period and there's no point in trying to catch that falling knife.
+[  272.12s ->   277.32s] So we experienced the max loss of $35 with the previous max loss we had of $25.
+[  277.70s ->   282.50s] So this gives us a new actual loss of $60.
+[  282.50s ->   292.00s] So this means that our losses, let's say if we weren't rolling, we would have a profit of $25 or a loss of negative $25.
+[  292.34s ->   299.96s] Now with the roll or the additional trade, we have either a win of minus $10 or a loss of minus $60.
+[  300.10s ->   304.30s] So obviously you'll have to factor this out for yourself if this is worth it.
+[  304.30s ->   312.80s] But long term, this helps you decrease the amount that you're losing and it will actually increase your winners long term.
+[  312.90s ->   318.54s] Because sometimes you can even offset this loser to $0 so that you see no loss at all.
+[  318.62s ->   323.54s] With a high 88% win rate on the second trade, that's a really solid trade.
+[  323.82s ->   325.70s] So you can do this all in one full sweep.
+[  325.76s ->   328.42s] Instead of exiting this trade, you just roll it into this one.
+[  328.54s ->   332.02s] Or you can just close this trade out completely and then reopen this one.
+[  332.28s ->   333.50s] And that is how it's structured.
+[  333.50s ->   334.70s] I hope that makes sense.
+[  334.98s ->   336.28s] This is the idea of rolling.
+[  336.46s ->   340.74s] Again, it's in this system right here, all in the PDF guide.
+[  341.00s ->   342.18s] So I hope that makes sense.
+[  342.50s ->   343.86s] Anyways, that is this lesson.
+[  343.98s ->   345.26s] I will see you in the next one.

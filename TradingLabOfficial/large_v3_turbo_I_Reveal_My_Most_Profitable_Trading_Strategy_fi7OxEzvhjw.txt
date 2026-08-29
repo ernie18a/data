@@ -1,0 +1,90 @@
+[    0.00s ->     6.82s] I have made $213,000 in the past three months of trading, and I didn't use any fancy indicators,
+[    7.06s ->    12.54s] no random trend lines, just pure price action, baby. You see, every single day,
+[   12.66s ->    17.42s] something very specific happens at the open and close of the market. And if you get good
+[   17.42s ->    23.06s] at spotting it, you can make a ton of money. Step one. First, you need to get on a charting
+[   23.06s ->    27.40s] platform. If you don't yet have one, I like to use trading view. I'll leave a link in the
+[   27.40s ->    31.38s] description. Once you're on your charting platform, go to the one hour time frame. Next,
+[   31.44s ->    36.40s] you're going to mark out the previous trading day. On this chart, this whole area was yesterday's
+[   36.40s ->    40.62s] price action. Next, you're going to mark the previous day's low and the previous day's high.
+[   40.66s ->    45.66s] The reason why we're doing this is because there's lots of liquidity resting above and below these
+[   45.66s ->    51.84s] areas. To understand liquidity, you can think of it as areas with large open orders in the market.
+[   51.84s ->    56.86s] It's basically just an area with a lot of stop losses and buy orders. In other words,
+[   57.06s ->    62.58s] lots of money. There will naturally be a lot of stop losses right here at the previous day's low,
+[   62.66s ->    67.56s] and there will naturally be a lot of take profits at the previous day's high. That's just a given.
+[   67.72s ->    72.74s] One of the greatest lessons I've learned in my 10 years of trading is in order to be successful at
+[   72.74s ->    78.98s] trading, you need to be entering where most people are exiting. In essence, liquidity is just that.
+[   78.98s ->    84.90s] So when trading, you basically want to try to trap buyers or sellers and use their stop losses as
+[   84.90s ->    91.04s] fuel to drive the price in the opposite direction. All the algorithms in the market are doing just
+[   91.04s ->    95.72s] this. Targeting highs and lows because it wants to target the liquidity. It wants to target the
+[   95.72s ->   100.82s] orders. It wants to target the money naturally sitting in the market. And once it does, it'll
+[  100.82s ->   106.22s] naturally want to trade in the opposite direction. So often when price targets these highs and lows,
+[  106.22s ->   111.88s] this is where price will most likely reverse because of what I just taught you. So if price
+[  111.88s ->   117.84s] ever breaks highs, you should look for confluences to enter a short trade. If price ever breaks lows,
+[  118.08s ->   122.74s] you should look for confluences to enter long trades. So going back to our example,
+[  122.96s ->   127.74s] we have our previous day's high and our previous day's low. And again, naturally lots of resting
+[  127.74s ->   133.14s] liquidity will be above and below these areas. Price can do anything from here. We aren't trying to
+[  133.14s ->   138.36s] predict price. We're trying to read it. So in this example, price breaks the previous day's low.
+[  139.38s ->   144.68s] Which brings us to step number two. Once price has broken the previous day's high or low,
+[  144.80s ->   149.64s] you're going to go from the one hour time frame to the five minute time frame. If price broke the
+[  149.64s ->   154.24s] previous day's low, you would be looking for longs. If price breaks the previous day's high,
+[  154.40s ->   159.76s] you would be looking for shorts. In this case, price broke the previous day's low. So we'll be looking
+[  159.76s ->   164.88s] for long trade. Now we don't want to simply enter a long trade just because it broke the low. We first
+[  164.88s ->   171.24s] want confirmation. Once price breaks the previous day's low, you want it to immediately do a break
+[  171.24s ->   177.52s] of structure to the upside, which is just a break of the previous high. But an important step, you have
+[  177.52s ->   183.08s] to make sure this break of structure occurs above the liquidity. If it did something like this, where
+[  183.08s ->   189.06s] it did a break of structure, but it was below the liquidity, this would not count. It has to do the
+[  189.06s ->   193.60s] break of structure above the liquidity. Another important note, when it does this break of
+[  193.60s ->   199.80s] structure, a candle must close above the previous high. If it just wicks above it like this, this
+[  199.80s ->   205.92s] would also not count. So just to make it extremely clear, for step number two, you must get a break
+[  205.92s ->   212.50s] of structure that not only occurs above the liquidity, but also a candle that closes above the previous
+[  212.50s ->   219.38s] high, which in this case, it does both of those. Now we need a place to enter the trade, which brings us
+[  219.38s ->   223.08s] to step number three. Before we get into the next step, let me show you something.
+[  223.08s ->   227.62s] So one of my biggest partners, Hankertrade, just released a mobile app, and it's actually
+[  227.62s ->   232.42s] insane what you can do with it. The moment you log in, you see your balance, win rate, the
+[  232.42s ->   238.06s] amount of trades, profit factor, and a lot of track trading analytics, which is cool, but
+[  238.06s ->   244.44s] nothing special. But look how cool this is. They added an AI assistant right on your trading
+[  244.44s ->   248.98s] dashboard. You can ask it anything about your trading analytics. For example, what
+[  248.98s ->   253.86s] patterns does it see in your daily P&L? It will then give you a complete breakdown of
+[  253.86s ->   259.46s] your trades and risk analysis from your own accounts data. So you basically have your own
+[  259.46s ->   264.90s] personalized mentor in your broker. This is huge because you're not using a generic AI
+[  264.90s ->   271.78s] like ChatGPT. You're using an AI that has access to all of your trades and analytics. They even added
+[  271.78s ->   277.62s] a P&L calendar so you can see which specific days you earn profit and which days you are red. If you're
+[  277.62s ->   282.26s] looking for a new broker and want to actually find ways to improve your trading, go check out
+[  282.26s ->   287.70s] Hankertrade and try their new AI assistant. It's actually insane the amount of value you can get
+[  287.70s ->   291.78s] from it. I'll leave a link in the description. Which brings us to step number 3. Usually while
+[  291.78s ->   296.82s] price does this break of structure, it'll leave behind a fair value gap. Now I've explained what a
+[  296.82s ->   303.30s] fair value gap is like 72,000 times in previous videos. So I'm going to assume you know what that
+[  303.30s ->   308.26s] is. If you don't know what it is, simply just search on youtube trading lab fair value gap and
+[  308.26s ->   313.94s] you'll get a full in-depth explanation of what a fair value gap is in that video. But for now,
+[  313.94s ->   319.46s] I'll just assume you know what it is. While price did the break of structure, it left behind a bullish
+[  319.46s ->   325.30s] fair value gap. Wait for price to come down to this fair value gap. Once price gets here, we move to the next
+[  325.30s ->   331.24s] step. Enter the trade. Stop loss below the lows and you're going to say your take profit at the
+[  331.24s ->   336.76s] previous day's high we marked before. And just like that, we got a winning trade. So here we have our
+[  336.76s ->   341.56s] one hour price action. We mark out the previous day's low and the previous day's high. We know
+[  341.56s ->   347.08s] there will be lots of resting liquidity above and below these areas. Step two, we move from the one
+[  347.08s ->   352.52s] hour time frame to the five minute time frame. We wait for price to break in either direction. This
+[  352.52s ->   358.60s] time we broke above the previous day's high. So this time we'll look for shorts. Step number three,
+[  358.60s ->   363.56s] wait for a break of structure directly after the liquidity graph. In this case, the break of
+[  363.56s ->   370.04s] structure must happen below the liquidity. And again, the candle must close below the break of
+[  370.04s ->   374.60s] structure. Next, we mark out our bear's fair value gap. Wait for price to come back up to it,
+[  374.60s ->   380.52s] set our stop loss above the highs, set our take profit at the previous day's low we marked out before.
+[  380.52s ->   385.16s] And again, we got an easy winning trade. So now that you guys understand the strategy,
+[  385.16s ->   391.08s] I'm going to show you some bonus tips to not only make this strategy easier, but also perform better.
+[  391.08s ->   395.96s] Bonus tip number one, remember how we mark out the previous day's high and the previous day's low?
+[  395.96s ->   400.68s] Well, what if I told you there's a way to do it automatically? Go on trading view,
+[  400.68s ->   406.84s] go to the indicators, search previous day's highs and lows. I personally like this one by this guy.
+[  406.84s ->   411.00s] Now, instead of having to mark out the previous day's high and lows manually,
+[  411.00s ->   415.00s] this indicator does it for you. The green line is the previous day's high,
+[  415.00s ->   417.72s] the red line is the previous day's low. Pretty neat.
+[  417.72s ->   418.60s] That's pretty neat.
+[  418.60s ->   424.68s] Bonus tip number two, one of the reasons this strategy works so well is because every time you use it,
+[  424.68s ->   430.76s] the risk to reward is normally pretty good. Meaning your losses are super small when you do lose,
+[  430.76s ->   436.76s] but your wins are super big when you win. That's the entire edge. To make this edge even greater,
+[  436.76s ->   443.80s] I have a rule. If the risk to reward is not better than 2.5 to 1, I do not take the trade.
+[  443.80s ->   450.20s] Meaning your take profit should be 2.5 times bigger than your stop loss every time. If it's
+[  450.20s ->   455.00s] anything less than that, you should not be taking the trade. To easily figure this out, go to the
+[  455.00s ->   460.28s] left hand side, choose this icon, click long position, mark out your take profit and your
+[  460.28s ->   466.36s] stop loss. This risk to reward ratio number should be bigger than 2.5. If you got all the previous
+[  466.36s ->   472.52s] steps done right, but the risk to reward is under 2.5, you do not take the trade. Well,
+[  472.52s ->   476.76s] that's the strategy. Go try it out and let me know how it works for you. See you next time.
+[  476.76s ->   477.64s] That's pretty neat.

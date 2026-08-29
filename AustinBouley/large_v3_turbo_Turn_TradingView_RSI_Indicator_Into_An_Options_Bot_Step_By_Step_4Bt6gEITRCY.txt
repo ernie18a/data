@@ -1,0 +1,74 @@
+[    0.00s ->     3.68s] Hey guys this video I'm going to show you how to turn a trading view indicator into an options
+[    3.68s ->     7.08s] trading boss that you can automate your trading. In this video I'm going to be showing you how to
+[    7.08s ->    12.72s] do it specifically with the RSI. So first thing we need to do is to define what our entry rules
+[   12.72s ->    17.78s] are. So let's add the indicator to our chart first. We're going to go RSI which stands for
+[   17.78s ->    21.64s] relative strength index. You can see here it adds it to our chart. I'll move my face here to the
+[   21.64s ->    26.36s] other side. You can see this a bit better. So again we're going to go into our settings so we
+[   26.36s ->    31.24s] can see what each one of these lines means. You can see the purple line is the RSI line and the
+[   31.24s ->    37.64s] yellow line is the MA. And so again we can now use that when we set up our rules here. So there's a
+[   37.64s ->    43.74s] lot of different ways we can enter this. So we can either enter when the RSI crosses below this 30 line
+[   43.74s ->    53.34s] that means that the market is oversold and it's likely to bounce and go up. We also have the zone
+[   53.34s ->    59.18s] here where we get above this level. It's overbought so the market is likely to pull back. Or we can
+[   59.18s ->    63.64s] trade based on direction when the purple line crosses the yellow line and we can trade that
+[   63.64s ->    69.70s] direction up. So again we can set up all these scenarios here in Tasty Trade. I mean in Trading
+[   69.70s ->    75.90s] View so we can actually do this correctly. But for the sake of this video I'll just make it so that
+[   75.90s ->    82.70s] once it breaks below this 30 point or let's even say there's this level. Then the market is likely
+[   82.70s ->    89.76s] to recover and so we'll enter either selling a put or selling a 112 or entering a credit spread.
+[   89.88s ->    94.46s] So let's set up that as our alert. So we click on add alert. Let me move my face back over. Sorry for
+[   94.46s ->   100.46s] all the movement. Add alert. We're going to go in here and we're going to go to RSI. We're going to
+[  100.46s ->   107.13s] change it to crossing up. Actually no we're going to have it to less than. All right so we're going to
+[  107.13s ->   112.03s] have the RSI value which is going to be this purple value right this purple line. We want it to be
+[  112.03s ->   119.37s] less than probably let's say 35. That's 30-35. So 30 is where the white line is but let's make it
+[  119.37s ->   125.03s] like 32. Something like that. 32. And we'll do this once per bar. But since we're on the daily chart this
+[  125.03s ->   129.77s] means that this will trigger every day that it's below the bar. Again you can have this do only
+[  129.77s ->   134.87s] once that you only enter one trade or you can enter a trade every single day that this happens. You can
+[  134.87s ->   140.21s] structure it like this. So now that we know the entry rules we want to capitalize on a stock that is
+[  140.21s ->   145.35s] likely to rebound. This being spy here for this example. Now we need to set up the options bot
+[  145.35s ->   149.49s] that connects to it. So for this I'm going to be using the options auto trader because it's the
+[  149.49s ->   154.01s] most simple one to use. And if you want to request access to you can do that in the link in the
+[  154.01s ->   160.45s] description below. But simply just click on create an auto trader. You connect your broker and you click
+[  160.45s ->   165.53s] on create an auto trader. So this is what we'll do. Again we can sell puts. We can do a one-on-one,
+[  165.61s ->   169.43s] one-on-two, sell strangles, sell calls, credit spreads, ratio spreads, iron condors. These are all the
+[  169.43s ->   173.79s] things that we can automate within the options auto trader. Now because we're looking to make
+[  173.79s ->   179.05s] money when the market goes up, that's how we trigger this one. When it hits a low point and
+[  179.05s ->   186.09s] is likely to recover, we want to use a strategy that is best for a trending market. So that would
+[  186.09s ->   191.21s] be selling puts. That'd be a one-one-two trade or that would be a credit spread trade. So to make
+[  191.21s ->   195.73s] this simple, let's just do a selling put trade for this one. But again we can set up any strategy we
+[  195.73s ->   201.71s] want. So again we can pick to trade this on futures, on SPX, on SPY. Again I'll just pick
+[  201.71s ->   208.25s] SPY because that's what we have set up for the alert here. Next we'll just do a typical one.
+[  208.33s ->   213.53s] So it's a 45 days out. We'll do a 16 delta. It's a one standard deviation move. So we'll just sell
+[  213.53s ->   218.43s] a 16 delta put. Again this is something that just naturally has a super high win rate. But when we
+[  218.43s ->   223.43s] combine it with the trend, it'll have like literally a super duper high win rate. It'll increase it and
+[  223.43s ->   228.39s] allow us to collect more money because we're buying when the market is dipping. Next we don't
+[  228.39s ->   234.21s] need to define how often we want to enter this trade because it's not a normal reoccurring trade.
+[  234.51s ->   238.69s] Instead we're going to go to advanced settings and enable the trading view web hook. This means that
+[  238.69s ->   242.67s] we're going to have it integrate with trading view only and that's how we receive alerts. Sweet.
+[  242.95s ->   247.51s] So now that we set up how we want the trade to enter that is working with trading view, we need to
+[  247.51s ->   253.35s] now define once we're in a trade, how do we want our trades managed? So again a typical rule is
+[  253.35s ->   259.03s] 50% take profit and 21 day early management. This is a tasty live approach. This means you enter
+[  259.03s ->   263.65s] when there's 45 days left and when there's 21 days or less left we're going to close the trade.
+[  263.99s ->   268.95s] Again you can do just a normal stop loss and take profit or whatever it is you do typically for your
+[  268.95s ->   274.09s] trades. Save and continue. Then we need to define how much money do we want to allow this auto trader
+[  274.09s ->   279.43s] to work with. Let's just say 10,000 just for a normal example because when you sell puts it requires
+[  279.43s ->   283.91s] a bit more money. If you're doing credit spreads it would be a lot less like maybe around $500. So
+[  283.91s ->   288.07s] again that's how we do this. Our auto trader is now set up. If we want to make sure we know what
+[  288.07s ->   294.91s] it's doing we can look at that here. Again we'll click on this and save the auto trader. So now that
+[  294.91s ->   301.11s] this auto trader is saved we need to connect it to trading view. And so we do that by going into the
+[  301.11s ->   307.17s] auto trader, going into the settings and copying our trading view web hook secret. So again for those of
+[  307.17s ->   311.49s] you who want to be malicious and use this don't worry this will be changed by the time this video
+[  311.49s ->   317.01s] goes live. But you simply click copy URL and it gets copied to your clipboard. You go to trading view
+[  317.01s ->   322.07s] where where we set this up. So here are all the settings. Then we go to our web hook URL and we're
+[  322.07s ->   329.19s] going to paste in the URL that was given to us. So let's recap what has just happened. One we defined
+[  329.19s ->   336.13s] when we want to enter the trade based on RSI. We created an alert that cap that that capitalized on those
+[  336.13s ->   342.81s] entry require requirements. We created an auto trader that would specifically enter a put at the
+[  342.81s ->   348.77s] level we wanted at the strike price we wanted and it would manage it exactly as we want. And then we
+[  348.77s ->   354.53s] connected it right here to the trading view system and alert that we set up. And now we officially
+[  354.53s ->   359.55s] automated an RSI trade trading strategy. So we'll save that alert. Again I don't want to do this but
+[  359.55s ->   364.41s] you'll just save it. And then whenever this triggers it will send a notification to this bot. It will
+[  364.41s ->   368.29s] enter a trade based on how you told it. And then once that trade is entered it will manage it for
+[  368.29s ->   373.27s] you. Again you can see here that I'm not using trading view but I'm just using this for my long
+[  373.27s ->   379.21s] term 112 trades. And again it manages my entries, exits, hedges and everything. But not only that
+[  379.21s ->   384.23s] it's so much more easy to understand them than a broker because it shows me my chart, my performance
+[  384.23s ->   388.91s] shows me how close I am to take profit, my stop loss and all that. So anyways if you want to learn
+[  388.91s ->   394.51s] more about this program click the link down below to request access. If not I hope I see you in the
+[  394.51s ->   395.35s] next video. See you guys.

@@ -1,0 +1,128 @@
+[    0.11s ->     4.59s] Hey guys, what's up? It's ABTrades and I run a YouTube channel that teaches people how to day trade options.
+[    5.21s ->     8.33s] Today is day two of the free options course.
+[    8.47s ->    11.43s] If you want to see the video from yesterday, go back to the channel.
+[   11.57s ->    16.07s] And if you want to keep updated with the videos to come on this free options course explaining everything about options,
+[   16.57s ->    22.33s] please subscribe and turn on the bell and alert notifications so you can get alerted every time videos come out.
+[   22.67s ->    26.51s] Alright guys, so today is day two where we talk about how to read an options table.
+[   26.51s ->    33.70s] I realized yesterday that I should have included this video first, but too bad, too late, whatever.
+[   34.64s ->    37.24s] Today we're going to talk about again how to read an options table.
+[   37.34s ->    38.82s] So let's look at an options table.
+[   39.32s ->    44.82s] So again, usually when people look at stocks, I don't know what we're going to pull up, just whatever.
+[   46.18s ->    48.60s] Let's stick with CAP just because I like to look at that chart.
+[   48.68s ->    49.40s] It's just a nice setup.
+[   49.88s ->    53.66s] It followed the 10% rule and a triangle pattern to fall through.
+[   53.66s ->    55.12s] Again, it was great, but that's not.
+[   55.22s ->    57.68s] That's in the strategies playlist on the channel.
+[   57.82s ->    58.76s] You can look at that later.
+[   60.40s ->    62.80s] When most people look at stocks, they see this.
+[   63.14s ->    69.76s] Now if you want to find the contract, you see if this stock does have contracts or trade options, you go to the trade tab.
+[   70.10s ->    73.74s] Make sure you click on all products and then that will bring up the options table.
+[   74.08s ->    75.50s] It may even look like this.
+[   75.50s ->    82.30s] So as we discussed yesterday, options contracts all have expiration values or expiration dates.
+[   82.90s ->    84.70s] So again, this one is expiring this Friday.
+[   84.80s ->    85.90s] This one is expiring next Friday.
+[   86.02s ->    88.56s] This one is a monthly contract because it does not say weekly.
+[   90.10s ->    91.46s] And it doesn't mean much.
+[   91.50s ->    93.12s] It just means that it's expiring later.
+[   94.50s ->   101.08s] If an option contract or table expires in a month, it expires only third Friday of that month.
+[  101.38s ->   103.50s] Following the futures, that's how it works.
+[  103.50s ->   109.42s] Again, that's not too important, but again, I said I'd include everything that I know about options, so here we go.
+[  110.26s ->   111.56s] Again, it just goes on.
+[  111.60s ->   112.54s] They all expire on Friday.
+[  112.80s ->   120.36s] Unless you're trading a highly liquid ETF like SPY, that expires on, what is it, Monday, Wednesday, and Friday.
+[  120.52s ->   123.50s] So it has three different expirations.
+[  124.12s ->   126.42s] That one is definitely one to watch out for.
+[  126.42s ->   136.02s] But when we go here, for instance, when we day trade, I like to keep in between two to three days away from expiration, no matter what I'm trading.
+[  137.18s ->   143.28s] And I will discuss that later why, and that's because of greets such as theta, but that is in a video later.
+[  143.72s ->   145.64s] And it's not too important to discuss now.
+[  145.64s ->   149.88s] So if we open up the first expiration date, this is what you'll see.
+[  150.20s ->   153.38s] Again, the layout should be volume and open interest.
+[  153.50s ->   157.42s] If you want to change the layout, click on layout and go to volume and open interest.
+[  157.74s ->   161.40s] That is, in my opinion, the most important things that you need to consider.
+[  161.40s ->   165.38s] So when we look here, we have the bid and we have the ask.
+[  166.16s ->   167.68s] And this is the call side.
+[  167.80s ->   168.68s] This is the put side.
+[  168.80s ->   171.36s] Call side means making money when the stock goes up.
+[  171.80s ->   174.52s] Puts mean making money when the stock goes down.
+[  174.86s ->   181.44s] Again, this is all referring to buying the contracts and not selling the contracts because then it's flipped, and that will be in another video.
+[  181.96s ->   183.72s] Again, this option series will be long.
+[  183.82s ->   186.84s] I don't think, I think it actually will be long in seven days, but we'll see.
+[  189.68s ->   190.72s] Or seven videos.
+[  190.72s ->   193.88s] But if we look here, this is the volume.
+[  194.26s ->   195.46s] Why is the volume zero?
+[  196.38s ->   204.74s] Because this is, well, first off, it's Wednesday, and H.W. Bush died this weekend.
+[  205.00s ->   206.46s] So we are closed.
+[  206.56s ->   208.60s] The stock market is closed in honor of him.
+[  209.62s ->   210.64s] So that's why.
+[  210.72s ->   216.40s] But every time the stock market resets the next day, all the volume goes back to zero.
+[  216.98s ->   220.14s] So how do you determine whether a stock is liquid or not?
+[  220.14s ->   222.90s] Well, there's also this thing called open interest.
+[  223.30s ->   228.70s] Open interest is the number of people that currently have that contract or currently own those contracts.
+[  228.70s ->   240.64s] So almost like looking at a stock and seeing that it has a shares outstanding, which is the number of shares that can be allotted to people, it's the same way here.
+[  240.64s ->   250.92s] So when we look at strike prices, because there's strike prices on these tables as well, strike prices aren't too, too important at the moment unless you're letting it expire.
+[  250.92s ->   263.62s] But there's a strike for each, usually whole dollar value, unless you're trading a highly liquid stock like SPY, which I'll show you at the end of this video, at each dollar point.
+[  263.62s ->   267.72s] And then the stock are sometimes five dollars, just depending on the stock.
+[  268.18s ->   273.26s] Again, options tables range and are created by the owners of that stock.
+[  273.76s ->   275.80s] So Caterpillar created this.
+[  275.92s ->   278.46s] They wanted it in dollar increments, and that's what they did.
+[  278.46s ->   282.12s] So if we look here, this is open interest.
+[  282.58s ->   289.36s] So if you want to expect the most volume to be traded, you'll probably be on the ones that have the most open interest.
+[  289.74s ->   289.94s] Why?
+[  290.04s ->   295.36s] Because if you want to buy or sell something, there has to be somebody, some group of people already there who has it, right?
+[  295.54s ->   301.86s] You can't just go to someone who sells cars and be like, hey, can I buy a plant from you?
+[  301.98s ->   304.48s] No, you can't buy a plant from them because they don't have plants in stock.
+[  304.48s ->   310.22s] This is basically saying, look, I have 4,205 contracts in stock for this strike price, okay?
+[  310.30s ->   321.64s] So you're saying, oh, wow, I need to go there to buy what I want because I can get in and get out quickly because there's a lot of people who are trying to sell it or there to sell it.
+[  322.20s ->   325.16s] And also, I can get a good deal because there's so many of them, right?
+[  325.66s ->   334.18s] Now, if you want to go down here to like open interest at $192, it may be a little harder to negotiate with these people to buy or sell this contract.
+[  334.48s ->   336.42s] Because there's fewer people.
+[  336.84s ->   339.72s] So that's why open interest and volume go together.
+[  339.84s ->   345.40s] And that's why when I'm looking for a contract to trade, I look at the current volume for the day, which starts over every day.
+[  345.80s ->   348.52s] I look what volume is going the highest.
+[  348.66s ->   350.32s] Does it correlate with the open interest?
+[  350.40s ->   351.32s] And most likely it does.
+[  351.38s ->   352.80s] And that is usually the contract that I pick.
+[  353.50s ->   357.90s] Again, I hope that in the volume is the number of contracts that were traded on that certain day.
+[  358.16s ->   362.08s] Open interest is the number of contracts that are held in someone's possession.
+[  362.08s ->   365.90s] I hope that makes sense and I hope I was able to explain that well.
+[  366.02s ->   369.50s] Again, the bid and ask is the same thing with the stock price.
+[  369.58s ->   370.22s] We have a bid and ask.
+[  370.34s ->   373.24s] The bid are all the buyers and how much the buyers want for the stock.
+[  373.34s ->   378.68s] And the ask is how much the people selling it want the stock or want the contract.
+[  378.68s ->   390.86s] So this is important because if you have a large bid ask spread, like see here, 225 and 261, that's about a, what a, do the math, Austin.
+[  391.06s ->   396.00s] It's about a 35, 36 cent spread.
+[  396.12s ->   397.22s] And we're talking about options.
+[  397.32s ->   400.68s] You multiply that by 100 as we discussed in the last video.
+[  400.68s ->   411.12s] So that's a 36 dollar spread, which means if you buy it at the bid here, and then you try to sell it to get rid of it, you're going to automatically lose 36 dollars a contract.
+[  411.60s ->   413.94s] So that's why we like to stick to highly liquid options.
+[  414.40s ->   416.92s] So that is the basics of reading these.
+[  416.92s ->   420.46s] Again, you can always extend the strikes out because there's always a strike.
+[  420.50s ->   425.00s] There's a strike for almost every dollar value of the stock.
+[  426.48s ->   433.10s] But just keep it at 14 because the ones that are closest to this is when it will be most liquid.
+[  433.84s ->   440.32s] So again, in addition to reading this table, we're going to talk about out of the money and end of the money.
+[  442.54s ->   443.58s] That's going to take way too long.
+[  443.66s ->   445.20s] Sorry, I just don't want this video to be long.
+[  445.20s ->   447.94s] I'm trying to be straight into the point, and I'll put that in the next video.
+[  448.32s ->   450.16s] So let's look at SPY just real quick.
+[  451.22s ->   454.98s] So again, first thing you want to notice is all the different X expirations.
+[  455.12s ->   456.50s] So one expires today, Wednesday.
+[  456.64s ->   457.34s] One expires Friday.
+[  457.48s ->   459.76s] One expires Monday, Wednesday, Friday.
+[  460.12s ->   461.82s] Monday, Wednesday, Friday.
+[  462.08s ->   465.42s] See at, so make sure you're picking the right X expiration you want.
+[  465.72s ->   469.54s] And you can see here that we have it every 50 cents is a strike price.
+[  469.92s ->   474.02s] And also look at the bid-ask spread, especially if we get closer and closer in.
+[  474.02s ->   477.00s] The bid-ask spread usually either widens or shortened.
+[  477.12s ->   477.70s] It just depends.
+[  477.70s ->   481.52s] But if we look here, it's only 1 cent.
+[  482.06s ->   483.80s] So $1 is the bid-ask spread.
+[  483.92s ->   485.76s] Or 5 cents, $5, right?
+[  485.94s ->   487.06s] 4 cents, $4.
+[  488.80s ->   490.16s] 7 cents, $7.
+[  490.58s ->   498.24s] So again, this is the importance of understanding how to read an options table so that you understand what stocks are most liquid or what options contracts are most liquid.
+[  498.24s ->   502.60s] And the bid-ask spread so that you don't get shipped out of a lot of money when you're wrong.
+[  502.60s ->   505.78s] So again, I hope reading the options table made sense.
+[  506.22s ->   509.52s] Please like, comment, and subscribe so I know what y'all are liking and wanting.
+[  509.64s ->   512.84s] And you can tune in for the video tomorrow which explains more about options.
+[  512.84s ->   515.26s] I hope y'all enjoying the free options trading course.
+[  515.58s ->   516.08s] See y'all tomorrow.

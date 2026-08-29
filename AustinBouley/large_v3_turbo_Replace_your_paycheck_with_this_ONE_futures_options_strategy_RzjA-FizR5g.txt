@@ -1,0 +1,222 @@
+[    0.27s ->     5.21s] In this video, I'm going to teach you a futures option strategy that can replace your W-2 paycheck.
+[    5.69s ->    11.81s] This is the fastest and most reliable way to retire if you have under a million dollars in retirement or you're just trying to grow your account.
+[   12.27s ->    20.99s] I personally helped over 5,000 option traders generate consistent income from the market, and I personally made over $50,000 last year selling options.
+[   21.31s ->    26.57s] In this video, I'm going to give you everything you need to walk away with the knowledge of knowing how to do this.
+[   26.57s ->    31.13s] I'm going to share my charting screen. I'm going to dive into the broker and show you what options to sell and how to do it.
+[   31.19s ->    36.51s] I'm going to show you how to manage risk, and most importantly, I'm going to show you how much money you need to actually completely replace your paycheck.
+[   37.05s ->    39.15s] Now, diving in, what are futures options?
+[   39.29s ->    43.77s] Futures are simply assets that track things like commodities and currencies and equities.
+[   44.17s ->    49.55s] So there's a futures that track the S&P 500, futures that track cattle and gold and things like that.
+[   49.55s ->    57.85s] Now, my favorite is the futures that track the S&P 500 because by default, it's diversify, which means it's going to make my trading a lot safer.
+[   58.43s ->    62.31s] Now, when you sell options on futures, you're essentially betting.
+[   62.69s ->    66.91s] If you sell a call option, you're betting that the market will go down.
+[   67.25s ->    69.81s] When you sell a put option, you're betting the market will go up.
+[   69.89s ->    73.39s] If it goes your way, you make money. If not, you have a stop loss and you manage risk.
+[   73.73s ->    75.83s] Now, what exactly is selling options?
+[   75.99s ->    78.75s] When you sell options, you're essentially an insurance company.
+[   78.75s ->    84.79s] You're saying, hey, I'm going to insure you, you're going to pay me money, and if something happens, I'll pay you out.
+[   85.07s ->    86.53s] Now, that's what it is.
+[   86.59s ->    91.57s] You basically get to collect premium, collect cold, hard cash by insuring something.
+[   91.97s ->    97.51s] Most of the times, 95% of the times, depending on the contracts you pick, you will never have to pay out.
+[   97.59s ->   103.97s] And if you do, you just use a stop loss to transfer that contract to somebody else so you don't actually have to pay out.
+[  103.97s ->   112.23s] So, it's a great way to be an insurance company, to be the house like you're a casino and you're the house that actually makes money long-term because you have an edge.
+[  112.55s ->   114.27s] That's what selling options is.
+[  114.95s ->   120.45s] So, again, there's so many different ways to do it, but I'm going to show you my go-to favorite option strategy.
+[  120.91s ->   122.39s] And that is a simple short put.
+[  122.51s ->   122.77s] Why?
+[  123.05s ->   127.67s] Because it's simple, it's one contract, and it just makes sense.
+[  127.67s ->   131.15s] Now, here's how I do it, and I'm going to open up my broker and show you how.
+[  131.41s ->   137.89s] So, I like to use, like I said, ES or MES, which is going to be the futures contracts of the S&P 500.
+[  138.35s ->   142.43s] What I do is I sell a put at 60 DTE at 5 Delta.
+[  142.91s ->   148.99s] I take profit at 25%, and I manage the trade at a 200% stop loss.
+[  148.99s ->   151.17s] So, diving right in, first, let me show you.
+[  151.25s ->   157.55s] If I go to my TastyTrade account, and I go over the last 30 days, we can see here, oh, I need to go to transactions.
+[  158.11s ->   162.33s] Over the last 30 days, let's go here, probably click this out.
+[  162.67s ->   172.21s] You can see here I made about $2,833, about $2,800 if we factor in commissions and fees just by using this strategy alone, which is awesome.
+[  172.59s ->   173.97s] So, that's how amazing it is.
+[  174.17s ->   177.83s] But let's dive into it a little further and show you how that's actually done.
+[  177.83s ->   180.51s] So, no matter what broker you use, you can do this.
+[  180.61s ->   185.93s] My favorite is TastyTrade, but you can do it on Charles Schwab or TradeStation or whatever supports futures options.
+[  186.53s ->   188.11s] You simply are going to go to the symbol.
+[  188.25s ->   191.91s] You're going to type in ES, which stands for the S&P 500 futures.
+[  192.59s ->   196.17s] I'm going to go to the options chain, which is what I see here.
+[  196.91s ->   201.33s] In the middle, it shows me my DTE, which is how far in time I can go.
+[  201.61s ->   206.67s] Every single contract is time-bound, which means there's a certain amount of time you have to be right on your bet.
+[  206.67s ->   210.11s] So, if I go down here, I like going to about 60 days out.
+[  210.19s ->   212.09s] So, you can see here 59 days out.
+[  212.15s ->   218.93s] I'm going to click on this and open up and see all the contracts available, aka, as an insurance company, everyone I can insure.
+[  219.67s ->   222.35s] And so, what I like to do is I like to look for a 5 Delta.
+[  223.03s ->   224.11s] 5 Delta, why?
+[  224.29s ->   228.67s] 5 Delta means that I have a 5% chance of having to pay out somebody premium.
+[  228.67s ->   238.93s] So, that means I have a 95% chance that I just collect the cash, collect the monthly premium, and I get to keep it all and never have to pay out and never hit my stop loss, which is a really great return for me.
+[  239.29s ->   243.17s] Now, again, the higher this number, the higher percentage chance you have to pay out.
+[  243.27s ->   246.21s] So, that means it's riskier for you, but that also means you collect more money.
+[  246.59s ->   250.13s] My favorite is to stay anywhere from a 5 Delta to a 10 Delta.
+[  250.27s ->   251.09s] That's my range.
+[  251.15s ->   253.77s] I don't typically go above it because then it's just too risky for me.
+[  253.77s ->   256.33s] I personally love a 5 Delta right now.
+[  256.43s ->   258.97s] So, 5 Delta, you can see here I have a contract right here.
+[  259.31s ->   264.51s] But essentially, I go to Delta, I find 0.05, and I sell this contract.
+[  265.25s ->   268.31s] So, by selling this contract, we can see all the metrics here.
+[  269.13s ->   276.93s] I have a 99% probability of profit, which means I have a 99% win rate, which in and of itself is awesome.
+[  277.75s ->   280.47s] Now, if I look at it, my max profit is $1,000.
+[  280.47s ->   283.81s] So, by putting on this trade, I can make up to $1,000.
+[  284.67s ->   286.93s] My max risk, again, is quite high.
+[  287.31s ->   291.23s] And then my buying power is I have to put up $6,700 per trade.
+[  291.77s ->   294.21s] Now, how do we deal with this risk?
+[  294.33s ->   296.37s] Okay, this is $311,000.
+[  296.79s ->   301.75s] When you just sell an option, you have a ton of risk because, in theory, it can go against you infinitely.
+[  301.95s ->   306.91s] You have a max loss of $311,000 because if the market drops all the way down,
+[  307.21s ->   309.57s] then you have to insure that, and that could be a lot of money.
+[  309.57s ->   312.11s] Now, how do we prevent against this is super simple.
+[  312.25s ->   314.77s] We just put a take profit and stop loss on it.
+[  315.01s ->   317.09s] As you saw in this document, it's super simple.
+[  317.21s ->   318.89s] I do a 25% take profit.
+[  319.15s ->   321.03s] I do a 200% stop loss.
+[  321.19s ->   322.21s] So, what does this mean?
+[  322.29s ->   328.99s] This means that on the credit that I am receiving, which is $1,000, I do a 200% stop loss.
+[  329.03s ->   329.85s] So, 2x this.
+[  330.13s ->   332.89s] So, I'll get out for about a $2,000 loss.
+[  333.23s ->   335.85s] Now, I'll also take profit at 25%.
+[  335.85s ->   342.37s] So, of $1,000 max profit, that means that I will get out the trade once I have about a $250 profit.
+[  342.77s ->   347.25s] So, on average, I make $250, I lose $2,000, and I have a 99% win rate.
+[  347.55s ->   353.81s] So, occasionally, I will have a bigger loss, but more times than not, I'm just going to collect $250 every trade.
+[  353.81s ->   359.35s] Now, what's awesome about this trade is this trade, on average, only stays open for seven days.
+[  359.73s ->   360.81s] Why is that amazing?
+[  361.03s ->   364.95s] It means I can get in and out of trades quickly, which means I never have to have a ton of trades open.
+[  365.31s ->   368.93s] So, that means that I typically only have two trades open at a time.
+[  368.99s ->   370.09s] I do two trades a week.
+[  370.19s ->   371.99s] Each trade closes within that week.
+[  372.35s ->   376.45s] And so, if I only have two trades open, and my max loss is $2,000 per trade,
+[  376.83s ->   381.91s] then that means max risk I have is $4,000 if both of those trades hit their stop loss.
+[  381.91s ->   386.71s] So, that's what's super awesome about this trade, is that because I can turn over trades quickly,
+[  386.83s ->   392.23s] because they're only in trades for seven days, only that long, because I take profit at 25%, it closes quickly,
+[  392.67s ->   393.63s] then I'm able to do this.
+[  393.89s ->   395.03s] Now, why is this amazing?
+[  395.15s ->   402.37s] If we look at this, if I make $250 per trade, and we take into the consideration that I need $6,700 for this trade,
+[  402.83s ->   408.75s] that means I make about a 3.7% return on my money in a week.
+[  409.05s ->   409.93s] That's insane.
+[  410.05s ->   410.67s] That's incredible.
+[  410.67s ->   412.49s] Nowhere else are you getting that in the market.
+[  412.91s ->   419.57s] That's because of the leverage we get with futures, and the amazing return of just structuring a selling option strategy.
+[  420.31s ->   421.55s] So, that is it.
+[  421.65s ->   423.93s] Now, like I mentioned, not everyone can do this.
+[  424.01s ->   428.43s] You need at least $6,700 to put on this specific trade that I'm referencing.
+[  428.91s ->   430.73s] But again, you don't want to put all your money into a trade.
+[  430.85s ->   434.27s] So, let's say about $10,000 would be what you want to kind of trade this.
+[  434.27s ->   436.79s] Ideally, more, probably like double or triple.
+[  436.93s ->   441.29s] So, $15,000, $18,000, $20,000 would be the safest way to trade one contract.
+[  441.73s ->   447.93s] But again, there are other futures like MES that you can pick that are a lot smaller that you could do for about $1,000 a contract.
+[  447.93s ->   454.99s] But just like that, you can see I'm making, even with the take profit considered, a almost 4% return on my money in a matter of one week.
+[  455.07s ->   465.75s] So, if I, again, do four trades a month, I am making close to 12% return on my money, which is insane in how you grow your account quickly.
+[  465.75s ->   468.87s] But it's also how you can retire with a lot less money.
+[  469.07s ->   470.37s] So, that's the strategy.
+[  470.73s ->   471.73s] That's how you do it.
+[  472.33s ->   475.57s] Now, you might be wondering, okay, what is the allocation here?
+[  475.65s ->   476.91s] How do I break it down?
+[  477.25s ->   478.59s] What I do is easy numbers.
+[  478.85s ->   484.01s] If we're breaking down a $100,000 account, now, again, you probably have a lot less, but this is just for easy numbers.
+[  484.49s ->   489.67s] Then I like to put about 15% of it into the strategy or basically enough for one contract.
+[  489.77s ->   492.91s] So, if you have $10,000, you might want to do like an MES contract.
+[  492.91s ->   495.15s] You can do a couple, up to 50%.
+[  495.15s ->   501.11s] So, just by putting in 15% or $15,000, I can make anywhere from $1,500 to $2,000 a month.
+[  501.19s ->   501.35s] Why?
+[  501.47s ->   505.67s] Because I'm making about a 10% return in a month period on the money that I'm using.
+[  505.97s ->   512.29s] So, if I'm using $1,500 and I make a 10% return, that's $1,500 that I make every single month.
+[  512.63s ->   514.87s] Now, you might be wondering, Austin, that's not a lot of money.
+[  514.99s ->   518.09s] Yeah, because I don't want to put all my money into a trade, right?
+[  518.09s ->   524.83s] If something goes wrong, I want to make sure I have very small risks, especially if this is something that I want to depend on for retirement.
+[  524.83s ->   526.97s] Or depend on for consistent income.
+[  527.43s ->   530.57s] So, I'm only going to put about $15,000 in that.
+[  530.95s ->   534.39s] Now, next is because of all the extra money I have, right?
+[  534.41s ->   538.73s] I still have, what is this, $85,000 of this 100K account.
+[  538.99s ->   546.39s] I'm going to put 90% of it into something like S-Gov, which is a T-bill ETF that pays out a monthly dividend.
+[  546.39s ->   549.09s] So, this is a risk-free return backed by the government.
+[  549.33s ->   554.33s] It's a treasury bill ETF that pays out about 3.5% to 4% a year.
+[  554.71s ->   560.83s] So, this is just a great way for my cash to generate an extra return, which for me tends to be about $250 a month.
+[  561.17s ->   565.71s] So, again, that comes out to about $1,500 from my office selling, about $250 a month from that.
+[  566.05s ->   568.45s] Look, if I go back, this is pretty accurate, right?
+[  568.45s ->   569.17s] I went to here.
+[  569.83s ->   575.31s] You can see, if we look at S-Gov, S-Gov paid me about $268 this past month.
+[  575.43s ->   577.35s] And then the rest was made from option selling.
+[  577.45s ->   581.83s] So, look at that, about $2,800 on a $100,000 account.
+[  582.03s ->   585.23s] That's a 2.8% return every single month.
+[  585.47s ->   586.89s] And that is really great.
+[  586.97s ->   588.07s] I wouldn't try to push it.
+[  588.15s ->   589.33s] I like keeping my risk low.
+[  589.41s ->   592.45s] Again, I'm only trading with $15,000 of the whole 100K.
+[  592.45s ->   599.81s] The rest is in cash, and the rest is in a risk-free S-Gov ETF, which pays a monthly dividend of about $300.
+[  600.17s ->   604.15s] So, just like that, it's super awesome, generating a 2.8% return.
+[  605.03s ->   606.07s] So, that's how simple it is.
+[  606.15s ->   607.39s] You now know the process.
+[  607.79s ->   612.07s] But this is kind of what you want to know is how much money do you need in your account to replace your paycheck?
+[  612.33s ->   613.19s] Here's some math, okay?
+[  613.63s ->   617.11s] What you want to do is I'm going to show a very high tax state that I'm in.
+[  617.11s ->   623.39s] So, if you're a California resident, I looked up the average annual income, and it's $140,000 a year.
+[  624.09s ->   629.49s] If you want to make $140,000 a year in retirement, you're in California, you're like, I need to continue to make this money.
+[  629.85s ->   632.27s] How much do I need to eventually get in my retirement account?
+[  632.67s ->   634.11s] It would be about $700,000.
+[  634.49s ->   636.53s] Obviously, the more the merrier, right?
+[  636.61s ->   641.09s] If you can have a million dollars in your account, it means you'll have to withdraw less every year,
+[  641.11s ->   645.17s] which means your account can continue to grow and weather some of the harder periods in the market.
+[  645.17s ->   649.65s] But if we're talking bare minimum, you just want to try to get by, $700,000 would work.
+[  649.97s ->   654.81s] Now, if you're in Tennessee, like me, where we don't have state income tax and a lot of other things,
+[  655.11s ->   661.63s] the average annual income was about $72,000 a year there, which means I only need $360,000 to retire.
+[  662.03s ->   665.87s] Now, this is awesome because basically, you take whatever number that you need per year.
+[  666.21s ->   668.17s] Let's say it's $50,000, all right?
+[  668.19s ->   672.91s] So, you take $50,000, and you divide it by 0.20 because we're making about a 20%, 25% return a year.
+[  672.91s ->   677.87s] So, let's assume 20% on the lower end, that means I need a $250,000 account.
+[  678.55s ->   679.87s] So, that's awesome, right?
+[  680.11s ->   684.97s] Because, number one, most people are saying you need $2,000, $3,000, $4,000, $5,000,000 to retire.
+[  685.35s ->   686.85s] Now, again, the more the merrier.
+[  686.93s ->   689.37s] If you have $2,000, $3,000, $4,000, $5,000, you're going to be a lot safer.
+[  689.47s ->   690.95s] You're going to be a lot more comfortable.
+[  690.95s ->   697.77s] But if you're someone who, over all your time so far, has only saved up $500,000, know that you can do something like this.
+[  697.81s ->   706.11s] And it can be still a safer strategy to be able to generate returns and help supplement your income with things like Social Security and things like that.
+[  706.69s ->   707.77s] So, that's how awesome that is.
+[  707.87s ->   714.39s] But if you're someone who's building to retirement, where you have retirement in the next 10 years or so, then use a compound interest calculator.
+[  714.39s ->   720.33s] Be like, okay, I'm starting with $20,000, put in the initial deposit, be like, okay, I'm retiring in about 10 years.
+[  720.57s ->   723.69s] If I use this strategy, I'll make about a 20% return.
+[  723.97s ->   726.07s] So, let's put in about 20%.
+[  726.07s ->   729.89s] First, I just want to showcase that a 10% return is what the average market does.
+[  729.93s ->   733.43s] You just put your money in the S&P 500, just around a 10% return.
+[  733.79s ->   735.95s] That would get you to $151,000.
+[  736.29s ->   742.67s] But, again, like I mentioned, we're able to make 2%, 2.8% a month, which on the low end comes out to 20% a year.
+[  743.23s ->   747.83s] That's basically 2x your returns just by doing this simple strategy.
+[  748.23s ->   750.41s] So, let's say you're even able to do 30% a year, right?
+[  750.43s ->   752.61s] I'm doing 2.8% a month right now.
+[  752.67s ->   755.29s] So, if you extrapolate that out per year, it's close to 30%.
+[  755.29s ->   763.17s] That means in 10 years, I can get up to $560,000, which means this would give me close to $100,000 a year salary.
+[  763.17s ->   764.79s] And, again, just play with the numbers.
+[  764.91s ->   768.11s] How much do I need to contribute to this account per month?
+[  768.53s ->   769.93s] How much do I need to make a return?
+[  769.93s ->   776.19s] I would guesstimate around 20% on the – just to play with those numbers, the number of years you have left, and then you can play with it.
+[  776.25s ->   778.03s] So, let's say, okay, I have $20,000 now.
+[  778.31s ->   779.63s] I know I'm retiring in 10 years.
+[  779.73s ->   780.87s] Let's assume at 20%.
+[  780.87s ->   781.73s] Okay, cool.
+[  781.79s ->   783.93s] I need my number to be $400,000.
+[  784.29s ->   785.87s] Okay, then let's play with the contribution.
+[  786.01s ->   788.05s] If I put in $1,000 a month, perfect.
+[  788.19s ->   789.51s] I get to $462,000.
+[  789.57s ->   790.19s] That's my number.
+[  790.65s ->   795.41s] So, again, this is a great strategy whether you're using it to withdraw cash every single month.
+[  795.41s ->   798.57s] You can do that, or you're trying to grow your account, it works there also.
+[  799.19s ->   801.07s] Anyways, how to allocate and manage risk.
+[  801.11s ->   804.07s] Like I mentioned before, I only like to put about 15% of my account.
+[  804.21s ->   807.71s] But if you really want to be on the higher risk side, you could do something like this.
+[  807.75s ->   809.27s] Here's another strategy that people do.
+[  809.57s ->   814.29s] They put about 30% of their account, 40% or 50% of their account, depending on how much returns they want.
+[  814.53s ->   816.05s] Again, understand max risk.
+[  816.05s ->   823.77s] When it comes to trading, we can manage risk a lot by using futures options because they trade overnight, which means we can get out overnight before crashes.
+[  824.31s ->   826.39s] Futures options are also tax advantage.
+[  826.75s ->   835.95s] So, by using futures options, not only are you able to make more with less money, we're making a 3% or 4% return per week, but we're also doing it with less risk because we can get out overnight.
+[  836.39s ->   839.63s] And we get to keep more of the money that we're making because it's tax efficient.
+[  839.99s ->   841.35s] So, that's all I have for you.
+[  841.41s ->   842.53s] I hope you enjoyed this video.
+[  842.53s ->   850.43s] If you want to join our free trading community, which is where I'm in there for an hour every single day, you want to talk to me, you want to learn from the free courses I have in there.
+[  850.69s ->   856.19s] Again, I have over 10 different trading courses, some of which I sold before for $1,000 each, but you get them all for free.
+[  856.45s ->   863.11s] You can go to the first link in the description or school.com slash options autotrader, and you'll be able to see that.
+[  863.35s ->   864.77s] Anyways, I hope you guys enjoyed this video.
+[  864.77s ->   868.95s] If you want this Google Doc, it is inside our school community, which is the first link down below.
+[  869.25s ->   870.11s] All right, see you in the next video.

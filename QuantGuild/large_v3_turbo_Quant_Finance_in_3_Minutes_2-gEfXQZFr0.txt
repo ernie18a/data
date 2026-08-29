@@ -1,0 +1,38 @@
+[    1.34s ->     8.36s] What is quantitative finance? Well, really, it aims to answer two core questions. The first is
+[    8.36s ->    13.76s] how much do I pay for this? And the second is what is the optimal decision to make?
+[   14.08s ->    19.06s] Let's start with this first question here. How much do I pay for this? What you're looking at
+[   19.06s ->    24.70s] is a simulation of roulette. Roulette is a game of chance. Probabilities, statistics,
+[   24.70s ->    32.32s] the distribution governing the outcomes all converge. If we find the expected value of one
+[   32.32s ->    39.90s] game of roulette, then we can charge that value for the game and everybody is going to be net zero
+[   39.90s ->    45.86s] in terms of the wealth they accumulate. You can see here the paths oscillate around net zero wealth,
+[   45.98s ->    52.06s] but if you charge more for the game, if the casino has an edge, you can see all of the players will
+[   52.06s ->    58.50s] eventually accumulate wealth to zero. That is our goal when we're trying to determine how much we
+[   58.50s ->    64.72s] should pay for a particular instrument in the financial markets. Now, European options, for
+[   64.72s ->    71.46s] example, are a little bit harder because there are no probability statistics and distributions that
+[   71.46s ->    77.94s] converge, but we do have a nice hedging argument given by Black and Scholz. In their framework,
+[   77.94s ->    83.96s] if we are to perfectly hedge in a continuous setting with no transaction costs, then we can
+[   83.96s ->    91.10s] actually find an expected value, an average, just like roulette. And if we charge that value,
+[   91.22s ->    97.64s] our wealth paths will also oscillate around zero. But if we charge more, then we can see our
+[   97.64s ->   102.84s] counterparty is going to accumulate negative wealth, and we are going to accumulate that wealth
+[  102.84s ->   109.56s] because it is in fact a zero sum game. This is exactly how markets are made. If we are a market
+[  109.56s ->   116.92s] maker, we're going to try to find that theoretical expected value, the theoretical price to pay for that
+[  116.92s ->   124.42s] instrument. And if we charge more, the asker offer or buy for less at the bid, then we're going to be
+[  124.42s ->   130.96s] able to accumulate that spread over time, just like you see in that chart. Now, that's the first
+[  130.96s ->   135.08s] question that we aim to answer with quantitative finance. What about the second question? This is
+[  135.08s ->   140.34s] what is the optimal decision to make? Let's say that you're managing capital and you have to allocate
+[  140.34s ->   146.92s] 100% to either Apple or Nvidia. How do you choose? Should you base it on historic returns, fundamentals,
+[  147.72s ->   155.60s] news? The list goes on. Which is correct? Well, this is amorphous, like swinging at a pitch in
+[  155.60s ->   161.76s] baseball. Which one do you swing at? This comes down to performance. Which is correct? What is the
+[  161.76s ->   166.76s] correct measure? We'll never know. Let's look at an example of this. You're running a quant team and
+[  166.76s ->   173.48s] you estimate the returns for Nvidia and Apple to be negative 10% and 20% respectively, but some guy in
+[  173.48s ->   180.52s] his basement says it's 20% and negative 10%. They're swapped. Let's take a look at the actual outcome
+[  180.52s ->   187.46s] here. If we take a look at the actual outcome, you're going to see that Nvidia returns 20%. Apple
+[  187.46s ->   195.08s] returns 10%. The guy in the basement beat the quant team, but this is resulting. We're looking at the
+[  195.08s ->   200.40s] outcome as a measure of the quality of the decision-making process. In reality, look at all of
+[  200.40s ->   207.40s] these other paths. We would have been correct if we walked one of these other paths with our quant team.
+[  207.40s ->   213.68s] That is exactly the goal in this decision-making process. Over time, the guy in the basement isn't
+[  213.68s ->   219.08s] going to have an edge. You can see this on the left. All of the paths are going to accumulate
+[  219.08s ->   225.04s] negative wealth versus, of course, the quant firm process where if we continue to make these informed
+[  225.04s ->   231.04s] decisions in the face of uncertainty, we will be able to accumulate wealth. That's quant finance in
+[  231.04s ->   234.50s] three minutes. I hope you enjoyed. I hope you learned something. Thank you so much for watching,
+[  234.50s ->   236.84s] and I'll see you in the next video.

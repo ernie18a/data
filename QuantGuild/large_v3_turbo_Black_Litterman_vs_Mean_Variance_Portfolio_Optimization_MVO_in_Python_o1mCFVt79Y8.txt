@@ -1,0 +1,340 @@
+[    0.46s ->     8.73s] Warren Buffett once said, diversification is protection against ignorance, seemingly contradicting
+[    8.73s ->    15.99s] all of modern portfolio theory, which champions diversification. But in the context of the
+[   15.99s ->    23.23s] efficient frontier and mean variance optimization, ignorance is something that we have plenty of.
+[   23.23s ->    29.09s] In this video today, we're going to talk all about portfolio theory, diversification,
+[   29.09s ->    36.69s] mean variance optimization, and in the context of Warren Buffett's quote, the notion of the Black
+[   36.69s ->    44.25s] Litterman model to make more informed and stable decisions about your portfolio and subjective views
+[   44.25s ->    51.83s] in the face of uncertainty. One of the main reasons mean variance optimization fails in practice is due
+[   51.83s ->    58.97s] to current technology. We don't have access to good and stable forward-looking expected
+[   58.97s ->    66.33s] returns. But with current technology, you will always have access to my Jupyter Notebooks. This
+[   66.33s ->    70.57s] Jupyter Notebook will be linked in the description below. I'll also post it to the Quant Guild library
+[   70.57s ->    75.61s] on GitHub, where you can find all of my Jupyter Notebooks and associated YouTube videos, along
+[   75.61s ->    80.57s] with all of the source code for my Quant builds. At the top of this Jupyter Notebook, you'll notice
+[   80.57s ->    86.73s] some related Quant Guild videos applying probability and statistics to finance and trading. The top five
+[   86.73s ->    93.53s] papers that built modern Quant finance, the notion of alpha and beta and whether your trading strategy
+[   93.53s ->   101.05s] is just a form of beta exposure, ranking retail trading mistakes that blow up your account,
+[  101.05s ->   108.25s] non-stationarity and why market timing fails, busting three trading myths that these trading gurus
+[  108.25s ->   114.89s] love to propagate, and of course, the notion of quantitative portfolio management. If you're
+[  114.89s ->   120.33s] unfamiliar with any of these ideas, I highly encourage you to check out those videos first
+[  120.33s ->   125.45s] before tackling one like this. Moreover, these videos certainly take a lot of effort to create,
+[  125.45s ->   129.05s] so if you'd like to help support the channel so I can continue to create videos just like this one,
+[  129.05s ->   134.17s] please like, comment, subscribe, share. It helps me out tremendously. It's always greatly appreciated.
+[  134.17s ->   140.17s] And if you'd like to master your quantitative skills for trading and market making roles,
+[  140.17s ->   148.41s] check out QuantGuild.com. We have over 100 hours of lecture content, an adaptive practice engine that
+[  148.41s ->   155.13s] scales with your skill level so you can progress to more and more difficult topics with gamified rank-based
+[  155.13s ->   163.29s] progress and much more. So if you'd like to help support the channel and master your quantitative skills
+[  163.29s ->   169.13s] for trading and market making roles, check out QuantGuild.com. Without further ado, let's get
+[  169.13s ->   176.17s] started by discussing this idea of mean variance optimization, risky assets, and the efficient frontier.
+[  176.17s ->   182.57s] This is a place where students get confused right off the bat. That's because in the classroom,
+[  182.57s ->   190.57s] typically we introduce the efficient frontier in the context of all possible risky assets that we could
+[  190.57s ->   197.29s] have exposure to. What do I mean by this? Well, when I talk about risky assets, I'm talking about
+[  197.29s ->   204.89s] things like equities, corporate bonds, commodities, real estate, currencies, alts, the list goes on.
+[  205.61s ->   214.17s] Of course, we can't actually hold or observe this theoretical portfolio. It quite literally contains
+[  214.17s ->   223.13s] every risky asset in the world that we could possibly trade. So the efficient frontier in this sense is
+[  223.13s ->   229.77s] a theoretical object. Let's take a look at this theoretical object to understand what it should
+[  229.77s ->   238.01s] look like. What I have here is an animation on the left of the paths that is the returns of these risky
+[  238.01s ->   243.53s] assets. In this animation, we assume we can observe all of them. Of course, in practice,
+[  243.53s ->   249.69s] this isn't the case. And on the right, what you're observing is the efficient frontier. Effectively,
+[  249.69s ->   257.85s] if we hold random portfolios of all of those risky assets, we can see that it's going to build out a frontier.
+[  257.85s ->   264.97s] And that frontier is going to have different risk to reward ratios. Anything within the frontier is
+[  264.97s ->   273.37s] considered suboptimal. And that tangency point is considered the optimal risk to reward based on
+[  273.37s ->   281.69s] those observed risky assets. We proxy for the expected returns and the volatility. And that portfolio
+[  281.69s ->   290.41s] here, the tangency portfolio is going to be the portfolio of risky assets that maximizes that risk to
+[  290.41s ->   298.01s] reward that sharp ratio. So what's the problem here in practice? Well, there are a lot of problems.
+[  298.01s ->   304.17s] Let's start with roles critique, just like expected returns. We're going to get there later on.
+[  304.17s ->   311.29s] We can't actually observe the market portfolio. The best we can do is proxy for it using different
+[  311.29s ->   318.49s] subsets of risky assets. So typically this is, and as I said a moment ago, where the confusion comes in
+[  318.49s ->   323.45s] for students, because we introduced this concept of the efficient frontier, we talk about the market
+[  323.45s ->   330.57s] portfolio and they say, Oh, it's just the S and P 500. Well, not quite. We can impose this framework
+[  330.57s ->   338.33s] on any subset of risky assets that we would like. The important thing to understand about this framework
+[  338.33s ->   347.85s] is any superset of risky assets is going to contain a subsets frontier within it. What does that actually
+[  347.85s ->   354.65s] look like? Well, I have this awesome animation here to show you exactly what's going on. I have two sets
+[  354.65s ->   361.13s] of risky assets. I have equities. You can think of something like the S and P 500. And then I have a
+[  361.13s ->   369.05s] multi asset basket. You can think of equities and bonds. I want you to observe the first blue frontier.
+[  369.05s ->   376.97s] This is going to be the equities frontier. Now, take a look at the multi asset frontier. It is a superset of
+[  377.61s ->   382.17s] the set of equities. It contains all of the equities plus bonds.
+[  383.48s ->   388.12s] Okay. Well, what do you notice about the frontiers? Well, it is contained within
+[  388.12s ->   393.88s] the multi asset frontier. That is the equity frontier. This is not a coincidence. This is not
+[  393.88s ->   400.84s] an accident. This is by construction of this framework. You can observe that when we achieve
+[  400.84s ->   407.64s] diversification benefit by including more risky assets, the curve is going to shift outward. It
+[  407.64s ->   416.28s] is going to change the optimal portfolio. You can see the equities max sharp in this frontier is 0.59.
+[  416.28s ->   423.96s] You can see in the multi asset frontier. It is 0.74. If you're having trouble with the idea that a
+[  423.96s ->   429.40s] subsets frontier will always be contained within a supersets frontier, just think of it this way.
+[  429.96s ->   438.52s] If the frontier wasn't more efficient with a superset of assets, then we would not be able to achieve
+[  438.52s ->   443.80s] the frontier that was contained within it. But the frontier that's contained within that superset
+[  443.80s ->   450.60s] is always available. We don't have to use the additional risky assets. So at worst,
+[  450.60s ->   457.72s] we're just going to be able to replicate this subset's frontier. At best, we'll be able to shift
+[  457.72s ->   464.60s] the frontier out if the inclusion of additional risky assets provides some diversification benefit.
+[  464.60s ->   470.44s] And that's exactly what you're observing here. So this is the relationship. This is how you can
+[  470.44s ->   475.24s] think about the framework in the context of equities, multi asset and the market portfolio.
+[  475.24s ->   481.24s] The true theoretical market portfolio is a structure that we can't actually observe.
+[  481.24s ->   486.84s] So what we have here is just two subsets, a multi asset subset of equities and bonds,
+[  486.84s ->   490.92s] and then a subset of equities. And we can see the impact of the framework
+[  490.92s ->   494.84s] geometrically here within the different frontiers.
+[  495.72s ->   501.80s] So this is a really big deal, right? Because we're going to want to optimize across
+[  502.52s ->   508.84s] all risky assets, right? And we're not going to be able to achieve the theoretical market portfolio
+[  508.84s ->   514.04s] structure, but we can certainly get close. The more assets that we can add that offer some
+[  514.04s ->   521.00s] diversification benefit, right? So why don't we do that? We just construct the largest superset
+[  521.00s ->   529.16s] possible to get the efficient frontier that shifts out the most that offers the highest risk to reward
+[  529.16s ->   537.56s] ratio. Seems reasonably consistent within this framework, but there's a big issue with that.
+[  537.56s ->   543.00s] And it comes in the context of expected returns. We're going to talk about that in a moment, but
+[  543.64s ->   549.80s] there's a more important question related to what I had mentioned with respect to Warren Buffett at the
+[  549.80s ->   558.28s] start of this video. And that is, should we always diversify? We hear everybody championing
+[  558.28s ->   565.64s] diversification. We even see in the literature a cross-sectional effect of holding single stocks,
+[  565.64s ->   572.52s] bearing idiosyncratic risk, offering negative cross-sectional returns. One of the most puzzling
+[  572.52s ->   581.32s] pieces of the academic literature in the context of these portfolio theory frameworks. So this question
+[  581.32s ->   590.84s] is particularly relevant. Theory says we should diversify, but practice says otherwise. Consistent
+[  590.84s ->   596.04s] with the efficient frontier and mean variance optimization that we've discussed so far, mean
+[  596.04s ->   601.96s] variance optimization just meaning selecting that tangency portfolio, that star, the one with the optimal
+[  601.96s ->   608.92s] risk to reward ratio. Cap M says that this market exposure that is bearing exposure to the market
+[  608.92s ->   616.20s] factor is going to explain 100% of variation in your returns. I'm not talking about a noise component.
+[  616.20s ->   622.28s] I'm just saying that this is the only factor that matters. And if this is true, then we should always
+[  622.28s ->   628.68s] diversify, right? Well, in practice, this isn't the case. It really only explains roughly 70,
+[  628.68s ->   635.80s] maybe 80% of variation. And the remaining variation is noted by Fama French. They won the Nobel prize for
+[  635.80s ->   643.72s] this are contributed to other hidden factors. Now, for years, portfolio managers, traders, they
+[  643.72s ->   649.88s] considered it to be their selection skill, but modern long, short strategies having net zero market
+[  649.88s ->   657.08s] exposure are effectively just wrapped alternative beta exposure. They're just selecting what exposure
+[  657.08s ->   666.28s] to have at any given time. Now, my personal take on whether or not you should diversify is based on
+[  666.28s ->   671.88s] your goals. Diversification for investing, that is wealth preservation. You can be passive, you can be
+[  671.88s ->   678.04s] ignorant. This aligns great with Buffett's take. Diversification is protection against ignorance. If you have
+[  678.04s ->   684.60s] no idea what you're doing, then why should you pick a company? You don't know what undervalued looks like.
+[  684.60s ->   691.48s] You don't know what overvalued looks like. There's no reason to do that. But concentration that is not
+[  691.48s ->   700.84s] diversifying, concentrating your wealth in a few picks that you have high conviction on is used for scaling
+[  700.84s ->   708.84s] your wealth. But you do have to be active and correct. So this works also in Buffett's quote.
+[  708.84s ->   715.80s] He claims diversification makes little sense if you know what you are doing. And he is largely correct.
+[  715.80s ->   723.00s] Now, that being said, many even investment professionals do not have any idea what they are
+[  723.00s ->   729.96s] doing, and they should likely just diversify. What is the difference? Why is this framework about
+[  730.52s ->   736.60s] reality consistent? Now, we're kind of deviating away from modern portfolio theory. We're talking
+[  736.60s ->   743.56s] about reality now, the difference between diversification and just concentration in a few
+[  743.56s ->   749.64s] picks. What does this look like for your equity curve over time? Well, I have two animations for you
+[  749.64s ->   755.72s] here. One on the left is a simulation of a series of sample paths. We also have the mean path of just
+[  755.72s ->   760.44s] trading effectively that market portfolio, that market exposure. In this case, when I say market
+[  760.44s ->   766.36s] portfolio, I'm talking about reality. I'm talking about maybe US equities. And on the right, I'm
+[  766.36s ->   774.36s] making concentrated bets in a few equities that I consider to be undervalued. Now, it should be clear
+[  774.36s ->   780.28s] that if we concentrate our wealth and we are actually good at what we're doing, we're going to be able to
+[  780.28s ->   785.88s] grow at a significantly faster pace than just holding a market portfolio. And that's exactly
+[  785.88s ->   792.28s] what you see here. But fundamentally, the problem is we have to be correct. And what does correct
+[  792.28s ->   797.56s] actually mean? Well, if we're not correct, we're going to be eating volatility drag and we're probably
+[  797.56s ->   804.28s] going to stop out before we even have the opportunity to reach the long run and accumulate
+[  804.28s ->   810.52s] whatever edge we think we have in selecting that concentration, which is why most are just better
+[  810.52s ->   817.88s] off bearing this market exposure over a long period of time. The note here is in selection and
+[  817.88s ->   824.52s] concentration, you are probably not good at this. This is what large investment firms quite literally
+[  824.52s ->   830.36s] do on a day to day basis. They try to forecast expected returns. If you are trying to figure out
+[  830.36s ->   835.48s] whether a company is undervalued or overvalued, congratulations, all you're doing is trying to
+[  835.48s ->   843.08s] forecast expected returns. Like I said earlier, we don't really have a good way to model in a consistent
+[  843.08s ->   851.08s] and stable way forward looking returns, which is why this starts to come down to performance and your ability
+[  851.08s ->   858.92s] to perform. It's not even about necessarily historic data. It's about what you're doing right now and what
+[  858.92s ->   867.88s] you're about to realize next week, month, year in bearing this concentrated portfolio. This is where
+[  867.88s ->   875.56s] the notion of beat the market comes in, but that also sits in the space of the difference between bearing
+[  876.12s ->   882.20s] beta exposure and trading alpha. There's a difference between investing and trading. I have plenty of videos
+[  882.20s ->   887.48s] discussing that notion. If you're interested, I'll leave links to them in the description below.
+[  887.48s ->   892.04s] We're going to return to mean variance optimization so we can approach Black Litterman
+[  892.04s ->   897.48s] in a moment, but that was a very necessary discussion. The key takeaways are we don't have
+[  897.48s ->   905.40s] a good measure of forward looking expected returns. If we did, then our job as investment professionals
+[  905.40s ->   911.96s] would be very easy. We would just maximize the Sharpe ratio based on forward looking expected returns,
+[  911.96s ->   918.28s] and we would go golfing with our clients and collect a nice fee. But that isn't how the space functions.
+[  918.28s ->   925.40s] That's because these are companies and operations. These are not distributions. That is the space. It is
+[  925.40s ->   935.40s] non-stationary. The second big takeaway in the context of concentration versus diversification is
+[  936.04s ->   944.84s] understanding that subjectivity and performance is just as important as structure. What do I mean by
+[  944.84s ->   951.24s] this? Well, think about a baseball player, a football player, a basketball player. Last year,
+[  951.24s ->   960.52s] let's say they had an insane season outperformed by every metric. What do you expect them to do this
+[  960.52s ->   966.52s] year? Well, you would probably expect them to improve or at least replicate that performance, right?
+[  967.24s ->   973.32s] It comes down to performance at the end of the day, your ability to make informed decisions in the
+[  973.32s ->   980.84s] face of uncertainty. The outcome doesn't speak for the quality of those decisions. It's a very important
+[  980.84s ->   988.20s] idea. So when we talk about your performance last year, you may have made fantastic decisions, but the outcome
+[  988.20s ->   995.40s] doesn't speak for the decision-making process. This is where knowledge and experience come in to play.
+[  995.40s ->  1002.36s] It's not just about historical data, historical performance. It's about your ability to swing and
+[ 1002.36s ->  1009.88s] connect with the ball today. That is a very important idea. And it's often overlooked in this space.
+[ 1009.88s ->  1017.00s] Subjectivity and discretionary components of the decision-making process are as important as they were
+[ 1017.00s ->  1023.08s] before any of these quantitative frameworks were around. Understanding this, we can now appreciate
+[ 1023.08s ->  1028.28s] the difference between mean variance optimization, the downfalls of mean variance optimization in
+[ 1028.28s ->  1034.60s] practice, and the extension to a more Bayesian approach, the Black-Litterman model. So what is
+[ 1034.60s ->  1040.20s] required for classical mean variance optimization? Well, we need expected portfolio returns. We don't
+[ 1040.20s ->  1044.28s] really have this in a forward-looking sense. So we estimate it from historical data, but
+[ 1044.28s ->  1050.12s] isn't historical data not indicative of future performance for all of the reasons even I just
+[ 1050.12s ->  1057.08s] mentioned? Well, exactly. Portfolio volatility and covariance is something else we need to be able to
+[ 1057.08s ->  1063.40s] actually develop this efficient frontier, and the Sharpe ratio is what we look to maximize. The
+[ 1063.40s ->  1072.84s] instability in the tangency portfolio comes from the estimation of expected returns. What do I mean by this?
+[ 1072.84s ->  1078.76s] Well, like I just said, historical data isn't indicative of future performance. If it was,
+[ 1078.76s ->  1085.32s] I would just be triple long NVIDIA based on their explosive growth. I would look at the historic
+[ 1085.32s ->  1090.52s] returns. I would say, this is fantastic. My job is incredibly easy. I'm just going to hold 100%
+[ 1090.52s ->  1096.84s] allocation to NVIDIA, but clearly the space doesn't work like that. Historic expected returns
+[ 1096.84s ->  1104.84s] are a proxy at best to forward-looking expected returns. In reality, it has really nothing to do
+[ 1104.84s ->  1112.76s] with what is to come. And this is the downfall of this optimization. This is what I call Roman's
+[ 1112.76s ->  1118.92s] critique. We don't actually have forward-looking expected returns. So what we do is we estimate it
+[ 1118.92s ->  1125.08s] poorly from historical data. We look at the covariance matrix, which tends to be more stable than the
+[ 1125.08s ->  1131.08s] vector of expected returns. And what you'll notice is, and this is probably the most important thing
+[ 1131.08s ->  1138.44s] that you're going to learn today, is in the context of optimization and building models, if you learn
+[ 1138.44s ->  1144.60s] structure, you should be able to perturb the parameter space that is the inputs to your model
+[ 1144.60s ->  1152.60s] and only observe a slight decay in performance. If this is true, you've actually learned something.
+[ 1152.60s ->  1158.76s] This is not a crazy idea. This comes from data science. If you have a robust model and you change
+[ 1158.76s ->  1165.16s] the parameters slightly, you shouldn't observe insane performance degradation. If you do, you've
+[ 1165.16s ->  1173.40s] overfit your model to noise. What you're seeing here is the downfall of mean variance optimization
+[ 1173.40s ->  1180.12s] in this view. On the left here, we have our original frontier. I come up with this tangency
+[ 1180.12s ->  1187.24s] portfolio, this star portfolio, and this is based on real equity data. I have a composite of
+[ 1187.24s ->  1192.36s] a bunch of different stocks I've queried from interactive brokers. If you'd like to run the
+[ 1192.36s ->  1197.00s] code in the Jupiter notebook, you'll need access to the trader workstation. I'll leave a link in the
+[ 1197.00s ->  1201.32s] description below if you'd like to get started with interactive brokers. They're the only broker I use.
+[ 1201.32s ->  1205.88s] I've been with them for over 10 years. I use them for all of my quant builds. Check them out. Highly
+[ 1205.88s ->  1210.60s] recommend them. But what you're observing here is on the left, after running this optimization,
+[ 1210.60s ->  1221.07s] I have a 60% weight in well and roughly no weight in AVGO or Google. What I'm going to do is perturb the
+[ 1221.07s ->  1227.47s] parameter space. I'm going to inject a little bit of noise. I should only observe a very slight change in
+[ 1227.47s ->  1236.27s] these optimal allocations. So I add 0.2% noise to the parameter space. Look at my allocations. It went from
+[ 1236.27s ->  1249.47s] 60% to 37%. Google went from 0% to 15%. AVGO went to almost 10%. The smallest perturbation in the parameter
+[ 1249.47s ->  1259.87s] space led to a wildly different allocation. This is because you're not learning anything structurally.
+[ 1259.87s ->  1266.75s] These are not measures of forward looking returns. There's nothing to learn here. In fact, if you look
+[ 1266.75s ->  1273.15s] at this portfolio out of sample, after you've optimized it, you're going to see insane performance
+[ 1273.15s ->  1280.59s] degradation. Here's an animation to show you exactly what's going on. I've found the tangency portfolio
+[ 1280.59s ->  1289.55s] in a six month sample period, 3.94 sharp ratio. Okay. Well, I'm going to hold that allocation out of
+[ 1289.55s ->  1296.59s] sample. Now what happens? Let's take a look at our portfolio. You can see that the out of sample sharp is
+[ 1296.59s ->  1303.55s] 0.83. The out of sample market sharp is 1.09. We couldn't even beat the equity market portfolio.
+[ 1303.55s ->  1311.15s] The portfolio beta is 1.5 and the alpha P value is 0.91. There is no statistically significant alpha.
+[ 1311.15s ->  1319.15s] And really we're just overexposed to beta. This is over fitting. This is classically what is wrong with
+[ 1319.15s ->  1326.03s] MVO in practice. What do you mean Roman by there is no forward looking expected return? Well,
+[ 1326.03s ->  1331.95s] remember we're dealing with reality. There is no distribution. We model a dice roll as a
+[ 1332.43s ->  1337.31s] uniform, a discrete uniform distribution. And by the law of large numbers, the central limit theorem,
+[ 1337.31s ->  1342.99s] there's physical independence, stochastic independence. It will converge asymptotically.
+[ 1342.99s ->  1349.23s] Our probabilities and statistics are correct in that sense, assuming it really is a fair die.
+[ 1349.23s ->  1355.79s] Same is true for a coin and a coin flip. But what about stocks and stock returns? There is
+[ 1355.79s ->  1362.91s] no data generating distribution. One of the things that drives me absolutely mad in academia is
+[ 1362.91s ->  1370.35s] displaying the distribution, the histogram of stock returns, observing the excess kurtosis,
+[ 1370.35s ->  1377.55s] the fat tails. That is not a distribution. You've just collapsed an unfathomable number of dimensions
+[ 1377.55s ->  1385.71s] into a 2D chart. And you're going to use that to model your risk. It is a time variant process.
+[ 1385.71s ->  1393.23s] It is a composite of quite literally the, it's unfathomable, the number of deterministic decisions,
+[ 1393.23s ->  1400.19s] maybe even random decisions that go into producing the returns on a daily basis. That distribution that
+[ 1400.19s ->  1409.95s] you observe in 2D is like collapsing of an infinite dimensional object down into just a 2D space. It
+[ 1409.95s ->  1416.75s] makes absolutely no sense. And it confuses students. So what am I talking about then, if there are no
+[ 1416.75s ->  1422.43s] forward looking expected returns, if there is no distribution? Well, we use probability and statistics
+[ 1422.43s ->  1427.95s] to try to make informed decisions about different states of the world that we could operate in. It's very
+[ 1427.95s ->  1433.15s] easy to use asymptotics to think about this. We think about something like Nvidia. Could the stock
+[ 1433.15s ->  1439.23s] price of Nvidia triple tomorrow? Well, no. The amount of wealth required to produce that type of value
+[ 1439.79s ->  1445.47s] is not available. The same is true with a negative equity value tomorrow for Nvidia.
+[ 1445.47s ->  1450.91s] The probability of both of those states of the world are effectively zero. But as we tighten those
+[ 1450.91s ->  1459.47s] bounds around the stock price today, those states of the world become increasingly likely. But what
+[ 1459.47s ->  1469.47s] probabilities should we assign to them? We don't know, and no investor does. This is a case for fundamental
+[ 1469.47s ->  1475.87s] analysis and understanding the dynamics and growth of the business and its operations in itself, rather than just
+[ 1475.87s ->  1484.75s] looking at a time series of returns. Why? Because probability and statistics will fail. What you're
+[ 1484.75s ->  1491.55s] observing here is the failure of the law of large numbers and subsequently the central limit theorem in
+[ 1491.55s ->  1500.19s] practice. There is no long run mean for the cumulative return to converge to. You can see during different
+[ 1500.19s ->  1508.19s] regimes. It jumps up. It jumps down. It is not going to converge to a positive value. It is just going to
+[ 1509.07s ->  1515.79s] effectively go wherever the market exposure tells it to. It's like the wind blowing. We don't actually get
+[ 1515.79s ->  1522.91s] to choose what that looks like. This is in the context of US equities. You can see the S&P 500 price
+[ 1522.91s ->  1530.59s] path below here. This is the equity market portfolio. Probability and statistics is a framework, a
+[ 1530.59s ->  1537.87s] structure imposed on this space to make informed decisions about different states of the world.
+[ 1537.87s ->  1545.31s] That framework doesn't actually exist. There is no data generating distribution. We are making assumptions
+[ 1545.31s ->  1552.11s] and we are deriving incorrect probabilities and statistics in hopes of making better decisions.
+[ 1552.11s ->  1557.07s] Hopefully at this point, I've convinced you that a fundamental and quantitative approach
+[ 1557.07s ->  1564.27s] can be very effective for concentration over just classical diversification and certainly over just
+[ 1564.27s ->  1571.07s] mean variance optimization. We can now approach this idea of the Black-Litterman model. Instead of
+[ 1571.07s ->  1578.51s] operating only on historical expected returns, which we said aren't indicative of future returns, Black-Litterman
+[ 1578.51s ->  1585.47s] is going to include a qualitative component, our ability to express our subjective views. What is
+[ 1585.47s ->  1593.95s] difficult to quantify, we can now rank and impact the optimal portfolio in the efficient frontier. In other
+[ 1593.95s ->  1600.11s] words, we're not just optimizing based on historic data, but there is a quantitative representation of our
+[ 1600.11s ->  1608.35s] subjective forward-looking expectations. This can be systematic, but it doesn't have to be. It can be based on
+[ 1608.83s ->  1617.15s] the analysis of a desk on a sector, the PM, the CIO, the list goes on. So like we said earlier, classical
+[ 1617.71s ->  1623.79s] mean variance optimization is just going to look at the historic expected return vector and the subsequent
+[ 1623.79s ->  1633.95s] covariance matrix. But the magic, if you will, the posterior, is going to combine P, Q, and Omega,
+[ 1633.95s ->  1642.51s] along with a scaling hyperparameter. P is going to encode the asset views, Q is going to be the implied
+[ 1642.51s ->  1651.47s] returns, and Omega is going to be the confidence. You can see if we make that zero, then this is going
+[ 1651.47s ->  1657.71s] to turn into the identity matrix. We're just going to be left with Pi. What is Pi? Well, if you don't have
+[ 1657.71s ->  1664.11s] any subjective views, we're going to be left with implied expected return, market equilibrium.
+[ 1664.67s ->  1672.43s] This is the magic of the Black Litterman model. We are anchoring now the optimization
+[ 1672.99s ->  1678.75s] in this market portfolio. What we're doing effectively is backing out this market portfolio.
+[ 1678.75s ->  1684.35s] We're assuming that investors in aggregate are going to be holding this tangency portfolio.
+[ 1684.83s ->  1691.15s] That is going to be our anchor now. We're just not going to wander aimlessly in the optimization space.
+[ 1691.15s ->  1697.95s] Instead, we are going to start at that portfolio, and then our subjectivity and the confidence in our
+[ 1697.95s ->  1704.03s] subjectivity is going to allow us to deviate. You're going to see this efficient frontier looks
+[ 1704.03s ->  1709.79s] very similar to what we saw earlier, but we're dealing now with implied return. We're not dealing
+[ 1709.79s ->  1716.75s] with a situation where we just have this composite of historic returns. Instead, we're backing out
+[ 1716.75s ->  1725.31s] the equilibrium sharp ratio. We're trusting the market's consensus on what optimal is to start with,
+[ 1725.31s ->  1731.95s] and then we can express our subjective views and deviate from it. It's a very important idea,
+[ 1731.95s ->  1737.63s] and the reason why this is so useful is because if we look at the equilibrium returns step-by-step,
+[ 1737.63s ->  1744.19s] we start by assuming investors collectively hold this market or tangency portfolio, and typically
+[ 1744.19s ->  1750.91s] it's weighted by market capitalization, and we reverse engineer this equilibrium portfolio
+[ 1750.91s ->  1758.83s] using the covariance matrix of returns and a risk aversion coefficient. Now, the particularly keen
+[ 1758.83s ->  1764.59s] among us will note, hey, like the covariance matrix of returns relies on the expected return,
+[ 1765.39s ->  1771.63s] but we estimate the expected return from what? Historic data. Well, the covariance matrix tends to be
+[ 1771.63s ->  1780.67s] more stable than the raw vector of historic returns, and that contributes to the stability within this
+[ 1780.67s ->  1785.39s] Black-Litterman model, especially in the context of allocations. What I want you to notice here is
+[ 1785.39s ->  1796.00s] I'm going to perturb the original mean variance optimization and the Black-Litterman portfolio
+[ 1796.00s ->  1802.00s] post-optimization. I want you to see that if we take a look at the shift in weights, there's a 17%
+[ 1802.96s ->  1813.20s] total subset shift in weights by perturbing the space by 0.5%. What happens when we perturb the Black-Litterman
+[ 1813.20s ->  1822.16s] weights? Well, the total subset shift is going to be roughly by 0.5%. The Black-Litterman model is going
+[ 1822.16s ->  1828.96s] to induce far more stability by the accompanying assumption of investors holding that tangency
+[ 1828.96s ->  1837.28s] portfolio in equilibrium. Now it comes down to what? The efficacy of our subjective views. What is the
+[ 1837.28s ->  1844.96s] impact then of this subjective tilting? Well, we can pick whatever we would like as a favored-unfavored
+[ 1844.96s ->  1853.68s] asset in P. We can then enter our subjective view of forward return. This is the performance component.
+[ 1853.68s ->  1861.28s] If I am very good at observing undervalued companies, I can induce those views in a quantitative
+[ 1861.28s ->  1868.80s] capacity within this framework using Q. And then I can also determine the uncertainty of those views
+[ 1868.80s ->  1877.04s] in matrix omega. And then I can produce the optimal portfolio within the Black-Litterman framework.
+[ 1877.04s ->  1883.12s] What I want you to see here is on the left, I have equilibrium prior, so no subjective views. I have that
+[ 1883.12s ->  1889.28s] weight in AVGO. This is just a subset of the risky assets in my universe. On the right,
+[ 1889.28s ->  1896.32s] I have a hard tech tilt. This is my subjective view that tech is going to outperform. And this is what
+[ 1896.32s ->  1901.92s] is going to happen to the allocations. You can see Google has a significantly larger allocation.
+[ 1901.92s ->  1908.32s] This is only a subset of maybe two or three stocks by sector, which is why the weight in Google is so
+[ 1908.32s ->  1914.80s] arbitrarily high, especially if I have a tech tilt. But of course, in a broader sense, if I have a larger
+[ 1914.80s ->  1921.68s] set of risky assets, if it's just equities, multi asset, what have you, we would see more generous
+[ 1921.68s ->  1928.56s] allocations toward all of the risky assets within the set. And that's because we still have this
+[ 1928.56s ->  1935.52s] overarching goal, the overarching goal of producing this tangency point, this tangency portfolio,
+[ 1935.52s ->  1942.16s] the optimal portfolio, especially in the context now of our subjective views.
+[ 1942.16s ->  1947.28s] That is the power of the Black Litterman model. As an extension to classical portfolio theory,
+[ 1947.28s ->  1954.24s] we are better able to approach the real world with our expertise, our knowledge and our experience.
+[ 1954.24s ->  1961.60s] I want to highlight here decision making as performance and models as a filter model informed
+[ 1961.60s ->  1966.64s] decision making. I'm not going to read you this as a passage. If you want to check this Jupiter
+[ 1966.64s ->  1973.28s] notebook out, you can, but I want to highlight something very important about spaces that deal
+[ 1973.28s ->  1980.56s] with informed decision making in the face of uncertainty. You could be the best poker player
+[ 1980.56s ->  1985.84s] in the entire world. It really is entirely possible. You could have an incredible edge,
+[ 1985.84s ->  1992.96s] you could make the best decisions, but the outcome doesn't have to go in your favor. You could be
+[ 1992.96s ->  1999.44s] incredibly unlucky. Now, the size of your edge will dictate the probability of you walking that sample
+[ 1999.44s ->  2005.68s] path. But in any case, we have to keep this in mind. If you have a series of negative results,
+[ 2006.32s ->  2012.80s] that isn't necessarily because your decision making process is wrong. You don't know what the outcome is
+[ 2012.80s ->  2017.36s] going to be. You made the best decision with the information you had available to you. If you didn't,
+[ 2017.36s ->  2022.88s] you would be absolutely bananas. You would just be trying to make bad decisions. No, nobody optimizes
+[ 2022.88s ->  2028.80s] for regression, right? So, especially in this space, right, you can think about it in the broader
+[ 2028.80s ->  2035.12s] sense of decision making, but in particular with spaces like investing, trading, poker is a fantastic
+[ 2035.12s ->  2041.76s] example. You cannot result. You cannot let the outcome speak for the quality of the decision making
+[ 2041.76s ->  2047.92s] process. Now, the larger question is going to come down to the system itself. If it's ergodic,
+[ 2047.92s ->  2055.12s] non-ergodic, if the quality of your decision making process is actually leading you to a large enough
+[ 2055.12s ->  2062.88s] edge that you can experience over time to build wealth or experience the outcome of those positive
+[ 2062.88s ->  2068.96s] decisions in the face of uncertainty, that is the larger question. And that comes down to the efficacy
+[ 2068.96s ->  2074.00s] of your decision making process. And that is something that you are going to have to determine
+[ 2074.00s ->  2079.52s] for yourself by understanding these different frameworks, explaining the quality of those
+[ 2079.52s ->  2084.16s] decisions, and of course, mastering your quantitative skills.
+[ 2084.16s ->  2088.96s] Too long to watch. Here's your executive summary. MBO is an error maximizer. Standard mean variance
+[ 2088.96s ->  2094.40s] optimization treats historical noise as structural truth, causing portfolio weights to flip violently in
+[ 2094.40s ->  2101.84s] response to tiny random data jitters. That is because it learns nothing in the data science sense.
+[ 2101.84s ->  2107.76s] It is overfitting historical data. It's overfitting noise. The equilibrium anchor,
+[ 2107.76s ->  2114.08s] pi, the Black-Litterman model replaces noisy historical means with implied equilibrium returns,
+[ 2114.08s ->  2120.00s] which are back-calculated from current market weights to create a stable neutral starting point.
+[ 2120.80s ->  2125.36s] In terms of stability, because the Black-Litterman model anchors to the market consensus,
+[ 2125.36s ->  2131.52s] the efficient frontier remains structurally robust. It requires significant evidence,
+[ 2131.52s ->  2137.12s] not just a perturbation of the parameter space, to shift the optimal portfolio away from the
+[ 2137.12s ->  2144.48s] diversified benchmark, unlike mean variance optimization, which is very eager to throw you off a cliff.
+[ 2145.20s ->  2150.96s] The equilibrium state represents the global consensus distribution. This is still a framework that is
+[ 2150.96s ->  2156.40s] imposed. The portfolio you should hold if you admit you have no unique information that the rest of
+[ 2156.40s ->  2163.28s] the market doesn't already have. The passive view, this idea of protection against ignorance.
+[ 2164.00s ->  2170.64s] Expertise is then added by tilting the stable anchor. In the Black-Litterman model, you inject specific
+[ 2170.64s ->  2177.36s] views. For example, tech will outperform to warp the frontier with precision, rather than letting
+[ 2177.36s ->  2183.36s] historical noise dictate your conviction and performance.
+[ 2183.36s ->  2189.12s] Some future topics, technical videos, and other discussions to look forward to. I would like to do
+[ 2189.12s ->  2195.36s] more on factor modeling from a French Carhartt. I have talked about the Poisson process and Hawks
+[ 2195.36s ->  2200.88s] process at length. I'd like to continue with those jump processes, those jump diffusion models. Merton,
+[ 2200.88s ->  2208.40s] Bates, even talk about the market-making models from the academic literature. If there is interest,
+[ 2208.40s ->  2213.36s] I would also like to get back to more qualitative videos. My first year as a quant, maybe some of
+[ 2213.36s ->  2220.64s] the big projects that I've worked on, why hedge funds are actually secretive, and even get into
+[ 2220.64s ->  2227.60s] more of the quantitative finance theory, rough path theory, applications of signatures, the sig vol
+[ 2227.60s ->  2234.80s] model, calibration pricing, and maybe even some more empirical work, trading with alternative data sources,
+[ 2234.80s ->  2240.16s] pairs trading, stat arb. I think those would make for good quant strats videos, that new series that
+[ 2240.16s ->  2246.08s] started recently. Maybe talk about more data science topics, data cleaning, outlier handling,
+[ 2246.08s ->  2252.32s] some practical issues in multi-asset portfolio backtesting, the notion of harvesting risk premium.
+[ 2253.20s ->  2256.88s] And don't worry, I haven't forgotten about our interactive brokers video. Recently, we've talked
+[ 2256.88s ->  2261.68s] about how to fetch historical market data from interactive brokers. I have a series of projects I'd like to
+[ 2261.68s ->  2268.00s] work on in that space as well, but the next videos will largely be based on your guys' interests, so if
+[ 2268.00s ->  2274.16s] you have any you'd like to see in the coming weeks and months in any of the accompanying series,
+[ 2274.16s ->  2278.88s] please let me know in the comments below. And that's going to do it for this video on the Black
+[ 2278.88s ->  2284.00s] Letterman model versus classical mean variance optimization. I hope you enjoyed. I hope you learned
+[ 2284.00s ->  2288.08s] something. This video certainly took a lot of effort to put together, so if you enjoyed it and you want to
+[ 2288.08s ->  2292.56s] see more like it in the future, please like, comment, subscribe, share. Again, it helps me out
+[ 2292.56s ->  2298.56s] tremendously. It is always greatly appreciated. If you'd like to master your quantitative skills
+[ 2298.56s ->  2304.64s] for trading and market making roles, check out QuantGuild.com. Other than that, I want to thank you
+[ 2304.64s ->  2317.12s] so much for watching and I'll see you in the next video.

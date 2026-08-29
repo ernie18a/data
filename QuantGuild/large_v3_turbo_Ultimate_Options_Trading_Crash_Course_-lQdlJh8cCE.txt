@@ -1,0 +1,493 @@
+[    0.46s ->     6.45s] hey guys roman here quantitative researcher and trader founder of quant guild today i'm
+[    6.45s ->    12.45s] going to give you the ultimate options crash course we're going to start with the 101 stuff
+[   12.45s ->    18.53s] that is how these contracts actually function what it is that's actually exchanging hands
+[   18.53s ->    24.29s] when you buy or sell these contracts we'll talk about the payoff diagrams profit diagrams
+[   24.29s ->    29.97s] and of course how we can construct different strategies using these types of contracts
+[   29.97s ->    35.97s] we'll go over long and short positions the value of these contracts over time and the general notion
+[   35.97s ->    44.13s] of pricing and we'll wrap up with an important discussion on market equilibrium and probabilities
+[   44.93s ->    52.05s] let's get started first by talking about this idea of the contracts function now there are a lot of
+[   52.05s ->    59.89s] different options contracts you have europeans americans bermudans asians more exotic contracts
+[   59.89s ->    66.93s] barrier options rainbow options the list goes on you can structure these contracts to have any sort
+[   66.93s ->    72.69s] of esoteric payoff that you'd like but the contracts that we're going to be discussing today are
+[   72.69s ->    86.35s] specifically european options these are standardized on exchanges so when you open up your interactive
+[   86.35s ->    91.47s] brokers terminal and you pull up the options trader you're taking a look at an options chain
+[   92.03s ->   100.43s] of these european options contracts so what does this contract specify and how is it different from
+[  100.43s ->   108.19s] something like an equity well you have generally speaking two contract types you have your call options
+[  108.91s ->   117.07s] and you have your put options your put options are effectively going to be a bet that the underlying
+[  117.07s ->   125.55s] asset is going to go down and your call option is going to be a bet that it goes up that's just in plain english
+[  125.55s ->   132.43s] but what is the actual function of the contract itself well the european option is going to give the
+[  132.43s ->   143.47s] holder of either of these styles of contract the right but not obligation to buy or sell an underlying
+[  143.47s ->   151.39s] asset at a predetermined price called the strike price at some time in the future known as the
+[  151.39s ->   159.31s] maturity so there's a lot going on there what are the parameters for these contracts well we have the
+[  159.31s ->   166.11s] right but not obligation that is the function of this contract and we have a price known as the strike
+[  166.11s ->   178.59s] price the strike price for both a call and a put for a call option this is the price that we are able to
+[  178.59s ->   187.31s] buy at for a put option it is the price that we are able to sell at we also have a maturity date baked
+[  187.31s ->   199.50s] into the contract we will specify this as capital t this is the maturity so these contracts are very
+[  199.50s ->   205.82s] similar the only difference is the call is the right but not obligation to buy and the put is the right
+[  205.82s ->   212.62s] but not obligation to sell so what does this look like on some sort of timeline if i was to draw this
+[  212.62s ->   220.08s] out as a timeline let's say this is time capital t in the future let's talk about a few different states
+[  220.08s ->   227.44s] of the world so this is t equals zero that's right now and this is going to be the maturity for these
+[  227.44s ->   237.22s] contracts let's say that we buy a call option today and let's say that the strike price is going to be
+[  238.66s ->   249.36s] 200 the underlying asset is going to be nvidia and the time to maturity we will just say t and we can
+[  249.36s ->   257.12s] make this maybe even just one month so instead of t over here i'll just put one month now a lot can happen
+[  257.12s ->   264.08s] over the next month but let's start with the basics and work our way up we have this call option
+[  264.08s ->   270.64s] contract the strike price is 200 and the underlying is currently trading at 200. let's suppose that over
+[  270.64s ->   280.32s] the next month the underlying ends up at 210 dollars what does this mean for our call option well remember
+[  280.32s ->   289.84s] we have the right but not obligation to buy at 200 what is actually happening at expiration here well
+[  289.84s ->   297.84s] if we have it such that the underlying asset is above the strike price we're going to want to exercise
+[  297.84s ->   306.00s] that right in other words we're going to be able to buy at 200 and immediately sell at 210 and we're
+[  306.00s ->   312.00s] going to be able to collect that difference as profit so we're going to end up with 10 profit but
+[  312.00s ->   318.24s] these options are standardized on exchanges they're sold in lots of 100 so that means that you're actually
+[  318.24s ->   325.44s] dealing with 100 shares of nvidia so you're going to multiply this profit by 100 and you will have a
+[  325.44s ->   334.64s] 1 000 payday what is actually happening mechanically here you are literally buying 100 shares for
+[  335.20s ->   342.72s] 200 200 that is your right specified within this call option contract and then what you're doing is
+[  342.72s ->   350.32s] you're going into the market and selling it at the 210 that it's currently trading at that is literally
+[  350.32s ->   359.20s] how these contracts function you are going to end up buying 100 shares at the strike price that is your
+[  359.20s ->   366.00s] right and then if you wanted to immediately cash out then you would go into the market and sell it at
+[  366.00s ->   371.12s] the prevailing market price at that point in time one month from now we're analyzing the case that it is
+[  371.12s ->   379.09s] to 10. so that is literally the contract function and understanding that is really important because
+[  379.09s ->   386.21s] you can construct a lot of strategies should you have the underlying asset already
+[  386.21s ->   391.73s] already in your account and i've talked about that on this channel before i've talked about covered
+[  391.73s ->   397.73s] calls and we're starting to get into some more interesting options strategies but understanding
+[  397.73s ->   403.33s] the basics of how these contracts function is very important before you approach those because
+[  403.33s ->   409.09s] you need to understand that there's actually an exchange of cash for shares that's what's going on
+[  409.09s ->   413.17s] here we're going to talk about the payoff and profit diagrams in a moment and then strategies
+[  413.81s ->   419.65s] but for now understanding that literally shares are exchanging hands when you have this call options
+[  419.65s ->   427.01s] contract you are going to be able to buy the underlying at the strike price you must buy it in a lot of 100
+[  427.01s ->   432.05s] and then if you wanted to go into the market and immediately sell it that is how you collect this
+[  432.05s ->   439.97s] difference that is how these contracts function okay that is a call option that is when the underlying
+[  439.97s ->   448.50s] goes up above the strike price what about when it goes below the strike price so what happens if instead
+[  448.50s ->   459.54s] of going up to 210 nvidia goes down to 190 you have the right but not obligation to buy at 200 what does this
+[  459.54s ->   470.50s] mean for you well think about the function of the contract you are to buy 100 shares at 200 and then
+[  470.50s ->   476.34s] go into the market and immediately sell it at 190 you would lose 10 bucks per share you would lose a thousand
+[  476.34s ->   483.06s] bucks but remember it's the right but not obligation so you don't have to exercise that right if you really
+[  483.06s ->   490.02s] wanted 100 shares of nvidia why would you buy it at 200 bucks you could buy it at 190 doesn't make any
+[  490.02s ->   498.82s] sense so you're not going to end up with negative ten dollars here in a lot of 100 for a one thousand
+[  499.38s ->   506.26s] loss this is not something that you're going to do because it's your right to exercise at this price
+[  506.26s ->   515.30s] it's not an obligation so what do you do well the contract is expiring at this point in time and if
+[  515.30s ->   523.95s] the call option has a strike price above the spot price at maturity then you're just going to let it
+[  523.95s ->   529.31s] expire worthless you're not going to realize a negative cash flow here so what's going to happen is
+[  530.27s ->   537.63s] if this was the state of the world we ended up in you would end up with zero dollars so there's no loss
+[  537.63s ->   547.23s] right well not exactly because this call option is not free you have to buy it in the market and this
+[  547.23s ->   555.07s] is going to lead us into our next discussion of payoff and profit diagrams along with strategies
+[  555.63s ->   562.91s] so this is the basic function of a european option contract for put options it's the exact same
+[  562.91s ->   569.55s] thing the only difference is you have the right but not obligation to sell so you just flip this
+[  569.55s ->   580.90s] argument in other words if i had a put option here not a call option and this was the state of the world
+[  580.90s ->   585.94s] that we ended up in i would have the right but not obligation to sell at 200.
+[  587.22s ->   593.54s] which means that i can actually collect this difference i would be selling high buying back
+[  593.54s ->   601.62s] low and i would realize that ten dollar cash flow in a lot of 100 and this would be
+[  602.58s ->   612.94s] 1 000 bucks all right because effectively you are borrowing shares at 200 and then you're buying
+[  612.94s ->   619.94s] them back cheaper and then you are just going to collect the difference so that is the difference
+[  619.94s ->   626.34s] between a call and a put european options contract this is the basic contract function shares are
+[  626.34s ->   633.14s] literally exchanging hands here right these contracts specify the right but not obligation to buy or sell
+[  633.14s ->   638.26s] at a predetermined price called the strike price at a predetermined time in the future called the maturity
+[  638.26s ->   644.58s] or the expiration of the contract and depending on where the underlying asset for the contract moves
+[  644.58s ->   652.46s] will dictate the cash flow at time capital t at maturity these are financial derivatives
+[  652.46s ->   658.86s] they derive all of their value all of it from some sort of underlying asset in this case we're looking
+[  658.86s ->   670.64s] at u.s equity options okay so if that is the contract functionality how can we understand the idea of a
+[  670.64s ->   684.88s] payoff profit and how can we construct strategies let's start with this idea of a payoff diagram
+[  686.18s ->   692.50s] for a call option you're typically going to see what's known as a hockey stick diagram i'm
+[  692.50s ->   700.34s] going to draw it for you here so we have our x-axis and our y-axis our x-axis is going to be the stock
+[  700.34s ->   710.70s] price at time capital t so at this point in the future here at maturity for this contract the y-axis
+[  710.70s ->   719.87s] is going to be the payoff what does this look like well we're going to draw a line for our strike price k
+[  721.28s ->   728.40s] and if we recall for a call option any time we take a step above the strike price we get to collect that
+[  728.40s ->   734.56s] positive difference so this is actually going to be linear it's just going to be a straight line up
+[  735.44s ->   743.92s] in other words if the strike price is let's say 200 and the underlying asset ends up expiring at
+[  745.46s ->   754.10s] 201 then we are going to collect a payoff of if we go up to this line here that's going to be one dollar
+[  754.10s ->   762.56s] this follows the logic that we just walked through in this timeline but remember it's sold in lots of
+[  762.56s ->   772.72s] 100 so this would be a 100 payoff all right what happens if the underlying asset expires below
+[  773.52s ->   778.72s] the strike price well we said we're not going to realize a negative cash flow right there's no
+[  778.72s ->   784.64s] reason for us to we have the right but not obligation to exercise the contract so if we
+[  784.64s ->   790.88s] let the contract expire worthless then we're just going to have a straight line here over to the strike
+[  791.44s ->   797.20s] price so more generally without actual numbers you will see that we have the strike price
+[  798.78s ->   805.58s] and then at the strike price we are going to have a horizontal line at zero this is your classic
+[  805.58s ->   814.74s] hockey stick diagram for a european call option but this is the payoff of the contract this is not the
+[  814.74s ->   823.70s] profit of the contract what is the profit well keep in mind right the profit is going to take into account
+[  823.70s ->   828.90s] the contract's price we haven't talked all that much about the price of a contract yet we're going
+[  828.90s ->   833.54s] to build to that idea of the value of these contracts over time but for now we're just going
+[  833.54s ->   841.52s] to focus on this idea of the payoff and then we'll take a look at the profit okay so this is for a call
+[  841.52s ->   854.42s] option what about for a put option a put option is going to look like this we have a payoff we have
+[  854.42s ->   861.76s] our underlying at time capital t and if you recall we still have a strike price but this is just
+[  861.76s ->   866.24s] going to be a mirror image the entire argument is flipped for the put just like we saw it in the
+[  866.24s ->   873.52s] timeline above so it is going to be linear below the strike price and it is going to be
+[  873.52s ->   880.45s] horizontal above it at zero we're going to let it expire worthless above the strike price
+[  880.45s ->   886.93s] and we will realize a cash flow a positive cash flow anywhere the underlying asset expires below
+[  886.93s ->   891.97s] the strike price okay now one of the more interesting things that you'll see with the
+[  891.97s ->   899.41s] put options is there is certainly a capped upside because the underlying asset the equity in this case
+[  899.41s ->   907.25s] something like nvidia can't go below zero right so a call option is going to have technically
+[  907.25s ->   912.21s] infinite upside and you know it's not actually going to be infinite but technically infinite
+[  912.21s ->   919.39s] upside whereas the put option certainly has a capped upside all right now that we understand this idea
+[  919.39s ->   926.51s] of a payoff diagram let's talk briefly about the idea of a profit diagram and then we'll talk about
+[  926.51s ->   932.91s] basic options strategies so this is the payoff of the contract but this is not the pnl this is not the
+[  932.91s ->   942.35s] profit of the trade itself because for a call option or even a put option you have to pay for that
+[  942.35s ->   949.55s] contract if you want the right but not obligation so what does that do to this diagram well if you have
+[  949.55s ->   956.27s] to pay that means this entire diagram is going to shift down i'll do this in maybe orange
+[  958.40s ->   965.12s] it is going to shift down by what it's a constant so it's going to shift the entire function down
+[  965.76s ->   970.80s] and it's going to shift it down by the price of the contract what is known as the premium
+[  971.44s ->   977.20s] so if i was to draw this profit diagram it would look very similar it's just another hockey stick and
+[  977.20s ->   986.24s] maybe i'll move the strike here for now but in this case you can see in order to break even we actually
+[  986.24s ->   994.45s] need to be a little bit above the strike price the original strike price here okay so this is going
+[  994.45s ->  1006.48s] to be our profit in orange this is going to shift down by i will call it c for the value of the call
+[ 1006.48s ->  1014.14s] option and for the value of the put option it is the exact same idea and i'm going to call this p
+[ 1015.02s ->  1021.98s] so this will shift down you will notice the break even point is a bit further below the strike price
+[ 1023.26s ->  1032.43s] and this is shifting down by i'll call it p and this is going to be again the profit all right
+[ 1034.93s ->  1042.37s] so that is the difference between a payoff and a profit diagram now that we understand this basic
+[ 1042.37s ->  1048.05s] idea of a payoff and a profit diagram how can we start to construct and understand different
+[ 1048.05s ->  1054.54s] strategies with respect to these options contracts we haven't talked about long and short positions
+[ 1054.54s ->  1059.18s] yet we're going to get to that in a moment because that's going to build to this idea of the value of
+[ 1059.18s ->  1065.50s] these contracts over time how we can cover our short positions when the value changes over time and
+[ 1065.50s ->  1073.10s] that is generally speaking how these i would say more short style options traders collect most of their
+[ 1073.10s ->  1078.30s] their p and l their profits is through covering their short positions over time but we'll get to
+[ 1078.30s ->  1084.22s] that in a moment for now let's talk about this idea of a general strategy so what is it that we're
+[ 1084.22s ->  1091.66s] actually looking at here we drew the payoff right and the profit diagram for these two different contracts
+[ 1092.38s ->  1099.18s] but what's the problem all right the problem is we have no idea where the underlying asset is going
+[ 1099.18s ->  1106.86s] to be at time capital t we have no idea we're just saying that given any state of the world i could tell
+[ 1106.86s ->  1116.14s] you the cash flow for either of these particular contracts what if instead of having one contract we had
+[ 1116.14s ->  1123.18s] a portfolio of contracts how can we draw out a payoff and profit diagram for that portfolio of contracts
+[ 1124.34s ->  1130.82s] well it starts first and it's very helpful to first understand that there is a function for
+[ 1131.78s ->  1139.73s] these two diagrams a mathematical function and that mathematical function is going to be the max function
+[ 1139.73s ->  1147.01s] so this hockey stick diagram is actually going to be the max between the underlying price at time capital t
+[ 1149.22s ->  1162.02s] minus the strike price and zero sometimes this is just going to be simply written as s sub t minus k
+[ 1162.02s ->  1168.34s] and then positive in the upper right hand corner those are going to be equivalent depending on notation so
+[ 1168.34s ->  1174.82s] that literally defines this hockey stick diagram the same is true for this put diagram it's going to be
+[ 1174.82s ->  1182.66s] the max but remember it's flipped between the strike price minus the spot at time capital t and zero and if
+[ 1182.66s ->  1192.03s] you were to use the other notation which is a bit more concise k minus s sub cap t plus that is take the
+[ 1192.03s ->  1199.66s] positive value it's either zero or it's going to be this positive difference the reason why this is
+[ 1199.66s ->  1205.66s] very useful is because if you go on to some sort of graphing calculator you hop on desmos and you wanted
+[ 1205.66s ->  1210.94s] to plot these hockey stick diagrams you can actually construct your portfolio of strategies and take a look
+[ 1210.94s ->  1219.98s] at your payoff at time capital t if you know what these values are you can just plug in k and then treat
+[ 1219.98s ->  1226.22s] s sub cap t as an arbitrary input and then you'll visualize your payoff function so what does that
+[ 1226.22s ->  1236.32s] look like if we were to draw if we were to try to draw it together let's draw a simple strategy all
+[ 1236.32s ->  1243.97s] right so we're going to take a look at a portfolio and in this case i'm just going to call it pi and pi
+[ 1243.97s ->  1258.50s] is going to consist of a call i'll do it in green a call and a put now the call and the put let's talk
+[ 1258.50s ->  1265.71s] about the parameters here the strike price for both is going to be 200 the time to maturity for both is
+[ 1265.71s ->  1277.84s] going to be one month can we draw this payoff and understand what this strategy is so we have if we
+[ 1277.84s ->  1284.72s] recall on the x-axis the spot at maturity time capital t the y-axis we're going to deal with the
+[ 1284.72s ->  1290.64s] payoff for now and we know that if we wanted to find the profit we could just shift it down by the price
+[ 1290.64s ->  1295.36s] of both the call and the put option and we'll get there in a moment but for now let's start with
+[ 1295.92s ->  1302.96s] drawing this strategy let's start with the call option what do we know we know that the call option
+[ 1302.96s ->  1314.61s] right is going to be this function here so we have the call as the positive difference between the spot at
+[ 1314.61s ->  1322.53s] maturity capital t and the strike in this case which is 200 positive and the put is going to be the same
+[ 1322.53s ->  1329.89s] thing but 200 minus the spot at time capital t positive so let's draw this diagram we have right
+[ 1329.89s ->  1338.06s] here our strike price of 200 we know that it's going to be linear for the call option beyond that
+[ 1338.86s ->  1345.55s] then anywhere to the left it's going to be flat at zero all right what about for the put it's
+[ 1345.55s ->  1350.51s] going to be the same thing but flipped right linear going all the way down to zero we have this capped
+[ 1350.51s ->  1359.01s] upside here then anything above it is going to be flat at zero this is our portfolio of two options
+[ 1359.01s ->  1365.73s] contracts we own a put and we own a call now it looks a little funky right because we have what
+[ 1365.73s ->  1371.65s] these legs that kind of overlap here these legs that overlap here and this is where things start
+[ 1371.65s ->  1376.13s] to get very interesting so this is where understanding the dynamics of this function
+[ 1376.13s ->  1381.33s] become very useful because if we take a look at the payoff let's kind of separate this into two
+[ 1381.33s ->  1387.73s] different states of the world so we have a state of the world effectively where we are above 200 or
+[ 1387.73s ->  1393.73s] where we are below 200 so this is going to be greater than 200 this is going to be less than 200.
+[ 1394.82s ->  1400.26s] let's start with the greater than 200 state of the world if we are above 200 let's take a look
+[ 1400.26s ->  1406.34s] at what happens to our call and our put option so our call option is going to be what's known as
+[ 1406.34s ->  1412.98s] in the money right if we exercise it we will have a positive payoff right that's what this line
+[ 1412.98s ->  1420.30s] is effectively telling us what about our put option well our put option is going to expire worthless
+[ 1422.02s ->  1432.00s] so we really only need to consider this leg so if i was to draw this strategy as one single line
+[ 1432.00s ->  1438.51s] in this state of the world i would not need to consider this put leg i would only need to consider
+[ 1438.51s ->  1446.08s] this call leg so i'm going to draw the strategy in orange and the only thing that matters in this state
+[ 1446.08s ->  1451.44s] of the world is going to be that call leg now you might be saying well hey what if the put leg looked
+[ 1451.44s ->  1458.88s] like this what if we had another leg that looked like this and that's a great question how do you
+[ 1458.88s ->  1465.52s] turn it into one leg at that portion of the payoff diagram you're going to look at the slope
+[ 1466.32s ->  1469.52s] that's effectively even what we're doing here with these two legs
+[ 1469.68s ->  1477.84s] the slope of this line right here is positive one the slope of this line here is zero the resulting
+[ 1477.84s ->  1486.48s] orange line is the sum of one plus zero that is going to be our strategy's leg at this particular
+[ 1486.48s ->  1492.96s] portion of the payoff diagram following that exact same logic let's take a look at this side of the
+[ 1492.96s ->  1499.04s] graph the slope here is negative one the slope here is zero remember this is our put leg
+[ 1499.04s ->  1504.40s] anytime we're below the strike price we're going to receive a positive payoff but the call is going
+[ 1504.40s ->  1512.48s] to end up expiring worthless so we add those two legs together and we get our orange leg for this
+[ 1512.48s ->  1521.25s] side which is just going to be negative one so the portfolio that is this portfolio pie of a call
+[ 1521.25s ->  1528.05s] input option expiring in one month both with the same strike price of 200 collapses into this single
+[ 1528.05s ->  1536.67s] payoff effectively saying what saying that in either state of the world we make money it goes beyond
+[ 1536.67s ->  1545.71s] 200 we make money boom positive payoff less than 200 boom we make money positive payoff but remember
+[ 1547.15s ->  1553.87s] these contracts aren't free this isn't our profit so if we wanted to consider our profit what would we
+[ 1553.87s ->  1561.23s] have to do we would have to shift it down by the price of the contract itself i'm gonna just lower the
+[ 1561.23s ->  1570.69s] strike price here and i'm going to draw this maybe in blue as the profit and we are going to have to pay
+[ 1570.69s ->  1583.04s] what do we have to pay we have to pay c dollars and p dollars for this portfolio for this portfolio pie
+[ 1584.93s ->  1589.89s] what does that do to this payoff diagram it is going to shift the orange lines remember that is our
+[ 1589.89s ->  1600.19s] strategy here it's going to shift it down it is going to shift it down and it's going to shift it
+[ 1600.19s ->  1611.26s] down by the sum of both c plus p the price of our call and the price of our put so you are subtracting
+[ 1611.26s ->  1618.14s] the price of the call and the price of the put that is what you pay for this orange portfolio and
+[ 1618.14s ->  1626.02s] this is now the profit diagram this is starting to look more like what we would expect right this is
+[ 1626.02s ->  1631.30s] too good to be true we make money in both states of the world it doesn't matter what happens but here
+[ 1631.30s ->  1636.74s] in order to make money what do we need to have happen look at our break-even points our straddle
+[ 1636.74s ->  1646.02s] points if you will we need the underlying asset if our strike price is 200 we need it to move beyond
+[ 1646.02s ->  1655.14s] this point here or below this point here in order for us to receive a positive profit not just a
+[ 1655.14s ->  1662.26s] positive payoff but a positive profit and that's because the price of the contracts shift our payoff diagram
+[ 1662.98s ->  1676.67s] down this is called a straddle this is a straddle what's really cool about this type of strategy is
+[ 1676.67s ->  1683.71s] you may see in the news when there's an earnings announcement that the market is pricing in an
+[ 1683.71s ->  1691.23s] upward or downward move maybe an eight percent move in either direction how do we know that well if you
+[ 1691.23s ->  1697.07s] go into the options market and you take a look right before the market closes if it's an after-hour
+[ 1697.07s ->  1702.83s] is earning maybe whenever the earning is right if you take a look at the options market before that
+[ 1702.83s ->  1708.83s] earnings announcement and you construct an at the money straddle which means you are effectively
+[ 1708.83s ->  1715.31s] choosing a strike price that is very close to the current price that the underlying is trading at so
+[ 1715.31s ->  1723.71s] maybe if it's nvidia it's currently trading at maybe 199 or 200 then the at the money straddle is going to be
+[ 1723.71s ->  1732.67s] something like 200 then what you will see is the straddle points that is the break even for this
+[ 1732.67s ->  1738.51s] particular strategy that is what the market is pricing in as the move it's very cool it's what
+[ 1738.51s ->  1745.95s] the market is anticipating as a move for the underlying in either direction now what's even more
+[ 1745.95s ->  1752.03s] cool and what we'll wrap up this video with is that idea of market implied moves and probabilities is
+[ 1752.03s ->  1760.69s] it is often very wrong and this is where you can construct a lot of very interesting trades so
+[ 1760.69s ->  1768.21s] this is the idea of a payoff profit diagram and how you use these diagrams to construct strategies we
+[ 1768.21s ->  1784.96s] now have to talk about this idea of a long and a short position in these contracts since we understand
+[ 1784.96s ->  1791.68s] the payoff profit diagrams we're only going to look at the profit diagrams because when we talk about
+[ 1791.68s ->  1798.00s] a long and a short position there is cash flow being exchanged taking either side of this contract
+[ 1798.00s ->  1803.92s] and then you have the responsibility to either provide the shares at a predetermined price or the
+[ 1803.92s ->  1810.16s] right but not obligation let's unpack exactly what's going on here so if we take a look at this payoff
+[ 1810.16s ->  1817.04s] diagram we have again the underlying asset price at time capital t we have in this case our profit
+[ 1818.78s ->  1824.99s] let's take a look at the call option first let's draw this diagram here we know it's going to look
+[ 1824.99s ->  1834.59s] something like this where we have our strike price k and we have this nice linear payoff and this is going
+[ 1834.59s ->  1840.51s] to be our break even points and remember it's shifted down by the price of the contract c
+[ 1841.47s ->  1848.19s] it's very important to understand that somebody is actually taking the other side of this contract
+[ 1848.19s ->  1858.56s] so this right here is actually a long call this is a long call that means that you own the right but
+[ 1858.56s ->  1864.40s] not obligation to buy the shares at the strike price at a predetermined time in the future known as
+[ 1864.40s ->  1870.40s] the maturity but you have to buy that from somebody this is effectively a zero-sum game there has to be
+[ 1870.40s ->  1875.76s] somebody on the other side of this contract who's going to let you buy the shares from them at that
+[ 1875.76s ->  1885.98s] price what does a short call look like i'm going to draw it in orange a short call is effectively
+[ 1885.98s ->  1894.93s] flipping this diagram across the x axis so we'll draw it like this then at k we have this negative linear
+[ 1894.93s ->  1910.70s] payoff here all right now if you'll notice right the short call so this is a short call is shifted up
+[ 1910.70s ->  1919.68s] by the value of c whereas the long call is shifted down by the value of c this makes sense because if
+[ 1919.68s ->  1926.88s] you buy the contract for the price of the call whatever it is in the market c then you are already
+[ 1926.88s ->  1932.88s] starting off at a loss you need the underlying asset to move in your favor or volatility so on
+[ 1932.88s ->  1938.64s] and so forth we'll talk about that later on in your favor to try to get to this break even point
+[ 1938.64s ->  1947.92s] effectively whereas if you sell the contract you're immediately at a gain where you receive this value c
+[ 1947.92s ->  1952.80s] and if the underlying starts to move against you that is in favor of the long position
+[ 1953.52s ->  1958.64s] that is when the contract is going to start to appreciate in value and that is when you lose
+[ 1958.64s ->  1964.32s] money this is the tricky thing about the european options contracts this is where we are going to get
+[ 1964.32s ->  1970.48s] into the idea of the value of these contracts over time one of the biggest misconceptions about these
+[ 1970.48s ->  1979.22s] contracts is the values are static the price that you pay for the contract if you are long the contract
+[ 1979.78s ->  1989.33s] c is going to change immediately after you transact same is true if you choose to sell the contract
+[ 1989.33s ->  1997.25s] the price is going to change immediately after you transact okay why is this important to understand
+[ 1997.25s ->  2005.14s] because if you are long the contract then your initial cash flow of paying the value of the contract c
+[ 2005.14s ->  2012.85s] is your only obligation once you pay that value you have the right but not obligation to buy the
+[ 2012.85s ->  2017.57s] underlying asset at the strike price at time capital t the maturity in the future
+[ 2018.53s ->  2024.77s] the optionality is yours you can't lose any money beyond what you paid for the contract this is where
+[ 2024.77s ->  2031.01s] people get confused because if you take your entire portfolio and you dump it into one contract
+[ 2031.01s ->  2038.69s] after it expires you're done it's not an investment it's over the contract's over if it expires worthless
+[ 2038.69s ->  2043.33s] you lose all of the money that you dumped into that contract all right it's not an investment
+[ 2045.65s ->  2053.97s] moreover if you're short the contract right long you can only lose as much as you paid for the contract
+[ 2053.97s ->  2059.17s] that is not true if you're short the contract if you're short the contract take a look you technically have
+[ 2059.17s ->  2067.71s] unlimited downside right this is a consequence of the long leg being unlimited upside so if you're
+[ 2067.71s ->  2074.91s] short you can lose more money than you received in premium and just more money than than your account
+[ 2074.91s ->  2081.58s] even has in general depending on your sizing so on and so forth so that is very important to understand
+[ 2081.58s ->  2086.22s] the difference between a long leg and a short leg a short leg you technically have unlimited downside
+[ 2086.22s ->  2091.82s] a long leg you have technically unlimited upside it's a zero-sum game there's a counterparty to
+[ 2091.82s ->  2097.98s] every single transaction if you're long you're buying the contract and you hold this upside potential
+[ 2097.98s ->  2103.26s] if you're short you really don't want it to go up because you technically have unlimited downside
+[ 2103.26s ->  2110.24s] but you're compensated with the premium all right but we just said the premium the value of these
+[ 2110.24s ->  2117.28s] contracts changes over time how does this get into how contracts are actually traded how pretty much
+[ 2117.28s ->  2122.96s] every retail discretionary options trader who's selling premium is going to be covering their short
+[ 2122.96s ->  2129.04s] positions this gets into the idea of the value of these contracts over time all right and this is a
+[ 2129.04s ->  2149.10s] very important idea so let's suppose in a timeline the maturity at time capital t maybe just to make it
+[ 2149.10s ->  2156.24s] more tangible i'll make it one month let's say we're dealing with an nvidia call and nvidia is
+[ 2156.24s ->  2166.24s] currently trading at 200 we're dealing with the call and it has a strike price of 200 and it has a
+[ 2166.24s ->  2175.94s] maturity of one month just like we're seeing here i said this earlier a lot can happen over the course of
+[ 2175.94s ->  2181.70s] a month and the value of this contract is certainly going to change over time we haven't even talked
+[ 2181.70s ->  2188.50s] about volatility and how volatility impacts pricing i have a lot of video lectures on pricing and i have
+[ 2188.50s ->  2194.34s] a lot of video lectures on the application of more theoretical models in practice we'll build towards
+[ 2194.34s ->  2198.10s] more of a broader discussion of that towards the end of this video but i highly encourage you check that
+[ 2198.10s ->  2203.22s] out i spent pretty much my entire professional life pricing these contracts so definitely check that
+[ 2203.22s ->  2207.54s] out if you're interested more of the formal mathematics it's definitely more advanced but
+[ 2207.54s ->  2214.10s] for now i'll digress let's get back into this idea here so this is the contract that we have specified
+[ 2214.10s ->  2219.06s] at time zero right this is the present we don't know what's going to happen throughout the life of
+[ 2219.06s ->  2225.70s] this contract okay and one month it's going to expire and we're going to exchange cash for shares so
+[ 2225.70s ->  2231.30s] on and so forth right maybe it expires worthless maybe it expires in the money something is going to happen
+[ 2231.30s ->  2236.82s] at this point in time but as of right now this is the contract we're dealing with okay we're at time
+[ 2236.82s ->  2249.10s] zero let's say the price of this call option is we'll call it nine dollars okay let's take a short
+[ 2249.10s ->  2259.65s] position let's take a short position in this contract so we are going to be short one call at nine dollars
+[ 2262.11s ->  2268.19s] sold in lots of 100 so this is really going to be what this is going to be a positive cash flow of
+[ 2268.91s ->  2279.09s] nine hundred dollars to our account well that's pretty good but what does this mean for us if we
+[ 2279.09s ->  2286.93s] are short and this is a very interesting logical exercise if our long leg remember we're not long we
+[ 2286.93s ->  2295.97s] are short if our long leg has the right but not obligation what does that mean for our short leg
+[ 2299.25s ->  2307.97s] that means that they have the obligation not the right so you must flip the case if you are short if
+[ 2307.97s ->  2314.13s] this guy has the right then the other side of that contract has the obligation that is why you're
+[ 2314.13s ->  2321.30s] getting paid the premium that's why we receive this nine hundred dollars today if we choose to take
+[ 2321.86s ->  2329.47s] the short side of this contract we receive nine hundred dollars to our account here's the catch
+[ 2330.27s ->  2337.15s] we don't just receive 900 bucks and that's it now we have this obligation to deal with
+[ 2338.30s ->  2346.22s] this obligation where at time capital t one month from now we might end up owing a whole bunch of money we
+[ 2346.22s ->  2357.47s] have all this risk to the upside so what do we do okay well let's suppose a little bit of time passes
+[ 2357.47s ->  2365.23s] and we are maybe 15 days in all right not quite one month but we're 15 days in what's going to happen
+[ 2365.23s ->  2374.43s] to the value of this contract this starts to get into the idea of pricing and the value of this contract
+[ 2374.43s ->  2381.31s] over time effectively this is the idea of the greeks these are first order partial derivatives
+[ 2381.31s ->  2388.43s] with respect to the black sholes pricing functional all that is to say is we have this idea of delta
+[ 2388.43s ->  2392.67s] we have this idea there are second order sensitivities like gamma so on but i'm not going to talk about
+[ 2392.67s ->  2399.31s] those we have gamma theta and vega we also have rho but nobody cares about interest rates right now we
+[ 2399.31s ->  2408.30s] have delta this is going to be underlying risk we have theta this is going to be time decay and we
+[ 2408.30s ->  2418.30s] have vega this is going to be volatility all right these guys are going to impact the value of this
+[ 2418.30s ->  2428.21s] contract over the course of the month what exactly do i mean by that well at time zero we received 900
+[ 2428.21s ->  2442.46s] dollars for that short position 15 days in if nothing happens if nvidia stays at 200 then the
+[ 2442.46s ->  2450.54s] underlying risk means that nothing's changed maybe volatility stays the same and time decay is going
+[ 2450.54s ->  2458.46s] to contribute positively to this position value what do i mean by positively to this position value we are
+[ 2458.46s ->  2466.46s] short which means any time this contract depreciates in value we are going to be able to buy it back
+[ 2466.46s ->  2478.83s] cheaper so let me give you a possible state of the world 15 days in what happens nothing changes nvidia
+[ 2478.83s ->  2487.39s] is at 200 volatility rates they're all the same and now that same contract that was nine dollars
+[ 2487.39s ->  2502.02s] is now maybe five okay very important 15 days in this same contract is now worth five which means sold in
+[ 2502.02s ->  2514.78s] lots of 100 if we were to sell it at day 15 we would have received 500 not 900 okay but let's look at this
+[ 2514.78s ->  2524.46s] as a timeline what happened at time zero we went short one contract we received 900 bucks now we have this
+[ 2524.46s ->  2532.75s] obligation to deal with at maturity 15 days pass now what happens the contract is worth five bucks
+[ 2534.14s ->  2543.18s] what does this mean for us this means that we can buy it back for 500 bucks and remove this obligation
+[ 2543.18s ->  2549.82s] at maturity this is a huge idea and this is where most of the profits creating options comes from
+[ 2550.54s ->  2555.58s] you don't necessarily intend on holding it all the way to expiration sometimes you do sometimes you want
+[ 2555.58s ->  2564.78s] assignment we'll get into that idea in a moment but here 15 days in you are telling me based on this
+[ 2564.78s ->  2572.06s] state of the world that i can buy back this contract for 500 bucks well i received 900 15 days prior
+[ 2572.06s ->  2582.82s] for taking that short position so now if i wanted to i could buy it back for 500 right and i'm going to
+[ 2582.82s ->  2594.80s] take that away from other way around i have my 900 and i'm going to take that away that 500 away to cover
+[ 2595.68s ->  2605.31s] this short position and i'm going to be left with a profit of 400 so i've effectively covered my short
+[ 2605.31s ->  2614.03s] position because after 15 days pass time decay has eaten away at the value of the option the value of
+[ 2614.03s ->  2621.15s] the option has gone down and because i'm short i was able to receive more money for taking that short
+[ 2621.15s ->  2627.82s] position earlier and now that the time has passed time decay has eaten away at the value of the option
+[ 2627.82s ->  2634.86s] i can buy it back cheaper this is just one possible state of the world right it is entirely possible
+[ 2634.86s ->  2643.10s] that the delta that is the underlying movement that is the price of nvidia itself is going to go way
+[ 2643.10s ->  2655.86s] up maybe at this point in time nvidia isn't 200 maybe nvidia is 210 if nvidia is 210 here there's no way
+[ 2655.86s ->  2660.10s] the price of the contract is going to be priced at five bucks it's going to be priced at maybe
+[ 2660.10s ->  2669.14s] something like who knows 16 bucks and that means that we're going to have a contract valued at one
+[ 2669.14s ->  2676.26s] thousand six hundred dollars now notice we are short this contract so our initial cash flow was 900 if
+[ 2676.26s ->  2682.90s] we wanted to buy it back to remove this obligation right now we don't get to buy it back for 500 we have
+[ 2682.90s ->  2690.18s] to buy it back for 16 which means we have a loss if we wanted to cover that short position at this
+[ 2690.18s ->  2700.78s] point in time in this state of the world we would have a loss of 700 all right this is the arithmetic
+[ 2700.78s ->  2708.46s] of the value of these contracts over time like i said most of the money is made by closing these positions
+[ 2708.46s ->  2715.74s] early time decay towards the end of the contract you have far more risk in gamma and volatility so
+[ 2715.74s ->  2720.94s] on and so forth most of the value that you accumulate in a short position is going to be
+[ 2720.94s ->  2726.78s] early on in the contract's life there's no reason to hold it past however long depends on how you
+[ 2726.78s ->  2733.62s] specify the contract and the the duration but you're going to want to close it out early and take profit
+[ 2733.62s ->  2740.80s] should you be in that particular state of the world so this is the idea of the value of the contracts
+[ 2740.80s ->  2747.76s] over time now how are these prices determined how are these prices not the 210 that's the market price
+[ 2747.76s ->  2754.00s] of the underlying but nine dollars nine dollars 16 i talk about these greeks right how are these prices
+[ 2754.00s ->  2760.88s] determined this is dictated by market equilibrium supply and demand okay supply and demand is going to
+[ 2760.88s ->  2769.60s] create the value of these contracts something like the black shoals model is a pricing framework for
+[ 2769.60s ->  2776.48s] understanding what it is we're seeing in the market in that particular models framework it is not a
+[ 2776.48s ->  2781.44s] predictive model it's not going to tell you where prices are going it is telling you effectively how
+[ 2781.44s ->  2788.08s] markets are made what the fair value theoretically is of those contracts according to a portfolio replication
+[ 2788.08s ->  2793.44s] continuous time delta hedging argument we know it's not perfect we know there's flaws the list
+[ 2793.44s ->  2797.92s] goes on but that is beyond the point of the model the point of the model is it allows us to back out
+[ 2797.92s ->  2804.72s] things like implied volatility allowing us to compare contracts for different underlyings as apples to
+[ 2804.72s ->  2811.70s] apples is an nvidia contract or a google contract more expensive well without the black trolls model we
+[ 2811.70s ->  2816.58s] wouldn't know that because they are effectively apples to oranges black trolls makes them apples to apples
+[ 2816.58s ->  2822.02s] i have a video dedicated to this topic how to trade options with the black trolls model the idea of
+[ 2822.02s ->  2826.42s] classroom probabilities and applying them in the real world i'll leave a link to that in the description
+[ 2826.42s ->  2831.62s] below along with the covered calls trading video and how to read options chains for more of a
+[ 2832.58s ->  2841.25s] a classroom to practice if you will so understanding this idea that the contract value along with the
+[ 2841.25s ->  2846.21s] underlying is going to change over time is absolutely massive because it is going to allow you to realize
+[ 2846.21s ->  2853.81s] different cash flows you do not necessarily have to hold the option to expiration to realize the cash flow
+[ 2853.81s ->  2859.89s] like realize the cash flow like we were analyzing in this initial timeline here this is the basic
+[ 2859.89s ->  2866.13s] contract function but there's no reason why you can't close that position earlier you just have to
+[ 2866.13s ->  2871.97s] realize that the value is not going to be static it is going to continue to change over time like we're
+[ 2871.97s ->  2879.41s] seeing here i picked 15 days no reason why it can't be 7 or 17 or 20 whatever but the contract value is
+[ 2879.41s ->  2885.73s] going to change based on all of the different risks you're exposed to you can even hedge these risks
+[ 2885.73s ->  2892.61s] the list goes on those are more advanced topics all right every single position that you take is going
+[ 2892.61s ->  2898.61s] to have a set of greeks and these greeks are going to dictate whether or not some facet of the contract
+[ 2898.61s ->  2906.26s] is going to help or hurt your position if you're long volatility that means the more uncertainty you
+[ 2906.26s ->  2913.94s] have the higher the value of the contract if you're long this is great if you're short this is not good
+[ 2913.94s ->  2921.22s] as you see here if you are short and the value of the contract increases and you wanted to close that
+[ 2921.22s ->  2930.02s] obligation then you would be at a loss a very important idea if you are long the contract
+[ 2930.02s ->  2935.62s] time decay is always going to work against you the value of your contract just by existing is going to
+[ 2935.62s ->  2942.18s] continue to lose value over time because if you run out of time and the underlying doesn't expire
+[ 2942.18s ->  2951.02s] above the strike it's worthless the underlying is going to also command a significant amount of the
+[ 2951.02s ->  2957.82s] premium for the particular contract the closer the underlying is to the strike price it's effectively
+[ 2957.82s ->  2962.38s] teeter-tottering on the strike price if it's going to go above or below that's going to command a
+[ 2962.38s ->  2967.90s] significant amount of the value and the further in the money it gets or the further out of the money
+[ 2967.90s ->  2974.30s] depending on the strike price will also dictate how much of the premium is available to you all right
+[ 2977.07s ->  2981.95s] pricing is not prediction pricing is not prediction that is one of the most important things to
+[ 2981.95s ->  2988.11s] understand it is allowing you to compare market equal equilibrium apples to apples especially in the
+[ 2988.11s ->  2996.11s] context of taking positions so how do you know for example if one straddle is mathematically equivalent
+[ 2996.11s ->  3003.31s] in terms of pricing to another which one is more expensive in terms of volatility so on and so forth
+[ 3003.31s ->  3010.43s] that is what these pricing frameworks allow us to do if you have the delta of a particular options
+[ 3010.43s ->  3017.30s] contract this is typically cited as the probability of expiring in the money that's true in the
+[ 3017.30s ->  3022.02s] classroom sense in my previous video i proved that i use asymptotic analysis and i show you the actual
+[ 3022.02s ->  3028.66s] probabilities but in real life we don't have that asymptotic convergence not at all if the market has a
+[ 3028.66s ->  3035.30s] an options contract as a 30 delta options contract that doesn't mean 30 of the time it's going to expire in
+[ 3035.30s ->  3040.42s] the money the market the market thinks right now that's the case but if the underlying were to jump
+[ 3041.14s ->  3050.34s] up to a crazy amount maybe it jumps up to like 220 then that 30 delta option right very well may jump to
+[ 3050.34s ->  3058.32s] something like a 90. my point is everything is going to change over time along with these greeks all right
+[ 3059.12s ->  3063.76s] as long as you understand this idea of closing positions early covering your short position or even
+[ 3063.76s ->  3069.76s] closing out your long position you can do this exact same thing with a long call or a long put or a
+[ 3069.76s ->  3076.00s] short call or a short put any strategy even if you have a long straddle a short straddle you construct
+[ 3076.00s ->  3082.16s] other types of strategies some sort of of spread whatever it may be you can always close it early but
+[ 3082.16s ->  3087.20s] you have to understand the dynamics of your position over time what is going to help your position value
+[ 3087.20s ->  3095.46s] what is going to hurt your position value how are you trying to position yourself all right this gets
+[ 3095.46s ->  3107.41s] into the idea of market probabilities and i want to close on this idea of market probabilities if i gave
+[ 3107.41s ->  3117.18s] you a dice let me draw a dice here one face i know there's six on this side all right you get the idea
+[ 3117.18s ->  3126.70s] if i give you a dice and i said what is the probability of one two three four five and six
+[ 3128.42s ->  3133.70s] well you would say they're all equal probabilities you would say that this is going to be one sixth
+[ 3133.70s ->  3145.23s] one sixth one sixth and you'll notice that they all sum up to one all right how do you know this well
+[ 3146.03s ->  3154.78s] this is a discrete uniform random variable what that means is the probability mass function for a dice
+[ 3154.78s ->  3167.46s] is fixed if i was to plot this one two three four five and six then i would just have bars of the same
+[ 3167.46s ->  3178.14s] height for the probability of each outcome as one sixth now for a sample if i was to roll one dice
+[ 3178.14s ->  3184.14s] and record the outcome then maybe i see a two maybe i see a three then maybe i see a five
+[ 3185.60s ->  3192.56s] you'll notice that let's say i i see these guys here right i can't see a seven i go four okay i see
+[ 3192.56s ->  3200.62s] this this sample of dice right this is a sample but what do i know about the probability mass function
+[ 3200.62s ->  3207.14s] right if i take a look at this sample and i try to estimate the probabilities ironically i'm using maximum
+[ 3207.14s ->  3212.58s] likelihood estimation implicitly but that's beyond the scope of this video how many dice did i roll
+[ 3212.58s ->  3221.09s] here one two three four five six so i have six total right how many twos did i see i saw one two
+[ 3223.71s ->  3231.95s] i saw one three i saw two fives i saw one six and one four so if i was to estimate the probabilities
+[ 3231.95s ->  3238.67s] based on this one sample of six total dice then what would i have i would say two is roughly
+[ 3238.67s ->  3249.63s] one out of six i would say three is roughly one out of six four is one out of six five is actually
+[ 3249.63s ->  3258.13s] two out of six but what about one well there's no probability mass there i didn't observe a one so
+[ 3258.13s ->  3263.97s] i'm not going to assign any probability mass to it that doesn't mean it can't happen this is a dice so
+[ 3264.77s ->  3271.02s] what i'm trying to say here is this is a sample and if i was to just use this sample to estimate
+[ 3271.02s ->  3279.87s] probabilities then i'm not going to be getting perfect estimates for the true probability mass
+[ 3279.87s ->  3287.47s] function until i roll a significant number of dice so what i'm going to do here is if i don't roll just
+[ 3287.47s ->  3296.21s] what not six dice but i'm going to roll maybe infinity dice then that is going to say that all
+[ 3296.21s ->  3305.57s] of these probabilities empirically are going to converge to one sixth one sixth one sixth one sixth
+[ 3305.57s ->  3312.61s] one sixth and one sixth this is what it means to have a frequency interpretation of probability
+[ 3313.41s ->  3322.00s] what do i mean by that i mean that this probability mass function that governs the empirical outcomes
+[ 3322.00s ->  3330.00s] that is this particular sample that we experience if we continue to generate from this probability mass
+[ 3330.00s ->  3336.96s] function these probabilities do not change over time this is stationary this is one of the most
+[ 3336.96s ->  3341.36s] important ideas to understand when you're engaging in the markets that people like to dismiss or don't
+[ 3341.36s ->  3346.96s] understand at all is this probability mass function is not going to change over time you are generating
+[ 3346.96s ->  3355.20s] this sample this six six roll sample from a fixed probability mass function if you continue to roll
+[ 3355.20s ->  3362.00s] to infinity then you will see convergence to a perfect one sixth one sixth one sixth one sixth by the law of
+[ 3362.00s ->  3368.56s] large numbers oh my goodness how many people i've seen cite the law of large numbers in the central limit
+[ 3368.56s ->  3375.84s] theorem incorrectly in real life that is because there is no asymptotic convergence in real life
+[ 3377.07s ->  3381.39s] if i have a call option and i know we didn't talk too much about the greeks i'm going to do a follow-up
+[ 3381.39s ->  3385.55s] video it's certainly more of an advanced topic i know we didn't talk too much about the greeks
+[ 3385.55s ->  3393.30s] but if i have a call option let's just use the nvidia example again a strike of 200 let's say the premium
+[ 3393.30s ->  3405.94s] is nine dollars and nvidia is currently trading at 200 and we have a maturity of one month what is the
+[ 3405.94s ->  3412.88s] delta of this option this is trading at the money so what we're going to say is the delta of this option
+[ 3412.88s ->  3423.84s] is probably going to be roughly roughly 50 percent all right does this not make sense because the
+[ 3423.84s ->  3429.92s] current spot price is roughly around the strike price and we have no idea if it's going to go up
+[ 3429.92s ->  3434.72s] or down maybe sentiment is driving it in one direction or another but the delta is certainly
+[ 3434.72s ->  3440.32s] going to be roughly 50 that's because nobody not the market maker not the biggest hedge funds in the
+[ 3440.32s ->  3447.52s] entire world nobody knows where this underlying asset is going to be one month from now market makers
+[ 3447.52s ->  3451.52s] serve a completely different business function than speculating on this contract they are providing
+[ 3451.52s ->  3455.44s] liquidity i talk about this at length on the channel if you want to see other videos on pricing and
+[ 3455.44s ->  3462.32s] making markets i talk about this at length but here i want to focus on this idea of delta all right
+[ 3463.20s ->  3469.04s] this is roughly a 50 delta call if you go into interactive brokers and i have a video on this in
+[ 3469.04s ->  3473.52s] the the covered call i have a video on this and how to trade options with the black trolls model again
+[ 3473.52s ->  3476.96s] reading options chains all of this is going to be listed in the description below
+[ 3476.96s ->  3489.42s] if you take a look at this delta this does not mean the same thing as this in other words if you keep
+[ 3489.42s ->  3497.58s] trading 50 delta options that does not mean that if you trade an infinite number of 50 delta options
+[ 3497.58s ->  3504.14s] that you are going to converge to 50 of them being in the money and 50 of them being out of the money
+[ 3504.14s ->  3510.70s] all right we do not live in a frequentist world i certainly wish we did to some extent would make
+[ 3510.70s ->  3517.18s] our analysis far easier however we do not live in a frequentist world probabilities are implied by the
+[ 3517.18s ->  3523.58s] market and the market is always wrong the market is doing its absolute best to not be wrong but it is
+[ 3523.58s ->  3532.59s] always wrong all right you do not have frequentist convergence in the real world that is why i wanted to
+[ 3532.59s ->  3538.35s] wrap up on this idea of market probabilities because equilibrium is creating a price right based on
+[ 3538.35s ->  3544.35s] supply and demand and you can use the black trolls model and other pricing frameworks to back out the
+[ 3544.35s ->  3551.71s] greeks and interpret them as probabilities but those probabilities are only valid in the framework
+[ 3552.43s ->  3556.67s] that is in the black trolls framework markets don't follow a geometric brownie emotion you can't
+[ 3556.67s ->  3561.47s] continuously delta hedge without accumulating infinite transaction costs yes the list goes on
+[ 3561.47s ->  3566.67s] you know that is not the purpose of the discussion the purpose of the discussion is to understand that
+[ 3566.67s ->  3571.79s] this is a speculative value just like any other implied probability nobody knows what's going to
+[ 3571.79s ->  3578.19s] happen the market's going to do its best to try to price that as efficiently as it can but it is always
+[ 3578.19s ->  3587.31s] wrong if for whatever reason the underlying drops to let's say 175 this delta is going to be abysmal
+[ 3587.31s ->  3594.11s] it's going to be roughly roughly zero it's going to have almost no probability of expiring in the money
+[ 3595.41s ->  3602.13s] all right and we've only talked about first order effects delta theta vega we haven't even talked about
+[ 3602.13s ->  3610.61s] gamma second order effects charm the list goes on all right but that is going to do it for your crash course
+[ 3611.25s ->  3617.09s] on european options contracts what you will find as exchange listed options contracts when you go and
+[ 3617.09s ->  3622.37s] approach them in the market you understand the contract function you understand the idea of the
+[ 3622.37s ->  3628.29s] payoff or profit diagram how you can construct strategies the idea of a long versus a short
+[ 3628.29s ->  3635.01s] position closing these positions earlier than the expiration that is this idea of the value of the
+[ 3635.01s ->  3640.61s] contract changing over time and that the market is going to price these contracts according to again
+[ 3640.61s ->  3646.37s] supply and demand equilibrium but we use models to interpret what the market is pricing as maybe a 50
+[ 3646.37s ->  3652.13s] probability of expiring in the money but we make the distinction that that does not imply frequentist
+[ 3652.13s ->  3657.49s] convergence like something with a dice roll like something with a fixed probability mass function this
+[ 3657.49s ->  3662.61s] is called non-stationarity we deal with it in the real world the real world doesn't operate with fixed
+[ 3662.61s ->  3671.22s] probability mass functions all right with that i hope you enjoyed this crash course i had a lot of fun
+[ 3671.22s ->  3675.94s] putting this together it certainly took a tremendous effort so if you enjoyed it please like comment
+[ 3675.94s ->  3679.46s] subscribe share it helps me out tremendously it's always greatly appreciated let me know in the
+[ 3679.46s ->  3685.94s] comments below what you'd like to see in future videos check out quant guild.com to master your
+[ 3685.94s ->  3689.94s] quantitative skills i'll leave a link in the description below if you'd like to get started
+[ 3689.94s ->  3696.02s] with interactive brokers i use them in all of these options videos and all of my quant builds i've been
+[ 3696.02s ->  3701.38s] with them in investing and trading capacity for over 10 years at this point they're the only broker i use
+[ 3701.38s ->  3708.99s] and their api is fantastic but other than that i want to thank you so much for watching and i will see you
+[ 3708.99s ->  3710.99s] in the next video

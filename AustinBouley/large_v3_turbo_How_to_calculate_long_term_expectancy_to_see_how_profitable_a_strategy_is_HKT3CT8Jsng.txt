@@ -1,0 +1,23 @@
+[    0.00s ->     4.78s] And this Helpdesk article video, we're going over how to determine long-term expectancy.
+[    5.38s ->     9.76s] This, as a credit spread trader, will tell you if you're actually going to make money long-term
+[    9.76s ->    14.88s] with the strategy that you are using. This is why I said when you're using the trades tracker,
+[   14.98s ->    20.60s] the two most important numbers here is your average return per trade and your trade accuracy.
+[   20.78s ->    24.00s] If this is below 10, you've got something to worry about. If it's below 90, you definitely
+[   24.00s ->    28.18s] have something to worry about. And your chart, your profit chart, definitely does not look like
+[   28.18s ->    33.12s] this. So again, if you want to make sure that this is above 90 and above 10, why? Well, because the
+[   33.12s ->    38.56s] long-term expectancy will not work in your favor. I have a free calculator here that you can click on
+[   38.56s ->    44.42s] and access, which again, you put in your win rate, your average credit you collect, your trade size,
+[   44.50s ->    50.74s] and your width, and it will tell you how much you can expect to make over 100 trades. So again,
+[   50.84s ->    56.02s] out of 100 trades, which is going to be roughly how many trades you take in a year, which again,
+[   56.02s ->    61.70s] I take roughly 100 to 150 trades a year, how much you'll make. You can see here, if you're trading
+[   61.70s ->    69.40s] one spread of $1 worth each, you'll make $500 by the end of the year. I am placing 20 trades
+[   69.40s ->    76.92s] at roughly 20, probably 3 cents each, and I have a 90, as you can see, I have a 97% win rate,
+[   77.18s ->    81.84s] and I'm trading $2 worth. Cool. So let's look at that. That means I want to make $34,000 a year
+[   81.84s ->    86.22s] just trading the way I am. Now again, if you're seeing a negative number, or you're seeing close
+[   86.22s ->    91.30s] to zero, that means you need to edit your things to kind of learn more what's going on. And so again,
+[   91.62s ->    97.82s] if you have, let's say, like an 85% win rate with the same approach, you're going to be losing $14,000.
+[   98.38s ->   102.46s] So again, make sure that you understand your numbers and that you're trading correctly,
+[  102.46s ->   106.26s] because this determines how profitable you'll be long-term and if you should be adjusting your
+[  106.26s ->   109.94s] strategy. All right, I hope this makes sense. If you have any other questions, message me with the
+[  109.94s ->   114.68s] support box or tune into our office hour calls in the private discord group chat. All right,
+[  114.80s ->   116.22s] see you in the next video.

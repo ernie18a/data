@@ -1,0 +1,54 @@
+[    0.35s ->    10.87s] How's it going everybody? Today what we're going to do is talk about Ito's lemma and its application in finding the time-dependent function of a stochastic process.
+[   11.35s ->    17.94s] So first let's consider a portfolio. I'm going to use H to denote the value of the portfolio at time T.
+[   18.56s ->    22.70s] D is going to be the value of the derivative at that same time.
+[   23.20s ->    27.28s] And Q is going to be the number of units of that derivative.
+[   27.28s ->    39.75s] All that being said, we can define the value of the portfolio as the number of units of the derivative multiplied by the value of the derivative for any given time T.
+[   40.59s ->    44.51s] Now what if we wanted to know how this portfolio changed?
+[   44.61s ->    49.79s] More specifically, what if we wanted to know what an incremental change in this portfolio value looked like?
+[   49.85s ->    53.43s] Well, we can look at the portfolio differential.
+[   53.43s ->    60.85s] We would just simply take the derivative of both sides of this equation and we'd end up with the differential of our portfolio.
+[   61.81s ->    65.23s] Now Q is a constant. It's the number of shares of the derivative.
+[   65.91s ->    68.65s] But D, that is a little more complicated.
+[   69.05s ->    77.51s] D is a function of both time and a stochastic process, mainly the underlying asset that the derivative is priced after,
+[   77.51s ->    83.03s] which we assume will follow a diffusion process or geometric Brownian motion.
+[   83.83s ->    90.19s] Formally, D is a time-dependent function of a stochastic process, that geometric Brownian motion I just mentioned,
+[   90.65s ->    98.05s] such that D is a function of both time and that stochastic process, yielding the value of our derivative.
+[   98.05s ->   104.34s] In order to find the differential for that function, we are going to use Ito's Lemma.
+[  104.84s ->   110.32s] Using a combination of rules from stochastic calculus and a first-order Taylor series expansion,
+[  110.64s ->   113.96s] we can find the derivative of that function.
+[  114.80s ->   116.72s] So let's take a look at our portfolio again.
+[  116.90s ->   124.02s] We have H, which is the value of our portfolio, and DH represents a change in value to our portfolio as time progresses.
+[  124.02s ->   131.60s] So we can just extrapolate that over to D, where D, D represents a change in value of our derivative.
+[  132.89s ->   139.35s] Looking more closely, we can see that D is a function of both time and the value of the underlying asset.
+[  139.99s ->   149.25s] So we can use Ito's Lemma and the first-order Taylor series expansion to find the differential of that function.
+[  149.47s ->   151.61s] So we can simply write it as the following.
+[  151.61s ->   161.51s] Now, I know this can look relatively intimidating, but fortunately, we have some rules from stochastic calculus that are going to help us out in simplifying this.
+[  161.99s ->   169.41s] So please take note that all subscripts are partial derivatives with respect to that variable in the original function D.
+[  170.11s ->   173.17s] But beyond that, let's take a look at our rules from stochastic calculus.
+[  173.17s ->   182.41s] So moving on, we can see, without sort of diving into the murky depths of stochastic calculus and actually deriving all of these rules,
+[  182.63s ->   190.01s] we can just say that Dt squared is equal to Dt times Dw, where W is Brownian motion,
+[  190.49s ->   194.47s] and that quantity or those two quantities are equal to zero.
+[  194.47s ->   202.87s] And then Dw squared, where a change in Brownian motion is squared, is equal to the change in time.
+[  203.57s ->   211.17s] And note that the change in the underlying asset price SDS is given by geometric Brownian motion there below.
+[  211.17s ->   220.40s] So let's use these rules from stochastic calculus to help simplify our first-order Taylor series expansion.
+[  221.40s ->   232.36s] Taking a look at our middle two terms here, we can see that both the cross partial and the second-order partial derivative with respect to time turn into zero,
+[  232.50s ->   237.74s] as Dt squared is zero, and Dt multiplied by Ds yields zero.
+[  237.74s ->   240.92s] So those two terms simply drop out.
+[  241.56s ->   244.76s] And then we're just left with this Ds squared term.
+[  245.16s ->   249.50s] But fortunately, we can also use our rules from stochastic calculus to simplify that.
+[  249.66s ->   254.20s] So moving on, looking at the geometric Brownian motion term squared,
+[  254.74s ->   261.40s] we can see that mu S Dt turns into zero because Dt squared is zero.
+[  261.40s ->   269.76s] And then when you actually get to the second term, you'll notice that you end up with Dt multiplied by Dw,
+[  270.06s ->   272.00s] and again, that just yields zero.
+[  272.36s ->   275.84s] So the only term that sticks around is that last term,
+[  276.04s ->   285.12s] where you end up having a sigma squared, an S squared, and a change in Brownian motion squared, which is just Dt.
+[  285.12s ->   289.56s] So after simplification, we are left with these three terms.
+[  290.08s ->   294.90s] And we can use these three terms in our original expression for the differential of our portfolio.
+[  295.58s ->   299.64s] So we have dH is equal to Q times dD.
+[  300.16s ->   305.60s] So substituting in dD with our expression derived using Ito's lemma,
+[  305.60s ->   313.68s] we're left with dH is equal to Q times the first order partial derivative with respect to time times exchange in time
+[  313.68s ->   319.90s] plus the first order partial derivative with respect to the underlying asset price times exchange in that asset price
+[  319.90s ->   325.34s] plus one half times the second order partial derivative with respect to the asset price
+[  325.34s ->   331.94s] multiplied by volatility squared times the underlying asset price squared times the exchange in time.
+[  331.94s ->   342.80s] So that's it for ETO's Lemma, and this is a very important lemma because it's used to help support the main argument for the Black-Scholes European pricing model.
+[  342.80s ->   353.64s] This helps create a hedged portfolio, which binds European option prices to the Black-Scholes model under the assumption of no arbitrage.

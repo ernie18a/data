@@ -1,0 +1,136 @@
+[    0.20s ->     7.64s] This secret strategy made a day trader $82 million, which he now uses for fast cars, multi-million
+[    7.64s ->    10.96s] dollar yachts, and luxurious mansions.
+[   10.96s ->    14.28s] But what does this prestigious day trader look like?
+[   14.28s ->    15.28s] This.
+[   15.28s ->    16.28s] This is him.
+[   16.28s ->    17.68s] But don't let his looks fool you.
+[   17.68s ->    20.52s] This guy is an absolute genius when it comes to trading.
+[   20.52s ->    25.18s] His name is Christian Callumaggy, and he made a 5 step trading strategy that let him trade
+[   25.18s ->    31.52s] from just $9,100 to $82 million in just 8 years.
+[   31.52s ->    35.94s] But how did a guy like this grow his account size to $82 million?
+[   35.94s ->    38.08s] Did he use specific indicators?
+[   38.08s ->    40.42s] Was there a specific strategy he followed?
+[   40.42s ->    41.42s] Yes.
+[   41.42s ->    42.42s] Yes, there was.
+[   42.42s ->    47.50s] And luckily for you, I scavenged the internet for weeks trying to find this exact information.
+[   47.50s ->    53.74s] And I found exactly how he finds his stocks, what he looks for, and his exact 5 step strategy
+[   53.74s ->    57.42s] that he follows to make sure he's entering into profitable trades.
+[   57.42s ->    61.34s] In order to follow this strategy, we have to start from the very beginning.
+[   61.34s ->    62.34s] Step 1.
+[   62.34s ->    66.34s] Christian had very specific conditions he looked for when trying to find the right stock.
+[   66.34s ->    72.60s] His first condition was he wanted to find a stock with a very strong move to the upside.
+[   72.60s ->    76.08s] Specifically a move that was between 30% and 100%.
+[   76.08s ->    79.06s] That specifically happened within the last 3 months.
+[   79.06s ->    82.32s] An easy way you can do that is by going in the trading view screener.
+[   82.32s ->    84.88s] I'll leave a link in the description if you don't yet have it.
+[   84.88s ->    87.08s] Go to the screener, click the filters tab.
+[   87.08s ->    90.98s] Make sure we're only looking at common stock, and make sure the change of the last month
+[   90.98s ->    92.58s] is above 30%.
+[   92.58s ->    98.00s] This will give you a list of stocks to choose from that have gone up 30% or more recently.
+[   98.00s ->    99.50s] That is step 1 complete.
+[   99.50s ->   101.26s] Step 2 is the fun part.
+[  101.26s ->   102.26s] Adding the indicators.
+[  102.26s ->   105.12s] Go to the indicators tab and type in moving average.
+[  105.12s ->   108.95s] We're going to need 2 of them, so click it twice.
+[  108.95s ->   113.13s] Go to the settings of the moving average and change the length to 10, and also make sure
+[  113.13s ->   115.39s] you're using a simple moving average.
+[  115.39s ->   120.27s] Then go to the other moving average and change the length to 20, and also make sure you're
+[  120.27s ->   122.13s] using a simple moving average again.
+[  122.13s ->   126.41s] I'm also going to change the colors of the moving averages so we can see them a lot better.
+[  126.41s ->   129.79s] Now Christian added these moving averages for a couple of reasons.
+[  129.79s ->   135.01s] The first reason is to make sure the stock was currently consolidating, or as he called
+[  135.01s ->   137.67s] it, surfing the moving average.
+[  137.67s ->   142.47s] Just like you pull in, and you just get spit right out of them, and you just drop in and
+[  142.47s ->   144.59s] just smack the lip, pull back.
+[  144.59s ->   149.07s] When looking at these big moves, Christian was looking for some consolidation right after.
+[  149.07s ->   153.67s] Meaning he wanted this big move, and then a pullback where price started to move sideways.
+[  153.67s ->   159.17s] He said that he specifically wanted this consolidation to last between 2 weeks and 2 months.
+[  159.17s ->   163.33s] So when looking for this consolidation, make sure it fits that time frame.
+[  163.33s ->   167.63s] Now when Christian mentioned surfing the moving average, he meant that he wanted to see the
+[  167.63s ->   172.89s] price holding around the moving averages, not going too much higher or lower than where
+[  172.89s ->   174.39s] the moving averages were.
+[  174.39s ->   180.39s] It's even better if say the S&P 500, which is an indication of the general market, is falling
+[  180.39s ->   184.21s] a lot, and the stock you're looking at is still holding the moving average.
+[  184.21s ->   188.89s] As that's showing immense signs of strength as it's still holding even though the
+[  188.89s ->   189.89s] market is falling.
+[  189.89s ->   190.89s] Just a little tip.
+[  190.89s ->   193.57s] So what you want to do is mark the consolidation period.
+[  193.57s ->   197.89s] Again, make sure this move lasts between 2 weeks and 2 months.
+[  197.89s ->   199.89s] That is step 2 complete.
+[  199.89s ->   204.23s] Step 3 is when we start getting into the real interesting stuff, where the strategy starts
+[  204.23s ->   205.23s] to take place.
+[  205.23s ->   208.65s] But first, let me show you a site called Hankertrade.
+[  208.65s ->   209.65s] Ever heard of it?
+[  209.65s ->   213.71s] They are a forex and crypto broker that have extremely low spreads and low commissions.
+[  213.71s ->   215.13s] Some of the best on the market.
+[  215.13s ->   217.13s] Which, who doesn't like saving money on commissions?
+[  217.13s ->   221.89s] They also have an extremely friendly support team, who will answer any type of question
+[  221.89s ->   222.89s] you have.
+[  222.89s ->   226.87s] And the best part, they are running a special promo, where if you sign up with the link
+[  226.87s ->   230.39s] in my description, they will match whatever you first deposit.
+[  230.39s ->   234.77s] So if you put in $100, they will match that and give you $100.
+[  234.77s ->   236.91s] That sounds like a deal.
+[  236.91s ->   239.85s] Sign up with my link and make sure you use that special promo.
+[  239.85s ->   240.85s] It's free money.
+[  240.85s ->   241.85s] Back to step 3.
+[  241.85s ->   245.81s] Now, what Christian was looking for was a breakout of this consolidation period.
+[  245.81s ->   249.09s] He wanted to see a candle break the resistance of this zone.
+[  249.09s ->   253.81s] Now, a lot of traders would say, wait for a break, then a retest, then enter as soon as
+[  253.81s ->   256.09s] price comes back down to the resistance.
+[  256.09s ->   258.81s] But Christian said he liked taking a different approach.
+[  258.81s ->   261.21s] Which brings me to step 4.
+[  261.21s ->   263.85s] Christian would go to a higher timeframe like the daily.
+[  263.85s ->   267.85s] He would then enter as soon as the candle broke the resistance.
+[  267.85s ->   270.85s] Once that happened, he would now be entered into the trade.
+[  270.85s ->   276.21s] He would then proceed to set his stop loss right below the low of the daily candle that
+[  276.21s ->   277.37s] broke the resistance.
+[  277.37s ->   281.13s] But for his take profit, he did something that I've never seen before.
+[  281.13s ->   286.43s] Unlike the usual route of setting your take profit at a 2 to 1 risk to reward ratio or setting
+[  286.43s ->   290.87s] your take profit at a certain percentage, Christian set his take profit based off the amount of
+[  290.87s ->   292.41s] time that has passed.
+[  292.41s ->   297.45s] He said specifically he would sell a third of his position after 3 to 5 days.
+[  297.45s ->   302.15s] So since we're on the daily timeframe, we just wait for 3 to 5 candles to appear.
+[  302.15s ->   306.27s] Once they do, we can now sell a third of our position for guaranteed profit.
+[  306.27s ->   310.19s] But what happens next is where the real profits start coming into play.
+[  310.19s ->   318.15s] Which brings me to step 5, the trailing stop loss.
+[  318.15s ->   320.27s] Now remember when I said this earlier?
+[  320.27s ->   323.99s] Now Christian added these moving averages for a couple of reasons.
+[  323.99s ->   328.91s] Well the second reason why Christian uses moving averages was for a trailing stop loss.
+[  328.91s ->   329.91s] Let me explain.
+[  329.91s ->   334.83s] So in this current trade, we sold a third of our position after the close of this 5th candle.
+[  334.83s ->   338.31s] What he would do next is raise his stop loss to the entry.
+[  338.31s ->   342.61s] This way if the trade ends up going down, we still made our money on the trade and we can
+[  342.61s ->   343.83s] move on to the next one.
+[  343.83s ->   349.15s] But then he would also allow the moving average to act as a trailing stop loss so he would still
+[  349.15s ->   351.61s] get the benefit if there was a humongous move.
+[  351.61s ->   356.43s] You see, one of the main reasons why this strategy works so good is because it's very
+[  356.43s ->   358.81s] good at catching monster moves.
+[  358.81s ->   363.27s] When doing my testing with this strategy, I saw that it wasn't odd to see this specific
+[  363.27s ->   367.33s] strategy catch 100, 200, 300% move.
+[  367.33s ->   370.61s] Which catching these moves is where the strategy really shines.
+[  370.61s ->   375.97s] So he would move his stop loss to break even, then he would only sell the rest of his position
+[  375.97s ->   378.61s] once price broke the 20 day moving average.
+[  378.61s ->   383.41s] It's also very important to note, the body of the candle must break the moving average.
+[  383.41s ->   387.51s] If a wick like this breaks the moving average, we do not sell the position.
+[  387.51s ->   392.69s] We only sell once the body of the candle like this has broke the moving average.
+[  392.69s ->   397.99s] So going back to the trade, we let price ride the huge amounts of momentum and wait for
+[  397.99s ->   399.95s] it to break the 20 EMA.
+[  399.95s ->   403.85s] After a couple of weeks, it finally breaks the moving average, which we then exit the
+[  403.85s ->   409.65s] trade completely, resulting in an astonishing 438% move.
+[  409.65s ->   410.71s] Now I'm going to be honest.
+[  410.71s ->   415.35s] When testing this strategy with hundreds of trades, I found it actually lost more than
+[  415.35s ->   416.35s] it won.
+[  416.35s ->   421.79s] But since the stop loss is so low and the profits are so ginormous, it actually made way
+[  421.79s ->   423.65s] more profit than it lost.
+[  423.65s ->   429.45s] For example, if we have 7 losing trades and just 3 winning trades, that's a win rate of
+[  429.45s ->   430.45s] 30%.
+[  430.45s ->   431.45s] Pretty shitty right?
+[  431.45s ->   437.83s] But if those losing trades are only 1% and the winning trades are around 20% each, that
+[  437.83s ->   440.57s] means you're still profiting 53%.
+[  440.57s ->   442.29s] So he actually said this himself.
+[  442.29s ->   447.99s] His trading journal at times is mostly a sea of red, but then he gets a big winner, saying,
+[  447.99s ->   452.99s] yeah, you could be wrong 8 out of 10 times with this strategy, but it still makes huge
+[  452.99s ->   454.21s] amounts of money in the end.
+[  454.21s ->   460.57s] Next, we'll be looking at Takashi Kodogawa, who made 153 million with his trading strategy.
+[  460.57s ->   464.17s] And I gotta say, that strategy is absolutely mind blowing.
+[  464.17s ->   467.31s] Go check that out, thanks for watching, and I'll see you guys next time.

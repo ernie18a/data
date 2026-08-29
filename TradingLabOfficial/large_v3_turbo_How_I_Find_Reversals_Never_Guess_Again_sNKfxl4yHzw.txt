@@ -1,0 +1,121 @@
+[    0.00s ->    10.64s] You wake up, brush your teeth, pour your morning cup of joe, pack your suitcase, you then proceed to order an uber, you then head to the airport, then you run to the terminal, fly to Nebraska.
+[   10.82s ->    11.62s] What's in Nebraska?
+[   13.12s ->    13.44s] Nothing.
+[   13.60s ->    20.20s] You fly back to wherever you live, go to your computer, start your computer, open your trading chart, and now you're ready to trade.
+[   20.38s ->    22.90s] Now, you may be asking, why did we fly to Nebraska?
+[   23.04s ->    23.82s] I have no idea.
+[   23.96s ->    26.86s] Honestly, I just wanted to make one of those cool traveling monetizers.
+[   27.72s ->    28.16s] Nice.
+[   28.24s ->    28.64s] Moving on.
+[   28.64s ->    29.52s] The Reversal.
+[   29.52s ->    41.70s] One of those topics you always hear about, but whenever you try it yourself, it seems like you're always buying too early and the price continues to drop, leaving you with the classic trading expression, trying to catch a falling knife.
+[   41.76s ->    52.92s] But what if I told you there was a four-step formula to finding the perfect points to enter a trade, and you can use tools like this one that have real-time data to help you find these points?
+[   52.92s ->    65.38s] To make my point even more clear, if you use the same exact four-step formula on Bitcoin in the past 10 years, you would have made 18,202%.
+[   65.38s ->    67.06s] I know, pretty crazy, right?
+[   67.06s ->    76.48s] And our whole strategy follows the one principle that legendary trader Warren Buffett said, be fearful when others are greedy, be greedy when others are fearful.
+[   76.72s ->    78.24s] Ah, what a wise man.
+[   78.24s ->    81.74s] But this quote is the absolute pinnacle of the reversal.
+[   81.92s ->    84.42s] The four-step formula goes something like this.
+[   84.52s ->    86.96s] First, you're going to go on a site called Chain Exposed.
+[   87.06s ->    90.66s] This is a data-driven site using real-time crypto data.
+[   90.76s ->    94.06s] The first step of the four-step formula is one of my favorites.
+[   94.18s ->    97.80s] First, go to the left and click Unrealized Profit and Loss.
+[   97.90s ->   100.74s] Next, click Relative Unrealized Profit.
+[  100.74s ->   105.38s] You are going to have these colored zones on your chart, one on the top and one on the bottom.
+[  105.56s ->   108.16s] This is what's called the Opportunity Zone.
+[  108.26s ->   120.50s] Now, this chart is Unrealized Profits, so the green box is zero, which means if price ever comes into this green box, that means the majority of traders currently in the market are at a loss.
+[  120.56s ->   123.76s] This is also including miners that are mining Bitcoin.
+[  124.02s ->   126.06s] The same idea applies to selling.
+[  126.06s ->   131.50s] This red box is called the Overheat Zone, where most traders are at a net profit.
+[  131.66s ->   135.10s] And just look how accurate this chart has been over the time.
+[  135.18s ->   139.42s] Price comes to this green zone, it goes up, comes to the red zone, goes down.
+[  139.46s ->   143.18s] Price comes to the green zone, goes up, goes to the red zone, goes down.
+[  143.24s ->   146.80s] And as you can see, it repeats this process multiple times.
+[  146.96s ->   153.22s] It's also important to take note that when price is in these zones, it's not here for a long period of time.
+[  153.30s ->   154.66s] So, that's the first step.
+[  154.66s ->   159.88s] If you want to find some of the best entry points you want to be buying when price is in this green zone.
+[  159.96s ->   160.52s] Step two.
+[  160.62s ->   167.40s] Now, if you're looking to purchase Bitcoin, or any crypto for that matter, I would 100% recommend Apex Omni.
+[  167.40s ->   173.10s] They have over 20 pairs available to trade and are even planning on having 50 in the next month.
+[  173.16s ->   176.50s] You can use up to 100% leverage with them if you're feeling risky.
+[  176.50s ->   184.60s] They have zero gas fees, and not only that, but they have high-speed execution times so you can get in your trades as fast as possible.
+[  184.72s ->   189.44s] But the real reason why I love them so much is because you can earn points by simply trading.
+[  189.56s ->   199.18s] For example, you can use these points to buy mystery boxes, which include free crypto, airdrops, and Apple Vision Pro, and their grand prize of f***ing Lamborghini.
+[  199.18s ->   205.10s] Yeah, you can literally win a Lamborghini from a mystery box simply from just trading on their exchange.
+[  205.16s ->   214.08s] Plus, if that all wasn't good enough, if you use my specific link in the description, Apex hooked it up with a 5% discount when it comes to trading fees.
+[  214.20s ->   215.74s] Check them out if you need a new broker.
+[  216.00s ->   218.12s] They are seriously one of the best crypto brokers.
+[  218.36s ->   218.82s] Moving on.
+[  218.96s ->   219.48s] Step two.
+[  219.48s ->   221.88s] This next tool is also one of my favorites.
+[  221.98s ->   224.54s] It's called the Supply in Profit and Loss.
+[  224.62s ->   230.58s] Now, this tool is kind of like the first one, but it's a little more precise when it comes to describing the data.
+[  230.70s ->   235.46s] If you look closely, when I move my cursor through this chart, some numbers will pop up.
+[  235.54s ->   241.08s] It will show you the price of Bitcoin, but also show you how much of the current supply is in profit.
+[  241.20s ->   247.94s] Now, if you know absolutely anything about trading, you should already know this data is an absolute gem.
+[  247.94s ->   253.72s] We can see in real time the percentage of the market that is currently trading for a profit.
+[  253.86s ->   258.10s] So here, only 41% of traders were trading for a profit.
+[  258.26s ->   262.26s] Obviously, as price goes down, less traders will be trading for a profit.
+[  262.38s ->   265.80s] And as price goes up, more traders will be trading for a profit.
+[  265.90s ->   271.82s] So as you can see, as we start reaching all-time highs, more and more traders are trading for a profit.
+[  271.92s ->   275.66s] And the number even gets to 100% of traders reaching a profit.
+[  275.66s ->   278.08s] How do we use this tool to our benefit?
+[  278.14s ->   283.10s] Well, you can use this tool to find great places to not only enter, but exit.
+[  283.22s ->   285.14s] My rule for this chart is simple.
+[  285.26s ->   290.92s] It's a good idea to look for buy opportunities when 50% or less of traders are in a profit.
+[  291.06s ->   294.04s] Now, just to be clear, this won't happen very often.
+[  294.22s ->   298.02s] But you should still know this in the back of your head in case it does happen.
+[  298.10s ->   302.64s] If it ever goes below 50%, it's a very, very good time to buy.
+[  302.64s ->   306.26s] But where I really think this tool shines is when it comes to selling.
+[  306.42s ->   311.58s] You want to start looking to sell your position when this number is getting closer to 100%.
+[  311.58s ->   316.04s] This will give you great insight when there is fear or greed in the market.
+[  316.18s ->   316.98s] Step number three.
+[  317.08s ->   321.12s] The next chart is called the NUPL chart or the NUPLE chart.
+[  321.22s ->   322.32s] It kind of sounds like nipple.
+[  322.48s ->   323.44s] I kind of like that better.
+[  323.58s ->   324.96s] We'll call it the NIPLE chart.
+[  325.12s ->   326.88s] You'll have three lines on this chart.
+[  326.88s ->   332.46s] The black line is the price, the red line is long-term holders, and the orange line is
+[  332.46s ->   334.74s] both long-term and short-term holders.
+[  334.84s ->   339.84s] Then again, if you look closely, you'll see this horizontal black line, which is the zero
+[  339.84s ->   340.14s] line.
+[  340.22s ->   342.16s] All right, so we have three lines on our chart.
+[  342.26s ->   343.02s] How does that help?
+[  343.06s ->   348.54s] Well, if you see both the orange and red line go beneath the zero mark, it's a good time
+[  348.54s ->   349.12s] to buy.
+[  349.22s ->   354.34s] This will tell you the majority of long-term and short-term traders are trading for a loss.
+[  354.34s ->   357.94s] And again, just look how accurate this tool has been in the past.
+[  358.00s ->   362.68s] Every time these lines go beneath the zero line, price spikes up afterwards, giving you
+[  362.68s ->   364.48s] the perfect reversal point.
+[  364.52s ->   368.88s] For the fourth and final step, we're going to dive into the actual chart setup.
+[  368.98s ->   371.54s] In order to do this, you need to get on TradingView.
+[  371.60s ->   374.44s] If you don't yet have it, I'll leave a link in the description.
+[  374.64s ->   380.04s] Go to your chart, click indicators, and type in EMA, and click this one right here.
+[  380.12s ->   383.76s] Next, go to the settings of the EMA and change the length to 200.
+[  383.76s ->   386.52s] I'll also change the color of this line to orange.
+[  386.62s ->   388.34s] Next, you want to change the time frame.
+[  388.44s ->   393.38s] Since most of this data that we just reviewed is long-term data, we want to represent the
+[  393.38s ->   394.62s] same on our chart.
+[  394.72s ->   397.84s] So we're going to select a higher time frame like the weekly.
+[  397.96s ->   403.22s] If price ever touches or goes beneath this orange line, that means it's a good buying
+[  403.22s ->   405.84s] opportunity and you should look to enter a trade.
+[  405.94s ->   407.18s] Now, don't get me wrong.
+[  407.28s ->   409.94s] All of this is going to happen very, very rarely.
+[  410.12s ->   412.30s] Maybe once or twice every two years.
+[  412.30s ->   417.38s] But just as Warren Buffet said, you only need a few good trades during your lifetime to
+[  417.38s ->   418.14s] become a millionaire.
+[  418.42s ->   419.90s] So I wanted to test it.
+[  419.98s ->   425.30s] So again, if you followed this exact strategy over the past 10 years with Bitcoin, you would
+[  425.30s ->   428.74s] have made 18,202%.
+[  428.74s ->   434.92s] Which means if you started with just $10,000, you would have made 1.8 million.
+[  435.10s ->   436.20s] Let that sink in.
+[  436.28s ->   438.98s] And that's without any margin or anything.
+[  439.14s ->   439.78s] Pretty crazy.
+[  439.78s ->   444.48s] Now, there is one more secret tool I use to completely tie this strategy together.
+[  444.66s ->   447.42s] This tool is actually the complete backbone of this strategy.
+[  447.58s ->   451.70s] And it'll help you determine timing to help you find the perfect reversals.
+[  451.82s ->   455.16s] Now, to be honest, I don't want this info out to the general public.
+[  455.28s ->   458.86s] So I'm going to be only sending this tool to my newsletter subscribers.
+[  459.12s ->   461.32s] It's completely free if you want to sign up.
+[  461.32s ->   464.18s] So if you're interested, I'll leave a link in the description.
+[  464.36s ->   466.60s] Thanks for watching, and I'll see you guys next time.

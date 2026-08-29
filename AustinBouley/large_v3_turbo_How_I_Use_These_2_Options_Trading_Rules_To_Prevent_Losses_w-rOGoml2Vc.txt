@@ -1,0 +1,105 @@
+[    0.00s ->     5.46s] Hey guys, in this video I'm going over our exit rules, being both our take profit and our stop loss.
+[    5.56s ->     9.74s] These are very mechanical rules, aka set in stone, that we do.
+[   10.00s ->    13.52s] So there's not much explaining on the reason behind, this is just statistically,
+[   14.00s ->    17.96s] this is what works best over thousands and thousands of back tests.
+[   18.04s ->    20.48s] So let's discuss it. First is our stop loss rule.
+[   20.76s ->    27.82s] This helps us mitigate our loss so that every one winner will offset one loser and vice versa.
+[   27.82s ->    31.92s] So how we set this up is we exit when our strike price is broken.
+[   32.14s ->    36.82s] As you remember, when we're setting up trades, we pick a level we think the stock will stay above.
+[   36.92s ->    39.24s] For instance, let's say we're placing a put credit spread trade right here.
+[   39.36s ->    43.32s] We go below it and we find a level we think the stock will stay above.
+[   43.64s ->    45.32s] So just for example, let me just put a line here.
+[   45.74s ->    50.14s] So if we think the stock will stay above this level and the stock then comes down and breaks this level,
+[   50.24s ->    54.04s] hits this level and goes below it, that means that the trend is no longer intact.
+[   54.04s ->    57.98s] The trend that we were trading, aka the uptrend here, if we're placing a put credit spread,
+[   58.12s ->    62.32s] is no longer intact. So we should exit that trade for a stop loss.
+[   62.42s ->    65.90s] So when we exit the trade, when our strike price has been hit,
+[   66.04s ->    69.72s] that means that the spread will be trading around 50 cents.
+[   69.98s ->    76.88s] Now there's a theoretical reason for this, but all you need to know is when your short strike price is being hit,
+[   76.88s ->    82.66s] the spread price will be between 45 cents and 50 cents, around 45 cents.
+[   82.74s ->    84.84s] So that's the price that it will be.
+[   85.02s ->    88.72s] So that is the price that we're going to set for our stop loss.
+[   88.80s ->    91.04s] So how do we set this up exactly?
+[   91.22s ->    93.88s] Well, I have a trade here that we can do it with.
+[   94.84s ->   103.64s] What I must caveat this and say is that only certain brokers allow you to place stop limit orders on credit spreads
+[  103.64s ->   109.30s] because they are two-leg option trades, which means they have two different types of options in the trade.
+[  109.70s ->   112.12s] So how do we adjust this accordingly?
+[  112.30s ->   117.10s] I will show you how to deal with it if your broker does not allow you to do a stop limit order,
+[  117.16s ->   119.50s] like a Robinhood broker or something like that.
+[  119.62s ->   122.88s] So for instance, I'm using TastyTrade for this example, so I will be able to.
+[  122.88s ->   126.58s] So I click on this vertical trade right here.
+[  126.68s ->   129.42s] I click on the close position.
+[  130.00s ->   131.52s] I'm going to go over here.
+[  131.60s ->   133.60s] Let me move my mic so I can fully see my screen.
+[  134.64s ->   137.92s] So let's see, close position.
+[  138.46s ->   141.38s] Order type here, we're going to move that to stop limit.
+[  142.36s ->   145.24s] We're going to move that to a net debit or stay at net debit
+[  145.24s ->   147.80s] because that means a debit means we're exiting since the credit's entered.
+[  148.24s ->   150.88s] Just making sure my face isn't covering bad things.
+[  150.98s ->   155.79s] Anyways, so now we have a good till cancel.
+[  155.95s ->   159.37s] The reason being is because we don't know how long this stop loss will be open.
+[  160.01s ->   164.11s] We just know that we want it to stay open while we are in the trade.
+[  164.11s ->   165.71s] So we're going to do a good till cancel order.
+[  166.21s ->   169.51s] Next, we have the stop trigger price and the limit price.
+[  169.83s ->   174.11s] So when you're putting on a stop limit order, there's always two different prices.
+[  174.51s ->   180.91s] The reason for this is because when you're putting in an options order that's above the current price,
+[  181.03s ->   185.35s] it will automatically fill because of the way that the options market works.
+[  185.35s ->   191.01s] So what we need is we need a trigger price that when that price is hit, then our order gets sent into the market.
+[  191.37s ->   195.95s] If it's sent in before, automatically we'll get filled and we don't want that.
+[  196.05s ->   197.35s] So that's why there's a trigger price.
+[  197.53s ->   201.77s] When the spread price hits this trigger price, then we'll send the order in.
+[  201.77s ->   206.97s] So if we're looking at the stop trigger price, and we'll remember we're trying to exit at $0.45.
+[  207.81s ->   209.05s] So remember, that's our exit.
+[  209.33s ->   216.53s] If we're trying to exit at $0.45 or somewhere around there, that means once the spread hits, let's say $0.45 for example,
+[  217.07s ->   218.92s] now that's our trigger price.
+[  218.98s ->   223.92s] So once the spread has traded at $0.45, now our order will get sent in.
+[  224.06s ->   225.52s] Well, what order will get sent in?
+[  225.60s ->   228.72s] This limit order, which shows where we're going to get filled.
+[  228.72s ->   234.24s] And so again, if we're trading at $0.45 and we are trying to buy back into the market,
+[  234.66s ->   237.96s] we typically want to buy a bit higher to get filled instantly, right?
+[  238.18s ->   242.46s] If we go down a bit lower, below $0.45, it may take some time for us to get filled.
+[  242.80s ->   246.00s] So for that, we can go around $0.45.
+[  246.56s ->   249.46s] If we want to fill instantly, we can go $0.46 or $0.47.
+[  249.84s ->   253.20s] But something like this would be a great order to set up.
+[  253.52s ->   255.90s] And so this is how you set up a stop limit order.
+[  255.90s ->   258.86s] You simply click review and send, and that is your order done.
+[  259.26s ->   259.94s] You are good.
+[  260.06s ->   265.30s] So again, this can be done on TastyTrade and TD Ameritrade.
+[  265.42s ->   269.18s] And to my knowledge, it may be available on interactive brokers.
+[  269.66s ->   271.38s] But that is how you set up a stop limit order.
+[  271.52s ->   276.56s] Now, for those who have a platform like Robinhood, how do we take advantage of it?
+[  276.84s ->   282.08s] Well, you need to go down to the stock that you're trading, not the options, the stock.
+[  282.08s ->   284.88s] And Robinhood now has the ability to set up alerts.
+[  285.00s ->   286.74s] You're going to want to set up alerts on the trade.
+[  287.22s ->   288.98s] And so again, you can set up price alerts.
+[  289.06s ->   290.42s] You can also set up indicator alerts.
+[  290.50s ->   294.26s] We're going to do a price alert, which means that, let's say if we're trading, you put credit spread.
+[  294.52s ->   296.22s] That means we'll let the stock stay above a certain level.
+[  296.30s ->   300.28s] So the price moves below our strike price, whatever that price is.
+[  300.30s ->   302.68s] Let's say it's $4.10, right?
+[  302.68s ->   304.16s] And now we set up the alert.
+[  304.32s ->   308.00s] So now we get alert triggered to our phone or computer or whatever.
+[  308.48s ->   311.14s] And now we know to go in and manually close that trade.
+[  311.32s ->   312.84s] So that's how that works.
+[  312.90s ->   317.56s] You can also place the alert on your broker or on TradingView or something like that.
+[  317.62s ->   319.92s] So that now you have an alert telling you when to get in.
+[  319.98s ->   324.44s] If you want more time or you want to be aware when the stock is getting close to your strike price,
+[  324.48s ->   327.64s] let's say your strike price is $4.10, then set it at $4.11.
+[  327.64s ->   332.64s] So you're okay, okay, in your mind, you can know it's getting close and you may have to worry about it.
+[  332.90s ->   338.10s] Well, that's the option if you don't have a stop limit order, aka a stop order that you can put in for your option.
+[  338.84s ->   340.00s] All right, I hope that makes sense.
+[  340.32s ->   346.60s] I will be introducing a way very soon that we can automate the orders for you, which I'm super excited for.
+[  346.78s ->   355.68s] But anyways, that is how we deal with stop loss as explained here in the PDF guide that explains everything about the mother strategy.
+[  355.68s ->   365.32s] Next, we have our early exit rule, which is this right here, which simply says that if we can exit the trade for less than $0.06 or less than $0.05,
+[  365.64s ->   367.70s] then we should exit the trade.
+[  367.84s ->   368.04s] Why?
+[  368.28s ->   376.90s] Because it's better to take our winners off while they are winning and then to reinvest the money into a new trade and continue to roll the process like that.
+[  377.24s ->   380.76s] And so again, this statistically increases our win rate.
+[  380.76s ->   385.26s] So by default, it's around a 72% win rate for the put credit spread strategy.
+[  385.36s ->   390.62s] When we use the early exit rules, now that win rate is going up to 76%.
+[  390.62s ->   395.92s] So again, it is just more advantageous to close these trades because you never know what's going to happen.
+[  396.02s ->   402.10s] So if you have the profit, aka the spread is trading for less than $0.05, go for it and close that trade.
+[  402.10s ->   407.64s] All right, guys, that is how we manage our exit rules, both a stop loss and exiting for a profit.
+[  407.74s ->   408.62s] I hope that makes sense.
+[  408.68s ->   410.92s] If not, message me in Discord and I'll get back to you.
+[  411.54s ->   413.46s] Anyways, I will see you in the next lesson.

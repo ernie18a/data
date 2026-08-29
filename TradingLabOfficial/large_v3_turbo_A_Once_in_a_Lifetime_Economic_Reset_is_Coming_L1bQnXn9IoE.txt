@@ -1,0 +1,143 @@
+[    0.08s ->     7.62s] We have major bottoms in 78, 82, 86, 90, because they always rig things to be good in the election year.
+[    8.06s ->    12.44s] This is Stanley Drunkenmiller, one of the greatest traders to ever live,
+[   12.48s ->    17.32s] being known to average 30% every single year for 30 years straight.
+[   17.82s ->    18.30s] Consistently.
+[   18.42s ->    19.82s] Do you know how hard that is to do?
+[   19.92s ->    22.08s] Just so you guys know how big of a deal that is,
+[   22.14s ->    26.14s] the average hedge fund only makes around 15% a year.
+[   26.14s ->    32.26s] So Stanley is basically doubling that, and on top of that, doing it consistently for 30 years.
+[   32.40s ->    33.52s] That's f***ing insane.
+[   33.70s ->    37.16s] Now, just like you're probably thinking now, I also had the same question.
+[   37.34s ->    38.64s] How did he do it?
+[   38.78s ->    42.16s] Well, being the nosy YouTuber I am, I wanted to figure that out.
+[   42.22s ->    45.00s] So let's just say I did some research of my own.
+[   45.06s ->    50.26s] I read every article, every blog post, every video about Stanley Drunkenmiller.
+[   50.38s ->    52.60s] And then I stumbled upon this.
+[   53.12s ->    53.54s] Roll it.
+[   53.54s ->    57.44s] My first boss in Pittsburgh in 1976 said,
+[   57.56s ->    62.84s] Stanley, the way you time the political cycle is you buy the market two years before the general election,
+[   63.04s ->    64.90s] and then you sell it on the general election,
+[   65.02s ->    68.34s] because they always rig things to be good in the election year.
+[   68.40s ->    69.52s] He said this in 76.
+[   69.88s ->    75.66s] We had major bottoms in 78, 82, 86, 90, 94, 98, 02,
+[   75.86s ->    80.68s] not so much in 06, because Bush tried to push it through all the way, and we see what happens.
+[   80.68s ->    84.44s] Now, sure, markets are dependent on a lot of things, like price action,
+[   84.60s ->    86.78s] they're dependent on highs and lows, etc, etc.
+[   86.90s ->    92.40s] But what if there are market cycles happening within the market that were highly, highly predictable?
+[   92.60s ->    96.66s] Now, what Drunkenmiller discovered is that two years before a presidential election,
+[   96.92s ->   101.22s] the stock market would often become very bullish, like stupidly bullish.
+[  101.44s ->   101.72s] Why?
+[  101.72s ->   104.84s] Because presidents want their party to get re-elected again.
+[  105.02s ->   107.38s] And how do they get their party re-elected again?
+[  107.48s ->   109.04s] By inflating the economy.
+[  109.24s ->   111.62s] Now, also, just like you, I was a little skeptical.
+[  111.78s ->   114.58s] There's no way following a strategy as simple as this
+[  114.58s ->   118.94s] could actually make good enough returns to retire you for life, right?
+[  119.10s ->   119.40s] Right?
+[  119.66s ->   120.02s] Right?
+[  120.20s ->   124.34s] So in good old Trading Lab fashion, we're gonna test it to see if it actually works.
+[  124.46s ->   125.34s] First thing I want to do,
+[  125.46s ->   128.90s] I want to see if the statistics actually back up what Stanley is saying.
+[  128.90s ->   135.04s] So, I went to ChatGPT and asked it what the average returns are for each year of the political cycle.
+[  135.20s ->   138.18s] The statistics surprisingly backed up what Stanley was saying.
+[  138.34s ->   142.02s] Years 1 and 2 of the president being elected generally had lower returns,
+[  142.14s ->   145.16s] while the end of their term generally had higher returns.
+[  145.26s ->   145.92s] Pretty interesting.
+[  146.14s ->   150.86s] So now we know the markets on average perform better at the end of political cycles.
+[  150.98s ->   152.06s] At least, on average.
+[  152.14s ->   154.14s] But these statistics weren't enough for me.
+[  154.14s ->   158.86s] I wanted to see how this strategy actually performed solely around this idea.
+[  158.90s ->   160.92s] To test this, I went to my charts.
+[  161.12s ->   164.48s] And this is where things started to become very, very eye-opening.
+[  164.64s ->   167.66s] I marked every year from 1980 till now.
+[  167.80s ->   169.58s] So 45 years of backtesting.
+[  169.68s ->   173.62s] And I marked with a white line two years before the president actually got elected.
+[  173.86s ->   177.12s] Then I marked with a green line when the president actually got elected.
+[  177.12s ->   186.14s] And by simply just looking at this, we had major bottoms in 78, 82, 86, 90, 94, 98, and 02.
+[  186.50s ->   190.10s] Which all of these years are when the new president got elected.
+[  190.24s ->   195.10s] So if you simply followed the strategy of investing two years before the president got elected,
+[  195.32s ->   197.54s] then sold when the president actually got elected,
+[  197.80s ->   201.00s] you would have made positive returns every single time.
+[  201.00s ->   204.60s] Let me repeat that, positive returns every single time.
+[  204.64s ->   211.10s] Out of the 40 years, the only time we had negative returns was the presidential election of 2004,
+[  211.40s ->   213.06s] where you basically broke even.
+[  213.26s ->   215.24s] This is absolutely crazy.
+[  215.38s ->   218.28s] But the thinking behind this actually makes a lot of sense.
+[  218.42s ->   222.02s] If a president wants him or his party to be re-elected,
+[  222.14s ->   227.18s] he's obviously going to try to make the economy and the markets as good as he possibly can.
+[  227.18s ->   231.02s] Even if that means over-inflating it for a short-term gain.
+[  232.53s ->   237.29s] Which, if that's the style of thinking, what often happens when the new president gets elected,
+[  237.53s ->   243.15s] he's now dealing with an over-inflated market, which will often tend to naturally correct.
+[  243.33s ->   246.45s] But we ran into a major problem with this strategy.
+[  246.63s ->   249.99s] You see, I shared this exact strategy with my Instagram followers.
+[  250.13s ->   253.03s] Also, if you aren't following me on Instagram, what are you doing?
+[  253.09s ->   256.19s] Anyways, I shared this exact strategy with my followers.
+[  256.19s ->   258.87s] And a lot of you had the exact same criticism,
+[  259.05s ->   263.33s] specifically from a user with the name of ILikeCorn69.
+[  263.67s ->   264.49s] It's Chrome!
+[  265.11s ->   268.39s] Well, instead of buying and selling during political cycles,
+[  268.45s ->   272.17s] if you just held the S&P 500 for those 45 years instead,
+[  272.41s ->   274.09s] you would have made more money.
+[  274.25s ->   275.73s] And this is true.
+[  275.87s ->   276.89s] But let me cook.
+[  276.97s ->   280.41s] You see, sure, if you bought and held the S&P 500,
+[  280.65s ->   284.99s] you technically would have made more money compared to just using this strategy.
+[  284.99s ->   286.19s] That is true.
+[  286.31s ->   287.35s] But here's the thing.
+[  287.57s ->   291.27s] If you did do that, you would have had to hold through the dot-com bubble,
+[  291.43s ->   293.45s] the housing crisis, and coronavirus,
+[  293.87s ->   297.89s] and all the other drastic market crashes throughout the 45 years,
+[  297.97s ->   302.93s] where your portfolio would have gone down 60% or more multiple times.
+[  303.05s ->   306.05s] Would you have the emotional or financial control to do that?
+[  306.15s ->   306.51s] Maybe.
+[  306.87s ->   308.71s] But also, maybe not.
+[  308.71s ->   311.11s] If you did use this strategy, on the other hand,
+[  311.19s ->   314.49s] you would have been out of the market during all of these crashes.
+[  314.73s ->   315.33s] All of them.
+[  315.41s ->   318.25s] Meaning you could have used your capital to invest elsewhere,
+[  318.45s ->   320.09s] where your money is way more efficient.
+[  320.25s ->   324.85s] And you could have made way more money investing in other markets during these periods.
+[  325.09s ->   326.03s] That's the edge.
+[  326.15s ->   328.85s] You can use your capital where it's more efficient.
+[  328.99s ->   332.77s] Yeah, this strategy underperforms the S&P buy and hold strategy,
+[  332.91s ->   334.99s] but that's not where this strategy shines.
+[  334.99s ->   336.95s] It's not trying to get the best gains,
+[  337.11s ->   339.19s] it's trying to avoid the worst years,
+[  339.49s ->   342.43s] and keep your money where it does the most amount of work.
+[  342.51s ->   345.37s] What we are trying to do with this strategy is implement it
+[  345.37s ->   348.93s] so the probabilities work with us instead of against us.
+[  348.99s ->   354.05s] So no, I wouldn't just blindly buy and sell based purely off presidential market cycles.
+[  354.11s ->   355.53s] That's not what I'm saying to do,
+[  355.65s ->   358.47s] but what you can do is use it to your advantage.
+[  358.61s ->   361.27s] For example, you can use your own trading strategy,
+[  361.53s ->   364.51s] or one of the many trading strategies I've shared on my YouTube,
+[  364.51s ->   368.63s] and use these political cycles as a gauge for scaling your positions.
+[  368.97s ->   372.03s] For example, you can position larger with your current strategy
+[  372.03s ->   373.99s] during the end of political cycles,
+[  374.09s ->   377.13s] because the probabilities are statistically in your favor.
+[  377.29s ->   380.63s] And you can position smaller at the beginning of political cycles,
+[  380.77s ->   383.31s] because you now know they tend to underperform,
+[  383.43s ->   387.89s] but in the end, still enter and exit based on the strategy you're currently using.
+[  388.03s ->   389.51s] The proof is in the pudding.
+[  389.69s ->   391.21s] The statistics don't lie.
+[  391.21s ->   395.73s] It is statistically proven that the end of political cycles on average
+[  395.73s ->   398.47s] perform better than the beginning of political cycles.
+[  398.63s ->   399.37s] That's a fact.
+[  399.47s ->   401.79s] And more importantly, that's an edge.
+[  401.91s ->   404.85s] And trading is all about finding statistical edges
+[  404.85s ->   407.63s] to improve the probabilities of your trades.
+[  407.71s ->   410.51s] And if you're basing your current strategy with this mindset,
+[  410.75s ->   413.35s] you can take advantage of scaling in aggressively
+[  413.35s ->   415.57s] when the probabilities are more in your favor.
+[  415.57s ->   417.21s] And you can position less aggressively
+[  417.21s ->   419.65s] when the odds are not so much in your favor.
+[  419.81s ->   421.39s] That's the point I'm trying to make.
+[  421.49s ->   423.25s] And if you have this style of thinking,
+[  423.47s ->   427.07s] it's definitely probable you could outperform the S&P 500
+[  427.07s ->   428.73s] with what I just taught you.
+[  428.85s ->   430.07s] And the crazier thing is,
+[  430.15s ->   431.93s] if you were to follow this strategy,
+[  432.23s ->   434.85s] 2026 is the year you would be buying,
+[  435.13s ->   438.07s] and 2028 is the year you would sell.
+[  438.21s ->   439.03s] What do you guys think?
+[  439.03s ->   469.01s] What do you guys think?

@@ -1,0 +1,99 @@
+[    1.07s ->     5.92s] Hey YouTube, it's Roman. Welcome back to Workshop Wednesday. Today we're going to
+[    5.92s ->     9.88s] be talking about linear regressions in Python. Specifically, we're going to look
+[    9.88s ->    13.72s] at two different methods of performing a linear regression. We're going to look
+[   13.72s ->    18.28s] at a pre-packaged solution and then we're also going to look at a matrix
+[   18.28s ->    23.00s] solution as seen in a previous video where we looked at linear regressions
+[   23.00s ->    27.68s] with matrices. For starters, we're going to need some data and to generate the
+[   27.68s ->    32.06s] data, I'm going to use numpy and then I'm also going to import matplotlib so we
+[   32.06s ->    36.92s] can visualize it and hopefully see some sort of positive linear trend that we're
+[   36.92s ->    43.52s] trying to capture in a regression model. So I'm going to say import numpy as mp,
+[   43.52s ->    53.18s] import matplotlib.pyplot as plt, and then I'm going to say x is equal to mp.a
+[   53.18s ->    63.68s] range. We'll just go from 0 to 10 and then we'll say that y is equal to x plus mp.random.randn
+[   63.68s ->    70.22s] and then we'll generate 10 draws from a standard normal distribution and if we
+[   70.22s ->    77.18s] plot this, we could do plt.scatter x and y and you can see that we have some data
+[   77.18s ->    83.30s] here with a very strong positive linear correlation. When it comes to interpreting
+[   83.30s ->    88.18s] your coefficients in a statistical setting, there are some grassroot
+[   88.18s ->    92.84s] assumptions that are being made about the data that you're modeling in terms of
+[   92.84s ->    97.52s] whether or not the relationship is assumed to be linear, if the errors are
+[   97.52s ->   101.84s] distributed standard normally, things of that nature. We're not going to cover
+[  101.84s ->   105.86s] specifically those assumptions in the statistical setting in this video but
+[  105.86s ->   109.94s] perhaps in another video we'll talk about the statistical implications of a
+[  109.94s ->   114.62s] linear regression model. So our goal is to find the line of best fit through
+[  114.62s ->   119.84s] this data. To find the line of best fit, to create any line in general for that
+[  119.84s ->   125.42s] matter, we need a slope and we need an intercept so that we can shockingly use
+[  125.42s ->   130.52s] slope-intercept form to draw a line through these points. Now this slope and
+[  130.52s ->   135.08s] intercept are going to be very special in that they are the solution which
+[  135.08s ->   142.84s] minimizes the distance of all of these data points to that line, e.g. the line of
+[  142.84s ->   148.90s] best fit. So to do this, we actually have a closed-form solution in terms of x and y.
+[  148.90s ->   152.46s] So let's go ahead and take a look at that. As you can see, I typed out the
+[  152.46s ->   157.48s] equation that we're going to be solving that is for this vector b that contains
+[  157.48s ->   163.68s] alpha and beta where alpha is the intercept and beta is the slope of this line of
+[  163.68s ->   169.32s] best fit. And we have x and y respectively. The only thing that we need to do now is
+[  169.32s ->   176.10s] modify x so that we include a column of ones that represent the intercept for
+[  176.10s ->   179.94s] every observation. To accomplish this, we're going to make a slight modification
+[  179.94s ->   184.32s] to the code above. We're going to look at where we defined x and instead of just
+[  184.32s ->   191.16s] including the synthetic data matrix, we are also going to include this column of ones by saying
+[  191.16s ->   201.78s] np.ones10 and we can wrap this in a numpy array and then we will have successfully generated that
+[  201.78s ->   209.32s] matrix where we have a column of ones and then a column of our data. Now we also need to make a slight
+[  209.32s ->   217.56s] modification to the y vector where instead of using x we're going to be using the first column in the
+[  217.56s ->   224.76s] x matrix as the the zeroth column is just going to be the ones. So we will say the first column and
+[  224.76s ->   231.16s] everything in the first column using our slice notation and now we can go about plotting this by
+[  231.16s ->   240.76s] saying x and everything in the first column with y and we once again get our nice scatter plot. Now
+[  240.76s ->   247.40s] we're ready to solve this matrix equation. To solve this equation for the b vector, we have everything
+[  247.40s ->   255.08s] we need. We are first going to start by transposing the data matrix. So I'm going to say x is equal to x
+[  255.08s ->   267.56s] transpose. And now I'm going to compute this product here. So I'm going to say x prod is equal to x transpose x.
+[  268.36s ->   279.99s] Then we need to take the inverse. So I will do x inverse is equal to mp dot lin out dot inverse of x prod.
+[  281.13s ->   294.26s] And now we need the product of y transpose x. So I'm going to say y x is equal to y transpose the product
+[  294.26s ->   303.38s] with x. And last but certainly not least, we're going to take the product of these two guys. So it is going to
+[  303.38s ->   316.90s] be b equal to x inverse multiplied by y x. And now if we print the vector b, we can see that we get two
+[  316.90s ->   324.10s] values, one of which is the intercept that is the first one, and the other which is the slope. So if
+[  324.10s ->   331.54s] we go ahead and create a line with these values, they are going to best fit this scatter plot of data.
+[  331.54s ->   337.94s] We can actually use a fancy trick to plot this line. We can just compute the matrix product of x and b.
+[  337.94s ->   343.70s] If we take a look at the shape of x, we can see that the shape of x is 10 by 2. If we look at the
+[  343.70s ->   350.58s] shape of b, we can see it's 2 by 1. So if we compute the matrix product of x, b, we're going to end up
+[  350.58s ->   358.58s] with the y data that we're looking for. So I am going to say that our line data is equal to the
+[  358.58s ->   367.22s] matrix product of x and b. And now we can just go ahead and plot the original scatter plot with this
+[  367.22s ->   373.06s] new line of best fit. And hopefully it should look like it fits the data pretty well. So what I'm going
+[  373.06s ->   378.60s] to do is I'm just going to copy this original scatter plot code up here. I'm going to change
+[  378.60s ->   387.24s] this to x transpose so that we transpose back to columns instead of rows. And now I'm just going
+[  387.24s ->   394.84s] to copy this. And instead of the scatter plot, I'm going to use a line plot. And instead of this y data,
+[  394.84s ->   401.64s] I'm going to use our line data. And if we go ahead and take a look at this chart, you can see that the
+[  401.64s ->   408.52s] line of best fit fits our data pretty darn well. Now this is certainly an elegant solution, but it's
+[  408.52s ->   414.12s] not necessarily the easiest one to implement. We have a lot of out of the box solutions available
+[  414.12s ->   421.40s] to us. If we just pass the x and y, we're going to retrieve the intercept and the slope respectively.
+[  421.40s ->   427.40s] All right, so this out of the box solution is going to come from sklearn scikit-learn. I'm going to say
+[  427.40s ->   439.08s] from sklearn dot linear model, import linear regression. And I will instantiate this class by
+[  439.08s ->   447.56s] saying LR equals linear regression. And I will fit it to our original data. Now in this case, we don't
+[  447.56s ->   454.60s] need that column of one. So I'm just going to pass the data by saying x transpose the first column of
+[  454.60s ->   464.36s] data and our original y values, but we are only passing one sample. So we do need to do a reshape
+[  465.32s ->   474.52s] negative one and one, and we have successfully fit our linear regression model. Now, if you look,
+[  475.48s ->   481.40s] we did everything that we summed up here in essentially one line of code as a prepackaged
+[  481.40s ->   486.44s] solution. But don't take my word for it. Let's take Python's word for it. So if we look at the
+[  487.16s ->   493.96s] original B vector that we solved, we have our intercept and our slope coefficient respectively.
+[  493.96s ->   501.72s] And if we take a look at perhaps a new vector LRB is equal to MP dot array, we can get the intercept
+[  501.72s ->   510.52s] from our linear regression model by saying LR dot intercept underscore, and then LR dot coef underscore is
+[  510.52s ->   518.52s] going to give us the coefficient. And if we run this, we can compare this to our original B vector
+[  518.52s ->   526.04s] by saying LRB, and we can see that we get the exact same solution. Now we can also test this in terms
+[  526.04s ->   538.28s] of truth values by instead looking at a rounded solution. So we can say MP dot round B to say,
+[  539.08s ->   547.48s] five decimal places. And we'll see if this is equal to MP dot round LRB to five decimal places.
+[  547.48s ->   553.48s] And as you can see, we get the same solution in both cases, whether we use the out of the box
+[  553.48s ->   558.68s] prepackaged solution in this linear regression model, or if we actually go through and solve
+[  558.68s ->   566.12s] this matrix equation. And this says a lot for the uniqueness of the line of best fit solution. There's
+[  566.12s ->   573.16s] only one line of best fit through this scatterplot of data. That is going to do it for this workshop
+[  573.16s ->   578.76s] Wednesday. I really hope you enjoyed this video on linear regression in Python. We looked at two
+[  578.76s ->   585.16s] solutions. We looked at a matrix solution and an out of the box prepackaged solution using sklearn.
+[  585.16s ->   590.20s] In the future, we're going to look at normalization, specifically lasso and rigged regressions,
+[  590.20s ->   595.96s] to see the difference between fitting a linear regression model in sample and testing it out
+[  595.96s ->   601.88s] of sample. And we'll even take a look at some interactive apps that better explain this idea of
+[  601.88s ->   607.40s] normalization and why we should care about normalization in practice. That being said,
+[  607.40s ->   612.60s] feel free to leave a comment below. If you have any questions, you can always reach out to me,
+[  612.60s ->   618.04s] roman.quantgill.com. I'm always happy to help however I can. We just launched our first course,
+[  618.04s ->   625.64s] Introduction to Python, available now on quantguilt.com. Use code SUMMER2022 for $50 off.
+[  626.20s ->   631.48s] And I'm very happy to announce that we have started the development of our next course,
+[  631.48s ->   636.60s] Machine Learning and Artificial Intelligence. I put a poll up a little while ago to see what you
+[  636.60s ->   642.36s] guys would be most interested in next. And it looks like the next course is going to be the principles,
+[  642.36s ->   646.36s] the fundamental principles of machine learning and artificial intelligence.
+[  646.36s ->   651.24s] I'm going to do a brief math bootcamp in the beginning, so you don't necessarily have to come
+[  651.24s ->   657.24s] in with any prior math knowledge. And we'll get started there and work through machine learning,
+[  657.24s ->   663.16s] artificial intelligence, all in Python. So stay tuned for that. Otherwise, I will see you
+[  663.16s ->   670.04s] in the next video. Thank you so much for watching.

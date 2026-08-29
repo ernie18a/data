@@ -1,0 +1,84 @@
+[    0.18s ->     6.42s] Hey guys, this is today I'm going to show you exactly how to trade the 112 futures options strategy if you have a small account.
+[    6.58s ->    14.08s] By now, most of you guys know that the 112 strategy is one of the most popular, most profitable, and most consistent strategies around.
+[   14.46s ->    19.60s] Why is it? Well, because of the 99% win rate with the chance of making thousands a month.
+[   19.68s ->    24.82s] The only big con with it is that you have to have a lot of money to trade it.
+[   24.82s ->    31.90s] If you're trading ES112s, you need at least $50,000 to be able to trade it consistently every single week.
+[   32.22s ->    37.72s] And the reason why that is is because one 112 trade takes about $8,000 to put on.
+[   37.84s ->    46.98s] So that can leave you as somebody with a small account under $50,000, maybe even $10,000 or $5,000, feeling like you can never trade this amazing strategy.
+[   47.08s ->    49.12s] So I want to show you how to do it in today's video.
+[   49.26s ->    53.32s] So let me make my face smaller and show you how to do this.
+[   53.32s ->    59.32s] So, again, we're mainly trading these on futures because futures is where you trade these 112 strategies on.
+[   59.62s ->    64.80s] And the cool thing about that is recently the SEC has come out with micro futures.
+[   64.94s ->    70.26s] So the ability to trade the same type of futures asset but with less buying power required.
+[   70.76s ->    76.00s] And so, again, most of us trade 112s on ES, but you can also trade it on MES.
+[   76.14s ->    77.20s] So you can go MES here.
+[   77.28s ->    78.92s] This is on TradingView, MES.
+[   79.18s ->    81.10s] And we can pull up the micro futures contract.
+[   81.10s ->    82.76s] It looks the exact same.
+[   83.10s ->    84.44s] Pricing is the same.
+[   84.68s ->    90.14s] But when you go to place an options trade, instead of a 112 costing you $8,000, it only costs $800.
+[   90.96s ->    97.74s] And so with that, let's walk through the process of the ideal 112 trading setup so that we can actually explain how this best works.
+[   98.18s ->   102.90s] So when you're doing a 112 on MES, as always, let's start off with buying power.
+[  103.66s ->   107.78s] Let's say you have a, for easy numbers, $10,000 account.
+[  107.78s ->   115.54s] Now, if you have a $10,000 account, when we trade futures, we have this thing called spam margin, which means our buying power required for a trade can increase.
+[  115.92s ->   121.20s] And so what we want to do is we actually want to make sure that we're trading with no more than 50% of our account.
+[  121.28s ->   127.74s] So if that's true, if we have a $10,000 account, we should be putting no more than $5,000 in trades.
+[  127.86s ->   128.14s] Perfect.
+[  128.28s ->   129.20s] That's the first step.
+[  129.52s ->   132.92s] Now that we know how much money we can trade with, let's break this up.
+[  132.92s ->   136.64s] On MES, it takes about $800 to put on a 112.
+[  137.30s ->   143.62s] And again, our 112 structure is this, 112, where we do a put debit spread at the 2523 delta level.
+[  143.74s ->   144.86s] Again, this is what I do.
+[  144.94s ->   148.02s] And again, you can watch my other videos if you want to change that and learn that.
+[  148.08s ->   152.20s] But a 2523 delta level, and then I sell two puts at the seven delta level.
+[  152.26s ->   154.58s] So this is how I structure my 112 trade.
+[  154.58s ->   158.94s] Now, if we want to go to the actual market right now, we can go to MES, Micro Futures.
+[  159.14s ->   164.14s] We can go to trade, and we can trade an ideal 112 trade, which is 90 days out.
+[  164.74s ->   166.22s] I'm going to buy the 25 delta.
+[  166.96s ->   168.24s] So right here, I'm going to click on buy.
+[  168.78s ->   170.20s] I'm going to sell the 23 delta.
+[  170.66s ->   172.46s] I'm going to sell two of the seven delta.
+[  172.66s ->   173.16s] So right here.
+[  173.54s ->   174.08s] Click on this.
+[  174.18s ->   174.84s] Click on it again.
+[  174.96s ->   176.48s] And up the quantity, this too.
+[  176.56s ->   179.78s] So this makes it a 112 trade.
+[  179.78s ->   186.74s] And if we look at this trade, it says here, I'm going to make $189 if the market stays where it is or goes up.
+[  186.94s ->   190.66s] And if it goes into my max bear trap, I'll make $315.
+[  191.20s ->   193.98s] And the buying power right now is roughly $700.
+[  194.32s ->   202.34s] So it takes $700 to put on one of these trades, which is literally a tenth of what it would cost to put on the normal one on ES.
+[  202.48s ->   204.28s] So this is why it's better for small accounts.
+[  204.28s ->   213.68s] So if we go back to here, we're talking about $700 per trade for this type of setup with the chance to make almost 200, which, again, is amazing, right?
+[  213.70s ->   215.28s] It's a great return on our money.
+[  215.36s ->   216.68s] It's about a 20% return.
+[  217.32s ->   228.10s] Now, what we're looking at this here is, okay, so if we have $700 and we can only trade with $5,000, then we need to do some quick math, which is $5,000 divided by 700.
+[  228.10s ->   233.02s] And, again, I don't like doing math on the screen because, you know, I always mess it up.
+[  233.38s ->   237.64s] So $5,000 divided by 700, this gives us seven trades.
+[  237.72s ->   241.40s] This means that we can be in seven trades for this position.
+[  242.06s ->   250.12s] And so, again, seven trades looks like it would be about one time a week is what we would do since these trades take about a month or two to complete.
+[  250.12s ->   255.48s] So now, based on a $10,000 account size, I can do one trade a week.
+[  255.86s ->   258.52s] And, again, that means for each trade I'm making about $200.
+[  258.80s ->   273.14s] So that's going to be $200 a week or equivalent to $800 a month is what I'm looking at for my approximate returns once I get my 112s rolling every single week.
+[  273.14s ->   276.66s] So that's not a bad return off a $10,000 account.
+[  276.76s ->   285.44s] That's a 2% to 8% or I should say that's a 2% return roughly here on a weekly basis and an 8% return on a monthly basis.
+[  285.62s ->   288.88s] Again, that's not factoring in pullbacks and things like that.
+[  288.94s ->   294.94s] But on average, you'll probably see about a 2% to 3% return per month on your small account, which is a great way to grow it.
+[  294.94s ->   303.28s] And then slowly compound and allow those returns to make you enough money to then trade the big boy ES.
+[  303.66s ->   306.06s] And so that's kind of what we are looking at.
+[  306.12s ->   308.18s] Now, you're going to be like, okay, well, what if I have a 5K account?
+[  308.26s ->   310.40s] Well, it's going to be literally half of everything I just showed you.
+[  310.64s ->   313.02s] So we're putting on one every other week.
+[  313.22s ->   316.44s] So I don't know how to do that two times.
+[  316.52s ->   316.92s] You know, whatever.
+[  317.16s ->   319.18s] Every other week, you'll put on a position.
+[  319.34s ->   322.12s] If you have $2,000, you'll put on one once a month.
+[  322.12s ->   326.20s] If you have more than that, you'll do twice a month, you know, things like that.
+[  326.28s ->   329.74s] This is how you understand how to do the 1-1-2 for a smaller account.
+[  329.88s ->   331.70s] So it's MES is the way to do it.
+[  332.04s ->   337.30s] Trades the same, has the same tax advantages, and the 1-1-2 still has that 99% win rate.
+[  337.60s ->   341.34s] As we can see here, we have a 98% win rate with the way that this trade is structured.
+[  341.56s ->   350.16s] So that is how you trade 1-1-2s with a very high win rate, the ability to make a lot of return on your money with a small account.
+[  350.24s ->   351.14s] So I hope that makes sense.
+[  351.14s ->   369.98s] If you want to get access to my 1-1-2 trading handbook that walks you through the best types of markets, the pros, the cons, how to structure it, what each one means, kind of walkthroughs, breakdowns of, like, how to do each one, the biggest mistakes and how to avoid them and all this stuff, you can get that PDF for free linked down below.
+[  370.28s ->   370.68s] All right, guys.
+[  370.74s ->   371.50s] See you in the next video.

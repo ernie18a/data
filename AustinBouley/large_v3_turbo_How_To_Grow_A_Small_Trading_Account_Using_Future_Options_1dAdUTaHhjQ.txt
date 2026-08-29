@@ -1,0 +1,250 @@
+[    0.05s ->     7.23s] Hey guys, welcome to masterclass number two where I'm going over how to scale your account while ensuring you're protected from market crashes.
+[    7.35s ->    13.37s] We just went over the amazing 112 strategy that you can use to profit in basically any market except for crashes.
+[   13.49s ->    21.27s] So now we're going to walk through how to actually protect your account, how many hedges you need to have on, which hedges are best, and when to know when to use each one.
+[   21.41s ->    27.61s] So in the first masterclass I taught you about the strategy that 11 newbie traders use to make $12,000 in their first 30 days.
+[   27.99s ->    28.89s] Here's some of the proof.
+[   28.89s ->    40.87s] We have Neil here who made $800 in his first 30 days, Ryan who made over $3,500 in his first 30 days, Keith who's made over $200 since joining, and David who's made a little over $1,000 in about a month.
+[   41.17s ->    44.41s] So the strategy they all used was called the 112 strategy.
+[   44.53s ->    53.25s] If you want to learn more about it in depth, make sure to go watch masterclass number one to get the full background and knowledge and understanding of what the 112 was.
+[   53.25s ->    64.55s] Because we're using 112 trades to put on hedges, and in this video we're going over hedging, I do want to do a brief summary of what a 112 is, but if you want to really learn it, make sure to watch masterclass number one.
+[   65.05s ->    68.11s] It makes money in virtually every market the 112 does.
+[   68.21s ->    71.39s] In bullish markets, you'll make $7,000 to $1,000 in two weeks.
+[   71.71s ->    74.71s] In neutral markets, you'll make $700 to $1,000 in four weeks.
+[   74.71s ->    81.93s] In bearish markets, you'll make $3,000 to $4,000 in about two months, and you will lose during market crashes.
+[   81.93s ->    90.05s] If you have a 10% or more drop in a day or two, you will lose around $3,000 to $4,000 from the stop loss that you set on the ES.
+[   90.15s ->    93.37s] Now, all these numbers and examples are based on trading ES.
+[   93.63s ->    98.67s] As we covered in masterclass number one, there are a lot of different assets you can trade based on your account size.
+[   98.67s ->   101.21s] So, how do we place a 112 trade?
+[  101.31s ->   105.31s] Well, like I mentioned before, there's ES, MES, CL, GCCB, and stuff like that.
+[  105.79s ->   111.81s] You go out about 90 days, you put on a put debit spread, you sell two naked puts, you have a stop loss intake profit.
+[  111.97s ->   113.89s] So, this trade is structured that way.
+[  113.99s ->   117.81s] We have a put debit spread, and we have two naked puts.
+[  117.87s ->   120.67s] We have to keep that in mind as we talk about protecting our account.
+[  120.81s ->   127.35s] Now that you know what a 112 strategy is, and I had a quick refresher on that last masterclass,
+[  127.35s ->   132.39s] I'm going to teach you how to protect your account and hedge your 112 trades that you currently have on.
+[  132.55s ->   135.19s] So, how do we protect our account from market crashes?
+[  135.27s ->   136.31s] We have to put on hedges.
+[  136.81s ->   142.77s] Hedges, if you've never heard of it before, is something that gives us downside protection, but it comes at a cost.
+[  143.27s ->   147.55s] For example, a simplest form of a hedge is to buy a put debit spread.
+[  147.97s ->   154.05s] A put debit spread, as we discussed in the last masterclass, has a defined risk and defined reward.
+[  154.05s ->   158.83s] It means that we know how much it costs to put on, and we know how much downside protection we get.
+[  159.59s ->   170.41s] For an example, a typical put debit spread on ES, we pay $500 for, and we get around $2,000 to $3,000 of crash protection.
+[  170.89s ->   179.03s] So, if the market were to go down, we make $3,000, but we do have to pay $500 to put that trade on and have that protection.
+[  179.03s ->   184.39s] The only problem is that the market is bullish, aka goes up more often than it doesn't, right?
+[  184.49s ->   187.09s] We've more often than not seen the market goes up.
+[  187.61s ->   198.25s] Therefore, paying $500 a week or $500 a month to have on this hedge or to have on hedges can be very costly and will almost never break even.
+[  198.25s ->   203.03s] So, if we're just putting on hedges for the sake of putting hedges every single week and every single month,
+[  203.31s ->   207.75s] then we're going to spend so much money that by the time a crash does happen,
+[  207.83s ->   212.17s] we're not going to be able to recoup most of our costs that we've been spending to have the hedges on.
+[  212.55s ->   215.15s] So, this is why 112s are amazing.
+[  215.27s ->   219.89s] We can take this trade, because it has a put debit spread already inside of it,
+[  219.89s ->   225.07s] and we can take out the put debit spread after we made a significant profit,
+[  225.35s ->   227.53s] and now that hedge is being put on for free.
+[  227.63s ->   232.89s] So, now we have the crash protection that we get to put on for free from the profits the 112 generated.
+[  233.27s ->   237.51s] Now, you can convert winning 112 trades into free hedges,
+[  237.65s ->   241.91s] but in the market, there is no such thing as a free launch, aka there's no such thing as free money.
+[  242.03s ->   243.77s] So, what do I mean by a free hedge?
+[  243.77s ->   250.33s] I mean the profit that your 112 trade generates can be used to offset the cost of a hedge.
+[  250.71s ->   255.01s] As you know, the 112 is created by combining multiple different trades,
+[  255.19s ->   259.45s] which gives you the flexibility to convert your 112 into different types of hedges.
+[  259.81s ->   263.73s] So, the 112 structure is, as mentioned before, is a put debit spread,
+[  263.83s ->   265.77s] which is where we buy a put and we sell a put.
+[  265.85s ->   267.25s] That's how we create a put debit spread.
+[  267.63s ->   271.05s] And it's two naked puts, or two short puts.
+[  271.05s ->   275.83s] So, the structure is 112, one long put, one short put, two short put.
+[  275.91s ->   276.59s] So, 112.
+[  277.07s ->   282.65s] Again, if you're doing multiple of them at the same time, it'd be a 224, 336, but don't let me confuse you.
+[  282.77s ->   287.25s] So, this trade structure can be used to turn into two different types of hedges.
+[  287.45s ->   289.59s] So, let's talk about those hedges and when to use them.
+[  290.07s ->   293.25s] So, the first one that we've been discussing is the put debit spread hedge.
+[  293.29s ->   294.61s] This is the easiest one to do.
+[  294.71s ->   294.97s] Why?
+[  295.43s ->   297.83s] This is created by closing the two short puts.
+[  297.83s ->   301.83s] So, if we look at our trade structure here, we have a long put, a short put, and two short puts.
+[  302.45s ->   307.07s] By simply closing out these two short puts, when we hit a good profit,
+[  307.53s ->   311.93s] now we're left with just the put debit spread of this trade and we took the profit here.
+[  312.27s ->   315.83s] Now, we have the downside protection from this put debit spread hedge
+[  315.83s ->   317.87s] and we got to keep the money we made from here.
+[  318.15s ->   322.25s] The money we made here will cover the cost of having this put debit spread on.
+[  322.35s ->   324.27s] So, we make money and have a downside protection.
+[  324.27s ->   327.33s] This hedge is best when you want to put on a smaller hedge.
+[  327.39s ->   332.91s] Because, like I mentioned before, we have about $3,000 of crash protection where they put debit spread.
+[  333.03s ->   337.29s] So, it costs roughly $500 of our profits from this to keep on.
+[  337.75s ->   341.53s] And then, again, we get roughly $2,000 to $3,000 of downside protection.
+[  342.03s ->   344.35s] Now, the other hedge is a ratio hedge.
+[  344.43s ->   348.51s] This is created by closing the short put of the put debit spread.
+[  349.01s ->   352.61s] So, you can see here we have a long put and a short put that make up the put debit spread.
+[  352.61s ->   357.39s] If we close this one short put, then we are left with known as a ratio hedge
+[  357.39s ->   359.97s] because we have a one long put and two short puts.
+[  360.05s ->   363.03s] Those are different quantities, different numbers.
+[  363.73s ->   365.45s] And because of that, it's a ratio.
+[  365.63s ->   366.33s] It's a bit off.
+[  366.39s ->   368.53s] It's not an exact one-to-one comparison.
+[  368.85s ->   374.11s] So, that ratio spread actually gives us a very large downside protection.
+[  374.51s ->   379.03s] And I'll walk you through an example of what that looks like with a real trade I just did here soon.
+[  379.03s ->   381.05s] So, again, we're going to close this short put.
+[  381.43s ->   384.35s] And this hedge is best when you want to put on a larger hedge.
+[  384.45s ->   384.69s] Why?
+[  384.79s ->   386.51s] Because this trade costs more.
+[  386.65s ->   393.97s] It costs about $1,300 of our profits, aka we'll be left with about $700 of profit, to have this trade.
+[  394.31s ->   399.33s] And it provides up to $20,000 to $25,000 worth of downside protection.
+[  399.77s ->   401.31s] That's an amazing trade, right?
+[  401.31s ->   412.15s] If I can have on a lot of trades with $20,000 of downside protection, knowing that if the market crashes, $20,000 of my losses will be covered, right?
+[  412.35s ->   415.85s] So, these hedges should be used based on market and account risk.
+[  415.93s ->   420.95s] So, if the market is at a higher risk, aka what is higher risk?
+[  421.03s ->   425.31s] Near or at an all-time high level or an overextended level?
+[  425.31s ->   425.83s] Why?
+[  426.23s ->   434.19s] Because the further up we are, the higher up we are at unprecedented levels, the more likely we are to pull back and to crash and to go down lower.
+[  434.49s ->   441.27s] If we've already been in a downtrend for six months, it's unlikely that we're going to continue down further.
+[  441.51s ->   446.89s] Most crashes happen when people are optimistic about the market and the market is continuously going higher.
+[  446.89s ->   458.23s] So, when is at that all-time high level, when it's overextended, that's when your risk is high and that is when you should prioritize putting on hedges, specifically the ratio hedge because it gives us a lot of downside protection.
+[  458.77s ->   467.79s] If the market is at a lower risk, then we can use a cheaper hedge like the put debit spread hedge so that you can keep a majority of your profits from the 1-1-2 and move on with that.
+[  468.09s ->   473.15s] So, the question is how many hedges should you have on to protect your account?
+[  473.15s ->   477.53s] Now, okay, first, we need to determine how much risk you have inside your trading account.
+[  477.65s ->   479.39s] That determines how many hedges we should have.
+[  479.49s ->   486.17s] So, let's assume that you're trading a 1-1-2 on ES with a 200% stop loss, how we discussed in the last masterclass.
+[  486.47s ->   494.89s] If your initial entry credit is $1,000, which means that if the market does nothing, goes up, stays the same, you'll make about $1,000 profit.
+[  494.89s ->   504.25s] That means that you're going to exit when you're at a $1,000 loss, a.k.a. when your trade has doubled.
+[  504.39s ->   511.85s] So, let's say you entered in that $50 and they're going to exit at 100, that would be a 200% loss, a.k.a. a basically equal loss.
+[  511.85s ->   525.77s] However, to factor in slippage and not exiting exactly at 200% because life doesn't give us those perfect scenarios, as in if you're watching this trade yourself, you're not always going to be able to exit at exactly 200%.
+[  525.77s ->   527.65s] There could be some slippage, things like that.
+[  527.71s ->   534.43s] So, let's just exaggerate the loss just so we can get the point across as $2,000 for a loss of an ES-1-1-2.
+[  534.43s ->   542.27s] Therefore, if you have five of these 1-1-2 trades on, that means that your account risk is $10,000.
+[  542.69s ->   543.97s] We have five trades.
+[  544.25s ->   547.77s] Each trade will cost us $2,000 to hit that stop loss.
+[  548.11s ->   552.19s] That means our account risk for these five trades is $10,000.
+[  552.77s ->   557.73s] That means you will need hedges that will cover at least $10,000 of crash protection.
+[  558.17s ->   562.89s] This can be accomplished by a lot of different ways, but we discussed two main hedges so far,
+[  562.89s ->   564.45s] the put-debit spread, and the ratio.
+[  564.71s ->   571.27s] So, this can be accomplished, $10,000 of downside protection, by having five put-debit spread hedges, right?
+[  571.37s ->   575.17s] Because a put-debit spread hedge gives about $2,000 of downside protection.
+[  575.29s ->   578.65s] So, if you have five of them, then we'll cover all our losses.
+[  579.49s ->   586.03s] Or, we could have on one ratio spread hedge, which would be enough to cover our $10,000 worth of losses,
+[  586.03s ->   589.21s] and we've had another $10,000 on top of that.
+[  589.29s ->   591.91s] So, another $10,000 payday, right?
+[  591.95s ->   595.85s] Because we have about $20,000 to $25,000 of downside protection, depending on where it lays.
+[  596.19s ->   600.61s] So, for that reason, I always have on at least one ratio hedge.
+[  600.73s ->   601.13s] Why?
+[  601.43s ->   604.43s] Because a ratio hedge can cover a ton of losses.
+[  604.65s ->   613.93s] I can have 10 different trades all hit the stop losses, and I'm still breaking even because of how much protection I get with the ratio spread hedge.
+[  613.93s ->   621.49s] So, again, if I have a ratio spread hedge on already, I will convert the 112 into a put-debit spread hedge,
+[  621.63s ->   628.11s] but I always make sure that my account for the asset that I'm trading has at least one ratio hedge.
+[  628.17s ->   629.61s] And what do I mean for assets I'm trading?
+[  629.91s ->   638.45s] Well, if I'm trading 112s on ES and CL and GC, make sure that ES has a ratio spread, GC has a ratio spread, and CL has a ratio spread.
+[  638.77s ->   643.71s] After I put on a ratio spread for all of those, aka I had a 112 that hit profit,
+[  643.93s ->   648.07s] and I converted it into a ratio hedge by selling the short put of the put-debit spread,
+[  648.37s ->   652.27s] then I will have that ratio spread in all the other trades that hit profit.
+[  652.35s ->   654.31s] I will turn into a put-debit spread so I can collect more money.
+[  654.49s ->   660.51s] So, who wants to see a real trade example to kind of bring all this theoretical mumbo-jumbo to real life?
+[  660.71s ->   660.97s] All right?
+[  661.27s ->   665.31s] So, here's one of my recent trades, one that I actually did yesterday.
+[  665.31s ->   666.95s] So, let's look at what's going on here.
+[  667.01s ->   671.57s] I had a 112 trade that had a net profit of around $1,000.
+[  672.27s ->   674.13s] It was around $1,200, $1,200.
+[  674.31s ->   675.05s] I forget exactly.
+[  675.15s ->   676.47s] If we do the math here, it'll tell us.
+[  676.87s ->   682.45s] Yeah, it looks like if I do the math, quick math, it'll be a $1,100 profit this whole trade together was making.
+[  682.61s ->   682.75s] Okay?
+[  683.01s ->   686.39s] It was around an 80% return on that trade.
+[  686.83s ->   690.81s] So, it was time to turn that trade into a hedge and take the profit and run.
+[  690.97s ->   693.01s] So, I had my one long put.
+[  693.07s ->   695.09s] Again, this is my put-debit spread.
+[  696.15s ->   699.97s] I had my one long put at a $2,300 loss.
+[  700.15s ->   703.79s] I had my one short put as a $2,100 gain.
+[  703.91s ->   706.31s] So, again, you know those all set each other because they're put-debit spreads.
+[  707.07s ->   709.71s] So, this is about a net loss of about $100, roughly.
+[  710.57s ->   713.61s] And then I had my two short puts making me around $1,400.
+[  713.61s ->   717.43s] So, that is all the components of this 1-1-2 trade.
+[  717.55s ->   725.19s] So, what I did was because I haven't had a ratio or I don't have a ratio spread on for this account yet for yes, I turned it into a ratio hedge.
+[  725.29s ->   727.29s] So, I do that by closing the short put.
+[  727.51s ->   735.95s] So, I closed the short put in the put-debit spread and that yielded me a $2,087 profit.
+[  736.17s ->   742.17s] So, I made $2,087 to close that one short put.
+[  742.17s ->   742.61s] Okay.
+[  742.97s ->   747.75s] So, now I made officially closed and profited $2,100.
+[  748.61s ->   756.47s] However, the ratio spread that I'm leaving on, this long put and these two short puts, together will cost me $1,400.
+[  756.47s ->   764.25s] So, if I just let this trade go on, it's going to cost me $1,400 by the end of when this trade expires.
+[  764.45s ->   768.43s] It will expire worthless if the market doesn't drop and it's going to cost me $1,400.
+[  768.73s ->   776.09s] Now, if the market drops, I have $24,000 worth of downside protection which will cover all my 1-1-2s and more.
+[  776.09s ->   782.31s] So, not only will I cover my losses, but I'll also have a really nice payday if the market were to crash because of this ratio hedge.
+[  782.91s ->   784.93s] Now, what is my actual net profit?
+[  785.01s ->   789.03s] This means the 1-1-2 trade ended up turning into a net profit of roughly $600.
+[  789.89s ->   790.81s] Why is that?
+[  790.81s ->   793.57s] I collected roughly $2,100.
+[  794.59s ->   796.79s] I'm going to have to pay out later $1,400.
+[  797.15s ->   799.35s] So, that difference is what I actually get to keep.
+[  799.63s ->   802.27s] So, this trade will turn into roughly a $600 profit.
+[  802.73s ->   806.73s] And now I have $24,000 worth of downside protection.
+[  807.15s ->   810.33s] And again, this trade still has 45 days left on it.
+[  810.59s ->   816.91s] So, this is $24,000 of downside protection on my account that I have for the next month and a half.
+[  816.91s ->   822.17s] So, again, did I have to pay $1,400 to put this hedge on like most people would?
+[  822.37s ->   823.57s] No, I got paid to.
+[  823.81s ->   830.39s] I got paid $600 to put this trade on and now I have $24,000 of downside protection.
+[  830.51s ->   831.27s] That's amazing.
+[  831.51s ->   836.75s] The amazing ability of 1-1-2s to kind of play with the trade and turn it into a hedge for you.
+[  836.91s ->   843.35s] So, is there a way to automate hedging so that your account can be protected and secure even if you aren't watching the market
+[  843.35s ->   847.29s] or are trying to spend uninterrupted quality time with your family?
+[  847.47s ->   848.35s] And yes, there is.
+[  848.71s ->   856.39s] I created an option to the AutoTrader that allows you to automate option selling strategies like selling puts, selling calls, selling struggles, iron condors, and 1-1-2s to name a few.
+[  856.81s ->   860.19s] The Options AutoTrader was built with 1-1-2 traders in mind.
+[  860.27s ->   860.71s] That's right.
+[  860.77s ->   865.17s] There is no Options AutoTrader that allows you to sell options on the internet right now.
+[  865.35s ->   868.09s] And there's none that's specifically built for 1-1-2s.
+[  868.39s ->   872.01s] That means to manage them, to trade them, to turn them into hedges automatically.
+[  872.01s ->   877.67s] And I know that because I built this option as AutoTrader and I'm a 1-1-2 trader, so I made sure it could handle it.
+[  877.75s ->   885.05s] So, when you create a 1-1-2 AutoTrader with this system, there is a setting that asks you if you want to turn the 1-1-2 into a hedge,
+[  885.33s ->   888.07s] and if so, what hedge when it hits the profit target?
+[  888.79s ->   889.41s] That's right.
+[  889.61s ->   894.47s] No more monitoring the markets, going through all the tedious work of converting your positions into hedges,
+[  894.65s ->   897.13s] and instead having an AutoTrader do it all for you.
+[  897.13s ->   903.47s] So, stop wasting time on your computer and start spending more time with your family and loved ones by using the Options AutoTrader.
+[  903.61s ->   908.61s] If the Options AutoTrader is something that you are interested in, then make sure to attend Masterclass No. 3,
+[  908.89s ->   911.71s] as I will share how to access the AutoTrader on that training.
+[  911.95s ->   916.01s] Now, now that I've taught you the best practices around hedging and around how to automate it,
+[  916.05s ->   919.49s] which I will be showing you an end-depth walkthrough in Masterclass No. 3, so stay tuned.
+[  919.61s ->   922.27s] Don't worry. Hold your horses. You haven't missed access yet.
+[  922.27s ->   924.23s] How do we scale our trading account?
+[  924.39s ->   930.97s] Well, if your account is between $5,000 to $20,000, you should start trading MES-112s.
+[  931.11s ->   935.99s] Why? As we discussed in last Masterclass, they require a tenth of the buying power.
+[  936.27s ->   941.35s] So, you can continuously do these trades, have monthly, weekly income coming in at a fraction of the cost,
+[  941.41s ->   943.51s] especially if you have a smaller account.
+[  943.77s ->   948.29s] So, MES-112s and turning them into appropriate hedges based on account and market risk.
+[  948.29s ->   953.87s] If your account is between $20,000 and $100,000, then you should be trading ES-112s
+[  953.87s ->   956.71s] and turning them into appropriate hedges based on account and market risk.
+[  956.77s ->   961.23s] So, again, you can pick if you want to do a ratio, put debit spread, whatever it is you want to do at what time.
+[  961.41s ->   967.25s] Now, if your account is greater than $100,000, like mine is, and I know a lot of others who will be attending this training is,
+[  967.57s ->   974.93s] then you will be trading ES-112s primarily, and you will hopefully be diversifying your account across CLGC or CB.
+[  974.93s ->   978.59s] You don't have to do them all, but I would pick one just to have some diversification.
+[  978.71s ->   983.73s] If you want to know how I diversify my own account, then make sure to stay tuned for Masterclass number three.
+[  984.55s ->   987.79s] So, it is quite easy to scale. It just takes time.
+[  987.99s ->   990.41s] Guys, MES-112s, you will make that profit.
+[  990.51s ->   993.19s] It has the same win rate. It's the same percentage return.
+[  993.29s ->   994.85s] You're putting up less money, so you make less.
+[  994.93s ->   997.07s] But still, you're generating great money.
+[  997.17s ->  1001.33s] You're learning how the 112 works, and you're going to build up to ES-112s,
+[ 1001.33s ->  1007.15s] and then you're going to grow with the ES-112s, and then you're going to start slowly adding more assets to do this with.
+[ 1007.23s ->  1009.97s] So, remember, it works. It just takes time.
+[ 1010.23s ->  1012.61s] Remember, we are here for these small, consistent wins.
+[ 1012.77s ->  1018.27s] Don't swing for the fences and never use more than 50% of your buying power because you will get chopped out of trades,
+[ 1018.43s ->  1025.13s] and then you won't be able to actually have that great win rate or be able to see that max profit when the market drops.
+[ 1025.13s ->  1027.31s] So, hope you guys are enjoying this training.
+[ 1027.43s ->  1033.29s] I will see you on the next training session when I talk about my exact trading blueprint and plan for 2024,
+[ 1033.85s ->  1037.05s] and also how to get access to the options auto trader.
+[ 1037.35s ->  1041.03s] Guys, I'll be showing you how to get access to the auto trader on Masterclass number three.
+[ 1041.37s ->  1044.81s] Most people on the wait list won't get access to it until the next day,
+[ 1044.87s ->  1047.51s] so you get a little head start and early access to get going.
+[ 1048.35s ->  1051.37s] And so, again, I want to give you that for those who watch Masterclass number three.
+[ 1051.37s ->  1055.99s] There's also some amazing bonuses on Masterclass number three for those who want to join the auto trader.
+[ 1056.11s ->  1057.79s] Really cool stuff. Don't miss out. Trust me.
+[ 1057.85s ->  1061.77s] Remember, only 100 people will be able to get access to the auto trader during this early access,
+[ 1061.99s ->  1063.93s] and there are 1,700 people on the wait list.
+[ 1064.01s ->  1066.89s] So, make sure to show up to the training to get access.
+[ 1067.23s ->  1070.49s] All right, guys. I hope you enjoyed this video and are able to use hedging to protect your account,
+[ 1070.75s ->  1073.93s] to understand how much account risk you have, and to do everything that you want.
+[ 1073.99s ->  1077.95s] Again, if you want more help, more insight, more understanding of what's going on here,
+[ 1077.95s ->  1080.75s] shoot me an email, or more importantly, join my school group,
+[ 1080.75s ->  1084.91s] the button is down below this video so that you can actually join that group
+[ 1084.91s ->  1086.27s] and say you're coming from the Masterclass,
+[ 1086.45s ->  1088.93s] and you can ask questions there and get your questions answered.
+[ 1089.31s ->  1091.77s] All right, guys. See you in Masterclass number three coming up soon.
+[ 1091.91s ->  1094.17s] Trust me. You don't want to miss out. So, mark your calendars.
+[ 1094.35s ->  1094.83s] See you guys later.

@@ -1,0 +1,90 @@
+[    0.16s ->     5.28s] These are my top 3 favorite trading strategies that I've backtested over and over.
+[    5.28s ->    10.72s] And every single month that I tested them, all 3 ended up being profitable in the long term.
+[   10.72s ->    14.96s] And by the end of this video, you too will know all the strategies and will be able to
+[   14.96s ->    19.52s] take calculated trades just like this one and make a ton of money.
+[   21.76s ->    27.28s] By the way, I just found a strategy that performs extremely well and I just posted it in my
+[   27.28s ->    32.80s] telegram. This strategy absolutely prints. My telegram is completely free to join,
+[   32.80s ->    36.32s] tons of value, and you can find some amazing strategies in there.
+[   36.32s ->    39.44s] I literally find profitable strategies for a living.
+[   39.44s ->    42.48s] If you want to join, I'll leave a link in the pinned comments. I'll see you later.
+[   42.48s ->    46.16s] My first boss in Pittsburgh in 1976 said,
+[   46.16s ->    51.04s] Stanley, the way you time the political cycle is you buy the market two years before the general
+[   51.04s ->    55.04s] election and then you sell it on the general election because they always rig things to be
+[   55.04s ->    59.68s] good in the election year. That was Stanley Drunkenmiller, one of the best performing
+[   59.68s ->    64.56s] traders to ever live. And he just gave us potentially one of the best strategies you
+[   64.56s ->    69.28s] could possibly hear. But I'm not going to exactly take his word for it, so I'm going to test it.
+[   69.28s ->    73.92s] Let's try. First, I'm going to ask ChatGPT what the average returns are for each year of the
+[   73.92s ->    79.20s] presidential cycle. The statistics surprisingly backed up what Stanley was saying. Years one and two of
+[   79.20s ->    84.80s] the president being elected generally had lower returns, while the end of the term generally had higher
+[   84.80s ->    90.64s] returns. Then I went to the chart, and this is where things started to become very, very eye-opening.
+[   90.64s ->    96.72s] I marked every single year from 1980 till now and marked two years before the president actually
+[   96.72s ->   102.00s] got elected. Then I marked every single year the president actually got elected. If you simply
+[  102.00s ->   107.52s] followed the strategy of investing two years before the president got elected, then selling when
+[  107.52s ->   113.28s] the president actually got elected, you would have made positive returns every single time. Let me
+[  113.28s ->   119.76s] repeat that. Positive returns every single time. Out of the 40 years, the only time we had negative
+[  119.76s ->   126.56s] returns was the presidential election of 2004, where you basically broke even. That's insane.
+[  126.56s ->   132.48s] What's even crazier is if you decided to follow this advice, 2026 is the year you would be buying,
+[  132.48s ->   137.84s] and 2028 is the year you would sell. And if you haven't been living under a rock for the past five
+[  137.84s ->   142.88s] months, you could easily see that if you've been following this strategy for this presidential term,
+[  142.88s ->   147.84s] let's just say you'd be pretty well off. Onto the next. To start us off with the second strategy,
+[  147.84s ->   154.08s] we're going to explain one of my personal favorites. It involves just one candle. And this candle can
+[  154.08s ->   159.52s] completely change your life. Let me explain. If you're overall bullish, you want to buy below the
+[  159.52s ->   165.20s] market open. If you're overall bearish, you want to sell above the market open. Let me show you. Go on
+[  165.20s ->   169.68s] TradingView. If you don't yet have it, I'll leave a link in my description. First, go to the daily
+[  169.68s ->   175.92s] time frame. In this example, we are overall bullish with this candle since it's green. Go to that candle,
+[  175.92s ->   181.68s] mark the open and the close of this candle. Next, go to a smaller time frame. For this example,
+[  181.68s ->   187.28s] we are using the 30 minute time frame. This green line marks the daily candles open that we marked
+[  187.28s ->   193.36s] before. This red line marks the daily candles closed that we also marked before. Since the daily candle
+[  193.36s ->   199.04s] was green and overall bullish, we only want to enter if price goes beneath this green line.
+[  199.04s ->   204.16s] Now you might be thinking, why would we buy if price is going down? The answer, liquidity.
+[  204.16s ->   209.76s] Liquidity is a pretty advanced topic, but to make it as simple as I possibly can without going too in
+[  209.76s ->   215.28s] depth, it's basically just a fake out where price breaks a low and immediately reverses afterwards,
+[  215.28s ->   221.28s] which if this ever happens, it's an extremely bullish sign. So going back to our example,
+[  221.28s ->   226.32s] we want some type of sell side liquidity that goes slightly beneath the market open,
+[  226.32s ->   231.28s] does a fake and starts heading in the opposite direction. Check. Next, we want price to show
+[  231.28s ->   236.80s] some sign of respect or bullish momentum by breaking the previous high, or in other words,
+[  236.80s ->   242.48s] a break of structure. To do this, just find the latest high, put a line here. Price must break this
+[  242.48s ->   248.72s] high before doing anything else. Check. Usually while doing this, price will create a fair value gap.
+[  248.72s ->   254.88s] A fair value gap is simply just when a chart moves up or down an insane amount, creating a huge gap.
+[  254.88s ->   260.72s] Price moved up so fast here that it didn't give sellers enough time to counteract the movement.
+[  260.72s ->   266.64s] Naturally, sellers will want to retest this zone again. A fair value gap will always be a three
+[  266.64s ->   272.40s] candle formation. You can mark a fair value gap by marking the first candle's top wick before the big
+[  272.40s ->   278.40s] move to the third candle's lower wick after the big move. This zone is the fair value gap itself.
+[  278.40s ->   283.52s] Congratulations, you now know what a fair value gap is. So going back to our example,
+[  283.52s ->   289.84s] usually when price breaks this previous high, while doing so, it'll leave behind a fair value gap.
+[  289.84s ->   295.44s] Check. Wait for price to retrace back to the fair value gap, enter here, set your take profit at the
+[  295.44s ->   301.12s] market close, and set your stop loss below this recent low. And just like that, we got a winning
+[  301.12s ->   307.20s] trade. And you now know a super profitable strategy. But there's a problem. Here we got a liquidity sweep,
+[  307.20s ->   312.08s] we got our break of structure, and we got a fair value gap. The perfect trade. You set your stop loss,
+[  312.08s ->   317.28s] you set your take profit, just like we did before, you enter the trade a static and are ready for an
+[  317.28s ->   323.36s] easy winning trade. But then this happens. So what happened? Why was this a losing trade? You see,
+[  323.36s ->   328.48s] this trader did have the right idea. But there's something very wrong with this trade. After this
+[  328.48s ->   333.76s] liquidity sweep, price does a break of structure, just like it should. But there's still something wrong.
+[  333.76s ->   340.40s] When doing this break, the candle doesn't close above the high. It just wicks above it and comes back down,
+[  340.40s ->   346.08s] which shows weakness. What we are looking for is something like this. When breaking this break of
+[  346.08s ->   352.24s] structure, price breaks through it strong. But the key thing we're looking for is the body of the candle
+[  352.24s ->   358.32s] closes above the break of structure like this. Now that we have a break of structure that not only broke,
+[  358.32s ->   363.84s] but broke strongly through it and closed above the break of structure, we can now enter at a fair
+[  363.84s ->   369.20s] value gap like normal. And now we have a winning trade. Onto the next. This one tool can predict
+[  369.20s ->   375.44s] exactly where price is going to reverse. And it's pretty damn good at it. First, grab your Fibonacci tool,
+[  375.44s ->   384.24s] go to the settings, change the values to 0, 0.706, 0.618, 1, and 0.79. This will give you
+[  384.24s ->   390.24s] three main levels that will look like this. These levels are what's called the golden zone,
+[  390.24s ->   397.58s] or where price has the highest probability to reverse. But we're going to add a little bit more
+[  397.58s ->   403.18s] to it to make our edge even greater. First, find an uptrend, right from the low of the uptrend
+[  403.18s ->   409.26s] to the high of the uptrend. Once this is done, we now have our golden zone, where price is most likely
+[  409.26s ->   415.98s] to reverse. But we can make this trade even better. What I like to do is pair this with a fair value gap.
+[  415.98s ->   421.58s] So here we have a bullish fair value gap. But not only that, it's paired exactly within our golden
+[  421.58s ->   426.70s] zone. Wait for price to come to our golden zone and within the fair value gap. Enter here,
+[  426.70s ->   431.58s] set your tape profits at the highs, set your stop loss below the golden zone. Boom,
+[  431.58s ->   436.54s] easy winning trade. But you also need to know what to do if the chart is going downward.
+[  436.54s ->   441.74s] This time price is going downwards. So we'll look for shorts. Mark from the high of the move
+[  441.74s ->   444.78s] to the low of the move. This will give us our golden zone.
+[  444.78s ->   450.70s] Ideally, we want to see a bearish fair value gap within our golden zone, which is exactly what we
+[  450.70s ->   455.50s] have here. Wait for price to come back up, enter into our golden zone, but not only that,
+[  455.50s ->   460.54s] enter into our bearish fair value gap. Enter short trade, set your stop loss above the highs,
+[  460.54s ->   466.86s] set your take profit at the lows, and we got yet another winning trade. You can combine all three of
+[  466.86s ->   473.58s] these and make the ultimate strategy. What's even crazier is all this value looks like an absolute pebble
+[  473.58s ->   479.02s] compared to what I just shared in my telegram. I share all the highest performing strategies in
+[  479.02s ->   485.26s] there. Whenever I find one, I test it. And if it's profitable, I share it. It's completely free to
+[  485.26s ->   489.90s] join. If you want to check it out for yourself, the link is in the pinned comments. I'll see you in there.
+[  489.90s ->   495.34s] Thanks for watching, and I'll see you guys next time.

@@ -1,0 +1,442 @@
+[    1.26s ->     7.61s] The central limit theorem is quite literally the bridge between probability and statistics,
+[    7.61s ->    13.67s] yet it remains one of the most misunderstood and misapplied theorems in all of quantitative
+[   13.67s ->    18.31s] finance. Well, no longer. In this video, we're going to cover everything that you need to know
+[   18.31s ->    24.53s] about the central limit theorem from theory all the way to practice. We'll start with this idea
+[   24.53s ->    29.65s] of a random variable. It's accompanying statistics. Extend this to a normal or
+[   29.65s ->    35.25s] Gaussian distribution. Then we'll move on to a rough proof of the central limit theorem itself
+[   35.25s ->    41.25s] and talk about its implications. Once we're done with that, we will leave the classroom and apply
+[   41.25s ->    48.27s] it in the real world to stock returns and this idea of a trading signal. Very rarely do we have
+[   48.27s ->    55.25s] access to the population or data generating distribution for an event of interest. You
+[   55.25s ->    60.85s] can think of something like a stock return, unlike my Jupyter notebooks, which you always
+[   60.85s ->    65.49s] have access to. This Jupyter notebook will be linked in the description below. I will also post it to
+[   65.49s ->    70.13s] the Quant Guild library on GitHub, where you can find all of my Jupyter notebooks and associated YouTube
+[   70.13s ->    75.25s] videos, along with all of the source code for my quant builds. At the top of this Jupyter notebook,
+[   75.25s ->    80.45s] you'll notice some related Quant Guild videos applying probability and statistics to finance and
+[   80.45s ->    85.57s] trading, this idea of time series analysis, retail versus institutional trading, trading versus
+[   85.57s ->    92.53s] investing, this idea of accumulating edge over a series of trades or time, quant versus discretionary
+[   92.53s ->    98.93s] trading, and of course, busting three popular trading myths that these trading gurus love to
+[   98.93s ->   104.29s] propagate. If you're unfamiliar with any of these ideas, I highly recommend that you check these videos
+[  104.29s ->   110.05s] out first before tackling one like this. Moreover, these videos certainly take a lot of effort to
+[  110.05s ->   113.57s] create, so if you'd like to help support the channel so I can continue to create videos
+[  113.57s ->   118.05s] just like this one, please like, comment, subscribe, share. It helps me out tremendously. It is always
+[  118.05s ->   124.37s] greatly appreciated. And if you'd like to master your quantitative skills, check out quantguild.com.
+[  124.37s ->   129.65s] Maybe you come from a background in business, economics, computer science, and aren't too sure
+[  129.65s ->   134.93s] where to get started on your quant journey. Maybe you're an aspiring quant or a working professional
+[  134.93s ->   140.93s] looking to sharpen your quantitative skills. In any case, Quant Guild is for you. We have over 90 quant
+[  140.93s ->   147.57s] lessons in math, probability, finance, an adaptive practice engine that scales with your skill level
+[  147.57s ->   153.89s] so you can progress to more and more difficult topics with gamified rank based progress, interview
+[  153.89s ->   161.97s] questions with fully worked solutions, trading games, courses from A to Z in math, probability statistics,
+[  161.97s ->   169.89s] coding, and more on the way. And all that's included with Quant Guild membership. And you can get started
+[  169.89s ->   175.33s] right now for free. So if you'd like to help support the channel and master your quantitative skills,
+[  175.33s ->   181.41s] check out quantguild.com. Without further ado, let's get started by talking about this idea of a random
+[  181.41s ->   187.49s] variable by talking about how they are defined and using one to model the number of trades on a
+[  187.49s ->   196.61s] particular instrument within 100 milliseconds. So first things first, a random variable is defining
+[  196.61s ->   204.37s] a set of possible outcomes with accompanying probabilities or likelihoods. They are fully specified
+[  204.37s ->   211.17s] by their probability mass or density function, cumulative distribution function, or even the characteristic
+[  211.41s ->   219.25s] function. There are a lot of different types of random variables, both discrete and continuous,
+[  219.25s ->   225.73s] but we're going to look at one in particular to model this idea of the number of trades executed
+[  225.73s ->   232.61s] on a particular instrument over the next 100 milliseconds. And that is going to be this Poisson
+[  232.61s ->   240.29s] random variable. The Poisson distribution is parameterized by lambda, and that represents the mean or
+[  240.29s ->   248.93s] average expected number of trades over the specified time interval of 100 milliseconds in this example.
+[  248.93s ->   254.61s] So what we have here is the probability mass function. It is a discrete random variable,
+[  254.61s ->   261.41s] so each outcome has an accompanying probability. The cumulative distribution function tells us the
+[  261.41s ->   268.85s] cumulative probability up to a particular point, that is a certain number of trades. And the characteristic
+[  268.85s ->   276.13s] function is effectively the Fourier transform of the mass function itself, which we all know is unique.
+[  276.13s ->   283.09s] So we can go freely back and forth between the characteristic function, the mass function. If we sum the mass
+[  283.09s ->   289.81s] function, we get the distribution function. If we difference, we get back the mass function. In any case,
+[  289.81s ->   295.57s] what are we actually observing down here? Well, we're observing the theoretical versus the empirical
+[  295.57s ->   303.73s] distribution of trades observed over the interval of 100 milliseconds. So what we're doing effectively
+[  303.73s ->   309.41s] is we are going to experience 100 milliseconds and then record the number of trades we see,
+[  309.41s ->   316.61s] experience another 100, record the trades, so on and so forth. And that is how we construct this bar
+[  316.61s ->   323.01s] chart on the right, this histogram. And what we're observing here is this sample of data that we observe
+[  323.01s ->   332.13s] over the course of 25,000 milliseconds is converging to this population or data generating distribution.
+[  332.13s ->   339.81s] And that's because the data that we're observing on the right is drawn from this theoretical distribution.
+[  339.81s ->   347.17s] Now, it's very important to note, in practice, we don't get the theoretical data generating distribution.
+[  347.17s ->   353.73s] This is what we're trying to model. If we had the dynamics itself, we wouldn't need to develop a
+[  353.73s ->   359.49s] model in the first place. We are going to need to make assumptions and we are going to use those
+[  359.49s ->   365.33s] assumptions to construct a model to aim at making informed decisions under uncertainty.
+[  365.33s ->   371.97s] That is our goal, never to predict a specific outcome. We will never be able to predict
+[  371.97s ->   379.01s] the number of trades over the next 100 milliseconds. We will never be able to predict a stock price
+[  379.01s ->   385.97s] or a stock return. That is not the purpose of modeling in this context. Importantly, the sample
+[  385.97s ->   392.45s] that we're dealing with these blue bars on the right for all intents and purposes are random variables.
+[  393.01s ->   398.77s] That is, if I was to resample from this population distribution with a different random seed,
+[  398.77s ->   405.65s] then what you're going to observe is an entirely different sample of data. Now, it's true, if I
+[  405.65s ->   411.81s] continue to sample from this population distribution, eventually it will converge to the theoretical mass
+[  411.81s ->   417.73s] function. But for this particular sample of 25,000 milliseconds, right, we're observing trades every
+[  417.73s ->   424.05s] 100 milliseconds all the way up to a cumulative 25,000 milliseconds, we can see a completely different
+[  424.05s ->   433.17s] sample of data here. So the empirical distribution is effectively a random variable. Asymptotically,
+[  433.17s ->   438.85s] as we observe more and more samples, yeah, it'll converge to this theoretical distribution.
+[  438.85s ->   446.21s] But why is this important? Well, this brings us to the idea of a statistic. Whenever I observe a sample
+[  446.21s ->   455.89s] of data, I can always take the average, find the mean or expectation, but isn't the empirical distribution
+[  455.89s ->   463.65s] a random variable? What does that make the sample mean? That sample statistic? Well, effectively,
+[  463.65s ->   472.21s] it makes that sample mean value also random. This goes for every single population or data generating
+[  472.21s ->   477.65s] distribution that is either well-defined, like we have here a Poisson distribution,
+[  477.65s ->   483.01s] or even in theory, where we're looking at some sort of sample of data that we collected.
+[  483.01s ->   490.53s] That is, the empirical statistics are themselves random variables. It doesn't matter if we're dealing
+[  490.53s ->   498.13s] with a Poisson distribution, Bernoulli, binomial, geometric, even continuous, uniform, exponential,
+[  498.13s ->   506.37s] so on and so forth. All of the empirical statistics are going to be random variables. How is this
+[  506.37s ->   513.57s] different from the population distribution? Well, if I was to compute the theoretical mean of the Poisson
+[  513.57s ->   521.33s] distribution, I would get lambda, that is the average number of events over that particular time
+[  521.33s ->   527.81s] interval. And in this case, we said that the time interval is 100 milliseconds and the event is a
+[  527.81s ->   535.41s] trade. So we parameterized our Poisson distribution by an average of four trades over each interval of
+[  535.41s ->   543.57s] 100 milliseconds. But in reality, when we observe a sample of data, that is, we look at 100 milliseconds,
+[  543.57s ->   549.81s] record the number of trades, look at another 100 milliseconds, record the number of trades, that sample
+[  549.81s ->   557.73s] of data that I just recorded is a random variable. And so is the average that I compute.
+[  558.29s ->   564.53s] And that is exactly what I'm showing you in this animation, what I'm doing is, I'm going to observe
+[  564.53s ->   572.45s] some data, let's say I observe it for what 25,000 milliseconds, I'm going to record all of those trades
+[  572.45s ->   579.97s] that I observed in each block of 100 milliseconds. And then I'll take the simple average. And after that
+[  579.97s ->   586.13s] iteration, I'll reset the list and do it again. And what do you see here, you see that the mean for each
+[  586.13s ->   594.21s] sample of data is going to be different, it is a random variable itself. And you can see here in
+[  594.21s ->   604.37s] the first sample of data, I have a mean of four trades, then I have a mean of 3.4, 3.2, 4.2. And what
+[  604.37s ->   613.09s] you're observing here is it's kind of oscillating around this theoretical value. And we know with
+[  613.09s ->   621.89s] statistical certainty that if we had an infinitely large sample size, then yes, all of these bars
+[  621.89s ->   628.69s] would be flat. Effectively, the empirical distribution would converge to the theoretical
+[  628.69s ->   636.45s] distribution. And so would all of the statistics. Okay, but how do we know that for sure? Well,
+[  636.45s ->   644.61s] that is guaranteed by the law of large numbers. If we're drawing from the same population distribution,
+[  644.61s ->   652.37s] then empirical statistics and distributions are guaranteed to converge to their population or
+[  652.37s ->   659.17s] the data generating distribution. If we're drawing from the same population distribution, just as we
+[  659.17s ->   665.89s] were in both of these examples, this is the probability mass function, the Poisson random variable
+[  665.89s ->   672.93s] governing trades that we observe in the next 100 milliseconds. If we continue to draw from a fixed
+[  672.93s ->   683.01s] distribution, then empirical probabilities, statistics and distributions are guaranteed to converge. And
+[  683.01s ->   688.53s] I have a nice animation of what this looks like for you here. Effectively, I have that empirical mass
+[  688.53s ->   696.45s] function on the left. And on the right, I have the sample mean. And this sample mean is tracking the
+[  696.45s ->   702.85s] theoretical mean as the sample size increases. If this goes to infinity, this will converge.
+[  702.93s ->   709.41s] It will converge to four. And this histogram will converge then to the theoretical probability mass
+[  709.41s ->   717.73s] function that we defined above. And again, this occurs with probabilistic statistical certainty.
+[  717.73s ->   722.61s] That is given to us by the law of large numbers. This isn't a course on probability theory. There's a
+[  722.61s ->   727.89s] difference between the strong and the weak law of large numbers. But I will digress for the sake of
+[  727.89s ->   735.09s] brevity. So we can move on to this idea of calibrated and out of sample distributions.
+[  735.09s ->   742.13s] This nice idea of convergence does not apply in practice. What we're doing here is we're drawing from
+[  742.13s ->   748.77s] the same population Poisson distribution for every single sample that we realize in this empirical
+[  748.77s ->   757.41s] distribution and this empirical statistic, the empirical mean. But in reality, we don't get to observe
+[  757.41s ->   766.45s] the population or data generating distribution. And what this can lead to is a series of modeling
+[  766.45s ->   774.93s] decisions that actually are incorrectly informing the likelihood of different outcomes. What does this
+[  774.93s ->   780.37s] actually look like? So we can't observe what the theoretical distribution actually looks like. What I'm
+[  780.37s ->   785.41s] going to do is I'm going to do exactly the procedure that I outlined for you before. I'm going to
+[  785.97s ->   791.57s] take a look at the number of trades over a hundred milliseconds. I'm going to do that for maybe 10,000
+[  791.57s ->   798.37s] milliseconds and I'll compute the average. Let's say I get four. Okay. Well, what I'll do is I'll
+[  798.37s ->   806.77s] calibrate a Poisson distribution to that value that I observe in the data. And what I'm then going to do is
+[  806.77s ->   815.09s] I'm going to use that theoretical distribution to attempt to inform the next 10,000 milliseconds of
+[  815.65s ->   825.09s] trades. And this gets into the idea of non-stationarity, uncertainty, and lack of convergence.
+[  825.09s ->   831.65s] What are we observing here? We're observing the population mean that I calibrated my model to as to be
+[  831.65s ->   839.01s] four. But when I observe the next 10,000 milliseconds of data, the empirical mean that I get is
+[  839.81s ->   847.57s] two. That's nowhere near four. We are grossly overestimating the mean value of the distribution
+[  847.57s ->   856.45s] over this next 10,000 milliseconds. And this brings us to the canonical question of modeling.
+[  856.45s ->   864.77s] How do we evaluate our model's efficacy? Well, in reality, events are uncertain. They're not random
+[  864.77s ->   872.29s] variables. We are using these models to attempt to define probabilities and likelihoods for different
+[  872.29s ->   881.25s] states of the world. That is effectively our goal in modeling. This raises some very important
+[  881.25s ->   887.17s] questions. In this context, when it comes to trades over 100 milliseconds, we can ask,
+[  887.81s ->   894.53s] is a Poisson distribution and the accompanying assumptions, we have this idea of independence,
+[  894.53s ->   902.05s] so on and so forth. Is that a reasonable model for trades over intervals of 100 milliseconds?
+[  902.85s ->   910.69s] It's a very important question. Is the distribution relatively stable or is there severe time variance?
+[  910.69s ->   917.09s] If the distribution was stable, we would observe something like this, where after we calibrate our
+[  917.09s ->   922.61s] model, we see the empirical distribution tracks our calibrated model quite well.
+[  923.17s ->   929.17s] But in practice, we're going to likely observe something like this, where our calibrated model
+[  929.17s ->   938.21s] and the observed data out of sample are fundamentally different. This leads us to the next question.
+[  938.21s ->   947.25s] That is, should this time variance persist? Is there a reasonable way to model it? Can we introduce maybe
+[  947.25s ->   954.45s] the notion of a regime to better capture these dynamics in different states of the world? For example,
+[  954.45s ->   961.25s] maybe this empirical distribution better reflects a period of high volatility. So when we observe trades
+[  961.25s ->   967.17s] in a period of high volatility, it follows this distribution, and maybe in a period of low volatility,
+[  967.17s ->   975.49s] it follows this one. In any case, what I want you to observe is how the statistics are different. Regardless
+[  975.49s ->   980.61s] of if we're dealing with the population or the empirical distribution, you can observe that these
+[  980.61s ->   988.37s] statistics are different. And we're not going to have this idea of convergence. If I keep sampling from
+[  988.37s ->   995.17s] the data generating distribution and I keep recording samples, I will never see convergence to a mean
+[  995.73s ->  1003.41s] like I do here. And that's because the data generating distribution is always going to keep changing over
+[ 1003.41s ->  1013.17s] time. And that leaves us a very important question to answer. Is there a way to determine if the statistics
+[ 1013.17s ->  1020.93s] that we are observing deviate significantly from a population statistic? In other words, what we're observing
+[ 1020.93s ->  1029.97s] here is the empirical mean is what? Roughly two? But the data generating distribution that we calibrated has a
+[ 1029.97s ->  1039.65s] mean of four. We don't get to observe this in practice. What is the probability of observing this empirical mean?
+[ 1040.29s ->  1046.85s] That's a very important question. Well, if we're asking a question pertaining to probabilities, what do
+[ 1046.85s ->  1056.13s] we need to know? We need to know the distribution of the sample mean. And that is the question that we have
+[ 1056.13s ->  1065.65s] to answer. If these statistics themselves are random variables, what distribution do they follow? If we can
+[ 1065.65s ->  1073.09s] get to that distribution, we can answer necessary questions like, what is the probability of observing an
+[ 1073.09s ->  1081.41s] empirical mean of two if the true population distribution has a mean of four? And then we can
+[ 1081.41s ->  1091.17s] actually assess the efficacy of that calibrated model. That is what we are building towards. So we need to
+[ 1091.17s ->  1102.21s] understand what distribution the sample mean this sample statistic follows since it is in fact a random
+[ 1102.21s ->  1108.45s] variable. I hope it doesn't give too much away, but now we're pivoting to talk about this idea of a normal
+[ 1108.45s ->  1116.29s] or Gaussian random variable. This is a continuous random variable, which is different from a discrete random
+[ 1116.29s ->  1123.81s] variable like a Poisson random variable. But in the context of what distribution does our sample mean
+[ 1123.81s ->  1131.41s] follow, you might be able to guess what the central limit theorem is now going to imply. In any case,
+[ 1131.41s ->  1136.69s] we will build up to it. So we have the probability density function, the cumulative distribution
+[ 1136.69s ->  1143.25s] function, and the characteristic function here that is going to define our normal random variable.
+[ 1143.25s ->  1148.77s] And what you'll observe is the same nice convergence properties that we had above
+[ 1148.77s ->  1156.13s] in the discrete random variable example of our Poisson distribution. You can see that the empirical
+[ 1156.13s ->  1162.45s] histogram that is our empirical distribution will converge thanks to the law of large numbers,
+[ 1162.45s ->  1170.21s] along with all of the statistics and associated event probabilities. Now, why is this different from
+[ 1170.21s ->  1180.05s] our Poisson example? Well, in our Poisson example, we literally got probabilities with associated events.
+[ 1180.05s ->  1188.37s] So the probability of observing six trades in 100 milliseconds by this particular distribution is
+[ 1188.37s ->  1196.21s] roughly 10%. That is what the probability mass function defines. Does the density function define
+[ 1196.21s ->  1204.29s] probabilities? Well, no. Effectively, there are an infinite number of outcomes for this particular
+[ 1204.29s ->  1211.33s] density function. Any time we look at a specific value, we can draw a vertical line for the input
+[ 1211.33s ->  1219.09s] and match it to an output. This is not a probability. This you can think of as a relative likelihood.
+[ 1219.09s ->  1226.45s] If I compare, say, this vertical line here to this vertical line out in the tail, which one has a higher
+[ 1226.45s ->  1233.49s] likelihood of observing points around it? Well, clearly this one in the middle, right? There's more mass
+[ 1233.49s ->  1239.01s] underneath the density function. So when we look at the probability density function for a continuous
+[ 1239.01s ->  1245.25s] random variable, we have to think of it in terms of a likelihood, a relative likelihood,
+[ 1245.25s ->  1252.85s] not a probability that is fundamentally different from what we observed above. How do we then get
+[ 1252.85s ->  1261.41s] probabilities? Well, we need to ask questions about regions. If we integrate this density function,
+[ 1261.41s ->  1269.17s] we can get probabilities. If I integrate from negative infinity all the way to zero, I will get 50%.
+[ 1270.13s ->  1277.25s] The distribution is symmetric. If I wanted to find the probability of observing a draw less than two,
+[ 1277.25s ->  1282.69s] I would just integrate or less than negative two, I would integrate to negative two, and it looks like
+[ 1282.69s ->  1291.09s] it's roughly 2%. So that is how our normal distribution works. It is effectively parameterized by
+[ 1291.09s ->  1299.33s] a mean and a variance. This will dictate the location that is the center of the normal or gaussian distribution
+[ 1299.89s ->  1304.61s] and the spread. You can see a couple of different normal distributions here.
+[ 1305.49s ->  1311.97s] We have this purple distribution that's a special kind. It has a mean of zero and a variance of one.
+[ 1311.97s ->  1316.85s] Then we have this yellow distribution with a different mean and variance and this green one
+[ 1316.85s ->  1323.89s] with another different mean and variance. And what you're going to observe here on this slider
+[ 1323.89s ->  1330.05s] is the normal distribution with different parameterizations will have different likelihoods
+[ 1330.05s ->  1336.69s] of observing or different probabilities of observing certain outcomes. So if I was to integrate up to,
+[ 1336.69s ->  1343.57s] let's say one, for this green distribution here, it's far more likely to observe occurrences in this
+[ 1343.57s ->  1349.65s] green distribution than it is for this orange distribution. Essentially what I'm saying is
+[ 1349.65s ->  1356.45s] everything that I showed you here with the standard normal distribution, a mean of zero and a variance of one,
+[ 1356.45s ->  1362.93s] will hold for every shape of the normal distribution. So regardless of its parameterization,
+[ 1362.93s ->  1371.41s] regardless of its mean and variance, we can integrate to find probabilities. We can compute
+[ 1371.41s ->  1378.13s] relative likelihoods. That is very useful but this is no different from any other random variable we
+[ 1378.13s ->  1386.21s] could just define and calibrate. We can do this for a Poisson distribution just like we did above. We can
+[ 1386.21s ->  1392.29s] find probabilities and relative likelihoods here. We can do this for a geometric random variable, a Bernoulli,
+[ 1392.29s ->  1400.37s] a binomial, a uniform, exponential. Why do we care about the normal or the Gaussian distribution?
+[ 1401.01s ->  1410.05s] Well, this is quite literally our bridge between statistics and probabilities. In other words,
+[ 1410.05s ->  1421.49s] the central limit theorem shows that the distribution of sample means is normal or Gaussian. We are not
+[ 1421.49s ->  1430.85s] proxying the data-generating distribution. In this case, we know for certain that the distribution that
+[ 1430.85s ->  1439.09s] generates the value for the empirical sample mean that we observe, that is, for example, this red line
+[ 1439.09s ->  1449.49s] here or any of these pink bars, we know for certain come from a normal or Gaussian distribution.
+[ 1450.05s ->  1459.09s] And that is a crazy result. Let's take a look at a rough outline of the proof and see exactly why
+[ 1459.09s ->  1464.13s] this is the case. The full proof is certainly beyond the scope of this video. I would be happy to create
+[ 1464.13s ->  1469.57s] one on this topic. If there's interest, just let me know in the comments below. In any case, I want to
+[ 1469.57s ->  1475.09s] give you a rough idea of what this proof looks like using the characteristic function so you know we're not
+[ 1475.09s ->  1481.73s] just pulling this result out of thin air. Let's get to this rough proof. What I have here is the sample
+[ 1481.73s ->  1487.73s] mean. This is actually the standardized sample mean. I'm subtracting out the population mean.
+[ 1487.73s ->  1494.45s] I'm dividing by the standard deviation scaled by the square root of the sample size. And this is
+[ 1494.45s ->  1501.81s] defined as Z sub n. This is our standardized sample mean. What we're going to do is we're going to apply
+[ 1501.81s ->  1508.13s] the characteristic function and this nice rule that leads us to using the sum of independent random
+[ 1508.13s ->  1514.37s] variables as the product of their characteristic functions. And that is effectively what we're
+[ 1514.37s ->  1521.01s] applying here. That's how we get to this step in the equation. We're then going to substitute in
+[ 1521.01s ->  1528.93s] a Taylor series expansion and we will get to now this step. If we apply the limit as the sample size
+[ 1528.93s ->  1538.45s] approaches infinity, we get e to the negative t squared over 2. That is the characteristic function
+[ 1538.45s ->  1545.92s] of this standardized sample mean. Okay, well, what do we know about characteristic functions? Well, they
+[ 1545.92s ->  1556.07s] uniquely define our random variable. Where have we seen this before? Well, we looked at a normal or
+[ 1556.07s ->  1564.15s] Gaussian characteristic function above when we defined it and we see what? This is e to the i mu t minus
+[ 1564.15s ->  1575.11s] one half sigma squared t squared. But this is standardized. So the mean is zero and the variance is one,
+[ 1575.11s ->  1590.63s] which means if I substitute those values in for mu and sigma, I will get one squared, which is just one.
+[ 1590.63s ->  1598.23s] So I'll remove sigma altogether. Then I plug in zero for mu. That removes the first term. What am I left
+[ 1598.23s ->  1606.88s] with? The characteristic function of a standard normal random variable is just e to the negative t squared over
+[ 1606.88s ->  1620.32s] two. That is exactly what we get there. So this is a rough proof of the central limit theorem.
+[ 1620.32s ->  1627.60s] And this is actually going to hold by the Levy continuity theorem. Effectively, convergence of a
+[ 1627.60s ->  1633.28s] characteristic function at t equals zero implies distribution convergence. In other words, this sample
+[ 1633.28s ->  1639.92s] mean is then going to converge to that standard normal distribution as n approaches infinity. And again,
+[ 1639.92s ->  1645.36s] this is regardless of the population distribution. So what we've done here is we've just shown
+[ 1645.36s ->  1651.60s] that the distribution of our standardized sample mean is going to be standard normal. If it wasn't
+[ 1651.60s ->  1657.12s] standardized, we would just add the mean and scale by the standard deviation to get the appropriate
+[ 1657.12s ->  1664.80s] variance. And that is an incredibly cool result. Let's take a look at an example of this in action.
+[ 1664.80s ->  1670.24s] What I'm going to do is I'm going to look at the empirical Poisson means, and I'm going to plot it
+[ 1670.24s ->  1676.80s] against a normal distribution. And what you're going to see here is as I continue to sample from the
+[ 1676.80s ->  1683.84s] Poisson distribution, I take the average, I add it to the histogram. I'll do that a very large number of times.
+[ 1683.84s ->  1692.24s] It's no coincidence. It's not by accident. You're seeing the histogram converge to a normal, a Gaussian
+[ 1692.24s ->  1700.96s] distribution that is ensured by the central limit theorem. This is given by a Poisson random variable.
+[ 1700.96s ->  1708.00s] It could be Bernoulli binomial. It doesn't matter what the population or data generating distribution is.
+[ 1708.56s ->  1716.80s] All of these sample means will converge to this normal or Gaussian distribution. A key component of
+[ 1716.80s ->  1724.80s] this result is that more samples lead to more confidence and eventually convergence to the
+[ 1724.80s ->  1732.72s] population mean, which is exactly what the law of large numbers implies. So if we take a look here,
+[ 1732.72s ->  1736.72s] what we're doing is we're computing the variance of the sample mean.
+[ 1736.72s ->  1742.48s] So we know the sample mean is a random variable. We know it follows a normal distribution, but
+[ 1742.48s ->  1749.20s] the variance is going to be dictated by the sample size. As the sample size increases,
+[ 1749.20s ->  1756.24s] right, n is in the denominator. If we increase the denominator, then the overall quantity gets smaller.
+[ 1756.24s ->  1763.52s] So as the sample size increases, what happens to variance? Well, variance starts to tighten up.
+[ 1763.52s ->  1770.32s] And that's exactly what we see here in this animation. As n increases, the variance becomes
+[ 1770.32s ->  1777.20s] tighter in that distribution. So effectively, what are we saying? Well, the more samples that we have,
+[ 1777.20s ->  1785.68s] the more confident we are in the observed sample mean that it will be in fact closer to the population
+[ 1785.68s ->  1791.84s] mean. And it doesn't stop there. Effectively, we've unlocked an entire suite of tools that we can apply to the
+[ 1791.84s ->  1798.56s] statistics that we observe to assess something about the population or data generating distribution that
+[ 1798.56s ->  1807.54s] we know is normal. And this goes back to our key questions. If statistics themselves are random
+[ 1807.54s ->  1812.10s] variables, right? Our sample mean is a random variable. What distribution do they follow? Well,
+[ 1812.10s ->  1816.90s] the sample mean by the central limit theorem is going to follow a normal or Gaussian distribution.
+[ 1817.70s ->  1823.46s] And what about the other key question? Is there a way to determine if the statistics we observe,
+[ 1823.46s ->  1830.42s] that is, remember, they are a function of our specific sample, do these deviate significantly
+[ 1830.42s ->  1839.22s] from a population statistic? So for example, we may be interested in returns. Is the sample mean return
+[ 1839.22s ->  1847.30s] what? Greater than zero or less than zero? We can now assess the probability of the data generating
+[ 1847.30s ->  1858.79s] distribution having a mean of zero or if there is a positive skew. That is effectively helping us bridge
+[ 1858.79s ->  1866.39s] the gap between statistics and probabilities. I have now an example for you here where we don't have a
+[ 1866.39s ->  1873.67s] theoretical or population data generating distribution. Instead, I'm observing stock
+[ 1873.67s ->  1881.11s] returns. And I'm going to take the sample mean. We know that sample mean follows a normal distribution.
+[ 1881.11s ->  1886.55s] And that's what I have on the right here. This yellow line, this yellow vertical line represents what?
+[ 1886.55s ->  1893.51s] The mean stock return. We can see that there is what? It's slightly positive. And this is going to be
+[ 1893.51s ->  1898.87s] a normal distribution that we calibrate to that mean return. What I want you to notice here is what
+[ 1898.87s ->  1908.74s] happens if I shift the distribution. Does the likelihood of observing the mean return increase
+[ 1908.74s ->  1917.12s] or decrease as I shift the distribution to the right or left? Well, clearly the likelihood of observing
+[ 1917.12s ->  1925.28s] this mean return is maximized in the center where there's the most mass available. This brings us back to
+[ 1925.84s ->  1931.20s] what we talked about when we introduced the idea of a normal distribution, right? We're assessing
+[ 1931.20s ->  1939.20s] relative likelihoods. In other words, we know for certain now that the population or data generating
+[ 1939.20s ->  1947.36s] distribution for this sample mean that we observe is normal, which means what? The distribution that
+[ 1947.36s ->  1953.44s] maximizes the likelihood of observing it is the one that has the sample mean returned in the center.
+[ 1954.00s ->  1961.52s] This is the idea of maximum likelihood estimation. We're maximizing the likelihood of observing this
+[ 1961.52s ->  1968.40s] specific value. And that is how we can parameterize our normal distribution. Sure, there are other
+[ 1968.40s ->  1975.76s] approaches, moment matching approaches, so on and so forth. But this is one way to go about generating now
+[ 1976.24s ->  1982.88s] probabilities. Now I have a normal distribution. Effectively, we've already observed this mean return. We know
+[ 1982.88s ->  1990.40s] the population distribution is normal. What distribution maximizes the likelihood of observing that mean
+[ 1990.40s ->  1997.04s] value? Well, that's going to be the one that has a mean centered at the return that we've observed. And
+[ 1997.04s ->  2004.32s] that's exactly what we see here. That is how we can then parameterize the normal distribution. And once we
+[ 2004.32s ->  2010.64s] parameterize it, we can find probabilities. That's exactly what I showed you here. If we integrate,
+[ 2010.64s ->  2018.64s] we can get the likelihood and probabilities of different states of the world. Now, there are some
+[ 2018.64s ->  2026.24s] important considerations and limitations, right? When we model the population distribution, yes,
+[ 2026.24s ->  2032.80s] we know it's normal, but we don't know the actual mean and variance of that distribution. It could
+[ 2033.52s ->  2041.68s] be over here. It could be over here. It could be flatter. It could be sharper. We have no idea what
+[ 2041.68s ->  2049.36s] that looks like still. All we're doing is assessing the likelihood of observing this sample mean value
+[ 2049.92s ->  2056.40s] based on different population distribution. So clearly, if I shifted this purple distribution
+[ 2056.40s ->  2063.12s] all the way out to maybe 20, right, the likelihood of observing this point here is zero, right? We're not
+[ 2063.12s ->  2068.64s] going to really see that as an observation. So yeah, the distribution is most likely centered somewhere around
+[ 2068.64s ->  2076.00s] here. But the catch here is that it's going to change over time. So if we apply the central limit theorem to
+[ 2076.00s ->  2082.56s] something like a fixed distribution, like the Poisson distribution example here, it's going to converge. And this
+[ 2082.56s ->  2088.24s] normal distribution is going to perfectly represent the distribution of sample means, all probabilities,
+[ 2088.24s ->  2095.68s] statistics, so on and so forth will converge. But with something like stock returns, it's going to
+[ 2095.68s ->  2101.28s] constantly change over time. And that is a key consideration here, we can apply the central limit
+[ 2101.28s ->  2106.16s] theorem. And we're going to look at some examples on stock returns and a trading signal in a moment. But we
+[ 2106.16s ->  2111.20s] can still apply the central limit theorem. But we're going to have to change the interpretation because
+[ 2111.20s ->  2119.76s] there is a time variant nature to this distribution that generates the sample mean return. This is
+[ 2119.76s ->  2126.48s] something that we didn't have when we had a fixed population distribution. All right. So with the
+[ 2126.48s ->  2132.24s] central limit theorem, we do unlock a whole bunch of tools, parameter calibration, we can go from
+[ 2132.24s ->  2139.28s] statistics to probabilities, we can apply confidence intervals, hypothesis testing, so on and so forth.
+[ 2140.00s ->  2145.52s] But as I said above, there are some important considerations when we now move on to the real
+[ 2145.52s ->  2150.80s] world. So we understand the central limit theorem, we understand that random variables follow a normal
+[ 2150.80s ->  2156.72s] or Gaussian distribution, we can bridge the gap between statistics and probabilities. Let's leave the
+[ 2156.72s ->  2165.76s] classroom and apply this now to stock returns and a trading signal. What we're going to do here is we are
+[ 2165.76s ->  2175.20s] going to observe sample mean returns of Nvidia over disjoint 90 day blocks. So I'm going to observe 90 days,
+[ 2175.20s ->  2181.12s] take the mean that is going to be a return, I'm going to do this for another 90 days, another 90 days,
+[ 2181.12s ->  2186.72s] so on and so forth. This is very similar to what I did at the start of this video, where I talked about
+[ 2186.72s ->  2193.84s] recording the number of trades in 100 millisecond blocks. Now I know that the distribution of sample
+[ 2193.84s ->  2202.24s] means is going to be normal or Gaussian, or so I think. So what I'm going to do here is, I am going
+[ 2202.24s ->  2209.20s] to observe what? The Nvidia stock returns and I'll parameterize a normal distribution to maximize
+[ 2209.20s ->  2214.96s] the likelihood of observing the block means. And what do I find? Well, if I compute the mean of the
+[ 2214.96s ->  2224.96s] disjoint 90 day block sample means, I find what? That there is a mean return of 0.21% with a standard
+[ 2224.96s ->  2233.20s] distribution of 0.049%. That means that the probability of observing an average return of
+[ 2233.20s ->  2242.16s] less than zero during these 90 day blocks is going to be approximately zero. And if I was to treat this
+[ 2242.16s ->  2248.88s] as a geometric random variable, I could find the expected number of years required to observe a
+[ 2248.88s ->  2257.44s] negative mean return given a period of 90 days. And it turns out, if we apply the central limit
+[ 2257.44s ->  2264.88s] theorem, we parameterize this normal distribution and compute this probability, it will take what?
+[ 2266.04s ->  2277.48s] 42,296 years to observe just one negative return in this 90 day block. Specifically,
+[ 2278.12s ->  2288.21s] a negative sample mean return in one of these 90 day blocks. All right. Well, that sounds pretty good.
+[ 2288.21s ->  2295.89s] We should just dump our entire portfolio into Nvidia, right? Well, not quite because if I look back at the
+[ 2296.61s ->  2307.09s] block mean returns, what actually happens? Well, I observe in all of these 74 blocks, 27% of them
+[ 2307.73s ->  2316.05s] actually have negative mean returns. So 20 of the 74 have negative returns. And clearly we didn't wait
+[ 2316.05s ->  2324.85s] what? We didn't wait 42,000 years. In fact, the years required to observe the negative blocks we've
+[ 2324.85s ->  2335.73s] already experienced are what? This is, I can't even read. This is 845,915 years. Clearly our model is
+[ 2335.73s ->  2347.25s] severely underestimating the risk of observing a negative sample mean return. And why is this the case?
+[ 2347.25s ->  2357.09s] Well, this brings us to the idea of the limitations and considerations associated with applying the
+[ 2357.09s ->  2363.01s] central limit theorem in practice. In this case, we're looking at specifically stock returns,
+[ 2363.01s ->  2370.77s] but this goes for any time variant data generating or population distribution. Again,
+[ 2370.77s ->  2378.93s] we don't know what the parameterization of the population distribution is. If it's a sample mean,
+[ 2378.93s ->  2384.37s] we know it's normal, but we don't know what the parameterization of it is. So what I've done here
+[ 2384.37s ->  2390.85s] is I've, I've calibrated by the central limit theorem, my sample mean returns, and that is this
+[ 2390.85s ->  2397.97s] orange dashed line. But what's going to happen in reality? Well, the data generating distribution,
+[ 2397.97s ->  2404.29s] that sample mean, right? That sample mean that we're observing and parameterizing our fixed
+[ 2404.29s ->  2409.33s] normal distribution with to assess the likelihood of different states of the world, right?
+[ 2410.55s ->  2417.35s] That's not a good model because the data generating distribution is time variant. It is going to
+[ 2417.35s ->  2425.11s] change over time. And as you can see, right, the likelihood of observing negative returns over here
+[ 2425.11s ->  2432.07s] in reality is what? Very likely relative to the fixed distribution, which says it has a probability of
+[ 2432.07s ->  2441.19s] roughly zero. That is the key point to understand when you apply the central limit theorem and even
+[ 2441.19s ->  2446.71s] the law of large numbers in practice. There is no convergence. There's no statistical probabilistic
+[ 2446.71s ->  2452.47s] or distribution convergence. Everything is time variant. Probabilities and likelihoods will change
+[ 2452.47s ->  2458.63s] over time. Your capacity to model different dynamics under different regimes will certainly vary.
+[ 2458.63s ->  2466.39s] That is how we can effectively understand the application of the central limit theorem in practice.
+[ 2466.39s ->  2475.35s] It is good for a point in time assuming relative stability. But after that, we're going to need to
+[ 2476.31s ->  2481.75s] create a new model. We're going to develop new assumptions, re-evaluate. That is effectively why
+[ 2481.75s ->  2488.71s] we all still have a job. Our job as quants is to build models, make assumptions, update models,
+[ 2488.71s ->  2494.79s] and update assumptions as things continue to change. If we do this effectively, we can accumulate positive
+[ 2494.79s ->  2502.23s] expected value. We can accumulate P and L, and that is how we make money. So this is effectively why
+[ 2502.23s ->  2508.87s] the central limit theorem is breaking down for us. How is this useful as a point in time snapshot?
+[ 2508.87s ->  2515.19s] This is roughly what I had mentioned here, where this is a reasonable proxy maybe for this point in
+[ 2515.19s ->  2521.51s] time, but as time marches on, right, it's definitely not going to be useful. How is it useful as a point
+[ 2521.51s ->  2527.75s] in time proxy, maybe in the context of a trading signal? In some cases, the assumption that the sample
+[ 2527.75s ->  2534.07s] reflects the data generating distribution is less violent than others. If I'm using a sample mean from
+[ 2534.07s ->  2539.91s] three months ago to inform my normal distribution today, yeah, that's probably not useful. But if
+[ 2539.91s ->  2547.43s] I'm trying to assess the likelihood of a specific observation at this point in time, then this can
+[ 2547.43s ->  2554.39s] be very useful depending on the stability of the space. I have a very simple example for you here.
+[ 2554.39s ->  2560.15s] Let's say I have a trading signal. I'm trading some sort of cross-sectional equity strategy. This is going
+[ 2560.15s ->  2566.71s] to be a sentiment based strategy. And I'm trying to assess the sentiment of an equity before 920 AM.
+[ 2566.71s ->  2574.63s] I only have 50 unique documents. So let's say I collected data from 8 AM to 920 AM. I only have 50
+[ 2574.63s ->  2582.31s] documents. I calibrate a normal distribution and I want to assess the probability of drawing an incorrect
+[ 2582.31s ->  2589.83s] signal value. This is essentially a confidence question, right? What is the likelihood of observing
+[ 2589.83s ->  2597.35s] the sample mean that I've already observed? So if the probability is too low, I won't include it in
+[ 2597.35s ->  2603.43s] my equity basket that I'm going to trade, right? I have some sort of quantile breakdown of my signal.
+[ 2603.43s ->  2607.91s] I'm going to go long the equities in the top basket, short the equities in the bottom basket.
+[ 2608.47s ->  2614.79s] And I have effectively this equity in my top basket. I have 50 documents suggesting that what
+[ 2614.79s ->  2623.11s] it is tradable, I want to go long, but what is the probability of observing that mean return
+[ 2623.11s ->  2629.67s] if I only have 50 unique documents? Well, this has to do a lot with the confidence of observing that
+[ 2629.67s ->  2635.83s] specific sample mean value. We know that the central limit theorem is going to increase in confidence
+[ 2635.83s ->  2641.67s] as the sample size increases. Here, we don't have a large enough sample size. So what we can do
+[ 2641.67s ->  2647.83s] is we can ask an interesting question. What is the probability of observing the value that we've
+[ 2647.83s ->  2655.59s] already seen or greater given some sort of conservative distribution? I don't know what
+[ 2655.59s ->  2662.63s] the population or data generating distribution looks like. It could be very flat. It could be shifted
+[ 2662.63s ->  2667.27s] in this direction. It could be shifted in this direction. I'm going to pick a distribution that
+[ 2667.27s ->  2674.23s] I'm satisfied with and assess the probability of observing that specific mean sentiment value or
+[ 2674.23s ->  2680.39s] greater. How do I do that? Well, I take my null sampling distribution. I find the point of interest
+[ 2680.39s ->  2686.95s] and I integrate past that point and I integrate up to infinity. And I find what that the probability
+[ 2686.95s ->  2695.19s] of observing that specific sentiment mean value is very, very small. It's less than 1%. Am I going to now
+[ 2695.19s ->  2702.71s] trade this in my long leg of my portfolio? Absolutely not. Given I'm abiding by this
+[ 2702.71s ->  2707.67s] null sampling distribution, the likelihood of observing this value is far too low. I'm not
+[ 2707.67s ->  2714.23s] confident that the sentiment is effectively positive. So what I will do is I will exclude
+[ 2714.23s ->  2719.99s] it from my basket or I will abide by some specific rule set. And then I will trade the remaining assets,
+[ 2719.99s ->  2727.99s] assuming they have a reasonable degree of confidence in each bucket. The point here is it doesn't matter
+[ 2727.99s ->  2735.03s] that the distribution is changing over time. This has to do with a relative confidence. I'm interested
+[ 2735.03s ->  2742.95s] in assessing the probability or likelihood of observing this particular mean value right now. And the central
+[ 2742.95s ->  2751.03s] limit theorem is informing us as to whether or not that observation is in fact likely. If it is,
+[ 2751.03s ->  2758.55s] I'll include it in my portfolio. And if it isn't, I will exclude it. The key idea here is yes,
+[ 2758.55s ->  2766.39s] the data generating distribution is certainly going to change over time. But for example, at this
+[ 2766.39s ->  2771.35s] particular point in time, our fixed normal distribution by the central limit theorem that we're kind of
+[ 2771.35s ->  2777.67s] calibrating to our sample data is doing a reasonable job at proxying for that center. And what I'm
+[ 2777.67s ->  2785.11s] suggesting is if the space is reasonably stable and you have some sort of ephemeral probability question,
+[ 2785.11s ->  2791.59s] you can answer it by applying the central limit theorem, even though over time that population or
+[ 2791.59s ->  2800.07s] data generating distribution for your sample mean is going to change. And that is a very useful concept.
+[ 2800.07s ->  2804.39s] Too long, didn't watch. Here's your executive summary. Random variables define a set of outcomes
+[ 2804.39s ->  2809.51s] with accompanying probabilities or likelihoods, depending on if you're operating with a discrete
+[ 2809.51s ->  2814.07s] or continuous random variable that will dictate whether or not the mass function gives you a
+[ 2814.07s ->  2819.75s] probability or the density function will give you a probability of observing values in a particular
+[ 2819.75s ->  2826.23s] region. Anytime we draw a random variable, we are dealing with an empirical distribution,
+[ 2826.23s ->  2831.35s] and that is effectively a random variable itself. We don't get the same empirical distribution every
+[ 2831.35s ->  2837.59s] time we create a series of draws and that distribution generates statistics. If draws are
+[ 2837.59s ->  2844.31s] from the same population distribution, i.e. it is time invariant, empirical statistics,
+[ 2844.31s ->  2850.55s] subsequent probabilities and distributions will converge by the law of large numbers. Clearly,
+[ 2850.55s ->  2857.11s] this isn't the case in practice as we are battling data drift, time variance in distributions,
+[ 2857.11s ->  2864.31s] and the lack of convergence in subsequent statistics and probabilities. Given draws from a population
+[ 2864.31s ->  2871.75s] distribution are in fact random variables, statistics are also random variables, the big question is
+[ 2871.75s ->  2880.15s] what distribution do they follow? The distribution of sample means follows a normal or Gaussian distribution.
+[ 2880.15s ->  2885.51s] Regardless of the population or data generating distribution, this is quite literally our
+[ 2885.51s ->  2891.59s] bridge between theory and practice, statistics and probability. We can unlock an entire suite of
+[ 2891.59s ->  2898.39s] tools from confidence intervals to hypothesis testing. If the population or data generating distribution
+[ 2898.39s ->  2904.47s] is fixed, then the distribution of sample means will certainly converge to a normal distribution as the
+[ 2904.47s ->  2914.87s] sample size becomes arbitrarily large and probabilities will be precise in the frequentest sense. In reality,
+[ 2914.87s ->  2921.67s] population or data generating distributions are not fixed and are time variant leading us to generate
+[ 2921.67s ->  2928.79s] incorrect probabilities and draw statistically incorrect conclusions just as we saw in the Nvidia stock
+[ 2928.79s ->  2943.11s] return. Though distributions in reality change over time, the central limit theorem can offer a snapshot,
+[ 2943.11s ->  2948.79s] which is useful locally for generating probabilities as we saw in the trading signal example, where the
+[ 2948.79s ->  2955.75s] sentiment distribution producing a trading signal or trading decision is likely to be more stable in that short
+[ 2955.75s ->  2963.91s] region of time required to generate a decision than it is to be stable over a series of days, which doesn't
+[ 2963.91s ->  2972.55s] matter nearly as much because we will continue to resample data and recalibrate our new model and this is
+[ 2972.55s ->  2981.19s] effectively why we all still have jobs. Some future topics, technical videos and other discussions to look forward to,
+[ 2981.19s ->  2986.63s] this idea of advanced Markov chains, something you would see in a class on stochastic processes,
+[ 2986.63s ->  2993.03s] non-Markovian models, fractional Brownian motion, Volterra processes, these are some of my favorite
+[ 2993.03s ->  2999.83s] mathematical structures. I would love to do a video on these topics, I'm uncertain what the general level
+[ 2999.83s ->  3007.03s] of interest would be, but I will probably cave and make videos on these ideas in the near future. I want to
+[ 3007.03s ->  3012.47s] talk about deriving the black trolls equation, the PDE analytical and numerical solutions. We have to
+[ 3012.47s ->  3020.39s] get to Kalman filters and non-stationarity that is effectively what we saw here in with the population
+[ 3020.39s ->  3025.91s] or data generating distribution for the sample mean changing over time. There's that time variance,
+[ 3025.91s ->  3031.75s] a big problem in quant modeling that I talk about all the time on this channel. I'd like to get into the
+[ 3031.75s ->  3037.19s] idea also of risk neutral measures, complete versus incomplete market models, reinforcement learning
+[ 3037.19s ->  3042.07s] for delta hedging, and even approximating pricing functionals using neural networks. We're starting
+[ 3042.07s ->  3048.79s] to get into more niche topics that really are where my research interests lie. So, you know, depending on
+[ 3048.79s ->  3054.47s] what you'd like to see next, let me know in the comments section below. And I haven't forgotten about
+[ 3054.47s ->  3060.63s] our quant builds. I have a whole bunch of ideas. This idea of live neural network stochastic volatility
+[ 3060.63s ->  3065.35s] model calibration. I'd like to implement the Kalman filter model with regime dynamics. We've already
+[ 3065.35s ->  3070.23s] covered Markov chains and hidden Markov models. Once we cover the Kalman filter, we can apply it
+[ 3070.23s ->  3076.79s] in some sort of live system. And of course, this idea of an automated delta neutral trading system, which
+[ 3076.79s ->  3082.47s] I have been toying with for quite some time. I've been building out the infrastructure and I think I
+[ 3082.47s ->  3088.63s] would like to tackle it maybe this month, but it will largely depend on what you guys would like to see.
+[ 3088.63s ->  3094.71s] So please let me know in the comments below. It certainly helps me decide what videos to create
+[ 3094.71s ->  3098.87s] next. And that's going to do it for this video on the central limit theorem for quant finance.
+[ 3098.87s ->  3103.59s] I hope you enjoyed. I hope you learned something. This video certainly took a lot of effort to create.
+[ 3103.59s ->  3106.87s] So if you enjoyed it and you want to see more like it in the future, please like comment,
+[ 3106.87s ->  3111.35s] subscribe, share. Again, it helps me out tremendously. It is always greatly appreciated.
+[ 3111.35s ->  3115.27s] I'll leave a link in the description below. If you'd like to get started with interactive brokers,
+[ 3115.27s ->  3119.91s] they're the only broker I use. I highly recommend their API. It's what I use in all of my quant builds.
+[ 3119.91s ->  3123.83s] I'll leave a link in the description to our discord community. If you'd like to connect with me and
+[ 3123.83s ->  3128.79s] other quants, if you want to master your quantitative skills, check out quant guild.com.
+[ 3128.79s ->  3141.43s] Other than that, thank you so much for watching and I will see you in the next video.

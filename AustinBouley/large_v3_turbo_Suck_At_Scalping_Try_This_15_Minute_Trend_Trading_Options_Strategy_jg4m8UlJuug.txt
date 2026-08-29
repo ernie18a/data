@@ -1,0 +1,132 @@
+[    0.30s ->     6.30s] Do you suck at scalping yet you want to consistently make money from the market and yet you just don't and yet you just don't
+[    6.30s ->     9.30s] Strategy that worked out this one. This one right here is proven
+[    9.92s ->    16.08s] Mathematically to work. It is based on principles of psychology that are here to stay forever and have worked for a very long time
+[   16.30s ->    20.24s] This will show you step by step exactly how this works by the end of this video
+[   20.40s ->    26.42s] You will know what to do why to do it and when to do it. So I'm not gonna throw in anything confusing
+[   26.42s ->    32.48s] Let's keep it simple. Here we go. Okay, so again when we're looking at this the overall strategy is trend following
+[   32.60s ->    37.16s] What is that? It's the idea of understanding that we trade where the overall market is going
+[   37.16s ->    42.38s] So for instance, if we look at this chart right here, we can be like, okay, where is the what is the overall direction?
+[   42.38s ->    44.84s] Is it trending up or trending down? Well, it's trending up
+[   44.84s ->    50.60s] Why is it trending up because our highs are getting higher and our lows are also getting higher as well
+[   50.82s ->    56.12s] Now, how do we measure this? Let's say we're terrible at reading charts. Maybe like Austin. Okay. That's cool
+[   56.12s ->    61.52s] We'll have reading the highs and lows, but I don't really know what charts what about if things change whatever things like that
+[   61.82s ->    69.32s] Well, this is exactly how you do it is this trending band right here shows you exactly when the market is trending and will help us set our levels
+[   69.32s ->    74.30s] On the options trading that we're going to be doing here today or that many teaching in today's video
+[   74.42s ->    77.12s] So where do you get this trending band indicator?
+[   77.12s ->    81.62s] Well, it's included for free when you check out and test drive my trade ideas algo
+[   81.62s ->    90.50s] Which will walk you through specific option alerts that are guaranteed to have a 90 plus percent win rate and help you make at least a 50% return per trade
+[   90.50s ->    92.02s] That's exactly what this is
+[   92.02s ->    94.08s] So when you sign up for the test drive, which is only 30
+[   94.08s ->   100.80s] $30 you get access to the alerts personal things discord masterclasses group coaching trading guides
+[  101.42s ->   106.00s] This free trading indicator that I mentioned and I'll even send you a free options trader t-shirt
+[  106.00s ->   109.62s] So it's completely worth it to you. However, this offer is only open
+[  109.62s ->   115.14s] Four days out of or four days a month. And so again, it's only open for the next two days
+[  115.14s ->   119.24s] So take advantage of it if if you want that if you still want to use this strategy
+[  119.24s ->   123.14s] But you don't want to get the trending band indicator at the end of this video
+[  123.14s ->   127.34s] I'll show you how to best replicate this using a free indicator on training view
+[  127.34s ->   132.32s] Okay, let's dive in so once we know the trend which is shown by this indicator
+[  132.32s ->   135.54s] Which means that we wait for the stock to break above this green line?
+[  135.54s ->   141.00s] That means that it's trending up. So for instance break above here trending up break above here trending up break above here trending up
+[  141.18s ->   146.88s] Hitting that breaking above trending up breaking above here trending up. Okay, cool
+[  146.88s ->   153.48s] So now that we know when a market is trending up where what kind of trade are we putting on and how do we put this trade on?
+[  153.54s ->   159.68s] Well, quite simply we are trading credit spreads credit spreads is the idea that you're betting for a stock to stay above a certain price
+[  159.68s ->   162.50s] So let's say the stock is breaking out right here
+[  162.50s ->   168.90s] We're gonna say let's bet right here that we think the stock will stay above this level and the stock stays above this level
+[  168.90s ->   174.68s] We make money if the stock closes below this level by the end of our our expiration then we lose money
+[  174.80s ->   182.36s] So let's say the stock stays above we make $20 and the stock goes below and close below we lose $80 quite that simple
+[  182.36s ->   185.72s] This is a simple bet that anybody can take and that's how it works
+[  185.72s ->   189.50s] You're just simply saying if it stays above I make money if it doesn't then I lose
+[  189.68s ->   195.72s] Okay, cool. Now that we know that how exactly do we put this trade on and what are the long-term rates for us to win?
+[  196.52s ->   199.22s] Okay, let's walk through these specifics which I have right here
+[  199.22s ->   203.22s] We need to know when we put on a credit spread trade. What is our expiration date?
+[  203.40s ->   208.36s] What is our strike prices? What direction are we are we going? Are we going a put credit spread?
+[  208.36s ->   215.14s] We're going to call credit spread and then next how much credit are we trying to collect when we enter the trade cool?
+[  215.14s ->   219.38s] Let's break this down. So I can show you how how it's done step by step. Okay. Well, here we go
+[  219.38s ->   221.84s] Let's say the market is breaking above right here
+[  221.84s ->   227.26s] Like it says it breaks out a breakout is classified by closing above the stock
+[  227.86s ->   231.96s] Breaking above the green line right here so you can see right here. This is an enter
+[  232.26s ->   235.20s] Candle right here white this green candle closed above this green line
+[  235.28s ->   240.28s] So what we do is we go out to this middle gray line
+[  240.28s ->   242.28s] Which is the 208 moving average line?
+[  242.28s ->   248.94s] We come out to this line wherever this line is when it breaks above is going to be where we try to put on our
+[  249.60s ->   255.96s] Credit spread strike price. So again right here. It's trading around 417 is where this gray line is that means that our
+[  256.44s ->   261.38s] Strike price for this trade right right here is going to be we're going to sell the 417 and
+[  262.06s ->   264.72s] We're going to buy the 416
+[  264.72s ->   270.08s] So again, if you want to learn more how to structure a credit spread I have other videos on my channel for that
+[  270.08s ->   272.56s] But I'm just gonna keep keep it simple here
+[  272.56s ->   279.52s] So 417 is the one we sell 416 is the one we buy should also add here. What is our stop loss? Is that that's super important?
+[  279.92s ->   282.64s] Here we go. Okay next we're getting into it
+[  282.64s ->   289.60s] Okay, so let's say that we're waiting on that the way that this trade works is we're looking to go about three to seven days out
+[  289.60s ->   293.52s] So again, three to set to three to seven days out until expiration
+[  294.14s ->   299.24s] DTE days until expiration now, how did how do we know if we're going closer or further?
+[  299.24s ->   304.02s] Like how do we know if we're going closer to three days until expiration or seven days until expiration?
+[  304.02s ->   310.84s] Well, cry quite simply we're doing this we're looking at the credit you can collect you want to be on the shortest time frame you can
+[  310.84s ->   316.74s] So around two days three days four days is going is going is going to be your target as long as you can collect a
+[  316.74s ->   319.78s] Minimum credit of 20 to 30 cents
+[  320.50s ->   323.62s] So 20 to 30 cents is what you want to collect what what does that mean?
+[  323.62s ->   329.90s] It means when you structure this trade where you're gonna sell the 417 and buy the 416
+[  329.90s ->   335.18s] The closer to the expiration date you are the less credit you'll be able to collect the further away
+[  335.68s ->   341.36s] More credit you'll be able to collect and so again if we can collect around anywhere from 20 to 30 cents
+[  341.36s ->   346.08s] With roughly three days until expiration that is your target if you can't then move out to four days
+[  346.08s ->   348.54s] If you can't move out to five days, so that's kind of how it works
+[  348.54s ->   353.72s] I'm again this right here 417 is going is going to be our level now cool
+[  353.72s ->   361.40s] We've entered the trade because we have all DC. Okay, first off put sorry the direction now again if the market is breaking above the screen line
+[  361.40s ->   366.26s] We're gonna be going for put credit spreads why cuz put credit put credit spreads make money to the upside now
+[  366.26s ->   367.64s] If it's breaking down below it
+[  367.64s ->   369.02s] We're gonna do the exact same thing
+[  369.02s ->   375.42s] But in reverse for a call credit says we're gonna put on a call credit spread with our strike prices being here and everything else the same
+[  375.42s ->   378.66s] So again, we're breaking up to the upside on on this trade
+[  378.66s ->   384.40s] So we're going to come in here and we're going to do a put credit spread so put credit spread to the break to the upside
+[  385.04s ->   391.82s] Okay, now what is our stop on the straight? Our stop is whenever our strike gets broken for seven for 17 our first level gets broken
+[  391.82s ->   394.42s] Why so whenever this gets broken right here?
+[  394.62s ->   396.66s] So again, why is this our stop loss?
+[  396.66s ->   402.62s] Well because if the market is trending up and then it starts to break below and close below this level
+[  402.62s ->   407.98s] Then we know that we have an issue so the thing is here the market went below this level
+[  407.98s ->   410.70s] But the candle here never closed below it
+[  410.70s ->   416.92s] You can see the closing price was around right here for 17 18 and never actually closed below it even though it went below it
+[  416.92s ->   422.62s] So this trade is still active now we're getting to see we follow this this trade through after a few days
+[  422.74s ->   427.24s] You can see here or like at just just a day or even by the end of the day
+[  427.24s ->   433.52s] Into and the next day you basically make 80 to 100% of your return
+[  433.52s ->   437.16s] So again, the stop loss is the 200 day moving average or the 200 ma
+[  438.44s ->   442.12s] Slash whatever this first price is so for 17
+[  442.52s ->   447.86s] So that's what our stop is and we hold it until we can collect an 82 to a hundred percent win
+[  449.10s ->   454.02s] Which we do which we typically can hit and roughly a day to two days max three days
+[  454.02s ->   458.58s] Or again, if not, you can just let the credit spread expire worthless and you make most of the money
+[  458.58s ->   463.86s] So that's how you put on this trade step-by-step because I wanted you to walk away knowing how to do this
+[  463.86s ->   468.54s] So again, that is how you do it and you can do it with both the upside and downside and again
+[  468.54s ->   473.00s] This works with all stocks. So again all I should say all liquid option stock
+[  473.00s ->   474.80s] So you have spy which is very liquid
+[  474.80s ->   478.28s] QQQ which is very liquid you can do other stocks
+[  478.28s ->   482.78s] But when you look at so I get my advisement for you if you're if you're gonna train the trade the strategy
+[  482.78s ->   484.94s] Stick with spy and QQQ
+[  484.94s ->   491.18s] You can also even venture in DIA if if you want but the two recommended are spy and QQQ
+[  491.18s ->   494.18s] If you want to add other stocks, this is how you analyze it
+[  494.18s ->   496.04s] So again, let's say you want to add Apple well
+[  496.04s ->   502.28s] You simply want to scroll out of the last 15 minutes does it consistently follow this trend where when it breaks above it continues to go higher?
+[  502.38s ->   507.42s] No, look at it. It's jumping in and out of this band is very it's very it's very hard to follow and not consistent
+[  507.42s ->   509.26s] Let's check out something else maybe Facebook
+[  509.26s ->   514.96s] Okay, look Facebook seems to be very consistent, right if when it breaks above it trends up when it breaks above it trends up
+[  514.96s ->   518.22s] Remember, it doesn't necessarily matter if it trends up huge
+[  518.22s ->   522.18s] All you need it to do once it breaks above the green line is to stay above this gray one
+[  522.18s ->   523.92s] That's all you need to do to make money
+[  523.92s ->   529.18s] So that's exactly what this is and that's how you set this up like I promised if you again
+[  529.18s ->   536.16s] You can get this trading man in indicator when you join the trade ideas algo, which is only open for the next
+[  536.16s ->   540.92s] Um, two days, but again like I promised if you want a wrap replicate this for yourself
+[  540.92s ->   544.24s] You can get really close if you had indicators if you go to
+[  544.88s ->   547.44s] Bollinger bands just like this
+[  548.08s ->   552.90s] You add the ball that you add the Bollinger bands you go into the settings of that
+[  554.46s ->   555.54s] settings
+[  555.54s ->   557.54s] From here you change the length of 200
+[  558.06s ->   561.86s] You change your standard dev to one and you say okay
+[  561.86s ->   568.90s] Now again, you can see here you can see the green one and red one is more accurate in predicting trend but you can see here this
+[  569.46s ->   573.14s] Approximation is very close as well. You can see here when it breaks above the blue line
+[  573.46s ->   575.46s] That's your entry and everything like that
+[  575.86s ->   580.42s] Anyways guys, I hope this video made sense again if you want our alerts if you want a free
+[  581.22s ->   586.50s] Options trading t-shirt if you want this indicator again all this is available to you today
+[  586.50s ->   590.82s] Uh for a super low price. So anyways guys check that out now before it's too late
+[  590.82s ->   594.42s] I don't typically promote this but it's one of the greatest options trading offers ever
+[  594.90s ->   600.02s] Um, but anyways guys, I hope you enjoyed something from this video and were able to learn this is a super simple
+[  600.26s ->   604.42s] 15-minute trading strategy that I that I use on occasion
+[  604.98s ->   611.14s] Typically on Fridays typically on Thursdays when I would not we can get the the zero to one day until expiration
+[  611.14s ->   615.38s] Um, but again guys, I hope this video helped you out smash that thumbs up and subscribe
+[  615.86s ->   618.10s] If you learn something all right, see you in the next video

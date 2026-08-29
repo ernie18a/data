@@ -1,0 +1,85 @@
+[    0.11s ->     4.35s] Hey guys, what's up? It's the Impeccable Investor here and I just wanted to create a short mini-series
+[    4.35s ->     9.73s] over something that a lot of people have been asking. It is how to value a stock, how to value
+[    9.73s ->    15.71s] a company. As Warren Buffett says, the price is what you pay for the stock, but value is what you
+[   15.71s ->    22.23s] actually get. So through this mini-series, I want to evaluate some ratios and show you how exactly
+[   22.23s ->    27.17s] you can use them to see if you're getting enough value for the stock that you are buying. All right
+[   27.17s ->    31.33s] guys, if you haven't done so already, please hit that like button if you receive value from this
+[   31.33s ->    35.53s] video. And what would mean a lot is if you share this video with your investing friends so that
+[   35.53s ->    41.17s] they can also learn how to value a stock. Once again, if you have not, please hit that subscribe
+[   41.17s ->    46.83s] button and turn on those alerts. Now we'll get into the video where we are discussing first the P-E
+[   46.83s ->    52.63s] ratio. All right guys, if you stick with me here, I will give you a great example after I quickly go
+[   52.63s ->    59.19s] over the formula and what exactly the P-E ratio is. So if you can see here, the P-E ratio is
+[   59.19s ->    65.97s] comprised of price per share divided by earnings per share. Now what exactly does this mean? Well,
+[   66.05s ->    72.97s] price is the current value or the current number value that the stock is trading at. So you can
+[   72.97s ->    79.03s] go on Google and you can type in Google stock and it will give you the current price that that stock
+[   79.03s ->    85.09s] is trading at. That is the price per share, which is why it's called the P-E ratio. P stands for price,
+[   85.53s ->    91.09s] E stands for earnings. Now what is earnings per share? Earnings per share is simple. It is how much
+[   91.09s ->    95.53s] money, how much earnings has the company made throughout the year or throughout a specific
+[   95.53s ->   101.25s] quarter. You base those earnings and you divide it by the number of shares there are. What does that
+[  101.25s ->   108.95s] mean exactly? It shows you how much earnings each shareholder is getting. So for each share on the
+[  108.95s ->   115.05s] market there is, it shows you how much the stockholder, the person holding that share
+[  115.05s ->   122.13s] actually gets in value. So what the P-E ratio is actually doing is showing you how much you have
+[  122.13s ->   129.89s] to pay for earnings. So if you have to pay more for your earnings and you're typically more times than
+[  129.89s ->   135.29s] not, not getting the best value. And now let me quickly explain that to you here. Now remember,
+[  135.29s ->   140.53s] before you get overwhelmed, I'm about to show you a website that gives you everything where it shows
+[  140.53s ->   146.97s] the P-E ratio with the math already done and it compares it to the industry average. So you can
+[  146.97s ->   152.83s] actually see everything in place. I just want to quickly explain here how exactly the formula works.
+[  153.15s ->   158.27s] So if you haven't understood exactly what I've been explaining, that is 100% okay. Just understand
+[  158.27s ->   163.93s] that you want the price to earnings ratio to be lower because it shows that you're actually getting
+[  163.93s ->   169.35s] value. It shows that the price isn't more than the earnings you're receiving. You want to receive
+[  169.35s ->   175.95s] a lot of earnings for each price you pay. So for instance here, this is the price per share of this
+[  175.95s ->   182.73s] company, of the company, right? If the price goes up, if the stock price goes up, then that means the
+[  182.73s ->   188.65s] P-E ratio is also going up because that shows that the price is increasing, the price to earnings is
+[  188.65s ->   194.97s] going to increase. So that means that two things could actually be happening here. One thing is
+[  194.97s ->   201.39s] the stock price is just naturally going up in value. So the P-E ratio is getting bigger. So the
+[  201.39s ->   207.41s] stock may still be worth it, but it's starting to get more on the overvalued side. Second, the P-E ratio
+[  207.41s ->   213.17s] may have been low, but then people may have seen that the P-E ratio was low. So people started buying
+[  213.17s ->   218.47s] up the shares and that caused the price to go up, which caused the P-E to go up, which is now making
+[  218.47s ->   224.31s] the stock more of an overvalued company. But again, you have to compare it with the industry
+[  224.31s ->   230.61s] average. Another thing that could be happening here is the earnings could be dropping. If the earnings
+[  230.61s ->   236.87s] drops, the price per earnings will also go up. So you also have to evaluate every single thing
+[  236.87s ->   242.33s] that's going on here. If the earnings is going down, then you're receiving less value for the current
+[  242.33s ->   248.65s] price. So that's why the P-E ratio goes up. Remember, you want a low P-E ratio on average.
+[  248.73s ->   254.81s] Now let's discuss something with that. So if the numerator here, the price per share goes down,
+[  255.11s ->   260.17s] then the price per earnings will go down. That means that when the price drops, you're going to
+[  260.17s ->   265.05s] have a lower P-E. So you're going to have more value that you're getting for that price. Now I'm
+[  265.05s ->   270.31s] sorry if I'm losing you here. I'm almost done. And then we'll get into the practical step-by-step
+[  270.31s ->   275.33s] how you can do it in the website that gives it to you. But if you can see here, if the price goes
+[  275.33s ->   280.33s] down, you're starting to receive more value for what you're doing. However, if the earnings goes
+[  280.33s ->   289.65s] up, it's going to decrease the P-E ratio. The reason being is if the earnings increases relative
+[  289.65s ->   294.69s] to the stock price, then you're receiving more value for owning that stock. It all comes down to
+[  294.69s ->   300.51s] value. If you're getting more earnings as a shareholder, this P-E ratio will come down
+[  300.51s ->   306.59s] because you're getting more money for each share you have. All right, that's the basics of it. Now
+[  306.59s ->   311.15s] I'm actually going to send you to a website and show you exactly how to do it step-by-step for
+[  311.15s ->   317.37s] everyone. This is the website that I was discussing. Now again, if you have already stayed through this
+[  317.37s ->   321.75s] video and you haven't hit that like button, I don't know why you must be receiving value from this
+[  321.75s ->   326.63s] video. So please hit that like button. It really helps. So looking here, this is that website that
+[  326.63s ->   330.99s] I was talking about. It will actually be the first link below so that you can just click and go
+[  330.99s ->   335.57s] straight to it. You don't have to try to type in this name here. But it's research.tradeking.com.
+[  335.69s ->   340.99s] You just type in any stock you want here and then it pulls up all the fundamentals of the company.
+[  341.47s ->   347.35s] So if you can see here, what we're looking at right now is this P-E ratio or what is known as the
+[  347.35s ->   354.53s] price to earnings ratio? The value is 32.5 and it's actually in the middle of the industry average.
+[  354.97s ->   359.57s] So again, when we're looking at all these fundamental factors, you want to make sure you consider
+[  359.57s ->   367.35s] the industry average. So if you can see here, if it's priced at 32.50 for its P-E ratio or P-E ratio,
+[  368.15s ->   373.63s] and that's in the middle of the industry average, you're receiving a medium value for that company.
+[  373.63s ->   381.11s] So purely based on P-E, Coca-Cola is of medium value in the industry. Now, if you want to see
+[  381.11s ->   388.55s] something that's on the lower scale in the same industry, you can type in P-E-P. That is the
+[  388.55s ->   397.35s] ticker symbol for PepsiCo. PepsiCo is in the same exact industry. We have a price to earnings of 15.71.
+[  397.35s ->   405.61s] That means that you're getting more earnings per share. So basically you're paying $15.71 to get a
+[  405.61s ->   412.69s] dollar of earnings for this company. While at Coca-Cola, it was around $37. You had to spend to
+[  412.69s ->   419.15s] get $1 of earnings. This is actually on the lower portion of the industry average. So when you're
+[  419.15s ->   426.85s] looking at P-E ratio purely on that ratio as evaluating a stock, then you're going to see
+[  426.85s ->   432.97s] that price to earnings can vary. As we all know that Coca-Cola is a great stock, but PepsiCo,
+[  433.37s ->   438.51s] based on the P-E ratio, is showing that it is a better value. You can get better value. You can
+[  438.51s ->   445.01s] get more earnings for the amount that you are paying right here. It shows it in multiple places.
+[  445.01s ->   451.07s] Not only do we get to see it with a 15.71, but it's also on the lower portion of the industry
+[  451.07s ->   457.79s] average. So this is the way that you can use research.tradeking.com and the P-E ratio or the
+[  457.79s ->   463.13s] price to earnings ratio to value a company. Remember, in general, you're looking for a small
+[  463.13s ->   468.47s] price to earnings ratio relative to the industry average because that means that you're receiving
+[  468.47s ->   474.89s] more value for the price that you're paying for that stock. As you can see here on purely
+[  474.89s ->   481.77s] based on this example, PepsiCo would be the better example over Coca-Cola. Now, if you want to stay
+[  481.77s ->   489.03s] up to date with the other videos that are coming out, I'm going to be releasing videos on fundamental
+[  489.03s ->   494.43s] analysis and how to value a stock throughout the week. This is going to be a nice series where
+[  494.43s ->   498.87s] we're going to go over a bunch of different ratios. So please hit subscribe and turn on those
+[  498.87s ->   504.73s] alerts so you get notified. Thank you so much for staying tuned and leave a like or comment to tell me
+[  504.73s ->   509.29s] that this gave you some value if it did. All right, see you guys in the next video.

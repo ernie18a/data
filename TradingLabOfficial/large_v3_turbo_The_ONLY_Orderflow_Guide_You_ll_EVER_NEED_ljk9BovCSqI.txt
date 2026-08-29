@@ -1,0 +1,155 @@
+[    0.08s ->     3.12s] This is a candlestick, the foundation of trading.
+[    3.12s ->     6.16s] But to be honest, it doesn't give us very much information.
+[    6.16s ->    10.88s] What if we could enable a secret tool where it gives us 10 times the amount of data,
+[   10.88s ->    15.92s] but not only that, telling us exactly who's in control, the buyers or the sellers,
+[   15.92s ->    21.52s] who's likely to win, and if used correctly, tells us exactly what price is likely to do next.
+[   21.52s ->    23.20s] That would be pretty cool, right?
+[   23.20s ->    25.44s] Introducing Order Flow.
+[   25.44s ->    28.48s] Imagine going to one of those bidding auctions where they talk really fast.
+[   30.08s ->    35.36s] Now, say while at this bidding auction, you simply sit in your chair and wait patiently
+[   35.36s ->    40.08s] to hear what the next person bids, and bid purely off that information alone.
+[   40.08s ->    44.72s] That's kind of what a normal candlestick is like, very, very limited.
+[   44.72s ->    49.20s] But instead, imagine before you go to this auction, you're sitting in the parking lot,
+[   49.20s ->    54.24s] and some creepy guy in a trench coat hands you a sheet of paper of what every single bidder
+[   54.24s ->    55.92s] in that room is going to bid.
+[   55.92s ->    61.28s] So even before walking into that room, you know exactly what everyone's going to bid,
+[   61.28s ->    64.40s] what the average bid is, how many people are in that room,
+[   64.40s ->    68.48s] and most importantly, where the final bid is likely to be priced at.
+[   68.48s ->    72.72s] Now, I don't know about you, but I'm grabbing that sheet of paper from that creepy guy.
+[   72.72s ->    75.28s] That sheet of paper is called Order Flow.
+[   75.28s ->    80.40s] Now, as a basic user when looking at your chart, you might see a candle that looks like this.
+[   80.40s ->    85.52s] Now, the only information we can really gather from this candle is the buyers won the battle,
+[   85.52s ->    87.28s] and price closed right here.
+[   87.28s ->    89.84s] So in reality, we're not really seeing much.
+[   89.84s ->    94.64s] We're really only seeing the outcome, not the actual story behind the candle.
+[   94.64s ->    98.24s] If we wanted to view this actual candlestick on a deeper level,
+[   98.24s ->   101.44s] we would enable what's called the volume footprint.
+[  101.44s ->   102.96s] To do this, go to trading view.
+[  102.96s ->   105.76s] If you don't yet have it, I'll leave a link in my description.
+[  105.76s ->   108.48s] Go to the top here, select the candle icon,
+[  108.48s ->   111.44s] then scroll to the bottom until you see the volume footprint.
+[  111.44s ->   112.40s] Now, I get it.
+[  112.40s ->   116.40s] When first looking at this, it can look like the cockpit of an F-22 fighter jet.
+[  116.40s ->   120.72s] There's a lot going on, and to say the least, it looks pretty confusing.
+[  120.72s ->   122.00s] What the hell?
+[  122.00s ->   124.16s] But it's actually pretty simple.
+[  124.16s ->   128.72s] To break it down, the left side is the sell volume, the right side is the buy volume.
+[  128.72s ->   134.80s] The numbers within these boxes are simply the amount of volume executed at that specific price.
+[  134.80s ->   141.92s] So if we zoom in here, there was 1.68 million in sell volume executed at this specific price,
+[  141.92s ->   145.28s] while there was only 1.57 million in buy volume.
+[  145.28s ->   150.48s] So in essence, there was way more seller activity at this price compared to buying activity,
+[  150.48s ->   154.08s] meaning sellers held control while we were at this specific price.
+[  154.08s ->   159.28s] The volume footprint will color code these numbers for you so you can quickly identify what's what.
+[  159.28s ->   164.32s] The darker labeled metrics show price levels with lower volumes, the lighter colors show price
+[  164.32s ->   169.44s] levels with larger volumes. The metrics labeled white are the price levels with the highest amount
+[  169.44s ->   174.56s] of activity. So in this example, this was the price level with the highest amount of volume,
+[  174.56s ->   178.48s] and where buyers and sellers found fair value, for the most part.
+[  178.48s ->   182.96s] This level can often be used for finding important support and resistance levels,
+[  182.96s ->   185.60s] but we're getting ahead of ourselves. We'll get to that later.
+[  185.60s ->   190.56s] Another key feature of the footprint is the value area, and can be identified by these two white
+[  190.56s ->   195.28s] lines. The VAH, value area high, and the VAL, value area low.
+[  195.28s ->   202.00s] By default, the value area is where 70% of the volume occurred. So this zone here is where 70%
+[  202.00s ->   207.60s] of the volume from this specific candle occurred. This red number down here is the total of all the
+[  207.60s ->   212.40s] sell volume. The green number is the total of all the buy volume. The difference between those two
+[  212.40s ->   218.08s] numbers is the delta. Now, the delta is a very key statistic because it tells you who's currently in
+[  218.08s ->   223.36s] control, the buyers or the sellers. So say if this number's red, that means the sellers are in control
+[  223.36s ->   227.68s] and there's more selling activity. If this number's green, that means the buyers are in control and
+[  227.68s ->   232.32s] there's more buying activity. The next metric is probably the most important one and is where we
+[  232.32s ->   238.48s] will generate a lot of our strategy from, and that is imbalances. These imbalances can be seen by these
+[  238.48s ->   243.76s] small red and green rectangles on the side of the volume footprint. These rectangles show up when one
+[  243.76s ->   249.36s] price level has at least three times more volume compared to the one across from it. So in essence,
+[  249.36s ->   254.96s] if you ever see a rectangle on the side of the footprint, that means that side is drastically winning
+[  254.96s ->   260.32s] the battle, and you can use these to quickly figure that out. And these little rectangles are going to be
+[  260.32s ->   265.52s] used in the core of our strategy. It's also important to note that we don't compare price levels
+[  265.52s ->   271.60s] horizontally. We compare them diagonally like so. That's because when buyers attack sellers,
+[  271.60s ->   277.28s] they do that one price level above. When sellers attack buyers, they attack one price level below.
+[  277.28s ->   285.92s] So if we take a closer look, the sellers had 990,000 volume compared to the buyers only having 195,000
+[  285.92s ->   291.52s] volume, which is obviously more than three times the amount. So in return, a small red rectangle or
+[  291.52s ->   297.52s] imbalance is printed next to this number. If we use these imbalances correctly, we can predict exactly
+[  297.52s ->   302.80s] where price is likely to reverse. For example, if we have this candle right here, and there was a ton
+[  302.80s ->   309.04s] of buy imbalances at the top showing buyer aggression, price should in turn close above these imbalances.
+[  309.04s ->   314.00s] Since there's a lot of buy volume up here, price should correlate with that and move up from these
+[  314.00s ->   319.76s] imbalances. That's a healthy candle. But if price closes below these imbalances, this is showing the
+[  319.76s ->   325.20s] buyers are being absorbed by the sellers and the sellers are starting to take back control.
+[  325.20s ->   330.64s] Same goes with bearish candles. If we have multiple seller imbalances down here, price in theory should
+[  330.64s ->   336.40s] close below these imbalances showing seller intent. If it doesn't and price closes above these imbalances,
+[  336.40s ->   341.52s] that shows the sellers are being absorbed by the buyer. Now, this can be a great tool to find when a
+[  341.52s ->   348.08s] reversal is about to happen, but it's not showing when it's actually happening. That's why I added what I
+[  348.08s ->   354.08s] call the absorption initiation pattern, or AIP for short. Yeah, I like the sound of that.
+[  354.08s ->   359.92s] So we went over the absorption scenario, but what's initiation? Initiation is nothing more than the
+[  359.92s ->   365.52s] agreement between imbalances and price. So in essence, what the candle should be doing.
+[  365.52s ->   370.00s] So going back to our example, if we have the buyer imbalances at the top of this candle,
+[  370.00s ->   375.04s] the price should close above these imbalances, showing the imbalances held their weight and there's
+[  375.04s ->   378.96s] directional intent with the candle. The same thing goes for selling. If we have multiple
+[  378.96s ->   384.08s] seller imbalances, price should be closing below these imbalances to show directional intent.
+[  384.08s ->   389.60s] If we pair the absorption candle with the initiation candle, we could get some scary
+[  389.60s ->   394.48s] good reversal prediction. For example, if we have a demand area or a key level of support,
+[  394.48s ->   399.52s] as price starts approaching this area of demand, we see price closing below imbalances,
+[  399.52s ->   403.28s] which in turn agrees with the idea of selling directional intent.
+[  403.28s ->   407.20s] But as we get closer to this area of demand though, we see an absorption candle,
+[  407.20s ->   412.32s] where price closed above our seller imbalances. So the moment price hit our area of demand,
+[  412.32s ->   416.08s] buyers stepped in and started fighting off the sellers aggressively.
+[  416.08s ->   421.84s] Directly after that, we see an initiation candle, where the candle closed above the buyer imbalances,
+[  421.84s ->   426.40s] showing buyers now have directional intent. So if we pair these three powerful tools,
+[  426.40s ->   431.84s] a strong key demand zone, an absorption candle, and an initiation candle showing confirmation,
+[  431.84s ->   436.96s] we can find some mind blowing reversal areas where price is likely to reverse the most.
+[  436.96s ->   442.16s] And in return, we make millions of dollars. But we ran into a slight problem. So sure,
+[  442.16s ->   447.44s] we can get an area of demand, have an absorption candle printed, and then directly after an initiation
+[  447.44s ->   452.32s] candle printed. But that doesn't always mean price will react the way we think it'll react.
+[  452.32s ->   458.00s] So we have to find some sort of way to raise the probability even more. And we're going to do that
+[  458.00s ->   463.44s] by using the delta. The delta is simply the difference between the ask and the bid volume.
+[  463.44s ->   468.00s] So if we have a positive delta, that means there's more buying volume. If we have a negative delta,
+[  468.00s ->   472.48s] that means we have more selling volume. A bullish candle usually has a positive delta,
+[  472.48s ->   478.24s] a bearish candle usually has a negative delta. But this isn't always the case. You can have a red
+[  478.24s ->   485.20s] candle with a positive delta. And that, my friends, is called delta divergence. Delta divergence is a sign
+[  485.20s ->   490.96s] of absorption. And just like you're thinking now, we can use this to our advantage. And to take advantage
+[  490.96s ->   498.08s] of the scenario, we're going to use a little tool called the CVD, which is the cumulative volume delta.
+[  498.08s ->   504.16s] To do this, go to your indicators tab and search cumulative volume delta. Click this one right here.
+[  504.16s ->   510.48s] So to break it down, if price is making higher highs, but the CVD is making lower lows, this means
+[  510.48s ->   515.84s] even though price is going higher, the delta is going lower, which means buyers are getting
+[  515.84s ->   521.60s] exhausted and price is likely to fade out and head lower. The same is true if we get a scenario like
+[  521.60s ->   527.28s] this. If price is making lower highs and the CVD is making higher highs, this means buyers are trying
+[  527.28s ->   532.88s] to go up, but sellers are absorbing them, which price is also likely to head lower. The opposite of
+[  532.88s ->   538.88s] this is also true. If price is making lower lows, but the CVD is making higher lows, that means the
+[  538.88s ->   544.48s] sellers are losing steam and price is likely to head upward. Same goes with if the price is making
+[  544.48s ->   549.44s] higher lows, but the CVD is making lower lows, it means the sellers are trying to go down,
+[  549.44s ->   553.44s] but getting absorbed by the buyers. So price is likely to go up.
+[  553.44s ->   558.48s] So now we're not only looking at what the current market is doing, but we're also adding a layer of
+[  558.48s ->   563.92s] divergence to see what's likely to happen. If we use this in coordination with everything we just
+[  563.92s ->   570.48s] talked about, we can get a mind blowing prediction of what price is likely to do next. And on top of
+[  570.48s ->   575.76s] that, it's extremely accurate. Let's put all of this to the test and do a real life example.
+[  575.76s ->   580.40s] To do this, we're going to go on the 4 hour time frame. This strategy will work on all time frames,
+[  580.40s ->   585.84s] but I personally like to use it on higher time frame. Next, we'll select a random stock. Let's go with
+[  585.84s ->   590.80s] Tesla. To start us off, we need to find a key level of demand. You can find this by finding the
+[  590.80s ->   596.32s] beginning of a strong move upwards. So here, the strong upwards move started from this candle.
+[  596.32s ->   601.68s] So we'll mark from the bottom of this candle to the top of this candle. This is our area of demand.
+[  601.68s ->   606.96s] Next, we wait for price to come back down to our area of demand. Now, instead of entering as soon
+[  606.96s ->   612.16s] as price enters our demand zone, and just guessing that it'll go up, we are going to use the volume
+[  612.16s ->   617.60s] footprint to read the room and see what buyers and sellers are thinking while in this zone,
+[  617.60s ->   622.24s] to see if it'll even respect it or not. To do this, go to trading view. If you don't yet have it,
+[  622.24s ->   626.56s] I'll leave a link in my description. Go to the top here, select the candle icon,
+[  626.56s ->   631.12s] then scroll to the bottom till you see the volume footprint. Next, we're going to wait for price to
+[  631.12s ->   635.92s] come down to our demand zone. Once it reaches our demand zone, we're going to zoom in on the candles
+[  635.92s ->   640.88s] inside our demand zone. Once we do this, we see a couple key important things that are happening.
+[  640.88s ->   646.16s] First, notice how there's seller imbalances down here, saying there are a lot of sellers down here at
+[  646.16s ->   651.52s] this price. But also notice how this specific candle closed above this imbalance, showing the
+[  651.52s ->   656.88s] sellers are getting absorbed by the buyers. As price moves forward, the next candle is printed.
+[  656.88s ->   662.16s] Notice on this candle, there's now a buyer imbalance. Also notice how price closed above
+[  662.16s ->   667.92s] this imbalance. This is our initiation candle and is showing buyers now of control and are showing
+[  667.92s ->   673.20s] buying intent. Next, we're going to go to our indicators tab and search CVD. Any of these will
+[  673.20s ->   678.08s] work, but I personally like to use this one. So there's something very interesting going on.
+[  678.08s ->   684.56s] Notice how the price is going down making lower lows. So in return, the CVD should be going down
+[  684.56s ->   691.60s] just like the price, but it's not. The CVD is making higher lows, which means there's delta divergence,
+[  691.60s ->   697.68s] and once again, a sign that sellers are being absorbed. So as a quick recap, we found a key level
+[  697.68s ->   702.72s] demand by finding the start of a strong move on a higher time frame. We waited for price to come
+[  702.72s ->   707.68s] to this area of demand. We then turned on the volume footprint to see if price was respecting our zone.
+[  707.68s ->   713.44s] We got an absorption candle, then directly after an initiation candle, showing buyers are absorbing
+[  713.44s ->   719.12s] the sellers in this demand zone. Then we checked the CVD and saw there was delta divergence, also showing
+[  719.12s ->   724.56s] the sellers are being absorbed. So we enter here, set our stop loss below the area of demand,
+[  724.56s ->   730.32s] and set our take profit at the highs. And just as we predicted, price does exactly what we thought it
+[  730.32s ->   736.80s] would and hits our take profit. Actually, before I entered into this trade, I posted it in my newsletter.
+[  736.80s ->   742.24s] It's basically a newsletter where I share all of my trades, important news, and overall just a really
+[  742.24s ->   747.84s] good place for trading knowledge. The best part is, it's absolutely free. If you're interested in joining,
+[  747.84s ->   753.04s] I'll leave a link in my description. Well, that's how I use order flow correctly. Try implementing this
+[  753.04s ->   757.12s] and your trading, and let me know how it works for you on my Instagram. Thanks for watching,
+[  757.12s ->   764.38s] and I'll see you guys next time. What the hell?

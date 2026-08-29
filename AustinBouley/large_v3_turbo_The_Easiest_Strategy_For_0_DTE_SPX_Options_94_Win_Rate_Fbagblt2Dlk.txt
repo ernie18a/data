@@ -1,0 +1,104 @@
+[    0.00s ->     5.00s] guys in this video i'm going to teach you the easiest strategy for trading zero dte spx options
+[    5.00s ->     9.10s] it's so easy that anybody can follow even if you're new to trading and i'll walk through
+[    9.10s ->    13.66s] how to enter how to exit your stops and everything like that so by the end of this video you know
+[   13.66s ->    18.80s] exactly how to place this trade and make money guys the strategy i'm about to show you is based
+[   18.80s ->    23.82s] on real back tested data again it comes from tasty live and i'm going to break down exactly
+[   23.82s ->    29.88s] how they do it because this trade has a win rate of over 90 it can make you about a hundred dollars a
+[   29.88s ->    33.90s] day when you win again you're not going to win every time but you will win a lot more than you
+[   33.90s ->    38.76s] lose so let's dive into how this works first off again i'm going to pull up spx which is where we
+[   38.76s ->    43.22s] should be trading this because again spx now the question is why should we be trading zero zero dte
+[   43.22s ->    48.62s] on spx well if you don't know this um when you have options um and they expire they're at risk of
+[   48.62s ->    53.80s] assignment which means you get shares for it but spx is cash settled so there is no issues with
+[   53.80s ->    60.92s] assignment so that's why we typically trade zero d zero dte on spx not all but on only that spx has
+[   60.92s ->    66.74s] tax advantages so we actually pay less taxes but anyway let's dive into the strategy so let's go to
+[   66.74s ->    73.06s] a five minute chart from here what what we want to do is we want to look at the morning of the open so
+[   73.06s ->    78.80s] you can see here the market just opened right here you can see here uh um when the market opened it's
+[   78.80s ->    84.10s] the 27th today um so the market opened right here at this huge spike and this is this
+[   84.10s ->    88.44s] is what the day has looked like so far green green green red and red so again i wanted to do this
+[   88.44s ->    93.16s] today because this is the ideal time to enter um so this is what we're going to do we're going to look
+[   93.16s ->    97.70s] at the opening candle this one right here and we're going to define a few levels so yeah i'm going to
+[   97.70s ->   102.70s] make this a bit small so we can define levels okay first we look at where it opened it opened at
+[  102.70s ->   107.88s] five four seven three all right so now what what we want to do is we want to do some simple math we
+[  107.88s ->   112.90s] want to add 20 to that so five four seven three which means we want to go to five four nine three
+[  112.90s ->   120.73s] so five four nine three five four nine three going to be right here just like that i can actually make
+[  120.73s ->   124.63s] this a bit bigger all right five four nine three and then we're going to do the same thing but to
+[  124.63s ->   130.69s] the downside we're going to subtract 20 so five four five three five four five three right here
+[  130.69s ->   135.05s] so just like that and these are the levels we want to watch for if you don't know much about
+[  135.05s ->   141.03s] options trading one of the most or i'd say the best zero zero dte strategies is iron condors
+[  141.03s ->   144.95s] because they have defined risk which means you can only lose a certain amount of money
+[  144.95s ->   150.81s] and it's pretty simple we just are betting that the stock stays between two levels so as long as
+[  150.81s ->   156.09s] this stock stays between these two levels will make money but not only that we can do a tape profit
+[  156.09s ->   161.57s] where we exit the trade sooner so even so even if later it does go outside of the range we still make
+[  161.57s ->   167.33s] money so this is exactly how we define the levels that we want to trade so now the question is now
+[  167.33s ->   171.79s] that we know the levels how do we structure this trade well let me walk you through that so this
+[  171.79s ->   175.83s] is my tasty trade broker and i'll walk you through exactly how we can do this so again we're going to
+[  175.83s ->   182.29s] go to spx by typing it in here spx and going to the trade tab we're going to go to zero d dte because
+[  182.29s ->   186.41s] that's the option we want to look at and then again we're going to look at the two levels we just
+[  186.41s ->   192.11s] discussed which is five four nine five and five four five five and so again if we look that up
+[  192.11s ->   196.93s] five four five five right here what we're going to do is we're going to sell this option and then
+[  196.93s ->   203.09s] 20 points away or 10 points whatever it is you want to do we're going to then buy that so five four
+[  203.09s ->   208.31s] five five twenty points away would be 35 so we're going to buy this one and that's how we create a
+[  208.31s ->   216.17s] defined risk trade next our other level is five four nine five right so five four nine five so we're
+[  216.17s ->   220.89s] going to sell this one and then we're going to go 20 points away so it's going to be it's 15 we're
+[  220.89s ->   225.83s] going to buy that level so just like this so now you can see here if we look at the anatomy or or or
+[  225.83s ->   232.45s] structure of this trade we have an iron condor trade we're going to receive uh four hundred uh
+[  232.45s ->   236.87s] dollars and twenty cents in credit by putting on this trade so we'll make four hundred and twenty
+[  236.87s ->   242.43s] dollars if we let expire worthless and our max loss is fifteen hundred so this is how you want
+[  242.43s ->   248.89s] to define uh this trade to kind of do well with it um but again if you're if you don't like that risk
+[  248.89s ->   254.07s] of fifteen hundred and you want to lower it then just move in these um a bit closer these instead of
+[  254.07s ->   258.95s] twenty wide go ten wide so now they're a bit closer which defines your risk smaller this does make
+[  258.95s ->   265.51s] your win less so you can see here what will now um win three hundred and lose seven hundred uh but still
+[  265.51s ->   271.43s] that's a good profit right we have 30 profit or 70 loss and with a win rate of 90 this is a very
+[  271.43s ->   275.87s] great strategy that we should be taking every single day right and so just like that we structure this
+[  275.87s ->   280.97s] trade and then again we would just click on um review and send and that's how we would enter this
+[  280.97s ->   285.47s] trade now the real question now the real question is is how do we manage this trade so now that we know
+[  285.47s ->   291.71s] how to structure it and put it on how do we actually manage this trade well what we do and depends on
+[  291.71s ->   297.21s] what you want want to do is your take profit percentage so again like we saw here in this
+[  297.21s ->   304.13s] example um we have a three hundred dollar max profit so if the trade expires within these two
+[  304.13s ->   309.99s] levels here within these two zones we'll make 300 but again we'd like to increase our win rate to
+[  309.99s ->   318.27s] over 90 percent by closing early and taking a profit so again if we see a 30 profit or a 10 profit 10
+[  318.27s ->   325.15s] percent of 330 then we can close early and this would give us like a 95 win rate now if we go a
+[  325.15s ->   330.35s] bit further and go like a i want i want more money and make a 25 profit i should have done it differently
+[  330.35s ->   336.67s] for easy numbers we can have 70 where we make profit off of 300 and this will give us closer to a 90
+[  336.67s ->   342.15s] win rate so again you can go check out the numbers for yourself on tasty lives website but this is one of
+[  342.15s ->   348.97s] the most popular and widely used dde strategies and it's so simple right we just go plus 20 minus
+[  348.97s ->   355.29s] 20 we create the iron condor and then we manage it at 10 or 25 depending on what on what on what we
+[  355.29s ->   358.89s] want and so again we have defined risk and everything now for those of you maybe saying
+[  358.89s ->   364.65s] austin i am new to options trading how can i make this simple or maybe austin i want to trade this and
+[  364.65s ->   369.23s] i see how it works i've been doing it for a while but i have a full-time job and i can't check the
+[  369.23s ->   373.57s] market app market open and i can't continuously check on my trades to make sure to close it at a
+[  373.57s ->   378.25s] 10 profit well don't worry because i solved that problem for you it's called the options auto trader
+[  378.25s ->   383.51s] and allows you to automate option selling strat strategies just like this and so again if we click
+[  383.51s ->   388.53s] on create an auto trader and we connect our accounts if you're someone who is completely new
+[  388.53s ->   394.57s] you can just click on pick an auto trader and i pre-loaded this into our zero dte strategies so you
+[  394.57s ->   398.85s] can just with one click import the strategy the exact strategy that i walked through with the
+[  398.85s ->   403.87s] take profit and the structuring and all that it will do it all for you just by clicking on the
+[  403.87s ->   411.17s] zero dte iron condor trade and you can trade it with spy s bx es or whatever but for those of you
+[  411.17s ->   415.73s] who like to create your own strategies from scratch let me show you how this is done we're going to
+[  415.73s ->   421.17s] click on what strategy we want to use but for this example is is an iron condor we want to trade it on
+[  421.17s ->   428.03s] sbx as that's cash settled we want to do zero dte and when we're doing zero dte you want to do
+[  428.03s ->   433.11s] dollar distance away and not deltas so let's change this to dollar distance away and this
+[  433.11s ->   438.45s] is structured 20 away each of the sell puts are and then 20 away again if you want lower risk you
+[  438.45s ->   445.12s] you can make these 30 by moving in the wings a bit closer next we define how often we want to
+[  445.12s ->   450.22s] enter the trade so we can enter every single day monday tuesday wednesday thursday and friday
+[  450.22s ->   456.78s] just like that we can set our take profit percentage either 10 25 or anywhere in that range that we want
+[  456.78s ->   461.38s] uh we can avoid the stop loss because our risk is already defined and we can avoid the early
+[  461.38s ->   466.72s] management so just like that now we just tell it how much money we want to trade with so maybe two
+[  466.72s ->   470.70s] thousand dollars and this will kind of break down how this trade works you can see here about a
+[  470.70s ->   477.62s] thou about a thousand dollars in buying power per trade um it requires about 75 or will make set
+[  477.62s ->   484.84s] set 75 including um what our what our take profit is so at a 10 range we should make around 70
+[  484.84s ->   490.00s] per day again we've entered a bit late for this day and volatility is a bit lower so we're going
+[  490.00s ->   494.24s] to make a bit less but this is on average what your numbers are and then again we know our risk is
+[  494.24s ->   499.04s] actually 700 so it's a lot it's a lot lower than this because these are just approximate numbers but
+[  499.04s ->   503.60s] just like that you can save the auto trader and set it live and it will do the work for you it will
+[  503.60s ->   508.60s] enter the trades pick the right strikes every morning and then it will man it will manage the trade
+[  508.60s ->   513.28s] at a 10 take profit so no matter how busy you are it can be done for you guys i've been using
+[  513.28s ->   517.72s] this for my one one twos uh for for the last three months and you can see here i made seventeen
+[  517.72s ->   522.38s] thousand dollars and i'm up almost eight thousand and just open profits and again you can see all
+[  522.38s ->   526.88s] the data you get to see that you could that you wouldn't be able to see before like you can actually
+[  526.88s ->   532.08s] see all the trade put together with all the legs in one trade and you can see how close you are to
+[  532.08s ->   537.60s] your take profit level or stop loss level with a click glance of your eye and it shows everything you
+[  537.60s ->   541.26s] want and all the metrics you want that a broker would never show you so anyways guys if you are
+[  541.26s ->   545.40s] interested in automating this zero dte strategy that's working that's awesome then click the
+[  545.40s ->   550.84s] button down below to get started or to watch a video masterclass on exactly how to automate any
+[  550.84s ->   553.66s] strategy all right guys thanks for watching i hope to see you in the next video

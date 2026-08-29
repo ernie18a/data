@@ -1,0 +1,217 @@
+[    0.46s ->     7.30s] Hey guys, Roman here, quantitative researcher and trader, founder of QuantGuild.
+[    7.58s ->    14.64s] Welcome to my first weekly fireside chat where I am going to discuss some topics that are
+[   14.64s ->    19.86s] on my mind, topics that you guys leave in the comments section below, questions, so
+[   19.86s ->    21.04s] on and so forth.
+[   21.58s ->    25.20s] And today is all about artificial intelligence.
+[   25.20s ->    33.18s] The reason for this fireside chat topic is due to my acute experience with AI over the
+[   33.18s ->    34.96s] past couple of days.
+[   35.20s ->    42.44s] If you follow me on X or are involved in my Discord, you'll know that my channel credentials
+[   42.44s ->    45.50s] were restricted due to impersonation.
+[   45.78s ->    47.96s] More on that in a moment.
+[   48.52s ->    53.64s] But you've also asked me over the past year, I've received a tremendous number of questions
+[   53.64s ->    57.50s] about whether or not quantitative finance is future-proof.
+[   58.18s ->    60.32s] Is it a future-proof space?
+[   61.34s ->    64.64s] Is AI going to replace quants?
+[   65.10s ->    67.56s] That is what we're going to discuss today.
+[   67.98s ->    75.70s] I'll start with my acute experience in AI and then we will graduate to that broader discussion
+[   75.70s ->    76.90s] of replacing quants.
+[   76.90s ->    85.64s] So, the other day I tried to log into my YouTube studio and I found that I had a restriction
+[   85.64s ->    91.46s] placed on my account that I violated terms for impersonation.
+[   91.58s ->    94.68s] I was impersonating Roman Pellucci from QuantGuild.
+[   95.99s ->    99.75s] And, you know, last I checked, I was Roman Pellucci from QuantGuild.
+[  100.03s ->   102.69s] So, I submitted a formal appeal.
+[  102.69s ->   107.87s] I figured, you know, this system flagged me as a false positive for impersonation.
+[  108.01s ->   113.51s] So, let me submit an appeal, get this in front of a human, and we can resolve this situation
+[  113.51s ->   114.55s] very easily.
+[  115.15s ->   120.17s] It doesn't take a scholar to recognize that if you're impersonating yourself, it's sort
+[  120.17s ->   121.27s] of an oxymoron.
+[  121.45s ->   124.55s] So, that was what I figured would happen.
+[  124.63s ->   128.99s] But after I submitted my appeal, they denied my appeal.
+[  128.99s ->   137.06s] Okay, so clearly it was just going to be another LLM or automated system that was going to deny
+[  137.06s ->   139.08s] the appeal in a systematic capacity.
+[  139.70s ->   141.98s] But I needed to get this in front of a human.
+[  142.14s ->   150.06s] So, I spent an enormous amount of time trying to reach out and talk to somebody, some person
+[  150.06s ->   156.00s] who can just take a look at this case and acknowledge, hey, you know, he is Roman from QuantGuild.
+[  156.30s ->   158.36s] There is no impersonation going on here.
+[  158.36s ->   160.14s] Let's just fully reinstate his credentials.
+[  161.18s ->   167.66s] But instead, what followed was just conversation after conversation, email exchange after email
+[  167.66s ->   174.92s] exchange, phone chat exchange after exchange with a large language model, continuously flagging
+[  174.92s ->   177.84s] the account as a false positive for impersonation.
+[  177.94s ->   185.14s] Now, eventually, I was able to get through to a human, and they took a look at the violation
+[  185.14s ->   188.76s] and said, oh, he is Roman from QuantGuild.
+[  188.82s ->   190.80s] And I was able to access my account.
+[  190.88s ->   193.34s] And that's why you're seeing this video right now.
+[  193.70s ->   202.18s] But this is raising a tremendous concern, at least in my point of view, for how we offload
+[  202.18s ->   205.86s] tasks to automated systems and large language models.
+[  205.86s ->   212.50s] This is certainly nothing new, but the sheer volume of tasks that can and are being just
+[  212.50s ->   217.88s] outsourced to these type of models is increasing at a substantial rate.
+[  217.88s ->   223.02s] And we've reached a point where progress in these models have plateaued.
+[  223.02s ->   227.66s] And this is something that I've been saying for years is eventually it can only get so smart.
+[  228.02s ->   232.24s] There's a breadth and depth of knowledge before you just have to fine tune a model.
+[  232.24s ->   238.22s] So specifically for a niche, for it to be productive in a general conditioning capacity, for it to
+[  238.22s ->   243.52s] be useful, that we need some other way of making it seem smart.
+[  244.22s ->   250.76s] And I always thought that that was going to be by allowing it to do things, allowing it
+[  250.76s ->   253.50s] to book calendar appointments for you, send emails.
+[  253.62s ->   257.14s] I'm not talking about just, hey, write this email for me, copy and paste.
+[  257.24s ->   261.20s] No, I'm talking about sending it, pressing send.
+[  261.20s ->   268.93s] I'm talking about managing your customer relationships, managing your databases, managing your payments.
+[  269.39s ->   278.15s] I'm talking about being capable of banning and restricting accounts in a systematic, purely
+[  278.15s ->   279.13s] automated capacity.
+[  279.67s ->   282.95s] I can't imagine the volume that YouTube deals with.
+[  283.45s ->   284.45s] Cannot imagine.
+[  285.03s ->   286.63s] It's probably absurd.
+[  287.61s ->   291.23s] But all of these systems and models, right?
+[  291.23s ->   293.17s] Every single model is wrong.
+[  293.33s ->   294.17s] Some are useful.
+[  295.13s ->   301.63s] And a tremendous amount of trust is being placed in these models, these LLMs, and they're being
+[  301.63s ->   306.79s] treated as if they are not just a model.
+[  307.19s ->   308.51s] They can't be wrong.
+[  309.03s ->   311.49s] There's always going to be a non-zero probability of failure.
+[  311.61s ->   312.75s] What about these tail cases?
+[  312.75s ->   317.73s] There are hundreds of thousands of these tail cases.
+[  318.21s ->   326.52s] When you're talking about the sheer volume of the world that we interact in with, whether
+[  326.52s ->   333.66s] it be social media or maybe we can get into the implications in a workplace professionally
+[  333.66s ->   339.68s] as well, these non-zero probabilities of failure certainly add up.
+[  339.68s ->   349.22s] And I think that's my big concern with all of this offloading to artificial intelligence,
+[  349.34s ->   358.83s] this outsourcing of tasks to artificial intelligence, is when you have the volume that we do, failures
+[  358.83s ->   366.37s] and the magnitude of those failures, when they do occur, are going to occur not just substantially
+[  366.37s ->   372.07s] and frequently, but when they do, how do you mediate them if you're dealing with the volume
+[  372.07s ->   373.47s] of failures that you are?
+[  373.47s ->   379.83s] So if you have me needing to talk to a human from YouTube, how many people are there like
+[  379.83s ->   380.09s] me?
+[  380.63s ->   381.09s] A hundred?
+[  381.83s ->   382.57s] A thousand?
+[  382.81s ->   383.37s] Ten thousand?
+[  383.49s ->   383.87s] A million?
+[  384.29s ->   384.55s] Right?
+[  385.05s ->   386.73s] This is what I'm talking about.
+[  387.21s ->   391.79s] So it's starting to turn into a situation where it's not too big to fail.
+[  392.37s ->   396.81s] It's too big to succeed in that sense.
+[  396.81s ->   406.46s] And the overflow in the workplace and professionally is, it's pretty outrageous.
+[  407.10s ->   412.46s] If you look at something like the job application process, oh my God, it's destroyed.
+[  412.78s ->   414.02s] It is completely destroyed.
+[  414.32s ->   416.38s] You can take any job description, right?
+[  416.40s ->   419.42s] You can copy paste it into chat, into Gemini, whatever.
+[  419.82s ->   422.86s] It can write a perfect resume for you, submit the resume along with what?
+[  423.36s ->   425.70s] One thousand, ten thousand other perfect resumes.
+[  425.70s ->   430.16s] Some AI systems exist to automatically do this in a systematic way.
+[  430.26s ->   432.12s] So you can blast your resume out to what?
+[  432.62s ->   435.14s] A hundred, a thousand, ten thousand job applications.
+[  436.58s ->   438.14s] Nobody's going through those.
+[  438.24s ->   441.54s] If you thought they weren't going through a stack of resumes before, what makes you think
+[  441.54s ->   445.92s] they're going to go through a thousand AI written applications?
+[  446.70s ->   449.96s] So in that space, it's become full circle now.
+[  450.64s ->   454.50s] Recruiters have to reach out and talk to people, talk to references.
+[  454.50s ->   458.56s] It's becoming more human, less systematic.
+[  459.04s ->   466.82s] And that is a consequence of the volume, just the sheer volume.
+[  467.24s ->   469.62s] And of course, all of the failure with that volume.
+[  469.62s ->   473.14s] Because if you have ten thousand perfect resumes, who do you talk to?
+[  473.90s ->   474.18s] Right?
+[  474.42s ->   477.78s] If you talk to one, two, three people at random, are they even qualified?
+[  477.92s ->   479.18s] You have no idea.
+[  479.78s ->   480.44s] You have no idea.
+[  480.44s ->   482.02s] So it's becoming increasingly human.
+[  483.10s ->   484.22s] That's counterintuitive.
+[  484.36s ->   486.30s] You would imagine that it's going to be purely systematic.
+[  486.70s ->   489.56s] But no, it's becoming increasingly human.
+[  490.58s ->   497.64s] You take a look at something, not just artificial intelligence and replacing employers or employees in the workplace.
+[  498.26s ->   501.46s] You look at something just like a tablet, right?
+[  501.52s ->   504.14s] Being able to take orders at a fast food restaurant.
+[  504.28s ->   506.36s] It's like, oh, that's going to replace every single job.
+[  506.36s ->   507.90s] But that tablet is just a model.
+[  508.30s ->   512.74s] It's a model for the real world and somebody taking your order in a dynamic way.
+[  513.30s ->   514.48s] You punch in your order.
+[  514.58s ->   517.96s] Maybe it works, you know, 80% of the time, 90% of the time.
+[  518.02s ->   519.82s] I don't actually have the numbers.
+[  520.26s ->   521.70s] But it's a model.
+[  521.96s ->   522.96s] The tablet is a model.
+[  523.10s ->   524.02s] And all models are wrong.
+[  524.12s ->   524.68s] Some are useful.
+[  524.82s ->   526.28s] So there are edge cases, right?
+[  526.76s ->   532.92s] Every single ticket that's opened on software is because of an edge case.
+[  532.92s ->   534.76s] Software is just a model.
+[  535.42s ->   536.28s] And all models are wrong.
+[  536.34s ->   536.82s] Some are useful.
+[  537.94s ->   541.50s] You're always going to need somebody to fix the problem.
+[  542.20s ->   544.82s] I ordered this burger without cheese, right?
+[  544.94s ->   546.26s] And there's cheese on my burger.
+[  546.38s ->   549.68s] My tablet isn't going to be able to resolve that at McDonald's.
+[  549.70s ->   550.78s] I got to go talk to somebody.
+[  550.86s ->   553.52s] I need them to fix this issue.
+[  554.04s ->   556.30s] Same thing with software, right?
+[  556.44s ->   558.68s] I'm not receiving this verification email.
+[  559.10s ->   560.58s] I need to reach out to support.
+[  560.58s ->   562.84s] Why am I not receiving this verification email?
+[  563.22s ->   564.40s] The system says it's sent.
+[  564.66s ->   565.70s] I don't see it in my spam.
+[  565.82s ->   566.72s] It's not in my inbox.
+[  566.86s ->   567.64s] I never got it.
+[  567.94s ->   570.24s] These edge cases are always going to exist.
+[  571.02s ->   580.29s] So if these edge cases are always going to exist, then what does that mean for the worker, the employee?
+[  583.11s ->   590.77s] Well, just like I said in the context of job applications, it's just becoming increasingly human.
+[  590.77s ->   598.87s] If you take a look at something like the YouTube complaints situation that I had to work through, I needed a human to fix it.
+[  599.69s ->   613.11s] AI can be the smartest thing in the world, but when you have a non-zero probability of failure and the sheer volume, the sheer volume that they have, you are going to be dealing with thousands, tens of thousands, millions of people with these tail cases.
+[  613.11s ->   616.43s] And then this is going to turn into a different issue.
+[  616.43s ->   625.73s] It's very interesting because these types of tasks that we weren't able to automate in a systematic capacity can be automated to some extent with LLMs, with AI.
+[  625.73s ->   638.83s] But the sheer volume that these tasks have with a non-zero probability of failure means you need more people than ever to fix the absolute mess that they cause.
+[  638.83s ->   663.25s] So all of this is really to say, and this is just like a more of a, it's not necessarily unstructured, but I'm putting together the structure for an argument that as we continue to become more reliant on AI for tasks, whatever those tasks may be, we're going to need more people than ever to fix the mistakes.
+[  663.25s ->   679.01s] I think about junior talent and junior developers, this is a real situation standing there saying, Hey, I really need this button and I need this button on this particular product to do something.
+[  679.41s ->   688.60s] And the junior talent for the first time in the entire, entire universe of software engineering can say, I'm trying boss.
+[  688.88s ->   691.90s] I've been trying for a couple of days, but cloud won't do it.
+[  691.90s ->   693.68s] Cloud won't cooperate with me.
+[  693.68s ->   695.42s] It's not putting the button there.
+[  695.54s ->   698.50s] It's not doing what I'm intending it to do.
+[  700.34s ->   701.62s] What a crazy concept.
+[  701.74s ->   703.62s] They would have no idea how to read code.
+[  703.84s ->   710.44s] They would have no idea how to actually go in and debug the problem and actually put the button there and make it work.
+[  710.52s ->   717.46s] If the AI system is incapable of comprehending the infrastructure or whatever, it's too big, who knows?
+[  717.64s ->   719.70s] But this is a real conversation.
+[  719.70s ->   724.12s] This is a real conversation where junior talent may have no idea what a for loop is,
+[  724.12s ->   727.34s] but they can prompt an LLM to write code.
+[  729.19s ->   731.09s] Should you learn how to write code?
+[  732.16s ->   734.28s] This is subject for discussion.
+[  734.48s ->   744.70s] This is pretty much what I'm trying to articulate and argue is the sheer volume of these tasks being offloaded to AI is going to create a tremendous amount of opportunity.
+[  744.70s ->   750.56s] And whether or not that opportunity is going to be lucrative is subject for, again, discussion.
+[  750.56s ->   752.94s] It's going to depend on the industry and the role.
+[  753.20s ->   754.80s] But, I mean, think about it.
+[  754.84s ->   762.42s] If you have a system, right, and the system is maybe it's supporting a large customer base,
+[  762.42s ->   770.71s] and there's a problem that an LLM can't fix, you're going to need somebody that knows what's going on to fix that problem.
+[  772.49s ->   780.99s] This is this non-zero probability of failure that I'm harping on and the sheer volume of tasks that's going to be just effectively outsourced to it.
+[  780.99s ->   784.58s] So, people are going to need to fix those problems.
+[  785.42s ->   789.76s] So, when I think about the quantitative finance industry, I think about quantitative traders, developers, researchers.
+[  790.70s ->   792.06s] The landscape is completely different.
+[  792.16s ->   792.30s] Sure.
+[  792.70s ->   793.18s] No doubt.
+[  794.30s ->   798.48s] Maybe what you needed five quants for, you only need one now.
+[  799.45s ->   801.57s] It's going to be a distribution like anything else.
+[  802.29s ->   806.67s] There's not going to be a black and white, just like at McDonald's, tablets don't replace people.
+[  806.67s ->   810.65s] If I got cheese on my burger, I got to get rid of that cheese, right?
+[  810.87s ->   812.07s] I didn't order it with cheese.
+[  813.14s ->   819.26s] Same is going to be true in the workplace in a professional capacity in these more intricate roles.
+[  819.70s ->   827.60s] But what used to take a team of 5, 10, 15 quants, maybe you only need a couple, right?
+[  829.76s ->   830.70s] Is it future-proof?
+[  831.18s ->   832.92s] Is the space future-proof?
+[  832.92s ->   844.12s] What I would argue is mastering your quantitative skills is the best way to make yourself capable and dynamic.
+[  844.60s ->   856.17s] I'm never worried professionally about work, finding work, building products, whatever it may be, because I am capable.
+[  856.67s ->   858.93s] I know math, probability, statistics.
+[  859.35s ->   860.89s] I understand how the markets function.
+[  860.89s ->   862.93s] I enjoy engaging with the markets.
+[  862.93s ->   873.37s] And that's because of my skills that I have learned through a combination of experience and my formal study, that is the knowledge.
+[  874.55s ->   877.83s] If everything got burnt to the ground tomorrow, right?
+[  878.01s ->   883.71s] No more YouTube, no more Instagram, no more Quankills, I would just do it again.
+[  883.95s ->   887.55s] And I would probably do it better because I know what not to do.
+[  887.63s ->   889.35s] This is what experience is.
+[  889.97s ->   892.35s] And experience builds confidence.
+[  892.35s ->   900.31s] So I guess what I'm really trying to say here in the context of everything that's going on is you shouldn't be trying to just future-proof your career.
+[  900.43s ->   903.83s] It's like, I'm going to be a quant, and I know this is future-proof, and I'm good, and that's it.
+[  903.83s ->   927.55s] No, it's about acquiring skills and being dynamic enough to continue to learn and pivot, and that is what future-proof, that is effectively what is future-proof, is your ability to continue to learn, to continue to experience, and continue to build, and just adjust as the world needs adjusting.
+[  927.55s ->   940.47s] I anticipate over the next couple of years, we're going to see the consequences of outsourcing large language models, artificial intelligence to these more medial tasks.
+[  940.47s ->   960.29s] And the non-zero probability of failure creating all of these edge cases, all of the subsequent problems are going to demand a tremendous amount of human labor that, you know, maybe you can argue unskilled labor could do this sort of work, just resolve these sorts of tasks that LLMs are just going to completely mess up.
+[  960.29s ->   965.39s] And fair enough, but I think about it kind of just like my McDonald's model, right?
+[  965.45s ->   967.21s] It's going to be a blend of both.
+[  967.27s ->   985.35s] It's going to be a blend of, you know, we have a model that's going to try to outsource some of this work, and at the end of the day, because of the non-zero probability of failure and the sheer volume of requests, we're going to need a lot of people to come in and fix the problems that those models create.
+[  985.35s ->   990.95s] So, I think that's all I have to say on this topic for now.
+[  991.85s ->   994.59s] I hope you enjoyed this fireside chat.
+[  995.35s ->  1002.17s] Let me know in the comment section if you agree, disagree, what other topics you might want to see me discuss in the future.
+[ 1003.19s ->  1006.45s] Check out quantguild.com to master your quantitative skills.
+[ 1007.21s ->  1013.27s] Other than that, I want to thank you so much for watching, and I will see you in the next video.

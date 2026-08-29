@@ -1,0 +1,189 @@
+[    0.46s ->     5.94s] So what are credit spreads? Credit spreads is a defined loss and profit option strategy that
+[    5.94s ->    11.74s] involves simultaneously selling and buying an option on the same stock that expire at the same
+[   11.74s ->    17.32s] time. Two main types of credit spreads, put credit spreads and call credit spreads. Generally speaking,
+[   17.82s ->    21.42s] a put credit spread means you think that the stock is going to go up and call credit spreads means
+[   21.42s ->    25.88s] you think the stock is going to go down. So let's just take a look first at a put credit spread
+[   25.88s ->    31.70s] with an example. Microsoft is currently trading around 380 and we think that Microsoft is either
+[   31.70s ->    37.28s] going to stay flat or go up in the short term. We have a bullish sentiment on the stock and because
+[   37.28s ->    41.66s] of that bullish sentiment, we'll open up a put credit spread. In order to do that, remember we
+[   41.66s ->    47.36s] have to buy and sell an option on the same stock that expire at the same time. So we'll start by
+[   47.36s ->    54.92s] selling an option below 380. For this example, we'll do 370 and then we'll buy an option below 370
+[   54.92s ->    61.22s] in this case, let's just do 365. Now, because all options are time bound, we need to decide when
+[   61.22s ->    67.32s] we want those options to expire. Normally speaking for myself, I like to do 30 days to expiry, but you
+[   67.32s ->    71.02s] can do any amount of time that is shown on the options chain. But in this example, we'll do 30 days
+[   71.02s ->    77.42s] out. When you're selling the Microsoft 370 put option, we'll actually receive $585 because we're
+[   77.42s ->    82.98s] selling an option, we'll receive money. Now, when I'm buying the Microsoft 365 put option, I'm going to be
+[   82.98s ->    91.58s] paying $435. So after that transaction, I'm actually going to end up receiving $150 after
+[   91.58s ->    95.38s] that credit spread is open. How do you make money or how do you lose money when selling a credit
+[   95.38s ->   100.22s] spread? Let's explore all three scenarios at the time of expiry. And we're going to first look at
+[  100.22s ->   106.66s] the best case scenario. And that would occur when Microsoft ends up above 370. In this case, for example,
+[  106.92s ->   112.96s] 375. The options that we bought and sold are both what we would call out of the money, which means
+[  112.96s ->   119.30s] they would both expire worthless. Let's kind of explain why that is. For a sold option, we as the
+[  119.30s ->   127.76s] option seller has an obligation to buy 100 shares of Microsoft at that 370 price point. So if it's
+[  127.76s ->   135.26s] 375, why would someone want to sell it at 370 when you can literally go on the market and sell it at 375?
+[  135.26s ->   142.32s] Right? You would make more money not going through with the option of selling it at 370. That's why
+[  142.32s ->   149.12s] the option is worth $0. For the option that we bought, we as the option buyer have an obligation
+[  149.12s ->   155.90s] to sell 100 shares of Microsoft at 365, which is the same reasoning. Why would I want to sell my
+[  155.90s ->   162.50s] Microsoft shares at 365 when I can sell them for 375 on the open market? Again, that's why the option
+[  162.50s ->   167.70s] would be worthless. And the profit that we make will be the $150 that we collected right when the
+[  167.70s ->   172.74s] credit spread was opened 30 days ago. So the takeaway here is that the best case scenario,
+[  172.94s ->   178.78s] if the stock price were to be above both our sold and bought option, we would make the max profit,
+[  178.98s ->   183.22s] which would be the credit that we collected when we first initially opened the credit spread.
+[  183.54s ->   186.94s] This is pretty great, right? Because not only does Microsoft not have to go up,
+[  186.94s ->   192.10s] it can just not go down as much as you think it will, and you'll still win on the trade.
+[  192.40s ->   196.74s] Hence, in theory, why it should be more passive and you should have a better chance at winning
+[  196.74s ->   201.92s] more often. Next, we'll explore the worst case scenario, which is if Microsoft were to end up
+[  201.92s ->   207.76s] below 365, for example, 360, then the option that we bought and sold will both be what we call
+[  207.76s ->   212.90s] in the money, which means that we are going to have to fulfill our options obligation. Let's take a look
+[  212.90s ->   216.36s] at what that means for both the bought and sold options through the same lens as we did earlier.
+[  216.36s ->   222.68s] For the sold option, again, we have an obligation to buy 100 shares of Microsoft at 370. So even if
+[  222.68s ->   229.30s] it were at 350 or 355 or 360, we'll buy it at 370. Now for the bought option, we had an obligation to
+[  229.30s ->   236.74s] sell 100 shares of Microsoft at 365. If it's at 350, 355, 360, it doesn't matter. We'll sell 100 shares
+[  236.74s ->   241.32s] at 365. And this is why this is a defined loss strategy. After that transaction is complete,
+[  241.32s ->   248.60s] we will be buying 100 shares at 370. We will be selling 100 shares at 365, which is a $5 difference
+[  248.60s ->   253.62s] between the shares that we bought and the shares that we sold times 100 shares, which means after
+[  253.62s ->   260.84s] all that transaction is complete, we will have lost $500. However, because we collected $150 originally,
+[  261.40s ->   267.96s] when we first opened up the credit spread, our final loss will only be $350. This is a takeaway here
+[  267.96s ->   274.84s] is in the worst case scenario, when you make max loss, the max loss will be, quote unquote,
+[  274.94s ->   279.22s] the width of the spread, which in this case will be five points because of the top leg,
+[  279.30s ->   286.66s] which is 370. And the bottom leg, which is 365, is $5, which is five points, times 100 shares,
+[  287.02s ->   292.74s] which will be $500. We will then add the credit that we received, which is 150. So our max loss will be
+[  292.74s ->   299.42s] 350, the middle case scenario. What happens if Microsoft were to be between 370 and 365? 367 as
+[  299.42s ->   304.00s] an example. This means that the sold option is in the money, but the bought option is out of the
+[  304.00s ->   311.20s] money. We have an obligation now to buy 100 shares of Microsoft at 370, even though it's at 367.
+[  311.56s ->   316.20s] But because the bought option is out of the money, we don't have the obligation to sell that 100 shares
+[  316.20s ->   322.62s] at 365. With that 100 shares that we bought of Microsoft at 370, we can then sell it at 367 a share,
+[  322.92s ->   327.88s] resulting in a $300 loss from that transaction. And again, remember, we collected 150 to open up
+[  327.88s ->   334.68s] the spread, which means that we'll only lose $150 on this one trade. And you can see the same math
+[  334.68s ->   341.58s] play out when it's 368 or 369. 369 just means that we'll lose 100 bucks when we sell it on the open
+[  341.58s ->   346.70s] market, but we'll make 150 on the credit. So we'll actually come up ahead with $50. Break-even points
+[  346.70s ->   352.38s] where the stock price is in order for you to break even on the trade. So in this case, the break-even
+[  352.38s ->   361.22s] will be $368.50 because we collected 150. If we lose 150 on the transaction of buying and selling
+[  361.22s ->   366.20s] the shares, then it will equal zero. And that will happen when the shares are at $368.50.
+[  366.56s ->   371.70s] Now, this is the tip here for myself. I usually don't let my credit spreads get to expiry if either
+[  371.70s ->   376.82s] leg ends up being in the money very, very close to expiry. I'll actually end up just closing the
+[  376.82s ->   381.40s] spread to not have to deal with the buying and selling transaction that has to occur. The math will
+[  381.40s ->   385.84s] work out to be basically the same. It saves you that anxiety. On the screen, you'll just see what
+[  385.84s ->   390.74s] we would like to call a P&L chart of a put credit spread. Basically shows you at what point you would
+[  390.74s ->   394.78s] make money and at what point you would lose money. Very similar to what you saw earlier. You make
+[  394.78s ->   400.88s] money when it's above your sold leg. You would lose the most money when it's below your bought option.
+[  401.20s ->   405.98s] And it's basically a linear line between your bought and sold option anytime the stock ends up
+[  405.98s ->   411.54s] somewhere in between those two price points. Test time. Here is another credit spread. And you tell
+[  411.54s ->   416.04s] me at the time of expiry, the max loss and the max profit is, when they would occur, as well as the
+[  416.04s ->   422.74s] break-even point. On the screen, you'll see Apple 360, 350 put credit spread, expiry 45 days out.
+[  422.90s ->   428.80s] Let's assume here that we collected $250 off of opening this one credit spread. Feel free to pause the
+[  428.80s ->   435.89s] screen here and see if I can answer that question. Max profit will be $250. That will occur when Apple is
+[  435.89s ->   443.87s] above $360. Max loss will be $750 when Apple is below $350. The break-even point will be when Apple
+[  443.87s ->   448.67s] was at $357.50. If you guys understood that, if you guys got that right, then you guys basically
+[  448.67s ->   453.79s] understand how put credit spreads work. So now let's talk about the call credit spread. We're going to
+[  453.79s ->   459.09s] use Microsoft again. Microsoft, as a reminder, is currently sitting at $380. Unlike the previous example,
+[  459.43s ->   465.07s] we now think that Microsoft is either going to stay flat or go down. We have a bearish sentiment. So in that
+[  465.07s ->   470.17s] case, we'll open up a call credit spread. In order to do that, we have to sell an option above $380.
+[  470.53s ->   477.59s] Let's just say $390. And then we'll buy an option above $390. In this case, let's do $395. And just to
+[  477.59s ->   484.37s] make things different, we'll say 23 days to expire. When we sell the Microsoft $390, we're actually
+[  484.37s ->   495.51s] collecting $585. When we buy the Microsoft $395 option, we are paying $435. Again, a five-point spread.
+[  496.17s ->   502.73s] And the credit collected this time in this example is also going to be $150. Now let's do the same
+[  502.73s ->   507.89s] profit and loss exercise before the call side. But here's a curveball. We're going to do the pop quiz
+[  507.89s ->   514.39s] first. What is the max profit? And at what price point does Microsoft have to be for that to occur?
+[  515.37s ->   521.01s] What is the max loss? And when does that occur? And the last one, what does Microsoft have to be at
+[  521.01s ->   526.39s] for us to break even? Feel free to pause the screen here and think through it. But here are the answers.
+[  527.40s ->   533.70s] For the first one, what is the max profit? And what does that occur? If Microsoft is below $390,
+[  533.70s ->   540.58s] the bottom leg, then both options will expire out of the money and we'll take our max profit at $150.
+[  541.42s ->   548.84s] Max loss will occur if Microsoft goes above our top leg, which is $395. Then both options will expire
+[  548.84s ->   557.32s] in the money and our max loss will be $350. The width is five times 100, which is 500 minus 150 that
+[  557.32s ->   566.14s] we collected, therefore $350. We will break even when Microsoft ends up at $391.50. Here's what the
+[  566.14s ->   571.30s] P&L graph will look like. Feel free to pause if you need a couple of seconds to digest it. The math
+[  571.30s ->   577.02s] works out to be basically the same as a put credit spread. The only difference is on which side of the
+[  577.02s ->   582.48s] trade you want to be on, whether or not you're bullish or bearish. What happens during the time when
+[  582.48s ->   587.34s] you open it and the time of expiry, right? What happens if the stock price were to move up or down
+[  587.34s ->   592.20s] in relation to your credit spread, either whether it's a call or a put, and how does your credit
+[  592.20s ->   597.10s] spread pricing change? So we're going to take a look at that now using Microsoft again. This is the
+[  597.10s ->   606.14s] Microsoft stock price from June 12th to July 8th. You can see it started at $327.89. It peaked at $348.72
+[  606.14s ->   613.92s] on June 16th, and then it closed at $341.27 on July 7th. We're going to correlate the stock price
+[  613.92s ->   620.30s] to both a put credit spread and a call credit spread. We'll open up a $320.315 put credit spread
+[  620.30s ->   628.90s] and a $340.345 call credit spread. We'll start with the put credit spread first. So on June 12th,
+[  628.90s ->   635.26s] we opened up a $320.315 put credit spread, collected $111. So as Microsoft moves up, the put credit
+[  635.26s ->   639.88s] spread will lose value. And this is a good thing for us because we want it to lose value.
+[  640.42s ->   644.96s] The max profit that we can get is when the put credit spread gets to zero. And so on June 16th,
+[  644.96s ->   652.02s] when Microsoft peeped at $348.72, the put credit spread is actually worth only $25. So at this point
+[  652.02s ->   658.20s] in time, if you were to close this credit spread, you would spend $25 to close it. But remember,
+[  658.20s ->   666.16s] you collected $111, which means that you would actually make $86. Microsoft gradually came down
+[  666.16s ->   674.20s] again, and it got to a quote unquote low of $332.87 on June 27th. At this point in time, your put credit
+[  674.20s ->   682.92s] spread is still only worth $49. So if you were to close here, you would actually still make $62 on this
+[  682.92s ->   689.22s] trade. And this is what I personally love about credit spreads is because you're selling an option,
+[  689.84s ->   694.38s] time is actually in your favor. This is what you'll hear called theta decay or time decay. I made a
+[  694.38s ->   699.32s] whole video about theta that you might want to check out if you're interested. But a TODR, as time goes
+[  699.32s ->   705.04s] on, your option becomes worth less and less, even if the stock price stays in the same exact price
+[  705.04s ->   712.88s] point. Now, because on June 27th, Microsoft is only $4 higher than June 12th, you can see time decay
+[  712.88s ->   717.12s] theta decay really kick in. Because of that, your options are worth less. The market subsequently
+[  717.12s ->   722.08s] moved up. And so you can see on expiry, July 7th, your put credit spread is zero. So this is a very
+[  722.08s ->   726.58s] simple trade. The market moved in your direction immediately. Let's flip over to the call side,
+[  726.86s ->   731.10s] right? You can see that market went up. So if you opened up a $340, $345 call credit spread,
+[  731.16s ->   736.18s] you can probably already assume you'll probably lose money immediately after you opened it. And you
+[  736.18s ->   742.14s] would be correct. You can see on June 12th, when I opened it for $102, immediately after on June 16th,
+[  742.14s ->   748.22s] when it peaked at $348.72, your credit spread is already worth $320. So if you were to close it at
+[  748.22s ->   754.72s] this very moment, you will incur a loss of $218. Now, because the market starts going down again,
+[  754.78s ->   758.58s] you can see your call credit spread pricing starts to subsequently drop. And on June 27th,
+[  758.58s ->   763.14s] the same date when it hits that $332.87, the subsequent low, you can see this is the perfect
+[  763.14s ->   769.76s] example of how theta comes in. Even though you're $4 above where it was before when you opened it on June 12th,
+[  769.76s ->   775.28s] your call credit spread is only worth $99, right? Remember you opened it at $102. So if you close
+[  775.28s ->   781.64s] it at this point in time, you will make $3, even though Microsoft is up four points, close to five
+[  781.64s ->   786.10s] points, right? That's pretty cool because you don't necessarily have to be correct in direction. The
+[  786.10s ->   790.44s] market just has to move less than what you are anticipating it to move. And then the time of
+[  790.44s ->   798.56s] expiry at July 7th closed, Microsoft is actually at $341.27. So because your bottom leg is in the
+[  798.56s ->   803.28s] money, but your top leg is out of the money, your credit spreads will cost you $127 because you're
+[  803.28s ->   809.02s] $1.27 in the money. If you were to let it expire, you would actually only lose $25 on this trade.
+[  809.94s ->   815.64s] Microsoft went against you, right? You were betting bearish, but Microsoft was bullish. One takeaway
+[  815.64s ->   820.60s] here is you can see the pricing of the call credit spread is very similar to the price of Microsoft.
+[  820.96s ->   825.12s] So that's generally how credit spreads are priced. Theta comes in and helps you a lot. Generally
+[  825.12s ->   829.64s] speaking, as long as you're quote unquote directionally correct, you'll end up making
+[  829.64s ->   835.24s] money. And this is why credit spreads are a higher probability win strategy. The last thing I'm going to
+[  835.24s ->   841.34s] go through here is walking you through an example on how to open up a credit spread. So there's two things
+[  841.34s ->   846.94s] that we have to answer. Which direction are we going to sell in? Are we going to sell a put or a call
+[  846.94s ->   853.94s] credit spread? And number two, what price point are we selling our credit spread at? So I want to use
+[  853.94s ->   859.94s] Amazon as an example. And so I want to start my first understanding what the trend of the market is.
+[  860.16s ->   865.38s] And there's a saying, the trend is your friend and we want to follow the trend. And so when we look at
+[  865.38s ->   869.56s] this chart, and this is a daily chart on Amazon, we can see that Amazon has been in an uptrend.
+[  869.56s ->   877.64s] Why is that? Because you can see that Amazon was at $89, right? Way back in March. But now in January,
+[  877.64s ->   885.48s] we're at 154. Another way to tell is you can see it goes from a low to a high to a higher low to a
+[  885.48s ->   890.58s] higher high to a higher low to a higher high to a low and then it formed another higher high. It's an
+[  890.58s ->   897.30s] uptrend. So in this case, we want to trade the trend, which means that we want to trade bullish. And that
+[  897.30s ->   903.04s] means that we will have to sell a put credit spread to take advantage of the trend. Now that
+[  903.04s ->   907.96s] we've determined that, the second question comes into play. What price point are we going to sell
+[  907.96s ->   912.38s] this credit spread at? I'd like to trade off a price action in supports and resistances. Other
+[  912.38s ->   917.06s] people may sell off of Delta and you guys feel free to check out those videos, but that's not how I like
+[  917.06s ->   922.72s] to trade personally. One thing we like to understand here, levels of supports and resistances. Supports and
+[  922.72s ->   928.06s] resistances at a high level basically just means areas where sellers sell and buyers buy. So you
+[  928.06s ->   933.46s] can see right here, we can draw a line here right at this level that market came up here, fell off,
+[  933.50s ->   938.54s] came up here, fell off, right? That's a level of resistance. This is a level of support because
+[  938.54s ->   945.82s] the market came down here and then it bounced up, right? So that's a level of support. Hit it once,
+[  946.06s ->   952.04s] bounced up, hit it twice, but bounce all the way up. This is idea where an area of resistance
+[  952.04s ->   957.80s] could theoretically become an area of support, right? What that means is sellers sold here.
+[  958.12s ->   963.40s] However, the buyers pushed it up to a point where when it comes back, as you see right here,
+[  963.72s ->   968.94s] if buyers step in and push it up, this is now the new support. Similar to what you see right here,
+[  969.00s ->   974.88s] right? So what we're going to do here is we're going to see whether or not the market is going
+[  974.88s ->   979.52s] to respect this level, right? Draw this a little bit closer. It's going to respect this level.
+[  980.18s ->   986.38s] And on the next day, it doesn't. And then the following day, it actually, it does. So on this
+[  986.38s ->   990.70s] candle right here, I would be like, yeah, the market actually does seem to be respecting this
+[  990.70s ->   996.78s] level as an area of support. The buyer seems to have stepped in. On January 8th, and then we're
+[  996.78s ->  1001.34s] going to determine at what level we want to sell at. So this is my strategy. Feel free to change it.
+[ 1001.34s ->  1005.78s] I like to use something called ATR. It's the average true range. I won't go too much into it,
+[ 1005.84s ->  1013.08s] but basically what that means is the average movement within a 14-day period. Amazon is sitting
+[ 1013.08s ->  1017.66s] around three, so I like to do one ATR. So if the support's at 144, then I'm going to be selling at
+[ 1017.66s ->  1022.94s] 140, right? So what we're going to do here, we're going to go to trade, and we're going to Amazon.
+[ 1023.12s ->  1027.08s] We're going to collapse this and go 32 days out. I like to sell for a month, but you can sell
+[ 1027.08s ->  1031.22s] any time here, right? But for monthly passive income, I like to do a month.
+[ 1031.22s ->  1037.54s] So go to 32 days out. And here, make sure that this is on vertical. Vertical is the same thing
+[ 1037.54s ->  1043.56s] as a credit spread. We're going to try and find the 140 strike. So I found the 140, 139.
+[ 1043.86s ->  1047.30s] You can leave it as a one-point spread, but you can come in here and change it. So for example,
+[ 1047.40s ->  1054.20s] let's change it to a five-point spread, okay? Which means that my top leg, the sold put, is 140.
+[ 1054.42s ->  1061.91s] The one that I'm buying is at 135. So let's go back to the chart. It'll be at 140 right here, and then 135.
+[ 1062.09s ->  1068.35s] So as long as Amazon doesn't dip past 140, I make max profit. If Amazon dips past 135,
+[ 1068.69s ->  1074.69s] which would be down here, then I lose max loss. The credit that I'll receive will be $114. So
+[ 1074.69s ->  1081.45s] that's my max profit. My max loss in this case will be $386. So let me know down in the comment
+[ 1081.45s ->  1085.63s] section below if you guys have any questions. This could take a couple of times for you guys to walk
+[ 1085.63s ->  1090.07s] through this video and understand all the detail, especially if you're new to credit spreads.
+[ 1090.39s ->  1095.35s] If you guys want to see another example of how I use credit spreads to generate 60% return a month,
+[ 1095.53s ->  1099.77s] make sure you guys click this video linked in the end screen right here. If you guys learned
+[ 1099.77s ->  1103.85s] something, if you guys like this type of content, please press that thumbs up button and consider
+[ 1103.85s ->  1108.15s] subscribing. I really hope the channel out. And until next time, stay safe in the market. Peace.

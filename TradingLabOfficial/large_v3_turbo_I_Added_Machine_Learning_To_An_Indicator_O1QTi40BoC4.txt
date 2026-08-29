@@ -1,0 +1,121 @@
+[    0.24s ->     3.84s] This last week was one of the most pivotal points in my trading career.
+[    3.84s ->     9.04s] I finally took a leap of faith into the magical world of machine learning.
+[   11.33s ->    15.49s] As scary as it might sound, I truly think this is where trading is heading.
+[   15.49s ->    20.85s] Every day computers are getting smarter and smarter exponentially, and believe it or not,
+[   20.85s ->    25.33s] they can actually give us scary good predictions on what the market will do next.
+[   25.33s ->    28.77s] So I decided I'll give it the good old trading lab go.
+[   28.77s ->    33.81s] I curated machine learning into an indicator, and it wasn't easy.
+[   33.81s ->    40.53s] It constantly looks at past years of data in real time and uses that data in order to predict
+[   40.53s ->    45.41s] what price is likely to do in the future. And it does a pretty good job of it.
+[   45.41s ->    49.65s] I know, I know, pretty impressive, right? But that's not even the impressive part.
+[   49.65s ->    53.81s] You see, since this is machine learning and it uses past data to predict,
+[   53.81s ->    57.81s] the longer this machine learning runs and the more data it receives,
+[   57.81s ->    59.41s] the smarter it gets.
+[   62.86s ->    65.98s] This thing is constantly learning, constantly improving,
+[   65.98s ->    69.66s] and will do all of this completely by itself in real time.
+[   69.66s ->    73.58s] Hell, it's probably analyzed 30,000 candles while I made this intro.
+[   73.58s ->    75.58s] So you may be wondering, how does it work?
+[   75.58s ->    82.54s] Well, without getting too nerdy, this is how the indicator works in very, very, very simple terms.
+[   82.54s ->    86.94s] Essentially, the indicator will track other popular indicator values in real time.
+[   86.94s ->    92.62s] These indicators include RSI, CCI, ADX, and some other popular indicators.
+[   92.62s ->    98.62s] It will scan all of those indicators at once in all of their values for the entire past chart
+[   98.62s ->   103.74s] history of whatever asset you're looking at. Once it gathers all of that data from the asset,
+[  103.74s ->   109.10s] it will then find what price did at those specific values. Did it go up, did it go down,
+[  109.10s ->   115.26s] or did it move sideways? So for example, it'll look at RSI, see its value, it'll look at CCI,
+[  115.26s ->   120.78s] see its value, then do this with a bunch of other indicators. It will note all of those values and
+[  120.78s ->   125.90s] see what price did when those indicators were at those specific values. The indicator will then note
+[  125.90s ->   130.94s] all of that and essentially create a map of what price did at what indicator values.
+[  130.94s ->   136.62s] Once it creates this map, it'll look at what price currently is and what the current indicator values
+[  136.62s ->   142.06s] are at. We then take the current values of those other popular indicators and look for the closest
+[  142.06s ->   147.42s] data points from past chart history compared to the present. So basically, it'll try to find data
+[  147.42s ->   152.30s] points from the past that look the closest to what it is currently. But it doesn't just find one
+[  152.30s ->   158.30s] occurrence that is close, it finds tens of thousands of occurrences that were close. Once it finds multiple
+[  158.30s ->   164.22s] matches of similar occurrences, it'll then analyze what price was doing when the values were similar to
+[  164.22s ->   169.58s] what they are now. Then it'll average out all of those outcomes. Then finally, it'll print out its
+[  169.58s ->   175.18s] prediction of what price is likely to do. Pretty simple right? That's not simple!
+[  175.18s ->   180.46s] Yeah, I know it's slightly confusing, but I tried my best, okay? But you don't need to know how it works,
+[  180.46s ->   184.78s] you just need to know how to use it. But this machine learning essentially can give a great
+[  184.78s ->   190.94s] prediction of what price is likely to do based on previous data values and observed trends from the past.
+[  190.94s ->   196.94s] And what's crazy, it does all of this within milliseconds. Mill-a-seconds. So when originally
+[  196.94s ->   202.94s] making this, we had all of this data, but we needed a way to easily present it. So whoever was using it
+[  202.94s ->   208.14s] could easily see within seconds of what was happening. Because of now, it was just this graph
+[  208.14s ->   212.46s] of dots, which is not very helpful to anybody. So I created what is called...
+[  216.22s ->   221.10s] Now, if you've used my private indicator from the past before, you would have noticed we already had a
+[  221.10s ->   226.06s] baseline, which did not have any machine learning whatsoever. Well, in this previous update,
+[  226.06s ->   231.18s] we completely upgraded it with machine learning. Let's get into how to actually use this new machine
+[  231.18s ->   236.70s] learning feature to predict what price will do next. Actually, I just got an idea. Let's test out
+[  236.70s ->   243.28s] this new Siri-based audio editing software I just got. Hey Siri, play classical music.
+[  243.28s ->   253.44s] Sorry, I didn't quite get that. Um, can you play some classical music? Sure, playing rock music now.
+[  253.44s ->   264.08s] Rock? No, no, Siri, stop. Play classical music. Did you say how to double your money?
+[  264.08s ->   268.08s] How to double my money? What? That doesn't even sound similar to what I-
+[  269.60s ->   273.36s] Yes, you heard it right. You can double your money. How do I do that?
+[  273.36s ->   278.48s] Well, there's a forex broker out there that I personally use and their name is Hankertrade.
+[  278.48s ->   281.84s] If you use the link in my description and it's your first time depositing,
+[  281.84s ->   286.48s] they will match whatever you first deposit. So say if you first deposit $69,
+[  287.12s ->   291.36s] they will match that and give you $69. That's pretty cool.
+[  291.36s ->   295.84s] If you need a new forex broker and want that deposit bonus, use the link in my description.
+[  295.84s ->   300.64s] Okay, let's actually get back to how to use the new machine learning feature. It's very simple.
+[  300.64s ->   306.40s] There are three colors, green which is bullish, gray which is consolidating, and red which is bearish.
+[  306.40s ->   312.16s] But there are also different variations of those colors. For example, if the baseline is a darker
+[  312.16s ->   318.08s] green, that is a stronger bullish signal compared to the lighter green. If the baseline is a darker red,
+[  318.08s ->   323.52s] that is a stronger bearish signal compared to the lighter red. So essentially, the darker the color,
+[  323.52s ->   328.88s] the more the machine learning is confident about that specific direction. If you wanted a more specific
+[  328.88s ->   334.80s] answer, we also have this. We added a new metric to the trend table called the machine learning metric.
+[  334.80s ->   340.72s] This value will update in real time and will have a corresponding color depending on if it's bullish,
+[  340.72s ->   345.28s] bearish, or consolidating. So there are a lot of different ways you can use this new machine
+[  345.28s ->   350.32s] learning feature to accurately predict what price will do next. Now after doing some testing,
+[  350.32s ->   356.16s] I found this new feature works best for using it as confirmation, rather than entering and exiting
+[  356.16s ->   361.44s] solely based on it. For example, just entering when it turns green and then exiting when it turns red.
+[  361.44s ->   367.20s] I found it works way better when used with other confluences. For example, one of the popular
+[  367.20s ->   372.08s] strategies I like using with the indicator is using the order block feature. For this strategy,
+[  372.08s ->   377.36s] I like using the one hour time frame. The strategy goes something like this. This green box is the
+[  377.36s ->   383.12s] order block. We want price to basically come down to this order block and show it respects it. You can tell
+[  383.12s ->   388.80s] if price is respecting an order block if it starts slowing down right at the block and it does not go
+[  388.80s ->   393.12s] through the order block. It's okay if the lower wicks go through it like this, but it would be
+[  393.12s ->   398.48s] considered a bad order block if the body of the candle went straight through it like this. So as you
+[  398.48s ->   404.00s] can see in this example, price came down to the order block perfectly and shows that it's respecting
+[  404.00s ->   409.60s] it. But if we wanted to add that extra bit of confirmation, we can add the machine learning tool to
+[  409.60s ->   414.88s] this strategy. So if we look closely, the machine learning baseline went from grey which is
+[  414.88s ->   420.40s] consolidating to green as this order block touch was happening, showing that this machine learning
+[  420.40s ->   425.52s] is starting to think this price action is bullish, which is an even greater addition to enter this
+[  425.52s ->   430.40s] trade. So we can enter here and look what ends up happening, the chart spikes up. Here's a different
+[  430.40s ->   435.12s] example. Here price is coming down to the order block again and it's actually showing some signs of
+[  435.12s ->   439.44s] slowing down and that it wants to respect it. But if we look closely at the machine learning
+[  439.44s ->   445.12s] baseline, it's pure red, which is a bearish sign. So even though price is showing that it respects
+[  445.12s ->   450.32s] the order block, we do not enter this trade because the machine learning says the price action is
+[  450.32s ->   455.36s] bearish. And good thing we didn't because the price falls pretty good after this. And you can see
+[  455.36s ->   460.16s] just from looking at this chart how accurate the machine learning tool is. It was red for this
+[  460.16s ->   465.28s] whole drop, then turns green for a little bit on the slight rise. And before price even drops,
+[  465.28s ->   471.04s] it turns gray showing signs of a shift in character, then turns bright red as it falls. Then once price
+[  471.04s ->   476.08s] levels out and starts losing the bearish momentum, it starts turning green again and starts to head
+[  476.08s ->   481.60s] upwards. I'm telling you, this tool is awesome. But this is just one example. There are so many cool
+[  481.60s ->   487.12s] ways we can use this. One of my personal best ways I like using it is using it for a higher time frame
+[  487.12s ->   492.96s] confirmation. What I mean by that is going on a higher time frame like the 4 hour or daily. Then see what the
+[  492.96s ->   498.40s] machine learning tool is telling us. So right now we are on the 4 hour time frame and right here you
+[  498.40s ->   504.32s] can see the machine learning is pure red. But then all of a sudden it turns gray and even turns green
+[  504.32s ->   510.00s] right after. So now we have a bullish confirmation bias on the higher time frame. And we can expect
+[  510.00s ->   516.32s] today to be a bullish day. So now we can go to a lower time frame like the 5 or 15 minute and do our
+[  516.32s ->   522.32s] normal analysis here but with a bullish confirmation bias. For example, only taking the indicator long
+[  522.32s ->   526.72s] entries and ignoring all the short entries. You could even go to the settings of the indicator
+[  526.72s ->   532.16s] and change the market consensus to bullish so you get more long trades compared to short trades.
+[  532.16s ->   537.12s] Since you know the machine learning says there's a higher chance of it being a bullish day. Or only
+[  537.12s ->   542.24s] following bullish order blocks and not bearish order blocks. Or you could even do your normal price
+[  542.24s ->   547.44s] action trading analysis but only look for longs. Another way you can use it is for take profits.
+[  547.44s ->   551.92s] For example, say if you were in a short trade right here which is confirmed because of the red
+[  551.92s ->   557.04s] baseline. But as the chart moves forward it starts turning gray which is a sign that the chart is
+[  557.04s ->   562.08s] starting to lose downwards momentum. Then it even ends up turning green all the way down here which
+[  562.08s ->   566.88s] is an indication that the chart is starting to turn bullish. So if you did enter a short up here,
+[  566.88s ->   571.84s] it might be a good time to start looking for profits right around this area because the baseline has
+[  571.84s ->   577.36s] changed colors and is indicating a shift in momentum. And look what ends up happening, the chart heads
+[  577.36s ->   582.32s] upwards. And this is really just the surface of the capabilities of what this new machine learning
+[  582.32s ->   587.44s] tool can do. Members that already have the indicator are posting results and their strategies on what's
+[  587.44s ->   592.88s] working for them in the indicator discord channel. And some people are posting some really cool stuff.
+[  592.88s ->   597.52s] So I'm extremely proud of this tool and the capabilities of it and I'm even more excited for
+[  597.52s ->   602.40s] you guys to find different ways you can use it and share it with the community so we can all benefit
+[  602.40s ->   606.48s] for me. Because I don't want to just create indicators, I want to create a community of
+[  606.48s ->   611.44s] traders working together to find the best strategies and tactics to use with those indicators.
+[  611.44s ->   615.92s] So yeah, that's how I added machine learning into an indicator. If you're interested in the indicator,
+[  615.92s ->   620.00s] you can check it out at tradinglab.ai or I'll leave a link in the description.
+[  620.00s ->   624.00s] If you ended up finding a nice strategy with the new machine learning tool, leave a comment on this
+[  624.00s ->   625.20s] video. I would love to hear it.
+[  625.20s ->   637.60s] Thanks for watching and I'll see you guys next time.

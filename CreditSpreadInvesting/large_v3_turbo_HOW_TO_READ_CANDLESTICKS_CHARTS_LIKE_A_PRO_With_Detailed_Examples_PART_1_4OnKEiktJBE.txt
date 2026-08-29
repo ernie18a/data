@@ -1,0 +1,246 @@
+[    0.24s ->     5.84s] hey guys welcome back to the channel today we'll be taking a look at candlesticks one-on-one the
+[    5.84s ->    10.80s] essentials that you need to start understanding how to read candlesticks and how that help you
+[   11.36s ->    16.64s] on your journey to start your technical analysis journey for uh for trading so candlesticks are the
+[   16.64s ->    24.08s] fundamentals of how a lot of ta is done and so it is quite essential that we understand how to read
+[   24.08s ->    28.64s] candlesticks and today i'll take you guys through the whole end to end about how to read a candlestick
+[   28.64s ->    34.56s] and how to interpret a candlestick so first and foremost why candlestick candlesticks essentially
+[   35.12s ->    40.48s] tell you what happened during a certain time period the price go up the price go down and more
+[   40.48s ->    45.36s] importantly how did the price go up and how did the price go down was a large move up or was a
+[   45.36s ->    51.04s] small move up those are that type of information can be can be salvaged from candlesticks and you'll
+[   51.04s ->    55.84s] see later on in this video about how they show it but that's the main gist of it they show you a lot
+[   55.84s ->    62.00s] of information about what transpired on that one stock or um security that you're trading over a
+[   62.00s ->    67.12s] certain time period but more importantly like i alluded to it shows you the emotional or psychological
+[   67.12s ->    72.08s] context over a given time frame was the market really strong was there a lot of fear was there
+[   72.08s ->    77.60s] a lot of greed was the market indecisive it helps you understand the context of what's happening on the
+[   77.60s ->    84.24s] market and this in conjunction with other indicators or other patterns other candlesticks can tell you a
+[   84.24s ->    89.28s] whole lot about what what the market is feeling in that time frame and so today we'll just walk you
+[   89.28s ->    94.16s] guys through how to understand and read candlesticks and what they're trying to tell us by interpreting
+[   94.16s ->    99.84s] what those candlesticks are implying now one question that people sometimes ask is why not a line chart
+[   99.84s ->   104.80s] this is a qqq line chart right it's gone up here it's gone down it's gone up it's gone down it's gone up
+[  104.80s ->   109.76s] it's basically just what the price point closed at on a day-to-day basis not a whole lot of
+[  109.76s ->   115.20s] information now take a look at a candlestick chart of that same graph overlaid and you'll see this has
+[  115.20s ->   121.36s] a lot more information it has a lot more of data if you guys know how to read it about what is going
+[  121.36s ->   125.76s] on in in this chart it doesn't only tell you if it's gone up or down over a certain time frame it
+[  125.76s ->   132.00s] also tells you what has transpired on a day or a minute or 10 minutes this is why candlesticks in my
+[  132.00s ->   138.16s] opinion are very very essential to not only know how to read but know how to interpret so ta in my
+[  138.16s ->   142.72s] opinion technical analysis starts with candlesticks so let's start with understanding how to read a
+[  142.72s ->   150.83s] candlestick first and foremost candlestick comes in basically four main parts the open the close the
+[  150.83s ->   156.75s] low of the time period or a high of a time period and so let's start with how to read it the body and
+[  156.75s ->   162.91s] the wick the body is basically the fat part here where my cursor is the wick is the line and so
+[  162.91s ->   168.35s] we'll just start on the left hand side here the green candle so essentially for a green candle the
+[  168.35s ->   175.63s] open is the bottom line right here the close is the top line right here right this implies that if i
+[  175.63s ->   180.91s] opened at a hundred dollars and i close at 102 to the two dollar increase therefore it's gone up
+[  181.71s ->   186.67s] that's why it's green it's a bull candle because it's gone up over a time period this is the body
+[  186.67s ->   191.55s] of the candlestick if it was a daily candlestick on the day the market opened at a hundred dollars
+[  191.55s ->   198.83s] and it closed at 102 now the wick is essentially how far the market has moved up or down on a given
+[  198.83s ->   205.55s] time period but it didn't close there so let's take this for example the low of 98 and a high of 104
+[  205.55s ->   211.15s] so what could have happened here is the markets opened at 100 and went all the way down to 98
+[  212.03s ->   218.11s] and then it went all the way up to 104 and then closed at 102. it could have also done this it
+[  218.11s ->   223.55s] could have gone it could have opened at 100 went all the way up to 104 went all the way down to 98
+[  223.55s ->   228.43s] and then it closed at 102. it doesn't tell you exactly how the price moved specifically on a
+[  228.43s ->   232.51s] certain time period but it does tell you that this is open 100 it went all the way down to 98 went all
+[  232.51s ->   238.75s] the way up to 104 and closed at 102 so that's the most important part now let's take a look at a bear
+[  238.75s ->   245.31s] candle opened at a higher price point than it closed red usually indicated in red so here they
+[  245.31s ->   252.43s] opened 102 it closed at 100 it went to a low of 98 and went to a high of 104 so the two scenarios that
+[  252.43s ->   259.23s] could have happened is it opened at 102 went up to 104 went down to 98 closed at 100 another way you
+[  259.23s ->   265.47s] could read this is it went it opened 102 went down to 98 went all the way up to 104 closed at 100
+[  266.35s ->   270.35s] but this is essentially telling you the highs and the lows in the market and where to open and
+[  270.35s ->   275.79s] what it closed so two parts body and wick four main information gathered open close high and low
+[  278.11s ->   283.23s] now just to recap a bull candle is an increase in price point positive signal therefore it's green
+[  283.23s ->   288.19s] which means that over that time frame the price point closed higher than when it opened bear candle
+[  288.19s ->   292.75s] is a decrease in price negative signal right it's gone down in price point so it's not a good thing so
+[  292.75s ->   298.19s] it's red over that time frame the price point has closed lower than when it opened now that we know
+[  298.19s ->   302.51s] how to read it what how do we start interpreting what the candlestick is trying to tell us and this
+[  302.51s ->   307.07s] is what i think is the most important part reading a candlestick is one thing understanding it is
+[  307.07s ->   312.75s] another thing this is probably the most important part so in order for a stock price to go up there has
+[  312.75s ->   317.87s] to be people willing to buy at the more expensive price point which in this case means that the demand is
+[  317.87s ->   322.59s] greater than supply which means that buyers are winning so for example and i don't know if you guys have had
+[  322.59s ->   326.59s] this experience i'm trying to get an order order filled and the price point right now is 100 there's
+[  326.59s ->   333.01s] no there's no supply left at 100 the next supply is at 101 right in order for me to buy this one thing
+[  333.01s ->   339.25s] i have to put 101 in then i'll be like okay i'll raise my price point i'll buy it 101. now let's assume
+[  339.25s ->   345.73s] that there's nothing between 100 and 120 bucks and i want to buy and i really really want to buy and if
+[  345.73s ->   351.33s] that's the case then i would buy it at 120 which means that the price point has gone up when there's
+[  351.33s ->   356.29s] little supply price point usually goes up because people would put in more money to buy that limited
+[  356.29s ->   361.33s] supply in order for a stock price to go down right there has to be people willing to sell at a cheaper
+[  361.33s ->   364.77s] price so for example if you're trying to get rid of something you're trying to sell something you
+[  364.77s ->   369.01s] guys have done this like you put it on ebay you put it on facebook marketplace or whatever it is
+[  369.01s ->   374.05s] and you're set you set it at 100 bucks but no one's buying right you drop it to 98 no one's buying
+[  374.05s ->   379.41s] you drop to 96 no one's buying you drop in 95 someone bought it you went from 100 to 95 dollars
+[  379.41s ->   384.69s] that's essentially you lowering the price until someone wants to buy it someone ends up meeting
+[  384.69s ->   389.49s] your price point and you sold it at a lower price than what you had expected to sell it for initially
+[  389.49s ->   393.41s] that's essentially what's happening on a market when you look at these candlesticks supply is
+[  393.41s ->   398.13s] greater demand so in order for you to sell it you have to lower your price point here because demand
+[  398.13s ->   404.61s] is greater supply i can charge more money or i would have to put in more money to get what i want
+[  404.61s ->   412.75s] i went up i went down it's all because of supply demand okay now let's take this idea and look at
+[  412.75s ->   418.19s] all the different shapes and kinds of candlesticks candlestick comes in many shapes and forms and they
+[  418.19s ->   421.39s] are trying to tell us different things and let's see if we can walk through some of them and see if
+[  421.39s ->   426.27s] we can understand what they're trying to tell us now here on the screen you'll see six different
+[  426.27s ->   431.79s] candlesticks of different shapes and different sizes let's walk you through some of them so first
+[  431.79s ->   437.71s] one right here this would be a open at here it will close here it went all the way up to here and
+[  437.71s ->   441.55s] went all the way down to here so what does this what does this necessarily mean right so if i if i
+[  441.55s ->   445.79s] started at 100 bucks went all the way up to 110 and went all the way down to 90. let's assume that that's
+[  445.79s ->   453.23s] the price point and ended at 102. i would say there's a large price rejection at both the lows and the
+[  453.23s ->   458.51s] highs of the day which means that when it reached down here lots of people started buying and it drove the
+[  458.51s ->   463.23s] price up when it went up here a lot of people started taking profit and selling off in fear
+[  463.23s ->   469.95s] and then it ended up here so i would say this is a bullish candlestick because the body is green
+[  469.95s ->   474.83s] however you you do see signs of indecision because the market doesn't know if this is a good price
+[  474.83s ->   479.87s] point or this is a good price point because the market has shown a rejection of both the lows and
+[  479.87s ->   484.03s] the highs now let's take a look at this one right this one is very similar right the body is we can
+[  484.03s ->   490.91s] say maybe slightly bigger the wicks are significantly shorter so this is 100 and this is 103 this is 102
+[  490.91s ->   496.91s] this 103 this may only 105 is 95. this just means if you look at it compared to this candlestick
+[  496.91s ->   501.07s] this means that there is slightly less rejection at certain levels the price point didn't go up nearly
+[  501.07s ->   506.59s] as high or low on a day-to-day basis it means that there's not much price fluctuations which means
+[  506.59s ->   510.27s] there's not much movement which means that the price the supply and demand i would say is pretty
+[  510.27s ->   513.55s] fairly equal on each side if you want to buy it you didn't have to raise your price point too much if you
+[  513.55s ->   518.27s] want to sell it you didn't have to lower your price point by too much again a bullish candlestick
+[  518.27s ->   523.47s] because it's green it ended up higher than it closed but essentially there is stronger i would
+[  523.47s ->   529.95s] say overall demand for the stock that you're looking at now this one is where things get a
+[  529.95s ->   535.95s] little bit more interesting this is where it opened closed slightly higher but on the day there was this
+[  535.95s ->   541.55s] large rejection off of this daily low and there's a slight rejection off of this high what is this really
+[  541.55s ->   546.27s] telling you it means that if it opened here at 100 let's assume there's 100 it went all the way down
+[  546.27s ->   551.95s] to like 85 dollars but at 85 people were like oh that's a good deal so they started buying buying
+[  551.95s ->   555.87s] buying buying buying buying buying buying as more people buy more people want to buy in right because
+[  556.59s ->   561.23s] you feel like it's safe to buy in go go go go go all the way up to the top
+[  562.27s ->   567.15s] started rejecting a little bit to here what this is telling you is that the market although it sold off
+[  567.15s ->   572.83s] people found that it was a good deal bought a lot of it and the price shot back up higher than when
+[  572.83s ->   577.39s] it closed out so this is a very bullish signal you could understand why when something sells off
+[  577.39s ->   581.63s] like this and it didn't stay cheap it means that it's a good it's a good thing right people want to
+[  581.63s ->   585.63s] buy in so the demand came in and pushed this all the way up so this is a very bullish signal
+[  586.19s ->   592.32s] now let's look at this candle this candle here it opened up here it opened at 90 it went all the way up to like
+[  592.32s ->   597.68s] 105 and it ended at 100. what does that what does this mean this is also a very very bullish signal
+[  597.68s ->   603.12s] why is that because bought people's people are like oh this is a good deal again similar to this
+[  603.12s ->   608.40s] right here it's a good deal so i'm gonna buy buy buy buy buy buy buy buy buy all the way up here
+[  609.66s ->   615.18s] and then maybe some people sold off but not a lot it ended up here if you didn't have this wick right
+[  615.18s ->   619.90s] here just get rid of this wig this is the same idea it would on the day it basically only went up
+[  619.90s ->   624.94s] that's also a very bullish signal this one is the inverse of this right so i started here
+[  624.94s ->   629.18s] the stock price went all the way up to here but then it sold off people are like oh crap this is
+[  629.18s ->   633.98s] this is too expensive or i i'm a little scared i want to make sure that i protect my earnings
+[  633.98s ->   638.06s] i want to make sure that i make 100 bucks in profit so they're going to sell off secure that
+[  638.06s ->   642.86s] 100 in profit and then that's what happens when this starts selling off right it starts decreasing
+[  642.86s ->   646.70s] in price point again because people more people are selling the more people are buying
+[  646.70s ->   650.62s] and it ends up at this close right here if you were to only look at the color you would think
+[  650.62s ->   654.30s] that this is a bullish signal but in my mind when you look at this is actually quite a bear signal
+[  654.30s ->   659.50s] because you're hitting a price point where the market indicates that the price point is no longer
+[  659.50s ->   665.74s] of a good value and people are scared and people are willing to sell off what they own in order to
+[  665.74s ->   670.46s] make sure that they don't lose money this is what this large wick here is telling me and we'll go to
+[  670.46s ->   674.86s] the last one real briefly this one is just basically this just a smaller body which means that
+[  674.86s ->   681.12s] open and close slightly smaller than this one now let's take a look at bear candlesticks same idea
+[  682.10s ->   687.22s] basically the only difference here is that the open and the close are flipped started opening lower
+[  687.22s ->   692.02s] i opened higher so i opened here i closed here but there's again strong rejection off of this top
+[  692.02s ->   696.18s] level so this is a very bearish signal the price point got pushed up here but then more people
+[  696.18s ->   701.15s] started selling selling selling selling selling and it ended up here a lot of selling power as well
+[  701.15s ->   705.55s] when you hear that when you see that try correlating that to like some of your own emotions
+[  705.55s ->   712.03s] this is basically fear kicking in fear of the market tanking fear of a pullback or even fear
+[  712.03s ->   716.75s] of the price continuing to go down for example if you own stocks you've seen this before you said oh
+[  716.75s ->   720.59s] yeah the stock went all the way up i'm good but i bought in here and the stock went all the way up
+[  720.59s ->   725.23s] here so i bought in at 100 now it's 110 and then it's dropping now it's 108 you're like oh i should
+[  725.23s ->   730.99s] probably shouldn't sell uh i can't sell it's probably gonna go back up 107 106 105 you're like oh crap
+[  730.99s ->   735.71s] i if i if i keep this up they might keep dropping i'm gonna lose my money and so you sell at 105
+[  736.35s ->   740.83s] right in order to protect your earnings so now it's a 105 you made a five dollar profit and as
+[  740.83s ->   746.91s] you sell off the price continues to drop continues to drop continues to drop and so people would then
+[  746.91s ->   750.91s] further sell off and sell off and sell off and so this is why this wick is happening here now that's
+[  750.91s ->   756.19s] the same idea here right this is basically not too much price action price movement on this one day high
+[  756.19s ->   761.31s] low it opened it closed lower than it opened kind of a kind of a boring day essentially compared to
+[  761.31s ->   765.95s] this not too much price movement this and this are basically the same candlestick a little bit of
+[  765.95s ->   770.59s] an indecision kind of like this one too strong price rejection off of both sides so the market
+[  770.59s ->   774.27s] really doesn't know what to do the market and the buyer and sellers are both kind of fighting each
+[  774.27s ->   778.91s] other to figure out who wins so eventually at some point one side's going to win over the other
+[  778.91s ->   783.47s] and then this candlestick is either going to go up or down the buyer and sellers are basically
+[  783.47s ->   787.87s] equal in strength enough sellers and enough buyers are kind of counteracting each other
+[  787.87s ->   791.79s] it would say this is a bullish signal again you're selling off all the way here but then you're buying
+[  791.79s ->   794.83s] you're buying and buying right and then you're correlating that to your own experience you're
+[  794.83s ->   799.63s] looking to buy stock was at 100 now it's at 90 you know okay well i think it's a good price point to
+[  799.63s ->   805.55s] buy but instead of falling down to 85 it goes back up to like 92 93 94 95 96 97 you're like oh crap if
+[  805.55s ->   810.83s] i don't buy it now it might keep going up and so you buy it at 95 or 96 so this is what's happening
+[  810.83s ->   814.83s] here is that as more and more people come in at a higher and higher price point they'll put i'll
+[  814.83s ->   818.51s] keep pushing the stock up so this is basically what the long wick means now if you look at this
+[  818.51s ->   823.39s] one this is a big sell-off basically i'm opening up 100 and it closed at 90 which means that along
+[  823.39s ->   826.91s] the way a lot of people sold to make it a ten dollar difference right so you could be one of them
+[  826.91s ->   830.75s] you're selling you're like oh crap maybe the price point's gonna keep dropping keep dropping keep
+[  830.75s ->   834.83s] dropping so i'm gonna sell my shares in order to protect myself so that it doesn't fall to 90 and i lose
+[  834.83s ->   839.94s] even more money all right so let's play a game which one is more bullish and which one is more bearish
+[  840.82s ->   845.94s] i'm going to give you guys two candlesticks both of a bull and a bear candlestick and just choose
+[  845.94s ->   856.99s] one of each which one of these is more bullish and which one of these is more bearish okay five
+[  856.99s ->   863.07s] four three two one all right the answer is on the left hand side and this one is definitely more
+[  863.07s ->   868.75s] bullish because the price point uh not only ended up higher but there's a strong rejection again off of
+[  868.75s ->   873.39s] this level this is kind of the market telling you that this is a good price point that people were
+[  873.39s ->   877.15s] looking to buy into and so a lot of people started buying in and as more people started to buy in as
+[  877.15s ->   881.23s] the stock price continued to go up you other more people bought in and more people bought in more
+[  881.23s ->   887.78s] people bought it this is a very bullish signal now on this side which one is more bearish and this one's
+[  887.78s ->   891.78s] definitely more bearish right this one is a strong price rejection off of a level which mean more people
+[  891.78s ->   898.74s] bought in which is actually a bull sign this is means that it opened up here and it closed all the way
+[  898.74s ->   903.70s] down here which means that there was no positives notes whatsoever the buyers never outpace the
+[  903.70s ->   908.26s] sellers this is a very bearish signal and this is a very bullish signal different candles different
+[  908.26s ->   912.50s] wicks but you can kind of tell as you correlate and understand what these wicks and candles are
+[  912.50s ->   918.00s] telling you you can understand the market sentiment all right so now that you understand the context
+[  918.00s ->   922.96s] there are some nomenclatures that people use when they're discussing or talking about candlesticks i'll
+[  922.96s ->   927.76s] walk you guys through some of them real quick here it's great because it doesn't really matter in my opinion
+[  927.76s ->   931.60s] whether it's a bull or bear candlestick because the wicks here are dominating same with a small
+[  931.60s ->   935.84s] and big candle because it can it can go either way hammer this looks like a hammer right the hammer
+[  935.84s ->   940.56s] just means that there's a strong rejection off of this level closed higher much higher than the
+[  940.56s ->   945.44s] low of the days the shooting star is the inverse a small candle is basically the size of the candle
+[  945.44s ->   950.64s] so this is small it can be green or red a small candle is just the size of this candle is very
+[  950.64s ->   955.92s] very small proportional to everything else on the chart and then a big candle is basically a huge candle
+[  955.92s ->   962.98s] um in size relative to everything else now there's one more name that you guys have to that you guys will hear
+[  962.98s ->   970.26s] it's called a doji a doji is essentially a candlestick with no body right you see no body it's just a line
+[  970.26s ->   977.09s] it basically looks like a cross or a plus sign so candlestick basically means that open and close at the same
+[  977.09s ->   981.49s] price point indicating that there's been little to no movement during that time frame doesn't mean that there's no
+[  981.49s ->   986.72s] movement on the day it just means that the market ended up at the same price point so we can do the
+[  986.72s ->   991.20s] same thing here the only difference here is there's no body but psychology still remains the same right
+[  991.20s ->   995.20s] this is an indecision candlestick essentially right the market doesn't really know which way to go
+[  995.20s ->   998.64s] especially if the wicks are shorter this is like really this is what we would really call an
+[  998.64s ->  1003.76s] indecision candlestick so just imagine this wick is like here a quarter of the size quarter of the
+[ 1003.76s ->  1008.99s] size which means that the market really didn't move much at all now this is the shooting star but without the
+[ 1008.99s ->  1014.67s] without the um without the body right same thing strong price rejection off of that top level a
+[ 1014.67s ->  1020.91s] bearish sign strong this is a strong um price rejection off of a low which means it's a bullish
+[ 1020.91s ->  1026.51s] sign similar to the hammer right shooting star hammer but just without the body so because they
+[ 1026.51s ->  1030.19s] don't have bodies they have different names they're called dojis so this is what we call a long-legged
+[ 1030.19s ->  1036.91s] doji this is what we would call a gravestone doji dragonfly doji is essentially you can see it
+[ 1036.91s ->  1042.46s] it looks like a dragonfly think about the hammer but without the body same idea now let's look at
+[ 1042.46s ->  1047.26s] some charts to see whether or not we can find some of these uh candlesticks on charts here i'm just
+[ 1047.26s ->  1052.78s] i'm just on spy s p 500 and we're just going to see if we can find some so if we look back here right
+[ 1052.78s ->  1058.38s] this is a large body like candlestick red large body which means that this is a a large selling power
+[ 1059.10s ->  1063.42s] this is a large body as well but you can tell there's a wick and a wick right and so here you can see
+[ 1063.42s ->  1070.94s] there's a strong rejection off of this price point right it went up from 226 all the way up to 250
+[ 1070.94s ->  1075.50s] which means this is a very bullish sign right it's a strong signal that people are trying to buy in as
+[ 1075.50s ->  1083.42s] time frame same with this one here right it's a another strong bullish signal 257 ended at 275
+[ 1083.42s ->  1088.46s] with a rejection of 248 and on the inverse like we just talked about this is a bearish signal it went and
+[ 1088.46s ->  1095.42s] opened up at 323 ended at 384 and then it closed at 295 another big move down here you can see this
+[ 1095.42s ->  1098.78s] is probably like an indecision candlestick at the market chart so trying to figure out if it's
+[ 1099.42s ->  1106.06s] going to go up or down open up at 327 227 closed at 268 but it went all the way down to 246 went all
+[ 1106.06s ->  1110.14s] the way up to 286 right this the buyers and the sellers are fighting itself out in this case the
+[ 1110.14s ->  1115.90s] sellers are winning slightly here's again you can see this is like a hammer opened at 289 it went all
+[ 1115.90s ->  1120.94s] the way down to 272 and it closed at 284 longer bottom width than the higher width large body
+[ 1120.94s ->  1126.94s] here large body here you can see that same same um again this is again you can kind of this is
+[ 1126.94s ->  1131.42s] almost a doji if you were to zoom in just slightly right here this is kind of like a doji do you see
+[ 1131.42s ->  1137.74s] that open and close around the same price point again almost a doji a doji right here this will be
+[ 1137.74s ->  1147.41s] called a indecision doji um right this is a hammer right large body large body just looking around
+[ 1147.41s ->  1152.37s] you can see a lot of the candles that we looked at we can go to another one just go to amazon large
+[ 1152.37s ->  1159.57s] body here right large body uh shooting star right here where my cursor is you see that this is kind of
+[ 1159.57s ->  1169.02s] like a hammer right large wick not a big top a doji right here large body again right close to a doji
+[ 1169.02s ->  1176.99s] this is a shooting star right here you see a lot of these candlesticks right on here a lot of those
+[ 1176.99s ->  1181.39s] names that we just talked about all these candles are telling you a story our job is kind of interpret
+[ 1181.39s ->  1185.55s] what's happening and see if we're if we can understand here this is another doji right here
+[ 1186.94s ->  1195.38s] there's a doji right here long legged doji we can even go to tesla right whoa wow look at this one
+[ 1195.38s ->  1199.06s] what is this one telling you this may be maybe not even named for this but you can see it was at 800
+[ 1199.86s ->  1203.94s] went all the way down to five five thirty five thirty right this what is this telling you this is
+[ 1203.94s ->  1208.66s] crazy strong strong price rejection right it opened here went up went all the way down here and it
+[ 1208.66s ->  1216.50s] closed here right strong price rejection that's a really really big signal large body again doji doji
+[ 1217.22s ->  1223.62s] hammer large body right you see all of these a doji understanding candlesticks is great and all
+[ 1223.62s ->  1228.90s] like you can understand how things have moved how things have transpired in the next video i'm
+[ 1228.90s ->  1232.66s] going to show you guys a true power of candlesticks where you can start combining candlesticks to form
+[ 1232.66s ->  1237.46s] patterns combining candlesticks to form patterns you get a larger idea what's happening on the market
+[ 1237.46s ->  1241.94s] there is a lot more data information from both an emotional and a concrete data perspective about
+[ 1241.94s ->  1246.34s] what's happening on the market so if you have two dojis two bearish dojis and two bullish dojis
+[ 1246.34s ->  1252.02s] they mean different things if you have a large wick with a small body combined with a large body and
+[ 1252.02s ->  1257.22s] a small wick then that also means something else and so by combining candlesticks that's actually one of
+[ 1257.22s ->  1262.42s] the powers of candlesticks by combining different time periods and different patterns you can understand
+[ 1262.42s ->  1266.18s] the market psychology a lot better than by just looking at one candlestick by itself
+[ 1267.63s ->  1270.67s] on whatever platform you guys are using i use thinkorswim right there but you guys can use
+[ 1270.67s ->  1276.91s] webull trading view whatever platform uh that you guys use see if you guys can spot some of these
+[ 1276.91s ->  1280.43s] candlesticks that we just went through and then challenge yourself to see whether or not you guys
+[ 1280.43s ->  1285.39s] can understand eyes on that candlestick what that candlestick's trying to tell you and see if you
+[ 1285.39s ->  1290.03s] guys can even correlate that like we've done here to some of your own experiences to understand the
+[ 1290.03s ->  1294.59s] emotional and psychological context yeah so let me know down in the comment section below what you guys
+[ 1294.59s ->  1297.87s] thought what you guys think if you guys have any comments if you guys liked it please press the
+[ 1297.87s ->  1316.03s] like button if you guys you guys really enjoyed it please consider subscribing and until next time peace

@@ -1,0 +1,114 @@
+[    0.02s ->    15.28s] Hey guys, in this video I'm going to walk you through my go-to strategy that has an 85.3% win rate, helps you make money whether the market goes up, down, or sideways, and it will actually be so easy to understand that if you've never traded options before, this will make sense.
+[   15.34s ->    26.98s] If you stay till the end, I'll even show you how to avoid market crashes and black swan events so you can trade this strategy without the fear of it turning against you overnight and losing a lot of money that you've worked hard to save and trade with.
+[   26.98s ->    30.62s] So, let's dive into the strategy so that you can use it this year too.
+[   31.20s ->    34.48s] When trading options, we're allowed to do a lot of crazy things.
+[   34.78s ->    47.48s] For instance, we can make money when the market goes up, we can make money when the stock goes down, we can even make money when the market goes sideways, and so this approach helps us to do all three of those things at one time, and it's called a strangle.
+[   47.56s ->    53.20s] I'm going to do a high-level overview, then I'm going to show you the specifics of how I'm able to do this and stay out during market crashes.
+[   53.20s ->    57.22s] So, if you're more of a technical person, stay tuned, because I'm going to go through the backtest and everything with you.
+[   57.34s ->    61.40s] But, high-level overview, we make money when the stock stays between two levels.
+[   61.74s ->    64.54s] So, friends, I can put a level up this high and a level this low.
+[   64.80s ->    68.10s] So, basically, I'm giving the stock 10% direction to move, right?
+[   68.14s ->    78.40s] If you can see here, from a percentage perspective, the stock has roughly 13% to move, and if it moves in that space over my amount of time, 21 days, then I'll make money.
+[   78.40s ->    84.30s] And so, that's amazing. Why? Well, because that means if the stock moves up 5%, I still make money.
+[   84.52s ->    90.44s] If the stock even crashes or comes down 7%, I'm still going to make money.
+[   90.76s ->    94.18s] And so, again, if the stock stays neutral and does nothing, I'll make money, too.
+[   94.44s ->   101.80s] The only time I lose money is when my levels get broken, which I'll just exit for a small loss, and then I'll move on to the next trade,
+[  101.86s ->   106.60s] because this trade has an 85% win rate, so I'm going to win way more times than I don't.
+[  106.60s ->   109.04s] So, now, you may be thinking, this is a great strategy, right?
+[  109.06s ->   112.44s] I make money if the market goes up, I make money if the market goes sideways, and I make money if it goes down.
+[  112.68s ->   115.58s] Well, I don't want to be one of those traders on YouTube who tells you, yeah, this is the best strategy.
+[  115.68s ->   122.02s] No, I want to show you where this will fail and where it will make you lose a lot of money and how to prevent that so it never happens.
+[  122.38s ->   130.38s] So, if I pull up a backtest of doing the strategy, which is essentially selling a put and selling a call, which allows us to create this structure,
+[  130.86s ->   133.88s] this is what it looks like. This is what the historical performance looks like.
+[  133.88s ->   139.70s] You can see here, in general, it does really well, except for periods like this, where it drops a lot, and this, where it drops a lot,
+[  139.94s ->   149.92s] and this, in 2020, March 2020, COVID, where it took your performance from the positive, a positive $33,000, to a negative $7,000.
+[  150.74s ->   153.06s] It puts your account in the negative, meaning that you owe money.
+[  153.90s ->   158.68s] So, again, in general, most periods, this does really, really well, right?
+[  158.68s ->   164.82s] Because you have so much margin of error, you have allowed the stock to move at a very wide margin, so, of course, you're going to make money.
+[  165.08s ->   167.50s] However, this fails during crashes.
+[  167.76s ->   172.16s] So, let me show you how to stay out of the market during those crashes because, look, guys, I did this test.
+[  172.22s ->   178.02s] If you can stay out during those crash periods, look, you have a smooth equity curve that goes up.
+[  178.12s ->   183.30s] There are bumps and there are moves down, but overall, you increase your performance, you increase your win rate, and it goes up.
+[  183.30s ->   184.80s] How do I do this?
+[  185.04s ->   190.18s] Well, I added this indicator to my chart, and I'll show you how to get it towards the end of this video,
+[  190.28s ->   193.80s] but essentially, it shows the standard deviations of the stock moving,
+[  194.20s ->   198.96s] which means that if the stock's above this outer range, a crash is really likely to happen.
+[  199.22s ->   204.30s] If it's inside this range between these two blue lines, the stock is trading like normal.
+[  204.52s ->   206.72s] If it's outside this bottom range, it's going to bounce.
+[  206.88s ->   210.26s] So, above, crash. Below, bounce. In the middle, normal.
+[  210.68s ->   211.34s] So, what does this mean?
+[  211.38s ->   213.90s] It means that when we're in the normal of this, in the middle of these bands,
+[  213.94s ->   218.02s] we're going to place this trade like normal, and when we're not, that's when we're going to get rid of it.
+[  218.12s ->   219.96s] Now, here's an example from March 2020.
+[  220.14s ->   222.64s] You can see here, it busted above this level.
+[  222.90s ->   224.92s] A key indication, the market will crash.
+[  225.00s ->   226.58s] So, what do we do? What's the game plan?
+[  227.08s ->   232.70s] When the market gets above this level, any current positions we have on, we're going to take off.
+[  232.76s ->   235.38s] We're going to close them, and most likely, we're going to be able to close them for a profit.
+[  235.38s ->   236.80s] Why? Because it's been going in our favor.
+[  236.80s ->   241.86s] So, we're going to close these trades, so that now that we're not in the market during these crashes,
+[  242.06s ->   244.58s] we're going to wait for it to get below this line and then come back above.
+[  244.86s ->   246.96s] Then, we're going to start putting on these trades like normal.
+[  247.14s ->   248.44s] And so, now you may be asking, okay, cool.
+[  248.72s ->   252.50s] Now, I know how to avoid these crashes, avoid things like this.
+[  252.54s ->   254.60s] You can see here, avoid this huge move down.
+[  254.94s ->   256.34s] You can avoid the bounces.
+[  256.52s ->   258.26s] You can avoid different things like that.
+[  258.26s ->   263.64s] So, now that you know how to avoid the crashes in markets like that, how do we actually structure this trade?
+[  263.64s ->   271.36s] Well, quite simply, this level right here is going to be a 15 delta put that we're going to sell.
+[  271.46s ->   275.66s] So, 15 delta put, and this is going to be a 10 delta call.
+[  276.04s ->   277.00s] So, what does this mean?
+[  277.12s ->   278.80s] It means that we're skewed to the upside.
+[  278.98s ->   283.64s] It means that we're thinking that because the market always trends up, that we're going to make more money.
+[  283.80s ->   285.66s] We're going to have a higher level here, a further level here.
+[  285.66s ->   288.60s] We're going to allow the stock to move up more, and that's how we make money.
+[  288.72s ->   290.64s] So, how do we actually go in and structure this trade?
+[  290.90s ->   293.76s] Well, I have an actual thing right here that I put on this morning.
+[  294.00s ->   297.70s] You can see here that this was at the levels I stated.
+[  297.78s ->   304.30s] You can see here it's on the mini contract futures, the S&P 500 futures, where you can see here I sold a call.
+[  304.40s ->   306.48s] I sold a put, and this creates my levels.
+[  306.84s ->   311.52s] My levels are roughly, as stated here, they're roughly my, oops, I'm still on drawing tool.
+[  312.65s ->   313.63s] Let's remove these drawings.
+[  313.63s ->   321.43s] My levels here are roughly here and here, and this is what a 15 put and a 10 delta call look like.
+[  321.71s ->   324.27s] Now, if the stock stays between this level, I make money.
+[  324.37s ->   325.89s] If the stock does nothing, I make money.
+[  325.99s ->   327.53s] So, how do we manage this trade?
+[  327.93s ->   341.87s] Well, we're going to enter these levels, which, again, if I just put on the trade for you, if I go to the trade tab, I'm going to go to, as you can see all the details in this backtest, 45 days out, 50% max profit, 21 days, and a 400% stop loss.
+[  341.87s ->   347.15s] So, anyone who knows tasty trade, these are their mechanics for managing a trade.
+[  347.65s ->   353.39s] However, I am skewing the delta so that I'm more bullish, meaning that I think the market will go up, and I'll make money that way.
+[  353.43s ->   354.79s] So, 15 delta and 10 delta.
+[  355.31s ->   358.71s] And, again, when I do that and avoid these crashes, this has a really high win rate.
+[  358.71s ->   367.27s] And, I'm going to make about $500 to $1,000 per trade and lose roughly $3,000 per trade.
+[  367.33s ->   368.99s] With the 85% win rate, that works out great.
+[  369.07s ->   372.15s] Now, again, if you're using SPY and not futures, it's going to be a lot less.
+[  372.23s ->   376.49s] So, we'll make about $43 per trade, and you'll lose about $100 or $200.
+[  376.63s ->   377.53s] That's a lot more favorable.
+[  378.07s ->   380.39s] So, again, you can do this on SPY, on futures, whatever you want.
+[  380.91s ->   382.45s] And so, again, you structure the trade.
+[  382.53s ->   384.67s] By going in, you're finding these specific deltas.
+[  384.67s ->   387.41s] So, you can see right here, this is at a 15 delta for my put.
+[  387.91s ->   391.27s] And, up here, if I go to the top, this is around a 10 delta for my call.
+[  391.43s ->   392.65s] And so, that's all I put on this trade.
+[  392.71s ->   393.27s] Very simple.
+[  393.61s ->   396.19s] And I just wait 21 days, and then I manage from there.
+[  396.55s ->   398.79s] And so, again, you can see the performance of what this looks like.
+[  398.81s ->   399.97s] It really skews out our performance.
+[  400.11s ->   400.67s] We do well.
+[  400.97s ->   403.59s] And so, again, guys, that is how you structure this trade and manage this trade.
+[  403.89s ->   405.87s] This is a trade that I'll be doing moving forward.
+[  406.37s ->   413.33s] Using this indicator to help me stay out of crashes to only be in the trade when the market is behaving like a normal and good little child.
+[  413.33s ->   415.81s] And so, again, that's how I'm going to do this.
+[  416.01s ->   420.47s] If you want to get access to this indicator, you can do so clicking the second link down below.
+[  421.03s ->   424.83s] And, again, you can get access to this indicator, which includes six different indicators all in one.
+[  425.17s ->   427.19s] And so, that's how amazing this little thing is.
+[  427.29s ->   430.27s] It shows you when the market is normal, when it's going to crash, and when it's going to bounce.
+[  430.37s ->   437.99s] So, again, you can even use this indicator to enter in stock trades for a long position when it gets down to these ideal buy levels and different things like that.
+[  438.05s ->   439.69s] But, anyways, I'll be using this strangle.
+[  439.69s ->   444.85s] I'll be sharing more updates on it on YouTube, so click that subscribe button because this is a wonderful trade to put on.
+[  445.25s ->   449.53s] I am doing small trades in the E-mini futures contracts to get my experience.
+[  449.63s ->   453.07s] I haven't traded strangle as much, and so that's what I'm doing here.
+[  453.15s ->   459.07s] I'm going to start leveraging up to the real futures, the S&P 500 futures.
+[  459.47s ->   463.95s] So, I'll actually be taking large trades in 2024, and this is what I'm doing with my long-term account.
+[  464.03s ->   468.63s] With my short-term account, I'm still doing credit spreads like normal, but this is my long-term strategy.
+[  468.63s ->   470.45s] All right, guys, hope that makes sense.
+[  470.67s ->   472.05s] I will see you in the next video.

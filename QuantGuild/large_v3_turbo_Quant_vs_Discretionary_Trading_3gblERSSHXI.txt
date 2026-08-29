@@ -1,0 +1,558 @@
+[    0.46s ->     7.04s] there is an all-out war in the trading space and you don't have to go very far online or in my
+[    7.04s ->    11.72s] youtube comment section to find there are two camps you have the quants or the quant traders
+[   11.72s ->    17.26s] and the discretionary traders and things get heated pretty quickly discretionary traders will
+[   17.26s ->    21.16s] say quants can't make any money without institutional capital or infrastructure
+[   21.16s ->    27.32s] and right back at them quants will say without a scientific or statistical basis for your strategy
+[   27.32s ->    34.94s] then you can't make any money but in reality both are operating in the exact same game with the exact
+[   34.94s ->    39.32s] same goal they just use different strategies to get there and that's exactly what we're going to
+[   39.32s ->    44.26s] talk about in this video i have the unique perspective of having operated professionally
+[   44.26s ->    49.32s] as both a quantitative researcher and trader as well as a discretionary trader in an options market
+[   49.32s ->    54.14s] making capacity and i want to use that unique perspective today to talk about this idea of
+[   54.14s ->    60.66s] the trading space how to understand it understand this idea of uncertainty and taking risk then i
+[   60.66s ->    66.46s] want to talk about how i operate as a discretionary trader and a quantitative trader and why i'm not
+[   66.46s ->    72.92s] worried about sharing that edge with you regardless of the type of trader that you are your edge will
+[   72.92s ->    78.86s] certainly change over time the only thing that i know for certain that does not change over time
+[   78.86s ->    83.90s] is your access to a jupiter notebook with a new quant guild video this jupiter notebook will be linked
+[   83.90s ->    88.24s] in the description below i will also post it to the quant guild library on github where you can find
+[   88.24s ->    93.54s] all of my jupiter notebooks and associated youtube videos along with all of the source code for my quant
+[   93.54s ->    98.00s] builds at the top of this jupiter notebook you'll notice some related quant guild videos applying
+[   98.00s ->   103.94s] probability and statistics to finance and trading this idea of time series analysis retail versus
+[  103.94s ->   109.74s] institutional trading trading versus investing why trading metrics are misleading they are necessary
+[  109.74s ->   117.08s] not sufficient when evaluating some sort of trading strategy this idea of expected value or edge and
+[  117.08s ->   122.84s] this idea of acting optimally with some sort of policy function if you're unfamiliar with any of
+[  122.84s ->   128.38s] these ideas i highly recommend that you check these videos out first before tackling one like this
+[  128.38s ->   132.14s] moreover these videos certainly take a lot of effort to create so if you'd like to help support the
+[  132.14s ->   137.66s] channel so i can continue to create videos just like this one please like comment subscribe share it helps me out
+[  137.66s ->   143.28s] tremendously it is greatly appreciated and if you'd like to master your quantitative skills check out
+[  143.28s ->   150.06s] quant guild.com this is not a course to teach you to trade this is a platform designed to help you master
+[  150.06s ->   157.56s] the skills necessary for the financial services industry no nonsense no shortcuts maybe you're a student
+[  157.56s ->   164.74s] an aspiring quant a working professional preparing for technical interviews in any case quant guild is for you
+[  164.74s ->   170.30s] we have over 90 quant lessons in math probability finance an adaptive practice engine that scales
+[  170.30s ->   176.18s] with your skill level so you can progress to more and more difficult questions with gamified rank based
+[  176.18s ->   182.30s] progress interview questions with fully worked solutions trading games coming soon
+[  182.30s ->   189.18s] courses from a to z in math probability and statistics data science coding all from the ground up
+[  189.18s ->   194.12s] and all that's included with quant guild membership and you can get started right now for free
+[  194.12s ->   198.32s] so if you'd like to help support the channel and master your quantitative skills
+[  198.32s ->   204.02s] check out quant guild.com without further ado let's get started by building our understanding of the trading
+[  204.02s ->   210.32s] space from the ground up so we can see exactly where it is quants and discretionary traders begin to disagree
+[  210.32s ->   217.76s] with one another and we can actually use implied probability and election betting to see exactly why this occurs
+[  217.76s ->   221.40s] but before we talk about that we have to answer this question
+[  221.40s ->   229.64s] is trading random or is it uncertain oftentimes in the classroom we're taught to treat stocks and returns
+[  229.64s ->   234.94s] as random variables but rarely do we have a discussion as to whether or not that's appropriate so
+[  234.94s ->   242.38s] what's the difference well random systems mean that outcomes follow some sort of fixed set of probabilities
+[  242.38s ->   252.86s] examples include a powerball ticket craps slots roulette the probability of any event is well defined and stable
+[  252.86s ->   260.18s] it's not just going to change randomly that is the probability of a roulette wheel landing on block
+[  260.18s ->   267.82s] is not going to change over time and even if it did if it did in a well-defined way it would still be a
+[  267.82s ->   276.12s] random system okay then what's an uncertain system well an uncertain system is going to combine
+[  276.12s ->   283.62s] deterministic components and dynamic random components that means that the randomness in the
+[  283.62s ->   290.76s] uncertain system doesn't follow some sort of fixed set of probabilities it's a very important distinction
+[  290.76s ->   299.62s] some examples include poker event betting election betting and trading now in either case whether we're
+[  299.62s ->   307.34s] dealing with a random system or an uncertain system we don't know what the outcome of any one event will
+[  307.34s ->   315.64s] be we can never perfectly predict what that one event will realize since we don't know what the outcome
+[  315.64s ->   322.10s] of any one spin of the roulette wheel one hand of poker or one trade is going to be we need some sort
+[  322.10s ->   329.36s] of measure to assess our ability to generate wealth in that system and typically this is referred to as
+[  329.36s ->   338.64s] our edge or our expected value or our ev and if we operate in that system and we have positive ev
+[  338.64s ->   347.16s] we can accumulate wealth if we operate with negative ev then we are going to lose wealth and that's
+[  347.16s ->   351.88s] exactly what you see here in this animation on the right we're operating in either one of these systems
+[  351.88s ->   358.48s] it could be random or uncertain and we're operating with negative ev here so you can see our wealth path
+[  358.48s ->   365.78s] continues to lose money over time versus what when we act with positive ev we continue to accumulate
+[  365.78s ->   373.28s] wealth over time so even though the outcome of any one event in either of these systems is completely unknown
+[  373.28s ->   381.00s] our objective here is to what operate with positive expected value this means as we continue to interact
+[  381.00s ->   386.74s] with that system we're going to be able to accumulate wealth some important considerations about edge
+[  386.74s ->   391.48s] firstly if you're interested in the study of stochastic processes i'm not making a comment on ergodicity
+[  391.48s ->   397.30s] i have a video dedicated to this topic of optimal bet sizing additive versus multiplicative bets ergodic
+[  397.30s ->   401.28s] versus non-ergotic wealth paths if you're interested in that video i'll leave a link to it in the
+[  401.28s ->   406.94s] description below moreover if we're assessing our edge we need to figure out if it's positive or
+[  406.94s ->   412.52s] negative so how do we actually compute it well the formula is right here we can just use the law of
+[  412.52s ->   419.48s] total expectation to compute our edge or our expected value all we have to do is find the probability
+[  419.48s ->   426.50s] that we win the probability that we lose and scale that by the average winner versus our average
+[  426.50s ->   433.08s] loser and we'll get our edge if it's positive we will be operating as this green chart here if it's
+[  433.08s ->   442.10s] negative we'll be operating as this red chart here but what did i just say above okay well in a random
+[  442.10s ->   448.36s] system those probabilities are fixed right that makes computing this very easy what about an uncertain
+[  448.36s ->   456.42s] system that makes computing this very difficult these probabilities are not fixed in an uncertain
+[  456.42s ->   463.56s] system your edge is far more dynamic and that's what makes this a very difficult problem to actually
+[  463.56s ->   472.02s] assess whether or not you are acting with positive ev or negative ev this is a major source of confusion
+[  472.02s ->   478.26s] for both students and folks who are first getting involved in the trading space just because we can
+[  478.26s ->   485.52s] act with negative ev sub optimally it does not reduce the entire space to gambling we've all heard that
+[  485.52s ->   492.02s] right trading is just just gambling but it's not there's a difference between a random system and an
+[  492.02s ->   499.14s] uncertain system now they're quite similar and the main similarity is that the outcome of any one event
+[  499.14s ->   510.00s] is unknown but the major difference is our choices in some sort of uncertain system are going to dictate
+[  510.00s ->   517.44s] our expected value and the trajectory of our wealth path we don't get to choose which wealth path we walk
+[  517.44s ->   524.04s] i've simulated a whole bunch here but the expected value dictates our trajectory whether or not we are
+[  524.04s ->   531.28s] accumulating wealth or losing it that is the biggest difference between a random system and some sort of
+[  531.28s ->   538.64s] game of chance and an uncertain system and a game of incomplete information we're going to look at two
+[  538.64s ->   543.56s] intuitive examples here we're going to look at american roulette as an example of a random system
+[  543.56s ->   550.02s] then we're going to look at election betting as an example of an uncertain system and we're going to be able to see
+[  550.02s ->   557.88s] where both quants and discretionary traders are going to agree and then disagree american roulette is a
+[  557.88s ->   563.28s] random system that means that the probabilities and the payouts are well defined they're stable and they
+[  563.28s ->   568.86s] don't change over time we're not just going to randomly have blue as an outcome what does that mean
+[  568.86s ->   573.14s] that means that i can take the formula i showed you above and plug in all of the probabilities and
+[  573.14s ->   579.34s] paths if i do that from the perspective of the player i get the player's edge every spin of the wheel for the
+[  579.34s ->   587.48s] player has an edge of negative 5.26 percent what does that mean well i've plotted here the probabilities
+[  587.48s ->   592.50s] of each event green red and black and i'm going to play you an animation of the player wealth path
+[  592.50s ->   598.70s] what you can see here is no matter what the player does eventually he's going to lose all of his money
+[  598.70s ->   604.24s] he's going to go bankrupt so you can see it doesn't matter what he bets on the wheel is going to continue
+[  604.24s ->   610.18s] to realize different outcomes green red black whatever it is it doesn't matter there's nothing
+[  610.18s ->   618.98s] the player can do to act optimally he's always going to have this negative fixed edge if he continues
+[  618.98s ->   626.10s] to play the game of american roulette this is precisely what it means to engage with a random
+[  626.10s ->   633.68s] system this edge does not change no matter what the player does at this point quants and discretionary
+[  633.68s ->   641.06s] traders agree this is a random system there is a fixed negative edge against the player and there
+[  641.06s ->   650.24s] is no optimal action beyond martingaling roulette to take to ensure we have positive expected value the
+[  650.24s ->   657.62s] only optimal decision to make is to not play the game but how do we know this why do we know that
+[  657.62s ->   664.98s] this edge is negative and fixed in other words why do we know the trajectory of the player wealth path
+[  664.98s ->   674.64s] is always negative well this gets into the idea of stability this idea of a frequency-based
+[  674.64s ->   681.54s] interpretation of randomness and the law of large numbers the law of large numbers sounds and looks
+[  681.54s ->   688.26s] more complicated than it actually is all it's saying is if i continue to spin the roulette wheel
+[  688.90s ->   696.66s] then if i record all of the outcomes and take the average that is going to converge with probabilistic
+[  696.66s ->   703.22s] certainty to the theoretical average if that sounds crazy just look at this animation if i play this
+[  703.22s ->   709.38s] animation what you'll find is as i continue to spin the roulette wheel and record the outcomes of green
+[  709.38s ->   716.34s] red and black you can see that the bars are changing heights but eventually it's going to converge to
+[  716.90s ->   723.86s] the theoretical probabilities that i've plotted here and at convergence we're going to have this fixed
+[  723.86s ->   731.70s] negative edge against the player that is precisely what is ensured by the law of large numbers and sure
+[  731.70s ->   737.14s] there's more going on underneath the hood here this is the strong law of large numbers this is different
+[  737.14s ->   742.50s] from the weak law of large numbers there's a difference between almost sure and probabilistic
+[  742.50s ->   748.34s] convergence but this is not a course on probability theory we're just discussing the application to a
+[  748.34s ->   756.18s] random system this is precisely why we know the edge is not going to just magically change as we continue
+[  756.18s ->   764.58s] to spin the wheel we have this convergence essentially guaranteed empirically by the law of large numbers
+[  764.58s ->   770.26s] so no matter what the player does this edge is fixed against them the probabilities of green red and black
+[  770.26s ->   777.86s] will converge and the player is eventually going to lose all of his money we're now ready to approach
+[  777.86s ->   782.82s] an uncertain system so this is not american roulette anymore we're looking at this idea of election
+[  782.82s ->   788.82s] betting and implied probability this is where everything goes out the window what i'm going to do here
+[  788.82s ->   793.86s] is i am going to essentially take a look at an election we have two candidates we have a democratic
+[  793.86s ->   800.10s] candidate and a republican candidate and at this yellow vertical line the election is going to take
+[  800.10s ->   808.74s] place and one of them is going to get elected i am going to plot the probability implied by the market
+[  808.74s ->   815.78s] of either candidate winning what's happening here is we're actually backing out based on the market odds
+[  815.78s ->   821.86s] the probability that's implied and this should be an indicator right of who's going to win
+[  821.86s ->   827.54s] the money isn't going to be biased in any one way right well let's take a look at this example here
+[  827.54s ->   833.22s] you can see the democratic candidate has an 80 chance to win and it's going to continue to change over
+[  833.22s ->   840.74s] time the republican candidate's going to go from below 20 percent to maybe roughly 40 40 and then at the
+[  840.74s ->   849.70s] event what happens well the republican candidate actually wins and the democratic candidate loses
+[  850.50s ->   856.90s] so what does this mean for our probabilities well unlike above when we looked at the law of large
+[  856.90s ->   863.30s] numbers we saw this theoretical convergence the probabilities are well defined and stable if i
+[  863.30s ->   871.70s] continue to spin the roulette wheel and i record all the outcomes i will find that the empirical probabilities
+[  871.70s ->   878.98s] that is the data that i record will converge to the theoretical ones but this is not true with something like
+[  878.98s ->   887.30s] an election this is based solely on the market and what the market is pricing the event at we can't
+[  887.30s ->   894.18s] replay this election a thousand times to observe if the democratic candidate really had roughly what
+[  894.18s ->   899.94s] an eighty percent chance of winning we can't just replay this election a thousand times and see oh
+[  899.94s ->   906.82s] you know they won roughly 800 out of the a thousand no it it occurs one time and this is where things
+[  906.82s ->   914.02s] start to get really tricky because these are not really probabilities in the frequentist sense by
+[  914.02s ->   920.10s] frequentist i mean in the context of this random system we have these probabilities that don't change
+[  920.10s ->   927.78s] right but now when we look at something like election betting these probabilities are a little more arbitrary
+[  927.78s ->   934.58s] they are reflecting a belief not a frequency and this is where things start to get
+[  935.30s ->   940.18s] a little crazy in the context of quant and discretionary trading effectively this is where
+[  940.18s ->   946.02s] quants and discretionary traders are going to begin to disagree with one another as to how to approach
+[  946.66s ->   954.02s] this system in terms of generating profit so let's talk about generating profit first how can we profit
+[  954.02s ->   962.50s] from some sort of you know implied probability well if we believe either systematically or based on our
+[  962.50s ->   969.86s] our experience that probability is over or understated we can make a bet in either direction and if we're
+[  969.86s ->   976.26s] right on average we will accumulate wealth what i have here is an example of this here i'm saying that okay
+[  976.26s ->   985.22s] well based on my experience democrats tend to have a systematically inflated probability of winning so i'm going to
+[  985.22s ->   993.22s] bet on the republican candidate and what happens here well the market is implying 80 20 but i'm suggesting
+[  993.22s ->  1000.42s] that the actual is 70 30 and if i'm right and i go out and i bet on a ton of elections and this ends up
+[ 1000.42s ->  1006.66s] being the case this is going to be my wealth path in other words i'm acting with positive expected value
+[ 1006.66s ->  1011.94s] and i'll be able to accumulate that wealth essentially what i'm doing is i'm either using
+[ 1011.94s ->  1018.02s] some sort of systematic statistical evidence to suggest that the democratic candidate has an
+[ 1018.02s ->  1023.94s] inflated probability or it's going to be based on my experience i'm saying hey there's no way the
+[ 1023.94s ->  1030.18s] republican candidate has a 20 chance of winning based on you know this poll there's just there's just no
+[ 1030.18s ->  1035.22s] way so those are generally the two schools of thought when you go about looking at some sort of system
+[ 1035.22s ->  1041.70s] like this with the with dynamic probabilities arbitrary probabilities when we go about profiting
+[ 1041.70s ->  1048.50s] from these uncertain systems those are generally the two approaches and this is where quants and
+[ 1048.50s ->  1053.86s] discretionary traders begin to disagree with one another quants are going to take a more scientific
+[ 1053.86s ->  1059.06s] approach looking for some sort of structural or statistical mispricing and aim to profit from that
+[ 1059.06s ->  1065.06s] in a forward-looking sense versus a discretionary trader who is going to try to do the same
+[ 1065.14s ->  1074.18s] but with their experience and of course hybrid approaches also exist now that we kind of understand the
+[ 1074.18s ->  1082.18s] perspective of profiting from an uncertain system from either type of trader we can discuss this idea
+[ 1082.18s ->  1089.86s] of convergence and then discuss why technical analysis really can't be disproven so let's start first
+[ 1089.86s ->  1096.58s] with this idea of lack of convergence from these election events if i run this animation here what
+[ 1096.58s ->  1104.42s] you're going to see is a similar path that we had above to the implied probabilities but in this case
+[ 1104.42s ->  1110.42s] we're actually running the election maybe say 500 times and we're observing how many times the
+[ 1110.42s ->  1117.38s] democratic candidate wins versus the republican candidate and here you can see the market is implying an
+[ 1117.38s ->  1125.78s] 80 20 probability but if we were to actually run that election at that same point in time maybe say 500
+[ 1125.78s ->  1133.14s] times the true distribution actually looks like 70 30 and this is precisely what i meant when i showed you
+[ 1133.14s ->  1141.46s] this animation above of our player wealth path making some sort of in some sort of informed bet you can do
+[ 1141.46s ->  1148.50s] this in a quantitative or discretionary capacity it just means that this idea would have to be true
+[ 1149.22s ->  1156.98s] on average for all of your bets in other words we can't replay the same event we can't replay the same
+[ 1156.98s ->  1164.74s] election 500 times but if you observed these mispricings from the market 500 times across 500 different
+[ 1164.74s ->  1172.18s] elections and you were right in the sense that the actual the empirical distribution was different in
+[ 1172.18s ->  1180.02s] the way that you bet on it from the market distribution then you could in fact profit from it
+[ 1180.02s ->  1185.62s] now in this context if you're familiar with implied probabilities and event betting maybe you're looking
+[ 1185.62s ->  1191.14s] at something like polymarket and you're looking at the implied probability of an event you'll see people
+[ 1191.14s ->  1200.02s] say oh well implied probabilities predict the outcome that is going to depend on what your definition of
+[ 1200.02s ->  1207.94s] predict is is it right on average sure but so is my observation here in terms of a mispricing
+[ 1208.66s ->  1213.78s] right i'm still saying there's over a 50 chance that the democratic candidate wins
+[ 1213.78s ->  1219.46s] we can't observe what the distribution actually looks like and this is a very important distinction
+[ 1219.46s ->  1225.94s] essentially what i'm saying is yeah if you look at a basic regression implied probabilities predict
+[ 1225.94s ->  1234.34s] the outcome but but what about when it can't right that's structurally something that we can profit from
+[ 1235.06s ->  1242.50s] in these uncertain events essentially if the market is what pricing that this event has a very high
+[ 1242.50s ->  1248.66s] likelihood of being the outcome and it's this one there's a tremendous swing that we can catch
+[ 1248.66s ->  1256.58s] in terms of pnl so this is going to bring us to this idea of why technical analysis really can't be
+[ 1257.14s ->  1264.26s] disproven and trust me as as a quant i would like to say that we can outright disprove it but in the
+[ 1264.26s ->  1270.66s] context of this election betting example this is precisely why we can't just outright disprove it we
+[ 1270.66s ->  1280.82s] can't just replay the same technical event 10 000 times that informed some sort of trader if they made
+[ 1280.82s ->  1287.78s] money with it they made money with it and that is going to go into their edge in a discretionary capacity
+[ 1288.58s ->  1294.34s] the first rule of science is what a lack of evidence does not constitute a lack of existence
+[ 1295.06s ->  1301.54s] you can posit evidence against an event but then that goes into the question what constitutes valid
+[ 1301.54s ->  1307.78s] evidence against it you can't just run a back test with a technical and say okay this disproves it
+[ 1307.78s ->  1313.22s] because what i don't have to trade that technical all the time i can trade it whenever i want in a
+[ 1313.22s ->  1319.38s] discretionary capacity and this is why it's a very frustrating space to involve yourself in because
+[ 1319.38s ->  1325.14s] you don't actually know what it looks like from a structural or systematic perspective if you're just
+[ 1325.14s ->  1331.62s] operating as a discretionary trader and this is why there tends to be a lot of fraud and misinformation
+[ 1331.62s ->  1337.62s] in this space because it's inherently uncertain if you just run a back test on a technical yeah it's going
+[ 1337.62s ->  1344.74s] to do terribly but if you trade it in a discretionary way and you only create it at certain times
+[ 1345.30s ->  1352.18s] and you trade it based on your experience and intuition then your ability to adapt is going to be
+[ 1352.18s ->  1359.22s] completely different than some sort of fixed setting and this is going to get into the idea of edge
+[ 1359.86s ->  1366.26s] and policy functions so how do we act with positive ev that's the question we should be asking ourselves
+[ 1366.26s ->  1370.90s] right now we have a good understanding of the trading space we know the difference between a random
+[ 1370.90s ->  1376.74s] system and uncertain system we know that in an uncertain system our actions are going to influence
+[ 1376.74s ->  1385.54s] the trajectory of our wealth path and our objective is to maximize our wealth path trajectory so how do we
+[ 1385.54s ->  1394.18s] do this well in the context of trading we are assuming a risk anytime we go out and engage in some sort of
+[ 1394.18s ->  1399.86s] trade doesn't matter who you are you could be a news outlet a politician broker a prediction market day
+[ 1399.86s ->  1407.06s] trading guru nobody knows what the outcome of any one event will be this is an important idea and we
+[ 1407.06s ->  1412.82s] know this in the context of both random and uncertain systems but the reason why this is important is
+[ 1412.82s ->  1421.30s] because it gets at the goal of every trader it's not just about maximizing expected value it's also about
+[ 1421.30s ->  1426.02s] minimizing risk and i have a great animation here to show you exactly what this looks like
+[ 1426.87s ->  1430.71s] if i run this for you here you're going to see a whole bunch of different wealth paths
+[ 1430.71s ->  1438.15s] i have some where risk is very high and somewhere risk is very low on the diagonal risk is low on the
+[ 1438.15s ->  1445.43s] off diagonal risk is very high if i told you to pick a chart and i'm going to pick a sample path at
+[ 1445.43s ->  1451.75s] random for you to walk which chart would you prefer well i certainly would prefer this one because if you
+[ 1451.75s ->  1459.83s] pick a sample path at random check it out the risk is very low everything is very tightly compact to
+[ 1459.83s ->  1466.63s] the theoretical expected value line and everything has positive ev versus what if you take a look at
+[ 1467.27s ->  1474.39s] the more volatile paths here yeah you might walk a lucky path but what is going to happen on the
+[ 1474.39s ->  1478.31s] downside you're going to walk a very unlucky sample path and you're going to end up losing more
+[ 1478.31s ->  1486.07s] money than even is offered on average this is getting into the idea of not just maximizing ev
+[ 1486.07s ->  1492.47s] we're not just trying to maximize the trajectory of our wealth path we also want to minimize the risk
+[ 1492.47s ->  1498.07s] we want it to be as tight to that theoretical value as possible and of course different strategies
+[ 1498.07s ->  1502.95s] are going to have different risk appetites so on and so forth but this is the general gist we're
+[ 1502.95s ->  1510.23s] actually not just using eggs or expected value now we're also considering this idea of variance in
+[ 1510.23s ->  1517.03s] our wealth path or standard deviation or in one measure the idea of a sharp ratio this is going to
+[ 1517.03s ->  1523.91s] be the overall risk adjusted return of your strategy the reason why we're even discussing this idea
+[ 1523.91s ->  1530.31s] is because before we look at discretionary and quantitative trading strategies we need to understand the
+[ 1530.31s ->  1540.71s] time variant nature of the policy function so what i mean by this is this pi star function here is
+[ 1540.71s ->  1550.15s] essentially going to be our action our action that is going to lead to some sort of optimal reward to risk
+[ 1550.15s ->  1557.03s] ratio and by optimal i mean essentially i'm after something like this i don't want something like this
+[ 1557.03s ->  1563.27s] i don't want something like this or this i want a very stable forward-looking performance with low
+[ 1563.27s ->  1572.31s] volatility and a lot of positive expected value effectively mathematically whether or not you are
+[ 1572.31s ->  1578.63s] a quant trader discretionary trader whatever this is what you're doing you are maximizing your risk
+[ 1578.63s ->  1584.87s] adjusted return according to some sort of policy function this is mathematically where quants and
+[ 1584.87s ->  1591.27s] discretionary traders are going to disagree in terms of their policy function this can't just be
+[ 1591.27s ->  1600.23s] reduced to a strategy because quants don't follow just one strategy discretionary traders don't follow just
+[ 1600.23s ->  1607.03s] one strategy you can't think of pi star as a trading strategy it's not just some sort of
+[ 1607.03s ->  1613.83s] fixed trading system it is a collection of actions and you can act in any way that you like
+[ 1614.47s ->  1622.55s] pi star is the optimal set of actions allowing you to maximize your risk adjusted return this is
+[ 1622.55s ->  1629.59s] precisely what we are trying to do doesn't matter what type of trader we are our goal is to find a pi
+[ 1629.59s ->  1637.43s] star collection of actions that will allow us to maximize our risk to reward ratio in other words we
+[ 1637.43s ->  1643.67s] want to find a pi star that is essentially going to make our wealth path look something like this
+[ 1643.67s ->  1650.07s] in efforts to find this pi star this optimal policy function let's use machine learning let's see if
+[ 1650.07s ->  1658.87s] we can learn effectively this optimal policy function this pi star to trade we want to maximize our sharp
+[ 1658.87s ->  1664.39s] ratio we want to maximize this expected value to risk let's see if we can use machine learning for
+[ 1664.39s ->  1670.23s] it what i'm going to do is try to teach a machine learning algorithm to trade nvidia i'm going to break it up
+[ 1670.23s ->  1677.11s] into a training validation and testing period and i am going to try to estimate the pi star function
+[ 1677.11s ->  1684.63s] the set of actions to take to essentially optimize my expected value what happens when i do this well
+[ 1684.63s ->  1690.63s] effectively this is what i'm approximating this pi star function here and in my training period it does
+[ 1690.63s ->  1697.99s] very well it has a sharp ratio of 3.01 but what happens when i step outside of that training window
+[ 1697.99s ->  1703.91s] my validation and testing sharp are nowhere near the performance that i observed in the training
+[ 1703.91s ->  1711.27s] window i overfit it to noise and this is a really important idea because this is effectively showing us
+[ 1711.83s ->  1720.79s] that the optimal policy function the conditional optimal policy function is not equal to the unconditional
+[ 1720.79s ->  1729.83s] optimal policy function moreover what i'm saying is pi star changes over time it's going to continue to
+[ 1729.83s ->  1737.67s] change over time so if it changes over time we need to be able to change over time that is exactly why
+[ 1738.23s ->  1747.03s] we need something else beyond just a naive fixed strategy to trade effectively policies are dynamic
+[ 1747.03s ->  1753.91s] if i was to trade a fixed strategy in a backtest window maybe it performs really well and then
+[ 1753.91s ->  1759.03s] when i deploy it live you can see we get performance degradation that shouldn't happen if we had a
+[ 1759.03s ->  1766.47s] dynamic strategy and a good policy function whether we're a quant or discretionary trader we should see
+[ 1766.47s ->  1774.31s] stable performance in a forward looking setting this is exactly why we're talking about policy functions
+[ 1774.31s ->  1780.55s] right now because it doesn't matter what type of trader you are as time progresses you need to continue
+[ 1780.55s ->  1788.23s] to adjust your set of actions how you go about executing trades you don't just get to find your
+[ 1788.23s ->  1795.27s] optimal policy function your optimal set of actions and then sit there and that's it and and that's and
+[ 1795.27s ->  1802.39s] you're done no you have to continue to optimize your policy function and manage your risk that is
+[ 1802.87s ->  1811.99s] precisely what it means to be a trader you are a risk taker the only reasonable fixed policy function
+[ 1811.99s ->  1816.71s] if you want to be lazy because trading is a job it's work it's quite literally a job
+[ 1817.59s ->  1825.91s] the only reasonable fixed policy function that there is is buy and hold and largely most people should not
+[ 1825.91s ->  1832.07s] be traders they should just operate with this fixed policy function because it's very easy to just
+[ 1832.63s ->  1840.55s] invest in the s p 500 the nasdaq whatever some sort of index some sort of average and that is going to
+[ 1840.55s ->  1848.47s] yield them far more wealth over time than is their accumulation of negative ev because they don't know
+[ 1848.47s ->  1855.35s] how to trade so if we're thinking about policy functions if we're thinking about this idea of trading we need
+[ 1855.35s ->  1861.83s] to understand this idea that the pi star function this optimal set of decisions is going to continue
+[ 1861.83s ->  1869.19s] to change over time if we're not prepared to trade in that way we're not prepared to act dynamically again
+[ 1869.19s ->  1875.91s] regardless of the type of trader that we are then we can't make optimal decisions in this space in the face of
+[ 1875.91s ->  1884.07s] uncertainty as a risk taker that is an absolutely critical idea so this is kind of confusing right
+[ 1884.07s ->  1889.43s] our pi star function our optimal policy is going to change over time how do we visualize this how do we
+[ 1889.43s ->  1895.83s] interpret it well i have a chart here to help us do that this is an abstraction but it helps us understand
+[ 1895.83s ->  1902.47s] why we have to continue to update our policy function so on the y-axis i have the expected value
+[ 1902.47s ->  1910.39s] of our wealth path on the x-axis i have the policy function this is our pi star we choose and each
+[ 1910.39s ->  1916.55s] of these lines is going to be a different time period so each of these curves is a different set of
+[ 1916.55s ->  1922.47s] time periods we have orange we have green and we have blue and what you'll notice here is these stars
+[ 1922.47s ->  1930.15s] that is the optimal policy the pi star for each set is going to differ but i want you to notice what
+[ 1930.15s ->  1937.11s] happens if you choose the optimal policy for any one specific time and then you look at the other
+[ 1937.11s ->  1945.51s] times so if we choose the orange optimal policy and we're acting in a blue period our expected value is
+[ 1945.51s ->  1951.11s] actually negative if we go up to the orange star then we go to the blue line you can see if we go all
+[ 1951.11s ->  1957.19s] the way across to our expected value we have negative ev so we don't want to act with a
+[ 1957.83s ->  1966.63s] orange pi star if we are operating in a blue space the same is true with the the blue space over here
+[ 1966.63s ->  1972.39s] if we operate with a blue pi star we go down to the orange we're starting to approach a negative ev
+[ 1972.39s ->  1978.63s] we don't want that either in reality we want to find some sort of of pi star like the green one
+[ 1978.63s ->  1984.95s] it's going to bridge the gap of optimality for both spaces that is effectively how you should start to
+[ 1984.95s ->  1991.51s] look at this space we want to find some sort of global policy function a series of actions that
+[ 1991.51s ->  1999.43s] we can execute on in different regimes different times so on and so forth so that we can continue to
+[ 1999.43s ->  2005.27s] accumulate positive expected value in each environment that is precisely what this chart
+[ 2005.27s ->  2013.35s] is suggesting it's saying hey if we act optimally over here that is not optimal over here and vice versa in
+[ 2013.35s ->  2020.07s] other words we can't just fix a policy function and trade with it we need to continue to update our
+[ 2020.07s ->  2024.95s] sets of actions we need to trade dynamically and that's exactly what this green line is telling us
+[ 2024.95s ->  2030.71s] it's saying hey we really need to update our beliefs dynamically we need to change how we act in
+[ 2030.71s ->  2038.31s] different regimes and this is a chart and abstraction to suggest why that pi star that optimal set of actions
+[ 2038.31s ->  2044.15s] is in fact time variant now that we understand the trading space we understand the goal of every
+[ 2044.15s ->  2049.11s] trader that is to maximize some sort of risk adjusted return and how they go about doing this
+[ 2049.11s ->  2054.87s] according to some sort of policy function we can talk about different components of policy functions
+[ 2054.87s ->  2061.59s] that is we can now talk about discretionary trading and quantitative trading the best way to
+[ 2061.59s ->  2069.03s] understand discretionary trading is through the lens of poker which also involves risk taking and
+[ 2069.03s ->  2076.95s] uncertainty it's another uncertain system there is no pi star that is going to yield a one-size-fits-all
+[ 2076.95s ->  2083.67s] set of rules to win every hand but again our objective here is to maximize some sort of what
+[ 2083.67s ->  2090.15s] some sort of risk adjusted return and here i have an example of how this can occur
+[ 2090.79s ->  2098.15s] using experience in the context of poker so what i have here is pocket aces so i'm sitting here i'm
+[ 2098.15s ->  2105.59s] playing poker i have pocket aces and there are five players i'm playing against now theoretically i actually
+[ 2105.59s ->  2112.15s] have a 46 chance and unconditional probability of winning against those players so over half the time i
+[ 2112.15s ->  2119.51s] should be folding but watch what happens to my wealth path as i continue to simulate games of me playing
+[ 2119.51s ->  2126.79s] these pocket aces i'm actually accumulating wealth and my actual probability of winning is 60 40.
+[ 2127.51s ->  2133.75s] why is this the case well again this goes back to the idea of implied probability that we talked about
+[ 2133.75s ->  2141.51s] earlier there is no notion of convergence when we looked at this election betting example we talked about
+[ 2141.51s ->  2149.75s] how yeah the market's implying 80 20 but in reality it could be 70 30 it could be 51 49 we don't know we
+[ 2149.75s ->  2158.15s] can't run that election 10 000 times and i can't necessarily play the same hand against five players
+[ 2158.15s ->  2166.95s] 10 000 times but the exact same logic is true if i'm doing this on average and i'm making informed
+[ 2166.95s ->  2172.95s] decisions in the face of uncertainty and i'm forcing other people to fold when i actually should be folding
+[ 2172.95s ->  2178.79s] myself then i can actually accumulate that issue over time and that is precisely what this looks like
+[ 2178.79s ->  2184.79s] instead of 46 54 i actually have 60 40 and that is going to be based on my policy function
+[ 2184.79s ->  2189.83s] function theoretically here we should not be accumulating wealth the raw probability is against
+[ 2189.83s ->  2196.31s] us and in terms of our bet sizing we could end up just with a negative wealth path but our experience
+[ 2196.31s ->  2202.23s] and our ability to bet effectively and bluff effectively actually leaves us with a positive
+[ 2202.23s ->  2209.99s] wealth path this is the exact same idea that we talked about in the accumulation of wealth in terms
+[ 2209.99s ->  2216.39s] of betting on some sort of implied probability i am just going to have to be correct on average in the
+[ 2216.39s ->  2225.03s] context of election betting here i'm going to need on average people to fold when i should have otherwise
+[ 2225.03s ->  2232.55s] folded that is theoretically what leaves us with this positive expected value so understanding this why
+[ 2232.55s ->  2238.55s] in the context of you know any sort of implied probability we can influence the outcome because
+[ 2238.55s ->  2244.63s] the entire space is uncertain that is what is going to dictate the actual trajectory of the wealth path
+[ 2244.63s ->  2251.75s] that we walk and of course that is going to be generated by our policy function and that as we know is
+[ 2251.75s ->  2261.35s] going to change over time to put it concisely the raw edge of pocket aces is against us it has a negative
+[ 2261.35s ->  2267.27s] expected value we should have a negative trajectory for our wealth path but if we choose the right pi star
+[ 2267.27s ->  2273.67s] the right set of actions we can make it actually positive and that is our goal in this space as a
+[ 2273.67s ->  2280.39s] discretionary trader we are trying to influence the trajectory of our wealth paths effectively you can
+[ 2280.39s ->  2285.51s] look at this like technical analysis if i back test it theoretically it's going to have a very poor
+[ 2285.51s ->  2292.31s] performing edge but if i trade it based on intuition and experience i don't trade it 24 7 and just use it
+[ 2292.31s ->  2299.03s] as a blind indicator then i can turn it into some sort of positive edge it's unsatisfying because
+[ 2299.03s ->  2305.43s] it's not structural it's not scientific but it doesn't make it any less viable i have an example
+[ 2305.43s ->  2312.63s] here of how i go about discretionary trading in the context of vol surface calibration and reversion not
+[ 2312.63s ->  2317.91s] all discretionary trading is high touch i don't have to sit behind my computer all day and click buy here
+[ 2317.91s ->  2325.67s] sell here it can be mid low touch where i choose to turn on systems at my own discretion that is also
+[ 2325.67s ->  2330.79s] discretionary trading it doesn't have to be based on a fixed rule set and i have an example of this
+[ 2330.79s ->  2336.47s] here with my volatility trading system essentially i want to talk about the strategy theoretically and why
+[ 2336.47s ->  2343.35s] i'm not concerned about my edge and why it is discretionary and why there's no fixed rule set for it
+[ 2343.35s ->  2349.59s] so what i have here is effectively this is the marketable surface i am going to fit some sort of
+[ 2349.59s ->  2355.91s] stochastic bowl model to it maybe some sort of heston model and i am going to observe dislocations
+[ 2355.91s ->  2362.31s] from the volatility surface that i fit and i'm going to effectively trade the reversion back to that
+[ 2362.31s ->  2368.39s] theoretical bowl surface and accumulate that wealth that is my trader wealth path on the right here
+[ 2368.39s ->  2372.47s] so i'm going to calibrate it i'm going to observe dislocations and i'm going to take positions
+[ 2372.47s ->  2378.23s] assuming that that's going to correct back to the the volatility surface that i calibrated
+[ 2379.24s ->  2386.44s] now this works very well when the market has a high perceived volatility now i'm not talking about
+[ 2386.44s ->  2392.20s] when vol is just high i don't get to dictate what the market thinks is high volatility if we've been
+[ 2392.20s ->  2400.68s] operating in you know if the vix has been 15 for the past three months six months then 18 20 is high
+[ 2400.68s ->  2407.00s] i don't get to dictate what the market perceives as high i could tronch it i could say okay 15 is low
+[ 2407.56s ->  2415.48s] 25 is mid and 30 plus is high right but that's all arbitrary your interpretation of the market's
+[ 2415.48s ->  2421.88s] interpretation of vol is entirely subjective i don't get to choose what that is so that's why this
+[ 2421.88s ->  2427.88s] is a discretionary system i'm going to turn it on when i think the market's perception of volatility is
+[ 2427.88s ->  2434.12s] higher and i'm going to attempt to profit from these dislocations because i think that vol is
+[ 2434.12s ->  2439.64s] essentially going to be mispriced systematically and it's going to revert to some sort of mean surface
+[ 2439.64s ->  2445.56s] and that is effectively the discretionary strategy that's the theory and i can't leave it on 24 7 it's
+[ 2445.56s ->  2452.44s] going to be at my own discretion if i ran this 24 7 i would just continue to accumulate losses i need to
+[ 2452.44s ->  2459.16s] run this when i think there is an edge that is my objective so why am i showing you this what does
+[ 2459.16s ->  2464.52s] this look like and why am i not concerned about my edge well firstly i'm not concerned about my edge
+[ 2464.52s ->  2470.84s] because when i turn this on is going to be entirely up to me it's not some sort of fixed metric it's not
+[ 2470.84s ->  2476.20s] going to be when the vix is over 30 now all of a sudden i have you know 10 000 people who are aware
+[ 2476.20s ->  2481.32s] of this strategy and they're all going to try to run it no it doesn't work like that it's not a fixed
+[ 2481.32s ->  2487.80s] level it's at my own discretion okay well great so that's that's one aspect of it why why am i also
+[ 2487.80s ->  2493.80s] not concerned about my edge well what does this actually look like here is my cc plus plus code
+[ 2493.80s ->  2501.67s] this is the calibration engine i have a demo vol surface here for you i'm going to run it in cc plus
+[ 2501.67s ->  2514.55s] plus so you can see the calibration process it is very quick very efficient and very very accurate in
+[ 2514.55s ->  2522.07s] terms of institutional grade calibration this is precisely what i studied as a quantitative
+[ 2522.07s ->  2527.99s] researcher and this is an institutional grade calibration system i don't just naively calibrate
+[ 2528.63s ->  2535.19s] a heston model to a marketable surface i consider the structure i wait i have a weight structure there's
+[ 2535.19s ->  2542.47s] so much more that goes into this so the reason why i'm showing you this is because this uses a fast
+[ 2542.47s ->  2546.87s] fourier transform it uses a whole bunch of different optimization schemes this is institutional grade
+[ 2546.87s ->  2556.39s] code that i've developed over several years if you can just go out and write institutional grade cc plus
+[ 2556.39s ->  2562.79s] plus code go for it but this is why i'm not worried about my edge i'm sitting here behind how many lines
+[ 2562.79s ->  2570.55s] of cc plus plus is this this is for the calibration engine 600 and that's largely why i'm not worried
+[ 2570.55s ->  2577.03s] about it what retailer is going to write c c plus plus c c plus plus code for an institutional grade
+[ 2577.03s ->  2582.15s] hesting calibrator there aren't going to be very many that are capable of doing that so i'm not worried
+[ 2582.15s ->  2587.75s] about my edge this is a discretionary strategy not all strategies are going to be high touch i don't
+[ 2587.75s ->  2593.19s] have to just sit there buy and sell but when i choose to turn them on and why i choose to turn them
+[ 2593.19s ->  2597.83s] on that's going to be at my own discretion from the point of view of a discretionary trader this is the exact
+[ 2597.83s ->  2606.71s] same idea as the poker example and the exact same idea as the election betting example that is i'm
+[ 2606.71s ->  2612.95s] choosing when to trade this particular strategy and if i'm right on average that is when is a good time
+[ 2612.95s ->  2620.23s] to turn it on or turn it off i'll accumulate wealth versus if i what naively leave it on 24 7 there's
+[ 2620.23s ->  2626.39s] nothing that's going to guarantee that my wealth path actually works out i don't want to trade this 24
+[ 2626.39s ->  2633.27s] seven i understand that it works better in certain regimes that's what makes this discretionary i can
+[ 2633.27s ->  2640.47s] try to attach some sort of quantitative measure to what a market's interpretation of volatility actually
+[ 2640.47s ->  2647.03s] is and fair enough but that's always going to be the game we play then i'm starting to consider
+[ 2647.03s ->  2653.51s] another model informed value to determine whether or not to turn the system on or off again that's
+[ 2653.51s ->  2659.03s] still discretionary trading even if i try to attach a measure to it so in any case this is a good
+[ 2659.03s ->  2663.19s] example of what discretionary trading might look like this is an example of how i operate in the
+[ 2663.19s ->  2670.15s] space let's talk a little bit about the performance stability and risks associated with discretionary
+[ 2670.15s ->  2675.19s] trading in the context of performance stability if i'm right on average yeah i'm going to continue to
+[ 2675.19s ->  2680.39s] accumulate wealth that's what we saw in all of these charts right and this one and this one even in
+[ 2680.39s ->  2686.07s] the poker or the election betting example right if i'm right on average i'll accumulate wealth but
+[ 2686.07s ->  2690.63s] what does it actually look like well i'm going to turn the system on and off and if i'm right on
+[ 2690.63s ->  2696.39s] average then i should see similar performance in regimes where i turn it off and turn it back on so
+[ 2696.39s ->  2702.23s] you can see here i turn it on then i have a period where i leave the system off and then i turn it on
+[ 2702.23s ->  2708.55s] again and i observe similar performance and that is going to be my objective is to find different
+[ 2708.55s ->  2715.03s] periods where i observe a regime that i want to engage in this type of strategy and that is based
+[ 2715.03s ->  2720.95s] on experience and this is largely why i always argue that nobody can teach you to trade i don't have to
+[ 2720.95s ->  2727.43s] sit here and defend my choices to you of why i'm turning this on or why i'm turning this off if i was
+[ 2727.43s ->  2734.71s] playing poker i don't have to defend why i called or raised i'm a risk taker i am willing to accept the
+[ 2734.71s ->  2741.35s] risks for the possible return that is literally how this space functions and i don't have to answer
+[ 2741.35s ->  2747.35s] to anyone i can choose when i want to turn this off and when i turn this you know on it's going to be
+[ 2747.35s ->  2754.39s] entirely up to me but of course with this type of trading there are significant risks you know you
+[ 2754.39s ->  2762.63s] have behavioral risk right what if i think i'm right and i start to observe a pretty nasty drawdown so
+[ 2762.63s ->  2766.71s] you know if we look at this wealth path up here maybe i turn it on and then i start to observe
+[ 2766.71s ->  2772.23s] a drawdown but i leave it on right because i think i'm right no i really should be updating my
+[ 2772.95s ->  2777.59s] my interpretation of the regime and i should turn it back off once i start to observe this drawdown
+[ 2777.59s ->  2783.83s] because that's not the performance that i should be observing right so that's a component of it right
+[ 2783.83s ->  2789.43s] there's this behavioral component there's you know an experience component there's some sort of
+[ 2789.43s ->  2795.03s] of fatigue position liquidity there there's all of these different risks that are associated with
+[ 2795.03s ->  2801.83s] this type of trading but those are risks that you have to accept if you are going to pursue some sort
+[ 2801.83s ->  2808.39s] of return and yeah of course you know there's there's the emotional component to losses and and this or
+[ 2808.39s ->  2814.23s] that but again we're not just trading one strategy you shouldn't be trading just one strategy you should have
+[ 2814.23s ->  2820.07s] a series of strategies and you should be trading all of them in efforts of what positive expected
+[ 2820.07s ->  2826.55s] value maximizing your risk adjusted return that is the objective here so the justification for
+[ 2826.55s ->  2833.51s] stability and a forward-looking capacity is based on your experience it's based on your ability to
+[ 2833.51s ->  2839.91s] continue to identify reasonable regimes to trade a strategy and that's what it means to be an experienced
+[ 2839.91s ->  2846.39s] discretionary trader and of course with that you manage the associated risks appropriately so that
+[ 2846.39s ->  2851.83s] is discretionary trading you can operate in a low mid or high touch capacity your strategies will vary at
+[ 2851.83s ->  2857.59s] different times and that is effectively what we observed earlier with the different pi star functions
+[ 2857.59s ->  2864.15s] that is your pi star function is going to want to be time variant your optimal set of actions is going to
+[ 2864.15s ->  2872.31s] change as you continue to experience your environment so if that's discretionary trading then what is
+[ 2872.31s ->  2878.07s] quantitative trading well quantitative trading is fundamentally different because we are looking for
+[ 2878.07s ->  2884.07s] fixed statistical mispricings and there's a lot of different types of quant trading but i want to focus
+[ 2884.07s ->  2891.19s] on this idea of alternative data because that's where i specialized so in the content in the context of quant
+[ 2891.19s ->  2898.63s] quant research quant trading i was looking at using large alternative data sets to produce alpha and i
+[ 2898.63s ->  2906.63s] largely worked with sentiment so i worked with text data different types of news social data to produce
+[ 2906.63s ->  2913.99s] these signals and what does this actually look like well there is plenty of evidence in the finance
+[ 2913.99s ->  2920.23s] literature publicly about text being able to produce cross-sectional return predictability and
+[ 2920.87s ->  2926.55s] this is all open source you can go read the papers you can read lager mcdonald you can read tetlock you
+[ 2926.55s ->  2932.55s] can read antweiler and frank i mean like you can just go out on google scholar and read them right now i
+[ 2932.55s ->  2941.99s] don't know how many people do that um but yeah there's well documented evidence that text data can actually
+[ 2941.99s ->  2949.91s] produce return predictability that is not reversed it is a permanent impact on the price at least for the
+[ 2950.23s ->  2955.43s] sample periods that were observed in those articles so in this space right what are we doing we're
+[ 2955.43s ->  2959.99s] actually trying to come up with some sort of cross-sectional trading strategy so we're not just
+[ 2959.99s ->  2966.39s] trading one one instrument we're not just looking at the volatility surface of of one particular
+[ 2966.39s ->  2972.31s] underlying no we're actually looking at a cross-section of equities and if you're actually curious about how this
+[ 2972.31s ->  2979.11s] works in the quant data science view you can take a look at my seminar i did a seminar with
+[ 2979.11s ->  2985.19s] ucsd's trend quantitative trading and i talk about in depth how this process actually works i'll leave
+[ 2985.19s ->  2989.27s] a link to the seminar in the description below so if you'd like to check it out highly encourage you to
+[ 2989.27s ->  2993.83s] do so but what we're doing is we're coming up with some sort of signal and we're observing returns in the
+[ 2993.83s ->  3000.95s] returns in the cross section and we're grouping them by decile or quantile and essentially we're
+[ 3000.95s ->  3007.03s] going to form a market neutral portfolio we're going to go along the top bucket of the signal and
+[ 3007.03s ->  3012.63s] short the bottom bucket of the signal so when i do this at 9 20 a.m what i'm going to have is i'm going
+[ 3012.63s ->  3017.99s] to have a set of firms to go long and a set of firms to go short and yeah i'm going to have to consider
+[ 3017.99s ->  3023.27s] things like turnover transaction costs so on and so forth but this is how the strategy functions
+[ 3023.27s ->  3029.75s] there's no discretionary component to it the discretionary component is in the research process
+[ 3029.75s ->  3036.39s] as a data scientist how am i coming up with my aggregate vol feature how am i producing a
+[ 3036.39s ->  3042.79s] sentiment score for the text how am i handling outliers all of those things are handled upstream
+[ 3042.79s ->  3048.63s] in the data analysis pipeline and downstream this is what i'm left with i'm left with
+[ 3048.63s ->  3056.39s] essentially a quantile breakdown of the signal by future returns and of course if i'm operating
+[ 3056.39s ->  3061.43s] with some sort of filtration then all i'm going to have is the signal i'm not going to have the future
+[ 3061.43s ->  3066.55s] returns yet so that's going to tell me effectively what to go long and short and then after the fact i
+[ 3066.55s ->  3071.83s] can plot it by return and if it looks something like this we have a rough roughly monotonic increasing
+[ 3071.83s ->  3077.27s] relationship here then i'm going to be able to profit from that market neutral portfolio so what
+[ 3077.27s ->  3082.15s] does this actually look like well i have a long leg and i have a short leg and then i have the
+[ 3082.15s ->  3088.95s] combined long short strategy and you can see here this has a sharp of roughly 2.72 which is roughly the
+[ 3088.95s ->  3095.03s] sharp of what we observed in an institutional capacity as well and that is what you are trading
+[ 3095.03s ->  3101.59s] on a daily basis it's a statistical mispricing it is not at my own discretion this is a signal that
+[ 3101.59s ->  3110.31s] we developed using large alternative data sets this is quantitative trading this is not based on my
+[ 3110.31s ->  3116.47s] thoughts about the market's interpretation of volatility this is just based on what we observe
+[ 3116.47s ->  3122.07s] as a statistical mispricing so what is the justification of stability and forward-looking
+[ 3122.07s ->  3128.96s] performance of a quant trading strategy well when it comes to the stability we need to keep in mind we
+[ 3128.96s ->  3134.40s] are creating a statistical mispricing so there's something happening structurally in the data that
+[ 3134.40s ->  3142.88s] we observe that's allowing us to capture this alpha and if we look backwards in historic data this
+[ 3142.88s ->  3149.92s] mispricing is going to persist structurally if it existed let's say that this we'll call it a sentiment
+[ 3149.92s ->  3158.88s] mispricing let's say it exists 2020 to 2022 there's nothing that anybody can do to remove that
+[ 3158.88s ->  3165.04s] structural mispricing from the data i can always observe it i can come up with a signal and observe
+[ 3165.04s ->  3170.64s] that statistical mispricing but there's no guarantee it's going to be stable in a forward-looking
+[ 3170.64s ->  3175.76s] setting that is there's no guarantee that it's going to persist and that i'm going to be able to
+[ 3175.76s ->  3183.44s] continue to trade it that is one of the risks that comes with quantitative trading just because
+[ 3183.44s ->  3189.20s] you're trading a market neutral strategy it does not mean you are without risk your alpha can decay
+[ 3189.76s ->  3195.68s] you can have crowding you can allocate too much capital you can observe some sort of scalability issue
+[ 3196.32s ->  3201.60s] the regime could change there's data quality issues tech risk regulatory risk so on and so forth
+[ 3201.60s ->  3208.32s] so much can impact the edge of your strategy your risk adjusted return so what we would like to see
+[ 3208.32s ->  3212.72s] is that structural mispricing that we observed in the data we would like to see that persist in a
+[ 3212.72s ->  3220.16s] forward-looking sense and what we'll see is similar performance as we trade it live that is exactly what
+[ 3220.16s ->  3226.24s] we're looking for in terms of stability our objective as a trader right maximize our risk-adjusted return
+[ 3227.40s ->  3233.32s] okay well even with quant trading we have all of these risks that could lead to performance degradation
+[ 3233.96s ->  3238.76s] this is why we talked about the idea of a pi star function your optimal policy function this is not a
+[ 3238.76s ->  3243.88s] set and forget just because i found some sort of structural mispricing that i can profit from
+[ 3243.88s ->  3250.12s] does not mean that it's going to persist i'm going to continue to have to optimize the strategy or
+[ 3250.12s ->  3256.28s] determine when it's time to retire it altogether maybe it works well in certain regimes maybe i
+[ 3256.28s ->  3262.68s] quantify those regimes maybe this starts to become more of a you know hybrid approach of a quant
+[ 3262.68s ->  3271.08s] versus discretionary signal and that is exactly the point here is you know we may have this these two
+[ 3271.08s ->  3276.52s] camps this war in terms of you know quant versus discretionary trading but at the end of the day it's just
+[ 3276.52s ->  3284.60s] the same game and the same goal maximize risk adjuster return and operate with some sort of risk
+[ 3284.60s ->  3289.80s] assumption and manage the risk to the best of your abilities and continue to optimize your pi star
+[ 3289.80s ->  3297.00s] function they are the exact same in that sense you can quantify their objective mathematically the
+[ 3297.00s ->  3303.16s] only difference is the set of actions that each trader chooses to go about maximizing their risk
+[ 3303.16s ->  3310.20s] adjusted return so quant versus discretionary trading similarities and differences both are risk takers
+[ 3310.20s ->  3315.40s] both are trying to act optimally in the face of uncertainty they just operate with different
+[ 3315.40s ->  3320.20s] policy functions they both can have stable performance in a forward-looking setting but
+[ 3320.20s ->  3327.80s] they can also have performance that degrades they each carry different risks and that is exactly what
+[ 3327.80s ->  3334.20s] we just talked about so what should you do which is better well you're operating in the same game just
+[ 3334.20s ->  3341.40s] with different policies in terms of quant trading there is a high barrier to entry this is a double-edged
+[ 3341.40s ->  3349.96s] sword it is harder to act at all as a quant trader it's harder to even act with any pi star function but
+[ 3349.96s ->  3355.56s] it is easier to act with positive expected value because otherwise you're not going to act at all
+[ 3356.44s ->  3360.76s] what about discretionary trading well there's a low barrier to entry this is a double-edged sword because it
+[ 3360.76s ->  3367.88s] is very easy to act with negative ev you can just accumulate a whole bunch of losses without ever
+[ 3367.88s ->  3374.76s] actually playing the game in an optimal way so what should you do you should learn as much as possible
+[ 3374.76s ->  3381.56s] to make informed decisions in the face of uncertainty nobody can play pocket aces for you nobody can teach
+[ 3381.56s ->  3388.44s] you an optimal pi star function i can show you what i've done in the past i can show you what has worked
+[ 3388.44s ->  3395.08s] for me but whether or not that's going to work again in the future that is subject for discussion
+[ 3395.08s ->  3401.24s] too long didn't watch here's your executive summary trading is an uncertain system it is not purely
+[ 3401.24s ->  3408.60s] random like a lottery ticket or crap slots roulette in either system whether we're talking about a random
+[ 3408.60s ->  3415.32s] system or an uncertain system the outcome of any one event is unknown we're not talking about insider
+[ 3415.32s ->  3420.68s] trading here we're talking about the outcome of one future event nobody knows what that is going to
+[ 3420.68s ->  3427.88s] be now in terms of these systems the expected value is going to dictate the trajectory of our wealth
+[ 3427.88s ->  3434.52s] path but the expected value in an uncertain system is not fixed and is subject to change over time
+[ 3435.40s ->  3440.28s] we see that a trader's policy function that is the set of actions that they can choose
+[ 3440.28s ->  3446.92s] is going to dictate how they can directly influence the trajectory of their wealth path
+[ 3446.92s ->  3453.72s] in terms of ev or edge now when it comes to quants and discretionary traders they are effectively
+[ 3453.72s ->  3459.00s] playing the same game with the exact same goal the only difference is the set of actions in their
+[ 3459.00s ->  3464.76s] policy functions we're not just talking about one strategy here we're talking about the set of
+[ 3464.76s ->  3471.16s] strategies that they can operate with discretionary traders tend to operate with experience intuition
+[ 3471.16s ->  3477.96s] and use models to inform decision making sometimes in a low mid high touch capacity even with algorithmic
+[ 3477.96s ->  3485.56s] systems quant traders tend to operate more scientifically they'll look for structural or statistical mispricings
+[ 3485.56s ->  3491.32s] that they can capture until that alpha decays or gets crowded or or one of whatever reasons why
+[ 3491.32s ->  3498.68s] it is to vanish and then they move on to the next or continue to build out their portfolio of alphas
+[ 3498.68s ->  3507.64s] in itself each are risk takers neither trader is without risk the way they go about taking risks and
+[ 3507.64s ->  3514.76s] managing them do differ greatly and this is largely due to their policy functions now at the end of the day
+[ 3514.76s ->  3520.92s] quant trading has a higher barrier to entry it demands far more math stats coding data science
+[ 3520.92s ->  3526.84s] knowledge and it can also require institutional grade data and systems where discretionary trading
+[ 3526.84s ->  3534.28s] does have a lower barrier to entry but this does make it far easier to operate with negative ev and
+[ 3534.28s ->  3540.68s] allows those with no business to trade to do so some future topics i would like to discuss technical
+[ 3540.68s ->  3545.00s] videos and other discussions i want to get to this idea of advanced markov chains talk about absorbing
+[ 3545.00s ->  3550.36s] states communication classes ergodicity stationary distributions this is going to be certainly a more
+[ 3550.36s ->  3555.08s] technical video let me know in the comments below what you'd like to see as i continue to discuss
+[ 3555.08s ->  3561.48s] these future comments it helps me figure out what videos to create next i'd also like to talk about
+[ 3561.48s ->  3567.08s] stochastic processes more in depth on brownian motion arithmetic geometric brownian motion deriving
+[ 3567.08s ->  3572.36s] the black tools equation the partial differential equation and the analytical numerical solutions
+[ 3572.36s ->  3576.76s] i do want to make this video on the kalman filter this is high in the queue and the idea of
+[ 3576.76s ->  3582.76s] non-stationarity i also want to talk about the idea of like these black swans that is these big regime
+[ 3582.76s ->  3589.40s] changes that can mess with our models that's a very important idea in this quant space that is
+[ 3589.40s ->  3594.68s] effectively the likelihoods of different states of the world are going to change over time and we
+[ 3594.68s ->  3600.68s] need to consider that and account for that i also want to talk about this idea of if the market is in fact
+[ 3600.68s ->  3605.48s] random we kind of teased that a little bit in the start of this video i want to get into maybe a little bit more depth
+[ 3605.48s ->  3611.08s] a little bit more depth on that idea i also want to talk about popular quant models i also want to
+[ 3611.08s ->  3616.04s] talk about maybe buy side versus sell side that starts to get a little more qualitative but it's
+[ 3616.04s ->  3620.84s] going to be largely based on your guys's interest so let me know in the comments below what you'd like
+[ 3620.84s ->  3625.24s] to see next and you know don't worry i haven't forgotten about these quant builds they are certainly
+[ 3625.24s ->  3630.60s] on the docket as well we still got to build that earnings event options trading dashboard that is going to
+[ 3630.60s ->  3636.44s] be an awesome project i also want to build out this live kalman filter model with regime dynamics
+[ 3637.16s ->  3644.12s] we covered markov chains we covered hidden markov models the kalman filter is on deck and once we've
+[ 3644.12s ->  3649.16s] covered all that we can go about building a live system to deploy those models and we can even
+[ 3649.16s ->  3655.40s] deploy that in an automated delta neutral trading system which i think would be a very cool project so
+[ 3655.40s ->  3683.16s] let me know below what you'd like to see next i am very excited for these future topics and that's
+[ 3683.16s ->  3687.00s] going to do it for this video on quant versus discretionary trading i hope you enjoyed i hope
+[ 3687.00s ->  3691.24s] you learned something this video certainly took a lot of effort to create so if you enjoyed it and
+[ 3691.24s ->  3696.12s] you want to see more like in the future please like comment subscribe share it helps me out tremendously
+[ 3696.12s ->  3701.40s] it is always greatly appreciated check out quantkilled.com to master your quantitative skills
+[ 3701.40s ->  3706.52s] other than that thank you so much for watching and i will see you in the next video

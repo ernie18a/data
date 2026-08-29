@@ -1,0 +1,183 @@
+[    0.20s ->     2.34s] I'm not exaggerating when I say this.
+[    2.34s ->     6.88s] If you can somehow manage to not make any of these 6 mistakes I'm about to share with
+[    6.88s ->     9.40s] you, you will instantly become a better trader.
+[    9.40s ->    13.32s] It's important to know how to trade, but it's as equally important to know how not
+[   13.32s ->    14.32s] to trade.
+[   14.32s ->    18.40s] These are the 7 biggest mistakes I see people making when trading.
+[   18.40s ->    19.92s] Let's just jump straight into it.
+[   19.92s ->    24.60s] The first and most crucial mistake I see people making is entering too late.
+[   24.60s ->    28.02s] Look, I completely understand why people make this mistake.
+[   28.02s ->    32.40s] It's a psychological emotion that is just embedded in our heads as human beings.
+[   32.40s ->    34.68s] And that emotion is the fear missing out.
+[   34.68s ->    39.36s] If you don't know this already, and you're a beginner trader, you never ever want to trade
+[   39.36s ->    40.36s] with emotion.
+[   40.36s ->    44.44s] It's a lot easier said than done, and if you actually pay attention to all these mistakes,
+[   44.44s ->    46.66s] almost all of them are emotionally driven.
+[   46.66s ->    51.04s] The sooner you stop trading with emotion, the sooner you start making money.
+[   51.04s ->    54.96s] Even the best of the best get caught up in their emotions, every once in a while.
+[   54.96s ->    58.26s] And sometimes it's hard to realize when it's happening to yourself.
+[   58.26s ->    62.46s] But that's just exactly what separates the profitable traders from the unprofitable.
+[   62.46s ->    66.96s] It's just one of the things you slowly get better at as you gain trading experience.
+[   66.96s ->    71.46s] The most often time people trade with their emotions is when they start thinking they're
+[   71.46s ->    73.02s] going to miss out on the party.
+[   73.02s ->    75.90s] I see this happen all the time.
+[   75.90s ->    79.46s] You look at the chart and you spot a really strong resistance line.
+[   79.46s ->    83.74s] You know in the back of your head if the price ever crosses this line, you can be pretty
+[   83.74s ->    86.00s] damn certain the price will go up from here.
+[   86.00s ->    90.64s] So, your initial plan is you want to enter right when the price crosses this line.
+[   90.64s ->    94.74s] Now, when day trading, a lot of the times you're looking at multiple different stocks
+[   94.74s ->    95.80s] at the same time.
+[   95.80s ->    98.96s] You gotta look at screeners, news, different indicators, etc.
+[   98.96s ->   103.06s] And let's say you come back to the original stock that you were looking at, and while you
+[  103.06s ->   107.84s] were looking at some other ones, there was a sudden spike in price, and the price skyrocketed
+[  107.84s ->   110.46s] past the resistance level just as you predicted.
+[  110.46s ->   115.86s] The only thing is, the price is already way above the line, and you're not in the trade.
+[  115.86s ->   120.40s] This is the exact point of what separates a great trader from an amateur.
+[  120.40s ->   124.40s] The amateur would start feeling emotions, thinking if they don't enter right at this
+[  124.40s ->   128.02s] very point, they're going to miss out on so much money.
+[  128.02s ->   133.06s] So they enter as fast as they can, even though the price is way above their initial entry mark,
+[  133.06s ->   136.44s] and they're taking up way more risk entering at a high price like this.
+[  136.44s ->   140.50s] A professional trader would have realized what's happening and just called it a missed
+[  140.50s ->   145.70s] opportunity and start looking for other and better plays, or maybe even wait for a pullback
+[  145.70s ->   149.06s] to happen so they can enter at a better price with less risk.
+[  149.06s ->   151.42s] My point is, if you're late, you're late.
+[  151.42s ->   155.20s] Don't get caught trying to chase the party and get burnt because you entered at the top.
+[  155.20s ->   159.00s] Because most of the time, it's going to look like this, where there was a sudden spike,
+[  159.00s ->   163.56s] you entered late, and it ended up being the top and started falling right after you entered.
+[  163.56s ->   167.88s] Stick to your strategy, stick to your game plan, and don't change it no matter what.
+[  167.88s ->   171.80s] If you missed the entry point, move on to the next opportunity, or be patient and wait
+[  171.80s ->   174.02s] for it to drop to a better price.
+[  174.02s ->   176.32s] Mistake number 2 – Using Too Much Money
+[  176.32s ->   179.96s] Let's go over a scenario that I'm sure almost all of you have gone through in your
+[  179.96s ->   180.96s] trading career.
+[  180.96s ->   186.06s] Let's say you initially started trading with $100 per trade, a decent amount for you, but
+[  186.06s ->   187.06s] nothing crazy.
+[  187.06s ->   190.42s] And your trading strategy is actually working pretty well.
+[  190.42s ->   194.80s] You're following your strategy perfectly to a tee, and you've been insanely profitable
+[  194.80s ->   198.68s] every single day for the past week, making $500.
+[  198.68s ->   200.82s] Then you get this beautiful, bright idea.
+[  200.82s ->   205.02s] Well, I've been trading with $100 every day, and I made $500.
+[  205.02s ->   209.16s] What if I started trading with $1,000 every day, so I can make $5,000?
+[  209.16s ->   212.90s] Now let's just say in this scenario, $1,000 is a lot to you.
+[  212.90s ->   218.36s] This is an absolute terrible mistake, and I see beginners making this one so often.
+[  218.36s ->   219.44s] Why is this a mistake?
+[  219.44s ->   220.66s] Well, it's pretty simple.
+[  220.66s ->   224.86s] If you're trading with an amount that you're not okay with losing, it's without a doubt
+[  224.86s ->   226.66s] you will start trading with emotion.
+[  226.66s ->   230.40s] Whenever the price goes towards a direction that you don't want it to go, and your balance
+[  230.40s ->   235.70s] starts dropping a crazy amount fast because you're using a higher percentage of your portfolio,
+[  235.70s ->   239.46s] you're going to start freaking out, making you panic sell more often than you normally
+[  239.46s ->   240.46s] would.
+[  240.46s ->   243.68s] If you're trading with an amount that you're not comfortable with losing, it's almost
+[  243.68s ->   246.58s] inevitable that you will trade with emotion.
+[  246.58s ->   248.76s] Trading is not a get rich job.
+[  248.76s ->   251.76s] It's about growing your account slowly and consistently.
+[  251.76s ->   256.28s] The sooner you realize trading is not a get rich quick scheme, the sooner you will start
+[  256.28s ->   258.12s] becoming profitable.
+[  258.12s ->   259.20s] Mistake number 3
+[  259.20s ->   263.70s] This mistake I'm sure every trader has made, and it ended up biting them in the ass because
+[  263.70s ->   264.70s] of it.
+[  264.70s ->   266.64s] Not setting a stop loss.
+[  266.64s ->   270.02s] Especially in day trading, you should always be using a stop loss.
+[  270.02s ->   271.88s] There's no reason for you not to.
+[  271.88s ->   275.90s] Even including swing trading and long term trading, there will always be a point in the
+[  275.90s ->   280.62s] chart where you can say, if the price ever goes below this line, I simply don't want
+[  280.62s ->   281.82s] to be in the trade anymore.
+[  281.82s ->   283.26s] It happens all the time.
+[  283.26s ->   285.72s] You see a trade, it looks extremely bullish.
+[  285.72s ->   288.80s] You enter with excitement because you think it's about to go to the moon.
+[  288.80s ->   293.12s] You don't set a stop loss because your emotions of excitement and greed are blocking
+[  293.12s ->   294.68s] your clear thoughts.
+[  294.68s ->   296.88s] Or you're simply just too lazy to set one.
+[  296.88s ->   302.38s] You go grab a coffee, come back, and the chart just absolutely tanked within 5 minutes, completely
+[  302.38s ->   304.98s] ruining your portfolio with a massive loss.
+[  304.98s ->   309.88s] And I've even seen it get worse from here, where people think to themselves, well I'm
+[  309.88s ->   312.80s] already here at the bottom, I might as well just wait it out.
+[  312.80s ->   318.20s] Then the stock keeps dropping, and dropping, and soon they absolutely have to exit the trade
+[  318.20s ->   320.30s] unless they want a $5 balance.
+[  320.30s ->   324.14s] There will always be a point on the chart where you don't want to be in a position if the
+[  324.14s ->   326.02s] price goes below that point.
+[  326.02s ->   330.00s] Some of you may like larger stop losses, some of you may like tiny ones.
+[  330.00s ->   333.40s] It doesn't matter how big or small it is, just have one.
+[  333.40s ->   339.08s] This next mistake I see people making is using way, way, way too many indicators.
+[  339.08s ->   343.62s] I know, TradingView has millions of indicators, and you're almost like a little kid in a candy
+[  343.62s ->   348.10s] shop that can't choose which one they want, and they just end up choosing all of them.
+[  348.10s ->   351.88s] Sometimes I'll look at a beginner's chart on TikTok or Instagram or whatever the kids
+[  351.88s ->   356.66s] use these days, and it'll literally look like this, where they have millions of indicators,
+[  356.66s ->   360.86s] support, resistances, Fibonacci charts, and everything under the rainbow.
+[  360.86s ->   363.42s] There's absolutely no need for this.
+[  363.42s ->   366.04s] One, you can't even tell what's going on.
+[  366.04s ->   370.72s] And two, most indicators are just momentum indicators, so they're telling all the same
+[  370.72s ->   371.72s] story.
+[  371.72s ->   372.72s] Stick to one strategy.
+[  372.72s ->   376.96s] Don't think just because you add 4 successful trading strategies together that it'll make
+[  376.96s ->   378.96s] one mega trading strategy.
+[  378.96s ->   380.14s] That's not how it works.
+[  380.14s ->   385.34s] Use a couple indicators, use one strategy, and keep your chart clean and easy to read.
+[  385.34s ->   390.44s] The fifth mistake is a very easy one to avoid, but yet people still end up making it all the
+[  390.44s ->   391.60s] time.
+[  391.60s ->   392.96s] Trade with the trend.
+[  392.96s ->   397.94s] In basically all my trading strategy videos, they all have a common core strategy, trade
+[  397.94s ->   398.94s] with the trend.
+[  398.94s ->   399.94s] It's pretty simple.
+[  399.94s ->   403.30s] You want to buy when the market is going up, and you want to sell when the market is going
+[  403.30s ->   404.30s] down.
+[  404.30s ->   405.30s] I know, it's simple.
+[  405.30s ->   409.42s] But I still see way too many people trying to overcomplicate things and trying to buy
+[  409.42s ->   411.42s] the absolute bottom of a market.
+[  411.42s ->   415.14s] They will see a stock that has been dropping for the past month, and they think they figured
+[  415.14s ->   417.46s] it out and found the exact bottom.
+[  417.46s ->   421.32s] What are the chances that out of the past month the stock has been falling, you have found the
+[  421.32s ->   423.08s] exact bottom right here?
+[  423.08s ->   426.28s] If a chart has been falling, it's more likely to keep falling.
+[  426.28s ->   429.20s] If a stock has been rising, it's more likely to keep rising.
+[  429.20s ->   434.20s] Now you may be asking yourself, how do I know if a chart is in an uptrend or a downtrend?
+[  434.20s ->   438.70s] Well I explain it in depth in a lot of my other trading videos, but I'll give you a quick
+[  438.70s ->   439.70s] explanation.
+[  439.70s ->   443.52s] You get on your trading platform, at a 200 day exponential moving average.
+[  443.52s ->   446.92s] If the price is above the 200 day EMA, it's an uptrend.
+[  446.92s ->   448.80s] If it's below it, it's a downtrend.
+[  448.80s ->   450.00s] It's really that simple.
+[  450.00s ->   452.80s] Now of course every trading strategy is different.
+[  452.80s ->   457.62s] For some strategies, an important part of the strategy is buying in a downtrend, or buying
+[  457.62s ->   458.62s] the bottom.
+[  458.62s ->   464.06s] But for the most part, you should be thinking, I'm only buying in an uptrend, and only shorting
+[  464.06s ->   465.06s] in a downtrend.
+[  465.06s ->   469.38s] It'll make your life so much easier when you trade with the flow of the market.
+[  469.38s ->   473.54s] The next huge mistake is one that a lot of people miss, and it can be the difference
+[  473.54s ->   477.98s] maker in you fixing your bad habits or not, lack of record keeping.
+[  477.98s ->   482.38s] If you're a beginner trader, or even if you've been trading in the game for a long time, it's
+[  482.38s ->   484.80s] always good to keep track of your trades.
+[  484.80s ->   487.44s] You can always improve, always.
+[  487.44s ->   491.10s] It's important to look back at your past trades to see what you did good so you can
+[  491.10s ->   493.00s] keep doing those specific things.
+[  493.00s ->   497.02s] But it's also nice to look back at your trades and see what you did incorrectly.
+[  497.02s ->   500.68s] To help bring your emotions and bad trades under control, it's always nice to have
+[  500.68s ->   505.04s] a trading log, where you take a screenshot or even a video of the chart before you even
+[  505.04s ->   506.04s] enter.
+[  506.04s ->   509.80s] Write down why you want to enter the trade in the first place, whether it was fundamental,
+[  509.80s ->   511.86s] technical, or from a news article.
+[  511.86s ->   515.54s] Write down the exact point of when you're going to enter the trade, then when you're
+[  515.54s ->   516.54s] going to exit.
+[  516.54s ->   520.06s] This will not only give you a direct plan, which is what you should have in mind before
+[  520.06s ->   525.50s] entering every trade anyway, but it'll also show you if you yourself followed your own
+[  525.50s ->   526.50s] plan.
+[  526.50s ->   528.74s] Once you exit the trade, write down why you exited.
+[  528.74s ->   530.82s] What emotions were you feeling during the trade?
+[  530.82s ->   531.82s] What you did wrong?
+[  531.82s ->   532.82s] What you did right?
+[  532.82s ->   535.30s] Keeping a trading log helps you achieve two goals.
+[  535.30s ->   536.86s] The first is to make money.
+[  536.86s ->   539.06s] The second is to become a better trader.
+[  539.06s ->   543.30s] You might not succeed on the first goal, but you will absolutely succeed on the second
+[  543.30s ->   544.30s] goal.
+[  544.30s ->   548.66s] You should always and forever try to become a better trader after each and every trade.
+[  548.66s ->   552.84s] No matter how much experience you have, you can always improve.
+[  552.84s ->   556.74s] Trading reveals your weaknesses that you never thought you had, but it can also make you a
+[  556.74s ->   558.88s] stronger person learning from them.
+[  558.88s ->   562.08s] It's important to learn from your mistakes, not just keep making them.
+[  562.08s ->   566.06s] One of those mistakes is setting your stop loss too high or too low.
+[  566.06s ->   571.30s] That's why in this video, I tell you a secret trick that I use all the time to help place
+[  571.30s ->   574.50s] my stop losses in the best spot possible.
+[  574.50s ->   578.18s] So they don't get stopped out as much, but it's still an efficient stop loss.
+[  578.18s ->   580.78s] So check that out and I'll see you guys next time.

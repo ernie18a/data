@@ -1,0 +1,157 @@
+[    0.12s ->     4.08s] This is how I would learn to day trade if I could start completely over.
+[    4.08s ->     7.08s] For some context, I've been trading for about 8 years now.
+[    7.08s ->     8.08s] Man, I feel old.
+[    8.08s ->    12.60s] I originally went to college for finance, graduated, got my degree, was thinking about
+[   12.60s ->    16.80s] going into investment banking, you know, the whole typical college route.
+[   16.80s ->    22.76s] But then I said, f**k that, why would I do that when there's stock trading?
+[   22.76s ->    28.12s] I instantly got hooked, and I realized I could make just as much money, if not more, from
+[   28.12s ->    31.00s] trading than a quote on quote, real job.
+[   31.00s ->    35.96s] So I studied my ass off, putting in years of my time to try to learn all the ins and outs
+[   35.96s ->    36.96s] of the stock market.
+[   36.96s ->    41.44s] I've been teaching and mentoring premium members in my discord for a while now, and even made
+[   41.44s ->    45.68s] my own private indicator engineered with all the things I've learned throughout the years
+[   45.68s ->    47.08s] about algorithmic trading.
+[   47.08s ->    51.48s] Now, I'll admit straight from the get go, when I first started trading, I was terrible.
+[   51.48s ->    53.30s] Like no actually, trash.
+[   53.30s ->    57.96s] And I could only imagine if I found a video exactly like this one, teaching me step by
+[   57.96s ->    63.40s] step on how to go about learning to trade right from the start, like some wax on, wax
+[   63.40s ->    66.84s] off type of s**t, it would have made my learning curve go through the roof.
+[   66.84s ->    70.62s] So that's exactly why I'm making this video, because I know how much this video would have
+[   70.62s ->    73.24s] helped me in the beginning of my trading journey.
+[   73.24s ->    75.64s] First things first, knowledge is power.
+[   75.64s ->    77.42s] I cannot stress this enough.
+[   77.42s ->    80.70s] You should always be learning and trying to improve your trading.
+[   80.70s ->    83.52s] I to this day, still learn on a day to day basis.
+[   83.52s ->    86.56s] I'm constantly trying to improve myself when it comes to trading.
+[   86.56s ->    91.28s] I've easily watched 10,000 plus hours of trading YouTube videos throughout my years
+[   91.28s ->    92.28s] of trading.
+[   92.28s ->    96.84s] And even with all of my experience, I'm still learning new advanced trading techniques
+[   96.84s ->    98.64s] every single day.
+[   98.64s ->   101.96s] So I guess the point I'm trying to get across is never become complacent.
+[  101.96s ->   103.96s] You should always be trying to improve.
+[  103.96s ->   105.08s] Always.
+[  105.08s ->   108.70s] The next tip is probably one of the most important tips I can give.
+[  108.70s ->   113.94s] There are three stages to trading, the learning phase, the testing phase, and the execution
+[  113.94s ->   114.94s] phase.
+[  114.94s ->   120.02s] Now, I cannot tell you how many of my students watched the Wolf of Wall Street, said, hey,
+[  120.02s ->   123.94s] that looks fun, watched three trading YouTube videos, and expect to become millionaires by
+[  123.94s ->   124.94s] the next day.
+[  124.94s ->   129.63s] Hey pal, you just blowing from stupid town?
+[  129.63s ->   132.87s] When first starting out, you should not be thinking about the profits at all.
+[  132.87s ->   137.95s] You should purely be focusing on learning, finding a strategy, testing said strategy, and trying
+[  137.95s ->   139.51s] to improve as a trader.
+[  139.51s ->   142.39s] The profits will be a complete byproduct of your knowledge.
+[  142.39s ->   145.43s] Put in the true effort to learn, and the money will come later.
+[  145.43s ->   146.55s] I promise.
+[  146.55s ->   148.11s] Which brings me to my next point.
+[  148.11s ->   150.27s] You should start off with a trading simulator.
+[  150.27s ->   152.31s] So boring.
+[  152.31s ->   154.51s] Now I know, trading simulators, boring.
+[  154.51s ->   155.51s] I get it.
+[  155.51s ->   159.31s] But listen, especially if you're a new trader, use a trading simulator.
+[  159.31s ->   165.50s] When I first started, I went straight into a live account, which is an absolute terrible
+[  165.50s ->   166.50s] idea.
+[  166.50s ->   170.18s] If there's a to-do list for new traders, step one is lose money.
+[  170.18s ->   171.42s] It's almost guaranteed.
+[  171.42s ->   174.06s] If you're a new trader, you're probably going to lose money.
+[  174.06s ->   178.26s] So you might as well save that money, practice first, until you're confident in your trading
+[  178.26s ->   179.26s] ability.
+[  179.26s ->   180.26s] Then use real money.
+[  180.26s ->   181.66s] Trust me, you'll thank me later.
+[  181.66s ->   185.66s] Now the trick is, you have to trade this trading simulator money like it's your very
+[  185.66s ->   186.66s] own.
+[  186.66s ->   187.66s] Treat it like it's real money.
+[  187.66s ->   190.22s] Try to make yourself believe it's actually real.
+[  190.22s ->   193.42s] So you're feeling the same exact emotions as you would in a live trade.
+[  193.42s ->   197.74s] It's a lot easier said than done, but it's very important that you try to do this.
+[  197.74s ->   201.94s] You should only move to a live account when you have found a successful strategy, have
+[  201.94s ->   206.94s] done thorough testing, learned how to control your emotions, learned risk management, etc.
+[  206.94s ->   211.14s] And most importantly, you are consistently profitable with your strategy.
+[  211.14s ->   212.90s] Only then should you move to a live account.
+[  212.90s ->   217.60s] A lot of new traders move through this phase way too fast and end up losing a ton of money
+[  217.60s ->   218.66s] they shouldn't have.
+[  218.66s ->   221.10s] Only move forward when you are truly ready.
+[  221.10s ->   222.10s] Do not rush it.
+[  222.10s ->   225.22s] Now my next tip is find the right broker.
+[  225.22s ->   229.46s] Now this is a pretty important step as some brokers are a lot better than others.
+[  229.46s ->   232.30s] I feel like I've used every single broker out there by now.
+[  232.30s ->   235.98s] I've tried all the good ones and have also used the not so good ones.
+[  235.98s ->   237.42s] I'll help you out right from the get go.
+[  237.42s ->   241.86s] If you're interested in trading Forex or crypto, I would 100% recommend Hankertrade.
+[  241.86s ->   246.50s] They have some of the lowest fees and spreads on the market and also have a very user friendly
+[  246.50s ->   247.50s] dashboard.
+[  247.50s ->   252.26s] One of the coolest things about their platform is that they have a 100% deposit bonus up to
+[  252.26s ->   254.14s] 25 grand.
+[  254.14s ->   260.66s] So if you deposit $25,000, Hankertrade will literally match that and give you $25,000 for
+[  260.66s ->   261.66s] free.
+[  261.66s ->   262.66s] They are just that awesome.
+[  262.66s ->   266.50s] If you want that deposit bonus, sign up with the link in my description, deposit whatever
+[  266.50s ->   268.38s] you want and they will match it.
+[  268.38s ->   269.98s] Next tip is find a mentor.
+[  269.98s ->   274.46s] Now when I first started, I personally tried to create my very own strategy with my very own
+[  274.46s ->   279.22s] rule set, with my very own testing, with basically no experience in my pocket at all.
+[  279.22s ->   282.26s] There is absolutely no need to reinvent the wheel here.
+[  282.26s ->   286.70s] If someone else is doing something that works, most likely it'll work for you too.
+[  286.70s ->   288.66s] That's why I'd recommend finding a mentor.
+[  288.66s ->   293.22s] There's tons of free information on YouTube, the internet, discord servers, everywhere.
+[  293.22s ->   298.86s] I personally post new videos every single week for absolutely free, all with extremely valuable
+[  298.86s ->   300.18s] information in them.
+[  300.18s ->   303.26s] And there's tons of YouTubers that do the exact same thing.
+[  303.26s ->   306.54s] Find one you like and watch as many videos as you can from them.
+[  306.54s ->   310.98s] Me personally, I'll just set aside one day like a Sunday and purely just use that day
+[  310.98s ->   311.98s] for learning.
+[  311.98s ->   315.46s] That whole day I'll just watch YouTube videos, read trading books, etc.
+[  315.46s ->   318.98s] I would also extremely recommend joining a trading community.
+[  318.98s ->   323.48s] For example, I have a discord where you can join for absolutely free and talk to other like
+[  323.48s ->   326.22s] minded traders that want to learn just like you.
+[  326.22s ->   331.02s] What's nice about this is you can post your charts, ask questions, or even see other people's
+[  331.02s ->   333.78s] ideas and strategies and see what works for them.
+[  333.78s ->   338.42s] There are tons of nice people in my discord server and a lot of them would be happy to help
+[  338.42s ->   339.86s] you on your trading journey.
+[  339.86s ->   343.62s] Plus some of my closest friends today I met through the discord server.
+[  343.62s ->   346.20s] So you can build some really cool relationships.
+[  346.20s ->   349.26s] The more people you meet and learn from, the better.
+[  349.26s ->   353.02s] Surround yourself with successful traders and you too will become successful.
+[  353.02s ->   355.66s] My next tip is keep a trading journal.
+[  355.66s ->   358.74s] I to this day still keep track of all of my trades.
+[  358.74s ->   363.22s] If I ever have a losing trade, I'll take note of it and look back at it and try to figure
+[  363.22s ->   364.22s] out what I did wrong.
+[  364.22s ->   365.94s] Did I enter in a good spot?
+[  365.94s ->   367.74s] Was I letting my emotions get the best of me?
+[  367.74s ->   369.28s] Did I exit too early?
+[  369.28s ->   370.50s] Did I exit too late?
+[  370.50s ->   372.06s] Did I chase the trade?
+[  372.06s ->   375.70s] Whatever it is, I figure it out so I don't make that mistake again.
+[  375.70s ->   378.02s] This is obviously going to be a game changer.
+[  378.02s ->   382.52s] If you consistently realize your mistakes and fix them immediately, it's one of the fastest
+[  382.52s ->   384.02s] ways to improve as a trader.
+[  384.02s ->   387.74s] You should not only be doing this with your losing trades, but also do it with your winning
+[  387.74s ->   388.74s] ones.
+[  388.74s ->   389.74s] What did you do right?
+[  389.74s ->   393.44s] That way you can figure it out, find certain patterns in your winning trades, and keep replicating
+[  393.44s ->   395.80s] those winning tendencies in future trades.
+[  395.80s ->   400.48s] There's a ton of sites that can automatically keep track of your trades for you, so you don't
+[  400.48s ->   402.12s] have to manually do it yourself.
+[  402.12s ->   404.12s] I'll leave one in the description if you want to check it out.
+[  404.12s ->   406.76s] This next tip is extremely important.
+[  406.76s ->   410.76s] You have to realize you do not need to be in a trade 24-7.
+[  410.76s ->   411.76s] Listen, I get it.
+[  411.76s ->   416.76s] I wake up at 6.30 in the morning every single day to do all my stock preparation, morning
+[  416.76s ->   422.34s] analysis, look at charts, and some mornings I do all of that work and wake up extremely
+[  422.34s ->   427.88s] early for absolutely nothing because the market is bad that morning and I didn't end up taking
+[  427.88s ->   429.12s] a single trade that day.
+[  429.12s ->   432.94s] It's really frustrating because you basically did all that work for nothing.
+[  432.94s ->   436.90s] But you have to learn that if there isn't a good setup, there isn't a good setup.
+[  436.90s ->   438.54s] You shouldn't be forcing anything.
+[  438.54s ->   442.78s] Only enter when you're 100% confident in the setup and the likelihood that the trend
+[  442.78s ->   444.72s] will go in the direction you want it to.
+[  444.72s ->   449.92s] The trade is iffy and you're thinking, well, I might as well, don't do it.
+[  449.92s ->   454.08s] The market is always going to be here, so there really is no reason to force anything.
+[  454.08s ->   459.00s] One of my all-time favorite quotes in trading is, the stock market is a device for transferring
+[  459.00s ->   463.24s] money from the impatient to the patient, which is so true.
+[  463.24s ->   467.00s] And actually, I'd say that's what separates a good trader from a great trader.
+[  467.00s ->   471.18s] A great trader knows when to sit on their hands and not enter in anything.
+[  471.18s ->   475.84s] My final tip is to find a successful strategy and test the sh** out of it.
+[  475.84s ->   480.40s] Luckily for you, in this video, I go over one of my very own strategies that has proven to
+[  480.40s ->   481.78s] work for me in the past.
+[  481.78s ->   485.00s] Go check that out, thanks for watching, and I'll see you guys next time.

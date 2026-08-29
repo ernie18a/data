@@ -1,0 +1,65 @@
+[    0.00s ->     4.80s] in this video i'm going to walk you through my go-to option strategy for sideways markets being
+[    4.80s ->     9.78s] where a stock or an asset is stuck between a support level and a resistance level that keeps
+[    9.78s ->    14.20s] trading between it here's the game plan here's how to do it entries exits and everything nothing
+[   14.20s ->    19.94s] held back so if we're looking at the market what is a range bound market or what is a sideways
+[   19.94s ->    25.00s] market as i just talked about it's when we're stuck between a support and a resistance level
+[   25.00s ->    29.62s] here is a great example you can see here how we have the same resistance where i keep bouncing
+[   29.62s ->    33.82s] it to the same level and we have roughly the same support where we keep finding the same
+[   33.82s ->    38.70s] bouncing level when we see that we're bouncing in between this level that's when we can use
+[   38.70s ->    44.84s] strangles now why a strangle or what is a strangle for those who don't know a strangle is when you
+[   44.84s ->    49.82s] sell a put below the asset let's say it's trading right here which it is right now we sell a put
+[   49.82s ->    55.64s] down here which means that as long as the market this asset stays above this level i make money
+[   55.64s ->    60.44s] that's all put selling is if the market goes up i make money because it's above this if the market
+[   60.44s ->    64.98s] goes sideways i make money because it's above this if the market goes down but stays above this level
+[   64.98s ->    71.44s] then i still make money that's what put selling is now we also sell a call above here which bets that
+[   71.44s ->    78.48s] the stock will stay below this level so for a call if the market goes sideways goes down or goes up
+[   78.72s ->    84.44s] below the level you make money when you combine these you create what's called a strangle you sell a
+[   84.44s ->    90.06s] sell a put betting that the stock will stay between these two levels so as long as it stays
+[   90.06s ->    96.26s] between these two levels you make money using strangles and now if we know that we have a
+[   96.26s ->   101.54s] support and resistance level that we're staying between what do we do we can sell options that are
+[  101.54s ->   106.90s] slightly out of the money here or sell a put that is below the support level and sell a call that is
+[  106.90s ->   111.50s] above the resistance level this way we're betting that as long as the stock stays between here we make
+[  111.50s ->   116.22s] money and now it's super simple before i dive into the specifics of it but that's the strangle
+[  116.22s ->   121.00s] and you exit whenever it breaks out of one of these ranges because you know that it's no longer
+[  121.00s ->   126.14s] respecting your level and advanced strategies you can only close the trade that it broke and hold the
+[  126.14s ->   131.24s] other trade as a winner but we'll get into that here in a second so how do i personally place my
+[  131.24s ->   138.80s] strangle trades i like doing it on markets like spx spy and es and things like that why because if you
+[  138.80s ->   143.98s] trade strangles on the overall market tends to be more flat than a single asset or a single stock
+[  143.98s ->   150.30s] which tends to trend and go up and down more frequently so sticking with a diversified asset
+[  150.30s ->   156.98s] or etf is one of the best ways to do strangles and i personally like to go out quite far i go out 90 to
+[  156.98s ->   163.88s] 120 days out into the future which means three to four months out why the more time i give myself the
+[  163.88s ->   170.28s] more time i have to be right which lowers my risk increases my win rate decreases my volatility risk
+[  170.28s ->   175.82s] and allows me to collect more profit so that's why i love going out further in time so that's going to
+[  175.82s ->   181.72s] be my dte for the trade for strangles i tend to stay around a 90 dte for my personal experience
+[  181.72s ->   189.84s] now what i do for the put and calls is i sell a 10 delta put so i do a 10 delta for my put which is
+[  189.84s ->   196.36s] the one down here and then for my call i do a five delta call now you might be wondering why different
+[  196.36s ->   200.26s] levels typically when you have a strangle you like to do the same level so if you go to 10 delta put
+[  200.26s ->   205.24s] you go 10 delta call in general the market trends higher and if it's going to continue to do that i
+[  205.24s ->   210.38s] want to account for that market drift that market trend and so by going a five delta call and giving
+[  210.38s ->   215.76s] myself more room to the upside i'm adjusting for that move and allowing it to go higher so this
+[  215.76s ->   221.42s] adjusts for market trend which in general 80 of the time the market is trending up or tends to trend
+[  221.42s ->   228.84s] up and so that's what happens there now how do i enter this trade once i have identified that the
+[  228.84s ->   235.22s] market is range bound then i can enter once a week depending on how much capital i have so if you have
+[  235.22s ->   241.00s] enough capital for the trade again make sure that one trade makes up no more than five percent of your
+[  241.00s ->   246.28s] account ideally less than one percent of your entire account and you can do that and then place
+[  246.28s ->   253.40s] as many trades as you'd like now the exit is quite simple we can either exit at a 25 take profit which
+[  253.40s ->   257.82s] is what i tend to do i tend to like to take profit quickly we're adjusting in this we don't know when
+[  257.82s ->   263.00s] it's going to break out to either side and start trending so i like to take profits quickly and then
+[  263.00s ->   268.96s] you can also take stop losses quickly so this is your take profit and you could do a 200 stop loss
+[  268.96s ->   274.22s] but one way that i like to cut losses faster when i'm doing a range mount strategy like this because
+[  274.22s ->   279.32s] the 200 stop loss can be when it gets here right i like cutting it as soon as it breaks to the support
+[  279.32s ->   284.10s] or resistance so if it breaks the resistance level the top level i'm going to close the call
+[  284.10s ->   291.52s] for a loss i'm going to let the profit expire or i should say the put expire at max profit vice versa
+[  291.52s ->   298.36s] if the support breaks i'm going to close the put allowing the call to help offset the losses i had
+[  298.36s ->   304.28s] from the put that dramatically decreases my losses and allows me to stay more profitable so that is
+[  304.28s ->   310.42s] how i trade range bound markets aka stuck between two levels it's a strangle if you want to do defined
+[  310.42s ->   315.74s] risk you can do an iron condor version but that's how to do it if you want to learn how to create a
+[  315.74s ->   320.30s] strategy for each type of market and you want me to work with you to do that for you i work with so
+[  320.30s ->   325.46s] many clients each month but i have five more spots open for this month that i can help out people
+[  325.46s ->   329.38s] so click the link down below and i would love to work with you and help you build out
+[  329.38s ->   332.34s] your go-to strategy and trading system for each market
+[  332.34s ->   336.26s] you
+[  336.26s ->   343.76s] so
+[  343.76s ->   343.78s] you
+[  343.78s ->   344.36s] you
+[  344.36s ->   353.36s] you

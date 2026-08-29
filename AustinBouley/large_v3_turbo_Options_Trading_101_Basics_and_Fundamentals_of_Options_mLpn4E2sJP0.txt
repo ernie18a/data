@@ -1,0 +1,282 @@
+[    0.97s ->     1.97s] Hey guys, what's up?
+[    1.97s ->     4.01s] It's Austin Booley again with Options Shaders.
+[    4.01s ->     9.05s] Today we're going to do a basic options 101, everything you need to know about options
+[    9.05s ->    15.49s] that you didn't know if you're a super very starting at the beginning beginner.
+[   15.49s ->    18.97s] If you're wondering why I look this way, it's because I have the group chat pulled up as
+[   18.97s ->    20.97s] someone asked a question.
+[   20.97s ->    23.93s] And if you're wondering why I look this way, I have a whiteboard with the stuff that I
+[   23.93s ->    24.93s] need to cover.
+[   24.93s ->    26.93s] Alright, let's get straight into it.
+[   26.93s ->    31.17s] Again, I'm coming from the perspective of a day trader.
+[   31.17s ->    36.21s] So I don't participate in any of the strategies that options can also offer.
+[   36.21s ->    40.65s] So I'm going to mention it, but I'm not going to explain it in depth because I'm not an expert
+[   40.65s ->    42.11s] on it myself.
+[   42.11s ->    48.01s] So first thing, I'm going to cover options on the TD Ameritrade platform because I know
+[   48.01s ->    53.97s] a lot of y'all probably use the TD Ameritrade platform known as Thinkorswim.
+[   53.97s ->    55.71s] So I'm going to cover it there first.
+[   55.71s ->    59.83s] And then after that, I'm going to do a quick rundown on the Tastyworks and I'll mention
+[   59.83s ->    61.69s] some stuff about the Robinhood account.
+[   61.69s ->    62.95s] So let's go into it.
+[   62.95s ->    66.99s] So when you are on the TOS platform, you want to go into the Trade tab.
+[   66.99s ->    70.63s] That is how you're going to find the options.
+[   70.63s ->    74.99s] So for instance, right now I have SPX pulled up, which is the S&P 500 index.
+[   74.99s ->    79.59s] You can, wow, is my Wi-Fi that bad?
+[   79.59s ->    81.45s] So you can pull up anything you want.
+[   81.45s ->    84.21s] So let's say you're looking at Netflix options, okay?
+[   84.21s ->    90.59s] So options, first off, you need to understand options is a contract to buy 100 shares.
+[   90.59s ->    93.30s] Well, no.
+[   93.30s ->    98.92s] A put is an options contract to sell 100 shares.
+[   98.92s ->   104.48s] A call is an options contract to buy 100 shares.
+[  104.48s ->   106.96s] Options contracts have an expiration date.
+[  106.96s ->   112.40s] So unlike stock shares where you can buy it and bag hold as long as you want, which means
+[  112.40s ->   116.68s] you hold the shares forever because you don't want to take a loss, you can't do that with
+[  116.68s ->   117.68s] options.
+[  117.68s ->   120.74s] Options expire on a specific date.
+[  120.74s ->   125.22s] So as we can see here, this is a weekly option that expires in three days, so it expires this
+[  125.22s ->   126.22s] Friday.
+[  126.22s ->   130.66s] This one is a weekly option that expires in 10 days, so it expires next Friday and et cetera.
+[  130.66s ->   135.06s] This is a monthly and a monthly and a monthly and a monthly and weekly and et cetera.
+[  135.06s ->   136.40s] So now let's go into it.
+[  136.40s ->   142.24s] So I'm going to click on this weekly here because when I day trade, I want to day trade the weekly
+[  142.24s ->   147.36s] options because they're the most volatile options because they are about to expire.
+[  147.36s ->   152.08s] So if we look on the left side column on every platform, the left side column is your
+[  152.08s ->   159.12s] calls, which is basically equivalent of going long on a stock.
+[  159.12s ->   162.28s] So instead of buying the stock, you're buying a contract.
+[  162.28s ->   165.60s] So in the contract, you want it to go up.
+[  165.60s ->   170.58s] Now on the right side is your puts, so that is your contract, which is basically you shorting.
+[  170.58s ->   172.58s] But you're not going to sell to open.
+[  172.58s ->   175.62s] You're going to buy a contract, a put contract.
+[  175.62s ->   179.14s] And as the stock goes down, your put contract increases in value.
+[  179.14s ->   184.38s] So the calls are like going long on a stock and the puts are like going short on a stock.
+[  184.38s ->   185.38s] So let's see.
+[  185.38s ->   188.02s] I want to make sure I cover what I think is necessary.
+[  188.02s ->   189.18s] Okay.
+[  189.18s ->   194.26s] So now that we have covered that, let's look at the specific price.
+[  194.26s ->   196.70s] So you have a bid and an ask.
+[  196.70s ->   207.14s] So if we look at this bid and an ask for this option, each option also has a expiration price
+[  207.14s ->   210.38s] or what we call a strike price.
+[  210.38s ->   211.38s] Okay.
+[  211.38s ->   216.16s] So the strike price is just a number that correlates to the stock.
+[  216.16s ->   220.14s] So this is a 307.5 strike.
+[  220.14s ->   226.86s] And so you can say, all right, I picked up a call at the 307.5 strike, just let someone
+[  226.86s ->   230.06s] know which contract you actually got.
+[  230.06s ->   235.14s] This price right here, the strike price correlates to when you're talking about out of the money,
+[  235.14s ->   241.02s] in the money, and at the money, these out of the money, in the money, and in the, I don't
+[  241.02s ->   242.02s] know if I said that.
+[  242.02s ->   247.08s] Those three are more important and prevalent when you're trading strategies where you want
+[  247.08s ->   252.32s] to let your options expire or like an options with a bunch of different strategies that
+[  252.32s ->   256.24s] you can do such as a straddle, a strangle, a condor, a blah, blah, blah, blah, blah, blah,
+[  256.24s ->   258.24s] blah, blah, blah, blah, so many other things, a butterfly.
+[  258.24s ->   261.86s] So basically, let me break down a few strategies for you.
+[  261.86s ->   265.12s] I'm probably going to be wrong because I don't trade them.
+[  265.12s ->   273.76s] But a strangle is, if you buy a strangle, you make money when the option, when the stock
+[  273.76s ->   280.82s] price at the expiration date, so if you buy a strangle here, you want it in three days
+[  280.82s ->   284.42s] to end outside these two values and not in the middle.
+[  284.42s ->   288.34s] If you sell to open a strangle, you want to keep the stock price in between a certain
+[  288.34s ->   289.34s] level.
+[  289.34s ->   295.04s] So if you wanted to sell a strangle and you wanted to keep it in between the 290 and the
+[  295.04s ->   302.70s] 320 level, then you would sell a 290 and a 320 and that's how you would have your strangle.
+[  302.70s ->   308.42s] So if by the end of expiration, if it stays in between 290 and 320, you would make money
+[  308.42s ->   312.38s] because it would expire worthless.
+[  312.38s ->   317.00s] So strategies, blah, blah, blah, that's not really what I'm going to cover today.
+[  317.00s ->   320.98s] So just like stocks, another important thing is volume.
+[  320.98s ->   323.54s] So options have their own form of volume.
+[  323.54s ->   328.20s] No, the stock volume does not necessarily correlate to options volume.
+[  328.20s ->   331.84s] I know that a stock can have a lot of volume, but the options volume won't be there.
+[  331.84s ->   337.54s] And again, as every market is driven off of supply and demand, bid and ask, buyers and sellers.
+[  337.54s ->   342.38s] So if you don't have volume going into your options, then you're going to buy one and
+[  342.38s ->   344.92s] you're going to get stuck with it and you won't be able to sell it.
+[  344.92s ->   345.92s] Okay.
+[  345.92s ->   351.34s] Also something I did not include about the expiration date is if you hold a contract through expiration
+[  351.34s ->   357.40s] date and it is not, it can expire worthless.
+[  357.40s ->   358.44s] Let me explain this real quick.
+[  358.44s ->   365.56s] I'm sorry that my thing seems so haphazardous and sporadic, but this again is not scripted because
+[  365.56s ->   371.26s] I like to do it for y'all and y'all never know what y'all want.
+[  371.26s ->   376.52s] So this blue like highlighted area is in the money calls.
+[  376.52s ->   378.34s] This highlighted area is in the money puts.
+[  378.34s ->   380.22s] Now what does in the money mean?
+[  380.22s ->   385.68s] In the money means that we are already above the strike prices, okay?
+[  385.68s ->   389.80s] So as you can see, Netflix is currently 307.02.
+[  389.80s ->   394.14s] So 307 dollars, so obviously we are, calls are going long.
+[  394.14s ->   398.56s] So obviously we are above 290 strike price already.
+[  398.56s ->   401.42s] We are above 292.5 already.
+[  401.42s ->   404.96s] We are above 305, okay?
+[  404.96s ->   407.42s] And on puts, you want to make money on the way down.
+[  407.42s ->   413.24s] So all these highlighted are the prices that we aren't, that we are still under, okay?
+[  413.24s ->   418.04s] So the current price is 307, so we are currently under 307.5.
+[  418.04s ->   424.98s] So the strike price for a put contract at 307.5 is currently in the money because it is
+[  424.98s ->   426.68s] under, okay?
+[  426.68s ->   433.82s] So if on expiration date, if you're holding a contract and it happens to land in the money,
+[  433.82s ->   440.02s] which as we just discussed, if it's a call, it is below the current price.
+[  440.02s ->   447.02s] And if it's a put, it's above a certain price, then your option gets exercised.
+[  447.02s ->   455.30s] And since a contract is 100 shares, you have to, if it's a call and it expires in the money,
+[  455.30s ->   457.76s] you have to buy 100 shares.
+[  457.76s ->   463.74s] If it is a put and is in the money, you have to sell 100 shares.
+[  463.74s ->   466.62s] So I hope that makes sense.
+[  466.62s ->   471.74s] Now let's go back into open interest so I can start to slowly explain that.
+[  471.74s ->   474.70s] So open interest, of course, you have to have the buyers and the sellers.
+[  474.70s ->   478.74s] So open interest here, of course, if you want to change it, you just click on here, you go
+[  478.74s ->   483.40s] to basic price, if it's not there, and you just add the open interest.
+[  483.40s ->   489.12s] So the open interest, which I've already made a video over, so I'm going to cover it quickly,
+[  489.12s ->   493.58s] is the amount of people that are holding a contract.
+[  493.58s ->   503.16s] So right here, if we look for this 307.5 strike price for a call, there are 346 people currently
+[  503.16s ->   506.94s] holding on to a contract, okay?
+[  506.94s ->   509.24s] What does open interest mean?
+[  509.24s ->   511.68s] Okay, well think about it.
+[  511.68s ->   518.60s] If you want to buy something, and someone has like 5 or 10 of them, versus someone who
+[  518.60s ->   524.28s] has 100 of them, who do you think you will get to buy you or sell you one, okay?
+[  524.28s ->   527.60s] So let's say it's something precious to them.
+[  527.60s ->   532.80s] So let's say like someone has one hamburger, I don't know, for some reason, okay, versus
+[  532.80s ->   537.56s] someone who has 20 hamburgers, who do you think would sell you their hamburger?
+[  537.56s ->   540.48s] The one person who only has one, or the person who has 20?
+[  540.48s ->   544.30s] Obviously, the person who has 20 is going to be more likely to give up a hamburger and
+[  544.30s ->   545.30s] sell it to you.
+[  545.30s ->   548.20s] So that's the same thing with open interest, okay?
+[  548.20s ->   553.88s] The more open interest there is, the more likely there is for someone who has one to
+[  553.88s ->   555.16s] give it up, because there's a lot.
+[  555.16s ->   559.98s] Now, if there's only two open interest, then who the heck is going to buy or sell you your
+[  559.98s ->   560.98s] contract?
+[  560.98s ->   564.66s] I mean, you're basically stuck, because they're like, I bought this contract, now I'm stuck
+[  564.66s ->   566.14s] here.
+[  566.14s ->   570.88s] So open interest is important, because these are the people who currently have contracts.
+[  570.88s ->   574.32s] And if you want to buy a contract, you need one of them to sell it to you.
+[  574.32s ->   579.60s] And if you want to, well, then this goes into volume.
+[  579.60s ->   583.32s] So volume, it resets each day.
+[  583.32s ->   588.26s] So if you look up in the morning, and you look at a stock, and the options volume is zero,
+[  588.26s ->   590.16s] that's because it resets every single day.
+[  590.16s ->   595.04s] But the options volume is how many contracts were bought and sold in that day.
+[  595.04s ->   602.32s] So for this strike price, a strike price of 310 on calls, we had 6,163 contracts bought
+[  602.32s ->   603.56s] and sold.
+[  603.56s ->   611.08s] So if you only wanted to trade like one contract, then you could easily get in and out of 6,000.
+[  611.08s ->   616.60s] So now how does volume and open interest correlate to one another?
+[  616.60s ->   623.22s] So obviously, the more amount or the larger amount of open interest you have, the more
+[  623.22s ->   624.68s] amount of volume you will have.
+[  624.68s ->   627.78s] Because if there's more people who have the contracts, there's going to be more people
+[  627.78s ->   630.30s] willing to sell it, more people willing to buy it.
+[  630.30s ->   633.30s] The more people willing to sell and buy, there's going to be more volume.
+[  633.30s ->   639.40s] So obviously, it's no surprise that the one that has 2,284 open interest, which means
+[  639.40s ->   645.46s] people currently holding those contracts, there's 2,284 contracts being held onto, it
+[  645.46s ->   648.88s] had the highest volume of 8,830.
+[  648.88s ->   651.30s] So how do I day trade?
+[  651.30s ->   655.62s] Because I want to get in and out of something super fast, I make sure I'm trading something
+[  655.62s ->   659.56s] that has a lot of open interest and a lot of volume for the day already.
+[  659.56s ->   664.38s] When I do that, I get filled within seconds, minutes sometimes, well not minutes, that's
+[  664.38s ->   667.16s] too long, seconds, okay?
+[  667.16s ->   673.20s] When you're trading penny stock options that have no volume with it, no open interest, you're
+[  673.20s ->   674.94s] stuck, you're screwed, okay?
+[  674.94s ->   680.14s] Like, you're going to buy it because someone's like, yeah, I'll sell it to you, but then you'll
+[  680.14s ->   684.50s] have no one to buy it from you, you're stuck because there's no volume.
+[  684.50s ->   692.32s] So make sure there's open interest and volume surrounded by this current stock that you're
+[  692.32s ->   693.32s] doing.
+[  693.32s ->   694.88s] So I covered that.
+[  694.88s ->   697.88s] Out of the money, in the money, and at the money.
+[  697.88s ->   699.30s] So I did not cover that yet.
+[  699.30s ->   705.32s] So in the money is the highlighted areas, and out of the money is these.
+[  705.32s ->   711.04s] Now at the money is the contracts that are sitting right at the strike price.
+[  711.04s ->   714.16s] So 307 is what Netflix is currently at.
+[  714.16s ->   719.86s] So our at the money contracts will be the 305 contract and the 307.5 because those are
+[  719.86s ->   722.70s] the two that are right next to the current stock price.
+[  722.70s ->   725.60s] So that's at the money.
+[  725.60s ->   728.46s] Now let's go into if you're going to buy a contract, okay?
+[  728.46s ->   734.32s] So if you're going to have a margin account, you still have all the same rules and regulations
+[  734.32s ->   736.26s] as you do with normal stocks.
+[  736.26s ->   740.58s] So like you have the pattern day trader rule, but I made a video on how you can get around
+[  740.58s ->   744.72s] the pattern day trader rule that I can explain to you quickly.
+[  744.72s ->   750.30s] If you have a cash account and you're trading options, when you buy and sell, your cash is
+[  750.30s ->   753.10s] immediately settled, okay?
+[  753.10s ->   758.70s] So for stocks, if you buy some shares and you sell that shares, you have to wait three
+[  758.70s ->   763.42s] days, three trading days until you can get access to those funds again.
+[  763.42s ->   766.40s] But with options, it settles immediately.
+[  766.40s ->   776.36s] So if I put 200 into a trade and I sell it for 250 making a $50 profit, in my cash settlements,
+[  776.36s ->   778.56s] I have $250.
+[  778.56s ->   783.92s] So the next minute, I can turn around and use that whole $250 to day trade again and keep
+[  783.92s ->   785.36s] doing it and keep doing it.
+[  785.36s ->   790.78s] I think TAD Ameritrade has a three-day trade limit, but I use Tastyworks and I've done,
+[  790.78s ->   794.20s] well, today I did six.
+[  794.20s ->   796.12s] So that's something else.
+[  796.12s ->   800.80s] And also when you're buying a contract, since it's 100 shares, you take the price you have
+[  800.80s ->   804.48s] here and you multiply it by 100.
+[  804.48s ->   811.84s] So let's say you wanted to buy this contract here, it says buy for $4.30.
+[  811.84s ->   813.78s] Is it going to cost me $4.30?
+[  813.78s ->   814.78s] No.
+[  814.78s ->   823.54s] $4.30 times 100, because 100 shares, it's going to cost me $430 plus commissions.
+[  823.54s ->   828.20s] So this trade to put on is going to cost me $430, okay?
+[  828.20s ->   831.44s] Now how do options make money, okay?
+[  831.44s ->   837.58s] Well, there's plenty of ways to make money and I could explain other ways, but I'm not
+[  837.58s ->   838.58s] proficient in that.
+[  838.58s ->   842.16s] So I'm going to explain the day trading aspect of it.
+[  842.16s ->   849.22s] So if we look at a chart, Netflix for example, and we understand that, like let's see, look,
+[  849.22s ->   855.78s] we have this little, again I'm making this up, I don't trade Netflix often, but like let's
+[  855.78s ->   860.72s] say that we have this little trend line here, we have this little support level here, and
+[  860.72s ->   865.48s] obviously we broke below the support level, and you want to make money on the way down.
+[  865.48s ->   866.54s] So what do you trade?
+[  866.54s ->   867.72s] You buy a put.
+[  867.72s ->   870.96s] A put is the same thing as shorting, okay?
+[  870.96s ->   877.94s] So you would go into your trade tab, you would find one that's out of the money here, or in
+[  877.94s ->   882.38s] the money, it just depends on how much you want to spend for this contract.
+[  882.38s ->   888.26s] Let's say I'd like to spend about $120 a contract, to $200 a contract, so let's go here.
+[  888.26s ->   898.90s] Oh, this one is $1.82 a contract times 100, it's going to cost me $182 to buy this contract,
+[  898.90s ->   899.90s] okay?
+[  899.90s ->   903.54s] So let's say you buy it for $182 right here.
+[  903.54s ->   908.44s] At the end of the day you come back, or not come back, or you're watching it, and then
+[  908.44s ->   914.32s] it is now, since when the stock goes down, it put increases in price.
+[  914.32s ->   919.06s] So you bought it for $182, and now it's probably worth $580, okay?
+[  919.06s ->   921.16s] So you would make a $400 profit.
+[  921.16s ->   923.16s] So that's how this works.
+[  923.16s ->   926.68s] Options is basically like a penny stock.
+[  926.68s ->   932.10s] The way that I think about options is I think about a penny stock chart that follows another
+[  932.10s ->   933.10s] chart.
+[  933.10s ->   939.14s] So like Netflix, the options, like a penny stock of Netflix, that mimics Netflix.
+[  939.14s ->   940.48s] So why do I say a penny stock?
+[  940.48s ->   943.14s] Because penny stocks are volatile and they move like crazy.
+[  943.14s ->   949.98s] You can gain so much potential gains, like huge gains, but it still mimics the Netflix chart.
+[  949.98s ->   950.98s] Okay?
+[  950.98s ->   956.38s] So like, for instance, this normal move down here, like let's say if you got it in here
+[  956.38s ->   958.36s] from down here, that's what?
+[  958.36s ->   961.22s] That's 2.61%.
+[  961.22s ->   962.22s] Is that right?
+[  962.22s ->   963.76s] Yeah.
+[  963.76s ->   964.76s] 2.61%.
+[  964.76s ->   972.22s] I guarantee you, on options, this was at least 100% to a 200% gain.
+[  972.22s ->   973.84s] That's another great thing about options.
+[  973.84s ->   980.22s] You can take $180 and probably make a $200, $300 profit off of it.
+[  980.22s ->   984.36s] Again, it is not normal to have this huge drop.
+[  984.36s ->   985.60s] We all know it's not normal.
+[  985.60s ->   991.98s] We usually have some consolidation or something, but still, I've seen a day where someone made
+[  991.98s ->   997.98s] or I watched a contract increase in price by 3,000%.
+[  997.98s ->   999.48s] Let's take 3,000%.
+[  999.48s ->  1000.48s] Yeah.
+[ 1000.48s ->  1001.48s] That's just crazy.
+[ 1001.48s ->  1002.48s] Okay?
+[ 1002.48s ->  1004.54s] So that is how you would buy a contract.
+[ 1004.54s ->  1007.02s] You would go in here.
+[ 1007.02s ->  1009.90s] The best thing to do is put it at the mid price.
+[ 1009.90s ->  1016.04s] So again, you have your bid and your ask and they're off.
+[ 1016.04s ->  1018.48s] They're usually off by about 10 cents.
+[ 1018.48s ->  1022.69s] So you would just bring it to the mid price and see if you get filled.
+[ 1022.69s ->  1026.85s] And if you don't get filled, then move it to the ask.
+[ 1026.85s ->  1031.99s] So again, that's basically what I use in options.
+[ 1031.99s ->  1032.99s] I'm not a guru.
+[ 1032.99s ->  1033.99s] I'm not an expert.
+[ 1033.99s ->  1037.33s] I just know enough to be able to trade the way that I trade.
+[ 1037.33s ->  1038.49s] I day trade them.
+[ 1038.49s ->  1042.99s] So I'm not in contracts much longer than five minutes, 10 minutes a day.
+[ 1042.99s ->  1048.17s] I mean, the past two days, I've only been in the contract for two minutes and I've made
+[ 1048.17s ->  1052.31s] 11% on Monday and 10% today.
+[ 1052.31s ->  1055.31s] So it's not that bad.
+[ 1055.31s ->  1059.41s] Again, in my description is an options trading discord group.
+[ 1059.41s ->  1061.31s] There's a Facebook group.
+[ 1061.31s ->  1062.81s] There's everything that you will need.
+[ 1062.81s ->  1064.73s] You can also cruise my YouTube channel.
+[ 1064.73s ->  1069.31s] It has my strategy and what I do and other stuff about options like options pinning and
+[ 1069.31s ->  1070.99s] max pain and all that good stuff.
+[ 1070.99s ->  1072.99s] I'm constantly adding to this YouTube channel.
+[ 1072.99s ->  1075.49s] So please like a like, comment, and subscribe.
+[ 1075.49s ->  1079.13s] Again, if you don't like it, put a dislike and then tell me why because I want to know
+[ 1079.13s ->  1087.31s] that and I will also link below Options Alpha and Tasty Trade and a few other good places
+[ 1087.31s ->  1091.93s] to learn all the basics of options for free because again, I don't use options to their
+[ 1091.93s ->  1093.29s] full capacity.
+[ 1093.29s ->  1095.03s] I just know what I need to know.
+[ 1095.03s ->  1098.99s] So I hope this helped you learn something if you didn't know anything and if you did,
+[ 1098.99s ->  1100.93s] I hope it still taught you something.
+[ 1100.93s ->  1105.05s] Alright guys, thank you for tuning in and I hope you learned something great about options.

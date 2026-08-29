@@ -1,0 +1,62 @@
+<!-- tradingview-pine-id: PUB;4526700d80844c95945989a46f30a2e8 -->
+<!-- tradingviewscripts-format: 1 -->
+# ✖ 𝗡𝘂𝗻𝗰𝗵𝘂𝗰𝗸𝘀
+
+Source: https://www.tradingview.com/script/84VJskLO-Nunchucks/
+
+## Description
+
+✖ Nunchucks
+
+A new way to display market data
+
+[*] Does not flip color during current candle
+[*] Displays Higher and Lower than the previous nunchuck's range
+[*] Use it with current price line
+
+[image]https://www.tradingview.com/x/b3O79s7P/[/image]
+[image]https://www.tradingview.com/x/O3Z8cSqb/[/image]
+
+---
+
+## Source Code
+
+````pine
+// This source code is subject to the terms of the Mozilla Public License 2_0 at https://mozilla_org/MPL/2_0/
+// © MVPMC
+//@version=4
+study(title="✖ 𝗡𝘂𝗻𝗰𝗵𝘂𝗰𝗸𝘀", overlay=true, linktoseries=true)
+bool Nullchucks     = input(title="Show zero value tails" , tooltip="Show tails if even if their range is zero", defval=false)
+
+colorBody           = input(title=""                , type=input.bool   , group='Color', inline='colorBody'     , defval=true)
+colorBodyHigh       = input(title="Body   "         , type=input.color  , group='Color', inline='colorBody'     , defval=color.rgb(38, 166, 154))
+colorBodyLow        = input(title=""                , type=input.color  , group='Color', inline='colorBody'     , defval=color.rgb(239, 83, 80))
+colorBorder         = input(title=""                , type=input.bool   , group='Color', inline='colorBorder'   , defval=true)
+colorBorderHigh     = input(title="Borders      "   , type=input.color  , group='Color', inline='colorBorder'   , defval=color.rgb(38, 166, 154))
+colorBorderLow      = input(title=""                , type=input.color  , group='Color', inline='colorBorder'   , defval=color.rgb(239, 83, 80))
+colorWick           = input(title=""                , type=input.bool   , group='Color', inline='colorWick'     , defval=true)
+colorWickHigh       = input(title="Wick   "         , type=input.color  , group='Color', inline='colorWick'     , defval=color.rgb(38, 166, 154))
+colorWickLow        = input(title=""                , type=input.color  , group='Color', inline='colorWick'     , defval=color.rgb(239, 83, 80))
+
+highVisible         = high > high[1] ? true : false
+highOpen            = min(high, high[1])
+highClose           = high
+
+lowVisible          = low < low[1] ? true : false
+lowOpen             = max(low, low[1])
+lowClose            = low
+
+centerOpen          = lowOpen < highOpen ? lowOpen : highOpen
+centerClose         = lowOpen > highOpen ? highOpen : lowOpen 
+
+colorWicks          = colorWick ? open < close ? colorBodyHigh : colorBodyLow : #00000000
+
+colorBodyUpper      = colorBody ? Nullchucks ? colorBodyHigh : highVisible ? colorBodyHigh : #00000000 : #00000000
+colorBodyLower      = colorBody ? Nullchucks ? colorBodyLow : lowVisible ? colorBodyLow : #00000000 : #00000000
+
+colorBorderUpper    = Nullchucks ? colorBorder ? colorBorderHigh : colorBodyHigh : highVisible ? colorBorder ? colorBorderHigh : colorBodyHigh : #00000000
+colorBorderLower    = Nullchucks ? colorBorderLow : lowVisible ? colorBorderLow : #00000000
+
+plotcandle(highOpen,   highClose,     centerOpen,    highClose, title="Higher", color=colorBodyUpper,    bordercolor=colorBorderUpper,  wickcolor=colorWicks, editable = false)
+plotcandle(lowOpen,    centerClose,   lowClose,      lowClose,  title="Lower" , color=colorBodyLower,     bordercolor=colorBorderLower,   wickcolor=colorWicks, editable = false)
+````

@@ -1,0 +1,171 @@
+[    0.00s ->     4.88s] Some of you already know that I actually do not like selling cover calls. I actually think they
+[    4.88s ->    10.60s] suck. Cover call strategies have been extremely popular recently, especially among retail traders
+[   10.60s ->    14.92s] and people who are looking to retire. I understand the appeal, right? You can generate enough income
+[   14.92s ->    20.18s] to replace your full-time income, but there are a lot of downsides that people don't talk about
+[   20.18s ->    24.20s] when it comes to cover calls. There's a lot of risks. And on this channel, we like to understand
+[   24.20s ->    29.44s] what the risks are so that we can make the right financial decisions. In this video, we're going
+[   29.44s ->    36.38s] to talk about why I think cover calls sucks and want to use researched evidence to back that claim
+[   36.38s ->    41.90s] up. Let's first align on what a cover call actually is. We're going to head over to my public portfolio
+[   41.90s ->    49.66s] that I post updates on a regular basis. Right here, we have 200 shares of TSMC. They're up 56.4%
+[   49.66s ->    55.98s] year to date. A cover call essentially is by selling a call option when you already own 100 shares of
+[   55.98s ->    63.74s] that stock. So let's just first demonstrate by going to the option chain and selling one call
+[   63.74s ->    71.98s] option above it. For demonstration purposes, let's just do 30 days. TSMC right now is trading at $287,
+[   72.46s ->    84.24s] give or take. So by selling a call above $287, let's say $310. If TSMC goes above $315 in 33 days,
+[   84.24s ->    94.24s] I will be forced to sell my TSMC at $310. If it goes at $325, $330, $340, it doesn't matter.
+[   94.36s ->   101.04s] The buyer of that option, he thinks that if TSMC goes above $315 to $340, $350, he can get a deal
+[  101.04s ->   109.50s] by buying it from me at $315. All he has to do is to pay me $580 for that guarantee of me selling him
+[  109.50s ->   115.70s] 100 shares of TSMC. You can already see some of the downsides or trade-offs associated with cover
+[  115.70s ->   124.76s] calls. If TSM were to go above $315.80 as you see on the screen, I will end up losing money, right?
+[  124.80s ->   131.44s] If it goes to $320, I will end up losing money because TSMC gained another 10 points, which is
+[  131.44s ->   138.52s] $1,000, right? 10 shares, 100 shares times 10, but I only collected $580. So the reason that people
+[  138.52s ->   143.20s] love selling covered calls is because the income that you can collect is pretty solid. So if you
+[  143.20s ->   148.56s] look at the yield, and this terminology will come up pretty often, you will take your total credit
+[  148.56s ->   157.50s] collected, which will be $580, divided by your sale price, which is going to be $310 times 100 shares,
+[  157.50s ->   165.22s] and you will collect around 1.7% return times that by 12 months, and you can get close to 20% return
+[  165.22s ->   170.54s] annualized. And I can see why this is so popular among people who are looking for additional income,
+[  170.64s ->   176.20s] people who are looking to retire, maybe in your 20s, 30s, 40s, or people who are already at retirement
+[  176.20s ->   182.20s] age in 60s and 70s, because you can collect enough money to potentially replace your full-time salary.
+[  182.70s ->   189.84s] And this is why there's a lot of now cover called funds like XYLD, JEPI, or even more recently,
+[  189.84s ->   199.50s] NVIDIA, NVDY, Tesly, TSLY, Amazoni, all these high-yield funds that generate massive, massive
+[  199.50s ->   206.30s] payouts on a monthly basis and sometimes even weekly basis. But when something sounds that good,
+[  206.30s ->   214.14s] there tends to be risks and drawbacks. So let's really talk about why I think cover calls sucks.
+[  214.80s ->   219.62s] And you may be making a mistake if you're looking to 1. Replace your full-time income to retire,
+[  219.84s ->   225.48s] and 2. Already retired and looking to supplement your retirement income.
+[  225.76s ->   229.52s] So let's deep dive into the downsides of cover calls. I'm going to use this paper
+[  229.52s ->   236.12s] called A Devil's Bargain to really understand the risks and downsides associated with selling
+[  236.12s ->   242.68s] cover calls. The first takeaway from this paper is that yield is not free. Higher income, whether it's
+[  242.68s ->   249.32s] weekly or monthly, means that you are usually trading that increased income with the likely upside that
+[  249.32s ->   257.04s] your stock might have. So for example, let's take a look at TSM. Again, TSM is at $287. If I were to sell
+[  257.04s ->   268.12s] it at $290, I would collect $470 or so. But if I were to sell it at $300, I would collect $175. And if I
+[  268.12s ->   275.64s] were to sell it at $310, I would be at $53. So the more premium we collect, the closer we are going to be
+[  275.64s ->   286.16s] to the money. It is much more likely for TSM to go to $290 from $287 than it is for it to go from $287
+[  286.16s ->   292.94s] to $310. I think intuitively we all know that. But the reason that this is really harmful on the
+[  292.94s ->   299.98s] call side is because the market tends to go up over time. This is true for the S&P 500 regardless of
+[  299.98s ->   305.16s] what timeframe you look at. And it's true for stocks like TSMC, NVIDIA, or any other stock over
+[  305.16s ->   310.18s] a long period of time, which means a couple of things. One is that you are probably more likely
+[  310.18s ->   317.74s] to get assigned because of the fact that the market tends to underestimate the amount of risk you're
+[  317.74s ->   322.12s] taking on the call side. And this is because the market tends to always drift up. We talked about this
+[  322.12s ->   327.96s] on other videos. And number two, especially if you are an individual retail investor and you are
+[  327.96s ->   335.36s] selling cover calls individually, not buying a fund, you might feel the urge to buy that option back at
+[  335.36s ->   341.08s] a loss. And so by selling calls, what you can see is that this yield is not free, whether it's directly
+[  341.08s ->   347.18s] associated with getting assigned or two, with you buying back that option at a loss, which leads us
+[  347.18s ->   352.96s] to takeaway number two. Most of the returns that we get over a long period of time actually comes from
+[  352.96s ->   357.96s] the stock appreciation, not from the premiums. You'll see from this chart that there is a direct
+[  357.96s ->   364.20s] correlation between the amount of money that we collect and the money that we're losing from the
+[  364.20s ->   368.88s] upside from the stock. So intuitively, this makes sense, right? The lower the yield, it means you're
+[  368.88s ->   373.96s] further away from the money, more unlikely for the stock to surpass it. When we're up to 25%,
+[  373.96s ->   380.12s] which means we're really close to the money, it's a high likelihood that the stock price goes above
+[  380.12s ->   385.34s] our strike. Hence why we see negative returns as we get more aggressive, closer to the money.
+[  385.68s ->   391.16s] The market drifts upwards. And so it is more likely than not that if we're very close to the money,
+[  391.30s ->   398.94s] we'll end up losing on that potential upside from the stock. You might be saying, well, if I collect
+[  398.94s ->   404.12s] enough premium, then it shouldn't matter, right? What you're going to see is that even the most
+[  404.12s ->   409.62s] aggressive cases where we're really close to the money, we are collecting a lot of money.
+[  410.12s ->   416.26s] But that is not enough to cover the amount of money that we're losing when the stock rises.
+[  416.80s ->   420.42s] And there is a scenario where you can make a little bit of money right here at the top of
+[  420.42s ->   423.34s] this chart. And we'll talk about that later on in this video. So make sure you guys stay for that.
+[  423.42s ->   429.36s] I really want to hone this takeaway in by showing you a real life example of why this is such a,
+[  429.36s ->   433.56s] what they call a devil's bargain. And if you look at my portfolio, you'll see that we were assigned
+[  433.56s ->   438.92s] on March 18th and March 20th from our puts, and we were forced to buy 200 shares of TSMC.
+[  438.92s ->   447.66s] On average, we were collecting around $182 a share. TSM right now is at $287. So that's around six
+[  447.66s ->   454.74s] months ago. It's been an uptrend ever since, right? It is very unlikely that I can replicate this 60%
+[  454.74s ->   461.14s] return from collecting premiums, right? If I were to sell it every single month, that'd be six times,
+[  461.14s ->   466.32s] I would have to collect 10% every single month. If I were to sell it weekly, I would have to make
+[  466.32s ->   472.36s] around 3% every single week, which means that I would basically be selling it right at the money,
+[  472.70s ->   477.70s] which would be close to like a 2% return. The argument that people tend to make is that if I
+[  477.70s ->   483.06s] get assigned, I'll sell puts or I'll just buy that stock back. If I were assigned on my call,
+[  483.12s ->   487.90s] because I'm selling it right at the money that we just basically determined, let's assume that here
+[  487.90s ->   499.06s] on May 2nd, the stock was at $195. Okay. One week later on June 9th is at $207. And let's assume I
+[  499.06s ->   505.02s] sold it at $195. Stock appreciated close to $12 a share, which means that on June 9th, I would have
+[  505.02s ->   511.52s] to buy it back at $207. And then if I sell it right at the money again, the following week, it would be at
+[  511.52s ->   517.66s] June 16th, for example, it would be at $215.68. I would again get assigned and I'd be losing again,
+[  517.72s ->   524.58s] like $2 or $3 every single share because again, my premium cannot eat the appreciation of the stock
+[  524.58s ->   529.18s] because I'm selling so close to the money. So that is usually what happens because you're trading
+[  529.18s ->   535.86s] yield for upside. Now let's take a step back and talk about a slightly different topic. Some people
+[  535.86s ->   541.78s] view cover calls and I get comments on this on my channel as a way to hedge because theoretically,
+[  541.78s ->   546.18s] if I sell a cover call, right? And the stock goes down, then I'm actually making some money
+[  546.18s ->   551.56s] and protecting myself from the stock dropping, right? I collect 200 bucks, but the stock drops
+[  551.56s ->   556.54s] 500 bucks and I'm making back. Technically I've only lost 300 bucks. But takeaway number three is
+[  556.54s ->   563.28s] actually that cover calls suck as a way to hedge. It's because the amount of money you collect is
+[  563.28s ->   569.36s] capped. When stocks or markets drop, they drop very, very, very fast, right? Think of the tariff
+[  569.36s ->   576.44s] pullback that we had earlier this year. It tends to not be able to absorb much of the fall. So I'll
+[  576.44s ->   582.92s] give you a real life example. My wife, she sold an option on Robinhood and collected $560 at a strike
+[  582.92s ->   591.66s] price of $155. Robinhood at the time was close to $148. It fell to close to $121. So from peak to trough,
+[  591.66s ->   600.44s] it was down close to 18% from the moment she sold her option. Sure. She collected around 520 bucks,
+[  600.52s ->   606.52s] which is close to what, maybe 3% return, but the stock fell by 18%. She still lost 15 additional
+[  606.52s ->   612.86s] percentage points from the stock dropping. Another example is actually from a proper YouTube video.
+[  612.94s ->   618.44s] I refer to this video a lot. A guy was selling covered calls on Riot when Riot was back at like $60.
+[  618.44s ->   627.40s] Riot fell all the way down to $3.80. It fell by like 95%, maybe 97%. That cover call income is never
+[  627.40s ->   633.08s] going to be able to cover that much of a fall. And this is why, again, cover calls should not be used
+[  633.08s ->   637.58s] as a hedge. There are much better ways to hedge. Even if you sold a call credit spread, I'll link a
+[  637.58s ->   641.70s] tutorial in the upper right-hand corner here. It's a masterclass. Check that out. But the best way to
+[  641.70s ->   646.54s] hedge really is to just buy an out-of-the-money put option. Which leads me to the last takeaway.
+[  646.80s ->   655.64s] Income-first strategies underperform in every way. Because we are trading income for growth,
+[  655.84s ->   660.18s] the amount of money that we could make from the stock just naturally appreciating
+[  660.18s ->   664.54s] is a lot more than the income that we can collect from selling that call.
+[  664.70s ->   669.72s] This chart here just basically tells you that the higher your yield, the less your expected return is.
+[  669.72s ->   674.66s] I know this might be a little hard to understand. So let's take a couple of examples. There are a
+[  674.66s ->   683.36s] lot of cover call funds that sell calls on the underlying stock or fund. So for example, a famous
+[  683.36s ->   690.26s] one, JDPI is trying to sell cover calls on stocks like NVIDIA, AbbVie, Microsoft, Alphabet. And they
+[  690.26s ->   695.36s] will give you a payout every single month. Payouts are pretty good, right? You, at its peak,
+[  695.36s ->   702.42s] you're collecting 61 cents per share. 35 points, 35 per share, right? And the annualized yield
+[  702.42s ->   713.72s] is 8.36%. Another really popular one is XYOD. Same idea. It owns the S&P 500 and it gives you a 12.82%
+[  713.72s ->   718.86s] return. And you're looking at this and you go, this is pretty good. Now this is where it gets a
+[  718.86s ->   724.46s] little bit more fun. And we're going to compare JAPI to XYOD and we'll compare that to the S&P 500.
+[  725.02s ->   731.04s] Use VOO as a proxy. And all we care about is total return. If I were to do absolutely nothing
+[  731.04s ->   736.22s] and just accept the premiums, the dividends, and let the stock appreciate, will I outperform
+[  736.22s ->   742.56s] the S&P 500? You can see over a six months period, S&P 500 is up 20% and including dividends,
+[  742.56s ->   749.52s] XYOD is at 9% and JEPI is at 6%. If you go to year to date, the gap is even larger.
+[  750.48s ->   758.49s] One year, it's even a little bit larger. Five years, it's even larger, almost double, right? 106%
+[  758.49s ->   765.91s] to 59 and 51. Now, the reason for that is actually really simple, right? We talked about how this
+[  765.91s ->   770.23s] equity from the stock appreciating is getting cut off. So if you look at the actual stock price,
+[  770.23s ->   781.01s] over a five-year timeframe, right? S&P 500 has appreciated 92%. JEPI is up 3.66% while XYOD is
+[  781.01s ->   788.01s] down 12.4%. JEPI and XYOD has to return that difference in terms of dividends, right? And
+[  788.01s ->   795.99s] payouts. But it's really hard to return more and more money, especially in XYOD's case. 10% of $45
+[  795.99s ->   804.73s] is $4.50. 10% of $39 or $40 is $4, which means that in five years, you've actually lost 50 cents
+[  804.73s ->   808.97s] in dividends, even though the dividend yield remains the same, right? You're getting the
+[  808.97s ->   817.52s] same amount, but of a smaller pie. Now, this is even worse when you talk about more aggressive
+[  817.52s ->   823.12s] cover call strategies, right? Such as Tesli versus the underlying, which is Tesla.
+[  823.12s ->   832.43s] All we care again about is total returns. So in a year, Tesla's up 49% while Tesli is up 40%.
+[  832.43s ->   836.25s] In five years, which is a little bit unfair because it's only been around for three years,
+[  837.01s ->   842.23s] you can see that the gap is at 199 while it's at 56, probably closer to like 57 because you can see
+[  842.23s ->   850.84s] there's like a 10% gap right here. Same thing with NVIDIA. One year, right? NVIDIA is still
+[  850.84s ->   855.54s] outperforming NVIDIA. And in five years, if you were to start right here again, right? It is at
+[  855.54s ->   863.30s] 1,200% while NVIDIA is at 283% and subtract around 100% there. The more aggressive you are selling
+[  863.30s ->   870.14s] calls, YieldMax ETF cases, you're selling it weekly, you will end up losing more money as opposed to just
+[  870.14s ->   874.52s] buying the underlying. And this is especially true if you're in 20, 30, 40s, and 50, right? You're trying
+[  874.52s ->   880.90s] to replace your full-time income with some of these dividend ETFs or high income ETFs. We're not at an
+[  880.90s ->   885.54s] age where we should be concerned about income. We should be concerned about total returns because
+[  885.54s ->   889.62s] that is what is going to allow us to compound. And there are a couple of issues that arise when
+[  889.62s ->   895.36s] you're relying on these cover call funds or income funds for retirement or replacing your full-time
+[  895.36s ->   901.72s] income. One is if we need capital, look at NVIDIA. NVIDIA is at 20 bucks. Now it's at $15.33,
+[  901.72s ->   909.40s] which means that in a span of a year and a half, two years, it's down 23%. So if you needed that cash
+[  909.40s ->   916.48s] immediately, you have to lose 23%. And the worst part is if you're relying on a steady flow of income,
+[  916.86s ->   925.90s] these payouts will actually start decreasing over time. It started off at $19 and is now down to $8.56.
+[  925.90s ->   935.44s] Why is that? Remember again, Tesli started at $40. Now it's at $8. Because why? It keeps getting
+[  935.44s ->   941.00s] assigned. Their asset under management is dropping continuously as they try to maintain that yield.
+[  941.34s ->   947.04s] The dividend yield is still the same year after year, but you can see the dividend growth is slowing.
+[  947.04s ->   954.40s] And especially in Tesli's case, it is now negative. You may be getting $100 in year one. You'll only be
+[  954.40s ->   961.54s] getting $53 in year two. And this doesn't even include inflation. And this is exactly why if you're
+[  961.54s ->   966.50s] in your 20s to 50s looking to retire, it's not a sustainable way because your income will decrease.
+[  967.00s ->   972.04s] Let's talk a little bit about how to actually trade cover calls. Now, if you guys want a masterclass on
+[  972.04s ->   975.24s] cover calls, let me know down in the comments section below. And when I do make it,
+[  975.24s ->   979.44s] I'll link it here in the upper right hand corner. First thing from research from this paper,
+[  979.50s ->   983.34s] it indicates that if you wanted to trade cover calls, you have to trade it very,
+[  983.48s ->   987.42s] very conservatively, like really far out of the money because that's the only time
+[  987.42s ->   995.48s] where you are expected to make positive returns. By generating 1.2% to 2.4% of annualized yields from
+[  995.48s ->  1002.42s] cover calls, this provides enough money to outperform the S&P 500 by 0.2%. Not a lot,
+[ 1002.42s ->  1007.32s] but it's overperformance nonetheless. If it's 2.4% annualized yield, you're getting around like
+[ 1007.32s ->  1013.48s] 0.1% or 0.2% every single month. So you're selling really far out of the money. The second
+[ 1013.48s ->  1018.20s] way, which is my preferred way of selling cover calls is as a way to exit a position.
+[ 1018.68s ->  1026.14s] So take that TSM shares that I own. If I want to sell 100 shares of TSM, I would then sell a cover call
+[ 1026.14s ->  1032.02s] hoping that they would get assigned. At the same time, I will collect income from selling that
+[ 1032.02s ->  1037.34s] cover call, which then raises my cost basis. So that about wraps up this video. There are a lot
+[ 1037.34s ->  1043.52s] of cons to coverage calls, but there is a time and place to trade it. And this is why you want to
+[ 1043.52s ->  1047.22s] subscribe to this channel because I want to make sure that you guys are understanding the amount
+[ 1047.22s ->  1052.30s] of risk you guys are taking on and adjusting your portfolio or your strategy accordingly.
+[ 1052.30s ->  1055.86s] Now, let me know down in the comment section below, if you guys agree or disagree with me or some of
+[ 1055.86s ->  1061.02s] your covered calls stories where it turned out well, or it didn't turn out well. If you guys want
+[ 1061.02s ->  1066.18s] to learn how I generate passive income, as well as grow my portfolio through options, make sure you
+[ 1066.18s ->  1070.56s] guys check out this video linked in the end screen right here. And if you want to check out my public
+[ 1070.56s ->  1075.00s] portfolio that I showed in this video, I'll link the playlist right here as well. Like always,
+[ 1075.42s ->  1077.60s] stay safe in the market until next time. Peace.

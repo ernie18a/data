@@ -1,0 +1,4 @@
+[    0.46s ->     7.73s] Hey guys, Roman here, quantitative researcher and trader, founder of QuantGuild, and today
+[    7.73s ->    13.37s] I want to discuss how to get a job as a quant in just three steps.
+[   13.37s ->    14.11s] It's no secret.
+[   14.59s ->    16.63s] I came from a non-target...

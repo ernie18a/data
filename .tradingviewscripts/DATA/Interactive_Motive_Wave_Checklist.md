@@ -1,0 +1,199 @@
+<!-- tradingview-pine-id: PUB;b88de26d7b254df0b0b84a75b19c5fdb -->
+<!-- tradingviewscripts-format: 1 -->
+# Interactive Motive Wave Checklist
+
+Source: https://www.tradingview.com/script/ypAxpurY-Interactive-Motive-Wave-Checklist/
+
+## Description
+
+Here is an interactive tool that can be used for learning a bit about Elliott Waves
+
+🎲 How it works?
+The script upon load asks users to enter 6 pivots in an order. Once all 6 pivots are selected on the interactive chart, the script will calculate if the structure is a valid motive wave.
+
+When you load the script, you will see a prompt on the chart to select points on the chart to form 6 pivots.
+
+https://www.tradingview.com/x/3is2xenY/
+
+When you select the 6 pivots, the checklists are populated on the chart to notify users which conditions for qualifying the selection has passed and which of them are failed.
+
+https://www.tradingview.com/x/k8pLJ8Fe/
+
+🎲 Conditions for Motive Wave
+
+Motive wave can be either Impulse or Diagonal Wave. Diagonal wave can be either expanding or contracting diagonals. To learn more about diagonal waves, please go through this idea.
+https://www.tradingview.com/chart/BTCUSDT/qI9VKnbT-Decoding-Wedge-Patterns/
+
+Rules for generic motive waves are as below
+
+[*] Pivots in order - Checks wether the pivots selected are in progressive order.
+[*] Directions in order - Checks if the pivot directions are correct - either PH, PL, PH, PL, PH, PL or PL, PH, PL, PH, PL, PH
+[*] Wave 2 never moves beyond the start of wave 1 - Wave 2 retracement is less than 100% of wave1
+[*] Wave 3 always moves beyond the end of wave 1 - Wave 3 retracement is more than 100% of wave2
+[*] Wave 3 is never the shortest one - Checks if Wave 3 is bigger than either Wave 1 or wave 5 or both.
+
+Now, these are the specific rules for Impulse Waves on top of Motive Wave conditions
+
+[*] Wave 4 never moves beyond the end of Wave 1 - meaning wave 1 and wave 4 never overlap on price scale.
+[*] Wave 1, 3, 5 are all not extended. We check for retracement ratios of more than 200% to be considered as extended wave.
+
+Below are the conditions for Diagonal Waves on top of Motive Wave conditions
+
+[*] Wave4 never moves beyond the start of Wave 3 - Wave 4 retracement is less than 100%
+[*] Wave 4 always ends within the price territory of Wave 1 - Unlike impulse wave, wave 4 intersects with wave 1 in case of diagonal waves. This is the major difference between impulse and diagonal wave.
+[*] Waves are progressively expanding or contracting - Wave1 > Wave3 > Wave5 and Wave2 > Wave4 to be contracting diagonal. Wave1 < Wave3 < Wave5 and Wave2 < Wave4 to be expanding diagonal wave.
+
+Here is an example of diagonal wave projection
+https://www.tradingview.com/x/HdlrpFBR/
+
+Here is an example of impulse wave projection
+https://www.tradingview.com/x/FvzxBkz9/
+
+---
+
+## Source Code
+
+````pine
+// This work is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0) https://creativecommons.org/licenses/by-nc-sa/4.0/
+// © Trendoscope Pty Ltd
+//                                       ░▒             
+//                                  ▒▒▒   ▒▒      
+//                              ▒▒▒▒▒     ▒▒      
+//                      ▒▒▒▒▒▒▒░     ▒     ▒▒          
+//                  ▒▒▒▒▒▒           ▒     ▒▒          
+//             ▓▒▒▒       ▒        ▒▒▒▒▒▒▒▒▒▒▒  
+//   ▒▒▒▒▒▒▒▒▒▒▒ ▒        ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒         
+//   ▒  ▒       ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░        
+//   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒▒▒▒▒▒▒▒         
+//   ▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ ▒▒                       
+//    ▒▒▒▒▒         ▒▒▒▒▒▒▒                            
+//                 ▒▒▒▒▒▒▒▒▒                           
+//                ▒▒▒▒▒ ▒▒▒▒▒                          
+//               ░▒▒▒▒   ▒▒▒▒▓      ████████╗██████╗ ███████╗███╗   ██╗██████╗  ██████╗ ███████╗ ██████╗ ██████╗ ██████╗ ███████╗
+//              ▓▒▒▒▒     ▒▒▒▒      ╚══██╔══╝██╔══██╗██╔════╝████╗  ██║██╔══██╗██╔═══██╗██╔════╝██╔════╝██╔═══██╗██╔══██╗██╔════╝
+//              ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒        ██║   ██████╔╝█████╗  ██╔██╗ ██║██║  ██║██║   ██║███████╗██║     ██║   ██║██████╔╝█████╗ 
+//             ▒▒▒▒▒       ▒▒▒▒▒       ██║   ██╔══██╗██╔══╝  ██║╚██╗██║██║  ██║██║   ██║╚════██║██║     ██║   ██║██╔═══╝ ██╔══╝  
+//            ▒▒▒▒▒         ▒▒▒▒▒      ██║   ██║  ██║███████╗██║ ╚████║██████╔╝╚██████╔╝███████║╚██████╗╚██████╔╝██║     ███████╗
+//             ▒▒             ▒                        
+//@version=5
+indicator("Interactive Motive Wave Checklist", overlay = true)
+import HeWhoMustNotBeNamed/DrawingTypes/2 as dr
+import HeWhoMustNotBeNamed/DrawingMethods/2
+import HeWhoMustNotBeNamed/FibRatios/1 as fibs
+
+import HeWhoMustNotBeNamed/utils/1 as ut
+import HeWhoMustNotBeNamed/iLogger/1 as l
+var logger = l.Logger.new(minimumLevel = 'DEBUG', showOnlyLast = true)
+logger.init()
+
+p0price = input.price(0,'0',group='XABC', inline=  'Start', confirm=true)
+p0time = input.time(0,'',group='XABC', inline=  'Start', confirm=true)
+p1price = input.price(0,'1',group='XABC', inline=  '(1)', confirm=true)
+p1time = input.time(0,'',group='XABC', inline=  '(1)', confirm=true)
+p2price = input.price(0,'2',group='XABC', inline=  '(2)', confirm=true)
+p2time = input.time(0,'',group='XABC', inline=  '(2)', confirm=true)
+p3price = input.price(0,'3',group='XABC', inline=  '(3)', confirm=true)
+p3time = input.time(0,'',group='XABC', inline=  '(3)', confirm=true)
+p4price = input.price(0,'4',group='XABC', inline=  '(4)', confirm=true)
+p4time = input.time(0,'',group='XABC', inline=  '(4)', confirm=true)
+p5price = input.price(0,'5',group='XABC', inline=  '(5)', confirm=true)
+p5time = input.time(0,'',group='XABC', inline=  '(5)', confirm=true)
+
+var notDrawn = true
+if(barstate.islast and notDrawn)
+    notDrawn := false
+    pivotsInOrder = p0time < p1time and p1time < p2time and p2time< p3time and p3time < p4time and p4time < p5time
+    w1 = p1price - p0price
+    w2 = p2price - p1price
+    w3 = p3price - p2price
+    w4 = p4price - p3price
+    w5 = p5price - p4price
+
+    direction = math.sign(p5price - p0price)
+
+    directionInOrder = math.sign(w1) == math.sign(w3) and math.sign(w3) == math.sign(w5) and
+                     math.sign(w2) == math.sign(w4) and math.sign(w1) != math.sign(w2)
+
+    w1Length = math.abs(w1)
+    w2Length = math.abs(w2)
+    w3Length = math.abs(w3)
+    w4Length = math.abs(w4)
+    w5Length = math.abs(w5)
+
+    w3isNotShortest = w3Length > w1Length or w3Length > w5Length
+
+    w2Ratio = fibs.retracementRatio(p0price, p1price, p2price)
+    w3Ratio = fibs.retracementRatio(p1price, p2price, p3price)
+    w4Ratio = fibs.retracementRatio(p2price, p3price, p4price)
+    w5Ratio = fibs.retracementRatio(p3price, p4price, p5price)
+
+    mRatio = fibs.retracementRatio(p0price, p3price, p4price)
+    w2DoesNotRetraceBeyondW1 = w2Ratio < 1
+    w3MovesBeyondW1 = w3Ratio > 1
+    motiveRatiosIntact = w2DoesNotRetraceBeyondW1 and w3MovesBeyondW1 and w4Ratio < 1 and w5Ratio > 0.9 and mRatio < 1
+
+    isMotiveWave = pivotsInOrder and directionInOrder and w3isNotShortest and motiveRatiosIntact
+
+    w4NotBeyondEndofW1 = direction*p1price < direction*p4price
+    numberofExtendedWaves = (1/w2Ratio > 2? 1 : 0) + (w3Ratio > 2? 1 : 0) + (w5Ratio > 2? 1 : 0)
+    notAllExtended = numberofExtendedWaves < 3
+    isImpulse = w4NotBeyondEndofW1 and isMotiveWave and notAllExtended
+
+    wave4NotBeyondWave3 = w4Ratio < 1
+    wave1OverlapsWave4  = direction*p1price > direction*p4price
+    isExpandingWaves = w1Length < w3Length and w3Length < w5Length and w2Length < w4Length
+    isContractingWaves = w1Length > w3Length and w3Length > w5Length and w2Length > w4Length
+
+    isExpandingOrContracting = isExpandingWaves or isContractingWaves
+    isExpandingDiagonal = isMotiveWave and wave1OverlapsWave4 and isExpandingWaves and wave4NotBeyondWave3
+    isContractingDiagonal = isMotiveWave and wave1OverlapsWave4 and isContractingWaves and wave4NotBeyondWave3
+
+    dr.Point start = dr.Point.new(p0price, 0, p0time)
+    dr.Point p1 = dr.Point.new(p1price, 0, p1time)
+    dr.Point p2 = dr.Point.new(p2price, 0, p2time)
+    dr.Point p3 = dr.Point.new(p3price, 0, p3time)
+    dr.Point p4 = dr.Point.new(p4price, 0, p4time)
+    dr.Point p5 = dr.Point.new(p5price, 0, p5time)
+
+    var tbl = table.new(position.top_right, 2, 10)
+    tbl.cell(0, 0, 'Motive Wave Checklist', text_color = color.white, bgcolor = color.new(color.gray, 60), text_halign = text.align_left)
+    tbl.cell(0, 1, 'Pivots In Order '+(pivotsInOrder?'✅':'❌'), text_color = color.white, bgcolor = color.new(pivotsInOrder? color.green: color.red, 60), text_halign = text.align_left)
+    tbl.cell(0, 2, 'Directions In Order '+(directionInOrder?'✅':'❌'), text_color = color.white, bgcolor = color.new(directionInOrder? color.green: color.red, 60), text_halign = text.align_left)
+    tbl.cell(0, 3, 'Wave 2 never moves beyond the start of wave 1 '+(w2DoesNotRetraceBeyondW1?'✅':'❌'), text_color = color.white, bgcolor = color.new(w2DoesNotRetraceBeyondW1? color.green: color.red, 60), text_halign = text.align_left)
+    tbl.cell(0, 4, 'Wave 3 always moves beyond the end of wave 1 '+(w3MovesBeyondW1?'✅':'❌'), text_color = color.white, bgcolor = color.new(w3MovesBeyondW1? color.green: color.red, 60), text_halign = text.align_left)
+    tbl.cell(0, 5, 'Wave 3 is never the shortest wave '+(w3isNotShortest?'✅':'❌'), text_color = color.white, bgcolor = color.new(w3isNotShortest? color.green: color.red, 60), text_halign = text.align_left)
+
+    tbl.cell(1, 0, 'Impulse Wave Checklist', text_color = color.white, bgcolor = color.new(color.gray, 60), text_halign = text.align_left)
+    tbl.cell(1, 1, 'Wave 4 never moves beyond the end of wave 1 '+(w4NotBeyondEndofW1?'✅':'❌'), text_color = color.white, bgcolor = color.new(w4NotBeyondEndofW1? color.green: color.red, 60), text_halign = text.align_left)
+    tbl.cell(1, 2, 'Never are waves 1, 3 and 5 all extended. '+(notAllExtended?'✅':'❌'), text_color = color.white, bgcolor = color.new(notAllExtended? color.green: color.red, 60), text_halign = text.align_left)
+
+    tbl.cell(1, 3, 'Diagonal Wave Checklist', text_color = color.white, bgcolor = color.new(color.gray, 60), text_halign = text.align_left)
+    tbl.cell(1, 4, 'Wave 4 never moves beyond the start of wave 3 '+(wave4NotBeyondWave3?'✅':'❌'), text_color = color.white, bgcolor = color.new(wave4NotBeyondWave3? color.green: color.red, 60), text_halign = text.align_left)
+    tbl.cell(1, 5, 'Wave 4 always ends within the price territory of wave 1 '+(wave1OverlapsWave4?'✅':'❌'), text_color = color.white, bgcolor = color.new(wave1OverlapsWave4? color.green: color.red, 60), text_halign = text.align_left)
+    tbl.cell(1, 6, 'Waves are progressively expanding or contracting '+(isExpandingOrContracting?'✅':'❌'), text_color = color.white, bgcolor = color.new(isExpandingOrContracting? color.green: color.red, 60), text_halign = text.align_left)
+
+    waveDescription = isImpulse? 'Impulse Wave' :
+                         isContractingDiagonal? 'Contracting Diagonal Wave' :
+                         isExpandingDiagonal? 'Expanding Diagonal Wave' : 'None'
+
+    txtColor = isImpulse or isContractingDiagonal or isExpandingDiagonal? (direction > 0? color.green : color.red) : color.silver
+    var waveLabel = table.new(position.middle_center, 1, 1)
+    waveLabel.cell(0, 0, waveDescription, text_color = color.new(txtColor, 70), text_size = size.huge)
+
+    dr.LineProperties properties = dr.LineProperties.new(xloc.bar_time, color = color.yellow, style = line.style_dotted, width = 0)
+    dr.LineProperties mainLineProperty = dr.LineProperties.new(xloc.bar_time, color = color.yellow, style = line.style_solid, width = 2)
+    start.createLine(p5, mainLineProperty).draw()
+    start.createLine(p1, properties).draw()
+    p1.createLine(p2, properties).draw()
+    p2.createLine(p3, properties).draw()
+    p3.createLine(p4, properties).draw()
+    p4.createLine(p5, properties).draw()
+
+    dr.LabelProperties lblPRoperties = dr.LabelProperties.new(xloc.bar_time, yloc.price, txtColor, label.style_text_outline, color.yellow, size.large)
+    start.createLabel('(0)', properties = lblPRoperties).draw()
+    p1.createLabel('(1)', properties = lblPRoperties).draw()
+    p2.createLabel('(2)', properties = lblPRoperties).draw()
+    p3.createLabel('(3)', properties = lblPRoperties).draw()
+    p4.createLabel('(4)', properties = lblPRoperties).draw()
+    p5.createLabel('(5)', properties = lblPRoperties).draw()
+````

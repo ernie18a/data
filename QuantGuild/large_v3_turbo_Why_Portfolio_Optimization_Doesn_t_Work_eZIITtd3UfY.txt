@@ -1,0 +1,198 @@
+[    1.34s ->     7.07s] Today, we're going to talk about portfolio optimization. This is the only video you need
+[    7.07s ->    14.39s] to understand what it is, how it works, what assumptions go into making it actually function
+[   14.39s ->    20.49s] the way it is intended to function, and the reality of the situation when you try to actually
+[   20.49s ->    26.17s] implement it in practice, why it breaks down, why it doesn't make any sense, and why we need to seek
+[   26.17s ->    32.95s] extensions and alternative models. We're going to start with a set of correlated games, that is
+[   32.95s ->    39.03s] three games of chance that have some underlying covariance structure. Once we understand the
+[   39.03s ->    46.73s] intention of portfolio optimization in that set of games, we can extend what we learned there to
+[   46.73s ->    53.85s] the asset selection space, where we can see the intention break down. Let's start with this set
+[   53.85s ->    61.11s] of games. The games themselves don't matter at all. The whole purpose here is we have three games of
+[   61.11s ->    69.09s] chance that have structure that is preserved over time. So as I continue to generate wealth for my
+[   69.09s ->    76.73s] wealth function, the structure of the game that is contributing to my wealth increasing or decreasing
+[   76.73s ->    84.17s] over time does not change. Now there is a covariance structure between these games, that just means that
+[   84.17s ->    93.15s] the randomness is unified by some event. So suppose I roll a dice, then downstream I have a couple of
+[   93.15s ->    98.19s] different games that are affected by that first dice roll. Clearly they're going to be correlated with
+[   98.19s ->   103.89s] one another. If I roll a dice over here and flip a coin over here, those two games are not related in any way.
+[  103.89s ->   111.23s] This is sort of illustrating the idea of assets being correlated with one another. There's some covariance
+[  111.23s ->   118.21s] structure between, say, Apple, Microsoft, and maybe even General Motors. They're correlated in different
+[  118.21s ->   124.17s] ways. You have industry correlation, you have market correlation. That's what I'm aiming to capture with these
+[  124.17s ->   130.65s] correlated games of chance. But the games themselves don't actually matter. So what I've done here is I've created
+[  130.65s ->   136.51s] three arbitrary games that are unified by, say, some dice roll upstream, and then downstream you have
+[  136.51s ->   143.29s] some sort of payout. You can assign a weight to each game. And again, asset selection is just some linear
+[  143.29s ->   152.25s] combination of weights to each asset with your constraint being overall wealth. Here it is the exact same
+[  152.25s ->   158.33s] thing. So what we're going to do is we're going to simulate playing all of these games. We're going to look at
+[  158.33s ->   165.75s] the expected value and the variance from each of these games. I've called them stock games. That is because you can
+[  165.75s ->   173.85s] look at them essentially as assets with expected value and variance in their payout. You can look at it almost as
+[  173.85s ->   180.95s] expected return and variance to that return. Now here, this is going to be the simulated expectation and variance.
+[  180.95s ->   187.53s] You can also look at the sample covariance matrix here. The off diagonals are non-zero. You can see
+[  187.53s ->   193.99s] suggesting that there may be some sort of structure relationship between each of these games. And just as we
+[  193.99s ->   200.61s] had said a moment ago, upstream they are all unified by some random event. So it does make sense that the
+[  200.61s ->   208.91s] off diagonals are non-zero. So there is some structure among the games. That is, they are related to each other.
+[  208.91s ->   214.47s] That is, if one game tends to have a higher payout, the other game, it may tend to have a higher payout
+[  214.47s ->   220.59s] as well. Given the randomness in each of these games is governed by a very simple probability mass
+[  220.59s ->   228.05s] function that defines the randomness formally, we really don't need to simulate the expected value
+[  228.05s ->   234.39s] and the variance. What I mean is we can just go about solving for it analytically and actually find
+[  234.39s ->   240.51s] an equation for the expected value that is the average payout of each game and then the variance
+[  240.51s ->   246.93s] of that game's payout. So that's exactly what I've done here. But another quantity we're interested in
+[  246.93s ->   252.61s] is the risk adjusted expected return or the so-called sharp ratio. This is going to take not only the
+[  252.61s ->   259.87s] expected value into consideration, but also the volatility associated with achieving some sort of
+[  259.87s ->   267.81s] return. So it is this risk adjusted measure of the stock game itself. So how much risk do we have to
+[  267.81s ->   274.33s] assume in order to achieve the reward that is measured in terms of an expectation? That's what
+[  274.33s ->   279.05s] the sharp ratio is going to tell us. So obviously we're going to want that to be high, right? We don't
+[  279.05s ->   285.23s] want to take on a lot of risk to achieve a lot of reward. And if in the numerator, you have the
+[  285.23s ->   291.03s] expectation, either the expected returns got to go way up to increase the sharp ratio or in the
+[  291.03s ->   295.99s] denominator, volatility has got to go way down. It's the only way to increase the sharp ratio. Both
+[  295.99s ->   300.75s] of those things are good. In other words, we want the expected return to go way up or we want the
+[  300.75s ->   306.25s] volatility of that return to go way down. So if we look at the stock games and we look at the sharp
+[  306.25s ->   314.23s] ratio associated with each of these stock games, we have 0.54, 0.18, and 1.83. So clearly game three has the
+[  314.23s ->   320.49s] best risk adjusted expected return. Now from portfolio theory, we know that there's some
+[  320.49s ->   325.39s] sort of underlying covariance structure here. They're not orthogonal to one another. That's a
+[  325.39s ->   330.31s] fancy word. It means all of these games have some sort of correlation structure. And essentially what
+[  330.31s ->   336.83s] I'm capturing there is in stock returns, we also have some correlation. That is Microsoft returns will
+[  336.83s ->   342.37s] be correlated to Apple returns. They're both in tech. All of those in tech will probably be correlated to
+[  342.37s ->   348.81s] some capacity with all of those in say utility because everything has market exposure. So there
+[  348.81s ->   355.01s] is going to be some underlying covariance structure in stock returns. And that is what we consider here
+[  355.01s ->   361.15s] with a non-zero covariance matrix. That is there's some structure among these games. Now, again, this is
+[  361.15s ->   368.13s] showing that the intention of portfolio optimization. Okay. So what we have here is we have games with a
+[  368.13s ->   374.35s] covariance structure just like stock returns. There's some covariance structure, but the big difference is
+[  374.35s ->   380.29s] these games, the structure is preserved over time. What do I mean by this? Well, first, let's go back to
+[  380.29s ->   387.63s] the portfolio theory and figure out how we can select an optimal combination of these games to increase the
+[  387.63s ->   395.33s] sharp ratio. What I'm saying here is if we use some sort of selection, some sort of clever selection of
+[  395.33s ->   402.19s] game one, game two, and game three, and we wait the selection of each of these games in our portfolio
+[  402.19s ->   409.71s] by different values, we may be able to achieve a higher sharp ratio. That is exactly what I have here.
+[  410.01s ->   417.51s] Again, these games are correlated with one another. So just waiting more into the game with a high sharp
+[  417.51s ->   424.47s] ratio is not going to achieve the intended effect. What we can do is we can select a combination of these
+[  424.47s ->   429.07s] games. And that's exactly what we see here, different linear combinations of the game,
+[  429.37s ->   435.33s] the associated expected return and the volatility. And we can find this so-called tangency portfolio
+[  435.33s ->   441.37s] that is this maximum sharp ratio selection of each of the games. And it turns out we're going to have
+[  441.37s ->   446.61s] a big weight in game three, but we're also going to want some exposure to game one and game two.
+[  446.61s ->   453.97s] And it turns out the sharp ratio we can achieve is roughly 1.92, which is in fact higher than the
+[  453.97s ->   461.73s] original 1.83 of just game three alone. You can look at this as diversification, very similar to
+[  461.73s ->   467.19s] how you're considered roughly fully diversified. If you have some sort of equally weighted portfolio
+[  467.19s ->   472.81s] in say 30 different assets across different sectors, you can think of that diversification
+[  472.81s ->   479.31s] benefit as contributing positively perhaps to your risk adjusted return. And in that same way we have
+[  479.31s ->   485.09s] here, since there is some underlying covariance structure, if we take a special combination of
+[  485.09s ->   491.83s] these games, we actually achieve a higher expected risk adjusted return given by that sharp ratio of
+[  491.83s ->   500.73s] 1.92. This is the intended effect of portfolio optimization. What I've done is I've found an optimal
+[  500.73s ->   507.85s] allocation to each of these stock games that is going to maximize my risk adjusted expected return.
+[  508.17s ->   514.05s] When I continue to simulate play all of these games, again, there's some correlation between all these
+[  514.05s ->   518.99s] games. I'm not going to just want to hold on to game one or game two or game three. I'm going to want some
+[  518.99s ->   524.37s] combination of them. This is the combination that I want to hold on to. This is the optimal combination.
+[  524.97s ->   530.65s] This again is the intended effect of portfolio optimization. How can we see what this
+[  530.65s ->   536.03s] actually looks like with wealth over time? Well, what I've done is I've generated a random selection
+[  536.03s ->   543.77s] of weights for each of the games and I've plotted the wealth path over time. And what you'll see is
+[  543.77s ->   550.25s] the optimal wealth path is going to continue to do better than the other wealth paths with different
+[  550.25s ->   555.67s] weights. This is what it means to have the highest risk adjusted return. That is, if we continue to do
+[  555.67s ->   564.81s] this on average, we are going to perform better than other combinations of weights. Continue to run
+[  564.81s ->   571.49s] this. That red line is going to stay above the blue and the green line. This is the intended effect
+[  571.49s ->   578.03s] of portfolio optimization. It is not to select the path that generates the most wealth. We don't know
+[  578.03s ->   582.37s] what that's going to be. That's random. That's in the future. What we're trying to do is we're trying
+[  582.37s ->   589.31s] to maximize the risk adjusted expected return of all possible paths in the future. And that's given
+[  589.31s ->   595.59s] here by this, this average line here, this, this red line and the optimal weights that we've derived
+[  595.59s ->   603.69s] from this maximization problem here. And if you compare that to other possible combinations of
+[  603.69s ->   610.13s] weights, you can see it performs better on average. That is the whole purpose of this portfolio
+[  610.13s ->   615.61s] optimization. Ideally, what we would like to do is we'd like to estimate the risk adjusted expected
+[  615.61s ->   622.15s] return for a whole bunch of different assets, Microsoft, Apple, Google, Netflix, all of these
+[  622.15s ->   628.25s] stocks. And then we'd like to pick an optimal allocation such that our, our risk adjusted expected
+[  628.25s ->   634.57s] return is maximized. Then going forward, we can achieve an effect like this, where every time I run
+[  634.57s ->   641.27s] this simulation, that red line stays strongly above all of the other possible allocations, again,
+[  641.61s ->   648.31s] all of the possible average allocations. Okay. That is the purpose. That is the goal. Let's see
+[  648.31s ->   655.41s] now why this breaks down when we switch over to the stock space. Two key points here. The first is that
+[  655.41s ->   662.79s] the games do not change over time, nor does the expected payout of the games change, nor does the
+[  662.79s ->   669.49s] variance of the game's expected payouts change, nor does the underlying covariance structure change.
+[  670.29s ->   678.37s] The games are time invariant. Thus, the portfolio optimization yields the intended effect. The problem,
+[  678.69s ->   687.49s] simply put, in the stock space is that things change. Apple in 2005 is not the same company as Apple
+[  687.49s ->   695.59s] today. Do I really want to use the optimal weights that I found in 2005, my portfolio today? Probably
+[  695.59s ->   701.67s] not. So that's the first key point is things change. The second key point is this all comes down to how
+[  701.67s ->   708.15s] we're actually estimating the expected return. That is our goal as investment professionals is to
+[  708.15s ->   717.39s] estimate expected return. But is using historic data a reasonable way to do that? Is that really the
+[  717.39s ->   726.12s] best thing that we can do to estimate the expected return for our asset? Maybe, maybe not. There's a
+[  726.12s ->   730.84s] lot of different things that you can reduce to just estimating expected return. Oh, I have this crazy
+[  730.84s ->   734.48s] trading strategy, some sort of high frequency strategy, some sort of mean reverting strategy
+[  734.48s ->   741.24s] that's predicting cross-sectional equity returns. And yeah, you're still going to have some expected
+[  741.24s ->   747.14s] return and you're still measuring some expected return relative to some risk measure. This all comes down
+[  747.14s ->   753.34s] to just how well you can effectively measure expected return in the forward looking sense.
+[  753.78s ->   761.36s] So that is remark one. Remark one is the games and the game example is time invariant. None of these
+[  761.36s ->   765.98s] statistical properties change. When we find this optimal set of weights, that will not change. Whether
+[  765.98s ->   772.98s] these games exist in 2005 or 2050, the optimal set of weights will not change. But remark two is that
+[  772.98s ->   778.78s] our goal is to estimate this expected return. But this expected return is a moving target in reality.
+[  779.28s ->   784.46s] For the stock games, they're not. In that previous example illustrating why portfolio optimization
+[  784.46s ->   789.24s] would work if the assumptions were satisfied, this is what the intended effect would be.
+[  789.48s ->   794.18s] We found the optimal weights, now we don't got to do anything. We set and forget. In reality, it's a moving
+[  794.18s ->   802.00s] target. In reality, the measurement for our expected risk adjusted returns going forward is going to
+[  802.00s ->   806.54s] change and it's going to continue to change over time. So that is why things start to get messy. Now
+[  806.54s ->   812.14s] let's take a look at portfolio optimization in this stock space through an example and we'll kind of take
+[  812.14s ->   817.62s] a look at it through a different lens using our data science caps. This is the exact same setup as the
+[  817.62s ->   824.34s] games only instead of stock games or games we have assets in our portfolio to select from. We're trying
+[  824.34s ->   829.54s] to measure some sort of risk adjusted expected return and we know that that's a moving target
+[  829.54s ->   836.18s] that asymptotically there's no mean variance or covariance structure that will be preserved and that is what
+[  836.18s ->   841.60s] makes it a very difficult problem and why portfolio optimization ultimately breaks down. If you wanted to
+[  841.60s ->   847.52s] formalize it, you can formalize it as some sort of maximization problem, but in essence it's the
+[  847.52s ->   851.94s] exact same thing. We're trying to find some combination of all of the assets that we have
+[  851.94s ->   857.70s] available to us to yield the highest sharp ratio portfolio possible. So that's exactly what I do here
+[  857.70s ->   866.18s] in this code and I will go about plotting the combination of the assets that yield the optimal
+[  866.18s ->   874.20s] sharp ratio and all of these paths are possible portfolios. Again, the goal is not to pick the portfolio
+[  874.20s ->   880.44s] that has the highest value. The goal is to pick the portfolio that has the highest risk adjusted return or I should
+[  880.44s ->   888.44s] say the highest expected risk adjusted return so that we can achieve the effect of the games. That is as we continue
+[  888.44s ->   896.76s] to simulate forward, we continue to pick a path that on average is going to be better than all other paths, all other
+[  896.76s ->   908.28s] combinations of assets in our portfolio on average. So now that we have this optimal set of weights, we can take a look at the
+[  908.28s ->   914.54s] expected return, the standard deviation of that return or the variance. We can also look at the sharp ratio, but again, this
+[  914.54s ->   921.22s] largely doesn't matter. So the first point is all of these things are now moving targets, right? So just as I had said
+[  921.22s ->   927.84s] earlier, in 2005, if I find the optimal set of weights for my games in 2025, that optimal set of weights doesn't
+[  927.84s ->   935.46s] change. If I find an optimal set of weights for assets in my portfolio in 2005, heck, it might not even work in 2006, let alone
+[  935.46s ->   943.62s] in 2025. So what's the problem here? Effectively, this can be reduced to overfitting the noise in this space. We have a
+[  943.62s ->   950.84s] crappy measure of expected risk adjusted return and that's what we fit our asset weights to. Now when we try to use it out of
+[  950.84s ->   956.50s] sample, it's not robust and it works very poorly. This is very similar to if you've ever done any sort of
+[  956.50s ->   961.84s] machine learning, you have a training set of data, maybe a validation set and a testing set, you overfit
+[  961.84s ->   966.18s] your model, whether it's some sort of statistical model or some sort of neural network to your training
+[  966.18s ->   971.64s] data, you don't validate it and then out of sample and your testing data just performs terribly. You have
+[  971.64s ->   977.46s] one of two options, you could overfit then the testing data by altering the hyper parameters so that it fits
+[  977.46s ->   983.18s] both kind of okay. That's not how you model. That's not scientific at all. That's just overfitting
+[  983.18s ->   990.50s] the data that you have in general. Moreover, if you test it out of sample after you've overfit it,
+[  991.06s ->   997.16s] you've kind of just given yourself this look ahead anyway. So anything that you do going back to try to
+[  997.16s ->  1001.68s] fix the out of sample performance, you're kind of cherry picking results anyway. So it turns into a
+[ 1001.68s ->  1006.30s] very big problem because all right, I found this optimal set of weights in sample. Yeah, this
+[ 1006.30s ->  1012.06s] produces the this very nice portfolio, right? This very nice high sharp ratio portfolio, the highest
+[ 1012.06s ->  1018.44s] sharp ratio portfolio possible. All right, cool. Let's generate a new set of returns for the same set
+[ 1018.44s ->  1024.61s] of stocks. And what I'm going to do is I'm going to use the set of weights that I found here. Let's do
+[ 1024.61s ->  1030.55s] that. Well, we just overfit that set of data. So what do we expect to see? Well, we expect to see it
+[ 1030.55s ->  1035.93s] to perform very poorly. And that's exactly what we have here. Check it out. This was the previous
+[ 1035.93s ->  1042.49s] optimal portfolio. Now this is the new optimal portfolio. This is the sharp ratios. Now look at
+[ 1042.49s ->  1047.59s] the paths, right? This is the new path. That's what we would have liked, but this is what we ended up
+[ 1047.59s ->  1054.13s] with. Again, the covariance structure changed. And of course, all of the expected returns and variances
+[ 1054.13s ->  1060.33s] in the asset space for each asset changed. So yeah, no kidding. No wonder as we continue to
+[ 1060.33s ->  1067.29s] rerun this, we're always going to underperform the new optimal portfolio. And that's because
+[ 1067.29s ->  1075.01s] we effectively overfitted the sharp ratio in the return space for our historic data.
+[ 1075.41s ->  1084.09s] In other words, we have a very crappy measure of the risk adjusted expected return for the assets in
+[ 1084.09s ->  1088.09s] our portfolio. I'll leave you with this. I have a lot of opinions on portfolio optimization.
+[ 1088.09s ->  1094.99s] The statistical optimization view that is the games that we went over first, that is a reasonable lens
+[ 1094.99s ->  1101.63s] to look at portfolio optimization through in general. It's not as hopeless as I make it out to
+[ 1101.63s ->  1106.81s] be that, oh, the underlying covariance structure changes. Oh, the expected returns are impossible
+[ 1106.81s ->  1111.75s] to measure. Oh, the variance is impossible to measure. You can probably come up with some reasonable
+[ 1111.75s ->  1117.09s] estimation for those quantities, how quickly they change over time, the timeframe that you're trading
+[ 1117.09s ->  1122.65s] or investing. They will all play a key role in how you go about estimating those quantities.
+[ 1123.43s ->  1131.31s] There are no asymptotic guarantees necessarily, but I will digress. That is a statistical lens to view
+[ 1131.31s ->  1137.51s] portfolio optimization through. That is the intention of portfolio optimization. We're trying to maximize
+[ 1137.51s ->  1144.09s] our risk adjusted expected return. Assuming we have a really good measure for those values and
+[ 1144.09s ->  1149.65s] they're relatively stable, then it can be very effective. Okay. The other lens, yes, you're just
+[ 1149.65s ->  1156.57s] overfitting your historic data. Historic data is not a good estimate for expected return, let alone the
+[ 1156.57s ->  1161.99s] variance of that return. And you've effectively overfitted noise and your weights mean nothing and
+[ 1161.99s ->  1167.73s] they're useless out of sample. That is another lens to look through this portfolio optimization through.
+[ 1167.73s ->  1173.47s] In reality, a balanced perspective is probably healthy and it's an extremely unsatisfying remark
+[ 1173.47s ->  1179.83s] and commentary, but that's why we have models that kind of combine this quantitative and qualitative
+[ 1179.83s ->  1186.61s] perspective. You kind of get into a very murky area very quickly once you start to talk about these
+[ 1186.61s ->  1192.61s] qualitative behavioral aspects. It's like, okay, well, you know, Apple returned, let's say 20% last year.
+[ 1192.61s ->  1198.41s] There's no way it's going to perform as well this year. Um, and is that because, you know, it's not going to
+[ 1198.41s ->  1204.27s] perform as well as a company because the company itself is struggling? Is it from doubt and people are just going
+[ 1204.27s ->  1209.71s] to sell their shares? So it's not going to perform as well. Is it orthogonal to the company's cashflow and
+[ 1209.71s ->  1214.77s] performance? So, you know, there are other components that bleed into this very, very quickly that are very
+[ 1214.77s ->  1222.35s] difficult to quantify, you know, these different measures of sentiment, these different, uh, there's
+[ 1222.35s ->  1227.65s] just, there's just way too much to consider. So it does get very murky very quickly, but sticking with
+[ 1227.65s ->  1232.17s] the main purpose of this video, those are the two lenses for portfolio optimization that I wanted to
+[ 1232.17s ->  1238.63s] kind of look through. And I think we've covered everything that is necessary to understand the purpose
+[ 1238.63s ->  1244.95s] of it, the intention of it, why it breaks down and how to kind of surmount that difficult breakdown
+[ 1244.95s ->  1253.47s] in terms of a balanced perspective of perhaps other models, qualitative information and whatnot.
+[ 1253.71s ->  1258.75s] I want to thank you guys so much for watching. Check out quantguild.com. We have a discounted lifetime
+[ 1258.75s ->  1264.41s] membership. If you answer the question in the description box below, a lot of courses coming out,
+[ 1264.41s ->  1270.39s] price will be increasing this summer. Stay tuned for all of our new features. Other than that,
+[ 1270.81s ->  1272.47s] I will see you in the next video.

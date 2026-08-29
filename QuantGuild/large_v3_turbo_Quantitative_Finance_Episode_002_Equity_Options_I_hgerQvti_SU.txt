@@ -1,0 +1,123 @@
+[    0.18s ->     4.78s] Hey everybody, Roman Laquant here. Welcome back to the Quantitative Finance Series, Episode 2,
+[    5.20s ->    10.76s] where we are going to be introducing and giving you a brief refresher on equity options.
+[   11.50s ->    16.96s] We're going to discuss some of the basics to these equity options, and then using what we've learned
+[   16.96s ->    22.54s] so far in Episode 1, we can actually start to move on to some pretty advanced pricing topics.
+[   22.74s ->    28.84s] So let's just go ahead and get started. Equity options, well, what are they? They give the
+[   28.84s ->    34.10s] owner of the option, the right but not obligation, to perform some predefined action at a certain point
+[   34.10s ->    39.72s] in the future for a price called the premium. Now, in reality, there are a lot of different variables
+[   39.72s ->    45.74s] associated with these options. You have the strike price, the maturity of the option, the premium of
+[   45.74s ->    51.62s] the option, and all of these different things play into the value of the option at any certain point
+[   51.62s ->    57.74s] in time, but we'll discuss more about that later. For now, all you need to really realize is that the
+[   57.74s ->    63.66s] option gives the owner a lot of flexibility in deciding whether or not they're going to buy or
+[   63.66s ->    70.00s] sell some underlying equity at a certain point in the future, but they do pay a hefty price for this,
+[   70.10s ->    77.14s] and that is the options premium. In general, options are exchange traded and standardized, so there are
+[   77.14s ->    83.42s] standardized strikes and maturities for all of these options, and generally they're sold in blocks of
+[   83.42s ->    89.52s] 100, and these are referred to as vanilla options or just the vanillas. There are two main directions.
+[   89.92s ->    95.42s] We have call options and put options, and two main sides. We have the owner and the writer.
+[   96.28s ->   101.00s] Now, in practice, when you start looking at more complex implementations of options, generally,
+[  101.50s ->   108.80s] OTC traded options, exotics, the structures become increasingly complex and therefore are both
+[  108.80s ->   116.28s] increasingly complicated to explain and price, but we will be going into that in later videos in this
+[  116.28s ->   121.02s] series. For now, we're just going to be sticking with the vanillas. So let's take a look at the
+[  121.02s ->   126.54s] terminal value of an option if you're the owner. So whether you're holding a call or a put option,
+[  126.84s ->   133.46s] you can express your profit as a very simple equation. So let's take a look at the call. The call is going
+[  133.46s ->   139.30s] to be equal to the price that you paid for the option. So you're going to lose the premium plus
+[  139.30s ->   145.56s] the maximum between the spot price at the expiration of the option, less the strike price and zero. So
+[  145.56s ->   154.88s] you can see that right here. If the option is above the strike price, then this little portion here where
+[  154.88s ->   164.02s] the slope is one under the x-axis reflects the profit that you gain from the exercising of the
+[  164.02s ->   171.10s] option, but you still lose the premium. Then anything above the x-axis is going to be a positive profit.
+[  171.26s ->   177.32s] So you do have this brief window even after you're above the strike price where you are in a loss,
+[  177.34s ->   183.74s] but afterwards you are making that profit. And it's a similar notion for a put, right? So you're going
+[  183.74s ->   189.18s] to lose the premium, but you're going to gain the maximum between the difference of the strike price
+[  189.18s ->   196.14s] and the spot price at the expiration of the option and zero. And again, you have this negative one slope
+[  196.14s ->   201.52s] where you're still losing money, but after you cross the x-axis, you're essentially covering the premium
+[  201.52s ->   208.66s] in both cases. And that's when you start to see a true positive profit. If you need help, if these diagrams
+[  208.66s ->   213.42s] look a little bit complicated, then you can simply look at it as a directional bet. So
+[  213.42s ->   219.04s] if you have a call option and you own that call option, you're hoping that the price will increase.
+[  219.24s ->   224.30s] If you have a put option and you own that put option, then you're hoping the price will decrease.
+[  224.78s ->   230.16s] So now there is another side to this deal. If you're the owner of an option, somebody has to sell you
+[  230.16s ->   235.62s] that option. And that person is called the writer of the option. If you take a look, I took these,
+[  235.62s ->   242.54s] these profit graphs and all I did was flip them over the x-axis to represent the profit for a option
+[  242.54s ->   249.74s] writer. Let's take a look at the equation for a call at terminal value. So we can see that instead
+[  249.74s ->   256.14s] of losing the premium, the writer gains the premium and they just lose the maximum between the spot at
+[  256.14s ->   263.10s] terminal value less the strike and zero. So essentially the writer is going to have to provide shares at the
+[  263.10s ->   273.75s] strike to the owner of the option at expiration. If the spot price at expiration is above the strike
+[  273.75s ->   277.59s] price. So they're going to be losing that difference and they're, they're going to have to provide shares
+[  277.59s ->   282.87s] at the strike price. So if the option writer doesn't already own those shares, then they're going to have
+[  282.87s ->   289.99s] to purchase at the current spot price at terminal value and provide them to the owner of the option
+[  290.55s ->   297.11s] for the price of the strike price. In a very similar notion, the put is going to be very similar. We're
+[  297.11s ->   302.07s] going to gain the premium and we're going to lose the maximum between the strike and the spot at terminal
+[  302.07s ->   309.91s] value and zero. So it's the exact same thing as a call in the sense that the writer is going to have
+[  309.91s ->   317.75s] to provide the shares at the strike price to the owner of the option. Uh, and they're going to have
+[  317.75s ->   323.51s] to go out and buy at the market price if they don't already own it. So that's where the loss would come
+[  323.51s ->   328.71s] into play. Now, there are more complex ways that the writer can hedge this risk. There are more complex
+[  328.71s ->   335.11s] ways that the writer can, uh, come up with a portfolio. So maybe they purchase the underlying asset
+[  335.11s ->   340.31s] and do, do a covered call or a covered put or something, something along the lines of that.
+[  340.87s ->   345.51s] Uh, but again, this is more of a gentle introduction slash refresher. So we'll talk more about those
+[  345.51s ->   351.11s] strategies, uh, down the line in this series. So let's go ahead and look at some examples. Now, these examples
+[  351.11s ->   357.11s] may seem pretty trivial, but the whole purpose is to give you a strong foundation and understanding how these different
+[  357.11s ->   365.83s] quantities are computed so that the, uh, pricing of these options becomes a little more intuitive. So
+[  365.83s ->   371.51s] we're going to be using these examples as building blocks to build up to the binomial pricing model,
+[  371.51s ->   377.59s] uh, proposed by Cox, Rubin, Stein and Ross. And for starters, we're going to do a simplified,
+[  377.59s ->   384.07s] more watered down, simple statistics version, uh, before actually diving into the model itself. So
+[  384.07s ->   389.59s] let's start with this example. Uh, we are, we're going to be a call option writer. So we write a call
+[  389.59s ->   394.55s] option on XYZ stock one year ago that expires today. So the maturity of the option was one year
+[  395.27s ->   403.11s] and this option earned us a $100 premium and we wrote it with the strike price of $50. Now the strike
+[  403.11s ->   410.07s] price today is also $50. Calculate your profit from writing this option. Well, this should be relatively
+[  410.07s ->   415.51s] straightforward. Our premium is $100. We're the writer. So we're going to, we're going to gain this.
+[  416.63s ->   423.51s] And in terms of, of the option at expiration, we know that the owner of the option isn't going to
+[  423.51s ->   431.27s] exercise because the maximum between the spot price at expiration and the strike price and zero
+[  431.83s ->   438.47s] is just going to be zero. So our profit from this, from writing this option is going to be $100
+[  438.47s ->   445.75s] plus zero or minus zero. Uh, and that is just going to be $100. So as the option writer in this
+[  445.75s ->   452.23s] example, we make $100. So now let's consider that we're the owner of an option. So we purchased a call
+[  452.23s ->   458.79s] option on XYZ stock one year ago that expires today. So the maturity again is one year and this option
+[  458.79s ->   466.79s] costs us $100 at the strike price of $50. The stock price today. So the spot price at expiration is
+[  466.79s ->   471.91s] $51.50. Calculate your profit from owning this option. Well, again, this should be pretty
+[  471.91s ->   477.43s] straightforward. The premium is $100 and we're going to be losing this because this is the price
+[  477.43s ->   483.75s] we pay for the right, but not the obligation to purchase the underlying equity at the strike price
+[  483.75s ->   489.80s] at the maturity. And we're going to want to exercise this option because the maximum between the difference
+[  489.80s ->   499.88s] of the spot price at maturity and strike price and zero is 51.5 minus 50, which is equal to 1.5.
+[  499.88s ->   506.68s] So we know the maximum between 1.5 and 0 is going to be 1.5. Uh, so we're going to want to exercise this.
+[  507.56s ->   512.28s] Now we're going to assume that this is going to be standardized exchange traded. So we are going to have
+[  512.28s ->   520.12s] that 100 multiplier on this, this, uh, this payoff. So we're going to take 1.5 multiply it by 100 and we
+[  520.12s ->   526.76s] get 150. Now to actually calculate our profit, we're going to take the price we paid and we are going to
+[  526.76s ->   533.72s] subtract that from the payoff. Uh, and we get our $50 profit. So again, this may seem like a very
+[  533.72s ->   540.28s] straightforward, uh, very, very intuitive, um, example, but that's the entire point. Uh, so now we can
+[  540.28s ->   546.36s] actually start to talk about, uh, uncertainty in the terminal value, um, of the options.
+[  547.08s ->   551.64s] So now let's take a look at a more interesting example. We want to purchase an option with a
+[  551.64s ->   559.64s] strike price of $105 on an equity that has a 50% chance of being worth $110 and a 50% chance of being
+[  559.64s ->   566.76s] worth $90 one year from today. How much should you pay today for this option? Assume a risk free rate
+[  566.76s ->   572.20s] of 5%. So hopefully that's a clue, uh, referring back to the, the first video on the time value of
+[  572.20s ->   578.15s] money that that's going to play a role in determining this price. So what is the premium?
+[  578.15s ->   584.47s] Well, as of right now, we don't know, but fortunately we can use just simple statistics to derive this
+[  584.47s ->   590.66s] fair value. So let's, let's consider our different options, right? We have the terminal value of the
+[  590.66s ->   598.26s] option in state one. So we know if state one occurs that we are going to be making $500 in our payoff
+[  598.26s ->   605.38s] because we know the spot price of maturity is 110 and we know the strike price is 105. So the difference
+[  605.38s ->   611.30s] between those two values is going to be five. And that is definitely greater than zero. We have that
+[  611.30s ->   619.46s] 100 multiplier on that payoff. So we get the payoff in the first state of the world, which is going to be
+[  619.46s ->   625.77s] 500. Now we're actually going to want to discount this back to today because we're trying to figure
+[  625.77s ->   630.97s] out how much we should pay for this option today. So we know the risk free rate is 5% and we can
+[  630.97s ->   640.49s] discount this payoff and we get $476 and 20 cents. So if the first state of the world was the only state
+[  640.49s ->   648.25s] of the world and we knew that the underlying equity was going to be $110 with 100% certainty,
+[  648.25s ->   655.21s] then the fair value to pay for this instrument would be $476 and 20 cents today. But that's not
+[  655.21s ->   660.89s] our only state of the world. We have a second state of the world. And the second state says that the
+[  660.89s ->   667.13s] payoff is going to be zero because the spot price at expiration less the strike is going to be less
+[  667.13s ->   673.69s] than zero. So the maximum between that negative value and zero is going to be zero. And if we just
+[  673.69s ->   681.53s] discounted zero at the risk free rate, we would also have zero. Now, again, if we knew that this state
+[  681.53s ->   688.89s] of the world had a 100% chance of occurring, so we knew that the underlying equity was going to be $90
+[  688.89s ->   697.34s] one year from today, then we wouldn't pay anything for this option. Okay, well, things get a little bit
+[  697.34s ->   703.34s] more complicated because we have a 50% chance of one state of the world and a 50% chance of the other state
+[  703.34s ->   709.72s] of the world. How can we go about calculating the premium of this option to compute a fair value
+[  709.72s ->   717.22s] of what we should pay today? Well, we can just use simple statistics. The fair price can be equivalent
+[  717.22s ->   724.10s] to the expectation of the discounted payoffs. So what we can do is we can actually weight the first
+[  724.10s ->   731.30s] state of the world by the probability that it occurs, which is 50%. So we get $238.10.
+[  731.30s ->   738.42s] We do the same thing with the second state of the world. But if we were to weight zero by anything,
+[  738.42s ->   745.06s] we would still end up with zero. But the sum of these two values is going to be equivalent to the
+[  745.06s ->   752.74s] fair price that we should pay today for that option or the premium. Now, this is pretty much the
+[  752.74s ->   759.06s] foundation of the binomial pricing method. So this if this seems very intuitive, if this seems very
+[  759.06s ->   764.26s] intuitive, if this seems like it makes a lot of sense, then great, because when we go into
+[  764.26s ->   769.46s] the binomial pricing model, it's going to make a lot of sense to you. So if something doesn't make
+[  769.46s ->   774.42s] sense, I encourage you to go back and rewatch it because this is essentially the building blocks to
+[  774.42s ->   779.06s] the binomial pricing tree. So next time, we're going to talk about the binomial pricing model,
+[  779.06s ->   784.26s] again, introduced by Cox, Rubenstein and Ross. But for now, thank you so much for watching. And if you have
+[  784.26s ->   788.42s] any questions, feel free to leave them in the comments and and I'll do my best to answer them.
+[  788.42s ->   789.54s] Thanks.

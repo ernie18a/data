@@ -1,0 +1,61 @@
+[    0.08s ->     5.02s] Hey guys, what's up? It's the Impeccable Investor here and we're going over our third video in this
+[    5.02s ->    10.86s] series on how to determine stock value. As Warren Buffett says, price is what you pay,
+[   11.34s ->    16.24s] value is what you actually get. So throughout this series, we're showing you how to actually
+[   16.24s ->    21.66s] determine if a company has the value that it's worth at its price. In the first video,
+[   21.74s ->    27.74s] we covered price to earnings ratio. In the second video, we covered the debt to equity ratio. And
+[   27.74s ->    33.68s] today we are covering the profit margin ratio. All right, guys, if you haven't already,
+[   33.86s ->    38.60s] please hit that subscribe button so you get alerted to all the videos to come and follow me
+[   38.60s ->    43.08s] on Instagram because that's where I get all my videos ideas and feel free to DM me there.
+[   43.40s ->    50.99s] All right, let's get into the video now. All right, guys, this is the understanding profit margin video
+[   50.99s ->    57.09s] that was released on YouTube so you can look at it there. But I am just using it to help you
+[   57.09s ->    65.15s] understand visually what's going on here. So the net profit margin is a profitability ratio. It shows
+[   65.15s ->    70.41s] how well the company can make a profit. So if you can see here, we need to know revenue,
+[   70.77s ->    75.75s] we need to know expenses, and that's how we can get net profit. And then from there,
+[   75.81s ->    81.79s] we can get the profit margin. Now again, the website that I'm going to show you right after this example
+[   81.79s ->    86.83s] will give you all the numbers already so you won't have to do anything extra. But I just want to
+[   86.83s ->    92.77s] briefly talk through it real quick with you. So revenue is the amount of money that the company
+[   92.77s ->    97.83s] makes from either the sales or the services or whatever it's providing as a good. For example,
+[   98.07s ->   104.97s] Apple makes the revenue from selling iPhones. Now the expenses is everything that they incur to sell
+[  104.97s ->   112.51s] that good. So for instance, Apple sells iPhones, but they need to pay the stores. They need to keep the
+[  112.51s ->   116.55s] stores running. They need to pay for the material it takes to make the iPhone. They need to pay for
+[  116.55s ->   123.49s] the salesmen in the stores. These are all the expenses. So you're taking away the expenses out
+[  123.49s ->   129.27s] of the revenue. And that leaves you with net profit. That shows you how much money they actually make at
+[  129.27s ->   135.77s] the end of the day. So net profit is what you should be concerned with. Because yes, a company sales
+[  135.77s ->   142.01s] could be tremendous and outrageous and amazing. But if they're using more expenses to make that
+[  142.01s ->   147.87s] revenue, then they're actually making no money at all. So make sure you focus on net profit. Now,
+[  147.97s ->   153.47s] how do you get profit margin? Well, you take this net profit here and you divide it, see right here,
+[  153.71s ->   161.97s] and you divide it by the total revenue, which was 1 million. So the $200,000 net profit divided by the
+[  161.97s ->   168.95s] total revenue of 1 million gets you a 20% profit margin. So that means if they even did 1 billion
+[  168.95s ->   177.11s] in sales using the 20% profit margin, which they have, then they would be making $2 million a year.
+[  177.27s ->   182.47s] That's just how it works. So again, if you're looking at this, you can already tell that you
+[  182.47s ->   187.75s] want a high profit margin to be able to determine that they're keeping most of the money that they're
+[  187.75s ->   192.71s] making. All right, guys, let's get into the example and show you what website you can use
+[  192.71s ->   199.36s] to be able to get all these numbers without having to do the math yourself. All right, this is
+[  199.36s ->   206.98s] research.tradeking.com. This is the website that every investor should go to to acquire their numbers
+[  206.98s ->   211.60s] to understand the fundamentals of the company. Not only that, you can see charts, news, options,
+[  211.76s ->   218.18s] earnings, financials, and insider information. So this is going to show us exactly what we want to see.
+[  218.18s ->   223.22s] The first link below will be to this website, so you can go straight to it. If you can see here,
+[  223.30s ->   231.12s] going down into the margin section, we have here net profit margin. This net profit margin right here
+[  231.12s ->   236.38s] is what we will be looking at in this video. So we can see here that for the current stock that
+[  236.38s ->   243.14s] we're on, which is PepsiCo, the net profit margin is 18.78%. So basically, if we round up,
+[  243.14s ->   249.58s] it's about a 19% profit margin. So now, understanding if this is a good ratio, we don't
+[  249.58s ->   253.90s] know. Just by knowing that it's 19%, we don't know if that's good for the industry or low for the
+[  253.90s ->   258.84s] industry. That's why one of the amazing things about this website is it shows the industry range.
+[  259.10s ->   265.94s] It shows that on net profit, the industry range is between negative 19, which means they're not
+[  265.94s ->   272.26s] making a profit, they're losing money. And the highest is a 26% for this industry. So seeing that
+[  272.26s ->   278.76s] it's in the upper portion of this industry range, we're looking that this is a great solid company
+[  278.76s ->   286.46s] just basing it off the net profit margin. But we also need to look at some other companies in this
+[  286.46s ->   294.26s] same sector to make sure that it's the same. So what is a PepsiCo competitor? Well, that is Coca-Cola,
+[  294.26s ->   299.90s] the dividend king that everybody loves and that Warren Buffett makes so much money on. Let's look
+[  299.90s ->   308.22s] at the net profit here. The net profit margin it shows right here is 22.1%. That is higher than
+[  308.22s ->   316.62s] PepsiCo's 19%, putting it even higher in the industry range. So based off, purely off net profit margin,
+[  317.76s ->   322.82s] Coca-Cola will be the stock to purchase because it has a higher net profit margin, meaning that it's keeping
+[  322.82s ->   328.26s] more of its sales. When it sells, it gets to keep more of the money instead of it all going to
+[  328.26s ->   334.88s] expenses and random miscellaneous stuff. So as you can see here, using net profit margin, understanding
+[  334.88s ->   339.72s] all the sales, subtracting the sales from the expenses, and then getting down to the money you
+[  339.72s ->   345.76s] actually get to keep, this is how you determine that. It's called the net profit margin. Again, if you
+[  345.76s ->   350.58s] haven't, please hit that like button, hit that subscribe button, turn on that alert notification,
+[  350.58s ->   355.40s] and we'll be doing one more of these videos, and then we'll be doing a comprehensive video,
+[  355.48s ->   361.24s] bringing in all the different fundamental factors into one video to analyze a company
+[  361.24s ->   366.38s] for us to buy. All right guys, thank you so much for watching. Once again, please like,
+[  366.38s ->   368.98s] comment, and subscribe, and see y'all in the next video.

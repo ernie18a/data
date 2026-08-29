@@ -1,0 +1,260 @@
+[    0.24s ->     8.96s] When you're trading options, do you use Delta or some form of probability shown to you by your trading platform to enter these trades to help you make these decisions?
+[    9.34s ->    15.54s] If you do, the question then begs how accurate are these metrics that were being shown and that we're using?
+[   15.54s ->    21.52s] When I first started trading options, I bought and sold them using Delta or probability of profit as my primary criteria.
+[   21.52s ->    32.52s] You know, I watched a lot of YouTube videos on how to trade options and many of them suggested that I use Delta and by extension, probability in the money, probability out of the money, probability of profit, chance of profit.
+[   32.58s ->    43.08s] And, you know, I read up on Delta, I read up on all these probabilities, and it made it seem like Delta in particular was a good metric to gauge the riskiness or the chance of winning a trade.
+[   43.22s ->    50.82s] And especially nowadays with like modern platforms like Robinhood, the main thing you see when you're selling options is this chance of profit metric that they're showing you.
+[   50.82s ->    54.14s] I trust that Delta and all of these other probabilities shown to me by these platforms.
+[   54.14s ->    58.22s] And then I developed as a trader, going through my ups and downs, trading more, gaining more experience.
+[   58.32s ->    61.36s] And I started to rely less and less on Delta and these probabilities.
+[   61.86s ->    63.30s] I lost a lot of money trading Delta.
+[   63.58s ->    65.44s] I made a lot of money not trading Delta.
+[   65.66s ->    71.80s] And this gut feeling that Delta and these probabilities don't seem to be correlating to my real life experience.
+[   72.24s ->    78.82s] And after trading long enough, you get a feeling that the market is just extremely random and extremely emotional.
+[   78.82s ->    89.08s] So if you use Delta primarily or even use it as a secondary reference point, this video hopefully might help you view Delta slightly differently and help you adjust your train of thought and maybe even your trading style.
+[   89.78s ->   102.54s] Now, if you're new to trading, this is a must watch for you to really understand what Delta is and some of the pros and cons to help counterbalance some of the videos that you're watching on how to trade credit spreads and what strategies to use, especially those that are telling you to use Delta.
+[  102.54s ->   105.16s] So first, we're going to talk about what Delta is.
+[  105.44s ->   109.54s] And if you're familiar with Delta is, feel free to skip to this timestamp that I'll put right here below.
+[  109.84s ->   115.20s] And then we want to talk about logically how Delta became correlated or intertwined with probabilities.
+[  115.86s ->   124.22s] And then some of the logic's flaws that I personally think from my experience that comes with using Delta or percent in the money as a metric of success.
+[  124.22s ->   136.46s] And then finally, I will correlate my trading results with the win rate in particular, kind of prove that using Delta is not an accurate representation of your potential win rate if and when you enter a trade.
+[  136.82s ->   141.56s] So Delta, if you're unfamiliar with it, is part of the Greeks when we're talking about options trading.
+[  141.92s ->   146.40s] Part of the family is Delta that we'll talk about shortly, Theta, which is time decay.
+[  146.40s ->   149.08s] You have Gamma, you have Vega, and you have Rho.
+[  149.56s ->   158.08s] Delta, as you see on the screen, is the amount an option price is expected to move based off of a $1 change in the underlying stock.
+[  158.28s ->   165.88s] It's essentially a ratio about how much or how little an option is correlated to the stock price itself.
+[  166.08s ->   175.50s] As an example, if a call has Delta of 0.5 and the stock price were to move up by $1, then the option price will move up by 0.5, by 50 cents.
+[  175.50s ->   177.42s] Now, let's take this one step further.
+[  178.32s ->   180.80s] How does stock price movement affect Delta?
+[  181.50s ->   193.20s] If a stock on XYZ has a stock price of $50 and you bought it at the money with a 0.5 Delta, let's assume that the XYZ stock now goes from $50 to $51.
+[  194.00s ->   200.66s] And Delta then tells you that your option should have also gone up by $50 or 0.5 per contract.
+[  200.66s ->   206.22s] Now, what happens to Delta when the stock goes up from $51 to maybe another dollar to $52?
+[  206.62s ->   212.80s] The Delta should also increase because your options are now worth more since they're no longer at the money, they're now in the money.
+[  212.92s ->   216.92s] You have, quote unquote, less risk of it being out of the money and expiring worthless.
+[  216.92s ->   231.48s] So in this example, let's say the Delta at $51 for this option contract is now 0.6, which means that at the stock price of $52, your option will now be worth $60 or 60 cents per contract more.
+[  231.70s ->   236.36s] Now, the next one to also explore is how Delta and time impacts each other.
+[  236.36s ->   246.54s] So as expiration nears, the Delta for an in-the-money option will approach 1, which means that the price and the options are closely correlated, which makes a lot of sense.
+[  246.64s ->   247.90s] Let's view it from this frame of mind.
+[  248.18s ->   252.88s] Because I'm so close to the expiry, let's assume that I'm 30 minutes away from market closing.
+[  252.88s ->   262.38s] If I'm in the money, let's assume that I bought my contract, same example, I bought my contract at $50, my strike price was at $50, and then now the stock price is now $55.
+[  262.94s ->   268.08s] Let's assume that the stock goes up another $1 before market closes in that 30 minutes.
+[  268.94s ->   270.60s] The stock goes from $55 to $56.
+[  270.84s ->   276.28s] My options contract will also go up by $1 per share, which is 100 shares.
+[  276.28s ->   284.76s] Therefore, I will make $100 more, it will be a one-to-one correlation between my stock price increase and my contract increase, right?
+[  284.80s ->   286.60s] Because there's nothing else that's impacting it.
+[  286.68s ->   289.28s] There's no more time left to mess with my contracts.
+[  289.40s ->   290.30s] There's no more variability.
+[  290.80s ->   292.08s] There's no more unknowns.
+[  292.48s ->   296.66s] The only thing that can directly impact it is the stock price.
+[  297.32s ->   303.84s] So therefore, there is a close to one-to-one correlation between a dollar move to a dollar move in the contract itself.
+[  303.84s ->   312.94s] So general rule in the money options will always move more than out of the money options, and short-term options will react more than longer-term options to the same price change in stock.
+[  313.40s ->   315.70s] And let me show you this on Thinkorswim real quick.
+[  316.85s ->   322.33s] So here is just the option chain for SPY, which is the S&P 500 ETF.
+[  322.51s ->   324.11s] We're going to demonstrate those two principles here.
+[  324.11s ->   329.75s] We're going to take a look at how time to expiry affects it, and we're going to take a look at how stock price changes affect it.
+[  329.75s ->   333.17s] So here you see SPYs at 4.65 or 4.64.72.
+[  333.47s ->   334.61s] We'll round it to 4.65.
+[  334.81s ->   336.85s] So at the money calls, it's very close to 4.
+[  337.05s ->   338.43s] It's really close to a delta of 50.
+[  338.75s ->   344.57s] And then as we go further in the money on the call side, which is your dropping down in strike prices, your delta increases.
+[  344.81s ->   345.53s] This is what we talked about.
+[  345.53s ->   349.77s] The further in the money you are, the less variables are impacting your option.
+[  350.19s ->   355.49s] Therefore, the stock price has a larger effect or impact on your option prices.
+[  355.49s ->   358.53s] As you get further in and out of the money, you'll see that it drops.
+[  358.97s ->   361.49s] Flip that on the other side and delta is inverse.
+[  362.29s ->   365.69s] As you get further and further in the money for puts, delta increases.
+[  366.17s ->   368.35s] As you get further and further out of the money, delta decreases.
+[  368.87s ->   372.73s] This is the same idea, but just inverse because it's the puts as opposed to calls.
+[  373.65s ->   375.81s] Now let's correlate and compare time.
+[  375.97s ->   380.07s] If you just look at the same strike prices here, this is 12 days to expire as opposed to two days expires.
+[  380.17s ->   381.67s] So you have 10 days more.
+[  382.17s ->   384.25s] The strike price of 4.59 had a delta of 84.
+[  384.25s ->   387.37s] A strike price of 4.59 has a delta of 65.
+[  388.07s ->   389.35s] Innately, I think we all know this.
+[  389.89s ->   393.09s] Because now there's more time available for this option.
+[  393.41s ->   396.07s] The stock has less impact on the option prices.
+[  397.03s ->   397.75s] You have theta.
+[  398.41s ->   399.37s] You have vega.
+[  399.51s ->   404.05s] You have just less correlation or less impact of the stock price on the option price.
+[  404.87s ->   406.55s] At the money, again, it's very close to 50.
+[  406.71s ->   410.97s] As you go in and out of the money, 65 versus 30, which is compared to 84 and 8.
+[  411.37s ->   412.55s] It's a tighter bound.
+[  412.67s ->   414.17s] Same thing on the put side as well.
+[  414.61s ->   418.41s] Negative 35 versus negative 70 versus negative 89 versus negative 17.
+[  418.49s ->   422.59s] Now that we talked about it, you can kind of see how delta became correlated to probabilities.
+[  422.95s ->   425.01s] As our delta increases, right, we're in the money.
+[  425.17s ->   431.11s] There is more likelihood that the option stays in the money because there's less variables impacting it.
+[  431.21s ->   432.07s] There's no more time.
+[  432.29s ->   433.35s] There's no more volatility.
+[  433.95s ->   438.57s] There's none of these other unknowns that are causing me to have fear that the option is going to be out of the money.
+[  438.57s ->   442.95s] And so the further in the money you are, right, the higher the delta, which then you can kind of see the logic.
+[  442.95s ->   450.51s] If I'm in the money for zero minutes left to expiry, my delta will be 1 because the stock price will be directly correlated to my option price.
+[  451.01s ->   456.73s] If I'm out of the money at expiry, my stock price will have zero impact on my option, right, because I'm out of the money.
+[  456.73s ->   458.07s] My options are worth zero.
+[  458.33s ->   461.19s] And so you can see how probabilities became associated with delta.
+[  461.55s ->   469.83s] If I have a delta of 1, now it becomes translated to a close translation that I have 100% chance of it being in the money.
+[  470.19s ->   473.39s] If I have a zero delta, I have a 0% chance of being in the money.
+[  473.39s ->   476.95s] And you can kind of see that because I'm so far in the money that there's less variability.
+[  477.13s ->   480.83s] I'm so far out of the money that there's no way that my options are going to be worth any money.
+[  480.95s ->   483.57s] So you can see that with this chart on Thinkorswim.
+[  483.67s ->   486.21s] And I think a lot of other brokerages do something very similar.
+[  486.45s ->   487.67s] I'm going to change this to percent in the money.
+[  488.25s ->   496.29s] This probability in the money, to my understanding, is just how Thinkorswim is calculating your probability based off of like certain models like the Black Shoals model.
+[  496.71s ->   501.71s] But the point here is to see that these probabilities in delta are very, very closely correlated.
+[  501.71s ->   508.57s] 84 delta, 83.85, rounded up to 84, 81, 80, 75.86, 76.
+[  508.89s ->   517.17s] Now as you get further out of the money, you can see there's some slight more deviations between the way that their model is calculating probability in the money and delta.
+[  517.27s ->   518.61s] But you can see it's still pretty close.
+[  519.47s ->   525.81s] And if you can show cases slightly more, you can go down to 29 days or even 40 days, you can see that there is just slight more variations.
+[  525.81s ->   538.41s] But if you're just spitballing or if you're just trying to do a quick glance and you believe that probability and delta are logically bound, then it makes sense to just use delta as a replacement per probability in the money.
+[  538.67s ->   546.49s] So I think now I've made a pretty compelling case that delta is a good replacement to simulate probability in the money or any form of probabilities.
+[  546.49s ->   552.17s] So now that we've made that logic, let's see if we can break that logic down, if that logic is viable and if there's any flaws with that logic.
+[  552.65s ->   558.47s] Add the money a call options or add the money put options will have close to a 50 delta regardless of time frame.
+[  558.63s ->   560.63s] That's just how the option contracts are usually priced.
+[  560.99s ->   564.49s] Delta has a 52 delta, close to a 50% probability, right?
+[  564.57s ->   568.57s] At two days to expiry, we can go to five days to expiry, 51, 50, right?
+[  568.57s ->   574.73s] You go to 10 days expiry, 51, 50, 12 day, 51, 49.6.
+[  575.43s ->   579.33s] Again, these probabilities are based off of models that Thinkorswim is thinking.
+[  579.87s ->   582.85s] And you can even come here and analyze them if you really wanted to.
+[  583.07s ->   585.95s] How they're simulating it based off of these models.
+[  587.28s ->   589.86s] You can do this into your own time, but you get the point.
+[  590.30s ->   593.34s] Delta and probability in the money usually is closely tied.
+[  594.00s ->   596.82s] And so therefore, at the money call options, we'll have a 50 delta.
+[  596.82s ->   601.72s] If you're buying it, you will have a 50% chance of it either being in the money or out of the money.
+[  601.84s ->   608.56s] If you take that logic one step further, it just means that the stock has a 50% chance of going up or 50% chance of going down.
+[  608.64s ->   610.74s] That's kind of where it breaks down logically for me.
+[  610.90s ->   615.40s] I don't necessarily believe, at least from what I've seen and what I've researched and how I've traded,
+[  615.56s ->   620.24s] that this delta is correlated with how any stock in particular or ETF trades.
+[  620.70s ->   622.16s] This, for me, is where the logic breaks down.
+[  622.16s ->   626.86s] I don't necessarily believe, at the money calls, have the same amount of probability of going up as it does down.
+[  627.04s ->   630.10s] So on the screen, I'll just show you my way of rationalizing it.
+[  630.28s ->   631.58s] And you guys, feel free to disagree with me.
+[  631.68s ->   635.08s] This is a graph or chart of S&P 500's annualized historical return.
+[  635.16s ->   636.06s] Starting from 1928.
+[  636.20s ->   637.10s] This doesn't include dividends.
+[  637.20s ->   637.98s] This is just stock returns.
+[  638.20s ->   640.74s] So in 1928, you had a 37.88% increase.
+[  640.90s ->   644.02s] We had a peak at like 45 in 1954.
+[  644.02s ->   650.74s] And in 2021, we had 27% in 2019 and 28% in 2020 and 16%.
+[  650.74s ->   651.64s] This is due to COVID, right?
+[  651.68s ->   654.80s] And so you can see here, like every year, it's directional.
+[  654.94s ->   661.42s] There's really anything, maybe 1984, where you had a negative 1.5%, or even here, 2011, 2015, where it's close to zero.
+[  661.58s ->   664.62s] Depending on the year, it's very close to it being directional.
+[  664.62s ->   674.62s] And if you were to take this average return of S&P 500 over a span of 1928 to 2022, or close to 100 years, you get an average return of 7.86%.
+[  674.62s ->   684.28s] Indicates to me a higher likelihood that the stock market goes up than it does down, which correlated with your own life experience makes a lot of sense because the S&P 500 has consistently grown over the years.
+[  684.64s ->   687.40s] And that's why there's a saying that time in the market beats timing the market.
+[  687.70s ->   693.32s] If that's the case, then it doesn't make sense to me that Delta is not accounting for directionality in a stock market.
+[  693.32s ->   707.82s] It makes even less sense to me that, and this is just a little tidbit, that in three years, or more than three years, that a call that I'm buying for 460 will have a 39% chance of being in the money.
+[  708.00s ->   708.86s] There's a lot of variability.
+[  709.08s ->   714.90s] So this number here, especially this far out, is not very trustworthy because there's so much variance and so much unknowns in this model that it doesn't make any sense.
+[  714.90s ->   724.04s] So if we were to just correlate that, that this is less likely to be in the money than something up here that's closer to the money, doesn't make much sense to me.
+[  724.36s ->   725.54s] Obviously, we can go through a recession.
+[  725.68s ->   730.38s] So unless this model was priced in a recession, I don't really necessarily think that this will make any sense.
+[  730.66s ->   737.50s] So that's why, for me, honestly speaking, I don't use Delta to do anything because if I use Delta, it gives me a false sense of security more often than not.
+[  737.64s ->   738.74s] I've used Delta in the past.
+[  738.92s ->   740.00s] I've been bitten by Delta.
+[  740.00s ->   748.44s] I've been bitten by a lot of these probability models that seems to be oversimplifying and not taking into account a lot of these human emotions that make the market irrational.
+[  748.98s ->   750.34s] And I'm going to give you two examples here.
+[  750.44s ->   751.32s] I'm going to pull up on the screen here.
+[  751.56s ->   753.84s] This article is titled, How Accurate is Delta's Predicted Value?
+[  754.56s ->   754.70s] Okay.
+[  755.46s ->   759.18s] And Delta is one of the most commonly referenced Greeks on the Tasty Trade Financial Network.
+[  759.42s ->   763.24s] Unlike other Greeks, Delta has several common uses in options trading world.
+[  763.36s ->   767.04s] Today, we are looking more closely at one particular application of an options Delta.
+[  767.14s ->   774.20s] Specifically, an options Delta is often used as a proxy for the estimated probability that a given option will finish in the money.
+[  774.20s ->   782.35s] For example, an option with a 40 Delta might, therefore, be expected to finish in the money on 40% of the occasion, depending on your approach and strategy.
+[  782.49s ->   784.15s] You may be using this facet of Delta in some capacity.
+[  784.15s ->   794.01s] Using data from 2005 to present, the market measures team backtested SPY to discover the actual percentage of time a given option finished in the money versus the likelihood suggested by an options Delta.
+[  794.01s ->   799.57s] Over that 12-year time frame, the study incorporated the following parameters used by Delta from 2005 to present.
+[  800.39s ->   803.55s] Examine 15, 30, 40, 50 Delta call and puts.
+[  803.89s ->   806.23s] Targeted options with 45 days to expire, DTE.
+[  806.23s ->   808.15s] Okay, these are the parameters.
+[  808.45s ->   809.87s] So this is what I want to bring your eyes to.
+[  810.31s ->   811.81s] Percent of the Delta in the money.
+[  812.11s ->   815.95s] 15 Delta, 30 Delta, 40 Delta, 50 Delta calls and puts.
+[  816.59s ->   823.83s] So calls have 90% chance of being in the money, 40% chance of being in the money, 50% chance of being in the money, and 63% chance of being in the money.
+[  824.01s ->   828.91s] Puts significantly underperform that, which is 80%, 20%, 26%, and 37%.
+[  828.91s ->   843.57s] And so you'll see from here, it's a 12-year data set, 2005 to 2017, one negative year in 2008, down 38.48% of the mortgage crisis, bounced up 23% of 2009, 2011 was flat.
+[  843.97s ->   850.43s] On average, it's returned 7.73%, again, very similar to what we saw, brought out this time set to 100 years.
+[  850.69s ->   854.39s] But you can see, at least from this data set, that in most cases, this is an up market.
+[  854.39s ->   860.89s] So it makes sense as to why puts underperform what Delta is projecting and calls overperform what Delta is projecting.
+[  861.13s ->   871.97s] For me, when I look at this, this means that if you were to trade Delta, for example, Delta is not a very accurate representation of the percentages of what it would end up in the money or out of the money.
+[  872.31s ->   878.19s] Now, if you trade with Delta in any capacity, then you can see that maybe you can adapt your strategy a little bit.
+[  878.27s ->   880.61s] You can push your Deltas up closer to the money.
+[  880.61s ->   886.21s] And if you're selling calls, maybe you have to give yourself a little bit more room because Delta's predictive capabilities are not that accurate.
+[  886.37s ->   893.43s] This shows you, with the large enough data set, that there is like, there's big variants, very big deviations from what Delta is predicting.
+[  893.61s ->   899.17s] Here on the screen, you'll see a breakdown of all of my Amazon trades that I've been in since, traded since July 2nd of 2020.
+[  899.35s ->   900.87s] These are sorted by expiring.
+[  901.07s ->   904.79s] Anything positive is money that I've collected and I've gained.
+[  904.93s ->   909.73s] And anything negative is things that I have to pay additional money to close out.
+[  909.73s ->   912.03s] And these are all credit spreads for those of you who are new to this channel.
+[  912.43s ->   915.55s] I've broken them out into portions, calls and puts.
+[  915.71s ->   923.57s] Just for the sake of this exercise and calculating win rate, each one of these bars will count as a trade.
+[  923.71s ->   931.01s] You can see that on this graph, there are three bars that are negative, which means that out of all these trades that I've been in, there have been three losing trades.
+[  931.01s ->   935.93s] One on April 1st, 2021, where I lost $1,700 to close out my credit spread.
+[  936.63s ->   940.11s] I lost $29 on August 28th, closing out a put credit spread.
+[  940.21s ->   945.03s] And I lost another 182, closing out a call credit spread on September 11th, 2020.
+[  945.21s ->   950.33s] 52 puts and 15 calls, which gives me a total of 67 trades.
+[  950.33s ->   955.99s] I had three losses out of those 67 trades, which gives us a 95.5% win rate.
+[  956.37s ->   957.15s] I'm not going to lie.
+[  957.23s ->   962.29s] I get some comments on some of the videos saying that my 24 to 100K video journey is a lie.
+[  962.37s ->   964.41s] And I don't blame them because I have a pretty high win rate.
+[  964.77s ->   977.13s] So if you're trading off of Delta, or if you had an assumption of Delta in your mind, for us to win this often, I would have to be trading at very conservative, very low Delta levels, which would directly correlate to very low premiums.
+[  977.13s ->   982.25s] You can see that there is a large discrepancy in the market with how they're projecting risk.
+[  982.61s ->   988.93s] And for those of you who are interested in some of these trades, I've done a deep dive about not only the strike prices, but how I enter these trades.
+[  989.13s ->   991.57s] And I'll link it in the upper right-hand corner for Amazon in particular.
+[  991.83s ->   993.35s] Let me frame this in another way.
+[  993.47s ->   999.61s] I right now own, as you can see on my screen, I own a decent amount of Amazon put credit spreads at $3,210 and $3,200.
+[  999.79s ->  1002.17s] And we'll just take these two that have shown on the screen right here.
+[ 1002.17s ->  1012.01s] The Delta here is a negative 41, which means that I have a probability of this being out the money since I'm selling options, is a 56% chance of being out of the money.
+[ 1012.11s ->  1013.29s] So very close to 50%.
+[ 1013.29s ->  1025.39s] If I were to go further out to 40 days, which you see I own, that's a 51 or negative 44 Delta, which gives me a close to, let's just take this number, 52% chance of being out of the money.
+[ 1025.49s ->  1028.01s] It'll be, if you use Delta, it'll be 56% being out of the money.
+[ 1028.19s ->  1031.41s] For my Amazon trades that I've done in the past, I have a 96% win rate.
+[ 1031.41s ->  1037.03s] So a 52% chance versus a 56% chance is very close to you flipping a coin, right?
+[ 1037.23s ->  1037.77s] Heads or tails.
+[ 1037.89s ->  1040.07s] 50% of the time, it's either heads or tails.
+[ 1040.25s ->  1040.89s] Think about it this way.
+[ 1040.97s ->  1047.99s] How unlikely would it, if I were to flip a coin 100 times, that I would get heads 96 out of the 100 times?
+[ 1048.37s ->  1051.17s] The chances of that happening is really, really, really slim.
+[ 1051.35s ->  1054.13s] That's essentially what my win rate or what my results have shown.
+[ 1054.13s ->  1068.09s] It's just another way of framing what TastyTrade has kind of proven in their analysis over SPY, is that the predictive nature of Delta is not very accurate in terms of assessing the actual risk of the trade.
+[ 1068.21s ->  1071.91s] Because what you're doing here by correlating to percentage in the money is how risky is this trade.
+[ 1072.13s ->  1073.27s] That's one way to frame it.
+[ 1073.27s ->  1084.01s] Another way to frame it is this, and this is what I think is actually the bigger problem with Delta, is that when you're comparing Deltas between different stocks, Amazon's 41 Delta, and compare it to another stock.
+[ 1084.11s ->  1084.75s] Let's just do BABA.
+[ 1084.89s ->  1088.91s] BABA, for example, a Delta of 41 is a stock price of 129.
+[ 1088.91s ->  1100.71s] This is basically saying that from a risk perspective, buying a put or selling a put on Delta at this, at BABA, at this strike price, 129, is the same risk as selling an option at 3210 for Amazon.
+[ 1100.87s ->  1102.77s] There's a lot of variables between the two companies.
+[ 1102.97s ->  1104.15s] Alibaba is based in China.
+[ 1104.59s ->  1107.93s] Their government and their financial system are two completely different things, right?
+[ 1107.99s ->  1115.39s] And so there's a lot of things that are supposed to be taken into account that Delta may not be taken into account from that one metric perspective.
+[ 1115.55s ->  1117.49s] So this gets to the concluding points.
+[ 1117.49s ->  1123.77s] This is probably the most important one for any tool or metric that you're using to help you decide on trades.
+[ 1123.89s ->  1124.85s] It doesn't have to be Delta.
+[ 1125.01s ->  1128.91s] It can be supports and resistances, RSI, MACD, Bollinger Bands.
+[ 1129.11s ->  1131.81s] Really understand what it is and what it's good for.
+[ 1131.91s ->  1136.31s] And when you do apply it, what the pros and the cons are, like what are the strengths and what are the strengths?
+[ 1136.31s ->  1141.27s] Don't just take it at face value just because someone told you to use it or not use it in this case in point.
+[ 1141.53s ->  1145.29s] Number two, this is more directly related to what Delta is and isn't.
+[ 1145.29s ->  1154.85s] Number two is if you're using Delta as a primary metric, which some of you guys are, I would encourage you to expand your tool set to beyond just Delta.
+[ 1154.85s ->  1165.37s] Because Delta, as you can see, doesn't seem to be a reliable metric to understand risk or to quantify risk and the percentage of you entering winning trades.
+[ 1165.75s ->  1174.11s] So if you've had experiences where maybe your trades aren't panning out the way that you want them to, you're losing more often, even though Delta is telling you that you should be winning high percentage trades.
+[ 1174.11s ->  1182.65s] Question the numbers a little bit and then see whether or not you guys can find other tool sets or other metrics to help you improve your trading strategy.
+[ 1183.05s ->  1196.93s] And number three is if you're using Delta as a reference metric in combination with other tools and other indicators, I would also encourage you to see if you're applying Delta or any form of probability is appropriate for what you're using it for.
+[ 1196.93s ->  1200.23s] And if not, see how you can tailor it to be more applicable.
+[ 1200.43s ->  1209.27s] So this is just my thoughts. This is just how I ended up doing like improving my trading is that I go in and I try to understand and improve my way of using these tools.
+[ 1209.41s ->  1212.97s] And sometimes I just drop the tools or the metrics from my tool set completely.
+[ 1213.79s ->  1221.75s] So in this case, Delta, right, I started with trading Delta predominantly as my only metric to a point where now I don't use Delta for entries at all.
+[ 1221.75s ->  1229.52s] Delta is for me. It's more for me to understand how the options are, quote unquote, priced and to understand the directionality of my portfolio.
+[ 1229.92s ->  1235.34s] But it is not used in my trading in how I trade as a way to predict risk.
+[ 1235.54s ->  1240.12s] To me, it seems very unreliable and I have not had a lot of success trading Delta.
+[ 1240.54s ->  1242.54s] Again, this is not me telling you not to use Delta.
+[ 1242.54s ->  1254.30s] This is my hoping that if you do use Delta or any other tools that you really evaluate whether or not these tools are helpful and are helping you make the best decisions when you do enter trades.
+[ 1254.58s ->  1255.70s] All right. So that's about it.
+[ 1256.02s ->  1258.94s] Let me know if you guys have any questions or comments down in the comments section below.
+[ 1259.10s ->  1261.40s] If you guys completely disagree with me, please let me know why.
+[ 1261.56s ->  1267.34s] For those of you who do use Delta, I would love to hear about how you guys use Delta or any of these probabilities that we talked about in your trading style.
+[ 1267.34s ->  1269.04s] Yeah. Until next time, stay safe trading.
+[ 1269.74s ->  1273.74s] And if you guys like the content, please consider pressing the like, the thumbs up button.
+[ 1273.94s ->  1276.02s] And if you love the content, please consider subscribing.
+[ 1276.28s ->  1277.38s] And until next time, peace.

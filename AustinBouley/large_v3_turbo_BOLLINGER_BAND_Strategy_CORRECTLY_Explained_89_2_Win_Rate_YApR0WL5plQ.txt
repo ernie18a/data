@@ -1,0 +1,98 @@
+[    0.00s ->     3.92s] Want to learn how to use the Bollinger Bands correctly so you can avoid market crashes
+[    3.92s ->     8.28s] and know exactly when to buy and when to sell so you can actually generate monthly income?
+[    8.64s ->    13.92s] And I'm going to show you exactly how most people use this and why it's wrong and it will lose you
+[   13.92s ->    18.24s] money. And I'm going to show you how I do it so I can make money in any market environment and
+[   18.24s ->    22.52s] actually prop from crashes as well. I've been using this Bollinger Band indicator for over
+[   22.52s ->    27.36s] five years and I'm super excited to share with you what I have learned about it and how I use it.
+[   27.36s ->    30.88s] And if you stay till the end, I'll give you some trade ideas that you can implement today
+[   30.88s ->    36.04s] to make some money. So let's dive in. First things first, we need to add the Bollinger Band to our
+[   36.04s ->    41.62s] chart so we can actually use it. So I'm using tradingview.com which is a free charting platform
+[   41.62s ->    46.10s] and website so they allow you to chart on there which you can do too. But again, if you're using
+[   46.10s ->    51.70s] your broker like Robinhood, Fidelity, TD Ameritrade, something like that, all these brokers support the
+[   51.70s ->    55.56s] Bollinger Band as well so you can do the exact same thing. We're going to go here to the indicator
+[   55.56s ->    61.10s] section. We're going to type in Bollinger Band which is B-O-L-L-I-N-G-R and then bands. So again,
+[   61.14s ->    65.96s] we have the Bollinger Band. We add that to our chart and this is what we see. So what exactly are
+[   65.96s ->    71.74s] we seeing here? Well, this middle line right here is a 20 period moving average. So this is a simple
+[   71.74s ->    75.48s] moving average that you've probably heard of before if you've been in trading for any amount of time.
+[   75.76s ->    81.24s] It basically just shows the average price over the last 20 candles. And so again, it shows us these
+[   81.24s ->    86.78s] key levels. How you read a moving average is if the stock is above it, it's bullish aka it's trending
+[   86.78s ->    91.60s] up. If it's belowish, it's bearish and it's trending down. Now, what are these blue upper and lower
+[   91.60s ->    98.30s] ranges? This is a two standard deviation. So what does standard deviation mean? It's a fancy term that
+[   98.30s ->   105.10s] just means if you're out two standard deviations that you're covering 95% of the stock moves. So
+[  105.10s ->   110.42s] there's a 95% chance that the stock will move within this range. If it breaks out of that range,
+[  110.42s ->   117.48s] that's a 5% chance, but 95% of your trading day will end up within these bands. So how can we use
+[  117.48s ->   122.26s] this to make money? Well, first I want to get into the most important topic is how are other people
+[  122.26s ->   128.56s] using this and why is it losing them money? So what we see here is one of the number one strategies
+[  128.56s ->   134.66s] that people use. Again, there's a lot and I'm going to cover a couple is they use the Bollinger Band
+[  134.66s ->   140.28s] squeeze strategy, which is where you can see here how the Bollinger Band constriction moves. You can see
+[  140.28s ->   146.08s] here how it's wider. And then in this range, the band starts to shrink a bit as in the bands get
+[  146.08s ->   150.98s] closer and closer together. And then it breaks out and you can see here how it goes up. So this is a
+[  150.98s ->   156.40s] form of a breakout approach. This can work, but I'm going to show you where this will fail here in a
+[  156.40s ->   161.68s] second. But again, you have the Bollinger Band where price starts to shrink into this tiny little
+[  161.68s ->   167.22s] area. Some people call it a sausage. You get a sausage trading there and then it breaks out.
+[  167.58s ->   172.88s] So what is wrong with this? Well, just because it's shrinking doesn't mean you know when it's
+[  172.88s ->   178.54s] going to break out. So again, you do have these cool breakout trades, but it could be a false
+[  178.54s ->   183.62s] breakout. It could be something like that. And so again, this doesn't always work consistently,
+[  183.76s ->   187.84s] right? Because think about this. If you were trying to trade this, how would you have done that?
+[  187.84s ->   192.86s] You're like, okay, it's shrinking. So I can see here resistance is here. Oh, cool. Resistance broke
+[  192.86s ->   196.88s] out. The Bollinger Band is moving up slightly and then it would have faked you out and then would
+[  196.88s ->   200.52s] try it again and it would have faked you out. So it would have been really hard to actually enter in
+[  200.52s ->   206.72s] this trade. So again, this is a time where it's very hard to actually do that. Another way that
+[  206.72s ->   213.04s] people trade it is that they tried to trade when it breaks out of that range. Like I said, when the
+[  213.04s ->   219.04s] stock's trading within this band, that's 95% of all the time that price action will be there. But
+[  219.04s ->   225.48s] here is an example. When it breaks through it, people tend to get rid of it. So for instance, if it
+[  225.48s ->   229.98s] breaks above, they tend to sell it short to make money to the downside. If it goes below, they tend to
+[  229.98s ->   236.04s] make money to the upside. And yes, this does work on a very short term basis. But what happens when
+[  236.04s ->   240.90s] something like this happens where it's hitting the top, but it's still trending up. So you would short and
+[  240.90s ->   244.68s] then it would still go up. You would short and then, okay, it would go down here. But look at this
+[  244.68s ->   248.34s] whole period. It hits it and then it still goes up. It hits it and it still goes up. It hits it and it
+[  248.34s ->   253.30s] still goes up. It hits it and it still goes up. So if you're trying to short those up moves, that's
+[  253.30s ->   257.10s] not going to work either. So those are two different strategies that other people use. So if you're doing
+[  257.10s ->   263.50s] that, please be aware of those failure points where you will actually lose money. Now, how do we use this
+[  263.50s ->   267.90s] to make money? Well, we need to stop doing what everyone else is doing, right? If everyone else is doing it
+[  267.90s ->   271.96s] and they're losing, why would we copy them? So let's go in here to the Bollinger Band settings
+[  271.96s ->   275.90s] and change it a bit. I'm going to go here and change it to 200, which means that the moving
+[  275.90s ->   279.88s] average, the center line is looking at the last 200 days. And I'm going to change the standard
+[  279.88s ->   284.60s] deviation to 2.2 because I like to be fancy and this is what I found works best over time.
+[  285.42s ->   291.74s] All right. So what does this now show us? It shows us the exact same thing, but on a larger
+[  291.74s ->   297.88s] timeframe because we're looking at the 200 period moving average. So what we see here is when we break
+[  297.88s ->   304.84s] out above, we have a very high likelihood of the market crashing, right? When it breaks to the
+[  304.84s ->   311.08s] downside, we have a very high likelihood of the market reversing back up, right? Almost every strategy
+[  311.08s ->   317.70s] in the world, breakout strategies, triangle patterns, MACD divergence, RSI divergence, all these strategies
+[  317.70s ->   322.68s] that I know you've probably tried in our trading work in very specific markets. When you put the
+[  322.68s ->   328.18s] Bollinger Band like this, it tells you what markets it works in. Let me show you right here. If you're
+[  328.18s ->   337.48s] above the middle line, but below the top line, this is known as an uptrending market. The strategies
+[  337.48s ->   345.38s] you look for are breakouts, are resistance plays, are dip buys, are things like that. You're trading
+[  345.38s ->   350.82s] momentum, you're trading strength, you're trading an uptrend when you're in this range. Same thing
+[  350.82s ->   359.50s] below it. When you are below it, below the middle line and above the bottom blue line, this is a
+[  359.50s ->   363.80s] downtrend. You're going to trade downtrend plays. You're going to trade support breaks. You're going
+[  363.80s ->   370.92s] to find rejection points. You're going to be trading the downside short and inverse ETF. So that's
+[  370.92s ->   378.12s] exactly when you do it. Now, when you break above the upper band, you're now trading short so you can
+[  378.12s ->   382.26s] make money to the downside. So short moves right here. That means you're going to be doing things
+[  382.26s ->   386.64s] like entering a call credit spread, which is going to the downside, buying puts, which are going to
+[  386.64s ->   393.70s] make money to the downside, shorting, or buying an inverse ETF because those can go up as much as 10
+[  393.70s ->   399.82s] to 30% and this thing will move right here. Also, if you're interested in checking out my discord where
+[  399.82s ->   404.96s] we trade this type of strategy, where we trend trade and we make money from it using options,
+[  404.96s ->   410.58s] I have an exclusive free trial link down below. This free trial will not last long, but again,
+[  410.64s ->   414.38s] you can check that out down below and also get three free amazing trading gifts that you keep
+[  414.38s ->   419.72s] for life, even if you cancel your trial. All right, guys. Also to the downside here, what we have is when
+[  419.72s ->   426.80s] it gets below the bottom line, now we are entering the optimal mathematical level of a dip buy. You can
+[  426.80s ->   432.24s] see here when it breaks below, this is the perfect time to get long for any investments. It's the perfect
+[  432.24s ->   438.42s] time to enter in calls, to enter in stocks, to trade long as this period underneath the band.
+[  438.68s ->   442.90s] Now again, you can see here back in 2020, this huge crash could have been avoided and you could
+[  442.90s ->   448.06s] have made money from it. Why? Well, because look, the market was above the band. You knew to get
+[  448.06s ->   452.74s] short and then look, it crashed and then look, it went below. So you knew to get long and now that
+[  452.74s ->   457.62s] was perfect. That's exactly what my team did. If you were in my discord at the time, my team and I did
+[  457.62s ->   462.40s] this, we were out of the market. We got inputs, we made money to the downside. Then we got in our
+[  462.40s ->   467.28s] long-term investment portfolios. We put it in shares here and then we wrote it back up. And so
+[  467.28s ->   472.34s] now we're sitting pretty. And again, you can see the great dip buy opportunity. Here we go. Avoid
+[  472.34s ->   477.00s] the huge crash. We can see here in this area, we have an uptrend where we can make money from
+[  477.00s ->   484.62s] resistance breaks, all these plays. So I don't use the volunteer band as buy and sell signals and you
+[  484.62s ->   489.12s] should not be doing that either. You should be using it to decipher what market am I in? Am I
+[  489.12s ->   493.52s] a market that has a better chance to make money to the upside? Am I in a market that has a better
+[  493.52s ->   498.72s] chance to make money in the downside? Or am I at a rejection point? Am I at a dip buy point? And use
+[  498.72s ->   503.08s] the volunteer band to determine those levels and then use a strategy to take advantage of it like
+[  503.08s ->   507.86s] I've been mentioning for each one of these scenarios. So that's how I use the volunteer band indicator and
+[  507.86s ->   512.86s] have been using it for the last five years to avoid crashes and to actually make money because I know
+[  512.86s ->   517.02s] when my strategies work and when they don't. All right, guys, smash the subscribe button and I'll
+[  517.02s ->   517.78s] see you in the next video.

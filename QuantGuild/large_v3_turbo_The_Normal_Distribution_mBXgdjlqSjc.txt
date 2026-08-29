@@ -1,0 +1,109 @@
+[    0.62s ->     6.85s] Hey YouTube, it's Roman, I'm back, and if you notice, today is a Monday, not the typical
+[    6.85s ->    11.93s] Wednesday we release content, and that's because today is the first official Math Monday.
+[   12.31s ->    16.67s] Math Mondays are going to be dedicated to the iPad and occasionally Overleaf to talk
+[   16.67s ->    21.63s] about different mathematical and statistical topics and their applications, and Wednesdays
+[   21.63s ->    25.65s] are going to be oriented more towards the programmatic implementation of the topics
+[   25.65s ->    32.01s] on Wednesdays, or perhaps independent topics altogether in Python, maybe even Java, C++,
+[   32.21s ->    36.77s] or R, depending on what you guys want to see. That being said, this first Math Monday is going
+[   36.77s ->    40.67s] to be dedicated to the normal distribution. We're going to be diving into statistics.
+[   41.19s ->    45.13s] If you are unfamiliar with the normal distribution, then I want to welcome you to the wonderful world
+[   45.13s ->    49.67s] of statistics. We're going to be covering one of the most widely used statistical distributions out
+[   49.67s ->    53.67s] there, and if you're not new to statistics, then hopefully this is a nice refresher for you.
+[   53.67s ->    59.23s] So what does the normal distribution look like? Well, a normal distribution is often referred
+[   59.23s ->    65.13s] to as a bell curve, and if we draw a normal distribution, you'll see how it gets its name.
+[   65.21s ->    71.61s] It actually looks quite a bit like a bell. So we have this bell curve, or this normal distribution
+[   71.61s ->    79.39s] here, and what this does is it defines a set of possible outcomes for some random variable. So
+[   79.39s ->    86.17s] it helps us model outcomes of a random variable. There are several moments or different measures
+[   86.17s ->    92.59s] of this particular distribution. We're only going to focus on two. That is an average value and a
+[   92.59s ->    99.71s] measure of spread from that particular average value, and these are the first two statistical moments.
+[   99.71s ->   106.01s] So the first moment is going to be the mean, or the average value. So on average,
+[  106.01s ->   112.37s] what value can we expect from this random variable that follows a normal distribution? That is actually
+[  112.37s ->   118.79s] going to be defined as the mean, which is typically referred to as mu, and you can plot this on this
+[  118.79s ->   125.51s] chart right in the center of the distribution as mu. It turns out that the normal distribution is
+[  125.51s ->   131.33s] actually defined in terms of the first and second moment. You need a measure of an average value,
+[  131.33s ->   138.17s] so in this case, we have mu, and a measure of spread, which is typically variance. So if we wanted
+[  138.17s ->   145.57s] to say a random variable x was normally distributed, then I would use this tilde here, and then say that
+[  145.57s ->   154.19s] it is normally distributed with an n, and it would be a function of mu and sigma squared. So mu and sigma
+[  154.19s ->   162.41s] squared, where mu is going to be the average value, the first moment, and sigma squared is going to be
+[  162.41s ->   168.41s] the variance, the second moment. Now, a more productive measure of spread is often standard
+[  168.41s ->   175.61s] deviation. Standard deviation is the square root of variance. So if we were to just take the square
+[  175.61s ->   183.95s] root of sigma squared, you see that we simply get sigma, and this is referred to as standard deviation.
+[  183.95s ->   190.08s] Now, the reason we care about standard deviation is because it tells us a lot about where outcomes
+[  190.08s ->   195.48s] may fall in this particular distribution. Specifically, this is called the empirical rule.
+[  195.48s ->   202.58s] If we add and subtract a standard deviation to and from the mean, then we end up with a new interval
+[  202.58s ->   210.24s] and a probability that an outcome of x is going to be within that range. So for example, if I was to
+[  210.24s ->   219.58s] add sigma to mu and subtract sigma from mu, then I would get mu plus sigma, mu minus sigma. And if I was
+[  219.58s ->   226.92s] to draw vertical lines up, it would create something like this. And we can say that an outcome of x within
+[  226.92s ->   234.84s] this range is going to occur 68% of the time. Now, the further we go out in this distribution,
+[  234.84s ->   244.22s] the less likely x is to take on the values within that range. So as you can see, the tails, as we call
+[  244.22s ->   251.34s] them, start to get smaller and smaller and smaller, implying that that particular outcome of x is less
+[  251.34s ->   256.62s] and less and less likely. So it turns out, just to hammer this point home with the empirical rule,
+[  256.62s ->   270.54s] we know that an outcome of mu minus sigma, mu plus sigma will occur 68% of the time. An outcome of mu minus 2
+[  270.54s ->   284.86s] sigma mu plus 2 sigma will occur 95% of the time. And an outcome mu minus 3 sigma mu plus 3 sigma will occur
+[  284.86s ->   293.32s] 99.7% of the time. This gives us a lot of information about the potential outcomes of
+[  293.32s ->   298.98s] random variable x. Now, I want to give a quick example using stock returns, but I do want to note
+[  298.98s ->   305.30s] that empirically stock returns exhibit excess kurtosis. So it isn't really appropriate to assume that they
+[  305.30s ->   311.02s] follow a normal distribution, even though from a regulatory standpoint and in academia, it's often
+[  311.02s ->   316.40s] assumed even inappropriately most of the time. Nevertheless, let's take a look at an example using
+[  316.40s ->   322.84s] stock returns. So I'm going to say that r is a stock return, it's going to be distributed normally with a
+[  322.84s ->   335.10s] mean of zero and a variance of 0.2 squared. Okay, so now if I was to plot this, we have our bell curve here,
+[  335.10s ->   343.76s] we know the mean value is zero, and we can go one standard deviation away from the mean in both
+[  343.76s ->   350.70s] directions and find where the return is going to be 68% of the time if it were to follow a normal
+[  350.70s ->   359.24s] distribution. So we know that the standard deviation is going to be equal to 0.2. So if we were to add and
+[  359.24s ->   369.30s] subtract 0.2 in both directions, we would just end up with 0.2 and 0.2. And you can assume, I'm sorry,
+[  369.44s ->   375.00s] this is negative 0.2. And you can just assume that this is an annual stock return for maybe a very
+[  375.00s ->   383.12s] volatile stock because this is a 20% return or 20% loss. But nevertheless, based on this distribution here,
+[  383.12s ->   392.32s] we know that 68% of the time, the return is going to be between negative 20% and positive 20%. Do keep
+[  392.32s ->   398.24s] in mind, this is of course, assuming that the stock return follows a normal distribution. If the stock
+[  398.24s ->   405.18s] return does not follow a normal distribution, then in reality, this may be a very warped perception of
+[  405.18s ->   411.90s] the probability that the return falls between this range. Mathematically, we can look at the variance
+[  411.90s ->   423.48s] and the mean or the expectation of this stock return by saying E of R is equal to 0. That is by the
+[  423.48s ->   429.28s] definition of the normal distribution. We use the first two moments, the mu and the sigma squared.
+[  429.90s ->   438.62s] And the variance, so the var of R is going to be equal to this guy, that is 0.2 squared. So we have
+[  438.62s ->   445.42s] the expectation and the variance, the average value and the measure of spread for this stock return that
+[  445.42s ->   450.86s] is assumed to follow a normal distribution. Based on this example, a very natural question arises, what is
+[  450.86s ->   457.34s] the probability of a particular stock return? And this brings me to some of the trickier parts of the
+[  457.34s ->   463.82s] probability density function and the cumulative distribution function for the normal distribution that we're
+[  463.82s ->   468.02s] working with right here. These are tricky topics, but I think we can cover them pretty effectively.
+[  468.46s ->   474.88s] The probability density function is going to give us the likelihood that a draw falls within the range
+[  474.88s ->   481.96s] of some given value. Now, the reason that I'm stating this so around the bush is because formally,
+[  482.14s ->   489.70s] the probability of any one outcome in a continuous sense is 0. And I can just do a quick proof for you
+[  489.70s ->   497.06s] to show you why it's 0. If we were to draw this bell curve, then you'll notice that the domain of this
+[  497.06s ->   504.98s] function is negative infinity to positive infinity. We can effectively put in any value and get an outcome.
+[  504.98s ->   512.26s] Even if the outcome is extremely, extremely, extremely small, it's still defined. So the entire space is
+[  512.26s ->   522.82s] infinity. And one outcome is just one outcome. So the probability of any outcome by definition is going to
+[  522.82s ->   531.70s] be 1 over infinity. Now, I am sure we don't want to sift through the calculus to show that this is 0,
+[  531.70s ->   540.34s] but if you were to try to divide 1 by infinity or a very, very, very large number as infinity is usually defined
+[  540.34s ->   549.78s] by, we will end up with 0. So this brings up a very interesting theoretical and unnecessary question is,
+[  550.50s ->   557.64s] if something has a probability of 0, can it not occur? Now, instead of diving down this rabbit hole, I just want to
+[  557.64s ->   564.42s] instead define the probability density function and talk about the implications of why it's useful. But in a theoretical
+[  564.42s ->   570.82s] sense, just for those who are interested, the actual specific probability of any particular outcome of this
+[  570.82s ->   579.38s] continuous distribution is going to be 0, as seen by this kind of toy example here. The PDF is formally defined
+[  581.98s ->   593.34s] as little f of x, where x is essentially one potential draw from this normal distribution.
+[  593.34s ->   606.62s] So we have f of x is equal to 1 divided by sigma square root of 2 pi, e to the negative one half, x minus mu,
+[  607.26s ->   616.26s] divided by sigma. So this is going to give us the likelihood that a draw is within the range of a particular x.
+[  616.26s ->   627.46s] So if we were to do, for example, n is distributed by 0 comma 0.2 squared once again, and we wanted to say,
+[  627.46s ->   635.46s] hey, what is the likelihood that the outcome of a particular sample is going to be 0.1? Then we would
+[  635.46s ->   646.18s] simply do f of 0.1, and we would say that this is equal to 1 divided by 0.2 times 2 pi, e to the negative one half,
+[  646.98s ->   655.06s] x minus mu, which is 0, divided by sigma, which is just going to be 0.2, and this is going to give us
+[  655.06s ->   663.30s] that likelihood. The cumulative distribution function, the so-called CDF, is going to be defined by capital
+[  663.30s ->   675.22s] f of little x is equal to the integral from negative infinity to little x of f of s ds, where this f of s is
+[  675.22s ->   680.10s] the probability density function that we just defined. The cumulative distribution function
+[  680.10s ->   684.98s] is different from the probability density function in that it gives us the probability that x is going
+[  684.98s ->   691.30s] to fall within a specific range, that is from negative infinity up until a certain value. So
+[  691.30s ->   697.94s] graphically, this is going to be the area under the bell curve. So if we have negative infinity all the
+[  697.94s ->   704.34s] way out here, and we specify x to be some value maybe right here, right below the mean, then if we
+[  704.34s ->   712.71s] were to solve this integral, we would get the area underneath the curve, and that would give us the
+[  712.71s ->   722.15s] probability that an outcome of x falls within this range, this negative infinity to this little x value.
+[  722.15s ->   726.39s] Fortunately for us, most of the time, we actually don't need to go about solving this integral. We
+[  726.39s ->   732.71s] have a lot of numerical implementations in Python, Excel, etc. to solve this integral for us and come
+[  732.71s ->   739.59s] up with a probability for the CDF or even a likelihood for the PDF. So in general, it helps to note what
+[  739.59s ->   746.23s] the PDF and the CDF are and what they're doing, but we very rarely need to even specify a function
+[  746.23s ->   751.59s] to compute these values. Most of the time, they're already pre-packaged for us in whatever language or
+[  751.59s ->   757.59s] environment we are trying to solve for a probability in. That is going to do it for the first ever Math
+[  757.59s ->   762.47s] Monday. I want to thank you so much for watching. I really hope you enjoyed this introduction slash
+[  762.47s ->   767.67s] refresher to the normal distribution. Feel free to leave a comment if you have any questions or
+[  767.67s ->   774.31s] suggestions. Be sure to like and subscribe. It helps us out a lot. It helps us continue to push out content to
+[  774.31s ->   780.47s] our medium, to our GitHub, and of course to YouTube. And be sure to check out quantgill.com. We just
+[  780.47s ->   786.55s] launched our first course, Introduction to Python, taking you from zero to hero in the Python programming
+[  786.55s ->   790.71s] language. Other than that, I will see you in the next video.

@@ -1,0 +1,116 @@
+[    0.00s ->     5.34s] The big players can easily manipulate price, but they can't manipulate volume that easily.
+[    5.58s ->    10.72s] Volume feed is very useful. You can actually tell from price and volume relationships whether
+[   10.72s ->    14.80s] somebody's playing with you or not. Let's get straight to the point. The markets are
+[   14.80s ->    20.32s] constantly manipulated against you. Every single day, the market is manipulated in some type of
+[   20.32s ->    26.64s] fashion by big hedge funds, institutions, and big money who can artificially drive the price up and
+[   26.64s ->    32.02s] artificially drive the price down. And it's meant to do just one thing, to take advantage of the
+[   32.02s ->    37.96s] average retail investor like you and me, scare us out of our positions, and use us as liquidity.
+[   37.96s ->    44.08s] I even posted a guide on how to spot this manipulation in my telegram, which is absolutely
+[   44.08s ->    50.50s] free to join. To prove my point even more, here's an interview with an ex-hedge fund manager,
+[   50.68s ->    55.76s] Jim Kramer. I know, Jim Kramer. He kind of has a reputation, but everything he is saying in this
+[   55.76s ->    59.72s] interview is actually happening on a day-to-day basis in the markets.
+[   59.88s ->    65.10s] You know, a lot of times when I was short at my hedge fund and I was positioned short, meaning I
+[   65.10s ->    70.96s] needed it down, I would create a level of activity beforehand that could drive the futures. It doesn't
+[   70.96s ->    75.74s] take much money and maybe commit $5 million in capital to do it and I could affect it. You can move
+[   75.74s ->    81.16s] it up and then fade it. That's all often creates a very negative feel. That's a strategy very worth doing.
+[   81.16s ->    87.32s] I would encourage anyone who's in the hedge fund game to do it because it's legal and it is a very
+[   87.32s ->    93.46s] quick way to make money and very satisfying. If your sole strategy just uses price action and price
+[   93.46s ->    99.20s] action alone, I can guarantee you that strategy will not work in the long run because this
+[   99.20s ->   104.72s] manipulation tactic they use will falsely exit you out of your positions. But here's the good news.
+[  104.82s ->   110.56s] While yes, the big players can easily manipulate price, they can't so easily manipulate volume,
+[  111.16s ->   116.02s] exactly why we need to add it to our current strategy. You see, when talking about charts,
+[  116.14s ->   121.20s] you can look at two things. Price. Did it go up, down, or sideways? But price is limited because
+[  121.20s ->   127.00s] it just shows you the outcome of what happened. And as we proved before, that outcome can be
+[  127.00s ->   132.78s] manipulated. The second way of looking at a chart is by looking at the volume. Volume shows you how much
+[  132.78s ->   138.20s] conviction was actually behind that movement, how many traders participated, how much money was injected
+[  138.20s ->   143.56s] into the market to make that move happen. You can almost think of it like an election. Price is the
+[  143.56s ->   149.50s] equivalent of the president who won. So again, you are just seeing the outcome. But volume shows you
+[  149.50s ->   155.22s] the amount of voters each side had. For example, say if we just had two people vote for the next
+[  155.22s ->   161.20s] president, your Uncle George and your Aunt Boniqua. The result wouldn't really mean anything. Two people
+[  161.20s ->   167.22s] voting is not enough people to get a good consensus on who's going to win the next election. But if we
+[  167.22s ->   172.50s] had a hundred million people show up and vote, well, now that's a different story. It's the same
+[  172.50s ->   178.04s] thing with trading. If you have a big green candle with low volume, that's pretty suspicious. If you
+[  178.04s ->   183.76s] have a big green candle with high amounts of volume, that's conviction. So you shouldn't be asking,
+[  183.76s ->   190.10s] where did price go? You should be asking, how much money did it take for price to get to that point?
+[  190.10s ->   195.48s] Now, I know. When first using the volume indicator, it can be super confusing. You don't really know
+[  195.48s ->   200.76s] what to look for. Should you be buying when it's green, selling when it's red, big, small? What do
+[  200.76s ->   206.12s] I do? To help you out with this, I have a simple blueprint to simplify everything. There are only
+[  206.12s ->   211.86s] three scenarios that you really need to know. The first scenario is the healthy scenario, which is
+[  211.86s ->   217.44s] what you want to see. In this scenario, you have a big green candle with high volume. Showing large
+[  217.44s ->   222.44s] amounts of money is supporting this move. Lots of money coming in, and the chart agrees with that.
+[  222.56s ->   228.62s] This is exactly what you want to see. But that all changes if this scenario happens. If you have a
+[  228.62s ->   235.12s] small candle with large amounts of volume, this is a huge red flag. You see, whenever you have a small
+[  235.12s ->   241.28s] candle with large amounts of volume, that is showing large amounts of money is coming into the
+[  241.28s ->   247.92s] market, but the price isn't moving. Which means the money is being absorbed. The buyers are pushing
+[  247.92s ->   253.42s] hard, but there's an invisible wall. Or in other words, a large seller absorbing the buyers.
+[  253.58s ->   259.00s] So here, there's a small candle. But if we look at the volume, there was a ton of volume. Showing the
+[  259.00s ->   264.54s] buyers are being absorbed by a big seller. And look what happens. Price falls shortly after.
+[  264.54s ->   270.84s] Okay, so both of the previous examples, the volume was high. But what happens if the volume is low?
+[  271.00s ->   276.32s] Well, if the volume is low, showing there isn't a lot of activity, yet the chart is still going up,
+[  276.42s ->   281.94s] this just shows there's no supply. Or in other words, the sellers are absent, and there's no
+[  281.94s ->   286.98s] friction against the buyers. So the buyers can push up the price easily because there's no
+[  286.98s ->   291.20s] competition. Now, I know what some of you are thinking. What if the volume bar is red? Or what if
+[  291.20s ->   296.92s] the volume bar is green? Then what? To answer that question, let's do an episode of Mythbusters.
+[  297.66s ->   303.36s] We're trading a lot. A super common misconception about volume is green volume means buying and red
+[  303.36s ->   309.34s] volume means selling. Which is completely not true. You see, every trade requires a buyer and a seller.
+[  309.54s ->   315.62s] So if you bought 69 shares, that means someone out there sold you 69 shares. For every buyer,
+[  315.62s ->   321.18s] there's a seller. No exception. Volume is simply the amount of transactions that took place.
+[  321.20s ->   327.10s] Not who's winning. So a common misconception that I see the majority of traders make is they see a red
+[  327.10s ->   332.42s] volume bar and they instantly think there is more selling activity, which is not always the case.
+[  332.54s ->   337.02s] The color of the volume bar is simply just matching the color of the candle above it.
+[  337.14s ->   341.82s] So if we go to our chart, you can see we have a red candle. And if we look directly below that,
+[  341.94s ->   346.36s] we have a red volume bar. We have another red candle. We have another red volume bar. We have a green
+[  346.36s ->   349.82s] candle. We have a green volume bar. The point I'm trying to get in your head,
+[  349.82s ->   354.76s] the color of the volume bar has nothing to do with who is buying and who is selling.
+[  354.90s ->   361.12s] It just shows if price closed above or below from where it opened. So in reality, for the most part,
+[  361.24s ->   366.72s] the color of the volume bar is pretty irrelevant. All we care about is the size of the volume bar.
+[  366.78s ->   371.40s] So putting all of this together, we can make a pretty good strategy for predicting what price
+[  371.40s ->   377.08s] is about to do based on the volume. If price is going up and the volume is going up, that is
+[  377.08s ->   382.74s] showing a strong uptrend. If price is going down and the volume is going down, that is showing the
+[  382.74s ->   387.68s] sellers are getting weaker. That's pretty obvious. But when they start moving opposite of each other,
+[  387.82s ->   392.94s] that's when the true signals start revealing themselves. And the best part is this strategy
+[  392.94s ->   397.76s] isn't just for one market. The volume concept works for every market out there. Crypto,
+[  397.88s ->   402.98s] stocks, gold, whatever. Volume is in every market. And if you trade multiple markets,
+[  403.10s ->   408.08s] it doesn't really make sense to have five different brokers for each asset class.
+[  408.16s ->   414.10s] Why not just have one broker where you can trade everything all in one place? Introducing
+[  414.10s ->   423.07s] You can now trade crypto, stocks, indices all in one place. No KYC, no annoying signup fees,
+[  423.23s ->   428.15s] just pure easy trading. When they first came to me and asked to sponsor one of my videos,
+[  428.25s ->   433.93s] I said I would only do it if they gave my viewers a good deal. Because I'm a man of the people. And
+[  433.93s ->   439.67s] oh boy, did I get you guys a good deal. If you use the link in my description, the first hundred
+[  439.67s ->   448.69s] people that sign up with my link will instantly get a 20% deposit bonus up to $750. So if you deposit
+[  448.69s ->   455.87s] say $1,000, you will instantly get $200 for absolutely free that you can use instantly to
+[  455.87s ->   461.19s] trade with. I've personally been using them for a while now. And I got to say they do a great job
+[  461.19s ->   466.47s] and make everything really convenient and super user friendly. Go check it out and get that deposit
+[  466.47s ->   471.25s] bonus. Okay, back to the video. You see, if we look at this chart, price is moving upwards. We're
+[  471.25s ->   477.19s] making higher highs and higher lows. So if you were a price action trader and looking at price action
+[  477.19s ->   482.79s] and price action alone, you'd be sitting there thinking this is a very strong uptrend. But the
+[  482.79s ->   489.31s] moment we look at the volume, it tells us a completely different story. Even though the price is going up,
+[  489.41s ->   494.97s] the volume is getting weaker. With every new high that price is making, there is less and less
+[  494.97s ->   501.29s] transactions happening. And the volume is getting smaller, which shows weakness. With this weakness,
+[  501.29s ->   507.49s] you could easily predict the price is about to fall because of the lack of volume, which is exactly
+[  507.49s ->   512.69s] what happens. The same exact thinking goes for the opposite scenario. If we have a strong downtrend,
+[  512.89s ->   517.87s] price making lower lows and lower highs, but we look at the volume and the volume is getting weaker
+[  517.87s ->   524.17s] as well. This is showing the sellers are getting exhausted. Each drop in price has less and less
+[  524.17s ->   530.05s] transactions, which means the selling is getting weaker, which often signals a bottom is forming,
+[  530.15s ->   535.65s] which again is exactly what happens. So to combine everything that we just learned into your current
+[  535.65s ->   541.17s] strategy, all you have to do is follow these simple steps. First, go to trading view. If you don't yet
+[  541.17s ->   546.23s] have it, I'll leave a link in my description. Go to your chart, go to a larger timeframe like the daily,
+[  546.35s ->   552.45s] go to the indicators tab, search volume, click this default one. Before you even look at the price action,
+[  552.45s ->   558.03s] look at the volume first. Zoom out on your chart and simply just look at what the volume is doing.
+[  558.19s ->   564.25s] Is the volume increasing? Is the volume decreasing? Are there any unusual volume spikes? Once you
+[  564.25s ->   569.35s] answer those questions, next is when you actually apply it to your strategy. Say if you were using
+[  569.35s ->   574.31s] supply and demand. I've made multiple strategy videos using supply and demand, so if you want a
+[  574.31s ->   579.77s] more in-depth explanation on that, you can watch those after this video. But to explain it like you
+[  579.77s ->   585.65s] five years old, it's basically just the start of a strong uptrend or the start of a strong downtrend.
+[  585.75s ->   590.41s] You can almost think of it as support and resistance. In my opinion, supply and demand is
+[  590.41s ->   595.33s] more accurate, but I'm just trying to explain it very simply. Mark your areas of supply and demand
+[  595.33s ->   600.43s] on the chart. If price comes up to your area of supply, or in other words, a resistance,
+[  600.79s ->   606.67s] then prints a small candle with large amounts of volume, this is showing the sellers are absorbing
+[  606.67s ->   613.39s] the buyers, which also means your supply zone is likely very strong. But if price has a big green
+[  613.39s ->   619.19s] candle breaking your area of supply with large amounts of volume, this instantly shows you that
+[  619.19s ->   625.59s] supply level is likely very weak. Volume can be a little confusing, and I know this from experience.
+[  625.73s ->   631.57s] So to help simplify this process, I made a volume checklist. I just posted it in my telegram,
+[  631.73s ->   635.57s] which is completely free to join. Just click the telegram link in my description,
+[  635.57s ->   640.13s] and you can check out the checklist. I did this purely just to help you guys out. You don't need
+[  640.13s ->   644.67s] to buy a $5,000 course like some of these other YouTubers are doing. Hopefully it helps,
+[  644.83s ->   649.81s] and hopefully you learned something from this video. Thanks for watching, and I'll see you guys next time.

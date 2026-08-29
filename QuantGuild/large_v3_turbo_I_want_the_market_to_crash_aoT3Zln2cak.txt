@@ -1,0 +1,121 @@
+[    0.00s ->     5.00s] you know who i want to be i want to be ryan gosling in the big short you know when the
+[    5.00s ->    12.10s] market just implodes and he receives that that massive check i don't want to be michael barry
+[   12.10s ->    16.66s] michael barry is weird or whoever the hell steve correll played he was weird too i want to be like
+[   16.66s ->    22.76s] ryan gosling you know he's like he's like lifting throws his phone in the gym you know like like
+[   22.76s ->    31.96s] that's who you want to be i i am i am long black swan events i'm long black swan events and
+[   31.96s ->    38.42s] if you've spent any time with the work that i've been producing recently you'll notice that pretty
+[   38.42s ->    42.66s] much everything has that theme i'm talking about volatility drag orthogonal return streams
+[   42.66s ->    50.04s] obsessing over this idea of monetizing in a drawdown when people have to sell for pennies
+[   50.04s ->    56.90s] on the dollar you have plenty of capital and what ends up happening is you're going to compound
+[   56.90s ->    64.48s] returns faster and your long-term wealth trajectory relative to just raw market exposure is going to
+[   64.48s ->    76.57s] be substantially substantially different i don't want to be the guy who loses his job who has his
+[   76.57s ->    82.63s] home equity value cut in half and logs into his brokerage account maybe through interactive brokers
+[   82.63s ->    89.39s] like in the description if you want to get started with them and finds that he has a 60 drawdown in his
+[   89.39s ->    97.75s] portfolio then when he needs cash he doesn't have it because he's not generating any cash from his job
+[   97.75s ->   106.05s] if he needs to sell anything in his portfolio it's at a discount for pennies on the dollar and if he has
+[  106.05s ->   114.03s] to downsize or move and get rid of his home he has a substantially lower home equity value so he's
+[  114.03s ->   122.99s] just going to get absolutely tossed in all three cases ryan gosling's looking pretty good now right
+[  122.99s ->   129.25s] a massive check in a market crisis you're able to then what buy up that home equity buy up those
+[  129.25s ->   135.49s] assets for pennies on the dollar in a crisis right this is why i'm so long these black swan events but
+[  135.49s ->   141.61s] there is a very big problem with being these long black swan events and i'm not fear-mongering
+[  141.61s ->   149.39s] nobody knows what's going to happen not me not you not anybody at citadel not anybody at jane street
+[  149.39s ->   158.13s] nobody knows what's going to happen this is literally all about math positioning and survival
+[  158.13s ->   166.90s] how can you sleep at night with where your money is parked you got to park it somewhere and you're
+[  166.90s ->   172.74s] going to be subject to risk whether you like it or not whether you're in cash whether you are in
+[  172.74s ->   181.04s] bonds or cash or cash equivalent bonds stock whether you have a trading strategy that you overfit
+[  181.04s ->   189.77s] on trading view you got to expose yourself to some form of risk so what are you cool exposing
+[  189.77s ->   195.97s] yourself to in terms of risk given everything that i have studied over the years and everything that
+[  195.97s ->   203.75s] i've seen every trading strategy in an institutional or discretionary retail whatever capacity i always
+[  203.75s ->   211.65s] start with pricing models what happens when what happens is effectively what i'm saying i look at the
+[  211.65s ->   219.63s] cap m look at just raw beta exposure diversified u.s equities the s&p 500 what happens to that strategy
+[  219.63s ->   233.00s] when the s&p 500 goes way up or way down this is the idea of being the casino and not being the players
+[  233.00s ->   248.12s] in a casino back testing taking a look at just historic pricing data is just like taking a look at all of
+[  248.12s ->   255.66s] the outcomes from different players at your casino sitting at a table oh they won money here they lost
+[  255.66s ->   260.58s] money here right you're missing the bigger picture if you're just looking at that equity curve of the
+[  260.58s ->   268.89s] players relative to the casino it's not about the players it's about the game think about now not just
+[  268.89s ->   275.75s] individual u.s equities not the players right think about the games market exposure right different
+[  275.75s ->   282.95s] undiversifiable risk factors cap m extends to fama french other factor models factor zoos right we
+[  282.95s ->   288.49s] know they change over time i know they change over time and that's the problem there's no such thing
+[  288.49s ->   296.62s] as prediction all of these models fail to predict i'm not trying to predict anything i'm simply saying
+[  296.62s ->   303.70s] i understand that these returns streams over time change if you choose to have value exposure
+[  303.70s ->   318.78s] that may have been a good idea in 2005 but it's a terrible idea in 2022 2023 where do you want your risk
+[  318.78s ->   326.82s] allocated do you want it to be to just raw beta exposure you hire some sort of wealth management firm
+[  326.82s ->   332.26s] to to manage your capital for you they're just going to throw it into an etf and charge you a fee
+[  332.26s ->   342.42s] effectively all right well then you're subject to that state of the world where you're triple long and
+[  342.42s ->   348.30s] you lose your job your home equity value gets cut in half and your portfolio sits at a 60 drawdown i
+[  348.30s ->   355.28s] don't want to be in that state of the world this is why i'm long black swan events i'm long black swan
+[  355.28s ->   361.78s] events being short black swan events would be like no i'm just gonna ride market beta fuck it you know
+[  361.78s ->   368.98s] it'll come back eventually look at japan that took 20 years to come back and if you think you know you
+[  368.98s ->   375.72s] don't nobody does and if you do go ahead take out a second mortgage and throw it into the
+[  375.72s ->   383.60s] a crazy levered play on uh on u.s equities and and you know show me your crystal ball i'll do the same
+[  383.60s ->   389.76s] thing but nobody knows it's about where you want to allocate your risk and how you can sleep at night
+[  389.76s ->   399.46s] i sleep very soundly at night because i'm very okay understanding the idea that i'm long this
+[  399.46s ->   407.36s] these black swan events i understand that i'm willing to give up upside on average for when
+[  407.36s ->   413.12s] these black swan events occur i'm going to have massive convexity in my portfolio that's going to
+[  413.12s ->   419.92s] allow me to monetize it and improve my return compounding substantially ephemerally and then in
+[  419.92s ->   427.58s] the long run like i said the trajectory is just nowhere near just raw beta exposure the problem
+[  427.58s ->   434.99s] of course with portfolio insurance is it can be expensive right if insurance wasn't profitable who
+[  434.99s ->   442.67s] the heck would sell it think about like your car think about like health insurance right if it wasn't
+[  442.67s ->   448.57s] profitable people wouldn't sell it but i'll tell you what when you need it you really need it
+[  448.57s ->   457.45s] and for your equity portfolio it's no different but the problem is right understanding what is
+[  457.45s ->   464.81s] overpriced or underpriced in terms of some sort of hedge leg of your portfolio this long convexity
+[  464.81s ->   474.04s] can be pretty challenging unlike with your car right for car insurance you go to geico you go to
+[  474.04s ->   483.22s] progressive who's going to give you a lower rate who's going to make you bleed less cash okay it's
+[  483.22s ->   490.73s] not just about the cash that you're bleeding though right it's also about the coverage this is not a
+[  490.73s ->   496.49s] trivial discussion guys looking at an implied volatility surface and figuring out statistically
+[  496.49s ->   503.13s] which value to pluck out as the statistical inefficiency the one that is going to allow you to
+[  503.13s ->   509.97s] have the least negative carry right you're going to effectively be bleeding the least cash possible
+[  509.97s ->   517.77s] but still have an effective payout in these black swan states of the world so you don't end up with that
+[  517.77s ->   527.75s] triple loss you can be ryan gosling right that's quantitative research it's a very difficult process
+[  527.75s ->   534.95s] to validate not only just through some sort of research process but also from a risk allocation
+[  534.95s ->   540.89s] standpoint after you've conducted the research there's no guarantee anything is going to play out
+[  540.89s ->   547.40s] like that again in the future everything is a guess everything is a gamble the future is uncertain
+[  547.40s ->   552.84s] like i said unless you have a crystal ball nobody knows what's going to happen i have these beautiful
+[  552.84s ->   556.04s] quant research notes beautiful quant research notes that i've written internally
+[  556.04s ->   563.64s] and i was thinking about publishing them i was thinking about publishing them i'm not certain what i want to do
+[  563.64s ->   569.94s] with them they've taken such a substantial effort the actual rule set for this long convex city sleeve
+[  569.94s ->   579.04s] understanding how to monetize in an effective way all of these ideas they're not trivial and if you say
+[  579.04s ->   587.58s] they're trivial awesome good for you you and i can both be ryan gasling when the market implodes
+[  587.58s ->   598.21s] all right the whole point of this video is to just get you to think about the different risks that you are
+[  598.21s ->   608.73s] exposed to i am very very confident being long black swan events because i am so adverse to
+[  608.73s ->   615.55s] that state of the world for that triple loss in tandem with the efficacy in which i can achieve
+[  615.55s ->   625.40s] hedging that state of the world that i'm cool with it i'm cool with it if the s&p rips 30 this year and
+[  625.40s ->   635.22s] i i get 15 20 i'm cool with it because if the s&p has a 30 40 drawdown right people can sell for 60
+[  635.22s ->   647.46s] cents on the dollar i can sell for 85 cents on the dollar sharp ratio of 1.5 1.72 right there's a lot
+[  647.46s ->   653.24s] of really cool things you can do with this sort of strategy especially in the context of big data
+[  653.24s ->   660.93s] social sentiment i mean wow there's some some really impressive things you can do there's some really
+[  660.93s ->   665.85s] impressive things that you could do without the big data as well some things are just not priced well
+[  665.85s ->   672.73s] you just have to look really really hard and figure out an optimal way to construct it and it's
+[  672.73s ->   678.23s] not about data mining it's not about overfitting you have to take a step back and be the casino
+[  678.23s ->   684.95s] you have to set up the game so that you have an edge so that when you play out those different states
+[  684.95s ->   691.51s] of the world you know that you're in a favorable position or at least in a position that you can live
+[  691.51s ->   700.80s] with that is the idea of being long black swan events this ties perfectly into everything we've
+[  700.80s ->   706.74s] been talking about in the context of volatility drag recently and orthogonal return streams so
+[  706.74s ->   713.33s] i hope you enjoyed this fireside chat i hope you learned something i want to thank you so much for
+[  713.33s ->   718.05s] watching if you enjoyed this video and you want to see more like it in the future please like comment
+[  718.05s ->   723.33s] subscribe share it helps me out tremendously it is always greatly appreciated if you have interest in
+[  723.33s ->   731.75s] these more portfolio construction-esque videos allocating risk in the real world let me know
+[  731.75s ->   738.67s] let me know my primary goal with this channel is education and i always hesitate anytime i make a
+[  738.67s ->   751.85s] remark explicitly about positions about strategies this is specifically a psa for know what risk you are
+[  751.85s ->   758.85s] exposed to i'm not telling you to expose yourself to certain risks this is not financial advice i'm
+[  758.85s ->   766.77s] simply saying expose yourself to risk that you can sleep soundly at night with in any state of the world
+[  766.77s ->   775.45s] if you're looking to master your quantitative skills so that you can produce similar research maybe
+[  775.45s ->   781.45s] you're after a role in the industry as a trader market maker maybe you're just a hobbyist getting
+[  781.45s ->   788.81s] involved in the space to inform yourself to learn more to manage your own accounts check out quant guild
+[  788.81s ->   794.45s] dot com we got an adaptive practice engine that scales with your skill level courses from a to z
+[  794.45s ->   803.79s] in coding probability statistics lessons trading games even master classes the list goes on so if you'd
+[  803.79s ->   811.43s] like to help support the channel and master your quantitative skills check out quant guild dot com but other than
+[  811.43s ->   816.43s] that i want to thank you so much for watching let me know your thoughts in the comment section below
+[  816.43s ->   821.59s] and i will see you in the next video
+[  821.59s ->   822.03s] you
+[  822.03s ->   824.03s] you
+[  824.03s ->   826.03s] you
+[  826.03s ->   828.03s] you
+[  828.03s ->   830.03s] you
+[  830.03s ->   834.03s] you
+[  834.03s ->   836.03s] you
+[  836.03s ->   838.03s] you
+[  838.03s ->   840.03s] you
+[  840.03s ->   842.03s] you
+[  842.03s ->   844.03s] you
+[  844.03s ->   846.03s] you

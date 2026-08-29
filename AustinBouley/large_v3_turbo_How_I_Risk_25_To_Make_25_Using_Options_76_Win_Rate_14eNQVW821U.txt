@@ -1,0 +1,154 @@
+[    0.00s ->     2.86s] Are you tired of having huge losses?
+[    3.44s ->     6.56s] Are you tired of having an amazing winning streak and feeling good
+[    6.56s ->    10.26s] only for one losing trade to take out all the profits you made
+[   10.26s ->    13.76s] and more digging into the original money you had in the account?
+[   14.10s ->    17.30s] If that's true, I'm going to show you exactly how I structure trades
+[   17.30s ->    20.48s] using options to risk $25 to make $25,
+[   20.94s ->    25.92s] aka how I risk the same amount that I stand to make in any given trade
+[   25.92s ->    28.04s] with a 76% win rate.
+[   28.04s ->    31.52s] So if that is interesting to you, I'm going to dive into the exact strategy
+[   31.52s ->    34.10s] and the exact way I structure these trades.
+[   34.18s ->    35.46s] So let's dive into it right now.
+[   35.80s ->    38.28s] So I use a strategy known as credit spreads.
+[   38.42s ->    42.44s] Credit spreads are essentially betting that a stock will stay above or below a certain level.
+[   42.82s ->    44.92s] So let's say we're talking about a put credit spread.
+[   45.18s ->    46.30s] What is a put credit spread?
+[   46.54s ->    49.30s] It means that I'm betting that a stock will stay above a certain level.
+[   49.40s ->    51.52s] So let's say this is the stock that's trending up.
+[   51.78s ->    53.98s] I bet that the stock will stay above this level.
+[   54.38s ->    56.74s] If it stays above this level, I make money.
+[   56.74s ->    58.12s] If it doesn't, I lose money.
+[   58.20s ->    59.42s] That's how simple it is.
+[   59.70s ->    61.04s] Now, why is this really good?
+[   61.12s ->    62.58s] Well, because if it goes up, I make money.
+[   62.66s ->    64.04s] If it goes sideways, I make money.
+[   64.12s ->    66.20s] If the stock goes down, I make money.
+[   66.48s ->    70.46s] The only way I lose money, if the stock goes really far down and goes below my level.
+[   70.88s ->    76.38s] So with this, I'm able to make money whether the stock goes up, down, or sideways,
+[   76.60s ->    78.36s] and I still make money.
+[   78.72s ->    82.54s] And so that's how I'm able to have a super high win rate on these trades.
+[   82.54s ->    86.80s] It's called credit spreads, and the same thing with a call credit spread, except for the
+[   86.80s ->    87.38s] downside.
+[   87.76s ->    90.68s] If I think a stock will stay below a certain level, let's say this is a stock and it's
+[   90.68s ->    94.80s] trending down, and I think it will stay below this level, then I make money.
+[   95.08s ->    96.80s] So how exactly does that work?
+[   96.88s ->    99.08s] Well, if the stock continues going down, I make money.
+[   99.16s ->   100.90s] If the stock stays the same, I make money.
+[  101.14s ->   104.82s] If the stock starts to go up, but still stays below the level I picked, I make money.
+[  105.12s ->   108.08s] The only way I lose money is it really goes up and breaks my level.
+[  108.08s ->   110.84s] So this is what is known as a credit spread trade.
+[  110.96s ->   112.94s] It's super easy to place on any platform.
+[  113.24s ->   117.90s] If you're using Robinhood or Webull or something like that as your broker, you can legit just
+[  117.90s ->   120.70s] click credit spread, and it will set up the trade for you.
+[  121.02s ->   124.32s] And so that is the option strategy I'm using credit spreads.
+[  124.52s ->   128.84s] It has a naturally high win rate, because as you can see, no matter what the market does,
+[  128.94s ->   133.62s] in general, you can make money unless it goes really against you, then you lose money.
+[  133.76s ->   137.56s] So with that, how is a credit spread typically structured?
+[  137.56s ->   138.88s] Well, this is the problem.
+[  138.98s ->   142.44s] This is why people have huge losses with options, specifically with credit spreads.
+[  142.70s ->   147.98s] It's because you have a high win rate, you also have a high loss amount, because the trade
+[  147.98s ->   149.34s] is super likely to happen.
+[  149.78s ->   155.60s] So with this, this is how a credit spread typically looks from a risk to reward scenario.
+[  155.98s ->   163.28s] If you have the chance to make $25 on a trade, then typically you stand to risk $75.
+[  164.12s ->   164.52s] Why?
+[  164.76s ->   166.34s] Well, because it's going to total up to $100.
+[  166.34s ->   172.48s] So that means that if you stand to make $20, then because our total needs to be $100, that
+[  172.48s ->   174.22s] means I stand to risk $80.
+[  174.92s ->   179.46s] So this means that the stock, if we're doing a put credit spread, for example, stays above
+[  179.46s ->   182.26s] the level that I picked, then I get to make $25.
+[  182.76s ->   187.34s] If it breaks it, then I lose $75, or vice versa, whichever way I pick.
+[  187.70s ->   190.06s] And so that's how these trades are structured.
+[  190.06s ->   195.78s] Now, the problem with this is, let's say that you are using this strategy right here, and
+[  195.78s ->   198.42s] you have four wins in a row, and you feel amazing.
+[  198.42s ->   201.96s] That means you basically just made $80 if you're just trading one spread each, right?
+[  201.96s ->   203.42s] Because for one spread, you make $20.
+[  203.96s ->   206.48s] So if you have four winning trades in a row, you make $80.
+[  206.58s ->   207.26s] So that's going to be what?
+[  207.26s ->   211.36s] Like plus 20, plus 20, plus 20, all that, for example.
+[  211.70s ->   214.16s] And so again, we have these four plus 20s in a row.
+[  214.32s ->   216.64s] Then we have a minus 80 because of a loss.
+[  216.78s ->   217.52s] And then what happens?
+[  217.56s ->   218.46s] Now we're back to zero.
+[  218.90s ->   222.84s] Sometimes people only have three winners, and now they're down to a negative number.
+[  223.18s ->   228.60s] And so because of that, credit spreads suck because one loser will offset a ton of winners.
+[  228.70s ->   233.74s] So how do we structure this trade so that we stand to make the same amount that we stand
+[  233.74s ->   237.86s] lose, which means that one loser will only ever offset one loss?
+[  238.20s ->   240.38s] Well, how I do this is this.
+[  240.62s ->   248.46s] Instead of structuring a trade like this, where I stand to make $25 and stand to risk $75, what
+[  248.46s ->   251.82s] I do is I add a stop loss at the break-even price.
+[  252.08s ->   253.40s] So let's explain this.
+[  254.02s ->   257.60s] You can see here for our put credit spread, we're essentially betting that a stock stays
+[  257.60s ->   258.50s] above a certain level.
+[  258.60s ->   259.20s] Where is that level?
+[  259.26s ->   260.30s] That level is right here.
+[  260.64s ->   261.46s] What does this mean?
+[  261.46s ->   267.00s] This means that I think the stock will continue moving higher, continue trending up as long
+[  267.00s ->   268.12s] as it stays above this level.
+[  268.20s ->   270.70s] That means I'm typically setting it around a support level.
+[  271.06s ->   271.92s] So what does that mean?
+[  271.98s ->   276.86s] It means that if the stock breaks that support level, then the likelihood of it continuing
+[  276.86s ->   278.14s] higher is very low, right?
+[  278.18s ->   282.40s] The likelihood of it coming up, breaking through a support level, and then continuing back up
+[  282.40s ->   283.48s] is quite low.
+[  283.68s ->   287.14s] If it breaks my support level, then it's most likely just going to go down.
+[  287.44s ->   288.54s] So what should I do?
+[  288.54s ->   294.58s] As soon as the option, the credit spread, breaks the level that I picked, I exit the
+[  294.58s ->   296.18s] trade as my stop loss.
+[  296.28s ->   302.42s] So my stop loss level for my credit spread is the strike price that I have for my credit
+[  302.42s ->   305.10s] spread, aka the level that I picked that I think the stock will stay above.
+[  305.60s ->   311.64s] And so when I have a stop loss at that level, the credit spread will be trading around $50.
+[  311.64s ->   315.26s] So I'll be trading around $50.
+[  315.72s ->   316.78s] So let's do some math.
+[  317.04s ->   323.32s] If I enter the trade at $25 and I can exit for a stop loss at $50, how much money did I
+[  323.32s ->   323.64s] lose?
+[  323.82s ->   326.72s] I received $25, then I exit at $50.
+[  326.84s ->   328.12s] That's a $25 difference.
+[  328.50s ->   334.84s] So that means that I now get to make $25 and I risk $25.
+[  334.84s ->   337.44s] That's the beautiful part about this trade.
+[  337.86s ->   339.80s] One loser offsets one winner.
+[  339.94s ->   341.30s] One winner offsets one loser.
+[  341.40s ->   345.70s] So that means that if I'd have four winning trades in a row like this one where I make
+[  345.70s ->   350.66s] $25 each, then I have a loser, then it only offsets one winner.
+[  350.80s ->   353.68s] And so now I still have three winners of profits.
+[  354.04s ->   355.74s] And so that's how amazing this is.
+[  356.00s ->   360.26s] However, when you start using stop losses, your win rate will decrease.
+[  360.70s ->   364.64s] So by default, depending on the credit spread trade you have, you will have a high win rate.
+[  365.02s ->   368.30s] So if you do that, then you have a high win rate.
+[  368.36s ->   369.36s] And so it does lower it.
+[  369.42s ->   371.62s] But now your risk is also dramatically lower.
+[  371.78s ->   373.22s] And so it works out in your favor.
+[  373.60s ->   377.64s] Now, the one secret here is when you have a trading edge, you need to have a trading
+[  377.64s ->   379.66s] edge to make this work even better.
+[  379.66s ->   384.22s] So you can do this with credit spreads and you can have success, but you have an edge that
+[  384.22s ->   386.60s] increases your win rate, then you're going to do even better.
+[  386.74s ->   387.96s] My edge is trend following.
+[  387.96s ->   391.88s] The idea that the market always trades in trends, it goes up and it goes down, it goes
+[  391.88s ->   393.16s] up and goes down like this.
+[  393.24s ->   399.16s] We can capitalize on those trends by buying low or entering low and selling high and then
+[  399.16s ->   401.16s] setting our stop losses at support level.
+[  401.28s ->   405.50s] So if you do this, if you use a simple trend following approach, which is where the market
+[  405.50s ->   410.06s] continues trending higher, you find a stock that is continuously trending higher.
+[  410.46s ->   415.18s] You safely go out and enter a credit spread trade around 20 to 25 cents.
+[  415.18s ->   420.60s] You're going to have around a 76% historical win rate and you only risk $1 to make $1.
+[  420.92s ->   424.96s] So if you know anything about that, that is so much money and profit.
+[  425.30s ->   431.12s] So anyways, guys, that is how amazing it is to trade credit spreads and trading them when
+[  431.12s ->   433.30s] you have a stop loss at $50.
+[  434.58s ->   436.90s] What's the other advantage of having a stop loss at $50?
+[  437.06s ->   440.84s] Well, if you don't know anything about credit spreads or options, when your option answers
+[  440.84s ->   444.12s] the money, which is what happens when it breaks your level, you also have what is not.
+[  444.20s ->   445.32s] It's assignment risk.
+[  445.76s ->   449.14s] Assignment risk means the chance of your options being taken away from you.
+[  449.52s ->   453.34s] And if you want to avoid that risk, just don't be in an option when it's in the money.
+[  453.46s ->   458.24s] And so you can do that by exiting at the stop loss or at the strike price, which is the rule
+[  458.24s ->   463.92s] that we use so that we can structure a trade so that we risk $25 to make $25 with a 76% win
+[  463.92s ->   464.06s] rate.
+[  464.26s ->   468.12s] If you want to learn more about this and the specifics of the strategy, you can check out my YouTube
+[  468.12s ->   473.08s] channel, or if you want the step-by-step criteria laid out for you, I'll give you free lifetime
+[  473.08s ->   478.80s] access to my course that explains all this in-depth linked in the YouTube description below.
+[  479.04s ->   482.20s] All you have to do is put in your name and email and you can get access to that free course
+[  482.20s ->   484.14s] to learn exactly how this works.
+[  484.22s ->   490.26s] I'll also give you three free trading tool gifts for you if you grab that free course down
+[  490.26s ->   492.20s] below just as a thank you for giving me your email.
+[  492.88s ->   494.32s] Anyways, guys, that is this video.
+[  494.48s ->   495.94s] If you enjoyed it, smash the subscribe button.
+[  496.00s ->   497.30s] I will see you in the next video.

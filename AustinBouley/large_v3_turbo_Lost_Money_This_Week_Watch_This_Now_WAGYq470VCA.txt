@@ -1,0 +1,97 @@
+[    0.00s ->     3.76s] If you lost money this week as an options trader, then I want to walk you through
+[    3.76s ->     9.32s] what happened, what went wrong, and how to identify if a trade is actually going bad or not.
+[    9.80s ->    14.50s] And so I know that the market actually was very red this week. So if we see here starting Friday,
+[   14.62s ->    19.44s] actually Friday, Monday, Tuesday, Wednesday, and Thursday, all red days, it dropped by a matter of
+[   19.44s ->    26.16s] almost 4% or 5% in a matter of a week. And so that's a lot of a big pullback for the overall
+[   26.16s ->    30.76s] market. Again, not the worst one we've ever had, but still significant compared to our previous
+[   30.76s ->    35.48s] uptrend that we've been having. This can lead to a lot of losses. Whether you lost $100, $1,000,
+[   35.74s ->    41.62s] a few thousand, you would have seen a very significant impact to your options trading.
+[   41.90s ->    45.84s] As you can see here on my TasteTrade account, which is where I trade options through,
+[   46.16s ->    50.54s] if I go back a week, you can see here that earlier this week, I was down a lot of money. This was
+[   50.54s ->    56.52s] actually around a $4,000 loss for me, and now I'm back up near break even. So I want to discuss
+[   56.52s ->    60.94s] what is an options trade and how we actually understand if it's making money or not,
+[   61.40s ->    66.70s] what affects the intraday movement of profit and loss, and how to understand if we're right or wrong,
+[   67.04s ->    71.76s] and some things we should do to fix that in the future. First, let's understand what is an options
+[   71.76s ->    76.60s] trade. So again, there's a lot of different options trades that we can discuss and talk about,
+[   76.60s ->    82.48s] but for this one, I'll just break down a put selling strategy. So we sell a put,
+[   82.74s ->    88.02s] we're basically betting that the stock stays above a certain level. So for instance, if I sold a put
+[   88.02s ->    94.02s] at this level, $5,400, I am betting that this asset, yes, will stay above this level. If it stays
+[   94.02s ->    98.76s] above this level by the time that I picked, then I'll make money regardless of what happens in
+[   98.76s ->   105.82s] between times. So for instance, if I sell a put, which is this level, if I sell this put with 90 days
+[  105.82s ->   112.78s] out into the future, so 90 DTE, which means 90 days until this contract expires, if by the end of
+[  112.78s ->   119.74s] this 90 day window, the asset stays above this level, then I will make money regardless of what
+[  119.74s ->   125.48s] happens in between, as long as by the end of the time period, I'm above this level, I'm going to make
+[  125.48s ->   131.34s] money. So that's essentially what an options trade is. It's you're betting on a level by a certain time
+[  131.34s ->   136.30s] frame. So if you're stay above that level, by that time frame, then you'll make money. And so
+[  136.30s ->   140.84s] that's what the put selling strategy now is a strangle, you're betting on both the bottom side
+[  140.84s ->   145.02s] and the top side. So you're betting that I'll stay above this level and below this level by a certain
+[  145.02s ->   150.30s] time frame. So if it stays then this level by a certain time frame, then you'll make money. And so
+[  150.30s ->   155.66s] again, that's how you can assess what is going on with the with the options trade. If it were to expire
+[  155.66s ->   161.18s] today, would I be making money? And so you can see here, if the stock is currently trading here,
+[  161.44s ->   166.74s] and my level is here, yes, if it were to expire today, then I would be making money. So I'm still
+[  166.74s ->   171.72s] good to go. This option trade is still valid. It's still a winning trade by the expiration date.
+[  172.14s ->   176.42s] And so that's something to keep in mind, what is the option trade actually doing? I'm betting on a
+[  176.42s ->   183.00s] level by a certain date. Am I still within those ranges? If so, I'm good to go. So then if that's true,
+[  183.00s ->   188.32s] if I'm still above this level, which means I'm making money, then why do I see all this intraday
+[  188.32s ->   194.84s] movement? Why do I see my loss going higher and I'm losing a lot of money when my option trade is
+[  194.84s ->   199.88s] actually structured correct and I haven't actually lost money from that perspective? Your intraday
+[  199.88s ->   206.58s] movement and profit and loss for option sellers is completely based on VIX. This is the volatility
+[  206.58s ->   211.68s] index. So I'm looking at the volatility index here. I'm going to clear up my chart. Sorry,
+[  211.68s ->   216.84s] this is an impromptu video. Not much planning here, but we see here VIX, this is a volatility
+[  216.84s ->   222.72s] index, shows us how much fear in the market there is. And so as option sellers, we are capitalizing
+[  222.72s ->   232.02s] on that fear. So when fear goes up like this, option sellers lose money. So if you're right on
+[  232.02s ->   237.58s] your trade, like we just saw, like the ES is still above the put selling level I bought. So theoretically,
+[  237.58s ->   244.54s] I'm still making money, but I'm seeing it as a loss. Why? Because VIX went high. VIX controls what
+[  244.54s ->   250.38s] my profit and losses for my open trades. And so as VIX goes up, I'm actually going to be losing
+[  250.38s ->   256.86s] money. When VIX comes down, my trade will reset or I'll actually start making money. And so what can
+[  256.86s ->   262.38s] we understand from this VIX movement will control my intraday profit and loss. It will actually control
+[  262.38s ->   269.84s] how that's doing and have a direct impact on them. And if we're seeing VIX hit a level. So for instance,
+[  269.90s ->   276.06s] you can see here, VIX did spike up, which means I was losing money, but then VIX hit this common
+[  276.06s ->   282.10s] resistance level around $22, $23 and started to pull back. So this tells me, Hey, good sign.
+[  282.42s ->   287.88s] The market's going to start to pull back. This means that my intraday losses that I was having,
+[  287.88s ->   293.10s] my $4,000 losses are going to start to recover. And that's what we saw on Friday. You can see here,
+[  293.12s ->   298.76s] my losses got bad. VIX started dropping, which helps my profit and loss go back to normal.
+[  299.54s ->   304.14s] So again, that means you're watching VIX. So first you're assessing, is my options trade correct?
+[  304.20s ->   309.00s] If by the expiration date, will I make money? Is it above my level below whatever it is you're betting
+[  309.00s ->   314.60s] on? Then it's okay. Let's look at VIX. Does VIX look like it's going to start coming down soon? If so,
+[  314.60s ->   318.70s] that means you'll start to see your profit and loss come down. It VIX going up. Okay. That's why
+[  318.70s ->   323.42s] your open loss is still hitting there. As long as your options trade is still intact, you're still
+[  323.42s ->   327.56s] above that level. You're good to go. So those are the things to look at and understand about how
+[  327.56s ->   333.36s] options and profit and loss are affected. And then, so the things that you can do to fix that
+[  333.36s ->   339.14s] is number one, have a consistent plan. Okay. So no, when you're entering and why? No,
+[  339.20s ->   343.98s] when you're exiting and why? So entry means, okay, I'm going to enter at this time,
+[  343.98s ->   349.50s] at this price level because of this reason. And then your exit is, I'm going to exit for a loss
+[  349.50s ->   354.28s] at this amount. I'm going to exit for a loss at this take profit. And that way, regardless of what
+[  354.28s ->   359.30s] happens, you stick to a consistent plan. Almost all plans work when it comes to trading, like almost
+[  359.30s ->   364.46s] all strategies work. It's just being consistent with it. And so again, knowing your entry, knowing
+[  364.46s ->   369.46s] your exit rules, knowing why the strategy works and just consistently following it will help you out.
+[  369.46s ->   374.98s] Number two, what you can do is you can actually start controlling your buying power based on VIX.
+[  375.30s ->   380.08s] So again, looking at VIX, because like I said, this controls what our profit and loss is going to
+[  380.08s ->   386.14s] show on the trade, regardless of if our trade's actually winning or not. And so when, oops, go back.
+[  386.58s ->   391.34s] So when VIX spikes up, what we'll do here in this instance is that's when we'll actually be entering
+[  391.34s ->   397.20s] trades. Entering trades around these zones when VIX is higher will actually give us a higher win rate.
+[  397.20s ->   401.90s] Why? Because as options sellers, we make money when VIX goes down, right? So as VIX goes down,
+[  402.18s ->   408.32s] we make money faster. And so when VIX spikes up, like right now, or specifically on Thursday,
+[  408.74s ->   412.76s] what's the time to start selling more options? Because then VIX is going to drop and come down
+[  412.76s ->   418.72s] lower, which will then help us see a profit faster. Sweet. So that's the second thing we can do.
+[  419.04s ->   426.26s] And then number three is we can size appropriately. If VIX is down here in this lower quadrant area,
+[  426.26s ->   432.94s] around $15 or less, this means we have a lot of risk as options sellers, because the risk of VIX
+[  432.94s ->   439.64s] going higher, which means our open losses going really large or being really large is a lot higher.
+[  439.72s ->   443.68s] Why? Because we're lower. And if we're lower, there's a better chance of it going higher, right?
+[  444.04s ->   448.88s] And so when we're lower, we should be in less positions. So for instance, we typically are in
+[  448.88s ->   454.38s] five positions total, maybe when the positions or when VIX is down here, we're only in two trades at
+[  454.38s ->   460.64s] at a time. And then as VIX bumps into the higher levels, then maybe we size up into five trades at
+[  460.64s ->   466.10s] a time, because it's more safer for us to do. So again, we're going to size appropriately based on
+[  466.10s ->   471.48s] the market. So just a recap of this impromptu video, if you're losing money as an option seller,
+[  471.56s ->   476.46s] number one, look at is the actual structure of my trade, whether I'm selling a put, strangle,
+[  476.46s ->   481.22s] a 1-1-2, whatever the strategy, am I actually making money? If it were to expire today,
+[  481.56s ->   486.98s] would I make money? If yes, you're on the right track. Number two, look at VIX will show you
+[  486.98s ->   491.30s] basically a realistic curve of why you have immediate losses. Does it look like it's going
+[  491.30s ->   495.94s] to turn around soon? Is it hitting a resistance point? If it is, you're probably good to stick
+[  495.94s ->   500.56s] through the trade. If not, you might want to consider exiting. And then as always, have a
+[  500.56s ->   505.84s] predefined plan, know why you're doing it. Look at VIX when entering and size appropriately.
+[  505.84s ->   509.66s] So again, I hope that helps. I know I got a lot of questions about this and I wanted to make sure
+[  509.66s ->   513.32s] that you understand what's going on with options, why they're structured this way. So sorry if I
+[  513.32s ->   518.04s] look bad. Sorry the video wasn't as planned out because it wasn't. But anyways, I hope you enjoyed
+[  518.04s ->   521.94s] it. Please click the subscribe button if you enjoyed it and check the description down for
+[  521.94s ->   523.80s] any other helpful videos. All right, see you guys.

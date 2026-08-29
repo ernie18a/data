@@ -1,0 +1,113 @@
+[    0.40s ->    11.48s] Hey, YouTube. It is Roman. I'm back. And today what I want to do is a paper review. And this paper is called P versus Q, differences and commonalities between the two areas of quantitative finance.
+[   11.48s ->    27.52s] So I want to start doing paper reviews a little more often where I kind of just walk through different papers that I find fun to read or interesting and kind of talk about the implications of them in, you know, in practice, perhaps in academia.
+[   27.52s ->    40.06s] But yeah, so I think this paper, this is a very short paper. This is a quick example of the differences between P and Q quants. And I just kind of want to talk about each of the main sections.
+[   40.06s ->    57.09s] So let's just start by the introduction to the Q world. So what is the Q world? Well, it's summarized by this nice table here. We have a goal, which is extrapolate the present.
+[   57.09s ->    71.21s] The environment is the risk neutral probability Q. Processes are continuous time martingales. Generally, the dimensionality of this problem space is relatively low. The tools that we use are ETO calculus and partial differential equations.
+[   71.75s ->    81.57s] The main challenge is calibration. And the business is sell side. So I think that sums up the Q quant world very nicely. Let's just talk about the goal.
+[   81.57s ->    91.76s] What do they mean by extrapolate the present? Well, if we take a look at the market, we can go on Yahoo Finance and we can see that prices exist already for instruments, right?
+[   91.80s ->   108.34s] We can look at the current value of Apple stock. We can look at the value of a call option that expires in one month at the strike price of whatever Apple's trading at, perhaps, you know, above or below the spot, the closest strike price.
+[  108.34s ->   114.52s] And we have market prices for all of these instruments already, and they're publicly available.
+[  115.42s ->   120.28s] So when we say that our goal is to extrapolate the present, what are we talking about?
+[  120.28s ->   140.32s] Well, since prices exist and we can derive analytical, numerical, sometimes quasi-closed form solutions to these derivatives prices, then the goal turns into an extrapolation problem, a contemporaneous extrapolation problem.
+[  140.32s ->   162.30s] So if we have a derivative, perhaps an exotic derivative that doesn't have a price right now in the market, then what we want to do is we want to ensure that the model that we assume, say a Heston model, a stochastic volatility model, maybe a model with jumps, maybe a Merton or a Bates, you know, whatever model we assume,
+[  162.30s ->   177.90s] we want those parameters to price and fit the liquid instruments, the liquid, usually vanilla instruments, the implied volatility surface, and those prices to the best of the model's ability.
+[  178.02s ->   183.22s] And to do that, it's an exercise in calibration, hence the challenge is calibration.
+[  183.22s ->   194.82s] So we're going to calibrate these models to the market implied volatility surface, and that's what they mean when they say the dimensionality is relatively low, because these models don't have that many parameters.
+[  195.00s ->   197.28s] We're not talking about hundreds of thousands of parameters.
+[  197.28s ->   201.10s] We're talking about like a Heston model where there are only a couple, a couple handful, right?
+[  202.76s ->   205.74s] And, you know, some models have fewer, some models have more.
+[  205.82s ->   209.44s] Like I know a Sabre model is a very popular stochastic volatility model.
+[  209.44s ->   217.74s] You know, everything is generally continuous time Martingale, and we use the ETO calculus and PDEs to get our nice guarantees.
+[  218.52s ->   221.08s] But that's what we mean by extrapolate the present.
+[  221.22s ->   229.26s] We're trying to develop prices that are, you could think of it as competitive based on the current derivative prices in the marketplace right now.
+[  229.38s ->   236.78s] So, you know, we want to match our liquid instruments to the best of our abilities when we have illiquid instruments that we're trying to price on the sell side.
+[  236.78s ->   240.74s] So I think this does a great job of summarizing the Q-quant world.
+[  241.52s ->   244.24s] Let's move on to the P-quant world.
+[  244.68s ->   250.00s] So the P-quant world has the goal of modeling the future.
+[  250.94s ->   259.20s] And, you know, it's very difficult, I think, to kind of just make, like I said, quants can wear a number of different hats.
+[  259.28s ->   262.26s] It's kind of hard to draw a very fine line in the sand.
+[  262.26s ->   263.84s] It turns into a gray area very quickly.
+[  264.06s ->   273.20s] But, you know, just I think this is a nice interpretation for people that may not be familiar with, you know, the duality of P versus Q and this whole idea.
+[  273.28s ->   277.86s] So I think this is a nice representation because, you know, more often than not, you're going to work in both spaces.
+[  278.08s ->   281.44s] But let's look at the goal of the P world.
+[  281.54s ->   282.74s] Let's look at this nice table here.
+[  282.74s ->   285.12s] So the goal is to model the future.
+[  285.82s ->   287.94s] The environment is real probability, P.
+[  289.34s ->   291.32s] Processes are discrete time series.
+[  291.88s ->   293.50s] The dimension is large.
+[  294.14s ->   297.62s] Tools are multivariate statistics, challenges, estimation, business buy side.
+[  297.72s ->   306.42s] So you can think of the P world as essentially like portfolio management, more of the proprietary trading sort of thing.
+[  306.42s ->   312.22s] That sort of world is what the P quants tend to operate in and for.
+[  313.20s ->   315.14s] And the goal is to model the future.
+[  315.36s ->   316.40s] Well, yes and not really.
+[  316.56s ->   325.04s] The goal is to kind of come up with a prediction that has a firm statistical basis so that you can maintain profitability in the long run.
+[  325.04s ->   332.58s] And they give a very nice example we'll go to in a moment with statistic arbitrage and the kind of the overlap of the P and Q world.
+[  333.32s ->   337.40s] But the processes are all discrete time series, right?
+[  337.42s ->   341.20s] Because in the Q world, we're operating with these continuous time martingales.
+[  341.36s ->   343.82s] And that's a purely theoretical concept, right?
+[  343.82s ->   358.08s] Even though asset prices may trade continuously, there's things that exist in the real world that we don't really consider theoretically, like market frictions, transaction costs, liquidity concerns, things that we generally disregard in theory.
+[  358.36s ->   363.14s] So the P quants have to concern themselves with all of this stuff.
+[  363.14s ->   375.16s] Because if you have a trading strategy, right, say you can get in, but the liquid is incredibly, like the instrument is incredibly illiquid, say that you know it's going to appreciate by like 200%.
+[  375.16s ->   376.52s] Well, that's great.
+[  376.70s ->   386.30s] But if you don't have a buyer, then it doesn't matter how much it appreciates because you can't cash in on that profit, on the trade.
+[  386.48s ->   390.14s] So, you know, these are all things that we have to take into account in the P world.
+[  390.14s ->   392.56s] So the dimensionality is generally large.
+[  392.64s ->   396.64s] You're dealing with enormous, you know, cross sections of multiple assets.
+[  396.76s ->   399.76s] It's like you'd be looking at a basket of like 500 to 1,000 equities.
+[  400.30s ->   404.82s] You know, if you're trying to derive some equity alpha and then it's a time series, right?
+[  404.86s ->   407.38s] So you have an incredibly large dimensionality in the space.
+[  407.86s ->   410.16s] You know, you use tools from multivariate statistics.
+[  410.16s ->   411.78s] You're going to use your autocorrelations.
+[  412.08s ->   415.64s] You're just really classical tools from statistics.
+[  415.82s ->   416.74s] The challenge is estimation.
+[  416.86s ->   417.62s] Generally, yes.
+[  418.06s ->   419.74s] And the business is really the buy side.
+[  419.74s ->   423.28s] Like I said, more of the risk management, prop trading style stuff.
+[  423.48s ->   428.54s] But I really like this example where they talk about the overlap with StatArb.
+[  429.24s ->   431.56s] So, yes, there are some theories.
+[  431.70s ->   436.90s] And I kind of just want to skip over this stuff because I don't think this stuff is as interesting as the example on StatArb.
+[  437.02s ->   440.24s] Like they go through and they talk about, okay, like, you know, what are some tools?
+[  440.24s ->   446.24s] You know, like how can we represent both cluster inverse autocorrelation, discrete time versus continuous time.
+[  446.68s ->   453.76s] So, like this is a stochastic differential equation to represent autocorrelation versus the ARMA process in discrete time.
+[  454.28s ->   459.64s] You have your Levy processes, your Brownians or whatever, like the jump processes, all this stuff.
+[  459.64s ->   466.40s] I don't think it's as interesting as this example down here because this is what I found very, very fun as a good example.
+[  466.40s ->   472.84s] So, the statistical arbitrage is a great example of the overlap between the P and the Q quant world.
+[  474.20s ->   485.16s] So, statistical arbitrage in its simplicity, let's consider we have a risk-neutral world, right?
+[  485.16s ->   493.32s] We have our Q quants developing a price for some sort of instrument, some sort of instrument that's perhaps liquid.
+[  493.44s ->   498.84s] Let's just kind of make this world as painless as possible so that we can look at this statistical arbitrage example.
+[  499.32s ->   500.82s] We have some derivative.
+[  500.98s ->   503.04s] Let's just say it's an equity option, okay?
+[  503.86s ->   511.18s] And we see that the equity option is currently trading here at this price, okay?
+[  511.18s ->   520.80s] And our Q predicted price, meaning we assume a model and we price that equity option, is down here.
+[  521.86s ->   531.68s] Well, if the current price is higher than what it should be, then you can capture that as alpha.
+[  532.02s ->   538.06s] You're essentially saying in the long run, the true price is going to be reflected by my Q price,
+[  538.06s ->   541.68s] and I would like to make a bet that that is true.
+[  541.82s ->   546.12s] And to do that, you're going to take a short position in that equity option,
+[  546.48s ->   552.94s] and you're going to essentially try to trade out of it once it reaches your predicted price.
+[  553.32s ->   556.30s] And then you're going to be able to capture that as trading profit, as alpha.
+[  556.96s ->   559.42s] So, I think that's a very nice, very nice.
+[  559.42s ->   563.46s] And there are a lot of, like, we can get into it, right?
+[  563.48s ->   565.54s] We could talk about transaction costs.
+[  565.66s ->   566.96s] We could talk about liquidity concerns.
+[  566.96s ->   570.60s] We could talk about how effective is this in backtesting, out of sample.
+[  570.78s ->   573.46s] We could tear this apart, don't get me wrong.
+[  573.60s ->   577.44s] We could go and talk about this until the cows come home.
+[  577.62s ->   579.73s] But that's not the point of this.
+[  579.77s ->   586.51s] I think there's a really great example of the overlap in the P and Q world because it's a P problem, right?
+[  586.53s ->   592.43s] It's a P quant problem to essentially create trading profits, right?
+[  592.43s ->   599.49s] And this is a Q quant concept is this theoretical price that the derivative should be.
+[  600.13s ->   603.99s] And I just think it's just a tremendous overlap of these two concepts.
+[  604.11s ->   606.87s] You just put so concisely in one picture here.
+[  606.99s ->   608.23s] Like, it's just great.
+[  608.23s ->   612.93s] So, I found this paper just really fun, really quick read.
+[  613.01s ->   615.37s] I'll link it in the description if you want to read it for yourself.
+[  617.23s ->   619.61s] It's just a really fun paper that I found.
+[  619.61s ->   623.77s] So, I hope you found the discussion and explanation useful.
+[  624.53s ->   626.47s] I really enjoyed reading this.
+[  626.91s ->   633.27s] So, thank you to Miyuchi.
+[  633.57s ->   634.81s] I assume that's Italian.
+[  635.87s ->   637.61s] Atilio Miyuchi.
+[  638.03s ->   639.87s] Hopefully, I'm pronouncing that appropriately.
+[  639.99s ->   641.85s] So, thank you for your contribution.
+[  642.41s ->   645.05s] And I will see you all in the next video.
+[  645.25s ->   645.83s] Thanks for watching.

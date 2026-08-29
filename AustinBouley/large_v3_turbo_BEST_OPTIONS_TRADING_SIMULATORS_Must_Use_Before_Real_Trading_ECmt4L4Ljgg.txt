@@ -1,0 +1,67 @@
+[    0.04s ->     4.18s] Do you want to paper trade options so you can learn how it works before you actually put your
+[    4.18s ->     8.34s] hard-earned money on the line? Or maybe you saw a strategy on YouTube and you're like,
+[    8.44s ->    12.02s] hey, I want to see if that actually works, so I want to paper trade it so I don't use my own
+[   12.02s ->    17.02s] real money. Well, I'm going to show you three amazing platforms that are free that you can use
+[   17.02s ->    21.58s] to paper trade options. And so you can do this to get the feel of how options work,
+[   21.84s ->    26.32s] different strategies, and build your own system so that when you start trading with real money,
+[   26.32s ->    31.64s] you actually know it can work. And so again, at the very end, if you stay till the very end of this
+[   31.64s ->    36.44s] video, I'll actually give you a fourth bonus platform for if these don't work for you,
+[   36.50s ->    42.06s] for the other three don't work. So let's dive in. Number one is going to be Moomoo. So Moomoo has a
+[   42.06s ->    49.96s] free options trading platform that allows you to paper trade options. And so again, it's Moomoo.com
+[   49.96s ->    54.32s] and you can go to the paper trading section. It allows you to practice and test your trading
+[   54.32s ->    59.34s] strategies like a pro. So again, you can go in, you basically get access to what their platform is
+[   59.34s ->    65.70s] like. You do have to create an account. So again, this is for U.S. citizens as well as for some
+[   65.70s ->    70.08s] international citizens as well. That is a different type that it requires for you. So you can gain
+[   70.08s ->    74.22s] experience in trading and learn how to use the Moomoo platform and you can learn exactly how that
+[   74.22s ->    81.00s] works. They allow you to do stocks, ETFs, options, and futures for the paper trading. So this is amazing,
+[   81.00s ->    84.78s] especially if you're an options trader to learn how it works. So what you need to do is you need to
+[   84.78s ->    89.60s] register for paper trading. It will activate a paper trading account and then you can get started.
+[   89.76s ->    93.84s] So I don't know the specifics on this, but you may be able to start it without actually opening an
+[   93.84s ->    98.36s] account. But regardless, Moomoo is a great platform. I just met with their team the other week.
+[   98.70s ->   102.70s] And so again, I'm learning about the platform and it's really great. And so if you want a paper trade
+[  102.70s ->   108.16s] on here, this is very user friendly. So I wanted to include it as the first option. Number two is
+[  108.16s ->   114.76s] Webull. So this is the next best bet. This is also super user friendly. This one as well is a very
+[  114.76s ->   119.44s] unique case. Like Moomoo is very simple and easy to use. You just create a free account.
+[  119.98s ->   125.58s] Webull, however, you will need to create an actual broker account to actually use this. And you can
+[  125.58s ->   131.10s] only paper trade for free on their desktop version. So what you have to do is you have to create an
+[  131.10s ->   137.16s] account with Webull. You have to put some money in it, and then you have to actually use it on the
+[  137.16s ->   142.56s] desktop platform. And so that is Webull paper trading, but they still allow you to trade stocks
+[  142.56s ->   147.40s] and options and paper trade through that. And if you ever actually add money, then again, you can
+[  147.40s ->   153.20s] actually win some free stocks as well. So again, zero risk, unlimited virtual cash. And what's amazing
+[  153.20s ->   157.64s] is this real time data, which a lot of people don't actually give you. But again, that's also
+[  157.64s ->   163.52s] available on Moomoo as well. So this is Webull. And this is the second option as the best options
+[  163.52s ->   168.60s] trading paper trading platform. And so again, that's what you can do there if you want to
+[  168.60s ->   174.62s] practice trading without the risk. Number three is the Thinkorswim platform. This is an amazing
+[  174.62s ->   182.62s] and super powerful trading platform. If you've never used it before, it was created by TD Ameritrade.
+[  182.72s ->   186.52s] They actually bought it, but regardless, it was used by them. Charles Schwab just recently took over
+[  186.52s ->   191.34s] the company. So if you want to get access to Thinkorswim desktop, you go to TD Ameritrade.com,
+[  191.34s ->   196.26s] go to Thinkorswim, go to the download section, and you have the desktop. Click on the desktop.
+[  196.68s ->   200.86s] You should be able to create a free account. If not, then you can contact their support and they
+[  200.86s ->   206.24s] can set you up with a free account. And now you have access to paper trading on what could be
+[  206.24s ->   211.14s] known outside of Bloomberg as one of the greatest trading platforms and tools around. And you get
+[  211.14s ->   216.64s] to use it for free. The data will most likely be delayed unless you have an actual account with them.
+[  216.64s ->   222.74s] This is an amazing way to paper trade options, futures, stocks, whatever it is you want to do
+[  222.74s ->   227.68s] and build complex strategies around it. So this again, gets a bit more complicated with each
+[  227.68s ->   234.68s] approach. Moomoo is super user-friendly and free. Webull is user-friendly, but also requires you to
+[  234.68s ->   239.26s] create an account. TD Ameritrade gets a bit more complicated, but if you're more of an advanced
+[  239.26s ->   244.34s] trader, this will work for you as well. And so again, these are the three amazing paper trading
+[  244.34s ->   249.94s] platforms specifically for options trading. Now, what I do want to make you aware of is if these
+[  249.94s ->   253.24s] don't work for you, let's say if you're not a US citizen, if you can't create an account,
+[  253.30s ->   256.78s] if something's not working, or you just want a simple way to do it without putting your information
+[  256.78s ->   264.32s] into anything, I have a bonus way to do it. Yahoo Finance. So again, what you do is you go to Yahoo
+[  264.32s ->   269.90s] Finance, you look up the stock that you want to paper trade options on. So for instance, you can see
+[  269.90s ->   275.42s] here, spy, we have that pulled up. It has an options tab right here. From the options tab,
+[  275.46s ->   279.74s] it shows you based on the expiration date, everything you want to do, what the options
+[  279.74s ->   284.36s] are currently trading at, and all the details you want to know about it. What you do is create a
+[  284.36s ->   290.62s] simple Google sheet that says, hey, I answered at this date, I answered this option, and I answered
+[  290.62s ->   295.20s] at this price. And so again, you can also put in the stock price at the time, whatever you want to
+[  295.20s ->   300.86s] track and do a manual order, you can do that on a Google sheet, you can do that on an Excel file,
+[  300.96s ->   305.80s] you can do that on a piece of paper with a pen. So again, that's the old fashioned way to paper trade,
+[  305.86s ->   310.06s] but you can do that as well. If you don't want to give your information to Moomoo to Webull or to TD
+[  310.06s ->   315.84s] Ameritrade. So these are four amazing systems to paper trade options to get a better edge in the
+[  315.84s ->   319.68s] market to understand strategies, understand options to undersea and just learn how this works
+[  319.68s ->   324.44s] before you put your own money on the line. Anyways, I hope this helped you. If you want to learn more
+[  324.44s ->   329.72s] about my specific option strategy that I use, I linked the free course down in my description
+[  329.72s ->   334.64s] below. All you need to do is put in your name and email. I'll give you free access to that complete
+[  334.64s ->   341.20s] course step by step of how I trade options to make anywhere from $3,000 to $5,000 every single month.
+[  341.20s ->   343.38s] All right, guys, see you in the next video.

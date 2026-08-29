@@ -1,0 +1,115 @@
+[    0.66s ->     7.22s] Hey guys, what's up? It's AB Trades here, and if you don't know who I am, I teach people how to day trade options through this YouTube channel.
+[    7.52s ->    24.12s] Again, if you're coming from somewhere else to watch this tutorial on the Tastyworks platform, and you are a seller, which means you're a net credit, you collect credit on options, this tutorial will still be useful, but it's going to be more tailored towards day traders.
+[   24.12s ->    37.56s] So, again, when you first open up this platform, you'll most likely have this thing on the side here, not really useful for me personally, so just get rid of it, I put it off to the side.
+[   38.44s ->    42.22s] When you're on this, most likely it will be set up on this curve.
+[   42.22s ->    56.82s] This curve will be used to determine profit when you're taking a part of strategies like straddles, strangles, butterflies, and all the variety, Jade Lizard, Calendar, Covered Call, Iron Condor, etc.
+[   57.74s ->    69.88s] Again, when you want to change these, I'll show you in a sec, but for our uses as day traders, we're going to come over here to the table so that we can see each expiration price we're looking at,
+[   69.88s ->    77.72s] and then we click into that expiration, and then it shows us all the strike prices, and then most likely these will be set at one of the greets.
+[   78.06s ->    82.76s] You just click on this, and you can change it to volume, and you can change it to open interest.
+[   83.98s ->    93.06s] The easiest ways to enter a position from here when you're just buying is you want to make sure that just by clicking these, they'll most likely all be on short already.
+[   93.16s ->    95.58s] You just want to re-click them and make them long just in case.
+[   95.58s ->   100.96s] The only one that we're going to focus on right here is the long put option, or if you click it, long call option.
+[  101.58s ->   102.64s] Again, you click go.
+[  102.98s ->   105.82s] If you want to switch it to put, you don't have to go back through here.
+[  106.04s ->   108.52s] You just click on call, it changes the put, and you click go.
+[  109.00s ->   114.96s] Then you can click and hold the mouse, and you can move it any direction you want and to any strike price you want.
+[  116.10s ->   118.68s] Again, when you're on here, it's going to show you your max profit.
+[  118.92s ->   120.52s] Most likely will not achieve that.
+[  122.02s ->   125.26s] We'll never will achieve that unless it drops to complete zero on this put.
+[  125.26s ->   128.80s] Our max loss is the contract price being $31.
+[  129.14s ->   130.66s] As you can see, it's constantly updating.
+[  130.78s ->   136.32s] The way that Tastyworks does it is when you enter an order, it constantly adjusts the mid price.
+[  136.84s ->   139.64s] To increase quantity, you just increase quantity here.
+[  140.04s ->   141.52s] You can go up as much as you want.
+[  142.64s ->   144.32s] Then you have your shows your delta.
+[  144.48s ->   147.54s] We have a negative 44 delta on the day.
+[  147.60s ->   152.28s] Then again, this is a zero day until expiration, so the theta should eventually take it all the way out.
+[  152.28s ->   159.26s] Then you can swap, you can undo, you can clear, you can move down strike prices that way, or you can increase with.
+[  159.92s ->   161.34s] Again, not really too important.
+[  161.46s ->   162.14s] We'll just click clear.
+[  162.50s ->   165.82s] Another way to enter trades here is to click on the ask price.
+[  165.94s ->   170.44s] If we know we're looking for the 277 calls, we're going to click on the ask, and it's going to pull up here.
+[  170.44s ->   175.14s] Now we're automatically in that instead of switching to calls and having to click go.
+[  176.56s ->   183.54s] Then when you're here and you're in a trade, it'll show you a gray box, and it'll show how many contracts you have.
+[  183.88s ->   187.44s] You'll just right click that, and you'll be able to click close.
+[  188.26s ->   192.90s] You can close a certain amount of your contract, close the full position, and whatever else you want to do.
+[  192.90s ->   198.68s] After that here, you can go down to TastyTrades if you'd like to watch them.
+[  199.00s ->   201.82s] You can actually watch them live as they're doing their things.
+[  201.94s ->   203.58s] Right now they're doing bootstrapping in America.
+[  204.00s ->   208.22s] It can show from today's videos and whatever else you want to see, as well as the top videos.
+[  209.08s ->   215.72s] Then we also have their market outlook on specific stocks following standard deviations.
+[  215.72s ->   222.40s] We're looking at the IV ranking and everything all together, and they're putting together their projections over the next 30 days.
+[  222.90s ->   228.94s] Again, this is what they're looking at, statistically speaking, BA, Disney, et cetera.
+[  230.20s ->   239.18s] Again, when we go into the chart tab, the reason why I personally use TastyWorks, my bad,
+[  239.56s ->   242.20s] personally why I use TOS for charting is simple.
+[  242.96s ->   246.02s] The TastyWorks platform leaves a lot to be desired on their charting.
+[  246.66s ->   252.70s] Again, this looks nice and it's good, but if you're going to watch multiple stocks, you're going to have to go in between.
+[  252.70s ->   255.06s] You can't have one screen, two screen, three screen.
+[  255.30s ->   262.94s] Also, you can't set up – this is a lie, I'm still connected – you can't set up multiple time frames.
+[  263.00s ->   265.88s] If I want to go into a time frame, I have to come in here and adjust it.
+[  266.16s ->   268.24s] The one minute can only go up to a four-day.
+[  268.34s ->   271.24s] I can't go anywhere longer than four-day on the one minute.
+[  271.46s ->   275.10s] If I try to go past four-day, it will adjust me up to two minutes here.
+[  275.70s ->   277.16s] Again, we're going to wait for data a bit.
+[  277.16s ->   279.56s] I don't know why I'm on the internet.
+[  281.20s ->   283.72s] Anyways, we're going to go back to the one minute here and see if anything happens.
+[  284.34s ->   288.62s] Anyways, so this is our charting here where it looks like we're kind of pushing a bit higher here up to 270.
+[  288.74s ->   293.96s] We're crossing above 277.6, which was the resistance of today.
+[  294.36s ->   296.96s] The volume is starting to step up, but that doesn't matter for right now.
+[  296.96s ->   300.94s] Now, the indicators here are as shown.
+[  301.06s ->   308.06s] So we have a lot of Bollinger bands and standard deviation indicators.
+[  308.74s ->   314.08s] Again, you'll just double-click to add it or you'll click on it once and you'll click Add Selected to move over here.
+[  314.78s ->   317.14s] And then you can click X to get rid of it.
+[  317.44s ->   320.66s] Again, you can change the volume colors as needed.
+[  320.66s ->   322.62s] And that's basically it here.
+[  322.72s ->   327.72s] If you can watch, we have a lot of Williams volume-weighted average price, which is VWAP.
+[  327.80s ->   330.88s] They don't have it shortened by abbreviation.
+[  331.72s ->   332.52s] That's about it.
+[  332.58s ->   339.54s] Now, looking at this, we have the bars, we have candlesticks, we have lines, and we have area.
+[  339.84s ->   340.74s] That's about it.
+[  342.18s ->   350.16s] And then the settings can change the colors and the layout and the fit highs and lows or whatever we really want to do on this.
+[  350.16s ->   354.06s] So you can see there, fit highs and lows would definitely do whatever it wants to do.
+[  354.12s ->   356.82s] We can have expansion price that we can show chart.
+[  357.10s ->   359.46s] We can remove all or hide indicators.
+[  360.04s ->   362.48s] And then we can also adjust the colors of the tick.
+[  363.10s ->   365.44s] For example, this would make our greens greener.
+[  366.40s ->   368.90s] This would make our reds a lot more red.
+[  370.22s ->   374.54s] So, again, this just gives it a more bright color, as we can see here, if you like that.
+[  375.14s ->   376.44s] That's more of the settings there.
+[  377.00s ->   378.04s] Unable to contact server.
+[  378.22s ->   379.26s] Well, good thing I'm not in a trade.
+[  379.26s ->   381.36s] Well, actually, I am in a trade right now, but I can get it on my phone.
+[  381.80s ->   384.14s] It also has a mobile app, which is good.
+[  384.22s ->   385.56s] Not as easy to use, though.
+[  386.42s ->   390.52s] I don't know why it's saying I'm disconnected from the internet, but let's just ignore that for right now.
+[  392.10s ->   396.58s] After that, you can come here and you can see trades that people on Tasty Trades are making.
+[  397.02s ->   399.92s] You can see the symbol, the time they entered, and what exactly they're doing.
+[  400.00s ->   400.94s] They sold a custom.
+[  401.72s ->   403.68s] They're rolling it into the next expiration.
+[  403.84s ->   404.68s] Nice, I would assume.
+[  404.68s ->   406.36s] And that's about it.
+[  406.36s ->   414.00s] Now, if you want to make your own watch list, you can, even though they have these preset watch lists of upcoming earnings and a bunch of other stuff like that.
+[  414.00s ->   416.18s] But you can come up here.
+[  416.26s ->   416.72s] You go here.
+[  416.80s ->   435.82s] You go up to watch list list, and you click add new list, and you can either set your symbols in here, or if you come into here, you can add it at the bottom by typing in whatever you want to type in, such as Tesla's already in there.
+[  435.82s ->   442.96s] Let's see, XOP, right there, and we click enter, and it's now added to our watch list.
+[  443.62s ->   446.54s] To remove it, you just right-click, and you click remove.
+[  446.86s ->   448.34s] I'm also going to remove Boeing.
+[  449.62s ->   453.42s] So seeing that, and then we can see the bid and ask is what we wanted to see as well.
+[  454.42s ->   469.08s] Also, going into these settings, you can look at the trade tab, and you can go display, show working orders, order, mid-price, that's what mine is set at, and then stock options, futures, and whatever heck you're doing.
+[  469.58s ->   472.82s] Then you have extras, which is you can link accounts, communications.
+[  473.04s ->   474.52s] You can click to send it to email.
+[  474.66s ->   477.90s] I have it to send to, well, my phone app sends it through my phone.
+[  477.90s ->   484.42s] And then we have watch list, trade tab, accounts, general, et cetera, how long you want the notifications to show.
+[  485.58s ->   487.24s] This is also the help section.
+[  487.34s ->   489.22s] You can search through everything that you want them to do.
+[  489.54s ->   492.22s] They respond very quickly to everything you want.
+[  492.94s ->   506.08s] So my overview on this platform is that for net sellers, for people who want to collect credit and they sell options to open, this is a great platform, especially with the curve.
+[  506.08s ->   507.30s] You can see everything you want to see.
+[  507.30s ->   515.60s] For day traders, you're going to have a lot desired from this charting, unless you specifically only watch this one stock.
+[  516.10s ->   522.94s] Again, when I'm on my laptop and I'm traveling, I only have the Tastyworks platform up and I'm only watching Spy, but that doesn't happen often.
+[  522.94s ->   532.64s] So as a day trader, you're most likely going to want to have the table pulled up, getting ready to enter and exit quickly.
+[  532.90s ->   537.44s] And then on another screen, have access to the TOS platform or another charting that you use.
+[  537.94s ->   539.48s] All right, guys, this is the tutorial.
+[  539.66s ->   546.94s] Please like and comment if you enjoyed the video and subscribe to see more videos on day trading and other stuff with options.
+[  546.94s ->   576.92s] Please like and comment.

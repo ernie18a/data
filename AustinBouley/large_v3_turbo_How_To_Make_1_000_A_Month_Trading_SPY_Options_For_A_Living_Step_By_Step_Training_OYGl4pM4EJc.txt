@@ -1,0 +1,87 @@
+[    0.00s ->     4.44s] Hey guys, what's up? In this video, I want to show you exactly how you can make an extra $1,000
+[    4.44s ->     9.42s] every single month trading SPY options. I'm going to show you the most reliable and most
+[    9.42s ->    14.18s] consistent strategies that work in today's market and will continue to work moving forward because
+[   14.18s ->    20.14s] they're based on principles that are proven historical and based on human psychology.
+[   20.30s ->    25.10s] So let's dive into it today right here. Okay, so first off, we need to talk about the strategy
+[   25.10s ->    29.60s] we'll be using, which is called an options credit spread strategy. So the way this strategy works
+[   29.60s ->    34.74s] is simply replacing a bet on the stock. Let's say the stock is trading here. Okay, your bet is that
+[   34.74s ->    38.92s] the stock stays above this level. Why? Well, it looks like the stock is moving higher. So as long
+[   38.92s ->    43.04s] as the stock stays above this level in the next week, you make money, which means if the stock goes
+[   43.04s ->    47.38s] down, you make money as long as it stays above the level. If the stock goes sideways, you make money.
+[   47.46s ->    51.66s] The stock goes up, you make money. That's what a credit spread bet is. Now when you're putting on
+[   51.66s ->    56.30s] a put credit spread, that means you make money in general when the market's bullish. Why? Because
+[   56.30s ->    60.42s] the stock's trading here, you pick a level below it, you think the stock will stay above. As long
+[   60.42s ->    65.30s] as the stock stays above it, no matter what it does, you make money. So put credit spread is a
+[   65.30s ->    70.28s] bullish type of market, or you think it's more bullish than bearish. Call is the opposite side
+[   70.28s ->    74.30s] of that, meaning that if the stock's trading here, you think the stock is going to stay below a certain
+[   74.30s ->    78.00s] level. So as long as the stock stays below this level, by the end of your expiration date,
+[   78.26s ->    83.80s] you make money. So a call is more for a bearish type of environment. So bearish. So again,
+[   83.80s ->    88.30s] these are the only two types of things you need to know. If you want to learn specifically how to
+[   88.30s ->    92.76s] place the credit spread trades in your specific brokers, I have videos for that on my channel.
+[   92.88s ->    97.18s] But today we're getting in deep into the strategy, not exactly how to place them on a broker. So
+[   97.18s ->   101.80s] that is what we're doing. We're trading put credit spreads and call credit spreads. Let's dive into
+[  101.80s ->   106.26s] this. All right, let me remove this whole thing right here. Okay. So like I said, when we're trading put
+[  106.26s ->   110.36s] or calls, we just need to know the general direction. How do we know the general direction of
+[  110.36s ->   115.12s] something? Well, quite easily, we come here, we add a moving average to our chart, just like that
+[  115.12s ->   122.00s] moving average. We adjust what we want the period to be. Again, this is one that I seem to like,
+[  122.08s ->   130.38s] oops, let's see, moving average right here. Settings, moving average right here, 50 seems to be a nice
+[  130.38s ->   137.20s] one. Okay, so we see here is that if the 50 moving average line, the 50 period moving average line
+[  137.20s ->   143.76s] is pointed down, we are more bearish than bullish. If the line is pointing up, we can see here moving
+[  143.76s ->   149.98s] up, then we are more bearish or more bullish than bearish, my bad. So pointing up bullish, not bearish,
+[  150.24s ->   155.80s] pointing down bearish, not bullish. So what what do we do? Well, right now the market is pointing up. So
+[  155.80s ->   161.26s] what are we, we are bullish. So we're gonna put on a put credit spread. So put credit spread means we're
+[  161.26s ->   167.26s] gonna try to find a level we think the stock will stay above. Okay, so next step is this, we're going
+[  167.26s ->   172.14s] to simply look what level can can we put it at? Well, we're going to in general look at a support
+[  172.14s ->   179.06s] level for 425 right here as a solid support level. Not only that, we can come here and we can go inside
+[  179.06s ->   184.32s] of this chart and click on Fibonacci retracement, we find the previous low where it bounced at, you can see
+[  184.32s ->   190.54s] bounce here, trace up to here. Oops, I did it in reverse order. If you're ready to do it, we're
+[  190.54s ->   195.90s] going to chase from the bottom to the previous top just like that. And now we can see where our next
+[  195.90s ->   202.14s] level is. Our next level is right here at 430. So that means we want to place a credit spread around
+[  202.14s ->   207.32s] 430. So we're going to be selling the 430 and buying the 429. That's how we're going to set up our
+[  207.32s ->   211.54s] credit spread trade, our put credit spread. We're going to go to the options chain, we're going to put on
+[  211.54s ->   217.56s] sell the 430 and buy the 429. Because the market is trending up, this will go in our favor. Now,
+[  217.60s ->   221.40s] again, it doesn't necessarily matter where you put your strike price. The further you go out,
+[  221.66s ->   226.62s] the higher of a win rate you'll have, but the less credit you'll collect, the less money you'll make.
+[  227.02s ->   231.22s] But again, if you come in here and get closer, you'll make more money, but your win rate will be
+[  231.22s ->   236.92s] lower. The important part of this strategy is trade with the trend. Understand which way the moving
+[  236.92s ->   241.52s] average is moving and trade with that move. Now, again, when you're trading, put credit
+[  241.52s ->   246.04s] spreads because they make money to the upside. On red days are the best days to enter. Why?
+[  246.32s ->   252.02s] Because credit and premium are higher. You can get in, collect more money, and even go out further
+[  252.02s ->   257.52s] so you actually have a higher win rate as well. So what do you need to do to actually put on this
+[  257.52s ->   263.40s] trade and make $1,000 a month? Okay, so what is $1,000 a month? Let's break this down so you can
+[  263.40s ->   268.34s] understand what you need to hit and what account size you need. So $1,000 a month is going to be this
+[  268.34s ->   276.04s] divided by four weeks, right? We have four weeks in a month. So that's going to be a target of $250
+[  276.04s ->   286.26s] for every single week. Okay, cool. Let's say we can take two trades a week, okay? I'm actually going
+[  286.26s ->   291.14s] to try to, I can't even make this into easy math. I should have done that, whatever. Let's say two
+[  291.14s ->   297.04s] trades a week. That means we need to make, let me pull out my handy dandy little calculator here,
+[  297.42s ->   304.28s] $250 divided by two, $125. I wish I totally should be able to do that math. My bad. $125 right here,
+[  304.76s ->   314.14s] $125 per trade is the goal, per trade. Okay, cool. If we are putting, if we want to make $125 per trade,
+[  314.14s ->   321.84s] let's say on average, we're collecting roughly $20 per trade. So 20 cents in credit, so $20 per trade.
+[  322.12s ->   327.74s] The way that we're going to do this is this shows us how many contracts we need. So if we're going to
+[  327.74s ->   334.18s] put on $125, how many contracts do we need? Well, divide that by, we make roughly $20 per contract or
+[  334.18s ->   339.74s] per spread we enter. So let me see. I hope I still think I'm going to have to roll a whole number because
+[  339.74s ->   345.26s] that looks stupid again, $6.25. So let's round up to seven. So we're going to need to enter seven
+[  345.26s ->   352.96s] contracts per trade or seven spreads per trade. So seven contracts per trade. So again, if you're
+[  352.96s ->   358.46s] trading seven contracts per trade, again, what account size do you need? Well, if you're trading
+[  358.46s ->   363.06s] seven contracts, and that means we need to put up a collateral of $100 for every contract,
+[  363.06s ->   372.05s] that means we need to put up $700 to enter this trade. We need to end we need $700 of collateral
+[  372.05s ->   379.35s] to make $20. Again, your risk to reward is not in most typically in your favor. But because you have
+[  379.35s ->   385.67s] a super high win rate roughly in the 85 to 90% win, win rate, this is why it's set up that way. So okay,
+[  385.67s ->   395.81s] so $700 to make roughly $20, $25. Okay, cool. So we have that. Now the question is, seven contracts,
+[  395.89s ->   402.57s] 100, we can place this trade with $700. But how much do we have for proper risk management? Well,
+[  402.63s ->   408.07s] again, if we only want to put in 10% into every trade just to have proper risk management, then
+[  408.07s ->   416.83s] we'll divide the 700 by 0.10. And that will give us $7,000. So to be safe, you should have $7,000
+[  416.83s ->   424.21s] in your trading account to make $1,000 a month. Again, this does not factor in losses, some months
+[  424.21s ->   429.47s] you'll have losses and it'll be a bit greater. But on average, you can make $1,000 a month by trading
+[  429.47s ->   434.65s] with $7,000. So again, guys, this is the beauty of credit spreads when you trade the right system.
+[  434.65s ->   439.25s] Now you may be like Austin, I want more specifics. What are the details? How do I place these trades?
+[  439.63s ->   445.11s] What are the rules of this strategy? And how can I do it? Well, I have an inner circle credit spreads
+[  445.11s ->   451.11s] trading program that's actually opening up tomorrow. Again, I only open this inner circle program for
+[  451.11s ->   456.97s] four days of the month because I spend all the rest of the days of the month not marketing it,
+[  457.03s ->   462.25s] but spending time with my members ensuring they make money. But anyways, if you want my free trading guide,
+[  462.25s ->   467.05s] click down below and you can check out the exact strategies. For instance, we were talking about
+[  467.05s ->   471.07s] a true total strategy. You can walk you through exactly the entry rules you need, what you need
+[  471.07s ->   476.29s] to look for to enter these trades, the back test, and so much more. Just following the strategy alone,
+[  476.53s ->   483.29s] you can have a 34% annualized return. All right, guys, if you enjoyed that, hit that thumbs up button,
+[  483.39s ->   488.45s] hit the subscribe button. I share a lot of amazing credit spreads trading videos with you. Again,
+[  488.45s ->   491.09s] grab this handbook down below because you do not want to miss out.

@@ -1,0 +1,172 @@
+[    0.24s ->     4.60s] Each of these institutions are using a sneaky trick to invest in the market every single
+[    4.60s ->     5.60s] day.
+[    5.60s ->     9.22s] What if you can make an indicator showing you where these institutions had a high probability
+[    9.22s ->    11.20s] of entering and exiting the market?
+[   11.20s ->    12.40s] That would be pretty cool, right?
+[   12.40s ->    16.32s] Well, that's exactly what I did, and to be honest, it's one of the best performing
+[   16.32s ->    18.52s] tools I've made in my trading career.
+[   18.52s ->    24.28s] Alright, enter here, set or take profit, set or stop loss, like this is the best indicator
+[   24.28s ->    25.28s] I've ever made.
+[   25.28s ->    28.92s] I'm going to show you guys exactly how to use this indicator, and not only that, but
+[   28.92s ->    33.18s] I'm going to show you a few sneaky tricks you can use when entering to raise the probability
+[   33.18s ->    34.84s] of this indicator working.
+[   34.84s ->    38.60s] Because there are a few different ways you can use it, and it's not very smart to enter
+[   38.60s ->    41.36s] just in any order block, as you'll see why.
+[   41.36s ->    43.84s] Alright, enough talk, let's get straight into it, shall we?
+[   43.84s ->    45.36s] So what is an order block?
+[   45.36s ->    50.20s] An order block is considered a market behavior that indicates the pileup of orders from banks
+[   50.20s ->    51.42s] and institutions.
+[   51.42s ->    57.12s] As you may already know, me, you, your uncle Rob, players like us do not control the direction
+[   57.12s ->    58.20s] of the market at all.
+[   58.20s ->    62.14s] We are just a pure guppy in the ocean of whales when it comes to trading.
+[   62.14s ->    66.66s] These ginormous banks and institutions with infinite amounts of cash are the ones that
+[   66.66s ->    68.34s] control the direction of the market.
+[   68.34s ->    72.90s] So if you put one and two together, it's pretty important to know when these institutions are
+[   72.90s ->    73.90s] entering and exiting.
+[   73.90s ->    78.04s] Now sure, this indicator isn't hacking a hedge fund's computer to see when they're entering
+[   78.04s ->    79.04s] a trade.
+[   79.04s ->    80.04s] No, it's not doing that.
+[   80.04s ->    84.46s] But what it is doing is finding spots in the market where most of the investing is taking
+[   84.46s ->    85.46s] place.
+[   85.46s ->    87.60s] There are some really pivotal points in the market.
+[   87.60s ->    92.00s] The market tends to make sharp moves on either side once the order block is completed.
+[   92.00s ->    96.78s] So the main thing to take away from all this is order blocks tend to show when these giant
+[   96.78s ->    98.46s] institutions are buying and selling.
+[   98.46s ->   103.84s] And we can use them ourselves to profit greatly as you're trading with the flow of big money,
+[  103.84s ->   111.02s] not against it.
+[  111.02s ->   114.76s] So now that you have a basic understanding of what order blocks are, let's move into how
+[  114.76s ->   116.64s] to actually use the indicator.
+[  116.64s ->   118.64s] First things first, you're going to need the indicator.
+[  118.64s ->   122.16s] You can either go to tradinglab.ai or click the link in the description.
+[  122.16s ->   125.70s] Now that you have the indicator, you need to go to the settings of it and set order blocks
+[  125.70s ->   126.70s] to true.
+[  126.70s ->   128.40s] This will enable the order blocks.
+[  128.40s ->   132.32s] Now I am going to go over how to use these, but make sure you watch all the way through
+[  132.32s ->   136.30s] because I am going to go over what not to do as well, which is just as important.
+[  136.30s ->   141.64s] So, as you can see, the indicator has put a bunch of red and green rectangles on our chart.
+[  141.64s ->   143.56s] These are the order blocks themselves.
+[  143.56s ->   146.90s] Green are the bullish order blocks and red are the bearish order blocks.
+[  146.90s ->   150.82s] Now just looking from this chart right now, you can see how accurate they are.
+[  150.82s ->   156.54s] These will work in absolutely any market with sufficient volume, so stocks, forex, crypto,
+[  156.54s ->   157.54s] whatever.
+[  157.54s ->   159.34s] It will also work on any time frame.
+[  159.34s ->   163.60s] What I found to be the most accurate is using this on the 1 hour time frame.
+[  163.60s ->   167.78s] But like I said, it can be used on any time frame, but the 1 hour has done the best in
+[  167.78s ->   168.78s] my testing.
+[  168.78s ->   173.48s] How I would use this is you would enter a long trade once price comes down to a green order
+[  173.48s ->   174.48s] block.
+[  174.48s ->   178.10s] So you would enter right here, set your stop loss right below the order block and set
+[  178.10s ->   180.48s] your take profit at a recent swing high.
+[  180.48s ->   185.48s] And as you can see, price bounced exactly at the order block and we made the easiest trade
+[  185.48s ->   186.48s] of our lives.
+[  186.48s ->   188.46s] Same exact thing goes with short trades.
+[  188.46s ->   192.48s] Enter a short once it hits a red order block, set your stop loss right above the order block
+[  192.48s ->   195.36s] and set your take profit at a recent swing low.
+[  195.36s ->   196.30s] Easy trade.
+[  196.30s ->   199.40s] So it looks extremely easy to use, which it is.
+[  199.40s ->   201.94s] But these order blocks aren't absolutely perfect.
+[  201.94s ->   205.94s] You are going to have times where price breaks through the block like a slice of cheese, which
+[  205.94s ->   212.85s] would end up making this a losing trade.
+[  212.85s ->   215.97s] There is a way to solve this problem though, and the solution is…
+[  215.97s ->   216.97s] Confirmation.
+[  216.97s ->   217.97s] Hold for confirmation.
+[  217.97s ->   222.43s] I will only enter a trade if there's a confirmation candle.
+[  222.43s ->   226.53s] So for example, when price hits the green order block, I first want to see some type of
+[  226.53s ->   228.51s] slowing down when price hits it.
+[  228.51s ->   232.85s] So in this example, there's a big bottom wick, showing there's a lot of buyers at this
+[  232.85s ->   234.67s] level, slowing down the selling.
+[  234.67s ->   238.75s] If you see something like this, where price just breaks through it with strong big selling
+[  238.75s ->   240.85s] candles, you would ignore this order block.
+[  240.85s ->   243.51s] So you want to see some type of slowing down.
+[  243.51s ->   244.85s] That's the first sign we're looking for.
+[  244.85s ->   249.95s] The next sign, if we are going long on a green order block, is we want to see a green candle
+[  249.95s ->   253.25s] close right at the order block, like this.
+[  253.25s ->   258.15s] So we have signs of price slowing down right at the order block, and we see a green confirmation
+[  258.15s ->   261.09s] candle that closes right at the order block.
+[  261.09s ->   265.73s] It's even better if that green candle is a bullish candle pattern, like a bullish engulfing
+[  265.73s ->   267.09s] candle for example.
+[  267.09s ->   271.77s] If we get both of these confirmations, there's an extremely high chance the market will head
+[  271.77s ->   274.73s] in the direction we want it to, which is exactly what it does.
+[  274.73s ->   279.03s] Same exact thing when it comes to shorting, you want to see price slowing down and start
+[  279.03s ->   280.95s] resisting at the red order block.
+[  280.95s ->   283.33s] So a big wick at the top of the candle.
+[  283.33s ->   287.13s] Then you want to see a red confirmation candle exactly at the order block.
+[  287.13s ->   291.73s] Again, it's very important you wait for this red candle to close before entering.
+[  291.73s ->   294.13s] Boom, you got another winning short trade.
+[  294.13s ->   296.73s] So that's how to improve the success of the order blocks.
+[  296.73s ->   299.33s] Let's go over when not to enter into an order block.
+[  299.33s ->   301.45s] But wait, aren't you forgetting something?
+[  301.45s ->   302.95s] Who the hell are you?
+[  302.95s ->   305.33s] Well, I'm Mr. Double Your Money, of course.
+[  305.33s ->   307.15s] Mr. Wait, what?
+[  307.15s ->   308.33s] How are you doubling your money?
+[  308.33s ->   309.83s] It's simple.
+[  309.83s ->   311.45s] Have you heard of Hankertrade?
+[  311.45s ->   316.29s] Hankertrade, which is the Forex broker I use, is running a special promotion where if you deposit
+[  316.29s ->   320.97s] money using the link in my description, they will match it up to 25 grand.
+[  320.97s ->   327.33s] So if you deposit, say, $6,969 the first time you deposit, they will match that and give
+[  327.33s ->   330.87s] you $6,969.
+[  330.87s ->   332.99s] And that's just one of the benefits of using them.
+[  332.99s ->   337.73s] They have some of the lowest fees on the market, they have up to 500x leverage, they have extremely
+[  337.73s ->   342.29s] low spreads, negative balance protection, and overall just a really great broker if you
+[  342.29s ->   343.55s] need one for Forex.
+[  343.55s ->   345.23s] I cannot recommend them enough.
+[  345.23s ->   349.01s] So yeah, if you want to be like Mr. Double Your Money, go to the link in my description and
+[  349.01s ->   350.85s] get that first time deposit bonus.
+[  350.85s ->   351.85s] Like, seriously.
+[  351.85s ->   352.85s] It's free money.
+[  352.85s ->   353.85s] Okay, back to the video.
+[  353.85s ->   356.21s] So when should you not enter into an order block?
+[  356.21s ->   360.75s] Like I said earlier, if price breaks through an order block very strongly, like this, do
+[  360.75s ->   363.63s] everything within your power to ignore that order block.
+[  363.63s ->   367.89s] If the order block is very small, like this, ignore that order block.
+[  367.89s ->   371.53s] These order blocks are usually not that strong, so it's best just to ignore them.
+[  371.53s ->   376.27s] The third and final reason to ignore an order block is if it's already been touched before.
+[  376.27s ->   380.05s] So right here, there's an order block, but it has already been touched.
+[  380.05s ->   384.55s] So even though price is hitting it again, we ignore it because it's already been touched
+[  384.55s ->   385.55s] before.
+[  385.55s ->   386.55s] And that's it.
+[  386.55s ->   389.25s] So now that we know all the rules, let's do some live trades.
+[  389.25s ->   394.01s] If you follow all these rules to a tee, this indicator in itself is extremely powerful.
+[  394.01s ->   395.19s] So first example.
+[  395.19s ->   396.11s] Price comes down.
+[  396.11s ->   399.13s] We see it slowing down at the order block with a bottom width.
+[  399.13s ->   400.13s] Good sign.
+[  400.13s ->   404.63s] The bullish green confirmation candle, we only enter once the candle closes.
+[  404.63s ->   409.05s] Once it does, set your stop loss right below the low of the candle, and set our take profit
+[  409.05s ->   410.63s] at the recent swing high.
+[  410.63s ->   411.63s] Easy trade.
+[  411.63s ->   412.63s] Same thing here.
+[  412.63s ->   415.17s] Price starts slowly coming down exactly at the order block.
+[  415.17s ->   417.63s] We get a nice big green bullish candle.
+[  417.63s ->   418.57s] Enter at the close.
+[  418.57s ->   420.63s] Set our stop loss below the order block.
+[  420.63s ->   422.73s] Set our take profit at the recent high.
+[  422.73s ->   423.73s] Easy.
+[  423.73s ->   424.73s] Profit.
+[  424.73s ->   426.23s] It's starting to come down to the order block.
+[  426.23s ->   431.13s] It is slowing down a decent bit, but we never get a green confirmation candle that closes.
+[  431.13s ->   432.73s] So we never enter the trade.
+[  432.73s ->   434.15s] And look what ends up happening.
+[  434.15s ->   435.41s] It breaks the order block.
+[  435.41s ->   437.19s] So we really dodged a bullet there.
+[  437.19s ->   439.91s] Here we're looking for a short trade on a bearish order block.
+[  439.91s ->   444.05s] Price starts coming up to it, but it breaks through it way too fast with a very bullish
+[  444.05s ->   445.05s] candle.
+[  445.05s ->   446.05s] So we ignore the signal.
+[  446.05s ->   447.45s] Here's another short example.
+[  447.45s ->   449.33s] We see a bearish order block is made.
+[  449.33s ->   452.77s] Price comes up to it, starts slowing down, leaving a big upper wick.
+[  452.77s ->   453.77s] Good sign.
+[  453.77s ->   456.01s] We wait for the close of a red bearish candle.
+[  456.01s ->   457.77s] Once it closes, we enter.
+[  457.77s ->   461.45s] Set our stop loss right above the high of the order block, and set our take profit at
+[  461.45s ->   462.45s] the swing.
+[  462.45s ->   463.45s] More.
+[  463.45s ->   464.45s] Easy.
+[  464.45s ->   465.45s] Profit.
+[  465.45s ->   467.79s] All in all, I honestly think this is one of the best tools I've ever made, especially
+[  467.79s ->   470.95s] if you pair it with technical analysis and other trading strategies.
+[  470.95s ->   475.35s] If you want to test it out for yourself, you can go to tradinglab.ai or click the link
+[  475.35s ->   476.35s] in the description.
+[  476.35s ->   480.77s] Thanks for watching, and I'll see you guys next time.

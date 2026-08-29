@@ -1,0 +1,155 @@
+[    0.05s ->    26.65s] How's it going, everybody? Today, what I want to do is talk about algorithmic portfolio hedging, more specifically, implementing multi-Greek hedges using Python and the associated classes that we've been building on since the volatility trading video a while back. So if you haven't already checked that out, I would encourage you to watch that video before this one. And after you've watched that one, we can dive right into the multi-Greek hedges.
+[   26.65s ->    45.21s] Now, just as a refresher, we're using the Black-Scholes European pricing model to price our options. And if we partially differentiate this model with respect to the underlying asset, we get the Greek delta. Delta tells us how our option portfolio will behave when there is a change in the underlying asset price.
+[   45.21s ->    64.13s] Now, very similarly, since the Black-Scholes equation takes a variety of parameters, it takes the underlying asset price, it takes volatility, the risk-free rate, time until expiration, and a strike price, we can go ahead and compute this partial derivative for each of these inputs.
+[   64.13s ->    75.07s] And then, after taking the partial derivative with respect to each of these inputs, exclusive of the strike price, since the strike price is constant over time, we can arrive at the rest of our Greeks.
+[   75.07s ->    90.57s] So taking the partial derivative with respect to the underlying asset yields delta, with respect to the risk-free rate yields rho, with respect to time until expiration yields theta, and with respect to volatility yields vega.
+[   90.57s ->   102.85s] Now, if you recall in the volatility trading video, we neutralized our exposure to movements in the underlying asset, but that's not the only exposure that our option portfolio has.
+[  102.93s ->   110.41s] We have exposure to volatility. We have exposure to changes in interest rates. We have exposure to changes in time.
+[  110.53s ->   116.07s] We have exposure to changes in the rate of change of the underlying asset. That's gamma.
+[  116.07s ->   120.67s] That is the second partial derivative with respect to the underlying asset.
+[  120.91s ->   127.81s] Now, how can we go about neutralizing these other exposures in an option portfolio?
+[  128.35s ->   139.15s] If you recall in the volatility trading video, we computed the delta for our option portfolio and then took an offsetting position in the underlying asset to neutralize that exposure.
+[  139.15s ->   146.47s] Now, the underlying asset has a delta of 1 and 0 for the rest of the Greeks.
+[  147.47s ->   157.71s] Now, if we wanted to neutralize in this same fashion, say, gamma or vega or rho in an option portfolio,
+[  157.71s ->   162.97s] then we can't just trade the underlying asset to neutralize those exposures.
+[  163.09s ->   170.53s] We need to trade other options to take an offsetting Greek position to neutralize that exposure.
+[  171.45s ->   179.43s] So, I think the best way to go about explaining how this algorithmic hedging process is going to work is just by walking through an example.
+[  179.43s ->   184.73s] And I'm going to go ahead and use my Medium article on this subject as a template.
+[  185.13s ->   191.59s] And we can sort of walk through all of the code, which is available both on my GitHub and in little snippets on that article.
+[  191.89s ->   194.79s] So, without further ado, let's go ahead and get started.
+[  195.86s ->   202.00s] So, first things first, we're going to create a model of the European call class for the options that we're going to be trading here.
+[  202.14s ->   205.34s] And in this case, we're going to be trading options on NVIDIA.
+[  205.34s ->   210.16s] So, I'm just going to say NVIDIA call is equal to the European call class.
+[  210.74s ->   215.70s] And then we're going to input the parameters at the time of the creation of that Medium article.
+[  215.96s ->   219.18s] So, we're going to input 543 as the asset price.
+[  219.48s ->   222.36s] The implied volatility at the time was 53%.
+[  222.36s ->   225.08s] The strike price was 545.
+[  225.82s ->   228.44s] Time until expiration was one month.
+[  228.52s ->   231.68s] So, you can do 1 over 12 or 30 over 365.
+[  231.68s ->   235.50s] So, I'll just do 30 over 365 for this case.
+[  236.14s ->   240.42s] And then for the risk-free rate or the interest rate, I'm just going to use LIBOR as a proxy.
+[  241.04s ->   248.48s] So, we can just go ahead and assume a 1.5% interest rate, which is a little large for one month.
+[  248.66s ->   251.40s] But in this case, let's just assume that that's going to be the case.
+[  251.52s ->   253.34s] So, we're going to do 0.015.
+[  255.24s ->   258.32s] So, we're actually not going to be long these European call options.
+[  258.42s ->   260.42s] We're going to be short 1,000 of them.
+[  260.42s ->   266.10s] So, if we want to compute the premium that we receive for taking that short position in these European calls,
+[  266.30s ->   271.76s] we can just go ahead and print the price times 1,000 and then print that out.
+[  272.24s ->   278.70s] And this will be the premium that we receive for taking that short position in these European call options.
+[  278.70s ->   284.18s] So, naturally, the next step is going to be to compute the Greeks for this portfolio.
+[  284.74s ->   287.76s] Now, we are short 1,000 of these options.
+[  287.86s ->   295.80s] So, what we can do is we can go ahead and print out the delta and multiply it by negative 1,000.
+[  296.22s ->   299.92s] And then do the same with the rest of the Greeks that we want to hedge exposure to.
+[  299.92s ->   306.56s] So, in this case, we're going to hedge exposure to gamma and vega along with delta.
+[  306.76s ->   309.76s] So, it is going to be a triple Greek hedge.
+[  310.12s ->   314.00s] So, we are going to print out these three here.
+[  315.14s ->   319.78s] And that is the exposure of our option portfolio.
+[  319.78s ->   329.84s] So, we are negative 815 and some change vega, negative 6 and some change gamma, and negative 523 and some change delta.
+[  330.18s ->   336.52s] So, our goal is going to be to trade options to offset the gamma and vega,
+[  336.74s ->   343.06s] and then take the aggregate delta of those options positions, and then trade the underlying asset to neutralize delta.
+[  343.06s ->   351.70s] So, before we're able to do anything else, we actually need two more tradable options to be able to neutralize both the gamma and vega
+[  351.70s ->   354.58s] before trading the underlying asset to neutralize delta.
+[  355.02s ->   358.74s] So, I'm going to go ahead and actually just copy this European call.
+[  359.48s ->   363.48s] And at the time of the medium article, there were two other tradable options.
+[  363.48s ->   371.08s] So, we have call A, which we're going to set equal to the same exact parameter set as originally,
+[  371.08s ->   374.90s] just with a 550 strike price.
+[  375.26s ->   379.90s] And then, we are also going to create a new object called call B,
+[  380.36s ->   386.20s] which is going to be our second tradable option with a strike price of 555.
+[  387.57s ->   392.13s] Now that we have these objects representing the two new tradable options,
+[  392.13s ->   396.37s] we can go ahead and print the delta gamma and vega for each.
+[  396.37s ->   407.94s] So, I'm going to go ahead and say print call A dot delta, print call A dot gamma, print call A dot vega,
+[  408.20s ->   416.76s] and then do the exact same thing for the second tradable option, and just replace call A with call B.
+[  416.76s ->   424.06s] And then, we have the Greeks for all three of our options.
+[  424.18s ->   429.38s] And just for the sake of housekeeping, I'm going to remove the premium that we received for our initial short position.
+[  430.33s ->   438.83s] And we are left with the exposure to our portfolio, and then the Greeks for these two other tradable options.
+[  438.83s ->   442.33s] So, hopefully, the question you're asking yourself right now is,
+[  442.73s ->   448.27s] how can we come up with a certain combination of both call A and call B
+[  448.27s ->   458.53s] to offset the negative 815 exposure to vega and the negative 6 exposure to gamma in our original option portfolio?
+[  459.15s ->   463.07s] And the answer to that question lies in linear algebra.
+[  463.07s ->   468.29s] So, if we just go ahead and consider the initial delta, gamma, and vega of our portfolio,
+[  469.09s ->   480.31s] we can go ahead and see that delta is negative 523.88, gamma is negative 6.35, and vega is negative 815.54.
+[  480.95s ->   484.27s] And we can represent this as a column vector.
+[  484.27s ->   492.75s] Now, if we wanted to go ahead and find an offsetting combination in both call A and call B,
+[  492.85s ->   499.15s] the two new tradable options, we can represent this as a simple linear algebra problem.
+[  499.69s ->   503.83s] First, on the right-hand side, we have the values that we're trying to end up with.
+[  503.83s ->   514.29s] So, 6.35 and 815.54, respectively, to neutralize both the gamma and the vega of our original portfolio.
+[  514.69s ->   518.59s] Where weight 1 and weight 2 are currently unknown to us,
+[  518.95s ->   524.23s] we do know the gamma and vega of the two other tradable options.
+[  525.27s ->   530.87s] By simply inverting the Greeks associated with the two tradable options
+[  530.87s ->   533.57s] and multiplying by the exposure we're trying to achieve,
+[  533.79s ->   540.39s] we can find the weights of the tradable options that will neutralize both gamma and vega.
+[  541.62s ->   544.84s] Okay, so now back to coding to implement this linear algebra solution.
+[  545.20s ->   548.24s] I'm going to go ahead and create a matrix for the Greeks.
+[  548.34s ->   552.40s] So, I'm going to say Greeks is equal to mp.array.
+[  552.86s ->   555.10s] But first, of course, we have to import numpy.
+[  555.10s ->   560.76s] So, I'm going to go up here and just say import numpy as mp.
+[  561.26s ->   571.90s] And I'm going to go ahead and create this matrix where the first row is going to be call A gamma and call B gamma.
+[  572.56s ->   581.86s] And then the second row is going to consist of the call A vega and the call B vega.
+[  584.53s ->   591.11s] Okay, so now what we need to do is define the gamma and vega we're trying to achieve from our two new tradable options.
+[  591.11s ->   595.13s] And to do that, we're just going to use the opposite position of our original portfolio.
+[  595.43s ->   609.21s] So, I'm going to say portfolio Greeks is equal to a column vector where we have a gamma of 1,000 of the original European call options
+[  609.21s ->   616.89s] and a vega of 1,000 of our original European call options.
+[  617.13s ->   623.39s] And this is going to perfectly offset our original negative 1,000 position.
+[  623.75s ->   628.87s] So, the next step is to compute the inverse of the Greeks matrix.
+[  628.87s ->   638.09s] And to do that, we're going to say the inverse is equivalent to mp.linearalgebra.inverse.
+[  638.21s ->   639.73s] So, it makes it very easy for us.
+[  640.13s ->   645.17s] However, to avoid a rounding error with a non-invertible matrix error,
+[  645.37s ->   651.27s] we are going to round the Greeks matrix to two decimal places.
+[  651.27s ->   654.91s] And then we're going to go ahead and print it just so we can take a look at it.
+[  654.99s ->   658.39s] So, here is our inverted Greek matrix.
+[  659.07s ->   663.11s] And we are going to take the product of this with our original portfolio Greeks
+[  663.11s ->   671.13s] to find the weights we should take in call A and B to offset the exposure to gamma and vega.
+[  672.30s ->   675.90s] So, to find these weights, NumPy, again, makes it very easy for us.
+[  675.90s ->   684.80s] We can say W is equal to mp.dot, so the dot product of the inverted matrix with the original portfolio Greeks.
+[  685.69s ->   688.21s] Then we can go ahead and print these weights.
+[  690.22s ->   696.60s] So, we can see right here that we should take a position of 8,641 in our first option
+[  696.60s ->   700.06s] and negative 8,006 in our second option.
+[  700.78s ->   704.74s] Now, how do we know that we computed these weights correctly?
+[  704.74s ->   712.48s] Well, we can just go ahead and take the dot product of these original Greeks with the weights
+[  712.48s ->   716.52s] and subtract the original portfolio Greeks and we should end up with 0.
+[  716.66s ->   728.82s] So, if I were to say print mp.round mp.dot product of mp.round the Greeks to two decimal places
+[  728.82s ->   736.42s] with the weights that we just computed and we were to subtract the original portfolio Greeks,
+[  737.38s ->   742.18s] well, then we should end up with 0 for both gamma and vega.
+[  742.18s ->   744.64s] And, lo and behold, we do.
+[  744.88s ->   747.80s] We end up with 0 for gamma and 0 for vega.
+[  748.26s ->   748.94s] So, that's great.
+[  749.02s ->   751.92s] We effectively neutralized the gamma and vega of our portfolio,
+[  752.28s ->   754.92s] but we also need to consider delta.
+[  754.92s ->   758.18s] So, what I'm going to do is I'm going to redefine portfolio Greeks.
+[  758.32s ->   765.32s] I'm going to say portfolio Greeks is going to now include the original position in delta.
+[  765.48s ->   769.56s] So, nc.delta times negative 1,000.
+[  770.12s ->   775.10s] And, in this case, I'm just flipping the sign from 1,000 since we already computed the weights
+[  775.10s ->   782.62s] for our tradable options so that we can just add the portfolio Greeks to the weights in the tradable options.
+[  782.62s ->   785.36s] This will become much more apparent in a second.
+[  785.50s ->   792.12s] So, first, I'm going to create this vector consisting of the delta, gamma, and vega of our portfolio.
+[  792.34s ->   793.68s] So, we have our delta.
+[  794.04s ->   796.42s] Then, I'm going to compute our gamma.
+[  797.42s ->   800.14s] And then, lastly, our vega.
+[  800.14s ->   812.22s] Now, I'm going to say that the Greeks are equal to mp.array.
+[  812.86s ->   816.66s] And then, I'm going to say call a.delta.
+[  818.08s ->   820.16s] Call b.delta.
+[  821.85s ->   824.37s] Call a.gamma.
+[  825.01s ->   826.59s] Call b.gamma.
+[  827.05s ->   830.87s] And then, call a.vega.
+[  831.57s ->   833.91s] And call b.vega.
+[  833.91s ->   842.03s] And this is just mirroring exactly what we wrote here in the Greeks.
+[  842.29s ->   849.57s] So, these two are just mirroring these original with gamma and vega, just inclusive of delta.
+[  850.13s ->   858.31s] And since we know the weights we should take in call a and b, we can compute the new delta, gamma, and vega of our portfolio.
+[  858.31s ->   875.71s] So, we can print mp.round, mp.dot, the product of mp.round, the Greeks, to two decimal places with the weights that we should take in the tradable options, plus the original portfolio Greeks.
+[  875.71s ->   888.68s] And then, if we go ahead and print this, you'll see that we have a negative 46 exposure to delta, and then a zero exposure to both gamma and vega.
+[  889.36s ->   898.58s] So, now, if we want to remove our delta exposure, just as I mentioned earlier in this video, we know the underlying asset only has exposure to delta.
+[  898.58s ->   906.80s] So, we can actually create a new position, long NVIDIA, and we can set it equal to 46 shares of NVIDIA.
+[  906.92s ->   912.86s] So, the delta would be 46, the gamma would be zero, and the vega would also be zero.
+[  913.28s ->   922.70s] So, then we can take this original statement for the value of our portfolio in terms of the Greeks and simply add this long NVIDIA position.
+[  922.70s ->   934.46s] And then, if we were to print this out, ta-da, we have effectively neutralized the delta, gamma, and vega for our portfolio.
+[  934.64s ->   937.20s] So, we are effectively risk-neutral on those fronts.
+[  937.88s ->   942.92s] So, this has been an introduction to algorithmic multi-Greek hedging using Python.
+[  943.46s ->   947.74s] And what we did was we developed an initial option position.
+[  947.74s ->   956.64s] We were short 1,000 European call options on NVIDIA, and we computed the delta, gamma, and vega of our portfolio.
+[  957.02s ->   962.52s] Then, we found two other tradable options to assist in hedging gamma and vega.
+[  962.68s ->   969.58s] So, essentially, for every Greek that is not delta, you need a new tradable option to neutralize that exposure.
+[  969.58s ->   977.24s] So, using linear algebra, we found the optimal weights for those two tradable options to neutralize gamma and vega.
+[  977.76s ->   991.12s] And then, once we computed the aggregate delta of our new portfolio, we took an offsetting position in 46 shares of the underlying asset to effectively neutralize delta, gamma, and vega.
+[  991.12s ->   998.98s] So, I hope you enjoyed this video, and if you need more of a written-out explanation or you wish to scroll through the explanation with code,
+[  999.36s ->  1006.18s] feel free to check out the Medium article in the description below, and all of the code is also available on my GitHub.
+[ 1006.36s ->  1008.38s] So, go ahead and check that out, and I'll see you next time.

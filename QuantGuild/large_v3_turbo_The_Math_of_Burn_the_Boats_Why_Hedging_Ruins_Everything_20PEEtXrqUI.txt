@@ -1,0 +1,91 @@
+[    0.00s ->     6.26s] Hedging ruins literally everything. What is hedging? Having a plan B, a contingency plan
+[    6.26s ->    12.88s] just in case of failure. But you know what that ruins? That ruins everything from battles to
+[   12.88s ->    22.32s] startups to relationships. This is not just some arbitrary alpha male motivation. There is plenty
+[   22.32s ->    31.18s] of math that supports this idea. You may have heard it before. Burn the boats. What exactly does that
+[   31.18s ->    37.14s] mean? Well, when the Vikings go off to war, they take their ships. And when they arrive, what do
+[   37.14s ->    46.04s] they do? They set their ships ablaze. Why is this the case? Well, we have to ask ourselves, given a
+[   46.04s ->    55.42s] battle, what is the probability that we win? Winning and losing perfectly partitions the sample space.
+[   55.58s ->    65.32s] In other words, the outcome is either going to be victory or defeat. A win or a loss. However,
+[   65.32s ->    75.50s] you know what else perfectly partitions the sample space? Having the boats versus setting them ablaze.
+[   75.50s ->    82.50s] Take a look at this Venn diagram. I want you to notice the battle outcome. Winning and losing
+[   82.50s ->    89.85s] perfectly partitions the space. But even though I didn't draw it in this capacity, so does having
+[   89.85s ->   100.16s] the boats to retreat to and not having the boats. Why is this substantial? Because we need to condition
+[  100.16s ->   108.34s] on the opportunity, the option to retreat. If we do this and we take a look at the probability of
+[  108.34s ->   115.06s] winning, given that we still have the boats, let's take a look at that circle. This is what we've
+[  115.06s ->   125.66s] restricted ourselves to. Look at all of the probability mass of losing. It dwarfs the probability mass
+[  125.66s ->   132.50s] of winning. Why is this the case? Well, in the heat of the battle, during downside variation,
+[  132.50s ->   140.96s] when there's a cluster of negative events, what can we do? We have the option to retreat.
+[  141.46s ->   151.04s] We don't have to necessarily push through. Victory isn't the only option. Versus, we burn the boats.
+[  151.04s ->   157.34s] Now, if we condition on the fact that there is no opportunity to retreat, where is all of the
+[  157.34s ->   166.70s] probability mass? It is on the side of victory. That is because during the heat of the battle and
+[  166.70s ->   175.62s] that downside variation, failure is not an option. You will literally do everything in your power
+[  175.62s ->   184.70s] to achieve victory. Everything. That is the fundamental idea of burn the boats. Mathematically,
+[  185.22s ->   193.04s] the conditional probabilities are nowhere near equal. The probability of winning, given that you have
+[  193.04s ->   200.42s] the option to retreat, that means that you do not have to do everything. Failure is an option. You can go
+[  200.42s ->   210.82s] back to the boats. But if it isn't, well, the probability mass speaks for itself. Because this
+[  210.82s ->   217.50s] isn't the last kingdom, let's apply this to the real world today. Suppose you quit your job and you start
+[  217.50s ->   226.90s] a business. Success and failure perfectly partitions the sample space of your outcomes. So, given a startup,
+[  226.90s ->   236.04s] what is the probability of your success? If you asked me what to do, Roman, what do I do? I'm looking to
+[  236.04s ->   246.42s] start my own business. My first piece of advice would be to burn the boats. There is no other option
+[  246.42s ->   256.62s] but success. Don't believe me? Well, if you have a backup job, just in case you can't get a client or two
+[  256.62s ->   264.80s] or maybe you have a couple of months in the red, then what is the probability of failure? Well,
+[  265.06s ->   272.04s] let's condition on you having a backup job, just in case. All of the probability mass is on the failure
+[  272.04s ->   277.48s] side. During that downside variation, when you have a couple of months in the red, you lose a couple of
+[  277.48s ->   285.90s] big clients, that backup job is going to look pretty darn attractive. You've already conditioned on
+[  285.90s ->   294.64s] pigeonholing yourself into this space by giving yourself that hedge versus there is no other
+[  294.64s ->   300.94s] option but success. Take a look at where you've pigeonholed yourself. You're going to have to push
+[  300.94s ->   308.50s] through that downside variation. Failure is not an option. All of the probability mass is going to shift
+[  308.50s ->   317.38s] to the success side. There is literally no other option. You are going to have to do everything in
+[  317.38s ->   326.80s] order to make it work. That is why the hedge ruins everything. If you don't have to make it work
+[  326.80s ->   334.58s] when it's at its absolute worst, in the downside variation, when you're sitting there and you're
+[  334.58s ->   341.70s] losing money and you're losing clients, then you're not going to make it work. You're always going to
+[  341.70s ->   351.20s] have a hedge to go to. And that is why the probability of failure increases. Because, not because
+[  351.20s ->   359.28s] you've failed, but because you've chosen the hedge. That is precisely what I mean by this framework.
+[  359.60s ->   364.50s] Similar to the above with the battle in victory and defeat, this is why the probability of success
+[  364.50s ->   372.04s] for your startup, given that you have a hedge in place, a backup, is nowhere near the probability
+[  372.04s ->   380.82s] of success, given that you do not have a hedge in place, no backup. If you don't like it, that's too
+[  380.82s ->   391.22s] bad. This is literally how it works. This is the way the math shakes out. You have to accept that in
+[  391.22s ->   399.36s] severe downside variation in your startup when everything is telling you to quit. All of your
+[  399.36s ->   406.30s] colleagues, your friends, your family, the cash flow. If you have a beautiful hedge, a backup job
+[  406.30s ->   412.46s] right here, you can immediately defeat yourself and just go straight to that job instead of forcing
+[  412.46s ->   420.76s] yourself to pivot and do quite literally everything. This is the fundamental idea. We can also apply this to
+[  420.76s ->   427.99s] a relationship. Given a relationship, what is the probability of love? Love and breakup, I think
+[  427.99s ->   439.03s] that perfectly partitions the space. What is the hedge? Well, having a side chick. 99.9 some odd percent
+[  439.03s ->   445.51s] of you are male, so I'll speak to you, but I'm sure the girls will be able to understand and, you know,
+[  445.51s ->   452.15s] don't think that I don't see the, the, oh, okay. Yeah, come on. Having a side chick is going to
+[  452.15s ->   458.83s] fundamentally pigeonhole the probability of the success in your relationship. If we take a look
+[  458.83s ->   464.09s] and condition on the fact that you have a side chick, a backup, a hedge, what is the probability
+[  464.09s ->   469.33s] of breakup? Well, during severe downside variation, who are you going to call? Who are you going to talk
+[  469.33s ->   474.55s] to? Who are you going to text? No wonder the probability of breakup is substantially higher
+[  474.55s ->   479.21s] than the probability of love in your current relationship. But if you don't have that hedge
+[  479.21s ->   485.71s] in place, you don't have that backup. Let's take a look at the conditional probability. No kidding.
+[  485.87s ->   492.07s] You're literally going to have to do everything to try to make it work. Consequently, just like the
+[  492.07s ->   498.41s] above, the probability of it working out, given that you have a hedge is nowhere near the probability
+[  498.41s ->   506.33s] of it working out, given that you don't have a hedge. So naturally, I think this is going to
+[  506.33s ->   512.11s] progress too. That's nice, Roman. And it even kind of makes sense. If you don't have a backup plan,
+[  512.21s ->   516.91s] you're going to have to work harder to try to make it work. But what about real life? We can't just
+[  516.91s ->   524.65s] go through real life with no backup, no hedges. Sure you can. Here's the harsh truth. If you want to
+[  524.65s ->   532.25s] hedge it, then you don't want it enough. Whatever it is. Here are the examples we've talked about thus
+[  532.25s ->   539.49s] far. Battle. Victory. If you don't want victory enough to lose your life, then you will always
+[  539.49s ->   543.75s] have the boats and the opportunity to retreat. You will dramatically decrease the probability of that
+[  543.75s ->   549.49s] victory. What about your startup? Success in your startup. If you have a backup job when you're in the
+[  549.49s ->   555.03s] red and you have an opportunity to either pivot and work really hard or take the backup job, what are
+[  555.03s ->   559.47s] you going to do? What about a relationship where you're looking for love is the outcome, but you
+[  559.47s ->   565.19s] have a side chick. Your girl's mad at you. You don't know who to talk to, what to do. You're going to go
+[  565.19s ->   572.27s] to your side chick. The probability of the intended and desired outcome in all of these examples fundamentally
+[  572.27s ->   582.97s] changes when you have a hedge in place. Okay, well, who's actually implementing this in practice? Well, I am.
+[  582.97s ->   591.57s] Quant Guild. My outcome is these lectures. This is what I want to do. A hedge would be a quant job. I'm here to tell
+[  591.57s ->   602.25s] you I invest 100% of my capital in my own strategies, not just financially, but also philosophically. Failure is not a
+[  602.25s ->   611.01s] option. There is no quant job that I can go to. I've burned the boats. This is my accountability. I
+[  611.01s ->   619.19s] will never work for anyone ever again. If I have to do this in a cardboard box, so be it. Here I am. Who
+[  619.19s ->   624.95s] knows what this is going to look like a year from now, five years from now. Who knows? I have no idea,
+[  624.95s ->   639.56s] but this is it for me. This is it and I am not hedging it. I've burned my boats. You're seeing this in real
+[  639.56s ->   648.36s] time. Now, I want to remind you through all of this applied math, through all of the ideology of burn
+[  648.36s ->   659.14s] burn the boats that I am still human. I have had tough breakups. I've had days where I've had trouble
+[  659.14s ->   667.18s] getting out of bed. I've been in the red for several months. I've had months this year where I've been in
+[  667.18s ->   682.13s] the red and I've even thought about hedging. I am human, but I don't. And I want it enough such that I
+[  682.13s ->   692.67s] am going to make it work. Failure is not an option. This is the trade-off. This is where you have to
+[  692.67s ->   702.33s] either accept risk and do everything to make it work or accept that you're going to have a hedge in
+[  702.33s ->   710.51s] place. And that is going to dramatically increase the probability of failure. So as always, I'm not
+[  710.51s ->   717.21s] telling you what to think. I'm giving you the mathematical tools to think about it. However you
+[  717.21s ->   727.05s] would like, you can still choose to hedge. However, like I said, I'm 100% invested in my own strategies.

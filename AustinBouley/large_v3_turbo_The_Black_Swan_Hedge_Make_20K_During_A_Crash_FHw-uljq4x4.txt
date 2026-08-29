@@ -1,0 +1,79 @@
+[    0.00s ->     4.94s] Hey guys, are you tired of fearing the next market crash and want to know how to make money in any
+[    4.94s ->     9.24s] crash even if you don't see it coming? Well, you can see here you couldn't have seen this coming
+[    9.24s ->    14.64s] and instead of losing 15%, you would have made $15,000. And the COVID crash, instead of losing
+[   14.64s ->    21.32s] 30%, you could have made $20,000. Instead of this constant downtrend in 2021 and 2022,
+[   21.86s ->    28.48s] instead of losing upwards of 15, 20%, you could have made $10,000. That's exactly why I want to
+[   28.48s ->    33.64s] teach you the simple black swan hedge. It's going to help you put on this trade so that no matter
+[   33.64s ->    37.70s] when a crash happens, you can make a good amount of money from it. So I'm going to show you how
+[   37.70s ->    42.86s] simple this is so that anybody can put on this trade by the end of this video. So if you stay
+[   42.86s ->    46.62s] tuned with me, I will show you that in just a second. And if you stay until the end, I'll show
+[   46.62s ->    51.10s] you how to actually know when a crash is coming so that you can put on these trades and then make a
+[   51.10s ->    55.48s] lot more money without having to deal with any overhead. Anyways, let's dive into it right now.
+[   55.48s ->    60.76s] This trade is very easy to structure. There's some simple rules we need to follow. Number one,
+[   60.80s ->    65.18s] this is a 45 days until expiration trade. So we're going to go down to our strike prices
+[   65.18s ->    71.68s] on ES or MES. That's being the ES S&P 500 futures or the mini futures if you have a smaller account,
+[   71.80s ->    76.88s] but we're going to go down here to ES, find the one that's closest to 45 days. And this is a trade
+[   76.88s ->    80.74s] that we'll put on every single month. So if I don't have the trade on yet, I'm simply going to come
+[   80.74s ->    87.34s] into here. I'm going to find the 15 Delta price points. This is your Delta 15. Why? Because the
+[   87.34s ->    93.10s] 16, 15 Delta is typically our one standard deviation. So again, if we have over a one
+[   93.10s ->    97.32s] standard deviation move, we want to make some money from it. So what we're going to do is we're first
+[   97.32s ->   104.44s] going to sell a put at the 15 Delta. Then at the 14 Delta, we're actually going to buy, but we're not
+[  104.44s ->   108.68s] just going to buy, we're going to buy three positions. So just like that, now we are selling
+[  108.68s ->   115.34s] one put at the 15 Delta and buying three at the 14 Delta. Now, what does this mean? And what does
+[  115.34s ->   121.26s] it look like? Well, if I go here to the curve, we can see exactly what is happening. So when we buy a
+[  121.26s ->   127.22s] put, we make money as the market goes down in value. So you can see here as the market goes down,
+[  127.42s ->   133.68s] the puts go up in value. However, buying puts can cost a lot of money. So what we do is we sell a put,
+[  133.68s ->   138.50s] which gives us some money so that instead of having to put up a lot of money to get access to
+[  138.50s ->   142.72s] these puts, we can sell a put, get some money so that we're not actually having to put up that
+[  142.72s ->   147.14s] much money. Now, again, since we're trading ES, this is a lot of money we have to put on. So about
+[  147.14s ->   154.20s] $1,700 to put this trade on roughly. And so again, that's our max loss. We're going to lose $1,700
+[  154.20s ->   161.26s] if the market never crashes. But if it does, you can see here, we can make upwards of $12,000, $18,000,
+[  161.26s ->   168.48s] $24,000, $30,000 that we can make if the market crashes. And now what we really want to focus on
+[  168.48s ->   173.44s] here is the structure of this trade. You can see here at expiration, if it's anywhere here,
+[  173.50s ->   180.38s] we lose money, but as the stock starts to move lower at expiration, we'll actually make money.
+[  180.50s ->   185.28s] Now, what do we want to look at? This orange line right here shows us how much money we will make
+[  185.28s ->   191.46s] if we're actually inside this trade. So you can see here, if we hold until expiration in this level,
+[  191.46s ->   197.14s] we'll actually lose money. But while we're in the trade, we'll actually be making money. So you can see
+[  197.14s ->   202.74s] here, the orange line is slowly increasing up. So we can see here that the P&L Theo that it's
+[  202.74s ->   208.60s] stating right here is increasing. So if the market even drops 100 points, now we're going to start
+[  208.60s ->   216.24s] making $400. If it drops down to 47, so 200 points, we're going to be making $3,500. If it drops
+[  216.24s ->   223.58s] another 100 points, we're now making $7,000. So this is an amazing strategy that if we don't focus
+[  223.58s ->   227.52s] on the expiration, we'll just focus on the movement down, then we're going to be making
+[  227.52s ->   232.22s] a lot of money in a short amount of time. Now, why do I recommend that most people put
+[  232.22s ->   237.02s] on this trade around the one standard deviation mark? Well, because if you're selling options
+[  237.02s ->   242.70s] already, whether it be credit spreads, strangles, 1-1-2s, selling puts, whatever it is, you're
+[  242.70s ->   248.40s] typically hovering around the one standard deviation level. This is where most of your losses come
+[  248.40s ->   254.98s] in for the trade. So if you set up this trade right here to start making money during that one
+[  254.98s ->   260.52s] standard deviation break, then when your other trades make money in this level, in this range,
+[  260.88s ->   265.64s] then once it breaks the range, you have this hedge that will kick in and start making a lot of money
+[  265.64s ->   270.50s] to offset any losses from your other trades. Not only that, you can also make a good amount of money,
+[  270.54s ->   276.80s] right? If we just fall to the two standard deviation level, you'll be making $16,000. And so
+[  276.80s ->   281.82s] if you put on this trade once a month, you should every single month have this protection. And
+[  281.82s ->   286.62s] sometimes your trades can even overlap so that you end up making a ton of money. Hence, for a great
+[  286.62s ->   292.04s] example, during COVID crash, where it went over to standard deviation, so you're making about $20,000
+[  292.04s ->   297.42s] from a small crash you couldn't even have predicted. So that's the amazing thing about the strategy.
+[  297.52s ->   303.56s] Now, it does require $1,700 to put on. So again, if you have a smaller account, use MES,
+[  303.56s ->   309.00s] it'll use a 10th of that. So it'll use $170 to put on, but also the profit will be, you know,
+[  309.06s ->   314.38s] a 10th less. Instead of making $20,000, you'll make $2,000. But still, for smaller accounts,
+[  314.44s ->   318.50s] you can do this as well. This is an amazing strategy that I recommend that everybody put
+[  318.50s ->   323.40s] on. I did not invent this myself. This is from Sweet Bobby on YouTube, who's an amazing trader.
+[  323.46s ->   327.34s] He's been featured on Tasty Trade. I highly recommend you check him out. But this is an amazing
+[  327.34s ->   331.10s] hedge. And let me show you how you can actually automate this hedge for yourself.
+[  331.10s ->   334.84s] For those who don't know, I've been working on an options auto trading software that allows
+[  334.84s ->   339.88s] to do selling strategies like the 112, like the 111, like Strangles, like the Sweet Bobby
+[  339.88s ->   345.46s] Black Swan hedge. All of this stuff you can do on both stocks and futures. And again, all
+[  345.46s ->   350.46s] you need to do is connect your Tasty Trade account. And then again, all we do is pick the
+[  350.46s ->   354.68s] strategy from there. So right here, the Sweet Bobby Black Swan hedge. So if we click on this,
+[  354.94s ->   359.98s] we can then see exactly how Sweet Bobby sets his up. I like to set mine up at the 15 Delta
+[  359.98s ->   364.86s] and the 14 Delta, just like that. And now again, you can see I do the trade every single
+[  364.86s ->   370.00s] month. I'm going to enter the trade once a month on a Wednesday. I go 45 days out and I
+[  370.00s ->   374.18s] do it on the ES futures. If you have a smaller account, do it on the MES futures. So just like
+[  374.18s ->   379.64s] that, now I can set up the strategy, save it, set up my buying power. I want to be allocated
+[  379.64s ->   384.98s] to it and anything like that. And now I've successfully automated this strategy. And just like that,
+[  384.98s ->   390.18s] you can see here, I have the Austin Black Swan hedge strategy set up exactly as I want it.
+[  390.50s ->   395.46s] And now I'll have an auto trader automatically once a month putting on a Black Swan hedge that
+[  395.46s ->   399.94s] I don't even have to worry about it anymore. So if you're interested in actually having access to
+[  399.94s ->   404.02s] this auto trading software to do on stocks, futures, whatever, selling that no other auto
+[  404.02s ->   409.48s] trader allows right now, you can click the link down below to join the waitlist as it will be coming
+[  409.48s ->   415.86s] out in early March. I'm so excited to share it. So guys, please put your contact info down in the
+[  415.86s ->   420.00s] waitlist and you'll be one of the first to get access. All right, guys, see you in the next video.

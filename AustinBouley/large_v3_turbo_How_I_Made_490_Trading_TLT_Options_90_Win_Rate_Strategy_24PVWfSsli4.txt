@@ -1,0 +1,94 @@
+[    0.00s ->     3.52s] I'm going to walk you through how I made $490 trading TLT options.
+[    3.66s ->     4.50s] This is the bond market.
+[    4.80s ->     8.74s] Now, I'm going to walk you through step-by-step why and how I took this trade
+[    8.74s ->    12.10s] so that you can understand the thought process behind it and do it for yourself.
+[   12.46s ->    16.56s] Now, to give you some proof, first off, you can see here on my credit spreads trades tracker,
+[   16.90s ->    20.46s] you can see here TLT, the trade recently closed on May 12th.
+[   20.68s ->    22.36s] I entered on April 26th.
+[   22.40s ->    26.88s] I collected 26 cents in credit, and I traded a size of 20 credit spreads.
+[   26.88s ->    32.72s] I had roughly a $490 profit after commissions and fees, and that's what it looks like.
+[   32.78s ->    37.08s] If you want to see an actual breakdown, you can take a look at my Tasty Trade Broker.
+[   37.38s ->    40.76s] You can see here I have highlighted these trades, and that means they show up right here,
+[   40.86s ->    44.32s] $520 minus commissions and fees, roughly $490.
+[   45.00s ->    47.28s] Now, if you want to use this credit spreads trades tracker for yourself,
+[   47.36s ->    49.40s] it's completely free, linked down below.
+[   49.68s ->    51.18s] Now, let's jump into the TLT trade.
+[   51.26s ->    55.28s] So, TLT right here is the bond market, and again, a lot's been going on in the bond market.
+[   55.44s ->    55.68s] Why?
+[   55.68s ->    61.86s] Well, because bond markets are directly related and will be affected by interest rates.
+[   62.08s ->    65.24s] Now, again, the Fed has been doing a lot of interest rates, especially in this period.
+[   65.30s ->    68.46s] You can see here these huge red and huge green period moves.
+[   68.90s ->    73.64s] This is when the Fed is coming out and announcing federal fund rates, raising interest rates,
+[   73.64s ->    77.04s] and then now they're kind of pausing on the interest rate hikes.
+[   77.46s ->    79.94s] And so we can see that I was trading through all that volatility.
+[   80.36s ->    82.26s] Now, let's look at the specifics of this trade.
+[   82.26s ->    85.20s] So, again, I put the trade on on April 26th.
+[   85.20s ->    88.58s] I had an expiration of May 12th, and I had a 103-101.
+[   88.90s ->    92.86s] So that means I sold the 103 puts, and I bought the 101 as protection.
+[   92.94s ->    94.28s] That's how you set up a credit spread.
+[   94.66s ->    99.24s] Now, again, you can see here, 103 is located right here, if I can do this correctly.
+[   99.72s ->   101.04s] 103 right here.
+[  101.04s ->   103.62s] And then 101 is down here.
+[  103.76s ->   107.72s] But anyways, what a credit spread means that as long as the stock stays above this level
+[  107.72s ->   113.38s] that I have, by the end of my expiration date, I'm going to make or keep all the money that
+[  113.38s ->   114.04s] they gave me.
+[  114.28s ->   119.46s] So, again, if we're looking at the bond market, number one, what we can see here is the market,
+[  119.56s ->   125.18s] although it's been trending down over the last so years or the last year or so, you can
+[  125.18s ->   130.62s] see here that it defined a very strong range, where we have a resistance range, and we even
+[  130.62s ->   132.44s] have down here a support range.
+[  132.74s ->   135.62s] So we can see here is that it's trading within a range.
+[  135.86s ->   138.14s] If it's trading within a range, then you're going to do really good.
+[  138.42s ->   142.32s] Not only that, we even have a smaller range that we were trading in right here.
+[  142.36s ->   145.80s] You can see low, low, low all these bounces and supports.
+[  146.22s ->   149.10s] So I was trading the fact that this area was range-bound.
+[  149.10s ->   155.58s] Not only that, I was trading my step-by-step turtle strategy, what it simply means that
+[  155.58s ->   160.38s] I look at the stock, if it's more likely to go up than down, then I take the stock price
+[  160.38s ->   164.12s] and I go below 3%, and now I have a 90% chance of making money.
+[  164.44s ->   167.36s] I back-tested this, and this historically works.
+[  167.68s ->   172.60s] So I took this trade day, again, the 26th, and because it's a very strong red day, number
+[  172.60s ->   174.22s] one, I can go further down.
+[  174.22s ->   179.08s] I can collect more premium and give myself more safety and make more money in the process.
+[  179.56s ->   180.80s] And so that's exactly why.
+[  180.90s ->   186.94s] I love entering put credit spreads on strong red days, because they allow me to give myself
+[  186.94s ->   188.70s] more protection and collect more money.
+[  189.06s ->   193.46s] Now, you can see here, this trade went on, and we had a lot of market volatility.
+[  193.88s ->   199.00s] Then around here on Monday, the TLT trade actually came and touched my break-even point.
+[  199.00s ->   206.84s] Now, I do not manage my credit spread losers until we're within four to three days until expiration.
+[  207.34s ->   207.70s] Why?
+[  207.84s ->   210.50s] Because I've run all the numbers and the stats behind this.
+[  210.56s ->   213.34s] If you want to see it, check out my free trading handbook link below.
+[  213.44s ->   214.62s] No email, no nothing required.
+[  214.98s ->   220.80s] Go check that out, and I'll walk you through the exact statistics and strategies that I use.
+[  220.80s ->   226.10s] But what I've noticed is that most of the time when the stock goes against you, which means
+[  226.10s ->   230.12s] it goes below your strike price while you're in the trade, and there's more than four days
+[  230.12s ->   236.34s] left in the trade, it's going to 99% of the time, or very high likely between 90% and 95%
+[  236.34s ->   241.56s] of the time, it's going to end up recovering and coming back through that level and bouncing.
+[  241.90s ->   243.32s] That's exactly what we saw.
+[  243.32s ->   246.64s] That's why I stayed in the trade, only trade stats and stats that hold.
+[  247.04s ->   249.00s] And again, you can see here that it hit the line again.
+[  249.32s ->   254.06s] And again, as we get closer, expiration date is right here, the 12th, right here on this
+[  254.06s ->   254.24s] day.
+[  254.30s ->   257.14s] So one, two, one, two, three, four.
+[  257.26s ->   259.00s] So on the fourth day, we were getting close to that level.
+[  259.08s ->   262.82s] Like I said, I liked to manage within four to three, but then the next day it gapped
+[  262.82s ->   264.56s] up and it stayed above the rest of the time.
+[  264.56s ->   269.98s] So I stayed in this trade and I let it expire worthless, collecting all the max profit that
+[  269.98s ->   270.36s] I could.
+[  270.36s ->   274.56s] So this was the TLT trade, there was a lot of volatility in this trade, a lot of movement,
+[  274.56s ->   278.60s] but what you need to know when trading put credit spreads, number one, have a strategy.
+[  279.00s ->   281.26s] Number two, know your numbers and know your stats.
+[  281.42s ->   282.48s] Why are you trading that?
+[  282.54s ->   287.06s] If you're not, you're going to be super overwhelmed and confused and be lost in emotion when the
+[  287.06s ->   288.48s] trade starts to go against you.
+[  288.70s ->   291.88s] Now again, if you want to learn more about how to manage losers, not only do I have the
+[  291.88s ->   295.84s] free trading handbook link below, but I'll be making a video on that soon for the YouTube
+[  295.84s ->   296.04s] channel.
+[  296.10s ->   300.32s] I'll walk you through how to manage credit spreads and how to roll if you want to do that as well.
+[  300.36s ->   305.92s] All right, guys, thank you so much for watching this video on how I made $490 trading credit
+[  305.92s ->   306.76s] spreads on TLT.
+[  306.88s ->   309.70s] If you enjoyed this video, please smash that subscribe button and thumbs up button.
+[  309.96s ->   312.46s] It helps other people like you find this channel and learn more.
+[  312.88s ->   314.02s] Anyways, guys, I'm Austin.
+[  314.20s ->   317.20s] I am here with 10% credit spreads.
+[  317.28s ->   320.84s] I'm so glad you watched this far into the video and I can't wait to see you in the next
+[  320.84s ->   321.04s] one.

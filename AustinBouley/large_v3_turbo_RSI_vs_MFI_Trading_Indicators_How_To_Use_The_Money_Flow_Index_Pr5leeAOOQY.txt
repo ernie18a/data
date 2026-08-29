@@ -1,0 +1,73 @@
+[    0.32s ->     2.00s] Hey guys, welcome to this video.
+[    2.00s ->     8.08s] We are going to be discussing the difference between RSI and MFI or relative strength index
+[    8.08s ->    12.56s] and the money flow index and which one I think is better and why.
+[   12.56s ->    13.76s] Thank you so much for tuning in.
+[   13.76s ->    18.72s] If you haven't already, hit that subscribe button and hit the like button.
+[   18.72s ->    22.48s] Let's get into the video now so I don't have to waste your time.
+[   22.48s ->    25.76s] If we're looking here, we can see something specific.
+[   25.76s ->    30.58s] We're going to pull up the RSI which is the relative strength index.
+[   30.58s ->    31.76s] So I'm going to add that one.
+[   31.76s ->    36.54s] And then we're also going to add the money flow index or the MFI.
+[   36.54s ->    41.18s] So the money flow index is just like the RSI.
+[   41.18s ->    44.98s] So as we can see, RSI is here and money flow index is here.
+[   44.98s ->    48.52s] You may look at them and go, man, those are quite identical.
+[   48.52s ->    51.46s] And yes, they almost are.
+[   51.46s ->    57.12s] They are the same with one minor difference or I should say one major difference.
+[   57.12s ->    65.94s] The RSI is just factoring in price while the money flow index is also factoring in volume.
+[   65.94s ->    68.90s] So it's like the volume weighted RSI.
+[   68.90s ->    73.80s] So what's beautiful about this is volume plays a crucial aspect in your trading and investing
+[   73.80s ->    78.74s] because it can show you where support is being developed, where buyers or sellers come into
+[   78.74s ->    84.02s] the market and volume shows so, so much more.
+[   84.02s ->    91.70s] So the reason for that makes MFI or the money flow index much more important since it incorporates
+[   91.70s ->    92.58s] volume.
+[   92.96s ->    98.42s] And this should also be available on almost all the platforms that you're actually using.
+[   98.42s ->   104.76s] So if you're using a tradingview.com or toss like I am or anything else, the money flow
+[  104.76s ->   106.94s] index should be there.
+[  106.94s ->   113.66s] So now as you can guess, right, we have the overbought side and we have the oversold side.
+[  113.66s ->   120.46s] So what happens in when a stock gets too low, the RSI and the MFI hit these levels where it's
+[  120.46s ->   122.60s] like, okay, this would be a good dip buy.
+[  122.60s ->   126.94s] And then we also hit those levels where like, okay, it could start to sell off here, but let's
+[  126.94s ->   128.94s] start to explain this a bit more.
+[  128.94s ->   131.76s] The RSI shows the strength index.
+[  131.76s ->   136.64s] So it shows, okay, when this is trending up, the strength of the market is up.
+[  136.64s ->   140.44s] Now the money flow index shows the money flow.
+[  140.44s ->   145.70s] So for instance, when it's going from up to, um, from lower to high on the MFI, it's showing
+[  145.70s ->   150.18s] that we're having a positive money flow and, and, and, and into the market.
+[  150.18s ->   151.18s] I'm so sorry.
+[  151.18s ->   156.94s] But when we're seeing a move down, we're seeing a, uh, a negative flow and to, and to the market.
+[  156.94s ->   162.24s] So it's assessing the flow from different types of, um, cash and investment.
+[  162.24s ->   165.18s] So that's something that's cool to, to focus on and know.
+[  165.18s ->   170.18s] That's why it incorporates volume, which shows the, the number of buyers and sellers and whether
+[  170.18s ->   172.20s] they're buyers or whether they're sellers.
+[  172.20s ->   174.62s] So the MFI is amazing.
+[  174.62s ->   179.48s] Now, remember something that I do want to point out just because it has an overbought
+[  179.48s ->   185.18s] area and an oversold area does not mean that you should buy when it hits this point and
+[  185.18s ->   187.32s] sell when it hits this point.
+[  187.32s ->   190.22s] So let's give you a good example here.
+[  190.22s ->   196.94s] This one shows it started to hit the oversold side, meaning that is a good dip buy at this
+[  196.94s ->   202.00s] level right here on spy, but that, uh, that obviously was not the best time to buy.
+[  202.00s ->   207.24s] You want to start, or you want to use these end, these indicators because they are lagging,
+[  207.24s ->   210.54s] which means that they do fall, they follow price a bit too long.
+[  210.54s ->   213.78s] You want to use them in conjunction with other things.
+[  213.78s ->   217.84s] So I know that I have a video topic plan, which is going, going to show you the four best
+[  217.84s ->   222.88s] tips, um, to, uh, catch dips and, and, and dip buy.
+[  222.88s ->   226.46s] So make sure that you subscribe to get that video when it comes out.
+[  226.46s ->   231.62s] But this indicator is just one of many to use when you're trying to buy dips in other
+[  231.62s ->   233.48s] types of things like that.
+[  233.48s ->   238.66s] But as you can see, when these highs start getting higher and the lows start getting
+[  238.66s ->   244.48s] higher as well, which, which meaning that the RSI and the MFI are showing an uptrend,
+[  244.48s ->   248.34s] we start to see some positive flow of money into the market.
+[  248.34s ->   250.98s] So that's why we start to see a push up.
+[  250.98s ->   256.74s] So again, an indicator just helps you visually understand what's happening in the market.
+[  256.74s ->   262.32s] So again, if you're looking to use either the RSI or MFI, I would really say you need
+[  262.32s ->   265.18s] to use both and see which one you like best.
+[  265.18s ->   271.26s] But overall, looking at it from a math perspective, the MFI is going to beat the RSI because it
+[  271.26s ->   273.84s] also factors in volume.
+[  273.84s ->   274.98s] Thank you so much for watching.
+[  274.98s ->   281.04s] And I hope this helps you understand the difference between RSI and MFI and you know how to use
+[  281.04s ->   282.60s] it now for the market.
+[  282.60s ->   283.60s] Alright guys, thank you so much for watching.
+[  283.60s ->   289.30s] Please claim your free resources below this video to learn more about investing and swing
+[  289.30s ->   293.06s] trading and more because I do have a swing trading 101 course coming out soon.
+[  293.06s ->   294.60s] A free course, I should say.
+[  294.60s ->   296.10s] So make sure you stay tuned for that.

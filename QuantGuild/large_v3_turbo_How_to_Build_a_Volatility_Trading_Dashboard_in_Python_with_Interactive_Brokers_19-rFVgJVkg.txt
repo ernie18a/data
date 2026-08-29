@@ -1,0 +1,1137 @@
+[    0.46s ->     8.33s] A question I get all the time, Roman, what is the best way to learn to code for quantitative
+[    8.33s ->    16.65s] finance? My answer has largely been the same for years, and that is to build projects. This is not
+[   16.65s ->    23.09s] about padding your resume. This is not about padding your GitHub profile. This is about
+[   23.09s ->    29.91s] learning to engineer solutions to problems from scratch. In the old days, we used to go to
+[   29.91s ->    38.07s] Stack Overflow. We didn't ask ChackGPT or Gemini to generate a code snippet for us. In fact, if we
+[   38.07s ->    45.11s] have any hope to actually build trading systems, trading models, backtesting engines, do we really
+[   45.11s ->    50.97s] want these LLMs to write all of the code for us? Certainly not. We need to be able to build these
+[   50.97s ->    54.85s] systems ourselves, but we all have to start somewhere. So what I'm going to do in this video
+[   54.85s ->    60.63s] is I'm going to walk you through from A to Z how to build an implied volatility trading dashboard.
+[   61.19s ->    68.87s] This is a trading tool to help identify potential edge in volatility trades. I'm going to show you
+[   68.87s ->    73.99s] how the tool works, and then we're going to walk through the build from scratch. Everything you
+[   73.99s ->    79.89s] need for this project will be made available in the description below. I will post the source code
+[   79.89s ->    86.15s] on the QuantGuild library on GitHub. So if you would just like to access this tool and use it,
+[   86.23s ->    91.07s] you can feel free to do so. Moreover, if you're working through the build from scratch and you get
+[   91.07s ->    96.25s] stuck or something breaks and you need access to the source code, you can check it out there. So
+[   96.25s ->   101.69s] I'll post that link in the description below. I'll also post a link to Interactive Brokers.
+[  102.15s ->   106.99s] That's how we're going to be accessing the market data required for this trading dashboard.
+[  106.99s ->   112.29s] I've been trading with Interactive Brokers for nearly 10 years. They're the only broker that I
+[  112.29s ->   117.19s] trade with in an algorithmic capacity. Highly recommend them. Check out the link in the
+[  117.19s ->   123.07s] description below to go ahead and create an account that we can use for this implied volatility trading
+[  123.07s ->   128.79s] dashboard. Lastly, as I get started demonstrating how this implied volatility trading dashboard works,
+[  129.25s ->   132.61s] if you want to support the channel so I can continue to make videos just like this one,
+[  132.61s ->   137.33s] and if you would like to master your quantitative skills, check out QuantGuild.com.
+[  138.17s ->   143.51s] All right, so how do we go about using this implied volatility trading dashboard? Well,
+[  143.65s ->   148.41s] if you haven't seen my video on how to trade option implied volatility, then please check that out
+[  148.41s ->   156.13s] first. It is the perfect precursor to developing this app. If you're ready to get started, then what
+[  156.13s ->   162.19s] we're going to first do is connect to Interactive Brokers Trader Workstation. When we get to the point in the
+[  162.19s ->   167.87s] build where we configure a host and port, then I will show you how to do that, but for now,
+[  168.23s ->   172.31s] bear with me. We're just going to go ahead and connect. You can see in the logs we've successfully
+[  172.31s ->   177.67s] connected, and now what we're going to do is pick a ticker that we want to analyze the implied
+[  177.67s ->   185.67s] volatility data of. So I'm going to pick, in this case, let's use NVIDIA. We're going to look back two
+[  185.67s ->   192.78s] years and query this implied volatility data. Okay, so now I have this current implied volatility.
+[  192.78s ->   200.32s] I'm scaling it by the square root of 252 to annualize it. I have this vol range and just a brief analysis
+[  200.32s ->   207.82s] of the current regime. Okay, cool. Now let's click this Analyze Implied Volatility button, and we get all
+[  207.82s ->   213.86s] of these crazy looking charts. Now, if you watch the video, How to Trade Option Implied Volatility, all of
+[  213.86s ->   219.18s] these charts will be very familiar to you because what we're doing is running the regressions from that
+[  219.18s ->   227.40s] video. We are looking at the current implied volatility relative to the average implied
+[  227.40s ->   234.86s] volatility for the next 30 days. So what we're doing is we're regressing the forward implied
+[  234.86s ->   244.80s] volatility on the current implied volatility, and we're plotting the regression line against y equals x
+[  244.80s ->   253.98s] to see what the effect is on the current to forward basis. Now remember, all of trading is about finding
+[  253.98s ->   261.26s] a statistical basis for your decision making. That is effectively what we are trying to do here within
+[  261.26s ->   267.18s] this dashboard. We're trying to see if, given the current state of implied volatility, there's some sort
+[  267.18s ->   273.00s] of statistical basis for a trade that's either long vol or short vol. Let's take a look in the case of
+[  273.00s ->   281.00s] NVIDIA. So here, I have this regression on the current implied volatility relative to the forward
+[  281.00s ->   288.82s] implied volatility for the past two years. This dotted line is y equals x. This red line is the regression
+[  288.82s ->   295.90s] line. You can see the slope of the regression line is less than one. What that means is implied
+[  295.90s ->   310.56s] volatility tends to be lower than the input. For example, if we input 0.7, we get something around
+[  310.56s ->   320.96s] 0.52. This y equals x line is where 0.7 as an input would yield 0.7 as an output. Okay, well maybe
+[  320.96s ->   328.88s] there's a statistical basis for a trade there. Maybe if implied volatility is 0.7, we should go short vol.
+[  331.10s ->   337.28s] Maybe. Okay, what about the left side of this intersection? Well, relative to y equals x,
+[  337.98s ->   346.02s] if I plug in, let's say 0.4, the regression line predicts 0.4, what's that, 0.42? Something like
+[  346.02s ->   354.82s] that. It's higher than y equals x. So maybe I want to go long vol there. This isn't a perfect system.
+[  354.82s ->   361.90s] A lot of assumptions are being made. Transaction costs, delta hedging, the position cost itself
+[  361.90s ->   367.92s] can eat away at any potential profits. What we're doing is we're creating this as a starting point.
+[  367.92s ->   378.32s] Now, what else can we do? Well, what if I split up this regression into two separate regressions?
+[  378.86s ->   383.98s] So this intersection point with y equals x here, I'm going to create two buckets. I'm going to call
+[  383.98s ->   391.38s] it a high volatility regime and a low volatility regime. Low is going to be in blue, high is going
+[  391.38s ->   398.69s] to be in red. Now, running a regression in these two separate situations will allow us to isolate
+[  398.69s ->   407.43s] this effect that low volatility may imply higher volatility going forward and high volatility may
+[  407.43s ->   412.81s] imply lower volatility going forward. Again, sometimes this effect is flipped. Sometimes all
+[  412.81s ->   418.43s] of the transaction costs and hedging costs, et cetera, eat away at your profit. But this is a
+[  418.43s ->   423.92s] place to start. Okay. So that's what this chart is showing us here. What we're doing here is we're
+[  423.92s ->   429.28s] not just looking at the current implied volatility relative to the forward implied volatility. We're
+[  429.28s ->   435.94s] looking at the difference. So if the difference is positive, that means that future volatility is
+[  435.94s ->   441.52s] actually higher. If the difference is negative, that means future volatility is lower. And what you can
+[  441.52s ->   449.04s] see is in the high volatility regime, it's all negative. And in the low volatility regime, it's
+[  449.04s ->   455.56s] all positive. So it's a very interesting effect to observe. So essentially on average, in this low
+[  455.56s ->   462.68s] volatility regime, forward volatility tends to be higher. In this high volatility regime, forward
+[  462.68s ->   471.28s] volatility tends to be lower. Now, is there a way to measure how profound this effect is? There's
+[  471.28s ->   475.34s] certainly is. Now, there's not enough time to talk about least squares, not enough time to talk about
+[  475.34s ->   483.22s] the how everything functions, how explained variation works, the entire idea behind it itself. But
+[  483.22s ->   489.36s] what we can do is look at something called the R squared value. Essentially, the higher the R squared
+[  489.36s ->   496.44s] value, the more profound this effect. So in a low vol regime, we have an R squared of 0.057. Now,
+[  496.44s ->   503.32s] this is out of one. So this explains very little variation in the forward vol based on the current
+[  503.32s ->   512.42s] vol. But with the high vol regime, we get an R squared of 0.387. It's significantly higher than the
+[  512.42s ->   521.22s] low volatility regime. So maybe there's a statistical basis for us to trade in that capacity going short
+[  521.22s ->   526.42s] vol when the implied volatility is high enough. Now, the current implied volatility is what,
+[  526.42s ->   534.16s] 0.4444.05%. There's no trade here. There's no trade. In fact, we're very, very close to this
+[  534.16s ->   541.98s] regime split. This regime split is not a stationary value. As time marches on, heck, even if I change
+[  541.98s ->   548.28s] this window, this value is going to change. So we have to keep this in mind. Everything is time
+[  548.28s ->   554.08s] variant here. It's changing over time. Nothing is converging. Nothing is static. We're doing our best
+[  554.08s ->   561.49s] to create a model to find some sort of edge. All right. Well, I've also plotted the time series of
+[  561.49s ->   568.35s] implied volatility, the current level, the mean across this time series, and the 75th and 25th
+[  568.35s ->   576.27s] percentile. And here you can see that volatility relative to historic volatility has been pretty low
+[  576.27s ->   582.55s] recently. We had this little spike here, and now we're kind of between the 25th percentile and the
+[  582.55s ->   588.05s] this could mean. This could mean a variety of different things. So maybe we think that volatility
+[  588.05s ->   594.09s] will increase. It's been low for a while. But again, based on the current level and this regression,
+[  594.47s ->   599.67s] it doesn't necessarily suggest that effect. So this is what I'm teasing out with this trading
+[  599.67s ->   606.01s] dashboard. So this is how we can go about analyzing some sort of potential for trading volatility
+[  606.01s ->   613.31s] on a particular equity. In this case, this is NVIDIA. You could use it on an ETF or really any symbol.
+[  614.21s ->   618.51s] But this is how you would go about interpreting the dashboard. Time to start building. We don't need
+[  618.51s ->   622.93s] no track GPT or Gemini for this. We're going to build it from scratch. So let's start with a
+[  622.93s ->   629.61s] brand new workspace, brand new Python file. I'm going to call this, let's say, dashboard.py.
+[  629.61s ->   636.27s] And look at this, right off the bat, we get generate code. We don't need no code generation. We're here
+[  636.27s ->   640.55s] to write code from scratch. All right. We're going to start with our imports. We're going to need to
+[  640.55s ->   649.27s] import quite a few things. Import tkenter as tk. We're going to use tkenter to build the frame of
+[  649.27s ->   656.27s] our application. We're going to need some other items in tkenter. We're going to need tk message box
+[  656.27s ->   666.68s] and scrolled text. So import from tkenter, import tk, message box, and scrolled text. We also need
+[  666.68s ->   674.41s] to import threading. We're going to import time. For the implied volatility data, we're going to use
+[  674.41s ->   685.33s] pandas. So import pandas as pd. We're going to use matplotlib to visualize the regressions. We also need
+[  685.33s ->   695.01s] the figure canvas so that we can use it with tkenter. Now we also need the interactive brokers
+[  695.01s ->   709.34s] Python API. This is going to be ibapi. So from ibapi.client, we need eclient. From ibapi.wrapper,
+[  709.34s ->   719.42s] we need e-wrapper. We also need the contract class so that we can get the data for a particular
+[  719.42s ->   731.59s] symbol. And we need date time to format dates correctly. And we can also import warnings.
+[  732.37s ->   741.46s] And we can filter warnings. All right. If any of this doesn't work, run this. If any of this doesn't
+[  741.46s ->   747.24s] work and you get some sort of error, module not found, whatever it may be, then you likely need
+[  747.24s ->   752.20s] to run a pip install on that package. So if you don't have pandas, you don't have matplotlib, you
+[  752.20s ->   759.84s] don't have ivapi, what you need to do is open up a terminal. Assuming you've installed Python
+[  759.84s ->   767.62s] correctly on Windows and you have the Python package manager added to your path, then you're going to be
+[  767.62s ->   778.94s] able to run a pip install on these packages. So I would say pip three install pandas. For example,
+[  778.94s ->   785.76s] if I was missing the pandas module or pip install pandas, if you're not working with that particular
+[  785.76s ->   790.56s] version of Python, it'll be pip or pip three. And you would need to do this for every module that you
+[  790.56s ->   799.64s] do not have. Okay. Now that we've gone about importing everything that we need, we're going
+[  799.64s ->   807.74s] to create a class to manage the connection and data from interactive brokers. We're going to call this
+[  807.74s ->   815.48s] the IB app class. And this is going to be an implementation of the e-client and the e-wrapper
+[  815.48s ->   828.31s] from the IB API. Look at this. It's auto finishing for me. Goodness gracious. Get this AI out of here.
+[  828.55s ->   833.53s] All right. So we've created this class. Now what we're going to do is we're going to create the
+[  833.53s ->   842.09s] constructor. We're going to initialize e-wrapper and e-client in this particular class as itself.
+[  842.39s ->   848.21s] And then we're going to add fields for the connection and the historic data that's being
+[  848.21s ->   855.84s] queried from the trader workstation. So def init self. This is the constructor for the class.
+[  856.28s ->   863.06s] I'm going to say e-client. We're going to initialize it with self and self. So we're operating with this
+[  863.06s ->   869.10s] as the e-wrapper and e-client implementation. And then we are going to have a field for connected.
+[  869.58s ->   875.18s] We're going to set it equal to false by default. Then we're going to have a field for the historical
+[  875.18s ->   882.04s] data. And this is going to be a dictionary. So we created this class and it's implementing e-wrapper
+[  882.04s ->   887.46s] and e-client. But what does that actually mean? Well, we're going to establish a connection to the
+[  887.46s ->   892.80s] trader workstation, to interactive brokers, and we're going to make a data request. And that data
+[  892.80s ->   898.20s] request has to go somewhere. It's going to go to this class. That's the purpose of this class.
+[  898.20s ->   904.78s] Now, sometimes there's going to be errors. So we need to be able to log this to our terminal. So
+[  904.78s ->   914.04s] I'll say def error. We're going to take self, rec ID, error code, error string, and we are just going
+[  914.04s ->   920.20s] to print this out to the console. So I'm just going to use a formatted print statement and we can just
+[  920.20s ->   928.01s] go ahead and print all of these values. So we're going to print the rec ID. We are going to print the
+[  928.01s ->   939.54s] error code and we are going to print the error string. Okay. Turned off the AI autocomplete.
+[  939.66s ->   947.90s] So everything will be nice and peaceful here. All right. Now we need to create some sort of function
+[  947.90s ->   955.00s] to be able to get historic data and manage historic data. What does this look like? Well, we need to
+[  955.00s ->   962.68s] create a function called historical data. And this is where interactive brokers is going to send
+[  962.68s ->   969.80s] the historic data for implied volatility when we request it. So we're going to create a request.
+[  969.88s ->   974.78s] It's going to have a request ID. It's going to go to interactive brokers and it's going to come back
+[  974.78s ->   981.56s] to this class. It's going to give us the bar data and the request ID that's telling us which implied
+[  981.56s ->   989.08s] volatility we are essentially asking for. And it's going to store it in this historic data dictionary.
+[  990.68s ->  1000.21s] Okay. If the request ID is not in self dot historical data, then that means we have not queried
+[ 1000.85s ->  1008.93s] any particular request for this request ID. So we are going to set the historical data
+[ 1010.36s ->  1019.03s] dictionary to have this rec ID with an empty list. Because remember, this dictionary doesn't have a
+[ 1019.03s ->  1024.07s] default value for each key. So we're going to create a request, call it request, let's say one.
+[ 1024.71s ->  1028.79s] And the server is going to get this request, it's going to respond, hey, request one,
+[ 1028.79s ->  1033.51s] and here's your data. But we need to be able to put that data somewhere. So what we're saying is
+[ 1033.51s ->  1038.87s] historical data, take that request ID one, and take all the data, we're going to throw it into this
+[ 1038.87s ->  1044.87s] empty list. So what we'll do is we'll say self dot historical data. Now that we have this empty list,
+[ 1045.75s ->  1058.12s] using this rec ID, we are going to put all of this data in. So we're going to put date bar dot date,
+[ 1059.08s ->  1076.76s] we will put open bar dot open, we will put close bar dot close, we will put low, we'll put high bar dot high,
+[ 1077.80s ->  1101.78s] we'll put low bar dot low, and we'll even have the volume. All right. So we're appending a dictionary
+[ 1101.78s ->  1108.34s] to this list that we've created for this specific rec ID. All right, so we're going to request,
+[ 1108.34s ->  1113.46s] create some sort of implied volatility requests to interactive brokers, call it rec ID one,
+[ 1113.46s ->  1118.02s] it's going to respond with all this data. So what we're going to say is, hey, for rec ID one,
+[ 1118.02s ->  1122.58s] let's create an empty list. And within this empty list, let's create a dictionary that's going to have
+[ 1123.14s ->  1130.31s] all of this data. All right. And then once we're done fetching this historic data,
+[ 1130.31s ->  1137.19s] we want a message to ensure that we know that it is done. So historical data, this is going to be
+[ 1137.19s ->  1144.23s] within the class, not within that function, historical data and, and it looks like this
+[ 1144.23s ->  1151.27s] auto finished for me, but we need rec ID start and, and we don't need to return anything really,
+[ 1151.27s ->  1166.71s] we just want to print historical data has been received for rec ID, and then we'll put in the rec ID.
+[ 1168.55s ->  1175.17s] Okay. All right. So this is going to be the class that's going to handle the callback from
+[ 1176.05s ->  1182.29s] trader workstation with our historic data. Great. And then we're going to use that data for our
+[ 1182.29s ->  1188.37s] regressions. Now's the fun part. We got to build the user interface. How are we going to do this?
+[ 1188.37s ->  1196.85s] Well, we're going to create a class implied volatility dashboard. And in the constructor,
+[ 1197.57s ->  1209.38s] I am going to pass the root of the user interface. Now, whenever I create a TK enter sort of app
+[ 1209.38s ->  1214.74s] interface, I need to create some sort of a root of that application. You can think of this as like
+[ 1214.74s ->  1220.42s] the frame and that route, that frame is where I'm going to add all of these elements.
+[ 1220.42s ->  1228.10s] So within the constructor here, I'm going to assign a field within the implied volatility
+[ 1228.10s ->  1234.98s] dashboard class, this roots value, this root object. So anytime I want to add something to it,
+[ 1234.98s ->  1240.98s] I can just call self.root. So self.root is equal to root. Now, anytime I want to add something to
+[ 1240.98s ->  1245.54s] this frame, I can just call self.root. So self.root.title, this is going to be
+[ 1246.42s ->  1255.56s] the implied volatility trading dashboard. And that's accomplished because I have this
+[ 1255.56s ->  1259.08s] self.root equals root here. So anytime I want to add or change something to this,
+[ 1259.80s ->  1264.20s] this app, this, this frame, whatever you want to call it, I can just call self.root. So I'll call
+[ 1264.20s ->  1270.84s] self.root.geometry. And this is going to be the default application size. I'll make it 1400 by 1200.
+[ 1270.84s ->  1275.56s] There's a lot going on. You can play around with the size if you'd like. Now we need something for
+[ 1275.56s ->  1283.16s] the data. So I'll call it self.option data. This is equal to none for now. Self.volatility data,
+[ 1283.16s ->  1289.96s] this will also be equal to none. Self.current implied vol, this is equal to none. These are
+[ 1289.96s ->  1295.40s] just going to be placeholders for when we actually want to replace it with data we query from
+[ 1295.40s ->  1303.96s] interactive brokers, the server. We're going to need to handle the connection to the server.
+[ 1303.96s ->  1312.68s] So we need an instance of the IB app that we created here. So I will say self.ibapp is equal to
+[ 1313.32s ->  1319.70s] ibapp. And anytime I want to handle the historic data, right, I make a request to the server,
+[ 1319.70s ->  1326.96s] I'm going to be able to find it in this ibapp field within this class. Pretty handy.
+[ 1328.12s ->  1336.02s] Moreover, I need a field to tell us if we are connected or not. And I'm going to also set a
+[ 1336.02s ->  1346.44s] default vol annualization to be 252. And you can change this depending on if you're going to be
+[ 1346.44s ->  1352.28s] querying, let's say daily implied volatility or weekly, monthly. However, you are going to be
+[ 1352.28s ->  1359.16s] managing the bar size. So if you need to change this to say B52, if you're using weekly or however you
+[ 1359.16s ->  1363.72s] want to do it. So this is the annualization. This is how we're going to be scaling the implied
+[ 1363.72s ->  1371.00s] volatility. Then we're going to need to create a function to set up everything in the UI. So this
+[ 1371.00s ->  1377.70s] is going to be all the buttons, all of the charts and whatnot. And that's going to be just about it
+[ 1377.70s ->  1385.01s] for the constructor. All right, what do we need now? We need a couple of different helper functions. So
+[ 1385.01s ->  1390.13s] for starters, we need to create a function to create an equity contract. So this could be some
+[ 1390.13s ->  1395.65s] sort of equity like we used NVIDIA as an example in the start of this video. But here, this could
+[ 1395.65s ->  1405.20s] also be for an ETF like SPY. So we'll call it create equity contract. We will take a symbol as an input.
+[ 1405.20s ->  1412.08s] And that's going to be that field in the app that we saw. And we'll say contract is equal to an empty
+[ 1412.08s ->  1418.88s] contract object. This is imported from the interactive brokers API. Then I'll say contract dot symbol is
+[ 1418.88s ->  1428.24s] equal to symbol dot upper. Okay, because we need this is how we need to format the symbol for the contract
+[ 1428.24s ->  1432.32s] that we're sending to the server to request information from it needs to be all capital.
+[ 1432.32s ->  1436.64s] So in case the user enters it in lowercase or whatever, we'll we'll get it to capital.
+[ 1436.64s ->  1450.95s] And then the security type is going to be stock. The exchange we will say is smart. And the currency we
+[ 1450.95s ->  1458.08s] will just default to us dollars. Then we'll return the contract. So this is how we're going to go
+[ 1458.08s ->  1466.56s] about building the contract. Okay, so essentially that that button is clicked when we enter the symbol.
+[ 1467.36s ->  1471.36s] And this is what we're going to create based on whatever is entered, we're going to create this
+[ 1471.36s ->  1480.39s] contract object. So interactive brokers knows what data to send back to us. Now it's time for the beast.
+[ 1480.39s ->  1488.07s] Now it's time for the beast. We need to create this setup UI function. All right, buckle up here.
+[ 1488.07s ->  1498.31s] This is the fun part. So def setup UI self the function to set up all the components on on the frame.
+[ 1498.31s ->  1502.71s] All right, we already know if we want to add things to this frame, we can just use self dot root.
+[ 1502.71s ->  1510.55s] So we need to first create this frame. Mainframe is equal to ttk dot frame self dot root. We'll have
+[ 1510.55s ->  1515.59s] some padding for the items within the frame. I'll just create it. Start with 10. You can alter that
+[ 1515.59s ->  1523.80s] if you want more padding. The frame is also going to have a grid layout. So row is equal to zero.
+[ 1524.60s ->  1537.60s] Column is equal to zero. And then we'll say sticky. And we will have west, east, north, and south. Okay,
+[ 1538.32s ->  1548.45s] sticky is equal to this tuple. Perfect. All right. Let's start by configuring these widgets now. All right.
+[ 1549.33s ->  1563.65s] self dot root dot column config zero weights one self dot root dot row config zero weights one mainframe dot
+[ 1563.65s ->  1575.51s] column figure. We will have one weights one and then mainframe row configure. We will have let's say five
+[ 1577.35s ->  1585.81s] weights. All right, we need a connection frame. All right. So essentially, these are just going to be
+[ 1585.81s ->  1593.89s] the weights of the grid. All right, that we are establishing in the mainframe. Now we need to
+[ 1593.89s ->  1598.37s] create each little frame for each section of the application. So if you remember, we have the
+[ 1598.37s ->  1605.17s] connection frame, then we have the frame where we can query the historic data. So I will say con frame
+[ 1608.18s ->  1619.68s] is equal to ttk dot label frame, mainframe. This will be the interactive brokers connection.
+[ 1621.51s ->  1628.39s] And we'll throw some padding on there too. Just call it five. And then this will be
+[ 1629.83s ->  1636.07s] in row zero column zero with a column span of two. So for this particular frame, we'll say
+[ 1636.63s ->  1646.31s] con frame dot grid, throw it in row equals zero column is equal to zero column span is equal to two
+[ 1647.11s ->  1658.76s] sticky, we will put tk west and tk east. And then pad y will do zero and 10. So there will be some padding
+[ 1659.40s ->  1669.96s] vertically. All right. Now we're going to add some labels and some inputs so that we can manage this
+[ 1669.96s ->  1676.68s] connection. So this con frame is just a section in our window where we're going to be putting items to
+[ 1676.68s ->  1682.76s] manage this connection to the trader workstation. So I'm going to have this ttk dot label, and this is
+[ 1682.76s ->  1691.00s] going to be in the con frame section, which is the connection frame. This is going to be the host for
+[ 1691.00s ->  1702.85s] the application. And we'll throw this in row zero, column zero, and we'll give it some padding on the
+[ 1702.85s ->  1712.85s] x axis. So pad x is equal to zero comma five. The host var is actually going to be a string var.
+[ 1712.85s ->  1721.57s] And this is going to be the value assigned to the input text field. So whenever it changes,
+[ 1722.29s ->  1728.50s] this is how we're going to get that information from the user interface. We're not just going to fetch it
+[ 1728.50s ->  1734.82s] from the input object. It's better practice to create a variable, a dedicated variable
+[ 1734.82s ->  1740.98s] for this value and access it via that dedicated variable. So that's what this self dot host var
+[ 1740.98s ->  1746.90s] is. It's going to be a string var with a value of the host, which defaults to one, two, seven dot
+[ 1746.90s ->  1751.62s] zero dot zero dot one. No place like home local host, a fun
+[ 1751.62s ->  1763.14s] programming connection joke for you guys. All right. Um, this is going to be again, an entry.
+[ 1763.14s ->  1769.38s] So this is the variable that's going to house the data for this host field, but we haven't created
+[ 1769.38s ->  1775.94s] the host field yet. So that's an entry. That's this, this input form, and we're throwing this entry
+[ 1775.94s ->  1784.02s] in the connection frame and it's going to have a text variable value of self dot host var. This is
+[ 1784.02s ->  1793.08s] what connects the input to a variable. And in this case, the variable is, is host bar. We'll say the
+[ 1793.08s ->  1799.64s] width of this input will be 15. And then we're going to put this in column one row zero. Okay. So row
+[ 1800.28s ->  1809.60s] is equal to zero column is equal to one and we'll give it some padding on the X zero comma 10. Okay.
+[ 1809.60s ->  1814.40s] Maybe I will expand this a little so you guys can see if you have to. Yeah, that's better. We don't
+[ 1814.40s ->  1821.22s] need the, uh, the file tree open. Okay, cool. So that's going to be the host. Now we're going to do the
+[ 1821.22s ->  1825.70s] same thing for the port. All right. And this is pretty much just rinse and repeat. So I'm actually
+[ 1825.70s ->  1835.56s] just going to copy and paste this block and shift tab will reverse tab it in if you didn't know that.
+[ 1835.56s ->  1843.73s] So instead of host, I'm going to do port and I'm going to put this in column two. Okay. So zero,
+[ 1843.73s ->  1849.97s] column zero, column one, column two, and I'm going to keep the same padding. The default here is going
+[ 1849.97s ->  1857.41s] to be seven, four, nine, seven for paper trading. The host var in this case is going to be now the port
+[ 1857.41s ->  1861.89s] bar because we're dealing with the port. So port seven, four, nine, seven is the default port for
+[ 1861.89s ->  1868.45s] paper trading. This is going to be our string bar. We need to change this entry to have the port bar
+[ 1869.09s ->  1876.53s] default, the same width, probably fine. We can do a little bit less, I guess, because the port is
+[ 1876.53s ->  1888.63s] shorter than the host and it's not row zero column one. It should be row zero column three. Cool.
+[ 1888.95s ->  1893.51s] And then we're going to add some buttons so that we can actually make this connection request
+[ 1893.51s ->  1903.76s] self dot connect button is equal to TTK dot button. And we will do the con frame and text is equal to
+[ 1903.76s ->  1912.80s] connect. The command is going to be equal to self dot connects IB. And we're going to have to create that
+[ 1912.80s ->  1922.80s] function to run this connection request based on the host and the port that are entered into those text
+[ 1922.80s ->  1932.48s] fields. You could also add, well, I guess we have to add this to the grid. So self dot connect button dot
+[ 1932.48s ->  1941.60s] grid, we'll throw this in row zero column four. So this is beyond the port item, the port input.
+[ 1942.16s ->  1948.79s] And then we'll also add some padding on the X. We'll make it zero and 10. Okay. And we can just copy
+[ 1948.79s ->  1958.15s] and paste this too. And we can do the same thing for for disconnect. So we'll have disconnect.
+[ 1959.65s ->  1967.54s] Instead of connect IB, we should call this disconnect IB. And we can just leave this as disabled for now.
+[ 1968.26s ->  1976.05s] State is equal to disabled. And then it's not in column four, it's in column five.
+[ 1977.27s ->  1986.39s] And then it's not called connect button. It's got to be called disconnect button. Okay. So we've now
+[ 1986.39s ->  1994.15s] created the entire frame for the connection within the main frame of our application. That is exactly what
+[ 1994.15s ->  1998.87s] we've done up until this point. We created this connection frame, this mini frame within our application.
+[ 1998.87s ->  2004.63s] We said there's a host label, a host input, a port label, a port input, and a connection button,
+[ 2004.63s ->  2009.91s] this connection button with commands that we've yet to build. And this is sufficient for the connection
+[ 2009.91s ->  2017.51s] section. So the next section of this is to build out the query frame, the data query frame. And it's
+[ 2017.51s ->  2022.71s] pretty much the same process. So I need to create a new frame. Now, I'm going to call this the data
+[ 2022.71s ->  2028.40s] frame, not to be confused with the pandas data frame. This is just going to be the frame within
+[ 2028.40s ->  2033.84s] the bigger application where we're going to be querying the data. So we'll call this ttk dot label
+[ 2033.84s ->  2040.26s] frame. We'll put this in the main frame. Remember, we have this main frame, we have this connection
+[ 2040.26s ->  2049.27s] mini frame. And now we have this data query mini frame. And the text will be data query, throw a little
+[ 2049.27s ->  2060.28s] padding on there, everything should look nice. We're going to put this in row one now. So we have
+[ 2060.28s ->  2065.88s] that that first connection frame, we'll throw this in the next row, we'll call this column zero,
+[ 2067.40s ->  2080.74s] with a column span of two, we'll call this sticky as well to west and east. And then we'll throw some
+[ 2080.74s ->  2091.70s] padding on the y axis. As you go through this, if there's anything you want to change with the padding or
+[ 2091.70s ->  2096.90s] text fields, you know, you're free to do so that won't change the core functionality of the the
+[ 2096.90s ->  2102.92s] application that we're after. Now we're going to create the exact same thing that we did here with
+[ 2102.92s ->  2110.84s] the host import, but this time for the symbol and the look back period the duration for the the data
+[ 2110.84s ->  2117.30s] request. What I would do is I would just copy this. So copy these three things again, and we'll just change
+[ 2117.30s ->  2126.34s] everything down here. So shift tab brings it in, we have ports. Okay, instead of port, we're working
+[ 2126.34s ->  2134.10s] with symbol here. Okay, it's not in the connection frame, it should be in the data frame. Again,
+[ 2134.10s ->  2139.30s] this is the frame where we're going to be querying the data from not a pandas data frame. All right,
+[ 2139.30s ->  2146.36s] we're going to throw this in column zero. Okay, we're going to keep the padding, the default value,
+[ 2146.36s ->  2155.91s] it's not going to be port var, it's going to be symbol var, symbol var, and the value we can just
+[ 2155.91s ->  2161.35s] default to spy, you can make this apple and video whatever you want to do. And the entry is going
+[ 2161.35s ->  2169.83s] to be in the data frame. And remember, the string var is going to be symbol var. And we will put this
+[ 2169.83s ->  2183.00s] in column one, the exact same thing for duration now. Cool. And we will call this duration, you can call
+[ 2183.00s ->  2188.68s] this look back if you want, or, you know, whatever else to imply that we're querying data back that
+[ 2188.68s ->  2194.60s] duration, I'm just going to call it duration. And we're going to keep this in row zero column two.
+[ 2195.72s ->  2206.79s] And the default will be two years. So interactive brokers has specific format for how it specifies
+[ 2206.79s ->  2213.67s] date ranges. So two space Y is how it does two years, you can look for for other ranges as well
+[ 2213.67s ->  2219.99s] in their their API documentation, or you could ask your your favorite LLM if you would like.
+[ 2220.63s ->  2228.63s] Symbol var is going to be now duration var. And we are going to make this duration var instead of symbol
+[ 2228.63s ->  2236.71s] var. And this will be in column now three. So we have column zero, column one column two, and this will
+[ 2236.71s ->  2246.13s] be in column three. Cool. Now we need to add a button to actually query this stuff and analyze the
+[ 2246.13s ->  2251.65s] volatility. So I'm just going to copy the connection and disconnection buttons. And I'm going to change
+[ 2251.65s ->  2260.34s] everything here. So that it is correct. Instead of connection, what do I have, I have a query. So this
+[ 2260.34s ->  2267.08s] will be query button. This will be query button instead of connect frame, we're not throwing this in the
+[ 2267.08s ->  2271.80s] connection frame, right? This is going to be in the data frame, where we're going to be querying this
+[ 2271.80s ->  2281.00s] data from. Instead of connect, this will be what query IV data. So now we need to create a what,
+[ 2281.80s ->  2289.80s] a command to, you guessed it, query the data. And of course, this should probably be disabled
+[ 2292.23s ->  2301.76s] before there is a connection to interactive brokers. Okay. This will be in, yep, column four is totally
+[ 2301.76s ->  2307.28s] fine. So that actually lines up with the original, um, connection frame from the connection button.
+[ 2307.28s ->  2312.32s] So column four is totally cool. Um, then for this disconnect button, we need to replace this
+[ 2312.32s ->  2320.24s] with analyze button. And instead of connection frame, it will be data frame. Instead of the text being
+[ 2320.24s ->  2327.76s] disconnect, it will be analyze the implied vol and we'll leave this as disconnected to until there's
+[ 2327.76s ->  2336.24s] a connection. And instead of disconnect IB, this will be analyze volatility. Okay. And then this will
+[ 2336.24s ->  2344.16s] be the analyze button dot grid. We'll throw that in column five and we will be all set. That will be
+[ 2344.16s ->  2350.48s] completely sufficient for this data portion of the application. So, so far we have our frame,
+[ 2350.48s ->  2357.04s] we have our connection section, we have our query data section, our data query frame,
+[ 2357.60s ->  2362.88s] and we were going to continue building this out to the section that we're going to populate with,
+[ 2362.88s ->  2367.28s] with data now. So this is pretty much rinse and repeat. Now we got to create this vol frame.
+[ 2372.61s ->  2378.85s] So we have this label frame we'll do, I'm going to throw it in the main frame. This is going to be the
+[ 2379.57s ->  2393.40s] current implied volatility, throw some padding on it. Okay. The grid will be row two now.
+[ 2394.04s ->  2400.84s] So we had row zero connection, row one, the query panel. And now this is going to be the data,
+[ 2400.84s ->  2410.02s] throw it in row two, column zero, column span two, again, sticky, west and east.
+[ 2411.80s ->  2421.57s] And we'll throw some padding on for good measure. We'll make it padding Y and we'll just add labels
+[ 2421.57s ->  2428.61s] now for the current implied volatility. Then we can also add some other information as, as necessary.
+[ 2428.61s ->  2434.37s] So let's start with this label for current implied volatility. We'll say tdk dot label,
+[ 2435.09s ->  2442.13s] we'll throw it in the vol frame. We'll say the text is equal to current IV. And we will of course
+[ 2442.13s ->  2447.65s] populate this as we get data. We'll throw this in row zero, column zero, just like we did with the
+[ 2447.65s ->  2458.90s] other fields. When we first created this section, self dot current vol label, we will say tdk dot label,
+[ 2458.90s ->  2466.61s] throw this in the vol frame. And the text will be not available for now until we get data. And the
+[ 2466.61s ->  2484.15s] font will be, we'll just call it aerial 12. We'll throw it in bold. Okay. The label itself will live
+[ 2484.15s ->  2491.38s] in row zero, column one. Okay. So we have the current vol label. We'll throw this in row zero,
+[ 2492.18s ->  2506.04s] column one, and we'll have a little bit of padding on the X. Perfect. And now it's pretty much just going
+[ 2506.04s ->  2514.36s] to be rinse and repeat again. Um, we did this for the implied volatility. So this is the vol frame.
+[ 2514.36s ->  2521.89s] What else do we need? We need, um, the, the actual computation, I suppose we could throw that in there
+[ 2521.89s ->  2530.39s] too. So I'm just going to copy this guy and we can paste it in just like we did before. And we will just
+[ 2530.39s ->  2537.48s] make this instead. This will be now zero one, two, this is column two. And instead of current IV,
+[ 2537.48s ->  2544.23s] this is just going to be the computation. And for the text, we'll just throw no data
+[ 2545.83s ->  2550.07s] until we get data. This doesn't have to be bold. We can make this smaller. We'll just make this
+[ 2551.72s ->  2559.89s] aerial 10 column three. So we're counting up here, right? Zero one, two, three. This is going to be the
+[ 2559.89s ->  2565.57s] label. This is the label. This is the label. And we're going to populate the next item with,
+[ 2565.57s ->  2570.80s] with data. When we get it from the server, we're going to do this for the volatility range too.
+[ 2570.80s ->  2581.40s] So I'll just copy this again, do this exact same thing. So I will call this then vol range.
+[ 2582.44s ->  2591.40s] And this will be now in column four. And then this will be in vol frame. We can populate this with NA
+[ 2592.80s ->  2600.24s] till we get data. Arial 10 is fine. And then the actual data can live in, um, we can call this
+[ 2600.24s ->  2607.57s] column, column five. We probably don't need any padding on the X here. In fact, for the,
+[ 2608.77s ->  2614.05s] for the computation itself, we need less. So maybe like 10 is sufficient. Cause it's not,
+[ 2614.05s ->  2618.21s] this is 12 bold. This is 10. So it's, it's probably fine.
+[ 2618.21s ->  2625.84s] All right. We need to keep going here with the, um, the volatility statistics and stuff. This is
+[ 2625.84s ->  2630.16s] where we're going to be showing all of the information from the data that we queried.
+[ 2630.64s ->  2642.05s] So I'll create another section here and instead of vol range, this is going to be, well, I guess we
+[ 2642.05s ->  2648.85s] need a separate panel for this. So I will create a new frame. I'll call this regime frame.
+[ 2649.57s ->  2657.33s] And I will call this TTK dot label frame. We'll throw this again in the main frame. This will be
+[ 2657.33s ->  2670.79s] the volatility regime analysis. So this is just some systematic, like automatic way to process
+[ 2671.59s ->  2677.43s] the data that has been queried. So it's not perfect. Just like I said, when we're using this trading app,
+[ 2677.43s ->  2682.31s] we're not going to be clinging to these values as if they're perfect. Everything's time variant,
+[ 2682.31s ->  2689.11s] nothing converges, but here we're going to just have some conditional statements for proposing.
+[ 2689.11s ->  2693.19s] If it's, Hey, this might be mean reverting. There might be a mean reversion signal, so on
+[ 2693.83s ->  2698.39s] and so forth. So we have this regime analysis section. We'll create a little bit of padding as
+[ 2698.39s ->  2705.19s] we've been doing in each of these frames. And we will throw this beneath the, um, now the,
+[ 2705.19s ->  2710.15s] the volatility frame. So we have connection frame, we have query frame, we have volatility frame. Now
+[ 2710.15s ->  2715.43s] we have a regime frame. So this will be regime frame. We'll throw this in. This is going to be,
+[ 2715.43s ->  2725.25s] I suppose, row three now and column zero. This is the exact same setup as the other, the other, um,
+[ 2726.79s ->  2738.24s] frames. Same thing, sticky, west and east. Throw some padding on the Y and we'll be all set with this,
+[ 2738.24s ->  2745.20s] with this frame. So now we have this regime frame that we're ready to populate. And now we can copy
+[ 2745.20s ->  2750.80s] and paste all of these, these ranges. So I'll just instead use the regime frame here. We'll throw
+[ 2750.80s ->  2759.94s] this in column zero and column one. And instead of current vol label, oh geez, I guess I got to change
+[ 2759.94s ->  2767.96s] all of those variables too. Goodness gracious. All right. So instead of, let's see, this should be
+[ 2767.96s ->  2781.89s] full computation and vol range label. So this should be vol range label. Good. And this should be
+[ 2783.25s ->  2804.48s] vol computation label. Yeah. Okay. Good. And then this should be the regime label and this should be the
+[ 2804.48s ->  2812.07s] regime label. Good. And we're going to make this, we'll give this some more padding. We'll give this like
+[ 2813.36s ->  2821.03s] zero to 20 because this is going to be bold. So we'll make this like Ariel 12 again. We'll call
+[ 2821.03s ->  2829.68s] this bold and that should do it. So that is the, instead of vol range, this is going to be the
+[ 2829.68s ->  2840.82s] current regime. All right, nice. So this is going to be the label for the current regime. This is the
+[ 2840.82s ->  2847.14s] text that we will populate from data and we will put this in the regime frame section. Good.
+[ 2849.97s ->  2855.09s] So effectively what we have here is this is the regime frame and we're going to put all the
+[ 2855.89s ->  2862.69s] labels and buttons in there. This is the, the volatility frame labels and buttons.
+[ 2862.69s ->  2876.21s] This is the data query frame labels and buttons, and this is going to be the connection frame. Nice.
+[ 2881.59s ->  2885.43s] Beyond this regime label. What else do we need? We need percentiles. We need things like that. So
+[ 2885.43s ->  2894.13s] let's create another one. We will do instead of current regime, this will be percentile.
+[ 2896.05s ->  2902.95s] Percentile. We'll throw this in column two. Now we're counting up. Good. Instead of regime label,
+[ 2902.95s ->  2910.53s] this is going to be percentile label. And then we'll make this percentile label, throw this in column
+[ 2910.53s ->  2921.25s] three. Good. This doesn't have to be bold. We can make this Ariel 10. Don't have to make everything
+[ 2921.25s ->  2931.28s] bold. And that's going to be the percentile. So zero, one, two, three. Good. Now we can do
+[ 2931.92s ->  2938.93s] some sort of mean reversion signal label. So this will be mean reversion signal. We'll throw this in
+[ 2938.93s ->  2948.13s] now column four. This will be in column five. And instead of percentile label, this is going to be
+[ 2948.13s ->  2956.88s] the reversion label. And we can just use this here and we'll leave it as Ariel 10 NA. So that should be
+[ 2956.88s ->  2963.84s] everything we need for this frame. And now we can move over to the status frame and then we can create
+[ 2963.84s ->  2970.72s] a function to help log messages. So that should be sufficient. Now we can create the status frame.
+[ 2970.72s ->  2979.97s] So status frame is equal to TTK dot label frame, throw this in the main frame text is going to be
+[ 2979.97s ->  2987.97s] equal to status. And then we will throw some padding on it like we've been doing all along. And then we
+[ 2987.97s ->  2999.49s] will throw this now in the not static method status frame. We'll throw this in the fourth row column zero
+[ 3000.29s ->  3010.45s] sticky is equal to and we'll do tk dot west tk dot east. And that should do it for the this. Oh,
+[ 3010.45s ->  3017.41s] we got to throw some padding on. So we'll do pad y is equal to zero comma 10. Okay,
+[ 3018.13s ->  3025.01s] that is going to do it for the status frame. So now we have the connection. So we have the main frame,
+[ 3025.01s ->  3029.81s] we have the connection frame, we have the data query frame, the volatility frame, the regime frame.
+[ 3031.08s ->  3037.88s] Now the the status frame. So zero, one, two, three, four, it's going to be five total frames so far
+[ 3037.88s ->  3045.70s] within this main application. Let's finish adding the items to the status frame. And then we can create
+[ 3045.70s ->  3051.30s] the frame for the plots. And then we should be done with the the user interface for the most part,
+[ 3051.30s ->  3059.57s] except for the helper function. So let's do self dot status text is equal to scroll text. Okay,
+[ 3060.96s ->  3067.97s] dot scroll text, and we'll throw this within the status frame. This is essentially our log,
+[ 3067.97s ->  3074.37s] the height is going to be six, don't want it to take up too much space. It's not uncommon to throw
+[ 3074.37s ->  3080.05s] some sort of menu bar at the top, and then have like a view console logs and have it pop up as a
+[ 3080.05s ->  3085.81s] separate item. That's how I do it in most of my trading systems. But for this particular app,
+[ 3085.81s ->  3090.77s] it's totally sufficient to have like a little window to ensure that your connection is working,
+[ 3090.77s ->  3096.45s] and to print out any analysis that you might want. So maybe as an exercise, if you'd like to create a
+[ 3096.45s ->  3101.57s] menu bar, you know, you can you can feel free to do so. But we'll just put this in its own little
+[ 3101.57s ->  3111.17s] section. And we will say that this is going to be so the status text itself is in row zero, column zero,
+[ 3111.17s ->  3118.29s] and we will make it sticky to west and east. Now keep in mind, as you're building out this user
+[ 3118.29s ->  3125.89s] interface, if items aren't showing up in your TK inter window in your window, that means you're
+[ 3125.89s ->  3130.93s] missing the layout, it doesn't know where to put it. So keep that in mind, you can create the item
+[ 3130.93s ->  3136.53s] itself. But if you don't tell it where to go, then it's not going to put it anywhere. So just something
+[ 3136.53s ->  3144.21s] to keep in mind as as you're working through this. So now the actual frame itself, we'll just column
+[ 3144.21s ->  3152.34s] config it, and we'll give it a weight of one. And now we can just go about creating the plot frame.
+[ 3152.34s ->  3161.54s] And this is where we will put all of our plots, ttk dot label frame. And we'll throw this in the main
+[ 3161.54s ->  3171.03s] frame, the text will be implied volatility analysis results. And we'll make some padding,
+[ 3171.03s ->  3180.53s] we'll throw it on five. Cool. Tell it where to go. This is going to be the fifth, row fifth,
+[ 3180.53s ->  3188.37s] row five, row fifth is going to be the fifth row. And it's the sixth, essentially, label frame that we
+[ 3188.37s ->  3199.16s] have. Column zero, column span two, everything we've been doing up until this point, call it west, east,
+[ 3199.16s ->  3220.79s] north, and south. We'll give it a column configure a weight of one, and a row configure weight of one.
+[ 3223.06s ->  3230.34s] Cool. Now we need to configure our subplots from matplotlib and throw them on the canvas. So we'll
+[ 3230.34s ->  3239.38s] do self dot fig, there will be axes, we have axis one, that is where we will put the regression of the
+[ 3240.10s ->  3247.06s] current, the current implied volatility and the forward implied volatility, not difference. So
+[ 3247.06s ->  3254.02s] we're going to regress the forward implied volatility on the current implied volatility, self dot axe two,
+[ 3254.82s ->  3261.94s] self dot axe three. So axe two will have the difference regression in each regime, and axis three will be
+[ 3261.94s ->  3269.67s] the time series of implied volatility and the percentiles. This will be equal to plt dot subplots,
+[ 3270.63s ->  3277.27s] one to three, fig size. Again, you can do whatever you like here, I'm just going to do 18 by six,
+[ 3277.27s ->  3287.48s] pretty standard. We need the canvas itself, the canvas will be equal to this is where we use
+[ 3287.48s ->  3294.20s] the figure canvas, tk enter self dot fig, we're going to throw this then in the plot frame, this is how
+[ 3294.20s ->  3301.24s] we connect the canvas to the tk enter window itself. So we have the figure from matplotlib,
+[ 3301.24s ->  3308.20s] we're connecting this to our label frame. That's our canvas. And then we're just going to say self dot canvas
+[ 3308.92s ->  3316.92s] dot get tk widget. And we will throw this in what we got to tell it where to live, right? So row zero,
+[ 3317.64s ->  3327.35s] column zero, and we'll make it sticky to tk west, tk east, tk north and tk south. And that is going to do it
+[ 3327.35s ->  3333.75s] for our user interface. That certainly was a beast, but well worth it. Now's the fun part, we get to
+[ 3333.75s ->  3340.31s] actually build these functions that do stuff, interacting with the server and our client. So let's,
+[ 3340.31s ->  3345.27s] let's do that. Start with this log message function, get the boring one out of the way first.
+[ 3345.27s ->  3353.59s] So we want to be able to print to our log, our console logs. So what we'll do is we'll say timestamp,
+[ 3353.59s ->  3362.15s] we'll create a timestamp for the message date time dot now. And we will use this string format for time,
+[ 3362.71s ->  3372.40s] we will have hour, and then we will have minute, and then we will have second. Cool. Then we're going
+[ 3372.40s ->  3381.36s] to do self dot status text is going to be having something inserted into the scroll box. So we will
+[ 3381.36s ->  3391.88s] say tk dot end, we'll insert it at the end, and we will insert the message and the timestamp. So that
+[ 3391.88s ->  3401.70s] will be the timestamp. And then we will give it a message and a new line. Now, this is a function that
+[ 3401.70s ->  3407.54s] hasn't been called yet, right? This is where we are going to be calling this function, giving it text,
+[ 3407.54s ->  3412.26s] getting a timestamp, and then pushing that to the console log. So keep that in mind, this is a
+[ 3412.26s ->  3417.78s] function to be able to print to that console log. It's not going to be printing a specific message,
+[ 3417.78s ->  3426.61s] whenever we want to print to the console log, we will call this function, we want to see the end,
+[ 3427.33s ->  3437.40s] and then we will update idle tasks. Okay, and this will allow us to essentially just update the items
+[ 3437.40s ->  3448.00s] in the status text scroll text console log in our UI. All right, now we get to create the connection to
+[ 3448.00s ->  3457.48s] interactive brokers itself. So what we'll do is we will do def connect IB self, we will say,
+[ 3458.28s ->  3467.48s] we're going to try to connect self dot host var dot get. So the value of the host bar is whatever we
+[ 3467.48s ->  3473.00s] input into that text field. Remember that text fields linked to the host bar. So we will get that value
+[ 3473.00s ->  3483.24s] and store it in this host variable. Same thing for the port bar, port bar dot get, then we will log this
+[ 3483.24s ->  3499.17s] message, we are trying to connecting to IB at host colon port. Nice. Let's create a thread for this
+[ 3499.17s ->  3507.97s] connection. We will try to create a thread for this connection. So we'll say self to IB app dot connect
+[ 3508.53s ->  3517.16s] through the host import that we just got from our user interface. This will be master client ID zero.
+[ 3517.16s ->  3523.08s] Okay, if you're running several instances of apps, if you're running several instances of apps on the same
+[ 3523.08s ->  3529.40s] trader workstation, same network, this could be an issue. But for now, don't worry too much about it. If
+[ 3529.40s ->  3533.96s] you're not running a couple of different systems, I've had issues with this, I've run, you know, a couple
+[ 3533.96s ->  3540.64s] of different systems through the same, through the same instance of trader workstation, and you have to
+[ 3540.64s ->  3546.32s] increment based on on the the connection. So something to keep in mind. But for now, if you're just running
+[ 3546.32s ->  3554.87s] this zero is sufficient self to IB app dot run. And that is effectively what we are trying to do.
+[ 3554.87s ->  3561.94s] Of course, we will accept any sort of exception as E. And what do we do with an exception? Well,
+[ 3561.94s ->  3568.69s] we got to log it. So we will log it, we get a connection error. And we will log it as E,
+[ 3568.69s ->  3575.64s] whatever that is. Okay, now we imported threading. So we will try to handle this connection as a thread,
+[ 3575.64s ->  3586.12s] threading dot thread, we will say target is this function, connect thread, and we will set daemon to
+[ 3586.12s ->  3593.00s] true. And then we will start this thread. So we want to pass through this thread, we don't want to get
+[ 3593.00s ->  3599.64s] stuck here in a linear capacity, we want to we want to turn this function effectively on try to try to
+[ 3599.64s ->  3605.64s] start this connection, but allow the the app to continue running. So let's try to wait for this
+[ 3605.64s ->  3618.00s] connection now. So I will say for whatever in range, let's say 50, we can do if self dot IB app dot
+[ 3618.00s ->  3625.60s] connected. So the only way that this would occur is if the server responded with, hey, we connected
+[ 3625.60s ->  3631.36s] successfully. Well, if we connect successfully, we can break we don't want to wait anymore.
+[ 3631.36s ->  3638.98s] Otherwise, we will time dot sleep point one. So this is going to sleep five seconds. So we're going to
+[ 3638.98s ->  3643.62s] wait up to five seconds for a connection to be successfully filled from the server from our
+[ 3643.62s ->  3649.38s] client. So we hit connect, it's going to try to connect at this host and port. If it connects
+[ 3649.38s ->  3655.78s] successfully, then this flag will be true at some point throughout the five seconds, we'll break this loop
+[ 3656.10s ->  3669.01s] and we can continue on. Okay, so if we connect successfully, what do we want to do? Well,
+[ 3669.01s ->  3675.01s] we had a whole bunch of buttons that we needed to enable, right? We want to be able to query data,
+[ 3675.01s ->  3682.05s] we want to be able to maybe analyze volatility disconnect. So we will say self dot connected
+[ 3682.77s ->  3689.17s] is equal to true. We will say self dot connect button dot config, we don't need to connect anymore.
+[ 3689.17s ->  3698.23s] So we can set this to disabled. Then we can say self dot disconnect button is going to be configured to
+[ 3698.23s ->  3704.34s] what normal, we want to be able to disconnect. Now, same thing for the query button. Now that we're
+[ 3704.34s ->  3713.03s] connected, we can run a query button dot config state is equal to normal. And then we want to log what
+[ 3713.03s ->  3728.95s] what happened? Well, you successfully connected to IBTWS. Terrific. Otherwise, what? Self dot log message
+[ 3730.44s ->  3737.08s] failed to connect to IBTWS. And this makes sense, right? Because if we went through this entire sleep,
+[ 3737.08s ->  3745.92s] this five second sleep, then what? This will be false. So we will log that we failed the connection.
+[ 3745.92s ->  3751.20s] Okay, if it breaks, then we know this is going to be triggered for sure. Because the only way for
+[ 3751.20s ->  3757.12s] this to break is if we have successfully connected, the only way to successfully connect is to have the
+[ 3757.12s ->  3764.32s] server respond with a boolean that suggests that we have connected successfully. Cool, don't lose sight
+[ 3764.32s ->  3769.28s] of this. That's why we have this up here. Our VS code editor is telling us, remember, we have this
+[ 3769.28s ->  3775.12s] connect IB function, and we're still operating within this try. So we need to close with an accept.
+[ 3777.80s ->  3785.80s] Okay, so I have accept. And we're going to accept exception as E. And we still got to keep that within
+[ 3785.80s ->  3795.64s] the function. And we will say self dot log message. And we will log that there is a connection error.
+[ 3797.86s ->  3804.80s] And we will log that as E. Okay, and this needs to be tabbed in one more time. So that it's in line
+[ 3804.80s ->  3812.08s] with this try within the connect IB function. And that will do it for this this connect IB function.
+[ 3812.08s ->  3822.64s] What about disconnect? Disconnect, equally as important, def disconnect, IB self, we will say,
+[ 3822.64s ->  3830.44s] try, we will try to do IB app dot disconnect. Where are these functions coming from? Well,
+[ 3830.44s ->  3836.20s] we implemented the E wrapper and E client from the interactive brokers API. These functions are
+[ 3836.76s ->  3845.73s] coming from those classes. So we're going to try this disconnect. We'll set the connection to false.
+[ 3847.68s ->  3854.72s] We'll want to be able to connect again. So we will configure the state of the connection button as
+[ 3854.72s ->  3861.36s] normal. We want to be able to, well, I guess we don't want to be able to click disconnect. So we will set
+[ 3861.36s ->  3872.34s] this to disabled self dot query button dot config state is equal to disabled, we don't have a connection,
+[ 3872.34s ->  3886.36s] so we can't query. And we can't analyze any volatility. Cool. We will not display any implied volatility then.
+[ 3887.00s ->  3896.87s] So we will just set the current implied vol to none. And we will update the current vol display.
+[ 3898.48s ->  3908.79s] And we will just leave a blank. And then we will log to the console disconnected from IBTWS.
+[ 3910.72s ->  3919.40s] Of course, if there's some sort of error, we will accept an exception as E, and this will be self dot log
+[ 3920.20s ->  3928.84s] message F disconnect error. And we will leave that as E. So now we have our connect and disconnect
+[ 3928.84s ->  3935.40s] functions with appropriate logging. Now we get to create the function to actually query data.
+[ 3936.74s ->  3950.12s] So we'll call this query data. And we will say if not self dot connected, we can't go about querying
+[ 3950.12s ->  3956.28s] data if we don't have a connection to a data provider. So we will say message box show error,
+[ 3957.70s ->  3968.63s] error, not connected to IBTWS. Okay, so we need that connection. Otherwise, we need to get the symbol
+[ 3968.63s ->  3976.72s] from the symbol bar. And we need to make this uppercase. And we need to get the duration from
+[ 3976.72s ->  3985.49s] the duration bar. And this is exactly what we did above with the host and the port. So we have these
+[ 3985.49s ->  3994.61s] variables tied to the input fields, and we can just get those the string bars relative to the actual
+[ 3994.61s ->  4002.32s] input. And we do that by just accessing the string bars directly with these getters. Okay,
+[ 4003.83s ->  4008.71s] we're going to try to query the implied volatility now. So I'm going to log that we're trying to query
+[ 4008.71s ->  4028.12s] it log message querying implied volatility for and we'll throw the symbol dot dot dot. Okay, now we are
+[ 4028.12s ->  4039.27s] going to clear the historical data if any exists. And we are going to try to run this query. Okay,
+[ 4039.27s ->  4047.81s] remember the historical data variable is a dictionary. The dictionary has a key that is the request ID
+[ 4048.69s ->  4056.05s] for the data that we are trying to access. So if I'm trying to query NVIDIA data, that request ID might
+[ 4056.05s ->  4063.11s] be one. Okay, then if I'm trying to query Apple data after that request ID might be two. So this
+[ 4063.11s ->  4069.67s] dictionary is keeping track of the data based on that request ID as a key. And the list that it returns
+[ 4069.67s ->  4074.95s] is going to be a list of a dictionary that contains all of the information from the query.
+[ 4074.95s ->  4083.03s] All right, we need to establish the contract. But fortunately, we already created a function for
+[ 4083.03s ->  4090.23s] that. So the contract is equal to what self dot create equity contracts, and we'll throw the symbol
+[ 4090.23s ->  4099.11s] in there. Now we can actually go about making the historical data request self dot IB app dot rec historical
+[ 4099.11s ->  4107.43s] data. We're going to have rec ID. One contract is equal to the contract that we just created.
+[ 4108.07s ->  4116.55s] Then we will say end date time is blank, we want as current as possible. The duration string is going
+[ 4116.55s ->  4123.46s] to be the duration. Remember from our app, that's what we did here with the duration bar. Then we need
+[ 4123.46s ->  4131.38s] to do the bar size setting. And I'm going to use one day. You can use whatever you like. You can change
+[ 4131.38s ->  4143.12s] how vol is annualized. But we're going to use one day. What to show? Well, this is a volatility trading
+[ 4143.12s ->  4163.00s] dashboard. We want option implied volatility. Okay, we want to use RTH format date. Keep up to date. We don't
+[ 4163.00s ->  4170.53s] need this to be up to date. And we can just pass an empty list for the chart options. And that is
+[ 4170.53s ->  4179.86s] sufficient for this historical data request. All right, we can add a timeout for the fetching of
+[ 4179.86s ->  4185.14s] this data. If it doesn't get returned in a timely manner or something is wrong, we could say timeout is
+[ 4185.14s ->  4193.97s] equal to save 15. Start time is equal to time dot time. And then we can wait for this historical data.
+[ 4193.97s ->  4204.53s] So while one not in self dot IB app dot historical data, that means that we haven't received the data
+[ 4204.53s ->  4213.81s] to that key yet. So we haven't received the data. And while time is still before the timeout time,
+[ 4215.33s ->  4225.91s] so it's less than the timeout time. All right, then we are just going to wait. And this is just us
+[ 4225.91s ->  4232.63s] waiting for the server to return the historic implied volatility data to us. Here we go.
+[ 4232.63s ->  4241.72s] What happens if we get data from the server? If one is in self dot IB app dot historical data? Well,
+[ 4242.52s ->  4251.22s] data is equal to self dot IB app dot historical data. And where can we find it? Well, the key for the
+[ 4251.22s ->  4264.60s] rec ID is going to be one. That was the request ID we used here. Right? So if the length of the data
+[ 4266.76s ->  4274.42s] is greater than zero, that means we got something. So we can say self dot, I'll call it equity data,
+[ 4274.42s ->  4281.56s] I guess. I mean, I don't want to be confusing. Well, I guess this will be, um, this will be a data
+[ 4281.56s ->  4289.48s] frame. So I can make it implied volatility. Um, self dot equity data is equal to PD dot data frame
+[ 4290.28s ->  4297.16s] data, and then we'll have date and implied volatility. So we'll say self dot equity data,
+[ 4297.88s ->  4306.61s] and we'll throw date in there. We'll set this equal to PD dot to date time self dot equity data
+[ 4306.61s ->  4317.11s] data date. So we can format it. Then we can do the implied volatility is going to be the close.
+[ 4317.91s ->  4324.07s] So we'll set the index to be the date. So this is a pandas data frame. Now we have a column for date.
+[ 4324.07s ->  4329.67s] We have a column for close. The close is going to contain the implied volatility data. The date is
+[ 4329.67s ->  4336.47s] what we want to index the implied volatility data by. So we'll say self dot equity data dot set index,
+[ 4337.03s ->  4344.39s] and we'll set this to date in place is equal to true. That means we're impacting the actual data
+[ 4344.39s ->  4349.67s] frame itself. We're not creating a copy or we're not applying this to some sort of copy of that object.
+[ 4349.67s ->  4361.67s] We're applying it to that object itself. The implied volatility data is going to be equal to the close
+[ 4363.06s ->  4374.52s] self dot equity data dot close. And we can log now using our logger that we have received. And we can
+[ 4374.52s ->  4382.52s] plot how much data we've received, the length of the equity data. And then we could say implied vol points
+[ 4383.40s ->  4395.60s] for symbol, whatever symbol we got. And then we can also log the date range. And this will be
+[ 4397.54s ->  4406.26s] self dot equity data dot index dot min. And remember, we're using, um, the, the pandas date time
+[ 4406.82s ->  4410.90s] object. That's what we did with the two date time. So we can use dot min.
+[ 4410.90s ->  4421.80s] And this is going to go all the way to the index dot max. Okay. Nothing too surprising there. Just
+[ 4421.80s ->  4429.67s] stuff that we would want to see in the console about the data that we received. And a good note
+[ 4430.23s ->  4441.57s] that all I vol values are annualized. Definitely worth noting. Now we're going to go about processing
+[ 4441.57s ->  4447.01s] this implied volatility data. We want to run these regressions, right? We want to be able to create
+[ 4447.01s ->  4453.33s] these. We want to be able to create these, uh, this time series of implied volatility. We want to look at
+[ 4453.33s ->  4460.36s] the percentiles. So we need a function to be able to do that. We're going to create a function called
+[ 4460.36s ->  4471.17s] process implied volatility. And then we're going to create a button analyze and now, well, actually
+[ 4471.17s ->  4476.05s] we already have the button. So we're, we're, all we're doing is modifying the state rather state is
+[ 4476.05s ->  4484.39s] normal. Okay. So remember we're going to leave the analyze button disabled until we are certain we
+[ 4484.39s ->  4491.43s] receive data here. We're certain we receive data because if one is in the historical data dictionary
+[ 4491.43s ->  4498.55s] as a key, then that means the server responded with the, the data for that particular request.
+[ 4498.55s ->  4507.59s] So we can go about enabling this button to analyze the data we received. Cool. On the flip side,
+[ 4511.62s ->  4519.49s] else, that means the length of data is not greater than zero. No I vol data, no I vol data received.
+[ 4519.49s ->  4529.43s] That's a problem. Set the equity data to none. We don't have anything. Okay. On the outer if statement,
+[ 4529.75s ->  4538.47s] right. This is just that no implied volatility data has been received. Um, so we can just make a note
+[ 4538.47s ->  4560.96s] that, and this could be, may not be available for symbol worth noting self dot equity data is equal to
+[ 4560.96s ->  4566.26s] none. So if perhaps it's unavailable for the symbol, perhaps you're not subscribed to the,
+[ 4566.90s ->  4571.06s] the market data subscription with interactive brokers that you need. It's like most of their
+[ 4571.06s ->  4577.22s] data subscriptions are like a dollar. So, you know, whatever it is, um, what we can just make note
+[ 4577.22s ->  4585.54s] that there's some sort of, some sort of, um, reason why the server is not responding with data
+[ 4585.54s ->  4591.38s] because we didn't find the key in this, uh, historical data dictionary. If we don't find that
+[ 4591.38s ->  4597.06s] key, that means the server didn't respond with data for the symbol. So that's what this note is for.
+[ 4597.06s ->  4601.86s] Um, it's roughly equivalent to this note. So we really don't need this, I suppose here,
+[ 4601.86s ->  4606.82s] because if this is true, well, actually that's not necessarily the case. It might just respond with,
+[ 4606.82s ->  4613.06s] with zero data. It could respond with the key one with no data. So both, both is, both is fine.
+[ 4613.06s ->  4619.54s] Something I just noticed is we created some of these functions within the setup UI function,
+[ 4619.54s ->  4624.26s] but we can fix it by just tabbing back out the function itself. So if I scroll up to,
+[ 4624.82s ->  4630.42s] let's say this log message function, I'm just going to highlight it and hit shift tab,
+[ 4630.98s ->  4637.70s] and it's going to change the color of the function to being used. Um, and that's because this was tabbed
+[ 4637.70s ->  4644.42s] in and it was local to the setup UI. We want it to be accessible via the class. So I'm just going to do
+[ 4644.42s ->  4653.46s] the same thing for the connect IB and disconnect and query data, and then shift tab, and that will make
+[ 4653.46s ->  4660.10s] all of these function as intended. Sorry about that. It looks like I forgot to just back out of the setup
+[ 4660.10s ->  4668.98s] UI function. So shift tab on the log message, connect IB, disconnect IB, and the query data, and we'll be all set
+[ 4668.98s ->  4677.03s] to create the next function. And that next function is going to be a function to process the implied volatility.
+[ 4677.03s ->  4686.95s] So I'll say def process implied volatility self. We will say, if there is no equity data,
+[ 4688.42s ->  4696.60s] then we can return, we don't need to do anything. Otherwise, let's tell the user that we are going to
+[ 4696.60s ->  4702.00s] process the eyeball data. Okay.
+[ 4702.00s ->  4715.84s] Okay. Worth noting that all IVOL data is annualized. Okay. Now keep in mind, we're working with this
+[ 4715.84s ->  4724.32s] equity data pandas data frame. The index is the date. We have this column of implied vol and the server
+[ 4724.32s ->  4730.72s] returned the IVOL in the closed column. So what we want to do is we want to scale that closed column
+[ 4730.72s ->  4738.96s] by the vol annualization. You could say this is a redundancy because here we assigned the implied
+[ 4738.96s ->  4744.72s] vol to the close. So we actually have two columns. We have this closed column of IVOLs and we have this
+[ 4744.72s ->  4750.16s] implied vol column of IVOLs, but tomato, tomato. It's really however you want to do it. So I'm just
+[ 4750.16s ->  4757.20s] going to scale that close and store it in this implied vol column. So this is equal to self.equity
+[ 4758.00s ->  4767.28s] data close. And then I will square this by MP dot square root self dot vol annualization. Remember,
+[ 4767.28s ->  4774.08s] we're dealing with volatility. If we want to scale it to the appropriate time, then we need to use the
+[ 4774.08s ->  4781.44s] square root. It looks like I haven't actually imported numpy. I guess I forgot to at the top.
+[ 4782.24s ->  4791.60s] So I'll do that. Scroll all the way up to the top. Import numpy as MP. Allow us to access some
+[ 4792.16s ->  4800.61s] necessary functions like this square root function. So now we can scale it by self dot vol annualization.
+[ 4800.61s ->  4808.34s] If you recall, vol annualization at the top here was 252. And we requested, if you go back down to our
+[ 4808.34s ->  4817.67s] data requests daily bar sizes, so we're scaling it correctly. Now we need to create this percentile
+[ 4817.67s ->  4829.51s] breakdown self dot equity data. We will do an IV percentile. We'll set this equal to self dot equity
+[ 4829.51s ->  4840.72s] data. Vol. Remember, this is annualized. We'll do a rolling window of 252 and we will rank it to
+[ 4840.72s ->  4853.06s] percentile. The current implied volatility is just going to be the latest vol point or the last vol
+[ 4853.06s ->  4859.62s] point in that pandas data frame. So we can say current implied volatility is equal to self dot equity data
+[ 4860.34s ->  4868.40s] dot or we got to get the implied volatility column. And we will say dot iloc minus one. Remember,
+[ 4868.40s ->  4871.44s] if you have a list slice notation, you can go all the way to the end with minus one.
+[ 4873.03s ->  4880.02s] Zero is going to be the first element. This, of course, is if the length of the equity data
+[ 4880.02s ->  4890.28s] is in fact greater than zero. Otherwise, we got nothing. We can get a copy of the volatility
+[ 4890.28s ->  4903.38s] data itself by simply making a copy of the data frame for the implied vol and the implied vol percentile
+[ 4903.38s ->  4912.00s] that we just came up with dot copy. And now we can, we're going to have to update the display.
+[ 4912.72s ->  4917.84s] So we will call a function update current vol display that we will create in a moment.
+[ 4918.64s ->  4927.44s] So I will say self dot update current vol display. We'll create that in a moment based on this
+[ 4927.44s ->  4935.03s] percentile and implied volatility annualization update the display. And of course, if the self dot
+[ 4935.99s ->  4945.65s] current implied volatility is not none, then we can log that we have, you know, the implied volatility
+[ 4945.65s ->  4955.01s] from the server. And that is that the current I vol is given by and we can say self dots current implied
+[ 4955.01s ->  4965.41s] volatility and then make that a 0.4 float. Then we can do in terms of percentage as well,
+[ 4965.41s ->  4974.61s] if we would like to. And this will be self dot, I guess this will be self dots current implied vol
+[ 4974.61s ->  4983.75s] times 100.2 F and then we can add a percent symbol at the end of it to make it percentage.
+[ 4985.68s ->  4993.28s] So rounded to two versus rounded to four. That's what 0.4 F and 0.2 F is in this formatted log
+[ 4993.28s ->  5001.48s] statement. Then we'll just give the IV range. And this is going to be the min max of the, the time
+[ 5001.48s ->  5008.84s] series of implied volatilities self dot log message. We will say F IV range and we'll just give it as
+[ 5010.12s ->  5019.24s] this range of the implied volatility column, get the max and min. So dot min, we'll round it to four
+[ 5021.01s ->  5027.73s] and we will say dash, not minus. This is the range. So dash and we'll do the same thing. I'm just going to
+[ 5027.73s ->  5049.30s] copy and paste and we will make this a max. Cool. Otherwise, if the current implied volatility
+[ 5050.34s ->  5060.79s] is none failed to process, I have all data. Okay. So we've sufficiently logged everything there.
+[ 5062.53s ->  5068.37s] That is our function to process the implied volatility. Now we need a function to update the
+[ 5068.37s ->  5076.85s] plot or not update the plot quite yet. We want to update the frame with the volatility information
+[ 5076.85s ->  5082.45s] that we just queried. So we have this current implied vol data. Now we have this time series
+[ 5082.45s ->  5087.25s] of implied volatilities. We have that frame with the readout. So let's, let's update everything. So
+[ 5087.25s ->  5103.83s] Def update current vol display. We will say if self dot current implied vol is not none,
+[ 5104.95s ->  5115.28s] then let's update everything. Self dot current vol label dot config. Let's set the text. This will be a
+[ 5115.28s ->  5126.05s] formatted string. We have self dot current implied vol and this will be rounded to four places. And of
+[ 5126.05s ->  5134.20s] course, in percentages, this can be, we can just quote it in percent. Let's just quote it in percent.
+[ 5134.20s ->  5145.40s] We don't need two times 100 self dot current implied vol times 100 to two decimal places float. Cool.
+[ 5145.40s ->  5150.52s] So we'll, we'll quote it in terms of a percentage. So our current implied volatility there is annualized
+[ 5151.08s ->  5161.84s] now we're going to do the computation text. So the computation text is equal to annualized by root
+[ 5163.06s ->  5171.54s] 252 factor important to note what I will you're working with. So we will do self dot vol computation
+[ 5171.54s ->  5184.58s] label and this will be dot config. And we will make this the text computation text. Equivalently,
+[ 5184.58s ->  5196.80s] you can just throw this string in here, same thing. Then we want to update the vol range itself on the
+[ 5196.80s ->  5207.22s] frame. So again, assuming that we have data, we really want to try to, you know, handle all of the
+[ 5207.22s ->  5212.58s] edge cases that we might be missing data. And then trying to process the data and all of these functions
+[ 5212.58s ->  5217.54s] for the frame or for analysis or regression, whatever it is. So I'm always going to try to handle the data
+[ 5217.54s ->  5225.54s] with this is not none. The min is going to be self dot equity data. We will make implied vol dot min.
+[ 5227.33s ->  5233.17s] And this is, this just makes sense, right? This is going to be the min, the max, the mean. This is for
+[ 5237.86s ->  5256.15s] that percentile analysis full max will mean these are just basic calls to the the panda data frame.
+[ 5256.15s ->  5262.31s] Um, this is a series object. This is a panda series and all of these functions are baked in min, max,
+[ 5262.31s ->  5272.12s] mean it's quite, quite simple that we can do the range text. We can just set it to vol min,
+[ 5272.92s ->  5284.42s] can round to whatever we want. I'll do three. Then we could say the mean is vol mean 0.3 is sufficient.
+[ 5284.98s ->  5297.24s] It's whatever you like. We'll do vol max 0.3 F good. Um, this is going to be in decimals. You can
+[ 5297.24s ->  5303.48s] make this in terms of percentages too, by just doing what we did here, scaling it by 100 and then
+[ 5303.48s ->  5309.64s] rounding to two instead. Um, it's however you'd like to do it. I'll do it in terms of decimals here,
+[ 5309.64s ->  5314.28s] but if you'd like to do it in terms of percentages, you can just apply that, that simple scale.
+[ 5317.73s ->  5327.30s] Of course, if we have the equity data is none, then this is just going to be NA. Okay.
+[ 5329.99s ->  5334.47s] And now we can, since we've handled this range text, that's essentially what this
+[ 5335.03s ->  5343.35s] statement was for. We can use it here in the vol range label and we can just configure the text
+[ 5343.35s ->  5349.91s] to be this range text. So that's what this conditional was for. We've configured the text
+[ 5349.91s ->  5356.23s] based on the data we've received in the equity data data frame. This is a pandas data frame.
+[ 5356.23s ->  5361.91s] This is a series object itself. When we reference a column and we constructed this text that contained
+[ 5361.91s ->  5369.89s] the min, the mean, the max, we'll throw that in the label so that we can see it. Now let's, um,
+[ 5371.01s ->  5376.77s] let's create some sort of conditional based on the level. So we can just kind of this again,
+[ 5376.77s ->  5382.45s] this isn't really like, this isn't static and it's not really useful because everything is relative to
+[ 5383.25s ->  5389.73s] the vol for a particular ticker, but as a baseline and something to make it a little more
+[ 5390.37s ->  5395.01s] kind of like systematic interactive, whatever you want to call it, we can just color the label
+[ 5395.01s ->  5403.46s] based on if it's like high vol, like mid vol or low vol. So we'll just say if the current implied
+[ 5403.46s ->  5411.19s] volatility is, let's say greater than 0.4, then we'll set the label. So the current,
+[ 5412.39s ->  5418.52s] I guess this is the current vol label. I want to make sure that I'm using the correct, um,
+[ 5418.52s ->  5432.68s] self dot current vol label, current vol label. Yeah. Vol computation label is for the, yeah. Scaling
+[ 5432.68s ->  5439.94s] factor. Okay. So this, yeah, this is based on the current implied volatility. Yeah. Current implied
+[ 5439.94s ->  5446.90s] volatility, self dot current vol label. We are going to configure the foreground to be red. So high vol,
+[ 5446.90s ->  5458.18s] red. Elif self dot current implied vol is less than 0.15. Then we have low vol self dot current vol label
+[ 5458.90s ->  5467.86s] dot config. We'll make this, let's say green. Otherwise let's just make it, we'll just make it black.
+[ 5478.77s ->  5491.01s] Okay. This is just to add some interaction between the, the UI elements that is displaying the implied
+[ 5491.01s ->  5498.05s] volatility, the current implied volatility, uh, along with some sort of level. This probably should be
+[ 5498.05s ->  5505.33s] based on the percentiles. We, we have them, right? We can compute them because we have them in this
+[ 5505.33s ->  5511.41s] equity data. That is something good for you to try at home. So, I mean, I could leave this as a comment,
+[ 5511.41s ->  5522.34s] like try yourself, don't use AI, try, try yourself, make this based on percentiles, call it the 25th
+[ 5523.59s ->  5533.12s] and the 75th. It's a good exercise. Pretty easy to do too. Cause it'll just be baked into these,
+[ 5533.12s ->  5541.76s] these series functions anyway. Cool. And now we're going to call a separate function at the bottom of
+[ 5541.76s ->  5547.12s] this to update the regime analysis. And we're going to have to create that next update the
+[ 5549.03s ->  5559.01s] regime analysis. And of course, if the current implied volatility, the current implied volatility
+[ 5559.01s ->  5571.59s] is none. We'll have this else. We got to set everything to unavailable. So self dot current
+[ 5572.55s ->  5582.18s] vol label dot config, we will set the text to not available, make the foreground color black in case
+[ 5582.18s ->  5594.04s] we changed it prior. Vol computation label dot config, the text will be no data. The vol range label,
+[ 5594.92s ->  5606.23s] we will say dot config, text will put not available, self dot regime label, not available.
+[ 5611.65s ->  5622.07s] I'm just going to copy this self dot percentile label, not available, self dot reversion label,
+[ 5622.07s ->  5628.63s] not available. And that should be just about everything we need to update if we didn't get
+[ 5628.63s ->  5634.87s] any implied volatility data. So that's going to be our update current vol display function.
+[ 5634.87s ->  5639.59s] Now we need a function to update the regime analysis to analyze high vol, above average,
+[ 5639.59s ->  5644.23s] normal, below average, and low vol. This is going to be programmed statically. But again,
+[ 5644.23s ->  5650.15s] another really good try it yourself is to do this based on percentiles. In fact, this is nowhere near
+[ 5650.79s ->  5656.07s] some sort of like math textbook that is, Hey, you know, the proof is left as an exercise
+[ 5656.07s ->  5661.99s] to the reader. That's just cruel. This is, this is very easy. You can literally just access these
+[ 5661.99s ->  5669.19s] percentiles in this series object, and then you can change the color based on them. Same thing with
+[ 5669.19s ->  5673.83s] the volatility regime analysis we're about to produce. You can do the exact same thing because
+[ 5673.83s ->  5679.11s] we're about to build this function, just use a series object. So that's just about as close as I can
+[ 5679.11s ->  5683.83s] get to telling you how to do it without doing it for you. So please give that a shot if you want to
+[ 5683.83s ->  5688.71s] make this dynamic relative to the equity that you're working with. This is otherwise going to
+[ 5688.71s ->  5697.51s] be fixed and 0.4 might not be high vol. Something like Nvidia has what a mean vol of 0.4. So that's,
+[ 5697.51s ->  5701.99s] that's not really what we're working with. So definitely try that on your own within this
+[ 5701.99s ->  5707.83s] system. Let's create this regime analysis, update regime analysis function. Now we're just kind of
+[ 5707.83s ->  5712.63s] iteratively going through building out all of the components of this UI based on the data we receive
+[ 5712.63s ->  5717.59s] from the server, the implied volatility data we received from the server, and very soon we're
+[ 5717.59s ->  5722.23s] going to be going about constructing the actual regression itself. So let's build this function
+[ 5722.23s ->  5727.19s] to update the regime analysis. This is going to have fixed values based on the percentiles. So
+[ 5727.19s ->  5733.51s] essentially it's doing what I'm suggesting here for this guy, but the percentiles themselves are fixed,
+[ 5733.51s ->  5738.39s] 0.8, 0.6, 0.4, 0.2. You can come up with your own methodology if you'd like to use different
+[ 5738.39s ->  5743.03s] percentiles, but you know, that's, uh, that's completely up to you. So for now, let's start by
+[ 5743.03s ->  5752.85s] creating this update regime analysis function, def update regime analysis self here. If we don't have
+[ 5752.85s ->  5763.70s] any vol data or the current implied volatility is none, then what happened? We don't have any data.
+[ 5763.70s ->  5770.10s] So there's nothing to update return. Otherwise the current percentile is equal to self.vol data.
+[ 5770.10s ->  5778.02s] Remember we've created that copy. We have this vol IV percentile. We want to get the most currents.
+[ 5778.98s ->  5784.98s] So we'll use minus one and now we can determine the regime. So this is going to be static. You can
+[ 5784.98s ->  5789.54s] make this dynamic, however you want to do it, but I'm going to say if the current percentile is greater
+[ 5789.54s ->  5800.96s] than 0.8, I will define the regime as high I vol. I will say the color is equal to red.
+[ 5803.14s ->  5816.56s] If the percentile is greater than 0.6, I will say the regime is above average. I guess we don't need
+[ 5816.56s ->  5824.55s] eyeball. I'll just call it high. Um, now we want to keep it in terms of eyeball to make sure that it's
+[ 5824.55s ->  5829.03s] clear. We're working with implied volatility. There's, there's no, uh, approximation of
+[ 5829.03s ->  5833.83s] realized volatility here. We're, we're dealing with historic implied volatility. So regime
+[ 5834.39s ->  5844.44s] above average I vol, the color we can call this just maybe like orange. Okay. I lift current
+[ 5844.44s ->  5858.07s] percentile is above 0.4. We will just call this normal turn. Just make this block. Then if it's
+[ 5858.07s ->  5868.04s] normal current percentile is greater than 0.2, this can be considered below average regime is equal to
+[ 5868.76s ->  5889.73s] low average. I will maybe make this blue. Otherwise this is just low and the color can be green. Okay.
+[ 5889.73s ->  5900.95s] This, this is just some way to rank the current status of implied volatility. It's worth noting that
+[ 5900.95s ->  5911.59s] like these aren't mutually exclusive, right? Like you can be over 0.2 and over 0.4 and over 0.6 and over 0.8,
+[ 5911.59s ->  5919.99s] right? 0.9 satisfies everything. But I mean, this is just like basic programming. I think it's just worth
+[ 5919.99s ->  5928.79s] noting the difference. Um, you know, if LF LF LF we're dropping through each of the conditionals here.
+[ 5929.35s ->  5938.26s] Um, definitely worth noting for, uh, if, if you're unfamiliar with the, the Boolean logic of how this
+[ 5938.26s ->  5943.14s] functions, all of them can be true, but if this one's not true, then we'll check for this one and
+[ 5943.14s ->  5950.34s] so on and so forth. Um, but that's why we're not, you know, automatically triggering all of these along
+[ 5950.34s ->  5959.16s] with this one, right? Okay. Let's configure the, uh, the regime label. Now, now that we have this regime
+[ 5959.16s ->  5965.08s] in color, we can configure the regime label. So the label itself, right? We can config, we can set the
+[ 5965.08s ->  5973.68s] text to be this regime, the foreground, we'll set it to this regime color, um, that we called color and
+[ 5973.68s ->  5980.42s] the percentile label. We have that based on the percentile, the current percentile. That's what we used
+[ 5980.42s ->  5986.82s] to compare to these fixed values. So the text will be equal to this formatted string, the current
+[ 5986.82s ->  5999.97s] percentile, current percentile, and we can just round to 0.1%. Cool. Can talk about some sort of
+[ 5999.97s ->  6006.13s] reversion expectation too. This is the idea that volatility is, is mean reverting. That is something
+[ 6006.13s ->  6012.29s] that we observe, um, within the market. We see that volatility is a mean reverting process. The mean
+[ 6012.29s ->  6018.53s] itself, non-stationary, it's not a fixed value can oscillate, can change over time. Um, but, but
+[ 6018.53s ->  6024.45s] something to keep in mind is that we can expect some sort of reversion down or up to some sort of mean,
+[ 6024.45s ->  6029.97s] not crazy to think if we're above the 80th percentile that on average, we're going to see
+[ 6029.97s ->  6036.45s] some sort of reversion to a mean down same thing with reversion up below, say the 20th percentile.
+[ 6036.45s ->  6043.49s] So if the current percentile is greater than 0.8, this could suggest some sort of reversion down.
+[ 6043.49s ->  6056.20s] So expect mean reversion down and the color for this, we'll call this our color for reversion color.
+[ 6056.20s ->  6063.57s] We'll make this blue L. If the current percentile is less than 0.2, then we can do the same thing,
+[ 6063.57s ->  6073.51s] but it's going to be mean reversion up and the color is going to be black. Oh, good. It didn't
+[ 6073.51s ->  6083.00s] get cut off. I was concerned. Good. Okay. It's in between, you know, really, we, we don't have any
+[ 6083.00s ->  6089.56s] sort of reversion. So this is going to be, uh, like a neutral quote unquote signal and we'll call this our
+[ 6089.56s ->  6099.14s] color, just, just black. Okay. Now we can update this reversion label to be the reversion text and the
+[ 6099.14s ->  6105.62s] foreground color will just be the R color. That is the, the color of the reversion up reversion down
+[ 6105.62s ->  6115.62s] blue, black, or black. I guess instead of black, it should be red or green. I think we could leave
+[ 6115.62s ->  6121.54s] it as red. If it's, if it's low vol, then expecting a reversion up implies that volatility is going to
+[ 6121.54s ->  6127.30s] increase color red is probably fine for that. Maybe orange, but however you want to, however you want to
+[ 6127.30s ->  6136.71s] do it. Okay. And that should be sufficient for this. Yeah. That's going to be sufficient for this
+[ 6136.71s ->  6143.11s] update regime analysis. Now we can move on to actually analyzing the volatility itself. This is
+[ 6143.11s ->  6147.67s] where we're going to build out the data frame for the regression analysis. This is where we're going to
+[ 6147.67s ->  6154.63s] take the average forward 30 day implied volatility. So it's a forward looking average of implied volatility
+[ 6154.63s ->  6160.31s] from the current point in time. We're doing this on a rolling basis. We query back two years of data
+[ 6160.31s ->  6165.35s] and all the way back, we're going to pretend that's the current point in time. We're going to look ahead
+[ 6165.35s ->  6171.67s] 30 days, take the average implied volatility, and we're going to regress that on the current
+[ 6171.67s ->  6176.15s] volatility, the current implied volatility at that point in time. And we're just going to keep doing that
+[ 6176.63s ->  6180.71s] rolling forward. There's a lot of ways to improve this methodology. You could do this in a disjoint
+[ 6180.71s ->  6187.27s] capacity. You could do this for particular clusters of volatility. If you're starting high or starting
+[ 6187.27s ->  6192.39s] low, there's, there's a lot of ways to condition this, improve this regression. Um, but again, this
+[ 6192.39s ->  6198.15s] is a very involved video building this from scratch. We'll focus on the code, focus on this implementation,
+[ 6198.15s ->  6203.11s] perhaps in another video, we'll talk about ways to improve it. Talk about using this maybe for,
+[ 6203.11s ->  6208.95s] for live trading. But again, you know, this is a very involved technical video. So please let me know if
+[ 6208.95s ->  6212.71s] that's something you'd like to see in a later video. Um, you've already been a trooper, you've
+[ 6212.71s ->  6218.39s] made it this far and now is really time for the, the bread and butter of this video. And that is
+[ 6219.03s ->  6226.77s] building this function to analyze the implied volatility. Okay. Um, I would also like to do a
+[ 6226.77s ->  6231.97s] more involved video on regression eventually, you know, this idea of a geometric interpretation,
+[ 6231.97s ->  6239.33s] a projection, this idea of, of how we actually get to the equation for it, the, the difference
+[ 6239.33s ->  6245.33s] between say like a multiple regression or, uh, just a single variable regression. There's a lot
+[ 6245.33s ->  6251.17s] I'd like to discuss. Um, but everything is largely based on interest. So let me know if that's something
+[ 6251.17s ->  6259.67s] you'd like to see. Um, nevertheless, let's, let's get started here. We'll analyze volatility. It's worth
+[ 6259.67s ->  6266.55s] noting all of these functions are already implemented in our user interface. So we built out,
+[ 6268.64s ->  6275.60s] say the query data function. We call that function as a command from the query button. It's already
+[ 6275.60s ->  6281.28s] built. Same thing with the analyze button. This analyzes volatility function is what we are calling.
+[ 6281.28s ->  6285.36s] And that's what we're building right now. So don't lose sight of this. We have this user interface. We
+[ 6285.36s ->  6295.22s] have all these little frames. We're building this functionality out. If we don't have any data,
+[ 6298.53s ->  6318.64s] can't do anything. We can show an error that, that no IVOL data is available for analysis and we'll
+[ 6318.64s ->  6333.64s] return. Okay. Otherwise let's log that we are going to be analyzing the implied volatility data.
+[ 6334.44s ->  6341.24s] Let's get this data frame of the forward 30 day implied volatility. We'll get this from the
+[ 6341.24s ->  6351.43s] volatility data, the implied volatility. We're going to compute this on a rolling basis. We're going to
+[ 6351.43s ->  6374.20s] do a window of 30 days, minimum period one, take a mean and shift it 30 days. Okay. Then what we're
+[ 6374.20s ->  6380.36s] going to do is we are going to create this analysis, um, data frame. That's going to keep the current
+[ 6380.36s ->  6389.09s] VOL, the forward VOL, the VOL difference and the VOL percentile. Okay. So let us do this. The analysis
+[ 6389.09s ->  6406.00s] data frame is going to contain the current VOL, self dot VOL. This is just going to be the implied
+[ 6406.00s ->  6422.28s] volatility data, the forward VOL that we just created, the forward 30 day VOL, the difference.
+[ 6422.28s ->  6450.64s] Remember this is for the different regimes and then the percentile. Cool. We'll drop all NA values.
+[ 6450.64s ->  6457.36s] Cause remember we're, we're shifting the future values to match up with the current values. That's
+[ 6457.36s ->  6462.88s] how we're doing this regression. We're regressing the future data on the current data. And we're seeing
+[ 6462.88s ->  6470.32s] if there's any explanatory power in, in the, the outcome, the average IVOL for the next 30 days.
+[ 6470.88s ->  6477.68s] So we'll do analysis DF is equal to analysis DF dot drop NA. You can just drop in place that is
+[ 6477.68s ->  6489.80s] equivalent to this, but we'll just use this for now. This is equivalent to analysis dot drop NA in place.
+[ 6489.80s ->  6503.56s] True. So use whichever you want, but in place just means it's operating on that particular object.
+[ 6503.56s ->  6510.76s] And it looks like this to act on the particular object worth noting. We can also know if we have
+[ 6510.76s ->  6517.48s] insufficient data for analysis. So if the analysis data frame, um, is less than 30, we don't even have
+[ 6517.48s ->  6531.41s] a point to regress. So we can just log that we have insufficient data. And in that case, we'll just
+[ 6531.41s ->  6541.19s] return, there's nothing else to do. Otherwise it's time to do some regressions. So we can import scipy
+[ 6541.19s ->  6552.53s] here. I guess I forgot to at the top. So from scipy import stats, we can do slope one, intercept one,
+[ 6552.53s ->  6564.15s] R value one, R value one, P value one, standard error one is equal to stats dot lin regress.
+[ 6565.11s ->  6577.75s] And here we're going to do analysis data frame. Current vol is equal to some intercepts times a slope of
+[ 6577.75s ->  6586.63s] analysis DF. And we will have the forward 30 day vol regressing the, the forward 30 day vol on the
+[ 6586.63s ->  6593.56s] current vol. And we're going to do this as well for the difference. So I'm just going to copy and paste
+[ 6593.56s ->  6602.60s] it as slope two, slope two, slope two, slope two. So, uh, slope intercept, R value, P value,
+[ 6602.60s ->  6608.28s] standard error two, current vol, not on forward, but this time we're going to do it on vol difference.
+[ 6610.39s ->  6622.32s] Okay. We're going to look for this split points between Y equals X. And that's really just a, um,
+[ 6622.32s ->  6627.68s] system of equations that we're solving to find that break point. Remember we have this low vol regime
+[ 6627.68s ->  6632.32s] and high vol regime and solving that system of equations is going to give us the break point.
+[ 6632.32s ->  6639.97s] So if slope one is not equal to one, then we can find this break point. If it's equal to one,
+[ 6639.97s ->  6645.57s] then it's equal to that dotted line Y equals X. And, you know, there's not going to be a break point.
+[ 6646.13s ->  6652.42s] So the intersection will then occur at, if you solve the system of equations,
+[ 6652.42s ->  6663.78s] intercept one divided by one minus slope one. Okay. Quite simple. Um, otherwise the intersection X
+[ 6663.78s ->  6675.46s] is going to occur. Um, not at all. So we'll just use the medium. That's the middle value.
+[ 6677.16s ->  6681.24s] So to separate the low and high vol regimes, we're going to look for that intersection between the
+[ 6681.24s ->  6686.60s] regression line and Y equals X. That is if the forward 30 day I vol actually matches what the current
+[ 6686.60s ->  6696.26s] I vol is. Um, then we will just take the, take the median. If, uh, if the slope is equal to one.
+[ 6698.00s ->  6703.76s] All right, let's create this high vol regime and low vol regime. Um, this is very simple. All we're
+[ 6703.76s ->  6710.64s] going to do is apply a filter to the current vol and the analysis data frame. And it's going to be
+[ 6710.64s ->  6716.00s] based on this intersection point. So the high vol regime is going to create points for analysis.
+[ 6716.00s ->  6723.20s] Um, it's going to create points for analysis based on the current vol. If it is greater than the
+[ 6723.20s ->  6735.56s] intersection X, the low vol regime is going to be the compliment less than or equal to intersection X.
+[ 6737.43s ->  6745.75s] Perfect. And now we can just run these regressions separately. So if let's say high vol regime dot sum
+[ 6746.47s ->  6753.59s] is greater than 10, we can run this regression. That's just a conditional to, to run this regression.
+[ 6753.59s ->  6760.63s] So let's just copy this regression code that we had up here and we will run it within this if statement.
+[ 6761.35s ->  6769.03s] And instead of slope two, we'll just call this slope high and we'll do intercept high and we'll
+[ 6769.03s ->  6776.63s] do our value. We'll just call it our high. We'll call this P high and we'll call this standard error
+[ 6776.63s ->  6785.06s] high. The actual regression itself is going to be done based on this filter. The high vol regime
+[ 6785.06s ->  6792.18s] is going to return. So this, this filter itself, right? This is going to return a series of booleans
+[ 6792.82s ->  6797.22s] and wherever this condition is true, it's going to be one. Otherwise it's going to be zero.
+[ 6797.86s ->  6803.94s] So we will base this regression then off of the analysis DF, but we're going to find places where
+[ 6804.50s ->  6812.42s] what the high vol regime applies. Same thing for the difference where the high vol regime applies.
+[ 6812.42s ->  6817.86s] So it's going to be dot loc and we're going to find those places where the filter applies.
+[ 6818.90s ->  6824.58s] If we have insufficient data, then we can just set all of these equal to each other and none.
+[ 6825.30s ->  6839.60s] So we will set this equal to none. So these are all equal. Wonderful. So that is for the high vol regime.
+[ 6839.60s ->  6843.92s] And we're just going to replicate that for the low vol regime. So we'll copy this,
+[ 6845.27s ->  6860.13s] do the exact same thing. And instead of high, it's going to be low. So call this low, low,
+[ 6863.40s ->  6867.80s] take two seconds to do a search replace, but I'm dedicated now.
+[ 6869.28s ->  6875.20s] standard error, low, standard error, low. Good. Copy this, make all of these equivalent to none. If we have
+[ 6875.92s ->  6889.01s] insufficient, uh, data. Cool. This is now the low vol regime, not the high vol regime.
+[ 6890.20s ->  6896.92s] Same thing for these filters. We're going to be applying the low vol regime, not the high vol regime.
+[ 6897.64s ->  6901.72s] Same thing. It's going to return a series of booleans based on this intersection.
+[ 6901.72s ->  6907.48s] And we want to find all the points where it's true that it is in fact, a low vol regime.
+[ 6907.48s ->  6913.24s] And remember that regime is based on the intersection between the line Y equals X and the regression line
+[ 6913.24s ->  6919.08s] that we came up with in the unconditional regressions. So that is exactly how we're
+[ 6919.08s ->  6929.80s] going to be doing this. Um, I think now we're ready to plot everything so we can do X one, clear
+[ 6931.84s ->  6941.67s] X two, clear X three, clear. And then we can create this, uh, this scatter plot of data and then plot the
+[ 6941.67s ->  6947.35s] regression line. So what does that look like? Well, we're going to do self X one that scatter,
+[ 6947.35s ->  6952.55s] there's going to be a scatter plot and we're going to plot what all of the current implied
+[ 6952.55s ->  6960.72s] volatility points against the Ford 30 day volatility points to make this look a little nicer. We can
+[ 6960.72s ->  6969.81s] set the alpha equal to 0.6 and the size to say 20. Let's add the regression line to that plot.
+[ 6969.81s ->  6979.14s] So the X range is going to be MP Lynn space. We will go from the min of the current implied volatility
+[ 6979.14s ->  6988.95s] available all the way to the max of the current implied volatility available. And then we will
+[ 6989.83s ->  6997.56s] do a hundred points. Remember any function that you're plotting is going to be some sort of linear
+[ 6997.56s ->  7004.60s] interpolation. It's just like really small lines that are being connected. We can't really plot like a
+[ 7004.60s ->  7011.16s] true continuous function. Can't have a point that's infinitesimally small, you know, that's just
+[ 7011.16s ->  7016.84s] getting into the, to the weeds though. So let's talk about Y pred one. This is going to be the output of
+[ 7016.84s ->  7023.40s] the regression equation. So what is this first chart? This first chart is the unconditional regression.
+[ 7023.40s ->  7030.98s] That is the regression of what Ford vol on current vol. We got that from here. So we want to use the
+[ 7030.98s ->  7041.38s] slope and intercept to construct the equation of the regression. So we will do slope one times this
+[ 7041.38s ->  7049.72s] input range. This is the domain plus the intercept one, and then we can plot it by self dot X one dot
+[ 7049.72s ->  7057.94s] plot X range. We're going to plot the regression line and we will just make this, we should make this red
+[ 7057.94s ->  7073.01s] line width, line width, line width, line width is equal to two. And for a label, we'll just call this
+[ 7074.40s ->  7084.64s] some sort of formatted string. We'll say regression R squared is equal to, and we'll put the R value one,
+[ 7085.36s ->  7093.41s] we can square it. And then this will be rounded to say three, three places. And that's going to be our
+[ 7093.41s ->  7100.05s] first plot of data. So this is the unconditional regression of Ford vol on current vol. And we're
+[ 7100.05s ->  7106.45s] going to do something very similar, um, for the, the difference, but don't forget, we still want to plot
+[ 7106.45s ->  7116.31s] the Y equals X line as a reference. So we'll create this min val set equal to the min of the current vol
+[ 7118.23s ->  7129.83s] and the forward vol. This can be seen maybe as a little redundant because,
+[ 7132.82s ->  7141.00s] you know, if there was, if it was not disjoint, then there's no way for the average to be lower
+[ 7141.00s ->  7148.44s] than any one of the points. I mean, that's just like sort of a basic math thing. Like if you have,
+[ 7148.44s ->  7154.44s] let's say 10 points and the lowest is one, like, let's say you just have an ordered list one through
+[ 7154.44s ->  7160.76s] 10, then the average can't be lower than one. So you could look at this as redundant, but if it is
+[ 7160.76s ->  7167.88s] disjoint, then you may actually have that as the case. So we'll create this min val max val is equal to
+[ 7167.88s ->  7179.88s] max. Same thing. We'll look at the max between the current vol and the forward idle. And we'll take the
+[ 7179.88s ->  7191.09s] max. I didn't take the max over here. Cool. And now I'm just going to plot this as Y equals X.
+[ 7191.09s ->  7202.71s] So I'll have the min val max val, and then the min val max val, and that's just going to be a line.
+[ 7202.71s ->  7212.02s] So we'll do K. We'll keep it dashed. We'll do a smaller line width, and we'll just set the alpha
+[ 7212.02s ->  7220.58s] to 0.7. And then the label will be Y is equal to X. So this is no change. That's the point of this
+[ 7220.58s ->  7226.26s] line. It's a reference. If the forward 30-day implied volatility is equivalent to the current
+[ 7226.26s ->  7235.70s] implied volatility, then there's no change observed on that, the average 30 days going forward on average.
+[ 7235.70s ->  7246.32s] All right. Now we're ready to look at the, well, I guess we could set the titles. So we'll set the
+[ 7247.20s ->  7263.11s] X label to be the current implied volatility. The Y label will be the 30-day forward average
+[ 7263.99s ->  7277.81s] um, implied volatility. The title will be the forward implied volatility versus the current implied
+[ 7277.81s ->  7287.73s] volatility. We could plot the regression equation too, as Y is equal to, we have slope one. We can round to
+[ 7287.73s ->  7297.09s] say 0.3 F and we can also throw in the R squared. Um, we'll have the intercept too, of course.
+[ 7301.08s ->  7310.82s] So intercepts good. Um, maybe we'll just put that after conventionally plus the intercept.
+[ 7311.38s ->  7321.64s] And we can also plot the R squared, which is just going to be the R value squared, R value one squared,
+[ 7322.20s ->  7337.64s] and we can round that to 0.3 F sufficient. Add a legend to that plot too, and then create a grid
+[ 7337.64s ->  7346.40s] with some, some alpha, try to make it look a little, a little nicer. And that's going to be the first
+[ 7346.40s ->  7351.84s] plot. So that's the unconditional regression of forward vol on current vol. Now we want to work on the
+[ 7351.84s ->  7360.00s] second plot of the difference. So what we'll do is we'll do, um, pretty much the same thing, but we're
+[ 7360.00s ->  7366.40s] going to create a scatter with a color label for high and low volatility regimes. So now we're working on
+[ 7366.40s ->  7374.80s] the second chart. Um, so we'll do self.axe2.scatter. We'll do analysis data frame. We will do the high
+[ 7374.80s ->  7382.16s] vol regime and we will make this the current vol. And we want to also look at the vol difference.
+[ 7394.23s ->  7400.37s] We have to locate this. So remember, we're just applying these filters here. This is nothing,
+[ 7400.37s ->  7405.09s] this is nothing crazy. So for this scatter, what we're doing is we're looking at the current vol and
+[ 7405.09s ->  7409.65s] the vol difference only in the high vol regime right now. That's exactly what we did with the
+[ 7409.65s ->  7416.84s] regression up here. So it's the exact same idea. Okay. So we'll come back down here. And what we're
+[ 7416.84s ->  7422.44s] going to do is we're going to apply some, some style to the chart. So alpha is equal to 0.6.
+[ 7423.08s ->  7435.57s] The size will be, let's say 20 color is red label. We will say is high vol regime. Okay.
+[ 7436.29s ->  7441.17s] We will say analysis data frame locate. This is the exact same thing, but we want to use a little
+[ 7441.17s ->  7449.84s] vol. So I'll just copy this, paste this. We will use the low vol regime filter. Now, remember,
+[ 7449.84s ->  7455.52s] this is a series of booleans and we are looking for data, the current vol and the vol difference
+[ 7455.52s ->  7460.64s] where we are in the low vol regime. Okay. So keep in mind the objects that we're working with here.
+[ 7460.64s ->  7466.80s] This is a data frame and we're applying a series of booleans as a filter locating where what current
+[ 7466.80s ->  7471.44s] vol and vol difference fall into this particular regime. You can also do it with, um,
+[ 7472.16s ->  7479.20s] if you just query the column directly and then pass this, um, through, through brackets afterwards.
+[ 7479.76s ->  7484.32s] So that's another way of doing it, but even still, this is not a high vol regime anymore. This is a
+[ 7484.32s ->  7490.69s] low vol regime instead of red. This should be blue or green or whatever you want to do. Okay.
+[ 7492.68s ->  7505.14s] Now we're going to add the appropriate, um, labels based on the regime. So if the slope
+[ 7510.08s ->  7519.44s] is not none, that means that the regression equation is, is valid. It's non, it's not zero.
+[ 7520.24s ->  7525.52s] We didn't have an issue computing the regression, essentially the regression functioned and we
+[ 7525.52s ->  7532.96s] have some sort of slope. We can say X high is equal to analysis dot look. Again, we're operating in this
+[ 7532.96s ->  7544.21s] high vol regime. We want to find the current vol. If the length of X high is greater than zero,
+[ 7544.93s ->  7560.34s] then we need to create this range X high dot min to X high dot max 100 points. This is exactly what we
+[ 7560.34s ->  7566.02s] did earlier. Y pred for the high vol regime. This is constructing that regression equation. We have
+[ 7566.02s ->  7575.54s] slope high times this input domain X range high plus this intercept high. So this is our regression equation.
+[ 7575.54s ->  7584.15s] This is our domain. This is our range. Now we can plot it self dot X to dot plot X range high
+[ 7585.27s ->  7605.56s] Y, Y pred high and we can do make it in red for the high vol line with equal to two for the label. We'll
+[ 7605.56s ->  7610.84s] just do a formatted string. We'll say that this is the high vol. Then R squared of
+[ 7611.80s ->  7620.29s] and then we will do the R squared from the regression. We will round it to three places.
+[ 7622.76s ->  7631.17s] Cool. That should be that should be correct for the high vol regression. Let's do the same for the
+[ 7631.17s ->  7649.14s] low, low, low, low vol regression. So if slope low is not none, then X low is going to be based on this
+[ 7649.14s ->  7660.74s] low vol regime. Then we will use X low dot min X low dot max for the range. This will be X range
+[ 7662.88s ->  7679.70s] low. Y pred low. This is going to be X range low. This will be intercept low.
+[ 7681.91s ->  7689.51s] Okay. And then we're going to be using Y pred low X range low. And this is going to be now
+[ 7690.88s ->  7700.31s] low vol. So what we've just done is we've plotted on the same subplot. So this is axis
+[ 7700.95s ->  7706.39s] X two, right? So we have plot one, plot two, plot three, plot one is the unconditional regression.
+[ 7706.39s ->  7712.23s] Plot two is the conditional regression based on the volatility regime that we solved that system
+[ 7712.23s ->  7718.23s] of equations for Y equals X and the regression line. That intersection creates two buckets.
+[ 7718.23s ->  7722.23s] Now we're going to be plotting both of those points separately. And we're doing that by using this
+[ 7722.23s ->  7729.60s] filter that we created the high vol filter and the low vol filter that we constructed up here. Okay.
+[ 7732.85s ->  7738.53s] Easy enough. Now we can actually just plot everything. So, um, or not, not plot everything.
+[ 7738.53s ->  7750.95s] We can just label everything. So self dot X two dot X H line Y is equal to zero color is equal to
+[ 7752.16s ->  7764.84s] K line style is equal to dashed line width is equal to one alpha is equal to 0.7 label is equal to no change.
+[ 7765.56s ->  7773.92s] Y is equal to zero. This is a difference, right? We're, we're regressing the difference on the current vol.
+[ 7775.86s ->  7784.10s] The point of intersection between the unconditional regression and the Y equals X line is now
+[ 7784.66s ->  7792.18s] differenced and its origin is going to be Y equals Y equals zero. Okay. So that's where this H line is
+[ 7792.18s ->  7801.80s] coming in and we are going to, um, use this essentially as like, okay, there's no change between the,
+[ 7801.80s ->  7809.72s] the current vol and the, um, the current vol and the, the forward realize vol. So let's say the current
+[ 7809.72s ->  7817.00s] vol is 0.3. If the forward vol is also 0.3, then this would yield zero. That's what this, um,
+[ 7817.00s ->  7823.24s] this H line is this horizontal line. The vertical line is the intersection between Y equals X and the
+[ 7823.24s ->  7827.16s] unconditional regression line. I might've just swapped the two actually by accident when I was
+[ 7827.16s ->  7835.99s] just talking. So, um, this X horizontal line, or this, this line at Y equals zero is what occurs when
+[ 7835.99s ->  7841.59s] the forward vol is the same as the current vol. Now we're going to look at the vertical line based on
+[ 7841.59s ->  7847.19s] the unconditional regression and Y equals X, that is going to be this vertical line. That's breaking
+[ 7847.19s ->  7852.79s] up the two sections into a low vol regime and a high vol regime. That's this vertical line.
+[ 7855.27s ->  7861.67s] This is this V line, and this is going to be at the intersection X. That's what we solve for,
+[ 7861.67s ->  7873.84s] for the two regimes we have, let's make this green line style. We'll make this kind of dotted line
+[ 7873.84s ->  7881.88s] width will be one alpha will be 0.7. And this is the regime split. So the label for this, I'll just
+[ 7881.88s ->  7892.12s] make this regime split. And this will be at vol is equal to the intersection X formatted. We'll round
+[ 7892.12s ->  7900.47s] that a bit. Cool. So that's going to help our ability to interpret this difference regression.
+[ 7900.47s ->  7923.81s] Now we can just set the axis labels themselves. So the title is, um, or the, the X axis is going to be
+[ 7923.81s ->  7929.33s] the current implied volatility. We're regressing the difference on the current implied volatility.
+[ 7929.97s ->  7939.17s] It's forward minus current. Okay. So if current is very high, call it 0.7 and forward is lower,
+[ 7939.17s ->  7946.85s] call it 0.3, then this will be negative. That implies that forward realized vol is going to be less
+[ 7947.65s ->  7956.26s] negative, less positive, more. It's quite easy to interpret. So now we can set the title,
+[ 7960.16s ->  7979.27s] vol difference versus current vol. This is a regime analysis. Cool. Add a legend, legendary. Cool.
+[ 7979.27s ->  7992.07s] X2 dot grid. Sure. A little bit of a little bit of alpha there. Okay. Um, good. That's, that is it for,
+[ 7992.07s ->  7997.67s] for plot two. So that is the regression for the unconditional regression and the conditional
+[ 7997.67s ->  8005.59s] regression. Um, now let us put together this time series of, uh, implied volatilities with the
+[ 8005.59s ->  8012.23s] percentiles. So we will essentially be creating in this third plot, the time series of implied
+[ 8012.23s ->  8019.03s] volatility that we queried back to four, along with the, um, 75th and 25th percentile to see
+[ 8019.03s ->  8025.11s] where current implied volatility is relative to where it has been and maybe where we can expect it to go
+[ 8025.11s ->  8030.47s] in the future. Fortunately for us, this last plot is actually quite easy relative to the two regression
+[ 8030.47s ->  8036.79s] plots. It's just a time series plot with some percentiles. So we can access that third axis
+[ 8037.75s ->  8046.23s] X three. And what we're going to do is we are going to plot simply just the implied volatility data.
+[ 8046.23s ->  8051.19s] So we're actually going to get that from the volatility data data frame. We will get the,
+[ 8052.61s ->  8059.57s] the index as the X value because the index is just going to be the time. And we're going to plot the
+[ 8059.57s ->  8070.15s] corresponding implied volatility. Cool. This is just going to be the label is implied volatility.
+[ 8070.15s ->  8074.71s] That's all we're plotting. It's just the time series of implied volatility and the line width can be one
+[ 8076.08s ->  8081.92s] fantastic. The percentile breakdown, we're going to plot horizontal lines for this percentile breakdown.
+[ 8081.92s ->  8091.88s] 75th, um, is equal to, again, this is just going to be accessing it from the data frame and we can access
+[ 8091.88s ->  8100.20s] the quantile from the series object. Actually, this is exactly how you do what I said to try at home
+[ 8102.37s ->  8109.25s] right here. So, you know, you just got to substitute these, um, if statements in for, for these guys here
+[ 8110.74s ->  8117.30s] and you will, uh, you'll have a dynamic way to quote high, mid, low, low vol in that, in that sense. So,
+[ 8117.30s ->  8123.78s] uh, bull 75th, cool. Bull 25th. Cool. You could do whatever you like here. I'm just going to use
+[ 8123.78s ->  8134.45s] 75th and 25th. Um, we'll do implied bull. We'll do a quantile 0.25. Good. Then we want to plot these.
+[ 8134.45s ->  8144.68s] So what I'll do is I'll do X three dot X H line. Y is equal to bull 75th color is equal to red.
+[ 8144.68s ->  8151.00s] So this is when vol is getting particularly high, right? So line style is equal to, we'll do dashed
+[ 8152.12s ->  8159.00s] and then alpha is equal to 0.7 label. This is just going to be the 75th percentile.
+[ 8161.68s ->  8171.92s] Then I can just do the same thing for, um, the 25th percentile. We can make this green. Again,
+[ 8171.92s ->  8178.00s] it depends on how you look at it. It could be that when it gets to the 25th percentile,
+[ 8178.00s ->  8182.48s] it's going to revert. So vol is actually going to go up, can make that red dealer's choice.
+[ 8182.48s ->  8190.56s] I'm going to make it green 25. Cool. And then we will have another line for the mean. So I'm just
+[ 8190.56s ->  8199.36s] going to actually do the same thing, but the Y is going to be based on the mean of implied volatility,
+[ 8199.36s ->  8207.44s] self dot vol data, get the implied volatility dot mean instead of red, this will be black.
+[ 8209.06s ->  8222.36s] And instead of 75th percentile, we will do the mean, the average. Fantastic. Okay. And now we can just
+[ 8222.36s ->  8232.04s] go ahead and plot the current point and then set the axis, um, titles, set the labels. So if self dot
+[ 8232.76s ->  8239.00s] current implied volatility is not none. So we have data there, we can just scatter plot this data,
+[ 8240.12s ->  8247.00s] um, as just the one point. And that's just going to plot this one point. So we will just get the time
+[ 8247.00s ->  8253.56s] to be the latest time that we have data for by doing index minus one, then we will do self dot current
+[ 8253.56s ->  8262.28s] implied volatility. And this can be just a red point, maybe make it blue to make it look a little
+[ 8262.28s ->  8267.32s] nicer. Uh, we'll just leave it as red. It's fine. You can also condition it. If you wanted to make
+[ 8267.32s ->  8274.28s] it like high, low, medium, it could be something cool to add 100 Z order five, that's going to bring it up
+[ 8275.32s ->  8284.63s] on top of all of the other chart elements and then label. This is the current eyeball. Cool. And then we
+[ 8284.63s ->  8296.37s] can do self dot X three dot set X label. This is going to be the date self dot X three dot set Y label.
+[ 8296.37s ->  8302.37s] This is the implied volatility. Again, this is just a simple time series. It's pretty easy. It's just a
+[ 8302.37s ->  8310.37s] a time series with a percentiles and the mean, um, again, not non converging values, right? These are
+[ 8310.37s ->  8317.65s] time variant values. The period that you query for is going to change the mean. So it's an expected
+[ 8317.65s ->  8322.85s] level. I go on about this. And a lot of my videos, the expectation doesn't exist in the classical sense
+[ 8322.85s ->  8328.05s] of a random variable converging. This is a time variant distribution, something to keep in mind.
+[ 8328.61s ->  8335.73s] Um, this is a very important idea that I talk about, um, all the time, but even, you know, even still
+[ 8335.73s ->  8340.29s] the model is wrong. The expectation is wrong. These expected levels are wrong. The percentiles
+[ 8340.29s ->  8343.73s] are wrong, but that does not preclude us from making money, right? If we know that bull is
+[ 8343.73s ->  8349.49s] particularly low, then yes, it's going to come back to some sort of mean value. If bull is particularly
+[ 8349.49s ->  8354.05s] high, it's going to come back towards some mean value. So again, these values are wrong. Doesn't
+[ 8354.05s ->  8364.08s] preclude us from making money. X three dot set title. We're going to make this implied volatility
+[ 8365.44s ->  8374.10s] time series with regime bands. And in this case, the regime is not the intersection between the
+[ 8374.10s ->  8380.50s] Y equals X line and the regression line. It's just going to be based on this idea of 0.75 and 0.25,
+[ 8380.50s ->  8388.02s] these percentiles, um, don't, don't get those two mixed up. They are in fact different, um, high and low
+[ 8388.02s ->  8403.83s] regimes in that sense. Um, okay. We can add a legend. Cool. And we can add a grid. Fantastic.
+[ 8403.83s ->  8407.67s] And what we actually want to do too, is we're going to want to rotate the dates because they're going to
+[ 8407.67s ->  8419.91s] overlap. So we'll do, um, tick params, the X axis. We will say there's a rotation of 45 degrees. This will
+[ 8419.91s ->  8425.03s] ensure that dates don't stack on top of each other. We're almost done. All we have to do now is draw
+[ 8425.03s ->  8430.79s] these canvases and then create an instance of this implied volatility dashboard class. And we'll be
+[ 8430.79s ->  8439.19s] ready to test this app. Now, another thing we can do is log all of the results of the regressions and
+[ 8439.19s ->  8445.91s] even log conditionally logic to suggest, Hey, you know, expect mean reversion up, expect mean reversion
+[ 8445.91s ->  8452.55s] down. I'll include this in the source code on GitHub, uh, along with this version that we've
+[ 8452.55s ->  8458.15s] built together in this video. But I certainly encourage you to do that analysis on your own.
+[ 8458.15s ->  8461.91s] It would take me a significant amount of time to just type out all those conditional statements.
+[ 8461.91s ->  8465.59s] So you can check out the source code on the complete product. If you want to see
+[ 8465.59s ->  8470.15s] the type of analysis you can do with the regressions, that is, where is their eggs? Where is
+[ 8470.15s ->  8475.27s] their expectation of reversion up reversion down? But I certainly encourage you to try to create
+[ 8475.27s ->  8481.11s] those rule sets yourself based on these regressions. Nevertheless, what we'll do now is we will
+[ 8482.84s ->  8492.71s] set a tight layout for these figures and we will go ahead and draw them. And that's going to do it.
+[ 8492.71s ->  8497.83s] It's going to do it for our figures. And that's going to do it for the implied volatility dashboard
+[ 8497.83s ->  8506.24s] class. So we're ready now to create this, uh, this load function. So we'll call it main. And in here,
+[ 8506.24s ->  8513.28s] I'm going to create a route TK dot TK. And just like we said earlier, we're going to have this app,
+[ 8513.28s ->  8518.24s] this implied volatility trading dashboard will pass this route to it. And that's why we were able to
+[ 8518.24s ->  8525.76s] use self dot, you know, accessing everything within the, the main frame of our application as we, we built
+[ 8525.76s ->  8531.52s] it out. And we can just run this main loop. And that is the loop to keep the frame up for the life of
+[ 8531.52s ->  8542.84s] the application. And now if name is equal to main, we will run this main function.
+[ 8544.95s ->  8548.15s] Fantastic moment of truth here. I'm sure something is broken somewhere.
+[ 8549.20s ->  8558.47s] It looks like column config. So object TK app has no attribute column config.
+[ 8559.35s ->  8567.35s] I think that should be column configure. That's on line 70, something 75. So let's scroll on up to
+[ 8567.35s ->  8573.40s] line 75. This is all the way at the start here in the setup UI function.
+[ 8574.87s ->  8587.28s] And yes, we call column config should be column configure column configure. Okay. Let's give
+[ 8587.28s ->  8600.07s] this another shot. Let's see if we can run this. There we go. All right. So this app just launched here.
+[ 8601.28s ->  8609.04s] And now we're ready to try to run a connection to the trader workstation on interactive brokers.
+[ 8609.04s ->  8613.04s] So I'm going to open up interactive brokers and show you where to go to configure your ports
+[ 8613.68s ->  8619.12s] and establish this connection. All right. So once you open up trader workstation, let's say you logged in,
+[ 8619.12s ->  8625.60s] you click on the little gear icon in the upper right hand corner, you open up this settings window,
+[ 8625.60s ->  8632.88s] you're going to head on over to API settings, enable active X and socket clients. And this is where you
+[ 8632.88s ->  8639.44s] can set your socket port. This is also where you can set your master API client ID. That is the third
+[ 8639.44s ->  8644.64s] parameter. We talked about that zero parameter with multiple client IDs and such. So something to
+[ 8644.64s ->  8650.32s] keep in mind, you can also enable read only so that you can't execute trades. You have other precautions
+[ 8650.32s ->  8656.16s] here. If you would like to bypass order precautions and such and such. So a lot to work with, but
+[ 8656.16s ->  8660.56s] enable active X and socket clients, and there is your socket port. So if you want to change your socket
+[ 8660.56s ->  8666.56s] port, maybe you're running Minecraft on another port. So maybe you need to run this on seven, four,
+[ 8666.56s ->  8672.48s] nine, eight, who knows? So you can change that here, apply. Okay. And then we will be ready to run a
+[ 8672.48s ->  8679.12s] connection from our client that we just built. All right. I'm back on the implied volatility dashboard.
+[ 8679.12s ->  8686.16s] I'm going to run it and I'm going to try to make a connection request. It looks like we have some
+[ 8686.16s ->  8690.88s] sort of error because it's not breaking that for loop connection error string object cannot be
+[ 8690.88s ->  8696.64s] interpreted as an integer. This is probably something with our host and port. So I'm going to close out
+[ 8696.64s ->  8707.06s] of this. You have a main loop in your, in your applet. So if you can't run this again, what you'll have
+[ 8707.06s ->  8715.14s] to do is come to this terminal, either delete it or control C to break out of the loop. Just something
+[ 8715.14s ->  8720.34s] to keep in mind as you try to test this application. So we had an error with our connection. I'm going to
+[ 8720.34s ->  8727.30s] scroll on up to the connection and lo and behold, it looks like we have a little bit of an issue here.
+[ 8727.30s ->  8733.62s] The port needs to be an integer when passed to the connect function. So I'm going to make this int,
+[ 8734.26s ->  8742.82s] going to cast this string to an integer and that should fix the issue. So, so far, what we've done
+[ 8742.82s ->  8751.91s] is we fixed the configure in the frame and we've can, we fixed this, this port being accessed as a
+[ 8751.91s ->  8758.31s] string. So we're going to access it as an integer instead for this connect function here. Let's go
+[ 8758.31s ->  8768.52s] ahead and try to run this again through this debugging process here. Let's connect. It looks like we are
+[ 8768.52s ->  8775.96s] actually getting a valid connection to TWS, but we still fail to connect, um, effectively. So if you
+[ 8775.96s ->  8781.08s] look at the terminal here, we do have a successful connection, but what's happening, it would appear
+[ 8781.08s ->  8788.92s] is we are never triggering the flag that we've been connected. And it looks like this is because we never
+[ 8788.92s ->  8795.24s] actually implemented the next valid ID. We've never told the client that we've been connected to the
+[ 8795.24s ->  8800.20s] server. So what I'm going to do is I'm going to go into the IB app wrapper and I'm going to create
+[ 8800.20s ->  8806.12s] a new callback function. And this callback function is called next valid ID. It looks like it implemented
+[ 8806.12s ->  8811.16s] it for me. Essentially what it's doing is once we connect to the server, it's going to respond with
+[ 8811.16s ->  8816.52s] an order ID that's valid. If I wanted to execute some sort of, of order or trade, but I'm going to use
+[ 8816.52s ->  8823.00s] this as an acknowledgement that I've connected to the server. So I'll just say connected is equal to true
+[ 8823.56s ->  8833.75s] and I can print connected to IBTWS. Okay. So I'm going to close out of that last run. I'm going to give
+[ 8833.75s ->  8840.31s] this a shot here. We'll run it again, see if we can connect. I'll hit connect and looks like we've
+[ 8840.31s ->  8848.71s] successfully connected to IBTWS. If I look at my console, we have successfully connected. So we have
+[ 8848.71s ->  8853.75s] successfully connected to the trader workstation. And now we can try to query some data
+[ 8853.75s ->  8858.47s] and see if our regressions work. What I'm going to do to test this query function is I'm going to use
+[ 8858.47s ->  8863.59s] SPY in a two year duration. I'm sure stuff is going to break, but we will fix it as necessary. So I hit
+[ 8863.59s ->  8869.75s] query and it looks like we're waiting past that five seconds. So let's see what could be wrong here.
+[ 8870.71s ->  8880.63s] It looks like we are using in e-client rec historic data. We should be using form date or we're
+[ 8880.63s ->  8890.60s] using form date, we should be using format date. So in the rec historical data, this is remember,
+[ 8890.60s ->  8897.80s] if we go back up to our query data function, we have this rec historical data, we should be using
+[ 8897.80s ->  8905.76s] format date. And it looks like we should be using chart options too. So we need to add an S here.
+[ 8906.40s ->  8912.64s] And this should be format date. Okay, so what I'm going to do now is I'm going to close this
+[ 8912.64s ->  8919.84s] application control C in the terminal, I'll clear it with clear, run this again, see what we get.
+[ 8921.19s ->  8929.35s] Connect query looks like we're getting a different error. If we go back to our terminal, your API version
+[ 8929.35s ->  8936.15s] does not support fractional shares, we can actually ignore this rule in the error that's returned. So that's
+[ 8936.15s ->  8944.87s] what we're going to do. I will clear this terminal again. And we will go up to the IB app now.
+[ 8946.07s ->  8958.90s] And in here, we will do if the error code is equal to two one seven six. And let's say fractional share
+[ 8959.54s ->  8969.30s] is in the error string, that lowercase, then we can just ignore. So we will return. And that is
+[ 8969.30s ->  8981.43s] sufficient. Another potential issue, I just read here is, if rec ID is not in self dot historical data,
+[ 8981.43s ->  8986.55s] remember, this should be our dictionary for historical data. But we're actually calling this
+[ 8986.55s ->  8995.19s] function. So this should be historical data, that should be sufficient now. So that should be all
+[ 8995.19s ->  9001.83s] the changes that we need. Famous last words, let's give it a shot. So we will we will connect,
+[ 9001.83s ->  9006.07s] we will try this again. Alright, I'm going to connect, I'm going to query IV data. Alright,
+[ 9006.07s ->  9010.87s] cool. The first query worked, we got the implied volatility data for two years for SPY. This is the
+[ 9010.87s ->  9016.87s] current implied volatility, our computation, our scaling factor, the range, the current regime,
+[ 9016.87s ->  9022.79s] the percentile, and the mean reversion signal. Let us analyze the implied volatility. Looks like we're
+[ 9022.79s ->  9029.59s] having trouble analyzing the implied volatility, we get an error. And that error is text object is not
+[ 9029.59s ->  9035.91s] callable. This is on line 450. It looks like we're just calling the title, this should be set title.
+[ 9036.47s ->  9047.68s] So let's go to that figure on line 450. This is going to be, here it is, this should be set title.
+[ 9049.28s ->  9059.00s] Okay, let's make sure we didn't make that mistake elsewhere. Set title, good, good. Alright, now we can
+[ 9059.00s ->  9071.43s] try to give this another shot. And I will try to connect and query again. So connect, query,
+[ 9072.15s ->  9080.55s] analyze implied vol. Would you look at that? We have the regressions that we are after. So here we have
+[ 9080.55s ->  9088.63s] the unconditional regression, we have then solved this simple linear equation to find the intersection
+[ 9088.63s ->  9095.99s] of these two lines. Then we plot that intersection right here as the vertical line conditioning on the
+[ 9095.99s ->  9102.79s] low regime and the high regime. We have two separate regressions. And then we have this time series of
+[ 9102.79s ->  9109.35s] implied volatilities with the percentiles, the 75th, 25th, and of course, the current vol and the mean.
+[ 9110.07s ->  9115.91s] And that is everything that we were after. So we can try this again. Let's say with another one,
+[ 9115.91s ->  9121.99s] we'll use Nvidia. I hit query, 44% implied vol, analyze, and boom, there we go. There is
+[ 9122.55s ->  9129.99s] the dashboard and the analysis for Nvidia. And we have successfully built this implied volatility
+[ 9129.99s ->  9136.23s] trading dashboard. Man, oh man, this was a long video. I hope you enjoyed. I hope you learned
+[ 9136.23s ->  9143.91s] something. This was a lot of fun to put together. Coding without AI is still super, super important.
+[ 9144.55s ->  9150.79s] They go hand in hand. You can write a lot of code with AI very quickly. Sure. But somebody has to go
+[ 9150.79s ->  9155.43s] in and fix everything. I mean, even at the end of this app, once we started putting all the pieces
+[ 9155.43s ->  9159.03s] of the puzzle together, when we tried to run it, different errors were made at different points
+[ 9159.03s ->  9162.95s] in time. We had to go in and fix it. We had to understand what objects we were dealing with.
+[ 9162.95s ->  9168.23s] If you were creating some sort of back test or some sort of system that was paper trading,
+[ 9168.23s ->  9172.55s] and you had some errors or you didn't know why the order executed at this price, whatever,
+[ 9172.55s ->  9177.83s] you would have to go in and figure out why. So very, very important that you can still code
+[ 9177.83s ->  9184.71s] on your own. Very important. You can write code without AI. This was a very fun video to create,
+[ 9184.71s ->  9190.15s] but this was also a very, very long video, a very difficult video to create. It took a lot of effort.
+[ 9190.15s ->  9194.87s] So if you enjoyed, please like comment, subscribe. It helps me out a lot. Let me know if you want to see
+[ 9194.87s ->  9200.31s] videos like this in the future. I love creating how to videos. So, you know, let me know. We can even,
+[ 9200.31s ->  9206.31s] you know, work on using this implied volatility trading dashboard, maybe even generating trades
+[ 9206.31s ->  9211.99s] automatically using this implied volatility trading dashboard, all with, of course, interactive
+[ 9211.99s ->  9215.91s] brokers and the trader workstation. Let me know what you'd like to see in the future. I have a lot
+[ 9215.91s ->  9222.55s] of ideas, a lot of how-tos that I could create. Other than that, please check out quantkilled.com
+[ 9222.55s ->  9226.63s] if you'd like to support the channel, master your quantitative skills. Other than that,
+[ 9227.27s ->  9231.27s] thank you so much for watching and I will see you in the next video.

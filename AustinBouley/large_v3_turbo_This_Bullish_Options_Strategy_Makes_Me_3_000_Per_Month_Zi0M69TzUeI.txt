@@ -1,0 +1,145 @@
+[    0.08s ->     5.32s] This is my go-to strategy in bullish markets. It's called the 1-1-1 strategy.
+[    5.56s ->     9.98s] It's super profitable. It has a 95% plus win rate when traded correctly.
+[   10.18s ->    13.86s] And in this video, I'm going to walk you through exactly how to place it
+[   13.86s ->    17.34s] and make it work for you step by step in why it works.
+[   17.60s ->    23.08s] Starting off, here's a back test of it. You can see here, 82% win rate, which is very good.
+[   23.46s ->    28.78s] Average win of about $15, about $1,200 and an average loss of about $1,500.
+[   29.38s ->    33.32s] Why is this amazing? Because our winners and our losers are roughly equal.
+[   33.44s ->    36.48s] If you've been selling options for any amount of time, you know that when you sell options,
+[   36.48s ->    40.52s] your losses are typically astronomical compared to the small profits you take.
+[   40.76s ->    44.58s] This one is about equal, which is amazing because with an 82% win rate,
+[   44.64s ->    48.74s] it then just gives you a consistent and very profitable return over time.
+[   49.10s ->    52.06s] This is the same strategy that I taught to all of my Goji clients,
+[   52.14s ->    55.54s] and it's our go-to strategy in bullish markets depending on your account size.
+[   55.54s ->    60.70s] So, how exactly does a 1-1-1 strategy work and what are the rules?
+[   60.88s ->    64.16s] Okay, a 1-1-1 is essentially a put selling strategy.
+[   64.54s ->    69.50s] If you don't know what put selling is, you pick a level where you think the market will not go below.
+[   69.86s ->    73.44s] So, for instance, if I'm betting way down here, $5,200, and I think,
+[   73.54s ->    77.82s] hey, the market will not get below this level, that's what I'm betting on.
+[   77.82s ->    83.16s] I am selling a put here, SP for selling put, and as long as the market stays above this level,
+[   83.24s ->    86.62s] I make money, which means if the market continues trending up, I make money.
+[   86.88s ->    92.00s] If the market goes sideways, I make money, and if the market goes down but stays above my level,
+[   92.32s ->    93.22s] I make money.
+[   93.52s ->    97.34s] This is why it's an amazing strategy because it gives you so much room,
+[   97.44s ->   100.20s] so many possibilities to actually make money.
+[  100.48s ->   103.46s] You only lose when it starts breaking through your strike price,
+[  103.46s ->   107.06s] and then you're actually going to be in trouble, and that's why we have stop losses.
+[  107.34s ->   111.54s] But moving on from there, that's the first part of the 1-1-1 strategy.
+[  112.00s ->   114.66s] The next part is buying a put debit spread.
+[  114.92s ->   117.34s] So we come up a bit higher, and we do a put debit spread.
+[  117.72s ->   123.01s] A put debit spread is made by buying a put and selling a put.
+[  123.43s ->   128.21s] This creates a put debit spread, which caps our risk, caps our upside,
+[  128.49s ->   130.25s] but makes money to the downside.
+[  130.45s ->   131.75s] This is essentially a hedge.
+[  131.75s ->   133.89s] It profits as the market drops.
+[  134.37s ->   139.21s] And so this way, as the market goes lower, this hedge increases in profits and makes us money.
+[  139.57s ->   144.31s] So how does all these things combined make a return?
+[  144.65s ->   150.13s] The short put makes us, let's just say for rough numbers, would make us about $1,000.
+[  150.75s ->   155.23s] And the put debit spread would cost us about $200.
+[  155.23s ->   164.17s] So these two things combined net give me a profit of about $800, which isn't bad,
+[  164.27s ->   170.91s] considering that this hedge can make me a lot of money if the market drops to offset any losses from here.
+[  171.39s ->   172.45s] So that's how it works.
+[  172.49s ->   177.59s] Your short put is financing or paying for the cost of the hedge,
+[  177.65s ->   181.47s] so that you can have downside protection, but you're still ending up with a net profit.
+[  181.47s ->   184.99s] Now, if you're wondering why is the trade called a one-on-one, because we buy one put here,
+[  185.09s ->   187.43s] we sell one put here, and we sell one put here.
+[  187.89s ->   190.17s] Now, what is the structure of this trade?
+[  190.29s ->   191.23s] How do we do it?
+[  191.29s ->   193.07s] What are all these puts located at?
+[  193.41s ->   198.29s] And so again, all these puts are done in a certain level we pick for them,
+[  198.57s ->   199.61s] and this is how it's done.
+[  199.61s ->   203.39s] So this trade is primarily done on an overall market,
+[  203.53s ->   207.39s] that being something like SPY, SPX, and INDEX, something like that.
+[  207.69s ->   211.41s] I prefer to do it on futures, because it gives me the greatest leverage, tax advantages,
+[  211.55s ->   213.39s] things like that, ES, for example.
+[  213.89s ->   215.71s] Now, how far out in time do you go?
+[  215.77s ->   218.51s] You go between 90 to 120 DTE.
+[  218.97s ->   220.43s] Why this far out in time?
+[  220.57s ->   223.67s] The further out in time you go, the more time you have to be right,
+[  223.67s ->   228.73s] the lower your volatility risk, the higher your theta decay profits, and so much more.
+[  228.73s ->   232.11s] So that's why I love going out at least this far in the future.
+[  232.25s ->   236.59s] So we're going 90 to 120 DTE, my favorite being around 90 to 120.
+[  236.89s ->   240.49s] So again, I tend to fall somewhere within the 100 DTE range.
+[  241.23s ->   242.99s] Next, how do we pick each stripe?
+[  243.07s ->   245.15s] As I mentioned, we are buying one put,
+[  245.45s ->   247.93s] we are selling one put for our put debit spread,
+[  248.31s ->   251.23s] and then we are selling a put that's going to finance this.
+[  251.57s ->   255.65s] So the put that we're buying tends to be bought around the 25 delta level.
+[  255.97s ->   257.29s] So you're going to buy it around 25 delta,
+[  257.29s ->   261.11s] so the one that we're selling tends to be a 23 delta level.
+[  261.65s ->   264.55s] This creates our put debit spread that gives us downside protection.
+[  264.95s ->   269.09s] Then we pay for it and make our profit from what is a 10 delta put.
+[  269.99s ->   274.51s] This way, we collect enough money to offset our losses and generate a decent return,
+[  274.77s ->   276.65s] while also still being very safe,
+[  276.71s ->   279.73s] because a 10 delta, in theory, gives us a 90% win rate.
+[  279.73s ->   283.03s] So, that is how you structure the trade.
+[  283.31s ->   286.11s] Now, when and how often do you enter the trade?
+[  286.55s ->   289.15s] Entering the trade is going to be based on your account size.
+[  289.45s ->   292.53s] I'm going to use $100,000 account size for easy numbers.
+[  292.63s ->   294.19s] If we have a $100,000 account,
+[  294.53s ->   297.89s] no more than 30% of it should be open and active trades.
+[  297.95s ->   299.71s] We should have money set aside.
+[  299.95s ->   301.97s] Now, there's other things that I teach my coaching clients
+[  301.97s ->   303.75s] that you can do with that money that's set aside,
+[  303.81s ->   305.49s] put it into bonds and things like that,
+[  305.49s ->   308.69s] so that it's accruing interest and making money while it's sitting there.
+[  308.97s ->   310.53s] But 30% of it should be in trade.
+[  310.63s ->   313.63s] So, like $30,000 should be in trade through this instance.
+[  314.21s ->   315.47s] And we have $30,000 in trade.
+[  315.91s ->   317.53s] And one of these trades costs about,
+[  317.63s ->   319.37s] let's just say for easy numbers, it's not this high.
+[  319.43s ->   320.51s] It's more around $6,000.
+[  320.79s ->   324.79s] But let's say it costs about $10,000 to put on one of these trades.
+[  324.97s ->   328.05s] That means I can have on three of these trades at a time.
+[  328.35s ->   330.03s] So, that means if I can have on three trades,
+[  330.07s ->   331.63s] I'll probably be doing a trade a week.
+[  331.99s ->   334.11s] So, I'll be entering a trade once a week.
+[  334.11s ->   335.91s] And you can pick any day you want.
+[  336.01s ->   337.77s] So, maybe Wednesday because it's the middle of the week.
+[  337.85s ->   342.41s] So, once a week on Wednesdays would be the entry frequency of this trade.
+[  342.73s ->   344.29s] If you want to optimize your entry,
+[  344.37s ->   346.19s] you could also enter on red days instead.
+[  346.29s ->   348.37s] So, that's going to increase the amount of credit you're collecting.
+[  348.81s ->   349.87s] And that's one way to do it.
+[  350.51s ->   353.91s] Now, exiting is following a simple set of rules.
+[  354.09s ->   359.27s] We're going to close the trade once we hit a 50% profit on the overall position.
+[  359.27s ->   366.01s] So, I have 50% profit or between a 200% to 300% stop loss.
+[  366.45s ->   369.71s] Now, why this and which one should you pick?
+[  370.11s ->   375.39s] First off, I like going with a 50% take profit because it allows me to close trades faster.
+[  375.39s ->   378.93s] Which means I have less trades opened because they're closing more frequently.
+[  379.15s ->   380.51s] Why do I want to have less trades open?
+[  380.73s ->   383.55s] Because I have a lot of risk for each trade that's open.
+[  383.55s ->   385.99s] And if the market turns around and I hit my stop loss on each,
+[  386.27s ->   388.59s] then if I have 10 trades open, that's a huge loss.
+[  388.67s ->   392.33s] But if I close these trades faster, I turn them over quicker.
+[  392.47s ->   397.05s] So, I have less trades open so that when a loss does happen, it's on fewer trades.
+[  397.57s ->   399.45s] Now, which stop loss should you pick?
+[  399.53s ->   400.75s] 200% or 300%?
+[  401.29s ->   403.97s] The larger your stop loss, the higher your win rate
+[  403.97s ->   407.37s] because you give the trade more time to breathe, more time to move.
+[  407.37s ->   413.69s] However, depending on your profit, as in how much risk you're okay with handling,
+[  414.17s ->   416.39s] that should determine what level you're at.
+[  416.81s ->   422.49s] So, a 200% stop loss in this example may result in a $5,000 loss per trade.
+[  422.83s ->   425.57s] A 300 may result in a $6,000 loss.
+[  425.61s ->   428.99s] So, it depends on what you're more comfortable with on what you should be doing.
+[  429.43s ->   434.79s] Again, most people tend to be between 500% or 50% take profit and a 200% stop loss
+[  434.79s ->   436.11s] and they roll it that way.
+[  436.11s ->   438.83s] Now, this is how you trade this strategy.
+[  438.95s ->   441.69s] As mentioned before, you have to trade it in a bullish market
+[  441.69s ->   443.15s] because that's when that works well.
+[  443.55s ->   445.87s] And again, a bullish market is defined as an uptrend.
+[  445.99s ->   447.79s] Higher highs and higher lows.
+[  447.89s ->   450.03s] You see the market having higher highs and higher lows.
+[  450.41s ->   452.71s] This is your 1-1-1 trading territory.
+[  453.07s ->   455.89s] If you want to learn more about the 1-1-1 strategy,
+[  456.11s ->   458.45s] I wrote a book called the 1-1-2 strategy,
+[  458.55s ->   461.07s] which is the same thing as the 1-1-1, just more advanced.
+[  461.47s ->   465.35s] And so, this book lays out everything you need to know about the strategy
+[  465.35s ->   466.91s] and I linked it down below.
+[  467.23s ->   469.37s] Now, again, you can take everything you learned in this video,
+[  469.57s ->   470.73s] go apply it and make money.
+[  470.81s ->   472.39s] And if you do, please leave a comment down below
+[  472.39s ->   474.11s] because I would love to hear about your success.
+[  474.75s ->   476.89s] Anyways, that's all I got for you in today's video,
+[  477.03s ->   478.55s] my go-to bullish strategy.
+[  478.67s ->   480.75s] If you want to learn more, click the link in my description.

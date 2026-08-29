@@ -1,0 +1,251 @@
+[    0.46s ->     8.53s] Welcome back. Today I want to talk about a quant interview question that seems unassuming but is
+[    8.53s ->    14.61s] actually kind of an interesting stochastic process question. I came up with this question
+[   14.61s ->    20.37s] actually with my lawyer friend and we worked out the solution on pen and paper together and
+[   20.37s ->    25.25s] we came to a closed form solution that we were both happy with and even verified it through
+[   25.25s ->    29.09s] some simulation in Python which we'll get to at the end of this video once we derive the
+[   29.09s ->    36.13s] solution and honestly I have not actually researched this particular question explicitly
+[   36.13s ->    41.57s] so this is kind of a derivation of other types of interview questions that I've had hedge fund style
+[   41.57s ->    46.37s] interview questions and I think this is a very interesting one so if you have a simpler way of
+[   46.37s ->    54.45s] doing this or if you want to raise conjecture then you know feel free to do so in the comments below
+[   54.45s ->    58.77s] but let's go ahead and talk about this this particular question so suppose someone offered
+[   58.77s ->    66.93s] you the following game for price g flip n coins and for each consecutive heads you receive payout d
+[   67.57s ->    74.29s] how much should you pay to play this game so an elementary probability statistics student would
+[   74.29s ->    79.57s] most likely look at this and say oh you know like we can use some sort of independence on coin flips or
+[   79.57s ->    84.85s] you know we can you know just use the general ideas from a statistics course but this actually
+[   84.85s ->    89.73s] turns into a process question very quickly and it can be very confusing if you haven't worked with
+[   89.73s ->    95.81s] this sort of setup before so let's kind of just talk about everything that's at play here really what
+[   95.81s ->   101.81s] I'm going to do to help solve this problem is define essentially two processes one that is going to be
+[  101.81s ->   108.85s] indexing the coin flips which is a random variable and then one that's going to be keeping track of the
+[  108.85s ->   115.49s] payouts that we achieve over time and because the payouts are derived from the coin flips it will
+[  115.49s ->   122.61s] also be a random variable itself so let's go ahead and define these so I will say that x of t and this
+[  122.61s ->   128.37s] is not time this is for toss t is equal to and this is going to be a Bernoulli random variable and
+[  128.37s ->   132.53s] I'm going to write it in general so I'm not going to write it for a coin with equal weighting I'm just
+[  132.53s ->   139.33s] going to say arbitrarily we have zero which is going to be tails with one minus p probability
+[  139.33s ->   147.33s] and then we'll say heads with a one here and has a probability p and we would say that zero is less
+[  147.33s ->   155.87s] than or equal to p which is less than or equal to one all right so that's all well and good and clearly
+[  155.87s ->   162.43s] you can see that this game is going to be for example here's an example game this is going to be
+[  162.43s ->   176.56s] essentially a set x1 x2 all the way to xn of Bernoulli random variables and this is going to be used to
+[  176.56s ->   191.76s] generate some set t1 t2 all the way to t cap n of payouts all right so you can think of these
+[  192.40s ->   202.05s] as the tosses and you can think of these as the payouts all right so let's kind of formally define
+[  202.05s ->   212.18s] what i mean by payout here i'm going to say that t sub n is going to equal the cumulative sum
+[  214.32s ->   227.41s] of payouts toss n given one is less than or equal to n which is less than or equal to capital n
+[  227.41s ->   233.81s] and this makes sense right at any coin toss we should be able to deduce the total payout of the
+[  233.81s ->   238.37s] particular sequence but keep in mind this sequence is a random variable so we can't just go ahead and
+[  238.37s ->   243.09s] realize the sequence and say that that's the answer right there are a variety of different outcomes and
+[  243.09s ->   248.45s] we have to consider the probability of each outcome to find this expectation in general now you could
+[  248.45s ->   256.13s] simulate this quite easily you could say you know loop through or generate a vector of coin tosses
+[  256.77s ->   264.56s] right with some probability scheme and then you can sum the payouts of each of those vectors that
+[  264.56s ->   270.40s] produce a series of coin tosses and you can do that an arbitrary number of times say 10 000
+[  270.40s ->   276.88s] times and then you take that sum of payouts and then you just you know divide it by the 10 000
+[  276.88s ->   282.96s] trials and that will produce some probability and that would essentially be the expectation
+[  283.84s ->   291.12s] or the expected payout of that number of coin tosses given this payout structure this payout structure
+[  291.12s ->   297.20s] here that with consecutive heads you receive payout d and we're going to code that simulation at the end of
+[  297.20s ->   301.76s] the video but let's talk about a close form solution how do we how do we actually derive this statistically
+[  301.76s ->   315.25s] so let's start with the trivial case or the base case trivial or base case so in the trivial or base
+[  315.25s ->   323.65s] case we have t1 all right and if i flip the heads or tails it doesn't really matter right so we have t1
+[  324.45s ->   337.28s] and x1 and it's important to know that x1 is going to decide t1 okay so x1 right i should say x1 is
+[  337.28s ->   346.72s] an element of the set and we have either zero or one right that might be a little too formal but x can
+[  346.72s ->   355.52s] take on the values of either one or zero and this happens with probability p this happens with probability
+[  355.52s ->   363.02s] one minus p but we can't achieve a consecutive heads if this is our first toss so it doesn't matter
+[  364.43s ->   372.83s] whether x1 is one or zero our first toss that doesn't change the cumulative sum of payouts
+[  373.63s ->   380.91s] no matter what the first toss is going to produce a zero cumulative sum and that's also going to imply
+[  380.91s ->   386.35s] that the expected value of t1 is zero and that's just because the expected value of a constant is
+[  386.35s ->   392.50s] going to be a constant all right so hopefully that's clear if not we can just write out the terms here we
+[  392.50s ->   398.98s] have one and zero right so this could be say heads and this could be say tails do we have a
+[  398.98s ->   405.98s] consecutive heads or tails in either of these cases for x so this would be x1 could be either heads or
+[  405.98s ->   414.06s] tails no so that means t1 which we defined as the cumulative sum of payouts at toss n in this case n is
+[  414.06s ->   425.60s] one we are going to say that that is zero all right so that makes sense but what about the second toss
+[  426.16s ->   437.97s] so we toss two so toss two is an interesting question because we can still write out the set
+[  437.97s ->   444.29s] is still relatively small we can still write out all of the possibilities we have zero one one one we have
+[  444.29s ->   452.88s] zero zero and then one zero right so when does this pay out well if we assume an equal weighting scheme
+[  452.88s ->   458.32s] we could also impose a weighting scheme scheme but to make it easier let's just assume a 50 50 probability
+[  459.52s ->   468.29s] right uh here we have essentially one possible outcome right where we get a payout two consecutive
+[  468.29s ->   474.05s] heads everywhere else we get tails heads tails tails heads tails we don't receive a payout in any of
+[  474.05s ->   481.89s] those cases so we can say that this particular sample space the cardinality is four and with an equal
+[  481.89s ->   488.37s] weighting scheme there's one that pays out so that means that there is a one fourth times the payout
+[  490.08s ->   497.23s] payout for t2 that is one way of doing this but this isn't really general we're not leveraging anything
+[  497.23s ->   503.95s] that we know about the process we're not leveraging any general formula or any terms that are going to be
+[  503.95s ->   508.51s] able to be able to be used in future terms here so this is not really necessarily going to help us
+[  508.51s ->   515.15s] especially as we get into further cases what about toss three are we going to write out all eight terms
+[  515.15s ->   521.95s] and try to do this again no and you know what if the probability scheme changes this is going to be wrong
+[  522.83s ->   530.75s] right so we got to kind of change our approach here all right and i want to think about this in the
+[  530.75s ->   544.83s] context of conditional expectations so let's just think about say the term t2 given x1 is equal to zero
+[  546.61s ->   555.73s] all right so if we know that x1 is equal to zero then we know that t2 that is the cumulative sum of
+[  555.73s ->   567.54s] payouts at that second coin toss is going to depend on x2 right x2 can either be one or zero right with
+[  567.54s ->   574.58s] probability p or one minus p we know that that's going to be the case but think about x1 this contributes
+[  574.58s ->   581.70s] very valuable information for us right if the previous toss x1 was a tails we can't get a consecutive
+[  581.70s ->   592.13s] head so it doesn't matter once again whether x2 is heads or tails so i'll leave this up i'll say
+[  592.77s ->   601.33s] doesn't matter this is going to be equal to zero okay and this is kind of you know this idea here
+[  601.33s ->   607.49s] of t2 given x1 is zero we're just kind of using this as a stepping stone all right we're going to
+[  607.49s ->   612.69s] actually write out the conditional expectation in a moment um so then what about the the other case
+[  614.82s ->   623.10s] what about the case that t2 given x1 is equal to one is um this is a little different right so now
+[  623.90s ->   634.58s] we could get a payout right because we have this x2 and x2 may produce a one or a zero if it produces
+[  634.58s ->   642.82s] a one with probability p then that means we get a payout d right as defined by the problem if it's one
+[  642.82s ->   651.55s] minus p then we don't receive a payout all right so in terms of a conditional expectation what does
+[  651.55s ->   659.94s] this look like and how does this help us well let's write it out so the conditional expectation
+[  661.25s ->   671.30s] that is the expected value of let's say t2 given x1 is equal to zero well this one is quite easy right
+[  671.30s ->   680.46s] this is going to have to be necessarily zero because even if we have probability p that t2 is
+[  680.46s ->   687.42s] heads well we still have a zero payout in this particular case right because the previous coin flip
+[  687.42s ->   696.10s] was a tails then we have one minus p so this is for the two potential outcomes right of x2
+[  696.98s ->   712.26s] essentially if it's tails then we don't get a payout either zero so this expectation
+[  712.82s ->   719.92s] it's just gonna be zero it's conditional expectation is just zero all right so then
+[  723.31s ->   730.98s] what about the case that x1 is equal to one well this one we just said right we have essentially two
+[  730.98s ->   738.74s] states of the world right so we have one where if we have p probability p of tossing a heads
+[  738.74s ->   750.94s] then we get payout d otherwise with one minus p probability we get a zero payout so what we can do
+[  750.94s ->   760.16s] is say that this is equal to the probability of tossing a heads times the payout plus one
+[  760.16s ->   765.52s] minus the probability of tossing heads so the probability of tossing a tails times the potential
+[  765.52s ->   769.84s] payout in that state of the world which we know is zero because we just tossed the heads
+[  770.40s ->   776.56s] and if we produce a tails with one minus p probability we have a zero payout which is
+[  776.56s ->   782.80s] essentially what goes towards our t2 here right because we don't have anything to sum yet
+[  783.52s ->   792.56s] we can't get a cumulative sum from t1 t1 is necessarily by by definition of this particular
+[  792.56s ->   802.91s] problem zero so we found the expected or the conditional expectations for t2 which we would
+[  802.91s ->   809.55s] typically sum together with our t1 state but our t1 state is zero so we can add zero to either of these
+[  809.55s ->   815.87s] equations but we've successfully observed the conditional expectation of the cumulative sum of payouts
+[  816.43s ->   823.55s] given x1 is either heads or tails so now that we know this we can find t2 quite easily in the context
+[  823.55s ->   833.63s] of a conditional expectation that is we know that the expected value of t2 is going to be a probability
+[  833.63s ->   842.75s] weighted sum of conditional expectations if we are to partition the space definitely and that's exactly what
+[  842.75s ->   848.99s] we do with our conditional expectation right the previous conditional expectation is essentially
+[  848.99s ->   856.27s] dividing the space into two separate spaces we have the space where the first toss is zero and we have
+[  856.27s ->   864.34s] the space where the first toss is one so that way we can write the expectation of t2 as the expectation
+[  864.34s ->   872.02s] of t2 given x1 is equal to zero now this is a probability weighted sum so what is the probability of x1
+[  872.98s ->   880.30s] that is going or what is the probability that x1 is equal to zero by definition one minus p right we said
+[  880.30s ->   892.14s] that that was going to be our helper variable here okay come on down here then we need the conditional
+[  892.14s ->   900.43s] expectation of t2 given x1 is equal to one and then this is starting to become a little tight here so i'm
+[  900.43s ->   909.66s] going to try to resize this a little bit shrink this put it here and what is the probability that x1 is
+[  909.66s ->   918.58s] equal to one that's going to be p so now all of a sudden we know this conditional expectation and this
+[  918.58s ->   928.50s] conditional expectation we can substitute it this is going to be equal to zero right from this guy zero times
+[  928.50s ->   942.26s] times one minus p plus p d plus one minus p times zero from that guy so subbing that in we get p d times
+[  942.26s ->   952.75s] p and that's going to be equal to p squared d now what do you notice about p squared d so we're saying
+[  952.75s ->   964.88s] that the expected cumulative sum of payouts at toss two is equal to the expected value of t1 which is zero
+[  966.38s ->   977.57s] plus p squared d now why are we adding this t1 here if you recall this is the cumulative sum cumulative
+[  977.57s ->   990.70s] sum to make it simple i excluded adding this term down here this one in these conditional expectations
+[  992.26s ->  1003.50s] because it is just zero okay but what do you notice about this term for t2 this is exactly the same
+[ 1003.50s ->  1015.87s] thing that we came up with before in the context of 0 1 1 1 0 1 0 0 right if you recall i said the
+[ 1015.87s ->  1025.79s] cardinality is four there's one payout with equal weight we have one fourth d what do you notice about
+[ 1025.79s ->  1042.43s] this equation the expected value of t1 is zero zero if we have a fair coin 0.5 squared is one fourth d
+[ 1043.98s ->  1052.90s] and would you look at that okay we arrive at the same value but this time we have kind of a recursive
+[ 1052.90s ->  1058.40s] representation which is exactly what we want to be able to solve this type of question
+[ 1058.40s ->  1079.76s] all right all right so this is quite interesting what about toss three let's look at t3 the cumulative
+[ 1079.76s ->  1089.76s] sum at toss three of our payouts given x2 is equal to zero this is a very interesting sort of step in
+[ 1089.76s ->  1099.68s] the process and the reason for that is if x2 is zero we know that the first toss doesn't matter
+[ 1099.68s ->  1104.72s] and the third toss doesn't matter because we can't achieve a consecutive heads this is what i mean if
+[ 1104.72s ->  1114.32s] we have x1 x2 x3 and we have a zero for toss two that's what this is saying here it doesn't matter what
+[ 1114.32s ->  1120.42s] x3 and x1 are doesn't matter if they're both ones doesn't matter if one is zero or both are
+[ 1120.42s ->  1127.54s] zero we can't achieve the consecutive heads right so what that means is we know that the sum
+[ 1128.90s ->  1135.06s] cumulative sum of payouts has to be zero in this particular context as well so it doesn't matter
+[ 1135.86s ->  1146.29s] once again doesn't matter if x3 is zero or one all right so that's a very interesting case here
+[ 1146.29s ->  1157.73s] so it doesn't matter what about when x2 is one this is a very interesting case that we absolutely are
+[ 1157.73s ->  1167.49s] interested in right because now x3 could create a new payout if x3 is one with probability p we will
+[ 1167.49s ->  1176.62s] get a payout if x3 is zero then we have a tails after the heads right because this is the heads and we
+[ 1176.62s ->  1187.74s] won't have a payout all right but what about our second uh our second toss we could get a payout there
+[ 1187.74s ->  1196.14s] too can't we we could totally get a payout in our second toss but what is that payout value uh we don't
+[ 1196.14s ->  1204.06s] actually have a a solid number for that payout value all right and what i mean by that is it's very
+[ 1204.06s ->  1212.06s] easy to determine the payout with uh the appropriate probability weighting if x3 is either one or zero
+[ 1212.06s ->  1219.50s] right you just probably you just kind of important weight the payout d uh based on p and you will have
+[ 1219.50s ->  1228.62s] the appropriate sum for that particular increment from two to three right but what about prior what about the
+[ 1229.42s ->  1237.66s] payout for the second toss well it turns out we can use the expected value of the cumulative sum of
+[ 1237.66s ->  1248.54s] payouts for the second toss in this place for the value up to t two all right so that means that this
+[ 1248.54s ->  1258.64s] is essentially going to be equal to d all right so this kind of increment here is going to be d
+[ 1258.64s ->  1267.12s] uh and then prior we are going to have the expected value of t2 all right so what does this look like
+[ 1267.12s ->  1274.66s] in the in terms of conditional expectations we would say that the conditional expectation of t3
+[ 1275.22s ->  1283.62s] given x2 is equal to zero is going to be equal to what is the payout for either case
+[ 1284.66s ->  1289.79s] zero so you could probability weight zero all you like but it's going to be zero
+[ 1290.75s ->  1298.54s] what is the expected value of t3 given x2 is equal to one well this is going to be equal to
+[ 1299.50s ->  1308.32s] probability p times d plus one minus p times zero right that's the payout and then what is going to
+[ 1308.32s ->  1318.78s] be the sort of step from t2 to t3 that's the expected value of t2 all right so it turns out we have
+[ 1318.78s ->  1324.86s] the expected value of t3 is equivalent to the probability weighted sum of these two conditional
+[ 1324.86s ->  1338.22s] expectations right here plus the expectation of t2 so we have the probability that x2 is zero
+[ 1339.02s ->  1346.78s] is going to be one minus p times the conditional expectation which is zero plus then we get the
+[ 1346.78s ->  1354.69s] conditional expectation here this guy it's going to be pd and then we're going to weight that by
+[ 1355.81s ->  1362.29s] the probability that x2 is equal to one and that is going to be by probability p and then we need to
+[ 1362.29s ->  1381.06s] add the expectation of t2 so essentially the expectation of t3 is going to equal p squared d
+[ 1382.66s ->  1391.86s] plus the expectation of t2 and this is sort of where the the interesting pattern is going to emerge here
+[ 1391.86s ->  1403.50s] because now what if i was to define this recursively okay i could say the expected value of tn tn is equal
+[ 1403.50s ->  1416.02s] to p squared d plus the expected value of t sub n minus one all right and using this formula i could just
+[ 1416.02s ->  1424.34s] go ahead recursively and find a closed form solution for any n so if you gave me a capital
+[ 1424.34s ->  1430.50s] n i could give you an expected value of the cumulative sum of paths that's what this means
+[ 1430.50s ->  1436.66s] in other words i can use this formula now to find the answer to our question so let's give an example
+[ 1437.38s ->  1445.86s] what happens when n is equal to 2 we have the expected value of t2 is equal to p squared d plus the
+[ 1445.86s ->  1453.74s] expected value of t sub 2 minus 1. this is going to be equal to p squared d
+[ 1454.94s ->  1460.54s] plus the expected value of t1 but if you recall we are back to the trivial case
+[ 1462.29s ->  1469.63s] where the expectation is zero so that means the expected value of the cumulative sum of payouts
+[ 1470.19s ->  1477.31s] is going to be p squared d which is exactly what we got in the two toss example
+[ 1477.31s ->  1496.21s] here we get p squared d okay so what about when n is equal to say three well the expected value of t3
+[ 1496.85s ->  1505.63s] is equal to p squared d plus the expected value of t2 right but we know the expected value of t2
+[ 1505.63s ->  1512.11s] what is it the expected value of t2 is p squared d plus the expected value t1 which is zero so this
+[ 1512.11s ->  1520.74s] is going to be equal to 2 p squared d that's because the expected value of t squared is just p squared d
+[ 1520.74s ->  1527.86s] what about when n is equal to what about when n is equal to what about when n is equal to 4 the expected
+[ 1527.86s ->  1541.31s] value of t sub 4 is equal to let's say p squared d plus the expected value of t sub 3 but we know t sub 3
+[ 1541.31s ->  1551.15s] is 2 p squared d so this is going to be equal to 3 p squared d so hopefully you kind of start to observe
+[ 1551.15s ->  1563.34s] this pattern here and we could say in any case right the expected value of the cumulative sum of paths
+[ 1564.83s ->  1571.23s] whoopsie for some arbitrary number of coin tosses t sub n is going to be equal to
+[ 1572.58s ->  1585.98s] kappa n minus 1 times p squared capital d that's pretty cool all right that's pretty cool so maybe
+[ 1585.98s ->  1591.10s] this was a little bit hand wavy maybe we should have talked about some overhead and you know made this a
+[ 1591.10s ->  1601.18s] little more granular um but hopefully this was uh an interesting and intuitive way to kind of uh quick
+[ 1601.18s ->  1608.94s] and dirty derive the recursive solution to some sort of um expectation of a stochastic process in this
+[ 1608.94s ->  1616.54s] context so is this solution um you know correct let's go ahead and jump over to python and code a
+[ 1616.54s ->  1624.62s] simulation to essentially verify this uh this closed form answer here all right welcome to python here we're
+[ 1624.62s ->  1634.96s] going to write out that solution that we just derived so we have this idea that the expectation of some t
+[ 1634.96s ->  1649.86s] sub cap n is going to be equal to n minus 1 p squared d so how can we go ahead and simulate this what we're
+[ 1649.86s ->  1658.82s] going to do is we're going to import numpy as np and then we are going to generate a random vector of coin flips
+[ 1660.43s ->  1669.31s] okay so we'll say x is equal to np.random.randint we're going to generate an integer from 0 to 2
+[ 1669.31s ->  1675.55s] so only zeros and ones representing heads and tails this is going to be with equal probability
+[ 1675.55s ->  1681.23s] so this is going to be a simple fair coin example you could always weight these however you like
+[ 1682.03s ->  1689.60s] all right that's important to note we're going to generate 10 000 and then we're going to start with
+[ 1689.60s ->  1697.06s] the case that we flip uh two coins or maybe we'll start with the case that we flip one coin okay so now
+[ 1697.06s ->  1707.55s] let's actually create the simulation here all right so here we are going to generate 10 000
+[ 1707.55s ->  1723.30s] uh n coin tosses then we will say with consecutive heads we receive payout and then we're going to say
+[ 1723.30s ->  1731.70s] that d is equal to one dollar for this particular example so in this parameterization we have that n
+[ 1731.70s ->  1740.10s] is equal to one d is equal to one and we're trying to figure out the expectation of this scheme so the
+[ 1740.10s ->  1747.30s] fair value of this game that we should pay and that's going to be our solution g all right so we
+[ 1747.30s ->  1751.38s] have this random vector what does this look like this is just going to be a collection of zeros and ones
+[ 1751.38s ->  1757.46s] so the outcomes of a coin toss all right so we're going to loop through this we're going to have all
+[ 1757.46s ->  1766.50s] of our paths in a vector uh we're going to say for i in range length of x for j in range
+[ 1767.38s ->  1777.17s] one to the length of x i so that's going to be the process that is one of the 10 000 n coin tosses
+[ 1777.89s ->  1790.80s] we're going to say if x i j minus one is equal to one then we have the potential for a payout right that
+[ 1790.80s ->  1802.70s] means the previous toss was a heads then i'll say if x i j is equal to one then we have a payout so what
+[ 1802.70s ->  1814.59s] i need to do here is in each of the simulated n coin tosses create another list i will say p is equal
+[ 1814.59s ->  1821.95s] to an empty list and then here i am going to say p dot append one because that's going to be the payout
+[ 1822.67s ->  1830.83s] otherwise we don't get a path we get a zero payout and in the case that the previous toss was a tails
+[ 1830.83s ->  1838.45s] we get no payout as well all right once we're done tossing all these coins and determining our payouts
+[ 1838.45s ->  1846.29s] then we can just add that to p or we can add it to our payout so we add the sum of p which is the sum
+[ 1846.29s ->  1854.13s] of our payouts for one of these ten thousand and coin tosses we're going to add that to payouts p so
+[ 1854.13s ->  1863.97s] payouts dot append sum of p and then we can go ahead and print uh or we can just find np dot mean of
+[ 1863.97s ->  1871.84s] payouts all right now if you look the mean of payouts here is going to be zero and if you recall
+[ 1872.64s ->  1884.21s] trivially what did we say we said the expectation of t one is zero that's exactly what we have in
+[ 1884.21s ->  1899.94s] this simulation expectation of t one is zero okay what if i have two tosses what if i have two tosses
+[ 1899.94s ->  1908.27s] well if i have two tosses then by this equation that we have derived together we would say the
+[ 1908.27s ->  1917.23s] expectation of t2 is equal to two minus one which is one times p squared which is going to be one
+[ 1917.23s ->  1926.82s] fourth times d which is one so we would expect t2 to be one fourth and this is what we did when we drew
+[ 1926.82s ->  1932.66s] out the all of the cases right with an equal weighted probability we got one fourth d so if we
+[ 1932.66s ->  1940.18s] go ahead and put two coin tosses so ten thousand two coin tosses we're going to determine the payout
+[ 1940.18s ->  1945.78s] when the payout is just going to be one which is just essentially going to give us the probability
+[ 1947.14s ->  1956.56s] here it's really not the probability it's the payout we get 25 25 cents so the expectation for the
+[ 1956.56s ->  1963.52s] cumulative sum of payouts is going to be one fourth or 25 cents when we have the payout being a dollar
+[ 1965.28s ->  1983.04s] okay what about when n is three is equal to well what do we have we have three minus one which is two
+[ 1983.68s ->  1993.46s] over p squared point five squared one fourth so we have what one half d and doesn't this make sense
+[ 1994.26s ->  1999.06s] that this is going to arbitrarily increase with the number of tosses right we're going to have
+[ 1999.06s ->  2003.70s] more opportunities for consecutive heads so this is going to increase it's important to note that
+[ 2003.70s ->  2010.98s] these are not probabilities this is going to exceed one this is an importance weighted sum of payouts
+[ 2012.82s ->  2019.70s] all right there's this important weight this importance weight on the particular payout sequence
+[ 2019.70s ->  2026.42s] so if we go ahead and run this run this we're going to find roughly one half remember this is a
+[ 2026.42s ->  2032.26s] simulated solution with some margin of error but you'll notice that this trend is going to continue
+[ 2032.26s ->  2036.98s] right we're going to have the correct closed form solution here and then the correct simulated solution
+[ 2036.98s ->  2047.98s] so if i said let's say we have 10 tosses we are going to get 2.2438 here as our simulated solution
+[ 2047.98s ->  2056.86s] if we were to create a function for this closed form solution we would say def t given an n return
+[ 2057.58s ->  2067.66s] n minus one times p here is going to be 0.5 so we have 0.5 squared times d which is one so this is going
+[ 2067.66s ->  2078.61s] to be t of 10 which we have as 2.25 so that would be the appropriate price with a one dollar payout
+[ 2078.61s ->  2086.13s] to pay for the opportunity to play this game okay and if you wanted an egg you would just charge a
+[ 2086.13s ->  2092.53s] little bit more right so this is kind of the idea here um and of course you know the more tosses it
+[ 2092.53s ->  2098.53s] you get the more opportunity that you have to make money and the more the fair value of the game is going
+[ 2098.53s ->  2110.74s] to increase so if you add 100 then it would be 24.75 right so if i put 100 here you can see we get
+[ 2110.74s ->  2122.58s] 24.7 24.75 all right so that's our simulated pricing solution okay so i hope you enjoyed this video
+[ 2122.58s ->  2127.54s] um this was a very interesting one for me i came up with this question i'm sure it probably has been
+[ 2127.54s ->  2133.62s] asked before variations that have been asked um but it's you know it seems very kind of trivial when
+[ 2133.62s ->  2137.38s] you first look at it but you know a lot went into the analysis i was kind of sitting there
+[ 2138.02s ->  2143.86s] i was even sitting there at a starbucks and i was just looking at this with my buddy and we were like
+[ 2143.86s ->  2148.50s] yeah you know this is kind of tricky um but we were able to arrive at a solution that we're both happy
+[ 2148.50s ->  2152.82s] with and yeah let me know if there's an easier way to derive this or if you would like a more granular
+[ 2152.82s ->  2157.14s] explanation explanation of some of the steps um we're going to keep doing these quant interview
+[ 2157.14s ->  2163.36s] style questions um yeah no i hope you enjoyed it let me know if you have any questions other than
+[ 2163.36s ->  2172.72s] that i will see you in the next one

@@ -1,0 +1,316 @@
+[    0.16s ->     4.68s] I studied for the past 7 days researching everything there is to know about the MACD,
+[    4.68s ->     7.60s] one of the most installed indicators of all time.
+[    7.60s ->    12.12s] Sure, I knew a lot about this indicator already, but did I really know it to its full potential?
+[   12.12s ->    16.40s] I wanted to go as deep down the rabbit hole as possible and find every trick, tip, or
+[   16.40s ->    19.64s] as much information as I could about this specific indicator.
+[   19.64s ->    23.88s] I watched hundreds of videos, read tons of articles, trying to learn as much as I could
+[   23.88s ->    28.76s] about the MACD, and to my surprise, I actually learned a lot of stuff I didn't know before.
+[   28.76s ->    33.70s] I even backtested the MACD on real past market data to see if it lived up to all the hype
+[   33.70s ->    35.90s] and to see if it actually made money or not.
+[   35.90s ->    40.86s] And just as a heads up, I even backtested to see what the best settings were for the MACD.
+[   40.86s ->    43.74s] And just as a quick hint, it's not the default settings.
+[   43.74s ->    45.94s] So that's exactly why I wanted to make this video.
+[   45.94s ->    48.96s] I don't want you guys to have to search through multiple videos like I did.
+[   48.96s ->    53.08s] I'm making this one video so you can have the ultimate guide and learn everything there
+[   53.08s ->    57.14s] is to know about the MACD from one single video.
+[   57.14s ->    62.36s] The MACD stands for Moving Average Convergence Divergence and was created by this guy, Gerald
+[   62.36s ->    64.40s] Appel, in the 1970s.
+[   64.40s ->    68.94s] What Gerald was trying to achieve is to make an indicator show how strong or weak a market's
+[   68.94s ->    73.26s] momentum was, indicated by the relative strength between two moving averages.
+[   73.26s ->    76.20s] And to be honest, he did a damn good job of doing that.
+[   76.20s ->    78.20s] The MACD has four main parts.
+[   78.20s ->    82.06s] The MACD line, the signal line, the histogram, and the zero line.
+[   82.06s ->    87.28s] It comes with a 12 day exponential moving average and a 26 day exponential moving average.
+[   87.28s ->    90.06s] These settings can be customized to whatever you want.
+[   90.06s ->    92.82s] By default, it's set to 12 and 26.
+[   92.82s ->    94.78s] This is foreshadowing, if you couldn't tell.
+[   94.78s ->    99.28s] Then we have the histogram, which represents the difference between the MACD line and the
+[   99.28s ->   100.28s] signal line.
+[  100.28s ->   104.38s] So for example, the smaller the space between the two lines, the smaller the histogram.
+[  104.38s ->   107.70s] The larger the space between the two lines, the larger the histogram.
+[  107.70s ->   113.26s] You can also see once the MACD line crosses above the signal line, the histogram will automatically
+[  113.26s ->   114.22s] turn green.
+[  114.22s ->   118.40s] If the MACD line crosses below the signal line, the histogram will turn red.
+[  118.40s ->   122.66s] Then finally we have the zero line, which is represented at the zero level and will tell
+[  122.66s ->   124.90s] us the center of the MACD indicator.
+[  124.90s ->   129.54s] As you may already know, there are tons of different strategies and ways to use the MACD.
+[  129.54s ->   133.38s] And I wanted to put each and every one of these strategies to the test.
+[  133.38s ->   137.68s] To decipher not only how to use the MACD, but find out how we can use it to help predict
+[  137.68s ->   138.68s] market movement.
+[  138.68s ->   142.54s] I asked you guys on Instagram what your favorite way to use the MACD was.
+[  142.54s ->   144.68s] And surprisingly, I got a lot of responses.
+[  144.68s ->   146.86s] Also if you're not following my Instagram, what are you doing?
+[  146.86s ->   151.40s] So I decided to use the four most used strategies and decided to test them.
+[  151.40s ->   152.68s] So here's what we're going to do.
+[  152.68s ->   155.58s] We're going to first go through each of the four different strategies and show you
+[  155.58s ->   157.54s] guys exactly how to execute them.
+[  157.54s ->   161.40s] And then I'm going to actually test these strategies on real market data so we can see
+[  161.40s ->   163.86s] if they would have even actually made money or not.
+[  163.86s ->   165.20s] Almost kind of like a game show.
+[  165.20s ->   169.24s] I'm going to call it, does this MACD strategy really work?
+[  169.24s ->   171.48s] Or is it a money loser?
+[  171.48s ->   172.88s] Game show.
+[  172.88s ->   173.88s] By Trading Lab.
+[  173.88s ->   177.44s] The first strategy is probably one of the most common ways to use the MACD.
+[  177.44s ->   178.94s] The strategy is pretty simple.
+[  178.94s ->   183.28s] You buy when the MACD line crosses above the signal line, in other words when the histogram
+[  183.28s ->   184.28s] turns green.
+[  184.28s ->   187.96s] And then you're going to sell when the MACD line crosses below the signal line, or when
+[  187.96s ->   189.26s] the histogram turns red.
+[  189.26s ->   193.38s] The logic behind this is you're essentially buying when the short term average is higher than
+[  193.38s ->   197.42s] the long term average, meaning there's a short term momentum heading upwards.
+[  197.42s ->   201.76s] So as an example, you would have bought here because the MACD line crosses above the signal
+[  201.76s ->   202.76s] line.
+[  202.76s ->   206.16s] And you would have sold here because the MACD line crosses below the signal line.
+[  206.16s ->   209.82s] You can also do the same strategy for shorting, just do the complete opposite.
+[  209.82s ->   214.94s] The next strategy is to use the MACD with divergence, which basically means if the chart is heading
+[  214.94s ->   219.62s] upwards but the MACD isn't making higher highs, this means the market is slowly starting
+[  219.62s ->   220.86s] to lose momentum.
+[  220.86s ->   224.66s] So this strategy can be really great to know when turning points in the market are about
+[  224.66s ->   225.66s] to happen.
+[  225.66s ->   228.16s] So as an example, the market is heading upwards here.
+[  228.16s ->   232.20s] But if we take a look at the MACD, it's not making higher highs, which is what it should
+[  232.20s ->   234.70s] be doing if the market is heading upwards like this.
+[  234.70s ->   238.70s] So we can pretty much assume the market is losing momentum and the chart is about to head
+[  238.70s ->   240.80s] downwards, which is what it does.
+[  240.80s ->   242.48s] You can also do it the other way.
+[  242.48s ->   246.96s] The market is heading downwards, but at the same time the MACD isn't making lower lows.
+[  246.96s ->   250.30s] So we can assume there is about to be a reversal, which there was.
+[  250.30s ->   253.44s] The next strategy is trading off the extremes of the MACD.
+[  253.44s ->   260.74s] What I mean is whenever a market has huge amounts of momentum and goes upwards super fast,
+[  260.74s ->   263.40s] almost always it heads back down at some point.
+[  263.40s ->   267.16s] So we're trying to take advantage of that and whenever the MACD hits an extremely high
+[  267.16s ->   271.02s] peak we're going to look to short as it's got to lose its momentum at some point.
+[  271.02s ->   272.94s] Same thing if the market dips way too fast.
+[  272.94s ->   277.40s] If there is a very low peak on the MACD, we can look to enter a long position as it's likely
+[  277.40s ->   278.94s] to move upwards after.
+[  278.94s ->   282.98s] The fourth and final strategy is using the MACD as a trend filter.
+[  282.98s ->   286.98s] If you've watched any of my videos before, you should definitely know by now I absolutely
+[  286.98s ->   292.50s] love trading with the trend.
+[  292.50s ->   297.00s] What I mean by that is that I like taking long positions when the market is trending upwards,
+[  297.00s ->   300.60s] and I like taking short positions when the market is trending downwards.
+[  300.60s ->   301.84s] Sounds like common sense right?
+[  301.84s ->   305.94s] But believe it or not, it's a lot harder to spot a trend with real time market data than
+[  305.94s ->   306.94s] you might think.
+[  306.94s ->   310.28s] But how can we tell when a market is in an uptrend or a downtrend?
+[  310.28s ->   312.80s] So the steps for this strategy are as follows.
+[  312.80s ->   316.98s] You first go to your preferred time frame, whether that's the 5 minute, 1 hour, 1 day,
+[  316.98s ->   317.98s] week, whatever.
+[  317.98s ->   322.20s] Then you're going to open a separate tab and have your MACD on one time frame higher.
+[  322.20s ->   326.62s] So for example, if your preferred time frame is the daily, you would set your MACD indicator
+[  326.62s ->   328.40s] to the 1 week time frame.
+[  328.40s ->   332.54s] If the MACD histogram is positive in green, you look for long trades.
+[  332.54s ->   335.48s] If it's negative in red, you look for short trades.
+[  335.48s ->   337.44s] Before you say it, I already know.
+[  337.44s ->   342.32s] These 4 strategies weren't made in a lab somewhere in Germany and are super highly effective winning
+[  342.32s ->   344.48s] trading strategies that hedge funds use.
+[  344.48s ->   346.72s] These strategies can be found on basically anywhere.
+[  346.72s ->   349.14s] Hell, I bet even your Uncle Rob knows about them.
+[  349.14s ->   353.30s] However, you have to realize, most of these websites are gurus that are telling you these
+[  353.30s ->   355.48s] strategies are trying to sell you something.
+[  355.48s ->   359.34s] So in most cases, they're either straight up lying to you, inflating the results of the
+[  359.34s ->   363.42s] strategy, or only telling you the positives so you go buy their ebook or whatever they're
+[  363.42s ->   364.42s] trying to sell you.
+[  364.42s ->   365.42s] Well, here's the thing.
+[  365.42s ->   370.34s] I'm not trying to sell you anything, as I am for the people.
+[  370.34s ->   374.00s] I don't get any benefit from telling you the MACD works or if it doesn't work.
+[  374.00s ->   377.94s] So I'm going to be brutally honest and tell you the exact results I get from these various
+[  377.94s ->   379.86s] strategies on real market data.
+[  379.86s ->   383.56s] No lies, no fairy dust, just good old plain statistics.
+[  383.56s ->   388.06s] Well before we talk about which strategy works, we first have to understand why the MACD may not
+[  388.06s ->   389.06s] work.
+[  389.06s ->   394.72s] So going back to strategy 1, as a quick refresh, this strategy was all about buying when the
+[  394.72s ->   398.66s] histogram turns green, and selling when the histogram turned red.
+[  398.66s ->   403.08s] So in this strategy, the trader's looking to turn bearish when the market's upward momentum
+[  403.08s ->   407.48s] weakens, or turn bullish when the market's downward momentum weakens.
+[  407.48s ->   411.28s] Now when first hearing this, I can already think of a critical issue around this style
+[  411.28s ->   412.28s] of thinking.
+[  412.28s ->   413.28s] 1.
+[  413.28s ->   416.62s] Just because a market has upwards momentum and it's weakening, doesn't necessarily mean
+[  416.62s ->   418.06s] it's done going upwards.
+[  418.06s ->   420.08s] It could just be taking a little break.
+[  420.08s ->   421.46s] Markets need breaks too guys.
+[  421.46s ->   423.30s] Same thing with the market heading downwards.
+[  423.30s ->   426.86s] Just because the market is slowing down the downwards momentum, doesn't necessarily
+[  426.86s ->   428.56s] mean it's done going down.
+[  428.56s ->   431.52s] So with this first strategy, here's an example of it failing.
+[  431.52s ->   435.84s] The market falls, so the histogram turns red, but then the MACD turns bullish and the chart
+[  435.84s ->   437.36s] starts moving sideways.
+[  437.36s ->   441.54s] But it was just a little pause, and the market continues to fall downwards after.
+[  441.54s ->   446.16s] Moving on to strategy 2, where we use the MACD's divergence to help spot reversals
+[  446.16s ->   447.16s] in the market.
+[  447.16s ->   448.16s] That's the main issue with this one.
+[  448.16s ->   451.06s] I found that divergence is kind of hard to quantify.
+[  451.06s ->   455.58s] What I mean by that is whoever's trading is going off their opinion on what they see,
+[  455.58s ->   459.68s] and as we all know, the human eye is prone to seeing whatever it wants to see.
+[  459.68s ->   462.18s] As an example, this chart is moving upwards.
+[  462.18s ->   463.68s] If you were bullish, you could say,
+[  463.68s ->   467.58s] Yeah, this MACD is making higher highs, so it's going to continue to head upwards.
+[  467.58s ->   469.14s] Or if you were bearish, you could say,
+[  469.14s ->   474.14s] Oh, this MACD line is heading downwards, giving us bearish divergence, so this is the top.
+[  474.14s ->   478.44s] It could easily be seen both ways, which is definitely a problem in trading in a fast
+[  478.44s ->   480.38s] paced market like the stock market.
+[  480.38s ->   481.86s] Moving on to strategy 3.
+[  481.86s ->   485.84s] This strategy was all about entering when the histogram was at very big peaks.
+[  485.84s ->   489.68s] The thing about trading is, extreme can easily become even more extreme.
+[  489.68s ->   491.44s] It's extreme.
+[  491.44s ->   495.74s] Just because the histogram is very high, doesn't necessarily mean it can't go higher.
+[  495.74s ->   499.22s] And just because the histogram is very low, doesn't mean it can't keep dropping.
+[  499.22s ->   500.90s] Then finally, the last strategy.
+[  500.90s ->   502.40s] I do have to say right off the get go.
+[  502.40s ->   506.38s] I had the least amount of doubt towards this strategy, because there's actual data to back
+[  506.38s ->   507.38s] it up.
+[  507.38s ->   511.44s] If you remember, this trading strategy was moving the MACD one time frame higher than
+[  511.44s ->   514.12s] you're trading at, to make sure you're trading with the trend.
+[  514.12s ->   517.88s] The one thing I will say about this, is that if you've watched my videos before,
+[  517.88s ->   523.60s] I normally use a 200 exponential moving average to tell if a market is an uptrend or a downtrend.
+[  523.60s ->   526.26s] If price is above the moving average, it's an uptrend.
+[  526.26s ->   528.20s] If it's below, it's a downtrend.
+[  528.20s ->   531.56s] So why not just use that in order to tell which way the trend is heading?
+[  531.56s ->   535.28s] Now that we've looked at all the potential problems with the MACD, it's time to do
+[  535.28s ->   537.52s] the exciting stuff.
+[  537.52s ->   541.36s] Calculating and testing how successful the MACD actually is.
+[  541.36s ->   545.64s] Now, as a reminder, forget everything that gurus and trading books have taught you in
+[  545.64s ->   546.64s] the past.
+[  546.64s ->   549.36s] Our job as a trader is to stay as objective as possible.
+[  549.36s ->   553.36s] Let's really just focus on the statistics and numbers from these results.
+[  553.36s ->   555.96s] So, there were 4 strategies that we talked about.
+[  555.96s ->   560.80s] Buy and sell in the MACD crossover, look for MACD divergences, use extreme MACD readings
+[  560.80s ->   565.30s] to predict market tops and bottoms, and then use the MACD as a trend filter when finding
+[  565.30s ->   566.30s] trades.
+[  566.30s ->   567.64s] Now, I've kinda ran into a problem.
+[  567.64s ->   572.36s] I've decided to remove the second strategy, the divergence one, just because it's extremely
+[  572.36s ->   577.08s] objective and no two traders staring at the same chart will count the same exact divergences.
+[  577.08s ->   580.08s] Plus, it's kinda hard to backtest divergences.
+[  580.08s ->   581.68s] I'm not lazy, you're lazy.
+[  581.68s ->   584.08s] So, I decided to take it out of the results.
+[  584.08s ->   589.08s] I also decided to ignore the fourth strategy as it really wasn't a complete trading strategy
+[  589.08s ->   593.68s] on its own, as usually you would add different indicators on top of the MACD results.
+[  593.68s ->   594.68s] Please don't hate me.
+[  594.68s ->   599.28s] That leaves us with two strategies, but I do promise, you will still learn a lot from these
+[  599.28s ->   600.28s] two.
+[  600.28s ->   604.36s] I'll be testing these strategies on three different markets, the S&P 500, gold, and the
+[  604.36s ->   605.68s] US dollar index.
+[  605.68s ->   608.48s] Feel free to share your results if you tested it on a different market.
+[  608.48s ->   612.04s] I just wanted to keep it simple with three different markets to keep this video short
+[  612.04s ->   613.04s] and juicy.
+[  613.04s ->   615.52s] Also, so I don't get millions of comments like these.
+[  615.52s ->   616.52s] Time frame?
+[  616.52s ->   617.52s] Great video.
+[  617.52s ->   618.88s] What time frame is applicable?
+[  618.88s ->   620.28s] What is the time frame?
+[  620.28s ->   621.28s] Time frame?
+[  621.28s ->   622.28s] How use time frame?
+[  622.28s ->   624.44s] What time frame did you use for this strategy?
+[  624.44s ->   625.84s] What is the time frame for this?
+[  625.84s ->   627.08s] One day time frame right?
+[  627.08s ->   628.24s] What time frame best?
+[  628.24s ->   630.86s] I'll be using the daily time frame for these tests.
+[  630.86s ->   635.12s] So first, we're going to test the first strategy, with the buy and sell MACD crossover signals
+[  635.12s ->   636.80s] on the S&P 500.
+[  636.80s ->   641.38s] So only entering a long position if the histogram was positive, then a short strategy when the
+[  641.38s ->   642.90s] histogram was negative.
+[  642.90s ->   647.20s] Then I'm also going to be comparing it to if I just bought the S&P 500 and just simply
+[  647.20s ->   648.64s] held throughout the years.
+[  648.64s ->   653.12s] I should also mention these results were from 1928 to 2018.
+[  653.12s ->   657.94s] So as you can see with the bullish MACD signals, it actually somewhat worked, while oddly enough,
+[  657.94s ->   662.30s] the short only MACD signals did not work too well, which I found really interesting.
+[  662.30s ->   666.52s] But while the bullish MACD signals were close, both of these strategies didn't do as well
+[  666.52s ->   668.92s] as just buying and holding the S&P 500.
+[  668.92s ->   673.00s] But then we move on to gold, and this is where it starts getting really interesting.
+[  673.00s ->   678.22s] So if you did long only entries with the histogram, you would have done pretty well, as it actually
+[  678.22s ->   680.90s] outperformed if you just bought gold and held.
+[  680.90s ->   685.28s] Same thing with short entries though, still positive, but not as good as the other two.
+[  685.28s ->   689.28s] Then finally we have the US dollar index, and how interesting is this?
+[  689.28s ->   694.28s] The short only strategy did the best out of all three for this one, then the long only
+[  694.28s ->   698.94s] strategy came in a close second place, both way above the buy and hold results.
+[  698.94s ->   704.06s] Now we move on to the MACD extreme strategy, where we enter a trade based off the opposite
+[  704.06s ->   705.06s] extreme.
+[  705.06s ->   709.70s] Now this one was kind of difficult to test, simply because it's very hard to tell a computer,
+[  709.70s ->   711.12s] hey, see this right here?
+[  711.12s ->   714.06s] This is an extreme dip, because it's not a number value.
+[  714.06s ->   720.04s] So what I did is, I decided to take the histogram of the MACD and turn it into a percentage of whatever
+[  720.04s ->   721.52s] market we were trading.
+[  721.52s ->   724.92s] This way the bot could tell what was considered a big dip.
+[  724.92s ->   729.20s] So as an example, this is kind of what the bot sees, so now it can use a number value
+[  729.20s ->   732.36s] to tell if a huge spike happened or not, compared to the past.
+[  732.36s ->   734.82s] Like these huge spikes upward or downwards here.
+[  734.82s ->   738.70s] If one of these big spikes happens, it'll calculate what the market does.
+[  738.70s ->   742.04s] And just as a quick hint, these results were pretty interesting.
+[  742.04s ->   745.84s] Also as a quick side note, I go through all the data and statistics pretty fast, so feel
+[  745.84s ->   747.44s] free to pause the video if you want to.
+[  747.44s ->   752.96s] So whenever the MACD was in the top 5% of its readings, so when it had a big spike upwards compared
+[  752.96s ->   755.86s] to the past, the S&P 500 did this.
+[  755.86s ->   761.28s] When the MACD was in the bottom 5% of its readings, meaning it had a big dip downwards, the S&P 500
+[  761.28s ->   762.28s] did this.
+[  762.28s ->   766.78s] So what I learned from these results, overall, extremely high MACD readings were more bullish
+[  766.78s ->   769.08s] than bearish for the S&P 500.
+[  769.08s ->   773.68s] This is because strong momentum is usually followed by more strong momentum, meaning extremely
+[  773.68s ->   776.96s] low MACD histogram readings weren't constantly bullish or bearish.
+[  776.96s ->   778.90s] Here's the results for gold.
+[  778.90s ->   781.06s] These are the top 5% of the readings.
+[  781.06s ->   782.90s] These are the bottom 5% of the readings.
+[  782.90s ->   787.14s] Overall, from these results, there wasn't really a statistical edge for using the MACD
+[  787.14s ->   788.64s] strategy in gold.
+[  788.64s ->   793.30s] Then if we move to the US dollar index, these are the readings for the top 5%, and these
+[  793.30s ->   795.14s] are the readings for the bottom 5%.
+[  795.14s ->   798.68s] What I learned from this is that extremes often bring more extremes.
+[  798.68s ->   801.58s] Whenever the histogram went high, the dollar kept on climbing.
+[  801.58s ->   804.28s] Whenever the histogram went low, the dollar kept falling.
+[  804.28s ->   809.08s] Next, we move on to the juicy part, the best optimal settings for MACD.
+[  809.08s ->   813.24s] When you first add the MACD to the chart, usually the default settings are as follows, 12 for
+[  813.24s ->   817.10s] the fast length, 26 for the slow length, and 9 for the signal smoothing.
+[  817.10s ->   821.88s] I decided to put all my knowledge aside and see what the best settings are statistically based
+[  821.88s ->   823.12s] off the past history.
+[  823.12s ->   825.78s] For this part, I'm only going to be testing the S&P 500.
+[  825.78s ->   830.46s] If you want to see the results for the best settings for the MACD on gold, forex, crypto,
+[  830.46s ->   835.20s] or even some of the top stocks like Apple and Tesla, I'll leave all the backtest results
+[  835.20s ->   836.20s] in my discord.
+[  836.20s ->   840.16s] Plus I usually post some pretty cool tips and tricks in there, like my backtest results
+[  840.16s ->   844.98s] for certain strategies, or even sometimes my entries and exits for certain trades.
+[  844.98s ->   846.44s] So yeah, come say what's up.
+[  846.44s ->   848.14s] I'll leave a link in the description.
+[  848.14s ->   851.90s] But I'm going to use two different timeframes, the daily and the weekly.
+[  851.90s ->   856.22s] So these results could definitely vary if you're using a different timeframe or trading in a
+[  856.22s ->   857.22s] different market.
+[  857.22s ->   858.22s] Just keep that in mind.
+[  858.22s ->   860.22s] And here are my entry and exit rules.
+[  860.22s ->   864.70s] I will enter a long position when the MACD histogram is positive, and sell when the MACD
+[  864.70s ->   866.20s] histogram goes negative.
+[  866.20s ->   872.56s] I also told the bot to test every number between 2 and 60 to see which numbers are the most optimal.
+[  872.56s ->   877.80s] Which basically means the bot will scrape through tens of thousands of different setting combinations.
+[  877.80s ->   883.46s] So for example, it'll try 2, 26, and 9, and then 3, 26, and 9, and so on.
+[  883.46s ->   884.40s] But for every.
+[  884.40s ->   885.40s] Single.
+[  885.40s ->   886.40s] Section.
+[  886.40s ->   887.80s] Let's jump straight into the results.
+[  887.80s ->   890.00s] The first test was on the daily timeframe.
+[  890.00s ->   897.14s] The optimal MACD settings on the daily timeframe for the S&P 500 were 2, 60, and 2.
+[  897.14s ->   903.74s] This strategy made a total average profit of 9.41% per year versus the buy and hold average
+[  903.74s ->   906.42s] of 5.78% per year.
+[  906.42s ->   910.00s] Keep in mind though, this is not including dividends being reinvested.
+[  910.00s ->   915.88s] For the weekly timeframe on the S&P 500, the best settings were 30, 57, and 27.
+[  915.88s ->   922.34s] The strategy yielded 6.12% while the buy and hold made an average of 5.78%.
+[  922.34s ->   927.54s] These are the best MACD settings you can possibly get with these specific scenarios, at least
+[  927.54s ->   928.54s] from past history.
+[  928.54s ->   931.16s] That's why I absolutely love backtesting.
+[  931.16s ->   935.32s] You can learn so much from past history, and there's not really any reason to guess for
+[  935.32s ->   936.32s] the future.
+[  936.32s ->   940.22s] But with that said, the best settings for the past may not even be the best settings for
+[  940.22s ->   941.22s] the future.
+[  941.22s ->   943.50s] Things are always changing, so you do have to keep that in mind.
+[  943.50s ->   947.44s] So after doing all this research, I've learned a lot.
+[  947.44s ->   951.56s] Even though MACD is one of the most installed indicators out there, it's not exactly the
+[  951.56s ->   954.74s] secret formula you need for massive success in trading.
+[  954.74s ->   958.86s] It can be a great indicator and tell you lots of information about a chart, but just like
+[  958.86s ->   962.44s] any indicator, it should never really be used as an exact science.
+[  962.44s ->   966.86s] You have to pair it with other indicators, price movements, strategies, research, and do
+[  966.86s ->   971.08s] so many other trading techniques that make a successful trader successful.
+[  971.08s ->   975.26s] I've been thinking making this a type of series and doing this style of video with all the
+[  975.26s ->   976.40s] main indicators.
+[  976.40s ->   979.80s] So if you guys are interested in that, let me know which indicator you would like to see
+[  979.80s ->   980.80s] next in the comments.
+[  980.80s ->   985.62s] Again, I posted all the other backtest results in my discord if you want to check those out.
+[  985.62s ->   989.74s] Also if you wanted to learn how to backtest the MACD, I made a full beginner tutorial teaching
+[  989.74s ->   990.86s] you all the basics.
+[  990.86s ->   994.08s] Go check that out, thanks for watching, and I'll see you guys next time.

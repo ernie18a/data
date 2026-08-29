@@ -1,0 +1,159 @@
+<!-- tradingview-pine-id: PUB;3885afeb7fbe446a96713502a7eab328 -->
+<!-- tradingviewscripts-format: 1 -->
+# Pure Mag 7 Matrix Momentum Engine v6
+
+Source: https://www.tradingview.com/script/kfaOx12E-Pure-Mag-7-Institutional-Momentum-Engine-v6/
+
+## Description
+
+### Overview
+
+The **Pure Magnificent Seven Institutional Matrix Engine v6** is an intraday tape-reading and sector-breadth cockpit engineered for fast index futures execution (NQ/MNQ). Instead of analyzing isolated, lagging price points on a single instrument, this script isolates the core order flow driving the entire tech ecosystem. It tracks an equal-weighted composite return of the seven dominant mega-cap tech anchors (NVDA, AAPL, MSFT, AMZN, GOOGL, META, TSLA) that control roughly 40-50% of the aggregate Nasdaq-100 index weighting. 
+
+To protect system memory and ensure absolute zero lag on lower timeframes like the 1-minute and 5-minute charts, the code calculates percentage changes dynamically using timeframe.period price streams relative to a daily open reference anchor. This architecture auto-resolves global exchanges natively, completely removing the system crash and "Invalid Symbol" errors common in multi-asset indicators. 
+
+### Structural Mechanics & Visual Layout
+
+### 1. Real-Time Data Participation Matrix (Top-Right Table)
+
+* **The Counter**: Explicitly metrics how many of the 7 structural anchors are trading in a positive daily premium at that exact split-second (e.g., 5 / 7).
+* **The Cells**: Color-coded ticker grids print the exact intraday percentage return of each stock (Green = Up, Red = Down).
+* **The Header**: Automatically shifts colors based on market breadth (Green for broad buying pressure, Orange for mixed conditions, Red for severe distribution).
+
+### 2. Master Momentum Signal Line
+
+* **Visual Profile**: High-visibility Neon Green above equilibrium; deeply muted Forest Green below equilibrium.
+* **Formula**: A refined 9-period EMA smoothing filter applied straight to the real-time equal-weighted aggregate return of the group.
+* **Utility**: Signals the real force behind NQ movements. If the line is high and glowing, tech is operating at a structural intraday premium.
+
+### 3. Bounded Institutional RVOL Gauge (The Volume Floor)
+
+* **Visual Profile**: Fixed, bounded visual grid scale (-0.5 to -2.5) projecting down from the zero-line to guarantee it never physically overlaps or distorts your trend signals.
+* **Formula**: Aggregated volume of all 7 stocks divided by their collective 20-period simple moving average volume (SMA).
+* **Color Code**: Light/Dark Gray for typical retail churn. High-velocity institutional block trading bursts (1.5x to 2.5x+ above standard volume expectations for that precise minute) trigger an immediate shift into Bright Orange and Crimson Red bars.
+
+### Core Execution Strategies
+
+* **True Broad-Market Breakouts**: Look for vertical alignment. When the Master Momentum Line breaks above the 0.00 baseline (Neon Green), the volume floor drops to peak crimson depth (-2.5), and the matrix table displays **6 / 7** or **7 / 7 Up**. This registers a highly reliable broad-market breakout backed by systematic institutional accumulation.
+* **The Mega-Cap "Solo Pump" Trap**: If NQ futures push to new session highs but the Matrix Table reads **1 / 7 Up** or **2 / 7 Up** (e.g., only NVIDIA is green while the rest are red), the indicator signals an artificial index pump. This divergence warns that broad market distribution is occurring, indicating a high-probability reversal environment.
+* **Aggressive Liquidation Sweeps**: When the Master Line drops below the 0.00 baseline into a dark, muted tone while the volume bars hit max depth and the table turns heavily red, it confirms an institutional momentum flush, signaling highly optimal conditions for trailing systematic short entries.
+
+---
+
+## Source Code
+
+````pine
+//@version=6
+indicator("Pure Mag 7 Matrix Momentum Engine v6", overlay=false, scale=scale.right)
+
+// ==========================================
+// 1. ADAPTIVE SMOOTHING PARAMETERS
+// ==========================================
+g_smooth = "Engine Parameters"
+i_smooth = input.int(9,  title="Optimal Line Smoothing Length", minval=1, group=g_smooth)
+i_rvol   = input.int(20, title="Optimal RVOL Baseline Period", minval=1, group=g_smooth)
+
+// ==========================================
+// 2. REAL-TIME MULTI-TIMEFRAME UTILITY FUNCTIONS
+// ==========================================
+get_rt_return(string ticker) =>
+    open_p = request.security(ticker, timeframe.period, ta.valuewhen(ta.change(time("D")) != 0, open, 0))
+    curr_p = request.security(ticker, timeframe.period, close)
+    float rt_pct = 0.0
+    if not na(open_p) and open_p != 0.0 and not na(curr_p)
+        rt_pct := ((curr_p - open_p) / open_p) * 100
+    rt_pct
+
+get_rt_vol(string ticker) =>
+    [v, av] = request.security(ticker, timeframe.period, [volume, ta.sma(volume, i_rvol)])
+    [v, av]
+
+// Fetch Intraday Live Return Metrics for Individual Tickers
+rt_nvda = get_rt_return("NVDA")
+rt_aapl = get_rt_return("AAPL")
+rt_msft = get_rt_return("MSFT")
+rt_amzn = get_rt_return("AMZN")
+rt_goog = get_rt_return("GOOGL")
+rt_meta = get_rt_return("META")
+rt_tsla = get_rt_return("TSLA")
+
+// Combined Equal-Weighted Master Index 
+rt_mag7 = (rt_nvda + rt_aapl + rt_msft + rt_amzn + rt_goog + rt_meta + rt_tsla) / 7
+
+// Fetch Volume Profiles Safely
+[v_nvda, av_nvda] = get_rt_vol("NVDA")
+[v_aapl, av_aapl] = get_rt_vol("AAPL")
+[v_msft, av_msft] = get_rt_vol("MSFT")
+[v_amzn, av_amzn] = get_rt_vol("AMZN")
+[v_goog, av_goog] = get_rt_vol("GOOGL")
+[v_meta, av_meta] = get_rt_vol("META")
+[v_tsla, av_tsla] = get_rt_vol("TSLA")
+
+// ==========================================
+// 3. MATHEMATICAL ALIGNMENT ENGINE
+// ==========================================
+line_mag7 = ta.ema(rt_mag7, i_smooth)
+
+float total_current_vol   = nz(v_nvda) + nz(v_aapl) + nz(v_msft) + nz(v_amzn) + nz(v_goog) + nz(v_meta) + nz(v_tsla)
+float total_average_vol   = nz(av_nvda) + nz(av_aapl) + nz(av_msft) + nz(av_amzn) + nz(av_goog) + nz(av_meta) + nz(av_tsla)
+float combined_rvol_ratio = total_average_vol > 0.0 ? total_current_vol / total_average_vol : 0.0
+
+// FIXED SCALING MATRIX: Maps volume into a clean visual window layout
+float bounded_volume_bar = -0.5
+if combined_rvol_ratio >= 2.5
+    bounded_volume_bar := -2.5
+else if combined_rvol_ratio >= 2.0
+    bounded_volume_bar := -2.0
+else if combined_rvol_ratio >= 1.5
+    bounded_volume_bar := -1.5
+else if combined_rvol_ratio >= 1.0
+    bounded_volume_bar := -1.0
+else
+    bounded_volume_bar := -0.5
+
+// ==========================================
+// 4. REAL-TIME DATA PARTICIPATION MATRIX TABLE
+// ==========================================
+int up_count = 0
+up_count := up_count + (rt_nvda > 0.0 ? 1 : 0)
+up_count := up_count + (rt_aapl > 0.0 ? 1 : 0)
+up_count := up_count + (rt_msft > 0.0 ? 1 : 0)
+up_count := up_count + (rt_amzn > 0.0 ? 1 : 0)
+up_count := up_count + (rt_goog > 0.0 ? 1 : 0)
+up_count := up_count + (rt_meta > 0.0 ? 1 : 0)
+up_count := up_count + (rt_tsla > 0.0 ? 1 : 0)
+
+var table matrix_table = table.new(position = position.top_right, columns = 8, rows = 2, bgcolor = color.new(color.black, 20), border_width = 1, border_color = color.gray)
+
+if barstate.islast
+    color header_bg = up_count >= 5 ? color.new(color.green, 30) : up_count <= 2 ? color.new(color.red, 30) : color.new(color.orange, 30)
+    table.cell(matrix_table, 0, 0, "STOCKS UP", bgcolor=header_bg, text_color=color.white, text_size=size.small)
+    table.cell(matrix_table, 1, 0, "NVDA",      bgcolor=color.gray, text_color=color.white, text_size=size.small)
+    table.cell(matrix_table, 2, 0, "AAPL",      bgcolor=color.gray, text_color=color.white, text_size=size.small)
+    table.cell(matrix_table, 3, 0, "MSFT",      bgcolor=color.gray, text_color=color.white, text_size=size.small)
+    table.cell(matrix_table, 4, 0, "AMZN",      bgcolor=color.gray, text_color=color.white, text_size=size.small)
+    table.cell(matrix_table, 5, 0, "GOOG",      bgcolor=color.gray, text_color=color.white, text_size=size.small)
+    table.cell(matrix_table, 6, 0, "META",      bgcolor=color.gray, text_color=color.white, text_size=size.small)
+    table.cell(matrix_table, 7, 0, "TSLA",      bgcolor=color.gray, text_color=color.white, text_size=size.small)
+
+    // Removed text formatting parameter arguments entirely to resolve compilation block permanently
+    table.cell(matrix_table, 0, 1, str.tostring(up_count) + " / 7", text_color=color.white, text_size=size.small)
+    table.cell(matrix_table, 1, 1, str.tostring(rt_nvda, "+0.aa") + "%", text_color=(rt_nvda >= 0.0 ? color.green : color.red), text_size=size.small)
+    table.cell(matrix_table, 2, 1, str.tostring(rt_aapl, "+0.aa") + "%", text_color=(rt_aapl >= 0.0 ? color.green : color.red), text_size=size.small)
+    table.cell(matrix_table, 3, 1, str.tostring(rt_msft, "+0.aa") + "%", text_color=(rt_msft >= 0.0 ? color.green : color.red), text_size=size.small)
+    table.cell(matrix_table, 4, 1, str.tostring(rt_amzn, "+0.aa") + "%", text_color=(rt_amzn >= 0.0 ? color.green : color.red), text_size=size.small)
+    table.cell(matrix_table, 5, 1, str.tostring(rt_goog, "+0.aa") + "%", text_color=(rt_goog >= 0.0 ? color.green : color.red), text_size=size.small)
+    table.cell(matrix_table, 6, 1, str.tostring(rt_meta, "+0.aa") + "%", text_color=(rt_meta >= 0.0 ? color.green : color.red), text_size=size.small)
+    table.cell(matrix_table, 7, 1, str.tostring(rt_tsla, "+0.aa") + "%", text_color=(rt_tsla >= 0.0 ? color.green : color.red), text_size=size.small)
+
+// ==========================================
+// 5. ARCHITECTURE VISUALIZATION LAYER
+// ==========================================
+color c_mag7 = line_mag7 >= 0.0 ? #00FF00 : #003300 
+
+plot(0, title="Market Open Baseline", color=color.gray, style=plot.style_line, linewidth=2)
+plot(line_mag7, title="Mag 7 Master Composite Line", color=c_mag7, linewidth=3)
+
+color rvol_color = bounded_volume_bar == -2.5 ? color.new(#FF0055, 10) : (bounded_volume_bar == -2.0 or bounded_volume_bar == -1.5 ? color.new(#FF9900, 20) : (bounded_volume_bar == -1.0 ? color.new(#CCCCCC, 40) : color.new(#555555, 70)))
+plot(bounded_volume_bar, title="Institutional Volume Gauge", color=rvol_color, style=plot.style_histogram, linewidth=4)
+````

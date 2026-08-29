@@ -1,0 +1,310 @@
+[    0.46s ->     8.30s] When it comes to trading and quoting prices for your desk, you want to produce prices
+[    8.30s ->    15.30s] efficiently and consistently. In order to do so, we typically use some sort of model from
+[   15.30s ->    22.44s] financial mathematics, and you can't disentangle the notion of stochastic calculus from those
+[   22.44s ->    27.28s] models. In this video, what we're going to do is build off of the previous video where I had
+[   27.28s ->    32.76s] discussed Ito's lemma. I had created some visualizations to help interpret Ito's lemma,
+[   32.92s ->    39.56s] and we're going to shift our focus now towards Ito integration, this idea of a stochastic integral
+[   39.56s ->    45.64s] or a random integral, and we're going to try to build off of traditional calculus. We're going
+[   45.64s ->    50.64s] to create a pretty cool visualization here so that we can understand each component of a stochastic
+[   50.64s ->    56.54s] integral, and at the end of the day, we're going to discuss why it's important, and that is in the
+[   56.54s ->    62.44s] context of pricing, and how we can go about using it to solve stochastic differential equations,
+[   62.56s ->    67.84s] which is what we're after at the end of the day. As always, I'm going to leave a link to this Jupiter
+[   67.84s ->    72.88s] notebook in the description below. I've listed out here some prerequisite Quant Guild lectures you can
+[   72.88s ->    78.84s] check out if you need some background information. All of the Jupiter notebooks for my previous lectures
+[   78.84s ->    85.72s] can be found on the Quant Guild library over on my GitHub page, but beyond that, we can go ahead and
+[   85.72s ->    92.14s] get started with this idea of the integral in the traditional sense. That is, from calculus,
+[   92.28s ->    99.04s] this idea of the Riemann integral. So I'm not going to go about teaching you how to integrate a function.
+[   99.40s ->   106.38s] The integral, in general, is just a way to find the signed area underneath some sort of curve or
+[  106.38s ->   112.58s] function. It's also the antiderivative, so it undoes differentiation of some sort of function, or
+[  112.58s ->   118.62s] it's the inverse of the derivative operator, if you will. And what I've done here is I've just
+[  118.62s ->   125.54s] integrated analytically. That means the solution is precise, a very simple parabola from 0 to 2,
+[  125.60s ->   133.64s] and I find that the solution is going to be 2.6 repeating, or approximately 2.667. Now, analytical
+[  133.64s ->   140.44s] integration is great, and the solution is precise, but it's not always possible, which is why I'm going
+[  140.44s ->   146.52s] to pivot to talking about numerical integration. We have very fast and capable computers, which we can
+[  146.52s ->   153.88s] use to actually simulate and approximate the value of an integral of interest. So if I couldn't actually
+[  153.88s ->   160.02s] go about solving this integral here, I could shift my focus to numerical techniques to try to go about
+[  160.02s ->   167.44s] approximating the value, and I can get some very, very highly precise approximations. So I draw a
+[  167.44s ->   172.26s] parallel here to this idea of numerically differentiating, because I've done a video on
+[  172.26s ->   177.58s] it in the past, and I definitely encourage you to check that video out. But the definition of a
+[  177.58s ->   185.52s] derivative is in this limit form, where h goes to 0, but we have computers. So instead of making h
+[  185.52s ->   192.60s] close to 0, I could just make it very, very, very small. I don't have to deal with this infinitesimal.
+[  192.60s ->   197.96s] So when I say h close to 0, I'm talking about this infinitesimal in the calculus sense, but I could
+[  197.96s ->   205.00s] just make it very, very small. I can make it 0.00001, and it turns out that it will be approximately
+[  205.00s ->   209.96s] equal to the derivative value when h is small. It turns out to be a very good approximation.
+[  210.98s ->   218.12s] How is this useful? Well, it's the same idea in the definition of an integral. So you can see we have
+[  218.12s ->   224.82s] this limit in the definition of an integral as this delta x goes to 0, but instead of dealing with this
+[  224.82s ->   231.78s] delta x close to 0, I could just set delta x to be some very, very small number, and it turns out we
+[  231.78s ->   239.06s] get a very good approximation for the integral in this sense. I will digress from this idea of numerical
+[  239.06s ->   245.66s] integration in a moment, but I do want to say that we are not short of different schemes to go about
+[  245.66s ->   251.92s] numerically simulating. So this is just one scheme. I listed a pro and a con in terms of the efficiency
+[  251.92s ->   259.02s] of this approach, but we are not short of schemes to go about numerically integrating. And it's very
+[  259.02s ->   265.26s] important because this is integration in the traditional calculus sense, right? So we're not
+[  265.26s ->   271.88s] even dealing with randomness quite yet, but there are integrals that are intractable, right? We could come
+[  271.88s ->   276.64s] up with some crazy function that we can't integrate analytically, and we'll have to resort to some
+[  276.64s ->   283.14s] numerical techniques, but it's nice to know that we have a wide variety of techniques available to us, and
+[  283.14s ->   291.82s] many of them are very, very efficient and precise. So what is integration? Well, as I said, it is just going to
+[  291.82s ->   297.48s] be the signed area underneath the curve. It's also the anti-derivative. It's the inverse to that derivative
+[  297.48s ->   306.48s] operator. But visually, we can see this numerical integration in action when I make this delta x value
+[  306.48s ->   315.18s] smaller. So when I make this delta x value smaller, you can see the number of rectangles increases, versus when I
+[  315.18s ->   320.92s] make it larger, the number of rectangles decrease, and the approximation gets worse and worse and worse. So
+[  320.92s ->   327.14s] remember, the actual integral value here is 2.667. The approximation here is 1. It's not a very good
+[  327.14s ->   334.00s] approximation, but as I shrink that value gets smaller and smaller and smaller, my approximation
+[  334.00s ->   341.18s] gets better and better and better until it ultimately converges to the precise value of that
+[  341.18s ->   346.92s] integral. So that's the integral from traditional calculus. Now we need to discuss random variables and
+[  346.92s ->   354.20s] functions of random variables. It's very tempting to want to deal with a random variable in the classical
+[  354.20s ->   363.16s] sense of a deterministic integer, real number, even a complex number for that matter. But they're just
+[  363.16s ->   371.36s] not the same. A random variable is actually governed by a probability mass or density function. It's a
+[  371.36s ->   378.84s] distribution of possible outcomes that characterizes the randomness. It's a very important idea because if I
+[  378.84s ->   384.90s] say that x is normally distributed with a mean of zero and a variance of one, the standard normal
+[  384.90s ->   394.48s] distribution, then x doesn't take on a value. It takes on a set of possible values governed by a
+[  394.48s ->   402.86s] probability density function given here. Moreover, if we have a function of a random variable, then that
+[  402.86s ->   408.88s] function is itself a random variable. A very simple way to see this is imagine that x is a random variable.
+[  408.88s ->   414.74s] Well, we know that x doesn't take on any one value. It could take on any one of these values with
+[  414.74s ->   420.08s] varying likelihoods. So that means if I have some sort of function of x, in this case, I define this
+[  420.08s ->   429.58s] function here, x squared, then how can we be certain of the value for x squared if we're uncertain of the
+[  429.58s ->   437.06s] value for x? In other words, x squared is also going to be governed by some sort of density function.
+[  437.06s ->   442.82s] It's going to be a distribution of outcomes. Therefore, the function of a random variable
+[  442.82s ->   449.94s] is also itself a random variable. Now that may sound trivial, and if it does, fantastic. But the
+[  449.94s ->   456.28s] reason why this is important is because when we introduced the stochastic eta random integral that
+[  456.28s ->   462.84s] we're going to go about solving, we're dealing with an integral with respect to randomness. What does
+[  462.84s ->   468.38s] this mean? It means the integral isn't going to have one value associated with it. We can compute
+[  468.38s ->   473.70s] statistics, the expectation of the integral, the variance of the integral, heck, maybe even the
+[  473.70s ->   480.52s] distribution it follows. But the integral itself is a random variable. This is a very tricky idea because
+[  480.52s ->   488.60s] we're used to integrals being a value in the classical sense, right? The analytical or numerical
+[  488.60s ->   493.16s] solution is going to produce a value, not a distribution. So that's why I wanted to discuss
+[  493.16s ->   497.80s] this idea of random variables and functions of random variables, because that's all the
+[  497.80s ->   503.94s] integral is. It's some sort of function of a random variable. And in that case, the outcome isn't going
+[  503.94s ->   510.28s] to be one value. It's going to be a distribution of possible values. The last part of our randomness
+[  510.28s ->   515.82s] boot camp here is going to be this idea of Brownian motion. Brownian motion is what we're going to be
+[  515.82s ->   522.26s] integrating with respect to this idea of a Brownian increment, an infinitesimally small increment in
+[  522.26s ->   527.40s] Brownian motion. And Brownian motion itself is going to be characterized by these four things. So it's
+[  527.40s ->   533.90s] almost surely continuous, has independent increments, it has this origin at zero, and the increments
+[  533.90s ->   540.06s] themselves are going to be normally distributed with a variance of the time step. This is nothing new if
+[  540.06s ->   544.96s] you've seen Brownian motion before. If you haven't seen any sort of stochastic process before, all you
+[  544.96s ->   550.66s] really need to know is, if you understand the idea of a random variable, this is just going to be a
+[  550.66s ->   558.14s] collection of random variables indexed by time that are governed by these properties. It's not too
+[  558.14s ->   563.34s] difficult to grasp. Moreover, you can visualize it. So these are the increments themselves. And if you
+[  563.34s ->   568.74s] take the cumulative sum of these increments, then you get these Brownian paths, and they look quite cool.
+[  568.74s ->   575.52s] So you can see here, this is the Brownian increment, it's this noise here. And if you take the cumulative
+[  575.52s ->   581.76s] sum, then you actually get the Brownian motion process. Again, here, we're dealing with randomness.
+[  582.18s ->   587.44s] So anytime we see a W sub T, this Brownian motion term, we can't treat it like a traditional mathematical
+[  587.44s ->   594.28s] object, some sort of deterministic quantity, it is itself a distribution governed by these properties.
+[  594.28s ->   601.40s] And the same is true for a differential of this, some sort of discretized increment, that is any
+[  601.40s ->   607.44s] function involving this random variable, this Brownian motion, is itself also going to be a random
+[  607.44s ->   613.34s] variable. This is true for its differential, this is true for its integral, and again, any function
+[  613.34s ->   620.28s] involving this term. Think distribution, not deterministic quantity. This brings us to Ito's
+[  620.28s ->   626.96s] lemma. So the differential of a function involving that Brownian motion clearly has to be a distribution.
+[  627.54s ->   634.22s] There isn't one value for that differential. If there was, then it wouldn't be a random quantity,
+[  634.48s ->   641.10s] right? So Ito's lemma, what it does is it decomposes this differential of a function involving the Brownian
+[  641.10s ->   646.06s] motion into two components. Essentially, there's this drift component and this shock component.
+[  646.06s ->   654.84s] And this differs from classical calculus, and I go in depth into the reasoning why in the video on Ito's
+[  654.84s ->   659.34s] lemma, so I certainly encourage you to check that out. But essentially, what we have here is just an
+[  659.34s ->   665.64s] extra term versus traditional calculus where this higher order term would actually drop out and go to
+[  665.64s ->   671.44s] zero. In stochastic calculus, it turns out due to the quadratic variation associated with the Brownian
+[  671.44s ->   679.54s] motion. Infinitesimally, the quadratic variation goes to dt, leaving us with this extra term instead of
+[  679.54s ->   685.76s] this term going to zero. So not too much of a stretch there from classical calculus, but again, the
+[  685.76s ->   690.24s] reasoning why is important, so I certainly encourage you to check that previous video out. Nevertheless,
+[  690.62s ->   697.16s] we can use Ito's lemma for a variety of things. Here, we're just going to use it to observe the
+[  697.16s ->   702.40s] differential of this function of Brownian motion. So I have a simple function of Brownian motion,
+[  702.76s ->   708.36s] Brownian motion squared. Again, it's a distribution of possible outcomes. So just like we had a bunch
+[  708.36s ->   712.64s] of different sample paths here, we're going to get a whole bunch of different sample paths here.
+[  713.12s ->   718.78s] But we are interested in this differential, that is this small change. So what I'm going to do is I'm
+[  718.78s ->   724.48s] going to compute this small change for the actual path that I simulate. I'm just going to take the
+[  724.48s ->   731.24s] difference for some sort of small time increment of the Brownian motion squared. And then I'm also
+[  731.24s ->   736.90s] going to look at the differential given by Ito's lemma. So I can use Ito's lemma, I can take the
+[  736.90s ->   741.50s] partial derivative with respect to time, partial derivative, or should say the second partial
+[  741.50s ->   746.04s] derivative with respect to Brownian motion, I could take the partial derivative with respect to
+[  746.04s ->   752.18s] Brownian motion, and I'll end up with this differential governed by Ito's lemma. And you'll see that they
+[  752.18s ->   758.36s] actually match. And they certainly should match. Otherwise, the differential given by Ito's lemma
+[  758.36s ->   764.12s] wouldn't be correct. But this certainly does match, right? Now, there may be some sort of approximation
+[  764.12s ->   769.92s] error that is just by the way that it's being simulated or discretized, but that's neither here
+[  769.92s ->   775.92s] nor there. Keep in mind, right, this is the differential of one trajectory. The green represents
+[  775.92s ->   781.26s] the actual difference, that is, I'm taking this function value at different points, and I'm
+[  781.26s ->   787.70s] differencing it. And then the purple path represents the decomposition given by Ito's lemma. And it's
+[  787.70s ->   792.04s] not a coincidence that they match. Otherwise, Ito's lemma wouldn't be correct, right? If I run this again
+[  792.04s ->   796.54s] and again and again, I'm going to get tons of different paths. But Ito's lemma is going to be
+[  796.54s ->   803.34s] correct every single time in decomposing that differential into those two components. And we can
+[  803.34s ->   810.12s] just see this as we continue to simulate different paths of that function. It shouldn't be too difficult
+[  810.12s ->   816.86s] to grasp the idea that the differential of a function of a random variable is also itself
+[  816.86s ->   822.78s] a random variable. This goes back to the x squared example above with the normal distribution. Because
+[  822.78s ->   827.60s] let's say I have a random variable, we know that means distribution of outcomes. I have a function
+[  827.60s ->   832.50s] of that random variable, that means again, distribution of outcomes. Then I'm differentiating
+[  832.50s ->   837.26s] that function of a random variable. Well, if that function of a random variable doesn't have a
+[  837.26s ->   841.34s] deterministic outcome, then how could the differential? Just applying the derivative
+[  841.34s ->   847.24s] operator is going to make it non-random? Certainly not, right? So now I think we're ready to approach
+[  847.24s ->   854.42s] this idea of integrating over a random variable. Because if the differential is going to be a random
+[  854.42s ->   859.10s] quantity, then surely the integral with respect to randomness will also be a random quantity.
+[  859.10s ->   864.94s] And surely it is. When we look at this, and this is an example here of an Ito integral,
+[  865.26s ->   872.78s] a stochastic integral, a random integral, if you like. Effectively, this is the cumulative effect
+[  872.78s ->   878.50s] of weighted randomness. And what I mean to say here is we can take a look at this stochastic integral
+[  878.50s ->   884.54s] in several components. So we have this time-dependent function of a process here. It doesn't even have
+[  884.54s ->   889.40s] to be of a process. It could just be of time or there's other forms of this integral, like some
+[  889.40s ->   895.68s] sort of Volterra process where you have some sort of auto covariance kernel. But I'll digress from that
+[  895.68s ->   901.10s] for now. Really what we're looking at here is some sort of weighting of the Brownian motion. So let's
+[  901.10s ->   906.44s] think back to the Brownian motion process. In fact, I can even scroll up a little bit here. So what's
+[  906.44s ->   913.22s] happening is I have these Brownian increments, right? That's this noise here. The increments
+[  913.22s ->   918.27s] themselves, they're independent, and they're governed by this normal distribution. To get
+[  918.27s ->   924.83s] the Brownian paths, I'm taking the cumulative sum. So it's actually very similar in construction,
+[  925.09s ->   929.81s] this stochastic integral, if we look at it as such, right? Because an integral is really just a
+[  929.81s ->   935.37s] continuous sum, right? That's really all we're dealing with. And that's given by the definition
+[  935.37s ->   941.59s] of the integral from traditional calculus that we saw above. So what are we looking at here? We're
+[  941.59s ->   946.99s] looking at this cumulative sum of Brownian increments weighted by this function. That's
+[  946.99s ->   952.71s] really all a stochastic integral is. And in this sense, what we have to realize is if it's going to
+[  952.71s ->   961.23s] be this cumulative sum of weighted Brownian increments, then clearly the outcome must also
+[  961.23s ->   966.49s] be random. Because those increments are random, right? Because as we said before, anything involving
+[  966.49s ->   971.75s] the Brownian motion is going to be involving some sort of distribution. So that's how we can think
+[  971.75s ->   978.43s] of this stochastic integral in these separate components. And the actual value associated with
+[  978.43s ->   986.81s] this integral for one sample path is itself going to be the weighted cumulative sum of the Brownian
+[  986.81s ->   992.59s] increments. If we're interested in the dynamics of the randomness, we could be interested in the
+[  992.59s ->   998.03s] distribution, we could be interested in mean, variance, things of that nature. We can also
+[  998.03s ->  1004.67s] compute those statistics. But for now, I'll digress. And we can focus on visualizing this idea of the
+[ 1004.67s ->  1011.17s] stochastic integral. I think it's also important to note that just as in the traditional calculus sense
+[ 1011.17s ->  1018.43s] where we can discretize the integral and simulate it numerically to approximate the value, we can certainly
+[ 1018.43s ->  1023.43s] do that here as well. And you can actually take a look. This is one example of how we might do it.
+[ 1023.49s ->  1030.49s] There are, again, many different schemes we can use. But this is one way of simulating a value for this
+[ 1030.49s ->  1036.81s] integral. Again, very important. This integral is a distribution. So if I was to numerically simulate it,
+[ 1037.61s ->  1044.57s] this would be one possible path for the integral. It's a distribution of possible outcomes. So when I go
+[ 1044.57s ->  1050.03s] about simulating it, I'm not getting something that's approximating the solution. I'm getting a
+[ 1050.03s ->  1057.41s] possible path, a possible sample from this integral density. So now I think we're ready to go about
+[ 1057.41s ->  1062.19s] visualizing it since we understand all of these different components. And there's this really cool
+[ 1062.19s ->  1071.17s] idea of lifting that we can use to understand this cumulative sum of weights, of essentially weighting
+[ 1071.17s ->  1076.51s] the Brownian increments. And that's what we can see in this three-dimensional chart here. So if you take
+[ 1076.51s ->  1081.75s] a look at this chart, I have time, I have Brownian motion, and I have weight. And it looks like there's
+[ 1081.75s ->  1087.39s] a lot of funky stuff going on here, but bear with me. So what we have is we have a Brownian path, and I'm
+[ 1087.39s ->  1092.53s] going to get rid of the other paths just so that we can start with a simple Brownian path. And this
+[ 1092.53s ->  1099.11s] Brownian path is just the simple Brownian motion that we saw above. So the Brownian motion that we're
+[ 1099.11s ->  1108.55s] seeing here, this red path here, it doesn't have any value on the Z axis, there's no weight. And it is
+[ 1108.55s ->  1118.69s] equivalent to a path like this. Now you can see there's this surface. What does this surface represent?
+[ 1118.93s ->  1125.89s] Well, the surface is actually representing this weight function. So in this example, I'm using just
+[ 1125.89s ->  1134.23s] the value T. And if I use the value T, then I can create this surface in a three-dimensional space.
+[ 1134.69s ->  1141.71s] And you'll see I have these red lines that are raising the path to this surface. And that's this
+[ 1141.71s ->  1151.57s] lifted path here, this lifted path on the surface. So the stochastic integral is concerned with this
+[ 1151.57s ->  1159.77s] this lifted path. This lifted path represents the weight at each point in the Brownian motion being
+[ 1159.77s ->  1167.29s] applied to the increments. And then we're just going to take the cumulative sum of those weighted
+[ 1167.29s ->  1173.55s] increments. So it's quite an elegant visualization to understand what's happening in a single integral
+[ 1173.55s ->  1179.65s] path. And we can actually go about visualizing now the integral value. You can see here, again,
+[ 1179.65s ->  1186.33s] all of the processes are going to start at zero, and that's to be expected. And then it's going to
+[ 1186.33s ->  1193.03s] accumulate according to the weight governed by this surface and the random increments in the Brownian
+[ 1193.03s ->  1201.81s] path. Now, this is the Eto integral stochastic integral random integral value governed by this orange
+[ 1201.81s ->  1209.99s] path. But that's not the one solution. If I run this again, I'm going to get a different path. If I run
+[ 1209.99s ->  1214.27s] this again, I'm going to get a different path. Because again, we're dealing with randomness. So
+[ 1214.27s ->  1220.01s] the integral itself is going to have an outcome that follows some sort of distribution, because it
+[ 1220.01s ->  1227.05s] is in fact a function of random variables. For those of us who are keen on integration, yeah, by the law of
+[ 1227.05s ->  1232.89s] large numbers, I could just simulate a large number of Eto integral paths, take the mean, take the variance,
+[ 1233.01s ->  1237.95s] take a look at a whole bunch of different statistics by the law of large numbers. And I will have some
+[ 1237.95s ->  1243.03s] measures associated with that integral in a numerical capacity. Of course, they'll converge to the population
+[ 1243.03s ->  1250.21s] measures, assuming I'm discretizing the integral correctly. But we're after analytical solutions, if at all
+[ 1250.21s ->  1255.79s] possible. And really, this is going to start to concern ourselves with the idea of a stochastic
+[ 1255.79s ->  1264.05s] differential equation, particularly important in pricing where efficiency is necessary. So we can move on to this
+[ 1264.05s ->  1270.25s] idea of solving stochastic integrals. And this is going to involve stochastic differential equations.
+[ 1270.41s ->  1275.45s] So there's a general recipe that I've written out here. This isn't a video on stochastic differential
+[ 1275.45s ->  1282.07s] equations. I'm certainly going to do one on SDEs in the future. But for now, a general recipe is to find
+[ 1282.07s ->  1289.07s] some sort of candidate function, apply Eto's lemma, rearrange the terms and integrate, and then maybe you can find
+[ 1289.07s ->  1296.41s] yourself a solution. Let's, before we dive into solving this simple stochastic integral, discuss what
+[ 1296.41s ->  1303.97s] we expect to see in the answer. So we know that the Eto integral is a random variable. It has to be.
+[ 1304.05s ->  1308.05s] It's a function of a random variable, right? It's an operator on a function of a random variable,
+[ 1308.19s ->  1312.31s] whatever you want to call it, however you want to call it. If I run this a billion times, I'm going to get a
+[ 1312.31s ->  1317.47s] whole bunch of different paths and the distribution, the statistics for the distribution will converge,
+[ 1317.47s ->  1324.35s] so on and so forth. But if the outcome of the numerical simulation is a distribution, that is
+[ 1324.35s ->  1332.39s] this Eto integral is in fact a random quantity, then the solution to the Eto integral has to involve
+[ 1332.39s ->  1337.89s] a random variable. It has to. Otherwise, we would be dealing with a deterministic quantity. So
+[ 1337.89s ->  1347.03s] when we solve, solve this integral, we're solving for the quantity that governs its distribution
+[ 1347.03s ->  1351.95s] equation, which is a random quantity, a random variable, usually in terms of some sort of
+[ 1351.95s ->  1355.49s] Brownian motion. So let's see this in action. This isn't a video on stochastic differential
+[ 1355.49s ->  1360.05s] equations. I'm going to do one of those in the future, but the general recipe here, generate
+[ 1360.05s ->  1365.95s] candidate function, apply Eto's lemma, rearrange, and integrate for a solution. We can do this with
+[ 1365.95s ->  1370.01s] this very simple stochastic integral. What I'm going to do is I'm going to start by guessing
+[ 1370.01s ->  1377.07s] this function, Wt squared. So that's going to be my candidate function. I can apply Eto's lemma to
+[ 1377.07s ->  1383.65s] find the differential, and I'm just going to go ahead and expand out this function using Eto's
+[ 1383.65s ->  1389.65s] lemma. And then I'm going to take these partial derivatives. So I have this partial derivative here
+[ 1389.65s ->  1395.15s] of the candidate function with respect to time. I have with respect to Brownian motion and the second
+[ 1395.15s ->  1400.63s] order with respect to Brownian motion. Again, that extra Eto correction term. If I partially
+[ 1400.63s ->  1406.55s] differentiate this, operates just like traditional calculus. In that sense, I get zero because there's
+[ 1406.55s ->  1411.95s] no time. I take the derivative with respect to Brownian motion. I get two times Brownian motion.
+[ 1412.43s ->  1419.12s] And if I take the second partial derivative, then I just get two. You can go ahead and plug these values
+[ 1419.12s ->  1425.54s] in now and plug those in for the differential. And I end up with this guy here. I end up with this for
+[ 1425.54s ->  1430.40s] the value of the differential. It's very similar to the example that we did above in Eto's lemma.
+[ 1430.88s ->  1435.16s] But now what I can do is I can integrate both sides of the equation. So I'm going to integrate
+[ 1435.16s ->  1439.36s] this side of the equation, integrate this side of the equation. If I integrate the left side of the
+[ 1439.36s ->  1445.06s] equation, I just get the candidate function. Remember the integral undoes the derivative operator.
+[ 1445.20s ->  1450.58s] So I'm just going to get the original function. And, you know, we, we also have this idea of the
+[ 1450.58s ->  1453.12s] origin point, but that origin point is going to be zero. I'm just going to,
+[ 1453.12s ->  1458.10s] going to kind of table that for now, but I just mentioned it in case you were wondering where
+[ 1458.10s ->  1462.94s] that term had went. Moreover, if I integrate the other side of the equation, I distribute the
+[ 1462.94s ->  1467.88s] integral, then DT is just going to go to T, right? Just a very simple integral. Then I have this
+[ 1467.88s ->  1473.72s] stochastic integral. That is what we're trying to solve for, isn't it? But now we have it in terms
+[ 1473.72s ->  1478.96s] of these random quantities. So I can just subtract over time to this side of the equation,
+[ 1479.46s ->  1484.74s] divide both sides by two and boom, that is my solution to the stochastic integral.
+[ 1484.74s ->  1490.58s] But the stochastic integral, again, has to have randomness in its analytical solution because
+[ 1490.58s ->  1496.54s] its solution is a distribution of outcomes. So we can see here that it does in fact involve
+[ 1496.54s ->  1502.22s] a random quantity. It involves the original candidate function squared, less time, and everything is
+[ 1502.22s ->  1509.62s] going to be scaled by this fraction, one half. That is the analytical solution to this Ito integral.
+[ 1510.46s ->  1517.42s] It is in terms of Brownian motion to be expected because the Ito integral itself is a function of
+[ 1517.42s ->  1524.06s] randomness. So its solution must involve randomness. How important is an analytical solution for a
+[ 1524.06s ->  1532.20s] stochastic integral? Well, it's kind of important and kind of not as well. Some integrals are going
+[ 1532.20s ->  1538.90s] to be intractable, and some may have analytical solutions. But in any case, we're going to be
+[ 1538.90s ->  1544.96s] discretizing it anyway, right? So if this is the solution, and I wanted to simulate this integral,
+[ 1545.50s ->  1551.46s] then I need to discretize this anyway, right, with the computer. But I could also just discretize the
+[ 1551.46s ->  1556.68s] original integral and simulate it numerically in the previous capacity that I discussed here.
+[ 1556.68s ->  1564.50s] So both should yield the same distribution because it's governed by the same stochastic integral,
+[ 1564.50s ->  1569.52s] right? If I'm discretizing it correctly, as I did in that three-dimensional surface example,
+[ 1569.52s ->  1575.98s] or I discretize this analytical solution, I should be generating from that same underlying distribution
+[ 1575.98s ->  1581.10s] governed by that stochastic integral. And I certainly am. So that's what I've done here. I've numerically
+[ 1581.10s ->  1589.44s] simulated the discretization of the integral itself using this scheme, the Euler-Mariyama scheme,
+[ 1589.90s ->  1596.94s] and the analytical solution itself. And you can see here, as dt becomes arbitrarily small,
+[ 1597.08s ->  1602.50s] the error decreases with the time steps, and the solutions converge. So you can see here,
+[ 1602.86s ->  1609.06s] there's this slight gap between the solutions. dt starts to become arbitrarily small until they are
+[ 1609.06s ->  1616.20s] sufficiently overlapped. And that's because we expect either solution to produce the same sample
+[ 1616.20s ->  1621.68s] quality from the underlying distribution. And it certainly does, as you can see in this convergence
+[ 1621.68s ->  1626.86s] here, and the decrease in the error rate for the increase in the sample size. This is exactly what we'd
+[ 1626.86s ->  1633.12s] expect to see. But we need to separate this in our minds because the analytical solution is great,
+[ 1633.12s ->  1639.56s] and in a pricing capacity, it's necessary because we need to calibrate to some sort of surface to extract
+[ 1639.56s ->  1645.14s] parameters. And efficiency is important. So efficiency is certainly important. But in some cases, it's
+[ 1645.14s ->  1652.14s] intractable. So we need to simulate to be able to produce a path or produce statistics to find prices or
+[ 1652.14s ->  1658.62s] parameters, whatever it is we're looking for. So we can see in either capacity, right, whether we're using the
+[ 1658.62s ->  1663.94s] analytical solution, or the numerical solution, we do draw from the same density, right. But again,
+[ 1664.34s ->  1669.44s] there are going to be different implications, right? Because I can use this analytical formula
+[ 1669.44s ->  1674.84s] here that we've solved for in a different equation, right? If I'm trying to come up with some sort of
+[ 1674.84s ->  1682.00s] pricing model, I can now use that if I'm using this setup here to govern the shocks or the dynamics of
+[ 1682.00s ->  1688.88s] some sort of asset path, whatever, then I can use this now in some sort of subsequent equation. I
+[ 1688.88s ->  1693.86s] can't necessarily do that here in an analytical capacity, right? Because I can do analytical work
+[ 1693.86s ->  1698.24s] with this, but I can't necessarily do analytical work with this, but I certainly can discretize it,
+[ 1698.28s ->  1704.74s] right? So in this case, this solution does exist, and I can use this in other equations. But sometimes it
+[ 1704.74s ->  1708.82s] won't exist, and I'll just have to deal with the discretization, which we can see draws from the
+[ 1708.82s ->  1714.48s] same underlying distribution anyway. So it doesn't matter from that sense of, you know, being able
+[ 1714.48s ->  1721.18s] to produce sample paths or simulate prices or whatever. But in terms of efficiency and subsequent
+[ 1721.18s ->  1727.16s] closed form pricing functionals, yeah, it's certainly going to matter quite a bit, right? We're going to
+[ 1727.16s ->  1731.62s] want that analytical solution, but very rarely will that be the case that we actually have one.
+[ 1731.62s ->  1737.04s] I've gotten some great comments in the past on this idea of Ito calculus versus, say, like,
+[ 1737.04s ->  1744.38s] Stratanovich calculus. Like, why bother with the Ito correction term in Ito's lemma if Stratanovich
+[ 1744.38s ->  1751.16s] integration and the Stratanovich derivative for that matter doesn't concern itself with it?
+[ 1751.78s ->  1758.34s] And that's because we, in pricing, care if the process we're dealing with is adapted to a
+[ 1758.34s ->  1765.62s] filtration if it's a martingale. And in Stratanovich calculus, we don't have a martingale.
+[ 1765.62s ->  1773.55s] And very simply, if we take a look at this simulation from traditional calculus, the Ito
+[ 1773.55s ->  1779.13s] calculus is effectively using the left endpoint of this rectangle, where the Stratanovich calculus
+[ 1779.13s ->  1785.85s] is using the midpoint. So it's anticipatory in that capacity. So it's not itself going to be
+[ 1785.85s ->  1790.31s] a martingale. So remember, whether you're dealing with an Ito integral or a Stratanovich integral,
+[ 1790.45s ->  1793.21s] it's going to be random, right? Because you're dealing with a function of randomness.
+[ 1793.21s ->  1801.17s] But whether or not that randomness is, in fact, a martingale, now that is where the question lies.
+[ 1801.31s ->  1807.49s] So the Ito calculus does ensure, and even if you discretize it in either of the capacities we have
+[ 1807.49s ->  1813.49s] above tier, that it is still a martingale. But in the Stratanovich sense, it will not be. And that
+[ 1813.49s ->  1818.43s] has major implications in pricing. But those are videos for another day. I want to talk about risk
+[ 1818.43s ->  1822.81s] neutral pricing. I want to talk about stochastic differential equations, quadrature, martingales,
+[ 1823.31s ->  1829.93s] so on and so forth. That'll be stuff to look forward to. In itself, stochastic integration is
+[ 1829.93s ->  1834.33s] tricky. And that's because we have a lot of different ideas floating around, right? The
+[ 1834.33s ->  1837.95s] integral from traditional calculus, we want to cling to that because that's what we know. That's
+[ 1837.95s ->  1843.95s] what we understand. Area under the curve, the antiderivative. But when we bring in randomness,
+[ 1843.95s ->  1849.65s] we're starting to deal with distributions, right? And the stochastic integral itself has to be viewed
+[ 1849.65s ->  1854.69s] as a distribution. But we kind of took a look at each of the components and we said, okay, hey,
+[ 1854.69s ->  1859.41s] we're dealing with this idea of a cumulative sum, really, that's all the integral is, of these
+[ 1859.41s ->  1864.43s] Brownian increments, which are very well defined. And those Brownian increments are just weighted
+[ 1864.43s ->  1869.39s] by some sort of function. That's really all a stochastic integral is. And that's going to yield
+[ 1869.39s ->  1874.13s] some sort of set of sample paths and, of course, a distribution. And that's going to do it for this
+[ 1874.13s ->  1878.31s] video on Ito integration, stochastic, random integration, whatever the heck you want to call
+[ 1878.31s ->  1884.23s] it. It has been quite a lot of fun to make these videos on Ito's Lemma and now Ito integration.
+[ 1884.69s ->  1890.17s] Very excited to focus on those other topics in the future, particularly as they pertain to pricing.
+[ 1891.37s ->  1896.01s] Other than that, if you enjoy topics like this, if you want to see more like this in the future,
+[ 1896.01s ->  1901.47s] more Jupyter notebooks structured in this capacity on the QuantGuild library, please leave a comment
+[ 1901.47s ->  1906.87s] below, like, subscribe. It helps me out a lot. Check out quantguild.com. Check out the resources
+[ 1906.87s ->  1912.57s] below to help support the channel in any capacity. I greatly appreciate it. Other than that, thank you
+[ 1912.57s ->  1916.49s] so much for watching and I will see you in the next video.

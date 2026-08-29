@@ -1,0 +1,202 @@
+[    0.34s ->     2.34s] The Fibonacci Sequence.
+[    2.34s ->     5.34s] Seen in many forms of nature all around the world.
+[    5.34s ->    10.40s] Flower petals, shells, galaxies, hurricanes, and even faces.
+[   10.40s ->    15.74s] So it's seen all around in nature, but can we use it in trading to help predict markets?
+[   15.74s ->    18.42s] The Fibonacci Sequence starts like this.
+[   18.42s ->    21.76s] Each number is the sum of the two numbers before that.
+[   21.76s ->    26.10s] It's a simple pattern, but it appears to be a kind of built in numbering system in
+[   26.10s ->    27.10s] nature.
+[   27.10s ->    30.70s] It's one of the reasons why charts look like this.
+[   30.70s ->    33.10s] Creating higher highs and higher lows.
+[   33.10s ->    39.22s] So can we use this tool to help find a specific spot where a pullback has a high chance of bouncing
+[   39.22s ->    41.70s] off and creating a new higher high?
+[   41.70s ->    42.70s] Yes.
+[   42.70s ->    47.20s] And I'm going to tell you exactly how to use the Fibonacci Retracement tool the right way,
+[   47.20s ->    51.88s] what a common mistake people make while using it, and show you how to exit your trades correctly
+[   51.88s ->    54.62s] so you can get the most profit as possible.
+[   54.62s ->    58.23s] Let's get straight to it.
+[   58.23s ->    60.33s] So what are Fibonacci Retracements?
+[   60.33s ->    65.95s] They are key levels from the Fibonacci Retracement tool that can help you find the reversal of
+[   65.95s ->    66.95s] a pullback.
+[   66.95s ->    70.35s] Let me show you a great example of when to use these levels.
+[   70.35s ->    75.33s] A lot of traders like to wait and trade off a pullback, considering one, it's usually
+[   75.33s ->    80.33s] at a cheap and great price, and two, it's usually a place where a change in price will
+[   80.33s ->    81.33s] happen.
+[   81.33s ->    83.43s] This is usually how a normal trade would go.
+[   83.43s ->    89.05s] You see an uptrend, you also notice there's a key level acting as both a support and resistance.
+[   89.05s ->    94.13s] So you now know if the price does end up making a pullback at that level, there's a great
+[   94.13s ->    99.23s] chance of it bouncing off and creating a new higher high, making this spot a great level
+[   99.23s ->   101.05s] to buy if it shows confirmation.
+[  101.05s ->   106.53s] But what if you were in a position like this, where the price went up and made a pullback,
+[  106.53s ->   110.69s] but there weren't any previous key levels of support or resistance?
+[  110.69s ->   114.05s] How do you know where the key levels are for a reversal to happen?
+[  114.05s ->   115.05s] The answer?
+[  115.05s ->   116.83s] The Fibonacci Retracement tool.
+[  116.83s ->   121.27s] If we plot these levels, you can see the price respected them, and actually used these
+[  121.27s ->   123.21s] levels as a key support.
+[  123.21s ->   127.33s] Another great example of the Fibonacci's magic is the S&P 500.
+[  127.33s ->   132.89s] If we go back when Corona hit, you can see the Fibonacci tool predicted the exact bottom
+[  132.89s ->   133.89s] for the crash.
+[  133.89s ->   136.83s] Let's go over the best settings for this tool.
+[  136.83s ->   141.03s] To do that, get on trading view, if you don't have it, I'll leave a link in the description.
+[  141.03s ->   143.73s] Next, click on this icon right here.
+[  143.73s ->   146.23s] Make sure it's on the Fibonacci retracement.
+[  146.23s ->   149.35s] Just place it anywhere on the chart and click the settings icon.
+[  149.35s ->   155.79s] What we want to do is uncheck 0.382 and then uncheck all the other boxes after 1.
+[  155.79s ->   157.63s] Next, uncheck the background.
+[  157.63s ->   162.35s] I know the colors are fancy and cool, but this mostly just makes your chart messy.
+[  162.35s ->   167.01s] Then uncheck prices and change the levels from values to percents.
+[  167.01s ->   169.45s] Also change your labels from left to right.
+[  169.45s ->   173.95s] These are the settings that I found work best for me, and it makes it really clean on the
+[  173.95s ->   174.95s] chart.
+[  174.95s ->   179.19s] So now that we have the correct settings, let's move on to how to use the tool correctly.
+[  179.19s ->   181.89s] First things first, we need to find a clear trend.
+[  181.89s ->   186.77s] In this example, you can see a clear trend with a swing high and a swing low.
+[  186.77s ->   192.43s] The next step is to drag your Fibonacci retracement tool from the swing low to the swing high.
+[  192.43s ->   197.15s] One common mistake that I see a lot of traders making is that they drag from the candle's
+[  197.15s ->   199.39s] body rather than the candle's wick.
+[  199.39s ->   201.15s] The price didn't stop here.
+[  201.15s ->   204.87s] Sure it might have ended up here, but this was not the highest it went.
+[  204.87s ->   209.33s] So when making your Fibonacci levels, make sure you're going all the way to the wick.
+[  209.33s ->   214.21s] So once you have dragged your Fibonacci retracement tool from the swing low to the swing high,
+[  214.21s ->   216.95s] it's time to understand how to read these levels.
+[  216.95s ->   220.09s] So with my specific settings, you're going to have 6 levels.
+[  220.09s ->   223.03s] The 0% level is basically your starting point.
+[  223.03s ->   225.63s] The other 5 levels are your pullback levels.
+[  225.63s ->   230.27s] Meaning that if price hits one of these levels and respects it and starts reversing, it's
+[  230.27s ->   234.57s] very likely that it'll go up to the next highest level or even higher.
+[  234.57s ->   238.81s] The most common levels you'll see this happen with are these 3 levels.
+[  238.81s ->   242.75s] 23.60, 50, and 61.80.
+[  242.75s ->   246.47s] A lot of traders will call this area the golden zone.
+[  246.47s ->   250.05s] This tool will also tell us what is considered a pullback.
+[  250.05s ->   254.39s] If the price bounces off any of these lines, it's considered a pullback.
+[  254.39s ->   257.99s] Meaning there's a chance for it to bounce off and go to the next level.
+[  257.99s ->   262.67s] If the price breaks below the 100 line, it'll likely try to come back and fall, starting
+[  262.67s ->   263.67s] a downtrend.
+[  263.67s ->   267.43s] To be clear, anything above the 100 line is a pullback.
+[  267.43s ->   271.51s] Anything below the 100 line is not a pullback and is a downtrend.
+[  271.51s ->   276.67s] So it's important to note if the price ever goes below your 100 line, it's pretty likely
+[  276.67s ->   279.09s] it'll fall a lot more after that.
+[  279.09s ->   283.59s] You should also understand that you need to treat these levels just as you would for support
+[  283.59s ->   284.59s] and resistance.
+[  284.59s ->   286.59s] They are not solid lines.
+[  286.59s ->   287.91s] They are areas.
+[  287.91s ->   292.97s] Meaning the price is not always going to respect the exact level where the line is.
+[  292.97s ->   298.33s] Just because the price falls below a line doesn't necessarily mean it has broken that area.
+[  298.33s ->   300.29s] It could still reverse from this point.
+[  300.29s ->   305.07s] So I guess what I'm trying to say is don't treat these levels as an exact measurement.
+[  305.07s ->   307.33s] You should just be treating them as a guide.
+[  307.33s ->   310.11s] How do you know which level the price will reverse at?
+[  310.11s ->   312.19s] Well, how about I show you an example.
+[  312.19s ->   314.81s] So here we found a clear trend upwards.
+[  314.81s ->   318.57s] We identified the swing low and the swing high of the trend.
+[  318.57s ->   323.23s] Next we select our Fibonacci retracement tool, and we dragged from the swing lows wick to
+[  323.23s ->   324.51s] the swing highs wick.
+[  324.51s ->   326.45s] Next, we see what price does.
+[  326.45s ->   332.33s] We see the price retested the 0% level, but just as I said before, just because price breaks
+[  332.33s ->   335.31s] through a level doesn't necessarily mean it's certain.
+[  335.31s ->   338.77s] So as you can see, it tested the level and got rejected.
+[  338.77s ->   344.81s] It ended up doing that two more times, telling us that it really wanted to go above this level.
+[  344.81s ->   350.71s] Next we see it come down to the 23.60 level, and look how much it's respecting this line.
+[  350.71s ->   355.97s] Once I see this candle right here, I'm probably entering the trade, because I can be pretty
+[  355.97s ->   361.35s] certain the price will go up from here as a pullback, or at least go to the 0% level.
+[  361.35s ->   366.35s] It's also very important to get confirmation, just because price is respecting a line doesn't
+[  366.35s ->   368.31s] necessarily mean it's going to go up.
+[  368.31s ->   372.75s] So once you get the respect, make sure you have some candles going upwards to confirm
+[  372.75s ->   373.75s] that respect.
+[  373.75s ->   378.85s] So after I see some confirmation, I enter the trade and set my stop loss right below the
+[  378.85s ->   384.45s] 23.60 line, and then I'm going to sell half my shares at the 0% line.
+[  384.45s ->   385.97s] Let's see what the price does.
+[  385.97s ->   391.11s] It turns out we were right, and the price went up to the 0% line, giving us a nice little
+[  391.11s ->   392.11s] profit.
+[  392.11s ->   395.81s] So we sell half our shares, so we guarantee that profit.
+[  395.81s ->   397.35s] But we are not done.
+[  397.35s ->   402.73s] As I said before, price has tried breaking through this line multiple times, telling us it really
+[  402.73s ->   404.35s] wanted to go up from here.
+[  404.35s ->   407.43s] So that's why we're keeping half our shares in the game.
+[  407.43s ->   412.07s] We see that price breaks through this level, and comes back down and respects it.
+[  412.07s ->   415.39s] This right here is like seeing gold on your screen.
+[  415.39s ->   419.79s] The price broke through, made a slight pullback, and respected the highest level.
+[  419.79s ->   423.31s] Meaning, it's about to make a big move upward.
+[  423.31s ->   428.37s] After I see a bit of confirmation, I raise my stop loss right below the 0% level, then
+[  428.37s ->   429.83s] look what happens.
+[  429.83s ->   431.29s] The price skyrockets.
+[  431.29s ->   435.51s] So as a quick overview, let's go over some key moments of this trade.
+[  435.51s ->   440.55s] There were multiple times price tried breaking through the 0% line, but we never entered at
+[  440.55s ->   444.69s] these points because there was never any confirmation of it going up.
+[  444.69s ->   450.69s] Another key point is when the price went down to the 23.60 level, we only entered after
+[  450.69s ->   455.55s] seeing the price respected this line, and gave us confirmation it was going up.
+[  455.55s ->   459.07s] Just because price hits a line, doesn't mean it'll respect it.
+[  459.07s ->   461.21s] You should always be looking for confirmation.
+[  461.21s ->   466.01s] It's a very important concept to understand when using the Fibonacci retracement tool.
+[  466.01s ->   470.87s] Here's another great example that'll help you understand the Fibonacci so much better.
+[  470.87s ->   475.81s] We found a clear trend upwards, we identified the swing low and the swing high.
+[  475.81s ->   479.95s] We made sure to put our levels all the way to the wicks, then we wait and see what price
+[  479.95s ->   480.95s] does.
+[  480.95s ->   485.51s] We see that price slightly respects this level by one candle resisting it, but probably
+[  485.51s ->   488.81s] not enough information to enter the trade yet.
+[  488.81s ->   493.03s] Then the price tries to break through the 0 line, and then comes and reverses back to
+[  493.03s ->   495.13s] the 23.60 line.
+[  495.13s ->   500.57s] We then see a candle appear, not even thinking about respecting this line at all, breaking right
+[  500.57s ->   501.57s] through it.
+[  501.57s ->   506.25s] This right here might be a good spot to enter a short, but you probably need a bit more
+[  506.25s ->   508.69s] confirmation, so we wait.
+[  508.69s ->   513.73s] We see it kind of bounce off the 50 line, and then hits it again going right through it.
+[  513.73s ->   518.17s] Then the price consolidates in this area, not knowing what it wants to do.
+[  518.17s ->   522.17s] Whenever price consolidates like this, price can go in either direction.
+[  522.17s ->   526.13s] The market doesn't know what it wants to do, and it's usually a pretty risky spot,
+[  526.13s ->   529.63s] so it's usually not a good time to enter a trade at this moment.
+[  529.63s ->   535.13s] It ends up breaking upwards, going all the way to the 23.60 line again, but then gets
+[  535.13s ->   536.25s] rejected.
+[  536.25s ->   540.63s] After seeing this confirmation candle, this would be a pretty nice place to enter a short
+[  540.63s ->   541.63s] trade.
+[  541.63s ->   546.81s] Considering the price is respecting this resistance, and last time this happened, it went down to
+[  546.81s ->   548.99s] the 61.80 line.
+[  548.99s ->   554.07s] We see price goes back down to where it did before, and does another one of those reversals,
+[  554.07s ->   559.15s] going back to the 23.60 line and respecting it another time.
+[  559.15s ->   564.07s] So if you miss going in the time before this, this is an absolute great time to enter a
+[  564.07s ->   565.33s] short trade as well.
+[  565.33s ->   569.77s] So now that we are for sure in the trade now, I should also mention that you should be selling
+[  569.77s ->   573.33s] a percentage of your trade for each level that gets hit.
+[  573.33s ->   576.47s] The important rule is get the profit confirmation.
+[  576.47s ->   580.63s] It's a very important rule, and it's critical to become a profitable trader.
+[  580.63s ->   581.73s] So what does price do?
+[  581.73s ->   584.15s] It drops back down to the 50% line.
+[  584.15s ->   587.55s] It sort of respects it, but it's still kind of unsure.
+[  587.55s ->   592.77s] We still sell around 25% of our shares at this level for guaranteed profit.
+[  592.77s ->   597.41s] Next, we see a monster of a candle break through the 61.80 line.
+[  597.41s ->   600.57s] The next couple of candles start respecting this line.
+[  600.57s ->   605.63s] We sell another 25% of our original entry, and we see what price does.
+[  605.63s ->   610.97s] It goes up breaking through the 61.80 line and doesn't quite make it to the 50 line.
+[  610.97s ->   615.67s] After losing momentum, it drops back down to the 78.60 line.
+[  615.67s ->   621.71s] So we now know this 78.60 line is a pretty strong support, considering the price keeps
+[  621.71s ->   623.71s] stopping right around here.
+[  623.71s ->   628.17s] So we know if the price ever breaks through this point, it's going to drop hard.
+[  628.17s ->   629.33s] And look what happens.
+[  629.33s ->   633.75s] Price breaks through it, making it go all the way down below the 100 level.
+[  633.75s ->   639.39s] We sell another 25% of our original entry, and keep the last of the money in the trade
+[  639.39s ->   641.15s] for a high return gain.
+[  641.15s ->   645.75s] We've now made a really good profit, and all of that profit is confirmed.
+[  645.75s ->   647.89s] And we are even still in the trade.
+[  647.89s ->   648.95s] And look what happens.
+[  648.95s ->   653.39s] The price breaks through, comes back up to the 100 level, starts resisting.
+[  653.39s ->   657.07s] This right here is that gold moment I was talking about before.
+[  657.07s ->   661.57s] After seeing this, we have a pretty good idea the price will drop a lot.
+[  661.57s ->   664.17s] And look what happens, price drops.
+[  664.17s ->   669.29s] Another key tip that will help you guys out so much, is if you ever find a Fibonacci level
+[  669.29s ->   673.69s] where it matches up with a key level of support, like this example, the white line was placed
+[  673.69s ->   677.29s] here because it was a key support level on the daily time frame.
+[  677.29s ->   682.69s] Then we have the green 50% line from the Fibonacci retracement tool, right under the strong
+[  682.69s ->   683.87s] daily support.
+[  683.87s ->   689.37s] This means that this level right here is very likely to be a strong support or resistance.
+[  689.37s ->   694.85s] And as you can see, the price did exactly that and treated this area as a strong support.
+[  694.85s ->   696.45s] So some key takeaways.
+[  696.45s ->   701.17s] You should be treating your Fibonacci levels as areas, not solid lines.
+[  701.17s ->   704.27s] Always wait for confirmation before entering a trade.
+[  704.27s ->   708.09s] Sell percentages of your position for every level that is hit.
+[  708.09s ->   713.55s] If you find an area with a strong daily support and a Fibonacci level, there's a great chance
+[  713.55s ->   715.39s] price will respect that level.
+[  715.39s ->   720.01s] If you want to use the Fibonacci retracement tool to grow a small size stock account, watch
+[  720.01s ->   724.93s] this video because I go over the best ways to grow a stock account with a small balance
+[  724.93s ->   727.09s] efficiently as possible.
+[  727.09s ->   729.09s] Thanks for watching and I'll see you guys next time.

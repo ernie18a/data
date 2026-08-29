@@ -1,0 +1,78 @@
+[    0.00s ->     4.82s] Hey guys, I'm going to walk you through how and why I use stop losses when trading credit
+[    4.82s ->     9.02s] spreads. I'm going to show you why it's more beneficial to use a stop loss than to maybe
+[    9.02s ->    15.46s] roll or hold into in the money. And I'm also going to show you a real life trade example
+[   15.46s ->    21.50s] right now of how I do this. So again, what do we mean by a stop loss? A stop loss means that
+[   21.50s ->    28.62s] we're exiting our credit spread at a predetermined price in order to prevent massive losses. So
+[   28.62s ->    33.02s] let's look at this right now. Here is a current trade that I have active that I'm most likely
+[   33.02s ->    39.74s] going to close because of a stop loss that I have. So if we look at this, this is the S&P 500. It's
+[   39.74s ->    45.58s] trending up. Here was my idea. Here was my bet. Well, first off, it was above this green line,
+[   45.64s ->    51.22s] which is an indication that the market in general is more bullish and momentum is headed up. So I
+[   51.22s ->    57.52s] took that. I took the fact that there was a trend line established here and that yesterday that it
+[   57.52s ->    62.98s] formed a doji candle, which is an indecision candle at this trend line, which is indicative
+[   62.98s ->    69.52s] of a reversal. When doji's candles happen near a strong level, which I believe this trend line was
+[   69.52s ->    76.04s] because it's bounced there before that it's going to bounce higher. Instead overnight, we had a gap
+[   76.04s ->    81.98s] down and now it's starting to run down further. So what can we get from this? Well, this means that
+[   81.98s ->    86.78s] my level is going to probably be broken. So what's my, what is my level and how did I structure this
+[   86.78s ->    92.58s] trade? Quite simply, I put on a one for one trade. What does that, what does that mean? It means I went
+[   92.58s ->   102.42s] to roughly a 30 to 35 Delta for this trade, which means that I am risking $1 to make $1. To break this
+[  102.42s ->   110.82s] down, I collected 24 cents when I put on this trade. So that means I got paid $24 to put on this trade
+[  110.82s ->   116.68s] and my level is a four, four, one, which is currently below. So actually it's currently at,
+[  116.78s ->   122.06s] but anyways, my level is four, four, one. So because that's my level, because I'm so close to
+[  122.06s ->   129.86s] the stock price, I get to collect 24 cents. However, my stop loss is at 50 cents. And I'll explain why
+[  129.86s ->   134.82s] that, why that is, but because my stop loss is at 50 cents when the spread hits 50 cents,
+[  134.82s ->   142.69s] then that means that I am making 24, but if I'm wrong, I have to pay out $50, but I still get to
+[  142.69s ->   149.31s] keep the 24 I originally collected. So that means by default, my loss is $26. So if we simplify this,
+[  149.67s ->   157.21s] I am risking $26 to make 24, which is roughly, I'm risking $1 to make $1. And again, I had not ideal
+[  157.21s ->   162.53s] trade setup. So because this was a great setup and it didn't work out in my favor, that's fine.
+[  162.53s ->   167.43s] If I have one more winning trade, I cover my loss. It's, it's break even. That's basically how
+[  167.43s ->   173.77s] this works. And so again, because I have roughly around an 85% win rate, well, I'm going to make
+[  173.77s ->   178.83s] money on the next trade most likely, or in the coming days. And so long-term, I am going to make
+[  178.83s ->   183.31s] money with this strategy. I play long-term expect, expectancies, and that's how this works. Now,
+[  183.59s ->   191.45s] why am I trading or exiting at a 50 cents level for the spread? Well, let me pull up my actual broker
+[  191.45s ->   195.53s] in the actual trade right now, because I'm going to walk you through a real life example of what
+[  195.53s ->   201.35s] this looks like. So if I kind of can bring in my broker here, this is Tasty Trade, which is the
+[  201.35s ->   206.03s] broker that I use. So if I kind of extend this out, let's take a look here. So I have this vertical
+[  206.03s ->   211.93s] trade right here. And again, I have two in the same period. Why? Well, because I originally put on
+[  211.93s ->   217.43s] this trade at 441, 440, then the market dipped a bit. And I was like, you know what, let's go super far
+[  217.43s ->   223.65s] out with this trade so that I can offset a majority of the losses if we get in here.
+[  223.99s ->   227.37s] So that's kind of what we are looking at here. This is on an account that I'm trading a bit
+[  227.37s ->   232.69s] smaller on. But if we look at this, you can see here that I got in at 24 cents and it's now trading
+[  232.69s ->   238.63s] around 44. Now, why is 50 cents the mark? Well, because if you don't know this, as soon as a credit
+[  238.63s ->   244.67s] spread enters the money, as in both legs are in the money, there's something that you can worry
+[  244.67s ->   249.33s] that you can worry about. Again, when any spread is in the money, like even just the first one is
+[  249.33s ->   253.61s] in the money, you have to worry about this. But when both are in the money, especially you have
+[  253.61s ->   259.77s] to worry about assignment risk. This means that the person that you sold the contract to will most
+[  259.77s ->   266.11s] likely say, hey, I want to execute this contract. And so now you have to have a hundred shares or sell
+[  266.11s ->   270.67s] a hundred shares, depending on if it's a call or put credit spread. And now you have a lot of money
+[  270.67s ->   274.45s] at risk. And you're going to have to use the other option to offset it. And a lot happens.
+[  274.45s ->   282.11s] So in order to avoid assignment risk, what we do is we exit the trade when the stock has broken our
+[  282.11s ->   287.59s] short strike price. So for instance, 441 is the level to break when it breaks this and the level
+[  287.59s ->   292.93s] gets in, gets in between these two. So for instance, I have the 441, 440 trade. So when it's trading
+[  292.93s ->   300.07s] around 440, 50, AKA in the middle of those two levels, the spread price is going to be at 50 cents.
+[  300.07s ->   307.15s] So this means that I am taking a stop loss or I am closing my trade to prevent losses when the trade
+[  307.15s ->   314.11s] stops going in my favor, right? What I did was I put a trade that was trending in my favor. Then what
+[  314.11s ->   319.05s] I did is I went out and if it breaks this level, it means that it's not going to continue to go up.
+[  319.07s ->   323.65s] And it's not going to continue to go up. I need to cut my losses and move on. And also when I cut my
+[  323.65s ->   329.95s] losses, when this breaks into the money, then I prevent assignment risk, pin risk. And the fact that
+[  329.95s ->   334.37s] I can lose a lot of money quickly because when you're in the money, theta doesn't really work
+[  334.37s ->   339.19s] in your favor. So that's kind of how we're looking at it. And that's why I put on the stop loss.
+[  339.19s ->   343.83s] So right now it's trading at 42 cents. It's hovering in the money and not. So again, I may
+[  343.83s ->   349.29s] exit this trade. I may not. If you want to look at what it looks like to set up a stop limit order,
+[  349.37s ->   353.79s] for instance, if you can't watch the market 24 seven because you work or something, simply go into
+[  353.79s ->   361.41s] here and click close position. We're going to go in here. Next, we're going to change the order type
+[  361.41s ->   366.17s] to stop limit. Then you set the stop price and then you set the limit price. Now, what is this?
+[  366.39s ->   374.93s] Well, when options orders are kind of put out there as a new place and order, then anybody can go and
+[  374.93s ->   380.39s] snag that order, typically a market maker at a price that doesn't work well for you. So that's why you
+[  380.39s ->   388.13s] have this stop price, which is essentially when the option spread price hits this level,
+[  388.25s ->   392.93s] then it's going to put the order in the market. The reason being is because if you put the order
+[  392.93s ->   398.59s] in the market before, then you're probably going to get executed and lose money. So let's say around
+[  398.59s ->   405.81s] 50 cents, right? So once the spread price hits 50 cents, then it's going to send this order in.
+[  405.89s ->   410.07s] So what order is it sending in? Well, it's sending it in an order that has a limit price of,
+[  410.07s ->   416.55s] let's say 49. That means that it hit 50 cents of the spread. So this order got executed. So now
+[  416.55s ->   423.53s] it's trading at 50 cents and it's saying, Hey, close me out for 49 cents or better. And so that's
+[  423.53s ->   428.19s] kind of how you can put on that trade. And so that's one way to do that. So anyways, that's how
+[  428.19s ->   433.37s] you automate the stop loss. That is how and why I use one. I hope that makes sense. Again, long-term
+[  433.37s ->   438.53s] when you have this in limiting your losses and maintaining a high win rate, it's just exponentially
+[  438.53s ->   445.89s] great to have that long-term expected return when you decrease your losses. Anyways, guys,
+[  446.01s ->   451.61s] I hope that makes sense. If you liked it, please press that subscribe button, put down any comments
+[  451.61s ->   456.71s] below. If you still have questions, I read them all. And if not, I will see you in the next video. Bye.

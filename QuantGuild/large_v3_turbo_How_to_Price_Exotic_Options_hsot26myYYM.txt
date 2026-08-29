@@ -1,0 +1,290 @@
+[    0.46s ->     7.92s] pricing is literally the most important topic in all of quantitative finance and financial
+[    7.92s ->    15.78s] engineering it's literally what determines whether you make money or lose money more so retailers
+[   15.78s ->    21.34s] rather than institutions tend to focus on this idea of a trading strategy what's your what's
+[   21.34s ->    25.58s] your trading strategy i want to build an algorithmic trading bot that's going to print
+[   25.58s ->    34.32s] money for me and you mention anything on pricing and crickets nobody has interest but pricing
+[   34.32s ->    41.38s] fundamentally is necessary for those topics if you don't know what the price is should be
+[   41.38s ->    46.60s] then how can you ever hope to make money at best you're going to break even or you're just going
+[   46.60s ->    54.16s] to lose money the goal is to find things that are undervalued and buy them or overvalued and sell
+[   54.16s ->    60.74s] them and you do this on a statistical basis right it's not about certainty there is no certainty
+[   60.74s ->    66.18s] you're doing this on a statistical basis to accumulate edge positive expected value over time
+[   66.18s ->    71.26s] and if you can do that you generate p and l if you don't then you lose money so pricing is the most
+[   71.26s ->    76.66s] important thing it's not about your trading strategy your trading strategy is fundamentally trying to
+[   76.66s ->    81.70s] figure out what is over and under price that's the whole point of it so in this video what i want to do
+[   81.70s ->    88.48s] is i want to apply this idea to exotic options i want to focus on the pricing of these exotic options
+[   88.48s ->    94.34s] and how a desk may go about producing these prices focusing on this idea of ensuring that we have some
+[   94.34s ->    99.60s] sort of eggs so that we're making money making a market with these products rather than you know
+[   99.60s ->   105.78s] just giving money away without any interest in how pricing works and we're going to visualize this
+[  105.78s ->   111.10s] general methodology step by step this jupiter notebook is linked in the description below i've
+[  111.10s ->   116.16s] also outlined a set of prerequisites i created a video last week on the black shoals implied
+[  116.16s ->   121.88s] volatility surface discusses why the black shoals model is insufficient to price these products
+[  121.88s ->   127.46s] definitely check out that video i have other relevant videos here too like why we can simulate
+[  127.46s ->   131.82s] prices like how does that even work why we care about pricing i kind of just mentioned it because
+[  131.82s ->   137.38s] you know your pnl at the end of the day is just how well you identify mispricings i also have more
+[  137.38s ->   143.30s] theoretical videos on the underpinnings of generating these prices unfortunately they tend to be my least
+[  143.30s ->   148.10s] popular videos but they are the most fun to make so definitely check those out if you would like more
+[  148.10s ->   154.48s] of a technical background um moreover if you're you're more interested in the the practitioner um or if
+[  154.48s ->   159.24s] you're a practitioner more interested in the application i have these applications of these models
+[  159.24s ->   164.32s] um from a market participant market maker perspective and you can check out those videos
+[  164.32s ->   169.82s] there so we're going to focus on this idea of pricing and specifically pricing an exotic option
+[  169.82s ->   177.80s] so our goal is to generate pnl right first what the heck is an exotic so if we have a european option
+[  177.80s ->   182.26s] right that's typically what we call vanilla has this standard payoff we have the right but not obligation
+[  182.26s ->   188.14s] to buy or sell at a certain price at some time in the future whenever the option expires right
+[  188.14s ->   194.93s] there are a lot of exotics that are just europeans with different payout structures that tend to be
+[  194.93s ->   201.70s] path dependent so a european option it doesn't matter what asset path it doesn't matter the path
+[  201.70s ->   207.90s] the asset took to get to the expiration but with the barrier option or the click at option or other
+[  207.90s ->   212.94s] exotic options the path does matter and it impacts the payoff at expiration so what we're going to do is
+[  212.94s ->   217.94s] we're going to focus on this idea of a barrier option it's just like a regular european option so
+[  217.94s ->   222.76s] here's a european call for example right we have a strike price the underlying asset expired above
+[  222.76s ->   228.76s] it so we get a payout in this case it was 589 if i run this again right whoa what happened here so
+[  228.76s ->   235.26s] the underlying asset expired in the money right it expired above this strike price but this is not
+[  235.26s ->   241.62s] a european option it is an exotic it's a barrier option it hit this barrier this is an up and out call
+[  241.62s ->   248.70s] which means if it hits the barrier you're done no pnl it'll expire worthless regardless of if it's
+[  248.70s ->   255.72s] above or below the strike price so that is a non-standard payoff structure that is now path
+[  255.72s ->   261.68s] dependent right it depends on the path that the underlying asset took very interesting how do we go
+[  261.68s ->   268.14s] about pricing something like this first why would we buy this or sell this well what if i have an
+[  268.14s ->   275.12s] opinion on the underlying asset i think that it is let's use nvidia for example right it's 170
+[  275.12s ->   283.46s] about right now i think nvidia is going to be 190 in 10 days but there's no way it's going to be above
+[  283.46s ->   292.26s] 200 within those 10 days well i can structure a barrier option to facilitate that position right i can
+[  292.26s ->   298.34s] put the barrier at 200 and then i can just write out that call and hopefully i'm right and i can make
+[  298.34s ->   304.66s] money so why would i do that if i have this extra risk right because if it hits the barrier then it
+[  304.66s ->   312.86s] expires worthless regardless right why don't i just buy a vanilla call well for that extra risk you're
+[  312.86s ->   317.92s] going to get a discount right because you have more risk of it expiring worthless there's less upside
+[  317.92s ->   322.76s] potential for you with this barrier as made evident here right to hit the barrier and you don't get to
+[  322.76s ->   328.60s] collect this this payout so it's going to be cheaper relative to its european counterpart okay
+[  328.60s ->   333.74s] so that's how we can kind of look at this this exotic option we can look at it relative to what we know
+[  333.74s ->   340.51s] and that is a standard european option how do we go about pricing something like this remember our goal
+[  340.51s ->   344.99s] or we're sitting on a trading desk right i gave you an example where we're trying to you know make
+[  344.99s ->   351.65s] some sort of some sort of speculative position on nvidia that's where i'm trying to buy the contract
+[  351.65s ->   355.25s] right what if i'm on a desk and i'm making a market for this contract right what's my goal
+[  355.25s ->   363.03s] well my goal is to price this fairly and then make adjustments for my counterparty risk liquidity
+[  363.03s ->   368.99s] and of course profit and then hedge away as much of it as possible so statistically i can make money
+[  368.99s ->   375.31s] over a large series of trades just like this one that's my goal if i'm sitting on a desk so
+[  375.31s ->   381.95s] this methodology this general recipe if you will is going to facilitate that goal right pricing
+[  381.95s ->   388.15s] pricing is the most important thing in all of quantitative finance goodness gracious step one
+[  388.15s ->   394.50s] okay in this general recipe to price something like this barrier option select a model okay clearly
+[  394.50s ->   399.00s] black jewels isn't sufficient we'll briefly discuss why and we'll talk about other models step two
+[  399.00s ->   404.36s] determine a vanilla pricing scheme for that model very interesting wonder why we're going to need that
+[  404.36s ->   410.82s] step three calibrate the model it's going to ensure we produce consistent prices step four determine an
+[  410.82s ->   417.83s] exotic option pricing scheme given the parameters from the model that was calibrated okay and then
+[  417.83s ->   421.49s] step five just as i said we're going to apply some pricing adjustments and then we can go ahead and send
+[  421.49s ->   427.73s] that quote let's first talk about this first step here all right model selection black shoals is
+[  427.73s ->   434.35s] insufficient all right why is black shoals insufficient well in the video last week i talked about
+[  434.35s ->   444.23s] how the black shoals model allows us to produce a price based on a volatility level but that volatility
+[  444.23s ->   450.83s] level is not consistent for the prices that we observe in the market that doesn't make sense just look at
+[  450.83s ->   455.77s] these two surfaces all right this is a black shoals implied volatility surface and this is the market
+[  455.77s ->   462.03s] implied volatility surface what i have here is a set of five strike prices five times two maturities same set on
+[  462.03s ->   468.47s] the black shoals implied volatility surface and you can see that they do not look the same the black
+[  468.47s ->   473.71s] shoals surface is flat it assumes a constant volatility for all of the options each point on
+[  473.71s ->   481.01s] this grid is a different option contract but the market surface requires different black shoals implied
+[  481.01s ->   486.17s] volatilities to produce the market prices why is this the case well as we talked about in the previous
+[  486.17s ->   491.21s] video fears on the downside we're not going to get too much into that okay but if we are using a black
+[  491.21s ->   497.11s] shoals model what do we have control over to change the shape of this volatility surface well we can
+[  497.11s ->   504.24s] change volatility i can increase it oh it raises the surface that's that's not helping does not look
+[  504.24s ->   511.36s] like this i can decrease it that's not helping either still doesn't look like this we can't change
+[  511.36s ->   515.82s] the shape we can't change skew we can't do anything okay volatility is constant so we need
+[  515.82s ->   522.08s] to go beyond black shoals okay what is the problem with a flat surface if the market looks like this
+[  522.08s ->   527.46s] well we're just subjecting ourselves to arbitrage so here's the skew the market skew this is the black
+[  527.46s ->   534.30s] shoals volatility this these do not match right this is just a cross section of this surface right
+[  534.30s ->   542.02s] these do not match we're subjecting ourselves to arbitrage if i quote prices for my desk with this black
+[  542.02s ->   548.36s] shoals volatility and this is the market surface that's that's just immediately arbitrage i'm subjecting
+[  548.36s ->   554.68s] myself to arbitrage look at this put the put that i'm quoting is severely underpriced relative to the
+[  554.68s ->   561.94s] market price severely look at that gap right so we never want to subject ourselves to arbitrage we don't
+[  561.94s ->   567.52s] want to give away money over time we're just going to get killed we want positive edge we want to
+[  567.52s ->   572.58s] accumulate positive expected value over time that's our goal so black shoals is insufficient clearly
+[  572.58s ->   578.18s] right what are some extensions well let's first talk about what we mean when we say a model
+[  578.18s ->   583.67s] framework something like black shoals when we say we're using a black shoals pricing framework all
+[  583.67s ->   589.75s] that means is we're using a geometric brownie emotion as our stochastic differential equation
+[  589.75s ->   596.23s] to govern the dynamics of the underlying asset so an option contract let's just look at equity options
+[  596.23s ->   601.25s] written on a stock right we're assuming that the stock is a random path that evolves randomly over time
+[  601.25s ->   606.51s] according to this equation it's prescribed randomness it's really all it is
+[  606.51s ->   612.45s] in this particular equation volatility is just a constant right so we need to extend this model
+[  612.45s ->   618.47s] we could look at something like a local volatility model that makes this volatility term a function
+[  618.47s ->   626.39s] it's no longer constant that's going to allow us to fit this surface to the market surface another
+[  626.39s ->   631.01s] option pun intended if we don't want to use a local volatility model let's use a stochastic volatility
+[  631.01s ->   636.23s] model and in this case this stochastic volatility model is called a heston model or a heston
+[  636.23s ->   642.89s] framework and what it does is it just assumes that volatility follows this random process this
+[  642.89s ->   648.99s] ornstein-ohlenbach process which is a mean reverting process not a crazy assumption at all to assume that
+[  648.99s ->   654.75s] volatility is a mean reverting process but really what this does is it introduces these new parameters
+[  654.75s ->   662.05s] right in a black shoals framework we only have that volatility term but in a heston framework we have
+[  662.05s ->   668.13s] all these other parameters for the volatility process that we can change freely how is this
+[  668.13s ->   672.99s] useful for us well let's take a look at the skew remember if we go back up to this chart here if we
+[  672.99s ->   677.45s] use a black shoals model poor black shoals down here it's all flat it doesn't fit the market skew
+[  677.45s ->   683.94s] but let's look at a heston model that green line represents the heston skew relative to this blue line
+[  683.94s ->   687.74s] which is the market skew and again poor black shoals is assuming constant vol down here
+[  687.74s ->   694.74s] but this is certainly more in line with the market prices but we haven't even gone about tinkering with
+[  694.74s ->   699.96s] the parameters yet so this is very similar to black shoals in the sense that you give me these
+[  699.96s ->   706.22s] parameters i can produce a price and from my previous video you'll know that we can just produce an implied
+[  706.22s ->   712.60s] volatility if we can produce a price that inverse is one to one in that sense here what we're doing is
+[  712.60s ->   718.42s] we're producing a price and we're producing an implied volatility for this particular parameter
+[  718.42s ->   724.58s] set and we can change the parameter set so that it's in line with the market skew so watch this if
+[  724.58s ->   730.30s] i go and change let's see one of the parameters is theta in the heston model the long run variance
+[  730.30s ->   738.54s] what happens if i increase it let's increase it so this is 0.06 let's run it again look at that
+[  738.54s ->   745.70s] it shifted it up 0.08 shifted it up so i'm going to be able to tinker with these parameters of the
+[  745.70s ->   751.96s] heston model to fit the model to the market surface and that's exactly what our goal is going to be so
+[  751.96s ->   756.96s] this is why we need a model other than a black shoals model we need to go beyond the black shoals model
+[  756.96s ->   762.80s] so we can produce consistent prices in that capacity this is certainly putting the cart before the horse
+[  762.80s ->   769.02s] in the sense that if we're able to produce the implied volatility for a heston model it means
+[  769.02s ->   773.30s] we already have prices the particularly keen among us will remember from last week's video
+[  773.30s ->   777.96s] where i talked about trading with the black shoals implied volatility surface if you have implied
+[  777.96s ->   783.36s] volatility you already have a price it's one to one in that sense you can go back and forth freely
+[  783.36s ->   789.04s] but i never talked about how to get a heston price for the european options that make up
+[  789.04s ->   795.84s] the implied volatility surface right so let's look at the flow here right i chose a heston model
+[  795.84s ->   802.46s] i then pick the parameters of the heston model which includes the contract parameters right so i can
+[  802.46s ->   808.66s] use the heston model to produce a price for each point on this grid and it's going to give me some
+[  808.66s ->   813.36s] sort of volatility surface it's not going to be flat but it's certainly not going to be the market
+[  813.36s ->   819.02s] surface because i don't know what parameters to pick right so my goal is going to be to pick the
+[  819.04s ->   823.98s] parameters in such a way that it fits the model to the best of its or fits the market
+[  823.98s ->   831.02s] volatilities to the best of the model's capability but in order to do that i need to be able to price
+[  831.02s ->   837.00s] the options because if i can go back and forth freely between price and implied volatility i need
+[  837.00s ->   844.22s] to get one of them first and that's price i need to generate a price first then i can go to the black
+[  844.22s ->   849.78s] scholl's implied volatility and i can try to match this market implied volatility surface okay so how
+[  849.78s ->   858.30s] do i generate a price for a heston framework this is certainly a lot of notation but i'm just gonna
+[  858.30s ->   863.04s] i'm just gonna talk about it so there are essentially three key ways i want to talk about
+[  863.04s ->   869.20s] the first is we can construct an argument similar to black scholl's where instead of the source of
+[  869.20s ->   874.68s] randomness only being the underlying asset i also have randomness coming from the volatility
+[  874.68s ->   879.76s] so i can construct instead of just a delta hedge which hedges away the underlying randomness
+[  879.76s ->   885.76s] i can construct a delta hedge and a vega hedge specifically i do a vega hedge first then i do a
+[  885.76s ->   890.84s] delta hedge and what that's going to do is it's going to cancel out the randomness in the stochastic
+[  890.84s ->   896.80s] differential equation and then it's just going to produce this partial differential equation and i can
+[  896.80s ->   901.20s] solve this partial differential equation numerically using a computer using the finite differences
+[  901.20s ->   906.84s] method or however you choose that's one way to go about producing prices another way is to use car
+[  906.84s ->   912.16s] madden fft fast Fourier transform that's a fancy trick to make it like a quasi closed form solution
+[  912.16s ->   917.92s] and another way is to just use simulation so i certainly encourage you to check out and i link
+[  917.92s ->   923.38s] the video here and i also link it at the top of this jupiter notebook you can check out how simulation
+[  923.38s ->   927.70s] pricing works it's the exact same way in the black shoals framework as it works with the heston
+[  927.70s ->   933.06s] framework and i also talk about how we can go about deriving the partial differential equation
+[  933.06s ->   938.22s] in the black shoals framework and the extension to the heston framework is exactly the same as well so
+[  938.22s ->   942.74s] certainly encourage you to check those videos out for more background information on how to produce
+[  942.74s ->   950.24s] european option prices with the heston framework we haven't even gotten to producing exotic option prices
+[  950.24s ->   955.28s] yet but we need to produce the european option prices first so that we can fit the model to the
+[  955.28s ->   961.28s] market surface then we can produce the exotic prices so what i have here is i have some notation
+[  961.28s ->   967.76s] um discussing the pricing and really we don't got to get too too much into the weeds i usually save that
+[  967.76s ->   973.76s] for videos on tuesday where i talk about you know more more technical subjects but here what i'm trying to
+[  973.76s ->   979.12s] say is the prices that we generate in a simulation capacity and that's the method we're going to focus on
+[  979.12s ->   984.88s] because we can actually then see where the underlying asset hits the barriers in this exotic option that
+[  984.88s ->   992.04s] we're trying to price all i'm trying to say in this you know math notation is that we are approximating
+[  992.04s ->   998.12s] the price in this framework it's not a precise price and the reason why i like this notation is
+[  998.12s ->  1003.56s] because it's consistent with other videos that i've done on using neural networks to approximate
+[ 1003.56s ->  1009.56s] these pricing functionals to increase the speed of pricing and calibration which which we're going to
+[ 1009.56s ->  1014.84s] talk about in a moment so we're focusing on this idea of monte carlo simulation we can use monte
+[ 1014.84s ->  1019.88s] carlo simulation to produce prices for our heston framework once we produce a price for a heston
+[ 1019.88s ->  1025.32s] framework we can look at the skew see how close we are to the market skew tinker with the parameter
+[ 1026.36s ->  1031.64s] check the heston skew again tinker with the parameter and and just do that iteratively until the
+[ 1031.64s ->  1038.76s] green line fits the blue line that means we're quoting consistent prices so that step that i just outlined
+[ 1038.76s ->  1047.67s] is called the model calibration step okay and i'm going to do an entire video discussing this
+[ 1047.67s ->  1052.95s] calibration step because really we're solving this minimization problem here and this minimization
+[ 1052.95s ->  1060.98s] problem is just literally taking the heston parameters given by the heston framework and it's
+[ 1060.98s ->  1067.46s] finding the best set of parameters that fits this surface in the heston framework to the market implied
+[ 1067.46s ->  1071.78s] volatility so we want the heston volatility surface to look as close to the market implied
+[ 1071.78s ->  1077.70s] volatility surface as possible and here's what it might look like as it starts to approach the
+[ 1077.70s ->  1083.54s] market implied volatility surface so this is a heston implied volatility surface this is a market implied
+[ 1083.54s ->  1089.86s] volatility surface this certainly does not look flat right the black shoals volatility surface was flat
+[ 1089.86s ->  1095.86s] this certainly does not look flat but this parameter set that i've chosen did not generate a
+[ 1095.86s ->  1100.34s] volatility surface that was super consistent with what we've observed in the market so i'm going to
+[ 1100.34s ->  1106.82s] want to go back and tinker with those parameters so how do i tinker with them well i can use a lot of
+[ 1106.82s ->  1115.06s] different minimization algorithms and schemes to go about minimizing the error between each point on
+[ 1115.06s ->  1120.82s] the surface with the market surface and that's going to let me change those parameters in the heston model
+[ 1120.82s ->  1127.86s] to find what i'm calling this data star that is the optimal set of parameters for the heston model that
+[ 1127.86s ->  1133.14s] fits the market volatility surface and again the reason we need to do that is to ensure that we're
+[ 1133.14s ->  1139.38s] quoting consistent prices and we're not exhibiting arbitrage there is a big efficiency concern if i'm using
+[ 1139.38s ->  1145.54s] monte carlo simulation because every single time i produce a volatility surface i'm running a monte carlo
+[ 1145.54s ->  1150.26s] simulation and clearly i'm not going to get it right on the first time right i'm going to have to keep
+[ 1150.26s ->  1157.06s] tinkering with the parameters so imagine i run a 100 000 path simulation and then it doesn't fit i have
+[ 1157.06s ->  1162.42s] to run another 100 000 path simulation and if that doesn't fit i have to do it so again and again and
+[ 1162.42s ->  1168.34s] again and i have to keep using monte carlo simulation to go about producing those european prices so
+[ 1168.34s ->  1174.34s] typically other schemes are favored for efficiency because the calibration process is iterative i produce
+[ 1174.34s ->  1179.30s] this surface and then i have to produce another surface and another until it gets closer and closer
+[ 1179.30s ->  1185.38s] and i choose the right set of parameters that fits the market surface okay so for this video i'm not
+[ 1185.38s ->  1189.78s] going to go too much into the model calibration problem i'm going to assume that we've solved
+[ 1189.78s ->  1196.34s] this minimization problem and we've found the optimal set of parameters now we're ready to go about
+[ 1196.34s ->  1203.14s] pricing the exotic option outlined at the start of this video so let's try to get our full picture right
+[ 1203.14s ->  1210.66s] so we said we have this up and out barrier option right what that means is if the underlying asset
+[ 1210.66s ->  1215.30s] hits this barrier it's worthless if it expires underneath the strike price it's worthless but
+[ 1215.30s ->  1220.42s] if it's within the strike price and barrier range at expiration and it didn't touch the barrier then we're
+[ 1220.42s ->  1230.34s] going to get some sort of payoff we can represent that statistically as this function here this function
+[ 1230.34s ->  1237.62s] here in the heston framework this risk neutral expectation and i can solve this numerically
+[ 1237.62s ->  1243.86s] using monocarlo simulation all i'm going to do is i'm going to simulate price paths in a heston framework
+[ 1244.82s ->  1250.74s] and i'm just going to keep track of the ones that expire with a payout relative to the ones that expire
+[ 1250.74s ->  1256.90s] worthless and then i'm going to discount their payout back to the present and then take the average
+[ 1256.90s ->  1263.30s] and that is going to be my option price now one of the things that we are certain of is as the sample
+[ 1263.30s ->  1269.30s] paths increase we're going to produce more and more accurate prices so let's take a look at 10 sample
+[ 1269.30s ->  1278.21s] paths we get a barrier price of 0.4273 well we're not very confident in that price right if i was to run
+[ 1278.21s ->  1286.40s] that again i get 1.0078 that's not a lot of confidence so let's increase the number of sample paths
+[ 1286.40s ->  1291.20s] as you can see as i increase the number of sample paths in this heston framework remember this heston
+[ 1291.20s ->  1296.08s] framework is assuming that the underlying assets random and the volatility is random you can see
+[ 1296.08s ->  1301.52s] that some of them the green ones are expiring in the money and they didn't touch the barrier where
+[ 1301.52s ->  1306.72s] the red ones hit the barrier and the yellow ones they expired uh out of the money so below the strike
+[ 1306.72s ->  1313.46s] price as i increase the number of paths i'm going to get a more and more and more accurate price
+[ 1313.46s ->  1319.22s] what do we say at the start of this video this certainly has to be worth less than a european
+[ 1319.22s ->  1325.30s] call option without the barrier right because we have that risk on the upside now of it expiring
+[ 1325.30s ->  1330.42s] worthless so let's take a look at a european call in this heston framework right so i have the barrier
+[ 1330.42s ->  1336.42s] price here and this is the price of our exotic it is going to be two dollars roughly 213 in this case
+[ 1337.14s ->  1348.60s] let's take a look at the call option in a similar heston framework 1031 or 1032 roughly right see
+[ 1348.60s ->  1355.48s] 10 000 steps 10 57 so we get a significant discount and that makes sense because if we ride this upside
+[ 1355.48s ->  1361.32s] here we're going to hit the barrier and it's going to expire worthless so i got to pay much less for this
+[ 1361.32s ->  1367.08s] exotic option right i'm going to pay much less relative to the the standard call the standard vanilla
+[ 1367.08s ->  1374.28s] call option so this is how we go about pricing an exotic option but we're not done we found this
+[ 1374.28s ->  1379.32s] risk neutral price that's not the price we're quoting right we need to make some adjustments to
+[ 1379.32s ->  1386.04s] this price once we have this model price we need to think about different things like what is the
+[ 1386.04s ->  1391.08s] current state of the market we need a counterparty risk adjustment we need a liquidity adjustment some
+[ 1391.08s ->  1396.28s] sort of profit margin we can decompose the price that we're quoting into all of these different
+[ 1396.28s ->  1401.48s] components that risk neutral price there's no way that's the final price that we are quoting right
+[ 1401.48s ->  1406.28s] remember pricing is the most important component of quantitative finance if you don't know that
+[ 1406.28s ->  1410.84s] something is over undervalued then you're already losing right you're already in a losing position you
+[ 1410.84s ->  1417.32s] need to ensure that what you are buying or selling has some sort of edge in either direction right
+[ 1417.32s ->  1423.88s] you need to make sure that you're buying cheap selling high selling high buying back cheaper that's the
+[ 1423.88s ->  1429.40s] whole goal in this space so when we decompose the price into these different components and make
+[ 1429.40s ->  1434.76s] all these adjustments that's what we're ensuring we're ensuring that if we quote prices for this
+[ 1434.76s ->  1441.16s] option and then we hedge away the risk then on average that that edge for making that market is
+[ 1441.16s ->  1448.04s] there for us and we can profit if we make this type of trade a significant number of times and that goes
+[ 1448.04s ->  1453.80s] back to the pricing consistency argument if we're not producing consistent prices so if we're using
+[ 1453.80s ->  1460.04s] something like a black shoals framework and we're not producing consistent prices then that edge that
+[ 1460.04s ->  1465.64s] i'm talking about that that theoretical edge that we should have in this type of price that we're quoting
+[ 1465.64s ->  1471.40s] there's no way we're going to have that if we're using a model that is producing inconsistent prices
+[ 1471.40s ->  1480.68s] so once we go about selecting a model fitting it to the market volatility surface after we've decided
+[ 1480.68s ->  1486.52s] how we're going to produce vanilla prices we find the parameter set for the model that we've chosen
+[ 1487.08s ->  1493.96s] then we go about simulating exotic option prices we can then make adjustments and then fire off that quote
+[ 1493.96s ->  1501.24s] on ib to our clients and make a deal some closing thoughts going over this general recipe again and
+[ 1501.24s ->  1506.52s] some future topics remember this general recipe demanded model selection because we need consistent
+[ 1506.52s ->  1512.92s] prices so that we can accumulate edge heston model is going to ensure we can quote consistent prices we
+[ 1512.92s ->  1518.28s] need to determine how we're going to produce the vanilla option prices for the model we select in
+[ 1518.28s ->  1523.80s] this case we did simulation we then calibrated the model to the market surface in this case we didn't
+[ 1523.80s ->  1529.16s] go about solving that minimization problem we we just assumed that we could solve it and find that theta
+[ 1529.16s ->  1535.72s] that parameter set for the model we chose then we determined how we would go about pricing the exotic
+[ 1535.72s ->  1542.44s] option in this case we chose simulation then we applied some price adjustments and we fired off that quote
+[ 1542.44s ->  1552.12s] and made a deal this subject covers a lot of topics pricing exotics is not a trivial task
+[ 1553.08s ->  1560.20s] there are a lot of related topics in pricing theory i i would like to talk more about you know diving
+[ 1560.20s ->  1564.84s] deeper into stochastic calculus talking about different forms of stochastic differential equations
+[ 1564.84s ->  1571.00s] um intractable solutions ones that require numerical simulations different discretization schemes and other
+[ 1571.00s ->  1577.24s] fancy tricks that we can use to approximate these pricing functionals like the heston fft i'd like to do a
+[ 1577.24s ->  1583.48s] dedicated video on the fast fourier transform for the heston model where i talk about the um that that
+[ 1583.48s ->  1590.04s] paper that car madam paper um efficiency as i mentioned earlier right this is a terrible bottleneck in the
+[ 1590.04s ->  1596.20s] calibration problem if you have some model that is like path dependent think about like something like a
+[ 1596.20s ->  1602.52s] a rough volatility model where the entire structure is non-markovian in the sense that like
+[ 1603.32s ->  1610.44s] you need to decompose some sort of covariance matrix and then iteratively discretize the um the the
+[ 1610.44s ->  1616.36s] integral you are going to have a terrible bottleneck because it's iterative right so you need to simulate
+[ 1616.36s ->  1622.60s] those those paths and then try to fit the parameters simulate those but it's a terrible bottleneck so
+[ 1623.64s ->  1629.96s] there are models um alternatively like to a heston model in a stochastic volatility world
+[ 1629.96s ->  1635.88s] um not necessarily extending to the rough volatility space but like something like a saber that has like
+[ 1635.88s ->  1641.88s] asymptotic um solutions i'd like to do a video discussing those i'd also like to talk more about
+[ 1642.44s ->  1648.28s] um these these functional approximations using neural networks it's a very interesting area in the
+[ 1648.28s ->  1653.96s] academic literature a lot of work is being done with um deep learning neural networks in in that space
+[ 1653.96s ->  1660.84s] right now hedging pricing all of that is being done with uh different types of of neural networks and
+[ 1660.84s ->  1666.04s] artificial intelligence machine learning whatever you'd like to call it um i want to talk more about
+[ 1666.04s ->  1671.16s] simulation too why does simulation work right like we we just assumed that it would work to generate
+[ 1671.16s ->  1676.76s] these prices here we kind of assumed i've done a video in the past discussing money carlos simulation and
+[ 1676.76s ->  1681.88s] black souls prices and why they converge but i'd like to extend that to make it more abstract and discuss
+[ 1681.88s ->  1687.64s] why it works in general um and we haven't talked at all about book management here we haven't talked
+[ 1687.64s ->  1692.84s] about making adjustments to our simulated price in a discretionary capacity or you know how do we even
+[ 1692.84s ->  1698.28s] dynamically hedge a portfolio of options right i talked about that heston model and a black shoals
+[ 1698.28s ->  1703.32s] argument where we do a vega hedge and a delta hedge what does that even look like in real life how do i
+[ 1703.32s ->  1709.48s] go about do how do i conduct a vega hedge right if i want to hedge vega and delta what does that look like i
+[ 1709.48s ->  1716.52s] have to use an option and then i need to make the delta associated with the portfolio after making
+[ 1716.52s ->  1720.52s] my vega neutral i need to make the delta neutral so there's a there's a lot of different components
+[ 1720.52s ->  1726.76s] to this so all of these are topics i'd like to cover in future videos that being said i hope you
+[ 1726.76s ->  1734.12s] enjoyed this video this certainly was a challenging video to make this was a long video to record and this
+[ 1734.12s ->  1739.16s] notebook took a lot of work so i hope you enjoyed i hope you learned something definitely leave a like
+[ 1739.16s ->  1745.64s] subscribe comment if you enjoyed check out our discord check out quantgill.com it helps support
+[ 1745.64s ->  1752.52s] my videos and it lets me keep making them other than that thank you so much for watching and i will see
+[ 1752.52s ->  1756.52s] you in the next video

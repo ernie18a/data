@@ -1,0 +1,315 @@
+[    0.00s ->     6.00s] this is the full course and training on everything you need to know about the theta fairy strategy
+[    6.00s ->    10.48s] and so here's the back test we'll be diving more into it in a second but you can see here
+[   10.48s ->    15.20s] tends to be pretty consistent i'll be showing you some tweaks as well that you can make to make this
+[   15.20s ->    21.06s] even more consistent and more profitable so stay tuned for that we can see overall a decent one
+[   21.06s ->    25.32s] you can see here that it does have a little bit of a drawdown but i'll show you some more settings
+[   25.32s ->    30.08s] as well that we can change to actually decrease that but this is a theta fairy strategy was made
+[   30.08s ->    36.76s] popular by a youtube channel named drawbridge finance where he teaches this overnight thursday
+[   36.76s ->    43.12s] trade that can generate you as much as 500 every single thursday and so this is a fun trade to do
+[   43.12s ->    50.62s] i wouldn't take it as your main income source so if you have a another strategy like a 111 or strangle
+[   50.62s ->    56.90s] long term to use as your main income and then use this for fun on the side but it was popularized by
+[   56.90s ->    62.44s] him and has been used by thousands of traders since now here's the game plan for this training so that
+[   62.44s ->    66.12s] you guys know what you're in for and that you know you're going to get some great value you're going to
+[   66.12s ->    71.20s] learn why you should trade the data fairy strategy you're going to learn how to structure it the dte the
+[   71.20s ->    76.00s] strike selection and everything and how you can adjust it to increase your win rate you're going to
+[   76.00s ->    80.18s] learn how to manage the data fairy trade the take profits the stops and everything you need
+[   80.18s ->    85.08s] you're going to learn the data fairy strategy the risk part of it how to mitigate that risk
+[   85.08s ->    91.58s] how to size it in your account and how to scale as you grow you also learn how i personally trade
+[   91.58s ->    97.16s] the data fairy strategy you'll see a real trading example i'll scale i will share my screen i'll go into
+[   97.16s ->   101.62s] the broker show you the strike practice i'm selecting so by the time you get done with this trading you can
+[  101.62s ->   107.30s] walk away knowing exactly how to do it and guys this training is on wednesday a few hours before
+[  107.30s ->   112.62s] the market closes and i did that because these trades should go on wednesday and so again we can
+[  112.62s ->   116.82s] hopefully put those trades on together we can also do it through paper trading as well i'll show you
+[  116.82s ->   120.88s] some of the advantages and disadvantage and disadvantages that you know the whole landscape
+[  120.88s ->   126.42s] of this strategy and you'll learn how to trade it in different markets and then i'll also show you how to
+[  126.42s ->   130.42s] turn into a passive income machine and how you can fully automate it if you want to do that as well
+[  130.42s ->   134.96s] so before i get into the fun stuff i need to say a legal disclaimer first this training is for
+[  134.96s ->   140.04s] educational and entertainment purposes only i'm not a financial advisor i definitely don't control
+[  140.04s ->   144.84s] the market if i did we all be rich trading is risky and 99 percent of people lose money because
+[  144.84s ->   149.16s] they over leverage ignore risk management or think a few lucky wins make them a market genius
+[  149.16s ->   154.76s] past performance whether mine somebody somebody else's way back test does not guarantee future
+[  154.76s ->   160.34s] performance so don't bet the house your retirement or your dog's college fund on anything you see
+[  160.34s ->   166.22s] here by watching this you agree that your trades are 100 your responsibility and anything goes south
+[  166.22s ->   172.28s] or your broker is not me who took your money anyways do you agree uh if you don't leave this
+[  172.28s ->   176.78s] training now all right let's see i'm gonna watch is anyone leaving i just did okay that's this i mean
+[  176.78s ->   183.48s] let's move in why trade the data fairy strategy number one it's a simple mechanical trade every single
+[  183.48s ->   188.10s] week you do the same thing you pick the same strikes you manage it the same way so someone who's looking
+[  188.10s ->   193.94s] for something simple that follows the same process every time that would be this there's no chart
+[  193.94s ->   198.38s] reading needed you don't need to go map out the chart see what it's doing draw support and resistance
+[  198.38s ->   203.84s] so if you're a little scared of charts you don't need to do that for the strategy again easily scale
+[  203.84s ->   209.12s] now again this is a large account friendly strategy by that it's tailored for larger accounts i'll show you
+[  209.12s ->   214.86s] how to uh do it for smaller accounts as well um but it definitely can scale no matter what size your
+[  214.86s ->   221.62s] account uh it can profit quickly again you're only in this trade uh for about a day and so it's
+[  221.62s ->   225.46s] actually not it's not even a full day it's just overnight so it's an overnight trade so you can
+[  225.46s ->   230.66s] profit relatively quickly compared to most strategies but i do want to say word of caution this strategy
+[  230.66s ->   235.64s] is not for everyone as you'll learn here a bit in this uh training uh this is more for larger accounts
+[  235.64s ->   242.22s] looking to diversify or add a fun strategy to their portfolio but i'll also show you how to structure
+[  242.22s ->   246.84s] for smaller accounts that don't worry next how to structure the theta fairy strategy so it's quite
+[  246.84s ->   252.06s] simple the goal of this trade is to make money due to the overnight data decay if you don't know what
+[  252.06s ->   258.30s] this is as options sellers we make money as time goes on it's called data decay time decay which means
+[  258.30s ->   264.24s] as time goes on we make money and so that data decay gets the strongest and makes us the most money
+[  264.24s ->   270.58s] the closer to expiration we get so if we do an overnight trade with a one dte trade we can collect a lot
+[  270.58s ->   277.42s] of data just from the time that passes over that night period and so we'll pick up all the overnight
+[  277.42s ->   283.38s] data decay as long as the market stays relatively neutral so here's how you do it first we need to
+[  283.38s ->   287.98s] pick our days until expiration this is a one dte trade which we need to go one day in the future
+[  287.98s ->   294.92s] this means this strategy is done on thursday and we'll go until friday the strike selection this is
+[  294.92s ->   299.94s] again by default how this strategy is done by the general public is what i'm showing you right here
+[  299.94s ->   304.22s] and they'll show you how i change it a bit so the general public does a one standard deviation
+[  304.22s ->   310.76s] strangle which means they sell the 16 delta put and they sell the 16 delta call that's typically how
+[  310.76s ->   316.08s] this trade is structured you target a credit of about ten dollars to twenty dollars so if you can't
+[  316.08s ->   320.16s] get more than ten dollars you typically stay out of this trade because it's not worth it but this is
+[  320.16s ->   325.14s] typically your credit target range next your entry time is going to be one minute before the market
+[  325.14s ->   330.72s] closes again if you're doing futures options you can do actually a bit after the market closes but
+[  330.72s ->   336.86s] again either way you're getting in right at right as the market closes your ideal assets for this is
+[  336.86s ->   341.42s] going to be futures futures are the preferred assets for the strategy it was created as a future
+[  341.42s ->   346.80s] strategy and the reason being says futures options trade overnight so if something goes wrong you could
+[  346.80s ->   354.06s] easily get out of the trade is that's why es and mes would be the preferred assets for this however if you don't have
+[  354.06s ->   359.22s] access to futures options no worries you can also do this on spx and spy you'll just have a little more
+[  359.22s ->   363.02s] risk because you can't close it overnight all the way till the market opens the next day
+[  363.02s ->   368.10s] so now that we know how to structure the trade how do we manage the trade if you're wondering
+[  368.10s ->   371.92s] awesome this is too much info i don't quite get it don't worry i'll start sharing my screen here and
+[  371.92s ->   376.06s] i'll actually show you how to select these levels in the broker so it makes sense so once we're in the trade
+[  376.06s ->   381.50s] how do we manage it take profit and stop loss rules are virtually unexistent if we just let the trade go
+[  381.50s ->   386.84s] overnight and we're doing futures options we can set about a hundred dollar profit target and a
+[  386.84s ->   390.60s] two hundred dollar stop loss depending on how you want to structure that but if you're just letting
+[  390.60s ->   395.12s] this trade overnight then you're not using any of those rules and you're just closing the trade early
+[  395.12s ->   401.24s] the next morning so around market open to around 10 a.m you're gonna let the market open you're gonna
+[  401.24s ->   408.74s] let the opening movement and volatility fade off so that volatility comes a bit down faded decay has more
+[  408.74s ->   413.62s] time to take effect and then what you're going to do is from there you're going to close out that
+[  413.62s ->   418.52s] trade early around the 10 a.m mark so quite simple let's just go back here so we're going to enter
+[  418.52s ->   424.62s] strangle we're going to sell the 16 delta put sell the 16 delta call we're going to enter right as the
+[  424.62s ->   429.10s] market closes and then we're going to hope we're going to close it shortly after the market opens the
+[  429.10s ->   434.08s] next day so literally an overnight trade and so now you may be wondering okay this seems cool seems
+[  434.08s ->   437.66s] pretty straightforward but what are the risks of this strategy and that's something you should be
+[  437.66s ->   442.66s] asking for every strategy you trade where does this strategy fail and so we can look in how to
+[  442.66s ->   449.10s] mitigate it or purely just stay out of the market during that time and so risk number one is overnight
+[  449.10s ->   454.56s] risk this is a common sense here right if we're trading overnight and something were to happen in the
+[  454.56s ->   460.68s] economy or newswise overnight we will be impacted and that's the problem the problem is you give up
+[  460.68s ->   466.72s] control by holding a trade overnight and so the solution is again use futures options with a stop
+[  466.72s ->   473.00s] loss or take profit so about i i think pretty standard for this trade is a 100 take profit and
+[  473.00s ->   477.34s] roughly a two to three hundred dollars stop loss is how you typically trade this on futures options
+[  477.34s ->   483.32s] that way as something goes wrong overnight you're able to get out early and so that's the recommended
+[  483.32s ->   489.66s] solution if you're not doing futures options this is just not this is a risk that you can't mitigate
+[  489.66s ->   496.36s] you will always be stuck with it because you can't trade options overnight now risk number two is
+[  496.36s ->   502.14s] manipulation risks okay so the problem is stop losses and limit orders can lead to losses due to
+[  502.14s ->   507.48s] market makers manipulating the option price what does this mean this means that when you put on a
+[  507.48s ->   514.58s] limit order or a stop loss to enter or exit a trade that order then sits on the market and as it's
+[  514.58s ->   520.76s] sitting on the market anybody can go see it and move the option price to get your order to trigger
+[  520.76s ->   528.10s] sooner and so that can lead to premature exits and losses for no reason and so the solution is to only
+[  528.10s ->   533.78s] submit an order when you're ready to exit or to use an automation which i'll explain later but if
+[  533.78s ->   539.60s] you're doing this by hand only submit the order when you're ready to enter and ready to exit but don't
+[  539.60s ->   546.96s] expect it to work as a lasting stop loss especially overnight when the market orders can move along
+[  546.96s ->   555.06s] risk number three is volatility risk okay with this risk the problem the problem is vix spiking can lead
+[  555.06s ->   561.92s] to huge and sudden losses and so how do we fix this we need to adjust our buying power usage based on
+[  561.92s ->   569.02s] this if vix is lower our risk of huge and sudden losses is higher for this trade so what we'll do is
+[  569.02s ->   573.88s] we'll avoid entering on most days that have news which is good because it's overnights that's not
+[  573.88s ->   579.82s] news related and we can also adjust how much money we're using how many trades we're in based on where
+[  579.82s ->   586.36s] vix is and so these are two ways to reduce the risk of the theta fairy strategy so now how do i personally
+[  586.36s ->   592.30s] trade this strategy now i will admit this is not one of my popular not one of my go-tos i do this on it
+[  592.30s ->   597.62s] on occasion when i want to do it for fun which is how i recommend that you trade this i do know some
+[  597.62s ->   602.80s] people who trade this for purely income and they can make it work but i personally don't like putting
+[  602.80s ->   608.06s] a large portion of my money into an overnight trade but that's you go for it has worked out for people
+[  608.06s ->   612.76s] but again i use this as a fun trade and so here's how i trade this to increase the win rate
+[  612.76s ->   619.86s] number one days until expiration so one dte my strike selection is a bit different okay instead of doing
+[  619.86s ->   624.66s] a normal strangle which i'll explain here in a second once i stop i'm doing the slides and i go to
+[  624.66s ->   630.80s] screen share i'll show you why but i use a skewed strangle so that's being a 10 delta put and a 5
+[  630.80s ->   638.40s] delta call and so my credit target's a bit lower as about a 5 to 10 credit target so i'm going to make
+[  638.40s ->   645.08s] about 5 to 10 in credit for this trade my entry time is on thursday about a minute before the market
+[  645.08s ->   650.54s] closes and that's how this trade's structured for me now how do i manage the trade i do an early
+[  650.54s ->   656.18s] management where i exit the next day at 10 a.m as well so i still follow most of the best practices
+[  656.18s ->   661.36s] that it's done with this trade but instead of doing a normal strangle i skew that strangle
+[  661.36s ->   667.36s] and this helps me smooth out my returns and have a higher win range it does sacrifice some profit but
+[  667.36s ->   673.10s] that's what it does now my preferred assets are es and mes and as mentioned before this is because
+[  673.10s ->   679.90s] i'm able to control risk by exiting overnight if needed es is the preference but it does take a lot of
+[  679.90s ->   685.24s] buying power which we'll dive into in a second and then mes is the next option but understand that
+[  685.24s ->   692.08s] there's lower volatility or a lower trading volume there here's the backtest of the original strategy
+[  692.08s ->   696.92s] the one standard deviation strangle on thursday night you can see here your average winner is
+[  696.92s ->   702.62s] about 501 dollars per trade your average loses about 500 again you can have larger winners and
+[  702.62s ->   708.86s] larger losers depending and a 73 win rate again 16 delta for each trade and this is what the
+[  708.86s ->   714.24s] performance looks like overall good but i want you to look at something here look at how much this
+[  714.24s ->   720.26s] curve moves and how wild it is and then look at the max drawdown that we see over over the different
+[  720.26s ->   727.00s] years that this has been back tested now we go to my version of it here you can see our returns
+[  727.00s ->   733.92s] move out we have less huge drops less jagged moves and it's more consistent of a move you could also
+[  733.92s ->   741.68s] see here that we cut our max drawdown by 50 so we have way smaller losses um and and this is why it
+[  741.68s ->   748.44s] makes it more consistent and more fun to trade it also bumps our win rate from 73 to 80 and so now
+[  748.44s ->   752.34s] i was like what's the main difference the only difference is how i structure the strangle
+[  752.34s ->   759.30s] instead of doing a 16 delta each i do a 10 delta put and a 5 delta call that way i give myself more room
+[  759.30s ->   763.52s] to the upside because in general the market moves higher if you don't know what i'm talking about
+[  763.52s ->   767.86s] don't worry i'll show you here in just a second but you can see you're way more consistent there's
+[  767.86s ->   774.08s] also a way to do this for small accounts and you do that by capping the ends and by capping the losses
+[  774.08s ->   779.24s] and turning your strangle into an iron condor you instead of just selling a put you're going to sell
+[  779.24s ->   784.96s] a put credit spread instead of selling a call you're going to sell a call credit spread this cuts your
+[  784.96s ->   790.68s] you're buying power by a ton but your performance will suffer you can see here you'll still have
+[  790.68s ->   796.48s] about a 70 win rate but you'll see a lot of periods where it's just a lot more rigid and you don't see
+[  796.48s ->   801.94s] that consistent smooth performance like you would from this strategy here and so again that's why i
+[  801.94s ->   807.64s] mentioned this strategy is intended as a fun strategy at least in my opinion for larger accounts
+[  807.64s ->   813.56s] who this is not their main income strategy using a strangle or 111 or 112 even as your main income
+[  813.56s ->   819.46s] source instead so account sizing remember the five percent trade rule uh this means have no more
+[  819.46s ->   825.34s] than five percent of your account into any one trade so this means if you have a one hundred thousand
+[  825.34s ->   830.26s] dollar account then you should only have five thousand dollars in a trade and so this kind of
+[  830.26s ->   835.30s] hints at the fact that you should have a larger account when doing this trade again you can also define
+[  835.30s ->   840.92s] your risk by turning it into an iron condor and that can that can help as well you can also add a
+[  840.92s ->   845.50s] stop loss to help how much your risk is as well now how do you scale this trade okay if you have
+[  845.50s ->   850.96s] less than a ten thousand dollar account if you want to do this do the small account strategy where you
+[  850.96s ->   856.12s] turn the trade into an iron condor but you keep everything else the same and you run that on spy and
+[  856.12s ->   861.72s] mes this is your small account between 10 to 25 000 you can do the small account strategy but you can
+[  861.72s ->   867.90s] bump it up to bigger assets meaning doing the iron condor version of this but on spx and es
+[  867.90s ->   874.68s] if you have 25 000 to 100 000 you can do the normal strategy on the smaller assets like spy and mes and
+[  874.68s ->   880.96s] then 100 000 plus you can more easily do the normal strategy which is the strangle on the larger assets
+[  880.96s ->   887.46s] like spx and es all right tip i'd use this strategy as i mentioned before as a fun strategy and not as
+[  887.46s ->   893.02s] your main income strategy all right so i'm going to screen share we'll go to a whiteboard explain this a
+[  893.02s ->   897.32s] bit more in depth go to the broker show you how to place it then we'll look at a risk profile okay
+[  897.32s ->   902.82s] so if we're going to the screen share can you guys see my screen let me pull up the chat make
+[  902.82s ->   908.22s] sure we're doing good perfect yeah my bad yeah perfect we can see screen and i'll get to your
+[  908.22s ->   911.92s] questions as soon as we get to the end of this training we'll have the q a session for probably
+[  911.92s ->   918.26s] about 30 minutes okay so diving into it here when we're looking at it what the strangle is let's say
+[  918.26s ->   925.18s] the stock is trading here right let's say the stock is trading here um what we do is we enter a one
+[  925.18s ->   931.88s] dte trade on thursday and we set up a strangle so this would be a 16 delta strangle where the distance
+[  931.88s ->   937.82s] to the upside and the distance to the downside is roughly the same okay this means that the market
+[  937.82s ->   942.88s] goes up and goes down we have an equal chance of each side being hit and this is how the normal
+[  942.88s ->   948.62s] theta fairy strategy is run if the market stays in this level overnight you make money okay now how
+[  948.62s ->   955.16s] life structure mine is i know that the market tends to move higher right the u.s economy tends to perform
+[  955.16s ->   961.52s] well and go higher so i give it a little bit more upside room this way my goal is still for to profit
+[  961.52s ->   967.16s] by staying in this range but it allows it a higher drift so if it continues to go higher i'm going to
+[  967.16s ->   972.50s] be able to make some money and so that's how this trade is structured again every thursday towards the
+[  972.50s ->   978.14s] market close you put on this trade and you let it go on and so that's that's the look and feel of this
+[  978.14s ->   983.44s] trade you just wanted to stay between these two levels and if you skew it in your favor meaning you
+[  983.44s ->   988.96s] give yourself more upside room you increase your win rate which means you smooth out your profit and
+[  988.96s ->   996.38s] loss return so that's just a quick look at how that strategy works can you guys see my tasty train
+[  996.38s ->  1000.18s] account i want to make sure you guys can see that as well so we can go into how it looks in the broker
+[ 1000.18s ->  1008.18s] account not yet okay maybe i have to share it specifically let me stop share okay i have to
+[ 1008.18s ->  1014.89s] share it specifically okay cool can we see it now perfect we can see awesome love it okay so let's
+[ 1014.89s ->  1018.69s] structure this trade and let me show you how and like i mentioned i went through this on wednesday
+[ 1018.69s ->  1023.21s] so that if you want to do it you can be good to go for tomorrow which is thursday and try this out
+[ 1023.21s ->  1028.87s] again always paper trade things first so if we go into it again the ideal asset is going to be es
+[ 1028.87s ->  1033.57s] and we'll also look at how this compares with a small account strategy here in a second but
+[ 1033.57s ->  1041.05s] you go to es you go to trade table and and then from here what we're going to do is we're going to
+[ 1041.05s ->  1045.81s] structure this trade so again it's a one dte trade so we're doing this on thursday we're looking for
+[ 1045.81s ->  1051.44s] one dte so i'm going to pretend like i'm entering the trade today so one dte one day out then what i'm
+[ 1051.44s ->  1056.38s] going to do is i'm going to again i'm going to do my preferred strategy when i do this again not as
+[ 1056.38s ->  1061.88s] often as a weekly basis but i probably do it once a month and what we see here is i do the 10 delta
+[ 1061.88s ->  1067.12s] on the put so basically i'm coming to the side on the right column i'm trying to set my setting to
+[ 1067.12s ->  1072.12s] delta which is right here and i'm looking for 10 or the one closest to it so you can see right here
+[ 1072.12s ->  1077.26s] 10 delta i'm going to sell this mark on the left side of my calls i'm going to move to a 5 delta or
+[ 1077.26s ->  1082.34s] closest to it so you can see here i have 6 delta and 4 delta since 6 delta has the most volume i'm going
+[ 1082.34s ->  1087.62s] to pick that one instead so just like this is what my trade looks like okay these are the levels
+[ 1087.62s ->  1095.12s] in which i'm trying to make some money which is great you can see here that i am going to collect
+[ 1095.12s ->  1100.68s] about three dollars and 55 cents which is lower than i typically like and because of that this is
+[ 1100.68s ->  1106.10s] one reason why i want to enter this trade but you can still see here what's going on again like i
+[ 1106.10s ->  1110.88s] mentioned my credit target is around five to ten dollars of them in that range i'm golden this that
+[ 1110.88s ->  1115.74s] typically leads to smaller losses but let's just continue on so you can see here my max profit is
+[ 1115.74s ->  1125.00s] 175 and you can see my theta decay is about 308 so you can see the theta is very high for this trade
+[ 1125.00s ->  1130.90s] which means i had the chance to make a lot of theta decay from this trade and so that's what the
+[ 1130.90s ->  1138.04s] goal is here for this now looking at this it takes about 15 000 to put on this trade now if you put
+[ 1138.04s ->  1143.64s] on a stop loss this will limit that amount a lot or allow you to use less money but if you're just
+[ 1143.64s ->  1149.38s] doing this open-ended with no stop loss then again this is going to be a decent amount of money so you
+[ 1149.38s ->  1155.20s] want to make sure it's not taking up a large portion of your accounts at 15 000 a thousand dollars
+[ 1155.20s ->  1162.12s] with the chance of making about 100 150 based on our average returns and so again it's about less
+[ 1162.12s ->  1167.52s] it's about a point oh one or about a point one percent return for an overnight trade it's just
+[ 1167.52s ->  1173.08s] a fun one to do so that's how it looks now if we look at it from a curve so i go to analysis and look
+[ 1173.08s ->  1178.18s] at curve we can actually look at uh what this is doing here it's zoomed out too far and so you can
+[ 1178.18s ->  1183.06s] see the profit graph here let me scale this up so you can see a bit more okay just like this so
+[ 1183.06s ->  1188.34s] you can see this flag is where the stock or where es is currently trading it's trading right
+[ 1188.34s ->  1196.56s] here around 6080 dollars the this trade makes about a about 100 and 150 dollars as long as it
+[ 1196.56s ->  1204.72s] stays below 6 000 6145 and stays above 6010 dollars roughly these numbers as long as it stays here
+[ 1204.72s ->  1209.54s] this is where that profit target is and you let this go overnight so you'd enter this on thursday
+[ 1209.54s ->  1215.94s] whoops on thursday you're the 1d 1d trade and this is how you would structure it now what if you
+[ 1215.94s ->  1221.04s] wanted to do this for a smaller account then you would just define your risk go out to about the
+[ 1221.04s ->  1225.28s] five delta level depending on how you want to do this but again you can see here about five delta
+[ 1225.28s ->  1229.70s] away so if i have about five delta here i'll probably go to about one which again is something i want to
+[ 1229.70s ->  1235.63s] do so probably go to about two look for one with the best volumes or something like this just like
+[ 1235.63s ->  1241.91s] that oops that's a sell now i define my risk so obviously i make less money but my buying power just
+[ 1241.91s ->  1249.07s] dropped to 400 so again i'm only going to make about 50 of this so maybe 45 or less i think my
+[ 1249.07s ->  1255.41s] premium capture credit is only about 20 so actually about 20 of this so maybe about 18 to 18 to 20
+[ 1255.41s ->  1260.77s] dollars on this but you can see here the buying power drops massively again you can also extend this
+[ 1260.77s ->  1266.81s] out it will increase your buying power obviously but you'll be able to collect more profits you see
+[ 1266.81s ->  1273.71s] your buying power of a thousand dollars the max profit of 132 and so that's one way you can decrease
+[ 1273.71s ->  1278.93s] your buying power for smaller accounts and so that's how it's done on futures it's done the exact
+[ 1278.93s ->  1284.75s] same way on spx or spy but ideally you want to run this strategy on futures in case you need to get it
+[ 1284.75s ->  1289.65s] out overnight you can okay so that's the profit graph that's how we do it in the broker that's how we
+[ 1289.65s ->  1294.57s] pick the strike prices i hope this is all making sense i hope you guys are getting this are you guys
+[ 1294.57s ->  1298.75s] getting this let me know in the chat are you this is making sense you're getting it philip says yep
+[ 1298.75s ->  1304.91s] awesome sweet glad to hear we got one person out of about 60 value we got a thumbs up okay cool so i'm
+[ 1304.91s ->  1310.55s] going to stop sharing here i'm going to jump back over to the original screen i'm going to jump into
+[ 1310.55s ->  1316.51s] the slideshow and continue this party okay so we just covered the whiteboard it's another look at
+[ 1316.51s ->  1322.13s] understanding how strangles work where the profit zone is why we skew it i look at how to do it in the
+[ 1322.13s ->  1327.61s] broker then looked at the risk profile how where it makes money and where it doesn't okay so what
+[ 1327.61s ->  1334.09s] are the advantages of using this strategy okay it generates consistent income okay as shown by the
+[ 1334.09s ->  1339.65s] bag test especially when we skew it it can be used to generate some income now i like to use this as
+[ 1339.65s ->  1343.87s] fun money but again if you want to use it for consistent income please do more research on it and
+[ 1343.87s ->  1349.19s] test it out first but also it's very easy to set up you literally only have two options to worry
+[ 1349.19s ->  1353.83s] to worry to worry about and you do the same thing every single week so it's very consistent
+[ 1353.83s ->  1359.55s] it requires no adjustments okay you get in the whole trade you exit the whole trade you don't need
+[ 1359.55s ->  1365.87s] to close partial close one leg do whatever sure you can make it as advanced as you want but the ideal
+[ 1365.87s ->  1372.37s] strategy has no adjustments now what are some of the disadvantages to consider well you do have the
+[ 1372.37s ->  1378.47s] potential for very large losses obviously we saw there that the average loss is a bit different so the
+[ 1378.47s ->  1385.67s] average loss for the skewed one had about a max loss about 1500 or so so you could have decently
+[ 1385.67s ->  1390.75s] high large large losses specifically compared to the profit you're taking so that's why i make sure
+[ 1390.75s ->  1396.57s] that i collect the minimum credit to make sure that my profit will outdo my losses when they come
+[ 1396.57s ->  1402.55s] there's no protection from overnight movements unless you're trading with futures in which you can do
+[ 1402.55s ->  1409.75s] more risk management approaches for this and also if you do this on spx or spy you do have assignment
+[ 1409.75s ->  1414.79s] risk meaning that you can be given shares because your contracts go in the money i should say more
+[ 1414.79s ->  1420.05s] for spy than spx because spx doesn't have sign or receive cash settled but in the end you also don't
+[ 1420.05s ->  1423.71s] have that with futures because you're going to get out the next day and they don't assign early only
+[ 1423.71s ->  1430.27s] spx does so next question probably asking okay this is cool now how do i trade this in different markets
+[ 1430.27s ->  1435.21s] so it's awesome what if i'm in a bullish market how do i do it what if i'm in a bearish market how do i do
+[ 1435.21s ->  1438.51s] this the case is quite simple first off we'll start with bullish markets because that's the easiest
+[ 1438.51s ->  1445.71s] now what is a bullish it's defined by higher highs and higher lows so if the stock market on a graph
+[ 1445.71s ->  1450.75s] is going from the bottom left hand corner to the top right hand corner meaning it's moving higher
+[ 1450.75s ->  1456.57s] that's a bullish market okay how do we do this follow the ideal trade setup okay this is the
+[ 1456.57s ->  1462.77s] skewed strangle for the theta strategy where you're selling the 10 delta put and then you're selling the
+[ 1462.77s ->  1469.73s] five delta call to give you more upside room now what about bearish markets is lower lows uh and lower
+[ 1469.73s ->  1475.73s] highs so this means on the chart it's going from the top left hand corner to the bottom right hand
+[ 1475.73s ->  1482.39s] corner this means it's moving down what do we do we consider staying out of the market oh i realized
+[ 1482.39s ->  1487.83s] i forgot to update this from the other one my bad we consider staying out of the market as one option or
+[ 1487.83s ->  1495.65s] we do the inverse okay and by that as we do the 10 delta call and then do the five delta put but more
+[ 1495.65s ->  1502.13s] times than not in bearish markets i like to stay out of the trade because it can just move a lot to the
+[ 1502.13s ->  1509.25s] downside and will most likely break the level of my strangle now in sideways markets this is ideal
+[ 1509.25s ->  1514.33s] same highs and same lows so if we're getting capped out at the same spot we're topping out there and
+[ 1514.33s ->  1520.53s] we're also bottoming out the same type of level this is always sideways market and you follow the ideal
+[ 1520.53s ->  1525.89s] trade setup this is when data decay will work most in your favor because nothing is happening to just
+[ 1525.89s ->  1530.81s] getting the effects of beta if you want to collect a bit more you could even make the same one due to a
+[ 1530.81s ->  1536.19s] one stand one standard deviation strangle 16 delta 16 delta that's because you'll collect more profit
+[ 1536.19s ->  1540.71s] because the market's not going anywhere but more times than not we're in a bullish market and so we
+[ 1540.71s ->  1547.41s] want to use a skewed strangle how to automate the theta fairy strategy step one join the options auto
+[ 1547.41s ->  1552.47s] trader this is an automation tool that most of you guys i'm pretty sure are aware of step two you can
+[ 1552.47s ->  1557.77s] connect your broker account to it step three all the rules that i gave you for the theta fairy just go
+[ 1557.77s ->  1563.41s] in and plug in those rules and next you can sit back and let it trade safely and hopefully generate
+[ 1563.41s ->  1567.11s] some monthly income for you so i'm going to show you a quick three minute demo and then i'll actually
+[ 1567.11s ->  1572.83s] share the link to the bot so that you guys can use it if you want so if i go here to the options auto
+[ 1572.83s ->  1578.75s] trader this is the little website and software that allows me to audit to to automate options trades
+[ 1578.75s ->  1584.32s] what i'm going to do is i'm going to create a bot for the data fairy bot and so again i'm going to do
+[ 1584.32s ->  1589.68s] this around the way that i do it which again is creating an auto trader i do a strangle trade
+[ 1589.68s ->  1596.30s] right gives it a strangle i personally do it on es okay if you don't have access to futures options
+[ 1596.30s ->  1604.36s] you can do it on spx or spy as well this is a one dte trade i sell the 10 delta put and i sell the
+[ 1604.36s ->  1612.96s] 5 delta call so put delta 10 it's called delta 5 perfect next i set up my entry rules okay you can see
+[ 1612.96s ->  1620.22s] here i enter on thursdays but i enter at a specific time and i enter this is est so i enter
+[ 1620.22s ->  1627.40s] three let's just go 3 58 p.m so 3 58 p.m right as the market closing that's when i get into this trade
+[ 1627.40s ->  1636.56s] now something that i'll also do is to click on advanced entry rules um from here what i'll do is
+[ 1636.56s ->  1642.98s] i'll do a minimum credit per trade of five dollars and i'll just keep it there because i like to at least
+[ 1642.98s ->  1649.08s] make sure i'm collecting five dollars in credit that way i have enough profit to offset any future
+[ 1649.08s ->  1655.90s] losses and so a minimum five dollar credit next how do i manage this trade again if i'm doing the
+[ 1655.90s ->  1661.00s] futures options which i am i like to have about a hundred dollar i'll take profit and a three hundred
+[ 1661.00s ->  1666.32s] dollar stop loss so i do dollar amount of a hundred now the reason why i didn't factor this into the
+[ 1666.32s ->  1673.50s] back test is because at the current moment there's no way to back test futures options and i just had
+[ 1673.50s ->  1678.56s] to do an overnight trade for that so if that's all you can do because you're trading spx or spy and you
+[ 1678.56s ->  1683.46s] can only do the whole overnight trade it still works out well for you but just like this i like target
+[ 1683.46s ->  1688.64s] a hundred or three hundred and if i can't then i want to get out on the last day so zero days left
+[ 1688.64s ->  1699.82s] at 10 a.m perfect so i ideally want to get either i want to either take profit or close the trade
+[ 1699.82s ->  1705.34s] but if i can't i'm going to exit the next day um for whatever i'm at and that's how i'm going to do
+[ 1705.34s ->  1711.94s] it next moving in is how much money do i want to allocate to this like we saw this trade takes at
+[ 1711.94s ->  1716.20s] least fifteen thousand dollars i suppose to put on this trade it's going to be about twenty thousand
+[ 1716.20s ->  1721.36s] although my risk will roughly stop out around three hundred dollars the broker still requires
+[ 1721.36s ->  1726.40s] about fifteen thousand to put this trade on and so i can do it just like this and i can save it
+[ 1726.40s ->  1731.46s] continue from there again around a hundred dollar return and three hundred dollars kind of what we're
+[ 1731.46s ->  1735.50s] calved out if you don't want to do that if you want to have no tape profit and no stop loss because
+[ 1735.50s ->  1738.56s] you're doing it overnight that's completely fine as well don't worry about it that's what the back
+[ 1738.56s ->  1743.66s] test is based on so i'm just slightly changing here so next you can see here that is the auto
+[ 1743.66s ->  1749.28s] trader right now i have my es1 dte strangle i'm going to come back in here and rename this puppy
+[ 1749.28s ->  1762.39s] as the theta theory strategy i'm just going to say skewed plus managed so i have my management rules
+[ 1762.39s ->  1769.17s] so i'm going to save that and this is i would run it again paper traded first of course but i'm going
+[ 1769.17s ->  1775.77s] to share this with you guys sweet it's been copied close this post that in the zoom chat right now
+[ 1775.77s ->  1780.65s] to make sure you guys get it if you want to do it for yourself you can go check that out
+[ 1780.65s ->  1784.69s] in the little link there so i just put that template there so now you can go
+[ 1784.69s ->  1787.03s] use that if you'd like let me continue
+[ 1787.03s ->  1795.95s] you

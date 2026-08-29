@@ -1,0 +1,114 @@
+[    0.00s ->     3.66s] In this video, I'm going to walk you through my simply effective investing strategy that I've
+[    3.66s ->     8.44s] been using for over eight years and up top to over a thousand other traders. It has the potential
+[    8.44s ->    14.58s] of making 30% a year. So if you are young and starting, so like you're building a portfolio
+[   14.58s ->    19.08s] from scratch, you're going to want to watch this video and steal this strategy. If you are someone
+[   19.08s ->    23.20s] who already has a portfolio, you're just trying to go in faster, more consistently, so you have
+[   23.20s ->    28.44s] a more secure retirement, this video and strategy is also for you. So let's dive into it right now.
+[   28.44s ->    34.28s] Now, my investing strategy is called strategic dollar cost averaging. Now this may sound like
+[   34.28s ->    39.22s] a big mumbo jumbo words, but I'm going to break it down step by step so that anybody can deploy
+[   39.22s ->    43.52s] this. Even if you've never looked at a stock chart before, I'm going to make this so simple
+[   43.52s ->    47.04s] that you'll be able to walk away from the video and actually do it. That's my goal.
+[   47.46s ->    52.04s] So let's start off with this. What is dollar cost averaging? And it's something that investors
+[   52.04s ->    56.36s] do when they're trying to get a good price where they're investing into an asset. So let's say
+[   56.36s ->    62.22s] they want to invest into Apple or Microsoft or Amazon, or maybe just the S&P 500, the overall
+[   62.22s ->    67.06s] market. What they do is they over time buy up some shares. So maybe they're like, I'm going
+[   67.06s ->    72.42s] to enter, let's say I have $3,000 and I want to put it into SPI. I'm going to break that
+[   72.42s ->    76.30s] up over three months. So once a month, I'm going to put it in a thousand dollars. It's called
+[   76.30s ->    80.32s] dollar cost averaging because no matter where the market is at a high point, low point, average
+[   80.32s ->    84.28s] point, whatever, you're going to invest that money. And by doing it multiple different
+[   84.28s ->    89.38s] times across time, you're going to get an average price. So you can see here, if I buy
+[   89.38s ->    94.08s] in just on a monthly basis, I get the low points, the high points of the low point, but I get
+[   94.08s ->    98.70s] an average buy in price right here so that when the market goes higher, I have a good
+[   98.70s ->   103.80s] average price. I'm not too concerned about the entry. Now, the problem is all the money
+[  103.80s ->   108.18s] is made on the entry. Have you ever heard that all the money is made when you buy something?
+[  108.34s ->   112.32s] If you can buy it for super cheap and then sell it for a lot of money, it's amazing. But
+[  112.32s ->   118.32s] if you buy it for relatively cheap, you don't make as much. So it's all about strategic entering
+[  118.32s ->   122.34s] as a dollar cost investment strategy. So that's exactly what I do. At the very end of these
+[  122.34s ->   126.62s] slides, I'm going to jump into a stock chart and show you exactly how this works. But basically,
+[  126.62s ->   131.12s] I have an indicator that I put together, which I'll show you how to use for free. Don't worry
+[  131.12s ->   137.24s] that you can actually pinpoint the levels where the S&P 500, the overall market at the lowest
+[  137.24s ->   143.24s] points ever so that you can actually dollar cost average at the absolute lowest points.
+[  143.24s ->   147.96s] This can increase your returns dramatically, give you a game plan to follow so that you're
+[  147.96s ->   152.36s] never guessing and just help you have higher returns whenever you have money you want to
+[  152.36s ->   156.86s] put into the market. This is what I call strategic dollar cost averaging. We're not just randomly
+[  156.86s ->   162.12s] buying in. We're buying in at strategic times where the market's at its lowest so we can immediately
+[  162.12s ->   167.72s] see a payoff and just help improve the returns of our account. So how do we recreate this indicator?
+[  167.72s ->   172.80s] I'll be diving into a chart here soon. But it's a Bollinger band that we can use to replicate this
+[  172.80s ->   177.64s] indicator that I have. Make the link 200 and standard deviation two and you'll be able to do it. I'll
+[  177.64s ->   181.58s] walk you there in a second though, so don't worry. Let's talk about this a bit further. That's three
+[  181.58s ->   187.76s] steps. Strategic dollar cost averaging is where on a monthly, weekly, bi-monthly basis, whatever,
+[  187.76s ->   193.34s] some basis you're consistently putting money into your broker account. Whether that's a tax
+[  193.34s ->   199.28s] advantaged IRA, Roth IRA, 401k or normal broker account, you're just consistently putting money
+[  199.28s ->   203.36s] in your account. So if you're starting from scratch, make sure you have a consistent transfer
+[  203.36s ->   209.70s] from your bank to your broker, whether it's just $10, $50, $100 or $1,000 a month, it doesn't matter.
+[  209.92s ->   214.94s] Just compound that into the broker account. Now, if you already have money in your broker account,
+[  214.94s ->   219.80s] because you already have an investing portfolio, let's dive into number two. Once we have money in
+[  219.80s ->   226.52s] the broker account, we need to make sure that we're using the cash as best as we can. Now,
+[  226.52s ->   233.24s] what do I mean by this? We are waiting to invest in the market when we have an A plus setup or aka
+[  233.24s ->   238.72s] when the market is at a huge discount. So that means a lot of time cash will be just sitting in
+[  238.72s ->   243.88s] the broker. So in order to put that cash to use, we're going to use things like a money market
+[  243.88s ->   249.76s] account, a high interest savings account or high yield savings account, or maybe put it into a
+[  249.76s ->   255.66s] treasury bill, which is backed by the government treasury bill ETF known as T bill, which will give
+[  255.66s ->   261.74s] us roughly 4.5% return a year. And they'll actually pay out a little bit monthly. So that way we can
+[  261.74s ->   267.74s] use our cash while we're waiting to invest it into the market to generate a return, keep up with
+[  267.74s ->   273.66s] inflation, maybe even beat it. So while your cash is waiting in a broker, make sure it's being used
+[  273.66s ->   278.04s] in a way to help you actually make money. If not, you're losing money because of inflation.
+[  278.52s ->   283.52s] Step number three, we wait for our perfect entry point. And that's when we deploy the cash into the
+[  283.52s ->   286.56s] market. I'll be showing you what that looks like here on the chart, but we're basically waiting for
+[  286.56s ->   292.32s] the market to get to a bottom point where it's at a super low discount. And that's when we deploy all
+[  292.32s ->   297.68s] the cash we have sitting in the broker. So just to recap, we have a monthly, weekly, whatever
+[  297.68s ->   302.74s] transfer from the bank to our broker that adds up cash in the account. While the cash is in the
+[  302.74s ->   306.58s] account, we're going to generate some interest on it. Whether we go to T bill, which is a treasury bill
+[  306.58s ->   311.36s] ETF, or we just put it in a high yield savings account with Robinhood, for example, we can just
+[  311.36s ->   315.80s] have the money sitting there earning interest. And then once we're ready, we're going to take all
+[  315.80s ->   319.70s] that cash we have in the broker account. We're going to deploy it into the market at a strategic
+[  319.70s ->   325.94s] dollar cost averaging level. So this can also be done on Apple, individual stocks. It can be used
+[  325.94s ->   332.92s] on leverage ETFs like SSO. But my favorite across the board is to do it on SPY because that is the
+[  332.92s ->   337.82s] diversified overall market. And if that thing crashes, then we need to worry about more than
+[  337.82s ->   342.40s] just the market have we're having crashed. I'm talking about up to zero anyways. But don't forget
+[  342.40s ->   347.88s] about the magic of compound interest. Look, we have $25,000 in our broker account and we're adding
+[  347.88s ->   354.74s] $200 a month over 40 years. The average return is 8% a year. That would give us a $1.2 million
+[  354.74s ->   358.64s] return. You can ignore these numbers. We're basically just saying if you invest your money
+[  358.64s ->   364.00s] consistently and you just invest in the overall market, it's an 8% return and you're going to get
+[  364.00s ->   368.64s] something like 1.2 million. But what happens if you do strategic dollar cost averaging where you
+[  368.64s ->   374.12s] only put your money in at the lowest points? Well, we could easily double our return from 8% to 15%.
+[  374.12s ->   379.88s] That's very likely. Again, no promises, of course, the market changes and does whatever. But it's
+[  379.88s ->   385.54s] possible, very possible to double those returns. If you double it, that goes from 1.2 million return
+[  385.54s ->   393.40s] to an $11.6 million return just by consistently investing in your retirement account. So that is
+[  393.40s ->   399.34s] the power of making sure you use strategic dollar cost averaging and you compound your growth over time.
+[  399.48s ->   403.26s] That's the difference of $10 million. I would rather have 11 million, not 1 million,
+[  403.26s ->   407.58s] but that's just me. So let's dive into the chart and talk exactly how this works. So let's put it
+[  407.58s ->   413.46s] into action. Step one, look at a chart. I'm using Tradyview.com. They are free charts to use. If you
+[  413.46s ->   418.22s] have your broker, you can use that as well. Yahoo Finance, anything like that will work. So what I'm
+[  418.22s ->   423.04s] going to do is I'm going to type in SPY, the S&P 500 SPY. This is where all my long-term investment
+[  423.04s ->   428.78s] money is. I'm going to go into indicators and type in something called Bollinger Bands right here.
+[  429.14s ->   432.08s] I'm going to type and I'm going to put in Bollinger Bands. It's going to look like this. This is not what we
+[  432.08s ->   436.54s] want. We're going to go in here to the settings. This can be done on any broker. Change the link
+[  436.54s ->   443.96s] from 20, which is the default to 200. Okay. This gives us an example, very close reference of what
+[  443.96s ->   448.62s] my private indicator is that only my coaching clients get, which you can see here a little
+[  448.62s ->   454.88s] different, but this as whenever SPY, because this is a free version, the Bollinger Bands, whenever SPY
+[  454.88s ->   460.82s] breaks below this bottom zone, that is your discounted zone, right? You can see here,
+[  460.82s ->   465.30s] doesn't happen often over, let's say it's about four and a half years. It's happened one,
+[  465.70s ->   472.18s] two, three, four, five times. So again, maybe on average one entry a year or a couple entries every
+[  472.18s ->   476.56s] other year, something like that. So you will have cash sitting in your account for a while,
+[  476.56s ->   481.48s] but what does this do? Let's just simply look at how this gives us an advantage.
+[  481.86s ->   488.16s] Let's say we're looking over this point, right? If we're looking over this timeframe and we did normal
+[  488.16s ->   492.28s] dollar cost averaging, which was the average investor does with their investment account,
+[  492.62s ->   498.96s] they would invest in here. So on a monthly basis, invest money that would bring their average buy-in
+[  498.96s ->   503.10s] price. So let's say something like this. So they would have, their average price would have been
+[  503.10s ->   508.44s] here. The market ended here. And so they would have made this return. Not bad at all, right?
+[  508.58s ->   515.12s] If we use strategic dollar cost averaging, we would have saved our cash and only bought in with all our
+[  515.12s ->   520.26s] money right here when it got below, knowing that is the lowest discounted points. So now our average
+[  520.26s ->   525.08s] buy-in goes from here, which is what the average investor does to all the way down here. So that
+[  525.08s ->   531.00s] means we not only make this, but we also make this as well up to here. So we basically double our
+[  531.00s ->   537.62s] returns over this specific period of time just by getting in at the lowest point. So this creates a
+[  537.62s ->   544.98s] simple plan. One, once a week, make sure you're depositing money. When you deposit money, whether
+[  544.98s ->   554.48s] it's automated or manual, two, check the chart. Look, is SPY below this zone? If so, three, deploy
+[  554.48s ->   561.16s] money. Put the money in the market. If it's not, keep it in cash in the broker, let it build up on a
+[  561.16s ->   566.18s] high interest or high yield savings account and wait for it to get below this level and you can deploy it.
+[  566.18s ->   571.80s] This is something super simple. Blow, enter, not do nothing. That's how simple this is. Again,
+[  571.84s ->   576.84s] you can teach this to your kids, to your wife, whatever it is, but this is what I call strategic
+[  576.84s ->   580.70s] dollar cost averaging. And if you don't want to trade, if you don't want to do it with the daily
+[  580.70s ->   586.20s] market stuff, this is the easiest way to increase your returns, have more safety, and just follow
+[  586.20s ->   590.74s] a systematic plan. Anyways, if you enjoyed this video, please smash the subscribe button and I will see
+[  590.74s ->   591.62s] you in the next one.

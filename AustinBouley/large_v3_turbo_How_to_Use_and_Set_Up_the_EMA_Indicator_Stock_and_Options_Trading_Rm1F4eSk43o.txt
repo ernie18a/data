@@ -1,0 +1,59 @@
+[    0.37s ->     7.01s] Hey guys, what's up? It's Austin Booley again with Options Traders. No, I do not normally wear a collar shirt, but I'm about to take off and go somewhere.
+[    7.45s ->    19.37s] This is like a super, I think this will be a good video because I'm asked this question a lot, is what is the EMA line and why do you have it set at 18?
+[   19.73s ->    21.75s] So I'm going to go over that real quick.
+[   21.75s ->    44.71s] Anyway, so right here, this is a chart of SPX. This is what I always trade. Now, why is my EMA or exponential moving average, which can be found on any platform, if you do not have a platform that has an EMA line or a moving average line, then I don't think it should be used because this is everyone uses this line, or a lot of people do.
+[   44.71s ->    55.99s] So your indicator, you would go into the EMA or exponential moving average is what it's called, I think, on the TOS for TD Ameritrade, the thinkorswim platform.
+[   56.61s ->    66.93s] So as you can see, my length is 18. Now, why is that? Well, Friday was a choppy day, so we couldn't really see that well. Let's look more at a trending day, okay?
+[   66.93s ->    82.71s] So as you can see, we're going up, and as we're going up, the 18 period moving average, it seems to bounce off of it, and when it breaks below, it seems to downtrend, and when it breaks above, it seems to bounce and go up, okay?
+[   82.77s ->    89.55s] It's not consistent. It's not like this will work every single time, but the 18 period just works well.
+[   89.55s ->    96.95s] So you see, when it goes below it, it tends to downtrend. When it goes above it, it tends to uptrend, and it tends to bounce off this line.
+[   98.73s ->   108.77s] So, for example, here is a perfect one of a trending down. So as we're going down, it breaks below, it tries to go up, it gets rejected by this line.
+[  108.85s ->   115.55s] It's perfect. Rejection, rejection, rejection. Why do I want the line to get so close to that rejection point?
+[  115.55s ->   126.12s] Because then I know where to enter. So, for instance, if I move this to a 12, and we go back to this downtrend day, sorry for the delay, okay?
+[  126.36s ->   137.00s] Well, I mean, that works. But still, I would have gotten this indication that, oh, look, it's breaking above, not the best entrance point, when actually it was still trending down.
+[  137.00s ->   146.82s] So using, or let's see, if I jump, I wish I could just stay on the same day. Let's say I wanted a 22 for some reason, okay?
+[  147.06s ->   151.54s] I would miss those entry points because it would never get close enough to this line.
+[  151.94s ->   162.50s] So based off the history and the movement of this SPX index, or the S&P 500 index, the 18 period reacts to it the most.
+[  162.50s ->   167.36s] Now, how do you know which one to use? Well, let's pull up another stock like Facebook, okay?
+[  168.22s ->   172.98s] We want to see a trending day, so either trending up or trending down, okay?
+[  173.06s ->   177.76s] So here is an uptrending day. The 18 does not work for this. Why?
+[  177.84s ->   183.38s] Because when we were trending up, we broke below it, and then back up, and then below it, and then back up.
+[  183.60s ->   189.76s] That is not what we're looking for. We're looking for it to be receptive to this EMA line.
+[  189.76s ->   198.38s] We want it to be able to bounce so that we can have a better, here we go, we're starting to catch it better.
+[  198.50s ->   201.16s] You see now that we extended, it's starting to catch these bounces.
+[  201.84s ->   205.28s] So you would just extend it to what works best.
+[  206.71s ->   210.09s] 35, I think this is getting a bit too long, maybe.
+[  210.77s ->   212.61s] Let's see if we can pull up some other days.
+[  212.71s ->   216.59s] I mean, just to show you for an example that, yes, I would need to bring this,
+[  216.59s ->   222.11s] I would need to make the period at least 30 because, look, then it would have showed me this perfect thing,
+[  222.17s ->   223.93s] and then it would have caught this little bounce here.
+[  224.47s ->   229.59s] And we're just looking for the EMA period that fits the stock the best.
+[  230.15s ->   233.81s] So when it broke above this, it seemed to have an uptrend.
+[  233.89s ->   235.79s] When it broke below, it seemed to have a downtrend.
+[  236.63s ->   237.89s] It's pretty good.
+[  237.89s ->   242.17s] That looks just like the one we just had.
+[  242.61s ->   248.83s] So obviously, we would want a little, no, this one works great because you see it broke down,
+[  248.93s ->   251.57s] it came up, it got rejected by it, and then back down.
+[  252.21s ->   254.41s] And then when it broke above, it started to do the uptrend.
+[  256.07s ->   261.65s] It's never going to catch it perfectly, but you just want to find an EMA line that fits it just right.
+[  261.65s ->   267.75s] So this 25 seems to work good on Tesla as we broke above and we held it,
+[  267.81s ->   270.11s] and then when we broke down and then we held it.
+[  271.19s ->   275.07s] And, ooh, man, I forgot to include Tesla in the last video I made, but look at that, Friday.
+[  275.59s ->   282.99s] We have this flat line above, and then we have these higher highs forming, perfect break up.
+[  283.45s ->   284.55s] That would have been great.
+[  284.87s ->   285.21s] Why?
+[  285.27s ->   289.61s] Because we're having this consistent consolidation, and then just to push upward,
+[  289.61s ->   293.53s] upward, based off the upward momentum from the previous day.
+[  295.19s ->   299.77s] So, yeah, so that's what the, I didn't really explain what the EMA line is,
+[  300.23s ->   303.97s] but it just is the average of the last X periods.
+[  304.15s ->   309.25s] So, like, if you put in an 18 period, then it's taking the average price of the last 18 candles,
+[  309.49s ->   311.75s] and that is how the EMA line is formed.
+[  311.85s ->   316.89s] That's not really important, but it can be used to verify, support, and resistance.
+[  316.89s ->   320.67s] Trend lines, bounces, it's super good for everything.
+[  321.21s ->   326.95s] As one of the traders in the group said, Brooke, if you ever run into her in the chat,
+[  327.15s ->   331.69s] she said, like, something like, oh my gosh, my trading has never been, like, I don't know,
+[  331.81s ->   337.17s] my charts have never been cleaner, or something like that about introducing this EMA line.
+[  337.17s ->   341.85s] So, I hope you all can start to integrate this into your method and strategy.
+[  342.07s ->   344.29s] If it doesn't fit, then don't use it, it's fine.
+[  344.35s ->   349.17s] I just wanted to offer some exposure to more indicators if that is the way you like to trade.
+[  349.59s ->   351.55s] All right, I hope that helped, and I hope you learned something.

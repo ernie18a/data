@@ -1,0 +1,60 @@
+[    0.04s ->     6.18s] Welcome to video number three of the trend following secrets class. So again, sector
+[    6.18s ->    11.98s] rotation is going to play a huge aspect in trend following. Why? Because trend following is all
+[   11.98s ->    16.62s] about finding the strength and the movement of where the market is and following that because
+[   16.62s ->    22.96s] it's a lot easier to go with the trend and follow the strength than to go against it. And so since
+[   22.96s ->    29.14s] we discussed how to read a chart in video number one and then in video number two, we discuss more
+[   29.14s ->    33.78s] about how to follow the trend and how to identify that. Well, we're going to kind of pull that all
+[   33.78s ->    39.16s] in and use that for sector rotation. So again, going to the indicators, I'm going to do what we
+[   39.16s ->    44.82s] discussed in video number two. We're going to go to a moving average. We're going to make that the
+[   44.82s ->    51.11s] 200-day moving average. We're going to come in here and we're going to actually do that. Okay,
+[   51.19s ->    57.01s] 200-day moving average, just set to 200, just like that. And so, okay, so now we can identify trend,
+[   57.01s ->    63.93s] right? We know when the market is trending higher. We know when the market is in a bear market and we
+[   63.93s ->    70.15s] can kind of judge from that. As we also discussed in video number one, volume shows us when trend is
+[   70.15s ->    74.87s] changing as well. So you can see here that volume stepped up. So we know that this right here when
+[   74.87s ->    81.77s] it first crossed is early bear market. This is mid bear market. This is late bear market slash early
+[   81.77s ->    87.61s] bull market because of the volume that stepped up. This is early bull. This is mid bull. And then when
+[   87.61s ->    95.19s] we start to round over, it's going to be our early bear market. So I hope that makes sense. We're just
+[   95.19s ->   100.87s] basically looking at the trend to identify what type of market we're in. Again, we want to do this
+[  100.87s ->   106.45s] on the S&P 500 because that shows the overall market. And so when we look at the trend of the overall
+[  106.45s ->   111.47s] market, we can see what type of market we are in. So our first step in sector rotation is understanding
+[  111.47s ->   118.97s] what type of market we are in. Currently, we are in mid bull market. Why? Because we are above the
+[  118.97s ->   123.97s] 200 day moving average and we are trending up. So we are in mid bull market. We haven't reached the top
+[  123.97s ->   128.67s] yet to our knowledge. So we're going to assume we're in mid bull market. Anyways, this is what a
+[  128.67s ->   135.67s] sector rotation chart looks like. It shows what sectors are strong during different times or different
+[  135.67s ->   141.45s] phases of the market. So as we discussed here, red will be our market. Blue will be a
+[  141.45s ->   146.75s] economy. We will ignore economy because we can't fully judge that. But what we can judge is the market.
+[  146.87s ->   151.97s] So we're going to look at this red line here. So again, bull market, like I said, we're currently in our
+[  151.97s ->   159.57s] mid bull market phase. We haven't really hit that market top yet. So now we know that we're in mid bull
+[  159.57s ->   165.05s] market phase. We know what sectors are strong and what sectors we should be staying in. So we should be looking
+[  165.05s ->   170.95s] at technology, industrials and basic materials. Now, when we start to see a market top, when it
+[  170.95s ->   176.49s] starts to round down and get closer to that 200 day moving average, we know that we'll be looking
+[  176.49s ->   181.53s] into the strength of stocks will be in basic materials, energy and staples. So again, guys,
+[  181.57s ->   187.35s] this shows us what sectors are strong. And when we know what sectors are strong, we can then find the
+[  187.35s ->   192.97s] best stocks in those sectors and trend follow those. Because remember, trend following is all about
+[  192.97s ->   199.37s] finding strength. And so again, how do we do that? Well, if you go to a stock market heat map,
+[  199.71s ->   205.13s] you can actually find that out yourself. So finbiz.com has a great heat map. And so let's say
+[  205.13s ->   210.99s] like this, we know we're in a mid bull market currently, as I record this video, right, we're
+[  210.99s ->   216.87s] in a mid bull market. So we know that we're in a mid bull market. So we want to look at the technology
+[  216.87s ->   222.79s] sector, industrials and basic materials. So I'm going to go here. Again, it's currently a red day in
+[  222.79s ->   226.49s] the market as I record this. But we're going to go out to about a three month performance. We're
+[  226.49s ->   231.51s] going to see which ones are performing the best. Okay, so this is my technology sector right here.
+[  231.51s ->   239.11s] And so I'm going to look at the top performer. So I'm going to be looking at or at Oracle, my Microsoft
+[  239.11s ->   247.27s] ZS, basically all these stocks here that are working well in that sector, I have now as well
+[  247.27s ->   252.53s] service now is doing well. And so now that I know the top performing stocks in the top performing
+[  252.53s ->   259.11s] sectors for this market, then I can easily find some top stocks. So let's look at Oracle and now
+[  259.11s ->   263.95s] as examples, I haven't previewed this. So we'll just look in anyways, you can see here, I would
+[  263.95s ->   268.49s] have known that this was a good sector to be in, we find these dips and we buy in these dips and we
+[  268.49s ->   274.45s] ride up. And again, if we would have bought in this dip around here, that's a great a 42% return Oracle
+[  274.45s ->   280.07s] as well. Or CL, you can see that we know where our dips are, especially when we come down to doji
+[  280.07s ->   284.13s] candles like this, doji, doji, doji, buy in these dips since we know we're trending up.
+[  284.41s ->   289.31s] And then we have about a 15% return. So guys, this is all what trend following is finding
+[  289.31s ->   295.33s] what phase of the market we are in, using that to understand what sectors are hot right now,
+[  295.61s ->   300.57s] finding the best stocks in those sectors, and then digging deep and finding our entry points
+[  300.57s ->   305.53s] on those stocks. All right, guys, I hope this made sense to kind of play on how to find stocks
+[  305.53s ->   311.05s] and what sector rotation is. Again, sector rotation, I can't explain it too much because
+[  311.05s ->   316.11s] it's just a model. This is just how it works. So it's not like there's something specific about
+[  316.11s ->   321.05s] it. You can research more about this if you'd like, it explains it all here. Basically, this
+[  321.05s ->   325.67s] is just how sector rotation works with each phase of the market. Anyways, guys, I hope you enjoyed
+[  325.67s ->   331.15s] this video. Make sure to watch video one and two if you didn't fully understand how we determine
+[  331.15s ->   335.89s] the phase of the market. And this is just a great video overall. So please take notes and
+[  335.89s ->   337.67s] watch it again if you need.

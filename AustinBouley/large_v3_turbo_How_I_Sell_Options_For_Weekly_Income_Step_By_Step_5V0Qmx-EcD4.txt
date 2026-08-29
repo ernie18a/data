@@ -1,0 +1,132 @@
+[    0.11s ->     4.61s] Hey options auto traders, welcome to the first lesson in this masterclass where we're going to
+[    4.61s ->     9.45s] be discussing selling puts. Why? Because selling puts is the basis for almost every single option
+[    9.45s ->    14.95s] strategy. If you understand what puts are, selling puts and all that, then you'll be able to understand
+[   14.95s ->    21.27s] the rest of the strategies. Also, selling puts in and of itself is one of the most simple income
+[   21.27s ->    25.67s] strategies, which means that if you do this, you'll be able to make consistent income every
+[   25.67s ->    31.31s] single month just by doing one or selling one simple option. So let's dive in and first discuss
+[   31.31s ->    36.31s] some very important, some very important things that most people don't discuss. Like what market
+[   36.31s ->    41.49s] does selling puts work best in? And so it works best in bull markets when markets are going up
+[   41.49s ->    46.49s] and it works best in sideways markets when the market is very range bound. That's where selling
+[   46.49s ->    52.49s] puts thrives. If the market starts to drop, you're going to lose a lot of money. Next, who this
+[   52.49s ->    56.45s] strategy works best for? It works best for someone who wants slow, consistent profits.
+[   56.57s ->    61.49s] Guys, when you're selling options, you become the casino, you become the house, which means that you
+[   61.49s ->    66.11s] don't have any huge winners. You just have a lot of small, consistent wins. And over time, you're
+[   66.11s ->    69.83s] playing the numbers out and they work in your favor. You're doing the same thing when you're selling
+[   69.83s ->    73.89s] options. You're the insurance company. You're collecting these small premiums and you almost never
+[   73.89s ->    78.35s] have to pay out. And when you do, I can actually show you how to mitigate those losses in a bit.
+[   78.93s ->    82.07s] Next, it's for someone who wants passive income. If you're someone who's like,
+[   82.07s ->    86.13s] I just want a simple strategy to make some good money every single month. And I just want something
+[   86.13s ->    92.03s] that's simple. This is for you. Next, what are the cons of this strategy? This strategy will lose
+[   92.03s ->    97.17s] thousands during a pullback or a market crash. So if the market is pulling back or crashing,
+[   97.39s ->   102.67s] you've got the potential of losing thousands of dollars. But if you stay tuned on this trading,
+[  102.73s ->   105.97s] I'm actually going to show you how to mitigate that so that you don't actually have that risk.
+[  105.97s ->   113.03s] And then some of the last con is that it's slower than you think. So guys, typically when you're
+[  113.03s ->   117.95s] selling options, it's the slower game. So you will take about two weeks to start seeing profit
+[  117.95s ->   123.21s] and closing out a trade compared to like your quick trades where you're in and out in a day or
+[  123.21s ->   128.81s] two. Next, what are some of the account sizes and limits that we need? Well, first and foremost,
+[  128.93s ->   133.55s] you need full margin approval on your broker account. So if you're trading with TastyTrade,
+[  133.55s ->   137.19s] that means you want to use the WORX account, which will give you full margin approval,
+[  137.43s ->   141.23s] and you'll be able to do this. If you want to trade things like futures, you'll need $10,000
+[  141.23s ->   146.93s] in buying power. If you want to trade things like ETFs, you'll be able to do it with about $20,000
+[  146.93s ->   153.21s] in buying power. There's other strategies that replicate this approach like credit spreads that
+[  153.21s ->   159.49s] require less buying power, but we'll be getting into that further in this lesson or further in this
+[  159.49s ->   163.41s] course. But we just need to set the frameworks with selling puts first. So
+[  163.41s ->   168.61s] how is the selling put strategy constructed? What does it look like? Well, we're just going to
+[  168.61s ->   173.89s] take a put and we're going to sell it. If you don't know what a put is, a put increases in value,
+[  173.97s ->   179.85s] goes up in value as the market drops. So you can think of puts as shorting. When the market drops,
+[  180.01s ->   185.97s] puts go up. So if you want the market to drop, that's how puts make money. But when we're selling
+[  185.97s ->   191.31s] it, we're doing the opposite. So that means that we want the market to go up. So the puts value drops.
+[  191.31s ->   195.37s] When the put value drops, we make money. So I think I got a bit too complicated there, but don't worry.
+[  195.59s ->   201.29s] I'll simplify it here. The puts are entered far out of the money. So if we look at here, here's where
+[  201.29s ->   207.59s] the stock is currently trading. So the stock is trading here. When we sell puts, we're betting or
+[  207.59s ->   212.67s] hoping that a stock stays above a certain level. So we're going far away. We're going like this far
+[  212.67s ->   218.05s] below the stock. So I'm giving the stock this much room to move. As long as it stays above this
+[  218.05s ->   221.83s] level or can even drop this much or something like this, this is where the stock's moving,
+[  221.91s ->   227.19s] things like this, then I will make money. I make money as long as the stock stays above the level
+[  227.19s ->   232.49s] I pick. So what we do when we sell puts is we pick a very or a level that's far away from the
+[  232.49s ->   238.61s] current stock price. The further away we go, the higher our win rate. So that's what we're looking
+[  238.61s ->   243.99s] at. We go far out of the money, which means far away from where the stock is. These puts are used as
+[  243.99s ->   249.71s] the base of basically every strategy. So if you sell puts, that's where your income comes from.
+[  249.77s ->   255.25s] So you're selling this down here. And in order to do it, you are getting paid money to do it. Okay.
+[  255.25s ->   260.19s] The further away from the stock you go, the less money you get paid because the less likelihood of
+[  260.19s ->   265.81s] the stock reaching that point, but still you get paid money by selling this put. So that's the base
+[  265.81s ->   270.97s] of the strategy. So moving the puts closer to the money or closer to the stock price will increase
+[  270.97s ->   274.85s] your income because you'll make more, but it'll decrease your win rate because it's more likely
+[  274.85s ->   280.33s] that the stock will drop and hit that level. Now, when we're selling options or doing options,
+[  280.33s ->   285.61s] there are some very important components like days until expiration. So Delta tells us how far away
+[  285.61s ->   291.39s] from the stock we're going and days until expiration tells us how far in the future we're going.
+[  291.87s ->   299.59s] So we tend to go 45 to 120 days when we're selling options. So that's typically what we look at.
+[  299.59s ->   306.41s] Now here is the profit graph of a, of selling a put. What we do here is we sell a put. So we collect
+[  306.41s ->   312.39s] a defined, um, income amount. You can see here, this green, it kind of tops out because the money
+[  312.39s ->   317.51s] that we received when we sold the put or the premium or the income or the, the insurance money
+[  317.51s ->   323.45s] that we received when we sold this put is the money that we, that we get to keep. If it breaks our
+[  323.45s ->   327.51s] level, right? This level that I'm discussing where we want the stock to stay above a certain level,
+[  327.51s ->   332.57s] then we start losing. So you see when it breaks that level, then we start losing first at eats
+[  332.57s ->   337.35s] into the profits we made and then it starts going negative. So that's what's something you have to
+[  337.35s ->   343.05s] be aware of. Next, how do we manage this trade? So we put on this trade by going away from the
+[  343.05s ->   349.11s] stock price about 45 to 120 days out into the future. And then we sell a put. Now, how do we
+[  349.11s ->   354.51s] manage this trade? What do we do for stop loss for take profit and all that stuff? Well, we're going to
+[  354.51s ->   359.03s] follow tasty trade mechanics. If you've never heard of tasty trade, uh, they're a great platform.
+[  359.03s ->   363.01s] There's a lot of research around this and this is what they found works best so that you can have
+[  363.01s ->   369.09s] an 80 to 90% win rate, um, and still make good money. So, uh, stop loss. Again, they don't like
+[  369.09s ->   375.53s] to do a stop loss, but I like stop losses. Uh, their, their research has shown that a 300 to 400%
+[  375.53s ->   380.51s] stop loss is the best stop loss when you're selling options. Um, so again, this is going to be based
+[  380.51s ->   384.29s] on the initial credit received. So when you're, once you've entered the trade, you want to close
+[  384.29s ->   390.55s] out that trade for a loss. If it gets to roughly three, a, a, a three, a 300% loss, that means that
+[  390.55s ->   396.93s] if you received a hundred dollars to put on this trade, then once it gets to $400, which meaning
+[  396.93s ->   402.35s] that the net difference between them, 400 to a hundred is a 300, a $300 difference. That's a 300%
+[  402.35s ->   405.79s] difference. And that's when you've hit your max loss and you want to close out the trade
+[  405.79s ->   412.39s] next early man, uh, early management taste, uh, tasty life research rack recommends to manage
+[  412.39s ->   419.77s] short options like puts at 21 days, meaning that you're going to exit the trade when there's 21
+[  419.77s ->   425.73s] days or left in the trades. Let's say we entered, we entered the trade with 45 days, uh, 45 days to
+[  425.73s ->   432.25s] go. Once 20, was it 24 days have passed and we get the 21 days left in the trade. Then we close that
+[  432.25s ->   437.05s] trade. It helps reduce a lot of gamma risk and vega risk and things that, uh, like that. So just
+[  437.05s ->   442.45s] by closing the trade early, we end up just collecting a profit faster, um, and avoid some
+[  442.45s ->   449.21s] risk with that. Next is take profit. You typically manage your profits between 10 to 50%. Um, again,
+[  449.33s ->   455.25s] 30, 30% is great. 10% is great. 50, uh, 50% is great. If you follow the tasty live mechanics,
+[  455.35s ->   462.03s] their way to manage a selling put is to do a 50% take profit with a 21 days early up management.
+[  462.03s ->   467.17s] So next, what are the best practices for the strategy? Well, like discussed, you're going
+[  467.17s ->   471.93s] to sell puts at the 10 Delta level, which is going to get you very, very far away from where the stock
+[  471.93s ->   476.47s] is currently trading. You're going to go for 45 days out. You're going to manage the trade by
+[  476.47s ->   482.13s] having a 21 days until X till expiration and it take profit of 30% based on the initial credit
+[  482.13s ->   487.49s] received. 30% is what I found via back testing and per and personal experience to be a wonderful,
+[  487.49s ->   493.07s] um, performance. Um, because again, I get out of trades and, and about a week or two. Um, so I'm
+[  493.07s ->   498.55s] able to collect profits faster, um, which is going to help me increase my win rate. Next, how, how do I
+[  498.55s ->   503.49s] automate these best practices into the option to enter the options auto trader? Well, if you're just
+[  503.49s ->   507.85s] looking through this document, you can do this here. Um, but again, I'll just walk you through the
+[  507.85s ->   512.81s] process. So what we do is we're going to go into create an auto trader. We're going to connect our
+[  512.81s ->   517.99s] tasty trade account. We're going to create an auto trader. Um, and I'll show you how to set this up
+[  517.99s ->   521.85s] from scratch. So we're going to sell puts. That's the strat. That's the strategy we're doing. We get
+[  521.85s ->   527.25s] to pick the asset we want to do it on. So we have a larger account. Um, we can do it on spy or, or SPX
+[  527.25s ->   531.37s] or a futures. If we have a smaller account, um, then again, we'll probably want to do a different
+[  531.37s ->   536.03s] strat, uh, a, a, a different strategy because it takes a lot of buying power. Um, but let's say just
+[  536.03s ->   542.63s] want to do it on spy 45 days out 10 Delta. Again, this is preloaded with the best practices. You can see here
+[  542.63s ->   549.09s] the best practices of this already built in. Um, so just like that, the 10 Delta for my strike
+[  549.09s ->   555.20s] selection. Next, how many times do I want to enter? Do I want to enter once a week, three times a week,
+[  555.20s ->   559.86s] every day? Again, um, when you're selling puts, if you have the money more active, the better,
+[  559.86s ->   564.34s] um, you want to do small trades. Uh, you want to trade small trade often. That's the taste. That's
+[  564.34s ->   569.68s] the tasty life type of mantra. Um, and just like that, we can, we can set that up. So this is once a
+[  569.68s ->   575.48s] week on Wednesday. Next, what I say is that about 30% take profit and early management of 21 days.
+[  575.54s ->   579.80s] We're going to close the trade when there's 21 days left in the trade. I don't have a stop loss.
+[  579.84s ->   584.76s] It's just giving me a warning. I understand that next buying power allocation. How much money do I
+[  584.76s ->   588.82s] want this auto trader to trade with? Um, well, again, for selling puts, we're going to need some
+[  588.82s ->   593.80s] decent money. So let's say $20,000 would be good to go with. Again, once we get to the next page,
+[  593.80s ->   598.60s] it'll show us how much money, um, we'll actually be using. Now, if you want to maintain full control
+[  598.60s ->   603.30s] of your account, you can require email trade approval. Um, again, by default, it's disabled,
+[  603.30s ->   608.78s] um, just to let the automations work. Um, but if you want to approve a trade before it goes live,
+[  608.78s ->   612.36s] you can enable this and we'll send you an email approval being like, Hey, all the rules have been
+[  612.36s ->   617.60s] met. Do you approve this trade? Yes or no. Now, remember how I said one of the biggest issues with
+[  617.60s ->   622.62s] selling puts that if the market pulls back or crashes hard, um, that you could lose thousands of
+[  622.62s ->   628.64s] dollars. Well, I built a simple mathematical prediction, um, that shows when the market is
+[  628.64s ->   636.26s] likely to pull back or crash. And so again, it's kept me out of some amazing, um, pull, uh, pullbacks
+[  636.26s ->   644.02s] and crashes like COVID, um, like the ones recently this year and, uh, 2024. And so it's awesome. And so
+[  644.02s ->   649.38s] if you enable this, it will close out your positions before the crash starts happening. Again, it will get
+[  649.38s ->   654.43s] you out of all crashes, but it'll get you out of most crashes. Next, just like this, you can see
+[  654.43s ->   660.69s] here for spy, it takes about $6,500 of buying power to sell one put. Um, so again, you can see here,
+[  660.69s ->   667.45s] I'll make about $300, uh, per trade based on my, uh, profit, uh, potential, and I'll be risking about
+[  667.45s ->   674.91s] $10,000 per trade, um, based on, um, the stop loss I have, which is in existence. So about, about the
+[  674.91s ->   678.93s] average of 21 days. So, uh, if you want to fully understand what it's doing, you can read the
+[  678.93s ->   683.15s] summary here. If not, you can authorize and save the auto trader and you're done. All right, guys,
+[  683.19s ->   690.41s] that is how to set up, um, a selling puts a strategy, what it is, how to trade it, why it works.
+[  690.73s ->   695.57s] Again, uh, you can get this document link down below if you need it. Um, but anyways,
+[  695.57s ->   697.53s] I'm Austin. I will see you in the next lesson.

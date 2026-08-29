@@ -1,0 +1,457 @@
+[    0.26s ->     2.22s] I love credit spreads.
+[    2.76s ->     5.24s] They really allow me to trade part-time
+[    5.24s ->     7.34s] and allow me to work that full-time job
+[    7.34s ->     9.86s] without having to worry about the status of my trade.
+[    9.98s ->    11.28s] Today, I'm gonna walk you guys through,
+[   11.80s ->    13.20s] one, a quick summary about what it is,
+[   13.32s ->    15.52s] and then two, how to really leverage credit spreads
+[   15.52s ->    17.08s] to maximize your profit,
+[   17.28s ->    18.92s] as well as trade more passively
+[   18.92s ->    21.02s] while working that full-time job.
+[   21.10s ->    22.16s] This is Credit Spread Investing,
+[   22.24s ->    23.64s] where I would like to show you guys
+[   23.64s ->    26.84s] not only the concepts, but the what and the how
+[   26.84s ->    29.36s] so that you too can replicate this and do it yourself.
+[   29.36s ->    30.52s] So if you guys like content like this,
+[   30.58s ->    31.64s] make sure you guys like and subscribe.
+[   31.76s ->    32.72s] It'll really help the channel out.
+[   32.86s ->    34.24s] Let's talk a little bit about credit spreads.
+[   34.38s ->    35.56s] If you guys don't know what they are,
+[   35.64s ->    36.68s] make sure you guys check out this video
+[   36.68s ->    37.90s] linked in the upper right-hand corner.
+[   38.06s ->    40.72s] But a quick one-minute recap.
+[   41.00s ->    41.92s] If you guys already know this,
+[   41.96s ->    43.86s] make sure you guys skip to this timestamp right here.
+[   44.18s ->    47.14s] Credit spreads are a defined risk option strategy,
+[   47.32s ->    49.34s] which means that you can only make a defined amount
+[   49.34s ->    51.64s] and lose a defined amount.
+[   51.84s ->    54.20s] How it works is that you would sell and buy options
+[   54.20s ->    55.96s] on the same underlying asset.
+[   55.96s ->    57.36s] As you guys can see on the screen,
+[   57.36s ->    61.20s] there are really only two main forms of credit spreads.
+[   61.32s ->    63.30s] Credit spreads are directional in nature.
+[   63.74s ->    64.96s] So there's the bull put spread
+[   64.96s ->    66.20s] and the bear call spread.
+[   66.40s ->    69.58s] A bull put spread, ABC 50, 45 put.
+[   69.76s ->    72.64s] What this would mean is that you would be selling
+[   72.64s ->    77.70s] the 55 put and you would be buying the 45 put.
+[   77.82s ->    79.78s] Because this is a defined loss strategy,
+[   79.92s ->    83.76s] your max profit will be the dollar that you collected
+[   83.76s ->    86.68s] from selling this 50, 45 put spread.
+[   87.62s ->    93.77s] Your max loss would be essentially 50 minus 40,
+[   93.87s ->    97.85s] which would be 500 minus the X,
+[   97.97s ->   101.82s] which is the credit that you received from selling credit
+[  101.82s ->   106.84s] that you received from selling this one ABC 50, 45 put.
+[  107.79s ->   109.81s] So for example, if X is 100,
+[  110.45s ->   112.41s] your max profit will be 100
+[  112.41s ->   114.97s] and your max loss will be 400.
+[  115.55s ->   117.05s] Okay, so we'll just do that for now.
+[  120.45s ->   122.39s] So this would be 100 right here
+[  122.39s ->   124.49s] and this would be 400 right here.
+[  124.85s ->   127.85s] On the profit and loss chart that I just drew on,
+[  128.29s ->   130.83s] that essentially shows you how you can make
+[  130.83s ->   132.13s] or lose money on a credit spread.
+[  132.67s ->   134.03s] A bull put spread means that
+[  134.03s ->   137.35s] as long as the price remains above leg that you sell,
+[  137.51s ->   138.65s] which in this case is 50,
+[  139.51s ->   140.65s] you will be profitable
+[  140.65s ->   141.91s] and you'll make max profit of,
+[  141.99s ->   142.79s] in this case, $100.
+[  142.79s ->   145.41s] If it ever goes below 45,
+[  147.18s ->   149.10s] you would then make your max loss,
+[  149.42s ->   151.50s] which would be 400 in this case.
+[  152.48s ->   153.32s] Anywhere in between,
+[  153.50s ->   154.82s] you'll either make a little bit of money
+[  154.82s ->   156.20s] or lose a little bit of money.
+[  156.40s ->   158.74s] But essentially you want it to be above 50.
+[  158.84s ->   160.10s] So in terms of profit,
+[  161.23s ->   163.41s] you want it to be greater than the $50
+[  163.41s ->   165.39s] or the leg that you're selling.
+[  165.61s ->   166.61s] Now on the flip side,
+[  166.87s ->   168.45s] you'll be looking at a bear cost spread.
+[  168.53s ->   169.59s] The bear cost spread means that
+[  169.59s ->   171.29s] you think the market is either going to go sideways
+[  171.29s ->   172.15s] or go down.
+[  172.15s ->   173.39s] Opposite of a bull put spread,
+[  173.47s ->   175.33s] which you're thinking the market will go up.
+[  175.61s ->   176.51s] So in this case,
+[  176.85s ->   178.59s] ABC 55, 60 call,
+[  178.75s ->   179.81s] what you would do now
+[  179.81s ->   182.11s] was you would be selling the 55
+[  182.11s ->   184.57s] and you would be buying the 60.
+[  185.27s ->   187.71s] Let's assume that you have the same max loss
+[  187.71s ->   188.69s] and max profit,
+[  189.01s ->   190.61s] which gives you a collect the same amount of credit
+[  190.61s ->   192.11s] by selling this credit spread,
+[  192.33s ->   195.68s] which will be 100 and 400.
+[  197.28s ->   199.58s] Now, because you're expecting the market to go down
+[  199.58s ->   201.36s] or in this case, maybe sideways,
+[  201.36s ->   206.06s] as long as the market and the stock remains below 55,
+[  206.76s ->   210.11s] you would make max profit of $100 in this case
+[  210.11s ->   211.81s] and anything above 60,
+[  212.27s ->   215.69s] you would make max loss of 400, right?
+[  216.15s ->   218.41s] So to profit in this case,
+[  218.65s ->   222.03s] you want the market to stay below your bought,
+[  222.17s ->   222.89s] your sold leg,
+[  222.99s ->   225.91s] which will be the $55 option that you're selling.
+[  225.99s ->   227.47s] Now let's take a look at my trade.
+[  227.47s ->   231.25s] I started the day at around 6.45 a.m. Pacific time
+[  231.25s ->   237.01s] with a XPS 45, 45, 45, 40 bull put spread,
+[  237.21s ->   239.25s] where I collected $110 of spread,
+[  239.59s ->   241.93s] which is around a 22% ROI.
+[  242.23s ->   244.61s] I'll go into why and how I decided to take this trade
+[  244.61s ->   245.91s] in the latter half of this video,
+[  245.97s ->   247.39s] which is really the most important part
+[  247.39s ->   249.45s] if you guys want to learn how to replicate this.
+[  249.51s ->   250.59s] So make sure you guys stick around for that.
+[  250.71s ->   252.85s] That one expired out of the money at the end of the day
+[  252.85s ->   254.77s] and I collected $110 of spread.
+[  255.41s ->   256.57s] I sold two of those, so 220.
+[  256.57s ->   259.11s] And then later in the day, around noon,
+[  259.17s ->   260.03s] when I had time,
+[  260.33s ->   265.69s] I then sold another 55.70 and 55.75 call credit spread.
+[  266.15s ->   267.33s] I collected 290.
+[  267.87s ->   269.89s] I bought it back for a total of 140,
+[  270.07s ->   272.93s] making a profit of $150 on that one spread.
+[  273.05s ->   276.33s] So on that day, I made $370 or around a 37% ROI.
+[  276.63s ->   278.53s] Now this is a really cool concept.
+[  279.11s ->   281.73s] By opening up both a put and a call spread,
+[  281.91s ->   282.99s] I would basically turn this
+[  282.99s ->   285.97s] into what we call an iron condor, right?
+[  285.97s ->   289.15s] My max risk or my max loss,
+[  290.47s ->   295.41s] $500 minus the credit that I received.
+[  295.65s ->   296.61s] Why is that, right?
+[  296.91s ->   297.95s] The idea is very simple.
+[  298.05s ->   302.13s] The market can't be both above 45.45
+[  302.13s ->   305.67s] and below 45.70 at the same time.
+[  305.79s ->   308.71s] If it's at 45.75, I will still collect the $110.
+[  308.71s ->   314.91s] If it's at below 45.40, I will then collect $290.
+[  315.85s ->   317.41s] So essentially what we're doing here
+[  317.41s ->   320.19s] is we're changing the risk-loss ratio in a sense.
+[  320.59s ->   323.23s] So my max profit for this iron condor
+[  323.23s ->   330.64s] is the $110 plus $290 that I collected,
+[  330.78s ->   331.60s] which is $400.
+[  333.01s ->   335.19s] What that means now for my max loss
+[  335.19s ->   339.33s] is instead of it being 500 minus $110 per leg
+[  339.33s ->   340.55s] or $290 per leg,
+[  341.07s ->   343.17s] my max loss is now only $100.
+[  343.61s ->   344.61s] If it's individually,
+[  345.07s ->   348.55s] then my max loss would be $390
+[  348.55s ->   351.97s] and my max loss for this one would be $210.
+[  352.27s ->   354.45s] But now by making it into an iron condor,
+[  354.61s ->   355.73s] it's only $100.
+[  356.70s ->   359.94s] So that's the beauty of credit spreads in general.
+[  360.12s ->   361.76s] The real beauty comes from
+[  361.76s ->   364.26s] how and when you guys sell the put
+[  364.26s ->   365.48s] and when to sell the call,
+[  365.76s ->   367.98s] where you guys are really just minimizing the risk
+[  367.98s ->   369.24s] to the best of your abilities.
+[  369.52s ->   370.02s] 30 minute.
+[  370.16s ->   371.32s] I'm going to do things a little different this time.
+[  371.34s ->   372.58s] I'm just going to give you guys a trade first
+[  372.58s ->   374.76s] and then we'll talk about how I decided to enter.
+[  375.12s ->   376.34s] And this is a day that we're looking at.
+[  376.34s ->   379.92s] So I'm going to get a little bit closer here, right?
+[  379.94s ->   381.76s] So this is a 24th and this is a day of interest.
+[  382.16s ->   383.28s] So basically the morning,
+[  383.82s ->   385.38s] in the morning, the moment that it opened
+[  385.38s ->   386.68s] and it gapped up,
+[  387.12s ->   391.92s] I sold the 45, 45, 45, 40 put credit spread
+[  391.92s ->   392.94s] in the bull direction.
+[  393.28s ->   394.60s] It was a low of the day before,
+[  394.76s ->   395.60s] right before it closed.
+[  395.70s ->   396.84s] That acts as support.
+[  397.44s ->   398.94s] And so even if I were wrong,
+[  399.02s ->   400.70s] there's a chance that this can bounce up
+[  400.70s ->   401.52s] and I can still win.
+[  401.78s ->   403.92s] Because again, credit spreads are directional.
+[  404.18s ->   405.26s] As the day went on,
+[  405.26s ->   406.22s] you can obviously tell
+[  406.22s ->   407.64s] that the trade went in my favor.
+[  407.70s ->   408.92s] Around 8.30, I went to work
+[  408.92s ->   410.62s] and I just let it play out
+[  410.62s ->   412.54s] and I set my stop losses accordingly
+[  412.54s ->   414.82s] at 100%, 50%, and 25%.
+[  414.82s ->   416.64s] So if you guys want to check out that strategy,
+[  416.98s ->   419.10s] link in the upper right-hand corner for that video.
+[  419.86s ->   422.04s] Now the market went up and up and up and up.
+[  422.34s ->   424.22s] And around 11.30, it hit a peak,
+[  424.52s ->   426.34s] which also happened to be a resistance
+[  426.34s ->   429.80s] that was confirmed a couple days ago, right?
+[  429.86s ->   432.32s] And the moment that it hit that area of resistance,
+[  432.32s ->   433.42s] it started backing off.
+[  433.42s ->   434.60s] And around 12 o'clock,
+[  434.68s ->   435.76s] when I started looking at the market
+[  435.76s ->   436.60s] and I was like, okay.
+[  436.96s ->   439.10s] And soon, shortly thereafter,
+[  439.10s ->   443.12s] I decided to sell a 45.70, 45.75
+[  443.12s ->   445.70s] at the money credit spread.
+[  447.00s ->   448.38s] You can see the level right here.
+[  448.68s ->   452.08s] 45.75, 45.70 credit spread
+[  452.08s ->   453.30s] at the money
+[  453.30s ->   455.98s] and close it out a couple minutes later
+[  455.98s ->   457.28s] for that $150 profit.
+[  457.28s ->   459.68s] Obviously, if I had held onto it,
+[  459.68s ->   461.24s] I would have made max profit
+[  461.24s ->   463.36s] because the market ended up at 45.68.
+[  464.57s ->   465.95s] Now, with that being said,
+[  465.99s ->   468.43s] you can kind of see the power of the credit spread, right?
+[  468.49s ->   470.29s] By selling a put early on the morning,
+[  470.35s ->   471.11s] letting it ride up,
+[  471.19s ->   472.41s] and then selling a call credit spread
+[  472.41s ->   473.61s] as it comes back down,
+[  473.97s ->   477.11s] I basically am able to trade the direction
+[  477.11s ->   479.87s] without having to be concerned
+[  479.87s ->   482.39s] about how much it moves.
+[  483.19s ->   484.11s] Some of you guys may be thinking,
+[  484.11s ->   485.61s] if I had bought a call here
+[  485.61s ->   487.23s] and rode this wave up,
+[  487.31s ->   488.17s] I would have made more money.
+[  488.27s ->   489.43s] That is probably correct.
+[  490.63s ->   491.93s] However, the problem with that is
+[  491.93s ->   494.03s] because I have to go to work, right?
+[  494.03s ->   495.49s] So there's no way for me to understand
+[  495.49s ->   497.63s] how fast and how far something can go
+[  497.63s ->   499.91s] before I have the chance to check my phone
+[  499.91s ->   501.99s] whenever I have a moment free at work,
+[  502.23s ->   504.59s] which happened to be at noon this day.
+[  505.17s ->   506.65s] Before I had a chance to check my phone
+[  506.65s ->   508.45s] and I'm not able to take profit accordingly
+[  508.45s ->   510.33s] or if I set a trailing stop loss
+[  510.33s ->   511.65s] that's too wide or too short
+[  511.65s ->   515.61s] and it stops out before the move even happens, right?
+[  515.65s ->   517.43s] And you don't really necessarily want that
+[  517.43s ->   519.63s] because you don't have the ability to trade actively.
+[  519.79s ->   521.67s] Now, let's talk about why I took the trades
+[  521.67s ->   524.31s] and what prompted me to take that trade.
+[  524.97s ->   526.73s] So if you guys are long-term viewers of the channel,
+[  526.81s ->   528.39s] this is where I have my spiel about MAC.
+[  528.51s ->   529.87s] If you guys don't know what MAC is,
+[  530.03s ->   531.15s] make sure you guys check out this video.
+[  531.59s ->   532.91s] Link in the upper right-hand corner
+[  532.91s ->   534.07s] because it will teach you everything
+[  534.07s ->   535.13s] there is to know about MAC.
+[  535.13s ->   536.05s] M stands for market,
+[  536.19s ->   536.39s] trend,
+[  536.51s ->   537.39s] A stands for area of interest,
+[  537.51s ->   538.61s] C stands for criteria of entry.
+[  539.29s ->   540.85s] So before I enter any trade,
+[  540.85s ->   542.43s] and this is the market prep that I was talking about,
+[  542.59s ->   546.62s] I always have to understand what the trend is.
+[  547.58s ->   548.74s] So in this moment,
+[  548.74s ->   550.56s] you can tell the market is in an uptrend,
+[  550.68s ->   552.58s] A to a B to a C from the lower low.
+[  552.84s ->   554.80s] And so it's back up into an uptrend.
+[  555.56s ->   556.44s] It's pretty simple.
+[  556.54s ->   557.40s] Long-term trend is up.
+[  557.78s ->   559.30s] Now on this day, on Friday,
+[  559.56s ->   561.32s] the short-term trend or medium-term trend
+[  561.32s ->   563.84s] is also up because it's in its upswing.
+[  565.06s ->   567.46s] Area of support would be right here,
+[  567.62s ->   568.66s] which it bounced off of.
+[  568.66s ->   572.70s] An area of resistance would be right around 45.80.
+[  572.90s ->   576.78s] So the next time the market can have a chance of rebounding,
+[  577.30s ->   577.98s] bouncing down,
+[  578.08s ->   579.90s] will be around this 45.80 area.
+[  580.52s ->   582.78s] So when it's before 45.80,
+[  582.82s ->   583.60s] I will trade up.
+[  583.82s ->   584.88s] If it's at 45.80,
+[  584.94s ->   588.40s] I would wait and see what direction it's going.
+[  588.74s ->   590.32s] This goes into the next letter,
+[  590.50s ->   591.40s] A, areas of entry.
+[  591.50s ->   593.72s] I already indicated two areas of interest here.
+[  593.72s ->   595.78s] First one's at 43, 45.30,
+[  595.88s ->   597.20s] which is the area of support,
+[  597.40s ->   599.02s] which used to be a resistance.
+[  599.62s ->   600.92s] So we can draw a line here.
+[  602.08s ->   602.82s] It's actually an area,
+[  602.90s ->   605.00s] but we'll just draw a line for simplicity's sake.
+[  605.76s ->   605.90s] Right?
+[  606.00s ->   606.66s] That's one line.
+[  607.28s ->   611.44s] And then we also talked about this area of resistance at 45.80.
+[  611.84s ->   613.80s] And then as it enters into this area of resistance,
+[  613.94s ->   615.64s] I could theoretically trade down
+[  615.64s ->   618.56s] if C, my criteria of entry, has been fulfilled.
+[  619.06s ->   621.10s] And so for me, I normally trade on the five minutes.
+[  621.22s ->   622.40s] So we're going to drop it down to the five.
+[  622.40s ->   624.00s] And we're just going to look at what C means.
+[  624.14s ->   625.40s] C stands for criteria of entry.
+[  625.96s ->   627.86s] Criteria of entry means that there has to be something
+[  627.86s ->   629.28s] that allows me to enter this trade.
+[  629.46s ->   632.00s] Trading in the direction of the pattern,
+[  632.12s ->   633.70s] in this case, the bullish direction,
+[  633.82s ->   636.66s] I have to understand what is a bullish signal.
+[  637.40s ->   640.08s] It would be in maybe a bullish confirmation,
+[  640.34s ->   642.60s] a strong body confirmation, big bodied.
+[  642.66s ->   644.96s] And I have, again, another video on candlestick patterns
+[  644.96s ->   646.08s] that you can see right here,
+[  646.28s ->   647.34s] linked in the upper right-hand corner.
+[  647.80s ->   649.04s] Now, if I'm trading the reversal,
+[  649.22s ->   651.18s] I could be looking for a lower high.
+[  651.18s ->   653.14s] I could be looking for a break of structure.
+[  653.30s ->   656.60s] The first early put trade, a 45, 45, 45, 40,
+[  656.64s ->   657.66s] is very, very quite simple.
+[  657.96s ->   660.14s] On the five minute, you can see that there is,
+[  660.42s ->   661.30s] I'll zoom in a little bit,
+[  661.64s ->   663.60s] that it's just an easy trade up
+[  663.60s ->   664.94s] because the trend is up.
+[  665.32s ->   666.78s] And the moment the market opened,
+[  666.84s ->   668.22s] it had a strong start to the day.
+[  668.54s ->   671.76s] And the moment that you see this candle right here,
+[  673.36s ->   675.88s] right here, it's basically a go for me
+[  675.88s ->   679.44s] because it's a confirmation that the trend is going to continue.
+[  679.50s ->   680.66s] And that's a very simple trade to take.
+[  680.74s ->   682.38s] I took a 45, 45, which is down here.
+[  682.62s ->   684.68s] I could probably sell it at 45, 50 if you wanted to.
+[  685.00s ->   686.08s] Depends on your risk tolerance.
+[  686.64s ->   687.96s] I just sold it at 45, 45,
+[  688.20s ->   689.76s] but 45, 50 is probably even better
+[  689.76s ->   691.34s] because the trend is up.
+[  691.38s ->   692.72s] So you can take a little bit more of a risk here.
+[  693.89s ->   695.51s] And the day just continue to go on
+[  695.51s ->   696.61s] and go on and go on and go on.
+[  696.67s ->   698.03s] This is a very simple trade, right?
+[  698.07s ->   699.45s] Sometimes trading isn't very difficult.
+[  699.71s ->   701.29s] You can just take the trade as it presents itself.
+[  701.67s ->   703.17s] Not worried about these areas here.
+[  703.17s ->   704.89s] Some of you guys were like, oh, credit spread, right?
+[  704.95s ->   707.63s] Like there's some areas of resistance here.
+[  707.73s ->   708.75s] I'm not concerned about it, right?
+[  708.77s ->   709.47s] Because the trend is up
+[  709.47s ->   712.61s] and areas of resistances on the five minutes
+[  712.61s ->   713.81s] is probably going to get broken anyways.
+[  714.17s ->   715.19s] But I'm still on the lookout
+[  715.19s ->   716.61s] that can go against my trade.
+[  716.71s ->   718.21s] So if this, for example, rebounded down,
+[  718.37s ->   720.25s] revisited this area, formed a lower high
+[  720.25s ->   722.05s] and bounced back down, then I'm out of my trade.
+[  722.59s ->   725.17s] But because it didn't, it formed a higher low
+[  725.17s ->   726.15s] and continue to go up.
+[  726.53s ->   727.59s] I'm good. I'm chilling.
+[  727.83s ->   729.79s] Now, as it gets closer and closer,
+[  729.89s ->   732.63s] this 48, 40, 45, 80 area of resistance,
+[  732.63s ->   733.13s] you can see.
+[  733.41s ->   734.67s] If I was trading around 1150,
+[  735.13s ->   737.69s] this can probably be a candle for you guys to enter.
+[  737.79s ->   738.63s] When I trade reversals,
+[  738.69s ->   741.07s] this is also a very, I guess, a personal thing.
+[  741.29s ->   743.63s] I don't like to take the first sign of weakness.
+[  743.95s ->   745.07s] And this is something that I've learned
+[  745.07s ->   746.93s] throughout trading throughout my days
+[  746.93s ->   750.25s] because usually speaking, the trend hasn't been broken.
+[  750.39s ->   752.05s] Even though there's signs of selling here,
+[  752.09s ->   754.41s] you want to see continued signs of selling.
+[  754.75s ->   756.45s] So I normally wouldn't take this trade
+[  756.45s ->   757.87s] because it's still not enough weakness.
+[  758.11s ->   759.75s] I want to see it break this uptrend.
+[  759.75s ->   764.19s] So this candle here is actually very indicative
+[  764.19s ->   767.07s] of the short-term uptrend ending.
+[  767.77s ->   770.27s] And what I'm really looking here is a break of structure.
+[  770.77s ->   772.91s] A break of structure means that this right now,
+[  773.17s ->   774.01s] as you can clearly tell,
+[  774.43s ->   775.77s] is in an uptrend, right?
+[  775.81s ->   777.55s] It goes from a low to a high.
+[  778.21s ->   779.11s] That's an uptrend.
+[  780.49s ->   785.14s] What I'm looking for is for that uptrend to end.
+[  785.14s ->   788.48s] And by that, it means that it has to break an area of support.
+[  788.72s ->   791.40s] Because I'm trading a reversal pattern,
+[  791.50s ->   794.80s] I'm looking for maybe an area right around here.
+[  797.24s ->   798.76s] It did not break past this low.
+[  799.16s ->   801.14s] However, it formed a lower high right here.
+[  801.24s ->   802.74s] That's a great sign, right?
+[  802.74s ->   804.70s] If you think about it, this went from a low,
+[  804.70s ->   807.26s] like low to a high to a lower,
+[  807.46s ->   812.54s] a higher low to a higher high to a higher low.
+[  812.64s ->   814.68s] Very simple A, B, C, D pattern, right?
+[  814.92s ->   817.92s] Like it just keeps going and going.
+[  818.20s ->   820.56s] And you can keep drawing those lines up, right?
+[  821.84s ->   823.54s] And now you're looking at this.
+[  824.50s ->   826.18s] It went from a high to the same low.
+[  826.32s ->   827.60s] Now it formed a lower high.
+[  827.96s ->   829.68s] Now the only thing that I'm looking for here
+[  829.68s ->   831.00s] is whether or not this structure,
+[  832.35s ->   833.69s] the support will be broken.
+[  833.69s ->   835.87s] The moment the support is convincingly broken,
+[  836.03s ->   838.99s] then I know that there's weakness in the market.
+[  839.37s ->   840.89s] It formed a lower high, which is really good, right?
+[  840.91s ->   842.71s] Because before it was always forming higher highs.
+[  843.11s ->   844.27s] Now once it formed a lower high,
+[  844.39s ->   846.49s] it's going to start wedging into this area.
+[  846.95s ->   848.75s] And now I'm just waiting for a candlestick to break
+[  848.75s ->   849.49s] and close below.
+[  849.63s ->   851.11s] On this candlestick right here,
+[  852.12s ->   855.10s] that's when I entered 45.70, 45.75.
+[  855.76s ->   858.70s] And then basically closed it five to 10 minutes later,
+[  859.06s ->   860.12s] right on this candlestick right here,
+[  860.16s ->   860.80s] right before close.
+[  860.80s ->   865.26s] By doing this, I'm actually trading the trends
+[  865.26s ->   867.80s] without having to worry about how far it falls.
+[  868.00s ->   870.30s] All I'm really looking for here is for this trend
+[  870.30s ->   872.52s] to fall one candlestick below.
+[  872.74s ->   875.46s] And I'll just crush the hell out of this option of pricing
+[  875.46s ->   876.44s] because I'm at the money.
+[  876.80s ->   877.86s] That's a little bit more complicated.
+[  878.16s ->   880.02s] But what I'm looking for is just the market
+[  880.02s ->   881.24s] to go in my direction.
+[  881.42s ->   883.68s] Obviously, if the market didn't go in my direction here,
+[  884.08s ->   886.08s] I would have stopped myself out at $100.
+[  886.36s ->   887.18s] I would have lost $100.
+[  887.18s ->   891.40s] But I still made $210 on the day.
+[  892.04s ->   895.70s] If I lost $100, my maximum earning will be $120.
+[  895.92s ->   896.88s] I still would have made money.
+[  897.24s ->   898.64s] So for me, it made a lot of sense
+[  898.64s ->   901.08s] to open up this into an iron condor
+[  901.08s ->   903.50s] because then I can give myself the opportunity
+[  903.50s ->   907.32s] to make more money without increasing my actual risk.
+[  907.74s ->   909.22s] And the beauty of doing it this way
+[  909.22s ->   911.88s] as opposed to selling an iron condor right off the bat,
+[  911.92s ->   912.76s] and I hate doing that,
+[  912.78s ->   914.12s] and I don't think anyone should do that,
+[  914.12s ->   917.60s] is because if I were to sell an iron condor
+[  917.60s ->   920.72s] or sell a call for $290 at open,
+[  921.06s ->   924.72s] I'd probably have to sell it right where the market is at.
+[  925.46s ->   927.68s] And you want to let the market move first,
+[  927.78s ->   930.00s] tell you that the direction is correct,
+[  930.08s ->   931.60s] and then open up an iron condor.
+[  931.92s ->   933.16s] You have to know what you're looking for.
+[  933.20s ->   934.04s] And again, I'm going to stress,
+[  934.54s ->   935.92s] you have to game plan this out.
+[  936.14s ->   938.00s] When I'm trading, I have a game plan.
+[  938.06s ->   939.36s] I even game plan this scenario
+[  939.36s ->   941.66s] where if it hits a higher into my resistance,
+[  941.66s ->   944.06s] I'd be looking for either a break of that resistance
+[  944.06s ->   945.62s] or a bounce off of that resistance.
+[  945.74s ->   946.80s] I plan that the day ahead.
+[  947.24s ->   948.30s] This gives you the edge,
+[  948.36s ->   949.40s] it keeps you grounded,
+[  949.58s ->   951.34s] and it makes sure that you have the capacity
+[  951.34s ->   953.10s] to think while you're trading.
+[  953.46s ->   955.76s] And spreads are really a great way
+[  955.76s ->   958.26s] for you to just take advantage of the market trend
+[  958.26s ->   959.64s] while not having to worry about
+[  959.64s ->   961.42s] the specifics of when to get out.
+[  961.62s ->   962.70s] I've taken a lot of trades
+[  962.70s ->   964.74s] where I've sold options and bought options on the same day,
+[  964.82s ->   967.10s] and I'll make a video about that as well.
+[  967.32s ->   968.18s] And if it is up,
+[  968.28s ->   970.14s] I'll link it up in the upper right-hand corner here,
+[  970.14s ->   971.78s] so make sure you guys check that out when it is out.
+[  972.04s ->   972.86s] Okay, that's about it.
+[  972.94s ->   974.00s] Just want to give you guys a quick rundown
+[  974.00s ->   974.66s] on how this works.
+[  975.14s ->   975.98s] If you guys have any questions,
+[  976.04s ->   977.76s] let me know down in the comments section below.
+[  978.00s ->   979.70s] Happy to answer any questions that you guys have.
+[  980.16s ->   980.66s] Credit spreads are again,
+[  980.78s ->   982.42s] just my version of selling options
+[  982.42s ->   983.64s] so that I can day trade while I work.
+[  984.06s ->   985.02s] You guys, if you guys are interested
+[  985.02s ->   988.48s] in another example of day trading with credit spreads,
+[  988.58s ->   990.10s] make sure you guys check out this video here
+[  990.10s ->   991.92s] where I take you in depth
+[  991.92s ->   994.34s] through another one of these day trades for credit spreads
+[  994.34s ->   995.94s] and show you guys how easy it can be
+[  995.94s ->   997.56s] if you guys have the right system in place.
+[  998.22s ->   999.52s] Again, thank you guys for your time.
+[  999.52s ->  1000.56s] Stay safe in the market.
+[ 1001.00s ->  1002.30s] Until next time, peace.

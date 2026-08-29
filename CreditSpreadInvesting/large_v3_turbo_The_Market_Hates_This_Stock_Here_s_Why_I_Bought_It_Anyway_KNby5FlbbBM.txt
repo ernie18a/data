@@ -1,0 +1,187 @@
+[    0.21s ->     3.51s] So January of 2026 has already come and gone.
+[    3.59s ->     7.17s] So let's take a look at how our public portfolio performed this month.
+[    7.53s ->    15.33s] So right now, our account is currently sitting at $122.6,000, up 3.32% year to date compared
+[   15.33s ->    19.05s] to the 1.88% the S&P 500 returned this month.
+[   19.17s ->    23.97s] So we're slightly outperforming the market, but again, nothing spectacular here.
+[   24.03s ->    27.11s] We're just trying to follow our rules that we laid out in the put selling masterclass
+[   27.11s ->    28.31s] that I'll link in the upper right hand corner.
+[   28.31s ->    34.45s] Since we started tracking this account, we are up around $12.9,000 in total net profit.
+[   35.01s ->    39.09s] And so far in 2026, we've realized $1,141 of profit.
+[   39.65s ->    43.19s] But what's more interesting is the amount of open premium that we have from the options
+[   43.19s ->    43.97s] that we've sold.
+[   44.25s ->    52.53s] So far this month, we have around $882 of open premium, and we still average around 21 days
+[   52.53s ->    54.41s] per trade that we're in.
+[   54.61s ->    57.69s] If you guys have seen our public account, you guys, some of these tickers will look very,
+[   57.69s ->    58.27s] very familiar.
+[   58.73s ->    62.37s] I'll link the playlist of our public portfolio in the upper right hand corner here as well
+[   62.37s ->    63.41s] for you guys to take a look at.
+[   63.73s ->    67.49s] You guys can see IOT, IBKR, Figma, NVIDIA, Figma.
+[   67.71s ->    70.11s] None of these are any different from what we sold.
+[   70.25s ->    77.17s] The only one that's different is this Netflix option that we sold for $264 of net credit,
+[   78.20s ->    81.90s] 3.1% yield with 20 days left.
+[   82.04s ->    83.58s] So we'll talk a little bit about that today.
+[   83.58s ->    88.50s] So if you look at the total income that we collected so far this year, we're at $850
+[   88.50s ->    89.80s] of total net income.
+[   89.92s ->    98.28s] We brought in $1,016 of cash in, and we spent $166.73 rolling and closing out our existing
+[   98.28s ->   105.75s] options, which averages it out to about a 1.9% yield, which is in line with what our target
+[  105.75s ->   109.81s] is, which is around 1.5 to 2.5% monthly yield.
+[  109.81s ->   115.45s] And if you take a look at just this year alone, again, this is the yield that we're selling
+[  115.45s ->   119.37s] our options for, 0.8% on the covered calls, NVIDIA, IBKR, ILT.
+[  119.45s ->   121.71s] These are just existing tickers that we're selling options on.
+[  121.79s ->   122.51s] We're rolling them out.
+[  122.85s ->   127.15s] And then Netflix, again, the 3.1% monthly yield averages around 2.6% a month.
+[  127.45s ->   131.53s] So today we're going to bring our attention back to this one Netflix option that we sold.
+[  131.91s ->   133.13s] Why do we sell on Netflix?
+[  133.29s ->   137.69s] Because as we know in our masterclass, we are using puts as a way to acquire great companies
+[  137.69s ->   138.73s] at good value.
+[  138.73s ->   143.17s] So today we're going to determine is, one, Netflix a great company, and two, if it is,
+[  143.23s ->   147.29s] what is a good value for us to be selling puts at to try and acquire this company at
+[  147.29s ->   147.65s] a discount?
+[  148.05s ->   152.61s] So Netflix's stock price over the last couple months have been falling pretty quickly, right?
+[  152.63s ->   157.31s] It's lost around 40% of its overall stock value in a span of a couple months.
+[  157.53s ->   160.03s] And a lot of it is driven by two main reasons.
+[  160.19s ->   166.69s] One is obviously overvaluation, and two, by its acquisition or potential acquisition of
+[  166.69s ->   167.27s] Warner Brothers.
+[  167.27s ->   174.51s] When a stock falls, for example, like it is right now, it's going from $1.33 all the
+[  174.51s ->   176.91s] way down to where it is right now, around $84 a share.
+[  177.15s ->   180.95s] And with that drop in share price means this valuation has dropped dramatically, right?
+[  180.99s ->   185.71s] So if you just take a quick look at PE, you'll see that subsequent drop in valuation.
+[  185.71s ->   188.77s] And it's at the cheapest it's been since 2022.
+[  189.05s ->   195.21s] Valuation went from $62 when it peaked, and now it's down to half, around $33.
+[  196.15s ->   201.11s] And this is more obvious if you look at its trailing 5, 3, and 10-year averages.
+[  201.53s ->   202.79s] Today it's at $33.
+[  203.39s ->   207.43s] If you look at its trailing 12 months at $47, $45, $46, and $64.
+[  207.43s ->   209.63s] It either gives us two things.
+[  209.97s ->   215.15s] One, is it a buying opportunity because the business is great and the market is overreacting?
+[  215.79s ->   221.19s] Or two, is it actually a bad stock and we just want to not touch it at all?
+[  221.41s ->   224.81s] Its business model and whether or not it is a great business for us to want to buy.
+[  225.35s ->   227.95s] And Netflix's business model is nothing complicated, right?
+[  227.95s ->   233.33s] It's a streaming service that spends money on content, whether it's producing it or licensing it.
+[  233.75s ->   237.69s] And then it generates revenue from subscriptions to its customers.
+[  238.01s ->   242.27s] The more customer it has and the more money the customer pays, the more revenue it brings in.
+[  242.49s ->   246.67s] Now if you look at the revenue for the trailing 12 months over the last span of 5 years,
+[  246.81s ->   251.21s] it's grown its revenue from $25 billion all the way up to $45 billion, right?
+[  251.21s ->   255.03s] It's growing its customer base, as you can see from this chart from Stock Analysis,
+[  255.03s ->   258.11s] which documents its number of paid membership.
+[  258.57s ->   264.63s] And so its subscription numbers have increased, as well as the overall price of Netflix,
+[  264.99s ->   268.83s] as well as its ability to generate money from ads now, right?
+[  268.87s ->   271.65s] And so each customer is now paying more and more money.
+[  271.85s ->   273.57s] And that's what we call customer lifetime value.
+[  273.87s ->   276.39s] And this is why Netflix's revenue continues to grow.
+[  276.39s ->   281.71s] But a business is only as good as its ability to turn revenue into profit.
+[  281.71s ->   291.37s] If you look at their net trailing 12 months, you can see that profit has grown from $122 million in 2015
+[  291.37s ->   295.87s] to $11 billion every year.
+[  296.29s ->   303.53s] And you can see the net income growth is spectacular, around 35% every single year for the last three years.
+[  303.53s ->   307.51s] And the one takeaway here is Netflix is a subscription business, right?
+[  307.53s ->   310.35s] And like we talked about in other episodes on this playlist,
+[  311.11s ->   315.59s] subscription businesses care about retention and customer lifetime value.
+[  315.95s ->   317.65s] Netflix doesn't show this number in any way,
+[  317.79s ->   323.13s] but there are other research that shows that Netflix is one of the stickiest subscription services
+[  323.13s ->   327.41s] in an overall very competitive streaming market.
+[  327.41s ->   330.99s] And two, for customers that actually end up leaving Netflix,
+[  331.67s ->   337.07s] there's research that shows that most of them actually come back within like a six to nine month period.
+[  337.33s ->   340.17s] Started off producing high-end content like House of Cards,
+[  340.33s ->   344.35s] but recently over the years, they've become more of a general entertainment brand, right?
+[  344.43s ->   347.15s] More reality TV shows, Korean dramas, anime.
+[  347.47s ->   351.79s] Their positioning here is they are going to give you the most value for your buck.
+[  351.79s ->   356.35s] And so if you were to keep one streaming service, you'll want to keep Netflix.
+[  356.57s ->   358.43s] And that is their overall strategy.
+[  359.03s ->   362.63s] And you see that what they brought up in their latest quarterly report,
+[  362.71s ->   367.71s] which is branching out into like live sports, into podcasts, into gaming.
+[  367.95s ->   373.47s] And so they want to make sure that they keep adding more and more value into their products.
+[  373.47s ->   377.69s] So you can see the strategy behind the HBO Warner Brothers acquisition.
+[  377.69s ->   381.43s] They are increasing their content differentiation.
+[  381.93s ->   387.15s] So Netflix's stock actually had a positive reaction to the initial news of Warner Brothers.
+[  387.43s ->   390.13s] But as more and more details came out about Warner Brothers,
+[  390.37s ->   392.77s] and as the deal got more and more expensive,
+[  393.03s ->   397.41s] as Paramount Skydance started to compete for it, the stock continued to wait.
+[  397.69s ->   398.61s] Let's talk a little bit about why.
+[  398.71s ->   402.81s] And Netflix is going to have to borrow a large sum of money to finance the 80 plus billion dollar deal.
+[  402.81s ->   409.83s] What that means in the long term, they have to start paying money or interest on the money that they borrow.
+[  410.05s ->   416.63s] Directly impact their income because now they have more and more interest payments to pay off of,
+[  416.73s ->   419.81s] for example, the corporate bonds that they issue to finance this deal.
+[  420.03s ->   423.37s] They now have higher risk because they have higher debt,
+[  423.49s ->   430.75s] which then directly impacts earnings per share and then also then makes 4PE or price to earnings even more inflated.
+[  430.75s ->   431.93s] That is the concern.
+[  432.05s ->   436.71s] And that is why Netflix's shares have tumbled as the deal got more and more expensive.
+[  437.15s ->   440.61s] Now, the question is, do I still think Netflix is a great business to own,
+[  440.69s ->   443.19s] even with all of this short-term turmoil?
+[  443.31s ->   444.49s] The short answer is yes.
+[  444.61s ->   445.57s] It is the stickiest.
+[  446.07s ->   448.91s] It has really, really good income and cash flow.
+[  449.55s ->   453.85s] And three, HBO, from a strategic standpoint, really does help its positioning.
+[  454.57s ->   459.27s] Obviously negatives, it's the impact on free cash flow and income in the short term
+[  459.27s ->   461.63s] and a higher risk profile.
+[  462.09s ->   465.33s] Right now, the reason that I'm selling at the $85 price point,
+[  465.45s ->   467.79s] which is more like an $82 cost basis,
+[  467.79s ->   470.91s] is because I believe that at an $82 price point,
+[  471.07s ->   473.87s] I am willing to enter some shares into this market.
+[  474.35s ->   476.45s] Do I think that there is more downside risk?
+[  476.53s ->   477.37s] There is, absolutely.
+[  477.59s ->   478.67s] Netflix continues to drop.
+[  479.09s ->   483.59s] I can, one, again, try to roll it out for 1% to 2% credit a month,
+[  483.59s ->   487.49s] or I'll just let it get assigned and then sell another put below it
+[  487.49s ->   489.41s] to further lower my cost basis.
+[  489.87s ->   492.05s] And we're going to touch briefly on credit spreads right here.
+[  492.19s ->   494.91s] Now, if you were just looking at Netflix's stock performance,
+[  495.05s ->   497.01s] if you look at the weekly chart, you'll see a lot of downwards momentum.
+[  497.15s ->   500.61s] There hasn't been a lot of buying, a lot of bullish intent, right?
+[  500.93s ->   506.83s] The biggest bullish indicator is this hammer that we see last week from earnings.
+[  506.83s ->   509.29s] However, we are in an area of support.
+[  509.53s ->   512.31s] And this is why, again, technicals help fundamentals.
+[  512.41s ->   515.21s] And this is why we sold our puts right at the support.
+[  516.03s ->   519.33s] Now, when you're selling credit spreads, it's a little bit riskier.
+[  519.39s ->   521.71s] And so we want to wait a little bit longer
+[  521.71s ->   526.03s] until the market gives us a little bit more of a bullish indicator.
+[  526.15s ->   527.47s] Is there any form of reversal?
+[  527.81s ->   530.65s] Because everything in the short term is negative.
+[  530.89s ->   532.39s] We don't want to be entering a bullish position
+[  532.39s ->   535.81s] when the overall market momentum is bearish.
+[  535.81s ->   539.15s] But do you want to be entering call credit spreads in this moment either?
+[  539.57s ->   540.53s] Not really, right?
+[  540.57s ->   542.37s] Because we're already in an area of support.
+[  542.97s ->   548.79s] And there is a potential that the market may bounce off of this $83 area of support
+[  548.79s ->   551.05s] that we saw, for example, here with this hammer.
+[  551.29s ->   554.19s] And we saw back here in April and January.
+[  555.39s ->   557.97s] Okay, you can see how clear that area of support is.
+[  558.65s ->   561.19s] Now, if you go down to the daily, you can still see
+[  561.19s ->   565.11s] there is not that much bullish momentum.
+[  565.11s ->   567.77s] All the moving averages are down.
+[  568.25s ->   571.09s] There's not that much quote-unquote absorption, right?
+[  571.13s ->   573.07s] There's not smaller and smaller candles.
+[  573.45s ->   578.25s] There is some bullish intent, but there is really not a lot.
+[  578.43s ->   580.13s] RSI is going to tell you that it's oversold.
+[  580.27s ->   581.27s] Volatility is high.
+[  581.35s ->   584.33s] So you may be interested in selling credit spreads.
+[  584.33s ->   589.17s] But if it were to break past this area, you'll end up risking a lot more, right?
+[  589.51s ->   592.59s] As opposed to selling puts, which means that you can just end up buying the shares.
+[  592.67s ->   593.35s] And so be it.
+[  593.45s ->   596.19s] The worst case scenario for puts is not as bad as selling credit spreads.
+[  596.19s ->   600.25s] So the only way that I would end up selling credit spreads is if I actually see
+[  600.25s ->   606.13s] some sort of sustained absorption or smaller and smaller candles here
+[  606.13s ->   612.53s] to indicate that the market is slowly trending into a bullish market.
+[  612.67s ->   613.75s] But right now is not the time.
+[  613.75s ->   616.35s] So that's basically it about the options side of this.
+[  616.77s ->   620.55s] And real quickly, I've been getting a lot of comments on what platform that I use
+[  620.55s ->   622.13s] to track my options trades.
+[  622.45s ->   626.09s] And to be completely transparent, it is a platform that I used myself.
+[  626.19s ->   629.47s] I made myself to help track my trades, to help understand risk and reward
+[  629.47s ->   630.83s] and my cost basis.
+[  631.09s ->   633.75s] But because of how much comments I've got, I spent the last couple months
+[  633.75s ->   636.83s] working really hard to make it a product for you guys to use.
+[  636.83s ->   640.07s] And it's a product called Premium Insights.
+[  640.57s ->   643.89s] And if you guys want to try out that product, when it launches in a month,
+[  643.97s ->   646.27s] I've dropped a waitlist form down below.
+[  646.77s ->   648.49s] Click on that link, sign up for it.
+[  648.69s ->   652.35s] And when it's announced, when it's released, you guys will have first pass at that product.
+[  652.93s ->   656.13s] And for my YouTube members, thank you guys for supporting me.
+[  656.49s ->   659.01s] You guys have a guaranteed spot on that waitlist.
+[  659.09s ->   661.29s] If you guys choose to sign up for it and try it out.
+[  661.73s ->   665.87s] Again, just a way for me to thank you for your help in supporting my channel.
+[  665.87s ->   668.73s] Let me know if you guys have any questions down in the comment section below.
+[  668.97s ->   670.87s] If you guys want to check out that Put Selling Masterclass,
+[  670.93s ->   672.03s] I'll link it in the end screen right here.
+[  672.43s ->   673.55s] If you guys want to learn how to sell credit spreads,
+[  673.63s ->   675.05s] I'll link it in the end screen right here.
+[  675.65s ->   677.39s] And like always, stay safe in the market.
+[  677.57s ->   679.01s] Until next time, peace.

@@ -1,0 +1,91 @@
+[    0.11s ->     4.77s] i'm about to show you three ways to protect your options income if you are struggling to generate
+[    4.77s ->     9.33s] consistent returns because you have huge losses that wipe out months of profits and this is the
+[    9.33s ->    14.17s] video for you and again this strategies i'm going to show you have personally saved me as much as
+[   14.17s ->    20.63s] $13,000 in a single trade because i had these protections in place before i had these in place
+[   20.63s ->    25.49s] i would lose as much as $15,000 on a single trade and boy did that hurt and crush my feelings
+[   25.49s ->    29.97s] emotions and my stomach turn all that stuff anyways this is the plan for the video so that
+[   29.97s ->    35.69s] you can start implementing these strategies too first i'm going to discuss how options income is
+[   35.69s ->    40.27s] amazing but how it has a lot of risk and the specific types of risk we need to worry about
+[   40.27s ->    45.89s] number one is market crash risk if the market crashes we can lose it dramatically so i'm going to show you
+[   45.89s ->    52.15s] one simple fix to solve this problem then i'm going to show you risk number two which is volatility risk
+[   52.15s ->    57.87s] and a couple tactics we can use to make a slight change to your trading strategy to fix this as
+[   57.87s ->    63.05s] well and remove that from your worries and then last we're going to cover manipulation risk and
+[   63.05s ->    68.99s] how it plagued the market specifically options traders and how we can fix that as well so diving
+[   68.99s ->    73.69s] into the first part of this video is options income so when we're looking at options income
+[   73.69s ->    77.71s] what we need to understand is we have the potential to make a lot of money which is great let me
+[   77.71s ->    82.87s] make a smaller size more drawing space so we have the ability to make a lot of income the problem
+[   82.87s ->    89.61s] is if vix spikes we will see a lot of losses okay so if you don't know as an option seller our profit
+[   89.61s ->    95.95s] and loss is directly tied to vix vix shows the risk in the market and when we sell options we
+[   95.95s ->   105.17s] our income is based on that risk so vix spikes we're going to immediately see huge losses and this can be
+[  105.17s ->   111.75s] bad and again this bite can be caused by news this fight can be caused by a crash this spike can be
+[  111.75s ->   117.33s] literally caused by anything a virus right can be caused by a ton of things it's going to lead to
+[  117.33s ->   122.75s] immediate and large losses and so if you ever had this thing where your strategy is working well and
+[  122.75s ->   127.91s] then it stops because you have one huge loss and it wipes out months of profit is typically from this
+[  127.91s ->   134.05s] it's from a volatility spike where your trade's doing well but something happens that just leads to
+[  134.05s ->   139.49s] a huge loss and this is personally how i lost fifteen thousand dollars in a single night and so here is how
+[  139.49s ->   145.41s] we overcome it here is how we prevent this from happening again so here is strategy number one
+[  145.41s ->   151.45s] okay we need to understand how to prevent market crash risk if market crashes then we are going to
+[  151.45s ->   157.03s] lose a lot of money so how do we fix this number one we can use one simple indicator that most people
+[  157.03s ->   162.93s] don't know how to properly use and that is called the bollinger bands indicator so if we're looking at it
+[  162.93s ->   168.07s] from here this in this can be added to any chart whether using trading view for charting or broker
+[  168.07s ->   175.29s] whatever just go to indicators and type in bollinger bands b-o-l-l-i-n-g-e-r bands and you'll see it
+[  175.29s ->   179.63s] there now this is what it looks like by default this is how most people use it but it's incorrect
+[  179.63s ->   184.27s] you want to go into the settings here and you want to change something that most people don't know you
+[  184.27s ->   188.75s] can change but you go into the length you make the length you change it from 20 you add an extra zero
+[  188.75s ->   196.43s] to make it 200 then click save this shows you the average trading range or the trading range that the
+[  196.43s ->   202.41s] market should stay right so this blue highlighted area between the green line and the red line
+[  202.41s ->   211.59s] shows where the natural healthy move for the stock is and so if we break out to the upside the likelihood
+[  211.59s ->   217.89s] of it pulling back is very high we break out to the upside pullback is high right and the same thing
+[  217.89s ->   223.23s] with the downside we break out to the downside a push up is high if we break down side a push up
+[  223.23s ->   229.71s] higher is very likely and so that's how we can use it if we're trading within this certain range we know
+[  229.71s ->   235.49s] we're good to go the closer we get to this red line and especially when we break above it this is when
+[  235.49s ->   241.33s] we know that we should be adding hedges to our position or slowly scaling out of the of the position
+[  241.33s ->   246.61s] so you can see here how close we are to the red line in this area we know we're closer we know risk
+[  246.61s ->   252.73s] is higher so in this point we're actually going to start slowly closing our open positions not
+[  252.73s ->   257.83s] putting on new ones but maybe even using some profit to put into long puts so that when the
+[  257.83s ->   263.85s] market pulls back or if it pulls back we can then profit from the downside once it's down back in this
+[  263.85s ->   268.79s] bottom zone we know it's a great time to get in because the likelihood of a moving higher is a lot
+[  268.79s ->   275.01s] greater and so then we'll actually re-enter options selling positions so the number one way to avoid
+[  275.01s ->   280.69s] market crash risk again first off you won't avoid all of it it's impossible to avoid all crashes
+[  280.69s ->   286.93s] because crashes are unpredictable but using math and this indicator you can avoid a lot of them or
+[  286.93s ->   293.24s] at least help you prepare for them so that's how i do number two again we just covered market crash
+[  293.24s ->   299.06s] risk and how we use the bollinger band to to fix that but number two is volatility risk now for this
+[  299.06s ->   304.54s] i just wrote a book called never worry about ball about volatility again and it is on amazon for 20 bucks
+[  304.54s ->   309.26s] but because i love my people on youtube there's actually a free download down below and if you
+[  309.26s ->   315.62s] check out that book right here actually there's a checklist that walks you through exactly the tactics
+[  315.62s ->   321.74s] you can use to eliminate volatility risk from your trading that means when vix spikes your account is
+[  321.74s ->   327.26s] less impacted and you have less losses than another trader would because you implemented these tactics
+[  327.26s ->   335.70s] and so these tactics look look like adjusting your buying power based on vix using a longer d dte using
+[  335.70s ->   341.96s] a higher probability setup using vix hedges and so much more all these tweaks can be done if you want
+[  341.96s ->   347.22s] to learn about the specifics of it go down below and check out this again there's a chapter on every
+[  347.22s ->   353.22s] single checklist item that you can use to fully understand how to implement these things this own
+[  353.22s ->   358.04s] video would take forever so just click the link down below and get it for free anyways let's dive
+[  358.04s ->   363.50s] into risk number three which is manipulation risk this one i hate and you probably experienced but you
+[  363.50s ->   370.40s] didn't know it okay so options selling and options trading is very low volume compared to the stock
+[  370.40s ->   375.50s] the the stock market we're trading like millions of shares tens of millions of shares a day options are
+[  375.50s ->   380.38s] more like in the hundreds and so because of that market makers can manipulate the price
+[  380.38s ->   386.68s] and so if we think about a sniper on a rooftop right i'm a terrible drawler but let's say this
+[  386.68s ->   391.70s] is a rooftop and this is a sniper trying to shoot let's say this person in another building through
+[  391.70s ->   396.88s] the window right okay this is a crazy scenario but let's just pretend it right so if that sniper
+[  396.88s ->   404.62s] has vision of the person through the window what can they do they can shoot them that's probably not
+[  404.62s ->   410.64s] the most youtube friendly thing whatever even the point they could get destroyed if the sniper can
+[  410.64s ->   415.90s] see them and so this is exactly what's happening in the market right now with your orders when you
+[  415.90s ->   421.34s] put a limit order out there whether to enter or to exit or like a stop loss or something like that
+[  421.34s ->   426.54s] your orders are just sitting on the market for anybody to see and these hedge funds and these
+[  426.54s ->   431.94s] market makers go out there they see your orders they slightly manipulate the options price to
+[  431.94s ->   436.90s] execute your trade early and resulting in a loss for you for no reason that shouldn't have closed
+[  436.90s ->   443.40s] it shouldn't have hit that price and now you lose for no reason and so that is what manipulation is
+[  443.40s ->   448.94s] and so how do we do this we hopefully put a screen over our window so you can't see through or even
+[  448.94s ->   454.86s] better just put a brick wall right so that the cyber can't see through the window and it's the same
+[  454.86s ->   460.56s] thing that we do with options trading right we can put a brick wall between the hedge funds the market
+[  460.56s ->   467.38s] makers and your orders by number one keeping the orders in-house by aka not submitting them into
+[  467.38s ->   474.04s] the market until you're ready to fill them okay so only submit a limit order when you want it to get
+[  474.04s ->   480.52s] do not have a stopwatch just sitting out there if it does it will be prematurely executed you'll lose
+[  480.52s ->   486.12s] money and it's because they're taking advantage of you now another way to fix this is to use automation
+[  486.12s ->   490.92s] because you can trigger the exits immediately when you want which is why i created the options auto
+[  490.92s ->   496.26s] trigger because i was tired of the manipulation risk but again these are three ways to prevent you
+[  496.26s ->   502.62s] from protecting your account from losses that'd be market crash risk by assessing when the market is at
+[  502.62s ->   509.54s] its riskiest point and scaling back on that understanding volatile volatile volatile risk and sizing
+[  509.54s ->   515.48s] accordingly and using tactics like longer dtes lower deltas and things like that to reduce the risk
+[  515.48s ->   521.40s] and then manipulation risk the only submit orders into the market when you're ready to exit if you
+[  521.40s ->   524.54s] enjoyed this video please smash that like button and i hope to see you in another one

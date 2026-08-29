@@ -1,0 +1,404 @@
+[    0.46s ->    10.79s] It is time. I have built a quant roadmap to help guide you on your journey to becoming a quant.
+[   10.79s ->    27.89s] I have listed pretty much every single topic that I could think of in mathematics, probability and statistics, finance and economics, computer science and machine learning in a structured order, levels one, two and three.
+[   27.89s ->    50.27s] And in this video, I am going to walk you through how to follow this roadmap, how I would go about learning a new topic in each of these disciplines, where I would go to find resources on these specific topics, how far our study should go in any one of these disciplines, depending on the role that I was targeting.
+[   50.27s ->    56.59s] And along the way, levels one, two and three will have actionable goals.
+[   56.59s ->    62.67s] So you can know if you have effectively learned everything in the previous level.
+[   62.67s ->    66.99s] Let's start from the top. How should we go about following this roadmap?
+[   67.71s ->    73.15s] Well, you don't know what you don't know. And this roadmap will reveal exactly what that is.
+[   73.15s ->    84.35s] You're going to want to start at level one, progress down to level two and three in order and ensure that you've covered all of the subtopics in each discipline.
+[   84.71s ->    88.05s] How do we go about learning a topic in these disciplines?
+[   88.31s ->    91.01s] Well, there are three stages to learning something new.
+[   91.15s ->    93.21s] The first stage is to study it.
+[   93.45s ->    97.61s] That is go to lecture, watch a video lecture, read something.
+[   97.61s ->    99.25s] This is the hard part.
+[   99.25s ->   102.21s] This is the head scratching, read it once, read it twice.
+[  102.33s ->   103.51s] It still doesn't make sense.
+[  104.05s ->   108.83s] This is where the work is done, along with step two, practice.
+[  109.47s ->   113.63s] You must practice the topic that you are studying.
+[  113.81s ->   116.11s] This is where the intuition is built.
+[  116.75s ->   122.05s] Problem sets, quant guilds, adaptive practice engine, so on and so forth.
+[  122.47s ->   127.25s] Once you've done this, you will be able to apply it in the real world.
+[  127.25s ->   131.09s] If you are incapable of doing that, go back to step one.
+[  131.55s ->   136.23s] You must understand what exactly it is you are learning.
+[  136.55s ->   140.93s] This is not about memorizing or just trying to pass a class.
+[  141.31s ->   152.55s] This is about building a deep and fundamental understanding of each of these subtopics so that you can build a very strong and powerful quantitative toolkit.
+[  152.55s ->   159.87s] What should you do if you can't find a resource or it's not listed herein on this roadmap?
+[  160.07s ->   170.19s] I'm going to leave a link to this roadmap in the description below, but I likely have a free YouTube video dedicated to the subject.
+[  170.19s ->   183.89s] There are very few YouTube videos floating out there about pricing options using a Fourier transform or applying finite differences specifically to the Black-Scholes equation.
+[  184.45s ->   189.33s] I have videos on all of these esoteric topics, so check out Quant Guild on YouTube.
+[  189.57s ->   192.31s] That should be your first place to start.
+[  192.31s ->   196.57s] Do you need to learn everything on this list?
+[  197.03s ->   199.79s] How far should you go in each discipline?
+[  199.93s ->   205.97s] Well, depending on the role that you are targeting, this will dictate how far your studies should go.
+[  206.23s ->   212.07s] If you're looking to be a quant trader, math level 2 should suffice.
+[  212.51s ->   217.47s] Computer science level 2, machine learning probably level 1 or 2 should suffice.
+[  217.47s ->   221.49s] Probability and statistics, you must attain mastery.
+[  221.65s ->   223.59s] You are an active risk taker.
+[  224.11s ->   234.17s] You must understand model-informed decision-making, the limitations to statistics and probabilities, and how to take calculated risks.
+[  234.67s ->   240.11s] If you want to be a quant developer, math level 2 should suffice.
+[  240.21s ->   243.01s] Computer science, you must attain mastery.
+[  243.01s ->   247.79s] Machine learning level 3 should suffice, depending on your role.
+[  248.25s ->   250.47s] Yes, a lot of these roles wear different hats.
+[  250.87s ->   257.07s] Sometimes you need mastery in different disciplines, so on and so forth, but in general, we'll look at these three roles.
+[  257.59s ->   261.27s] Probability and statistics level 2 should suffice.
+[  261.89s ->   267.34s] For quantitative research, you must master mathematics.
+[  267.88s ->   271.98s] In doing so, you will likely also master probability and statistics.
+[  271.98s ->   278.12s] Computer science level 3 and machine learning level 3 is highly recommended.
+[  278.12s ->   289.28s] If you don't know specifically which role you're going to want to target, start in level 1, picking different disciplines, and see what you gravitate towards.
+[  289.42s ->   292.52s] See what you are good at, and see what you like.
+[  292.86s ->   295.00s] This can help you make a decision.
+[  295.58s ->   300.62s] So, starting from level 1, we're going to navigate to computer science.
+[  300.62s ->   304.50s] Computer science has the lowest barrier to entry.
+[  304.98s ->   308.64s] All of the tools are free, typically open source, available online.
+[  309.06s ->   313.60s] You can download them directly to your computer, and you can start coding right away.
+[  314.08s ->   322.04s] Level 1 computer science consists of programming, fundamentals, and tools, basic editors, IDEs,
+[  322.04s ->   340.60s] basic programming, syntax in different languages, understanding variables, data types, operations, control flow, data structures, lists, arrays, dictionaries, objects, how these things are stored in memory, functions, procedural programming,
+[  340.60s ->   355.08s] how to use the command line, basic version control, and I would even recommend some web development, HTML, CSS, and JavaScript for basic UI concepts, web application programming.
+[  355.08s ->   361.52s] And I have an entire course dedicated to these topics on Quant Guild.
+[  361.66s ->   364.56s] This isn't just a scattershot of topics.
+[  364.84s ->   373.04s] Your objective goal after studying this material should be to be capable of building anything from scratch.
+[  373.42s ->   375.58s] This is reading and writing code.
+[  375.94s ->   382.20s] Pretty much everything in here is going to enable you to build any application that you could want to.
+[  382.20s ->   386.48s] I'm not talking about deploying an end-to-end machine learning pipeline right now.
+[  386.52s ->   393.28s] I'm talking about building a very basic app on your computer, a web application, so on and so forth.
+[  393.46s ->   399.50s] After you've learned all of this material, you should be able to read and write code effectively.
+[  399.84s ->   404.40s] That is your objective goal for computer science level 1.
+[  404.62s ->   412.10s] We're now going to shift to this idea of mathematics, talk about the foundational skills required for later study.
+[  412.20s ->   416.22s] The topics listed here can be found in high school maths classes.
+[  416.42s ->   426.20s] We're talking about algebra and geometry, solving systems of equations, functions, parent functions, polynomials, rational functions, exponents, logs, coordinate geometry, basic proofs.
+[  427.10s ->   435.02s] This material is commonplace, but this is where most of the mistakes are made in higher maths.
+[  435.02s ->   443.14s] I've had TAs, professors, peers, and colleagues make very basic algebraic mistakes.
+[  443.34s ->   450.28s] If you've ever watched the movie Oppenheimer, you'll see the scene where, you know, he goes to one of the researchers,
+[  450.42s ->   456.80s] your math is better than mine right now, and that's because it is an axe that you must keep sharp.
+[  456.80s ->   469.20s] Your objective here is to practice as much as possible, to be capable of applying these topics in the real world, to model deterministic events.
+[  469.62s ->   475.12s] This is solving word problems, being able to establish a system of equations.
+[  475.50s ->   484.04s] This is where critical thinking comes in, understanding the underlying topics, having the intuition, and being capable of applying it.
+[  484.04s ->   486.64s] This is your level 1 of mathematics.
+[  487.00s ->   489.74s] Moving on to probability and statistics.
+[  490.14s ->   500.22s] At this level, you must have a reasonable understanding of mathematics from the topics listed in level 1 to approach probability and statistics.
+[  500.46s ->   503.86s] Otherwise, not much of this is going to make sense.
+[  504.28s ->   511.52s] So, in the realm of probability and statistics, you must start with these core statistical and probabilistic concepts.
+[  511.52s ->   520.90s] That is, the statistical idea of mean, median, mode, range, variance, and standard deviation as it pertains to a sample of data.
+[  521.00s ->   525.64s] We're not talking even about estimators, bias, and variance in this context.
+[  525.82s ->   531.18s] We're just talking about applying these raw estimators to a subsample of data.
+[  531.28s ->   534.92s] This is very, very basic probability and statistics.
+[  534.92s ->   541.38s] Likely, you're just going to observe a set of numbers and compute these statistical quantities.
+[  542.06s ->   550.60s] You must also have a foundation in probability, set theory, sample spaces, and events, conditional probability and statistics, combinatorics.
+[  550.94s ->   552.44s] This is a tricky one for students.
+[  552.60s ->   557.38s] Understanding what to count and where is difficult, but it comes with practice.
+[  557.38s ->   585.32s] Your goal here should be to build as much intuition as possible, but to fundamentally understand critical concepts like independence, mutual exclusion, understanding that when you condition on relevant information that everything changes, the underlying distribution, probability, and statistics, you should have a working knowledge of the difference between the frequency interpretation of probability.
+[  585.32s ->   595.82s] What does a probability even mean and how that probability is interpreted in the real world when you estimate it from data?
+[  596.00s ->   606.64s] Your goal should be to understand that in the real world, we are estimating some sort of population data generating distribution that will likely change over time.
+[  606.64s ->   616.30s] When we're in the classroom and we're looking at a random variable, think of like a dice roll or a coin flip, those distributions, they don't change over time, right?
+[  616.58s ->   621.68s] So those are your core statistical and probabilistic concepts to learn.
+[  622.10s ->   632.58s] For level one, your overarching goal should be to be capable of modeling those random variables, those closed distributions that do not change over time.
+[  632.58s ->   639.34s] I'm talking about your random events, a coin flip, a dice roll, so on and so forth.
+[  639.74s ->   650.24s] We'll now talk about finance and economics, the concepts for level one, basic market and macroeconomics, microeconomics.
+[  650.30s ->   663.04s] We're talking about supply and demand, stocks, bonds, mutual funds, saving, investing, trading, the time value of money, future and present value, inflation and interest rates, GDP, monetary version.
+[  663.06s ->   674.54s] This idea of rational agency, one of the first assumptions that you make in economics is that agents act rationally.
+[  674.74s ->   680.64s] But if you look at the behavior of the market, agents absolutely do not act rationally.
+[  680.78s ->   684.96s] So you must understand the impact in the downstream models.
+[  685.54s ->   687.64s] Is equilibrium price the fair price?
+[  687.86s ->   688.96s] Not always.
+[  689.14s ->   690.94s] And that's what creates opportunity.
+[  690.94s ->   702.72s] So when it comes to finance and economics, most of these concepts are covered in basic macro and microeconomics classes, but they are going to cling to theory.
+[  703.16s ->   710.64s] And you must realize that most of the formal study in finance and economics is not true in the real world.
+[  710.76s ->   715.52s] There are a lot of cases where those structures do not hold.
+[  715.52s ->   732.02s] So your objective here is to learn the underlying theory, understand the impact of, you know, rate cuts or rate hikes on the overall, the broader market and how the market is going to be impacted by those decisions that the Fed makes.
+[  732.02s ->   740.38s] But more importantly, it's going to be your goal to understand all of these topics, to critically think about them.
+[  740.58s ->   746.24s] When you're reading a Wall Street Journal article, do you understand the topics that you're reading?
+[  746.92s ->   747.98s] That's step one.
+[  748.40s ->   750.92s] Step two is can you think critically about them?
+[  751.08s ->   755.26s] What are other people assuming when they're making these statements?
+[  755.26s ->   763.40s] Are they correct assumptions or are they going to be violated in practice and something else altogether is going to happen?
+[  763.54s ->   767.14s] All of this plays into your ability to take calculated risks.
+[  767.38s ->   770.92s] If an assumption doesn't make sense, why doesn't it make sense?
+[  771.00s ->   773.08s] Can you model it in a quantitative way?
+[  773.08s ->   786.58s] Can you take what you've learned from mathematics and probability and statistics and tie a number to the likelihood of that assumption that they're making in maybe some form of an article, like a Wall Street Journal article?
+[  786.82s ->   789.82s] Can you then trade based on those values?
+[  790.00s ->   793.56s] Then you have a model-informed value to trade based off of.
+[  793.56s ->   806.20s] All of this is what makes for a quant, a fundamental understanding of the topics that you're dealing with in practice and the ability to then make informed decisions in the face of uncertainty.
+[  806.20s ->   808.26s] That is our ultimate goal.
+[  808.26s ->   820.56s] So your level one learning goals to reiterate is to, in computer science, be capable of building anything, building basic UIs, web applications, applications for your computer, implementing APIs, etc.
+[  820.56s ->   843.40s] Probability and statistics, be capable of modeling those fixed distributions, finance and economics, be capable of understanding the news that you are reading, understanding the implicit assumptions in these different articles and remarks, your mathematics goal, be capable of establishing and solving deterministic problems.
+[  843.40s ->   849.28s] If you find that you cannot satisfy any of these learning goals, go back.
+[  849.28s ->   857.66s] You have not learned the underlying material or have practiced enough to apply it in the real world.
+[  858.24s ->   860.40s] That is going to then do it for level one.
+[  860.48s ->   866.70s] We can now progress to level two, and this is where machine learning is going to come into play.
+[  866.80s ->   876.36s] But there is a base level of math, probability and statistics and computer science required to go about studying machine learning.
+[  876.36s ->   883.70s] We're going to talk about level two topics now in each of these disciplines and go over the level two learning goals.
+[  883.70s ->   886.60s] Let's start in computer science.
+[  886.60s ->   889.92s] This is where we're going to begin our more formal study.
+[  889.92s ->   893.20s] We're not talking about just learning how to code here.
+[  893.20s ->   909.38s] We're talking about data structures and algorithms, trees, heaps, graphs, hash tables, sorting and searching algorithms, dynamic programming, time and space complexity, big O notation, object oriented programming principles.
+[  909.38s ->   911.88s] Hopefully you've already been exposed to them in level one.
+[  911.88s ->   914.98s] As you've gone through that material, likely that will be the case.
+[  915.08s ->   918.12s] If not, level two is the time to pick it up.
+[  918.48s ->   922.54s] Also understanding the idea of a database, storing information.
+[  922.68s ->   926.34s] How do we encrypt and save passwords in a database?
+[  926.86s ->   930.34s] All of these are necessary topics to learn.
+[  930.58s ->   936.04s] This is typically what is tested in the knowledge round of quant dev interviews.
+[  936.04s ->   939.64s] Anyway, you're going to be given some form of a word problem.
+[  939.64s ->   953.32s] This is just going to be a leak code or a hacker rank, you know, and your ability to understand these underlying structures and apply them to the problem that they give you is directly related to your understanding of these different sub topics.
+[  953.50s ->   955.02s] So how do you practice?
+[  955.22s ->   964.26s] Well, there's probably what, 20 design patterns to study to master pretty much every single leak code from easy to hard.
+[  964.26s ->   973.60s] Your ability to solve those problems in the knowledge round is directly related to the time and practice you put in to each of these sub topics.
+[  973.80s ->   981.94s] These are topics that you will likely cover in university, all of these different searching and sorting algorithms, these data structures, so on and so forth.
+[  982.18s ->   984.30s] But then it is up to you to practice them.
+[  984.46s ->   987.24s] So where should you get practice material for these topics?
+[  987.48s ->   991.90s] Well, I can't recommend anything else other than getcracked.io.
+[  991.90s ->  1003.54s] This platform was specifically built for these quant dev roles, and this is a great place to go about studying each of these topics and the topics that I'm going to list in level three.
+[ 1003.66s ->  1005.72s] This is Coding Jesus's platform.
+[ 1005.94s ->  1008.80s] If you're unfamiliar, I definitely recommend you check him out on YouTube.
+[ 1009.24s ->  1012.24s] He's got a lot of awesome content as well.
+[ 1012.54s ->  1016.32s] So if you're looking to practice these topics, check out getcracked.io.
+[ 1016.60s ->  1018.86s] That's going to do it for computer science level two.
+[ 1018.86s ->  1021.84s] We're now going to navigate over to mathematics.
+[ 1022.14s ->  1027.38s] In level two of mathematics, we're really focusing on topics from calculus one to maybe calculus four.
+[ 1027.80s ->  1032.04s] That is this idea of a limit, a derivative, and an integral optimization.
+[ 1032.48s ->  1034.86s] This is the application of those topics.
+[ 1035.22s ->  1044.90s] Finding extrema in functions, maxima, minima, multivariable calculus, the extension to functions of multiple inputs, partial derivatives, gradients,
+[ 1044.90s ->  1055.84s] for solving similar optimization problems, and of course linear algebra for vectors, matrices, matrix operations, different matrix decompositions for dimensionality reduction.
+[ 1056.40s ->  1064.10s] Maybe we look at eigendecomposition, singular value decomposition, both of which can be used to find a principal component analysis,
+[ 1064.10s ->  1076.36s] and maybe even solving systems of linear equations, this is, again, just going to be your calc one, two, three, and four, and your linear algebra.
+[ 1076.60s ->  1083.00s] If you're looking to get into quant research, then you need very strong linear algebra.
+[ 1083.16s ->  1087.04s] Pretty much everything we do in this space is a data science problem.
+[ 1087.04s ->  1089.82s] Every data set is a matrix.
+[ 1090.18s ->  1093.50s] Every machine learning model is an optimization problem.
+[ 1093.62s ->  1101.32s] If you're looking to do the bare minimum here, then typically calculus one will suffice for those other roles.
+[ 1101.68s ->  1110.48s] But if you're looking to gain as much knowledge in mathematics as possible to target those very specialized quantitative research roles,
+[ 1110.68s ->  1115.88s] then you're going to, of course, need mastery of all of these topics.
+[ 1115.88s ->  1119.36s] Knowing this, we can head on over now to probability and statistics.
+[ 1119.36s ->  1125.50s] That will give you the necessary prerequisite material studying up to level two of mathematics.
+[ 1126.04s ->  1135.82s] Mainly linear algebra and maybe calculus one, two, and three will give you enough to understand these topics in level two of probability and statistics.
+[ 1135.98s ->  1140.26s] That is this idea of probability distributions and inference.
+[ 1140.72s ->  1143.66s] Random variables, discrete and continuous random variables.
+[ 1143.66s ->  1149.90s] This is why you need to know the calculus because the probability density function is typically integrated
+[ 1149.90s ->  1153.54s] so that we can end up with the cumulative distribution function.
+[ 1153.74s ->  1158.34s] This is going to give us our common distributions that we study in academia.
+[ 1158.94s ->  1162.46s] The binomial, geometric, Poisson, normal, T distribution.
+[ 1162.98s ->  1165.36s] There are others for statistical tests.
+[ 1165.80s ->  1172.22s] Chi-square distributions, F distributions, beta distributions, gamma distributions, the list goes on.
+[ 1172.22s ->  1179.14s] The central limit theorem and the law of large numbers is likely going to be the most important topic on this list.
+[ 1179.54s ->  1184.44s] This is going to explain why we are able to simulate different statistical quantities.
+[ 1185.02s ->  1189.28s] The idea of hypothesis testing and confidence intervals is a nice academic extension.
+[ 1189.96s ->  1196.76s] Understanding linear regression and why it's so powerful in an academic context is also very important.
+[ 1196.76s ->  1204.94s] These topics are typically found in the core courses for a statistics major or a minor at university.
+[ 1205.18s ->  1212.92s] You're not really going to find any of these topics in a high school class unless you're doing some form of dual enrollment.
+[ 1213.42s ->  1219.46s] Even an AP class is just going to very gently touch on the law of large numbers, central limit theorem,
+[ 1219.68s ->  1223.20s] and these ideas of hypothesis testing and confidence intervals.
+[ 1223.20s ->  1225.62s] It's not going to go deep enough.
+[ 1225.72s ->  1233.96s] You're not really going to be looking at the supremum of the parameter set that makes the entire test reasonable in the first place.
+[ 1234.06s ->  1239.80s] So having a deep and fundamental understanding of these topics comes from that formal study.
+[ 1239.94s ->  1246.58s] Your core objective here is to understand these topics in both the classroom and the real world.
+[ 1246.98s ->  1250.98s] This is the most important part of level two probability and statistics.
+[ 1250.98s ->  1258.98s] That is understanding when distributions, probabilities, and statistics converge and when they don't.
+[ 1259.40s ->  1264.08s] In reality, unless we're dealing with fixed randomness, they do not converge.
+[ 1264.42s ->  1269.76s] Understanding the difference between a time variant population data generating distribution
+[ 1269.76s ->  1274.26s] and an empirical sample that you've observed is crucial.
+[ 1274.72s ->  1278.62s] This is why pretty much everyone backtests incorrectly.
+[ 1278.62s ->  1285.18s] They don't understand that if you condition on information at this point in time and you enter into a trade,
+[ 1285.30s ->  1290.68s] it's different from conditioning on information here and entering into a trade.
+[ 1290.82s ->  1295.08s] But I have a lot of videos on that topic if that topic interests you.
+[ 1295.44s ->  1298.00s] For level two, it's about understanding the difference.
+[ 1298.60s ->  1302.26s] You're in the classroom versus when you're in the real world.
+[ 1302.26s ->  1310.62s] Once you've covered all of these topics in probability and statistics, you will be ready to move on to machine learning.
+[ 1311.10s ->  1313.60s] And this certainly is a deep sea.
+[ 1313.76s ->  1318.18s] It's very tempting to, once you first get involved in the machine learning space,
+[ 1318.36s ->  1323.96s] to just build a whole bunch of projects and overfit a whole bunch of models to data
+[ 1323.96s ->  1328.22s] to come up with some really good in-sample performance metrics.
+[ 1328.22s ->  1338.38s] But the goal in learning all of these topics in this level two stage is to fully understand the model development pipeline.
+[ 1338.38s ->  1341.02s] I'm talking about from data acquisition.
+[ 1341.02s ->  1348.02s] That is, you ask some form of a research question, acquire the necessary data, you clean it, you pre-process it,
+[ 1348.30s ->  1353.92s] you go about feature engineering, and then you look to select a model for a particular problem,
+[ 1353.92s ->  1359.24s] whether it is a classification problem, some form of a regression problem you're conducting,
+[ 1359.68s ->  1362.18s] typically supervised machine learning in that capacity,
+[ 1362.18s ->  1366.58s] but maybe you're looking at dimensionality reduction, unsupervised machine learning.
+[ 1366.90s ->  1373.76s] At this stage, you really just need to learn about all of the tools available to you in this entire pipeline
+[ 1373.76s ->  1378.50s] that is starting from that initial research question all the way to model deployment.
+[ 1378.50s ->  1383.50s] I'm not talking about building an end-to-end pipeline on your own and deploying it on AWS,
+[ 1383.76s ->  1387.56s] but I'm talking about understanding each stage in this process.
+[ 1387.76s ->  1392.06s] The difference between supervised, unsupervised, and reinforcement learning.
+[ 1392.50s ->  1395.42s] The so-called bias variance trade-off.
+[ 1395.50s ->  1400.16s] You should have exposure to this from your level two probability and statistics.
+[ 1400.54s ->  1405.70s] The idea of cross-validation, model evaluation metrics, linear versus logistic regression,
+[ 1405.70s ->  1410.50s] and extension from probability and statistics, decision trees, ensemble methods,
+[ 1410.92s ->  1417.00s] random forests, gradient boosting methods, support vector machines, k's nearest neighbors,
+[ 1417.52s ->  1423.68s] and this idea of a neural network, which is really just going to be a giant composite function
+[ 1423.68s ->  1428.88s] that you are going to optimize using techniques from your level two mathematics.
+[ 1428.88s ->  1436.32s] These are the core topics in machine learning, and I have videos dedicated to a lot of these ideas.
+[ 1436.54s ->  1443.70s] I have full articles on boot camps discussing the idea of unsupervised, supervised reinforcement learning,
+[ 1443.82s ->  1447.56s] the tools and techniques available to you in each of those different disciplines,
+[ 1447.76s ->  1451.00s] along with code snippets on my medium.
+[ 1451.18s ->  1455.24s] So you have a lot of resources on Quant Guild, that is YouTube and Medium,
+[ 1455.70s ->  1458.46s] to go about self-learning, all of these different topics.
+[ 1458.46s ->  1464.34s] You would have exposure to these, again, in some sort of statistics major.
+[ 1464.60s ->  1468.68s] That is going to be your machine learning level two topics.
+[ 1469.14s ->  1474.94s] Your key objective here is to understand the entire development pipeline.
+[ 1475.20s ->  1481.86s] That is going from that initial research question, data acquisition, all the way down to model deployment.
+[ 1482.62s ->  1486.40s] Every step of the way, you are going to encounter different problems.
+[ 1486.50s ->  1487.44s] You're going to have outliers.
+[ 1487.44s ->  1494.08s] You're going to need to fix some sort of collinearity issue within a feature set, so on and so forth.
+[ 1494.16s ->  1500.80s] You'll see these topics in some formal degree program in data analytics, data science, machine learning, artificial intelligence.
+[ 1501.34s ->  1508.82s] Some operations research and statistics programs may also cover these topics, but I never formally studied these.
+[ 1508.82s ->  1514.28s] I just read Francis Schwalier's book, and that got me up to speed pretty quickly.
+[ 1514.46s ->  1521.94s] If you understand the underlying probability statistics and mathematics, these topics follow very naturally.
+[ 1522.10s ->  1524.52s] So that's going to do it for level two machine learning.
+[ 1524.66s ->  1532.82s] We can now move on over to finance and economics and talk about the big idea in studying these topics at this level.
+[ 1532.82s ->  1541.64s] At this point, after covering the basic micro and macroeconomics and basic financial theory that is the time value of money in level one.
+[ 1541.64s ->  1563.64s] We move on over to level two and we learn about different financial instruments, modern portfolio theory, derivatives, options, futures, swaps, maybe some fixed income, foreign exchange, the idea of cap M and priced risk, the efficient market hypotheses, the concept of alpha and its existence or lack thereof.
+[ 1563.64s ->  1571.78s] And basic valuation and basic valuation and risk management, maybe you'll cover value at risk, discounted cash flow analysis, things like that.
+[ 1572.26s ->  1586.46s] Your key objective when you first learn of all of this in an academic setting is to understand that pretty much every model that you look at does not actually hold in practice.
+[ 1586.46s ->  1595.62s] I cannot stress how many times I have debated the efficient market hypothesis to my academic colleagues, friends, peers, whatever.
+[ 1596.36s ->  1603.46s] At the end of the day, the markets are kind of efficient, but there is plenty of room for alpha.
+[ 1604.46s ->  1607.36s] The equilibrium price is not always the fair price.
+[ 1607.74s ->  1609.26s] Agents are not always rational.
+[ 1609.70s ->  1610.66s] The list goes on.
+[ 1610.66s ->  1617.88s] We can talk about this in a qualitative setting and I can prove it to you in a quantitative setting as well with some form of quant trading strategy.
+[ 1617.88s ->  1635.76s] But the key thing to keep in mind here, your goal in studying finance and economics at this level is to take everything that you learn with a grain of salt, understand how it helps explain what we're observing in reality, but understand that there's room for violations, right?
+[ 1636.12s ->  1638.26s] The market is not perfectly efficient.
+[ 1638.78s ->  1639.56s] Alpha exists.
+[ 1639.56s ->  1643.64s] It's not just all priced risk and we don't have all of those factors.
+[ 1644.42s ->  1647.78s] The markets are not perfect.
+[ 1648.28s ->  1653.24s] So when it comes to level two finance and economics, these are your main topics to study.
+[ 1653.60s ->  1663.56s] These are pretty easy to get a grip on because mostly they are just qualitative understanding basic interactions with the market macro policy, so on and so forth.
+[ 1663.56s ->  1682.50s] The reason why I prioritize learning and understanding is because if you actually understand these topics, you can think critically about them in the real world and create new extensions.
+[ 1682.50s ->  1690.72s] You can build off of other people's work to go about producing new models, new results, and even trading strategies.
+[ 1690.72s ->  1692.94s] That's what everybody wants to learn.
+[ 1692.94s ->  1696.72s] Everybody comes to me, hey, how do I learn how to be a quant trader?
+[ 1696.72s ->  1698.28s] How do I build a trading strategy?
+[ 1698.28s ->  1700.44s] Well, that is work.
+[ 1700.44s ->  1701.44s] That is research.
+[ 1701.44s ->  1702.44s] That is research.
+[ 1702.44s ->  1703.26s] Nobody wants to do the work.
+[ 1703.26s ->  1706.64s] That's not what they want to hear, but it is the truth.
+[ 1706.64s ->  1707.56s] You need to learn.
+[ 1707.56s ->  1711.60s] You need to understand, think critically, and create new extensions.
+[ 1711.60s ->  1724.40s] So your goals at this stage should be to understand and practice these DS and A problems, understand time, space, complexity for computer science, for probability and statistics.
+[ 1724.40s ->  1735.18s] It should be to understand assumptions and underlying violations in the real world for the purpose of making informed decisions in the face of uncertainty.
+[ 1735.92s ->  1739.92s] For machine learning, your goal is to understand the model development pipeline.
+[ 1739.92s ->  1752.72s] Remember, from that initial research question, to data acquisition, all the way down to model deployment for finance and economics, to understand modern financial theory and the fact that it is largely nonsense.
+[ 1752.72s ->  1754.62s] We don't operate in a perfect world.
+[ 1754.62s ->  1757.98s] The efficient market hypothesis CAPM does not hold.
+[ 1757.98s ->  1759.78s] Alpha exists.
+[ 1760.22s ->  1762.48s] Not everything is priced risk.
+[ 1762.48s ->  1770.16s] For mathematics, be capable of establishing and solving deterministic problems with calculus.
+[ 1770.16s ->  1778.16s] If you dive into machine learning in any capacity, you will find that that is pretty much all you're going to be doing anyway.
+[ 1778.16s ->  1782.30s] We can now progress to the level three topics.
+[ 1782.30s ->  1792.94s] If you make it to this level of study in any of the disciplines that we've discussed, you're going to have such a strong foundation, you're going to know what to study next.
+[ 1792.94s ->  1798.16s] You're going to have exposure to it in all of the other topics that you've seen up until this point.
+[ 1798.16s ->  1803.66s] You're going to naturally gravitate towards exactly what it is you should know next.
+[ 1803.66s ->  1812.94s] Now, that doesn't mean that you may not have knowledge gaps, and that's exactly why I'm going to discuss explicitly all of these topics that I consider level three topics.
+[ 1812.94s ->  1820.80s] In computer science, this is going to be advanced search, optimization, and systems, low latency programming, numerical optimization techniques.
+[ 1820.80s ->  1827.42s] This is now applying computer science specifically to optimization from calculus, gradient descent, and variance.
+[ 1827.42s ->  1845.18s] Newton's method, simulated annealing and genetic algorithms for stochastic search, low latency architecture, market data pipelines, execution systems, concurrency, threading, parallelism, distributed systems, microservices, message queues, so on and so forth.
+[ 1845.18s ->  1849.02s] This is really where you start to get into high level development.
+[ 1849.02s ->  1852.82s] And by high level, I don't mean in terms of abstraction or complexity.
+[ 1852.82s ->  1854.72s] I'm talking about difficulty here.
+[ 1854.72s ->  1861.68s] I'm going to echo what I said in level two, all of this takes practice to fully learn, understand, and appreciate.
+[ 1861.68s ->  1868.54s] At this point, you're not just going to learn this material, but you are going to experience it and apply it in practice.
+[ 1868.54s ->  1881.32s] If we're going back to level two topics, those are all necessary typically for the knowledge round in some sort of quant dev interview, but so are these topics, low latency architecture, threading, so on and so forth.
+[ 1881.32s ->  1884.28s] These are all topics that you must practice.
+[ 1884.72s ->  1889.04s] So those are the level three computer science topics.
+[ 1889.04s ->  1894.80s] Again, that is typically reserved for quant dev or some flavors of quant research.
+[ 1894.80s ->  1897.12s] Those topics are definitely a deep dive.
+[ 1897.12s ->  1899.60s] There is no cursory study of them.
+[ 1899.60s ->  1902.88s] We can shift our focus now to level three mathematics.
+[ 1902.88s ->  1911.20s] This is going to comprise of stochastic calculus, differential equations, partial differential equations, and numerical methods.
+[ 1911.20s ->  1930.28s] So this is differential equations, stochastic calculus, ordinary and partial differential equations, ODEs, PDEs, solving PDEs like the Black-Scholes equation, Brownian motion, geometric Brownian motion, solving basic stochastic differential equations with Ito's Lemma, the fundamental theorem of stochastic calculus.
+[ 1930.28s ->  1933.64s] And that is, of course, and that is, of course, going to help us with these SDEs.
+[ 1933.64s ->  1937.80s] These are to model the dynamics of underlying assets in pricing.
+[ 1937.80s ->  1944.52s] And, of course, we have tools like Monte Carlo simulation for pricing and risk and finite differences.
+[ 1944.52s ->  1950.92s] These are numerical techniques to go about solving different problems in these spaces.
+[ 1950.92s ->  1953.96s] These topics are very niche.
+[ 1954.34s ->  1958.14s] Typically, you can only learn them in very specific mathematical programs.
+[ 1958.30s ->  1971.76s] These are your quant finance programs, operations research, and financial engineering programs, typically found at the graduate level, though some undergraduate programs are beginning to focus on these topics as well.
+[ 1971.88s ->  1976.96s] Anytime you see stochastic calculus, just know you're in the presence of randomness.
+[ 1976.96s ->  1994.14s] So you're typically applying calculus to a random variable or a stochastic process, which is just a random variable indexed across typically time, maybe draws in some cases, and you're going to want to find things like the differential of a function of that process.
+[ 1994.14s ->  1999.98s] Or maybe you're going to be integrating with respect to that process's randomness.
+[ 1999.98s ->  2009.42s] So that's all stochastic calculus is, but clearly that's going to demand also a high level of understanding of probability and statistics.
+[ 2009.76s ->  2011.80s] These are inseparable.
+[ 2012.18s ->  2022.82s] So at the level three of probability and statistics, you're going to be strengthening your understanding of the academic concepts from level two.
+[ 2022.82s ->  2033.20s] That is discrete, continuous, random variables, how they're defined in terms of a density or mass function, a distribution function, a moment generating or characteristic function, so on and so forth.
+[ 2033.70s ->  2037.30s] You're going to strengthen that understanding by taking a look at now processes.
+[ 2037.76s ->  2049.40s] You're going to be studying stochastic processes, time series, and advanced statistical models, autoregressive and moving average models, ARMA, ARIMA, GARCH models, specifically for volatility.
+[ 2049.40s ->  2054.28s] Stationarity and unit root tests, why they are largely nonsense.
+[ 2054.74s ->  2057.52s] Bayesian inference, priors, likelihood, posteriors.
+[ 2057.96s ->  2071.40s] You likely will have seen some form of Bayes' theorem in level one or level two study of probability and statistics, but at this point you're going to be able to apply it in a broader setting to processes.
+[ 2071.40s ->  2084.26s] You'll have exposure to the study of nonparametric models and this idea of robust statistics, non-normal data, handling outliers, non-stationarity, this idea of data being dependent.
+[ 2084.44s ->  2095.12s] You're no longer drawing from the same static population distribution every time you observe a sample, and that is a very difficult problem to deal with in practice.
+[ 2095.12s ->  2101.20s] And that's exactly why building trading strategies is so difficult.
+[ 2101.44s ->  2104.84s] So this is your level three study of probability and statistics.
+[ 2105.00s ->  2116.10s] It complements stochastic calculus in this level three study of mathematics very nicely, as stochastic processes is typically what you are performing the stochastic calculus on and for.
+[ 2116.10s ->  2132.96s] And that also explains what I mentioned at the start of this video, where I said once you learn the level three or master mathematics, you're going to just also learn the accompanying probability and statistics, because at some point it is just an application of the math.
+[ 2132.96s ->  2149.54s] Where the computer science is separated from the study at this point altogether, we may apply different numerical techniques that require some coding to solve these different problems, but these are largely unrelated to these topics.
+[ 2149.54s ->  2162.96s] We may use topics in probability and statistics to model maybe low latency architectures, but that's just an application then of the probability and statistics in level three.
+[ 2163.32s ->  2170.34s] We can now move on to this idea of machine learning, and as you can see here, I don't have any prerequisites for it in level three.
+[ 2170.44s ->  2184.28s] At this point, you've covered the necessary prerequisites in your level two study of computer science, probability and statistics and mathematics, and of course your level two of machine learning to learn these advanced machine learning concepts.
+[ 2184.28s ->  2197.62s] That's going to be machine learning, specifically four times series, feature engineering specific to finance, volume, volatility, order book data, this idea of walk forward validation, rigorous back testing.
+[ 2197.84s ->  2204.48s] It is so easy to induce bias in your model development pipeline.
+[ 2204.48s ->  2209.36s] Reinforcement learning, we talked about unsupervised and supervised learning in level two.
+[ 2209.36s ->  2213.52s] This idea of Q-learning policy search is a little bit more complicated.
+[ 2213.76s ->  2216.40s] It's really just an optimization problem.
+[ 2216.62s ->  2228.97s] It's a very interesting optimization problem, and we use techniques from level two computer science, different searching algorithms in that capacity to go about finding optimal policies.
+[ 2228.97s ->  2242.57s] To go about creating agents capable of doing things in an environment, we look at more advanced deep learning structures, RNNs, LSTMs for sequential data.
+[ 2242.97s ->  2252.41s] Maybe we also look at transformer models, generative models, variational autoencoders, autoencoders for nonlinear dimensionality reduction, things like that.
+[ 2252.41s ->  2259.67s] These are just more interesting, more capable model architectures, this idea of causal inference.
+[ 2259.67s ->  2264.77s] We're not talking about just a simple causality test, some sort of grandeur causality.
+[ 2264.95s ->  2266.59s] Those are largely useless.
+[ 2267.13s ->  2274.15s] If you have some form of causal inference that you are trying to discern, you are certainly going to need to study this in depth.
+[ 2274.79s ->  2282.39s] And of course, this idea of methodology for developing and combining alpha's ensemble methods, cross-sectional versus time series approach.
+[ 2282.85s ->  2285.81s] You're not just going to be trading one strategy.
+[ 2285.81s ->  2295.87s] You'll have some alpha that produces a sharp of 1, an alpha that produces a sharp of 1.5, and you start to glue those pieces together and you trade the larger alpha.
+[ 2296.35s ->  2301.13s] You're not just going to trade these individual ones, and that's the broader portfolio.
+[ 2301.45s ->  2306.41s] So in this context, those are all the topics for level three, machine learning.
+[ 2306.41s ->  2315.48s] We can now move on to the last discipline here, finance and economics at this level three.
+[ 2315.64s ->  2328.70s] At this level, you're really starting to approach more advanced topics that you would probably find in some form of a graduate program in pure finance or economics, maybe even a PhD program in finance and economics.
+[ 2328.70s ->  2340.92s] These behavioral finance topics, advanced risk management, value at risk, conditional value at risk is pretty typical, but there are interesting extensions in the literature where we're looking at generative structures to approximate these quantities.
+[ 2340.92s ->  2350.24s] In some cases, they even outperform in some walk-forward tests, cognitive biases, market anomalies, tail risk, and black swan events.
+[ 2350.24s ->  2358.32s] If we're looking to model the probabilities of these events occurring, then we're going to proxy those probabilities with historic data.
+[ 2358.84s ->  2366.50s] But remember, if we're actually going to discern something valuable in a forward-looking setting, we're actually going to have to model that event of interest, right?
+[ 2366.52s ->  2377.28s] If you look at something like the big short, when all of those folks made a bet against the housing market, they used alternate data to inform that calculated risk, right?
+[ 2377.28s ->  2380.98s] We're not just going to use time series data here, right?
+[ 2381.02s ->  2383.02s] It's not just baked into the time series.
+[ 2383.02s ->  2391.70s] It's like, okay, we can discern this is a good risk to take right now with our portfolio to bet against, you know, whatever the market is currently implying as favor.
+[ 2391.82s ->  2394.00s] That's not how the space works.
+[ 2394.00s ->  2402.66s] And the more that you operate in it, the more that you try to model things in a time series capacity, the more you will see that it becomes a machine learning problem.
+[ 2403.30s ->  2405.26s] And that is exactly what we talked about here.
+[ 2405.26s ->  2409.04s] So you're going to learn about time series analysis and probability and statistics.
+[ 2409.04s ->  2414.38s] You'll find its limitations very quickly and maybe some form of low latency trading and market making.
+[ 2414.58s ->  2425.92s] These models can be very useful, but very quickly in the macro sense, you're going to need to turn it into a data science problem to go about real world model informed decision making.
+[ 2426.30s ->  2431.30s] And this leads us now to our goals for level three.
+[ 2431.30s ->  2437.78s] And my remark for you here is that new quantitative ideas come from mastery of foundational material.
+[ 2437.78s ->  2446.28s] How can you ever hope to create necessary extensions to time series models if you don't understand a basic AR or MA approach?
+[ 2446.80s ->  2457.56s] How can you ever hope to model these tail events if you don't understand the limitations of time series data and the necessity of turning the overall problem into a data science one?
+[ 2457.56s ->  2468.98s] That is why I focus so much on this idea of learning and understanding, because if you learn and understand all of these foundational topics, you can make your own decisions.
+[ 2468.98s ->  2470.66s] You don't need to ask anybody.
+[ 2470.88s ->  2472.68s] It's like when you're playing poker.
+[ 2472.78s ->  2475.84s] I'm not going to ask somebody if I should raise here.
+[ 2475.84s ->  2476.30s] Right.
+[ 2476.30s ->  2479.30s] It's it's how I've learned from experience.
+[ 2479.30s ->  2484.98s] And you can learn all of these topics and experience them by applying them to the real world.
+[ 2484.98s ->  2488.04s] And that is exactly how you make informed decisions.
+[ 2488.04s ->  2490.14s] That is how you become a quant.
+[ 2490.14s ->  2494.76s] Just as with the previous two levels, I've outlined some level three learning goals.
+[ 2494.96s ->  2505.36s] But really, at this point, you're going to have so much experience working in each of these domains that you're going to know what to do next.
+[ 2505.36s ->  2516.24s] You're going to know where your knowledge gaps are, what you need to study, practice, maybe apply to the real world to gain some experience with, so on and so forth.
+[ 2516.72s ->  2521.00s] And that is really what we do every single day as quants.
+[ 2521.00s ->  2530.72s] We take our quantitative toolkit and we go and apply everything that we know and have learned and mastered to real world problems.
+[ 2530.90s ->  2533.62s] And those real world problems are open ended.
+[ 2533.62s ->  2535.56s] They require creative new solutions.
+[ 2535.56s ->  2540.48s] We can't just throw an AR one model at the problem and solve it.
+[ 2540.58s ->  2545.56s] So that is why mastery of this foundational material is necessary.
+[ 2546.12s ->  2550.18s] And this brings us to the end of our roadmap.
+[ 2550.42s ->  2553.56s] That's going to do it for this video on the quant roadmap.
+[ 2553.76s ->  2554.46s] I hope you enjoyed.
+[ 2554.78s ->  2555.80s] I hope you learned something.
+[ 2555.92s ->  2561.40s] If you think I forgot something in any one of the disciplines or levels, feel free to leave it in the comments below.
+[ 2561.40s ->  2568.90s] I can always make additions and edits to this roadmap and that will certainly help anyone who is looking at it for the first time.
+[ 2569.20s ->  2574.22s] Again, this is going to be a living, breathing document that I will link in the description below.
+[ 2574.60s ->  2577.94s] Other than that, this video certainly took a tremendous effort to create.
+[ 2577.94s ->  2582.34s] So if you enjoyed it and you want to see more like it in the future, please like, comment, subscribe, share.
+[ 2582.50s ->  2583.72s] It helps me out tremendously.
+[ 2583.98s ->  2585.52s] It is always greatly appreciated.
+[ 2585.86s ->  2592.00s] Other than that, I want to thank you so much for watching and I will see you in the next video.

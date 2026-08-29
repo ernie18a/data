@@ -1,0 +1,180 @@
+[    0.40s ->     5.38s] Hey, Options Auto Trader team, let's talk about how to set up custom strategies based
+[    5.38s ->     6.14s] on different rules.
+[    6.22s ->     8.24s] So we're going to be doing this for a lot of different things.
+[    8.58s ->    12.60s] As we just walk through with this training is all the different options strategies that
+[   12.60s ->    16.92s] you can use, and there's even a lot more inside of the Options Auto Trader that we didn't
+[   16.92s ->    21.62s] discuss, but I wanted to talk about the ones that had the highest win rates and were the
+[   21.62s ->    21.98s] best.
+[   22.32s ->    27.04s] Now, for people who do complex trading, when I mean like I enter when this happens and
+[   27.04s ->    31.22s] this happens and this happens and all these rules, let me show you how to build that into
+[   31.22s ->    32.50s] the Auto Trader for you.
+[   32.62s ->    37.06s] So we can use any type of platform that allows webhook integrations.
+[   37.06s ->    43.26s] That's TradingView, TrendSpider, Zapier, if you want to send connections that way.
+[   43.80s ->    48.94s] But again, I'll be using TradingView for this example, but you can mimic this process on
+[   48.94s ->    50.56s] basically any other charting platform.
+[   50.74s ->    52.14s] So let's dive in.
+[   52.50s ->    56.70s] Let's say, again, I'll be going through multiple different examples, but let's say for this
+[   56.70s ->    62.12s] first example, you like to enter when the MACD line is at the bottom portion of its range.
+[   62.20s ->    64.02s] And so let's walk through that.
+[   64.56s ->    68.62s] So if I go to my indicators, I'm going to add MACD, which is moving average, convergence,
+[   68.78s ->    69.12s] divergence.
+[   69.86s ->    71.34s] Again, you can do this for anything.
+[   71.52s ->    75.18s] I'm just giving the moving average convergence example first, and then we'll go through moving
+[   75.18s ->    77.06s] averages and a bunch of different other examples.
+[   77.42s ->    81.90s] So let's say that when the moving average hits down, you enter a credit spread.
+[   81.98s ->    85.86s] I put credit spread to make money to the upside, and that's how you do it.
+[   85.86s ->    92.42s] So again, we see here that you can see when the market tends to come down and these moving
+[   92.42s ->    96.92s] average lines tend to cross back up, or when the blue line crosses above, you can see here
+[   96.92s ->    98.24s] it tends to go up.
+[   98.28s ->    99.28s] So that's an upwards direction.
+[   99.40s ->   103.46s] So let's say you want to enter a put credit spread, which makes money to the upside when
+[  103.46s ->   104.16s] these are crossed.
+[  104.70s ->   108.52s] So what we're going to do is we're going to set up the credit spread trade that we want
+[  108.52s ->   109.26s] to trade with that.
+[  109.34s ->   112.84s] Again, you can do this for any trade, but I'm just going to do credit spreads as the very
+[  112.84s ->   114.24s] directional trade.
+[  114.24s ->   118.26s] You can also be like, I want to enter a short, or I want a shorter put when this happens.
+[  118.36s ->   121.82s] I want to enter a 1-1-2 when this happens, because it shows that it's moving up.
+[  122.18s ->   124.42s] Regardless, just for this example, I'm going to show credit spreads.
+[  124.52s ->   127.36s] If we go to credit spread, do a 30-25 delta.
+[  127.84s ->   132.62s] Let's say I just go 10 days out because I'm doing a shorter trade, something like this.
+[  133.30s ->   137.62s] Again, then we'll go into advanced settings, and we'll enable the trading view web hook.
+[  138.63s ->   140.25s] Like that, trading view web hook enabled.
+[  140.25s ->   141.95s] Now, it doesn't really matter what days I set.
+[  142.37s ->   144.57s] Now, how do I want these trades managed?
+[  145.15s ->   148.99s] Let's just say I'll do my normal 50% take profit, and then I'll just let the stop loss
+[  148.99s ->   151.61s] be since it has defined risk already.
+[  153.03s ->   154.03s] That's what I'll do.
+[  154.81s ->   158.11s] And then buying power allocation, let's say $2,000.
+[  158.63s ->   159.91s] It's probably way more than needed.
+[  160.53s ->   161.31s] Yeah, just like that.
+[  161.51s ->   161.89s] All right, cool.
+[  162.19s ->   163.45s] Now I have this auto trade here.
+[  163.45s ->   165.19s] I'm going to save it just like that.
+[  165.59s ->   168.33s] Now I have this little credit spread going for me here.
+[  168.73s ->   172.57s] Now, again, if you have a strategy that you want to automate with web hooks that you haven't
+[  172.57s ->   174.09s] done yet, just go into your settings here.
+[  174.73s ->   178.01s] So, if we can see in settings, I have a trading view web hook secret.
+[  178.55s ->   180.03s] Again, this works for any web hook.
+[  180.47s ->   183.29s] I'm just going to copy that URL just like that.
+[  183.35s ->   185.85s] Now it's copied, and we'll get back to that in a second.
+[  185.99s ->   186.13s] Cool.
+[  186.45s ->   190.01s] So, now I have my auto trader set up so I know how I want the credit spread to be entered,
+[  190.01s ->   193.03s] how I want the trade to be managed, and I have web hooks enabled.
+[  193.03s ->   193.31s] Sweet.
+[  193.85s ->   197.49s] So, now that I have the trade that I want entered, now let's define when this happens.
+[  197.57s ->   197.67s] Right?
+[  197.71s ->   201.35s] I want the blue line of the MACD to cross above this line right here.
+[  201.59s ->   204.11s] So, I'm going to go into my alerts, this little alert button here.
+[  204.47s ->   205.91s] I'm going to create an alert.
+[  206.09s ->   207.03s] Let's close this alert.
+[  207.43s ->   208.47s] Give me more room here.
+[  208.95s ->   209.41s] Just like this.
+[  210.52s ->   211.72s] And here, I'm going to go to condition.
+[  211.92s ->   214.10s] I'm going to go to MACD, rising to falling.
+[  214.26s ->   216.22s] I can kind of like do what I want to do.
+[  216.32s ->   218.28s] So, let's say, yeah, let's do rising to falling.
+[  219.40s ->   220.84s] No, actually, falling to rising.
+[  220.84s ->   223.62s] So, again, we're taking the red one and we're going up, right?
+[  223.66s ->   224.90s] We're kind of defining it like that.
+[  224.96s ->   229.20s] Again, I can kind of choose if I want it to cross above a certain value, a different type
+[  229.20s ->   234.80s] of indicator, crossing, and I can even do crossing certain MACD values, different things
+[  234.80s ->   235.20s] like that.
+[  235.26s ->   238.34s] But let's just do a basic falling to rising.
+[  238.50s ->   242.30s] So, we have it falling and now it's starting to rise again, showing that the trend is coming
+[  242.30s ->   242.58s] up.
+[  242.84s ->   243.58s] I'm going to create that.
+[  243.58s ->   248.28s] And then in my notifications here, actually, let's just set this, the alert name is enter
+[  248.28s ->   259.40s] credit spread trade automatically based on MACD rising to falling.
+[  262.00s ->   262.48s] Notifications.
+[  262.84s ->   265.30s] I'm going to take this webhook URL.
+[  265.30s ->   270.58s] So, enable webhook URL and just paste the link that it gave me earlier.
+[  270.72s ->   273.80s] So, you can see I'm just going to paste this in, but I got it from right here.
+[  273.88s ->   274.72s] I copied the URL.
+[  275.20s ->   278.96s] Now, for some reason, if you're sharing this with people, again, they can use this webhook
+[  278.96s ->   279.92s] to trigger an entry.
+[  280.34s ->   283.60s] So, if for some reason somebody else has seen it, just click regenerate secret.
+[  283.98s ->   287.20s] And then, again, you have to re-put that in here for your new code.
+[  287.72s ->   292.34s] Anyways, just like that, if I click enter, it will actually already start to automate this
+[  292.34s ->   295.86s] process, but again, that's just one way to do it.
+[  295.94s ->   297.20s] So, that's a MACD example.
+[  297.64s ->   299.40s] Now, let's talk about another example.
+[  299.80s ->   304.74s] Let's say you want to base your credit spread entry based off moving average lines, right?
+[  304.80s ->   307.30s] Again, we can do this with any indicator, like anything.
+[  308.06s ->   313.18s] Again, I'll just do a moving average example, and then we'll get a bit more complex here in
+[  313.18s ->   313.54s] a second.
+[  314.00s ->   314.82s] So, moving average.
+[  314.96s ->   315.76s] So, we have two of them.
+[  315.76s ->   317.54s] Let's change the settings on this one.
+[  318.18s ->   319.74s] First off, let's see the line here.
+[  320.28s ->   323.50s] And then, inputs will make this a 50 period moving average, just like that.
+[  323.82s ->   326.44s] So, now we have a longer period and a shorter period.
+[  326.74s ->   331.16s] Let's say we want to enter a credit spread, or we want to sell a put, or we want to sell
+[  331.16s ->   332.14s] an iron condor.
+[  332.34s ->   335.86s] We want to sell a 112, whatever it is, whatever strategy that we automate.
+[  336.48s ->   342.52s] And we want to enter it when the blue line crosses above this yellow line.
+[  342.52s ->   345.64s] So, what we do is we go to add an alert.
+[  346.62s ->   347.66s] We go to here.
+[  347.78s ->   350.56s] We go to moving average, which is the nine period one.
+[  350.72s ->   356.86s] We want that to cross up above the moving average 50, so the yellow line.
+[  357.10s ->   361.94s] Once it crosses above that, then we're going to enter credit.
+[  361.94s ->   363.58s] Again, we don't have to say this, but I'm sure we'll put it here.
+[  363.62s ->   368.08s] Enter credit spread for MACD, or not MACD, moving average cross.
+[  368.18s ->   370.40s] Moving average cross, just like that.
+[  370.40s ->   374.22s] Now, it's going to trigger when that happens, and my web URL, I'm just going to paste the
+[  374.22s ->   376.28s] one that I have here, so that it enters the credit spread.
+[  376.76s ->   381.40s] Just like that, I've automated a MACD crossover and entering a credit spread, and now that credit
+[  381.40s ->   384.76s] spread will be managed for me, all without me needing to be here and watch this.
+[  384.88s ->   385.68s] That's so awesome.
+[  386.28s ->   389.24s] Now, let's say, okay, Austin, that's cool to enter a trade, but what if I want to exit
+[  389.24s ->   389.70s] a trade?
+[  390.04s ->   396.26s] What if I want to exit a trade when this blue line crosses down below the yellow line?
+[  396.32s ->   397.36s] You can do that, okay?
+[  397.36s ->   402.10s] Okay, so again, I don't have any active trades on this one, but if I go to ES where I have
+[  402.10s ->   407.50s] an active trade, like let's say I want to get out of my 1-1-2 position when it crosses
+[  407.50s ->   411.16s] below, like when the blue line crosses below here, because it shows that, hey, it's trending
+[  411.16s ->   412.14s] down, right?
+[  412.80s ->   416.64s] What I can do is, again, I need to enable webhooks for this, because it's not enabled
+[  416.64s ->   417.06s] right now.
+[  417.18s ->   419.64s] Let's enable it real fast, and then copy URL.
+[  419.64s ->   422.36s] So just like that, so it's been enabled.
+[  423.58s ->   425.58s] If I go in, actually, no, that's not what I need to do.
+[  425.60s ->   430.28s] I need to enable it, save it, and then I need to go into the trade that I want to close.
+[  430.38s ->   436.64s] So let's say I want to trade, I want to close a trade based on a technical indicator change,
+[  437.32s ->   437.48s] right?
+[  437.48s ->   441.88s] So based on, let's say, the blue line getting below, well, what trade do I want to close?
+[  442.38s ->   448.04s] Let's say I want to close this trade, because it has good profit, and I want to lock in profit.
+[  448.54s ->   450.06s] I'm going to come in here to trade details.
+[  450.84s ->   453.12s] I'm going to click on copy trading view webhook URL.
+[  453.78s ->   456.38s] This will copy the URL for this specific trade.
+[  456.38s ->   460.26s] So now I'm going to come in here, into my alert settings.
+[  460.92s ->   461.98s] Again, crossing.
+[  462.88s ->   469.84s] We're going to make the nine period, crossing down, crossing below the yellow indicator.
+[  470.66s ->   475.28s] Alert name, exit, trade, because of crossover.
+[  477.62s ->   480.41s] Cross over, just like that.
+[  480.53s ->   483.73s] And then in here, I'm going to post the one for the specific exit.
+[  483.83s ->   487.21s] You can see here, it says exit, because I'm going to exit a specific trade.
+[  487.21s ->   491.43s] Just like that, I can exit the trade when that happens.
+[  491.83s ->   496.73s] So guys, there's so many customizations you can do, because on trading view, you can even build your own custom indicator.
+[  497.31s ->   498.89s] So that's how awesome it is.
+[  499.51s ->   503.25s] Guys, that's how simple it is to automate even the most complex trades.
+[  503.33s ->   514.69s] You just simply take the webhook URL from the options auto trader, connect it into whether using trading view, trend, spider, whatever it is, to automate your strategy, and even have it managed for you.
+[  514.69s ->   516.25s] So guys, I hope that makes sense.
+[  516.25s ->   519.63s] If you have any questions, open this chat box and let me know.
+[  519.69s ->   522.31s] I'd love to help you through it to set up your own strategy.
+[  523.21s ->   524.89s] Again, thank you guys for watching.
+[  525.53s ->   532.37s] This has been the ultimate quick start guide to help you understand the best strategies, how to automate them, and how to start making passive income.
+[  532.79s ->   533.25s] All right, guys.
+[  533.39s ->   533.97s] See you later.
+[  533.97s ->   534.01s] See you later.
+[  534.01s ->   534.05s] See you later.
+[  534.05s ->   538.03s] See you later.
+[  538.03s ->   541.91s] See you later.
+[  541.91s ->   544.11s] See you later.
+[  544.11s ->   545.05s] See you later.
+[  545.05s ->   545.11s] See you later.
+[  545.11s ->   545.15s] See you later.
+[  545.15s ->   545.21s] See you later.
+[  545.21s ->   545.35s] See you later.
+[  545.35s ->   545.41s] See you later.
+[  545.41s ->   546.13s] See you later.

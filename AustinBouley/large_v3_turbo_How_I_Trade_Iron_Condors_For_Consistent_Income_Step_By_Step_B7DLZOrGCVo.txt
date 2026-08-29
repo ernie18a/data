@@ -1,0 +1,191 @@
+[    0.00s ->     4.36s] Hey guys, welcome to lesson number four on iron condors.
+[    4.44s ->     8.70s] This is a very great strategy for people who like smaller risk.
+[    8.84s ->    14.02s] Why an iron condor trade is a defined risk trade, as I'll be discussing further in this lesson,
+[   14.38s ->    17.82s] which means it requires less buying power to put on these trades.
+[   18.10s ->    22.56s] So if you have a smaller account or you like having capped losses, this is for you.
+[   22.56s ->    30.72s] So this was placed right after the strangles lesson because an iron condor is essentially
+[   30.72s ->    35.48s] a strangle that has defined risk, which I'll explain here in a second.
+[   35.86s ->    40.38s] So when we sell strangles, we pick two points that we want the stock to stay between.
+[   40.58s ->    42.76s] We're doing the same thing with iron condors.
+[   42.92s ->    44.46s] We just have defined risk.
+[   44.52s ->    45.56s] So let's dive into it.
+[   45.62s ->    50.72s] So when I say that all, because you'll see that it's very similar to a strangle.
+[   50.72s ->    52.90s] Um, it's just a tad different on buying power.
+[   53.02s ->    57.82s] So, uh, first off, you're looking, uh, it works best in markets that are slower markets or
+[   57.82s ->    62.62s] side or sideways markets, AKA markets that aren't shooting up or down.
+[   62.62s ->    64.52s] You want a very slow moving market.
+[   64.76s ->    70.22s] It works best for people who want slow, consistent profits, but they also can't handle unlimited
+[   70.22s ->    75.96s] risk either because they have a smaller account and they have to restrict their buying power
+[   75.96s ->    77.72s] or their risk preference.
+[   77.72s ->    82.72s] They don't like undefined, potentially unlimited loss trades, and they don't like the idea
+[   82.72s ->    83.38s] of a stop loss.
+[   83.48s ->    87.48s] They want iron condors, which have the stop loss built into the trade structure.
+[   88.52s ->    93.24s] Next cons of the strategy is because it's defined risk trades, the same for all the, uh,
+[   93.24s ->    94.22s] defined risk trades.
+[   94.34s ->   100.38s] And it takes longer to make a profit because we have so many different options legs to make
+[  100.38s ->   102.02s] up this trade, which we'll see in a second.
+[  102.36s ->   106.30s] Um, all of it working together, it takes longer to realize a profit.
+[  106.30s ->   109.68s] And so because of that, it, it takes a while.
+[  109.80s ->   114.56s] You have to be in the trade longer, be exposed to the market longer in order to see the same
+[  114.56s ->   117.58s] profit you would with, let's say a strangle or just selling a normal put.
+[  118.42s ->   121.64s] Next, you need full margin approval to do this trade.
+[  122.06s ->   124.84s] Um, so again, if you're trading with tasty trade, that'd be the works account.
+[  124.84s ->   129.56s] Um, but unlike other strat, uh, strategies we discussed, it takes a lot less buying power.
+[  129.66s ->   135.36s] So for ES, depending on the strikes you pick, we're talking about a $2,000 buying power usage.
+[  135.36s ->   139.24s] And in spy, we're talking about a $1,000 buying power usage.
+[  139.24s ->   143.26s] So a way smaller than 10 and 20,000 that we've been discussing.
+[  144.11s ->   146.11s] How is the strategy constructed?
+[  146.41s ->   150.03s] Well, we use a put credit spread and a call credit spread.
+[  150.11s ->   151.97s] These are two things looking at it together.
+[  151.97s ->   153.61s] Here's another way of putting it.
+[  153.73s ->   158.17s] We look at the range we want the stock to be in and we put some extra things on it.
+[  158.21s ->   162.13s] So let's say we were doing our call here and our put here, meaning that we want the stock
+[  162.13s ->   165.01s] to stay above this level and below this level.
+[  165.11s ->   166.77s] This is, this is what a strangle would do.
+[  166.91s ->   172.65s] Then we come back after selling these options and we buy a call above it and we buy a put below
+[  172.65s ->   172.85s] it.
+[  173.05s ->   175.09s] This defines our trade.
+[  175.23s ->   178.09s] This adds a set risk to these positions.
+[  178.09s ->   184.37s] So now we have the ones that we sold and then we go out a tad further and we buy those options
+[  184.37s ->   186.81s] to define our risk.
+[  187.61s ->   188.13s] All right.
+[  188.19s ->   189.21s] Oops, I didn't reset this.
+[  189.29s ->   189.91s] It's going to dashboard.
+[  190.13s ->   190.27s] Okay.
+[  190.67s ->   192.17s] So to define our risk.
+[  192.17s ->   195.71s] And so that's what's called a put credit spread and a call credit spread.
+[  195.81s ->   199.97s] When you sell a call first and then you buy a call, this is a call credit spread.
+[  199.97s ->   203.91s] When you sell a put and then buy a put, this is called a put credit spread.
+[  204.15s ->   208.35s] Put, put, put credit spreads make money when the, when the market goes up, call credit
+[  208.35s ->   209.99s] spreads make money when the market goes down.
+[  210.11s ->   213.17s] Thus, by staying in this level, we're making the max profit.
+[  213.17s ->   216.03s] When we get outside of these ranges, that's when we start losing money.
+[  216.79s ->   217.31s] All right.
+[  217.35s ->   218.27s] So that's what that is.
+[  218.57s ->   221.05s] I'm combining a put credit spread and call credit spread.
+[  221.13s ->   224.11s] Like I just mentioned, it makes money when it stays in between two zones.
+[  224.25s ->   225.93s] How far out in the future do we go?
+[  226.01s ->   229.09s] Well, 45 days to 120 days is recommended.
+[  229.09s ->   231.63s] So here's what the profit graph looks like.
+[  231.65s ->   235.21s] It's the same thing for a strangle, except when you go down a bit further here, then
+[  235.21s ->   236.43s] your losses are capped.
+[  236.43s ->   241.91s] So these will eventually flat, will flatten out to, to, to the downside to give you a
+[  241.91s ->   247.35s] defined risk on the downside because we, we, we bought those options that are further
+[  247.35s ->   247.63s] out.
+[  247.85s ->   251.69s] So early man, early management, how do, how do we manage this trade?
+[  251.69s ->   257.31s] Well, tasty live at all the metrics and stats that they have tells us that it's best to
+[  257.31s ->   262.55s] manage an iron condor at 21 days until expiration, which means there's 21 days left until, until
+[  262.55s ->   263.43s] the trade expires.
+[  263.67s ->   270.39s] This is typically best for an iron condor because it already has a stop loss, a predefined risk
+[  270.39s ->   271.55s] built into the trade.
+[  271.71s ->   275.25s] And so because of that, we don't really need to add a stop loss to it.
+[  275.27s ->   280.19s] Instead, we're looking at the time component and reducing risk by reducing the time that
+[  280.19s ->   280.81s] we're in the trade.
+[  280.81s ->   282.83s] Next is take profit.
+[  282.83s ->   287.25s] So typically just like a strangle, we look to take profit between 10 to 50%.
+[  287.25s ->   292.49s] However, if we're looking at tasty live mechanics, if you go through all their research, the research
+[  292.49s ->   296.69s] shows that again, it takes longer with a defined risk trade to hit that profit.
+[  296.93s ->   300.65s] So when you're selling a strangle, you're, you're, you're, you're typically targeting a
+[  300.65s ->   301.61s] 50% return.
+[  301.77s ->   307.17s] Um, but when you're selling an iron condor, it's best to do a 40% take profit.
+[  307.17s ->   313.21s] They learned that 40% is going to be equivalent to roughly the 50%, not in money return amount,
+[  313.65s ->   319.33s] but in about the timing and the risk and all that you want to talk about a 40% return when
+[  319.33s ->   320.71s] you're trading an iron condor.
+[  320.79s ->   322.89s] So what are some best practices for this?
+[  322.95s ->   326.93s] Well, if we use the tasty live mechanics, we're looking at a put credit spread with a
+[  326.93s ->   331.95s] 16 Delta defining our main range with five Delta wide puts.
+[  332.07s ->   334.73s] Um, so that gives us a larger risk, but still defined.
+[  334.73s ->   338.71s] And then we have 45 days until X, uh, uh, expiration.
+[  338.79s ->   340.43s] So we go 45 days into the future.
+[  340.53s ->   344.09s] We close it when there's 21 days, uh, or less left.
+[  344.35s ->   347.73s] Um, and then we take about 50 to 40% of the initial credit.
+[  347.83s ->   349.49s] Again, 40% is recommended.
+[  349.71s ->   353.83s] Now, again, if you want this document, click down below, you can follow the steps to automate
+[  353.83s ->   355.25s] an iron condor strategy.
+[  355.43s ->   358.15s] Uh, but I'll just walk you through the steps since I'm here with you right now.
+[  358.15s ->   363.55s] So first thing we're going to do is click on create an auto trader, uh, connect our account
+[  363.55s ->   368.27s] and guys, remember something that I do for you is I do all the heavy lifting.
+[  368.45s ->   370.13s] So you can click on pick an auto trader.
+[  370.33s ->   376.65s] And I preloaded under our passive income strategies, the wide iron condor strategy that tasty live
+[  376.65s ->   379.57s] has all their metrics for that has a really high win rate and does great.
+[  379.57s ->   380.69s] And it's right here.
+[  380.69s ->   384.73s] And you can define what you want, what you want to trade with spy, SPX, ES, et cetera.
+[  385.09s ->   386.17s] So just like that.
+[  386.53s ->   389.23s] Now let's actually reset it from scratch and do it.
+[  389.29s ->   390.77s] So let's create the iron condor.
+[  390.77s ->   396.07s] Uh, so again, as always, I preload all the best practice, all the best practices for
+[  396.07s ->   396.27s] you.
+[  396.43s ->   399.27s] If you know how you like trading an iron condor, you can do it that way.
+[  399.27s ->   403.87s] So MES right here, um, again, you can define what you want to do.
+[  403.87s ->   407.19s] Uh, so just like that, let's say MES is great for smaller accounts.
+[  407.19s ->   409.51s] So I'll, so I'll just start there 45 days until expiration.
+[  409.51s ->   413.39s] This is the best practice 16 Delta, 16 Delta for our normal ones.
+[  413.39s ->   416.23s] And then our further ones out is the five Delta five Delta.
+[  416.23s ->   418.63s] So this looks like exactly how it's structured.
+[  418.95s ->   422.77s] Um, again, that is an iron condor all built in for you.
+[  423.61s ->   425.51s] Next, how often do you want to enter the trade?
+[  425.57s ->   426.63s] Well, that depends on you.
+[  426.77s ->   429.79s] Um, but again, this is set up for once, once a week on Wednesdays.
+[  429.83s ->   434.33s] Again, if we want to do it multiple times a week, we'll click on day, Monday, Wednesday,
+[  434.51s ->   436.43s] Friday as the days we want to trade that on.
+[  437.15s ->   437.55s] Perfect.
+[  438.01s ->   439.81s] Next is take profit percentage.
+[  439.81s ->   441.99s] Again, 40% is best practice.
+[  442.45s ->   442.89s] Stop loss.
+[  442.89s ->   446.95s] We can add, but we don't necessarily need because it's already defined risk for us.
+[  446.95s ->   450.21s] So we'll add 21 days until early management.
+[  451.16s ->   452.18s] Again, no stop loss.
+[  452.24s ->   452.76s] That's fine.
+[  453.08s ->   454.44s] Buying power allocation.
+[  454.62s ->   456.90s] How much money do I want to put into this trade?
+[  456.96s ->   459.98s] Or I should say, how much money do I want to allow the auto trader to trade with?
+[  460.20s ->   462.26s] AKA what amount of money will it cap out at?
+[  462.28s ->   464.12s] I'll keep placing trades until what amounts.
+[  464.52s ->   467.46s] Um, so again, we have a defined risk trade, so it takes a less amount of buying power.
+[  467.54s ->   468.84s] So I'd say $5,000.
+[  469.26s ->   471.88s] Uh, it's probably more, more than, more than enough for this trade.
+[  471.88s ->   476.45s] Just like that, you can see here, it takes about $200 per trade.
+[  476.69s ->   480.45s] Um, I'll make about $60 per trade based on my profit percentage.
+[  480.53s ->   485.15s] And here's about my risk for trade, um, based on the width of that trade.
+[  485.15s ->   487.13s] So that's kind of, that's kind of what I'm looking at.
+[  487.19s ->   491.85s] That's how I set up a iron, an iron condor auto trader, uh, that will trade for me.
+[  492.71s ->   494.57s] And that's exactly how it's structured again.
+[  494.57s ->   498.27s] So if you're looking for, uh, for, for, for a strategy that makes money when a stock stays
+[  498.27s ->   502.53s] between a certain range, but you want to use less buying power and you want to find risk.
+[  502.53s ->   504.63s] An iron condor is the strategy for you.
+[  504.71s ->   508.37s] Also more times than not, because an iron condor is a defined trade.
+[  508.53s ->   512.25s] This is the go-to strategy for people who do zero DTE trading.
+[  512.55s ->   516.37s] Um, so people who like trading on like every single day.
+[  516.41s ->   519.35s] Um, and so what they do is at the beginning of every single day, right?
+[  519.35s ->   520.23s] When the mark, right?
+[  520.23s ->   525.83s] When, when the market opens, they will sell a zero DTE iron, uh, iron, iron condor.
+[  525.97s ->   529.69s] This is actually what tasty live has been doing and testing for a while now.
+[  529.69s ->   531.03s] And they actually enjoy it.
+[  531.03s ->   533.25s] And they're having win rates of upwards of 90%.
+[  533.25s ->   536.55s] So if you want to do that, uh, here's the best practices for that.
+[  536.57s ->   537.53s] I should kind of share that.
+[  538.11s ->   542.51s] First off, I want to say again, if we go to pick an, uh, pick an auto trader, you can actually
+[  542.51s ->   548.97s] go to zero DTE strategies and use their iron condor, uh, strategy, the zero, uh, D, D, DTE
+[  548.97s ->   549.27s] one.
+[  549.61s ->   554.31s] Um, so I'm actually going to set this up with SPX, click on SPX here, and I'll show you what
+[  554.31s ->   554.91s] that looks like.
+[  554.91s ->   556.91s] If I go back, here's all the best settings.
+[  556.91s ->   563.11s] So we go SPX, we go, uh, we trade zero days until expiration.
+[  563.11s ->   566.95s] The iron condor is structured based on dollar amount away from the stock price.
+[  566.95s ->   569.59s] So $20 away and then $40 away.
+[  569.77s ->   571.23s] So that creates that structure.
+[  572.50s ->   574.00s] We enter every day.
+[  574.46s ->   576.92s] We can also avoid foam C days.
+[  577.46s ->   582.28s] So not to enter on foam C days, we can do a take profit percentage of 15%.
+[  582.28s ->   585.50s] They said 10 to 30% is good on the zero DTE trade.
+[  585.50s ->   587.48s] So 15% is preloaded by default.
+[  587.88s ->   590.24s] Uh, we also have a 200% stop loss by default.
+[  591.64s ->   593.80s] Next, you just put in the buying power you want to use.
+[  593.80s ->   598.08s] And that's how you structure a zero DTE iron condor trade, which a lot of
+[  598.08s ->   598.80s] people on here do.
+[  598.80s ->   601.80s] So it's a very great strategy for those of you who like to be more active, but
+[  601.80s ->   602.96s] also have defined a risk.
+[  603.24s ->   606.86s] Um, so again, that's how you use iron condors for both long-term and short-term
+[  606.86s ->   607.50s] strategies.
+[  607.56s ->   608.76s] Again, I hope that makes sense.
+[  608.76s ->   611.80s] If you have any questions, let me know, and I'll see you in the next lesson.

@@ -1,0 +1,69 @@
+[    0.00s ->     6.26s] In this video, I'm going to teach you the exact strategy that I used to make $912 trading ES
+[    6.26s ->    10.86s] futures options. It's so simple that anybody can do it. I'm going to walk you through it step by
+[   10.86s ->    15.28s] step. Now to show you that I'm not BSing you, here's my trade log from Tasty Trade where I did
+[   15.28s ->    20.36s] this ES futures. I placed the trade here on August 6th, which aligns with this entry point on the
+[   20.36s ->    24.46s] chart. I'll explain how I knew to enter there in a second. And then you can see here that I exited
+[   24.46s ->    29.60s] less than a month later, less than 30 days later, September 4th, I exited this trade,
+[   29.60s ->    35.58s] which aligns to this here. And I'll tell you why I exited there as well. And that resulted in a $912.50
+[   35.58s ->    41.62s] profit. And we factor in commissions and fees about $900 profit. So not too bad for a trade that I
+[   41.62s ->    46.56s] barely managed. So let me walk you through exactly how that's done. Now, not only was I making that,
+[   46.62s ->    50.44s] but here's a software that kind of tracks my performance. And you can see here, I'm making
+[   50.44s ->    57.70s] a little over $3,000 per month just by using the same strategy. So let's dive into it right now.
+[   57.70s ->    61.24s] Here's how we trade the strategy. It's called the 1-1-1 strategy. If you've never heard of it
+[   61.24s ->    66.58s] before, you're going to love this. If you have, don't worry, because I have some things to highlight
+[   66.58s ->    71.48s] with this specific trade. So first thing we're going to talk about is how to structure the trade.
+[   71.76s ->    77.60s] So again, this is a 1-1-1 trade. So 1-1-1. What does this mean? Let's call it 1-1-1 because
+[   77.60s ->    82.56s] there's three different puts we're going to be using. The first put that we're going to be trading
+[   82.56s ->    88.68s] is going to be a long put. We're going to buy a put at the 25 Delta mark. I'll explain why in a
+[   88.68s ->    92.70s] second, but we're going to buy a put at 25 Delta. The next one put we're going to do is we're going
+[   92.70s ->    98.94s] to sell a put at 23 Delta. And then we're going to sell another put at 10 Delta. I'm going to walk
+[   98.94s ->   102.72s] you through what this looks like in the broker here in a second. But essentially what we're doing
+[  102.72s ->   107.30s] here is with these two right here, we're creating a put debit spread. Now, what is a put debit spread?
+[  107.30s ->   113.04s] A put debit spread makes money on the way down. We use this to help hedge the trade. So if we're
+[  113.04s ->   118.80s] ever in this trade for a while, which we tend to be about 20 to 30 days, if the market to go in a
+[  118.80s ->   124.52s] downtrend, we have some protections that we don't have a huge loss. Then again, we have this remaining
+[  124.52s ->   129.64s] put that we sold, which is a short put, which is where our income and profit is coming from.
+[  130.00s ->   134.40s] So this trade structure is called a 1-1-1 trade structure. Now I'm going to show you how to set up
+[  134.40s ->   138.90s] on the brokers that you have more understanding. So they go to trade. This is done on ES futures.
+[  139.16s ->   143.84s] Just for example, you can do this on any asset. I like to go out to about the 90 day market. The
+[  143.84s ->   149.72s] ideal market is between 60 to 120 days. So again, you can go anywhere in there. If you go closer to
+[  149.72s ->   152.98s] 60, you'll be able to close the trade faster, which will have a smaller profit because there's
+[  152.98s ->   158.14s] less time decay factored in. If you go closer to 120, the trade will take longer to close, maybe about
+[  158.14s ->   162.66s] 45 days, but you'll be able to make more money. I found the sweet spot to be around 90 days.
+[  162.66s ->   167.08s] So if I'm doing that, then I can go here to around the 93 day mark of my DTE.
+[  167.56s ->   170.68s] Once I do that, I'm going to structure the trade exactly as I told you. You can see I have some
+[  170.68s ->   175.80s] other positions open. What we're going to do is we're going to buy the 25 Delta. So you can see
+[  175.80s ->   181.24s] Delta right here in this column. I'm going to buy the 25. I'm going to sell the 23. This creates a
+[  181.24s ->   186.38s] put debit spread, which means as the market goes down, it makes money, but that's like help us make
+[  186.38s ->   190.90s] money in a bullish market, which is almost what always the market is in 80% of the time at least.
+[  190.90s ->   196.76s] So I'm going to go down here to the 10 Delta mark, and I'm going to sell this. By doing that,
+[  196.84s ->   203.24s] it creates a net profit trade. If we look at the numbers here, this trade has a 96% chance of making
+[  203.24s ->   210.76s] money of winning, and it's going to make me $1,700 if it wins, which is great. Now we do have some
+[  210.76s ->   216.56s] management rules to follow, but let's take a look at that here to understand that a bit better.
+[  216.56s ->   221.82s] That's how we structure the trade. Next, how do we manage the trade? I like to manage this trade at
+[  221.82s ->   227.26s] a 50% take profit. Now, a lot of people, again, this is a popular strategy, and a lot of people
+[  227.26s ->   233.76s] will run this all the way up to 90%, 95% profit. The reason why I don't is because these trades do
+[  233.76s ->   238.02s] have a lot of risk. Although you have to put debit spread that kind of slows your losses and
+[  238.02s ->   244.16s] downtrends, you're still opening yourself up to a larger loss. And so because of that, I like to turn
+[  244.16s ->   249.86s] trades over quicker. Because if I go to a 90% profit, I'm then going to have, if I'm doing one
+[  249.86s ->   254.38s] trade a week, I'm going to have four or five trades open. And if each trade can lose $5,000,
+[  254.82s ->   261.64s] that's a lot of risk on the table. So instead, I take a 50% profit and able to close trades every
+[  261.64s ->   266.54s] three weeks or so. And this way, I have less trades open, maybe only three trades now instead
+[  266.54s ->   272.68s] of six or seven. So that way, I can reduce my risk by having as few trades open as possible and
+[  272.68s ->   276.42s] closing and turning trades over quickly. So that's why I have a 50% take profit.
+[  277.30s ->   281.14s] Now, stop loss varies depending on what you want to do. A lot of the people that I teach,
+[  281.22s ->   286.04s] they have anywhere from a 200 to a 300% stop loss. I personally like the 300% stop loss,
+[  286.10s ->   290.60s] even time to move. Now again, this will lead to larger losses, of course, but a 300% stop loss
+[  290.60s ->   295.54s] is where we play this. So that's how you structure the trade. That's how you manage the trade. Now,
+[  295.54s ->   301.34s] how do we get good entries? Okay, we want to make sure we're only trading during uptrending markets.
+[  301.34s ->   308.20s] And then again, ideally, red days. So this is how you have an advantage and an edge in the market.
+[  308.32s ->   313.86s] Okay, if the market is trending down, there's no reason to enter this trade. This is a bullish
+[  313.86s ->   319.82s] strategy. So we're only going to wait until the market is having higher highs and higher lows,
+[  319.94s ->   325.36s] aka we are in a consistent uptrend. This is what I saw here, consistent uptrend. Then we add a few
+[  325.36s ->   330.84s] period of red days. When we have a red day in the market, that increases volatility,
+[  330.84s ->   336.78s] which increases the chances that we get to collect more money as an option seller. We get to push our
+[  336.78s ->   341.54s] strike prices out further away, which gives us a higher win rate. Across the board, as an office
+[  341.54s ->   346.92s] seller, when you enter on red days, it's better. So when I saw this consistent uptrend with four
+[  346.92s ->   351.22s] red days in a row, I thought this is the perfect time to enter the 1-1-1 trade, enter the trade,
+[  351.22s ->   357.82s] was able to close it less than 30 days later for a $912 profit. That is the strategy. I hope you
+[  357.82s ->   361.50s] enjoy it. Go put it into action and I will see you in the next video.

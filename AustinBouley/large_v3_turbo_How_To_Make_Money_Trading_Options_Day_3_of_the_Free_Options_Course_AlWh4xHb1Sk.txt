@@ -1,0 +1,114 @@
+[    0.00s ->     4.84s] Hey guys, what's up? It's ABTrades, and I run a YouTube channel where I teach people how to day trade options.
+[    5.52s ->    15.72s] Today is day three of the free options course, where I'm going to talk about how exactly we make money trading these contracts, options specifically.
+[   16.40s ->    19.54s] So again, on day one, we talked about what exactly is an options contract.
+[   19.90s ->    23.22s] On day two, we talked about how to read the options table, and now it's day three.
+[   23.22s ->    29.26s] So if you want to keep in contact with what I'm doing, and you want to keep up with the videos that I'm releasing,
+[   29.68s ->    36.14s] please subscribe and turn on the alerts so that you can get your videos to come, and go back on the channel to watch the previous ones.
+[   36.58s ->    44.48s] So, to best explain how we make money trading these contracts, I thought I might as well go into the on-demand feature,
+[   44.48s ->    53.02s] which is going back in time and watching the contracts move, so that I can fully explain and show y'all in real time, quote-unquote,
+[   53.22s ->    55.52s] how this will work.
+[   56.54s ->    61.02s] So, we already know what will happen in SPY.
+[   61.42s ->    68.28s] And again, if you're wondering, Austin, why don't you go do a live video to explain to me what's happening when you're really trading.
+[   68.60s ->    70.38s] Okay, I have a few live videos up.
+[   70.42s ->    71.88s] I'm trying to get more up right now.
+[   72.00s ->    73.16s] I'm in the middle of finals.
+[   73.16s ->    86.52s] I'm just trying to record as many of these free options training videos as I can so that I can set them up on a schedule so that I'll come to you while I'm studying for finals.
+[   87.26s ->    88.86s] Anyway, sorry, that was a tangent.
+[   89.46s ->    90.88s] So, let's get back to this.
+[   90.88s ->    98.78s] So, when we go, we know just because this day has already happened because it's the on-demand feature that is going to drop.
+[   99.12s ->   102.26s] So, we're going to look to buy puts, which is making money on the way down.
+[  102.86s ->   111.00s] So, first I'm going to explain how exactly do we pick a strike price, like which contract do we pick.
+[  111.00s ->   114.50s] All right, so the market has already been open for 12 minutes.
+[  115.02s ->   118.28s] We can see the volume that has already ensued for the current day.
+[  118.42s ->   122.60s] Remember, volume that we talked about yesterday shows what has happened today.
+[  123.42s ->   124.92s] Again, this is the call side.
+[  125.00s ->   125.58s] This is the put side.
+[  125.68s ->   130.32s] We know it's going to go down based on certain strategies and we already know the day.
+[  132.37s ->   140.65s] So, we're going to look at, you know, the most open interest, which is around here, but also the most volume for the day as well.
+[  140.65s ->   142.83s] And you also want to look at this.
+[  143.11s ->   144.23s] So, again, this is SPY.
+[  144.35s ->   151.33s] So, we really don't need to look at the volume and open interest because we will almost automatically get filled.
+[  152.05s ->   158.07s] However, when you're trading other stocks, you do need to watch out for the open interest and volume because it may not be that liquid.
+[  158.69s ->   168.34s] So, for instance, since we're trading SPY, I would go more with around, we can do the $0.35 just for that.
+[  168.34s ->   173.20s] It means it's $35 because I know that a lot of people in the group are trading with smaller stocks.
+[  173.58s ->   175.74s] So, again, the open interest is $2,000.
+[  175.88s ->   176.24s] Amazing.
+[  176.48s ->   178.26s] The current volume for the day is almost $900.
+[  178.92s ->   179.74s] That's amazing.
+[  180.22s ->   186.68s] But now, the next thing I want to talk about, so that is how we picked our strike price because the open interest and volume and the pricing of the contract.
+[  187.64s ->   189.80s] Now, what type of order do I place?
+[  189.88s ->   192.16s] Do I place a market order or do I place a limit order?
+[  192.16s ->   206.24s] Always, always, always place a limit order because when you place a market order, even though there's been asked at $34 and $35 with a $0.01 spread, which we talked about yesterday, you could get filled at $0.20.
+[  206.54s ->   207.98s] You literally could get filled.
+[  208.54s ->   209.58s] Well, I mean, that would be lower.
+[  209.66s ->   210.04s] That would be good.
+[  210.42s ->   214.22s] I mean, you could get filled at $0.40 or at $0.45.
+[  214.22s ->   217.74s] I'm just trying to make the point that you can't control where you would get filled.
+[  217.88s ->   223.96s] Like, you can literally get chipped off a lot of money by entering a market sell or a market buy, just FYI.
+[  224.26s ->   235.68s] I mean, not so much in SPY because it's highly liquid, which means you will get some slippage, but including, like, other stocks that aren't as liquid or monitored as SPY contracts, you will get chipped off.
+[  236.00s ->   239.10s] So, always use a limit buy order and always use a limit sell order.
+[  239.10s ->   245.74s] Now, when it comes to, you know, stop losses or stop limits, do not set one.
+[  246.68s ->   248.66s] I have many videos talking about this.
+[  248.78s ->   249.02s] Why?
+[  249.18s ->   262.54s] Because the market makers who control the options tables on stuff, they will see your contract that you're trying, that you have a buy limit at $0.20, even though, I mean, a stop limit at $0.20, even though it's currently $0.35.
+[  262.54s ->   264.80s] And they will execute that order.
+[  264.92s ->   268.64s] They will immediately buy it for $0.20, even though the contract is not at that price yet.
+[  268.80s ->   273.88s] And then they will sell it at the current rate of $0.35, and they will make that profit.
+[  274.22s ->   278.94s] Again, do I know if they sell it immediately to make that profit?
+[  279.02s ->   279.54s] No, I don't know.
+[  279.66s ->   284.96s] All I know is that if you set a stop limit, it automatically gets executed, whether it's close to that price or not.
+[  284.96s ->   287.62s] So don't do that and always use a limit order to buy.
+[  288.18s ->   292.06s] So now I'm going to start up the chart again.
+[  292.60s ->   294.38s] So we're up here on SPY.
+[  294.52s ->   299.02s] We're going to bounce around here, and then we're going to get rejected through pre-market lows.
+[  299.40s ->   302.64s] So again, we're going to buy that contract that we were looking at here.
+[  303.22s ->   305.46s] We want to buy it a single leg.
+[  305.46s ->   312.20s] I think 10 contracts is a lot, but let's just do 5 just so we can look.
+[  312.30s ->   313.80s] Again, limit $0.35.
+[  314.32s ->   318.36s] You usually want to do the mid-price first when you're buying.
+[  318.52s ->   324.06s] If not, and you want to immediately get in, then go to a higher end of the price.
+[  324.42s ->   331.82s] I'm going to confirm and send that, and I will automatically get filled because that is what happens when you are doing paper trading.
+[  331.82s ->   340.68s] So again, we bought it at $0.36, and we bought a put because we're expecting to make money on the downside.
+[  341.16s ->   343.94s] So again, I just wanted to show y'all what is going to happen.
+[  343.98s ->   347.36s] I'm going to speed this up a bit because I don't want this video to be too long.
+[  347.46s ->   353.56s] I forget exactly when it starts to drop, but let's hope it's soon because we don't want to sit here all day
+[  353.56s ->   354.64s] because I don't want to waste your time.
+[  354.72s ->   355.52s] I don't want to waste my time.
+[  355.58s ->   356.30s] I got finals, man.
+[  359.05s ->   359.73s] Come on.
+[  359.77s ->   360.63s] Come on, SPY.
+[  360.71s ->   361.31s] We love you.
+[  362.27s ->   364.97s] I may have to fast-forward this or not.
+[  365.07s ->   365.39s] We'll see.
+[  366.82s ->   367.22s] You know what?
+[  367.50s ->   370.72s] That would be cool if I could trim this, but I can't.
+[  376.04s ->   377.80s] This is me getting frustrated because I have to wait.
+[  382.37s ->   383.91s] Oh, so I mean, I guess we can show you.
+[  383.99s ->   388.13s] Okay, so the put contract makes money on the way down, but since we're going up, let's look at the trade.
+[  388.75s ->   389.95s] We're losing money, right?
+[  390.05s ->   393.45s] Because it's going up instead of down.
+[  393.45s ->   395.93s] So we're currently down $2.50.
+[  396.73s ->   401.31s] Again, I just truly don't think that's right, but maybe that's because we're in fast mode.
+[  401.41s ->   406.15s] I feel like we would be down more like $5, $10, something like that.
+[  406.15s ->   409.61s] And I guess it must be dropping because it's currently up at $0.38.
+[  409.85s ->   410.53s] We're up $10.
+[  410.93s ->   411.71s] Let's look at the charts.
+[  412.45s ->   413.91s] Yes, we are starting to drop here.
+[  414.33s ->   417.61s] So as you can see, we bought in right here for $0.36.
+[  418.25s ->   422.03s] And when it drops, the premium of the contract starts to increase.
+[  422.59s ->   424.19s] Again, we talked about it in the first video.
+[  424.39s ->   426.09s] Premium just means the price of the contract.
+[  427.03s ->   431.97s] So again, as you can see, it's dropping, and the price is now about $0.40 a contract.
+[  432.41s ->   434.71s] Now it's at $0.42 a contract.
+[  435.23s ->   438.93s] So we're up $32.50 with five contracts.
+[  438.93s ->   443.97s] That means we spent roughly around $150, and we're now up $32.
+[  444.87s ->   447.17s] Again, it's going to drop more.
+[  447.17s ->   452.35s] We all know that because, again, this day has already happened,
+[  452.59s ->   456.05s] and I picked a move that was exaggerated so that you could fully see.
+[  456.49s ->   462.61s] So again, look how much bias dropped, and we're currently up $52 on this
+[  462.61s ->   465.63s] because put contracts make money on the way down.
+[  465.63s ->   468.35s] Again, the same thing happens with call contracts,
+[  468.47s ->   471.75s] and I'm sorry you guys had to wait for this all to work out.
+[  472.17s ->   474.27s] But I hope you all are enjoying these videos.
+[  474.49s ->   475.53s] Please like, comment, and subscribe.
+[  475.53s ->   477.57s] See you all tomorrow for day four.

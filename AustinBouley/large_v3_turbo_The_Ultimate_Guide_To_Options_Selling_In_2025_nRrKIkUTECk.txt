@@ -1,0 +1,265 @@
+[    0.00s ->     3.84s] In this video, I'm going to walk you through my ultimate guide to option selling.
+[    4.20s ->     8.92s] After personally trading for over eight years and trading through so many different types of markets,
+[    9.18s ->    11.96s] I realized I needed a system that actually worked for me.
+[   12.08s ->    15.10s] This is the system that I built, the mental frameworks that I worked through.
+[   15.30s ->    19.36s] I'm going to walk you through exactly how to use it so that no matter what market you're in,
+[   19.56s ->    25.56s] no matter what account size you have, you know exactly what to trade and when to trade at any given time.
+[   25.56s ->    30.62s] Now, before we dive into this, which shows you the exact strategy to use at the right time,
+[   30.74s ->    33.16s] I'm going to walk you through some options basics.
+[   33.50s ->    37.52s] If we're looking at options basics, you need to understand some fundamentals.
+[   38.22s ->    42.72s] When we sell puts, we're betting that the market will go higher.
+[   43.08s ->    46.72s] If you don't know what options are, there's two different types of options.
+[   46.82s ->    48.04s] There's calls and there's puts.
+[   48.50s ->    54.28s] When we sell these things, we get to create higher leverage, higher win rate trades.
+[   54.28s ->    55.52s] Now, how do we do this?
+[   55.76s ->    61.26s] A put, if we sell a put, we're betting that the market will stay above a certain level.
+[   61.52s ->    66.78s] So we can go all the way down here and say, hey, I bet that the stock will stay above this level.
+[   67.20s ->    67.72s] Guess what?
+[   67.76s ->    69.68s] The market's already above this level.
+[   69.78s ->    75.08s] So if it keeps trending higher or goes sideways or goes down, but it's above my level,
+[   75.30s ->    76.94s] I make money on this trade.
+[   77.30s ->    81.66s] So instead of trading stocks where I only make money when it goes in the direction that I picked,
+[   81.66s ->    85.04s] now I make money veritously no matter where it goes.
+[   85.04s ->    87.58s] And so that is the beauty of selling a put.
+[   88.00s ->    90.08s] Now, a call is the opposite.
+[   90.30s ->    94.60s] It makes money when you sell a call when it stays below a certain level.
+[   95.04s ->   100.24s] So that means that if we are bearish, if we want the market to go down, we think in general
+[  100.24s ->   101.04s] it's going to go down.
+[  101.12s ->   102.18s] We're going to be selling calls.
+[  102.56s ->   104.26s] If we think in general, the market's going to be going higher.
+[  104.32s ->   105.56s] We're going to be selling puts.
+[  106.02s ->   109.62s] So now that you know what you're doing in different market scenarios, now let's break down
+[  109.62s ->   110.40s] how this works.
+[  111.12s ->   112.82s] I do want to quickly cover though.
+[  113.08s ->   116.60s] There is something that holds back most traders and is one of three things.
+[  117.00s ->   121.46s] And if you can find out which one of these things are and fix it, you're going to stop
+[  121.46s ->   122.64s] struggling as a trader.
+[  123.10s ->   125.46s] So number one, it's the right strategy.
+[  125.58s ->   125.72s] Okay.
+[  125.80s ->   128.32s] You must have the right strategy.
+[  128.58s ->   132.04s] Now you might be wondering, how do I know if I have the right strategy or not?
+[  132.04s ->   132.40s] Okay.
+[  132.68s ->   134.10s] Here's a couple questions.
+[  134.72s ->   137.50s] Is your strategy mechanical?
+[  137.92s ->   142.66s] Meaning does it have a set of step-by-step rules that you can follow so that every time
+[  142.66s ->   144.08s] you do the exact same thing?
+[  144.38s ->   148.20s] If yes, you might have the right strategy, but there's still two more criteria.
+[  148.62s ->   152.74s] It also needs to have been back tested over at least the last 10 years.
+[  153.24s ->   158.06s] And it must have been traded with real money so that you know that it can still hold up in
+[  158.06s ->   159.32s] live market conditions.
+[  159.32s ->   163.68s] So if all those three things are met and you have that, congrats, you have the right
+[  163.68s ->   164.26s] strategy.
+[  164.48s ->   167.46s] If you don't, then you need the right strategy.
+[  167.70s ->   168.26s] Don't worry.
+[  168.36s ->   172.98s] Later in this video, I'll be showing you what the right strategy is for me at any given point
+[  172.98s ->   173.40s] in time.
+[  173.50s ->   176.84s] So you'll see that here in a second, but I just wanted to help you understand where
+[  176.84s ->   180.28s] your bottleneck is, where your issue is in trading.
+[  180.38s ->   180.56s] Okay.
+[  180.58s ->   182.52s] Cause a lot of people don't know what's holding them back.
+[  182.66s ->   184.90s] So if you have the right strategy, that's awesome.
+[  184.90s ->   187.14s] If not, I'm going to show you where to get it here soon.
+[  187.14s ->   191.78s] But if you do, the next thing that is probably wrong is you're not doing it in the right
+[  191.78s ->   192.26s] market.
+[  192.58s ->   197.38s] Guys, there are so many videos on YouTube of people teaching different strategies, but
+[  197.38s ->   198.92s] the problem is they don't tell you.
+[  199.00s ->   203.08s] And the real thing is I don't think they know either that the right strategy or a certain
+[  203.08s ->   206.12s] strategy only works in a certain type of market.
+[  206.38s ->   206.78s] Sure.
+[  206.82s ->   211.16s] You can have a great strategy, but if you're trading it in the worst market ever or the
+[  211.16s ->   215.78s] market that's not aligned for that type of strategy, you're not going to make money.
+[  215.78s ->   220.72s] Like I just mentioned, selling calls is for when you think the market will go down.
+[  221.00s ->   224.78s] So if the market's going up and you sell calls, sure, it's a good strategy, but are you going
+[  224.78s ->   225.24s] to make money?
+[  225.38s ->   226.16s] No, you're not.
+[  226.32s ->   227.40s] Same thing with selling puts.
+[  227.48s ->   229.70s] You sell puts when you want the market to go up.
+[  229.74s ->   233.56s] If the market's dropping and you sell puts, do you think you'll be able to do well?
+[  233.86s ->   234.22s] No.
+[  234.40s ->   237.74s] You need to align the right strategy in the right market.
+[  238.06s ->   239.90s] So how do you know if you're in the right market?
+[  240.10s ->   242.82s] You take your good strategy and you backtest it.
+[  242.82s ->   247.46s] And if you backtest it over a certain amount of time, you will be able to see when it does
+[  247.46s ->   248.72s] well and when it doesn't.
+[  249.08s ->   251.30s] Here's a terrible example of a backtested graph.
+[  251.36s ->   255.20s] You can see here it did poorly during this phase and then did really well here.
+[  255.36s ->   256.62s] So what am I going to do?
+[  256.84s ->   262.44s] I want to look at, okay, when the backtest performed exceptionally well, what part of the
+[  262.44s ->   263.94s] market was this lined up with?
+[  264.02s ->   265.20s] Was this a neutral market?
+[  265.30s ->   266.46s] Was this a sideways market?
+[  266.54s ->   267.56s] Was this a bearish market?
+[  267.56s ->   271.96s] So that I know, hey, this strategy performs best in this type of market.
+[  272.52s ->   275.52s] If you have the right strategy, but you're still not having success, you're probably not
+[  275.52s ->   276.54s] doing it in the right market.
+[  276.90s ->   280.46s] And again, later in this video, I'm going to show you how to know what the right market
+[  280.46s ->   283.24s] is and what the right strategy is as well.
+[  283.66s ->   287.10s] Next, if you have the right strategy in the right markets, then you probably don't have
+[  287.10s ->   288.86s] the right mindset, okay?
+[  289.06s ->   289.92s] What is mindset?
+[  290.10s ->   295.66s] You probably have a bad time or a bad job executing the trades, meaning you let emotions
+[  295.66s ->   299.88s] get in the way, you hold trades too long, you second guess yourself, you chase trades,
+[  299.98s ->   304.52s] you get out too late, whatever it is, it's the execution of it that's failing you because
+[  304.52s ->   306.56s] your mind, emotions are getting in the way.
+[  306.88s ->   309.00s] Fear, greed, all that stuff that you know of.
+[  309.38s ->   315.90s] And so if your mindset is getting in the way, the easiest solution to this is simply to automate
+[  315.90s ->   319.30s] away the emotion or automate your trading.
+[  319.44s ->   324.36s] If you do this, this ensures perfect, flawless execution every time.
+[  324.36s ->   327.96s] And if this sounds like something you want, this is what I help people and do, I help
+[  327.96s ->   332.38s] them install the right strategy in the right market and automate it so that it's fully handled
+[  332.38s ->   332.94s] for them.
+[  333.20s ->   336.50s] So click the first link down below if you're interested in getting my help with that.
+[  336.70s ->   340.90s] Now that we know all those things, let's dive into this specific framework right here, the
+[  340.90s ->   341.90s] one that I've been using.
+[  342.28s ->   347.28s] So first thing we need to understand is what type of market are we in?
+[  347.56s ->   353.02s] So for my clients, this is what they use and we call it the band zone, aka what is the
+[  353.02s ->   354.64s] trend?
+[  354.64s ->   355.96s] If the trend is an uptrend, that's a bullish zone.
+[  356.04s ->   357.74s] If the trend is a downtrend, it's a bearish zone.
+[  358.06s ->   361.66s] If it's sideways, it's stuck in between the support and resistance, that's a neutral zone.
+[  361.96s ->   366.68s] And then if we're overextended, aka we're too high or too low, we call those extreme
+[  366.68s ->   367.48s] bullish zones.
+[  367.86s ->   369.90s] Now, why do my coaching clients call it that?
+[  369.94s ->   376.06s] Because they get access to a proprietary indicator called the market analysis setup that tells them
+[  376.06s ->   377.10s] what the trend is.
+[  377.20s ->   379.10s] If it's in a green, it's an uptrend.
+[  379.16s ->   380.78s] If it's in a red, it's a downtrend.
+[  380.78s ->   386.36s] If it's gray, this is neutral, this is overextended, this is overextended, meaning that the market's
+[  386.36s ->   387.18s] going to bounce here.
+[  387.54s ->   391.88s] So again, this band is only available for my coaching clients, but you have to understand
+[  391.88s ->   395.70s] here, it doesn't matter if you have the band or not, just make sure you know what is the
+[  395.70s ->   398.78s] trend, whether you're seeing a moving average or something like that, okay?
+[  399.24s ->   403.86s] So if we're in an uptrend, you need to understand where it came from, okay?
+[  403.88s ->   409.62s] If we've been trending up, was it coming from something like a previous downtrend and now it's
+[  409.62s ->   413.78s] reversing, was it coming from just a consistent uptrend that's been lasting for a while?
+[  414.02s ->   418.38s] We look at the previous thing that it's done and that tells us a lot of what's going on.
+[  418.58s ->   422.56s] Just like in history, we say that things don't always repeat, but they rhyme.
+[  422.92s ->   424.08s] That's what we're seeing here.
+[  424.18s ->   426.90s] History can repeat, history can rhyme, things like that.
+[  427.14s ->   430.88s] And so we want to look at what was the history before we jump into this specific trend.
+[  431.20s ->   434.34s] So let me walk you through each specific zone so that you know what's going on.
+[  434.34s ->   440.37s] So if we're taking the market where it is right now, we can see here that the market
+[  440.37s ->   445.57s] is inside of this green zone, meaning that it's inside of the bullish zone.
+[  445.73s ->   449.53s] So when I come here and I start this decision tree, which tells me what to do, what's the
+[  449.53s ->   450.07s] band zone?
+[  450.21s ->   452.01s] Well, it's a bullish zone, so I'm coming here now.
+[  452.09s ->   453.67s] I'm tracing this down to the bullish zone.
+[  453.81s ->   454.05s] Cool.
+[  454.43s ->   458.61s] Now I ask myself, did it come from a previous extreme zone or did it come from a previous
+[  458.61s ->   459.39s] neutral zone?
+[  459.39s ->   464.23s] So did it come from up high and now it's trending down or did it come from below and
+[  464.23s ->   465.29s] it's now pushing up?
+[  465.51s ->   467.23s] Well, it's coming from below and now pushing up.
+[  467.31s ->   470.43s] So that tells me I'm coming from a previously neutral zone.
+[  470.81s ->   473.61s] So that tells me I'm a 100% bullish trade.
+[  473.69s ->   478.55s] That means all my strategies, the right market right now is a bullish market.
+[  478.73s ->   483.49s] So now that I know the market should be bullish, now I know I need to pick a right or great
+[  483.49s ->   484.43s] bullish strategy.
+[  484.65s ->   486.97s] And for me, this breaks down into two different avenues.
+[  486.97s ->   490.85s] If you're a futures trader breaks down to the one, one, one, if you're a non-futures trader
+[  490.85s ->   493.17s] breaks down to short put or put credit spread.
+[  493.67s ->   497.27s] So that's how you know what the right strategy is for the right market.
+[  497.39s ->   501.71s] And obviously we like using automation to automate this at that given point.
+[  501.81s ->   505.59s] So whenever the market shifts and changes our bots and the right strategy shifts with
+[  505.59s ->   509.35s] it so that no more emotions are stopping us from doing the right thing at the right time.
+[  509.87s ->   512.67s] So that was the current breakdown of the market.
+[  512.73s ->   516.77s] But as you can see here, if you're an extreme bullish, this is the playbook we follow.
+[  516.77s ->   519.29s] If you're a neutral zone, this is the playbook we follow.
+[  519.45s ->   523.83s] And bearish zone playbook, extreme bearish, this is the playbook we follow.
+[  524.03s ->   528.67s] If you want help installing this four bot system, four bot system playbook into your
+[  528.67s ->   530.17s] trading, click the first link down below.
+[  530.33s ->   534.09s] I would love to hop on a call with you to walk you through how this can work for you.
+[  534.55s ->   534.75s] Okay.
+[  534.97s ->   539.25s] So obviously there's so many different scenarios, but I wanted to give you a real case scenario
+[  539.25s ->   542.33s] of what happened during the 2025 tariff crash.
+[  542.33s ->   542.81s] Okay.
+[  542.81s ->   547.27s] Because I was able to make great money during this phase and a lot of people lost money.
+[  547.35s ->   550.65s] So I wanted to walk through how that happened over this period of time.
+[  550.99s ->   554.31s] Obviously we just assessed where the market currently is, but I want to walk through how
+[  554.31s ->   555.31s] we adjust and change.
+[  555.39s ->   556.37s] Okay, cool.
+[  556.49s ->   562.41s] So the market right here is inside of a bullish market, which if we follow here, we go bullish
+[  562.41s ->   565.77s] zone, previous, previously neutral, a hundred percent bullish.
+[  565.77s ->   568.93s] So I do a futures account, so that means I'm doing a one-on-one trade.
+[  569.01s ->   574.29s] So right here, I know I'm doing my one-on-one classic trade right here, which has about a
+[  574.29s ->   577.77s] 90% win rate, back tested, actual, all that stuff like that.
+[  578.39s ->   583.07s] And then I transition into a neutral market right here and a neutral market.
+[  583.25s ->   584.53s] Again, I go neutral zone.
+[  584.75s ->   585.55s] What's the trend?
+[  585.73s ->   587.75s] If I look at the prior trend, it's coming down.
+[  587.83s ->   589.19s] So it's actually a downtrend.
+[  589.25s ->   591.47s] So the neutral zone, but in a downtrend.
+[  591.47s ->   597.25s] So that tells me I am about 25% bullish, 30% bearish, and 10% sideways.
+[  597.77s ->   603.27s] So essentially I'm running a strangle here so that I can capitalize on both sides of the
+[  603.27s ->   607.27s] market with a bearish trade because the trend is down.
+[  607.35s ->   608.93s] And for me that they put debit spread.
+[  609.27s ->   612.69s] So I'm trading, you put debit spread, PDS trade to make money on the way down.
+[  612.93s ->   616.63s] Now, what happens when the market flips to bearish right here?
+[  616.63s ->   622.61s] It means I keep my PDS running so that my put debit spread is running.
+[  622.73s ->   625.29s] So now I have this bearish protection here.
+[  625.83s ->   631.29s] And the strangles, I trade these super far out so that I know, hey, I have time to be
+[  631.29s ->   632.27s] right on this trade.
+[  632.61s ->   637.13s] So instead of closing these for a loss, and I saw that we instantly hit this rejection
+[  637.13s ->   642.31s] period, what I did is I traded the put debit spread down to cover the losses of the strangles,
+[  642.41s ->   644.55s] then got into bullish trades here.
+[  644.55s ->   648.29s] The bullish trades pushed me back up to help me make money.
+[  648.85s ->   650.69s] And then the strangles then recovered.
+[  650.83s ->   652.71s] So now I make money on my strangles again.
+[  652.85s ->   653.99s] I made money on the put debit spread.
+[  654.03s ->   656.85s] I made money on this bullish and the market traded out.
+[  657.15s ->   659.23s] Now we're coming back to a normal bullish zone.
+[  659.53s ->   662.05s] So I come back to my normal 1-1 trades.
+[  662.19s ->   666.17s] And this is where the market stays 80% of the time is in this bullish market, meaning
+[  666.17s ->   667.71s] I'm using this go-to strategy.
+[  667.95s ->   670.61s] So that is how you adjust to every type of market, guys.
+[  670.67s ->   674.25s] So if you're trading one strategy and you have small one, small one, and they have one large
+[  674.25s ->   677.91s] loss that wipes out everything, it's because you're not doing it in the right market.
+[  678.35s ->   681.23s] And if, again, if you have all those things right, the right shot in the right market,
+[  681.23s ->   683.65s] but you're just stuck in emotions, make sure to automate it.
+[  683.69s ->   687.71s] So that's exactly what I help all my coaching clients do is solve the right strategy in the
+[  687.71s ->   691.67s] right market and automate to make sure you have flawless execution every single time.
+[  691.81s ->   694.79s] If you want help with that, click the link down below, and I'll see you in the next video.
+[  694.79s ->   694.83s] All right.
+[  694.83s ->   694.85s] All right.
+[  694.85s ->   695.13s] All right.
+[  695.13s ->   695.23s] All right.
+[  695.23s ->   695.29s] All right.
+[  695.29s ->   695.39s] All right.
+[  695.39s ->   695.79s] All right.
+[  695.79s ->   695.83s] All right.
+[  695.83s ->   695.89s] All right.
+[  695.89s ->   696.29s] All right.
+[  696.29s ->   696.39s] All right.
+[  696.39s ->   696.49s] All right.
+[  696.49s ->   696.79s] All right.
+[  696.79s ->   697.29s] All right.
+[  697.29s ->   697.39s] All right.
+[  697.39s ->   697.79s] All right.
+[  697.79s ->   698.29s] All right.
+[  698.29s ->   698.39s] All right.
+[  698.39s ->   699.29s] All right.
+[  699.29s ->   699.39s] All right.
+[  699.39s ->   700.29s] All right.
+[  700.29s ->   700.39s] All right.
+[  700.39s ->   701.29s] All right.
+[  701.29s ->   701.39s] All right.
+[  701.39s ->   702.29s] All right.
+[  702.29s ->   703.29s] All right.
+[  703.29s ->   704.29s] All right.
+[  704.29s ->   705.29s] All right.
+[  705.29s ->   706.29s] All right.
+[  706.29s ->   707.29s] All right.
+[  707.29s ->   708.29s] All right.
+[  708.29s ->   709.29s] All right.
+[  709.29s ->   710.29s] All right.
+[  710.29s ->   711.29s] All right.
+[  711.29s ->   712.29s] All right.
+[  712.29s ->   713.29s] All right.
+[  713.29s ->   714.29s] All right.
+[  714.29s ->   715.29s] All right.
+[  715.29s ->   716.29s] All right.
+[  716.29s ->   717.29s] All right.
+[  717.29s ->   718.29s] All right.
+[  718.29s ->   719.29s] All right.
+[  719.29s ->   720.29s] All right.
+[  720.29s ->   721.29s] All right.

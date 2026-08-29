@@ -1,0 +1,226 @@
+[    0.46s ->     7.11s] Welcome back. Today, I want to talk about what it means to have an infinite expectation.
+[    7.49s ->    12.83s] What happens when the expectation of a random variable is infinity? What does that actually
+[   12.83s ->    17.23s] mean? What are the implications? Let's look at an applied example. We're going to write out the
+[   17.23s ->    22.19s] analytical solution, and then we're going to go over to Python to try to get some intuition as
+[   22.19s ->    26.55s] to what's actually going on here. So let's consider this game. We're going to flip a coin
+[   26.55s ->    34.05s] until we see a tails. It's a very simple setup. The number of flips it takes to get a tails N
+[   34.05s ->    40.71s] is going to determine how much we receive as a payout from this game. So if it takes me,
+[   40.71s ->    49.87s] for example, four tries to flip a tails, my payout is going to be $16. So two to the fourth here.
+[   49.87s ->    57.75s] All right. A very natural question is to ask what the expectation or the expected value of this
+[   57.75s ->    65.51s] scheme is, right? The payout is a function of random variable N, where N is the number of coin flips
+[   65.51s ->    73.33s] required to see a tails for the first time. How can we go ahead and go about solving for this
+[   73.33s ->    80.23s] expectation? Well, the first thing we can do, if you want to try to get a grasp of the problem
+[   80.23s ->    84.57s] space is just draw out a tree diagram, some sort of like binomial tree situation here.
+[   85.45s ->    91.07s] So what I'm going to do is I'm going to start here and we are either going to flip a heads
+[   91.07s ->    96.49s] or we are going to flip a tails for our first coin toss. All right. We're going to assume that this
+[   96.49s ->   102.55s] is a fair coin. So I'm going to say that, let me move this a little bit down here. I'm going to say
+[  102.55s ->   110.43s] that C is our coin and we have heads with probability one half, tails with probability one
+[  110.43s ->   117.46s] half. So that means we have a one half probability of seeing heads for our first toss and a one half
+[  117.46s ->   124.44s] probability of seeing tails. Now, if we see tails, we know our payout. Our payout is going to be two to
+[  124.44s ->   131.40s] the first, right? So it's going to be $2 and the game ends. But if we see a heads, the game's going to
+[  131.40s ->   137.95s] keep on going. So we're going to go again, we're either going to see a heads, we're going to see a
+[  137.95s ->   144.25s] tails again with one half probability, one half probability. If we see a tails on the second toss
+[  144.25s ->   152.10s] here, we know our payout. It's going to be two squared, which is $2 or I'm sorry, $4, right? And
+[  152.10s ->   158.88s] otherwise we're going to keep on going. So hopefully now you can see what is going on here, right? We need
+[  158.88s ->   165.62s] to somehow account for the fact that this tree is going to go on forever, right? We're going to
+[  165.62s ->   173.89s] continue to have these nodes going on and on forever. All right. How can we solve for the
+[  173.89s ->   181.11s] expected value of this game? Well, the particularly keen amongst us will probably notice that this is a
+[  181.11s ->   186.91s] very common random variable. It's called a geometric random variable where we're essentially looking for
+[  186.91s ->   194.85s] a success in a series of independent trials. All right. So the success is throwing a tails
+[  194.85s ->   200.61s] and we know the probability mass function is well-defined and we can go ahead and write that
+[  200.61s ->   206.49s] out. But how does that help us find the expected value of this game? Well, we can use the law of
+[  206.49s ->   214.69s] total expectation. All right. So let's take a look at that. The expected value of this game
+[  214.69s ->   224.71s] is equal to the sum of the expected value of the game given N is equal to T times the probability
+[  224.71s ->   231.70s] that N is equal to T. Okay. So what is N? Well, N is our geometric random variable, right?
+[  232.60s ->   238.80s] N is the number of coin tosses that it takes to see a tails for the first time. In other words,
+[  238.80s ->   244.32s] it's a geometric random variable, right? Because we have independent trials, which are our coin flips
+[  244.32s ->   252.54s] and a success is seeing a tails. So this probability mass function is very well defined. So the PMF here,
+[  252.68s ->   260.73s] so the probability that N is equal to T is going to be equal to the probability of a success. So that
+[  260.73s ->   268.14s] is seeing a tails. We said we have a fair coin. So that probability is one half. So we'll say that it
+[  268.14s ->   278.45s] is one half times the probability of potential successive failures, which is just going to be
+[  278.45s ->   284.81s] the probability of the heads strung together. Okay. So we have the probability of the heads
+[  284.81s ->   294.35s] raised to the T minus one power. And we're going to have T equal to one, two, so on and so forth.
+[  294.35s ->   303.65s] All right. Why is this the case? Well, if N is equal to one, then it took one coin toss for us to see a
+[  303.65s ->   311.00s] tails. That happens with 50% probability. So we plug in one into this mass function. We can see that this
+[  311.00s ->   318.82s] becomes one because one half to the one minus one is equal to one. And then one times one half is just
+[  318.82s ->   328.00s] one half. All right. And that same logic continues. The probability of successive failures or flipping
+[  328.00s ->   333.82s] heads multiple times in a row is just going to be a series of one halves multiplied together,
+[  333.82s ->   343.32s] right? So if it takes us three tries to flip a tails, then it's going to be one half raised to the
+[  343.32s ->   349.96s] three minus one times the probability of a tails, which is one half. So that entire series together
+[  349.96s ->   356.38s] is clearly going to be equal to one half raised to the third power. That's the probability of seeing
+[  356.38s ->   365.31s] a tails on the third try. All right. So knowing this, knowing this probability mass function, and of
+[  365.31s ->   373.75s] course, everywhere else we have zero, we can just substitute this directly into the conditional
+[  373.75s ->   382.31s] expectation for the law of total expectation right here. And now that we know that the success or seeing
+[  382.31s ->   390.39s] a tails can only occur on a flip, right? We can't have zero flips. A tails can only occur on starting
+[  390.39s ->   396.71s] the first flip, second flip, so on and so forth. We know that T has to go from one to infinity.
+[  398.45s ->   404.63s] All right. So substituting this probability mass function in, we're going to get the sum from T equals
+[  404.63s ->   414.07s] one all the way to infinity of the expectation of G given N is equal to T times it's going to be one
+[  414.07s ->   428.78s] half times one half raised to the T minus one. Okay. So we took care of this guy here. That is the
+[  428.78s ->   433.75s] probability mass function of a geometric random variable. What about the conditional expectation
+[  433.75s ->   441.35s] of the game? Well, that's actually quite easy because N is no longer random. It's fixed at T.
+[  441.91s ->   450.07s] So what is the payout when N is equal to T of the game? We know the payout of the game is just going to
+[  450.07s ->   455.75s] be two raised to the N power. And if N is equal to T, we can just go ahead and substitute that in.
+[  455.75s ->   465.86s] So in other words, the expected value of G given N is equal to T is equal to two to the T, right?
+[  465.86s ->   473.94s] The payout is two to the N and N is fixed at T. So that makes this summation, the sum from T equals one
+[  473.94s ->   484.74s] to infinity of two to the T times one half times one half to the T minus one. Now we can go ahead and
+[  484.74s ->   494.18s] do a little bit of algebra. Okay. T to the minus one, we can separate as one half to the minus one.
+[  494.18s ->   501.42s] And we'll notice that that cancels out with the other one half. And if we go ahead and take the
+[  501.42s ->   508.86s] exponent, which is shared, we can group two and one half. So that means I can erase these guys.
+[  508.86s ->   521.78s] And then to group these, we can take the one half and the two as a product and raise it to the T power.
+[  522.74s ->   530.66s] Now, what do we notice here? Two times one half is one. So that means that it is the sum from T
+[  530.66s ->   536.82s] equals one to infinity of one, technically to the T power, right? But that's always going to be one,
+[  537.78s ->   547.11s] which is equal to infinity, right? The sum of one to T equals one to infinity of one is just going to be
+[  547.11s ->   556.17s] infinity. So this implies that the expectation of the game is equal to infinity. All right.
+[  557.21s ->   563.45s] So analytically, we don't find any expectation for the game, we should pay an infinite amount for the
+[  563.45s ->   570.49s] game. We have the opportunity to essentially, the expected value of the game is infinity.
+[  570.49s ->   576.01s] We expect to earn infinity if we play the game? No, not quite. So this is more of a story of
+[  576.01s ->   584.33s] inconsistency than infinity. And I didn't even have a deep understanding of this idea until I really
+[  584.33s ->   590.41s] started to dig into what's called St. Petersburg paradox here. So this is a very interesting case.
+[  591.05s ->   596.41s] And what happens here is the law of large numbers and the central limit theorem end up breaking down.
+[  596.41s ->   600.09s] So if we recall the law of large numbers, and I have a lot of videos on the central limit theorem,
+[  600.09s ->   605.53s] law of large numbers, so please check those out if you're unfamiliar. But as n arbitrarily increases,
+[  606.41s ->   613.69s] we tend to know in probability, right, it's a limiting case. So the limit as n approaches infinity
+[  613.69s ->   620.89s] of our sample is going to approach some sort of mean, right? So there's stability at infinity,
+[  621.53s ->   629.34s] right? So we say in probability, it's going to converge to a mean with certainty, right? But here,
+[  629.34s ->   636.14s] there's nothing to converge to, right? The expected value of this game is infinity. All right. And it
+[  636.14s ->   641.98s] seems kind of, you know, it's very intangible until you actually take a look at a simulation. So what I
+[  641.98s ->   647.74s] want to do now is I want to pivot, go over to Python, take a look at a simulation. I want to look
+[  647.74s ->   655.82s] at the law of large numbers, the central limit theorem for something that has a finite expectation.
+[  656.78s ->   660.70s] And then I want to look at the law of large numbers and the central limit theorem, essentially
+[  661.34s ->   667.50s] simulating this game and looking at the expectation and taking a look at how both cases converge.
+[  667.50s ->   671.66s] So what we're going to find is in the first case, the law of large number central limit theorem for
+[  671.66s ->   678.06s] the finite mean, we're going to have convergence as n arbitrarily increases. But for this game,
+[  678.06s ->   684.30s] since the expectation is infinity, really the moments don't exist in this case, right? They explode
+[  684.30s ->   689.74s] and there isn't this consistency. There's nothing to converge to. All right. So like I said,
+[  689.74s ->   694.54s] it's really more of a story of inconsistency than it is of infinity, but let's head on over to
+[  694.54s ->   699.10s] Python to get some intuition. All right. So we're over in Python now. And what I want to do is I want
+[  699.10s ->   706.06s] to talk about this idea of a finite expectation before we talk about an infinite expectation.
+[  706.06s ->   711.18s] So what we're going to do is we're going to use this geometric random variable n to illustrate the
+[  711.18s ->   718.46s] concept of a finite expectation and what it means for the expectation to converge and the implications
+[  718.46s ->   723.74s] in the law of large numbers and the central limit theorem. Okay. So we have this random variable n,
+[  725.08s ->   733.96s] which is distributed geometrically with a probability of success of one half. And consequently, we expect
+[  734.84s ->   746.62s] the expectation of n to be one divided by the probability of success, which is one half,
+[  747.50s ->   752.94s] which is equal to two. And if you think about it, this makes sense, right? Because the probability
+[  752.94s ->   762.38s] of success is one half. And on average, we would expect to see a success or a tails after two tosses,
+[  762.38s ->   768.06s] right? Two tosses of a coin. But this doesn't have to be just for a coin. This could be for any geometric
+[  768.06s ->   773.18s] random variable. But in general, it makes a lot of sense to think about it like a coin, right? So on average,
+[  773.18s ->   781.02s] we expect two tosses to see a heads, 50% chance, right? So how can we go about generating a geometric
+[  781.02s ->   785.50s] random variable in Python? Well, it's actually quite easy. So what I'm going to do is I'm going to import
+[  786.30s ->   797.66s] numpy as mp, import matplotlib.pyplot as plt. And we can use mp.random.geometric with the probability
+[  797.66s ->   804.62s] of success. So the probability of seeing a tails and ending the game of one half. And this is going
+[  804.62s ->   811.42s] to allow us to generate the number of tosses it was required for this one iteration to see a tails.
+[  811.42s ->   816.78s] So we run this, it took one toss, we run this again, it took two, we run this again, it took three,
+[  816.78s ->   824.02s] we run this again, took three, so on and so forth. We can continue to simulate this geometric random
+[  824.02s ->   832.07s] variable n. All right. So we know that the geometric random variable has a finite expectation, the
+[  832.07s ->   837.91s] probability mass function is very well defined, and we know that it converges at infinity. And we can see
+[  837.91s ->   842.87s] right here that the expectation is finite, it is two, right, you can think about it intuitively,
+[  842.87s ->   848.07s] but you can also think about it in the context of a geometric random variable. All right. So what I'm
+[  848.07s ->   853.72s] going to do now is I'm going to simulate an arbitrary number of these random variables, an increasing
+[  853.72s ->   863.56s] amount. All right. So I'm going to say for I in range, we'll go to 5000. I am going to say if I
+[  864.52s ->   873.64s] mod, let's do five is equal to zero. So every five, we are going to append the average of the geometric
+[  873.64s ->   879.64s] random variables that we've simulated to a tracker. So I'm going to say average is equal to this, I'm going
+[  879.64s ->   891.00s] to say trials is equal to this. And I am going to do trials dot append i, not trails, we want trials.
+[  893.05s ->   906.97s] And I am going to be appending this geometric random variable to a list that I call tracker.
+[  910.87s ->   915.51s] And then as I append the number of trials that we're on, I'm also going to append the new average
+[  919.94s ->   925.94s] to my average list. Okay, so if I run this, what's going to end up happening is I'm going to get
+[  925.94s ->   933.22s] two lists, I'm going to get one list of the trials, right, so zero geometric random variables,
+[  933.22s ->   941.30s] five, 10, 15, so on. And then I'm going to get a running average based on the number of trials. So
+[  941.30s ->   951.16s] five geometric random variable simulations, we're going to have an average of 2.1666, so on and so
+[  951.16s ->   958.92s] forth. Okay. And what you're going to notice here is we expect this to converge to two, and you're
+[  958.92s ->   968.33s] going to see this converge to two. Visually, if we do PLT dot plot trials, we're going to plot the average,
+[  968.33s ->   978.76s] we'll do PLT dot ax H line. The theoretical average is two. Maybe I'll make this color sky blue, so it's nice
+[  978.76s ->   990.92s] and pretty. Maybe I'll add some grid lines. I'll add a label. So this is theoretical average. This is the
+[  990.92s ->  1005.14s] empirical. Okay. PLT dot show, we want the legend. Okay. And maybe to make this a little more,
+[ 1006.10s ->  1013.74s] a little nicer, we'll do maybe 10, something like that. Let's take a look at what this looks like.
+[ 1013.74s ->  1024.15s] Okay. So what we're looking at right now is we are looking at, on the x-axis, the number of
+[ 1025.03s ->  1031.43s] essentially simulations of this geometric random variable. Okay. So it is the sample size, if you
+[ 1031.43s ->  1039.19s] will, all right, in the law of large numbers. And what we're noticing is this convergence to a
+[ 1039.19s ->  1046.55s] theoretical mean, right? So at first, if you notice around here, right, if I stop the simulation at
+[ 1046.55s ->  1055.19s] around 50, just run this, right? It's not exactly two, right? The theoretical mean or the theoretical
+[ 1055.19s ->  1061.11s] expectation, theoretical average is two. And if we only simulate this geometric random variable 50
+[ 1061.11s ->  1068.55s] times, we're actually around, what is this? 2.4. So we're not quite at the two, but as we increase
+[ 1068.55s ->  1073.51s] this number, this is the law of large numbers. We increase this number. We're going to see that
+[ 1073.51s ->  1082.31s] we start to converge above and below this theoretical expectation, right? And as this becomes infinity
+[ 1082.31s ->  1089.82s] or arbitrarily large, in probability, we say that it converges with certainty, all right? So I'm going
+[ 1089.82s ->  1094.54s] to make this a very large number of trials, and hopefully you can start to see this picture now, that
+[ 1094.54s ->  1103.56s] this is going to start to converge to this theoretical mean here too, all right? So that's quite
+[ 1103.56s ->  1108.12s] interesting, right? This is a geometric random variable that we are simulating over an arbitrary
+[ 1108.12s ->  1114.04s] number of trials, but we know that the expectation is finite. So we know it's going to converge to this
+[ 1114.04s ->  1120.04s] two uncertainty, right? That's the law of large numbers. In probability, it will converge with certainty.
+[ 1122.31s ->  1127.59s] What about an infinite expectation? What would this converge to? Okay, well, it's very easy to
+[ 1127.59s ->  1133.83s] essentially go ahead and modify the original simulation. But in this case, what we're going to
+[ 1133.83s ->  1138.39s] be doing is we're actually going to be simulating the game, okay, the game where we receive some sort
+[ 1138.39s ->  1143.83s] of payout. So what I'm going to do is I'm going to start by building the base case, right? So I say,
+[ 1143.83s ->  1152.71s] while true, right? While true, we're going to flip a coin, right? So I'm going to say MP.random.randint
+[ 1153.51s ->  1164.73s] zero to two, this is going to be our coin, x. I'll say if x is equal to one, let's say that one is going
+[ 1164.73s ->  1170.73s] to be a head. So I'll say if it's zero for tails, right? So if x is equal to zero, then let's say that
+[ 1170.73s ->  1177.93s] we have a tails, all right? That's going to end the game, right? And then otherwise, what are we going to
+[ 1177.93s ->  1186.33s] do? We need to essentially flip the coin again, right? But now we need to take into consideration
+[ 1186.33s ->  1192.09s] the payout, right? So we need to keep some sort of tracking variable for the number of tosses it
+[ 1192.09s ->  1199.45s] takes. So I'm going to say n is equal to zero, right? As soon as we toss this first coin here,
+[ 1199.45s ->  1206.65s] n is going to be one. So we'll do plus equals one. And if x is equal to zero,
+[ 1207.61s ->  1211.77s] then the game ends and we receive our payout. So I'm going to create a payout tracker here.
+[ 1212.94s ->  1221.02s] Okay, and then I'm going to do payout.append two to the n. And then otherwise, we're not going to do
+[ 1221.02s ->  1226.46s] anything. So I can even just get rid of that there. All right. So this is an example of our game.
+[ 1226.46s ->  1232.62s] All right, let's go ahead and see how it works. If I run this, there we go. We got it on the first one,
+[ 1232.62s ->  1238.86s] we got it on the second one, first one, that one, it took three tries. So it looks like this
+[ 1238.86s ->  1246.87s] simulation is working just fine. All right. So now what I'm going to do is I'm going to simulate
+[ 1246.87s ->  1254.71s] this game an arbitrary number of times. Okay, so we have this payout, right, that I'm appending to
+[ 1254.71s ->  1262.15s] this list. And what I'm going to do is I'm going to say for I in range, let's do it 5000 times,
+[ 1262.15s ->  1268.87s] we're gonna play this game 5000 times. And what I want to do is I essentially want to keep track
+[ 1268.87s ->  1276.95s] of this payout. And I want to go ahead and keep track of the number of trials as well. Trials is
+[ 1276.95s ->  1287.90s] equal to an empty list. And then we'll say, if I mod 10 is equal to zero, trials dot append I.
+[ 1289.10s ->  1296.62s] And then we will do instead of a payout, we will do a tracker. So a running tracker list,
+[ 1296.62s ->  1303.10s] we will do payout dot append, the mean of that running tracker list. And then here,
+[ 1303.10s ->  1308.14s] instead of appending it to the payout, we'll append it to the tracker. And that will be a
+[ 1308.14s ->  1317.66s] successful simulation. So if I run this, okay, looks like we got a little warning there. But if we run
+[ 1317.66s ->  1325.50s] the trials, we can see that's how many games we've played. And then if we take a look at the payout,
+[ 1325.50s ->  1332.94s] here, we have our payouts. And it looks like, we start at zero. So let's go ahead and start at one.
+[ 1333.74s ->  1339.90s] There we go, that gets rid of the warning. And then here's our payout. Okay. So what what did we
+[ 1339.90s ->  1347.90s] see in the first chart here? Well, we see that as the trials increase, we see convergence to this
+[ 1347.90s ->  1352.94s] theoretical expectation, right? And you know, you can run this a couple of times, whatever,
+[ 1352.94s ->  1359.18s] you're going to see that it's going to continue to oscillate around this, this two here. We would
+[ 1359.18s ->  1365.18s] expect similar behavior for an alternative random variable with a finite expectation. But what do we
+[ 1365.18s ->  1370.86s] know about this game, right? We computed it by hand that the theoretical expectation is actually what?
+[ 1370.86s ->  1376.78s] It's infinity, it doesn't exist. So if I go ahead and I take this chart that we created earlier,
+[ 1378.23s ->  1384.07s] the there is no horizontal line for it to oscillate around. So there is no empirical, I'm sorry,
+[ 1384.07s ->  1388.31s] there's no theoretical expectation. So I'm gonna get rid of that. And we're gonna take a look at the
+[ 1388.31s ->  1395.80s] empirical average. So if I run this to a little plt.show here, right? What do we get, we get
+[ 1395.80s ->  1401.80s] something kind of crazy here, right? And maybe I'll get rid of the first, you know, handful,
+[ 1401.80s ->  1413.66s] just so we don't have as much of a spike. Let's see, what do we get here? Five book trials average,
+[ 1413.66s ->  1420.81s] we're gonna get payout. All right, there we go. So we'll do every 10. We'll run this guy here.
+[ 1421.61s ->  1432.58s] Look at that. That is the empirical average. Okay, is this converging to some horizontal line,
+[ 1432.58s ->  1437.69s] right? Well, if we run this again, we get something completely different, right? So this is
+[ 1438.49s ->  1448.46s] around 12 to 14. Run this again, what do we get? This is around what, 10 to 12. So hopefully here,
+[ 1448.46s ->  1456.54s] you're starting to see that, you know, by hand, we had an infinite expectation. And it's not that the
+[ 1457.34s ->  1463.34s] expected value is infinity per se. But it's that as we increase the number of trials of this game
+[ 1463.34s ->  1469.90s] arbitrarily, there isn't going to be any convergence to a consistent mean value for that game. And
+[ 1469.90s ->  1474.06s] that's what's so interesting when these moments explode, right? There's no variance, there's no
+[ 1474.06s ->  1479.82s] skewness, there's no kurtosis, there's no statistical moments, raw or central or standardized. There's
+[ 1479.82s ->  1484.94s] nothing to compute, right? It's just infinite. But really, it's not about infinity, it's about it being
+[ 1484.94s ->  1489.50s] undefined. So that's what's so interesting here, right? We have this case where it's just a geometric
+[ 1489.50s ->  1495.82s] random variable. As trials increase arbitrarily, we see look at this convergence to the theoretical
+[ 1495.82s ->  1501.34s] expectation. And then down here, we have this St. Petersburg paradox where we have this game
+[ 1501.34s ->  1508.14s] that does not converge to any expectation. So if you ask me, what is the expected value of this game?
+[ 1508.14s ->  1513.98s] What should I pay to play this game? You know, this really is more of a question of risk tolerance than
+[ 1513.98s ->  1520.70s] it is of expectation, right? You know, a reasonable thing to do may be to simulate this game a couple,
+[ 1520.70s ->  1525.42s] you know, a significant number of times and then look at the horizontal line and say, oh, okay,
+[ 1525.42s ->  1532.54s] you know, in the long run, what, it's around here, 12 to 14. So I'll pay maybe like $13 for it. But
+[ 1532.54s ->  1537.66s] that's not really appropriate analysis. Because if I run these trials again, what happens?
+[ 1538.38s ->  1543.34s] That entire horizontal line that we just used as a frame of reference changes. Now it's kind of centered
+[ 1543.34s ->  1550.54s] around what, 15 to 20, or if you will, you know, just trying to look at an average across this y-axis
+[ 1550.54s ->  1556.70s] here, right? But you really can't conduct analysis in that fashion. So again, this is more of a story
+[ 1556.70s ->  1561.90s] about inconsistency than anything else that is incredibly interesting. So that is going to do it
+[ 1561.90s ->  1566.78s] for this video. I hope you enjoyed it. It is definitely an interesting subject. And again,
+[ 1566.78s ->  1573.74s] this is something that I haven't even delved much into my study of probability and statistics.
+[ 1573.74s ->  1578.62s] And I'm glad that I came across it and was able to kind of dig a little bit deeper. And, you know,
+[ 1578.62s ->  1583.66s] the implication really is in the law of large numbers of central limit theorem, right? If you
+[ 1583.66s ->  1588.86s] try to simulate it and take an average, you are implicitly using the central limit theorem,
+[ 1588.86s ->  1593.82s] right? Which falls apart when we don't have a finite expectation like this, okay? So that's,
+[ 1593.82s ->  1601.02s] I think, the big thing to recognize here is not infinity when the expectation is infinite,
+[ 1601.02s ->  1607.10s] but inconsistency. We can't use the law of large numbers or the central limit theorem. We can't
+[ 1607.10s ->  1614.94s] take the average of the sample as a representation of the population parameter because the law of large
+[ 1614.94s ->  1619.50s] numbers fell apart. There's nothing to converge to, all right? So like I said, that's going to do
+[ 1619.50s ->  1623.74s] it for this video. I hope you enjoyed. Please leave a comment, like, subscribe. It helps me
+[ 1623.74s ->  1628.62s] out a bunch, join our discord, check out our course on Quant Guild. Other than that,
+[ 1628.62s ->  1630.94s] I will see you in the next one. Thanks for watching.

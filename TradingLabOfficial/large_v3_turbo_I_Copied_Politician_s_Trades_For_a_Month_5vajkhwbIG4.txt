@@ -1,0 +1,81 @@
+[    0.00s ->     5.20s] These are some of the wealthiest people on the planet, with net worths of hundreds of millions
+[    5.20s ->    10.92s] of dollars. But how did they get so rich? Well, what if I told you these were politicians? Now,
+[   11.00s ->    15.12s] you may think they made their money honorably, being highly productive citizens and providing
+[   15.12s ->    20.48s] actual value to their communities, making all of their money from an honest yearly salary.
+[   20.48s ->    24.72s] Of course you don't think that, because they don't. Most of these politicians are lawmakers,
+[   24.72s ->    31.60s] and being a lawmaker, you can intentionally create laws to benefit the stocks you trade or gain
+[   31.60s ->    38.04s] important insider information before the public does. For example, on June 3rd, 2021, Nancy Pelosi
+[   38.04s ->    44.06s] made a trade on Nvidia, and a couple days later, pretty interesting, right? I'm sure Nancy Pelosi
+[   44.06s ->    49.06s] didn't somehow know the stock was going to go up by knowing which government laws were going to get
+[   49.06s ->    57.24s] passed to benefit Nvidia. The stock is up 637% as of today. Yeah, 637%. So it gave me a thought,
+[   57.46s ->    62.52s] a really stupid, potentially genius thought. While all of this was happening, the internet is foaming
+[   62.52s ->    67.76s] at the mouth about how corrupt and evil this whole thing is. And while yes, lawmakers being able to
+[   67.76s ->    72.70s] make money off the laws they create does sound a bit corrupt. Actually, it sounds really corrupt,
+[   72.80s ->    77.36s] but I figured if you can't beat them, join them. So that's exactly what I did. I'm just going to
+[   77.36s ->    81.66s] straight up copy them. No, seriously, I'm copying every trade a politician takes for a month. But
+[   81.66s ->    86.38s] if I was going to do this, I needed to do it right. So I had to make some rules for this video.
+[   86.56s ->    90.88s] I had to find high performing politicians, not just your average Joe politician.
+[   91.02s ->    93.06s] My name is Joe Biden and I love ice cream.
+[   93.22s ->    97.94s] Ones with high win rates, historically good trades, and most importantly, high profits.
+[   98.12s ->   103.08s] To get the best out of this experiment, I'll be using a trading balance of $10,000. I had to copy
+[  103.08s ->   108.42s] every single trade these politicians made for a full month. No analysis, no second guessing,
+[  108.74s ->   114.90s] just pure unfiltered copying. A senator shorts Tesla, I short Tesla. Congresswoman buys Nvidia,
+[  115.28s ->   121.36s] I buy Nvidia. Some random lawmaker buys a random toaster company, I'm buying the goddamn toaster
+[  121.36s ->   126.98s] company. Will I get rich by doing this or will I willingly be throwing away $10,000? Well,
+[  127.24s ->   131.78s] let's find out. So here's the plan. First, we need to find what politicians we're going to be copying.
+[  131.78s ->   137.12s] After we find said politicians, we need to find a way to see all of their trades in real time.
+[  137.24s ->   141.14s] Once we find that, we'll then proceed to blindly copy all of their trades.
+[  141.24s ->   145.90s] Speaking of copying trades, let me show you something. Now, this is an ad, so don't get
+[  145.90s ->   151.00s] mad at me, but it actually may help you out. So I recently found this website and it lets you
+[  151.00s ->   156.36s] copy trades of professional traders. Just sort the traders by win rate, select the best performing
+[  156.36s ->   161.48s] one, then simply click copy. Hankertrade will then proceed to automatically take
+[  161.48s ->   167.10s] all the same trades as the trader you are following. So when their balance goes up, your balance
+[  167.10s ->   172.46s] goes up. So if you followed a high performing analyst that wins consistently, you can make
+[  172.46s ->   177.58s] some pretty decent gains. Actually, you can make some really good gains. If you're interested
+[  177.58s ->   182.22s] in checking this out, just click the Hankertrade link in my description and check out the copy
+[  182.22s ->   187.62s] trading feature. Alright, back to the video. So we completed all the steps to copy these politicians.
+[  187.62s ->   194.41s] Then we do the final task, which is print money. Sounds pretty simple, right? Well, there's
+[  194.41s ->   200.79s] a tiny, microscopic, absolutely massive problem we have. While politicians legally do have to
+[  200.79s ->   205.87s] disclose all the trades they take, they don't necessarily have to disclose them immediately.
+[  205.87s ->   210.87s] Actually, they don't have to disclose them for up to 45 days. Yeah, that sounds like a big
+[  210.87s ->   215.75s] problem. If we get the trade alert for some of her trades 45 days later after the politician
+[  215.75s ->   220.51s] entered, we could potentially be entering at the worst possible time, as we could be entering
+[  220.51s ->   225.19s] extremely late, like really late, and would essentially be entering after the catalyst
+[  225.19s ->   230.43s] has already happened, meaning we'd be catching a falling knife. So yeah, that's a problem.
+[  230.43s ->   235.69s] So I did some research, and not all politicians take 45 days to disclose their trades. Some do
+[  235.69s ->   240.07s] it a day after they take their trades, some do it a week or two after. Could this be a big
+[  240.07s ->   244.03s] enough problem to where it would mess up our whole strategy? Or would it just be a minor
+[  244.03s ->   245.63s] road bump in the process?
+[  245.63s ->   250.91s] So first, I needed to find the most profitable politicians. The dirtiest, wealthiest, grimiest
+[  250.91s ->   255.87s] motherfuckers out there. So, I can copy them. I went on ChatGPT and simply asked it to give
+[  255.87s ->   261.01s] me the top 10 performing politicians based on their win rate and profitability. It then proceeded
+[  261.01s ->   265.47s] to spit out all the names of politicians I should be tracking, their name, and how much their
+[  265.47s ->   270.05s] portfolio increased in the last 12 months. Well, that was easy. So now we have a list
+[  270.05s ->   275.61s] of all the names of the most profitable traders in Congress and can sort them chronologically
+[  275.61s ->   284.57s] by their profit rate. I think I'm in love. Next, we need to find a way to see what specific
+[  284.57s ->   289.57s] stocks these politicians are trading. So I did a simple Google search and found this site.
+[  289.57s ->   294.43s] To test it, I posted a politician's name in the search bar and voila, it gave me all their
+[  294.43s ->   298.95s] most recent trades they've taken and it posts in real time. It posts the company name
+[  298.95s ->   304.15s] how much they entered in with, when the transaction was filled, and when the politician personally
+[  304.15s ->   308.35s] entered into the trade. Next, we needed to copy these fuckers. So this is what we're
+[  308.35s ->   312.39s] gonna do. I'm gonna wake up an hour before the market opens, check the website, and look
+[  312.39s ->   316.79s] through the 10 politicians we are tracking. I'll check to see if they made any recent trades,
+[  316.79s ->   321.43s] make a spreadsheet of that day's trades, and enter into each and every single one of them.
+[  321.43s ->   324.55s] Also, I did some thinking in the shower this morning. I don't know why I thought of this
+[  324.55s ->   328.79s] in the shower, kind of weird, but moving on. I had an idea of implementing a small
+[  328.79s ->   334.39s] rule that I think could benefit this strategy just an incy tiny bit. I added a 1 month filter
+[  334.39s ->   338.55s] for the filing of the stocks we're trading. So if a politician didn't file their stock
+[  338.55s ->   343.99s] trade in less than a month, I wouldn't take that trade. That way I was only trading semi-recently
+[  343.99s ->   348.71s] taken trades. Then buy and sell based off that info. Now that I'm thinking about it, doing all
+[  348.71s ->   353.27s] this work is gonna really suck. This is just the beginning. I'm gonna make this a full video series
+[  353.27s ->   358.79s] where I copy politicians and show everything that happens. All the winning trades and all the losing
+[  358.79s ->   364.79s] ones. But why am I doing this? To answer the age old question, can copying politicians actually be
+[  364.79s ->   369.83s] a profitable trading strategy? Or am I just lighting my money on fire? Now I figured some of you would
+[  369.83s ->   374.55s] want to follow along in real time. So I made a free newsletter, just click the link in my description,
+[  374.55s ->   379.27s] enter your email, and I'll send you all the trades I'm copying from these politicians for free.
+[  379.27s ->   383.67s] But here's the thing, I've already started this experiment, and let's just say things are
+[  383.67s ->   390.07s] escalating. Will this be a genius move or a huge mistake? Find out next on Trading Lab News.
+[  390.07s ->   394.71s] Well, by that I mean the second video that's coming out. This is a series, not a news channel.
+[  395.83s ->   397.27s] I always f*** up these outros.
+[  398.23s ->   405.00s] My name is Joe Biden and I love ice cream. You all think I'm kidding, I'm not. I eat more ice cream
+[  405.00s ->   407.40s] than the three other people you'd like to be with.

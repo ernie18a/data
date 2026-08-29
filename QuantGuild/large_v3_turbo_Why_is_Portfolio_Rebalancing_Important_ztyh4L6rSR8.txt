@@ -1,0 +1,145 @@
+[    0.50s ->     7.59s] Hey, YouTube, it's Roman. Today I want to talk about portfolio rebalancing and why it's so important.
+[    8.27s ->    13.75s] A good example would be if you had a retirement portfolio, you know, a lot of times we think we
+[   13.75s ->    22.19s] can just kind of set and forget. Maybe we're just buying a lot of SPY, a lot of the VTI, VOO.
+[   23.65s ->    28.83s] But something that you really have to consider is the risk profile of that portfolio as it
+[   28.83s ->    35.77s] evolves through time. And this is a video that's going to visually explain everything and
+[   35.77s ->    40.45s] mathematically explain everything. So let's just go ahead and dive right in. Okay, so let's start by
+[   40.45s ->    47.11s] importing all the packages we need. We're going to say import yfinance as yf, import numpy as mp,
+[   47.49s ->    56.93s] import matplot lib.pyplot as plt. And now we are going to establish a portfolio. So I wouldn't
+[   56.93s ->    64.09s] recommend this portfolio. But what we're going to do is we're going to build a portfolio consisting
+[   64.09s ->    72.61s] of just Amazon and Apple. So we're going to say Amazon is equal to yf ticker amzn. And then apple
+[   72.61s ->    80.81s] is equal to yf ticker apl. And then we are going to go ahead and get the historic close and return
+[   80.81s ->    90.41s] for Amazon and apple. So I'm going to say amzn.close is equal to amzn.history start. We're going to go
+[   90.41s ->   109.10s] back to 2020. And we're going to do the same thing for apple. Start going back to 2020. Okay, cool.
+[  109.46s ->   116.08s] Now we're going to need to get the returns. So I'm just going to take this and I'm going to say
+[  116.08s ->   122.90s] percent change. And then I'm going to get everything from the second row onward because
+[  122.90s ->   128.96s] you know, the first row doesn't have something to compare the previous day to because we're going to
+[  128.96s ->   136.40s] January 1st, 2020. We don't have that day before. So it's going to be an NA value. So we're just going
+[  136.40s ->   148.12s] to do percent change one going forward. And then these are going to be the returns. Okay, cool. So now we
+[  148.12s ->   154.84s] have all the data that we need to go ahead and build a portfolio and visualize that portfolio as
+[  154.84s ->   161.24s] it evolves throughout time. Now what we're going to want to do is establish two vectors. One is going
+[  161.24s ->   168.52s] to consist of the returns for Amazon and apple. And one is going to consist of the closes for each of
+[  168.52s ->   175.74s] them. So the closing prices. So we can say returns is equal to MP array. So we're going to create a
+[  175.74s ->   185.94s] NumPy array. And we are going to take the amznrets.values and then the aaplrets.values.
+[  186.38s ->   192.60s] And then we could do returns.shape to make sure we have the correct shape. So we have two stocks,
+[  192.60s ->   201.08s] Amazon and Apple, and then 581 days of returns for those two. We could do the same thing with the
+[  201.08s ->   211.88s] close. So we could say closes is equal to MP array amznclose.values, aaplclose.values.
+[  212.44s ->   223.78s] And then we could do closes.shape, shape. And we have two stocks and 582 days of closing prices.
+[  223.78s ->   229.22s] Obviously, we lose that first day of returns. But nevertheless, this is sufficient for what we're
+[  229.22s ->   237.86s] trying to do. Time to actually build this portfolio now. So we can say P-VAL is equal to 10,000.
+[  237.86s ->   245.92s] So not the statistical P-VAL, but our portfolio value. And then we can say our weight in Amazon
+[  245.92s ->   252.54s] is equal to 50%. And then our weight in Apple is also going to be equal to 50%.
+[  252.54s ->   262.89s] Now to compute the portfolio value on any given day, what we can do is we can store each of these
+[  262.89s ->   270.95s] weights in a vector and then compute the dot product with our returns, add one, and then take
+[  270.95s ->   277.43s] the cumulative product. And then we can visualize the value of this portfolio on any day going back
+[  277.43s ->   287.58s] to 2020. So let's do that. Let's just say port weights are equal to MP array. We'll do AMZNW and then
+[  287.58s ->   295.88s] AAPLW. So that's our Amazon and Apple weight respectively. So then what we're going to do is we are going
+[  295.88s ->   314.26s] to say PLT.plot, MP.cumeprod, MP.dot. And then we're going to do the port weights with the returns.
+[  314.82s ->   325.62s] We're going to add one. And we are going to get our portfolio value going back to 2020.
+[  325.62s ->   333.72s] Now, this is on a dollar scale. So we actually have to multiply by our portfolio value, which is
+[  333.72s ->   343.87s] 10,000. So I'll say times PVAL, and that'll rescale it to the appropriate value. So essentially what
+[  343.87s ->   351.77s] we're saying is, okay, cool. You know, if we were to purchase, if we were to purchase, you know, 50%
+[  351.77s ->   357.95s] of our portfolio in Amazon, 50% of our portfolio in Apple, and then we were to rebalance on a daily
+[  357.95s ->   364.41s] basis, meaning that we take the returns of our portfolio and then add it to our portfolio value
+[  364.41s ->   370.15s] and then recompute a new weight in Amazon and Apple. And then we do this on a daily rolling basis.
+[  370.15s ->   374.95s] This is the value of our portfolio today. And, you know, hey, it looks pretty good.
+[  376.86s ->   384.08s] But yeah, okay. So that's what we're doing here. We came up with this rebalanced portfolio value,
+[  384.32s ->   389.74s] but, you know, we don't rebalance our portfolio every day. And that's for a variety of reasons,
+[  389.84s ->   395.78s] right? We're not going to rebalance our portfolio on a daily basis in terms of a retail investor,
+[  395.78s ->   400.82s] where we're talking about somebody maybe saving for retirement or, you know, they're not a professional
+[  400.82s ->   408.76s] asset manager. You know, it's like, like, why? Why are we rebalancing this portfolio? What happens
+[  408.76s ->   413.54s] if we don't? Let's, let's actually take a look at what happens if we don't rebalance this portfolio.
+[  413.86s ->   420.18s] And we can do that by simulating a one-time purchase. So for this one-time purchase, we're just
+[  420.18s ->   423.66s] going to assume that we can have fractional shares because that's what we did in our,
+[  423.66s ->   429.82s] our previous portfolio here with continuous daily rebalancing. So let's, let's go ahead and do
+[  429.82s ->   434.66s] this. What is this going to look like? Well, we're going to have to purchase 50% of our portfolio on
+[  434.66s ->   441.96s] Amazon, 50% of our portfolio on Apple. To do that, we can just say AMZN shares is equal to 5,000. So
+[  441.96s ->   451.92s] our portfolio value, 10,000 times the 50% weight divided by AMZN close dot values zero. So that first
+[  451.92s ->   460.16s] value in January, 2020, and then we're going to be able to get the portfolio value every single day
+[  460.16s ->   466.74s] up until this current point in time. So we're going to do the same thing for Apple, 5,000 divided by
+[  466.74s ->   474.66s] APL close dot values zero. We can get the value of this portfolio over time by taking the dot product
+[  474.66s ->   481.62s] of a vector containing these shares for a one-time purchase with the series of prices for those two
+[  481.62s ->   492.50s] stocks. So we can say poor shares is equal to MP array, and we can take our Amazon shares and our
+[  492.50s ->   499.32s] Apple shares and put them right into that vector. And then now we can just do the dot product as before,
+[  499.32s ->   505.64s] but instead in the return space, we're going to be operating in the price space. So I can say plt.plot
+[  505.64s ->   515.10s] mp.dot. We're going to do our port shares and then our closes. And then that's going to be it. That's
+[  515.10s ->   522.04s] how we can visualize this portfolio. Now I also want to add the original portfolio so we can visualize
+[  522.04s ->   526.82s] both of them on the same chart. Then I'm going to add a legend so that we can discern the difference
+[  526.82s ->   534.54s] between the two. So one is rebalanced and then one is a one-time purchase. Let's check out these two
+[  534.54s ->   540.36s] portfolios as they compare to one another. Now if you take a look on a surface level, you'll see
+[  540.36s ->   547.22s] these two lines look very similar, right? We have our blue rebalance line and then our orange one-time
+[  547.22s ->   554.56s] purchase line, each representing one portfolio, one where we rebalance daily, one where we just purchase,
+[  554.56s ->   561.22s] set and forget January 1st, 2020. Why is this significant? Well, you know, you may be looking
+[  561.22s ->   566.18s] at this and say, hey, Roman, like this isn't significant. Like these two lines are so close
+[  566.18s ->   571.95s] together. Who cares? Well, you know, fair enough, but keep in mind, we only have two assets in this
+[  571.95s ->   577.81s] portfolio and these lines have deviations from one another. Now I'm not saying you should go out of
+[  577.81s ->   583.01s] your way and rebalance your portfolio continuously, daily, whatever. But what I am saying is we need to
+[  583.01s ->   590.05s] consider the implications of not rebalancing and what is that? Well, what is the space between these
+[  590.05s ->   597.31s] two lines? What does that represent? And what we should care about is that that space represents
+[  597.31s ->   604.17s] a divergence from the target weight of our portfolio for each asset in our portfolio. Meaning
+[  604.17s ->   612.71s] the space between those two lines represents a divergence from a 50% weight in Apple, 50% weight
+[  612.71s ->   621.06s] in Amazon. What does this mean for us? Well, the entire risk profile of our portfolio changes.
+[  622.04s ->   628.94s] Now, this is important because this is a two-year period. This is, you know, 2022 today going back
+[  628.94s ->   635.36s] to 2020. This is a two-year period and our risk profile changes dramatically. And I'll show you in a
+[  635.36s ->   642.42s] moment quantitatively how much it changed by if we just did a one-time purchase. But what about a 30-year
+[  642.42s ->   653.04s] portfolio? What about a 60-year portfolio? And more importantly, what about the risk profile of
+[  653.04s ->   662.38s] those portfolios? You know, if we purchased, you know, maybe 100,000 units of X, Y, and Z, maybe you
+[  662.38s ->   670.18s] have even more than two or three indexes. Maybe you have like several facets of the portfolio, maybe a
+[  670.18s ->   674.80s] medium, long-term bonds. Maybe you have commodity indices. Who knows? Who knows what your portfolio
+[  674.80s ->   680.60s] consists of, right? But that retirement portfolio is going to be subject to having these deviations
+[  680.60s ->   686.76s] from the initial targets. And that's exactly what I'm trying to illustrate here. That is exactly what
+[  686.76s ->   694.20s] I'm trying to highlight and why portfolio rebalancing is so important on, say, like even a monthly
+[  694.20s ->   701.38s] basis because your exposure to a particular asset in your portfolio with a one-time purchase could
+[  701.38s ->   708.68s] triple, quadruple. If you're in tech, who knows how high that could go. But you need to consider
+[  708.68s ->   715.22s] the exposure to each individual asset as it pertains to your initial expectation of target weights of
+[  715.22s ->   720.40s] your assets in that portfolio. All right, what the heck am I talking about? Quantitatively, let's go ahead
+[  720.40s ->   726.72s] and take a look. So we're going to assign that one-time purchase series, that portfolio value,
+[  727.24s ->   735.54s] the orange series to a variable. So we're going to say one time is equal to mp.port shares and then
+[  735.54s ->   743.44s] the closes. Okay, so we can take a look at the latest value of that portfolio by saying one time minus
+[  743.44s ->   751.72s] one, we get 18,552, so that's that point right there. We can also, because we have a fixed amount
+[  751.72s ->   762.06s] of stake in Apple and Amazon, compute that portfolio value by saying new pval is equal to the last price
+[  762.06s ->   774.61s] of Amazon, which is going to be closes zero minus one, times the share that we have in Amazon, plus closes
+[  774.61s ->   785.25s] one, so that's going to be the latest price in Apple, times a PL share. So those are our fixed weights
+[  785.25s ->   792.89s] in Amazon and Apple as computed up here. And we are going to be taking the latest price for Apple and the
+[  792.89s ->   798.77s] latest price for Amazon, multiplying each of those by their respective weights and then summing them.
+[  798.87s ->   805.57s] So we should get the exact same value as the one-time portfolio series that we have right there.
+[  805.89s ->   811.11s] And we do, and this is by construction, right? So this is just the dot product way of doing things.
+[  811.19s ->   815.73s] This is the matrix way of doing things. This is the essentially by hand way of doing things. So
+[  815.73s ->   821.69s] you could look at this as the last entry in this vector, this one-time vector.
+[  822.89s ->   830.96s] Okay, cool. So now that we have these two values, we can go ahead and take a look at the percentage
+[  830.96s ->   837.76s] weight that we have in both Amazon and Apple at this point, at this latest point in time.
+[  837.94s ->   842.98s] To do that, what I'm going to do is I'm going to take the stake in Amazon, for example,
+[  843.32s ->   851.27s] and I'm going to divide it by the new value of our portfolio. And if you take a look,
+[  851.27s ->   862.45s] we have 40% of our portfolio in Amazon. But what about Apple? Well, we could just do one minus
+[  862.45s ->   870.23s] that value because we have two assets. Or we can compute it by hand as well by saying the latest
+[  870.23s ->   878.01s] price in Apple times the shares in Apple divided by the PVAL. So this is going to be, you know,
+[  878.01s ->   889.81s] 0.59, whatever. And that is our weight in Apple. If you remember, our initial weight in each of
+[  889.81s ->   899.73s] these assets was 50%. But now we have 60% of our portfolio in Apple and 40% in Amazon. This is a big
+[  899.73s ->   906.37s] deviation from our targets. We have 40% in Amazon and 60% in Apple. And this is over two years with
+[  906.37s ->   912.85s] two assets. What if you had a retirement portfolio with, you know, modern portfolio theory says that
+[  912.85s ->   918.89s] you're effectively diversified approximately 30 assets in a portfolio, right? So what if you had
+[  918.89s ->   925.69s] 30 assets in your portfolio? And you took a look at these weights after two years and everything's
+[  925.69s ->   933.17s] topsy-turvy, right? And like I said, like, what about a retirement portfolio over 30, 50, 60 years
+[  933.17s ->   938.43s] with who knows how many assets? You know, these are going to change significantly over time.
+[  939.01s ->   947.24s] Now, the moral of the story is you want to maintain the target weights in your portfolio. If you have,
+[  947.40s ->   955.64s] say, like 30% in bonds, 40% in equities, and then the rest in, say, like a blend of maybe like safe
+[  955.64s ->   962.32s] haven gold or commodities or something, you're going to want to rebalance that portfolio on, say,
+[  962.32s ->   968.24s] like a monthly basis so that you can maintain those targets and the risk profile of your portfolio.
+[  968.24s ->   973.28s] You don't want to be overexposed to any one of your assets in your portfolio, especially when that
+[  973.28s ->   978.00s] wasn't your intention to begin with. I hope you enjoyed this video. This was meant to be sort of
+[  978.00s ->   984.84s] an example as to why you should care about portfolio rebalancing. I think a lot of quantitative finance
+[  984.84s ->   990.98s] and finance, a lot of theoretical concepts kind of get lost in the what you should just be doing
+[  990.98s ->   996.60s] or what people do or what asset managers do. And you kind of lose the, you know, how does this
+[  996.60s ->  1001.88s] affect me or why should I care? And this is meant to show you, you know, why you should care because
+[ 1001.88s ->  1007.48s] the risk profile of your portfolio changes over time. If you have a retirement portfolio and you're
+[ 1007.48s ->  1015.52s] 30% in bonds, 40% in equities, and maybe 30% in combination of gold and commodities, who knows?
+[ 1015.52s ->  1021.52s] You know, if you have that retirement portfolio and you just try to set and forget, then those values,
+[ 1021.52s ->  1026.64s] just as they have here over two years, are going to change over time. And if you have more assets,
+[ 1026.64s ->  1032.00s] then there's just going to be more change. So, you know, hopefully this was an intuitive example
+[ 1032.00s ->  1037.28s] as to why we should care about portfolio rebalancing. As always, if there are any comments,
+[ 1037.28s ->  1044.88s] any questions, please leave them below. I'm happy to get to them to answer any questions. You can always
+[ 1044.88s ->  1050.32s] shoot me an email if you have any specific questions, any suggestions. Always happy to listen
+[ 1050.32s ->  1055.84s] to the future video suggestions or any particular topics anybody would like to see.
+[ 1057.04s ->  1063.04s] Now, the actual execution of rebalancing, that can be a future video in itself.
+[ 1063.92s ->  1068.40s] So if that's something you'd like to see, leave it below, and I'll be happy to make that as well.
+[ 1068.40s ->  1072.80s] But until then, thanks for watching, and I'll see you in the next one.

@@ -1,0 +1,80 @@
+[    0.50s ->     8.30s] Hey guys, what's up? It's ABTrades, and today I wanted to talk about something that was being mentioned in the group chat, which is Theo Price.
+[    8.90s ->    22.08s] So Theo Price is in the Trade tab, and basically using the three factors of Theta, Delta, and Vega, you can determine what an option price will be in the future.
+[   22.08s ->    44.68s] So I'm not an expert at this, I do not do this a lot, so I will be linking below. Brooke, who is in the group chat, and an admin in the group chat, and also has a Facebook, which is linked below, she is creating a blog over this because she uses it a lot more than I do, but I just wanted to show you all how I would use it if I was going to.
+[   44.68s ->    57.96s] So this is really how it works. Again, why I don't use this is because I know when I take a position it will go up, I don't really care how much it will go up, but if you would like to know how much your option will go up, this is how you find out.
+[   58.40s ->    68.28s] Especially when you're predicting moves like triangles, when you go awesome, well if you're trading a triangle, how do you know how far to predict it will go up or down? So let's talk about that today.
+[   68.28s ->    86.24s] Okay, so if we look at Apple on Friday, we form this little triangle pattern here, forming down. So when you predict the move of a triangle, you look at the high point and the low point of where the triangle started, okay?
+[   86.24s ->    93.54s] So if we look here, it's about, it says 0.38%, okay?
+[   94.50s ->   101.64s] Okay, so if we break out to the low side, 0.38%, how far is 0.38%? It's right here.
+[  102.12s ->   112.38s] At this point, if we drop down to 0.38%, based off that is the projected move of the triangle, where if we hit that, it's time to get out.
+[  112.38s ->   117.74s] So we are now at a stock price of $1.88.41, okay?
+[  118.26s ->   121.64s] So that is how many points below?
+[  122.64s ->   123.80s] $1.88.
+[  124.96s ->   128.18s] So we're at $1.89, $1.88.
+[  128.56s ->   131.90s] So it's about a dollar move in the stock.
+[  132.34s ->   137.32s] So if that's going to be a dollar move in the stock, then we go up to our trade tab.
+[  137.32s ->   142.36s] Your layout is usually last X net change.
+[  142.54s ->   148.64s] You want to go up here and you want to change it to the Theo price mark, okay?
+[  148.70s ->   158.60s] So this is the mark of how much the current option is priced, like what's the average from the bid and the ask.
+[  158.60s ->   162.74s] The Theo price is what you get when you start changing stuff.
+[  163.20s ->   167.92s] So, right, we said if we're going to day trade this, then we're going to leave the date the same, correct?
+[  169.08s ->   175.14s] But now, again, if you're swing trading it, you want to move the date out to when you think it will hit that target price.
+[  176.60s ->   184.34s] But so the adjusted price, so we were like, okay, it's going to drop a dollar if we were trading this triangle.
+[  184.34s ->   186.68s] It was a dollar move, right?
+[  189.42s ->   191.02s] So we go down a dollar.
+[  192.16s ->   201.82s] And also, when a stock drops, which I'll show an example of VIX, when the stock market or a stock starts to drop, it picks up more volatility.
+[  202.84s ->   207.84s] But when it starts to rise, the volatility decreases.
+[  208.58s ->   213.60s] So since we're dropping, let's increase the volatility to one.
+[  213.60s ->   218.30s] I don't know how much it would actually increase, but I'm just going to say 1%, okay?
+[  218.66s ->   219.68s] And then we click reset.
+[  220.30s ->   221.14s] Oh, dang it.
+[  221.88s ->   222.34s] Sorry, I see.
+[  222.44s ->   223.74s] I don't want to play around with this enough.
+[  225.51s ->   228.99s] Two and then one.
+[  229.15s ->   229.59s] Okay, cool.
+[  229.69s ->   231.51s] So I can just click that, and now we're set.
+[  231.83s ->   235.17s] So let's say now we can look at the options prices.
+[  235.17s ->   241.79s] So now I can know which option to pick up to double my money or whatever I want to do.
+[  242.13s ->   253.93s] So if I bought this option here at $136 before the breakout, I notice that if this breakout hit our target price that we're searching for, it would increase to $233.
+[  253.93s ->   258.31s] About a dollar a contract increase, not bad.
+[  258.79s ->   265.73s] Now if we look more at like this 0.25 one, buy it at 0.25, we can sell it at 0.54.
+[  266.11s ->   268.79s] That tells us we can double our money right there.
+[  269.33s ->   275.49s] Or if we buy 1.25, it goes up to 0.27, about double your money.
+[  275.49s ->   284.51s] I mean, I would like to go with a more pricier one so that, you know, you could get less options, pay less in commissions.
+[  285.81s ->   296.97s] But again, this is how you use Theo Price and my triangle strategy and the prediction of using the longest side where the two of the triangles are to predict that next breakout.
+[  297.73s ->   304.63s] You put in the price, and then, of course, if it goes up, the volatility decreases and whatnot.
+[  304.63s ->   307.35s] Now I want to show you exactly what volatility is.
+[  307.45s ->   312.39s] So the VIX is what measures the volatility here.
+[  312.81s ->   315.63s] If I can go up on a two chart here, that would be great.
+[  315.87s ->   322.33s] So I'm going to put in volatility, and I'm going to put in SPY just because that's like stocks, it measures equities and whatnot.
+[  323.03s ->   325.70s] So let's try to line this up.
+[  325.82s ->   328.04s] I'll go with day by day.
+[  329.18s ->   329.62s] Okay.
+[  330.59s ->   333.89s] So if we look, when this went up, it went down.
+[  333.89s ->   336.99s] When this went down, it went up.
+[  337.31s ->   339.73s] When this started to go up again, it went down.
+[  340.19s ->   342.21s] When this went down, this went up.
+[  342.35s ->   342.49s] Hold on.
+[  342.63s ->   343.31s] Let's see if I can go on a one.
+[  346.43s ->   346.91s] Oh, perfect.
+[  347.31s ->   350.47s] So when this goes down, this goes up.
+[  350.47s ->   358.11s] Because when a stock or the equities start to drop in price, volatility starts to increase.
+[  358.49s ->   361.47s] Why does volatility increase when a stock drops?
+[  361.57s ->   362.59s] Well, because people go, oh, crap.
+[  362.63s ->   362.93s] It's shopping.
+[  363.05s ->   363.79s] I need to sell.
+[  364.05s ->   364.81s] Everybody sell.
+[  364.91s ->   365.41s] Hit panic.
+[  365.97s ->   368.39s] And that's when volatility increases.
+[  368.39s ->   374.41s] So obviously, when we start increasing, everybody's like, okay, okay, we're back to normal.
+[  375.27s ->   380.77s] Volatility starts to decrease, and that's basically how it ends up working.
+[  382.15s ->   382.59s] Yeah.
+[  383.66s ->   384.46s] That's how it works.
+[  384.46s ->   398.50s] So when you're putting in volatility, that's how you can understand that if it's going, if the projected move for the stock is up, make sure you have, like, minus 1% on volatility.
+[  399.04s ->   402.22s] Or if it's going down, add 1% on volatility.
+[  402.66s ->   410.92s] So that is how you use Theo Price to predict the option price and finding a good option that will double in money based off your target price.
+[  411.32s ->   414.18s] I hope that helped, and I hope you all enjoyed it.
+[  414.18s ->   417.00s] Please like, comment, and subscribe, and click on that blog below.
+[  417.16s ->   420.58s] She is great, and she will definitely explain this a lot better than I have.
+[  421.10s ->   421.78s] All right, guys.
+[  422.26s ->   422.94s] Thank you for tuning in.

@@ -1,0 +1,436 @@
+[    0.46s ->     6.51s] All right, here we go. You all have been requesting this video for quite some time.
+[    6.61s ->    11.71s] And fortunately, we've already discussed time series analysis and its place in quantitative
+[   11.71s ->    18.21s] finance on this channel. So we are prepared to discuss one of the most profound and innovative
+[   18.21s ->    24.87s] models in the entire space. And that is this Arch and Garch volatility model or process
+[   24.87s ->    31.05s] pioneered by noblest Robert Engel in 1982. I actually had the opportunity to watch Robert
+[   31.05s ->    37.45s] Engel give the keynote talk at a Bloomberg quant seminar was a very cool experience. I learned a
+[   37.45s ->    43.39s] lot, got to meet a lot of very interesting people at those quant seminars. I even gave a few lightning
+[   43.39s ->    48.25s] talks of my own. So if you have access to a Bloomberg terminal, you'll be able to look up those
+[   48.25s ->    53.73s] lightning talks and see the different presentations that I gave at those seminars. But I'll digress for
+[   53.73s ->    59.35s] now. In any case, very excited to be able to discuss these models today. The best way to go about
+[   59.35s ->    66.49s] understanding these models is to understand why they're necessary from the standpoint of the
+[   66.49s ->    72.35s] dynamics that we need to capture. So what we'll do is we'll discuss volatility in general, we'll discuss
+[   72.35s ->    79.37s] realized volatility and implied volatility, similarities and differences. We'll discuss relevant statistics,
+[   79.75s ->    86.81s] applications of volatility modeling, and some stylized facts, things we observe in the market that
+[   86.81s ->    93.81s] volatility tends to do and relationships with returns. We'll then move on to this idea of
+[   93.81s ->   102.53s] modeling volatility in a pre-arch world before this arch model was even conceptualized. Then we'll extend
+[  102.53s ->   108.97s] to a post-arch world. We'll go about modeling volatility using such a process. Then we'll extend to
+[  108.97s ->   115.45s] the generalization, this so-called GARCH model, and talk about the impact in the applications.
+[  115.45s ->   121.07s] Very rarely in Quant Finance is anything constant over time, but what directly contradicts this,
+[  121.21s ->   126.97s] and is always constant over time, is access to my Jupyter notebooks. This Jupyter notebook will be
+[  126.97s ->   132.21s] linked in the description below. I will also post it on the Quant Guild library on GitHub, where you
+[  132.21s ->   137.95s] can find all of my Jupyter notebooks and associated YouTube videos, along with the source code for all
+[  137.95s ->   142.55s] of my quant builds. At the top of this Jupyter notebook, you'll notice some related Quant Guild videos
+[  142.55s ->   148.37s] on topics applying statistics to trading and finance, working with different measures of volatility,
+[  148.61s ->   154.73s] realized volatility, implied volatility, time series analysis specifically for quantitative finance,
+[  154.81s ->   159.61s] the different tasks we can perform, different decompositions, and the impact in this space.
+[  160.03s ->   164.71s] If you're unfamiliar with any of these ideas, I highly recommend you check these videos out first
+[  164.71s ->   170.95s] before approaching this one on the ARCH and GARCH models. Moreover, these videos certainly take a
+[  170.95s ->   175.33s] lot of effort to create, so if you'd like to help support the channel, please like, comment, subscribe.
+[  175.87s ->   181.55s] Check out channel membership. It helps me out a ton. It is so greatly appreciated. And if you'd like to
+[  181.55s ->   187.81s] master your quantitative skills, check out QuantGuild.com. Maybe you come from a background in business,
+[  187.99s ->   193.17s] economics, computer science, and aren't too sure where to start on your quant journey. Quantitative
+[  193.17s ->   200.15s] finances section, interdisciplinary subject, combining so many ideas from math, computer science, finance,
+[  200.31s ->   205.15s] statistics, probability. It's hard to figure out where to get started. Well, QuantGuild is for you. We
+[  205.15s ->   211.13s] have over 90 quant lessons from the ground up in math, probability, and finance. An adaptive practice
+[  211.13s ->   217.33s] engine that scales with your skill level, gamified rank-based progress, so you can progress to more and
+[  217.33s ->   223.87s] more difficult questions. Interview questions with fully worked solutions, trading games, coming soon,
+[  224.05s ->   231.93s] courses in coding, math, statistics, all from the ground up. And all that's included with QuantGuild
+[  231.93s ->   236.53s] membership. And you can get started right now for free. So if you'd like to help support the channel
+[  236.53s ->   242.51s] and master your quantitative skills, check out QuantGuild.com. Without further ado, let's get started
+[  242.51s ->   251.28s] by discussing this idea of volatility. What is volatility anyway? We'll hear this as some sort of
+[  251.28s ->   260.71s] fear gauge, some measure of dispersion or choppiness. All that's a very fair assessment. Really, a little
+[  260.71s ->   268.85s] more formally, all volatility is, is a measure of deviation from some sort of expectation, typically in
+[  268.85s ->   275.57s] the context of returns. So we're not dealing with the stock price path, but rather the returns
+[  275.57s ->   282.67s] associated with that path. And things get tricky here really quickly because immediately we are
+[  282.67s ->   289.39s] confronted with a question. What is the expectation? We can't just go out into the market and observe
+[  289.39s ->   297.05s] volatility. We need to create some sort of benchmark expectation that we're measuring fluctuations around
+[  297.05s ->   304.15s] and deviations away from. So what should that be? Well, one way to go about constructing a benchmark
+[  304.15s ->   311.83s] is to get a whole bunch of historic return data, compute the average, and then measure deviations
+[  311.83s ->   318.43s] away from that average and use that as volatility. Effectively, that's what I do here. So this is what
+[  318.43s ->   325.61s] we would consider realized or historic volatility. I'm getting Apple return data, I'm taking the average
+[  325.61s ->   332.09s] return, and then I'm measuring deviations in the returns about that average. So anytime there's
+[  332.09s ->   337.77s] a deviation on the downside or the upside, I measure that distance, I compute that as a volatility.
+[  337.77s ->   344.17s] It's the squared deviations here. So on the left, you see the returns, on the right, you see these
+[  344.17s ->   352.01s] volatility measures. Why are they different? And why are they changing over time? Well, volatility is not
+[  352.01s ->   358.65s] constant. Volatility is going to change over time. It's a very, very important thing to note about this
+[  358.65s ->   365.13s] latent process, this unobservable process. Moreover, when we use different time periods
+[  365.13s ->   371.05s] to measure the benchmark, you can see that the subsequent volatility measure also changes. So what
+[  371.05s ->   377.85s] I have here is I have two of the same time periods and one different time period. I'm querying this data
+[  377.85s ->   382.17s] from Interactive Brokers, their trader workstation. I'll leave a link in the description below if you'd
+[  382.17s ->   386.33s] like to get started with them. I highly recommend Interactive Brokers. I've been trading with them
+[  386.33s ->   391.85s] for over 10 years in an investment, algo trading capacity. I highly recommend their API. So if you'd
+[  391.85s ->   398.01s] like to get started, I'll leave a link in the description below. Nevertheless, I'm pulling the 30-day
+[  398.97s ->   406.01s] realized or historic volatility directly from Interactive Brokers. That's this green path.
+[  407.13s ->   412.01s] And I'm also computing it myself. And you can see there's a little bit of a discrepancy.
+[  412.01s ->   417.37s] There may be a slight difference in the computation, but they certainly track very closely.
+[  417.37s ->   423.21s] So in terms of a realized volatility measure, I'd say I'm doing a pretty darn good job of tracking,
+[  423.21s ->   429.85s] say that green line. Okay. And that's just by simply looking backwards, computing this expectation,
+[  429.85s ->   437.53s] this benchmark, and measuring deviations around it on a rolling 30-day basis. So every 30 days,
+[  437.53s ->   442.89s] I'm going to take the average, then I'm going to measure deviations, and I'm going to roll that
+[  442.89s ->   448.33s] forward by one day, take the new average, roll that forward, so on and so forth. You can see
+[  448.97s ->   457.45s] that those paths are much smoother than the red path. The red path is going to be more volatile
+[  457.45s ->   462.97s] because I'm not using as long of a period to measure the return. So the benchmark that I'm
+[  462.97s ->   470.25s] using to measure deviations around is rolling at a much faster time window than the 30 days. So it's
+[  470.25s ->   478.17s] capturing more of those wild swings because the benchmark isn't as smooth as the longer time
+[  478.17s ->   484.25s] horizon. So this is what realized or historic volatility would look like.
+[  484.25s ->   490.01s] But I thought historic data wasn't indicative of future performance. You're right, it's not.
+[  490.01s ->   496.73s] There's nothing that says this benchmark is going to hold in a forward-looking sense. In fact, we can
+[  496.73s ->   503.21s] see volatility changes very quickly over time in each of these cases, right? We don't just have a
+[  503.21s ->   508.81s] constant volatility measure here. That's not something that we observe in the market. Volatility is
+[  508.81s ->   515.29s] certainly time varying. Nevertheless, when it comes to producing a measure of backward-looking
+[  515.29s ->   520.49s] volatility, these types of techniques definitely tend to suffice. But what about forward-looking
+[  520.49s ->   525.77s] volatility? If we're observing, let's say at this point in time, let's say this is today,
+[  525.77s ->   534.49s] we're observing like a 13% realized volatility. Is that fair to say? So that's on a 30-day rolling
+[  534.49s ->   540.17s] basis. Is that fair to say we're going to see similar volatility for the next 30 days? Or should
+[  540.17s ->   546.49s] we use a different measure? Is there a better forward-looking measure? There certainly is.
+[  546.49s ->   553.85s] And that brings us to implied volatility. Now, implied volatility is very interesting because
+[  553.85s ->   560.49s] it directly comes from the options markets, directly comes from inverting the Black-Scholes
+[  560.49s ->   566.09s] model. So I have a lot of videos discussing the Black-Scholes equation, the subsequent solution,
+[  566.09s ->   569.93s] the Black-Scholes model. I highly recommend you check those out if you're interested. I'm not going
+[  569.93s ->   576.17s] to do a deep dive into that topic herein. Rather, we're going to use the Black-Scholes model to come
+[  576.17s ->   582.33s] up with this implied volatility. So how do we do that? Well, given the Black-Scholes model, what we can do
+[  582.33s ->   590.33s] is we can use the market option price to back out the volatility required to produce the prices
+[  590.33s ->   597.37s] observed in the market. And that volatility required is the so-called implied volatility.
+[  597.37s ->   605.05s] And what this is is essentially what traders are pricing volatility at in a forward-looking sense.
+[  605.05s ->   613.13s] So in terms of volatility to come, this is literally what the market is pricing options that are expiring in
+[  613.13s ->   620.63s] the future at given the level of volatility. And that again is found by inverting the Black-Scholes
+[  620.63s ->   625.83s] model, finding a solution to this minimization problem. So what are we looking at here? Well,
+[  625.83s ->   631.91s] we're looking at a very important chart. This is going to make the distinction between a backward-looking
+[  631.91s ->   638.23s] measure of volatility and a forward-looking measure of volatility. What you can see here is we have implied
+[  638.23s ->   645.59s] volatility and 30-day realized volatility. Now, at any point in time, I can go into the market and I can
+[  645.59s ->   652.79s] observe what implied volatility is at right now. And there may be some aggregate composite measure,
+[  652.79s ->   658.55s] but typically implied volatility is quoted for a particular moneyness and a particular maturity.
+[  659.11s ->   663.67s] In this particular case, we're looking at an aggregate measure of implied volatility.
+[  663.67s ->   671.19s] So what we see here is not just implied volatility, that is what traders were pricing options at in a forward-looking
+[  671.19s ->   678.39s] sense, but we're looking at that measure over time. It's very interesting. So at this point in time right here,
+[  678.95s ->   686.47s] traders were pricing volatility at 0.29, so roughly 29%. And then at this point in time,
+[  686.47s ->   692.47s] they were pricing it at 18%. So all of those measures are point in time.
+[  692.47s ->   699.43s] That is a point in time measure for implied volatility. At that point in time, the forward-looking consensus
+[  699.43s ->   708.47s] was, let's say in this case, 23%. Whereas the green line is saying, hey, returns have already happened.
+[  708.47s ->   715.03s] Now let's compute a measure of backward-looking volatility, historic or realized volatility.
+[  715.03s ->   723.35s] And what do you notice about these two processes? Well, they tend to be more or less correlated in
+[  723.35s ->   731.19s] different cases, different settings. And what we typically see is this idea of a volatility risk premium.
+[  731.59s ->   739.59s] Typically, fear drives volatility. And we see a systematic mispricing. We tend to see
+[  739.59s ->   748.23s] systematically that implied volatility realizes less than implied volatility would have suggested.
+[  748.23s ->   755.35s] So let's say the 30-day forward-looking implied volatility is 30%. If I was to run a regression
+[  755.35s ->   761.19s] in a forward-looking setting on the average realized implied volatility, I would tend to see on average,
+[  761.19s ->   769.19s] yes, it certainly does decline. And I'm going to put my money where my mouth is. I actually produced
+[  769.19s ->   778.15s] these regressions for you here. Y equals X is suggesting, hey, the implied volatility in a forward-looking
+[  778.15s ->   787.19s] sense was measured correctly. So if the slope of the regression line was one, then implied volatility would
+[  787.19s ->   794.55s] certainly perfectly predict the subsequent realized implied volatility in a forward-looking sense.
+[  795.19s ->   799.19s] But that's not what happens. Our regression line actually has a slope that's less than one.
+[  799.75s ->   805.99s] What that means is at any given time, we observe, hey, the volatility in a forward-looking sense,
+[  806.63s ->   815.13s] the implied volatility tends to realize lower. Wow, that's pretty substantial. If we break this up into
+[  815.13s ->   820.09s] two separate regimes, what I'm going to do is break this up into a low volatility regime and a high
+[  820.09s ->   825.85s] volatility regime. We can see at this intersection, I solved that system of equations, I produced two
+[  825.85s ->   834.17s] separate regressions. The effect is even more pronounced in the high volatility regime than it is in the low
+[  834.17s ->   841.85s] volatility regime. The slope is even less than the low volatility regime. And that is precisely the
+[  841.85s ->   846.65s] point that I'm trying to make. So if we go back here, we can see, yeah, the correlation between
+[  846.65s ->   853.21s] realized and implied volatility, maybe there's some sort of relationship here where as things tend to
+[  853.21s ->   860.09s] heat up, realized volatility gets higher and implied volatility gets higher as uncertainty and fear both
+[  860.09s ->   866.81s] increase, both measures are likely to increase. That'll increase this rolling correlation. But in general,
+[  866.81s ->   872.01s] if we look at it in terms of just implied volatility, we're really focusing on this forward-looking
+[  872.01s ->   880.89s] measure, then we can see, yeah, well, on average, people tend to what? Overprice fear. We've talked
+[  880.89s ->   887.13s] about this a lot on this channel. It's not a crazy idea. And this is a very simple regression to suggest
+[  887.13s ->   892.73s] why that is the case. Well, yeah, this certainly does not track the Y equals X line. This is only a
+[  892.73s ->   898.89s] five-day forward average as well. And in these two separate regimes, we can certainly see that
+[  898.89s ->   904.73s] volatility realizes less on average. So what are we trying to model with Arch and Garch, implied
+[  904.73s ->   911.53s] volatility or realized volatility? Well, we have the Black Trolls model. We can produce an implied
+[  911.53s ->   918.89s] volatility right now. We want to get a sense of realized volatility in a forward-looking sense.
+[  919.53s ->   926.09s] And we want to be able to capture dynamics like this in the context of realized volatility.
+[  926.09s ->   930.89s] That's what we're building towards here. So when we go about applying an Arch or a Garch model,
+[  930.89s ->   936.09s] really what we're doing is we're looking at trying to measure some sort of realized volatility
+[  936.09s ->   941.69s] in a forward-looking sense. We're trying to model it as some sort of expectation. And that's what we're
+[  941.69s ->   948.73s] going to be doing. We're going to be fitting our arch or Garch model to not the implied volatility,
+[  948.73s ->   955.61s] but rather the realized volatility. Even with the Black Trolls model, if it isn't immediately clear
+[  955.61s ->   961.85s] why we are fitting an arch or Garch to realize volatility instead of implied volatility, bear with
+[  961.85s ->   968.01s] me. It'll make more sense when we get down to the formal definition of each model. Until then,
+[  968.01s ->   974.89s] we have to flesh out more dynamics of realized volatility. We talked about implied volatility
+[  974.89s ->   980.73s] a little bit here, but what are some components of realized volatility and returns that such a
+[  980.73s ->   987.61s] volatility model would have to capture? If we don't understand what we're observing in the market and
+[  987.61s ->   994.33s] data, then how can we construct and understand a model to forecast such a feature that we can't even
+[  994.33s ->  1001.45s] observe? So we'll start with this idea of kurtosis. When it comes to kurtosis and stock returns,
+[ 1001.45s ->  1009.13s] typically we're dealing with something called a leptokurtic distribution. That means that the tails
+[ 1009.13s ->  1018.01s] of the distribution, so the extremes, are fatter than a typical Gaussian normal distribution, a bell curve.
+[ 1018.01s ->  1026.25s] And the problem with that is if you use a normal distribution to model returns, you're going to be
+[ 1026.25s ->  1035.37s] underestimating the extremes on either case. And naively, if you're trying to compute maybe portfolio risk,
+[ 1035.37s ->  1040.89s] maybe a value at risk, the first thing we'll teach you in some sort of finance class in college, maybe
+[ 1040.89s ->  1046.73s] it's just a vanilla finance class and there's no formal study of the implications of such such
+[ 1046.73s ->  1055.85s] assumptions, you will just approach the risk measure parametrically. You'll take a normal distribution,
+[ 1055.85s ->  1063.37s] compute the average return and the variance of that return, the standard deviation, the volatility in a
+[ 1063.37s ->  1069.37s] backward-looking setting, and then just plug that into a normal distribution to come up with your risk
+[ 1069.37s ->  1076.01s] values. That is not at all appropriate. That's not at all appropriate for so many reasons. Well,
+[ 1076.01s ->  1084.26s] what are some reasons? We know volatility changes over time. Case one, super inappropriate risk measure.
+[ 1084.26s ->  1090.98s] Case two, we observe fat tails. If we try to use a normal distribution, we're underestimating tail risk.
+[ 1090.98s ->  1096.42s] And that's what I have here. So this isn't as insulting in this particular case, but sometimes
+[ 1096.42s ->  1106.01s] Kirtosis can get 10, 12, 15, 18, 20 plus. What does that mean for our risk? Well, the purple is a normal
+[ 1106.01s ->  1112.49s] distribution, what your professor in finance class would have you use for a risk measure. And the green
+[ 1112.49s ->  1119.29s] is an actual return distribution. But look at the extremes. The purple line dips under on both sides
+[ 1119.29s ->  1127.69s] of the chart. You're always going to be underestimating risk on the upside and the downside. That's what it
+[ 1127.69s ->  1134.17s] means to be leptocurtic. That's what it means to have excess Kirtosis. This is a feature that we observe
+[ 1134.17s ->  1141.77s] in almost every single asset. We observe this in stocks in particular. These tails are tremendously fat,
+[ 1141.77s ->  1148.89s] extremes on both sides. Hopefully now you're starting to see why we need a model capable of capturing
+[ 1148.89s ->  1156.41s] this Kirtosis, this excess Kirtosis. If we just used the purple distribution, the normal distribution,
+[ 1156.41s ->  1161.77s] we would be severely underestimating risk. By how much in this particular case? Well, I've computed the
+[ 1161.77s ->  1168.49s] value at risk. And you can see there's almost a 20% difference between the parametric approach
+[ 1168.49s ->  1174.41s] with the purple line, something your finance professor would have you do, and the data that
+[ 1174.41s ->  1181.61s] we observe that is this green line. So clearly, we need some sort of volatility model that is going to
+[ 1181.61s ->  1189.37s] capture the idea of excess Kirtosis in the return space. Because if we're going to try to construct a
+[ 1189.37s ->  1196.33s] model to forecast volatility in a forward-looking sense, then aren't we going to want to capture
+[ 1196.33s ->  1204.49s] the dynamics of the returns that we're basing the volatility measure on? Certainly. Absolutely. And
+[ 1204.49s ->  1210.57s] that is largely why the Arch and Garch model is so impressive. The ability to capture in such a
+[ 1210.57s ->  1216.49s] parsimonious way a lot of these stylized facts and more that we're going to talk about in a moment.
+[ 1216.49s ->  1222.33s] Something I wanted to note in this context of Kirtosis is you'll hear news outlets cite events as,
+[ 1222.33s ->  1229.61s] you know, X-sigma events, referencing how many standard deviations away from some sort of mean
+[ 1229.61s ->  1238.01s] quantity the event in discussion is and how crazy unlikely it is. But it's kind of ironic how often
+[ 1238.01s ->  1244.97s] these, you know, 6-sigma, 10-sigma, 30-sigma events actually happen, right? And effectively,
+[ 1244.97s ->  1251.21s] a lot of the time, we're just underestimating this tail risk. They're just throwing this into some sort
+[ 1251.21s ->  1257.37s] of Gaussian measuring a mean, looking at historic data like we did in the beginning to compute
+[ 1257.37s ->  1263.37s] realized volatility, then measuring a deviation from that volatility. There's so many ways to
+[ 1263.37s ->  1270.09s] construct an inappropriate benchmark. A 6-sigma event may not be as outrageous as those outlets
+[ 1270.09s ->  1276.41s] are citing. So yeah, I mean, there are a lot of implications of these stylized facts that we are
+[ 1276.41s ->  1280.81s] observing and analyzing together. And clearly, we're going to want some sort of volatility model
+[ 1281.45s ->  1286.65s] to capture these dynamics that we're observing. Some more stylized facts of volatility for you.
+[ 1286.65s ->  1292.33s] Volatility clustering. Periods of high volatility tend to cluster together and periods of low volatility
+[ 1292.33s ->  1296.89s] tend to cluster together. This means that volatility shows persistence and autocorrelation.
+[ 1297.45s ->  1303.05s] This is not a crazy idea. I've used the analogy of a boat on this channel a whole bunch to explain
+[ 1303.05s ->  1308.17s] volatility. Right? You're sitting on a lake, the lake is super calm, you're chilling on your boat,
+[ 1308.17s ->  1312.73s] everyone else is chilling on their boats, and it's flat calm. Then all of a sudden,
+[ 1312.73s ->  1317.74s] you see somebody start driving away. Okay, well, why is that guy driving away? Then you see someone
+[ 1317.74s ->  1322.46s] else driving away, and someone else, and the water is starting to get choppy. Maybe you should drive away.
+[ 1323.34s ->  1328.06s] Right? You start driving away, everything gets crazy choppy. That's a volatility cluster.
+[ 1328.06s ->  1334.54s] Eventually, everything normalizes and things get glass calm again. But that's this idea of
+[ 1334.54s ->  1340.70s] volatility clustering. And that exact same logic can be used for sell-offs in the market. Why is
+[ 1340.70s ->  1344.38s] that guy selling? Why is that guy selling? Do they know something I don't? Let me pull out too. Let
+[ 1344.38s ->  1349.02s] everyone pull out. Then all of a sudden, you're in a free fall. So, you know, that's this idea of
+[ 1349.02s ->  1354.38s] volatility clustering. Stylized fact. Moreover, we have this idea of mean reversion. Volatility
+[ 1354.38s ->  1359.50s] clusters, but it also tends to revert back to a long-run average level over time.
+[ 1360.46s ->  1366.14s] Extremely high and low volatility periods don't persist indefinitely. Very easy way to verify
+[ 1366.14s ->  1372.38s] this is just to look at a chart like the VIX. S&P 500 implied volatility, that is the implied
+[ 1372.38s ->  1378.86s] volatility on SPX options. You can see that it's not up and to the right. Doesn't look like Apple or
+[ 1378.86s ->  1385.10s] NVIDIA. It constantly reverts down to a mean level. It's a behavior you would expect to see
+[ 1385.10s ->  1390.94s] from this latent volatility measure. In that case, it's implied volatility, not specifically
+[ 1390.94s ->  1396.54s] realized volatility. We also have this so-called leverage effect. Volatility tends to increase
+[ 1397.34s ->  1403.50s] more disproportionately after negative returns compared to positive returns of the same magnitude.
+[ 1404.14s ->  1411.58s] This asymmetric response and this idea that vol increases more with negative returns coincides
+[ 1411.58s ->  1416.46s] with everything we've discussed about fear driving volatility, the volatility risk premium. That's the
+[ 1416.46s ->  1422.14s] so-called leverage effect. We already talked about heavy tails indicating more extreme events
+[ 1422.14s ->  1428.62s] than expected relative to a normal distribution, the impact in news outlets and risk. There's also this
+[ 1428.62s ->  1435.34s] idea of long memory. Some studies show that volatility shows a long-range dependence, meaning
+[ 1435.34s ->  1442.22s] past volatility very, very far in the past that extreme lags can influence future volatility.
+[ 1443.80s ->  1448.76s] Suggests that maybe even in pricing, rough volatility models might be more appropriate,
+[ 1448.76s ->  1453.56s] like a fractional brownie emission, some sort of Volterra process. I have a website,
+[ 1453.56s ->  1458.44s] Gaussian cookbook on this if you want to check this out. But other literature suggests that the
+[ 1458.44s ->  1463.08s] evidence is ill-founded, so on and so forth as it goes in the quant finance space.
+[ 1463.08s ->  1467.88s] In the charts here, I just have a simple example of some of these stylized facts. I have this
+[ 1467.88s ->  1473.48s] mean reversion. We can see this red dotted line as some sort of mean that the volatility process is
+[ 1473.48s ->  1479.56s] reverting to. And this is just the 20-day rolling realized volatility. Whether or not this long-term
+[ 1479.56s ->  1484.92s] average actually stands as subject for discussion, again, it's going to depend on your sample, the window
+[ 1484.92s ->  1490.76s] you choose that could change over time, so on and so forth. You can also see the leverage effect to
+[ 1490.76s ->  1497.88s] some capacity here. If you look, you can see the volatility change and the previous return. And on
+[ 1497.88s ->  1507.48s] the positive side, you can see what we see declines that are maybe minus 0.06 versus the negative return,
+[ 1508.28s ->  1515.40s] which has an increase of 0.08 at the max there. It's an anecdotal example, but it still exhibits
+[ 1515.40s ->  1523.08s] the leverage effect. The decrease in volatility from positive returns is less than the increase in
+[ 1523.08s ->  1529.24s] terms of magnitude from negative returns. And that is the so-called leverage effect. So two stylized facts
+[ 1529.24s ->  1535.40s] visualized for you here, clearly all are very important and our model should capture in a
+[ 1535.40s ->  1541.72s] parsimonious way as many of these as possible. So if all of these dynamics are important to capture
+[ 1541.72s ->  1547.40s] in a volatility model, what did they do before arch models and angles research? Well, clearly they
+[ 1547.40s ->  1553.72s] weren't able to capture excess kurtosis, this idea of volatility clustering, heteroscedasticity in
+[ 1554.28s ->  1559.16s] one single parsimonious model. Sure, there may have been ways to capture those dynamics, but you
+[ 1559.16s ->  1565.40s] always have some sort of complexity efficiency trade-off when it comes to modeling. So we always
+[ 1565.40s ->  1571.96s] want some sort of parsimonious representation that's capable of capturing these dynamics in a very efficient
+[ 1571.96s ->  1579.32s] way. And that is exactly what the arch model does. Let's break down arch models step by step to fully
+[ 1579.32s ->  1586.44s] understand them and appreciate the dynamics that they capture. So let's start with what an arch model
+[ 1586.44s ->  1594.68s] is. Well, it is an auto regressive conditionally heteroscedastic model. It is a class of models that is going
+[ 1594.68s ->  1604.38s] to go about capturing the dynamics that we observed above in the data, particularly for volatility. Okay, well,
+[ 1604.38s ->  1609.98s] what is auto regressive? What is conditionally heteroscedastic? Auto regressive just means
+[ 1609.98s ->  1618.46s] we're using past values, the model's own past values to estimate future states. Anytime you see auto
+[ 1618.46s ->  1626.38s] in a time series capacity, you're typically dealing with a processes own lagged values, auto covariance,
+[ 1626.38s ->  1632.71s] auto correlation, so on and so forth. What about heteroscedastic versus homoscedastic?
+[ 1632.71s ->  1638.71s] Well, this is particularly important because this is dealing with variance or volatility,
+[ 1639.59s ->  1646.55s] standard deviation. If a model is homoscedastic, it proposes a constant variance. We never see this
+[ 1646.55s ->  1653.11s] in finance, right? We don't have this wonderful simplifying assumption. If we assume constant
+[ 1653.11s ->  1658.63s] variance, then we are making an assumption that we know is incorrect. And we've already observed this
+[ 1658.63s ->  1666.07s] in the data in an implied volatility sense and in a realized volatility sense. So what about heteroscedastic?
+[ 1666.07s ->  1670.71s] Well, if a model is heteroscedastic, it proposes that this variance of volatility is not constant.
+[ 1670.71s ->  1676.71s] This is certainly more in line with what we've observed in the data above. We've observed paths
+[ 1676.71s ->  1684.34s] of volatility that change over time. It's not a straight line. Specifically, this model is conditionally
+[ 1684.34s ->  1694.10s] heteroscedastic. That is the variance of errors in a model change over time and is dependent on past
+[ 1694.10s ->  1702.18s] information. This is quite useful here for volatility. Let's now talk about the actual definition of the
+[ 1702.18s ->  1710.66s] arch process. We have this return series. So we have y sub t is equal to some sort of mean value for the
+[ 1710.66s ->  1718.90s] return plus some sort of error, this epsilon. And this epsilon is time varying. This epsilon is defined
+[ 1718.90s ->  1727.14s] as the product of some sort of measure of volatility times an innovation. And this innovation is assumed to
+[ 1727.14s ->  1735.94s] have a mean zero and a variance of one. Often this is standard normal, but other heavy tail distributions,
+[ 1735.94s ->  1743.62s] other extensions are also relevant. So this is the process for returns and errors. What about the
+[ 1744.34s ->  1751.62s] volatility process itself? Well, hopefully now it's starting to become more clear why we were using
+[ 1751.62s ->  1756.82s] the realized volatility, not implied volatility. We are looking at this sigma squared term here.
+[ 1757.38s ->  1763.62s] And what we're doing is we're saying that this volatility, this realized volatility is equal to
+[ 1763.62s ->  1771.06s] alpha sub zero, some sort of intercept, some sort of level, plus alpha one, which is going to be
+[ 1771.06s ->  1777.94s] a coefficient on some sort of lagged error value squared. And if we look back at the definition of
+[ 1777.94s ->  1785.14s] this epsilon, well, it's defined in terms of sigma. So effectively it's sigma squared times z sub t squared.
+[ 1785.14s ->  1791.70s] If we plug that on in here, but at t minus one. Okay. And that's where the auto regressive component
+[ 1791.70s ->  1798.82s] comes in. And the number of terms that we are extending to is based on the order of the process.
+[ 1798.82s ->  1806.26s] So we go t minus one, t minus two, all the way to t minus q. And that is our arch q model. If it was an
+[ 1806.26s ->  1812.18s] arch one model, we would just go out to this one term here. Now we'll talk about the conditional and
+[ 1812.18s ->  1817.78s] unconditional expectation and variance in a moment. But before we do, let's just see this model in
+[ 1817.78s ->  1824.74s] action. I am going to horse race this model against something that doesn't capture the volatility
+[ 1824.74s ->  1830.10s] dynamics we observed above, an exponentially weighted moving average. And I'm going to naively
+[ 1830.10s ->  1837.46s] use that to try to forecast realized volatility. So we know that that model isn't going to capture
+[ 1837.46s ->  1843.22s] the dynamics that we want, this excess kurtosis, the leverage effect, volatility clustering, things of
+[ 1843.22s ->  1849.62s] that nature. So what does this look like when we try to fit the model and compute the out of sample
+[ 1849.62s ->  1856.10s] performance? Well, I'm doing a grid search on both of these models. It's far from a perfect modeling contest.
+[ 1856.10s ->  1863.70s] Nevertheless, I'm fitting the models in a similar capacity. So it is a reasonably fair comparison.
+[ 1863.70s ->  1874.42s] Here, I have a root mean squared error of 42% roughly, and an r squared value of 5.12% for this
+[ 1874.42s ->  1880.74s] exponentially weighted moving average. That is really all it's doing is it's trying to use the previous
+[ 1880.74s ->  1888.50s] value at some sort of decay factor going back a certain number of lags to predict or shouldn't
+[ 1888.50s ->  1894.26s] say predict, but forecast the next realized volatility. And you can see really it's just
+[ 1894.26s ->  1903.40s] trying to chase these spikes and we get a massive root mean squared error. I also fit an arch one model.
+[ 1903.40s ->  1912.04s] It appears to be maybe a little more reasonable in producing a volatility forecast and the out of
+[ 1912.04s ->  1916.92s] sample performance metrics would certainly suggest that is the case. We could see a root mean squared
+[ 1916.92s ->  1926.28s] error of roughly 25% here relative to the 42% of the EWMA process there and a higher r squared. So a
+[ 1926.28s ->  1931.24s] higher variance explained as well. Now, of course, this is just one example, right?
+[ 1931.24s ->  1937.16s] I could overfit the weighted moving average and maybe make it perform better. Maybe I could do
+[ 1937.16s ->  1944.12s] the same with an arch model. The innovation is really in its ability to capture the dynamics of
+[ 1944.12s ->  1950.76s] interest that we were discussing earlier in this video. The stylized facts of volatility,
+[ 1950.76s ->  1956.84s] right? The volatility clustering, this excess kurtosis, so on and so forth. And that's why
+[ 1956.84s ->  1963.88s] its performance is significantly better in terms of measuring risk, in terms of measuring volatility,
+[ 1963.88s ->  1969.88s] forecasting volatility, so on and so forth, because it's actually accounting for those dynamics.
+[ 1969.88s ->  1974.60s] Something like a weighted moving average is just going to be chasing previous values. It's just trying
+[ 1974.60s ->  1982.60s] to use some sort of weighted combination of lagged values to produce a forecast. Whereas an arch model is
+[ 1982.60s ->  1989.56s] actually trying to consider all of these dynamics when it produces some sort of forecast value.
+[ 1989.56s ->  1997.08s] That is why these models, the arch, the garch, the generalized extension is so innovative, so productive.
+[ 1997.08s ->  2001.80s] So how do we know that this model is actually capturing those dynamics we discussed earlier? Well,
+[ 2001.80s ->  2008.36s] we can actually run the statistics on the model directly. We've defined it above. Now we can take a look at
+[ 2008.36s ->  2013.72s] the conditional variance and the kurtosis. So if I have some sort of filtration, I'm going to have
+[ 2013.72s ->  2019.08s] information up to t minus one. I can compute the conditional and conditional expectation. I get zero
+[ 2019.08s ->  2027.08s] in both cases. What about the conditional variance? The conditional variance, given this filtration, is
+[ 2027.08s ->  2035.32s] actually equivalent to sigma squared sub t. It's not a constant value. Now it's time dependent.
+[ 2035.96s ->  2042.20s] That is very substantial, right? That is this conditionally heteroscedastic component. We're
+[ 2042.20s ->  2049.32s] saying, hey, let's multiply this value with some sort of innovation. That's how we've defined this
+[ 2049.32s ->  2057.48s] process here. This sigma sub t times Z sub t. And that is what makes it conditionally heteroscedastic.
+[ 2057.48s ->  2062.76s] When we take this product, if this is some standard normal random variable, then we're not dealing with
+[ 2062.76s ->  2071.08s] what? A normal distribution with a constant variance, like this parametric approach. Instead,
+[ 2072.39s ->  2080.55s] the variance is going to depend on time t. That is substantial. So now all of a sudden,
+[ 2080.55s ->  2088.79s] it's a series of Gaussians, if we're using that for our Z sub t innovation, with time varying
+[ 2089.51s ->  2095.51s] variances. And that is what is going to help us account for those fat tails. That is what is going
+[ 2095.51s ->  2101.75s] to help us account for that excess kurtosis. And that is why this is so substantial.
+[ 2101.75s ->  2107.83s] So when we come on down here, we see, hey, we certainly are conditionally heteroscedastic.
+[ 2107.83s ->  2115.19s] We can see the unconditional variance being some sort of function of the alphas in the
+[ 2116.23s ->  2123.51s] definition of the ARCH process. But the distribution itself is leptokurtic, since again, like I said,
+[ 2123.51s ->  2129.83s] it's a combination of a series of Gaussian innovations with different variances. How do
+[ 2129.83s ->  2136.23s] we know this has excess kurtosis? Well, we can just go about computing the kurtosis value.
+[ 2136.23s ->  2144.23s] And if we do that, we can see this exists when, so long as we don't have zero in the denominator,
+[ 2144.23s ->  2149.59s] we're not dealing with some sort of negative value, and we have a value greater than three,
+[ 2149.59s ->  2155.67s] there will be fat tails. So we can actually ensure mathematically, given some sort of fit,
+[ 2155.67s ->  2162.07s] that we are accounting for this excess kurtosis observed in volatility in the data.
+[ 2162.07s ->  2167.27s] So where does the GARCH model come into play? A Ballerslev in 1986, a bit after Angle's seminal
+[ 2167.27s ->  2173.99s] research, we get this generalized autoregressive conditionally heteroscedastic model. Why not just
+[ 2173.99s ->  2180.23s] use an ARCH model? Why use a GARCH PQ model? Well, you can see the dynamics are roughly equivalent,
+[ 2180.23s ->  2184.31s] right? We still have this return process, we have this, this epsilon, this error process,
+[ 2184.31s ->  2189.43s] some sort of innovation scaled by some sort of a variance that changes over time, right?
+[ 2189.43s ->  2193.91s] It's time dependent, great, it's capturing that, that dynamic we observe in the data.
+[ 2194.55s ->  2199.43s] And we look back to this volatility process, we see, okay, we still have that series of alphas and the,
+[ 2200.15s ->  2207.59s] the epsilon, those innovations with the time varying volatilities. But we also have this new term here.
+[ 2207.59s ->  2214.15s] So we're not just looking at lagged squared residuals, we're also looking at lagged conditional variances.
+[ 2214.95s ->  2221.59s] So we're including this new component in the overall process. Why is this better?
+[ 2221.59s ->  2231.51s] Well, mathematically, we can show that an ARCH infinity model, that is, if I go back up here,
+[ 2231.51s ->  2239.75s] and I look at my ARCH model specification, and I include infinitely many terms, that is equivalent to
+[ 2239.75s ->  2251.22s] a GARCH 11. So if I have an ARCH infinity process, I can rewrite this in this way,
+[ 2253.00s ->  2259.96s] I can multiply the second equation by beta, I can subtract it from the first equation,
+[ 2260.68s ->  2267.48s] and then if I rearrange, I get a GARCH 11 process.
+[ 2269.22s ->  2277.06s] So an ARCH infinity process can be represented as a more parsimonious GARCH 11 process. So in other
+[ 2277.06s ->  2285.38s] words, we can capture the same dynamics and an infinite ARCH process as a simple GARCH 11 process.
+[ 2285.38s ->  2293.14s] That is absolutely wild. The cool thing here is if the GARCH model is a more parsimonious ARCH,
+[ 2293.14s ->  2298.82s] and an infinite order ARCH process captures volatility dynamics we're interested in,
+[ 2298.82s ->  2304.74s] then certainly a more parsimonious representation in this GARCH model will also capture those dynamics.
+[ 2304.74s ->  2310.74s] And that is exactly what we see. I've also implemented a GARCH 11 in a similar capacity to the
+[ 2310.74s ->  2317.70s] weighted moving average and the ARCH model above. We get a higher at a sample R squared and comparable
+[ 2317.70s ->  2323.46s] root mean squared error to the ARCH 1 model. It's going to be sample dependent, but largely of course
+[ 2323.46s ->  2329.94s] we can confirm mathematically that yes, GARCH is going to be the way to go. As we don't need an
+[ 2329.94s ->  2337.62s] infinite order ARCH model, we can just simply use a GARCH 11 and that is widely used in practice.
+[ 2337.62s ->  2342.98s] So yes, the GARCH model definitely has similar benefits. It captures this volatility clustering
+[ 2342.98s ->  2348.26s] models, excess kurtosis. It has a time varying conditional variance, and really here it's
+[ 2348.26s ->  2354.34s] going to require fewer parameters capturing long memory dependence through the beta term.
+[ 2354.34s ->  2359.30s] So unlike ARCH, which has this infinite order that you would need to capture those dynamics,
+[ 2359.30s ->  2364.98s] we can capture that through this beta term. I think it's also worth noting that what we've seen here is
+[ 2365.62s ->  2373.30s] a very low explainable power in the ARCH and GARCH models, but this is particularly expected for
+[ 2373.30s ->  2377.06s] single stock equities. So if we look at the R squared here, we get less than 10%
+[ 2377.94s ->  2384.26s] and we get what 8% in this case. And I think it was five, yeah, roughly 5% in this case. So
+[ 2384.26s ->  2390.98s] GARCH at 8%, ARCH at 5%. It's really to be expected. Intraday returns are actually a better
+[ 2390.98s ->  2398.10s] representation of the latent volatility process and ARCH can explain up to between 40 and 60%
+[ 2398.98s ->  2405.14s] of such variation as documented in the literature. So if you're interested, I highly recommend you
+[ 2405.14s ->  2410.42s] check that out or try it yourself. This is a really cool result, but maybe not all that unexpected.
+[ 2410.98s ->  2417.62s] Here, what we're doing is we're looking at intraday returns to help forecast the daily volatility. So
+[ 2417.62s ->  2424.26s] maybe five minute increments, and we're using that to help inform the daily volatility forecast.
+[ 2425.06s ->  2432.26s] And if we are getting a better representation of the latent process using this intraday data,
+[ 2432.26s ->  2437.70s] and our model effectively captures the dynamics of that latent process, then I certainly would hope
+[ 2437.70s ->  2442.66s] we see a significant amount of variation explained. And it does appear to be the case.
+[ 2442.66s ->  2447.86s] As I had said earlier, highly recommend you check out the literature on this topic. Some models can
+[ 2447.86s ->  2453.78s] even outperform this. It's going to depend on the sample too, but a very, very cool result. A very
+[ 2453.78s ->  2460.18s] simple way to see the profound impact of such an ARCH or GARCH model is through portfolio risk
+[ 2460.18s ->  2464.90s] management. You can use a lot of different trading examples. You could talk about some sort of
+[ 2464.90s ->  2470.18s] quantitative trading strategy where you have a series of vol forecasts, maybe use some sort of
+[ 2470.18s ->  2477.30s] compression like PCA to extract common variation of all of those vol features into one feature.
+[ 2477.30s ->  2481.22s] And you do that for a series of signals. That's more of like a quant trading application.
+[ 2482.26s ->  2488.90s] Maybe you look at not just volatility forecasting, but maybe in terms of option pricing. There's a lot
+[ 2488.90s ->  2494.18s] of different things you could do with this model. But one of the easiest ways to see the profound impact
+[ 2494.18s ->  2499.78s] and being able to capture these dynamics is by looking at a naive value at risk, something your
+[ 2499.78s ->  2507.22s] finance professor might have you do and a GARCH value at risk. And you can immediately see the
+[ 2507.22s ->  2514.02s] significant difference. So what I'm going to do is I am going to take this traditional parametric
+[ 2514.02s ->  2521.22s] approach to measuring my portfolio value at risk. This is equivalent to roughly what we did up here
+[ 2521.22s ->  2527.38s] with this purple distribution. I'm going to assume that the volatility is constant, right? This homoscedastic
+[ 2527.38s ->  2535.22s] assumption, which is certainly violated in practice. And what I'll do is I'll use that to measure my
+[ 2535.22s ->  2544.74s] value at risk. And what that does is it gives me a threshold. And if I'm measuring, say, maybe a 5%
+[ 2544.74s ->  2553.62s] exceedance threshold, then I'll expect to see that exceedance threshold proportionally broken 5% of the
+[ 2553.62s ->  2561.14s] time. Okay. Now, this is a naive measure with assumptions that are violently wrong. What do we
+[ 2561.14s ->  2574.28s] actually see in terms of exceedances? I see 40%, 40% in that homoscedastic setting. Okay. Now, what if I
+[ 2574.28s ->  2579.24s] correct a lot of those violated assumptions, I'm going to use a GARCH model instead? So I apply a GARCH
+[ 2579.24s ->  2585.80s] model. Now I'm getting something much closer to reality, right, that I'm looking for, I get 9.74
+[ 2586.36s ->  2594.28s] exceedances relative to that 5%, which should be expected. Certainly, certainly significantly
+[ 2594.28s ->  2599.48s] corrected. We may be able to capture this better. Of course, there are different things we could do to
+[ 2599.48s ->  2604.76s] improve this. This is just a simple horse race between a naive approach with a homoscedastic
+[ 2604.76s ->  2610.92s] assumption and, you know, this conditional heteroscedasticity offered by the GARCH model.
+[ 2610.92s ->  2617.24s] And we can already see a significant improvement in our risk performance. We are far better capturing
+[ 2617.24s ->  2624.28s] potential downside using this GARCH model than we are a naive parametric approach. Too long didn't watch,
+[ 2624.28s ->  2631.16s] here is your executive summary. Volatility is an unobservable measure of variability in the return
+[ 2631.16s ->  2639.80s] space. We can proxy for volatility in a backward looking sense using historic or realized volatility
+[ 2639.80s ->  2646.68s] on past returns. We can also look at volatility in a forward looking sense using implied volatility,
+[ 2646.68s ->  2652.68s] though that comes from a completely different source. That is the Black-Scholes model. There are many
+[ 2652.68s ->  2658.28s] stylized facts about volatility including the leverage effect, volatility clustering, excess kurtosis,
+[ 2658.28s ->  2665.32s] this leptocurtic return distribution, and all are important to capture in one parsimonious model.
+[ 2665.96s ->  2672.36s] Naive parametric models fail to capture these dynamics and can severely underestimate tail risk
+[ 2672.36s ->  2679.88s] as we've observed herein. Angle proposed the ARCH model, this autoregressive conditionally
+[ 2679.88s ->  2687.48s] heteroscedastic model which is capable of modeling these dynamics which improve forecasts and risk
+[ 2687.48s ->  2695.24s] measures. We then got this generalization from Balerslev. This GARCH model, which is a more parsimonious
+[ 2695.24s ->  2701.24s] ARCH model, can be represented as an infinite order ARCH model, can capture richer dynamics with fewer
+[ 2701.24s ->  2708.28s] lags. Quite impressive. And these vol models outperform others that do not account for these dynamics,
+[ 2708.28s ->  2715.64s] especially in the context of risk modeling, as we saw in that value at risk example. Some future
+[ 2715.64s ->  2720.20s] topics, things I'd like to talk about. This list does just keep getting longer and longer. I kind of
+[ 2720.20s ->  2725.72s] love it. Some extensions maybe to ARCH and GARCH models and applications. We really didn't talk about
+[ 2725.72s ->  2731.16s] a lot of the literature valid metrics. We didn't talk about Q-like. We talked about RMSE, R-squared.
+[ 2731.16s ->  2737.80s] We could say whether or not those are valid subject for discussion, but those are more technical niche
+[ 2737.80s ->  2743.64s] videos. I'm not sure what the interest is in those particular topics. Maybe I'll write an article and
+[ 2743.64s ->  2750.76s] post it to Medium or my blog. Kalman filters, other time series analysis techniques. I'd like to continue
+[ 2750.76s ->  2757.32s] with these ideas. Maybe even bake them into a live system. So using interactive brokers, maybe some sort
+[ 2757.32s ->  2764.52s] of GARCH for intraday, vol, and Kalman filter for live pricing. That could be an interesting project.
+[ 2764.52s ->  2769.64s] I'd also still like to build this earnings event options trading dashboard from my video on trading
+[ 2769.64s ->  2775.08s] implied volatility crush. So be on the lookout for that quant build. Lots more quant builds in the
+[ 2775.08s ->  2781.40s] future. Those are some of my favorite videos to create. More in the stochastic calculus space,
+[ 2781.40s ->  2786.84s] deriving and solving the Black Sholes equation. This was to get back into understanding option
+[ 2786.84s ->  2791.72s] exposures theoretically where they come from, understanding the Greeks, risk management,
+[ 2791.72s ->  2797.48s] so on and so forth. And this plays nicely into the calibration of stochastic models to go about
+[ 2798.04s ->  2804.36s] extrapolating exotic prices. That's a very necessary component is understanding where
+[ 2804.92s ->  2811.08s] these pricing PDEs come from theoretically in terms of structure and argument. I know we've
+[ 2811.08s ->  2816.52s] talked about pricing exotics in the past and I still need a dedicated video on the calibration of
+[ 2816.52s ->  2821.72s] such models to a market implied volatility service. I actually just finished two scripts, one in Python
+[ 2822.36s ->  2830.04s] and one in C++, calibrating a Heston model to market surface. So it's essentially institutional
+[ 2830.04s ->  2836.20s] grade calibrators. So I would like to do a video on that topic. And that, you know, extends naturally
+[ 2836.20s ->  2842.52s] into neural networks machine learning to approximate pricing functionals. And that is useful again for
+[ 2842.52s ->  2849.16s] calibration. And then, of course, simulating those relevant stochastic processes, maybe the rough
+[ 2849.16s ->  2855.48s] model family and Volterra processes to get at this idea of rough volatility. More niche topics,
+[ 2855.48s ->  2859.40s] but I certainly would like to create videos on those in the future. And that's going to do it for this
+[ 2859.40s ->  2864.44s] video on the Arch and Garch models. I hope you enjoyed it. I hope you learned something. Again,
+[ 2864.44s ->  2870.04s] these videos certainly take a lot of time to create. So if you enjoyed, please like, comment, subscribe,
+[ 2870.04s ->  2875.56s] check out channel membership. If you'd like to master your quantitative skills, check out quantguild.com.
+[ 2876.20s ->  2891.00s] Other than that, thank you so much for watching. And I will see you in the next video.

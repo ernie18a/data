@@ -1,0 +1,298 @@
+[    2.54s ->    31.54s] Hey there, welcome back to Quant Guild. It's Roman. Recently, I've been very busy, but as many of you know, I'm a big proponent of algorithmic trading. If you go on my GitHub, you'll see I have a lot of projects dedicated to the design patterns required to implement algorithmic trading systems with interactive brokers, with Alpaca, integrating machine learning and artificial intelligence models. All that good stuff is publicly available on my GitHub.
+[   31.54s ->    58.54s] Now, recently, I've been doing a lot of volatility trading. So I do a lot of grid trading within the equity markets. But interactive brokers very recently just started to support cryptocurrency. And I just started building out this this algo trading system in Java. And I was starting to get into the order management and sort of the whole placement of the grid orders themselves.
+[   58.54s ->    72.54s] When I realized that many of you were would probably be very interested in a tutorial series on how to develop a system like this. And I figured that I could also make it completely open source and available on GitHub.
+[   72.54s ->    88.54s] What I'd really like to do with this series is take you from start to finish building from the ground up and algo trading system all the way to deployment so that you can see kind of what the process looks like what to expect and you know what kind of profitability you're looking like.
+[   88.54s ->   108.54s] So trading is very similar to really any other business, you're going to have quarters where you do really well, you're going to have quarters where you're doing not so well. And it's all about mitigating your risk and hedging your risk. So those quarters where you're not doing particularly well, you know, you're not going to lose any sleep over your realized P&L.
+[  108.54s ->   117.54s] That being said, hopefully you'll follow along with all these tutorials so that you can build the system from the ground up yourself, making whatever tweaks and modifications you would like to as we kind of go along.
+[  117.54s ->   140.54s] If you aren't interested in following all the tutorials, then of course, this is going to be on my GitHub, it's all open source. So you can just download and kind of do the plug and play thing, where if you create your own TWS instance on your desktop, have an interactive brokers account, you log into your brokerage account, then you can just go ahead and start up this application locally, and then use it to trade all on your own.
+[  140.54s ->   169.54s] Let's go ahead and get started. First thing we need to do is install interactive brokers API on our machine. So we're just going to go ahead and type in interactive brokers API. And we can go look at their API solutions. Now you can go ahead and create an interactive brokers account for free. And then the subscription to market data, unlike equities and options is actually free as well. So you can go ahead and just start streaming crypto market data straight to Java, Python, whatever API you choose.
+[  170.54s ->   199.54s] To use here, we're going to be using Java. And it's it's all free. I for starters, we need TWS and IB gateway. Now IB gateway is more of a lightweight way to connect Java to interactive brokers so that we can place orders stream market data directly to our client and stuff like that. And TWS is going to actually be like the terminal where you can go in and you can manage your portfolios, you can place orders directly. It's it's almost like a mini Bloomberg terminal, if you will, something like that.
+[  199.54s ->   223.54s] So if we scroll down here, you're going to see the client portal API, you're going to want to download the latest gateway. Now it's important that you have 10.2 otherwise crypto is not going to be supported. So we're going to do that for the gateway. And we're also going to do that for the trader workstation. So go on and download the latest version of TWS. And again, make sure that they're at least version 10.2 so that crypto is supported.
+[  223.54s ->   242.54s] Of course, I'll place all of these links in the description below. So if anytime you need to figure out where to download the gateway TWS API, what have you feel free to check that out. Now we're going to head on over to interactivebrokers.github.io, click on that little agree and then you can download the TWS API.
+[  242.54s ->   253.88s] And once again, you're going to want to download the latest version or whatever version is beyond 10.2. Again, we want to support crypto contracts. So we need to at least have version 10.2.
+[  253.88s ->   283.86s] So you'll notice here once you install the TWS API, if we go on over to our computer, we have this little folder TWS API. And I have some other stuff in here as well. So don't worry about that too much. But if we go on over to source Java client, you'll see these executable jar files. And these are exactly what we want. These are what we're going to reference so that we can access the interactive brokers server client, whatever you want to call it, so that we can stream data, we can place orders and do all the stuff that we want.
+[  283.88s ->   313.70s] We are almost ready to start coding. Before we do, I want to have a place that I can actually publish the code to. So I'm going to create a new repository on my GitHub called Aurelius. If you're unfamiliar, Marcus Aurelius was a Roman emperor. In fact, I have a actual minted Roman coin of Emperor Marcus Aurelius around my neck here. If you're unfamiliar, I highly recommend you take a history lesson. But I digress. Let's go ahead and publish this repository to my GitHub.
+[  313.70s ->   344.48s] Here is going to be a grid trading bot for interactive brokers. And it's not exclusive to crypto. You can actually create whatever contracts you want. I just wanted to make sure that, you know, first off, I want to trade crypto. So that's why we're going to be doing crypto as a primary contract. But just want to make sure that you have the minimum version requirement if you want to follow along and actually create some crypto. Now here we are. We are in Eclipse. So at this point, hopefully you have TWS downloaded and installed. You have the
+[  344.48s ->   364.48s] Interactive Brokers Gateway downloaded and installed along with the TWS API. And now all you need is to boot up your favorite IDE. We're going to be using Eclipse. So if you want to follow along in Eclipse, feel free. If you want to use IntelliJ, or if you're too cool for school and you want to use, you know, VS Code or something, feel free.
+[  364.98s ->   391.87s] But we're going to go ahead and get started here. First things first, create a new Java project and configure our build path to include the TWS API that we just downloaded. So we can access our market data information. So step one, create a Java project, create Java project, I will appropriately call this Aurelius. And then I don't need to create a module. I don't particularly care too much about that right now.
+[  391.87s ->   410.25s] And now we are ready to go ahead and configure this build path. So what we're going to want to do is we're going to want to take that folder that contains the TWS jar file, we're going to want to bring it into the source. So I'm going to go to that folder in my file path.
+[  410.25s ->   417.72s] And then I'm going to get the TWS API jar. I'm just going to go ahead and copy it into the source here.
+[  418.80s ->   431.64s] So now that I have this in the source, we need to configure our build path so that we include it in our Java code. This is essentially the same thing as in Python, when you're going through like a requirements.txt,
+[  431.64s ->   439.08s] or maybe like a pip install, if you want to think of it like that, we essentially just need to use this library in our code.
+[  439.38s ->   445.78s] All right, I'm switching up the view a little so you can see where I'm clicking. To get to our build path configuration, we're going to go over here, we're going to right click,
+[  446.34s ->   453.52s] we're going to hit build path, configure build path. And then once you get here, you might be on the order and export tab,
+[  453.52s ->   461.92s] but you're going to click over to libraries, go to class path, add external jar. And then if you navigate on over to your project source,
+[  462.26s ->   471.32s] that's where our TWS API is, you're going to want to go ahead and open that guy. Now we're in our class path or TWS API jar, apply, apply and close.
+[  471.60s ->   477.18s] And if we want to test to see if this works, all we got to do is go ahead and create a new class really quickly.
+[  477.82s ->   481.20s] I'm just going to call it launcher because we're going to need to create a launcher class in a moment.
+[  481.20s ->   484.70s] And what I'm going to do here is I'm just going to go ahead and try to create a new contract.
+[  484.92s ->   488.82s] So I'm going to say contract C is equal to new contract.
+[  490.41s ->   498.91s] And then if we mouse over contract in Eclipse, you can see that it suggests to import contract from com.ib.client.
+[  498.91s ->   509.59s] If we go ahead and do that, then we have successfully imported the contract object from the client module in the interactive brokers Java API.
+[  509.59s ->   513.89s] All right. Now every good Java engineer knows this is not the point of a launcher.
+[  514.21s ->   518.35s] This is not the point of a main class. We got to hit them with the good old public static void main.
+[  518.53s ->   521.37s] So I'm going to go down here, get rid of that contract specification.
+[  521.75s ->   529.25s] I'm going to say public static void main string args, throw some curly brackets around there.
+[  529.25s ->   533.47s] And now we have our main load method. I'm going to get rid of this import statement.
+[  534.21s ->   536.71s] And this is going to be our main class.
+[  536.83s ->   541.13s] So what I'm going to do now is build a run configuration for this main class.
+[  541.45s ->   546.33s] And I'm going to go over to this little play button, run configurations, create a Java application.
+[  547.03s ->   550.11s] And it is going to create this launcher here.
+[  550.11s ->   555.77s] So project is Aurelius, the main class is launcher, and we should be good to go.
+[  556.03s ->   557.71s] So if I run this guy, nothing happens.
+[  557.71s ->   560.57s] So we need to actually make something happen.
+[  560.77s ->   565.79s] I'm going to hit it with the system.out.println, ping.
+[  566.79s ->   571.39s] And now if we test this run configuration, you can see that we get the ping down here.
+[  571.79s ->   573.69s] And we are all set to go.
+[  573.69s ->   580.19s] So if you're used to programming in Python, and this feels like a million extra hoops to jump through, welcome.
+[  580.85s ->   585.83s] Java is significantly faster, but it certainly does come at a price.
+[  586.05s ->   589.83s] We're almost ready to connect to TWS or the gateway.
+[  590.51s ->   595.05s] The only thing we really need now is a means of reading information from the server.
+[  595.49s ->   600.41s] And then eventually a means of connecting to the server and sending data to the server.
+[  600.41s ->   604.29s] So it's essentially a read-write, if you want to think of it like that.
+[  605.34s ->   607.78s] So how are we going to be reading from the server?
+[  607.94s ->   611.06s] Well, one way to do this is create a controller class.
+[  611.10s ->   614.46s] And this controller is going to be responsible for pretty much everything.
+[  614.62s ->   620.74s] It's going to have callback methods that update when new information flows from the server to our algo system.
+[  621.40s ->   624.42s] So let's go ahead and create a new class called controller.
+[  624.76s ->   626.84s] We'll go over to our default package here.
+[  626.84s ->   630.52s] We're going to right-click new class, going to call it controller.
+[  631.72s ->   639.66s] And now we're going to need to import com.ib.client.all.
+[  641.24s ->   647.94s] And now we can go ahead and implement eWrapper.
+[  648.32s ->   653.66s] If I can spell implements, right?
+[  654.02s ->   658.58s] We're going to go ahead and implement the eWrapper class from the client module.
+[  658.58s ->   663.00s] You'll notice that we get a red underline on our controller class.
+[  663.12s ->   669.54s] And that's because we need to add the unimplemented methods that we're overriding from the eWrapper class.
+[  669.82s ->   670.78s] So I'm going to do that.
+[  670.84s ->   673.64s] And you're going to see a whole bunch of methods get added.
+[  674.06s ->   677.20s] Now, these are the callback methods, callback functions.
+[  677.48s ->   678.92s] You know, we don't have to play semantics here.
+[  678.92s ->   685.16s] But this is where the server is going to respond with updates when things change.
+[  685.60s ->   687.08s] Up, new price to Bitcoin.
+[  687.44s ->   689.08s] It's going to hit this callback function.
+[  689.82s ->   691.32s] Up, you got a new position.
+[  691.56s ->   693.04s] It's going to hit that callback function.
+[  693.52s ->   698.64s] So if you start scrolling through here, you'll notice that, wow, we get a lot of different callback functions.
+[  698.64s ->   704.78s] And essentially, you just need to find the one that you need to get the information that you're looking for.
+[  705.12s ->   723.38s] I'll take a quick pause from the code just to say if you ever need to look up a callback function or figure out what information is stored in which callback function or where you can find the information you're looking for, head on over to their documentation, interactivebrokers.github.io, their TWS API.
+[  723.38s ->   728.00s] And you can literally see every single callback function, callback method, whatever.
+[  728.70s ->   736.54s] And it will tell you what it's giving you from the server when you implement a right to read, essentially.
+[  736.78s ->   740.38s] So you'll tell the server, hey, here's a request ID.
+[  740.82s ->   745.90s] I want you to respond to my client, my algo trading system, with the relevant information.
+[  745.90s ->   755.80s] And it'll tell you which one of these callback functions is going to hold and persist the information pertaining to those updates.
+[  756.30s ->   768.90s] So if I say, hey, TWS, gateway, whatever, I need you to give me the latest price for the Bitcoin contract, then it is going to respond to the tick price callback.
+[  768.90s ->   772.20s] And the tick price callback is in our controller class.
+[  773.00s ->   780.12s] And if I just do a quick control F, tick price, you can see here that we have our tick price callback function.
+[  781.18s ->   786.88s] And if we go back to the documentation, this is what each field pertains to.
+[  787.34s ->   792.76s] It's not particularly sexy, but the first thing we need to do is connect to the server.
+[  792.76s ->   800.32s] And if you scroll up, you'll see that we actually have a callback function called connect ACK.
+[  801.22s ->   804.88s] That is connect or connection is acknowledged.
+[  805.52s ->   815.52s] So we need to ping this, essentially, from the server side whenever we connect from our algo trading system to TWS or the gateway.
+[  815.82s ->   820.22s] So I'm going to say system.out.println connected.
+[  820.70s ->   821.10s] Shocker.
+[  821.10s ->   828.04s] So now, whenever the server acknowledges a connection from the client, so this is very important.
+[  828.18s ->   829.42s] We're not just printing connected.
+[  829.90s ->   833.76s] The server is actually responding with information, pinging this callback function.
+[  834.20s ->   838.32s] It's going to print out connected so we know the server sees our client.
+[  838.50s ->   841.28s] Now, there are a couple of housekeeping things we're going to need to do.
+[  841.40s ->   843.86s] We're going to need to create an in-logger and an out-logger.
+[  843.86s ->   849.26s] This is just so that we have somewhere to read and write information from, messages from the server, etc.
+[  849.26s ->   851.54s] I don't really use these very much.
+[  851.68s ->   856.12s] You can do a system.out.println to their parameters if you really want to.
+[  856.36s ->   858.74s] It's going to give you things like, you know, time and connection.
+[  859.56s ->   862.46s] It's going to be like, hey, what errors is the server throwing?
+[  862.54s ->   863.22s] Things like that.
+[  863.22s ->   868.56s] Again, I'll only use it really for debugging, but we do need to create them nevertheless.
+[  868.84s ->   884.82s] So I'm going to say private final client handler.ilogger.moutlogger equals new client handler.ilogger.
+[  884.82s ->   890.28s] And then we do need to override a function.
+[  890.80s ->   895.58s] So here I'm going to override the log function.
+[  896.24s ->   900.38s] And it is just going to be an arbitrary string.
+[  900.86s ->   902.52s] And I'm not even going to do anything.
+[  902.90s ->   906.24s] Now, we do need to create this client handler class.
+[  906.32s ->   908.36s] So I'm just going to go mouse over this guy here.
+[  908.64s ->   911.40s] And I'm going to create class client handler.
+[  911.40s ->   918.48s] And essentially, what we need to do is implement the logger from IB so it knows where to write these messages.
+[  918.94s ->   921.12s] Okay, so this is kind of going to be a mess.
+[  921.44s ->   927.64s] But I don't want to spend too much time on the little idiosyncrasies of building a client handler.
+[  927.88s ->   932.34s] So what I'm going to do is I'm going to copy and paste a whole bunch of code that I wrote a long time ago.
+[  932.90s ->   934.96s] And paste it right into here.
+[  935.58s ->   936.54s] And it's going to work.
+[  936.72s ->   938.30s] So I'm going to copy that.
+[  938.38s ->   939.12s] I'm going to paste that.
+[  939.12s ->   942.22s] And, you know, once again, everything is going to be available on GitHub.
+[  942.52s ->   944.56s] So if you are following along, just go to GitHub.
+[  944.74s ->   945.62s] Go to the client handler.
+[  946.12s ->   947.10s] It's going to look just like this.
+[  947.50s ->   947.98s] Copy that.
+[  948.10s ->   949.02s] Paste that into your code.
+[  949.54s ->   950.84s] Essentially, we have our controller.
+[  951.70s ->   954.02s] And that is where we're receiving from the server.
+[  954.60s ->   956.74s] But we need to tell the server to do things.
+[  956.90s ->   959.88s] We want to tell the server to respond with certain information.
+[  960.02s ->   962.14s] We want to tell the server to place an order.
+[  962.72s ->   962.94s] Right?
+[  963.32s ->   967.72s] So that is what this particular class is going to be responsible for.
+[  967.72s ->   970.84s] The e-client socket is going to allow us to connect.
+[  971.04s ->   972.30s] It's going to allow us to disconnect.
+[  972.58s ->   975.64s] It's going to allow us to place an order, et cetera, et cetera.
+[  975.76s ->   978.72s] So once again, we're really not going to touch this all too much.
+[  979.52s ->   983.68s] If it's, you know, in high demand for whatever reason, we can go line by line.
+[  983.68s ->   987.16s] But I think this is probably sufficient for everyone.
+[  987.44s ->   989.60s] Let's head back on over to our controller.
+[  990.14s ->   991.32s] Throw a semicolon here.
+[  991.50s ->   994.38s] We're going to build an inlogger now.
+[  994.90s ->   998.00s] So I'm just going to do the exact same thing.
+[  998.12s ->  1000.22s] But I'm going to have an inlogger.
+[ 1000.22s ->  1006.35s] And now what we need to do is a couple of more housekeeping things.
+[ 1006.55s ->  1010.17s] I need to create a Java signal reader.
+[ 1010.81s ->  1014.87s] And then I need to create a client socket.
+[ 1015.39s ->  1017.11s] And then I need to create a constructor.
+[ 1017.59s ->  1020.07s] So I'm going to start by creating the signal reader.
+[ 1020.49s ->  1021.51s] And again, bear with me.
+[ 1021.57s ->  1023.61s] This is just some nonsense to get all set up.
+[ 1023.69s ->  1026.01s] Once we're all set up, everything's going to make a lot more sense.
+[ 1026.01s ->  1031.21s] So our signal reader is going to be a static eJavaSignal.
+[ 1033.10s ->  1038.10s] ReaderSignal is equal to new eJavaSignal.
+[ 1038.70s ->  1045.52s] Now we need to create our client handler, our eClientSocket.
+[ 1045.98s ->  1050.32s] This is what's going to enable us to send requests to the server,
+[ 1050.78s ->  1052.98s] to stream data, to place orders, et cetera.
+[ 1052.98s ->  1059.28s] So what I'm going to do is I'm going to say public client handler, eClientSocket.
+[ 1059.82s ->  1063.70s] And then I'm going to instantiate that in the constructor.
+[ 1064.32s ->  1066.00s] So now I'm here.
+[ 1066.14s ->  1067.12s] I'll say super.
+[ 1068.22s ->  1077.48s] And then I'm going to go ahead and do this.eClientSocket is equal to new client handler.
+[ 1077.48s ->  1082.74s] And if we go look at our client handler class, we can see that it takes an eWrapper,
+[ 1083.34s ->  1085.24s] takes an inLogger, and an outLogger.
+[ 1085.52s ->  1086.88s] Well, what did we just do?
+[ 1087.12s ->  1088.42s] We created an inLogger.
+[ 1088.92s ->  1090.52s] We created an outLogger.
+[ 1090.92s ->  1092.16s] And what is the controller?
+[ 1092.64s ->  1094.08s] Or what is the eWrapper, rather?
+[ 1094.18s ->  1094.86s] It's the controller.
+[ 1096.30s ->  1096.62s] All right.
+[ 1096.92s ->  1101.92s] Well, whenever we instantiate a controller, we're going to instantiate a client handler.
+[ 1101.92s ->  1107.72s] And the client handler takes a eWrapper, and it takes an inLogger and an outLogger.
+[ 1108.52s ->  1115.16s] Well, we want to use that specific instance of the controller that we instantiate in the
+[ 1115.16s ->  1116.84s] constructor for the client handler.
+[ 1117.00s ->  1119.98s] So I'm just literally going to specify this.
+[ 1120.50s ->  1125.14s] And then I'm going to say this.inLogger, this.outLogger.
+[ 1126.18s ->  1128.20s] And that is going to do it.
+[ 1128.20s ->  1134.94s] So now when we create a new controller, we are essentially creating a way to request
+[ 1134.94s ->  1143.98s] from the server and a place for the server to send the response to the requests too.
+[ 1145.20s ->  1151.60s] I know that's a lot, but essentially we're just building a read and write capability to
+[ 1151.60s ->  1152.28s] and from the server.
+[ 1152.88s ->  1156.46s] And that is what the client handler and the controller does.
+[ 1156.46s ->  1164.68s] So the controller reads, the client handler writes, makes requests, and that's really
+[ 1164.68s ->  1165.34s] all we're doing here.
+[ 1165.44s ->  1168.96s] We are almost ready to connect to the server from our algo trading system.
+[ 1169.08s ->  1172.60s] I want to show you really quickly how you can check which port you need to specify in
+[ 1172.60s ->  1173.34s] the launcher.
+[ 1173.80s ->  1176.46s] We haven't written that code yet, but you're going to need that number.
+[ 1176.62s ->  1179.06s] So head on over to Gateway or TWS.
+[ 1179.46s ->  1182.20s] If you're in Gateway, go to Configure and Settings.
+[ 1182.20s ->  1188.20s] If you're in TWS, click on the little Settings icon, the little wheel in the upper bar there.
+[ 1188.42s ->  1191.94s] And then you can go on over to API and then Settings.
+[ 1192.74s ->  1194.84s] And then here you'll see the socket port.
+[ 1195.36s ->  1199.96s] And that is the port number that you're going to need when we actually initialize the connection
+[ 1199.96s ->  1204.46s] from our algo system to the TWS or the Gateway client.
+[ 1204.62s ->  1204.84s] All right.
+[ 1204.88s ->  1205.66s] What am I going to do?
+[ 1205.66s ->  1207.36s] Well, first, I'm going to create a new controller.
+[ 1207.68s ->  1212.58s] So I'm going to say controller, controller equals new controller.
+[ 1213.20s ->  1217.58s] And that is where we are going to be reading the information.
+[ 1218.24s ->  1223.26s] And now I'm going to say controller.eclientsocket.
+[ 1223.42s ->  1227.98s] So this is me making a request to the server through our controller.
+[ 1227.98s ->  1234.68s] So pretty much what's happening here is I'm saying controller.eclientsocket.econnect.
+[ 1235.14s ->  1243.72s] And then I want to connect to my TWS instance or my gateway instance on the local host.
+[ 1243.88s ->  1244.88s] So that means my machine.
+[ 1245.54s ->  1248.92s] 127.0.0.1 is our local host.
+[ 1249.44s ->  1251.92s] Our port number is 4002.
+[ 1252.16s ->  1256.16s] And this particular client instance, we'll just say, is zero.
+[ 1256.16s ->  1258.44s] So this is very important.
+[ 1258.86s ->  1261.90s] What we're doing here is we're creating a new object called controller.
+[ 1262.94s ->  1264.12s] And that is essentially this.
+[ 1265.28s ->  1267.46s] This is where all of our callback functions are.
+[ 1267.80s ->  1271.42s] So the server is going to respond here with all the information we need about our portfolio,
+[ 1271.70s ->  1272.92s] about our positions, et cetera.
+[ 1273.98s ->  1280.02s] Then what we're doing is we're using this instance of that object to initiate a connection
+[ 1280.02s ->  1282.98s] with our TWS or our gateway client.
+[ 1282.98s ->  1289.28s] And what that is going to allow us to do, because in the constructor here, we specify this,
+[ 1289.80s ->  1297.96s] it's going to allow our request to immediately respond to this object, to this controller object.
+[ 1297.96s ->  1304.86s] And that is going to be very useful going forward, because if we want to bake in any functionalities into our callback functions,
+[ 1304.86s ->  1310.32s] we can just do something like this, where on the connection, it's just going to print connected.
+[ 1310.56s ->  1314.16s] So when the server responds, our controller will hear it.
+[ 1314.28s ->  1316.00s] Man, I sure wish it was that easy.
+[ 1316.10s ->  1321.42s] If we go ahead and run this right now, we're actually going to connect to the server, but it's not going to persist.
+[ 1321.42s ->  1328.52s] That's kind of a problem with an algorithm trading system, because you're kind of trying to update your positions like all the time.
+[ 1329.38s ->  1332.34s] And we don't want to be rerunning everything all the time.
+[ 1332.44s ->  1336.62s] So we're going to create a new thread essentially just to persist the reading and writing.
+[ 1336.88s ->  1338.46s] So bear with me here.
+[ 1338.52s ->  1342.48s] This is going to be the last of the housekeeping stuff before everything is going to be completely interpretable.
+[ 1342.48s ->  1346.24s] What we're going to start by doing here is just create a final e-reader.
+[ 1346.78s ->  1347.88s] We're going to call it reader.
+[ 1348.06s ->  1350.20s] We'll set it equal to a new e-reader.
+[ 1352.01s ->  1355.77s] And this is going to take our controller's e-client socket.
+[ 1356.43s ->  1359.97s] And then we also need the Java signal that we created.
+[ 1360.13s ->  1362.51s] So we'll call that get signal function.
+[ 1363.41s ->  1365.43s] And that is going to be our reader.
+[ 1365.87s ->  1367.13s] We're going to start the reader.
+[ 1368.42s ->  1372.12s] And then what we're going to do is we're going to create a new thread, new thread.
+[ 1372.12s ->  1374.14s] And then we're going to want to persist this.
+[ 1374.62s ->  1379.73s] So I'm going to go ahead and do this, this.
+[ 1380.19s ->  1385.41s] And I'm going to say while true, we are going to wait for signal.
+[ 1386.07s ->  1387.87s] So we're going to get our e-client socket.
+[ 1388.29s ->  1389.55s] We're going to get the signal.
+[ 1390.03s ->  1392.27s] And then we are going to wait for the signal.
+[ 1393.23s ->  1399.35s] And essentially, we'll just try to process the message from the reader.
+[ 1399.35s ->  1403.03s] So we'll do process messages.
+[ 1405.80s ->  1408.10s] And we'll just catch an IO exception.
+[ 1410.02s ->  1411.10s] We'll just call it e.
+[ 1412.22s ->  1417.02s] And then we'll just print out e should there be an IO exception.
+[ 1417.96s ->  1420.78s] And then that should do it for the thread.
+[ 1421.32s ->  1422.88s] And then we can just call that start.
+[ 1424.26s ->  1424.68s] Okay.
+[ 1425.04s ->  1427.22s] So that should be just about everything.
+[ 1427.22s ->  1433.02s] So let's do a quick recap of everything before we launch this and see if the connection works and see if it persists.
+[ 1433.48s ->  1436.18s] We started by creating a controller.
+[ 1436.42s ->  1439.90s] The controller is where we are going to be receiving information from the server.
+[ 1440.44s ->  1446.30s] To make requests to the server, we are going to be using our client handler, our e-client socket.
+[ 1446.76s ->  1449.88s] This is going to allow us to request information from the server.
+[ 1450.40s ->  1453.42s] Server is going to respond in the callback functions in our controller.
+[ 1453.42s ->  1458.18s] And where these objects actually live is going to be this launcher class.
+[ 1458.66s ->  1464.34s] So when we create this controller object here, we are creating not only a controller, but also the e-client socket.
+[ 1464.96s ->  1473.48s] So via this one object, we are going to be able to request and receive from the TWS client or the gateway client.
+[ 1474.04s ->  1476.56s] And that is exactly why it is called the controller.
+[ 1477.95s ->  1480.01s] Here, what we're going to do is we're going to create a new connection.
+[ 1480.11s ->  1480.93s] We're going to say e-connect.
+[ 1480.93s ->  1485.13s] Then we're going to create this reader here and just persist it within a thread.
+[ 1485.31s ->  1486.67s] So that's why we're saying while true.
+[ 1487.07s ->  1488.13s] We're just going to wait for the signal.
+[ 1488.91s ->  1490.97s] And let's go ahead and see if this works.
+[ 1491.23s ->  1494.99s] So I'm going to boot up my gateway here.
+[ 1495.15s ->  1496.15s] So you can see my gateway.
+[ 1496.81s ->  1498.05s] I'm going to press run.
+[ 1498.75s ->  1501.71s] We got our connected message from our controller.
+[ 1501.91s ->  1504.93s] So if you notice, we never call this function.
+[ 1505.37s ->  1507.13s] That is a response from the server.
+[ 1507.13s ->  1511.57s] So if we go to our IV gateway, hey, check it out.
+[ 1511.69s ->  1514.33s] We have our API client and it is connected.
+[ 1514.75s ->  1519.59s] Now, as promised, I'm going to update the GitHub repository at the end of every video.
+[ 1520.13s ->  1525.07s] So here, what I'm going to do is I'm just going to title the summary, video one updates.
+[ 1525.07s ->  1529.05s] I'll commit to main and then I will push to origin.
+[ 1529.33s ->  1533.09s] Probably going to get a lot of flack from using the GitHub client here.
+[ 1533.49s ->  1541.07s] But, you know, oh, well, as you can see, we've updated our GitHub and that is going to do it for this first video in the series.
+[ 1541.07s ->  1543.01s] I want to thank you so much for watching.
+[ 1543.17s ->  1550.69s] I'm very, very happy to be making videos like this and others related to quantitative finance, data science, math, statistics, etc.
+[ 1551.47s ->  1557.59s] If you'd like to support the channel and help me continue putting out content like this, then head on over to QuantGuild.
+[ 1557.63s ->  1558.55s] You can check out our courses.
+[ 1558.79s ->  1560.71s] We just created one, Introduction to Python.
+[ 1560.71s ->  1564.77s] If you use QG YouTube as a code, you'll get 25% off.
+[ 1565.01s ->  1567.39s] We are just launching on Patreon.
+[ 1567.67s ->  1574.15s] So if you'd like to help support us there, you'll get access to exclusive Discord roles and other benefits if you join.
+[ 1575.69s ->  1577.51s] The support means a lot to me.
+[ 1577.71s ->  1579.21s] This is something that I love to do.
+[ 1579.27s ->  1581.65s] I'm currently doing it nights and weekends right now.
+[ 1581.69s ->  1583.29s] I'd love to turn into something full time.
+[ 1583.83s ->  1587.99s] So, you know, any support that you can give is incredibly meaningful and I appreciate it a lot.
+[ 1588.73s ->  1589.73s] Thank you so much.
+[ 1589.73s ->  1594.71s] Once again for watching and I will see you in the next video.

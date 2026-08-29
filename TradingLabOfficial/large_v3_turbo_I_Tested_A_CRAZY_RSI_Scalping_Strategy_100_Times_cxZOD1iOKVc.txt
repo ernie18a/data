@@ -1,0 +1,112 @@
+[    0.12s ->     4.16s] I tested a trading strategy a hundred times and recorded all of the results.
+[    4.16s ->     9.28s] I will also be showing you the exact indicators this strategy uses, the entry rules, and share
+[    9.28s ->    13.36s] with you how this strategy did trading a hundred times on real market data.
+[   13.36s ->    14.36s] Let's get into it, shall we?
+[   14.36s ->    16.76s] For the charting platform, we'll be using TradingView.
+[   16.76s ->    18.24s] I'll leave a link in my description.
+[   18.24s ->    20.66s] Once you get on TradingView, go to the Indicators tab.
+[   20.66s ->    25.48s] This strategy requires four indicators.
+[   25.48s ->    29.92s] The first indicator we'll be using is the RSI or the Relative Strength Index.
+[   29.92s ->    34.36s] The second indicator is going to be the BJ superscript, this one right here.
+[   34.36s ->    37.28s] The third indicator is going to be the Chandelier Exit.
+[   37.28s ->    42.84s] And the fourth and final indicator is going to be an Exponential Moving Average.
+[   42.84s ->    46.42s] So now that we have the four indicators, we're going to need to change the settings a bit.
+[   46.42s ->    50.80s] Let's change the settings for the Chandelier Exit first.
+[   50.80s ->    55.92s] Make sure you're on the Style tab and uncheck all these boxes besides the Buy and Sell labels.
+[   55.92s ->    59.60s] I'm going to change the position of the labels as well so we can see them just a little bit
+[   59.60s ->    60.60s] better.
+[   60.60s ->    63.16s] Set the Buy label to below and the Sell label to above.
+[   63.16s ->    68.38s] Next, go to the Inputs tab and change the ATR period from 22 to 1.
+[   68.38s ->    72.46s] Then change the ATR multiplier from 3 to 2.3.
+[   72.46s ->    75.44s] Next let's change the settings to the BJ superscript indicator.
+[   75.44s ->    78.72s] Go to the Style tab and uncheck every single box.
+[   78.72s ->    81.16s] Yes, every single box.
+[   81.16s ->    85.26s] Then go to the Inputs tab, scroll all the way down to here and change the value from
+[   85.26s ->    86.26s] 5 to 6.
+[   86.26s ->    90.78s] Then as a personal preference, I'm going to raise the opacity a bit to our lines so we
+[   90.78s ->    97.85s] can just see them just a little bit better.
+[   97.85s ->   101.73s] Then most importantly, let's change the settings to our RSI indicator.
+[  101.73s ->   105.49s] Go to the Style tab and first I'm going to change the color of the RSI line so we can
+[  105.49s ->   106.97s] see it just a little bit better.
+[  106.97s ->   109.75s] Then uncheck all five of these lower boxes down here.
+[  109.75s ->   114.85s] Next, go to the Inputs tab and change the RSI length from 14 to 25.
+[  114.85s ->   119.89s] Then scroll down a bit and make sure the MA type is set to SMA and change the MA length
+[  119.89s ->   122.25s] from 14 to 150.
+[  122.25s ->   126.31s] Then finally, go to the settings of your EMA and make the length to 200.
+[  126.31s ->   128.73s] I'm also going to change the color of mine to orange.
+[  128.73s ->   131.63s] And just like that, we have our settings optimized.
+[  131.63s ->   135.77s] So now that we have all of our top peak settings for these indicators, let's go into the rules
+[  135.77s ->   137.57s] of when to enter a trade.
+[  137.57s ->   141.33s] First I want to address this question I get asked all the time in my comments and in my
+[  141.33s ->   142.33s] discord.
+[  142.33s ->   145.09s] Do you backtest trading strategies or make trading bots?
+[  145.09s ->   148.81s] Well, usually you would need some type of coding knowledge to do this, but I found this
+[  148.81s ->   153.33s] really cool website called Capitalize where you can create or automate trading strategies
+[  153.33s ->   155.83s] just by typing them out in plain English.
+[  155.83s ->   159.79s] So what I mean by this is where normally you would need to type in long lines of code like
+[  159.79s ->   164.57s] this, which can be insanely time consuming and you need coding knowledge to do this where
+[  164.57s ->   167.03s] with this website you can just simply type it in.
+[  167.03s ->   171.39s] For example, if you want to enter Apple on the one hour time frame when the RSI crosses
+[  171.39s ->   175.53s] above 80 and you want to buy a thousand dollars worth, you just simply type it out in plain
+[  175.53s ->   176.79s] English and it'll execute.
+[  176.79s ->   177.79s] Pretty cool.
+[  177.79s ->   180.71s] I'll leave a link in the description if you want to check it out and it's absolutely
+[  180.71s ->   181.71s] free.
+[  181.71s ->   182.71s] So why not?
+[  182.71s ->   183.71s] Back to the strategy.
+[  183.71s ->   184.71s] The rules are simple.
+[  184.71s ->   187.51s] First, you need a buy signal from the chandelier indicator like this.
+[  187.51s ->   190.83s] Next, the superscript indicator must be colored in blue.
+[  190.83s ->   196.09s] The RSI line, the blue line, must be crossing above the moving average, the yellow line.
+[  196.09s ->   199.65s] Then finally, price must be above the 200 exponential moving average.
+[  199.65s ->   202.83s] This will ensure we're only trading in a market that is in an uptrend.
+[  202.83s ->   205.57s] If every single one of these rules are met, we enter a trade.
+[  205.57s ->   207.31s] So we would enter right here.
+[  207.31s ->   209.31s] Set your stop loss at a recent swing low.
+[  209.31s ->   212.71s] Now for this next part, listen very carefully.
+[  212.71s ->   217.35s] This is unlike any other strategy I've showcased, but I felt we should get a little bit more advanced
+[  217.35s ->   220.35s] since this is a full length video and not just a one minute short.
+[  220.35s ->   223.85s] It involves our risk management and our take profit system.
+[  223.85s ->   226.69s] That risk management stuff you wrote for me is killer.
+[  226.69s ->   228.99s] We are going to have four take profit targets.
+[  228.99s ->   230.11s] Yes, four.
+[  230.11s ->   234.91s] At each of the take profit targets, you are going to sell a fourth of your original position size.
+[  234.91s ->   241.33s] The profit targets will be set at 1 to 1, 1.5 to 1, 2 to 1, and 3 to 1 risk to reward ratios.
+[  241.33s ->   246.47s] So for example, if our position size is $1,000 to start with, our first profit target
+[  246.47s ->   248.05s] is going to be set to 1 to 1.
+[  248.05s ->   252.77s] So if price ever reaches that point, we'll sell $250 worth of our shares.
+[  252.77s ->   257.85s] Then raise our take profit to 1.5 to 1 risk to reward ratio, wait for price to reach that
+[  257.85s ->   261.27s] target, sell another $250 worth of shares, and so on.
+[  261.27s ->   262.67s] How about we do a live example?
+[  262.67s ->   264.27s] So first we make sure the rules are met.
+[  264.27s ->   268.71s] We have a buy symbol, the superscript line is colored in blue, and the RSI line is going
+[  268.71s ->   270.23s] above the moving average.
+[  270.23s ->   272.91s] Also we make sure the price is above the 200 EMA.
+[  272.91s ->   277.19s] We then enter a trade, we set our stop loss at the recent swing low, and set our take
+[  277.19s ->   279.95s] profit mark at a 1 to 1 profit ratio.
+[  279.95s ->   281.99s] We then wait to see what price does.
+[  281.99s ->   285.87s] Price ends up reaching our first target, so we sell 25% of our shares.
+[  285.87s ->   289.57s] We then raise the target to a 1.5 to 1 profit ratio.
+[  289.57s ->   292.57s] We wait, then price ends up reaching that target yet again.
+[  292.57s ->   297.51s] So we sell another 25% of our shares, so by now we have sold half of our shares.
+[  297.51s ->   301.11s] We then raise our take profit to a 2 to 1 risk to reward ratio.
+[  301.11s ->   303.95s] See what price does, it hits our take profit yet again.
+[  303.95s ->   309.71s] So we sell another 25% of our shares, and you guessed it.
+[  309.71s ->   313.61s] We raise our final take profit to a 3 to 1 risk to reward ratio.
+[  313.61s ->   317.71s] Price hits our final take profit, we sell the rest of our shares, and make a clean and
+[  317.71s ->   318.71s] easy profit.
+[  318.71s ->   322.03s] If you wanted to do a short trade, the opposite rules apply.
+[  322.03s ->   326.65s] Wait for a sell signal, a red colored superscript line, you want the RSI line going below the
+[  326.65s ->   330.23s] moving average, and the 200 EMA must be above the price.
+[  330.23s ->   334.47s] Set your stop loss at a recent swing high, and then set your first take profit to a 1
+[  334.47s ->   338.97s] to 1 risk to reward ratio, and move your take profit down after every target is hit, just
+[  338.97s ->   339.85s] like we did before.
+[  339.85s ->   344.05s] If you are interested in the backtest results, where I tested this strategy with 100 trades
+[  344.05s ->   347.25s] on the real market, I'll leave all those results in my discord.
+[  347.25s ->   351.23s] This is including the time frame it was tested on, the win rate, how many winning trades it
+[  351.23s ->   355.11s] had, how many losing trades it had, and the total profit the strategy made.
+[  355.11s ->   357.23s] And as a quick spoiler, it did pretty good.
+[  357.23s ->   362.45s] Also, I just tested the MACD on 100 different trades, and the results were pretty interesting
+[  362.45s ->   363.43s] to say the least.
+[  363.43s ->   366.23s] So if you use the MACD, you have to watch this video.
+[  366.23s ->   368.23s] Thanks for watching, and I'll see you guys next time.

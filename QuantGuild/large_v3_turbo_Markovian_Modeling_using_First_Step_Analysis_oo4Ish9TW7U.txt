@@ -1,0 +1,337 @@
+[    1.26s ->     8.32s] Welcome back to this series on Markov Chains. In this video, we're going to tackle question two.
+[    8.88s ->    15.46s] If we have a series of coin flips and we are interested in a chain of three heads,
+[   16.02s ->    23.96s] what is the expected number of coin tosses to see that chain of three heads for the first time?
+[   23.96s ->    33.40s] All right. In this series, we're exploring dependent probability models specifically applied to quant interview style questions.
+[   33.62s ->    40.48s] In the previous video, we tackled this question, what is the probability of a chain of three heads in N tosses?
+[   40.76s ->    47.98s] And we quickly learned after defining a Markov chain that we can not only find the answer to that question,
+[   47.98s ->    57.96s] but also some closely related ones, namely the idea that we can also find the probability that we end with a chain of three heads
+[   57.96s ->    65.72s] and also the probability that the first chain of three heads occurs at the final toss in N tosses.
+[   66.95s ->    73.79s] Of course, here we are going to be exploring this second question, not a probability, but an expectation.
+[   73.79s ->    81.59s] All right. So for starters, let's actually define the math for this question.
+[   81.97s ->    97.07s] So I'm going to say N is the number of tosses required to see a chain of three heads for the first time.
+[  103.50s ->   107.66s] Okay. Now, what is N? Is N a discrete number?
+[  108.50s ->   111.54s] Well, no. N is a random variable.
+[  111.54s ->   115.90s] Okay. The expectation is a discrete number, right?
+[  116.00s ->   119.68s] But the actual N that we define here is a random variable.
+[  119.76s ->   121.00s] I can prove it to you right now.
+[  121.44s ->   127.38s] Let's say that I throw three coins and I get heads, tails, heads, heads, heads.
+[  127.58s ->   129.88s] And then I get heads, heads, heads.
+[  130.24s ->   136.36s] And then I get heads, tails, heads, tails, heads, heads, heads.
+[  136.36s ->   140.44s] So these are my three coins. I get one, two, three.
+[  142.69s ->   145.57s] So on the first series of coin flips, that's the outcome.
+[  145.79s ->   147.15s] The second series, that's the outcome.
+[  147.37s ->   149.55s] And the third series, that is the outcome.
+[  151.17s ->   152.75s] Okay. So what is N here?
+[  154.87s ->   159.57s] Well, N here is one, two, three, four, five.
+[  161.33s ->   164.55s] N here is one, two, three.
+[  164.63s ->   165.37s] We are pretty lucky.
+[  165.37s ->   171.48s] N here is one, two, three, four, five, six, seven.
+[  173.17s ->   173.43s] Okay.
+[  174.35s ->   181.85s] Now, we could technically do this 1,000 times, 10,000 times, 100,000 times.
+[  182.07s ->   185.45s] We could do it in Python, R, MATLAB, whatever you want to use.
+[  185.45s ->   191.91s] And we could essentially keep track of all of these N's and take the average.
+[  192.41s ->   199.75s] And that would give us an estimate for, of course, this is applying the law of large numbers and the central limit theorem.
+[  200.15s ->   204.51s] This is giving us an estimate for the expectation of N.
+[  205.09s ->   205.35s] Okay.
+[  205.61s ->   211.97s] So if we did it simulation style, that would be an approximate solution to the expectation of N.
+[  212.94s ->   214.62s] But we don't want the approximate solution.
+[  214.62s ->   216.62s] We want the exact solution.
+[  217.90s ->   218.12s] Okay.
+[  218.34s ->   220.88s] So the expectation of N is equal to what?
+[  221.06s ->   224.06s] Well, we could simulate it just as I kind of illustrated here.
+[  224.36s ->   230.64s] But that's not going to be sufficient necessarily for this particular interview question.
+[  231.16s ->   231.42s] Okay.
+[  231.68s ->   234.10s] In this case, I want the analytical expression.
+[  234.24s ->   235.02s] So what can we do?
+[  235.30s ->   238.46s] Well, we learned about Markov chains last time.
+[  238.46s ->   244.38s] But we can't always just define a state space and throw a Markov chain at a problem.
+[  244.62s ->   247.62s] This is not a probability question.
+[  247.84s ->   249.70s] This is an expectation question.
+[  249.70s ->   254.66s] So what can I do instead?
+[  255.81s ->   265.21s] We're going to take an alternate approach here because we have a lot of different things going on compared to the previous question that we answered.
+[  265.21s ->   274.37s] The previous question that we answered, if we go back, what is the probability of a chain of three heads and N tosses?
+[  274.81s ->   277.13s] This is a finite space.
+[  277.99s ->   280.37s] We have some capital N, right?
+[  280.81s ->   285.57s] N isn't infinity because if N was infinity, this would be trivial.
+[  285.57s ->   287.43s] The probability would be one.
+[  287.53s ->   289.97s] At some point, you're going to get a chain of three heads.
+[  290.27s ->   290.45s] Okay.
+[  290.83s ->   296.65s] So if N is infinity here, then this is trivial.
+[  296.91s ->   299.05s] The probability would just be one.
+[  300.43s ->   300.77s] All right.
+[  301.17s ->   308.10s] So in this case, what are the number of tosses that we can expect?
+[  308.20s ->   310.74s] Well, technically, this could go on forever, right?
+[  310.76s ->   314.36s] We could just keep flipping tails in succession to infinity.
+[  314.36s ->   316.12s] So we have to take that into consideration.
+[  316.12s ->   317.44s] We need a different approach.
+[  317.92s ->   320.98s] What we're going to do is we're going to do a first step analysis.
+[  321.62s ->   324.88s] We're going to start from a chain of nothing.
+[  325.14s ->   326.16s] We don't have any heads.
+[  326.54s ->   330.04s] And then we're going to try to build this idea of recursion.
+[  330.76s ->   337.88s] And then hopefully, we're going to be able to construct some sort of solution for this expectation of N.
+[  339.50s ->   339.86s] All right.
+[  340.24s ->   344.94s] So to get started, I'm going to define something that's something like a state space.
+[  344.94s ->   348.88s] I'm going to call it H sub I.
+[  349.12s ->   371.91s] I'm going to say H sub I is the number of tosses required to see a chain of I heads in a row.
+[  375.29s ->   375.67s] All right.
+[  376.09s ->   382.45s] So this is going to hopefully help us get to the expectation of N.
+[  382.89s ->   385.06s] Well, let's think about it like this.
+[  385.12s ->   386.58s] What is the expectation of N?
+[  386.58s ->   393.32s] Again, it is the expected number of tosses required to see a chain of three heads for the first time.
+[  394.32s ->   402.00s] So by definition, this is going to be equal to E H of three.
+[  402.96s ->   407.36s] So if we can build towards E H of three, then we're all set.
+[  407.78s ->   416.14s] And then, of course, we can sub out for the general case if I is, say, some arbitrary number K instead of three.
+[  416.14s ->   421.98s] So let's get started by building a very simple base case.
+[  422.78s ->   426.08s] A very simple base case is we flip a coin.
+[  426.38s ->   427.32s] There are two outcomes.
+[  428.34s ->   433.14s] The outcome is either going to be, shocker, heads, or tails.
+[  433.14s ->   443.92s] And the coin we defined previously is just a Bernoulli random variable, probability of heads P, probability of tails 1 minus P.
+[  445.37s ->   445.65s] Okay.
+[  445.87s ->   447.21s] So we're starting from nothing.
+[  447.37s ->   449.13s] This is a first step analysis.
+[  449.33s ->   450.81s] We have no chain of heads.
+[  451.01s ->   452.31s] We have no chain of tails.
+[  452.47s ->   453.17s] We have nothing.
+[  453.17s ->   457.37s] So let's go ahead and see what happens if we throw a heads.
+[  457.97s ->   459.73s] So let's ask what happens.
+[  460.17s ->   461.47s] What is H1?
+[  462.38s ->   467.96s] Well, recall H1 is the number of tosses required to see a chain of I heads.
+[  468.10s ->   469.92s] So a chain of one heads.
+[  470.46s ->   472.38s] Well, we did it.
+[  472.52s ->   473.94s] This is a chain of one heads.
+[  475.51s ->   478.91s] So the number of tosses required in this case is one.
+[  479.37s ->   481.14s] Right?
+[  481.24s ->   481.96s] We flipped heads.
+[  482.16s ->   483.98s] So H1 is equal to one.
+[  483.98s ->   488.95s] Now, what about when we throw a tails?
+[  490.65s ->   492.41s] What is H1?
+[  493.40s ->   494.40s] This is a little trickier.
+[  495.10s ->   495.32s] Right?
+[  495.96s ->   498.62s] Well, we know we just threw a coin.
+[  499.22s ->   499.48s] Right?
+[  499.58s ->   501.50s] So we already used one toss.
+[  502.36s ->   505.96s] But we know that can't be H1 if we threw a tails.
+[  506.34s ->   512.56s] We also need to consider how many other tosses it's going to take to get H1 again.
+[  512.56s ->   521.58s] And it turns out we can just write this as the expected number of tosses required to see H1.
+[  522.02s ->   527.29s] And that's pretty much it.
+[  527.87s ->   530.65s] This is just going to continue on and on.
+[  530.65s ->   542.15s] And what we can do is we can leverage the law of total expectation to set up an equation and solve for this expected value, this expected value of H1.
+[  544.31s ->   544.55s] Okay?
+[  544.61s ->   546.27s] So this is nothing over here.
+[  546.27s ->   546.45s] Right?
+[  546.45s ->   547.51s] We're starting from nothing.
+[  547.51s ->   551.15s] But what we can do is we can use the law of total expectation.
+[  551.15s ->   573.26s] If you recall, the law of total expectation says the expected value of X is equal to the sum of the expected value of X given Y times the probability of Y summed over Y.
+[  573.26s ->   576.55s] Okay?
+[  576.95s ->   590.59s] So knowing this, we can essentially just compute the expected value of H1 because we have the expected value of X given Y.
+[  591.09s ->   592.69s] Here it's 1.
+[  593.19s ->   596.28s] And here it's 1 plus H1.
+[  596.54s ->   598.84s] Then we also have the corresponding probabilities.
+[  599.06s ->   601.00s] We have P and 1 minus P.
+[  601.00s ->   625.68s] So the law of total expectation is going to imply E of H1, so that's our left-hand side here, is equal to P times 1.
+[  625.78s ->   629.04s] So that's, again, the probability times the conditional expectation.
+[  630.32s ->   638.20s] Plus, then we have 1 minus P times the conditional expectation.
+[  638.20s ->   642.14s] And that's going to be 1 plus the expected value of H1.
+[  642.58s ->   648.02s] Maybe I'll move this over a little bit so you all can see.
+[  648.62s ->   649.50s] There we go.
+[  650.44s ->   650.66s] Okay.
+[  651.50s ->   653.18s] So now we can just go ahead and solve this.
+[  653.26s ->   653.34s] Right?
+[  653.38s ->   654.62s] We have one equation, one unknown.
+[  655.24s ->   656.38s] Very easy to solve.
+[  656.38s ->   668.98s] So we have E of H1 is equal to P plus 1 minus P plus the expectation of H1 minus P times the expectation of H1.
+[  669.06s ->   670.04s] That's just distributing.
+[  670.54s ->   679.08s] And then if we go ahead and take a look, we can cancel out H1, H1, the P and the P.
+[  679.08s ->   688.05s] And then we are left with the expectation of H1 is equal to 1 over P.
+[  690.62s ->   695.72s] Now, the particularly keen among you will also notice what H1 is.
+[  696.70s ->   702.54s] H1 is the number of tosses required until the first success.
+[  703.12s ->   705.78s] That is, this first chain of three heads here.
+[  705.78s ->   717.08s] So technically, we know that H1 is a geometric random variable with success probability P.
+[  717.28s ->   719.26s] So its mass function is well defined.
+[  719.40s ->   721.54s] Its distribution function is well defined.
+[  721.98s ->   724.60s] And moreover, its expectation is well defined.
+[  724.74s ->   725.60s] What is its expectation?
+[  726.22s ->   730.36s] The expectation of H1 is equal to 1 over P.
+[  731.02s ->   733.66s] If H1 is a geometric random variable, and check it out.
+[  734.24s ->   736.90s] That matches our first step analysis.
+[  739.14s ->   740.20s] That's pretty nice.
+[  741.69s ->   743.27s] So that's H1.
+[  743.95s ->   745.29s] Now we need H2.
+[  745.49s ->   747.57s] Can we accomplish this with H2?
+[  747.63s ->   748.89s] We just got to do this again.
+[  749.81s ->   750.01s] Okay?
+[  750.21s ->   755.57s] But what we have to do is introduce this idea of what's called overhead.
+[  756.27s ->   765.45s] So instead of starting from nothing, now we're going to assume that we start from H1.
+[  765.45s ->   766.45s] Okay?
+[  766.45s ->   766.81s] Okay?
+[  766.81s ->   772.31s] To assume that we start from H1, we're going to define this transition probability.
+[  773.48s ->   780.74s] Going from H1 to 2 is equal to the difference of H2 and H1.
+[  783.26s ->   783.60s] Okay?
+[  783.92s ->   791.22s] This is typically denoted as overhead of going from H1 to H2.
+[  791.22s ->   796.89s] Knowing this, let's go ahead and try to do another step.
+[  798.65s ->   803.75s] So now we're starting at H1.
+[  806.03s ->   806.43s] Okay?
+[  806.73s ->   811.44s] So we are looking to go from H1 to H2.
+[  811.44s ->   820.47s] Well, we know we can either throw a heads with probability P or a tails with probability 1 minus P.
+[  820.91s ->   825.83s] Now we can ask ourselves, what is H2?
+[  827.40s ->   830.30s] Well, we're given that we're already at H1.
+[  830.30s ->   836.82s] So essentially, we've thrown coins and we've gotten a heads before this.
+[  837.96s ->   843.12s] And if we're fortunate and we, with probability P, we'll end up with another heads.
+[  843.68s ->   848.38s] And H2, in this case, is just going to require one more.
+[  849.36s ->   850.26s] One more toss.
+[  851.47s ->   851.73s] Right?
+[  852.09s ->   857.61s] From H1, if we throw a heads, then H2 is just going to require one more toss.
+[  858.13s ->   863.18s] What if we're not lucky?
+[  863.18s ->   870.55s] If we're not lucky, then H2, it's going to be the cost that we just spent getting to this tails.
+[  871.41s ->   875.67s] Plus, how can we get back to H2?
+[  876.84s ->   878.70s] Well, just like we did before.
+[  879.26s ->   881.64s] We added the expectation of H1.
+[  882.24s ->   886.42s] Now it's just going to be the expectation of H2.
+[  889.06s ->   889.28s] Okay?
+[  890.68s ->   894.14s] So hopefully you see a pattern start to emerge here.
+[  894.14s ->   915.14s] Either we're going to succeed in the next step from the previous step, or we're going to have to reset, start all over, count the toss, but also take into account the number of tosses required on average to see a successful step from the position we're starting at here.
+[  915.14s ->   922.06s] And that's the exact same thing we just did in the previous step from nothing.
+[  922.32s ->   924.68s] In this case, we're just stepping from H1.
+[  925.06s ->   929.90s] And then once again, we can use the law of total expectation.
+[  929.90s ->   950.44s] So this is going to be the expected value of H1 to 2 is equal to, and then we're going to have P times 1 plus 1 minus P times 1 plus the expectation of H2.
+[  950.44s ->   962.15s] And now what we can do is substitute what we know about the overhead in to this transition here.
+[  962.49s ->   981.15s] And we're going to get the expectation of H2 minus the expectation of H1 is equal to P plus 1 minus P plus the expectation of H2 minus P times the expectation of H2.
+[  981.15s ->   983.69s] And then we can do, and then we can cancel some things out here, and then we can cancel some things out here.
+[  983.77s ->   991.41s] The P's cancel, we can see the H2's cancel, and we're left with one equation and two unknowns.
+[  991.41s ->  1004.77s] We have the expected value of H2 is equal to, or P, the expected value of H2 is equal to 1 plus the expected value of H1.
+[ 1004.77s ->  1016.67s] So it follows that the expected value of H2 is equal to 1 over P plus the expected value of H1 over P.
+[ 1017.11s ->  1023.74s] So we have two unknowns and one equation, but what is the expected value of H1?
+[ 1023.74s ->  1034.36s] Well, using either the previous first step analysis tree here, or using the fact that H1 is a geometric random variable,
+[ 1035.95s ->  1047.31s] we have that E of H1, whoopsie, can't see that, we have that E of H1 is equal to 1 over P.
+[ 1047.31s ->  1064.28s] So that means E of H2, given what we had just solved, is equal to 1 over P plus 1 over P over P, which is 1 over P plus 1 over P squared.
+[ 1068.69s ->  1072.25s] And that's it, and that is the expectation of H2.
+[ 1072.43s ->  1079.95s] And now we just need to do this one more time, and that's going to be the answer to this question.
+[ 1079.95s ->  1090.36s] So now, what are we starting from? We're starting from H2.
+[ 1090.86s ->  1095.60s] So we will say the expectation of going from 2 to 3.
+[ 1096.08s ->  1098.63s] We'll draw out our little tree here.
+[ 1099.11s ->  1106.44s] We're going to have heads or tails with probability P and 1 minus P.
+[ 1108.64s ->  1109.24s] H3.
+[ 1110.00s ->  1114.04s] If we're starting at H2, how many more tosses is it going to require?
+[ 1114.58s ->  1116.66s] It's going to require one more toss.
+[ 1116.66s ->  1122.03s] And, of course, if we throw at tails, we're going to have to start all over.
+[ 1123.15s ->  1131.39s] It's going to be that one extra toss plus the expected number of tosses to get back to this node right here at H3.
+[ 1131.39s ->  1142.86s] So if we rinse and repeat again with the law of total expectation, and I'm just going to sub in the equation for the overhead here,
+[ 1142.86s ->  1161.90s] we're going to have that the expectation of H3 minus the expectation of H2 is equal to P plus 1 minus P plus the expectation of T3 minus P times the expectation of T3.
+[ 1161.90s ->  1165.68s] And all this is doing is the law of total expectation.
+[ 1166.08s ->  1177.04s] I'm using this as the conditional expectation, using these as the probabilities, and we're summing that on the right-hand side to equal this overhead right here,
+[ 1180.89s ->  1182.81s] just like we did in step 1 and 2.
+[ 1182.81s ->  1189.86s] So now we know this cancels, these cancel, and we're left with what?
+[ 1190.14s ->  1198.76s] We're left with P of T3 is equal to 1 plus EH2.
+[ 1200.70s ->  1205.16s] So the expectation of T3 is equal to 1 plus the expectation of H2.
+[ 1205.16s ->  1207.48s] H2, or T3, what is this?
+[ 1207.62s ->  1212.55s] This should be, oops, this should be H, not T.
+[ 1216.64s ->  1220.84s] This is H3, H3, H3.
+[ 1221.38s ->  1225.86s] This should be H3.
+[ 1226.70s ->  1227.26s] Apologies.
+[ 1227.94s ->  1236.96s] This is going to be the expectation of H3 equal to 1 over P plus the expectation of H2 over P.
+[ 1236.96s ->  1241.10s] One equation, two unknowns, but we know what the expectation of H2 is.
+[ 1241.60s ->  1244.96s] The expectation of H2 is given right here.
+[ 1247.98s ->  1249.90s] 1 over P plus 1 over P squared.
+[ 1250.42s ->  1261.90s] So this is equal to 1 over P plus 1 over P plus 1 over P squared divided by P,
+[ 1262.88s ->  1268.26s] which is 1 over P plus 1 over P squared plus 1 over P cubed.
+[ 1268.26s ->  1276.48s] And that is going to be the expectation of H3.
+[ 1277.18s ->  1281.76s] That is the number of tosses required to see a chain of three heads.
+[ 1282.06s ->  1288.32s] And that is going to be equal to the expectation of N by definition.
+[ 1289.00s ->  1294.88s] And that right there is the expected number of tosses required to see this chain of three heads.
+[ 1296.94s ->  1299.34s] So this is a very interesting approach.
+[ 1299.44s ->  1301.00s] This is the idea of first step analysis.
+[ 1301.00s ->  1310.18s] We're stepping forward from either a previous step in which we know the new conditional probability is going to be, right?
+[ 1310.24s ->  1312.40s] That is very easy to see here.
+[ 1312.52s ->  1319.70s] When we're starting at 2 going to 3, starting at 1 going to 2, or starting from nothing.
+[ 1319.86s ->  1322.36s] And we're just getting that first step, right?
+[ 1322.36s ->  1330.00s] We're using this idea of the dependency to help derive this closed form solution by simply continuing to step forward.
+[ 1330.22s ->  1335.78s] And what we're actually doing is collapsing what could be a very complicated expectation.
+[ 1336.14s ->  1340.20s] In other words, take a look at what happens.
+[ 1340.86s ->  1344.11s] If we start a tree here, right?
+[ 1344.11s ->  1347.33s] We have 1, 2, 3, right?
+[ 1347.53s ->  1348.77s] This would be heads.
+[ 1350.44s ->  1351.62s] This would be heads.
+[ 1351.70s ->  1352.48s] This would be heads.
+[ 1352.66s ->  1355.04s] And then we achieve our goal here, right?
+[ 1355.76s ->  1357.52s] That would stop the tree.
+[ 1357.52s ->  1367.16s] But if we ever get a tails, any of these places, then we have to restart the tree.
+[ 1367.52s ->  1376.44s] So the tree is just going to continue to grow again, 2, 3, until we have this infinite series of trees.
+[ 1376.44s ->  1384.92s] All of these possible outcomes, this is going to go on forever and ever and ever.
+[ 1385.32s ->  1391.94s] And effectively, what we're doing is we're simplifying that by using these expectations in series.
+[ 1392.28s ->  1396.96s] We're saying that this tree is going to keep expanding.
+[ 1399.19s ->  1399.93s] It's going to.
+[ 1400.47s ->  1401.37s] That's the whole point.
+[ 1401.43s ->  1402.35s] It's going to keep expanding.
+[ 1402.77s ->  1408.25s] But what we can do is we can simplify the number of steps, the number of tosses, by just saying,
+[ 1408.25s ->  1412.83s] hey, it's a first step from 2, and if we succeed, we're done.
+[ 1413.39s ->  1423.11s] And if we don't succeed, then we have to consider the total number on average of steps required to get back to this guy right here.
+[ 1425.13s ->  1425.47s] All right?
+[ 1425.61s ->  1428.87s] So that's going to do it to answer this second question.
+[ 1429.53s ->  1436.57s] The number or the expected number of tosses required to see a chain of 3 heads on average.
+[ 1436.57s ->  1439.23s] And, of course, you can extend this to an arbitrary number.
+[ 1439.53s ->  1448.04s] We could say the expectation of heads going from K to K plus 1.
+[ 1448.26s ->  1452.68s] You'll see that this tree diagram is exactly the same.
+[ 1452.78s ->  1455.02s] We have P, 1 minus P.
+[ 1455.28s ->  1456.24s] We have heads.
+[ 1456.36s ->  1457.10s] We have tails.
+[ 1457.50s ->  1461.24s] And then we have H sub K plus 1 is equal to 1.
+[ 1461.76s ->  1467.88s] H sub K plus 1 is equal to 1 plus the expectation of H sub K plus 1.
+[ 1467.88s ->  1470.78s] We have to start all over, try to get back to here.
+[ 1471.92s ->  1490.32s] And then this, by the law of total expectation, is E H K plus 1 minus E H K is equal to P plus 1 minus P plus E H K plus 1 minus P H K plus 1.
+[ 1490.32s ->  1502.18s] And then we can cancel out this, cancel out this, and then we're left with E H K plus 1.
+[ 1502.34s ->  1521.51s] It should be H is equal to 1 over P plus E H K over P.
+[ 1521.51s ->  1530.10s] And that is the general form of our solution right there, okay?
+[ 1530.38s ->  1535.14s] And we can test this, of course, by just using the simple example of 2, right?
+[ 1535.20s ->  1540.06s] So if we let K equal 1, right?
+[ 1540.06s ->  1550.96s] We have E H 2 is equal to 1 over P plus E H 1 over P, which is 1 over P plus 1 over P squared.
+[ 1551.99s ->  1554.51s] So our general equation looks like it's working.
+[ 1554.63s ->  1563.91s] So let's go ahead, head on over to Python and see if our simulated probabilities, just as we said, we can compute Monte Carlo style using this approach,
+[ 1563.91s ->  1569.57s] where we just go ahead and generate series until we see our three coins in a row.
+[ 1569.87s ->  1575.07s] Let's see if this approaches the theoretical probability that we derived here.
+[ 1575.15s ->  1579.91s] I'm sorry, not the probability, the theoretical expectation that we derived right here.
+[ 1579.91s ->  1585.63s] That is E of N or, of course, E of H 3.
+[ 1588.54s ->  1589.92s] All right, here we are in Python.
+[ 1589.92s ->  1596.64s] I'm creating this simulation to toss an arbitrary number of coins until we see three heads.
+[ 1596.86s ->  1601.96s] So what we're going to do is we are going to define the closed form solution we derived as HHH.
+[ 1602.42s ->  1606.36s] It's going to take a probability P of seeing the heads.
+[ 1606.64s ->  1609.60s] So we defined that as just one half here.
+[ 1609.68s ->  1611.32s] We're assuming a simple fair coin.
+[ 1611.92s ->  1613.32s] And then what we're going to do is simulate.
+[ 1613.32s ->  1621.66s] So tosses is going to be the number of tosses required in a specific simulation to see that first chain of three heads.
+[ 1621.84s ->  1623.82s] We're going to do this 10,000 times.
+[ 1624.20s ->  1629.40s] I'm going to keep track of the chain in each iteration, and I'm going to keep tossing coins.
+[ 1629.92s ->  1636.46s] I'm going to generate this coin toss by appending the outcome 0 or 1 to this chain.
+[ 1636.46s ->  1646.44s] When the length of chain is greater than two, we could see a series of coin tosses be heads, or we could see three heads in a row.
+[ 1646.86s ->  1654.60s] I'm going to say if we see that three heads in a row, then we can go ahead and record the length, the number of tosses it took to see it,
+[ 1654.88s ->  1658.86s] and then break out of this while loop and essentially just repeat the experiment.
+[ 1658.86s ->  1669.02s] So all we're doing here in these two loops is we are tossing coins infinitely until we see a series of three heads,
+[ 1669.34s ->  1673.20s] recording how many tosses it took, doing it again, and again and again and again.
+[ 1673.30s ->  1678.24s] We're recording all of those counts, throwing it in this list, taking the average of that list.
+[ 1678.58s ->  1680.76s] And of course, we have our analytical solution.
+[ 1680.96s ->  1681.70s] It's 14.
+[ 1681.84s ->  1683.52s] That's the expected number of tosses.
+[ 1683.52s ->  1691.82s] And on average, we see in the simulation 13.8758 Central Limit Theorem, that's going to converge at infinity indefinite,
+[ 1691.88s ->  1697.82s] of course, probabilistically, certainly, to that analytical solution 14.
+[ 1698.68s ->  1701.12s] And that's going to do it for this video.
+[ 1701.24s ->  1702.42s] We answered question two.
+[ 1702.54s ->  1706.44s] That is the expected number of tosses required to see a chain of three heads.
+[ 1706.46s ->  1711.86s] We could extend this to any number of heads that we would like, of course, any number of tails, what have you.
+[ 1711.86s ->  1713.40s] It's a Bernoulli random variable.
+[ 1713.62s ->  1717.22s] We're assuming these Bernoulli trials are independent and identically distributed.
+[ 1717.82s ->  1719.04s] And that's going to do it.
+[ 1719.14s ->  1724.82s] That's going to do it for this second video in this series of videos on Markov chains.
+[ 1724.98s ->  1727.32s] In the next video, we're going to tackle that last question.
+[ 1727.80s ->  1729.16s] What if we did this forever?
+[ 1729.96s ->  1732.62s] What if we did an infinite number of coin flips?
+[ 1732.68s ->  1733.50s] We never stopped.
+[ 1734.04s ->  1739.20s] Can we expect the state space to converge to a specific proportion?
+[ 1740.04s ->  1741.36s] Don't want to spoil anything.
+[ 1741.36s ->  1744.04s] We know this is true in independent random variables, right?
+[ 1744.40s ->  1753.18s] If we flip an infinite number of coins, then we know that heads is going to converge to a frequency of essentially 50% of the time,
+[ 1753.26s ->  1755.94s] and tails will be the other 50% of the time.
+[ 1756.22s ->  1769.48s] But can we converge to a discrete, a finite, a countable, a certain number for a dependent random variable in expectation in the long run?
+[ 1769.48s ->  1771.38s] We're going to check that out in the next video.
+[ 1771.48s ->  1772.56s] Thank you so much for watching.
+[ 1772.94s ->  1773.88s] I hope you enjoyed it.
+[ 1774.12s ->  1779.76s] Leave a like, subscribe, check out QuantGuild.com, and I will see you in the next video.
+[ 1779.76s ->  1780.84s] Thanks for watching.

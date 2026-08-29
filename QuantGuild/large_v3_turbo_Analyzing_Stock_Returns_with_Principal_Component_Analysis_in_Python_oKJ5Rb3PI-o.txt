@@ -1,0 +1,289 @@
+[    0.46s ->     7.33s] One of the most popular dimensionality reduction techniques available to us is a principal
+[    7.33s ->    14.37s] component analysis. Anytime you are working in a modeling capacity and you are given a feature set
+[   14.37s ->    20.95s] of predictors, you're going to want to eliminate as much collinearity among that feature set as
+[   20.95s ->    27.67s] possible. This will help downstream as you are concerned with ideas like stability and robustness
+[   27.67s ->    34.25s] in your model's performance when you actually apply it in the real world. So why do we care about
+[   34.25s ->    39.13s] redundancy in the first place? There's a lot of different examples and analogies we can use, but
+[   39.13s ->    45.23s] I came up with one that is my favorite and I will give it to you through a narrative. Suppose you are
+[   45.23s ->    51.83s] a security guard and you're tasked with ensuring that nobody is on-premises past a certain time.
+[   51.83s ->    58.54s] Let's say you have 10 cameras. Let's say each of those cameras is pointed in a unique direction.
+[   58.54s ->    63.88s] Well, that's going to be certainly helpful. Is it not? You're going to be able to look at your
+[   63.88s ->    70.18s] security guard screen and you're going to see each one of those camera frames individually and you'll
+[   70.18s ->    75.28s] just scan each one of those camera frames and you will be able to determine whether or not there is
+[   75.28s ->    80.88s] somebody on the premises or not. So you need all 10 of those cameras. You need all 10 of those cameras.
+[   80.88s ->    89.04s] Now suppose that three or four of those cameras are now overlapping regions and there's only a sliver
+[   89.04s ->    94.46s] of one of the cameras that you need to care about. Well, wouldn't it be nice to be able to combine
+[   94.46s ->   100.68s] some of those cameras with overlap into just one frame so you can quickly skim all of the frames on
+[  100.68s ->   105.86s] your little monitor to see if there's anybody there that's not supposed to be instead of concerning
+[  105.86s ->   112.24s] yourself with re-scanning all of that redundant information? That is the idea behind a principal
+[  112.24s ->   117.88s] component analysis. Essentially what we are doing with our feature set is we are taking the overlap
+[  117.88s ->   122.82s] in the security cameras and we are cutting out that overlap and saying, hey, let's take all of this
+[  122.82s ->   128.84s] overlap. Let's toss it out and let's only look at the unique information that is explained or
+[  128.84s ->   135.28s] visualized by each individual camera up until a certain point and then we can go ahead and cut
+[  135.28s ->   141.20s] off the rest of the redundant information or maybe information that explains a very, very small amount
+[  141.20s ->   147.10s] of what we are interested in. So in the context of that security guard example, perhaps there's one
+[  147.10s ->   152.40s] camera that's entirely cut off by a refrigerator that is not helping our analysis. We can toss that out
+[  152.40s ->   158.42s] and that is going to be a smaller fraction of the variance that we are interested in capturing. So
+[  158.42s ->   165.08s] that is the analogy that I like to make in terms of redundant information is trying to keep it visual,
+[  165.24s ->   169.96s] trying to understand that, hey, like when we are dealing with redundancy, we want to eliminate it for
+[  169.96s ->   177.56s] a productive reason. This is going to help our model's capacity to predict, to classify whatever it is
+[  177.56s ->   184.12s] we are doing. And it's not just some hand wavy, oh, we do this upstream, you know, as like a necessary
+[  184.12s ->   189.72s] step in the model development pipeline. No, this is a very useful and there is an intuitive
+[  189.72s ->   195.20s] explanation as to why we go about doing some sort of dimensionality reduction, especially when
+[  195.20s ->   200.70s] collinearity is present. So in this video, we're going to talk about PCA, principal component analysis,
+[  200.70s ->   208.60s] and we are going to use a set of stocks and stock returns 2021 to 2022 as an example.
+[  209.16s ->   212.90s] So the first step is going to be to import the necessary libraries. Naturally, we're going to
+[  212.90s ->   219.44s] use pandas, numpy, matplotlib. I'm going to also import the standard scaler and PCA from sklearn.
+[  220.02s ->   225.34s] We probably won't be needing scipy, but I have it there just in case. The first thing we're going to do
+[  225.34s ->   230.28s] is load in the data. So what I've done since Yahoo Finance has gotten rid of their API,
+[  230.70s ->   237.78s] is I've gone on Yahoo Finance and I've pulled data from 2021 to 2022 from a set of four stocks and an
+[  237.78s ->   244.78s] ETF. And what I've actually done is copy and pasted those tables into an Excel sheet and imported the
+[  244.78s ->   250.42s] data as such. So I'm just going to read the sheet name and I'm going to combine based on the date and
+[  250.42s ->   256.96s] I'm going to compute the log return of the close. So I have here Apple, Amazon, General Motors,
+[  256.96s ->   263.06s] Microsoft, and the S&P 500 index. I thought I had pulled it for the ETF, the SPY, but it turns out
+[  263.06s ->   270.50s] I actually used the index. So this is going to be my data frame, my data set of stock return
+[  270.50s ->   276.72s] information. Now, if we go on down here and take a look at the correlation, you can see that we have
+[  276.72s ->   284.08s] the return for Apple, Amazon, General Motors, Microsoft, and the S&P 500. And of course,
+[  284.08s ->   288.06s] the diagonals are going to be one because everything is perfectly correlated with itself.
+[  288.48s ->   294.20s] And then if you take a look at the correlation between the assets with each other, you know,
+[  294.22s ->   298.02s] we get a variety of different correlations. All of them seem to be greater than zero,
+[  298.60s ->   303.80s] which does make sense to some capacity. But here we're taking a look and we see that, you know,
+[  303.86s ->   308.98s] Apple is highly correlated with Amazon, not as correlated with General Motors. And this would
+[  308.98s ->   313.48s] make sense, right? Because they're in different sectors, but they are still exposed to some
+[  313.48s ->   318.76s] underlying market risk. Apple is highly correlated with Microsoft, which is also what we would expect.
+[  318.84s ->   325.32s] And it seems also to be highly correlated with the S&P 500. So this is quite interesting. But what we
+[  325.32s ->   333.00s] can tell here is what is this correlation an actual measure of? So this is a normalized covariance matrix,
+[  333.00s ->   339.38s] right? It's just normalized by the, the variance of the, or the, I should say the root product of the
+[  339.38s ->   346.72s] variances. But nevertheless, this is showing that they, the relationship between Apple and Amazon is not
+[  346.72s ->   354.92s] orthogonal, right? There is some overlap in information. And that is this collinearity that I was referring to at the
+[  354.92s ->   362.22s] start of this video, right? So what this means is, there is some redundancy in the information that is being
+[  362.22s ->   368.52s] portrayed by Apple and Amazon. There's some redundancy in the information that's being portrayed by
+[  368.52s ->   374.08s] Microsoft and General Motors and so on and so forth. You can look at the pairwise correlations here
+[  374.08s ->   379.52s] and see, you know, the varying levels of redundancy. But this is something that we're going to want to
+[  379.52s ->   385.48s] eliminate altogether because we don't want to be overfitting noise in our model. We want to be
+[  385.48s ->   392.12s] capturing as much authentic explained variation as possible. So what are we going to do?
+[  392.22s ->   397.22s] Well, we're going to do a principal component analysis. First, why are these high correlations
+[  397.22s ->   402.34s] problematic? So clearly we have collinearity in our data, but what is the problem? Well,
+[  403.52s ->   408.22s] in a regression setting, when features are highly correlated, it can be difficult to determine
+[  408.22s ->   415.08s] individual effects. So in other words, when Amazon increases and has a high correlation with Apple,
+[  415.76s ->   422.42s] those are contemporaneous. Which one caused which one and which one caused the response variable
+[  422.42s ->   429.08s] to change in this way? We don't actually know. They don't each contribute orthogonal unique
+[  429.08s ->   435.80s] information. There's redundancy. So it becomes difficult in terms of explanation. Moreover,
+[  435.80s ->   440.86s] the coefficients themselves can be unstable, right? Because should the weight be on Amazon or should
+[  440.86s ->   446.12s] the weight be on Apple? You know, which one is contributing to the change in the response? We don't
+[  446.12s ->   451.02s] necessarily know. And this is why it can be difficult for interpretation and modeling in a regression
+[  451.02s ->   459.82s] capacity. Moreover, we may have unstable weights in that same idea as instability in the coefficients
+[  459.82s ->   464.60s] in a linear regression setting. We may have unstable weights in a neural network. And moreover,
+[  465.00s ->   470.36s] you know, the model is going to be more complex than it needs, right? If we have Apple and Amazon as
+[  470.36s ->   475.44s] two separate features, when in reality, we could take the unique information from each and, you know,
+[  475.52s ->   482.24s] separate them, then we can remove the redundancy. We can remove the redundancy, making the model less
+[  482.24s ->   489.56s] complicated. Computational costs will also be, you know, decreased. And again, you can overfit on this
+[  489.56s ->   496.72s] idea of noise, and interpretation might suffer. So there's a lot of negatives with collinearity. And a lot
+[  496.72s ->   501.44s] of times when you start your undergraduate studies, you start taking statistics classes, maybe you take
+[  501.44s ->   506.16s] an intro to portfolio management class, and you start to see it's like, okay, wow, there's like
+[  506.16s ->   511.44s] these different measures of collinearity of like VIF. And how does this actually impact my regression
+[  511.44s ->   516.04s] model? The problem, I think, is when you first start to learn this stuff, you're so focused on like what
+[  516.04s ->   521.36s] in the heck a linear regression is mechanically, how it works, what in the world does it mean to have
+[  521.36s ->   526.38s] least squares, things of that nature that you're not necessarily seeing the downstream effects
+[  526.38s ->   532.90s] of collinearity and why we would bother to deal with it upstream. So hopefully it's a little more
+[  532.90s ->   539.46s] clear now that your model can suffer in terms of robustness, stability, and interpretability if you
+[  539.46s ->   545.60s] have redundant features or redundancy among your feature set, I should say, and collinearity. In order
+[  545.60s ->   550.66s] to combat this, we will conduct a principal component analysis. Who would have thought this was going to be
+[  550.66s ->   556.14s] a video on matrix algebra, not me. But let's take a look. There are two different ways we can conduct a
+[  556.14s ->   564.13s] PCA. So we know that a correlation matrix is just a normalized covariance matrix. So essentially what
+[  564.13s ->   571.09s] we want to do is we want to transform this entire matrix into a diagonal of ones where each feature
+[  571.09s ->   577.81s] is explaining unique information and all of the off diagonal elements are zero. This would mean that
+[  577.81s ->   584.05s] each feature is explaining unique information. And that's exactly what we would like. So what can we do
+[  584.05s ->   590.25s] in this capacity? Well, we can do two things. We can conduct this diagonalization through a singular
+[  590.25s ->   596.53s] value decomposition of the data matrix, or we can do an eigen decomposition of the covariance matrix.
+[  597.07s ->   602.77s] So supposing we had a data matrix X, N by P, where N is the number of trading days and P is our number
+[  602.77s ->   610.73s] of stocks, we can find a unique decomposition. X is equal to U sigma V transpose, where U is an orthogonal
+[  610.73s ->   616.97s] matrix of left singular vectors. V transpose is an orthogonal matrix of right singular vectors. And
+[  616.97s ->   623.97s] sigma is an N by P diagonal matrix with singular values. Okay, the principal components are then going
+[  623.97s ->   634.62s] to be given by XV, which is equal to U sigma. How does this diagonalization actually work? Well, if we started
+[  634.62s ->   640.74s] with the covariance of the principal components, and we expanded it using the definition, that is, this is the
+[  640.74s ->   646.82s] definition of a covariance matrix. We have, say, X transpose X. Here, we're interested in the covariance
+[  646.82s ->   655.98s] of XV. So we have XV transpose XV normalized by N minus one. We substitute in X equal to this decomposition,
+[  656.20s ->   662.90s] the singular value decomposition. And then since V is orthogonal, V transpose V is the identity. And since
+[  662.90s ->   669.20s] U is orthogonal, U transpose U is the identity. And we are simply just left with one over N sigma
+[  669.20s ->   674.72s] transpose sigma. And this is, in fact, diagonal since sigma is a diagonal matrix.
+[  676.04s ->   681.08s] Okay, very good. So as I had mentioned, we are interested in diagonalizing this correlation covariance matrix.
+[  681.40s ->   687.88s] That is how we do it with a singular value decomposition. What about an eigendecomposition of the covariance matrix?
+[  688.36s ->   695.64s] The covariance matrix, start with the covariance matrix S is equal to one over N minus one X transpose X. This is exactly the same
+[  695.64s ->   701.96s] argument made here for XV. See, we have XV transpose XV normalized by N minus one.
+[  701.96s ->   706.12s] Here, we're using the original data matrix to come up with the covariance matrix.
+[  706.12s ->   709.48s] And that is what we conduct an eigendecomposition on.
+[  709.48s ->   713.64s] So to find the eigendecomposition, we find some V lambda V transpose,
+[  713.64s ->   716.44s] where S is a P by P covariance matrix.
+[  716.44s ->   723.24s] We are given V, which contains the eigenvectors, and lambda, which is a diagonal matrix of eigenvalues.
+[  723.72s ->   730.52s] So what we go ahead and do is we transform the data. We have covariance XV is equal to V transpose SV,
+[  730.52s ->   736.92s] which is equal to V transpose V lambda V transpose V. And of course, we are left with lambda.
+[  736.92s ->   743.64s] So first multiplying V transpose V, we get the identity on the left. And then this will simplify
+[  743.64s ->   749.40s] to the identity on the right as well, which is just I lambda I. And this is lambda. And lambda is a
+[  749.40s ->   757.64s] diagonal matrix by the eigendecomposition. Thus, we have transformed the covariance and it is in fact
+[  757.64s ->   764.12s] diagonal. So now let's connect the two approaches. So the singular value decomposition is connected to
+[  764.12s ->   769.64s] the eigendecomposition through the eigenvalues and the singular values squared. So what I mean to say
+[  769.64s ->   776.12s] is if we begin with a singular value decomposition, XU sigma V transpose, we calculate the covariance
+[  776.12s ->   782.28s] matrix S is equal to the normalized X transpose X, which is equivalent to one over N minus one,
+[  782.28s ->   789.48s] that normalization times V sigma transpose U transpose times the singular value decomposition here.
+[  789.48s ->   793.80s] So again, all we're doing is we're taking this SVD, subbing it into the covariance,
+[  793.80s ->   800.20s] and we are just transposing every item in U sigma V transpose. It flips the direction,
+[  800.20s ->   805.32s] and it transposes all the matrices. And then we have this product, but we also know that U
+[  805.32s ->   811.80s] transpose U is the identity. And then we're left with this V sigma transpose sigma V transpose.
+[  811.80s ->   819.93s] And this is going to be diagonal with entries sigma I squared. And that means that sigma transpose
+[  819.93s ->   825.77s] sigma normalized by N minus one is lambda. And that would also imply that lambda I is equal to
+[  826.49s ->   833.29s] sigma I squared divided by N minus one. And that is the connection between the eigendecomposition of
+[  833.29s ->   839.37s] the covariance matrix versus the singular value decomposition of the data matrix. So the eigenvalues
+[  839.37s ->   844.65s] are just scaled versions of the squared singular values. That is all we are saying.
+[  845.61s ->   850.41s] Moreover, the eigenvectors in V are the same as the right singular vectors, and both methods will
+[  850.41s ->   857.05s] produce the exact same diagonalization. So whether you choose to do the SVD approach or the eigendecomposition
+[  857.05s ->   863.45s] approach, you will end up with a diagonalized covariance correlation matrix, which is exactly our goal
+[  863.45s ->   871.29s] in the transformation of the original data matrix into the principal component space. I would certainly
+[  871.29s ->   877.13s] encourage you to walk through both arguments in Python to convince yourself that the eigenvalues
+[  877.13s ->   883.29s] are simply a scaled version of the singular values squared. But Python will make this very easy for us by
+[  883.29s ->   890.41s] using sklearn and this PCA fit transform function here. If you were to do it using the eigendecomposition
+[  890.41s ->   895.85s] way, then you would just compute a dot product of your original data matrix with the eigenvectors.
+[  896.41s ->   901.29s] And you would essentially have this set of loadings and you can go about analysis on the loadings,
+[  901.29s ->   905.85s] which is what we're going to do in a moment. But what I want to do first is I want to show you
+[  905.85s ->   912.89s] what the new data looks like in terms of variation explained among the principal components. So what
+[  912.89s ->   919.13s] I've done here is I've dropped the market return and I'm only looking at the return for Apple, Amazon,
+[  919.13s ->   925.53s] General Motors, and Microsoft. And what I've done here is I've conducted a principal component analysis
+[  925.53s ->   932.33s] and I'm looking at the cumulative sum of eigenvalues. Now, the cumulative sum of the eigenvalues is going
+[  932.33s ->   939.53s] to be the normalization factor in determining the amount of explained variance by each principal
+[  939.53s ->   944.97s] component. And if you do a cumulative sum, you will end up with all of the variance or all of the
+[  944.97s ->   951.45s] variation explained in the original data matrix. So should you keep everything, right, then there's
+[  951.45s ->   956.65s] really no point in doing the principal component analysis. So what I mean is if we take a look here,
+[  956.65s ->   962.41s] I've done the PCA and I have four components. So I have four principal components, I have four
+[  962.41s ->   966.41s] original components. If I keep all of these components, yeah, no doubt, I'm going to explain
+[  966.41s ->   974.25s] 100% of the variance. That makes sense. I have all of the original information just conveyed in a
+[  974.25s ->   981.29s] different way in this new PCA representation, or I should say this new principal component representation
+[  981.85s ->   988.57s] of my original data. Now, should I truncate at three, then I'm going to be left with three principal
+[  988.57s ->   993.39s] components. I'm going to be left with three principal components. And those three principal components,
+[  993.39s ->  1000.19s] they explain over 90% of the variation in that data, in that original data. Now that is quite
+[ 1000.19s ->  1006.67s] productive. That is a lot of variation explained. Can we chalk the rest up to noise? Perhaps, perhaps.
+[ 1006.67s ->  1012.27s] But what I want to do is, in this specific context, I want to look at the loadings on these three
+[ 1012.27s ->  1017.63s] principal components. So what are these loadings? Well, we just talked about mathematically how to get
+[ 1017.63s ->  1023.07s] the principal components or how to get to the principal component space, right, once you get these
+[ 1023.39s ->  1029.87s] these eigenvectors, you can go about transforming your data matrix into this principal component space.
+[ 1030.75s ->  1038.03s] But what does this PC1 actually represent? We know it represents, or it explains, I should say,
+[ 1038.03s ->  1044.03s] around 55% of the variation in our data. Then when we add principal component two, we're up to
+[ 1044.03s ->  1051.15s] over 80% of variation explained. But what are these factors representing? Well, let's take a look at the
+[ 1051.15s ->  1056.59s] interpretation of these principal components. What I've done is, I've taken a look at the eigenvectors,
+[ 1056.59s ->  1061.55s] or the loadings, and I've looked at the loadings for each principal component. So the interesting
+[ 1061.55s ->  1067.79s] thing about these eigenvectors is, if we look at our original data matrix, you know, forget the SPX,
+[ 1067.79s ->  1074.81s] I've removed that, but we have Microsoft, GM, Amazon, and Apple. All of the eigenvectors for each
+[ 1074.81s ->  1081.21s] principal component are going to have different weights on these features. So Amazon is going to
+[ 1081.21s ->  1086.09s] get its own weight in principal component one, Apple will get its own weight, GM will get its own
+[ 1086.09s ->  1091.85s] weight, and Microsoft. So I can plot these weights for each principal component. That's exactly what
+[ 1091.85s ->  1098.65s] I've done. So let's start with principal component one. Principal component one explains 55%
+[ 1098.65s ->  1106.25s] of the variance in our data. So if I scroll down here, and I look at principal component one,
+[ 1106.25s ->  1113.13s] we can see that, let's see, Apple is going to get this weight, we can see that Amazon gets this weight,
+[ 1113.13s ->  1118.73s] GM gets this weight, and Microsoft gets this weight. Now, what I would like to posit is the interpretation
+[ 1118.73s ->  1125.53s] is not necessarily trivial, and it's conjecture, sure, sure. But we know a lot about stock returns.
+[ 1125.53s ->  1130.33s] We know that there are three facets of risk driving stock returns. We know there's market
+[ 1130.33s ->  1135.29s] risk, there's sector risk, and there's idiosyncratic risk. So what I would say is,
+[ 1135.29s ->  1141.13s] given that all of these loadings on stocks that are pretty different from one another, right?
+[ 1141.13s ->  1144.89s] You know, I would say Amazon, Apple, and Microsoft are probably of the same sector,
+[ 1144.89s ->  1151.05s] but GM certainly is not. How on earth do they all have very similar positive loadings?
+[ 1151.05s ->  1158.41s] Well, maybe principal component one is a market risk component. And principal component one is
+[ 1158.41s ->  1167.88s] capturing common variation in Apple, Amazon, GM, and Microsoft caused by market risk.
+[ 1168.92s ->  1176.28s] Very interesting. So now, instead of all of these features in our set conveying the market risk
+[ 1176.28s ->  1183.00s] risk, redundantly, in the Apple returns, Amazon returns, GM returns, Microsoft returns, we have
+[ 1183.00s ->  1188.28s] one component, the first principal component, that is going to transform each of these into
+[ 1189.16s ->  1196.64s] a market risk component. And that's the first principal component that would explain 55% of the
+[ 1196.64s ->  1204.33s] variance in the data. So hopefully now you're starting to see how this is useful. Doesn't it make sense that
+[ 1204.33s ->  1209.77s] the market risk would, or the market factor would account for quite a bit of the variance explained?
+[ 1209.77s ->  1213.37s] It certainly makes sense to me. So let's take a look at principal component two now.
+[ 1213.93s ->  1218.96s] Principal component two. Principal component two. So principal component one was blue.
+[ 1220.16s ->  1223.60s] They all have similar positive loading. So I would call that a market component.
+[ 1223.60s ->  1229.60s] What about principal component two? Well, principal component two has similar loadings for
+[ 1229.60s ->  1236.16s] Apple, Amazon, and Microsoft, and then a terribly different loading for GM. Well, gee, what is the
+[ 1236.16s ->  1241.20s] relationship between Microsoft, Amazon, and Apple? I would say that they all belong to the same sector,
+[ 1242.76s ->  1249.24s] the same industry, technology. So I would call principal component two a sector risk component,
+[ 1249.24s ->  1254.92s] or a sector component, industry component. Doesn't that make sense? If all of these are tech stocks,
+[ 1254.92s ->  1259.16s] they have similar loadings. And then you look at GM, and you're like, well, hey,
+[ 1259.16s ->  1263.90s] that's a completely different loading. And that would account for if we add
+[ 1264.94s ->  1272.94s] the sector component to the original market component, we're up to 82% explained variance.
+[ 1272.94s ->  1279.26s] Now, I'd say around 82. But what is interesting here is doesn't this kind of make sense? Wouldn't
+[ 1279.26s ->  1285.50s] you expect that the market component explain a significant amount of common variance? And then
+[ 1285.50s ->  1292.62s] given that not all of these stocks are of the same sector, that the sector industry risk component
+[ 1292.62s ->  1299.50s] would explain less common variance. So the first component explains 50%. The second component is
+[ 1299.50s ->  1306.54s] roughly what 30, 20, 27 some odd percent. That makes sense, because all the stocks in the original data
+[ 1306.54s ->  1313.26s] set are not of the same sector, but they all have market risk components in common. So it does make sense
+[ 1313.26s ->  1318.86s] logically and quantitatively through the argument of the principal component analysis.
+[ 1318.86s ->  1325.50s] Now, last but not least, we have this PC3. PC3 takes us to, by the way, over 90% explained variance.
+[ 1326.62s ->  1331.18s] That's a lot of variance explained. If we go ahead and we take a look at this third component,
+[ 1331.18s ->  1335.74s] we can take a look and we say, oh, well, there doesn't seem to be too much of a relationship going
+[ 1335.74s ->  1343.53s] on here at all. Not at all. We see Microsoft down here, we see Amazon up here, then Apple down here,
+[ 1343.53s ->  1349.77s] and GM's kind of neutral. I would say that this is an idiosyncratic component. I would say that this
+[ 1349.77s ->  1356.09s] is a factor that is the unique, quote unquote unique, because I'm not talking about uniqueness in the
+[ 1356.09s ->  1362.89s] context of orthogonal information, but I'm talking about the idiosyncratic component of risk to each of
+[ 1362.89s ->  1368.89s] these firms individually. That is principle component three is, I would say, the idiosyncratic
+[ 1368.89s ->  1374.97s] risk associated with each one of these stocks or the idiosyncratic component. So in the first three
+[ 1374.97s ->  1382.49s] principle components, we have captured over 90% of the explained variance. And we are in fact looking
+[ 1382.49s ->  1388.41s] at a reasonable qualitative interpretation of the loadings and the interpretation of these
+[ 1388.41s ->  1394.33s] principle components. Now, it is not a trivial thing. And moreover, maybe sector risks dominates
+[ 1394.33s ->  1399.77s] at another point in time. One of the frustrating things about principle components analysis, once you
+[ 1399.77s ->  1404.49s] get to a higher level and you start applying it in maybe like a quantitative trading setting,
+[ 1404.49s ->  1411.61s] is these components are not stable necessarily over time. Sometimes they are. Maybe if you found some
+[ 1411.61s ->  1419.21s] real structure in your data, then these components, the loadings will change a bit. Sure. As you, you
+[ 1419.21s ->  1425.85s] roll, you know, roll time on forward, but there's no guarantee. There's no guarantee that the structure
+[ 1425.85s ->  1430.97s] that you have found will persist or that you've found real structure in any case. So that's one
+[ 1430.97s ->  1435.13s] thing to keep in mind is taking this one step further. If you're starting to think in a modeling
+[ 1435.13s ->  1440.01s] capacity or trading capacity, there's no guarantee that these are going to be stable. There are other
+[ 1440.01s ->  1445.05s] things you could do that might enhance stability. Maybe you throw an ICA in here too, but that's
+[ 1445.05s ->  1451.37s] going to be a topic for a later date. So this is the interpretation of the loadings, and this is the
+[ 1451.37s ->  1456.01s] interpretation of each principle component up to the third principle component. And again, that's going
+[ 1456.01s ->  1462.25s] to explain most of the variance in our data. And I would say that that is sufficient. We don't need,
+[ 1462.25s ->  1467.61s] we need it not. There's no point in using all of the principle components that defeats the purpose of
+[ 1467.61s ->  1476.01s] going through this PCA in general. We're going to wrap up this video with a very canonical problem
+[ 1476.01s ->  1482.25s] in quantitative trading. And that is this idea of non-stationarity, specifically non-stationarity
+[ 1482.25s ->  1487.53s] and principle components. But anytime you're doing any sort of statistical modeling, one of the most
+[ 1487.53s ->  1494.17s] frustrating things is you go about collecting a sample of data, you construct some sort of model,
+[ 1494.17s ->  1501.53s] maybe you do a PCA and then you deploy your model. And then these parameters that you've estimated
+[ 1501.53s ->  1508.81s] change over time. When do you re-estimate them? Is this just a temporary deviation or has it accumulated
+[ 1508.81s ->  1514.81s] and it's completely different? These are all things that you have to think about. So in the context of
+[ 1514.81s ->  1520.33s] non-stationarity of principle components, I want to emphasize this applies to the loadings. I'm going to
+[ 1520.33s ->  1525.77s] look at the cumulative variance explained of the first three principle components over time,
+[ 1525.77s ->  1529.53s] but this also applies to the loadings. There's no guarantee that these shapes,
+[ 1530.17s ->  1536.49s] this structure is preserved through the rolling window of PCA that we're about to do. I conducted
+[ 1536.49s ->  1543.13s] the PCA on the entire set, but in reality, when tomorrow comes, that's a new observation in that set.
+[ 1543.13s ->  1547.29s] So maybe I ditched the last observation and I compute it in a rolling capacity,
+[ 1547.29s ->  1551.77s] that's going to be up to the researcher, up to the data scientist, up to the quant trader,
+[ 1551.77s ->  1557.21s] etc. So what I have here now is the rolling explained variance ratio, a 60-day window,
+[ 1557.21s ->  1562.89s] so I'm using 60 days of data to compute the explained variance ratio. And you'll see I have
+[ 1562.89s ->  1568.09s] about a year of data, so this ends at roughly, I suppose this would be like 190 something because
+[ 1568.09s ->  1574.81s] it goes to 252 and I'm using a 60-day window. So if you look, the first principle component,
+[ 1574.81s ->  1582.91s] which we identified as a market risk component, explains over 60% of the variance. But as we
+[ 1582.91s ->  1590.59s] continue to roll time forward and we get new 60-day windows, it dips below 50%, and then eventually it
+[ 1590.59s ->  1596.91s] comes back above 50%. But in the meanwhile, what happened to the other components? Well, we can see
+[ 1596.91s ->  1605.23s] sector risk stayed relatively neutral around the 0.25 to 0.3, maybe dipping slightly below 0.25,
+[ 1605.23s ->  1612.11s] so really in this range of 0.2 to 0.3, so 20 to 30% of the explained variance there. And then you can
+[ 1612.11s ->  1620.83s] see that in the time that the market component dropped below 50% of the explained variance,
+[ 1620.83s ->  1626.43s] the idiosyncratic component seems to have increased in the amount of variance that it explained,
+[ 1626.43s ->  1633.63s] almost even surpassing the sector at one point for this particular set of stocks. I must emphasize,
+[ 1633.63s ->  1640.11s] for this particular set of stocks and for this given time period. Again, very, very important.
+[ 1640.11s ->  1645.31s] So the explained variance is not constant. It changes. It changes over time. And you can see
+[ 1645.31s ->  1651.15s] that with the 60-day window. It's very easy to see. But also these loadings, it's not as easy to
+[ 1651.15s ->  1656.59s] visualize, unfortunately, but these loadings will change as well. These loadings are going to change
+[ 1656.59s ->  1660.59s] as well. So, you know, maybe there's some sort of fancy chart we could do where, you know, we take a
+[ 1660.59s ->  1666.51s] look at the loading in a 60-day window and then we plot the average and it shows like,
+[ 1666.51s ->  1671.79s] sort of like a variance window around the average loading. That would be pretty cool. Actually,
+[ 1671.79s ->  1676.27s] maybe I'll put that together at some point. Maybe I'll add it to the QFin package. That's a cool idea.
+[ 1676.27s ->  1681.47s] But nevertheless, I really wanted to emphasize this component of, you know, non-stationarity and
+[ 1681.47s ->  1686.59s] components changing over time. It's a very, very important problem in the modeling space. Now,
+[ 1687.90s ->  1691.50s] suppose that you've found structure that no one else has found and you're trading on that
+[ 1691.50s ->  1695.90s] information. Yeah, you would expect stability in those components over time to some degree,
+[ 1695.90s ->  1701.10s] unless some crazy regime changed, which causes those components to fundamentally change.
+[ 1701.10s ->  1705.90s] So it's not like you find the golden goose of components and then you're done, right?
+[ 1706.62s ->  1710.30s] These things will continue to evolve and change over time. And that's why it's important to understand
+[ 1710.30s ->  1717.74s] what's going on. As you continue to maybe backtest or trade in a live capacity, you know, you could,
+[ 1717.74s ->  1722.38s] you could start to see these, these different components change in certain ways that might
+[ 1722.38s ->  1729.10s] lead to your favor or, you know, might lead you to retire a strategy altogether. I hope you enjoyed
+[ 1729.10s ->  1735.02s] this video discussing principal component analysis on stock returns, showing how to essentially derive
+[ 1735.02s ->  1740.54s] the principal components through an eigen decomposition of a covariance matrix or a singular value
+[ 1740.54s ->  1745.82s] decomposition of a data matrix. In later videos, I would like to do an independent component analysis as
+[ 1745.82s ->  1750.94s] well. I would also like to show how you can merge those two techniques together, maybe even apply
+[ 1750.94s ->  1756.30s] them to some alternative data in a trading capacity. If that's something that you would be interested in,
+[ 1756.30s ->  1762.70s] please let me know. Let me know. Other than that, thank you guys so much for watching and I will see you in the
+[ 1762.70s ->  1764.70s] next video.

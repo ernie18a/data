@@ -1,0 +1,61 @@
+[    0.00s ->     5.44s] In this video I'm going to walk you through why you should never use IVR to trade credit spreads.
+[    5.80s ->    16.88s] This is based on a back test. I'm going to show you the numbers and I'm going to show you why and then show you actually another way to use IVR and credit spreads to kind of make a better return.
+[   17.00s ->    19.90s] So let's dive into this 11 year back test.
+[   20.18s ->    24.06s] So again this is done by SJ Options. They're a great little company here.
+[   24.06s ->    33.84s] I also wrote my own similar article on it but they were the original ones so I want to like look at them and then we'll go into mine and talk about okay what can we do now that we know the stats.
+[   33.98s ->    36.86s] Okay so here we go. So this is what they were looking at.
+[   36.92s ->    44.02s] They were looking at an 11 year back test done by Tasty Trade proving that IVR isn't the best for trading credit spreads and here we go.
+[   44.38s ->    47.56s] Okay so if we look at it these are the rules that they tested.
+[   47.56s ->    51.28s] They sell a credit equal to one third the spread width.
+[   51.60s ->    57.42s] So for instance if they're doing a one dollar wide contract then that means they're trying to collect at least 33 cents.
+[   57.86s ->    63.06s] Okay next begin trading at a 45 days until expiration.
+[   63.24s ->    67.80s] So go out pretty far. This is kind of standard Tasty Trade methodology.
+[   67.80s ->    73.42s] Only trade when IV is from 50 to 100%.
+[   73.42s ->    81.96s] So again this means that volatility is quite overextended or increasing which means that the premium prices will also be increased as well.
+[   81.96s ->    90.66s] So they're hoping on an IV contraction or IV decreasing and thus helping them on multiple sides for the credit spread.
+[   90.66s ->   103.76s] Number four is manage your winners at a 50% credit which means that if you sold it at 33 cents you're going to buy it back around 15 cents and you're going to make about a 50% profit.
+[  104.22s ->   107.48s] Next stop losses if spreads reach two times the credit.
+[  107.90s ->   114.72s] So if we got 33 cents in credit then we're going to sell when we're at roughly 66 cents in credit.
+[  114.72s ->   121.82s] Okay so that's going to be a little over after it passes our break even strike price if we're trading a $1 wide spread.
+[  122.16s ->   123.74s] Okay here we go.
+[  124.12s ->   125.82s] Here are the general statistics.
+[  126.04s ->   129.88s] 61% winners, 7 years produced losses, 4 years produced profits.
+[  130.36s ->   131.82s] What does this look like?
+[  132.16s ->   140.40s] Well test number one, 5% allocated, 10% allocated, 25% allocated and 50%.
+[  140.40s ->   144.60s] You can see here in the 5% we had a minus 7% total return.
+[  144.72s ->   153.42s] We have a 19% total return, a 56% total return and a 93% total return across these 11 years.
+[  153.54s ->   161.52s] You can also see here that they ran the backtest on SPX of 2005 to 2016 and they had the different allocations.
+[  161.88s ->   164.30s] What I also want to show is another study here.
+[  164.30s ->   175.38s] If you come down to the 10 year one which I also linked here, it shows the returns of doing roughly the same thing for individual stocks when you're trading IVR.
+[  175.38s ->   202.06s] You can see here a minus 100% loss when trading Apple from 2005 to 2015, a 93% loss when trading IWM, an 86% loss from MSFFT, a QQQQ, which should be just three Qs, a 100% loss from 2005 to 2015, SPX a 100% loss, and WMT 2005 to 2015, also a 74% loss.
+[  202.06s ->   206.60s] So you can see here that trading IVR with credit spreads is not the way to do it.
+[  206.88s ->   208.34s] This is what people will convince you.
+[  208.42s ->   215.86s] The easiest way to trade credit spreads is just to go out there 45 days, general 1 third collection, IVR high.
+[  216.10s ->   218.66s] You can see here this does not work out long term.
+[  218.78s ->   220.02s] Do not do this.
+[  220.32s ->   222.44s] Okay, so we can see here that it doesn't work.
+[  222.68s ->   225.14s] Again, if you want to see the backtest for this, we can pull that up here.
+[  225.14s ->   234.94s] This is the backtest as well, the 10-year backtest showing exactly what they did here, showing that IVR and no management, IVR 50 equals a ton of losses.
+[  235.56s ->   237.70s] So again, this is kind of what we're looking at here.
+[  238.02s ->   240.66s] Even when they adjust for losses, it's still not the best.
+[  240.76s ->   242.46s] So that's kind of what we're looking at.
+[  242.54s ->   246.44s] Now, what I want you to talk about is how I trade credit spreads without IVR.
+[  246.52s ->   248.86s] Guys, you do not need IVR to trade credit spreads.
+[  248.86s ->   253.10s] I know a lot of people think that, but the stats just don't back it up.
+[  253.42s ->   258.22s] So again, what we can see here is that we can trade credit spreads by following the trend.
+[  258.64s ->   265.32s] And so again, if you want to learn more about following the trend, you can actually do that going to this.
+[  265.58s ->   267.10s] I mean, I link it down below.
+[  267.58s ->   271.94s] But if you go to the trading handbook, credit spreads trading handbook right here.
+[  272.40s ->   277.34s] Again, these are the exact strategies that have historically been proven to make money.
+[  277.34s ->   279.20s] Let's see if I can actually zoom out here for a second.
+[  279.92s ->   282.22s] We can see here, I give you a strategy.
+[  282.46s ->   285.12s] Look, like this, the turtle strategy.
+[  285.44s ->   287.30s] I tell you what market it works in.
+[  287.52s ->   289.16s] I give you all the entry rules.
+[  289.26s ->   291.32s] I even give you a video that explains it.
+[  291.54s ->   293.32s] And I give you a chance to send it straight to your phone.
+[  293.62s ->   298.50s] Not only that, I tell you about the back test to show you how it's actually worked historically.
+[  298.76s ->   303.82s] So again, if you want strategies just like this for credit spreads, make sure to click the link down in the description below.
+[  304.14s ->   305.60s] Anyways, guys, I hope you enjoyed this.
+[  305.60s ->   307.74s] If you're trying to get better at credit spreads, I'm your guy.
+[  307.86s ->   312.02s] Please click the subscribe button down below and I will see you in the next video.

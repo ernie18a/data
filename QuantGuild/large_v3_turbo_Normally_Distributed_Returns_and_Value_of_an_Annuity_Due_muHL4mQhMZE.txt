@@ -1,0 +1,152 @@
+[    0.46s ->     6.25s] welcome back to our journey to quant five on quant guild.com today we're going to be answering
+[    6.25s ->    11.13s] some finance questions don't know where to start on your journey to becoming a quant check out
+[   11.13s ->    17.55s] quant guild.com we'll help you master the necessary quantitative skills in our last episode we got to
+[   17.55s ->    23.45s] rank 51 in math the previous one we got to rank 53 in probability today we're going to be hopping in
+[   23.45s ->    29.35s] to some finance questions let's go ahead and get started in a monte carlo simulation and now an
+[   29.35s ->    33.97s] analyst simulates asset returns that are normally distributed with a mean of seven percent and a
+[   33.97s ->    41.25s] deviation of two percent what is the probability that a randomly chosen simulated return is less
+[   41.25s ->    46.47s] than five percent great question on monte carlo simulation let's head on over to the ipad and
+[   46.47s ->    52.55s] discuss the solution i quite like this question because it's combining ideas from probability and
+[   52.55s ->    58.99s] statistics into the finance domain which is exactly what we're going to see in higher level
+[   58.99s ->    64.99s] questions anyway we're going to require more tools in our math and statistics and probability toolbox
+[   64.99s ->    70.43s] to be able to solve such finance questions but this is a great way to get started monte carlo simulation
+[   70.43s ->    76.83s] is an idea from probability and statistics and in this context we have some sort of return and we're
+[   76.83s ->    83.03s] generating draws from this distribution or several other distributions to try to analyze maybe our
+[   83.03s ->    88.67s] portfolio returns maybe the expected return maybe the variance or the probability of different
+[   88.67s ->    93.79s] outcomes in this case we're trying to figure out what the probability that a randomly selected
+[   93.79s ->   100.45s] return is going to be less than five percent so how do we go about solving this well we're going to
+[  100.45s ->   111.63s] start by saying r so we're going to say let r denote returns and r is a random variable that follows a
+[  111.63s ->   119.79s] normal distribution with a mean of seven percent and a variance of two percent squared so the problem gives us
+[  119.79s ->   126.11s] that the standard deviation is two percent and this would imply that the variance is going to be
+[  127.58s ->   135.46s] two percent squared okay well if this is the case how do we find a probability well we know
+[  136.72s ->   144.30s] a normal distribution is fully characterized by its probability density function or cumulative distribution
+[  144.30s ->   152.96s] function so what is its probability density function well this is going to be equal to one over the square
+[  152.96s ->   164.91s] root of two pi sigma squared e to the negative x minus mu squared divided by two sigma and this is going to be
+[  166.59s ->   174.59s] for x between negative infinity and positive infinity that is the support if you integrate over this entire
+[  174.59s ->   184.10s] region you will in fact get one making it a valid probability density function moreover mu and sigma squared are
+[  185.44s ->   191.84s] constants they are constants if you're doing something like a maximum likelihood estimation then
+[  191.84s ->   197.76s] yeah you could treat them as as parameters and optimize over them sure but in this context they are
+[  197.76s ->   204.08s] constants because we are given a seven percent average return and a two percent standard deviation or a two
+[  204.08s ->   211.84s] percent squared variance so in this case this is the distribution that fully specifies our stock returns
+[  219.79s ->   235.49s] so it fully characterizes the randomness of r our stock returns so how do we find this probability remember
+[  235.49s ->   243.70s] we're being asked that the probability or what is the probability that r is less than five percent well
+[  243.70s ->   253.25s] the cumulative distribution function is capital f of x and this is equivalent to the integral from negative
+[  253.25s ->   259.46s] infinity to x of and the integrand here is going to be the probability density function
+[  261.01s ->   268.37s] and i'm using a variable substitution here since our upper limit is using that variable x so we're integrating
+[  268.37s ->   275.81s] from the lowest part of the support that negative infinity all the way up to x and whenever you do
+[  275.81s ->   281.41s] this with a probability density function you are actually finding the probability that the random
+[  281.41s ->   289.52s] variable let's just call it in this case capital r is less than some little x is less than some little x so
+[  290.08s ->   296.51s] in this case i'm saying that we have a probability density function that governs
+[  297.55s ->   304.75s] or specifies the randomness of random variable r in this case our returns then the associated cumulative
+[  304.75s ->   309.95s] distribution function is equal to the integral from the lowest part of the support all the way to the
+[  310.67s ->   315.15s] value we specify in this case x and that is going to be equal to the probability that that random
+[  315.15s ->   325.84s] variable is in fact less than that that value little x now that value little x so why is this useful well
+[  327.10s ->   336.30s] we know what f of s is should say little f of s and we know what x is so in the context of our problem
+[  336.30s ->   344.50s] right this is our f of r this is our f of r this fully characterizes the randomness of our returns
+[  347.30s ->   358.51s] and now we know what x is x is five percent so essentially we're just we're just using these equations
+[  359.31s ->   364.43s] all together and we're going to be able to actually find the value of this probability because remember
+[  365.23s ->   372.19s] mu and sigma in this probability density function are already defined they're given to us by the
+[  372.19s ->   377.95s] problem seven percent and two percent should say two percent squared so plugging everything in
+[  379.34s ->   388.03s] we can say that the probability that r is less than five percent is equal to the integral from negative
+[  388.03s ->   398.48s] infinity to five percent of one divided by the square root of two pi sigma squared out of the square root
+[  398.48s ->   406.13s] is just going to be sigma that's two percent e to the negative and this has to be or we can use whatever
+[  406.13s ->   414.13s] variable we like here actually because we're using a constant five percent here so we can say x minus
+[  414.13s ->   424.77s] seven percent squared divided by two times sigma which is two percent and this will be dx so this is going
+[  424.77s ->   432.45s] to be the probability that the return is less than five percent and if you plug this into any sort of
+[  432.45s ->   437.81s] cumulative distribution function calculator you can approximate this integral numerically you are going
+[  437.81s ->   449.12s] to end up with 15.87 percent 15.87 percent let's head on back over to quant guild see if that is an answer
+[  449.12s ->   456.08s] choice all right so we are given 15.87 percent here we will submit we get the correct answer
+[  457.68s ->   467.54s] and we are ready to move on to the next question using matrix multiplication calculate the expected return
+[  467.54s ->   477.14s] of a portfolio with weights 0.25 0.35 0.40 and expected returns seven percent nine percent and 11
+[  478.26s ->   485.14s] this is a fantastic question starting to bring in some ideas from linear algebra let's head on over to
+[  485.14s ->   490.98s] the ipad and discuss this one together i can't emphasize enough how important linear algebra is in
+[  490.98s ->   497.14s] quantitative finance so it's nice to see a level one question incorporating some of it it's useful not only
+[  497.14s ->   503.46s] for computing things like statistics associated with a panel of stock data but it's also useful for
+[  503.46s ->   510.58s] things like finding stability and structure in data for trading strategies it is a very very important
+[  510.58s ->   516.50s] subject to study thoroughly as it is one of the most important tools in your toolbox when you start
+[  516.50s ->   521.86s] confronting real world problems so it's nice to see it in the level one question let's talk about it here
+[  521.86s ->   526.42s] so we're given a set of vectors the first vector is going to be the weight of a stock in your
+[  526.42s ->   531.78s] portfolio so in other words this is a stock weight this is a stock weight this is a stock weight and
+[  531.78s ->   541.95s] this is the corresponding expected returns so in this capacity okay knowing this how can we compute the
+[  541.95s ->   548.59s] expected return of our portfolio well it's quite easy to compute the expected return of our portfolio in
+[  548.59s ->   562.50s] general so if i say pi is our portfolio our portfolio return and we want to find the expected portfolio
+[  562.50s ->   569.86s] return then we can just say that this is equal to and we can just wait the expected returns by the
+[  569.86s ->   577.86s] portfolio weight and end up with the overall expected portfolio return so in other words stock one has an
+[  577.86s ->   584.34s] expected seven percent return with a weight of 25 so we will just take the product of those two right
+[  584.34s ->   593.92s] there and then this is just going to end up being the sum product of all of the weights and expected
+[  593.92s ->   607.06s] returns okay so that's how we can compute the expected return of our portfolio but we want to use
+[  607.06s ->   612.74s] matrix multiplication matrix multiplication is a super important idea because we are going to be able to
+[  612.74s ->   617.86s] do this not just for a set of expected returns but we're also going to be able to do this for a time
+[  617.86s ->   626.02s] series so if i have a large selection of assets in my portfolio and i have a whole bunch of data across
+[  626.02s ->   631.78s] time for all of these assets so let's say i have 10 years of of pricing data for all of these assets
+[  631.78s ->   639.47s] then wouldn't it be a pain to continue to do with some product in this capacity wouldn't it be nice if i
+[  639.47s ->   644.99s] can just press a magic button and do it automatically well in fact that's what the matrix multiplication
+[  644.99s ->   650.59s] is essentially doing it's essentially doing this this large sum product for us and what it's doing
+[  650.59s ->   657.55s] is it's isolating it to each individual time when we do it with say something like a a time series of a
+[  657.55s ->   663.07s] large selection of assets but you can check out my previous video on portfolio rebalancing if you're
+[  663.07s ->   669.07s] interested in that implementation here we're just going to solve the very simple question of finding the
+[  669.07s ->   676.03s] expected return of our portfolio using the matrix multiplication so we are after this this is in
+[  676.03s ->   682.86s] fact what we are after but we can do it with matrix multiplication now when you multiply matrices
+[  682.86s ->   689.70s] together we need to make sure that the inner dimensions match so w the dimensionality of w
+[  692.29s ->   701.07s] is going to be three by one and the dimensionality of r is going to be three by one so if i tried to
+[  701.07s ->   706.35s] compute this product here and i'm going to use app for this matrix multiplication could we do this
+[  707.62s ->   713.30s] well this is three by one and this is three by one the inner dimensions don't match so we can't do
+[  714.34s ->   720.18s] this matrix product so i have to transpose something okay i have to transpose something
+[  720.18s ->   726.34s] now which one do i transpose does it actually matter which ones i transpose what is what is transposing
+[  726.34s ->   731.94s] anyway what all transposing is doing is it's going to swap the rows and it's going to swap the rows with
+[  731.94s ->   739.63s] the columns so if i have a three by one it's going to become a one by three and vice versa so what does
+[  739.63s ->   749.30s] this actually look like well w is equal to a column vector here so w transpose is going to be equal to a row
+[  749.30s ->   761.38s] vector of 0.25 0.35 0.40 and this is going to be one row by three columns all right why is this nice
+[  762.58s ->   774.19s] well this is nice because now when i do wt multiplied with r then i have a one by three and a three by one
+[  775.74s ->   784.46s] so this is going to be equal to 0.25 0.35 0.45 this vector multiplied with
+[  785.34s ->   795.81s] this vector of i believe this was seven percent nine percent and eleven percent now how do we do matrix
+[  795.81s ->   803.33s] multiplication well remember we take each element in the row and then we take the sum product with
+[  804.05s ->   810.37s] each element in the the cop the corresponding column and we would do this for each row and each column
+[  811.09s ->   817.49s] in the set of matrices but in this case it's just a set of vectors so what do we actually end up with
+[  817.49s ->   825.17s] when we do this matrix multiplication well this is going to be equal to 0.25 times 0.07
+[  825.17s ->   837.33s] plus 0.35 times 0.09 plus 0.40 times 0.11 in other words it's this times this
+[  838.45s ->   852.22s] plus this times this plus this times this and this is going to be equal to the expected return of our
+[  852.22s ->   859.01s] portfolio so if you knew that you could just weight all the expected returns by the portfolio weight
+[  859.01s ->   863.41s] or the stock weight in your portfolio that's great but i would highly recommend that you start to
+[  863.41s ->   869.01s] consider representing these structures as vectors and matrices because it will make your life infinitely
+[  869.01s ->   874.21s] easier down the road and it will also set you up for a variety of optimization problems another very
+[  874.21s ->   880.45s] challenging maybe quant style questions not just quant style questions but problems you'll encounter
+[  880.45s ->   889.81s] in your day-to-day on the job so what is this actually equal to if you plug this into a calculator
+[  889.81s ->   896.21s] you should get i believe it's 9.3 percent as the expected return let's head on back over to quant guild
+[  896.21s ->   903.09s] see if that is an answer choice back on quant guild here we see 9.3 i'll submit this answer choice
+[  904.22s ->   912.54s] and we get it correct lo and behold it computes the answer the exact same way that we did on the
+[  912.54s ->   918.30s] ipad we are taking the transpose of the weight matrix and computing that matrix product and we get the
+[  918.30s ->   926.70s] expected return of 9.3 percent fantastic great explanation great question let's see what we got here
+[  926.70s ->   932.46s] what is the future value of an annuity do that pays two hundred dollars at the beginning of each
+[  932.46s ->   938.30s] year for five years at an interest rate of six percent it's a great time value of money question
+[  938.30s ->   945.18s] a great great time value of money question here and we are talking about a series of cash flows so
+[  945.18s ->   951.26s] let's head on over to the ipad we're going to talk about this this annuity due so if you're a bit rusty
+[  951.26s ->   956.78s] on the time value of money and the notion of annuities and perpetuities definitely head on
+[  956.78s ->   963.26s] over to the lesson section and check it out but a very simple idea to understand is that the present
+[  963.26s ->   968.62s] value and future value of a corresponding ordinary annuity is typically going to be less than that of
+[  968.62s ->   976.78s] an annuity due because interest is accrued for an extra period so in other words for an ordinary annuity
+[  980.91s ->   989.95s] the future value is going to be equal to some payment times one plus r to the n minus one divided by r
+[  990.91s ->  1001.10s] and for an annuity due we simply take that so the future value of the annuity due is going to be equal
+[ 1001.10s ->  1008.54s] to going to take that future value bring it down here and multiply it by just an extra interest accruing
+[ 1008.54s ->  1014.54s] period and that is going to be the difference between ordinary annuity and annuity due again
+[ 1014.54s ->  1019.02s] this is really nothing difficult it's just when the payment is due at the beginning or the start of the
+[ 1019.02s ->  1025.42s] period and whether or not there's this extra interest that is is going to be earned by the
+[ 1025.42s ->  1033.50s] the one who is offering the the loan again not difficult but it's going to be the difference
+[ 1033.50s ->  1037.18s] between getting this question right or wrong because if you use the ordinary annuity formula it's going to
+[ 1037.18s ->  1047.89s] be incorrect so what do we have here we have that the payment is 200 we have that the rate is i believe
+[ 1047.89s ->  1057.97s] what is it six percent and we have the periods being five so if we just plug this into our formula
+[ 1057.97s ->  1071.01s] we get that the future value is equal to 200 and this is going to be 200 times one plus six percent raised to
+[ 1071.01s ->  1080.46s] the fifth power for five periods minus one divided by that six percent okay and that would mean that the
+[ 1080.46s ->  1089.90s] future value of the future value of the annuity due is going to be equal to that future value whatever it is
+[ 1089.90s ->  1096.54s] times one plus six percent so if you plug this into a calculator i believe you get something of
+[ 1096.54s ->  1107.90s] around one thousand one hundred and ninety five so let's head on over to quant guild and see if that
+[ 1107.90s ->  1115.26s] is in fact an answer choice we see answer choice d one thousand one hundred ninety five submit we get it
+[ 1115.26s ->  1123.34s] correct that is in fact exactly how we went about solving it on the ipad so the explanation matches up with
+[ 1123.34s ->  1127.42s] the way that i went about solving it again nothing particularly challenging it's just an ordinary
+[ 1127.42s ->  1133.82s] annuity times an additional period that is going to be the last question for this video let's head
+[ 1133.82s ->  1139.74s] back over to the dashboard we have ranked up to 51 these were pretty easy questions i think they were
+[ 1139.74s ->  1146.22s] all level one questions so we have increased our finance rank by one point and that is going to do it
+[ 1146.22s ->  1153.44s] for the finance subject in this video thank you all so much for watching i hope you enjoyed i hope you
+[ 1153.44s ->  1158.08s] learned something in the next episode we are going to go about answering a whole bunch more probability
+[ 1158.08s ->  1164.32s] questions hopefully we can continue to rank up and progress on this journey to quant five learn a whole
+[ 1164.32s ->  1175.23s] bunch about math probability and finance thanks again so much for watching i'll see you in the next video

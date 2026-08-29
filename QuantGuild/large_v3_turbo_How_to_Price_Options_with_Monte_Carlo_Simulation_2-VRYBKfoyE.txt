@@ -1,0 +1,226 @@
+[    1.32s ->     7.30s] We've all heard of the Black-Scholes equation, which, when solved, gives us a function to price
+[    7.30s ->    14.12s] options contracts. But how is this different from the value given by Monte Carlo simulation? Well,
+[   14.42s ->    21.46s] in this video, I want to discuss the why and how behind pricing options with Monte Carlo
+[   21.46s ->    26.56s] simulation. We're going to discuss the Black-Scholes portfolio replication argument,
+[   26.56s ->    31.96s] the arbitrage-free price implied by the fundamental theorem of asset pricing,
+[   32.44s ->    37.62s] the Feynman-Kach theorem, which bridges that gap, making both approaches theoretically sound,
+[   37.98s ->    42.46s] and then we'll talk about the law of large numbers for discrete and continuous random variables,
+[   42.84s ->    49.12s] and how this extends to stochastic processes, and then we'll wrap up actually applying all of these
+[   49.12s ->    55.90s] ideas by pricing a rainbow option. In this context, depending on your contract's payoff, maybe you're
+[   55.90s ->    62.28s] dealing with some sort of exotic payoff, you may not have access to a solution by the portfolio
+[   62.28s ->    68.64s] replication argument, unlike my Jupyter notebooks, which you will always have access to. I'll leave
+[   68.64s ->    72.40s] a link to this Jupyter notebook in the description below. I will also post it to the Quant Guild
+[   72.40s ->    76.98s] library on GitHub, where you can find all of my Jupyter notebooks and associated YouTube videos,
+[   77.34s ->    81.78s] along with all of the source code for my quant builds. At the top of this Jupyter notebook,
+[   81.78s ->    86.10s] you'll notice some related Quant Guild videos applying probability statistics and stochastic
+[   86.10s ->    91.96s] calculus to financial mathematics and pricing, this idea of why Monte Carlo simulation works,
+[   92.38s ->    97.74s] approximating partial differential equations via finite differences, this idea of Brownian motion
+[   97.74s ->   104.06s] specifically for quantitative finance, and modeling underlying dynamics, this idea of the Feynman-Kach
+[  104.06s ->   109.84s] theorem bridging the gap between the Black-Scholes model price and the no-arbitrage price implied by the
+[  109.84s ->   115.46s] fundamental theorem of asset pricing, and of course, how we can use all of this and how large financial
+[  115.46s ->   120.70s] institutions use all of this to make money every day, market making. If you're unfamiliar with any
+[  120.70s ->   126.94s] of these ideas, I highly recommend you check these videos out first before tackling one like this.
+[  127.04s ->   130.58s] Moreover, these videos certainly take a lot of effort to create, so if you'd like to help support
+[  130.58s ->   134.90s] the channel so I can continue to create videos just like this one, please like, comment, subscribe,
+[  134.90s ->   139.86s] share. It helps me out tremendously. It is always greatly appreciated, and if you'd like to master
+[  139.86s ->   145.22s] your quantitative skills, check out quantguild.com. Maybe you come from a background in business,
+[  145.36s ->   150.64s] economics, computer science, and aren't too sure where to get started on your quant journey. Maybe
+[  150.64s ->   155.96s] you're an aspiring quant or a working professional looking to sharpen those quantitative skills.
+[  156.52s ->   161.34s] In any case, Quant Guild is for you. We have over 90 quant lessons in math, probability,
+[  161.34s ->   167.08s] and finance. An adaptive practice engine that scales with your skill level so you can progress
+[  167.08s ->   173.18s] to more and more difficult topics with gamified rank-based progress. Interview questions with fully
+[  173.18s ->   180.76s] worked solutions. Trading games. Courses from A to Z in coding. Probability and statistics. Math.
+[  181.18s ->   187.24s] With more on the way. And all that's included with Quant Guild membership. And you can get started
+[  187.24s ->   191.54s] right now for free. So if you'd like to help support the channel and master your quantitative
+[  191.54s ->   197.96s] skills, check out quantguild.com. Without further ado, let's get started by discussing this idea of the
+[  197.96s ->   204.78s] Black-Scholes portfolio replication argument and the fundamental theorem of asset pricing. So
+[  204.78s ->   210.20s] for starters, if we take a look here at this Black-Scholes equation, we arrive at this equation
+[  210.20s ->   217.12s] by hedging away all of the randomness in the underlying asset. And we realize that if we are
+[  217.12s ->   223.50s] holding a portfolio that is bearing no risk, we must earn the risk-free rate. And that is exactly how
+[  223.50s ->   230.42s] we get this Black-Scholes equation here. Now, the fundamental theorem of asset pricing actually implies
+[  230.42s ->   238.16s] a price, an arbitrage-free price. And that is given by the risk-neutral discounted expectation. But
+[  238.16s ->   245.04s] these are effectively two different quantities. How can we link them together? Well, I actually have a
+[  245.04s ->   251.60s] video on this full derivation. That is thanks to the Feynman-Cac theorem. Effectively, if V is the
+[  251.60s ->   259.66s] solution to this Black-Scholes equation, then it must be equivalent to this risk-neutral discounted
+[  259.66s ->   266.66s] expectation. That is a fantastic result from physics that justifies theoretically the Black-Scholes
+[  266.66s ->   271.18s] model price. And that is exactly what you're seeing here. You're seeing the stochastic representation
+[  271.18s ->   277.30s] on the right, the conditional expectation producing the option price, and on the left, the Black-Scholes
+[  277.30s ->   284.38s] pricing function. Since both approaches produce the same price, which should I choose? Well, clearly,
+[  284.54s ->   290.84s] I'm going to prefer to have a function because this is going to give me the precise arbitrage-free
+[  290.84s ->   300.00s] price for any parameter set that I input into the model. But the problem is, the equation governed by
+[  300.00s ->   307.28s] the portfolio replication argument may not always have an analytical solution. Now, we could always
+[  307.28s ->   314.00s] approximate it via finite differences, but depending on the complexity of our options payoff, it may just
+[  314.00s ->   321.82s] be significantly easier to go about solving this conditional expectation. And that's exactly what
+[  321.82s ->   327.36s] you're seeing on the right here. On the left, we have that closed-form solution. If we go about solving
+[  327.36s ->   334.92s] this partial differential equation, we can also approximate this analytical solution via finite
+[  334.92s ->   341.00s] differences, and I have an entire video dedicated to that topic if you would like to check out how to go
+[  341.00s ->   347.52s] about doing that. But on the right here, we can see the stochastic representation, and this is going to be
+[  347.52s ->   355.62s] solving this conditional expectation. And we're able to do this via the law of large numbers. So let's go ahead and
+[  355.62s ->   360.18s] take a look at the law of large numbers. I'm going to give you a few examples. I'll talk about a
+[  360.18s ->   366.16s] discrete and continuous random variable, and then we'll extend the idea to a stochastic process which
+[  366.16s ->   373.54s] enables us to go about solving this conditional expectation, which must be equal to this price given
+[  373.54s ->   380.02s] by the replication argument. Given we need to solve an expectation to find the correct options price,
+[  380.02s ->   385.78s] we need to understand the definition of an expectation in that sense. So let's start with
+[  385.78s ->   391.14s] a discrete random variable. The expectation of a discrete random variable is simply the probability
+[  391.14s ->   397.38s] weighted sum of all of its outcomes. So if we had something like a dice roll, each outcome has the
+[  397.38s ->   404.58s] same probability of one-sixth of occurring, given it is a fair dice. So all we have to do is take each
+[  404.58s ->   411.62s] outcome, scale it by that probability, sum it all together, and we get the expectation of 3.5.
+[  411.62s ->   418.02s] I actually have a really cool animation here that visualizes this expectation. It shows us
+[  418.02s ->   424.02s] the connection between the outputs, that is the face value of the dice here in orange,
+[  424.02s ->   429.38s] and the corresponding probability. We are taking the sum product of these values. We're going to start at
+[  429.38s ->   435.54s] one, scale one by the probability, and add it to the sum. And we're going to do this for each of the
+[  435.54s ->   442.18s] possible values of the dice. And we can see how each one contributes to the overall expectation
+[  442.18s ->   448.74s] of that dice roll. This is exactly how the expectation works. This is what we're doing when
+[  448.74s ->   454.82s] we find the mean or average value of a discrete random variable. It is the probability weighted sum
+[  454.82s ->   460.82s] of all of that random variable's possible values. What if we couldn't do this? What if we couldn't
+[  460.82s ->   467.14s] find the sum product of the possible outcomes with the corresponding probabilities? What if this went out
+[  467.14s ->   475.14s] to infinity? That certainly is possible. Well, we can also observe this same theoretical expectation
+[  475.14s ->   482.58s] via Monte Carlo's simulation. And this is thanks to the law of large numbers. Effectively, we can
+[  482.58s ->   490.18s] estimate the theoretical mean by just drawing or observing a lot of outcomes of our random variable.
+[  490.18s ->   498.58s] And if we continue to approximate the mean as the samples increase, as we continue to observe
+[  498.58s ->   504.66s] outcomes of this random variable, we are going to observe convergence to that theoretical mean value.
+[  504.66s ->   509.94s] And that is exactly what you're seeing here. I'm just going to continue to roll the dice,
+[  509.94s ->   517.06s] and I'm going to record the mean. And as I continue to roll more and more dice, I'm going to get
+[  517.06s ->   523.70s] closer and closer to that theoretical mean, which will converge with probabilistic certainty. That is
+[  523.70s ->   529.70s] thanks to the law of large numbers. The reason why this is important is because if we can't directly
+[  529.70s ->   536.90s] solve for this expectation, like we see here in this animation where we just take the probability
+[  536.90s ->   544.74s] weighted sum, we know we can always simulate that value, that theoretical value, and it will converge
+[  544.74s ->   551.86s] with probabilistic certainty. And this idea holds also for a continuous random variable where the
+[  551.86s ->   559.14s] expectation is now given not by the sum product, but the integral product of the random variable x with
+[  559.14s ->   566.34s] its probability density function. And here I'm going to show you an example with a normal distribution,
+[  566.34s ->   572.74s] a standard normal distribution. And what you're going to observe is as I integrate now from left to
+[  572.74s ->   580.10s] right, you're observing the exact same effect. I am finding the theoretical mean and of a standard normal
+[  580.10s ->   586.02s] that's going to be zero by just looking at that integral. It is the same thing as a sum product,
+[  586.02s ->   595.86s] it's just a continuous sum product. And you can see here, the accumulation is accumulating to zero,
+[  595.86s ->   601.22s] and that is the correct theoretical mean. Now, how do we know this is the correct theoretical mean? Well,
+[  601.22s ->   608.42s] that's because the function x times the probability density function of x is odd, and we're integrating
+[  608.42s ->   614.50s] over the entire region negative infinity to positive infinity. So because of that, we are going to end up
+[  614.50s ->   621.06s] with zero, that is exactly this net area plus this net area, it gives us zero, the theoretical mean of
+[  621.06s ->   627.22s] this function. But we can also verify this by using the law of large numbers, we should observe convergence
+[  627.22s ->   633.94s] to then the value of zero, if I continue to draw from that distribution. And that's exactly what you're
+[  633.94s ->   639.46s] seeing here, as I continue to draw more and more samples from the standard normal distribution,
+[  639.46s ->   645.38s] the empirical mean is going to converge to the theoretical one, which we just discussed here.
+[  646.70s ->   651.74s] And that is going to converge, of course, with probabilistic certainty to the value zero.
+[  651.74s ->   658.14s] The reason this is so important is because this holds also for a stochastic process, which is just
+[  658.14s ->   665.66s] a random variable typically indexed by time. And what that means is we are going to observe similar
+[  665.66s ->   673.90s] convergence in the expectation for a particular time index, assuming that we simulate the distribution
+[  673.90s ->   679.50s] correctly. So as you can see here in this particular example for the standard normal distribution,
+[  679.50s ->   685.90s] we are drawing from that distribution correctly, we are observing convergence of the empirical mean to
+[  685.90s ->   691.82s] the theoretical one. The exact same thing is true in our simulation for our dice roll, we are observing
+[  691.82s ->   698.62s] this convergence of the empirical mean to the theoretical one because we are correctly simulating that
+[  698.62s ->   705.34s] random variable. If we correctly simulate the stochastic process that is governing our underlying asset
+[  705.34s ->   712.38s] dynamics, we will also observe this convergence. That is exactly what you're seeing here. You're seeing
+[  712.38s ->   719.98s] Brownian motion paths at time capital T, we're looking at the distribution here, and the green bars are the
+[  719.98s ->   727.26s] empirical terminal values. As you can see, with only a hundred paths, it's beginning to converge to
+[  727.26s ->   732.86s] that theoretical purple distribution. That is not by accident. We know that that is going to happen
+[  732.86s ->   739.02s] thanks to the law of large numbers. The Brownian motion has independent increments, meaning at time
+[  739.02s ->   746.86s] capital T, it follows a normal distribution. That is just a continuous random variable, and we know that that
+[  746.86s ->   754.06s] will converge. So why is all this necessary? Why am I talking about the law of large numbers? Well, recall,
+[  754.06s ->   760.78s] we're trying to solve a conditional expectation. We don't have an analytical solution to our partial
+[  760.78s ->   767.02s] differential equation. We're not going to have an analytical solution either to the conditional
+[  767.02s ->   774.38s] expectation. It just may be easier to numerically approximate via Monte Carlo simulation. Now, if we go back
+[  774.38s ->   781.82s] up to our examples here, they all have a mean, which is very easy to compute by just applying the definition
+[  781.82s ->   787.82s] outright. The dice roll gives us 3.5. It's the probability weighted sum. If we look at the standard
+[  787.82s ->   792.78s] normal distribution, we can just use the fact that it's odd, the symmetry to go about finding the
+[  792.78s ->   799.34s] expectation. That's also how it's parameterized in terms of its mean. And we also see in terms of the
+[  799.34s ->   805.02s] Brownian motion via independent increments at time capital T, we know it's going to follow
+[  805.02s ->   811.02s] a normal distribution with a variance of that time step. But when it comes to this conditional
+[  811.02s ->   816.70s] expectation here, we don't have an analytical solution. If I wrote it out in terms of the
+[  819.52s ->   825.36s] definition of the expectation given by this probability density function product here, we wouldn't
+[  825.36s ->   831.92s] be able to solve that integral in closed form, we're going to need to approximate it. And we know
+[  831.92s ->   839.76s] we can approximate it via the law of large numbers. So that is going to be our objective. In general,
+[  839.76s ->   847.12s] this answers why we can simulate option prices. We just need to ensure that we are drawing from the
+[  847.12s ->   853.20s] correct underlying distribution, just like we rolled the same dice a whole bunch of times,
+[  853.20s ->   858.08s] and we drew from the same standard normal distribution a whole bunch of times to apply
+[  858.08s ->   864.80s] the law of large numbers, we need a way to then draw from the terminal distribution of the underlying
+[  864.80s ->   871.84s] asset that dictates the options payoff for that particular sample. So this all plays into why we
+[  871.84s ->   878.96s] can simulate option prices effectively, the portfolio replication argument and the no arbitrage price
+[  878.96s ->   884.40s] implied by the fundamental theorem of asset pricing are connected via Feynman CAC, that is this risk
+[  884.40s ->   891.12s] neutral discounted expectation of the payoff of our options contract. The law of large numbers ensures if
+[  891.12s ->   897.68s] we draw from that underlying distribution a large amount of times, we will converge then to that theoretical
+[  897.68s ->   904.80s] expectation that we're seeing here, we just need a way now to draw from that distribution. And what we're going
+[  904.80s ->   911.60s] to do then is just assume some sort of model for our stock price, the underlying for our options contract,
+[  911.60s ->   918.00s] this could be a geometric Brownian motion, this could be a Heston, so on and so forth, then we can apply
+[  918.00s ->   926.16s] Euler Mariama discretization. And this satisfies draws for the law of large numbers to apply. And that is
+[  926.16s ->   931.28s] exactly what you're seeing here. If I have this stochastic differential equation, all I have to do is
+[  931.28s ->   937.84s] discretize it, take a small time step, take a small increment to Brownian motion, and then I'm going to be
+[  937.84s ->   944.72s] able to effectively simulate that path just like I simulated a dice roll or a draw from a standard
+[  944.72s ->   954.64s] normal distribution. This leads us to this recipe for going about simulating option prices via Monte Carlo.
+[  954.64s ->   960.64s] Step one, select a stochastic model for our underlying. This could be arithmetic, geometric,
+[  960.64s ->   966.80s] Brownian motion, additive multiplicative process, it could be a Heston, so on and so forth, even a rough model,
+[  966.80s ->   973.52s] whatever we choose, we would then discretize and simulate the process to the terminal time of the options
+[  973.52s ->   980.80s] contract. And then we would go about computing the sample path payoff. And that is very easy to do if we have
+[  980.80s ->   987.20s] some sort of barrier contract, if it's an Asian, whatever it may be, for that particular sample path, we can
+[  987.20s ->   993.84s] compute the payoff, because we already know what the stock price is at time capital T, and where it's been
+[  993.84s ->  1001.60s] throughout the life of that path. Once we do that, we can just discount it back to the present, and add it to a
+[ 1001.60s ->  1011.36s] list. And then we just repeat at one for many iterations. That is Monte Carlo's simulation of an options price. We'll now
+[ 1011.36s ->  1019.28s] apply this idea to a rainbow option. In this case, I'm dealing with a best of call with two underlyings.
+[ 1019.28s ->  1026.08s] What that means is, I'm going to take the best of the two underlying assets at time capital T, and that
+[ 1026.08s ->  1033.60s] is going to dictate the payoff in a call function. And to go about pricing this, I'm just going to apply
+[ 1033.60s ->  1039.92s] this general recipe that I outlined above. So step one is to select a stochastic model. I am going to
+[ 1040.48s ->  1045.92s] use a Heston model, but I'm going to use it for both underlyings. And here I can introduce a
+[ 1045.92s ->  1051.20s] correlation structure if I like, I can keep it to a risk neutral parameter set. It's however I would
+[ 1051.20s ->  1056.32s] like to go about simulating these dynamics in a forward looking sense. But then in step two,
+[ 1056.32s ->  1063.04s] I need to discretize and simulate the process to terminal time capital T. Now, when I go about
+[ 1063.04s ->  1069.12s] discretizing this, I'm going to be using Euler-Mariama discretization, but I need to pick a parameter
+[ 1069.12s ->  1073.68s] set. I need a risk neutral parameter set. And in the case of the Heston model,
+[ 1073.68s ->  1078.96s] I have a lot of different options, technically an infinite number of options. So what I'll do
+[ 1078.96s ->  1084.96s] is I'll calibrate that model to the current market volatility surface. And if you're unfamiliar with
+[ 1084.96s ->  1090.40s] this idea, I have a lot of videos discussing it in the context of exotic option pricing.
+[ 1090.40s ->  1095.92s] I will leave a link to them in the description below. But after I do this, I find my parameter
+[ 1095.92s ->  1103.12s] set. I will be able to simulate that process to terminal time capital T. Once I do that,
+[ 1103.12s ->  1109.20s] I can compute the payoff. This is just a best of call. What I'm going to do is I'm going to apply
+[ 1109.20s ->  1115.36s] that max function that dictates the payoff of my call to both price paths, and I will take the max
+[ 1115.36s ->  1121.76s] value. If both expire underneath the strike price, then the payoff is going to be zero. The option
+[ 1121.76s ->  1128.16s] expires worthless. After that, I just discount that payoff, whatever it is for that sample path,
+[ 1128.16s ->  1135.28s] back to the present and store it in a list. And then I just do that a large number of times. And that is
+[ 1135.28s ->  1141.28s] exactly what you're observing here. I have a Heston model that is going to govern the dynamics of both
+[ 1141.28s ->  1148.00s] underlying assets. And on the right here, you're observing the cumulative mean of the function,
+[ 1148.00s ->  1153.68s] the option pricing functions payoff. And as you can see here, it's going to converge
+[ 1153.68s ->  1158.64s] to that theoretical value. Too long, didn't watch. Here is your executive summary. The Black
+[ 1158.64s ->  1164.64s] Scholes portfolio replication argument is precisely the arbitrage-free price implied by the fundamental
+[ 1164.64s ->  1170.80s] theorem of asset pricing. This is proven by the Feynman-Cac theorem. We thus have two ways to
+[ 1170.80s ->  1176.96s] go about solving for an options price. We can solve analytically or numerically a pricing PDE,
+[ 1176.96s ->  1182.64s] or we can go about solving analytically or numerically an expectation. Now, since we are
+[ 1182.64s ->  1189.04s] dealing with stable underlying distributions, which means those distributions do not change randomly over
+[ 1189.04s ->  1194.40s] time, we can approximate the expectation via Monte Carlo. This is akin to the idea of
+[ 1194.40s ->  1200.72s] rolling a dice a significant number of times. That dice is not going to change weight randomly. It is
+[ 1200.72s ->  1207.20s] the same dice. And we can use then the law of large numbers to ensure convergence with probabilistic
+[ 1207.20s ->  1212.40s] certainty to the correct expectation. And in the case of the fundamental theorem of asset pricing,
+[ 1212.40s ->  1217.60s] that is going to correspond to the arbitrage-free price after discounting back to the present,
+[ 1217.60s ->  1223.28s] which of course is consistent with the price given by the replication argument. This is the recipe for
+[ 1223.28s ->  1230.40s] how to find the mid price. That is the theoretical expected fair price of an options contract. Now,
+[ 1230.40s ->  1236.64s] in the context of making a market, this is how large financial institutions make a market every single
+[ 1236.64s ->  1244.72s] day for complicated products. We figure out what the mid price should be, quote a spread around it,
+[ 1244.72s ->  1251.36s] baking in adjustments for counterparty risk, liquidity, profits, so on and so forth. And then we can quote a
+[ 1251.36s ->  1259.28s] two-way, a bid, ask, or offer. And once that trade is executed, we hedge to the best of our abilities to
+[ 1259.28s ->  1264.08s] collect that theoretical spread. And we do this, of course, a large amount of times. We don't do this
+[ 1264.08s ->  1270.48s] just for one trade. And I discussed this idea in algorithmic market making. Effectively, you're accumulating
+[ 1270.48s ->  1276.08s] that drift over a series of trades. So if you're interested in the extension to how markets are made and how
+[ 1276.08s ->  1281.68s] large financial institutions make a significant amount of money with this process, I highly encourage
+[ 1281.68s ->  1286.32s] you check that video out. Some future topics, technical videos, and other discussions to look
+[ 1286.32s ->  1290.80s] forward to. I'd like to do this video on projects that made me a quant, some of the first projects
+[ 1290.80s ->  1296.08s] that I got into when I was getting involved in the space that I think gave me a leg up. I'd like to
+[ 1296.08s ->  1301.20s] talk about non-Markovian models. I've already talked about the Markov property. In the context of quant
+[ 1301.20s ->  1306.40s] trading, I think a nice extension would be this idea of fractional brownie motion, Volterra processes
+[ 1306.40s ->  1311.28s] in general, so on and so forth. I have very old videos discussing these ideas. They're very niche
+[ 1311.28s ->  1315.68s] topics, but I hope there's interest that would like to talk about these. And you'll be happy to know
+[ 1315.68s ->  1321.68s] I'm currently making the roadmap for my quant roadmap video, effectively how I would study if I had to
+[ 1321.68s ->  1327.04s] start all over. I have some other topics here in the context of stochastic calculus, pricing, risk
+[ 1327.04s ->  1333.36s] neutrality, signatures, and rough path theory. Let me know in the comments what you'd like to see
+[ 1333.36s ->  1338.56s] next. And you know, we're right in the middle of a two-part series, a quant build. We're building
+[ 1338.56s ->  1344.40s] this live market regime classifier using Markov chains. And I have videos on Markov chains and
+[ 1344.40s ->  1349.28s] hidden Markov models if you need to brush up on the theory, but you can look forward to part two
+[ 1349.84s ->  1356.40s] this Friday. And I also have some new ideas for some other quant builds, a live market sentiment
+[ 1356.40s ->  1363.20s] filter. Similar to this idea of a regime, we can implement real time sentiment into our trading
+[ 1363.20s ->  1367.92s] models. And of course, this delta neutral algorithmic trading system. I've had this idea
+[ 1367.92s ->  1373.84s] on the docket for quite some time. It's automatically trading gamma or theta positions, but which quant
+[ 1373.84s ->  1380.24s] build I will make next is largely going to be based on you guys. So let me know in the comments below.
+[ 1380.24s ->  1384.72s] I'll also leave a link to interactive brokers in the description. If you'd like to get started with
+[ 1384.72s ->  1388.80s] them, I use them for all of my quant builds. I highly recommend them. I've been using them for
+[ 1388.80s ->  1392.96s] over 10 years at this point. So I'll leave that in the description. Let me know in the comments what
+[ 1392.96s ->  1397.84s] you'd like to see next. And that's going to do it for this video on how to price options with Monte
+[ 1397.84s ->  1401.92s] Carlo simulation. I hope you enjoyed. I hope you learned something. This video certainly took a lot
+[ 1401.92s ->  1405.68s] of effort to create. So if you enjoyed it and you want to see more like it in the future, please like
+[ 1405.68s ->  1410.32s] comment, subscribe, share. Again, it helps me out tremendously. It is always greatly appreciated.
+[ 1410.32s ->  1422.64s] Other than that, I want to thank you so much for watching and I will see you in the next video.

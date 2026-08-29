@@ -1,0 +1,104 @@
+[    0.11s ->     6.17s] In today's short masterclass, I'm going over how to profitably trade with a full-time job.
+[    6.37s ->     7.57s] So let's jump right into it.
+[    7.65s ->    12.19s] As a disclaimer, again, this video is for educational purposes only.
+[   12.59s ->    16.59s] I am not a licensed financial provider or tax expert.
+[   17.07s ->    19.93s] So again, if you want that advice, please seek someone like that.
+[   20.27s ->    25.07s] Now again, the agenda for today's masterclass is the biggest problem, using the right tools,
+[   25.07s ->    27.83s] and the most important lesson, how to trade after hours,
+[   27.83s ->    31.79s] how long until you can replace your income, and real-time opportunities.
+[   32.29s ->    37.67s] So the biggest problem, the elephant in the room that I want to address is probably why you're watching this video,
+[   38.05s ->    44.13s] is Austin, I have a full-time job, I'm in meetings, I have reports, I have to travel,
+[   44.23s ->    48.51s] I have to do whatever during market hours, I cannot trade, I cannot do this.
+[   48.59s ->    51.19s] How can I trade with a full-time job?
+[   51.55s ->    53.85s] So again, that is the elephant in the room.
+[   53.85s ->    58.79s] You want to become a full-time trader, but you are too busy to trade with a full-time job,
+[   58.87s ->    62.37s] and when you get home, you don't want to look at a screen for another two hours, right?
+[   62.37s ->    63.77s] You want to spend time with your family.
+[   64.15s ->    68.69s] So if you agree that is someone who you think you are, then I have two solutions for you.
+[   68.75s ->    73.33s] You have to use the right tools, and most importantly, you need to learn how to trade after hours,
+[   73.39s ->    75.71s] which I'll show you how to do with credit spreads in this video.
+[   75.71s ->    81.17s] So using the right tools, you need to make sure you use tools that help you save your time,
+[   81.27s ->    87.61s] that don't require you to spend hours on the chart looking for stocks, creating trade plans, all that stuff.
+[   87.69s ->    92.07s] Instead, you want to find something that can help you instantly find great trade alerts.
+[   92.51s ->    96.35s] So for instance, you have trade alerts here from my Discord and 10% credit spreads.
+[   96.35s ->   104.05s] You also have the Trade Ideas Algo that I have given it the best stocks to trade credit spreads on
+[  104.05s ->   109.89s] that have the highest success rate, and it looks for four predetermined strategies to help you profit.
+[  110.29s ->   112.95s] And so again, it does all the heavy lifting for you.
+[  113.23s ->   116.39s] You just need to visit this page and put it together and copy the alert.
+[  117.53s ->   121.69s] Next, and the most important lesson is learning how to trade after hours.
+[  122.07s ->   124.53s] Now, for instance, a lot of you may not know this is possible.
+[  124.53s ->   133.01s] You cannot execute a trade after hours, but you can set up a trade after hours after you get home from work,
+[  133.33s ->   136.99s] and it can execute the next day during the day for you.
+[  137.21s ->   141.25s] It's called a good till canceled order, and this is what it's going to explain.
+[  141.37s ->   145.25s] Basically, order for execution with buy or sell price and date.
+[  145.61s ->   152.65s] So again, if it gets executed in the order it's successful, and therefore it gets executed before it expires, if not, whatever.
+[  152.65s ->   154.25s] Let me show you the specifics here.
+[  154.53s ->   162.27s] If you go on Robinhood, again, all trade brokers have this platform, and I've actually pointed this out in my broker walkthroughs
+[  162.27s ->   169.53s] of how you can change it from good till day, from good till canceled.
+[  169.93s ->   171.23s] And so again, this is how it works.
+[  171.33s ->   176.03s] This works for any broker, but the UI is just very simple for Robinhood, so I wanted to show you.
+[  176.35s ->   179.39s] If you want to learn how it works for your broker, go to the broker walkthroughs.
+[  179.39s ->   187.13s] All right, right here we find the credit spread we want to trade based on, again, the alert given or one of the trade idea algos,
+[  187.27s ->   189.93s] given you can collect a $0.15 per credit spread.
+[  190.39s ->   194.13s] So again, you can see here $3.88, $3.87 was a recommended one.
+[  194.41s ->   197.21s] You can see here I can collect $0.24, that's above $0.15.
+[  197.55s ->   200.19s] I have the dollar-wide strike and the expiration that I'm looking for.
+[  200.19s ->   202.01s] So that is a good trade.
+[  202.09s ->   204.65s] So I click on that to place my credit spread trade.
+[  204.91s ->   206.97s] I want to get filled relatively quickly.
+[  207.17s ->   213.51s] So instead of putting it at $0.24 where the ask is, I sell at the bid, which is where you get filled instantly.
+[  213.69s ->   216.59s] So I put $0.22, 10 credit spread contracts.
+[  216.77s ->   220.09s] I get to collect $220 for putting this trade on.
+[  220.37s ->   224.57s] But the thing is, is you can't do that during the trading day when you're trying to place the trade.
+[  224.57s ->   231.01s] So let's say it's currently trading, like you come home from work and it's saying that it's trading at $24.
+[  231.99s ->   238.07s] Well, you know for sure you have to collect $0.15 of credit in order for the trade to work out.
+[  238.33s ->   244.43s] So what you would do is you would come in, you would put in your quantity, you would put in a limit price of $0.15.
+[  245.11s ->   250.01s] Because again, if it's $0.24 and you're putting it at $0.15, then you're most likely going to get filled.
+[  250.53s ->   253.17s] But you can put it around $0.15, $0.16.
+[  253.17s ->   260.51s] Then you click on this limit order button and under limit order, you keep it as limit order, but time and force.
+[  260.79s ->   267.43s] It's naturally going to default all trade brokers, whether it's TD Ameritrade, Fidelity, E-Trade, Robinhood, whatever.
+[  267.89s ->   274.67s] They're going to be good four day orders, which means that the order is going to be active for that entire day until the market closes.
+[  275.23s ->   279.91s] But what you want to do, because you're placing this trade after hours, is you want to put a good till cancel.
+[  279.91s ->   291.69s] This means that it means it's going to try to execute and get you in for $0.15 when the market opens for the next 90 days and then it will expire in 90 days.
+[  292.07s ->   294.43s] And so again, that's the beautiful of a good till cancel order.
+[  294.79s ->   299.09s] You don't have to worry about trying to follow these alerts in real time every single day.
+[  299.09s ->   316.97s] Instead, get home from a long and busy day, find an alert that you like from our Discord platform that I alert or from the Trade Ideas Algo, spend one minute putting the trade on, make sure it says good till canceled, and then tomorrow morning it's going to fill you in that order without you having to do anything.
+[  316.97s ->   326.31s] And so that's how you can trade after hours with credit spreads and save you time for a person who works full time or you want to spend more time with your family, whatever.
+[  326.59s ->   330.41s] Only takes one minute really to put on after you follow an alert.
+[  330.69s ->   332.93s] And that's the beauty of trading after hours.
+[  333.37s ->   338.11s] Now the real question is, okay, cool, Austin, this is really easy to do now, but is it going to work for me?
+[  338.19s ->   339.51s] How can I replace my income?
+[  339.71s ->   340.89s] What is it going to take?
+[  340.89s ->   356.25s] Well, based on the historical returns over 15 years that I have been able to generate with these strategies and the testing and the actual account sizes that I've been using with myself, I put together an average performance for what's going on.
+[  356.49s ->   367.53s] And so all you need to do is provide your starting balance, how much money you have in your trading account, how much money you're contributing monthly, the yearly expenses you need to cover.
+[  367.53s ->   379.49s] So again, this is going to calculate how long it's going to take you to generate a portfolio size where the credit spread income each year will cover your yearly expenses and then your risk level.
+[  379.83s ->   383.71s] Again, a lower risk is going to be 5% of your account in every trade.
+[  384.01s ->   390.83s] A medium risk is going to be 10% of your account in each trade and a high risk is going to be 15% of your account in each trade.
+[  391.11s ->   392.61s] So you can change that as you wish.
+[  392.61s ->   395.85s] A medium risk is by default and what everyone should be doing.
+[  396.17s ->   399.33s] But again, you can adjust that as your risk level intends.
+[  399.71s ->   410.39s] So again, if you start with $5,000 and contribute 100 monthly and need to live off $40,000 a year, it's going to take you 13 years to get there.
+[  410.75s ->   420.11s] Now, again, that may seem like a lot of time, but for most people doing this with just investing in the S&P 500, it would take you 20, 30 years to get there.
+[  420.11s ->   422.99s] So instead, you can cut that time in half with 13 years.
+[  423.07s ->   425.63s] But now let's play with the numbers a bit.
+[  425.99s ->   433.39s] Let's say your starting balance is $10,000 and you can invest $500 a month and your yearly expenses are only $25,000.
+[  433.81s ->   443.11s] You can get to financial freedom in six years where your credit spread income trading or trading income is covering your yearly expenses.
+[  443.11s ->   444.71s] And you can do that in six years.
+[  445.13s ->   454.25s] Now, again, I highly recommend you go to 10%creditspreads.com and log in and play with this calculator and determine your plan to reach financial freedom.
+[  454.69s ->   457.59s] If not, you're still growing your portfolio very fast.
+[  457.87s ->   462.45s] Because for most people, the overall S&P 500 long-term investing will not get you there.
+[  462.65s ->   462.89s] Why?
+[  462.89s ->   469.07s] Because you're going to experience losses during bear markets when the market crashes.
+[  469.25s ->   472.21s] Instead, with credit spreads, you can actually make a ton of money.
+[  472.99s ->   477.29s] Not only that, when the market is sideways and you're investing, you're not making money.
+[  477.53s ->   480.13s] But when you're using credit spreads, you're making money as well.
+[  480.47s ->   492.35s] So that's why credit spreads are amazing and will help you get to full-time trader status or financial freedom in half the time, if not a quarter of the time, compared to long-term investing.
+[  492.35s ->   497.51s] All right, so if you want to learn about real-time trade opportunities right now, go to the Discord chat.
+[  497.61s ->   498.71s] Go to Trade Ideas Algo.
+[  499.07s ->   500.49s] Get plugged in and start learning.
+[  500.63s ->   506.17s] If you have any more questions for me, I hold weekly office hours twice a week in the Discord.
+[  506.29s ->   507.93s] You can ask me any questions you want.
+[  508.29s ->   509.91s] So again, I am here.
+[  510.07s ->   511.61s] I really want to help you succeed.
+[  511.73s ->   520.81s] So if you have any questions, please reach out to me and I will do my best to fully explain it and make sure you're in this program, you got it, and you're making money like everyone else.
+[  520.81s ->   524.53s] All right, guys, see you in the next masterclass training video.

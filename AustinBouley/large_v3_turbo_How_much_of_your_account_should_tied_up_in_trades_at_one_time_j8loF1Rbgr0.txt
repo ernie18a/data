@@ -1,0 +1,26 @@
+[    0.00s ->     4.52s] And this helped us article. I'm going over how much of your account should be in use at one time,
+[    4.60s ->    10.26s] like how many trades should you be in. So we've already discussed there's a 10% max rule per
+[   10.26s ->    15.58s] every one single trade, but how many total trades should you be in? Okay, well, let's talk about
+[   15.58s ->    21.96s] this. This is what I personally do. And you can adjust this based on your own risk management
+[   21.96s ->    27.16s] rules, how comfortable you are with the risk and with credit spreads. So first off, I do about 20
+[   27.16s ->    34.50s] to 40% of my account into correlated trades, which means into ETS that move roughly the same.
+[   35.18s ->    40.30s] This being SPY and QQQ for what we do in the membership alco. You can see here,
+[   40.64s ->    46.60s] most of our trades come from SPY and DIA and QQQ. These are all correlated assets.
+[   47.56s ->    53.94s] So why does this happen? Well, because my goal is to be in two trades every single week,
+[   53.94s ->    59.20s] to put on two trades every single week. If I do that, then I'm going to make $1,000 every single
+[   59.20s ->    64.38s] week, again, if they're winners, right? Because I make about $500 per trade. So again, two trades is
+[   64.38s ->    71.28s] $1,000 a week. And so again, that is my personal goal. So I'm in these trades, but these trades overlap
+[   71.28s ->    76.88s] because of the expiration date by two to three weeks. So that means that roughly 20 to 40% of my
+[   76.88s ->    83.54s] count is tied up into correlated trades. So again, if this is tied up into trades, I will not put on
+[   83.54s ->    93.06s] any more trades unless I can put on an uncorrelated assets trade. So a GLD trade comes up or a TLT trade
+[   93.06s ->    99.74s] or a, what other options do we have? Probably just one, just one of those or a trade on an inverse ETF,
+[  100.00s ->   106.06s] though not likely. But if I can put on an uncorrelated assets trade, then I'll be more than happy to do that
+[  106.06s ->   112.56s] with smaller size. Not only that, an uncorrelated trade can also be a call credit spread. Let's say most
+[  112.56s ->   118.62s] of these trades where I put credit spread, and now I have the option to put on a call because of an elastic
+[  118.62s ->   122.58s] rejection strategy that came up on the algo, which is something you would see here. You can see here if we
+[  122.58s ->   128.66s] scroll down, there's a SPY elastic rejection, which is a call credit spread strategy from the alerts. Then I can put
+[  128.66s ->   135.24s] that on with another portion of my account. I always like to heat 40 to 70% of my account
+[  135.24s ->   142.16s] in cash, though, so I can reinvest and have money to use if any losers happen. So that's kind of how
+[  142.16s ->   147.92s] I break down my own account. Please use that and your own risk tolerance and judgment to create your
+[  147.92s ->   153.16s] own breakdown. All right, I hope that makes sense. If you have any questions, use the chat box or tune
+[  153.16s ->   155.72s] into one of our office hour calls in the Discord group chat.

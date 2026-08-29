@@ -1,0 +1,64 @@
+[    0.66s ->    10.68s] All righty, how's it going everybody? Today what I want to talk about is the idea of caching data from a live market data stream for further analysis or collection.
+[   11.38s ->    17.26s] So we're going to be building off of the algorithmic trading system that we've been developing in the previous few videos.
+[   17.38s ->    20.30s] So if you haven't already checked those out, I would encourage you to do so.
+[   21.14s ->    25.26s] And like I said, we're going to be focusing on creating a data cache.
+[   25.26s ->    34.00s] Now, what do I mean by data cache? Well, as data flows in through our callback function, specifically in this case, I'm looking at option data.
+[   34.14s ->    39.46s] So it's going to flow back through the tick option computation callback function.
+[   40.00s ->    47.00s] I need to store it so that I can perform some sort of analysis or data collection for further analysis.
+[   47.54s ->    54.54s] And to do that, we're going to be creating a list in the API controller subclass of eWrapper.
+[   54.54s ->    60.66s] So within the constructor, what I'm going to do is I'm going to go ahead and specify what I want to store.
+[   60.78s ->    66.06s] So I'm just going to say self dot deltas is equal to an empty list.
+[   66.64s ->    73.74s] And then I'm also going to say self dot option prices is equal to an empty list.
+[   73.82s ->    80.74s] And then I'm also going to say self dot underlying prices is equal to an empty list.
+[   80.74s ->    84.57s] Okay, so now we have some empty lists.
+[   84.77s ->    90.01s] And if you haven't already guessed what's going to happen, we're going to go into our callback function.
+[   90.01s ->   100.59s] And every single time this callback function has new data and it's not returning a none for a change in any one of these particular variables,
+[  100.59s ->   104.63s] we're going to append it to each of the respective lists.
+[  105.09s ->   118.35s] So I'm going to say if delta is not none, then I'm going to append the new delta to the list.
+[  118.43s ->   123.09s] And I'm going to do that for all of the variables that I want to store.
+[  123.09s ->   130.62s] So I'm going to say if option price is not none, then I'm going to append the new option price.
+[  132.01s ->   139.85s] And then lastly, if the underlying price is not none, then I'm going to append it as well.
+[  142.28s ->   144.32s] Okay, so let's think about what's going on here.
+[  144.64s ->   150.20s] Every single time new data gets returned from the server from our live market data stream,
+[  150.20s ->   154.92s] if there is no change, we're not going to append it to the list.
+[  155.38s ->   162.48s] But if there is a change, then we're going to append the changed variable to the respective list.
+[  162.48s ->   166.10s] So if delta changes, we'll append it to the deltas list.
+[  166.28s ->   170.46s] If the option price changes, we're going to append it to the option prices list.
+[  170.62s ->   177.66s] And if the underlying asset price changes, we'll append it to the underlying asset price list.
+[  177.66s ->   181.63s] So how can we reference this data?
+[  181.75s ->   191.49s] Well, fortunately, the trading application class is inheriting all of the fields from the API controller superclass.
+[  191.49s ->   197.65s] So if we wanted to reference at any point the lists in the API controller,
+[  197.99s ->   202.43s] I could simply just call the instance of the trading application.
+[  202.95s ->   205.19s] So if I said t is equal to trading application,
+[  205.19s ->   210.23s] and then further down here, I wanted to reference the option prices list,
+[  210.75s ->   213.63s] I could just say t.op prices,
+[  213.63s ->   218.87s] and I would have access to that field in the API controller class.
+[  220.20s ->   223.04s] So let's just get a quick example of what's going on here.
+[  223.10s ->   225.84s] I booted up my instance of IB gateway,
+[  225.98s ->   227.44s] and I logged into the paper trader.
+[  227.92s ->   233.58s] And what I'm going to do is I'm going to start the trading application running on its own thread as usual.
+[  233.58s ->   244.78s] And I'm going to create a loop down here that's going to continuously print out the contents of the deltas list.
+[  245.44s ->   249.53s] And to do that, I'm just going to say while true.
+[  251.44s ->   255.98s] And then I'm going to call time.sleep for one second.
+[  256.08s ->   257.20s] I might have to import time.
+[  257.34s ->   257.62s] I do.
+[  258.77s ->   259.99s] So I'm going to import time.
+[  261.11s ->   262.39s] Call time.sleep.
+[  262.39s ->   264.31s] So I'm going to print it out every one second.
+[  264.71s ->   269.13s] And I'm going to print the contents of the deltas list, like I said.
+[  269.17s ->   273.67s] And to do that, as you can see, I'm referencing the instance of the trading application.
+[  274.17s ->   277.01s] And I'm referencing the deltas field,
+[  277.17s ->   284.53s] which is the deltas list that was created all the way up here in the API controller subclass of eWrapper.
+[  284.53s ->   287.61s] And that is essentially caching our data.
+[  287.77s ->   291.59s] So we could print this out to an Excel spreadsheet.
+[  291.81s ->   294.49s] We could export this to a text document.
+[  294.57s ->   296.03s] We can handle this however we want.
+[  296.13s ->   298.49s] I'm just giving you the example of printing it to the console.
+[  298.63s ->   300.13s] So I'm going to go ahead and run this.
+[  301.22s ->   305.40s] And as you can see, there's no change in the deltas.
+[  305.76s ->   310.04s] But when there is a change in the deltas, it appends it to the list.
+[  310.04s ->   317.10s] And we are effectively storing the delta for this security that I'm requesting a live market data stream for.
+[  317.58s ->   319.50s] And we can save this.
+[  319.62s ->   320.68s] We can export this.
+[  320.74s ->   322.14s] We can do whatever we want with this.
+[  322.70s ->   325.64s] And that's the beauty of this form of data caching.

@@ -1,0 +1,116 @@
+[    1.34s ->    19.22s] So I have a new pet peeve, one that is in the bucket of my nerd pet peeves, not in the bucket of, say, like my jujitsu pet peeves, like spazzy white belts, but rather one here that is related to statistics.
+[   19.22s ->    29.94s] So this falls in the nerd pet peeve bucket, and I only found it recently, and that is when people, namely business undergraduates, do not correctly interpret confidence intervals.
+[   29.94s ->    37.94s] So today we're going to run through really quickly the correct interpretation of a confidence interval using statistics.
+[   37.94s ->    47.94s] So here hopefully we are all familiar with a bell curve. If not, this is a bell curve right here, the so-called normal distribution.
+[   47.94s ->    58.94s] And what this means is we can parameterize, say, a random variable that follows a normal distribution by a given mean and standard deviation or variance.
+[   58.94s ->    64.94s] And that is going to determine the frequency that that variable appears in a certain bucket.
+[   64.94s ->    70.94s] So we can see that with the histogram representation. And then there is a nice KDE plot here, which is that smooth curve.
+[   70.94s ->    76.94s] So this is the so-called bell curve, the so-called normal distribution.
+[   76.94s ->    82.94s] OK, so this is parameterized by what we would say population mean and a population variance.
+[   82.94s ->    91.94s] All right. And a lot of the times we are not going to have the luxury of knowing what the true population mean and the true population variance is.
+[   91.94s ->    96.94s] OK, now in this setting, we're going to assume that we know the true population variance.
+[   96.94s ->   108.94s] Of course, if you watch my previous video, the central limit theorem interpretation, then you'll see why this is an important idea that is correctly estimating the parameters in one of these distributions.
+[  108.94s ->   115.94s] Nevertheless, we're going to come down here and talk about this idea of a Z statistic.
+[  115.94s ->   126.94s] OK, so generally speaking, let's take that central limit theorem idea where we create a sample mean, create a sample mean, create a sample mean.
+[  126.94s ->   130.94s] We have a whole bunch of sample means. We know it's going to follow a normal distribution.
+[  130.94s ->   133.94s] What we may not have the luxury of is repeating samples.
+[  133.94s ->   143.94s] So, for example, if something only occurs one time in history or a series of times, we may only be able to construct one sample average.
+[  143.94s ->   146.94s] That could be a potential limitation here.
+[  146.94s ->   153.94s] So what we're going to do is we are going to compute a Z score or this Z statistic idea here.
+[  153.94s ->   157.94s] And this is going to help us with hypothesis testing.
+[  157.94s ->   162.94s] But it is also used in the construction of a confidence interval.
+[  162.94s ->   165.94s] OK, so we're not going to dive into this. We'll talk about this in a different video.
+[  165.94s ->   172.94s] But a large Z statistic generally implies that we are far away from the mean, from the true mean.
+[  172.94s ->   178.94s] And then one that's close to the mean means that we may be indeed close to the mean.
+[  178.94s ->   183.94s] That is typically you test to see if a mean is different from zero.
+[  183.94s ->   187.94s] But again, this is just a general idea of a Z statistic.
+[  187.94s ->   191.94s] We'll come back to this in another video on hypothesis testing formally,
+[  191.94s ->   196.94s] maybe in the context of trading strategies and how I've used it in the past with trading strategies.
+[  196.94s ->   199.94s] Let me know if that's something that you're particularly interested in.
+[  199.94s ->   203.94s] But you don't formally have to understand this Z stat part.
+[  203.94s ->   208.94s] Really, you just have to know that it is a component of the so-called confidence interval.
+[  208.94s ->   216.94s] OK, so the Z score or the Z stat rather itself is going to determine the bounds of your confidence interval.
+[  216.94s ->   221.94s] OK, so as your confidence increases, your bounds are going to get wider.
+[  221.94s ->   226.94s] As confidence decreases, your bounds are going to get tighter.
+[  226.94s ->   233.94s] OK, so it may sound relatively counterintuitive, but think about it like this, right?
+[  233.94s ->   234.94s] You don't know.
+[  234.94s ->   242.94s] So if you want to increase your certainty, you're going to increase the width of the bounds that that true parameter may fall into.
+[  242.94s ->   248.94s] OK, so here what I do is I just construct an example confidence interval.
+[  248.94s ->   254.94s] So I'm just going to go ahead and run this and you're going to see we get 48 and 52 approximately.
+[  254.94s ->   255.94s] All right.
+[  255.94s ->   258.94s] So this is a 95 percent confidence interval.
+[  258.94s ->   260.94s] The sample mean is 50.
+[  260.94s ->   265.94s] The sample size is 100 and the standard deviation is 10.
+[  265.94s ->   267.94s] So this is a population standard deviation.
+[  267.94s ->   270.94s] If it was a sample, we would be using a T stat instead.
+[  270.94s ->   276.94s] OK, so I'm using a 95 percent confidence interval, which means I need 2.5 percent on each tails.
+[  276.94s ->   281.94s] So I'm going to look at the 2.5 percent, 2.5 percent cutoffs on each side.
+[  281.94s ->   292.94s] So we're going to use 0.975 from a Z table, but I'm just going to use the PPF from a normal distribution from the stats library from side pie.
+[  292.94s ->   296.94s] So we're going to say, you know, important side pie stats as stats.
+[  296.94s ->   297.94s] Come on down here.
+[  297.94s ->   299.94s] OK, so this is our interval.
+[  299.94s ->   300.94s] All right.
+[  300.94s ->   302.94s] This is what I want to address in this video.
+[  302.94s ->   308.06s] This 95 percent confidence interval for the population mean.
+[  308.06s ->   310.06s] OK, so our sample mean is 50.
+[  310.06s ->   311.06s] Right.
+[  311.06s ->   313.06s] We don't know what the population mean is.
+[  313.06s ->   314.06s] All right.
+[  314.06s ->   323.06s] The interpretation here is not that there is a 95 percent chance that the population mean falls between these two values.
+[  323.06s ->   325.06s] That is not a correct interpretation.
+[  325.06s ->   333.06s] These bounds don't mean anything in that sense as it pertains to a specific mean.
+[  333.06s ->   336.06s] OK, it does not bind a population mean.
+[  336.06s ->   338.06s] That's not what we're saying at all.
+[  338.06s ->   345.06s] We're saying that repeated samples in this fashion that was to construct another 100 samples.
+[  345.06s ->   356.06s] Then with 95 percent confidence, if we did that resampling, say 100 times, roughly 95 of those intervals will contain the population mean.
+[  356.06s ->   359.06s] OK, so visually, what does that look like?
+[  359.06s ->   361.06s] So this is one sample.
+[  361.06s ->   363.06s] OK, the sample size is 100.
+[  363.06s ->   367.38s] Think of this as, I don't know, people's heights, for example.
+[  367.38s ->   373.38s] OK, and let's say that these values were the lower and upper bound for people's heights.
+[  373.38s ->   375.38s] So I went out and I got 100 people's heights.
+[  375.38s ->   379.38s] I'm going to do this 100 times Monte Carlo simulation style.
+[  379.38s ->   382.38s] So I go out, get another 100 people, go out, get another 100 people.
+[  382.38s ->   390.38s] Effectively, I'm going to construct 195 percent confidence intervals for the true population mean height.
+[  390.38s ->   391.38s] All right.
+[  391.38s ->   395.38s] These bounds are going to be vastly different based on the people that I sample.
+[  395.38s ->   399.38s] That is literally how the confidence intervals by construction work.
+[  399.38s ->   400.38s] Right.
+[  400.38s ->   402.38s] Because it depends on your sample average.
+[  402.38s ->   404.38s] It depends on your sample size.
+[  404.38s ->   405.38s] Right.
+[  405.38s ->   407.38s] And in this case, we have our sample.
+[  407.38s ->   409.38s] We have the population standard deviation.
+[  409.38s ->   411.38s] OK, so that's technically fixed.
+[  411.38s ->   418.38s] But in reality, we're going to when we go out and pull people draw from here, draw from here, draw from here, draw from here, draw from here, draw from here, draw from here.
+[  418.38s ->   421.38s] We're not going to be drawing from a specific segment.
+[  421.38s ->   424.38s] And we're saying, oh, it's bound between this and this.
+[  424.38s ->   425.38s] Like we don't we don't know that.
+[  425.38s ->   427.38s] OK, so what does that look like?
+[  427.38s ->   431.38s] If I show you this chart, hopefully this becomes painfully clear.
+[  431.38s ->   435.38s] OK, so what I have here is let me try to raise this up here.
+[  435.38s ->   438.38s] What we have here is 100 confidence intervals.
+[  438.38s ->   442.38s] OK, so this is 100 confidence intervals.
+[  442.38s ->   447.38s] And the horizontal line is the true population mean.
+[  447.38s ->   454.38s] OK, so imagine I go out and I sample 100 people's heights and then I do that 100 times.
+[  454.38s ->   456.38s] I construct 100 confidence intervals.
+[  456.38s ->   457.38s] That's what we see here.
+[  457.38s ->   462.38s] Now, you see how this one by my mouse misses the population mean.
+[  462.38s ->   463.38s] It doesn't contain it.
+[  463.38s ->   465.38s] That's the correct interpretation.
+[  465.38s ->   468.38s] See this one doesn't contain it.
+[  468.38s ->   469.38s] Right.
+[  469.38s ->   480.38s] We're going to say, roughly speaking, roughly speaking, approximately 95 of these 100 will not contain that true population parameter.
+[  480.38s ->   485.38s] That's the correct interpretation of a 95 percent confidence interval.
+[  485.38s ->   486.38s] Thank you so much for watching.
+[  486.38s ->   492.38s] Hopefully this will address some of the misunderstandings related to confidence intervals.
+[  492.38s ->   499.38s] If you have any other questions related to any sort of like hypothesis testing or interpretations like this, feel free to let me know.
+[  499.38s ->   511.38s] If you want to see the interpretation of a hypothesis test, a Z statistic, really technically a T stats being used in the context of a trading strategy, specifically on social sentiment.
+[  511.38s ->   514.38s] Leave a comment and I can make that a future video.
+[  514.38s ->   516.38s] Check out my recent articles.
+[  516.38s ->   523.38s] Check out on Quantkill, we have a course now building an algorithmic trading system using Alpaca's REST API.
+[  523.38s ->   532.38s] And then perhaps, again, based on interest, I can create a course on constructing trading signals for said algorithmic trading system.
+[  532.38s ->   535.38s] But nevertheless, I hope this was informative.
+[  535.38s ->   538.38s] It's addressing one of my pet peeves that I didn't know I had.
+[  538.38s ->   540.38s] So that's always nice.
+[  540.38s ->   544.38s] But other than that, thank you so much for watching and I'll see you in the next one.

@@ -1,0 +1,89 @@
+[    0.16s ->     3.12s] You need to stop using the Hakanashi right now.
+[    3.12s ->     6.56s] I found a new indicator that is infinitely better than the Hakanashi.
+[    6.56s ->    10.88s] The Hakanashi is an indicator that a lot of traders use to find the general direction
+[   10.88s ->    13.60s] of the market, clearing out the noise of regular candlesticks.
+[   13.60s ->    19.60s] But what if I told you I found a secret indicator that performs way better than a normal Hakanashi.
+[   19.60s ->    24.00s] Actually, to be specific, I backtested this indicator and it's two times more
+[   24.00s ->    26.24s] profitable than a normal Hakanashi.
+[   26.24s ->    28.08s] Oh, come on back, buddy.
+[   28.08s ->    28.64s] There you go.
+[   28.64s ->    31.36s] This indicator is way better for multiple reasons.
+[   31.36s ->    35.52s] And I'm going to share with you what this indicator is, how to use it to its best potential,
+[   35.52s ->    39.20s] and I'm going to even share with you a profitable strategy with this indicator.
+[   39.20s ->    40.08s] Let's get straight to it.
+[   40.08s ->    45.28s] Okay, so this is your typical normal candlesticks, where there's a bunch of red and green everywhere
+[   45.28s ->    50.08s] and the chart is pretty hard to tell which way the price is heading with all this noise.
+[   50.08s ->    53.60s] This is bad because it could lead to a bunch of false signals.
+[   53.60s ->    54.80s] This sucks.
+[   54.80s ->    57.84s] Now introducing the Hakanashi.
+[   57.84s ->    62.64s] It eliminates the noise to where the candles are replaced and you can clearly see which
+[   62.64s ->    66.24s] direction the market is heading, making it a lot easier to read the chart.
+[   66.24s ->    68.32s] But this indicator isn't perfect.
+[   68.32s ->    73.36s] One of the main issues with the Hakanashi is it doesn't provide the juicy information
+[   73.36s ->    74.56s] normal candlesticks do.
+[   74.56s ->    78.72s] It only provides the smoothed out version of the price, not the real price.
+[   78.72s ->    83.44s] For example, normal candlesticks have wicks which can tell a lot about where the chart
+[   83.44s ->    84.32s] is going to head next.
+[   84.32s ->    88.24s] That's until God himself made this new secret indicator.
+[   88.24s ->    92.48s] Actually, his name is JackVMK, but you get my point, it's a good indicator.
+[   92.48s ->    97.28s] Now the reason this indicator is so good is because instead of replacing your candlesticks,
+[   97.28s ->   103.52s] it just adds a Hakanashi overlay so you can see both the price action of the candles and the Hakanashi
+[  103.52s ->   105.92s] all in one so you get the best of both worlds.
+[  105.92s ->   106.72s] But that's not all.
+[  106.72s ->   111.76s] Another great thing about this indicator is it's way better at not providing false signals
+[  111.76s ->   113.44s] compared to the normal Hakanashi.
+[  113.44s ->   116.24s] For example, this is a chart with the normal Hakanashi.
+[  116.24s ->   119.28s] As you can see, it provided a lot of green candles in this uptrend,
+[  119.28s ->   124.00s] but then it placed some red ones where it could have easily faked you out and made you sell early.
+[  124.00s ->   128.64s] Now this is the same exact chart with the improved version of the Hakanashi,
+[  128.64s ->   134.64s] and as you can see, it only provided green candles. So there's no fakeouts and you would have made way
+[  134.64s ->   139.84s] more profit on this trick. So now that we know why this indicator is so good, let's add it to our
+[  139.84s ->   144.64s] chart and give you the best possible settings for this indicator. I'll be using trading view as my
+[  144.64s ->   148.32s] charting platform. If you don't yet have it, I'll leave a link in my description.
+[  148.32s ->   154.16s] Go to the indicators tab and type in smooth Hakanashi and click this one by JackVMK. Next,
+[  154.16s ->   154.96s] go to this setting.
+[  154.96s ->   159.68s] Alright, now the optimal settings depends on what type of trader you are. If you're a short-term
+[  159.68s ->   165.28s] trader, I would recommend changing these two settings to 5 and 5, as this makes it better
+[  165.28s ->   169.52s] at analyzing short-term price movement. If you're more of a long-term trader,
+[  169.52s ->   174.48s] change these settings to 20 and 20, as that'll make it better at finding long-term trends.
+[  174.48s ->   178.16s] For the sake of this video, we're going to be somewhat in the middle, so we're going to keep
+[  178.16s ->   182.72s] it at default at 10 and 10. So this is how I use the indicator.
+[  182.72s ->   188.24s] Green candles signals an uptrend, red candles signals a downtrend. This means it's great for
+[  188.24s ->   193.68s] signaling possible reversals. But here's a secret trick you can use in order to raise the chance of
+[  193.68s ->   199.12s] you finding these perfect reversals. You can use the size of the Hakanashi candles as a way to identify
+[  199.12s ->   204.24s] strength. For example, here the candles start off small and start to slowly get larger and larger,
+[  204.24s ->   208.80s] signaling the market is gaining momentum and strength. Same thing with weakness. If the candles
+[  208.80s ->   214.08s] start to get smaller, you can easily identify the market is losing momentum and is getting ready to
+[  214.08s ->   218.72s] reverse. So here the chart is in a downtrend signaled by the red candles, but you can start
+[  218.72s ->   223.92s] to see the candles are getting smaller and smaller, showing it's losing the downwards momentum. Then
+[  223.92s ->   229.28s] we get a green candle. This signals a market shift is likely to occur, which is exactly what happened.
+[  229.28s ->   234.32s] So now you know the basics. You now know why this new indicator is better than the normal Hakanashi,
+[  234.32s ->   239.52s] and where to begin to start reading it. Now it's time to get into some actual profitable strategies
+[  239.52s ->   244.88s] using this indicator. But first, let me show you a site called Hankertrade. Ever heard of it? They
+[  244.88s ->   249.92s] are a forex and crypto broker that have extremely low spreads and low commissions, some of the best
+[  249.92s ->   254.72s] on the market. Which, who doesn't like saving money on commissions? They also have an extremely friendly
+[  254.72s ->   260.56s] support team who will answer any type of question you have. And the best part, they are running a special
+[  260.56s ->   265.20s] promo where if you sign up with the link in my description, they will match whatever you first
+[  265.20s ->   272.24s] deposit. So if you put in $100, they will match that and give you $100. That sounds like a deal.
+[  272.24s ->   276.32s] Sign up with my link and make sure you use that special promo. It's free money. Okay,
+[  276.32s ->   280.40s] now that that's done, let's get into one of my favorite strategies with this indicator. Now,
+[  280.40s ->   286.08s] I really want to make this clear. You should not enter a long just because the Hakanashi turns green
+[  286.08s ->   292.00s] and enter a short position because it turns red. This will not work in the long term. Instead,
+[  292.00s ->   297.04s] you should do this. First, you want to find a strong downtrend. Again, we can do this by finding
+[  297.04s ->   301.36s] red Hakanashi candles and we want to see the candles getting larger and larger,
+[  301.36s ->   306.80s] signaling this is a strong downwards trend. The next step is we want to find a trend change.
+[  306.80s ->   312.24s] We can do that by seeing the red candles starting to get smaller and smaller and the color shift from
+[  312.24s ->   317.12s] red to green, but you don't want to enter just yet. Instead, we are essentially going to use
+[  317.12s ->   321.92s] this new Hakanashi candle as a support. You are going to wait for price to do a pullback
+[  321.92s ->   327.12s] and come back down to these Hakanashi candles, but we still need a little bit more confirmation.
+[  327.12s ->   332.72s] So wait for price to show it's going to respect this area by giving a green candle. Once we get our
+[  332.72s ->   337.52s] green candle, we can now officially enter the trade. You're going to want to set your stop loss at the
+[  337.52s ->   342.48s] low of where the pullback came to the Hakanashi candles earlier. Then you're going to want to set
+[  342.48s ->   348.24s] your take profit to a 1.5 risk to reward ratio. Next, you're going to wait for price to hit your
+[  348.24s ->   354.16s] take profit. But we aren't done yet. Once price hits your take profit, sell half of your position
+[  354.16s ->   359.60s] for guaranteed profits. Then move your stop loss to your entry. We're then going to wait for the
+[  359.60s ->   365.84s] Hakanashi to turn red to sell the rest of her position. Once it does, exit the trade fully for some
+[  365.84s ->   371.68s] really nice profit. This is an absolute beautiful strategy. I absolutely love it. Test it out
+[  371.68s ->   376.08s] yourself and let me know how it works for you on Instagram. Next, we're going to go over how I made
+[  376.08s ->   383.92s] over $70,000 in 60 days using this specific strategy. This one is one of my absolute favorites
+[  383.92s ->   395.76s] I use every day. Thanks for watching and I'll see you guys next time.

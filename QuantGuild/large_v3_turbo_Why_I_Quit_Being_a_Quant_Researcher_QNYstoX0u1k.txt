@@ -1,0 +1,216 @@
+[    1.94s ->     9.17s] gotta get java swole so we got him a cliff bark right here you go baby seems to really like it
+[    9.17s ->    12.49s] got the chocolate chip flavor you know it's really what it's all about there
+[   12.49s ->    21.04s] in today's fire psych chat i want to tell you about my experience in my first quantitative
+[   21.04s ->    30.68s] research role when i was very young actually um and why i left and you guys know some of the story
+[   30.68s ->    39.50s] i've talked about it in other videos other fireside chats but i want to give you the entire
+[   39.50s ->    50.20s] story and really tell you about what contributed to me leaving such a position um so early in my
+[   50.20s ->    58.06s] career that that first role that i had so how did this come about well when i was in college
+[   58.06s ->    66.76s] i was majoring in i was double majoring in quantitative finance and mathematics pure math
+[   66.76s ->    77.04s] and i just loved math probability statistics being a quant wasn't really like the target in the sense
+[   77.04s ->    83.90s] that like i wanted to do it because i wanted the title or i wanted the prestige i just really liked
+[   83.90s ->    96.78s] the math and you know you can take that for what it's worth and over covid was really when i i was
+[   96.78s ->   104.08s] looking for that junior year internship that one that you try to convert to a full-time offer
+[  104.08s ->   116.57s] and i ended up after networking and i think i sent over 2 000 cold cold emails um i ended up interviewing
+[  116.57s ->   128.71s] for and getting an internship on bruno's team over at bloomberg and i don't talk about the challenges
+[  128.71s ->   139.77s] as a young professional that i faced being so unwilling to discuss and be vulnerable with with how i'm feeling
+[  139.77s ->   146.95s] um but i i hope this helps you guys maybe some of you guys that are facing similar things and
+[  146.95s ->   154.93s] in your careers or maybe you're you're younger you're in high school and you know you're looking to pursue
+[  154.93s ->   164.77s] a career um in finance or in a technical capacity you you can't get away from this stuff and as much as i
+[  164.77s ->   173.89s] wanted to just put my head down and grind and kind of just be like soulless and and just kind of do the
+[  173.89s ->   182.23s] work and you know just kind of say fuck my feelings it doesn't work right it's like if you neglect your
+[  182.23s ->   187.13s] physical health then you're going to be paying for it later if you neglect your mental health
+[  187.13s ->   193.19s] you're going to be paying for it later and even if you only care about your career it's going to come
+[  193.19s ->   198.97s] up in your career and it's going to create a lot of problems so when i first joined that team
+[  198.97s ->   210.51s] i was really the only american on that team and i was 21 years old i was the youngest interns were
+[  210.51s ->   220.27s] phd's from princeton oxford nyu columbia and i was an intern in that same class and i hadn't even held
+[  220.27s ->   229.33s] a bachelor's degree yet and i just loved the math i loved the research i loved everything that i was
+[  229.33s ->   237.17s] doing but it does something to you when you're just kind of by yourself in that capacity and you're
+[  237.17s ->   246.87s] unable to articulate that fear that imposter syndrome and it it's really it really impacts
+[  246.87s ->   255.79s] your capacity your mental health your well-being um in an exorbitantly negative way there's no amount
+[  255.79s ->   264.51s] of dollars that you can be paid to just put a band-aid on that and arbitrarily fix it without
+[  264.51s ->   272.96s] confronting it and and talking about it as as a problem but i didn't feel like i belonged there
+[  272.96s ->   281.00s] i didn't speak any of any of my team's native languages whether it was chinese whether it was
+[  281.00s ->   288.34s] any form of french or this or that i i only spoke english and you know barely barely english
+[  288.34s ->   300.53s] um it was really hard to connect with people i mean really hard being so young just a generational gap
+[  300.53s ->   309.45s] a language gap no no french italian um it was really hard and i really liked the work that i produced and
+[  309.45s ->   314.75s] my team were were some of the brightest minds that i've ever met in my entire life
+[  314.75s ->   322.77s] but i i was alone for 12 16 hours a day sometimes i would sit there and and just code this is pre
+[  322.77s ->   332.16s] track gpt pre cloud pre gemini and i would read papers i would code just by myself and i would do that
+[  332.16s ->   338.92s] for for weeks we'd have a weekly team meeting i'd do a weekly you know one-on-one with my my manager
+[  338.92s ->   347.63s] and it was really hard and i i didn't know how to articulate it like there were some days with the
+[  347.63s ->   355.29s] weird remote work schedule where i didn't talk to anyone all day and i just sat there with my code
+[  355.29s ->   362.35s] and i sat there with my papers and you know my my peers and my cohort at school were telling me about
+[  362.35s ->   368.29s] their investment banking class or they got this cool trading sales and trading job or whatever and
+[  368.29s ->   372.93s] you know i didn't really want to do all that but it was more of that they had like this team and
+[  372.93s ->   380.87s] this camaraderie that just i i didn't have and i just started to get more and more isolated i was by
+[  380.87s ->   393.25s] myself i barely saw my family i i never saw my friends um and it was really really hard and
+[  393.25s ->   403.11s] it continued that way for a while so after my internship they they offered me a full-time role
+[  403.11s ->   412.51s] um with their team to to which i accepted because i i really just i didn't know what to do you know i
+[  412.51s ->   418.95s] just i i liked the work right like i i liked the quantitative research i liked the applied math
+[  418.95s ->   426.93s] probability and statistics but you know i i was really just quietly suffering every single day
+[  426.93s ->   434.99s] and it's hard to say that because there are people that are so eager and and this is one of the things
+[  434.99s ->   441.13s] that i've learned recently is like there are just people that are so eager to tell you that you
+[  441.13s ->   449.71s] couldn't possibly understand what suffering looks like but it's not a competition and mathematically
+[  449.71s ->   456.15s] right like if we want to make it mathematical like your expectation is is mean reverting to whatever
+[  456.15s ->   465.61s] the baseline expectation is right and what that means is whatever you're going through that's hard
+[  465.61s ->   470.67s] that's hard for you doesn't make it any less hard for you because there are other people that are
+[  470.67s ->   475.93s] suffering in different capacities and i think it's really a shame of the modern world that we we play
+[  475.93s ->   483.45s] this game of comparisons with social media with careers with trajectory and you know comparison is
+[  483.45s ->   492.87s] the thief of joy is the oldest oldest saying in the book right but that's all we do now is portray
+[  492.87s ->   500.49s] these images of ourselves on on social media that's not to say that you do you know you watching this
+[  500.49s ->   506.35s] right now that's not to say that you do but in the cross section as a whole we we love to do that
+[  506.35s ->   512.67s] there's no raw honesty about how we're feeling and what's going on because it's met with judgment
+[  512.67s ->   519.61s] not judgment in the sense of like this is arbitrarily good or bad but like you couldn't possibly
+[  519.61s ->   527.75s] understand what what bad looks like and and that's just unnecessary that's unnecessary everybody's quiet
+[  527.75s ->   535.59s] battles and struggles matter because they matter to them and i think it's just terrible what we've done
+[  535.59s ->   543.59s] to condition a society of young men and women that want to grind more than anything else and they don't
+[  543.59s ->   549.11s] you know necessarily prioritize their physical or mental health and it leads to terrible repercussions
+[  549.11s ->   555.91s] downstream and like i said even if you only care about what happens to you professionally this will come up
+[  555.91s ->   560.71s] i promise this is the same thing as neglecting your physical health if you can't make it to the office
+[  560.71s ->   567.99s] physically then that is a byproduct of neglecting your physical health and if you neglect your mental
+[  567.99s ->   578.25s] health then you're going to have the exact same problem all right so what ended up happening was i i just
+[  578.25s ->   588.57s] i wanted the ability to maybe run my own business or connect with other people while i i transitioned
+[  588.57s ->   597.77s] from intern to to full-time quantitative researcher on bruno's team and you know this isn't me being
+[  597.77s ->   604.01s] ungrateful this isn't me you know dissing these guys these guys like i said are some of the most
+[  604.01s ->   611.61s] successful smartest people and the entire industry this is this is me sharing with you the effectively
+[  611.61s ->   619.93s] mental health crisis that i had so as to better prepare yourself better understand what it what it
+[  619.93s ->   626.49s] can look like um and if you if you face struggles that you're you're not alone in that right like it's
+[  626.49s ->   631.85s] it's not just about painting a beautiful picture of what life is and oh you're the only one with um
+[  631.85s ->   642.57s] with these struggles no it's like it's just not how it works um so so don't take my words for disrespect
+[  642.57s ->   649.98s] or or lack of gratitude because i'm grateful for the opportunity um but this this is about
+[  651.10s ->   656.06s] this is really about something personal that i'm sharing with you guys to hopefully better prepare
+[  656.06s ->   661.82s] yourselves um or help you understand or deal with what you got going on right now or maybe in the
+[  661.82s ->   670.73s] the future so i was like i gotta i gotta make a change i love math probability statistics finance that's
+[  670.73s ->   679.22s] never going to change coding but do i run my own business is that going to be what is better for me
+[  680.02s ->   688.02s] emotionally mentally should i go more lean more into academia is that what i should do
+[  688.02s ->   698.18s] um i ended up trying to do both and that's when i decided to leave bloomberg and that was that was
+[  698.18s ->   704.34s] really hard i left bruno's team and you know i got a ton of ib's from people that i looked up to that
+[  704.34s ->   715.56s] told me they were disappointed in me and you know i'm 22 years old right i'm 22 years old and i don't have
+[  715.56s ->   721.40s] family in the industry and i just had peers and colleagues in the industry i had no idea what i
+[  721.40s ->   731.03s] was dealing with or what i was walking into um you know it's it's not like i i come from a background of
+[  731.03s ->   737.51s] a family of quants or bankers or this that the other thing it's i'm on my own here
+[  737.51s ->   746.95s] um so i'm trying to to make optimal decisions while i'm mentally and emotionally under fire but
+[  746.95s ->   751.51s] on my on my own accord right the lack of vulnerability the lack of honesty
+[  752.23s ->   756.63s] um it ate me alive right i couldn't i didn't know who to tell that i wasn't okay
+[  758.09s ->   766.63s] and i barely knew why right no connection isolation um and it wasn't for a paycheck right like i wasn't
+[  766.63s ->   777.24s] chasing the paycheck so i left bloomberg and i tried to run quant guild just out the gate
+[  778.57s ->   784.97s] didn't work really well um i made i think after working really hard for a month about
+[  786.26s ->   793.62s] thousand bucks and that wasn't gonna wasn't gonna cut it for me so i rolled it into two months
+[  793.62s ->   804.18s] um and i was just so so in the red it just it wasn't gonna work at the time so i ended up moving
+[  804.18s ->   820.68s] down to tennessee i had a a lifeline if you will for a phd program in tennessee and i throw my mattress
+[  820.68s ->   832.06s] on the the roof of my my crappy car and i drive down to tennessee and you know i had a mentor who
+[  833.69s ->   839.69s] went through the program and he you know told me how great it was and this and that and the other thing
+[  840.65s ->   848.09s] and i just needed help you know i i just needed a lot of help and i was trying really hard to make
+[  848.09s ->   855.40s] optimal decisions while you know i was kind of just having a lot of trouble just having a lot of
+[  855.40s ->   865.35s] trouble and i go down to tennessee and i'm horrified at the environment that i'm a part of you know my
+[  865.35s ->   871.99s] cohort doesn't they don't know any applied math probability statistics finance they don't know anything
+[  871.99s ->   877.51s] about the finance literature they don't i mean they don't even know what cap m is diversifiable
+[  877.51s ->   885.27s] versus undiversifiable risk um one of the professors in the department thought that the volatility index
+[  885.27s ->   896.44s] right see those volatility index and uh the vix was was vic right like the name vic and they didn't know
+[  896.44s ->   904.36s] that percents were linear that you could you know you could treat them as a linear operation right like
+[  904.36s ->   914.92s] they they didn't know anything and i felt very maybe fooled swindled betrayed um for the the painting
+[  914.92s ->   924.65s] of the picture that that program was for me while i was in a very negative mental space um you know when
+[  924.65s ->   930.73s] when i left everything to try really hard to run a business couldn't get it up and running the first time
+[  930.73s ->   938.17s] moved down to to tennessee and you know these people just didn't know what was what was going on
+[  939.48s ->   949.08s] and you know that was my 90 98 pay cut 99 pay cut i think it was like a 15 000 a year stipend
+[  949.08s ->   958.14s] or something like that and you know it was hard because i was i was told that i could you know teach
+[  958.14s ->   965.34s] teach teach undergraduate courses um that you know because of my background they could help me fast
+[  965.34s ->   972.22s] track to get to abd as quickly as possible and just knock out qualifying examinations and this that the
+[  972.22s ->   983.42s] other thing i i placed a lot of trust um in in these these folks i think when um i i didn't have the
+[  983.42s ->   992.46s] capacity to really formally analyze my situation and and do what was was maybe best for me and um even
+[  992.46s ->  1002.04s] best for them because it was better if i never went down there for for all parties so you know that lasted
+[ 1002.04s ->  1012.09s] about six months i think when i became horrified at the lack of knowledge and effort and um just the
+[ 1012.09s ->  1018.73s] the disconnect between me and and everyone in the program and my advisor and this that the other
+[ 1018.73s ->  1026.57s] thing and um you know on top of that i was dealing with a whole bunch of like family health crises so
+[ 1027.61s ->  1039.00s] um i i left that program and that's that's my life man like that's that's what it looked like
+[ 1039.00s ->  1048.76s] is just leaving a quantitative research role working for one of the most brilliant minds in the industry
+[ 1049.88s ->  1058.44s] going to a phd program trying to you know find a better way to pursue applied math probability
+[ 1058.44s ->  1068.84s] statistics finance coding but like in in a purer way they just wanted to gain publication points it's just
+[ 1068.84s ->  1076.84s] it's not it's not it's not what it's cut out to be um i i don't i don't like the way that academia is
+[ 1076.84s ->  1082.76s] run when it's done right it's beautiful and brilliant when it's done poorly it's just gaming a system for
+[ 1082.76s ->  1096.52s] laziness and it's just it's remarkable so after i left the the phd program i i didn't know what to do
+[ 1096.52s ->  1107.85s] i didn't i didn't know what to do and you know like i i had uh a lot of personal a lot of personal
+[ 1107.85s ->  1116.41s] crises at the time a lot of personal crises going on with um relationships that ended for me um
+[ 1116.41s ->  1125.19s] extremely poorly and just kind of being alone and i couldn't couldn't talk to anyone i couldn't tell
+[ 1125.19s ->  1135.59s] anyone and that's that's really a terrible thing because i think about and i'm sure we all do this
+[ 1135.59s ->  1144.44s] to some capacity i think about maybe like my siblings or my folks and if they felt that way it would
+[ 1144.44s ->  1151.21s] rip my heart out you know would it would rip my rip my heart out that they couldn't articulate
+[ 1151.21s ->  1156.81s] their hardships to to me or someone that i cared about but i couldn't to them
+[ 1157.69s ->  1165.13s] and i couldn't to my friends let alone colleagues or peers in a professional capacity to articulate
+[ 1165.13s ->  1172.49s] what's going on what's the problem um and this isn't just about deeply personal things and like
+[ 1173.13s ->  1177.93s] taking the veil down and being unprofessional i'm talking about just everything like just being
+[ 1177.93s ->  1186.25s] unable to articulate what the problem is um and just feeling so much guilt and and having these
+[ 1186.25s ->  1198.90s] problems is uh it's a lot it's a lot and you know coming out of college i think i was like very bright
+[ 1198.90s ->  1206.02s] eyed and wanted to make a big impact and work really hard and you know you fall into different
+[ 1206.02s ->  1212.66s] things at different times and may not be the most optimal decision but that's always going to be your
+[ 1212.66s ->  1225.30s] hindsight bias um but that's the way that it was so so then after the phd program um i went back to
+[ 1226.34s ->  1233.38s] to try to recover i went to to columbia to get a master's degree i got into their financial engineering
+[ 1233.38s ->  1242.02s] program um my i mean bruno and my manager they they wrote uh letters of recommendation for me
+[ 1242.90s ->  1249.22s] um very very kind of them to do so and i got into their financial engineering program i didn't really
+[ 1249.22s ->  1254.42s] like their financial engineering program so i switched to msor their operations research program
+[ 1254.42s ->  1268.65s] and that's when the that that's when the the financial hardship started to come and you know
+[ 1271.05s ->  1281.85s] i i understand the trades that i've made and i want to talk about this just so that you know
+[ 1282.73s ->  1291.05s] we can be real here like this is a really big problem right the the cost of tuition and higher
+[ 1291.05s ->  1297.45s] education undergraduate graduate degrees graduate degrees in particular it's a really big problem
+[ 1298.33s ->  1307.75s] because you're likely taking out some form of a student loan and that student loan i mean these student
+[ 1307.75s ->  1314.63s] loans are just like it is remarkable in the cross section how many people are destroyed by these
+[ 1314.63s ->  1322.79s] products like destroyed like entire trajectories of lives are are destroyed by these products and like
+[ 1323.51s ->  1334.55s] i i ran out of money like i ran out of money and i already had from from family things just such a
+[ 1334.55s ->  1345.18s] tremendous burden of debt i didn't have any capacity to take out take out those loans um so i ran out of
+[ 1345.18s ->  1355.19s] money and i couldn't finish couldn't finish columbia and you know when i was at when i was at zero
+[ 1356.39s ->  1365.99s] um with no capacity to continue that is when i decided to go all in on quant guild so you hear me in
+[ 1366.47s ->  1372.47s] my more qualitative videos these these like red bar videos talking about you know burn the boats
+[ 1373.19s ->  1382.39s] um this kind of like no help is coming gusto mentality it's like i i lived that man i i lived through it
+[ 1383.35s ->  1396.82s] and you know even now like it's it's tough it's it's hard um you you guys saved you guys
+[ 1396.82s ->  1405.38s] saved java's life like without you guys java wouldn't be sitting here with me recording this video
+[ 1406.34s ->  1415.02s] um it does a lot to you in terms of guilt it does a lot for you to you in terms of like just wanting
+[ 1415.02s ->  1423.61s] to do what you love and what you think is right and and like wanting to make a difference in people's
+[ 1423.61s ->  1429.13s] lives recording technical lectures just like breaking down the walls no no arbitrary prestige
+[ 1429.77s ->  1436.25s] no no gatekeeping just everything that i know from from columbia from bloomberg you guys know
+[ 1436.25s ->  1442.09s] i give you literally everything that i could possibly can on on youtube open source in in every capacity
+[ 1442.65s ->  1447.45s] and and quant guild is my training product where i i package everything so beautifully
+[ 1447.45s ->  1454.49s] um or at least i i think it's beautiful and i like it but you know that's that's what i'm trying to do
+[ 1455.21s ->  1460.81s] and that's that's what i'm okay with doing that's my trade instead of being
+[ 1460.81s ->  1470.95s] being a quantitative researcher quantitative trader it's um it's not pretty right i know that it's not
+[ 1470.95s ->  1482.20s] pretty for all of us and the whole point in me telling you this today i don't want sympathy points i
+[ 1482.20s ->  1490.12s] don't care about that at all but dishonesty and a lack of transparency has cost me so much
+[ 1490.92s ->  1502.25s] it's cost me so much it's cost me it's cost me relationships it's costs me jobs if you want to
+[ 1502.25s ->  1509.29s] make it just about money and you want this like you know badass like macho grind set that's totally fine
+[ 1509.29s ->  1520.58s] but just know that this impacts that too so i just want to articulate this so that if you feel the same
+[ 1520.58s ->  1528.50s] way in any capacity or you don't that's that's both of those things are okay and both of those the latter is
+[ 1529.62s ->  1545.94s] is different but both of those things are okay and being venerable transparent honest about situations
+[ 1545.94s ->  1554.90s] confrontations things that go wrong is is hard and i try to say this all the time it's like you don't get
+[ 1554.90s ->  1561.22s] something for nothing right that's like the economics that's like economics 101 is no free
+[ 1561.22s ->  1567.90s] lunch right you don't get something for nothing unless there's an inefficiency right so what i mean
+[ 1567.90s ->  1575.72s] by that is like you can't just put things on like a mental emotional credit card that interest is going to
+[ 1575.72s ->  1582.12s] accrue and there's going to be some really big problems down the line um this is effectively a psa
+[ 1582.68s ->  1589.16s] to take care of yourself and this isn't just take care of yourself physically because yeah
+[ 1589.16s ->  1593.80s] if you don't do that then it's going to be a problem down the line to take care of yourself
+[ 1593.80s ->  1598.92s] mentally because if you don't it's going to be a problem down the line the only reason that i look
+[ 1598.92s ->  1605.93s] like this is because i've been incapable of articulating you know what it was that i was going
+[ 1605.93s ->  1617.77s] through i'd feel so much shame and guilt for it and i i'm learning not to you know and it would be
+[ 1617.77s ->  1624.97s] exacerbated by by the comments and and the the emails that i would get from people that just wanted to
+[ 1625.61s ->  1634.09s] to make me feel as as bad as possible um but i'm learning that it's it's their symbol of me that i
+[ 1634.09s ->  1640.73s] hate it's not me they don't know what i what i do the broken glass that i've crawled on for my family
+[ 1640.73s ->  1646.73s] and will continue to crawl on for my family and and the community that we have here that was willing
+[ 1646.73s ->  1655.72s] to do that for java it's um it's just so much love that i have for for everyone that means so much to me
+[ 1655.72s ->  1665.02s] so that's that's really what i'm i'm trying to say is there's no amount of of running lifting going to
+[ 1665.02s ->  1675.75s] the gym um that that can just clean up a mental health crisis and i i just want it to be clear that
+[ 1676.79s ->  1682.79s] you know if you've ever felt that way if you've ever felt like you've gone through hard things and
+[ 1682.79s ->  1688.31s] people invalidated it because their struggles were worse or people played the game of comparisons
+[ 1689.11s ->  1696.31s] um just know that it doesn't work like that and your struggles are valid and there there's nothing
+[ 1696.31s ->  1703.35s] to be ashamed of and there's there's no guilt that that you should hold for facing those struggles
+[ 1703.35s ->  1719.45s] with others or alone you guys taught me such an incredible lesson on resilience and community
+[ 1722.97s ->  1729.53s] and it's not something that i'll ever forget and i promise that i will never forget it and i'm going
+[ 1729.53s ->  1737.45s] to keep showing up for you guys like you've shown up for me and i'm going to keep making the absolute
+[ 1737.45s ->  1746.74s] best quantitative finance lectures and content for you guys that i possibly can and i'm going to continue
+[ 1746.74s ->  1760.07s] to be more transparent and honest than i already have been and that is that is what i'm going to do
+[ 1760.87s ->  1769.40s] and that is how it's going to be in this in this community so i know this was a long one i know there
+[ 1769.40s ->  1776.76s] was a lot i know it wasn't as fun as you know comparing salaries of quants to to investment bankers or
+[ 1776.76s ->  1788.57s] whatever um but this is this is really important because i don't know you know social media portrays
+[ 1788.57s ->  1793.13s] this lifestyle as something that it's not and being somebody who lived through it on his own
+[ 1794.01s ->  1805.24s] um with a lot of pain i think it needs to be the the experience needs to be shared so with that um i hope
+[ 1805.24s ->  1811.69s] you took something away from this video i hope you learned something um you guys have given me a lot
+[ 1811.69s ->  1818.97s] of strength a lot of resilience um and i realized that everybody who wants to to hurt me as badly as
+[ 1818.97s ->  1827.21s] possible and and wants to destroy me they will always fail because you guys have my back and and i will
+[ 1827.21s ->  1844.28s] always have yours so thank you so much for watching this video and i will see you in the next one

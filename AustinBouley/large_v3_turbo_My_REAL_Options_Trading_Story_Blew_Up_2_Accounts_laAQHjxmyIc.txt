@@ -1,0 +1,139 @@
+[    0.00s ->     4.68s] I don't typically make videos like this, but I want to walk you through the journey of me trading
+[    4.68s ->     9.62s] stocks and now to options and now how I'm making like three to six thousand dollars a month. And
+[    9.62s ->    14.56s] I am using a lot of money to make that money. So I'm not like something crazy, but I do just want
+[   14.56s ->    18.18s] to get across the point of how long this took guys. I didn't really start making money until
+[   18.18s ->    23.00s] four years in. In fact, I blew up my account twice and it's really taken me until my sixth
+[   23.00s ->    28.20s] year now where I'm actually consistent in all that I do. And so let me walk you through this
+[   28.20s ->    34.44s] journey so that if you are in this process of learning how to trade, specifically options
+[   34.44s ->    38.00s] and options selling, and you're just not getting it, you're losing money and you just want some
+[   38.00s ->    42.82s] hope. This will be the story for you. Or maybe you're someone who just can't pin down a strategy.
+[   42.96s ->    47.24s] You've been trying off and on to trade for years and it just hasn't clicked. You're going to
+[   47.24s ->    52.90s] understand what made it click for me and my story. So let me dive into what's going on here. So I
+[   52.90s ->    59.70s] found the market in 2016. I was sick and I was in bed and I came across this little video on TV
+[   59.70s ->    64.40s] that was the world's richest people explained. And so it went over all these different people
+[   64.40s ->    70.48s] and ended on Warren Buffett. I was like, this guy just sits around, he's overweight, he just drinks
+[   70.48s ->    77.40s] Dr. No, it's Coke, drinks Coke and he makes a lot of money and he's a billionaire. And I was like,
+[   77.40s ->    82.62s] well, I love numbers. I like patterns. I think I'm decent at that stuff, right? I liked math in
+[   82.62s ->    88.56s] high school, which is where I was at this time. And I started learning about investing. I want to
+[   88.56s ->    92.32s] know what the number one problem with investing is. Number one, you need a lot of money because
+[   92.32s ->    97.88s] we're talking about compounded growth, but still your compounded growth on a hundred dollars ain't
+[   97.88s ->   103.46s] nothing. So you need a lot of money. So someone who was just starting in the world, who was in high
+[  103.46s ->   108.50s] school? That didn't quite cut it. Second thing that I didn't like is that I didn't know if I was
+[  108.50s ->   114.54s] right about a stock for years. I could do all my research on picking what I thought was the perfect
+[  114.54s ->   120.44s] stock, but I wouldn't know if I was right for years. And because of that, I could be in the wrong
+[  120.44s ->   124.26s] stock and my money could actually be losing and not making money for me because in the wrong stock
+[  124.26s ->   130.10s] and I wouldn't know. And so that's why I was like, after spending almost six months of learning
+[  130.10s ->   133.86s] everything about investing, every single ratio, every single number, how to read the balance
+[  133.86s ->   138.80s] sheets, the profit and loss statements, everything about companies, it just wasn't working for me.
+[  138.86s ->   145.64s] I was like, this is not going to cut it. Then by that time, this is 2017 and YouTube is bombarded
+[  145.64s ->   149.92s] with ads from specific day traders. I'm not going to say their names because I do like suing people,
+[  149.92s ->   155.56s] but I saw a ton of ads about day trading and what I thought is like, wow, this is awesome
+[  155.56s ->   159.40s] because it solves the problem. Number one, I don't need a lot of money. And two, I know
+[  159.40s ->   165.82s] an almost a day or less if I'm right about the trade that I picked. So I started studying day
+[  165.82s ->   170.32s] trading. It just did not work. Why? Well, because people would do this and say that and do this,
+[  170.38s ->   175.16s] but nothing ever lined up. Nothing worked consistently in every strategy I tried. And yes,
+[  175.48s ->   181.78s] I tried everyone. I tried RSI, MACD, moving averages, no indicators at all, support and resistance,
+[  182.20s ->   187.16s] reading candles, looking at volume, volume profile, anything you can think of the Fibonacci,
+[  187.16s ->   193.86s] the Elliot wave theory. If you heard of it, I guarantee I've read it, tried it, everything.
+[  194.54s ->   199.78s] And the problem is I couldn't consistently make money. Why? Well, because I couldn't pinpoint
+[  199.78s ->   205.44s] the exact entries and exits. That was my first problem. I was busy. I was a student. I was working.
+[  205.58s ->   211.98s] I didn't have time to dial in the perfect entries and perfect exits. So it never worked. And number two,
+[  211.98s ->   216.60s] what I didn't find out until later with my own experience and knowledge trading is that the
+[  216.60s ->   222.34s] strategies I learned, no one, no guru, no nothing, didn't tell you about different market cycles.
+[  222.84s ->   229.28s] Every strategy works, but only in the market cycle it was designed for. And bullish markets,
+[  229.82s ->   233.84s] there are bullish strategies that work. But if you take those bullish strategies and you apply them to
+[  233.84s ->   238.80s] neutral markets or apply them to downtrending markets, you will not make money. And nobody told
+[  238.80s ->   243.12s] me that. To be honest, I don't think the gurus even know that themselves. And so what I learned
+[  243.12s ->   246.48s] is that yes, these strategies work, but I need to pick the different markets. And that's what I learned
+[  246.48s ->   253.50s] later. So in the middle of day trading, I realized this does not work. Then I saw another up and coming
+[  253.50s ->   260.46s] YouTuber back in 2018 talk about swing trading. And I was like, this is it, right? It blends the
+[  260.46s ->   266.82s] knowing what's, if I'm right about the trade faster with not needing that much money, but also I don't
+[  266.82s ->   270.80s] need to be right on top of it, knowing every single entry and exit at the perfect time.
+[  271.24s ->   277.24s] So what I did is I started swing trading ETFs and did really well with that. I was able to make 30
+[  277.24s ->   282.26s] to 40% a year. I created an algorithm for it that showed me the trends. I knew if the market was
+[  282.26s ->   286.38s] trending up or turning down or turning sideways. So I knew whether to get in out or just, just,
+[  286.54s ->   292.08s] just do something else. And so again, that's what I did really well. I did that on spy. I did that on,
+[  292.08s ->   297.44s] um, E, uh, on the ETFs of natural gas, different things like that. And it really, really well.
+[  297.44s ->   303.90s] I even built a software around it. That's helped already over 15,000 people have used that software
+[  303.90s ->   312.48s] to make money. So that's why I love what I did. Then another life hit me another, another life event
+[  312.48s ->   319.78s] hit me. I should say is back in 2021, I kind of started realizing, yes, this swing trading thing is
+[  319.78s ->   324.92s] great, but I want to disconnect my time from money, right? That is how the wealthy people do it.
+[  324.96s ->   332.28s] They disconnect their time from making money. And it's still required, required me to look at the
+[  332.28s ->   337.26s] charts. So look at the algorithms, look at what's going on to understand placing the trade, exiting the
+[  337.26s ->   343.70s] trade and everything around it. So in 2021, I started exploring options selling. I always thought it was
+[  343.70s ->   348.66s] something risky I would never do. And then I was like, you know what, let's just go for it. And so I
+[  348.66s ->   352.46s] started learning that if you sell a put below a certain level, the market can do whatever it
+[  352.46s ->   357.04s] wants. But as long as it stays above that level, I'll make money by expiration. And that was insane.
+[  357.18s ->   363.66s] Having 90% plus win rates to make a consistent monthly income. I was like, this might be where
+[  363.66s ->   368.66s] it's at. So I started building system after system after backtest around options selling. And I got
+[  368.66s ->   375.50s] hooked on credit spreads and credit spreads were amazing. I was making as much as $5,000 a month.
+[  375.50s ->   379.08s] That is verified. You can go check my YouTube. I show my profit and loss and everything. And
+[  379.08s ->   383.72s] it was amazing to trade credit spreads like that. But just like all things, it only works
+[  383.72s ->   388.50s] in its respective markets. Credit spreads work great in trending markets. When the market's going
+[  388.50s ->   391.58s] up, you can make great, great money. When the market's going down, you can make great money.
+[  391.64s ->   396.72s] But when it's neutral, when it's sideways, it's hard to make money. And that's when option selling
+[  396.72s ->   403.38s] takes off. Credit spreads are selling, but you need the directional play of the market to help you
+[  403.38s ->   408.12s] out. But if you just sold a put and a neutral market, you're going to make money.
+[  408.60s ->   413.84s] And so that's when I discovered Tom King in the 1-1-2 strategy. And I started doing that
+[  413.84s ->   419.02s] left and right every single week, putting on a new 1-1-2. And it was great. You can see
+[  419.02s ->   424.26s] here, here are some of my trades from my most recent 1-1-2 trades. You can see I'm up 47%
+[  424.26s ->   432.80s] or $500. I'm up almost 60% or $600. And I'm up 21% or almost $300 in the last six days on this one
+[  432.80s ->   439.96s] trade. And so the 1-1-2 trade was amazing. But the only thing was I proposed to my childhood
+[  439.96s ->   444.16s] girlfriend. That's right. We grew up together. I knew her since I was eight. She was seven.
+[  444.32s ->   450.68s] So I didn't rob the cradle. She was also young. We were both young. And I started dating her and then
+[  450.68s ->   455.54s] I decided to propose and now we are engaged and getting married soon. And I thought, you know
+[  455.54s ->   462.26s] what? This 1-1-2 strategy is amazing. But the problem is my time is still attached to making
+[  462.26s ->   468.64s] money. What if I die? What if I lose the ability to work? What if my brain stops working? Any one of
+[  468.64s ->   474.98s] these things that just happens in life, accidents, situations, car wrecks, plane crashes, you never
+[  474.98s ->   481.48s] know what's going on. Dementia as you, as you, you get older, whatever it is. I understood that one
+[  481.48s ->   488.14s] thing. If I'm asking this girl to marry me, that I'm going to be a provider and protector as outlined
+[  488.14s ->   495.42s] in scripture. And so with that, I wanted to take that seriously. So the 1-1-2, I would say is one of
+[  495.42s ->   502.62s] the most amazing trades ever because it's so consistent. It's so prop, so, so profitable and it works in most
+[  502.62s ->   509.26s] markets. So I decided, you know what? Let's create an auto trader that automatically enters option
+[  509.26s ->   516.82s] selling positions. So I can say, Hey, I want to trade this asset. Yes, spy, gold, whatever it is.
+[  516.82s ->   521.98s] I want to sell puts, sell strangles, sell 1-1-2s, whatever it is. I can set a profit target.
+[  522.72s ->   527.42s] I can set a stop loss. I can turn my 1-1-2 trades into hedges automatically.
+[  527.42s ->   533.62s] Exactly. And just like that, I now have an auto trader that will take my account and generate
+[  533.62s ->   538.84s] consistent monthly income anywhere from $3,000 to $6,000 every single month, which means that
+[  538.84s ->   546.28s] when we get married, if I die the day after, God forbid, my account is hooked up to this and she
+[  546.28s ->   552.68s] will generate endless money. She will make three to $6,000 every single month without ever touching
+[  552.68s ->   560.42s] the bottom or the capital or collateral. And so that's what brings me peace is not only relying
+[  560.42s ->   566.88s] on God for provision, but understanding that, Hey, my money, even if I can't do it, will make money
+[  566.88s ->   572.82s] for itself so that my wife and my family will be taken care of. And I know a lot of you guys,
+[  572.88s ->   577.14s] because I've spoken to a lot of my members and they're like, that's true. I'll say, I want to
+[  577.14s ->   582.68s] provide. I want, I don't want to rely on this job who I've seen fire people with no cause. Like I
+[  582.68s ->   586.86s] want to be able to use my money to make more money so I can be more self-sufficient so I can
+[  586.86s ->   592.38s] provide for my family. So I don't have to be scared of the next market crash or passing away or leaving
+[  592.38s ->   598.78s] my people with debt. I want my money to make more money. And if that is you, you are perfect for the
+[  598.78s ->   603.50s] auto trader. So what are some of the lessons that I learned through my trading journey before I show
+[  603.50s ->   610.28s] you how to get access to this auto trader? Well, first lesson, you need to understand that all
+[  610.28s ->   616.00s] strategies work, but only in their own respective markets. Understand what an uptrend is, what a
+[  616.00s ->   621.48s] downtrend is, what a neutral market is, and find and understand what strategies work best in them.
+[  622.30s ->   627.56s] You also need to understand that you need to find one strategy that you love and master it and only
+[  627.56s ->   632.22s] ever do that. I know very rich people who make a lot of money every single month. I'm talking about
+[  632.22s ->   639.34s] traders who only trade one strategy. Tom King, it's the one, one, two strategy. Other traders I
+[  639.34s ->   644.04s] know, it's just selling puts. Tasty live, it strangles. Whatever it is, you need to find the
+[  644.04s ->   652.32s] one consistent strategy and do it left and right. So that's my two biggest learnings is once you know
+[  652.32s ->   658.46s] markets, once you know strategies, once you've mastered one, then go all in. I spent too much of
+[  658.46s ->   664.44s] my trading career trying to pin down a strategy. And once I got it, I didn't go all in. I didn't
+[  664.44s ->   669.10s] size up like I said I would. And I didn't quite hit the returns that I wanted because I wasn't sizing
+[  669.10s ->   675.16s] up in risk levels, right? I'm not saying exceed risk, but I was too afraid. And once I started doing
+[  675.16s ->   679.88s] that, that's when I started seeing the $5,000 months, the $6,000 months. And that's how it started
+[  679.88s ->   684.48s] working by mastering one and going all in. And so that's what I want to say. If you're a new options
+[  684.48s ->   689.36s] trader, I presented you with some, if you want to learn about more strategies, you can actually
+[  689.36s ->   695.56s] do that here, uh, in my free group. So again, if you click on the link in the YouTube down below,
+[  695.56s ->   700.46s] it says options, auto trader, wait list. If you click, if you click on that, it'll show you a video
+[  700.46s ->   706.10s] of what it's like, of what you can do. And if you put your email and you can join this free group
+[  706.10s ->   712.92s] where there is courses on options, trading, one-on-one technical analysis, one-on-one that teaches you
+[  712.92s ->   716.74s] how to identify these different market phases and what strategies work best in it.
+[  717.18s ->   723.06s] Monthly income strategies is walking through step-by-step the bag test, the worst case scenarios,
+[  723.22s ->   729.04s] how to prevent them for one, two, three, four different type of options selling strategies
+[  729.04s ->   734.00s] that you can make monthly income. Not only that, we have a very active community here who is sharing
+[  734.00s ->   741.58s] their trades, helping each, each other trade and waiting for the option trader to go live to the
+[  741.58s ->   746.62s] public. So if you're new to options trading, I recommend you just click the link down below
+[  746.62s ->   752.32s] and put in your email search and get free access to this community. Because if you do that, you have
+[  752.32s ->   758.44s] access to options traders doing exactly what you want, what want to do, which is getting rid of risk
+[  758.44s ->   764.28s] and their own life, providing for their family and generating monthly income. Anyways, guys, I don't
+[  764.28s ->   768.32s] typically do videos like this, where I don't have step-by-step training. Cause that's what I do.
+[  768.32s ->   774.26s] So if you like step-by-step training, please subscribe to the channel. But I hope you enjoy
+[  774.26s ->   778.88s] this video nonetheless. And I hope I see you inside this free school community.

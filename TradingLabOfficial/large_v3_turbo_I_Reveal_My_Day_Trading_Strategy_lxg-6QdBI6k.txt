@@ -1,0 +1,114 @@
+[    0.00s ->     4.56s] Every single morning at exactly 10 a.m. something specific happens in the market
+[    4.56s ->     8.64s] and if you get good at spotting it you can make a ton of money.
+[    8.64s ->    11.20s] For example, here are the past nine trading days.
+[   11.20s ->    17.28s] But if you look closely at exactly 10 a.m. on all of these charts our strategy is taking place.
+[   17.28s ->    23.04s] This strategy is a money-making machine and I'll even prove that to you by sharing my own personal
+[   23.04s ->    25.60s] private backtest results at the end of the video.
+[   25.60s ->    30.32s] To break it down the main component of the strategy will be using AMD.
+[   30.32s ->    32.96s] And I'm not talking about AMD the company.
+[   32.96s ->    35.28s] I'm talking about AMD the strategy.
+[   35.28s ->    37.12s] It's really pretty simple actually.
+[   37.12s ->    43.04s] You basically want price to move sideways or to consolidate like this which is called accumulation.
+[   43.04s ->    48.00s] With this accumulation there will be resting liquidity above and below these areas
+[   48.00s ->    50.24s] which will give us fuel for a big move.
+[   50.24s ->    54.64s] Next you want some form of a liquidity grab to the upside or downside
+[   54.64s ->    56.08s] which is the manipulation.
+[   56.08s ->    60.32s] If the chart is going to move higher it needs to manipulate to the downside first.
+[   60.32s ->    64.00s] If the chart is going to move lower it needs to manipulate to the upside first.
+[   64.00s ->    69.36s] Once price manipulates in either direction it tends to skyrocket to the opposite direction
+[   69.36s ->    70.88s] which is the distribution.
+[   70.88s ->    75.12s] Which gives us accumulation, manipulation, and distribution.
+[   75.12s ->    77.12s] Or in other words, AMD.
+[   77.12s ->    81.60s] Now if the market is bullish you're going to see an open, a low, then a high.
+[   81.60s ->    85.52s] If the market is bearish you're going to see an open, a high, then a low.
+[   85.52s ->    89.28s] This concept is what's going to help us predict what the market will do next.
+[   89.28s ->    92.16s] But we have some important steps we need to do first.
+[   92.16s ->    93.68s] First step, go to trading view.
+[   93.68s ->    96.40s] If you don't yet have it I'll put a link in my description.
+[   96.40s ->    98.88s] Next step, you want to find a bias for the day.
+[   98.88s ->   101.36s] To do this I like to go on the one hour time frame.
+[  101.36s ->   103.60s] Usually this will be pretty clear to spot.
+[  103.60s ->   106.80s] If the market is making higher highs and higher lows it's an uptrend.
+[  106.80s ->   110.32s] If the market is making lower highs and lower lows it's a downtrend.
+[  110.32s ->   110.96s] Pretty simple.
+[  110.96s ->   115.04s] In this case the market is clearly bullish so that will be our bias.
+[  115.04s ->   117.20s] Next step, go to the 5 minute time frame.
+[  117.20s ->   121.68s] We are only going to look for trades at exactly 10am to 11.30am.
+[  121.68s ->   123.28s] That's eastern standard time.
+[  123.28s ->   126.16s] Or in other words, 30 minutes after the market opens.
+[  126.16s ->   130.00s] So to make this easier we're going to mark this time zone with two yellow lines.
+[  130.00s ->   132.72s] One at 10am and one at 11.30am.
+[  132.72s ->   136.32s] We only look for a trade setup inside these two yellow lines.
+[  136.32s ->   140.80s] If a trade setup happens outside these yellow lines we do not take that trade.
+[  140.80s ->   145.28s] Since we have a bullish bias we want to see two things happen inside these yellow lines.
+[  145.28s ->   148.40s] Accumulation and then directly after manipulation.
+[  148.40s ->   152.80s] Right at 10am we have sideways movement or in other words accumulation.
+[  152.80s ->   153.92s] So we're good there.
+[  153.92s ->   156.16s] Next we want to see some manipulation.
+[  156.16s ->   160.80s] Since we have a bullish bias this manipulation needs to head towards the downside.
+[  160.80s ->   162.56s] Which is exactly what happens.
+[  162.56s ->   166.40s] Once both of these things happen we need to look for a spot to enter a trade.
+[  166.40s ->   168.56s] I prefer finding a fair value gap for this.
+[  168.56s ->   171.60s] A fair value gap is simply just a large jump in price.
+[  171.60s ->   176.32s] Where there's a gap between the candle before the big move and the candle after the big move.
+[  176.32s ->   177.92s] This is our fair value gap.
+[  177.92s ->   182.00s] After our manipulation to the downside we see a large spike in price.
+[  182.00s ->   183.84s] Leaving behind a fair value gap.
+[  183.84s ->   185.84s] This is where our entry will be.
+[  185.84s ->   188.24s] Wait for price to come back down to this gap.
+[  188.24s ->   190.08s] Set our stop loss below the low.
+[  190.08s ->   192.08s] And set our take profit at the high.
+[  192.08s ->   194.16s] Boom you got an easy winning trade.
+[  194.16s ->   196.08s] But we ran into a slight problem.
+[  196.08s ->   199.36s] So this stop loss and take profit strategy is all good and all.
+[  199.36s ->   203.92s] But there's a little trick you can do in order to get even better take profit areas.
+[  203.92s ->   207.12s] First you want to grab your Fibonacci retracement tool on the left.
+[  207.12s ->   210.16s] Next go to the settings and make sure you're on the styles tab.
+[  210.16s ->   216.96s] And you're going to want to change these values to 1, 0.79, 0.62, 0, negative 1,
+[  216.96s ->   219.92s] negative 2, negative 2.5, and negative 4.
+[  219.92s ->   222.08s] Make sure all these values are gray.
+[  222.08s ->   225.28s] Then make negative 2 and negative 2.5 red.
+[  225.28s ->   227.52s] This will give you something that looks like this.
+[  227.52s ->   229.68s] Now go back to our previous trade example.
+[  229.68s ->   233.12s] We still have the same setup with accumulation and manipulation.
+[  233.12s ->   236.00s] And we have price at our fair value gap for our entry.
+[  236.00s ->   237.76s] You're going to grab your Fibonacci tool.
+[  237.76s ->   241.60s] Mark from the low of the manipulation move to the most recent high.
+[  241.60s ->   244.40s] This will give you some really good levels to take profit.
+[  244.40s ->   248.08s] This red zone is where you should be looking to take the majority of your profits.
+[  248.08s ->   252.48s] It's even better if this red zone is in alignment with some other confluences.
+[  252.48s ->   257.12s] In this example it aligns with our buy side liquidity which is absolutely perfect.
+[  257.12s ->   260.88s] Now instead of taking profits at this level like we did last time,
+[  260.88s ->   266.24s] we now set or take profit at this red zone as we also know it aligns with the confluence
+[  266.24s ->   267.60s] on a higher time frame.
+[  267.60s ->   271.52s] We let the trade play out and we get to ride this move for some extra profit.
+[  271.52s ->   275.76s] Now if you know my channel at all, I like to test my strategies before sharing them with you.
+[  275.76s ->   280.32s] So basically I do all the vigorous testing using countless hours of my life and test
+[  280.32s ->   284.40s] the strategy day and night to see if the strategy is even profitable in the first place.
+[  284.40s ->   289.20s] While you eat a bag of potato chips and get the results within a couple of seconds while watching
+[  289.20s ->   289.76s] my videos.
+[  291.36s ->   296.56s] I backtested this strategy for a whole month and the results are absolutely shocking.
+[  296.56s ->   300.16s] But before we get into the backtest results, let me show you something real quick.
+[  300.16s ->   305.04s] So a couple videos ago I said I was going to test this copy trading feature on Hankertrade.
+[  305.04s ->   309.04s] It's basically a feature that allows you to copy top performing trading
+[  309.04s ->   313.76s] while you see important information like how many people are following them and their win rate.
+[  313.76s ->   317.92s] All you have to do is simply click this follow button and it'll automatically take
+[  317.92s ->   319.92s] all the trades the analysts take.
+[  319.92s ->   327.92s] I tested this feature with $50,000 a couple months ago and my account balance is now 231,000.
+[  327.92s ->   331.52s] Yes, you heard me right, 231,000.
+[  331.52s ->   333.04s] Just from clicking a follow button.
+[  333.04s ->   337.36s] They also released a mobile app so you can do all of this directly from your phone.
+[  337.36s ->   340.80s] If you want to check it out, I'll leave a link to Hankertrade in my description.
+[  340.80s ->   343.04s] Okay, let's get to those backtest results, shall we?
+[  343.04s ->   348.56s] While testing the strategy, I gave the testing account $100,000 to start with and I let it trade
+[  348.56s ->   351.44s] using the parameters of the strategy I just taught you.
+[  351.44s ->   357.68s] The chart had to have accumulation and manipulation and it had to happen between 10am and 1130.
+[  357.68s ->   363.28s] I tested the strategy for a total of 20 trading days and it took a total of 15 trades,
+[  363.28s ->   370.00s] which means the chart fit our parameters for a strategy 15 out of the 20 days or 75% of the time.
+[  370.00s ->   372.56s] So you can see the setup happens pretty often.
+[  372.56s ->   381.04s] Within these 15 trades, it had a win rate of 66.67% and at a total profit rate of 44.4%,
+[  381.04s ->   390.48s] which means if you started with $100,000, you would have made $44,406.91 in 20 trading days.
+[  390.48s ->   391.52s] Not too shabby.
+[  391.52s ->   392.80s] Test it out for yourself.
+[  392.80s ->   395.76s] DM me on Instagram and let me know how it works for you.
+[  395.76s ->   408.08s] Thanks for watching and I'll see you guys next time.

@@ -1,0 +1,626 @@
+[    0.46s ->    20.49s] And we are back. Welcome back. It's good to be back. Very excited to begin posting again. 2025, the goal is to post every week on an interesting topic in lecture format.
+[   20.91s ->    33.15s] Please feel free to join the Discord and make sure that I stick to that. But nevertheless, today we are going to get started with methodology for generating random variables.
+[   33.77s ->    40.79s] Today we're going to talk about the inverse transform method. Now, this does assume some background in probability and statistics.
+[   40.79s ->    47.07s] If you've taken a statistics and probability course in university, then you will be very well prepared for this sort of discussion.
+[   47.61s ->    59.51s] If not, I encourage you to check out my other resources. I have an article on common random variables that walk you through pretty much a first year undergraduate statistics course.
+[   59.51s ->    69.99s] In one article, it talks about probability mass functions, probability density functions, cumulative distribution functions, applications of discrete and continuous random variables.
+[   71.15s ->    78.57s] Once you have a general idea of those different topics, we can kind of dive into this idea of the inverse transform method.
+[   78.57s ->    84.81s] I'm going to give you an example, even if you haven't seen that material before, so hopefully it's intuitive.
+[   85.69s ->    90.87s] We're going to be a little hand-wavy with this idea of pseudo-randomness coming from number theory.
+[   90.97s ->    95.79s] We'll talk briefly when we get to the Python code about what that actually is and what that looks like.
+[   95.79s ->   102.53s] But for now, bear with me. We're going to look at some intuitive examples using a dice rule for a discrete random variable.
+[  102.85s ->   111.17s] And then we're going to move over to a normal distribution, or maybe not a normal distribution, maybe a uniform distribution for a continuous or maybe exponential.
+[  112.03s ->   114.19s] But we'll see when we get there. We'll see how I'm feeling.
+[  114.53s ->   122.35s] For now, we'll get started with the idea of a discrete random variable fully specified by its probability mass function.
+[  122.35s ->   135.73s] So, discrete random variables, probability mass functions.
+[  143.02s ->   148.06s] Now, all a probability mass function is, and hopefully you've heard this before.
+[  148.14s ->   149.60s] If not, then hopefully this is clear.
+[  149.98s ->   155.70s] It's going to map an item in the sample space to a corresponding probability.
+[  156.28s ->   161.32s] And here we are assuming a frequency interpretation of that probability.
+[  161.70s ->   164.62s] That is, we're following Kalmagorov's axioms.
+[  164.62s ->   171.04s] We're saying that if we iteratively repeat these experiments, then we're expecting this outcome a specific fraction of the time.
+[  171.60s ->   175.04s] So, for example, a very trivial example is a coin flip, right?
+[  175.22s ->   179.42s] If I flipped a coin right now, right, I don't know what that outcome is going to be.
+[  179.56s ->   181.94s] It's going to be heads or tails. I don't know what it's going to be.
+[  182.72s ->   188.56s] But I do know if I flipped an infinite number of coins, then I would expect the ratio to be 50-50, right?
+[  188.56s ->   191.42s] That's the idea of the frequency interpretation.
+[  191.78s ->   194.80s] If I flip 10 coins, it's very possible I get 10 heads.
+[  195.28s ->   199.02s] But what we are saying, and this is using the law of large numbers here,
+[  199.06s ->   205.86s] is we're saying that if we were to do this sample, this event, this particular experiment an infinite number of times,
+[  205.94s ->   209.84s] then we would converge to some sort of population mean parameter.
+[  209.84s ->   216.74s] And all that is to say is if I repeat this experiment, then I'm going to have these fixed ratios for possible outcomes.
+[  217.06s ->   220.72s] So let's look at what the mathematical notation would look like.
+[  220.76s ->   228.32s] Perhaps we have some function that's going to map items in the sample space to a probability between 0 and 1.
+[  228.32s ->   236.96s] You know, you could say to real numbers, it depends on really, you know, this is obviously going to be constrained
+[  236.96s ->   242.62s] because we need to make sure that all of the items in the sample space are going to sum to 1.
+[  242.92s ->   246.64s] You can't have 0.5, 0.5, not sum to 1.
+[  246.72s ->   249.52s] You can't have it sum to something greater than 1.
+[  249.70s ->   252.04s] That should be relatively intuitive.
+[  252.36s ->   258.66s] Having a 120% probability in the context of a frequency interpretation doesn't really make sense.
+[  258.80s ->   267.38s] You know, if I had 10 coins and I flipped, you know, 5 and 5, maybe 5 heads, 5 tails, then that would be 50-50.
+[  267.66s ->   273.38s] But you can't flip 7 heads and 5 tails and only have 10 trials.
+[  273.52s ->   274.72s] That's not possible.
+[  275.32s ->   278.70s] So this is going to be constrained between 0 and 1.
+[  279.32s ->   284.16s] Let's actually talk a little bit about what this probability mass function is going to look like.
+[  284.24s ->   286.32s] So let's talk about a dice roll.
+[  286.32s ->   293.74s] We know the sample space for a dice roll is going to be 1, 2, 3, 4, 5, and 6.
+[  295.30s ->   298.46s] The actual function we can define is maybe P of A.
+[  298.82s ->   304.78s] And we can say that if we give this function any possible outcome, 1 through 6,
+[  304.78s ->   309.62s] we're going to have a 1-6th probability of seeing that outcome.
+[  310.22s ->   315.86s] So this is for A is equal to 1, 2, 3, 4, 5, and 6.
+[  316.74s ->   326.18s] And any other outcome in this space, maybe it's 1.5, 0.5, whatever it is, negative 20 has a 0 probability.
+[  326.18s ->   328.80s] So I'm going to say 0 otherwise.
+[  330.76s ->   336.94s] So this is a piecewise function that fully specifies what's called a discrete uniform random variable.
+[  338.12s ->   341.86s] This particular discrete uniform random variable is a dice roll.
+[  342.00s ->   347.30s] It's saying that given the numbers 1 through 6, there's an even probability of drawing 1 through 6.
+[  349.31s ->   350.41s] How do I plot this?
+[  350.41s ->   352.37s] Well, this is just a piecewise function.
+[  352.79s ->   363.46s] So all I have to do is draw my probability axis and draw my sample space axis.
+[  363.98s ->   368.53s] 1, 2, 3, 4, 5, 6.
+[  370.02s ->   372.64s] And plot the corresponding probabilities.
+[  373.48s ->   377.92s] Well, the probability of each one of these outcomes is just 1-6th.
+[  377.92s ->   384.59s] 1, 2, 3, 4, 5, 6.
+[  385.13s ->   392.08s] There is no probability mass anywhere else.
+[  392.18s ->   399.24s] If you wanted to be super specific in drawing this function, you could just have open circles here.
+[  399.68s ->   409.44s] And then it would be a straight line everywhere else, even going from negative infinity to positive infinity.
+[  409.80s ->   412.70s] Because there is no probability mass there.
+[  414.80s ->   416.74s] Okay, so this is relatively intuitive, right?
+[  416.86s ->   429.34s] If I was to go anywhere in the sample space, you'll find that the only place that has probability mass is going to be at 1, 2, 3, 4, 5, and 6.
+[  432.45s ->   436.21s] Anywhere else, we're not going to have any probability mass.
+[  436.21s ->   443.41s] And you can see that each one of these, if we sum them all together, 1-6th times 6, we're going to get 1.
+[  444.23s ->   445.89s] And that is our entire sample space.
+[  445.95s ->   448.61s] So the probability of anything happening is going to be 1.
+[  448.61s ->   467.38s] So this is called a probability mass function, inextricably linked to the probability mass function, specifically because it's derived from either the cumulative distribution function or the probability mass function can be used to derive the cumulative distribution function.
+[  467.38s ->   472.60s] It's simply just going to be integration and differentiation if you were in a continuous space.
+[  472.60s ->   475.46s] But since we're in a discrete space, it's differencing and summation.
+[  476.14s ->   479.60s] So here what we have is a probability mass function.
+[  479.70s ->   483.80s] We can very easily find what's called the cumulative distribution function.
+[  483.80s ->   488.10s] And this is also going to fully specify the random variable.
+[  488.10s ->   497.78s] Now, it is a mess in the context of drawing it as a piecewise function, in the sense that we have a variety of conditions and I'll have to draw each range.
+[  498.00s ->   500.12s] To make it simple, we can just look at the chart.
+[  500.52s ->   501.40s] So that's what we're going to do.
+[  501.44s ->   502.30s] We're going to look at the chart.
+[  502.30s ->   518.84s] The cumulative distribution function, all it's asking for is it's asking for an input, and it's going to produce an input being some item in the sample space on the x-axis here.
+[  519.50s ->   522.28s] And it's going to produce the cumulative probability.
+[  523.18s ->   524.28s] Okay, that sounds pretty fancy.
+[  524.78s ->   527.28s] But if we look, let's start at negative infinity.
+[  527.54s ->   531.76s] We haven't accumulated any probability mass starting at negative infinity.
+[  531.76s ->   543.66s] But once we get to 1, we jump from 0, this is 0, to 1-6.
+[  544.20s ->   558.22s] And you'll notice that if we keep doing this, we keep working our way from left to right, you can see that once we get to 2, we jump again because we've accumulated more probability mass.
+[  558.22s ->   568.98s] So we take the 1-6 from the outcome of 1, and we add it to the 1-6 of the outcome of 2, and we have 2-6.
+[  568.98s ->   574.06s] So we're going to jump again here to 2-6.
+[  574.58s ->   577.95s] And then we're just going to kind of rinse and repeat this.
+[  579.30s ->   583.70s] The scale may be a little bit off due to my artistic talent here.
+[  583.70s ->   599.99s] But you can see that once we get to 6, we have 2-6, 3-6, 4-6, 5-6.
+[  600.83s ->   604.41s] Eventually, we get 2-6-6, which is just 1.
+[  605.13s ->   607.33s] And it's going to stay 1 forever.
+[  607.33s ->   617.14s] So all we're simply doing is working our way from left to right, and we're summing up all of the probability mass.
+[  617.94s ->   620.46s] This is the cumulative distribution function.
+[  620.90s ->   629.66s] And in fact, we can write this, and I'll maybe go ahead and just write this for completeness, as capital P of A.
+[  630.12s ->   631.72s] This is a little bit of a mess.
+[  632.34s ->   633.38s] It's a little bit of a mess.
+[  633.44s ->   636.38s] Let me move this down so that I can show you what I mean.
+[  636.38s ->   646.10s] We're going to specify the range in which the probability mass is accumulated from left to right.
+[  646.60s ->   658.80s] So how much probability mass have we accumulated from A being negative infinity to 0, or I should say to positive 1?
+[  659.56s ->   661.64s] Well, that's this blue line right here.
+[  662.69s ->   666.15s] We've clearly accumulated 0 probability mass.
+[  666.15s ->   674.28s] Okay, what about A being between 1 and 2?
+[  675.77s ->   678.05s] Well, that's this blue line right here.
+[  679.77s ->   687.91s] This is while we have reached 1, so we are between 1 and 2, but not too inclusive.
+[  688.41s ->   691.59s] Because remember, at 2, we jump to 2-6.
+[  691.59s ->   698.53s] So here, while we're on this blue line, we have 1-6 accumulated probability.
+[  698.93s ->   704.97s] And this is just essentially looking at all of these bars and specifying the range.
+[  706.97s ->   707.19s] Okay?
+[  707.39s ->   714.93s] There is a more concise way to do this with a summation, but I'm going to disregard that just for simplicity's sake.
+[  714.93s ->   720.49s] So here, we're going to have 2-6 for A is between 2 and 3.
+[  721.15s ->   725.01s] 3-6 for A is between 3 and 4.
+[  725.47s ->   727.23s] And you can start to see what I mean.
+[  727.31s ->   734.08s] This is kind of just, you know, a little bit 4 and 5.
+[  736.53s ->   742.49s] And then 5-6 for A, 5-6.
+[  742.49s ->   744.89s] And then at 6, what happens?
+[  745.03s ->   748.57s] Well, at 6, we've accumulated all of our probability mass.
+[  748.91s ->   755.38s] So it's going to be 1 for A is between 6 and infinity.
+[  755.84s ->   762.70s] And that's going to be our cumulative distribution function.
+[  763.54s ->   763.68s] Okay?
+[  764.06s ->   768.92s] So now that we have everything written down,
+[  769.10s ->   774.22s] we're ready to actually generate this random variable computationally.
+[  774.22s ->   783.55s] Okay, the inverse transform method is not the only way to generate a random variable.
+[  783.69s ->   796.48s] In fact, it doesn't work in the case that there is no analytical solution to the inverse of the density function or mass function,
+[  796.58s ->   798.06s] whatever it is you're working with.
+[  798.52s ->   803.65s] But for something like this, it is quite easy to implement.
+[  803.65s ->   814.58s] So just keep in mind, the inverse transform method is just kind of a very basic way to generate a random variable
+[  814.58s ->   820.86s] when the mass function or the density function you are working with is willing to be cooperative and invertible.
+[  821.36s ->   825.28s] If you think of something like the normal distribution function,
+[  825.28s ->   829.60s] So let's take a look really quickly at the standard normal.
+[  831.37s ->   834.69s] So this is the CDF of a standard normal.
+[  835.09s ->   854.09s] f of x, 1 over 2, square root of 2 pi, e to the negative x squared divided by 2 dx.
+[  854.97s ->   857.13s] Really, I should use a placeholder variable here.
+[  858.60s ->   861.62s] s squared over 2 ds.
+[  861.62s ->   866.42s] This isn't invertible, right?
+[  866.52s ->   872.02s] Like, this is going to be something that is not easily invertible.
+[  872.80s ->   877.56s] So the inverse transform method would not necessarily work in this context.
+[  877.82s ->   880.70s] You're going to have to use something else like maybe acceptance, rejection,
+[  880.96s ->   885.66s] or another type of way to generate these random variables,
+[  885.74s ->   887.68s] which we may cover in a later video.
+[  887.68s ->   890.52s] But for now, let's take a look at the inverse transform method.
+[  890.58s ->   891.74s] I just wanted to put that on your radar,
+[  891.86s ->   895.32s] that this is not a cure-all for any probability mass or density function.
+[  895.96s ->   898.91s] So let's go back to what we have here.
+[  899.82s ->   906.83s] Well, we can see that each one of these outcomes has a 1-6th probability.
+[  906.83s ->   913.81s] So what we want to do is we want to figure out a way to draw from this distribution
+[  913.81s ->   917.11s] such that if we did this 10 bajillion times,
+[  917.27s ->   921.69s] we would have approximately a 1-6th probability for each outcome.
+[  921.89s ->   924.37s] That's how we know we've generated it correctly.
+[  925.05s ->   925.29s] Okay?
+[  925.93s ->   929.63s] You can just say, oh, like, we'll draw this, we'll draw this, we'll draw this.
+[  929.71s ->   930.51s] That's great.
+[  930.59s ->   931.53s] That's all well and good.
+[  931.53s ->   938.85s] But you need to make sure that, you know, to ensure that you're drawing from the correct probability mass function
+[  938.85s ->   940.61s] or correct probability density function,
+[  941.05s ->   945.09s] you need to ensure that in the context of the frequency interpretation,
+[  945.59s ->   949.25s] if you repeat draws iteratively,
+[  950.38s ->   955.66s] then you take the ratio of total number of 1s drawn, total number of 2s drawn,
+[  955.80s ->   960.52s] 3s, 4s, 5s, and 6s, they all need to be roughly 1-6th, right?
+[  960.52s ->   964.66s] Law of large numbers, as that approaches infinity, everything will be 1-6th.
+[  964.72s ->   965.88s] That's the idea here.
+[  966.30s ->   973.82s] So you need a way to ensure that the structure of the mass function or the distribution function is preserved.
+[  974.18s ->   978.00s] And the inverse transform method is going to use the distribution function,
+[  978.48s ->   980.72s] along with a different random variable,
+[  981.20s ->   988.02s] to produce the correct probability for each output and the corresponding desired output.
+[  989.00s ->   990.10s] What do I mean by this?
+[  990.10s ->   992.98s] Well, let's take a look at the CDF here.
+[  993.66s ->   994.70s] This is the CDF.
+[  995.88s ->  1001.12s] What do we notice about the range of the CDF?
+[ 1001.52s ->  1008.84s] Well, the range of the CDF starts at 0, and it goes to 1.
+[ 1008.84s ->  1021.08s] This will be true for every cumulative distribution function because that is the framework for probability in which we are operating in.
+[ 1021.32s ->  1030.26s] Every cumulative distribution function, as the limit of the functional input approaches negative infinity, will be 0,
+[ 1030.26s ->  1036.46s] 0, and the limit as the functional input approaches positive infinity, will always be 1.
+[ 1036.68s ->  1038.02s] And that's what you see here.
+[ 1038.22s ->  1044.50s] You see as we go to negative infinity, as we go to infinity, we get 0 and we get 1.
+[ 1044.50s ->  1052.37s] Okay, how does this help us?
+[ 1052.43s ->  1061.71s] Well, if we had a way to essentially flip this map, then if we give it anything between 0 and 1 randomly,
+[ 1061.71s ->  1070.95s] then we're going to draw an outcome with the correct corresponding probability mass for each outcome.
+[ 1070.95s ->  1074.04s] Let me give you an example.
+[ 1075.72s ->  1080.31s] If I was to draw out of a hat, this is my hat.
+[ 1082.41s ->  1083.43s] That's a pretty good hat.
+[ 1084.53s ->  1085.33s] Give it a little buckle.
+[ 1088.00s ->  1090.58s] Let's say I draw out of a hat the number 0.5.
+[ 1093.94s ->  1100.61s] Could I map 0.5 to an outcome in the dice roll?
+[ 1100.61s ->  1105.57s] Well, based on this cumulative distribution function here, I sure can, right?
+[ 1105.79s ->  1107.73s] So where is 0.5?
+[ 1109.22s ->  1115.68s] Well, if we take a look here, right, 0.5 is going to be right here.
+[ 1116.02s ->  1117.16s] It's 1 half.
+[ 1119.16s ->  1127.44s] So at 1 half, if we take a look on the chart, right, we are at the number 1.
+[ 1128.18s ->  1131.44s] Well, what number caused this jump to 0.5?
+[ 1131.86s ->  1134.27s] The number 3.
+[ 1134.27s ->  1139.19s] So 0.5 would map to 3.
+[ 1140.40s ->  1142.12s] Let's say I could draw another number.
+[ 1142.38s ->  1144.96s] Maybe I get 0.73.
+[ 1145.62s ->  1150.95s] Well, where does 0.73 lie?
+[ 1151.85s ->  1153.37s] So hopefully you start to see this.
+[ 1153.47s ->  1154.39s] Where does 0 lie?
+[ 1154.49s ->  1156.41s] Where does 0.3 lie?
+[ 1158.02s ->  1171.98s] We can map all of these numbers between 0 and 1 to their corresponding numbers in the sample space for this discrete uniform random variable.
+[ 1173.97s ->  1176.05s] Just using the cumulative distribution function.
+[ 1176.35s ->  1178.51s] This is the idea of the inverse transform method.
+[ 1178.85s ->  1182.27s] How do we get these numbers, though, between 0 and 1?
+[ 1182.69s ->  1187.23s] Well, what we're going to do is we are going to generate a uniform random variable.
+[ 1187.23s ->  1202.80s] And what this is going to do is this is just going to draw a number between 0 and 1 where every single number is going to have an even or equal distribution of probability across that entire space 0 to 1.
+[ 1202.80s ->  1219.62s] So what that does is it ensures that when we draw that number and we plug it in to this little map here where we drew a number out of the hat and then produce the correct draw based on the draw from the hat.
+[ 1219.62s ->  1228.66s] It's going to ensure that we have the correct probability mass assigned to each outcome in our random variable.
+[ 1229.28s ->  1233.86s] It's pretty amazing that it works like this, but it's also pretty simple.
+[ 1233.86s ->  1241.66s] So coming up with that map is very easy because all you have to do is invert the cumulative distribution function.
+[ 1243.18s ->  1258.79s] So all you have to do is swap these places here, and that's going to give you a new function such that when you input a draw between 0 and 1, you're going to get the outcome of the dice roll.
+[ 1258.79s ->  1270.61s] So that's pretty cool. That's pretty cool. That's pretty cool. This is successfully mapping some draw between 0 and 1 to the outcome of a dice roll.
+[ 1270.69s ->  1279.13s] This is literally rolling a dice. Now this begs the question, hopefully you've, you know, maybe the particularly keen among us are like, well, we'll hold on a second.
+[ 1280.75s ->  1289.89s] Aren't you drawing a random variable here? So you need to draw a random variable to draw another random variable.
+[ 1289.89s ->  1302.21s] The answer to that question is, is yes. You do need to draw from a uniform distribution to be able to draw from any other probability mass function or probability density function.
+[ 1303.88s ->  1310.74s] Now, how do you get this initial draw here? Well, that is the, the hand wavy part of this, this video.
+[ 1310.74s ->  1320.24s] And we're going to get to the Jupiter notebook in a moment where we actually walk through a little bit of the, the theory here, but this is where the whole idea of pseudorandomness comes from.
+[ 1320.56s ->  1336.52s] Okay. That is, you're going to have some sort of, some sort of seed, some sort of series of operations, and you're going to attempt to draw from this uniform distribution to produce the correct probabilistic outputs for each item in your sample space iteratively.
+[ 1336.52s ->  1349.54s] And eventually the idea is that with some sort of cyclicality, it's going to repeat, but again, this is a little, a little hand wavy for this, this part of the video, at least until we start talking about the, the theory there.
+[ 1349.54s ->  1356.14s] But for now, the steps to generate a random variable are actually quite easy.
+[ 1356.14s ->  1375.62s] So number one, find the CDF. Number two, invert the CDF. Number three, draw from a standard uniform random variable.
+[ 1375.62s ->  1397.41s] Number four, so I'll call this G of U. I'll call this F of A. Step four is input and return G of capital U.
+[ 1397.41s ->  1410.79s] So once you've drawn from your uniform distribution, you're going to plug that into your inverse cumulative distribution function, and that is going to give you the output that you are looking for.
+[ 1410.79s ->  1424.30s] In other words, this map that we came up with here, this is going to allow us to produce the probability that we are interested in for each possible outcome in our sample space.
+[ 1427.90s ->  1442.50s] This is again a little bit hand wavy because what we need to do is we need to use a loop to iteratively accumulate the probability mass and spit out the desired outcome that is the one, two, three, four, five, or six.
+[ 1442.50s ->  1445.06s] But you'll see this in the Python code.
+[ 1447.43s ->  1451.33s] This is for the discrete case, but the continuous case is even easier.
+[ 1451.99s ->  1456.49s] This right here is the formal set of steps for the continuous case.
+[ 1456.49s ->  1466.41s] You just need to invert the CDF, draw a uniform random variable, input that uniform random variable into the CDF, and you will have your output.
+[ 1466.95s ->  1471.11s] And again, for the discrete case, you'll have to accumulate that probability mass.
+[ 1471.11s ->  1476.83s] And then once you fall within the range that you're looking for, you'll spit out the number.
+[ 1477.17s ->  1483.63s] So if you take a look here, when we drew a 0.5, I said this corresponds to three.
+[ 1484.41s ->  1487.23s] Well, how do we know that it's, you know, three, not four?
+[ 1487.81s ->  1489.83s] How do we know that it's three, not two?
+[ 1490.37s ->  1498.79s] That's what you're going to use your loop to discern because you're going to be accumulating probability mass from left to right.
+[ 1498.79s ->  1509.85s] So as we accumulate one-sixth, one-sixth, one-sixth, well, hey, once we get that third one-sixth, we notice that we've done it three times, right?
+[ 1510.19s ->  1513.39s] One-sixth plus one-sixth plus one-sixth.
+[ 1513.83s ->  1515.65s] That gives us our 0.5.
+[ 1515.85s ->  1517.15s] We've done it three times.
+[ 1517.27s ->  1520.27s] That maps to the dice outcome three.
+[ 1521.78s ->  1524.76s] So that's going to do it for this portion of the video on the iPad.
+[ 1524.92s ->  1528.76s] I want to pivot over to Python to talk a little bit more about the inverse transform method.
+[ 1528.86s ->  1532.36s] You'll see some LaTeX, and maybe that'll be a little more clear.
+[ 1532.70s ->  1534.32s] But let's go ahead and pivot over there.
+[ 1534.38s ->  1535.04s] You'll see some charts.
+[ 1535.16s ->  1536.82s] You'll see some applications of it.
+[ 1537.24s ->  1545.86s] And we'll talk a little bit more about what this whole idea of drawing from a uniform distribution has to do with anything and the corresponding theory behind it.
+[ 1545.86s ->  1555.07s] All right, so let's actually look at an implementation of this algorithm, this inverse transform method in Python.
+[ 1555.73s ->  1564.99s] We're going to talk about synthesizing uniform random variables and some of the theory behind that to kind of at least look into the hand-waviness behind the stuff we did on the iPad.
+[ 1564.99s ->  1569.79s] And then we're going to look at applications in the discrete case and the continuous case.
+[ 1569.95s ->  1578.37s] And you'll see that the pseudocode for the algorithm that I had written is going to fully correspond to the steps we take in the continuous setting.
+[ 1578.71s ->  1586.49s] But in the discrete setting, we're going to need some sort of loop to accumulate the probability and then spit out the desired output.
+[ 1587.17s ->  1592.41s] So let's go ahead and get started with this idea of generating a uniform random variable.
+[ 1592.41s ->  1599.99s] So we need a uniform random variable for a variety of random variable generation techniques.
+[ 1600.71s ->  1602.53s] We need it for the inverse transform method.
+[ 1602.65s ->  1603.81s] We need it for acceptance rejection.
+[ 1603.99s ->  1605.63s] We need it for a variety of different ones.
+[ 1605.85s ->  1615.07s] And this is only going to work, the inverse transform method, when the random variable that we are looking to generate has a distribution function that is invertible.
+[ 1615.07s ->  1621.61s] If it's not invertible, then you're not going to be able to plug in a number between 0 and 1 and get an output.
+[ 1621.61s ->  1635.15s] But it's not going to work like that because there is no map that's going to correspond to the correct probability mass for each desired output in that sample space, given the structure given by that density function.
+[ 1635.79s ->  1638.23s] Normal distribution may be a good example of that.
+[ 1639.11s ->  1642.41s] But here we're looking at a very easy case because this is just discrete.
+[ 1642.41s ->  1646.09s] So we can use numpy.random.uniform.
+[ 1646.09s ->  1647.05s] That's very easy.
+[ 1647.21s ->  1651.45s] If we wanted to do something like that, we could just draw a uniform number.
+[ 1651.81s ->  1653.65s] This is not necessary at all.
+[ 1653.73s ->  1660.77s] This whole section for methodology, this is only if you have some interest in the pseudo-random number generators.
+[ 1660.77s ->  1668.21s] You can completely hand-wave this idea away and just use a uniform random variable and say,
+[ 1668.33s ->  1668.85s] Okay, you know what?
+[ 1668.89s ->  1669.77s] That's good enough for me.
+[ 1670.09s ->  1674.61s] I know that I need to generate this probability mass function, this probability density function.
+[ 1674.99s ->  1677.51s] They have this cumulative distribution function.
+[ 1677.97s ->  1682.47s] I don't particularly care how to generate a uniform random variable.
+[ 1682.47s ->  1687.95s] I just know that if I want to draw from this desired density, that I need to use it.
+[ 1688.01s ->  1688.91s] That's completely fine.
+[ 1689.09s ->  1696.83s] You know, you don't need to know why this is functioning the way it is under the hood in the context of the uniform random variable.
+[ 1697.03s ->  1702.25s] But I figured I'd sprinkle it in because I don't like hand-waving without at least, you know, glossing over the idea.
+[ 1702.51s ->  1704.09s] So let's just talk about that.
+[ 1704.09s ->  1715.76s] Generally speaking, we use pseudo-random number generators, PRNGs, to create sequences of numbers that mimic randomness.
+[ 1715.86s ->  1725.90s] So if you've ever heard this before, PRNGs are looking to essentially mimic randomness in that uniform random variable,
+[ 1725.90s ->  1734.70s] such that we can generate distribution functions of other types of random variables that actually follow the correct frequency interpretations
+[ 1734.70s ->  1738.70s] and assign the correct probability masses to each outcome in the sample space.
+[ 1740.04s ->  1744.62s] So these are deterministic algorithms, which can be a problem.
+[ 1744.74s ->  1750.24s] There is some element of predictability if you are to have the seed beforehand, right?
+[ 1750.30s ->  1751.06s] Because think about it.
+[ 1751.06s ->  1756.12s] If we're using a PRNG to generate a random variable and it's a deterministic function,
+[ 1756.68s ->  1764.54s] then even though you are generating a draw from the density or mass function that you are looking to generate a draw from,
+[ 1765.62s ->  1769.52s] you still have a deterministic aspect of that random draw.
+[ 1769.74s ->  1774.50s] It's going to follow that mass function correctly in the sense of the, like I say, the frequency interpretation.
+[ 1774.50s ->  1775.90s] You draw a million draws.
+[ 1775.90s ->  1781.02s] All of the probabilities are going to be assigned to the outcomes in the sample space correctly.
+[ 1781.58s ->  1787.04s] But the problem is the underlying algorithm that is going to determine that is deterministic.
+[ 1787.38s ->  1793.22s] So if I have the seed and I have the function, then I'm going to be able to predict with 100% accuracy
+[ 1793.22s ->  1796.62s] every single outcome of the random variable.
+[ 1796.84s ->  1804.38s] A lot has been done and a lot can be done to avoid this, especially if the randomness has some sort of financial incentive.
+[ 1804.38s ->  1810.66s] But I just want to keep that in mind that in the context of this, this idea here,
+[ 1811.24s ->  1813.86s] there is some sort of deterministic structure underlying it.
+[ 1813.90s ->  1817.54s] Now, you could use like very small fractions of time and blah, blah, blah, make it very difficult.
+[ 1817.80s ->  1825.50s] But theoretically, yes, you can predict it perfectly depending on how you structure your PRNG here.
+[ 1825.50s ->  1836.11s] So each PRNG, and this is just one basic example, I'm just going to walk through one way we can generate draws from a standard uniform distribution,
+[ 1836.43s ->  1842.23s] is we have something called periodicity in the, I want to call it a function.
+[ 1842.59s ->  1852.03s] So it's really, it's iterative and it's more like a, it's more reminiscent of like a difference equation than anything else.
+[ 1852.03s ->  1858.11s] But let's take a look at this generator here. So it has periodicity, uniformity, and seed-based reproducibility.
+[ 1858.37s ->  1864.93s] So if you've ever seen in any Python code previously, you know, np.random.seed, that's what you're doing,
+[ 1865.01s ->  1868.45s] is you're setting a seed for randomness, for reproducibility.
+[ 1868.89s ->  1873.23s] So if you observe some sort of set of outcomes after doing simulation,
+[ 1873.23s ->  1877.31s] and you want to plot it, and you want other people to see that particular set of outcomes,
+[ 1877.47s ->  1879.51s] then they can reproduce it in that context.
+[ 1879.87s ->  1882.11s] Is that a good thing? Is that a bad thing? I don't know.
+[ 1882.29s ->  1884.79s] You've seen this in Minecraft before too, when you set a world seed.
+[ 1885.21s ->  1887.13s] So, you know, tomato, tomato.
+[ 1887.85s ->  1894.73s] But in the context of this, you know, you're not really looking for necessarily reproducibility,
+[ 1894.73s ->  1900.31s] as you are looking for the pseudo-randomness to implement in your mass and density functions,
+[ 1900.31s ->  1905.27s] such that you can produce the outputs you're looking for with the correct probability assignment.
+[ 1906.01s ->  1907.25s] So here we have this.
+[ 1907.45s ->  1913.67s] This is called the Linear Congruential Generator, LCG.
+[ 1914.51s ->  1918.09s] I'm good at math. I've never been good at English, so you're going to have to bear with me.
+[ 1920.01s ->  1924.91s] So here we have xn plus 1 is equal to axn plus c mod m.
+[ 1925.57s ->  1932.47s] So a, c, and m are constants, and then the output is going to be normalized by dividing by m.
+[ 1933.01s ->  1937.65s] And that should be clear that if you did something mod m and you divide by m,
+[ 1937.69s ->  1939.85s] it's going to be normalized between 0 and 1.
+[ 1940.59s ->  1945.93s] And then, you know, we can use, to emulate this idea of the LCG, we can use NumPy.
+[ 1945.93s ->  1952.27s] Okay, and here we have 10,000 samples from random uniform, and we're just going to go ahead and plot it.
+[ 1952.43s ->  1956.89s] If I was to continue to run this, we would get different distributions, and that is the idea,
+[ 1957.15s ->  1963.51s] is we are going to draw something that looks like a uniform random variable using some sort of generator like this.
+[ 1964.03s ->  1965.33s] What should you pick for a?
+[ 1965.67s ->  1966.95s] What should you pick for c?
+[ 1967.43s ->  1968.77s] What should you pick for m?
+[ 1971.08s ->  1972.04s] Consult the literature.
+[ 1972.04s ->  1973.28s] I don't know.
+[ 1973.52s ->  1980.46s] That's just a function of the LCG is, you know, you're going to have to pick these parameters,
+[ 1981.04s ->  1989.92s] and it's going to produce some sort of series of seemingly random draws just as a uniform random variable,
+[ 1990.46s ->  1993.62s] or I should say a standard uniform random variable appears.
+[ 1993.62s ->  1997.78s] So, this is just one, this is also just one PRNG.
+[ 1998.16s ->  2004.16s] I know we said that the inverse transform method is but one way to generate a random variable.
+[ 2004.72s ->  2007.74s] Moreover, this is just one way to generate an LCG.
+[ 2008.40s ->  2009.18s] What is good?
+[ 2009.26s ->  2009.80s] What is bad?
+[ 2009.88s ->  2010.32s] What is better?
+[ 2010.42s ->  2010.94s] What is worse?
+[ 2011.58s ->  2012.10s] Arbitrary.
+[ 2012.50s ->  2013.86s] Depends on the metrics you assign.
+[ 2014.12s ->  2016.56s] Is reproducibility a priority?
+[ 2017.20s ->  2019.08s] Is randomness a priority?
+[ 2019.48s ->  2021.20s] Is efficiency a priority?
+[ 2021.20s ->  2026.24s] It's, again, a little bit arbitrary depending on the context of your application.
+[ 2026.92s ->  2032.56s] So, for here, just to try to, you know, get rid of as much hand-waviness as we possibly can,
+[ 2032.88s ->  2039.92s] here's one way of generating from a standard uniform distribution for use in the inverse transform method.
+[ 2040.06s ->  2041.66s] That is this LCG.
+[ 2042.24s ->  2046.06s] And then there is a lot of theory behind choosing these constants as well.
+[ 2046.14s ->  2047.54s] So, it's not like you're just in the dark.
+[ 2047.62s ->  2048.56s] Pick one, two, and three.
+[ 2048.56s ->  2051.26s] Typically, they're very large numbers.
+[ 2051.88s ->  2054.96s] That is for M, at least.
+[ 2055.50s ->  2064.64s] So, now that we have this idea of a way to generate a standard uniform draw, we can go back to what we learned on the iPad, right?
+[ 2064.68s ->  2074.58s] So, we saw that to generate a particular output, what we're going to do is we're going to find the cumulative distribution function, invert it, draw from a standard uniform random variable.
+[ 2074.58s ->  2080.14s] This will give me some sort of number between zero and one, and notice how they all have roughly the same probability.
+[ 2080.54s ->  2081.40s] That's the whole point.
+[ 2082.18s ->  2087.74s] Then, we could take that outcome and map it to an item in our original sample space.
+[ 2087.74s ->  2092.70s] So, this is that algorithm that I had, you know, the four steps that I wrote out on the iPad here.
+[ 2092.78s ->  2096.26s] As we're starting with, the order here is, again, doesn't really matter.
+[ 2096.36s ->  2101.86s] But you're starting with some sort of uniform draw from a standard uniform distribution.
+[ 2102.44s ->  2104.88s] You're going to define the target distribution CDF.
+[ 2104.88s ->  2106.80s] So, we said it was a dice roll.
+[ 2107.12s ->  2112.42s] Then, we're going to invert that to obtain the inverse CDF, which I said was G.
+[ 2113.10s ->  2115.60s] And we're going to transform the uniform random variable.
+[ 2116.38s ->  2118.92s] And then, we're going to get the outcome that we're looking for.
+[ 2119.24s ->  2124.58s] So, essentially, we're turning a number between zero and one into the outcome that we're looking for.
+[ 2124.66s ->  2126.90s] So, I can map 0.5 to three.
+[ 2127.32s ->  2130.04s] I can map zero to something else.
+[ 2130.12s ->  2134.00s] Maybe that's one in the context of our dice roll, so on and so forth.
+[ 2134.00s ->  2139.48s] So, this is how we can actually generate outcomes from a discrete probability mass function
+[ 2139.48s ->  2142.14s] or even a continuous probability density function.
+[ 2142.48s ->  2144.64s] It just needs to be invertible, that CDF.
+[ 2144.96s ->  2148.26s] That is the criteria here that we are looking for.
+[ 2149.46s ->  2150.48s] So, here's our dice roll.
+[ 2151.38s ->  2154.02s] We have X instead of A.
+[ 2154.10s ->  2157.42s] So, we're just saying, you know, if X is 1, 2, 3, 4, 5, or 6,
+[ 2157.60s ->  2161.24s] then there's a 1 6th probability of that occurring, 0 otherwise.
+[ 2161.24s ->  2166.44s] And then, this is that iterative way of doing it that I said was a little more compact
+[ 2166.44s ->  2172.76s] than just drawing out each of the, you know, each of the ranges that we drew on the chart.
+[ 2173.02s ->  2175.38s] So, if this doesn't make any sense, you can disregard this.
+[ 2175.46s ->  2178.86s] But if you want to write it in a more compact fashion, here's one way to do so.
+[ 2179.32s ->  2182.66s] You can also do it with a summation in the context of the PMF.
+[ 2182.66s ->  2185.36s] But this is just the cumulative distribution function.
+[ 2187.12s ->  2187.32s] Okay.
+[ 2187.58s ->  2193.06s] So, we notice that when X is less than 1, that's the same as the negative infinity to 1.
+[ 2193.30s ->  2195.34s] We don't have any probability mass.
+[ 2195.46s ->  2196.34s] Go back to that chart.
+[ 2196.56s ->  2199.40s] You know, you could see that there was no accumulated probability mass.
+[ 2199.64s ->  2201.98s] Once we get to 1, we get 1 6th.
+[ 2201.98s ->  2203.76s] We get to 2, we get to 2 6th.
+[ 2203.80s ->  2204.94s] 3, we get to 3 6th.
+[ 2204.96s ->  2205.86s] So on and so forth.
+[ 2206.20s ->  2208.64s] Once we get to 6, all the way to infinity,
+[ 2208.64s ->  2212.66s] we have accumulated all possible probability mass, and that's it.
+[ 2214.88s ->  2215.24s] Okay.
+[ 2217.82s ->  2222.38s] So, here is a way to apply the inverse transform method
+[ 2222.38s ->  2228.46s] to the discrete random variable that is a dice rule,
+[ 2228.54s ->  2229.94s] the discrete uniform random variable.
+[ 2230.26s ->  2233.26s] So, we have our die faces right here, 1 through 6th.
+[ 2233.26s ->  2237.24s] And we have the corresponding probabilities right here.
+[ 2239.67s ->  2243.45s] So, we're going to first calculate the cumulative sum
+[ 2243.45s ->  2247.71s] of the probabilities, and that is going to be that 1 6th,
+[ 2247.95s ->  2250.37s] the 2 6th, 3 6th, 4 6th, 5 6th.
+[ 2250.39s ->  2251.45s] So, that's all we're doing here,
+[ 2251.85s ->  2253.69s] is we're calculating that cumulative sum.
+[ 2254.25s ->  2256.93s] Then what we're going to do is we are going to draw,
+[ 2257.17s ->  2260.09s] and this is more of a vectorized way of doing it
+[ 2260.09s ->  2263.01s] in the sense that what we're doing here is we're drawing n samples.
+[ 2263.65s ->  2265.91s] But let's just walk through this algorithm once
+[ 2265.91s ->  2267.55s] as if we're just drawing one sample.
+[ 2268.01s ->  2270.01s] So, we draw a uniform sample.
+[ 2270.25s ->  2272.35s] We pick our number between 0 and 1.
+[ 2272.35s ->  2275.89s] We're going to create a list to keep track of all of the outcomes
+[ 2275.89s ->  2276.91s] for our dice roll.
+[ 2277.45s ->  2278.83s] Then we're going to say,
+[ 2279.41s ->  2282.19s] we're going to do a search sorted CDF and U.
+[ 2283.15s ->  2286.25s] And then we're going to append the generated sample
+[ 2286.25s ->  2289.77s] to the generated samples list.
+[ 2290.11s ->  2292.41s] And then we're going to return the list of generated samples.
+[ 2292.41s ->  2295.23s] So, this is what we're doing here,
+[ 2295.33s ->  2298.21s] is we're taking that CDF list,
+[ 2299.53s ->  2302.75s] that is this CDF here, the cumulative probabilities,
+[ 2303.15s ->  2305.49s] and we're saying, given this value U,
+[ 2306.05s ->  2312.05s] I want you to find the corresponding index of that probability.
+[ 2312.59s ->  2316.65s] So, if you recall, when we pulled that 0.5 out of the hat,
+[ 2316.65s ->  2320.75s] we landed between 3 and 4.
+[ 2321.21s ->  2326.40s] But we know that the 4 didn't contribute to the jump in probability mass.
+[ 2326.52s ->  2327.20s] The 3 did.
+[ 2327.44s ->  2331.08s] So, because we landed on that interval of 0.5,
+[ 2331.36s ->  2334.36s] we know that the outcome that we're looking for is 3.
+[ 2334.58s ->  2336.68s] So, that's what this search sorted does here,
+[ 2336.68s ->  2344.11s] is we're saying, find the index of the drawn probability between 0 and 1
+[ 2344.11s ->  2346.77s] in the context of our cumulative distribution function.
+[ 2347.39s ->  2351.13s] And then we're going to append the corresponding value here.
+[ 2351.59s ->  2358.41s] We're going to do that n times,
+[ 2358.55s ->  2360.77s] so we can roll as many dice as we'd like.
+[ 2360.99s ->  2362.93s] And then we're going to get a distribution
+[ 2362.93s ->  2369.11s] that maps each outcome to its correct probability mass.
+[ 2369.11s ->  2370.95s] And you can see down here,
+[ 2371.33s ->  2377.95s] everything has roughly a 1 6th probability of occurring after 10,000 rolls.
+[ 2378.15s ->  2379.77s] If we were to run this again and again,
+[ 2379.85s ->  2381.73s] we're going to get different outcomes, of course,
+[ 2381.83s ->  2383.57s] because it is random.
+[ 2384.17s ->  2386.05s] But nevertheless, you can see that it's following
+[ 2386.05s ->  2389.55s] the correct structure of its probability mass function.
+[ 2390.47s ->  2390.63s] Okay.
+[ 2390.95s ->  2395.95s] So, this right here is just one way to write the inverse transform method.
+[ 2396.07s ->  2398.17s] You can see this loop here is actually iterating
+[ 2398.17s ->  2399.81s] through all of the uniform samples.
+[ 2400.09s ->  2403.81s] There is another way to do this using a while loop
+[ 2403.81s ->  2406.83s] and accumulating probability mass across the space.
+[ 2407.05s ->  2408.65s] That would look something like this.
+[ 2408.71s ->  2410.31s] I'd say def IVT.
+[ 2411.89s ->  2415.65s] And then I would say the current probability mass
+[ 2415.65s ->  2417.61s] is F is equal to 0.
+[ 2418.15s ->  2420.31s] Then we are going to accumulate a probability
+[ 2420.31s ->  2423.23s] of 1 6th each time.
+[ 2423.23s ->  2426.49s] And the current outcome is going to be, say, 1.
+[ 2426.85s ->  2430.27s] And I'll say we need to draw a U as well.
+[ 2430.39s ->  2434.25s] So, U is equal to MP.random.uniform.
+[ 2435.19s ->  2436.69s] And then we'll say 0 to 1.
+[ 2437.94s ->  2438.92s] And then we'll say,
+[ 2439.58s ->  2447.35s] while F or while U is greater than or equal to F,
+[ 2447.35s ->  2456.47s] then we are going to increment the probability mass by 1 6th.
+[ 2456.47s ->  2458.97s] So, we'll say F plus equals P.
+[ 2459.59s ->  2462.17s] And then we'll say A plus equals 1.
+[ 2462.17s ->  2469.94s] And then we will return A when this is all done.
+[ 2472.58s ->  2474.98s] So, what's going to happen here is each round,
+[ 2475.64s ->  2478.58s] let's just see if I flip this inequality by accident.
+[ 2478.74s ->  2480.82s] So, the CDF is going to start at 0.
+[ 2481.30s ->  2483.96s] We've accumulated no probability mass thus far.
+[ 2484.62s ->  2493.98s] And if we draw something that is below the current threshold,
+[ 2493.98s ->  2496.30s] so, this has to start at 1 6th.
+[ 2498.57s ->  2499.97s] So, we start at 1 6th.
+[ 2499.97s ->  2502.07s] If we draw something that is below,
+[ 2504.64s ->  2506.92s] yeah, while U is less than F,
+[ 2507.56s ->  2509.18s] otherwise return A.
+[ 2509.22s ->  2510.24s] Yeah, that seems about right.
+[ 2510.50s ->  2511.98s] So, we start at 1 6th.
+[ 2512.26s ->  2515.70s] We're going to accumulate probability in increments of 1 6th.
+[ 2516.00s ->  2517.46s] And if this is a function,
+[ 2518.06s ->  2521.94s] so, this is fixed because we have a discrete uniform random variable.
+[ 2522.38s ->  2523.68s] But if this is a function,
+[ 2523.68s ->  2527.48s] then we can very easily just write this as a function of what?
+[ 2527.82s ->  2528.90s] As a function of A.
+[ 2529.04s ->  2529.94s] This is our input.
+[ 2530.46s ->  2533.58s] So, even if this is not discrete uniform,
+[ 2533.82s ->  2534.70s] let's say it's geometric,
+[ 2535.18s ->  2537.56s] let's say it's something else altogether,
+[ 2537.74s ->  2539.94s] binomial, whatever it may be,
+[ 2540.16s ->  2542.78s] you can still do this inverse transform method.
+[ 2542.96s ->  2546.06s] Instead of it being a fixed probability that's being accumulated,
+[ 2546.28s ->  2548.88s] it's just a functional probability that's being accumulated.
+[ 2549.68s ->  2551.94s] We'll draw a number between 0 and 1.
+[ 2551.94s ->  2553.86s] Let's say we draw 0.
+[ 2554.62s ->  2557.90s] Well, 0 is going to be less than F.
+[ 2558.02s ->  2561.28s] So, we want to say while it's greater than here.
+[ 2561.86s ->  2563.26s] I believe this is correct.
+[ 2566.93s ->  2569.29s] While U is greater than F,
+[ 2570.72s ->  2575.76s] we're going to draw F plus equals P,
+[ 2575.92s ->  2577.50s] A plus equals 1.
+[ 2590.69s ->  2592.55s] That was a very easy way to test this.
+[ 2592.59s ->  2593.27s] Let's just try it.
+[ 2593.27s ->  2606.24s] 1, 2, 3, 2, 5.
+[ 2607.14s ->  2607.48s] All right.
+[ 2607.74s ->  2608.24s] Looks good.
+[ 2608.62s ->  2610.42s] So, while U is greater than F,
+[ 2610.56s ->  2612.82s] we are going to add the probability mass to F,
+[ 2613.02s ->  2615.40s] and then we're going to increment A by 1.
+[ 2616.80s ->  2620.82s] And we know this is always going to end at 1
+[ 2620.82s ->  2625.34s] because U is never going to exceed 1.
+[ 2625.34s ->  2631.22s] So, we can see that when F accumulates enough probability mass,
+[ 2631.34s ->  2633.70s] 1, 6 plus 1, 6 plus 1, 6 plus 1, 6,
+[ 2633.78s ->  2636.48s] it gets to 1, then this loop will break
+[ 2636.48s ->  2638.58s] because this condition will no longer be true.
+[ 2638.72s ->  2640.34s] U will not be greater than F
+[ 2640.34s ->  2644.26s] because U has a 0 probability of being 1.
+[ 2645.04s ->  2648.18s] Then we will have A is equal to 6,
+[ 2648.28s ->  2649.72s] and we will produce that outcome.
+[ 2649.84s ->  2651.50s] So, this is just a different way of doing it.
+[ 2651.50s ->  2654.36s] If this way made more sense, then that's totally fair.
+[ 2654.58s ->  2656.20s] This is another way of doing it.
+[ 2656.44s ->  2660.14s] And in this way here, this is a little more dynamic
+[ 2660.14s ->  2663.24s] because if you don't have a discrete uniform random variable,
+[ 2663.46s ->  2669.02s] then you can always use a functional probability mass function here
+[ 2669.02s ->  2673.18s] to accumulate probability in your cumulative distribution function.
+[ 2673.56s ->  2677.26s] So, this way that I had written it here is a little bit more dynamic
+[ 2677.26s ->  2682.54s] because here you may not always have access to the entire CDF.
+[ 2683.00s ->  2686.50s] So, one example would be a geometric random variable, right?
+[ 2686.60s ->  2689.66s] A geometric random variable can technically go to infinity.
+[ 2690.08s ->  2691.44s] So, how do you account for that?
+[ 2691.58s ->  2693.14s] Well, you would have to use a while loop,
+[ 2693.42s ->  2697.36s] and you would accumulate probability mass according to a function.
+[ 2697.88s ->  2699.70s] So, it's not a fixed probability here,
+[ 2699.78s ->  2701.88s] but rather the probability mass function
+[ 2701.88s ->  2704.44s] that specifies the geometric random variable.
+[ 2704.44s ->  2706.48s] So, this is going to be more dynamic,
+[ 2706.94s ->  2708.32s] this function that I had just written.
+[ 2708.64s ->  2709.74s] And this is off the top of my head,
+[ 2709.80s ->  2713.40s] so I apologize for the confusion in the inequality here.
+[ 2713.48s ->  2716.10s] But yes, this is going to be correct
+[ 2716.10s ->  2719.44s] in the way of generating a probability mass function
+[ 2719.44s ->  2720.92s] in a more general setting.
+[ 2721.46s ->  2723.08s] But this is still just an implementation
+[ 2723.08s ->  2726.88s] of what we had drawn out previously on the chart.
+[ 2728.07s ->  2729.41s] So, as you can see, each outcome here
+[ 2729.41s ->  2731.37s] has the correct probability mass assignment.
+[ 2731.73s ->  2734.49s] The frequency interpretation says that everything is roughly 1-6.
+[ 2734.49s ->  2735.23s] That is great.
+[ 2735.93s ->  2738.07s] Now, in the context of a continuous distribution,
+[ 2738.41s ->  2739.71s] it's a lot easier,
+[ 2739.85s ->  2743.05s] because here you'll notice that we had to accumulate probability mass
+[ 2743.05s ->  2743.91s] in this IBT.
+[ 2744.93s ->  2746.11s] Even here, you know,
+[ 2746.17s ->  2748.53s] there is this accumulation of probability mass.
+[ 2748.65s ->  2750.85s] We're just kind of cheating using a search sorted here.
+[ 2751.75s ->  2757.09s] But if we scroll on down to the cumulative distribution function
+[ 2757.09s ->  2758.85s] for a continuous random variable,
+[ 2759.07s ->  2761.71s] you'll see that it's quite easy to implement,
+[ 2761.71s ->  2763.67s] because once you invert this CDF,
+[ 2763.99s ->  2766.03s] we have an exponential distribution here.
+[ 2767.01s ->  2770.13s] We find the cumulative distribution function by integrating.
+[ 2770.77s ->  2772.47s] Then we just invert it.
+[ 2772.55s ->  2774.95s] This is a very easily inverted equation,
+[ 2774.95s ->  2776.11s] because remember,
+[ 2776.11s ->  2779.75s] x is just what we're going to plug into the function.
+[ 2779.85s ->  2781.41s] That's our uniform random variable.
+[ 2781.93s ->  2784.43s] So, if we just swap these guys and solve,
+[ 2784.75s ->  2787.95s] then we get the inverse cumulative distribution function.
+[ 2788.53s ->  2789.41s] And this is just,
+[ 2789.65s ->  2793.33s] look, it's negative ln 1 minus u over lambda,
+[ 2793.83s ->  2797.19s] the parameter of the exponential distribution.
+[ 2797.19s ->  2803.53s] So, this is very, very, very quick relative to even the discrete case,
+[ 2803.63s ->  2805.21s] because if we scroll on down here,
+[ 2806.48s ->  2810.38s] we can see all we need to do is define the inverse CDF.
+[ 2810.68s ->  2811.90s] Then after we draw,
+[ 2812.22s ->  2815.26s] we can just plug in our draws to the inverse CDF.
+[ 2815.74s ->  2817.10s] And what you'll notice here,
+[ 2817.70s ->  2818.62s] if I run this guy,
+[ 2819.14s ->  2821.50s] you'll see that the true PDF
+[ 2821.50s ->  2826.62s] aligns with the probability mass assigned to the generated samples,
+[ 2826.62s ->  2830.36s] and that is exactly what we are looking to do, okay?
+[ 2830.78s ->  2832.80s] So, that's going to do it for this video
+[ 2832.80s ->  2835.22s] on the inverse transform method.
+[ 2835.34s ->  2836.72s] I hope you found it informative.
+[ 2837.38s ->  2839.92s] Again, my goal is to start to post
+[ 2839.92s ->  2842.50s] on a more consistent basis in 2025.
+[ 2842.80s ->  2844.64s] I want to cover a variety of different topics
+[ 2844.64s ->  2847.28s] in probability statistics,
+[ 2847.90s ->  2850.30s] mathematics, computer science,
+[ 2850.82s ->  2851.66s] quantitative finance,
+[ 2851.78s ->  2853.54s] all of these different fields.
+[ 2853.62s ->  2855.44s] These are the fields that I have the most interest in.
+[ 2855.44s ->  2857.82s] And, you know, there's been a lot of buzz
+[ 2857.82s ->  2860.76s] around the algorithmic trading videos
+[ 2860.76s ->  2862.06s] that I've posted in the past.
+[ 2862.70s ->  2863.98s] And on QuantGuild,
+[ 2864.04s ->  2866.72s] I have a whole course dedicated to algorithmic trading
+[ 2866.72s ->  2867.94s] using Alpaca's API.
+[ 2868.44s ->  2871.14s] I also have a course getting started with Python.
+[ 2871.70s ->  2873.78s] I'm considering putting together courses
+[ 2873.78s ->  2876.68s] for other APIs as well,
+[ 2876.76s ->  2877.80s] if there is interest.
+[ 2878.52s ->  2880.08s] But nevertheless, you know,
+[ 2880.10s ->  2881.38s] that's the goal for 2025.
+[ 2881.82s ->  2883.58s] Please check out QuantGuild.
+[ 2883.58s ->  2884.52s] Please check out GitHub.
+[ 2884.70s ->  2886.38s] I'm going to post this Jupyter Notebook
+[ 2886.38s ->  2888.12s] to a repository on GitHub.
+[ 2888.26s ->  2890.02s] I'll link it in the description below.
+[ 2890.84s ->  2892.48s] If you have any comments or questions,
+[ 2892.60s ->  2893.70s] please leave them down below.
+[ 2893.82s ->  2895.30s] I'll do my best to respond.
+[ 2896.36s ->  2898.24s] I'm much more active in the Discord.
+[ 2898.50s ->  2900.18s] If you ask me a question directly there,
+[ 2901.08s ->  2902.08s] it comes up on my phone.
+[ 2902.14s ->  2903.22s] It's very easy for me to see.
+[ 2903.30s ->  2906.00s] So, I'll post the link to join down there as well.
+[ 2906.00s ->  2908.42s] But other than that, it's good to be back.
+[ 2908.78s ->  2911.00s] I hope this video was, again, informative.
+[ 2911.72s ->  2914.08s] And I will see you in the next one.
+[ 2914.32s ->  2914.96s] Thanks for watching.

@@ -1,0 +1,136 @@
+[    0.28s ->     5.76s] I found a trading strategy that profited 130% in just 2 months of trading.
+[    5.76s ->    10.76s] It involves using just 2 indicators, and best of all, both of them are completely free on
+[   10.76s ->    11.76s] TradingView.
+[   11.76s ->    17.40s] This strategy is extremely easy to use, works in all markets, and it's insanely profitable.
+[   17.40s ->    21.12s] Make sure you stick around till the end of the video because I'll be sharing some secrets
+[   21.12s ->    25.42s] to make this strategy even better, and I'm going to share the backtest results to show
+[   25.42s ->    28.68s] you how it performed while taking 100 trades.
+[   28.68s ->    29.76s] Let's get straight to it.
+[   29.76s ->    33.48s] First things first, you need to get on TradingView, I'll leave a link in the description.
+[   33.48s ->    36.72s] Once you're on the chart, type in any security you want to trade with.
+[   36.72s ->    40.94s] Like I said earlier, this strategy works with basically any security, so there's really
+[   40.94s ->    42.06s] no wrong answer.
+[   42.06s ->    46.02s] For this example, I'm going to be using doge, because why not?
+[   46.02s ->    49.30s] Once you've selected what you want to trade, you're going to add the first indicator.
+[   49.30s ->    52.78s] The first indicator is the DEMA, or the double EMA.
+[   52.78s ->    57.14s] If you don't know what the double exponential moving average is, it's basically an upgraded
+[   57.14s ->    59.36s] version of the exponential moving average.
+[   59.36s ->    65.14s] It was created in 1994 and was made to give faster signals with less lag compared to the
+[   65.14s ->    66.14s] normal EMA.
+[   66.14s ->    71.26s] So the blue one is the double exponential moving average, and a normal exponential moving
+[   71.26s ->    72.86s] average is the red one.
+[   72.86s ->    77.98s] As you can see, the double exponential moving average is a lot lower and is giving entry signals
+[   77.98s ->    83.38s] a lot faster than the normal EMA, which in return is giving us a lot less lag.
+[   83.38s ->    88.38s] But you should also understand that less lag is not always a good thing.
+[   88.38s ->    93.20s] This is because lag can sometimes help filter out noise and give a higher success rate at
+[   93.20s ->    94.20s] times.
+[   94.20s ->    98.86s] But I backtested this strategy with both a double exponential moving average and a normal moving
+[   98.86s ->   103.46s] average, and the double exponential moving average performed better with this specific
+[  103.46s ->   104.46s] strategy.
+[  104.46s ->   108.86s] To have the double exponential moving average added, we have to change the settings a bit.
+[  108.86s ->   112.64s] Go to the settings of the double exponential moving average, and we want to change the
+[  112.64s ->   114.22s] length to 200.
+[  114.22s ->   118.20s] Then go to the style tab, and we're going to change it to blue just so it's a bit easier
+[  118.20s ->   119.20s] to see.
+[  119.20s ->   123.56s] The second indicator for this strategy is one that we've used on this channel before,
+[  123.56s ->   126.14s] and that is the super trend indicator.
+[  126.14s ->   129.94s] To add it, go to the indicators tab and type in super trend.
+[  129.94s ->   131.90s] Make sure to choose this one right here.
+[  131.90s ->   137.48s] Go to the settings of the super trend indicator, and make sure to change the ATR period to 12,
+[  137.48s ->   139.84s] and the ATR multiplier to 3.
+[  139.84s ->   143.70s] Now that we have the indicators added and all the settings are correct, let's get on with
+[  143.70s ->   145.42s] how to use this strategy.
+[  145.42s ->   150.18s] In this example, we're trading on the doge USD on the 15 minute time frame.
+[  150.18s ->   155.48s] The very first rule of this strategy is that we will only enter a long trade if the price
+[  155.48s ->   159.28s] is above the double exponential moving average, the blue line.
+[  159.28s ->   163.12s] If the price isn't above the blue line, we will not enter the trade.
+[  163.12s ->   168.02s] The second rule we must follow is that the super trend indicator gives a buy signal.
+[  168.02s ->   169.24s] Let me show you an example.
+[  169.24s ->   173.66s] So here, the price is above the blue line, but the super trend indicator hasn't given
+[  173.66s ->   176.06s] a buy signal yet, so we wait.
+[  176.06s ->   179.22s] After waiting some time, the super trend indicator gives a buy signal.
+[  179.22s ->   184.44s] It is also important to note that you must wait for the buy signal candle to close before
+[  184.44s ->   185.44s] entering.
+[  185.44s ->   190.40s] This candle could give a buy signal, but change before it closes, keeping it a sell signal.
+[  190.40s ->   194.64s] So make sure you only enter after the buy signal candle closes.
+[  194.64s ->   197.06s] Once the candle closes, we enter the trade.
+[  197.06s ->   201.46s] You're going to set your stop loss at the buy signal line of the super trend indicator.
+[  201.46s ->   203.54s] So for this example, right here.
+[  203.54s ->   208.82s] The coolest thing about this strategy is that we basically have infinite profit potential.
+[  208.82s ->   213.76s] Unlike my other trading strategies where you set a 1.5 or 2 profit ratio, we're going
+[  213.76s ->   216.06s] to do something different with this strategy.
+[  216.06s ->   221.06s] We are only going to sell once the super trend indicator becomes a sell signal.
+[  221.06s ->   225.06s] This is one of the reasons why this strategy is so powerful, because you're going to have
+[  225.06s ->   230.34s] some trades where there's going to be a 4.2 profit ratio or even higher.
+[  230.34s ->   235.52s] So going back to the example, we saw the price was above the 200 double exponential moving
+[  235.52s ->   238.86s] average, and the super trend indicator gave a buy signal.
+[  238.86s ->   244.38s] We then enter the trade after the candle closed and set our stop loss at the buy signal of
+[  244.38s ->   245.82s] the super trend indicator.
+[  245.82s ->   250.24s] We then wait while the price goes up for a sell signal from the super trend indicator.
+[  250.24s ->   254.10s] The super trend indicator then turns red and gives us a sell signal.
+[  254.10s ->   258.34s] This is when we exit the trade, and as you can see, we got a profitable trade.
+[  258.34s ->   260.06s] Let's do one more example.
+[  260.06s ->   262.48s] We see price just cross the blue line.
+[  262.48s ->   264.90s] We wait for a buy signal from the super trend.
+[  264.90s ->   270.72s] Once we see one, we enter, set our stop loss at the buy signal of the super trend, then wait
+[  270.72s ->   271.92s] for a sell signal.
+[  271.92s ->   274.90s] Once we see one, we exit the trade, profit.
+[  274.90s ->   276.96s] Let's go over an example for shorting.
+[  276.96s ->   281.04s] After that, I'll be sharing some secret tips for you guys to help make this strategy even
+[  281.04s ->   282.04s] more profitable.
+[  282.04s ->   286.52s] I'll also share how this strategy did while making 100 trades.
+[  286.52s ->   290.10s] So for a short trade, you're going to be doing the exact opposite.
+[  290.10s ->   294.24s] Make sure the price is below the 200 double exponential moving average.
+[  294.24s ->   296.14s] Wait for a sell signal to occur.
+[  296.14s ->   298.14s] Once it does, enter the trade.
+[  298.14s ->   302.86s] Set the stop loss at the sell signal, then stay in the trade till you see a buy signal.
+[  302.86s ->   305.20s] Once you see one, exit the trade, profit.
+[  305.20s ->   307.20s] Alright, I think you guys get the point.
+[  307.20s ->   309.42s] It's a pretty easy strategy to use.
+[  309.42s ->   314.16s] Now it's time to go over some secret tips to make this strategy even better.
+[  314.16s ->   318.88s] One tip I would recommend is for a situation like this, where the price is below the blue
+[  318.88s ->   322.84s] line, but the super trend indicator is giving a buy signal.
+[  322.84s ->   327.32s] What I'd recommend doing here is waiting for the price to cross the blue line and then
+[  327.32s ->   328.32s] entering.
+[  328.32s ->   333.60s] Rather than not going in the trade because the buy signal came before crossing the blue line,
+[  333.60s ->   337.02s] we still want to enter once the price crosses the blue line.
+[  337.02s ->   341.76s] If you only entered when the price is above the blue line, and then the super trend indicator
+[  341.76s ->   346.72s] gives a buy signal, in that order, you would miss out on a lot of opportunities like this
+[  346.72s ->   347.72s] one.
+[  347.72s ->   352.76s] Another tip for using this strategy is maybe implementing another indicator called the Fibonacci
+[  352.76s ->   353.76s] Bollinger Bands.
+[  353.76s ->   358.36s] I didn't end up backtesting this strategy with this indicator, but I did look at a couple
+[  358.36s ->   362.94s] examples and saw you would get potentially more profit if you use this indicator with this
+[  362.94s ->   363.94s] strategy.
+[  363.94s ->   367.96s] Leave it in the comments what your results were, and if this strategy was better with or
+[  367.96s ->   368.96s] without them.
+[  368.96s ->   373.46s] Because after all, I want to make this channel a community where we all help each other out.
+[  373.46s ->   377.52s] But let's get on with how to use the Fibonacci Bollinger Bands with this strategy.
+[  377.52s ->   383.88s] So all you have to do is go to the indicators tab and type in FBB for Fibonacci Bollinger Bands.
+[  383.88s ->   388.84s] Then go to the settings of the indicator and uncheck all the boxes besides the boxes with
+[  388.84s ->   390.04s] the ones.
+[  390.04s ->   393.24s] Then change the colors to red just so you can see the lines better.
+[  393.24s ->   398.04s] These lines are basically going to be acting as an absolute high and absolute low for
+[  398.04s ->   399.04s] the price.
+[  399.04s ->   403.40s] So if the price ever touches the red line, we're going to sell immediately, even if the
+[  403.40s ->   405.92s] super trend indicator still has a buy signal.
+[  405.92s ->   410.94s] If the price does ever hit the Fibonacci Bollinger Band, it usually reflects off it and goes the
+[  410.94s ->   412.52s] opposite direction.
+[  412.52s ->   417.44s] So as you can see in this example, the price hit our Bollinger Band, so we sold here, even
+[  417.44s ->   419.88s] though the super trend indicator was still green.
+[  419.88s ->   424.44s] And if we fast forward, we made more money selling here than if we sold when the super
+[  424.44s ->   426.04s] trend indicator told us to.
+[  426.04s ->   430.84s] The price will rarely hit these Fibonacci Bollinger Bands, but if it does, sell.
+[  430.84s ->   435.32s] Like I said, I didn't backtest this strategy with the Bollinger Bands, but I did check a
+[  435.32s ->   439.60s] couple examples with it and it was more profitable a majority of the time.
+[  439.60s ->   443.60s] Next, let's take a look at the backtest results for the original strategy.
+[  443.60s ->   448.16s] For this backtest, I traded both DogeUSD and LTCUSD.
+[  448.16s ->   452.44s] I did 100 trades, which took around 2.5 months.
+[  452.44s ->   458.60s] The most wins in a row I had with this strategy was 8 and the most losses in a row was 3.
+[  458.60s ->   463.84s] This stat by itself is insanely good for a trading strategy, and the trading strategy had
+[  463.84s ->   469.74s] a success rate of 60% with 60 winning trades and 40 losing trades.
+[  469.74s ->   475.12s] The total amount of gains from 100 trades was 130.14%.
+[  475.12s ->   477.56s] So yeah, this strategy was pretty good.
+[  477.56s ->   483.02s] If you want to learn how to backtest trades like this and test your own personal strategies,
+[  483.02s ->   487.76s] watch this video where I go over how to do so and backtest your strategies with years of
+[  487.76s ->   496.00s] data and trading view, so you can see just how profitable your strategies actually are.

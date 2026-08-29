@@ -1,0 +1,232 @@
+[    0.46s ->     7.50s] Hey guys, Roman here, quantitative researcher and trader, founder of QuantGuild. Whenever we go
+[    7.50s ->    13.46s] about building a model, we're going to end up with probabilities and statistics that we know
+[   13.46s ->    20.80s] are incorrect. But how incorrect they are will dictate the efficacy of our decision making
+[   20.80s ->    27.24s] in the face of uncertainty. This is one of the coolest parts about mathematical modeling. We
+[   27.24s ->    34.84s] build a model, we present it to the real world to make informed decisions, and we realize our model
+[   34.84s ->    41.92s] isn't capturing dynamics that we experience. Volatility clusters, the leverage effect, so on
+[   41.92s ->    49.78s] and so forth. So what do we do? We go back to the classroom and we build better models. This leads
+[   49.78s ->    57.08s] to better probabilities and statistics and better decision making in the face of uncertainty.
+[   57.24s ->    65.00s] The perfect example of this is the HAWKS process and its implementation in a standard jump diffusion.
+[   65.56s ->    69.40s] We're going to walk through everything from Poisson random variables to processes,
+[   70.04s ->    78.12s] inhomogeneous processes, and the application of the HAWKS process in the intensity function. Stick
+[   78.12s ->    84.36s] around, we got a lot of cool animations and mathematics to walk through today. The stochastic
+[   84.36s ->    91.16s] processes herein are typically used to model arrivals or jumps in a stock price process. And these
+[   91.16s ->    98.12s] arrivals do occur randomly, unlike my YouTube videos, which always arrive on Tuesdays and Fridays,
+[   98.12s ->   103.16s] with access to a Jupyter Notebook. This Jupyter Notebook will be linked in the description below.
+[  103.16s ->   108.12s] I'll also post it to the Quant Guild Library on GitHub, where you can find all of my Jupyter Notebooks
+[  108.12s ->   113.16s] and associated YouTube videos, along with all of the source code for my quant builds.
+[  113.16s ->   118.36s] Of course, most of the events that we're interested in modeling do not occur on a fixed
+[  118.36s ->   124.20s] schedule. This brings us to the idea of a Poisson random variable and how we may go about modeling
+[  124.20s ->   130.04s] such events. A Poisson random variable is going to allow us to model the number of rare events
+[  130.04s ->   136.20s] over a particular time interval. You can think of something like trades over a 30 minute period. You
+[  136.20s ->   143.88s] can think of the number of stock price gaps up or down over a year. The list goes on. We're going to
+[  143.88s ->   149.64s] select the Poisson random variable and a parameterization lambda. This is going to be the
+[  149.64s ->   156.52s] average event frequency over the time interval. That estimator is given by maximum likelihood estimation.
+[  156.52s ->   163.88s] There are a whole bunch of accompanying assumptions of the Poisson random variable. If you're interested
+[  163.88s ->   171.00s] in those doing a deep dive, check out my video on Poisson processes. What I have here is just a simple
+[  171.00s ->   179.80s] animation of drawing from a theoretical Poisson PMF. So here we parameterize lambda with 20. You can think
+[  179.80s ->   186.52s] of 20 as the average number of trades in this case, maybe over a 30 minute interval. And what we're
+[  186.52s ->   193.24s] going to do each frame of this animation is just draw from this distribution. And as you can see on the
+[  193.24s ->   199.88s] right here, we're constructing an empirical histogram. As we continue to draw, it's going to converge by the
+[  199.88s ->   207.24s] law of large numbers to that theoretical PMF. If we are accurately describing, accurately modeling,
+[  207.80s ->   215.08s] the behavior of trades over that 30 minute interval, then the probabilities and statistics that we derive
+[  215.08s ->   223.80s] from this distribution are going to be effective in making informed decisions. So if this is a Poisson
+[  223.80s ->   231.80s] random variable, what is a Poisson process? Well, here we're just realizing an outcome. I'm effectively
+[  231.80s ->   238.52s] just drawing from this Poisson distribution on the left, and that's going to simulate the time
+[  238.52s ->   244.92s] interval. So if this is the number of trades over a 30 minute interval, and I've parameterized the
+[  244.92s ->   250.44s] distribution with an average of 20 trades, then really every single frame of this animation,
+[  250.44s ->   256.68s] what I'm doing is I'm simulating one 30 minute interval and I'm going to have an outcome. So here,
+[  256.68s ->   262.68s] what was the outcome? This is going to be roughly 25 trades. If I go to a different frame here,
+[  262.68s ->   269.88s] maybe I get closer to 18. This is exactly what it means to draw from a Poisson random variable.
+[  270.68s ->   279.08s] But what if I want to actually experience the arrivals of each trade over that 30 minute interval?
+[  279.96s ->   286.68s] Well, this is going to bring us to the idea of a Poisson process. A Poisson process is simply going
+[  286.68s ->   293.96s] to be a stochastic process where increments are a Poisson random variable. In other words,
+[  293.96s ->   301.40s] all a stochastic process is, is a collection of random variables over time. So at each time step,
+[  301.40s ->   306.04s] you're just going to get a distribution. And in the case of a Poisson process,
+[  306.04s ->   312.84s] you're going to get a Poisson distribution or a Poisson random variable. This is going to allow
+[  312.84s ->   320.84s] us to experience the arrivals of trades every second, every minute, however we choose to discretize it,
+[  320.84s ->   328.04s] all the way up to that 30 minute interval. And we should see by the time the process is over,
+[  328.04s ->   336.44s] if we have a comparable distribution at that ending time, then we will have effectively simulated each
+[  336.44s ->   342.52s] second or minute of that 30 minute interval. So let's take a look at this animation here to see
+[  342.52s ->   350.60s] exactly what this looks like. What you're observing on the left here are the arrivals of each trade. So
+[  350.60s ->   357.40s] every single second, minute, however this is discretized, we're going to either stay the same
+[  357.40s ->   365.00s] at the same quantity of trades, or we're going to jump by however many trades have arrived at that
+[  365.00s ->   372.28s] particular time. And what you're going to observe on the right here is something that looks quite similar
+[  372.28s ->   381.32s] to the distribution that we had above. And that's because it is the exact same distribution. What
+[  381.32s ->   389.40s] I've done here is I've parameterized this Poisson process with the same lambda as the one above. So
+[  389.40s ->   396.84s] we're still modeling trades over a 30 minute interval. The only difference is now I've taken that lambda
+[  396.84s ->   403.88s] parameter and I've scaled it with respect to time. So we can actually observe the Poisson process over
+[  403.88s ->   412.44s] time for each step in this stochastic process. And eventually when we get to the terminal time,
+[  412.44s ->   419.80s] then we're at the 30 minutes. And at 30 minutes, we should see what? An average of roughly 20 trades.
+[  420.44s ->   429.16s] We get the exact same distribution at this terminal time here as we did above when we just modeled the
+[  429.16s ->   437.96s] 30 minutes directly. The difference here is now we actually have paths. We can actually see when trades
+[  437.96s ->   446.84s] arrived over that 30 minute interval. But of course, there are going to be some accompanying assumptions.
+[  446.84s ->   453.32s] One of the stronger assumptions that we're making within this simulation is that that lambda that
+[  453.32s ->   460.12s] we're parameterizing that 30 minute interval with is going to be constant throughout the entire 30 minute
+[  460.12s ->   469.40s] interval. This is likely not the case in practice. Think about maybe the 30 minute interval at market open
+[  469.40s ->   476.76s] relative to the 30 minute interval during a slow afternoon. Clearly, the lambdas are going to be
+[  477.32s ->   483.24s] different. We should treat them as effectively different intensities, right? Trades are going to
+[  483.24s ->   489.96s] arrive with completely different frequencies at market open than they would in a slow afternoon.
+[  490.52s ->   496.60s] So this brings us to the idea of an inhomogeneous, specifically a time inhomogeneous,
+[  496.60s ->   503.48s] Poisson process. It sounds very fancy. And you can see we have this integral of now a lambda function.
+[  504.12s ->   510.44s] But it's actually quite simple. All we're doing is we're saying, hey, lambda is no longer going to
+[  510.44s ->   516.76s] be constant, we're going to make it a function of time. And I have a great animation here to show you
+[  516.76s ->   524.36s] exactly what this looks like. So on the left, we're going to start with a relatively slow process. Maybe it's
+[  524.36s ->   532.28s] early afternoon, everything has slowed down. And then at time 50, in this simulation, everything is
+[  532.28s ->   538.60s] going to pick up, maybe we're starting to approach market close, and people are trying to adjust their
+[  538.60s ->   544.04s] positions. So if we take a look at this animation, you'll see, okay, we have business as usual. And then
+[  544.04s ->   551.16s] the lambda, the rate parameter, the intensity is going to change. And you can see the arrivals occur
+[  551.16s ->   558.52s] at a completely different rate. And you're observing effectively here, two entirely different
+[  558.52s ->   568.04s] distributions over time, you're observing one rate parameter up to time 50, and another past time 50.
+[  568.04s ->   573.08s] And that is exactly what you're seeing in the distribution on the right, we start with that
+[  573.08s ->   580.84s] relatively standard green distribution that we had above. And then everything changes, we now have
+[  580.84s ->   590.52s] a more active, a higher frequency, a stronger intensity in our arrivals. And that's because here,
+[  590.52s ->   596.36s] we're modeling the arrivals as simply just a piecewise function, we're going to start with point two,
+[  596.36s ->   601.56s] and then we're going to go to point eight, this is what it means to be time and homogeneous,
+[  601.56s ->   607.56s] we are no longer independent of time with our arrivals. What this looks like is we have
+[  608.12s ->   615.48s] just simply point two, until time 50, then we jump to point eight, it's very important to understand
+[  615.48s ->   623.64s] in this animation here, this is actually the rate parameter of our Poisson process of each Poisson
+[  623.64s ->   632.92s] increments. This is going to dictate the intensity of the distribution at each step. So here,
+[  633.96s ->   640.68s] what is our intensity? Well, our intensity is going to be point two relative to our time increment.
+[  640.68s ->   647.24s] What about here? It's going to be point eight relative to our time increment. So that is what we're
+[  647.24s ->   654.52s] visualizing here. Effectively at time 50, when we jump from point two to point eight, you can see the
+[  654.52s ->   664.76s] impact in the Poisson process, you're seeing a much faster, much more intense arrival rate after time
+[  664.76s ->   671.96s] 50. Though lambda isn't constant, and it's now a function of time, we're still dealing with a Poisson
+[  671.96s ->   679.16s] distribution at any time index within our Poisson process, even if it's time inhomogeneous. The only
+[  679.16s ->   687.64s] difference is the parameterization for the increment is going to be the rate accumulated, integrated over
+[  687.64s ->   693.96s] the intensity function. As you see here, if you're unfamiliar with these ideas, and you're looking for
+[  693.96s ->   702.20s] a place to master your quantitative skills for trading and market making roles, check out quantguild.com.
+[  702.20s ->   706.68s] Maybe you come from a background in business economics, computer science, and aren't too sure
+[  706.68s ->   712.20s] where to get started on your quant journey. Maybe you're an aspiring quant or a working professional
+[  712.20s ->   718.68s] looking to sharpen those technical skills or pivot into the quant space. In any case, quantguild is for
+[  718.68s ->   724.52s] you. We have over 90 quant lessons in math, probability, finance, an adaptive practice
+[  724.52s ->   730.60s] engine that scales with your skill level so you can progress to more and more difficult topics with
+[  730.60s ->   741.00s] gamified rank-based progress. Over 100 hours of lecture content, topics that you would find in a
+[  741.00s ->   748.28s] master's in financial engineering program, but for a fraction of the price. If you're looking for a
+[  748.28s ->   756.12s] place to master your quantitative skills, check out quantguild.com. Back to our time in homogeneous
+[  756.12s ->   763.88s] Poisson process example here, we're certainly modeling reality in a more effective way. If we think back to
+[  763.88s ->   773.32s] our Poisson process, fixing a rate for lambda doesn't make much sense. We think back to trade arrivals over
+[  773.32s ->   778.84s] a 30-minute interval at market open versus 1 o'clock in the afternoon, clearly they're not going to have
+[  778.84s ->   785.00s] the same lambda and we don't just want to average the parameter choice over those disjoint time
+[  785.00s ->   792.36s] intervals. So what do we do? We can effectively make lambda a function of time. We can change it at 9.30
+[  792.36s ->   799.00s] and change it at 1 o'clock in the afternoon and model the frequency differently. That's certainly going to
+[  799.00s ->   806.28s] yield more effective probabilities and statistics, but there's still a dynamic here, one that is very
+[  806.28s ->   815.00s] prominent in the financial markets, that we are missing. And that is of this market crash behavior,
+[  815.00s ->   823.48s] this notion of volatility clustering. I've long used the example of boats on a lake to explain the idea of
+[  823.48s ->   828.84s] volatility clustering and volatility as a mean reverting process without even diving into
+[  828.84s ->   834.76s] physics and the notion of entropy. Think about a glass lake. You have dozens of boats on it,
+[  834.76s ->   842.60s] it's extremely calm, and a boat starts to drive away. It starts to make the water a little choppy,
+[  842.60s ->   849.56s] then another one drives away. Why are those two boats driving away? Then another one. Now I'm driving away,
+[  849.56s ->   856.20s] and that glass lake has just become incredibly choppy, but it's not going to stay that way
+[  856.20s ->   862.44s] forever. Eventually, it's going to go back to a flat, calm, beautiful glass lake. And that perfectly,
+[  863.24s ->   871.96s] perfectly illustrates volatility dynamics. That is why it's a mean reverting process. It takes effort,
+[  871.96s ->   877.08s] energy, input to produce the deviation from expectation. But eventually,
+[  877.08s ->   883.48s] the deviation from expectation either just becomes the new expectation, or everything goes back to
+[  883.48s ->   892.76s] business as usual. It goes back to a flat, calm lake. We're not capturing those dynamics in a time
+[  892.76s ->   900.60s] in homogeneous Poisson process. Effectively, the rate parameter is now just a function of time,
+[  900.60s ->   906.76s] but we want to make it a function of activity. When there's an increase in activity,
+[  907.32s ->   915.80s] that should lead to an increase in the likelihood of more activity. This is exactly what the Hawks
+[  915.80s ->   923.40s] process accomplishes. The Hawks process is a generalization of a Poisson process that allows
+[  923.40s ->   930.92s] the intensity function, which is time-dependent, to be self-exciting, capturing these volatility
+[  930.92s ->   938.20s] clustering dynamics. Effectively, what you're observing here is, for the Hawks process itself,
+[  938.20s ->   944.92s] the rate parameter function over time. I only have three paths here, but you can see the behavior.
+[  944.92s ->   952.04s] Effectively, it can spike, and then that spike is going to influence further spikes until it decays back
+[  952.04s ->   961.64s] down to a baseline rate. When we actually observe the counting process that is a consequence of this
+[  961.64s ->   969.56s] underlying self-exciting behavior, we can see over time that the jump process is going to have
+[  970.12s ->   978.28s] increasing arrivals during periods of self-excitement, and then it's going to revert back to a baseline.
+[  978.28s ->   986.76s] This perfectly captures that notion of contagion and volatility clustering. Spikes influence later
+[  986.76s ->   990.84s] spikes until decaying back down to a baseline rate.
+[  990.84s ->  1000.36s] This animation perfectly captures this idea. We can see that the purple process is going to be accumulating
+[ 1000.36s ->  1007.96s] at a relatively standard baseline rate until there is a massive jump in that intensity function, and we
+[ 1007.96s ->  1015.24s] can see that that initial jump influenced another jump and another, and that counting process is seeing
+[ 1015.24s ->  1022.92s] an increasing number of arrivals. This is consistent, again, with the notion of volatility clustering.
+[ 1022.92s ->  1029.88s] This spike created another one, which created another one. More and more boats are driving off the lake.
+[ 1029.88s ->  1036.92s] More and more people are going to sell off or manage their risk, and we're seeing the impact in the arrival
+[ 1036.92s ->  1045.08s] process above until everything decays back down to a baseline rate, and we have then arrivals
+[ 1045.24s ->  1053.48s] as expected, as usual, according to whatever our baseline rate is. To accomplish this behavior,
+[ 1053.48s ->  1060.36s] the Hawks process isn't all that different from our time inhomogeneous example above. The only difference
+[ 1060.36s ->  1067.88s] is the intensity function that is time dependent is going to be a process. It's going to be a path
+[ 1067.88s ->  1077.88s] dependent process. This can make estimating parameters difficult and computation extremely inefficient.
+[ 1077.88s ->  1086.84s] In any case, the intensity function here is going to be defined by a baseline rate mu and a triggering
+[ 1086.84s ->  1095.16s] kernel that is going to dictate the influence of past events on the current intensity, which is
+[ 1095.16s ->  1103.16s] exactly the behavior you're seeing here in the rate parameter over time. That is how we are effectively
+[ 1103.16s ->  1110.44s] capturing those clustering dynamics. So, what's the point? Well, remember, our objective whenever we
+[ 1110.44s ->  1118.84s] build a model is to derive probabilities and statistics to make optimal informed decisions in the face of
+[ 1118.84s ->  1125.56s] uncertainty. And if we're not capturing the dynamics that we experience in the real world, then we're
+[ 1125.56s ->  1134.12s] going to be making decisions based on probabilities and statistics that are more incorrect than they have
+[ 1134.12s ->  1141.48s] to be. And that is exactly what I'm trying to illustrate here with this example using the Hawks
+[ 1141.48s ->  1146.76s] process. There are a variety of different applications in pricing, risk modeling, volatility forecasting,
+[ 1146.76s ->  1152.92s] but I want to talk about an idea that I've discussed at length on this channel, the notion of excess
+[ 1152.92s ->  1162.52s] kurtosis and time varying return distributions. This is directly related to our ability to model and
+[ 1162.52s ->  1169.88s] interpret different states of the world. Jump diffusion models were introduced to model these excess
+[ 1169.88s ->  1176.12s] kurtosis dynamics. Effectively, if we just fit a normal distribution to returns,
+[ 1176.12s ->  1182.20s] we're going to be severely underestimating tail risk. Okay, well, the jump diffusion model does a pretty
+[ 1182.20s ->  1188.84s] darn good job of introducing that tail risk. If we parameterize a standard jump diffusion model and we
+[ 1188.84s ->  1194.76s] observe the returns, then we're going to see that excess kurtosis effect. But what's the problem
+[ 1194.76s ->  1201.00s] with the standard jump diffusion? Well, it's not capturing that contagion effect. The boats on the lake,
+[ 1201.00s ->  1211.88s] the sell off after a massive gap down, an intensity influences another intensity. So it may capture excess
+[ 1211.88s ->  1218.76s] kurtosis, but it's missing that contagion effect. And I have a great animation here to show you exactly
+[ 1218.76s ->  1227.40s] what this looks like. On the top here, you're going to observe a standard jump diffusion process. We're going to be
+[ 1227.40s ->  1234.92s] simulating stock returns. We have our Poisson process embedded into that stochastic differential equation and
+[ 1234.92s ->  1242.20s] you're observing some excess kurtosis. This is exactly the intention of including jumps within that process.
+[ 1242.20s ->  1251.48s] But what's the problem? We're not observing clusters. Jumps don't influence other jumps. That's a standard
+[ 1251.48s ->  1258.60s] jump diffusion. But if we look at a hawk's jump diffusion, we can see that shocks are reasonably
+[ 1258.60s ->  1266.44s] clustered. This is a product of that triggering kernel capturing the contagion effect. Boats on a lake
+[ 1267.08s ->  1277.16s] selling off after a gap down. And you can observe even more excess kurtosis in this return distribution.
+[ 1277.16s ->  1283.08s] What is the impact of this on our probability and statistics? Well, one of the first things that
+[ 1283.08s ->  1288.84s] students tend to do when they learn about excess kurtosis is they say, okay, well, what is a
+[ 1288.84s ->  1294.84s] distribution that can fit the returns then to provide better probabilities and statistics? This is
+[ 1295.48s ->  1300.60s] misunderstood. I highly recommend you check out my video on non-stationarity
+[ 1300.60s ->  1309.88s] and why model timing fails to understand this idea. Distributions are not constant over time. That is exactly
+[ 1309.88s ->  1317.64s] what we're simulating with this hawk's jump diffusion. Moreover, we're capturing those volatility clustering
+[ 1317.64s ->  1327.00s] dynamics. And what I have here is an example of the impact on our probabilities and statistics. On the left here,
+[ 1327.00s ->  1333.00s] you're going to see just a standard jump diffusion. On the right, a hawk's jump diffusion. And what I've done
+[ 1333.00s ->  1341.64s] is I've fit a normal distribution to each of these returns. And I'm looking at now the probability of a
+[ 1341.64s ->  1348.92s] three sigma event, a tail event. And what you're going to observe is the normal distribution is going to
+[ 1348.92s ->  1357.72s] dramatically severely underestimate the probability of this tail risk. Our models are certainly doing a
+[ 1357.72s ->  1366.04s] better job in capturing that excess kurtosis that we observe in real returns. In fact, if we look at
+[ 1366.04s ->  1376.28s] the wait time for a three sigma event in this normal distribution, it's going to be roughly a year, 370 days.
+[ 1376.28s ->  1388.28s] But our model implied wait time is actually an order of magnitude less, roughly 36 and 37 days. You're observing that
+[ 1388.28s ->  1396.28s] on the right, the hawk's jump diffusion captures even more excess kurtosis relative to a standard jump diffusion, but
+[ 1396.28s ->  1405.28s] it's also capturing that contagion effect. Both are producing more realistic probabilities and statistics for your decision
+[ 1405.28s ->  1412.28s] making in the face of uncertainty. Too long didn't watch. Here's your executive summary. Poisson random variables are used to
+[ 1412.28s ->  1419.28s] model the number of rare events over a particular time interval. But what if we want to see those events arrive over that time
+[ 1419.28s ->  1427.28s] interval? Well, we can look to a Poisson process. This is going to let us walk the path of realizing those events over that time
+[ 1427.28s ->  1435.28s] interval. At the end of that process, we should then see the same distribution as if we were just drawing from that time
+[ 1435.28s ->  1441.28s] interval itself, the original Poisson random variable. And that's exactly what we see. That's how a Poisson process is
+[ 1441.28s ->  1451.28s] defined. These processes are parameterized by a fixed average event frequency over the time interval. This is by maximum likelihood
+[ 1451.28s ->  1458.28s] estimation, but clearly in practice frequencies vary. Think about the number of trades over a 30 minute interval
+[ 1458.28s ->  1468.28s] at 930 on market open versus a slow afternoon at one o'clock. Time in homogeneous Poisson processes allow us to
+[ 1468.28s ->  1477.28s] adapt the rate parameter into an intensity function. This is going to allow us to change the intensity across time.
+[ 1477.28s ->  1486.28s] However, we choose to define it. But in reality, the intensity isn't just a function of time, but also a function of
+[ 1486.28s ->  1493.28s] itself. Think about how volatility clusters. We see a massive gap down. Do traders just sit there and say, oh, take a look
+[ 1493.28s ->  1500.28s] at that gap down. My portfolio is down 15%. No, they're going to manage their risk. They're going to sell off to intensity
+[ 1500.28s ->  1508.28s] intensity influences other intensity. Hawks processes are a stochastic process that are self exciting. This captures
+[ 1508.28s ->  1517.28s] that clustering behavior, that self contagion behavior, meaning past values will impact future values. This is
+[ 1517.28s ->  1524.28s] non Markovian. It is path dependent. There are things we can do to make it Markovian, make it appear with this
+[ 1524.28s ->  1529.28s] same self exciting behavior that is certainly beyond the scope of this video. But if there's interest,
+[ 1529.28s ->  1536.28s] would love to talk about expanding the state space, making non Markovian processes appear Markovian,
+[ 1536.28s ->  1542.28s] similar for even rough volatility models. In any case, these Hawks processes bring our models closer to
+[ 1542.28s ->  1550.28s] reality, capturing that contagion effect, the volatility clusters, the excess kurtosis, providing even more
+[ 1550.28s ->  1556.28s] accurate modeling relative to just a standard jump diffusion that only captures excess kurtosis,
+[ 1556.28s ->  1563.28s] not this clustering or contagion effect, some future topics, technical videos, and other discussions to
+[ 1563.28s ->  1569.28s] look forward to. I would love to continue with this notion of a jump diffusion model. We've talked about
+[ 1569.28s ->  1575.28s] Poisson processes. Now the Hawks process, I'd love to get into the actual dynamics and mathematics of these.
+[ 1575.28s ->  1581.28s] If there's interest, certainly more technical videos. I'd also like to cover explicitly Merton,
+[ 1581.28s ->  1587.28s] Bates, maybe the application of the Hawks process to each of these individually. If there's interest,
+[ 1587.28s ->  1592.28s] certainly let me know in the comments below. I'd also like to get back to more qualitative videos.
+[ 1592.28s ->  1599.28s] Again, this will largely be based on interest. My first year as a quant, why hedge funds are actually secretive
+[ 1599.28s ->  1605.28s] from my experience consulting with them, non-Markovian models, rough path theory,
+[ 1605.28s ->  1611.28s] sig vol models, calibration and pricing, more of the frontier of the academic literature. These are going
+[ 1611.28s ->  1619.28s] to serve a very, very small niche audience, but I would still love to discuss them. If you are a fan of
+[ 1619.28s ->  1625.28s] those more technical topics, please let me know in the comments below. I'm always looking for excuses to make videos
+[ 1625.28s ->  1633.28s] on them. And don't worry, I haven't forgotten about our quant builds. I have this idea now of a live Kalman filter
+[ 1633.28s ->  1641.28s] application that we can build with Python and Interactive Brokers API to see the filter operate in real time,
+[ 1641.28s ->  1647.28s] just like you would on a Bloomberg terminal. If you haven't heard about the Kalman filter, I recently produced a video
+[ 1647.28s ->  1653.28s] on that topic. Highly recommend you check that out. Be on the lookout for that live Kalman filter
+[ 1653.28s ->  1659.28s] builds in the near future. And that's going to do it for this video on the Hawks process for Quant Finance.
+[ 1659.28s ->  1664.28s] I hope you enjoyed. I hope you learned something. This video certainly took a tremendous effort to put together.
+[ 1664.28s ->  1669.28s] So if you enjoyed it and you want to see more like it in the future, please like comment, subscribe, share.
+[ 1669.28s ->  1677.28s] It helps me out tremendously. It is always greatly appreciated. Check out QuantGuild.com to master your
+[ 1677.28s ->  1683.28s] quantitative skills for trading and market making roles. Other than that, I want to thank you so much
+[ 1683.28s ->  1687.28s] for watching and I will see you in the next video.

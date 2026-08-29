@@ -1,0 +1,365 @@
+[    0.46s ->     9.35s] We're back. Welcome back. In this video, we're going to talk about applied statistics.
+[    9.35s ->    16.39s] You know, most of the time in the quant world, quant funds, hedge funds, however you want to
+[   16.39s ->    23.47s] classify different firms, banks, a lot of quant roles aren't actually concerned with your ability
+[   23.47s ->    30.95s] to conduct research or trade. Really, they just want to see that you have the capacity to answer
+[   30.95s ->    37.03s] a whole bunch of probability puzzles and games that is, of course, you know, you can figure
+[   37.03s ->    42.53s] stuff out on the fly in a fast-paced environment. Whether or not that's productive for screening
+[   42.53s ->    48.17s] candidates is beyond the skip of this video. I'm going to show you how we can apply some
+[   48.17s ->    56.17s] statistics to extract, say, a meaningful parameter for a particular unknown distribution. In this
+[   56.17s ->    61.77s] case, we're going to be looking at the population mean. We're going to use the law of large numbers
+[   61.77s ->    67.33s] and central limit theorem. And this is going to go beyond your business analytics class.
+[   67.33s ->    72.79s] This ain't your freshman year, sophomore year business analytics class at university. No, no,
+[   72.79s ->    79.73s] no. We're going to talk about what it means to simulate each of these draws from some unknown
+[   79.73s ->    83.73s] distribution. And we're going to apply the central limit theorem. So if you're still watching,
+[   83.73s ->    90.29s] hang with me and you're going to be ahead of the curve. If you're not interested, then go watch some
+[   90.29s ->    96.93s] of my other videos or buy my courses or something. All right. So for starters, let's just quickly go
+[   96.93s ->   109.25s] ahead and import numpy as mp. We'll import scipy.stats as scs. Import matplotlib.pyplot as plt.
+[  109.25s ->   117.32s] Okay. All right. So now what we're going to do is we are going to go ahead and use a standard uniform
+[  117.32s ->   124.68s] distribution as an example to talk about what's going on here. And then after that, we're going to
+[  124.68s ->   131.00s] apply the concept that I'm going to illustrate here. But in that case, I'm going to apply it to a
+[  131.00s ->   137.30s] different problem. All right. So we're going to approximate a parameter. All right. So let's go ahead
+[  137.30s ->   142.34s] and say that, you know, I have D and this is going to be a random vector. We're going to use a uniform
+[  142.34s ->   148.02s] distribution. And let's just go ahead and use a standard uniform distribution. Okay. So this is going to
+[  148.02s ->   152.90s] create one draw from the standard uniform distribution, right? I can keep doing this.
+[  152.90s ->   158.90s] Each draw has equal probability such it's a flat line, right? If we were to go ahead and draw
+[  159.62s ->   165.22s] the probability density function, it would just be a flat line. You know, if we wanted to,
+[  165.22s ->   175.46s] we could even define it with latex. I would say f of x is equal to, and then I would have,
+[  175.46s ->   181.06s] I'm not going to do the piecewise. I'm just going to do fraction fraction. We're going to say this is
+[  181.06s ->   190.42s] one over beta minus alpha, right? So beta minus alpha. So it's parameterized by beta and alpha,
+[  191.06s ->   204.52s] x in u alpha beta. And then that is going to be for any x that is going to be between alpha and beta.
+[  204.52s ->   212.71s] So I'll have less than or equal to x and then less than or equal to beta. Okay. And this is going to
+[  212.71s ->   218.07s] render just on frame so you can see it here. And then it's going to be zero elsewise, other where,
+[  218.07s ->   223.19s] anywhere else. Okay. This is a standard uniform distribution. So if we go ahead and we were to
+[  223.19s ->   230.31s] plug in zero and one, we would get one and that's for the entire case here. As it would turn out,
+[  230.31s ->   243.43s] rate the expectation. So we'll do e of let's say x, this is going to be equal to alpha plus beta,
+[  243.43s ->   250.05s] right? And that's pretty simple. It's the start point plus the end point divided by two. Okay.
+[  251.62s ->   255.22s] And that shouldn't be a surprise to anyone. If we have, you know, equal probability of selecting a
+[  255.22s ->   258.34s] number between zero and one, we're just going to add the start at the end divided by two.
+[  258.34s ->   280.52s] Okay. The variance we can get as the expectation of x squared minus the expectation of x squared.
+[  281.16s ->   287.92s] Okay. Don't get that confused. It's e number x here. Okay. I'm not going to go ahead and actually
+[  287.92s ->   297.56s] work this out. This is actually just going to be equal to, if we do it, we have one 12th times
+[  298.44s ->   308.00s] beta minus alpha. Okay. Now this is if we know the distribution, right? So we can go ahead and
+[  308.00s ->   311.60s] run this and we can generate another draw, but we can also generate a series of draws,
+[  311.60s ->   316.40s] right? So I can generate 10 draws. It's going to be a vector of 10 from a standard uniform
+[  316.40s ->   322.64s] distribution here. Okay. Now we know that the expectation is defined as such and the variance
+[  322.64s ->   329.68s] is defined as such. But you know, if we actually were in a practical situation, we wouldn't know
+[  329.68s ->   336.40s] the governing distribution here, right? We actually wouldn't know that. So what I want to do is quickly
+[  336.40s ->   342.96s] illustrate how we can apply the idea of the law, large number, central limit theorem to draw a conclusion
+[  342.96s ->   348.40s] about the population mean. And then we'll apply it to a problem where we can actually approximate
+[  348.40s ->   357.32s] the population mean. We draw some conclusions essentially. Okay. Alrighty. So for starters,
+[  357.32s ->   363.67s] we can go ahead and we can compute a sample average. All right. So let's say I have 10 draws
+[  363.67s ->   370.47s] from uniform distribution. I can create a sample average X bar. It's going to be MP dot mean D. Then
+[  370.47s ->   378.15s] I can also create the sample variance. All right. Now the sample variance, right? If I was to go ahead
+[  378.15s ->   387.38s] and define this here, I would have bar X is equal to, and then we're going to have one over N times
+[  388.26s ->   394.18s] the summation from I equals one all the way to N. So in this case, N is going to be 10,
+[  394.18s ->   402.63s] right? Cause we have 10 draws. All right. So that is the sample average. Okay. Then we can also compute
+[  402.63s ->   413.59s] the variance of such an estimator. That would be the variance of bar X. Okay. And this is where it
+[  413.59s ->   417.83s] gets kind of interesting. Okay. So we're actually taking this, this is what's called an estimator.
+[  417.83s ->   421.91s] Hopefully you've read my articles and watched my other videos. If you haven't read and watch for
+[  421.91s ->   426.87s] clarification, this is something that should be implicit in your solutions at this point,
+[  426.87s ->   431.27s] but we can actually compute an expected value for such an estimator and that expected,
+[  431.27s ->   436.23s] or not just the expected value, but the variance of the estimator. So in this case,
+[  436.23s ->   440.95s] what we're going to do is we're going to compute the expected value first. So that is going to be math
+[  440.95s ->   450.85s] BBE of, we're going to have bar X, right? And what we can do is we can go ahead and apply this guy right
+[  450.85s ->   460.29s] here to this. And we need an XI here. We can go ahead and apply this to this guy here. Okay.
+[  461.51s ->   466.79s] So what I'm going to do is I'm going to throw this X bar into my expectation. So we'll take this guy,
+[  468.76s ->   477.88s] plop them in there. This is equal to math BBE, right? We will take bar X and instead of bar X,
+[  477.88s ->   482.84s] I'll paste that guy in there. And then by linearity of expectation, I can just go ahead and pass that
+[  482.84s ->   490.92s] expectation right on through to the XI. So I can copy this, paste this in here, and then I can go ahead
+[  490.92s ->   498.92s] and take this expectation, throw it on in here. And now what I can do, let me wrap this in parentheses
+[  498.92s ->   505.24s] to make it a little more clear, is I can apply what we know about this particular distribution
+[  505.24s ->   513.40s] here, right? So the expectation in this case is alpha plus beta over two. Okay. So if I do that,
+[  513.40s ->   523.01s] then what we end up with is we end up with one over N times N times the expectation. So we end up with
+[  523.01s ->   527.97s] just the expectation of the random variable. Okay. This is what's called an unbiased estimator
+[  527.97s ->   534.29s] for the sample or for the population being rather. And if this is a little fuzzy, I would definitely
+[  534.29s ->   538.29s] encourage you to check out my articles, but essentially what's going on here is this E of
+[  538.29s ->   543.81s] XI. Since we know the governing distribution, we just go ahead and plop in alpha plus beta over two,
+[  543.81s ->   550.69s] and it is going to be IID. That is each of these XIs in the sample average are drawn or assumingly drawn
+[  550.69s ->   557.73s] from the same distribution. So we're going to get N sample averages, essentially. And then we're going
+[  557.73s ->   564.13s] to divide by N and we just end up with alpha plus beta. Or essentially we get, I'll write out the extra
+[  564.13s ->   575.08s] step one over N times N, and then we have that alpha plus beta over two, right? See, and then that
+[  575.08s ->   585.56s] goes away and we're just left with the population mean right there. Okay. We can do the same exact
+[  585.56s ->   591.96s] thing for the variance of X bar. And as it turns out, what ends up happening is when we apply this
+[  591.96s ->   603.27s] variance to the sample mean, take this summation right here, we end up with this extra one over N.
+[  603.27s ->   608.95s] Okay. So I apply this variance here, I'm going to take out this one over N, and then we actually
+[  608.95s ->   612.55s] square it, right? Because whenever we take something out of variance, we square it. So frac,
+[  613.27s ->   622.07s] we get one over N squared. Then we still have N variances, right? Because it's a summation of IID,
+[  622.07s ->   630.07s] random variable. So we have N times the variance of XI. So I guess if you wanted to be a little more
+[  630.07s ->   636.63s] specific here, this could just be replaced with any XI. So this could just be X1. And in the same
+[  636.63s ->   641.67s] context here, this is the same thing as E of X1, because it's IID. But in this case, we know the
+[  641.67s ->   646.95s] governing distribution, right? So we know the N cancels out here, and we also know the variance.
+[  646.95s ->   656.55s] So we end up with the fraction of, we have one 12th, right? Times N, right? Times,
+[  657.35s ->   670.53s] and that's going to be beta minus alpha. Okay. So that right there is going to be the variance
+[  671.25s ->   674.61s] for this particular distribution, the variance of the estimator for the sample,
+[  674.61s ->   680.10s] or for the population mean. All right. So that's all well and good. But how does this apply
+[  680.10s ->   685.30s] to what we're dealing with here, right? This is a much simpler to interpret. So let's just go ahead
+[  685.30s ->   691.22s] and talk about what's actually cooking here, right? So when I create D, when I say D is a
+[  691.22s ->   697.14s] random draw from uniform, we're drawing 10 random draws from the uniform distribution parameterized by
+[  697.14s ->   702.66s] zero and one. So the so-called standard uniform distribution, and we are taking the mean of that
+[  702.66s ->   711.52s] sample. So this is giving us the X bar. And what we're saying is we expect, essentially,
+[  711.52s ->   719.68s] this sample mean as N approaches infinity to approach the population parameter for the
+[  720.56s ->   727.04s] average of the population average in certainty. That is the law of large numbers. So probabilistically
+[  727.04s ->   734.76s] certain that is. Okay. All right. Now that's interesting, but how can we actually see that?
+[  734.76s ->   742.04s] Well, let's just go ahead and start by creating a sample of one and we will print X bar, right?
+[  743.27s ->   750.71s] Analytically, what should the mean be? Alpha plus beta over two. So zero plus one over two is one half.
+[  750.71s ->   757.19s] So it should be 0.5. So if I run this with one sample, we get 0.3, right?
+[  757.91s ->   763.81s] Now this is what's interesting. If I was to increase this to five, right? We get 0.33,
+[  764.45s ->   774.13s] increase this to 10. I get 0.49, 100, 0.49, 1,000, 0.50, right? And as we could see,
+[  774.13s ->   781.49s] as the sample increases arbitrarily, we are going to get the convergence to that population parameter.
+[  782.95s ->   788.47s] Okay. The, the wording in statistics can be very confusing, especially because sometimes there is
+[  788.47s ->   794.95s] bad notation, but, um, in the context of this, we have an estimator, the sample average right here,
+[  794.95s ->   800.15s] and the expectation and the variance is going to be defined as such, right? So this is unbiased,
+[  800.15s ->   806.47s] and then this is going to be the sample variance. Okay. And this is going to be the case. But the
+[  806.47s ->   814.39s] interesting thing here is it doesn't matter what the underlying distribution is. So in other words,
+[  814.39s ->   822.31s] here we have a uniform distribution, but this could be Poisson. This could be Bernoulli binomial.
+[  822.31s ->   829.59s] It could be normal. And this idea is still going to be the case. So if I was to change this,
+[  829.59s ->   837.35s] let's say to Poisson, right? And we parameterize Poisson with a lambda, let's make lambda 10.
+[  837.35s ->   842.31s] Then it turns out if we were to do this entire step, again, we would just be, and we would end
+[  842.31s ->   848.64s] up with the expectation for the lambda distribution, which is just lambda. Okay. And the sample variance
+[  848.64s ->   854.45s] would be lambda over n. How can we see this? Well, let's just go ahead and do it, right? So we have
+[  854.45s ->   859.57s] Poisson. So the parameter is 10 and we're creating one draw. So what does the sample mean?
+[  861.73s ->   867.65s] Oh, two S's. What song? So we have 12. This is one draw, right? This is one state of the world,
+[  867.65s ->   876.77s] right? Another draw. So let's go ahead and do five. That's 10, right? Right on the money right there.
+[  876.77s ->   886.00s] 10, 9.3, 100, 10.31, 1,000, 10,000. Hopefully you see my point here. It's converging to that
+[  886.00s ->   891.52s] population parameter, right? Now we don't actually have to know what this is to construct this estimate.
+[  891.52s ->   896.08s] We can gather data regardless from the distribution that it comes from, and we can draw
+[  896.08s ->   901.68s] some statistical conclusions about that data. Okay. This is where the central limit theorem
+[  901.68s ->   908.72s] comes into play. All right. This is the idea that the distribution of all of these X bars
+[  908.72s ->   914.16s] that we're creating here. All right. Now, assuming we have the same sample size, okay,
+[  914.16s ->   921.20s] across each sample is going to be approximately normal. Then we can standardize and end up with a
+[  921.20s ->   927.60s] standard normal distribution. Then we can compute some probabilities. This is an amazing result from
+[  927.60s ->   933.12s] statistics. We've talked about this a lot in prior articles, prior videos. But let's just go ahead and take a
+[  933.12s ->   936.48s] look at what this actually looks like, right? So the law of large numbers says this is going to converge
+[  936.48s ->   941.68s] in probability to the population parameter as our sample size increases. Cool. We've seen that.
+[  942.61s ->   945.81s] How do we see the central limit theorem in action? Well, what we're going to do is essentially a
+[  945.81s ->   950.13s] Monte Carlo simulation. We're going to say X is, or I'll call this X bars, is just an empty list,
+[  950.69s ->   962.58s] for I in range. And let's just have N equal to, let's say 10. Okay. And then we're going to do this
+[  962.58s ->   966.98s] simulation of a hundred samples from a Poisson distribution. Again, the underlying distribution
+[  966.98s ->   973.62s] doesn't matter, but let's go back to this uniform case. So I'll say uniform, we'll say zero comma one.
+[  974.26s ->   979.30s] Okay. And then instead of printing it, I'm going to do X bars dot append X bar.
+[  980.60s ->   987.35s] Now let's go ahead and plot this distribution of X bars. Whoopsie. We don't want to plot. We want
+[  987.35s ->   993.44s] histogram. Check that out. Okay. That'll look very normal, right? We're not really going to be
+[  993.44s ->   998.96s] approximating any probabilities here. Okay. What we need to do is we need to increase our sampling,
+[  998.96s ->  1003.52s] our sample size, right? So we're going to take a hundred samples, right? We're going to do this.
+[ 1004.56s ->  1011.84s] Okay. A hundred times. All right. All right. All right. What about a thousand times?
+[ 1013.01s ->  1020.42s] Ooh, look at that. How about that? Huh? Okay. So how does this, if we have one here,
+[ 1021.46s ->  1027.70s] change the case, right? We need a reasonably large sample. Typically N is greater than 30,
+[ 1027.70s ->  1031.86s] right? Because if I just sample one, right from a uniform distribution, I'm just going to get a
+[ 1031.86s ->  1037.67s] uniform distribution. So if N is large enough, right? So let's say even 10, look at this.
+[ 1039.70s ->  1046.90s] How incredible is that, right? The sample mean, right? The estimates end up being a normal
+[ 1046.90s ->  1052.10s] distribution. Okay. So if we have one draw from uniform distribution, we take the mean,
+[ 1052.10s ->  1056.58s] that's just the draw itself, add it to a list, take the histogram, we just get the original
+[ 1056.58s ->  1063.56s] distribution. That ain't too handy, right? But if we have, let's say a sample of 20, right?
+[ 1064.28s ->  1072.79s] Check this out. This is starting to look normal, right? Increase this to 200. Hopefully this is just
+[ 1072.79s ->  1077.43s] making it very clear. If we increase the bins too, this will look nicer. So let's make this 50.
+[ 1077.99s ->  1085.19s] Let's make this thousand. And then hist, we'll do bins equals 50. Does that look nice?
+[ 1085.83s ->  1092.90s] Ooh, look at that. That's starting to look normal. Okay. Maybe 30. Look at that. Look at that bell curve
+[ 1092.90s ->  1096.42s] right there. All right. So that's what the central limit theorem is. That's the difference between the
+[ 1096.42s ->  1100.58s] central limit theorem and the law of large numbers. Okay. The central limit theorem is going to allow
+[ 1100.58s ->  1105.06s] us to compute probabilities based on this distribution that occurs when we sample with
+[ 1105.06s ->  1109.70s] n greater than 20 or 30 ish, and we resample, we're going to get something that looks like a normal
+[ 1109.70s ->  1114.90s] distribution. But the center of that distribution, the law of large numbers is going to say that center
+[ 1114.90s ->  1120.02s] should approach the population parameter for the average. That's the key. Okay. That is the key
+[ 1120.02s ->  1126.82s] right there. Resampling like this isn't necessary all the time, right? As long as we increase the sample,
+[ 1126.82s ->  1131.38s] we should eventually be centered around that particular population parameter, right?
+[ 1131.38s ->  1137.06s] So if I have 50, right, if I have 50 and then I go out and I resample another 50,
+[ 1137.06s ->  1141.38s] right, that's not going to change the probability in any sense, right? We know that the distribution
+[ 1141.38s ->  1146.90s] is going to be normal. We're better off just using the 100 sample. Okay. Hopefully that's clear. I know
+[ 1146.90s ->  1150.74s] that can be a source of confusion. Like, why are we using 50? Like, why don't we just use 50 and then do
+[ 1150.74s ->  1156.02s] another 50, do another 50, whatever, so on and so forth. You want to use the largest sample that you have to
+[ 1156.02s ->  1162.50s] construct your X bar because that is going to be the closest to the true parameter, the center,
+[ 1162.50s ->  1169.00s] right? Okay. And we saw that, right? So we saw that when we get rid of this Monte Carlo-ish
+[ 1169.00s ->  1174.36s] simulation here and we have 50, right? Where is 50 centered around? It's pretty close to the
+[ 1174.36s ->  1179.96s] to the 0.5 here. Let's start with 10 just to make it very clear, right? So this is around 0.4-ish,
+[ 1180.68s ->  1185.72s] right? But if we were to increase this to 1,000 law large numbers style, this is going to be closer and
+[ 1185.72s ->  1190.28s] closer to 0.5, right? So that right there is the logic in saying, we don't want to just construct
+[ 1190.28s ->  1195.32s] a whole bunch of X bars. We want the largest sample that we possibly have to construct this estimate
+[ 1195.32s ->  1203.36s] because then we could do something called hypothesis testing. Okay. So let's go ahead and take a look at
+[ 1203.36s ->  1211.56s] how we can bridge this gap between probability and statistics applying this idea. Okay. So what I want
+[ 1211.56s ->  1216.52s] to do is just create an example problem where we can use a central limit theorem to essentially
+[ 1216.52s ->  1224.44s] approximate the probability of a team being on a certain side of a soccer field. Okay. So like,
+[ 1224.44s ->  1230.20s] essentially, like on average, where do we expect one team to be on which side of the field? The way
+[ 1230.20s ->  1234.12s] that I'm going to define this problem space. Okay. Again, we don't necessarily know the underlying
+[ 1234.12s ->  1239.24s] distribution, but for the simulation example, I'm going to create one. Okay. So what I'm going to do
+[ 1239.24s ->  1257.64s] is I'm going to say two soccer teams, A and B have the following distribution of play time on each side
+[ 1257.64s ->  1263.00s] of the field. All right. And it remains to be seen if this is an effective way to construct such a,
+[ 1263.00s ->  1269.08s] uh, such an idea, but this is going to be which side the ball is on. So which side of the field is
+[ 1269.08s ->  1273.32s] the ball being played on. Is it going to be played on team A side or TB team B side? All right.
+[ 1273.32s ->  1281.16s] So we're going to denote the center. Okay. The center of such a field as 0.5. Okay. So if you're less
+[ 1281.16s ->  1291.06s] than 0.5, you're going to be on team A side. So if X is less than 0.5, the ball is being played on
+[ 1291.06s ->  1305.62s] team B side. Okay. And I'm going to give you the distribution for this random variable. All right.
+[ 1305.62s ->  1311.46s] Let's assume that we have a whole bunch of, you know, intervals for where the ball is being played
+[ 1311.46s ->  1316.18s] on either side of the, uh, on either side of the team. We're going to, you know, sample some sort
+[ 1316.18s ->  1320.10s] of frequency, right? We'll say like maybe every five minutes in the game, we'll see, okay, where,
+[ 1320.10s ->  1325.62s] where, uh, in relation is the ball to one side of the field to the other, right? So we'll have 0
+[ 1325.62s ->  1332.82s] all the way through, uh, 100. Okay. Um, so we'll say 100% is going to be on team B side all the way,
+[ 1332.82s ->  1337.78s] you know, towards the end of like the corner kick situation. Uh, and then 0 is going to be a corner
+[ 1337.78s ->  1341.62s] kick on team A side. All right. So like, assume we just resample every five minutes or so,
+[ 1341.62s ->  1346.82s] or something like that. All right. For simplicity, for simplicity. All right. I'm going to say X is
+[ 1346.82s ->  1355.78s] going to be, uh, distributed, uh, uniformly, and I'm going to say it's distributed zero comma 0.75.
+[ 1355.78s ->  1360.02s] Okay. So there is a clear favorite. The ball is going to be played on one side of the field
+[ 1360.02s ->  1364.10s] longer than another side of the field. All right. But we don't know this. All right. Let's just assume
+[ 1364.10s ->  1368.58s] that we are actually measuring where the ball is across the field. And we are going to sample this
+[ 1368.58s ->  1373.14s] every five minutes, every time team A and B plays, and we are going to go ahead and take a look at
+[ 1373.14s ->  1378.82s] where we can expect the ball to be most of the time. Okay. Using the central limit theorem. So
+[ 1378.82s ->  1383.46s] if this is the case, right, then we know the expectation. We know the variance that we defined
+[ 1383.46s ->  1389.67s] right here. All right. But I want to do the case where we don't know, I want to just use the sample.
+[ 1389.67s ->  1394.15s] So what I'm going to do is I'm going to actually generate from this particular distribution,
+[ 1394.15s ->  1410.44s] 0 to 0.75. Okay. And I'm going to generate, let's say we have 200 points. Okay. So we have 200 points,
+[ 1410.44s ->  1413.64s] right? If I was to display this on a histogram, we would only have one point, right? So I'm just
+[ 1413.64s ->  1423.99s] going to go ahead and print X bar, right? So this right here is our sample average. Okay. This is our
+[ 1423.99s ->  1432.36s] sample average. This is our X bar. We're applying the sample average to this data and we are receiving
+[ 1432.36s ->  1439.94s] an estimate for the population average. All right. Now I'm going to pose a question and we're going to
+[ 1439.94s ->  1448.29s] answer it using the central limit theorem. What I want to ask is essentially what is, let's see,
+[ 1449.99s ->  1461.59s] based on the data we have observed, is there sufficient evidence to suggest that the ball is played,
+[ 1464.64s ->  1482.04s] the ball can be expected on team B's side more than team A's. Okay. So based on the data we have
+[ 1482.04s ->  1486.76s] observed, and that is simulated from this distribution here, is there sufficient evidence
+[ 1486.76s ->  1492.52s] to suggest the ball can be expected to be on team B's side more than team A's? Okay. So how
+[ 1492.52s ->  1498.44s] would we go ahead and construct this sort of approximate probability here, or essentially how
+[ 1498.44s ->  1503.80s] can we test this hypothesis, right? So that is statistical inference right there. We're making an
+[ 1503.80s ->  1507.80s] inference about the population parameter that we do not know, right? Of course, since this is a simulation,
+[ 1507.80s ->  1511.56s] we can get it right here. But what I want to do is I want to approximate it using the central limit
+[ 1511.56s ->  1518.68s] theorem. Okay. So what I'm going to do is if you recall the fancy old equation, right, that is the
+[ 1518.68s ->  1529.03s] central limit theorem. The central limit theorem says that if we have, right, the limit as n right arrow
+[ 1529.99s ->  1543.36s] infinity, and we got to wrap this in some latex here, right, of the probability of bar x minus mu,
+[ 1543.36s ->  1553.17s] so this is the true population parameter, divided by, in this case, we have the sample standard deviation,
+[ 1553.17s ->  1567.44s] so we're going to say s, divided by, let's see, divided by square root of n, okay? So if this is the case,
+[ 1567.44s ->  1573.86s] right, so we have the sample standard deviation here, then we know this is going to go ahead and follow a
+[ 1573.86s ->  1582.26s] t-distribution, all right? In other words, if I was to assign this variable, okay, let's say t is equal
+[ 1582.26s ->  1589.72s] to, I'm going to wrap this in latex again, right? I'm going to take this guy right here, paste it right
+[ 1589.72s ->  1600.12s] here. This is distributed with a t-distribution, and then we are going to say with degrees of freedom,
+[ 1600.12s ->  1610.63s] we have, let's see, n minus 1, okay? So this is an approximate distribution, all right?
+[ 1611.88s ->  1619.16s] The particularly keen among you will notice that this will not be the case should we not have a
+[ 1619.16s ->  1625.49s] sufficiently large n, okay? And that's because this is not necessarily coming from a normal
+[ 1625.49s ->  1629.57s] distribution. We have to assume that there's a normal distribution in order to use a standard normal
+[ 1629.57s ->  1636.61s] over chi-squared, but in this case, we have a sample standard deviation of population. So we
+[ 1636.61s ->  1642.85s] are using a t-distribution kind of inappropriately, okay? So for the sake of this example, what I want
+[ 1642.85s ->  1653.12s] to do is I want to say that assume population variance is given by, and then we can just go ahead
+[ 1653.12s ->  1661.52s] and use the population variance, okay? I will say sigma squared is equal to, and then we have to do
+[ 1661.52s ->  1669.92s] that original equation of 1 over 12, and this is going to be times, right? Beta minus alpha squared,
+[ 1669.92s ->  1678.23s] so that's 0.75 squared, all right? And then we can just compute this very easily, right? So I would just
+[ 1678.23s ->  1689.20s] say 0.75, whoopsie, throw this in code. I will say that sigma is equal to MP dot square root,
+[ 1689.84s ->  1695.12s] and this is for the, not the variance, but the standard deviation, right? And we are given the
+[ 1695.12s ->  1705.89s] population variance. So I will say 0.75 squared divided by 12, okay? And that would be sigma there.
+[ 1706.53s ->  1712.53s] As it turns out, right, if we were to compute, let's say, MP dot variance, right? Or let's just
+[ 1712.53s ->  1720.93s] use STD of D, DDLF1, so that's the sample, we can see that that's pretty close, right? So this sin of
+[ 1720.93s ->  1727.65s] not assuming an approximately or a normally distributed variable that is this time that is being spent on
+[ 1727.65s ->  1732.53s] either side of the field, you know, this is really only a sin if we don't have a sufficiently large
+[ 1732.53s ->  1737.89s] enough sample. We have 200 points here, right? It would be reasonable to approximate with a normal
+[ 1737.89s ->  1744.45s] distribution instead. So instead of using a T distribution, we can just go ahead and approximate
+[ 1744.45s ->  1750.93s] with the normal distribution, even if we have this sample standard deviation here. So what I'm going to
+[ 1750.93s ->  1757.17s] do is I'm going to say this is distributed approximately. So let's assume now that we
+[ 1757.17s ->  1765.25s] don't have population variance, okay? And I'm going to say that this is a prox, and instead of T,
+[ 1765.25s ->  1775.17s] I'm going to use a standard normal, okay? So instead of a T stat, we got a Z stat, all right? It's
+[ 1775.17s ->  1778.85s] reasonable to assume this is going to be approximately standard normal, all right?
+[ 1778.85s ->  1783.97s] So then in this case, right, the formal central limit theorem is instead of S, we actually have
+[ 1783.97s ->  1793.49s] a sigma here, and that is equivalent to cap phi of this entire side here, where we have this being
+[ 1793.49s ->  1798.85s] less than or equal to some constant, and then we just throw that constant in the cumulative
+[ 1798.85s ->  1803.81s] distribution function. So this is the formal central limit theorem, but we can approximate the
+[ 1803.81s ->  1810.53s] probability for the parameter here that is the population mean. Even with the sample standard
+[ 1810.53s ->  1816.93s] deviation, since we have such a large sample, it does turn out that the T distribution converges
+[ 1816.93s ->  1823.09s] to a normal distribution at infinity anyway, asymptotically. So this is not an insulting
+[ 1823.09s ->  1829.81s] approximation at all. And depending on your margin of error, if your margin of error is something that you
+[ 1829.81s ->  1835.49s] have to be particularly concerned with, it may not matter. And in this case, if you take a look at the
+[ 1835.49s ->  1842.29s] X bar right here, if we have 0.5 as being the deciding factor, then really we can get away with this
+[ 1843.25s ->  1850.85s] sort of cheat probability approximation. If this was closer, like 0.4, then maybe this approximation would
+[ 1850.85s ->  1858.69s] be less appropriate, okay? So let's go ahead and construct this Z here, and we're going to do a hypothesis test,
+[ 1858.69s ->  1867.41s] all right? So what I'm going to do is I'm going to say H0 is our null hypothesis, that is that mu is going
+[ 1867.41s ->  1878.69s] to be equal to 50, okay? The alternative hypothesis, H1, is going to be that mu is less than 50, I believe.
+[ 1878.69s ->  1883.57s] So depending on what the question was, is there sufficient evidence to suggest that the ball can
+[ 1883.57s ->  1889.25s] be expected on Team B's side more than Team A's? Really, it's not going to matter here, because
+[ 1889.25s ->  1895.97s] this is a symmetric case. You know, if we find evidence that it is less than, sorry, not 50,
+[ 1895.97s ->  1904.37s] this would be 0.5, 0.5. If we find evidence of you being less than 0.5, then we would be able to answer
+[ 1904.37s ->  1910.93s] this question all the same, right? And if we were to find evidence that it was greater than 0.5 or not
+[ 1910.93s ->  1915.25s] greater than 0.5, we would once again find sufficient evidence, right? Because it's a binary case,
+[ 1915.81s ->  1920.53s] that is, we would be able to discern whether or not it's on A or B's side. We can just flip this.
+[ 1920.53s ->  1923.97s] I encourage you to do this the other way and see how the logic applies the exact same way.
+[ 1924.95s ->  1930.95s] Okie dokie. So now what we have is a hypothesis test to conduct, all right? Really, we just got
+[ 1930.95s ->  1936.39s] to construct this Z stat, all right? So what I'm going to do is I'm going to say Z is equal to,
+[ 1936.39s ->  1947.43s] we will take X bar, right? So that is going to be what? X bar minus mu. Okay. And mu under the
+[ 1947.43s ->  1957.25s] null hypothesis is 0.5. Okay. So first we assume H zero because we don't actually have it,
+[ 1957.25s ->  1964.37s] but let's assume that it's correct. Okay. So we go ahead and we throw in mu here as 0.5.
+[ 1964.37s ->  1973.33s] Then we're going to divide by the sample standard deviation d dbof1 as a reasonable approximation,
+[ 1973.33s ->  1980.85s] divided by the square root of n, which I believe is 200. Yes. Okay. So I go ahead and I throw this
+[ 1980.85s ->  1986.77s] here, run this and whoa, look at that number right there. You probably have no idea what this really
+[ 1986.77s ->  1992.29s] is at all. Um, hopefully you do. And you're like, wow, look at that. Look at that test statistic.
+[ 1992.29s ->  1998.77s] That is ridiculous, right? Holy guacamole, right? Um, really what we're going to do now is we're going
+[ 1998.77s ->  2007.89s] to go ahead and talk about what this is essentially. Okay. Let's go ahead and visualize a standard normal
+[ 2007.89s ->  2020.92s] distribution. Okay. So I'm going to say S or Z is equal to MP dot random dot normal 0 comma 1. We'll
+[ 2020.92s ->  2030.36s] do a thousand or 10,000 samples, uh, PLT dot hist Z. Okay. So what we're looking at here, right? We are
+[ 2030.36s ->  2039.56s] essentially looking at the probability density that is a standard normal, uh, standard normal random
+[ 2039.56s ->  2043.80s] variable. This is the probability density function for a standard standard normal or in the variable.
+[ 2043.80s ->  2051.08s] Okay. So the probability of draws close to zero are what? Pretty high arbitrarily, right? Compared
+[ 2051.08s ->  2057.40s] to draws out to four out to negative four. Okay. This is where all the intuition comes in. So if you've
+[ 2057.40s ->  2065.08s] made it this far, you're about to master this. I hope. Okay. We know, and we said right here,
+[ 2065.72s ->  2073.73s] that approximately if we D mean and divide by the sample variance, square root of the sample variance,
+[ 2073.73s ->  2079.73s] sorry, then we have something that is distributed approximately normally, right? If this is the case,
+[ 2079.73s ->  2086.69s] then what we're going to do is we're going to pose this question. If the true population mean is 0.50,
+[ 2087.41s ->  2098.98s] what is the probability essentially the probability of observing this sample? Okay. So we scroll on down
+[ 2098.98s ->  2104.10s] here, right? Just look at this distribution. This is 0.4. There's almost no mass here. If we go all the
+[ 2104.10s ->  2108.90s] way out to negative seven, it's going to be a puny number. In fact, we can actually compute that, right?
+[ 2108.90s ->  2118.68s] To compute that, I would do scs.norm.cdf. Okay. And then in this CDF, I'm going to throw this Z.
+[ 2118.68s ->  2123.32s] Look at that probability. It's so close to zero. So what this probability is saying is,
+[ 2123.32s ->  2130.20s] this is the probability of observing the data that we've recorded from team A and team B's soccer
+[ 2130.20s ->  2140.61s] games. Okay. The probability of observing this data, if the population parameter is 0.5. That is,
+[ 2140.61s ->  2149.25s] they spend most of the time in between both sides of the field. Okay. The probability of this being
+[ 2149.25s ->  2157.59s] the case, that is the true parameter being 0.5 is puny. Absolutely puny, right? So essentially what
+[ 2157.59s ->  2161.99s] we're going to say is we are going to say that this is not the case. We are going to reject
+[ 2162.55s ->  2168.31s] the case that the population parameter is 0.5 in favor of the case that the population parameter
+[ 2168.31s ->  2173.67s] is actually less than 0.5. Okay. And this is helpful, right? Why? Because now we can answer
+[ 2173.67s ->  2177.75s] this question. Based on the data we observed, is there sufficient evidence to suggest that the ball
+[ 2177.75s ->  2183.35s] can be expected on team B's side more than team A's, right? So if this is the case, right, then we would
+[ 2183.35s ->  2189.59s] expect most of the game. And I believe we had, this is greater than 0.5, right? We're going to be on team B's
+[ 2189.59s ->  2194.87s] side. We're saying absolutely not. We're saying most of the time we're going to be on team A's side.
+[ 2194.87s ->  2199.51s] We're going to be less than 0.5, right? So the ball is being played on team A's side.
+[ 2200.23s ->  2205.03s] We can answer this question based on the data we've observed, the approximate probability of
+[ 2205.03s ->  2213.67s] observing this data. That is that the sample mean essentially, or the population mean is equivalent
+[ 2213.67s ->  2226.52s] to 0.5 is almost zero. Okay. So a better approximation or a better estimate rather for
+[ 2226.52s ->  2233.64s] the population average is that it is greater than 0.5. So we would reject this null hypothesis
+[ 2233.64s ->  2239.80s] in favor of this one. So that is that the population parameter is less than 0.5. In other words,
+[ 2239.80s ->  2246.24s] long way of saying we've essentially just statistically shown, and this is statistically,
+[ 2246.24s ->  2251.76s] okay, we've statistically shown we can expect approximately most of the time that the ball
+[ 2251.76s ->  2257.20s] will be played on the left side of the field rather than the right side of the field. There's
+[ 2257.20s ->  2260.24s] a million and one different ways we can use a central limit theorem to go ahead and approximate
+[ 2260.24s ->  2266.24s] probabilities. This is just going to go ahead and be one of them. Okay. Assuming that the expectation
+[ 2266.24s ->  2272.40s] is a reasonable parameter, that is the population mean is a reasonable parameter to discern whether
+[ 2272.40s ->  2278.64s] or not team A or team B, the ball is on team A or team B's side in the first place. Okay. So hopefully
+[ 2278.64s ->  2284.56s] this makes sense. This right here is the standard normal distribution. Really at the end of the day,
+[ 2284.56s ->  2288.48s] all we're doing whenever we do some sort of hypothesis test is we are saying,
+[ 2288.48s ->  2296.16s] hey, under this state of the world where the true population parameter is 0.5, right? The true
+[ 2296.16s ->  2303.65s] population parameter is 0.5. What is the probability of observing this data? And oh boy, is it tiny.
+[ 2304.29s ->  2308.53s] Oh boy, is it tiny. This would be the p-value right here. Okay. And you can reject at a certain
+[ 2308.53s ->  2311.89s] significance level and there's a whole bunch of different interpretations. Go watch my video about
+[ 2311.89s ->  2315.65s] the interpretations of confidence intervals and, you know, you'll have a better idea of the
+[ 2315.65s ->  2324.42s] interpretation in a frequency sense, but this is the formal idea here. Okay. Okie dokie.
+[ 2324.42s ->  2331.46s] So you can even determine the magnitude in which we play more on team A or team B's side, right? So
+[ 2331.46s ->  2337.14s] we can conduct another hypothesis test and this is starting to get very close to bad science. You
+[ 2337.14s ->  2342.90s] have to be particularly careful with how you construct this, but what if we get closer to the
+[ 2342.90s ->  2352.24s] actual population? So we actually throw in 0.4 here, right? 0.4. We want to reject that it's less
+[ 2352.24s ->  2359.52s] than, that it's actually less than 0.4. So we're testing if it's actually equal to 0.4. Then under the
+[ 2359.52s ->  2369.32s] null hypothesis, instead of 0.5, we have 0.4. We run this. Look at that. Look at that. In this case,
+[ 2369.32s ->  2375.96s] we actually fail to reject the null hypothesis. That is that there is enough probability, right?
+[ 2375.96s ->  2383.00s] Because we are essentially, what if we throw in, what is this Z stat right here? Negative 0.9. That's
+[ 2383.00s ->  2389.04s] like right here. It's actually reasonable that we would observe the data in this context. So we fail
+[ 2389.04s ->  2396.24s] to reject the null hypothesis here. Interesting. So we failed to reject the null hypothesis with this
+[ 2396.24s ->  2402.16s] sample of 200, um, essentially points in time of teams playing and which side of the field they're
+[ 2402.16s ->  2407.20s] playing on. Uh, we failed to reject in favor of mute being less than 0.4, but this is actually an error,
+[ 2408.16s ->  2415.36s] right? I wonder if there's a way of quantifying this error. There is type one, type two, and then this
+[ 2415.36s ->  2419.28s] is essentially going to the idea of a confusion matrix. That is, you have a false positive, true
+[ 2419.28s ->  2425.49s] positive, false negative, true negative. Okay. So this would be a false negative. Okay. And there's a way to
+[ 2425.49s ->  2430.77s] quantify that probability and the power of a test tells you the sample size required. Okay. So this
+[ 2430.77s ->  2436.69s] 200 to figure out the probability of essentially, uh, not making such an error. Okay. But we can talk
+[ 2436.69s ->  2441.97s] about that in another video. Hopefully this is just clearing up the idea of a test statistic.
+[ 2443.01s ->  2447.17s] Okay. That is when we, when we standardize it, we de-mean it divided by the square root of the
+[ 2447.17s ->  2451.81s] sample variance of variance itself, whatever we're given. Um, this is how we apply the essential limit
+[ 2451.81s ->  2456.37s] theorem, uh, in the context of the law, large numbers, it tells us that we would want, uh,
+[ 2456.37s ->  2460.13s] this sample to be as large as possible. That's going to give us essentially, you can think about
+[ 2460.13s ->  2468.12s] it as the most accurate estimate toward the population, uh, mean. Okay. So I hope you enjoyed
+[ 2468.12s ->  2472.76s] this applied statistics example. Once again, those firms are going to ask you questions that are,
+[ 2472.76s ->  2479.64s] you know, in this, in similar vein to this, um, you know, applying probability theory statistics,
+[ 2479.64s ->  2483.88s] seeing if you actually understand, you know, these main ideas rather than, you know,
+[ 2483.88s ->  2488.77s] just if you can talk about finance. Um, all right, cool. Hope you enjoy this. We'll talk about type
+[ 2488.77s ->  2494.05s] one type two error in another video. Maybe if it is, you know, of interest, uh, otherwise,
+[ 2494.05s ->  2499.33s] thank you so much for watching. Goodbye, my courses. It helps me out tremendously. Um, other than that,
+[ 2499.33s ->  2511.65s] I will see you in the next video. Thank you so much for watching.
+[ 2511.65s ->  2513.65s] You

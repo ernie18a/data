@@ -1,0 +1,107 @@
+[    0.04s ->     5.22s] Today, I'm going to show you my favorite option strategy that can help you generate 61% return
+[    5.22s ->    10.26s] on invested capital in a month. So make sure you guys stick around till the ends to see how you
+[   10.26s ->    16.14s] too can use this really simple strategy repeatedly and consistently to generate consistent income
+[   16.14s ->    19.52s] while using very little capital. Welcome to the channel. This is Credit Spread Investing,
+[   19.54s ->    23.68s] where I use my real life trades to demonstrate and show how you all too can use options to
+[   23.68s ->    27.60s] generate additional income safely and consistently. If you guys like the content, make sure you guys
+[   27.60s ->    31.60s] like and subscribe so that you can learn how to make selling options your own side hustle. Now,
+[   31.64s ->    36.44s] first the strategy, then the trade. The strategy isn't anything complicated. It is selling a 30 to
+[   36.44s ->    43.54s] 45 DTE credit spread that I entered using technical analysis and not delta. If you guys don't know what
+[   43.54s ->    47.50s] credit spreads are, make sure you guys head over to this video first. I'll link in the upper right
+[   47.50s ->    52.60s] hand corner somewhere and then come back to this one. So I'm going to use my real life trades to
+[   52.60s ->    57.52s] show you guys all why 30 to 45 DTE credit spreads are awesome. This month, I sold a SPX,
+[   57.60s ->    72.28s] call credit spread 4610, 4615. That expired around 30 days later on 831. I collected a total of $180
+[   72.28s ->    79.74s] a spread. Collateral requirement was only 500 bucks for this one spread, which means that my return on
+[   79.74s ->    88.72s] invested capital would be 36%. 18 divided by 50. My max loss is really only 320, 500 minus 180. But I'll
+[   88.72s ->    92.54s] show you guys later why that really doesn't matter because I'll get out of these trades before my max
+[   92.54s ->    98.58s] losses hit anyways. I sold four of these, collected a total of 720 bucks. That's expired out of the money
+[   98.58s ->   104.98s] on 830. So I actually realized the 720 as profit. Okay. And so as the market continued to move down,
+[  104.98s ->   110.40s] as you guys can see later on in this video, there was another opportunity for me to make even more
+[  110.40s ->   116.68s] income without having to risk more money. The way to do that is to sell a put credit spread also on SPX
+[  116.68s ->   128.19s] to make this into an iron condor. My put credit spread was at 4350, 4345. Also the same expiry on 831.
+[  128.19s ->   136.85s] I collected a total of $125 a spread, slightly less than the call credit spread for the same $500
+[  136.85s ->   146.53s] collateral by itself, 25% ROI. I also sold four and it expired out of the money on 831. And I collected
+[  146.53s ->   153.61s] a total of 500 bucks on this one spread, which means that on 831, I actually, I actually realized 500
+[  153.61s ->   160.75s] plus 720 equals 1220 bucks. Okay. If you guys don't know what iron condors are, make sure you guys
+[  160.75s ->   164.35s] check out this video here, where I go in depth into what it is, but we'll talk about it briefly.
+[  165.13s ->   171.45s] So just look at one trade here, one iron condor, call credit spread plus the put credit spread.
+[  172.59s ->   178.13s] My total risk is still going to be 500 bucks because the market can't be both above
+[  178.13s ->   186.67s] 4615 and be below 4345 at the same time, right? It either has to be above one or below one,
+[  186.91s ->   193.46s] which means that max loss will still be 500 bucks. But my total credit collected per iron condor
+[  193.46s ->   202.82s] is going to be 180 plus 125, which is going to be $305. By taking $305 and risking only 500,
+[  202.82s ->   209.52s] when it expired on 831, my actual return on investment is going to be 61%. So in one month,
+[  209.68s ->   215.90s] you're able to make 61% by selling two credit spreads, but not increasing the total amount of
+[  215.90s ->   223.24s] money that you'll need to make this one trade. This is why credit spreads, especially 30 to 40 DTEs,
+[  223.92s ->   228.68s] it gives you one, the opportunity to open up these iron condors really easily,
+[  228.68s ->   235.12s] as well as allow you to let theta decay out and collect a larger amount of premium in a relatively
+[  235.12s ->   239.80s] short amount of time. So this is why this is my actually go-to strategy in most of my accounts
+[  239.80s ->   244.92s] to really grow it consistently. So okay, so let's get to the juicy part and show you guys how and
+[  244.92s ->   248.62s] when to open up these call credit spreads and put credit spreads and make them into iron condors
+[  248.62s ->   253.14s] so you too can do this yourself and make this into a passive income stream. I'm walking you guys
+[  253.14s ->   258.18s] through a very simple three-step process to help you identify and find these high
+[  258.18s ->   266.00s] value trades, right? These high probability, high value trades where you can make 61% or even more
+[  266.00s ->   270.46s] on some of these trades. One is that you guys have to understand what the market trend is.
+[  270.78s ->   274.88s] We got to understand if things are going in an uptrend, downtrend, or if it's consolidating,
+[  274.96s ->   278.92s] going sideways. What we want to do here is that we really want to be able to take advantage of the
+[  278.92s ->   284.22s] trend and trade the trend, right? If it goes up, you want to make sure that we go up. If it goes down,
+[  284.30s ->   288.64s] we want to make sure that we go down. But how do we do that? Number two, you got to identify areas
+[  288.64s ->   296.55s] of interest or value, right? Areas where a lot of people will be looking at it, where it will
+[  296.55s ->   301.97s] potentially reverse or continue up. These are the areas that you want to trade at. And then lastly,
+[  301.97s ->   310.74s] we got to look at our criterias of entry, which are basically clues that the market is going to
+[  310.74s ->   316.60s] either continue to go up, reverse, or continue to consolidate. But we want to make sure that we
+[  316.60s ->   321.98s] only enter once we get a very good understanding of what the market will do next. And this is what
+[  321.98s ->   326.98s] these criterias will allow us to take advantage and enter these high value trades. And so again,
+[  327.02s ->   330.18s] on this channel, I like to use my real life trades to demonstrate these principles. So we're going to
+[  330.18s ->   334.38s] head over to the charts, how you guys can apply these three very simple steps to sell these call
+[  334.38s ->   339.36s] credit spreads and put credits. This is a daily chart up till 831, the day of expiry. So this is what I
+[  339.36s ->   343.80s] recommend everyone do when you guys are trading credit spreads, 30 to 45 DTEs, or even longer,
+[  343.80s ->   347.60s] is to really just take a step back and take a look at the daily or even the monthly charts to
+[  347.60s ->   351.72s] understand what the trend is. And so when we start here, what you can obviously tell is that the
+[  351.72s ->   358.28s] market is in an uptrend. It goes from a low to a high to maybe another low to another high to a low
+[  358.28s ->   363.54s] to another high. Because this is an uptrend, what we're trying to determine here is if the trend will
+[  363.54s ->   369.64s] continue to go up or will it break down and form a low. But in this case, it's probably very likely
+[  369.64s ->   374.86s] there's going to be a higher low if it were ever to break down. Even though the current trend is up,
+[  375.10s ->   380.08s] you can't guess if the trend will continue to be up or down until the market tells us. What we're
+[  380.08s ->   387.30s] looking at is to understand what area of value, the second point, would help us determine if the
+[  387.30s ->   394.06s] market will continue to go up or down. And for me, that area of value will come around at the previous
+[  394.06s ->   400.46s] support. And the support can be found whenever there are places where the market tests it.
+[  400.80s ->   407.04s] It'll be around this 45-30 level where my cursor is. What I want to do is I want to see a very
+[  407.04s ->   413.00s] convincing break of structure, 45-30 level, in order for me to enter on a bear side trade, which is a call
+[  413.00s ->   418.56s] credit spread. If it were to ever bounce up off of that level, then I will want to enter a put spread
+[  418.56s ->   424.16s] and trade in the bullish direction. What we're looking for is either a break of this or a bounce
+[  424.16s ->   429.30s] off of that. So we found number two and number three in this case, where this level right here
+[  429.30s ->   435.24s] is the area of value. And the criteria to enter is either a break of this level or a bounce off of
+[  435.24s ->   440.96s] this level. On A2 is when I decided to enter on my call credit spread at 46-10, 46-15. Because you can
+[  440.96s ->   446.64s] see if you were to zoom in here, very convincingly broke that and closed below. So at the end of the day,
+[  446.64s ->   451.58s] I decided to enter on this call, on this call credit spread. Why 46-10, 46-15? Because the
+[  451.58s ->   457.02s] previous high of 46-07. And so basically I just did that. Your stop loss, I would just put it as
+[  457.02s ->   463.04s] approximately one ATR above that, which would be around 46-30, right? And then if it ever broke
+[  463.04s ->   467.68s] past 46-30, you would either get out the trade at a loss, maybe probably around 100 bucks. So you'll
+[  467.68s ->   471.06s] never hit your max loss anyways. As the market continue to go down, basically you're safe on this trade
+[  471.06s ->   474.92s] because you are now in this downtrend. Then the next thing that you guys got to kind of look at
+[  474.92s ->   479.42s] understand is when is it going to bounce up? So as I continue to break down, I'm looking,
+[  479.42s ->   483.50s] I'm looking, I'm looking. And then so the next area of value that I'm really looking at is probably
+[  483.50s ->   488.50s] around 43-90, right around here. However, around here, there's no, you can see the market continue
+[  488.50s ->   493.16s] to go down. So I'm not interested. The level I'm looking at is maybe right around here, 46-30,
+[  493.16s ->   498.28s] because this is the previous support as well. And so right around 43-60, you can see there's a green
+[  498.28s ->   502.36s] candlestick here. That's not enough of a signal to enter this trade because as you can see here or here,
+[  502.36s ->   506.94s] or even here, or even here, right? The market can fake you out the next day, become a red candlestick.
+[  507.24s ->   512.68s] So I need the market to give me one more day of strong green for it to continue that uptrend.
+[  513.22s ->   517.40s] And so on 8-21, that's where the next candlestick comes in. Again, my criteria of entry has been
+[  517.40s ->   522.28s] fulfilled because the market has opened up higher and closed higher. So on 8-21, I decided to sell
+[  522.28s ->   529.62s] that 43-50, 43-45 right below the previous day. In this case, probably half an ATR of 43-25 right
+[  529.62s ->   534.02s] around here if I ever broke that or out of this trade anyways, because the market probably didn't
+[  534.02s ->   538.50s] form. The consecutive high that I'm looking for is breaking down. And because it could fulfill my
+[  538.50s ->   543.46s] criteria of entry, it went up, up, up, up, never really tested it. And on 8-31, right around here,
+[  543.46s ->   548.02s] out of the money on both sides. So we were never really tested. We ended up right in between.
+[  548.02s ->   553.78s] And you can see the beauty of this is because by waiting for the market to trend down, I'm really
+[  553.78s ->   558.74s] taking advantage of the market movements, being able to use technical analysis to my benefit and
+[  558.74s ->   565.30s] be really able to maximize my profit by taking advantage of market structure and market momentum.
+[  565.30s ->   569.70s] But in order to understand and find these setups, it'll take time and practice. But I promise you,
+[  569.70s ->   574.26s] if you guys keep practicing, keep looking for these signals, you too can sell credit spreads or even buy
+[  574.26s ->   579.30s] options, find these high value trades and make 61% or even more. If you guys want to see how you can apply
+[  579.30s ->   584.42s] the same three-step process and make even more money in day trading 0TT credit spreads, make sure
+[  584.42s ->   588.02s] you guys check out this video linked in the end screen right here. If you guys like content like
+[  588.02s ->   590.74s] this, make sure you guys like and subscribe to this channel. If you guys have any questions or
+[  590.74s ->   593.38s] comments, make sure you guys leave it down in the comment section below. Until next time,
+[  593.38s ->   594.82s] stay safe in the market. Peace.

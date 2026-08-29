@@ -1,0 +1,53 @@
+[    0.00s ->     3.70s] Hey guys, what's up? It's ABTrades and I run a YouTube to teach people how to day trade options.
+[    3.82s ->     9.04s] Today we're discussing what is a level two, what's about the level two, and everything that is a part of it.
+[    9.36s ->    13.14s] This is a video that I'm pulling from the course, one of the videos in the course.
+[   13.24s ->    15.14s] Again, guys, I'm still posting to YouTube.
+[   15.34s ->    19.12s] All my free content will still be coming out daily to update on you what's happening in the market.
+[   19.44s ->    21.62s] So you don't have to worry about it. If you don't want the course, who cares?
+[   21.70s ->    25.32s] Just keep watching YouTube. I promise you I'm discussing and I'll stay in the free chat.
+[   25.56s ->    28.70s] But please like, please comment, and subscribe and like the video.
+[   28.70s ->    33.48s] All right, guys, in this section we're discussing what is the level two.
+[   33.60s ->    36.10s] Let's talk about a few definitions first and foremost.
+[   36.82s ->    41.94s] This is going to, you know, go back to the last section where we discussed the bid and ask price.
+[   42.04s ->    44.66s] So if you didn't watch that video, please go back and watch that section.
+[   45.30s ->    48.72s] Bid is where the buyers are at. Ask is where the sellers are at.
+[   49.00s ->    52.66s] When you stack a bid or when someone says, oh my gosh, the bid is stacking,
+[   53.00s ->    57.96s] that means you have a huge number of buyers, a lot of bids coming in at a certain price.
+[   57.96s ->    61.54s] When you have a wall, when someone says there's a wall on the level two,
+[   61.84s ->    66.32s] it means that there are a bunch of sellers that are at a certain price, pressuring the stock to go down.
+[   66.68s ->    70.84s] And as always, as we discussed in the last section, spread is the difference between the bid and the ask.
+[   70.90s ->    72.44s] Now let's look at a direct example.
+[   73.20s ->    75.60s] This is what a level two looks like.
+[   75.84s ->    79.48s] You have the bids on the left side and the ask on the right side.
+[   79.56s ->    81.16s] It's the same every single time.
+[   81.16s ->    86.42s] When the buyers of the bids outnumber the asker, the sellers, the price goes up.
+[   86.82s ->    92.40s] So for instance here, if we look at this, the price is currently at $2.889.27.
+[   92.98s ->    95.78s] So on the bid, we have $2.89.27.
+[   97.26s ->   101.24s] It looks like we have only about two orders that want to execute here.
+[  101.66s ->   107.04s] So at this price, the buyers are weak, right?
+[  107.44s ->   110.10s] We don't have much pressure from the buyers.
+[  110.10s ->   115.20s] If you see, if we're at $2.89.26, that's where the buyers start to step up.
+[  115.68s ->   122.28s] So if you want to find some support on SPY in this area, you want to be looking at $2.89.26.
+[  122.72s ->   125.92s] That's where we have 120 buyers who want to buy in.
+[  126.70s ->   134.46s] But now if we look at the sellers at the current price of $2.89.28, we have, you see, these are all 28 orders.
+[  134.84s ->   136.48s] So we have 100, 35, 32.
+[  136.48s ->   139.98s] So we have a total of about 200 sellers at this area.
+[  140.56s ->   145.42s] So if we're looking at this area here, we have two buyers and we have about 200 sellers.
+[  145.96s ->   151.54s] So that is why the price is more likely to drop in the favor of SPY, right?
+[  151.62s ->   154.58s] Because the ask are outnumbering the buyers.
+[  154.98s ->   156.02s] That's how this works.
+[  156.52s ->   160.98s] The stock market and the way the stocks move is all, it's a fight.
+[  161.30s ->   163.42s] It's a tension between the buyers and the sellers.
+[  164.00s ->   165.46s] Are there more buyers?
+[  165.66s ->   166.58s] Are there more sellers?
+[  166.58s ->   168.86s] That determines which way the price goes.
+[  169.80s ->   180.14s] So using the level two, seeing what orders are placed at what specific price helps you know if a stock's about to drop or a stock is at support or a stock is at resistance.
+[  180.14s ->   186.60s] It just shows you that level two is crucial when understanding, hey, when's a safe spot to get in?
+[  186.80s ->   193.04s] The safest spot to get in is when the bids are stacking up, when you see like 1,000 orders, right?
+[  193.22s ->   196.20s] Like 1,000 orders placed at a certain price.
+[  196.36s ->   198.56s] That means there are buyers that are willing to buy.
+[  198.70s ->   200.14s] That is a safe place to buy.
+[  200.14s ->   202.24s] But you know it's a safe place to sell.
+[  202.38s ->   211.74s] When you see like 1,000 orders to sell, you know, hey, it's time to sell because somebody wants to sell out of their position here and I don't want to be caught in that downfall, right?
+[  212.04s ->   222.00s] So using level two will be crucial and it's something that you will see when you look at the live trading examples in this course and you also look at more videos to come.
+[  222.00s ->   228.62s] So guys, just make sure you understand that level two is crucial to understanding the fight between the buyers and the sellers.

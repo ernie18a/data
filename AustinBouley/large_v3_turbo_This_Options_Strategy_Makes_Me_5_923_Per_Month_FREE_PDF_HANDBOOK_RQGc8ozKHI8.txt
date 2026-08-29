@@ -1,0 +1,73 @@
+[    0.00s ->     4.02s] Hey guys, I make a lot of money from trading 1-1-2s every single month and I've been trading
+[    4.02s ->     8.20s] them for a while. So I put everything I know inside one document. And so again, I'm going
+[    8.20s ->    12.96s] to walk you through everything in this document that you know how to trade 1-1-2s, whether
+[   12.96s ->    18.52s] you're currently trading them or you're looking to trade them. I bet this will be a super
+[   18.52s ->    22.88s] useful video. So let's dive into it because again, I go over everything like entries,
+[   23.04s ->    28.84s] hedges, best markets, worst markets, and so many other things. Again, if you want this
+[   28.84s ->    33.46s] PDF for free, I am giving it to anybody who wants it. Just click the link down below and
+[   33.46s ->    39.30s] you'll get free access to this and my trading discord and everything like that all for free.
+[   39.38s ->    44.30s] Just put in your email and you'll get this handbook and the discord and even a masterclass
+[   44.30s ->    48.92s] on 1-1-2 trading that I haven't released publicly. Anyways, let's dive in. So the 1-1-2 trading
+[   48.92s ->    54.48s] handbook here goes over first off the pros and cons. So again, let's talk about when does
+[   54.48s ->    59.34s] this strategy work best. It works best for bull markets, for sideways markets. And so
+[   59.34s ->    64.26s] again, if you're trying to capitalize on an upward movement or sideways action, this
+[   64.26s ->    69.26s] is the ideal strategy. Now again, if the market's dropping, you can still make money, but in
+[   69.26s ->    74.32s] the short term, you're going to see net losses until time decay factors in. So this is best
+[   74.32s ->    76.76s] on bull markets and sideways markets.
+[   77.48s ->    82.86s] Next, this strategy works best for people who want slow, consistent profits. You're not going
+[   82.86s ->    86.30s] to hit home runs, 1,000% returns, and it's not going to be fast, but it's going to be
+[   86.30s ->    90.22s] slow and consistent. And you're going to have a 99% win rate. So it's literally going to be
+[   90.22s ->    95.24s] amazing. As for someone who understands that passive income and boring money is typically
+[   95.24s ->    99.80s] the best money. And it's also for someone who likes the ability to turn their trades into
+[   99.80s ->   102.12s] hedges to further protect their downside.
+[  102.70s ->   107.00s] Now, what are some cons? Well, if the market were to pull back hard or crash, you could lose
+[  107.00s ->   112.72s] thousands if you're not properly hedged. Also, you may not always see the
+[  112.72s ->   118.10s] profit that comes from a bear trap. So if we're looking at the 112 trade, you make more money in
+[  118.10s ->   122.92s] this what's called bear trap zone. And so you may not always do that because you're going to hit
+[  122.92s ->   128.74s] your stop loss before you let the bear trap zone play out. You only see this profit at expiration,
+[  128.74s ->   133.38s] and that's a big issue as well. Now again, in order to trade this, you need full margin
+[  133.38s ->   138.84s] approval on your trading account. You need futures trading approval, and you need at least $8,000
+[  138.84s ->   144.84s] for ES or $800 for MES. Now again, it's ideal to be trading with no more than 50% of your account.
+[  144.92s ->   152.68s] So you typically need $16,000 for ES to place one trade, or you need $1,600 on MES to place one of
+[  152.68s ->   157.64s] those trades. Next, this trade is constructed using a put debit spread and two short puts.
+[  158.00s ->   162.98s] So again, you can kind of see this here. The put debit spread is structured at a 2523 delta,
+[  162.98s ->   169.48s] and the two short puts are seven deltas. Next, you manage a 112 with a stop loss between 200 and
+[  169.48s ->   174.34s] 400%. This is going to be based on the initial credit received to enter the trade. Again, I like
+[  174.34s ->   181.08s] 200, but 300 and 400 work as well. Again, the further you push your stop loss, the higher your win rate
+[  181.08s ->   185.74s] will be because the less likely it is for those stop losses to get triggered, and you'll have the trade
+[  185.74s ->   191.02s] play out. So a 200% stop loss does cap your losses more, but it will have a lower win rate.
+[  191.02s ->   196.60s] And so that's kind of how you play it. Next is take profit. It's typically anywhere from 80%
+[  196.60s ->   202.66s] to 95%. Again, this really depends on what hedge you want to turn that trade into because some hedges
+[  202.66s ->   208.06s] cost more, so you want to make sure that you're collecting more money before you put that hedge
+[  208.06s ->   212.88s] on. And so again, I like 80% if I'm just closing trades. If I'm turning them into hedges, I like it
+[  212.88s ->   219.56s] to be more around 90%. Now again, you can turn a 112 hedge. You can close it in a few ways. You can either
+[  219.56s ->   223.80s] close the entire position. You can turn it into a put debit spread or a ratio spread, or you can
+[  223.80s ->   229.70s] just have a long put hedge. Now the best practice for a 112 is this structure. Again, it's a put
+[  229.70s ->   234.68s] debit spread structure, and then you two short put to add seven delta. You do a 90 DTE range,
+[  234.90s ->   239.46s] and then again, you have a 300% stop loss and 80% take profit. And then again, you want to turn it
+[  239.46s ->   243.22s] into hedges. You want to have at least one ratio hedge, and then the rest you want to turn into put
+[  243.22s ->   249.52s] debit spread hedges. Again, you can automate the entire 112 strategy by setting it up once and
+[  249.52s ->   255.00s] having it enter, exit, hedge, and all that for you automatically by using the options auto trader,
+[  255.08s ->   260.36s] which is linked below. But again, in depth, if you want to read more in depth about the 112,
+[  260.54s ->   266.92s] about entries, about exits, about hedges, again, make sure to click the link down below to grab this
+[  266.92s ->   272.58s] free PDF. But I do want to quickly discuss the six biggest mistakes for 112 traders. I'm not hedging
+[  272.58s ->   277.10s] properly. Make sure you have enough hedges to protect your account risk, which is where all
+[  277.10s ->   281.34s] your trades, if they were to hit their stop loss, how much would you lose? You want to make sure
+[  281.34s ->   287.32s] that your hedges cover it. Also, guys, the 112 strategy is boring, but it works. So don't try
+[  287.32s ->   293.04s] other strategies, specifically zero DTE, because you want some activity. You're going to end up losing
+[  293.04s ->   297.12s] money there, and then the 112 will be pointless, because all the profits from there will be paying
+[  297.12s ->   301.60s] out the losers you had on these other strategies. So just stick with it. Next is over leveraging.
+[  301.60s ->   305.80s] Make sure you do not over leverage your account. You need to have at least 50% of your account in
+[  305.80s ->   311.52s] trades and no more to help prevent this over leveraging issue. Next, make sure you understand
+[  311.52s ->   317.56s] where the market is at, because again, the higher the market is, the greater of a risk for your 112
+[  317.56s ->   323.10s] turning against you and having those losses. Also, make sure you're trading, you're managing it
+[  323.10s ->   330.10s] correctly with stop losses and take profits. And you're doing that every, hopefully, multiple times a
+[  330.10s ->   336.40s] day and no emotional trading. Also, make sure when you're trading small accounts, you do it with
+[  336.40s ->   341.38s] MES instead of ES. And so again, there's so much more that can be covered here in the ideal trade
+[  341.38s ->   346.56s] structure of what I do every time. But again, I guess if you want this PDF, I just wanted to quickly
+[  346.56s ->   352.92s] walk through it. But I typically do more in-depth videos that are to the point. But if you're just my
+[  352.92s ->   357.38s] first video, welcome. This is not normal. But I did want to make sure that you guys were all aware of
+[  357.38s ->   361.88s] this free handbook. Because again, it has everything I know about about 112s. So if you're
+[  361.88s ->   365.46s] looking to trade them for the first time or have traded them before, but want to make sure you're
+[  365.46s ->   370.12s] following the best practices, this is the document for you. And you can get it for free by clicking
+[  370.12s ->   371.96s] the link down below. All right, guys, see you in the next video.

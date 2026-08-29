@@ -1,0 +1,934 @@
+[    0.00s ->     4.56s] Good evening, everybody. You're watching America First. My name is Nicholas J. Fuentes. We have a
+[    4.56s ->    11.14s] great show for you tonight, and I wish it was under better circumstances. Normally, I'd say
+[   11.14s ->    18.60s] I'm excited to be here with you, but this is a very interesting turn of events. And tonight,
+[   18.68s ->    24.36s] we're here with an emergency broadcast, a special Saturday episode here on the weekend
+[   24.36s ->    32.72s] to discuss the historic, world-changing events of last night. I'm sure, as you all know,
+[   32.72s ->    40.60s] we are now living in a new world. As Oliver Anthony would say, we are living in a new world.
+[   41.44s ->    48.76s] Last night, the United States and Israel launched a joint attack against Iran. And make no mistake
+[   48.76s ->    56.04s] about it. This should be made unequivocally clear right now. This is a regime change war.
+[   56.74s ->    64.00s] That is what the president said. That is what it is. And so the reason I say this is because last year,
+[   64.76s ->    70.56s] when Israel and the United States engaged Iran for the first time directly, as they did in
+[   70.56s ->    77.72s] Operation Midnight Hammer and the so-called 12-day war in June of 2025, it was contentious,
+[   77.72s ->    85.74s] whether we called this a war because of the endgame, because of the mode of attack. But what
+[   85.74s ->    91.68s] should be made clear is that we are now engaged against the Islamic Republic of Iran in a full-fledged
+[   91.68s ->    99.64s] regime change effort. And this is ours. We bought this. We're in it. This is our country now. This is
+[   99.64s ->   104.66s] the world. So tonight, we're going to get into all of that. We're going to get into what is happening
+[  104.66s ->   111.10s] in Iran. We're going to talk about the attack. We'll talk about the prelude to it. We'll talk about
+[  111.10s ->   117.98s] the actual operation. We're going to talk about Iran's counterattack, which seems to be mostly
+[  117.98s ->   126.68s] ineffective. And contrary to a lot of the hype from Iran itself and some of Iran's biggest defenders
+[  126.68s ->   133.94s] in the United States, there is not any meaningful pushback that has materialized, just isn't there.
+[  134.38s ->   141.12s] Not from them, not from the axis of resistance. But we'll talk a little bit about their strategy.
+[  141.82s ->   147.86s] We're going to talk about the day after. It has been reported by the New York Times that this is
+[  147.86s ->   154.82s] expected to be a four-day operation. That is a report from the media. So that's not 100%.
+[  154.82s ->   159.70s] The media is telling us that this will last for a little bit more than half of a week.
+[  160.50s ->   165.84s] However, the Trump administration says we are going to keep going. And it might be less than that.
+[  165.88s ->   171.32s] It might be more than that. But it depends on the outcome. And it depends on the effect that it has
+[  171.32s ->   177.74s] on the Iranian regime. We are going to talk tonight about what happens the day after. When this operation
+[  177.74s ->   185.03s] concludes, what exactly is the outcome here? And we are being told, according to the president's
+[  185.03s ->   190.17s] statement last night, that the goal is to liberate the Iranians. Where have we heard this before?
+[  191.17s ->   197.87s] Very fresh concept. We will be greeted as liberators. You could call this Operation Iranian Freedom.
+[  198.81s ->   203.31s] And we are there to liberate them from tyranny by destroying their regime and leaving.
+[  204.60s ->   211.14s] And as history has shown in the Middle East, this always works. It always works. Bombing and deposing
+[  211.14s ->   219.76s] an oppressive tyrant. And then either staying or leaving. It's always as easy to do as it is to say.
+[  219.96s ->   225.38s] And there's never any fallout. Never any unintended consequences. So we'll talk a little bit about
+[  225.38s ->   230.32s] what the endgame is there for the Trump administration. What the plan is, if there is any.
+[  230.90s ->   234.52s] And what the prospects are for who will control Iran in the future.
+[  234.52s ->   241.76s] And that'll be our show. I'm going to lay it all out. And we'll try to unravel what exactly is
+[  241.76s ->   246.32s] happening here and where we're going. So that's going to be our show. Very excited to get into all
+[  246.32s ->   251.12s] of this with you. Before we get into the show, I want to remind you to smash the follow button on
+[  251.12s ->   255.30s] Rumble. Smash the like button. Leave a comment. Let me know what you think about the show.
+[  255.30s ->   263.28s] You can post your apology forms or you can tell me how grateful you are for the show, for the
+[  263.28s ->   270.77s] predictions. You're welcome. But be sure to leave a comment. Smash the like button. Subscribe. Check
+[  270.77s ->   277.95s] out our merch store, Fuentes.store. And subscribe to our brand new subscriber website, AmericaFirst.plus.
+[  278.09s ->   285.11s] We have our actually new and improved website. Downloadable MP3s and RSS feed of the show.
+[  285.11s ->   292.85s] We actually have five episodes of the show free on the website with a very good video player. People
+[  292.85s ->   298.47s] say it's better than Rumble. So check that out too. AmericaFirst.plus. 100 bucks a month,
+[  298.51s ->   303.92s] you get to be in a group chat with me. And we'll shill a little bit, but not too much because it's a
+[  303.92s ->   310.14s] very serious occasion. Now, before we get into all of the news, before we get into the actual strikes
+[  310.14s ->   318.56s] and how this is playing out and where all of this is going, I have one thing to say to all of you,
+[  318.56s ->   325.38s] to all of the Trump supporters, to all of the Trump voters, to the plan trusters,
+[  325.52s ->   333.56s] to the Shabbos goys out there. I really just have one thing to say to all of you, which is,
+[  333.56s ->   345.75s] I told you so. I told you so. They said I was crazy. When I predicted this two years ago in 2024,
+[  345.75s ->   355.92s] I told you this is exactly what would happen. I have been saying it for years. I was laughed at.
+[  356.00s ->   363.69s] I was attacked. They called me crazy. Well, sometimes Chicken Little knows what he's talking
+[  363.69s ->   373.77s] about. And I told you so. I said a vote for Trump is a vote for a war with Iran. And I tried. You know
+[  373.77s ->   381.53s] that. I really did. I went out there in August of 2024, and I actually made the demand on Truth Social
+[  381.53s ->   389.73s] and on Twitter. I rallied my audience, my followers, and the call to action was clear. I said we cannot,
+[  389.73s ->   400.43s] should not vote for Trump unless he commits not to bring us to war in Iran. So I took a lot of flack
+[  400.43s ->   407.50s] for not voting. I took a lot of flack. People said I flirted with supporting Kamala or the Democrats
+[  407.50s ->   414.20s] or supporting them or voting them, that I had flipped, that I was in league with Joe Biden or
+[  414.20s ->   420.64s] something like that. But I made it very clear in August, 2024. I said, I am willing to vote for
+[  420.64s ->   427.58s] Trump. As a matter of fact, I'd like to vote for Trump. I said, but I won't do it unless he makes
+[  427.58s ->   434.74s] a commitment not to bring us to war. And he didn't do that. And he couldn't do that because that was
+[  434.74s ->   442.68s] always part of the plan. Trump's ascendancy from the very beginning. And when I say the beginning,
+[  442.68s ->   451.76s] I mean 2016, it was always part of this plan. This plan by Israel made decades ago, perhaps
+[  451.76s ->   459.00s] centuries ago, to terraform the Middle East and make it a place that is not safe for Israel,
+[  459.24s ->   467.10s] but make it a place that submits to Israel. This is about regional hegemony for that country.
+[  467.10s ->   476.62s] And they have used Donald Trump, J.D. Vance, and the MAGA movement as a Trojan horse for that agenda
+[  476.62s ->   483.36s] from the beginning. It was Trump that withdrew the United States from the original Iranian nuclear deal.
+[  483.68s ->   491.52s] It was Trump who assassinated Qasem Soleimani. It was Trump that bombed Fordo, Esfahan, and Natanz last
+[  491.52s ->   497.00s] year. And now it is Trump that is delivering what Israel has always wanted, what they have wanted
+[  497.00s ->   503.68s] this entire century for the past 25 years, what they have tried to pressure every U.S. president
+[  503.68s ->   510.76s] since George W. Bush to do. And that is to once and for all confront and topple the Iranian regime,
+[  511.26s ->   518.72s] eliminating the last of Israel's rivals, and giving them free reign over one of the most important
+[  518.72s ->   524.52s] and consequential regions in the world. And that is the Middle East. That is the heart of the
+[  524.52s ->   530.36s] Rimland. And Trump has done it. And he was always a part of that. So I do just want to get that out of
+[  530.36s ->   536.32s] the way because I think it's a little bit deserved. I told you so. I told you it happened like this.
+[  537.22s ->   545.12s] They said broken clock is right twice a day. Well, maybe I'm just a regular clock now because I think
+[  545.12s ->   551.12s] I know what time it is. A little bit better than anybody else. So now that I've gotten that out of
+[  551.12s ->   557.70s] my system here, we can talk a little bit about the conflict. And I'll start with, let's talk about
+[  557.70s ->   562.52s] what is happening. Let's talk about what happened last night. We'll talk about what is ongoing.
+[  563.02s ->   569.88s] And then I want to rewind a little bit and talk about how we got here because that is actually
+[  569.88s ->   579.68s] the real story. The real story is the process. It is the long march to this war, which, as I said,
+[  579.72s ->   585.34s] has gone on for decades between administrations in the Trump administration the first time,
+[  585.42s ->   592.89s] back the second time. We really need to talk about how we arrived here. And partially, why I remind
+[  592.89s ->   599.03s] people that I'm vindicated on this subject is because this is called establishing credibility.
+[  599.03s ->   607.76s] How did I predict that this would play out with precision, with accuracy? How was I able to call
+[  607.76s ->   614.12s] the shot really going back to October 7th, but even through the election and recognizing Trump's role
+[  614.12s ->   620.36s] through to the operation last year, and then predicting it would continue shortly thereafter?
+[  620.36s ->   630.20s] It is because I understand how this works. So it's not just for my own self-aggrandizement. It's not
+[  630.20s ->   636.94s] just for my own edification that I say this. Here's the point. Why was I able to predict that Trump would
+[  636.94s ->   644.64s] bring us to war in Iran and Trump voters did not? Because Trump voters are part of the scam.
+[  644.64s ->   652.82s] They are suckers. They were tricked because they listen far too much to what is said online
+[  652.82s ->   660.14s] by influencers, which is effectively a form of soft lobbying. If you didn't see this coming,
+[  660.64s ->   665.94s] if you underestimated the possibility or the inevitability that this would happen,
+[  665.94s ->   672.82s] it is probably because your information diet, the opinion makers that you follow,
+[  673.96s ->   681.74s] this is an artifice which is put in front of you by special interest groups. Why was this not on your
+[  681.74s ->   689.70s] radar? Why did you underestimate the likelihood this would happen? It's because probably your timeline
+[  689.70s ->   697.82s] has been curated by an algorithm to show you a very particular perspective, a very particular
+[  697.82s ->   706.66s] frame of the Trump administration. And that frame is a scam. It is wrong. The reason I called it right
+[  706.66s ->   714.54s] is because I didn't follow Trump's speeches and his influencers and his cadre of soft lobbyists
+[  714.54s ->   723.69s] on social media, I followed the money. I followed the institutional capture. I followed those
+[  723.69s ->   731.85s] associations, which are defining. And if you look very closely at those things on a very specific
+[  731.85s ->   740.25s] timeline, it should have been obvious that this was inexorable. It wasn't going to go any other way.
+[  740.79s ->   744.71s] But like I said, more on that in a moment. We're going to start by talking about what happened
+[  744.71s ->   750.97s] last night. So last night, I believe it was a little after midnight central time. So it was
+[  750.97s ->   760.37s] maybe 1am, 2am Eastern time. The US and Israel launched a joint strike on Iran. And many people
+[  760.37s ->   766.23s] saw this coming. It was pretty clear. Based on the military buildup in the Middle East, the deployment
+[  766.23s ->   773.41s] of two aircraft carriers, the USS Gerald Ford and the Abraham Lincoln, over a dozen destroyers.
+[  773.41s ->   781.79s] You had 50% of the US deployable air power in the Middle East at the time that the conflict broke
+[  781.79s ->   789.35s] out. In addition, the United States and Israel had made steps to bolster their defenses. They deployed
+[  789.35s ->   795.29s] missile defense systems like Patriot missile batteries and THAAD systems. The US moved its troops
+[  795.29s ->   802.73s] out of harm's way, called on diplomatic personnel at embassies to evacuate Israel, open bomb shelters.
+[  803.27s ->   811.39s] So it was very clear, as you know, that since those protests in January, about a month and a half ago,
+[  811.61s ->   817.53s] when the United States moved to deploy all this military power in the region, that we were moving
+[  817.53s ->   823.87s] towards war. And last night, we finally got it. And so the US and Israel launched, I believe now the
+[  823.87s ->   832.15s] tally is over a thousand airstrikes on Iran. It appears that the US and Israel have suffered no
+[  832.15s ->   838.91s] casualties. They have complete air superiority over the western half of the country. They claim they will
+[  838.91s ->   846.71s] have air superiority over the rest of the country within 24 hours. The US and Israel targeted regime
+[  846.71s ->   854.03s] targets. So centers of government, command and control, military leadership, fortified bunkers.
+[  854.23s ->   860.95s] They also targeted nuclear sites. And that's not just Fordow, Esfahan and Natanz, which is where they
+[  860.95s ->   867.75s] enriched the uranium, but also Bushir, where Iran operates a Russian provided nuclear power plant.
+[  868.19s ->   875.71s] And lastly, they targeted, and this is the big one, regime military assets. So missile launch platforms,
+[  875.71s ->   882.47s] their missile manufacturing cities, where they actually have underground an entire city to build
+[  882.47s ->   888.95s] their missiles. The US targeted their Navy, targeted their defense ministry, their intelligence ministry,
+[  889.55s ->   896.06s] the executive function of the military, and all the hardware. Very shortly after the strikes began,
+[  896.22s ->   902.88s] and rumors surfaced of this on social media, video was posted, the president made a statement.
+[  902.88s ->   910.96s] And I have to tell you, this was the most disturbing, surreal thing I think I've witnessed maybe since
+[  910.96s ->   917.88s] the COVID pandemic. And if you saw this live, you know what I'm talking about. The president posted a
+[  917.88s ->   924.74s] formal address last night announcing the operation and discussing the goals of the operation and some
+[  924.74s ->   932.66s] expectations about what will happen. And he announced it wearing no necktie in a baseball cap that says USA
+[  932.66s ->   941.10s] in front of a black curtain by himself. And without getting too much into this quite yet, because we
+[  941.10s ->   948.02s] will arrive there eventually, there is something particularly surreal when you measure and weigh the
+[  948.02s ->   955.04s] gravity of the situation and its significance for the United States. Obviously, the United States has been
+[  955.04s ->   961.20s] involved in the Middle East for a very long time doing exactly this sort of thing. Regime change,
+[  961.20s ->   969.12s] proxy warfare, fighting terrorism, ostensibly, deploying massive amounts of air, sea, and ground
+[  969.12s ->   977.72s] power. And the entire conceit of this MAGA movement of President Trump, the whole reason we're doing
+[  977.72s ->   988.16s] this. Nominally, this was supposed to be in opposition to the Iraq war and to the legacy of the Iraq war and
+[  988.16s ->   995.06s] all of the other associated interventions. Now, we know that the same people that were behind the war
+[  995.06s ->  1001.06s] in Iraq, they're the same people that have been beating the drum for war in Iran for just as much
+[ 1001.06s ->  1006.18s] time. And they have tried to pressure many presidents into doing this, and they have moved the United
+[ 1006.18s ->  1014.87s] States closer to a conflict like this. And so Trump, being the one who was supposed to challenge and
+[ 1014.87s ->  1021.77s] oppose all of this, who repudiated it and created this successful political movement, now to be
+[ 1021.77s ->  1030.82s] delivering for the same people, repudiating those people and their agenda, for him now to be serving
+[ 1030.82s ->  1039.48s] them, delivering for them what they have wanted for so long. Number one on their wish list. It's actually
+[ 1039.48s ->  1047.44s] disturbing. It's disturbing what it says about how our country works, whether we, the people, are still
+[ 1047.44s ->  1055.52s] in control. Is this a government of, by, and for the people? Do elections matter? Does the popular will
+[ 1055.52s ->  1065.91s] matter in our representative democracy, in our republic? If we vote to repudiate a policy, a foreign interest
+[ 1065.91s ->  1072.71s] group, a special interest group, repudiate a particular agenda, and we get that agenda anyway,
+[ 1072.95s ->  1080.51s] that war, those people, regardless, what does that say about the political state, the actual true
+[ 1080.51s ->  1086.73s] political reality of the United States of America? If anything, it just verifies what Trump said from
+[ 1086.73s ->  1093.99s] the very beginning, which is that we are no longer in control. The people are no longer sovereign. And we
+[ 1093.99s ->  1098.65s] knew that. That is something that we had always known and we had always suspected. This is confirmation.
+[ 1099.77s ->  1108.95s] This is an illegitimate regime. The Constitution, representative democracy, our republic is effectively
+[ 1108.95s ->  1115.67s] over. You can vote for a candidate that repudiates the global war on terror, the war in Iraq, regime
+[ 1115.67s ->  1123.82s] change, someone that explicitly promises not to bring us into new conflicts, someone that explicitly
+[ 1123.82s ->  1132.96s] campaigns as the peace president, no new wars, and you'll get all of it anyway. We are in a state of
+[ 1132.96s ->  1140.92s] distress. This is not a republic anymore. That's over. And the MAGA movement is surely dead, of course.
+[ 1141.76s ->  1149.52s] But anyway, I digress. I watched the speech last night, very uncanny and disturbing and strange.
+[ 1149.52s ->  1155.06s] And you need to listen to the speech because the speech lays out exactly what this is.
+[ 1155.99s ->  1164.05s] Trump talks about the entire history of U.S.-Iranian relations. He goes back to the 1979 Iranian hostage
+[ 1164.05s ->  1172.41s] crisis, to the Beirut barracks bombing in 1983. He discussed Iran's use of IEDs and their backing of
+[ 1172.41s ->  1178.65s] Shiite militias in Iraq. What is the purpose of all of this? What is the purpose of all of this
+[ 1178.65s ->  1189.41s] history? Well, he is making the case, as they say. He is making the case, creating the pretext for a
+[ 1189.41s ->  1196.59s] regime change war in Iran. And the message is simple. The Iranian regime, obviously Iran is going nowhere.
+[ 1196.59s ->  1203.29s] The territory, the population, they're not going anywhere. But this regime, which was thrust into
+[ 1203.29s ->  1210.83s] power during the revolution in 1979, Trump is making the case that they are an international pariah,
+[ 1211.27s ->  1217.25s] a threat to the United States, an historic adversary of the United States. And therefore,
+[ 1217.59s ->  1224.30s] that is why they have to go. So make no mistake about it. That rhetoric that he lays out in the
+[ 1224.30s ->  1230.28s] beginning of the speech, that's a regime change speech. He is laying out the case. This is why the
+[ 1230.28s ->  1237.74s] regime has to go. That's not a speech about nuclear weapons, missiles. It's not a speech about bringing
+[ 1237.74s ->  1245.12s] them to the negotiating table. Obviously, that's a regime change speech. Further, he makes it even more
+[ 1245.12s ->  1251.58s] explicit. He announced the targets of the strike. He said that the United States and Israel launched a
+[ 1251.58s ->  1259.40s] joint operation targeting Iran's Navy, its missile production facilities and regime targets. He
+[ 1259.40s ->  1264.96s] called upon the Iranian Revolutionary Guard and the Iranian armed forces to lay down their arms or
+[ 1264.96s ->  1274.56s] they would die. He then said that upon the conclusion of the operation, he invites the Iranian people to
+[ 1274.56s ->  1281.71s] emerge from shelter and to take their country back. He effectively said, I am giving you the
+[ 1281.71s ->  1287.83s] opportunity. I am neutralizing the Iranian government and its military and the regime. And once we're
+[ 1287.83s ->  1295.51s] finished, you will emerge and take back your country. And so every aspect of this speech is critical.
+[ 1295.51s ->  1302.69s] He is making the case that the regime must be toppled, talking about destroying all of the regime's
+[ 1302.69s ->  1309.63s] assets, killing all of their personnel, calling for a complete and total surrender. And in the end,
+[ 1309.63s ->  1316.87s] after all that, calling upon the Iranian people to rise up, have a coup and install a new regime.
+[ 1317.29s ->  1324.75s] So again, make no mistake about it. We have entered into a regime change war. Now, why am I saying this?
+[ 1324.87s ->  1332.21s] Why is this such an important thing to understand? We have been at war with Iran for decades.
+[ 1332.21s ->  1340.67s] We have been in a state of war with Iran by every other means. We have assassinated their leaders.
+[ 1341.33s ->  1347.63s] The Israelis have assassinated their scientists. With Israel, we have launched cyber attacks on their
+[ 1347.63s ->  1353.45s] infrastructure, not just nuclear, but also other vital critical infrastructure. There has been
+[ 1353.45s ->  1360.17s] espionage, industrial sabotage. We have gone to war with their proxies like the Houthis in Yemen.
+[ 1360.17s ->  1366.11s] We have launched strikes against their positions in other countries too. We have been in a state of
+[ 1366.11s ->  1371.91s] war for a long time. But because the objectives of these other operations have been limited,
+[ 1372.37s ->  1378.63s] people don't call it a war. They say these are operations to neutralize the nuclear program,
+[ 1378.87s ->  1385.77s] or this is meant to increase our leverage in negotiations, or it's some form of a proxy war.
+[ 1385.77s ->  1392.89s] And this is about rolling back their soft or hard influence across the region. Well, tonight,
+[ 1393.19s ->  1400.88s] nobody can deny we are now engaged against Iran in a full-fledged regime change war.
+[ 1401.24s ->  1407.70s] Now, what's more? As we discussed for the past couple of weeks, everybody suspected that we would
+[ 1407.70s ->  1414.42s] eventually use this military power that is forward deployed against Iran. The question concerning that
+[ 1414.42s ->  1423.28s] operation is what the goal of that would be and how it would be accomplished. Now, this matters very
+[ 1423.28s ->  1429.08s] deeply because the kind of force that has been deployed into the region, as you have probably
+[ 1429.08s ->  1437.94s] noticed, is a naval force and an air force. And that is the operation. It is a naval and an air
+[ 1437.94s ->  1445.34s] operation. We have not invaded Iran. We have not put boots on the ground. We don't have special forces
+[ 1445.34s ->  1450.78s] there. There has not been a major coalition invasion. We don't have people parachuting in.
+[ 1451.22s ->  1460.28s] How this operation is being conducted is with missiles launched from ships and with air power. It is with
+[ 1460.28s ->  1465.96s] our carriers, which bring the air power to the region. It is with bombers, which have been stationed in
+[ 1465.96s ->  1473.42s] other countries. It is an air and sea campaign. Now, this creates a conundrum here because, again,
+[ 1473.72s ->  1481.90s] if the goal is the maximalist objective, which is to topple the Iranian regime, we are going all the way.
+[ 1482.24s ->  1488.54s] Again, it's not about degrading their capabilities. It's not about weakening them. If the goal is to
+[ 1488.54s ->  1494.06s] exterminate the Iranian regime, we're going all the way and toppling them. It raises the question,
+[ 1494.06s ->  1502.50s] how is that going to be done with air and sea power alone? We now have the goal. We also now have
+[ 1502.50s ->  1508.08s] the mode. We know what the Trump administration is seeking, and we know how they seek to achieve it.
+[ 1508.26s ->  1516.62s] But the problem that is created is that historically, you cannot achieve a regime change through air and
+[ 1516.62s ->  1524.32s] sea power alone. Why is that? Because although you can bomb civilian government facilities,
+[ 1524.32s ->  1529.60s] you can bomb military facilities, you can destroy the Navy, you can destroy hardware,
+[ 1530.08s ->  1539.51s] anti-aircraft systems. On the other side of all of the bombing, there are still going to be 200,000
+[ 1539.51s ->  1546.94s] Iranian Revolutionary Guard Corps soldiers, and they will be armed. On the other side of this,
+[ 1546.94s ->  1555.02s] you are still going to have, all in all, all in, about a million Iranian security personnel between
+[ 1555.02s ->  1562.46s] the IRGC, the Iranian Armed Forces, and the Internal Security Forces. You can decapitate,
+[ 1562.96s ->  1568.98s] you can cut off the head of the snake, you can kill some or half or all of the regime, you can blow up
+[ 1568.98s ->  1575.20s] all of their major weapon systems. But on the other side of the bombing campaign,
+[ 1575.20s ->  1583.21s] there will be a country of 90 million people. And the only apparatus in place to control those people
+[ 1583.21s ->  1590.33s] with the use of force that is organized into a hierarchy behind an ideology with some semblance
+[ 1590.33s ->  1598.51s] of legitimacy with experience, it's going to be the very same Iranian regime. This is the problem.
+[ 1599.15s ->  1605.61s] Blow up their Navy, destroy their missiles, decapitate the leadership. There's a chain of command.
+[ 1605.61s ->  1613.43s] Other people will replace the leadership. And again, destroy the big weapons, the small weapons are
+[ 1613.43s ->  1619.87s] still in the hands of the army. And unless you actually have an alternative invading force,
+[ 1620.13s ->  1628.66s] whether that is a US ground invasion, an invasion from a neighboring state, whether you have proxies
+[ 1628.66s ->  1634.48s] from inside the country, sectarian groups, separatist groups, anti-government groups,
+[ 1635.24s ->  1642.60s] unless there is an alternative force that is armed, that is numerous, that is organized,
+[ 1642.86s ->  1648.72s] and is able to communicate. And unless that group has legitimacy and can earn the support of the
+[ 1648.72s ->  1655.90s] country, well, all things considered, on the other side of the conflict, the most likely successor to
+[ 1655.90s ->  1663.53s] the Iranian regime is the Iranian regime. It may not be the exact same people, but it will be the
+[ 1663.53s ->  1670.47s] same security apparatus. And so this is the big conundrum here. We have deployed all the air and
+[ 1670.47s ->  1678.03s] sea power. We've launched the operation. And by all appearances, we are winning this war by all
+[ 1678.03s ->  1684.67s] appearances. But appearances can be deceiving. If you watch the news, they report that there have been
+[ 1684.67s ->  1691.79s] over 900 airstrikes, that the US and Israel have air superiority in most of the country. We control
+[ 1691.79s ->  1699.35s] the airspace. We have assassinated the Ayatollah, the supreme leader, Ayatollah Khamenei. We have
+[ 1699.35s ->  1705.55s] assassinated some of the top military and civilian government leadership. We have probably, by the end
+[ 1705.55s ->  1710.77s] of this, will have destroyed their entire navy, all of their missiles, all of their missile production
+[ 1710.77s ->  1717.21s] facilities, and so on. And this is the operation. It appears that we are winning. People are saying
+[ 1717.21s ->  1723.87s] this is a great success. And they say that perhaps the American public and the world will get with the
+[ 1723.87s ->  1728.59s] program and rally behind this when they see the outcome, when they see the effectiveness of it.
+[ 1729.52s ->  1736.62s] But that is where we stand under 24 hours into the operation. Where will we be when the bombs
+[ 1736.62s ->  1741.76s] stop dropping? Where will we be in a week? I want to get into this article from the Wall Street
+[ 1741.76s ->  1746.62s] Journal. We'll just read through this and talk about some of the details. And we'll talk a little
+[ 1746.62s ->  1750.90s] bit more about what has happened in the past 24 hours. Then we'll get into some of the timeline,
+[ 1751.04s ->  1755.70s] how we got here, and then answering this question where we're going. So this is from the journal. It
+[ 1755.70s ->  1761.36s] says, quote, President Trump and Israel launched attacks on Iran with the ambitious aim of bringing down
+[ 1761.36s ->  1767.06s] the regime in Tehran, a goal that promises heavy use of force and which will rattle Gulf allies
+[ 1767.06s ->  1774.08s] concerned about a wider regional war and instability on their doorstep. U.S. and Israeli forces went hard
+[ 1774.08s ->  1779.20s] at Iran beginning early Saturday, attacking Iran's leaders and symbols of the regime, in addition to
+[ 1779.20s ->  1784.76s] military assets that Iran would need to fight a war. Heavy strikes were expected to continue for days.
+[ 1785.64s ->  1790.12s] Israeli strikes focused on high-value officials and Iran's missile capabilities,
+[ 1790.12s ->  1796.18s] while the U.S. attacks went after military targets. In a speech posted on True Social,
+[ 1796.36s ->  1801.74s] Trump said the strikes are weakening Iran's rulers and called on Iran's people to take the opening as
+[ 1801.74s ->  1807.48s] a once-in-a-generation chance to topple the regime. He said, quote, when we are finished,
+[ 1807.84s ->  1813.12s] take over your government. It will be yours to take. America is backing you with overwhelming
+[ 1813.12s ->  1818.80s] strength and devastating force. Now is the time to seize control of your destiny and to unleash the
+[ 1818.80s ->  1823.82s] prosperous and glorious future that is close within your reach. This is the moment for action. Don't
+[ 1823.82s ->  1829.82s] let it pass. Now fighting for its survival, the Iranian regime launched a wave of missile attacks
+[ 1829.82s ->  1837.42s] on U.S. military bases in some Gulf states, as well as on Israel. Iranian missiles are headed towards
+[ 1837.42s ->  1843.38s] bases in Bahrain, Qatar, the United Arab Emirates. They've also been launched against Saudi Arabia,
+[ 1843.38s ->  1850.84s] Jordan, Iraqi Kurdistan, and Israel. U.S. officials haven't yet outlined a plan for who would take control
+[ 1850.84s ->  1856.36s] of Iran in the event that the regime falls, or how to avoid a chaotic power struggle among factions
+[ 1856.36s ->  1862.86s] within the Iranian regime and its divided opposition. So this is what you need to understand
+[ 1862.86s ->  1869.96s] about the dynamic here. And this is very important. We have to understand the security
+[ 1869.96s ->  1878.44s] situation between Iran, Israel, and the United States. Israel has been principally concerned
+[ 1878.44s ->  1886.38s] with Iran's nuclear program, its proxies, and its missiles. Now, more on this in a moment. We'll get
+[ 1886.38s ->  1894.20s] back into this equation here. This war, unlike last year, is specifically focused on Iran's missiles.
+[ 1894.82s ->  1899.40s] Last year, the U.S. and Israel took out Iran's nuclear program. We destroyed their biggest
+[ 1899.40s ->  1905.94s] centrifuge facilities. We apparently made their stockpile of highly enriched uranium inaccessible.
+[ 1906.46s ->  1913.14s] Arguably, we set back the program several years, and we increased Iran's breakout time from when they
+[ 1913.14s ->  1919.96s] might decide to make a nuclear weapon to when they acquire one from weeks to possibly years. And so we
+[ 1919.96s ->  1926.52s] neutralized that deterrent capability of Iran. In this war, we're going after their missile program.
+[ 1926.52s ->  1934.60s] Iran has built thousands of ballistic missiles, which are being intercepted as we speak, but if launched
+[ 1934.60s ->  1941.92s] in a surprise attack in large enough volleys, may not be able to be intercepted. And so this is the only
+[ 1941.92s ->  1950.08s] military capability that Iran has to defend itself. Its air defenses, its air force, its navy are
+[ 1950.08s ->  1958.06s] completely inferior to the United States and Israel. However, it is their mass production of cheap
+[ 1958.06s ->  1963.40s] ballistic missiles, and they source components from China and Russia, and they're making hundreds of
+[ 1963.40s ->  1970.82s] them all the time. It is this massive stockpile and capability to mass produce missiles, which truly
+[ 1970.82s ->  1978.00s] threatens Israel and the United States. If Israel and the United States engage in operations, and you're
+[ 1978.00s ->  1985.12s] seeing it today, Iran can launch missiles, and not all of them, but a small percentage can actually
+[ 1985.12s ->  1992.82s] strike at Israeli and American civilian or government sites. And this is the only capability that Iran has
+[ 1992.82s ->  2000.66s] that's sort of their only resort if Israel and America attack. So the purpose of this war, what Trump
+[ 2000.66s ->  2007.16s] said specifically in the speech, is to destroy their capability to make missiles and destroy their missile
+[ 2007.16s ->  2013.48s] stockpiles. Now, this gives us some clues here. Because again, when you think about the kind of
+[ 2013.48s ->  2022.08s] force that is deployed in the region, and the goals, it doesn't work. We're bombing the big stuff. But in
+[ 2022.08s ->  2027.54s] four days, in a week, in two weeks, when this is all over, who is at this point, the most likely
+[ 2027.54s ->  2033.82s] contender to take power? It's not going to be the Iranian people. Because the Iranian people are not
+[ 2033.82s ->  2039.20s] organized, they're not armed, they don't have backing from a superpower patron, or at the minimum,
+[ 2039.50s ->  2044.42s] coordinating with them on the ground. Have to assume some of that is happening, but we haven't
+[ 2044.42s ->  2050.82s] seen any real movement take hold, least of all in the protests last month. So the people cannot
+[ 2050.82s ->  2058.54s] spontaneously get together and form a new government. If that's the case, then in a week or two weeks time
+[ 2058.54s ->  2065.04s] after the bombs start dropping, the only force that is even capable of picking up the pieces of
+[ 2065.04s ->  2071.46s] enforcing any semblance of order in the country will be the same security apparatus as before.
+[ 2071.46s ->  2076.36s] It's going to be the Revolutionary Guard. It's going to be the armed forces. It's going to be the
+[ 2076.36s ->  2086.14s] besiege. Now, perhaps the Trump administration is counting on the survivors of this attack being more
+[ 2086.14s ->  2095.28s] pliable. Very similar to Venezuela. What did Trump do in Venezuela? Well, he picked up Maduro and the
+[ 2095.28s ->  2101.56s] vice president, the second in command, just filled his spot. We didn't even necessarily destroy their
+[ 2101.56s ->  2107.70s] entire military. We didn't destroy their armed forces. We killed about a hundred palace guards,
+[ 2107.96s ->  2115.30s] Cuban intelligence, and Venezuelan security forces, kidnapped Maduro in the hopes that the successor,
+[ 2115.30s ->  2122.43s] who was a part of the same apparatus would be more open to negotiating. And they see what happens
+[ 2122.43s ->  2128.37s] to the president. They see what the United States is capable of. And they realize that you can't win
+[ 2128.37s ->  2136.53s] this one. Your defenses, your defensive capabilities will not work. You cannot inflict pain on the United
+[ 2136.53s ->  2146.03s] States. It is utter domination. You are crushed. And so the choice of the vice president is you're either
+[ 2146.03s ->  2151.25s] going to go the way of Maduro and die or be imprisoned, or you're going to find a way to
+[ 2151.25s ->  2156.49s] work with the United States. And that's the model. And it is telling that these two operations have
+[ 2156.49s ->  2163.81s] happened so close to one another. It was just not even two months ago that the United States pursued a
+[ 2163.81s ->  2172.17s] faux regime change in Venezuela. Is it a true regime change? Well, the entire security apparatus remains
+[ 2172.17s ->  2178.63s] in place. The Chavista government remains in place. It is Delcy Rodriguez, Maduro's vice president,
+[ 2178.63s ->  2184.47s] who now rules the country with the same defense minister, the same intelligence minister.
+[ 2185.66s ->  2193.12s] So it's a decapitation without a regime change. It's a form of persuasion, aggressive negotiations.
+[ 2193.64s ->  2199.98s] We took your leader and now we've left you with no options. Perhaps this is the formula in Iran.
+[ 2199.98s ->  2207.72s] Decapitate the regime, kill the Ayatollah, kill the top IRGC commanders, make them vulnerable and
+[ 2207.72s ->  2214.98s] defenseless. Remove hope from the equation. Without a Navy, without missiles, without their high-ranking
+[ 2214.98s ->  2221.24s] security personnel, they must realize they are completely vulnerable. They are completely defenseless
+[ 2221.24s ->  2229.12s] and completely open. Is that perhaps the calculation? That whoever, whether it's the second, third,
+[ 2229.12s ->  2236.28s] fourth, fifth guy in the chain of command, whoever survives, when that person rises above, maybe it's
+[ 2236.28s ->  2244.50s] some other faction or element in the security services. Whoever survives and claims to speak
+[ 2244.50s ->  2249.76s] for the remnant of the Iranian regime, maybe the Trump administration is counting on that person
+[ 2249.76s ->  2256.16s] simply being willing to negotiate. And you leave the internal security apparatus in place,
+[ 2256.16s ->  2263.96s] you don't go like you did in Iraq and put them all on trial and kill all of them and debathify them,
+[ 2264.06s ->  2271.81s] re-educate them and reintegrate them or something like that. But you simply swap out an obstinate leader
+[ 2271.81s ->  2278.47s] with a more pliant leader and you work on a new understanding where the Iranian regime can cooperate
+[ 2278.47s ->  2286.18s] with the United States. Now, here are the problems with this way of thinking. Again, you're not going to remove
+[ 2286.18s ->  2291.92s] an entrenched regime with air and sea power alone. The Trump administration knows that. The Department
+[ 2291.92s ->  2296.98s] of War knows that. They know that if they really wanted to replace all these people, they would need
+[ 2296.98s ->  2303.14s] a rival security service, political faction, and nothing of that sort exists. There are people that
+[ 2303.14s ->  2308.92s] oppose the regime. There are other claimants to rule Iran, but none of them have the necessary support.
+[ 2309.32s ->  2314.56s] None of them have the necessary organization or weapons. So it looks very unlikely that, again,
+[ 2314.56s ->  2322.24s] any force other than a remnant of the Iranian security apparatus will rule afterward. And you
+[ 2322.24s ->  2328.66s] have to expect that the Trump administration knows that. And so perhaps this is the expectation.
+[ 2329.14s ->  2336.70s] They will pound Iran, hit them so hard, again, make them utterly defenseless so that there is not even
+[ 2336.70s ->  2342.68s] the delusion. There is not even the myth that Iran is going to be striking a carrier with a hypersonic
+[ 2342.68s ->  2348.96s] missile, that Iran is going to destroy Israel with thousands of missiles in a huge volley.
+[ 2350.23s ->  2358.18s] And they will have to come to terms and negotiate with the United States on our terms. Well, here's
+[ 2358.18s ->  2365.58s] the problem with this way of thinking. Famously, Tucker Carlson challenged Ted Cruz, who was in favor of
+[ 2365.58s ->  2371.40s] an operation like this, and said, how many people live in Iran? And Ted Cruz had no idea. And he dismissed
+[ 2371.40s ->  2376.26s] that and said, that's trivia, that that's a trivial detail. What does it matter? How many people live
+[ 2376.26s ->  2383.42s] there? Well, it actually matters quite a bit because a country three times the size of Iraq with 90
+[ 2383.42s ->  2392.44s] million people and a million soldiers is not actually going to be subdued by bombs. What happens the day or
+[ 2392.44s ->  2400.60s] the week after Iran's military is utterly destroyed? Well, probably chaos breaks out. Probably people
+[ 2400.60s ->  2406.62s] are going to try to flee and the borders are going to destabilize. Probably people are going to rush to
+[ 2406.62s ->  2412.88s] the stores and try to stock up on essentials, which will cause the economy to effectively collapse.
+[ 2413.30s ->  2418.68s] There will be looting. There will be chaos. There will be a lapse in critical infrastructure,
+[ 2418.68s ->  2424.60s] public services. You're looking at the bottom falling out from the country, and that will
+[ 2424.60s ->  2431.62s] actually create a vacuum. It will actually embolden and buttress the Iranian security force because there
+[ 2431.62s ->  2438.86s] will be a need for order and only that force will be able to provide it. What's more? Here's the other
+[ 2438.86s ->  2445.84s] problem with this. So Iran security force is going to be there attacking Iran, bombing all their cities,
+[ 2445.84s ->  2452.64s] killing potentially hundreds, maybe thousands of civilians. What effect does that have on the
+[ 2452.64s ->  2460.14s] resolve of Iranians and of the Iranian political leadership? If it's a remnant of the Iranian security
+[ 2460.14s ->  2468.16s] forces, who is to say that these people, the survivors who just watched their friends, colleagues,
+[ 2468.56s ->  2475.62s] leaders, spiritual figures get murdered in a war of aggression, who is to say those people are
+[ 2475.62s ->  2483.88s] now going to roll over for the United States. Perhaps that works in Venezuela, a much smaller
+[ 2483.88s ->  2490.88s] country in terms of territory and population ruled over by corrupt people with no real ideology,
+[ 2490.88s ->  2497.74s] not religious zealots, not even particularly nationalistic, maybe not even ideological anymore,
+[ 2497.74s ->  2505.96s] but just plutocrats, just crony socialists or something. Maybe that works in Venezuela,
+[ 2505.96s ->  2512.54s] where they're more worried about their personal enrichment or survival. But in Iran, a regime that is
+[ 2512.54s ->  2520.82s] literally created by religious police, secret police, a vanguard revolutionary paramilitary with
+[ 2520.82s ->  2528.26s] an eschatological opinion and interpretation of their own country and its role in the future of the
+[ 2528.26s ->  2535.08s] universe. Who is to say that the remnant of that security service is not going to be more hardcore
+[ 2535.08s ->  2542.76s] than what came before? Who's to say that they will not be more emboldened and their resolve won't be
+[ 2542.76s ->  2549.36s] hardened after the strikes? And maybe they don't negotiate then. So what happens the day after?
+[ 2550.08s ->  2555.62s] Obviously, then this remnant, whether they're in favor or against the United States, they will seek to
+[ 2555.62s ->  2563.12s] rebuild. Just as the Iranian regime after Midnight Hammer began to rebuild the nuclear infrastructure and
+[ 2563.12s ->  2569.52s] their missile capability. You have to imagine that the remnant of the Iranian security forces is going to
+[ 2569.52s ->  2576.28s] try to rebuild. Also, it may be a much taller order and basically impossible, but we have to entertain the
+[ 2576.28s ->  2582.98s] scenario, maybe the most likely scenario that hardliners come to power. They retain control of the country
+[ 2582.98s ->  2589.36s] rather than an uprising of the people. And they go to work building more missiles in the military.
+[ 2589.36s ->  2596.56s] So what does the United States do then? Do they allow Iran to keep going? Do they allow Iran to
+[ 2596.56s ->  2602.40s] rebuild and reconstitute on a long enough timeline? Maybe not in months or weeks, but over the course
+[ 2602.40s ->  2612.45s] of many years? Obviously not. This gets back to that security equation. What was stopping Israel and
+[ 2612.45s ->  2620.01s] the United States before from intervening in Iran? What was preventing us from doing this 10 years ago,
+[ 2620.09s ->  2627.21s] 20 years ago? What prevented us from doing this is that we thought Iran was going to build a nuclear
+[ 2627.21s ->  2633.51s] bomb. And if we invaded and if we tried to topple the regime, maybe before we were successful,
+[ 2633.51s ->  2639.89s] they would have a nuclear bomb and then they might use it. Then we're in trouble. Missiles,
+[ 2639.89s ->  2646.69s] not a big deal. Nuclear bomb on top of a missile, that would pose a problem for Israel and the United
+[ 2646.69s ->  2654.49s] States. So that is a deterrent that prevented us from operating in Iranian territory. But it was also
+[ 2654.49s ->  2661.50s] their ballistic missile program. Maybe the United States wasn't willing to go in, but Israel always
+[ 2661.50s ->  2667.36s] wanted to go into Iran. They were worried about the nuclear program, but they're also worried about the
+[ 2667.36s ->  2674.66s] missiles. As you saw last year, when Israel forced our hand to intervene in Iran, it was Israel that
+[ 2674.66s ->  2680.56s] had to tap out. It was they that had to plead with Washington to intervene, to bring an end to the
+[ 2680.56s ->  2687.90s] conflict because Israel was being bombarded with wave after wave of hundreds of Iranian ballistic missiles,
+[ 2688.24s ->  2693.52s] drones, cruise missiles, and they were running out of interceptors to shoot them down.
+[ 2693.52s ->  2700.92s] So why could Israel not intervene over Iran skies? Because if they did, they would be bombarded with
+[ 2700.92s ->  2706.50s] missiles and it would shut down their country. It's a very small country with not a lot of population
+[ 2706.50s ->  2713.18s] centers and it's hard to have commerce. It's hard to keep people there if your airports and your cities
+[ 2713.18s ->  2720.24s] and residential buildings are being hit with hypersonic ballistic missiles. So Israel could not
+[ 2720.24s ->  2727.91s] intervene unless the missiles were destroyed. Are you seeing where this is going? Now that Iran's nuclear hedge
+[ 2727.91s ->  2735.47s] has been obliterated by midnight hammer last year and the operation today, now that its missile capacity has been
+[ 2735.47s ->  2743.57s] severely degraded and its Navy, which might be able to close the Strait of Hormuz. Now Iran is truly defenseless.
+[ 2743.57s ->  2752.51s] And what this does is it creates options for further engagement. So you might think this is the climax.
+[ 2752.83s ->  2759.11s] This is the be all end all, just as you might've thought the climax was last year, that this is it.
+[ 2759.29s ->  2766.41s] This is the war to topple the regime. I don't think so. I think that when we look back in history,
+[ 2766.41s ->  2773.91s] this will be characterized as yet another operation to degrade Iran's military capabilities,
+[ 2773.91s ->  2780.41s] just like midnight hammer, just like the other operations, just like the industrial sabotage,
+[ 2780.71s ->  2786.73s] assassinating the scientists, just like all these other operations. This is about systematically
+[ 2786.73s ->  2796.54s] defeating in detail Iran's military so that we can open up a front against Iran in perpetuity.
+[ 2796.54s ->  2804.62s] So in short, what happens when Iran's security force takes back control over the country? And maybe
+[ 2804.62s ->  2812.80s] it's led by a hardliner. Maybe it's led by another reformer. Well, if diplomacy fails, now Israel and
+[ 2812.80s ->  2821.29s] the United States, we can operate in Iran with impunity. If Iran doesn't play ball when this is over in
+[ 2821.29s ->  2830.51s] six months, it costs us nothing to intervene. And this is the operational goal, which is to achieve
+[ 2830.51s ->  2839.19s] the same situation in Iran as you had in Syria for 15 years. In the same way that Israel took control
+[ 2839.19s ->  2846.33s] of Syria skies and airspace and launched airstrikes constantly degrading the Assad regime and the
+[ 2846.33s ->  2853.31s] Iranian Revolutionary Guard there. Israel seeks to open up the exact same front in Iran. This is not
+[ 2853.31s ->  2860.13s] the end. This is actually just the beginning of a new chapter. This is another operational strike
+[ 2860.13s ->  2868.67s] to further degrade Iran's military so that there can be future operations. And the ultimate goal
+[ 2868.67s ->  2876.07s] is the regime change. The ultimate goal, I imagine, is to eventually create a situation,
+[ 2876.99s ->  2883.99s] either at the end of this or some other operation in the future, where through CIA and Mossad backing,
+[ 2884.23s ->  2893.37s] Shin Bet, whoever, they are going to back a liberal democratic force, presumably. They will back some
+[ 2893.37s ->  2900.47s] rival claimant. They will eventually replace the Iranian regime. And then that Iranian regime will
+[ 2900.47s ->  2907.99s] be subordinated to Israel in exactly the same way as has happened to Syria and to Iraq and to other
+[ 2907.99s ->  2916.08s] countries. I think that is the ultimate goal. And that is the situation as it stands. I think that is what
+[ 2916.08s ->  2922.38s] is happening today. And I think that is what will happen in the immediate future. Now, I want to talk
+[ 2922.38s ->  2929.36s] about something very specific here. We have to be precise about why we oppose this war. What we're
+[ 2929.36s ->  2935.84s] looking at right now, it looks like a military success. Again, and appearances can be deceiving,
+[ 2935.94s ->  2941.82s] but that is what it looks like. The U.S. and Israel are just having their way. They are dropping bombs.
+[ 2942.22s ->  2948.02s] As far as we know, nothing has been shot down. No Americans have been killed. And although Iran has
+[ 2948.02s ->  2954.16s] retaliated with missile strikes on the Emirates, Qatar, Bahrain, Saudi Arabia, Kuwait, Iraq, Jordan,
+[ 2954.28s ->  2958.56s] Israel, even though they've launched a lot of missiles at all these countries, it doesn't seem
+[ 2958.56s ->  2964.10s] that it's done a ton of damage. Or if there are unreported casualties, it doesn't seem they are
+[ 2964.10s ->  2973.94s] substantial. And Iran's ability to defend itself or respond has been vastly exaggerated. There was this
+[ 2973.94s ->  2980.32s] idea for a time that we would lose this war, that we don't know what we're in for. Operation True
+[ 2980.32s ->  2986.52s] Promise number 72 is on its way. And this time they're serious. This time the missiles are going
+[ 2986.52s ->  2991.66s] to hit. Everybody was saying this, that we're going to lose this war. They're going to sink a carrier.
+[ 2991.96s ->  2999.42s] It's going to deal a psychological blow to us. It'll be a Vietnam. Well, it's leaving one part out,
+[ 2999.42s ->  3006.11s] which is if we don't put ourselves in harm's way, we win. We move the troops out of the bases within
+[ 3006.11s ->  3011.15s] range of their missiles and they don't die. We don't invade and drive around their country in
+[ 3011.15s ->  3018.28s] Humvees. Nobody's getting exploded. The only ability for Iran to respond might be a false flag
+[ 3018.28s ->  3024.20s] terror attack or a real terror attack by an Iranian cell in Europe or the United States. Outside of that,
+[ 3024.20s ->  3033.32s] they have no real ability to hurt any strategic American targets. Now, this is something that we have
+[ 3033.32s ->  3040.72s] to contend with because if the Trump administration is successful, let's be honest here. If we pull
+[ 3040.72s ->  3048.08s] this off without a hitch, let's say we destroy Iran's military and no Americans die, then that is a
+[ 3048.08s ->  3054.88s] true miracle. That is truly impressive. If the United States confronts Iran like this, we hit
+[ 3054.88s ->  3061.02s] them so hard and we don't lose a single plane, ship, helicopter. We don't lose a single life
+[ 3061.02s ->  3067.92s] in Iran, which was propped up to be this huge threat in a regional player. Well, this is a
+[ 3067.92s ->  3074.40s] victory. No doubt about it. In the purest possible terms, the United States has achieved its strategic
+[ 3074.40s ->  3080.62s] objectives. We will have destroyed Iran's proxy network. Hezbollah is not even intervening. The
+[ 3080.62s ->  3086.26s] Houthis are not making an impact. The popular mobilization force in Iraq is not doing anything.
+[ 3087.28s ->  3093.14s] Hamas is defeated. They're a non-player. And Iran, after this, may have no military, may have no
+[ 3093.14s ->  3098.66s] leadership. We just killed their leaders. And if we do that without losing a single life or piece of
+[ 3098.66s ->  3103.00s] equipment, then the United States can claim victory. They can say, we did it. Mission accomplished.
+[ 3103.00s ->  3109.24s] And what will then be the argument? Well, I can already see that a lot of people that are opposed
+[ 3109.24s ->  3115.32s] to this conflict are talking about blowback, foreign wars, the cost. All these things are
+[ 3115.32s ->  3120.06s] calling Trump a hypocrite. They say, well, there's going to be unintended consequences.
+[ 3121.28s ->  3126.48s] Iran will turn into a failed state. They say, Iran might retaliate with terrorism or missiles and
+[ 3126.48s ->  3131.60s] Americans will die. And how's that putting America first? And they might say, perhaps this will cost a lot
+[ 3131.60s ->  3138.32s] of money. And they'll say a lot of things in this category. But intellectually, we have to deal with
+[ 3138.32s ->  3145.56s] the fact that this is not Iraq. It isn't. Iraq was a ground invasion. It was a true nation-building
+[ 3145.56s ->  3153.72s] operation. It was true regime change, debathification, putting the culprits of the war crimes on trial,
+[ 3154.16s ->  3159.50s] creating a new government security apparatus, a new political culture, and then having to maintain
+[ 3159.50s ->  3167.05s] order between rival tribes and rival sects of Islam. And that cost a lot of money and a lot of
+[ 3167.05s ->  3172.49s] lives. It took a lot of time. This is something else. If we bomb them into submission, this is going
+[ 3172.49s ->  3179.01s] to be very light on the loss of human life on our side and in terms of cost. It's going to be marginal.
+[ 3179.15s ->  3186.05s] It's not going to cost us no $3 trillion. And in the end, I think it's also not going to take as long
+[ 3186.05s ->  3192.69s] to get what we came for there. We have to deal with this. Now, if that is the case, what's the
+[ 3192.69s ->  3199.73s] argument? You can't just take the talking points from Iraq and use them about Iran. Why not? Because
+[ 3199.73s ->  3206.83s] if you do, you lose the debate. If you have people hysterically screaming and saying, well, what about
+[ 3206.83s ->  3212.57s] Americans are going to die? Well, what if no Americans die? What's your argument then? What do you
+[ 3212.57s ->  3217.85s] say to Ben Shapiro and Mark Levin then if hardly any Americans die? And I know that sounds terrible,
+[ 3217.85s ->  3223.77s] but if we destroy Iran's regime and, you know, maybe a dozen American soldiers die, the American
+[ 3223.77s ->  3230.81s] public will look at that and say, that's worth it. That is what the American public will say.
+[ 3231.49s ->  3236.23s] It's just true. And you don't have to like that, but that's the reality. And if in the end,
+[ 3236.29s ->  3241.19s] the cost is marginal, let's say we get what we want in a short span of time, and it doesn't cost us
+[ 3241.19s ->  3246.55s] even a hundred billion dollars. People are going to say that's a victory. People are going to say,
+[ 3246.61s ->  3252.07s] you know what? This isn't nation building. This isn't costing us money. We're not dying for Israel.
+[ 3252.07s ->  3257.85s] They're going to say we defeated a regime, which actually is oppositional. They don't like us.
+[ 3257.91s ->  3263.53s] They're Islamist. They're aligned with the other axis, with Russia and China. The American public
+[ 3263.53s ->  3268.91s] are going to be susceptible to the argument that this is a great victory. So what do you say then?
+[ 3268.91s ->  3273.47s] The hysterics are not going to work. The talking points are not going to work.
+[ 3273.47s ->  3279.83s] Now, don't misunderstand what I'm saying. I'm not saying you can't argue against this. I'm against
+[ 3279.83s ->  3285.53s] this, but I'm saying we have to understand why we're against this. Why are we against regime
+[ 3285.53s ->  3293.11s] change in Iran? Well, yes, a refugee crisis is a concern. Iran descending into a failed state is a
+[ 3293.11s ->  3300.49s] concern. It becoming a hotbed of terrorism is a concern. The loss of life in Iran or on the part
+[ 3300.49s ->  3307.71s] of Americans, cost, mission creep, all those things are concerns, but these are all probabilities and
+[ 3307.71s ->  3316.27s] likelihoods. What happens if or when America just wins this one really hard? If it happens, well,
+[ 3316.31s ->  3322.74s] then you need to understand the problem here. Why are we fighting in Iran? It's not about nukes.
+[ 3322.74s ->  3327.92s] It's not about missiles. The reason that we were brought into this engagement
+[ 3327.92s ->  3335.84s] is because Israel seeks regional hegemony in the Middle East. This has been their plan for
+[ 3335.84s ->  3344.40s] decades and decades. They sized up their neighbors in the 1970s, and they looked at all of the Arab or
+[ 3344.40s ->  3351.38s] Muslim or other countries arrayed against them. And they realized that if they wanted to truly be
+[ 3351.38s ->  3358.92s] secure and safe and powerful, they would have to systematically defeat in detail, confront all
+[ 3358.92s ->  3365.52s] of their enemies, destroy their regimes, and dismember their states. And only then would Israel be free
+[ 3365.52s ->  3372.38s] to expand their territory, gain access to vital resources, and be able to secure its borders.
+[ 3373.16s ->  3379.08s] And that's exactly what has happened. Israel has orchestrated over the course of 30,
+[ 3379.08s ->  3385.54s] 40 years, the destruction of the regime in Iraq, the destruction of the regime in Syria.
+[ 3386.32s ->  3391.76s] And regime change in those two countries created opportunities for Iran. Iran filled the vacuum.
+[ 3392.56s ->  3397.72s] Iran is much larger than those countries, much larger population, bigger territory,
+[ 3398.52s ->  3403.76s] ancient history, bigger middle class, more money, more oil revenue, bigger military.
+[ 3403.76s ->  3412.58s] When Iraq went down, Iran came in, and they backed Shiite militias there. And they gained a foothold in
+[ 3412.58s ->  3418.08s] the country. It's called the Popular Mobilization Forces. And when Assad was weakened, not defeated,
+[ 3418.20s ->  3425.30s] but weakened, it was the Iranian Revolutionary Guard, which deployed in Syria to fend off ISIS and the
+[ 3425.30s ->  3433.16s] Kurds and all those other groups. And in doing this, Iran created a pipeline. They had personnel in Iraq,
+[ 3433.16s ->  3440.78s] in Syria, and that connected them to their proxies. Hezbollah in Lebanon, which shares a border with
+[ 3440.78s ->  3447.34s] Israel, but also the Houthis in Yemen, which they created and which they supported when they took
+[ 3447.34s ->  3455.86s] power in 2013. This was the final battle. They took down Iraq, took down Syria, and then Iran being the
+[ 3455.86s ->  3461.02s] big one, having the bigger military, having the bigger population, having the superior everything,
+[ 3461.02s ->  3468.64s] and creating this proxy network. This was their final rival in the region. Why did Iran want
+[ 3468.64s ->  3475.08s] nuclear weapons? Because it recognized that if it didn't have them, the U.S. and Israel would take
+[ 3475.08s ->  3481.70s] them out as they did Iraq and Syria. That's why Iran had a nuclear hedge. And that's why Iran had a
+[ 3481.70s ->  3488.22s] ballistic missile factory. That is why they had this massive stockpile, because that was also part of
+[ 3488.22s ->  3494.33s] their deterrent force. They knew it was coming. Israel stripped away their nuclear program,
+[ 3494.67s ->  3499.29s] destroyed their missile program, so that now they can achieve what they always wanted, which is to
+[ 3499.29s ->  3508.29s] topple the Iranian regime, so that Israel can expand in every direction. Think about it. Israel has made
+[ 3508.29s ->  3514.95s] peace through treaty with Jordan, which is on their east, and Egypt, which is south of them.
+[ 3514.95s ->  3521.39s] They are also treaty allies of Bahrain and the United Arab Emirates through the Abraham Accords.
+[ 3521.95s ->  3529.91s] There is a lot of talk about Saudi Arabia being brought into the Abraham Accords as well. Iraq is
+[ 3529.91s ->  3535.11s] a shell of its former self. The U.S. maintains a presence there, and they don't have a strong and
+[ 3535.11s ->  3544.51s] powerful military. In Syria, after the Assad regime was ousted in 2024, Israel, or rather in 2025,
+[ 3544.51s ->  3550.93s] I believe it was, Israel, no, it was 2024, Israel came in and destroyed all of the Assad regime's
+[ 3550.93s ->  3557.81s] military hardware, leaving Syria utterly defenseless. Israel defeated Hezbollah and now is using U.S.
+[ 3557.89s ->  3564.61s] influence in Lebanon to placate that country also. If Iran is out of the picture, all you have to do
+[ 3564.61s ->  3571.39s] is take a look at a map. Israel will have no rivals. They are treaty allies with half of their
+[ 3571.39s ->  3577.17s] neighbors. They have destroyed the other half. They have made peace through U.S. bribery and U.S.
+[ 3577.25s ->  3585.11s] accords with Egypt, Jordan, Emirates, Bahrain, Saudi Arabia. They have destroyed the regime in Iraq,
+[ 3585.45s ->  3592.67s] Syria, and soon to be Iran. This is their ultimate objective. And what this gives them
+[ 3592.67s ->  3601.65s] is unbridled, unrestrained, unlimited power. To do what exactly? Well, most likely to expand their
+[ 3601.65s ->  3610.79s] territory. Without Iran backing Palestinian Islamic Jihad and Hamas, Israel can pretty easily push the
+[ 3610.79s ->  3616.53s] Palestinians out of the occupied territories. Without having to worry about Saudi Arabia and its influence
+[ 3616.53s ->  3623.11s] with the United States and that arrangement, Saudi Arabia's conditioned reproachmen with Israel upon
+[ 3623.11s ->  3627.99s] Palestinian statehood, if Israel doesn't have to worry about it, again, they can push the Palestinians
+[ 3627.99s ->  3635.17s] out. So what surely comes of Iranian regime change is that Israel first takes the West Bank,
+[ 3635.51s ->  3644.10s] takes Gaza. Do they stop there? No. Why would they? Then they go in as they are in Lebanon and they
+[ 3644.10s ->  3649.58s] take southern Lebanon, south of the Latani River. And then they use that as a platform to go into
+[ 3649.58s ->  3656.40s] southern Syria. And they go where the Druze live. They go down south, right up to the suburbs of
+[ 3656.40s ->  3662.92s] Damascus, maybe taking a chunk of that. And maybe they expand south into the Sinai. Why do you think
+[ 3662.92s ->  3668.82s] Egypt is deploying its military to the Sinai Peninsula and building tunnels there? They anticipate the
+[ 3668.82s ->  3675.08s] collapse of the Camp David Accords and that Israel might seize the Sinai Peninsula. If Israel wanted
+[ 3675.08s ->  3681.33s] to reach out then into Jordan, into Saudi Arabia, who exactly would stop them? The answer is nobody.
+[ 3682.29s ->  3688.97s] What's more, with Iran out of the picture, now you have this all-important region, sea routes,
+[ 3689.21s ->  3694.35s] overland trade routes. Think about the commerce that runs through this region between Asia, Europe,
+[ 3694.35s ->  3699.07s] and Africa, through the Suez Canal, through the Strait of Hormuz. Think about all the energy.
+[ 3699.53s ->  3706.01s] In the Persian Gulf. Think about that vital highway between these continents, where there will be
+[ 3706.01s ->  3711.63s] rail and highways, where there will be plane routes, where there will be sea routes through these
+[ 3711.63s ->  3719.21s] all-important show points. This is the most influential region in the Eurasian-African continent.
+[ 3720.03s ->  3726.03s] This is the connector between the three. If Israel controls that region, how rich,
+[ 3726.03s ->  3731.37s] how powerful can they become? Again, without being checked, without being restrained,
+[ 3731.91s ->  3738.11s] constrained, by any strategic or tactical imperatives because of rivals in their neighborhood?
+[ 3739.20s ->  3745.90s] The answer is there's no limit. When Iran is defeated, they will have 300 nuclear bombs.
+[ 3746.28s ->  3751.30s] No other country in the region has them. They will have a qualitative military edge,
+[ 3751.30s ->  3756.34s] which is guaranteed by an act of the U.S. Congress. Do you know that? The United States
+[ 3756.34s ->  3763.52s] can furnish other Middle Eastern countries with weapons, but we are bound by law that we cannot
+[ 3763.52s ->  3771.18s] give any country more weapons than we give Israel. If we give Saudi Arabia F-35s, we got to give Israel
+[ 3771.18s ->  3777.48s] twice as many. If we give Saudi Arabia the latest and greatest F-35, we got to give Israel something even
+[ 3777.48s ->  3785.36s] more advanced. By law, we are required to furnish them. They are entitled to a qualitative conventional
+[ 3785.36s ->  3793.02s] military edge with air power, missile defense, probably soon to be AI and other things. So they
+[ 3793.02s ->  3798.56s] will have a nuclear arsenal. They will have the qualitative conventional edge. They are an
+[ 3798.56s ->  3804.58s] intelligent superpower, and they are influential in the court of the United States. So in the end,
+[ 3804.58s ->  3809.16s] if some other country becomes a problem in the event that that's even possible, they can always
+[ 3809.16s ->  3817.80s] call the White House reliably and we'll bail them out. And what we have effectively created here,
+[ 3817.88s ->  3826.22s] this is the point, is a rival superpower. What we have created is a nuclear power with a very
+[ 3826.22s ->  3833.36s] sophisticated conventional military and an intelligence apparatus, and we have handed them control over one
+[ 3833.36s ->  3838.82s] of the most important regions in the world. Most important choke points, trade routes, energy,
+[ 3839.66s ->  3845.60s] some of the most cash in the world. How much cash is in the sovereign wealth funds of the Saudis,
+[ 3845.68s ->  3853.28s] the Emiratis, the Qataris. That's all there's now. And as the United States, or rather as the world order
+[ 3853.28s ->  3863.24s] undergoes a revolution, as China rises, India rises, as the world transitions from unipolar to multipolar,
+[ 3863.36s ->  3868.88s] as we enter the age of complexity, of complex interactions between all states and all peoples
+[ 3868.88s ->  3875.96s] in all states, who will benefit from the arbitrage? Who will be the ultimate middleman between China
+[ 3875.96s ->  3881.58s] and the United States, between India and Pakistan, between Turkey and Greece, between Asia and Europe,
+[ 3882.28s ->  3890.42s] between the Indian Ocean and the Mediterranean Sea? It's going to be Israel. That's the end game.
+[ 3890.42s ->  3896.38s] So why are we against this conflict? For me, let me tell you precisely, why am I against regime
+[ 3896.38s ->  3901.64s] change in Iran? It's not because of blowback. It's not because of mission creep. It's not because
+[ 3901.64s ->  3908.04s] of casualties even or cost. Because all of those arguments, those might not work. Those things are
+[ 3908.04s ->  3914.48s] genuine concerns. But in the end, that's not really the root of the problem. The root of the problem,
+[ 3914.48s ->  3922.20s] my issue with Iranian regime change is that we are creating an Israeli superpower that not even we
+[ 3922.20s ->  3930.72s] will be able to restrain. That is why this is America last. I wanted Iran to remain, not because
+[ 3930.72s ->  3938.72s] I'm a Muslim, not because I'm a cheerleader for the Iranian regime, but because Iran balanced Israel.
+[ 3938.72s ->  3948.33s] And balance benefits the United States. Why? Because it gives us leverage to put our finger on
+[ 3948.33s ->  3954.49s] the scale. But if there is no balance and Israel has free reign, then where does our leverage go?
+[ 3955.19s ->  3961.37s] They become a regional hegemon and they push us out. And then they are free to pursue an independent
+[ 3961.37s ->  3968.60s] foreign policy and their own goals. And we will have no say in that matter. And that is not in our
+[ 3968.60s ->  3976.56s] interest. So I wanted Iran to remain. That is a counterweight to Israel. And you know what? If
+[ 3976.56s ->  3982.97s] Israel has a nuclear arsenal, maybe Iran should have had one too. Maybe the Ayatollah should have
+[ 3982.97s ->  3987.69s] been building a nuclear bomb instead of writing about whatever it was, Black Lives Matter on Twitter.
+[ 3988.01s ->  3994.11s] Maybe you should have built a nuke and gone all the way. What's the outcome now? But these are
+[ 3994.11s ->  3999.85s] incompetent people, as we saw with Hezbollah, as we saw with Hamas and the Houthis. They were a paper
+[ 3999.85s ->  4006.00s] tiger. And so was Iran, the source of them all. Maybe they should have built a nuclear bomb. If
+[ 4006.00s ->  4011.44s] Israel has 300 nuclear bombs and they wage war on their neighbors and they threatened the United
+[ 4011.44s ->  4019.38s] States, what's one more in the region to balance it out? At least then we could put our finger on
+[ 4019.38s ->  4026.66s] that scale as we do, as we have with other countries. That's my problem with all of this. And
+[ 4026.66s ->  4032.30s] that's the bigger picture that people are not seeing. Israel has been on a mission. Just look at
+[ 4032.30s ->  4038.50s] it. Look at how they have infiltrated the United States and how they wield the United States through
+[ 4038.50s ->  4044.30s] our political system, through our financial system. Look at how they have used us like an instrument
+[ 4044.30s ->  4051.12s] to achieve their goals, to empower themselves. They stole a nuclear arsenal from us. They got all of
+[ 4051.12s ->  4057.78s] this military technology from us. We built their military. We defeated their foes. And now we have
+[ 4057.78s ->  4062.80s] essentially handed this to them. Now they're ready to cut the umbilical cord and become their own
+[ 4062.80s ->  4069.66s] superpower. We paid the price. We endured the cost. We paid the money. Our soldiers died. Our country
+[ 4069.66s ->  4076.98s] burned so that Israel could grow stronger, so that a Israeli superpower could be born. And now our country
+[ 4076.98s ->  4084.90s] will be in the wreckage. Not even a thank you. That's my problem with the war in Iran. So you have
+[ 4084.90s ->  4092.06s] to get it right. And this is where we're going in the next 25, 50, 100 years. This is what we need to
+[ 4092.06s ->  4099.04s] be thinking about. A world that is destabilizing, where there is a source of power. You have great powers
+[ 4099.04s ->  4107.10s] in Russia, in China, in India. Potentially Europe will get together as a coherent political unit.
+[ 4108.20s ->  4116.20s] We have middle powers like Pakistan, Turkey, South Africa, Brazil, Argentina, Ethiopia, Japan, that will
+[ 4116.20s ->  4121.42s] play a role. And Israel, we just created another superpower. That's something we're going to have
+[ 4121.42s ->  4128.05s] to contend with. And unlike those other countries, they have penetrated ours. So this is a problem.
+[ 4128.27s ->  4133.97s] You know, we may be inextricable from this new superpower. They may come to completely dominate the
+[ 4133.97s ->  4139.11s] Middle East and the United States. And then ultimately, the world. That's it. That's the
+[ 4139.11s ->  4144.97s] problem. So people said, Iran is threatening Israel. Iran is challenging Israel's influence. That's what
+[ 4144.97s ->  4150.61s] they're there for. That is what they're there for. We want that. We want Israel to be weaker, so that we
+[ 4150.61s ->  4155.53s] can be more powerful over them and over the region. Now we don't have that anymore. So don't get it
+[ 4155.53s ->  4160.59s] twisted. People are going to try and say, oh, well, there's going to be so much blowback. And you know
+[ 4160.59s ->  4165.91s] what? It is playing into the hands of the Zionists because when the United States wins this war
+[ 4165.91s ->  4172.27s] without anybody really dying or without it costing a ton of money, when this is as successful as people
+[ 4172.27s ->  4176.83s] needed to be to approve of it, all these people are going to look like idiots because they're all
+[ 4176.83s ->  4181.47s] Mark Levin and Shapiro are going to rub it in your face and say, oh yeah, remember when everybody said
+[ 4181.47s ->  4187.23s] this is going to be another Iraq? Well, it isn't. So we need to be very clear minded about what it is we
+[ 4187.23s ->  4191.35s] have a problem with here. And the last thing I'll say about it, and then we'll move on. We'll take
+[ 4191.35s ->  4197.57s] a look at super chats is consider the role of the Trump administration and all of it. Consider his
+[ 4197.57s ->  4205.21s] role. When Trump got in office in 2016, he did so with help from AIPAC, with help from Sheldon and
+[ 4205.21s ->  4211.66s] Miriam Adelson. And that assistance came with a price tag. He was empowered by the conservative
+[ 4211.66s ->  4219.38s] movement, which is a glove. I mean, it's a tool of the Israel lobby. And so Trump got into office and
+[ 4219.38s ->  4224.44s] almost immediately, he unilaterally pulled the United States out of the Iranian nuclear deal,
+[ 4224.84s ->  4232.02s] setting us on our way down this road. Obama had made a nuclear deal to the chagrin of the Israelis.
+[ 4232.18s ->  4238.72s] The Israelis hated Obama, hated the deal. Obama conducted the negotiations in secret and the
+[ 4238.72s ->  4245.66s] Israelis were not happy. They backed Trump. They wanted Trump to win so that Trump could undo what
+[ 4245.66s ->  4251.82s] Obama had done. And he delivered. Trump ripped us out of the nuclear deal and set us down the path.
+[ 4252.62s ->  4257.70s] Unilaterally withdrew the United States and then threatened Europe that if they didn't pull out of
+[ 4257.70s ->  4262.10s] the deal, then he would put secondary sanctions on them. So they pulled out of the agreement.
+[ 4262.76s ->  4268.38s] And then in 2020, Trump took the fight to Iran's proxies. He killed Qasem Soleimani.
+[ 4268.72s ->  4276.10s] The head of the IRGC, the architect of the proxy network. He designated the IRGC as a terrorist
+[ 4276.10s ->  4281.96s] organization to increase sanctions on them. He put maximum pressure on Iran economically.
+[ 4283.08s ->  4288.76s] After Trump left office in 2020, Israel went to work under the Biden administration,
+[ 4289.20s ->  4293.78s] cyber attacks on Iran's infrastructure, assassinating their nuclear scientists,
+[ 4293.78s ->  4299.52s] industrial sabotage, blowing up their oil refineries, their factories, their defense
+[ 4299.52s ->  4307.30s] facilities. Do you know that Joe Biden was nearly going to reconstitute the Iranian nuclear deal
+[ 4307.30s ->  4315.06s] in 2022? They're ready to go. And in 2023, just before October 7th, you might remember,
+[ 4315.44s ->  4321.10s] Joe Biden had a prisoner swap with the Iranians. We gave them some of their prisoners. They gave us
+[ 4321.10s ->  4327.04s] some of ours. We unfroze $6 billion in funds that had been frozen by us in South Korea.
+[ 4328.77s ->  4336.73s] We were engaging Iran. China brokered a peace between Saudi Arabia and Iran. We were on a path
+[ 4336.73s ->  4343.47s] to peace with Iran again. Trump tried to upend it. Biden came in. And what did the Israelis do?
+[ 4343.47s ->  4352.02s] October 7th. And that whole deal not only was put on ice, but it went in reverse. And Israel began a
+[ 4352.02s ->  4358.36s] campaign to systematically destroy all of Iran's deterrent capabilities. First, its proxy network
+[ 4358.36s ->  4365.48s] taking out Hamas and the Palestinians in the West Bank, then confronting Hezbollah, toppling the Assad
+[ 4365.48s ->  4372.58s] government and ejecting the IRGC, degrading the Houthis in Yemen. And then when they got Trump elected in
+[ 4372.58s ->  4380.14s] 2025, they got what they always wanted, which was the strike on Fordow, on Esfahan, on Natanz to take
+[ 4380.14s ->  4388.75s] out their nuclear hedge. And now it's the missiles. It could not have been done without Trump. Could not
+[ 4388.75s ->  4396.29s] have been done because the Israelis wield the Republican party. Trump told us the Iraq war was
+[ 4396.29s ->  4401.21s] a mistake and we should have never been there. And they didn't even have weapons of mass destruction,
+[ 4401.21s ->  4409.51s] all this kind of stuff. And he gave them everything that they wanted. He utterly betrayed MAGA and the
+[ 4409.51s ->  4417.44s] foundational pillar of America first, which is reputating the legacy of the Iraq war. What does this tell
+[ 4417.44s ->  4427.00s] you? It tells you that MAGA, the Republican party, it's not a failure. It's a success. It is a roaring
+[ 4427.00s ->  4436.70s] success. Don't kid yourself when you say Trump failed us. MAGA died. MAGA didn't die. This is what
+[ 4436.70s ->  4446.20s] it always was. This is what it was designed to be, which is they came up with a conceit to trick people
+[ 4446.20s ->  4453.86s] to vote for them by promising things they never intended to deliver. A border wall, mass deportations,
+[ 4453.86s ->  4460.18s] re-industrialization. They didn't have a plan. They didn't have a clue. They weren't serious about any
+[ 4460.18s ->  4466.36s] of it, but they wanted the Republicans back in the institutions. They wanted Lindsey Graham in the
+[ 4466.36s ->  4475.22s] Senate. They wanted project Esther in the executive branch. It was a Trojan horse. 10 years in, we are
+[ 4475.22s ->  4482.69s] being told a border wall, mass deportations, tariffs. Well, we just can't do it. It's just too difficult
+[ 4482.69s ->  4487.33s] because of the law, because of the Democrats, because of the media, because of whatever.
+[ 4488.82s ->  4495.60s] But slowly but surely, the United States has assisted Israel in achieving their ultimate plan,
+[ 4495.94s ->  4505.20s] which is toppling Iran and all of its proxies. So when they go in 2026 to ask for your vote,
+[ 4505.20s ->  4514.64s] you need to remember this. Remember that the Republican Party is building Israel as a superpower
+[ 4514.64s ->  4522.68s] while they kill America. While America is being killed by diversity and illegal immigration by Haitians
+[ 4522.68s ->  4528.60s] and Somalians and illegal Hispanics, and I know ordinary Hispanics too, I guess, and black people.
+[ 4528.60s ->  4535.10s] All these problems that we have that Republicans don't do anything about, where's our National Guard
+[ 4535.10s ->  4540.32s] in the cities? Where's our mass deportations? Where's our Muslim ban? Where's our border wall?
+[ 4541.71s ->  4548.15s] While they are complicit in the destruction of this superpower, the Republican Party is building a
+[ 4548.15s ->  4556.33s] rival superpower that hates us, that hates us. So people go out and say, yeah, well, it's a lesser of
+[ 4556.33s ->  4563.12s] two evils. Yeah, well, it's better than the Democrats. Is it? Is it better than the Democrats?
+[ 4563.58s ->  4570.24s] I'm not sure. I think they're exactly the same thing. And I'm not voting for any of it.
+[ 4570.92s ->  4577.48s] They're going to try to get you to vote for Vance. Where was J.D. Vance in 2016? Oh, yeah. He was
+[ 4577.48s ->  4584.80s] working with David Frum, a speechwriter for George W. Bush. He was doing his Hillbilly Elegy tour,
+[ 4584.80s ->  4591.76s] sponsored by Peter Thiel, creator of Palantir. And he voted for a CIA agent groomed by Bill
+[ 4591.76s ->  4598.26s] Kristol from National Review for president, Evan McMullin. That's who he voted for in 16.
+[ 4598.74s ->  4605.99s] And you idiots believed him. He changed. He's a Trump supporter now. He saw the light.
+[ 4607.76s ->  4613.72s] Now J.D. Vance says, well, we can't overlearn the lessons of Iraq. Not all military actions are a bad
+[ 4613.72s ->  4623.33s] thing. The guy's a chameleon. He wasn't there in 16. We were there in 16 because we said the Iraq war
+[ 4623.33s ->  4628.81s] was a mistake. We don't want Jeb Bush. We don't want AIPAC. We don't want Rubio, who Trump called
+[ 4628.81s ->  4635.31s] the puppet of the Adelsons. We wanted America first. We were deceived and we were lied to.
+[ 4636.31s ->  4641.59s] J.D. Vance was on the enemy team and now he's right there with Trump. Now take a look around.
+[ 4641.59s ->  4648.88s] You're in the golden age Trump White House. You're at Mar-a-Lago. Take a look around at the new face
+[ 4648.88s ->  4658.00s] of MAGA. In 2016, the face of MAGA was Trump and Ann Coulter and Jeff Sessions and Corey Lewandowski.
+[ 4658.97s ->  4666.23s] That was the face of MAGA. It was Pat Buchanan. It was Sam Francis. That was the inspiration.
+[ 4666.23s ->  4674.53s] That was the face of MAGA then. The face of MAGA now, look around. Mark Levin, Laura Loomer,
+[ 4674.87s ->  4685.20s] Ben Shapiro, J.D. Vance. These are the big boosters of MAGA in 2026. Something has gone horribly wrong.
+[ 4685.98s ->  4694.08s] All of those people, with some exceptions, were never Trumpers in 2016. Shapiro didn't vote for Trump in
+[ 4694.08s ->  4701.86s] 2016. Mark Levin was critical of Trump in 2016. Where were these people when the movement was
+[ 4701.86s ->  4707.52s] actually born, when those pillars were in place? Now all of those people are in the center. The
+[ 4707.52s ->  4715.02s] movement is something else now. And what we need in 2028, this is our last chance, we need in 2026 for
+[ 4715.02s ->  4721.40s] this administration to be shut the fuck down. What does this administration do other than cover up the
+[ 4721.40s ->  4727.26s] Epstein files, embezzle money through government contracts, and bring us to war for Israel? This
+[ 4727.26s ->  4734.58s] administration needs to be shut down immediately. Do not vote in the midterms. And if you do,
+[ 4734.82s ->  4742.24s] vote for Democrats. Fuck this. That is what the Republicans deliver. That is what our golden age
+[ 4742.24s ->  4750.68s] looks like. The tariffs were refunded. The deportations were stopped. They wound down and withdrew the ice
+[ 4750.68s ->  4757.96s] from Minneapolis. What does this administration do other than embezzle money, go to war with Iran,
+[ 4758.42s ->  4766.10s] and bury the Epstein files? Oh, and blackmail Harvard so they police anti-Semitism and ban people
+[ 4766.10s ->  4772.02s] who criticize Israel from being in America. This administration needs to be shut down immediately.
+[ 4772.54s ->  4778.98s] It has forfeited its mandate. They promise no new wars. They promise mass deportations in America
+[ 4778.98s ->  4787.90s] first. And we're not getting any of it. So shut it down. In 2026, shut it down. And our only hope is
+[ 4787.90s ->  4797.68s] that in 2028, in the Republican primary, somebody will emerge who will actually put America first.
+[ 4798.20s ->  4804.44s] I am not voting for the vice president and the secretary of state that brought us to war in Iran.
+[ 4804.44s ->  4813.73s] I won't do it. In 2016, I voted for Trump at 18 years old because Trump said the war in Iraq was a
+[ 4813.73s ->  4820.81s] mistake. He said Rubio was a puppet of the Adelsons and Vance voted for Evan McMullen, a CIA spook
+[ 4820.81s ->  4826.67s] picked by Bill Kristol. I'm now going to vote for that ticket. I'm going to vote for the Rubio Vance
+[ 4826.67s ->  4833.77s] ticket that brought us to war in Iran over my dead body. I would rather die than vote for that.
+[ 4833.77s ->  4842.87s] So in my opinion, 2026, shut it down. You got to burn the house down with them inside,
+[ 4843.19s ->  4850.31s] metaphorically. And in 28, you better hope that somebody has a prayer to run the Trump strategy
+[ 4850.31s ->  4856.65s] and do another hostile takeover over the GOP. Otherwise, I'm going to become a Democrat. Like
+[ 4856.65s ->  4867.13s] at that point, rather than be beholden to this country, that is our last chance. 28 Republican
+[ 4867.13s ->  4875.09s] primary, we need a Trumpian figure to relight the candle. Someone needs to take the flame
+[ 4875.09s ->  4882.13s] and take it further than Trump. He needs to take the baton and take it further and fulfill America
+[ 4882.13s ->  4888.03s] first. That's, that is the only way out of this at this point. And anybody that is not on this is
+[ 4888.03s ->  4894.39s] not serious. The only takeaway that I have from all of these events, you are not pressuring this
+[ 4894.39s ->  4899.95s] administration. All these people told us if Trump brings us to war in Iran, we'll just tweet about it.
+[ 4900.23s ->  4906.54s] Yeah. Well, that's not really working. Is it? We are locked in here. Here's what we can do.
+[ 4906.54s ->  4916.52s] Never Vance 28. We can punish those responsible. We can make it clear. You failed to deliver America
+[ 4916.52s ->  4922.96s] first. Your political career is finished. You will never be president off of bombing Iran.
+[ 4923.44s ->  4931.66s] That is the message we have to send. Never Vance 28. Never Rubio 28. I'm not voting for the Iran war
+[ 4931.66s ->  4939.46s] candidates in 28. I will not do it. And if it doesn't, if this animosity that we have, if it
+[ 4939.46s ->  4945.20s] doesn't translate into that, then it will be for nothing. And they're going to try so hard to get you
+[ 4945.20s ->  4950.06s] back on board. They're going to downplay it. They already are. You can already see the cope
+[ 4950.06s ->  4960.98s] about this operation. But I was there in 2018, in 2016. Okay. I lived it. I lived the first Trump
+[ 4960.98s ->  4968.16s] revolution. I wore the MAGA hat on the college campus. Okay. We got banned on Twitter. We got
+[ 4968.16s ->  4975.76s] persecuted for this. The first time we are the OG vanguard of American nationalism. We have to make
+[ 4975.76s ->  4983.08s] a comeback in 28 and we have to take our own side. We have to be the biggest, loudest faction. And the
+[ 4983.08s ->  4990.14s] GOP needs to know they cannot, will not win without us. And we're going to let them fail if we have to.
+[ 4990.14s ->  4998.22s] Otherwise, you are not serious. If you're not serious about letting the Epstein Iran war
+[ 4998.22s ->  5006.02s] administration and presidential ticket fail, then you are a sucker. You might as well go sign up to
+[ 5006.02s ->  5013.26s] flick the lights on and off for them on Saturdays at that point. If Ben Shapiro wouldn't vote for Trump
+[ 5013.26s ->  5019.32s] in 2016, if he was willing to let Hillary Clinton win, then we better be just as willing not to vote in
+[ 5019.32s ->  5025.94s] 28 for the person that betrayed Americans and brought us to war in Iran. And if you can't do
+[ 5025.94s ->  5032.32s] that, again, you have no right to be a free people. You have no right to be sovereign. That's the
+[ 5032.32s ->  5044.57s] difference. So that's the situation in Iran. It's so shameful, so disgusting. It's a war of choice.
+[ 5044.57s ->  5052.77s] Iran does not threaten us. Got no business there. This was a decision. And it was a decision made by
+[ 5052.77s ->  5058.45s] another country for another country's benefit. They will get the glory. We will pay the price.
+[ 5059.01s ->  5066.95s] We decrease. They increase. They are delighted to consign the American empire to destruction while
+[ 5066.95s ->  5072.67s] they look forward to a golden age, while they look forward to a century of empire and domination.
+[ 5074.01s ->  5080.70s] Maybe we can't stop it, but I'm not going along with it. Maybe it's biblical. Maybe it's prophetic.
+[ 5081.34s ->  5089.12s] I'm not going along with it. I'm never worshiping the God of Israel. I'm never worshiping the Moshiach
+[ 5089.12s ->  5095.62s] who they think is coming next. Christ is my Lord and Savior. He is my God. America is my country.
+[ 5095.62s ->  5101.96s] I may not be able to stop this agenda, but I sure as hell am not going along with it. I'm not
+[ 5101.96s ->  5109.72s] fucking voting for it. That I will not do. And that's it. But we're going to move on. We're
+[ 5109.72s ->  5113.74s] going to take a look at our super chats. We'll see what you guys have to say about all this. And
+[ 5113.74s ->  5120.16s] then I'm going to get out of here. It's my weekend for crying out loud. I was saying to myself,
+[ 5120.28s ->  5124.74s] thank God it's Friday. And now, you know, here we, now the world has just changed forever,
+[ 5124.74s ->  5133.48s] but that's the rallying cry. Never Vance, never Rubio. We have to tell everybody,
+[ 5133.60s ->  5142.24s] you know what? I'll tweet it out right now. I'll tweet it out right now. And you guys got to go
+[ 5142.24s ->  5148.96s] and you got to be the brigade. You got to let them know. Okay. Everybody get ready to retweet this.
+[ 5148.96s ->  5201.00s] Okay. Let's see. All right. Now I should have had something ready, but I'm tweeting this out now.
+[ 5201.36s ->  5208.46s] Everybody smash the retweets. This needs to be the narrative. Okay. Never Vance, never Rubio. This
+[ 5208.46s ->  5215.40s] is our program. We're not going out in 26. I will not reward this administration. They can't pass the
+[ 5215.40s ->  5220.98s] SAVE Act. They can't massively deport people. They can't shut down H-1Bs or they won't. They won't
+[ 5220.98s ->  5226.88s] release the Epstein files. I'm not giving them Congress. I'm not giving them the Senate. Good
+[ 5226.88s ->  5233.60s] luck. Ask Netanyahu. You want votes in 26? Ask all those free Iranians. Ask the Israelis. I'm not
+[ 5233.60s ->  5240.40s] voting for it. And in 28, never Vance, never Rubio. It's got to be somebody else. Otherwise,
+[ 5241.00s ->  5246.52s] we're just playing games here. Otherwise, we're fucking around. That's got to be the message. You
+[ 5246.52s ->  5254.72s] just lost. The MAGA movement has betrayed itself. Its fundamental pillars are in shambles. No border
+[ 5254.72s ->  5263.74s] wall. We're at war with Iran. Forget it. The only thing I will accept in 2028 is America first.
+[ 5265.28s ->  5270.90s] Dark America first. And this is the final battle. This is going to be the most important election of
+[ 5270.90s ->  5278.38s] our lifetimes. We are either going to have America first or we are going to destroy the GOP. It's that
+[ 5278.38s ->  5284.74s] serious. We're not voting for lesser of two evils. We're not doing it. 2028 is the most important
+[ 5284.74s ->  5291.76s] election of our lifetimes. I am never Vance. I am never Rubio. I will never vote for the Iran war ticket.
+[ 5291.76s ->  5301.26s] It is America first or it is nothing. America first or nothing. You either become America first
+[ 5301.26s ->  5307.78s] or the GOP will be destroyed and I will cheer for it. I may go to the gulags too. I will go to the
+[ 5307.78s ->  5316.07s] gulags happily if it means the traitors are not in power. And that's the take it or leave it mentality
+[ 5316.07s ->  5320.53s] we need to bring to the table. They're going to say everything about us. They're going to try to fuck
+[ 5320.53s ->  5325.39s] with us. They're going to try to get us to stand down. You're not immune to propaganda,
+[ 5325.39s ->  5332.95s] but you have to tune that out. This is how we flex American power. I'm sick of Jew power. I'm sick of
+[ 5332.95s ->  5340.49s] Israeli power. I want American power, but that starts with taking control over our vote. That's
+[ 5340.49s ->  5345.94s] the message, but we're going to move on here. Let's take a look at our super chats. You know what?
+[ 5346.08s ->  5351.14s] We're only going to read the big ones because this is a sort of historical momentous stream.
+[ 5351.14s ->  5357.34s] So I don't want to read a bunch of crap. We'll read the big ones and then I'm maybe I'll read the
+[ 5357.34s ->  5364.12s] smaller ones on Monday. Okay. African-American source said $1,000. You are so right. Hey,
+[ 5364.22s ->  5370.06s] thank you for the huge super chat. I am right. Isn't that crazy how vindicated I am?
+[ 5371.00s ->  5377.22s] Everybody doubted me. Why don't you know? I'm the best in the world at what I do. Don't you know?
+[ 5377.22s ->  5384.16s] I'm the number one live streamer of all time. I had people doubting me. It's like people that don't
+[ 5384.16s ->  5391.56s] even know the first thing about politics. It's crazy. So I'm feeling pretty smug. Everybody,
+[ 5391.90s ->  5396.84s] all these, uh, Groyper come lately types. They said he sold out. He took the paycheck.
+[ 5397.24s ->  5403.68s] Never forget. I told people not to vote for Trump. I earned this. Okay. We needed this.
+[ 5403.68s ->  5413.84s] We earned this. So yeah, that's just next level. Like all time legend calls the shot
+[ 5413.84s ->  5421.99s] with complete precision. And I remember on election day, do you remember people were so smug? They were
+[ 5421.99s ->  5430.34s] like, Hey, Nick Fuenches and the Groypers just screwed themselves. I was writing 24, 25, 23 for that
+[ 5430.34s ->  5440.38s] matter. So it's not that I'm not always right. I'm just not always right now. Okay. Just wait a
+[ 5440.38s ->  5445.94s] couple of years. Give it a couple of years, you know, benefit of the doubt. All right. But yeah,
+[ 5445.94s ->  5447.58s] I was right. Thank you for the huge super chat.
+[ 5448.26s ->  5450.96s] Got to love how the most media is getting normies to believe this is about liberating the Iranian
+[ 5450.96s ->  5453.62s] people. The same people that want the whole Middle East minus Israel turned into glass.
+[ 5454.48s ->  5460.58s] Yeah. And people are eating it up. You severely underestimate the public's appetite for war.
+[ 5460.58s ->  5464.80s] Everybody thinks that normies are on our side. They're really not. It's mostly young people.
+[ 5465.78s ->  5472.87s] Most of the American public will support a war if we win. Just is what it is. You look at the
+[ 5472.87s ->  5480.29s] strikes last year, 80% of Republicans supported Midnight Hammer, 80%. It's the young people that
+[ 5480.29s ->  5484.59s] don't support this. But a lot of people are drinking the Kool-Aid. They think it's about nukes.
+[ 5484.65s ->  5492.24s] They think it's about liberating Iran. They're under the spell of Israel. So that's why we have to
+[ 5492.24s ->  5498.98s] be undeterred. Don't listen to, don't listen to those that are in the pocket of the Zionists.
+[ 5499.02s ->  5504.30s] Just tune them out. If somebody is a slave to Israel, just let them, just let them be over
+[ 5504.30s ->  5509.96s] there. Don't let them enter into this calculation. This is an extremist movement. Okay. I'm an extreme
+[ 5509.96s ->  5513.30s] America firster. Okay. I'm a radical.
+[ 5513.30s ->  5523.96s] You're welcome. And thank you for the big super chat. That's the thing. Tucker won't talk about
+[ 5523.96s ->  5531.04s] it. Tucker said on a show, and he's been good on this issue, Iran, but he goes, it has nothing to
+[ 5531.04s ->  5536.72s] do with Jews. Really? It has everything to do with Jews. Do you know what holiday it is in a few days?
+[ 5536.72s ->  5544.66s] It's Purim. It's a Jewish holiday. Do you know what it commemorates? Google it. Go ahead. Google
+[ 5544.66s ->  5552.57s] Purim. P-U-R-I-M. You know what this holiday commemorates in Judaism? The victory over the
+[ 5552.57s ->  5561.69s] Amalekites by the Jews over the Persians. It's literally their holiday today. And he goes, yeah,
+[ 5561.73s ->  5573.03s] it's got nothing to do with Judaism. It's organized neocons. Purim is a Jewish holiday that commemorates
+[ 5573.03s ->  5579.73s] the saving of the Jewish people by Queen Esther, Esther, Project Esther from heritage from annihilation
+[ 5579.73s ->  5589.10s] at the hands of the Persian empire, as it is recounted in the book of Esther. Okay. That's the
+[ 5589.10s ->  5595.78s] story. That's on March 2nd. That's on Monday. Four-day operation, Friday, Saturday, Sunday, Monday.
+[ 5596.06s ->  5602.08s] Just in time. What a coincidence. Nothing to do with Judaism, by the way. They're the neocons.
+[ 5602.08s ->  5609.66s] It's Christian evangelicals, right? It's the Frankists. It's everybody else. No, the Jewish
+[ 5609.66s ->  5615.86s] state using its Jewish influence in America brought us to war on a Jewish holiday against
+[ 5615.86s ->  5622.75s] the Jews' eternal enemy, but it has nothing to do with Judaism. Leave those Orthodox Jews
+[ 5622.75s ->  5629.74s] like Ben Shapiro alone. They had nothing to do with this. They're a, they're a, what did she
+[ 5629.74s ->  5637.55s] say? They're a Turkic tribe. They're a nomadic Turkic tribe known as the Kazarians. Sure. Yeah,
+[ 5637.61s ->  5643.36s] sure thing. That's the problem. People, you think they're hiding their power level. What they're
+[ 5643.36s ->  5647.98s] really doing is running a limited hangout. You know, some people I've heard it spoken of that
+[ 5647.98s ->  5653.54s] some people are hiding their power level. Said another way, they are running a limited hangout.
+[ 5653.54s ->  5661.36s] Oh, Tucker's a hundred percent based. He's our guy. He just can't say everything that he thinks.
+[ 5662.44s ->  5667.28s] Hmm. Yeah. Is he hiding his power level? Is he, is he only saying 80% or is he, um,
+[ 5667.46s ->  5674.38s] running a limited hangout? Hey guys, let's talk more about aliens and demons and astrological
+[ 5674.38s ->  5682.14s] projecting astral projecting. Uh, and let's talk about Israel's governmental policies that have
+[ 5682.14s ->  5688.86s] nothing to do with Jews at all. Don't even go there. Like, come on now limited hangout. Your dad
+[ 5688.86s ->  5698.76s] is in the CIA, bro. My dad, Laura, I founded the GIA. Okay. Your dad is at Hungary tap dancing for the
+[ 5698.76s ->  5705.74s] Jew puppet, Victor Orban. Your dad is at foundation for defensive democracies. Your dad is running voice
+[ 5705.74s ->  5716.35s] of America for these Jew shills in Hungary and Russia. GIA. Your dad is CIA. This nigga is GIA.
+[ 5717.15s ->  5725.32s] Okay. Groepers in abundance. Fuentes.store. Fuentes.store. Fuentes.store. Get yours today.
+[ 5725.44s ->  5733.26s] Fuentes.store. No, but it's true, but it's true. He'll never tell you. $200. Totally vindicated.
+[ 5733.46s ->  5738.78s] Absolutely phenomenal shows always. Thank you for the huge super chat. Yep. Yep. Complete vindication.
+[ 5738.78s ->  5744.08s] Miami Groy Pet sent $250. Outbid me. I don't know what that means, but thank you for the big super
+[ 5744.08s ->  5748.48s] chat. I appreciate it. Oh, you're telling the other super chatters. Got it. Radioactive trash
+[ 5748.48s ->  5752.46s] sent $100. Been watching since 2023. Thank you for all the free shows. Here's a little money for your
+[ 5752.46s ->  5759.05s] troubles. Thanks. I appreciate it. Toucan sent $200. Mr. President, we've confirmed Nick's not doing a
+[ 5759.05s ->  5763.59s] show tonight. Excellent. Launch all fighters. Isn't that crazy? The one night I don't do a show,
+[ 5763.79s ->  5768.71s] we go to war with Iran. I'm glad it worked out this way though. We got a chance to catch our breath a
+[ 5768.71s ->  5773.61s] little bit. So that's fine. New Brewer 99 sent $100. Haven't super chatted in a little while.
+[ 5773.93s ->  5777.01s] Figured it was a good time to drop some money on you. God bless you, man. Thank you for the big
+[ 5777.01s ->  5780.63s] super chat. Appreciate the support. $100. Great show, Nick. Keep delivering the truth and may God
+[ 5780.63s ->  5784.23s] bless you and your family. Thanks. God bless. Six or seven mil sent $100. Seeing everyone apologizing
+[ 5784.23s ->  5792.96s] to you thing morning was pure or for you. Plus 271k aura points. Yep. That's me. I'm him. And it's like
+[ 5792.96s ->  5797.28s] that. It's really like that. At the end of the day, you got to remember I'm the most talented
+[ 5797.28s ->  5801.98s] political commentator that exists that is alive right now. Period. End of story.
+[ 5802.60s ->  5806.84s] Everybody thinks it's, oh, why do they like him? Oh, it's because they're mad that housing is too
+[ 5806.84s ->  5811.24s] expensive. Why do they like him? Oh, it's because he's an edgelord. It's because he's irony poison and
+[ 5811.24s ->  5817.14s] says the N word. It's because I'm right. It's because, you know, at the end of the day, you forget
+[ 5817.14s ->  5822.94s] not only am I funny and hilarious and an edgelord and everything. I'm also the number one, most talented,
+[ 5822.94s ->  5828.60s] best in the world of what I do. You often forget that. You often forget that I'm more cunning. I'm
+[ 5828.60s ->  5836.58s] hip. I know all their tricks. They forget that. Got to let them know. Got to tell them,
+[ 5836.92s ->  5840.98s] tell them, got to remind them sometimes. Hey, thank you for that.
+[ 5840.98s ->  5856.94s] It doesn't work that way. It's not, it's not, they have something on him. He is a man. They
+[ 5856.94s ->  5863.20s] have convinced him it is necessary. Um, maybe it's nuclear blackmail. Perhaps he's been convinced
+[ 5863.20s ->  5868.60s] that this is a strategic priority for the United States. I don't think you overestimate
+[ 5868.60s ->  5876.24s] the prevalence of blackmail and how many people are just suckers. Honestly, it's not to say that
+[ 5876.24s ->  5880.74s] it doesn't happen, but people buy into these narratives and I see it. I see young people
+[ 5880.74s ->  5884.92s] drinking the Kool-Aid on this. You're not immune from propaganda.
+[ 5885.16s ->  5887.34s] Niko said $100. Goyam Unite fuck his real hashtag. Never Vance.
+[ 5887.52s ->  5894.06s] Hell yeah. Thanks for the big super chat, Niko. Hell yeah. We're building an army here. We're
+[ 5894.06s ->  5900.16s] building a never Vance army. Who's with me. Goyam United will never be defeated.
+[ 5901.62s ->  5909.71s] Goyam United will never be defeated. America first will never be defeated. You know, I'm
+[ 5909.71s ->  5916.09s] starting to sense Aiden Ross is against the war. Clavicular is against the war, but he's
+[ 5916.09s ->  5923.14s] not political. Sneeko is against the war. Bradley Martin. I'm, what are we? Some kind of suicide
+[ 5923.14s ->  5930.19s] squad. What are, what is this? Some kind of Groyper army. This is the never Vance movement.
+[ 5930.33s ->  5936.33s] America first, never Vance. We got to, no more brother wars. Honestly, no more brother wars.
+[ 5936.47s ->  5942.96s] We're all Goyam to them. That's what they're not counting on. They want to play up division
+[ 5942.96s ->  5951.06s] and rivalry and pettiness and hatred. Love must overcome all. Love for all Goyam to defeat the
+[ 5951.06s ->  5957.00s] political influence of world Jewry. Goyam must unite all day, a hundred percent. So I'm with you,
+[ 5957.08s ->  5962.86s] dude. Sneeko, it's, it's really like that. There's bigger fish to fry. Speaking of Lent,
+[ 5962.94s ->  5968.46s] there's a bigger fish fry out there than, uh, you know, attacking each other and making fun of each
+[ 5968.46s ->  5973.68s] other's religions. We're at war. There's a war going on out there and you're going to have to
+[ 5973.68s ->  5984.77s] take a side. Me too. Nothing better. You know, you just have to like the feeling of satisfaction.
+[ 5984.77s ->  5992.94s] I know it's a horrifying situation and everything, but it's like, wow. Cause I took so much flack for
+[ 5992.94s ->  6000.82s] that. Where are my apology forms? That's not enough apology forms, more apology forms. Where are my
+[ 6000.82s ->  6008.14s] apology forms? I was right. I was right about all of this, about everything. And you were wrong.
+[ 6009.84s ->  6018.96s] You gaslit me. You abused me. You mocked me and you were wrong because you are stupid because you are
+[ 6018.96s ->  6030.71s] a stupid Goy. So submit your apology forms, submit your apology forms. Now, if you opposed me,
+[ 6030.71s ->  6037.68s] you owe me big time, big time, they called me a fed. They said I was working with Biden.
+[ 6037.94s ->  6044.32s] They said I was working with Biden to get Kamala elected. That's why I said Trump would bring us to
+[ 6044.32s ->  6057.05s] war in Iran. No, it's just cause I looked ahead and I don't have a, what do they call it? I don't have
+[ 6057.05s ->  6063.09s] a remote viewing technology. It's called follow the money. It's called, if you bet on Jews rigging it,
+[ 6063.09s ->  6074.71s] you'll win every time. So anyway, yeah, that was pretty good. I, you know, I told you unmatched
+[ 6074.71s ->  6083.78s] perspicacity, but anyway, but enough about me, please. Really? Honestly, it's not even about
+[ 6083.78s ->  6096.64s] that. Well, don't be annoying, you know, just maybe lurk a little bit, but I appreciate the big
+[ 6096.64s ->  6100.42s] super chat. I don't know. Maybe, maybe he shouldn't come back. JRP sent $100. Boy lives
+[ 6100.42s ->  6107.80s] matter. Jesus save us. Yeah. So true. Hell yeah. Let's all love Nick. Yes. Let's all love each
+[ 6107.80s ->  6111.40s] other and God. Website is great and vindicated yet again. Have a great weekend. Thanks a lot. Thank
+[ 6111.40s ->  6116.36s] you for the big super chat. I appreciate it. Never Vance. Never Vance. Never. Reno Vincenzo
+[ 6116.36s ->  6122.48s] sent $100. Pure Infest 2026. Pure Infest. Yeah. $100. I double dog dare Chris Pavlovsky to partner
+[ 6122.48s ->  6127.06s] with Nicholas J. Fuentes. No balls. Well, okay. Look, we like Chris. We like Chris. He's okay.
+[ 6127.52s ->  6132.28s] $100. Nick, I hope the Zionist Jews crash and burn. Well, I don't know about that one,
+[ 6132.34s ->  6136.64s] chief. They seem to be doing okay. You know, they seem to be winning a little bit.
+[ 6136.64s ->  6142.38s] $100. Right again, award. Right again as, yeah, on schedule. Oh, it must be that time when the
+[ 6142.38s ->  6150.56s] broken clock is correct, which is every single hour. Insane. Yeah, no, I feel good about that
+[ 6150.56s ->  6154.18s] one. But the reason I did all of that, and this is the last thing I'll say, then we're going to get
+[ 6154.18s ->  6162.26s] out of here. That's our last big super chat. Look, this is an inflection point in the history of all
+[ 6162.26s ->  6169.86s] of this. We are all on our journey with Trump and understanding how politics works. And we're also all
+[ 6169.86s ->  6174.82s] on our journey discovering what is happening with Jews in the world. And this is the confluence of both
+[ 6174.82s ->  6181.58s] of those things, okay? What happened in 2016 shook everything to the core. And the world has not
+[ 6181.58s ->  6188.81s] been put back together, really. Trump came out in 16 with a radical notion that America would be
+[ 6188.81s ->  6194.19s] governed by the people, that we would take the country back, that we would reclaim our sovereignty,
+[ 6194.19s ->  6201.35s] our independence, our freedom, control over the government. That is a very radical idea.
+[ 6201.35s ->  6206.25s] And we voted for Trump and we believed in that movement. And we have seen how and why it has
+[ 6206.25s ->  6212.25s] failed. We've seen the institutional capture, the bribery, the corruption, the lobbying, and we see
+[ 6212.25s ->  6219.59s] that Trump did not deliver it. But that is okay. It is okay. Because what Trump did in 2016 is he opened
+[ 6219.59s ->  6226.11s] up that conversation and he created people like me. Yeah, I was 18 years old when that happened and I was
+[ 6226.11s ->  6232.09s] inspired. I was possessed by the idea that we would put America first. That's why I made this show.
+[ 6232.31s ->  6239.48s] It's from his inaugural address. I started the show two weeks later. And when you take that to its
+[ 6239.48s ->  6246.72s] logical conclusion, you find out who we are. You find out who you are. We are a Christian, European
+[ 6246.72s ->  6255.08s] civilization. America is the fruit of this. It is the flower of this. It is the crown jewel of European,
+[ 6255.08s ->  6261.22s] Christian, Christian, Western civilization. And if we don't reclaim control over it, we're going to
+[ 6261.22s ->  6267.78s] lose it. And to do this, we need to engage in politics. We have to go to the centers of power.
+[ 6267.90s ->  6274.52s] We have to go to government. We have to be cunning. We have to be clever. We have to be patient and
+[ 6274.52s ->  6281.68s] prudent. And we have to dedicate our lives to seeing this through to the end, to fulfilling this.
+[ 6281.68s ->  6287.79s] And so we've all learned a lot of lessons. That's OK. We've all learned a lot of lessons about how all
+[ 6287.79s ->  6294.93s] of this works, voting and D.C. and influence campaigns and so on. And now it is incumbent on
+[ 6294.93s ->  6301.51s] all of us to be students, learn this stuff, get engaged and try to seize on the opportunity
+[ 6301.51s ->  6308.58s] whenever it presents itself. I went against Trump for a reason. I went against the Republicans for a
+[ 6308.58s ->  6313.92s] reason. In 2020, I said, destroy the GOP. In 2021, I told people not to vote in the Senate runoff.
+[ 6314.24s ->  6321.26s] In 22, I got people not to vote for Joe Kent. In 24, I didn't vote for Trump. We are all on this
+[ 6321.26s ->  6326.94s] journey here. And it's all leading to 2028. And the question is, will the MAGA movement take off?
+[ 6328.14s ->  6335.24s] Will its intellectual vanguard take over? Will there be a genuine heir? Is there a real successor
+[ 6335.24s ->  6342.20s] to the MAGA movement, someone from the beginning, an OG who understands what's at stake, who is based,
+[ 6342.30s ->  6347.72s] who understands what we're trying to do here? Or is the MAGA movement going to get folded back
+[ 6347.72s ->  6353.28s] into the status quo in the way of J.D. Vance, who couldn't even be a bigger puppet if you wrote him
+[ 6353.28s ->  6360.04s] in a story for the moneyed interests and for the foreign interests? That's what this is.
+[ 6360.04s ->  6366.42s] Yes. So it's all coming to a head very soon in 2028. That's it. All right. We got a couple more
+[ 6366.42s ->  6367.10s] here. Then I'm out.
+[ 6367.10s ->  6370.20s] Cali Groy percent, $100. Mr. Dot President, please destroy the Black Cube since you're already in
+[ 6370.20s ->  6370.48s] the neighborhood.
+[ 6371.06s ->  6371.80s] Wow. Careful.
+[ 6371.80s ->  6374.84s] Six or seven mil cent, $271. Betting on your hot cakes is basically insider trading.
+[ 6375.40s ->  6378.70s] Honestly. Honestly. I said on Thursday we would get strikes this weekend.
+[ 6379.52s ->  6384.02s] On Thursday, I said the talks collapsed. The war is imminent. I said they have talks scheduled for next
+[ 6384.02s ->  6388.78s] week, but it ain't going to happen. I said the deadline is between Friday and Monday. Purim's on Monday.
+[ 6388.78s ->  6395.28s] I called it, but okay. All right. Well, that's our last Super Chat. That's going to do it for me.
+[ 6396.08s ->  6402.02s] That's all I got for you. I will be back on Monday, most likely at 9.30 p.m. Okay. I'll be back
+[ 6402.02s ->  6408.10s] Monday, 9 or 9.30 p.m. Central right here on Rumble. So remember to subscribe, smash the like
+[ 6408.10s ->  6412.42s] button, leave a comment. Let me know what you think about the show. Check out our merch store,
+[ 6412.58s ->  6416.42s] Fuentes.store. Check out our subscription website. If you want to support the show,
+[ 6416.42s ->  6423.06s] be a subscriber. $15 a month. We have a brand new website. There's a discount going now too.
+[ 6423.60s ->  6429.10s] You get access to the whole archive, MP3 downloads, RSS feed, the whole library. Great video player.
+[ 6429.52s ->  6433.54s] $100 a month you get in the group chat with me and hang out, ask questions, talk.
+[ 6434.40s ->  6439.08s] But thank you to our top Super Chatters for tonight. Big thank you to Nigrasaurus,
+[ 6439.08s ->  6446.90s] six or seven million. Miami Groypette, Marble Groyper, Pew Piner, Tony Groypano. Nice.
+[ 6447.48s ->  6453.92s] Toucan, Wyatt, Tony, Subversion, Sneeko. Sneeko, the goat. All right. Boomer Hell,
+[ 6454.06s ->  6458.60s] Radioactive Trash, New Groyper, AF Ginger, Groyper Forever, Versace Groyper,
+[ 6459.04s ->  6466.86s] Wizzless Chud Groyper, Lane Groyper, Cali Groyper, Yappington, Hell, Silesia, Reno, Lane,
+[ 6466.86s ->  6473.56s] and the scenario. Thank you to all of them. Thank you to our top Super Chatters, all our Super
+[ 6473.56s ->  6477.66s] Chatters, everybody that watches. We love you. I'll see you on Monday. Until then, have a great
+[ 6477.66s ->  6479.24s] weekend. Have a great rest of your evening.

@@ -1,0 +1,56 @@
+[    0.04s ->     3.96s] in this video I want to talk about why you should only trade credit spreads on
+[    3.96s ->     8.68s] ETFs now again can you trade them on stocks absolutely I'll talk about the
+[    8.68s ->    12.42s] cases for that but in this video I want to walk you through the key reasons why
+[   12.42s ->    16.08s] you should only be trading on ETFs so let's dive right into it because I don't
+[   16.08s ->    19.86s] want to waste your time okay here we go what are we doing with credit spreads
+[   19.86s ->    23.72s] well with credit spreads we're just making a bet that a stock will stay
+[   23.72s ->    27.36s] above or below a certain level so for instance if we're trading put credit
+[   27.36s ->    32.22s] spreads put we're simply making a bet that the stock which is this will stay
+[   32.22s ->    36.18s] above a certain level for calls it's the same thing but for the inverse we're
+[   36.18s ->    40.56s] making a bet that the stock will stay below a certain level so as long as for
+[   40.56s ->    45.30s] instance for a put these stocks is above this level we make money now what are the
+[   45.30s ->    50.88s] cases that would make us lose money well with a stock whoops is very volatile
+[   50.88s ->    56.52s] volatile then anything can happen so we're seeing here like let's say stock is
+[   56.52s ->    60.78s] moving right here like normal what affects the stock well there are a lot of things
+[   60.78s ->    67.22s] that can affect the stock let's say news let's say weather let's say economic reports
+[   67.22s ->    74.34s] financial reports financial statements the CEO doing something supply chain issues
+[   74.34s ->    79.44s] anything like that can affect this stock and with effects like that let's say the bank
+[   79.44s ->    83.26s] that heavily relies on interest rates we have an interest rate change that's not favorable for
+[   83.26s ->    88.84s] banks okay things like that are going to cause the market to drop and have a sharp
+[   88.84s ->    92.80s] decline not only the market but these stocks that are specifically affected in
+[   92.80s ->    97.18s] general so we can see here that the overall S&P 500 market can you just
+[   97.18s ->   101.74s] consistently be trending up like this and to be nice and safe but then we have in
+[  101.74s ->   105.76s] this we have Apple that's being tracked or Tesla which is like doing like like
+[  105.76s ->   109.70s] this we don't know what's going on why is this hard to do for individual
+[  109.70s ->   113.54s] stocks well if you're trying to simply trade set it and forget it credit
+[  113.54s ->   118.46s] spread on and on individual stocks you're gonna have random news that goes and make
+[  118.46s ->   124.16s] the stock go below your level versus ETFs which is does still go up and down but
+[  124.16s ->   129.92s] it's a slower more average approach why because let's say the S&P 500 index for
+[  129.92s ->   137.30s] example S&P 500 tracks roughly the top 505 stocks so now we do have these stocks that
+[  137.30s ->   141.44s] have terrible days but we also stocks that have good days and it all averages
+[  141.44s ->   146.54s] out so we don't have any sharp declines which means that when we're trading ETFs
+[  146.54s ->   152.42s] we have a higher win rate because of how diversified these assets are by default
+[  152.42s ->   158.12s] that is the first reason diversification slows down the stock and allows it a
+[  158.12s ->   163.28s] better chance of it staying above our strike price level number two ETFs
+[  163.28s ->   170.24s] specifically the ones that we trade QQQ, IWM, SPY, stuff like that are very very
+[  170.24s ->   175.46s] liquid which means that they have great spreads for like spreads between the bid
+[  175.46s ->   180.56s] and the ask price and it's really easy to get in and out especially with larger
+[  180.56s ->   186.08s] size so this is why it's great to trade credit spreads on ETFs because it's super
+[  186.08s ->   191.18s] easy to get in and out and that's a big issue on individual stock especially as you
+[  191.18s ->   196.64s] start to get away from the FAANG stocks are very popular stocks so guys for
+[  196.64s ->   201.74s] these two reasons alone for win rate and for entry and exit purposes you should
+[  201.74s ->   208.76s] only be trading ETFs now this in my rec in my recommendation applies to set it and
+[  208.76s ->   212.30s] forget it strategies where someone who works full-time someone who's a busy
+[  212.30s ->   217.46s] parent something like that where you don't want to spend 24-7 on the screen you
+[  217.46s ->   221.72s] just want to come in at the end of the day place a trade and let it expire
+[  221.72s ->   225.50s] worthless in the next two to three weeks and make money if that's what you're
+[  225.50s ->   231.38s] trying to do ETFs are perfect for you that's what I use them in my program and
+[  231.38s ->   236.36s] all my members use them however on individual stocks you have to do more
+[  236.36s ->   242.00s] technical and now a technical analysis and more of an idea of which way it's
+[  242.00s ->   245.78s] going and catching that move because if you don't catch the move then you're going
+[  245.78s ->   249.08s] then you're going to do it wrong and you lose money so again those are your
+[  249.08s ->   252.56s] difference between ETFs and stocks you have to be more specific on stocks and
+[  252.56s ->   257.54s] you can be more laid-back on ETFs anyways guys this is why you should only trade
+[  257.54s ->   262.46s] credit spreads on ETFs if you want to learn about my favorite ETFs to trade and
+[  262.46s ->   266.00s] why I'll be doing another video on that so please smash that subscribe button
+[  266.00s ->   270.40s] alright guys I will see you in the next video

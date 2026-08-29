@@ -1,0 +1,501 @@
+[    0.46s ->     8.04s] It is time. I doubt I'm going to get a Bruce Buffer introduction for this video on stochastic
+[    8.04s ->    13.72s] differential equations for quantitative finance. But nevertheless, in this video, what I want to do
+[   13.72s ->    19.06s] is connect a lot of the ideas that I've been discussing for these past couple of weeks on
+[   19.06s ->    27.70s] Ito's Lemma and Ito integration and talk about the application of those topics in solving these SDEs
+[   27.70s ->    32.96s] specifically for quant finance. What we're going to do in this video is we're going to start with
+[   32.96s ->    38.16s] ordinary differential equations. We're not going to go through meticulously different forms of
+[   38.16s ->    43.80s] differential equations and techniques for solving them, but rather build an intuition and foundation
+[   43.80s ->    49.60s] for what a differential equation is and how we go about solving it, the purpose of them. We're going
+[   49.60s ->    55.52s] to build then to this idea of a partial differential equation, the Black-Scholes equation, how that
+[   55.52s ->    60.90s] connects to the Black-Scholes model and different means of solving those partial differential
+[   60.90s ->    67.00s] equations, analytical versus numerical solutions, finite differences. Then we're going to talk about
+[   67.00s ->    71.46s] stochastic differential equations. We're going to talk about how to think about them and go through
+[   71.46s ->    76.70s] an example with a geometric Brownian motion in this Black-Scholes framework. Then we're going to look
+[   76.70s ->    82.90s] at analytical and numerical solutions to stochastic differential equations and the implications of
+[   82.90s ->    87.12s] those. As always, this Jupyter notebook will be available in the description below. I will also
+[   87.12s ->    92.08s] post it to the Quant Guild library on GitHub, where you can find all of my Jupyter notebooks and
+[   92.08s ->    97.10s] associated YouTube videos. At the top of this notebook, you'll notice some related Quant Guild videos
+[   97.10s ->   103.18s] on necessary topics, a background for this video on stochastic differential equations, Ito's Lemma,
+[  103.44s ->   108.74s] Ito integration topics, and stochastic calculus that are necessary. And if you're interested in the
+[  108.74s ->   114.32s] industry application of these ideas, some videos on trading with eggs in a market-making capacity,
+[  114.32s ->   120.12s] the idea of an expected value level, and how that's sufficient for generating P&L over a large
+[  120.12s ->   124.84s] number of trades. Moreover, if you're interested in supporting my channel so I can continue to make
+[  124.84s ->   129.84s] videos just like this one, check out QuantGuild.com. Maybe you're just getting started in the quant space
+[  129.84s ->   135.14s] and you aren't too sure where to look. Maybe you're an industry pro looking to brush up on some old
+[  135.14s ->   140.96s] topics in probability and statistics as you go to tackle some technical interviews. QuantGuild is
+[  140.96s ->   146.60s] for you. We have over 90 lessons in math, probability, and finance, over 1,000 problems with gamified
+[  146.60s ->   152.36s] progress. You can see your rank improve in each discipline as you tackle harder and harder questions.
+[  152.78s ->   157.20s] We even have applied trading games and live classes if you prefer more structured learning
+[  157.20s ->   164.06s] in topics like financial mathematics, stochastic calculus, quantitative trading, and very soon we'll be
+[  164.06s ->   170.04s] launching a new course, Intro to QuantMath. Lots to look forward to, but without further ado,
+[  170.46s ->   176.54s] let's get started with this idea of a differential equation so we can build up to those more advanced
+[  176.54s ->   183.20s] topics. Simply put, a differential equation is just an equation that involves a derivative.
+[  184.20s ->   188.86s] That's all it is. We're modeling some sort of rate of change. This could be population growth,
+[  188.86s ->   196.40s] this could be the quantity of water flowing into a river, this could be even stock price if those
+[  196.40s ->   202.06s] changes were deterministic. So that's all a differential equation is, is it's modeling change
+[  202.06s ->   208.72s] in some sort of way. And our goal is to recover some sort of original function that represents the
+[  208.72s ->   215.84s] accumulation of this change over some sort of quantity or index. Okay, if that's the goal and the
+[  215.84s ->   220.20s] derivative and integral or inverse operations, why don't we just integrate, solve the differential
+[  220.20s ->   224.50s] equation? Well, that is certainly what we're going to have to do, but there are a variety of different
+[  224.50s ->   229.78s] forms of differential equations. There are first order, second order, higher order, and a variety
+[  229.78s ->   234.08s] of techniques to go about solving these different types of differential equations, but those are topics
+[  234.08s ->   238.06s] for another day. In this video, what we're going to do is we're going to try to build this intuition
+[  238.06s ->   243.06s] and understanding of a differential equation so that we can move on to these higher level topics.
+[  243.06s ->   248.48s] So what I have here is a very simple quadratic function. There are a lot of different classes
+[  248.48s ->   255.48s] of functions that we could be operating with or trying to solve a differential equation for,
+[  255.96s ->   260.70s] and we're just going to look at a quadratic in this case. So what I have here is a quadratic function,
+[  261.14s ->   268.00s] 2x squared plus 1. The general form of a quadratic is ax squared plus bx plus c. And just to keep this
+[  268.00s ->   274.46s] in the realm of finance, I have x as the stock price and f of x or y as some sort of cost of an
+[  274.46s ->   281.84s] option or derivative in dollars. Notice here, if I take the derivative of this option pricing function,
+[  281.84s ->   290.10s] then I will get 4x plus 0. And that derivative is going to actually represent the instantaneous rate
+[  290.10s ->   295.72s] of exchange in the option price relative to the stock price. It's actually delta if you think about the
+[  295.72s ->   303.76s] Black-Scholes pricing function. But in this case, the point is that one goes away. If I take the
+[  303.76s ->   310.06s] derivative, I just get 4x plus 0. If I integrate back to try to recover this original function here,
+[  310.24s ->   317.86s] then I'm going to get 2x squared plus c. I don't know what that original constant was. It went away
+[  317.86s ->   324.32s] in the derivative. Unless I had information about the original function, I wouldn't be able to recover
+[  324.32s ->   329.44s] that quantity. Let's look at a more specific example of this. So assume that I didn't know
+[  329.44s ->   335.74s] this pricing function 2x squared plus 1. Then let's model this as some sort of differential equation.
+[  335.86s ->   344.30s] So I have f prime of x is equal to 4x, which is the same as dy dx is equal to 4x or y prime is equal
+[  344.30s ->   350.16s] to 4x. This is a very simple differential equation. I'm going to integrate to solve it. When I integrate it,
+[  350.16s ->   356.68s] just as I said a moment ago, you'll notice I get 2x squared plus c. I don't know what c is. Now,
+[  356.80s ->   364.22s] in this example above, c was 1. And we want to find that correct value for c. But when we go about
+[  364.22s ->   369.08s] solving a differential equation, we have two solutions. We have a general solution and a
+[  369.08s ->   375.02s] particular solution. The general solution is one that we don't have an initial condition for. It
+[  375.02s ->   381.32s] operates in this arbitrary capacity. All of these are correct. All of these are different parabolas.
+[  381.88s ->   388.40s] 2x squared plus c. This is the general solution. If we want to find the particular solution, we need
+[  388.40s ->   394.90s] information. We need some sort of condition to figure out and solve for that value c. So in this case,
+[  394.94s ->   401.86s] I have this initial condition here that f of 0 is equal to 1. And if I go about plugging that into
+[  401.86s ->   407.66s] my general solution, I can solve for this value c. This value c is actually equal to 1. And you'll
+[  407.66s ->   414.16s] notice now I've recovered that original pricing function correctly. I have 2x squared plus 1. It's
+[  414.16s ->   421.38s] exactly what we had up here. And if we look back at all of the general solutions and we actually just
+[  421.38s ->   425.92s] look at the solution that we're interested in, that is this particular solution, you'll see it's when
+[  425.92s ->   432.72s] c is equal to 1. So this is how we go about solving differential equations. And this is the difference
+[  432.72s ->   437.44s] between a general and a particular solution. So how should we go about thinking about differential
+[  437.44s ->   443.26s] equations? Students get hung up on this idea of different forms and techniques, trying to identify
+[  443.26s ->   448.50s] them, which are correct techniques to deploy, memorizing these different techniques. And I find
+[  448.50s ->   454.02s] this is very similar to why students have a distaste for things like matrices. It's unfortunate because
+[  454.02s ->   462.88s] these tools should excite you when they appear. They make our lives so much easier, not more difficult.
+[  463.52s ->   468.30s] The difficulty probably comes from class where you have to memorize different forms, techniques, and
+[  468.30s ->   475.74s] deploy them on a test on the spot. But in reality, if you see these things, it's a very beneficial
+[  475.74s ->   482.44s] thing to be working with strictly because it's so well defined, right? If you're operating in some sort of
+[  482.44s ->   488.06s] model space and you have a differential equation, you should be stoked because you know that's a
+[  488.06s ->   493.22s] differential equation and there are means about going to find analytical and numerical solutions.
+[  493.42s ->   498.94s] Same thing with matrices. They make our lives significantly easier for a variety of different
+[  498.94s ->   503.72s] reasons. If you want to get into the data science, machine learning, AI space, all you're going to be
+[  503.72s ->   510.78s] dealing with is matrices, data as matrices, qualitative, quantitative data as matrices. But again, topics for
+[  510.78s ->   515.14s] another day. So I think when we think about differential equations, we need to just remember the
+[  515.14s ->   522.00s] goal. The goal is to find some sort of function. And we have information about the derivative of that
+[  522.00s ->   529.28s] function. And we're going to deploy some sort of means of solving that equation to find the function of
+[  529.28s ->   535.78s] interest. It's also important to note that sometimes you're not going to have techniques available to solve a
+[  535.78s ->   541.76s] differential equation analytically. Fortunately for us, we have computers and different numerical
+[  541.76s ->   547.88s] techniques available to approximate solutions. Now, it's always preferred to have an analytical
+[  547.88s ->   555.22s] solution. The analytical solution will be correct for the differential equation. That is the original
+[  555.22s ->   561.54s] function, this parabola here in this case, is going to be correct always if we have the analytical
+[  561.54s ->   567.90s] solution for any value that I input for the stock price, it will produce the correct value for the
+[  567.90s ->   575.32s] cost of the option, no matter where I input the stock price if it's at one, two or 10 million. But with a
+[  575.32s ->   580.92s] numerical solution, it's only going to be as accurate as the grid that I go about approximating the
+[  580.92s ->   586.96s] solution for. In other words, if I only approximate the function out to one, and I try to use that
+[  586.96s ->   592.90s] approximation for two, my approximation is going to be terrible. But we're going to see an example of this
+[  592.90s ->   598.26s] with the Black-Scholes model down below, as we start to talk about this idea of partial differential
+[  598.26s ->   604.52s] equations. So what's a partial differential equation? Well, a partial differential equation is the same thing as a
+[  604.52s ->   610.04s] differential equation. But instead of a derivative, we have partial derivatives. And instead of a function of one
+[  610.04s ->   615.68s] input, we have a function of more than one input, not too difficult of an extension to make. A partial
+[  615.68s ->   623.52s] derivative is simply suggesting how a function changes relative to one of the inputs holding the
+[  623.52s ->   629.98s] other inputs constant. So I have a simple example here, actually, with this input of stock price and
+[  629.98s ->   636.34s] volatility to produce an option price. So what's happening here is I have a function, and this is the
+[  636.34s ->   642.82s] function that we're looking to recover, that represents the option price based on the stock price and the
+[  642.82s ->   649.72s] current volatility level. Now, if I represent this as a partial differential equation, then what I would
+[  649.72s ->   655.86s] have is I would have a series of partial derivatives that represent how this function changes relative to
+[  655.86s ->   662.84s] the stock price holding the volatility constant, how the option price changes based on the volatility
+[  662.84s ->   669.72s] holding the stock price constant, and so on and so forth. So that is a partial differential equation.
+[  669.72s ->   676.10s] It's a simple extension to the idea of a differential equation. We just have now more than one input,
+[  676.46s ->   681.64s] and instead of a derivative representing change, the function changes based on more than one input,
+[  681.76s ->   686.42s] so we're dealing with partial derivatives that represent the partial change in this function
+[  686.42s ->   693.14s] relative to one of the inputs holding the other inputs constant. The Black-Scholes equation
+[  693.14s ->   699.26s] is a partial differential equation. If you go about constructing the hedge portfolio argument and
+[  699.26s ->   704.52s] you cancel out the randomness from the geometric Brownian motion by constructing a continuous time
+[  704.52s ->   709.78s] delta hedge, you will get this partial differential equation representing the Black-Scholes model price.
+[  710.60s ->   716.04s] I'm going to do a video separately on deriving the model in its entirety, but for now this is
+[  716.04s ->   720.42s] particularly relevant to partial differential equations because this is precisely what we're talking about
+[  720.42s ->   726.40s] here. We have some sort of partial differential equation that is an equation involving partial
+[  726.40s ->   731.64s] derivatives representing some sort of original function in terms of how that function changes
+[  731.64s ->   738.32s] relative to its inputs, and that is precisely what this Black-Scholes equation is. Now we know we can go
+[  738.32s ->   743.96s] about solving this Black-Scholes equation analytically. That is an option, but we can also go about
+[  743.96s ->   748.54s] solving it numerically, and this goes to what I was talking about earlier with the ordinary
+[  748.54s ->   755.06s] differential equations when we're dealing with something that has one input. That is, we can
+[  755.06s ->   761.08s] approximate a solution or a class of solutions based on some sort of discretization or some
+[  761.08s ->   768.04s] discrete grid. So what I have here is I have an example of this approximation. I have the actual
+[  768.04s ->   775.94s] solution to the Black-Scholes model here. I have the small grid, which is a poor approximation, and a large
+[  775.94s ->   781.46s] grid, which is a better approximation. This is using a Crack-Nicholson scheme. This is the finite
+[  781.46s ->   788.02s] differences methodology of solving this partial differential equation. So when we go down here and
+[  788.02s ->   793.18s] we take a look at this approximate solution, when I use a small grid, look at how it extrapolates.
+[  793.86s ->   799.94s] Beyond 100, it nowhere near matches the true option price given by the Black-Scholes model.
+[  799.94s ->   808.18s] But if I use a larger grid and I extend that stock price out to, say, $10,000, then the approximation
+[  808.18s ->   814.44s] is pretty darn good. So in terms of approximate solutions available to us, if we know the confines
+[  814.44s ->   821.34s] of the space that we are operating in for the use of that function, let's say that I know that the stock
+[  821.34s ->   827.22s] price isn't going to be $10 million, then I can simulate a pretty darn good approximation for that
+[  827.22s ->   832.10s] solution. It will be slower relative to the analytical solution, but if you don't have an
+[  832.10s ->   839.26s] analytical solution, then it is a very good option to have. There are quite a few mathematical objects
+[  839.26s ->   846.50s] floating around here that we need to address precisely. So in a Black-Scholes framework, we are
+[  846.50s ->   852.68s] assuming that the underlying asset follows a stochastic differential equation. That means that there is
+[  852.68s ->   858.38s] randomness, but this partial differential equation doesn't have any randomness. So how is this
+[  858.38s ->   863.44s] equivalent? Well, the Black-Scholes argument constructs a continuous time delta Hedge to
+[  863.44s ->   869.38s] cancel out the randomness, and we're left with this partial differential equation to solve. I could do
+[  869.38s ->   874.10s] this with another model too, or a different type of derivative contract, and derive a similar partial
+[  874.10s ->   880.02s] differential equation. I could do this with the Heston model. I could construct a Vega Hedge,
+[  880.02s ->   885.78s] and then I could construct a delta Hedge that is also viable, and then I'll get a Heston partial
+[  885.78s ->   891.62s] differential equation that I can go about solving numerically in this capacity here. Of course,
+[  891.68s ->   897.64s] you also have Carr-Madden Fast Fourier Transform again, topic for another day. So if this is the case,
+[  897.86s ->   905.90s] then where does simulation come in? So how does simulation relate to a valid solution of this partial
+[  905.90s ->   911.44s] differential equation? Well, fundamentally, it's actually a little bit different, because instead
+[  911.44s ->   918.00s] of simulating a solution via the PDE, we're simulating a solution directly from the terminal
+[  918.00s ->   925.28s] distribution and the expectation of the payoff of the option contract. So instead of constructing some
+[  925.28s ->   931.12s] sort of portfolio argument to derive a partial differential equation, if we go about simulating
+[  931.12s ->   937.28s] a price, then what we're actually doing is we're drawing from some sort of terminal stock price
+[  937.28s ->   944.44s] distribution, computing a payoff, and then taking the discounted value of that payoff back to the
+[  944.44s ->   948.94s] present, averaging all those, and we're going to get an approximation for the option price.
+[  949.52s ->   955.06s] Now, if you're operating in the same framework, then these should be equivalent. That is,
+[  955.06s ->   961.28s] the finite differences approximation should be equivalent to the Monte Carlo simulated price,
+[  961.66s ->   967.56s] which should be equivalent then to the analytical price if it is available. This is how these
+[  967.56s ->   973.64s] mathematical objects differ. It's very important to understand what you're solving for, and where it
+[  973.64s ->   979.98s] originates, and how you're coming up with that actual price. Because you could do it in any one of
+[  979.98s ->   984.36s] these ways, assuming analytical solutions are available, you could do Monte Carlo simulation,
+[  984.36s ->   990.00s] simulate the underlying, compute the payoff, risk neutral, discounted expectation, boom, option
+[  990.00s ->   997.54s] price, approximate the pricing PDE via a finite differences scheme, boom, option price, plug it into
+[  997.54s ->  1004.06s] an analytical solution, boom, option price, all valid methods of producing the value of an option,
+[ 1004.50s ->  1010.32s] but fundamentally different problems with different guarantees, so on and so forth. I don't want to lose
+[ 1010.32s ->  1015.04s] sight of the goal of this video, and that is to understand stochastic differential equations in
+[ 1015.04s ->  1021.30s] the context of quantitative finance, but it's equally important to use differential equations and partial
+[ 1021.30s ->  1027.74s] differential equations as a stepping stone to understand where all of these fit in in the realm
+[ 1027.74s ->  1033.72s] of quantitative finance, because ordinary differential equations are necessary to understand partial
+[ 1033.72s ->  1045.36s] differential equations. And if we make the connection going back to a differential equation, then our goal
+[ 1045.36s ->  1051.44s] was to recover some sort of function based on an equation involving that function's derivative. We did that
+[ 1051.44s ->  1057.08s] with simple integration. We looked at partial differential equations where we have a function of more than one
+[ 1057.08s ->  1063.84s] input, and we're representing that function in terms of its partial derivatives, and we are using now a
+[ 1063.84s ->  1069.32s] numerical method to go about recovering that original function. It's fundamentally the same problem,
+[ 1070.02s ->  1075.70s] right? Fundamentally, that's all we're doing here. So in the case of a stochastic differential equation,
+[ 1075.92s ->  1082.04s] this is going to differ significantly because we're dealing with randomness. We're no longer dealing with
+[ 1082.04s ->  1087.00s] this idea of some sort of static function. So if you look at the option pricing function that
+[ 1087.00s ->  1091.82s] we recovered either numerically or analytically in the case of the partial differential equation with
+[ 1091.82s ->  1099.38s] Black-Scholes, you'll see that we get a specific value for the option price. But when we're dealing
+[ 1099.38s ->  1104.42s] with a stochastic differential equation, we're dealing with randomness. So what does an analytical
+[ 1104.42s ->  1112.08s] solution actually look like? Well, an analytical solution is just going to define a distribution that
+[ 1112.08s ->  1119.00s] classifies the randomness of that particular process. And this is going to become more clear when we look at a
+[ 1119.00s ->  1124.88s] specific example with the geometric Briony motion. But it's particularly important to keep this idea in mind,
+[ 1124.88s ->  1130.16s] because we're no longer dealing with some sort of function of a fixed quantity. We're dealing with a function
+[ 1130.16s ->  1136.46s] that is going to describe randomness in terms of a distribution. That is the goal of an analytical solution
+[ 1136.46s ->  1141.62s] for these types of equations. We're no longer going to be dealing with this idea of a function that's
+[ 1141.62s ->  1148.74s] going to give us the value of, say, an option contract. And every time I go about using the
+[ 1148.74s ->  1153.90s] analytical solution, I'm going to get the same value. No. Instead, we're dealing with randomness. So we're
+[ 1153.90s ->  1159.64s] essentially just classifying the distribution of potential outcomes. Ito calculus is essential here.
+[ 1159.64s ->  1167.28s] It's necessary. We're dealing with random quantities. The integral is now a random quantity. The derivative
+[ 1167.28s ->  1173.00s] is now a random quantity. Random variables, they are classified by a distribution with a set of
+[ 1173.00s ->  1178.72s] possible outcomes. It's very tempting to treat these mathematical operations and quantities in the
+[ 1178.72s ->  1184.04s] traditional calculus sense, but that would be incorrect. So we need to keep this in mind as we
+[ 1184.04s ->  1190.76s] operate within this space. Another note is when we're dealing with something like an option price,
+[ 1190.88s ->  1195.74s] aren't we dealing with randomness? We're assuming that the underlying follows some sort of stochastic
+[ 1195.74s ->  1200.58s] differential equation. That's what it means to operate within a framework. If we operate in a
+[ 1200.58s ->  1205.56s] Black-Scholes framework, we assume a geometric Brownian motion. If we operate in a Heston framework,
+[ 1205.56s ->  1212.72s] we assume some sort of variance process that's mean reverting. But where does that randomness go?
+[ 1212.72s ->  1217.40s] When we solve the partial differential equation, we're solving something that doesn't have any
+[ 1217.40s ->  1221.62s] randomness in it. Well, as I mentioned earlier, right, we're hedging away the randomness. Really,
+[ 1221.72s ->  1228.50s] what we're doing is we're looking at it in terms of this risk-neutral expectation. So we're getting
+[ 1228.50s ->  1233.50s] rid of that randomness in that capacity. So whether you're solving it via the partial differential
+[ 1233.50s ->  1239.94s] equation or you're solving it via the simulation, via the risk-neutral expectation in that capacity,
+[ 1239.94s ->  1244.40s] what we're doing is we're getting rid of the randomness by either looking at the expectation,
+[ 1244.92s ->  1249.54s] that is the average, or we're hedging away the randomness. And in those frameworks,
+[ 1249.74s ->  1255.26s] those prices that are developed in either capacity will be, should be, equivalent. By now,
+[ 1255.30s ->  1259.70s] we have a pretty strong understanding of the place that these mathematical objects have
+[ 1259.70s ->  1264.90s] in quantitative finance. We understand the purpose of differential equations. We understand that we're
+[ 1264.90s ->  1270.16s] modeling change, and we want to recover some sort of original function that's governed by that change.
+[ 1270.68s ->  1276.86s] We understand that sometimes we're not going to be able to analytically precisely solve for that
+[ 1276.86s ->  1281.78s] function in closed form. So we need to deploy numerical techniques to approximate that solution.
+[ 1282.18s ->  1286.56s] And we saw that in the case of the Black-Scholes equation, but of course, the analytical solution
+[ 1286.56s ->  1292.42s] is available. So it was more of an exercise. But nevertheless, we understand the place of that
+[ 1292.42s ->  1299.30s] mathematical object, that partial differential equation. Moreover, as we continue to get involved
+[ 1299.30s ->  1307.80s] in the framework, we understand that there needs to be some way to classify the randomness associated
+[ 1307.80s ->  1313.28s] with the stock price. If we're going to develop the price of an option contract, then we need to make
+[ 1313.28s ->  1320.22s] some sort of assumption about the dynamics and the returns and the rate of change of the underlying
+[ 1320.22s ->  1326.84s] asset and how that underlying asset's returns change over time. And to do this, we need to assume that
+[ 1326.84s ->  1331.32s] it follows some sort of stochastic differential equation. That is what those partial differential
+[ 1331.32s ->  1337.16s] equations are actually based on. If we go back up to the Black-Scholes partial differential equation,
+[ 1338.83s ->  1344.75s] we're actually assuming a stochastic differential equation to develop this partial differential equation.
+[ 1345.19s ->  1348.45s] It just so happens that the randomness cancels out based on the argument.
+[ 1348.45s ->  1353.67s] So now we're ready to talk about this idea of a stochastic differential equation. We're ready to
+[ 1353.67s ->  1359.53s] look at an example of a class of SDEs that we can solve analytically. And we're going to do this by
+[ 1359.53s ->  1365.69s] looking at a particular SDE that we can't solve analytically without a transformation to the class
+[ 1365.69s ->  1371.53s] of solutions that we can then solve. And this is going to be the difference between an arithmetic
+[ 1371.53s ->  1376.59s] Brownian motion and a geometric Brownian motion. We have something that is a multiplicative SDE
+[ 1376.59s ->  1381.55s] or something that is a linear SDE. And to understand the difference, you can just look
+[ 1381.55s ->  1387.23s] at this chart. The geometric Brownian motion dwarfs the arithmetic Brownian motion with the same
+[ 1387.23s ->  1393.25s] parameter set. But if I get rid of the geometric Brownian motion, then wow, this certainly looks
+[ 1393.25s ->  1398.95s] very similar in terms of path style. The only difference is the multiplicative nature of the
+[ 1398.95s ->  1404.57s] geometric Brownian motion. So our goal is going to be to come up with some sort of transformation
+[ 1404.57s ->  1410.31s] for this geometric Brownian motion, which we can't solve explicitly for, to get it into a space that
+[ 1410.31s ->  1418.27s] we can solve the equation in an explicit capacity for. Let's step by step and explicitly solve for this
+[ 1418.27s ->  1425.17s] geometric Brownian motion stochastic differential equation. Keep in mind, the dynamics of the GBM
+[ 1425.17s ->  1431.29s] are governed by this stochastic differential equation here. But nothing changes fundamentally
+[ 1431.29s ->  1437.55s] in our problem space. We still want to recover the original function. The original function is S sub T,
+[ 1438.05s ->  1442.15s] just as in the case of the partial differential equation or the regular differential equation,
+[ 1442.15s ->  1446.99s] we're trying to find a function. The big difference here is we have this new randomness,
+[ 1447.43s ->  1452.01s] this idea of randomness introduced to the differential equation. That's what makes it a stochastic
+[ 1452.03s ->  1456.93s] differential equation. And what that means is when we recover the function, in this case,
+[ 1456.93s ->  1462.89s] we're trying to find this function governing the stock price process, right? This S sub T function
+[ 1462.89s ->  1469.41s] here, when we recover it, we're going to get a function that takes an input or a set of inputs
+[ 1469.41s ->  1476.85s] parameters and maps it not to one stock price value, but a distribution of possible outcomes.
+[ 1476.85s ->  1482.87s] That's a very important distinction between the stochastic differential equation and a differential
+[ 1482.87s ->  1488.09s] equation that doesn't involve randomness. This is now a function that's going to produce a distribution
+[ 1488.09s ->  1494.49s] of outcomes. But we need to recover the correct function that governs the distribution of outcomes.
+[ 1494.49s ->  1500.51s] And that's why we need to go about solving this correctly. So the GBM, as we saw above in this chart,
+[ 1500.51s ->  1506.43s] exhibits that multiplicative nature, right? So what we need to do is we need to transform it to a space
+[ 1506.43s ->  1512.05s] that we can more easily solve for, given by something like an arithmetic Brownian motion,
+[ 1512.05s ->  1517.25s] which is considered a linear SDE. So you'll notice in the arithmetic Brownian motion, there isn't that
+[ 1517.25s ->  1523.65s] scaling by S sub T in each of these terms here. And our goal is going to be to transform this equation
+[ 1524.21s ->  1530.45s] into an equation of this form, where we're dealing with constants instead of the scaling by
+[ 1530.45s ->  1536.69s] the original function S sub T. That's going to be our goal here. Now, it's important to note, yes, in pricing,
+[ 1536.69s ->  1540.37s] we have different types of measures we can operate in, the P, the Q measure, sure.
+[ 1540.37s ->  1546.57s] There's going to have to be a separate discussion on that because it's outside the scope of this video,
+[ 1546.57s ->  1551.57s] but it's still important to note that there's a difference between producing prices in, in those
+[ 1551.57s ->  1557.65s] two spaces. Um, but I'll, I'll digress from that as I continue this argument for the solution to this
+[ 1557.65s ->  1567.17s] SDE. Okay. So our goal is to find this stock price process S sub T from this differential equation.
+[ 1567.17s ->  1571.17s] Nothing is fundamentally different from the differential equations or partial differential
+[ 1571.17s ->  1575.81s] equation section of this video. We need to find that function. Okay. We just have this idea of
+[ 1575.81s ->  1582.29s] randomness. Now it's going to produce a distribution of outcomes. Okay. What we're going to do is we're
+[ 1582.29s ->  1587.81s] going to take a log transformation of this original function that we're looking for S sub T.
+[ 1588.77s ->  1596.05s] So I'm actually going to create a new process X sub T, and I'm going to set it equal to the natural
+[ 1596.05s ->  1602.23s] logarithm of S sub T. All right. As I refer to these quantities now, I'm just going to refer to them as
+[ 1602.23s ->  1609.03s] X and S. So it's just easier to articulate, but what we're actually doing here is we're trying to move
+[ 1609.03s ->  1615.19s] this from a multiplicative space to a linear space. That's why we're taking this logarithm here. As we
+[ 1615.19s ->  1620.15s] continue with this argument, it's important to understand Ito's Lemma and Ito integration. I've
+[ 1620.15s ->  1627.11s] linked them here. I've also referenced where these particular videos come in handy in this proof. So
+[ 1627.11s ->  1633.27s] hopefully that is useful, but nevertheless, we're dealing with this new process X now. All right.
+[ 1634.07s ->  1642.07s] If we can go about solving this transformation, then we can transform it back into the original space.
+[ 1642.07s ->  1649.62s] And we'll have a solution for our original desired process S. It's exactly what we're going to do.
+[ 1650.18s ->  1656.42s] So I have this transformation X is equal to log of S. S is what we're after. What I'm going to do
+[ 1656.42s ->  1664.02s] is I'm going to look at the differential now of this new process X. So X is a time dependent
+[ 1664.02s ->  1670.98s] function of a stochastic process, meaning to find the differential, we apply Ito's Lemma. And we get this
+[ 1670.98s ->  1676.50s] nonsense out on this right hand side here. So the differential of this process is now equal to
+[ 1676.50s ->  1682.18s] all of this stuff on the right here. Fortunately, from this video, we know a lot of these terms will
+[ 1682.18s ->  1689.54s] cancel out. So dt squared is equal to zero, which is equal to dwt dt. All of those terms will then go to
+[ 1689.54s ->  1695.62s] zero. And due to the quadratic variation of the Brownian motion in the infinitesimal sense,
+[ 1695.62s ->  1702.34s] we have that the dwt squared is going to go to dt. Certainly encourage you to check out this video
+[ 1702.34s ->  1707.14s] if you're unfamiliar with this idea. But what that's going to do is it's going to ensure that
+[ 1707.14s ->  1711.70s] a lot of these terms drop out. So this term is going to drop out the dt squared term, we're going to
+[ 1711.70s ->  1721.54s] have this dt multiplied by a ds. And what happens when we multiply dt by ds? Well, take a look at the
+[ 1722.58s ->  1731.40s] stochastic differential equation that governs ds. We're going to get dt squared times dwt. So this
+[ 1731.40s ->  1738.36s] entire term is just going to go to zero. So a lot of these terms are starting to drop out. And what's
+[ 1738.36s ->  1743.56s] going to end up happening is this differential is going to reduce significantly. And it's going to
+[ 1743.56s ->  1750.92s] reduce as these two terms drop out here to this series of partial derivatives of the function that
+[ 1750.92s ->  1758.28s] governs that log transformation of the stock price process, that is the log of s. So now from Ito's
+[ 1758.28s ->  1767.16s] Lemma, we have that this differential here dx is simply equal to these three terms. That's it. That's
+[ 1767.16s ->  1773.32s] where we are at after applying these very simple rules from stochastic calculus. So I haven't actually
+[ 1773.32s ->  1779.24s] taken any derivatives quite yet, either, right? I've very simply just applied these rules from
+[ 1779.24s ->  1784.52s] stochastic calculus to get rid of a whole bunch of these terms that I've developed from Ito's Lemma,
+[ 1784.52s ->  1792.20s] right? So all I've done so far is transformed the desired process by a logarithm, taken the differential
+[ 1792.20s ->  1798.28s] by Ito's Lemma, and applied these rules from stochastic calculus to find a simplified form of
+[ 1798.28s ->  1803.64s] the differential. And now what I can do is I can look at solving for each one of these different
+[ 1803.64s ->  1809.00s] coefficients here, these partial derivatives. And to do that, all I have to do is take the partial
+[ 1809.00s ->  1816.36s] derivative of this log transformation. So what happens when I take the partial derivative of that
+[ 1816.36s ->  1823.48s] log transformation with respect to time? That's zero. There's no explicit time dependence. So ln of s
+[ 1824.12s ->  1829.88s] just goes to zero. Great. What happens when I take the partial derivative with respect to s?
+[ 1830.52s ->  1837.24s] It's just the partial derivative of a log goes to one over s. What about the second partial derivative
+[ 1837.24s ->  1842.28s] with respect to s? Well, I just differentiate this again, I get negative one over s squared.
+[ 1843.00s ->  1849.72s] So this is actually very easy calculus, right? There are a lot of pieces being glued together here,
+[ 1850.36s ->  1855.64s] but the calculus is not particularly challenging, right? I'm just taking the derivative of a log.
+[ 1856.28s ->  1861.24s] So what I can do now is just plug these values in, right? So this term is going to go away.
+[ 1861.96s ->  1869.80s] This is going to become what? One over s times ds. Then this is going to be negative one over s squared
+[ 1869.80s ->  1879.25s] times one half times ds squared. It's exactly what we have here. So all we've done so far is apply
+[ 1879.25s ->  1886.77s] rules from stochastic calculus and take two, maybe three very simple derivatives. That is, we just take the
+[ 1886.77s ->  1891.89s] derivative of what's essentially a constant because there's no time dependency. We get zero,
+[ 1891.89s ->  1898.05s] the derivative of a log and the derivative of that log again. And we're left with now right here,
+[ 1898.69s ->  1904.77s] this expression for the differential of x. Remember, our goal is to find this function
+[ 1905.49s ->  1909.89s] governing the stock price process and the distribution of stock prices at time t
+[ 1910.77s ->  1918.13s] based on the geometric Brownian motion. So what is ds and ds squared? Well, we can just plug in
+[ 1920.08s ->  1926.24s] the geometric Brownian motion. We know what ds is. That's what we're looking for. So take ds
+[ 1927.20s ->  1933.20s] and substitute in these terms on the right. That's all we're doing here. So we plug in those terms,
+[ 1933.20s ->  1940.72s] we get mu sdt plus sigma sdwt. That's just the geometric Brownian motion. But what happens if we square it?
+[ 1941.12s ->  1947.12s] What happens if we square these terms here? Well, let's just look at the square. We have what?
+[ 1947.12s ->  1952.48s] dt squared, this first term is going to zero. Boom, that cancels out. What about the inner term,
+[ 1952.48s ->  1959.36s] the cross term? Well, dt times dwt is zero. That goes to zero, too. Then what about this last term
+[ 1959.36s ->  1965.60s] squared? We get sigma squared, s squared, dwt squared, if we apply the rule from stochastic calculus,
+[ 1965.60s ->  1973.76s] that goes to dt. So ds squared is just going to be equal to this quantity here, sigma squared s squared
+[ 1973.76s ->  1984.24s] dt. So the drift term is essentially dropping out there. It goes to zero. What we can do now is just
+[ 1984.24s ->  1992.79s] factor. So we're going to factor out all of the terms for dt and all of the terms for dwt.
+[ 1992.79s ->  1996.63s] And what we're left with now is something that looks like an arithmetic Brownian motion.
+[ 1996.63s ->  2001.99s] What happened to our s terms that made it multiplicative? Well, look, they cancel out.
+[ 2002.55s ->  2010.79s] 1 over s, get rid of s, get rid of s, boom, s goes away. 1 over s squared, boom, s squared goes away.
+[ 2010.79s ->  2017.67s] We're left now with a linear SDE. This looks exactly like the arithmetic Brownian motion.
+[ 2017.67s ->  2024.87s] This is fantastic now because we can very easily solve this type of equation. This goes back to what
+[ 2024.87s ->  2031.91s] we were talking about at the start of the video. It's quite actually elegant and poetic, if I do say
+[ 2031.91s ->  2037.51s] so myself, because what we have here is something where we can just integrate both sides of the equation
+[ 2037.51s ->  2044.15s] to get the solution. But in this case, it's not just a parabola. It's a stock price process that
+[ 2044.15s ->  2050.07s] is governing the dynamics of the distribution at a particular time t from this geometric Brownian
+[ 2050.07s ->  2057.35s] motion. So they're actually very analog cases, right? We have the differential equation for the parabola
+[ 2057.35s ->  2063.75s] that we solve for just by integrating both sides. And now we're just integrating both sides of a linear SDE.
+[ 2063.75s ->  2068.47s] And in the same way, we're not recovering a quadratic, but instead we're covering a function that governs
+[ 2068.47s ->  2075.27s] a random process. Very, very cool. So what do we have here? We have this integral equation that we
+[ 2075.27s ->  2081.67s] can go about solving for by simply integrating both sides. And if we integrate left-hand side,
+[ 2081.67s ->  2089.35s] then we get x sub t minus x sub zero. Maybe I should actually write this explicitly. Perhaps that would be
+[ 2089.35s ->  2103.59s] a little bit better. So we have this integral on the left-hand side, I'm going to say is going to equal
+[ 2104.88s ->  2124.08s] minus x sub zero. And then we have t minus zero sigma scaling w zero. Okay. So this is now written
+[ 2124.08s ->  2128.40s] a little bit more explicitly. So hopefully it's easier to follow. If we integrate the left-hand side here,
+[ 2128.40s ->  2134.00s] what we're going to end up with is x sub t minus x sub zero. Derivative and integral are inverse
+[ 2134.00s ->  2138.40s] operations. It's exactly what we talked about at the start of this video. Super cool. If we integrate
+[ 2138.40s ->  2144.08s] this with respect to this should really be a dummy variable, but I wanted to make sure that it was
+[ 2144.08s ->  2149.28s] evident that this is still just the drift term. So think of this as ds instead of dt. There is no
+[ 2149.28s ->  2157.52s] explicit dependence on s or t. So we just integrated its linear and we have t minus zero. That's the solution
+[ 2157.52s ->  2161.52s] to this integral. And then what's the solution to this integral with Brownian motion? Well,
+[ 2161.52s ->  2166.16s] it's just the accumulation of the Brownian increments scaled by this volatility term sigma
+[ 2166.16s ->  2173.12s] w sub t minus w sub zero. Brownian motion is defined by w sub zero is equal to zero.
+[ 2173.12s ->  2179.04s] So we're simply left with this on the right-hand side here. We're left with this as the solution
+[ 2179.04s ->  2185.20s] to our stochastic differential equation under the log transformation. Keep in mind,
+[ 2185.20s ->  2192.24s] x is still that log transformation. So now we need to go from this log space back to the space
+[ 2192.24s ->  2199.60s] that's governed by the GBM by simply exponentiating. What we have here is x is equal to this f function,
+[ 2199.60s ->  2204.64s] this time-dependent function of a stochastic process, this ln of s, that transformation we made
+[ 2204.64s ->  2208.40s] at the beginning of the video or at the beginning of this section, I should say.
+[ 2209.28s ->  2215.44s] If we exponentiate both sides e to the x, then we're just left with the original process s.
+[ 2215.44s ->  2219.76s] That's exactly what we were after. That is exactly what we were looking for. So now what I'm going to
+[ 2219.76s ->  2226.00s] do is take this equation here and I'm going to raise it to the power. I'm going to raise e to that power
+[ 2226.00s ->  2232.56s] of both sides of the equation. And I'm going to substitute in the natural logarithm of s for x,
+[ 2232.56s ->  2238.72s] because remember, those two are equivalent. And what happens? Well, these guys are actually going
+[ 2238.72s ->  2245.41s] to cancel out e to the ln of s. That's just s. Then if I do some algebra on the right-hand side here,
+[ 2246.05s ->  2255.97s] I get s sub 0 multiplied by this exponential process here, which is just some sort of exponential
+[ 2255.97s ->  2263.25s] raised to the power involving a normal random variable. And that actually governs a log normal
+[ 2263.25s ->  2269.41s] distribution. So what this is showing is this is the explicit solution to the geometric Brownian motion.
+[ 2269.41s ->  2277.01s] This is the explicit solution. Moreover, the explicit solution implies that the stock price process
+[ 2277.57s ->  2282.13s] follows a log normal distribution. There is still randomness.
+[ 2282.13s ->  2288.61s] We have solved this stochastic differential equation, but we have not removed the randomness.
+[ 2288.61s ->  2294.69s] This is not the same as coming up with an argument for the pricing PDE, like the Black-Scholes partial
+[ 2294.69s ->  2300.37s] differential equation. No, no, no. This is the framework that governs the stock price dynamics.
+[ 2300.37s ->  2309.25s] We can use this solution to recover stock prices. We can use this solution to recover option prices,
+[ 2309.25s ->  2314.85s] using simulation techniques and the idea of Monte Carlo simulation and the risk neutral expectation,
+[ 2314.85s ->  2319.57s] the discounted payoff, as we discussed earlier. But we're not removing any randomness. Solving this
+[ 2319.57s ->  2326.13s] equation is just telling us the distribution that governs the dynamics given by the geometric Brownian
+[ 2326.13s ->  2332.45s] motion. It doesn't tell us what it's going to be, where it's going to go, but it classifies the distribution
+[ 2332.45s ->  2341.73s] of outcomes. Specifically, it's log normal. A log normal distribution is defined by taking some sort
+[ 2341.73s ->  2348.37s] of random variable y that is normal, taking e, raising it to the power of that normal random variable,
+[ 2348.37s ->  2356.21s] and that quantity, call it x, is a log normal random variable. So all the geometric Brownian motion is,
+[ 2356.21s ->  2364.21s] is a log normal random variable governing the stock price at time t starting at some initial price s sub
+[ 2364.21s ->  2370.53s] zero. So that is the purpose of the geometric Brownian motion. It is proposing that the stock
+[ 2370.53s ->  2376.37s] prices at time t are governed by a log normal distribution. Now, the Black-Scholes argument is
+[ 2376.37s ->  2381.17s] going to take the geometric Brownian motion, hedge away the randomness, and produce a solution to that PDE
+[ 2381.73s ->  2387.97s] for the prices of options. That is one approach to applying differential equations. Another approach
+[ 2387.97s ->  2394.85s] is solving the SDE explicitly, coming up with this log normal distribution, and using the law of large
+[ 2394.85s ->  2400.13s] numbers to develop option prices. We're going to see an example of that in a moment, but very important
+[ 2400.13s ->  2405.97s] to not get our wires crossed here. We solved this SDE, we now have a solution for the stock price process
+[ 2405.97s ->  2412.77s] that governs the randomness, but the function itself is random. It's literally a density function
+[ 2412.77s ->  2418.05s] describing the randomness. It is not a function that's going to produce a single output. It's
+[ 2418.05s ->  2424.05s] classifying a set of outputs and the likelihood of all of those different outputs. Now, the crazy thing
+[ 2424.05s ->  2431.01s] here is even though we have an analytical solution, if we wanted to produce the price of an option that was
+[ 2431.01s ->  2438.05s] path dependent, we would still have to simulate it. So is it really necessary to produce an analytical
+[ 2438.05s ->  2446.44s] solution if we need to simulate paths anyway? Not necessarily, right? You can come up with a PDE
+[ 2446.44s ->  2452.36s] argument to produce exotic prices. You can come up with a simulation argument to produce exotic prices.
+[ 2452.36s ->  2456.60s] Of course, you'll never actually use Black-Scholes to price an exotic option. Check out my video,
+[ 2456.60s ->  2463.24s] how to price exotics if you're curious why, but it's funny because if you had an analytical solution
+[ 2463.24s ->  2469.24s] to the SDE and you wanted to use that to price an option, you would still have to simulate it. So what
+[ 2469.24s ->  2475.64s] I have here is I have path dependent quantity that I'm after, and that is this idea of maximum prices. So
+[ 2475.64s ->  2482.84s] I'm trying to figure out what the distribution of maximum stock prices are based on each possible sample
+[ 2482.84s ->  2488.92s] path given by a geometric Brownian motion. And in this case, it doesn't matter that I know what the
+[ 2488.92s ->  2496.76s] distribution is at time t. It doesn't matter at all because I need to simulate the entire path
+[ 2496.76s ->  2503.48s] to figure out what the highest price was based on that one sample path. So in that case, I have to
+[ 2503.48s ->  2510.52s] simulate anyway. Now what I can do is I can discretize the quantity that I solve for. So I just went through
+[ 2510.52s ->  2516.76s] that entire argument for the geometric Brownian motion solution and I'm numerically simulating anyway.
+[ 2517.48s ->  2522.84s] Isn't that like kind of crazy? I just went through all of that Ito calculus and I came up with this
+[ 2522.84s ->  2529.40s] solution that's beautifully governing the distribution of stock prices. And now if I want to use it in a path
+[ 2529.40s ->  2535.24s] dependent capacity, I have to simulate it anyway. Why would I even bother with the analytical solution? So
+[ 2535.24s ->  2541.64s] what I'm doing here is I'm simulating a whole bunch of stock price paths and I'm using the law of large
+[ 2541.64s ->  2548.36s] numbers to come up with a quantity. I'm trying to come up with the distribution of maximum stock
+[ 2548.36s ->  2554.84s] prices reached. This is particularly useful if I'm interested in barrier options. So what I've done here
+[ 2554.84s ->  2561.72s] is I've plotted this distribution here, and this is the distribution of maximum stock prices reached
+[ 2561.72s ->  2567.00s] under a particular parameter set of the geometric Brownian motion. I've computed a confidence interval.
+[ 2567.00s ->  2573.72s] The 95% confidence interval for this one sample suggests that there is a 95% confidence level,
+[ 2573.72s ->  2578.92s] that this interval contains the population parameter, and the mean parameter in this case is the
+[ 2578.92s ->  2585.80s] probability of breaching 125. That is, that the max stock price throughout any one of these simulations
+[ 2585.80s ->  2595.56s] will exceed 125 is 34%. So what I've done here is I've numerically simulated an analytical solution.
+[ 2595.56s ->  2600.44s] Does that not seem a little redundant? I could have just numerically simulated the stochastic differential
+[ 2600.44s ->  2606.92s] equation outright. So instead of solving the stochastic differential equation, the geometric Brownian motion,
+[ 2606.92s ->  2612.68s] I'm going to take the dynamics that are given explicitly right here, and I'm going to discretize it
+[ 2612.68s ->  2619.72s] via this EM scheme here. And that's going to give me the same paths, the exact same paths as the
+[ 2619.72s ->  2625.40s] discretized analytical solution right here. But I didn't need to walk through any stochastic calculus.
+[ 2626.82s ->  2635.78s] In this case, I get an approximation of 40.2% and a 95% confidence interval of 30.9 and 44.5.
+[ 2635.78s ->  2641.86s] The quality of this solution is going to change based on how many paths I simulate and the granularity of
+[ 2641.86s ->  2648.58s] these paths. So this is using a seed. So it's going to probably be fixed, but if I was to change these
+[ 2648.58s ->  2656.55s] values, then they would be fundamentally different. So let's see here, calculate the right here. I got
+[ 2656.55s ->  2670.29s] to re-simulate these paths, re-compute the, there we go. We got 33.2%. This is a lot closer to the 34%.
+[ 2671.01s ->  2676.13s] And as I increase the granularity of this simulation, I increased the quantity of pads. This will converge to
+[ 2676.13s ->  2683.17s] the true probability here. But notice in this case, I did not solve any stochastic differential
+[ 2683.17s ->  2689.17s] equation. I just discretized it. In this case, I took the solution that I solved for analytically
+[ 2689.17s ->  2698.42s] and discretized it anyway. Goodness, goodness gracious. So what are the implications of this? Well,
+[ 2698.42s ->  2703.62s] there are certainly implications in accuracy, efficiency, implementation, and stability.
+[ 2704.34s ->  2710.98s] Whenever possible, we would like to use an analytical solution. It is precise. But in a simulation
+[ 2710.98s ->  2717.86s] capacity, if you are simulating these stochastic differential equations to produce quantities of
+[ 2717.86s ->  2725.38s] interest, probabilities of breaching barriers, prices of exotic options, then they are roughly equivalent
+[ 2725.38s ->  2731.22s] if you have to simulate them in a numerical capacity anyway. It's a very important idea. We didn't have to
+[ 2731.22s ->  2737.54s] walk through the entire proof for the SDE of GBM if we needed to simulate paths anyway. Where is this
+[ 2737.54s ->  2746.42s] fundamentally different? Well, if I wanted to produce the terminal distribution of a stock price process
+[ 2746.42s ->  2754.98s] governed by a GBM, then option contracts that are only governed by the price at time t will not require
+[ 2754.98s ->  2760.42s] sample paths. I can simply use the terminal distribution. So that's exactly what I have here.
+[ 2761.38s ->  2767.14s] I know that the terminal distribution from my analytical GBM solution follows the log normal
+[ 2767.14s ->  2773.14s] theoretical density. The terminal price distribution, if I simulate it empirically, is these blue bars.
+[ 2773.14s ->  2782.42s] But in either case, check it out. I get 6.04 or 6.03. If I increase the simulation capacity, I generate
+[ 2782.42s ->  2786.50s] more draws from that terminal stock price distribution, it will converge to that Black
+[ 2786.50s ->  2792.10s] Scholes price 100%. It's given by the law of large numbers. So what I'm trying to say here is even if you
+[ 2792.10s ->  2799.30s] analyze the error accuracy, it certainly depends on your problem whether or not the analytical solution
+[ 2799.30s ->  2806.26s] is going to be preferred or even useful at all. If you're trying to use some sort of rough volatility
+[ 2806.26s ->  2815.38s] model and you need to generate sample paths anyway, then why would you even need any sort of analytical
+[ 2815.38s ->  2820.74s] solution? Yeah, it's preferred. It certainly is preferred. But in this capacity, you can't generate
+[ 2820.74s ->  2827.70s] an analytical solution. So you'd have to simulate anyway. You can see that the discretized simulated solution
+[ 2827.70s ->  2834.66s] with no analytical solution converges in distribution to the analytical log normal solution. This is the
+[ 2834.66s ->  2840.82s] expected behavior if I simulated it correctly. We saw that these probabilities were roughly equivalent.
+[ 2840.82s ->  2847.62s] We saw that the prices of the options were converging. And this is largely going to be the space that we are
+[ 2847.62s ->  2855.86s] working in. That is all to say it depends on your problem what tactic you are going to deploy to
+[ 2855.86s ->  2862.90s] generate prices. We know now the place that differential equations, partial differential equations, and
+[ 2862.90s ->  2869.94s] stochastic differential equations have in quantitative finance. We assume that the randomness of some sort
+[ 2869.94s ->  2877.30s] of underlying asset to a contract is governed by a stochastic differential equation. If that contract
+[ 2877.30s ->  2883.30s] only needs the distribution of the underlying asset at a particular time in the future,
+[ 2883.86s ->  2887.94s] then the analytical solution is very fast to produce prices in a simulation capacity.
+[ 2888.82s ->  2894.18s] If it's path dependent, then we need to discretize anyway. We need to generate paths. So whether you
+[ 2894.18s ->  2902.02s] have an analytical solution or you need to simulate the SDE numerically, they're roughly equivalent because
+[ 2902.02s ->  2907.14s] you just need to generate paths and then produce the statistics that you are after to generate prices.
+[ 2907.78s ->  2913.38s] Now, of course, if you come up with some sort of pricing argument, similar to the Black-Scholes,
+[ 2913.38s ->  2917.86s] what you're going to do is try to generate a partial differential equation. When you generate that
+[ 2917.86s ->  2922.82s] partial differential equation, you're usually constructing some sort of hedge argument to
+[ 2922.82s ->  2930.50s] generate these prices to get rid of the randomness. Then you can go about solving those PDEs explicitly or
+[ 2930.50s ->  2935.46s] numerically. But this is how all of these mathematical objects work together.
+[ 2935.46s ->  2939.86s] They're generating, hopefully, the same target price. Otherwise, you're going to be doing something
+[ 2939.86s ->  2944.02s] wrong. But there are so many different tools and techniques, right? You can operate in this
+[ 2944.02s ->  2949.70s] simulation capacity, you can operate in this analytical capacity, or you can operate in the
+[ 2949.70s ->  2956.98s] approximation capacity in the PDEs. It's worth noting that as you do approximations,
+[ 2956.98s ->  2962.74s] there are means of analyzing the convergence and error bounds. So you have confidence intervals,
+[ 2962.74s ->  2969.46s] sure, but you can also analyze the error and it's constrained and very well defined. But
+[ 2969.46s ->  2977.38s] this will likely have to be a video for another day. This is particularly about this EM scheme for
+[ 2977.38s ->  2984.42s] simulating an SDE, but likely this will have to have a dedicated video to that particular topic. This was
+[ 2984.42s ->  2989.46s] already quite a long video. Some closing thoughts for you, right? We covered a lot in this video,
+[ 2989.46s ->  2993.14s] ordinary differential equations, partial differential equations, stochastic differential
+[ 2993.14s ->  2999.06s] equations, and their place in quantitative finance. We saw the connection between a plain old differential
+[ 2999.06s ->  3005.94s] equation and a stochastic differential equation. We literally integrated both sides in both cases
+[ 3005.94s ->  3010.98s] to recover the function of interest. The only difference is the ordinary differential equation
+[ 3010.98s ->  3015.86s] didn't have any randomness. And the stochastic differential equation dealt with the randomness
+[ 3015.86s ->  3023.14s] by producing a distribution of possible outcomes. So in any case, right, when we're solving an SDE,
+[ 3023.14s ->  3027.94s] we need to think that it is random. We're dealing with distributions. There's nothing to predict.
+[ 3027.94s ->  3034.02s] We're not dealing with an expectation explicitly in that sense. We're producing a distribution. Very,
+[ 3034.02s ->  3040.82s] very important. Now, the expectation, however, is integral to this idea of trading and market making.
+[ 3040.82s ->  3046.10s] That's fundamentally the quantity of interest. And we can accumulate a significant amount of wealth
+[ 3046.10s ->  3052.66s] with that quantity. See my videos, what does AI actually learn and how to trade with edge to better
+[ 3052.66s ->  3059.06s] understand these ideas and how they're deployed in the market and in practice. Some future topics,
+[ 3059.06s ->  3064.82s] I'd like to dive into all of the things that I couldn't get into in this video because they were
+[ 3064.82s ->  3070.90s] just far outside the scope. So change of measure stuff, martingales, specifically finite differences,
+[ 3070.90s ->  3077.78s] how finite differences functions, the Euler-Mariama scheme for simulating the stochastic processes.
+[ 3077.78s ->  3082.82s] I would like to get into the rough volatility, model family, talk about Volterra processes,
+[ 3082.82s ->  3088.02s] the fractional Brownian motion to produce prices. It's not precisely a fractional Brownian motion,
+[ 3088.02s ->  3093.54s] but there's a very interesting covariance kernel, a part of the Volterra process that allows us to
+[ 3093.54s ->  3098.74s] capture that dependency. So a lot of very interesting topics for future discussion.
+[ 3098.74s ->  3102.74s] And that is going to do it for this video on stochastic differential equations for quantitative
+[ 3102.74s ->  3107.70s] finance. I hope you enjoyed. I hope you learned something. I know this was a very technical video.
+[ 3107.70s ->  3111.54s] I certainly like to make technical videos, but I know they can be hard to follow. So I hope they're
+[ 3111.54s ->  3117.22s] appreciated. If you enjoyed, please like, leave a comment below, subscribe. It helps me out a lot,
+[ 3117.22s ->  3120.42s] lets me know that you like videos like this and I can continue to make them.
+[ 3120.98s ->  3125.86s] Certainly please check out our discord. If you'd like to hop in, you can join the community chat
+[ 3125.86s ->  3130.98s] with fellow quant guild members, check out quant guild.com to support my videos. So I can continue
+[ 3130.98s ->  3137.06s] making ones just like this. Other than that, thank you so much for watching and I will see you in the next
+[ 3137.06s ->  3142.82s] video.

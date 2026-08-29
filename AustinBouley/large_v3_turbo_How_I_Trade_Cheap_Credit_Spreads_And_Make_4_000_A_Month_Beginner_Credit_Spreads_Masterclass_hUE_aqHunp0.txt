@@ -1,0 +1,187 @@
+[    0.00s ->     4.34s] How I trade cheap credit spreads and make $4,000 a month.
+[    4.60s ->     6.38s] Now again, what do I mean by cheap credit spreads?
+[    6.46s ->     9.42s] I mean credit spreads that are way out of the money
+[    9.42s ->    13.02s] because a lot of people think that's picking up pennies in front of a steamroller
+[   13.02s ->    17.44s] and yes, maybe it is, but I want to show you how you can make it work in your favor
+[   17.44s ->    21.52s] so that you're extra safe when trading credit spreads yet are able to make a lot of money
+[   21.52s ->    23.76s] so you offset any losses that are to come.
+[   24.10s ->    26.82s] And I'm also at the very end, I'm going to show you how I manage my losers
+[   26.82s ->    29.64s] so that they're actually not that much of a loser at all.
+[   30.00s ->    33.72s] Anyways, you can see here I've been using this Tasty Trades account
+[   33.72s ->    35.80s] for roughly two, almost three months now
+[   35.80s ->    40.22s] and I've had a total P&L year to date of a little over $8,000.
+[   40.90s ->    45.24s] So again, you can see here that I'm making roughly $4,000 to $3,000
+[   45.24s ->    50.12s] I should say the lower number for $3,000 to $4,000 a month using this strategy.
+[   50.24s ->    52.16s] So let me walk you through it and show you how it works.
+[   52.64s ->    55.00s] So first off, if you don't know what credit spreads are,
+[   55.00s ->    58.44s] credit spreads are a simple way to make a bet on a stock and profit from it.
+[   58.44s ->    62.52s] So if I go through, here we go, we're going to say that we have a stock like this.
+[   62.76s ->    66.24s] A credit spread works where you go, okay, this stock looks like it's moving higher.
+[   66.52s ->    71.12s] I'm going to set a bet where it means if the stock stays above this level in the next week,
+[   71.36s ->    72.38s] then I'm going to make money.
+[   72.80s ->    76.18s] And so again, the stock overall, no matter what it does,
+[   76.24s ->    78.84s] stays above this level in the next week, then I make money.
+[   78.92s ->    80.00s] If not, then I lose money.
+[   80.26s ->    82.48s] That's the general gist of trading credit spreads.
+[   82.48s ->    85.86s] Now, what do I mean by trading cheap credit spreads?
+[   86.14s ->    90.78s] Well, the closer you are to the stock, the more credit you collect when you're trading.
+[   91.20s ->    91.90s] Why is this?
+[   92.14s ->    95.22s] Well, because a credit spread, I think of credit spreads as insurance.
+[   95.56s ->   101.30s] What you're doing as a credit spread trader is you are providing insurance to people who own stock.
+[  101.70s ->   107.32s] You're saying, hey, Mr. Stock Owner, if you, if the stock drops below this level,
+[  107.32s ->   111.90s] I will actually allow you no matter where the stock is, the stock could be trading way down here.
+[  112.24s ->   116.40s] I will allow you to sell your stock here and I will take this loss for you.
+[  116.82s ->   117.94s] So that's what it's saying.
+[  118.04s ->   121.74s] I will take the loss for you, but you have to pay me a premium.
+[  122.06s ->   124.54s] You have to pay me some money to, for me to do this.
+[  125.14s ->   129.32s] So again, the further away, let's say the current, let's just say the stock is trading.
+[  129.48s ->   130.28s] Okay, let's right here.
+[  130.50s ->   131.58s] The stock is trading here.
+[  131.58s ->   138.02s] The further away you go from the current stock price, the cheaper the credit spread is
+[  138.02s ->   140.22s] or the less you're getting paid to put it on.
+[  140.38s ->   140.62s] Why?
+[  140.94s ->   142.76s] Well, because the closer to the stock price you are,
+[  142.82s ->   146.30s] the higher of a chance that stock has of breaking that level, right?
+[  146.54s ->   150.30s] So a credit spread closer to the stock would have a higher credit
+[  150.30s ->   153.94s] versus one that's at the very bottom, which would have a very low credit
+[  153.94s ->   158.16s] because it's not likely to happen, but people still want to pay insurance for it.
+[  158.16s ->   162.72s] So anyways, let's say a credit spread, as this goes to the current stock price,
+[  163.04s ->   165.70s] you could collect, let's say maybe 40 cents.
+[  166.08s ->   167.52s] So you collect 40 cents per trade.
+[  167.90s ->   168.10s] Cool.
+[  168.54s ->   171.16s] But down here, you would collect maybe 15 cents.
+[  171.60s ->   172.64s] So you can see the difference here.
+[  173.02s ->   177.44s] But again, when we're trading credit spreads, our risk is based off the credit we collect.
+[  177.78s ->   182.96s] So when I'm putting on a trade, a credit spread trade that has a 40 cent credit,
+[  183.52s ->   187.54s] then that means that there are two theoretical values I have.
+[  187.54s ->   193.98s] Number one, it means that I have a 60% chance of this trade making money for me.
+[  194.04s ->   197.36s] This is purely theoretical, not backtested.
+[  197.96s ->   205.56s] I have roughly a 60% chance of winning, but it also means that my risk is 60% or 60 cents.
+[  206.12s ->   209.84s] So I have a 60 cent risk with a 40 cent profit potential.
+[  210.38s ->   211.32s] Now, the same thing here.
+[  211.40s ->   214.58s] If I am going to make 15 cents down here because I'm further away
+[  214.58s ->   218.36s] and it's less likely to happen, that means I have an 85% win rate.
+[  219.69s ->   221.77s] So that means I'm going to make money 85% of the time.
+[  222.53s ->   224.49s] And I'm also going to be risking 85%.
+[  224.49s ->   230.35s] These are rough numbers based on standard deviation and average performance, blah, blah, blah, blah, blah.
+[  230.45s ->   232.01s] But these are the rough numbers here.
+[  232.33s ->   235.69s] So you can see here, this is a cheap credit spread.
+[  235.69s ->   236.13s] Why?
+[  236.25s ->   238.49s] Because I'm only getting 15 cents and I'm risking 85.
+[  238.95s ->   244.17s] Versus this is more of a higher price or a higher premium credit spread
+[  244.17s ->   246.29s] because you have 40 cents and you're risking 60.
+[  246.61s ->   249.87s] Now, again, what most credit spread traders recommend
+[  249.87s ->   253.17s] or people who just like placing them on in general,
+[  253.41s ->   257.57s] let's say like the tasty lie type of method, would be to collect 33 cents.
+[  258.05s ->   259.53s] Again, this is for a $1 wide.
+[  259.53s ->   260.09s] Why?
+[  260.37s ->   265.11s] Because they want you to collect 30% or 33% of the width.
+[  265.25s ->   268.79s] So $1 roughly 30 cents.
+[  269.61s ->   273.85s] Anyways, but I was kind of like, hmm, let's see if there's an edge here.
+[  274.15s ->   276.87s] So what I did was I was like, let's go where most people aren't going,
+[  276.97s ->   278.13s] which is to the bottom part.
+[  278.25s ->   280.73s] Why do most people not go here?
+[  280.99s ->   283.25s] Well, because you're risking a lot of money to make a little money.
+[  283.53s ->   287.99s] I was like, hmm, can I put the odds in my favor to bump this 85% win rate up?
+[  287.99s ->   291.59s] Right, because if 85% win rate is my theoretical return,
+[  291.69s ->   293.17s] what's my long-term performance on that?
+[  293.33s ->   293.93s] Well, let's see.
+[  294.27s ->   298.01s] A long-term performance is the amount of times you're going to win out of 100 trades.
+[  298.09s ->   299.55s] So let's say 85, I'm going to win 85.
+[  299.91s ->   301.61s] And when I win, I'm going to win 15 cents.
+[  301.87s ->   306.91s] But when I lose, I'm going to lose 15 times and I'm going to lose 85 cents.
+[  307.33s ->   310.09s] That gives me a theoretical return of $0.
+[  312.08s ->   316.00s] Fun fact, these all have a theoretical return rate of $0, so it doesn't matter.
+[  316.88s ->   317.70s] I can prove it to you.
+[  318.70s ->   320.70s] Let's say, so we're going to win 60 times.
+[  320.76s ->   322.10s] We're going to make 40 cents when we do.
+[  322.50s ->   325.96s] We're going to lose 40 times and we're going to lose 60 cents when we do.
+[  326.02s ->   326.68s] Look, it's zero.
+[  326.80s ->   326.92s] Why?
+[  327.00s ->   328.02s] Because it's just the inverse of each other.
+[  328.40s ->   329.32s] So we're going to make zero.
+[  329.46s ->   330.98s] So this is where it comes in.
+[  330.98s ->   335.66s] How do you give yourself a trading edge if you're roughly going to make $0 long-term?
+[  336.44s ->   340.42s] Well, the answer is always, as always, staring us in the face.
+[  340.92s ->   345.06s] What do the biggest traders, institutions, banks, and hedge funds do?
+[  345.06s ->   348.00s] They look for trends.
+[  348.12s ->   351.88s] They either create the trend or they jump onto prior existing trends.
+[  351.96s ->   353.70s] A trend is a stock that's moving higher.
+[  354.06s ->   358.66s] And what you do is you see its consistency where the highs are getting higher and then
+[  358.66s ->   361.24s] you see the lows are getting higher as well, like this.
+[  361.24s ->   364.64s] And you go, wow, this dip right here, it looks like it's going to move higher.
+[  364.92s ->   367.38s] I'm going to enter in on this dip and ride that up.
+[  367.58s ->   370.62s] And not only am I going to do that with a stock, but I'm going to do it with a put credit
+[  370.62s ->   370.84s] spread.
+[  370.90s ->   372.24s] So I give myself extra room.
+[  372.62s ->   381.76s] When you trade with the trend, you bump this 85% win rate up to 90% all the way up to 95%
+[  381.76s ->   383.66s] depending on the ETF you're trading.
+[  383.66s ->   389.30s] So again, you can bump an 85% win rate up to a 90% win rate.
+[  389.60s ->   391.62s] Again, what is that going to do long term?
+[  391.78s ->   397.70s] Well, if you win 90% of your trades and make 15 cents for every time you do versus you lose
+[  397.70s ->   406.22s] 10 and you lose 85, that gives you a $5 return, which again, because options are 100 times
+[  406.22s ->   409.12s] their credit, you would end up making a $500 return.
+[  409.56s ->   411.80s] That is the beauty of trading cheap credit spreads.
+[  411.80s ->   416.12s] What can you do if you trade cheap credit spreads with the trend, you're going to make
+[  416.12s ->   416.40s] money.
+[  416.52s ->   416.66s] Why?
+[  416.76s ->   418.50s] Because you bump up your long term rate.
+[  418.80s ->   424.74s] Not only that is your win rate is already high and you bump it up to 90%, 90, 95%.
+[  424.74s ->   426.96s] Now you can sleep well at night.
+[  427.04s ->   428.22s] You can manage your risk better.
+[  428.30s ->   431.70s] You can manage your trades better and you can generate monthly income.
+[  432.22s ->   434.92s] That's how beautiful trading cheap credit spreads are.
+[  436.02s ->   441.30s] Now, Austin, cool, but I still, when I lose, I'm going to have a very large loss.
+[  441.30s ->   441.70s] Correct.
+[  441.90s ->   445.22s] You're going to win way more times than you lose, but the times you do lose, you're going
+[  445.22s ->   446.60s] to have a greater loss.
+[  446.90s ->   448.48s] How do you manage these losers?
+[  448.88s ->   454.04s] Well, I've created a video that's how three ways to manage your losers, but my favorite
+[  454.04s ->   457.82s] way is to essentially hold the trade.
+[  457.94s ->   461.80s] Actually, there's two ways, but one is hold the trade until expiration date.
+[  462.16s ->   466.70s] Again, when you hold a trade until the expiration date, you let theta decay do most of the work.
+[  467.48s ->   473.86s] Again, when you do that, then you can buy back or close the trade on expiration day and typically
+[  473.86s ->   476.30s] take way less than the max loss.
+[  476.66s ->   478.54s] For instance, the max loss here is 85 cents.
+[  478.68s ->   482.70s] On expiration day, with theta decay and all that work, let's say it's around 65 cents.
+[  483.10s ->   483.30s] Cool.
+[  483.44s ->   483.80s] Guess what?
+[  483.86s ->   490.66s] Now I'm taking a $65 loss instead of an $85 loss, which actually makes my risk to reward
+[  490.66s ->   491.44s] even better.
+[  491.44s ->   493.10s] That means you want to have a longer term win rate.
+[  493.44s ->   499.28s] Now, this scenario for managing risk is for if you have five days or less in the trade,
+[  499.44s ->   501.98s] but let's say you have more than five days left in the trade.
+[  502.08s ->   506.38s] The next best option is to simply close the trade when it crosses your strike.
+[  506.92s ->   509.02s] So cross, strike.
+[  509.52s ->   511.40s] When it crosses below your strike price.
+[  512.34s ->   513.56s] I can't write with this.
+[  513.86s ->   514.96s] Crosses below your strike price.
+[  515.02s ->   516.18s] That means let's say you have your level.
+[  516.52s ->   518.02s] Let's say the stock trades below it.
+[  518.02s ->   521.58s] But once it breaks this level right here, if you have more than five days left in the
+[  521.58s ->   522.76s] trade, just close it out.
+[  522.84s ->   526.28s] You're able to close it out around here for roughly 55 cents.
+[  527.18s ->   531.02s] So again, 55 cents is going to be your loss.
+[  531.10s ->   534.38s] But again, they gave you 15 cents in the beginning.
+[  534.58s ->   536.14s] So you're not actually losing that much.
+[  536.60s ->   538.72s] Anyways, that's kind of how that works.
+[  539.04s ->   539.64s] All right, guys.
+[  539.70s ->   543.98s] I hope you kind of liked this video, How I Trade Cheap Karate Spreads to Make $4,000 a
+[  543.98s ->   544.20s] month.
+[  544.20s ->   547.70s] If you want to be able to do that too, make sure you check out the Inner Circle program below.
+[  548.02s ->   552.86s] It's where I give all my alerts and give access to this wonderful platform that helps you
+[  552.86s ->   558.54s] find cheap credit spread trades that based on the trend historically, running a back test
+[  558.54s ->   563.20s] through all these ETFs, have a 90% win rate or greater.
+[  563.30s ->   566.42s] You can see here with TLT, a 96% historical win rate.
+[  566.50s ->   567.74s] This isn't guessing numbers of math.
+[  568.02s ->   571.28s] We actually ran the historical performance of it since 2005.
+[  571.28s ->   574.94s] You have a 92% win rate, 95, 92, whatever.
+[  575.08s ->   578.30s] It shows you how much credit you can collect, like 23 cents, et cetera.
+[  578.70s ->   579.74s] And again, that's how that works.
+[  579.80s ->   581.88s] If you want access to that, make sure to click the link down below.
+[  581.98s ->   586.54s] If not, I have free resources down below like Trading Handbook and a free credit spread
+[  586.54s ->   587.16s] strategy tracker.
+[  587.56s ->   589.28s] Anyways, guys, thank you so much for watching this video.
+[  589.42s ->   592.70s] Please hit that thumbs up button and subscribe button because I have a lot more videos to
+[  592.70s ->   595.64s] show you about how to become a better credit spread trader.
+[  595.64s ->   596.92s] All right, guys, see you in the next video.

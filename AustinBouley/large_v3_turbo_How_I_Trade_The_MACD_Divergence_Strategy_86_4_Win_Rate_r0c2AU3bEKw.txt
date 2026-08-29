@@ -1,0 +1,91 @@
+[    0.00s ->     5.16s] Do you want to learn how to use the MACD indicator to avoid market crashes, know exactly when to buy,
+[    5.34s ->    11.20s] when to sell, and avoid common pitfalls that most people do when they use the MACD indicator?
+[   11.40s ->    15.56s] I'm sharing all that in this video, and if you stay until the end, I'm giving you step-by-step
+[   15.56s ->    21.06s] trades that you can take based on the indicator. So not only will you learn how it works and the
+[   21.06s ->    26.20s] pitfalls to avoid, but you'll also learn how to make money and be able to read it correctly,
+[   26.20s ->    29.66s] even if you're an absolute beginner. So let's dive into the video right now.
+[   30.40s ->    34.14s] So first things first, we didn't put the MACD indicator on our chart. We simply go to indicators
+[   34.14s ->    37.42s] no matter what charting platform you're using, whether that's the free TradingView account like
+[   37.42s ->    42.88s] I'm using here, or you're using your broker or something else. Type in moving average convergence
+[   42.88s ->    47.50s] divergence. That's the actual name of it right here, MACD for short. So you're going to add this
+[   47.50s ->    50.50s] to your chart, and we're not going to mess with any of the settings. We're just going to use the
+[   50.50s ->    55.76s] default settings. This is what the MACD is. It shows a lot of things. It basically shows us a
+[   55.76s ->    60.22s] combination of moving averages. Where is the market going? Where is it likely to reverse
+[   60.22s ->    65.18s] and what the current momentum is? And so we can see the strength and all that moving right here.
+[   65.26s ->    69.16s] But I don't want to get into these specifics. I want to show you how you can read it to make
+[   69.16s ->    73.82s] money. So how do most people use it? They use it where they look for the cross to know when they
+[   73.82s ->    78.22s] should buy and when they should sell. If the blue line crosses above this red line, then it's a buy
+[   78.22s ->    82.98s] signal. If the blue crosses below the red, it's now a sell signal. So you can see here,
+[   83.14s ->    88.38s] this would have given you a great buy signal here, but right here, it would have given you a bad buy
+[   88.38s ->    92.46s] signal. So you would have lost money here. You would have made some back here, but still,
+[   92.82s ->    98.36s] it's not 100% accurate. And although nothing is in the market, this is not the best way to use the
+[   98.36s ->   103.76s] MACD indicator because you can also see here, it triggered a sell signal and then the market exploded
+[  103.76s ->   109.12s] and we would have missed out on that trade. So again, using just this as the simple buy and sell
+[  109.12s ->   114.20s] signals of the cross, like most people do is not actually going to lead to a consistent profitable
+[  114.20s ->   120.02s] return. And so what you want to do is what happened in March, 2020. So here, I'm going to showcase what
+[  120.02s ->   125.78s] happened in March, 2020 with the huge COVID crash, which is this, you can see here that the market was
+[  125.78s ->   131.56s] doing well, a very strong market. Then it absolutely crashed and went down because of COVID news and
+[  131.56s ->   137.42s] everything picking up. And so how could we have taken advantage of this or known about it beforehand?
+[  137.86s ->   142.16s] Well, when I teach you how to use the MACD to decipher this, you can use it in every type of
+[  142.16s ->   147.04s] market. So let's zoom in and look at what happens. So you can see here, the market is trending up and
+[  147.04s ->   152.04s] doing really well. And what do we know from the MACD indicator? This is what I want to show you. It's
+[  152.04s ->   158.22s] called MACD divergence. We're not looking at the lines to see crosses to understand buy and sell signals,
+[  158.22s ->   162.72s] but we're looking. So we're looking at what is the stock doing and what are the MACD lines doing?
+[  162.80s ->   167.62s] And when we look at that, we look for a divergence. So you can see here, the stock highs are getting
+[  167.62s ->   172.14s] higher. So you can see here, the highs are getting higher. That's just a natural progression of an
+[  172.14s ->   179.18s] uptrend. But at the same time, what are the MACD lines doing? The MACD lines are getting lower.
+[  179.48s ->   187.02s] This is called MACD divergence. When they diverge at a key level, that is when reversals happen.
+[  187.02s ->   192.96s] So we can see here that we're trending up. We're at an all-time high. That is a key level. All-time
+[  192.96s ->   198.24s] highs are always key levels. Resistances are key levels. Supports are key levels. So if we're coming
+[  198.24s ->   203.74s] up to a resistance or down to a support, and we see this divergence where the stock and the moving
+[  203.74s ->   210.32s] average or the MACD lines are doing something different, that is called divergence. And that is
+[  210.32s ->   216.16s] your opportunity to get out of your winning positions, to take profits, and to make money to
+[  216.16s ->   221.96s] the downside. Again, the same thing happens to the bottom. If we were just looking at the crosses
+[  221.96s ->   226.36s] to know when to buy, for instance, when these lines cross, like most people do, we would have tried to
+[  226.36s ->   230.58s] get in here. Then the market would have crashed again. So again, we're not looking at these lines.
+[  230.66s ->   235.10s] We're looking at what the stock is doing and what these lines are doing. So if we look here, we can see
+[  235.10s ->   240.40s] how the stock is continuously making lower lows. The lows continuously getting lower. What is also
+[  240.40s ->   245.94s] happening on the MACD lines? When we look at the MACD lines during the same period, it's coming up.
+[  246.20s ->   252.42s] So we have this divergence again, where the stock is headed lower on the lows, but the lows on the MACD
+[  252.42s ->   259.10s] line are actually getting higher. And so when this happens, this shows us, hey, high likelihood chance
+[  259.10s ->   266.10s] of us reversing here. And so this is how we predict either crashes or bounces or other things like that.
+[  266.10s ->   272.50s] When we have a stock doing something diverging from the MACD lines, that's how we know when to profit.
+[  272.64s ->   277.46s] I do have to put a key caveat on this, which is also something most people do not teach. MACD divergence
+[  277.46s ->   283.98s] was created for ETFs. So if you want to do this well, if you want to do this successfully and profitably,
+[  284.26s ->   293.20s] do it on ETFs like SPY, QQQ, DIA, anything like that. ETFs in baskets of stocks is what this works on well.
+[  293.20s ->   298.46s] If you try to do it on individual stocks, it will not end up working as well. And so now you know
+[  298.46s ->   302.42s] how this works. We're looking for divergence. If a divergence happens at a high, we're looking to
+[  302.42s ->   307.18s] reverse to the downside. If a divergence happens at the low, we're looking for a bounce. So again,
+[  307.24s ->   312.72s] we can combine this with our knowledge of these lines crossing, how most people do it, and we can
+[  312.72s ->   318.32s] find our key entry points when to enter into these trades. So now let's look into the current market.
+[  318.44s ->   322.48s] How are we doing? How can we decipher this? Well, that's exactly why I wanted to make this video,
+[  323.20s ->   327.34s] this right now. What is the stock doing? And what is the MACD lines doing? Those are the only two
+[  327.34s ->   331.14s] questions you need to ask yourself. Well, if we look at the stock, the stock is moving higher. That
+[  331.14s ->   335.74s] means the highs are getting higher. So the highs are getting higher. Now we ask yourself, what is
+[  335.74s ->   340.58s] the MACD lines doing? Well, if we look at what the MACD lines are doing, the MACD lines are going down.
+[  340.86s ->   347.42s] And so we see this, this is a divergence, especially since we're near this critical resistance level.
+[  347.42s ->   353.10s] When we see divergence near a critical level, that is a sign of a reversal. So now that we're hitting
+[  353.10s ->   356.64s] at this level, we're going to start to slowly turn over, which we're now doing. Now we're starting to
+[  356.64s ->   361.70s] break these lows. So if this low breaks, that is our sign to get short. We can do that by entering in
+[  361.70s ->   368.24s] an inverse ETF, which makes money as the market goes up. We can do that by buying a put, which makes
+[  368.24s ->   375.18s] money as the stock goes down. We can also do that by entering a call credit spread, which makes money as
+[  375.18s ->   379.24s] the market drops. And there's so many ways we can do this to take advantage of the market.
+[  379.52s ->   383.78s] But I wanted to make it clear what's happening here. This doesn't mean the market's going to crash,
+[  383.84s ->   387.88s] but it's a good sign that the market's going to pull back. And so again, if we can combine that
+[  387.88s ->   392.80s] with the lines here, we can see that we are starting to slowly turn over and roll down lower.
+[  393.64s ->   397.86s] And so again, where else have we seen this? Just so I can kind of give you some examples. Well,
+[  397.90s ->   402.84s] again, we've seen it all throughout here. Here's a great example right here where we came to some new
+[  402.84s ->   410.38s] lows. The stock had lows going lower. What did the MACD lines do? They went up. That's a divergence.
+[  410.74s ->   415.24s] We can see here divergence here as well. The stock was pushing to new to all time highs.
+[  415.64s ->   421.72s] The MACD line at the same time was coming down lows. So what do we look for? Well, we have a MACD line
+[  421.72s ->   427.50s] on the chart. Number one. Number two, is the market at an either high or a low? Is it at support or is
+[  427.50s ->   432.44s] it at resistance? If it's at one of those levels, this is likely to happen. If we're trading in a range,
+[  432.44s ->   436.36s] it's going to happen near the upper or lower levels. It's not going to happen in the middle
+[  436.36s ->   442.56s] of that range. So look for the outer extremes. Look for what the stock is doing differently from
+[  442.56s ->   447.42s] the MACD line. If you see a divergence, that's a great chance to slowly start to build up a position
+[  447.42s ->   452.46s] for that reversal, whether you're going short or long. Anyways, guys, I hope this helps you out.
+[  452.80s ->   457.92s] Again, if you want more trading tips, you can click down below and join my completely free options.
+[  458.04s ->   461.96s] Of course, just put in your name and email and you'll get access to learn how options work,
+[  461.96s ->   466.64s] how I trade them and the different strategies like this that I use to take advantage of the
+[  466.64s ->   471.00s] market. So that's completely free for you. Click the first link down below. Anyways,
+[  471.06s ->   473.08s] guys, see you in the next video and I hope you enjoyed it.

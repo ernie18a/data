@@ -1,0 +1,365 @@
+[    0.12s ->     3.76s] hey team what's up so excited here for master class number one where I'm going
+[    3.76s ->     7.04s] to teach you the most amazing strategy ever it's going to be a strategy that I
+[    7.04s ->    11.12s] taught 11 newbie traders and they use that strategy to make twelve thousand
+[   11.12s ->    15.04s] dollars and their first 30 days you heard that right before I show you how
+[   15.04s ->    19.76s] this amazing strategy works what it is and how to trade it step by step so that
+[   19.76s ->    22.60s] by the end of this video I guarantee you'll be able to structure the trade
+[   22.60s ->    26.24s] put on the trade know how to manage the trade everything about the strategy you
+[   26.24s ->    29.76s] will know that you can use it to start making money today you will need any
+[   29.76s ->    33.90s] other things but a broker a trading account and all the knowledge you'll
+[   33.90s ->    38.16s] find on this download linked below this video so let's dive into it and before we
+[   38.16s ->    41.76s] get started let me prove you that the strategy works so Tom King is the
+[   41.76s ->    46.44s] original guy who popularized this trading strategy so again I'm not taking credit
+[   46.44s ->    49.68s] for it also he didn't invent it either it's been around for a while but he's
+[   49.68s ->    54.84s] the one who made it famous so Tom King makes $15,000 per month trading the
+[   54.84s ->    57.60s] strategy if you want to go see that you can go see it on his YouTube channel
+[   57.60s ->    61.74s] Joseph Puckett on the other hand is also a youtuber and options trader and he
+[   61.74s ->    65.16s] uses the woman to strategy that I'm about to teach you to make a hundred
+[   65.16s ->    69.30s] thousand dollars per month that's right a hundred thousand dollars per month who
+[   69.30s ->    73.14s] here would like to turn their annual income into their monthly income and
+[   73.14s ->    76.98s] guys it's all based on account size obviously is a larger account size this
+[   76.98s ->    81.30s] shows you the power of the strategy as you grow and your account gets bigger and
+[   81.30s ->    87.18s] bigger and bigger I have Neil here who is one of my auto trader beta testers who
+[   87.18s ->    90.90s] used this same strategy to make eight hundred dollars in his first 30 days
+[   90.90s ->    95.10s] that's right he didn't really know much about the strategy but he used it to be
+[   95.10s ->    98.04s] able to make eight hundred dollars who here would like to make eight hundred
+[   98.04s ->   101.34s] dollars in the next month that's an extra what that could be your mortgage
+[  101.34s ->   105.90s] payment and actually maybe not that anymore since we're after 2020 price have
+[  105.90s ->   108.84s] gone crazy anyways that could be like what a car note that could be
+[  108.84s ->   111.54s] groceries that could be insurance it could be things like that that could
+[  111.54s ->   115.20s] really help you right and so that's how amazing bringing an extra income from
+[  115.20s ->   119.70s] trading is Ryan who also has a bit of a larger account has used the same one one
+[  119.70s ->   124.00s] two strategy strategy he was new to it and made three thousand five hundred
+[  124.00s ->   128.36s] dollars in roughly his first 30 days a bit over that but still three thousand
+[  128.36s ->   131.10s] five hundred dollars who here would like to make an extra three thousand
+[  131.10s ->   134.88s] dollars a month right that could definitely cover a mortgage payment all
+[  134.88s ->   139.98s] right Keith here has made over two hundred dollars since joining David has
+[  139.98s ->   144.12s] made a little over a thousand dollars and a little over a month so a little
+[  144.12s ->   146.94s] over 30 days he made a thousand dollars who here would like to make a thousand
+[  146.94s ->   150.00s] dollars in roughly a month that's how amazing this is and he's also doing it
+[  150.00s ->   153.48s] on the auto trader so it's automated for him but again I will teach you how to do
+[  153.48s ->   156.36s] it without the auto trader and then there's me in the last 30 days I placed
+[  156.36s ->   159.96s] three trades making two thousand nine hundred and fifty dollars using eleven
+[  159.96s ->   163.56s] thousand dollars the twenty seven percent return on my money from trading these
+[  163.56s ->   168.54s] one one two so now that you know and have seen that this can work for people
+[  168.54s ->   173.16s] with larger account sizes not enough or I should just say read it here right if
+[  173.16s ->   176.58s] you see now seen that this works for every type of type of trader new traders
+[  176.58s ->   179.64s] experienced traders traded with a lot of money traders with less money traders
+[  179.64s ->   183.72s] who have time to watch the market 24 7 and traders who are using an auto trader
+[  183.72s ->   186.72s] and I've been making money while on vacation that's right one of my auditors
+[  186.72s ->   190.62s] like Austin I've been gone in Cabo and the one one two strategy has been
+[  190.62s ->   194.04s] automated for me and I've made six hundred and eight and eighty dollars over
+[  194.04s ->   198.00s] the last two weeks since I've been gone so that's amazing okay so put your
+[  198.00s ->   201.78s] hands up in there are you ready to learn the strategy and learn exactly how it
+[  201.78s ->   205.02s] works well I'm excited to teach it to you today I'm in a little bit this year
+[  205.02s ->   208.66s] alright so this is called the one one two strategy of the one one two strategy
+[  208.66s ->   212.84s] which you probably heard me refer to it before now what exactly does one one two
+[  212.84s ->   216.42s] mean and why is it called that it's called that because actually two trades
+[  216.42s ->   221.04s] in one so we have on a put debit spread and a put debit spread is made up of one
+[  221.04s ->   225.18s] long put in one short put so there we have the one one then we have naked puts
+[  225.18s ->   229.50s] we have two short puts and so since we have the one long the one short creating
+[  229.50s ->   234.24s] the put debit spread and the two short puts this combined is one one two or the
+[  234.24s ->   239.40s] one one two trading strategy so the one one is the put debit spread and the two
+[  239.40s ->   244.46s] is the short naked puts now what does combining a put debit spread and two
+[  244.46s ->   249.86s] naked puts do it creates a strategy that makes money in virtually every market
+[  249.86s ->   253.28s] that's right in bullish markets you can make seven hundred to a thousand dollars
+[  253.28s ->   257.18s] in as little as two weeks in a neutral market you can make seven hundred to a
+[  257.18s ->   261.38s] thousand dollars in as little as a month about four weeks and bearish markets you
+[  261.38s ->   264.56s] can actually make triple what you typically make three to four thousand
+[  264.56s ->   268.14s] dollars but it takes about eight weeks or two months right now if the market
+[  268.14s ->   273.08s] were to crash we're talking a 10% crash or more in a day or two you could lose
+[  273.08s ->   276.98s] up to three thousand to four thousand to four thousand to four thousand dollars on
+[  276.98s ->   281.42s] on a single trade now again all these numbers and profit reports are based on
+[  281.42s ->   285.86s] trading the one one two strategy on ES and that requires eight thousand dollars
+[  285.86s ->   288.56s] of buying power per trade but we'll be talking about that and how to do it for
+[  288.56s ->   293.78s] smaller accounts here soon also in mass class number two coming up on April 8th
+[  293.78s ->   297.56s] I believe next Monday I will show you how to turn the one one two trades into
+[  297.56s ->   301.76s] hedges and how many hedges you need to have on for the number one one two you have
+[  301.76s ->   305.60s] on so that you can not only survive a market crash but actually profit from it
+[  305.60s ->   309.76s] so stay tuned for master class number two now how does the one one two strategy
+[  309.76s ->   314.48s] make money in every market outside of crashes well they put debit spread that
+[  314.48s ->   318.62s] we're putting on the one one part of the one one two is a bearish trade meaning it
+[  318.62s ->   323.96s] makes money as the market drops the two part of the one one two are naked puts and
+[  323.96s ->   328.28s] that's a bullish trade mean that it makes money as the market goes up and it
+[  328.28s ->   333.74s] looks like this here's a put debit spread profit graph and what do I mean by
+[  333.74s ->   337.88s] that well we have a profit graph here and this shows you how much money you will
+[  337.88s ->   342.62s] make at any given point in time and so we see here a put debit spread profit
+[  342.62s ->   347.12s] graph has a defined loss amount aka it flattens out so now we know that we can
+[  347.12s ->   351.78s] only lose so much we can only make so much so the one one these two options
+[  351.78s ->   356.60s] buying a put and sell and selling a put make money to the downside okay as we go to
+[  356.60s ->   360.86s] the left the market makes more money the naked puts here on the other hand do
+[  360.86s ->   364.76s] the opposite right we see here that we have unlimited risk or loss and defined
+[  364.76s ->   368.54s] profit so you can see here you go down to infinity which does that doesn't really
+[  368.54s ->   373.10s] happen because we have a stop loss on it but we have a defined a profit amount
+[  373.10s ->   376.84s] that we can make so now it shows us that hey we have a bullish trade that makes
+[  376.84s ->   380.72s] money as the market goes up and we have a bearish trade that makes money as it goes
+[  380.72s ->   386.78s] down however this one outpowers this one and so we get left with a one one two
+[  386.78s ->   390.48s] that looks like this so when you combine these two profit graphs are put debit
+[  390.48s ->   394.28s] spread with our naked puts it looks like this and shows you that you can make
+[  394.28s ->   397.82s] money in almost every market when we put on this trade the stock is trading
+[  397.82s ->   402.32s] around here which is that if the market stays neutral or goes higher we're going
+[  402.32s ->   406.16s] to make a profit if it goes down into this range we're gonna make an even
+[  406.16s ->   410.72s] larger profit and if it goes below this then we're gonna start losing the profit
+[  410.72s ->   415.58s] graph shows what the trade will return at expiration that's a big caveat a lot of
+[  415.58s ->   418.48s] people see this profit graph and see all this green to be like you're telling me
+[  418.48s ->   422.96s] no matter what the market does all make money yes at expiration there's a lot of
+[  422.96s ->   426.38s] things that can happen why we are while we are in the trade and so again
+[  426.38s ->   430.02s] that's before expiration and that's shown through the orange line this orange line
+[  430.02s ->   433.82s] right here shows our theoretical price so again this green is wherever the
+[  433.82s ->   438.26s] stock price lies at expiration day this is the amount of money you'll make
+[  438.26s ->   441.92s] however while you're in the trade that can change and this orange line shows that
+[  441.92s ->   445.56s] if the market were to drop this orange line is going down during that our one
+[  445.56s ->   448.92s] one two is actually be losing money why because by default a one one two is a
+[  448.92s ->   453.08s] bullish trade so as the market drops we lose money as mark goes up we make money
+[  453.08s ->   456.92s] and so if it starts dropping our one one two will start losing which is why we
+[  456.92s ->   460.06s] have a stop loss on it so if the market goes down the one one two will start
+[  460.06s ->   463.38s] losing immediately since the bullish trade that's why if the market is in a
+[  463.38s ->   467.82s] slow downtrend you'll be safe and be able to make that max profit that big green
+[  467.82s ->   473.40s] profit trap you saw right here if it goes down but if the market crashes then you
+[  473.40s ->   477.06s] will have to close the trade early due to hitting your stop loss so what are the
+[  477.06s ->   481.32s] actual rules of structuring this trade how to how do we place a one one two trade
+[  481.32s ->   485.56s] well I'm going to walk you through some general rules and what people on the
+[  485.56s ->   489.96s] internet and people who trade this do and again I can recommend these and show
+[  489.96s ->   493.80s] which one is right is recommended for each but inside the parentheses next to
+[  493.80s ->   498.66s] these recommendations is how I actually trade it so a one one two we want to put
+[  498.66s ->   502.86s] that on on futures and I'll explain why in a second but we're going to trade ES
+[  502.86s ->   509.62s] MES CL GCCB now why trade those because they're very liquid and they offer great
+[  509.62s ->   514.72s] returns based on the amount of money we have to put up so ES and MES are both of the
+[  514.72s ->   522.28s] S&P 500 CL is crude oil GC is gold and ZB is bonds so those are kind of the assets
+[  522.28s ->   525.82s] that we're looking at right now now that's what we're going to trade I
+[  525.82s ->   531.76s] personally trade ES as my main one one two trading strategy or asset my duration
+[  531.76s ->   538.84s] we're going to go 45 days to 120 days why this range well because we the amount
+[  538.84s ->   542.74s] of buying power we need to put up the money we need to put up to put on this
+[  542.74s ->   548.08s] trade is going to increase the closer to the expiration date we get why because
+[  548.08s ->   553.14s] it's riskier and so there's more money you have to put up and so 45 days we'll
+[  553.14s ->   557.44s] have a higher buying power but you'll get to make money faster because there's
+[  557.44s ->   562.00s] less days in the trade versus 120 days you'll have to put up less money but it's
+[  562.00s ->   565.48s] gonna take a lot longer for you to reach that profit so I like the middle ground
+[  565.48s ->   569.50s] of that is 90 so I have to put up a decent amount of money but not too much not
+[  569.50s ->   574.84s] too little and I also make money relatively quickly not too fast like a 45 but not
+[  574.84s ->   579.40s] too slow like 120 so the 90 days is my mark put debit spread this is the first
+[  579.40s ->   583.60s] part of the one one two trade we buy the 25 Delta and sell the 23 Delta you can
+[  583.60s ->   587.56s] change this and fluctuate it as you want the wider the difference between the
+[  587.56s ->   591.76s] Delta you pick the more downside protection you have but it also means a
+[  591.76s ->   595.12s] less profit you make to the upside and again I'll explain that here in a second a
+[  595.12s ->   599.56s] bit more but I like to use the 25 Delta long and the 23 Delta short for my put
+[  599.56s ->   604.00s] debit spread naked puts this is the base of the trade this is what makes the
+[  604.00s ->   607.78s] trade bullish and gives us that profit all the way if the market goes up so
+[  607.78s ->   613.54s] again a 5 to 10 Delta naked puts are great 5 Delta means you have a 95% chance
+[  613.54s ->   618.28s] of this trade making money 10% Delta theoretically means you have a 90% chance
+[  618.28s ->   622.36s] of making money so again for this trade is a very high win rate the way that we
+[  622.36s ->   626.92s] trade it I personally like a seven Delta it's just a good number I love seven
+[  626.92s ->   631.14s] it's a it's the it's the whole number God's number right and so I always stick
+[  631.14s ->   634.84s] with seven Delta for the reason of seven days of creation it's just it doesn't
+[  634.84s ->   637.72s] really matter between five six seven and eight but I just like seven for that
+[  637.72s ->   641.98s] reason anyway so seven Delta is what I trade on my naked puts giving me a
+[  641.98s ->   648.10s] theoretical win rate of 93% so that's how I trade my naked puts now how do I
+[  648.10s ->   654.46s] manage this trade I have a stop-loss you can put up between 200 to 400% 200% is
+[  654.46s ->   659.26s] the number I'm using right now this means that if I get in for a credit of
+[  659.26s ->   664.18s] $50 I'm going to exit when that credit then becomes $100 so that's how I'm
+[  664.18s ->   671.98s] trading that take profit is going to be 75 to 95% why does it start at 75% again
+[  671.98s ->   675.40s] this is going to go into what I'm teaching in masterclass number two which is
+[  675.40s ->   680.12s] hedging you can close the trade at any percentage profit and make that profit if
+[  680.12s ->   684.04s] you close the entire trade however you can take one one twos to convert them
+[  684.04s ->   687.52s] into hedges to protect your downside later and protect other one one two trades you
+[  687.52s ->   691.54s] have on and so in order to do that efficiently and effectively you want to
+[  691.54s ->   696.88s] make sure you have at least a 75% profit on that trade now Tom King goes up to a
+[  696.88s ->   703.66s] 95% profit then he closes the trade I like to stay between seven 75 to 80% profit if I
+[  703.66s ->   707.38s] can get around there I know that I'm doing good so that's what I'm watching
+[  707.38s ->   713.32s] here for that now ES and MES should be the main assets that you trade for a
+[  713.32s ->   717.18s] one one two ES should be used if you're trading with an account size larger than
+[  717.18s ->   719.98s] twenty five thousand if you have an account size less than twenty five
+[  719.98s ->   724.22s] thousand use MES is the tenth of the price so to put on a one one two trade for
+[  724.22s ->   728.86s] ES right now it's about eight thousand dollars to put on that same trade for MES
+[  728.86s ->   731.92s] it's going to be only eight hundred dollars now it's also a tenth of the
+[  731.92s ->   735.82s] profit but if you have a smaller account it works just as fine you should use CL
+[  735.82s ->   741.58s] crude oil GC gold and ZB bonds as complements and diversification once your
+[  741.58s ->   745.60s] account size grows past twenty five thousand why do we only trade these on
+[  745.60s ->   748.60s] futures great question why don't we trade them on stocks and ETFs and everything
+[  748.60s ->   752.62s] also the strategy so great as a 95% win rate why don't we trade this on
+[  752.62s ->   756.40s] everything the woman to strategy only works on futures because of span margin and
+[  756.40s ->   761.96s] early assignment risk spam margin is the way is way more profitable than normal
+[  761.96s ->   765.28s] stock and portfolio margin for instance a normal stock and portfolio margin
+[  765.28s ->   770.26s] required you to put up fifty percent of the money needed so if the stock
+[  770.26s ->   773.50s] costs a hundred dollars you can put up fifty and they would allow you to buy
+[  773.50s ->   777.62s] the stock but with spam margin it's even a fraction of that let's say cost a
+[  777.62s ->   783.68s] hundred and we could put a dollar and still enter the trade so for example if we
+[  783.68s ->   787.82s] were to set up a one one two trade on spy or any stock or ETF then you would have
+[  787.82s ->   791.42s] to put up nine thousand dollars to make three hundred dollars I just did this
+[  791.42s ->   795.42s] this is a real example that'd be three percent return on your money and again
+[  795.42s ->   799.28s] it takes about a month for this trade to go through it's about three percent
+[  799.28s ->   803.78s] return in the month obviously not bad but while we do the same exact trade on
+[  803.78s ->   809.18s] ES it would require eight thousand dollars so less buying less buying power and it
+[  809.18s ->   813.50s] would generate a one thousand dollar return not even if we hit the max trade
+[  813.50s ->   816.80s] scenario you know that max trade where if it drops and it goes into the put
+[  816.80s ->   820.28s] debit spread category where we make more money that's not even factoring in that
+[  820.28s ->   823.16s] it's just a normal trade will make a thousand dollars to twelve point five
+[  823.16s ->   828.38s] percent return on our money so outside of just the return futures well okay
+[  828.38s ->   831.30s] because obviously if we're trading if we're basing it just on returns futures
+[  831.30s ->   835.62s] are the best now outside of this returns futures don't have early assignment risk
+[  835.62s ->   838.94s] that means that when we're trading in the stock world when trading options is
+[  838.94s ->   841.94s] someone wants to execute their option early they can they can take the option
+[  841.94s ->   845.12s] from you if you're the option seller and this mainly happens when you're in the
+[  845.12s ->   851.12s] money so if you are trying to hold a 1 1 2 on a stock during a downtrend your put
+[  851.12s ->   854.06s] specifically the put in the put debit spread will eventually be in the money
+[  854.06s ->   858.32s] and once they are in the money they are very likely to be called away from you and
+[  858.32s ->   862.04s] once they do that it will ruin your trade and not allow you to realize the
+[  862.04s ->   867.62s] max profit so because of span margin and because of no early assignment risk we
+[  867.62s ->   873.02s] are we should and we only do 1 1 2 trading on futures now did I forget to
+[  873.02s ->   876.38s] mention tax advantage not only is this strategy going to help you consistently
+[  876.38s ->   881.30s] make monthly income but it will also help you pay less in taxes who here is
+[  881.30s ->   885.80s] down for that who here wants to make great money every single month even if
+[  885.80s ->   888.56s] you have no experience don't know what you're doing just follow this simple
+[  888.56s ->   893.62s] game plan and pay less in taxes that's how amazing this woman 2 strategy is 11 newbie
+[  893.62s ->   898.96s] traders I taught this to they made over $12,000 so far and if you want to know how
+[  898.96s ->   902.30s] much money they put up to make that we're talking about a 7% return so
+[  902.30s ->   906.34s] basically in their first 30 to 45 days of learning and using the strategy they
+[  906.34s ->   911.02s] made a 7% return so most people make an entire year so that's how amazing this
+[  911.02s ->   915.22s] strategy is with real accounts real money new people actually doing it so
+[  915.22s ->   920.24s] that's why this is awesome now futures are taxed under sections 1256 I'm not a tax
+[  920.24s ->   923.96s] expert but you can go look this up it's pretty common knowledge which means you
+[  923.96s ->   928.82s] pay 60 40 as long-term and short-term tax so if you're just trading on stocks
+[  928.82s ->   934.32s] options whatever on normal things that aren't futures or not SPX then you have
+[  934.32s ->   939.38s] to pay at the short-term tax rate which is going to be what your working tax rate
+[  939.38s ->   945.74s] is so if you make a certain amount of money and you pay the 30 to 23 to 35% tax
+[  945.74s ->   950.62s] that's how much you have to pay on the profits you make for your trading now
+[  950.62s ->   955.58s] when you trade futures 60% of it will be taxed at long-term rates and the long-term
+[  955.58s ->   960.38s] rates can be 0% for a while and a max of 12% so now we're already lowering it
+[  960.38s ->   965.12s] dramatically so let's look based on your ordinary tax rate this shows you how much
+[  965.12s ->   969.20s] savings you have because what the actual blended rate is so if you're at the 22%
+[  969.20s ->   977.24s] tax rate for 2023 with the 60 40 tax break you'll actually only pay 17.8% in
+[  977.24s ->   982.46s] taxes it's a 4.2% difference now let's say you're at the out of 35% tax bracket
+[  982.46s ->   985.64s] for your working income this is how much you would pay if you're trading options
+[  985.64s ->   989.54s] on stocks and ETFs and stuff like that you'd have to be 35% but if you're
+[  989.54s ->   993.26s] trading futures you only to be 23% that's a 12% difference if you make a hundred
+[  993.26s ->   997.58s] thousand dollars that year that's a $12,000 difference in taxes that's how
+[  997.58s ->  1002.44s] amazing this is all right guys so um yeah that's just why it's important to
+[ 1002.44s ->  1006.34s] be trading futures and the 112 strategy with futures consistent reliable monthly
+[ 1006.34s ->  1010.36s] income works even if you're new have no experience tax advantage everything like
+[ 1010.36s ->  1015.51s] that okay how often should you put this trade on you should put this trade on as
+[ 1015.51s ->  1019.35s] many times as you can given the buying power you have okay because the spam
+[ 1019.35s ->  1023.31s] margin is best not to have more than 50% of your buying power and trades at a
+[ 1023.31s ->  1027.03s] single time so if you have a hundred thousand dollar account for easy math
+[ 1027.03s ->  1030.63s] then you should have no more than fifty thousand dollars of your money in
+[ 1030.63s ->  1036.33s] trades at one time why your span margin is a special thing it increases when risk
+[ 1036.33s ->  1040.23s] increases so if the market were to drop and risk were to increase they would
+[ 1040.23s ->  1045.15s] ask more buying power of you and so if we have 50% of our buying power set aside
+[ 1045.15s ->  1049.83s] for that scenario then we'll be able to hold through a market downturn make the
+[ 1049.83s ->  1053.91s] max profit on our 112 without having to close any trades because we had money set
+[ 1053.91s ->  1058.55s] aside to cover the rising cost or or the rising amount of buying power needed due
+[ 1058.55s ->  1064.47s] to spam margin now the goal is to put on um at least one of these trades a week if
+[ 1064.47s ->  1069.11s] you can mes requires eight thousand dollars of buying power per trade mes is
+[ 1069.11s ->  1072.29s] eight hundred dollars in buying power per trade so you know those should show you
+[ 1072.29s ->  1076.59s] um based on your account size what you should be trading i aim to put on one es
+[ 1076.59s ->  1081.83s] trade per week i'll be moving to two times a week here soon and i also use gc and cl to
+[ 1081.83s ->  1085.27s] diversify my account and trades and again i'll be talking more about that in
+[ 1085.27s ->  1088.87s] masterclass three where i should be exactly how i trade now if you want to
+[ 1088.87s ->  1092.39s] size up it's best to enter more time throughout the week instead of sizing up
+[ 1092.39s ->  1096.31s] a single trade so instead of doing one trade a week and sizing up that one trade
+[ 1096.31s ->  1100.31s] each week it's best to do it multiple days in that week so that you spread your
+[ 1100.31s ->  1106.25s] risk across durations and across different time periods and strikes um but
+[ 1106.25s ->  1109.35s] again we'll talk more about protecting your account tomorrow in masterclass
+[ 1109.35s ->  1114.07s] number two now how do you manage the one one two trade manually well you're
+[ 1114.07s ->  1117.83s] going to check the market every single day when the market is red or you have
+[ 1117.83s ->  1121.19s] available buying buying power enter the trade and determine which asset you will
+[ 1121.19s ->  1124.79s] be trading structure the trade correctly the naked puts the put debits red by
+[ 1124.79s ->  1127.75s] selecting the durations the deltas and watching the volume
+[ 1127.75s ->  1133.51s] i don't know why this isn't showing okay submit the trade as two separate
+[ 1133.51s ->  1136.23s] orders since you can't submit it as one order to the broker
+[ 1136.23s ->  1139.67s] um you have to do the put debit spread as one trade and the naked puts as another
+[ 1139.67s ->  1143.99s] you can't send them all together um at the moment manage your positions
+[ 1143.99s ->  1147.67s] every day watch every position for either a take profit or stop loss this
+[ 1147.67s ->  1151.11s] gets harder when you have multiple trades to manage if you aka more than 10
+[ 1151.11s ->  1154.07s] trades uh turn trades into hedges when the
+[ 1154.07s ->  1157.91s] market is at a high point or in a volatile market
+[ 1157.91s ->  1160.71s] and yes if you mess this up it could cost you a lot of money so make sure you
+[ 1160.71s ->  1163.03s] watch masterclass number two where i show you
+[ 1163.03s ->  1167.11s] um how to properly convert these trades into hedges and after you do all that
+[ 1167.11s ->  1170.79s] you've generated monthly incomes that you can provide for your family
+[ 1170.79s ->  1174.07s] actually i wasn't planning on doing this but let's pull up the broker here
+[ 1174.07s ->  1177.75s] um and let's walk through actually how to do this so that you know what's going
+[ 1177.75s ->  1181.35s] on so i'm going to follow how i trade a one one two and i'm going to set it up
+[ 1181.35s ->  1186.63s] all right so i'm on es futures dash es uh again if you're trading mes do that
+[ 1186.63s ->  1191.03s] there i'm going to the closest one to 90 days is going to be this one 85 days out
+[ 1191.03s ->  1195.11s] close as close as the 90 i'm going to put on the put debit spread that's
+[ 1195.11s ->  1198.15s] going to be my 25 i'm going to buy the 25
+[ 1198.15s ->  1201.51s] sell the 23 just like that this is a put debit spread
+[ 1201.51s ->  1205.27s] if you see here as discussed earlier oops let me remove all these extra
+[ 1205.27s ->  1209.34s] whatnots um as we discussed earlier you can see
+[ 1209.34s ->  1212.94s] here it gives me downside protection i have a max
+[ 1212.94s ->  1216.86s] loss and a max profit of about a thousand dollar profit to the downside
+[ 1216.86s ->  1221.10s] so that's what we're looking at there with this put debit spread by the 25
+[ 1221.10s ->  1224.78s] sell the 23 again this is now 24 i'm actually going to bring this out to 22
+[ 1224.78s ->  1226.94s] to give me a bit more downside protection
+[ 1226.94s ->  1230.47s] um now i'm going to go out to the seven delta
+[ 1230.47s ->  1233.59s] and sell that so seven delta i'm not only so one i'm gonna sell two right because i
+[ 1233.59s ->  1235.99s] sell two just like that now i have the
+[ 1235.99s ->  1240.71s] one one two one put i bought one put i sold and two puts i
+[ 1240.71s ->  1245.03s] sold so that creates the one one two structure now just like that you can see
+[ 1245.03s ->  1248.47s] here for this trade i need to put up six thousand dollars for the trade
+[ 1248.47s ->  1253.67s] to make fifteen hundred dollars so let's go to the curve and look at this trade
+[ 1253.67s ->  1256.71s] just like that this is the normal structure the put debit spread creates
+[ 1256.71s ->  1260.63s] this the short puts create this little upside profit
+[ 1260.63s ->  1264.95s] i put up roughly seven thousand dollars i get to make fifteen hundred dollars or
+[ 1264.95s ->  1267.67s] one thousand four hundred and seventy five dollars around there
+[ 1267.67s ->  1271.03s] so this is how the trade is structured and created
+[ 1271.03s ->  1274.31s] if you see here if i click review and send it says this strategy is not
+[ 1274.31s ->  1278.63s] supported try logging in you can't submit it as one order so what you'll have to do is
+[ 1278.63s ->  1283.27s] you'll have to go in here to the table um get rid of this and do them separately
+[ 1283.27s ->  1285.99s] so ensure the put debit spread is one trade then go back
+[ 1285.99s ->  1290.23s] and enter the other trade so that is how you do it then you have to come in here
+[ 1290.23s ->  1293.59s] you have to monitor your trades have to be like okay this at this percentage
+[ 1293.59s ->  1296.55s] profit i'm going to close them turn into a hedge and do all these things
+[ 1296.55s ->  1299.27s] um and if you're a newbie trader and you don't understand options you're like this
+[ 1299.27s ->  1302.63s] is a lot going on here i completely understand it can get confusing
+[ 1302.63s ->  1305.59s] especially when this whole thing is filled with trade and so
+[ 1305.59s ->  1309.03s] it can get definitely confusing so let me walk you through
+[ 1309.03s ->  1312.71s] um how you can do this with the auto trader so now you might be saying this is awesome
+[ 1312.71s ->  1314.71s] but it seems like it takes a lot of work
+[ 1314.71s ->  1319.03s] time and energy to manage these trades correctly i'm a busy working professional i like spending
+[ 1319.03s ->  1322.23s] time with kids and family when i get home is there a better way austin
+[ 1322.23s ->  1325.35s] and i say funny you should ask let me show you how the auto trader
+[ 1325.35s ->  1330.79s] does this um and i built it to work for specifically 112 trades so
+[ 1330.79s ->  1336.55s] um how i manage 112 trades with the auto trader this is the only thing i need to do and then
+[ 1336.55s ->  1343.03s] everything else is done for me so i create the 112 auto trader what i do is i log in i connect
+[ 1343.03s ->  1349.99s] my broker i select the 112 trading strategy in fact i have a one click import button that you can
+[ 1349.99s ->  1355.43s] import my exact settings for the 112 strategy or if you want to trade it exactly as i do just click
+[ 1355.43s ->  1361.75s] the import button on my austin's 112 i'll show you here in a second and you can do that okay so
+[ 1361.75s ->  1365.59s] after you do that then you set the buying power limit for the auto trader how much money do you want
+[ 1365.59s ->  1370.15s] it to out to allocate to trades and make sure it doesn't exceed that amount so once you do that
+[ 1370.15s ->  1377.43s] you are completely done congrats three steps you set up a 112 auto trader done for you and so again
+[ 1377.43s ->  1382.87s] what does this auto trader do well the auto trader will do all the tedious work for you automatically
+[ 1382.87s ->  1388.07s] and send you email updates this means if you're a busy working professional a parent student whatever
+[ 1388.07s ->  1393.03s] you are it will manage all these trades for you guys i've had beta testers on the road going to
+[ 1393.03s ->  1400.07s] disneyland going to cabo and they're making hundreds of dollars in the process because of the 112 strategy
+[ 1400.07s ->  1404.79s] and turning it into an auto trader so this is what the auto trader will do will check the market every
+[ 1404.79s ->  1410.39s] every day it will find the best time to enter the 112 for you based on the criteria that you set
+[ 1410.39s ->  1415.83s] and it won't do anything that you don't tell it to do structure the trade correctly it will submit
+[ 1415.83s ->  1421.11s] the trade as two set two separate orders and then batch them together it will manage the position based
+[ 1421.11s ->  1425.75s] on take profit stop loss and everything you set it will turn the trade into hedges if that is what you
+[ 1425.75s ->  1430.95s] told it to do and that's how you generate monthly income so guys i highly recommend that you take what
+[ 1430.95s ->  1437.43s] you learn today and you go and execute on it now either using real money or paper money go do this now if
+[ 1437.43s ->  1442.15s] you are someone who is busy and wants to get access to the auto trader then you're also in the right
+[ 1442.15s ->  1447.51s] place so after masterclass three i will show you how to access the auto trader and the only problem
+[ 1447.51s ->  1453.03s] is that there's 1700 people on the waitlist and i'm only accepting 100 people for this next batch of
+[ 1453.03s ->  1458.63s] early access so make sure you mark your calendars for april 10th which is masterclass number three
+[ 1459.59s ->  1465.35s] and if you want to get early access if you want to get early access and and secure your spot if you have
+[ 1465.35s ->  1471.51s] any questions over what we covered today about the 112 training strategy please go join my free
+[ 1471.51s ->  1477.67s] private community on school there should be a link below it to this button you'll go in there tell me
+[ 1477.67s ->  1482.31s] in because you do you do have to fill out questions for me to accept you say hey i'm coming from the
+[ 1482.31s ->  1487.27s] free masterclass training and you'll get a direct access into the group you'll be able to search the
+[ 1487.27s ->  1491.43s] group for everyone else who's trading 112s there's people trading there posting their trades everything
+[ 1491.43s ->  1495.99s] like that in that group um and so again you can find answers things i talked about before
+[ 1495.99s ->  1500.95s] or if you still have a question post a question in that group chat and either myself or some other
+[ 1500.95s ->  1505.51s] 112 trader in there will answer it for you so guys thank you so much for watching the strategy on how
+[ 1505.51s ->  1511.51s] 11 newbie traders used a brand new strategy the 112 strategy to make over 12 000 in the first 30 days
+[ 1511.51s ->  1516.31s] of learning it so if you want to do that go execute on this now i gave you everything i gave you all the
+[ 1516.31s ->  1521.83s] instructions all the rules all the playbooks everything now go do it if you have a large
+[ 1521.83s ->  1525.99s] account go do it on mes so you can learn with a smaller account size to understand how this works
+[ 1525.99s ->  1530.63s] you go place it on paper trade do something start placing this trade because you will find this one
+[ 1530.63s ->  1537.75s] of the greatest strategies ever consistent reliable monthly income tax advantage everything you want
+[ 1537.75s ->  1542.47s] it is here for you all right guys see you in the next training on how to protect your account
+[ 1542.47s ->  1547.27s] and how to know how many hedges to have on to protect the 112 trades that that you have on and
+[ 1547.27s ->  1553.27s] also how to convert 112 trades into hedges for free that's right you can have a 20 000 downside
+[ 1553.27s ->  1558.15s] protection for free all right guys see you in the next masterclass video enjoy the rest of your day and
+[ 1558.15s ->  1560.15s] your weekend

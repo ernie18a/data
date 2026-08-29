@@ -1,0 +1,114 @@
+[    1.58s ->     6.80s] Hey YouTube, it's Roman. Welcome to Workshop Wednesday, where we're going to continue the
+[    6.80s ->    12.78s] discussion on the normal distribution from Math Monday, but this time in Python. On Monday,
+[   12.88s ->    19.04s] we defined the probability density function and the cumulative distribution function for
+[   19.04s ->    23.50s] the normal distribution. We also talked a little bit about the application and theory
+[   23.50s ->    27.62s] of the normal distribution and what it lets us do. But today, we're going to be looking
+[   27.62s ->    32.26s] at all of those things in Python, and we're going to see how we can actually sample from a normal
+[   32.26s ->    38.30s] distribution and draw the probability density function as well as the cumulative distribution
+[   38.30s ->    44.76s] function. All righty, for starters, we're going to import NumPy as MP, and that's going to let us
+[   44.76s ->    52.44s] actually draw from the standard normal distribution. And we're also going to import Seaborn as SNS.
+[   52.44s ->    57.40s] And Seaborn is a visualization library, very similar to Matplotlib, but what it's going to do
+[   57.40s ->    63.96s] is it's going to give us a nice plot, a good continuous representation of the discretization
+[   63.96s ->    69.22s] of the normal distribution. We'll talk more about this in a minute. Now, how do we draw a sample from
+[   69.22s ->    77.24s] the normal distribution? Well, it's actually very easy using NumPy. All I have to do is say MP.random.randn,
+[   77.72s ->    82.94s] and then if I run this cell, I'm going to get a draw from a special type of normal distribution,
+[   82.94s ->    88.30s] the standard normal distribution. And all the standard normal distribution is, is a normal
+[   88.30s ->    93.98s] distribution with a mean of zero and a standard deviation and variance of one. So we see here,
+[   93.98s ->    97.58s] if we just keep running the cell, we're going to get different random numbers. And that's because we
+[   97.58s ->   103.82s] are just sampling from this normal distribution, this standard normal distribution. If you recall
+[  103.82s ->   109.50s] from the previous video on Math Monday, we also said that we have something called the empirical rule,
+[  109.50s ->   116.00s] where if we deviate one standard deviation in either direction, 68% of the data is going to fall
+[  116.00s ->   122.54s] within that range. Well, we can see this Monte Carlo simulation style using NumPy. So what I'm going to
+[  122.54s ->   130.96s] do is I'm going to say samples is equal to an empty list. I'm going to say for i in range n, and I'm just
+[  130.96s ->   139.84s] going to say n is equal to 10,000 samples, we are going to sample from this normal distribution,
+[  139.84s ->   145.68s] this standard normal distribution. And I'm going to append each sample. I'm going to say
+[  146.88s ->   154.27s] samples.append. I'm going to append each samples to that samples list. If we go ahead and run this cell,
+[  154.83s ->   161.07s] and then print the samples list, you'll see we just have a collection of draws from the standard normal
+[  161.07s ->   168.67s] distribution. And as I mentioned earlier, by the empirical rule, if we were to take the interval
+[  169.63s ->   186.12s] of mu minus sigma mu plus sigma, we know that approximately 68% of the data is going to fall within
+[  186.12s ->   196.60s] this range. So in the case of a standard normal distribution, we have x is distributed normally,
+[  196.60s ->   205.48s] with a mean zero and a standard deviation and variance of one. Thus, if we were to sample a whole
+[  205.48s ->   215.08s] bunch of samples, as we did, we are positive that 68% of the data is going to fall within mu minus sigma,
+[  215.08s ->   224.27s] mu plus sigma, or in other words, this is simply the interval of negative one to one. And we can
+[  224.27s ->   229.71s] test this with this samples list that we just generated. One way of doing this is to just say
+[  229.71s ->   235.95s] count is equal to zero. So this is going to keep track of everything that falls within negative one to
+[  235.95s ->   243.96s] one. And then we'll say for sample in samples. So this is going to iterate through all of the samples
+[  243.96s ->   251.00s] that we generated in this list. We can say if the sample is greater than or equal to negative one,
+[  251.64s ->   259.24s] and the sample is less than or equal to one, meaning it falls within this range of mu minus sigma mu plus
+[  259.24s ->   269.52s] sigma, we are going to increment the count by one. So if we run this, and before even printing the count,
+[  269.52s ->   277.12s] we know that we are going to get something around 6,800. And that's because we have 10,000 samples.
+[  277.12s ->   282.80s] And statistically, we know that 68% of the data is going to fall between plus or minus one standard
+[  282.80s ->   289.52s] deviation away from the mean by the normal distribution. So if we print the count, you'll
+[  289.52s ->   298.16s] see that we get 6,860, which is pretty darn close to 68%. Okay, so we have a good idea of where the data
+[  298.16s ->   304.56s] falls in a standard normal or any normal distribution for that matter. Now let's see if we can draw that
+[  304.56s ->   311.84s] bell curve using the probability density function and visualizing a continuous representation using
+[  311.84s ->   320.00s] Seaborne. Here we have our normal probability density function. And if we just substitute in the mean and
+[  320.00s ->   326.56s] variance for the standard normal distribution, you'll notice that we get rid of the sigma because that just
+[  326.56s ->   332.96s] becomes one. And we also get rid of the mu because that is just zero. And we are left with a relatively
+[  332.96s ->   339.44s] simpler representation of the density function for the normal distribution. So that's what we're going
+[  339.44s ->   345.60s] to do here, we're going to define this function in terms of a standard normal density function. So I'm
+[  345.60s ->   355.66s] going to say def f of x, as we know our mu and sigma values. And then I'm going to compute each term,
+[  355.66s ->   364.30s] and then compute the product of the terms. So I'm going to say 1 over sigma root 2 pi is going to be
+[  364.30s ->   372.22s] d1. And I'm going to say 1 divided by, remember sigma is 1, so I just need to do mp.square root
+[  372.94s ->   383.10s] 2 times mp.pi. So that's going to be d1. d2 is going to be this exponential here, e to the negative
+[  383.10s ->   394.70s] one half x squared. So I'm going to say np.x, I'm going to do negative 0.5 times x squared.
+[  395.50s ->   404.78s] And then I'm just going to compute the product of d1 times d2. And that is our normal probability
+[  404.78s ->   412.06s] density function, where we assume the mu is zero and the sigma is one. In this case, that is representing
+[  412.06s ->   419.18s] the standard normal density. We can use this probability density function to draw the bell
+[  419.18s ->   425.90s] curve very simply by specifying a domain. And I'm going to say mp.lin space from negative 4 to
+[  425.90s ->   433.42s] positive 4. I'm going to generate 10,000 samples between those two values. The range is going to be
+[  433.42s ->   442.70s] a function of that domain. And I can use seaborne to generate a nice plot. So I'm going to say sns.lineplot
+[  443.58s ->   450.86s] d and r. And you can see we get the bell curve. And this is exactly what we would hope to see
+[  450.86s ->   455.74s] when defining a probability density function for a normal distribution. We would hope that it draws
+[  455.74s ->   461.10s] the bell curve. And we can see that we are successful in doing that. This is where things start to get
+[  461.10s ->   466.70s] pretty cool. So theoretically, this is the probability density function for a normal distribution,
+[  466.70s ->   472.14s] in this case, a standard normal distribution. But what about the samples that we have already
+[  472.14s ->   479.42s] generated? Well, we can use a kdeplot to see what the distribution of the samples that we generated
+[  479.42s ->   487.42s] earlier look like. So if I go sns.kdeplot, and I pass that collection of samples from a standard normal
+[  487.42s ->   493.82s] distribution, you can see that the density is starting to approach the theoretical density that
+[  493.82s ->   499.74s] we had just plotted right here. And the more samples that we generate, the better this is going to look.
+[  499.74s ->   507.02s] So if I go up here and generate instead 100,000 samples, and I'm just going to go ahead and restart
+[  507.02s ->   515.50s] and run everything, we come down here and you can see we get a much nicer distribution. And if we extend
+[  515.50s ->   523.90s] these tails out from 4 and negative 4 maybe to negative 6 and positive 6, we can see that we
+[  523.90s ->   529.58s] start to get a distribution that really matches the theoretical distribution. So this is our
+[  529.58s ->   535.66s] theoretical distribution. And this is our empirical distribution. This is the one that we generated
+[  535.66s ->   540.70s] samples for. So you can see the more samples we generate, the more it converges to this theoretical
+[  540.70s ->   545.42s] distribution. So to wrap up this video, what I'd like to do is talk about the cumulative distribution
+[  545.42s ->   551.10s] function. As you can see, it's defined as the integral from negative infinity to x of f of s ds,
+[  551.10s ->   558.46s] where f of s is the probability density function that we just drew up here. But what I'm not going to do
+[  558.46s ->   565.10s] is what we just did earlier, defining the probability density function as a Python function. I'm instead
+[  565.10s ->   572.86s] going to use a prepackaged version of the cumulative distribution function using scipy. And that's just so we
+[  572.86s ->   579.10s] don't have to get into the technical mess of trying to discretize this integral. Alright, so I'm going to
+[  579.10s ->   590.22s] say from scipy.stats import norm. And then I can define the normal cdf as just norm.cdf. And then we can
+[  590.22s ->   598.38s] pass it a value. So this is for the standard normal distribution. And you can see that a value of zero is
+[  598.38s ->   605.02s] the mean of this distribution, as we see by the density function here, meaning that half of the data
+[  605.02s ->   610.78s] is going to be below the mean and half of the data is going to be above the mean. So it has that symmetry
+[  610.78s ->   616.70s] in this case, not all distributions have this, but this particular one does. And we can see that the
+[  616.70s ->   624.38s] probability of an outcome of this particular distribution being from negative infinity to zero
+[  625.18s ->   632.70s] is 50%. And this matches exactly what we would expect to see based on these two visuals.
+[  633.50s ->   640.86s] Moreover, we can just draw this distribution. So instead of doing norm cdf of zero, I'm just going to do
+[  640.86s ->   648.38s] norm cdf of the original domain that we defined. And this is going to give us a range of probabilities
+[  648.38s ->   657.10s] for the interval with respect to negative infinity and that input from the domain. So looking at this
+[  657.10s ->   664.06s] cumulative distribution function, you can see that from our original domain, we specified evenly spaced
+[  664.06s ->   670.78s] points between negative six and six. And what we're doing here effectively with this norm.cdf is we are
+[  670.78s ->   677.98s] computing this integral from negative infinity to each point in that domain and generating this series of
+[  677.98s ->   684.30s] probabilities. So in terms of a cumulative distribution function, we are going to start at essentially
+[  684.30s ->   690.62s] zero and work our way all the way up to one. Visually, what does this look like? Well, if I specify
+[  690.62s ->   698.86s] the range of the cdf to be equal to this norm.cdf of our domain, I can do a new plot. I can say
+[  698.86s ->   707.18s] sns.lineplot and then pass the domain and the range of the cdf and you can see that we get this s
+[  707.18s ->   712.06s] looking chart. And this is exactly what we would expect to see where we start at a cumulative
+[  712.06s ->   718.14s] probability of zero and work our way all the way up to one. Another way of interpreting this is just
+[  718.14s ->   723.98s] looking at the probability density function. And if we start all the way on the left and then sort of
+[  723.98s ->   730.46s] take the area under that curve, you'll notice that as we keep going to the right, we get more and more
+[  730.46s ->   736.70s] area. The area is going to correspond to the probability that an outcome is within that range
+[  736.70s ->   742.30s] from negative infinity all the way up until that point under the curve. And as we get further and
+[  742.30s ->   747.98s] further along and start to approach positive infinity from negative infinity, then we have the
+[  747.98s ->   755.34s] entire probability space. So that is why you see the cdf start to asymptotically approach one. We have
+[  755.34s ->   761.26s] 100% of the space. That is going to do it for this workshop Wednesday and this video on the normal
+[  761.26s ->   766.38s] distribution. I hope you enjoyed. Please feel free to leave a comment if you have any questions or
+[  766.38s ->   770.94s] comments about the video. If you have any specific questions, you can always reach out to me roman at
+[  770.94s ->   777.34s] quantgill.com. Be sure to like and subscribe. It helps me out a lot. It helps us continue to push out
+[  777.34s ->   783.74s] content to YouTube, Medium, and GitHub. Be sure to also check out quantgill.com. We just launched our
+[  783.74s ->   790.54s] first course, Introduction to Python, and a poll is going to be going out very soon to see what course
+[  790.54s ->   797.02s] you are most interested in next. So other than that, thank you once again so much for watching,
+[  797.02s ->   799.18s] and I will see you in the next video.

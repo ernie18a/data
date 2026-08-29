@@ -1,0 +1,93 @@
+[    0.00s ->     6.08s] it's awesome really again today we're going to go over stock price um and how it correlates to
+[    6.08s ->    14.40s] options in regards to strikes and expiration selection how you know which strike to pick
+[   14.40s ->    20.56s] and at which expiry so right now i have netflix pulled up as you can see it was a very red day
+[   20.56s ->    26.96s] for netflix today it was a very good trade if y'all would have traded it um i just want to go
+[   26.96s ->    32.88s] over what i saw in netflix is as you can see it hit this little high here that it could not break
+[   32.88s ->    40.08s] above it went down bounced off this sma line during pre-market could not reach those previous highs
+[   40.64s ->    46.56s] so therefore you have this little golden cross here and that was a clear entry for a short
+[   46.56s ->    54.08s] for the day and we're looking at about i think it was 200 something like that gain for the day
+[   54.08s ->    57.60s] so that's what netflix did today but that doesn't really matter what it did today because by the
+[   57.60s ->    62.64s] time you watch this it may be a year from now and that's not actually what it did i just thought i'd
+[   62.64s ->    71.68s] go over it for the day so now when you're picking um a strike price and it's and expiry um so the
+[   71.68s ->    76.48s] strike price really depends on what you're trading so like if you're going to be a swing trader let's
+[   76.48s ->    83.04s] say you want to hold it for a day or two or maybe even longer like a month okay first off i would not
+[   83.04s ->    91.92s] recommend holding a single naked option for longer than two or three days because you have to keep
+[   91.92s ->    99.60s] in mind theta okay so theta is one of the greeks and options where each day you're subtracted by that
+[   99.60s ->   104.80s] amount so um let's just go here and i can pull it up so i'm going to switch up my volume with theta
+[  104.80s ->   112.53s] if i can find it i don't have it up a lot so i don't really know where it is i wish i could pull this
+[  112.53s ->   121.44s] off you oh greeks here we go theta okay so the theta here um let's just use this one uh negative 0.44
+[  121.44s ->   133.28s] okay so this is at a i don't know about 17 option okay but each day it is decreasing by 0.44
+[  134.00s ->   149.15s] so let's see what 0.44 of 17 is 0.44 divided by 17 times 100 okay that is 2.3 okay so in order to
+[  149.15s ->   156.59s] cover your position just to stay neutral and not lose any money your options contract has to
+[  156.59s ->   167.17s] increase by 2.58 each day just to not lose money because of the theta theta increases as you get
+[  167.17s ->   176.13s] closer and closer to your expiration okay that's why if you look far out you have contracts going for 47
+[  176.13s ->   181.17s] four thousand seven hundred dollars a contract and you look at the weeklies and they're going for
+[  181.17s ->   189.73s] let's see let's see they're going for eight eight eight bucks eight bucks versus 58 60 70 dollars like
+[  189.73s ->   195.89s] that's crazy okay so that shows that theta is very prevalent in trading so if you're going to swing
+[  195.89s ->   203.01s] trade i recommend you either i don't know selling some spreads or doing some type of strategy like an
+[  203.01s ->   209.25s] iron condor something to prevent this theta um now when you're day trading options it doesn't really
+[  209.25s ->   213.57s] matter because you're not going to see that theta experience you're not going to hold it overnight
+[  213.57s ->   219.63s] you're not going to see that subtraction in your contract price okay so that's the first part if
+[  219.63s ->   225.95s] you're swing trading pick something that is further out with a lower theta okay you want your theta to
+[  225.95s ->   231.79s] be low when you're swinging trading because you don't want to lose all the money or the contract price
+[  232.67s ->   238.35s] as you're trading it okay so you don't want it to i don't know make a 10 move but you held it for four
+[  238.35s ->   245.07s] days so the 2.5 percent times the four days is 10 so you came out even even though you were right
+[  245.07s ->   251.23s] that's something you don't want to happen okay so make sure that your swing trading your theta
+[  251.23s ->   258.91s] did decay will be covered even when it reaches your target price okay um now if you're day trading
+[  258.91s ->   264.59s] you want to be in these first two you you you you want to be in in the weeklies the ones expiring
+[  264.59s ->   272.19s] the soonest uh for a few reasons first reason to reduce cost basis um let me go to spy here so if
+[  272.19s ->   280.03s] we go in the most recent ones um we're looking at contracts that are sorry today uh we're we're
+[  280.03s ->   286.91s] we're looking at contracts that are 88 dollars 123 dollars so reducing cost basis means that we can get
+[  286.91s ->   293.79s] more contracts or basically do more with our our money so for this instance we only we only need
+[  293.79s ->   302.91s] 123 to enter this or my god it's going to be a spread so we only need about 125 to enter this position
+[  302.91s ->   308.27s] here or to get a contract here while if you wanted to day trade and you were trying to day trade this
+[  308.27s ->   316.83s] monthly you would need um at least 500 just for the same position which is not beneficial
+[  316.83s ->   324.43s] for your cost basis or the money that you want to put in it limits your risk per se also when
+[  324.43s ->   330.35s] you're day trading you want that huge volatility you want the percentage gains to be huge let me pull
+[  330.35s ->   339.87s] up the percentage gains on spy today okay 260 for this weekly and for this weekly 400 of course it was
+[  339.87s ->   346.67s] more but since it's expiring today it's going crazy um so we want to see this percentage gains
+[  346.67s ->   354.03s] which is not necessarily as huge the further you you go down so you're seeing 40 percent but then again
+[  354.03s ->   361.55s] you have to pay 852 dollars for for this contract so when day trading you want to select an expiry
+[  361.55s ->   368.83s] that is close preferably a weekly so that you can see that volatility and you can get in and out quickly
+[  369.94s ->   378.74s] okay so now we know how to pick the exp expiration for a weekly and uh or for a day trade versus a swing
+[  378.74s ->   386.34s] trade now let's look in the strike price okay when you're day trading the strike price does not matter
+[  386.34s ->   396.21s] okay as you can see let me go that that expires so as you can see this is an out of the money put right
+[  396.21s ->   405.41s] this is an out of the money put but it's still increased by 275 today you do not need to be
+[  405.41s ->   413.17s] within or in the money at the money to make money day trading okay you just want to buy it at a low
+[  413.17s ->   418.29s] price and you want it to increase it doesn't have to go to your strike strike price you can still make
+[  418.29s ->   426.05s] obviously 275 back swing trading is the same thing however you want to be closer to the
+[  426.05s ->   433.65s] at the money okay because if you're not closer to at the money then your volume definitely decreases
+[  433.65s ->   438.53s] obviously this is not going to be the case because right now i'm spy let's look at something oh tesla's
+[  438.53s ->   445.33s] going crazy uh facebook for example let's go out through a monthly here okay so if you look at stuff
+[  445.33s ->   454.77s] that is outside that is super far in the money we're looking at 87 uh 256 for the volume and of course
+[  454.77s ->   461.09s] this is crazy but one thousand whatever okay but usually these outside areas have less volume than
+[  461.09s ->   467.09s] the app the money volume so if you're going to buy a swing trade you want to make sure that your strike
+[  467.09s ->   473.33s] price will be that your target where where you want the stock to go you want to choose that stock price
+[  473.33s ->   478.13s] so let's say you're trading in between a support and re reasons so let's see if i can find something
+[  478.13s ->   487.41s] here this facebook let's say you notice that it hits highs here oops it says highs here it hits lows here
+[  488.29s ->   494.85s] so you scoop up some options contracts on the lows here to sell the high here where will your strike
+[  494.85s ->   499.81s] price be since you're going to swing trade this you want your strike price to be a little lower than
+[  499.81s ->   507.09s] your resistance so 160 160 would be a great strike price because when it gets to 160 now you have all the
+[  507.09s ->   512.93s] at the money options which are trading and they're super volatile and they're all there and they want
+[  512.93s ->   517.01s] your contract because you want to make sure that you can get rid of these contracts because option
+[  517.01s ->   522.61s] contracts do not go as quickly as stocks trust me you cannot click buy and sell and automatically goes
+[  522.61s ->   529.25s] like that okay you want to make sure your liquidity is there so when you swing trading choose a strike
+[  529.25s ->   535.92s] price that will be near the resistance that you can see your stock going to okay let's go back um
+[  535.92s ->   542.32s] obviously uh strike price does not matter and um well i mean it does matter uh when you're doing strike
+[  542.32s ->   549.84s] price for uh the weeklies you really want to look at the open interest obviously look the open interest
+[  549.84s ->   556.96s] here was 2000 and we have the largest volume okay let me show you i think an example here was maybe s2y
+[  556.96s ->   563.52s] i don't know something let's go look at the weeklies here um well this is going to be obviously skewed
+[  563.52s ->   571.12s] because sby is crazy on volume oh tesla that that's a good one i think hopefully um so look here we have
+[  571.12s ->   582.32s] 1000 open interest 5000 volume so uh 1000 1000 128 935 80 471 obviously this is an outlier here but um
+[  582.96s ->   589.76s] when you're trading day trading options you want to make sure that you're picking the closest out out
+[  589.76s ->   597.12s] um the closest out of the money option with the highest or the largest number of open interest
+[  597.12s ->   603.52s] because that will lead that is just a tendency for um for the most volume the reason the reason why is
+[  603.52s ->   609.12s] because if you haven't checked out my previous video on open interest and volume is that um open
+[  609.12s ->   613.52s] interest is the people who have contracts and volume is the people of course who want to buy and sell
+[  613.52s ->   619.60s] those contracts so if you want to buy and sell contracts go to the go to the masses that actually have the
+[  619.60s ->   624.48s] contract so that's why we choose when day trading the largest uh the one with the biggest amount of
+[  625.20s ->   633.28s] open interest so that is how you pick um the strike price and the expiry date for swing trading and day
+[  633.28s ->   639.36s] trading options i hope that helped if you want to join a discord group that will be below it is options
+[  639.36s ->   645.52s] traders and we can answer any and all questions um the only thing we ask is that you know are helpful
+[  645.52s ->   652.40s] to other people once you start start learning um as we will help you um learn so i hope everything
+[  652.40s ->   661.44s] works and that y'all are successful in trading this new market that we are in y'all have a good one

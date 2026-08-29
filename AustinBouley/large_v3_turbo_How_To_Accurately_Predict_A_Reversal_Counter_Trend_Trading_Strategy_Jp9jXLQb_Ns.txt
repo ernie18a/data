@@ -1,0 +1,85 @@
+[    0.12s ->     5.48s] Hey guys, in this video I want to walk you through how you can accurately predict a reversal in a stock that is trending up.
+[    5.78s ->    11.92s] Now, a lot of people notice that stocks are trending up and over time, after they continue going up for a very long time,
+[   12.00s ->    16.34s] they're like, a crash has to happen or some type of even correction has to happen.
+[   16.42s ->    18.38s] I'm going to show you exactly how to predict it.
+[   18.72s ->    24.14s] So, for instance, right here where the market was coming up strong and then we had a dip a few days,
+[   24.22s ->    27.86s] the question is, could you have predicted this and could you have made money from it?
+[   27.86s ->    34.82s] The answer is yes. Why? Because I did it and my members did it and I do this a lot on strong uptrending stocks.
+[   34.94s ->    37.94s] So, how can you predict a reversal or a small pullback?
+[   38.38s ->    43.52s] Well, I have a trending band indicator that I use for this, but the best way to replicate is to use a Bollinger band.
+[   43.88s ->    46.40s] So, go to your indicators and add it onto your chart.
+[   46.78s ->    52.78s] Go into your settings, change the link to 200 and your standard deviation to 2.5.
+[   53.20s ->    55.52s] Once you do that, you click OK, boom, done.
+[   55.52s ->    62.12s] Now, what are we seeing here? We're seeing that the middle line is our 200 period moving average.
+[   62.28s ->    65.86s] Perfect. That just shows what the average price was over the last 200 days.
+[   66.42s ->    74.94s] Next, our 2.5 standard deviations shows where price is likely to stay, where price should be staying within the range.
+[   75.18s ->    81.74s] Meaning that if we break this range, we should see a pullback or rejection based on how it breaks.
+[   81.74s ->    84.54s] For instance, right here, we see that it breaks to the downside.
+[   85.00s ->    89.02s] Then we see a quick push back up. Breaks to the downside. Quick push back up.
+[   89.44s ->    94.50s] And again, we see this here. When we break on a strong green candle above, we have a slow reversal.
+[   94.88s ->    97.34s] When we break it, then the market starts slowing down.
+[   97.64s ->   103.08s] You can see here, when we get within these outer ranges, the market either reverses or slows down.
+[  103.08s ->   109.90s] Now, again, as all trading strategies, it's not 100% accurate, but it does give us an idea of what's going on.
+[  110.20s ->   115.86s] For instance, right here, broke above, crashed, got here, goes here, crashed, went down to the bottom, here and here, and then it recovered.
+[  116.26s ->   122.10s] So, it just helps give us an idea of how we're going to do it, and then we place up a trade to take advantage of it.
+[  122.72s ->   125.16s] What is the trade we're using to take advantage of this move?
+[  125.16s ->   127.12s] It is called a call credit spread.
+[  127.48s ->   132.98s] So, what we do here is we wait for a strong candle in the direction of the trend.
+[  133.34s ->   137.94s] We wait for that strong candle to break one of the outmost lines.
+[  138.10s ->   141.48s] Then, if we're trading the downside move, we're going to do a call credit spread.
+[  141.70s ->   149.62s] What we're going to do is we're going to go as far out of the money as we can and still collect roughly 15 to 20 cents on a $1 wide.
+[  149.62s ->   155.10s] And that would be roughly 25 to 30 cents on a $2 wide credit spread.
+[  155.44s ->   158.06s] So, for instance, we would go out to roughly about here.
+[  158.86s ->   161.32s] I bet we could get around here for a call credit spread.
+[  161.88s ->   166.14s] So, this means that as long as the stock stays below this level, we make money.
+[  166.24s ->   168.12s] We're going to go out about two to three weeks.
+[  168.28s ->   170.70s] We're going to put on this trade, and that's how we do it.
+[  170.74s ->   172.46s] This is called a counter trend strategy.
+[  172.86s ->   173.06s] Why?
+[  173.16s ->   174.84s] Because you're trading against the trend.
+[  174.90s ->   175.98s] You are countering the trend.
+[  176.34s ->   177.82s] And so, this is a great way to trade it.
+[  177.82s ->   181.84s] You can see here it slowly dies off and then stays below this level.
+[  182.18s ->   182.34s] Why?
+[  182.34s ->   185.40s] Because when we get to this region, the market's just overextended.
+[  185.58s ->   187.92s] The move is pushed a bit too high.
+[  188.38s ->   190.70s] And so, it just is naturally going to slow down with time.
+[  191.02s ->   197.50s] And so, we're able to take advantage of that time decay using a call credit spread over time makes money.
+[  197.84s ->   200.48s] What does this strategy look like?
+[  200.48s ->   206.24s] Well, if you want it listed out step by step, you can click down below for the 10% credit spread trading guide and handbook.
+[  206.54s ->   211.38s] If you see down there, we have what is called the elastic rejection strategy.
+[  211.72s ->   216.64s] If I click on it, it walks me through step by step how to place this trade, which is essentially this.
+[  216.72s ->   217.72s] Wait for it to break above.
+[  218.04s ->   218.74s] Pick your level.
+[  219.14s ->   220.08s] Place it on the broker.
+[  220.08s ->   224.28s] Only do it if you can collect a certain amount, 15 cents, and put on that trade.
+[  224.54s ->   225.84s] That's exactly how this works.
+[  225.90s ->   234.80s] If you follow this strategy step by step, you can make with just this strategy alone, which is set it and forget it method, an 8% annualized return.
+[  235.10s ->   237.00s] That's what most people make in a single year.
+[  237.08s ->   239.00s] And you'll be able to match that with one strategy.
+[  239.34s ->   244.32s] Now, imagine adding another strategy in your repertoire that makes 10% a year.
+[  244.40s ->   246.34s] Now, you're beating the market by 10%.
+[  246.34s ->   248.52s] This is the beautiful part of using this strategy.
+[  249.00s ->   253.66s] So, again, one thing you need to understand is that all credit spreads can be risky, especially in a very bullish market.
+[  253.78s ->   262.20s] So, make sure you understand that and making sure that you're going out far enough and you're only entering on super, super bullish candles if you're going for the downside.
+[  262.72s ->   271.38s] Vice versa, if you're trying to counter trend to the upside where you're waiting for the market to drop down below, the market always drops faster than it rises.
+[  271.38s ->   278.66s] So, you want to wait, not just when it drops below this level, but wait until you see a doji candle or a sign that it's starting to reverse back up.
+[  279.00s ->   280.98s] So, friends, you can see here we're starting to go down.
+[  281.10s ->   282.50s] You can see here the first green candle.
+[  282.86s ->   285.10s] This may be our indication to get back in.
+[  285.20s ->   291.82s] If not, this green candle right here, the doji candle, is a clear indication that now it's time to enter the counter trend and go back up.
+[  292.12s ->   295.14s] You can see here it drops below, but we don't like entering on this.
+[  295.40s ->   298.44s] For downward counter trends, we like to see that it's going to start reversing.
+[  298.44s ->   300.84s] You can see here a green doji candle.
+[  301.14s ->   303.92s] We're going to enter a put credit spread and trade it back up to the upside.
+[  304.42s ->   306.10s] These are how you trade counter trends.
+[  306.20s ->   307.26s] These strategies are wonderful.
+[  307.40s ->   307.80s] They're simple.
+[  307.90s ->   316.04s] They do not happen all the time, but when they do, you can consistently profit from the market using options, credit spreads, or stocks, however you want to take advantage of it.
+[  316.38s ->   321.66s] I here teach credit spreads, so if you want to learn more about that, smash that subscribe button and thumbs up button.
+[  321.94s ->   323.56s] Anyways, guys, I'm your host, Austin.
+[  323.64s ->   326.92s] I make videos every single day on how to become a better credit spread trader.
+[  326.92s ->   330.36s] If you want to learn that, click subscribe, and I hope you enjoyed this video.
+[  330.76s ->   335.10s] I will see you in the next video where we talk about counter trend trading rules.
+[  335.46s ->   336.70s] All right, guys, see you in the next one.
+[  336.80s ->   341.30s] If you want this document right here for free, there is a link down in the description.

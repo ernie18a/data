@@ -1,0 +1,119 @@
+[    0.04s ->     5.74s] These are five lessons I learned from analyzing over 65,000 live options trades.
+[    6.16s ->     8.84s] And number five surprised me, so it might even surprise you.
+[    8.90s ->    10.86s] If you're wondering how I got access to all this data,
+[   11.02s ->    16.22s] I am the founder of the Options Auto Trader, which is an options automation tool.
+[   16.38s ->    21.64s] It currently places over a million dollars worth of trades every single day.
+[   21.92s ->    23.54s] And so we have so much data to look at.
+[   23.84s ->    28.04s] I gave it to AI and I said, hey, these are all the trades that it's placed over the last year
+[   28.04s ->    32.30s] and a half and analyze the data and give me five key takeaways.
+[   32.58s ->    33.82s] And it honestly surprised me.
+[   33.86s ->    35.06s] So let's dive into each one.
+[   35.36s ->    38.74s] Number one is the 26 DTE trap.
+[   38.84s ->    41.10s] It was the highest loss zone.
+[   41.40s ->    42.32s] What is it saying here?
+[   42.34s ->    47.96s] It means that when you're trading options and you go roughly around 26 days out into the future
+[   47.96s ->    51.84s] and you're selling option around that price, it tends to have the largest loss.
+[   52.10s ->    54.32s] I don't know why this is, but if I were to guess,
+[   54.32s ->    58.86s] it's because 26 days doesn't give you enough time to be right on the trade.
+[   58.92s ->    63.98s] If something goes wrong, particularly like we did here with the tariff issue with Trump,
+[   64.30s ->    68.84s] what we see is it doesn't give yourself enough time in the trade to let it play out,
+[   68.88s ->    71.08s] to let the win rate work out and things like that.
+[   71.12s ->    74.64s] You're very subject to the market moves and to volatility.
+[   74.86s ->    80.28s] And so it saw that a 26 DTE for some reason had one of the largest losses on average.
+[   80.28s ->    84.60s] So one thing you could do a takeaway is to stay away from 26 DTE.
+[   85.10s ->    89.20s] Takeaway number two is that longer dated options performed exceptionally well
+[   89.20s ->    94.02s] with some over 145 days out having a hundred percent win rate.
+[   94.42s ->    95.70s] This is crazy.
+[   95.82s ->    97.36s] This is something that I talk about a lot.
+[   97.64s ->   100.92s] I always talk about going between 90 to 120 DTE.
+[  101.24s ->   104.24s] And this is because it gives you more time in the trade,
+[  104.34s ->   106.22s] which means more time to be right,
+[  106.44s ->   108.16s] which means if something happens in the market,
+[  108.16s ->   111.34s] you can let the trade play out and work out in your favor
+[  111.34s ->   114.04s] and you're less impacted by volatility.
+[  114.34s ->   116.68s] Those are some of the risk reasons why I do it.
+[  116.78s ->   118.74s] And some of the profit reasons is profits higher,
+[  118.88s ->   120.66s] win rates higher and things like that as well.
+[  121.06s ->   124.12s] Now, I typically go between 90 to 120 DTE,
+[  124.32s ->   126.94s] but it saw there were some outlier trades
+[  126.94s ->   131.32s] of people who were doing 140 DTE plus.
+[  131.60s ->   133.48s] They were having a hundred percent win rates and more.
+[  133.78s ->   136.40s] Now, again, I cannot guarantee that it's not a guarantee.
+[  136.56s ->   137.14s] We don't do that here.
+[  137.14s ->   139.02s] I'm just presenting you the data that we found.
+[  139.36s ->   140.96s] And so it just shows a point.
+[  141.16s ->   142.24s] The further out time you go,
+[  142.32s ->   143.66s] the more time you have to be right,
+[  143.88s ->   145.50s] the higher win rate you tend to have.
+[  145.86s ->   148.78s] Now, it's set off by the con that you have to wait longer
+[  148.78s ->   152.32s] in trades to make money, but it is what it is.
+[  152.56s ->   154.08s] But still, that's a very cool fund.
+[  154.92s ->   157.24s] Number three is win rate isn't everything.
+[  157.40s ->   159.04s] Focus on profit control.
+[  159.42s ->   161.14s] We're showing that a lot of trades
+[  161.14s ->   163.52s] that even had a 70% win rate or more,
+[  163.68s ->   165.30s] we're still losing long term.
+[  165.30s ->   167.72s] Guys, I don't know how many times I have to say this.
+[  168.02s ->   169.84s] Do not look at just the win rate.
+[  170.28s ->   172.26s] Understand what the win rate is
+[  172.26s ->   174.78s] matched with how much you win when you win
+[  174.78s ->   176.42s] and how much you lose when you lose.
+[  176.60s ->   178.24s] You combine all those numbers
+[  178.24s ->   180.60s] and that's what gives you your profit expectancy
+[  180.60s ->   183.66s] or your profit and loss expectancy.
+[  184.40s ->   185.30s] And so what you want to look at
+[  185.30s ->   186.56s] is you want to look at a win rate
+[  186.56s ->   188.90s] as a proportion of the amount you win
+[  188.90s ->   190.92s] when you win and the amount you lose when you lose.
+[  190.92s ->   193.42s] So make sure you're not just looking at win rate,
+[  193.58s ->   195.58s] but you're looking at the whole trade,
+[  195.68s ->   197.20s] the whole strategy together.
+[  197.88s ->   203.68s] Number four, 45D shows a nice balanced return potential.
+[  204.14s ->   206.32s] Again, better than the 30 to 60 day range.
+[  206.38s ->   208.86s] Around 45 days is where it was
+[  208.86s ->   212.56s] for expectations of credit, risk, profit, things like that.
+[  212.64s ->   213.36s] We can know this.
+[  213.56s ->   217.08s] Again, it's a nice balance between how long I'm in the trade
+[  217.08s ->   218.68s] and how quickly I'm making profit.
+[  218.92s ->   220.40s] But if you're going for safety,
+[  220.86s ->   223.00s] go for your go for further out.
+[  223.12s ->   224.28s] If you're looking for balance
+[  224.28s ->   227.60s] and you're okay giving up some of the lower risk,
+[  227.80s ->   229.30s] then you can go around 45 DTE,
+[  229.70s ->   232.72s] which again is a tasty lie mechanic based on data.
+[  232.86s ->   235.16s] So it's cool to see that data play out as well there.
+[  235.52s ->   238.66s] And last but not least is zero to one DTE trades.
+[  239.00s ->   241.66s] Hill pass expirations are dangerous.
+[  242.02s ->   244.76s] Guys, I can't say this enough.
+[  244.76s ->   247.22s] I'm not a zero DTE fan,
+[  247.64s ->   248.80s] but if you do that,
+[  249.04s ->   251.76s] make sure you have a proven strategy
+[  251.76s ->   253.70s] and you're doing with paper trading first
+[  253.70s ->   256.02s] and you trade it in all types of markets
+[  256.02s ->   257.70s] before you use live money on it.
+[  257.84s ->   258.96s] Because we see here a lot
+[  258.96s ->   262.34s] that zero DTE trades just don't perform well long-term
+[  262.34s ->   265.06s] because they rack up small wins
+[  265.06s ->   268.40s] but have huge losses on the tail side when you lose
+[  268.40s ->   270.08s] that you give up a ton of profit.
+[  270.28s ->   272.52s] So make sure that if you're doing it,
+[  272.54s ->   273.86s] that you have a tested strategy.
+[  273.86s ->   274.92s] And number two,
+[  275.26s ->   277.04s] do not hold and do expiration
+[  277.04s ->   278.50s] because a lot of things can happen.
+[  278.66s ->   280.40s] Markets can move after hours
+[  280.40s ->   282.38s] that leave you having a huge loss.
+[  282.74s ->   284.98s] This is why the options auto trader software
+[  284.98s ->   287.92s] will automatically close your in the money position
+[  287.92s ->   289.72s] on the day of expiration
+[  289.72s ->   291.28s] that you don't get stuck with assignment.
+[  291.62s ->   293.14s] Again, this is a setting you can disable,
+[  293.36s ->   294.14s] but by default,
+[  294.26s ->   295.86s] we enable it to protect you from that.
+[  295.96s ->   297.78s] If you want to learn more about the options auto trader,
+[  297.90s ->   299.56s] check out the link in the description below.
+[  299.86s ->   301.64s] But those are the five biggest takeaways
+[  301.64s ->   303.02s] I've learned from analyzing
+[  303.02s ->   305.82s] over 65,000 live options trades.
+[  305.92s ->   306.72s] I hope you liked it.
+[  306.96s ->   308.60s] Hit subscribe and I'll see you in the next video.

@@ -1,0 +1,160 @@
+[    0.46s ->     6.14s] Hey guys, Roman here, quantitative researcher and trader, founder of QuantGuild.
+[    6.46s ->    10.72s] Today, I'm going to walk you through how I go about solving quant interview questions from
+[   10.72s ->    16.44s] initial presentation all the way to the solution, how I think about things, what tools I reach for
+[   16.44s ->    22.18s] in my quantitative toolkit, and how I connect everything back to foundational topics in
+[   22.18s ->    28.64s] probability statistics and mathematics. Because at the end of the day, that's all that's required
+[   28.64s ->    34.72s] for these technical interview questions. If you're looking for a place to study these
+[   34.72s ->    39.18s] foundational topics, look no further than QuantGuild.com. We have an adaptive practice engine
+[   39.18s ->    46.14s] that scales with your skill level over 90 quant lessons, courses from A to Z in coding, math,
+[   46.28s ->    51.76s] probability, and statistics with more on the way, and all that's included with QuantGuild
+[   51.76s ->    57.24s] membership. And you can get started right now for free. So if you're ready, you've mastered your
+[   57.24s ->    63.24s] foundational topics, we can go ahead and progress with this interview question. So this question
+[   63.24s ->    70.78s] from Optiver asks, how many dice should we roll to maximize the probability of observing exactly
+[   70.78s ->    77.12s] one six? After hearing or reading the question, the first thing you're going to want to do is think
+[   77.12s ->    83.36s] out loud and look for key words. You don't just want to sit there in silence while your interviewer
+[   83.36s ->    88.82s] watches you ponder this question. So what am I thinking about right now? Well, I'm thinking it's
+[   88.82s ->    95.40s] very generous that they gave us a dice. I assume it's a fair dice because the probability mass function
+[   95.40s ->   103.14s] for a fair dice is very easy to work with. I'm also observing the keyword maximize, which tells me this
+[  103.14s ->   108.46s] is some form of an optimization problem. I imagine we're going to be taking the derivative somewhere
+[  108.46s ->   116.52s] along the way and setting it equal to zero. We're also dealing with a probability, which tells me that
+[  116.52s ->   123.74s] we are observing some form of a random event. But what we're actually looking for is not a random
+[  123.74s ->   130.66s] quantity. It is a deterministic one. Probabilities and statistics, they are deterministic. They're based
+[  130.66s ->   138.64s] on random events, but those actual functional values, they aren't random. So we're maximizing
+[  138.64s ->   144.70s] some probability function. And that probability function is going to tell us the probability of
+[  144.70s ->   153.80s] observing exactly one six. That is going to be our other key word, exactly one. We're not looking for
+[  153.80s ->   160.62s] the first. We're not looking for one out of a group. We're looking for exactly one. We don't need
+[  160.62s ->   166.26s] to start with the general case. In fact, I encourage you to start with what you know and a very simple
+[  166.26s ->   173.48s] base case and build from there. This is how you go about problem solving. You're not trying to memorize
+[  173.48s ->   179.58s] a solution to a particular problem. You're trying to solve a problem. And in order to do that, you need
+[  179.58s ->   184.18s] to make sure you fully understand the question and that you're building towards the solution in the
+[  184.18s ->   190.52s] correct direction. You don't want to just be wandering off to no man's land in the wrong way.
+[  190.62s ->   197.44s] So let's start with what we know. We know the probability mass function of a fair dice. So
+[  197.44s ->   203.32s] let's write that out. I'm going to say little d follows a discrete uniform distribution from one to
+[  203.32s ->   215.61s] six. What that means is that our dice d can take on any value from one to six, all with an equal
+[  215.61s ->   225.69s] probability of occurring. And there is no probability mass allocated anywhere else. That is our fair
+[  225.69s ->   233.65s] dice. And the probability that we're interested in for this single fair dice is the probability of
+[  233.65s ->   244.43s] observing exactly one six. Well, we only have one dice. So to find exactly one six, we need to roll a six.
+[  244.43s ->   249.39s] So let's use the probability mass function here. What I'm going to do is I'm going to plug in
+[  249.39s ->   258.35s] six for a that's going to tell me the probability that d takes on the value six, we go over to our
+[  258.35s ->   268.75s] PMF here. And it tells us that that probability is in fact, one sixth. Okay, but this is only for
+[  268.75s ->   276.65s] one dice. If I was to do this for another dice, what would happen? Well, I could say that we have
+[  276.65s ->   286.05s] d sub i. And now I'm going to have this probability mass function defined in general for however many
+[  286.05s ->   296.37s] number of fair dice we choose to roll. And I can roll then d1, d2, so on and so forth. I can then find
+[  296.37s ->   306.59s] the probability that d1 is equal to six or the probability that d2 is equal to six or d3 is equal
+[  306.59s ->   315.55s] to six. But then the problem is we have this or statement and we have an overlap. We need to then
+[  315.55s ->   324.83s] subtract out because d1 can be six and d2 can be six. And if we go back to our original question,
+[  324.83s ->   332.31s] we're looking for exactly one six. This does not feel like we are going in the correct direction
+[  332.31s ->   341.93s] here at all. All right. So let's think about the actual probability statement itself. Let's think
+[  341.93s ->   348.27s] about it in terms of a success or a failure. This is what I meant at the start of this video when I say
+[  348.27s ->   357.21s] connect everything back to foundational topics in probability statistics and mathematics. So what does
+[  357.21s ->   365.41s] this probability actually represent? Well, it actually represents a Bernoulli random variable. That is, you
+[  365.41s ->   375.87s] either successfully roll exactly one six, or you don't. Let's write out a series of dice rolls to explain
+[  375.87s ->   388.36s] exactly what it is I mean. So this is going to be the outcome of a dice roll. And let's say I roll one dice, I
+[  388.36s ->   400.43s] observe a one, then I observe a three, then I observe a six, then a three and a five, and so on and so forth. If we
+[  400.43s ->   408.79s] look at this in terms of a success or a failure, then what are we going to end up with? Well, we're not going to end up
+[  408.79s ->   417.99s] with a series of numbers anymore, from one to six. That is the outcome of the dice roll itself. We're going to get a
+[  417.99s ->   429.73s] series of zeros and ones. It's binary. We either successfully rolled exactly one six, or we didn't. So let's translate this into
+[  429.73s ->   445.30s] successes and failures. Did we successfully roll exactly one six in that single dice roll? Well, no, we rolled a one. So that will be zero.
+[  445.30s ->   455.74s] We rolled a three, that will be zero. Hey, we rolled a six. That is a success. That means we get a one. We
+[  455.74s ->   466.42s] rolled a three, that will be zero. We rolled a five, that will also be zero. So we've just gone now from
+[  466.42s ->   477.27s] the world of dice roll outcomes to the world of successes and failures for the event that we're
+[  477.27s ->   486.56s] interested in. Exactly one six. All right, well, what is the probability of observing that success?
+[  488.08s ->   496.76s] Each dice roll is independent of each other. And we know the probability of observing a six
+[  496.76s ->   504.66s] in that one dice roll. That is given by the probability mass function. So really, what we've
+[  504.66s ->   512.54s] just done here is we've translated our original question into a Bernoulli random variable. So what
+[  512.54s ->   522.32s] I'm going to say now is that little b follows a Bernoulli distribution with a probability of success
+[  522.32s ->   535.50s] of what? That's going to be one sixth, right? A success is given by exactly one six. And we've observed
+[  535.50s ->   541.48s] a success here as an example. We know that this is going to have a value then it's going to be
+[  541.48s ->   552.51s] parameterized by one sixth. Why is this useful to us? Because now we have a random variable that
+[  552.51s ->   561.05s] represents the event of interest. We are not just dealing with the original probability mass function
+[  561.05s ->   569.29s] of a discrete uniform random variable. We're dealing with a Bernoulli random variable, which is very, very
+[  569.29s ->   577.25s] simple. And many distributions are built off of the Bernoulli random variable. So when we go back up to our
+[  577.25s ->   587.05s] original question now, we look at the probability of observing exactly one six. And we know if we roll a
+[  587.05s ->   594.43s] single dice, really what we're getting is a Bernoulli trial. And that Bernoulli trial is going to have a
+[  594.43s ->   603.75s] probability of success of one sixth. So now we go back to our original question here. And we see
+[  603.75s ->   613.11s] how many dice should we roll to maximize that probability? Well, instead of dice, we can think
+[  613.11s ->   619.77s] about it in terms of Bernoulli random variables. So we don't just have a single dice anymore, right?
+[  619.95s ->   630.82s] We have many dice. But we can translate the many dice into the Bernoulli world. So really, we're asking
+[  630.82s ->   642.62s] how many Bernoulli trials should we have to maximize the probability of observing exactly one success? What
+[  642.62s ->   649.58s] random variable does that sound like? What random variable tells us the probability of a certain
+[  649.58s ->   656.90s] number of successes out of a certain number of Bernoulli trials? Well, that is quite literally how
+[  656.90s ->   665.66s] the binomial random variable, the binomial distribution is defined. But do we know how many
+[  665.66s ->   672.48s] Bernoulli trials we're going to have? We know what the probability of success is, right?
+[  672.62s ->   680.32s] exactly one sixth. The probability of success is one sixth. But how many trials are we going to have?
+[  680.94s ->   690.58s] That is exactly what we're maximizing for. We want to find the total number of trials that maximizes
+[  690.58s ->   700.78s] the probability of observing exactly one success in that series of Bernoulli trials, or exactly one six.
+[  700.78s ->   709.02s] So I can write this now as a binomial random variable. What I'm going to do is I'm going to say R
+[  709.02s ->   718.14s] for roles follows a binomial distribution. How many roles are we going to have?
+[  719.10s ->   725.24s] Well, we don't know this. This is what we're maximizing over. So I'm going to put a variable N.
+[  725.24s ->   733.77s] What is the probability of success? Well, we found that above. That's going to be one sixth.
+[  733.77s ->   740.65s] Answering the original question as a probability statement is now tremendously simplified. All we
+[  740.65s ->   750.73s] have to do is use our binomial random variable. We can say the probability of R being equal to one.
+[  751.29s ->   759.83s] This is going to be equal to N choose one times the probability of success, which is one sixth,
+[  760.47s ->   771.99s] raised to the first power, times the probability of failure, five sixth, raised to the N minus one power.
+[  772.95s ->   783.83s] And this is literally telling us the probability of observing exactly one success in N trials.
+[  784.39s ->   794.42s] Now, what we have to do is given this expression, we really need to find N star. This is going to be
+[  794.42s ->   808.65s] the arg max over N of the probability that R is equal to one. In other words, we need to find N such that
+[  808.65s ->   818.49s] this probability is as big as possible. This is just a simple optimization problem. Now from calculus,
+[  818.49s ->   826.49s] we can just take the derivative with respect to N, set the function equal to zero and solve for the value
+[  826.49s ->   835.53s] that maximizes that particular function. So let's do this. I'm just going to find the derivative with
+[  835.53s ->   842.89s] respect to N of that probability statement. This is going to be equal to then the derivative
+[  843.69s ->   856.09s] of N choose one, which is just N, times one sixth, times five over six raised to the N minus one.
+[  856.73s ->   864.41s] We can just use the product rule and the chain rule. This is going to be equal to then we can say
+[  865.61s ->   875.61s] one sixth N times, I'll take the derivative of five sixth raised to the N minus one. That is going to be
+[  876.25s ->   889.83s] five sixth to the N minus one times log base E of five sixth. That is going to be the first term product
+[  889.83s ->   898.23s] rule. Now I'm just going to take the derivative with respect to that second function of N and that N is
+[  898.23s ->   907.91s] just going to vanish entirely. So we're going to be left with one sixth times five over six to the N minus
+[  907.91s ->   919.98s] one. Now we can go ahead and factor out our common terms here. That is going to be one sixth times five
+[  919.98s ->   933.96s] over six to the N minus one times we're going to be left with one plus N the natural log of five over six.
+[  935.59s ->   947.38s] And we will set this equal to zero. Can this exponential be zero? Well, no, there's no selection
+[  947.38s ->   955.06s] of N that is going to make this first term that we are multiplying into this equation zero. So we can
+[  955.06s ->   962.20s] drop it all together and just consider one plus N the natural log of five over six.
+[  965.18s ->   972.63s] So we're going to be left with then one plus N natural log of five over six is equal to zero.
+[  973.35s ->   989.54s] We can subtract over the N log five over six. And we are just left with then that N is equal to negative
+[  990.10s ->  1001.40s] one over the natural log of five over six. And I will plug this into our calculator here.
+[ 1009.30s ->  1024.52s] And we get approximately 5.48. Clearly this can't be our solution. We can't have 5.48 dice. So what is it that we've
+[ 1024.52s ->  1032.20s] actually found? Well, we've treated this probability mass function really as a continuous function,
+[ 1032.76s ->  1037.48s] but it's not, it is a discrete function. We're dealing with discrete random variables.
+[ 1037.48s ->  1044.68s] So what we've found here is in sort of an interpolation sense, the maximum, if we could
+[ 1044.68s ->  1050.68s] select fractional dice, but we can't. So what is it that we should really look at? Well,
+[ 1050.68s ->  1059.88s] we should look at the discrete points around 5.48. So we can look at five and look at six and see
+[ 1059.88s ->  1067.32s] which one yields a greater probability. And that will then be our solution. So what I'm going to do
+[ 1067.32s ->  1074.44s] now is since I've found the continuous N star in that sense, I'm going to take this probability statement
+[ 1074.44s ->  1085.24s] here, and I am going to analyze the choice of five and six. If you're wondering why we still needed to do
+[ 1085.88s ->  1094.12s] this calculus here, it's because we otherwise wouldn't know where to look. Will we look at 20? Will we look
+[ 1094.12s ->  1101.64s] at 30? Will we look at one? We needed the calculus to find the region for this optimal value of N, that
+[ 1101.64s ->  1107.88s] is the number of Bernoulli trials or dice we should roll to maximize the probability of success, the
+[ 1107.88s ->  1116.20s] probability of observing exactly one six. So let's go ahead now and plug in the values around that
+[ 1116.20s ->  1122.28s] maximum. I'm going to say N is equal to five. What does this mean? Well, I'm going to plug in five
+[ 1122.28s ->  1130.98s] everywhere. I see N in that probability statement. I get five, choose one, one sixth, five over six to
+[ 1130.98s ->  1140.74s] the five minus one. This is going to be equal to then five times one sixth times five over six to the
+[ 1141.46s ->  1149.03s] fourth. And then if I distribute that five in there, I can actually combine these two and I get
+[ 1149.99s ->  1165.58s] five over six to the fifth power. All right. Let's see if six gives us a higher probability. So I'm going to
+[ 1165.58s ->  1178.44s] get six, choose one, one sixth times five over six to the six minus one. All right. So that is going to be
+[ 1178.44s ->  1189.77s] six times one over six times five over six to the fifth power. These cancel and I'm left with five
+[ 1189.77s ->  1204.94s] over six to the fifth. It turns out that these are equivalent. Whether we choose to roll five dice
+[ 1205.74s ->  1215.42s] or six dice, we are maximizing the probability of observing exactly one six in the dice roll sense
+[ 1216.14s ->  1224.78s] or the probability of observing exactly one success in the Bernoulli trial sense. What's going on here?
+[ 1224.78s ->  1232.78s] Well, remember in the continuous sense, we found 5.48 as the optimal number of trials or dice rolls,
+[ 1232.78s ->  1239.74s] but we can't have that. So we need to either go up or down. Let's go back to the original question,
+[ 1239.74s ->  1248.54s] right? We're trying to maximize the probability of observing exactly one six. Okay. Well,
+[ 1248.54s ->  1255.02s] if I rolled 10,000 dice, is that probability going to be very large or very small? It's going to be very
+[ 1255.02s ->  1261.26s] small to observe exactly one six. But as I decrease the total number of dice that I'm rolling, that
+[ 1261.26s ->  1270.38s] probability is going to begin to increase, right? I go from 10,000 to 9,000 to 8,000. The probability is
+[ 1270.38s ->  1282.78s] going to continue to go up and up and up until when? Well, actually, until we get to around 5.48.
+[ 1283.42s ->  1291.82s] Then what's happening is we've reached an inflection point where the gain from decreasing the total number
+[ 1291.82s ->  1300.14s] of rolls is actually not outweighing entirely the gain from increasing the total number of rolls. In
+[ 1300.14s ->  1308.06s] other words, if we, instead of starting at 10,000, start at one, if we go from one to two, we're going to
+[ 1308.06s ->  1315.98s] have a gain in probability, just like we saw a gain in probability from 10,000 rolls to 9,000 rolls.
+[ 1315.98s ->  1322.22s] It's just on the other side of this inflection point. Effectively, we're gaining probability
+[ 1322.22s ->  1329.74s] up to five before we start to lose it again. And the same is true when we're gaining probability,
+[ 1329.74s ->  1335.98s] decreasing the number of rolls to six before we start to lose it again. And it turns out
+[ 1335.98s ->  1345.58s] that it is symmetric around that midpoint between these two selections for optimal dice to roll.
+[ 1345.58s ->  1351.10s] To formally answer the question, the probability of observing exactly one six is maximized by
+[ 1351.10s ->  1355.98s] rolling five or six dice. That's going to do it for this video. I hope you enjoyed.
+[ 1355.98s ->  1359.58s] I hope you learned something. This video was a ton of fun to put together. So if you enjoyed it
+[ 1359.58s ->  1363.82s] and you want to see more quant interview style videos in the future, please like comment,
+[ 1363.82s ->  1368.70s] subscribe, share. It helps me out tremendously. It is always greatly appreciated. I'll leave a link
+[ 1368.70s ->  1373.66s] in the description below. If you'd like to get started on quant guild to master your quantitative
+[ 1373.66s ->  1378.70s] skills, check out our discord channel. You can connect with me and other quants and the quant guild
+[ 1378.70s ->  1394.22s] community. Other than that, I want to thank you so much for watching and I will see you in the next video.

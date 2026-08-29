@@ -1,0 +1,83 @@
+[    0.00s ->     6.42s] It's been around a year since our public account was created and so today let's take a look at how
+[    6.42s ->    11.26s] our account has performed over the last year as well as how I'm positioning this portfolio
+[   11.26s ->    18.52s] over the next couple months to make sure that we have our best chances to continue our growth.
+[   18.86s ->    23.20s] So make sure you guys stick around for that. This account is currently sitting $145,000 and you can
+[   23.20s ->    29.50s] see since a year ago in terms of performance we're up close to 47% in one year which is almost
+[   29.50s ->    35.98s] double what the S&P 500 has returned. So now let's take a look at how we got those gains. This account
+[   35.98s ->    42.56s] was created predominantly to show off the put selling strategies that we laid out in our masterclass
+[   42.56s ->    47.58s] that I'll link in the upper right hand corner right here. So for context this account is 99% selling
+[   47.58s ->    53.30s] puts, getting assigned, letting the asset appreciate and then selling calls very far out of the money
+[   53.30s ->    59.04s] so that we don't get assigned and having those shares that we want to own long term get called
+[   59.04s ->    64.90s] away. And it wasn't until March of this year that we started selling credit spreads and so that
+[   64.90s ->    71.10s] impact on this account so far is very minimal. So let's take a look at the performance of this account
+[   71.10s ->    76.66s] since it was created to demonstrate those principles. So we're going to head over to Premium Insights
+[   76.66s ->    82.00s] first just so we can show you guys the option performance strategy and its contribution to the
+[   82.00s ->    91.80s] overall P&L. So over the last year we've made close to $13,719 from just selling puts and a little bit
+[   91.80s ->   101.26s] of calls. The performance is around 24.1% return on the risk that we're taking on which is amazing.
+[  101.38s ->   108.96s] We target around 1.5 to 2% return every single month which is in line with a 24% return over the last
+[  108.96s ->   117.72s] 12 months, 2% a month. Now if you look at the actual realized stats from the last year you can
+[  117.72s ->   124.92s] see we traded 101 times, 84% win rate, we got assigned five times, we've rolled 85% of our trades,
+[  125.38s ->   131.30s] we had six expire and we bought to close five. Our profit factor is 4.32 which means that we win
+[  131.30s ->   138.12s] four times as much as we lose. So for every $1 we make $4. And for the most part in excluding this
+[  138.12s ->   143.22s] one month in March, we've been very profitable every single month, right? You can see our win
+[  143.22s ->   148.18s] rate is relatively consistent. Our expectancy obviously has dropped as we've started losing
+[  148.18s ->   155.20s] trades over time, but it's still very good at $135 per trade. And our profit factor again is still
+[  155.20s ->   161.00s] very consistent around 4.32. Really great. And you can see, right, in terms of like cash secured puts,
+[  161.06s ->   166.14s] cover calls and put credit spreads, cash secured puts are the predominant driver here. These do not
+[  166.14s ->   171.26s] include the open premium that we have, I'll show you guys later. But you can see most of our trades
+[  171.26s ->   178.16s] are on very similar tickers, right? NVIDIA has 22 trades, won 95.5% of the time, $5,300 in profit.
+[  178.86s ->   182.98s] Figma, Microsoft is a brand new one. This year, we'll talk a little bit about where I'm going to
+[  182.98s ->   187.54s] position this portfolio later on in this video. And so you can see there's IOT, one of my favorite
+[  187.54s ->   192.74s] small cap stocks. I'll make a video about that at some later date. But, and then TSMC, but you can see
+[  192.74s ->   198.04s] most of it is highly concentrated in our favorite stocks. Now if we take a look at income, which is
+[  198.04s ->   204.74s] just cash flow, including the unrealized gains, we're averaging around $1,300 a month in terms of
+[  204.74s ->   210.70s] cash flow. It annualized out to like 2.5% a month, which is very close to 24% return that we got over
+[  210.70s ->   218.07s] the year. And again, we can see very consistent yield, right? 2%, 3%, March is a little lower at 1%
+[  218.07s ->   224.57s] because we lost money, 2.6%, 2%. Again, we're trying to get around 2.1.5 to 2.5% a month.
+[  225.03s ->   229.05s] And look at cumulative, right? We're very, very stable all throughout this whole year.
+[  230.71s ->   238.49s] Now again, look at the spread, we're basically in covered calls at 0.5% overall, our cash secure
+[  238.49s ->   244.01s] puts are a lot more aggressive at 2%. And that put credit spreads were at 6.6% a month. So not that
+[  244.01s ->   249.99s] aggressive either. That concludes the option part, which means that the rest of the gains
+[  249.99s ->   256.46s] from our account has actually come from the equity itself appreciated. And that is actually a large
+[  256.46s ->   260.92s] part of our strategy, right? If you watched our masterclass, we sell puts on stocks that we want
+[  260.92s ->   267.56s] to own for the longterm at good prices so that we can hold them and hopefully appreciate in value.
+[  267.56s ->   274.86s] And then one strategy that we use is that we use the credit that we collect half of it to start buying
+[  274.86s ->   280.28s] the equity so that we don't miss out on the capital appreciation. So let's talk about the equity part
+[  280.28s ->   286.76s] of the equation. So TSMC, our 200 shares that we bought and got assigned from our puts have now
+[  286.76s ->   297.00s] appreciated $44,000, close to 118%. 200 shares of IOT that are now down 32.42%. And the Figma is also down
+[  297.00s ->   304.18s] 47.11%. But the grand scheme of things from the equity that we've purchased, we are still up close
+[  304.18s ->   309.66s] to $40,000 just because of how much concentration we have in TSMC and how little of an impact these
+[  309.66s ->   314.30s] have been. Figma is probably never going to go back to what it was. That was a bad trade. It happens,
+[  314.40s ->   320.88s] but you can see the winners outperform the losers by a lot. I still have a lot of hope for IOT. So I'm
+[  320.88s ->   326.00s] going to continue dollar cost average and bring this cost down hopefully to around 35 or 32. Now,
+[  326.00s ->   332.56s] the second part of the equation is we use our credit, half of it to start going into stocks
+[  332.56s ->   336.42s] that we want to own. So for example, the biggest concentration here is in Microsoft and NVIDIA.
+[  336.72s ->   340.64s] So Microsoft is recent, we've been buying a lot of it from the money that we collected in the credit
+[  340.64s ->   347.38s] spreads and from the options that we're selling. We're at $75,000 of market value. We're basically
+[  347.38s ->   352.50s] breaking even on them. So we'll see how that does within a year. Hopefully it can get close to maybe
+[  352.50s ->   359.14s] 20, 30% in a year. NVIDIA is also a very good one. We dollar cost average and now we're at 15 shares
+[  359.14s ->   367.42s] of NVIDIA and we're up 53% on top of the premium that we collected from NVIDIA. So you can see that
+[  367.42s ->   374.92s] from the equity that we've collected, we're up $42,656 since the beginning of this account. So that
+[  374.92s ->   380.84s] combined, like to say the $13,000 of premium that we collect a year to date or in a year is what allowed
+[  380.84s ->   388.70s] our account to appreciate close to 50% in that one year. Now real briefly, where am I positioning
+[  388.70s ->   394.32s] my money now? The markets are at all-time highs, right? And TSM, NVIDIA, we've ridden the semiconductor
+[  394.32s ->   399.90s] boom really, really high up and we're still very heavily concentrated. But we need to start finding
+[  399.90s ->   406.10s] new avenues for growth. So you can probably kind of tell I am concentrating a lot of the money,
+[  406.10s ->   411.22s] all the credit that we collect, we're moving into Microsoft. On top of that, I do think that
+[  411.22s ->   418.00s] the SaaSpocalypse, SaaS being killed off because of AI is a little bit overstated, which means that
+[  418.00s ->   423.90s] I'm starting to sell more puts on companies like Microsoft and you'll see on companies like
+[  423.90s ->   431.80s] ServiceNow. We can ride potentially that wave up if it were to rebound. And the market shows us
+[  431.80s ->   437.28s] that the performance of these SaaS companies, especially enterprise SaaS companies are not as
+[  437.28s ->   443.60s] affected as what Wall Street believes they will be. So going forward into 2026, and we'll see in a
+[  443.60s ->   449.54s] couple months, I'll do another recap. We will see how well these bets are panning out. On top of that,
+[  449.60s ->   454.90s] one of my personal favorite stocks, IOT, because I used to work in this industry, is hopefully going
+[  454.90s ->   460.96s] to rebound or continue to grow up as its annual reoccurring revenue continues to boom. This is how I'm
+[  460.96s ->   467.24s] positioning my portfolio going forward because I do not know exactly how much longer this AI boom is
+[  467.24s ->   474.18s] going to last. We've done very well for ourselves with ASML, NVIDIA, and TSMC. However, that has been
+[  474.18s ->   479.94s] the largest drivers in our account from an equity perspective. Therefore, I also want other avenues
+[  479.94s ->   485.62s] to not be as concentrated in this one area. And we're moving over to a different segment. So make sure
+[  485.62s ->   489.84s] you guys subscribe, stick around, see how this portfolio does. And if you guys have any questions about how we
+[  489.84s ->   493.88s] got this performance, how to trade puts, let me know down in the comment section below. And if you
+[  493.88s ->   497.78s] guys want to check out Premium Insights, the link is down below. If you guys want to learn how to sell
+[  497.78s ->   502.32s] puts my way, the masterclass is linked in the end screen right here, as well as our portfolio update
+[  502.32s ->   502.72s] playlist.

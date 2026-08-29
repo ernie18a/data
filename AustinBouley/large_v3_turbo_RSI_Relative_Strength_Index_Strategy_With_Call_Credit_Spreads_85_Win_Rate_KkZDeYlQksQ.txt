@@ -1,0 +1,52 @@
+[    0.37s ->     5.55s] Hey guys, in this video I want to walk through a call credit spread strategy with the RSI
+[    5.55s ->    10.23s] that has a really high win rate. So let's dive into it and talk about the specifics of the
+[   10.23s ->    14.87s] strategy, what markets it works in and what stocks it works best with. So the first thing
+[   14.87s ->    18.99s] we need to do is we need to pop open up a trading chart so we can do that on a broker
+[   18.99s ->    23.59s] or we can go to a website like tradingview.com which is what I'm on right now. Next we need
+[   23.59s ->    30.09s] to go to the indicator section and add the RSI which stands for relative strength index.
+[   30.09s ->    34.29s] So here we have the relative strength index, we have that to our chart, it comes to the
+[   34.29s ->    39.21s] bottom and it shows what's going on. Essentially what we see here is we see two lines on this
+[   39.21s ->    45.95s] bottom, a line at 70 and a line at 30. Essentially if it gets above 70 that means that the stock
+[   45.95s ->    51.63s] is overbought and it's likely to come back down, it's a bit too overextended. The same way to
+[   51.63s ->    56.61s] the downside, if it gets below 30 it tends to be a bit oversold and that means the stock
+[   56.61s ->    62.11s] is most likely going to bounce around that level. However, when we combine the RSI movements
+[   62.11s ->    66.65s] with the stocks movements then we can unlock a lot of cool strategies and patterns. For
+[   66.65s ->    71.89s] instance, the RSI divergence play which I want to talk about with call credit spreads today.
+[   71.89s ->    76.11s] Why? Because SPY is set up for it perfectly and I want to walk you through it. So this is
+[   76.11s ->    82.61s] called an RSI divergence play and that is because we want the stock and the RSI to be doing two
+[   82.61s ->    88.11s] different things. You can see here, here's one high from SPY and if I track out it up to the other
+[   88.11s ->    93.65s] high you can see here that the highs on SPY are getting higher. Now at the same time we see a
+[   93.65s ->   100.05s] divergence in the RSI. This shows the divergence of the RSI going lower. Okay, cool. So what we're
+[  100.05s ->   106.69s] seeing here is that we're approaching highs that we haven't hit in a while. We're getting a lot of
+[  106.69s ->   111.99s] resistance because the stock is slowing down. We get this RSI divergence which is indicative of a
+[  111.99s ->   117.23s] reversal and then now we start to see that loop down where we start to see some momentum starting
+[  117.23s ->   122.55s] to break through support levels and now heading lower. Now again, will I continue lower? That is
+[  122.55s ->   129.61s] not for me to say. All I can say is the RSI helps us predict this initial little move down. And so we
+[  129.61s ->   133.05s] don't know how far it will move down. We just know that it's going to have a great indication of moving
+[  133.05s ->   138.65s] lower. So when we start hitting into these ranges like this and we see doji candles like this form,
+[  138.65s ->   144.85s] we can easily enter far out of the money, call credit spreads, which allows us to make money to
+[  144.85s ->   149.59s] the downside. It's a very simple strategy that can be repeated. Now again, we can also do this
+[  149.59s ->   154.03s] with put credit spreads and I'll show that in another video. But this is how it works with call
+[  154.03s ->   160.02s] credit spreads. So we find this setup, we go decently far out of the money as far as we can to
+[  160.02s ->   166.04s] collect at least 15 to 20 cents on a $1 wide. As long as the stock stays below this level, then we make
+[  166.04s ->   170.78s] money. We'll trade that out roughly one to two weeks, maybe even three weeks if we can collect
+[  170.78s ->   175.60s] enough money. And so that's typically how you set up this call credit spread trade to make money to
+[  175.60s ->   179.94s] the downside. And that's how it worked out here. I do want to give some caveats though. Number one
+[  179.94s ->   187.02s] is the RSI divergent strategy does work, but it works best in overextended markets. Stocks that have
+[  187.02s ->   191.94s] been running up for a very long time. You can see here that SPY has been running up for a long time and
+[  191.94s ->   197.04s] it's due for at least a small pullback. And that's one reason why it worked. Number two,
+[  197.12s ->   202.32s] it works best in sideways markets as well. When you have a market where it's just staying in between
+[  202.32s ->   207.52s] two ranges, up, down, up, down, up, down, that's a very clear indication that it's going to work as
+[  207.52s ->   215.04s] well. Number three, this strategy was built on the back of commodity trading strategies and futures
+[  215.04s ->   221.58s] trading strategies, which means this strategy can work on stocks. However, it works best on ETFs.
+[  221.58s ->   228.98s] SPY is an ETF. So again, ETFs that track futures are going to be the ETFs that have the highest success
+[  228.98s ->   235.04s] rate with this strategy. So if you want to trade this strategy, use ETFs, use RSI divergence, look
+[  235.04s ->   241.32s] for highs, look for sideways markets, look for this diverging pattern, enter a far out of the money call
+[  241.32s ->   246.94s] credit spread, and you should be able to make an easy 10 to 15% return on your capital in a matter of
+[  246.94s ->   251.58s] two weeks. This is the strategy. If you want to learn more about the strategies that I use and
+[  251.58s ->   256.56s] have developed over five years, click the link down below. You can get access to my free credit
+[  256.56s ->   260.96s] spread trading hand guide, and it's going to walk you through all the strategies, sizing rules,
+[  261.12s ->   265.76s] early exits, and so much more for free. Anyways, guys, thank you so much for watching this video.
+[  265.82s ->   268.82s] If you're trying to get better at credit spreads, smash that subscribe button because I make videos
+[  268.82s ->   272.78s] to help become a better credit spread trader every single day. All right, guys, I will catch you
+[  272.78s ->   273.84s] in the next video.

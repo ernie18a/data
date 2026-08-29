@@ -1,0 +1,43 @@
+[    0.00s ->     4.90s] Hey guys, what's up? It's AB Trades here, here for a study Monday. Y'all enjoyed the study
+[    4.90s ->     9.12s] Saturday, which is our day off, and we have a chance to look at stocks and study a bit more.
+[    9.54s ->    14.82s] Well, today, the stock market is closed. However, the futures market is open. So I thought, you know
+[   14.82s ->    20.40s] what, let's do a study Monday. This is going to be on a strategy that I briefly touched on in
+[   20.40s ->    27.92s] another video, which is the 1-2-3-GO, or 1-2-GO, as well as the red, yellow, green. So we'll be
+[   27.92s ->    32.04s] looking at the strategy more in depth. The reason why I wanted to do this video is because, yes,
+[   32.10s ->    40.76s] we see it play out on stocks all the time. Stocks being spy, Google, as happened in the last month,
+[   40.82s ->    45.66s] we've seen, or at least I've seen it play out. And then this morning, I've seen it play out on
+[   45.66s ->    51.28s] NASDAQ Futures in queue. The futures market is actually open today. And since I am paper trading
+[   51.28s ->    57.16s] on a simulation account, I thought, you know what, and I traded it up to the upside here,
+[   57.16s ->    62.46s] I didn't take as much. I think I closed here for three points. Nothing huge. That's only about
+[   62.46s ->    68.98s] 60 bucks. But again, you had the potential of six points, but who knew? You never know the top
+[   68.98s ->    74.60s] six points, but I put it at around 120 profit. But again, paper trading means nothing. I'm still
+[   74.60s ->    78.88s] waiting for my futures account to get approved, and then we'll be doing that at night. However,
+[   79.20s ->    84.38s] looking at the strategy, which applies to both stocks and futures and options on whatever you're
+[   84.38s ->    90.60s] trading, we're going to look at the red, yellow, green breakout. So again, we're looking, the reason
+[   90.60s ->    95.30s] why this works so well is because it's basically pushing through a resistance point. Once we push
+[   95.30s ->    99.76s] through this resistance point, volume comes in, we start to make new highs, and then we start to see
+[   99.76s ->   106.38s] that continuation to the upside. So looking here, we can see that we have a push up, we test this
+[  106.38s ->   111.14s] level, and we get rejected. We come up for a second try, we test the level, and get rejected.
+[  111.14s ->   116.68s] On the third time, we either break straight above, or we build a base, and then we break higher on
+[  116.68s ->   123.98s] extended volume. If you understand timeframes, which is mentioned in the course, so if a premium
+[  123.98s ->   130.68s] member is watching this, pay attention to the timeframe here, and then you'll understand a bit
+[  130.68s ->   137.10s] more why this actually happened, or another reason why. Because when you're trading stocks,
+[  137.10s ->   141.42s] you want to put everything in your favor. So you want to understand the definition of a trending
+[  141.42s ->   146.58s] market versus a range bound market. And this was actually pushing into a trending market,
+[  146.58s ->   150.98s] and then we got that breakup. But again, the strategy works on all stocks. I've seen it play
+[  150.98s ->   155.60s] out twice in one day on SPY, I've seen it play out on Google, and I've seen it play out on Netflix.
+[  156.10s ->   160.64s] So again, now seeing it in NQ Futures just affirms that, hey, the strategy is there.
+[  161.02s ->   164.86s] So the way it works is you have the one, two, three rejection. On this rejection,
+[  164.86s ->   171.24s] you're looking for it to get above these highs with increased volume. That's your signal to take
+[  171.24s ->   178.62s] the stock long with your stop at these highs. The way that you trade it is if you have this third
+[  178.62s ->   184.32s] time and you start to get rejected here, then more times than not, you're now at a triple top,
+[  184.62s ->   190.32s] and you actually start to reverse and see that downside. So one time when we saw this one, two,
+[  190.32s ->   195.56s] three play out on SPY, and it came back up to retest for a fourth time, we knew that it was
+[  195.56s ->   200.32s] going to fail because if it fails on the third time, it's going to fail on the rest of the time,
+[  200.38s ->   206.24s] unless for some reason, some news or increased volume comes out. So we looked at the fourth time,
+[  206.28s ->   211.38s] and that was an indication of a short and then SPY ran down. So again, guys, this is just a simple,
+[  211.38s ->   219.46s] simple strategy, one, two, three, go, that you can watch for in stocks and futures and whatever
+[  219.46s ->   225.72s] you're trading. It's a simple resistance play. And I hope this helped. I hope you all are enjoying
+[  225.72s ->   230.24s] Study Monday. I am AB Trades, and I teach people how to day trade options. I'm starting to get into
+[  230.24s ->   235.94s] futures, but I'm definitely always trading options during market open. And please like, comment,
+[  235.94s ->   236.98s] and subscribe. Thank you.

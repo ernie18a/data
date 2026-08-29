@@ -1,0 +1,28 @@
+[    0.00s ->     5.72s] In this video, we're going to walk through how to place a call credit spread trade on the TD Ameritrade web platform.
+[    5.82s ->     8.68s] So we're going to do this just using the 10% credit spreads broker walkthrough.
+[    9.02s ->    13.10s] So for instance, you click Need Help Placing a Trade, then go to TD Ameritrade web,
+[   13.26s ->    15.90s] and this will walk us through how to place a call credit spread.
+[   16.24s ->    18.28s] Okay, so here we go. Step number one.
+[   18.54s ->    24.48s] Once you're on the web platform, click on the Trade tab and hover over it and then click on Options.
+[   24.48s ->    29.98s] After that, step number two is click on Vertical Call Credit Spread in the drop-down.
+[   30.06s ->    32.34s] By default, the option strategy will be single order.
+[   32.70s ->    37.94s] Go to Vertical Call Spread and then type in the underlying symbol you're looking for.
+[   38.36s ->    43.12s] Type it in and wait, and by default, it will pop up here if it is a valid ticker.
+[   43.56s ->    47.60s] Step three. You need to select the strike prices you're using for the call credit spread.
+[   47.68s ->    49.20s] What are you selling and what are you buying?
+[   49.48s ->    51.80s] Whatever you're selling should go in the Sell to Open Strike.
+[   51.80s ->    54.10s] Whatever you're buying should go in the Buy to Open Strike.
+[   54.10s ->    57.14s] If you're following this alert, just follow the exact numbers it gives you here.
+[   57.52s ->    60.60s] Next, you also want to provide the expiration date that you'll be trading.
+[   61.00s ->    63.70s] So by default, if you're following this alert, that's July 28th,
+[   63.70s ->    65.76s] and you'll be plugging that in here to the expiration date.
+[   66.26s ->    68.76s] Number four. Place the trade at the premium,
+[   69.12s ->    73.26s] which is listed right below this section of inputting details,
+[   73.72s ->    76.82s] is greater than 12 that you can put on the trade.
+[   76.90s ->    80.30s] So basically, the premium should do how much credit you'll collect by putting on this trade.
+[   80.44s ->    83.02s] And so again, by default, you want to make sure it's a net credit.
+[   83.02s ->    84.72s] If you do this correctly, it will be.
+[   84.98s ->    86.84s] That confirms that it is a credit spread.
+[   87.20s ->    89.08s] And then again, you want to make sure you're collecting the right premium.
+[   89.28s ->    90.94s] Then click the Submit button down below.
+[   91.24s ->    95.66s] And that's how you put on a call credit spread on the TD Ameritrade web platform.

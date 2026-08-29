@@ -1,0 +1,75 @@
+[    0.42s ->     4.24s] Hey guys, I want to show you exactly how to exit a 1-1-2 trade.
+[    4.36s ->     8.34s] Again, I'm going to show you how to see the profit and loss of the specific trade,
+[    8.42s ->    13.14s] how to group them together, and then how to actually place the exit order so that you can do this.
+[   13.22s ->    16.44s] Why? Because if you can't close the trade, then you might have a hard time trading.
+[   16.58s ->    18.92s] So let's dive in and make sure you understand this.
+[   19.42s ->    23.32s] Again, if you haven't done this yet, you need to group the position together
+[   23.32s ->    25.38s] so that you see what's happening with this trade.
+[   25.72s ->    26.80s] So here's an example.
+[   26.80s ->    30.24s] If you can see, I have two 1-1-2 trades, but they're not grouped,
+[   30.34s ->    33.18s] so I don't know how it's doing, what it's doing, or what to close.
+[   33.56s ->    36.98s] And so what I need to do is I need to group these positions together.
+[   37.36s ->    41.24s] And in TastyTrade, I can simply just click on the ones that I want to group together,
+[   41.54s ->    45.50s] and then I click my right-click button and click on Group Positions.
+[   45.92s ->    47.98s] From there, I can name it whatever I want.
+[   48.02s ->    50.60s] I'm just going to say 1-1-2 trade, and I'm going to group this trade.
+[   51.08s ->    53.86s] Now I can do this with this other one right here as well that's left,
+[   53.86s ->    58.20s] and I can group this position and say 1-1-2 trade as well.
+[   58.30s ->    59.84s] So that's how you group a position.
+[   60.24s ->    61.48s] Why do we want to do that?
+[   61.52s ->    63.58s] Well, first off, it's visually just easier to see.
+[   64.02s ->    69.66s] Also, it tells us what our profit and loss is on this.
+[   69.92s ->    71.88s] And not only that, but if we come in here to the settings,
+[   71.96s ->    75.24s] we can also see our profit and loss percentage.
+[   75.62s ->    76.86s] Open change percentage.
+[   77.00s ->    77.54s] Yeah, let's do this.
+[   78.00s ->    80.76s] So P&L open change percentage is what we'll do right here.
+[   80.76s ->    84.64s] And now we can see the percentage returns for each of these trades.
+[   84.78s ->    89.78s] So what we're doing here is a 17.3% is what this total trade return is at,
+[   89.90s ->    92.06s] and this trade is at a 5% return.
+[   92.28s ->    95.82s] So now we can kind of judge what is going on with this trade.
+[   96.20s ->   100.04s] And so now that we know this, now we can actually manage it, right?
+[  100.06s ->   102.82s] Because in the managing video that I previously put together,
+[  102.82s ->   109.02s] I said that we're trying to get to an 80% to 90% win or a 300% loss.
+[  109.12s ->   113.86s] And so we're either looking for roughly a minus 300% to close the trade
+[  113.86s ->   117.26s] or a plus, which it is right here, 80%.
+[  117.26s ->   120.36s] So this trade is only at a 17% return.
+[  120.62s ->   122.80s] But you can see here, I click on this and it groups it together.
+[  123.58s ->   125.52s] Let's say it was time to close this trade.
+[  126.16s ->   128.84s] I simply just click on this and I'll group it all together.
+[  128.84s ->   132.84s] I click on actions, I click on close position, and then you can click on close full.
+[  133.74s ->   137.22s] And so what this does is it brings up a close order for the trade.
+[  137.74s ->   139.76s] And this is how you close the entire trade.
+[  140.20s ->   144.38s] And so again, since we're buying to close, because we sold to open,
+[  144.46s ->   147.28s] we're buying to close, which means that we're trying to get a debit.
+[  147.62s ->   149.86s] If we want an instant fill on this position,
+[  149.86s ->   152.72s] we want to push it all the way to the seller side.
+[  153.00s ->   156.62s] So what you typically want to do is you want to try to close it at the mid price,
+[  156.66s ->   157.84s] which is where it is right now.
+[  157.84s ->   162.70s] And then if you don't get filled, just move this price up to this far right side,
+[  162.76s ->   165.44s] which is where the sellers are, and we'll get an instant fill on it.
+[  165.72s ->   167.78s] And so again, that's kind of how you want to play it.
+[  167.80s ->   171.48s] But that's how you exit a 1-1-2 position and how you group it
+[  171.48s ->   173.70s] and kind of see all what is going on.
+[  173.88s ->   176.38s] I know this was a shorter video, but I know it's going to be very helpful
+[  176.38s ->   180.24s] for some of you guys who are newer to TastyTrade or 1-1-2s
+[  180.24s ->   183.00s] and you want to know how to manage the trade.
+[  183.42s ->   185.88s] Now, I will throw in there that if you don't want to manage this,
+[  185.88s ->   188.14s] where if you don't want to exit a trade, it looks too complicated.
+[  188.24s ->   190.46s] You just don't have the time because you're working.
+[  190.74s ->   194.72s] Then you can actually use this tool called the Options Auto Trader.
+[  194.86s ->   197.82s] If you click the button down below, you can actually check it out.
+[  197.92s ->   199.72s] But it helps manage your trades for you,
+[  199.98s ->   202.34s] where it actually watches it every single minute
+[  202.34s ->   204.94s] to see if it hits your take profit or stop loss,
+[  204.98s ->   206.18s] and then will exit for you.
+[  206.44s ->   208.56s] You can see here it's watching all these trades for me.
+[  208.82s ->   210.84s] And here are some trades that it's close for me.
+[  210.84s ->   214.54s] You can see here $1,000, $1,000, $1,300, $1,300, $1,300, $1,200.
+[  214.84s ->   216.70s] You can see here that it does its job well
+[  216.70s ->   218.66s] based on the rules that you set.
+[  218.72s ->   220.70s] You say, hey, I want it managed at this stop loss
+[  220.70s ->   222.20s] and this take profit, and it will.
+[  222.92s ->   224.86s] So you can do all that from there.
+[  225.16s ->   226.90s] Anyways, if you want to learn more, just click down below.
+[  227.02s ->   228.26s] If not, I hope this video helped you.

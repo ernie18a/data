@@ -1,0 +1,27 @@
+[    0.00s ->     4.46s] and this helps us video i'm going over how to manage your trade on expiration day so we hold
+[    4.46s ->    10.20s] every trade until expiration day unless an early exit rule is hit so on expiration day how do we
+[   10.20s ->    14.96s] manage winners losers etc well there's a couple if then statements that you can memorize here
+[   14.96s ->    19.84s] so here we go if your trade is super close to your strike price whether you are winning or losing
+[   19.84s ->    24.94s] then close the trade early why if it's close to your strike price you have pin risk and you have
+[   24.94s ->    30.82s] assignment risk and the things you want to avoid in order to avoid this it is best to close the
+[   30.82s ->    35.78s] trade out early so you'll have no risk and again you can just kind of move on to the next trade
+[   35.78s ->    40.38s] whether you're winning or losing next if you are clearly winning which means if you know that your
+[   40.38s ->    46.00s] trade will not expire in the money you're very far out of the money on expiration date let the trade
+[   46.00s ->    50.10s] expire worthless you can collect the max amount of profit and don't have to pay any closing costs
+[   50.10s ->    55.92s] and commissions number three if you are losing and can close the trade out for less than a dollar if
+[   55.92s ->    59.82s] you're trading the one dollar wider or less than whatever the max spread width is then close the
+[   59.82s ->    64.96s] trade early why if you are below your strike price your strike price has been broken which means your
+[   64.96s ->    70.52s] trade will lose which means and expire in the money and you can close that trade out for less than
+[   70.52s ->    74.90s] the max width then you're making money what i mean by that i should say you're saving money why
+[   74.90s ->    79.14s] well because if you let the trade expire in the money you're going to experience the max loss
+[   79.14s ->    83.92s] if you can close it for less than a dollar if you're trading a dollar wide let's say you close
+[   83.92s ->    89.74s] it for 50 cents no let's say you close it for 60 cents and you paid 20 cents to enter the trade
+[   89.74s ->    95.40s] well guess what now you only have a loss of 40 cents instead of having a loss of 80 cents which was
+[   95.40s ->   100.14s] what it would be if you let it expire so that's that if you are losing and can't close the trade out
+[  100.14s ->   106.10s] for less than a dollar then let the trade expire why well because if it's if it's trading at 99 cents or a
+[  106.10s ->   110.24s] dollar and you uh then you should not close it at that why well because then you're gonna have to
+[  110.24s ->   114.50s] close it at that price and pay commissions which is gonna make your loss larger instead just let it
+[  114.50s ->   118.86s] expire worthless i mean expire in the money and the broker will take care of the rest and you'll
+[  118.86s ->   123.68s] have to pay commissions anyways that is how to manage your trade on expiration day as a credit
+[  123.68s ->   128.08s] spread trader using our program and rules so if you have any questions please use the chat box here
+[  128.08s ->   134.26s] below or join our office hour support call to learn more all right see you in the next support video

@@ -1,0 +1,199 @@
+[    0.00s ->     6.86s] This public portfolio with one month left is sitting at $114,000 and all we do in this account
+[    6.86s ->    11.18s] is we follow the rules that we laid out in our put selling masterclass that I'll link in the
+[   11.18s ->    15.34s] upper right hand corner right here. So let's first talk about the portfolio update. Our account
+[   15.34s ->    22.56s] currently is sitting at $114,000, currently up 36.4% year to date, beating the S&P 500 by close
+[   22.56s ->    26.90s] to 20 percentage points. Again, we're not doing anything fancy here. All we're doing is we're
+[   26.90s ->    31.00s] selling puts using the same rules that we laid out in the masterclass. So I would highly recommend
+[   31.00s ->    35.60s] that you guys check that video out by selling puts on companies that we don't mind owning 100 shares
+[   35.60s ->    41.48s] of. And one of the companies that I've been selling a lot of is NVIDIA. And if you hop on over to my
+[   41.48s ->    49.50s] dashboard, year to date, we've collected close to $4,000 in NVIDIA credit. And here's every single
+[   49.50s ->    55.54s] one of these shares that I've sold since the beginning of this account. And we only have one
+[   55.54s ->    61.94s] open that expires on August 26. And it's highly likely that we'll be rolling this out. And year
+[   61.94s ->    66.74s] to date, actually for the whole account, none of our puts have been assigned, mainly because NVIDIA
+[   66.74s ->    70.56s] has been in the upstring. And so one of the principles that we laid out in that put selling
+[   70.56s ->    75.50s] masterclass is we take half of the credit that we collect, and we dollar cost average into the stock
+[   75.50s ->    81.48s] that we want to buy, buying shares of NVIDIA as we sell puts on it. And we actually missed the month
+[   81.48s ->    87.08s] last month in November, and I actually just forgot to do it. But you can see we've acquired close to
+[   87.08s ->    94.10s] maybe $1,400 or $1,500 worth of NVIDIA just from dollar cost averaging into it. And right now they
+[   94.10s ->   101.98s] are up $473 or 28%. So today in this video, we are going to be talking about why I have been selling a
+[  101.98s ->   109.14s] lot of puts on NVIDIA. But more importantly, will I continue to sell puts on NVIDIA going into next year
+[  109.14s ->   113.16s] and forward. So we're going to talk about the business itself. And then we're going to talk
+[  113.16s ->   121.70s] about the put selling strategy on how to implement and create that $4,500 of credit that you see in
+[  121.70s ->   127.78s] the dashboard right now. Now, if you guys like content like this, where I apply what I teach in
+[  127.78s ->   131.66s] those masterclasses, so make sure you guys like the video and subscribe so that you guys can see
+[  131.66s ->   137.92s] the continuation of this public account so that you guys can learn how to sell puts for income that
+[  137.92s ->   142.12s] can one day help you retire. So one thing that we preach on this channel when we're selling puts
+[  142.12s ->   147.88s] is to see whether or not we can acquire great companies at fair values. So let's examine what
+[  147.88s ->   153.24s] NVIDIA's potential is as a great company. And top of mind, you guys think NVIDIA, you guys think AI,
+[  153.42s ->   157.58s] you guys think data centers, because they are the go-to name in this industry. And we're going to
+[  157.58s ->   162.28s] examine their performance by reviewing their latest quarterly earnings. Their report was a blowout.
+[  162.28s ->   169.30s] They did amazing. They reported $57 billion in revenue, with $51 billion coming from the data
+[  169.30s ->   177.62s] centers. This is the segment that sells GPUs to hyperscalers like Microsoft, Meta, AWS, and Google
+[  177.62s ->   190.19s] to support chatbots like ChatGPT, Gemini, and Cloud. Their gross margins are 73.6% and their net margins
+[  190.19s ->   195.69s] are 63%. They beat Wall Street expectations and then raise projections and forecasts for next
+[  195.69s ->   202.79s] quarter as well. Behind large demand for the top of the line AI GPUs, their Blackwell GPUs. And if you
+[  202.79s ->   209.83s] look at two charts, the three-year revenue and three-year income CAGR, you can see NVIDIA from
+[  209.83s ->   215.07s] a financial perspective is in a league of its own. They are growing top-line revenue and bottom-line
+[  215.07s ->   219.71s] revenue faster than anybody else in the market. They are basically in a league of their own, right?
+[  219.71s ->   224.67s] All in the upper right-hand corner while everybody else is kind of bunched together. That shows that
+[  224.67s ->   231.23s] they are growing their business extremely fast and converting that revenue into profit. And talking
+[  231.23s ->   235.27s] about margins, take a look at their net margins versus their gross margins compared to the
+[  235.27s ->   242.47s] competitors. Even in this metric, they are extremely competitive and best in class. They spend the least
+[  242.47s ->   248.65s] amount of money converting their top-line revenue into pure profit. And as we talk about on this channel,
+[  248.65s ->   254.07s] this financial dominance shows that they have a lot of competitive advantages that are extremely
+[  254.07s ->   258.19s] desirable in companies that we want to invest in. And we're going to talk about those right now.
+[  258.29s ->   262.27s] So the first competitive advantage we want to talk about is something I like to call first-mover
+[  262.27s ->   266.35s] advantage. First-mover advantage is basically the advantage that a company gets when they are the
+[  266.35s ->   270.23s] first one to market. And to really understand this, let's take a quick history lesson into the
+[  270.23s ->   277.09s] history of NVIDIA. So back in 1999, NVIDIA actually created the first GPU. It was made and used
+[  277.09s ->   282.77s] mainly for gaming as a graphics card. But then in 2006, NVIDIA redefined the game by introducing
+[  282.77s ->   289.33s] CUDA, which allowed GPUs to be used more than just for gaming, but for generalized compute. And a lot of
+[  289.33s ->   295.37s] researchers picked this up because GPUs inherently have a massive advantage over CPUs because of the
+[  295.37s ->   301.41s] way that it can do very complicated matrix math multiplication. And so all early research that
+[  301.41s ->   308.49s] required heavy and intensive math was running on NVIDIA GPUs and CUDA. And this impactful change
+[  308.49s ->   314.29s] really showed in 2012 when AlexNet, which is a neural network architecture, won a computer vision
+[  314.29s ->   321.69s] contest in a landslide. And this is when people and researchers really realized how powerful this
+[  321.69s ->   328.67s] NVIDIA and CUDA platform is to solving really complicated problems such as machine learning, computer
+[  328.67s ->   333.97s] vision, and what we would call AI nowadays. And companies like OpenAI started training their
+[  333.97s ->   341.23s] LLMs on NVIDIA GPUs. And NVIDIA realized that there was a market for specific AI use cases. And in 2016,
+[  341.23s ->   348.07s] they released their first AI-specific GPU called the P100 for general AI use cases. They're
+[  348.07s ->   353.15s] revolutionizing the industry. They're creating it and redefining it. Coolest part about this one is
+[  353.15s ->   360.67s] something they introduced called MVLink. MVLink allows one GPU to talk to another GPU. MVLink became
+[  360.67s ->   367.39s] such a powerful tool that in the future, it evolved not for GPUs, but it allows one server to talk to another
+[  367.39s ->   373.71s] server, which then allows every server to become connected into what we would call a cluster that
+[  373.71s ->   378.91s] basically acts like a supercomputer. And then during this whole time, the whole industry, the whole research
+[  378.91s ->   384.19s] industry is standardizing on CUDA. And over the next couple of years, these servers started getting
+[  384.19s ->   390.11s] integrated into data centers like Azure, AWS, Google Cloud. NVIDIA was the only one in this market.
+[  390.11s ->   397.55s] And then fast forward to 2021 with the introduction and announcement of OpenAI's ChatGPT. ChatGPT
+[  397.55s ->   407.39s] was trained and deployed on Azure's A100 SKU. These SKUs are put into data centers and anytime anyone talks to
+[  407.39s ->   414.27s] ChatGPT, they are pinging a server running A100 GPUs somewhere in Azure's cloud network. NVIDIA again
+[  414.27s ->   421.15s] redefined this market because OpenAI at that time only ran on NVIDIA GPUs and their subsequent software
+[  421.15s ->   427.07s] stack. And even to this day, NVIDIA is still continuously redefining how AI models are trained
+[  427.07s ->   433.31s] and then deployed, which is what we call inference in the modern era with the introduction of Blackwell
+[  433.31s ->   439.55s] and Rubin going forward. And so you can see their dominance in the overall market share in the AI
+[  439.55s ->   445.07s] accelerated GPU market. They own about 95% of the market with everybody else at 5%. They were the only
+[  445.07s ->   450.03s] person in this space for the last 20 years. And it wasn't until the last three or four years when AMD
+[  450.03s ->   455.95s] and Intel started trying to get a piece of the pot. AI has dominated our headlines in basically everyday
+[  455.95s ->   464.35s] life. Before I quit my job last year, we were using ChatGPT a lot and replacing certain functions with
+[  464.35s ->   471.31s] more efficient usages of AI. And because of that increased demand from customers like us and businesses,
+[  471.31s ->   477.87s] these big tech companies like Microsoft, Amazon, Meta, Google are spending extraordinary large amounts of
+[  477.87s ->   485.31s] money to increase their data center capacity to support these AI models. And in these market conditions,
+[  485.31s ->   491.71s] where demand is far greater than supply, the supplier, in this case, NVIDIA with their GPUs that we just
+[  491.71s ->   497.79s] talked about being the only suppliers until recently with their first mover advantage has pricing power.
+[  497.79s ->   503.95s] They can legitimately charge anything. And these big customers like Microsoft and Google will buy them.
+[  503.95s ->   509.63s] And you can see this show up in their financials. That is why their revenue continues to grow because
+[  509.63s ->   514.19s] the market continues to grow. They're selling through more volume. And on top of that,
+[  514.19s ->   519.63s] they're selling them at a very high price point, therefore resulting in very high margins.
+[  519.63s ->   524.03s] But I want to talk briefly about the third competitive advantage, which is high switching costs,
+[  524.03s ->   529.63s] which stems from their technological edge because they were the only one in the industry for the last 20 years.
+[  529.63s ->   536.35s] Again, that first mover advantage has such huge benefits. Once a model is trained using the NVIDIA tech stack
+[  536.35s ->   541.95s] and deployed in data centers using the NVIDIA tech stack, it's very hard for these companies
+[  541.95s ->   547.71s] to get off of NVIDIA. These customers like Microsoft with the A100 SKU and OpenAI, they've already trained
+[  547.71s ->   553.47s] that model on NVIDIA's tech stack. And they also deployed it into Azure's data center. And so it makes
+[  553.47s ->   559.95s] a lot of sense for them to continue to deploy NVIDIA SKUs. So in this case, all they have to do is source.
+[  559.95s ->   566.51s] If they were to switch over to AMD, they would have to spend more money, reskew or redevelop models,
+[  566.51s ->   570.83s] test these new servers in data centers, and that's going to cost them time and money. And that is
+[  570.83s ->   576.67s] obviously a risk that some companies are unwilling to take, especially in these market conditions where
+[  576.67s ->   582.27s] speed is king as opposed to cost. So enough about the past. Let's look towards NVIDIA's future.
+[  582.27s ->   587.31s] Past performance is not indicative of future performance. So we have to think, will NVIDIA
+[  587.31s ->   591.07s] continue to dominate in the field? The first thing we're going to take a look at is TAM,
+[  591.07s ->   598.19s] otherwise known as Total Addressable Market. Is the market for NVIDIA GPUs or NVIDIA solutions going
+[  598.19s ->   604.11s] to continue to grow in the future? And according to a McKinsey report, this industry is going to grow
+[  604.11s ->   611.07s] to $7 trillion by 2030. Even from their latest quarterly report, you can see that the demand for
+[  611.07s ->   617.07s] their Blackwell chips is still far outstripping supply, which indicates that this is a
+[  617.07s ->   621.79s] continuously growing market. Even if NVIDIA were to lose a little bit of market share,
+[  621.79s ->   627.31s] the pie is so big that their revenue can continue to grow. And you can see that data centers are now
+[  627.31s ->   633.63s] being built at a rapid pace all around the world, which means that their pricing power should continue
+[  633.63s ->   639.95s] to stay. Now, speaking of competition, competition over the last couple of years has been increasing.
+[  639.95s ->   645.31s] Competitors like AMD, Intel, and more recently, big tech companies like Google have been releasing their own
+[  645.31s ->   651.95s] solutions to become less reliant on NVIDIA solutions. As the pie grows, like we talked about earlier,
+[  651.95s ->   657.55s] more people want a piece of the pie because there is money to be made. However, that doesn't mean that
+[  657.55s ->   664.03s] NVIDIA is going to get dethroned. You can take AMD's recent performance as an example. Their data center
+[  664.03s ->   670.27s] revenue actually has been growing slower and more inconsistently than NVIDIA's, even though NVIDIA's total
+[  670.27s ->   677.63s] revenue is much, much larger. The moat that NVIDIA has created over the last 20 plus years isn't
+[  677.63s ->   682.11s] something that can just be overcome in a couple of years. And over the next couple of years, the AI
+[  682.11s ->   686.91s] market will shift. Right now is dominated by a phase called training, which is essentially these
+[  686.91s ->   694.03s] companies like OpenAI trying to make their models better. Think of ChatGPT 4 to ChatGPT 5. However,
+[  694.03s ->   700.75s] in the future, more and more people should adopt these AI tools. Look at the monthly average users
+[  700.75s ->   707.47s] for OpenAI's ChatGPT. And as more and more people adopt these tools, there's going to be a growing need
+[  708.19s ->   714.51s] for more and more data centers and more and more of these servers to host this customer traffic.
+[  714.51s ->   720.75s] This is what we call inference. Training is the smaller portion of the market, while inference is the much
+[  720.75s ->   726.03s] larger part of the market. And that's what McKinsey is talking about when they talk about $7 billion
+[  726.03s ->   732.11s] in data centers. And for inference, cost is actually a lot more important. And this is why recently
+[  732.11s ->   738.43s] TPUs have been talked a lot about in the news. Because TPUs are a more efficient way of running
+[  738.43s ->   744.83s] customer traffic. And that release of Google's TPU did shock the market. NVIDIA stock price did drop.
+[  744.83s ->   752.11s] Because there's now a new narrative saying that NVIDIA is going to lose the inference battle.
+[  752.11s ->   758.19s] However, TPUs and their usages are still relatively new. We don't exactly know how that's going to pan
+[  758.19s ->   762.83s] out. But what I think will happen is what we see in industry now. There is going to be a use for
+[  762.83s ->   768.59s] custom silicon like Apple's MacBook and with Xboxes. And there's going to be a need for more generic,
+[  768.59s ->   774.67s] more multi-purpose chips like GPUs and CPUs. The market is big enough where Google's win may not even
+[  774.67s ->   781.47s] be NVIDIA's loss. But what I do think will happen is that NVIDIA knows that inference is the biggest
+[  781.47s ->   787.71s] battle. Jensen Huang, the CEO of NVIDIA, has said so himself. And they've already done massive work
+[  787.71s ->   792.67s] to make sure that they maintain their current lead in inference. They are the current market leaders.
+[  792.67s ->   797.63s] And this is the last point I want to make. AI, as we know it, isn't just about data centers. The TAM
+[  797.63s ->   804.03s] is probably much, much bigger than that. If AI really does become a real thing, they'll live in cars with
+[  804.03s ->   808.11s] autonomous vehicles, they'll live in robotics, they'll live in edge devices, maybe on your phone.
+[  808.11s ->   812.99s] And NVIDIA is already developing these markets like they did with the GPU market back 20 years ago.
+[  812.99s ->   818.51s] They have their own drive solutions for autonomous vehicles. They have Isaacs for robotics. They have
+[  818.51s ->   824.91s] all these different solutions to try and become first mover in every single one of these industries.
+[  824.91s ->   829.47s] And they have made substantial progress in creating these new markets, such as with their autonomous
+[  829.47s ->   834.11s] vehicles. In my opinion, NVIDIA will lose some market share, no doubt, right? Especially in the
+[  834.11s ->   839.39s] data center GPUs. It's unrealistic to believe that they won't. Is AI a bubble? And if it is,
+[  839.39s ->   845.23s] what happens to NVIDIA? Parts of the AI market does seem like a bubble. We've seen this trend repeat
+[  845.23s ->   851.87s] itself. There are startups with no revenue, raising billions of dollars. Companies changing their names,
+[  851.87s ->   857.55s] trying to have a stock pop, like we saw with the metaverse, as well as the blockchain craze. Massive
+[  857.55s ->   863.87s] valuations with very unclear business models. So if there is a bubble, what do we not want to be
+[  863.87s ->   867.63s] investing in? And what do we actually want to be investing in? This reminds me a lot of the dot
+[  867.63s ->   872.35s] com craze, right? The dot com bubble. The internet still exists. The internet is transformative,
+[  872.35s ->   877.47s] right? I wouldn't be making this video if YouTube didn't exist. And the same can be said for AI.
+[  877.47s ->   882.75s] It has revolutionized the way that I make videos and change the way that I interact and run my small
+[  882.75s ->   889.07s] businesses. But if you were to take a note from the dot com bubble, in a gold rush, do not be the
+[  889.07s ->   895.31s] gold miners. Be the people selling the shovels and the people making the shovels. NVIDIA is essentially
+[  895.31s ->   902.03s] the picks and shovel company. They are selling the GPUs for other companies to develop applications on
+[  902.03s ->   908.35s] top of them to sell to us as customers and to enterprises. The infrastructure will exist. The
+[  908.35s ->   913.55s] applications will change. You want to be investing in these picks and shovel companies like NVIDIA.
+[  913.55s ->   918.99s] And if you've tuned into my other video where I talk about TSMC, these are the ones making the
+[  918.99s ->   923.55s] picks and shovels as well as maybe investing in other infrastructure stocks like energy stocks that
+[  923.55s ->   929.47s] I own in this account publicly as well as in my private accounts. And so make sure you guys subscribe
+[  929.47s ->   935.07s] because I want to make videos on how to buy the right energy stocks from the increase in data center
+[  935.07s ->   939.87s] usages. And the most important part is we want to be investing in industry leaders because they are
+[  939.87s ->   946.51s] the ones that are going to have the most ability to survive if there is an AI winter. All right. So
+[  946.51s ->   952.11s] the last thing in this video is the put selling option strategy on NVIDIA. And if you watched our
+[  952.11s ->   958.35s] put selling masterclass, you know that valuation allows us to find fair value for the price that we
+[  958.35s ->   963.79s] want to sell puts at. And like we did with the masterclass, we're going to use P ratio as a relative
+[  963.79s ->   969.15s] indicator of value. And if you look just at P, you can see that NVIDIA is currently sitting at 44.56
+[  969.15s ->   974.11s] and it peaked at 55.97 earlier this year. If you look at a three year average, it's actually
+[  974.67s ->   979.39s] been decreasing. And like we did again in that video, we take a look at the trailing 12 months
+[  979.39s ->   986.35s] and P is actually at 47.6 and it's currently at 44.56 as compared to the average, which is close to 70
+[  986.35s ->   992.91s] way back when. But if you compare it to its competitors or peers, you can see this P ratio is actually not
+[  992.91s ->  1000.03s] that far off industry average. If you look at NVIDIA sitting at 44.56, broad comes at 97. TSMC that we
+[ 1000.03s ->  1004.75s] talked about in that other video, check it out. It's at 23. One of my favorite stocks of all time.
+[ 1004.75s ->  1011.55s] AMD is at 107. And I want to use this last chart to kind of demonstrate that valuation is relative.
+[ 1011.55s ->  1016.03s] So the further to the right you are, the faster your earnings per share has grown and the further up
+[ 1016.03s ->  1021.31s] you are, the higher your P ratio. In this chart, you want to be as far to the right and as low on the
+[ 1021.31s ->  1025.79s] y-axis as possible. I'm going to give you guys a guess. Which one do you think is NVIDIA? If you
+[ 1025.79s ->  1030.91s] guys guessed the blue circle, you are correct. That is NVIDIA. It has the highest earnings per
+[ 1030.91s ->  1036.67s] share growth over the last three years. And its valuation is actually lower some of its peers,
+[ 1037.23s ->  1043.95s] which means that you are actually paying less for more growth. I think NVIDIA right now is a stock
+[ 1043.95s ->  1048.59s] that I can continue to sell puts on. I actually don't mind if it gets assigned. If you watched my
+[ 1048.59s ->  1052.43s] previous episode, we talked a little bit about the market situation. So right now, the market is
+[ 1052.43s ->  1056.99s] kind of stagnating to find some direction. And so right now, I'm not trying to make as much money
+[ 1056.99s ->  1061.15s] as possible. I'm trying to get shares at a discount. So what we're going to do as an example is we're
+[ 1061.15s ->  1066.59s] going to go to the auction chain, find the 30-day expiration. Let's just do January 9th, right?
+[ 1066.59s ->  1070.59s] Because that's around 30 something-ish days from today. So what we're going to do is we're going to
+[ 1070.59s ->  1077.55s] look for maybe 1%, maybe 1.5% return. If you want to go for a little bit more, 1.5%, 2%, that's also fine.
+[ 1077.55s ->  1081.23s] That's up to your discretion. But right now, I'm trying to aim for around 1% to 1.5%. If I were
+[ 1081.23s ->  1088.67s] to sell one NVIDIA option 37 days out, I will be collecting close to $180. It's close to a 1.2%
+[ 1088.67s ->  1093.39s] return. That's good enough for me. Now, if you want it around a 1.5% return, then you'll be selling
+[ 1093.39s ->  1099.63s] it at 160. That's around a 1.6% return. If there is a pullback because the market does decide to fall
+[ 1100.43s ->  1107.15s] by 14% to hit my 155 strike price, I will happily buy 100 shares of NVIDIA at that strike price.
+[ 1107.15s ->  1110.19s] Let me know if you guys have any questions down in the comment section below. This strategy,
+[ 1110.19s ->  1113.87s] again, is just all from the Put Selling Masterclass that we're going to reiterate over and over and
+[ 1113.87s ->  1117.95s] over again in this series. So make sure you guys follow and subscribe if you guys want to learn
+[ 1117.95s ->  1122.67s] how to generate very good income from selling puts. Now, if you guys liked the video,
+[ 1122.67s ->  1124.91s] please do give it a thumbs up. If you guys liked the channel,
+[ 1124.91s ->  1129.31s] please consider subscribing. It really helped me out a lot. And for those channel members,
+[ 1129.31s ->  1132.91s] can't thank you guys enough. I appreciate your support. If you guys want to learn how to generate even
+[ 1132.91s ->  1136.91s] more money using my favorite advanced option strategy, check out this credit spread master
+[ 1136.91s ->  1141.71s] class right here. And if you're going to keep up with this series, check out this playlist right
+[ 1141.71s ->  1145.55s] here as well. Until next time, stay safe in the market. Peace.

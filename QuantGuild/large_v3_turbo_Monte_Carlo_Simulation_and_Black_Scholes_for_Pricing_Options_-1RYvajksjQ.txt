@@ -1,0 +1,236 @@
+[    1.34s ->     7.69s] Monte Carlo simulation and the Black Shoals model. How the heck are these connected? More
+[    7.69s ->    13.97s] importantly, how can we price options using Monte Carlo simulation and of course the Black
+[   13.97s ->    19.81s] Shoals model? And are these prices the same? Well, I sure hope so. Let's dive right into
+[   19.81s ->    26.49s] trying to get a grip first on the relationship between an analytical expectation and a numerical
+[   26.49s ->    32.95s] expectation. We're going to use a simple example of a dice roll game and then we'll build off
+[   32.95s ->    38.47s] of that into the option pricing argument. Okay, so I use some fancy terminology there. Let's
+[   38.47s ->    43.91s] start with this idea of an analytical expectation. All that means is there is a formula for the
+[   43.91s ->    50.87s] expected value of some random variable. This random variable could be a coin flip, a Bernoulli,
+[   50.87s ->    57.01s] it could be a series of coin flips, a binomial, it could be a continuous exponential random
+[   57.01s ->    62.57s] variable. Depending on the randomness that we are modeling, we are going to substitute in
+[   62.57s ->    68.01s] a different probability mass or density function into the equation and we're going to use either
+[   68.01s ->    73.79s] a summation or an integral to accomplish this. So what I have here is the example in a discrete
+[   73.79s ->    78.71s] setting for something like a coin flip, series of coin flips, things of that nature. This is
+[   78.71s ->    84.65s] the formula for the expected value. If we scroll on down here, you'll see that we have an example
+[   84.65s ->    91.33s] of applying this formula to a coin flip that is a Bernoulli random variable. And we go through
+[   91.33s ->    96.75s] this argument here to prove that the equation for the expected value of a Bernoulli random variable
+[   96.75s ->   103.17s] is simply just the probability of success P. And we do that by applying this expected value formula.
+[  103.79s ->   107.51s] If we scroll down here to the continuous case, instead of a summation, we have an integral.
+[  107.51s ->   112.59s] Instead of a mass function, we have a density function. And we can apply this in the same
+[  112.59s ->   118.69s] capacity in a continuous setting and substituting in an exponential probability density function.
+[  119.11s ->   125.07s] And if we integrate across that entire region, we will get the closed form solution for the expected
+[  125.07s ->   134.63s] value. All this is to say is the analytical expectation is simply applying the formula for the expected
+[  134.63s ->   140.75s] value of a random variable in either the discrete or the continuous setting discrete being something
+[  140.75s ->   146.51s] countable, like one, two, three, four, things like coin flips, things like the number of blank out of
+[  146.51s ->   153.93s] blank binomial, Poisson random variables for arrivals, things of that nature. You can apply this formula or
+[  153.93s ->   159.29s] something continuous, think like a stock price or waiting time, then you can apply this formula and you're
+[  159.29s ->   164.93s] actually going to end up with an equation. So when I say analytical expectation, I'm actually talking
+[  164.93s ->   170.63s] about an equation. And this equation is derived using these definitions. And of course, once we have an
+[  170.63s ->   177.53s] equation, it's very, very easy to go about finding the expected value based on the parameters. So for
+[  177.53s ->   183.83s] example, if we have a coin flip, and it's 5050, the expected value is just going to be the probability of
+[  183.83s ->   188.87s] success, which in that case would be 0.5. If I had a weighted coin, and the probability of success was
+[  188.87s ->   195.59s] 0.7, then my expectation would be 0.7. Moreover, down here, if I have some sort of exponential
+[  195.59s ->   202.01s] distribution parameterized by lambda two, then the expected value for that exponential distribution
+[  202.01s ->   207.73s] would be one half, perhaps modeling wait time in minutes or something of that nature.
+[  209.02s ->   213.00s] If we scroll on down here, what I'm going to do is actually I'm going to visualize these
+[  213.00s ->   217.38s] distributions. So what I have here is I have a Bernoulli distribution, that's a coin flip,
+[  217.86s ->   222.56s] but this is going to be a weighted coin, the probability of success has a weight of 0.7,
+[  223.12s ->   227.20s] probability of failure has a weight of 0.3. So you could think of this as heads and tails,
+[  227.32s ->   232.54s] success, failure. And then I also have an exponential distribution here parameterized by lambda equals two.
+[  232.92s ->   239.44s] So this is the mass function over here. And this is the density function over here. And the analytical
+[  239.44s ->   245.22s] expectation, just as I had said before, for each of these respectively will be 0.7 and 0.5. And it's
+[  245.22s ->   251.58s] very, very easy to find the expected value of these random variables, because we're able to just go
+[  251.58s ->   258.80s] about plugging in the parameters into the formula for the expected value that we've found by applying
+[  258.80s ->   267.08s] the formal definition for each of the discrete and continuous cases. Now, what if I can't use the
+[  267.08s ->   272.88s] definition of the expected value to find this equation? What I mean is, if we go back up to
+[  272.88s ->   280.04s] these definitions, we have a summation in the discrete sense, and we have an integral in the
+[  280.04s ->   288.28s] continuous sense. These may yield some very, very challenging equations to solve. And in some cases,
+[  288.28s ->   294.36s] they may be intractable. Intractable to mean we can't solve them analytically, as seen here,
+[  294.36s ->   300.06s] where we end up with just a nice explicit equation for the expected value. I just plug in P and I find
+[  300.06s ->   305.10s] the expected value. I plug in lambda, I find the expected value. Sometimes we're going to get
+[  305.10s ->   311.56s] equations with this summation and with this integral that are absolutely crazy. Maybe it's over an
+[  311.56s ->   316.26s] infinite region that makes it very difficult to integrate or sum over. Maybe there's some weird
+[  316.26s ->   322.78s] product going on. Who knows? But the point is, these may be intractable to solve analytically.
+[  322.78s ->   328.42s] I may not be able to find a nice explicit closed form solution. So what can we do? What's our next
+[  328.42s ->   335.32s] best bet? Well, we can do something called Monte Carlo simulation. Monte Carlo simulation means I'm
+[  335.32s ->   341.18s] going to sample from these distributions. I'm going to draw randomly, boom, a Bernoulli, and then I'm
+[  341.18s ->   345.68s] either going to get a success or a failure. I'm going to draw from this exponential distribution,
+[  345.84s ->   351.48s] perhaps modeling wait time, and I'm going to get an example wait time. And if I continue to sample
+[  351.48s ->   356.88s] from these distributions, then what I can do is I can collect a set of these values. So I'm going to
+[  356.88s ->   362.08s] end up having success, success, failure, success, success, success, failure. I'm going to have a set
+[  362.08s ->   368.72s] of values. I can add them all up, divide by the total number of draws, and I'm going to be able to
+[  368.72s ->   376.52s] compute a sample average. And I can do that in both the discrete and the continuous sense. So by being able
+[  376.52s ->   383.00s] to draw from these distributions, I can come up with an approximate average. And that's exactly what
+[  383.00s ->   388.58s] Monte Carlo simulation is. Instead of going out and sampling, say, maybe people, because I'm trying to
+[  388.58s ->   394.28s] compute maybe the average height of a population, I can just use Monte Carlo simulation to repeatedly draw
+[  394.28s ->   400.50s] from a distribution with a fixed parameter. So here the exponential has a fixed parameter of lambda
+[  400.50s ->   407.78s] equals 2. The Bernoulli has a fixed parameter of p equals 0.7. I can continue to draw from these,
+[  408.22s ->   413.94s] and then I can take the average, and I'll have an approximation for the true expectation.
+[  414.64s ->   420.30s] So what does that look like? Well, I have a little naive example here with two for loops. So what I'm
+[  420.30s ->   425.02s] going to do is I'm going to draw from the Bernoulli distribution, and I'm going to draw from the
+[  425.02s ->   429.80s] exponential distribution, and I'm going to take the average of the samples. And when I do that,
+[  429.80s ->   439.00s] what you'll see here is the Bernoulli Monte Carlo sample mean is 0.7011. Very, very close to the
+[  439.00s ->   445.80s] analytical 0.7. So it's very, very close. The exponential is 0.5023. Again, very, very close
+[  445.80s ->   453.52s] to the analytical. Now, why does this work? Something that I feel is not drawn as a connection
+[  453.52s ->   461.36s] is why this sampling procedure works. I'm able to simulate draws from each of these distributions
+[  461.36s ->   469.30s] with a fixed parameter set, but why is it very close to the analytical value? We did not apply
+[  469.30s ->   475.56s] the formula. Remember, all we're doing is we're sampling these values, adding them all up, and then
+[  475.56s ->   482.38s] dividing by the total number of samples. And somehow we're close to the actual value given by the closed
+[  482.38s ->   490.82s] form solution in both of these examples. So why is this the case? Turns out this is no coincidence.
+[  491.28s ->   496.42s] And a lot of students hear about the law of large numbers and the central limit theorem, and maybe
+[  496.42s ->   501.98s] even an AP statistics course back in high school, but rarely do we actually see what it means in the
+[  501.98s ->   508.34s] context of simulation, especially at that point in time. And what we have here is the law of large
+[  508.34s ->   515.60s] numbers stating that if we are to repeatedly sample from a distribution, and we sum up all of those
+[  515.60s ->   521.86s] values and divide by the total number of values, in this case, n is some arbitrary sample size,
+[  522.54s ->   530.24s] as n approaches infinity, that is, as our sample size becomes arbitrarily large, this value,
+[  530.24s ->   539.70s] 1 over n, the summation of all of our samples, is going to converge almost surely to our theoretical
+[  539.70s ->   544.90s] expectation. This is an incredible result. This is a very, very important and incredible result.
+[  545.26s ->   550.62s] I don't feel that the law of large numbers is appreciated as much as it should be, especially
+[  550.62s ->   555.40s] in the context of the central limit theorem, which pretty much takes center stage, especially in
+[  555.40s ->   562.14s] testing. But here, this result is the reason why we are able to do this Monte Carlo simulation
+[  562.14s ->   569.50s] and come up with an approximation for the expected value, that is, the theoretical expected value. It's
+[  569.50s ->   575.22s] because it's going to converge almost surely to the theoretical expected value as the sample size
+[  575.22s ->   581.00s] becomes arbitrarily large. That is why we're able to do Monte Carlo simulation. That's why we're able to do
+[  581.00s ->   588.68s] Monte Carlo pricing. So, in other words, if we can express an options price in terms of an expectation,
+[  589.50s ->   595.12s] that is, this right-hand side, where x is the option price, then we can conduct Monte Carlo simulation
+[  595.12s ->   602.06s] to figure out an approximation for that price. And that is the connection between Monte Carlo simulation
+[  602.06s ->   609.30s] for pricing and closed-form expressions like the Black-Scholes model for pricing. Let's see this in action.
+[  609.30s ->   613.94s] I've long said, anytime you're dealing with randomness, you're really dealing with a game
+[  613.94s ->   619.66s] of uncertainty, and you can frame it as such. So, what I like to do is, I like to take a very simple
+[  619.66s ->   625.92s] example of some sort of game and apply these ideas, and then we can extend them to a more complicated
+[  625.92s ->   630.66s] game where we're trying to price some sort of financial derivative. In this case, we're going to
+[  630.66s ->   636.38s] look at option pricing in a Black-Scholes framework. So, what we have here is this idea of analytical and
+[  636.38s ->   641.18s] numerical expectation, right? The numerical expectation converges almost surely to the
+[  641.18s ->   646.52s] theoretical analytical expectation, where the numerical expectation is just the Monte Carlo
+[  646.52s ->   652.96s] simulated average, the Monte Carlo simulation. What we have here is an example using a geometric
+[  652.96s ->   658.16s] distribution. So, what I've done here is I have taken the probability mass function for a geometric
+[  658.16s ->   666.36s] distribution, and I've gone about solving for the theoretical expected value, 1 over p. In other words,
+[  666.36s ->   674.18s] if it takes me, let's say the probability of success is one-half, then on average, that is the
+[  674.18s ->   681.62s] expectation, it will take me 1 over 0.5 to see the first success, so two trials. And that makes sense,
+[  681.70s ->   688.50s] right? If you have two trials and the probability of success is 50%, then you would expect to yield at
+[  688.50s ->   696.20s] least one success on average out of those two trials. So, in the context of a game, what do we have here?
+[  696.20s ->   703.20s] Well, we have a geometric random variable where we are going to roll a dice until we get the number 6.
+[  703.80s ->   709.82s] So, we can apply this solution that we just derived here, this closed form solution for the expected
+[  709.82s ->   716.76s] value, to this game where we just plug in 6, and we get 6 dice rolls is required on average to see
+[  716.76s ->   724.04s] the first 6. Okay, and that's the analytical solution. The Monte Carlo simulation is going to
+[  724.04s ->   728.64s] yield a very similar value, just as we saw above with the Bernoulli and exponential random variable
+[  728.64s ->   733.64s] example. Here, what we're doing is we're drawing from that distribution. What I mean is we're going
+[  733.64s ->   738.24s] to roll a dice, roll a dice, roll a dice, roll a dice until we see a 6. We're going to keep doing
+[  738.24s ->   742.82s] that a whole bunch of times, and I'm going to record how many times it takes me to see a 6.
+[  743.04s ->   749.40s] Maybe it'll take me 1 try, and I'll get super lucky. Maybe it'll take me 20. That's the whole point.
+[  749.40s ->   753.36s] We're going to keep doing this simulation again and again and again, and then we're going to take
+[  753.36s ->   759.60s] the average and see, on average, how many dice rolls are required to see that 6. We know the
+[  759.60s ->   768.56s] analytical solution is 6. This is given by our formula derived here. But if we simulate it a
+[  768.56s ->   773.54s] whole bunch of times, based on what we've shown here with the law of large numbers, we should see
+[  773.54s ->   780.44s] that this value is very close to the theoretical value for a large number of simulations. And over time,
+[  780.44s ->   785.60s] that will converge. And that's exactly what we have here. So if we start with a small number
+[  785.60s ->   790.66s] of simulations, you can see the average is about 6.4. But as n increases the number of simulations,
+[  791.32s ->   798.28s] we converge, almost surely, to the true expected value, and that is 6. So that's the connection
+[  798.28s ->   803.20s] between the analytical and numerical solution for the expectation. And this is in the framework of
+[  803.20s ->   807.30s] a game. So what we've done is we said, okay, we're going to roll a dice until we get a 6.
+[  807.30s ->   812.20s] How can we model that? Well, we can model it as a geometric random variable. We know that there's
+[  812.20s ->   817.68s] a closed-form solution for the expectation, but we also can simulate it, right? We can just roll
+[  817.68s ->   823.68s] a dice until we see a 6, record how many times it took us to see that first 6, and then take the
+[  823.68s ->   828.26s] average. And then the law of large numbers says that converges almost surely. And sure enough,
+[  829.10s ->   834.62s] this is what we get. We see that over time as the simulation number increases. So not over time,
+[  834.62s ->   841.44s] but as the total number of simulations increase, we converge to that theoretical expectation.
+[  842.16s ->   849.16s] Now we're ready to discuss option pricing. The Black-Scholes model assumes a stock that is an
+[  849.16s ->   854.22s] option written on some sort of underlying asset, and in this case, the underlying asset is a stock,
+[  854.68s ->   862.02s] is going to follow a geometric Brownian motion. These are the dynamics of the stock price path.
+[  862.02s ->   868.02s] And the risk-neutral pricing, that is the fundamental theorem of asset pricing,
+[  868.50s ->   873.72s] says that in the absence of arbitrage, we have something called a risk-neutral measure Q,
+[  874.28s ->   879.30s] under which the discounted price process is a Martin-Gale. And that means for a European call
+[  879.30s ->   886.06s] option, we can present the price as the discounted, that is this E to the negative RT,
+[  886.06s ->   895.52s] risk-neutral expected payoff, where the payoff is given by S sub capital T. That is the stock price
+[  895.52s ->   902.12s] at the terminal point in time capital T, less the strike, of course, taking the max between that and
+[  902.12s ->   908.78s] zero. So what is this actually saying? Well, this is saying that, hey, you know, we have some stock
+[  908.78s ->   914.74s] price that's going to evolve throughout time governed by this equation here. At some point in the future,
+[  914.74s ->   920.54s] capital T, we're going to realize a payoff for this option. And that payoff is going to be the max
+[  920.54s ->   926.50s] between the terminal value, less the strike price, and zero. In other words, if there is a positive
+[  926.50s ->   931.62s] difference between the strike price and the terminal price, you'll exercise for profit. Otherwise,
+[  932.18s ->   939.46s] you're going to let it expire worthless because it makes no sense to exercise. So what is the present
+[  939.46s ->   945.86s] value of such a contract? Well, we don't know what the price is going to be in the future.
+[  946.14s ->   951.50s] The best we can do if we don't know the price in the future is to figure out the expected price
+[  951.50s ->   957.80s] today. So what we're going to do is we're going to compute this risk-neutral expected payoff,
+[  958.06s ->   963.10s] and that is going to be the value of the call option today. What's the problem here? Well,
+[  963.10s ->   969.30s] this is one heck of an expectation to solve analytically for. Don't believe me, I have an
+[  969.30s ->   977.04s] article and a video walking through the entire derivation of the Black-Scholes model, not just
+[  977.04s ->   981.68s] the Black-Scholes partial differential equation, that is that fundamental partial differential equation,
+[  981.74s ->   986.00s] but actually going about solving it. So I'm just going to show you a couple of the steps here.
+[  986.38s ->   992.38s] For the analytical solution, as we've seen above, this turns into a mess pretty darn quickly. So
+[  992.38s ->   996.82s] in the context of the geometric random variable for the fair dice roll game,
+[  997.44s ->  1002.20s] this expanded pretty aggressively, pretty quickly. I even factored out a derivative here.
+[ 1002.82s ->  1008.92s] And if you scroll on down to the Black-Scholes pricing argument, goodness gracious, we got a big
+[ 1008.92s ->  1013.06s] argument here. We're going to construct a portfolio. We're going to do a hedge. We're going to apply
+[ 1013.06s ->  1018.10s] Ito's lemma. We're going to go about deriving this fundamental partial differential equation.
+[ 1018.32s ->  1021.84s] We're going to assume no arbitrage, implying that we earn a risk-free rate.
+[ 1021.84s ->  1027.30s] And that's going to yield this Black-Scholes PDE. So I'm sorry, this wasn't even the Black-Scholes
+[ 1027.30s ->  1032.74s] PDE. This was the first step after Ito's lemma. Then after constructing the no arbitrage argument,
+[ 1032.90s ->  1038.42s] you get the PDE. Solving with the boundary condition yields the so-called Black-Scholes
+[ 1038.42s ->  1043.78s] model formula. Again, I have plenty of resources available that actually go about step-by-step
+[ 1043.78s ->  1048.44s] deriving this model. I'll link them in the description below. But nevertheless, this is the
+[ 1048.44s ->  1053.48s] analytical solution. Now, what do we know about the analytical solution? This right here,
+[ 1053.90s ->  1061.18s] this call price is equal to this closed form solution. Just as above in the dice roll game,
+[ 1061.40s ->  1069.52s] we have this closed form solution for the expectation. So what does that mean? Well, that means that we can
+[ 1069.52s ->  1079.44s] just go and get the expected value that is that fair price of the option by plugging in the parameters
+[ 1079.44s ->  1086.46s] for the option into this formula after we go about solving it analytically. But we know there's a
+[ 1086.46s ->  1091.34s] connection between the analytical price and the simulated price. And that connection is available
+[ 1091.34s ->  1097.42s] to us via the law of large numbers. That is, if I can simulate draws from a terminal distribution of the
+[ 1097.42s ->  1105.24s] stock price, then I'm going to actually be able to compute the payoff. So what I mean is, in the Monte Carlo
+[ 1105.24s ->  1110.38s] approach, what we're going to do is we're going to simulate the stock price following the dynamics of the
+[ 1110.38s ->  1117.14s] geometric Brownian motion. And what we're going to do is we're going to simulate that price to time capital T.
+[ 1117.92s ->  1124.26s] And when we do that, we can compute the payoff and discount it back to the present. And we're going to do that
+[ 1124.26s ->  1131.78s] a whole bunch of times. We're going to do that a whole bunch of times. And then what we can do is we
+[ 1131.78s ->  1138.34s] can take the average of all of those discounted payoffs. When we do that, we're going to see that
+[ 1138.34s ->  1146.28s] it converges almost surely to the true theoretical value, which is also given by this closed form
+[ 1146.28s ->  1152.24s] solution, the so-called Black-Scholes model. Now, again, that's a lot of words. Let's figure out
+[ 1152.24s ->  1157.70s] what's going on here. Well, in the context of the Bernoulli and exponential that I gave earlier,
+[ 1157.70s ->  1164.04s] I said, okay, in a Monte Carlo setting, let's fix the parameters 0.7 and 2.0, draw from the
+[ 1164.04s ->  1169.16s] distribution, and we can show that if we take the average, it'll converge to the theoretical average,
+[ 1169.28s ->  1174.26s] the theoretical expectation. Boom, that's exactly what happened. We did the exact same thing for the
+[ 1174.26s ->  1181.04s] dice roll. And we showed here that over a larger number of simulations, it begins to converge to the
+[ 1181.04s ->  1186.14s] theoretical average. Well, we're going to do the same thing, but it's a little more complicated in
+[ 1186.14s ->  1192.46s] the context of options pricing, especially using a Black-Scholes framework. What we have here is
+[ 1192.46s ->  1198.80s] not just the parameters for the option contract, but also the parameters for the stock price process.
+[ 1198.96s ->  1204.60s] We have volatility, which is going to change the dynamics of the stock price path. We have the risk-free
+[ 1204.60s ->  1210.68s] rate. We have the time to maturity of the option. We have the actual beginning underlying asset price,
+[ 1210.68s ->  1215.84s] the spot price today, the price of the asset right now, if I was to go in the market and buy it,
+[ 1215.84s ->  1220.58s] and of course, the strike price. So we have all of these different levers to pull.
+[ 1221.10s ->  1227.06s] What does that mean? That means I have to fix all of these parameters for my Monte Carlo simulation.
+[ 1227.38s ->  1232.92s] That is, I'm going to lock in the strike price, time to maturity, risk-free rate, volatility.
+[ 1233.38s ->  1238.50s] All of these things have to be locked in for my simulation. There are other models that let
+[ 1238.50s ->  1244.34s] these parameters also evolve over time, perhaps capturing more relevant stylized facts like the
+[ 1244.34s ->  1249.46s] leverage effect, volatility, clustering, so on and so forth. But those are more complicated models.
+[ 1249.56s ->  1254.10s] We can discuss those in another video. The principle remains the same even for those models.
+[ 1254.54s ->  1260.24s] Once the simulation begins, all of the fixed parameters in that set remain fixed. The things
+[ 1260.24s ->  1266.04s] that evolve over time evolve over pre-described dynamics, just like the geometric Brownian motion.
+[ 1266.04s ->  1272.22s] So what I've done here is I've conducted Monte Carlo pricing, and I've also printed the true
+[ 1272.22s ->  1278.16s] Black-Scholes price given a fixed parameter set. And what you'll see here is this is the terminal
+[ 1278.16s ->  1284.00s] stock price distribution. This is the option payoff distribution. And this over here is showing the
+[ 1284.00s ->  1291.10s] convergence of the Monte Carlo simulated price to the true Black-Scholes price given a fixed
+[ 1291.10s ->  1298.36s] parameter set. All I've done now is print the price at the end of the Monte Carlo simulation and print
+[ 1298.36s ->  1303.98s] the price given by the Black-Scholes model. And look what you have here. You have the Monte Carlo
+[ 1303.98s ->  1314.98s] price is 10.444 and the Black-Scholes price is 10.45. So it is certainly converging to that Black-Scholes
+[ 1314.98s ->  1322.14s] price. Some closing thoughts, some closing thoughts as it pertains to option pricing using
+[ 1322.14s ->  1326.90s] Monte Carlo simulation or closed form solutions like a Black-Scholes model. Analytical solutions
+[ 1326.90s ->  1334.14s] are exact. They're fast. It's very convenient. Monte Carlo methods. Yes, they are slower. You have to
+[ 1334.14s ->  1340.12s] simulate price paths, especially when models are intractable and there is no analytical solution.
+[ 1340.12s ->  1345.22s] Think of things like rough volatility. Monte Carlo methods are required to produce prices.
+[ 1345.74s ->  1352.00s] However, that's very slow, especially in the live markets when you're trying to calibrate a model to
+[ 1352.00s ->  1359.36s] say a market surface to generate prices. That is just not something that's going to be effective.
+[ 1360.20s ->  1366.14s] We need fast. We need speed. We need to be able to calibrate instantly and produce prices instantly.
+[ 1366.14s ->  1374.00s] If you're using some sort of esoteric model, then it may take too long to simulate. And by the time
+[ 1374.00s ->  1381.24s] you converge to some sort of calibrated market prices, the prices are going to change again.
+[ 1382.08s ->  1388.16s] Fortunately, there's some streams of literature using AI to try to learn the map between the parameter
+[ 1388.16s ->  1393.92s] set. That is, remember how I said you have to fix the parameters prior to simulation? Well, there's a
+[ 1393.92s ->  1399.28s] stream of literature that aims to learn these parameters relative to the terminal price that
+[ 1399.28s ->  1406.04s] was simulated and results seem encouraging in the sense that it's able to extrapolate prices relatively
+[ 1406.04s ->  1414.12s] well, making the speed of convergence much faster for these more esoteric models, maybe something like
+[ 1414.12s ->  1419.82s] a rough model family, which is particularly powerful when the analytical solutions don't exist.
+[ 1419.82s ->  1424.38s] But I've discussed this in a previous video. I'll link that in the description below as well.
+[ 1424.60s ->  1431.86s] I just wanted to connect to some other areas of the current literature in conjunction with the
+[ 1431.86s ->  1436.38s] analytical and numerical connection that we made earlier, thanks to the law of large numbers.
+[ 1436.90s ->  1442.18s] I want to thank you so much for watching this video. I hope you enjoyed. I really like making the
+[ 1442.18s ->  1449.08s] connection between analytical expectation and Monte Carlo simulated expectation, especially by taking
+[ 1449.08s ->  1455.32s] a look at the law of large numbers and what it means practically to converge almost surely to a
+[ 1455.32s ->  1462.72s] theoretical value. So that being said, thanks so much for watching. I'll see you in the next one.

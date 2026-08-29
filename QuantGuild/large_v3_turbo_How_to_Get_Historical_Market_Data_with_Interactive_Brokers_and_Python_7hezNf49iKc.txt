@@ -1,0 +1,254 @@
+[    0.46s ->    13.95s] Whether you're looking to follow along with one of my quant builds or you're just looking to backtest a trading strategy, you're going to need historical data, which means you need a data provider.
+[   13.95s ->    21.33s] I can recommend nobody else but Interactive Brokers. I've been with them for over 10 years in a trading and investing capacity.
+[   21.33s ->    40.49s] And today, we're going to walk through everything you need to do from A to Z to get set up with them and the market data subscriptions required to go about requesting historical data so you can follow along with those quant builds or get historical data for your own backtests.
+[   40.49s ->    55.49s] Now you will need some Python knowledge to get this data moving, but that's just the plumbing. If you actually want to master your quantitative skills required to build these institutional grade trading models, check out QuantGuild.com.
+[   55.49s ->    70.31s] We have over 100 hours of lecture content, an adaptive practice engine that scales with your skill level. Everything is designed to take you from student to practitioner as fast as possible.
+[   70.49s ->    75.49s] If you're interested in mastering your quantitative skills, check out QuantGuild.com.
+[   75.49s ->    82.49s] First things first, you need an Interactive Brokers account. I'll leave a link in the description below to go ahead and get started with them.
+[   82.49s ->    88.49s] Once you register for an account, you're going to need to log in and manage your market data subscriptions.
+[   88.49s ->    93.49s] Once you log in, you're going to be presented with a dashboard of your portfolio.
+[   93.49s ->   100.49s] You're going to want to head up to the upper right hand corner to the search bar and type in market data subscriptions.
+[  100.49s ->   104.49s] Once you do that, you can click on it and you'll arrive at this page.
+[  104.49s ->   110.49s] It'll show you what data you're currently subscribed to, and it'll also allow you to go ahead and configure.
+[  110.49s ->   117.49s] Once you click configure, you're going to arrive on a page that allows you to enable and disable different market data subscriptions.
+[  117.49s ->   127.49s] You have quote bundles, indices, level one, level two, fixed income, other, you have international data that you can subscribe to, so on and so forth.
+[  127.49s ->   134.49s] Now, in any case, you're going to need to maintain minimum account equity of $500.
+[  134.49s ->   143.49s] I would encourage you to deposit slightly more to give yourself a buffer when you go about purchasing these data subscriptions.
+[  143.49s ->   151.49s] Keep in mind, these data subscriptions aren't all that expensive, but you still need to maintain minimum account equity.
+[  151.49s ->   153.49s] They're only a couple of dollars.
+[  153.49s ->   159.49s] We're going to be using U.S. equity data here in to demonstrate requesting historical data.
+[  159.49s ->   166.49s] After you've registered for your Interactive Brokers account, funded it, and subscribed to the necessary market data subscriptions,
+[  166.49s ->   175.49s] whatever you would like to request historical data for, you're going to need either the IB Gateway or the Trader Workstation.
+[  175.49s ->   180.49s] We're going to use the Trader Workstation just because it has a UI component.
+[  180.49s ->   191.49s] If you head on over to the Trader Workstation download page, you can click on Get TWS, and then you can install it for your operating system.
+[  191.49s ->   200.49s] Once you do that, you can open up the Trader Workstation application, head on over to Paper Trading, and you can log in with your account credentials.
+[  200.49s ->   208.49s] And we can head on over to Trader Workstation to prepare it for requesting data from Python.
+[  208.49s ->   213.49s] As you can see here, I've successfully logged into the Trader Workstation on the paper trading version.
+[  213.49s ->   219.49s] You can see this is not a brokerage account. This is a paper trading account for simulated trading.
+[  219.49s ->   225.49s] Now we want to ensure that the Python API can connect to the Trader Workstation.
+[  225.49s ->   233.49s] To do that, I'm going to go in the upper right hand corner, click on the settings wheel, and it's going to open up the settings page.
+[  233.49s ->   243.49s] I'm going to head on over to API, settings, and then I'm going to enable ActiveX and socket clients.
+[  243.49s ->   250.49s] If I want to place trades through the API, I'm going to disable the read-only API.
+[  250.49s ->   257.49s] Once I've done that, I will verify my socket port for the paper trading. It defaults to 7497.
+[  257.49s ->   267.49s] I can go ahead and click apply. Okay. And now I have everything that I need to go about requesting historical data in Python.
+[  267.49s ->   272.49s] The steps to requesting historical market data are actually incredibly simple.
+[  272.49s ->   279.49s] The first thing we have to do is import the necessary libraries. This includes the IB API class.
+[  279.49s ->   290.49s] Next, we have to create a class for the IB API. So we have a place to request data from and the server has a place to send it to.
+[  290.49s ->   295.49s] Then we create a function to actually get the historical data.
+[  295.49s ->   303.49s] And lastly, we initialize and run the application in which we will request the data from the server.
+[  303.49s ->   310.49s] The server will respond with the historical data and we will, of course, save it to the CSV file.
+[  310.49s ->   315.49s] Now for the required libraries, you may need to run a pip install.
+[  315.49s ->   322.49s] You can run a pip install IB API to get the interactive brokers API.
+[  322.49s ->   331.49s] And you will need pandas, which comes with a variety of dependencies, but you can run pip install pandas if you don't already have it.
+[  331.49s ->   337.49s] Once you have the required libraries, you are ready to go ahead and get started coding.
+[  337.49s ->   344.49s] Starting with our imports, we are going to first import time so we can manage the dates of our requests.
+[  344.49s ->   350.49s] Then we're going to need to import pandas as PD so we can save the data in a structured way.
+[  350.49s ->   355.49s] We'll say from IB API client import the client.
+[  355.49s ->   360.49s] This is so our Python application can make a request to the trader workstation.
+[  360.49s ->   365.49s] Now the trader workstation needs a place to send the response to that request.
+[  365.49s ->   372.49s] So we'll save from IB API dot wrapper import e wrapper.
+[  372.49s ->   376.49s] The last thing we need from the IB API is a contract.
+[  376.49s ->   382.49s] This is so we can specify the security to request historical data for.
+[  382.49s ->   388.49s] I'll save from IB API dot contract import contract.
+[  388.49s ->   397.49s] Now we're just going to need threading so we can run the main loop to actually receive the data from the server.
+[  397.49s ->   401.49s] And then once we reach the data end, we can close everything down.
+[  401.49s ->   404.49s] So I'll say from threading import thread.
+[  404.49s ->   406.49s] That's everything we need there.
+[  406.49s ->   411.49s] We can move on now to creating a class for the interactive brokers API.
+[  411.49s ->   413.49s] What does this actually look like?
+[  413.49s ->   416.49s] Well, we have the client and the e wrapper.
+[  416.49s ->   420.49s] The client will allow us to request from the trader workstation.
+[  420.49s ->   426.49s] The e wrapper is where the trader workstation is going to send the response to that request.
+[  426.49s ->   430.49s] So I'm going to put both of those in one class.
+[  430.49s ->   434.49s] I'm going to say class IBKR app.
+[  434.49s ->   439.49s] This is going to have a wrapper and a client as parent classes.
+[  439.49s ->   442.49s] And then I'm just going to create a basic constructor.
+[  442.49s ->   459.49s] So I'm going to in this constructor initialize with a client and I'm going to call a client's constructor and say, hey, this is going to be the place where we can both make requests and receive requests.
+[  459.49s ->   461.49s] Fair enough.
+[  461.49s ->   464.49s] Self dot data is going to be an empty list.
+[  464.49s ->   468.49s] This is where we're going to actually store the historical data.
+[  468.49s ->   477.39s] And then I'll just have a flag self dot finished for when the historical data has come to an end.
+[  477.39s ->   481.39s] Now, the historical data request that we're going to make is a part of the e client.
+[  481.39s ->   484.39s] But the e wrapper is where all of the action happens.
+[  484.39s ->   489.39s] This is where the trader workstation is going to send back the actual bar data.
+[  489.39s ->   491.39s] So where does it send it to?
+[  491.39s ->   498.39s] It sends it to this callback method, historical data, def historical data.
+[  498.39s ->   507.77s] It is going to call back with the request ID from the e client request and the bar.
+[  507.77s ->   514.77s] So all we're going to do then is add the bar data to our list.
+[  514.77s ->   517.77s] So we will say self dot data dot append.
+[  517.77s ->   519.77s] We can create a dictionary here.
+[  519.77s ->   523.77s] We'll say date time is going to map to bar dot date.
+[  523.77s ->   535.32s] We can say open is going to map to shocker bar dot open close is going to map to bar dot close.
+[  535.32s ->   538.92s] Same for high.
+[  538.92s ->   542.42s] Same for low.
+[  542.42s ->   545.42s] And of course, same for close.
+[  545.42s ->   550.31s] If we'd like to, we can also include volume.
+[  550.31s ->   556.24s] And that's just going to be bar dot volume.
+[  556.24s ->   561.24s] So this is exactly where the trader workstation is going to send the data.
+[  561.24s ->   565.24s] Once we've stored it in this list, we're pretty much done.
+[  565.24s ->   572.24s] We can go ahead and fetch that list from the IBKR app class, our instance of the class,
+[  572.24s ->   577.24s] and then we can convert it into a pandas data frame and save it.
+[  577.24s ->   580.24s] How do we know when the historical data request is complete?
+[  580.24s ->   582.24s] Well, there's another callback method for this.
+[  582.24s ->   585.24s] It's called again, shocker historical data.
+[  585.24s ->   591.24s] And if I say death historical data, and it's going to take a rec ID.
+[  591.24s ->   594.24s] This is the initial request from the client.
+[  594.24s ->   597.24s] It's going to have a start and an end date.
+[  597.24s ->   605.24s] And what I'm going to do once this callback method is pinged is just set that flag finished to true.
+[  605.24s ->   613.24s] This means that we have successfully pulled all of the data for the date range that we have requested for.
+[  613.24s ->   619.24s] Now, the last thing we're going to do is create a function to start the app.
+[  619.24s ->   622.24s] I'm going to say def run loop.
+[  622.24s ->   628.24s] This is going to take an app as an input, and I'm just going to call app dot run.
+[  628.24s ->   633.24s] This is going to be the target of our thread.
+[  633.24s ->   640.24s] Now we have everything we need to create the main function to get the historical data itself.
+[  640.24s ->   645.24s] I'm going to make a generic function here called get equity data.
+[  645.24s ->   647.24s] I'll say def get equity data.
+[  647.24s ->   650.24s] It's going to take a ticker as an input.
+[  650.24s ->   656.24s] So I'm just going to say symbol is equal to and I'll just default to Nvidia.
+[  656.24s ->   663.24s] The first thing we have to do within this function is create an instance of that IBK our app class.
+[  663.24s ->   667.24s] So I'm going to say app is equal to IBK our app.
+[  667.24s ->   669.24s] I'm going to say app dot connect.
+[  669.24s ->   673.24s] This is going to allow me to connect to the trader workstation.
+[  673.24s ->   681.24s] It's on the local host so one two seven dot zero dot zero dot one port seven four nine seven like we saw earlier.
+[  681.24s ->   683.24s] Then I can set a client ID.
+[  683.24s ->   688.24s] You can specify a master client ID in your trader workstation settings if you would like.
+[  688.24s ->   692.24s] I'm just going to set it to one two three.
+[  692.24s ->   694.24s] Now I need to create the main API thread.
+[  694.24s ->   701.60s] I'm going to say API thread is equal to thread.
+[  701.60s ->   705.60s] And now my target is going to be that run loop.
+[  705.60s ->   706.60s] What are the arguments?
+[  706.60s ->   708.60s] Well, it's going to be the app.
+[  708.60s ->   711.60s] The app is going to run on that thread.
+[  711.60s ->   717.60s] Now I'm going to say API thread dot start and I will have time dot sleep to one.
+[  717.60s ->   721.60s] So we're going to wait one second while that app starts.
+[  721.60s ->   725.60s] I'm going to make a generic function here called get equity data.
+[  725.60s ->   730.60s] I'll say def get equity data as an input.
+[  730.60s ->   731.60s] I'll take a symbol.
+[  731.60s ->   738.60s] In this case, we could have maybe Apple Nvidia anything that's considered an equity security.
+[  738.60s ->   743.60s] And I'm just going to default to Nvidia if no symbol is provided.
+[  743.60s ->   748.60s] The first thing we have to do is initialize that class that we created above.
+[  748.60s ->   751.60s] I'm going to say app is equal to IBK our app.
+[  751.60s ->   755.60s] And now I need to connect to the trader workstation.
+[  755.60s ->   758.60s] So I'll say app dot connect.
+[  758.60s ->   765.60s] And I'm going to connect to the local host on poor seven, four, nine, seven, like we saw earlier.
+[  765.60s ->   770.60s] And I will specify a client ID in your settings.
+[  770.60s ->   772.60s] You can specify a master client ID.
+[  772.60s ->   776.60s] If you have multiple applications connecting to the trader workstation.
+[  776.60s ->   780.60s] In this case, I'm just going to leave it as one, two, three.
+[  780.60s ->   782.88s] Now we need to create a thread.
+[  782.88s ->   786.88s] So I'm going to say API thread is equal to thread.
+[  786.88s ->   789.88s] The target is going to be that run loop.
+[  789.88s ->   792.88s] This run loop that we created earlier.
+[  792.88s ->   793.88s] What is the argument?
+[  793.88s ->   797.88s] Well, the argument is going to be our IBK our app.
+[  797.88s ->   803.14s] So I'm going to say args is equal to app.
+[  803.14s ->   812.14s] This is going to allow me to continue to process information in that IBK our app as the program continues to run.
+[  812.14s ->   819.14s] So now I'm going to say API thread dot start and I will sleep for one second.
+[  819.14s ->   827.14s] So I'm just going to wait one second while that initializes before continuing on to make that data request.
+[  827.14s ->   833.14s] So now to make the data request, we're going to need to specify a contract.
+[  833.14s ->   838.14s] So what I'll do is I'll say contract is equal to a new contract.
+[  838.14s ->   844.14s] I'll say contract dot symbol is equal to whatever symbol we provided this function.
+[  844.14s ->   847.14s] The default is going to be NVIDIA.
+[  847.14s ->   853.00s] The security type in this case is going to be, of course, a stock.
+[  853.00s ->   857.32s] The exchange, we will leave it as smart.
+[  857.32s ->   865.15s] And the currency is going to be USD.
+[  865.15s ->   870.69s] So we've now specified the security that we are requesting historic data for.
+[  870.69s ->   873.69s] We can move on to the actual request itself.
+[  873.69s ->   875.69s] First, we're going to specify an end time.
+[  875.69s ->   879.69s] This is effectively where the historical data request is going to start.
+[  879.69s ->   882.69s] So I'm going to say end time is equal to time dot.
+[  882.69s ->   885.69s] We're going to string format time.
+[  885.69s ->   888.69s] This is going to get right now in a pretty standard format.
+[  888.69s ->   890.69s] We're going to go years, months, days.
+[  890.69s ->   894.69s] Then we're going to have hours, minutes and seconds.
+[  894.69s ->   897.69s] Now we can go ahead and create that request.
+[  897.69s ->   905.69s] I'm going to say from the IBK our app that we already initialized app dot rec historical data.
+[  905.69s ->   910.69s] This is a method within the E client class.
+[  910.69s ->   914.69s] We're inheriting this in the IBK our app.
+[  914.69s ->   923.69s] This is where we're going to be able to make requests to the server for historical data to place trades to get portfolio information.
+[  923.69s ->   925.69s] So on and so forth.
+[  925.69s ->   929.69s] In this case, we're, of course, using it to request historical data.
+[  929.69s ->   930.69s] So what are the arguments?
+[  930.69s ->   934.69s] Well, every single request is going to have a request ID.
+[  934.69s ->   941.69s] This is so when the creator workstation responds to our Python application, it can link it to a request.
+[  941.69s ->   943.69s] So we have the rec ID.
+[  943.69s ->   951.69s] The contract that we're specifying this request for is given by that contract object that we've already created.
+[  951.69s ->   955.69s] Now we're going to specify the end date time.
+[  955.69s ->   958.69s] This is where the historical request is going to start.
+[  958.69s ->   964.69s] Now we get to set the look back period effectively from this end time.
+[  964.69s ->   966.69s] How far back should we look?
+[  966.69s ->   968.69s] I'm going to go back one year.
+[  968.69s ->   976.59s] And then what size should we look at in terms of the bars daily hourly minutely?
+[  976.59s ->   978.59s] It's entirely up to us.
+[  978.59s ->   979.59s] There are rate limits.
+[  979.59s ->   980.59s] Do you keep that in mind?
+[  980.59s ->   984.59s] But for the bar size settings here, I'm just going to look at one day.
+[  984.59s ->   986.59s] What should we show?
+[  986.59s ->   989.59s] In this case, we're just going to show trades.
+[  989.59s ->   992.59s] Do I want to use regular trading hours?
+[  992.59s ->   993.59s] Yes.
+[  993.59s ->   996.59s] Do I want to format the date as a string?
+[  996.59s ->   997.59s] I sure do.
+[  997.59s ->   999.59s] Do I want to keep it up to date?
+[  999.59s ->  1002.59s] No, I'm just going to leave that as false.
+[ 1002.59s ->  1009.59s] And I'm just going to leave an empty list because I have no chart options to specify.
+[ 1009.59s ->  1017.59s] This is the formal request that we're making to the trader workstation from the e-client for historical data.
+[ 1017.59s ->  1023.59s] And we already have a place for it to respond to this method here, the historical data method.
+[ 1023.59s ->  1026.59s] As you can see, it's going to respond with the request ID.
+[ 1026.59s ->  1029.59s] In this case, it's going to be request ID one.
+[ 1029.59s ->  1031.59s] And what is it going to give us?
+[ 1031.59s ->  1038.59s] Well, each bar is going to be one day and it's going to go back one year from this end time.
+[ 1038.59s ->  1045.59s] Now we just need to wait for the data to come in, save it as a CSV file, and then run this application.
+[ 1045.59s ->  1048.59s] And we will be able to request historical data.
+[ 1048.59s ->  1054.59s] So what I'm going to do is I'm just going to say while not app dot finished, we're just going to wait.
+[ 1054.59s ->  1057.59s] I'll say time dot sleep point five.
+[ 1057.59s ->  1072.59s] And then once we have successfully completed the historical data request, remember the only way for that finished flag to be set to true is if the trader workstation tells us it has successfully fulfilled that historical data request.
+[ 1072.59s ->  1084.59s] Then I'm going to be able to disconnect from the trader workstation with app dot disconnect, and I will be able to format the data into a data frame and save it.
+[ 1084.59s ->  1090.59s] I'll say DF is equal to pandas data frame app dot data.
+[ 1090.59s ->  1092.59s] I'm going to say DF return.
+[ 1092.59s ->  1098.59s] We can create a return column is equal to DF close dot percent change.
+[ 1098.59s ->  1106.88s] And then I'm just going to drop NA because that first row is not going to have anything to compute the percent change from.
+[ 1106.88s ->  1110.88s] So I'll say DF is equal to DF dot drop NA.
+[ 1110.88s ->  1114.88s] Subset is going to be that return column.
+[ 1114.88s ->  1119.88s] And then now I'm just going to format it with the necessary columns.
+[ 1119.88s ->  1121.88s] DF is equal to DF.
+[ 1121.88s ->  1126.88s] We're going to have our open high low close volume return and the date time.
+[ 1126.88s ->  1129.88s] So what we can do is we can actually put this in one string.
+[ 1129.88s ->  1130.88s] I'll say date time.
+[ 1130.88s ->  1136.88s] I will say open high low close volume.
+[ 1136.88s ->  1138.88s] And then we also want return.
+[ 1138.88s ->  1141.88s] I'll say dot split on that comma.
+[ 1141.88s ->  1146.35s] Those are all of the columns that we're going to save.
+[ 1146.35s ->  1149.35s] I'll say DF dot to CSV.
+[ 1149.35s ->  1154.35s] In this case, we're just going to save it as stock data dot CSV.
+[ 1154.35s ->  1159.35s] If you wanted to, you could format this to also include the symbol.
+[ 1159.35s ->  1167.96s] Then we're going to set the index to false and we will just return the data frame.
+[ 1167.96s ->  1171.96s] That's going to do it for this get equity data function.
+[ 1171.96s ->  1174.96s] Now we can just run this application.
+[ 1174.96s ->  1183.72s] I'll say if name is equal to main, we're just going to say get equity data.
+[ 1183.72s ->  1187.72s] And in this case, we will use, let's say, Apple.
+[ 1187.72s ->  1188.72s] Now we have everything we need.
+[ 1188.72s ->  1192.72s] Let's give it a run and see if we can fetch some historical data.
+[ 1192.72s ->  1195.72s] It wouldn't be a live coding video without some debugging.
+[ 1195.72s ->  1201.72s] If we take a look at this data frame, I'm trying to select these columns, but I have parentheses.
+[ 1201.72s ->  1203.72s] I'm treating it as a function.
+[ 1203.72s ->  1205.72s] That is not what we're trying to do here.
+[ 1205.72s ->  1209.72s] We are trying to select the columns from this data frame.
+[ 1209.72s ->  1214.72s] So instead of parentheses, I should be using brackets scrolling on up here.
+[ 1214.72s ->  1219.72s] If we look at the contract where we specify the currency, I say contract.usd.
+[ 1219.72s ->  1222.72s] This should be contract.currency.
+[ 1222.72s ->  1228.72s] Now, if we give this a run here, we should successfully request that data.
+[ 1228.72s ->  1231.72s] If I open up the CSV file that was saved,
+[ 1231.72s ->  1239.72s] you can see that I have successfully queried Apple data going back a year from that end time.
+[ 1239.72s ->  1242.72s] And that's going to do it for this video on how to get historical data
+[ 1242.72s ->  1244.72s] with interactive brokers and Python.
+[ 1244.72s ->  1245.72s] I hope you enjoyed.
+[ 1245.72s ->  1246.72s] I hope you learned something.
+[ 1246.72s ->  1249.72s] This video certainly took a lot of effort to put together.
+[ 1249.72s ->  1251.72s] So if you enjoyed it and you want to see more like it in the future,
+[ 1251.72s ->  1253.72s] please like comment, subscribe, share.
+[ 1253.72s ->  1255.72s] It helps me out tremendously.
+[ 1255.72s ->  1257.72s] It's always greatly appreciated.
+[ 1257.72s ->  1262.72s] If you'd like to master your quantitative skills for trading and market making roles,
+[ 1262.72s ->  1265.72s] check out quant guild.com.
+[ 1265.72s ->  1271.72s] Other than that, I want to thank you so much for watching and I'll see you in the next video.

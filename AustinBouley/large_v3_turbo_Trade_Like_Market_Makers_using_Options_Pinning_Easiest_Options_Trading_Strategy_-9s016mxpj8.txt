@@ -1,0 +1,102 @@
+[    0.82s ->     2.78s] Hey guys, it's Austin Billy with Options Traders.
+[    2.78s ->     7.94s] Today we're going to talk about the black magic or the magic involved with market makers
+[    7.94s ->     9.78s] that affect the stock price.
+[    9.78s ->    13.66s] So this is called options pinning or max pinning and today I'm going to show you a perfect
+[   13.66s ->    18.12s] example of what option pinning is and how you can make a considerable amount of money
+[   18.12s ->    22.98s] off it when you're day trading options or if you're just doing spreads or strangles
+[   22.98s ->    25.84s] or any other type of option strategy.
+[   25.84s ->    30.42s] So I have this buy pulled up right now but what I'm going to be talking about is Apple.
+[   30.42s ->    33.41s] I hope this pulls up, okay perfect.
+[   33.41s ->    37.59s] So this is Wednesday's trading, this is the end of Wednesday's trading here.
+[   37.59s ->    42.29s] On Wednesday I went on to the website that I'll link below and it showed me, let's see
+[   42.29s ->    44.91s] if I can pull it up here, it showed me this.
+[   44.91s ->    51.11s] So Apple it said because, so the way that option pinning works is that the market makers in
+[   51.11s ->    58.01s] order to be profitable need to keep a stock within a certain price range.
+[   58.01s ->    64.15s] And of course this isn't manipulation because the market makers aren't really manipulating
+[   64.15s ->    65.15s] something.
+[   65.15s ->    69.69s] They just have so much money that they're allowed that when they buy and sell stuff they move
+[   69.69s ->    70.95s] the market.
+[   70.95s ->    75.61s] So like if they want it to go down and they have enough money to sell the crap out of like
+[   75.61s ->    81.95s] a stock and by selling it over and over and so much they're causing the stock to go down
+[   81.95s ->    84.19s] into a certain range that they wanted.
+[   84.19s ->    92.61s] So on Apple with this strike price or this expiration price it gave us a strike price of around 170
+[   92.61s ->    94.39s] here.
+[   94.39s ->    99.35s] And then this one is SPY and it gave us around 269.
+[   99.35s ->   104.01s] So now that's what I researched on Wednesday however the options pinning changes every single
+[  104.01s ->   106.01s] day.
+[  106.01s ->   111.13s] But on this example I researched it on Wednesday and it usually doesn't change that much.
+[  111.13s ->   115.45s] Now if you want to do options pinning the key to it is to make sure that the stock that
+[  115.45s ->   121.73s] you want to options pin or trade the options pinning on make sure that it is super liquid
+[  121.73s ->   126.73s] because the market makers are smart and they only trade the big name stocks such as Google,
+[  126.73s ->   134.99s] Apple, sometimes Tesla, SPY, SPX, they trade those huge things because it's liquid and they
+[  134.99s ->   141.13s] have a huge amount of shares or options so that they need it to manipulate it in that order.
+[  141.13s ->   147.85s] So Apple, this is the end of day Wednesday, I researched the pinning and it showed a projected
+[  147.85s ->   159.85s] of 170 or 167 to 170 so let's look at it here.
+[  159.85s ->   166.39s] Wednesday it's at 178 so I'm not saying to base your trades 100% off options pinning,
+[  166.39s ->   171.11s] I would just base one day off of it but if you wanted to do like a strangle or a straddle
+[  171.11s ->   177.05s] trade here you could strangle it in between this range here if you wanted to but let's
+[  177.05s ->   179.43s] just watch how it played out.
+[  179.43s ->   186.83s] So Wednesday here it's at 179, 178 it's bouncing between that range and we have a projected move
+[  186.83s ->   193.33s] on Friday for the stock to close between 167 and 170.
+[  193.33s ->   200.27s] So we have this nice sell off on Thursday and then Friday we just have this final continuation
+[  200.27s ->   201.27s] lower.
+[  201.27s ->   202.65s] So now how would I have traded this?
+[  202.65s ->   206.85s] Well since I'm a day trader with options I would have seen that we're having this huge
+[  206.85s ->   207.85s] sell off.
+[  207.85s ->   214.21s] We broke through this major support level during pre-market hours and we're continuing
+[  214.21s ->   215.65s] to have this sell off.
+[  215.65s ->   219.05s] I would have waited for the first 15 minutes of the day.
+[  219.05s ->   224.49s] It would have pulled up this candle, got rejected by the EMA and would have been a continuation
+[  224.49s ->   225.49s] downward.
+[  225.49s ->   228.37s] I would have bought a put and it would have had this nice run down.
+[  228.37s ->   235.01s] Your exit would be the 167 level or just hold it to the next support level.
+[  235.01s ->   236.55s] That is how you would have traded the options.
+[  236.55s ->   238.99s] Now this is just a perfect example.
+[  238.99s ->   245.39s] Research on Wednesday we're at the 179 level and market makers based on the options pinning
+[  245.39s ->   252.63s] and Max Payne need to be around the 167 area and we saw on Thursday a nice little push down
+[  252.63s ->   257.51s] and on Friday a huge drop down to that 167 level that we were looking for.
+[  257.51s ->   258.51s] Now let's look at SPY.
+[  258.51s ->   263.27s] I projected on Wednesday to a 269 level.
+[  263.27s ->   264.27s] So that was projected on Wednesday.
+[  264.27s ->   269.27s] So Wednesday we're looking at a 271 is the current trading price.
+[  269.27s ->   278.59s] And it went down, it dropped on Thursday down past 269 down to 268 almost, yeah, it hit 268
+[  278.59s ->   280.63s] and then it went up, it retested this level.
+[  280.63s ->   285.63s] We know it's Friday so it's going to stay somewhere in this 268 level and ended up dropping further
+[  285.63s ->   286.63s] down.
+[  286.63s ->   287.63s] Okay?
+[  287.63s ->   293.03s] So how can we tell what exactly, which option, which pinning is going to work the best?
+[  293.03s ->   294.91s] Let's just go back to this example.
+[  294.91s ->   299.53s] So as I stated, we want huge options volume and huge open interest.
+[  299.53s ->   307.05s] We want it to be a big name stock and we want it to show a perfect, so this is showing how
+[  307.05s ->   310.97s] much people will lose money if it settles on this side, how much people will lose money
+[  310.97s ->   313.11s] if it settles on this side.
+[  313.11s ->   314.91s] So we go straight down the middle here.
+[  314.91s ->   321.23s] I don't know all the math that it uses to calculate this, but this is basically what
+[  321.23s ->   324.41s] the market makers need the stock to be at.
+[  324.41s ->   330.39s] So Apple was projected to be a 267, 270.
+[  330.39s ->   336.35s] So the reason why Apple, in my opinion, worked so good is because look how flat down that
+[  336.35s ->   337.29s] curve went.
+[  337.29s ->   340.97s] It dropped lower than 269 on SPY, which is this one.
+[  340.97s ->   341.97s] Why?
+[  341.97s ->   343.61s] Because look how wide this is.
+[  343.61s ->   349.55s] The variance is, there's basically a lot of people can make money in this situation.
+[  349.55s ->   350.85s] So it's way up high.
+[  350.85s ->   352.85s] We don't have that curve down.
+[  352.85s ->   355.83s] This one, we have that clear defined curve in my opinion.
+[  355.83s ->   356.83s] That is why Apple works the best.
+[  356.83s ->   358.83s] So hopefully y'all can take this.
+[  358.83s ->   364.01s] Use the website, put in the ticker name on the top and put in your expiration date and
+[  364.01s ->   368.57s] slowly start to record each day what it's saying that it should expire on, like what
+[  368.57s ->   370.81s] the range is that it should expire on.
+[  370.81s ->   371.81s] Watch it.
+[  371.81s ->   376.81s] Do your own due diligence on it and see if you can turn this into a strategy.
+[  376.81s ->   384.31s] Me and I don't know his name, but someone from the discord chat under the username success,
+[  384.31s ->   389.35s] we have been tracking these stocks that follow the best options pinnings and we're trying
+[  389.35s ->   390.79s] to make a strategy out of it.
+[  390.79s ->   393.79s] So if you think that's cool, follow the YouTube channel.
+[  393.79s ->   398.33s] Give it a like, give it a comment, give it a subscribe.
+[  398.33s ->   401.59s] If you disliked it, then dislike it and tell me why.
+[  401.59s ->   405.31s] But the options discord link is below and the link to this website is below.
+[  405.31s ->   406.31s] I hope you enjoyed it.
+[  406.31s ->   411.27s] I hope you can learn something and learn to capitalize on the market maker's moves in the market.
+[  411.27s ->   414.67s] Alright, y'all have a good one and have success trading in these markets.

@@ -1,0 +1,146 @@
+<!-- tradingview-pine-id: PUB;859a8f20fcc445859b268eae98381d45 -->
+<!-- tradingviewscripts-format: 1 -->
+# COT Commercial Hedger Extreme
+
+Source: https://www.tradingview.com/script/aImvUeLQ-COT-Commercial-Hedger-Extreme/
+
+## Description
+
+In commodities, the crowd and the smart money sit on opposite sides of the same report every week. The Commitment of Traders breaks open interest into commercials -- the producers, merchants and processors who hedge physical -- and large speculators, who are mostly trend-following money. The commercials are the ones who actually touch the barrel, the bushel, the bar. When they move to an extreme, it pays to listen.
+
+The pattern that marks real commodity bottoms is simple to say and hard to wait for: commercial hedgers covering shorts en masse, from a multi-year net-short extreme, and curling back toward flat or net long. That is the producers deciding price has fallen far enough that they no longer need to hedge aggressively. It happened at the 2008 low, it happened into the 2018-19 lows, and I used this exact tell to call the September 2022 gold bottom near $1,640 in real time on TradingView. Gold peaked above $5,500 in January 2026, a move of more than 200% from that low.
+
+This indicator puts that read on your chart.
+
+The colored net line is the commercial position: red when they're at an extreme and still pressing shorts (no bottom), yellow when they start covering up off that extreme, green when they curl to flat or net long (the bottom tell). A triangle marks the first week they begin covering, a diamond marks the cross to net long. The blue line is large speculators for context -- they are usually heaviest long right as commercials are heaviest short, which is the whole point. Optional small-trader line too.
+
+The dashboard shows commercial net, where it sits in its multi-year percentile, the spec and small-trader nets, and whether covering is underway. Alerts fire when hedgers start covering and when they flip toward net long.
+
+Works on any futures with a CFTC code -- gold, silver, copper, oil, grains, even the index futures. Set the code in the settings to match the contract you're charting. Default is gold.
+
+One read in isolation is a tell, not a trigger. I pair it with trend and price structure -- it tells you the tank is full of fuel, not that the match is lit. But when commercials cover their shorts, I want to know.
+
+---
+
+## Source Code
+
+````pine
+// This Pine Script(tm) v6 indicator is subject to the Terms of Use:
+// https://www.tradingview.com/pine-script-reference/v6/
+// COT Commercial Hedger Extreme v1.0
+// Tracks Commitment of Traders commercial (producer / hedger) net position and
+// flags the classic commodity-bottom tell: hedgers covering shorts en masse
+// from a multi-year extreme and curling toward flat / net long. Commercials are
+// the producers and merchants who hedge physical -- the smart money in
+// commodities. When they stop pressing shorts and start covering, bottoms form.
+
+//@version=6
+indicator("COT Commercial Hedger Extreme", overlay = false, precision = 0)
+import TradingView/LibraryCOT/4 as cot
+
+// ── Inputs ──────────────────────────────────────────────────────────────────
+grp_data = "COT Data  (see VERIFY note in code)"
+includeOpt = input.bool(true, "Include options  (on = futures + options combined, off = futures only)", group = grp_data)
+manualCode = input.string("088691", "CFTC code  (088691 Gold, 084691 Silver, 085692 Copper, 067651 WTI, 13874A E-mini S&P)", group = grp_data)
+reportTF   = input.string("1W", "COT report timeframe", group = grp_data)
+
+grp_sig  = "Bottom-Tell Logic"
+lookback   = input.int(156,  "Extreme percentile lookback (weeks)", minval = 52, maxval = 520, group = grp_sig)
+smoothLen  = input.int(1,    "Net smoothing (weeks)",               minval = 1,  maxval = 12,  group = grp_sig)
+extremePct = input.float(20, "Net-short extreme percentile",        minval = 1,  maxval = 49,  group = grp_sig)
+recentWin  = input.int(26,   "Recent-extreme memory (weeks)",       minval = 4,  maxval = 104, group = grp_sig)
+coverLook  = input.int(4,    "Covering momentum window (weeks)",    minval = 1,  maxval = 26,  group = grp_sig)
+
+grp_ctx  = "Context lines"
+showSpec  = input.bool(true,  "Show large speculators (noncommercial) net", group = grp_ctx)
+showSmall = input.bool(false, "Show small traders (nonreportable) net",     group = grp_ctx)
+
+grp_disp = "Display"
+showBg    = input.bool(true, "Color background by state", group = grp_disp)
+showTable = input.bool(true, "Show dashboard table",      group = grp_disp)
+
+// ── COT data ────────────────────────────────────────────────────────────────
+// ⚠️ VERIFY THIS BLOCK ON-PLATFORM ⚠️
+// These 6 series use the official TradingView/COT/3 library. If the script
+// red-lines on COTTickerid, open the library reference (Pine Editor: the
+// "import TradingView/COT/3" line is clickable) and match the current argument
+// order. EVERYTHING below is independent of how these series are fetched --
+// only this block needs confirming. If auto data is wrong, the most common fix
+// is the CFTC code input above (it must match the chart's underlying future).
+f_cot(simple string typ, simple string dir) =>
+    request.security(cot.COTTickerid("Legacy", manualCode, includeOpt, typ, dir, "All"), reportTF, close, ignore_invalid_symbol = true)
+
+commLong   = f_cot("Commercial Positions",    "Long")
+commShort  = f_cot("Commercial Positions",    "Short")
+specLong   = f_cot("Noncommercial Positions", "Long")
+specShort  = f_cot("Noncommercial Positions", "Short")
+smallLong  = f_cot("Nonreportable Positions", "Long")
+smallShort = f_cot("Nonreportable Positions", "Short")
+
+commNetRaw = commLong - commShort
+specNet    = specLong - specShort
+smallNet   = smallLong - smallShort
+commNet    = smoothLen > 1 ? ta.sma(commNetRaw, smoothLen) : commNetRaw
+
+// ── Bottom-tell logic ───────────────────────────────────────────────────────
+// Low percentile = hedgers historically very net SHORT (no bottom yet).
+// The tell: they cover from that extreme and curl toward flat / net long.
+netPct      = ta.percentrank(commNet, lookback)
+coveringMom = commNet - commNet[coverLook] > 0           // net rising = covering shorts
+wasExtreme  = ta.lowest(netPct, recentWin) <= extremePct  // hit a net-short extreme recently
+
+stAdding   = netPct <= extremePct and not coveringMom    // at extreme, still pressing shorts
+stCovering = wasExtreme and coveringMom and commNet <= 0 // covering up from extreme, still net short
+stFlat     = wasExtreme and commNet > 0                  // curled to flat / net long
+stState    = stFlat ? 3 : stCovering ? 2 : stAdding ? 1 : 0
+
+stCol = stState == 3 ? color.green : stState == 2 ? color.yellow : stState == 1 ? color.red : color.gray
+stStr = stState == 3 ? "BOTTOM TELL" : stState == 2 ? "COVERING - WATCH" : stState == 1 ? "STILL ADDING" : "NEUTRAL"
+
+evWatch   = stCovering and not stCovering[1]
+evConfirm = ta.crossover(commNet, 0)
+evAdding  = stAdding and not stAdding[1]
+
+// ── Plots ───────────────────────────────────────────────────────────────────
+plot(commNet, "Commercial Net (fill)", color = color.new(stCol, 55), style = plot.style_area)
+plot(commNet, "Commercial Net",        color = color.new(stCol, 0),  linewidth = 2)
+plot(showSpec  ? specNet  : na, "Large Specs Net",   color = color.new(color.blue, 25),   linewidth = 1)
+plot(showSmall ? smallNet : na, "Small Traders Net", color = color.new(color.orange, 35), linewidth = 1)
+hline(0, "Flat", color = color.new(color.gray, 40), linestyle = hline.style_solid)
+
+plotshape(evWatch,   "Covering from extreme", shape.triangleup,   location.bottom, color.new(color.yellow, 0), size = size.small)
+plotshape(evConfirm, "Curled to net long",    shape.diamond,      location.bottom, color.new(color.green, 0),  size = size.small)
+plotshape(evAdding,  "Adding into extreme",   shape.triangledown, location.top,    color.new(color.red, 0),    size = size.tiny)
+
+bgcolor(showBg and stState != 0 ? color.new(stCol, 90) : na)
+
+// Visible diagnostic if no COT data comes back (helps confirm the wiring)
+if barstate.islast and na(commNet)
+    label.new(bar_index, 0, "No COT data -- check CFTC code / library wiring", style = label.style_label_left, color = color.new(color.red, 0), textcolor = color.white, size = size.small)
+
+// ── Dashboard table ─────────────────────────────────────────────────────────
+if showTable and barstate.islast
+    var table t = table.new(position.top_right, 2, 6, border_width = 1, bgcolor = color.new(color.black, 20), border_color = color.new(color.gray, 60))
+    table.cell(t, 0, 0, "COT COMMERCIAL", text_color = color.white, text_size = size.normal, bgcolor = color.new(stCol, 0))
+    table.cell(t, 1, 0, stStr, text_color = color.white, text_size = size.normal, bgcolor = color.new(stCol, 0))
+
+    table.cell(t, 0, 1, "Comm Net", text_color = color.gray, text_size = size.small)
+    table.cell(t, 1, 1, str.tostring(commNet, "#"), text_color = commNet > 0 ? color.green : color.red, text_size = size.small)
+
+    table.cell(t, 0, 2, "Net %ile", text_color = color.gray, text_size = size.small)
+    table.cell(t, 1, 2, str.tostring(netPct, "#.#") + "%", text_color = netPct <= extremePct ? color.red : color.white, text_size = size.small)
+
+    table.cell(t, 0, 3, "Large Specs", text_color = color.gray, text_size = size.small)
+    table.cell(t, 1, 3, str.tostring(specNet, "#"), text_color = color.blue, text_size = size.small)
+
+    table.cell(t, 0, 4, "Small Traders", text_color = color.gray, text_size = size.small)
+    table.cell(t, 1, 4, str.tostring(smallNet, "#"), text_color = color.orange, text_size = size.small)
+
+    table.cell(t, 0, 5, "Covering?", text_color = color.gray, text_size = size.small)
+    table.cell(t, 1, 5, coveringMom ? "YES" : "no", text_color = coveringMom ? color.green : color.gray, text_size = size.small)
+
+// ── Alerts ──────────────────────────────────────────────────────────────────
+alertcondition(evWatch,   "Commercials covering", "COT: commercial hedgers covering shorts from a multi-year extreme -- possible bottom forming")
+alertcondition(evConfirm, "Commercials net long", "COT: commercial hedgers curled to flat / net long -- classic bottom tell")
+alertcondition(evAdding,  "Commercials adding",   "COT: commercial hedgers still pressing shorts at an extreme -- no bottom yet")
+````

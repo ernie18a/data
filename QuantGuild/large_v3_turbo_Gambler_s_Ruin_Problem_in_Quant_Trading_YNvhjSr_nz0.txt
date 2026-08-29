@@ -1,0 +1,388 @@
+[    0.46s ->     8.35s] Whether you are an aspiring quant or trader, you must be familiar with the gambler's rune problem.
+[    8.35s ->    19.87s] There's a reason why it's a classic problem in hedge fund interviews, and that's because trading and quant trading for that matter is literally just the gambler's rune problem.
+[   20.09s ->    25.99s] In this video, what we're going to do is we're going to discuss what the gambler's rune even is.
+[   26.11s ->    29.35s] We're going to extend it into the trading space.
+[   29.35s ->    31.49s] We're going to define a trading system.
+[   31.67s ->    56.11s] We're going to define the P&L from a trading system and talk about how it is literally the gambler's rune problem and how measuring these different quantities in real life from a trading system, that is these trades that are executed systematically, are informing these theoretical values and why it's difficult to infer those theoretical values from that data.
+[   56.21s ->    58.65s] For starters, we have a game of chance.
+[   58.65s ->    63.47s] So, when I say a game of chance, that means the outcome is purely probabilistic.
+[   64.01s ->    70.77s] You have no influence on the probabilities themselves or the outcome that is your payout.
+[   71.09s ->    73.25s] All of these elements are fixed.
+[   73.63s ->    79.43s] We're starting from the most basic version of this game, building up to the real world.
+[   79.43s ->    82.43s] Right here, I've defined two game outcomes.
+[   82.69s ->    84.93s] You can either win with a probability of P.
+[   85.47s ->    90.69s] You can lose with a probability of Q, which is just the complement, 1 minus P.
+[   91.11s ->    95.53s] So, if you have a 50% chance of winning, then you must have a 50% chance of losing.
+[   95.97s ->    97.51s] 70% chance of winning.
+[   97.87s ->    99.33s] 30% chance of losing.
+[   99.57s ->   100.71s] So on and so forth.
+[  100.71s ->   102.99s] The game payout is also fixed.
+[  103.45s ->   104.57s] $1 if you win.
+[  104.99s ->   107.19s] Minus $1 if you lose.
+[  107.41s ->   110.33s] The structure of this problem is Markovian.
+[  110.41s ->   111.55s] What do I mean by this?
+[  111.91s ->   115.53s] It doesn't matter what happened leading up to the current state.
+[  115.87s ->   121.11s] It doesn't matter if my wealth accumulated up to $10,000 and then back down to $10,000.
+[  121.11s ->   125.57s] If I'm at $10,000 right now, that's where I'm at and that's where I'm starting.
+[  125.83s ->   127.23s] That's what's meant by Markovian.
+[  127.31s ->   128.45s] It doesn't matter where we were.
+[  128.89s ->   130.95s] It just matters where we are now.
+[  131.07s ->   134.93s] A very natural question arises in the context of this game.
+[  135.37s ->   141.35s] If I were to play this game indefinitely, what would the probability of accumulating an
+[  141.35s ->   146.53s] infinite amount of wealth be versus the probability of ruin?
+[  146.91s ->   149.51s] That is the probability of going bankrupt.
+[  149.51s ->   153.13s] That is this gambler's ruin problem.
+[  153.65s ->   159.93s] Now, for our aspiring hedge fund analysts, the analytical solution can be derived recursively.
+[  160.05s ->   162.97s] And I certainly encourage you to go about doing that.
+[  163.41s ->   167.59s] But in this video, we're going to focus on the numerical solution via simulation.
+[  168.15s ->   171.27s] And we're going to talk about the practical implications in trading.
+[  171.53s ->   176.71s] So if you were to go about solving this problem, you would end up with this solution for the
+[  176.71s ->   178.29s] probability of ruin.
+[  178.29s ->   185.71s] And what this solution is showing us is that if you start with more capital, the probability
+[  185.71s ->   190.25s] of ruin, that is the probability of going bankrupt, decreases.
+[  190.79s ->   192.69s] This follows naturally.
+[  192.87s ->   200.25s] If I had $100 versus $10, well, in the case that I have $100, I'm less likely to go bankrupt
+[  200.25s ->   202.07s] than in the case that I have $10.
+[  202.07s ->   209.99s] Moreover, having an edge dramatically improves survival, that is making it to that infinite
+[  209.99s ->   210.81s] wealth threshold.
+[  211.59s ->   213.01s] Again, this makes sense.
+[  213.09s ->   217.23s] If you have edge, positive expected value, there's a drift component.
+[  217.39s ->   222.39s] The more edge that you have, the more PNL that you can accumulate over time.
+[  222.39s ->   225.83s] It's more likely that you accumulate that PNL over time.
+[  226.25s ->   229.13s] And the analytical solution again reflects this.
+[  229.13s ->   238.31s] Now, this solution also shows that even if you do have an edge, Rune is certain if you play
+[  238.31s ->   238.95s] infinitely.
+[  239.39s ->   240.85s] Now, what do I mean by this?
+[  240.93s ->   247.81s] If we are to play this game indefinitely, regardless of how much wealth we accumulate,
+[  247.81s ->   254.09s] that is, we never stop playing, even if we make $10 million, we keep playing indefinitely,
+[  254.73s ->   260.79s] eventually, we're going to have a streak that is going to leave us in bankruptcy.
+[  261.17s ->   264.85s] Now, obviously, we're not going to trade for an infinite number of trades.
+[  264.99s ->   267.43s] There's a lot of theory underpinning this problem.
+[  267.83s ->   269.51s] We could talk about Markov chains.
+[  269.59s ->   271.35s] We could talk about absorbing states.
+[  271.35s ->   277.89s] But instead, I'm going to move on to the purely practical components that apply to trading
+[  277.89s ->   279.17s] and quant trading.
+[  279.61s ->   281.87s] So let's move on to this simulation.
+[  282.01s ->   286.49s] What I've done here is I've simulated this gambler's Rune problem.
+[  287.01s ->   292.05s] Essentially, what I've done is I've taken that game outlined above and I've played it
+[  292.05s ->   299.23s] iteratively until either I reach the desired wealth threshold or I lose all my money and
+[  299.23s ->   301.41s] I am ruined or I've gone bankrupt.
+[  301.65s ->   305.17s] The green paths represent making the wealth threshold.
+[  305.47s ->   307.79s] The red paths represent bankruptcy.
+[  308.37s ->   315.35s] Now, this chart gives us a nice visual proportion of paths that have either reached the wealth
+[  315.35s ->   317.51s] target or reached bankruptcy.
+[  317.73s ->   323.53s] But what's very elegant as a solution to discerning the actual probability is that if we apply the
+[  323.53s ->   329.05s] law of large numbers, all we have to do is sum the total number of paths that have reached
+[  329.05s ->   334.59s] this wealth target, then divide by the total number of paths that were used in this simulation
+[  334.59s ->   342.09s] and we'll have our probability of reaching that target wealth state given the fixed probabilities
+[  342.09s ->   345.13s] of the game that were previously defined.
+[  345.13s ->   348.83s] So in this instance, the probability of winning $1 is 60%.
+[  348.83s ->   351.79s] The probability of losing $1 is then 40%.
+[  351.79s ->   359.25s] That means the overall probability of reaching the target wealth, in this case, $10 from an
+[  359.25s ->   363.43s] initial wealth of $5 is given by roughly 80%.
+[  363.43s ->   369.71s] Now, from our analytical solution, we can start to infer some very interesting things.
+[  369.83s ->   376.47s] That is, if I was to shift this initial wealth up, what do we think would happen to the probability
+[  376.47s ->   378.41s] of reaching the target wealth?
+[  378.89s ->   386.65s] Well, just mechanically, we can see if we increase that value, then we are going to increase the
+[  386.65s ->   387.15s] probability.
+[  387.15s ->   393.19s] And this makes sense because in terms of the randomness of the walk, it has far fewer steps
+[  393.19s ->   396.25s] to go to reach the target than it does bankruptcy.
+[  396.85s ->   405.86s] And if I was to go and change this initial wealth value, where I will set the initial wealth
+[  405.86s ->   423.06s] to, let's say, $7, you can see that we have now a probability of roughly 97% of reaching
+[  423.06s ->   424.20s] the target wealth.
+[  424.80s ->   433.32s] Moreover, if we are to look at the probability of success versus the probability of failure,
+[  433.70s ->   439.90s] if we have an edge, then that means we dramatically improve the chance of reaching this target wealth
+[  439.90s ->   440.30s] threshold.
+[  440.50s ->   442.38s] That is this probability of survival.
+[  442.38s ->   444.84s] So, in this case, we do have an edge.
+[  444.92s ->   447.04s] The expected value is net positive.
+[  447.48s ->   455.62s] But if I make this even and I rerun this, you can see that the probability drops significantly,
+[  455.84s ->   457.94s] roughly 20 percentage points.
+[  457.94s ->   460.12s] That is from 97 down to 75%.
+[  460.12s ->   464.12s] And that does track with the analytical solution.
+[  464.28s ->   468.84s] So, simulation is quite a useful tool in this context for estimating these probabilities,
+[  469.06s ->   470.74s] these so-called hitting probabilities.
+[  470.74s ->   478.94s] But now, how does this pertain to trading and a trader's expected value in a trading system?
+[  479.08s ->   480.96s] It doesn't matter what kind of trader you are.
+[  481.34s ->   485.86s] A trader has an expected value associated with their trading system.
+[  485.86s ->   494.62s] Let this E define the expectation or the average and a trade to be any position that's opened
+[  494.62s ->   496.32s] and closed for P&L.
+[  496.52s ->   504.60s] This means for any trading system, which I will denote this script T, we can say that the script T,
+[  504.60s ->   513.84s] the trading system, is a set of trades for that system, any trade is then a draw from this true distribution,
+[  513.84s ->   515.98s] if you were to make a live trade.
+[  515.98s ->   528.80s] This means that the expected P&L associated with the trading system is just simply going to be the expectation of the trading system,
+[  528.80s ->   534.66s] given that there was a winning trade, multiplied by the probability of a winning trade,
+[  534.86s ->   542.56s] plus the expectation of the trading system, given a losing trade, times the probability of a losing trade.
+[  542.56s ->   546.42s] This is the expected value of the trading system.
+[  546.66s ->   548.38s] Now, what is the expected value?
+[  548.52s ->   553.30s] Really, what I'm saying is, based on all of these trades in your trading system,
+[  553.30s ->   558.74s] we can discern this quantity to figure out if there's edge in the system.
+[  558.82s ->   563.78s] If it's positive, then you can accumulate this positive expected value over time.
+[  564.16s ->   565.08s] You have some edge.
+[  565.08s ->   572.14s] If it's negative or zero, then you're not going to accumulate any positive expected value over time.
+[  572.56s ->   574.50s] And you're not going to make any money.
+[  574.50s ->   583.74s] Now, in this framework, what I'm suggesting is that this expectation is just the expected value of a trade governed by the trading system.
+[  584.16s ->   592.88s] This expectation, the second one here of the trading system, given a win, is the expected or average P&L of a winning trade.
+[  593.20s ->   595.08s] Same thing for a losing trade.
+[  595.08s ->   606.20s] And then the probability of a win or loss is just the probability or the empirical proportion of winning and losing trades.
+[  606.40s ->   609.94s] We don't have access to this true distribution.
+[  610.12s ->   611.90s] We don't have access to these quantities.
+[  612.20s ->   615.82s] We have to estimate them from data.
+[  616.04s ->   621.90s] And data, in this case, is going to be trades under this trading system, T.
+[  621.90s ->   623.08s] Why does this matter?
+[  623.30s ->   629.14s] Why is my professor making me derive the gambler's ruin problem in close form?
+[  629.28s ->   640.70s] Why is every single interview with AQR or Jane Street some sort of complicated statistical process that I have to go about solving for recursively or this or that, whatever?
+[  640.70s ->   653.14s] Well, a trading system or trading in a system T is literally the gambler's ruin problem with asymmetric wealth and inconsistent probabilities.
+[  653.90s ->   657.24s] So, for starters, let's fix the probabilities.
+[  658.02s ->   663.70s] So, the probability of winning a trade and losing a trade are going to be fixed along with the wealth gained and lost.
+[  664.96s ->   668.76s] We're going to start with this simple framework and then extend it to the real world.
+[  668.76s ->   678.86s] So, to simulate this, it's the exact same problem as the traditional gambler's ruin with a wealth threshold.
+[  679.44s ->   683.48s] So, what we're going to do is we're just going to define all of these fixed values.
+[  683.48s ->   690.04s] That is, the probability of winning a trade, probability of losing a trade, our average trade winner, our average trade loser.
+[  690.30s ->   695.26s] And we're going to go ahead and simulate the probability of reaching this wealth threshold.
+[  695.26s ->   711.42s] So, if I start with $10 and I operate in this trading system T with these fixed values, then the probability of ruin, that is the probability of me not reaching this wealth target of 100, is roughly 90%.
+[  711.42s ->   713.22s] That's pretty high.
+[  713.84s ->   716.26s] The probability of reaching my wealth target is 10%.
+[  716.92s ->   721.48s] What can I do to increase the probability of reaching that wealth target?
+[  721.48s ->   729.40s] Well, just as in the analytical solution to the gambler's ruin suggests mechanically, we can increase our initial wealth.
+[  731.48s ->   736.68s] So, if I increase this to 50, you'll see the probability of success increases dramatically.
+[  737.28s ->   741.44s] Moreover, eggs dramatically increases the probability of success.
+[  741.80s ->   748.50s] So, if I increase this to 0.55, now here in this case, we have in this one simulation,
+[  748.50s ->   754.98s] again, this is not the analytical solution, but in this simulation, 100% of our paths reach that target.
+[  755.44s ->   763.96s] This is why it's so important to understand not just the analytical solution, but mechanically, the results of the analytical solution.
+[  763.96s ->   771.12s] Because now, we can alter these values, all of the parameters that we have access to or can influence,
+[  771.12s ->   777.52s] we can alter to ensure that we maximize this probability of reaching a wealth target.
+[  777.96s ->   779.26s] And that's all trading is.
+[  779.68s ->   785.74s] All trading is, is trying to accumulate as much wealth as possible, maybe to a specific target.
+[  786.24s ->   791.24s] And we need to be able to define some sort of probability associated with that stoppage.
+[  791.24s ->   797.40s] Now, the simulation is nice, and relative to the initial analytical solution of the gambler's ruin problem,
+[  797.40s ->   802.06s] we can freely alter the payouts, the probabilities, and so on.
+[  802.06s ->   809.28s] But in the context of asymmetrical payouts, we can also derive a different analytical solution that takes those into account
+[  809.28s ->   814.06s] and produces the correct probabilities of ruins or riches.
+[  814.06s ->   820.34s] So, in this case, what I've done is I've derived the analytical solution for asymmetric wealth,
+[  820.34s ->   826.74s] that is, wealth that's paid out, that's not just $1 for a win and minus $1 for a loss.
+[  826.74s ->   835.24s] And if you do this and you run the analytical solution, you'll see that we get the 90% and 10%
+[  835.24s ->   838.76s] that was associated with the original simulation value.
+[  838.76s ->   846.83s] If we go back to 0.5 and 10, we get approximately 90% and 10%.
+[  846.83s ->   853.67s] And analytically, we can confirm that with an increase in the number of sample paths,
+[  853.83s ->   857.31s] we will likely converge to these values.
+[  857.65s ->   861.29s] These are the true theoretical values for that problem.
+[  861.71s ->   869.75s] Again, the big assumption here is that all of these components of the trading system are fixed.
+[  870.01s ->   873.19s] That means that they are time invariant.
+[  873.33s ->   880.59s] If we continue to draw from this trade distribution, T, governed by our trading system,
+[  881.17s ->   885.59s] then over time, we will converge to these fixed values.
+[  886.05s ->   893.97s] This is by no means the case in practice, and we will discuss the implications of this now.
+[  894.07s ->   898.89s] As I mentioned earlier, there's a big difference between the empirical and theoretical distribution.
+[  898.89s ->   906.61s] If we had the theoretical distribution, this true distribution governing the trades from our trading
+[  906.61s ->   911.05s] system, then we wouldn't need to estimate any of these quantities.
+[  911.23s ->   915.07s] We would have them, even if they were time variant, they would be a function of time,
+[  915.21s ->   918.47s] and we could very confidently trade these systems.
+[  918.71s ->   920.49s] But that's not the case.
+[  920.49s ->   926.55s] The best thing that we can do is estimate these quantities using data trades.
+[  926.77s ->   932.49s] So for any trading system, we can't directly observe any of the components of our edge.
+[  932.69s ->   934.61s] That's why this is so challenging.
+[  934.77s ->   940.39s] So we're going to aim to use trades as data to inform these theoretical values.
+[  940.39s ->   948.29s] Now, unfortunately for us, it is very likely that the true theoretical distribution will change
+[  948.29s ->   954.45s] over time, which makes it extremely difficult to discern if you are just having a streak of
+[  954.45s ->   962.35s] bad luck in your trading system or if your system itself is destined to be unsuccessful and
+[  962.35s ->   967.69s] vice versa, a streak of good luck in what would otherwise be an unsuccessful system over time.
+[  967.69s ->   974.77s] Nevertheless, we must examine these quantities in the lab, so to speak, so that we can understand
+[  974.77s ->   982.29s] the potential impact in a time-varying capacity and what we can do to mitigate those issues.
+[  982.43s ->   987.31s] Now that we're in the lab, so to speak, let's start with a simple version of the environment
+[  987.31s ->   990.09s] and extend it into a more realistic one.
+[  990.49s ->   994.47s] So why do we care about the expected value of our trading system at all?
+[  994.47s ->   999.41s] Well, this is edge, and this is what defines edge, this expected value.
+[  999.59s ->  1003.77s] We can decompose it into this whole thing on the right-hand side, but both of these are
+[ 1003.77s ->  1004.25s] equivalent.
+[ 1004.85s ->  1006.01s] This is our edge.
+[ 1006.43s ->  1010.85s] If our edge is positive, we get this chart on the left, where iteratively, if we continue
+[ 1010.85s ->  1016.45s] to trade from the system, we have this theoretical positive drift if our edge is positive.
+[ 1017.15s ->  1021.03s] Edge is just the accumulation of positive expected value over time.
+[ 1021.03s ->  1026.09s] Whereas on the right side, if we have negative edge or negative expected value, then we're
+[ 1026.09s ->  1030.57s] just going to be accumulating this negative expected value or loss over time.
+[ 1031.35s ->  1035.33s] And clearly, in this case, these parameters are fixed.
+[ 1035.57s ->  1040.63s] But in reality, the parameters are not fixed.
+[ 1040.63s ->  1046.31s] That is, if you are to trade from a trading system, then it's likely, assuming that you
+[ 1046.31s ->  1052.35s] have some variability in your entry and exit, it's likely that your winners and losers aren't
+[ 1052.35s ->  1054.09s] going to produce the same P&L.
+[ 1054.51s ->  1058.91s] It's likely that the probability of winning and the probability of losing will change over
+[ 1058.91s ->  1059.31s] time.
+[ 1059.63s ->  1062.93s] And that's what we are going to consider in this next chart.
+[ 1062.93s ->  1069.37s] Why do we decompose this expectation into this complicated thing on the right here?
+[ 1069.73s ->  1075.89s] Well, we can look individually at the probability of winning and probability of losing and see
+[ 1075.89s ->  1082.05s] what that does to our overall equity curve if we were to trade from that trading system T.
+[ 1082.29s ->  1088.43s] This is very similar to the idea of deriving an analytical solution and seeing mechanically
+[ 1088.43s ->  1094.25s] what happens to the probabilities when different aspects of the environment change.
+[ 1094.25s ->  1100.61s] The only thing in this instance that is very challenging is that these probabilities are
+[ 1100.61s ->  1103.11s] going to change over time.
+[ 1103.67s ->  1105.67s] Now, this makes sense.
+[ 1106.23s ->  1112.17s] If it didn't, then we could have a one-person hedge fund where they've come up with a trading
+[ 1112.17s ->  1118.41s] strategy and it's profitable and they have a probability of winning of 90% and a probability
+[ 1118.41s ->  1125.71s] of losing of 10% and an average winner of $1,000 and an average loser of $10 and they
+[ 1125.71s ->  1130.47s] could just load up on leverage and never have to worry and they have this crazy positive EV
+[ 1130.47s ->  1133.03s] and it's fixed and, you know, they are the house.
+[ 1133.27s ->  1134.03s] They are the casino.
+[ 1134.57s ->  1137.05s] But this is not how this space works.
+[ 1137.19s ->  1141.85s] It's just as in price prediction where you're never going to come up with a model that's
+[ 1141.85s ->  1147.37s] going to predict the price of Apple tomorrow and you're going to load up on some crazy
+[ 1147.37s ->  1153.09s] options so that you can leverage that model and that prediction, you're doing it in a
+[ 1153.09s ->  1154.21s] statistical capacity.
+[ 1154.41s ->  1155.59s] You're not trying to blow out.
+[ 1155.69s ->  1159.31s] You're trying to make informed trading decisions over time.
+[ 1159.41s ->  1162.15s] It's optimal decision-making in the face of uncertainty.
+[ 1162.79s ->  1169.67s] And even though these models are theoretically wrong because we're using data to attempt to
+[ 1169.67s ->  1175.61s] model the theoretical values, it does not preclude us from being successful and making money.
+[ 1175.61s ->  1179.67s] So in this case, what I've done is I've plotted these paths for our probabilities.
+[ 1179.91s ->  1187.43s] So this trading system starts out with a probability of winning each trade of almost 60%.
+[ 1187.43s ->  1193.13s] And you can see over time, this is going to decay and eventually come back up.
+[ 1193.29s ->  1196.73s] And the probability of losing is a mirror of that.
+[ 1196.79s ->  1199.47s] And that's because it's the complement, of course, out of one.
+[ 1199.61s ->  1202.31s] And you can see how this affects our overall equity curve.
+[ 1202.31s ->  1207.41s] So if we were trading the strategy, there's a period here where loss is significantly higher
+[ 1207.41s ->  1209.53s] than winning.
+[ 1209.83s ->  1210.85s] That is the probabilities.
+[ 1211.29s ->  1212.97s] And our equity curve suffers because of it.
+[ 1213.71s ->  1218.41s] And in fact, here we just catch a streak of bad luck because it's almost 50-50 and we lose
+[ 1218.41s ->  1219.15s] quite some money.
+[ 1219.59s ->  1223.45s] And eventually the probability of winning comes back up and our equity curve recovers.
+[ 1223.83s ->  1226.09s] But this is what's happening under the hood.
+[ 1226.41s ->  1229.13s] And this is what you can't measure.
+[ 1229.13s ->  1232.91s] You can proxy for it from your empirical distribution.
+[ 1233.17s ->  1236.21s] You can use your trades as data points to try to proxy for this.
+[ 1236.69s ->  1238.05s] But this is what's happening.
+[ 1238.13s ->  1239.91s] If I run this again, this is just a simulation.
+[ 1240.23s ->  1242.23s] We could see a different state of the world here.
+[ 1242.41s ->  1247.43s] You can see that the probability of losing increased significantly as we've continued to
+[ 1247.43s ->  1248.27s] place more trades.
+[ 1248.81s ->  1251.35s] And you can see our equity curve doesn't recover.
+[ 1251.49s ->  1253.33s] It goes down and it gets stuck.
+[ 1253.33s ->  1258.95s] Maybe the variability of this trading system should be called into question, so on and
+[ 1258.95s ->  1259.99s] so forth.
+[ 1260.05s ->  1265.45s] This is why it's useful to decompose the expected value of our trading system into these components
+[ 1265.45s ->  1271.09s] so that we can analyze them individually and see where our edge is breaking down.
+[ 1271.51s ->  1274.17s] Now, why do we care about these conditional expectations?
+[ 1274.17s ->  1282.33s] Well, if the probability changes over time, then so might our average winner and average
+[ 1282.33s ->  1282.85s] loser.
+[ 1283.01s ->  1287.29s] That is, just because we win a trade, we open and close a position, it doesn't mean that
+[ 1287.29s ->  1289.41s] we're going to have the same P&L every single time.
+[ 1289.53s ->  1294.59s] If you're using some sort of fixed structure with take profit limits and stop losses, then
+[ 1294.59s ->  1296.93s] yes, very well, you might have fixed structure there.
+[ 1297.23s ->  1302.01s] But in this case, what we can do is we can start to consider this idea where we're going to
+[ 1302.01s ->  1308.33s] look for more profit when the probability of losing might increase or the probability
+[ 1308.33s ->  1315.21s] of winning might degrade to a certain threshold where we need to kind of offset it with a bigger
+[ 1315.21s ->  1315.63s] winner.
+[ 1316.17s ->  1323.09s] And that's what this simulation is sort of proposing is when probability of loss is particularly
+[ 1323.09s ->  1323.71s] high.
+[ 1324.27s ->  1325.61s] What if we hedge sooner?
+[ 1326.03s ->  1330.17s] And what if the probability of winning when it's relatively low and there's room for it
+[ 1330.17s ->  1333.71s] to run, we let it run and accumulate more profit.
+[ 1333.83s ->  1338.73s] So essentially, this turns into kind of a game where we have this decomposed edge, we
+[ 1338.73s ->  1344.75s] can make it positive by either increasing the probability of winning, decreasing the probability
+[ 1344.75s ->  1351.17s] of losing, decreasing the average loser, or increasing the average winner.
+[ 1351.71s ->  1353.83s] It's not crazy to see that mechanically.
+[ 1354.19s ->  1358.77s] But again, it's very important because all of those are levers that you can pull decisions
+[ 1358.77s ->  1359.45s] you can make.
+[ 1359.55s ->  1361.45s] It's optimal decision-making and uncertainty.
+[ 1361.89s ->  1363.65s] It's not a game of chance.
+[ 1364.19s ->  1368.95s] This is an optimal decision-making in the face of uncertainty problem.
+[ 1369.53s ->  1373.45s] That's how it's fundamentally different from a game of chance.
+[ 1374.35s ->  1377.57s] The gambler's rune problem has fixed probabilities.
+[ 1378.09s ->  1382.13s] You can't influence those probabilities or the expectations.
+[ 1382.71s ->  1385.73s] But in trading and quant trading, you can.
+[ 1385.73s ->  1390.53s] Your decision-making and your trading system governs those values.
+[ 1390.81s ->  1397.61s] Let's now apply the solution to the gambler's rune problem with asymmetric payouts to a trading
+[ 1397.61s ->  1403.41s] system T and determine the probability of accumulating a desired amount of wealth.
+[ 1403.63s ->  1404.89s] This is very useful.
+[ 1405.15s ->  1412.21s] If I have a trading system and I have an initial capital allowance, then I should probably have
+[ 1412.21s ->  1415.89s] some probability in mind for the likelihood of reaching my target wealth state.
+[ 1416.53s ->  1418.37s] And of course, this is an estimate.
+[ 1418.37s ->  1420.29s] This is an estimate from data.
+[ 1420.57s ->  1423.37s] And we are certain to be under or overestimating.
+[ 1423.89s ->  1430.85s] But wouldn't we rather see an estimate that's like 90% than an estimate that's like 10%?
+[ 1430.99s ->  1437.05s] Even if we're wrong, then wouldn't it be nice if our estimate was roughly 90% versus an estimate
+[ 1437.05s ->  1442.47s] of roughly 10% if it's 10% and you know, the estimate's wrong, then I mean, your margin of
+[ 1442.47s ->  1449.87s] error, is it really going to be exceeding some threshold to get that to like 70, 80, 90% likely?
+[ 1450.03s ->  1450.29s] No.
+[ 1450.39s ->  1454.79s] And the same is true for the, the other case where you have an arbitrarily high probability
+[ 1454.79s ->  1455.21s] of success.
+[ 1455.21s ->  1459.79s] So let's take a look at this system T what I've done is I've plotted the equity curve.
+[ 1459.79s ->  1463.93s] I've determined the probability of winning a trade versus losing a trade.
+[ 1464.07s ->  1467.23s] I've also determined the average winner versus the average loser.
+[ 1467.49s ->  1475.52s] And what we can do is we can take the simulation from the example with an asymmetric payout here.
+[ 1476.20s ->  1480.32s] That is a trading system is just the gambler's ruin problem.
+[ 1480.66s ->  1484.76s] And we can plug in these values from our trading system.
+[ 1485.36s ->  1486.98s] That's exactly what I do here.
+[ 1486.98s ->  1492.74s] I'm going to start with an initial wealth of five and see what the probability of us reaching
+[ 1492.74s ->  1493.28s] 10 is.
+[ 1493.48s ->  1498.20s] If I run this simulation, you can see I get roughly an 84% chance.
+[ 1498.84s ->  1500.00s] That's pretty darn good.
+[ 1500.68s ->  1502.18s] That's pretty, pretty darn good.
+[ 1502.24s ->  1505.66s] Now this is a simulation approximating an analytical solution.
+[ 1505.78s ->  1507.44s] If I run it again, I'm going to get different numbers.
+[ 1508.00s ->  1512.60s] I get 82 there, 83, but we're around this 80% mark.
+[ 1512.60s ->  1517.82s] As the number of simulations increase, that'll converge to the true value.
+[ 1518.44s ->  1524.62s] However, remember these parameters vary over time.
+[ 1524.76s ->  1527.24s] I'm going to resample this system.
+[ 1527.38s ->  1535.70s] Now, if I resample this system and I have to change the seed to resample it, I resample
+[ 1535.70s ->  1536.32s] the system.
+[ 1536.32s ->  1540.98s] We get an entirely different probability of winning, an entirely different average winner,
+[ 1541.10s ->  1541.76s] average loser.
+[ 1542.00s ->  1544.94s] If I resample again, the same is true.
+[ 1545.06s ->  1546.18s] Again, the same is true.
+[ 1546.78s ->  1551.98s] If I continue to resample, I am going to continue to get a different parameterization.
+[ 1552.26s ->  1554.36s] This is what would happen in real life.
+[ 1554.48s ->  1560.06s] Also, if regimes change, what if regimes change, we may see something like this.
+[ 1560.68s ->  1562.68s] That is far less encouraging.
+[ 1563.32s ->  1564.68s] That is far less encouraging.
+[ 1564.68s ->  1572.10s] What if I was to parameterize the simulation for reaching our target wealth with this empirical
+[ 1572.10s ->  1574.84s] data, these statistics?
+[ 1575.10s ->  1583.11s] Well, 0.53, 157, 149.
+[ 1583.59s ->  1586.84s] How does that affect our probability?
+[ 1586.98s ->  1588.74s] It goes from roughly 80% to what?
+[ 1589.88s ->  1590.48s] 60%.
+[ 1590.48s ->  1593.74s] Goodness gracious, that changed quite a bit.
+[ 1594.12s ->  1597.90s] This is what you will face in real life with your trading system.
+[ 1597.90s ->  1602.56s] As you continue to trade, you're going to maybe end up with something that looks like this.
+[ 1603.36s ->  1604.70s] Maybe something that looks like this.
+[ 1605.32s ->  1606.66s] Maybe something that looks like this.
+[ 1607.12s ->  1609.86s] You are going to use that to proxy these statistics.
+[ 1610.96s ->  1614.78s] And when you run the simulation to discern what the probability of reaching your wealth target
+[ 1614.78s ->  1617.54s] is, you know you will be under overestimating.
+[ 1617.54s ->  1626.08s] Again, that is going to be more insulting if the simulation varies, or not the simulation,
+[ 1626.24s ->  1632.50s] but your trading system and your P&L is extremely volatile, then the probability is going to be
+[ 1632.50s ->  1636.34s] extremely over-underestimated at certain points, so on and so forth.
+[ 1636.46s ->  1641.92s] That is the problem that you are going to be dealing with in a live trading capacity.
+[ 1641.92s ->  1644.40s] There should be concerns with this approach.
+[ 1644.58s ->  1649.66s] It is not difficult to measure these quantities, but it's difficult to measure them accurately.
+[ 1650.12s ->  1655.44s] I can trade under some sort of strategy, and then I can measure these quantities,
+[ 1655.56s ->  1658.76s] my average winner, the probability of winning, so on.
+[ 1659.72s ->  1664.72s] But it's very difficult to measure these quantities accurately as a function of time.
+[ 1665.16s ->  1666.26s] It's very difficult.
+[ 1667.33s ->  1668.91s] It's a very difficult problem.
+[ 1668.91s ->  1672.81s] You can use some sort of exponentially weighted moving average.
+[ 1672.97s ->  1674.31s] You can use time series techniques.
+[ 1674.73s ->  1677.89s] You can use some sort of filtering techniques to gauge some sort of level.
+[ 1678.41s ->  1684.63s] There's an innumerable number of techniques that you can go about deploying to attempt
+[ 1684.63s ->  1685.61s] to solve this problem.
+[ 1686.07s ->  1691.55s] In any case, you will be under and overestimating these probabilities of successes and failures
+[ 1691.55s ->  1694.73s] and winning and losing trades and so on.
+[ 1694.73s ->  1699.49s] And if you are to measure these quantities using any of these techniques that I had mentioned
+[ 1699.49s ->  1704.93s] in time series and whatnot, or if you just use your raw empirical distributions to determine
+[ 1704.93s ->  1710.77s] these components and then plug them directly into the analytical solution provided here,
+[ 1710.95s ->  1717.19s] you will certainly be over or underestimating the probability of reaching your wealth target.
+[ 1717.19s ->  1725.15s] However, as I have preached in just about every video that has to do with trading or market
+[ 1725.15s ->  1732.39s] making, this certainly does not preclude us from making and or losing money, even if the
+[ 1732.39s ->  1734.39s] assumptions that we are making are violated.
+[ 1734.53s ->  1738.13s] That's going to do it for this video on the gambler's ruin problem in quant trading.
+[ 1738.13s ->  1742.97s] If you were to take anything away from this, it is the idea of estimating some sort of hitting
+[ 1742.97s ->  1749.95s] probability using the data from our trading system to estimate some sort of decomposed edge
+[ 1749.95s ->  1752.09s] and discern a level.
+[ 1752.21s ->  1756.13s] That level will definitely be incorrect, but it's certainly better than nothing.
+[ 1756.25s ->  1760.75s] You don't want to be trading a system that tells you you have a 5% chance of reaching
+[ 1760.75s ->  1761.63s] your wealth target.
+[ 1762.17s ->  1767.81s] Nevertheless, if there is interest in actually deriving these analytical solutions in the symmetric
+[ 1767.81s ->  1771.29s] and asymmetric payout case, I'm very happy to do so.
+[ 1771.37s ->  1775.91s] I'm uncertain on the level of interest, but if there is, please leave a comment below.
+[ 1776.41s ->  1778.39s] Subscribe, like if you enjoyed.
+[ 1778.93s ->  1780.03s] Feel free to join our Discord.
+[ 1780.75s ->  1786.51s] Other than that, thank you so much for watching, and I will see you in the next video.

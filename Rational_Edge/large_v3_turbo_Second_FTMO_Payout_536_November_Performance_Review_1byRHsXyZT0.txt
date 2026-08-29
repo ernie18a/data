@@ -1,0 +1,94 @@
+[    2.22s ->     8.98s] welcome back in this new video this is an update since probably one month i didn't make
+[    8.98s ->    16.84s] i didn't make any video but like i'm back i was pretty busy doing stuff also with my
+[   16.84s ->    23.92s] darunax account i'm traveling in japan at the moment from italy so i'm doing many things all
+[   23.92s ->    31.30s] at the same time and yeah that's like an update and yeah i received my second reward from ftmo
+[   31.30s ->    39.16s] and as you can see the certificate same name and yeah this time a little less than the previous one
+[   39.16s ->    47.74s] but like my goal is to achieve each time around 500 euro and was a little bit less but because
+[   47.74s ->    54.30s] my emotion kicked in and it didn't help because i was actually i'm gonna show you this is the equity
+[   54.30s ->    62.92s] of the month because this is was the equity of the previous month with ftmo didn't look great but
+[   62.92s ->    69.84s] then i go back in profit and yeah now you cannot see the highest point i reached but it will it was
+[   69.84s ->    80.90s] actually around 730 usd so yeah i had to um close them all manually around uh this profit i lost a
+[   80.90s ->    88.96s] little bit but yeah it's fine and it was i think a big lessons for the next time and also for the future
+[   88.96s ->    95.48s] and maybe also for you because with money all of the trade are we're fine because i'm not doing
+[   95.48s ->   103.08s] every single trade so the algorithms are doing that but then when you get profit so you're let's say
+[  103.08s ->   110.38s] in this case you were close to 500 euro then the emotion kicked in and i was thinking okay maybe i want
+[  110.38s ->   116.96s] something more or maybe it's better to close the position now okay the best thing is now it's going to
+[  116.96s ->   124.50s] automate also that process i don't want to be involved emotionally in something that i shouldn't
+[  124.50s ->   134.26s] be involved okay that's because i think especially with money the algorithms are way better of course
+[  134.26s ->   141.86s] because there is no emotion involved and this is the max loss versus the let's say max profit the max
+[  141.86s ->   148.32s] profit was like 730 so it's like kind of negative but it's fine because as i said before i'm trying
+[  148.32s ->   156.62s] to withdraw money each time the profit reached like around 700 usd that's equal to 500 euro the
+[  156.62s ->   163.18s] beginning of the month it was pretty rough the beginning wasn't that as i said the beginning wasn't
+[  163.18s ->   170.72s] that good but then yeah it became much better in the end as you can see probably yeah the last four
+[  170.72s ->   178.26s] days so when i started to close down the position mainly of course i'm going to show you the performance
+[  178.26s ->   184.96s] from the portfolio that i'm using all of the algorithms on so basically all of the algorithms
+[  184.96s ->   192.10s] now are running on a different broker you can see it here now now i'm on windows and this is my vps
+[  192.10s ->   199.98s] where all of my trading algorithms and software are running this is like a virtual private server
+[  199.98s ->   209.62s] and yeah this is actually a demo account from oanda and yeah those were all the position from
+[  209.62s ->   218.07s] mid october till mid november the profit is like quite bigger than the account on ftmo
+[  218.07s ->   226.03s] because i'm currently copying all the position but but with half of the size if here is going to open
+[  226.03s ->   233.41s] let's say two micro lots of gold on my ftmo account is going to open it like half of that that's it
+[  233.41s ->   242.01s] and also it's not counting all of the fees and swap fees so that doesn't make any sense to pay it
+[  242.01s ->   252.95s] like only 41 euro and 1.3 of swap fee and yep i need to count also that but that's basically the
+[  252.95s ->   259.43s] overall performance and this is the equity and it looks i think much better than the one on ftmo
+[  259.43s ->   268.78s] but of course because there is no fee in c inside this report we have here 107 position for this 30 days
+[  268.78s ->   276.90s] of period and then 50 of them were short position and 57 long position long trades and here you can
+[  276.90s ->   285.90s] see that we got like a good win rate in this month these 30 days because on the short position we had
+[  285.90s ->   295.82s] around 63% win rate compared to the 40% win rate on long position this is the equity from beginning of
+[  295.82s ->   307.88s] august till now because this is updated to november 23rd and yeah lately all of the algorithms are
+[  307.88s ->   316.90s] performing quite well and so yeah i'm pretty happy for that so this is not like this one was my share
+[  316.90s ->   324.50s] after the 80% profit split that's pretty good but of course i'm going to have to show you that
+[  324.50s ->   332.00s] like i also had some expense this year and yeah so basically those are the money i spent this year
+[  332.00s ->   340.10s] for this is the vps so the server i'm running all the algorithms and this one is the darunax fee
+[  340.10s ->   348.18s] actually is a little bit too high in my opinion but i'm managing to move all the algorithms darunax zero
+[  348.18s ->   356.32s] that is like the risk-free platform to the darunax classic that's that's a little bit different but
+[  356.32s ->   362.84s] you can actually switch the two account switch sorry this account to darunax normal and yeah i'm not
+[  362.84s ->   369.58s] going to pay all of those monthly fee that's actually now it's gaming to 45 euro so that's 50
+[  369.58s ->   377.80s] usd it's not that nice to pay each month that amount and yeah but i think the fee of the vps is
+[  377.80s ->   385.64s] going to be still so the same and now i changed to a contabo vps it's a different company and actually
+[  385.64s ->   394.16s] i'm i'm doing very good with this company there is like a great support and yeah i think it's this
+[  394.16s ->   400.68s] service is like much better compared to the one i was using before even the latency you can see let's
+[  400.68s ->   412.28s] say let's open yeah let's open this one the latency now is of course during a weekend but usually during
+[  412.28s ->   418.78s] a week is around 10 milliseconds so it's like quite good compared to the previous one that was like
+[  418.78s ->   426.00s] around 70 i don't really care about that because like my strategy are not like hft type or anything
+[  426.00s ->   432.22s] that need very low latency and so yeah i don't really care about that but still i think it's
+[  432.22s ->   437.84s] great to have something that if you need to copy between different accounts you can do that as soon
+[  437.84s ->   445.72s] as possible and i think it's good now back to darunax currently this is the performance from
+[  445.72s ->   457.19s] from end of october till now so 20 yeah november 23rd and yeah i'm doing very good also on darunax
+[  457.19s ->   467.42s] this is the early performance i reached the 25.25 percent with a drawdown of 6.5 let's say
+[  467.42s ->   475.00s] and that's actually a very good proportion and now i reach the position 70 out of let's say 500
+[  475.00s ->   483.72s] but also we have in darunia competition two different category there is silver where like
+[  483.72s ->   489.94s] most of the people are let's say competing and that's like the basic one and then if you trade
+[  489.94s ->   496.56s] for many months with good performance you can switch to darunia goal where also private investor
+[  496.56s ->   504.16s] can join your journey so in my case i just got wait not now but like i got a month ago
+[  504.16s ->   515.14s] two investors and actually now i'm managing the two different allocation this is the prop firm or
+[  515.14s ->   523.42s] allocation that's like around 105k plus the investors private sorry private investors allocation
+[  523.42s ->   531.72s] that's around 23 000 usd so i'm very happy for this performance since january and yeah the beginning
+[  531.72s ->   538.90s] of the year was like pretty rough because i had only like probably three algorithms on compared to
+[  538.90s ->   546.16s] my entire portfolio if i had the whole portfolio active i would make profit in january yeah and also
+[  546.16s ->   560.34s] the sharp ratio is quite good on this portfolio i got paid 1172 euro yeah that's the amount of
+[  560.34s ->   570.42s] performance fee i got from daruniax they actually paid only 15 of profit it's not ftmo but with this
+[  570.42s ->   576.80s] prop firm with this company you play the long-term game so it's different and i just wanted to show
+[  576.80s ->   585.26s] you that during the same month i took this money on the november 3rd and since then in 20 days in
+[  585.26s ->   594.82s] november i made now 445 euro but it's still something that i cannot count on because this amount is going
+[  594.82s ->   603.14s] to change till third of february yeah that's it i also paid for with this money that i got i paid this
+[  603.14s ->   610.98s] allocation is 100 100k allocation but you need to achieve like a certain amount of performance so i
+[  610.98s ->   620.86s] started when i started when i was at 20 22 0.23 and i need to achieve 34 or 0.45 to unlock this allocation
+[  620.86s ->   631.18s] and then i'll have not only 105 but also other 100k and so you can quite double this amount for the
+[  631.18s ->   638.20s] same period and that's it's something much more interesting it's only an update video i'm not
+[  638.20s ->   644.20s] teaching anything this time because as i said before i'm traveling and i didn't have much time
+[  644.20s ->   650.72s] i had to change all the algorithms move them between two different private servers as i said before
+[  650.72s ->   658.18s] from the previous server providers to the new one the contable one and yeah i didn't have much time to
+[  658.18s ->   669.23s] think about new video but still i wanted to show you this and also i started a new ftmo challenge so i
+[  669.23s ->   676.99s] started a new 100k ftmo challenge and yeah it's doing quite good i don't know this is a new
+[  676.99s ->   684.51s] experiment i'm joining the first portfolio that i'm also using for the ftmo funded account and also a
+[  684.51s ->   691.89s] new portfolio i built a new portfolio of let's say scalper but i think it's probably too correlated
+[  691.89s ->   698.97s] to the previous one because it's still with the same main assets so it's going to be probably too
+[  698.97s ->   707.81s] correlated but yeah i'm going to see how is going and yeah i was probably it doesn't count the moment of
+[  707.81s ->   719.28s] favorable exposure but i reached probably 1800 so two percent and i need to to hit oh i need to hit
+[  719.28s ->   728.06s] 10 percent of profit target and not of course avoiding the max laws of 10 000 and yeah i'm just
+[  728.06s ->   736.98s] one week and a half in and yeah it seems going very well and yeah i will keep you updated of course
+[  736.98s ->   743.84s] also with this one and also i'm going to show you different things because i also built the portfolio
+[  743.84s ->   752.06s] for some real money account it's like just 1500 usd it's nothing big but like it's still something
+[  752.06s ->   760.88s] something reasonable for me yep also probably i'm going to start from the next account i'm not
+[  760.88s ->   766.56s] really sure when but probably this week or the one after and yeah that's it

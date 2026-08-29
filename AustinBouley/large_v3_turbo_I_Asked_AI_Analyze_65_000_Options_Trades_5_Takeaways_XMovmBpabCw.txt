@@ -1,0 +1,75 @@
+[    0.00s ->     7.24s] I asked AI to analyze over 65,000 live options trades and these are the five biggest takeaways
+[    7.24s ->    11.58s] that it gave me. Number five might even surprise you. If you don't know who I am, my name is
+[   11.58s ->    17.82s] Austin Billy. I run a options automation company that literally does over a million dollars in
+[   17.82s ->    22.82s] automated trades every single day and I have access to so much data. I took all this data
+[   22.82s ->    28.48s] and I asked AI to analyze it to give us the five biggest takeaways that options traders just like
+[   28.48s ->    33.70s] you can use to adjust and tweak their strategy based on real data to increase your performance,
+[   33.86s ->    37.48s] increase your returns and decrease your risk. So let's walk through each one of these.
+[   37.86s ->    44.72s] Number one is aim for 90 to 120 days until expiration. Over all the data that we looked at,
+[   44.76s ->    51.52s] it came down to a single factor that I've been talking about for a while, that 90 to 120 DTE
+[   51.52s ->    58.46s] when you're doing option selling is very, very important. 45 DTEs is typically the standard when
+[   58.46s ->    63.40s] it comes to option selling, but if you go out further out in time, like 90 to 120 DTE,
+[   63.78s ->    69.28s] you get better returns. Why? Well, because you have more time to be right in the trade. If something
+[   69.28s ->    75.36s] like this happens, you have more time for the market to recover and re-balance so that you're
+[   75.36s ->    79.64s] back in profit level. So you have more time to be right, which increases your win rate.
+[   80.02s ->    84.72s] Number two, when you go further out in time, you collect more premium, which allows you to have a
+[   84.72s ->    92.44s] higher profit. The higher profit allows you to offset losses better as well. And long-term,
+[   92.66s ->    99.80s] you also decrease Vega, which means volatility risk will decrease as well. So the number one takeaway
+[   99.80s ->   107.76s] from looking at over 65,000 live trades over the last year or so is that you should go to 90 to 120
+[  107.76s ->   115.82s] DTE when you are an option seller. Number two is target mid-range premiums between $5 to $20.
+[  116.38s ->   123.56s] So that's what it's found. I personally like to enter around the 45 credit dollar level. Um,
+[  123.56s ->   128.02s] and I do this because when I enter out of $45 credit, that's typically what I'm collecting,
+[  128.02s ->   133.70s] uh, with a one, one, two trade or something like $30. If I'm going with a one, one, one trade,
+[  133.70s ->   139.14s] regardless, whatever option strategy, whatever option strategy you're doing, it shows that it's
+[  139.14s ->   147.16s] best between $5 and $20. Now why these numbers? Well, typically if you're going under $5, you're
+[  147.16s ->   153.44s] not collecting enough premium to actually offset any of the commissions, any of the losses or anything
+[  153.44s ->   157.70s] like that. You're trying to pick up pennies in front of a steamroller. That's typically the idea
+[  157.70s ->   163.68s] that you're not collecting enough profit ever offset losses. If you go above $20, then what
+[  163.68s ->   169.32s] you tend to see is that you're pushing your risk parameters way too high because the more credit
+[  169.32s ->   175.22s] you receive, yes, the more profit you make, but the more loss you have. If you do a 200% stop loss
+[  175.22s ->   180.22s] on $40 of credit, it's a way larger loss. And so you're probably not keeping your risk reward
+[  180.22s ->   185.72s] properly in check. So what found over the 65,000 trades, takeaway number two is keep your target
+[  185.72s ->   191.42s] credit, uh, credit between $5 to $20. Again, I know my numbers were for my trades roughly are $30
+[  191.42s ->   197.30s] around there. Um, but again, remember, understand what good ranges are for your initial credit that
+[  197.30s ->   202.78s] you're receiving. Number three, stick to proven automations, finding that the one, one, two and
+[  202.78s ->   208.64s] ES and CL performing the best. Okay. So there are so many different strategies you could use. And
+[  208.64s ->   213.22s] honestly, it best depends on what the market is doing for what you should be trading. If the market
+[  213.22s ->   217.02s] is uptrending, you should be using uptrending strategies. If it's downtrending, use downtrend
+[  217.02s ->   221.72s] strategies. This is the idea of our four core bots training, which you can go and watch down below in
+[  221.72s ->   226.96s] the description. But essentially what it's saying here is that overall over the last year and a half
+[  226.96s ->   232.92s] or so of trade 65,000 trade, the best performing trades were one, one, two trades. And why is this?
+[  233.16s ->   238.48s] Well, a one, one, two trade is essentially a short put trade with a hedge built in. So it's a smoother
+[  238.48s ->   243.54s] performance return, but you're betting on the overall uptrend of the market. Why does this make sense?
+[  243.54s ->   247.18s] In general, the market trends up. So when you're betting with it, you're going to make more.
+[  247.82s ->   255.56s] And also what it's saying is ES and CL were one of the top symbols here. What, why is this?
+[  256.48s ->   260.98s] Futures options give you an insane amount of leverage, which means you can use less money and
+[  260.98s ->   266.16s] decrease your risk, but still make more. And not only that, you also get tax advantage like 6040 tax
+[  266.16s ->   271.70s] treatment. And so ES and CL were found to be one of the better options. So if you have the ability to do
+[  271.70s ->   277.14s] futures options, you might want to look into ES or CL. If not use some of that models, the overall
+[  277.14s ->   282.76s] market could that safer, more consistent and more stable than going to a single asset is what would
+[  282.76s ->   288.18s] be my takeaway here. Number four central on Mondays and Fridays. This was a very interesting find.
+[  288.18s ->   294.84s] Again, out of 65,000 trades that analyze, it found that the trade that had the highest performance
+[  294.84s ->   301.30s] long term were the trades entered on Monday and Friday. Now, why is this? Well, for Friday,
+[  301.30s ->   307.28s] my guess is that you have the theta decay over the weekend, where as long as the market doesn't
+[  307.28s ->   313.20s] go too dramatically, you open up on Monday with a decent profit already due to about three days
+[  313.20s ->   319.32s] of theta decay. So that's one thing that's working out in your favor. Monday, typically the market
+[  319.32s ->   326.74s] opens has a lot of volatility, but sometimes and more times than not, whatever happens on Monday
+[  326.74s ->   331.46s] tends to set the precedent for the rest of the week. And so if you have a green Monday,
+[  331.56s ->   336.34s] you're taking advantage of it, you tend to have maybe a greener week as a whole. And so being able
+[  336.34s ->   341.32s] to enter on Monday or Friday were shown to be better days and do your own research, do more data
+[  341.32s ->   347.86s] diving into this. And I will myself because I find this interesting. But so far, based on the 65,000
+[  347.86s ->   352.82s] trades I gave it to analyze, Monday and Friday were the best days. And last but not least is use
+[  352.82s ->   359.52s] hedges strategically. It said the trades that had hedges perform 24% better and had an average
+[  359.52s ->   366.22s] profit of $400 versus the trades that didn't. So what is this saying? Again, I have something I say
+[  366.22s ->   371.62s] a lot is that one strategy is not something you should rely on. A lot of people take one option
+[  371.62s ->   376.78s] strategy. That's the only thing they do. You need to pair your amazing bullish strategy, whether it's a
+[  376.78s ->   381.86s] short put, put credit spread, one, one, two, one, one, whatever it is, and pair it with a hedge.
+[  381.86s ->   388.98s] It showed that of the trades that were paired with a hedge, the win rate increased by 24%
+[  388.98s ->   394.30s] and had a higher profit. Why? Because when things like this happen, you have hedges to offset your
+[  394.30s ->   398.86s] losses and even help you profit depending on how many hedges you have on. So those are the five
+[  398.86s ->   407.26s] biggest takeaways from analyzing over 65,000 live options trades, which is this shortly put. Number
+[  407.26s ->   415.50s] one, stay between 90 to 120 DTE target, uh, mid range premium between five and $20 stick to proven
+[  415.50s ->   420.02s] strategies. Number four, intro on Mondays and Fridays. Number five, use hedges strategically.
+[  420.02s ->   424.58s] If you want to learn more about the options auto trader, and you want to start using it to automate
+[  424.58s ->   429.32s] your own trading as well, um, then click the first link down there below. So we can get more trading
+[  429.32s ->   431.08s] data so I can make more videos like this.

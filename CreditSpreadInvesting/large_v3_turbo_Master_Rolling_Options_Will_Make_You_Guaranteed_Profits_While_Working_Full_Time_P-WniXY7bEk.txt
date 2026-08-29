@@ -1,0 +1,195 @@
+[    0.00s ->     4.48s] Selling options is the best way for people with jobs to generate additional income so
+[    4.48s ->     8.56s] that we can invest more aggressively, cover our expenses, and retire early.
+[    9.10s ->    13.54s] I myself have been selling options for years, and at this point in time in my life, I can
+[   13.54s ->    18.36s] make thousands of dollars a month consistently with really minimal effort.
+[   18.60s ->    22.38s] We're not talking about credit spreads here, just selling puts and calls.
+[   22.52s ->    27.48s] As an option seller, these options are going to go in the money at some point.
+[   27.48s ->    31.98s] Today, I'm going to show you how to manage and roll these options and still make a lot
+[   31.98s ->    32.78s] of money doing it.
+[   33.22s ->    36.74s] If you clicked on this video, you already know how to sell options to a certain extent.
+[   37.16s ->    40.54s] But if you don't, click on this video linked in the upper right-hand corner where I run
+[   40.54s ->    45.44s] through my system that guarantees consistent income selling puts and calls, and then come
+[   45.44s ->    46.14s] back to this video.
+[   46.58s ->    49.30s] So let's just recap the system before we get started.
+[   49.80s ->    54.58s] So I'm just going to leave on the screen here the four rules that we have to follow when
+[   54.58s ->    56.42s] we're selling puts and calls.
+[   56.66s ->    62.34s] All of this sums up to you never closing a trade at a loss, and this allows you to truly
+[   62.34s ->    66.46s] collect that credit as consistent passive income.
+[   66.66s ->    70.48s] If you don't understand why we do this, take a look at that video in the upper right-hand
+[   70.48s ->    70.72s] corner.
+[   70.80s ->    74.34s] Today, we're just going to add to that system by understanding how to roll options.
+[   74.56s ->    78.20s] I'm going to tell you the rules first, and then we're going to discuss why these rules
+[   78.20s ->    81.48s] exist with my own trading example.
+[   81.48s ->    84.48s] But before we get there, if you guys like content like this, make sure you guys like
+[   84.48s ->    85.42s] this video and subscribe.
+[   85.74s ->    91.92s] I'm on a mission to teach you how to use investing and trading to retire early so that you can
+[   91.92s ->    94.34s] spend more time on the things that are important to you.
+[   94.74s ->    95.92s] So here are the rules.
+[   96.36s ->   100.80s] Number one, we only roll if we can get a credit from rolling.
+[  101.14s ->   104.52s] Two, we want to roll for at least 30 days out.
+[  104.82s ->   108.62s] And three, generally speaking, we want to roll when there's around one to two weeks left
+[  108.62s ->   112.68s] before expiry to avoid the potential of assignment.
+[  112.86s ->   116.08s] We're going to talk in extreme details about why this system works.
+[  116.48s ->   120.06s] After this video, you should understand everything there is to know about rolling options.
+[  120.30s ->   123.90s] So we're going to use my real-life trades to demonstrate these principles.
+[  124.12s ->   129.82s] Here's a list of all the Apple trades that I sold and rolled over a span of five months
+[  129.82s ->   132.82s] from October to March of this year.
+[  132.82s ->   138.78s] I continued to roll this option over and over and over again, collecting credit as I rolled.
+[  139.00s ->   142.80s] And you can see I never paid money to roll any of these options.
+[  143.18s ->   145.56s] Eventually, I let these expire out of the money.
+[  146.00s ->   148.30s] But again, I can keep rolling this for however long I want.
+[  148.62s ->   153.44s] During that time, I collected around $1,055 from just rolling that one Apple call option
+[  153.44s ->   155.52s] over slightly less than five months.
+[  155.52s ->   163.48s] Which means that I'm making around $200 a month on this one option is essentially 1.14% return
+[  163.48s ->   164.52s] every month.
+[  164.58s ->   165.66s] This is just my own thoughts here.
+[  165.86s ->   166.78s] You guys feel free to disagree.
+[  167.02s ->   168.70s] Some people will say that 1% is not a lot.
+[  168.84s ->   173.90s] If you can make 1% extra every month, that's 12% a year, which is better than a historical
+[  173.90s ->   177.84s] average return on the S&P 500 since inception.
+[  178.16s ->   181.88s] So let's take a look at the Apple chart during that timeframe from October to March.
+[  181.88s ->   187.38s] So you can see that a lot of the times, my option will actually end the money, right?
+[  187.40s ->   189.32s] And I was still able to collect credit.
+[  189.58s ->   194.84s] Eventually, Apple came back down past $185,000 and I was able to have it expire out of the
+[  194.84s ->   194.98s] money.
+[  195.10s ->   198.74s] The most important part here is during this whole time, I never bought it back at a loss
+[  198.74s ->   200.04s] and I never rolled it for a loss.
+[  200.18s ->   204.16s] If there's only one thing that you guys learned from this video, it's to really stress this
+[  204.16s ->   204.50s] point.
+[  204.50s ->   208.96s] Make sure that when you guys sell calls, you guys are willing to sell them and have those options
+[  208.96s ->   213.12s] be assigned because then you're more likely to be able to withstand these options being
+[  213.12s ->   217.26s] the money, see those large negative numbers and not panic close.
+[  217.52s ->   222.20s] But if that's not enough, then let's explain how rolling works and how we can still collect
+[  222.20s ->   224.92s] money from it, whether it's out of the money or in the money.
+[  225.34s ->   228.76s] The first thing to understand, I'm sure you guys all know this, is that options are time
+[  228.76s ->   229.28s] bound, right?
+[  229.28s ->   233.94s] And as time goes on, that time will gradually cause your options to become less and less
+[  233.94s ->   234.76s] valuable, right?
+[  234.78s ->   237.64s] This is what we would call theta decay, otherwise known as time decay.
+[  237.64s ->   240.86s] If you want to learn everything there is to know about theta, I did a whole video deep
+[  240.86s ->   242.86s] diving into this linked in the upper right-hand corner.
+[  243.20s ->   246.16s] So that's again, news my real life trades on November 8th.
+[  246.16s ->   250.26s] And we're just going to take a look at the November 24th option chain compared to the
+[  250.26s ->   252.08s] December 1st and December 8th, right?
+[  252.08s ->   255.40s] Because at this point in time, Apple was very close to being in the money, right?
+[  255.42s ->   257.76s] It's sitting at 183, my options were at 185.
+[  258.16s ->   263.00s] So November 24th, 2023, 185 option is worth $187.
+[  263.00s ->   269.00s] Now compare that to the December 1st option, 185 right here, 185 is right here.
+[  269.62s ->   277.74s] This one's worth around $252, around a difference of $68 or so, let's just say 70, which means
+[  277.74s ->   285.04s] that the option that is further out, so December 1st is worth $70 more than the option that
+[  285.04s ->   289.48s] you have on November 24th, 2023, which is only worth 187.
+[  289.48s ->   294.50s] So if you were to roll it from November 24th to December 1st for an additional week, you
+[  294.50s ->   298.92s] would make $252 minus 187, a credit of $65.
+[  299.70s ->   305.32s] Now compare the November 1st, November 24th one to December 8th one, which is around two
+[  305.32s ->   307.80s] weeks, and you see an even larger difference, right?
+[  307.86s ->   311.42s] The one on December 8th, 185 call is worth around 312.
+[  311.74s ->   316.84s] So 312 minus 187 will be around $125 or so.
+[  316.84s ->   322.18s] So you can see by extending or rolling out an option, you're actually going to be paid
+[  322.18s ->   326.26s] money because the options that are further out is going to be worth more money than the
+[  326.26s ->   331.16s] options that you currently hold because time decay is decaying out the value of that option
+[  331.16s ->   332.64s] because there's less time on it.
+[  332.70s ->   338.70s] So my actual trade would be this December 1st to December 8th, which will be the option
+[  338.70s ->   348.62s] pricing difference would be around 312 minus 252, which will be around a $60 gain by rolling
+[  348.62s ->   350.22s] it out by additional week.
+[  350.64s ->   353.18s] So you can see theta decay or time decay at work.
+[  353.38s ->   355.28s] So now let's move on to a different day, right?
+[  355.36s ->   359.88s] And see what happens when the option is in the money because I want to show you that you
+[  359.88s ->   361.90s] will also get credit when the option is in the money.
+[  361.90s ->   365.62s] So we'll just go to when Apple is at its highest point and we'll look at this option
+[  365.62s ->   371.50s] chain again just to show you that even as the value of Apple overall increases, right?
+[  371.60s ->   373.66s] Keep in mind the option pricing right now.
+[  373.92s ->   377.64s] What you care about is the difference between the legs that you're selling and you'll see
+[  377.64s ->   380.32s] that even the difference will be enough for you to gain a credit.
+[  380.48s ->   381.24s] So we'll take a look at that.
+[  381.72s ->   384.96s] We're on December 13th where Apple is actually worth around $196.
+[  385.20s ->   389.64s] The Apple, it actually peaked around December 14th at $198.
+[  389.64s ->   390.96s] So we're really, really close.
+[  391.32s ->   395.76s] We'll just take this as our max point and just compare the option that I had to the option
+[  395.76s ->   398.30s] that I will roll out to and see the difference in price.
+[  398.52s ->   404.60s] So at this point in time, I had the January 5th, 2024 option at again, $185, right?
+[  404.66s ->   408.70s] Before it was around $180, Apple was at $183, now we're at $196.
+[  408.82s ->   412.26s] So we're now in the money and this option is actually going to be worth a lot of money
+[  412.26s ->   415.60s] because there's something what we would call it has intrinsic value, right?
+[  415.60s ->   419.62s] If the options were to get assigned at this point, the owner of that call option
+[  419.64s ->   425.12s] the person who bought this option from me would make around $10 a share per 100 shares
+[  425.12s ->   429.48s] which means that he would make $1,000 from the difference of the stock.
+[  430.30s ->   434.92s] What is important, like I said earlier, is the difference between the option that you're
+[  434.92s ->   437.46s] about to close and the option that you're going to roll out to.
+[  437.92s ->   442.96s] So shortly after December 13th or December 14th, around three days later, I decided to
+[  442.96s ->   449.06s] roll it out to a January 19th expiry, two extra weeks at $185, the same strike price.
+[  449.06s ->   456.90s] And you can see that this one is going to be worth $1,290 as opposed to the $1,200 option
+[  456.90s ->   458.10s] that we talked about earlier, right?
+[  458.12s ->   459.98s] Compare this leg and this leg.
+[  460.12s ->   464.14s] So even though it's in the money, I'm able to roll this option out and still get close
+[  464.14s ->   466.44s] to $90 on this one roll.
+[  466.68s ->   471.10s] This is showing you how theta decay, theta is really, really the most important critical
+[  471.10s ->   473.66s] factor when rolling an option.
+[  473.66s ->   477.84s] Even though it's in the money, the difference between the option that you're closing and
+[  477.84s ->   481.00s] the option that you're rolling out to, which will be the longer termed one, will allow you
+[  481.00s ->   481.74s] to correct credit.
+[  482.28s ->   486.72s] Now, if you want it to what we call roll up or roll down, by rolling up, you're basically
+[  486.72s ->   488.86s] trying to roll to a higher strike price.
+[  489.16s ->   491.10s] So you're going from $185, for example, to $190.
+[  491.48s ->   496.94s] And theoretically, you would have to pay the difference between these two, $185 and $190.
+[  496.94s ->   499.76s] So in this case, you'll pay around $350 to do that roll.
+[  500.26s ->   502.80s] You can also roll down, which is $185 to $180.
+[  503.16s ->   509.84s] At this point, you'll collect even more money because you're going from $120, $5 to $1750.
+[  510.24s ->   515.44s] So you'll collect close to $420, $30 to roll down.
+[  515.84s ->   518.68s] I'll only roll up when I can get a credit for it, which is in this case, not going to
+[  518.68s ->   520.34s] happen because I'm too far in the money.
+[  521.00s ->   525.92s] A disclaimer here though, if you are so far in the money, there will come a point where
+[  525.92s ->   527.34s] Theta won't be able to help you much.
+[  527.72s ->   532.14s] So at some point in time, for example, if Apple were to continue up to like $200, $205, $210,
+[  532.62s ->   537.44s] or even using this $165 example, you can see that the difference between these two options
+[  537.44s ->   538.56s] will become less and less and less.
+[  538.62s ->   541.98s] And at some point in time, you won't be able to roll an option for a credit.
+[  542.24s ->   543.92s] And at that point, you usually have to close.
+[  544.44s ->   547.78s] Another way to do it, this is just, I guess, maybe a little bit more mechanical.
+[  547.78s ->   550.44s] You can always extend the Theta to be further out.
+[  551.04s ->   555.22s] And so let's compare the $185 to the $185 here.
+[  556.37s ->   560.45s] You can see how by rolling it out 129 days, you're getting even more time.
+[  560.61s ->   565.15s] So you're going to pay, you're going to get around $400 for rolling out this $185 off
+[  565.15s ->   566.47s] from January to April.
+[  567.09s ->   569.17s] This is essentially how you roll.
+[  569.35s ->   573.23s] Again, the major takeaway here, you don't have to panic when options go in the money.
+[  573.47s ->   576.75s] Worst case scenario is you get a sign on the option, which trust me, it's happened to me
+[  576.75s ->   578.27s] many, many, many times, right?
+[  578.27s ->   582.17s] I just made an Instagram post about how I got a sign on my Southwest options.
+[  582.29s ->   584.13s] I made a video about it, link in the upper right-hand corner.
+[  584.13s ->   585.07s] It happens, right?
+[  585.13s ->   586.21s] Hopefully this example made sense.
+[  586.89s ->   591.03s] I'm on a mission to really teach you guys how to use your hard-earned cash to generate
+[  591.03s ->   595.05s] cash flow, as well as grow your accounts so that you guys can retire as early as possible.
+[  595.83s ->   597.89s] And so if you guys have any questions, drop a comment down in the comment section below.
+[  598.03s ->   601.09s] If you guys like the video, please consider subscribing, but really help the channel out.
+[  601.35s ->   603.05s] And until next time, stay safe in the market.
+[  603.51s ->   603.71s] Peace.
+[  603.71s ->   604.71s] Peace.
+[  604.71s ->   605.71s] Peace.
+[  605.71s ->   606.71s] Peace.
+[  606.71s ->   607.71s] Peace.
+[  607.71s ->   608.71s] Peace.
+[  608.71s ->   609.71s] Peace.
+[  609.71s ->   610.71s] Peace.
+[  610.71s ->   611.71s] Peace.
+[  611.71s ->   612.71s] Peace.
+[  612.71s ->   613.71s] Peace.
+[  613.71s ->   614.71s] Peace.
+[  614.71s ->   615.71s] Peace.
+[  615.71s ->   616.71s] Peace.
+[  616.71s ->   617.71s] Peace.
+[  617.71s ->   618.71s] Peace.
+[  618.71s ->   619.71s] Peace.
+[  619.71s ->   620.71s] Peace.
+[  620.71s ->   621.71s] Peace.
+[  621.71s ->   622.71s] Peace.
+[  622.71s ->   623.71s] Peace.
+[  623.71s ->   624.71s] Peace.
+[  624.71s ->   625.71s] Peace.
+[  625.71s ->   626.71s] Peace.
+[  626.71s ->   627.71s] Peace.
+[  627.71s ->   628.71s] Peace.
+[  628.71s ->   629.71s] Peace.
+[  629.71s ->   630.71s] Peace.
+[  630.71s ->   631.71s] Peace.
+[  631.71s ->   632.71s] Peace.

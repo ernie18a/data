@@ -1,0 +1,151 @@
+<!-- tradingview-pine-id: PUB;XkjXMyBfoYgQ0MIchqZ8bwNBzlMaqMCP -->
+<!-- tradingviewscripts-format: 1 -->
+# Performance
+
+Source: https://www.tradingview.com/script/BmvtK3GH-Performance-Table/
+
+## Description
+
+This indicator is based on the Performance section in the TradingView's sidebar and uses new Pine tables functionality. It compares the current price of the symbol to its past price and calculates the rate of return to make it easier to track the performance of the symbol. Note that the Performance sidebar is not updated in real-time, while this indicator is, so on real-time charts the values between the two can differ (the indicator's values are more recent).
+
+The formula of the calculation is (Current value - Past value) * 100 / Past value, where Past value is:
+
+[*]1W - close 5 daily bars ago
+[*]1M - close 21 daily bars ago
+[*]3M - close 63 daily bars ago
+[*]6M - close 126 daily bars ago
+[*]YTD - close of the past year
+[*]1Y - close 251 daily bars ago
+
+---
+
+## Source Code
+
+````pine
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © BeeHolder
+
+//@version=5
+indicator("Performance", overlay=true)
+
+tableColumnsInput = input.int(3, "Number of columns", group = "Table Settings")
+
+tooltipText = "Custom timeframes can be added via the chart's Timeframe dropdown. Until added, custom timeframes show up as 'Chart' instead."
+showTF1 = input.bool(true,   "", inline = "TF1", group = "Absolute timeframes")
+tf1 = input.timeframe("1W",  "", inline = "TF1", group = "Absolute timeframes", tooltip = tooltipText)
+showTF2 = input.bool(true,   "", inline = "TF2", group = "Absolute timeframes")
+tf2 = input.timeframe("1M",  "", inline = "TF2", group = "Absolute timeframes")
+showTF3 = input.bool(true,   "", inline = "TF3", group = "Absolute timeframes")
+tf3 = input.timeframe("3M",  "", inline = "TF3", group = "Absolute timeframes")
+showTF4 = input.bool(true,   "", inline = "TF4", group = "Absolute timeframes")
+tf4 = input.timeframe("6M",  "", inline = "TF4", group = "Absolute timeframes")
+showTF5 = input.bool(true,   "", inline = "TF5", group = "Absolute timeframes")
+tf5 = input.timeframe("9M",  "", inline = "TF5", group = "Absolute timeframes")
+showTF6 = input.bool(true,   "", inline = "TF6", group = "Absolute timeframes")
+tf6 = input.timeframe("52W", "", inline = "TF6", group = "Absolute timeframes")
+showTF7 = input.bool(true,   "", inline = "TF7", group = "To Date timeframes")
+tf7 = input.timeframe("1M",  "", inline = "TF7", group = "To Date timeframes")
+showTF8 = input.bool(true,   "", inline = "TF8", group = "To Date timeframes")
+tf8 = input.timeframe("3M",  "", inline = "TF8", group = "To Date timeframes")
+showTF9 = input.bool(true,   "", inline = "TF9", group = "To Date timeframes")
+tf9 = input.timeframe("12M", "", inline = "TF9", group = "To Date timeframes")
+
+var showTFArray = array.from(showTF1, showTF2, showTF3, showTF4, showTF5, showTF6, showTF7, showTF8, showTF9)
+var timeframesArray = array.from(tf1, tf2, tf3, tf4, tf5, tf6, tf7, tf8, tf9)
+
+if barstate.isfirst
+    for i = 0 to array.size(showTFArray) - 1
+        tf = array.get(timeframesArray, i)
+        if not na(str.tonumber(tf))
+            runtime.error(str.format("Intraday timeframes (`{0}` in Timeframe #{1}) are not compatible with this indicator.", tf, i + 1))
+
+var table perfTable = table.new(position.top_right, tableColumnsInput, 9, border_width = 3)
+
+LIGHTTRANSP = 90
+AVGTRANSP   = 80
+HEAVYTRANSP = 70
+
+posColorInput = input(color.rgb(38, 166, 154), title="Positive Color")
+negColorInput = input(color.rgb(240, 83, 80), title="Negative Color")
+
+timeframeInMS(timeframe) =>
+    numTf = str.tonumber(timeframe)
+    tfLength = str.length(timeframe)
+    
+    float tfNumber = na
+    string tfLetter = na
+    
+    if numTf
+        tfNumber := numTf
+    else
+        tfLetter := str.substring(timeframe, tfLength - 1, tfLength)
+        tfNumber := str.tonumber(str.substring(timeframe, 0, tfLength - 1))
+    
+    tfBaseInMS = switch tfLetter
+        "S" => 60 * 1000
+        "D" => 24 * 60 * 60 * 1000
+        "W" => 7 * 24 * 60 * 60 * 1000
+        "M" => 30 * 24 * 60 * 60 * 1000
+        => 60 * 60 * 1000
+    
+    int(tfBaseInMS * tfNumber)
+
+fastSearch(source, target) =>
+    max_bars_back(source, 366)
+    left  = 0
+    right = math.min(bar_index, 366)
+    mid = 0
+    if source < target
+        0
+    else
+        for i = 0 to 9
+            mid := math.ceil(math.avg(left, right))
+            if left == right
+                break
+            else if source[mid] < target
+                right := mid
+                continue
+            else if source[mid] > target
+                left := mid
+                continue
+            else
+                break
+        mid
+
+rateOfreturn(v1, v2) => (v1 - v2) * 100 / math.abs(v2)
+
+performance(timeframe) =>
+    sourceTime = barstate.isconfirmed ? time_close : timenow
+    barsBack = fastSearch(time, sourceTime - timeframeInMS(timeframe))
+    performance = request.security(syminfo.tickerid, "1D", rateOfreturn(close, close[barsBack]), lookahead=barmerge.lookahead_on)
+    performance
+
+tf7Sec = request.security(syminfo.tickerid, tf7, close[1], lookahead=barmerge.lookahead_on)
+tf8Sec = request.security(syminfo.tickerid, tf8, close[1], lookahead=barmerge.lookahead_on)
+tf9Sec = request.security(syminfo.tickerid, tf9, close[1], lookahead=barmerge.lookahead_on)
+
+fillCell(_table, column, row, value, timeframe) =>
+    _color = value >= 0 ? posColorInput : negColorInput
+    transp = math.abs(value) > 10 ? HEAVYTRANSP : math.abs(value) > 5 ? AVGTRANSP : LIGHTTRANSP
+    cellText = str.tostring(value, "0.00") + "%\n" + timeframe
+    table.cell(_table, column, row, cellText, bgcolor = color.new(_color, transp), text_color = _color, width = 6)
+
+formatTF(tf) =>
+    formattedTF = switch tf
+        "52W" => "1Y"
+        "12M" => "1Y"
+        => tf
+
+changeArray = array.from(performance(tf1), performance(tf2), performance(tf3), 
+ performance(tf4), performance(tf5), performance(tf6), rateOfreturn(close, tf7Sec), 
+ rateOfreturn(close, tf8Sec),rateOfreturn(close, tf9Sec))
+timeframeArray = array.from(formatTF(tf1), formatTF(tf2), formatTF(tf3), formatTF(tf4), 
+ formatTF(tf5), formatTF(tf6), formatTF(tf7) + "TD", formatTF(tf8) + "TD", formatTF(tf9) + "TD")
+
+if barstate.islast
+    filled = 0
+    for i = 0 to array.size(showTFArray) - 1
+        if array.get(showTFArray, i)
+            fillCell(perfTable, filled % tableColumnsInput, filled / tableColumnsInput, array.get(changeArray, i), array.get(timeframeArray, i))
+            filled += 1
+````

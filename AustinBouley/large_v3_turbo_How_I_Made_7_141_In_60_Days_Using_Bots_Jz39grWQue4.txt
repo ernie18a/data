@@ -1,0 +1,71 @@
+[    0.06s ->     7.68s] In this video, I'm going to show you how I made $7,141 in just two months using three simple
+[    7.68s ->    12.62s] options bots that anybody can copy and steal. And by the end of this video, you'll know exactly how
+[   12.62s ->    17.76s] to do it as well. So if we look into my TastyTrade account, these options bots that you see here,
+[   17.80s ->    22.26s] which I'll walk through in just a second, are connected to my TastyTrade account ending in
+[   22.26s ->    29.14s] 026. Here's the account 026 right here. We can see that even if I just refresh the history,
+[   29.14s ->    34.88s] as you can see, I'm not BSing you. It's connected to my account. And if I look over the last 60 days,
+[   35.12s ->    42.56s] I've generated roughly $12,200 in options premium. And I've been able to actually keep, as you can
+[   42.56s ->    49.72s] see here, about $7,141. So let's dive into exactly how I do this and how you can copy it for yourself.
+[   50.04s ->    55.38s] So I have three bots. I have a futures bullish bot, a bearish bot, and a daily income buy. You might be
+[   55.38s ->    60.60s] wondering why these three bots. I've covered this in other videos, but let me give you an idea of
+[   60.60s ->    66.54s] what's going on here. If we look at the market is only in one of three different phases. The market's
+[   66.54s ->    72.26s] either trending up and going higher like this, where we have an uptrend. The market's either going down,
+[   72.34s ->    76.92s] a downtrend like this, or the market's flat, where it's saying relatively the same price.
+[   76.92s ->    81.90s] No matter what is happening in the world or the market, you can guarantee that it's going to be
+[   81.90s ->    87.80s] one of these three phases, up, down, or sideways. And so because of that, I need a bot that is going
+[   87.80s ->    92.82s] to prompt from each different type of market. So during this bullish phase, I have a bullish
+[   92.82s ->    96.44s] bot, which I'll talk and show more about the details here. When the market's going down,
+[   96.50s ->   100.92s] I have a bearish bot to capitalize on it. And then I have a sideways bot and things that we take
+[  100.92s ->   104.54s] advantage of on a daily basis. If you've never heard of this tool called the options auto trader,
+[  104.54s ->   109.44s] I am 100% biased on this. This is a tool that I built two years, years ago, and I've been
+[  109.44s ->   114.16s] improving ever since we have over 1000 options traders using this tool right now. And you can
+[  114.16s ->   119.02s] get a 30 day trial to it down below. But let me show you exactly what this is. So it starts off
+[  119.02s ->   125.62s] with my futures bullish bot. Okay, you can see here, my first trade was put on in July 9, it looks like
+[  125.62s ->   131.52s] to July. And now we're on September 8, as I record this video. So two months in. So again, you can see
+[  131.52s ->   139.30s] this bot alone has generated $6,562. Your long term bullish bot is what's going to be the primary
+[  139.30s ->   144.92s] monthly income driver of any portfolio you have. So make sure you have a solid one. The one that I
+[  144.92s ->   149.24s] use here is a 111 strategy. So we look into the bot, you can see here the strategy rules.
+[  149.62s ->   154.82s] This is done on ES, it can also be done on spy or SPX or whatever else, but it's done on ES is a
+[  154.82s ->   160.52s] futures option strategy. It's 120 days out. And it's a 111 trade, which means basically here,
+[  160.52s ->   165.56s] I have a put debit spread that I trade. And then I sell a put at the 10 delta mark. So here's my put
+[  165.56s ->   172.12s] debit spread, I buy a put at the 25 delta, I sell a put at 23 delta, and then I sell a put at 10 delta,
+[  172.24s ->   177.04s] which collects and generates my income. I enter this trade once a week on Wednesday, I'm about to
+[  177.04s ->   181.68s] up this to twice a week, because I have the capital available to do that. And I want to increase my
+[  181.68s ->   186.90s] returns. So I'll be going and doing this to do it on Tuesday and Thursday instead of just once a week.
+[  186.90s ->   191.68s] My man, my management rules for this bot is close the trade once the trade is at a 50% take profit,
+[  191.68s ->   199.50s] or a 300% stop loss, quite simple. And I'm allocated $57,000 to this bot right now. So of
+[  199.50s ->   206.04s] the $57,000 that I have allocated to this bot, I've made roughly an 11% return on the money that I'm
+[  206.04s ->   211.68s] using, which is pretty good. So it's been two months, it's about 5% return on my capital every
+[  211.68s ->   217.00s] month using just this simple bot. Now this bot will only run during bullish market because that's
+[  217.00s ->   221.14s] when it's designed to make money. I have a bearish fire, which you can see is zero is doing absolutely
+[  221.14s ->   225.84s] nothing because I haven't hit a bearish market yet. We've been in a consistent uptrend. So there's
+[  225.84s ->   230.06s] been no need to turn on the bearish bot quite yet. But if I look at the settings here, you can just see
+[  230.06s ->   236.68s] it's a spy and there's a simple put debit spread meaning buying a put at the 30 delta, and I'm selling a
+[  236.68s ->   241.32s] put at the 20 delta just creating a put debit spread, which is going to make money as the market
+[  241.32s ->   245.92s] goes down. And so that's going to activate when the market is bearish, which it hasn't done yet.
+[  246.34s ->   252.10s] Then what I have here is my daily income bot. Why? I've been running just these two bots for over a
+[  252.10s ->   257.96s] year now. And this is what has generated the bulk of my money. This brand new account here, the $188,000
+[  257.96s ->   262.38s] that I started with was a brand new account that I just started. I have other accounts as well that you
+[  262.38s ->   265.94s] can look at. But this is the main account that I'm running with this strategy.
+[  265.94s ->   272.62s] And so these are what generate, as I mentioned, most of my monthly income. But there are times
+[  272.62s ->   277.52s] where these trades just take a while to close out, like two weeks to a month to close out this trade.
+[  277.86s ->   281.64s] And because I'm ADHD, I like seeing trading activity. I like looking at the market every day
+[  281.64s ->   287.94s] as of daily income bot that's placing trades on more of a daily basis. And this is what I call my
+[  287.94s ->   294.66s] daily 1DTE ORB strategy. So it's simply opening range breakout strategy bot that takes advantage of
+[  294.66s ->   302.02s] the market. You can see here, if we go all the way back, it's been running since 7, 8, the July 8. So
+[  302.02s ->   307.22s] four days after July 4. Anyways, you can see here a year today and I usually, but the past two months
+[  307.22s ->   312.74s] is generating $725. You can just one contract. So obviously, this is not going to generate a bulk
+[  312.74s ->   317.28s] of my money. You can see the bullish bot is what does all the money $6,000. In the last two months,
+[  317.50s ->   322.60s] this was only done 700. This is just for the fun daily activity to see movement, see price action.
+[  322.60s ->   327.78s] But your main money, my main money comes from those long term bots. So anyways, the daily income bot
+[  327.78s ->   332.30s] right here running a trade up $20 right now that place this morning. If we look at the rules here,
+[  332.54s ->   341.66s] obviously, 1DTE on SPX, we enter at the 35 delta, and we go $20 away. Entry rules as we enter for the
+[  341.66s ->   346.18s] daily opening range breakout, which means we wait for a 60 minute window, and then it trades once the
+[  346.18s ->   350.66s] market breaks above that high. Again, the bot manages all these rules, exits, safe profit and all that,
+[  350.66s ->   355.08s] and they can all be adjusted to the risk tolerance levels you want to take. You can also create your
+[  355.08s ->   362.06s] own bots. But this is the options bot portfolio system that I have used to make over $7,000 in
+[  362.06s ->   367.78s] the last two months using three simple bots. Whether you want to use bots or not, this is a process you
+[  367.78s ->   372.04s] should use. Have a bullish strategy, have a bearish strategy, and have something for daily activity so
+[  372.04s ->   376.86s] you don't go insane and do things you shouldn't with your account. That is the portfolio. If you want
+[  376.86s ->   380.36s] to learn more, feel free to hit the subscribe button. If you want to check out your options
+[  380.36s ->   384.18s] bots and try building your own, click the link down below to start your 30-day trial.

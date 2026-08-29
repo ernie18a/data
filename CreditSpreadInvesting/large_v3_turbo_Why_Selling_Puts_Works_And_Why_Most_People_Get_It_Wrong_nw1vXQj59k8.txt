@@ -1,0 +1,302 @@
+[    0.00s ->     3.04s] So as many of you guys know, I love selling options.
+[    3.32s ->     4.46s] It wasn't always like that.
+[    4.60s ->     6.34s] I was buying short-term options.
+[    6.52s ->    11.00s] I was selling puts on volatile stocks, chasing income and yield.
+[   11.22s ->    15.12s] But that all changed a couple of years ago when I came across this paper
+[   15.12s ->    18.22s] called The Art of Selling Puts by Goldman Sachs.
+[   18.42s ->    23.26s] Selling puts, when done correctly, is one of the most consistent
+[   23.26s ->    27.72s] and most proven strategies to not only beat the S&P 500,
+[   27.72s ->    30.26s] but beat it on a risk-adjusted basis.
+[   30.62s ->    33.96s] So if that's true, then why do so many people still get it wrong?
+[   34.28s ->    36.48s] And what is the right way to sell puts?
+[   37.04s ->    39.56s] That's the question I'm going to answer today in this video.
+[   40.08s ->    44.06s] Selling puts is a very popular strategy, especially among retail investors.
+[   44.38s ->    45.52s] Now, why is that?
+[   45.78s ->    47.68s] Because you get to win a lot of the time,
+[   47.78s ->    50.48s] collect premium month after month or week after week.
+[   50.54s ->    54.44s] And it feels incredibly consistent and for the most part, profitable.
+[   54.44s ->    57.58s] And honestly, that premium when you collect, that dopamine hit,
+[   57.72s ->    59.10s] is intoxicating, right?
+[   59.14s ->    60.30s] Because it feels like free money,
+[   60.40s ->    62.80s] similar to how dividends feel when we get that dividend payout.
+[   62.92s ->    66.18s] And what convinces us further is that our life experience shows us
+[   66.18s ->    68.16s] that in most cases,
+[   69.22s ->    72.36s] selling puts and calls is a winning strategy,
+[   72.48s ->    73.90s] that there is an edge here.
+[   74.16s ->    75.52s] And The Art of Selling Puts, that paper,
+[   75.88s ->    78.48s] proves that selling puts is a great strategy.
+[   78.60s ->    80.22s] It has a systematic edge.
+[   80.32s ->    82.26s] It explains why that edge exists.
+[   82.26s ->    84.40s] And the reason that selling puts works
+[   84.40s ->    86.10s] comes down to one main thing.
+[   86.60s ->    92.00s] Options are typically priced higher than what ends up happening.
+[   92.38s ->    94.52s] In other words, people are willing to pay for more risk
+[   94.52s ->    96.70s] than what actually materializes in the market.
+[   97.06s ->    98.28s] You hear this all the time, right?
+[   98.32s ->   100.28s] That's when people say your implied volatility
+[  100.28s ->   102.42s] is greater than the realized volatility.
+[  102.60s ->   104.00s] And that difference between the two,
+[  104.20s ->   107.00s] that is the arbitrage or that is the edge that we have.
+[  107.14s ->   110.96s] The market is especially willing to pay for downside protection.
+[  110.96s ->   112.78s] And the reason for that is really simple.
+[  113.26s ->   115.14s] The market tends to move up very slowly.
+[  115.64s ->   117.92s] And then when it crashes, it crashes really hard.
+[  118.46s ->   119.90s] That fear gets priced in.
+[  120.62s ->   124.12s] And the puts that we sell actually has even more difference
+[  124.12s ->   128.12s] between the risk and the actualized risk.
+[  128.52s ->   132.14s] That's great because that explains why selling puts works
+[  132.14s ->   133.52s] from a systematic point of view.
+[  133.82s ->   135.16s] However, that's not the important part.
+[  135.40s ->   136.58s] If it really were that simple,
+[  136.66s ->   139.92s] then everyone would be able to sell puts successfully and consistently.
+[  139.92s ->   142.06s] There's a lot of variables that we have to choose
+[  142.06s ->   143.70s] when selling that one put option.
+[  143.82s ->   145.52s] We have strike price, we have underlying stock,
+[  145.62s ->   148.16s] we have DTEs, we have maybe implied volatility.
+[  148.40s ->   150.34s] There's so many different variables.
+[  150.72s ->   153.80s] And what ends up happening is that people optimize
+[  153.80s ->   155.34s] for the wrong variable.
+[  155.62s ->   156.14s] Let me explain.
+[  156.50s ->   159.42s] When we're selling options, we take on a lot of small wins.
+[  159.60s ->   160.22s] It's very common.
+[  160.34s ->   162.56s] We have one large loss that wipes us out.
+[  162.92s ->   164.14s] And honestly, this is by design.
+[  164.28s ->   166.66s] That is the risk to selling options.
+[  166.66s ->   168.60s] Because when you're selling options,
+[  169.10s ->   172.24s] that tail risk is where the volatility is actually greater
+[  172.24s ->   174.42s] than what the implied volatility is.
+[  174.80s ->   178.36s] And that is why we end up losing money when we sell options.
+[  178.40s ->   181.82s] It's because we're not mitigating against the actual risk.
+[  182.16s ->   184.32s] So if we want to sell puts successfully,
+[  184.42s ->   186.14s] then we have to understand what that risk is.
+[  186.18s ->   189.10s] And more importantly, we have to quantify what that risk is.
+[  189.52s ->   192.30s] And this is where a really important concept comes in.
+[  192.54s ->   194.20s] We like to call it the Sharpe ratio.
+[  194.20s ->   197.72s] It's a fancy equation, but what it really means
+[  197.72s ->   200.48s] is how much return am I getting
+[  200.48s ->   202.82s] for the amount of risk that I'm taking on.
+[  203.00s ->   204.84s] Let me just use two charts to demonstrate.
+[  205.20s ->   207.18s] We have a chart on the left where there's a lot of highs
+[  207.18s ->   207.88s] and there's a lot of lows.
+[  208.14s ->   210.22s] And on the other side, we have a chart
+[  210.22s ->   213.20s] that's basically a flat line getting the same amount of return.
+[  213.40s ->   215.78s] The one on the left is obviously a lot more volatile.
+[  216.24s ->   219.26s] So what this means is even though both graphs
+[  219.26s ->   220.98s] get the same return,
+[  221.42s ->   223.34s] the risk that they took on to get that return
+[  223.34s ->   224.14s] is very different.
+[  224.56s ->   226.86s] The one on the left took on a lot more risk.
+[  227.24s ->   229.26s] The one on the right took on a lot less.
+[  230.00s ->   231.96s] And so the one that looks like a roller coaster
+[  231.96s ->   234.48s] has a much lower Sharpe
+[  234.48s ->   237.14s] and the one on the right has a much higher Sharpe.
+[  237.38s ->   238.34s] We as investors,
+[  238.44s ->   239.50s] it doesn't matter if you're a hedge fund
+[  239.50s ->   240.52s] or a retail investor,
+[  240.86s ->   242.24s] we want to make as much money
+[  242.24s ->   245.22s] for as little risk as possible.
+[  245.22s ->   246.92s] And there is actually another reason
+[  246.92s ->   248.80s] why we want to be on the right
+[  248.80s ->   250.08s] with a very high Sharpe.
+[  250.08s ->   252.22s] So as retail investors,
+[  252.22s ->   254.36s] we are managing basically our own money.
+[  254.56s ->   256.68s] We have really high highs and really low lows.
+[  256.82s ->   258.58s] We have to make decisions on do we want to sell?
+[  258.66s ->   259.38s] Do we want to buy?
+[  259.46s ->   262.36s] And this is why we get the same
+[  262.36s ->   264.36s] where we buy high and we sell low.
+[  264.60s ->   265.90s] And so in order to avoid that,
+[  265.98s ->   268.40s] we want to change the trajectory of our chart
+[  268.40s ->   269.88s] from the left to the right.
+[  270.20s ->   270.88s] These smoother returns
+[  270.88s ->   273.02s] don't just improve your Sharpe ratio, right?
+[  273.02s ->   275.28s] What it actually allows us to do
+[  275.28s ->   277.94s] is it makes the strategy consistent
+[  277.94s ->   281.14s] because we aren't always under stress.
+[  281.76s ->   283.68s] That's why Sharpe is really important
+[  283.68s ->   286.06s] even for us as retail investors.
+[  286.66s ->   288.30s] So how do we actually lower our risk
+[  288.30s ->   290.32s] while still improving our return?
+[  290.94s ->   293.26s] Now, this paper tested many different approaches
+[  293.26s ->   294.84s] to choosing the underlying
+[  294.84s ->   296.66s] and choosing the strike price.
+[  297.24s ->   298.64s] So for example, choosing a strike price,
+[  298.70s ->   300.84s] they use all of our familiar terms, right?
+[  300.92s ->   302.48s] Yield, percent out of the money, delta,
+[  302.48s ->   305.04s] and they can see that by choosing strike prices
+[  305.04s ->   306.78s] based off of that criteria,
+[  306.90s ->   309.18s] there actually isn't a substantial increase
+[  309.18s ->   311.42s] in risk-adjusted returns,
+[  311.74s ->   314.70s] which is your Sharpe ratio and your total returns.
+[  315.30s ->   318.16s] Obviously, the higher your returns,
+[  318.26s ->   320.02s] the closer you are to the money,
+[  320.44s ->   321.62s] which means a lower Sharpe,
+[  321.84s ->   323.94s] and the further away from the money,
+[  324.20s ->   326.80s] the lower the return and the higher the Sharpe.
+[  326.94s ->   328.62s] And let's move on to choosing the underlying.
+[  328.96s ->   331.40s] They also use many, many different categories.
+[  331.40s ->   334.52s] Filtering by market cap, filtering by IV.
+[  335.16s ->   337.92s] You can see that there's actually some criterias
+[  337.92s ->   340.20s] that just do not have an edge in the market whatsoever.
+[  340.66s ->   342.18s] Selling puts on small cap stocks
+[  342.18s ->   344.02s] tend to underperform the S&P 500.
+[  344.30s ->   347.16s] Even selling it on high volatility stocks
+[  347.16s ->   350.80s] tends to return worse or around the same,
+[  351.28s ->   352.32s] which is not a good sign
+[  352.32s ->   354.94s] because you would rather just own the S&P 500
+[  354.94s ->   356.02s] at that point in time.
+[  356.30s ->   359.06s] But what they did find is staggering.
+[  359.06s ->   360.70s] At the bottom of this table,
+[  360.78s ->   362.20s] you'll see they filtered by something called
+[  362.20s ->   363.80s] free cash flow yield.
+[  364.66s ->   367.04s] And free cash flow yield is just a valuation metric
+[  367.04s ->   368.72s] that takes free cash flow
+[  368.72s ->   371.04s] divided by market price per share.
+[  371.36s ->   373.34s] So it has to be a profitable company
+[  373.34s ->   375.10s] that has really good cash flow
+[  375.10s ->   378.46s] as well as a company that is relatively well valued,
+[  378.60s ->   379.36s] which is the denominator.
+[  379.74s ->   382.34s] They return higher returns
+[  382.34s ->   385.36s] as well as a substantial increase in Sharpe,
+[  385.36s ->   387.64s] which means that the risk of just a return
+[  387.64s ->   391.54s] is actually significantly higher than the S&P 500.
+[  391.54s ->   394.30s] What that means is they are essentially choosing
+[  394.30s ->   398.36s] the most profitable companies that are fairly valued.
+[  398.86s ->   399.94s] And that kind of makes sense.
+[  400.42s ->   405.44s] Those companies are where risk is most often mispriced.
+[  406.14s ->   408.38s] The market tends to move a lot less
+[  408.38s ->   411.04s] for very stable companies.
+[  411.04s ->   414.12s] Those options, that delta between the realized volatility
+[  414.12s ->   416.50s] and the implied volatility is even larger
+[  416.50s ->   418.34s] for these really stable companies.
+[  418.46s ->   420.02s] And we're trying to optimize for our edge
+[  420.02s ->   424.02s] because this is where VRP can be taken advantage of
+[  424.02s ->   426.62s] even more so than other criterias.
+[  426.82s ->   427.94s] Now that we have the underlying,
+[  428.04s ->   429.98s] they decided to take it one step further.
+[  430.48s ->   432.00s] They decided to choose a strike price,
+[  432.14s ->   435.26s] not based on yield, not based on out of the money,
+[  435.34s ->   437.12s] not based on delta like we talked about earlier,
+[  437.44s ->   439.48s] but on the same free cash flow yield.
+[  439.48s ->   440.82s] So you can see right here is one time,
+[  440.92s ->   441.92s] two times, or three times.
+[  442.76s ->   443.90s] And this is actually, I think,
+[  443.94s ->   445.72s] the most fascinating part of this paper.
+[  446.28s ->   448.20s] If you're selling really far out of the money,
+[  448.26s ->   449.98s] which is one time your free cash flow yield.
+[  450.28s ->   452.48s] So for example, you have a free cash flow yield of 12%
+[  452.48s ->   455.22s] and you're trying to make 1% every month,
+[  455.36s ->   458.88s] you have an extremely high Sharpe ratio,
+[  459.10s ->   460.08s] but a lower return.
+[  460.92s ->   463.08s] But because your Sharpe is so high,
+[  463.62s ->   467.62s] your risk adjuster return is 24.3%,
+[  467.62s ->   470.88s] which is around two to three times more
+[  470.88s ->   474.34s] than what the S&P 500 returns on a risk adjusted basis.
+[  474.84s ->   476.68s] I'll talk a little bit more about what you can do
+[  476.68s ->   478.98s] with that number later on in the next couple minutes.
+[  479.22s ->   483.22s] But what that shows you is you are making a lot more money
+[  483.22s ->   485.32s] while taking on a lot less risk.
+[  485.58s ->   487.80s] Now, even if you were to get more aggressive
+[  487.80s ->   489.18s] with your strike prices,
+[  489.36s ->   491.58s] two times or three times your free cash flow yield,
+[  492.04s ->   493.60s] which means I'm closer to the money,
+[  493.60s ->   497.36s] you can see that your Sharpe ratio is still substantially higher
+[  497.36s ->   499.34s] than what the S&P 500 is,
+[  499.82s ->   502.02s] almost double of what it is, slightly more.
+[  502.42s ->   503.64s] Now, what this shows you
+[  503.64s ->   506.85s] is not that you should use free cash flow yield
+[  506.85s ->   507.91s] as your strike price,
+[  507.95s ->   509.01s] but what this shows you is that
+[  509.01s ->   513.05s] when you're selling puts on consistently profitable companies
+[  513.05s ->   514.43s] that are fairly valued,
+[  514.79s ->   517.55s] you can sell puts far out of the money.
+[  518.27s ->   521.13s] And two, you can also sell puts closer to the money
+[  521.13s ->   522.65s] and you can get higher returns
+[  522.65s ->   525.93s] while having a very, very high Sharpe.
+[  526.07s ->   529.13s] This paper fundamentally changed how I sell puts.
+[  529.27s ->   531.15s] If you just take a look at my portfolio,
+[  531.59s ->   534.47s] which implements elements of this paper,
+[  534.71s ->   538.09s] you can see how the Sharpe ratio idea comes to play.
+[  538.43s ->   540.25s] If you look at my portfolio, right,
+[  540.35s ->   543.43s] this graph looks a lot like a straight line
+[  543.43s ->   545.31s] for good reason, right?
+[  545.33s ->   546.57s] Because I'm trying to minimize
+[  546.57s ->   548.79s] as much volatility as possible.
+[  548.89s ->   550.89s] Now, if you take out all the equity
+[  550.89s ->   553.05s] that was assigned from selling puts
+[  553.05s ->   555.13s] and just look at the option selling results,
+[  555.33s ->   556.97s] you can see that our Sharpe ratio
+[  556.97s ->   561.29s] is actually extremely high, 4.3, right?
+[  561.35s ->   563.73s] And it's mainly because we are doing exactly
+[  563.73s ->   565.51s] what this paper is telling us to do.
+[  565.69s ->   569.35s] We are selling puts on the most efficient,
+[  569.51s ->   571.29s] the most profitable companies
+[  571.29s ->   574.17s] when they are fairly valued.
+[  574.41s ->   576.73s] And depending on the market situations at that time,
+[  576.73s ->   578.59s] I can then sell a strike price
+[  578.59s ->   579.97s] that is further out of the money
+[  579.97s ->   582.13s] or one that is closer to the money.
+[  582.49s ->   584.99s] Optimizing for your risk-adjusted return,
+[  585.65s ->   588.19s] optimizing for as little volatility as possible
+[  588.19s ->   590.99s] helped me make the best choices
+[  590.99s ->   593.33s] when it comes to choosing the right companies
+[  593.33s ->   594.67s] to sell options on
+[  594.67s ->   597.17s] and choosing the right strike prices
+[  597.17s ->   598.37s] to sell options for.
+[  599.05s ->   601.03s] Now, one last thing.
+[  601.55s ->   605.03s] The concept of Sharpe is actually really interesting.
+[  605.03s ->   608.47s] If you understand how to leverage it one step further.
+[  609.19s ->   610.39s] I don't do this on my channel
+[  610.39s ->   611.51s] because I don't like to touch margin.
+[  612.57s ->   616.01s] But the idea of having a higher Sharpe
+[  616.01s ->   617.73s] means you're taking on less risk.
+[  617.93s ->   619.75s] We're being more efficient, right?
+[  619.87s ->   622.19s] And so therefore, we can actually deploy more capital
+[  622.19s ->   624.75s] to match the same amount of risk
+[  624.75s ->   626.39s] that another strategy would have.
+[  626.41s ->   627.93s] For example, matching the S&P 500.
+[  628.33s ->   629.35s] So I'll give you one example.
+[  629.35s ->   633.29s] The S&P 500 here is at a 7.3% return
+[  633.29s ->   635.05s] with a standard deviation of 18%
+[  635.05s ->   637.05s] for a Sharpe ratio of 0.5.
+[  637.33s ->   641.01s] But if you compare the one-time free cash flow yield
+[  641.01s ->   642.93s] as the strike selector,
+[  643.17s ->   644.51s] you have 5.1%,
+[  644.51s ->   646.63s] but only a 4% standard deviation.
+[  647.19s ->   648.67s] You have a Sharpe of 1.35.
+[  649.03s ->   650.41s] It means that you are taking on
+[  650.41s ->   652.59s] approximately a quarter of the risk.
+[  652.79s ->   655.03s] On a per-risk unit basis,
+[  655.21s ->   656.59s] for every 1% of risk,
+[  656.59s ->   658.49s] you're making 1.3% return
+[  658.49s ->   660.81s] as opposed to for SPX,
+[  661.01s ->   665.51s] you're making around 0.4% per 1% risk.
+[  665.73s ->   667.33s] So if you want to match
+[  667.33s ->   671.29s] the 18% standard deviation on SPX,
+[  671.33s ->   673.35s] you can actually deploy more capital,
+[  673.59s ->   675.67s] which means you can actually end up getting
+[  675.67s ->   679.93s] close to that 24.3% SPX risk equivalent CAGR.
+[  680.13s ->   682.13s] Because your strategy is more efficient,
+[  682.33s ->   683.67s] you can use more money
+[  683.67s ->   687.17s] to make the same amount of risk, right?
+[  687.27s ->   689.27s] We trade to risk, not to profit.
+[  689.55s ->   690.27s] That's about it.
+[  690.55s ->   692.73s] Let me know what you guys think about this video.
+[  692.85s ->   694.91s] Let me know if you guys have any questions or comments.
+[  695.19s ->   696.25s] If you guys like this video, learn something,
+[  696.33s ->   697.87s] make sure you guys click that thumbs up button
+[  697.87s ->   699.17s] and subscribe to the channel.
+[  699.63s ->   700.45s] As to my channel members,
+[  700.53s ->   701.69s] again, thank you guys so much for supporting me
+[  701.69s ->   702.55s] the way that you guys do.
+[  702.91s ->   704.05s] If you guys want to check out the trades
+[  704.05s ->   705.31s] that I take in my public portfolio,
+[  705.69s ->   707.21s] make sure you guys check out this playlist right here.
+[  707.63s ->   708.89s] And if you guys want to dive deeper
+[  708.89s ->   710.25s] into the actual strategy
+[  710.25s ->   711.89s] that I implement in that public portfolio,
+[  711.89s ->   713.93s] make sure you guys check out this masterclass
+[  713.93s ->   715.45s] that I made and put something right here.
+[  716.23s ->   717.61s] Until next time, like always,
+[  717.73s ->   718.33s] stay safe in the market.
+[  718.95s ->   719.21s] Peace.

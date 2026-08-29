@@ -1,0 +1,111 @@
+[    0.16s ->     6.00s] Reversals, one of the best ways to trade because you are sniping the exact point of where price
+[    6.00s ->    10.56s] changes direction. Meaning, if you trade the exact reversal point, you are not only getting
+[   10.56s ->    15.76s] insane risk to reward ratios, but you are also making a shit ton of profit on top of it.
+[   15.76s ->    21.52s] I found a perfect way to find reversals like this, like this, and like this.
+[   25.47s ->    30.43s] It works for everything, stocks, forex, crypto, it doesn't matter. And the even cooler thing,
+[   30.43s ->    36.19s] it works on all timeframes. I'm going to go over how to perform this strategy,
+[   36.19s ->    40.43s] what to look for specifically, and I'm going to go over some special little tricks to make it
+[   40.43s ->    45.15s] perform even better, and I'm going to even share some backtest results for it. Let's not waste any
+[   45.15s ->    53.02s] time, let's get straight to it. So this strategy is price action based, and really it only has a
+[   53.02s ->    58.14s] couple steps. For the first step, we are looking for what's called a liquidity grab. A liquidity grab
+[   58.14s ->    63.26s] is simply when price breaks a support or resistance and does a fake out and heads in the opposite
+[   63.26s ->    67.74s] direction. We want a liquidity grab because it adds fuel to the reversal we are looking for.
+[   67.74s ->    73.26s] The reason being, think of it like this. If we have a resistance right here, and price breaks this
+[   73.26s ->    78.54s] resistance like this, a lot of traders will enter along right at this point, because they think the
+[   78.54s ->    83.26s] price is going to start heading upwards because of this break. They'll enter along here and set their
+[   83.26s ->    88.70s] stop losses around this area. Meaning, if this is a liquidity grab and price fakes this upwards
+[   88.70s ->    94.06s] movement, when price reverses, it's going to hit all of these traders stop losses, making the price
+[   94.06s ->    99.26s] move downwards even harder. So if we found this liquidity grab and entered a short, we would
+[   99.26s ->   104.06s] benefit from this strong impulsive movement, making us some easy profits. Pretty simple. And the
+[  104.06s ->   109.82s] statistics even back this up. These backtest results are from Thomas Bokowski, a famous trader.
+[  109.82s ->   115.34s] And look just how interesting this is. So comparing if the first valley is above the second, so that
+[  115.34s ->   120.62s] being a liquidity grab like we just talked about, like this. Compare that to if the first valley is
+[  120.62s ->   126.70s] below the second, so something like this. You can clearly see the liquidity grab version performs
+[  126.70s ->   132.86s] way better. So out of the 14,000 trades that he tested, the percentage gain for liquidity grabs
+[  132.86s ->   137.74s] performed way better than a pattern that did something like this. So pretty interesting.
+[  137.74s ->   141.50s] So now we know why we are looking for a liquidity grab. So that's step one,
+[  141.50s ->   146.62s] is finding a liquidity grab. It can be either sell side liquidity or buy side liquidity. Whichever
+[  146.62s ->   152.30s] you prefer to trade. Once we find this liquidity grab, we move to step two, which involves the entry.
+[  152.30s ->   155.66s] But wait, aren't you forgetting something? Who the hell are you?
+[  155.66s ->   161.42s] Well I'm Mr. Double Your Money of course. Mr. Wait, what? How are you doubling your money?
+[  161.42s ->   166.62s] It's simple. Have you heard of Hankertrade? Hankertrade, which is the forex broker I use,
+[  166.62s ->   171.02s] is running a special promotion where if you deposit money using the link in my description,
+[  171.02s ->   178.70s] they will match it up to 25 grand. So if you deposit say $6,969 the first time you deposit,
+[  178.70s ->   185.58s] they will match that and give you $6,969. And that's just one of the benefits of using them.
+[  185.58s ->   190.78s] They have some of the lowest fees on the market. They have up to 500x leverage. They have extremely low
+[  190.78s ->   195.74s] spreads, negative balance protection, and overall just a really great broker if you need one for
+[  195.74s ->   200.30s] forex. I cannot recommend them enough. So yeah, if you want to be like Mr. Double Your Money,
+[  200.30s ->   205.02s] go to the link in my description and get that first time deposit bonus. Like seriously, it's free money.
+[  205.02s ->   210.14s] Okay, let's go back to the most important part of the strategy, which involves the entry.
+[  210.14s ->   215.58s] I demand entry. The entry is pretty simple. You are going to mark your entry point at the candle
+[  215.58s ->   219.82s] that made the liquidity grab. For example, here we have a nice little support,
+[  219.82s ->   225.34s] price breaks the support with this candle right here. Our entry would be at the candle that made
+[  225.34s ->   231.74s] the liquidity grab. So your long entry would be at this point right here. Because this candle made
+[  231.74s ->   236.38s] this liquidity grab. It's the same thing with shorts. You have a resistance, price breaks this
+[  236.38s ->   242.06s] resistance fairly, does a liquidity grab. Your short entry would be at the bottom of this candle
+[  242.06s ->   248.30s] that initiated this liquidity grab. So right here. So going back to our first example, this candle
+[  248.30s ->   253.50s] initiated this liquidity grab. So we set our entry point right here. Now what makes this strategy
+[  253.50s ->   259.34s] so successful is the risk reward ratios are absolutely insane. Because you are finding the
+[  259.34s ->   264.86s] exact bottom or top of the move, the profits are going to be really big and the losses are going to
+[  264.86s ->   270.94s] be very small. So for this example, you would enter here, set your stop loss right below the liquidity
+[  270.94s ->   276.14s] grab, and you're going to set your take profit at a recent high. So like this. And just look at this
+[  276.14s ->   282.46s] risk to reward ratio. Even if this trade is a loss, it's going to be a very small loss. And if it's a win,
+[  282.46s ->   288.46s] well, we're fucking rich. So in this example, you can see price reversed exactly at this point
+[  288.46s ->   293.34s] and hit our huge take profit for a perfect trade. Now I'm going to show you guys just how successful
+[  293.34s ->   297.82s] this strategy is. And then I'm going to give you guys some tips to improve the strategy even more.
+[  297.82s ->   303.50s] Now, I know a lot of you guys are lazy. That's exactly why I added this little strategy to my private
+[  303.50s ->   308.54s] indicator. This strategy performed so well that I just had to add it. The indicator will automatically
+[  308.54s ->   313.82s] find everything for you. It'll find the liquidity to grab, mark the entry point, and will also tell
+[  313.82s ->   319.18s] you exactly when to enter. It's basically spoon feeding you. It even color grades it depending on
+[  319.18s ->   323.18s] if it's a long or short trade. It saves you a ton of time with the strategies so you don't have to
+[  323.18s ->   327.50s] look for the liquidity grabs all day and basically does all the work for you. All you have to do is
+[  327.50s ->   331.82s] basically follow the signal. If you're interested in checking out the indicator, you can go to tradinglab.ai,
+[  331.82s ->   337.34s] or I'll leave the link in the description. So in order to enable the strategy on the indicator,
+[  337.34s ->   341.90s] you would go to the settings of the indicator by double clicking on any of the signals and set
+[  341.90s ->   347.66s] show reversals to true. And just like that, it'll find all the liquidity grabs and entries for you.
+[  347.66s ->   352.62s] So just look how good the strategy performs. Here the indicator marks the liquidity grab for us.
+[  352.62s ->   357.82s] It starts to mark the entry point and the signal to enter. We enter a short trade since the indicator
+[  357.82s ->   363.42s] is red, set our stop loss right above the liquidity grab, and set our take profit at a recent low.
+[  363.42s ->   369.18s] And look how this chart fell extremely hard after this signal. Another example. Here the indicator
+[  369.18s ->   373.82s] automatically marks a bullish liquidity grab. We wait for the entry signal. Once we get it,
+[  373.82s ->   379.90s] we enter, set our stop loss right below the liquidity grab, set our take profit at this recent high all
+[  379.90s ->   385.50s] the way up here. And then there's this strong impulsive move to the upside giving us a massive win.
+[  385.50s ->   390.38s] And we can really just keep repeating this. Indicator marks bearish liquidity, entry signal,
+[  390.38s ->   395.82s] stop loss, take profit at a recent low, strong impulsive move. Indicator marks bullish liquidity,
+[  395.82s ->   400.30s] entry signal, stop loss, take profit at a recent high, strong impulsive move.
+[  400.30s ->   405.02s] Now of course this strategy isn't absolutely perfect, and there are going to be times when
+[  405.02s ->   409.98s] it doesn't work. For example, here the indicator indicated bullish liquidity. So we set our take
+[  409.98s ->   414.78s] profit and stop loss like usual, but the chart ended up not going in our favor. Funny enough,
+[  414.78s ->   420.06s] right after it hit our stop loss, it skyrocketed. Classic. But if we take a close look, look at
+[  420.06s ->   426.14s] how small this loss was. So sure we lost this trade, but if we compare it to all of our winners
+[  426.14s ->   431.66s] with these huge massive wins, this loss is really just a pebble. That's what makes the strategy so
+[  431.66s ->   437.26s] profitable. So as for improving the strategy even more like I promised before, here's some interesting
+[  437.26s ->   444.54s] statistics from the backtest results. On the daily timeframe, peaks closer together than 10 days saw
+[  444.54s ->   450.54s] a slightly larger drop compared to peaks farther apart. So if the liquidity grab and the entry candle
+[  450.54s ->   456.62s] were closer than 10 candles apart, the drop was a lot larger compared to the peaks farther apart.
+[  456.62s ->   461.98s] So the backtest results are saying peaks like this had a more impulsive drop than peaks like this.
+[  461.98s ->   466.78s] So that's very interesting to note. So if you want optimal entries, you should look for liquidity
+[  466.78s ->   473.58s] grabs with peaks closer together. Another way to improve this is by adding confluences like divergences.
+[  473.58s ->   479.90s] To do this, simply go to Metatrader, click insert, then indicators, scroll down to oscillators,
+[  479.90s ->   486.38s] and click momentum. So here you can see the indicator gave us a long buy signal. But something else to
+[  486.38s ->   492.06s] notice is that here the chart did a liquidity grab, so it's making lower lows. But if we look at the
+[  492.06s ->   498.86s] momentum oscillator, it's making higher highs. So this is a divergence and is also a very bullish
+[  498.86s ->   504.06s] signal. So we combine both the powers of the divergence and the bullish liquidity grab and it
+[  504.06s ->   510.06s] gives us a higher probability of working in our favor. And just like that, we have an amazing trade.
+[  510.06s ->   515.98s] Then my final tip will also make this perform a lot better. So this whole liquidity grab strategy
+[  515.98s ->   521.02s] works best if you're finding reversals at the bottoms or tops of big moves. If you're trying
+[  521.02s ->   525.74s] to find liquidity grabs in the middle of moves while the chart is going up or down like this,
+[  525.74s ->   530.54s] it doesn't work so good. So to find bottoms or tops of moves, do this.
+[  530.54s ->   536.30s] So here we are on the 15 minute time frame and we get a buy signal. So what we end up doing is we then
+[  536.30s ->   542.70s] move to a 1 hour time frame and we see this buy signal happened exactly at a support on a higher
+[  542.70s ->   548.30s] time frame. So we know there's a strong demand here on the higher time frame and on top of that,
+[  548.30s ->   553.82s] we have a liquidity grab on a lower time frame, which is a great confluence. We move back to the
+[  553.82s ->   559.58s] 15 minute time frame and do our normal stop loss and take profit and it was another beautiful trade.
+[  559.58s ->   565.18s] So just for a bad example, if we were on the 15 minute time frame and got a signal like this and
+[  565.18s ->   570.62s] then moved to the higher time frame like the hour and the signal happened here, we would not enter on
+[  570.62s ->   575.50s] this trade because the move is happening in the middle of this range on a higher time frame.
+[  575.50s ->   581.34s] And like I said before, this strategy performs the best if it's on the absolute top or bottom of the
+[  581.34s ->   586.78s] range. So if you pair all of these together, the normal liquidity grab strategy, the 10 candle rule,
+[  586.78s ->   592.38s] divergences, and higher time frame support and resistance, I'll tell you, this strategy performs
+[  592.38s ->   598.22s] absolutely amazing. Go try it out, let me know what you guys think. If you're interested in the indicator,
+[  598.22s ->   602.94s] I'll leave a link to it in the description. Thanks for watching, and I'll see you guys next time.

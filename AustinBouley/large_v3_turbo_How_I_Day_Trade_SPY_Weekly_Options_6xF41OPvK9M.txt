@@ -1,0 +1,146 @@
+[    0.00s ->     6.60s] Hey guys, it's Austin Booley, and I wanted to talk about how to trade SPY options for 1,000 plus percent gains a day.
+[    7.28s ->    13.54s] Of course, that's not going to happen every day, but I just wanted to show you what happened today and how I traded it.
+[   13.92s ->    18.78s] So this is SPY, which is basically based on the S&P 500.
+[   19.46s ->    25.60s] You have SPY and you have QQQ, those are your main ones for following the market measures.
+[   25.60s ->    37.96s] And obviously, our economy has been in this nice little uptrend here, but we are testing lows on both the QQQ and the SPY.
+[   38.36s ->    45.18s] And of course, all this is going to be roughly based off the futures market of the S&P 500, which is this.
+[   46.58s ->    51.08s] But since most of us don't trade future options, we're going to look at SPY for the options.
+[   51.16s ->    53.74s] So this is what happened today.
+[   53.74s ->    60.10s] So if you look at the 15-minute, 30-day, we have a consistent downtrend.
+[   60.26s ->    69.50s] If you connect all these lower highs, we're going down, downtrend, or bouncing off support levels,
+[   69.92s ->    74.90s] then breaking through support levels, testing support levels, and breaking through back again.
+[   76.67s ->    78.39s] Today, this is what happened.
+[   78.65s ->    79.87s] I'm going to show you a recap here.
+[   79.87s ->    85.43s] So we're having a downtrend, a lower high instead of pushing this down lower.
+[   86.41s ->    93.13s] This push down lower is, of course, making this push through previous support levels.
+[   93.57s ->   100.85s] So we had a support level here connecting the bottom here, the bottom here, and it pushed straight through that.
+[  100.85s ->   106.13s] And I'm going to show you how I approach trading the SPY today.
+[  106.77s ->   113.21s] Sadly, I am getting my account verified because I'm opening my own or a new account.
+[  113.61s ->   118.47s] And all my money is not in a current account, so I cannot trade.
+[  118.63s ->   120.59s] But paper trading, this is what I did here.
+[  120.87s ->   122.47s] And this is what I saw step-by-step.
+[  122.47s ->   126.93s] So if I go to the 10-day-to-minute, this is what happened today, and this is yesterday.
+[  127.19s ->   129.23s] And just so I can show you what I was looking at.
+[  130.39s ->   139.61s] So when I opened up today of the S&P 500, I noticed that there was this high that it just didn't seem to break.
+[  139.73s ->   144.71s] Like, it kept trying, the volume wasn't there, and it dissipated, it went down, it tested again, it didn't.
+[  144.71s ->   149.19s] And then when market opened, it decided to test this resistance level again.
+[  149.69s ->   159.07s] So we're having this test of resistance level here throughout the whole pre-market and then aftermarket on Thursday.
+[  159.39s ->   161.47s] And then we're having lower lows.
+[  162.11s ->   165.09s] So we're setting up for a bearish move here.
+[  165.49s ->   166.73s] That's what I saw.
+[  166.87s ->   172.21s] So then when market opens, you can see, I'll zoom in here, we have this end decision candle.
+[  172.21s ->   175.37s] Again, I'm on the 2-minute, 10-day.
+[  175.85s ->   180.55s] We have this end decision candle here forming right at the resistance level.
+[  181.35s ->   182.11s] It went down.
+[  182.47s ->   185.01s] It broke below the EMA line.
+[  186.33s ->   188.97s] I picked up some contracts here.
+[  189.05s ->   192.44s] I picked up five contracts.
+[  193.02s ->   196.76s] Again, it doesn't really matter because it was paper trading, so I just got some.
+[  197.26s ->   202.06s] I was more worried about seeing how much percent gain I could get.
+[  202.06s ->   203.98s] So I picked up some contracts here.
+[  204.54s ->   205.98s] We went through.
+[  206.24s ->   208.26s] We continued trending down.
+[  208.98s ->   213.46s] We broke through this little trend.
+[  213.70s ->   215.92s] I wouldn't really call it a trend line because it's not.
+[  216.20s ->   220.24s] I mean, I guess it is just trend lines on bottom.
+[  220.40s ->   222.18s] I connect on bottom like that.
+[  222.24s ->   225.04s] So that would be a trend line or at least what I would call a trend line.
+[  225.32s ->   227.06s] This is more just like a guidance point.
+[  227.06s ->   234.54s] So after we broke below the EMA and the SMA line, we went down and we went down and then
+[  234.54s ->   241.88s] we have this little, as you can see right here, we had a, it's called a rectangle or just a
+[  241.88s ->   243.94s] consolidation pattern here.
+[  243.94s ->   248.60s] Uh, and I have this previous reason or this previous support line here.
+[  248.76s ->   253.22s] So we're having this little consolidation right near the support.
+[  253.40s ->   258.66s] So I said to myself, if it breaks above these highs here, then I'm going to get it, get out
+[  258.66s ->   259.34s] for a profit.
+[  259.54s ->   262.30s] If it goes down, I'm going to continue to hold.
+[  262.30s ->   268.34s] So it decided to break below this consolidation and then it went up to test it just to verify.
+[  268.58s ->   271.60s] And then it went back down and zoom out here.
+[  275.52s ->   275.76s] Okay.
+[  276.86s ->   277.22s] All right.
+[  277.28s ->   282.38s] And then after this consolidation phase, we broke below the support level.
+[  282.60s ->   289.82s] Um, I got this support level by connecting the previous higher lows, um, for an uptrend.
+[  289.84s ->   291.72s] And that's where I got that, that line from.
+[  291.72s ->   295.82s] Um, and obviously it was a valid one because when we crossed it, we had some indecision here.
+[  297.04s ->   300.84s] Then we went down and formed a falling wedge pat pattern.
+[  300.92s ->   303.04s] And I was fine because obviously I entered here.
+[  303.18s ->   304.90s] So I was up a lot.
+[  305.18s ->   308.38s] Um, I want to say like 300 per person here.
+[  308.66s ->   312.86s] So, uh, of course, like if I entered here and I'm, I'm, I'm having some end, some indecision
+[  312.86s ->   316.10s] here, uh, I would be very likely to get out.
+[  316.10s ->   318.86s] But since I was already up so much, I thought why not hold?
+[  318.86s ->   324.60s] It ended up being a falling wedge pat pattern, broke below this fault, the, this falling
+[  324.60s ->   324.98s] wedge.
+[  325.02s ->   328.82s] It went down, broke below this key level support.
+[  329.02s ->   331.16s] Let me show you where this key level support is.
+[  331.22s ->   333.82s] This key level support is right here.
+[  333.94s ->   337.06s] When it dropped down, it bounced right here.
+[  337.12s ->   339.30s] So I knew that this was going to be a key level.
+[  339.68s ->   339.92s] Okay.
+[  340.40s ->   342.62s] So I put my support port line there.
+[  342.72s ->   346.00s] All my key levels are in dark red and my normals are in light red.
+[  346.00s ->   350.64s] So when I approached that line, I knew I was in key support level territory.
+[  350.92s ->   355.34s] So I knew we could either experience a huge bounce here or a breakthrough.
+[  356.26s ->   358.52s] So we broke straight through it.
+[  358.84s ->   363.52s] I thought we were forming another falling wedge, which we sort of did, but it continued
+[  363.52s ->   364.28s] to bounce here.
+[  364.94s ->   370.00s] Um, just, I guess it was just testing this support level as, uh, because old supports
+[  370.00s ->   371.60s] become a new resistance line.
+[  371.60s ->   376.00s] So this old support became a new resistance and then continued to break lower.
+[  376.68s ->   382.84s] Um, and then that was basically the day after that, it started conforming, uh, forming these
+[  382.84s ->   384.24s] higher lows.
+[  384.44s ->   390.18s] And after this one, um, the end of the day trade would have been the bounce off this line
+[  390.18s ->   390.66s] up there.
+[  390.70s ->   394.02s] I don't know how much that would have been, but if you trade end of day, that would have
+[  394.02s ->   395.68s] been a great end of day trade.
+[  395.68s ->   401.66s] Um, so that is what happened with the S&P 500 today and the SPY specifically.
+[  402.28s ->   408.34s] Um, so I took a screenshot of what the options, like the percentage gain for the day that the
+[  408.34s ->   410.60s] options look like for the weekly options.
+[  410.78s ->   412.96s] And this is exactly what it looked like.
+[  413.30s ->   414.26s] I don't have to go in here.
+[  416.19s ->   417.59s] This is what it looked like.
+[  417.63s ->   418.87s] Let me make it a little bigger here.
+[  418.93s ->   419.15s] Okay.
+[  419.15s ->   421.17s] So this is the SPY.
+[  421.37s ->   423.33s] This is the weekly options here.
+[  424.81s ->   426.01s] It was amazing.
+[  426.15s ->   431.59s] We're looking at 1,200%, 1,385%, 1,600%.
+[  431.59s ->   434.11s] So let's just say it was 1,000%.
+[  434.11s ->   437.73s] So whatever money you put in, multiply that by 10.
+[  437.83s ->   440.53s] I put in 500, multiply that by 10.
+[  440.89s ->   442.19s] That's $5,000.
+[  442.19s ->   447.51s] I think it's quite amazing that you can day trade with a little bit amount of money and
+[  447.51s ->   450.15s] make a huge amount of money, yet still have that defined risk.
+[  450.63s ->   454.19s] So the most I could have lost would have been $500.
+[  454.95s ->   459.51s] Yet, obviously, I could have gained if I would have had this one and I would have held it to
+[  459.51s ->   460.11s] that period.
+[  460.79s ->   465.83s] 16 times 500 is $8,000 about.
+[  466.11s ->   468.83s] So I could have made $8,000 and a day.
+[  468.83s ->   476.06s] So basically, in order to trade anything, you need to understand, in my opinion, you
+[  476.06s ->   480.90s] want to understand support, resistance, and trend lines.
+[  481.48s ->   481.60s] Okay.
+[  481.98s ->   487.10s] So support, resistance, trend lines, and especially flag patterns.
+[  487.22s ->   489.52s] Those are the biggest things to learn how to trade.
+[  490.06s ->   495.98s] So that is how you trade the S&P 500 weekly for huge percentage gains.
+[  495.98s ->   502.70s] Obviously, the reason why in this market we're in, we're day trading, and we're not swing
+[  502.70s ->   506.16s] trading, or I'm not swing trading, is look at this market.
+[  506.56s ->   507.98s] So you can think it's right here.
+[  508.10s ->   510.68s] You go, oh, look, it broke below this support here.
+[  511.82s ->   514.80s] I'm going to buy some here, but then it shoots back up.
+[  514.86s ->   515.42s] It shoots down.
+[  515.50s ->   515.90s] It shoots back up.
+[  515.94s ->   518.18s] We're having this crazy volatility.
+[  518.18s ->   524.90s] I don't really know what the implied volatility is or what the VIX is at, but it is pretty
+[  524.90s ->   525.96s] volatile.
+[  526.18s ->   530.80s] So I'm going to stick to day trading as my primary source, but that is how you would
+[  530.80s ->   533.34s] trade the S&P 500 today.
+[  533.50s ->   534.16s] I hope that helped.
+[  534.44s ->   540.04s] If you want to join a Discord group with a bunch of options traders, that is below.
+[  541.55s ->   542.57s] Y'all have a good one.
+[  542.67s ->   545.15s] Hopefully this helped, and good luck in these markets.
+[  545.65s ->   545.83s] Bye.
+[  545.83s ->   546.83s] Bye.
+[  546.83s ->   547.83s] Bye.
+[  547.83s ->   548.83s] Bye.
+[  548.83s ->   550.83s] Bye.
+[  550.83s ->   551.83s] Bye.

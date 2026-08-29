@@ -1,0 +1,178 @@
+[    0.24s ->     6.78s] Hey, how's it going everyone? Today I'm going to be walking you through how to backtest your strats in Python using Pandas.
+[    7.32s ->    16.22s] I'm just going to be using simple technical strategies to illustrate pretty much how easy it is to backtest using Pandas.
+[   16.48s ->    24.06s] If you wish to backtest more, say, complicated strategies that implement some sort of machine learning models
+[   24.06s ->    31.76s] or are built upon some pretty structured research, then I would encourage you to check out my paper on SSRN.
+[   32.24s ->    33.82s] I'll link it in the description below.
+[   33.82s ->    39.42s] I actually walk you through deriving the model, deriving the scores for the model,
+[   39.54s ->    42.62s] and then trading with the model along with the backtest results.
+[   42.96s ->    46.08s] So feel free to check that out if you'd like to see a more structured strategy.
+[   46.20s ->    50.88s] But for this example, I'm just going to be walking you through how to use Pandas to backtest.
+[   50.88s ->    56.10s] So for starters, we need a source of data, and I'm just going to be using Yahoo Finance for simplicity's sake.
+[   56.72s ->    63.94s] You can just head on over there, and if you want to follow along, you can download the last three-ish years of SPY ETF data.
+[   64.38s ->    71.00s] I'm just going to be using the closing price for the strategy, but I will be showing you how to actually offset
+[   71.00s ->    76.92s] and then generate the returns and associated return metrics correctly.
+[   76.92s ->    87.13s] So once you've downloaded the data in the form of a CSV file, you can just import Pandas, and then you can read it in.
+[   91.90s ->    97.24s] And we can take a look at what this data looks like just by printing the head.
+[   97.44s ->   103.80s] So you can see here we have the date, the open high low close, the adjusted close, which is nonsense, and then the volume.
+[  103.80s ->   110.86s] So we're just going to be building a strategy, a simple crossover strategy from the closing price,
+[  111.02s ->   118.46s] and then we're going to be iterating through the rows once we generate the appropriate features to see how we do.
+[  118.92s ->   123.16s] So now what we're going to want to do is get rid of every column we're not interested in.
+[  123.36s ->   127.90s] So specifically, we're only going to be keeping the close column and the date column.
+[  127.90s ->   142.79s] So we can do this either by dropping everything on the first axis or more simply, we can just assign the entire data frame to both of the dates and the close.
+[  144.70s ->   151.38s] And then if we go ahead and print this head, you'll see that we actually get rid of everything except for the close and the date.
+[  151.38s ->   154.46s] So now we can create our rolling window.
+[  154.68s ->   158.68s] To go ahead and achieve this, we can create a new column.
+[  159.66s ->   164.34s] And we're going to call this the 7-day simple moving average.
+[  165.28s ->   175.46s] And we are going to be taking all of the rows on the first column, so not the 0th column, the date, but the first column, the close.
+[  175.94s ->   179.88s] And we are going to be rolling with a window size of 7.
+[  179.88s ->   182.48s] And we're going to be computing the mean.
+[  183.89s ->   190.09s] So now we can go ahead and visualize this data frame.
+[  190.53s ->   194.37s] And you can see that we have a bunch of NAN values.
+[  194.59s ->   200.87s] So that makes sense because we need at least 7 days of data to compute the first 7-day moving average.
+[  201.25s ->   204.21s] So we can just go ahead and print the first 10 values.
+[  204.93s ->   211.67s] And you can see that we have effectively generated an entire column for our 7-day simple moving average.
+[  212.79s ->   220.57s] So now it's very common for technical strategies to use a slower and a faster moving average.
+[  220.57s ->   223.45s] And then when they cross, the position will change.
+[  223.45s ->   227.91s] So you'll go from long-short, short-long, or trade some sort of spread.
+[  227.91s ->   235.86s] So in this case, let's go ahead and just construct another simple moving average.
+[  236.40s ->   238.18s] And we'll just go ahead and double the period.
+[  238.34s ->   245.44s] So instead of a 7-day simple moving average, we'll be using a 14-day simple moving average.
+[  245.44s ->   257.33s] So then we can go ahead and just print the first 15 days of our data set to see that we actually have all of the values that we're interested in.
+[  257.41s ->   259.23s] So we have our 7-day SMA.
+[  259.37s ->   260.51s] We have our 14-day SMA.
+[  260.99s ->   264.59s] And now we're actually ready to go ahead and construct our backtest.
+[  264.73s ->   269.77s] So let's go ahead and start to build the for loop for iterating through all of our rows.
+[  269.77s ->   274.72s] Now, actually, before we create our for loop, we're going to want to get rid of these NAN values.
+[  275.04s ->   286.62s] And something that we can do that's relatively clever is since the 14-day SMA NAN values is a superset of the 7-day SMA NAN values,
+[  286.62s ->   299.92s] we can just go ahead and assign this data frame equal to itself, dropping the NAN values only across the 14-day SMA column.
+[  300.40s ->   306.32s] Then you'll notice if we go ahead and print the head, we get rid of all of those unwanted NAN values.
+[  306.84s ->   309.08s] And then we can dive right into our backtest.
+[  309.08s ->   318.38s] It is also worth mentioning that before we construct this backtest, we need to consider that there is a degree of cheating on close that we're doing in this backtest.
+[  318.58s ->   328.20s] So we're actually using the closing price of this day to compute the 7-day SMA and the 14-day SMA.
+[  329.06s ->   336.58s] And if we're trying to build an actionable trading strategy, then in reality, what we're going to want to do is we're going to want to keep the open column.
+[  336.58s ->   348.94s] And to make it actionable, we're going to want to trade the open-to-close return of the following day based on the previous day's crossover from the 7-day SMA to the 14-day SMA.
+[  349.30s ->   357.18s] In this case, it's not too big of a deal because we're simply illustrating this essentially backtesting capabilities of PANDAS.
+[  357.72s ->   365.66s] But to keep in mind, if you're trying to develop actionable trading strategies, you're most likely not going to be using technical analysis in this setting anyway.
+[  365.66s ->   367.96s] But it's just something good to keep in mind.
+[  368.76s ->   372.16s] Nevertheless, let's go ahead and construct our signal.
+[  372.34s ->   377.22s] So what we're going to do is we're going to create a new column in our data frame called signal.
+[  378.02s ->   386.72s] And we are going to set it equal to essentially the Boolean value of whether or not the 7-day SMA is greater than the 14-day SMA.
+[  386.72s ->   400.28s] So what we can do is we can go ahead and say data 7-day SMA greater than data 14-day SMA.
+[  400.28s ->   409.69s] And now if we go ahead and print our data frame, you'll see that we have all these trues.
+[  409.99s ->   416.03s] And consequently, if we print more values, we're also going to have a variety of falses.
+[  416.11s ->   420.28s] Let me go ahead and actually show you.
+[  420.78s ->   425.24s] There we go.
+[  425.40s ->   427.46s] So we have a variety of trues and falses.
+[  427.46s ->   434.60s] And what we're going to do is we are going to go long whenever the 7-day SMA is greater than the 14-day SMA.
+[  435.30s ->   440.58s] And we're going to go short whenever the 7-day SMA is less than the 14-day SMA.
+[  440.96s ->   445.90s] And then we're going to be able to compute a whole bunch of return metrics like the Sharpe ratio, the Sertina ratio.
+[  445.90s ->   451.06s] But we're going to make sure that we compute them all correctly on an annual basis.
+[  451.92s ->   454.68s] Now let's actually go ahead and build this backtest loop.
+[  454.80s ->   462.56s] So what we can do is we can go ahead and say for row in data.iterows.
+[  463.99s ->   468.57s] We can iterate through every single row of this data frame.
+[  469.13s ->   472.27s] So just to have an idea of what this looks like, let's print the row.
+[  472.27s ->   481.33s] And you can go ahead and see that we have this first row and then all of the fields from that row.
+[  481.47s ->   490.75s] So we can directly reference from this row object the close, the 7-day SMA, the 14-day SMA, etc., etc., etc.
+[  492.58s ->   498.14s] This is going to be very beneficial because essentially all we have to do is reference the strategy parameters once.
+[  498.14s ->   503.00s] And then it's going to iterate through the entire data frame and generate the results of our backtest for us.
+[  503.00s ->   509.12s] First, for this backtest, we're going to need to construct an initial position and an initial price of entry.
+[  509.48s ->   512.92s] To do that, we can get the first row in our data frame very easily.
+[  513.12s ->   521.42s] So let's just go ahead and say position is equal to data signal dot values zero.
+[  521.60s ->   525.66s] So that's going to be the first flag in our data frame.
+[  525.66s ->   537.18s] And then the price of entry, so we're just going to call this last price, is equal to data close dot values zero.
+[  537.40s ->   545.08s] So what we're essentially doing is we're saying, okay, based on the current state of the 7-day and 14-day SMA,
+[  545.08s ->   553.80s] we're going to assign our position as long or short, and then we're going to go ahead and capture the last price associated with that position.
+[  554.06s ->   560.92s] And then we're going to be iterating through with the assist of this for loop to determine if there is a change in position,
+[  560.92s ->   564.18s] and then we can compute a PNL with that change in position.
+[  564.18s ->   578.26s] In order to actually generate a return for each row in this iteration, we're going to need to actually reference the first row, not the zeroth row, first, so that we can compute a return.
+[  578.74s ->   587.12s] To do that, we can just go ahead and use slice notation here and get the rest of the rows past the first one.
+[  587.12s ->   595.98s] So this is going to make it so that instead of starting on the 22nd of January, if we run this now, you'll see we're actually starting on the 23rd.
+[  596.30s ->   601.22s] And consequently, we can go ahead and compute a return for every single day that we're iterating through.
+[  602.38s ->   605.08s] Let's go ahead and actually start generating some returns now.
+[  605.56s ->   607.80s] What we can do is create a return set.
+[  607.96s ->   609.66s] So I'm just going to create an empty list.
+[  609.66s ->   633.72s] And then in this for loop, what we can do is we can generate a daily return and set it equal to the current row, the price of the current row, minus the last price, divided by the last price.
+[  633.72s ->   648.26s] Then once we are done using the previous price, we're going to reassign it to this instances so that every time we iterate through, we're reassigning this last price.
+[  648.82s ->   663.60s] So last price is going to be equal to this row's close price so that every time we iterate through a new row, we're going to be able to use the last price and then reassign it so that we can generate this daily return.
+[  663.60s ->   671.28s] So then we can just go ahead and append this daily return to our return set.
+[  673.19s ->   678.29s] And then let's just go ahead and print the daily return so we can see what we're working with here.
+[  678.45s ->   685.57s] So we have all these daily returns of the SPY ETF for essentially three years.
+[  685.57s ->   695.79s] And now that we have signal values associated with all these returns, we can actually go about generating a strategy or an equity curve and see how we do.
+[  696.51s ->   698.43s] Now, where does the signal value come into play?
+[  698.57s ->   702.49s] Well, it's going to help us determine the correct direction of our daily return value.
+[  702.99s ->   712.35s] We really only need to do this for the short positions because automatically the return is going to be positive correctly or negative correctly if we are long.
+[  712.35s ->   726.31s] So what we can say is we could say if position is equal to zero, then depending on the direction of the daily return, it is going to depend on the sign that we actually receive.
+[  727.01s ->   731.05s] So one way to just flip the sign very easily is to multiply by negative one.
+[  731.21s ->   736.33s] So we can just say daily return times equals negative one.
+[  736.59s ->   740.21s] And then we will be getting the correct return for our short positions.
+[  740.21s ->   744.29s] Now, it is also very important that we correctly reassign our short positions.
+[  744.55s ->   755.72s] So right under this, in our same row, we are going to be assigning the position to this row's signal value.
+[  757.86s ->   763.90s] That way, as we iterate through, we're going to be correctly reassigning the signal and correctly generating the appropriate returns.
+[  765.14s ->   771.34s] Now that we have this return set, we can go ahead and create an equity curve for these daily returns.
+[  771.34s ->   778.60s] So what I'm going to do is I'm going to say 4i in range, 0 to the length of the return set.
+[  779.91s ->   784.43s] I'm going to create an initial principal of $100,000.
+[  785.11s ->   788.55s] And then I'm going to have this empty equity curve list.
+[  788.55s ->   799.53s] Then I'm going to be multiplying every single return by 1 plus the return set's i-th value.
+[  800.09s ->   806.47s] And then I'm going to append this to the equity curve set.
+[  807.49s ->   812.11s] And we are going to be able to plot this equity curve using matplotlib.
+[  812.11s ->   816.70s] So let me import matplotlib.
+[  817.20s ->   824.58s] And then we're going to do plt.plot our equity curve.
+[  825.04s ->   828.26s] And then we are going to want to show this.
+[  829.34s ->   833.12s] And you can see this is the outcome of our strategy.
+[  833.26s ->   839.78s] So if we use this strategy from 2018 to 2021 up into this present point in time,
+[  839.78s ->   843.98s] then you can see that we start with our $100,000 principle.
+[  844.34s ->   845.66s] We have some drawdown.
+[  846.04s ->   853.04s] And then eventually, closer to 2020, 2021, when everything started to recover,
+[  853.76s ->   859.52s] we get this nice jump in portfolio value for this strategy.
+[  859.90s ->   862.34s] So our chart says a lot.
+[  862.50s ->   865.56s] But we are going to want to go ahead and compute a bunch of return metrics
+[  865.56s ->   869.32s] so that we can actually analyze the productivity of this strategy.
+[  870.42s ->   873.82s] So for starters, we're going to want to generate a sharp ratio.
+[  874.62s ->   879.06s] And to do that, we can just simply import numpy and take the mean of our return set.
+[  879.44s ->   881.28s] So I'm going to import numpy.
+[  882.23s ->   890.19s] And then I'm going to say mean returns is equal to numpy.mean of our return set.
+[  890.51s ->   894.17s] Then we could do the same thing for our standard deviation.
+[  894.17s ->   899.22s] And then we can just print these results here.
+[  904.52s ->   911.93s] Now, you'll notice that the mean and standard deviation are very low.
+[  912.07s ->   917.35s] And the reason for this is because we are using a daily data set.
+[  917.55s ->   924.05s] So we need to annualize our mean daily return and our daily standard deviation.
+[  924.47s ->   926.15s] And to do that, it's very easy.
+[  926.15s ->   929.93s] All we have to do is multiply the mean return by 252.
+[  930.51s ->   936.31s] And for our standard deviation, we need to multiply by the square root of 252.
+[  937.11s ->   942.89s] Then if we print these new values, you'll see that we go ahead and get more reasonable results there.
+[  942.89s ->   950.70s] Now, another way that you could go about generating your return is using the time series return.
+[  950.84s ->   954.34s] And it probably is a more accurate representation of this strategy.
+[  954.54s ->   960.44s] So what we can do is instead of using the mean of the return set and then multiplying by 252,
+[  960.44s ->   968.40s] what we can do is we can say, let's take the last value in our equity curve, subtract our principal,
+[  968.90s ->   971.60s] and then divide by our principal.
+[  973.29s ->   982.51s] And then we can go ahead and generate a more accurate value for our expectation of returns.
+[  982.51s ->   987.19s] From here to get the Sharpe ratio, all we need to do is divide.
+[  987.45s ->   996.05s] So I'm going to go ahead and print the Sharpe, which is going to be equivalent to mean returns,
+[  996.25s ->   999.55s] divided by the standard deviation of our returns.
+[  999.87s ->  1005.75s] And we get a Sharpe ratio of 0.697, approximately 0.7.
+[ 1006.31s ->  1008.75s] But Sharpe isn't really the only thing we'd want to look at.
+[ 1008.75s ->  1015.37s] We also want to look at a Sortino ratio to maybe get a better idea of the downside deviation.
+[ 1015.71s ->  1020.93s] So the downside standard deviation, our downside risk,
+[ 1020.93s ->  1025.73s] not necessarily capturing both the upside and downside risk, but exclusively downside risk.
+[ 1026.15s ->  1028.35s] So we can compare it to our Sharpe ratio.
+[ 1029.11s ->  1034.49s] To do that, what we can do is create a new set here called negative return set.
+[ 1035.90s ->  1038.02s] And then what we're going to do is we're going to say,
+[ 1038.02s ->  1042.20s] if our daily return is ever less than 0,
+[ 1042.64s ->  1048.74s] then we are going to append that value to our negative return set.
+[ 1049.32s ->  1053.84s] And if you look here, we are already accounting for our short or long position.
+[ 1054.04s ->  1060.26s] So this daily return is going to accurately reflect the return we receive in the day based on our position.
+[ 1060.26s ->  1067.92s] And then we can just compute the standard deviation of this negative return set to get our Sortino ratio.
+[ 1068.08s ->  1077.70s] So I'm going to say negative standard deviation of returns is equal to NumPy dot standard deviation of our negative return set,
+[ 1077.88s ->  1081.70s] multiplied by the square root of 252.
+[ 1081.70s ->  1089.45s] Then we can print our Sortino ratio, which is capturing the downside risk.
+[ 1094.32s ->  1097.90s] And there we have our Sharpe and Sortino ratios.
+[ 1098.42s ->  1100.39s] I hope you enjoyed this video.
+[ 1100.47s ->  1106.35s] This has kind of just been a rough introduction to using Pandas for your backtesting purposes.
+[ 1106.35s ->  1116.01s] I've always found Pandas to be a very robust way to backtest strategies that involve a lot of machine learning models.
+[ 1116.61s ->  1121.91s] Generally speaking, most of the results from your natural language processing or some sort of classification
+[ 1121.91s ->  1126.53s] are already going to be in a series object or a NumPy array.
+[ 1126.53s ->  1135.43s] So being able to just jump quickly to Pandas and import some historic data to run your backtest against is very handy.
+[ 1135.61s ->  1139.81s] So I hope you enjoyed and stay tuned for some more content.
+[ 1139.81s ->  1143.45s] And if you have any recommendations or anything you'd like to see,
+[ 1143.55s ->  1151.15s] maybe some different portfolio metrics or more specific examples of backtests, I'd be happy to do so.
+[ 1151.27s ->  1152.27s] So thanks for watching.

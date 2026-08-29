@@ -1,0 +1,86 @@
+[    0.00s ->     4.46s] In this video, I'm going to teach you three different option strategies that work every
+[    4.46s ->     8.82s] time when they're traded in the right market. Here's the thing. If you're looking to generate
+[    8.82s ->    13.84s] consistent income, you want to have less losses, and you just want to get started as an options
+[   13.84s ->    19.04s] trader, these are the three best strategies to do it. And what I've seen across all of my
+[   19.04s ->    23.80s] hundreds of coaching students that I've helped do this is that they have a strategy, but they're
+[   23.80s ->    27.90s] doing it in the wrong market. So if we just align the right strategy with the right market,
+[   27.90s ->    33.24s] that's how you get the best profits. And so let's show you first off how to understand when we are
+[   33.24s ->    38.64s] in the right market. And so we go to indicators here on a chart. This is available no matter what
+[   38.64s ->    43.94s] chart you're doing, but you want to type in Bollinger Bands, and this will pull up the strategy
+[   43.94s ->    49.34s] or this indicator. And so when we see this indicator, what we want to do is we'll go into the settings of
+[   49.34s ->    56.46s] it and we'll change it from 20 to 200. This shows us based on math, you can see here, where are
+[   56.46s ->    62.96s] different levels are. And so what I mean by that is if we're in this top range, this is a bullish
+[   62.96s ->    68.82s] market. So I'll put BL for that. If we're below here and bouncing higher, this is a bullish market
+[   68.82s ->    75.62s] as well. If we're above here and going lower, this is a bearish market, BR. And if we're here,
+[   75.70s ->    81.50s] this is a bearish market. So what exactly does this mean? This means that this instantly shows us
+[   81.50s ->    86.12s] what the market is. Instead of us having to hope, guess, wonder, follow the news, whatever,
+[   86.22s ->    91.36s] this shows us based on math, this is what the market is. And based on whether the market is
+[   91.36s ->    96.52s] bearish or bullish, then we can use the right strategy. If it's bearish, we will be doing a
+[   96.52s ->   103.00s] put strategy where we buy puts. If it's bullish, we have the option of a strangle, or we have the
+[  103.00s ->   109.24s] option of a 1-1-1 strategy. So let me break down each one of these strategies and why each one does
+[  109.24s ->   114.60s] well. Now again, these strategies work every time when done in the right market. So let's start off
+[  114.60s ->   120.84s] with the strangle. A strangle is a trade that makes money by staying in between two things.
+[  121.12s ->   125.68s] Let's say this is the stock and it's trading here. A strangle would be betting that the stock
+[  125.68s ->   131.52s] stays between these two levels. If it stays between these two levels, we make money. So if it goes up,
+[  131.58s ->   135.46s] let's say below this level. If it goes down, let's say it's above this level, or if it goes sideways like
+[  135.46s ->   141.26s] this, it makes money. It only loses money when it breaks this zone. And so that is what a strangle
+[  141.26s ->   147.64s] is. And it's super simple to trade. You simply are selling a put and you're selling a call. So I
+[  147.64s ->   157.60s] like to go about 90 DTE out for my strangle. So 90 DTE. And what I do is I sell the 10 delta puts,
+[  158.02s ->   163.84s] and then I sell the five delta calls. Now you might be wondering, most people like doing the same delta
+[  163.84s ->   168.56s] for the put and call. I like to do it differently. I like my calls to be lower. That means that my
+[  168.56s ->   173.94s] calls are further up. Why? Because the market has a natural upward drift. And so if I give myself more
+[  173.94s ->   180.00s] room to the top side, to the upside, that gives me room for the market to drift higher and not hit my
+[  180.00s ->   186.38s] top level. So that's how I structure the trade. I like to close the trade between a 25 to 50% profit
+[  186.38s ->   191.74s] target. And then I'll have about a 200 to 300% stop loss. Again, this is just best practices
+[  191.74s ->   199.40s] around it. I tend to do a 25% take profit and a 300% stop loss based on these trade entry rules.
+[  199.56s ->   203.80s] So that's how I entered the trade. And that's the strangle. This is a very good strategy. But
+[  203.80s ->   210.64s] remember, should only be done in bullish markets and preferably this one right here between the
+[  210.64s ->   214.98s] middle line and the top line. This is where strangle should be treated. I traded a strangle
+[  214.98s ->   220.86s] all through here and did amazing. So again, strangle should be done in this zone right there.
+[  220.86s ->   226.24s] Let me clear the chart and start off again. So that was the strangle. Now let's get into the
+[  226.24s ->   233.34s] 1-1-1 trade. A 1-1-1 trade is a short put trade. Okay, we make money when the market stays above a
+[  233.34s ->   237.28s] certain level. So if the market is trading here like it is right now, we would pick a level maybe
+[  237.28s ->   241.86s] way all the way down here, which means that as long as the market stays above this level,
+[  241.92s ->   245.00s] we make money. If it goes up, we make money. If it goes sideways, we make money. If it goes down,
+[  245.06s ->   249.92s] but stays above our level, we make money. And so that's why the 1-1-1 is great. But not only that,
+[  249.92s ->   256.56s] is we also have a put debit spread in the middle of this trade, which adds a hedge to this trade,
+[  256.66s ->   263.64s] making the short put even safer. So a 1-1-1 trade is right here. We buy one put, we sell one put,
+[  263.78s ->   269.26s] and then we sell one put. So 1-1-1, and that's where it gets its name. So how is this trade
+[  269.26s ->   276.90s] structured? We buy a 25 delta put. And the same thing, I like to go to the 90 DTE range. This gives
+[  276.90s ->   281.08s] me ample time to be right on the trade, allows me to collect more credit because there's more
+[  281.08s ->   288.00s] theta left in those contracts, and it allows me to actually be less impacted by volatility and daily
+[  288.00s ->   294.86s] movement. I'm going to buy a 25 delta put. I'm going to sell the 23 delta put, and then I'm going
+[  294.86s ->   301.76s] to sell the 10 delta put. So this right here is my put debit spread. This is my short put. Together,
+[  301.76s ->   308.06s] these make up the 1-1-1 trade, aka short put with a hedge built in. This is a very great strategy.
+[  308.44s ->   313.52s] Now again, where do you want to take profit? Depends on how you're doing it. Anywhere from 50%
+[  313.52s ->   322.26s] to 90% is best practice for the 1-1 strategy. You can also have a stop loss between 200 to 300%.
+[  322.26s ->   327.76s] I personally like to close my trades around 50%. That way I'm closing my trades more frequently,
+[  327.76s ->   332.78s] which means I have less trades open, which means I have less overall risk for my account running at
+[  332.78s ->   336.62s] any one time. And I like to close to a three. I was at stop loss because I'd like to let my trades
+[  336.62s ->   342.30s] breathe. I like to let them work and go out of my favor. Now, this is the great trade. It's a very
+[  342.30s ->   347.34s] great trade. I've made most of my money trading using this strategy. But remember, we're trading
+[  347.34s ->   351.86s] during bullish times, which is when we're in this zone right here, or after we bounce from here.
+[  352.14s ->   356.12s] And so that's actually the current phase right now is bouncing. And that's why I've been pushing all
+[  356.12s ->   363.84s] my students to do a 1-1x strategy or a 1-1-1 strategy. And I've seen so many people make $1,000
+[  363.84s ->   370.88s] in their first two weeks, because right now is the prime time to do this 1-1-1 strategy. So
+[  370.88s ->   375.92s] go do your research on it and figure out if it's a good fit. But remember, trading the 1-1-1 is great
+[  375.92s ->   380.50s] for when it's down here and bouncing and when it's in this zone. Remember, it's a bullish strategy.
+[  380.50s ->   386.32s] Okay, we've covered the strangle strategy. We've covered the 1-1-1 strategy. Now let's
+[  386.32s ->   391.64s] cover our bearish market strategy, which is buying a put. Buying a put is going to be quite
+[  391.64s ->   398.02s] simple. Now, I don't buy puts based on specific deltas. I buy it based on the amount of credit
+[  398.02s ->   405.90s] I'm receiving. What does this mean? If I'm doing a 1-1-1 trade or a strangle trade, I am receiving
+[  405.90s ->   413.44s] credit for those trades. Let's say I receive $500 per trade is what would be my rough profit price.
+[  413.96s ->   422.96s] So from here, when I'm in a bearish market, aka above here or below here, I'll take 20% of my profit
+[  422.96s ->   431.24s] and I will reinvest it into puts. Okay, so I'll take the profit that I've made. I'll take 20% of it,
+[  431.24s ->   438.60s] in this case, $100. And now I know, okay, cool. I have $100. Let me go buy a put between the 7 and
+[  438.60s ->   448.06s] the 14 DTE range that is priced around $100 that I can do so that when the market drops or when the
+[  448.06s ->   454.84s] market continues going down, this will go up by about 3 to 4X, right? And then I can make a decent
+[  454.84s ->   461.22s] profit on that and cover any losses. And so every time I bring on income, so again, I'm trading the
+[  461.22s ->   467.48s] 1-1-1-1 into this zone. Again, it breaks the top side here of the market. I need to start hedging.
+[  467.60s ->   472.00s] I need to start putting on bearish strategies. So I slowly start taking off positions. Let's say I
+[  472.00s ->   480.22s] take off like $2,000 worth of profit. Now I'm going to go put $400 of that 2,000 into hedges, aka buying
+[  480.22s ->   485.46s] puts. This will give me my downside protection and help me make money in bearish markets. So remember,
+[  485.46s ->   493.08s] there is no one holy grail strategy. It's all about trading three amazing strategies that need to be
+[  493.08s ->   497.76s] done in the right markets at the right time. So anyways, guys, I hope you enjoyed this video.
+[  497.98s ->   502.74s] If you want to learn more, click one of the links in my description or I'll see you in one of my other
+[  502.74s ->   504.50s] videos. You guys have a great rest of your day.

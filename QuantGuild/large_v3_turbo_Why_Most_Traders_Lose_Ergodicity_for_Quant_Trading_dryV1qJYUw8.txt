@@ -1,0 +1,126 @@
+[    0.46s ->     8.08s] They say 90 some odd percent of traders lose money. Only a few actually make it. Well,
+[    8.56s ->    15.60s] even fewer understand the idea of ergodicity and how it impacts their wealth path in a game
+[   15.60s ->    22.18s] of incomplete information like trading. In this video, we're going to talk about ergodicity for
+[   22.18s ->    29.20s] quant trading and trading in general. We're going to talk about this idea of edge or expected value,
+[   29.20s ->    34.18s] this idea of non-stationarity and how your edge is going to change over time. Then we will talk
+[   34.18s ->    41.28s] about the idea of ergodic and non-ergodic systems, additive and multiplicative systems as an example
+[   41.28s ->    47.14s] of this, the difference between the time and the ensemble average. Then we will look to optimizing
+[   47.14s ->    54.04s] for the time average in a multiplicative system, which is what we face in reality. This will then
+[   54.04s ->    60.98s] yield an optimal bet size that we will have to adjust in practice. Though your edge is uncertain,
+[   61.10s ->    65.60s] your access to my Jupiter notebooks never is. I will leave a link to this Jupiter notebook in
+[   65.60s ->    70.20s] the description below. I will also post it to the Quant Guild library on GitHub, where you can find
+[   70.20s ->    75.08s] all of my Jupiter notebooks and associated YouTube videos, along with all of the source code for my
+[   75.08s ->    79.12s] quant builds. At the top of this Jupiter notebook, you'll notice some related Quant Guild videos
+[   79.12s ->    85.06s] applying probability and statistics to finance and trading. This idea of time series analysis,
+[   85.30s ->    90.34s] retail versus institutional trading, trading versus investing, this idea of accumulating expected
+[   90.34s ->    96.96s] value over time, particularly relevant to this idea of ergodicity, quant versus discretionary trading,
+[   97.28s ->   103.82s] and of course, busting three trading myths that these trading gurus love to propagate. If you're
+[  103.82s ->   109.56s] unfamiliar with any of these ideas, I highly recommend you check these videos out first
+[  109.56s ->   115.10s] before tackling one like this. Moreover, these videos certainly take a lot of effort to create,
+[  115.18s ->   119.02s] so if you'd like to help support the channel so I can continue to create videos just like this one,
+[  119.10s ->   123.50s] please like, comment, subscribe, share. It helps me out tremendously. It is always greatly appreciated.
+[  123.72s ->   129.30s] And if you'd like to master your quantitative skills for trading and market-making roles,
+[  129.30s ->   135.22s] check out quantguild.com. We have over 90 quant lessons, an adaptive practice engine that scales
+[  135.22s ->   142.32s] with your skill level, interview questions with fully worked solutions, courses from A to Z in
+[  142.32s ->   148.58s] probability and statistics, coding, math with more on the way, and all that's included with Quant Guild
+[  148.58s ->   152.72s] membership, and you can get started for free. So if you'd like to help support the channel
+[  152.72s ->   159.00s] and master your quantitative skills, check out quantguild.com. Let's get started by talking
+[  159.00s ->   166.26s] about this idea of expected value or edge in the context of quant trading. Given a trading strategy
+[  166.26s ->   170.90s] tau, this could be some form of a composite alpha, maybe you have a market neutral strategy, you're
+[  170.90s ->   178.36s] trading some sort of indicator. In any case, you are going to have an average trade value, whether it
+[  178.36s ->   183.98s] is positive or negative, will dictate whether or not you are going to be accumulating wealth over time
+[  183.98s ->   193.88s] or losing it. We can decompose that expected value or edge into the average winner times the probability we
+[  193.88s ->   202.00s] win, plus the average loser times the probability that we lose. We could do a lot here to optimize our
+[  202.00s ->   208.98s] expected value. We can increase the probability we win or our average winner, or we could decrease the
+[  208.98s ->   216.16s] probability that we lose or our average loser. In any case, if we have positive edge, positive expected
+[  216.16s ->   223.44s] value, we're going to be accumulating wealth over a series of trades. If we have negative edge or
+[  223.44s ->   229.32s] negative expected value, we are going to be losing wealth over a series of trades. Now, it's very
+[  229.32s ->   237.14s] important to understand that here, what we're looking at is a simulation given a fixed edge. If we're
+[  237.14s ->   243.26s] looking at a game of chance, you can think of casino games, roulette, craps, so on and so forth,
+[  243.42s ->   249.84s] the distributions don't change over time. Casino games are just one example of stationary
+[  249.84s ->   254.08s] distributions. Probability, statistics, and distributions are going to converge in the
+[  254.08s ->   259.28s] frequentist sense. The edge is never going to change. These are games of chance. This is gambling.
+[  259.44s ->   265.60s] There's nothing that players can do to influence their edge. However, in games of incomplete
+[  265.60s ->   271.90s] information, games of uncertainty with non-stationary distributions, things like poker, trading,
+[  272.16s ->   278.24s] edge and components of edge are going to change over time. And players and their optimal actions
+[  278.24s ->   284.20s] are going to dictate their edge and trajectory of their wealth path over time. What I have here
+[  284.20s ->   290.38s] is an animation showing this idea. On the left here, you can see positive expected value,
+[  290.38s ->   295.90s] this positive edge, and on the right, a negative edge. But what you'll notice underneath is the
+[  295.90s ->   301.98s] expected value, the edge is going to change over time. Sometimes it's more positive. Sometimes it's
+[  301.98s ->   307.98s] more negative. We don't actually get to see the true expected value at any point in time. And it's
+[  307.98s ->   314.98s] our objective to proxy for this, bet more when EV is higher, our edge is higher, bet less or not at
+[  314.98s ->   321.58s] all when it is lower or negative. But how much should we bet? Keep in mind, whether we're dealing
+[  321.58s ->   326.24s] with a game of chance or a game of uncertainty, you can think of our casino games or poker and trading,
+[  326.56s ->   331.76s] we don't get to dictate which sample path we walk. There's a component of randomness to it, but
+[  331.76s ->   338.56s] we want our sample path to be tracking a theoretical trajectory that is positive. That's how we can ensure
+[  338.56s ->   344.54s] we're going to accumulate wealth over time rather than lose it. So how much should we bet?
+[  345.08s ->   351.26s] Well, this turns into a really important problem of additive versus multiplicative betting. In general,
+[  351.26s ->   356.08s] if I have a thousand bucks and I'm betting in $10 increments, when I have a million bucks, am I
+[  356.08s ->   363.46s] going to bet in $10 increments? Well, no, I'm going to want to bet more money. And that naturally is
+[  363.46s ->   370.18s] this notion of multiplicative betting. Our betting is going to scale with our bank role. Now this turns
+[  370.18s ->   375.70s] into a problem. What I have here is two strategies that have positive expected value, but on the left,
+[  375.70s ->   381.72s] I'm dealing with that additive betting, fixed $10 increments. On the right here, I'm dealing with
+[  381.72s ->   388.14s] betting that is proportional to my bank role. They look nothing alike. And this is the idea of
+[  388.14s ->   394.26s] ergodicity. On the left, I'm dealing with an ergotic system. On the right, a non-ergotic system.
+[  394.26s ->   398.88s] This is a big problem because we don't get to choose the sample path that we walk. Only a few
+[  398.88s ->   402.78s] of these sample paths on the right here actually accumulate wealth in an environment that has
+[  402.78s ->   407.92s] positive expected value while everyone else goes bankrupt. Where in the additive environment,
+[  407.92s ->   413.44s] you can see that everyone is tracking that theoretical edge line pretty well. This is the
+[  413.44s ->   419.42s] idea that the time average is not equal to the ensemble average. In other words, the experience of
+[  419.42s ->   425.58s] the many isn't the experience of the few. What are we going to do to combat this? We are going to
+[  425.58s ->   433.24s] optimize for the time average of our wealth. This yields this maximization problem. And the solution is
+[  433.24s ->   439.00s] the Kelly criteria. And now what I'm going to do is instead of betting with that fixed proportion to my
+[  439.00s ->   444.42s] bank role, as I did before, I'm going to be using the Kelly criterion. And as you can see,
+[  444.42s ->   449.72s] this certainly looks much better. And this is the idea of the Kelly criterion. We are going to be
+[  449.72s ->   456.08s] operating still with that variable bet sizing just in an intentional and optimal way that better
+[  456.08s ->   461.54s] resembles this idea of the ensemble average being equivalent to the time average. Now we're not making
+[  461.54s ->   468.88s] a non-ergotic system ergotic. However, we are improving the overall experience of the ensemble.
+[  469.12s ->   473.32s] In other words, we are going to be operating in a non-ergotic environment,
+[  473.32s ->   479.68s] and we don't get to choose the sample path that we walk. So if I ran this simulation here and I ran
+[  479.68s ->   486.80s] this simulation here, which one would you like to walk a random sample path of? Well, here only two
+[  486.80s ->   495.20s] end with wealth above their initial values, but down here significantly more do. This is the benefit of
+[  495.20s ->   502.12s] using something like the Kelly criterion. Now in practice, in reality, our age, as I mentioned earlier,
+[  502.12s ->   507.54s] isn't fixed. Components of our age, the average winner, the average loser, the probability we win,
+[  507.54s ->   514.44s] the probability we lose is going to change over time. And full Kelly that is just using the solution
+[  514.44s ->   522.20s] to that maximization problem is going to be overly aggressive. What I have here is an example of using
+[  522.20s ->   529.44s] full Kelly relative to using half Kelly. This is the idea of just scaling down the optimal bet sizing
+[  529.44s ->   535.70s] for optimal compound growth. And what you're observing here is the true edge is going to change
+[  535.70s ->   540.72s] over time. It's going to be more positive and more negative in certain places. If we go full Kelly,
+[  540.82s ->   548.44s] look at the actual simulated PNL here. The ensemble average is negative relative to the initial
+[  548.44s ->   556.16s] investment. But using half Kelly, we're not overexposing ourselves when age is arbitrarily lower.
+[  556.16s ->   560.92s] Now we don't get to actually dictate when our age is positive or negative. We're always going to be
+[  560.92s ->   568.80s] reactive. We're going to be proxying our age using some historical data or model. Knowing this, we need
+[  568.80s ->   575.48s] to adjust our bet sizing accordingly. We can't just go full Kelly all the time. Too long, didn't watch.
+[  575.54s ->   581.00s] Here's your executive summary. Edge is our wealth path trajectory over time. In a game of chance,
+[  581.00s ->   586.88s] something like roulette, this is fixed and constant. There's nothing you can do to influence that
+[  586.88s ->   593.02s] trajectory. In a game of incomplete information, poker or trading, your optimal action will dictate
+[  593.02s ->   600.86s] that trajectory. Now, in reality, due to the nature of those games, that trajectory is not going to be
+[  600.86s ->   609.10s] constant. And bet sizing is going to influence your ability to track that theoretical trajectory.
+[  609.10s ->   616.22s] This is the difference between an ergodic and a non-ergodic system. If you have positive expected
+[  616.22s ->   622.16s] value in an ergodic system, something with additive betting, the ensemble average will equal the time
+[  622.16s ->   629.16s] average. The experience of one will converge to the experience of many. In a non-ergodic system,
+[  629.62s ->   635.52s] the experience of the many is not the experience of the few. And that is the important distinction
+[  635.52s ->   641.74s] here. You can have positive expected value with almost every wealth path going to zero, except
+[  641.74s ->   651.06s] a few. Now we optimize for this and we get the Kelly criterion. In practice, full Kelly is too
+[  651.06s ->   657.72s] aggressive. We don't actually know our edge. That is a really important idea. We're always going to be
+[  657.72s ->   665.18s] proxying for it from a model or data. And in order to be more conservative and to improve
+[  665.18s ->   672.58s] the compounding of our wealth over time, we use variations of it. For example, half Kelly.
+[  672.84s ->   676.66s] Some future topics, technical videos, and other discussions to look forward to. Projects that made
+[  676.66s ->   681.60s] me a quant. My first year is a quant. Why hedge funds are actually secretive. If there's interest in
+[  681.60s ->   685.96s] these more qualitative topics, please let me know in the comments below. It helps me figure out what
+[  685.96s ->   691.00s] videos to create next. And if there's an interest in that type of comment, I will get back to
+[  691.00s ->   696.78s] longer form technical lectures with the Kalman filter, Poisson processes, non-Markovian models,
+[  696.88s ->   702.96s] so on and so forth. And if there's interest, I would like to do more deep dives into current streams
+[  702.96s ->   709.94s] of academic literature, rough path theory, SIGVOL models, calibration, and pricing. Let me know in the
+[  709.94s ->   714.50s] comments below what you would like to see. And I haven't forgotten about our quant builds. I'll
+[  714.50s ->   718.56s] leave a link in the description below. If you'd like to get started with interactive brokers,
+[  718.66s ->   723.18s] I highly recommend them and their API. I've been using them for over 10 years. I have this idea
+[  723.18s ->   729.30s] of how to backtest a trading strategy with interactive brokers, kind of an A to Z tutorial.
+[  729.84s ->   734.72s] So if there's interest in something like that, certainly let me know. Otherwise, that's going
+[  734.72s ->   739.16s] to do it for this video on ergodicity for quant trading. I hope you enjoyed. I hope you learned
+[  739.16s ->   743.62s] something. This video certainly took a tremendous effort to put together. So if you enjoyed it and you want to
+[  743.62s ->   747.44s] see more like it in the future, please like, comment, subscribe, share. Again, it is always
+[  747.44s ->   752.62s] greatly appreciated. I'll leave a link to my discord server in the description below. If you'd like to
+[  752.62s ->   759.06s] connect with me and other quants in the quant guild community, check out quantguild.com to master your
+[  759.06s ->   765.46s] quantitative skills for trading and market making roles. Other than that, thank you so much for
+[  765.46s ->   769.00s] watching and I will see you in the next video.

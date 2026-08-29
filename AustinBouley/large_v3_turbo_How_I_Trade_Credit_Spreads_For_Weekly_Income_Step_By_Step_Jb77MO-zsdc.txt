@@ -1,0 +1,81 @@
+[    0.00s ->     5.68s] Hey guys, welcome to lesson number five credit spread. So this is a great strategy for people
+[    5.68s ->    10.22s] who like to trade directionally. This is going to come into effect in the last lesson, lesson
+[   10.22s ->    14.08s] number six, when we talk about customizing different strategies based on different entry
+[   14.08s ->    18.02s] rules, which is awesome because if you have a complex strategy, that's the lesson for you.
+[   18.22s ->    23.12s] So stay tuned. But credit spreads are very much of a directional play. Everything that I taught
+[   23.12s ->    27.74s] you up to this point is very much of a passive strategy. We're like, you don't really have to
+[   27.74s ->    32.26s] know where the market's going to make money. But credit spreads, you actually kind of want to
+[   32.26s ->    37.70s] know where the market's going to be able to do this well. So what markets do credit spreads work
+[   37.70s ->    41.78s] best in? Well, if you're doing a call credit spread, you're looking best to sideways markets
+[   41.78s ->    47.18s] and bear markets. So range bound and downtrend, downtrending markets is what call credit spreads
+[   47.18s ->    52.44s] are for. Put credit spreads are for range bound markets and bullish markets. So markets going up.
+[   52.76s ->    57.60s] Who this strategy works best for someone who enjoys actively managing their
+[   57.60s ->    61.40s] trades and like charting and trend following because you kind of need to know the general
+[   61.40s ->    65.92s] direction the market's going before you put this trade on. And it's for someone who has a small
+[   65.92s ->    71.50s] for a smaller account. Now credit spreads are a defined risk trade, which means that we're capping
+[   71.50s ->    76.38s] how much we can lose, which means that our buying power is a lot less. So you can do this on a smaller
+[   76.38s ->    81.06s] account. Cons of this strategy, you need to be able to assess and predict the market direction
+[   81.06s ->    87.30s] to have the best outcomes. What are your trading account size and limits? You need a full
+[   87.30s ->    92.48s] margin account, which means that if you're trading with tasty trade, you need to have the works
+[   92.48s ->    97.46s] accounts. And again, if you're going to do this on futures, which is not required, you need to
+[   97.46s ->   102.72s] enable it on futures as well. So again, if you're trading this on ES, we're talking about $1,000 of
+[  102.72s ->   107.10s] buying power, depending on the strikes you select. If we're doing it on SPY, we're talking about $500
+[  107.10s ->   112.78s] of buying power, depending on the strikes and quantity you select. How this trade is constructed.
+[  112.78s ->   120.44s] Um, so I put credit spread is structured by selling a put and then underneath it buying a put. And so
+[  120.44s ->   125.90s] this is just like one of the legs for the iron condors. And last strategy we talked about, um,
+[  125.90s ->   129.24s] where we do a put credit spread and then I call credit spread and that defines it.
+[  129.66s ->   132.94s] And now this time we're just doing one. So if we do the put credit spread down here,
+[  132.94s ->   137.56s] we want the market to go up. So if we actually chart this out here, um, I put credit. So we're going
+[  137.56s ->   141.62s] to sell a put here. So that's a terrible straight line. We're going to sell a put here. And then we're
+[  141.62s ->   145.52s] going to buy a put here. And this creates a defined risk trade that makes money as,
+[  145.66s ->   149.54s] as the market goes up. If it, if it drops below here, that's where we start losing money. Uh,
+[  149.54s ->   153.64s] but anything above here, as long as the stock stays above this level, then we make money.
+[  154.00s ->   157.84s] Same thing, but in reverse with the call credit spreads, we're going to sell a call and then go
+[  157.84s ->   162.00s] above it and buy a call. This defines our risk, but it makes money. As long as the stock stays
+[  162.00s ->   165.84s] below this level, that means the stock goes down. We make money. It's not going sideways. We make money.
+[  165.90s ->   169.86s] It's not goes up just a little bit, but stays below. We make money. So that's how the call
+[  169.86s ->   176.21s] input credit spreads work from a structure dynamic best days to go out. Again, you can actually trade
+[  176.21s ->   181.93s] these, I should say zero to 45 days is best. I mean, I'm just going to change that. Um, because
+[  181.93s ->   185.81s] these are traded more on a shorter term basis because you're trying to catch those trends and
+[  185.81s ->   190.47s] you're trying to catch those moves. It's less about a general strategy, like the one, one, two,
+[  190.53s ->   194.77s] where it can make money in virtually any market, uh, credit spreads are more, you're doing the faster
+[  194.77s ->   199.95s] trends. So this is what the profit and loss graph for it looks like. We have a capped risk amount,
+[  199.95s ->   204.15s] a capped profit amount. Uh, they're typically, they're typically not equal. You typically have
+[  204.15s ->   209.19s] a larger risk than profit. Um, but that's how it looks. Now, how do we manage this trade?
+[  209.25s ->   213.31s] Well, tasty live, uh, because it's defined restraint, you know, typically it says 21 days
+[  213.31s ->   217.39s] until management, uh, which means that when there's 21 days or less left in the trade, that's
+[  217.39s ->   221.61s] when we close the trade. Uh, we don't really have to have a stop loss on it because we bought
+[  221.61s ->   226.61s] or sold that other option. We're now defining that risk. So we are, we, we actually already
+[  226.61s ->   231.61s] have a stop loss built in. Next is take profit. You take, you typically manage your profits between
+[  231.61s ->   238.45s] 10 to 50%. And so that's what's so, um, um, great about this is that we can actually still put a profit
+[  238.45s ->   243.99s] target on, on this, even though we have the cap profit, we can be like 50% of it, 20% of it,
+[  244.07s ->   249.11s] whatever we want. And we, and we, and we take that off the smaller, the profit, the faster our trade
+[  249.11s ->   254.47s] will hit, will, will hit that target. And the faster we can close that trade next best practice
+[  254.47s ->   260.37s] for the strategy, uh, put credit spreads, 16 Delta and five Delta. Again, that's for a longer with
+[  260.37s ->   265.69s] again, there's so many different ways to structure this trade. Uh, it really just depends, but this
+[  265.69s ->   270.49s] is the best practice that is typically, that is typically done. Um, what tasty live has also done
+[  270.49s ->   276.89s] on occasion is go with 30 Delta and then just buy, uh, and then just buy the next option near it.
+[  277.11s ->   281.21s] Um, I've done that as well. Um, but again, so there's so many different ways to structure a credit
+[  281.21s ->   287.27s] spread. Um, but again, 21 days until expiration is the early management and we're doing about 50%
+[  287.27s ->   292.05s] of the initial credit received as our take profit target. Now, again, if you click down below, you'll
+[  292.05s ->   296.85s] get access to this document. You can walk through step-by-step how to automate this trade, but since
+[  296.85s ->   301.69s] you have me on video, let's do it together. Um, so if we go here and we go on create an auto trader,
+[  302.07s ->   307.49s] uh, we connect our tasty trade account and we're going to click on create an auto trader. We're going to
+[  307.49s ->   311.79s] pick the strategy we want, which is a credit spreads. Then we need to define the deltas we're
+[  311.79s ->   316.57s] going to do. Okay. So by default, I put in the one that I like, which is very safe. It's a 30 Delta
+[  316.57s ->   323.69s] 25 Delta. So again, you give yourself about a 70% win rate ratio there. Um, but you also have your
+[  323.69s ->   328.21s] risk to find that that's about 45 days out. But again, if you want to go in shorter, like seven
+[  328.21s ->   333.61s] days for that shorter trends, you can, uh, we'll be getting more in into that though. And, uh, in the
+[  333.61s ->   338.51s] next lesson, next, you determine how often you want to enter this trade. So for instance,
+[  338.51s ->   343.23s] once a week on Wednesdays, it's kind of what you would set up here, uh, take profits about 50%
+[  343.23s ->   348.67s] and early management is about 21. Now when, when you, when you're doing define risks, 40 to 50% is
+[  348.67s ->   354.37s] a good range, but I'm just going to take 50 for this example. Um, buying power allocation. What
+[  354.37s ->   359.79s] we're looking at is typically, um, you know, it just depends on the account size, but this takes
+[  359.79s ->   366.31s] less buying, less buying power. Uh, so again, just 2000 would be more than, more than enough
+[  366.31s ->   370.99s] for this trade. Um, if I save and continue, um, yeah, really about a thousand dollars for
+[  370.99s ->   374.85s] this trade per trade. So that'd be about two trades. So it's not bad. So that's how we structure
+[  374.85s ->   379.71s] and create a credit spread auto trader. I hope that makes sense. If you like trading directionally
+[  379.71s ->   383.81s] with defined risk and want it automated, this is how, this is how you do it. If you want to learn
+[  383.81s ->   389.87s] more about the specifics of entry and setting up like crazy bots based on customizations, make sure
+[  389.87s ->   393.87s] to watch the next lesson and I will see you there. All right, guys, hope you enjoyed it. Let's go to
+[  393.87s ->   394.35s] the next lesson.

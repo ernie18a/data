@@ -1,0 +1,331 @@
+[    0.46s ->    29.43s] How's it going, everybody? Welcome back. Today, we are going to be looking at executive compensation in the context of stock returns and stock prices for a given year. We're going to look at 2021, a pretty good year overall. So we're going to see if there's any sort of relationship between the executive's compensation that is the highest compensation for a particular category and the corresponding price and return.
+[   29.43s ->    57.70s] So this should be a pretty interesting video. We are going to be using Financial Modeling Preps API. They have a lot of data available to us, and that is going to include executive compensation. So if I go ahead and I search executive compensation, we can go ahead and give it a ticker, and it's going to return to us a set of data for that particular stock.
+[   57.70s ->    76.12s] So here's an example. Apple, the company name, so on and so forth, the name and position of the executive, their salary, their stock award, incentive plan, other compensation, and their total, and it even has their page on the SEC.
+[   76.12s ->    93.60s] All right, now there are some issues with this link to the SEC that I've seen. It looks like this is returning .htm, which might be an issue. I'm not really sure, but for the most part, this API works extremely well.
+[   93.60s ->   100.60s] So what we're going to do is we're going to use this to explore those relationships in a Jupyter Notebook environment.
+[  100.60s ->   111.60s] So you can follow along with me here. I wrote this helper function for you to go ahead and get the executive compensation data. All you got to do is fill in your API key in a separate variable.
+[  111.60s ->   120.60s] I'll leave a link in the description to a GitHub repository with this notebook so you can go ahead and check it out and just use all the code that I have written for you.
+[  120.60s ->   133.44s] All right. So for starters, just like every other time we've used FMP's API, we are going to be importing the URL lib for requesting the data from FMP.
+[  133.44s ->   144.44s] We are going to import JSON so that we can receive that dump and then put it into a pandas data frame. And I'm also going to use an arbitrary set of large cap tickers here.
+[  144.44s ->   153.44s] You can use any symbols that you'd like, but I'm just using a small set from energy, financial services, consumer goods, so on and so forth.
+[  153.44s ->   160.44s] And I absolutely use JackGPT to generate these for me because I don't want to go through the hassle of typing out tickers.
+[  160.44s ->   166.44s] All right. So what we're doing here is we are going to access this endpoint for executive compensation data.
+[  166.44s ->   173.44s] And I have parameterized this function by a symbol so we can give it Apple, we can give it Google, what have you.
+[  173.44s ->   178.44s] And it's going to return that data to a data frame. So let's go ahead and use it and see what we get.
+[  178.44s ->   185.08s] So this is for Goldman Sachs. I'll run this and you can see we get the sick code.
+[  185.08s ->   195.08s] We get the symbol, the company name, the industry title, the filing date, the accepted date, name and position, year, salary, bonus.
+[  195.08s ->   203.88s] We also get their stock award, their incentive plan and all other compensation for a total.
+[  203.88s ->   211.88s] And this is a hefty total right here. If you take a look at this, this is going to be I believe this is Solomon.
+[  211.88s ->   216.88s] Yes, this is Solomon. And this is almost 40 million dollars.
+[  216.88s ->   221.88s] So he didn't do too bad. Didn't do didn't do too bad in 2021.
+[  221.88s ->   226.58s] You know, maybe someday he'll be making as much as me.
+[  226.58s ->   232.58s] All right. So that's the executive compensation data right there.
+[  232.58s ->   238.58s] We can go ahead and take a look at an example of a distribution of executive compensation specifically for Goldman Sachs.
+[  238.58s ->   248.58s] What I did here is I just went ahead and I created a distribution of the total compensation package for all of these executives.
+[  248.58s ->   255.58s] Now, I don't know why there are some duplicates and maybe this is a question for their product owner.
+[  255.58s ->   260.58s] But you'll see that there are some duplicates in this particular query.
+[  260.58s ->   265.58s] I'm not exactly sure why that is the case, but we're going to go ahead and go through it.
+[  265.58s ->   275.63s] Maybe we can even do this. So let me go ahead and do a dot drop duplicates.
+[  275.63s ->   283.27s] And then we want to drop the duplicates where we have a duplicate name, essentially.
+[  283.27s ->   290.93s] So we'll say name and position. All right. There we go.
+[  290.93s ->   296.19s] So now we have only unique. There we go.
+[  296.19s ->   302.19s] Only unique name and position for Goldman Sachs is 2021 of the executive compensation.
+[  302.19s ->   306.73s] All right. So I'm going to run this and I'm going to put that down here.
+[  306.73s ->   313.73s] So we'll get rid of the duplicates. Then we can visualize kind of a histogram of this situation.
+[  313.73s ->   319.66s] So this is going to be the executive compensation for these what appears to be five people.
+[  319.66s ->   325.66s] And I guess a histogram is kind of redundant here. We could have just done some sort of scatterplot or something.
+[  325.66s ->   331.66s] But nevertheless, you can see that we have, you know, this poor guy on the low end here is a little less than $15 million.
+[  331.66s ->   336.66s] I'm sure he will survive. This guy's a little over 15 million. This guy's around 20.
+[  336.66s ->   341.66s] And then this guy is at 36. And of course, Solomon is closer to the 40 million mark.
+[  341.66s ->   348.66s] And we can just see who all these people are right here. So it looks like we have the poor CLO.
+[  348.66s ->   359.66s] So the CLO is general counsel. So I assume that's the legal officer here is making almost 13 million.
+[  359.66s ->   369.66s] Then we have the global treasurer at 17, the CFO at 20, the COO at 35, and then Solomon at almost 40.
+[  369.66s ->   374.66s] So, you know, we get a lot of data here. We could do this for a lot of different equities.
+[  374.66s ->   380.66s] We could do this for, say, Tesla. We could do this for Microsoft. So I'm going to do this for Tesla.
+[  380.66s ->   384.66s] TSLA. And then we can just create this frequency distribution.
+[  384.66s ->   388.81s] And this is kind of an interesting distribution here.
+[  388.81s ->   394.81s] So we have a lot of people closer to what would be probably in the several hundreds of thousands down here.
+[  394.81s ->   400.81s] Obviously, this isn't necessarily like I don't really know what this tick is, but I assume this is a little less than a million.
+[  400.81s ->   405.81s] Or around one million. Like I said, those poor guys, I'm sure they will survive somehow.
+[  405.81s ->   410.81s] These guys are closer to two and a half, five million, you know, five and a half, ten million.
+[  410.81s ->   417.81s] And then, of course, over to this end, we get closer to those, you know, executive officer roles, most likely.
+[  417.81s ->   424.81s] Senior vice presidents, directors, whatever. You get the gist of the situation.
+[  424.81s ->   435.81s] So something that we're going to look at analyzing here is the relationship between the executive compensation and the corresponding stock price and the stock returns.
+[  435.81s ->   440.81s] But what I want to do is I don't want to do this just for the set of executives.
+[  440.81s ->   446.26s] I'm not really interested in the set of executives. I'm interested in the highest compensation.
+[  446.26s ->   453.26s] So I'm interested in the executive with the highest compensation in the context of a stock award, a salary or maybe even a bonus.
+[  453.26s ->   458.26s] So what I do down here is I'm going to use my get executive compensation function.
+[  458.26s ->   461.26s] I'm going to sort by the year. OK.
+[  461.26s ->   467.26s] And then I'm going to drop the duplicates on name and position.
+[  467.26s ->   473.26s] And then I'm going to sort the values by, say, stock award, total compensation bonus.
+[  473.26s ->   479.26s] And then we are going to find the person who has the highest compensation in this category.
+[  479.26s ->   491.12s] So, for example, if I was to do this for Goldman Sachs and we look at the total compensation, Solomon will be our number one at almost 40 million.
+[  491.12s ->   496.54s] All right. So this is going to be handy modification to our get executive compensation function.
+[  496.54s ->   501.54s] And it's going to return to us the executive with the highest compensation in a particular category.
+[  501.54s ->   504.54s] But we may not want to do it just for the most current year.
+[  504.54s ->   509.54s] So what I'm going to do is instead of doing a sort by year, I'm going to filter on a year.
+[  509.54s ->   516.54s] So I created this function get latest highest and you give it a stock, you give it a compensation category, you give it a year.
+[  516.54s ->   524.54s] And it sure will. So long as FMP has it in their data, it sure will return you the correct executive.
+[  524.54s ->   526.54s] So we come down here. Right.
+[  526.54s ->   528.54s] I'm going to run this guy here to find the function.
+[  528.54s ->   532.54s] Get the get latest highest for Goldman Sachs stock award 2021.
+[  532.54s ->   535.54s] Looks like Solomon had the highest stock award.
+[  535.54s ->   537.54s] And that is not necessarily a surprise.
+[  537.54s ->   539.54s] He's going to also have the highest total.
+[  539.54s ->   543.54s] If we run that, boom, he has the highest total 40 million.
+[  543.54s ->   545.54s] All right. But we can also do this for, say, Tesla.
+[  545.54s ->   547.34s] Run that.
+[  547.34s ->   552.34s] And then we can see the highest total compensation here is this guy, some SVP.
+[  552.34s ->   558.34s] And what appears to be this was the filing date of 2023, but this was for the year 2021.
+[  558.34s ->   562.34s] They are a little bit behind there for sure.
+[  562.34s ->   564.34s] But you get the gist here, hopefully.
+[  564.34s ->   567.34s] Hopefully this is going to be relatively clear.
+[  567.34s ->   569.34s] And again, I don't curate any of this data myself.
+[  569.34s ->   572.34s] This is, of course, coming from the FMP API.
+[  572.34s ->   573.34s] All right.
+[  573.34s ->   578.62s] So we can have some pretty interesting questions using this data.
+[  578.62s ->   579.62s] All right.
+[  579.62s ->   581.62s] And like I said, you have access to all these functions that are right.
+[  581.62s ->   583.62s] This whole Jupyter notebook.
+[  583.62s ->   586.62s] And I'll leave a link to that in the description box below.
+[  586.62s ->   588.62s] But we can ask some pretty interesting questions, right?
+[  588.62s ->   590.62s] And this is a very cursory analysis.
+[  590.62s ->   596.62s] This is nothing that I would consider, you know, a pretty, I would say, intensive analysis
+[  596.62s ->   601.62s] because I'm not considering a time series of executive compensation returns on prices.
+[  601.62s ->   607.62s] I'm not considering, you know, the different executives within the same company.
+[  607.62s ->   610.62s] I'm not considering a transfer in leadership.
+[  610.62s ->   617.62s] I'm not considering a variety of things that may explain variation for both executive compensation
+[  617.62s ->   619.62s] and stock prices, stock return.
+[  619.62s ->   623.62s] But rather what I'm doing is just, you know, looking at an interesting high level relationship,
+[  623.62s ->   625.62s] seeing if anything's there.
+[  625.62s ->   627.62s] Maybe it'll spark interest in deeper analysis.
+[  627.62s ->   631.62s] But of course, this pricing information isn't even necessarily the most effective.
+[  631.62s ->   635.62s] We probably want to use crisp from words or we want to use a Bloomberg data feed, something
+[  635.62s ->   637.62s] that's probably more precise.
+[  637.62s ->   646.62s] But even still, the pricing information can even be, you know, not necessarily the best
+[  646.62s ->   647.62s] in any sort of case.
+[  647.62s ->   651.62s] You know, you're going to have to be very selective if you're trying to do anything algorithmically,
+[  651.62s ->   652.62s] that is.
+[  652.62s ->   653.62s] But I'm going to digress from this.
+[  653.62s ->   656.62s] I could talk about, you know, volume-weighted bars.
+[  656.62s ->   659.62s] I could talk about, you know, time-weighted bars, whatever.
+[  659.62s ->   660.62s] I'm going to digress.
+[  660.62s ->   663.62s] So we're going to use YFinance.
+[  663.62s ->   668.62s] So we are going to download all of the pricing data for our large cap tickers.
+[  668.62s ->   670.62s] And we're left with this stack data frame here.
+[  670.62s ->   671.62s] All right.
+[  671.62s ->   672.62s] Now this looks like a mess.
+[  672.62s ->   676.62s] But what's really cool is stack data frames are very easy to work with.
+[  676.62s ->   683.36s] So if I want to find the return, all I got to do is take the last observation for each
+[  683.36s ->   684.36s] firm in this year.
+[  684.36s ->   689.36s] And I'm querying it for the year of 2021, which is what I'm going to be analyzing.
+[  689.36s ->   693.36s] I'm going to be analyzing the highest executive compensation in 2021.
+[  693.36s ->   698.36s] And what we're going to do is we are going to subtract out the starting price at the beginning
+[  698.36s ->   700.36s] of the year and divide it by the starting price.
+[  700.36s ->   705.03s] New minus old divided by old is the stock return.
+[  705.03s ->   706.03s] All right.
+[  706.03s ->   709.03s] It's a good old college of business trick that they tell you.
+[  709.03s ->   713.03s] And then what I'm going to do is I'm going to create an unstacked version.
+[  713.03s ->   717.03s] I'm sorry, not an unstacked version, but I'm going to create a price version as well.
+[  717.03s ->   721.03s] So I'm going to look at not only the return in the given year to see if there's a relationship
+[  721.03s ->   725.03s] between return and highest executive compensation in a particular category.
+[  725.03s ->   730.03s] But I'm also going to look at the relationship between price and the highest executive compensation
+[  730.03s ->   733.50s] in a particular category.
+[  733.50s ->   738.50s] So this guy right here, this giant for loop is essentially going to iterate through everything
+[  738.50s ->   740.50s] our large cap tickers.
+[  740.50s ->   742.50s] And this is kind of a lazy way of me doing it.
+[  742.50s ->   745.50s] I'm just taking a look at all the tickers that exist.
+[  745.50s ->   752.50s] So everything that was returned by this pricing function call here to retrieve the stock prices.
+[  752.50s ->   761.50s] And I am going to first append the firm return to this list, then append the price to this list P.
+[  761.50s ->   764.50s] Then I'm going to append the stock compensation.
+[  764.50s ->   773.50s] So the stock reward for the highest, highest compensation in the particular category stock
+[  773.50s ->   777.50s] word for whatever executive in the year 2021 for the given company.
+[  777.50s ->   780.50s] So whoever had the highest stock award for that company in 2021.
+[  780.50s ->   783.50s] And then I'm also going to append the total compensation.
+[  783.50s ->   787.50s] So whoever had the highest total compensation for a given firm in that year.
+[  787.50s ->   794.50s] And I'm going to have a list of the firm return, the firm price, the highest stock compensation,
+[  794.50s ->   795.50s] and the highest total compensation.
+[  795.50s ->   797.50s] Then we can go look at some charts.
+[  797.50s ->   798.50s] So I'll run this.
+[  798.50s ->   801.40s] And I even printed out this cute little done here.
+[  801.40s ->   802.40s] Wow.
+[  802.40s ->   803.40s] That's so nice.
+[  803.40s ->   804.72s] All right.
+[  804.72s ->   805.72s] Fantastic.
+[  805.72s ->   808.72s] So now what I'm going to do is I'm going to visualize firm return and stock compensation.
+[  808.72s ->   809.72s] Okay.
+[  809.72s ->   813.72s] But it turns out that stock compensation is quite a large number.
+[  813.72s ->   815.72s] So I took the log of it.
+[  815.72s ->   820.72s] It may also be productive to, you know, it may not be as productive to divide it to try to
+[  820.72s ->   821.72s] scale it.
+[  821.72s ->   824.72s] But in this context, we use a log transformation.
+[  824.72s ->   829.72s] You know, log transformations can be helpful or hurtful to a linear relationship.
+[  829.72s ->   833.72s] But nevertheless, we could still come up with some sort of linear regression model if the
+[  833.72s ->   838.72s] log transformation ends up taking what otherwise would be some sort of exponential relationship
+[  838.72s ->   840.72s] and turning it into a linear relationship.
+[  840.72s ->   846.72s] But once again, I'm going to digress from that giant cluster cluck of a deep C essentially.
+[  846.72s ->   851.72s] So here, if I was to do this log transformation, we have something that kind of just looks like
+[  851.72s ->   852.72s] noise, right?
+[  852.72s ->   853.72s] This is firm return.
+[  853.72s ->   858.72s] This is log stock compensation as firm return increases for 2021.
+[  858.72s ->   861.72s] Do we see stock awards being higher?
+[  861.72s ->   863.29s] Not really, right?
+[  863.29s ->   865.29s] There's no linear relationship here that we can really discern.
+[  865.29s ->   869.29s] Maybe it kind of even looks like it's a negative relationship, which doesn't really make sense.
+[  869.29s ->   871.29s] So there's probably a spurious relationship.
+[  871.29s ->   875.29s] If anything, it's kind of just where the cards fell for these large cap tickers.
+[  875.29s ->   878.29s] You know, you can do a larger cross-sectional analysis too.
+[  878.29s ->   880.29s] You can look at 3000 firms.
+[  880.29s ->   883.29s] You can look at the, you know, our 3000.
+[  883.29s ->   886.29s] You could look at the S&P 500.
+[  886.29s ->   888.29s] You could do this analysis any which way.
+[  888.29s ->   905.29s] But if overwhelmingly there was a relationship between the large cap or not necessarily large cap tickers, but the stock award and the firm return, we would probably see it on a granular level to some capacity here, which we don't really at all.
+[  905.29s ->   916.29s] And you can do, you know, you can p-hack your way to an academic publication all you'd like, but if the relationship's really not there, then I don't really think that's very productive.
+[  916.29s ->   935.29s] You know, so you could say, oh, but, you know, hey, I read this paper and it said with a p-value of 0.027, whatever the hell, we have statistical significance and proof that, not proof, at least statistical proof or statistical evidence that the firm return induces some sort of comment.
+[  935.29s ->   938.29s] I don't care. I really don't care about that.
+[  938.29s ->   942.29s] You know, you can, you can go ahead and make an economic argument for it.
+[  942.29s ->   947.29s] Maybe I'll listen, but the relationship statistically, just because it's there, I don't really necessarily care.
+[  947.29s ->   949.29s] Of course, it could just be spurious or hacked.
+[  949.29s ->   950.29s] So whatever.
+[  950.29s ->   951.29s] I'm going to digress from that.
+[  951.29s ->   956.29s] I'm kind of, kind of going off on a lot of different tangents here, but this is very interesting, right?
+[  956.29s ->   965.04s] I could get rid of this log transformation and still we don't really see much, right?
+[  965.04s ->   966.04s] And the scaling is kind of off here.
+[  966.04s ->   969.04s] And a linear transformation isn't really going to fix the scaling issue.
+[  969.04s ->   972.68s] So that's why I did a log transformation, right?
+[  972.68s ->   974.68s] I could even handle outliers a different way.
+[  974.68s ->   976.68s] We could winds rise outliers.
+[  976.68s ->   979.68s] There's, there's too many things that you can do.
+[  979.68s ->   981.68s] This turns into an open-ended research question.
+[  981.68s ->   989.68s] What is the best way to model the variation in stock awards for the highest, the highest, whatever.
+[  989.68s ->   991.68s] Whoever had the highest stock award.
+[  991.68s ->   994.68s] How can we model that variation using the return on a given?
+[  994.68s ->   999.68s] It's, you know, you can kind of jump down a million rabbit holes to try to solve this.
+[  999.68s ->  1003.68s] You can overfit whatever model you'd like to it, but you know, we don't really see anything here.
+[ 1003.68s ->  1004.68s] All right.
+[ 1004.68s ->  1005.68s] So now here's a question.
+[ 1005.68s ->  1008.68s] Do firms with a higher stock price distribute more stock awards?
+[ 1008.68s ->  1009.68s] Okay.
+[ 1009.68s ->  1012.68s] And, you know, this is something that, you know, we kind of start to see, and this is
+[ 1012.68s ->  1013.68s] a log transformation.
+[ 1013.68s ->  1014.68s] Don't get me wrong.
+[ 1014.68s ->  1017.68s] We can, you know, remove the log transformation altogether as well.
+[ 1017.68s ->  1019.68s] And it's going to be rescaled a bit awkward.
+[ 1019.68s ->  1025.68s] But I would argue here that there does appear to be some sort of positive linear relationship,
+[ 1025.68s ->  1027.68s] especially with this log transformation.
+[ 1027.68s ->  1031.68s] We can really start to see some sort of line that might fit through something like this
+[ 1031.68s ->  1034.68s] to try to try to kind of satisfy all these data points.
+[ 1034.68s ->  1037.68s] So this might be something that we would want to look at on a larger scale.
+[ 1037.68s ->  1039.68s] But also this kind of makes sense.
+[ 1039.68s ->  1040.68s] Right.
+[ 1040.68s ->  1043.68s] Because, you know, if you think about fan compensation at a lower level for engineers,
+[ 1043.68s ->  1044.68s] right?
+[ 1044.68s ->  1049.68s] Like a lot of their salary is going to be, or not salary, but their total compensation
+[ 1049.68s ->  1051.68s] is going to come from their equity.
+[ 1051.68s ->  1052.68s] Right.
+[ 1052.68s ->  1055.68s] They're options pretty much.
+[ 1055.68s ->  1056.68s] Right.
+[ 1056.68s ->  1061.68s] So it doesn't necessarily surprise me to see that a lot of executive compensation when
+[ 1061.68s ->  1066.68s] prices are arbitrarily higher, relatively speaking, we see stock compensation increase,
+[ 1066.68s ->  1069.68s] at least on a log scale.
+[ 1069.68s ->  1074.68s] It remains to be determined whether or not there's a linear relationship here, at least
+[ 1074.68s ->  1077.68s] for a larger cross section or maybe without a log transformation.
+[ 1077.68s ->  1080.68s] But this is something that, you know, you, you would kind of expect to see, right?
+[ 1080.68s ->  1084.68s] If I told you, Hey, you know, this company has a very high stock price compared to this
+[ 1084.68s ->  1089.68s] other company, the total compensation package is relatively similar for executives.
+[ 1089.68s ->  1092.68s] Um, but more of that package is made up of equity.
+[ 1092.68s ->  1093.68s] I would believe you.
+[ 1093.68s ->  1094.68s] That doesn't really sound far off.
+[ 1094.68s ->  1098.68s] And that's what I meant earlier when you said, you know, when I say, if you have an economic
+[ 1098.68s ->  1101.68s] interpretation, you want to explain it to me, go for it.
+[ 1101.68s ->  1105.68s] If you can explain the variation effectively with a pretty strong economic interpretation
+[ 1105.68s ->  1108.68s] and magnitude that's non-trivial, I'll listen.
+[ 1108.68s ->  1111.68s] I'll listen and it'll probably make sense and it probably deserves a publication.
+[ 1111.68s ->  1113.68s] So this is pretty good.
+[ 1113.68s ->  1115.68s] Um, but now we're going to start looking at total compensation.
+[ 1115.68s ->  1117.68s] So that was for stock award.
+[ 1117.68s ->  1118.68s] Okay.
+[ 1118.68s ->  1119.68s] That's not a dollar amount, right?
+[ 1119.68s ->  1122.68s] That's a, that's a, the stock that they're being compensated.
+[ 1122.68s ->  1124.68s] It's the dollar value of their stock.
+[ 1124.68s ->  1127.68s] So what I'm going to do now is I'm going to take a look, take a quick little peek here
+[ 1127.68s ->  1130.68s] at a stock price and total compensation.
+[ 1130.68s ->  1137.68s] So that means I'm going to look at the price, not return at the end of 2021 and the corresponding
+[ 1137.68s ->  1139.68s] total compensation for the executives.
+[ 1139.68s ->  1144.68s] And you can see here, it's pretty flat except for this poor guy, poor guy making almost $10
+[ 1144.68s ->  1145.68s] million, right?
+[ 1145.68s ->  1146.68s] Yeah.
+[ 1146.68s ->  1147.68s] Poor guy.
+[ 1147.68s ->  1148.68s] Um, but it's pretty flat, right?
+[ 1148.68s ->  1152.68s] And I mean, again, like this isn't necessarily something that's, that's pretty out of the
+[ 1152.68s ->  1154.68s] ordinary 2021 was a good year.
+[ 1154.68s ->  1159.68s] So I would kind of assume that regardless of stock price at the end of the year, um,
+[ 1159.68s ->  1164.68s] the executives would be making probably comparable amounts to where they could make the, uh, their
+[ 1164.68s ->  1165.68s] money elsewhere.
+[ 1165.68s ->  1169.68s] Um, it is a pretty reasonable interpretation that I don't know what the case is here.
+[ 1169.68s ->  1175.68s] Maybe this is a guy who, um, retired or was, uh, you know, prorated or whatever, you know,
+[ 1175.68s ->  1178.68s] you don't really know what this guy's case unless you dive into that particular outlier,
+[ 1178.68s ->  1179.68s] but we're not going to do that.
+[ 1179.68s ->  1180.68s] But you know, this kind of makes sense too, right?
+[ 1180.68s ->  1185.68s] Regardless of stock price at the end of the year, the, uh, it would appear that the total
+[ 1185.68s ->  1189.68s] compensation package is relatively fixed for these executives.
+[ 1189.68s ->  1190.68s] So that's pretty interesting.
+[ 1190.68s ->  1194.68s] And of course in 2021, all of these firms performed relatively well.
+[ 1194.68s ->  1197.96s] Uh, so let's look at the stock return.
+[ 1197.96s ->  1199.96s] What about the stock return and total compensation?
+[ 1199.96s ->  1205.96s] Do you firms with the higher stock return on the year distribute higher total compensation
+[ 1205.96s ->  1206.96s] packages?
+[ 1206.96s ->  1210.96s] And this is kind of synonymous with the pricing information that we saw earlier.
+[ 1210.96s ->  1211.96s] Uh, that's no, right?
+[ 1211.96s ->  1215.96s] You know, you have some, this would probably be the outlier from, I would imagine.
+[ 1215.96s ->  1216.96s] Here.
+[ 1216.96s ->  1225.68s] Um, but beyond that, you know, we, uh, we kind of see a relatively flat situation here.
+[ 1225.68s ->  1226.68s] Okay.
+[ 1226.68s ->  1227.68s] And it's worth noting, right?
+[ 1227.68s ->  1229.68s] The, uh, the stock price, the log.
+[ 1229.68s ->  1231.68s] Oh, this is total compensation.
+[ 1231.68s ->  1232.68s] I'm sorry.
+[ 1232.68s ->  1233.68s] This is not log stock compensation.
+[ 1233.68s ->  1237.68s] It's worth noting here that the logs, uh, total compensation here.
+[ 1237.68s ->  1238.68s] And Oh, wow.
+[ 1238.68s ->  1239.68s] I did the same thing here.
+[ 1239.68s ->  1241.97s] Total compensation.
+[ 1241.97s ->  1247.45s] And this should be log total comp.
+[ 1247.45s ->  1252.53s] And then log total comp.
+[ 1252.53s ->  1254.53s] I'll update this on the GitHub.
+[ 1254.53s ->  1256.53s] Um, but it should be noted here, right?
+[ 1256.53s ->  1259.53s] Like the log total compensation is a function of stock price.
+[ 1259.53s ->  1262.53s] This is a function of the, uh, the stock return.
+[ 1262.53s ->  1263.53s] Goodness gracious.
+[ 1263.53s ->  1268.80s] A function of the stock return.
+[ 1268.80s ->  1274.80s] So, you know, we don't see a shift vertically in these points, but we see a shift horizontally in the replacement.
+[ 1274.80s ->  1275.80s] Right.
+[ 1275.80s ->  1294.75s] And that makes sense because now it's a function of the stock return, large cap return, large cap price and stock price.
+[ 1294.75s ->  1296.71s] Jeez Louise.
+[ 1296.71s ->  1297.71s] Goodness gracious.
+[ 1297.71s ->  1298.71s] All right.
+[ 1298.71s ->  1300.71s] Now the labels are correct.
+[ 1300.71s ->  1306.71s] But once again, the function of it being a stock return or the function of it being a stock price, uh, it's not going to matter, right?
+[ 1306.71s ->  1309.71s] It's not changing this relationship fundamentally.
+[ 1309.71s ->  1312.71s] Um, it's not changing the dispersion among the Y axis, right?
+[ 1312.71s ->  1317.71s] Because we're just changing the, uh, the dimension on the, the X axis here.
+[ 1317.71s ->  1319.71s] So that's going to do it for this video.
+[ 1319.71s ->  1320.71s] I hope you enjoyed it.
+[ 1320.71s ->  1322.71s] Um, FMP has a lot of very interesting data.
+[ 1322.71s ->  1327.71s] So if you're interested, uh, in signing up for their, you know, API, I'll leave a link in the description below.
+[ 1327.71s ->  1329.71s] I encourage you to check them out.
+[ 1329.71s ->  1335.71s] Um, executive compensation is only one of the very many number of data that they have.
+[ 1335.71s ->  1340.71s] Uh, you know, for example, I do a lot of research and social sentiment, so they have a lot of interesting data pertaining to that.
+[ 1340.71s ->  1342.71s] They have news, um, so on and so forth.
+[ 1342.71s ->  1343.71s] So check them out.
+[ 1343.71s ->  1351.71s] Uh, if you would like to check out this GitHub repository, all you have to do, I don't want to get a million comments on GitHub saying my code doesn't work.
+[ 1351.71s ->  1353.71s] You have to have your own API key.
+[ 1353.71s ->  1355.71s] I'm not giving you my API key.
+[ 1355.71s ->  1356.71s] All right.
+[ 1356.71s ->  1361.71s] So when you run this and it doesn't work, you have to sign up for FMP and you have to get your own API key.
+[ 1361.71s ->  1364.71s] But other than that, um, thank you so much for watching.
+[ 1364.71s ->  1365.71s] I hope you enjoyed this.
+[ 1365.71s ->  1370.71s] If you have any, you know, questions, comments, feel free to leave them, uh, in the comment section below.
+[ 1370.71s ->  1374.71s] Shoot me an email, roman at quantkill.com, roman.palucia at columbia.edu.
+[ 1374.71s ->  1378.06s] Other than that, thank you so much for watching.
+[ 1378.06s ->  1379.06s] I'll see you in the next one.

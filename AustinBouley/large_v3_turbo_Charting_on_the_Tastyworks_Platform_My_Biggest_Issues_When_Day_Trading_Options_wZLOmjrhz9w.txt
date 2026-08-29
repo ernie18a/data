@@ -1,0 +1,312 @@
+[    0.24s ->     7.36s] Hey guys, what's up? It's AB Trades, and today I wanted to talk about a few things that I disliked about the charting on Tastyworks.
+[    7.84s ->    11.48s] Now, first let me say, Tastyworks is an amazing platform.
+[   12.02s ->    18.80s] It is super good for option sellers who are just looking to look at a bigger picture time frame
+[   18.80s ->    25.90s] and place option strategies for longer term plays,
+[   25.90s ->    31.60s] like plays that are 45 days out from expiration when you're playing a butterfly or a condor.
+[   33.48s ->    38.56s] Tastyworks is not necessarily 100% the best for day trading on.
+[   38.82s ->    41.82s] However, it can be done and is still super effective.
+[   42.30s ->    45.58s] The reason why I recommend Tastyworks for day trading,
+[   46.04s ->    52.24s] so let's say you want to day trade with $500, $200, $300, $50.
+[   52.24s ->    58.52s] Whatever you want to trade with in Tastyworks, you can open a cash account easy.
+[   58.82s ->    61.54s] No hoops to jump through like Tastyworks.
+[   61.70s ->    68.08s] No, like Thinkorswim who wants to make sure you have a margin for options and blah, blah, blah.
+[   68.24s ->    70.22s] Sometimes it gets complicated.
+[   70.74s ->    73.74s] On Tastyworks, you just click cash account, you make it.
+[   73.96s ->    77.44s] Then you can just trade over and over with a cash account on options.
+[   77.78s ->    79.24s] Same day, settlement.
+[   80.48s ->    81.30s] That's literally the best.
+[   81.30s ->    84.72s] Another reason is because if you have a small account,
+[   85.20s ->    90.46s] you only have to pay $1 per contract to open and zero to close.
+[   90.84s ->    95.96s] Yes, it's about 15 cents extra a contract just for a few miscellaneous fees,
+[   96.30s ->   101.28s] but still, if you're paying $1, let's say $30 round trip for one contract
+[  101.28s ->   112.56s] versus Thinkorswim advertises a $6.95 flat fee plus $0.75 per contract.
+[  112.56s ->   120.44s] I've had people who have negotiated it as low as to $1.50 per open and close per contract,
+[  120.44s ->   123.44s] so that's still $3 per contract round trip.
+[  123.44s ->   127.28s] So, Tastyworks is definitely a lot better in that aspect.
+[  127.64s ->   128.96s] It lowers commissions.
+[  129.40s ->   133.36s] The barrier to entry is a lot easier as you just sign up for a cash account.
+[  134.06s ->   135.92s] But let's talk about the disadvantages.
+[  135.92s ->   142.80s] If you want to trade on, if you want to do your charting on Thinkorswim,
+[  143.08s ->   146.92s] but then use the Tastyworks for the execution, that makes perfect sense.
+[  147.20s ->   148.08s] I do that a lot.
+[  148.40s ->   149.68s] But let's say you're on a run.
+[  149.68s ->   151.76s] All you have is Tastyworks.
+[  152.00s ->   156.76s] What should you do to make it optimal, and what are some of the downsides to look out for?
+[  158.00s ->   160.96s] First off, the first thing I don't like is every time I load up this platform,
+[  161.94s ->   167.38s] all the candles are preset to some weird color,
+[  168.10s ->   175.38s] and even though I change the color every single time I get on here to this new green,
+[  175.80s ->   179.22s] whatever, to this new green like this,
+[  179.22s ->   180.88s] because it never stays.
+[  181.44s ->   184.32s] Okay, I like my candles to be bright red and bright green
+[  184.32s ->   188.62s] so that when it's going up, I can see not a dim green, not a dim red, okay?
+[  189.40s ->   192.94s] And so I click it, and I change it every single time, and I save it.
+[  193.62s ->   196.86s] But even though when I reload the platform, it does not save.
+[  197.38s ->   204.00s] Again, when it comes to Tastyworks, they are not super charty.
+[  204.00s ->   207.46s] If you watch Tasty trades, they don't really focus on charts much.
+[  207.46s ->   210.04s] But as a day trader, we do.
+[  210.42s ->   213.88s] So I have a few little things, nitpick things that I like, right?
+[  215.28s ->   218.78s] Next thing, the lines on charting, okay?
+[  219.20s ->   224.20s] So let's say, yes, I'm comparing this to Thinkorswim.
+[  224.20s ->   227.16s] Okay, so let's say I want to draw out a thing.
+[  227.42s ->   232.76s] I don't have a percentage that says, oh, look, you are at this percentage up angle.
+[  233.04s ->   235.64s] Come down this much, and it will be level.
+[  235.94s ->   239.14s] You just have to kind of guesstimate, oh, that looks level.
+[  239.58s ->   243.30s] Okay, maybe this will just be a problem for me, but I'm a little OCD,
+[  243.58s ->   245.54s] so I'm like, is that actually a straight line?
+[  246.50s ->   249.26s] You know, so that's just something to look out for.
+[  249.26s ->   254.18s] Or also, on Thinkorswim, you can, you know, right-click on this, right?
+[  254.42s ->   258.96s] And then say, extend to the right, extend to the left, delete.
+[  259.50s ->   260.92s] That's a big thing, okay?
+[  261.28s ->   263.58s] But first, let's talk about extending to the right and the left.
+[  263.78s ->   267.36s] You cannot extend it to the right and the left by just clicking extend.
+[  267.72s ->   272.76s] You have to actually come out here, and you have to extend it yourself, okay?
+[  273.28s ->   276.30s] Like, seriously, I did not come here to do stuff myself.
+[  276.30s ->   278.50s] I came here to make it easier, I'm kidding.
+[  280.56s ->   282.98s] But that is another thing to look out for.
+[  283.38s ->   287.02s] Also, very important, I think, I think that's very crucial,
+[  287.46s ->   292.84s] is that you cannot delete a single line without deleting all the drawings on the chart.
+[  294.40s ->   296.76s] So, for example, I cannot click on here, I cannot click delete,
+[  297.08s ->   299.56s] I cannot second-click it, command-click it, okay?
+[  299.80s ->   304.60s] I can put a right arrow end at the end, I can put a left arrow end at the end,
+[  304.60s ->   308.44s] I can change the width, I can change the line, I can change the coordinates.
+[  308.80s ->   312.28s] And that is also one way, if you want to make it straight,
+[  312.36s ->   314.28s] is make the coordinates the exact same.
+[  315.86s ->   318.50s] It can reset to default, okay?
+[  318.80s ->   319.78s] I can close.
+[  320.10s ->   322.90s] But I cannot delete a single line without deleting all of them.
+[  323.14s ->   326.56s] For example, if I go here, I go chart, I can either hide all drawings,
+[  327.89s ->   330.73s] I can either remove all drawings, I can hide all indicators,
+[  330.85s ->   333.07s] I can remove all indicators, I can hide all orders.
+[  333.51s ->   338.71s] I cannot delete single lines without deleting all of it, okay, right?
+[  340.21s ->   343.79s] So, imagine, you know, like I do on Think or Swim,
+[  343.85s ->   349.39s] I go out to the four-hour chart, so I can, oops, four-hour chart, six months,
+[  349.71s ->   352.71s] so I can draw my major support and resistance lines,
+[  352.71s ->   355.63s] and then I go in, and then let's say I mess up,
+[  355.91s ->   357.49s] like, oh, I don't need this line, right?
+[  357.65s ->   361.55s] I can't go in and delete that line without deleting all of them.
+[  361.67s ->   363.43s] So, just think about the problem that that might cause.
+[  366.06s ->   368.28s] Also, let's go back here.
+[  369.83s ->   372.65s] Ooh, this is going, and the video will be lit tomorrow.
+[  372.79s ->   374.47s] Why? Because it had earnings and it dropped,
+[  374.85s ->   377.81s] and we're starting to recover-ish, so we'll see what happens.
+[  378.77s ->   379.71s] Be a fun play.
+[  379.71s ->   384.11s] Okay, also, when we go into the trade tab,
+[  384.85s ->   386.43s] you have to either come here,
+[  387.07s ->   389.43s] and you have to pull it up real quick.
+[  390.27s ->   393.87s] The best way to actively, oops, I'm not selling.
+[  394.65s ->   395.19s] Who sells?
+[  396.07s ->   396.51s] That's weird.
+[  400.36s ->   400.96s] I forget how you change.
+[  401.06s ->   402.48s] Oh, long, I want to go long call.
+[  402.64s ->   403.14s] Okay, there we go.
+[  403.96s ->   405.98s] The best way to day trade on here
+[  405.98s ->   409.82s] is to be looking at the position that you want to get into,
+[  410.24s ->   411.84s] find it on the table,
+[  411.84s ->   415.30s] click here and get your limit price ready
+[  415.30s ->   418.06s] so that when you see the breakout on the chart,
+[  418.52s ->   419.64s] you have to come over here,
+[  419.92s ->   421.10s] you have to click on the trade tab,
+[  421.44s ->   422.80s] you have to click review and send,
+[  422.94s ->   424.30s] send it, okay,
+[  425.60s ->   426.66s] and then send it.
+[  426.84s ->   427.38s] Okay, you have to,
+[  427.42s ->   429.60s] you can't like automatically do it
+[  429.60s ->   431.60s] unless maybe you're watching the chart from here
+[  431.60s ->   432.78s] and you're doing it all on your phone,
+[  432.78s ->   434.18s] but if you're watching the chart,
+[  434.38s ->   436.10s] you might as well go on Fingerswim
+[  436.10s ->   438.44s] and execute it on your phone.
+[  438.44s ->   442.62s] Yes, they do have a curve
+[  442.62s ->   444.66s] which helps you out for, you know,
+[  445.44s ->   446.28s] the strategies.
+[  446.78s ->   448.04s] They do have an active tab.
+[  448.36s ->   450.88s] This active tab honestly makes no sense to me.
+[  450.96s ->   451.98s] I've tried to understand it.
+[  452.86s ->   453.82s] I honestly have.
+[  453.88s ->   454.44s] I tried my best.
+[  455.42s ->   456.56s] The safety is on.
+[  457.20s ->   458.26s] Okay, when safety is off
+[  458.26s ->   459.72s] and you click bid,
+[  459.86s ->   460.74s] it automatically,
+[  461.18s ->   462.88s] try it,
+[  463.22s ->   464.76s] it automatically enters
+[  464.76s ->   466.62s] a set number of shares
+[  466.62s ->   467.94s] at the bid.
+[  468.38s ->   468.68s] Okay,
+[  468.80s ->   469.50s] and it automatically
+[  469.50s ->   471.48s] enters at the ask.
+[  471.76s ->   471.96s] Okay,
+[  472.50s ->   475.02s] you can change the orders.
+[  475.32s ->   476.36s] You can say how many
+[  476.36s ->   477.74s] you want to buy,
+[  478.32s ->   480.20s] but I think that's more
+[  480.20s ->   481.02s] for stock trading
+[  481.02s ->   482.22s] because it doesn't allow
+[  482.22s ->   484.38s] that necessarily for the options,
+[  484.66s ->   485.86s] which makes no sense
+[  485.86s ->   488.24s] because this is mainly based
+[  488.24s ->   489.30s] on an options platform
+[  489.30s ->   490.12s] and I'm trying to quickly
+[  490.12s ->   490.82s] trade options.
+[  491.50s ->   492.80s] So the trading wise
+[  492.80s ->   493.76s] is a little weird,
+[  494.08s ->   495.08s] but it can still work
+[  495.08s ->   496.62s] and figure it out.
+[  496.74s ->   497.50s] Like I've gotten into,
+[  498.00s ->   499.26s] I've gotten in and out
+[  499.26s ->   500.14s] of positions within
+[  500.14s ->   501.64s] 30 seconds on here.
+[  502.78s ->   503.56s] It works,
+[  503.64s ->   504.16s] but it just takes
+[  504.16s ->   505.56s] a lot of getting used to.
+[  506.46s ->   507.94s] So charting wise,
+[  508.04s ->   508.90s] not bad.
+[  509.38s ->   510.66s] The only problem is
+[  510.66s ->   511.52s] you can't have
+[  511.52s ->   512.66s] the preset charting.
+[  512.66s ->   513.46s] You know,
+[  513.58s ->   515.60s] so for example,
+[  516.12s ->   517.16s] I can be like,
+[  517.22s ->   517.42s] all right,
+[  517.46s ->   518.38s] so my go-to settings
+[  518.38s ->   519.66s] is the 15 minute,
+[  519.88s ->   520.74s] 30 day.
+[  520.82s ->   522.28s] I can't just click on that
+[  522.28s ->   523.14s] and it automatically
+[  523.14s ->   523.70s] sets up.
+[  524.12s ->   525.34s] I have to actually go here
+[  525.34s ->   526.92s] to the 15 minute,
+[  527.36s ->   527.84s] or the,
+[  527.92s ->   528.32s] let's just say
+[  528.32s ->   528.86s] the 20 minute,
+[  529.00s ->   530.16s] three week.
+[  530.26s ->   530.92s] I have to actually
+[  530.92s ->   531.48s] come in here
+[  531.48s ->   532.16s] and change it myself.
+[  533.46s ->   534.16s] Doing work myself.
+[  534.28s ->   534.94s] That's not what I like.
+[  535.16s ->   535.94s] I'm trading at home
+[  535.94s ->   536.32s] for a reason.
+[  538.64s ->   539.04s] Again,
+[  539.24s ->   540.28s] all these reasons
+[  540.28s ->   541.00s] are just,
+[  541.52s ->   542.48s] they're not reasons
+[  542.48s ->   543.24s] you should not look
+[  543.24s ->   544.64s] into Tastyworks.
+[  544.80s ->   545.88s] I just wanted to be honest,
+[  545.96s ->   546.20s] okay?
+[  546.50s ->   547.70s] There are some hiccups
+[  547.70s ->   549.04s] when transferring
+[  549.04s ->   550.58s] from Thinkorswim
+[  550.58s ->   553.12s] to Tastyworks.
+[  553.50s ->   554.16s] So just make sure
+[  554.16s ->   555.24s] you are aware of these,
+[  555.32s ->   556.54s] that you get used to these
+[  556.54s ->   557.74s] before you are trading
+[  557.74s ->   558.82s] a large amount of money
+[  558.82s ->   559.72s] in a position.
+[  561.12s ->   561.38s] Okay?
+[  561.44s ->   562.28s] If you want to opt,
+[  562.56s ->   564.20s] if you want to open
+[  564.20s ->   565.98s] a Tastyworks account,
+[  566.38s ->   568.86s] I do have a referral link
+[  568.86s ->   569.70s] at the bottom.
+[  570.85s ->   571.55s] Do I get money?
+[  571.55s ->   572.03s] No,
+[  572.23s ->   572.77s] but I get like
+[  572.77s ->   574.33s] tokens and stuff
+[  574.33s ->   575.39s] to win small prizes.
+[  576.71s ->   577.87s] My goal in this video
+[  577.87s ->   579.15s] is not to make you
+[  579.15s ->   580.49s] open up a Tastyworks account.
+[  580.81s ->   582.23s] It's just if you have one
+[  582.23s ->   583.51s] or you're interested
+[  583.51s ->   587.65s] in having an options account
+[  587.65s ->   589.11s] that is smaller
+[  589.11s ->   590.11s] and you don't want to
+[  590.11s ->   591.15s] give all your money
+[  591.15s ->   592.25s] up to commissions
+[  592.25s ->   593.41s] and you want to open
+[  593.41s ->   594.85s] a cash account easily
+[  594.85s ->   596.97s] or you want to open up
+[  596.97s ->   597.73s] a margin account,
+[  597.87s ->   598.03s] okay?
+[  598.15s ->   599.29s] This would be a great way
+[  599.29s ->   599.99s] to do it.
+[  600.83s ->   602.27s] Tastyworks is definitely
+[  602.27s ->   603.87s] great to beginner traders.
+[  604.69s ->   604.87s] Okay?
+[  605.51s ->   606.45s] It is amazing.
+[  606.85s ->   608.09s] You're not overwhelmed
+[  608.09s ->   609.43s] by all the complexities,
+[  609.93s ->   610.81s] but I just wanted
+[  610.81s ->   611.69s] to mention, you know,
+[  611.75s ->   612.43s] stuff that me
+[  612.43s ->   613.65s] as an active trader,
+[  614.13s ->   614.81s] I've been trading
+[  614.81s ->   615.37s] for a bit.
+[  615.63s ->   617.29s] On Thankerswim,
+[  617.37s ->   618.39s] I'm used to the finer
+[  618.39s ->   619.15s] things in life
+[  619.15s ->   621.11s] when it comes to platforms.
+[  621.33s ->   622.19s] There's just a few adjustments
+[  622.19s ->   623.05s] that I had to make.
+[  623.45s ->   624.25s] It works great.
+[  624.71s ->   625.73s] I've daytraded positions
+[  625.73s ->   627.11s] within 30 seconds.
+[  627.21s ->   628.21s] I've daytraded positions
+[  628.21s ->   628.99s] within one hour.
+[  629.43s ->   630.61s] The execution of speed
+[  630.61s ->   631.33s] in that is great.
+[  631.85s ->   632.51s] Once you get used
+[  632.51s ->   633.29s] to the platform,
+[  633.63s ->   634.35s] you will love it.
+[  634.43s ->   634.85s] I have people
+[  634.85s ->   635.49s] who've changed
+[  635.49s ->   637.23s] from Thankerswim
+[  637.23s ->   638.03s] to Tastyworks
+[  638.03s ->   638.95s] and have loved it.
+[  640.37s ->   641.43s] I'm just neutral to it.
+[  641.65s ->   642.83s] I love the commissions,
+[  642.95s ->   643.85s] how low they are,
+[  644.41s ->   645.07s] and especially,
+[  645.27s ->   646.09s] I love what they do.
+[  646.51s ->   648.17s] They respond that quick
+[  648.17s ->   649.31s] to all your answers
+[  649.31s ->   651.69s] being a smaller broker.
+[  651.69s ->   654.25s] Also, coming up on the,
+[  654.35s ->   655.69s] I believe it's August 28th,
+[  656.73s ->   657.89s] because just for
+[  657.89s ->   658.69s] trader appreciation,
+[  659.65s ->   660.15s] they're giving us
+[  660.15s ->   661.19s] a whole day free,
+[  661.63s ->   662.89s] free trades,
+[  663.05s ->   664.17s] no commissions.
+[  664.71s ->   665.55s] Do you know how awesome
+[  665.55s ->   665.87s] that is?
+[  665.91s ->   666.25s] That is something
+[  666.25s ->   667.77s] only small brokers can do.
+[  669.58s ->   670.00s] But yeah,
+[  670.10s ->   670.88s] I hope you all learned
+[  670.88s ->   671.64s] something about
+[  671.64s ->   672.94s] Tastyworks.
+[  673.88s ->   675.42s] If you want to explore
+[  675.42s ->   677.16s] the world of Tastyworks,
+[  677.48s ->   678.82s] watch Tastytrades,
+[  678.82s ->   681.86s] or open up
+[  681.86s ->   684.22s] an account.
+[  684.64s ->   685.44s] Easy, simple.
+[  686.22s ->   687.50s] The link is below.
+[  687.98s ->   688.44s] It says,
+[  689.02s ->   690.42s] Austin's referral link.
+[  692.72s ->   693.48s] If you don't want to
+[  693.48s ->   694.36s] use my referral link,
+[  694.56s ->   695.32s] totally fine.
+[  695.52s ->   696.18s] Just search up
+[  696.18s ->   697.90s] Tastyworks.com
+[  697.90s ->   698.52s] and go for it.
+[  699.10s ->   699.92s] I hope you all learned
+[  699.92s ->   700.86s] something from this video.
+[  700.96s ->   701.38s] Please like, comment,
+[  701.44s ->   701.78s] and subscribe.
+[  701.98s ->   702.66s] See you on the next one.

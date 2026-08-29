@@ -1,0 +1,150 @@
+[    0.46s ->     8.14s] Welcome back. Today what I want to do is talk about Martingale betting theory. We'll use a
+[    8.14s ->    14.48s] casino as an example. It's kind of the canonical example for any sort of betting strategy. We'll
+[   14.48s ->    20.00s] take a look at mean reversion and Nornstein-Allenbach process and how that's typically used to model
+[   20.00s ->    25.34s] volatility. You may have seen an extension of the Black-Scholes model, maybe like a Heston model,
+[   25.34s ->    30.76s] where volatility is treated as a stochastic process. Then what we're going to do is we're
+[   30.76s ->    35.86s] going to try to apply the Martingale betting theory to volatility trading. We'll see if we can
+[   35.86s ->    41.72s] continue to take a short position in, say, the VIX, and then double down on that short position
+[   41.72s ->    49.58s] every day or week to try to cover our losses and gain some money, some P&L. That's what it's all
+[   49.58s ->    54.58s] about at the end of the day. For starters, let's take a look at roulette. We're going to simplify
+[   54.58s ->    58.56s] roulette. No zeros, no greens. We're just going to talk about black and red here.
+[   58.56s ->    66.38s] And we're going to take a look at what happens every time you lose and then double down. So
+[   66.38s ->    73.92s] suppose that you have an initial bet size B. After N losses, the total amount wagered is going to be
+[   73.92s ->    82.70s] B plus 2B plus 4B plus so on until you get 2 to the NB, where N is your total number of losses. So if
+[   82.70s ->    88.60s] I bet a hundred bucks and my first loss is going to yield, you know, a loss of a hundred bucks,
+[   88.60s ->    95.16s] I'm going to go ahead and bet 200 the next time around. And then my total amount wagered is going
+[   95.16s ->   104.34s] to be T of one, which is going to go ahead and be two to the first power times B, which is a hundred.
+[  104.34s ->   110.88s] And then we have our initial bet of 100. So 300 total wagered. And you can go ahead and do this
+[  110.88s ->   116.64s] recursively. You can continue to compute the total amount wagered. It's not super difficult. Really,
+[  116.64s ->   120.18s] all we're doing is every time we lose, we double down, double down, double down,
+[  120.18s ->   126.96s] you know, depending on how, how much capital you got, this may or may not be a good idea.
+[  127.96s ->   135.52s] Regardless, at the N plus one bet, your total profit is going to be B minus T sub N plus two
+[  135.52s ->   141.36s] to the NB. And this strategy assumes that you have some sort of infinite capital capacity,
+[  141.36s ->   146.76s] of course, maybe unrealistic in practice, but some people do have quite a bit of money,
+[  146.76s ->   152.46s] maybe close to infinite money. So this may be even somewhat practical for them. Now,
+[  152.66s ->   157.86s] why is this an issue for casinos? Well, the expected value of the Martingale strategy. So
+[  157.86s ->   165.56s] this particular betting strategy is actually your initial bet size. So after one round of Martingale,
+[  165.72s ->   170.58s] the EV is going to be B, which is positive. And if you've seen any of my previous videos,
+[  170.58s ->   175.62s] I talk about, you know, making decisions that yield positive expected value to accumulate profit
+[  175.62s ->   180.26s] over time. We don't know what's going to happen in the short run. But if you can make decisions that
+[  180.26s ->   185.30s] contribute to positive EV over time, that's how you accumulate P and L. That's how you generate wealth.
+[  186.18s ->   190.82s] Well, this is a problem for casinos, because if I could walk in and I could do this Martingale strategy,
+[  191.46s ->   198.14s] continue to double down on my losses, then I have positive EV and I can continue to do that and
+[  198.14s ->   202.72s] continue to take money from the casino in the long run. Again, it's not about the short run,
+[  202.72s ->   208.58s] it's about the long run. So let's take a look at the expected value here. What we do is we are going
+[  208.58s ->   216.38s] to weight each outcome by the associated probability. That is, each profit gets a probability weight by
+[  216.38s ->   221.64s] the likelihood of the outcome. And this turns into some sort of geometric series, which will
+[  221.64s ->   230.24s] eventually converge to B. Okay, so what is the issue with this? Well, clearly the profit has a positive
+[  230.24s ->   235.48s] expectation for the player. The casino is going to lose money over time. Therefore, we really don't
+[  235.48s ->   238.96s] want that. We really don't want that as the house. We really don't want that as a casino. We don't
+[  238.96s ->   244.56s] want to give the players the edge. Now, some games you may consider fair, you know, others, you know,
+[  244.56s ->   248.90s] there's an edge towards the casino and that's how they generate money in the long run. And, you know,
+[  248.90s ->   255.64s] we talk a lot about probability statistics. We talk about casinos in the realm of finance,
+[  255.64s ->   261.62s] because that is a very canonical example of, you know, just odds in general. It's not necessarily
+[  261.62s ->   269.00s] saying that finance itself is gambling. Depending on what you do, it may be gambling. But, you know,
+[  269.00s ->   274.14s] there's a very big difference between just arbitrarily gambling, investing, and, you know,
+[  274.20s ->   279.42s] we got to try to draw a line somewhere there. But nevertheless, let's continue to look at this. So
+[  279.42s ->   284.46s] through this strategy, we get positive expected value. Casinos don't want this. The house doesn't want
+[  284.46s ->   289.08s] this. We're going to throw limits on roulette, for example, so that they can't double down at some
+[  289.08s ->   293.06s] point. And, you know, those short-term losses are just going to accumulate and you're not going to
+[  293.06s ->   299.78s] be able to recover those. So if I lose $10,000 and I can't double down, then how can I possibly hope to
+[  299.78s ->   305.08s] have positive expected value? If I do 10,000 again, that's not going to yield the positive expected
+[  305.08s ->   309.78s] value that I'm looking for. So that's an important idea, right? Just because it's capped at 10,000
+[  309.78s ->   314.10s] doesn't mean if I keep betting 10,000, I'll eventually regain those losses. You need that
+[  314.10s ->   321.85s] doubling down. That's the process itself that yields a positive expected value. Now, we talked
+[  321.85s ->   326.03s] about getting to the long run, and that's true, positive EV to get to the long run. But what does
+[  326.03s ->   330.17s] the short run look like? What is the probability of surviving the short run with some sort of
+[  330.17s ->   336.29s] Martingale strategy? Well, if you just take a look, the total amount wagered is going to be
+[  336.29s ->   342.67s] proportional to 2 to the n, which is exponential. So that can be a problem because after 10 losses,
+[  342.67s ->   349.05s] you take your initial bet B and you have a coefficient of 2047. Then after 20 losses,
+[  349.05s ->   355.63s] you have a coefficient of 2 million. So your bet size blows up, right? And that's really the issue
+[  355.63s ->   361.41s] with this strategy is if you don't survive the short run, you blow out your account and now there's no
+[  361.41s ->   365.67s] more recovering losses. There's no more positive expected value. And that's really the game that we
+[  365.67s ->   371.01s] play, right? Whether you're a market maker, a casino, a player in a casino or a market participant,
+[  371.01s ->   376.27s] you need to figure out what it is you're trying to do, what your strategy is, what your expected
+[  376.27s ->   382.39s] value is, and how you can survive the short run to get to the long run to kind of reap the reward
+[  382.39s ->   389.71s] of that expected value over time. What I have here is a simulation of the Martingale strategy with
+[  389.71s ->   398.56s] roulette. So every time I run this, we're going to essentially try to win money from roulette.
+[  398.56s ->   404.56s] And we are going to play until we win. So if we lose, we'll double down. If we lose again,
+[  404.56s ->   410.84s] we'll double down. And every time I run this, so we won, we won, we won, I run it again, we win.
+[  411.30s ->   415.60s] Here, we lost the first round. So we doubled down, we win the second round. As you can see,
+[  415.70s ->   423.02s] eventually, you always end up at this 1,010, right? So my initial bet is 10. My max rounds is 10 here,
+[  423.02s ->   429.10s] just for the sake of the simulation. And then the bankroll is 1,000. So you can see, as I keep
+[  429.10s ->   434.16s] running this, here's a very good example. As we keep doubling down, we keep doubling down. So 990,
+[  434.30s ->   442.32s] 970, 930, 850. Very quickly, we're starting to increase. You know, this is not going linearly,
+[  442.56s ->   448.74s] right? This is going 30, then it's 40, and then it's going down all the way to 80. So that is that
+[  448.74s ->   453.76s] 2 to the N. And here we can see, eventually, we do hit that win and we get back to the 10, 10.
+[  453.98s ->   460.00s] But this is the problem, right? Eventually, this is going to hit really, really big loss streak,
+[  460.12s ->   465.24s] maybe 20 losses, and we're going to completely blow out the account. In fact, with a bankroll of
+[  465.24s ->   471.40s] 1,000, it's not going to take 20 losses. It's going to take roughly, what is that, close to 10,
+[  471.46s ->   475.42s] maybe 10 losses or something like that. So it's very important to understand that idea.
+[  475.42s ->   481.22s] Now, here's the deal. If you do survive the short run and you don't blow out your account or you have
+[  481.22s ->   486.30s] infinite money, which, you know, you wouldn't be doing this, but you can go ahead and actually
+[  486.30s ->   492.66s] simulate the outcome of this Martingale strategy and roulette over time. So as you can see, you kind
+[  492.66s ->   497.48s] of have these manic highs and lows locally, but over time, you still have this cumulative wealth that
+[  497.48s ->   503.70s] is positive. And this is really what it means to have a positive expected value. Now, this is all well
+[  503.70s ->   508.88s] and good, but what does the actual bet sizing look like? Here's the issue, right? Take a look at this
+[  508.88s ->   515.94s] bet sizing. So based on all these game numbers, you have 1,000 games. Eventually, the bet size spikes up.
+[  516.02s ->   522.92s] Look at this. We're betting, you know, over $1,200 here, a variety of different times. So you're risking
+[  522.92s ->   528.66s] a significant amount of capital cumulatively to attempt to recoup your losses, but also regain that,
+[  528.66s ->   535.52s] you know, initial wager back. You know, that's how you accumulate the wealth is you bet 100 or you bet
+[  535.52s ->   541.70s] 10. And then, you know, you get that, that 10 back plus 10 here, you know, in this case scenario,
+[  541.70s ->   550.28s] you can see that it's, it's not a nice, low constant stable bet size, but rather, you know,
+[  550.28s ->   555.34s] over the significant number of games that we play here, it does tend to blow up. So you can see the
+[  555.34s ->   559.42s] positive expected value, but if you blow out your account in the short run due to this bet size and
+[  559.42s ->   564.40s] you can't double down or there's limits, then you can't use this strategy and it's, it's not
+[  564.40s ->   571.46s] productive. Okay. So that's the idea of Martingale, at least in a nutshell. What about applied to the
+[  571.46s ->   578.37s] financial markets? Well, we don't really have just a way to 50, 50, the financial markets. Of course,
+[  578.37s ->   582.61s] there's, you know, different types of contracts you might be able to engage in, and you may argue
+[  582.61s ->   587.57s] that they're 50, 50. I would argue that more likely than not, the implication is that they're 50,
+[  587.57s ->   593.19s] 50, or there's some sort of implied probability that they're 50, 50. But let's take a look at this,
+[  593.19s ->   601.38s] this sort of example in the context of volatility trading mean reversion. So the Ornstein-Olenbach
+[  601.38s ->   606.36s] process models a mean reversion. So it could be used for rates. It could be used for volatility here.
+[  606.36s ->   611.64s] I'm kind of just showing the process itself. It's a stochastic differential equation, and you can
+[  611.64s ->   617.24s] simulate the stochastic differential equation, and it's going to give you a path over time. Now,
+[  617.24s ->   621.52s] this red line represents the mean level. And what you'll notice is as I continue to generate paths,
+[  621.52s ->   628.94s] the path tends towards the mean. And if it goes too low, it starts to tend back. If it goes too high,
+[  628.94s ->   636.02s] it starts to tend back. And there are processes in the financial markets that emulate this behavior,
+[  636.02s ->   642.84s] specifically volatility. If you take a look at the VIX, right, the VIX based off of the implied
+[  642.84s ->   650.30s] volatility of the S&P 500 options, we take a look here. And this is the mean level here. Typically,
+[  650.30s ->   656.02s] it's below 20. This is the mean level. You can see that as there are these spikes, it does revert back
+[  656.02s ->   664.62s] to this mean level here. So one strategy, perhaps, to apply what we had just talked about in roulette to
+[  664.62s ->   669.90s] the financial markets is realizing, hey, well, if volatility tends, you know, tends towards the
+[  669.90s ->   676.18s] mean, and the mean tends to be around 20, then if we deviate from the mean, so if we go up,
+[  677.18s ->   681.20s] shouldn't we just take a short position? And if it continues to go up, double down on that short
+[  681.20s ->   687.24s] position, and continue to do that until, you know, we start to ride the vol down, and we just collect,
+[  687.62s ->   693.74s] essentially, the cash for borrowing those shares, then we can buy back the shares, cover the shares
+[  693.74s ->   700.08s] in the market at a lower level. And you know, we'll make out with that profit. That is one
+[  700.08s ->   706.04s] theoretical implementation of Martingale. And I actually have a simulation of it here. So what
+[  706.04s ->   711.90s] I'm going to do is I'm going to go ahead and I'm going to apply that Martingale strategy to the VIX,
+[  712.04s ->   716.28s] this historical data, and I'm going to enter a short position every day. If there's a loss,
+[  716.34s ->   720.80s] I'll double down. If there's not a loss, I'm going to collect that premium. And you can take a look
+[  720.80s ->   726.00s] at what this equity looks like over time. It's like, wow, you know, this is tremendous. We're
+[  726.00s ->   731.78s] certainly gaining a lot of equity value here. And what you'll have to notice is the final capital
+[  731.78s ->   739.74s] may be roughly, what is this, 700,000 or something, but your exposure is significantly higher than your
+[  739.74s ->   743.82s] final capital. So if you took a look at the Sharpe ratio, this would just be absolutely atrocious for
+[  743.82s ->   750.60s] the amount of capital that you risk to acquire this equity curve. Moreover, another issue is
+[  750.60s ->   760.38s] you may not have the capital to continue to short the VIX itself. So you're on margin when you go
+[  760.38s ->   767.40s] ahead and short the VIX here, you're eventually going to run out of capital, right? So if I continue
+[  767.40s ->   773.42s] to try to double down, then eventually I might get a margin call and I'll have to liquidate the position
+[  773.42s ->   779.10s] at a loss or I'll blow out my account, I'll be bankrupt or I might owe money. So that's an important
+[  779.10s ->   784.26s] idea as well to remember. So even though going short, collecting that, you know, collecting the
+[  784.26s ->   789.36s] cash for going short, eventually you could buy back those shares at a lower level. Theoretically, yeah,
+[  789.38s ->   793.66s] that works great. If you could do that, survive the short run, get to the long run. Yeah, fantastic.
+[  794.20s ->   800.64s] However, you know, with events like 2020, if you go all the way back to events like 2008, 2001,
+[  802.27s ->   807.89s] even these spikes here to like 40 or 50, they can completely blow out your account. So when you're
+[  807.89s ->   812.69s] taking a short position, let's say you start doubling down at, you know, 25, if we ride all
+[  812.69s ->   817.15s] the way up to 40, there's no way that you're going to be above water. You're going to have to liquidate
+[  817.15s ->   824.77s] a pretty massive loss. So important to keep that in mind. That is just, I think this is a, this was a
+[  824.77s ->   832.23s] fun video to make. I wanted to kind of talk a little bit about, you know, an application of probability to
+[  832.23s ->   841.57s] not just like, not just casinos and trading, but I wanted to kind of go from, from theory to
+[  841.57s ->   846.47s] practice, theory to practice. So, you know, the idea here was we started with the Martingale
+[  846.47s ->   850.87s] betting theory. We talked about it theoretically in roulette, positive EV. We talked about it in
+[  850.87s ->   854.85s] practice, how eventually you're going to have a bet size that kind of just blows up and it's not
+[  854.85s ->   859.81s] practical. Similarly, we talked about theoretically with mean reversion, how, well, hey, if, you know,
+[  859.81s ->   866.21s] we have this process that reverts to a level over time, then we can take a position and maybe double
+[  866.21s ->   872.09s] down on our losses when it goes against us to apply that theoretical betting strategy to the
+[  872.09s ->   876.45s] process that is mean reverting. But of course, in practice, you're going to have a crazy amount of
+[  876.45s ->   883.51s] exposure and margin to answer to. And that is no good. That is no good for getting to the long,
+[  884.42s ->   889.95s] getting to the long run. So I hope you enjoyed this video. This was a fun one to make.
+[  891.44s ->   893.02s] And I'll see you in the next one.

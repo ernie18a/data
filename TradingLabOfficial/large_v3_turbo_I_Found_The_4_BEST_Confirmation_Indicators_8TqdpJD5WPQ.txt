@@ -1,0 +1,170 @@
+[    0.16s ->     2.24s] Everybody hates false breakouts.
+[    2.24s ->     5.53s] Why are you the way that you are?
+[    5.53s ->     9.71s] But what if I told you there were indicators out there to one, not only give you confirmation
+[    9.71s ->    15.76s] on your trades, but also help prevent you from entering trades like this?
+[   15.76s ->    17.08s] That would be pretty cool, right?
+[   17.08s ->    18.48s] Goddamn, that would be awesome.
+[   18.48s ->    23.34s] Well, luckily for you, I've been scavenging TradingView the last couple weeks for indicators
+[   23.34s ->    25.44s] for this exact purpose.
+[   25.44s ->    30.40s] TradingView default indicators, community scripts, custom scripts, private indicators,
+[   30.40s ->    32.78s] and oh boy have I found some good ones.
+[   32.78s ->    37.46s] You can add any one of these indicators to your already made strategy to improve it and
+[   37.46s ->    40.46s] hopefully increase the win rate of your very own strategy.
+[   40.46s ->    44.32s] I'll be showing you confirmation indicators for lower timeframes like the 1 minute and
+[   44.32s ->    48.22s] 5 minute and I'll also be showing you ones that are for longer timeframes like the 1
+[   48.22s ->    49.56s] hour or daily.
+[   49.56s ->    53.68s] All of these indicators I'm about to show you are complete game changers and will forever
+[   53.68s ->    55.24s] change the way you trade.
+[   55.24s ->    56.24s] Let's get straight to it.
+[   56.24s ->    59.90s] To start our list off strong, we're going to start with the trend meter indicator.
+[   59.90s ->    64.34s] Now if you've watched my videos before, I've used this indicator in many of my strategies.
+[   64.34s ->    66.90s] And there's a reason for that, it's a f**king good indicator.
+[   66.90s ->    71.18s] To add it to your chart, go to trading view, click the indicators tab, and type in trend
+[   71.18s ->    73.82s] meter and click this one by this guy.
+[   73.82s ->    77.70s] Once you have it added to your chart, this little guy will show up.
+[   77.70s ->    80.26s] Now this one is extremely easy to use.
+[   80.26s ->    84.78s] All you need to do is have all these dots and lines green, including this dot up here that
+[   84.78s ->    86.44s] will occasionally show up.
+[   86.44s ->    89.28s] Every single one of them must be green.
+[   89.28s ->    92.56s] This is important as this will confirm the signal is strong.
+[   92.56s ->    96.00s] Each one of these dots or lines represents a specific indicator.
+[   96.00s ->    98.82s] When green, that means the indicator is giving a bullish signal.
+[   98.82s ->   101.56s] When red, that means the indicator is giving a bearish signal.
+[  101.56s ->   105.50s] If you go to the settings of the indicator, it'll show you all the indicators it uses.
+[  105.50s ->   109.34s] I personally keep all these settings at default, but you can change them if you desire.
+[  109.34s ->   113.88s] The one setting I do like to change is go to the styles tab and uncheck the signals one
+[  113.88s ->   114.88s] box.
+[  114.88s ->   117.16s] Now, I already know I'm going to get this question.
+[  117.16s ->   119.54s] What time frame does this indicator work best on?
+[  119.54s ->   121.30s] So I might as well answer it now.
+[  121.30s ->   126.08s] This indicator will work for all time frames, but after using it for many trades myself,
+[  126.08s ->   130.58s] I figured that it works best on larger time frames like the one hour or daily.
+[  130.58s ->   134.64s] Let me show you an example of how we can use this indicator to get more profitable trades
+[  134.64s ->   136.18s] and not get as many false breakouts.
+[  136.18s ->   141.76s] But first, it would be pretty rude of me not to talk about today's sponsor, CEX.io.
+[  141.76s ->   145.14s] The CEX-iest crypto exchange on the internet.
+[  145.14s ->   146.14s] See what I did there?
+[  146.14s ->   148.74s] Now, you might be asking, what makes them so CEX-y?
+[  148.74s ->   154.00s] Well, for starters, they have instant buy and sell for all cryptos, and they accept basically
+[  154.00s ->   158.86s] every payment method out there, credit and debit cards, bank transfers, e-wallets, everything.
+[  158.86s ->   163.54s] They have 100 cryptocurrencies to choose from, instant crypto and fiat withdrawals, and they've
+[  163.54s ->   165.46s] been in the game since 2013.
+[  165.46s ->   167.04s] So yeah, they know what they're doing.
+[  167.04s ->   171.14s] They also have a really nice API, so if you've ever wanted to make a bot to automate your
+[  171.14s ->   173.78s] trades, you could easily hook it up to their exchange.
+[  173.78s ->   178.06s] On top of that, they have one of the most user-friendly interfaces I've ever seen.
+[  178.06s ->   181.90s] And one of the coolest parts is they offer a staking program to where you can get up to
+[  181.90s ->   183.90s] 23% APY.
+[  183.90s ->   184.90s] Twenty.
+[  184.90s ->   185.90s] Three.
+[  185.90s ->   186.90s] Percent.
+[  186.90s ->   191.42s] Whichever coin you want to stake, sit on your couch for a year, and you made 23% of what
+[  191.42s ->   194.14s] you put in, for doing absolutely nothing.
+[  194.14s ->   195.26s] Which is pretty crazy.
+[  195.26s ->   198.40s] So go check them out, I'll leave a link in the description back to the video.
+[  198.40s ->   202.48s] Let me show you an example of how we can use this indicator to get more profitable trades
+[  202.48s ->   204.06s] and not get as many false breakouts.
+[  204.06s ->   208.48s] For this example, my base trading strategy will be one that you would learn from straight
+[  208.48s ->   209.48s] out of kindergarten.
+[  209.48s ->   214.76s] Just a simple moving average strategy where I have a 50 EMA and a 200 EMA, and I only enter
+[  214.76s ->   218.06s] a trade when the 50 EMA crosses above the 200 EMA.
+[  218.06s ->   219.90s] Now, here's the problem.
+[  219.90s ->   223.56s] With this strategy, you're going to have times when the market is consolidating, and
+[  223.56s ->   225.06s] it's going to give you an entry point.
+[  225.06s ->   228.82s] But it turns out, it was a false signal, and you're going to have a losing trade.
+[  228.82s ->   230.56s] We do not like this.
+[  230.56s ->   231.56s] How do you fix this?
+[  231.56s ->   232.88s] Add the trend meter.
+[  232.88s ->   237.20s] So you will only enter if the base strategy gives you an entry signal, and all the dots
+[  237.20s ->   239.24s] and lines are green on the trend meter.
+[  239.24s ->   244.22s] So as an example, the EMAs cross giving us an entry signal for our base strategy, but not
+[  244.22s ->   246.10s] all the dots were green on the trend meter.
+[  246.10s ->   250.02s] So we wouldn't enter this trade, and look what happens, it was a false signal.
+[  250.02s ->   253.76s] Then this time, we see the EMAs crossed and gave us another entry signal.
+[  253.76s ->   256.58s] We look at the trend meter, and all the dots and lines are green.
+[  256.58s ->   258.54s] So we would enter in this trade.
+[  258.54s ->   260.86s] This time, it works out and the chart goes up.
+[  260.86s ->   265.08s] You can do the same exact thing with shorts, just make sure all the dots and lines are red.
+[  265.08s ->   268.40s] This will insanely increase the chance of your chart going in the direction you want
+[  268.40s ->   269.40s] it to.
+[  269.40s ->   273.04s] You can replace the moving averages with whatever strategy you personally use.
+[  273.04s ->   277.76s] Now it's time to move on to the next confirmation indicator, and this one is one of my all-time
+[  277.76s ->   278.76s] favorites.
+[  278.76s ->   283.32s] Go to the indicators tab and type in Donchon Trend Ribbon, this one right here.
+[  283.32s ->   286.32s] Once you have it added to your chart, you'll get something that looks like this.
+[  286.32s ->   290.64s] It's a pretty straightforward indicator, but it gives so much value.
+[  290.64s ->   292.60s] When the bars are green, you should be buying.
+[  292.60s ->   294.56s] When the bars are red, you should be selling.
+[  294.56s ->   296.16s] But what time frame does it work on?
+[  296.16s ->   297.16s] You again?
+[  297.16s ->   301.24s] This indicator actually works on all time frames a lot better than the last one.
+[  301.24s ->   306.32s] So it can be used to filter out trades on shorter time frames, like the 1 minute or 5 minute,
+[  306.32s ->   310.08s] but it can also be used on the 1 hour or the daily, whatever you want really.
+[  310.08s ->   314.48s] Of course this indicator will perform better on higher time frames, so just keep that in
+[  314.48s ->   315.48s] mind.
+[  315.48s ->   317.48s] Let me show you an example of how to use this indicator.
+[  317.48s ->   321.90s] So for this example, I'm going to be using the super trend indicator as my base strategy.
+[  321.90s ->   324.44s] It just gives you very basic buy and sell signals.
+[  324.44s ->   327.98s] If we look at this bitcoin chart, you can see that the super trend indicator gives you
+[  327.98s ->   329.06s] a buy signal.
+[  329.06s ->   332.14s] But if we look at the dungeon indicator, it has red bars.
+[  332.14s ->   334.32s] So we would not end up taking this trade.
+[  334.32s ->   337.88s] If we move a little bit forward, the super trend indicator gives a sell signal.
+[  337.88s ->   340.86s] If we scroll down, the dungeon is also red.
+[  340.86s ->   344.50s] So we would enter a short here, and look what happens, price falls.
+[  344.50s ->   348.38s] So you could have very easily predicted the fall of bitcoin with this simple strategy.
+[  348.38s ->   352.36s] Here's another example, super trend just turned green, so we take a look at the dungeon
+[  352.36s ->   354.16s] indicator to confirm this signal.
+[  354.16s ->   357.02s] We see that it is also green, so we enter a trade.
+[  357.02s ->   359.02s] Look what happens, a huge uptrend.
+[  359.02s ->   364.69s] With this indicator, I like to keep all the settings at default.
+[  364.69s ->   368.87s] For this next one, go to the indicators tab and type in fmus system.
+[  368.87s ->   370.45s] Three different indicators will show up.
+[  370.45s ->   372.97s] You can choose any one of them as they're all the same.
+[  372.97s ->   375.19s] When you add it to your chart, it'll look like this.
+[  375.19s ->   377.21s] There are going to be many rows of rectangles.
+[  377.21s ->   379.47s] Each rectangle represents a different indicator.
+[  379.47s ->   383.33s] With this specific indicator, you can add up to 10 different indicators.
+[  383.33s ->   396.19s] You have the option to enable or disable any indicator you so please.
+[  396.19s ->   400.13s] If for some reason you've had an absolute hatred for RSI since you were four years old,
+[  400.13s ->   403.19s] you can simply just uncheck the checkbox and it won't show up on the indicator.
+[  403.19s ->   408.05s] So, just like the other confirmation indicators, this one is very easy to use.
+[  408.05s ->   409.05s] But what timefra-
+[  409.05s ->   410.29s] All timeframes.
+[  410.29s ->   412.53s] This indicator works on all timeframes.
+[  412.53s ->   415.01s] Remember, higher timeframes will work better though.
+[  415.01s ->   419.57s] So with this indicator, a buy signal would be every single rectangle is green for a strong
+[  419.57s ->   420.53s] bullish uptrend.
+[  420.53s ->   423.81s] So here we have our supertrend indicator again for the base strategy.
+[  423.81s ->   428.53s] We see a buy signal, but we look at our fmus system and see that not all the rectangles are
+[  428.53s ->   431.09s] green, so we do not enter this trade.
+[  431.09s ->   435.41s] And that actually ended up being a good decision because the market was consolidating and this
+[  435.41s ->   437.01s] ended up being a false signal.
+[  437.01s ->   440.93s] Here's an example where we get a buy signal from the supertrend indicator, we then check
+[  440.93s ->   445.33s] the fmus system and it has all green rectangles, confirming that we are good to go.
+[  445.33s ->   446.53s] So, we enter.
+[  446.53s ->   450.37s] Price heads upwards, making this a successful trade yet again.
+[  450.37s ->   453.57s] Now it's time for the fourth and final indicator.
+[  453.57s ->   457.49s] This last and final indicator works wonders for long term trades.
+[  457.49s ->   461.49s] When I say long term, I mean a trade that is on the 1 hour timeframe or higher.
+[  461.49s ->   465.65s] Just like the other indicators, the higher the timeframe, the more accurate this indicator
+[  465.65s ->   465.97s] will be.
+[  465.97s ->   469.33s] Go to the indicators tab and type in ha-cult, ha-cult?
+[  469.33s ->   470.85s] Yeah, this one right here.
+[  470.85s ->   472.53s] Same type of strategy applies.
+[  472.53s ->   476.45s] You only buy when the indicator is green and you only short when the indicator is red.
+[  476.45s ->   480.13s] As you can see, this indicator is pretty accurate on the higher timeframes.
+[  480.13s ->   482.61s] When this indicator is green, the market is trending up.
+[  482.61s ->   485.33s] When the indicator is red, the market is trending downwards.
+[  485.33s ->   489.41s] All of these indicators I shared with you are really great at confirming entries and exits,
+[  489.41s ->   491.41s] but none of them should be used by themselves.
+[  491.41s ->   494.61s] These are confirmation indicators, not entry indicators.
+[  494.61s ->   499.17s] Pair them with whatever strategy you are currently using and it will help you make better confirmed
+[  499.17s ->   500.21s] trading decisions.
+[  500.21s ->   504.53s] Test them out with your own strategies and let our community know which one worked best for you.
+[  504.53s ->   509.41s] You can do that by joining the trading lab discord where you can talk to other like-minded traders
+[  509.41s ->   510.29s] about trading.
+[  510.29s ->   512.61s] I'll leave a link to the discord in the description.
+[  512.61s ->   516.05s] If you want to see how to double your account size within 30 days,
+[  516.05s ->   521.57s] watch this video because I back tested a strategy 100 times and the results were pretty good.
+[  521.57s ->   531.81s] Thanks for watching and I'll see you guys next time.

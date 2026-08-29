@@ -1,0 +1,197 @@
+[    0.46s ->     9.63s] Roman I have a trading strategy that generates 30% expected returns or maybe I'll get something
+[    9.63s ->    19.03s] like I have a strategy that prints money $3,000 a month or another one my strategy is a 95% win
+[   19.03s ->    25.45s] rate now all of those performance measures are largely nonsense and we'll talk about why that
+[   25.45s ->    29.69s] is the case but let me even take this a step further people will come to me and they'll say
+[   29.69s ->    40.13s] hey you know I have a trading strategy and it has a sharp ratio of 2.7 a sortino of 3.2 a max drawdown
+[   40.13s ->    47.11s] of 3% and still I say show me the money that is not at all what I care about when it comes to these
+[   47.11s ->    54.13s] performance measures they are necessary but not sufficient there's only one thing that I care
+[   54.13s ->    60.51s] about when it comes to trading strategies and the relative performance of those strategies
+[   60.51s ->    66.03s] and we're going to talk about what that is in this video before we can discuss this idea we have to
+[   66.03s ->    71.23s] understand what it is we're dealing with these different trading and investing performance
+[   71.23s ->    78.83s] measures I've separated them into two categories the first is this idea of useless trading and
+[   78.83s ->    85.61s] investing performance metrics things that your YouTube Instagram TikTok traders are going to
+[   85.61s ->    90.63s] cite things that don't actually have a lot of value things that will pique your interest but don't
+[   90.63s ->    98.37s] actually offer any real insight into a trading strategies performance now the second category are
+[   98.37s ->   106.47s] metrics that I would consider less useless these are things that by themselves are not sufficient to
+[  106.47s ->   113.65s] suggest that we should trade a strategy but in addition to this idea of stability could suggest
+[  113.65s ->   120.67s] that we have a viable trading strategy a good sharp ratio doesn't mean that you're going to want to trade
+[  120.67s ->   128.65s] that strategy however a new quant guild video sure does mean that you will have access to a jupiter
+[  128.65s ->   133.87s] notebook this jupiter notebook will be linked in the description below I will also post it to the
+[  133.87s ->   139.43s] quant guild library on github where you can find all of my jupiter notebooks and associated youtube videos
+[  139.43s ->   145.15s] along with the source code for all of my quant builds at the top of this jupiter notebook you'll notice
+[  145.15s ->   151.55s] some related quant guild videos on ideas applying statistics to trading the idea that the expectation
+[  151.55s ->   157.09s] or some sort of non-linear conditional expectation is the best we can do in the face of randomness
+[  157.09s ->   163.33s] or something that we are constructing as a random variable that may just have too many deterministic
+[  163.33s ->   168.77s] factors to account for if you're unfamiliar with any of these ideas I highly encourage you check out
+[  168.77s ->   174.49s] these videos before tackling something like this one moreover these videos certainly take a lot of
+[  174.49s ->   179.85s] effort to create so if you would like to help support the channel please like comment subscribe it helps
+[  179.85s ->   185.83s] me out tremendously it is greatly appreciated and if you'd like to master your quantitative skills check out
+[  185.83s ->   192.47s] quant guild.com maybe you come from a background in business economics computer science and aren't too
+[  192.47s ->   199.11s] sure where to start on your quant journey quantitative finance is such an interdisciplinary field combining
+[  199.11s ->   204.97s] ideas from math statistics probability finance computer science it's hard to figure out where to get
+[  204.97s ->   211.59s] started well quant guild is for you we have over 90 quant lessons in math probability finance an adaptive
+[  211.59s ->   217.35s] practice engine that scales with your skill level so you can progress to more and more difficult topics with
+[  217.35s ->   226.55s] gamified rank based progress interview questions with fully worked solutions trading games coming soon courses in math
+[  226.55s ->   237.59s] statistics finance coding all from the ground up from a to z and everything's included with quant guild membership so if you'd like to help support the channel and master your quantitative skills
+[  237.59s ->   266.23s] check out quant guild.com without further ado let's discuss this idea of evaluating investing and trading strategies in either case we're going to look at historic data we're going to either construct some sort of portfolio to evaluate an investing strategy or we're going to run a back test on some sort of trading strategy come up with the returns come up with all these different performance ratios so on and so forth
+[  266.23s ->   295.67s] but we're operating all on historic data right i thought historic data past performance wasn't indicative of future performance why are we looking at all of this data in a backward looking setting if we're trying to assess whether there's anything that is tradable in a forward looking setting this is a big piece of the puzzle
+[  295.67s ->   322.31s] that we need to find in order to get a complete picture of these metrics and their place in evaluating these strategies in efforts to find this piece of the puzzle let's start with what i would consider useless performance measures these are expected returns win rate cash generated things like that now we'll start with this idea of expected returns expected returns or the average return
+[  322.31s ->   350.31s] is easy to compute is easy to compute in a backward looking sense but on their own are not a particularly useful measure we can take any trading strategy any investing strategy we can construct a portfolio in an investing sense we can run a back test in a trading sense we can take a look at the average return for you know daily weekly monthly intervals but this says nothing of the expected return
+[  350.31s ->   378.31s] return return in a forward looking sense this is telling us what has been not what will be and it's not even telling us what has been in a particularly useful way it's not even attaching any measure of risk to this relative performance so if you told me that you know you had an expected return of 30 percent and another strategy had an expected return of 30 percent
+[  378.31s ->   406.31s] well how do i distinguish between those two strategies i'm going to assess how much risk you had to take to achieve either return if we just look at expected returns we have no notion of risk i can't possibly evaluate your strategy in any case given just expected return so it's difficult because it doesn't give us any sort of relative measure to risk for how much risk you had to take for that return and it doesn't offer any
+[  406.31s ->   434.31s] any explainability in a forward looking sense it doesn't tell us if this is behavior that we're expecting in the future a simple argument for why past return isn't indicative of a future performance can be made in a bunch of different ways using say nvidia just this year we're going to be looking at the price path of nvidia and the expected returns
+[  434.31s ->   462.31s] now i could look back what one year two years five years ten years is that really appropriate to construct a measure of expected performance ten years ago nvidia was an entirely different company this measure is not valid in a forward looking sense but it can be even more incorrect if you go too far back moreover if we actually look at this chart we can see that during the craziness
+[  462.31s ->   491.31s] of the tariffs at the start of this year if we looked at the year to date average expected return we saw something like minus 0.4 percent daily but after everything resolved and volatility reverted back to a mean and the market cooled off and started climbing again we saw what an expected return of 0.52 percent daily this is the simplest example of past returns
+[  491.31s ->   517.99s] returns not being indicative of future performance moreover this has absolutely no measure of risk attached to it so the year to date return is 22 percent roughly 22 percent but we had to suffer this massive drawdown for the first couple months of the year that's not baked into this year to date return so expected returns
+[  517.99s ->   536.99s] don't offer enough information for us to use them in isolation when evaluating some sort of trading strategy or investing strategy those are some very important concerns when it comes to the expected return for evaluating your investment or trading strategy
+[  536.99s ->   564.99s] okay well what about win rate win rate is the craziest thing i've ever seen sight in the trading space on its own it's an entirely useless measure i can give you a strategy right now that has roughly a 100 percent win rate it tells us nothing of the performance of the strategy tells us nothing of the strategy's wealth accumulated amount of capital risk it literally doesn't give us any information
+[  564.99s ->   595.31s] information and what i've done for you and what i've done for you here is i've plotted three different trading strategies one with a 100 percent win rate one with a 99 percent win rate and one with a 40 percent win rate look at the relative performance the 99 percent win rate strategy had a return of negative 65 percent the 100 percent win rate strategy
+[  595.31s ->   625.31s] meanwhile the 40 percent win rate had a return of over 137 this is why win rate is an entirely useless performance measure we cannot assess anything of the overall strategy's performance we know nothing about the risk we know nothing about the return it is a measure that can be used in addition to the law of total expectation
+[  625.31s ->   655.31s] but that's not the advantage but that's not the advantage but that's not the context that we're talking about win rate and we're talking about it as a performance measure in itself and clearly looking at these three charts it does not offer any reasonable information so how does this actually happen in practice how can you have a 99 percent win rate but then you have a crazy negative return usually this is akin to selling insurance
+[  655.31s ->   685.31s] you sell it you sell it on a month to month basis every month you collect your premium collect your premium collect your premium but then one month there's a crazy crazy earthquake now you got to pay out all of that insurance you had like a 99 percent win rate every month you collected that premium but then there was a massive earthquake and that took out all of your gains this is the same thing as selling option contracts you can sell option contracts accumulate premium accumulate premium accumulate
+[  685.31s ->   715.29s] but then at some point you're gonna have to pay out that insurance and you're gonna owe a whole bunch of shares and that is exactly what happens here you'll still have a very high win rate but your overall return is going to get decimated by that insurance that you have to pay out and if that isn't enough to convince you that the win rate in isolation is entirely useless well we also have this idea of forward-looking performance just because your strategy did have
+[  715.31s ->   744.91s] 100 100 win rate it does not suggest that it is going to continue to have a 100 win rate this 99 could go down to 95 to 90 to 85 we have no idea what's going to happen if you continue to trade this strategy we do not know if its performance is going to remain stable if it is going to decay it largely depends on what it is you are trading
+[  744.91s ->   774.75s] and if there's anything to suggest that that particular strategy should be stable in a forward-looking sense but again this is the missing piece of the puzzle that we're trying to build towards what about generating cash why is that a useless performance measure well three thousand dollars a month right i make three thousand dollars a month trading well if you have a million dollar portfolio that's not good you can just
+[  774.75s ->   804.49s] invest invest in u.s treasuries and earn the roughest proxy we have to a risk-free rate as my old finance professor said if the u.s is defaulting on its interest payments then we have far more concerns than if it is a valid risk-free rate proxy or not nevertheless let's take a look at the implications of this cash generated on a monthly basis
+[  804.49s ->   828.49s] okay well let's just look at the bar charts first it's like hey you know my strategy generates three thousand dollars a month well they're just buying treasuries with a million dollar account right we're making roughly three thousand dollars a month and you're not trading anything you could say that you're trading treasuries but you just
+[  828.49s ->   856.49s] locked locked your capital away at a specific rate and you're receiving these payouts this is not a trading strategy but it is an easy way to cite the amount of money that you're generating every month versus what a trading strategy that might have some variability for whatever reason maybe you are actually assuming price risk maybe this isn't some sort of true alpha and you don't have the stability that you're looking for but nevertheless
+[  856.49s ->   885.49s] this is the difference this is the difference this is why it's not a useful measure because we're just getting this versus maybe something like this what we really want is something like this this is a risk-free strategy you're not trading anything the amount of money that you generate in a monthly basis is not particularly useful especially if you don't know the overall portfolio size right what we really want to see is portfolio size
+[  885.49s ->   915.91s] relative risk relative risk and the overall growth over a certain period of time that is like super super first step in evaluating a trading or investing strategy those are like baseline super baseline first step analysis of whether or not anything is is even remotely viable we're not even talking about things like overfitting noise or invalid back tests or biased back tests and so on and so forth here we're just
+[  915.91s ->   945.89s] suggesting like hey do we're suggesting like hey do we even have enough information in these performance metrics and whatever else it is we're analyzing to determine if there's any validity at all to an investing or trading strategy so this is why cash is insufficient right if i showed you this or this right doesn't this look kind of a lot better it's a lot more stable and yeah that's great but this isn't an impressive trading strategy this is
+[  945.89s ->   975.87s] right this generated 36 percent 36 percent return with very reasonable risk versus something like this where no risk was assumed at all and they just traded what they just traded a treasury so that's why cash on its own is an entirely useless measure in any case when it comes to expected return win rate monthly cash generated there's no quantity you can give me you can't tell me that you have a 100% win rate
+[  975.87s ->  1005.85s] or a 1000% expected returns or 10,000 a month generated in cash that doesn't mean anything it doesn't let me assess the viability of your strategy when it comes to cash generated i don't know what the size of your portfolio is when it comes to win rate i have no idea what your average winning trade or your average losing trade looks like that dictates the profitability of your strategy when it comes to expected return i have no idea how many units of
+[ 1005.85s ->  1035.85s] risk you had to take you had to take to generate that expected return which is why on their own these performance metrics offer no information into the efficacy of your trading strategy even in a backward looking sense we're not even talking about in a forward looking sense and if it's tradable but even in a backward looking sense insufficient information what about these what i'm calling less useless
+[ 1035.85s ->  1065.85s] i thought things like the sharp ratio sortino ratio max drawdown were the gold standard in evaluating trading strategies well to understand why i'm calling these less useless and to understand why they are necessary but not sufficient to suggest you have a viable trading strategy we need to understand this idea of volatility and risk so we've already talked about expected returns
+[ 1065.85s ->  1096.43s] but hey we don't know what a reasonable benchmark is it has no forward looking predictability what is this idea of risk what is this idea of volatility well it's the idea that if we have some sort of expectation we can compute the expected squared deviations from the expectation okay so what it is is a measure of dispersion
+[ 1096.43s ->  1126.43s] we said that we don't have a fantastic measure a perfect great good measure of expected returns and now we're trying to measure expected deviations from that moving target this is a tricky problem so what we're trying to do here is get a sense of the relative risk to the return but again this is all
+[ 1126.43s ->  1156.43s] something of what was however we can bring in this idea now of a risk adjusted return and that will help us assess the viability of a trading strategy tied in with this idea of stability we can determine if it is in fact tradable to understand why these performance metrics are less useless let's look at a couple examples and discuss the impact of this so-called risk-adjusted
+[ 1156.43s ->  1186.31s] that we are in fact computing so let's look at these two strategies we have strategy a strategy b which one would you rather trade well i would certainly rather trade strategy a because if i traded strategy b then i would have this hefty drawdown i would have if i invested a hundred thousand dollars i would have had a loss at some point of over five thousand dollars and i would have had to continue to trade through to recover and eventually reach the same performance that strategy a had so if we
+[ 1186.31s ->  1214.99s] just look in terms of the overall return of the strategy and the expected returns they are roughly the same but if we account for risk using a sharp ratio or a sortina ratio or a max drawdown then we can see that strategy a has what it has a sharp ratio that is roughly comparable to strategy b it has a higher sortina ratio
+[ 1214.99s ->  1245.08s] and a lower max drawdown and a lower max drawdown in other words these performance metrics tell me hey strategy a didn't have all that much of a drawdown you don't have to sit through losses in order to make gains versus strategy b you had to sit through a almost 12% loss the sortina ratio and the sharp ratio tell us the overall risk adjusted return of the strategy this is beyond just a normal
+[ 1245.08s ->  1258.14s] expectation this is beyond just a normal expectation this is beyond值
+[ 1258.18s ->  1268.66s] this is telling us how much risk relative to the return that we earned are we actually getting by trading this strategy moreover we're actually also removing the risk free rate the risk free rate is something that you can earn just by investing in you s
+[ 1268.66s ->  1275.02s] my capital in a treasury, then why would I create a strategy that has a 2% return?
+[ 1275.64s ->  1282.04s] I would be losing out on 1%, 2 minus 3. So we're accounting for all of those things in these risk
+[ 1282.04s ->  1287.34s] adjusted measures. The difference, the only difference between the Sharpe and the Sortino
+[ 1287.34s ->  1296.96s] ratio is the Sortino ratio doesn't penalize upside deviations. It's saying, hey, if we have a loss or
+[ 1296.96s ->  1303.82s] a downside deviation like this strategy B, then we will penalize it more. That's why we see strategy
+[ 1303.82s ->  1313.60s] B has a 1.77 Sortino to strategy A's 2.09. So it will punish downside deviations, but not upside
+[ 1313.60s ->  1318.44s] deviations. So we can see they have comparable Sharps. Sharp doesn't do this. It considers
+[ 1318.44s ->  1325.12s] deviations on the upside and downside, but the Sortino, it only penalizes deviations to the
+[ 1325.12s ->  1330.08s] downside. So when we're looking at these performance metrics, I call them less useless
+[ 1330.08s ->  1337.00s] because we're getting a relatively full picture of the risk profile to the return profile of the
+[ 1337.00s ->  1342.44s] strategy. Though these performance measures give a more complete picture of the strategy,
+[ 1342.84s ->  1349.40s] I still say, show me the money. This isn't what I care about. You can come to me with the Sortino
+[ 1349.40s ->  1356.90s] ratio of 2, 3, 5, whatever it is. But these are overrated. You will see people run back tests in
+[ 1356.90s ->  1361.22s] so many different capacities. And I'm not just talking about overfitting. We'll talk about all
+[ 1361.22s ->  1367.60s] the pitfalls in a moment. But these performance measures are overrated because if expected returns
+[ 1367.60s ->  1375.40s] are not indicative of future returns, and we're using that to measure volatility and risk,
+[ 1375.40s ->  1380.82s] then that isn't indicative of future volatility and risk. And if we're putting those two together
+[ 1380.82s ->  1389.38s] to come up with a Sharpe ratio, a Sortino ratio, then those also aren't going to be indicative of
+[ 1389.38s ->  1396.24s] performance in a forward-looking sense. That is why I call these performance metrics less useless.
+[ 1396.48s ->  1404.30s] That is, on their own, they are a necessary component of a trading strategy. They give us a more
+[ 1404.30s ->  1411.16s] complete picture of the relative return to risk profile, so on and so forth. But they alone are
+[ 1411.16s ->  1417.56s] not sufficient to suggest you should trade in a live capacity. I have a great example of why right
+[ 1417.56s ->  1423.52s] here. Check out this trading strategy. So we're going to look at this one path. This one path had a
+[ 1423.52s ->  1432.58s] Sharpe ratio of 3.1, a Sortino of 5.6, a max drawdown of 12%. That is a crazy performance profile.
+[ 1432.58s ->  1442.87s] Okay. Well, what created this sample path? Maybe you are swinging at pitches. You're coming up with
+[ 1442.87s ->  1448.03s] some sort of trade and you trade it. Maybe you have some sort of reasonable economic interpretation
+[ 1448.03s ->  1454.67s] of your strategy and you believe you have some edge in each trade. Maybe you are trading some sort of
+[ 1454.67s ->  1461.39s] exposure that is performing particularly well for this time period. Maybe you even overfit
+[ 1461.39s ->  1470.93s] your backtest to noise and historic data. In any case, what actually matters here is the only thing
+[ 1470.93s ->  1477.35s] that I care about when evaluating your trading strategy performance. And that is this idea of
+[ 1477.35s ->  1485.53s] stability. Stability. Stability in a forward-looking sense. I'm not talking about chopping up your
+[ 1485.53s ->  1494.35s] historic data into training and testing intervals. I'm saying if I was to deploy your strategy right now,
+[ 1494.35s ->  1503.09s] would the returns that I observed in your backtest, your performance profile, would that be
+[ 1503.09s ->  1509.87s] reasonably stable if I continue to trade your strategy? This is why when you look at people
+[ 1509.87s ->  1516.03s] who are making discretionary trades, it's difficult to evaluate their performance because the stability
+[ 1516.03s ->  1522.51s] of their performance metrics is what's in question. Yeah, maybe they have a great trade. Maybe they're
+[ 1522.51s ->  1527.75s] using technical indicators. Maybe they're using the stars. Who knows? If they made money, it doesn't
+[ 1527.75s ->  1534.59s] matter. But assessing the efficacy of their strategy comes down to stability. Is their performance stable
+[ 1534.59s ->  1543.37s] over time? Does it degrade over a series of months, years, over a large quantity of trades? This is what
+[ 1543.37s ->  1549.79s] I care about when it comes to your trading strategy. When you trade live, does your performance degrade
+[ 1549.79s ->  1556.79s] trade or does it resemble the performance in a backtest? Again, this is not chopping up your data
+[ 1556.79s ->  1562.45s] in a backtest into different intervals and then doing some sort of train test split, fitting it to
+[ 1562.45s ->  1567.47s] training data and then testing it out of sample. No, I'm talking about if I was to deploy it right now
+[ 1567.47s ->  1572.69s] and I was to start trading your strategy, do you have some sort of statistical mispricing? Are you
+[ 1572.69s ->  1580.13s] bearing risk? What are you trading and is it stable in a forward looking sense? That is what I care
+[ 1580.13s ->  1586.41s] about. These performance metrics are a piece of the puzzle. They are necessary. They are not sufficient
+[ 1586.41s ->  1592.79s] to assess whether or not you should trade a strategy. Here we have a picture that perfectly captures this
+[ 1592.79s ->  1599.85s] idea. Maybe my backtest went perfectly. Maybe I've been trading in a discretionary capacity for
+[ 1599.85s ->  1604.09s] quite some time and I made a whole bunch of money and this is my performance profile
+[ 1604.09s ->  1610.51s] and I think I'm the man and I know what I'm doing and I trade for the next couple years and look what
+[ 1610.51s ->  1616.23s] happens. The at a sample performance of my future path, if I keep trading that strategy, whether or not
+[ 1616.23s ->  1623.99s] it's a quant strategy, a discretionary strategy, whatever it is, the performance degrades in a live
+[ 1623.99s ->  1629.19s] setting. So I only care about this idea of stability. So let's take a look at a different example.
+[ 1629.19s ->  1638.19s] I have strategy one that maintains the performance from the backtest in a live trading setting. So
+[ 1638.19s ->  1647.51s] what I have here is a backtest sharp of 2.12 and a live sharp of 1.71. I can run reasonable statistics
+[ 1647.51s ->  1653.57s] to confirm that, yeah, this is in a reasonable range. This is stability that I'm looking for versus
+[ 1653.57s ->  1661.91s] some performance that degrades in a live setting. Here I have a backtest sharp of 2.31 in this example
+[ 1661.91s ->  1670.25s] and when I deploy the strategy live, I get a sharp of negative 0.51. That is not indicative of my
+[ 1670.25s ->  1678.57s] backtest performance. It's suggesting that, hey, there is a big problem in your backtest. There is a big
+[ 1678.57s ->  1685.13s] problem in the deployment of your strategy in a live capacity. The performance degradation could
+[ 1685.13s ->  1691.15s] be due to a variety of different things. Maybe you were just trading an exposure that did well for a
+[ 1691.15s ->  1697.89s] period and is now mean reverting. Maybe you had a lot of market exposure. Maybe the market is now in a
+[ 1697.89s ->  1702.47s] contractionary cycle. Maybe you have a different exposure. Maybe you weren't trading any sort of
+[ 1702.47s ->  1708.87s] statistical mispricing. What if you are? Well, maybe that statistical mispricing got crowded and
+[ 1708.87s ->  1715.21s] it's no longer stable. That could suggest this performance degradation. Moreover, you could just
+[ 1715.21s ->  1721.21s] overfit your backtest. You can overfit it to historic data and then when you try to trade it live, you have
+[ 1721.21s ->  1728.49s] terrible performance. These are just a few of the very many reasons why your performance at deployment
+[ 1728.49s ->  1734.67s] could degrade severely relative to what your backtest was. The stability is what's in question.
+[ 1735.33s ->  1743.05s] And the necessary components, the good sharp ratios, the good sortino, the good max drawdown,
+[ 1743.33s ->  1751.51s] those are accessories. Those are things that you need to have in order to assess your strategy.
+[ 1752.15s ->  1756.89s] They themselves alone aren't sufficient in evaluating whether or not you should trade it. In fact, look at
+[ 1756.89s ->  1762.37s] this. You should not trade this. The performance has degraded versus something like this where it
+[ 1762.37s ->  1767.63s] remains reasonably stable. This is precisely what I'm talking about. That is what you should look for
+[ 1767.63s ->  1772.81s] when it comes to evaluating your strategy beyond these performance metrics. They are overrated.
+[ 1772.81s ->  1779.97s] You will cite them in 10,001 backtests. You will see sometimes you may even observe some sort of
+[ 1779.97s ->  1785.85s] strategy that's viable. You account for transaction costs. It's no longer viable. Maybe you even,
+[ 1785.85s ->  1792.95s] you know, add a bias to your backtest. And the metrics that you observed are not indicative of
+[ 1792.95s ->  1797.49s] the metrics that you're going to observe in a live trading setting because you polluted your
+[ 1797.49s ->  1803.59s] backtest with bias. There's 10,001 reasons for this performance degradation. And to make matters
+[ 1803.59s ->  1809.37s] even more difficult, if you did have a valid strategy and it was reasonably stable in a forward-looking
+[ 1809.37s ->  1813.89s] sense, you had the performance metrics, the necessary performance metrics, they were stable.
+[ 1813.89s ->  1822.17s] You very well could just have your strategy, your alpha crowded, and it could decay. Now,
+[ 1822.99s ->  1827.67s] you know, this could come back over time. This is a dynamic space. It's a time-variant space.
+[ 1828.09s ->  1835.05s] Regimes change. Things change all the time. So, you know, these sorts of out-of-sample performances,
+[ 1835.05s ->  1843.13s] these live performances that we see that resemble the backtest, we don't expect them to persist
+[ 1843.13s ->  1849.83s] indefinitely. They require very careful monitoring. This is not a set and forget. There's no such thing
+[ 1849.83s ->  1854.25s] as a one-man set and forget hedge fund. I found an alpha. I'm just going to trade it. I'm going to
+[ 1854.25s ->  1858.83s] lever up, trade it, and just leave it. It's not how it works. You have to constantly monitor for
+[ 1858.83s ->  1865.69s] degradation and assess why it is. Are you actually trading a statistical mispricing? Do you have
+[ 1865.69s ->  1871.09s] exposure? Are you bearing risk? All of these things matter when you assess your strategy.
+[ 1871.39s ->  1876.71s] Too long didn't walk. Here is your executive summary. Performance measures like win rate,
+[ 1876.93s ->  1883.51s] cash generated, expected returns, they can be misleading from the perspective of outcome. We
+[ 1883.51s ->  1890.65s] do not know what good is for any of those measures on their own. We don't know anything about the
+[ 1890.65s ->  1899.56s] relative performance of a trading strategy at all. In terms of expected return, risk measures like
+[ 1899.56s ->  1906.28s] portfolio variance, volatility, and risk-adjusted returns certainly do give a more complete picture
+[ 1906.28s ->  1913.48s] of your strategy, but are leaving out an important piece of the puzzle. This is a domino effect. Expected
+[ 1913.48s ->  1920.88s] returns are not indicative of future performance, so neither is your risk measure, volatility,
+[ 1920.88s ->  1927.96s] and variance, neither is your risk-adjusted return. Now, these all must necessarily perform well,
+[ 1928.06s ->  1936.86s] but alone are not sufficient to show that your strategy is tradable. Stability is in fact the only
+[ 1936.86s ->  1944.46s] thing that I do care about. This is out of sample. This is in a forward-looking sense. It is the most
+[ 1944.46s ->  1953.12s] important component of your analysis. Will you make money? Show me the money. Does the trading strategy
+[ 1953.12s ->  1962.60s] actually offer a tradable mispricing? If it does, your alpha should persist. The performance that you
+[ 1962.60s ->  1970.96s] observe in your back test should be reasonably stable in a forward-looking sense. This is suggesting
+[ 1970.96s ->  1976.96s] something of your forward-looking performance, of course, before some sort of crowding or regime
+[ 1976.96s ->  1983.94s] changer or so on and so forth. Anything that may decay this performance. Now, without any evidence of
+[ 1983.94s ->  1990.88s] stability, you can come to me with a sharp ratio of over 10, but that won't matter because you won't be
+[ 1990.88s ->  1997.82s] able to execute a single trade in a live environment that resembles that performance profile. Some future
+[ 1997.82s ->  2003.94s] topics I would like to discuss technical videos and other discussions. We talk about randomness all
+[ 2003.94s ->  2009.72s] the time. We talk about different ways to evaluate randomness in some sort of trading or investing
+[ 2009.72s ->  2017.34s] strategy. We talk about the expectation variance, but is the market random? Is that really a fair
+[ 2017.34s ->  2024.27s] assessment? Is it fair to use these tools and techniques? I'd also like to talk about the trouble
+[ 2024.27s ->  2030.51s] with stationarity tests. This is certainly a more niche topic. Perhaps there's interest. Markov chains
+[ 2030.51s ->  2037.31s] and hidden Markov models might have more of an appeal to a broader audience, and those are some of my
+[ 2037.31s ->  2046.13s] favorite models in all of the theory of stochastic processes, so I would love to discuss those.
+[ 2046.67s ->  2052.39s] And, of course, our quant builds. I still want to build this earnings event options trading dashboard.
+[ 2052.39s ->  2057.91s] I'd also maybe like to talk about these live regime switching models. Maybe we can implement the
+[ 2057.91s ->  2064.73s] hidden Markov models. And I've even toyed with this idea of building an automated delta neutral
+[ 2064.73s ->  2071.49s] trading system for trading options in a delta neutral capacity, essentially constructing your
+[ 2071.49s ->  2076.51s] delta hedge in an algorithmic way. That's going to do it for this video on why trading metrics are
+[ 2076.51s ->  2082.27s] misleading, unless, of course, you have some evidence of stability. I hope you enjoyed. I hope you
+[ 2082.27s ->  2085.65s] learned something. If you like this video and you want to see more like it in the future,
+[ 2086.05s ->  2091.27s] please comment, like, subscribe. It helps me out a lot. It is greatly appreciated. Join our discord if
+[ 2091.27s ->  2096.39s] you'd like to connect with other members of the Quant Guild community. Check out quantguild.com to
+[ 2096.39s ->  2102.39s] master your quantitative skills. Other than that, thank you so much for watching, and I will see you
+[ 2102.39s ->  2103.83s] in the next video.

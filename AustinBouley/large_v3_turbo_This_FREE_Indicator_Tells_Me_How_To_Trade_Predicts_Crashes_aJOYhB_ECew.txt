@@ -1,0 +1,177 @@
+[    0.21s ->     4.79s] In this video, I'm going to walk you through the number one trading indicator that I use to sell options.
+[    5.01s ->     9.97s] This thing tells me what option strategy to trade to take advantage of the current market.
+[   10.35s ->    16.29s] It shows me when a market is likely to crash, and I used to charge $1,000 for people to buy this indicator.
+[   16.63s ->    20.69s] But I'm going to be giving it to you for free in this video. I'm going to show you exactly how to set it up.
+[   20.93s ->    25.09s] Look, most option sellers are losing money because of crashes and because of pullbacks.
+[   25.09s ->    29.61s] It sets them back, they have a huge loss, and it takes them a long time to recover. Why?
+[   29.85s ->    36.21s] Recovery math is simple. If you lose 50% of your account, you need a 100% return now to get back to breakeven.
+[   36.49s ->    41.85s] If you have a 75% loss, you need a 300% gain, a 3x return to recover.
+[   42.27s ->    47.27s] So if you can literally just cut your losses in half by getting out of the market before it crashes,
+[   47.63s ->    52.57s] then you could save yourself so much headache, so much losses, and it'd just be amazing.
+[   52.57s ->    56.15s] So that's what it is I'm doing. I've literally been doing this since 2018.
+[   56.47s ->    58.69s] This is that indicator, and I want to show you how to use it.
+[   58.69s ->    63.61s] So what you can do is click the link down below to join our free school community.
+[   63.77s ->    68.23s] Inside of there, you can get access to this Google Doc and this free trading indicator.
+[   68.45s ->    72.21s] You will click on this link, and it will take you to this website right here,
+[   72.27s ->    77.93s] which is TradingView, a charting platform online, and it will have my indicator program for you.
+[   77.93s ->    82.23s] And all you need to do is go here, click on Add to Favorites.
+[   82.31s ->    86.43s] So you can see here I've already added to favorites myself, so it clicks Remove, so I just say Add.
+[   86.73s ->    89.69s] Then from there, go to your favorite stock that you like trading.
+[   89.81s ->    91.71s] For me, I like trading the ES Futures.
+[   92.49s ->    98.33s] So by coming here to ES Futures, what I then do is I go to Indicators because I've already added to my favorites.
+[   98.33s ->   103.09s] I now find it in my favorites, which right here, Market Analysis Indicator.
+[  103.35s ->   106.83s] When I add this to my chart, it shows me a lot of different things.
+[  106.91s ->   109.49s] I want to show you how to read this and how to decipher it.
+[  109.95s ->   110.17s] Okay?
+[  110.49s ->   112.85s] Well, the middle line here is the 200-day moving average.
+[  112.95s ->   115.37s] That tells us if the market is trending up or trending out.
+[  115.43s ->   116.91s] If it's below it, it's trending down.
+[  116.97s ->   118.43s] If it's above it, it's trending up.
+[  118.53s ->   118.75s] Okay?
+[  119.35s ->   122.33s] But now, what do the green and red and green and red lines mean?
+[  122.57s ->   122.81s] Okay?
+[  123.21s ->   126.71s] This first section is a two-standard deviation move.
+[  126.79s ->   132.39s] This is where 95% to 97% of all trading activity should be happening.
+[  132.77s ->   136.45s] So if we get into this upper red zone or this bottom green zone,
+[  136.45s ->   140.77s] it means the market is likely to pull back or reverse soon.
+[  141.49s ->   143.47s] So in here, we are bullish.
+[  143.77s ->   145.43s] So what do I do every single week?
+[  145.51s ->   146.67s] I just pull up this chart.
+[  146.79s ->   147.99s] I look at what phase we're in.
+[  147.99s ->   151.17s] If we're in this, I'm going to be trading bullish option strategies.
+[  151.59s ->   154.35s] So those are things like SP, which stands for selling a put.
+[  154.63s ->   156.59s] I can do a put credit spread.
+[  156.79s ->   159.29s] Or I can just simply buy a long call.
+[  159.43s ->   160.19s] So long call.
+[  160.53s ->   161.47s] That's how simple it is.
+[  161.53s ->   163.69s] I just look at where are we at in the market.
+[  163.69s ->   167.07s] If we're in the red zone of the market, that means we're bearish.
+[  167.37s ->   170.85s] What we're going to do here is we're going to be trading bearish positions.
+[  171.15s ->   175.65s] That is something like buying a put, doing a call credit spread,
+[  175.79s ->   177.77s] or whatever else you want to do.
+[  177.77s ->   179.53s] We could sell a call or something like that.
+[  179.65s ->   182.53s] So those are different ways we can take advantage of a bear market.
+[  183.33s ->   185.61s] Now, what about this overextended zone?
+[  185.85s ->   188.57s] I never want to bet against the market trend.
+[  188.67s ->   190.69s] I've done that before, and I've lost a ton of money.
+[  190.95s ->   197.03s] So what I like to do here is I like to actually still continue to trade these bullish strategies,
+[  197.03s ->   199.75s] but at a 50% allocation.
+[  200.25s ->   200.55s] Why?
+[  200.65s ->   202.79s] Because I want my money involved in the market.
+[  202.91s ->   205.27s] I want to be making money at this point.
+[  205.67s ->   209.35s] But the thing is, in case the market turns around because it's overextended,
+[  209.53s ->   211.79s] I want to make sure I'm not going to lose a ton of money.
+[  212.07s ->   213.17s] So I'm still engaged.
+[  213.29s ->   217.31s] I still have money in, but I'm not going to lose a ton if it does reverse on me.
+[  217.73s ->   222.13s] So that is what I do here is I continue trading bullish, but at a 50% allocation.
+[  222.25s ->   224.95s] So this means if I typically trade four contracts or four trades here,
+[  225.27s ->   227.01s] I'll only be doing two trades here.
+[  227.81s ->   231.37s] Next, down here, this is when I switch back to a bullish position
+[  231.37s ->   233.83s] because I know that the market is going to bounce and recover.
+[  234.17s ->   235.69s] Now, I might be like, Austin, that's cool.
+[  235.77s ->   238.73s] You have a game plan for everything, and I can just pull this chart a week
+[  238.73s ->   240.03s] and know exactly what to trade.
+[  240.11s ->   240.85s] That's awesome.
+[  241.41s ->   242.69s] But how do you know this happens?
+[  242.91s ->   245.01s] Again, this is purely just math, right?
+[  245.05s ->   249.09s] When you get into trading probabilities, when you're inside of here,
+[  249.17s ->   250.47s] this is 95% of all trading.
+[  250.59s ->   253.59s] So if you're in here, that means it's only 2.5% of the trading.
+[  253.89s ->   257.41s] And if that's true, then that means it's not going to be there long, okay?
+[  257.65s ->   262.35s] So we see here when the market hits into this green zone, we then pop.
+[  262.69s ->   266.07s] And this is how I've been investing in my long-term account since 2018.
+[  266.47s ->   269.33s] Every time I basically save up cash in the account,
+[  269.33s ->   273.01s] and every time the market crashes into this green zone down here,
+[  273.29s ->   276.77s] that's when I buy and add positions to my long-term investment account.
+[  277.11s ->   277.27s] Why?
+[  277.37s ->   281.23s] Because this is the ideal level to enter because now I'm buying in at the lowest.
+[  281.57s ->   284.67s] I'm not just dollar cost averaging at random points in the market.
+[  284.91s ->   287.39s] I'm actually getting in strategically at the lowest points.
+[  287.41s ->   291.33s] But I just want to show you examples of how when we break into this bottom zone,
+[  291.55s ->   293.11s] we tend to push up.
+[  293.33s ->   294.33s] Same thing with the upside.
+[  294.47s ->   297.43s] When we tend to trend up in this long upside for a while,
+[  297.43s ->   300.05s] then we tend to have a long pullback.
+[  300.15s ->   302.65s] You can see here, break above, pull back.
+[  303.01s ->   304.77s] Break above, pull back.
+[  305.01s ->   307.69s] Again, not 100% accurate.
+[  308.03s ->   313.23s] But for the sake of any trader with not much trading experience,
+[  313.57s ->   316.01s] being able to just put this indicator on their chart,
+[  316.39s ->   318.09s] look at it once a week,
+[  318.39s ->   321.11s] understand what phase of the market they are in,
+[  321.11s ->   323.21s] and running the right strategy for them.
+[  323.47s ->   325.79s] This can set you ahead a ton.
+[  326.11s ->   327.55s] So make sure to go do this.
+[  328.19s ->   329.97s] So now that you have the indicator,
+[  330.05s ->   331.79s] now that you know how to use it and deploy it,
+[  331.79s ->   334.71s] you need to create an option strategy around it.
+[  334.97s ->   335.73s] What does that mean?
+[  335.75s ->   336.89s] It means in bullish markets,
+[  336.89s ->   339.53s] have one go-to strategy that you trade every single time.
+[  339.59s ->   342.85s] For me, it's a short put strategy managed like this.
+[  343.05s ->   345.35s] You can get this in the Google Docs, so don't worry.
+[  345.45s ->   347.21s] But just have one bullish strategy
+[  347.21s ->   348.69s] where like every single time we're in bullish,
+[  349.01s ->   350.07s] this is how I trade it.
+[  350.31s ->   352.41s] Know it, master it, lock it in, okay?
+[  352.75s ->   354.17s] Then when you have a bearish market,
+[  354.27s ->   355.19s] have the same thing.
+[  355.27s ->   356.85s] You're like, this is my bearish strategy.
+[  356.95s ->   357.63s] I always do it.
+[  357.71s ->   358.15s] This is how it works.
+[  358.23s ->   358.85s] These are the strikes.
+[  358.91s ->   359.43s] This is managed.
+[  359.71s ->   361.57s] You just have this playbook.
+[  361.85s ->   363.73s] You know how in football and other sports,
+[  363.77s ->   365.61s] when they go, hey, we're gonna run this play,
+[  365.87s ->   366.73s] it's the same thing.
+[  366.73s ->   369.19s] This indicator tells you we're in a bullish market,
+[  369.31s ->   370.55s] run the bullish market playbook.
+[  370.93s ->   372.51s] And so then you know, hey, bullish market playbook,
+[  372.57s ->   373.63s] this is the strategy that I run.
+[  373.71s ->   374.85s] This is the bearish strategy I run.
+[  374.85s ->   376.73s] This is the overextended market strategy I run.
+[  377.11s ->   377.81s] So just like that,
+[  377.87s ->   379.59s] now you can have a playbook that you build,
+[  379.63s ->   380.99s] an option strategy that's designed
+[  380.99s ->   382.53s] to take advantage of every single market.
+[  382.57s ->   384.61s] Because the biggest issue I've seen
+[  384.61s ->   386.47s] across the 5,000 option traders
+[  386.47s ->   387.67s] that I've helped trade the market
+[  387.67s ->   389.93s] is that they don't align the right strategy
+[  389.93s ->   390.79s] with the right market.
+[  390.85s ->   391.89s] When you use this indicator,
+[  391.97s ->   393.69s] which I'm giving to you right now for free,
+[  393.75s ->   395.61s] so you can go use it, go download it, please.
+[  396.17s ->   398.33s] You can just look at the market once a week
+[  398.33s ->   399.89s] or once a day, whatever you want,
+[  400.33s ->   402.35s] understand where the market is instantly,
+[  402.83s ->   404.07s] and then run the playbook,
+[  404.07s ->   405.07s] whether it's a bullish strategy,
+[  405.19s ->   405.89s] bearish strategy,
+[  405.91s ->   407.81s] or bullish with a half size.
+[  407.95s ->   408.85s] So anyways,
+[  409.21s ->   410.77s] click the first link down in the description.
+[  410.91s ->   411.87s] You can get this Google Doc.
+[  411.93s ->   413.11s] You can get the free indicator.
+[  413.31s ->   413.99s] Please share it.
+[  414.07s ->   414.99s] I hope you enjoy it.
+[  415.19s ->   416.09s] I'm just giving this to you
+[  416.09s ->   417.33s] because I want to build a goodwill.
+[  417.45s ->   418.35s] I want you to like it,
+[  418.35s ->   420.51s] and then hopefully eventually make money
+[  420.51s ->   422.71s] with the stuff that I give you,
+[  422.71s ->   424.91s] and then join the Options Auto Trader,
+[  425.01s ->   426.21s] the options software that I built
+[  426.21s ->   427.33s] to automate your trading,
+[  427.49s ->   429.53s] to use bots to build this out.
+[  429.61s ->   431.11s] So now you don't have to check the market.
+[  431.23s ->   432.47s] You don't have to check the stocks.
+[  432.55s ->   434.93s] Your bot knows which trend zone you're in,
+[  435.15s ->   436.25s] which market we're in,
+[  436.25s ->   437.93s] and it runs your playbook for you
+[  437.93s ->   439.63s] so that it can just generate profits for you
+[  439.63s ->   440.25s] on autopilot,
+[  440.37s ->   442.31s] which is called my Options Auto Trader software,
+[  442.41s ->   444.15s] which you can learn more about linked below.
+[  444.41s ->   445.57s] Anyways, see you guys in the next video.

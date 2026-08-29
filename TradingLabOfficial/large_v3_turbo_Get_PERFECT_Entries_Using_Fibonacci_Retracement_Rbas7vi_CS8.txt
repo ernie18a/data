@@ -1,0 +1,99 @@
+[    0.32s ->     4.56s] This is the Fibonacci Retracement tool.
+[    4.56s ->     6.00s] Yeah, you probably have heard of it.
+[    6.00s ->    10.48s] And unfortunately, most traders use the Fibonacci tool completely wrong.
+[   10.48s ->    14.88s] I'm gonna show you how to use it correctly and give you an amazing strategy using it.
+[   14.88s ->    20.32s] This strategy will give you sniper entries with tight stop losses and huge take profits.
+[   20.32s ->    24.32s] Then for the cherry on top, I'll give you a secret hack that will completely change
+[   24.32s ->    27.04s] the way you trade with the Fibonacci forever.
+[   27.04s ->    29.28s] Yeah, that sounds awesome.
+[   29.28s ->    32.88s] So basically after this video, you'll be a Fibonacci pro.
+[   32.88s ->    34.16s] Let's get straight to it.
+[   34.16s ->    37.28s] To start us off, we have to go over how the market moves.
+[   37.28s ->    41.28s] To put it extremely simple, the market will make moves like this.
+[   41.28s ->    45.60s] A move with a big trend upwards, a retracement, and then the process continues,
+[   45.60s ->    48.24s] making this point a beautiful entry.
+[   48.24s ->    51.60s] And that's exactly our goal with the Fibonacci Retracement tool,
+[   51.60s ->    56.80s] is to predict the end of this pullback point as accurate as possible so we can enter here,
+[   56.80s ->    60.64s] and benefit from the move upwards with as little risk as possible.
+[   60.64s ->    63.12s] Which is exactly what the strategy does.
+[   63.12s ->    66.88s] Now, there's a lot of controversy on what Fibonacci levels are the best.
+[   66.88s ->    70.40s] Trader after trader will sit there and fight on what they think the best levels are.
+[   70.40s ->    74.96s] I think 0.706 and 0.618 are the best levels.
+[   74.96s ->    81.60s] That's absolutely preposterous. Obviously the 0.79 and the 0.5 levels are the best.
+[   81.60s ->    86.64s] Actually, I've done my analysis and the 0.382 level is the most profitable.
+[   86.64s ->    90.96s] Yeah, you get my point. Lots of traders use different levels. But for my testing,
+[   90.96s ->    95.60s] and this specific strategy, these levels work the best. But first, let's talk about
+[   95.60s ->   102.70s] Hankertrade. If you're a new trader and haven't heard of Hankertrade, you need to look them up.
+[  102.70s ->   107.10s] They are who I use as my personal forex broker, and there's a reason for that.
+[  107.10s ->   108.62s] 1. They're pretty hot.
+[  110.21s ->   116.13s] All jokes aside, they're awesome. Low fees, low spreads, and they make it extremely easy to execute
+[  116.13s ->   121.09s] orders. The reasoning why I think they are so good for beginner traders is because they basically help
+[  121.09s ->   125.17s] fund your account when first starting out. If you use the link in my description, Hankertrade will
+[  125.17s ->   131.49s] match whatever you first deposit. So if you put in say $100, they will literally give you $100.
+[  131.49s ->   135.33s] I've never seen another broker do that. They're awesome. I'll put a link in my description,
+[  135.33s ->   137.65s] go check them out. Alright, now it's time to go over the
+[  137.65s ->   141.89s] best setting. I'll be using TradingView as my charting platform. If you need a link to it,
+[  141.89s ->   145.25s] I have one in the description. First, put your Fibonacci tool on your chart,
+[  145.25s ->   152.93s] and then go to the setting. Here are the levels we'll be using. 0, 0.382, 0.5, 0.618, and 1,
+[  152.93s ->   157.81s] giving you something that looks like this. These three levels are the most important in what I
+[  157.81s ->   166.08s] call the Golden Zone. The Golden Zone is where price is most likely to pull back and reverse.
+[  166.08s ->   171.20s] Now, one of the biggest mistakes traders have when using the Fibonacci tool is not knowing where to
+[  171.20s ->   176.40s] have the starting point and the ending point of the Fibonacci. And this can cause a lot of problems,
+[  176.40s ->   180.72s] because if you use the wrong starting point and the wrong ending point, you'll get some bad losing
+[  180.72s ->   185.52s] trades. For example, this chart. A lot of traders would get confused. Do you put it here? Do you
+[  185.52s ->   190.24s] put it here? Where do you put it? Here's the quick and simple way to know exactly where to put
+[  190.24s ->   194.72s] the Fibonacci so you get the perfect starting and ending point every time. First, go to the
+[  194.72s ->   200.48s] indicators tab and type in fractals. Click this one right here. Your chart will look something like
+[  200.48s ->   206.32s] this. This indicator will show us high probability reversal points. But as you can see, there are a lot
+[  206.32s ->   212.00s] of fractals going on basically every single possible reversal. We want to lower the sensitivity of this
+[  212.00s ->   217.52s] indicator so we only see the major reversals. To do that, go to the settings of the indicator and
+[  217.52s ->   224.00s] change the periods to 10. Now we filtered out only the strong swing points. But as you can see,
+[  224.00s ->   228.72s] the indicator is still giving us some irrelevant swing points. So sometimes you're going to have to
+[  228.72s ->   234.64s] do your own due diligence and only look for the strong moves. So for example, you wouldn't use these
+[  234.64s ->   240.32s] two fractals here because they are very close together and it's a very weak trend. It is very
+[  240.32s ->   247.12s] important we only use Fibonacci on strong trends. If you use it on weak trends, it won't work as much.
+[  247.12s ->   252.64s] Once you find a strong trend like this, grab your Fibonacci tool and mark it from the red fractal to the
+[  252.64s ->   258.24s] green fractal. As you can see, price came to the golden zone, we enter and price hits or take profit with
+[  258.24s ->   263.92s] ease. Just this alone will work alright. But we're going to add some confluences with this to make it
+[  263.92s ->   270.00s] f**king amazing. Confluences are the key to success with this strategy. What I found works really well
+[  270.00s ->   275.28s] is pairing this with support and resistances, specifically retests. Here's what I mean.
+[  275.28s ->   280.16s] So here we found a very strong trend. We see our two fractals, we get our Fibonacci tool,
+[  280.16s ->   285.44s] and mark the high and the low. But if we take a little closer look, something interesting is happening.
+[  285.44s ->   291.12s] We have a strong resistance level right here, and price broke right through it. Meaning it can now be used
+[  291.12s ->   298.08s] as a support, or in other words, a retest level. If you look even closer, the retest level is exactly
+[  298.08s ->   304.48s] where the golden zone is, adding even more confluence to the strategy. But wait, there's more. We can add
+[  304.48s ->   310.80s] even more confluence. To do this, go to your indicators tab and type in EMA. Go to the settings
+[  310.80s ->   317.36s] of the indicator and change the length to 200. A 200 EMA on a larger time frame is going to act as a very
+[  317.36s ->   322.96s] strong support and resistance. For example, in this uptrend, you can see price use this EMA as a
+[  322.96s ->   328.64s] support and bounced off it many times. Then in this downtrend, you can see price use the EMA as a
+[  328.64s ->   334.08s] resistance and again bounced off it many times. You see where I'm going with this? So we do the same
+[  334.08s ->   340.64s] thing. Find our fractals, draw our Fibonacci tool, look for price to retrace to the EMA, and it just so
+[  340.64s ->   347.04s] happens to also be in the golden zone. Confluence. But wait, there's more. To top it all off,
+[  347.04s ->   352.64s] we're going to be adding another confluence to make the strategy work absolutely beautiful.
+[  352.64s ->   357.76s] We will be using the anchored VWAP. If you don't know what the anchored VWAP is,
+[  357.76s ->   363.84s] it's basically just a normal VWAP, but we specifically choose where it begins. So for example,
+[  363.84s ->   368.88s] you would use it like this. Go to the left toolbar and select the anchored VWAP. You're going to have it
+[  368.88s ->   374.64s] start exactly at the beginning point of the strong trend or where the red fractal is.
+[  374.64s ->   380.16s] This will put the anchored VWAP on your chart. Go to the settings of the anchored VWAP and uncheck
+[  380.16s ->   386.24s] all of these boxes besides the VWAP, as that's all we care about for this strategy. The VWAP works
+[  386.24s ->   393.04s] very similar to the EMA as price likes to bounce off this line and can be used as support and resistance.
+[  393.04s ->   398.16s] So if you did the math, we now have three strong confluences with this strategy.
+[  398.16s ->   402.96s] Making our trades have an extremely high probability of winning and we have the best
+[  402.96s ->   408.08s] chance at finding the exact retracement point like we were talking about in the beginning of the video.
+[  408.08s ->   410.16s] This is how you would do it. First things first,
+[  410.16s ->   414.56s] I like to use this strategy on the higher timeframes like the 1 hour or 4 hour.
+[  414.56s ->   419.44s] For this example, we'll be using the 4 hour. We see a big move upwards. Remember,
+[  419.44s ->   423.36s] if we're going to be using the Fibonacci, the move has to be a strong trend.
+[  423.36s ->   427.04s] We then draw our Fibonacci retracement tool with the help of our fractals.
+[  427.04s ->   432.32s] We now see where our golden zone is located. If we look a little bit closer, you can also see
+[  432.32s ->   438.32s] price broke through this resistance right here, and we can now use it as a support and retest off
+[  438.32s ->   445.76s] of it. It's also located exactly in the golden zone. We then add our 200 EMA to the chart and see it also
+[  445.76s ->   451.60s] is directly in the golden zone. Then finally, we add our anchored VWAP by starting it exactly at the
+[  451.60s ->   458.80s] bottom of this big move or at the red fractal. And as you can see, it is also exactly in the golden
+[  458.80s ->   465.92s] zone. So now we have 4 confluences. The golden zone, the retest, the EMA, and the VWAP. Which
+[  465.92s ->   471.60s] means price has an extremely high probability of bouncing exactly at this point. I like setting my
+[  471.60s ->   477.52s] take profit at the high of the move and setting my stop loss right below the golden zone. And just like
+[  477.52s ->   482.72s] that, price bounces perfectly at the golden zone and hits our take profit just like we planned.
+[  482.72s ->   487.04s] And that's how we use the Fibonacci to find profitable trades. Next, I'm going to talk about
+[  487.04s ->   492.72s] how you can pair this with supply and demand, as I found that works extremely well with this strategy.
+[  492.72s ->   505.04s] If you want to check that out, click this video. I'll see you guys next time.

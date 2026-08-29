@@ -1,0 +1,208 @@
+[    0.00s ->    14.20s] Hey guys, it's Austin Booley. If the background behind me looks like it changed, because it is, today I'm at school. It's actually night. Central time, it's 7.46 right now, but y'all can see that on here, 7.47 actually.
+[   14.20s ->    28.30s] I got bored, there's a white board, and if you can read that, it says SPY SPX all day. I was going to put every day, but that's just personally. But, negate all that.
+[   28.30s ->    42.30s] Today we're going to talk about what happened today in the markets, what I traded, what I saw, and how y'all can see the same thing, and also see huge gains using options as your day trading instrument.
+[   42.30s ->    52.60s] Alright, so today, what I traded, or what I looked at mainly, was SPX. SPX and SPY are basically the same thing. They both track the S&P 500.
+[   53.60s ->    69.40s] Why did I track, or why did I look at SPX today and not SPY? That is a very obvious answer. I will tell you about in a sec, but first I want to say SPX, well let me just show you.
+[   69.40s ->    82.70s] So SPY options, if we look at the weekly SPY options here, you can see, well this one has one day left, so theta decay, we'll get this one in a sec.
+[   82.70s ->    96.30s] But, this one we're looking at, let me go up to 14 calls, we're looking at about 100 and, let's just say on average $300 to $400 a contract here for the calls, because today was a very call heavy day.
+[   96.30s ->   115.50s] But now puts, you're looking at about $50 a contract, so SPY is a lot cheaper than SPX. Let's look at SPX here for the contracts on the weeklies. We're looking at $1,300, $900, $285, whatever.
+[  115.50s ->   125.52s] So, yes, SPY and SPX move the same, just for SPX, their contracts are a lot more expensive and not friendlier for smaller accounts.
+[  126.38s ->   130.22s] But let me show you why I decided to focus on SPX, even though they move the same.
+[  130.60s ->   139.36s] So, let me first look at SPY. SPY, if we look at SPY, look how long these wicks are and how long these candles are.
+[  139.36s ->   145.00s] These movements this morning were crazy. Let's see what I saw going up into the day.
+[  145.48s ->   155.09s] So, ES, slash ES here, if I can find it right here, is actually the futures of the S&P 500.
+[  155.77s ->   165.21s] I was up last night, I was doing homework or something, I forget, I should have been in bed, but I was, it was like what, like 12 or something.
+[  165.21s ->   173.51s] And, um, I noticed that we were holding at this previous resistance level, and I was like, ooh, tomorrow is going to be a fun day.
+[  174.05s ->   178.55s] Um, and especially when I woke up, it held at this resistance level.
+[  178.85s ->   183.29s] I'm like, we're going to see a break of this resistance level, and I see it flying up.
+[  183.81s ->   188.13s] But, nope, that's not what happened today. So, let's take a closer look.
+[  188.13s ->   193.93s] So, let me compare, uh, uh, SPX and SPY today.
+[  194.31s ->   197.07s] So, look how clean the charts look on SPY.
+[  198.19s ->   200.09s] Uh, what am I in? I'm just doing it, yeah.
+[  200.35s ->   204.45s] So, look how clean the charts look on SPX versus SPY.
+[  204.55s ->   206.21s] Look how choppy SPY looks.
+[  207.41s ->   214.25s] It was just, I didn't like how choppy it was, especially with this pre-market stuff.
+[  214.29s ->   215.51s] I couldn't really tell much.
+[  215.51s ->   227.83s] Um, so, of course, if you have a smaller account, you want to trade SPY, but if you, um, like the clarity and the graph of, or the chart of SPX, then I would go there.
+[  228.90s ->   231.36s] So, I'm going to show you what I saw today.
+[  231.68s ->   237.00s] I'm going to remove everything, and I'm going to show you what I saw going into the day.
+[  237.48s ->   242.68s] Okay, so let's look at, um, I'll show you my analysis on SPY and then on SPX.
+[  242.68s ->   247.26s] Okay, so let's, of course, we always like to back up to see the overall huge picture.
+[  247.68s ->   252.44s] That's why I have a 360-day, 4-hour, 30-day, 15-minute, and 10-day, 2-minute.
+[  252.80s ->   254.20s] Let's look at the huge chart, okay?
+[  254.28s ->   256.62s] So, oh, man, all this crazy stuff, that's normal here.
+[  257.20s ->   260.74s] Um, so yesterday, we broke out of this little trend line we drew.
+[  260.86s ->   262.26s] We broke and we exploded here.
+[  263.28s ->   269.40s] Um, we were extended over the EMA line and over this line and over support was here.
+[  269.40s ->   272.00s] So, of course, we should be expecting a pullback.
+[  272.38s ->   276.62s] People in the group chat, which is linked below, actually, um, we're asking,
+[  276.74s ->   280.24s] Austin, do you think we're going to have a huge green day, uh, calls today?
+[  280.76s ->   287.60s] Uh, the whole morning I mentioned, um, I want to say calls, but I'm very cautious because I don't like the movement here.
+[  288.32s ->   292.00s] Um, and I will explain why because obviously this movement is not natural.
+[  292.00s ->   298.70s] So, um, I drew the tip here that was a resistance line, the tip here that was another resistance line.
+[  299.60s ->   307.30s] Um, that's how I got the two major ones there, and then I went into the 30-day, 15-minute, and, uh, this doesn't really matter.
+[  307.64s ->   313.74s] So, yeah, so the only, uh, resistance line that we were looking at was the tip of that one and the tip of this one.
+[  313.74s ->   323.22s] Um, so, and then I go into the day, let's see what I see, this is what happened pre-market, nothing significant besides this high right here.
+[  323.76s ->   328.90s] Um, that high should be marked, um, and then I have my previous resistance line here.
+[  329.56s ->   332.88s] So, nothing too important, I go into the two-minute, which is where I trade.
+[  332.88s ->   347.98s] Um, if I look at it, I was, where was I here, I'm trying to see what exactly, oh, I saw the huge drop here, um, let's see, I saw this pattern here, okay.
+[  348.56s ->   358.24s] The pre-market was holding this trend from all the way back here, um, it was holding this trend line, so I was like, yay, we might get this explosion that I wanted out last night.
+[  358.24s ->   363.52s] And I can see that it's consolidating, it's squeezing, first thing in the morning, it shot up.
+[  364.16s ->   369.42s] I waited, I wanted to see if, if it would hold, because the mornings are crazy, they can go either direction.
+[  369.82s ->   372.24s] So, it didn't hold, and it broke below.
+[  372.88s ->   384.95s] Um, so, basically, if y'all have not been tuning in to previous videos, um, I did have an account, I turned 18, so I made my own account, and I transferred money to it.
+[  384.95s ->   397.77s] It's Tastyworks, and I transferred it to it, and my money said it was available, but my buying power was not there, because I want to make sure that my money is actually, my money, I don't know, something weird.
+[  397.97s ->   405.65s] So, I tried to buy a put right here, and then it said, cannot be filled, you have, you know, buying option error, whatever.
+[  405.65s ->   410.27s] So, the put, what was here, but I want y'all to understand why the put was here, okay?
+[  410.55s ->   411.23s] Let's look closer.
+[  412.03s ->   417.41s] We have this triangle pattern, it's squeezing into this pattern, we're going to have a breakout in either direction.
+[  418.07s ->   420.77s] Um, it tried to push up, it could not do that.
+[  421.21s ->   425.75s] Um, so, a put, and it's also staying below the EMA.
+[  426.17s ->   432.29s] Now, you see this shoot up green, so you would have, like, if you were trading this, this would have shot up green.
+[  432.29s ->   434.13s] How did you know to stay in?
+[  435.09s ->   441.49s] Personally, how I trade, I stay in until it crosses above or below that EMA line.
+[  441.75s ->   449.01s] If you're wondering what my EMA is set at, it's an EMA 18 period moving average, or exponential moving average.
+[  449.45s ->   453.41s] So, it came up, and it didn't close above it, okay?
+[  453.75s ->   462.01s] So, I know I was still good, it went down, um, and then I called, I was like, hey guys, put it on SPY, I called it out in the group chat.
+[  462.45s ->   463.45s] Um, that's what I was doing.
+[  464.35s ->   471.15s] And then, if you can see here, we have, uh, previous, uh, I like to draw out the resistance levels.
+[  471.49s ->   477.51s] Of course, all my lines and all my stuff, which is why I'm having a hard time explaining now, is it's all in my Tastyworks account.
+[  477.97s ->   483.29s] The Tastyworks cannot zoom in and out of these charts as well as, um, on TD, so that's why I'm on here.
+[  483.29s ->   490.90s] So, I had a resistance here, um, I watched it drop, it dropped, it showed this little indecision candle here.
+[  491.98s ->   496.10s] I was like, okay, we might need to be careful here at double bottom.
+[  496.32s ->   502.04s] Double bottom is, um, a pattern that we look for, um, at double bottom here at this price.
+[  502.32s ->   505.76s] And I was like, hey guys, we need to get out as a double bottom, okay?
+[  505.76s ->   509.70s] So, it got out at double bottom, and then we went through a lot of consolidation.
+[  510.56s ->   516.84s] Um, I know someone who bought a put up here near this resistance level, um, they were freaking out.
+[  516.88s ->   517.98s] I was like, it should be fine.
+[  518.04s ->   524.26s] It's continuing down, downward, because we had this trend line here, intraday, that, that was holding.
+[  524.36s ->   527.04s] It was forming lower highs and lower lows.
+[  527.10s ->   529.36s] We were fine, and then it broke out, and I was like, crap.
+[  529.36s ->   534.58s] But, when it broke out, of course, we were looking to target this pre-market high here.
+[  535.14s ->   541.26s] We hit it, um, we didn't, we hit it, and then we hit it twice, actually.
+[  541.78s ->   542.68s] But not just twice.
+[  543.79s ->   544.53s] It's going to be right here.
+[  546.37s ->   547.77s] I need to start bringing water.
+[  548.27s ->   552.49s] Um, so we hit it twice, which leads to a double top.
+[  552.65s ->   555.17s] Double top is another pattern we look for for a short.
+[  555.17s ->   562.65s] So, my entry here, um, was double top, hit, right below the EMA line, enter.
+[  563.81s ->   566.97s] Um, and then, of course, we try to push back up.
+[  567.96s ->   571.52s] We are in, this right here is known as lunchtime.
+[  572.44s ->   573.70s] Nobody's around at lunchtime.
+[  573.78s ->   574.52s] I don't mean nobody.
+[  574.62s ->   577.24s] There is a lot of volume here, because it is the S&P 500.
+[  577.70s ->   581.96s] But things don't tend to have the most liquidity during lunchtime.
+[  581.96s ->   589.61s] So, that's why I tried to trade between market open and 10.30, and then the last two hours of the day, I stay away from this.
+[  589.91s ->   590.75s] So, we tried to push up.
+[  590.79s ->   592.35s] We didn't have the volume, so we pushed down.
+[  593.52s ->   595.78s] We have this trend line here of the double bottom.
+[  596.00s ->   597.92s] It broke below the double bottom.
+[  598.34s ->   600.58s] That's not really important, because I wasn't here today.
+[  600.64s ->   601.52s] I was doing class.
+[  601.76s ->   603.62s] So, that's not really what I saw or focused on.
+[  606.27s ->   610.04s] I came back to it, and I saw, and I followed it.
+[  610.10s ->   613.88s] We were making higher lows in the same high.
+[  614.38s ->   615.34s] So, what is this?
+[  615.34s ->   617.90s] This is a triangle breakout, ascending triangle pattern.
+[  618.02s ->   620.54s] It's ascending, because the bottom is making higher highs.
+[  622.94s ->   623.72s] Oh, my gosh.
+[  624.86s ->   630.39s] We broke out, and I said, hey guys, from here we can target the 266 area.
+[  630.57s ->   631.33s] Why did I say that?
+[  632.67s ->   641.77s] Because I know that if I connect my previous lows, my trend line here, I saw that we could target this area here, the 266 area.
+[  641.77s ->   649.68s] So, we shot up, we tested that EMA line, we bounced right off it, we bounced right off the EMA, and we went up to the previous double top highs.
+[  649.68s ->   651.42s] Then, we went down.
+[  651.42s ->   651.44s] Then, we went down.
+[  651.44s ->   658.72s] Okay, so that was SPY.
+[  658.72s ->   660.52s] Now, why did I like SPX?
+[  660.52s ->   665.00s] Because it showed the same exact patterns, but the wicks weren't as high, and everything wasn't as crazy.
+[  665.00s ->   668.84s] The patterns were obvious in there.
+[  668.84s ->   671.48s] Let me show you a little bit more extended.
+[  671.48s ->   675.70s] So, as you can see, where was it?
+[  675.70s ->   681.42s] Oh, yeah, it was right here.
+[  681.42s ->   684.62s] So, as you can see, this was my line of extension, blah, blah, blah.
+[  684.62s ->   695.18s] So, why I looked at this is because I could draw my lines, and I could see exactly what the SPX was doing, and it was very clear.
+[  696.94s ->   705.08s] But now, to understand how I trade, you have to understand that I connect support and resistance lines, and I look for that.
+[  705.52s ->   707.16s] Okay, I look for triangle breakouts.
+[  707.28s ->   710.52s] Triangles are my favorite, but also support and resistance bounces.
+[  710.52s ->   716.70s] So, although anyone can recognize this triangle pattern, you have to know what area you're targeting.
+[  716.70s ->   717.90s] You have to know where you're going to exit.
+[  717.90s ->   720.50s] If you don't know where you're going to exit, you're going in blind, and you will fail.
+[  720.50s ->   725.68s] So, you have to make sure you know where you're entering and where you're cutting your losses.
+[  725.68s ->   730.68s] So, I'm going to tell you on this triangle pattern where I saw my exit for stop loss or profit.
+[  730.68s ->   735.32s] So, of course, I like to connect my highs and whatnot.
+[  735.32s ->   740.20s] So, of course, I see this, and we're here, okay?
+[  740.20s ->   747.00s] So, I know if I extend it out, I can hit this 2, well, on spot, it was a 266 area.
+[  747.00s ->   748.80s] I can hit this area easy.
+[  748.80s ->   760.34s] So, I would pick up, as we're confirming this trend line, I would pick up some here as we cross above this EMA line, we're holding the support.
+[  760.34s ->   763.34s] Why would I pick up the calls here and not here?
+[  763.34s ->   767.34s] Because my risk to reward is a lot better, okay?
+[  767.34s ->   775.14s] If I do here, if I enter a call here, then I have to let myself risk this much to test this line.
+[  775.14s ->   778.46s] And then, if it drops through, of course, I would end up selling here.
+[  778.46s ->   782.46s] But now, if I enter here, I risk myself dropping this far and exiting.
+[  782.46s ->   784.46s] So, it gives me a cushion.
+[  784.46s ->   793.26s] Also, on triangle patterns, sometimes, like this one, you'll see a break up, you'll see a pull back down to retest this, and then a break up.
+[  793.26s ->   802.06s] So, if I enter early, right at this line, it can give me some wiggle room so that I'm already up, and it gives me some profit here, okay?
+[  802.06s ->   811.86s] Now, another reason why I like SPX is if we look back the past few days, especially this uptrending day here, this 18, is this an 18 EMA?
+[  811.86s ->   812.86s] No, it's a 12.
+[  812.86s ->   814.86s] Mine on Tasty Works is 18.
+[  814.86s ->   818.14s] Okay, 18.
+[  818.14s ->   821.14s] The SPX loves this 18 EMA.
+[  821.14s ->   826.14s] Look how well, when it's trending up, it bounces off this EMA line.
+[  826.14s ->   828.14s] Look how well those bounce.
+[  828.14s ->   834.94s] You could easily just trade SPX trending up based on EMA line bounces, which I called out a lot in the group.
+[  834.94s ->   840.48s] I was like, hey guys, we could see a potential bounce here off the EMA line, okay?
+[  840.48s ->   841.88s] So, I saw it going.
+[  841.88s ->   845.78s] We had a test of this low, and then it continued upward.
+[  845.78s ->   852.48s] We hit our level, the level that I was targeting, the 266 level, some consolidation.
+[  852.48s ->   857.98s] Now, holding a call through this, I would wait for the break under the EMA line.
+[  857.98s ->   858.98s] Again, you entered here.
+[  858.98s ->   859.98s] You're up.
+[  859.98s ->   860.98s] You have good profits.
+[  860.98s ->   865.10s] Let's see if we can retest this previous high.
+[  865.10s ->   868.06s] So, you wait for this bounce of the EMA line.
+[  868.06s ->   869.60s] You see this indecision candle.
+[  869.60s ->   872.70s] I have all the candle patterns that you need to know in the group chat.
+[  872.70s ->   878.30s] I can post a picture if you didn't like save it or something, but this is an indecision candle.
+[  878.30s ->   881.10s] It's a doji right off the bounce of the EMA.
+[  881.10s ->   882.10s] Shot up straight toward that.
+[  882.10s ->   884.10s] That is where you take profits.
+[  884.10s ->   889.60s] Also, when it came down and it broke below this EMA line and it showed some resistance
+[  889.60s ->   893.10s] here showing that it's retesting, I entered a put.
+[  893.10s ->   902.40s] The put, again, it's paper trading because my account, I'm so sad, but I entered the contract
+[  902.40s ->   905.10s] here right under the break of the EMA for $5 a contract.
+[  905.10s ->   913.16s] And since this was my previous resistance, right when it broke here, I sold.
+[  913.16s ->   918.16s] So, $5 a contract here to $7 a contract here.
+[  918.16s ->   921.16s] So, $500 for a contract.
+[  921.16s ->   923.16s] $700 for a contract.
+[  923.16s ->   924.16s] Subtract that.
+[  924.16s ->   925.16s] I made $200 for a contract.
+[  925.16s ->   927.16s] I had two contracts, $400.
+[  927.16s ->   930.15s] Again, that is what I trade with.
+[  930.15s ->   934.15s] SPX options is a little more expensive because they've done the same thing on SPY.
+[  934.15s ->   937.15s] But, it's so obvious on SPX.
+[  937.15s ->   941.27s] Sorry, guys.
+[  941.27s ->   944.36s] I will use water next time.
+[  944.36s ->   947.36s] And then, we go into the rest of the day, we have a perfect bounce off of this line,
+[  947.36s ->   949.36s] and then we continue on.
+[  949.36s ->   951.36s] So, again, what I look for.
+[  951.36s ->   956.36s] I look for resistance and support on long-term charts.
+[  956.36s ->   963.36s] And then, on the two-minute, I connect trend lines, especially looking for the triangle patterns
+[  963.36s ->   967.36s] and 18 EMA bounces.
+[  967.36s ->   968.87s] Okay?
+[  968.87s ->   976.87s] Again, what I call my watch list on Tastyworks is called Austin's Babies, which is SPY, SPX,
+[  976.87s ->   977.87s] and Facebook.
+[  977.87s ->   979.87s] I love those stocks.
+[  979.87s ->   983.87s] My opinion is that you should focus on one or two stocks that you love and you can trade
+[  983.87s ->   987.87s] consistently over and over so that you end to have a gut feeling on stocks.
+[  987.87s ->   990.87s] That's why on SPX today when people take calls, calls Austin.
+[  990.87s ->   994.87s] I was like, it doesn't feel right because I've seen SPY and SPX move over and over.
+[  994.87s ->   996.87s] And I was like, this does not feel right.
+[  996.87s ->  1000.60s] Again, if you want to learn more, browse the channel.
+[ 1000.60s ->  1003.60s] If not, join that Discord group if you're interested in options.
+[ 1003.60s ->  1006.60s] There's a bunch of people who are beginners, so don't feel afraid.
+[ 1006.60s ->  1008.60s] Just ask questions.
+[ 1008.60s ->  1013.60s] There are a lot of people there who know stuff, especially if you want to trade strategies.
+[ 1013.60s ->  1015.60s] We have other people for that.
+[ 1015.60s ->  1016.60s] All right, guys.
+[ 1016.60s ->  1020.60s] Thank you so much for watching and dealing with my hoarse voice, apparently.
+[ 1020.60s ->  1023.60s] Y'all have a good one and good luck trading in these markets.

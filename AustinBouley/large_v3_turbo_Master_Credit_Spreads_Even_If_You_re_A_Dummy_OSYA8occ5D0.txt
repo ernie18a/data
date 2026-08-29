@@ -1,0 +1,93 @@
+[    0.00s ->     3.28s] Hey guys, welcome to lesson number one of the basics of credit spreads where I'm going to
+[    3.28s ->     6.60s] dummy proof it. If I can't make it simple for you to understand, then you should come find me and
+[    6.60s ->    11.24s] beat me up. All right, so here's the simple understanding of credit spreads. You make money
+[   11.24s ->    15.84s] with credit spreads when it stays above a certain level. All right, what do I mean by that? Okay,
+[   15.98s ->    20.54s] let's say the stock is trading like this. So now the stock price is right here. How do I make money
+[   20.54s ->    24.98s] with credit spreads? For instance, if it's a put credit spread, I'm going to make money as long as
+[   24.98s ->    28.50s] the stock stays above that level. So I'm going to be like, what level do I think the stock will stay
+[   28.50s ->    33.36s] above? I'm going to pick a level. As long as the stock stays above the level I picked, I make
+[   33.36s ->    38.78s] money. So this is for a put credit spread. I'll explain this more in a second. Now let's talk
+[   38.78s ->    43.60s] about a call. How does a call work? The same thing, but you make money when it stays below a certain
+[   43.60s ->    47.08s] level. It's the opposite. So let's say a stock is trading like this. Hey guys, just want to hop in
+[   47.08s ->    50.52s] here real quick and let you know about a free training that I'm doing here very soon. If you
+[   50.52s ->    55.48s] click the link down below, you can access it and learn how I make three to $5,000 every single month
+[   55.48s ->    59.28s] using the new mother credit spread trading strategy. I'm going to walk you through it step
+[   59.28s ->    62.52s] by step. So by the end of the training, you'll walk through knowing how to actually implement it
+[   62.52s ->    69.68s] and use it for yourself. So you can risk $25 to make $25 with a 75% win rate. So if that is
+[   69.68s ->    73.28s] interesting to you, please make sure to click the link down below and save your spot. All right,
+[   73.34s ->    78.22s] enjoy the rest of this video. The current stock price is right here. How do I make money? I pick a
+[   78.22s ->    82.64s] level. I think the stock will stay below. As long as the stock stays below this level, then I make
+[   82.64s ->    88.26s] money. So essentially what you're doing here is you're just betting that a stock will not get to
+[   88.26s ->    92.70s] a certain level by a certain price point, by a certain price date, whatever it is you want to
+[   92.70s ->    97.54s] think, think about, about it is that's how simple credit spreads are. Now let's add some of these
+[   97.54s ->   104.08s] specifics and nuances into it. Okay. So first off, we have a put credit spread. How exactly is this
+[  104.08s ->   109.88s] structured? All right. So I put credit spread is structured by selling one option and then buying
+[  109.88s ->   114.58s] another, and I'll explain why in a second. But for instance, let's say this is the stock that we're
+[  114.58s ->   119.32s] looking at and we think it will stay above this level. This level we think will stay above now
+[  119.32s ->   124.70s] becomes our short strike. So this level right here, whatever price point this is, we're going to find
+[  124.70s ->   129.24s] a put option at that level and we're going to sell it. So we're going to sell it. So let's say
+[  129.24s ->   137.76s] minus one because I sold it. Now let's say I'm able to sell it at let's say $1.20. Okay. Now a credit
+[  137.76s ->   142.16s] spread is a spread, which means that it has two different options with it because that's the
+[  142.16s ->   146.74s] spread, the difference between the two. So because there's two things here, that's a bad ad sign.
+[  147.62s ->   152.82s] We're going to have to buy it, the one right below it. So now we picked a level that we think the stock
+[  152.82s ->   158.42s] will stay above. We sell that put, then we look at the one, the strike price below it. So let's say
+[  158.42s ->   165.28s] we think the stock will stay above, let's say $400. So now we're going to sell the put at 400 and we're
+[  165.28s ->   174.62s] going to buy the put at 439, the one right below it. No, 400. So 399. So 439, those becomes our two
+[  174.62s ->   180.94s] levels. But now we're going to buy the 399. So apparently I should have picked an easier number
+[  180.94s ->   186.62s] to say, but now we're having plus one of those contracts. So now let's say we can enter that
+[  186.62s ->   193.42s] contract at a dollar. Okay. So how exactly does the spread games work? Well, we make money as long
+[  193.42s ->   198.08s] to stock stays above the level we picked that simple. Now, how do we structure this? Well,
+[  198.22s ->   202.68s] that level that we picked becomes our short strike price. We buy the one below it as protection for
+[  202.68s ->   209.88s] our second strike price. And the difference is what we get when we sell an option, people give us
+[  209.88s ->   218.98s] money. So this selling right, right here actually results in us getting $120 into our broker account.
+[  218.98s ->   223.60s] Because again, every option represents a hundred shares. So to get the actual price,
+[  223.66s ->   227.78s] you take whatever the price is and you multiply it by a hundred. So anyways, when we sell an option,
+[  227.88s ->   234.84s] we receive money. So we received $120 for this trade. However, we bought the option below to
+[  234.84s ->   240.24s] protect us because I'll explain here how that works in a second, but we bought it to protect us.
+[  240.36s ->   244.30s] When we bought it, we had to give up money for it. When we buy something, we have to give money in
+[  244.30s ->   248.92s] exchange for it. So because we didn't sell something to someone and get money, now we're buying.
+[  249.26s ->   253.46s] Now that means that subtracts a hundred dollars because it was a dollar. So minus a hundred.
+[  254.40s ->   259.94s] So what did we make on this credit spread? Well, we made the difference. So that difference or that
+[  259.94s ->   268.80s] spread is $20. So the spread in the credit prices, hence a credit spread is $20. So that means for this
+[  268.80s ->   275.52s] trade, we make $20 as long as the stock stays above our level. All right. So what is our risk? Well,
+[  275.58s ->   280.70s] our risk is the difference between these two levels. So like I said, we were using, for example,
+[  280.80s ->   285.48s] let's say we did the 400 as the level that we think the stock will stay above. And then we use
+[  285.48s ->   290.22s] our protection of 399. All right. So now we have these two levels, which are these two right here.
+[  290.22s ->   294.72s] So that's that. And so now we have these two levels. So our difference is what's going to happen
+[  294.72s ->   299.56s] is let's say the stock goes below our strike price, which means that it goes below the level
+[  299.56s ->   303.98s] we thought it would stay above. All right. So if it goes below it, then now we're losing. Why?
+[  304.34s ->   308.72s] Well, because that means that the one that we sold and the one that we bought are going to get assigned.
+[  309.02s ->   312.98s] So that means that someone's going to be like, Hey, the contract that you sold here,
+[  313.06s ->   317.60s] I want to execute that. I want to make it worth something to, uh, to me. So they're going to take
+[  317.60s ->   321.30s] a hundred shares from you at this price, but then you'll have your protective option,
+[  321.30s ->   327.40s] which offsets the a hundred shares. And so your max loss will be a dollar because there's a dollar
+[  327.40s ->   332.22s] difference in between those. However, every option represents a hundred shares. So just because the
+[  332.22s ->   337.34s] difference is a dollar, that means your actual loss, if it goes below your strike price as a hundred
+[  337.34s ->   345.30s] dollars. However, that may be the collateral or the actual loss, but we received $20 when we put on
+[  345.30s ->   349.38s] this trade, that's $20. You get to keep no matter what happens, win or lose. Ideally you want to win
+[  349.38s ->   353.16s] because then whatever, but I'll sign here in a second. So now we have a max loss of a hundred,
+[  353.30s ->   358.50s] but we received $20 when we entered the trade. So now that means that we're actually only losing
+[  358.50s ->   364.00s] $80 if our trade is below the strike price by expiration date. So that's how credit spreads
+[  364.00s ->   369.32s] are structured. We pick, we pick, we pick a level, we structure it by selling one option and buying
+[  369.32s ->   374.48s] another. And now we have a defined risk to reward trade where we know how much we're going to make
+[  374.48s ->   378.62s] and we know how much we're going to lose no matter what happens. Again, we'll explain more in the
+[  378.62s ->   383.64s] series here that I'm recording. That's going to help you actually decrease your losses, know exactly
+[  383.64s ->   389.22s] what levels to pick and all this amazing stuff coming soon in the coming modules. But, and this
+[  389.22s ->   394.82s] right here, these are the bare basic bones of, of, of a credit spread. You're making money by saying
+[  394.82s ->   399.92s] it's going to stay above a certain level. And this is how it's structured. Okay. Now that we know that
+[  399.92s ->   405.30s] how do we do it on a call credit spread? Well, it's the same exact thing. The level that, uh, that,
+[  405.30s ->   409.74s] that we pick and we want it to stay below becomes our short, uh, our short, short, short strike price.
+[  409.78s ->   413.84s] We're going to sell at that level. Let's use the same numbers, the dollar 20, and then we're going
+[  413.84s ->   418.66s] to buy the one right above it for protection because that one's going to have less credit
+[  418.66s ->   424.91s] associated with it. So it's going to be a dollar. And then that's going to result in a 20 cent net
+[  424.91s ->   432.35s] return, right? Cause just as we explained here, this is going to give us an $80 risk for a $20
+[  432.35s ->   439.17s] return by picking that. And that's how I call a structure. Now, before I end this basic course,
+[  439.21s ->   442.21s] I want to say, Austin, how do I know whether I'm shorting this one or buying this one or,
+[  442.21s ->   446.83s] or whatever? All right. You always do it in the order. What's closest to the stock price.
+[  446.91s ->   451.95s] So whatever strike you pick or whatever level is closest to the current strike price is the one
+[  451.95s ->   456.33s] you sell. The one that's further away is the one that you buy. So that's why we sold this one and
+[  456.33s ->   460.41s] bought this one. That's why we sold this first line and bought the second one. You always buy the
+[  460.41s ->   463.63s] one that's further and you sell the one that's closer. That's how you structure a credit spread
+[  463.63s ->   468.23s] for simple, easy to understand kind of way. All right. So that is dummy proof credit spreads.
+[  468.33s ->   472.77s] I hope it made sense. Again, it will make more sense as we piece together more stuff in this
+[  472.77s ->   474.85s] module. So I'll see you in the next video.

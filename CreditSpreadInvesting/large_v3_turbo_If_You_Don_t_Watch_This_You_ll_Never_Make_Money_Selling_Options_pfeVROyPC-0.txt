@@ -1,0 +1,135 @@
+[    0.06s ->     5.44s] Selling options for income can seem very easy, but there's just one big mistake that everyone
+[    5.44s ->    11.14s] has to avoid in order to make selling options a consistently profitable strategy. If you find
+[   11.14s ->    15.86s] yourself having a hard time generating consistent income, trying to sell options, hopefully this
+[   15.86s ->    19.04s] video will be the changing point. Welcome to the channel. This is Credit Spread Investing.
+[   19.16s ->    22.80s] My goal is to show you how to generate consistent profits from trading and investing. If you like
+[   22.80s ->    25.62s] content like this, please consider liking the video and subscribing. It'll really help the
+[   25.62s ->    28.68s] channel out. If you're watching this video, you probably already know what a put and call options
+[   28.68s ->    33.10s] are and how selling options mechanically work. But we'll touch on it briefly for those of you who
+[   33.10s ->    38.36s] are new. By selling a put option, you're essentially guaranteeing someone that you will buy 100 shares
+[   38.36s ->    43.16s] of that stock at that specified strike price at the time expiry. In return, that person will pay you
+[   43.16s ->    48.34s] some money for that guarantee. If it's above the strike price at expiry, nothing happens. You
+[   48.34s ->    53.30s] collect the money and you move on. If it's in the money, essentially below the strike price, then you
+[   53.30s ->    57.70s] as a seller of the auction have to buy 100 shares of that stock at whatever the strike price the
+[   57.70s ->    62.54s] option is priced at. So let's just take a look at a real life example. I'm going to use Delta as my
+[   62.54s ->    69.02s] proxy, which is currently trading at $40.27 as of today. This is an option chain that you'll see
+[   69.02s ->    73.86s] on any brokerage platform. This is Thinkorswim. The ones in parentheses days to expiry. And we're just
+[   73.86s ->    79.80s] going to choose at 37 days to expiry, January 19, 2024. There's a call side and the put side. I'm going
+[   79.80s ->    85.48s] to do an example on selling a put option. Right now it's at 40. So if you sold one at the money,
+[   85.48s ->    90.40s] you would collect $146 right off the bat. But let's do something that's a little bit more
+[   90.40s ->    96.44s] realistic. Let's just do $36, put option expiry 37 days later. I would collect $36 right off the
+[   96.44s ->   101.76s] bat. And let's just demonstrate how this works. If Delta were to be above $36 on January 9th,
+[  101.76s ->   107.28s] 2024, buy market close, I would keep that $36. Nothing would happen. I'm not forced to buy 100
+[  107.28s ->   112.56s] shares of that stock. But if Delta were to go to 35, for example, or 34, I would then as the option
+[  112.56s ->   117.62s] seller be forced to buy 100 shares of Delta at $36, regardless of whatever price it would be at.
+[  118.26s ->   123.78s] I get the money up front and the chances of Delta going below $36, which is 10% drop within a month,
+[  124.12s ->   130.44s] is very low. I can collect 1% of the total tied up money or collateral in a month. If I were to sell
+[  130.44s ->   136.28s] even more aggressively at 38, for example, I can collect even more money. And even then Delta may
+[  136.28s ->   142.32s] not even fall 5% within a span of a month. Now, if you did it with other stocks, maybe even more
+[  142.32s ->   151.43s] volatile stocks like Palantir, you can collect even more money. So this is why this is so desirable or
+[  151.43s ->   155.75s] so attractive. And this is why a lot of people tell you to sell puts, because it's a low risk
+[  155.75s ->   160.97s] strategy to help you generate that passive income. But that's not always true. Because if it's done
+[  160.97s ->   166.65s] incorrectly, by making this mistake that we'll talk about right now, this will be an easy way for you
+[  166.65s ->   171.65s] to consistently lose money. So for any option strategy, we have to understand the risks as
+[  171.65s ->   176.19s] well as the reward. Now we've talked about the reward. Let's talk about the risks. I'm going to
+[  176.19s ->   180.43s] use an example that I found on YouTube about a person demonstrating how he sells options by showing
+[  180.43s ->   184.41s] you what I mean and how he's making this critical mistake, right? I'm not going to call out who this
+[  184.41s ->   188.67s] person is or link the video. It's not about that. It's just a good example to demonstrate the worst
+[  188.67s ->   195.71s] case scenario on how to avoid making this mistake. This person, let's call him Bob, sold riot a week out
+[  195.71s ->   200.87s] at a $54 strike price. Riot was at $60 at this point, which means the stock has to drop 10% to
+[  200.87s ->   205.21s] get assigned, right? It seems like it's a very safe trade. On top of that, he collected $1.70 per
+[  205.21s ->   209.81s] contract and actually sold seven. If you look at the return on invested capital, the amount of money
+[  209.81s ->   214.67s] that is quote unquote tied up because of this one trade, it's around 3%. Let's just look at one
+[  214.67s ->   219.07s] contract to look at $170 per contract. And if the auction gets assigned, he'd be forced to buy
+[  219.07s ->   225.20s] 100 shares of $54. And so that's where you get the 3% from. You can see the return is actually very
+[  225.20s ->   231.30s] high for very little work. And he can make 3% week over week. And that's why it's so compelling,
+[  231.56s ->   236.04s] right? Let's assume Bob or you took 3% every week and did this every week for a whole year,
+[  236.26s ->   243.04s] do this for around 48 times, your ROI will be 144%. This is obviously massively exaggerated. And
+[  243.04s ->   247.66s] without context of understanding the risk, you would be like, this is easy money. I can see myself doing
+[  247.66s ->   252.90s] this. First one, the one that he just sold expired out of the money. So he collected $170
+[  252.90s ->   258.60s] times seven, put that in the bank and moved on. Nothing happened. Then he sold another seven
+[  258.60s ->   268.02s] at the same strike price at $54 for $217 now on the 22nd with expiry of weekend, the 26th.
+[  268.18s ->   274.42s] Now this had an even higher return on invested capital of 4%. However, in this case, this option,
+[  274.62s ->   281.06s] this put option ended up in the money at $48.22. And he was assigned and had to buy 700 shares of
+[  281.06s ->   286.24s] riot at $54 a share. Let's just do the math up to this point for one options contract. You can
+[  286.24s ->   291.76s] multiply this by seven at the end. He collected 217 plus 170 for those two contracts that he sold
+[  291.76s ->   297.94s] $387 in total credit collected. But because he got assigned, so he had to buy those shares at the
+[  297.94s ->   305.76s] $54 strike price, even though it's at 48.22. Actual ROI looks more like this. He's down $578 on the stock
+[  305.76s ->   310.76s] itself because it was worth 48.22 the moment he bought it, but he bought it at $54 a share,
+[  311.30s ->   317.68s] right? So that's $5,078 difference times a hundred shares. It's 578 bucks, right? So the total loss he
+[  317.68s ->   322.98s] incurred on buying those shares is 578 bucks plus the $387 that he collected. He's actually only down
+[  322.98s ->   328.42s] $191. Divide that by the total invested capital initially, which is 5,400 bucks. He's actually only
+[  328.42s ->   332.34s] down 4%. And you'd be like, okay, well, credit spread investing, like this is not that bad.
+[  332.34s ->   336.28s] A seasoned professional would be like, all you have to do now is to sell a covered call on it.
+[  336.42s ->   341.06s] If you sell it above the 54 strike price, you'll never lose money. This is easy. Bob even said he
+[  341.06s ->   344.92s] can sell the covered call at $54 and make that money back easily. The video ends the moment he
+[  344.92s ->   349.20s] gets assigned at the second put and he buys a 700 shares of right at $54. But we're going to continue
+[  349.20s ->   353.14s] this options trade here so that we can demonstrate why this one mistake is so important to avoid.
+[  353.52s ->   357.86s] I went back in time and I looked up the option pricing for March, 2021. As you can see here,
+[  358.10s ->   361.40s] collected $200 on this one option that he said he was going to sell. At this point,
+[  361.40s ->   366.20s] he immediately makes back his losses. Riot never got to $54 for his covered calls. And this means
+[  366.20s ->   369.98s] covered call never got assigned. But what happens next is the most important thing I want you guys
+[  369.98s ->   376.14s] all to understand here. Until 2023, you'll see a downward slope for Riot that Riot never got back
+[  376.14s ->   381.46s] to $54 a share. I don't know what he ended up doing. $54. Maybe he sold out. Maybe he didn't.
+[  381.52s ->   384.04s] Who knows? But let's just walk through a couple of scenarios to demonstrate why this
+[  384.04s ->   388.80s] is the worst case scenario, right? Scenario number one, if he held it, Riot went all the way down to $3
+[  388.80s ->   395.00s] at one point. Which means the stock went from $54 to $3, which is a $51 decrease. Which means that
+[  395.00s ->   401.70s] he lost $5,100 per contract on just the asset value, the stock itself. Bob actually sold $7. So
+[  401.70s ->   406.88s] at this point, at the low point, his unrealized losses from the 700 shares of Riot's stock that
+[  406.88s ->   412.74s] he owns is actually $35,700. And as he continues to sell covered calls on the way down, the option
+[  412.74s ->   418.42s] pricing, the amount of money that he can get, will get lower and lower and lower as the stock value
+[  418.42s ->   422.36s] decreases. So if you were to simulate this, and let's just be aggressive, and it says he collects
+[  422.36s ->   426.74s] $50 a trade for the rest of the trade, which is probably not going to be possible, especially when
+[  426.74s ->   434.54s] the stock is trading at $3. Bob would need $5,100 divided by 50, which equals 100 trades. And that's
+[  434.54s ->   439.40s] assuming he sold weekly. He would need the 100 weeks to make that money back, which is around 12.5
+[  439.40s ->   443.80s] months, which is around a year, give or take, right? And this is assuming that the options never got
+[  443.80s ->   448.46s] assigned. And assuming a $50 contract, right? If it was $25 or even $30, you can see that's going
+[  448.46s ->   452.30s] to be two years, which is quite possible because that's the option pricing at the moment. And he's
+[  452.30s ->   456.14s] probably going to have to sell it at a loss anyways, because the moment that the calls get assigned,
+[  456.54s ->   460.92s] if it does get assigned, he's going to lose on the realized losses on the stock. This is obviously an
+[  460.92s ->   465.48s] exaggerated example to a certain extent, but it's not an uncommon situation. You can see a similar
+[  465.48s ->   472.58s] pattern with other stocks like NIO, Oatly, especially small cap stocks, and even larger cap stocks to a
+[  472.58s ->   476.90s] certain extent, like Disney, Delta. Let's do a quick scenario number two. He never ends up selling
+[  476.90s ->   480.10s] and still holds Riot because he believes in it, right? Even after this massive run-up of this
+[  480.10s ->   484.42s] year, Riot is still trading around $14 a share at the time of this recording, which means he's
+[  484.42s ->   490.90s] still down $40 a share, $28,000 total. If Bob had just put the same amount of money into S&P 500
+[  490.90s ->   497.36s] from March of 2021 to today, he would be up around 20% instead of being down on the trade.
+[  498.02s ->   501.88s] I'm not only going to use Bob as an example. I also have these losing trades and sometimes
+[  501.88s ->   505.38s] you do lose money, but it's important to understand the nuances and differences when
+[  505.38s ->   509.52s] it comes to generating income from assets. The first point here that I want to make is
+[  509.52s ->   513.44s] the asset that you're selling, the stock or the company that you're selling options on,
+[  513.70s ->   518.38s] especially cash-secured puts, are very, very, very important because the amount of income that
+[  518.38s ->   523.06s] you're collecting will not be able to cover up the unrealized losses on the stock if the stock
+[  523.06s ->   528.28s] never has the potential to recover in share price. Really important. So I bought Intel around $40
+[  528.28s ->   531.94s] a share, but I did sell cover calls on them. And throughout that time, I held Intel. I collected
+[  531.94s ->   537.52s] around $72. The moment I sold it at $28 a share, I lost around $1,200 on cover. I was contemplating
+[  537.52s ->   541.16s] selling cover calls on it until I got back to $40, something like what Bob was trying to do with
+[  541.16s ->   544.96s] Riot. Now, if I had done that, you can see that Intel recovered all the way up to $40 a share.
+[  545.36s ->   550.98s] Now, when you compare Intel and Riot, the charts look very, very different. The difference between the
+[  550.98s ->   555.40s] two, what I'm going to say here is oversimplification, but in a nutshell, Riot's stock was overinflated.
+[  555.40s ->   560.80s] The business itself has no ability to generate profits. Intel, even though it was beaten down,
+[  560.92s ->   565.78s] had a steady cash flow, established business model that was generating consistent profits.
+[  566.22s ->   570.56s] And so when the market recovered, and when Intel showed promise in increasing its cash flow and
+[  570.56s ->   574.52s] reducing business expenses, the stock itself subsequently recovered, right? So the difference
+[  574.52s ->   579.68s] is the company and the stock itself that Bob and I were selling cash secured puts on and cover calls
+[  579.68s ->   585.28s] on. Intel is a much more valuable company, and the stock itself wasn't overvalued where it was
+[  585.28s ->   590.36s] impossible for the stock itself to recover, right? There was not that much differentiation
+[  590.36s ->   594.80s] between the stock price and the company. So what we're going to wrap up here, but we're going to
+[  594.80s ->   599.30s] be crystal clear about what the mistake is and how to correctly view trading puts for incomes.
+[  599.54s ->   604.82s] The most common mistake is that most people view selling options as an easy way to make money
+[  604.82s ->   609.54s] and prioritize its income first. They don't even consider the stock that they will have to buy when
+[  609.54s ->   613.62s] they get assigned. They're always thinking, well, if I do get assigned, I can always sell cover calls on it
+[  613.62s ->   617.84s] until it gets out. You can see you can't always get out, right? You can always choose a bad stock and
+[  617.84s ->   622.12s] it only goes down and stays down. And when you can't, the stock price can wipe out any of that
+[  622.12s ->   626.68s] income that you collect. If you're not careful, every strategy has its downsides and everyone
+[  626.68s ->   631.26s] should be aware of how they lose money and how much they can lose. So here's the most important
+[  631.26s ->   635.92s] takeaway set in a different way. The asset, aka the stock and the company is the most important thing
+[  635.92s ->   640.78s] to consider when selling options, because when it does go south, you can lose a lot of money because
+[  640.78s ->   645.54s] income generation will not have a larger impact than the losses associated with the stock price
+[  645.54s ->   652.04s] dropping. Don't view selling options as only generating income. Use it as a tool to acquire
+[  652.04s ->   658.02s] good stocks at good price points while collecting income as a secondary driver. If you want to see
+[  658.02s ->   661.96s] more details on how to safely sell options to acquire good assets and collect safe and consistent
+[  661.96s ->   666.82s] premiums, make sure you check out this video link in the end screen here. And if you found this
+[  666.82s ->   671.32s] information helpful, please consider liking and subscribing so you guys can all generate safe,
+[  671.58s ->   675.44s] consistent income and grow your portfolio in a sustainable manner. All right, until next time,
+[  675.52s ->   676.68s] stay safe in the market. Peace.

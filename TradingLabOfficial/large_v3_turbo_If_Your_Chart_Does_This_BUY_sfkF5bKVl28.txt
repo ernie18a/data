@@ -1,0 +1,144 @@
+[    0.16s ->     3.08s] People have been trying to predict the stock market for years.
+[    3.08s ->     7.52s] Making algorithms, studying years of stock data, going through each and every statistic
+[    7.52s ->    11.88s] that could possibly predict the direction of where the market is going to go next.
+[   11.88s ->    16.36s] But what if I told you there was an easy way to see when the market is losing momentum
+[   16.36s ->    20.60s] and know when there's a high probability it's about to reverse in the opposite direction.
+[   20.60s ->    24.00s] A strategy so simple even your dog could do it.
+[   24.00s ->    27.18s] Well, I found one, and it works pretty damn good.
+[   27.18s ->    31.62s] To first understand this strategy, we first have to dig deep and understand the trend
+[   31.62s ->    40.79s] of the chart.
+[   40.79s ->    41.79s] See what I did there?
+[   41.79s ->    44.63s] I said dig deep, and it's Minecraft.
+[   44.63s ->    47.07s] God, I spent way too much time on this.
+[   47.07s ->    51.33s] You should be constantly asking yourself, what is the trend most likely to do next?
+[   51.33s ->    53.47s] To do that, I give myself three options.
+[   53.47s ->    56.79s] Is the trend most likely to continue heading in the direction it's going?
+[   56.79s ->    59.43s] Is it more likely to end and start consolidating?
+[   59.43s ->    61.27s] Or does it look like it's about to reverse?
+[   61.27s ->    63.91s] Now you may be saying to yourself, how the should I know?
+[   63.91s ->    66.11s] So as an example, we'll be using this chart.
+[   66.11s ->    69.79s] Now when looking at this chart, I'm sure most of you are thinking, yeah that's just
+[   69.79s ->    70.95s] a normal downtrend.
+[   70.95s ->    75.71s] Now while it is a downtrend and it's making lower lows, you have to look at it more closely.
+[   75.71s ->    78.57s] What I see are three drops within the downtrend.
+[   78.57s ->    82.55s] If we measure each one of these drops, we can clearly see the drops are slowly getting
+[   82.55s ->    86.39s] smaller in size, meaning that the downtrend is losing its momentum.
+[   86.39s ->    89.55s] So we now clearly see that the downtrend is slowing down.
+[   89.55s ->    94.07s] But how do we find the point of where this downtrend is most likely to reverse and change
+[   94.07s ->    95.11s] to an uptrend?
+[   95.11s ->    96.11s] The answer?
+[   96.11s ->    97.11s] Divergence.
+[   97.11s ->   101.33s] Divergence is basically when the price of a market is heading one direction, but an indicator
+[  101.33s ->   103.75s] is heading the opposite direction.
+[  103.75s ->   108.43s] Divergence can warn when the trend is weakening, and in some cases may lead to price changing
+[  108.43s ->   109.43s] direction.
+[  109.43s ->   113.55s] In order to see if divergence is happening, we first have to add an indicator to our chart.
+[  113.55s ->   116.65s] Now there are many different indicators that can measure divergence.
+[  116.65s ->   119.33s] As long as it's a momentum indicator, you're good.
+[  119.33s ->   130.33s] For this example, we'll be using, drum roll please, RSI, yeah, we'll be using RSI.
+[  130.33s ->   134.85s] Click the indicators tab, type in RSI, and click this relative strength index one right
+[  134.85s ->   135.85s] here.
+[  135.85s ->   138.95s] Now that we have RSI on our chart, let's see if there is divergence occurring.
+[  138.95s ->   143.17s] So as you can see, at this most recent weakest drop, the chart made a lower low.
+[  143.17s ->   146.29s] But if we take a look at the RSI, it just made a higher high.
+[  146.29s ->   147.29s] What do you call this?
+[  147.29s ->   148.29s] Divergence.
+[  148.29s ->   152.07s] It's a really great sign that the chart is about to reverse and change direction.
+[  152.07s ->   153.53s] In this case, head upwards.
+[  153.53s ->   157.41s] Now as a quick side note, just because there's divergence doesn't guarantee the price will
+[  157.41s ->   158.41s] reverse.
+[  158.41s ->   160.41s] There are no guarantees in trading, none.
+[  160.41s ->   165.37s] But you can use divergence as a pretty nice sign the market is thinking about changing direction.
+[  165.37s ->   170.97s] So we have one, two, three lower lows that are shrinking in size, this is very important.
+[  170.97s ->   174.19s] And then at the last weakest low, we have divergence occurring.
+[  174.19s ->   177.29s] All great signs that the market is thinking about reversing.
+[  177.29s ->   180.41s] But how do we confirm it's actually going to start heading upwards?
+[  180.41s ->   182.53s] We need what's called a trend filter.
+[  182.53s ->   187.31s] One nice easy way I like to filter trends with this strategy is just an ordinary moving
+[  187.31s ->   188.31s] average.
+[  188.31s ->   191.97s] So go to the indicators tab, type in EMA for exponential moving average.
+[  191.97s ->   194.07s] Go to the settings and change the length to 50.
+[  194.07s ->   196.13s] I'm also going to make mine blue.
+[  196.13s ->   197.13s] So it's pretty simple.
+[  197.13s ->   199.25s] If price is below the 50 EMA, it's a downtrend.
+[  199.25s ->   201.37s] If it's above, it's an uptrend.
+[  201.37s ->   206.27s] One key rule I like to go by is I will never take a long in a downtrend, and I will never
+[  206.27s ->   208.17s] take a short in an uptrend.
+[  208.17s ->   210.61s] So we have one confirmation signal right here.
+[  210.61s ->   213.37s] But we should add some more just to really confirm the trend reversal.
+[  213.37s ->   220.73s] What I like to do for that is what's called pivot points.
+[  220.73s ->   224.61s] Go to the indicator section, type in pivot point, make sure you click the standard one
+[  224.61s ->   225.61s] right here.
+[  225.61s ->   227.31s] Once you add it on your chart, you'll get this.
+[  227.31s ->   232.28s] I know, I know, it's pretty ugly.
+[  232.28s ->   233.28s] Let's clean it up a bit.
+[  233.28s ->   236.52s] Go to the settings of the indicator, you're going to want to change the pivot time frame
+[  236.52s ->   241.50s] to daily, then uncheck all these boxes besides P. Then you'll be left with one pivot point
+[  241.50s ->   242.58s] line per day.
+[  242.58s ->   245.02s] It's kind of the same as the exponential moving average.
+[  245.02s ->   248.30s] If price is below the pivot point, don't even think about going long.
+[  248.30s ->   250.34s] If it's above, don't think about going short.
+[  250.34s ->   254.30s] Then finally for the icing on the cake, we have this level right here, where price used
+[  254.30s ->   257.42s] it as a support and is now using it as a resistance.
+[  257.42s ->   262.22s] So we now have three key factors in this area, the 50 exponential moving average, the pivot
+[  262.22s ->   263.98s] point, and this resistance level.
+[  263.98s ->   267.42s] And what's even better is all three of these points are pretty close together.
+[  267.42s ->   269.24s] The closer they are together, the better.
+[  269.24s ->   273.98s] So we can confirm the reversal is happening if price passes all three of these points.
+[  273.98s ->   278.62s] Once that happens, we can enter a trade confidently and take advantage of the reversal.
+[  278.62s ->   280.00s] Now watch what happens.
+[  280.00s ->   284.92s] Price ends up breaking the 50 EMA and the resistance level we drew earlier, but it hasn't quite
+[  284.92s ->   287.82s] broke the pivot point yet, so we wait and be patient.
+[  287.82s ->   292.10s] A few more candles go by and it actually uses the pivot point as a resistance.
+[  292.10s ->   296.04s] The next day comes and since we're using daily pivots, a new pivot was made and it was
+[  296.04s ->   297.66s] made below the price.
+[  297.66s ->   302.24s] So price has now passed all three of our checkpoints, which gives us the confirmation that price
+[  302.24s ->   304.38s] is starting the trend upwards.
+[  304.38s ->   305.62s] So we enter a trade.
+[  305.62s ->   307.16s] I set my stop loss here.
+[  307.16s ->   311.04s] If you want to learn more about placing stop losses and how to choose where to put them,
+[  311.04s ->   314.66s] I'll leave a link in the description to a video I made about how to place better stop
+[  314.66s ->   315.66s] losses.
+[  315.66s ->   319.02s] Watch that after this if you need some more help choosing where to place your stop loss.
+[  319.02s ->   320.96s] So by this point we are in the trade.
+[  320.96s ->   324.78s] We have our stop loss placed and we watch to see what the market does next.
+[  324.78s ->   329.62s] Just as planned, price ends up trending upwards, then it retests the 50 EMA and the next pivot
+[  329.62s ->   330.62s] point.
+[  330.62s ->   334.62s] Now this is a very key area, if price would break downwards through these levels, we would
+[  334.62s ->   338.20s] exit our position as that means the trend is now in a downtrend.
+[  338.20s ->   342.62s] But as long as the pivot point and EMA are holding, and as long as the price is above these
+[  342.62s ->   347.34s] points, we hold.
+[  347.34s ->   348.56s] But let's see what it does.
+[  348.56s ->   352.96s] It then ends up bouncing off these points and makes a huge upwards movement, which is great
+[  352.96s ->   354.84s] for us because that means more profit.
+[  354.84s ->   359.96s] So at this point you can take some profit off the table and sell 25 or 50% of your shares,
+[  359.96s ->   361.40s] or keep holding your position.
+[  361.40s ->   364.42s] It really depends on your risk tolerance and what type of trader you are.
+[  364.42s ->   365.76s] But then look what happens.
+[  365.76s ->   367.30s] It starts getting a little weaker.
+[  367.30s ->   368.30s] How can we tell?
+[  368.30s ->   371.16s] Well, it's making lower highs, which is never a good sign.
+[  371.16s ->   374.52s] On top of that, the price is now below the 50 EMA.
+[  374.52s ->   378.38s] And it's tested the pivot point twice now, which is usually not a good signal.
+[  378.38s ->   381.08s] Then price starts consolidating and moving sideways.
+[  381.08s ->   384.52s] So at this point you could start thinking about exiting the trade, since it's giving
+[  384.52s ->   387.70s] a lot of signs of weakness and it's starting to move sideways.
+[  387.70s ->   391.64s] But if you're one of those biker dude risky traders, there's still a slight glimmer of
+[  391.64s ->   394.22s] hope though, as price is still above the pivot point.
+[  394.22s ->   398.44s] We then watch what the chart does next, and the next day comes around and a new pivot point
+[  398.44s ->   401.06s] is made, and it was made above the price.
+[  401.06s ->   403.08s] We are suddenly below the pivot.
+[  403.08s ->   413.18s] So now that the pivot is above the price, the situation has changed completely.
+[  413.18s ->   416.64s] All of these are signs that the market is about to head downwards.
+[  416.64s ->   421.08s] Then just as an extra tip the market is slowing down, the price tests the pivot point and gets
+[  421.08s ->   422.08s] rejected.
+[  422.08s ->   426.02s] So by now, we are definitely out of the trade, and look what happens, the market falls.
+[  426.02s ->   428.72s] But as you can see, we got a really nice profit.
+[  428.72s ->   432.26s] And what's even better is that we really mitigated our risk, with all the confirmed
+[  432.26s ->   435.82s] signals, and in general, entered a very confirmed trade.
+[  435.82s ->   440.50s] You can get a lot more advanced with this trading strategy by adding volume, chart patterns,
+[  440.50s ->   444.38s] level 2 data, other indicators, and so many other trading tactics.
+[  444.38s ->   449.46s] I actually posted this trading strategy in my discord first before making a video on it,
+[  449.46s ->   454.16s] so if you want to see other trading strategies, my backtest results, or even just talk to other
+[  454.16s ->   457.66s] like minded traders, you should join and come say what's up, I'll leave a link
+[  457.66s ->   467.42s] in my description.

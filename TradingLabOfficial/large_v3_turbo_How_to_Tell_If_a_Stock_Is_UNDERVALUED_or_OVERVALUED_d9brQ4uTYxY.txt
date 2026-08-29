@@ -1,0 +1,161 @@
+[    0.20s ->     4.76s] So I'm sure you've all heard the popular trading saying, buy low, sell high.
+[    4.76s ->     8.88s] But how do you know if a specific stock is at a low point or a high point?
+[    8.88s ->    10.16s] We've all been there.
+[   10.16s ->    13.76s] You see a stock, you think it's at its bottom, so you buy.
+[   13.76s ->    19.56s] But then right after you buy, it keeps falling and falling, and it ends up you didn't buy
+[   19.56s ->    21.76s] at the bottom at all, you bought the middle.
+[   21.76s ->    27.36s] This little mistake can cost you thousands of dollars, and it probably already has lost
+[   27.36s ->    28.36s] you money.
+[   28.36s ->    33.18s] What if there was a secret stock rating system, where you can just simply look at a company,
+[   33.18s ->    38.04s] see a rating, and instantly know if that specific company is over or undervalued.
+[   38.04s ->    41.82s] Well, in this video, I'm going to tell you exactly how to do that.
+[   41.82s ->    45.50s] So you're only investing in companies that are at a good price, and you're getting the
+[   45.50s ->    47.14s] best bang for your buck.
+[   47.14s ->    48.98s] Let's jump straight into it.
+[   48.98s ->    53.48s] Whenever you type a certain ticker symbol in on Google, like Apple for instance, it's
+[   53.48s ->    56.58s] going to give you a bunch of key metrics for that ticker symbol.
+[   56.58s ->    60.00s] Like the open, the high, the low, and the dividend yield.
+[   60.00s ->    64.14s] But what we're going to be specifically looking at is the PE ratio.
+[   64.14s ->    67.26s] The PE ratio stands for the price to earnings ratio.
+[   67.26s ->    72.40s] It's heavily used by investors and analysts because of the great value it can present.
+[   72.40s ->    77.76s] It's usually used in most cases to see if a company is overvalued or undervalued.
+[   77.76s ->    82.34s] You can get this number by taking the price of the stock and dividing it by its earnings.
+[   82.34s ->    85.26s] Or just by looking it up, which is what I normally do.
+[   85.26s ->    89.42s] Generally, the higher the PE ratio, the more overvalued the company is.
+[   89.42s ->    94.90s] So a PE ratio of 15 would mean that the current market value of the company is equal to 15
+[   94.90s ->    96.64s] times its annual earnings.
+[   96.64s ->    97.68s] Think of it like this.
+[   97.68s ->   103.18s] If you were hypothetically to buy 100% of a company shares with a PE ratio of 15, it would
+[  103.18s ->   108.78s] take 15 years for you to earn back your initial investment through the company's ongoing profits.
+[  108.78s ->   112.82s] That's why usually you want to look for a lower PE ratio because it hypothetically would
+[  112.82s ->   115.58s] take you less time for you to make your money back.
+[  115.58s ->   119.44s] So I'm sure most of you are scrolling through hundreds of stocks right now trying to find
+[  119.44s ->   124.92s] the lowest PE ratio possible so you can make millions of dollars on undervalued stocks.
+[  124.92s ->   125.92s] Right?
+[  125.92s ->   127.74s] If only it were that easy.
+[  127.74s ->   131.22s] Just like all financial metrics, there is always a downside.
+[  131.22s ->   134.06s] It's not as simple as just finding the lowest PE ratio.
+[  134.06s ->   138.84s] The original PE ratio is known as the trailing price to earnings ratio.
+[  138.84s ->   141.30s] This is because it uses numbers from the past.
+[  141.30s ->   145.58s] This can be a problem because some would argue that the stock market is not only built on
+[  145.58s ->   150.46s] the past but also the future.
+[  150.46s ->   154.14s] Just because a company did good in the past doesn't necessarily mean it will do good in
+[  154.14s ->   155.14s] the future.
+[  155.14s ->   159.04s] This can be a problem for the trailing PE ratio because it doesn't take a lot of things
+[  159.04s ->   160.16s] into account.
+[  160.16s ->   163.44s] Like what if the company just hired a new amazing CEO?
+[  163.44s ->   166.72s] Or what if they just released a new spectacular product?
+[  166.72s ->   168.82s] Or what if they found a cure to cancer?
+[  168.82s ->   171.98s] All of this amazing news would make the stock skyrocket.
+[  171.98s ->   176.31s] But the PE ratio wouldn't be affected at all.
+[  176.31s ->   177.85s] At least at this very moment.
+[  177.85s ->   182.53s] Because instead of looking at the present and the future, it's just looking at the past.
+[  182.53s ->   185.45s] That's when the forward PE ratio was invented.
+[  185.45s ->   190.57s] Unlike the trailing PE ratio, the forward PE ratio looks at projected earnings.
+[  190.57s ->   193.81s] So instead of looking at the past, we're looking at the future.
+[  193.81s ->   197.53s] But of course there's an absolute clear problem with this.
+[  197.53s ->   199.51s] What if the estimated earnings are wrong?
+[  199.51s ->   203.69s] What if the company purposely underestimated earnings in order to beat them easier?
+[  203.69s ->   206.85s] Or maybe analysts just simply got the projected numbers wrong?
+[  206.85s ->   210.47s] There's a lot that can go wrong with the forward PE ratio.
+[  210.47s ->   213.19s] And that's why a lot of investors like the trailing one.
+[  213.19s ->   217.03s] Because it uses actual numbers rather than just guesstimates.
+[  217.03s ->   221.79s] So I've listed some of the problems with both the trailing and the forward PE ratio.
+[  221.79s ->   225.17s] But what if I told you a company had a PE ratio of 10?
+[  225.17s ->   227.27s] How can you tell if that is good or not?
+[  227.27s ->   232.61s] One of the ways is to compare a company's PE ratio with its historical PE ratios.
+[  232.61s ->   235.79s] That way you can see how the number is changing over time.
+[  235.79s ->   241.19s] This will kind of give us an example if investors are valuing the company higher or lower than
+[  241.19s ->   242.19s] normal.
+[  242.19s ->   245.83s] Let's say a company's earnings are down, but the price is going up.
+[  245.83s ->   250.71s] This means the gap between the two, which is the PE ratio, is getting bigger, meaning
+[  250.71s ->   253.97s] people are spending more money on less profit.
+[  253.97s ->   255.71s] Same goes the other way around.
+[  255.71s ->   259.95s] If the company's earnings are increasing, but the price is falling, that means the gap
+[  259.95s ->   263.67s] is getting smaller, which means the PE ratio is getting smaller.
+[  263.67s ->   268.19s] Meaning investors don't value the profitability of the firm as much as they used to.
+[  268.19s ->   273.73s] What a lot of investors like to do is compare the current PE ratio with the long term average.
+[  273.73s ->   277.53s] So here we have Apple's PE ratio from the past 5 years.
+[  277.53s ->   285.03s] We can see the lowest PE ratio from these 5 years was 11.69, and the highest was 41.80,
+[  285.03s ->   288.25s] giving us an average of 22.47.
+[  288.25s ->   294.95s] But as we can see, the PE ratio right now is 30.80, being over the average, which may be
+[  294.95s ->   297.65s] indicating the stock is overvalued right now.
+[  297.65s ->   303.25s] Here Intel's PE ratio is below the average, which may indicate a good time to buy because
+[  303.25s ->   308.13s] of mean reversion, meaning the PE ratio is expected to head back to its average.
+[  308.13s ->   313.49s] A lot of investors believe that a lot of short term volatility to the PE ratio, whether that's
+[  313.49s ->   318.61s] a bad press release or something bad happening in the short term, will merely just be a leaf
+[  318.61s ->   323.09s] in the wind and not have a huge effect in the grand scheme of things, resulting in heading
+[  323.09s ->   325.03s] back to its normal average.
+[  325.03s ->   326.03s] Just like a stock chart.
+[  326.03s ->   329.89s] So yeah, there was a big dip and it may seem like a big deal at the time, but if we go
+[  329.89s ->   334.71s] in the future and zoom out, it wasn't a big deal at all, and the stock continued to head
+[  334.71s ->   336.33s] back to where it was before.
+[  336.33s ->   341.09s] So that's why a lot of investors believe if a company's current PE ratio is lower than
+[  341.09s ->   345.59s] the long term average, it might be a good time to buy because the stock is likely to head
+[  345.59s ->   347.59s] back to its long term average.
+[  347.59s ->   352.11s] Alright cool, so I can just look for companies that have a super low PE ratio compared to
+[  352.11s ->   356.59s] their long term average, and I can make a ton of money when it returns back, right?
+[  356.59s ->   359.27s] Well again, it's still not that simple.
+[  359.27s ->   363.65s] So yeah, it's great to know how a company's stock price stands compared to its past, but
+[  363.65s ->   367.73s] you should also be comparing that stock to others in the same industry.
+[  367.73s ->   368.65s] Let me show you why.
+[  368.65s ->   373.73s] So say if we have stock A trading at $30, and stock B trading at $20.
+[  373.73s ->   375.69s] So which company is more expensive?
+[  375.69s ->   380.73s] A new investor might assume stock B is the better value because it's the cheapest.
+[  380.73s ->   382.59s] But this isn't necessarily true.
+[  382.59s ->   387.77s] The PE ratio can help us with this from a valuation standpoint, to tell us which can give you
+[  387.77s ->   389.47s] a better bang for your buck.
+[  389.47s ->   393.97s] So let's say these two companies are both in the banana industry, I don't know.
+[  393.97s ->   398.17s] And the average banana company has a PE ratio of 15.
+[  398.17s ->   404.17s] Let's say company A's PE ratio is 15, and company B has a PE ratio of 30.
+[  404.17s ->   409.13s] Company A is actually in a way a lot cheaper, even though its stock price is higher.
+[  409.13s ->   413.77s] Because it has a lower PE ratio, basically saying we're paying less for every dollar of
+[  413.77s ->   415.25s] its current earnings.
+[  415.25s ->   420.27s] This is why it's usually good to compare a company's PE ratio with the sector's average.
+[  420.27s ->   423.27s] But yet again, it's not this simple.
+[  423.27s ->   428.07s] Just because a company has a higher PE ratio than its sector's average, doesn't necessarily
+[  428.07s ->   429.07s] mean it's a bad buy.
+[  429.07s ->   435.07s] So, banana company B has a PE ratio of 30, and the average banana company has a PE ratio
+[  435.07s ->   436.07s] of 15.
+[  436.07s ->   440.95s] It can still be justified why company B's ratio is so much higher.
+[  440.95s ->   445.93s] They could be earning their earnings at a much faster pace, resulting in a higher PE ratio.
+[  445.93s ->   450.99s] This is why high growth companies like those in the tech sector have a higher PE ratio compared
+[  450.99s ->   453.99s] to stocks in slower moving areas, like utilities.
+[  453.99s ->   459.79s] So, just because a company has a PE ratio lower than the average in its sector, doesn't necessarily
+[  459.79s ->   461.23s] make it a good buy either.
+[  461.23s ->   465.99s] If a company does have good fundamentals, it doesn't matter how low the PE ratio is.
+[  465.99s ->   469.79s] That's why you shouldn't just solely be looking for low PE ratios.
+[  469.79s ->   473.99s] Because there could be a reason why it's quote on quote undervalued.
+[  473.99s ->   474.99s] Think of it like this.
+[  474.99s ->   477.35s] Let's go back to both of our banana sellers.
+[  477.35s ->   482.35s] One seller is selling their bananas for $5 per banana, which is kind of like saying it
+[  482.35s ->   484.07s] has a 5 PE ratio.
+[  484.07s ->   489.51s] Then we have another seller selling bananas for $1 per banana, saying it has a 1 PE ratio.
+[  489.51s ->   494.61s] So we decided to buy the cheaper one, but as we all know, cheaper isn't always better.
+[  494.61s ->   499.41s] So when we get home, sure the outside of the banana looks good and we got it a lot cheaper,
+[  499.41s ->   503.85s] but when we open it up, it's all black on the inside and not very appetizing.
+[  503.85s ->   506.83s] So just because something's cheap, doesn't mean you should buy it.
+[  506.83s ->   511.07s] A low PE ratio could be justified by it being a bad company.
+[  511.07s ->   514.79s] That's why it's not always a good idea just to purely look for companies with low
+[  514.79s ->   516.21s] PE ratios.
+[  516.21s ->   519.25s] Because more often than not, you're going to get some bad bananas.
+[  519.25s ->   524.19s] So in the making of this video, it's almost as if I'm saying PE ratios are useless.
+[  524.19s ->   525.87s] It's not useless by any means.
+[  525.87s ->   530.75s] It can be a great way to identify quickly if a stock is over or undervalued, but it should
+[  530.75s ->   532.67s] never be used by itself.
+[  532.67s ->   536.01s] They're almost kind of like a rough gauge of a company at best.
+[  536.01s ->   540.89s] So if you truly want to see if a company is over or undervalued, a good approach is finding
+[  540.89s ->   543.01s] companies with good fundamentals.
+[  543.01s ->   547.95s] So finding bananas that are solid yellow, tasty, big, and grown to perfection.
+[  547.95s ->   552.51s] Then look between those solid companies and look at the PE ratios to see if you can find
+[  552.51s ->   555.33s] a good deal between those solid companies.
+[  555.33s ->   558.47s] Because as said before, cheaper is not always better.
+[  558.47s ->   561.01s] You should be looking for quality, then discounts.
+[  561.01s ->   564.89s] One of my favorite quotes about this style of trading is by Warren Buffet.
+[  564.89s ->   570.23s] It's far better to buy a wonderful company at a fair price than a fair company at a wonderful
+[  570.23s ->   571.23s] price.
+[  571.23s ->   573.57s] And that holds so damn true.
+[  573.57s ->   577.13s] This is just one of the mistakes I see traders commonly make.
+[  577.13s ->   582.01s] If you want to see the 6 biggest trading mistakes that keep you losing money, check out this video.
+[  582.01s ->   586.01s] Because it's pretty eye-opening and you're probably making some of these mistakes.
+[  586.01s ->   589.01s] Thanks for watching and I'll see you guys next time.

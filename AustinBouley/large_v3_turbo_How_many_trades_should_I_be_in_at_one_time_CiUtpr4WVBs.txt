@@ -1,0 +1,125 @@
+[    0.00s ->     3.54s] In this video, I'm going to talk about how many trades should you be in at one time.
+[    3.92s ->     8.42s] Like, should you be in six trades? Should you be in eight trades? Should you be in two trades?
+[    8.52s ->    11.32s] Should the trades be diversified? Should they all be in the same stock?
+[   11.46s ->    15.18s] What, how many different positions should you have and what are the specifics?
+[   15.30s ->    19.38s] So I'm going to explain in depth exactly what I do, give you some tips,
+[   19.44s ->    22.14s] and then help you understand what you should be doing for yourself.
+[   22.22s ->    23.18s] So let's dive into it.
+[   23.44s ->    26.86s] This question came up because in my 10% credit spreads trading group,
+[   26.94s ->    29.36s] somebody asked this question and I kind of had to go into it
+[   29.36s ->    31.02s] because I realized it is important.
+[   31.22s ->    34.14s] So let's talk about what's going on here with myself.
+[   34.34s ->    37.82s] So as always, if you haven't watched any other of my YouTube videos,
+[   38.12s ->    43.30s] then you don't know my trading sizing allocation, how much I put in for each trade.
+[   43.62s ->    46.20s] Now again, if you want to know my exact credit spreads trading system,
+[   46.28s ->    48.74s] I give it to you for free link down below in the description,
+[   49.26s ->    51.96s] but I'll show you exact, or I'll just tell you what it says here.
+[   52.38s ->    57.50s] One, put no more than five to 10% of your account into any one trade.
+[   57.50s ->    60.22s] How do we determine the five to 10% account?
+[   60.32s ->    62.34s] We determine it based off your max loss.
+[   62.48s ->    70.46s] So if you have a $10,000 account, so $10,000, okay, how much of a max loss can you have?
+[   70.74s ->    73.26s] So that means that let's just say you're going safe,
+[   73.34s ->    76.58s] so you want a 5% allocation to each trade.
+[   76.58s ->    82.56s] So 5% max loss, so we're going to do 5% of 10,000 is going to give us $500.
+[   84.16s ->    86.06s] Just like that, $500, boom.
+[   86.48s ->    90.84s] And so again, we can use 500 as our allocation for the max loss.
+[   91.12s ->    93.86s] So let's say we're trading a $1 wide contract.
+[   94.30s ->    97.50s] How many spreads do we need if we can only risk $500?
+[   97.50s ->   103.56s] Well, the general risk on a $1 wide credit spread, depending on how much credit you collect,
+[  103.64s ->   105.18s] I'm just going to say is roughly $80.
+[  105.82s ->   107.60s] Again, that's if you collect 20 cents.
+[  108.10s ->   114.22s] But again, just for easy math, let's say the risk on a $1 wide is $100, okay?
+[  114.40s ->   117.30s] Let's not factor in the credit just for easy rounding numbers.
+[  117.48s ->   124.88s] That means you can enter in five spreads with your max risk if you're trading a $1 wide.
+[  124.88s ->   131.00s] A $2 wide now, you can do half that, 2.5, but you know we can't do half a spread,
+[  131.08s ->   132.06s] so we can do two spreads.
+[  132.48s ->   136.10s] So this is how we define our sizing per trade, okay?
+[  136.26s ->   138.96s] This is how we define a per trade sizing.
+[  139.08s ->   139.72s] That's terrible.
+[  139.90s ->   140.36s] Can I go back?
+[  140.44s ->   141.22s] Can I want to undo that?
+[  141.88s ->   142.26s] Okay, cool.
+[  142.56s ->   147.10s] Yeah, this is how we define our max size per trade, okay?
+[  147.46s ->   151.02s] Using a 5% to 10% max loss rule on our account.
+[  151.02s ->   155.70s] Now, again, if we're trading strategies that I teach you on this YouTube channel for free
+[  155.70s ->   159.86s] that have a 90% win rate, then this is perfectly doable with this win rate.
+[  160.02s ->   163.10s] Now, how many trades should you be in, okay?
+[  163.36s ->   166.58s] Well, there's two different ideas here, and I'm going to split this in half.
+[  166.86s ->   169.52s] We have correlated assets, which I'm going to say core,
+[  169.88s ->   171.72s] and then we have uncorrelated assets.
+[  171.84s ->   173.38s] So I'm going to go uncor, okay?
+[  173.76s ->   176.24s] So what is correlated and what is uncorrelated?
+[  176.24s ->   181.10s] Well, correlated means how likely two assets are to move the same.
+[  181.26s ->   183.46s] This is a basic understanding of it.
+[  183.80s ->   190.60s] So for instance, the S&P 500 index is going to move roughly the same as QQQ,
+[  190.74s ->   193.32s] which is the tech index or NASDAQ, basically.
+[  193.74s ->   194.12s] Why?
+[  194.40s ->   197.24s] Well, because SPY has a lot of technology stocks in it.
+[  197.46s ->   198.90s] So these tend to move the same.
+[  199.00s ->   204.02s] So these would have probably roughly a 90.95% correlation.
+[  204.02s ->   208.84s] A perfect correlation is one, which means that they would move exactly the same.
+[  209.20s ->   213.20s] A negative one correlation means that they would move the exact opposite,
+[  213.42s ->   216.20s] and zero means that they're not correlated at all.
+[  216.58s ->   223.44s] So if we have a stock or for trading stocks that are semi-correlated or roughly correlated,
+[  223.82s ->   226.10s] then we don't want to be in as many trades.
+[  226.40s ->   231.10s] So for instance, I trade SPY and QQQ on my account all the time.
+[  231.10s ->   236.54s] I only have roughly four to six trades on at a single time.
+[  236.98s ->   237.28s] Why?
+[  237.66s ->   239.22s] Well, because I could do more.
+[  239.54s ->   243.64s] So let's say if I'm only using 5% of my account per trade,
+[  243.78s ->   253.14s] that means I'm only risking total on my account 20% to five times 30% of my account in these trades.
+[  253.56s ->   258.58s] So I have a lot of free cash left if I only have four to six trades open.
+[  258.58s ->   259.60s] Well, guess what?
+[  259.66s ->   260.62s] These are correlated.
+[  261.04s ->   262.20s] These are highly correlated.
+[  262.34s ->   265.90s] So if QQQ takes a drop and I lose money on my QQQ trades,
+[  266.14s ->   269.36s] I'm very likely to also lose money on my SPY trades.
+[  269.66s ->   275.42s] So for safety reasons, I keep it to four to six trades if I'm trading correlated assets.
+[  275.88s ->   281.94s] So my correlated assets trades total combined should be anywhere between four to six for me.
+[  282.30s ->   283.44s] Now, why does this work out?
+[  283.44s ->   287.40s] Well, like I mentioned in other videos, I like to take two trades every single week.
+[  287.70s ->   290.28s] And again, my trades go out between two to three weeks.
+[  290.42s ->   295.34s] So that means I can have anywhere from four to six trades on at a time.
+[  295.42s ->   296.28s] I hope that makes sense.
+[  296.40s ->   297.68s] But that's just a side note.
+[  298.06s ->   300.82s] Anyways, now let's get uncorrelated assets.
+[  301.30s ->   306.86s] So for instance, SPY and TLT are not highly correlated.
+[  307.14s ->   310.66s] They probably have a roughly 20% correlation.
+[  310.66s ->   312.70s] This is a very low correlation.
+[  313.22s ->   314.68s] Now, again, this isn't the exact numbers.
+[  314.76s ->   316.76s] I don't know the exact numbers, but you can Google them.
+[  316.84s ->   323.22s] But it is quite low between these two, which means that if I have positions on SPY and a position on TLT,
+[  323.58s ->   326.60s] they're highly unlikely to both lose at the same time.
+[  326.92s ->   329.12s] If TLT loses, SPY can still win.
+[  329.22s ->   331.10s] If SPY loses, TLT can still win.
+[  331.42s ->   336.70s] If that's the case, then I have no problem putting on, let's say, four positions here
+[  336.70s ->   338.82s] and then another four positions here.
+[  338.82s ->   342.30s] So now I have eight positions, which is more than my normal account size.
+[  342.58s ->   347.02s] But because they're uncorrelated assets, I have no problem with that.
+[  347.26s ->   349.30s] However, let's use a more realistic example.
+[  349.66s ->   352.92s] I always have four to six trades on SPY and QQQ on.
+[  353.22s ->   354.84s] Okay, let's say it's coming up.
+[  354.92s ->   355.62s] I have more money.
+[  355.72s ->   357.14s] I want to get into a trade.
+[  357.40s ->   360.34s] Am I going to put on a position in SPY and the Qs?
+[  360.60s ->   362.08s] No, I'm not going to do that.
+[  362.28s ->   366.96s] I'm going to look to see if I can put on a position in TLT and GLD.
+[  366.96s ->   369.92s] Why? Because I kind of maxed out what I'm comfortable with here.
+[  370.18s ->   375.20s] And now I can look at two uncorrelated assets to kind of look into diversify.
+[  375.28s ->   378.08s] Maybe put on two trades here, one trade here.
+[  378.24s ->   382.50s] Now I have a bit of a diversified account and with my trades to look at.
+[  382.86s ->   386.66s] So long story short, how many trades should you be in at one time?
+[  386.94s ->   388.90s] For me, four to six is perfect.
+[  389.26s ->   390.70s] For you, it may be different.
+[  390.70s ->   399.44s] However, as you're looking at this and as you're understanding it, remember, what stocks do you trade best and are they correlated?
+[  399.62s ->   403.22s] If they are, don't size up too heavy in correlated stocks.
+[  403.32s ->   405.80s] It's just going to save you in the next little black swan event.
+[  406.20s ->   406.56s] All right, guys.
+[  406.62s ->   407.62s] I hope this video helps you.
+[  407.68s ->   412.30s] If you're trying to become a better credit spread trader, trying to understand how to make money as a credit spread trader,
+[  412.42s ->   413.54s] click the link down below.
+[  413.62s ->   415.30s] I've got my free trading handbook.
+[  415.62s ->   417.28s] And also smash that subscribe button.
+[  417.28s ->   420.94s] I come up with videos every single day to help you become a better credit spread trader.
+[  421.22s ->   421.74s] All right, guys.
+[  421.80s ->   423.40s] I will see you in the next video.

@@ -1,0 +1,186 @@
+[    0.21s ->     4.81s] Hello YouTube, it's Roman. I am back and today I want to talk about Brownian motion.
+[    5.37s ->    10.33s] Brownian motion is a fundamental concept of quantitative finance, of stochastic differential
+[   10.33s ->    17.75s] equations, stochastic calculus, and there's some key properties of it that make Brownian motion
+[   17.75s ->    24.37s] what it is. And what I wanted to do was accompany this introduction in terms of the three key
+[   24.37s ->    30.43s] properties of Brownian motion with a Jupyter notebook to better explain some of the results
+[   30.43s ->    35.01s] that we've seen in past videos and better explain integration with respect to Brownian motion as
+[   35.01s ->    43.15s] well. So for starters, let's take a look at these properties of Brownian motion. So consider a
+[   43.15s ->    50.27s] starting point or t is an element of some time interval t0 to cap t. Now when I say this time
+[   50.27s ->    54.47s] interval, if you want to make it more concrete and you want to make it real, I know a lot of
+[   54.47s ->    60.03s] a lot of quantitative finance, a lot of financial mathematics, makes things general. And that's
+[   60.03s ->    65.41s] kind of very nice and good, but I want to make sure that we have concrete examples to illustrate what
+[   65.41s ->    71.89s] we're talking about. So think of this time interval as five days, okay, on an x-axis. So it's two
+[   71.89s ->    79.53s] dimensional, we have an x-axis, you know, time zero is zero, it's today, then one, two, three, four,
+[   79.53s ->    84.09s] five, five, think of a discrete step in time as one day. And we have this closed interval
+[   84.09s ->    95.53s] of time on the x-axis. Now, at each step in time, so each day, we are going to match that day with a
+[   95.53s ->   102.37s] realization of Brownian motion, meaning the y-axis is going to be a process, it's going to be this
+[  102.37s ->   107.83s] Brownian motion. So we'll have a point here on day zero, move to the next day, that point may be
+[  107.83s ->   113.07s] here, move to the next day, that point may be here. And over the course of five days, we're going to
+[  113.07s ->   120.57s] have time on the x-axis and the five points in a two dimensional space. Okay, so what's the first
+[  120.57s ->   127.19s] property of Brownian motion? Well, the first property is that w, meaning the process Brownian
+[  127.19s ->   134.31s] motion at time zero, so we could think of that as zero, which is today, is equivalent to zero. More
+[  134.31s ->   141.33s] formally, that the probability of the Brownian motion at time zero is equivalent to zero is equal
+[  141.33s ->   148.19s] to one. There is a difference in saying that the probability of something is equal to one and
+[  148.19s ->   152.03s] certainty in an outcome, that those are two different things, very similar to a limit in
+[  152.03s ->   159.79s] calculus, how the limit at infinity is, say it converges, it would be perhaps to a value such
+[  159.79s ->   167.11s] as one. It's similar a notion. It's not one, but it's the limit as it converges, or the limit at
+[  167.11s ->   173.15s] infinity it converges. So it's a similar notion. Try not to get too hung up on it, but we have this
+[  173.15s ->   181.94s] first property that the Brownian motion at T zero is equal to zero. Okay, great. So the next property,
+[  181.94s ->   186.46s] property number two, so this is property number one right here, and then property number two
+[  186.46s ->   190.54s] is going to be this. It's going to be that Brownian motion is almost surely continuous,
+[  190.88s ->   196.20s] or that the probability limit as n approaches infinity of the process, so Brownian motion,
+[  196.62s ->   204.90s] is equal to the Brownian motion, which is equal to one. So again, this is built around the notion of
+[  204.90s ->   210.96s] the probability that something is equal to one is not the same as certainty in an outcome.
+[  210.96s ->   219.68s] Again, try not to get super caught up on the mathematics of this definition of these properties.
+[  220.14s ->   224.30s] You can just think of it as almost surely continuous. And if you really want to dive
+[  224.30s ->   229.90s] into the nitty gritty, then you can formalize the definition of what almost surely continuous is
+[  229.90s ->   236.84s] by going on math stack exchange or something. But lastly, that the Brownian motion has independent
+[  236.84s ->   241.34s] and stationary increments. Now, this is a very important property. What are we saying when we
+[  241.34s ->   244.68s] say that the Brownian motion has independent and stationary increments? Well, we're saying
+[  244.68s ->   252.18s] that the Brownian motion today, so we're at time zero, we have time on the x-axis, time zero,
+[  252.56s ->   259.10s] Brownian motion today, and the Brownian motion tomorrow are going to be completely independent
+[  259.10s ->   268.40s] of one another. And more formally, we can realize this difference in a distribution. And it's a normal
+[  268.40s ->   273.74s] distribution with a variance of the step in time. So you'll notice if we take the difference of
+[  273.74s ->   280.10s] Brownian motion at t plus one and t, and we take that difference, it's going to be distributed normally
+[  280.10s ->   287.54s] with a variance of t plus one minus t. So it's going to be that time step. It's going to be the
+[  287.54s ->   292.60s] step in time is the variance. And if you watched any of my previous videos, you'll notice that we
+[  292.60s ->   298.54s] generate the Brownian motion, the increment, we generate it by a normal distribution with the
+[  298.54s ->   303.52s] standard deviation of the square root of the step in time. So this is exactly what we're saying.
+[  303.58s ->   309.50s] We're actually using this property of Brownian motion to simulate that path, simulate that process
+[  309.50s ->   314.08s] as we've done in the arithmetic Brownian motion video and the geometric Brownian motion video.
+[  314.38s ->   317.60s] So this is where that's coming from. This is coming from the property of Brownian motion,
+[  317.70s ->   323.58s] the independent stationary increments, the third property here. Now, these properties are formally
+[  323.58s ->   328.76s] outlined in this book that I have referenced before mathematical modeling and computation and
+[  328.76s ->   335.96s] finance. It's a tremendous book. So I want to ensure that I'm making the reference to this book
+[  335.96s ->   343.36s] for these properties. And if you're interested in this sort of thing in the quant finance space,
+[  343.60s ->   347.56s] phenomenal book, phenomenal book, definitely check it out. Not the first time that I've,
+[  347.64s ->   351.54s] I've referred to it for my own sake or for these videos. So definitely check it out.
+[  352.44s ->   357.48s] Now that we've built the mathematical foundation of Brownian motion, what I want to do is I want to
+[  357.48s ->   364.56s] talk about it in Python to make it, you know, more intuitive, to make it very easy to interpret.
+[  364.82s ->   373.76s] So for starters, for visualization, I'm going to import matplotlib, matplot as P-I-T, import numpy as MP.
+[  374.00s ->   379.18s] So we're going to use matplotlib for visualization and numpy for generation of the Brownian motion.
+[  379.18s ->   388.35s] So let's start by generating Brownian motion. Okay. So to generate Brownian motions, let's create
+[  388.35s ->   393.83s] that time interval that we referred to. So we have zero, one, two, three, four, five. So these are
+[  393.83s ->   399.53s] just five separate days. Zero is now, one is tomorrow, two is two days from now. You get the
+[  399.53s ->   404.47s] picture. So that's going to be our x-axis. Okay. We're operating in two dimensions where the y-axis
+[  404.47s ->   409.45s] represents the outcome of our stochastic process of our process Brownian motion. So
+[  409.45s ->   415.78s] how can we create Brownian motions in Python? Well, it's actually very easy. So w is going to be
+[  415.78s ->   423.40s] equal to our Brownian motions across this five-day period. And what we have here is w of t zero,
+[  423.72s ->   431.30s] w of zero today is equal to zero. So we're going to start at zero. And then at every step,
+[  431.62s ->   437.70s] we're going to realize a new Brownian motion. We're going to essentially draw from a standard
+[  437.70s ->   444.22s] normal distribution. And we are going to say that is our realization of Brownian motion for that day.
+[  444.22s ->   452.70s] So to do that, we can do for I in range of the length of time minus one, because we already added
+[  452.70s ->   465.51s] zero to the list. We are going to append MP dot random dot normal zero one. So if we do this,
+[  465.51s ->   474.94s] and then we do PLT dot plot T and W, we'll actually get Brownian motion. So this is going to be Brownian
+[  474.94s ->   483.74s] motion. It's a realization of Brownian motion over the five-day interval. And we can simulate this as
+[  483.74s ->   492.21s] many times as we'd like to get different values. But we have a couple of key properties that are being
+[  492.21s ->   498.83s] displayed here. And for one, it's that the increments are independent and stationary.
+[  499.83s ->   506.85s] And to better visualize this, what we can kind of consider is the distribution of outcomes on each
+[  506.85s ->   514.19s] day. So what I'm saying is this value at zero is always going to be zero, right? W of zero
+[  514.19s ->   520.73s] is equal to zero. That's a property of Brownian motion. But at one, we're drawing from a standard
+[  520.73s ->   525.59s] normal distribution. At two, we're drawing from a standard normal distribution. At three, at four,
+[  525.67s ->   531.11s] at five, we're drawing from a standard normal distribution. So what we should see is if we
+[  531.11s ->   537.71s] drew a thousand points, the points should look like they're distributed standard normally. So
+[  537.71s ->   544.71s] if you drew a vertical bell curve, it would fit the distribution of Brownian motions very, very well.
+[  544.89s ->   549.82s] So I got a picture of the standard normal distribution here. You can see that at the tails,
+[  549.82s ->   554.90s] we have negative three and three, it starts to tail off at around three and four, as you could see
+[  554.90s ->   561.60s] here, for a standard normal distribution. So let's go ahead and try to actually realize this.
+[  562.12s ->   567.96s] So what we can do is we can say, we're going to draw how many paths of Brownian motions. So
+[  567.96s ->   573.20s] essentially, how many realizations across this five day interval per day do we want to have? So
+[  573.20s ->   580.03s] let's just say we're going to do a thousand. And we'll say for j in range n, so we'll have a thousand.
+[  580.39s ->   588.47s] We are going to have a paths list to store all of the paths. We're going to reset the Brownian motions
+[  588.47s ->   600.24s] array. And we're going to say for i in range less than, so for i in range, the length of the time minus
+[  600.24s ->   606.70s] one, because we have this already, we're going to append a realization. And then we can just append
+[  606.70s ->   614.29s] that to the paths. And then we're going to reset, we're going to do that, we're going to do that.
+[  614.35s ->   620.99s] Okay, cool. So now we have a set of realizations. So path zero, this is one outcome. So actually what
+[  620.99s ->   627.57s] we can do is we can just plot each, each path, this path zero. So for example, this is one outcome
+[  627.57s ->   635.44s] of Brownian motion across the five day interval. This is another outcome. This is another outcome.
+[  636.14s ->   639.90s] And so on and so forth until you have your, you know, your thousandth outcome.
+[  640.72s ->   646.76s] Okay, cool. So, so we have a collection of outcomes of this Brownian motion. So how can we visualize
+[  646.76s ->   654.08s] the standard normal distribution at each point in time? Well, it's very easy. We can just create a
+[  654.08s ->   660.22s] loop to plot each point. And then hopefully the, the limits of the y-axis will be three and negative
+[  660.22s ->   666.50s] three. That's, you know, exactly what we would hope for, you know, unless we're not generating the
+[  666.50s ->   673.66s] Brownian motions correctly. So let's give this a shot. So for path and paths, plt.scatter, we're going
+[  673.66s ->   681.61s] to create a scatter plot of the path, um, for all of the, uh, all of the points in that collection
+[  681.61s ->   687.99s] of points. And we should get, yep. Hey, check this out. This is pretty cool. So we can see that the,
+[  687.99s ->   692.35s] the density of points, so obviously at zero, we have zero just as the, the property of Brownian motion
+[  692.35s ->   697.75s] says, but at one, it's starting to look like a standard normal distribution. We go from three to
+[  697.75s ->   703.51s] negative three and the density of points, you can see, I'll zoom in. So you can see the density of
+[  703.51s ->   707.83s] points as heavily concentrated around the center, mean zero, just like a standard normal distribution.
+[  708.25s ->   714.25s] And towards the end, you start to get these, these outliers, just, just as you would in a standard
+[  714.25s ->   718.51s] normal distribution. So we can see that we're effectively generating the Brownian motions
+[  718.51s ->   726.70s] correctly. Okay. Well, that's pretty cool. But what I also want to talk about and address in this video
+[  726.70s ->   733.74s] is the integral from the analytical solution to geometric Brownian motion. So how do we integrate
+[  733.74s ->   739.24s] with respect to geometric Brownian motion? And what are we actually doing? Well, let's just start
+[  739.24s ->   745.86s] by looking at the math. So if we look at the math, right, we have, let's use some LaTeX, the integral
+[  745.86s ->   753.95s] from T zero to cap T. This is from the geometric Brownian motion video. So if you haven't seen this
+[  753.95s ->   758.27s] before, check it out. Otherwise, just follow along and see how we can solve an integral with respect
+[  758.27s ->   769.13s] to Brownian motion, DWT. Okay. So we have this integral with respect to Brownian motion over time.
+[  770.12s ->   776.14s] Well, we, we solved this integral in the, in the video for geometric Brownian motion, the analytical
+[  776.14s ->   786.82s] solution for the stochastic differential equation. So we know that it's going to be sigma W cap T less
+[  786.82s ->   796.92s] W T zero, which is just equal to sigma W T because we know that W T zero is equal to W zero, which is
+[  796.92s ->   803.96s] just zero. Right. So, so we know, we know what this is, right? We, we, we solve for this. And I kind
+[  803.96s ->   810.40s] of just took this as a given in that video, which is why I wanted to make this on, on Brownian motion
+[  810.40s ->   815.14s] and talk about the implications of, of this integral here. So what are we doing when we,
+[  815.30s ->   821.05s] when we actually integrate, right? What are, what are we looking for? Well, we're, we're looking for
+[  821.05s ->   827.71s] the area under a curve in a sense, but we're also trying to account for the change, right? The,
+[  827.79s ->   834.23s] the cumulative change over time. That's really what the integral is. When we, when we take a derivative,
+[  834.81s ->   839.47s] we're looking at the change, right? And when we're, we're integrating, we're going backwards. So
+[  839.47s ->   848.04s] you can really think of it as, as trying to sum up the change over time, but we, we know,
+[  848.32s ->   858.00s] we know that each point is independent and stationary. So do we really need to consider
+[  858.00s ->   867.97s] every point to find the change over time? No, right. We really only need to consider
+[  867.97s ->   874.57s] the start and the end. Hence, when we're looking at this integral from T zero to cap T or zero,
+[  874.73s ->   881.09s] if you would prefer, we're really only considering day zero and day five to try to find the cumulative
+[  881.09s ->   888.67s] change. If this was PNL, right? Like trading PNL, it would be exactly the same because you don't really
+[  888.67s ->   898.57s] care what your PNL was yesterday. Your PNL is the, the accumulation of, of your, your portfolio up until
+[  898.57s ->   907.81s] now. So if you knew your, your, your PNL, you were net zero at say, you know, five days ago. So say we're
+[  907.81s ->   914.39s] here, we were net zero, but now we're up here. Then you would just take that difference to find the change
+[  914.39s ->   921.79s] over time, right? So if we look at this path, path 999, and we wanted to compute the integral with
+[  921.79s ->   928.13s] respect to Brownian motion from T zero to cap T, then all we need to do is look at the Brownian
+[  928.13s ->   935.63s] motion at time step five and subtract it from the Brownian motion at time step zero. Well, we know
+[  935.63s ->   941.99s] time step zero is going to be zero. So trivially, we know that the, the integral is just going to be
+[  941.99s ->   948.97s] Brownian motion at the terminal step. So if we were to try to compute this value, then we could,
+[  949.05s ->   958.66s] if we had one realization of a sample path, which we do. So if we were to look at this, right? This
+[  958.66s ->   969.58s] is, this is one realization of Brownian motion. So if we wanted to find this integral of this, this
+[  969.58s ->   977.58s] realization, then all we have to do is find the endpoint of the Brownian motion. So what we would
+[  977.58s ->   986.90s] do is simply say, okay, we have this path, path 9999, and we want the latest, the latest realization
+[  986.90s ->   995.20s] of Brownian motion is 0.73791. You get the, you get the picture. So that's this value right here on day
+[  995.20s ->  1003.30s] five. And if you notice, disregarding the rest of the points, we started at zero. So if we wanted to
+[ 1003.30s ->  1007.80s] find this integral over time, now you could disregard sigma, just consider sigma as a constant,
+[ 1007.94s ->  1012.86s] consider sigma as just one, right? In the context of geometric Brownian motion and a set of outcomes,
+[ 1012.94s ->  1020.74s] this changes, but consider we have one realization, okay? We can see very clearly that the cumulative
+[ 1020.74s ->  1026.08s] change in Brownian motion over time is just the latest innovation in Brownian motion. And that's
+[ 1026.08s ->  1030.12s] exactly what we see here, right? It doesn't matter what this one is. It doesn't matter what this one
+[ 1030.12s ->  1034.50s] is. It doesn't matter what this one is. They're independent of each other. They're completely
+[ 1034.50s ->  1039.58s] independent. They're stationary increments. That's the point of Brownian motion. When you look at a
+[ 1039.58s ->  1044.92s] geometric Brownian motion, when you look at an arithmetic Brownian motion, you know, this changes because
+[ 1044.92s ->  1050.86s] you have, they're not independent. They're not independent. You know, it's just the way that
+[ 1050.86s ->  1057.64s] that process functions as a stock process. That's the point of the process itself is to try to capture
+[ 1057.64s ->  1065.26s] the empirical data that we see in returns, right? So we know that returns are, you know, not necessarily
+[ 1065.26s ->  1070.52s] perfectly log normally distributed, but that's exactly what GBM tries to capture, right? And we have other
+[ 1070.52s ->  1076.06s] settings to use arithmetic Brownian motion and so on and so forth. But this is exactly what we're
+[ 1076.06s ->  1079.88s] talking about when we're talking about an integral with respect to Brownian motion over time. So you
+[ 1079.88s ->  1087.72s] can even disregard the stigma. So if I was to rewrite this integral, right? From zero to T, actually,
+[ 1087.84s ->  1094.20s] forget it. Let's just talk about zero to five, right? If this was a quiz and I was like a teacher
+[ 1094.20s ->  1100.00s] or something, then if we wanted to do this, zero to five, the change in Brownian motion, right? We're
+[ 1100.00s ->  1102.54s] integrating with respect to the change in Brownian motion, then that's going to be
+[ 1102.54s ->  1108.72s] equal to the Brownian motion at five, less the Brownian motion at zero. And we know that that's
+[ 1108.72s ->  1113.54s] just going to be the Brownian motion at five, because W of zero is zero by our properties of
+[ 1113.54s ->  1120.10s] Brownian motion. And W of five is just going to be this value here. This is the realization.
+[ 1120.78s ->  1126.28s] This is it. So if we find W of five, we find the solution to this integral. And lo and behold,
+[ 1126.68s ->  1131.94s] this is, you know, this is just getting the last item in the list. If it's better for you to see this,
+[ 1131.94s ->  1141.55s] then, then, um, if it's better for you to see that for the fifth, uh, element in that path,
+[ 1141.55s ->  1147.03s] which is, uh, the solution to, to this integral, then, you know, so be it. But it's the same thing
+[ 1147.03s ->  1151.95s] as referencing the last element. So this is precisely what we're referring to when we're
+[ 1151.95s ->  1156.45s] looking at the change in Brownian motion over time. So hopefully this was a clear and concrete
+[ 1156.45s ->  1161.29s] example about Brownian motion. Um, I know that it can be a very confusing topic when,
+[ 1161.41s ->  1167.03s] when there's randomness induced cross-sectionally, um, especially as a, as a time series when you're
+[ 1167.03s ->  1170.27s] considering something like this. So it's like, you know, it's a, it's a low dimensional problem
+[ 1170.27s ->  1175.65s] space in the sense that you have two dimensions, time and, and, uh, a process, right. But, you know,
+[ 1175.65s ->  1179.01s] when you first introduced to things like this and you're like, hold on, there's a distribution
+[ 1179.01s ->  1185.21s] at each step in time, it, it kind of can be confusing. So hopefully this made it a little
+[ 1185.21s ->  1189.91s] more clear looking at the distribution of points over time, uh, and then solving some sort of
+[ 1189.91s ->  1194.17s] integral with respect to the change in Brownian motion over time, uh, was, was a little more
+[ 1194.17s ->  1199.75s] concrete. Uh, so, so if you have any questions, you know, feel free to drop them in the comments.
+[ 1199.75s ->  1204.75s] I'm, I'm, uh, happy to listen to the suggestions for future videos as well. Uh, but, you know,
+[ 1204.75s ->  1207.43s] as always, thank you for watching and I will see you in the next one.

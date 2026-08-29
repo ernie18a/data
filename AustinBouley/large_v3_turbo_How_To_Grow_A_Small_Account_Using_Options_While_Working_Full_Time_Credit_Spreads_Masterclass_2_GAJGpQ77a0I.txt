@@ -1,0 +1,131 @@
+[    0.00s ->     5.00s] Hey team, welcome to part two of our four-part credit spreads masterclass. In this video we're
+[    5.00s ->    10.34s] going over how to grow a small account while working full-time. So this is great for you
+[   10.34s ->    15.56s] if you are like Austin I love the first video I understood credit spreads but I don't have that
+[   15.56s ->    20.36s] large of account or maybe I have a large account and I'm trying to build a side income how do I do
+[   20.36s ->    24.94s] that or maybe Austin I don't have time to place trades during the day because of meetings and
+[   24.94s ->    29.70s] work and kids and family like I just can't do it how can I trade this so I'm gonna show you exactly
+[   29.70s ->    34.84s] how to do that even if you can't place trades during market open. So let's dive right in first
+[   34.84s ->    39.86s] off disclaimer I am not a registered financial advisor or tax expert this is purely for educational
+[   39.86s ->    44.84s] purposes only. Next if you stay till the very end of the video I'm actually going to give you a free
+[   44.84s ->    49.04s] bonus for watching till the very end so make sure you stay till the very end because you don't want
+[   49.04s ->    54.20s] to miss out on that. All right so for the purposes of this video we're going to do a recap of what
+[   54.20s ->    58.76s] our credit spreads real fast and just a short summary from what from what from what we discussed
+[   58.76s ->    62.92s] in masterclass video number one. Then we're going to get into the scaling framework how to scale and
+[   62.92s ->    69.20s] grow your account. Then we're going to get into how to trade even if you have a a a full-time job and
+[   69.20s ->    74.44s] then I'm going to show you a case study from someone who did exactly this. All right cool so first off
+[   74.44s ->    78.80s] we're going to go in okay so we have different types of credit spreads. Credit spreads make money
+[   78.80s ->    83.46s] in three different ways compared to a stock that only makes money in one way. When you buy a stock you
+[   83.46s ->    87.46s] have to let the stock go up to make money. Credit spreads you make money if it goes in your
+[   87.46s ->    92.68s] direction against you sideways and you still may still make a good return. All right so if you're
+[   92.68s ->    96.54s] setting up a put credit spread you simply just select a level you think the stock will stay
+[   96.54s ->   100.22s] above so the stock is shooting here and you think it's going to stay above here this is your level
+[  100.22s ->   105.14s] as long as the stock stays above this level you'll make money. Same thing with the calls except it's
+[  105.14s ->   109.48s] reversed. So you pick a level let's say the stock is here that you think the stock will not go above
+[  109.48s ->   114.52s] so as long as the stock stays below this level you make money so if it goes up but stays below you
+[  114.52s ->   118.68s] make money if it's neutral you make money if it goes down you make money. So that's exactly how
+[  118.68s ->   122.78s] you structure these trades and set them up. If you want to learn more about the specifics
+[  122.78s ->   131.02s] go watch Masterclass number one. We also discussed in that lesson of how to trade with the trend. The
+[  131.02s ->   135.88s] idea that the trend is your friend. When you follow the big waves in the market not only is it easier
+[  135.88s ->   141.06s] to trade stock but it's also way easier to trade credit spreads. And so you can see here this is an
+[  141.06s ->   146.92s] uptrending market. We discussed why in Masterclass 1 and then a downtrend and a downtrending market.
+[  147.02s ->   151.10s] When you're in an uptrending market you trade put credit spreads. When you're in a downtrending
+[  151.10s ->   155.82s] market you sell call credit spreads because those make money to the downside while put makes money
+[  155.82s ->   160.28s] to the upside. And so that's kind of how these are played and structured and that's the best and most
+[  160.28s ->   166.12s] consistent way to trade credit spreads. Now my scaling framework is something I shared inside my
+[  166.12s ->   171.02s] Inner Circle program but I wanted to share it for you guys. So this is exactly how you do it.
+[  171.06s ->   178.46s] So whether you have a $100 account, a $1,000 account, or a $100,000 account, this scaling
+[  178.46s ->   183.04s] framework is going to work for you. I have people using this framework who have $100. I have
+[  183.04s ->   187.14s] people using this framework like myself who have $100,000 and more. I'm not the only one
+[  187.14s ->   192.18s] who has that size of an account in the Inner Circle program. But these trades can work for
+[  192.18s ->   197.50s] you. First off, as we discussed, if you're trading credit spreads you can have different types
+[  197.50s ->   201.98s] of spread widths. So for instance, if we go back here, you can see the spread width here
+[  201.98s ->   208.98s] is $1. Why? Because 409, 408, there's a $1 difference. Well, you can also make this a 409
+[  208.98s ->   215.78s] and then buy the 409 or sell the 407 and buy the 409. That would be a $2 difference. I just
+[  215.78s ->   220.58s] want to show that for example. All right. So the scaling framework goes like this. Let's say
+[  220.58s ->   226.06s] you have a small account. What you want to do is you want to put no more than 10% of your
+[  226.06s ->   231.20s] account into any one trade. Let me make sure this is seeable. All right. 10% of your account
+[  231.20s ->   239.26s] goes in per trade. So what does this mean? Well, this is a risk management rule. So for instance,
+[  239.26s ->   246.00s] if you have a, let's say a $1,000 account, let's see if I can do numbers well with the mouse,
+[  246.00s ->   255.78s] $1,000 account times 10% equals what? 100. Now, how much collateral do you need to put up per trade?
+[  256.02s ->   263.24s] Well, as we discussed in the first video, it's $100 if you have a $1 width. So divided by the amount
+[  263.24s ->   269.16s] of collateral you need to put up per trade, that means you can sell one credit spread based on your
+[  269.16s ->   276.64s] account size. So per trade, you should put no more than one credit spread in or for that trade
+[  276.64s ->   282.62s] if you have a $1,000 account. Now you can put on multiple trades, but each trade itself should be
+[  282.62s ->   288.12s] no more than one credit spread. This is to help you manage risk correctly since your losses are going
+[  288.12s ->   292.98s] to be way larger than your wins. Now, this is how you structure it. Now again, if you have,
+[  293.26s ->   297.14s] let's say if we had two more zeros here, that's going to be two more zeros here on the end.
+[  297.14s ->   303.98s] So we have $100,000 account, you'll be trading 100 spreads per trade. Now again, because of
+[  303.98s ->   310.94s] commissions that can eat up at your profits, this is the proper scaling order. So we have number one,
+[  311.04s ->   320.38s] what we want to do is we want to trade 50 SPY or 50 really any ETFs, but $51 wide spreads. So for
+[  320.38s ->   327.70s] instance, $51 wide spreads would mean that we are trading with, let's say, you know, one credit spread,
+[  327.70s ->   332.52s] we could do the inverse, but let's say you have a, um, you can't see that well here. I'm just going to
+[  332.52s ->   337.44s] sit here. So for the first one, I was going to say you have a, um, I think you're going to max out
+[  337.44s ->   345.82s] around 50,000, right? Cause 50,000 times 10% is going to give you, um, can I do math? Uh, 500,
+[  345.82s ->   358.84s] is that even right? 500, no, that's not right. 5,000. Okay. 5,000 then divided by a hundred,
+[  358.84s ->   366.96s] cause that's a $1 wide, then you'll get 50. So that means that at this size, you're going to max out
+[  366.96s ->   374.74s] on scale number one at $50,000. So from 100 to 50,000, this is the method you follow. You're
+[  374.74s ->   380.48s] going to stick to $1 wide spreads. You're going to trade those consistently until you are growing
+[  380.48s ->   386.48s] your accounts, which you'll be able to do quickly with credit spreads and you hit $50,000. After that,
+[  386.72s ->   393.54s] then you want to move to the next part, which is going to be doing the same thing, but with a $2 wide,
+[  393.54s ->   399.02s] when you do a $2 wide, instead of dividing by 100, it's going to be 200 wide because your width is
+[  399.02s ->   404.98s] two. So again, now you're going to be moving down to 25. So if you're trading at the same consistency,
+[  404.98s ->   410.34s] but then you do the $2 wide, this is going to move your new credit spreads to 25 per trade
+[  410.34s ->   416.02s] until you'll slowly start to scale up with that. And this next scale up will be double this. So it'll
+[  416.02s ->   422.40s] be a hundred thousand. So once you get to a hundred thousand and you're using the proper risk
+[  422.40s ->   426.82s] management, if you can understand this right here, a hundred thousand. So once you hit a hundred
+[  426.82s ->   434.86s] thousand, then that is going to be when you max out of this second scaling tier. So from $100 to 50,000,
+[  435.00s ->   440.74s] you'll be trading scale one from 50,000 to a hundred thousand, you'll be trading scale two.
+[  441.24s ->   448.60s] And then after that, the sky is the limit when you move to SPX or ES futures. Why? Well,
+[  448.60s ->   455.78s] because I have personally spoke with options hedge funds that have over $10 million in assets under
+[  455.78s ->   461.08s] management, some as high as 15 million. They are trading spreads for their consistent strategy.
+[  461.20s ->   465.22s] First off, that should show you how well credit spreads work. If hedge funds with millions and
+[  465.22s ->   469.56s] millions of dollars are trading spreads as their main strategy, this should be something you're doing
+[  469.56s ->   474.78s] too. But not only that, they're trading SPX and ES futures, and they're trading millions and
+[  474.78s ->   480.84s] millions of dollars. Therefore, the moon is the limit or the sky is the limit, right? When you're
+[  480.84s ->   487.98s] trading size with these, not only these, when you get into this higher scaling bracket, you also get
+[  487.98s ->   492.66s] tax advantages as well. But we can talk about that another day. All right. So that is the scaling
+[  492.66s ->   497.90s] framework. Now, how do you do this with a full-time job? As I showed you in masterclass number one and
+[  497.90s ->   504.76s] kind of highlighted on today of how to set up trades, when you set up a trade, you can actually go to
+[  504.76s ->   509.92s] this little thing right here. Let me bring this, this little thing right here, which is TIF or
+[  509.92s ->   515.32s] basically how long do you want this order to last? This should be on almost every broker platform.
+[  515.58s ->   522.38s] It goes, do you most say good till cancel, or you can also do a good till the trading day or until the
+[  522.38s ->   529.46s] end of whatever. But anyways, you want to make sure that it says GTC or good till cancel. Why? Well,
+[  529.46s ->   535.40s] because if you put in the minimum credit that you need to collect, let's say 15 cents, let's say you
+[  535.40s ->   539.50s] do this at night when the market's closed. You say, okay, if I want to enter this trade, I need to at
+[  539.50s ->   544.70s] least collect this much money. So you put, so you put that in as your limit order. You set it, you put
+[  544.70s ->   550.22s] a good till cancel, you click review and send. Now your order is sitting in the market for whenever the
+[  550.22s ->   556.82s] market opens next. And whenever it gets to your price, it will automatically fill for you, whether you
+[  556.82s ->   561.08s] are in a meeting, whether you are with your kids, spending time with them, no matter where you are,
+[  561.10s ->   566.34s] this will fill for you automatically. All you need to do is take five minutes max at the end of your
+[  566.34s ->   571.22s] day, or maybe when you start the day before you go to work. So you put on this trade and it will fill
+[  571.22s ->   575.86s] for you automatically. So this is how you do it with a full-time job. That's exactly how my inner
+[  575.86s ->   581.98s] circle members are doing it. So again, here's a study from JD. So JD Griffin, he is someone I love.
+[  581.98s ->   588.54s] Why? Because he not only loves personal finance and has been in it for a while, but he also works
+[  588.54s ->   593.70s] full-time. He's very much works. He only checks his trades at lunchtime when he goes for his lunch
+[  593.70s ->   600.16s] break, but he is a CPA and he loves the Atlanta Braves. So if anyone loves that way to go, he also
+[  600.16s ->   603.60s] loves to vacation in the Smoky Mountains. And oh my gosh, I love the Smoky Mountains. They're so
+[  603.60s ->   608.82s] beautiful. But anyways, you can read more about his journey here if you pause this video, but
+[  608.82s ->   614.86s] basically he started with this credit spread system. He had no experience with options or
+[  614.86s ->   618.96s] any type of this credit spread experience. He works full-time. So let's mind you that is that
+[  618.96s ->   624.60s] his time is very limited. So he started using the scaling system. He started using the good till
+[  624.60s ->   631.66s] cancel system. And guess what? Now he's had 15 green shades in a row since starting this program. So
+[  631.66s ->   637.02s] that means 15 trades without losing. Who here would like to have 15 green trades in a row? That's exactly
+[  637.02s ->   642.24s] what he's done. And he's up to even more than 15 now, but he grew his account by over 11% in one
+[  642.24s ->   647.46s] month. Who here would like to grow their account by 11% in a single month? That is the beauty of
+[  647.46s ->   652.08s] credit spreads and following a system like this. If you want to learn exactly what this system is and
+[  652.08s ->   656.98s] how JD did it, how I do it now, our members do it. Stay tuned for masterclass video number three,
+[  657.04s ->   661.16s] because I'm going to go in depth. I'm going to give you everything, all my strategies for you step-by-step.
+[  661.24s ->   665.90s] So make sure you stay tuned for that. But anyways, if you want to place a credit spread right now,
+[  665.90s ->   670.34s] here's my free bonus and gift to you. Because you watched this entire video, I'm going to give you
+[  670.34s ->   676.10s] my free alerts that are working right now. So go open your broker account or go create one if you
+[  676.10s ->   680.78s] don't have one yet. Enable options and follow one of these alerts. If you want to get these free
+[  680.78s ->   685.80s] alerts, click the button or the link below. Simply go to this page, scroll all the way down to the
+[  685.80s ->   690.86s] bottom and click on get our alerts. I will send you as many free alerts as I can. I'll also give you
+[  690.86s ->   695.34s] some bonus training so you know how to place those alerts step by step. Not only that,
+[  695.34s ->   699.18s] you'll also get alerted to the next masterclass series that are coming. So for instance,
+[  699.32s ->   702.98s] masterclass number three, where I share all my strategies in depth, step by step. So you can
+[  702.98s ->   706.90s] do this for yourself. That is coming and you don't want to miss out. So make sure you put your email
+[  706.90s ->   710.72s] so that you don't miss out. Anyways, guys, thank you so much for watching. I hope you enjoyed this
+[  710.72s ->   715.08s] video. Masterclass number two on how to do this with a full-time job and scale your account.
+[  715.42s ->   720.26s] If you didn't, I'm sorry, but if you did, thumbs up, subscribe. See you in the next
+[  720.26s ->   721.98s] masterclass video. You don't want to miss out.

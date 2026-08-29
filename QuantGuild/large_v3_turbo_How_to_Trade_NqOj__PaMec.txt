@@ -1,0 +1,195 @@
+[    0.46s ->     5.48s] this is largely going to be one of the most important videos that I make and
+[    5.48s ->    12.02s] that is how to trade a very reasonable question to ask is how do I learn to
+[   12.02s ->    17.00s] trade some sort of equity or derivative product who can teach me to
+[   17.00s ->    22.22s] consistently extract money from the market make good decisions to buy low
+[   22.22s ->    30.81s] sell high sell high buy low what can I do how can I learn this this skill largely
+[   30.81s ->    37.65s] you'll see people come in flocks to try to sell you courses or explain some sort
+[   37.65s ->    44.31s] of strategy that they have and largely this is nonsense and the reason why this
+[   44.31s ->    48.69s] is nonsense is sure you could trivialize it and say well if they could make money
+[   48.69s ->    53.67s] why would they tell you but I don't think that's really even reasonable I think we
+[   53.67s ->    58.83s] kind of need to go one step further and we need to look at the structure of that
+[   58.83s ->    64.41s] question right how do I learn to trade the the word learn almost implies that
+[   64.41s ->    69.93s] there's this like static target like once I have this knowledge I'll be able to make
+[   69.93s ->    75.21s] money that isn't the case at all and that's why all of these firms you look at
+[   75.21s ->    79.23s] like a Citadel or a Jane Street or jump whatever you want to do all of these
+[   79.23s ->    85.17s] firms demand such high-level math and statistics the coding yeah it's
+[   85.17s ->    89.13s] necessary and and all of the finance knowledge is kind of on the on the back
+[   89.13s ->    93.15s] burner because you can learn that on the job but the reason why that's so
+[   93.15s ->    98.57s] important is because the dynamics of this game this trading environment
+[   98.57s ->   106.59s] consistently changes on a daily basis so this learn this learn to trade or having
+[  106.59s ->   111.81s] this like golden goose this strategy that just continues to print money it's not
+[  111.81s ->   116.79s] the reality of the situation so what I want to do today is I want to give you an
+[  116.79s ->   124.35s] example of what this dynamic game looks like using a naive trader and a
+[  124.35s ->   128.67s] quantitative trader and we're going to increase the complexity of the example each
+[  128.67s ->   132.75s] time till we get to something that resembles more of what the market might
+[  132.75s ->   137.73s] look like that way you can kind of understand the space better understand who
+[  137.73s ->   142.83s] you're competing with and understand the relevance of all of the math and
+[  142.83s ->   147.69s] statistics let's start with two naive traders in a very simple game the
+[  147.69s ->   153.51s] probability of heads and tails is fixed to be 50% if it lands on heads I win a
+[  153.51s ->   157.65s] dollar so that means whoever's engaging in this transaction with me is going to
+[  157.65s ->   162.35s] pay me a dollar and if it lands on tails then I have to pay one dollar to the
+[  162.35s ->   166.95s] other party so tails I lose a dollar heads I win a dollar it's 50 50 the
+[  166.95s ->   171.63s] expected value zero if I play this game over a large number of iterations my
+[  171.63s ->   177.83s] expected wealth is going to be zero it's not a difficult concept to understand now
+[  177.83s ->   184.01s] what do I mean by naive traders well in this case this game is static this game
+[  184.01s ->   187.71s] is fixed over time so that probability of heads is equivalent to the
+[  187.71s ->   192.33s] probability of tails it's 50 50 and through each iteration of this game it's
+[  192.33s ->   196.83s] going to remain the same I say naive because we're just gonna play this game at
+[  196.83s ->   201.39s] each iteration both traders me and whoever's engaging in this game or this
+[  201.39s ->   205.89s] transaction with me is going to choose to play it regardless of any outside
+[  205.89s ->   209.73s] information so regardless if they're accumulating a huge amount of negative
+[  209.73s ->   215.19s] wealth they're still gonna play it and likewise I will too so in this case it's
+[  215.19s ->   220.45s] kind of net zero so what can we do here well first let's take a look at the
+[  220.45s ->   225.23s] static nature of the game P is fixed throughout each iteration of the game
+[  225.23s ->   230.75s] that's not practical right so over time the dynamics of the market are going to
+[  230.75s ->   236.57s] change companies do things regulation happens things happen so clearly this
+[  236.57s ->   241.49s] static game is not representative of what a real market would look like so the
+[  241.49s ->   243.53s] first thing we're going to do is we're going to construct some pretty
+[  243.53s ->   248.55s] complicated dynamics to have this probability change over time so what I've
+[  248.55s ->   253.01s] done here is I've constructed a new game where we're the same two naive traders so
+[  253.01s ->   258.35s] we're just going to choose to engage in this game in this transaction regardless
+[  258.35s ->   262.85s] of any outside information however this probability of heads and tails is going
+[  262.85s ->   267.47s] to change over time so when I simulate this game now and I simulate a wealth
+[  267.47s ->   272.75s] path you'll see the wealth path varies drastically so when I look at this I look
+[  272.75s ->   279.05s] at the probability over time it changes so you can see it's close to 50% in the
+[  279.05s ->   284.39s] beginning so it's 50 50 like the original static space but then it drops to 30%
+[  284.39s ->   290.75s] roughly goes all the way up to 80% heads and this is a stochastic process now this
+[  290.75s ->   295.05s] is the randomness that you would see in the market that is if you look at
+[  295.05s ->   299.51s] something like expected returns there really is no measure for expected
+[  299.51s ->   304.01s] returns that's what our last video was all about if you try to take this
+[  304.01s ->   308.27s] cumulative measure of expected returns you're imposing structure that isn't
+[  308.27s ->   315.17s] actually there but is it useful at all even if the structure isn't there that's
+[  315.17s ->   319.97s] what we're exploring right now so what we have here is we have a wealth path so
+[  319.97s ->   324.17s] if it lands on heads remember I receive a dollar if it lands on tails I lose the
+[  324.17s ->   329.09s] dollar so in this instance if I just trivially play the game this is what my
+[  329.09s ->   332.09s] wealth path would look like and when I run this again I'll get a different wealth
+[  332.09s ->   337.19s] path and of course as the parameter this population parameter which is an
+[  337.19s ->   343.67s] unknown is higher on average my wealth is going to increase because then I have a
+[  343.67s ->   349.13s] higher likelihood of seeing heads so when the probability of heads is 80% that's
+[  349.13s ->   355.01s] what I'm gonna want to play the most when it's almost near zero that's what I'm
+[  355.01s ->   358.97s] gonna want to play the least because look what happens to my wealth when the
+[  358.97s ->   363.89s] probability of heads is high I accumulate more wealth but when the
+[  363.89s ->   370.19s] probability of heads is low I end up losing wealth so that's an interesting
+[  370.19s ->   376.07s] idea to keep in mind so maybe there's a way even though this underlying path is
+[  376.07s ->   381.77s] unknown to us maybe there's a way that we can estimate it and what we're gonna do
+[  381.77s ->   389.01s] is we are going to take the most recent coin tosses to try to estimate what this
+[  389.01s ->   393.63s] population parameter is going to look like all of a sudden now we have
+[  393.63s ->   399.99s] information when our counterparty doesn't so what I mean is I'm imposing sure
+[  399.99s ->   404.19s] I'm imposing structure where there's no structure the central limit theorem law of
+[  404.19s ->   409.11s] large numbers largely will not apply to this non-stationary series however we can
+[  409.11s ->   413.13s] still make an informed decision so what do I mean by this well let's look at a
+[  413.13s ->   417.57s] new environment and this is just the series of wealth paths over time if I
+[  417.57s ->   421.77s] continue to play this game naively but let's look at a new game let's look at a
+[  421.77s ->   427.41s] new game where I'm now an informed trader I'm a quant trader and I'm
+[  427.41s ->   431.97s] transacting with a naive trader so we have different models they're gonna play
+[  431.97s ->   435.99s] regardless but I'm gonna choose whether or not I want to transact in this
+[  435.99s ->   440.97s] dynamic game and what I'm gonna do is I'm gonna take the last 30 coin flips and
+[  440.97s ->   446.25s] I'm gonna try to estimate the probability of heads now I'm always going to be
+[  446.25s ->   450.93s] wrong I am for sure gonna be wrong of course there's a very small chance that
+[  450.93s ->   456.09s] it just circumstantially works out and I'm correct but I'm always going to be
+[  456.09s ->   461.61s] wrong how is this helping me inform my decision-making well remember if we look
+[  461.61s ->   466.49s] at this wealth path up here we want to trade during periods where we are
+[  466.49s ->   474.85s] predominantly over 50% chance of seeing a heads and if we are below 50% then we
+[  474.85s ->   479.95s] don't want to transact so hopefully when we impose this structure of trying to
+[  479.95s ->   486.25s] estimate the probability even though we're wrong hopefully if we choose to
+[  486.25s ->   491.77s] engage in a transaction we have some edge and that edge is going to lead to an
+[  491.77s ->   496.99s] accumulation of positive wealth over time and that really is what edges it's
+[  496.99s ->   501.31s] the accumulation of positive expected value so let's try this let's try this
+[  501.31s ->   506.71s] strategy so we don't know what the true parameter is we don't know if it's 50 50
+[  506.71s ->   513.79s] 70 30 75 25 we have no idea but let's try to impose this this structure as a
+[  513.79s ->   520.21s] model again this is wrong but maybe it will lead to positive wealth over time
+[  520.21s ->   526.77s] check this out so what we have here is we have the path that the underlying
+[  526.77s ->   532.83s] parameter chose to take so here you can see it started below 50% and we did not
+[  532.83s ->   538.83s] choose to transact but eventually it rose above 50% and we chose to transact and
+[  538.83s ->   544.05s] this is our wealth path so the other trader is naively engaging in this
+[  544.05s ->   549.03s] transaction and this transaction is a game where we have a magical coin that's
+[  549.03s ->   553.53s] going to change its probability of landing on heads and tails at any random
+[  553.53s ->   559.41s] time so if this is the case then how can we make an informed decision well we're
+[  559.41s ->   564.45s] imposing a model on the problem as a quant trader engaging with the naive
+[  564.45s ->   568.29s] trader and what we're doing is we're hoping that we can uncover some structure
+[  568.29s ->   572.15s] that's going to give us an edge against that naive trader so when I
+[  572.15s ->   576.93s] re-simulate this path what happens well you can see here there's a period where we
+[  576.93s ->   582.01s] choose to engage in a transaction right this is where we've estimated the
+[  582.01s ->   587.41s] probability of heads being greater than 50% so we choose to engage then we've
+[  587.41s ->   592.69s] observed via our model that oh geez now there's a period where we're below 50% so
+[  592.69s ->   597.23s] we're not going to transact the naive trader doesn't know either way but check
+[  597.23s ->   602.47s] this out we've chosen to transact largely during a period where we had
+[  602.47s ->   607.85s] positive edge and that's how we've accumulated wealth if we had chosen to
+[  607.85s ->   612.45s] transact in this period where you can see our estimated estimation for the
+[  612.45s ->   617.15s] parameter is below 50% so we choose not to if we transacted within this region we
+[  617.15s ->   622.13s] would have lost wealth so it turns out even though our model is wrong it's giving
+[  622.13s ->   629.73s] us an edge now it's very important this edge that we have is not permanent it's not
+[  629.73s ->   634.37s] permanent at all because remember there's somebody who's transacting with you
+[  634.37s ->   638.99s] they're not just gonna sit there and allow themselves to accumulate such
+[  638.99s ->   644.45s] immense amounts of negative wealth they're going to change dynamically on the
+[  644.45s ->   649.49s] fly with you so maybe you have this edge for a certain period of time but
+[  649.49s ->   655.85s] eventually that naive trader is going to want to construct their own model to
+[  655.85s ->   660.11s] attempt to compete with you so what I've done here is I've taken this example and
+[  660.11s ->   663.77s] I've run it for a large number of iterations and you can see here that
+[  663.77s ->   668.99s] you're accumulating positive wealth on average applying this model to that
+[  668.99s ->   673.63s] random game of chance where the underlying parameter is completely unknown and
+[  673.63s ->   678.53s] you're just making decisions whether or not to transact with a naive party and
+[  678.53s ->   684.23s] even though that model is completely wrong you are trading at a profit you have
+[  684.23s ->   689.39s] edge so what about the case where you're a quant trader imposing the
+[  689.39s ->   693.95s] structure again where structure doesn't exactly exist the model is wrong but
+[  693.95s ->   698.27s] you're accumulating this eggs this wealth over time but now you're
+[  698.27s ->   704.03s] transacting with another party who's using the exact same model if they're
+[  704.03s ->   709.21s] using the exact same model right we're two quant traders in a dynamic game with
+[  709.21s ->   715.19s] the same model who is going to transact nobody's gonna transact and that's
+[  715.19s ->   719.21s] exactly what we see here the wealth path remains at zero why is this the
+[  719.21s ->   724.19s] case well if I estimate that there's edge then the counterparty is gonna
+[  724.19s ->   730.07s] estimate that I have edge so we're not gonna transact but clearly this isn't
+[  730.07s ->   735.17s] reality right in the markets we see a mass amount of transactions all the time
+[  735.17s ->   739.01s] there are different models people have different ideas people are trying to
+[  739.01s ->   743.45s] implement different strategies and everybody thinks they're right otherwise
+[  743.45s ->   748.31s] they wouldn't be buying or selling right we wouldn't make a market but in this
+[  748.31s ->   753.17s] example here a very very simple example if we're two quant traders using the exact
+[  753.17s ->   756.95s] same model and we both think each other has edge at different times we're not
+[  756.95s ->   764.26s] gonna transact we aren't but what if we're playing the same dynamic game and we
+[  764.26s ->   770.02s] use two different models we may choose to transact and that's exactly what I have
+[  770.02s ->   776.68s] here so I'm going to have two traders one using a five-day rolling window one
+[  776.68s ->   782.08s] using a 60-day rolling window to estimate that parameter and what you'll see here
+[  782.08s ->   791.26s] is if I run this guy then there's going to be one trader who always has some edge
+[  791.26s ->   795.94s] against the other trader and that is the tails trader is going to accumulate wealth
+[  795.94s ->   802.78s] because they're adapting more quickly to the parameter that's being estimated
+[  802.78s ->   810.61s] against the quant trader that's using the longer rolling window now this example
+[  810.61s ->   818.07s] here is just illustrating a more realistic idea rather than two parties that
+[  818.07s ->   825.37s] choose not to transact in the market in general you have many many traders who are
+[  825.37s ->   830.65s] choosing to transact a significant amount on a daily basis because they all think
+[  830.65s ->   835.03s] they're correct they all that you either have to get money in the market you have
+[  835.03s ->   839.47s] to liquidate whatever sort of position you're in whatever it is you're doing
+[  839.47s ->   844.61s] something because you have to or you think you're correct and this dynamic here
+[  844.61s ->   849.41s] where you have informed traders that is these two quant traders in the dynamic
+[  849.41s ->   853.09s] game that is the market with different models paints the picture almost
+[  853.09s ->   859.69s] perfectly the person with the better model here is taking more money from the other trader that's
+[  859.69s ->   864.19s] exactly what's happening here but the most important thing to keep in mind is both
+[  864.19s ->   869.23s] their models are wrong nobody has the dynamics of the market nobody knows what
+[  869.23s ->   875.83s] that density looks like otherwise we wouldn't be modeling it but are the models useless
+[  875.83s ->   882.01s] altogether absolutely not absolutely not in fact this trader is using their model to
+[  882.01s ->   888.43s] consistently generate and extract money from the other traders pockets so i think this perfectly
+[  888.43s ->   896.41s] captures the dynamics of the market and the purpose of modeling and how to trade in general
+[  896.41s ->   902.59s] understanding these examples let's revisit the question how do we learn to trade largely we're
+[  902.59s ->   909.01s] not trying to learn to trade we're trying to learn to construct models that provide us a positive
+[  909.01s ->   915.43s] expected value in some sort of transaction or game that we're playing so that we can accumulate this
+[  915.43s ->   922.99s] expected value over time in the form of positive pnl and we can continue to make money from the decisions
+[  922.99s ->   932.65s] that we make whether discretionary or in some sort of quant trading capacity now these modeling skills are what
+[  932.65s ->   939.07s] you need to build you need to understand the math the statistics the computer science all of these things
+[  939.07s ->   948.15s] that go into constructing such models as these that is the difficult part why does wall street hire all of these
+[  948.15s ->   954.07s] phds it's not because they know something that you don't they don't know if apple is going up or down next week
+[  954.07s ->   963.91s] nobody does the whole purpose of the modeling process is to try to impose some structure that is useful in
+[  963.91s ->   970.63s] decision making to give you an edge over your competitors in the market it just so happens that your
+[  970.63s ->   977.05s] competitors are also the smartest in the world aiming to construct similar models so that they can choose to
+[  977.05s ->   986.49s] transact when you have a worse edge and that is the game that is trading this is why famously all models
+[  986.49s ->   994.17s] are wrong but some are useful when we impose the model on the time series in the dynamic game we knew
+[  994.17s ->  1001.05s] our estimates were wrong but it still led us to positive expected value over time accumulating that edge
+[ 1001.05s ->  1006.81s] accumulating a positive wealth path and that is the goal which is why your goal should be to
+[ 1006.81s ->  1014.01s] build your quantitative skills learn about the math and statistics required to understand these high
+[ 1014.01s ->  1020.57s] level models and how they are implemented in practice and that is exactly why quant guild is here that is
+[ 1020.57s ->  1027.85s] why quant guild.com is here we have a variety of lessons practice course offerings courses that are not
+[ 1027.85s ->  1036.25s] about how to make a million dollars trading but how to learn to model things what does a real quantitative
+[ 1036.25s ->  1042.81s] trading strategy look like how do we go about an exploratory data analysis what is the model
+[ 1042.81s ->  1049.05s] development pipeline that is why quant guild is here and that is why i recommend you check out
+[ 1049.05s ->  1055.85s] quant guild.com on that note thank you so much for watching i hope you enjoyed and i will see you in the
+[ 1055.85s ->  1064.41s] next video
+[ 1064.41s ->  1066.41s] you
+[ 1066.41s ->  1068.41s] you

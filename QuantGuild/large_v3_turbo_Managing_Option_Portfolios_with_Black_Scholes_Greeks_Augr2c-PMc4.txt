@@ -1,0 +1,287 @@
+[    0.46s ->     7.18s] Welcome back. Today, we're going to talk about managing option portfolios. Specifically,
+[    7.18s ->    12.36s] we're going to talk about different exposures you may have when you hold a portfolio of options.
+[   13.02s ->    18.10s] We're going to talk about the so-called Greeks, going to develop some mathematical intuition
+[   18.10s ->    24.40s] behind what each Greek actually represents, starting from the basic idea of a linear
+[   24.40s ->    28.12s] approximation. If you have no mathematical background, then we're going to do this
+[   28.12s ->    33.50s] visually so it makes sense, and then we will apply it to the idea of an option contract
+[   33.50s ->    39.60s] priced via the Black-Scholes model, and we'll talk about hedging and the idea of hedging our
+[   39.60s ->    46.90s] different risk exposures using a portfolio of options and or stock. Let's begin by discussing
+[   46.90s ->    53.42s] this idea of a linear approximation. We're going to talk about a first-order Taylor series approximation
+[   53.42s ->    59.62s] of this polynomial function f of x, and though the mathematics may sound difficult to comprehend
+[   59.62s ->    65.88s] and it may sound relatively rigorous, it's actually quite easy to interpret once we get to the visual
+[   65.88s ->    72.54s] component of this, so bear with me here. What we have is this idea of an approximation of a function.
+[   73.14s ->    78.06s] Now, this function could be an option pricing function, it could be a profit function, a cost
+[   78.06s ->    83.48s] function, the actual interpretation of the function doesn't matter. You can still apply this Taylor
+[   83.48s ->    89.36s] series expansion approximation. So what we have here is we have this function is approximately equal
+[   89.36s ->    95.90s] to the function evaluated at a point of interest. This point of interest could be the current market
+[   95.90s ->   101.56s] prices, the current market parameter set, it could be the parameter set yielding the profit
+[  101.56s ->   109.80s] of last year. It could be the parameter set yielding the cost of last year. You can use any point of
+[  109.80s ->   116.16s] interest to develop this idea of a linear approximation. So it's going to be the function
+[  116.16s ->   123.34s] evaluated at that point of interest plus the first derivative of the function. Again, that function is
+[  123.34s ->   128.48s] the pricing function, the profit or cost function, whatever it may be. The first derivative of that
+[  128.48s ->   137.38s] function evaluated at that point of interest times a new point of interest less the point of interest.
+[  137.38s ->   143.54s] So we have this idea of x zero being the initial point, the starting point, that could be the current
+[  143.54s ->   149.14s] market parameter set, could be a parameter set from last year. Then we are trying to figure out,
+[  149.26s ->   156.06s] hey, what does it look like at this new point of interest? That is this x, okay? So what about this
+[  156.06s ->   161.82s] derivative here? What if we don't know how to compute the derivative of this function? What if it's
+[  161.82s ->   169.00s] got an intractable analytical solution? Well, check out my video on why the definition of a derivative is
+[  169.00s ->   175.18s] useful, and you can actually develop an approximation for this overall approximation. So you can approximate
+[  175.18s ->   181.74s] this derivative, then you can approximate this overall functional approximation. So that's enough
+[  181.74s ->   188.38s] mathematics, let's talk about the intuition behind the linear approximation. All this fancy terminology
+[  188.38s ->   195.00s] aside, a linear approximation, linear means line. We are using a line to approximate a function.
+[  195.72s ->   201.98s] We have a nonlinear function here in blue, that is this polynomial x squared. And as you can see,
+[  202.88s ->   208.42s] the nonlinear function is being approximated at a point of interest, and that point of interest in this
+[  208.42s ->   213.20s] case is 10. And I've created this slider to show you what happens as you change the point of interest.
+[  214.93s ->   221.29s] And what you'll notice is the approximation tends to be very good about the point of interest. So we're
+[  221.29s ->   229.29s] actually using a linear function to approximate a nonlinear function. That's this idea of a linear
+[  229.29s ->   234.21s] approximation. And this is only a first order approximation, so the approximation can get better.
+[  234.21s ->   240.89s] But let's just focus on this idea of a first order approximation. As you can see, if I go a little
+[  240.89s ->   248.53s] bit to the right of the point 10, or a little bit to the left of the point 10, that is our point of
+[  248.53s ->   253.35s] interest, that's our x zero. As I said, it could be the market parameter set or a parameter set for
+[  253.35s ->   260.47s] profit or cost last year. The line, the linear approximation does a very good job approximating
+[  260.47s ->   266.57s] the nonlinear function that is this x squared. But what you'll notice is, because it is a linear
+[  266.57s ->   273.25s] approximation, it doesn't capture the growth of the polynomial. That is, as we move further away in
+[  273.25s ->   278.93s] either direction, the approximation gets worse and worse. And this makes sense, right? If I gave you
+[  278.93s ->   284.51s] information about this point 10, and I'm saying, hey, we're going to reduce the order of this polynomial,
+[  284.51s ->   290.79s] the further we get away, this distance between the red line, the linear approximation, and the
+[  290.79s ->   297.33s] nonlinear function is going to increase. This distance is the error. So as we get further away
+[  297.33s ->   304.57s] from the point of interest, the error is going to increase. That is the idea of a linear approximation.
+[  305.09s ->   314.45s] We can use this idea to very simply interpret how we can expect the nonlinear function to change
+[  314.45s ->   322.29s] when there is a change in the input. So a unit change in the input, what can we expect
+[  322.29s ->   329.87s] the overall function to change? So for example, if I have a unit change in the input of a pricing
+[  329.87s ->   337.63s] function, how can I expect the price to change? If I have a unit change in the input of a profit
+[  337.63s ->   345.25s] function, how can I expect the profit to change? If I have a unit change in the function or a cost
+[  345.25s ->   350.71s] function, how can I expect the cost to change? So that's why this idea of a linear approximation
+[  350.71s ->   355.33s] is so useful. It's very, very easy to interpret. Essentially, I'm saying is, hey, we have all these
+[  355.33s ->   362.47s] inputs, we have a function that describes price, cost, profit. When I have a very small change or
+[  362.47s ->   369.51s] a unit change in the input, what happens to the overall function? Does the price increase? Does
+[  369.51s ->   375.01s] the profit increase? Does the cost increase? Do they decrease? That is the idea of a linear
+[  375.01s ->   381.77s] approximation. So you can see here, if we move to the right, the line is increasing, and so is our
+[  381.77s ->   389.47s] nonlinear function. So we expect a unit change in x to yield an increase in this polynomial function.
+[  389.47s ->   396.65s] Same thing, if we step to the other direction, we expect this polynomial function to decrease. And
+[  396.65s ->   403.40s] that's exactly what happens. Now, what about when we get to this new point, we're going to want to do
+[  403.40s ->   409.92s] another linear approximation. So let's say we start at 10. What happens if I step to the left one? Well,
+[  409.92s ->   415.32s] we're going to expect the polynomial to decrease. Now I'm going to recompute this linear approximation
+[  415.32s ->   423.27s] for nine. And we can continue and do this in a iterative fashion. So we're going to continue to
+[  423.27s ->   429.99s] recompute this linear approximation. So as we move about the space of this function, our linear
+[  429.99s ->   435.27s] approximation is going to be centered about the point of interest that could reflect the current market
+[  435.27s ->   441.51s] conditions, could reflect the current inputs into our profit function or cost function, so on and so
+[  441.51s ->   447.99s] forth. So the idea of this linear approximation is it's very easy to interpret in the sense that we can
+[  447.99s ->   456.23s] say what happens to the overall function based on a unit change in a particular input. And it turns out
+[  456.23s ->   463.67s] if you have a variety of inputs, this makes it very easy to determine, hey, if I change this one variable
+[  463.67s ->   469.67s] a little bit and I hold everything else constant, what can I expect that function to do? So if profit is a
+[  469.67s ->   477.83s] function of, let's say, overall labor, and overall materials, then what happens if I increase materials,
+[  477.83s ->   482.63s] what happens when I increase labor, we can see what happens to the corresponding profit function.
+[  483.19s ->   488.87s] Taking a look at actual numbers, we have this linear approximation about the point 10. How good is this
+[  488.87s ->   495.51s] approximation? Well, we're going to start at this point of interest 10. Let's move point one to the
+[  495.51s ->   499.75s] right. What I'm going to do is I'm going to use this linear approximation, and I'm going to use the
+[  499.75s ->   506.23s] actual function. So I'm going to use both the actual functional change, which is represented by a change
+[  506.23s ->   513.11s] in the nonlinear function, this polynomial function, and I'm going to represent the change in the linear
+[  513.11s ->   517.99s] approximation, then we're going to take a look at the error. So what I do here is I have the actual
+[  517.99s ->   523.03s] function change, and I have the approximate function change. And as you can see, the actual function
+[  523.03s ->   532.23s] change is 2.00 or 2.01 approximately, and the approximate function change is 2.0. That is a
+[  532.23s ->   537.83s] very good approximation. Now you can do a whole bunch of analysis that's going to tell you the
+[  537.83s ->   544.07s] actual interpretation and bounds of this error. But for what we're trying to use it for, this is a
+[  544.07s ->   551.59s] phenomenal approximation based on the intuition that, hey, when there's a small change in this variable
+[  551.59s ->   558.87s] x, how do we expect the overall function x squared to change? Clearly, when we move away from this
+[  558.87s ->   565.27s] point too much, this error is going to be significantly larger. Let's give an example. As you can see,
+[  565.27s ->   573.32s] we're moving point one to the right. What happens if we move five to the right? We have quite a significant
+[  573.32s ->   580.15s] difference in the actual function change and the approximate function change. Moreover, if I move 10,
+[  580.87s ->   585.59s] you can see that this error is going to continue to increase. And that makes sense because this
+[  585.59s ->   592.07s] polynomial is growing at a much faster rate. Again, this is x squared versus just a linear approximation
+[  592.07s ->   597.11s] of that function. As we move away from this initial point, this distance, you can already see it here
+[  597.11s ->   604.63s] locally. As this distance, as you move away from the point of interest x zero, the distance between the
+[  604.63s ->   609.99s] red line and the blue line is going to continue to increase. And that's what we can see here, you can
+[  609.99s ->   616.79s] see that if the change is 10, and we're centered at point 10, then the approximate change is starting
+[  616.79s ->   623.59s] to get significantly worse. If I make this now 20, it's getting even worse. If I make this now 50,
+[  624.63s ->   629.27s] it's getting even worse. And that's exactly what we see in our chart here locally, we can see as we
+[  629.27s ->   636.29s] deviate too much away from this point of interest x zero, the linear approximation gets worse. So
+[  636.29s ->   642.13s] what can we do? Well, just like with this slider, we can just compute a new linear approximation
+[  642.13s ->   647.81s] at the next point of interest. And that's going to give us the same intuition and interpretation
+[  647.81s ->   654.21s] of what happens to the polynomial function. Again, that could be the pricing function, profit or cost
+[  654.21s ->   660.29s] function, when there is a unit change in one of the inputs, in this case, x. All right, now that's
+[  660.29s ->   665.41s] a lot of calculus. But why are we talking about linear approximations? Anyway, remember, we're trying
+[  665.41s ->   670.77s] to get at this idea of managing an option portfolio. And in order to manage an option portfolio, we need
+[  670.77s ->   677.17s] to understand the exposures that accompany an option contract. And in this case, we typically refer to
+[  677.17s ->   685.41s] them as the Greeks, that is a European call or put option, based on the Black-Scholes model is going to
+[  685.41s ->   694.45s] have a variety of inputs that affect its price. We have the idea of the underlying stock price,
+[  695.09s ->   699.89s] and the underlying stock price changing, the time to maturity and time to maturity changing,
+[  699.89s ->   706.05s] volatility and the volatility changing, the idea of row and interest rates and interest rates changing,
+[  706.77s ->   712.45s] and there are a whole bunch of not just first order sensitivities, but also second order sensitivities
+[  712.45s ->   718.61s] that you can compute. But you'll notice that there is no sensitivity to the strike price,
+[  718.61s ->   725.89s] and that's because it is fixed throughout the life of the option contract. So here we have our Black-Scholes
+[  726.53s ->   734.77s] pricing model. This is a nonlinear function just like our x squared. So if we have a nonlinear function
+[  734.77s ->   740.05s] just like our x squared, we can apply the same idea of a first order Taylor series expansion. In this
+[  740.05s ->   746.37s] case, we're just going to compute the partial derivative relative to the function that is the
+[  746.37s ->   752.29s] Black-Scholes pricing model for each of the inputs. And then we're going to have a linear
+[  752.29s ->   757.09s] approximation. Essentially, the way that you can think about it is we are going to have this pricing
+[  757.09s ->   764.21s] function and a red line for each of the inputs. So we'll have a linear approximation for the change
+[  764.21s ->   770.61s] in the underlying stock price, a linear approximation for the change in time, linear approximation for the
+[  770.61s ->   775.49s] change in volatility, linear approximation for the change in interest rates. And what we're going to be able
+[  775.49s ->   784.45s] to do then is analyze how we can expect our option value to change when there's a unit change in each
+[  784.45s ->   791.09s] of these inputs. So delta, these are the Greeks now, that is this idea of a linear approximation of the
+[  791.09s ->   798.52s] change in option price. We have delta, which is the Greek representing the first order sensitivity
+[  798.52s ->   804.52s] of the underlying asset price. We have theta, which is the same thing for the time to maturity.
+[  805.16s ->   811.48s] Vega, which is the same thing for volatility. Rho, which is the sensitivity to interest rates.
+[  811.48s ->   815.80s] And then gamma is a second order sensitivity, but we're not going to focus too much on that. That
+[  815.80s ->   821.80s] is the rate in which delta changes. That's going to be a video for another day. But essentially,
+[  821.80s ->   829.48s] all of these Greeks are just using this idea of a linear approximation. What we're essentially
+[  829.48s ->   838.28s] doing is we are doing this linear approximation for each input into the Black-Scholes model.
+[  838.28s ->   845.17s] So there are four inputs into this Black-Scholes model to determine a price. Of course, there's
+[  845.17s ->   850.05s] the strike price, but that's fixed. Okay, so I know there are five inputs, but bear with me,
+[  850.05s ->   856.37s] the strike price is fixed. These four inputs can change throughout the life of the option contract.
+[  856.37s ->   861.01s] So what we're going to do is we're going to compute a linear approximation for each of these inputs.
+[  861.01s ->   866.61s] And then we're going to be able to see at any point in time, how we can expect our option contract
+[  866.61s ->   874.77s] or our portfolio of options to change when there is a change in one of these input variables. And keep
+[  874.77s ->   881.49s] in mind, the underlying asset price changes all the time. The time to maturity changes every day.
+[  881.49s ->   888.93s] Volatility changes every day. It's a continuous process, right? Implied volatility, even though
+[  888.93s ->   895.65s] the model assumes it's fixed, it's not in reality, right? Volatility and the implied volatility of an
+[  895.65s ->   901.65s] option is determined by an equilibrium price and backing out the volatility to produce that market price.
+[  901.65s ->   907.41s] So these linear approximations are going to give us insight into how we can expect our option
+[  907.41s ->   914.61s] portfolio to change when any one of these variables change. How is this useful? Well,
+[  915.65s ->   921.73s] if we have no idea how our option portfolio is going to change when there's a change in the underlying
+[  921.73s ->   927.73s] asset price or there's a change in time or change in volatility, then how can we possibly understand our
+[  927.73s ->   935.41s] exposure? If all of a sudden there's a massive amount of uncertainty due to tariffs or macro changes
+[  935.41s ->   943.09s] or whatever this is, maybe fear starts to increase and volatility increases. You should know what happens
+[  943.09s ->   949.41s] to your option portfolio if you're net positive or negative vega. If your portfolio value is going to
+[  949.41s ->   955.57s] increase or decrease, that's exactly what this linear approximation is going to tell you. That's exactly
+[  955.57s ->   962.77s] what the Greeks are going to tell you. So I've built functions here for each of the Greeks that we are
+[  962.77s ->   967.57s] going to analyze. That is these four, delta, theta, vega, and rho. And I've also developed a pricing
+[  967.57s ->   972.05s] function for the Black-Scholes call. I'm going to post this. I'm going to link it in the description
+[  972.05s ->   977.73s] below. I'll post it on GitHub if you want to check out this Jupyter notebook. What I have here now is an
+[  977.73s ->   984.77s] example of delta, theta, vega, and rho relative to a parameter set for one European call option.
+[  984.77s ->   989.89s] So what I have here is I have the current market parameters. I have the current underlying asset
+[  989.89s ->   994.61s] price, the current strike price. Remember, this is fixed throughout the life of the contract. So there
+[  994.61s ->  1000.69s] is no sensitivity to the strike price, time to maturity, the risk-free rate, and the volatility.
+[ 1001.57s ->  1009.41s] I have now delta, theta, vega, and rho that is representing a unit change in the underlying asset
+[ 1009.41s ->  1016.85s] price, time to maturity, volatility, and the interest rates. And each of these represents
+[ 1017.97s ->  1025.17s] what's going to happen to our, approximately of course, option price. So that is if we are long
+[ 1025.17s ->  1029.89s] a European call option and there is a unit change in the underlying asset price,
+[ 1029.89s ->  1037.41s] then we would expect the call option to increase by roughly 0.64. Well, let's test this out.
+[ 1040.34s ->  1047.86s] Would you look at that? That increases by roughly 0.64. Now, why didn't it increase by precisely 0.64?
+[ 1047.86s ->  1053.86s] Well, again, it's a linear approximation, just as we had here. We had that, even though we're moving
+[ 1053.86s ->  1058.90s] very slightly away from this initial point of interest, there is still a little bit of error. Now,
+[ 1058.90s ->  1064.74s] this error is negligible for the interpretation and understanding that we get from implementing
+[ 1064.74s ->  1073.16s] this Greek. One of the things that you will notice is the delta is also a non-linear function. So we're
+[ 1073.16s ->  1081.24s] using a linear approximation to determine what happens in this overall pricing function, but these
+[ 1081.24s ->  1090.76s] functions themselves are also non-linear. So it jumps from 0.64 to 0.66. So we're going to expect another
+[ 1090.76s ->  1100.56s] change of 0.66 roughly. Now it goes to 0.67 and all of the other functions change as well. So there's a
+[ 1100.56s ->  1106.32s] lot going on here, but at a high level, all I want you to understand is each of these Greeks represent what
+[ 1106.32s ->  1113.84s] happens when there's a unit change in the underlying parameter. Now, of course, Vega and Rho having a
+[ 1113.84s ->  1121.12s] unit change, that is a significant, significant change. Most likely it's going to be in percentages.
+[ 1121.12s ->  1127.04s] So there's going to be like a 0.1% increase in vol or a 0.5% increase in vol. That's going to scale
+[ 1127.04s ->  1131.84s] down these linear approximations, but we're just going to use the underlying asset price because it's so easy
+[ 1131.84s ->  1140.56s] to see. You can see now delta is 0.67. The option price is 1176. What happens if the price decreases
+[ 1140.56s ->  1147.84s] by one? Well, we would expect that this call option price would be roughly 11.10. So 1110.
+[ 1149.04s ->  1154.24s] And that's exactly what we get. So all we're doing here is we're applying this idea of a linear
+[ 1154.24s ->  1163.70s] approximation to the change in our option value to an option price to be the Black-Scholes model.
+[ 1163.70s ->  1168.50s] And that's exactly what we're doing here for each of the inputs. Remember, this is the underlying asset.
+[ 1168.50s ->  1172.66s] This is the time to maturity. This is the volatility. And this is the interest rate.
+[ 1173.65s ->  1180.05s] This is precisely how the Greeks work. And the upside to this sort of linear approximation is that
+[ 1180.05s ->  1186.61s] it is linear. So if I'm trading a whole bunch of different option contracts on, say, Apple, then I'm
+[ 1186.61s ->  1192.37s] going to have a whole bunch of different deltas. But the net delta of my portfolio, I can just sum together
+[ 1192.37s ->  1198.05s] all of the deltas of all those option contracts. And that's going to tell me approximately how much I
+[ 1198.05s ->  1203.65s] can expect my portfolio value to change when there's a unit change in either direction of, say,
+[ 1203.65s ->  1210.85s] the underlying asset price or time to maturity, vega, row, etc. So what this means is I get a very
+[ 1210.85s ->  1220.13s] high level view for almost nothing of my overall option portfolio. If I am net long delta, then my portfolio
+[ 1220.13s ->  1227.65s] value will increase when the underlying asset increases. If I'm net negative delta, then my
+[ 1227.65s ->  1233.89s] portfolio value is going to decrease when the underlying asset increases. That's why this idea
+[ 1233.89s ->  1240.13s] is so useful because even if I'm trading a hundred different option contracts on the same underlying,
+[ 1240.77s ->  1248.45s] then I get a summary of what's going to happen to my portfolio value in the form of delta, theta,
+[ 1248.45s ->  1253.17s] vega, and row. I can just take a look at the net exposure. Now, if you wanted to take it a step
+[ 1253.17s ->  1258.53s] further, you could even look at the second order sensitivities to see how quickly your delta is
+[ 1258.53s ->  1264.13s] changing, how quickly your vega is changing, so on and so forth. But again, that's more of a video
+[ 1264.13s ->  1270.77s] for another day. This is going to tell you, relatively speaking, and in kind of plain old English,
+[ 1270.77s ->  1276.69s] what you want the market to do to make more money. So if you're net positive delta,
+[ 1277.33s ->  1281.57s] then you want the underlying asset to keep going up. If you're net negative delta,
+[ 1281.57s ->  1286.13s] you want that thing to keep going down because the value of your portfolio is going to increase.
+[ 1286.77s ->  1293.49s] Now, what if you don't necessarily want to speculate? What if you're a market maker?
+[ 1294.29s ->  1297.81s] Well, if you're a market maker, you're trying to collect this bid-ask spread, and you can
+[ 1298.53s ->  1303.89s] argue that spreads are so tight now there's nothing left, whatever. That's not the point of this video.
+[ 1303.89s ->  1309.17s] You can take that elsewhere. The whole point of this video is suggesting that if you wanted to
+[ 1309.17s ->  1315.49s] collect that bid-ask spread, then you don't want this exposure. You don't want this delta,
+[ 1315.49s ->  1322.12s] theta, vega, rho exposure. What you do want is you want net neutral exposure. You don't want your
+[ 1322.12s ->  1330.04s] portfolio value changing at all when there's a change in the underlying asset or time progresses
+[ 1330.04s ->  1338.44s] or volatility changes. So what you can do then is you can try to enter offsetting positions
+[ 1339.00s ->  1348.28s] to make your delta zero, to make your theta zero, to make your vega zero. And what that's going to do
+[ 1348.28s ->  1353.16s] is it's going to neutralize that exposure, meaning you're going to have almost a net zero change in
+[ 1353.16s ->  1361.30s] your portfolio value when these variables in the market change. And then the idea is you would try
+[ 1361.30s ->  1365.78s] to collect that bid-ask spread. So that is the idea from a market maker's perspective. That's the idea of
+[ 1365.78s ->  1371.94s] implementing this linear approximation as a market maker. Um, this is again, a very crude, um,
+[ 1371.94s ->  1377.62s] interpretation explanation. There's a lot of other stuff going on in that setting, but just at a high
+[ 1377.62s ->  1383.30s] level to understand why these linear approximations are so useful in any context, whether you're managing
+[ 1383.30s ->  1388.50s] your own option portfolio or you are a market maker, that is the high level gist of what's going on.
+[ 1389.06s ->  1395.14s] Excuse the breach in continuity. It is quite cold out. The last thing I'd like to do is discuss this
+[ 1395.14s ->  1402.98s] idea of a linear approximation relative to the other inputs in our function of interest.
+[ 1402.98s ->  1407.22s] In this case, the function of interest is our Black-Scholes model, our pricing function,
+[ 1407.22s ->  1412.82s] and we have all of these different parameters that can change. Now you'll notice if we take a look at
+[ 1412.82s ->  1419.14s] something like Delta, what happens when we change the time to maturity? Well, you can see that Delta
+[ 1419.14s ->  1425.62s] does change when the time to maturity also changes. Moreover, if the strike price changes,
+[ 1425.62s ->  1430.02s] then our Delta is going to change because that's going to affect the money-ness of our option.
+[ 1430.02s ->  1434.34s] Now I'm not saying the strike price will change throughout the life of the option, but when it's
+[ 1434.34s ->  1438.66s] initially set, you can see that's going to determine our Delta. The money-ness of the option
+[ 1439.22s ->  1444.90s] is going to have an impact on that linear approximation. So what are the implications
+[ 1444.90s ->  1450.82s] of this? Well, we also have the ability to look at second-order sensitivities. That is,
+[ 1450.82s ->  1457.14s] we don't just have to look at the change in option price relative to the underlying asset, but
+[ 1457.14s ->  1464.18s] we can also look at the change in the underlying asset and the change in time or the underlying asset
+[ 1464.18s ->  1471.86s] and volatility or interest rates. So you can compute these cross-partials, if you will,
+[ 1471.86s ->  1477.46s] and you get a similar effect and that's a second-order sensitivity. What I want to do is I want to kind
+[ 1477.46s ->  1483.06s] of give you the gist of this idea of how the parameters influence one another by taking a look
+[ 1483.06s ->  1488.58s] at this chart. So here what we have is we have our actual theta, that is the actual change from the
+[ 1488.58s ->  1494.10s] change in time and our option price. We have a theta approximation and we have our initial option
+[ 1494.10s ->  1501.08s] price here. Now what you'll notice is as we increase the time step, the theta approximation
+[ 1501.08s ->  1507.40s] is significantly worse than the actual option price. This is exactly what we saw when we looked at this
+[ 1507.40s ->  1514.04s] chart up here. As we get further and further away from the point of interest, the approximation is going
+[ 1514.04s ->  1522.95s] to get worse and worse and worse. So let's bring this back down to an incremental change and let's
+[ 1522.95s ->  1527.11s] take a look at what happens when we change the moneyness of the option. So let's say the underlying
+[ 1527.11s ->  1535.51s] asset starts to increase significantly. You can see the strike price is 103, the underlying or the spot of
+[ 1535.51s ->  1543.86s] the underlying is 150. Now the approximation is very similar to the actual change. What happens when we
+[ 1543.86s ->  1552.69s] actually decrement time here? Look at that. What happens when we increase the time step?
+[ 1554.47s ->  1562.23s] The magnitude of the effect is not quite the same. So when I decrease this, you'll see, wow,
+[ 1562.23s ->  1569.56s] that is a significant amount of error. But when we're deep in the money, it's still a reasonable
+[ 1569.56s ->  1575.64s] approximation. So what's going on here? This is what I want to leave you with is the linear approximations
+[ 1575.64s ->  1580.36s] themselves are assuming that we're holding all of the other parameters constant. But what you just
+[ 1580.36s ->  1586.84s] witnessed is as the other parameters change, the effectiveness of the linear approximation itself
+[ 1586.84s ->  1592.28s] will also change. That is, it's going to be your option price. That is, it's going to be less or more
+[ 1592.28s ->  1598.68s] sensitive to the approximation and the error of the approximation further away from the point of interest,
+[ 1598.68s ->  1604.12s] depending on the parameter set that you're dealing with. And that's exactly what we see here. We see the
+[ 1604.12s ->  1612.44s] initial option price. We see the actual price in the theta approximation. And as our underlying changes,
+[ 1612.44s ->  1617.00s] we can see, wow, this data approximation is terrible when it's out of the money like this,
+[ 1617.00s ->  1622.04s] or when it's deep in the money, even though we're so far away from the initial point X zero,
+[ 1622.84s ->  1629.08s] we have a marginal error here, right? Marginal relative to relative to this error.
+[ 1630.12s ->  1636.84s] So all that is to say is we don't just have a linear approximation for the change in option price
+[ 1636.84s ->  1642.60s] relative to all of the inputs, but we also have second order sensitivities. We have gamma,
+[ 1642.60s ->  1646.84s] we have charm, we have all of these other interesting quantities that we can compute
+[ 1646.84s ->  1653.08s] to see how all of these changes work together. I want to leave you with this idea of managing an option
+[ 1653.08s ->  1659.24s] portfolio and the notion of hedging away your different exposures. That is the exposures that
+[ 1659.24s ->  1665.08s] we discussed throughout this video, the Greeks. So how do you do this? Well, let's say that I have
+[ 1665.08s ->  1672.04s] a portfolio of options and stock. As we said earlier, I'm able to add all of those different exposures from
+[ 1672.04s ->  1678.68s] all those different contracts and equity together. And I'll have my overall portfolio, delta portfolio,
+[ 1678.68s ->  1684.36s] vega portfolio, theta, so on, so forth, right? That's going to tell me how my portfolio value
+[ 1684.36s ->  1689.88s] will change relative to all of those inputs. So we talked about the underlying asset, the market
+[ 1689.88s ->  1695.80s] volatility, interest rates, all of those inputs that would affect the price of the assets we're
+[ 1695.80s ->  1706.45s] holding in this portfolio. What if I wanted to hedge away all of my vega risk, my delta risk? Well, this
+[ 1706.45s ->  1715.11s] turns into a pretty much a system of, of equations. What we have is we have a market where we can go out
+[ 1715.11s ->  1723.27s] and purchase option contracts. We could sell option contracts. And our goal is going to be to find a
+[ 1723.27s ->  1727.91s] combination of option contracts that's going to hedge away the risk that we're interested in hedging
+[ 1727.91s ->  1735.09s] away. But moreover, when we do that, that new contract is going to bring to the table its own
+[ 1735.09s ->  1742.21s] theta, its own delta, its own rho. And we're going to have to add that to our portfolio. So this turns
+[ 1742.21s ->  1748.61s] into a very interesting type of optimization problem slash system of equations where we're trying to figure
+[ 1748.61s ->  1754.77s] out the best way that we can combine contracts available to us in our portfolio to hedge away
+[ 1754.77s ->  1763.33s] the risk. Now you can only get theta, vega, gamma, all of, all of that exposure from option contracts.
+[ 1763.33s ->  1771.28s] So the only way to offset it is using an option contract, right? Delta, however, you can get delta,
+[ 1772.32s ->  1778.32s] you can either get positive delta by going long, an underlying asset, or negative delta going short,
+[ 1778.32s ->  1783.68s] the underlying asset from exclusively the underlying asset. That is typically when you're trying to
+[ 1783.68s ->  1788.96s] hedge away this portfolio risk, you start with options. So you hedge away your theta,
+[ 1788.96s ->  1793.84s] hedge away your rho, hedge away your vega. And then once you have that combination of options
+[ 1793.84s ->  1800.88s] that all offset, then you can go buy and sell stock depending on your net delta position to neutralize
+[ 1800.88s ->  1806.48s] that one last because stock doesn't come with any vega. Stock doesn't come with any theta.
+[ 1807.44s ->  1813.12s] And that's a very interesting component of managing an option portfolio. In a later video,
+[ 1813.12s ->  1817.52s] I would like to actually discuss how to solve this sort of system of equations and, and, you know,
+[ 1817.52s ->  1823.36s] maintain an offsetting position and talk about what rebalancing looks like. Yes, we have transaction
+[ 1823.36s ->  1828.08s] costs. Yes. There's all of these other, you know, actual implications when we go into the market and
+[ 1828.08s ->  1832.96s] transact. And that's something that I would like to explore in a, in a later video, along with these
+[ 1832.96s ->  1838.32s] second order sensitivities, which are also very, very important as well. But until then,
+[ 1838.96s ->  1843.92s] thank you so much for watching. I hope you enjoyed and I will see you in the next video.
+[ 1843.92s ->  1844.88s] Thank you.
+[ 1844.88s ->  1848.88s] Thank you.

@@ -1,0 +1,147 @@
+[    0.12s ->     3.46s] Want to make money trading options, but you don't have the time or a large account?
+[    4.10s ->     8.28s] Let me show you a trade that I took this week that made me 26% in one day while minimizing
+[    8.28s ->    13.28s] my risk and not needing me to actively look at my screen and have large capital requirements.
+[   13.44s ->    14.80s] Hello, this is Credit Spread Investing.
+[   14.90s ->    18.82s] I work a full-time job and I'm here to show you all how to trade options and invest safely
+[   18.82s ->    20.94s] and smartly so that you can accelerate your account growth.
+[   21.14s ->    23.80s] There are a lot of strategies when it comes to options trading, but today I'm going to
+[   23.80s ->    27.90s] show you one of my favorite option strategies, which is the 1DTE credit spread that I use
+[   27.90s ->    30.88s] to grow my accounts, particularly my Roth IRA because it's a small account.
+[   31.08s ->    33.92s] And at the end of this video, you'll have a good understanding of how to trade the strategy
+[   33.92s ->    35.58s] and more importantly, how to manage the risks.
+[   35.94s ->    39.10s] So as always, I use my real-life trades as examples to demonstrate these principles.
+[   39.10s ->    46.82s] I took a SPX call credit spread trade on 10-12 with an expiry of 10-13 one day later.
+[   46.96s ->    51.80s] SPX call credit spread of $43.75 and $43.80.
+[   51.80s ->    58.50s] I collected a total credit of $130 and sold two, which means my total credit received
+[   58.50s ->    61.68s] was 260, ROI of around 26%.
+[   61.68s ->    69.52s] My total requirements will be $1,000 because it will be $43.80 minus $43.75, multiply that
+[   69.52s ->    70.00s] by two.
+[   70.36s ->    73.44s] So I only really need $1,000 to make this one trade.
+[   73.64s ->    76.42s] I made this my Roth IRA, which is a smaller account.
+[   76.42s ->    82.12s] So the good part about this trade is that on 10-13, it expired out of the money, which
+[   82.12s ->    86.06s] means that I made a total profit of $260, right?
+[   86.06s ->    89.18s] I made that max profit because it expired out of the money.
+[   89.36s ->    92.26s] So in one day, I made that max profit of $260.
+[   92.82s ->    95.64s] Now let's just go through the scenarios and talk a little bit about risk.
+[   95.78s ->   106.56s] So number one, if SPX is less than $43.75, like we saw earlier, we'll make the max profit,
+[  106.56s ->   109.10s] right, right, of $260.
+[  110.18s ->   112.70s] Now number two is the risk.
+[  113.58s ->   121.63s] FBX is greater than our upper leg of $43.80, then we'll make the max loss, which would be
+[  121.63s ->   124.03s] $740.
+[  124.57s ->   125.43s] Now why is that?
+[  125.65s ->   128.43s] It's because our total requirement to be in this trade is $1,000.
+[  128.43s ->   139.39s] It's $43.80 minus $43.75, times that by two, which would equal this $1,000 right here.
+[  139.39s ->   147.33s] Now because we've already collected a total credit of $260, right, originally, the credit
+[  147.33s ->   157.36s] received, our total max loss will be that $1,000 minus that $260 that we already collected,
+[  157.50s ->   160.78s] which would be the $740 that you see above, right?
+[  160.82s ->   165.74s] So basically what you're doing here without any trading whatsoever, without any stop losses,
+[  165.74s ->   169.10s] without managing the trade, you're risking $740 to make $260.
+[  169.10s ->   175.04s] That sounds bad off the top of its head, but the beauty of that is we entered the trade,
+[  175.22s ->   182.64s] as you'll see later, around $43.50, which means that the market has to go up 25 points
+[  182.64s ->   188.08s] in one day in order for us to be at risk of taking any losses.
+[  188.64s ->   192.38s] So this is why on this channel, we like to sell options because it lets us win more consistently.
+[  192.72s ->   193.60s] So let's get to it.
+[  193.60s ->   194.94s] The math is really simple.
+[  194.94s ->   200.60s] If I can make consistently, for example, $200 and I win four times out of five times and
+[  200.60s ->   206.52s] I only lose 200 bucks every time I lose, I'll still come up on top and I'll make 600 bucks
+[  206.52s ->   207.80s] at the end of those five trades.
+[  207.84s ->   208.96s] And you want to do that consistently.
+[  209.38s ->   214.94s] That only comes with being very disciplined in how you enter and very disciplined about how
+[  214.94s ->   215.52s] you exit.
+[  215.64s ->   218.02s] So we're going to talk about both of that today with this one example.
+[  218.78s ->   223.58s] Number one, when we look at entries, we have to understand what the market trend is.
+[  223.60s ->   227.78s] So that we understand which side of the market to trade on.
+[  228.16s ->   232.86s] So tip number one here is when you're trading 1DTEs or even a little bit longer, such as
+[  232.86s ->   234.90s] weeklies, you want to be at a higher timeframe.
+[  235.24s ->   237.20s] I tend to be at a 30 minute timeframe.
+[  238.02s ->   239.64s] So number one, market trends.
+[  240.34s ->   245.38s] Market structure indicates to us when certain patterns are forming or have broken.
+[  246.06s ->   248.04s] So let's just run through this example.
+[  248.04s ->   254.64s] This goes from a low to a high, to a higher low, to a higher high, to a higher low, right
+[  254.64s ->   255.28s] here, right?
+[  255.78s ->   260.80s] But on Thursday, you can see the higher high didn't form.
+[  260.92s ->   264.72s] So this trend that we just drew out is no longer valid.
+[  264.88s ->   272.18s] It hasn't continued to go up and speed up to like 4,400, but instead reverse lower, making
+[  272.18s ->   278.68s] this right here, an area of resistance, which means that the uptrend that we saw is no, it
+[  278.68s ->   279.50s] has been broken.
+[  279.86s ->   287.00s] And then I wait one more for one more confirmation to indicate that the reversal has started.
+[  287.00s ->   291.34s] That next indication will come here where my cursor is around 43.50.
+[  291.46s ->   293.92s] That is the previous swing high.
+[  293.92s ->   296.02s] And it's also the previous support.
+[  296.56s ->   303.20s] So once it broke that support, what that tells me to a certain extent is that the uptrend
+[  303.20s ->   304.80s] is no longer valid.
+[  304.90s ->   307.42s] It goes from A to a B to a C to a D to an E.
+[  308.02s ->   312.82s] Now the F didn't form, but because the F didn't form and it broke the lower low, the
+[  312.82s ->   319.16s] higher low and formed a lower low, you can now assume that the downtrend is now going
+[  319.16s ->   321.32s] to start forming at least on the short term, right?
+[  321.34s ->   323.48s] And then we're trading one DTEs here.
+[  323.48s ->   329.78s] That at the end of the day, when I entered around 43.50, the market would need to swing
+[  329.78s ->   335.84s] high somehow and break past this 43.85 for me to lose on this trade.
+[  336.24s ->   342.26s] On 43.50, at the end of Thursday, that's when I entered this trade and I was able to get
+[  342.26s ->   345.40s] $130 per spread on this trade.
+[  345.88s ->   349.12s] And then so obviously the market went higher, formed a lower high, swung down.
+[  349.38s ->   351.72s] We made max profit pretty simply, 260.
+[  351.78s ->   352.84s] We weren't really ever tested.
+[  352.84s ->   356.70s] So the next step that you should always do when you take a look at these trades is how
+[  356.70s ->   357.26s] do we lose?
+[  357.70s ->   357.84s] Okay.
+[  357.88s ->   360.88s] And so this, I'm going to be hypercritical myself here so that you guys can understand
+[  360.88s ->   362.72s] that not every trade I enter is perfect.
+[  362.72s ->   364.26s] And there's always learning experiences here.
+[  364.56s ->   369.68s] What I'm essentially trying to trade here is the break of structure and a formation of
+[  369.68s ->   370.32s] a lower high.
+[  370.40s ->   372.44s] So I entered on the break of structure.
+[  372.44s ->   377.00s] So now I'm really just waiting for the market to wait for a lower high.
+[  377.08s ->   382.70s] So what that means is I am waiting to see if the market ever hits this 43.85.
+[  382.94s ->   384.62s] If it does, then I'm out of the trade.
+[  384.80s ->   386.90s] There's two main scenarios that I'm kind of afraid of.
+[  387.12s ->   392.88s] One where it gaps up during futures for some reason and it just blows past 43.85.
+[  392.88s ->   395.00s] The moment it blows that 43.85, I'll lose.
+[  395.50s ->   398.76s] I'll take whatever my max loss at market open, then I'll be out.
+[  399.18s ->   404.04s] The second worst case scenario is the market just slowly bleeds up throughout the day and
+[  404.04s ->   409.46s] hits that 43.85 and then I'm out or I'll have to make a tough decision to exit the trade.
+[  410.06s ->   414.08s] So on Monday as market open, it's kind of like scenario number one where it gapped up,
+[  414.22s ->   418.00s] but because it hasn't hit 43.85 yet, I'm not, I'm not interested in exiting.
+[  418.00s ->   422.80s] Next 30 minutes, it boom, it fell off and it started falling down after the fact, right?
+[  422.82s ->   426.38s] So you can see how your stop losses are very important to managing your trades.
+[  426.60s ->   431.48s] Let's take a look at why that isn't necessarily the best trade that I took on Thursday.
+[  431.62s ->   433.50s] And we're going to go to on demand here.
+[  433.60s ->   435.02s] There's something that Thinkorswim has.
+[  435.10s ->   436.58s] It basically has historical data.
+[  437.00s ->   441.54s] You see on the bottom of my screen, 43.75, 43.80, October 13th, $1.30.
+[  442.00s ->   443.14s] That's the trade I'm in.
+[  443.14s ->   453.08s] So if I were to be at 43.85, a P&L, if it were to hit 80, 43.85 would be around $180 per spread,
+[  453.36s ->   456.84s] which means that my risk to loss ratio is around 1.5.
+[  456.96s ->   462.16s] Remember earlier when I said that when I'm trading credit spreads, I want to manage my risk properly.
+[  462.28s ->   464.72s] So if I trade five times, I want to win four out of five times.
+[  464.78s ->   467.54s] But when I do lose that one time, I don't want it to be gigantic.
+[  467.54s ->   473.42s] So I usually tend to lean towards a risk to reward ratio of no greater than 1.5.
+[  473.52s ->   475.92s] So if it's greater than 1.5, then it's a pretty bad trade.
+[  476.10s ->   480.68s] In this case, 180 is around a 1.5 risk to reward ratio.
+[  480.80s ->   485.64s] So it's okay, but I would rather it be closer to one than it is to 1.5.
+[  485.72s ->   486.82s] The lower it is, the better.
+[  487.38s ->   490.62s] So now if you were to go look at the charts, what is a better entry?
+[  490.62s ->   497.14s] A better entry will honestly be on this candlestick right here at 7 a.m. in the morning Pacific time.
+[  497.14s ->   501.92s] Once that candlestick has formed, I can sell right at 43.75 again.
+[  502.14s ->   507.88s] But I set my stop loss as 1 ATR above 43.75, which we can just set it at 43.85, right?
+[  507.94s ->   510.38s] Because 1 ATR is around 10 points, so 43.85.
+[  510.72s ->   514.12s] And let's check our credit and then our risk to reward ratio.
+[  514.48s ->   520.16s] So let's go back to Friday and let's go to 7.15.
+[  521.18s ->   524.66s] Once that large bearish engulfing candlestick has formed.
+[  524.66s ->   530.28s] Okay, so let's go 43.75 and let's do Monday expiry, right?
+[  530.38s ->   531.18s] 1 DT.
+[  531.64s ->   536.68s] So 43.75 to 43.85 will be around $210, give or take.
+[  536.96s ->   541.54s] I got $80 more for basically the same trade time.
+[  541.66s ->   545.38s] And let's analyze this trade, right?
+[  545.42s ->   549.50s] If it went to 43.85, I would really be down only $100, right?
+[  549.50s ->   552.54s] So my R ratio now is actually 50%.
+[  552.54s ->   557.54s] I collected 210, but I would get stopped out at 310, which means that I only lost $100.
+[  557.84s ->   559.86s] Risk to reward ratio is now 0.5.
+[  560.06s ->   564.02s] So you can see how that, this trade right here, is a much better trade than the trade that I entered.
+[  564.24s ->   565.80s] Obviously, the trade panned out, right?
+[  565.84s ->   569.24s] But when we trade, we always have to take a look at what we could do better.
+[  569.36s ->   570.72s] And this is really the secret sauce here.
+[  570.92s ->   574.64s] Make sure you guys look at yourself very critically and see what you could have done better.
+[  574.64s ->   578.02s] So if you guys have any questions, drop a comment, question down in the comment section below.
+[  578.48s ->   582.86s] If you guys want to see my favorite credit spread strategy and how I make $1,220 a month
+[  582.86s ->   586.52s] using this strategy every month, make sure you guys check out this video right here.

@@ -1,0 +1,1070 @@
+[    0.00s ->     7.48s] Selling puts is by far one of the most straightforward ways to generate consistent income from options.
+[    7.48s ->    15.12s] And for me personally, learning how to sell options has made one of the largest impacts on my early retirement.
+[   15.72s ->    20.56s] It is really the gateway to all other option strategies that I now use on a daily basis.
+[   20.84s ->    28.76s] But I also know that selling options can seem intimidating for beginners and sometimes confusing for even people with more experience.
+[   28.76s ->    40.80s] So this is why I made this video, to show you step by step from beginning to the end, the basics of what options are to the more advanced techniques that I use to generate monthly income.
+[   41.04s ->    43.34s] So this video actually took me a long time to make.
+[   43.74s ->    52.30s] And I'm sharing with you guys my years of experience for free so that you guys can fast track your own journey to financial freedom.
+[   52.30s ->    58.12s] So if you find this video helpful, all I ask is that you guys like the video and subscribe to the channel.
+[   58.60s ->    63.70s] It'll really help the channel out and it'll show YouTube that this is a type of content that's actually helpful.
+[   64.20s ->    67.94s] Before we get started, I'm going to show you guys one of my smaller accounts that I started last year.
+[   68.16s ->    76.28s] I've been trading puts on this account for the last five or six months so that I can demonstrate to you guys in this video how well selling puts can do.
+[   76.28s ->    78.52s] So I want to hop on over to Fidelity right here.
+[   79.00s ->    83.28s] My account is currently sitting at $75,545.53.
+[   83.88s ->    92.48s] But what is important isn't necessarily the absolute value, how much this account is worth, but its performance is especially benchmarked against the S&P 500.
+[   92.98s ->    96.68s] So since the beginning this year, it's been around five and a half months.
+[   97.58s ->   104.84s] This account is up 12.5% as compared to the 2.7% that the S&P 500 has in turn.
+[  104.84s ->   111.10s] And just to show you that I've been selling puts exclusively on this account ever since this account opened up.
+[  111.30s ->   116.68s] In this video today, you're going to be learning exactly how to sell auctions the right way.
+[  117.00s ->   118.00s] So take a notepad out.
+[  118.36s ->   120.94s] Feel free to pause the video if you guys need a break.
+[  121.34s ->   124.34s] But this video is hopefully very comprehensive.
+[  124.34s ->   137.12s] And for me, personally speaking, selling auctions was one of the first steps in my journey to true financial freedom that has allowed me to retire after 10 years in corporate at the age of 31.
+[  137.46s ->   141.48s] And like always, if you have any questions, drop it down in the conversation below.
+[  141.88s ->   147.08s] If you guys need to skip or refer back to a previous section, use the chapter selection tool below.
+[  147.68s ->   149.62s] All right, if you're ready, let's get started.
+[  150.00s ->   151.44s] So we're going to start off with the basics.
+[  151.82s ->   153.08s] What are options?
+[  153.08s ->   156.74s] There are two main types of options, puts and conks.
+[  157.02s ->   158.94s] But we're only going to focus on the puts today.
+[  159.20s ->   163.34s] As you probably know, for every buyer of an option, there is a seller.
+[  163.70s ->   166.24s] In this case, the seller of that option will be us.
+[  166.60s ->   175.50s] When someone buys a put, they have the right, but not the obligation to sell a stock at a given stock price on or before an expiration date.
+[  175.50s ->   186.24s] Which means that we, as the seller of that put option, will then have that same obligation to buy those shares at the same strike price on or before the same expiration date.
+[  186.24s ->   196.26s] Today, the buyer of that put option will give us, the seller, some amount of money to guarantee that we, the seller, will keep our promise to buy those stocks.
+[  196.26s ->   205.14s] Here is a TSM 180 strike price to put option that we sold for an expiration of 35 days from today.
+[  205.14s ->   216.50s] The seller of this put option will receive $512 from the buyer of that option if TSMC ends up above 180.
+[  216.80s ->   225.24s] So for example, if it stays at 185, then the put option that we sold will expire out of the money and it will be worthless.
+[  225.24s ->   230.98s] We do not have any obligations to buy 100 shares with TSMC.
+[  231.28s ->   239.26s] If the stock is at 185, then the buyer of that option will not want to sell it at 180 because they're actually worth more money.
+[  239.60s ->   243.60s] So that's why those options expire worthless and we pocket that $512.
+[  244.06s ->   249.98s] The amount of credit that we receive is the max profit that we can collect on this trade.
+[  249.98s ->   252.62s] Now let's examine the worst case scenario.
+[  252.76s ->   260.14s] Scenario number two is if TSMC drops below $180, let's just say 175.
+[  260.62s ->   274.20s] Then the seller of that option, which is us, will have to buy 100 shares of TSMC at $180 a share, which means that we need around $18,000 to buy 100 shares of TSM.
+[  274.48s ->   279.14s] Now let's examine why the seller will want to exercise their right to sell it at 180.
+[  279.14s ->   282.58s] The stock is worth 175, but he can sell it for 180.
+[  282.80s ->   286.40s] So of course, he's going to want to sell it for 180 and make that $5 difference.
+[  286.86s ->   291.60s] So now that we examined both scenarios, let's do a quick ROI analysis.
+[  292.04s ->   296.12s] So the max profit that we can make on this trade is $512.
+[  297.06s ->   302.76s] The amount of money that we need in the worst case scenario, $18,000.
+[  303.50s ->   306.62s] 2.8% return on invested capital.
+[  306.62s ->   310.50s] So what happens if we were to sell it on an option that is significantly less?
+[  310.56s ->   313.44s] For example, on registered, let's assume that we sold a put option at $9.
+[  313.90s ->   315.92s] Then the max collateral would only be $900.
+[  316.36s ->   321.06s] So the amount of money, again, is tied directly to the stock and the strike price that you choose.
+[  321.06s ->   328.80s] So let's examine how an option price changes as the stock moves up and or down.
+[  329.06s ->   331.78s] Let's take a look first at a very simple winning trade.
+[  332.12s ->   339.52s] Here, I sold a TSM 130 strike price put option when TSM was around $133.77.
+[  339.52s ->   343.05s] You can see TSM was very, very close to the money.
+[  343.17s ->   349.35s] And for that, we took on $269 of credit for this put to expire in 32 days.
+[  349.83s ->   358.12s] Seven days later, with 25 days remaining, TSM has actually gone up to $166.
+[  358.68s ->   361.94s] It's further away from the 130 strike price.
+[  362.54s ->   366.54s] Option price naturally decreases and it's now at $119.
+[  366.54s ->   375.02s] The reason for that is because the further away it is, the less likely TSM will be below $130.
+[  375.24s ->   381.86s] So at this point in time, seven days into the trade, if we were to close it, we will make $150.
+[  382.72s ->   387.24s] More than 50% of the total credit has already expired.
+[  387.66s ->   389.14s] Now let's move on.
+[  389.14s ->   395.52s] And seven days later, TSM has gone up further to $174.69.
+[  395.52s ->   400.44s] The 130 put price has dropped further to now $33.
+[  401.36s ->   404.67s] So at this point in time, you're up $236.
+[  404.97s ->   408.37s] So if you were to close it, you would make $236 of profit.
+[  408.71s ->   412.15s] You can see later on, the rest of the trade is relatively uneventful.
+[  412.31s ->   415.19s] TSM stayed around $165 and we expired out of money.
+[  415.39s ->   417.73s] And we made total profit of $269.
+[  418.21s ->   423.97s] And because TSM is above 130, your strike price, you would not buy 100 shares of TSM.
+[  423.97s ->   427.31s] Now let's take a look at a trade that goes south.
+[  427.92s ->   433.80s] Do a 160 put option on TSM when TSM was $175.
+[  435.02s ->   437.32s] This option also has 32 days to expiry.
+[  437.48s ->   439.48s] And for that, we collected $335.
+[  440.20s ->   444.30s] Just like the previous example, TSM has gone up in price to $190.
+[  444.30s ->   447.30s] And our option pricing has fallen to $82.
+[  447.30s ->   454.40s] Again, at this point in time, if you were to close it out, you would make $253 in profit, which is around 76%.
+[  454.40s ->   463.56s] With 11 days remaining, TSM has fallen back down to $166.72, which is actually below what it was when we first opened up this 160 put option.
+[  463.56s ->   471.54s] The price for this put option is now the same as when we first opened it, $335, which means that at this point in time, we would not make money or lose money.
+[  472.72s ->   474.60s] TSM is now at $162.92.
+[  475.72s ->   477.64s] Option price has dropped $268.
+[  478.18s ->   480.96s] Now I want you guys to pause and just think about this for a little bit.
+[  481.62s ->   487.46s] Even though TSM is below where we opened it, we are actually winning on this trade.
+[  487.46s ->   491.00s] And this kind of shows you the power of selling puts or selling options.
+[  491.32s ->   495.62s] The stock price doesn't actually have to go up within a certain amount of time.
+[  495.70s ->   500.66s] It just doesn't have to go down as much as your option strike price indicates.
+[  501.52s ->   506.66s] Four days later, at close, TSM fell to $149.82.
+[  507.22s ->   510.56s] Now this option is actually worth $1,018.
+[  510.56s ->   518.36s] The value of this option is going to be $160 minus $149.82, which comes out to be $1,018.
+[  519.10s ->   526.76s] Final P&L is if you decide to close it right before expiration, you would lose $683.
+[  527.26s ->   531.00s] You collected $335, but the option is worth $1,018.
+[  531.32s ->   535.54s] So you will lose 204% of the total credit collected.
+[  535.54s ->   543.02s] Now, option number two is if you decided to not buy the option back and you just let it get assigned,
+[  543.26s ->   548.38s] you would still collect the $335 and you would just have to spend $16,000 to buy 100 shares.
+[  548.80s ->   551.52s] The P&L only matters if you are buying or closing the trade.
+[  551.80s ->   555.84s] The takeaway from this is that selling puts can be a little bit dangerous.
+[  556.36s ->   561.92s] And this is because there's always a possibility that you will end up losing more money than you can possibly make.
+[  561.92s ->   566.92s] So in order for us to circumvent the risks, we have to learn how to safely sell options.
+[  567.34s ->   570.14s] So there are three main factors that impact an option price.
+[  570.62s ->   572.90s] One is the days to expiration.
+[  573.50s ->   575.88s] Two is the strike price that we choose to sell it at.
+[  576.30s ->   579.50s] And three is the underlying stock that we sell the option on.
+[  579.90s ->   582.62s] So let's just touch first on the time to expiration.
+[  583.00s ->   588.78s] Here is a chart of the $185 TSM put mapped out against its day to expiration.
+[  589.73s ->   591.81s] The same strike price, just different dates.
+[  591.81s ->   596.89s] So the first obvious observation here is the further out we sell our options,
+[  597.07s ->   600.05s] the longer the options last, the more credit we can receive.
+[  600.29s ->   604.27s] So an option that expires in 91 days, for example, we'll collect $945.
+[  605.01s ->   609.35s] Compared to a option that expires in 21 days, we'll collect $232.
+[  610.52s ->   615.84s] However, I want you guys to focus not on the actual amount, but on the curve of the graph.
+[  616.04s ->   620.08s] You can see that the curve of the graph starts accelerating around the 45-day mark,
+[  620.08s ->   625.34s] which means that the option prices start losing more and more value more quickly
+[  625.34s ->   627.26s] as we hit the 45-day mark.
+[  627.66s ->   629.30s] And this is a concept that we like to call theta decay.
+[  629.52s ->   633.36s] Your option loses value each and every day if everything else remains the same.
+[  633.36s ->   638.04s] And that decay speeds up when it hits that 45-50-day zone,
+[  638.16s ->   641.52s] which means that those options start losing value more and more quickly,
+[  641.52s ->   643.68s] which is good for us as option sellers.
+[  644.24s ->   648.50s] So a good example to demonstrate this is let's just compare that same 91 days to expiry
+[  648.50s ->   650.08s] where we collect $945.
+[  650.50s ->   655.00s] And compare it to the 28 days to expiry, which we collect $420.
+[  655.00s ->   662.26s] Now, during the 91-day span, we can sell three of these 28 days to expiries back to back to back.
+[  662.64s ->   669.06s] In that span of 91 days, by selling three of the 28 DTE, we're going to collect $1,260,
+[  669.64s ->   674.74s] which is more than if we just sold one 91-day to expiry, collecting $945.
+[  675.18s ->   677.28s] Selling out further isn't necessarily the best thing.
+[  677.50s ->   678.96s] You are actually leaving money on the table.
+[  679.28s ->   681.72s] If we sell it for around 35 days, 42 days,
+[  681.72s ->   685.66s] it would actually be better because we'll be collecting more money during the same amount of time.
+[  685.90s ->   688.58s] So my recommendation is anything around 45 days and below.
+[  688.88s ->   692.20s] If you guys want to sell monthlies and make it simple, sell it for every 30 days,
+[  692.28s ->   693.62s] that's also completely fine as well.
+[  693.80s ->   696.98s] Now let's move on to number two, which is strike price.
+[  697.52s ->   698.76s] Here is an option chain.
+[  698.92s ->   704.22s] This is the same for every single brokerage, whether it's Robinhood, Webull, IBKR in this case.
+[  704.48s ->   710.66s] It basically maps out the option price for every strike price available to sell or buy on this specific stock.
+[  710.66s ->   713.56s] So this right here is a TSM option chain.
+[  713.70s ->   715.74s] TSM right now is $1.97.82.
+[  716.20s ->   720.10s] So let's compare the $1.95 strike price option to the $1.90 strike price option.
+[  720.50s ->   722.76s] For the $1.95, we're going to collect $764.
+[  723.36s ->   726.16s] For the $1.90, we're going to collect $593.
+[  726.52s ->   728.88s] And for $1.85, we'll collect $425.
+[  729.94s ->   736.10s] The further we are away from the stock price, the less money we're going to collect.
+[  736.46s ->   739.22s] In other words, the closer we are, the more money we can collect.
+[  739.22s ->   747.96s] And especially for beginners, if you are taking on more risk than necessary when you're selling options, it can make it into a very dangerous endeavor.
+[  748.58s ->   753.74s] So what we really want to do is you want to look for a way to balance between being conservative and being aggressive.
+[  754.16s ->   756.74s] And there's this metric that is really beginner friendly.
+[  756.88s ->   758.86s] It's something called POP or probability of profit.
+[  759.38s ->   766.04s] POP is really just your brokerage telling you what they think the chances of you making a profit on this trade is.
+[  766.04s ->   777.76s] So let's just take, for example, if I were to sell a $1.90 put option on TSM, IBKR thinks the probability of profit 28 days from today is going to be 73%.
+[  777.76s ->   785.78s] If we were to go up to $1.95, they then now think $1.69 probability of profit.
+[  785.94s ->   791.74s] If we get further down, let's go to like $1.85, then it's going to be, it'll now be $1.78.
+[  791.74s ->   796.56s] So obviously the further you are out of money, the higher the chances of you winning will be.
+[  796.84s ->   802.18s] So the question here is what is a good probability of profit for us to target, especially for beginners that you err on the side of caution?
+[  802.46s ->   804.04s] I recommend around 70 to 80%.
+[  804.04s ->   805.98s] And the reason for that is because of statistics.
+[  806.20s ->   808.74s] One standard deviation of a bell curve covers around 68%.
+[  808.74s ->   814.90s] And so if you were to do slightly more than one standard deviation, let's say 75%, then you're mitigating a lot of the risk.
+[  815.06s ->   816.52s] So just to do a quick example, right?
+[  816.54s ->   822.40s] If you were to sell on TSM right here and I want to sell around 75%, I would be selling the $1.85 put option.
+[  822.94s ->   827.90s] If I were to sell this put option, I would collect $410 on this option.
+[  827.90s ->   834.98s] This will return you around 2.2% in around 28 days, let's just say a month, which is really, really good.
+[  834.98s ->   844.60s] Because if you were to do this 12 times in a year, just to make it simple, you'll make around 24%, which is much better than the 10% average that you would get on the S&P 500.
+[  845.22s ->   848.28s] Now, lastly is which stock to sell it on.
+[  848.66s ->   853.86s] So option pricing is highly dependent on the underlying equity or stock that you're selling it on.
+[  853.86s ->   861.76s] So, for example, TSM, if I were to sell this $185, which is around 10 points away, I'll collect around $410 like we talked about.
+[  861.98s ->   866.70s] TSM will have to drop 12 points or 13 points around a 6.6% decline.
+[  866.96s ->   870.64s] Let's go to a different stock and let's look up, let's compare option pricing.
+[  870.78s ->   874.92s] So let's go to Microsoft, for example, and let's find the same 28 days.
+[  875.50s ->   880.44s] And so in order for Microsoft to fall 6.6%, it'll have to be around $410.
+[  880.90s ->   882.28s] Let's just go to the 410 option.
+[  882.28s ->   888.18s] And you can see that the 410 put option is only worth $240.
+[  888.74s ->   895.12s] For the same decline for Microsoft, as you do with TSM, you're going to collect less money for Microsoft, right?
+[  895.18s ->   897.26s] $240 versus $410.
+[  897.52s ->   907.14s] If you want to collect $410, you have to be around $425 strike price, which is only a $13 decrease on Microsoft as of today.
+[  907.44s ->   910.76s] But the question is, why is Microsoft worth so much less than TSM?
+[  910.76s ->   913.82s] The main reason here is something that we like to call implied volatility.
+[  914.64s ->   918.68s] Implied volatility is how much the market predicts something will move.
+[  919.16s ->   922.90s] So the more volatile it is, the more expensive options will be.
+[  923.06s ->   926.58s] So as option sellers, we will collect more money when the stock is more volatile.
+[  926.58s ->   937.38s] So compare Microsoft's 20.3% implied volatility versus TSM's implied volatility, which is 42.5%.
+[  937.38s ->   943.20s] Now that we know that, we want to be looking for stocks with relatively high implied volatility.
+[  943.20s ->   949.38s] What I would do in this case is I would set a screener to look for these more volatile stocks.
+[  949.92s ->   952.34s] And most of the brokerages have a screener.
+[  952.72s ->   954.34s] So you just come, this is IVKRs.
+[  954.40s ->   958.20s] So we go to screener and we go to filter, right?
+[  958.22s ->   964.68s] And what we want to filter for is option implied volatility and what I like to call option volume.
+[  964.68s ->   968.40s] So for options implied volatility, I like anything above like 30%.
+[  968.40s ->   970.42s] So we'll just try to find the 30% here.
+[  970.94s ->   973.12s] Options implied volatility higher than 30%, which is great.
+[  973.38s ->   975.44s] I don't know why IVKR does it 0.02.
+[  975.84s ->   978.82s] And volume is important because you also want something called liquidity.
+[  979.16s ->   982.42s] When the worst case scenario happens and you want to buy back your option,
+[  982.50s ->   984.44s] you want to have as much liquidity as possible.
+[  984.92s ->   988.50s] So what I like to do is I like to have at least 5 million options
+[  988.50s ->   991.94s] to just make sure that I'm trading large cap stocks, options,
+[  991.94s ->   994.58s] and stocks that have high volume, these type of companies.
+[  995.28s ->   996.68s] And let's just go by sort by market cap.
+[  997.14s ->  1000.40s] So these are some of the more volatile stocks that you can sell options on.
+[ 1000.50s ->  1003.56s] NVIDIA is one that I've been selling a lot of it on.
+[ 1004.02s ->  1008.18s] There's Meta, there's Broadcom, there's Taiwan Semiconductor that we just talked about.
+[ 1008.70s ->  1011.44s] You can choose any one of these and you can sell options on them.
+[ 1011.66s ->  1015.14s] And the more volatile, again, like Tesla, for example, the more money you'll get on them.
+[ 1016.12s ->  1019.86s] Obviously, play with your screeners however you want, but this is a really good place to start.
+[ 1019.86s ->  1022.14s] There are ways that we can refine this to make it even better.
+[ 1022.14s ->  1026.26s] So to wrap this all up, let's sell a put option live so you can see what I mean.
+[ 1026.82s ->  1032.58s] So let's just sell an NVIDIA put and we will click on it and we will just go and sell one.
+[ 1032.64s ->  1033.68s] And let's go to option chain.
+[ 1033.68s ->  1041.78s] And for me, I like to sell out to 35 days and I'm just going to look for around 75% per probability of profit.
+[ 1043.61s ->  1044.77s] So maybe 125.
+[ 1045.73s ->  1047.49s] I will collect around $350 on this.
+[ 1048.11s ->  1048.37s] Right?
+[ 1048.37s ->  1052.33s] So I'll just click on order and I will go in and I will just confirm and sell this order.
+[ 1052.87s ->  1055.95s] And then boom, you'll open up your first option to be sold.
+[ 1056.27s ->  1059.09s] I would actually recommend you guys increase this to like maybe $350.
+[ 1059.71s ->  1063.05s] Play around the bid aspect right here where you want to kind of be in the middle, which is mid.
+[ 1063.43s ->  1071.53s] Once you're done, you click the sell order and then you'll have the ticket order go in and you should have your first sold option in your brokerage account.
+[ 1071.53s ->  1074.89s] So we just went through a beginner-friendly way of selling put options for income.
+[ 1075.81s ->  1080.25s] And from that, you can hopefully see a couple of the benefits that comes with selling puts.
+[ 1080.89s ->  1083.15s] But we're just going to summarize that in this section right here.
+[ 1083.49s ->  1087.63s] The first benefit is that it's actually relatively simple and straightforward and extremely beginner-friendly.
+[ 1088.35s ->  1090.25s] There's only really three main outcomes, right?
+[ 1090.35s ->  1091.97s] One, the option expires out of the money.
+[ 1092.63s ->  1094.51s] Two, you buy the option back and close it.
+[ 1094.89s ->  1097.85s] And three, you get a sign of a stock and you buy 100 shares.
+[ 1097.85s ->  1101.51s] Two, because we're selling options, you actually end up winning more often.
+[ 1101.65s ->  1105.39s] Your win rate should be pretty high, which makes this pretty passive and consistent.
+[ 1105.79s ->  1108.93s] You're not putting yourself in situations where you have to make a lot of hard decisions,
+[ 1109.33s ->  1116.57s] which ultimately means that you can make consistent passive income if you do things the right way.
+[ 1116.93s ->  1120.33s] Passive income can supplement your actual salary while you're still working.
+[ 1120.85s ->  1126.25s] And as your account grows, your options income will one day surpass your actual salary like it did with me
+[ 1126.25s ->  1128.83s] and become a large portion of your take-home.
+[ 1129.31s ->  1135.27s] And ultimately, selling puts is a great way for us to significantly outperform the market.
+[ 1135.45s ->  1142.29s] As demonstrated in this Goldman Sachs paper, we can beat the 10% on S&P 500 if we do things the right way.
+[ 1142.97s ->  1146.99s] And probably one of the best things about selling options is that if we do get a sign,
+[ 1147.73s ->  1151.63s] at the end of the day, we'll be buying 100 shares of a stock or an asset,
+[ 1151.63s ->  1155.15s] which means that the risk is significantly reduced for most of us.
+[ 1155.15s ->  1160.35s] Which leads us to probably the most important topic in this video, which is risk.
+[ 1160.93s ->  1163.05s] And this is just a disclaimer or a side note.
+[ 1163.25s ->  1167.13s] If you're watching a video on investing or option trading that doesn't actually talk about risks,
+[ 1167.51s ->  1170.31s] you should probably just turn that video off because you're not getting the whole picture.
+[ 1170.73s ->  1174.87s] So here on this channel, I want to make sure you guys get and understand the concept in its entirety
+[ 1174.87s ->  1179.17s] because that is how we become the best options traders and the best investors
+[ 1179.39s ->  1184.53s] so that we can do this month after month, year after year, and actually help us retire early.
+[ 1184.53s ->  1186.73s] So if you guys want to do that, make sure you guys subscribe to the channel.
+[ 1187.39s ->  1190.59s] Okay, so what are the risks to selling put options?
+[ 1191.07s ->  1195.81s] The first one you've probably already seen earlier, but is that you can lose more money than you can make.
+[ 1196.13s ->  1199.45s] So for example, if I'm collecting $200 from one of my put options,
+[ 1199.57s ->  1205.09s] it is not uncommon that when the stock or if the stock drops below the strike price and in the money,
+[ 1205.09s ->  1208.93s] that I end up losing maybe $300, $400, $500, $1,000.
+[ 1209.69s ->  1215.83s] Or in other words, 100%, 200%, 300%, maybe 500% of the total credit collected.
+[ 1216.37s ->  1222.55s] And this really rears the ugly head when we don't have enough money to buy 100 shares of that stock.
+[ 1223.19s ->  1225.73s] And the brokerage might end up margin called,
+[ 1225.99s ->  1230.45s] where the brokerage goes ahead, margin calls you, and closes out your options.
+[ 1230.45s ->  1236.71s] And it feels extra bad when the stock rebounds and you end up actually being out of the money,
+[ 1236.85s ->  1242.75s] but you had to take a large L and realize that loss because you just didn't have enough money to cover.
+[ 1243.15s ->  1246.41s] So in our strategy later on in this video, we'll talk about how we overcome that.
+[ 1246.73s ->  1248.03s] But that is one of the risks.
+[ 1248.47s ->  1251.57s] Number two, and this is probably the most important part of this video.
+[ 1251.85s ->  1255.03s] It is that the risk is with the underlying stock.
+[ 1255.03s ->  1259.09s] Is that when we do get a sign, we are going to buy 100 shares of that stock.
+[ 1259.29s ->  1263.77s] And if the stock is worthless or the company is worthless and has no intrinsic value,
+[ 1264.19s ->  1268.27s] then we are at risk of losing a lot in a lot of money.
+[ 1268.59s ->  1273.43s] So there's actually a really widely viewed or really popular video on how to sell put options
+[ 1273.43s ->  1275.59s] that kind of demonstrates this risk.
+[ 1275.97s ->  1279.89s] I actually did a deep dive on the mistake that this person made in this video right here.
+[ 1280.03s ->  1281.55s] If you guys want to check it out, feel free to.
+[ 1281.91s ->  1283.53s] But I want to summarize it here in this video.
+[ 1283.53s ->  1285.09s] We're just going to call this person Bob.
+[ 1285.23s ->  1288.29s] So Bob was selling put options weekly on a stock called Riot.
+[ 1288.43s ->  1290.45s] He was getting like 3% every single week.
+[ 1290.81s ->  1293.73s] To put that in context, he's getting around $200 every option.
+[ 1294.07s ->  1294.93s] He's selling seven of them.
+[ 1295.05s ->  1298.83s] So around $1,500 every single week just from selling put options.
+[ 1299.11s ->  1307.51s] If he's collecting 3% every week, he's getting like 12% every month or like 144% every single year.
+[ 1308.03s ->  1309.49s] That's why it's so enticing, right?
+[ 1309.49s ->  1312.71s] $6,000 a month, $72,000 a year.
+[ 1312.71s ->  1316.51s] And it makes selling put options seem like it's risk-free.
+[ 1317.50s ->  1319.34s] But Bob is going to learn the hard way.
+[ 1319.54s ->  1324.48s] He actually got assigned on seven options, which means he ended up buying 700 shares of
+[ 1324.48s ->  1327.26s] Riot at $54 a share.
+[ 1327.72s ->  1333.04s] Or in other words, he spent $38,000 buying 700 shares of Riot.
+[ 1333.04s ->  1339.80s] Now, as you guys can see from this chart, Riot basically face-planted it all the way down to $3 a share.
+[ 1340.32s ->  1341.72s] So obviously, I don't know what Bob did.
+[ 1341.80s ->  1344.00s] He never posted the update on his video.
+[ 1344.44s ->  1346.04s] But let's assume the worst case scenario.
+[ 1346.80s ->  1357.52s] He would have lost 95% of his total value or $36,000 if he had held Riot until the end.
+[ 1357.52s ->  1373.62s] So another way to put this in perspective is he was making around $1,500 a week, but he ended up losing $36,000 because Riot went all the way down to $3 and even to this day is at $9.
+[ 1373.62s ->  1383.06s] So because you guys watch this channel, you guys understand now that the inherent risk to selling put options is the actual underlying stock.
+[ 1383.28s ->  1387.06s] We always have to think about the worst case scenario, which is when we get a sign.
+[ 1387.32s ->  1394.00s] And in this case for Bob, Bob was selling options on Riot, which is a company that has no inherent value.
+[ 1394.20s ->  1395.48s] It is unprofitable.
+[ 1395.90s ->  1397.72s] It doesn't generate free cash flow.
+[ 1397.80s ->  1398.64s] It doesn't do anything.
+[ 1398.72s ->  1400.42s] It is basically a hype machine.
+[ 1400.42s ->  1403.22s] And when the hype died, so did the stock.
+[ 1403.22s ->  1407.66s] And so now that we understand the risks, so our strategy will cover up these weaknesses.
+[ 1408.04s ->  1416.00s] We'll talk about that very, very soon in the next couple of sections so that we can make selling put options consistent and an extremely profitable endeavor.
+[ 1416.20s ->  1417.62s] So now we're getting to the juicy part.
+[ 1418.00s ->  1421.36s] We're going to take that beginner strategy and we're going to make it even better.
+[ 1421.56s ->  1428.44s] So this strategy we're going to talk about is the exact put selling strategy I've used for the last couple of years.
+[ 1428.70s ->  1432.22s] There's going to be a couple of very simple guidelines that we're going to walk through.
+[ 1432.22s ->  1436.38s] It's going to allow us to sell puts consistently and safely.
+[ 1437.02s ->  1441.46s] First things first, we are still going to be selling 30 to 45 DT put options.
+[ 1441.96s ->  1445.14s] The reason for that is because you still want to take advantage of data decay.
+[ 1445.58s ->  1450.70s] And selling monthlies allows us to make this a very passive endeavor.
+[ 1450.70s ->  1455.40s] Remember, we are only going to sell puts on stocks that we can buy 100 shares of.
+[ 1456.00s ->  1461.66s] What that means is you may not have $40,000 in cash to sell on Microsoft, for example.
+[ 1462.22s ->  1465.18s] If you don't, just don't sell it on Microsoft.
+[ 1465.56s ->  1466.40s] Choose another stock.
+[ 1466.40s ->  1471.62s] The reason you want to do that is because we don't want to get margin called, right?
+[ 1471.62s ->  1481.62s] We don't want to have the situations that we talked about earlier where you're down negative 500%, for example, and your brokerage closes it out because you don't have the money to buy 100 shares.
+[ 1481.62s ->  1487.08s] By doing this, you're completely eliminating that scenario.
+[ 1487.72s ->  1496.06s] And the disclaimer here, we do not touch margin as beginners because margin can actually mess up your P&L if you don't know what you're doing.
+[ 1496.46s ->  1500.24s] So for now, if you're new to selling puts, don't consider margin.
+[ 1500.42s ->  1501.42s] Which leaves us to number three.
+[ 1501.64s ->  1504.24s] We are never going to buy our option back at a loss.
+[ 1504.24s ->  1513.10s] We're either going to let that option expire in the money, which means we get assigned, or we let it expire out of the money, or we roll it to a later date.
+[ 1513.44s ->  1515.98s] And we're talking about rolling later on this video as well.
+[ 1516.40s ->  1523.98s] This, again, gets rid of that situation where you're down 200%, 300%, and you're buying it back, closing it, and ruining that P&L.
+[ 1523.98s ->  1534.06s] Which means that with these three rules, selling puts in this manner, using this strategy, is that this is ultimately a stock acquisition strategy.
+[ 1534.24s ->  1542.10s] We are selling puts on stocks that we want to buy while collecting credit or income while we wait.
+[ 1542.92s ->  1552.20s] So with that being said, let's focus our attention on how to choose the right stocks to sell puts on because that is ultimately the secret sauce.
+[ 1552.32s ->  1558.24s] We're going to bring in one of the best investors of all time, Warren Buffett, a man worth billions and billions of dollars.
+[ 1558.24s ->  1566.98s] One of his favorite sayings is that he would rather buy a great company at a fair price than a fair company at a great price.
+[ 1567.14s ->  1572.60s] Therefore, our job right now is to determine what a great company is.
+[ 1572.60s ->  1581.14s] So in this video right now, we're going to go through a couple of criterias that we can examine to determine the quality of a company.
+[ 1581.93s ->  1585.99s] First is, does it have consistent revenue and earnings crop?
+[ 1586.53s ->  1589.41s] So take a look at Microsoft as an example.
+[ 1589.41s ->  1605.47s] You can see that both their top line, which is revenue, the amount of money they bring in from the sale of their product is growing, and their profit, which is the amount of money they actually make after subtracting all their expenses.
+[ 1606.01s ->  1608.91s] You want both of these to be going up.
+[ 1609.13s ->  1613.33s] Like you see with Microsoft, Apple, and to a certain extent, even stocks like Palantir.
+[ 1613.63s ->  1617.01s] Number two is that we need to have healthy profit margins.
+[ 1617.01s ->  1622.37s] Margins is essentially the ability to turn revenue into profit.
+[ 1622.83s ->  1626.71s] The higher the profit margin, the better, because you will have more and more cash.
+[ 1626.77s ->  1628.35s] And we'll talk about why that's important later.
+[ 1628.77s ->  1630.29s] But the higher the profit margin, the better.
+[ 1630.37s ->  1631.29s] So take a look at NVIDIA.
+[ 1631.75s ->  1637.91s] In its current AI Gold Rush, its margins are extremely, extremely high because they have competitive advantages.
+[ 1638.33s ->  1643.91s] They can sell their GPU accelerators for much, much more than what it costs for them to make it.
+[ 1643.91s ->  1647.27s] And that's a great sign for a healthy company.
+[ 1647.87s ->  1650.61s] Number three is having a strong balance sheet.
+[ 1650.93s ->  1656.41s] This means that it has more assets than it does liabilities, aka debt, and it has a lot of cash.
+[ 1656.83s ->  1663.87s] This is something that I don't focus too much on, but it is an extremely important aspect to consider when you're looking at the health of a company.
+[ 1663.87s ->  1667.69s] Number four is, do they have free cash flow?
+[ 1668.33s ->  1676.89s] This is the money, basically the profit that they make that they can use to fund their growth or buy back stocks or share as a form of dividends, right?
+[ 1676.93s ->  1680.33s] This is the amount of money that the company is pocketing and putting away.
+[ 1680.69s ->  1687.53s] This is actually one of my favorite metrics to look for when it comes to acquiring great businesses.
+[ 1687.53s ->  1694.15s] And the last one is a little bit more abstract, is do they have a competitive advantage?
+[ 1694.55s ->  1695.75s] This can be brand power.
+[ 1696.23s ->  1698.03s] This can be technological edge.
+[ 1698.23s ->  1699.51s] This can be an ecosystem buy.
+[ 1699.91s ->  1707.71s] This is something that allows companies to create and generate more profit, more cash, higher profit margins.
+[ 1708.17s ->  1717.01s] Again, NVIDIA is a great example at this day and age because of how dominant they are in the AI space with around 95% or so of the AI accelerator market.
+[ 1717.01s ->  1720.01s] And there's something that's really cool about this competitive advantage side.
+[ 1720.41s ->  1725.59s] Peter Lynch, which is another very famous investor, he has a saying, buy what you know.
+[ 1726.57s ->  1730.41s] So for example, I've worked in the consumer electronics and aviation industry for the last 10 years.
+[ 1730.49s ->  1733.59s] So I'm acutely aware of how this market works.
+[ 1733.99s ->  1739.41s] So a lot of my stocks are actually in tech companies and aviation and materials because that's what I know.
+[ 1740.09s ->  1741.49s] Another example is, for example, my wife.
+[ 1741.49s ->  1746.41s] My wife is acutely aware of, for example, the cosmetic space.
+[ 1746.47s ->  1748.21s] And she bought Elf recently, Elf Beauty.
+[ 1748.53s ->  1749.85s] And that stock has taken off.
+[ 1750.13s ->  1752.51s] And she's made a lot of money on it, as you can see from the screen.
+[ 1752.69s ->  1754.63s] This is your secret power.
+[ 1755.07s ->  1760.31s] If you work in an industry or if you work in an environment where you know how the market works,
+[ 1760.33s ->  1764.81s] you know how the companies are doing, leverage that information and acquire stocks in that space.
+[ 1764.81s ->  1772.65s] Because that sector or that market is what you have an advantage in over investors like, for example, like me or someone else.
+[ 1773.31s ->  1778.15s] And so puts on those companies to acquire them at really good prices.
+[ 1778.73s ->  1781.37s] Which brings us to the topic of pricing.
+[ 1782.15s ->  1784.95s] How do we know what is a good price to sell our puts at?
+[ 1785.13s ->  1788.77s] In order to do that, we have to talk a little bit about valuation.
+[ 1789.01s ->  1791.73s] If a company is overvalued, undervalued, or fairly valued.
+[ 1791.73s ->  1796.73s] You might have heard of terms like PE, price to earnings, price to sales, maybe even price to free cash flow.
+[ 1796.89s ->  1802.81s] These are all very popular metrics to determine if a company is worth its stock price right now.
+[ 1803.03s ->  1807.89s] So before we get into the topic, let's revisit the objective of our putt selling strategy.
+[ 1808.37s ->  1812.43s] Which is we sell puts on great companies that we want to own in the long term.
+[ 1812.89s ->  1813.93s] I think 5 to 10 years.
+[ 1814.39s ->  1819.85s] And we collect income or premium while we wait for those puts to get assigned.
+[ 1819.85s ->  1821.53s] And we end up buying 100 shares.
+[ 1822.27s ->  1830.73s] And so when you look at it from a macro perspective, which is a larger time frame, 5 to 10 years, the pricing right now is actually not that important.
+[ 1831.35s ->  1834.87s] So in this strategy, I don't want you to overfixate on valuation.
+[ 1835.55s ->  1840.91s] So what we do when we're selling puts is we use valuation as an estimate.
+[ 1840.91s ->  1849.64s] Is it close enough to where I think this company is, quote unquote, fairly priced that I wouldn't mind buying 100 shares of?
+[ 1849.64s ->  1854.94s] This allows us to sell puts very aggressively and collect 2 to 3% of luck.
+[ 1855.99s ->  1857.01s] And I'll give you guys an example.
+[ 1857.51s ->  1860.81s] So we'll take a look at Tesla as an example, right?
+[ 1860.89s ->  1863.81s] Tesla could be a stock that you're looking to buy in for the long term.
+[ 1864.17s ->  1864.83s] You can do PE ratio.
+[ 1864.93s ->  1865.93s] You can do price to sales.
+[ 1866.03s ->  1867.47s] You can do price to free cash flow ratio.
+[ 1867.83s ->  1870.07s] There's a lot of different valuation metrics that you can use.
+[ 1870.07s ->  1875.29s] I like to use price to free cash flow ratio, but most people actually use price to earnings.
+[ 1875.71s ->  1876.91s] So we'll use that for now.
+[ 1878.54s ->  1882.92s] So price to earnings shows us how much we're paying for each dollar of earnings.
+[ 1883.06s ->  1884.96s] Tesla stock price is close to $343.
+[ 1885.60s ->  1888.74s] Deleted, divided by its earnings per share, which is $1.82.
+[ 1888.88s ->  1891.08s] You get a price to earnings ratio of 188.
+[ 1891.34s ->  1894.44s] Tesla stocks from a valuation perspective is at its peak.
+[ 1894.44s ->  1900.87s] And let's just say that you don't want to be buying Tesla at its highest valuation ever,
+[ 1900.87s ->  1904.79s] because you think there's a lot more downside risk than there is upside risk.
+[ 1904.85s ->  1909.15s] What that means is you think that Tesla may drop more than it might gain, right?
+[ 1909.15s ->  1915.25s] Because if Tesla were to go back to $117, for example, it basically halved in price to a certain extent.
+[ 1915.65s ->  1918.97s] You think right now Tesla's too overpriced for what it is.
+[ 1919.37s ->  1923.93s] You would rather buy it when it's, for simplicity, let's say half of its current PE ratio.
+[ 1924.03s ->  1924.63s] Let's say 90.
+[ 1924.89s ->  1925.29s] Okay.
+[ 1925.47s ->  1928.55s] Which means that you need the price to be around half of what it is right now.
+[ 1928.61s ->  1929.39s] So $1.70.
+[ 1929.81s ->  1931.77s] Let's go to an option chain.
+[ 1931.85s ->  1934.45s] Let's go to Robinhood and look at Tesla's option chain.
+[ 1935.01s ->  1938.49s] So again, let's do this to its fullest.
+[ 1938.49s ->  1941.07s] We'll go to July 3rd, which is 31 days from today.
+[ 1941.49s ->  1942.73s] And we're going to sell a put.
+[ 1944.84s ->  1948.94s] And let's say that we think, like we talked about, that Tesla's actually worth around half.
+[ 1949.30s ->  1951.68s] So around $170, for simplicity's sake.
+[ 1953.54s ->  1957.26s] So you'll be collecting around $30 or so on Tesla.
+[ 1958.12s ->  1960.90s] For a $170 put, that return is pretty crap.
+[ 1961.02s ->  1964.22s] It's around 0.17% return on your investment.
+[ 1964.22s ->  1971.36s] And because this stock is so far out of your range of comfort, from a valuation perspective, this is not a stock for you to sell your puts on.
+[ 1971.36s ->  1978.02s] And you'll move on and you'll wait for that stock to retrace closer to your 100 PE, for example, before you sell it.
+[ 1978.42s ->  1983.24s] But then let's give you an example about how it would actually work if it is within your round of valuation.
+[ 1983.62s ->  1984.82s] And we'll use Apple as an example.
+[ 1984.82s ->  1989.64s] Apple's PE ratio here has actually kind of decreased as time has gone on.
+[ 1990.14s ->  1990.22s] Right?
+[ 1990.30s ->  1992.04s] It's peaked at 40.
+[ 1992.14s ->  1992.82s] Now it's around 30.
+[ 1992.92s ->  1996.12s] If you take a look at its average for the last five years, it's around 31.
+[ 1996.30s ->  1998.40s] The last 10 years, it's around 28.76.
+[ 1998.40s ->  2006.44s] So instead of caring about a three-point difference between what it was five years ago and what it is 10 years ago, you'll be like, hey, it's close enough.
+[ 2007.00s ->  2010.58s] So let's say that I think Apple is a great buy right now.
+[ 2010.58s ->  2018.47s] What I would do is I would then go into my options chain again, and I'd look up Apple.
+[ 2019.97s ->  2025.07s] And again, we're going to go and trade Apple options, and we're going to look for the 31-day option again.
+[ 2025.35s ->  2026.05s] We're going to sell a put.
+[ 2026.53s ->  2037.71s] And because I don't actually care too much if I sell it at $1,200, $195, $190,000, all close enough, I would basically go in and sell it right at the money at $200 or even $195.
+[ 2037.97s ->  2039.71s] So let's assume that we're doing it at $200.
+[ 2039.71s ->  2045.17s] I'm collecting around $545 for a $200 put option.
+[ 2045.55s ->  2047.67s] That gives me a 3% return every month.
+[ 2047.97s ->  2050.31s] We'll talk a little bit more about the psychology of this.
+[ 2050.57s ->  2063.11s] But if you want to sell it, for example, for $195 because you think it's a little bit more reasonable, you actually want to buy it for a discount, getting a 1.8% or so every single month is actually not a bad deal either.
+[ 2063.39s ->  2066.07s] Even the $190 is greater than a 1% return.
+[ 2066.51s ->  2068.73s] I would say anything greater than 1% return is great.
+[ 2068.73s ->  2072.05s] I usually try to target about 1.5% to 3% if I can.
+[ 2072.67s ->  2075.33s] Anything below 1% don't sell because there's no point.
+[ 2075.53s ->  2078.85s] Your money is actually better just in the S&P 500 at that point in time.
+[ 2079.75s ->  2080.69s] We can do another example.
+[ 2080.91s ->  2082.41s] Maybe NVIDIA is something that you're looking for.
+[ 2083.15s ->  2087.15s] Again, P ratio of 44 is not the cheapest, but it's also not the most expensive.
+[ 2087.15s ->  2092.91s] If you look at the last five years, it's at 69, trading 12 months at 52, today it's at 44.
+[ 2093.07s ->  2096.13s] So theoretically, you can make the argument that it's actually relatively cheap.
+[ 2096.27s ->  2098.73s] NVIDIA, obviously, as you know, has gone up in price a lot.
+[ 2099.41s ->  2103.71s] And you still think NVIDIA has them to grow because the AI GPU space is going to be insane.
+[ 2103.71s ->  2105.79s] Okay, let's just say that's your hypothesis.
+[ 2106.07s ->  2108.91s] And you go to NVIDIA and you go to trade auctions again.
+[ 2109.77s ->  2110.71s] And you sell the foot.
+[ 2111.63s ->  2114.19s] And you go back to July 31st.
+[ 2114.19s ->  2116.89s] And you want to sell it, let's assume, let's just say 135.
+[ 2117.93s ->  2118.25s] Right?
+[ 2118.33s ->  2121.81s] In this case, you're going to get another 2.5% return on investment.
+[ 2121.91s ->  2125.19s] Remember, if you were to get a sign, you don't care about getting a sign.
+[ 2125.31s ->  2130.45s] Therefore, you just end up buying 100 shares at $135 because you think that it's fair value for a great company.
+[ 2130.45s ->  2133.61s] And if you don't get a sign, you just do this again month after month after month.
+[ 2134.40s ->  2140.10s] As I was editing the video, I thought I should probably reiterate or emphasize why this is so important.
+[ 2140.40s ->  2149.69s] As we know now, the main risk with selling puts is that we might get a sign and have to buy 100 plus shares of that stock.
+[ 2149.91s ->  2157.64s] So what we're trying to do is trying to avoid situations like Right, where the company is fundamentally flawed.
+[ 2158.14s ->  2159.74s] It generates no profits.
+[ 2159.74s ->  2161.96s] It has no chance of recovering.
+[ 2162.98s ->  2170.02s] And there's a lot of stocks over the years that had the same characteristics as Right, as you guys can see from the straight.
+[ 2171.00s ->  2176.82s] And this is why it's so important for us to focus on great businesses that generate consistent cash and profits.
+[ 2177.52s ->  2186.60s] Because these are the companies that will be the most stable, the most successful, and the least risky in the next 5 to 10 years.
+[ 2186.60s ->  2190.82s] Like I said earlier in this video, valuation is something that I focus tremendously on.
+[ 2191.28s ->  2196.56s] But what valuation does tell us is the amount of risk we're taking on.
+[ 2197.04s ->  2199.96s] The higher the valuation, the higher the expectations.
+[ 2200.56s ->  2204.52s] And so if the expectations are met, then the stock price will drop.
+[ 2205.04s ->  2207.52s] But that's actually not the most important thing about valuation.
+[ 2207.98s ->  2211.04s] The mental aspect of valuation is more important.
+[ 2211.04s ->  2219.86s] And what I mean by that is the first rule of our strategy is that we never buy back an option, even if it goes in the money.
+[ 2221.06s ->  2226.82s] And so human nature tells us that when we think there is a deal, we tend to have higher conviction levels.
+[ 2226.82s ->  2236.96s] And so by trying to find bargains or trying to buy something at a fair price, it is more likely for us to not buy back that option when it goes in the money.
+[ 2237.32s ->  2243.12s] Because it's happened many times to me where I think I would purchase the share at whatever strike price it is.
+[ 2243.48s ->  2245.86s] And once it goes in the money, I start having doubts.
+[ 2246.46s ->  2247.56s] Is it too expensive?
+[ 2247.76s ->  2248.76s] Is this the right business?
+[ 2248.84s ->  2250.20s] Is this where I want to allocate my money?
+[ 2250.20s ->  2257.24s] And so valuation allows me to convince myself this is the best price point for me to buy it at.
+[ 2257.54s ->  2261.86s] And therefore, I am less likely to close out my option at a loss.
+[ 2262.74s ->  2267.20s] And so I just want to reiterate, this is why it's so important for us to follow these rules.
+[ 2267.34s ->  2269.74s] Find great businesses at fair prices.
+[ 2270.02s ->  2277.36s] This is what's going to allow us to have long-term sustained success when it comes to selling puts and investing in the stock market.
+[ 2277.36s ->  2284.22s] So let's wrap this up and figure out how do we find these great companies, these great stocks to sell puts on.
+[ 2284.56s ->  2286.66s] And the easy answer here is that we're going to use screeners.
+[ 2287.32s ->  2288.22s] We're going to hop on over here.
+[ 2288.48s ->  2291.40s] And one of my favorite ones is Finviz.
+[ 2292.02s ->  2294.04s] Finviz is free and for everyone to use.
+[ 2294.54s ->  2302.02s] So we're going to go in here and we're going to find these great businesses that we talked about using the criterias that we laid out earlier in this video.
+[ 2302.70s ->  2306.62s] The first thing we want to do is we want to figure out if there's revenue and earnings growth.
+[ 2307.36s ->  2310.92s] So you can see right here, we have sales growth trailing 12 months.
+[ 2311.32s ->  2312.72s] And we want that to be positive.
+[ 2313.28s ->  2314.94s] So we want to do over 10%.
+[ 2314.94s ->  2322.68s] We also want earnings per share growth, which is earnings growth without any dilution, which is without companies issuing new stock.
+[ 2323.16s ->  2326.70s] And so we want that to be over 10% as well over the last five years.
+[ 2327.00s ->  2332.58s] And we also want projected earnings per share growth over the next five years to be positive.
+[ 2332.58s ->  2334.14s] So we'll do that over 5%.
+[ 2334.14s ->  2339.76s] That allows us to find businesses that have past performance and future potential.
+[ 2340.12s ->  2344.80s] So we also talked about we want high profit margins to be able to turn those earnings into cash.
+[ 2344.80s ->  2351.64s] So we want maybe over 15% to root out any company that isn't profitable, highly profitable.
+[ 2351.98s ->  2355.28s] These filters that I'm using right here, these are based off of my preferences.
+[ 2355.78s ->  2364.54s] As you guys sell more puts, as you guys become more comfortable with selling and understanding what industry you guys want to be in, you guys can change these to however you guys want it to.
+[ 2364.80s ->  2372.84s] You guys might increase the profit margin, you might even decrease the profit margin because you guys want to buy companies that are currently not profitable, but will be in the future.
+[ 2372.84s ->  2377.80s] Now, based off of these filters, we will get a list of all the stocks that fulfill those criterias.
+[ 2377.94s ->  2382.60s] These are profitable businesses that have high earning share growth and high revenue growth.
+[ 2383.44s ->  2386.74s] And you can see that some of them have been left out.
+[ 2386.82s ->  2392.94s] For example, Apple has been left out, mainly because their top line revenue growth is not as fast as some of these other ones.
+[ 2394.29s ->  2399.57s] And so from this list, we will go in and we will try to find stocks that we want to sell it.
+[ 2400.55s ->  2402.17s] A big one is obviously price.
+[ 2402.17s ->  2409.85s] So, for example, if you guys don't have around $70,000 to sell on Meta, then that one automatically gets excluded from the list.
+[ 2410.13s ->  2413.15s] There's also certain industries that you may not feel comfortable being in.
+[ 2413.31s ->  2415.15s] So, for example, for me, it's drug manufacturing.
+[ 2415.35s ->  2418.05s] I don't like to sell puts or buy stocks in that industry.
+[ 2418.17s ->  2420.11s] So, no but nor this obviously is out of the question.
+[ 2420.49s ->  2422.61s] So, you guys can just play around with how these filters work.
+[ 2422.87s ->  2425.05s] We'll do one more example from beginning to end.
+[ 2425.05s ->  2429.15s] So, now that we have this list, we're going to come in here and we're just going to choose one of these stocks.
+[ 2429.77s ->  2432.71s] And I'm going to use Nii because I've been selling a lot of puts on me.
+[ 2433.19s ->  2434.83s] Nii, next era energy.
+[ 2435.23s ->  2438.71s] So, after we determine that, I'm going to hop over to finance charts.
+[ 2438.81s ->  2442.73s] It was likely to look at historical price to earnings trends.
+[ 2442.73s ->  2449.75s] And as you can see, over the last five years or so, right, Nii was highly valued at 34.69.
+[ 2450.69s ->  2452.57s] Over the last three years, it was 29.56.
+[ 2452.73s ->  2454.67s] As of today, it was 26.17.
+[ 2455.07s ->  2456.39s] And it's showing 12 months around 23.
+[ 2457.01s ->  2463.23s] And so, you can kind of see that Nii has fallen back into a relatively reasonable valuation.
+[ 2463.43s ->  2468.45s] So, for me, I think around a 2320 PE is completely reasonable.
+[ 2469.70s ->  2475.22s] So, because of that, then we're going to go in to Robinhood and we're going to start selling puts on it.
+[ 2475.62s ->  2478.16s] So, in this case, we're going to take a look at July 11th.
+[ 2478.16s ->  2479.54s] There's 37 days from today.
+[ 2479.86s ->  2481.26s] And we are going to sell a put.
+[ 2481.76s ->  2487.42s] And for me, because I actually like Nii's business model a lot, I don't mind owning a lot of Nii, even at this price point.
+[ 2487.42s ->  2490.12s] Because I think 5 to 10 years from now, it will outperform the S&P 500.
+[ 2490.88s ->  2495.44s] I'm going to head and sell it right at the money at $253.
+[ 2495.44s ->  2501.26s] An option, which is going to net me almost a 4% return, around a 3.5% return.
+[ 2502.10s ->  2503.32s] You can see this relatively straightforward.
+[ 2503.50s ->  2504.56s] It's not terribly hard.
+[ 2505.34s ->  2506.54s] But it does take time.
+[ 2507.24s ->  2512.22s] It takes experience for us to be able to choose the right stocks, choose the right moments to sell puts on it.
+[ 2512.70s ->  2519.14s] But if you do this well, as you can see from just a couple examples, you guys can get 3%, maybe even 4% a month.
+[ 2519.14s ->  2527.06s] Without taking on too much of a risk, if you guys are understanding how to mitigate and get some of the downsides to sell puts.
+[ 2527.46s ->  2534.78s] What if I told you that, under certain circumstances, you can make even more than the 1.5% to maybe 3% you're getting a month?
+[ 2535.56s ->  2539.48s] By understanding a couple of very important concepts.
+[ 2539.92s ->  2541.90s] We're going to take that intermediate concept that we just talked about.
+[ 2541.90s ->  2548.40s] And then we're going to improve it and make it more advanced by merging the fundamentals that we just talked about with technicals.
+[ 2548.52s ->  2553.46s] This isn't going to be a masterclass or a large course on technical analysis, how to read candlestick charts.
+[ 2553.62s ->  2556.10s] If you guys are interested in that, let me know in the comment section below.
+[ 2556.48s ->  2558.46s] I'll make another long course just on that.
+[ 2558.96s ->  2563.96s] But we're going to touch on briefly about how market dynamics and how to read certain charts.
+[ 2563.96s ->  2569.10s] So that we can find the best time to be aggressive when selling puts.
+[ 2569.64s ->  2572.08s] So we're going to hop on over to any charting platform.
+[ 2572.22s ->  2574.60s] We're going to use Robert Hood Legend here because it's actually pretty good.
+[ 2574.70s ->  2578.44s] And we're going to demonstrate when is the best time to be selling options aggressive.
+[ 2579.40s ->  2583.68s] So the first basic concept is that the market is always going to go up and down.
+[ 2583.82s ->  2584.98s] It's not going to go on a straight line.
+[ 2585.64s ->  2594.18s] So if you go to the S&P 500 index, over the last five years, you can see the market that's gone up, down, up, down, up, down, up, down, up, down, up, down.
+[ 2594.18s ->  2598.94s] And there are certain times that the market will tend to overreact, right?
+[ 2598.98s ->  2601.58s] There's going to be times where the market sells off a lot.
+[ 2601.72s ->  2608.66s] And so that stock that we talked about, that valuation is going to drop tremendously because of certain things happening.
+[ 2609.70s ->  2613.56s] So if you look back here, this is the Trump tariffs when he first announced the tariffs, right?
+[ 2613.56s ->  2617.42s] You can see the market went from 6,140 all the way down to 4,800.
+[ 2617.82s ->  2622.34s] And so when this sell-off is happening, this is a good opportunity for us to sell puts.
+[ 2623.57s ->  2625.51s] Another great example is back here in COVID.
+[ 2625.71s ->  2630.01s] You can also see this sell-off here when the interest rates hikes were going, right?
+[ 2630.05s ->  2632.75s] You can see there's a lot of times where the market tends to sell off.
+[ 2632.83s ->  2635.05s] So how do you know where the stock is going to fall to?
+[ 2635.45s ->  2642.37s] And this is a concept that we like to call areas of support and demand, otherwise known as areas of supports and resistances.
+[ 2643.52s ->  2647.62s] Generally speaking, areas of supports are where a lot of people go in and buy.
+[ 2648.00s ->  2649.40s] And so there's a lot of demand there, right?
+[ 2649.82s ->  2652.04s] People tend to view it as a good value.
+[ 2652.04s ->  2655.82s] Areas of resistances is where people tend to sell a lot, right?
+[ 2655.84s ->  2660.38s] They call it areas of supply because at that point in time, people are like, I want to take profit.
+[ 2660.50s ->  2662.02s] I'm going to secure my earnings.
+[ 2662.24s ->  2668.78s] And so I'm going to start selling off shares to protect against any potential moves to the downside.
+[ 2669.22s ->  2671.16s] So let me help you set up your charts first.
+[ 2671.16s ->  2675.60s] So here you can see that I have on the screen three lines here.
+[ 2676.12s ->  2684.52s] These lines are the exponential moving average, 200, and the 50-period moving average, simple, and the 20-period moving average, simple.
+[ 2684.60s ->  2686.16s] We can go here and add it.
+[ 2686.36s ->  2689.66s] For example, here, simple moving average, et cetera, et cetera, et cetera.
+[ 2689.66s ->  2697.25s] So when I come in here, you're going to see there's a couple of very obvious trends when the market breaks down.
+[ 2697.67s ->  2700.65s] They tend to break into the 200-period moving averages, right?
+[ 2702.28s ->  2703.64s] Sometimes it breaks slightly below.
+[ 2704.40s ->  2707.86s] But in most cases, it hits the 200-period moving average, and it kind of just bounces off.
+[ 2707.92s ->  2708.28s] You see that?
+[ 2708.76s ->  2709.86s] We'll zoom in here a little bit.
+[ 2711.07s ->  2713.37s] Hits that 200-period moving average, pink line, it bounces off.
+[ 2714.38s ->  2716.42s] Hits the 200-period moving average here, it bounces off.
+[ 2716.42s ->  2721.86s] But during COVID, the 200-period moving average actually broke it, but it then recovered.
+[ 2724.01s ->  2726.65s] Same with here, back in 2022, right?
+[ 2727.01s ->  2731.41s] Moving average broke up, moving average broke up, and it never really broke past it.
+[ 2732.01s ->  2736.30s] And somebody here approached the 200-period moving average and went up.
+[ 2737.93s ->  2744.31s] And so a very good time for us to be selling puts is when these approach these 200-period moving averages.
+[ 2745.03s ->  2747.95s] Here, here, here, here, here.
+[ 2747.95s ->  2750.17s] So let's do this in principle.
+[ 2750.61s ->  2752.35s] For example, let's do TSM, right?
+[ 2752.39s ->  2754.11s] One of my favorite stocks to be selling puts on nowadays.
+[ 2755.26s ->  2762.48s] Every time it approaches these 200-period moving averages, what I would do is I would go in and basically sell it right at the money.
+[ 2762.98s ->  2764.40s] So I'll give you an example right here.
+[ 2765.08s ->  2770.84s] As it approached 130, 135, I basically went in and started selling puts right at 135.
+[ 2772.22s ->  2776.76s] Similar back here, once it hits like 90, I went in and started selling puts right at 90.
+[ 2776.98s ->  2777.62s] Same thing with here.
+[ 2777.62s ->  2779.42s] Same thing with here, 85.
+[ 2779.78s ->  2783.34s] Even if it broke down and I got assigned on these stocks.
+[ 2783.44s ->  2785.86s] Let's assume that I bought it at 85 and went all the way down to 60.
+[ 2785.98s ->  2788.72s] What I will continue to do is I will continue to sell puts at this level.
+[ 2789.04s ->  2790.96s] Just keep going, keep going, keep going, right at the money.
+[ 2791.38s ->  2794.78s] And I'll show you exactly how much money you can make by doing this.
+[ 2796.87s ->  2799.11s] The 200-period moving average acts as an area of support.
+[ 2799.11s ->  2804.71s] And the reason you want to be selling at these levels is because of a couple of things.
+[ 2804.83s ->  2808.87s] One, obviously valuation has dropped tremendously, right?
+[ 2809.43s ->  2812.41s] Because the stock price has gone from like 200 all the way down to 130.
+[ 2812.41s ->  2816.69s] So to a certain extent, your valuation has decreased by maybe 30 or 40%.
+[ 2816.69s ->  2818.07s] That's number one.
+[ 2818.69s ->  2822.43s] Number two, high volatility or overall volatility has spiked.
+[ 2822.67s ->  2827.25s] And as we talked about in one of the earlier sections, when volatility spikes, what happens?
+[ 2827.33s ->  2828.57s] Your option prices go up.
+[ 2828.57s ->  2830.91s] So when we sell it, we actually get a lot more money.
+[ 2831.61s ->  2835.59s] And so this is the reason why you want to be selling puts aggressively in these areas of supports.
+[ 2836.61s ->  2840.71s] Because there is a lot of volatility in these areas.
+[ 2842.44s ->  2845.52s] And I want, and this is maybe a caveat that we'll repeat later on this video.
+[ 2846.04s ->  2851.94s] But the reason that you want to be selling very aggressively, basically at the money in these levels,
+[ 2851.94s ->  2855.40s] is because you want to acquire these stocks at this price point.
+[ 2855.82s ->  2857.86s] So the risk here isn't getting aside.
+[ 2857.86s ->  2861.56s] The risk here, or the worst case scenario, is not getting aside.
+[ 2861.66s ->  2866.92s] Because these stocks, which are already great companies, have fallen to a great price point.
+[ 2867.26s ->  2869.42s] So we want to get aside on these stocks.
+[ 2870.14s ->  2873.34s] And so even if we were a little early in selling puts, so for example,
+[ 2873.98s ->  2877.96s] if I sold puts at 160 as it fell towards the 200 period moving average,
+[ 2878.16s ->  2882.14s] and it got assigned at 160, as you can see from TSMC, it recovers.
+[ 2882.72s ->  2887.12s] And you would have made $40 per share, 25%.
+[ 2887.12s ->  2889.28s] Just from buying the stock.
+[ 2891.34s ->  2901.16s] If you didn't get assigned, then obviously you miss out on the 25% gain that would have came with the stock going upwards.
+[ 2901.16s ->  2903.48s] As it bounces off of these areas of support.
+[ 2904.88s ->  2905.74s] So this is Thinkorswim.
+[ 2905.86s ->  2907.58s] And this is, again, Taiwan Semiconductor.
+[ 2907.76s ->  2908.32s] Same stock.
+[ 2908.70s ->  2912.40s] But the only difference here is I've added this symbol at the bottom.
+[ 2912.40s ->  2919.76s] Here, it's called implied volatility, which is, I guess, unique to Thinkorswim's platform.
+[ 2920.56s ->  2924.30s] But you can see right here, as it falls into these areas of support, you can see these peaks, right?
+[ 2924.62s ->  2926.88s] Peak here, which is this 200-day period moving average.
+[ 2927.12s ->  2928.50s] Peak here as it broke past.
+[ 2929.20s ->  2929.80s] Peak here.
+[ 2930.80s ->  2931.42s] Peak here.
+[ 2932.20s ->  2932.64s] Peak here.
+[ 2932.72s ->  2932.82s] Right?
+[ 2933.72s ->  2937.24s] And we talked about when it peaks, your option prices increases.
+[ 2937.42s ->  2943.80s] So this kind of just shows you that as it approaches these 200-day period moving averages, volatility remains relatively high.
+[ 2945.83s ->  2951.81s] So to give you an example, on April 9th, TSM was at $137.
+[ 2951.81s ->  2961.47s] I went in, and I sold a 135-put option, and I collected $856 on this one put, which is a 6.3% return, right?
+[ 2961.53s ->  2963.79s] All because I took advantage of this.
+[ 2964.29s ->  2971.33s] So you can see that when it falls into these areas of support, and when volatility increases, you're getting a lot more.
+[ 2971.51s ->  2977.13s] Because the market is thinking that this is a riskier time to be in the market.
+[ 2977.13s ->  2984.95s] It's actually the best time for us to sell options, because we actually want to get assigned on these stocks at these price points.
+[ 2984.99s ->  2988.01s] So you want to be as aggressive at selling puts as possible.
+[ 2988.17s ->  2989.51s] But I took the $856.
+[ 2989.83s ->  2991.65s] I took half of it, around $425.
+[ 2992.07s ->  2993.23s] And I bought TSM shares.
+[ 2993.33s ->  2994.87s] I bought around 3 to 4 shares.
+[ 2995.31s ->  3004.95s] And those shares at 135 have already appreciated $65 a share for close to 50% since I bought.
+[ 3004.95s ->  3022.28s] So the main reminder here is that when these opportunities arise, which is when the stock falls dramatically into these areas of support, otherwise a 200-days period moving average, you want to be selling puts at the money.
+[ 3022.64s ->  3026.34s] You don't want to be scared, because that is where you make the most bang for your buck.
+[ 3026.48s ->  3027.14s] Just think about it.
+[ 3027.62s ->  3031.18s] S&P 500 returns around 10% a year on average.
+[ 3031.18s ->  3038.34s] In one month, I made 6%, which means that the other 11 months, if I just made 1% every single month, I will still come out on top.
+[ 3039.04s ->  3045.70s] This is how impactful it is, and this is how important it is for us to make as much money when the opportunity arises.
+[ 3046.06s ->  3056.45s] And this is actually why you guys subscribe to the channel, because this is how we go from making some money selling puts to being able to retire from selling puts.
+[ 3056.69s ->  3058.53s] So let's talk a little bit about why this works.
+[ 3058.53s ->  3062.01s] There is this index called VIX that we can track.
+[ 3062.13s ->  3063.53s] VIX is just a volatility index.
+[ 3064.99s ->  3071.59s] And you can see back in April, you can see how the volatility index spiked all the way up to 60, right?
+[ 3071.65s ->  3074.01s] And this is from 17 all the way to 60.
+[ 3074.41s ->  3077.07s] So we want to be selling puts up here.
+[ 3077.71s ->  3085.63s] Selling puts down here is a little bit more risky, because volatility spikes in your option prices will go up.
+[ 3085.63s ->  3093.69s] So what we want to do is you want to be selling puts aggressively up here, maybe targeting 5%, 4%, 6%, depending on how the market plays out.
+[ 3094.33s ->  3101.95s] And when it's down here, when volatility is very low, we want to be very conservative with selling puts.
+[ 3102.23s ->  3104.57s] So let's say I don't even sell puts when the volatility is really low.
+[ 3104.77s ->  3109.17s] I wait for a better time or better valuation for us to be selling puts.
+[ 3109.17s ->  3113.05s] So let's just summarize and talk about expected return.
+[ 3113.29s ->  3122.57s] On normal months, like when volatility is relatively stable, I'm trying to average around 1.5% to maybe at its max 3% a month, max.
+[ 3123.45s ->  3125.75s] Because we're actually selling on high quality companies.
+[ 3125.99s ->  3128.75s] And we're being very selective on the companies that we're selling it on.
+[ 3129.19s ->  3134.49s] Or when VIX spikes, as we saw earlier this year, I'm selling as aggressively as possible.
+[ 3134.57s ->  3138.49s] I'm basically selling it right at the money because I wanted to get a sign.
+[ 3138.49s ->  3142.77s] And when that happens, I'm collecting, as you saw with my previous example, 6%.
+[ 3142.77s ->  3148.01s] I recently sold a UNH, UnitedHealthcare put, and I got around 5.6% on that one month as well.
+[ 3148.37s ->  3153.89s] So there are opportunities in the market when things retrace and there's a lot of fear in the market.
+[ 3154.27s ->  3157.09s] And that is when we shine as options to sellers.
+[ 3157.49s ->  3160.53s] We want to sell puts when that happens.
+[ 3160.53s ->  3169.41s] So all in all, if you can average around 2% a month, every month for a year, you will be so good at selling puts.
+[ 3169.53s ->  3173.61s] But as for beginners, I would just recommend try to aim for around 1.5% a month.
+[ 3173.69s ->  3176.53s] If you do slightly less than 1.5%, that's also completely fine.
+[ 3177.09s ->  3179.03s] Anything above 1% is great.
+[ 3179.03s ->  3181.47s] Because that means you're doing better than the market.
+[ 3181.99s ->  3184.09s] So let's talk a little bit about small accounts.
+[ 3184.37s ->  3189.53s] Because one of the drawbacks, as you can see with puts, is that it's actually not the most capital efficient.
+[ 3189.87s ->  3195.93s] Which means that you need a decent amount of money to be selling puts on some of these companies.
+[ 3196.98s ->  3200.26s] For example, Microsoft, you need $45,000 to be selling one put on Microsoft.
+[ 3200.52s ->  3201.42s] That's a lot of money, right?
+[ 3201.64s ->  3202.80s] So there's a couple of options here.
+[ 3203.40s ->  3205.58s] One is you choose stocks that you can afford.
+[ 3205.74s ->  3206.72s] Two, like we talked about earlier.
+[ 3207.30s ->  3208.92s] Two is you just don't sell puts on it.
+[ 3209.14s ->  3213.22s] You grow your account slowly until you're able to sell puts on that stock.
+[ 3214.02s ->  3217.52s] And three, this is probably one of my favorite strategies.
+[ 3217.70s ->  3220.82s] Again, if you guys want a master course in credit spreads, let me know.
+[ 3220.88s ->  3224.22s] I'll make another course and I'll link you in the upper right hand corner when I do.
+[ 3224.88s ->  3226.42s] Drop me down a comment in the comment section.
+[ 3226.84s ->  3230.84s] But credit spreads are the best small account strategies for us to use.
+[ 3230.84s ->  3232.34s] And let me just demonstrate real quick.
+[ 3233.08s ->  3246.90s] When we're selling puts, what we do is we go in and we sell one option at $200,000, right?
+[ 3247.46s ->  3250.48s] And when it gets signed, our max collateral is going to be $20,000.
+[ 3250.48s ->  3269.12s] If I were to buy another option below it, for example, at $195,000, what happens is if it drops below $195,000, I would then sell my 100 shares that I bought at $200 a share at $195,000.
+[ 3269.12s ->  3275.06s] Which means that the max amount of money I need to have on my account is actually $500.
+[ 3276.69s ->  3279.19s] Instead of $20,000, it's going to be $500.
+[ 3279.85s ->  3282.21s] And so, for example, on Thinkorswim, it's called a vertical.
+[ 3282.49s ->  3286.99s] You see this $195,000, $200,000 put option for 100 days out.
+[ 3287.17s ->  3290.33s] Sorry, for 35 days out, I'm going to be collecting about $165.
+[ 3290.33s ->  3296.69s] That my max loss is going to be $500,000 minus $165,000, which is $335,000.
+[ 3297.39s ->  3307.97s] And if it expires out of the money, which means that it's above $200,000, the same mechanic as selling puts, you'll actually make $165,000 on this one credit script.
+[ 3308.69s ->  3310.31s] Credit space is not the point of this course.
+[ 3311.01s ->  3313.69s] I'm just letting you know that there are other options for small accounts.
+[ 3313.69s ->  3318.15s] Again, if you guys want to learn more about credit space, that's what I do all the time.
+[ 3318.33s ->  3319.07s] It's in the name.
+[ 3319.39s ->  3324.15s] So subscribe and I'll teach you guys everything I know about credit scripts.
+[ 3325.10s ->  3332.80s] One thing I want to briefly touch on is why I don't like to use Delta or probability of profit in my more advanced strategies.
+[ 3333.16s ->  3339.60s] If you guys don't know what Delta is, Delta as a summary is basically an indicator of probability of profit.
+[ 3339.60s ->  3346.98s] So a 15 Delta means that you have an 85% chance of winning, a 30 Delta means you have a 70% chance of winning, so on and so forth.
+[ 3347.26s ->  3350.38s] Very similar to the beginner strategy I talked to you guys earlier, right?
+[ 3350.40s ->  3354.16s] You choose a Delta and you basically sell a put based off of whatever your Delta is.
+[ 3354.74s ->  3360.62s] I actually made a video about this maybe two or three years ago about why Delta isn't a great way to sell credit spreads.
+[ 3360.74s ->  3362.46s] But the same reason applies to puts.
+[ 3363.12s ->  3365.36s] And I can't find this article anymore on Tasty Trades.
+[ 3365.36s ->  3369.42s] I want to refer back to the old video so I can demonstrate this idea.
+[ 3370.40s ->  3377.16s] So if you look at this Tasty Trade article, they're using SPY data from 2005 up to present.
+[ 3377.32s ->  3381.26s] I think this article is in like 2019 or 2020, maybe 2021, I'm not exactly sure.
+[ 3382.20s ->  3387.16s] But they're basically trading 45 DTEs at different Deltas.
+[ 3387.16s ->  3398.14s] But if you look at the slide on the screen, you can see at the put side of 15 Delta should usually return a 50% of the options being in the money.
+[ 3398.14s ->  3407.74s] But you can see that the puts actually only return 8% at a 15 Delta, 20% at 30 Delta, 26% at 40 Delta, and 37% at 50 Delta.
+[ 3407.98s ->  3414.62s] Which means that at a 15 Delta, only 8% of the options end up in the money, which is less than predicted.
+[ 3415.12s ->  3416.94s] You can see that with every single Delta here.
+[ 3417.36s ->  3418.82s] And the reason for that is really simple, right?
+[ 3418.82s ->  3427.04s] The stock market has grown a lot over the last 20 years, which means that the market is more often in an uptrend than it is in a downtrend.
+[ 3427.20s ->  3436.90s] So what this shows us is that if we are trading with Delta, we are actually less risky than what the Delta is predicting.
+[ 3436.90s ->  3448.72s] So if I'm selling a 15 Delta or an 85% probability of profit, my chances of winning are actually much, much higher, which means that we are actually leaving money on the table.
+[ 3449.32s ->  3460.68s] And this is exactly why I tend to be very aggressive when selling puts, because the market is generally always less risky than what the Delta or the Greeks are predicting.
+[ 3460.98s ->  3463.14s] But again, a caveat here, I want to reiterate this.
+[ 3463.14s ->  3468.48s] If you want to sell a Delta, if you think that's the best way forward, continue to do that.
+[ 3468.58s ->  3473.60s] Because it does give you a very simple, a very easy way to sell puts.
+[ 3473.76s ->  3477.44s] And it probably gives you confidence because of that metric.
+[ 3477.56s ->  3480.22s] So if that works for you, continue to do so.
+[ 3480.38s ->  3484.16s] Continue to tinker with the Deltas until you guys find a strategy that works for you.
+[ 3484.74s ->  3489.48s] And selling puts is just a really good way for us to start our journey to early retirement.
+[ 3489.86s ->  3491.92s] And let me explain why that is.
+[ 3491.92s ->  3501.04s] So you can see that if you're selling puts the way that I taught you guys in this video, one, you'll be getting monthly passive income and two, you should be outperforming the market.
+[ 3501.96s ->  3509.12s] So what I do with that monthly passive income is I take a part of it and I reinvest it into a stock or an ETF.
+[ 3509.12s ->  3518.01s] So for example, if I collected the $500 or so on the TSMC put that I shared with you guys, I will take $250 of that.
+[ 3518.63s ->  3523.97s] I'll keep it in cash in my account so that I can increase the amount of money I can trade puts with.
+[ 3523.97s ->  3532.95s] But the other $250, I'll go in and buy either TSMC or a S&P 500 ETF like VOO or SPY.
+[ 3532.95s ->  3544.33s] What that allows me to do is that I am trickling in or I'm dripping in every single month more and more stocks and de-risking my investments.
+[ 3544.33s ->  3552.71s] And in order to show you how powerful that is or how impactful that is, I want to bring in the greatest investor of all time, Warren Buffett.
+[ 3552.95s ->  3556.69s] There's a saying, time in the market beats timing the market.
+[ 3556.93s ->  3558.97s] And I just really want to show you guys this point.
+[ 3559.15s ->  3561.17s] And in order to do that, we'll bring back Bob and Joe.
+[ 3561.41s ->  3566.71s] Bob and Joe are both going to start off with $1,000 and they're going to invest every single month, a part of their paycheck.
+[ 3566.71s ->  3572.95s] And every investment will go into the S&P 500, which historically has returned around 10% every single year.
+[ 3573.21s ->  3574.03s] So I'm going to start with Bob.
+[ 3574.37s ->  3576.51s] Bob is going to invest $100 every single month.
+[ 3576.75s ->  3582.55s] At year 10, after contributing only $13,000, we'll have an account value of $23,191.
+[ 3583.09s ->  3585.77s] Almost a 100% increase, which makes sense, right?
+[ 3585.81s ->  3586.77s] 10 years at 10%.
+[ 3586.77s ->  3590.49s] In year 20, his account will be sitting at $83,212.
+[ 3590.91s ->  3593.13s] Now the crazy part is going to happen right now.
+[ 3593.13s ->  3597.35s] Year 30, Bob's account will be worth $245,869.
+[ 3597.65s ->  3600.57s] Year 40, $688,428.
+[ 3600.75s ->  3606.93s] And year 50, $1.8 million after only having contributed $61,000.
+[ 3607.55s ->  3613.33s] So the stock market has made $1.6 million because he's been investing for 50 years.
+[ 3613.81s ->  3615.95s] Joe's going to invest $200 instead of $100.
+[ 3616.15s ->  3619.07s] And I want you guys to see how impactful that extra $100 is.
+[ 3619.07s ->  3625.21s] At year 50, Joe will have a value of $3.6 million.
+[ 3626.21s ->  3630.91s] Sure, he contributed $60,000 more for a total contribution of $121,000.
+[ 3631.27s ->  3637.57s] But that $121,000 made him an extra $1.6 million.
+[ 3638.15s ->  3642.37s] That is why we have to not only invest for as long as we can,
+[ 3642.51s ->  3645.05s] we also have to invest as much as we possibly can.
+[ 3645.05s ->  3650.79s] Because the stock market has been proven to be the best and safest way for people to build wealth.
+[ 3651.09s ->  3652.01s] But that's not all.
+[ 3652.37s ->  3654.83s] There's one more secret to Warren Buffett's success.
+[ 3655.11s ->  3657.87s] The S&P 500 returns around 10%, as we've seen.
+[ 3658.69s ->  3667.31s] Warren Buffett's Berkshire Hathaway returns, on average, 19.8% since he took it over in 1965.
+[ 3667.77s ->  3670.99s] And I want to show you how impactful that is as well by taking a look at Joe.
+[ 3670.99s ->  3676.63s] He still invests $200 every month, and he's upping his annual return from 10% to 11%.
+[ 3676.63s ->  3681.57s] Take a look at his final value, which is going to be $5.4 million.
+[ 3682.41s ->  3688.75s] $1.8 million more than just investing the S&P 500 at a 10% annualized return.
+[ 3689.01s ->  3689.73s] This is where it gets crazy.
+[ 3690.07s ->  3692.69s] What happens if he does 1% more every year?
+[ 3692.99s ->  3694.41s] A 12% annualized return.
+[ 3694.41s ->  3700.19s] Joe will be sitting at $8.2 million after 50 years.
+[ 3700.41s ->  3702.35s] 13% every year for 50 years.
+[ 3702.85s ->  3707.05s] Joe is going to have $12.5 million in his final account value.
+[ 3707.05s ->  3714.99s] So this is why selling puts is such a great way for us to build our wealth and help us retire early, if that is your goal.
+[ 3714.99s ->  3721.41s] It allows us to consistently increase the amount of money worth investing every single month.
+[ 3722.26s ->  3725.70s] And number two, it allows us to outperform the market significantly.
+[ 3726.20s ->  3729.70s] So as an example, if my account was, I'd say, $100,000.
+[ 3730.10s ->  3734.76s] I'd assume that I use 20% of my account to sell puts, and I collect 2% a month for 24% a year.
+[ 3734.76s ->  3740.74s] And I use the other 80% of my account, and I'm investing in the S&P 500 on the average return of 10% a year.
+[ 3741.54s ->  3748.84s] My overall return on that one year will be 13%, which means I do 3% better than average.
+[ 3749.16s ->  3755.64s] That's also not including the interest that I would collect on the 20% that I leave in cash, but let's just leave that out of it for now.
+[ 3755.64s ->  3768.70s] If I were to choose the right stock, for example, like we're learning on this channel, let's say that we up the 10% of the S&P 500 to 12%, then I'm now averaging 14.4% growth year over year.
+[ 3769.08s ->  3779.93s] Obviously, this is nominal returns, but you can see how I'm outperforming the market by using a portion of my account to accelerate and grow and compound my wealth.
+[ 3779.93s ->  3783.09s] So let's talk a little bit about rolling.
+[ 3784.22s ->  3787.82s] Rolling basically just means that I'm extending the duration of my auction.
+[ 3788.44s ->  3798.38s] So as an example, if I have 7 days left on my original 30 DTE option, and I want to extend it, I will then roll my auction out to a later date.
+[ 3798.46s ->  3800.70s] Let's say another 45 DTEs.
+[ 3800.70s ->  3809.10s] So let me show you on my account how to roll first, and I'll tell you guys the strategy behind rolling to make sure that we roll the right way.
+[ 3809.26s ->  3815.74s] If you head on over to my Fidelity account again here, I have an option, let's say the NVIDIA 130 put that I want to roll out.
+[ 3816.66s ->  3820.24s] So here I have 22 days left to expiration, but I want to roll it.
+[ 3820.28s ->  3821.04s] So I'll just click on roll.
+[ 3821.04s ->  3829.75s] So what rolling actually means is I will buy back my current option by spending money on it.
+[ 3830.17s ->  3837.05s] So in this case, I want to roll out my July 3rd 130 put, and I will spend $108 to buy back this option.
+[ 3837.41s ->  3840.85s] I will then sell another option at a later date.
+[ 3841.37s ->  3844.75s] Let's say another 30 days from now, which could be July 11th.
+[ 3845.49s ->  3848.71s] And I would choose a strike price.
+[ 3849.95s ->  3853.25s] If I choose 130, this is basically just called rolling out.
+[ 3853.57s ->  3860.47s] I'm at the same strike price, and I would collect $155 or so for this one option.
+[ 3860.83s ->  3872.45s] To summarize, I would spend $108 closing out my original contract, and I would then collect $156 on my new put one week later.
+[ 3873.74s ->  3874.92s] Again, this is called rolling out.
+[ 3875.72s ->  3879.84s] This transaction will net me a net credit of $48.
+[ 3880.52s ->  3882.06s] There's a couple other options too, right?
+[ 3882.06s ->  3885.20s] What happens if I were to roll it to a lower strike price?
+[ 3885.72s ->  3887.16s] This is what we call rolling down.
+[ 3887.66s ->  3889.18s] I'm further out of the money.
+[ 3889.32s ->  3891.34s] I'm further away from the current stock price.
+[ 3891.82s ->  3894.20s] I will be going to end up collecting less money.
+[ 3894.84s ->  3903.50s] So I would only collect $94, which means that in this transaction, I will actually end up spending $14 to roll it down.
+[ 3903.50s ->  3907.92s] So you can actually spend money if you were to roll an option out.
+[ 3908.18s ->  3911.90s] So if I were to roll it to a strike price that's higher, this is called rolling up.
+[ 3912.36s ->  3917.26s] Now, because I'm closer to the money, I would expect to get more money.
+[ 3917.42s ->  3920.42s] So in this case, I'll collect around $258 on this one option.
+[ 3920.42s ->  3925.19s] In this case, I would collect a net credit of $150.
+[ 3926.01s ->  3933.39s] Just from this one option, if I were to roll it up five points and one week out, I actually collect close to 1% for that additional week.
+[ 3933.77s ->  3938.85s] Now, you can also expect that if I were to roll it out, for example, to an even later date, more time, right?
+[ 3938.87s ->  3941.15s] I would end up collecting a larger credit.
+[ 3941.15s ->  3944.75s] So in this case, instead of $150, I'll end up collecting $212.
+[ 3945.65s ->  3950.91s] So now that you guys understand what rolling actually is, let's talk about the rules in the strategy.
+[ 3951.47s ->  3957.61s] So the number one rule, and mainly the only rule, is that we never roll for a debt.
+[ 3958.15s ->  3960.63s] In other words, we never spend money to roll.
+[ 3961.54s ->  3969.04s] So in the example where I roll from $130 to $125, where I have to spend money to roll it down, that is not okay in our system.
+[ 3969.04s ->  3973.06s] We never want to spend money, because we always want to be collecting money.
+[ 3973.90s ->  3987.92s] So the better roll will be to just roll it at the same strike price, $130, and collect $0.98, or roll it up and collect $212.
+[ 3988.74s ->  3991.44s] So now how do we know when to roll?
+[ 3992.28s ->  3997.18s] And the answer here is, the purpose of rolling is to maximize the amount of credit that we can get.
+[ 3997.18s ->  4002.36s] So a really easy way to find out is to take a look at your time remaining.
+[ 4002.60s ->  4011.94s] If I have a 30DT auction that I collected $200 on, when there's 15 days left, do I have more or less than $100 left?
+[ 4012.40s ->  4020.72s] So as an example, if I have $150 left to be decayed, you don't roll it out, because you can still collect the $150 in the remaining 15 days.
+[ 4020.72s ->  4033.26s] However, if I have, let's say, $50 left, then I've already, quote-unquote, profited 75% or $150, I should be rolling this option out so that I can collect more money.
+[ 4033.90s ->  4038.48s] The same thing can be said, for example, when it's around 7 days left, right?
+[ 4038.56s ->  4039.14s] One week left.
+[ 4039.46s ->  4041.54s] Do I have more than 75% remaining?
+[ 4042.02s ->  4044.36s] A lot of times, you'll see at 7 weeks, 10% left.
+[ 4044.48s ->  4045.96s] You've already decayed out 90%.
+[ 4045.96s ->  4049.58s] At that point, roll it, because you're going to be collecting more money.
+[ 4049.58s ->  4051.20s] So let's go back to my screen right here.
+[ 4051.66s ->  4067.26s] If I rolled my July 3rd put auction to July 18th at $135 strike price by rolling it up, I will collect $212 on this one auction, which means that by rolling it out a week, I will collect 1.5%.
+[ 4067.26s ->  4076.19s] If I were to just roll it out at the same strike price for the same week, I'll collect around $100, which is close to a 0.75% return for that one week.
+[ 4076.19s ->  4087.13s] These are all really good returns, because if you think about it, if I'm making 1.5% a week, that's already better than the 1.5% that I'm targeting for that month.
+[ 4087.69s ->  4090.41s] If that didn't make sense, let me know down in the comment section below.
+[ 4090.59s ->  4094.55s] I can make an additional video or answer your questions about when or how to roll.
+[ 4094.55s ->  4102.07s] But rolling is really just a really good way for you to continue to collect money as the stock market moves and as your option decays out in time.
+[ 4103.89s ->  4109.95s] All right, so let's just wrap this all up by showing you in more detail the account that I shared with you guys earlier in this video.
+[ 4110.29s ->  4111.55s] Let's head on over to Fidelity.
+[ 4111.79s ->  4115.61s] I created this account to demonstrate how to sell puts specifically for this video.
+[ 4115.61s ->  4120.13s] The first thing I want to bring your attention to is the TSM shares that I actually have in this account.
+[ 4120.75s ->  4133.16s] This TSM share, 205 shares, 200 of it was actually assigned puts, which means that I was assigned on two of my puts and bought 200 shares of TSMC.
+[ 4133.56s ->  4135.90s] An average price of $183 a share.
+[ 4136.66s ->  4143.00s] So if you look at my lots, you can see I was assigned on 100 shares and 100 shares here on average of $183.
+[ 4143.00s ->  4150.84s] And these five shares here are what I collected, what I bought from the puts that I sold on these two of the shares.
+[ 4151.08s ->  4157.44s] So you can see that here, these shares, they're actually up 16% as of today.
+[ 4157.90s ->  4172.45s] So I hope this demonstrates one very important thing that I've reiterated in this video consistently, which is when your options go in the money, not if, when, you have to have the conviction and let them get assigned.
+[ 4172.45s ->  4175.49s] So TSMC is a stock that I really like.
+[ 4175.73s ->  4176.29s] I like a lot.
+[ 4176.39s ->  4181.65s] In my larger account, I hold hundreds, close to maybe a thousand shares of TSMC.
+[ 4182.05s ->  4186.57s] So this is a stock that I believe will have decades of growth.
+[ 4187.15s ->  4191.77s] And so getting assigned and buying those shares is not the worst case scenario, right?
+[ 4191.81s ->  4193.05s] I actually wouldn't mind it.
+[ 4193.05s ->  4204.85s] And as you can see from the performance this year, it's already up $6,000, which is why we do not buy back our auctions, even when they go in the money.
+[ 4205.37s ->  4207.47s] This is a really important point for us to make.
+[ 4207.47s ->  4213.95s] And again, if you look at my account, I actually have another option that I sold on a stock ticker symbol IOT.
+[ 4215.08s ->  4219.40s] It's actually currently down 118% as of today.
+[ 4220.08s ->  4225.28s] And so what I'm going to do is I'm just going to hold it and see what happens.
+[ 4225.64s ->  4226.90s] If it gets assigned, so be it.
+[ 4227.00s ->  4228.46s] If it doesn't, so be it.
+[ 4228.46s ->  4234.82s] And you can also see from the puts that I've sold, I've collected close to two shares of IOT.
+[ 4235.02s ->  4236.34s] It's a pretty recent purchase.
+[ 4236.54s ->  4240.86s] I'm going to continue to trickle in more and more purchases as I sell more and more puts.
+[ 4241.99s ->  4251.79s] And another point I want to make is if you look at the return on this IOT put right here, I collected around $80 on this one put for a $41 put.
+[ 4252.05s ->  4253.11s] That's around what?
+[ 4253.29s ->  4254.41s] A 2% return.
+[ 4254.93s ->  4255.99s] Very consistent.
+[ 4256.69s ->  4258.27s] Same thing with NVIDIA, right?
+[ 4258.27s ->  4260.29s] The NVIDIA shares that I own, I own seven shares now.
+[ 4260.39s ->  4263.35s] These are all from the auctions money that I've collected.
+[ 4264.11s ->  4271.37s] And on top of that, these $130 put here is around $180 a share at $130.
+[ 4271.63s ->  4273.89s] Again, that's close to 1.5% return.
+[ 4274.35s ->  4281.45s] I'm not trying to maximize my return here, mainly because neither one of these stocks are in the high value zone that we talked about.
+[ 4281.45s ->  4283.63s] They're not close to the 200 period moving average.
+[ 4283.63s ->  4289.01s] And so at this rate of time, I do not think that they're a great value.
+[ 4289.01s ->  4294.67s] And so collecting 1.5% to 2.5% a month is more than enough.
+[ 4294.67s ->  4305.13s] And if you do this right, you can see that my return, like I said earlier in the video, is 12.5% year to date, while the S&P 500 has only returned 2.7%.
+[ 4305.13s ->  4314.53s] So this is why it's so important for us to stick to these rules, because these rules is what's going to allow us to compound our wealth consistently and allow us to retire early.
+[ 4314.53s ->  4321.07s] And if you guys want to see a continuation of this account progress, this is the account where I only sell puts on, drop a comment down in the description below.
+[ 4321.17s ->  4324.39s] Maybe I'll start a series, depending on the engagement.
+[ 4324.73s ->  4332.43s] And another caveat here too, on one of my larger accounts, I actually share on Instagram and Threads my quarterly or monthly return.
+[ 4333.09s ->  4339.39s] So if you guys want to see how much I make every month by selling options, make sure you guys subscribe or follow those two channels as well.
+[ 4339.57s ->  4340.81s] I'll link it in the description below.
+[ 4340.81s ->  4348.75s] So most brokerage accounts, if not all of them, like Webull, IBKR, Robinhood, Charles Schwab, Fidelity, as you can see, all allow for options trading.
+[ 4348.95s ->  4353.79s] And most brokerages start you off in a normal brokerage account with no options capabilities.
+[ 4354.31s ->  4357.33s] So what you have to do is you'll have to apply to trade options.
+[ 4357.79s ->  4360.37s] So if you see this one right here, just click apply to trade options.
+[ 4360.73s ->  4364.21s] Unfortunately, all of my accounts on Fidelity already have options, so I can't really show you here.
+[ 4364.67s ->  4365.85s] But I'll walk you guys through the process.
+[ 4366.49s ->  4370.45s] But one of the questions they'll ask you is what tier option do you want?
+[ 4370.81s ->  4373.69s] There are three main tiers, tier one, tier two, and tier three.
+[ 4374.31s ->  4376.11s] Tier one is really all you need.
+[ 4376.43s ->  4377.59s] You can sell cover call.
+[ 4377.77s ->  4379.01s] You can roll cover call.
+[ 4379.13s ->  4380.45s] You can sell cash secured puts.
+[ 4380.61s ->  4382.65s] And this is really all we need.
+[ 4383.39s ->  4389.89s] Option two gives you the same abilities, just with a little bit more with spreads.
+[ 4390.09s ->  4393.07s] So if you guys want to learn how to trade credit spreads, this is numbered.
+[ 4393.21s ->  4394.33s] Option two is where you're at.
+[ 4395.15s ->  4396.79s] Option three is where margin comes in.
+[ 4397.19s ->  4401.19s] I wouldn't recommend option three if you guys are new, especially if you guys are new.
+[ 4401.61s ->  4404.57s] But it just gives you guys more options.
+[ 4405.05s ->  4409.09s] I would say option one and option two is more than enough, especially if you guys are beginners.
+[ 4409.23s ->  4412.13s] If you guys want to learn how to sell cash secured puts, this is the place to be.
+[ 4412.13s ->  4417.87s] So we're going to head on over to Robinhood real quick to show you that it's basically the same exact thing on different brokerages.
+[ 4418.61s ->  4426.25s] The option trading requirements might be a little bit different, which means that option one and option two might differ a little bit from brokerage to brokerage.
+[ 4426.35s ->  4427.23s] But it's the same idea.
+[ 4427.23s ->  4430.03s] So here's my Robinhood account.
+[ 4430.29s ->  4431.83s] I only have options two level.
+[ 4432.17s ->  4436.01s] I only have level two options trading on this account right here, mainly because I only trade puts.
+[ 4436.51s ->  4439.73s] But if I go to auction setting, right, and this tells me what I can sell, right?
+[ 4439.81s ->  4444.29s] Buy calls and puts, selling covered calls, selling cash secured puts, exercising options.
+[ 4444.29s ->  4450.47s] I can always remove option trading, but if I want to upgrade, for example, you can see I'm in a cash account right now.
+[ 4450.65s ->  4455.19s] But if I switch with options, a margin account will give me level three option trading.
+[ 4455.65s ->  4466.55s] So if you just go to your account, your profile, which is the right hand side of your Robinhood app, scroll down, you'll see option trading and just click on option setting and you'll get yourself started.
+[ 4466.91s ->  4471.53s] So once you guys get this all set up, then you guys are able to start selling your first put.
+[ 4471.53s ->  4478.59s] So for a more comprehensive list of all the resources and tools that I use, I'll link it in the description below.
+[ 4478.79s ->  4480.81s] There'll be a downloadable link for you guys to use.
+[ 4481.27s ->  4483.75s] But on this video, there's a couple of things that I showed, right?
+[ 4483.83s ->  4484.87s] You'll need a brokerage account.
+[ 4485.35s ->  4488.83s] Robinhood, Webull, IBKR, Fidelity, they're all good.
+[ 4489.21s ->  4490.27s] There's no wrong answer here.
+[ 4490.51s ->  4492.37s] Robinhood is probably the most user-friendly.
+[ 4492.55s ->  4494.17s] So go ahead and use that if you guys want to.
+[ 4494.91s ->  4498.23s] There's also a couple like screeners that I've chosen, shown to you.
+[ 4498.71s ->  4501.09s] Finviz is what I used, but there's a lot of other options.
+[ 4501.09s ->  4502.71s] You can see it in the description below.
+[ 4503.47s ->  4510.59s] And for charting, Finviz is also a great option, but I used Robinhood Legend as well as IBKR and Thinkorswim on this channel.
+[ 4511.59s ->  4514.49s] And then for journaling, I didn't show this, but you should always journal.
+[ 4514.71s ->  4519.15s] Get a pen and paper or any online notebooking platform like OneNote.
+[ 4519.45s ->  4520.83s] Just take notes on your trades.
+[ 4520.83s ->  4528.28s] And for stock research, I used finance charts making this video.
+[ 4528.42s ->  4530.28s] But there's Google Finance, Yahoo Finance.
+[ 4530.82s ->  4533.86s] All the brokerage accounts has their own little stock research section.
+[ 4534.42s ->  4535.38s] There's a lot of options there.
+[ 4535.48s ->  4536.84s] Again, more in the description below.
+[ 4536.84s ->  4542.22s] So I just want to share with you guys a little bit of my experience, some of my learnings throughout the years of selling options.
+[ 4542.64s ->  4551.90s] And as you guys start on your journey of selling puts or continue on your journey, you guys can refer back to this part of the video and refresh yourself and be like, hey, yeah, Credit Spirit Investing also did that too.
+[ 4551.96s ->  4552.72s] And he went through this.
+[ 4552.72s ->  4554.10s] So hopefully that will be very helpful.
+[ 4554.36s ->  4560.90s] So the first advice or the first tip that I would give is that discipline and consistency really is the cheap.
+[ 4561.56s ->  4575.38s] We have to be able to follow the rules that we laid out in this video, which is 30 to 40 DTEs, selling on high quality stocks to reduce our risk, or not selling puts on stocks where we can't afford to buy undershares.
+[ 4576.04s ->  4582.26s] All these rules came about because of prior experiences, prior mistakes, prior large losses.
+[ 4582.72s ->  4586.28s] But following these rules can actually be very difficult.
+[ 4586.64s ->  4594.02s] I'm not going to sugarcoat it, which is why the mental part, the psychological part of trading is probably the most important part.
+[ 4594.10s ->  4610.30s] Because I promise you, you guys will probably come upon this situation where your first option goes into money and you don't actually want to get signed because you don't want to spend X amount of dollars buying 100 shares of that stock.
+[ 4610.48s ->  4611.48s] It's a lot of money, right?
+[ 4611.48s ->  4615.44s] And so you'll feel the urge to want to close out that option.
+[ 4615.88s ->  4620.56s] And so a part of you has to fight that urge to close that option.
+[ 4621.20s ->  4627.42s] We need to learn how to build the emotional and psychological tolerance to be able to follow these rules.
+[ 4627.42s ->  4640.16s] So especially if you're a beginner under that situation, you may want to start with paper trading, for example, to just understand the mechanics and understand the emotional duress of how to trade or how to sell options.
+[ 4640.16s ->  4645.20s] I'm selling NVIDIA puts and I'm collecting 2% a month.
+[ 4646.18s ->  4649.64s] You may very well think 2% a month is way too close to the money.
+[ 4649.64s ->  4653.96s] So you may want to sell further out of the money, right?
+[ 4653.96s ->  4655.44s] Because it makes you feel safer.
+[ 4655.56s ->  4657.40s] That is completely fine, right?
+[ 4657.40s ->  4662.92s] If you're getting 1.25%, even 1% sometimes, that's also completely fine.
+[ 4662.92s ->  4672.12s] Because this allows you to follow the rules that we laid out in this video, which means that in the long run, you're better off.
+[ 4672.26s ->  4678.14s] On the flip side, you may want to collect a lot of money as fast as possible.
+[ 4678.26s ->  4681.86s] You're selling options on really risky stocks, collecting 5%, 6% a week.
+[ 4681.86s ->  4687.10s] Like, similar to what Bob was doing, you're being extremely greedy to a certain extent, right?
+[ 4687.14s ->  4691.74s] And that's not great because you're taking on a lot of risks that you may not even be aware of.
+[ 4692.04s ->  4694.06s] Things are going well, you're doing really well.
+[ 4694.20s ->  4700.38s] When things aren't going well, you may actually end up ruining your account because you have a bad asset on your hand.
+[ 4700.96s ->  4704.90s] So again, make sure you're controlling these emotional impulses.
+[ 4704.90s ->  4715.48s] So that really is the most important part, is if you have to do certain things to tinker with the rules and the strategies so that you can follow them, do it.
+[ 4715.96s ->  4720.04s] The next advice here is that everybody starts small.
+[ 4720.38s ->  4721.62s] Everyone starts from zero, right?
+[ 4721.80s ->  4723.46s] Zero experience, small account.
+[ 4724.54s ->  4727.72s] So if you're a beginner, you have to start learning how to sell put.
+[ 4727.80s ->  4731.76s] So the first put that you sell, the first win, write it down.
+[ 4731.76s ->  4735.58s] Let me know down in the comments below and celebrate it because that is a great step.
+[ 4736.20s ->  4738.14s] After 10 options, celebrate it.
+[ 4738.26s ->  4738.92s] That is a great step.
+[ 4739.10s ->  4743.24s] Write it down in your journal because that's really, really impressive and really important.
+[ 4743.34s ->  4748.02s] You guys are taking the effort to learn a new skill, which is what auction selling is.
+[ 4748.10s ->  4750.74s] It is a skill and it will take time for you guys to get better.
+[ 4751.20s ->  4755.74s] Everyone starts from zero, including myself, including everybody that you've seen that sells options.
+[ 4756.08s ->  4757.70s] Which leads me to the next advice.
+[ 4757.86s ->  4759.52s] Don't compare yourself to other people.
+[ 4759.52s ->  4770.24s] If you follow me on IG, you may be seeing that I'm making $8,000 a month, $6,000 a month, $12,000 a month, selling options, maybe selling credit spreads, collecting a couple thousand dollars a week.
+[ 4770.46s ->  4771.98s] And you may want to do that too.
+[ 4772.72s ->  4778.52s] But we have to understand that our situations and everyone else's situations are slightly different.
+[ 4779.46s ->  4782.86s] I've been doing this for probably a lot longer than you have.
+[ 4783.10s ->  4786.04s] So my risk tolerance might naturally be a little bit larger than yours.
+[ 4786.04s ->  4791.18s] All of this is to say that what you really need to compare yourself to is really just yourself.
+[ 4791.50s ->  4792.26s] Am I getting better?
+[ 4792.44s ->  4793.22s] Am I improving?
+[ 4793.44s ->  4794.00s] Am I learning?
+[ 4794.82s ->  4798.48s] And then from a performance perspective, am I beating the S&P 500?
+[ 4799.92s ->  4802.48s] Because if you are, then you're actually doing a great job.
+[ 4802.72s ->  4804.12s] And you should, again, celebrate that.
+[ 4804.50s ->  4806.20s] Because that is an impressive achievement.
+[ 4807.35s ->  4810.13s] If you aren't, then you go, how do I, what am I doing wrong?
+[ 4810.37s ->  4811.43s] What should I do to improve?
+[ 4811.43s ->  4815.33s] Maybe refer back to this video and go, what else can I do?
+[ 4815.41s ->  4818.21s] What else can I learn to make myself even better?
+[ 4818.77s ->  4820.57s] The main competition is yourself.
+[ 4820.71s ->  4821.67s] It's not anyone else.
+[ 4822.23s ->  4822.31s] Okay.
+[ 4822.61s ->  4824.97s] Which leads me to the final advice.
+[ 4825.75s ->  4827.83s] Selling puts is a marathon, is not a sprint.
+[ 4828.11s ->  4832.65s] Think about your career or your life in terms of decades.
+[ 4832.89s ->  4834.79s] Is this a stock I'm willing to own for decades?
+[ 4835.11s ->  4838.67s] Is this, am I able to do this consistently for decades?
+[ 4838.67s ->  4841.39s] If I do this, what will happen in 10 years?
+[ 4841.71s ->  4844.01s] These are the mindsets that you have to have.
+[ 4844.51s ->  4846.69s] Because learning how to sell puts will take time.
+[ 4847.05s ->  4851.77s] You might refer to this video again multiple times because you're learning and you're experiencing new things as time goes on.
+[ 4852.15s ->  4855.59s] And so remember, don't be too hard on yourself if you're not getting it off right off the bat.
+[ 4855.73s ->  4856.83s] Take baby steps.
+[ 4857.09s ->  4858.29s] Be smart about it.
+[ 4858.37s ->  4859.05s] Be consistent.
+[ 4859.77s ->  4863.17s] And who knows, maybe one of you guys watching this video will be a better auction seller than I am.
+[ 4863.45s ->  4866.79s] Which will be great because I actually really do wish you guys all the best.
+[ 4866.79s ->  4870.73s] I wish you guys get really good at this so that you guys can retire early and do the things that you love.
+[ 4871.17s ->  4873.27s] Alright, so that about wraps up this course.
+[ 4873.65s ->  4881.31s] Let me know down in the comment section below if you guys have any comments, questions, ways for me to improve for future videos like this.
+[ 4881.87s ->  4884.91s] And if you guys wouldn't mind dropping a like and subscribing to show your support.
+[ 4885.53s ->  4887.17s] This video did take a very long time to make.
+[ 4887.51s ->  4889.03s] Hopefully that it was very comprehensive.
+[ 4889.17s ->  4890.05s] You guys learned a lot.
+[ 4890.05s ->  4899.43s] And I'm planning on making future videos like this so that we can all learn how options and investing can help build that financial freedom to retire early.
+[ 4900.33s ->  4904.85s] I also dropped a link for an interest form down below.
+[ 4905.19s ->  4908.37s] Let me know what you guys are interested from the list below.
+[ 4908.37s ->  4917.65s] So I'll be reaching out to you guys when and if we're launching some of these services to make sure you guys get the most value out of everything that this channel has to offer.
+[ 4917.95s ->  4929.39s] So if you want to get a head start on learning what credit spreads are, here is a 20-minute intro to my favorite strategy that will give you the basics on getting started with selling credit spreads.
+[ 4930.71s ->  4932.47s] And like always, stay safe in the market.
+[ 4932.97s ->  4933.59s] Until next time.
+[ 4933.59s ->  4934.41s] Peace.

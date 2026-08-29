@@ -1,0 +1,74 @@
+[    0.40s ->     4.46s] Hey guys, what's up? It's AB Trading. Today I wanted to do a video over how trading is simple.
+[    4.80s ->     9.00s] Do not overcomplicate your trading. Do not put so many indicators on your chart that you can't
+[    9.00s ->    13.34s] even see the candlesticks. And above all else, eliminate all emotions when trading.
+[   13.70s ->    19.90s] Trading is simple. Let me show you how. All right. So in the Discord group chat from yesterday,
+[   20.00s ->    24.80s] I said spy. We're looking for it to go above 289.4. If not, then we're in a downtrend from
+[   24.80s ->    32.86s] the 15-minute channel. All right. So this is from yesterday. Why did I say that I wanted
+[   32.86s ->    44.57s] spy to be above 289.4? Let's see. Yesterday, where the heck are we? So yesterday was Monday.
+[   44.93s ->    52.17s] So 289.4. Why did I want it above 289.4? Because as you can see here, I mentioned it at around
+[   52.17s ->    61.99s] 954. So around here, 289.4 is what is up here. Up there is showing that we do have movement to
+[   61.99s ->    67.57s] the upside. I was looking at the 15-minute chart. Okay. And if you look here on the 15-minute chart,
+[   68.11s ->    76.49s] 289.4, which is right about here, is crucial. You see, we saw that this is a support zone.
+[   76.49s ->    84.19s] We know that our downtrend is like this, correct? So I knew that if we broke above 289.4,
+[   84.33s ->    89.75s] then we would start to get out of this trend and move back up. If not, we're going to continue the
+[   89.75s ->   100.55s] downtrend. So what did we see yesterday? We saw no movement back up to around 289.4. So we just
+[  100.55s ->   106.37s] continue to a little relax and chill on the way back down. So I said I was going to trade it above
+[  106.37s ->   114.83s] 289.4. We did not get that. No trade. That's how simple it is. Okay. Now let's look at another
+[  114.83s ->   121.07s] example. Apple following the 10% strategy for Friday and will slowly fade throughout the rest
+[  121.07s ->   125.61s] of the day unless volume picks up or there's a catalyst. So let's look at Apple from yesterday.
+[  126.73s ->   131.97s] So as you can see here, we close. So the trading range from the previous day, which was Sunday,
+[  131.97s ->   141.49s] I mean Friday, is we have it between 225 and 221, but we close in the bottom portion of this range.
+[  142.35s ->   146.53s] During the aftermarket of that day, we started going down and then we tried to push up, but we
+[  146.53s ->   150.97s] just get rejected at this resistance point. And then we start to go down. This is what a 10%
+[  150.97s ->   156.93s] strategy is. So that means that we're most likely going to continue in the direction that we were
+[  156.93s ->   162.27s] headed out of the previous day. So as you can see here, we just crashed down and we just continue
+[  162.27s ->   168.25s] crashing. And then we just consult, consolidated below the support. So how simple was that? You
+[  168.25s ->   174.51s] know, knowing that, um, using your pre-market support and resistance levels to know where you're
+[  174.51s ->   179.77s] going in at, if you're like, okay, look, I'm expecting the move to go down. If I go under the
+[  179.77s ->   187.23s] pre-market low, then I will short or buy a put that simple, right? I buy a put here. I see if it
+[  187.23s ->   192.33s] drops down to the next support. If not, I can hold further. And if it, uh, and if it drops through
+[  192.33s ->   197.65s] and then it comes back, back up, I just cut my losses when it comes back up. That's how simple it
+[  197.65s ->   202.47s] is. Trading is simple. Okay. Now if you're having too much emotion, when you're trading, the problem
+[  202.47s ->   207.43s] when emotion comes into effect in trading is because when you bring in the financial aspect, when you
+[  207.43s ->   213.81s] have money on the line, then emotions start getting like overwhelming and in your system,
+[  213.95s ->   219.89s] you know, that you can actually lose money to defeat that or to slowly build up and not understand the
+[  219.89s ->   227.77s] money aspect to eliminate the emotions. The best thing to do is you start with a super small size.
+[  228.01s ->   233.57s] So what's awesome is you could buy like contracts for 10 bucks, right? Start with small size that if
+[  233.57s ->   239.91s] you lose it, so what? And then you slowly start building up the amount of money that you use so
+[  239.91s ->   247.77s] that you slowly get used to building more risk. Yes, there is a way of risking $1 million and slowly
+[  247.77s ->   255.05s] getting used to that. But for most people, you want to, um, for two reasons, you want to start with a
+[  255.05s ->   260.73s] little bit of money and keep trading up and adding to your size for the first reason to slowly eliminate
+[  260.73s ->   264.65s] emotions. And the second to prove to yourself that you can trade before you put a lot of money on
+[  264.65s ->   269.79s] the line. But I just want to show you how simple this is that we're just looking at pre-market levels
+[  269.79s ->   275.21s] and we're looking at, um, tendencies that we see in the market when it's trending down and closes in
+[  275.21s ->   279.11s] the bottom percent of the range. We most likely have the continuation from the previous day.
+[  279.43s ->   287.46s] Let's go to the next example. Um, Tesla, uh, and today trading range between 271 and 276.
+[  287.46s ->   295.38s] So let's take a look at that. Um, yesterday and today trade trading range between, we saw that it
+[  295.38s ->   303.80s] was bouncing in between 271 and 276. So what are we going to do if it drops below 271? And then we
+[  303.80s ->   310.50s] buy a put, and if it starts to reverse, then we cut our losses there. If it goes above 276 with volume,
+[  310.60s ->   316.42s] which it did, the volume started to pick up here. Um, then we go long with, with a call. And if not,
+[  316.42s ->   321.42s] it drops below and we cut our losses. All right. That's how simple this is. You either win or you,
+[  321.42s ->   325.64s] or you lose. All you can do is trade high probability setups that make sense to you
+[  325.64s ->   333.49s] and follow your personal trading strategy. All right. One more due to do AMD, ha ha. The highlight
+[  333.49s ->   341.21s] perfect breakout to the upside. Watch for major resistance at 30. So as we can see here, um,
+[  341.21s ->   346.77s] in the morning, do, do, do, do, do, do, do, let's get in a bit closer look. So as I said,
+[  346.85s ->   353.97s] perfect breakout. Why? Because, um, we are starting to make these new highs here and we're trending up
+[  353.97s ->   360.85s] massively. So this is what I mean by we're having a breakout above the level, this, this, the next high,
+[  361.21s ->   368.93s] um, we're trending up and we're just doing great. So I said, watch out. Why? So 30 is an obviously
+[  368.93s ->   373.29s] psychological barrier. And now that we're hit 30, we're a little going crazy, but that doesn't
+[  373.29s ->   378.73s] matter. We're going to look at the trade first trade. He could have taken, um, buying, um, when
+[  378.73s ->   382.95s] he got above this high with volume, because the volume definitely stepped in as we started to make
+[  382.95s ->   388.61s] this new high. Um, you buy a call and you try to ride it up as far as you can. If not, you cut losses
+[  388.61s ->   394.29s] when, when it comes back to this red bar piece of cake. Um, here we go. We have this triangle pattern
+[  394.29s ->   403.52s] here. Um, you enter, right? You enter right, right here. You wait for it to go up, um, about the height
+[  403.52s ->   410.16s] of the initial, uh, beginning of it. So usually, um, what the beginning before the triangle, uh,
+[  410.16s ->   416.56s] consolidation is, is, uh, how far it will run. So as you can see, we, we ran this far. We can expect
+[  416.56s ->   423.40s] it to run that, that far. Um, so again, we get in expecting it to run about this far, uh, which it did
+[  423.40s ->   430.10s] up to 30. Um, but again, if we were wrong and it went, when we bought in, when the volume picked up
+[  430.10s ->   437.06s] above here, but if we exit back at this red line, then again, small loss, simple trade, simple. I mean
+[  437.06s ->   443.52s] simple because we know the setups, we know the probability of them work working out is in our
+[  443.52s ->   449.90s] favor. We know we're trading a high probability setup. We know that we enter and we have a predefined
+[  449.90s ->   455.86s] stop loss where we know where we're going to exit at a loss, or we know where we're going to exit for
+[  455.86s ->   463.98s] profit. All right, guys, let me just stress that if your trading rules is too complicated, please, I urge
+[  463.98s ->   472.14s] you to simplify it. Stick to the basics. That is what works. Don't overcomplicate your trading. Keep your
+[  472.14s ->   475.82s] trading simple. Please like, comment, and subscribe. See y'all in the next video.

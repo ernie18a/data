@@ -1,0 +1,398 @@
+[    0.46s ->    28.14s] Welcome back. Today we're going to talk about maximum likelihood estimation. I'm going to do it a little more informally today. I'm just going to kind of work this out, talk about why it's useful, and do some math in LaTeX, do some simulations with NumPy, and see if I can get the point across to you here.
+[   28.14s ->    58.80s] So, let's just go ahead and get started with an example. So, I wrote an article on this topic a little while ago, and the example I use in the article is this idea of a hospital checking in patients, and they want to determine a tail risk situation that is not having enough beds to accommodate patients that want.
+[   58.82s ->    68.82s] They want to walk in that need them. And to simplify the problem space, I just go ahead and assume that on a daily basis, if a patient checks in, then they're going to check out same day.
+[   68.82s ->    80.82s] Now, that's an assumption. It's going to make the model much simpler, but you should note that your assumptions can change whether or not the risk is being overestimated or underestimated.
+[   80.82s ->    93.82s] So, here we would be underestimating our risk because we're assuming that people check in and check out same day, when in reality, they'll probably check in and they may stay longer than a day.
+[   93.82s ->    96.82s] But we're going to just go ahead and get started with this kind of example here.
+[   96.82s ->   108.86s] So, we have a hospital wants to determine risk of not being able to accommodate patients.
+[  108.86s ->   114.34s] And I think that's how you spell accommodate. I'm just going to go ahead and hope that's correct.
+[  114.34s ->   129.38s] Okay. The hospital has 100 beds and 10 years of patient data.
+[  129.38s ->   142.36s] Okay. So, if we have 10 years of patient data, that means we have 10 years of data of our daily check-in, check-outs of patients shown up at our hospital.
+[  142.36s ->   149.36s] And we want to go ahead and figure out how we can model that random variable, right?
+[  149.36s ->   157.36s] So, it would be considered a random variable, the amount of patients that show up in a given day and check into a bed and check out, right?
+[  157.36s ->   175.26s] So, this is a realization over time. And a common random variable, if you read my common random variable article, that has to do with realizations over time is a Poisson random variable.
+[  175.26s ->   181.26s] So, these are discrete realizations over time. That is, we can't have a fraction of a person.
+[  181.26s ->   188.26s] Okay. So, it may be reasonable to model these realizations as a Poisson random variable.
+[  188.26s ->   191.26s] And we can go ahead and write the probability mass function.
+[  191.26s ->   200.24s] Okay. So, I'm going to say P of A is equal to, we'll do this in, we'll send our LaTeX here.
+[  200.24s ->   224.08s] This is going to be, we have E, I guess this is really negative, or E to the negative lambda, lambda to the A over A factorial.
+[  224.08s ->   230.08s] And this is for A is equal to 0, 1, 2, 3. And then it's going to be 0 otherwise.
+[  230.08s ->   234.08s] But I'm not going to write this as a piecewise function because that sounds horrible right now.
+[  234.08s ->   240.08s] So, this is going to be the case, right? So, this is the probability for a given realization.
+[  240.08s ->   251.08s] So, in other words, right, if we have one patient showing up in a day, then if we plug in one to this formula, then we are going to get that corresponding probability.
+[  251.08s ->   287.37s] So, we would say that we have x sub 1, x sub 2, all the way through x sub n, daily patient data, where we model, or we assume that x sub i, so this is the random variable x, follows a Poisson distribution with parameter lambda.
+[  287.37s ->   293.33s] Okay? So, let me just get rid of this so we can see it a little better.
+[  293.33s ->   298.97s] So, it's important to note here that the little x's are actually data, okay?
+[  298.97s ->   307.97s] And the big x here is denoting the random variable that is the number of patients realized in a day for this particular hospital.
+[  307.97s ->   311.97s] This is a random variable interpretation, okay?
+[  311.97s ->   316.97s] So, this right here doesn't actually have a value, it has a distribution, right?
+[  316.97s ->   324.97s] So, we're saying that each one of these guys is going to be distributed identically by the same Poisson distribution with some population parameter lambda.
+[  324.97s ->   327.97s] And that's what we're going to try to estimate, all right?
+[  327.97s ->   329.97s] What should lambda be?
+[  329.97s ->   343.97s] Because if it's reasonable that x sub i, which is our patient realizations in a day, follows this distribution, then there is some true population parameter lambda that we don't exactly know, but we can estimate it, right?
+[  343.97s ->   346.97s] That's what statistical inference is all about.
+[  346.97s ->   354.97s] And it turns out we can use our data to help us estimate that parameter, okay?
+[  354.97s ->   362.97s] So, now we're going to actually start talking about the idea of an estimator versus an estimate, all right?
+[  362.97s ->   371.97s] An estimator is essentially just a function, and an estimate is that function applied to data, all right?
+[  371.97s ->   380.97s] Now, the maximum likelihood estimator yields estimates with a whole bunch of nice parameters.
+[  380.97s ->   387.97s] So, the estimator itself is derived from this random variable interpretation, all right?
+[  387.97s ->   393.97s] So, let's go ahead and talk about how we can construct this estimator.
+[  393.97s ->   407.92s] So, the idea here is we have some data that's realized from what we assume to be a Poisson distribution, and we want to pick a lambda.
+[  407.92s ->   409.92s] Well, what lambda should we pick?
+[  409.92s ->   420.92s] Well, what if we chose the lambda that yields the highest likelihood of having observed this data over the past 10 years?
+[  420.92s ->   423.98s] It's quite a concept.
+[  423.98s ->   430.34s] That's exactly what maximum likelihood estimation is all about right there.
+[  430.34s ->   437.34s] So, we are actually going to start with the random variable interpretation, so that we can derive the estimator,
+[  437.34s ->   447.60s] and then apply that maximum likelihood estimator to the data, and that will yield our estimate for lambda,
+[  447.60s ->   452.60s] and then we're going to go ahead and use this in the context of our hospital bed example,
+[  452.60s ->   457.60s] where we know the population parameter because we're going to simulate this patient data,
+[  457.60s ->   463.60s] and we can see how well the estimate actually does against the true population parameter.
+[  463.60s ->   466.68s] All right.
+[  466.68s ->   467.68s] So, let's do this.
+[  467.68s ->   478.15s] Let's talk about the method of the method of maximum likelihood estimation.
+[  478.15s ->   479.15s] Okay.
+[  479.15s ->   488.95s] So, we're going to say that I'm just going to go ahead and use lambda, and I'll call it MLE.
+[  488.95s ->   498.59s] This is the same thing as argmax, so this is pretty much how we're going to find the parameter, or the estimate rather,
+[  498.59s ->   501.59s] that yields the highest likelihood of having seen this data.
+[  501.59s ->   524.29s] We are going to max the probability mass function that is a function of our sample of random variables given the parameter.
+[  524.29s ->   525.74s] Okay.
+[  525.74s ->   532.74s] So, this is our maximum likelihood estimate right here, lambda, and we're saying to find lambda,
+[  532.74s ->   539.74s] what we want to do is we want to maximize the probability associated with the realized random variables,
+[  539.74s ->   549.74s] but here we're using the random variable interpretation cap X, not our data, so that we can derive the estimator given a particular lambda.
+[  549.74s ->   550.74s] Okay.
+[  550.74s ->   558.74s] And that lambda is going to allow us to maximize this function of all of our random variables.
+[  558.74s ->   561.88s] Why do we want to maximize it?
+[  561.88s ->   569.88s] Well, that's going to allow us to derive the parameter lambda, which yields the highest likelihood, highest probability.
+[  569.88s ->   576.88s] They're not necessarily equivalent likelihood and probability, but for the sake of understanding the notion of maximum likelihood estimation,
+[  576.88s ->   578.88s] you could think of it like that.
+[  578.88s ->   584.88s] We want to maximize the probability of essentially seeing this data given a particular lambda, right?
+[  584.88s ->   585.88s] So, that's what we're going to do.
+[  585.88s ->   593.88s] We're going to find the lambda that would make drawing this random sample the highest likely, or the highest probability possible.
+[  593.88s ->   596.00s] Okay.
+[  596.00s ->   598.00s] So, how do we do that?
+[  598.00s ->   601.00s] This is all well and good, but we've got to actually solve this thing now.
+[  601.00s ->   612.00s] It turns out that the argmax of this function here is synonymous with the argmax of the log, and that's going to clean up a lot of calculations here.
+[  612.00s ->   622.54s] So, I'm going to say argmax of lambda, and then we're going to say ln of this original function F, right here.
+[  622.54s ->   626.81s] So, that's nice.
+[  626.81s ->   627.81s] Okay.
+[  627.81s ->   637.81s] It turns out, right, all of these random variables we have here are identically distributed, independent, and identically distributed.
+[  637.81s ->   647.81s] So, if that is the case, then we know that each one of these random variables, this function is just going to be the product of the PMFs.
+[  647.81s ->   650.81s] That is just a basic definition of independence.
+[  650.81s ->   664.38s] So, we can say here, this is equal to big pi, i is equal to 1, all the way to n, of f of xi.
+[  664.38s ->   668.38s] And, of course, we're given this lambda here.
+[  668.38s ->   672.18s] So, this is just a simple property of independence.
+[  672.18s ->   674.18s] Now, this goes back to assumptions, right?
+[  674.18s ->   691.18s] So, one of the things that I want to talk about in the context of maximum likelihood estimation is the problem with some of your assumptions when you go ahead and choose to look at some sort of random variable as a common random variable, such as a Poisson random variable or something like that.
+[  691.18s ->   693.18s] Does independence make sense?
+[  693.18s ->   694.18s] Right?
+[  694.18s ->   695.57s] Think about that.
+[  695.57s ->   696.57s] Daily patient data, right?
+[  696.57s ->   698.57s] X1, X2, all the way through Xn.
+[  698.57s ->   704.57s] If we have 10 years of data, is there going to be correlation between that data?
+[  704.57s ->   705.57s] Probably.
+[  705.57s ->   706.57s] Probably.
+[  706.57s ->   709.57s] It's very unlikely that that data is going to be uncorrelated.
+[  709.57s ->   713.57s] Very unlikely that that data is going to be independent, right?
+[  713.57s ->   715.57s] Because people get each other sick.
+[  715.57s ->   717.57s] Essentially, you can just think about it like that.
+[  717.57s ->   721.57s] So, this would also be underestimating risk, in a sense, right?
+[  721.57s ->   734.46s] Because we're underestimating risk in the sense of patients checking in and checking out the same day, but we're also underestimating risk in the context of these guys being independent.
+[  734.46s ->   740.46s] But, again, that's just something to think about, alright, when you're doing this sort of analysis.
+[  740.46s ->   748.46s] So, you probably want to run basic assumptions through kind of a checker like this and think, okay, how does this affect my risk?
+[  748.46s ->   751.46s] Are we being conservative or are we being a little too liberal in our risk estimation?
+[  751.46s ->   755.46s] I would say we're being a little too liberal in this case, but this is still a good example.
+[  755.46s ->   762.46s] Because you can go ahead and refine this, refine this after the fact to develop better risk models.
+[  762.46s ->   765.46s] But, nevertheless, let's continue going with this maximum likelihood estimation here.
+[  765.46s ->   772.46s] So, we have that this is equivalent to this and we are using the log, argmax of lambda, right?
+[  772.46s ->   775.46s] So, we're going to go ahead and plug in this pi into this ln right here.
+[  775.46s ->   782.46s] And, you can see using the properties of logs, we're going to go ahead and we're going to be able to simplify a whole bunch of this.
+[  782.46s ->   797.84s] So, keep in mind, we are trying to find the argmax of lambda for our likelihood estimate.
+[  797.84s ->   804.38s] That is lambda MLE, okay?
+[  804.38s ->   808.13s] Right here.
+[  808.13s ->   811.91s] Okay.
+[  811.91s ->   814.91s] So, what is f , given lambda?
+[  814.91s ->   817.91s] Well, we have the probability mass function defined here.
+[  817.91s ->   819.91s] So, let's just go ahead and plug that in.
+[  819.91s ->   820.91s] Okay?
+[  820.91s ->   822.91s] We know those are realizations.
+[  822.91s ->   826.91s] So, we know that they're going to fall within the domain of the probability mass function.
+[  826.91s ->   829.23s] So, let's just go ahead and do that.
+[  829.23s ->   832.23s] So, I'm just going to go ahead and copy and paste this guy right here.
+[  832.23s ->   833.23s] Boom.
+[  833.23s ->   836.10s] Come down here.
+[  836.10s ->   841.09s] Then, instead of this f , I'll throw this guy here.
+[  841.09s ->   845.98s] So, now we have ln, the product of all of these guys here.
+[  845.98s ->   849.98s] But, instead of a, we are going to be using xi.
+[  849.98s ->   853.98s] Remember, this is still the random variable interpretation.
+[  853.98s ->   854.98s] Okay?
+[  854.98s ->   856.91s] So, this isn't the data.
+[  856.91s ->   858.91s] This is actually the random variable x.
+[  858.91s ->   863.91s] x that follows a Poisson distribution with parameter lambda.
+[  863.91s ->   864.91s] Alright?
+[  864.91s ->   870.91s] Well, if you remember from high school, which probably most of us don't.
+[  870.91s ->   871.91s] I know I don't.
+[  871.91s ->   877.91s] But, our log properties actually allow us to split this up really nicely into a summation.
+[  877.91s ->   883.91s] So, instead of big pi, we're actually going to use a big sigma here.
+[  883.91s ->   887.91s] And, we're going to be able to break up this product and this quotient here.
+[  887.91s ->   902.91s] We're going to be able to have, it looks like ln of e to the negative lambda plus ln of lambda to the xi minus ln of xi factorial.
+[  902.91s ->   903.91s] Okay?
+[  903.91s ->   907.91s] And, that's just a product of the properties of logs there.
+[  907.91s ->   908.91s] Right?
+[  908.91s ->   918.42s] Because, if you recall, we have ln of xy is equal to ln of x plus ln of y.
+[  918.42s ->   930.17s] We also have that ln of xy is equal to ln of x minus ln of y.
+[  930.17s ->   935.17s] So, we're just going to go ahead and use these here in the context of this big product.
+[  935.17s ->   939.17s] And, we're just going to have a summation instead of the product.
+[  939.17s ->   946.17s] And, then we're going to have some subscripts with i for the x's.
+[  946.17s ->   952.17s] So, that's what's going to enable us to go ahead and convert this into a sum.
+[  952.17s ->   955.17s] So, using these log products, let's go ahead and do that.
+[  955.17s ->   961.17s] So, we want to say sum of e to the negative lambda.
+[  961.17s ->   964.17s] But, ln of e just drops out.
+[  964.17s ->   966.17s] So, we're just going to have negative lambda.
+[  966.17s ->   970.17s] And, then we're going to have ln of lambda to the xi.
+[  970.17s ->   975.17s] And, then since it's raised to the power, we'll be able to do some other rules as well.
+[  975.17s ->   977.17s] But, let's just go ahead and work through this first.
+[  977.17s ->   981.17s] So, I'm going to go ahead and copy this guy here.
+[  981.17s ->   984.67s] I'm going to come down here.
+[  984.67s ->   988.28s] And, instead of pi, we're going to use sigma.
+[  988.28s ->   990.14s] Okay.
+[  990.14s ->   997.14s] And, instead of e to the negative lambda, we are just going to have negative lambda.
+[  997.14s ->  1000.14s] We'll keep this in the summation for now.
+[ 1000.14s ->  1005.14s] Get rid of this ln because the e drops out.
+[ 1005.14s ->  1017.82s] Then, we're going to do plus ln of lambda to the xi minus ln of xi factorial.
+[ 1017.82s ->  1020.82s] And, we get something that looks like this.
+[ 1020.82s ->  1024.20s] This needs another parenthesis right here.
+[ 1024.20s ->  1027.20s] And, then this is actually looking pretty nice.
+[ 1027.20s ->  1028.20s] Okay.
+[ 1028.20s ->  1031.20s] So, everything is in this summation.
+[ 1031.20s ->  1034.20s] So, maybe I could put brackets here to make it a little more clear.
+[ 1034.20s ->  1037.20s] So, I'll put an open bracket and a closing bracket here.
+[ 1037.20s ->  1040.16s] So, everything is within this bracket.
+[ 1040.16s ->  1044.16s] So, the MLE is going to be the arg max of this now.
+[ 1044.16s ->  1045.16s] Right.
+[ 1045.16s ->  1046.16s] We just did a whole bunch of work there.
+[ 1046.16s ->  1052.16s] And, it turns out, if we take a look at this, we can see that we can bring this xi in front.
+[ 1052.16s ->  1053.16s] Right.
+[ 1053.16s ->  1055.16s] That's just a property of the logs.
+[ 1055.16s ->  1059.16s] And, then we're left with a product.
+[ 1059.16s ->  1062.16s] And, we can take that ln lambda out.
+[ 1062.16s ->  1065.16s] And, we can just kind of distribute this summation through.
+[ 1065.16s ->  1066.16s] Right.
+[ 1066.16s ->  1072.16s] Because, we can just go ahead and say lambda is not dependent on any i.
+[ 1072.16s ->  1075.16s] This is dependent on i and this is dependent on i.
+[ 1075.16s ->  1081.16s] So, this is just going to be the sum of negative lambda n times.
+[ 1081.16s ->  1085.16s] And, we're going to apply the summation to this guy and this guy separately.
+[ 1085.16s ->  1086.16s] Okay.
+[ 1086.16s ->  1088.16s] Let's go ahead and do that.
+[ 1088.16s ->  1090.38s] Right.
+[ 1090.38s ->  1092.38s] So, I'm going to take this summation.
+[ 1092.38s ->  1095.56s] We have negative n lambda.
+[ 1095.56s ->  1100.56s] Then, we also have the summation applied to xi.
+[ 1100.56s ->  1105.85s] Because, we take it out of the power and we're just left with ln of lambda.
+[ 1105.85s ->  1110.85s] Then, we apply it also to this log right here.
+[ 1110.85s ->  1111.85s] Okay.
+[ 1111.85s ->  1121.85s] So, we have now negative n lambda plus the summation xi ln lambda minus summation ln xi factorial.
+[ 1121.85s ->  1123.85s] That looks like it's going to be a mess to deal with.
+[ 1123.85s ->  1127.85s] But, fortunately for us, let me add some cells here.
+[ 1127.85s ->  1134.46s] Fortunately for us, if we differentiate set equal to zero, that's how we maximize.
+[ 1134.46s ->  1135.46s] Right.
+[ 1135.46s ->  1138.46s] I'm not going to go ahead and worry about any sort of second derivative here.
+[ 1138.46s ->  1144.46s] We're just going to go ahead and assume that it's going to yield the max for us.
+[ 1144.46s ->  1153.33s] Because, you know, we don't have to do no second derivative test in this context, fortunately.
+[ 1153.33s ->  1157.33s] But, let's take a look at what differentiating with respect to lambda does.
+[ 1157.33s ->  1160.33s] We are going to essentially get rid of this term.
+[ 1160.33s ->  1162.33s] We're going to just have n here.
+[ 1162.33s ->  1165.33s] And then, this is going to become 1 over lambda.
+[ 1165.33s ->  1167.33s] We set that equal to zero.
+[ 1167.33s ->  1170.33s] And, we are going to be able to find this estimator.
+[ 1170.33s ->  1171.33s] So, let's just do this.
+[ 1171.33s ->  1172.33s] Right.
+[ 1172.33s ->  1181.96s] So, we are differentiating, differentiating with respect to lambda.
+[ 1181.96s ->  1184.66s] And, we're going to set equal to zero.
+[ 1184.66s ->  1185.66s] Okay.
+[ 1185.66s ->  1186.66s] So, that's what I just said.
+[ 1186.66s ->  1188.37s] This is what we're doing.
+[ 1188.37s ->  1189.37s] So, let's do this.
+[ 1189.37s ->  1192.37s] I'm going to go ahead and copy this guy here.
+[ 1192.37s ->  1195.36s] Bring it on down here.
+[ 1195.36s ->  1198.36s] And, when we differentiate with respect to lambda, what happens?
+[ 1198.36s ->  1199.36s] Right.
+[ 1199.36s ->  1200.36s] This lambda goes away.
+[ 1200.36s ->  1201.36s] Easy.
+[ 1201.36s ->  1205.36s] L out of lambda becomes one over lambda.
+[ 1205.36s ->  1208.36s] I'm going to bring it outside the summation because it's just a product.
+[ 1208.36s ->  1211.36s] It doesn't depend on anything.
+[ 1211.36s ->  1213.36s] Then, we have minus.
+[ 1213.36s ->  1217.36s] And, then, this whole term here with the factorial is just zero because it doesn't depend on lambda.
+[ 1217.36s ->  1220.36s] So, that would be minus zero.
+[ 1220.36s ->  1224.97s] Then, I can go ahead and get rid of this derivative term here because we just differentiated.
+[ 1224.97s ->  1225.97s] And, boom.
+[ 1225.97s ->  1233.97s] So, now, we can even drop out this argmax term here because this is going to be what we are solving for now.
+[ 1233.97s ->  1242.26s] So, in the context of the MLE, we need to solve for lambda now.
+[ 1242.26s ->  1246.26s] And, lambda here is going to be the lambda of the MLE, right?
+[ 1246.26s ->  1250.06s] Because that's what differentiating is going to do.
+[ 1250.06s ->  1259.05s] It's going to allow us to find, right, where we are at a maximum or a minimum, right?
+[ 1259.05s ->  1263.72s] So, we just differentiated this lambda becomes one.
+[ 1263.72s ->  1265.72s] This becomes one over lambda.
+[ 1265.72s ->  1266.72s] This becomes zero, right?
+[ 1266.72s ->  1268.72s] We set this equal to zero.
+[ 1268.72s ->  1272.72s] Now, if we add n to both sides multiplied by lambda, right?
+[ 1272.72s ->  1281.76s] Then, we are going to end up with n lambda, right?
+[ 1281.76s ->  1286.76s] So, we add n over multiplied by lambda.
+[ 1286.76s ->  1290.97s] We end up with this guy here.
+[ 1290.97s ->  1298.72s] And, if we divide over n, we get one over n.
+[ 1298.72s ->  1303.39s] So, lambda equals one over n, the summation of x i.
+[ 1303.39s ->  1314.39s] And, if you have ever taken statistics or can decipher what this formula is, you will note that that is just the sample average, right?
+[ 1314.39s ->  1319.39s] That is the estimator for population mean, right?
+[ 1319.39s ->  1330.39s] So, it turns out that the MLE for lambda, so this is the MLE, some likelihood estimator here, is just going to be the sample average.
+[ 1330.39s ->  1335.68s] So, there are implications here in the context of a whole bunch of other stuff, right?
+[ 1335.68s ->  1338.68s] Like, law large number central limit theorem, I made a video on that.
+[ 1338.68s ->  1348.68s] Not necessarily analogous to the explanation of what I'm giving you to solve, actually, for the MLE in the context of a random variable here.
+[ 1348.68s ->  1361.68s] But, really, what I'm trying to say is, you know, this is suggesting that we would want to use all data available to us to construct the estimate for lambda, right?
+[ 1361.68s ->  1367.68s] So, you know, a couple of questions kind of arise when you start to make this sort of model or this sort of assumption.
+[ 1367.68s ->  1374.68s] It's like, okay, if I have this patient data, then is a particular subset better to use than others, right?
+[ 1374.68s ->  1377.68s] Should I use three data points, ten data points?
+[ 1377.68s ->  1384.68s] Should I use all of it to help construct some sort of estimate based on some sort of estimator, right?
+[ 1384.68s ->  1387.68s] What estimator should I use?
+[ 1387.68s ->  1389.68s] Should I use an average?
+[ 1389.68s ->  1391.68s] Should I use a max, a min?
+[ 1391.68s ->  1394.68s] Like, what am I using to construct this lambda?
+[ 1394.68s ->  1399.68s] Like, what function should I use to construct the estimate for lambda based on this data?
+[ 1399.68s ->  1404.29s] Well, the MLE says to use the sample mean, okay?
+[ 1404.29s ->  1406.29s] Or, pretty much, just take the mean, right?
+[ 1406.29s ->  1411.29s] The expectation of your data and use that as an estimate for lambda, all right?
+[ 1411.29s ->  1416.29s] The MLE has a whole bunch of properties that are particularly nice.
+[ 1416.29s ->  1423.29s] Some notable ones is that bias is asymptotically zero.
+[ 1423.29s ->  1431.47s] Variance is as low as possible asymptotically.
+[ 1439.92s ->  1445.92s] Estimate is asymptotically normal as well.
+[ 1445.92s ->  1452.56s] So, that is, regardless of the governing distribution of the random variable, the estimate's going to be normal.
+[ 1452.56s ->  1457.56s] It is a nice estimator.
+[ 1457.56s ->  1468.06s] So, asymptotically also in this context, as sample size increases, that's generally what I'm referring to.
+[ 1468.06s ->  1471.06s] So, these are some properties of the MLE here.
+[ 1471.06s ->  1473.64s] But, now we know, right?
+[ 1473.64s ->  1480.64s] We know we would want to use all of the data, construct an average, and that's going to be our estimate for lambda, okay?
+[ 1480.64s ->  1482.64s] So, let's kind of zoom out.
+[ 1482.64s ->  1487.64s] We just did a whole bunch of math, and I want to not lose sight of the purpose of this.
+[ 1487.64s ->  1494.64s] And that is, we are trying to determine whether or not we are going to have enough beds to accommodate our patients, right?
+[ 1494.64s ->  1502.18s] What is the probability of us not being able to accommodate our patients, based on all the assumptions that we've talked about thus far?
+[ 1502.18s ->  1513.26s] Well, let's go ahead and simulate some patient data, and then construct an estimate, and see if we can actually compute this probability.
+[ 1513.26s ->  1532.26s] So, I'm going to say import numpy as np, and the patient data I'm going to call d, I'm going to say it's np.random.poisson, and the parameter I'm going to use is 85, and I'm going to generate 10 years of daily data.
+[ 1532.26s ->  1536.26s] So, 3650, okay?
+[ 1536.26s ->  1540.26s] So, if I actually look at this data vector, it's going to change every single time, right?
+[ 1540.26s ->  1545.26s] But you get the gist. This is our simulated patient data, okay?
+[ 1545.26s ->  1552.83s] So, now that we have simulated patient data, right, we know in this case the population parameter.
+[ 1552.83s ->  1555.83s] So, we don't need to do maximum likelihood estimation at all.
+[ 1555.83s ->  1563.83s] But, in reality, if this was actually like data that we had in an Excel sheet that doctors have entered over the past 10 years,
+[ 1563.83s ->  1566.83s] we wouldn't have access to this 85, right?
+[ 1566.83s ->  1568.83s] This is what we're trying to estimate, this 85.
+[ 1568.83s ->  1575.83s] So, this is simulated data with parameter 85, okay?
+[ 1575.83s ->  1580.83s] So, this is essentially what we're trying to estimate with the MLE here, right?
+[ 1580.83s ->  1582.83s] This is what we're trying to figure out.
+[ 1582.83s ->  1589.83s] If we knew this, then we would just plug it into the Poisson distribution, and we would get our corresponding probability, right?
+[ 1589.83s ->  1594.22s] But, in this context, we don't necessarily have that luxury.
+[ 1594.22s ->  1597.22s] We don't, you know, necessarily have the population parameter.
+[ 1597.22s ->  1599.22s] Actually, we'll never have the population parameter.
+[ 1599.22s ->  1602.22s] So, that's why we construct these estimates, all right?
+[ 1602.22s ->  1609.22s] So, assume for reality that we don't have this parameter, but we do have this data vector, okay?
+[ 1609.22s ->  1613.47s] That is this patient data, right?
+[ 1613.47s ->  1615.47s] This daily patient data, all right?
+[ 1615.47s ->  1618.47s] And what I want to do is I want to construct an estimate for lambda.
+[ 1618.47s ->  1620.47s] So, to do that, let's use the MLE.
+[ 1620.47s ->  1626.47s] So, I'm going to say MP dot mean D, and I'm going to call this lambda MLE, all right?
+[ 1626.47s ->  1632.02s] What is the lambda MLE?
+[ 1632.02s ->  1635.02s] It is 84.83.
+[ 1635.02s ->  1640.02s] Now, that is pretty darn close to the population parameter, right?
+[ 1640.02s ->  1646.02s] All of these estimates are going to have a distribution because they are based on the data.
+[ 1646.02s ->  1652.02s] We can continue to resample and get another example for what the MLE could be.
+[ 1652.02s ->  1657.02s] And that distribution is going to be normal, consequent of the central limit theorem.
+[ 1657.02s ->  1666.02s] If we were to wait another 10 years and collect more data, then perhaps we get an estimate that looks like this, right?
+[ 1666.02s ->  1673.02s] Perhaps if we wait another 10 years and we do it again, then we get one that looks like this, so on and so forth, right?
+[ 1673.02s ->  1676.02s] You get the gist of what's going on here.
+[ 1676.02s ->  1686.02s] We're assuming that there's some distribution governing these random patient realizations on a daily basis, okay?
+[ 1686.02s ->  1690.02s] But this is the estimate for lambda.
+[ 1690.02s ->  1699.02s] Now that we have this, we can actually go ahead and directly find the probability of not having enough beds on a daily basis.
+[ 1699.02s ->  1704.02s] All we need is the distribution function and that is very well defined.
+[ 1704.02s ->  1712.34s] So I'm going to use scipy for this with the lambda from our MLE that we had derived here.
+[ 1712.34s ->  1728.62s] So I'm going to say import scipy.stats as scs and then I think it is scs.poisson.
+[ 1728.62s ->  1733.25s] Yeah, scs.poisson.
+[ 1733.25s ->  1738.25s] So we're defining the distribution here.
+[ 1738.25s ->  1741.25s] We're saying lambda MLE.
+[ 1741.25s ->  1743.25s] So this will be P, okay?
+[ 1744.56s ->  1750.56s] So this is essentially the exact same thing as saying Poisson lambda here.
+[ 1750.56s ->  1754.56s] But lambda, we don't have the population parameter, right?
+[ 1754.56s ->  1757.56s] I know in the context of our simulation, we have it.
+[ 1757.56s ->  1759.56s] But in reality, we wouldn't have it.
+[ 1759.56s ->  1762.56s] So we're going to use the MLE to estimate it.
+[ 1762.56s ->  1764.56s] And that's what we have here, right?
+[ 1764.56s ->  1766.56s] This 84.60.
+[ 1766.56s ->  1771.56s] So that's how I parameterize this distribution with that estimate.
+[ 1771.56s ->  1772.56s] Okay.
+[ 1772.56s ->  1776.56s] Now what I'm going to do is I am just going to compute that probability.
+[ 1776.56s ->  1778.56s] What is the probability?
+[ 1778.56s ->  1788.28s] The probability that X is greater than 100.
+[ 1788.28s ->  1798.66s] This is going to be equal to one minus the probability that X is less than or equal to 100.
+[ 1798.66s ->  1820.46s] And this is the same thing as the cumulative distribution function for the Poisson distribution, which we all know well and good.
+[ 1820.46s ->  1822.46s] This is just the cumulative distribution function.
+[ 1822.46s ->  1827.46s] It's actually the summation of the probability mass function at each increment, right?
+[ 1827.46s ->  1829.46s] So you go from zero to one.
+[ 1829.46s ->  1832.46s] You sum up that probability and you keep summing it up, right?
+[ 1832.46s ->  1834.46s] It's asymptotic towards one.
+[ 1834.46s ->  1836.84s] So this is what we need right here.
+[ 1836.84s ->  1842.84s] This is going to give us the probability that X is greater than 100 where X is the realized number of patients in a day.
+[ 1842.84s ->  1846.84s] So realized number of patients checked into a hospital bed, for example.
+[ 1846.84s ->  1851.84s] Not being able to accommodate all of our patients in other words, right?
+[ 1851.84s ->  1857.22s] So I'll say P dot CDF and I'll put in 100.
+[ 1857.22s ->  1859.22s] I'll do one minus P dot CDF.
+[ 1859.22s ->  1868.51s] And I will say this is the prob of not being able to accommodate patients.
+[ 1868.51s ->  1869.51s] Okay.
+[ 1869.51s ->  1871.51s] Print this guy right here.
+[ 1871.51s ->  1874.51s] And it is approximately 5%.
+[ 1874.51s ->  1875.51s] All right.
+[ 1875.51s ->  1883.51s] So this is using our 10 years of patient data, right, as an estimate for lambda.
+[ 1883.51s ->  1891.51s] So we're using 10 years of patient data, constructing an estimate based on the MLE for the population parameter, which we know is 85.
+[ 1891.51s ->  1892.51s] Okay.
+[ 1892.51s ->  1894.51s] So let's see what the discrepancy is now.
+[ 1894.51s ->  1903.51s] So we constructed this probability, right, of not being able to accommodate patients by using the data to construct an estimate for lambda.
+[ 1903.51s ->  1905.51s] But we know the population parameter.
+[ 1905.51s ->  1907.51s] So let's see how far off we are.
+[ 1907.51s ->  1909.51s] So I'm going to go ahead and create a new one.
+[ 1909.51s ->  1913.51s] Say P2 is equal to SES dot plus son.
+[ 1913.51s ->  1915.51s] And I'll give it the population parameter.
+[ 1915.51s ->  1918.51s] We would never have this, but we want to see what the error could be.
+[ 1918.51s ->  1929.14s] So we will say print true prob of not being able to accommodate patients.
+[ 1929.14s ->  1933.14s] And this is going to be one minus P2 dot CDF.
+[ 1933.14s ->  1938.49s] And we can see here that it is still roughly 5%.
+[ 1938.49s ->  1943.49s] We are a couple of basis points off if you were to compare.
+[ 1943.49s ->  1953.84s] And notice how if we were to resample, we would also be a bit off, maybe closer, maybe a little more off, because it is a distribution that we are using.
+[ 1953.84s ->  1961.84s] Each statistic is a distribution that we are using to construct as an estimate for the population parameter.
+[ 1961.84s ->  1965.84s] And that distribution is normal, right, by the CLT.
+[ 1965.84s ->  1967.84s] But we can see here it's a pretty good estimate, right?
+[ 1967.84s ->  1974.84s] So we would say roughly 5% of the time we are unable to accommodate our patients.
+[ 1974.84s ->  1975.84s] All right.
+[ 1975.84s ->  1980.84s] So that is going to do it for this video on maximum likelihood estimation.
+[ 1980.84s ->  1987.84s] I would like to do, you know, more of an applied example in the context of maybe stochastic processes in the future.
+[ 1987.84s ->  2005.84s] I really just wanted to get started with a very, like, simple example in the context of, like, hospital beds because there's no finance or quant finance that you have to understand before being able to apply this maximum likelihood estimation, right?
+[ 2005.84s ->  2006.84s] It's a hospital bed.
+[ 2006.84s ->  2008.84s] You either have enough or you don't have enough, right?
+[ 2008.84s ->  2024.84s] Once you start talking about options and the idea of, you know, the difference between a payoff for the option and the price path of the underlying, you actually have to, you know, know what's going on in the context of the problem space, right?
+[ 2024.84s ->  2030.84s] Like, why would you even want to use the MLE in that context even at all, right?
+[ 2030.84s ->  2040.84s] So there's a lot of implicit finance understanding if I was to apply this to, say, like a geometric Brownian motion or something like that.
+[ 2040.84s ->  2043.84s] But nevertheless, I hope you enjoyed this video.
+[ 2043.84s ->  2045.84s] I enjoyed walking through all the math.
+[ 2045.84s ->  2057.84s] If you have any questions, please feel free to leave them in the comments if I am incorrect or I made any typos beyond whether or not I know how to spell accommodate, which I clearly don't.
+[ 2057.84s ->  2061.84s] I think it's O. I'm going to Google it right now.
+[ 2061.84s ->  2063.80s] It is an O.
+[ 2063.80s ->  2064.80s] Okay.
+[ 2064.80s ->  2065.80s] My bad.
+[ 2065.80s ->  2070.06s] If you need me for math, I'm your guy, but not for spelling.
+[ 2070.06s ->  2071.06s] Okay.
+[ 2071.06s ->  2072.06s] All right.
+[ 2072.06s ->  2077.06s] Now, beyond that, if you have any questions, please feel free to let me know in the comments below.
+[ 2077.06s ->  2079.06s] Shoot me an email, roman at quantkill.com.
+[ 2079.06s ->  2082.06s] Other than that, thank you so much for watching.
+[ 2082.06s ->  2084.06s] Please check out quantkill.com.
+[ 2084.06s ->  2085.06s] Help support this channel.
+[ 2085.06s ->  2089.06s] Join our discord and I will see you in the next one.
+[ 2089.06s ->  2090.06s] I will see you in the next one.
+[ 2090.06s ->  2091.06s] I will see you in the next one.
+[ 2091.06s ->  2104.06s] I'll see you in the next one.
+[ 2104.06s ->  2114.06s] .

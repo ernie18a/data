@@ -1,0 +1,134 @@
+[    0.16s ->     4.00s] My wife has been selling options on her account and today we're going to answer the question
+[    4.00s ->     8.76s] did she actually do better than me last year? We're going to take a look at the data and then
+[    8.76s ->    13.30s] after that we're going to have some takeaways from the way that she trades and the way that
+[   13.30s ->    17.62s] I trade. Before we answer the question did my wife actually trade better than me we need to
+[   17.62s ->    22.98s] create a baseline. I want to use our public portfolio that we've shown many times on this
+[   22.98s ->    28.62s] channel as that baseline and the strategy on this portfolio is very very simple. I'm basically using
+[   28.62s ->    32.88s] the same strategies that laid out in the 90 minute masterclass I'll link in the upper right hand
+[   32.88s ->    40.72s] corner right here. Now over the last year in 2025 this account has made around $11,500 in total
+[   40.72s ->    49.64s] credit. I averaged around a 2.6% yield selling predominantly cash secured puts with a little
+[   49.64s ->    58.18s] bit of covered calls right 96% cash secured puts and 4% covered calls. My preferred DTE is 31 to 46 days
+[   58.18s ->    64.32s] and I've barely sold any below that. Anything that's around 15 to 30 is around the 27 to 30 day
+[   64.32s ->    68.78s] DTE zone. And if you guys watch the masterclass which I would recommend you guys do you guys know
+[   68.78s ->    74.12s] that I sell cash secured puts as a way to acquire stocks right. I'm trying to target 1.5 to 2.5%
+[   74.12s ->    80.80s] monthly yield and I sell puts trying to get a sign and I get a sign at around an 8% clip
+[   80.80s ->    87.44s] right and then once I get a sign I either let the stocks appreciate or I sell cover calls on top of
+[   87.44s ->    93.70s] it to generate a little bit of income. And you can see that very clearly in the strategies. I sell
+[   93.70s ->   100.98s] 75 cash secured puts last year. I only sold three covered calls and you can see this distribution. I
+[  100.98s ->   106.00s] made a lot more money selling cash secured puts than I did cover calls and my yield is much higher
+[  106.00s ->   111.82s] because I'm trying to get a sign selling cash secured puts as opposed to covered calls. My cash
+[  111.82s ->   117.10s] secured puts I'm getting a lot more yield and I'm spending a lot more time in the trade 22 days on average.
+[  117.44s ->   122.54s] For my covered calls I'm at 17 days on average and I'm getting a much much lower yield and I want to
+[  122.54s ->   129.48s] point you guys to one of my favorite charts to show you behavior of trading. This is what I would like
+[  129.48s ->   134.54s] to call a capture efficiency chart. It tells you how much time you've spent in a trade and how much
+[  134.54s ->   138.92s] premium you collected. Everything in the green is efficient which means that you're collecting more
+[  138.92s ->   143.92s] premium than the time that you spent in the trade. And you can see most of my trades are actually
+[  143.92s ->   149.16s] in the 50% and above zone right. I've spent 50% of the time in the trade and I'm collecting at least
+[  149.16s ->   155.26s] 50% yield and more. So you can see most of them are here but I do have some down here and these are
+[  155.26s ->   161.30s] the ones that we are rolling out for credit because we can get one to two percent even by rolling them
+[  161.30s ->   166.32s] out and until I can't then I get assigned. You will see this chart later on with my wife and you'll see
+[  166.32s ->   171.98s] how different the strategy and the patterns are going to be. And in most of the cases you can see
+[  171.98s ->   178.20s] around 51% of the trades are above the line while with a 0.62 times efficiency. And the reason that
+[  178.20s ->   183.34s] happens is because this is a relatively passive strategy. I'm continuously rolling my money into
+[  183.34s ->   190.72s] trades that then generate income regardless of the outcome. I'm not trying to time my trades. I'm
+[  190.72s ->   196.94s] trying to maximize the time in market which means that I'm not optimizing for the win rate. Every
+[  196.94s ->   201.98s] strategy has a drawback and that is a drawback of this strategy. Let's talk about my wife's
+[  201.98s ->   202.60s] trades.
+[  203.20s ->   208.84s] The first thing you can notice right off the bat is that she collects much less yield than me on
+[  208.84s ->   215.30s] average right 1.2% a month. Her preferred DTE is 28 to 43 days slightly less than mine and her mix
+[  215.30s ->   223.06s] is extremely different than mine 57 to 43 percent. She sells a lot more covered calls than me and if
+[  223.06s ->   229.08s] you look at the DTE breakdowns right she's selling a lot more 10 to 14s 15 to 30s and but still a lot 31 to
+[  229.08s ->   235.22s] 45s. After all I did teach her the basics of how to sell options. Now she gets assigned just about as
+[  235.22s ->   241.12s] much as I do which is around an 8% clip. Now let's break down her trades. If you go to her strategies you
+[  241.12s ->   247.72s] can see as we talked about she's trading a lot more covered calls than I am right 50 to 37. Her win rate
+[  247.72s ->   253.18s] on both are both higher than mine right. I was at 77 for cash secured put she's at 94 and 84 and she
+[  253.18s ->   260.72s] generated $22,000 in total net premiums with a third of it or a quarter of it coming from covered
+[  260.72s ->   267.42s] calls and then three quarters of it coming from cash secured puts. Her yield is again lower and her
+[  267.42s ->   274.42s] capture rate is also lower than mine. Her type of trades plotted on the chart is much further to the
+[  274.42s ->   280.08s] left of mine. She spends a lot less time on average in trades. 16 days on average for 1.3% yield
+[  280.08s ->   287.28s] and 11 days for 0.7% yield. She's much more active than I am. She's flipping and scalping things much
+[  287.28s ->   292.76s] more than I am and you can really see that in the scatter plot that we talked about. This chart is
+[  292.76s ->   300.02s] actually one of the biggest takeaways from this video. You can see she's uber efficient in her trades
+[  300.02s ->   304.82s] right 63% of her trades are above the line and this is because if you look at all these trades right
+[  304.82s ->   314.50s] here she is basically scalping trades. Look she she spent 6% of the time and she covered 84% of the
+[  314.50s ->   320.90s] premium. Let's give you another one 79% captured 18% of the time. Another one here hood covered call
+[  320.90s ->   328.90s] it's 90% captured and 27% of the DTE. Compare that to mine and you can see mine I'm capturing the best one
+[  328.90s ->   338.56s] is 78% and 20% of the DTE. My biggest cluster is here which is 97% captured and 55% of DTEs or
+[  338.56s ->   345.24s] maybe more realistically my Nvidia hood which is 72% captured and 50% of DTEs. Her chart looks
+[  345.24s ->   350.22s] completely different than mine because she is getting in and out of trades much faster than me
+[  350.22s ->   355.02s] and what that would usually indicate is that her risk adjusted return is going to be much higher than
+[  355.02s ->   362.70s] mine. Her sharp ratio is 7.8 as compared to mine of just 3.1 and that's because she is actively taking
+[  362.70s ->   368.30s] profit as she's selling options. She's reducing her risk because she's no longer in the trades
+[  368.30s ->   375.86s] while for my strategy I'm okay risking assignment because I'm looking to get a side. Let's answer the
+[  375.86s ->   381.04s] question did my wife trade better than me and I think the answer is yes and no. From a total return
+[  381.04s ->   386.60s] perspective no because her monthly yield is lower than mine but if you look at a risk adjusted return
+[  386.60s ->   391.92s] then absolutely she's taking on much less risk for a much higher gain. So let's take a step back from
+[  391.92s ->   397.84s] who traded better and kind of get to maybe the overarching point of this video. So I want to just
+[  397.84s ->   406.32s] kind of talk to the camera for now. One of the biggest lessons that I've learned from options is that
+[  406.32s ->   412.46s] options is extremely versatile and we have to learn how to tailor whatever option strategy that we're
+[  412.46s ->   421.59s] doing to our personality and our situation. As you clearly saw between my wife's and my trading style
+[  421.59s ->   427.53s] we trade in two completely different ways even though we both have the same basic understanding of
+[  427.53s ->   431.83s] what selling puts and selling calls are and the reason for that is just because we have very different
+[  431.83s ->   436.95s] personalities. We have very different understanding of what risk is. If you guys are interested I can
+[  436.95s ->   442.87s] bring her on the show and we can just have a chat. She thinks staying in a trade is risky because she's
+[  442.87s ->   448.23s] already made for example 50% and she doesn't want to risk it and so she likes to close out her trades
+[  448.23s ->   454.35s] very quickly. She also has this innate ability to scalp trades on stocks like Robinhood which is stocks that
+[  454.35s ->   460.13s] I don't trade and she's able to find these opportunities better than I can. My definition of risk
+[  460.13s ->   465.99s] is on the other end of the spectrum. I would rather stay in a trade for a long time and risk
+[  465.99s ->   471.55s] getting assignment because I want to get assigned. I feel like if I miss out on buying 100 shares of
+[  471.55s ->   476.75s] that stock then I'm missing the potential capital gains of that equity that I'm buying and I think
+[  476.75s ->   481.53s] that's the biggest risk. You can see how they're very different and you can see how our trading style
+[  481.53s ->   487.59s] kind of matches our personality, our definition of risk. On top of that it has to fit your situation.
+[  487.59s ->   492.75s] This put selling strategy that we lay out in our masterclass has been refined by me modified
+[  492.75s ->   497.07s] obviously from other information that I've seen on the internet over the years right especially in
+[  497.07s ->   501.73s] my mid to late 20s and during that time I was working a lot a lot of hours. I was traveling around
+[  501.73s ->   507.51s] to Asia all around the United States for my job right and so I don't have the luxury of time to
+[  507.51s ->   513.91s] look at my options or my account and so you can see how passive my account is right. I'm selling an
+[  513.91s ->   520.53s] option and I'm just waiting to see what happens. So all these rules that I set are made for my
+[  520.53s ->   527.37s] specific situation. I'm in my early 30s and so I'd rather get assigned because I think in 20-30 years
+[  527.37s ->   531.69s] these stocks will appreciate a lot right and I'm cash flowing enough for my business where I can
+[  531.69s ->   536.61s] afford to continuously add to my brokerage accounts. If you're in your 20s maybe you want to be even more
+[  536.61s ->   540.87s] aggressive than me but you may not have as much capital as me. So maybe selling puts and calls
+[  540.87s ->   545.29s] the way that I do it isn't the right way. Maybe you guys should be selling it more like my wife
+[  545.29s ->   551.69s] where you're trying to scalp higher volatility stocks because that is where a lot of money can
+[  551.69s ->   556.19s] be made right. Maybe that's the right way. Now in your 50s, 60s, living to retire and all you care
+[  556.19s ->   560.11s] about income then maybe you just start wheeling selling puts right at the money, selling calls
+[  560.11s ->   563.65s] right at the money, generating four to five percent a month right. Maybe that's what you guys want to do
+[  563.65s ->   569.47s] but you guys have to have a good understanding of what your edge actually is. And so one of the coolest
+[  569.47s ->   575.41s] things that I found when I was looking through my wife's scatterplot and her trading style was that
+[  575.41s ->   580.41s] hey you know my life situation has changed. I'm no longer at corporate right. And so maybe I should
+[  580.41s ->   584.31s] take on a little bit more risk. Maybe I should adapt my trading style a little bit more because I have
+[  584.31s ->   592.48s] more time to do a lot more active trading. And so because of her upper left hand corner for scatterplot
+[  592.48s ->   598.16s] I actually went in and I sold a TSM call and I scalped 30 to 40 percent within a day because I saw the
+[  598.16s ->   602.10s] opportunity to do so. And I added that back to my repertoire. I think that's the cool part about having
+[  602.10s ->   606.50s] really good data because it allows you to find the pieces of the puzzle that you're missing and adding
+[  606.50s ->   613.30s] it to your own repertoire. Which gets me to the second point which is how do we improve? Because trading
+[  613.30s ->   618.78s] is a very dynamic thing. As you get better, as you grow, you will learn new tricks of the trade. But you have
+[  618.78s ->   624.82s] to understand what is good information and what is bad information. And so I think my biggest takeaway
+[  624.82s ->   631.36s] over the years is that you just have to go out and watch as much as possible. Give other channels a shot
+[  631.36s ->   636.24s] no matter how big or how small. And then from there you have to go out and practice it. Try to see what fits
+[  636.24s ->   640.86s] your personality. You've got to try and see what is your edge. And the more you practice, the more you have
+[  640.86s ->   648.68s] experience and more knowledge you'll have. And sooner or later as you get more experience, you'll more easily
+[  648.68s ->   654.18s] find out what is real and what is fake. And the reason you can't discern that is because you just don't have
+[  654.18s ->   658.46s] enough experience. It will come with time. Just be patient with yourself. Kobe learned from Michael.
+[  659.06s ->   666.64s] He learned from Kareem. He learned from Hakeem. He took parts of their game and integrated into his own
+[  666.64s ->   671.94s] play style and became one of the best of all times. And so similar with us when we're trading,
+[  672.32s ->   678.96s] we have to learn different skill sets so that we know how to apply it, when to apply it, and most
+[  678.96s ->   686.35s] importantly, which one fits our personality the best. There is no such thing as best strategy,
+[  686.51s ->   691.95s] a perfect strategy that fits everybody. And if anyone says that, they're trying to sell you a
+[  691.95s ->   699.04s] drink. If you don't have conviction behind the trade, which is whether through your own personality
+[  699.04s ->   706.50s] or two through experience and knowledge, you may be successful in the short term, but success is
+[  706.50s ->   711.94s] defined over the long term, right? And that's why I want to reiterate having such good, strong data for
+[  711.94s ->   716.96s] us to analyze and parse through is going to help you because that is what allows you to gain experience
+[  716.96s ->   721.88s] and knowledge. So again, let me know if you guys have any questions or comments down in the comment
+[  721.88s ->   726.82s] section below. I'm curious to hear if you guys like these talking head videos. I would love to do more of
+[  726.82s ->   731.98s] these if you guys like it to share some more of my experience, how I escaped corporate, how I started
+[  731.98s ->   736.96s] with options trading, for example. And again, to my channel members, thank you guys so much. For
+[  736.96s ->   742.30s] those of you who ask about the trading platform that I'm using, it's called Premium Insights. It is
+[  742.30s ->   746.42s] something that I created because I need to learn how to trade myself. And it's currently still in beta
+[  746.42s ->   751.08s] and test mode. So if you guys are interested in joining the waitlist, link is down below. We're running
+[  751.08s ->   754.74s] out of spaces. So click on the link if you guys are interested. And if you guys like the content,
+[  754.74s ->   758.32s] make sure you guys click that thumbs up. If you guys love the content, consider subscribing to
+[  758.32s ->   762.08s] the channel. So if you guys want to learn, again, how to sell puts, follow my Put Selling Masterclass
+[  762.08s ->   766.74s] link right here and my Credit Spread Masterclass link right here. And like always, stay safe in the
+[  766.74s ->   768.74s] market. Until next time. Peace.

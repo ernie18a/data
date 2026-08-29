@@ -1,0 +1,146 @@
+[    0.00s ->     3.76s] Are you scared of trading credit spreads because you don't know what would happen?
+[    3.82s ->     5.18s] You see people lose a lot of money?
+[    5.48s ->    10.40s] Well, I've learned the number one way to reduce fear, reduce risk, reduce all these things is to understand
+[   10.40s ->    15.32s] what the worst case scenarios are and how to protect yourself and prepare against them.
+[   15.60s ->    21.70s] So if you want to learn how to not be scared because you're going to know what's going to happen in any given situation,
+[   22.38s ->    28.34s] your worst case scenarios and how to plan for it, how to prevent your loss and how to actually make money from it,
+[   28.34s ->    31.26s] then smash that subscribe button and let's get into this video.
+[   31.88s ->    36.40s] All right, so we're going to start off this video with the most riskiest thing.
+[   36.50s ->    37.62s] It's called assignment risk.
+[   37.68s ->    39.98s] If you've never heard of assignment risk, let me explain this.
+[   40.32s ->    44.56s] Once you have a credit spread, your goal is to sell a credit spread that is out of the money.
+[   44.84s ->    45.38s] What does that mean?
+[   45.42s ->    49.02s] It means that if a stock is trading here, right here, this is the current stock price,
+[   49.30s ->    54.02s] you want to sell a credit spread versus a put credit spread that is below the current stock price.
+[   54.02s ->    61.82s] If you sell it below the current stock prices out of the money, meaning that as long as the stock stays outside or above this range, you make money.
+[   62.14s ->    67.94s] However, once the stock breaks this range and goes down below it, you are now what's called in the money.
+[   68.16s ->    71.60s] Once you are in the money, you are now at risk for assignment.
+[   71.80s ->    72.62s] What does this mean?
+[   72.72s ->    78.84s] Well, a credit spread, for instance, a put credit spread is structured by selling one put option.
+[   79.00s ->    82.02s] So we're going to sell a put and then by buying a lower put option.
+[   82.02s ->    86.16s] So this put option that we sold, we no longer have access to.
+[   86.40s ->    93.36s] Somebody bought it from us and when they bought it from us with a contract saying that they can take advantage of this contract,
+[   93.46s ->    95.70s] they can execute it and get shares for it.
+[   96.04s ->    97.58s] And so because of that, that's called assignment.
+[   97.68s ->   102.84s] When someone decides that the contract they sold you, they want to execute on.
+[  103.06s ->   108.36s] If they want to execute it, then now you are responsible for 100 shares,
+[  108.36s ->   112.26s] whether owning them, selling them, whatever, depending on if it's a call or a put contract.
+[  113.04s ->   116.76s] Assignment can lead to a massive, massive loss.
+[  116.98s ->   119.00s] So let's address how you deal with this.
+[  119.30s ->   120.68s] Well, quite simply is this.
+[  120.72s ->   121.66s] You have a couple options.
+[  121.80s ->   126.74s] Number one for assignment risk is if your bot protective option,
+[  126.82s ->   130.72s] the option that you bought for the put credit spread is also in the money,
+[  130.72s ->   135.62s] then simply call your broker and assign your protective.
+[  135.86s ->   140.38s] Assign the option that you bought, hence the plus sign.
+[  140.48s ->   141.44s] So assign that one.
+[  141.68s ->   146.56s] If you do that, you'll now experience the max loss that your broker stated when you originally placed the trade.
+[  146.80s ->   148.16s] You won't have this crazy loss.
+[  148.22s ->   149.32s] You won't have the 100 shares.
+[  149.62s ->   152.28s] You will now just have that small loss.
+[  152.76s ->   158.02s] Option number two, sell the shares because you go, you got, depending on this thing,
+[  158.02s ->   164.34s] let's just say you got assigned shares, sell the shares and hold the protective options.
+[  164.48s ->   167.08s] We're going to say, if I can't even spell this, hold the protective options.
+[  167.22s ->   169.14s] I don't know how to do protective, so I try to spell option.
+[  169.22s ->   171.42s] Anyways, so we're going to sell the shares.
+[  171.58s ->   174.76s] We're going to, or just basically get rid of the shares that we were assigned.
+[  175.06s ->   177.02s] And then we're going to hold on to the protective option.
+[  177.36s ->   179.74s] This works if the market's still moving against us.
+[  180.00s ->   181.64s] For instance, let's say we have a put credit spread.
+[  181.72s ->   183.18s] How does they put credit spread and make money?
+[  183.18s ->   188.82s] It makes money by us putting a level underneath the stock price and makes money if the stock goes up, right?
+[  188.96s ->   192.00s] So the stock is going down and breaks below this and we get assigned.
+[  192.34s ->   195.40s] Well, we're going to take those shares that we got assigned and we're going to get rid of them.
+[  195.66s ->   199.54s] Then we're going to hold on to our put option, which goes up in value as the stock drops.
+[  199.60s ->   202.78s] And as the stock continues to drop, well, our put will go up in value.
+[  203.12s ->   207.02s] This will stop losing money, the stock side, and now we're making money, okay?
+[  207.10s ->   208.04s] So you can do that.
+[  208.12s ->   209.08s] That's option number two.
+[  209.08s ->   213.74s] Anyways, there's a whole lot of options you can do, which I've covered in my assignment risk videos.
+[  214.22s ->   217.58s] But anyways, the easiest one is to just call your broker and say,
+[  217.68s ->   221.90s] hey, I have a protective option to sign this and limit my losses.
+[  222.56s ->   227.92s] Next thing we're going to talk about is how credit spreads have a massive difference in the risk to reward.
+[  228.28s ->   233.52s] For instance, on a normal trade, you're going to be risking roughly $70 to make $30.
+[  234.16s ->   236.52s] How do we change this, right?
+[  236.52s ->   241.62s] Although we have a high win rate with this, we're losing a lot to make a little.
+[  241.78s ->   243.46s] And again, that's the nature of credit spreads.
+[  243.56s ->   245.78s] That's why it has a naturally high win rate.
+[  246.08s ->   248.82s] But how can we limit this loss or increase our profits?
+[  249.20s ->   249.40s] All right.
+[  249.70s ->   251.52s] Well, there's one simple way to do that.
+[  251.58s ->   253.32s] Number one is to have a stop loss.
+[  253.62s ->   255.58s] So again, we can have a stop loss.
+[  255.88s ->   259.18s] Most of the world for credit spreads advises like a 2x loss,
+[  259.40s ->   263.78s] which means that whatever you collected, multiply that by two and that's your stop loss.
+[  263.78s ->   267.96s] My favorite stop loss is because, one, because I'm trading with the trend,
+[  268.04s ->   269.72s] which means that I'm finding a stock that I like,
+[  269.96s ->   272.98s] so that if I put a credit spread below the current stock price,
+[  273.12s ->   274.90s] I'm going to make money to the upside.
+[  275.28s ->   279.58s] So as soon as it breaks my strike price, it's showing, hey, I'm no longer going in your favor,
+[  279.92s ->   281.34s] so I'm going to get out of that.
+[  281.34s ->   288.76s] So when I have a stop loss, when I enter the money or when my spread breaks my strike price
+[  288.76s ->   292.42s] and enters the money, then I can have a stop loss.
+[  292.54s ->   298.06s] When that happens, the stop loss will take effect at 40 cents.
+[  298.28s ->   299.46s] This, again, is a dollar wide.
+[  299.54s ->   305.12s] So if I'm trading a $1 wide spread and I entered it at, let's say, 30 cents,
+[  305.88s ->   307.50s] that's pretty high,
+[  307.50s ->   309.88s] and I wait for my stop loss.
+[  310.22s ->   312.90s] Again, I typically enter around 10 cents, 15 cents, 20 cents.
+[  313.16s ->   316.42s] Anyway, but if I exit when it breaks my strike,
+[  316.48s ->   319.74s] I'm now exiting at the high end, 50 cents.
+[  320.06s ->   321.80s] So what does this mean?
+[  321.84s ->   325.14s] That means I stand to make $30 because that's the amount that I collected
+[  325.14s ->   328.34s] and I collected this and I'm closing at 50.
+[  328.42s ->   330.18s] So the difference between these two is 20 cents.
+[  330.28s ->   334.08s] So I get to make 30, but I am risking $20.
+[  334.08s ->   340.44s] So yes, now I have to make sure that my win rate allows this to work long term,
+[  340.56s ->   347.02s] allows this to work because now I have a stop loss that may get or that may lower my win rate dramatically
+[  347.02s ->   348.42s] because I'm going to get stopped out a lot.
+[  348.58s ->   353.40s] But if it works out long term, then that's going to be advantageous.
+[  353.58s ->   356.94s] What I really love seeing here and that works the best for me and my members
+[  356.94s ->   362.82s] is a dollar wide spread, collect roughly 15 cents and having our stop at roughly 50 cents.
+[  362.82s ->   370.60s] This on average gives you an 80% plus win rate, typically more than that, around an 88% win rate.
+[  371.12s ->   376.46s] And you're now risking around 35 to make 15.
+[  376.60s ->   379.32s] And overall, this is a great trade off and a great trade.
+[  379.44s ->   383.80s] So if you are scared of the losses being too large,
+[  383.92s ->   387.54s] we have things like stop limit orders to place these stop loss orders
+[  387.54s ->   390.68s] so that you can get out and dramatically limit your losses.
+[  390.68s ->   394.18s] I can't spell, but last but not least, let's talk about apocalypse.
+[  394.50s ->   397.50s] What happens if the end of the world comes?
+[  397.80s ->   402.14s] Well, if the end of the world comes and zombies and government shutting down and blah, blah, blah, blah, blah,
+[  402.14s ->   404.40s] I doubt you're going to be worried about your credit spread trade.
+[  404.68s ->   409.16s] I bet you'll be worried about more things, your family, food, safety, etc.
+[  409.32s ->   411.68s] But just given the sense of sense, let's say you are concerned.
+[  411.68s ->   418.66s] If something dramatic happens where the market drops 20, 50% overnight, what is going to happen?
+[  418.66s ->   420.56s] Well, nothing, right?
+[  420.70s ->   422.84s] That is the beauty about credit spreads.
+[  422.94s ->   427.90s] They have a predefined max loss, which means no matter how much the stock drops,
+[  428.28s ->   430.58s] your max loss is the same.
+[  430.90s ->   435.98s] Now, again, this means or is assuming that you're not being assigned, right?
+[  435.98s ->   439.06s] As long as you have both options there to protect each other
+[  439.06s ->   442.84s] and the market drops to oblivion, to zero,
+[  443.18s ->   446.06s] you're going to still only experience that max loss.
+[  446.06s ->   448.94s] Loss is different than if you're holding the stock, you'll experience 100% loss.
+[  449.06s ->   451.42s] You know, you'll only experience that max loss,
+[  451.50s ->   455.00s] which is the difference between your spread width and the credit collected.
+[  455.52s ->   461.66s] So, again, these are three different scenarios that I hear about a lot of traders worrying about.
+[  461.90s ->   462.74s] Assignment risk.
+[  463.08s ->   465.44s] Are losses being too large and awesome?
+[  465.50s ->   468.80s] What happens if the market just absolutely crashes?
+[  469.58s ->   474.06s] Again, credit spreads and the way you trade them are designed to handle these situations.
+[  474.22s ->   475.02s] That's why they work.
+[  475.10s ->   475.84s] That's why they're amazing.
+[  475.94s ->   476.86s] That's why I trade them.
+[  477.14s ->   478.42s] Again, do your own research.
+[  478.52s ->   480.06s] If this makes sense to you, do it.
+[  480.28s ->   483.00s] But, again, this is how I remove the fear out of trading credit spreads
+[  483.00s ->   485.62s] by understanding what is the worst case scenario,
+[  485.96s ->   488.92s] how do I plan for it, how do I prep for it, and what's my plan?
+[  489.00s ->   490.04s] If you don't have a plan,
+[  490.04s ->   494.00s] then you're going to get emotionally sky high and make bad trading decisions.
+[  494.30s ->   497.26s] Anyways, if you need help making the right trading decisions,
+[  497.42s ->   501.04s] then click the first link down below to grab free access to my credit spreads trading course
+[  501.04s ->   506.16s] where I go in-depth on my strategy and how you can make at least 5% every single month
+[  506.16s ->   506.88s] by trading credit spreads.
+[  507.04s ->   507.42s] All right, guys.
+[  507.60s ->   508.54s] See you in the next video.

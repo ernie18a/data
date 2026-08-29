@@ -1,0 +1,23 @@
+[    0.00s ->     4.10s] And this helps us video. I'm going to walk you through what are the trade sizing rules that we
+[    4.10s ->     8.04s] use for credit spreads. I believe every credit spread trader should use these rules if they
+[    8.04s ->    12.82s] want to be consistently profitable long term and actually make money. So first off, you need to
+[   12.82s ->    17.46s] follow the 10% account rule as your max loss. What in the world does this mean? It means that
+[   17.46s ->    22.22s] your max loss for a single trade should not exceed 10% of your account. Let's walk through
+[   22.22s ->    26.28s] some examples and then I'll give you other case studies based on your risk tolerance level.
+[   26.28s ->    32.96s] So for instance, if you have a $2,000 account, 10% of that is $200, which means $200 is your max
+[   32.96s ->    38.48s] loss per trade. So this means if you're trading a $1 wide spread, you should have no more than two
+[   38.48s ->    42.88s] contracts. If you're trading a $2 wide spread, you should have no more than one contract.
+[   43.70s ->    48.42s] Now let's bump this size up a bit. What if you're trading a $10,000 account? Well, that means 10%
+[   48.42s ->    55.30s] is a $1,000 max loss per trade. So this is equivalent to roughly 10 $1 wide spreads or
+[   55.30s ->    61.46s] five $2 wide spreads. That's your max size. Do not exceed max. However, if you're someone who's
+[   61.46s ->    66.78s] new to credit spreads, do not like handling that much risk and prefer to keep your risk small like
+[   66.78s ->    73.08s] me, do what I do. Stay around the 5% of your account per trade rule. And so again, I roughly
+[   73.08s ->    78.40s] stay around 5%. Just do not exceed 10. If you're starting off with credit spreads for the first time,
+[   78.48s ->    84.30s] I recommend that you show off with one spread no matter your account size. Let's say you have $10,000
+[   84.30s ->    91.12s] so you can easily trade five spreads. Only trade one for multiple times, like trade one for at least
+[   91.12s ->    95.20s] a month until you're comfortable with that, completely comfortable, then slowly start to
+[   95.20s ->    99.72s] size up, then bring five, then six, then seven, and slowly start to until you see where your comfort
+[   99.72s ->   104.70s] level is and then start trading there. But remember, never exceed 10%. All right, guys, those are our
+[  104.70s ->   108.26s] trading size rules for 10% credit spreads. If you want to learn more, open up the chat box,
+[  108.62s ->   114.10s] go inside the membership site, or join me for the next office hours call in Discord. All right,
+[  114.10s ->   114.56s] see you later.

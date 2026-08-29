@@ -1,0 +1,130 @@
+[    2.61s ->     7.73s] Hey, how's it going, everybody? Welcome back. Today, we are going to be looking at PyTorch
+[    7.73s ->    14.39s] and using PyTorch with GPU to speed up matrix multiplication. Now, you don't actually need
+[   14.39s ->    21.47s] a GPU physically to follow along with this tutorial. You can head over to collab.research.google.com
+[   21.47s ->    25.85s] and you'll have access to their free GPU tiers, which is exactly what I'm using here.
+[   26.23s ->    30.65s] And then you can follow along with this tutorial. So what you'll notice when you first start up
+[   30.65s ->    36.29s] a research notebook on Google collab is you have access to your runtime environment. You're going
+[   36.29s ->    41.77s] to see in the upper right hand corner, you'll have a little bar representing your RAM and disk space.
+[   42.47s ->    46.37s] And what you're going to want to do is click on that and you're going to see that you can change
+[   46.37s ->    53.41s] the runtime type at the bottom of this little panel here. It's just off screen, but bear with me. You'll
+[   53.41s ->    58.17s] get this little window here and you're going to be able to select a hardware accelerator. We don't
+[   58.17s ->    64.89s] want none. We want GPU. So we're going to go ahead and select GPU. You'll notice that we could purchase
+[   64.89s ->    69.93s] additional compute units here. We're not going to do that. We're just going to use the free GPU tier
+[   69.93s ->    74.81s] that they're giving us access to. You can go ahead and hit save and then it is going to allocate those
+[   74.81s ->    79.41s] resources to you. If you get a message like this saying that you have too many active sessions,
+[   79.41s ->    84.53s] you can go ahead and manage your sessions and then you can kill any active sessions that you need
+[   84.53s ->    91.41s] to. But otherwise, you should be all set up and running with a new kernel that has access to GPU.
+[   91.41s ->    95.73s] To double check that you're set up correctly, you'll notice when you click on that little RAM and disk
+[   95.73s ->   101.97s] bar again, you'll have a GPU RAM section. So that means we have successfully allocated some resources
+[  101.97s ->   107.65s] to ourselves so that we can use them in our Python kernel. And that's exactly what we're going to do
+[  107.65s ->   113.25s] here. We're going to look and see how we can speed up matrix multiplication using this notion of
+[  113.25s ->   119.09s] parallelization and GPU. Now, of course, you follow me on my blog medium, so I don't have to tell you
+[  119.09s ->   122.93s] what parallelization is or how it works because I'm sure you've read my wonderful article on
+[  122.93s ->   127.65s] randomized singular value decomposition. If you haven't, I would definitely recommend checking it
+[  127.65s ->   134.85s] out. Otherwise, I will offer a quick refresher to those who are unfamiliar with the idea of
+[  134.85s ->   142.53s] parallelization. So let's consider that you have a bag of marbles. And I said, hey, I want you to count
+[  142.53s ->   147.97s] this bag with marbles as quickly as you can. And you know, you could sit there and you can you can
+[  147.97s ->   153.25s] count out the marbles and you know, maybe there's like 300 marbles and takes you take you a while to
+[  153.25s ->   158.13s] count those maybe you could do three marbles per second. It's still going to take you a while.
+[  159.39s ->   169.63s] How could you go about counting that bag of marbles faster? Well, one solution to help you increase the
+[  169.63s ->   177.71s] speed in which you count those marbles is to invite a friend over and split up the marbles right at the
+[  177.71s ->   184.11s] beginning, have them count about half of them have you count about the other half, and then sum the
+[  184.11s ->   192.83s] totals at the end and you'll have the exact total number of marbles in that bag. And that is essentially
+[  192.83s ->   199.55s] the idea of parallelization. What we're doing is we're allocating these tasks to different cores,
+[  200.11s ->   206.59s] having them execute at the same time as one another, and then eventually reconvene to that total sum
+[  207.23s ->   213.71s] of marbles that we're looking for. It should be noted that this is very effective with vectorized
+[  213.71s ->   219.71s] operations, but it is not very effective with loops and other structures that are similar to loops. So
+[  219.71s ->   224.59s] when possible, you're always going to want to try to vectorize your code because then you can take
+[  224.59s ->   230.03s] advantage of parallelization and this idea of just projecting and pushing memory to the GPU,
+[  230.03s ->   236.50s] having it allocate to different cores, compute, and then pulling from GPU. But not everything is
+[  236.50s ->   240.98s] parallelizable. So keep that in mind when you're going through and you're thinking about the structure
+[  240.98s ->   245.70s] of your code and time complexity and things like that. But I'm going to digress from that because that
+[  245.70s ->   251.14s] is a slippery slope and a rabbit hole that we could spend a long time exploring. Okay, so let's go
+[  251.14s ->   254.50s] ahead and take a look at an example. Let's see if we can speed up some matrix multiplication. So I'm
+[  254.50s ->   258.90s] going to start by importing PyTorch. I'm going to say import torch, and I'm also going to import time,
+[  258.90s ->   262.90s] and that's going to allow us to time the execution of these matrix products.
+[  264.19s ->   270.43s] Alrighty. So for starters, I'm going to generate a random matrix. I'm going to say x is equal to torch
+[  270.43s ->   276.91s] dot normal. And I'm just going to generate a standard normal matrix. So I'm going to do zero,
+[  276.91s ->   286.83s] one. And the shape of the matrix is going to be 10,000 by 10,000. So now we have effectively
+[  286.83s ->   294.27s] generated a matrix of draws from a standard normal distribution. It is 10,000 by 10,000, which is a
+[  294.27s ->   299.47s] pretty large matrix to do a matrix product with. And what we're going to do now is we're going to take
+[  299.47s ->   304.75s] the same matrix, and we're going to push it to GPU. So what I'm going to do is in this cell,
+[  304.75s ->   311.71s] I'm going to say y is equal to x dot to CUDA. And what we're doing here is we're creating a new
+[  311.71s ->   319.31s] variable y, that's taking that matrix x of draws from a standard normal distribution, and it's pushing
+[  319.31s ->   328.83s] it to the GPU space. So we can't actually interact x and y. x exists in CPU, y exists in GPU. So always
+[  328.83s ->   334.19s] keep this in mind as well when you're working with GPU is like, where, where are my variables in memory
+[  334.19s ->   339.71s] and when are they where? So you can push and you can pull from GPU, but you need to make sure
+[  339.71s ->   344.75s] you have a good understanding of where everything is at the time of execution of whatever algorithm
+[  344.75s ->   350.43s] you're running. Let's just go ahead and time the execution of a simple matrix multiplication. So I'm
+[  350.43s ->   356.83s] going to say t zero is equal to time dot time to get now. And then I'm going to say x,
+[  356.83s ->   361.55s] and then the matrix product with itself. And then I'm going to say t one is equal to
+[  361.55s ->   371.15s] time dot time. And then I will print the CPU matmult time. And that's just going to be
+[  371.15s ->   379.50s] the difference of t one minus t zero. So I'm going to go ahead and run this. And it is going to take
+[  379.50s ->   384.38s] a hot second. And I'm going to actually pause the video here and wait for this to finish and then
+[  384.38s ->   392.78s] we'll resume. That took 23 seconds in CPU to compute that matrix product. Let's see what the speedup is
+[  392.78s ->   398.70s] when we go over to GPU. So to do this, what I'm going to do is create a new cell. And I'm going to say
+[  398.70s ->   408.62s] t two is equal to time dot time. And then y matrix product of y, then t three is equal to time dot time.
+[  409.26s ->   415.55s] But we actually need to include something else here. So we can't just execute this code,
+[  415.55s ->   419.87s] because what's going to end up happening is it's going to start the timer at t two,
+[  420.51s ->   426.75s] it's going to execute the matrix product, and it's going to let that operation running GPU and just keep
+[  426.75s ->   435.07s] going linearly with the code as if that product is already complete. So the time difference is going
+[  435.07s ->   438.99s] to be really, really, really, really small. It's not going to actually reflect the amount of time that
+[  438.99s ->   448.82s] it took GPU to compute that matrix product. To get the true time that the matrix product of y with y
+[  448.82s ->   455.94s] takes to compute, we can do a torch dot cuda dot synchronize. And what this is going to do is it's
+[  455.94s ->   462.10s] going to make the threads sync up before continuing with the flow of execution. So before we get to
+[  462.10s ->   468.64s] that t three, we're going to wait for the GPU to finish computing that matrix product. Now we can just
+[  468.64s ->   479.31s] go ahead and print gpu mat mult time. And that will be t three minus t two. And if we go ahead and run this,
+[  479.31s ->   493.25s] this takes three seconds. So this is almost 10 times faster than CPU matrix multiplication with this particular
+[  493.25s ->   503.01s] matrix. Okay, so why should we care about this speed up in matrix multiplication? Well, think about how much is
+[  503.01s ->   511.97s] matrix multiplication, all of deep learning, pretty much every aspect of it is a vectorized operation. Literally, a neural
+[  511.97s ->   518.61s] network is a series of composite functions, where you have a linear transformation. So some weight
+[  518.61s ->   525.89s] matrix being applied to another input matrix. And then you have a nonlinearity. And then this just
+[  525.89s ->   531.89s] iterates until you get an output. And you use back propagation to adjust those weights to find an
+[  531.89s ->   539.73s] optimal value. But all of that can be paralyzed in GPU. So this is why it's so powerful. Because if you're
+[  539.73s ->   544.93s] going to build a neural network, you can just build it in PyTorch, push it straight to GPU and train it as you would
+[  544.93s ->   550.93s] any other model, it's going to do this all automatically for you. Now there's no better way to illustrate the power of
+[  550.93s ->   556.45s] this than with an example. And what I have here is a notebook that I call the framework for natural language
+[  556.45s ->   564.45s] processing neural networks. I am heavily involved in the natural language processing space for my personal research. And this
+[  564.45s ->   571.17s] framework is actually made available through medium, I have a post where I discuss the acceleration of
+[  571.17s ->   576.61s] neural networks and PyTorch using GPU. And this entire project and all of its code is available
+[  576.61s ->   582.37s] through that article. So I will once again, link that as well. So if you're interested in replicating
+[  582.37s ->   588.85s] this, you certainly can. But essentially, what we have here is what I what I said is a framework for
+[  588.85s ->   596.13s] natural language processing neural networks. This is going to be a model to learn how to classify movie
+[  596.13s ->   602.61s] reviews. So we start by downloading the data, we have our pre processing and cleaning, we have our ground
+[  602.61s ->   609.01s] truths. Eventually, I developed this document term matrix, I skipped the dimensionality reduction. And
+[  609.01s ->   614.61s] then here's where I define the neural network classifier. So what I'm going to be doing is I'm going
+[  614.61s ->   621.41s] to be doing a train test split on the data. So I have the doctor matrix with all of the documents and
+[  621.41s ->   627.33s] all of the categories, the true categories that those movie reviews belong to. And I'm splitting them up
+[  627.33s ->   632.13s] into a training and a test set. And then what I'm going to do is I'm going to build this neural network
+[  632.13s ->   637.41s] in PyTorch. So these are my hyper parameters. And this is my neural network. And you can see that I'm using
+[  637.41s ->   643.33s] a sigmoid activation function. So the probability that it belongs to the positive class is what that
+[  643.33s ->   649.41s] represents between zero and one. So the higher the probability, the more likely it is to be positive.
+[  650.29s ->   658.43s] I'm using a binary cross entropy loss function and stochastic gradient descent. Here, what I'm doing is
+[  658.43s ->   668.19s] I'm converting those train test split arrays into torch tensors. And here, I'm going to actually train
+[  668.19s ->   673.47s] this neural network classifier. So this is all being done on CPU, what I'm going to do is I'm going to run
+[  673.47s ->   681.15s] this and I just want you to get an idea of how slow this is in CPU. So that was one pass. This is
+[  681.15s ->   692.27s] another pass, and so on and so forth. You can see the error is slowly, very slowly decreasing. And this
+[  692.27s ->   697.71s] is exactly what we're aiming to do with back propagation. But clearly, this speed is not
+[  697.71s ->   703.87s] appropriate. We need something that is much more effective at converging to our optimal solution
+[  703.87s ->   708.99s] so that we can go about tuning our model hyper parameters. So what I'm going to do now is I'm
+[  708.99s ->   716.27s] going to implement this exact same neural network framework, this exact same structure in GPU.
+[  716.83s ->   723.23s] And we're going to see how fast it can compute these 10 iterations of stochastic gradient descent.
+[  723.23s ->   730.21s] Okay, so here is the exact same model. The only difference is I'm going to be pushing everything
+[  730.21s ->   735.89s] to GPU. So we have the same hyper parameters, we have the same train test split. The only difference
+[  735.89s ->   743.74s] is right here, I'm doing a .2 CUDA. So I'm pushing this sequential neural network model to GPU. I'm also
+[  743.74s ->   747.82s] doing the same thing with the binary cross entropy loss function. So I'm going to push that to GPU.
+[  748.62s ->   755.55s] And the same thing with our tensors. Now let's see how long it takes to compute 10 iterations of this
+[  755.55s ->   766.75s] algorithm. Yeah, it's almost instant. And it's actually shocking that with the free GPU tier,
+[  766.75s ->   774.59s] we can execute algorithms like this. So hopefully this gives you an idea of how helpful pushing
+[  774.59s ->   779.71s] things to GPU can be in terms of optimizing your neural networks, in terms of training your neural
+[  779.71s ->   783.63s] networks and in terms of really anything that involves a vectorized operation. I want to thank
+[  783.63s ->   788.43s] you so much for watching this video on building neural networks with PyTorch and using GPU to
+[  788.43s ->   793.71s] aid in the training model development process. If you have any questions, you can always feel free to
+[  793.71s ->   798.83s] leave those in the comments. You can shoot me an email that's roman at quantguild.com. Definitely
+[  798.83s ->   804.99s] check out my medium, you can check out the article on randomized singular value decomposition and the article
+[  804.99s ->   810.59s] on this project, if you'd like to replicate it. Also, if you're interested in learning Python from
+[  810.59s ->   815.95s] me from scratch, you can check out quantguild.com, head over to introduction to Python, and we're going
+[  815.95s ->   820.83s] to take you from zero to hero in the Python programming language, all in a financial setting.
+[  820.83s ->   824.99s] So everything's going to have an immediate application, cutting out all the bloat for my years
+[  824.99s ->   831.63s] of experience as a Python developer. And that's all I got for you today. Once again,
+[  831.63s ->   836.75s] thanks so much for watching and I will see you in the next video.

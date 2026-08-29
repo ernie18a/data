@@ -1,0 +1,348 @@
+[    0.00s ->     5.94s] Hey guys what's up in this video I'm going to show you how this side hustle can generate you an extra $1,000 a month
+[    5.94s ->    10.88s] and the exact blueprint you need to follow so you can actually do that in the next 30 days
+[   10.88s ->    16.94s] whether you work full time or a beginner have never traded options before whatever this is the video for you
+[   16.94s ->    22.48s] anyways to prove it to you here you can see here that in the last 30 days on my broker account
+[   22.48s ->    29.98s] it says I made $2,700 now again if you subtract commissions and fees on about $2,500 this month
+[   29.98s ->    35.46s] and this is a very slow month because I've been traveling and haven't actually placed many trades
+[   35.46s ->    40.14s] and because that I'm still able to generate well over the $1,000 a month
+[   40.14s ->    45.30s] but not only that but so many of our members with smaller accounts are able to do this as well
+[   45.30s ->    49.58s] alright so let's dive into what you actually need to know to get this party started
+[   49.58s ->    54.28s] first off I am giving you two free incredible resources linked down below
+[   54.28s ->    59.10s] so first is the credit spreads trading handbook which we'll be walking through in this video
+[   59.10s ->    63.12s] this is the guaranteed blueprint that will help you profit
+[   63.12s ->    68.02s] why because it shows you exactly what to do step by step for different strategies
+[   68.02s ->    72.00s] and shows you the back test to prove it works and other things like that
+[   72.00s ->    75.66s] not only that inside my credit spreads paid program
+[   75.66s ->    78.66s] I have what is known as a weekly trading plan
+[   78.66s ->    82.84s] and I'm actually going to give you access to this for free down in the description below as well
+[   82.84s ->    84.92s] I will share this google doc with you
+[   84.92s ->    88.98s] and we're going to walk through exactly what you need to do every single week
+[   88.98s ->    93.02s] so that you can generate $1,000 every single month
+[   93.02s ->    95.42s] now let's dive into the specifics here
+[   95.42s ->    98.26s] first and foremost we need a chart
+[   98.26s ->    99.48s] we need to look at something
+[   99.48s ->   102.72s] so what we're going to do is we can either go to tradingview.com
+[  102.72s ->   103.90s] which is what this website is
+[  103.90s ->   105.12s] you can go to your broker
+[  105.12s ->   106.44s] you can go to whatever it is
+[  106.44s ->   111.66s] I need to add a simple indicator that can be found on almost any charting platform
+[  111.66s ->   115.04s] go into indicators and add the Bollinger Band
+[  115.04s ->   116.38s] so the Bollinger Band is right here
+[  116.38s ->   123.82s] now again this is a great approximation for an indicator that I program that all my members get access to
+[  123.82s ->   129.10s] this is a great way to follow it if you don't have access to that indicator
+[  129.10s ->   131.18s] you can see here the impactful stock band
+[  131.18s ->   133.26s] anyways we need to make some adjustments though
+[  133.26s ->   134.32s] we need to go into settings
+[  134.32s ->   136.64s] we need to change the length from 20 to 200
+[  136.64s ->   139.12s] and we need to change the standard deviation to 1
+[  139.12s ->   142.22s] okay now what exactly does doing this show
+[  142.22s ->   144.10s] okay well when we're looking at this
+[  144.10s ->   150.44s] what it shows us is a normal distribution curve of the stock's price
+[  150.44s ->   154.74s] so for instance we're on the S&P 500 or ETF symbol SPY
+[  154.74s ->   158.56s] and what this shows is when the stock is above this top blue line
+[  158.56s ->   160.36s] the market is trending higher
+[  160.36s ->   162.26s] we are in an official uptrend
+[  162.26s ->   163.56s] momentum is moving higher
+[  163.56s ->   164.46s] higher highs
+[  164.46s ->   165.18s] higher lows
+[  165.18s ->   167.02s] all that happens above this blue line
+[  167.02s ->   168.46s] now vice versa
+[  168.46s ->   172.14s] if the stock goes below the bottom blue line
+[  172.14s ->   173.60s] we're in a downtrend
+[  173.60s ->   175.34s] we have down moving momentum
+[  175.34s ->   176.62s] down moving strength
+[  176.62s ->   178.46s] we have lower lows and lower highs
+[  178.46s ->   179.74s] that's what it's showing
+[  179.74s ->   182.18s] number two or three I should say
+[  182.18s ->   183.58s] we have up we have down
+[  183.58s ->   185.30s] and then we have in the middle of this band
+[  185.30s ->   186.78s] when we're in the middle of this band
+[  186.78s ->   189.54s] it's known as a sideways or neutral market
+[  189.54s ->   191.28s] when we're in that kind of market
+[  191.28s ->   192.16s] anything can happen
+[  192.16s ->   193.84s] you can see here up down up down up down
+[  193.84s ->   195.74s] way more choppiness happens
+[  195.74s ->   197.50s] when you're inside of this range
+[  197.50s ->   199.32s] because there is no clear direction
+[  199.42s ->   199.90s] okay
+[  199.90s ->   204.00s] so once we're able to divide the market up into different segments
+[  204.00s ->   205.02s] uptrending
+[  205.02s ->   205.74s] sideways
+[  205.74s ->   207.08s] downtrending
+[  207.08s ->   211.10s] then we're able to use the appropriate strategy to capitalize on this
+[  211.10s ->   213.40s] and using this Bollinger Band setup
+[  213.40s ->   216.12s] we can do so quickly and predictably
+[  216.12s ->   219.74s] because we always know instead of having to go draw lines and chart everything
+[  219.74s ->   222.40s] instead it shows us right now it's above bullish
+[  222.40s ->   224.00s] in the middle neutral
+[  224.00s ->   225.68s] below bearish
+[  225.68s ->   226.42s] all right cool
+[  226.42s ->   227.98s] so once we know all that
+[  227.98s ->   229.76s] we're going to come in here and take advantage
+[  229.76s ->   231.84s] so let's say for instance
+[  231.84s ->   235.98s] today is a day that you get into your platform to place a trade
+[  235.98s ->   237.36s] okay cool
+[  237.36s ->   238.98s] what you're going to do is you're going to notice
+[  238.98s ->   240.50s] okay it's above this line
+[  240.50s ->   241.56s] so we're bullish
+[  241.56s ->   243.36s] what is our bullish strategy
+[  243.36s ->   246.04s] if I go here our bullish strategy is the turtle strategy
+[  246.04s ->   248.92s] our neutral strategy is the squirrel strategy
+[  248.92s ->   252.56s] and our bearish strategy is the short play
+[  252.56s ->   254.98s] now again we're right now in an uptrend
+[  254.98s ->   257.46s] so we're going to go to the turtle strategy
+[  257.46s ->   261.56s] right here you can say the strategy is the bullish one for uptrending markets
+[  261.56s ->   263.76s] again so that's kind of what we're seeing
+[  263.76s ->   265.46s] now what is our requirements
+[  265.46s ->   268.94s] well we want it to be above here based on the band that I give my members
+[  268.94s ->   272.96s] but again this approximation with the Bollinger Band is good enough
+[  272.96s ->   274.42s] so if it's above that
+[  274.42s ->   276.90s] then we can determine our short strike price
+[  276.90s ->   278.20s] and our expiration date
+[  278.20s ->   279.78s] let's start off with the short strike price
+[  279.78s ->   281.84s] so again when we're trading credit spreads
+[  281.84s ->   285.52s] all credit spreads are is a bet that the stock will stay above a certain level
+[  285.52s ->   288.70s] so that is the option strategy that we're taking advantage of
+[  288.70s ->   291.46s] for these strategies is credit spreads
+[  291.46s ->   293.36s] and how that works is like this
+[  293.36s ->   294.12s] you're saying hmm
+[  294.12s ->   296.34s] I think the stock will stay above this level
+[  296.34s ->   298.56s] as long as the stock stays above this level
+[  298.56s ->   299.94s] by the date you selected
+[  299.94s ->   301.90s] then you get to make money
+[  301.90s ->   303.94s] if it goes below and stays below it
+[  303.94s ->   305.12s] by a certain date
+[  305.12s ->   306.30s] then you lose money
+[  306.30s ->   309.96s] all a credit spread is is a bet that a stock will stay above a certain level
+[  309.96s ->   312.44s] and so again when you follow this approach
+[  312.44s ->   317.62s] you'll have about a 90-95% win rate on being able to pick the best bet
+[  317.62s ->   319.70s] so again you will lose a bet
+[  319.70s ->   322.70s] but you're gonna win so much more and more often
+[  322.70s ->   325.28s] that it's gonna outweigh your losses
+[  325.28s ->   326.88s] so that's kind of how it does
+[  326.88s ->   328.26s] but how do we pick this level
+[  328.26s ->   331.24s] how do we know what level to bet on that the stock will stay above
+[  331.24s ->   333.18s] well right here it tells you
+[  333.18s ->   334.96s] determine your strike price
+[  334.96s ->   337.06s] the one that you want to stay above
+[  337.06s ->   338.92s] by taking the close price
+[  338.92s ->   341.00s] and multiplying it by 97%
+[  341.00s ->   342.08s] okay cool
+[  342.08s ->   343.08s] let's dive in here
+[  343.08s ->   344.32s] what's the current price
+[  344.32s ->   345.86s] 45525
+[  345.86s ->   350.44s] so 45525
+[  350.44s ->   353.36s] now we're going to do that by 97%
+[  353.36s ->   355.42s] that gives us 441.59
+[  355.42s ->   358.32s] we're gonna round to the nearest whole number is 442
+[  358.32s ->   362.66s] so that means that the level I'm picking is 442
+[  362.66s ->   365.62s] that means I'm going to sell the 442 put
+[  365.62s ->   367.70s] and I'm going to buy the one right under it
+[  367.70s ->   369.10s] the 441
+[  369.10s ->   372.54s] so I'm gonna sell 442 and buy 441
+[  372.54s ->   376.32s] if you've never placed a credit spread trade before I have YouTube videos
+[  376.32s ->   380.10s] that lay out exactly how to place credit spread trades
+[  380.10s ->   382.76s] for a different broker so you can walk through that video
+[  382.76s ->   384.68s] again that's all on my YouTube channel
+[  384.68s ->   387.20s] but for the point of this video we're just going to continue on
+[  387.20s ->   388.72s] that is how you set up that one
+[  388.72s ->   390.34s] now what is our expiration date
+[  390.34s ->   393.34s] how long out are we wanting this trade to go on
+[  393.34s ->   395.00s] we're gonna take the current date
+[  395.00s ->   396.62s] we're gonna add 12 days
+[  396.62s ->   398.56s] then we're gonna round up to the next Friday
+[  398.56s ->   401.46s] and because I am absolutely terrible with dates
+[  401.46s ->   402.68s] we're just gonna do that here
+[  402.68s ->   405.84s] so 25 plus 12
+[  405.84s ->   407.16s] so if we add let's see
+[  407.16s ->   409.74s] it's gonna take about seven days to get to August 1st
+[  409.74s ->   412.02s] so that's going to leave
+[  412.02s ->   413.58s] let's see we need 12 days
+[  413.58s ->   415.64s] three, five, five
+[  415.64s ->   416.62s] so the fifth
+[  416.62s ->   419.38s] so that gives us a Saturday for 12 days
+[  419.38s ->   421.64s] right here gives us August 5th
+[  421.64s ->   423.18s] but again we need to go to the next Friday
+[  423.18s ->   423.88s] so that's not this
+[  423.88s ->   425.56s] this is the previous Friday
+[  425.56s ->   426.58s] so the 11th
+[  426.58s ->   427.98s] so that means that we'll be targeting
+[  427.98s ->   430.12s] an August 11th expiration date
+[  430.12s ->   431.34s] okay cool August 11th
+[  431.34s ->   431.64s] check
+[  431.64s ->   432.82s] okay
+[  432.82s ->   435.12s] now that we have all that done
+[  435.12s ->   437.00s] we know the strike prices we're going for
+[  437.00s ->   438.38s] we know our expiration date
+[  438.38s ->   439.90s] now we're gonna go into our broker
+[  439.90s ->   441.18s] set this trade up
+[  441.18s ->   442.08s] selling the 442
+[  442.08s ->   443.46s] buying the 441
+[  443.46s ->   445.68s] and going to the expiration date of August 11th
+[  445.68s ->   447.14s] that means that
+[  447.14s ->   448.76s] we're going to hope to aim
+[  448.76s ->   451.80s] and get a roughly 12 to 15% credit
+[  451.80s ->   454.06s] if we can collect a 15 cent credit
+[  454.06s ->   455.00s] or even more
+[  455.00s ->   455.76s] that would be amazing
+[  455.76s ->   457.52s] but if we can collect a credit around there
+[  457.52s ->   459.00s] then this is a perfect trade
+[  459.00s ->   460.98s] that's going to help us make money long term
+[  460.98s ->   461.66s] why?
+[  461.80s ->   463.72s] well because of long term probabilities
+[  463.72s ->   463.92s] right
+[  463.92s ->   465.02s] you can see here that this
+[  465.02s ->   467.44s] this strategy right here
+[  467.44s ->   469.36s] has a 95% win rate
+[  469.36s ->   471.44s] let's say you're not able to do it perfectly
+[  471.44s ->   474.46s] and only get a 92% win rate off of it
+[  474.46s ->   477.50s] well let's say you're trying to collect 15 cents per trade
+[  477.50s ->   481.88s] this is called long term expectancy calculation
+[  481.88s ->   484.00s] it shows you how much money you'll make
+[  484.00s ->   486.10s] based on your win rate and how much you win
+[  486.10s ->   488.12s] so again right here we see
+[  488.12s ->   491.82s] that we're going to have a long term expectancy of $700
+[  491.82s ->   493.10s] why?
+[  493.10s ->   496.18s] well because if you win 92% of the time
+[  496.18s ->   498.28s] and you collect 15 cents for each spread
+[  498.28s ->   501.72s] that means you're going to lose 8% of the time
+[  501.72s ->   503.72s] and you're going to lose this amount each time
+[  503.72s ->   505.26s] so that's going to give you
+[  505.26s ->   507.48s] again if we make it whole numbers here
+[  507.48s ->   509.16s] where we round up to the 100s
+[  509.16s ->   511.98s] because that's how much each option is actually represented
+[  511.98s ->   515.12s] then you can see here $700 is our long term outcome
+[  515.12s ->   516.18s] after 100 trades
+[  516.18s ->   517.54s] we're going to make money long term
+[  517.54s ->   518.20s] it's guaranteed
+[  518.20s ->   520.54s] that's why I call this a guaranteed blueprint
+[  520.54s ->   521.30s] alright
+[  521.30s ->   522.02s] and again
+[  522.02s ->   525.24s] not only has this been proven since 2005
+[  525.24s ->   526.68s] via our back test
+[  526.68s ->   530.24s] but also my members and I are doing it every single week
+[  530.24s ->   530.80s] anyway
+[  530.80s ->   532.98s] so simply all you do is you go
+[  532.98s ->   534.88s] what market phase are we in
+[  534.88s ->   536.76s] you go to this trading plan
+[  536.76s ->   539.26s] and you help you execute based on
+[  539.26s ->   540.92s] if it's uptrending, downtrending or sideways
+[  540.92s ->   542.28s] you pick the strategy that matches
+[  542.28s ->   543.16s] you follow the steps
+[  543.16s ->   544.06s] you place the trade
+[  544.06s ->   544.38s] boom
+[  544.38s ->   546.06s] set it and forget it
+[  546.06s ->   548.14s] if you want to learn more about exit rules and stuff
+[  548.14s ->   549.14s] I have videos on that
+[  549.14s ->   550.98s] but it's also included down here
+[  550.98s ->   552.74s] trade sizing and exit rules
+[  552.74s ->   553.72s] all on this PDF
+[  553.72s ->   555.06s] which is that you can get for free
+[  555.06s ->   556.06s] down below
+[  556.06s ->   556.74s] anyways
+[  556.74s ->   558.26s] what is the weekly trading plan
+[  558.26s ->   559.58s] how long can we do this weekend
+[  559.58s ->   560.40s] and week out
+[  560.40s ->   563.04s] to generate $1,000 in the next 30 days
+[  563.04s ->   563.88s] well
+[  563.88s ->   564.60s] number one
+[  564.60s ->   566.98s] we need to be going over the trade ideas algo
+[  566.98s ->   568.96s] which is the algo that I put together
+[  568.96s ->   571.20s] that looks through the strategies here
+[  571.20s ->   574.10s] and actually lays out the trades for us
+[  574.10s ->   575.44s] for my members
+[  575.44s ->   576.24s] now again
+[  576.24s ->   578.16s] this program is open right now
+[  578.16s ->   579.30s] but it will be closing soon
+[  579.30s ->   580.92s] so you can actually check that out down below
+[  580.92s ->   582.90s] but if you want to replace this
+[  582.90s ->   583.94s] because you don't want to check out
+[  583.94s ->   586.32s] this amazing credit spread trade ideas algo
+[  586.32s ->   588.64s] that helps you find trades instantly
+[  588.64s ->   589.56s] well
+[  589.56s ->   592.28s] then all you need to do is follow the process
+[  592.28s ->   593.70s] that I showed you in the first part of this video
+[  593.70s ->   594.56s] go here
+[  594.56s ->   596.20s] understand what phase you're in
+[  596.20s ->   597.50s] follow the strategy
+[  597.50s ->   597.96s] boom
+[  597.96s ->   598.98s] that's what it's saying here
+[  598.98s ->   600.28s] if you can follow the strategy
+[  600.28s ->   601.78s] and collect the minimum credit
+[  601.78s ->   602.48s] good
+[  602.48s ->   603.66s] that's the first step
+[  603.66s ->   604.62s] number two
+[  604.62s ->   606.84s] if the market has dropped
+[  606.84s ->   608.80s] now you know it's a great time
+[  608.80s ->   610.34s] to enter put credit spread trades
+[  610.34s ->   611.96s] so let's say it's trending up
+[  611.96s ->   613.02s] and you have a red day
+[  613.02s ->   614.56s] that should be an indication
+[  614.56s ->   616.70s] that now is a good time to put on trades
+[  616.70s ->   618.28s] versus vice versa
+[  618.28s ->   619.60s] if we're trending down
+[  619.60s ->   620.68s] and you see a green day
+[  620.68s ->   622.04s] you should know now is a good time
+[  622.04s ->   623.80s] to put on call credit spread trades
+[  623.80s ->   624.30s] okay
+[  624.30s ->   625.70s] that's kind of the game plan
+[  625.70s ->   627.70s] so again market drop
+[  627.70s ->   628.42s] market went up
+[  628.42s ->   628.80s] whatever
+[  628.80s ->   632.56s] next the goal is to place two trades a week
+[  632.56s ->   634.62s] if you can place two trades a week
+[  634.62s ->   636.34s] following the 10% rule
+[  636.34s ->   641.94s] you're going to make roughly 5-10% every single month
+[  641.94s ->   643.88s] so if you can put on two trades a week
+[  643.88s ->   644.70s] that's your whole goal
+[  644.70s ->   646.16s] your whole goal every single week
+[  646.16s ->   647.58s] to be follow this game plan
+[  647.58s ->   648.86s] and put on two trades
+[  648.86s ->   650.98s] if you can put on two trades every single week
+[  650.98s ->   654.40s] you're going to make 5-10% of your total account value
+[  654.40s ->   655.28s] you're going to grow it
+[  655.28s ->   657.98s] so that is the whole goal here
+[  657.98s ->   660.02s] again we have members in our program
+[  660.02s ->   662.56s] who actually lose two trades
+[  662.56s ->   664.46s] and still end up with a 10% month
+[  664.46s ->   667.04s] so it is completely possible to do this
+[  667.04s ->   668.00s] and so again
+[  668.00s ->   670.26s] let's say you're trading a $10,000 account
+[  670.26s ->   672.44s] you make 10% in your first 30 days
+[  672.44s ->   675.00s] that's $1,000 in your first 30 days
+[  675.00s ->   675.88s] if not
+[  675.88s ->   677.28s] if you have less than $10,000
+[  677.28s ->   681.72s] still making 5-10% is what most people strive for
+[  681.72s ->   682.68s] in a single year
+[  682.68s ->   683.82s] and you're able to do it in a month
+[  683.82s ->   685.28s] using set it and forget it strategies
+[  685.28s ->   687.74s] so that you can put on these trades
+[  687.74s ->   690.50s] forget it and move on with work, life, family, etc
+[  690.50s ->   691.36s] next
+[  691.36s ->   693.48s] spend two minutes a day checking your current trades
+[  693.48s ->   695.50s] and see if any fit early exit rules
+[  695.50s ->   696.54s] to get out of trades
+[  696.54s ->   697.52s] next
+[  697.52s ->   700.26s] optionals participate in the discord group chat
+[  700.26s ->   701.56s] and weekly group coaching calls
+[  701.56s ->   703.58s] but again that's purely for our program
+[  703.58s ->   705.42s] again the program is open right now
+[  705.42s ->   707.74s] so if you want to learn more about that click down below
+[  707.74s ->   709.96s] I only open the program for four days a month
+[  709.96s ->   711.84s] so you guys get the chance to join
+[  711.84s ->   713.86s] then I spend the rest of the month
+[  713.86s ->   715.34s] the rest of the days of that month
+[  715.34s ->   717.52s] dedicating my time and attention to my members
+[  717.52s ->   719.10s] and assuring they have success
+[  719.10s ->   721.14s] so if you want someone who is on your side
+[  721.14s ->   723.24s] to help you profit with credit spreads
+[  723.24s ->   724.10s] I am your guy
+[  724.10s ->   726.34s] check out the program below before it closes
+[  726.34s ->   728.10s] anyways I hope you enjoyed this video
+[  728.10s ->   729.02s] my name is Austin
+[  729.02s ->   730.50s] and I help you learn more about credit spreads
+[  730.50s ->   731.92s] by posting videos every single day
+[  731.92s ->   733.04s] to help give you an edge
+[  733.04s ->   733.86s] alright guys
+[  733.86s ->   736.18s] if you want that click the subscribe button
+[  736.18s ->   738.16s] and I will see you in the next video

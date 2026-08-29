@@ -1,0 +1,88 @@
+[    0.00s ->     3.94s] Hey guys, what's up in this video? I'm going to show you step by step how to actually place a
+[    3.94s ->     9.90s] 1-1-2 trade. If you've never done a 1-1-1 or 1-1-2 trade before, these are literally the best
+[    9.90s ->    15.42s] passive income options trading strategies around, where not only can you make money if the market
+[   15.42s ->    20.08s] goes up infinity, but if the market drops, you make even more money. So if you've never put on
+[   20.08s ->    24.56s] a 1-1-2 trade before, go check out my other videos where I explain it in depth. Now I'm
+[   24.56s ->    29.56s] going to show you step by step how to place an order by doing a live order with you to make it
+[   29.56s ->    33.06s] super easy and super understandable because I know that if you try to do this yourself,
+[   33.46s ->    37.06s] your broker may say, oh, that's not allowed. Well, I want to show you how to do this. So
+[   37.06s ->    42.92s] step by step, how do we put on a order? Well, first and foremost, we're going to follow my 1-1-2 trading
+[   42.92s ->    49.52s] plan listed out right here. Again, this is a free PDF guide and backtest and everything you want to
+[   49.52s ->    54.80s] know about risk management, rules, plan, et cetera, about the 1-1-2 trading strategy. So if you want
+[   54.80s ->    59.38s] this, it'll be the first link down below. This will be exact rules that I follow so that you know what's
+[   59.38s ->    63.74s] going on if you want to repeat this after the video and your own account. So diving in, the first
+[   63.74s ->    68.26s] thing we want to do is go to ES futures. So make sure we're on ES futures and go into the trade tab.
+[   68.36s ->    73.46s] So we're going to go out on the way that I trade these. They go out about 45 days. So right here
+[   73.46s ->    81.14s] is a 45 day mark. I'm going to look at a 1-1-2 trade that does the following as listed in my handbook.
+[   81.20s ->    87.24s] I'm going to buy the 30 Delta. I'm going to sell the 28 Delta to create a put debit spread and I'll show
+[   87.24s ->    92.68s] why in a second. And then I'm going to go all the way out to roughly the seven Delta with the most
+[   92.68s ->    99.02s] options, volume or open interest. So you can see here, these are all seven Deltas. This one 36 has
+[   99.02s ->   103.36s] the most Delta here. So I mean, the most open interest. So I'm going to go here. I'm going to
+[  103.36s ->   107.80s] click on this. I'm going to add two of these trades. So now my face is a bit too big. Let's make
+[  107.80s ->   113.02s] it smaller. Now I have 1-1, which is from my put debit spread. And then I have the two, which is from
+[  113.02s ->   118.12s] these short puts that I'm selling or the puts I'm selling. You can see here have a 99% win rate
+[  118.12s ->   124.16s] and that's about the gist. Now let's actually look at what this is in a real trade. So if we go to
+[  124.16s ->   129.16s] the active mode here, we can, I mean, a curve and then analysis, we can see what's actually going on
+[  129.16s ->   134.28s] here. So if I highlight these trades, you can see how I'll make money in different situations,
+[  134.28s ->   140.42s] which is very important to know. All right. So here is the trade. When you structure it like this,
+[  140.42s ->   146.72s] it shows you that no matter how high the stock goes or ES futures goes, I will make a consistent
+[  146.72s ->   155.90s] $738. If the market drops past the first put that I sold, then I'll start making $1,500. So you can
+[  155.90s ->   162.30s] see here, I'm going to make basically by default $700. If the market drops into this range, then I'll make
+[  162.30s ->   168.32s] basically double that. And so that's the beautiful part about this strategy. And you can even structure
+[  168.32s ->   173.76s] it different ways where you can make even more when it crashes. But right now I believe the
+[  173.76s ->   178.80s] market's in a consistent uptrend. So I want to do this to maximize my move to the upside. Again,
+[  178.84s ->   183.86s] all this is explained in the free PDF guide down below. So this is how a one, one, two trade is
+[  183.86s ->   189.08s] structured. And this is how and where you'll make money. Now, if you just go in and you click review
+[  189.08s ->   193.96s] and send, and you try to put in this order, it'll say this strategy type is not supported. Try
+[  193.96s ->   200.48s] legging it. The futures market, the CBOE does not allow these complex orders to go through into
+[  200.48s ->   205.04s] the market. So you have to do the trade in two parts. Now, if you look at this trade, what are
+[  205.04s ->   210.10s] the two parts? Well, you can see right here as we're selling puts, that's one trade. And another
+[  210.10s ->   216.66s] trade is this combined put debit spread. So this one, one, two is made up of selling puts as one trade
+[  216.66s ->   222.52s] and a put debit thread as the second trade. So let's split those up. So this is how I typically trade
+[  222.52s ->   228.52s] that. Let's clear this position and let's start from scratch. I go to the options that I want to
+[  228.52s ->   234.82s] sell. Why? Because when we sell options, we collect money. And why do I want to collect money? Well,
+[  234.84s ->   240.24s] because collecting money allows me to have money to buy the put debit spread with. So I'm going to go
+[  240.24s ->   245.22s] here to the seven Delta with the most open interest. I'm going to go this, I'm going to select two as my
+[  245.22s ->   252.50s] quantity. Then you can see here, it's going to bring in a profit of $900. By selling the
+[  252.52s ->   258.76s] puts, they're going to give me $900 off the bat. So I'm just going to put it in at the mid price and
+[  258.76s ->   263.12s] see if I get filled. If I don't, then we can adjust it from there. You can see here that I have a limit
+[  263.12s ->   269.46s] at $9 and it's currently trading at $8.95. So again, I wait here for a second and see if it's
+[  269.46s ->   276.04s] going to fill. If it doesn't, I go into positions, I click replace order and I can move it down to $8.95,
+[  276.22s ->   280.70s] maybe even $8.90 to where it is now. And then I'm going to get an instant fill. So just like that,
+[  280.70s ->   290.10s] I got filled at $8.90 for two contracts. So that means that I brought in $890 for putting on this
+[  290.10s ->   296.94s] trade. All right. So now that I have this position here and I made $890 that they gave me because I
+[  296.94s ->   300.76s] sold this position, what I'm going to do is I'm going to come in here and create the put debit
+[  300.76s ->   307.58s] spread as my second trade. So I'm going to buy the 30 Delta and sell the 28. This is going to create
+[  307.58s ->   315.84s] my put debit spread. So you can see here a buying power effect of $110 or a max loss of $162. That
+[  315.84s ->   323.68s] means what? That means I have to put up $167, basically $170 for this trade. Well, good news.
+[  323.78s ->   330.80s] I already got paid $890. So now I have money to actually use to put on this extra protection.
+[  331.28s ->   335.76s] So now that we have this, as always, I'm going to try to get filled at the mid price. And look,
+[  335.76s ->   340.32s] I got filled. Perfect. So I've tried to get filled at the mid price. And if I can't, then I adjust it.
+[  340.58s ->   345.36s] All right. So now we've gotten into the 1-1-2 trade. We have one option, one option, and then
+[  345.36s ->   350.78s] the two options. So how do we actually view this as the same? Well, again, if we're using this here
+[  350.78s ->   356.62s] in a tasty trade, we can actually group the positions together. So you can see here,
+[  356.86s ->   362.64s] here is the trade that I just put on February 23rd, 45 days out. And these are the trade strategies.
+[  362.64s ->   365.80s] So what I'm going to do is I'm going to click on every single one of these to highlight them.
+[  366.10s ->   371.02s] I am going to left click, or if you're a Mac user, you have to click control and then the right.
+[  371.42s ->   376.50s] And just like that, we can do group positions by. So first off, I put, what is the name of this
+[  376.50s ->   381.70s] trade? Well, it's a 1-1-2 trade. And then I do this little line. And then I put, okay,
+[  382.06s ->   389.24s] what is my profit target? So again, as we can see by the PDF guide, I want a 90% profit target.
+[  389.24s ->   395.94s] Or when the Bollinger Band breaks, those are my two ways that I'm going to exit. So now I know how
+[  395.94s ->   400.68s] I'm going to exit for a profit or exit for a loss. It's listed right here. I click group,
+[  401.02s ->   406.32s] and now it's put into one trade. Where'd it go? It went down here. Now it went into one trade right
+[  406.32s ->   413.44s] here, 1-1-2, 90% or BB break. And again, it shows me the total profit combined of the whole trade
+[  413.44s ->   419.94s] together. It shows me the whole trade together, the win rate, a 97% win rate. It shows me a total,
+[  420.20s ->   425.58s] the trade price I got in, 1440. And then it shows me the mark price. Now, what do I do with this?
+[  425.82s ->   431.60s] Well, again, as I showed you, we're trying to exit profits at 90%. Some people do it at 50%,
+[  431.60s ->   436.72s] whatever you're doing. That means that whatever the trade price is, you want to multiply by the
+[  436.72s ->   442.54s] percentage profit you want. So again, if I want a 90% profit, then I'm going to multiply this by 10%.
+[  442.54s ->   445.98s] And when it gets to that price on the mark, that means that it's time for me to exit.
+[  446.12s ->   453.50s] What about a 50% profit? Well, you can see here, I got in at 1440. So a 50% profit would be roughly
+[  453.50s ->   460.30s] $7.20. So once the mark shows $7.20, then I know I can exit out of this trade for a 50% profit
+[  460.30s ->   466.56s] and move on to the next one. Now again, this trade takes roughly $12,000 in buying power. I was only
+[  466.56s ->   472.44s] able to put on this trade because I took a trade off this morning for a $500 profit. And now I am
+[  472.44s ->   476.30s] putting on a new one. So that's how you do it. You take one off, you put one on. So if you want
+[  476.30s ->   480.94s] to learn more about the 1-1-2 trade, go watch my previous video on it and subscribe to the channel.
+[  481.14s ->   485.30s] Or if you want the PDF guide, click the first link down below. It's completely free. Just enter
+[  485.30s ->   488.94s] your email and you'll get it. All right, guys, thank you so much for watching this video and
+[  488.94s ->   489.82s] I'll see you in the next one.

@@ -1,0 +1,192 @@
+[    0.16s ->     5.40s] Some of these trading tools on this list you don't use, and I can guarantee that once
+[    5.40s ->     9.88s] you use them, you will realize how strong they are, especially the ones later on in
+[    9.88s ->    10.88s] this list.
+[   10.88s ->    15.48s] I've done my fair share of trading, so I've seen mostly all the trading websites out there.
+[   15.48s ->    19.36s] The premium ones where you have to spend a whole mortgage payment every month to use
+[   19.36s ->    23.88s] them, the free ones but they don't give you too much information, and the ones I'm
+[   23.88s ->    24.88s] about to share.
+[   24.88s ->    28.80s] Free, but with major amounts of value.
+[   28.80s ->    33.56s] All of these tools are completely free and they give you tons of information, and can
+[   33.56s ->    35.26s] make you a much better trader.
+[   35.26s ->    36.76s] So what's not to like?
+[   36.76s ->    38.70s] Free and more money from trading?
+[   38.70s ->    39.92s] Sounds like a pretty good deal to me.
+[   39.92s ->    43.88s] If you guys enjoy this video or maybe find a website that you like from this list, give
+[   43.88s ->    48.30s] this video a like as my channel is pretty small at the moment and it helps my channel grow
+[   48.30s ->    53.00s] a lot, and more importantly, keeps me motivated to keep making videos like this.
+[   53.00s ->    54.80s] So yeah, please.
+[   54.80s ->    57.08s] We are going to start our list off strong.
+[   57.08s ->    59.02s] Number 5, NASDAQ trader.
+[   59.02s ->    61.70s] This website is for all my day traders out there.
+[   61.70s ->    66.48s] If you have day traded before, you know that trading halts are a big part of day trading.
+[   66.48s ->    70.58s] If you aren't familiar with trading halts, it's basically when a specific stock jumps
+[   70.58s ->    73.52s] up or down a huge amount in a short period of time.
+[   73.52s ->    78.00s] If it does this, the market will halt it, meaning the price won't rise or drop for a short
+[   78.00s ->    82.26s] period of time, basically frozen usually for 5 or 10 minutes.
+[   82.26s ->    87.56s] These can be insanely crucial for big gains, as usually if a stock halts going upwards,
+[   87.56s ->    92.04s] when it resumes, a lot of the time it'll do another huge spike, or even better, go
+[   92.04s ->    95.20s] up an insane amount again to where it gets halted a second time.
+[   95.20s ->    99.14s] I've even seen some instances where it gets halted 4 times in a row.
+[   99.14s ->   102.38s] Well maybe you want a list of all these stocks that are currently halted.
+[  102.38s ->   104.64s] Well, that's when this website comes into play.
+[  104.64s ->   108.88s] It gives you a complete list of stocks that are currently halted or that have been halted.
+[  108.88s ->   110.74s] It also gives you the reason of the halt.
+[  110.74s ->   114.26s] So there are volatility halts, which are what we just talked about before.
+[  114.26s ->   118.56s] There's also news pending halts, and halts because the NASDAQ needs more information about
+[  118.56s ->   119.84s] that specific stock.
+[  119.84s ->   125.18s] So what you can do is have this page up, and it automatically refreshes by itself.
+[  125.18s ->   129.12s] Once you see a new ticker symbol, check what time it was halted, and see if it was halted
+[  129.12s ->   130.86s] going up or down.
+[  130.86s ->   134.00s] Depending if it went down or up, you can get ready to go long or short.
+[  134.00s ->   138.42s] If you want to know when the market will resume, you simply see what time that specific stock
+[  138.42s ->   141.56s] halted, and then add 5 minutes to that time.
+[  141.56s ->   143.14s] Usually it'll unhalt then.
+[  143.14s ->   146.86s] If it doesn't, then add 10 minutes to that time, and it'll unhalt there.
+[  146.86s ->   151.74s] I should also be clear, this style of trading is extremely risky, as usually when the stock
+[  151.74s ->   154.84s] gets unhalted, it has huge amounts of volatility.
+[  154.84s ->   159.24s] So yeah you can make tons of money with this, but you can also lose tons of money with this.
+[  159.24s ->   160.54s] So just be careful.
+[  160.54s ->   163.68s] Also by the way, I'm going to leave all the links in the description in case you want
+[  163.68s ->   165.32s] to check any of the websites out.
+[  165.32s ->   167.86s] Next on our list is number 4, TradingView.
+[  167.86s ->   170.00s] If you're a subscriber, you saw this one coming.
+[  170.00s ->   174.32s] If you've ever watched my trading strategy videos before, all of the chart analysis is
+[  174.32s ->   175.68s] done on TradingView.
+[  175.68s ->   180.68s] I absolutely love TradingView, as in my opinion, it's the best chart platform out there, and
+[  180.68s ->   181.68s] it's completely free.
+[  181.68s ->   185.68s] Sure you can upgrade your account for their yearly subscription fee and get more indicators,
+[  185.68s ->   187.68s] lower timeframes, and real time market data.
+[  187.68s ->   192.46s] I personally have the pro plan, as I want access to all their extra features.
+[  192.46s ->   196.90s] But if you're a beginner and just need the basics with some indicators, this chart platform
+[  196.90s ->   198.46s] is definitely for you.
+[  198.46s ->   199.90s] And you don't even need to spend a penny.
+[  199.90s ->   202.82s] To start us off, this chart works with basically everything.
+[  202.82s ->   208.14s] Stocks, crypto, forex, futures, bonds, indexes, everything.
+[  208.14s ->   211.36s] Just search whatever you want to look up, and boom, the chart will pop up.
+[  211.36s ->   213.76s] You can even add them to personalized lists.
+[  213.76s ->   217.94s] So if you want to make a personal watch list for every morning, you just make a list and
+[  217.94s ->   219.24s] add the stocks to it.
+[  219.24s ->   220.64s] And you can even color code them.
+[  220.64s ->   224.68s] This way you can just click through each one quickly instead of typing the ticker symbol
+[  224.68s ->   225.68s] in every time.
+[  225.68s ->   227.56s] It's also a nice way to stay organized.
+[  227.56s ->   230.86s] Once you're on a stock you like, you can of course change the time frame to what you
+[  230.86s ->   231.86s] want to see.
+[  231.86s ->   234.64s] Then there's an insane selection of tools to choose from.
+[  234.64s ->   237.20s] Some of my personal favorites are the trendlines.
+[  237.20s ->   241.72s] You can draw them in any direction, change the color, size, and even add alerts so you
+[  241.72s ->   245.06s] can get emailed if the price ever crosses that trendline.
+[  245.06s ->   248.52s] Then you have the Fibonacci retracement tool, which is a popular trading tool.
+[  248.52s ->   253.04s] You have the option for text to leave notes on your trading plays, which I find really useful
+[  253.04s ->   255.38s] to remind myself about certain plays.
+[  255.38s ->   259.36s] There's this long and short positions tool, so you can see your trading plan and know what
+[  259.36s ->   261.24s] the risk to reward ratio is.
+[  261.24s ->   263.12s] And finally you have the measurement tool.
+[  263.12s ->   268.08s] So say if you want to see the percentage gain if a stock goes from A to B, you can just
+[  268.08s ->   271.58s] use the measurement tool and it'll show you the percentage gain.
+[  271.58s ->   275.76s] Also whenever you're on a certain stock, you can see a bunch of key metrics quickly,
+[  275.76s ->   280.70s] like the volume, earnings, income statement, analyst ratings, and so much more.
+[  280.70s ->   282.80s] There's also an option to leave notes.
+[  282.80s ->   287.30s] So if you ever wanted to remind yourself details about this play, or when you want to exit, you
+[  287.30s ->   291.76s] can simply just leave a note and whenever you go back to this stock, that note will be there.
+[  291.76s ->   296.48s] You can even do some pretty advanced things like backtest strategies to see how successful
+[  296.48s ->   301.66s] they are on past market data, but I won't go too in depth with that as it's really advanced.
+[  301.66s ->   309.89s] Then of course one of my favorite parts, drum roll please, indicators.
+[  309.89s ->   314.67s] TradingView probably has the biggest selection of indicators compared to any other chart platform.
+[  314.67s ->   316.01s] It's kind of what they're known for.
+[  316.01s ->   320.87s] They have all the basic ones like moving averages, VWAP, MACD, and so on.
+[  320.87s ->   325.63s] Then they also have customized community built ones, and they even have ones that spot certain
+[  325.63s ->   329.49s] candlestick patterns, which all are extremely useful.
+[  329.49s ->   333.79s] Another cool part about TradingView a lot of people don't know about is the ideas section.
+[  333.79s ->   338.19s] So say if you were interested in buying, I don't know, Apple, you can type it in and
+[  338.19s ->   342.39s] see a bunch of different technical analysis from other traders in the community, and see
+[  342.39s ->   346.87s] their explanations of why they think it's bullish or bearish, which is pretty cool.
+[  346.87s ->   351.51s] Next on our list is number 3, and it's a must need if you're a trader and want to
+[  351.51s ->   353.63s] take it seriously, TraderView.
+[  353.63s ->   355.93s] I wonder how they thought of their name.
+[  355.93s ->   359.81s] I know it kind of sounds like the last one, but this one is different.
+[  359.81s ->   361.53s] This website is really cool.
+[  361.53s ->   366.21s] So it's basically a trading journal where you can keep track of all your trades automatically
+[  366.21s ->   369.43s] and see how profitable you are over periods of time.
+[  369.43s ->   373.63s] An important part about being a successful trader is always improving.
+[  373.63s ->   377.41s] It's always nice to keep track of data like this as a trader so you can see if what you're
+[  377.41s ->   378.95s] doing is working or not.
+[  378.95s ->   382.23s] With the free version, you can import up to 100 trades per month.
+[  382.23s ->   386.73s] To do that, just click this import trades tab, select your broker, and it'll give you directions
+[  386.73s ->   389.73s] on how to find the CSV file of your transactions.
+[  389.73s ->   394.31s] You just upload that file and it'll automatically add all your profits and losses so you don't
+[  394.31s ->   396.95s] have to keep track manually, which is pretty sweet.
+[  396.95s ->   401.57s] It'll give you tons of information on your past performance, like your total gain or loss
+[  401.57s ->   407.11s] for that month, average gain, total amounts of trades, win percentage, total commissions,
+[  407.11s ->   408.71s] and so much more.
+[  408.71s ->   412.95s] If you want to take trading more seriously, this is a must, as an important part about
+[  412.95s ->   417.77s] becoming a successful trader is keeping track of your trades and seeing how you can improve.
+[  417.77s ->   422.01s] One of my favorite parts of this website is the calendar feature, so you can see each
+[  422.01s ->   426.59s] month and tell overall how you did, how many green days vs how many red days.
+[  426.59s ->   431.23s] Sometimes that in itself can be a pretty useful metric to see if what you're doing is working.
+[  431.23s ->   434.85s] And best of all, it's completely free, so why not?
+[  434.85s ->   436.05s] Next is number 2.
+[  436.05s ->   441.59s] So as we all know in the past there has been those GameStop and AMC meme stock situations,
+[  441.59s ->   445.93s] where there has been these huge pumps from social medias like reddit, where lots of traders
+[  445.93s ->   450.77s] made the most amount of profit they have ever made in their trading career from these stocks.
+[  450.77s ->   455.57s] Have you ever thought, I wonder if there's a way to constantly scan the WallStreetBets subreddit
+[  455.57s ->   461.19s] so you can instantly find stocks that everyone is talking about before they even blow up.
+[  461.19s ->   463.33s] That's when this website comes into play.
+[  463.33s ->   464.33s] Swaggy Stocks.
+[  464.33s ->   465.83s] I know, nice name right?
+[  465.83s ->   470.73s] What this website does is constantly scan the WallStreetBets subreddit and rank stocks in
+[  470.73s ->   473.83s] order by how much they are talked about on that subreddit.
+[  473.83s ->   477.39s] You can put it on 12 hour, 24, or 1 week time frame.
+[  477.39s ->   482.05s] So here you can see the subreddit is currently talking about Facebook, as recently it dropped
+[  482.05s ->   483.05s] a ton.
+[  483.05s ->   487.43s] But what's even cooler is it will color code if it was a positive, negative, or neutral
+[  487.43s ->   488.43s] post.
+[  488.43s ->   492.75s] So if you see a huge big green bar, it might be a stock you should look into, as a lot
+[  492.75s ->   495.87s] of redditors are talking about it in a positive way.
+[  495.87s ->   498.51s] Last but certainly not least is number 1.
+[  498.51s ->   499.51s] Finviz.
+[  499.51s ->   504.53s] Finviz is one of my all time favorite trading websites, as it's completely free and gives
+[  504.53s ->   506.67s] you so much value.
+[  506.67s ->   509.51s] Like look at this homepage, look at all this information.
+[  509.51s ->   513.55s] To start us off, we have the stock market heat map, so whenever you wake up in the morning
+[  513.55s ->   518.01s] and get your coffee, you can just hop on the Finviz homepage and see if the overall market
+[  518.01s ->   519.01s] is doing good or not.
+[  519.01s ->   522.45s] You can also see if certain sectors are doing better than others.
+[  522.45s ->   527.57s] It also gives you a list of top gainers, top losers, and stocks with unusual volume,
+[  527.57s ->   530.61s] which can usually be good plays if you're into day trading.
+[  530.61s ->   535.67s] One of my favorite parts about this website is right below this, the chart patterns.
+[  535.67s ->   540.09s] So let's say you're only interested in ascending triangles, as you found a lot of
+[  540.09s ->   544.99s] success with this pattern, and you only want to trade stocks that are making this specific
+[  544.99s ->   545.99s] pattern.
+[  545.99s ->   549.79s] Instead of scrolling through every single chart and seeing if they're making an ascending
+[  549.79s ->   554.91s] triangle or not, you can simply go to this section on Finviz and click triangle ascending.
+[  554.91s ->   559.23s] It'll then only give you stocks that are making an ascending triangle, so you can go through
+[  559.23s ->   563.53s] them, see if you like one, and then do some more in depth research about it to see if you'd
+[  563.53s ->   564.91s] be interested in trading it.
+[  564.91s ->   570.01s] And they have so many more patterns like trendlines, wedges, triangles, channeling up, channeling
+[  570.01s ->   574.15s] down, double tops, double bottoms, and head and shoulders.
+[  574.15s ->   578.07s] So yeah, that section alone makes this website pretty worthwhile.
+[  578.07s ->   581.85s] Then it has one of the infamous tools that it's famous for, the screener.
+[  581.85s ->   585.93s] Unlike most websites where you have to pay a monthly fee for their scanner, Finviz a scanner
+[  585.93s ->   589.37s] is absolutely free and that's pretty rare to find.
+[  589.37s ->   594.51s] So say you only want to find mid cap stocks with a PE ratio of under 30, sales growth
+[  594.51s ->   599.55s] over 10%, average volume of over 500k, and has insider trading.
+[  599.55s ->   604.29s] Finviz will automatically filter through every single stock on the stock market and only show
+[  604.29s ->   606.85s] you ones that fit those exact requirements.
+[  606.85s ->   610.51s] So you don't have to look through a bunch of fluff and only look at stocks that you would
+[  610.51s ->   612.33s] genuinely be interested in.
+[  612.33s ->   614.75s] And we really only scrape the surface with the filters.
+[  614.75s ->   619.35s] There's tons of different ones to choose from and some of them can be really powerful.
+[  619.35s ->   623.59s] You also have these different tabs, so maybe you want to see some financial metrics.
+[  623.59s ->   629.77s] Well, you simply click the financial tab and it'll bring up metrics like ROA, ROE, and ROI.
+[  629.77s ->   632.19s] Or maybe you want to see if there's any insider buying.
+[  632.19s ->   635.65s] Then just click the ownership tab and you can see insider ownership.
+[  635.65s ->   639.89s] Another nice feature is if you want to see a quick example of what the chart looks like,
+[  639.89s ->   643.25s] you can simply just hover over the ticker and it'll give you a quick preview.
+[  643.25s ->   646.03s] That way you can see if you like the general style of the chart or not.
+[  646.03s ->   650.03s] If you guys are interested in Finviz or any of the other websites I showed, I'll put them
+[  650.03s ->   651.03s] in the description.
+[  651.03s ->   656.03s] Actually, I made a video on all my Finviz screener settings like settings for stocks to buy and
+[  656.03s ->   660.87s] hold, bounce plays, higher earnings, dividend stocks, and so much more.
+[  660.87s ->   664.27s] So if you want some nice screener settings, these have worked wonders for me.
+[  664.27s ->   667.51s] Watch that video, thanks for watching, and I'll see you guys next time.

@@ -1,0 +1,364 @@
+[    0.04s ->     3.26s] In this video, I'm going to teach you everything you need to know about credit spreads so that by
+[    3.26s ->     7.56s] the end of this, you can actually do it and trade it and make money on a consistent basis.
+[    7.98s ->    12.34s] You will see things like best practices. How should we be doing it? How does the overall
+[   12.34s ->    17.26s] market do it and why? You'll also see results from others who have done this and implemented
+[   17.26s ->    21.26s] this for themselves who I have taught and have done well with it. And so here's the game plan
+[   21.26s ->    26.62s] for this training. You will learn why trade credit spreads, how to structure the credit spreads,
+[   26.62s ->    30.68s] like what DTE should you pick strikes and all that, how to manage the credit spreads,
+[   31.00s ->    35.98s] what are the main risk factors when it comes to trading them and how can we mitigate those risks
+[   35.98s ->    40.86s] so that our performance is actually consistent and we don't have random huge losses, how to size your
+[   40.86s ->    44.68s] account and how to scale if you have a small account or large what to do with each one.
+[   44.88s ->    49.16s] Let me move my face that this is a bit better make it smaller get it out of the way. We'll also learn
+[   49.16s ->    54.28s] all those best practices, but also in how I personally trade it, you can see why I make
+[   54.28s ->    59.26s] certain adjustments and how it leads to a better performance. And you'll also get to see how to
+[   59.26s ->    62.52s] trade it in different markets. Again, there's different markets, you have bullish, bearish,
+[   62.58s ->    67.08s] neutral, and how should you adjust it for each one. You'll learn about the advantages and disadvantages
+[   67.08s ->    72.64s] of it so that you can learn what's good, what's bad. And so you can make a good decision about if this
+[   72.64s ->    77.86s] strategy is a good fit for you. And you'll also see a real trading example. I will dive in to a whiteboard
+[   77.86s ->    82.74s] to map out exactly how this strategy works. You can actually understand it. I will go into the broker,
+[   82.74s ->    86.16s] pick out the strike prices to show you how it actually works. So by the time you get done with
+[   86.16s ->    90.28s] this video, you can walk away and actually be able to implement this to make real money.
+[   91.00s ->    96.32s] I'll also as a bonus and cherry on top show you how to automate the strategy so that you can actually
+[   96.32s ->   101.36s] do all of this hands free. Sweet. So before we get into the fun stuff, I need to cover a legal
+[  101.36s ->   106.68s] disclaimer, which is this is for educational and entertainment purposes only. I'm not a financial
+[  106.68s ->   112.54s] advisor. 99% of you will lose money. Passport formats, whether mine, somebody else's,
+[  112.54s ->   118.22s] or a back test is not guarantee future results. And all of your trades are 100% your responsibility.
+[  118.22s ->   122.64s] So if things don't work, it's not my fault. If you agree to this, let's continue to the training.
+[  122.78s ->   128.56s] If you don't, sorry, got to leave now. All right, so why trade credit spreads? They're a simple
+[  128.56s ->   133.52s] mechanical strategy. What does this mean? And he's that every single week, we just do the same thing.
+[  133.52s ->   137.68s] So instead of trying to find new stocks, new strategies, new assets, all these things said,
+[  137.68s ->   143.06s] we should do the same thing every week. This leads to consistency, which leads to profits.
+[  143.42s ->   148.80s] Next, there is no complex chart reading, you don't need to know how to read a chart to do this and make
+[  148.80s ->   154.08s] money. However, I will show you later, we'll actually share my screen and the chart and we'll
+[  154.08s ->   157.82s] walk through how do it. If you read the chart, you can actually perform better. But if you still want
+[  157.82s ->   161.86s] to make money, you don't have to read charts. It's easy to scale whether it's small or large account,
+[  161.86s ->   167.38s] you can do this a decent win rate about a 75% plus, since our risk are capped on this,
+[  167.42s ->   172.70s] that's pretty good. There's no risk to the upside. Again, if we put credit spread, we can the market
+[  172.70s ->   178.98s] can go as high as it wants and we'll still make money requires less buying power. So unlike selling
+[  178.98s ->   184.10s] a normal put, this will take less money, which is great for small accounts, or just means great for
+[  184.10s ->   189.52s] people who want to take less risk. Now, how do we structure the credit spread tray? How does it?
+[  189.52s ->   193.46s] How does this come together? Before we do this, we need to know what is the goal of this trade?
+[  193.54s ->   198.68s] This goal of this trade is to generate income in trending and directional markets. What does this
+[  198.68s ->   204.22s] mean? When the market is going a certain direction, whether up, down or sideways, we can use a credit
+[  204.22s ->   210.54s] spread to take advantage of that. And so here's best practices around a credit spread based on back
+[  210.54s ->   216.70s] tests done by Tasty Live. You can see here, days until expiration is 45 days. They go 45 days out
+[  216.70s ->   223.84s] into the future. Strike selection is how do we pick the options, we're going to sell the 30 delta put,
+[  224.16s ->   229.78s] and we're going to buy the 10 delta long put. So we're going to sell 30 delta by 10 delta. Now again,
+[  229.86s ->   234.96s] I'll walk you through this here and a broker in about five minutes to stay tuned. Now for the credit
+[  234.96s ->   241.36s] target, we're looking to get about 20 to $40 of credit. So if we're looking to actually enter this
+[  241.36s ->   245.90s] trade, we want to make sure it's between 20 and $40. Now what are the ideal assets to trade this on?
+[  245.90s ->   249.52s] Obviously, I love futures because they get greater return, which I'll show you later in this video.
+[  249.96s ->   257.96s] But so futures would be ESGCCL. So that'd be the S&P 500, gold and crude oil. We can also do this on
+[  257.96s ->   263.74s] SPX and SPY for stocks and ETFs. That's how we structure the trade. Now how do we actually manage
+[  263.74s ->   269.80s] the trade? We do take profit rules about 25 to 50%. This is typically best practice. The stop losses,
+[  269.92s ->   274.90s] most people do not use a stop loss for this trade because by default, this trade is defined risk.
+[  274.90s ->   279.42s] We're selling a put and then we're capping our risk by buying a put below it. And this
+[  279.42s ->   283.80s] automatically defines our risk. If we want less risk, we'll just make the distance between them
+[  283.80s ->   288.30s] smaller. The smaller the distance, the less risk we have. The further the distance, the more risk we
+[  288.30s ->   291.80s] have. And I'd be like, why would you want more risk? Because the further away, the more risk,
+[  291.86s ->   296.52s] but also the more profit. And so that's how you balance that. So because there is defined risk for
+[  296.52s ->   301.22s] this trade by default, we don't have a stop loss. And we typically just manage early at about 21 days.
+[  301.22s ->   307.27s] So when there's 21 days left in the trade, we'll close it out. So that's how we manage it. Now,
+[  307.35s ->   311.09s] what are the three biggest risks with credit spreads so that we can keep that in mind so that
+[  311.09s ->   316.69s] we can mitigate against them? Number one is market risk. So what is this problem? A market crash could
+[  316.69s ->   322.31s] result in a lot of large losses. So again, if we have four or five, six credit spreads open at a
+[  322.31s ->   328.73s] single time and the market drops hard, we could then see a lot of losses compound against us. And so
+[  328.73s ->   333.31s] again, not really the best situation for us, because we then have to hold that trade out,
+[  333.37s ->   337.85s] which would be fine and probably work in our favor, who knows, but holding through that is never fun.
+[  338.01s ->   344.77s] So the solution is using an indicator to warn you of potential crashes. And when I share my screen and
+[  344.77s ->   348.41s] show you the chart, I'll actually be showing you a free indicator and a way to use it that almost
+[  348.41s ->   353.51s] nobody else does, so that you can actually mitigate that risk. Risk number two is manipulation risk.
+[  353.51s ->   359.27s] So the problem here is when you use a stop loss or a limit order, it can lead to losses due to
+[  359.27s ->   363.61s] market makers manipulating the option of price. Those were a lot of words. What does that mean?
+[  363.85s ->   368.07s] It means that when you have an order sitting out on the market and you're waiting for it to get
+[  368.07s ->   372.11s] filled, whether it's a stop loss, because you want to protect your downside or a limit order,
+[  372.15s ->   376.17s] because you only want to get in at a certain price. When you have that order sitting out on the
+[  376.17s ->   381.43s] market, other people can see it and they know, Hey, if I can move the option price to get to that
+[  381.43s ->   386.17s] level, it will automatically trigger that and I can take advantage of it. So market makers,
+[  386.33s ->   391.55s] hedge funds, they read these orders and they manipulate the market to trigger your trade to
+[  391.55s ->   396.33s] close early when it shouldn't have. So you lose money for no reason and they take advantage of it
+[  396.33s ->   401.25s] and make the money on it. So that's why it's bad. So if you ever set a stop loss or a limit order and
+[  401.25s ->   407.13s] it closed prematurely, that's why. So how do we solve this? We only submit an order when we're ready
+[  407.13s ->   411.31s] to enter or exit. So if we're ready to enter, then we submit a limit order at the mid price.
+[  411.43s ->   416.15s] If we're ready to exit, then we submit a close order at the mid price. And so that's how we can
+[  416.15s ->   420.65s] do it. Now, again, as I'll show at the very end, how to automate this, the automation will handle
+[  420.65s ->   425.19s] this for us that our order is never on the market so that it's kept safe and protected.
+[  425.73s ->   432.19s] Now, risk number three is volatility risk. So if VIX spikes, which is it goes from a low level to a
+[  432.19s ->   438.85s] high level, it spikes up. This can lead to huge and sudden losses as well. Now, because we're doing a
+[  438.85s ->   445.67s] credit spread, our risk is capped. So we'll see those losses spike up. But again, only to a certain
+[  445.67s ->   451.77s] amount because our risk is capped, which is nice. But still VIX spikes will lead to huge entry day
+[  451.77s ->   458.69s] losses. Now, the solution is to adjust your buying power based on VIX. So if VIX is at higher risk,
+[  458.69s ->   465.47s] we can do the same trade, but less of them. Or if VIX is at a high risk point, we can do the same
+[  465.47s ->   470.43s] amount of trades, but makes our width smaller so that our risk on the trade is lower.
+[  471.21s ->   476.25s] Those are two. Now, how do we size our account and scale based on where we're at, we need to keep
+[  476.25s ->   481.17s] in mind the 30% rule, this really helps keep our account balanced and make sure that we're not
+[  481.17s ->   485.39s] trading more than we should. And so you know more than they should have no more than 30% of your
+[  485.39s ->   491.63s] account into trades. This means for easy math, you have a $100,000 account, you should have no more
+[  491.63s ->   500.09s] than $30,000 of it in active trades. So with that in mind, if we have less than $10,000 in our
+[  500.09s ->   506.79s] accounts, then we should do one trade at a time, only one trade active at a time on SPY. If we have
+[  506.79s ->   513.11s] a $10,000 to $25,000 account, we can do once a week on SPY. So once a week basis, but doing it on SPY,
+[  513.19s ->   520.77s] which is a smaller asset. If we have $25,000 to $100,000, we can do this trade once a week on SPX,
+[  520.77s ->   524.43s] a larger asset. Again, if you're doing it on futures, this would correlate to that as well
+[  524.43s ->   529.83s] would be on ES. And so you can do it on a larger asset. If you have 100,000 or more than you can
+[  529.83s ->   535.21s] do twice a week on SPX or ES futures options, and then scale the contract size from there,
+[  535.41s ->   539.07s] you typically don't want to go past doing it twice a week. So like Tuesday, Thursday,
+[  539.23s ->   544.35s] you'll just then after you max out that, then scale the contract. So instead of doing one credit
+[  544.35s ->   551.19s] spread, they'll do two and three and four. So now that you've learned all the best practices around it,
+[  551.19s ->   556.79s] I'm going to show you how I personally trade it, how I adjust it to give me a better win rate and
+[  556.79s ->   561.83s] more smooth and more consistent returns and why I made those changes that you can adjust those for
+[  561.83s ->   566.69s] other strategies you have. So my goal is the same thing. I want to generate monthly income with very
+[  566.69s ->   572.31s] low risk and as little buying power as I can. That way I can generate a good return on my money
+[  572.31s ->   577.49s] and do so consistently so that I can actually generate an income and retirement and never have
+[  577.49s ->   583.39s] to worry about. So what I do is I do days until expiration. Instead of 45 days, I go out in 90
+[  583.39s ->   590.47s] days. Why? The further out in time you go, the higher your win rate is, the less volatility risk
+[  590.47s ->   597.25s] you have, and you get to make more money. And so why is this? Because the further amount or the further
+[  597.25s ->   602.35s] out in time you go, the more time you have for the trade to be right, which decreases your risk.
+[  602.35s ->   607.63s] You also get to, because there's more time, there's more theta decay available to make. So
+[  607.63s ->   612.85s] you collect more profit and it also increases your win rate because further out in time means
+[  612.85s ->   617.23s] further strikes when you're further away from the stock, which you'll see here and a little bit when
+[  617.23s ->   623.61s] I chart this up on whiteboard. Strike selection. How do I pick my strikes personally? In general,
+[  623.73s ->   629.35s] most people do a 30 delta for their credit spreads. I prefer to have a higher win rate. So instead of doing
+[  629.35s ->   636.21s] a 30 delta, I do a 20 delta short. So I sell the 20 delta put and then I buy the 10 delta put.
+[  636.55s ->   642.37s] And so that way I'm further away from the stock, which increases my win rate and leads to a more
+[  642.37s ->   647.01s] consistent return. I'll show you the back of this here in a second. I'm still able to actually credit
+[  647.01s ->   652.61s] roughly the same target depends on where volatility is. Sometimes it's closer to 20, but still I'm in the
+[  652.61s ->   658.41s] same credit target range. My take profit, I like to take profit faster. So instead of a 50% normal
+[  658.41s ->   664.05s] take profit, which is typically best practice, I go on the lower side of that about 20%. That way
+[  664.05s ->   669.27s] as a 25% take profit, my trades are closing faster, which means I have a less trades open
+[  669.27s ->   675.79s] at a time, which means I have less risk on in the market. So that's why I do that. I also do an
+[  675.79s ->   681.57s] early management of 21 days as a standard investor because as well on the assets I use, ES, SPX and
+[  681.57s ->   689.01s] SPY are the main assets. I typically like to stay with ES and SPX. Why tax advantages section 1256,
+[  689.25s ->   693.63s] I believe is the name of it. And so I get to basically pay less taxes on the profits I make
+[  693.63s ->   700.24s] if I do it on futures options, or if I do it on SPX. Now here's the back test of my setup of the
+[  700.24s ->   705.14s] rules I just explained to you. Again, you can see it's more consistent, more stable. You do have those
+[  705.14s ->   710.58s] red days and red periods. We can see here where we do drop again around 2020, 2018, things like that,
+[  710.58s ->   716.12s] 2018, 2020. And then again, you can see here the decline in 2022. We'll have that slower downtrending
+[  716.12s ->   722.50s] period. We can see here two weeks to close the trade. Not bad. Average winner about $500. Average
+[  722.50s ->   728.08s] loser about 7,000. So again, you will have those larger losses, but they're still capped, which is
+[  728.08s ->   734.48s] nice. Now, again, you can add a stop loss to this to decrease the risk, but it is also the same time
+[  734.48s ->   738.78s] going to affect your win rate. Overall, the great strategy here. Remember this on SPX. So if you want
+[  738.78s ->   746.40s] to do this on SPY, just divide all this by 10. So your max loser would be $700 about and your average
+[  746.40s ->   753.54s] winner, say average loser would be about $700. And your average winner would be about $50 $60. So
+[  753.54s ->   757.08s] again, if you want to do it on SPY for smaller accounts versus what we're showing us on SPX.
+[  757.20s ->   763.82s] Now again, here's the one based on best practices. Obviously, you can see here does well 87% win rate,
+[  763.82s ->   770.14s] there just seems to be more jagged, more downside action versus this one is a bit smoother up with
+[  770.14s ->   775.74s] a 97.5% win rate. So that's why those are the settings I made pushing it further out in time,
+[  776.04s ->   781.50s] having a smaller take profit and kind of moving my deltas further away. So that gives me a smoother
+[  781.50s ->   787.20s] curve on my return. How do I trade credit spreads at different markets? Okay, what about bullish
+[  787.20s ->   791.60s] markets? Bullish markets are defined as higher highs and higher lows. That means the market is
+[  791.60s ->   796.64s] moving higher, it's moving. If that is true, I'm going to follow the ideal trade setup, which is
+[  796.64s ->   800.24s] going to be on base practices, or if I'm using mine, whichever one you want to use, you're just
+[  800.24s ->   804.62s] going to follow that typical setup. Because again, put credit spreads are made to profit in upward
+[  804.62s ->   810.12s] markets. Now we're in a bearish market, which means lower lows and lower highs, the market continuously
+[  810.12s ->   814.50s] going down. That means we should consider just staying out of the market as a whole. Why? Because
+[  814.50s ->   819.36s] put credit spreads do not fake money when the market is trending down. So there's no reason to get into
+[  819.36s ->   822.84s] them at that point, unless the market starts reversing. But that's a different story.
+[  823.14s ->   826.64s] The market is just consistently trending down something you want to stay out of, you can even
+[  826.64s ->   830.88s] reverse it and do a call credit spread instead, which will make money to the downside about the
+[  830.88s ->   836.12s] different day. We have a sideways market, which again, which means we're stuck between the same
+[  836.12s ->   840.18s] support and same resistance level, the market is just bouncing up and down between those two levels.
+[  840.30s ->   845.16s] If that's happening, we still follow the normal best practice setup and whatever stuff you want to
+[  845.16s ->   849.70s] follow, because that will make money on time decay, because the market's doing nothing in general,
+[  849.70s ->   853.94s] going up and down. But time is moving on, which means we collect that data decay profit.
+[  854.76s ->   859.42s] So what are some of the advantages of using a credit spread? So a generally consistent income
+[  859.42s ->   865.70s] as you saw from the results, not a 97.5% win rate. It's very easy to set up. It's just two options.
+[  865.70s ->   870.66s] And you don't really do anything outside of that, meaning there's very little adjustments. You just
+[  870.66s ->   876.04s] put the trade on a weekly basis, depending on your account size, and just let it go. Now, this can be
+[  876.04s ->   880.48s] stacked for continuous income, as I mentioned, if we do it once a week, or twice a week, we'll then
+[  880.48s ->   887.38s] have a lot of positions open and closing and open and opening at the same time, creating basically a
+[  887.38s ->   893.47s] perpetual income stream. It also requires less buying power. So small account friendly, or here to someone
+[  893.47s ->   898.85s] who wants to take less risk. Again, you can do it this way, compared to selling a put. So again,
+[  898.85s ->   905.13s] it has the same type of profile where it works the about the same is this way you get to define your
+[  905.13s ->   911.38s] risk. You have caps, downside risk. So again, your risk to the downside is capped to a certain amount.
+[  911.38s ->   918.38s] But also to that, you have defined profits as well. And this can be played in all different types of
+[  918.38s ->   923.58s] ways. You can do different underlyings, different expirations, different widths of the spread and
+[  923.58s ->   929.23s] things like that. What are some of the disadvantages of credit spreads potential for large losses? Again, if you
+[  929.23s ->   934.01s] have a lot of them going at a time, you can then have losses on all of them, they can be complicated. If
+[  934.01s ->   938.51s] you're new to options, hopefully not too much, I'm about to walk you through it so that you can see it and
+[  938.51s ->   943.31s] be able to do it yourself. So stay tuned, I'll be sharing my broker here soon. I require strict buying power
+[  943.31s ->   947.55s] management, you want to make sure you're on top of how much money you have in trades and how much you're using
+[  947.55s ->   952.57s] so that you're not using too much or over trading. Again, if you want to protect your risk even more, you can
+[  952.57s ->   957.91s] hedge it that will cost additional money. You have capped profits, that also means capped losses, good and
+[  957.91s ->   962.77s] bad. And you have assignment risk, which means you can be assigned shares if you're not trading
+[  962.77s ->   969.27s] something that has no assignment risk like futures or SPX. So let's dive into a real trade example. I'll
+[  969.27s ->   973.09s] show you a whiteboard. I'll walk you through everything I just talked to, give you a visual
+[  973.09s ->   977.49s] that will dive into the broker to see exactly how this is done. So here's the visual so you can
+[  977.49s ->   982.41s] understand all these numbers I just gave you and see a visual of it. Okay. So let's say this is a
+[  982.41s ->   986.77s] stock. It's just minding its own business and trending up. What a great stock. What we're doing here
+[  986.77s ->   990.63s] with a put credit spread, all we're doing is that we're betting that this stock will go higher,
+[  990.63s ->   995.73s] or aka we're betting the stock will stay above a certain level. So you can see here, I can go all
+[  995.73s ->  1000.61s] the way down here and bet that the stock will stay above this. How do I do this? I do this by selling
+[ 1000.61s ->  1005.95s] puts on say minus P selling put. And then right down here, I define my risk by buying a put this is
+[ 1005.95s ->  1011.91s] what a put credit spread is sell put by put. And again, both of these are below the stock. And that means
+[ 1011.91s ->  1017.57s] as long as the stock stays above this level right here, can I start? That's a star above this level
+[ 1017.57s ->  1021.99s] right here, the short put that I make money. That means that the market goes up, I make money if
+[ 1021.99s ->  1027.15s] the market goes sideways, I make money if the market goes down, I make money as long as it's above my
+[ 1027.15s ->  1031.85s] level, the market breaks here, that's where I start losing money at expiration. So that's what you want
+[ 1031.85s ->  1035.81s] to keep in mind. Unlike a stock where you have to where you have to make money on the way up, and you
+[ 1035.81s ->  1040.95s] only make money there and you lose money down. This gives me so many more options to make money
+[ 1040.95s ->  1047.09s] up down sideways, whatever I make money unless it crashes my level down here, which is why you can
+[ 1047.09s ->  1053.39s] have those very high win rates on these trades. And again, that's how this works. And that's the
+[ 1053.39s ->  1059.77s] spread difference and whatever the distance of this spread is, that's going to be your risk. And so
+[ 1059.77s ->  1065.05s] again, you can use that as your wrist. Again, the further the greater the distance between those two
+[ 1065.05s ->  1069.65s] options, the more risk you have, the more profit you make, the shorter the distance, the less risk and
+[ 1069.65s ->  1074.75s] less profit. So that's how that works. That is what I put credit spread looks like on a chart, how it
+[ 1074.75s ->  1079.09s] looks like where you make money from it and things like that. Now, how do we actually do this in the
+[ 1079.09s ->  1084.83s] broker? So if I share my screen here, refresh the page that it loads sometimes need to refresh.
+[ 1085.71s ->  1090.17s] Anyways, you can see here how I'm running strategies just like this and doing pretty well, not too bad
+[ 1090.17s ->  1094.01s] here. And so let me show you how to actually do this. So I'm going to go to the trade tab. Like I
+[ 1094.01s ->  1097.69s] mentioned, I love doing these on futures options because they give me more buying power. So I'll just
+[ 1097.69s ->  1102.21s] show you an example with ES. But again, you can do this on any asset. Again, that that is liquid
+[ 1102.21s ->  1106.01s] options. First thing I'm looking at here when I see the options chain, which is what this page is
+[ 1106.01s ->  1112.21s] called is in the middle shows me my expiration dates when different contracts expire. And so like I
+[ 1112.21s ->  1117.99s] mentioned, I look closest to 90 days for this. And so I'm going to look for a strike that has closest to 90
+[ 1117.99s ->  1125.03s] D, which stands for 90 days. So I scroll down, you can see here there's a 95 D. This is 95 days, you can see I do
+[ 1125.03s ->  1132.41s] have some positions here already because I like doing that but 95 D is closest to 95 days or 90
+[ 1132.41s ->  1138.07s] days. So I'm going to click on this. Now on the right side of this on the right side of this middle
+[ 1138.07s ->  1142.51s] column is going to be my put contracts. So this is going to be where I do it. Now remember for me,
+[ 1142.59s ->  1147.57s] I do I sell the 20 delta and I buy the 10 delta. So this is what it looks like. First, I need to make
+[ 1147.57s ->  1151.47s] sure that the broker is showing the delta. So I'm going to click on this column, make sure it's showing me
+[ 1151.47s ->  1157.97s] delta. From there, I then want to find the 20 delta. So it's gonna look like 0.20. Now if you
+[ 1157.97s ->  1162.89s] can't find the exact of 0.20, just find the next closest, whether that's 19 or 21, you can pick that
+[ 1162.89s ->  1168.37s] but 0.20, 20 delta, perfect. I'm going to sell this contract. Then I'm going to scroll up a bit.
+[ 1168.43s ->  1172.61s] I'm going to find the 10 delta or the closest one to it's right here, 10 delta. I'm going to buy this
+[ 1172.61s ->  1177.79s] contract. Sweet. So now that we've done that, we can now look at the numbers for this trade.
+[ 1177.79s ->  1183.07s] So you can see here, about an 80% win rate, which is really good. This is standard, right?
+[ 1183.57s ->  1188.61s] But since I'm closing the trade early at a 25% profit, that's what pushes my win rate higher.
+[ 1189.11s ->  1195.27s] You can see here, my max profit is about $1,500. And I'm putting up a little less than $4,000 to be
+[ 1195.27s ->  1199.51s] in this trade. So let's look at the math to understand this better. I have the max potential
+[ 1199.51s ->  1206.13s] to make $1,500. And so if I'm going to multiply this out, what I'm going to do is I'm going to multiply
+[ 1206.13s ->  1214.01s] it by 25 because that's my 25% profit. So 25% profit, that gives me a max profit of $375. So
+[ 1214.01s ->  1221.23s] again, if I'm looking at this $375 is the profit that I'm looking to target here. Now, how does this
+[ 1221.23s ->  1226.29s] compare to the amount of money that I'm putting up for this trade? I'm putting up about $4,000 worth
+[ 1226.29s ->  1232.27s] of money to be in this trade. So if I take this math and then divide it by 4,000, that means that
+[ 1232.27s ->  1238.41s] I'm able to make a 9% return on my money. 9% return in two weeks. This trade takes about two
+[ 1238.41s ->  1243.51s] weeks to close. Every two weeks, I'm making a 9% return on my money. And I have at least an 80%
+[ 1243.51s ->  1247.97s] win rate, but if not more, if I close this trade early, and that's what makes this a great trade.
+[ 1248.39s ->  1252.67s] And so that's what it's doing it on futures. If you do the same thing on an asset like SPY,
+[ 1252.77s ->  1257.43s] again, SPY will be a lot cheaper for my smaller accounts. But again, you'll see the buying power
+[ 1257.43s ->  1263.07s] return be slightly different. So again, I go into 95 days, this closes to 90. I'm going to sell the
+[ 1263.07s ->  1268.77s] 20 delta right here, sell this one, and the buy the 10 delta. Just like this, my max profits a lot
+[ 1268.77s ->  1274.15s] smaller, my buying power is 3000. Again, if I want to do less buying power, I just bring this one
+[ 1274.15s ->  1279.63s] closer in, my buying power drop from 3000 to 1300. So again, you can change it like that. But this is
+[ 1279.63s ->  1286.18s] how I run it. So you can see right here, the big difference that futures makes over stock easier,
+[ 1286.18s ->  1295.92s] my max profit is 300 with about $3,000 put into the trade. So if I do 300 times 25%, it means I'm
+[ 1295.92s ->  1301.56s] going to make about $75 on this trade, and I'm putting up about 3200. So I'm making about a 2%
+[ 1301.56s ->  1308.84s] return on my money in about two weeks. So again, 2% compared to 9%. Obviously, both are great. A 2%
+[ 1308.84s ->  1313.10s] return in two weeks is so much better than a bank would ever give you. But you can see that futures give
+[ 1313.10s ->  1317.40s] you that extra advantage because of the leverage they give you. Anyways, that's how you structure
+[ 1317.40s ->  1321.98s] it in the broker. Now remember, I said there's a lot of risk when it comes to credit spreads. And
+[ 1321.98s ->  1327.82s] again, that that dials around or is around market crash risk and volatility risk risk. So I want to
+[ 1327.82s ->  1333.06s] quickly show you how to overcome those or best mitigate those. As we go here into the indicator
+[ 1333.06s ->  1336.78s] section, no matter what charting platform we're using, whether trading view or your broker, they have
+[ 1336.78s ->  1343.52s] this. It is called Bollinger Bands B O L I N G E R Bollinger Bands from here. Most people use the
+[ 1343.52s ->  1346.70s] settings like this. But I'm gonna show you a tweak that most people don't know. If you go into the
+[ 1346.70s ->  1351.98s] settings, you can change the 22 to 200. And this is going to change everything for you. Okay. So look,
+[ 1352.22s ->  1357.50s] this changes what the setting we just changed took the middle line and turn it from a 20 day moving
+[ 1357.50s ->  1365.10s] average to hunt to a 208 moving average, which means this shows us basically over a year period of where
+[ 1365.10s ->  1371.02s] the asset should be trading. Okay, so in this instance, it shows us this asset, which we're
+[ 1371.02s ->  1375.50s] looking at the ES should be trading in this range, which means that we get out above it,
+[ 1375.50s ->  1380.30s] it's most likely going to pull back. If we get below it, it's most likely going to push back up.
+[ 1380.30s ->  1384.62s] So this is what we're seeing. So you probably see where I'm going here, right? If we break out of these
+[ 1384.62s ->  1389.18s] ranges, it's very likely to pull back. So you can see here, we break out to the upside, it pulls back to
+[ 1389.18s ->  1394.94s] the downside, break out to the bottom side, they both break back up and upside down, bottom
+[ 1394.94s ->  1399.34s] side up. And how do we use this as option seller, whether we're doing per credit spreads or something
+[ 1399.34s ->  1405.02s] else, this is an incredible tool, right? If the market starts breaking out above this range,
+[ 1405.02s ->  1410.70s] we can then take off some of our trade to reduce our risk in the case that it pulls back against us.
+[ 1410.70s ->  1415.90s] So that is a really great way to do it. We could also add hedges in this range. If the market starts
+[ 1415.90s ->  1420.22s] getting above this range, we might want to put on more hedges, protect our downside, maybe do some
+[ 1420.22s ->  1424.70s] inverse trades that call credit threads, which will make money to the downside and help mitigate our risk
+[ 1424.70s ->  1430.30s] more so that we're only spending money on hedges when we need to because hedges can be a big cost.
+[ 1430.30s ->  1434.46s] But if we only do it when we need to, that's going to save us money, but still provide us with downside
+[ 1434.46s ->  1439.66s] protection. And then again, vice versa up down here, if we're way down here, and we're about to head back
+[ 1439.66s ->  1445.02s] up, we might as well sell put credit spreads because then we get profit on the upside. And we've already
+[ 1445.02s ->  1449.66s] gone down below us that we can easier that were to save you from 2020 from this little down period in
+[ 1449.66s ->  1456.54s] 2021 other than this slower down peak in 2023. And so again, this is a great free tool to use to
+[ 1456.54s ->  1461.82s] understand where's my risk in the market? Is it likely to keep trading in a range or is or is it
+[ 1461.82s ->  1467.74s] likely to pull down or pull up? That's that. Now we're looking at VIX. VIX helps us assess the
+[ 1467.74s ->  1473.50s] volatility risk. Okay, when VIX is low, we have higher risk. Why? When VIX is down here, there's a
+[ 1473.50s ->  1478.22s] higher chance that it goes up. When VIX is up here, there's a higher chance that it moves back down.
+[ 1478.22s ->  1483.58s] And as option sellers, our risk comes when VIX is down here. So remember, I said we have that 30%
+[ 1483.58s ->  1487.98s] rule, we put no more than 30% of our account into trades, what we should be doing is it the risk up
+[ 1487.98s ->  1492.94s] here is the lowest risk for us, then this is where we should be doing 30% of our account and trades.
+[ 1492.94s ->  1497.34s] If VIX is down here, we're at the higher risk, maybe we should only use 15% of our account.
+[ 1497.34s ->  1501.02s] So that way, we're still in trade, we're still jet, we're still generating a profit,
+[ 1501.02s ->  1505.90s] but we're in less trades so that we don't have a big loss at big spikes. And then we have more
+[ 1505.90s ->  1511.10s] money to take advantage of those moves. So that's how we mitigate those risks right there. So that's
+[ 1511.10s ->  1514.94s] the screen share real trade example of actually how to put that into action. Hopefully you learned a
+[ 1514.94s ->  1518.94s] lot. Everything I just gave you will show you how to do credit spreads and actually use them to make
+[ 1518.94s ->  1523.50s] money. So go put that into action. Now, if you'd like to learn how to take those rules and automate
+[ 1523.50s ->  1527.82s] them, that's exactly what I'm about to show you here in the next five minutes. Okay, so let's turn the
+[ 1527.82s ->  1534.38s] strategy into a bot aka hands free passive income. So you can not only protect your downside,
+[ 1534.38s ->  1537.98s] make some money, but also do so without being stuck to the screen. So you can actually enjoy
+[ 1537.98s ->  1542.78s] retirement, be spend time with your family and actually enjoying the outdoors. So number one,
+[ 1542.78s ->  1549.98s] you need to sign up for an audit for an automation software. So auction Alpa is allows for automation,
+[ 1549.98s ->  1555.66s] it allows for automation around put credit spread, which is a great. So you so you can do that. It offers
+[ 1555.66s ->  1560.94s] paper trading, which makes it great. The only downside here is support is slow. If you need
+[ 1560.94s ->  1567.42s] help. And also they don't support all the brokers. And they don't allow future futures options, which is
+[ 1567.42s ->  1570.94s] the biggest con. So if you want to do futures options, you wouldn't be able to do it on here.
+[ 1570.94s ->  1576.30s] But still, if you want to do an SPX or spy credit spread, you can do this on here. Now trade steward.
+[ 1576.30s ->  1581.74s] Again, this allows for options automations, it does put credit spreads, they will I will I do it on
+[ 1581.74s ->  1587.18s] SPX and spy but not futures, their support is slower, they only support one broker. So you have
+[ 1587.18s ->  1591.66s] to make sure you use the broker, and they don't offer paper trading. So if you wanted to test this
+[ 1591.66s ->  1595.90s] spot out before risking your own money, you want to be able to do that. Now you can also use the
+[ 1595.90s ->  1601.66s] options auto trader, this allows you to automate options, including futures options, stock options,
+[ 1601.66s ->  1606.62s] index options, all of the above. So whether you want to do futures, SPX spy, you can do that here.
+[ 1606.62s ->  1611.42s] It supports four different brokers, which is literally the platform that supports the most
+[ 1611.42s ->  1616.06s] brokers out of all the of all the automation tools. If you need help with anything, you get
+[ 1616.06s ->  1620.46s] support in less than three hours. And we offer paper trading. And you hear that I said we yes,
+[ 1620.46s ->  1626.30s] because this is the tool that I've spent a year painstakingly building, running my own six figure
+[ 1626.30s ->  1631.58s] accounts off of, and have helped over 600 people generate monthly income using this software
+[ 1631.58s ->  1635.02s] software. And so again, that's why I'm sharing it with you. Again, it was built to be the best
+[ 1635.02s ->  1639.34s] because it was built by a trader who didn't like the other one. Okay, anyways, let's slide in.
+[ 1639.34s ->  1644.14s] Step number two is connect your broker account. So once you have an automation tool that you can use,
+[ 1644.14s ->  1648.54s] you then need to connect your broker account to it. And so the options auto trader supports the most,
+[ 1648.54s ->  1653.26s] we support Schwab, TastyTrade, TradeStation and Tradier. So if you have one of those, you're good to go.
+[ 1654.14s ->  1657.50s] Once you connect your broker account, then you want to plug in the rules for this strategy,
+[ 1657.50s ->  1661.42s] stick the rules I gave you and plug it into the bot. I'll show you a quick demo of that here
+[ 1661.42s ->  1665.50s] in a second. Then from there, you'll let the bot run and generate monthly income.
+[ 1665.50s ->  1671.74s] Here's an example of a bot that's made me $7,500 so far this month, which has been pretty great.
+[ 1672.62s ->  1676.94s] So here's a quick five minute demo to see exactly how this works and how it's actually quite simple.
+[ 1676.94s ->  1683.90s] Okay, so let's dive in. So this is an inside look of the options auto trader. So I'm in the software,
+[ 1683.90s ->  1687.90s] so that's the step one, you need to sign up for the options auto trader. Number two, you need to
+[ 1687.90s ->  1691.98s] connect your broker account, which I've already done. And then three, you need to create your
+[ 1691.98s ->  1696.30s] first bot based on the rules that I gave you. So I'm gonna show you exactly how that works. Click
+[ 1696.30s ->  1700.70s] on create auto trader so you can create your bot. Next is you'll pick this blue one that says create
+[ 1700.70s ->  1705.85s] auto trader because you know all the rules you want to plug into it. Just like this, we're now going to
+[ 1705.85s ->  1710.49s] pick the strategy. So again, we're running credit spreads, we click on credit spreads. And again,
+[ 1710.49s ->  1714.97s] pick the asset you want to do going to do spy SPX or futures, you can do that. So again,
+[ 1714.97s ->  1720.33s] ES is always a fun one to do it on. As I showed in the example earlier, I like to go 90 days out into
+[ 1720.33s ->  1725.37s] the future. So I'm gonna say 90 DTE. And then again, I do my credit spread where I do I sell the
+[ 1725.37s ->  1730.73s] 20 delta. So minus one means sell. So I'm going to sell a contract at the 20 delta. I'm going to buy
+[ 1730.73s ->  1736.94s] one at the 10 delta. So this is how I perfectly structure mine. Next, now that I told it how I want
+[ 1736.94s ->  1742.86s] it to execute a trade, now I need to tell it when to. And so when do I want this trade to enter? For most
+[ 1742.86s ->  1746.94s] of you guys, you'll just be doing it once a week. If you have a larger account size, you'll do it
+[ 1746.94s ->  1751.90s] twice a week and things like that. But I'll just do once a week for now. So once a week on Wednesday,
+[ 1751.90s ->  1757.03s] but this is set to every Wednesday, I'll place the trade. Next, how about with the trade to be closed,
+[ 1757.03s ->  1762.79s] like I said, I do a 25% take profits to take profit percentage 25%. And I close the trade early
+[ 1762.79s ->  1768.47s] at 21 days. So just like that. Now once the trade is on, it will manage the trade for me. And it'll do it
+[ 1768.47s ->  1775.72s] based on a 25% profit or close early at 21 days. From here, what I'm going to do is I'm going to
+[ 1775.72s ->  1779.40s] set up some state guards for the bot, how much money should I allow this bot to trade with,
+[ 1779.40s ->  1783.88s] like I mentioned, it's going to be around 4000 or so dollars for the box plays the trades,
+[ 1783.88s ->  1789.08s] I'm gonna put $5,000 here. And this should allow the bot to place at least one trade. So 5000 here.
+[ 1789.08s ->  1793.96s] But remember, I said market crash is very important and volatility risk is very important when it comes
+[ 1793.96s ->  1797.88s] to credit spreads. Well, now with just a simple click of the button, I can enable that.
+[ 1797.88s ->  1803.40s] So let's say I click enable this to VIX based buying power. This is going to change how much
+[ 1803.40s ->  1808.60s] money the bot is using based on where VIX is. You can see here VIX is 40 plus or VIX is higher.
+[ 1809.24s ->  1814.12s] It's going to use the whole amount and VIX is lower mean I'm at more risk, it's going to use
+[ 1814.12s ->  1819.08s] less money. So just like that, I can automatically size my trading based on where VIX is without
+[ 1819.08s ->  1822.52s] having to do anything because the bot will do it for me. And that's just one click.
+[ 1822.52s ->  1826.28s] Now remember how we use the Bollinger band identify when the market was risky,
+[ 1826.28s ->  1831.24s] I can enable this and it checks that for me. So just by enabling this, it will now
+[ 1832.04s ->  1836.84s] get me out of positions when the market has that high chance of crashing. So when it starts to turn
+[ 1836.84s ->  1841.24s] back down after breaking above, then it will actually start getting me out of positions to
+[ 1841.24s ->  1845.96s] lower my risk because it knows the chance of it pulling back is quite high. So just like that,
+[ 1845.96s ->  1851.56s] I've helped mitigate two of the biggest risks as an options trader as an option seller just by
+[ 1851.56s ->  1855.72s] clicking two buttons. Next, click save and continue. You can review the bot settings,
+[ 1855.72s ->  1860.44s] see what you want, all that stuff from here, which is great. And then once you set it live,
+[ 1860.44s ->  1865.16s] that bot will be running and you'll be able to track the trades, track performance, track the
+[ 1865.16s ->  1869.80s] the performance and change the settings as you'd like. All right, guys, that's how simple it is. I
+[ 1869.80s ->  1874.36s] hope that you see the office auto trader, see it as awesome, regardless of whether you want to use
+[ 1874.36s ->  1878.28s] automation or not. I've given you all the rules that you can actually put this into action. But
+[ 1878.28s ->  1882.68s] if you're interested in doing a 30 day test drive of the office auto trader,
+[ 1882.68s ->  1888.84s] click the link down in the description below or go to www.officeautotrader.com slash get started
+[ 1888.84s ->  1895.56s] now to do your 30 day test drive. All right, guys, see you later and see you in the next video.

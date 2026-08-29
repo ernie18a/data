@@ -1,0 +1,42 @@
+[    0.00s ->     4.10s] This helped us article, I'm going over trend trading versus counter trend trading rules.
+[    4.54s ->     8.16s] So again, as you know, we are trend followers here in this credit spreads program, which
+[    8.16s ->     9.84s] means that we trade credit spreads with the trend.
+[   10.20s ->    12.70s] If the market's bullish, we trade put credit spreads.
+[   12.94s ->    15.64s] If the market's bearish, we trade call credit spreads.
+[   15.70s ->    19.34s] If the market's neutral, we take far out put credit spreads.
+[   19.42s ->    21.26s] So that's how we do it in this program.
+[   21.64s ->    27.68s] But again, there are a couple approaches here inside this program where you'll get kind
+[   27.68s ->    29.24s] of counter trend trades.
+[   29.24s ->    34.12s] This is an elastic rejection trade, which is where we're trading a call credit spread
+[   34.12s ->    35.18s] in a bullish market.
+[   35.38s ->    37.34s] So how do we trade with these rules?
+[   37.42s ->    42.34s] We'll simply go to the success path here, which shows you how to have success with this program
+[   42.34s ->    47.38s] and graduate, which means you're making monthly income consistently, which we've had so many
+[   47.38s ->    51.20s] people graduate from already, which means 15 profitable trades in a row without losing.
+[   51.74s ->    54.12s] Anyways, the first step is to go through the trading handbook.
+[   54.20s ->    56.68s] If you click on the trading handbook, it'll take you to it.
+[   56.68s ->    59.80s] And we have the different explanations for all our strategies.
+[   59.96s ->    62.20s] Again, this is also linked below at the bottom of this video for free.
+[   63.02s ->    67.00s] You also have the trade sizing, early exit rules, and the counter trend trading rules,
+[   67.06s ->    68.30s] which we'll walk you through exactly here.
+[   68.72s ->    73.62s] But again, what we're doing is if you're trading counter trend, it's a simple thing you need
+[   73.62s ->    77.34s] to know is go in with less size so that you're more safe.
+[   77.98s ->    84.88s] Only enter the trade on a super strong day that's going in the opposite direction so that
+[   84.88s ->    86.14s] you can kind of offset it.
+[   86.22s ->    89.12s] Again, that's all explained in that free handbook link down below.
+[   89.76s ->    94.30s] And then last but not least, you want to make sure that you're prioritizing going further
+[   94.30s ->    95.56s] out than collecting more money.
+[   95.56s ->    99.90s] You can easily collect a lot of money on these counter trend trades, but you're going to
+[   99.90s ->   100.46s] lose more.
+[  100.56s ->   107.32s] Instead, go out further and collect the minimum credit as dictated by our algo and in that
+[  107.32s ->   107.68s] handbook.
+[  107.74s ->   110.58s] The algo being right here telling you, hey, you should collect.
+[  110.68s ->   111.60s] Let's wait for this a little bit real quick.
+[  112.10s ->   112.90s] You should collect.
+[  115.48s ->   116.40s] It's taking a while.
+[  116.64s ->   116.96s] I don't know.
+[  117.60s ->   119.94s] So for instance, for here, you should collect 24 cents.
+[  120.34s ->   123.64s] Collect 24 cents but go out as far out as possible.
+[  123.64s ->   125.22s] Anyways, I hope that makes sense.
+[  125.28s ->   129.60s] If you have any questions, please open up the chat box or attend our office hour calls
+[  129.60s ->   130.94s] in the Discord group chat.

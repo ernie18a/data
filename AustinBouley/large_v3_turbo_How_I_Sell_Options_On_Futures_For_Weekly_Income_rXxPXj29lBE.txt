@@ -1,0 +1,107 @@
+[    0.00s ->     4.08s] In this video, I'm going to walk through how I sell options on futures for weekly income.
+[    4.24s ->     9.50s] This is consistent, low risk, and tax efficient. This is the same system that I use, and by the
+[    9.50s ->    13.20s] end of this video, you'll know exactly how to do it yourself, from looking at the chart to
+[   13.20s ->    18.26s] actually placing the right trade. My name is Austin. I've helped over 5,000 options traders
+[   18.26s ->    22.70s] implement exactly what I'm going to teach you today, and I made over $50,000 last year from
+[   22.70s ->    28.08s] selling options. The whole goal behind this weekly income system is to hit consistent base hits,
+[   28.08s ->    32.44s] not full runs. If we go to Taste the Trade, we can look at my returns from the last 14 days. Let's
+[   32.44s ->    37.84s] take a look at two weeks. You can see here I made about $695. If we go to the last 30 days, you can
+[   37.84s ->    44.06s] see here I made about $2,800. This is the exact system I'm going to teach you right now. With that
+[   44.06s ->    50.42s] said, what are futures options? Futures options are just trading options on futures. Futures is a
+[   50.42s ->    55.52s] financial asset like commodity currencies or equities that you can trade. Options are essentially betting
+[   55.52s ->    60.12s] on what the futures will do. The beautiful part about trading futures options over other options
+[   60.12s ->    65.00s] like ETF options or stock options is that they trade $24,500, which means you can get out overnight
+[   65.00s ->    69.64s] if needed. They have higher margin, which means you put up less money up front but can make way more.
+[   70.10s ->    75.28s] It's tax efficient, so you're taxed on it less, and it's super liquid, so that means you have very
+[   75.28s ->    79.42s] small slippage. If you've been selling options for any amount of time, you may want to look at futures
+[   79.42s ->    84.36s] because it gives you a ton of advantages. What is my go-to strategy for weekly income? It's quite
+[   84.36s ->    89.68s] simple. I do a short put strategy. Short put is the most simple yet profitable strategy in the
+[   89.68s ->    95.30s] options selling world. It's simple because you do one thing. You sell one single option, no complex
+[   95.30s ->   100.78s] legs, no weird things going on, and it makes money by if the market drops but stays above your strike
+[  100.78s ->   105.22s] price, you make money. The market stays the same, goes about flat, you make money. If the market goes
+[  105.22s ->   110.40s] higher, you also make money. Now again, we tend to use our indicator, but I'm going to explain the rules
+[  110.40s ->   116.48s] and I'll show it to you on the broker. I use ES or MES as my main asset. You can also use this on
+[  116.48s ->   123.88s] SPY or SPX. I'm going to sell a put at 60 DTE, 5 Delta. I'm going to take profit at 25% and have a
+[  123.88s ->   128.56s] stop loss of 200%. Don't worry, I'll give you this document for free at the end of the video so that
+[  128.56s ->   133.22s] you can reference it yourself, but when you're doing a trade like this, it's super simple. You just go to
+[  133.22s ->   139.54s] the trade tab. You find the symbol you want, ES. I'm going to find the days out. I'm going to find
+[  139.54s ->   145.54s] the days out. That's closest to 60. So I can come here to 57 days. I can click on this. I'm going to
+[  145.54s ->   150.70s] go through all the contracts. I'm going to look for the put side on the right side that has a Delta.
+[  150.98s ->   157.88s] So this right here, oh, closest to five. So I go down here, five Delta is about right here. I can then
+[  157.88s ->   163.50s] sell this options contract. By selling this option contract, let me make this a tad bigger for you
+[  163.50s ->   169.10s] guys. It actually could generate a ton of returns. What do I mean by that? I have a 99% win rate.
+[  169.64s ->   175.52s] I have the ability to make a $975 profit, and I'm only putting up about $7,000 for this trade.
+[  176.06s ->   179.12s] What does that tell me? I can make a huge return on my money. 7,000, make a thousand,
+[  179.20s ->   185.34s] make 40% return on my money. That's amazing. But again, we're using a 25% profit and a 200% stop loss.
+[  185.34s ->   192.10s] So if I have a $1,000 return, once I hit a $250 profit, I'll close the trade out. And then
+[  192.10s ->   196.76s] considering the same thing, if it goes up to X, so from 1,000 to 2,000, I'll have a $2,000 loss,
+[  196.80s ->   201.00s] I'm going to close the trade out as well. So that's what that structure looks like. Make 250,
+[  201.18s ->   206.58s] lose 2,000 with about a 99% win rate. Now, the beautiful part about keeping our stop losses tight
+[  206.58s ->   212.26s] and our take profits tight is that we close out trades faster. So trades close every seven days. So
+[  212.26s ->   218.46s] that's why this is a weekly income system. We may be using longer DTE, but because of our
+[  218.46s ->   222.44s] tight take profit and stop loss, we're actually closing the trade every seven days. I close the
+[  222.44s ->   228.02s] trade in one day, six days, four days, all within a one week time period. So I put on this trade right
+[  228.02s ->   233.76s] now, very high odds that I close it in one week within seven days. So again, sometimes they'll go
+[  233.76s ->   238.00s] over some day, eight, nine days, but on average about seven days is the close of that trade.
+[  238.00s ->   242.22s] So that's essentially how you put on the trade, how you select the option. Super simple. You can
+[  242.22s ->   247.14s] do that on any broker. And again, like I mentioned, this is 60 day trades, but it's weekly income
+[  247.14s ->   252.04s] because of the fact that we're able to enter and it closes be either by take profit or stop loss
+[  252.04s ->   256.46s] shorter. Now you might be wondering, cool, that's a great strategy. How do I implement it? What is all
+[  256.46s ->   260.82s] the rules here? Glad that you're asking. It all comes down to managing risk, right? Because you can have
+[  260.82s ->   264.22s] a great strategy, but if you don't manage risk correctly, you're going to lose. And that's where it all
+[  264.22s ->   268.96s] comes down to buying power allocation. If you're low risk, you can do about 30%. If you're medium
+[  268.96s ->   273.98s] risk, you can do 40%. If you're high risk, 50%. What does this mean? Okay. Let's explain this more
+[  273.98s ->   278.80s] simply. If you're someone who loves risk, go to the high risk category. And that means you can use
+[  278.80s ->   284.32s] 30% of your money in the account on trades. Okay. If you're someone who's medium risk, where most people
+[  284.32s ->   290.90s] are, use 40%. So if you have a $100,000 account with medium risk, $40,000 of the 100K should be in
+[  290.90s ->   298.52s] trades. Let me explain this a little bit better. If we have a 100K account and you are 40%, you're
+[  298.52s ->   304.60s] putting 40% of your money into funds. That means 40,000 of it will be in trading. If that's the
+[  304.60s ->   310.98s] case, each one of these trades, as we just showed you, takes $7,000. So if that's the case, that means
+[  310.98s ->   316.84s] I can do some math, just quick. 40 divided by seven gives me about five trades because I can have five
+[  316.84s ->   322.06s] trades open at a time. If I'm having five trades open at a time and each trade takes about a week
+[  322.06s ->   327.38s] to close, five trades open is pretty good. So what I want to do is I want to probably split it up.
+[  327.62s ->   332.10s] I'm going to enter on Tuesday and Thursday because I don't want to enter on the same day. So Tuesday
+[  332.10s ->   337.78s] and Thursday, and I'll do, let's say I can do two contracts each. This is giving me up to four. If I
+[  337.78s ->   342.24s] want, I can do three contracts each. So every single Tuesday, I sell three options. Every single
+[  342.24s ->   348.56s] Thursday, I sell three more options. Again, same strike price, 60 DTE, five Delta, but instead of
+[  348.56s ->   352.68s] just selling one contract, I'm going to sell three contracts. And so just like that, now you're up to
+[  352.68s ->   358.68s] six contracts doing two trades a week. And again, the trade will close in about a week and that way
+[  358.68s ->   363.12s] you can do it. Now make sure you know your numbers, right? If there's a $2,000 risk for trade and you
+[  363.12s ->   369.74s] have four trades open, that means four times 2,000, your max risk is $8,000. So if all your trades
+[  369.74s ->   374.36s] go to zero or hit the stop loss, you're going to lose 8,000 total. So long as that's the number
+[  374.36s ->   378.12s] that you're comfortable with, then you're good to go. Just to make sure you understand that max risk.
+[  378.24s ->   382.22s] So if you have a hundred K account, 40,000 in trades, that means I have about five trades open
+[  382.22s ->   387.06s] at a time. So Tuesday and Thursday, you'll have three trades going on each. So that's how you break
+[  387.06s ->   392.80s] that down. Now, how is this tax efficient? So you might be wondering, okay, it's cool. I understand
+[  392.80s ->   396.62s] that future jobs is open 24 five, which means as the market starts to crash overnight, I can get out
+[  396.62s ->   401.08s] sooner. That's going to help me save a lot of money. But how do I actually make money from taxes?
+[  401.40s ->   407.62s] Taxes, future jobs are taxed just like SPX, IRS section 1256. So basically what this means is
+[  407.62s ->   412.68s] that 60% of the profits are taxed at long-term capital gains, which for most people are close
+[  412.68s ->   418.78s] to zero or 50%. And then 40% is taxed at short term, which is what the normal, if you trade options
+[  418.78s ->   425.62s] on ETF or stocks would be taxed at. So we do a comparison, right? Let's say you have a $20,000 profit,
+[  425.62s ->   433.70s] but you traded on SPY options. Okay. That means about $4,800 would go to taxes at a 20% tax bracket.
+[  434.10s ->   440.16s] But if you did the same thing on ES, you would have only paid $3,500, which would mean a $1,300
+[  440.16s ->   444.70s] per year savings of a $20,000 profit. But think about it, as you start getting higher and higher,
+[  444.94s ->   451.68s] that's saving a lot of money. $1,300 just saving from a $20,000 profit from taxes is amazing. So
+[  451.68s ->   455.74s] that's one of the benefits. Now you might be wondering, cool. I know the strategy. I know
+[  455.74s ->   459.24s] how to go into the broker and place it. I know all these things. How much money do I actually
+[  459.24s ->   463.72s] need to make this work? So that's a great question. If you're going for $250 a week,
+[  463.78s ->   467.20s] you're probably going to be doing one trade per week because one trade makes about $250.
+[  467.58s ->   471.74s] That's $7,000 in buying power. Again, you don't want all your money in the account. So you'll want
+[  471.74s ->   478.02s] in between $15,000 to $30,000, you can make $250 a week. Now that's pretty good. That's $1,000 a month.
+[  478.02s ->   483.66s] Again, off a $20,000, $30,000 account size. Very great. Now, if you want $500 a week,
+[  483.72s ->   488.34s] which is $2,000 a month, you want about $30,000 to $50,000 account size, two trades per week.
+[  488.72s ->   493.30s] If you want to get closer to the $1,000 per week, about $4,000 a year type of thing,
+[  493.34s ->   498.88s] you can do four trades per week. Or again, total of four contracts, right? That would be about $100,000
+[  498.88s ->   502.86s] account size around there. So that's how much money you need. Now you might be wondering,
+[  502.96s ->   506.94s] Austin, I'm new to options. Can I implement this without actually having to go to the broker or do all this
+[  506.94s ->   511.22s] stuff? Yes, I do have a tool called the Options Auto Trader, which allows you to automate this
+[  511.22s ->   516.68s] entire process. In fact, I give you this bot, this strategy. We can just one click implement it. If
+[  516.68s ->   521.06s] that's something you're interested in, click the link down below to the Options Auto Trader. If
+[  521.06s ->   526.36s] you're not interested in automating, no worries. You can actually go check out our free school
+[  526.36s ->   530.30s] community by going to school.com slash options, which is also linked down below. So anyways, guys,
+[  530.68s ->   535.76s] if you want a proven weekly income system by selling options on futures, this is the way.
+[  535.76s ->   540.58s] What you want to do is do a simple short put on ES, follow these management principles. They have
+[  540.58s ->   545.40s] worked very well for me and others. You allocate your risk based on this, you're tax efficient,
+[  545.80s ->   550.22s] and then you count goals that you can aim for. Anyways, that's how it works. If you want access
+[  550.22s ->   554.34s] to this Google Doc, it's also inside the free school community, and I'll see you in the next video.

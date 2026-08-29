@@ -1,0 +1,156 @@
+[    0.00s ->     5.12s] All right, so let's take a look at how our option selling only account has done over the last three
+[    5.12s ->     9.28s] weeks. If you want to see episode one, make sure you guys check out this video linked in the upper
+[    9.28s ->    15.28s] right hand corner. You can see right now our account is currently sitting at $85.5 thousand
+[   15.28s ->    21.76s] dollars. If you look at the monthly chart, it's kind of fluctuating between our high of 86
+[   21.76s ->    31.52s] and now at 85.5. If you look at the monthly return, we are tracking around 3.16% to 3% of S&P 500. So
+[   31.52s ->    36.48s] we're basically flat for the last month or so. But if you look at the year today, this is where we
+[   36.48s ->    43.76s] really shine 25.5% versus 10%. So we're up around 15% overall year to date. But we're really just
+[   43.76s ->    48.78s] using the same put selling principles that we laid out in the masterclass that also link in the upper
+[   48.78s ->    53.18s] right hand corner right here. So make sure you guys check that out and then come back to this video.
+[   53.18s ->    58.54s] The last time we did an update was around three weeks ago. So we'll do a little bit of a summary
+[   58.54s ->    63.10s] of the changes that has gone through this account. We have a couple of new options in here that we've
+[   63.10s ->    67.10s] sold. Figma is one of them that we'll talk in detail today because I want to give you guys an
+[   67.10s ->    74.70s] understanding of why we're selling Figma. We rolled our IOT, our Samsara. Nii is a new position. We had
+[   74.70s ->    83.66s] one Nvidia expirer and I rolled out my Arvindia to 165 and 160. All in all, we've collected a total
+[   83.66s ->    91.82s] of $1871 over the last three weeks, which leads our total credit collected to be around,
+[   91.82s ->   100.38s] close to around $7,598 year to date. This is the breakdown of our current gains. Credit, like I said,
+[  100.38s ->   107.98s] is around $7,600. Stocks that we got signed on, which is 200 shares of TSMC, is up $11,000, which
+[  107.98s ->   114.22s] accounts for around 59% of our total gains. And then around $700 of unrealized gains is from the
+[  114.22s ->   118.30s] stocks that we purchased using half of the money from the credit that we've collected. Again, check
+[  118.30s ->   123.42s] out that masterclass for more details into the strategy. Now, I really want to focus our attention
+[  123.42s ->   133.32s] on this Figma put. This Figma, this one Figma put, I collected $890 on this one put, which is
+[  133.32s ->   140.20s] around a 11 to 12% return on capital. Figma is an IPO stock. Volatility is off the charts,
+[  140.20s ->   146.44s] right? And so we can get a lot of premium off of that. But what we have to, what the cool part about
+[  146.44s ->   153.56s] this is because we collected around $900, we're basically reducing our cost basis by $9 a share.
+[  153.56s ->   160.84s] So our Figma puts at $75. We are basically going to buy Figma at $66, if it were to ever drop below
+[  160.84s ->   166.60s] $75. This is a great understanding of how volatility that we talked about in the masterclass,
+[  166.60s ->   170.36s] we don't talk about smallest caps in the masterclass, but we do talk about volatility,
+[  170.36s ->   176.52s] can help us acquire stocks at much cheaper prices. Like the title of this video, we're going to take a deep
+[  176.52s ->   182.44s] dive into Figma's business as well as valuation. Let's take a step back and remember the philosophy
+[  182.44s ->   189.48s] behind why we sell puts the way we do, which is that it is ultimately a stock acquisition strategy.
+[  189.48s ->   196.92s] We are looking to buy great companies at fair prices. And so what we're going to do today is
+[  196.92s ->   202.76s] we're going to determine if Figma is a great business that we want to own, and if the current valuation
+[  202.76s ->   209.56s] is a fair enough price for us to get into. Let's start with the very, very basics. What is Figma?
+[  209.56s ->   219.00s] Figma is a design software platform that allows you to create applications, web pages, landing pages,
+[  219.00s ->   227.56s] marketing material, all within the same platform. You go from idea to execution all within Figma.
+[  227.56s ->   234.36s] A little bit of a story. I use Figma extensively with my team back when I was working corporate,
+[  234.36s ->   240.12s] and even now running a YouTube channel and some of my small businesses, Figma is my design platform
+[  240.12s ->   245.80s] of choice. And Figma has some great brands and logos that they work with like Netflix, Duolingo, Stripe,
+[  246.44s ->   251.64s] that all use Figma as their primary design platform. Now, this leads us to the next question.
+[  251.64s ->   259.00s] How does Figma actually make money? Figma is a software as a surface, a SaaS company, and they sell
+[  259.00s ->   264.84s] different types of plans to us as customers. They have a starter plan, professional plans,
+[  264.84s ->   269.16s] enterprise plans. They all cost different amount of money and they provide different features.
+[  269.80s ->   274.60s] And so a normal funnel could very well be you start with a starter kit like we do as a small business,
+[  274.60s ->   279.64s] and then eventually as you scale up, you go to the enterprise plan, which can cost you up to $90
+[  279.64s ->   285.24s] a month per user, which is how most SaaS business works is that they want to sell your subscription
+[  285.24s ->   290.44s] that you ultimately don't cancel. Over the last couple of years, since inception, Figma has
+[  291.16s ->   299.08s] exponentially grown their revenue from zero to $400 million in 2024. By the time of IPO,
+[  299.88s ->   309.05s] they are now at an $821 million last 12 months in revenue. They have a 46% year-over-year revenue
+[  309.05s ->   315.93s] growth, which is amazing, and an 18% non-GAAP operating margin. They have a 91% gross margin
+[  315.93s ->   320.41s] because they're a SaaS product, and we'll talk more about this later on. And one of the most important
+[  320.41s ->   326.17s] things we want to talk about here is the 132% net dollar retention that they're stating here in their
+[  326.17s ->   333.13s] S1. One of the most important things about SaaS businesses is if they are able to acquire and keep
+[  333.13s ->   338.73s] customers. There's something called customer acquisition cost, or CEC. This is basically your
+[  338.73s ->   344.17s] marketing spend, advertisements on, for example, Super Bowl commercials, and having a sales team
+[  344.17s ->   350.65s] to go out and reach out to customers to try and get them to buy your product. This is hopefully a
+[  350.65s ->   357.77s] one-time cost. Once the customer signs on to your software platform, you will then start making revenue
+[  357.77s ->   363.69s] or profit. And as long as they are quote-unquote retained, you will continue to get money each and every
+[  363.69s ->   369.21s] single month or year without spending an additional dime. That's how Netflix makes money. So one of the
+[  369.21s ->   374.57s] most important metrics to track is retention or the inverse, which is churn, which is customers that
+[  374.57s ->   381.45s] leave. An important part of Figma's business is how well they retain their customers. What this net
+[  381.45s ->   387.13s] dollar retention value means is that not only are customers staying, they are also starting to spend
+[  387.13s ->   392.41s] more and more money on the platform, which means that they are either upgrading to different plans
+[  392.41s ->   399.93s] or they are acquiring or spending more money to use new products. And you can see even over the last
+[  399.93s ->   405.77s] couple of years, this net dollar retention has stayed relatively high. The worst case scenario is where
+[  405.77s ->   410.49s] you spend the customer acquisition cost and the customer leaves. And then I have to spend more money to
+[  410.49s ->   416.41s] go acquire customers to replace that lost revenue. And so this is why net dollar retention is really that
+[  416.41s ->   422.09s] important. Now, the next thing that's really important is their breakdown of customers. The larger
+[  422.09s ->   428.33s] customers are usually the more important one, what we call enterprise customers. Why? Because they are
+[  428.33s ->   433.45s] usually the customers with higher switching costs means the product is more sticky. If I wanted to switch to
+[  433.45s ->   437.53s] a different software, it's really easy for me to do that because my file sizes are really, really small, and I
+[  437.53s ->   444.73s] don't have to train that many people. But if I was a company like Microsoft or Netflix, and I have tens of
+[  444.73s ->   450.25s] thousands of thousands of employees and millions of files, and everything was built on Figma, then it's
+[  450.25s ->   458.64s] very difficult for me to switch from Figma to, for example, Adobe XD. This is what we call high switching
+[  458.64s ->   465.76s] costs. And the bigger the company, the harder it is to displace an existing product. So if you take a look
+[  465.76s ->   472.32s] at this paid customers with $100,000 or more in annual reoccurring revenue, you can see that they
+[  472.32s ->   479.92s] are growing this segment extremely fast, almost doubling, more than doubling within a span of two
+[  479.92s ->   485.12s] years. And this is a really important metric for everyone to take a look at because this is how
+[  485.12s ->   490.48s] you retain customers in the long run. Another segment is maybe the mid-market segment, something
+[  490.48s ->   494.64s] that's a little bit smaller, but still spends a lot of money. And you can also see that this cohort is
+[  494.64s ->   500.32s] growing at a really fast pace as well. Now we know that Figma is growing their top-line revenue like
+[  500.32s ->   505.28s] crazy. So let's take a look at the margins. And for software subscription businesses, their gross
+[  505.28s ->   510.32s] product margin is usually relatively high because the cost of revenue is basically just like server
+[  510.32s ->   516.08s] costs and like a couple other things. And Figma is no different. They have a 91% gross margin.
+[  517.12s ->   522.00s] But what's even more impressive is kind of what I was alluding to earlier. They don't have to spend that
+[  522.00s ->   528.76s] much money on customer acquisition costs, such as sales and marketing. Top-line revenue grew by 46%
+[  528.76s ->   533.72s] year over year, but sales and marketing only grew by 24% in that same timeframe.
+[  534.28s ->   539.40s] And they are able to keep their costs low, which demonstrates the retention value and economies of
+[  539.40s ->   546.84s] scale, which leads to an increase in operating margin from 7% last quarter to 17% this quarter.
+[  546.84s ->   554.28s] And that translates to an actual net income. So from a business perspective, Figma is a great company
+[  554.28s ->   559.16s] that is operating at a really high level. You also got to talk a little bit about future growth, right?
+[  559.16s ->   563.24s] Figma is in the design software business and they're by far the dominant player in the field. And this is
+[  563.24s ->   568.36s] a growing market. And then going into the future, right? Figma will continue to add more products.
+[  568.36s ->   572.52s] In the latest, they're including more generative AI products into their field that will make
+[  572.52s ->   579.96s] their product even stickier and even more valuable. So all in all, potentially based off of what we've
+[  579.96s ->   586.12s] seen from their S1, I'm fairly confident that based off of their business execution and stickiness of
+[  586.12s ->   593.64s] their product, that the revenue growth will continue to grow exponentially faster than others. And if you
+[  593.64s ->   600.84s] look at some comparisons versus revenue growth of similarly sized and companies in the same field,
+[  600.84s ->   611.08s] you can see Figma is by far one of the best players in this field, which leads us to valuation.
+[  611.08s ->   616.76s] And as you can tell from the stock chart, IPO at 30, started at 70, went all the way up to 100
+[  616.76s ->   623.32s] something. And now it's back down to like 70. If you look at a very typical valuation metric used for
+[  623.32s ->   630.20s] small cap or medium sized companies that don't generate much profit, it's price of sales. Figma at 130
+[  630.20s ->   640.62s] is priced astronomically high, right? That price of sales is close to 75 or 80. At 75, it's more at 40. And at
+[  640.62s ->   647.26s] 65, which is what we would be getting it at if we were getting assigned at $75 a share is closer to 35.
+[  647.26s ->   653.10s] A good benchmark for SaaS companies usually is around the 10 to 20 range. So you can kind of tell
+[  653.10s ->   659.74s] Figma is extremely high. And that's why they IPO at $30, which gives them a 20 times multiple,
+[  659.74s ->   665.90s] which mostly means that Figma right now price of 75 is priced for perfection. Not gonna lie. What we
+[  665.90s ->   672.86s] learn is that great businesses usually don't fall to great prices, great businesses fall to fair prices.
+[  673.42s ->   680.94s] And so to me, at a $65 a share, Figma is relatively okay, considering the growth potential in the future
+[  680.94s ->   687.98s] in the robustness of their current customer base. And so this is exactly why we do not sell options,
+[  687.98s ->   695.82s] we don't buy stocks when it's at all time highs, right? At 135 or 140, we wait for it to retrace back to
+[  696.94s ->   703.29s] a certain level, and then we sell it. And then we will also add in the technical side, right? IPO at around
+[  703.29s ->   710.01s] $80. And so Figma is currently at its all time low, and at least in terms of the public market. And so we
+[  710.01s ->   715.61s] waited for Figma to retrace back to what we could call an area of support, maybe because it's still
+[  715.61s ->   720.33s] relatively young. And we decided to sell a put relatively aggressively so that we can get as
+[  720.33s ->   724.09s] much premium as possible and to lower that cost basis. So let me know if you guys have any questions
+[  724.09s ->   728.01s] down in the comment section below about Figma. This is the first time I've done a company analysis like
+[  728.01s ->   732.49s] this. So if you guys learned something, please do consider liking and subscribing. And I'm filming in a
+[  732.49s ->   737.29s] brand new office today. I hope you guys like it. Gina did a great job on this. And if you guys ever want
+[  737.29s ->   742.09s] interior design help, I'll link her information down below, which is great. Check her out. Okay,
+[  742.09s ->   747.37s] so let's get to the last part of the video, which is the rest of our options. We'll go through that
+[  747.37s ->   752.33s] real briefly. So you can see right here, right, we have a couple of options that are expiring really,
+[  752.33s ->   760.94s] really soon. Knee is one of them. It is expiring in about a week and a half. 73 put. Knee is currently at
+[  760.94s ->   766.62s] 72.3. So we're currently in the money. So this one, at the latest, I'll probably roll out
+[  766.62s ->   772.94s] on next Monday. But if you were to roll this one option out, our goal here is again, to make sure
+[  772.94s ->   781.21s] that we can get around 1.5% a month. So because we're currently at August 22. And today is August 13.
+[  781.21s ->   788.09s] Let's try to roll it out to maybe August 12. So September 12, which is around a two week roll,
+[  788.09s ->   796.33s] right? Maybe a three week roll. If you choose the same strike price, you can see 1.2% roll for this one
+[  797.29s ->   805.88s] option. And that is actually a pretty decent roll. If we did one additional week and we're at 72.5,
+[  806.60s ->   811.88s] to keep it simple, this is a one month rollout. We're at $79. And that's around a 1%
+[  812.68s ->   818.20s] for a drop in strike price. This is also okay as well, right? You can do either one
+[  818.84s ->   824.12s] because we're trying to target again 1.5% to 2% a month. And so this will actually be okay.
+[  825.40s ->   831.50s] I'll probably choose the September 12th one just because that gives me a little bit more credit.
+[  831.50s ->   835.90s] I don't necessarily need to roll it down because I think me at $73 is a relatively good buy.
+[  836.54s ->   841.66s] So that is what it is. Now let's take a look at IoT, Samsara. Samsara is in the money,
+[  841.66s ->   846.70s] deeply in the money, right? It's at $41. Samsara is at $33. It's down around 20%. If you guys didn't
+[  846.70s ->   850.14s] check out my previous video, I used to work in this industry, which is vehicle telematics,
+[  850.86s ->   856.78s] software providers. So I know the space really well. And I think IoT is going to do really well.
+[  856.78s ->   861.10s] I want to make a different video about this at some point. But just to show you guys just the
+[  861.10s ->   870.22s] principle, right? If you want to roll this out by, for example, maybe another week, another two weeks.
+[  870.22s ->   875.93s] And let's say we keep it at the same strike price. We'll get around $20 for a two week rollout.
+[  875.93s ->   880.17s] That's around 0.5% for two weeks or 1% a week, slightly less than that.
+[  880.17s ->   884.09s] We won't roll that out because we're not getting enough money, right? The money,
+[  884.09s ->   889.40s] the reason for that is because the money would be better spent in just buying the S&P 500.
+[  889.40s ->   891.80s] So this is not something that we want to do. We'll just let it get assigned.
+[  892.36s ->   896.20s] Before we get to Figma, let's talk about our Nvidia put. We keep rolling out.
+[  896.20s ->   903.40s] So the first rollout, we rolled from 140 to 160, collected $274. And then from 160 to 165,
+[  903.40s ->   907.24s] collected another $282. And this is the one that we have right now.
+[  907.24s ->   912.92s] It's currently up 3%, expiring about four weeks. And so we'll see what happens with Nvidia,
+[  912.92s ->   915.88s] especially with their earnings coming up, again, relatively soon.
+[  915.88s ->   920.52s] And that about wraps up this account update. If you guys liked the video, learned a little bit
+[  920.52s ->   925.56s] something about Figma, make sure you guys drop a like on the video. And if you guys want to keep
+[  925.56s ->   930.44s] up with this account's progress, make sure you guys subscribe to the channel. Figma is going to be a
+[  930.44s ->   935.80s] very wild ride. It'll be fun to see how it pans out. Keep you guys updated. I'll also link in the end
+[  935.80s ->   941.32s] screen, episode one right here, if you guys missed it. And the put selling strategy that I referenced
+[  941.32s ->   946.36s] in this video that allowed me to retire early after 10 years in corporate. And until next time,
+[  946.36s ->   956.28s] stay safe in the market. Peace.

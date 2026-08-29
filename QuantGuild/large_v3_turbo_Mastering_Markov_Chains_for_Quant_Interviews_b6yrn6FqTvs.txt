@@ -1,0 +1,286 @@
+[    1.26s ->     8.53s] Welcome back. Today I want to introduce the idea of Markov chains in the context of solving quant
+[    8.53s ->    14.79s] interview questions. Here we're going to assume that there's some sort of working knowledge of
+[   14.79s ->    20.23s] elementary probability and statistics, common random variables, just so we can use that machinery
+[   20.23s ->    29.49s] in the Markov chain to deduce probabilities. Essentially we're going to start with some
+[   29.49s ->    36.45s] sort of random variable. In this case we have a Bernoulli random variable that is a simple coin
+[   36.45s ->    43.33s] that flips heads or tails with probability p and 1 minus p respectively. And we're interested in all
+[   43.33s ->    49.93s] of these questions that instead of having an independent structure, start to introduce some
+[   49.93s ->    54.83s] sort of dependence. And that's going to become a little more clear in a moment. So let's look at
+[   54.83s ->    62.13s] question one, what is the probability of a chain of three heads in N tosses? So the keyword here is
+[   62.13s ->    70.07s] chain. Okay. Question two, what is the expected number of tosses to see a chain of three heads?
+[   70.57s ->    76.31s] And question three, if we were to continue the series of coin flips forever, how often would we
+[   76.31s ->    91.46s] see a chain of two heads? And as it turns out using a Markov chain to model this essentially series of
+[   91.46s ->    98.72s] coin flips, that is the idea of achieving a chain of three heads, we can actually answer all three of
+[   98.72s ->   105.18s] these questions relatively easily. But in order to do so we have to introduce the idea of a Markov chain.
+[  105.18s ->   108.70s] So that's what I'm going to do in this video. In the next two videos we're going to answer
+[  108.70s ->   113.34s] questions two and questions three. But for now we're just going to get started with question one.
+[  114.86s ->   122.84s] Okay. So what is the probability of a chain of three heads in N tosses? That is this question we're
+[  122.84s ->   132.38s] trying to tackle. Okay. And right out the gate we can see that if we fix N to be some value then maybe
+[  132.38s ->   140.14s] we can get a better grasp on what's going on here, right? So if I say, let's call this event that is the
+[  140.14s ->   149.22s] event of getting a chain of three heads, we'll call this event A. Okay. And the probability of event A
+[  149.22s ->   157.34s] given N is equal to one. Well, we can find this probability quite easily, right? If we have one coin toss,
+[  157.34s ->   165.68s] right? And we're looking for a chain of three heads, can that occur in one coin toss? No, right? So
+[  165.68s ->   172.68s] that probability is going to be zero, right? Moreover, if we only have two coin tosses, so N is
+[  172.68s ->   181.39s] equal to two, then that is also going to have a zero probability. All right. Things start to get
+[  181.39s ->   190.36s] interesting as you increase N. So let's say that we're looking at N is equal to say five, right?
+[  190.58s ->   196.38s] This is going to start to get a little overly complicated very quickly, right? So what is this
+[  196.38s ->   203.68s] probability? Well, essentially we have one, two, three, four, five coin tosses. One, two, three, four,
+[  204.08s ->   210.62s] five. And we're looking for chains of heads, right? So what is one possible configuration of three heads?
+[  210.62s ->   220.65s] Heads, heads, heads, tails, tails, right? Another possible configuration is maybe heads, heads,
+[  220.87s ->   228.31s] heads, right? And then another one would be heads, heads, heads, so on and so forth, right?
+[  229.27s ->   237.07s] What I'm getting at here is we could answer this using some sort of combinatorics and maybe law of
+[  237.07s ->   246.77s] total probability to derive each of these conditional probabilities for a chain of three heads, right?
+[  246.91s ->   252.01s] Maybe we can even get some sort of closed form solution such that we can make it, you know,
+[  252.03s ->   258.15s] some arbitrary equation and then it all collapses. It looks all wonderful, right? But that takes a lot of,
+[  258.73s ->   264.13s] a lot, right? And there's no guarantee that it's going to simplify into some sort of nice answer here.
+[  264.13s ->   271.09s] So we're kind of stuck here in that, you know, we have to go to some arbitrary N, right? And
+[  271.09s ->   277.37s] technically it could be infinity. So what do we do here if we're stuck, right? What should we do? Well,
+[  277.95s ->   283.69s] we're going to introduce this idea of a Markov chain, okay? So I'm going to get rid of these
+[  283.69s ->   296.91s] conditional probabilities, okay? What is a Markov chain, okay? A Markov chain,
+[  296.91s ->   322.14s] that is x of n, a process starting at, let's say, zero to infinity, is a random variable indexed by n,
+[  324.02s ->   344.96s] where the future state only depends on the current state. So what does that mean? Well,
+[  344.96s ->   354.14s] we know very simply, think about in the context of our coin toss example, okay? Let's say we have heads,
+[  354.90s ->   365.27s] tails, heads, heads, heads, tails, heads, heads, right? In the context of our coin toss example,
+[  365.27s ->   377.53s] in order to inform whether or not we have received three heads in a row, we don't need to consider the
+[  377.53s ->   385.96s] current coin toss in isolation. That is, if I only gave you the outcome of a coin toss,
+[  386.96s ->   393.76s] if I just gave you this one, I said, here's a heads, did we succeed in getting three heads in a row?
+[  393.76s ->   408.74s] No. You wouldn't be able to tell me that, right? However, what if I gave you, we just flipped a heads,
+[  409.24s ->   416.60s] but previously, we flipped a tails. So I gave you these two in conjunction with each other,
+[  416.84s ->   422.78s] right? Would you be able to tell me whether or not we flipped three in a row? Think about that for a
+[  422.78s ->   429.08s] second. If I said, hey, we just flipped a coin, okay? We're in this series of coin flips, right?
+[  429.56s ->   434.82s] You just flipped a heads. The previous one was tails. Did we succeed in getting three in a row?
+[  434.98s ->   439.72s] You could tell me right away, hopefully. You could tell me right away. No, we didn't because
+[  439.72s ->   448.44s] we had to restart. We're at one heads right now, right? So this is the idea of a Markov chain. That is,
+[  448.44s ->   454.88s] the next state is going to only depend on the current state. So if we're currently at a tails,
+[  455.52s ->   462.86s] we know that the next state can't be a success. That is, we can't achieve this three heads in a row,
+[  463.22s ->   469.66s] okay? But this is all kind of abstract, right, without writing it down. So let's write down and
+[  469.66s ->   479.13s] diagram this particular Markov chain, okay? Chains are generally defined in terms of states.
+[  479.53s ->   485.53s] Okay, so what states would we be interested in modeling this particular Markov chain as, okay?
+[  485.81s ->   494.27s] Well, we're interested in a series of heads. So my state space for this Markov chain is going to be,
+[  494.73s ->   510.93s] I'm going to call it H0, H1, H2, and H3. So we have four states. Maybe you can guess what they are.
+[  510.93s ->   520.21s] H0 means we have a chain of zero heads. H1 means we have a chain of one head. H2, chain of two. H3,
+[  520.41s ->   530.22s] a chain of three. If we achieve this chain of three, then we're done. So how do we diagram this? Well,
+[  530.22s ->   539.38s] typically, we write out little circles like this. This will be H0, this will be H1, this will be H2,
+[  539.70s ->   549.15s] this will be H3. And what you'll notice is the probability of going, right? This is just like what
+[  549.15s ->   558.43s] we wrote out before. If we have tails and heads, we know that we can't go from here all the way to
+[  558.43s ->   567.44s] three heads in a row, right? Because we just threw a tails. We're restarting from zero, right? So we would
+[  567.44s ->   576.54s] say what? What would these two states be? If I threw a tails, then the state would have been H0.
+[  576.54s ->   585.17s] We don't have a chain. If the next toss was a heads, then we would be in state one, okay? And this is
+[  585.17s ->   593.15s] how we can go ahead and model this process. Now, if I throw another heads, what state am I going to be
+[  593.15s ->   605.32s] in? I'll be in H2, right? It doesn't matter if H2 knows this one. It only matters if H2 knows this one.
+[  605.32s ->   613.24s] Why? Because this one knows about this one. And would you look at that? That's starting to look
+[  613.24s ->   620.10s] like a chain, hence Markov chain, okay? So using this idea, we can draw the probability of going
+[  620.10s ->   627.46s] from one state to another, right? So what's the probability of going from either state zero or
+[  627.46s ->   631.68s] state one? We have H0, H1. What's the probability? Well, it's the probability of getting a heads,
+[  631.68s ->   637.06s] right? Either we're going to get a heads, which we know occurs with probability P,
+[  637.90s ->   642.95s] right? Or we're going to get a tails and we're going to stay right here with probability one
+[  642.95s ->   652.61s] minus P. All right. Now we're at state one. What happens? Can we stay in state one, right? Notice
+[  652.61s ->   659.01s] here when we drew this arrow to itself, that's saying that we could stay in H0. If we throw two tails in a
+[  659.01s ->   667.34s] row, then we don't have a chain of heads. But can we get H1 twice in a row? Well, no, right? Because
+[  667.34s ->   674.02s] either we're going to restart the chain or we're going to jump to H2. So we know that H1 is either
+[  674.02s ->   680.60s] going to go to H2 with probability P, or it's got to go all the way back to H0 with probability one
+[  680.60s ->   688.74s] minus P. All right. And what you'll notice is the same is true for H2. It has to either go to H3
+[  688.74s ->   700.25s] with probability P, or it has to go back and reset with probability one minus P. And then H3,
+[  701.66s ->   710.35s] either we are going to have, what, another H3? Is that possible? Well, technically, yes, right? Because
+[  710.35s ->   718.11s] if we have heads, heads, heads, heads, heads, right? This would be assuming this is tails
+[  718.11s ->   728.32s] right here. This would be H1. This would be H2. This would be H3. And we're assuming that
+[  728.32s ->   734.10s] we kind of stopped this process here. We're not interested in H4. So this would also technically
+[  734.10s ->   742.41s] be H3, right? Because we're either looking at this chain of three or this chain of three.
+[  743.07s ->   748.55s] So technically it could come back to H3 and it comes back to H3 with probability P,
+[  749.05s ->   760.61s] or it's going to go restart the chain at one minus P. Okay. So this is a diagram. This is a picture
+[  760.61s ->   769.79s] that represents the states that our Markov chain could be in at any time based on this series of
+[  769.79s ->   778.14s] Bernoulli random variables, all right? How do we typically represent this diagram mathematically?
+[  778.80s ->   788.99s] Well, we use what's called a transition matrix, all right? And a transition matrix is very important
+[  788.99s ->   797.78s] because it makes answering a lot of these questions super, super easy, all right? It's very important.
+[  797.98s ->   814.28s] Here are some remarks about the transition matrix. For any entry, we have that any entry of the matrix
+[  814.28s ->   824.82s] is going to be between zero and one. Essentially, every entry is a probability, okay? We also have
+[  824.82s ->   841.33s] that the sum across the columns is equal to one, okay? So that is, if we sum, think about a matrix like
+[  841.33s ->   850.63s] this, and we have row, row, row. If we sum, or I guess we're summing across the rows, this has to be
+[  850.63s ->   860.40s] one, we sum across this row, this has to be one, so on and so forth, okay? So those are some proper
+[  860.40s ->   865.82s] properties of the transition matrix, but how do we construct it? Well, it's very easy to construct
+[  865.82s ->   871.24s] once we have this diagram, which we've already drawn. So let's go ahead and construct this transition
+[  871.24s ->   878.92s] matrix. P is equal to, and what we're going to do is we're going to draw a row and a column for every
+[  878.92s ->   894.11s] state. So we have H0, H1, H2, and H3, H0, H1, H2, and H3. And to fill this in, all we have to do is ask,
+[  894.23s ->   902.92s] what is the probability of going from here to here? That is, what's the probability of going from row
+[  902.92s ->   909.00s] to column, okay? So H0 to H0, what's the probability? Well, we already drew that into the
+[  909.00s ->   915.41s] diagram right here, right? It's one minus P. So we're going to put one minus P. What is the
+[  915.41s ->   926.00s] probability of going from H0 to H1? Well, that probability is right here. It's P. And if we know
+[  926.00s ->   933.40s] that the sum has to be one, right? Well, this is a kind of a consequence of it, but nevertheless,
+[  933.40s ->   941.32s] we can also look at the diagram, right? Where else can H0 go, right? Can H0 go anywhere?
+[  944.94s ->   949.42s] It can't go anywhere else, right? It has to go either to itself or H1. So that means the rest of
+[  949.42s ->   956.26s] these also have to be zero, okay? Moreover, what I was getting at before is we know that each element
+[  956.26s ->   964.46s] has to be strictly positive, and these guys right here already sum to one. So based on these two remarks,
+[  964.46s ->   971.10s] these two facts of transition matrices, we also know that the remaining elements have to be zero,
+[  972.70s ->   979.20s] okay? Now we can just fill this in across the board. Isn't it quite easy? What is H1 to H0?
+[  980.98s ->   986.87s] One minus P, right? That's this guy right here, right? So we can just go ahead across the board and
+[  986.87s ->   994.27s] fill this in, right? H1 to H0 is one minus P. H1 to H1, can it stay in the same state? Nope.
+[  994.27s ->  1003.95s] Probability P, it goes to H2 and then zero. H2 can either go back to H0, one minus P,
+[ 1004.47s ->  1012.73s] or it can go to H3 with P, right? And then H3 either goes to itself or it goes back to zero.
+[ 1015.48s ->  1021.84s] And this right here is our transition matrix. And this is going to let us answer a whole bunch of
+[ 1021.84s ->  1031.63s] questions, a whole bunch of questions related to this process X sub N, all right? So let's not lose
+[ 1031.63s ->  1037.96s] sight of the original question. What was the original question, okay? This was the original
+[ 1037.96s ->  1047.30s] question, okay? I'm going to bring this down here. What was the probability of a chain of three heads
+[ 1047.30s ->  1058.99s] in N tosses, all right? That was the original question. How can we answer that using a transition
+[ 1058.99s ->  1067.76s] matrix like this? Okay. Well, we introduced the idea of a Markov chain to essentially model this
+[ 1067.76s ->  1071.94s] process to be able to answer these questions, essentially to come up with this transition
+[ 1071.94s ->  1079.76s] matrix. Well, it turns out once you have this transition matrix, it's very, very easy to go ahead
+[ 1079.76s ->  1089.88s] and determine the probability of transitioning from one state to another, okay? And what I mean by that
+[ 1089.88s ->  1100.60s] is, let's say that we were curious about going from state H sub zero to states H sub three, right?
+[ 1100.72s ->  1114.40s] In N transitions, okay? How would we do that? Well, if we use the Chapman-Klamagrov equations,
+[ 1120.04s ->  1124.98s] this becomes very easy. And this was my previous video. So if you're interested in a rigorous proof,
+[ 1125.06s ->  1129.56s] go ahead and check that out. But using the Chapman-Klamagrov equations, essentially what
+[ 1129.56s ->  1145.50s] we're saying is the probability, the corollary is the probability of going from state I, where I is
+[ 1145.50s ->  1157.22s] some state in our state space, to state J, once again, where J is some element, the probability
+[ 1157.22s ->  1171.25s] is simply going to be the transition matrix, and this is going to be going from state I to state J
+[ 1171.25s ->  1186.85s] in N steps, is simply going to be P to the N, the IJth entry. Isn't that easy? So now that we have this
+[ 1186.85s ->  1197.10s] transition matrix, the probability of going from state I to state J in N steps is going to be,
+[ 1197.10s ->  1207.06s] check it out, P to the N, IJ, right? But let's hold our horses here, all right? What was the original
+[ 1207.06s ->  1222.13s] question? What is the probability of a chain of three heads in N tosses? Well, we know, right?
+[ 1222.13s ->  1242.42s] We know that the probability of going from, let's say we start in H0, right? Because we start in H0,
+[ 1242.54s ->  1249.92s] there is no chain of heads, right? So let's say we start in H0, what is the probability of getting a
+[ 1249.92s ->  1256.58s] chain of three heads? Well, if you blindly apply this theorem here, then you would say, oh, I know,
+[ 1256.58s ->  1263.74s] right? We have N transitions, right? We have N tosses, and we're looking for a chain of three heads.
+[ 1263.84s ->  1272.46s] I know this state is H3. If I apply this corollary, right, then I know that the probability of, I think
+[ 1272.46s ->  1283.26s] we call this event A up here, right? This is going to be event A, okay? So that's this question we're
+[ 1283.26s ->  1298.39s] answering. Then the probability of A is equal to P to the N, H0 to H3, which if we just look at the
+[ 1298.39s ->  1307.25s] entries of the matrix is going to be 0 to 4, right? Because we start here, 0, 1, 2, 3, or I guess
+[ 1307.25s ->  1313.71s] depends on how we index it. But let's say we start in H0, we're going to stay H3. That's our answer.
+[ 1313.71s ->  1320.65s] That is based on, this is by Chapman Kolmogorov, and we're done. That's the probability, all right?
+[ 1321.35s ->  1330.65s] I would say this is kind of like a C plus B answer, maybe, because it's wrong, okay? Why is this wrong?
+[ 1330.91s ->  1342.67s] Well, what did we answer here? We answered that the probability of going from H0 to H3 in N steps,
+[ 1342.67s ->  1348.77s] and sorry, this should be technically big N, because we want to know when we have some arbitrary
+[ 1348.77s ->  1358.79s] number of tosses, big N, right? So why is this wrong, right? Well, we're not looking for the
+[ 1358.79s ->  1366.31s] probability that we end on a chain of three heads. So let me illustrate this to you. Let's say we have
+[ 1366.31s ->  1378.16s] N tosses, okay? Why is this wrong? This is wrong, okay? Why is it wrong? If we have N tosses, we have
+[ 1378.16s ->  1391.12s] 1, 2, 3, 4, all the way out to N minus 2, N minus 1, N, okay? So there's 1, 2, 3, 4, so on and so forth,
+[ 1391.12s ->  1401.53s] right? Using this as our answer, what we're asking is, if we start in H0, right? We're starting in H0,
+[ 1402.07s ->  1411.49s] we may get a heads or tails, heads or tails, heads or tails, heads or tails. That's going to determine
+[ 1411.49s ->  1428.16s] our state, right? Let's say we have H0, we could go to maybe H1, H2, H3, then we're back to H1,
+[ 1429.08s ->  1435.02s] right? And then we do this until we get to our N tosses, and again, this should be capital N, I
+[ 1435.02s ->  1446.26s] apologize, N minus 2, N minus 1, N, right? N tosses. Now we have, let's say we end up in H0, H1, H2.
+[ 1449.29s ->  1458.70s] Think about this series of trials, this one realization, right? Is this a success? Is it a
+[ 1458.70s ->  1467.78s] success for event A or a failure for event A? Event A being a series of three heads appeared
+[ 1467.78s ->  1481.56s] in these tosses. This is a success for event A because we have H3 here. That means we saw a chain
+[ 1481.56s ->  1489.48s] of three heads. We saw it actually on the third toss, okay? What Chapman Kolmogorov in this form
+[ 1489.48s ->  1497.86s] is saying, this form that I said is wrong, is saying what is the probability that if we start in H3,
+[ 1497.86s ->  1509.58s] or if we start in H0 rather, we end in H3, okay? That is, this sequence evolves as H, let's say,
+[ 1510.22s ->  1523.13s] 2, H3, H3. That's one possible sequence. It could also be H1, H2, H3, okay? So this result right here
+[ 1523.13s ->  1540.65s] from Chapman Kolmogorov, this P to the N, H0, H3, is looking only at this guy and this guy, this last N.
+[ 1542.08s ->  1551.10s] What is the probability of transitioning given we start in H0 to H3 after N steps, all right?
+[ 1551.10s ->  1557.24s] That means that we're ending on a chain of three heads. What's the probability we end on a chain
+[ 1557.24s ->  1567.62s] of three heads in N steps? That is not the question. The question is, what is the probability
+[ 1567.62s ->  1576.10s] of a chain of three heads ever occurring in these N tosses, okay? We're almost there. We only have to
+[ 1576.10s ->  1582.42s] modify this a little bit, and what we're going to modify is our original diagram, okay? So let's go
+[ 1582.42s ->  1597.77s] back up here. I'm going to copy this guy. Copy. Put him down here. Paste. Okay. So what the heck,
+[ 1597.85s ->  1606.65s] right? What's going on here? I want to be able to, given some capital N, figure out if we've seen a
+[ 1606.65s ->  1615.29s] series of three coin tosses, right? How can I modify this diagram to ensure that once H3 is hit,
+[ 1615.29s ->  1624.79s] we never go out of H3. We stay there. That means we've seen a successful three heads in a row,
+[ 1624.93s ->  1635.98s] right? How do I do that? How can I model that? Well, instead of giving the probability of leaving
+[ 1635.98s ->  1643.90s] H3, what if I just get rid of it altogether? And I say, hey, you know what? Forget it.
+[ 1643.90s ->  1653.80s] We can't leave H3. In fact, once we get to H3, we stay at H3, and we never leave H3.
+[ 1657.12s ->  1671.60s] H3 is an absorbing state, okay? There's a lot going on under the hood here, mainly things to do with
+[ 1671.60s ->  1679.26s] accessibility, communication, and transience versus recurrence, but I don't want to talk all about
+[ 1679.26s ->  1685.34s] that nonsense. I want to just show you this applied example, okay? What do I mean that H3 is an
+[ 1685.34s ->  1692.42s] absorbing state? Well, think about it. If I flip a coin for forever, what state do I have to end up in
+[ 1692.42s ->  1701.40s] forever? I'm going to end up in H3, right? If I flip a coin forever, eventually you're going to get a
+[ 1701.40s ->  1714.28s] chain of three heads, and you're going to be stuck here forever, okay? That's what an absorbing state is,
+[ 1714.28s ->  1723.60s] all right? At least in this particular context. Why is this useful? Because now we can go ahead and
+[ 1723.60s ->  1737.07s] capture early on. If we saw H1, H2, H3 early, then it doesn't matter what we see over here. It's going
+[ 1737.07s ->  1747.97s] to be fixed. These are going to have to be H3, H3, H3, because once it hit here, we can't leave that
+[ 1747.97s ->  1758.40s] state, okay? So essentially what we're doing now is we're saying that if we use Chapman-Komagorov,
+[ 1758.40s ->  1777.33s] what we're saying is P to the N, H0 to H3 is the probability that event A occurs in less than or
+[ 1777.33s ->  1790.56s] equal to N steps, okay? Because keep in mind here, right? This isn't saying that it occurs at what?
+[ 1790.56s ->  1800.21s] This isn't saying that it occurs at, um, at capital N, right? This is saying in that series forever,
+[ 1800.21s ->  1807.83s] right? Um, it occurs somewhere. Do we see that, that chain, okay? And this is exactly what we're
+[ 1807.83s ->  1817.70s] looking for, right? Does A occur, let's go back to this original question here, the probability of a
+[ 1817.70s ->  1826.82s] chain of three heads in N tosses, right? It's the probability of ending up in state H3, right? The
+[ 1826.82s ->  1836.15s] probability of ending up in state H3 at any point throughout the N tosses, okay? So this would
+[ 1836.15s ->  1858.40s] essentially be the probability of a, okay? So this is the probability of seeing of a chain of three
+[ 1858.40s ->  1878.08s] heads anywhere in N tosses, all right? And that is if we remodel the original diagram such that we get
+[ 1878.08s ->  1892.70s] stuck at H3. That makes our transition matrix P look like this. We have 1 minus P, P, 0, 0,
+[ 1892.70s ->  1905.26s] 1 minus P, 1 minus P, 0, 1, 0, 0, 0, P, 0, 0, 0, P. And then we can use essentially a functional
+[ 1905.26s ->  1911.86s] representation here in terms of capital N, uh, to discern this, this probability of a chain of three
+[ 1911.86s ->  1919.88s] heads, um, occurring anywhere in these N tosses. So this is quite an exciting result, and the reason
+[ 1919.88s ->  1925.48s] why I'm so excited is because there are really three derivative questions surrounding this one
+[ 1925.48s ->  1931.80s] seemingly simple probability question. And the first question we asked was, what is the probability
+[ 1931.80s ->  1938.00s] of a chain of three heads in N tosses? Well, we just observed that here. By remodeling our diagram
+[ 1938.00s ->  1944.16s] with an absorbing state, we found that we can get stuck here forever and compute that probability
+[ 1944.16s ->  1950.52s] probability as that transition matrix raised to the capital N power, and just the transition of going
+[ 1950.52s ->  1956.94s] from state 0 to state 3, okay? That is the probability of getting a chain of three heads
+[ 1956.94s ->  1962.44s] anywhere in N tosses, right? So if N is 10, what's that probability? We plug in those numbers, we get
+[ 1962.44s ->  1968.52s] that value, right? The second question that we observed is, what is the probability that we end with
+[ 1968.52s ->  1977.40s] a chain, okay, that's this guy here, that we end with a chain of three heads, right? So if we go back
+[ 1977.40s ->  1984.08s] up to what I deemed as incorrect to the first question, via Chapman-Komagorov, right, if we use
+[ 1984.08s ->  1990.06s] our original diagram, we can answer that question. That's going to be this guy right here. All we have
+[ 1990.06s ->  1999.51s] to do is take, using this transition matrix, so this is going to imply some P, to find the answer to Q2,
+[ 1999.67s ->  2008.31s] we do P to the capital N, H0, H3, and again, we're deriving it from this diagram. That's going to be
+[ 2008.31s ->  2015.90s] the correct answer to number two. That's the probability we end with a chain of three heads,
+[ 2016.34s ->  2023.54s] all right? But what about this last question? What is the probability that the first chain of three
+[ 2023.54s ->  2030.66s] heads happens at N? That is a different question, right? That is a completely different question from
+[ 2030.66s ->  2035.16s] number two. They seem similar, and they're similar, but that's a completely different question.
+[ 2035.70s ->  2042.46s] How do we figure this out? Well, let's think about what we know about probability in general, okay?
+[ 2042.70s ->  2050.69s] What we're saying here is, this is the probability of a chain of three heads anywhere in N tosses,
+[ 2050.69s ->  2062.01s] okay? So the probability of three heads in less than N is given by what? We say capital P to the N,
+[ 2063.96s ->  2076.08s] H0, H3, right? What we want to see is, what if we wanted to figure out if the first time we ever saw it
+[ 2076.08s ->  2084.78s] was at the end of the tosses, right? So in other words, right, question two, let me flesh this out
+[ 2084.78s ->  2091.57s] a little bit more. This is question two, question three. Question two hits, one, two, three, dot, dot,
+[ 2091.57s ->  2100.94s] dot, dot, N minus two, N minus one, N, again, these should be capital Ns. So when does question two hit?
+[ 2100.94s ->  2111.80s] Question two will hit, even if we have H1, H2, H3, as long as this is H1, H2, or H3, so long as we end
+[ 2111.80s ->  2118.24s] with H3, question two, that probability statement is going to hit. We're good. But notice for question
+[ 2118.24s ->  2126.93s] three, it would not hit. We want to be devoid of these first three, right? That would not hit for
+[ 2126.93s ->  2133.53s] question three. So this would not hit in question three, because we want the first chain of heads,
+[ 2133.79s ->  2140.66s] three heads, to occur at the end, okay? Well, how can we model that? Fortunately for us,
+[ 2141.14s ->  2149.16s] we know about cumulative distribution functions. So the probability of seeing three heads in less
+[ 2149.16s ->  2159.10s] than or equal to N coin tosses is that. What is the probability of seeing three heads in that N tosses?
+[ 2159.10s ->  2170.18s] Well, this is just going to be equal to the difference by definition. Three H plus or equal
+[ 2170.18s ->  2177.70s] to N minus one by definition of a cumulative distribution function. And this is going to be
+[ 2177.70s ->  2194.72s] P to the N, H0, H3, P to the N minus one, H0, H3. It's this difference right here. And that is our
+[ 2194.72s ->  2201.85s] answer to question three. In other words, what is the incremental probability that we are gaining of
+[ 2201.85s ->  2209.58s] hitting three heads with that additional toss? The probability of seeing it in that last three
+[ 2209.58s ->  2215.38s] tosses for the first time. That's this incremental probability here. That is also the answer to
+[ 2215.38s ->  2222.02s] question three, this guy right here. So it's crazy because such a simple question has so many
+[ 2222.02s ->  2225.66s] derivative questions that have to be answered in different ways. So you really have to have a good
+[ 2225.66s ->  2230.26s] understanding of Markov chains and transition matrices to be able to answer these questions,
+[ 2230.34s ->  2236.68s] right? So remember question one, probability of a chain of three heads in N tosses. That's easy,
+[ 2237.30s ->  2244.58s] right? That's just this transition matrix, right? That's remodeling it with an absorbing state.
+[ 2244.98s ->  2250.34s] Question two, the probability that we end with a chain of three heads, regardless of if three heads
+[ 2250.34s ->  2256.88s] appeared anywhere, right? Anywhere else, we don't care. Then we would just model it as the first diagram
+[ 2256.88s ->  2264.00s] right here. And then this last one here, we model as the difference between the cumulative distribution
+[ 2264.00s ->  2269.90s] function that we found in problem one. That is, if we just take the difference, we find the incremental
+[ 2269.90s ->  2278.18s] probability gains from that additional toss. In other words, the probability that we hit three heads
+[ 2278.18s ->  2286.74s] in a row for the first time on the Nth toss. Let's head on over to Python to put a bow on this and
+[ 2286.74s ->  2291.50s] simulate all of these to show that they converge to their true analytical solutions that we have
+[ 2291.50s ->  2296.62s] written down right here. All right, let's wrap this up. Time to put my money where my math is. I'm
+[ 2296.62s ->  2301.34s] going to fix N at 10. It doesn't matter what I choose. This is going to be correct for every single
+[ 2301.34s ->  2307.52s] N. That's why we solve it for an arbitrary capital N. I'm going to set up this first probability
+[ 2307.52s ->  2313.14s] matrix as our first diagram. I'm going to set up this second probability matrix as our second diagram
+[ 2313.14s ->  2320.54s] that is with the absorbing state. This first simulation is simulating coin tosses, and it's
+[ 2320.54s ->  2328.78s] going to append an indicator variable to determine whether or not we ever see a chain of three heads.
+[ 2329.30s ->  2335.16s] The second simulation is going to do something similar, but for question two. Essentially, what it's
+[ 2335.16s ->  2344.04s] going to do is it's going to say, hey, did we hit a chain of three heads at the end of the coin tosses?
+[ 2344.10s ->  2350.86s] So in our last three tosses, did we see a chain of three heads? And then simulation three is saying,
+[ 2350.96s ->  2359.18s] if we saw that last chain of three heads in our last couple tosses, was that the first time? Was that the
+[ 2359.18s ->  2364.16s] first time that we saw it? What's the probability of that? If you go back to the handwritten notes,
+[ 2364.16s ->  2369.76s] this is the analog of questions one, two, and three. And then what we see here is if I keep
+[ 2369.76s ->  2375.80s] scrolling down, they got to create some new cells so I can keep scrolling. See, there we go. Check
+[ 2375.80s ->  2381.50s] it out, right? The simulated probability of seeing three heads in end tosses is 0.5. The analytical
+[ 2381.50s ->  2387.82s] solution using the transition matrices is 0.507, so it's going to converge. All right. This makes sense,
+[ 2387.88s ->  2393.42s] right? Because this is the largest of the probabilities. Okay. The probability of seeing three heads at the
+[ 2393.42s ->  2401.44s] end of the end tosses is probably less likely, right? And it is, it's roughly 12%. And then the
+[ 2401.44s ->  2408.54s] actual is 12.5%, right? Then the least likely of all is what is the probability of seeing the three
+[ 2408.54s ->  2414.92s] head chain for the first time at that end? Okay. So the last three, we get heads, heads, heads for the
+[ 2414.92s ->  2421.38s] first time out of every toss. And that's going to be the increment here. We can see it's the difference
+[ 2421.38s ->  2427.08s] between the distribution function at N and N minus one, right? And we can see if we simulate it,
+[ 2427.12s ->  2433.96s] we get 0.041. And the solution is actually point, uh, it looks like 4.29 ish percent. So 4.3 ish
+[ 2433.96s ->  2440.08s] percent. All right. So as you can see, I'll post this in, uh, GitHub as a gist, if you would like
+[ 2440.08s ->  2444.90s] to play around with the simulation. Um, but this is how we can use Markive Chains to answer all of
+[ 2444.90s ->  2449.44s] these questions. They're all very similar. They're very related to one another, but they're very,
+[ 2449.44s ->  2453.70s] very, very, um, they can be very complicated. They can be very confusing. Uh, it's very easy
+[ 2453.70s ->  2458.88s] to simulate the answers, but what is the actual answer that we're converging to? Uh, and that is
+[ 2458.88s ->  2462.72s] what we showed analytically. So I hope you enjoyed this video. I hope you enjoyed this introduction
+[ 2462.72s ->  2468.14s] to Markive Chains in the context of quant interview questions. Uh, we're going to tackle the second one
+[ 2468.14s ->  2472.78s] in the next video. So stay tuned for that. Um, if you have any questions again, leave them in the
+[ 2472.78s ->  2477.02s] comments below as always, uh, join our discord server. We have a lot of interesting conversations
+[ 2477.02s ->  2481.86s] there, uh, a lot of interview prep, a lot of, uh, interesting conversations. So please join,
+[ 2482.40s ->  2486.40s] um, check out quant guild, check out the courses there. Um, other than that,
+[ 2486.70s ->  2489.08s] thank you so much for watching and I will see you in the next one.

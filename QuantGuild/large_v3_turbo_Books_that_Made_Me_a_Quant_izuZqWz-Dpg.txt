@@ -1,0 +1,126 @@
+[    0.46s ->    10.77s] Hey guys, Roman Pellucci here, quantitative researcher and trader, founder of QuantGuild.
+[   10.77s ->    16.79s] You all have been asking me for quite some time for book recommendations, a reading list.
+[   17.33s ->    23.79s] So what I've done is I've compiled a list of what I consider to be the most important books
+[   23.79s ->    29.45s] that I've had throughout my journey in quantitative finance. I have categorized
+[   29.45s ->    35.03s] them into one of three categories. I have what I consider to be books that have shaped the way
+[   35.03s ->    40.41s] that I think about trading. I have books that have shaped the way that I think about modeling
+[   40.41s ->    47.27s] and books that are very important to me that have grounded myself throughout my entire journey.
+[   47.59s ->    53.41s] What we'll do is we'll just go through these categories one by one. I will tell you how each
+[   53.41s ->    60.69s] book has impacted me and how it's impacted my industry applications. Up first in the trading
+[   60.69s ->    66.95s] category, we have Natenberg's option volatility and pricing. Now I'll never forget my first option
+[   66.95s ->    76.09s] trade. It was about 10 years ago and I made roughly $700, but I had no idea why. If I had Natenberg's
+[   76.09s ->    83.31s] book, I would have understood the portfolio exposures, which led to that P&L. Now this is the book
+[   83.31s ->    90.11s] that sits on every option trader's desk. It isn't just a great introduction to the pricing theory, but
+[   90.11s ->    99.47s] it also covers a variety of strategies. And that gets into my main point in making this video.
+[  100.01s ->   108.09s] These books, I don't intend for you to read cover to cover, and I also don't intend for them to sit on
+[  108.09s ->   114.71s] your shelf. What you need to do is you need to use these books effectively as the classroom,
+[  115.09s ->   121.93s] the lab. You can always go back to the classroom and lab to understand the theory, but go out into
+[  121.93s ->   128.57s] the real world and try to implement what you've learned. That is how you accumulate experience
+[  128.57s ->   135.39s] in this industry. So that goes for every book that I'm about to list off to you here. The reason why
+[  135.39s ->   143.77s] they've made such an impact on me and my career is because I've used them effectively as my classroom.
+[  143.87s ->   148.99s] Then I go out in the real world, I see what works, I see what doesn't, and re-evaluate from there. So
+[  148.99s ->   156.65s] Natenberg's Option Volatility and Pricing has earned itself a spot in my trading category. Up next,
+[  156.65s ->   164.73s] two books that have had a profound impact on my quantitative trading. We have Advances in
+[  164.73s ->   172.01s] Financial Machine Learning and Inside the Black Box. Now, I will say, Advances in Financial Machine
+[  172.01s ->   179.23s] Learning is a heavy read. This does require a level of math, probability, and statistics, even
+[  179.23s ->   185.43s] machine learning and data science, artificial intelligence, before reading it. But it does offer
+[  185.43s ->   193.29s] insight into the current state of the industry. So I highly recommend this book if you already have a
+[  193.29s ->   199.85s] very strong technical background. If not, getting started with Inside the Black Box is a phenomenal
+[  199.85s ->   207.69s] place to start because this has what I believe to be the single most profound quote that I've read
+[  207.69s ->   215.43s] in a book when I was coming up as a quant. I have it marked here. And that is in the context of an R-squared
+[  215.43s ->   224.00s] value and return predictability. As another quant trader put it, people have gotten rich off of a
+[  224.00s ->   234.10s] 0.02, R-squared. A former employee of mine once said, if you see an R-squared above 0.15 and it's not
+[  234.10s ->   240.50s] because you made a mistake, run the other way because the SEC will arrest you for insider trading.
+[  240.50s ->   246.42s] So this book has shaped the way that I view quantitative trading. I highly recommend it.
+[  246.90s ->   253.64s] This has effectively been on my mind every single time I have developed a trading strategy or conducted
+[  253.64s ->   259.80s] quantitative research. That is my formal recommendation for you if you're interested in
+[  259.80s ->   265.32s] getting started with quantitative trading. You have advances in financial machine learning and
+[  265.32s ->   271.70s] Inside the Black Box. Moving on to the modeling category, I'm going to focus specifically on this
+[  271.70s ->   277.40s] idea of data science, machine learning, artificial intelligence, deep learning, whatever you want to call
+[  277.40s ->   284.32s] it. And I think as you're getting involved in the quant space, it's really important to be able to
+[  284.32s ->   291.78s] understand the entire model development pipeline from data acquisition to cleaning, pre-processing,
+[  291.88s ->   297.84s] feature engineering, effectively selecting a model for the problem you're trying to tackle,
+[  298.06s ->   303.34s] evaluating that model. These are not trivial tasks. These are full-time jobs.
+[  303.34s ->   310.70s] So these two books have greatly impacted the way that I view this entire development life cycle. That is
+[  310.70s ->   319.70s] hands-on machine learning with Scikit-Learn and TensorFlow and deep learning with Python, Francis
+[  319.70s ->   327.14s] Trollet. It's hard not to bring this guy up anytime you talk about deep learning. This very well may be
+[  327.14s ->   335.66s] the best book that I have read in the context of deep learning, in particular with Python. I will say
+[  335.66s ->   343.16s] these are not cover-to-cover reads. I want to stress that throughout this list. Your objective is to use
+[  343.16s ->   350.34s] these as the lab. Learn all of these different techniques for data acquisition, feature engineering,
+[  350.34s ->   358.42s] and then try them in the real world. Build your own projects. See what works. See what doesn't work. Then go back
+[  358.42s ->   367.00s] to the classroom and re-evaluate. So these books have shaped the way that I go about building my data science
+[  367.00s ->   374.22s] pipelines all the way from data acquisition to model deployment. If you've been following my work for quite some
+[  374.22s ->   381.56s] time, then you'll know one of my primary research interests is in using alternative data to produce
+[  381.56s ->   391.44s] equity alpha. And alternative data can mean a lot of things. It could mean text data, images, videos. It could
+[  391.44s ->   400.52s] even be text that's extracted from images. In any case, you can't get away from this idea of textual
+[  400.52s ->   406.04s] analysis. So if you're looking to get involved in the alt data space, then I would recommend you get
+[  406.04s ->   413.66s] this book, Getting Started with Natural Language Processing. If you're looking to produce signal from
+[  413.66s ->   423.58s] alternative data sources, then textual analysis is a great place to start. Extracting signal from these
+[  423.58s ->   430.50s] data sources can be very complicated, but it's also one of the primary uses of machine learning
+[  430.52s ->   436.94s] and artificial intelligence in the quant trading space. It isn't directly on the price path. This
+[  436.94s ->   445.26s] is what most people miss. You're building these models to produce and extract signal from these alt
+[  445.26s ->   452.24s] data sources. So if you're unfamiliar with how to put these pipelines together or how to conduct
+[  452.24s ->   458.10s] analysis like this on alternative data, I highly recommend this as a starting point. Now, like I said,
+[  458.10s ->   463.36s] you can't get away from this idea of textual analysis, especially if you're interested in
+[  463.36s ->   469.26s] working with alternative data and producing quantitative trading signals. Moreover, due to
+[  469.26s ->   474.90s] the prevalence of large language models, you can't get away with not understanding the transformer
+[  474.90s ->   482.12s] architecture and how language models work. Things like ChackGBT, Gemini Cloud, the list goes on.
+[  482.12s ->   490.06s] And that is why I recommend the 100 page language models book. There's a very big difference between
+[  490.06s ->   497.30s] language modeling tasks and tasks like sentiment analysis. That is what these books are facilitating.
+[  497.44s ->   502.50s] They're hopefully going to introduce you to this space so that you can understand all of these
+[  502.50s ->   508.40s] different tasks and the models that help facilitate their solutions. This book here is a great
+[  508.40s ->   515.12s] introduction to the transformer architecture. It's not a deep dive by any means, but if you're unfamiliar
+[  515.12s ->   521.56s] with the generative structure itself, I wouldn't recommend any other place to start. The last book
+[  521.56s ->   528.06s] in this modeling category comes from Necessity. I've had a lot of student meetings over the past couple
+[  528.06s ->   535.24s] weeks and a reoccurring theme in all of them is weak linear algebra. Whether you are looking to
+[  535.24s ->   541.58s] price financial instruments, whether you are looking to implement some sort of machine learning model,
+[  541.58s ->   548.28s] you cannot get away from linear algebra. Everything that we do is effectively a matrix or a vector,
+[  548.28s ->   554.88s] whether we are simulating some sort of process or we are doing dimensionality reduction on a data set,
+[  555.00s ->   562.26s] which is why if you have a weak or non-existent linear algebra background, I recommend linear algebra
+[  562.26s ->   568.60s] done right. Every now and again, I'll crack this guy open and I will do some practice problems just to
+[  568.60s ->   576.72s] refresh my memory. This is how I wish I learned linear algebra the first time that I went through
+[  576.72s ->   584.40s] the course. So if you have a weak background or a non-existent background, highly recommend linear
+[  584.40s ->   592.20s] algebra done right. Again, it is on this list by necessity. Before we move on to the books that have
+[  592.20s ->   597.32s] grounded me throughout my entire quant journey, I want to list some honorable mentions in the
+[  597.32s ->   604.02s] context of pricing financial derivatives. The first book that I ever read in this space was
+[  604.02s ->   612.30s] Pricing and Hedging Financial Derivatives. And I must say, when I first read this book, I did not have
+[  612.30s ->   619.42s] the necessary finance, math, or even probability and statistics to fully appreciate it. These are
+[  619.42s ->   624.58s] certainly heavier reads and they require a prerequisite level of these subjects, but
+[  624.58s ->   630.34s] nevertheless, I would be remiss if I didn't mention them on this list. This is the first book that I
+[  630.34s ->   637.84s] read in this space, but my favorite is Mathematical Modeling and Computation in Finance. This book covers
+[  637.84s ->   645.22s] pretty much everything you need to know about pricing financial derivatives. It also has a company in code
+[  645.22s ->   652.14s] in Python and MATLAB. And when I say this covers everything, I mean it covers everything. It's
+[  652.14s ->   657.64s] effectively a textbook. If you're looking for the characteristic function of a particular process,
+[  657.78s ->   663.24s] if you're looking for a moment generating function, if you're looking for how to discretize
+[  663.24s ->   670.14s] a particular model, this book will certainly have it. So I highly recommend these if you're interested
+[  670.14s ->   674.82s] in the pricing of financial derivatives. Again, they certainly require prerequisite knowledge,
+[  675.18s ->   683.24s] but look no further if you need a solid textbook for this subject. These last three books have
+[  683.24s ->   691.40s] nothing to do with quantitative finance, but I would not be where I am today without them. I think it's
+[  691.40s ->   698.12s] very important if you're going to get involved in a space where so much is out of your control and so
+[  698.12s ->   704.28s] much changes so quickly over time to ground yourself in something that makes sense to
+[  704.28s ->   713.24s] you. And these books have made a lot of sense to me over the years. The first book is going to be Ego
+[  713.24s ->   724.84s] is the Enemy by Ryan Holiday. The second is going to be Marcus Aurelius's Meditations. And the third is my
+[  724.84s ->   732.68s] favorite book of all time, and that is Epictetus's Discourses and Selected Writings. All of these books
+[  732.68s ->   740.36s] focus on the Stoic philosophy, which in a nutshell tells you to focus on what you can control, a
+[  740.36s ->   748.36s] phenomenal sentiment for a career as a quant when so much is out of your hands. This has helped shape the
+[  748.36s ->   756.28s] way that I not just tackle things professionally, but also personally and how I set goals and make progress
+[  756.28s ->   763.64s] towards them. I'll never forget when I first learned of Meditations. This was the first of these three
+[  763.64s ->   772.52s] books that I had read. It was probably seven years ago, maybe even eight at this point. And I very quickly
+[  772.52s ->   778.20s] became obsessed. I got a series of different translations, and I tried to see where the
+[  778.20s ->   786.76s] translator's interpretations differed, so on and so forth. This quickly led me to Ryan Holiday and my
+[  786.76s ->   796.77s] favorite book of his, that is Ego is the Enemy, focusing not just on the outcome, but making progress,
+[  796.77s ->   807.91s] staying humble, and actually doing, not just speaking of doing. Putting in the work, making things happen,
+[  807.91s ->   818.00s] building things, and focusing on what you can control. And the last, of course, Epictetus's Discourses.
+[  819.12s ->   827.09s] I've read this book probably over a thousand times. I have, I can't even count how many flags in it,
+[  827.09s ->   835.49s] how many flags I've moved and added, removed. And I gotta say, I think this book has shaped me,
+[  837.80s ->   845.99s] it has shaped the way that I think pretty much about everything and how I go about my day-to-day,
+[  847.62s ->   854.42s] make progress towards my goals, and deal with different challenges. With that, we've covered
+[  854.42s ->   862.10s] everything on my recommended reading list. Again, I do not recommend that you read these books cover to
+[  862.10s ->   870.10s] cover. Instead, treat them as your classroom. Acquire new technical skills, go out into the real world,
+[  870.10s ->   876.50s] see what works, see what doesn't work, then go back to the classroom and reassess. This is how you
+[  876.50s ->   882.74s] accumulate experience as a quant. And that's going to do it for this video. I hope you enjoyed. This
+[  882.74s ->   886.98s] certainly was a fun one to put together. If you enjoyed it and you want to see more like it in
+[  886.98s ->   892.18s] the future, please like, comment, subscribe, share. It helps me out tremendously. It is always greatly
+[  892.18s ->   897.54s] appreciated. If you'd like to master your quantitative skills, check out QuantGuild.com. If you'd like to
+[  897.54s ->   903.70s] connect with me and other quants in the QuantGuild community, join our Discord. I'll leave a link in the
+[  903.70s ->   911.30s] description below. Other than that, I want to thank you so much for watching, and I will see you in the next video.

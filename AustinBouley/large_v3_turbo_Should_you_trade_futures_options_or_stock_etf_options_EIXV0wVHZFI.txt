@@ -1,0 +1,81 @@
+[    0.00s ->     3.82s] Hi, my name is Austin Bully. In this video, I'm going to walk you through the three reasons why
+[    3.82s ->     8.80s] futures options are so much better than anything else, including stock options and ETF options.
+[    8.90s ->    12.18s] Why? If we look at the video plan, I'm going to walk you through what futures options are.
+[   12.44s ->    17.36s] I'm going to show you how I can 5X your returns, yes, 5X, how I can cut your losses in half,
+[   17.38s ->    21.76s] and how I can save you money on taxes. Literally, three of the biggest things that are plaguing
+[   21.76s ->    25.96s] traders today are solved by futures options. So let me dive through and show you how that works.
+[   25.96s ->    31.04s] Number one, what are futures options? Futures options are basically identical to stock and
+[   31.04s ->    36.48s] ETF options. So if you're familiar with them, then you basically know exactly what futures options are.
+[   37.04s ->    41.58s] Futures in and of themselves are financial instruments on things like commodities,
+[   41.90s ->    47.98s] currencies, and equities. Futures options are just a contract you're betting on what a commodity will
+[   47.98s ->    54.32s] do like gold, cattle, or the S&P 500. The only difference between stock options and futures options
+[   54.32s ->    62.00s] is two things. Number one, futures options trade 24-5, meaning they trade overnight on weekdays. And
+[   62.00s ->    66.20s] again, we'll get more into that here in a second. And number two is that you get access to higher
+[   66.20s ->    72.00s] margin, meaning that you can make more money by putting less money up front. So let's walk through
+[   72.00s ->    77.94s] what you guys probably really want to know is how can it 5X your returns? Okay, here's a super simple
+[   77.94s ->    83.88s] example. Let's say you're selling a put and you typically do it on SPY. This is a very great strategy.
+[   83.88s ->    88.84s] Put selling. It's one of the things that maybe the most money that I've made as a trader over the
+[   88.84s ->    97.26s] years is by selling puts. And if we do it on SPY versus ES, which SPY is an ETF and ES is the futures
+[   97.26s ->   105.42s] version. If we do the same strike price, same DTE, same underlying asset, the S&P 500, we can get a real
+[  105.42s ->   110.86s] view of what's going on here. This first trade is from SPY. You can see here our max profit is going to
+[  110.86s ->   117.18s] be $186. And we have to put up $6,000 to make that money. This is pretty standard when you're
+[  117.18s ->   123.22s] using an ETF option selling strategy. Now, if we take this same exact DTE, same strategy, same
+[  123.22s ->   130.22s] everything, you can look here, we're going to make 965 bucks for putting up 6,800. So let's look at
+[  130.22s ->   136.70s] this. The SPY trade, the same exact trade, same strategy, same everything has a 3% return on the
+[  136.70s ->   142.44s] capital you put up. So you put up 6,800, you make 3%. Now again, if you make that, awesome, right? But
+[  142.44s ->   148.48s] most people still aren't actually taking the whole profit. You're typically closing at a 25% take profit
+[  148.48s ->   154.54s] or a 50% take profit. If you close at a 50% take profit, you're not only making a 1.5% return on your
+[  154.54s ->   163.58s] money. Now, let's look at the ES trade. You put up 6,860 bucks and you make 965. That's a 14% return
+[  163.58s ->   169.82s] on your money. Now again, if you're doing a 50% take profit, you're still making a 7% return
+[  169.82s ->   175.00s] on your money, especially if this trade takes a week. That's a 7% return that you can do every
+[  175.00s ->   180.42s] single week, which is insane. And it's amount of compounding growth that you can achieve just by
+[  180.42s ->   186.14s] keeping the same strategy, but changing the asset you're doing on to a futures options. That's a 4.7x
+[  186.14s ->   192.86s] difference. You make 779 more dollars by using basically the same amount of money. Now that you know
+[  192.86s ->   196.80s] that futures options can make you more money, let's talk about the downside. How can it cut
+[  196.80s ->   203.18s] your losses in half? Okay. Futures options, especially ES, are very liquid, which means
+[  203.18s ->   207.42s] you're able to get in and out quickly. So there's not much slippage. Slippage means you have to change
+[  207.42s ->   211.50s] the order multiple times to get out. And typically you're changing it to something that's worse for
+[  211.50s ->   215.50s] you, whether you want to have to buy higher, sell lower, or something like that. So there's less of
+[  215.50s ->   220.48s] that, which allows you to make more money and lose less by default. But what I really want to go
+[  220.48s ->   227.08s] after is this. Futures options trade 24-5, meaning you can exit overnight. Why is this important? As
+[  227.08s ->   233.16s] you guys have probably seen, most crashes start overnight because wars and undercover operations
+[  233.16s ->   238.82s] and all these things typically happen overnight and not during the day. And so since most traders
+[  238.82s ->   244.60s] typically would have to wait until the market opened to exit, meaning the market's already dropped a ton.
+[  244.86s ->   249.34s] And by the time the market opens, they have to immediately put in orders and change the orders
+[  249.34s ->   253.00s] and all this stuff. And everyone's trying to get out at the same time. It's super stressful. And you
+[  253.00s ->   258.86s] get out at a very bad price. But if you're trading futures options, you can easily get out overnight.
+[  259.18s ->   264.58s] And which means you got out of most of the downside move. Now you don't have to negotiate and work hard
+[  264.58s ->   270.00s] to get out at the market open when thousands or hundreds of thousands of people are trying to get
+[  270.00s ->   274.50s] out as well. So with futures options, you can get out overnight, which can cut your losses
+[  274.50s ->   279.60s] dramatically. Now, if you're stuck in a position, you don't have to be, you don't have to be stressed
+[  279.60s ->   284.50s] about it. And especially when you use things like automation and options bots, you can actually have
+[  284.50s ->   289.74s] your positions being watched overnight. So you can sleep and let it do that for you. Again, I personally
+[  289.74s ->   294.96s] use the options auto trader for this. So cool. We talked about how we can literally 4.7 X or 5 X your
+[  294.96s ->   300.20s] returns, how we can cut your losses in half by helping you get out earlier overnight. And now one of my
+[  300.20s ->   303.86s] favorites is once you start to make more money in trading, you're like, I want to keep this money.
+[  303.86s ->   310.58s] And so again, we want to cut taxes down. Now futures options have the same tax advantage as SPX,
+[  310.74s ->   317.74s] which is known as IRS section 1256, which means that not all your money is taxed to the highest tax
+[  317.74s ->   323.60s] bracket. So if you're trading a stock ETF or a stock or an ETF option, all this stuff, it's taxed what
+[  323.60s ->   330.54s] it's called at a normal ordinary tax rate. So wherever you're working tax rate is, that's what
+[  330.54s ->   337.74s] you'll be taxed at. And so what is cool about this section 1256 that says, yeah, we are going to tax
+[  337.74s ->   343.76s] at that tax bracket, but we're only going to tax 40% of your gains at that bracket, 60% would tax
+[  343.76s ->   349.14s] somewhere else. So what does this mean? This means we have a hundred thousand dollars, 40, let's say we
+[  349.14s ->   354.28s] make a hundred thousand dollar profit, 40,000 will get taxed at your normal ordinary income tax bracket
+[  354.28s ->   360.20s] and 60,000 will get taxed at the long-term tax rate. Now what's awesome for most of you guys,
+[  360.28s ->   365.58s] the long-term tax rate is zero. So you literally are cutting that tax rate down dramatically. Here's
+[  365.58s ->   374.36s] a great example. And if you typically find yourself in the 24% tax bracket rate for your ordinary normal
+[  374.36s ->   382.64s] income tax, then that means if you trade the 60, 40 blended rates, you will now be paying an 18% tax
+[  382.64s ->   388.54s] instead of a whole 24. If you trade in stock options or ETF options this whole time, then you would have
+[  388.54s ->   395.16s] to pay a 24% tax. But if by using futures options, you only pay a total of about 18.6. So you can see
+[  395.16s ->   402.82s] here, it can save you 5%, even up to 12% on taxes, which is amazing just by using futures options,
+[  402.82s ->   407.42s] keeping the same strategy, same everything, but doing it on futures options. So guys,
+[  407.70s ->   412.96s] I hopefully this implored you because I use futures options. Almost all the traders that I coach and
+[  412.96s ->   418.98s] teach use futures options and they are generating insane amounts of money just because you can make
+[  418.98s ->   424.04s] more with less. You can cut your losses. You have more control and you pay less in taxes. Please go
+[  424.04s ->   429.26s] use futures options. I have a ton of futures options strategies on this video or on this channel.
+[  429.26s ->   433.44s] So go watch those videos. But anyway, so leave you guys with a free bonus gift. If you want to get
+[  433.44s ->   437.62s] access to this Google doc that you're watching this and you want to reference it, this Google doc is
+[  437.62s ->   442.40s] inside our free community that also has a ton of free courses and you can go and access that by going
+[  442.40s ->   448.08s] to the first link down below, which is our options auto trader schooled community. So anyways, see you
+[  448.08s ->   452.48s] guys in there, go grab this and go start trading with futures options and let me know how it goes in
+[  452.48s ->   452.90s] the comments.

@@ -1,0 +1,79 @@
+[    0.14s ->     5.64s] How's it going everybody? Today I want to talk about web application development in Python. So
+[    5.64s ->    12.52s] why do we want to build a web application? Well, whenever we have a Python backend,
+[   12.84s ->    17.10s] meaning we have some sort of Python script or application that accomplishes a task,
+[   17.60s ->    23.78s] we are going to want to eventually display that information or those analytics or whatever we've
+[   23.78s ->    32.38s] done in our Python code to the user on a front end. And instead of a traditional desktop application,
+[   32.72s ->    38.78s] it's becoming more and more common to see web applications with this functionality. So
+[   38.78s ->    43.80s] we're going to be using Flask, which is a library that you can install by running a simple pip
+[   43.80s ->    50.52s] install, Flask. And Flask is going to allow us to create lightweight web applications in Python.
+[   50.52s ->    55.44s] So it's pretty easy to get started in Flask. What we're going to want to do is create a new Python
+[   55.44s ->    62.52s] file. So I'm just going to do that right here. I'm going to call it main.py. And I'm going to go
+[   62.52s ->    70.26s] ahead and import Flask. So I'm going to say from Flask, import Flask. Then I'm going to create a
+[   70.26s ->    76.94s] default instance of Flask. So I'm going to say application equals Flask with a default name.
+[   76.94s ->    83.59s] And then I'm going to run this instance of Flask. So I'm going to say application.run.
+[   84.54s ->    90.00s] So let's actually go ahead and run this and see what happens. So we've created an instance of Flask
+[   90.00s ->    96.48s] and we've decided to run this instance. And when I run this script, we get the following. So we're
+[   96.48s ->   107.20s] hosting Flask on the local host or 127.0.0.1. And the default port is 5000. So if we were to connect
+[  107.20s ->   118.20s] to 127.0.0.1 port 5000 in the browser, we would get our Flask application. Now there's no content
+[  118.20s ->   123.48s] to display because we haven't defined any content for Flask to display. And if you haven't already
+[  123.48s ->   131.38s] guessed it, that's what we're going to go ahead and do next. So to display content on the browser,
+[  131.38s ->   136.18s] we're going to need to write some HTML and we're going to need to create an HTML template.
+[  136.18s ->   143.26s] I'm not going to go too in depth into HTML here or talk about the different idiosyncrasies
+[  143.26s ->   148.94s] of the language as a whole. Instead, I just want to go ahead and create a essentially a
+[  148.94s ->   155.18s] hello world version of HTML. So I'm going to go ahead and create a new HTML file and I'm
+[  155.18s ->   163.18s] going to call it home.html. And in this home.html file, I'm just going to go ahead and type hello
+[  163.18s ->   171.64s] hello world. Now, this is the furthest thing from what you would actually find on a web
+[  171.64s ->   177.68s] page. But this is just to get you started understanding how we can display content in the browser using
+[  177.68s ->   186.21s] Python. Flask is going to go ahead and look for our HTML templates in a default folder relative
+[  186.21s ->   192.45s] to the script containing our instance of Flask. So in this case, I'm going to go ahead and create
+[  192.45s ->   198.93s] a folder in the same path as the script containing the Flask instance, and I'm going to call it
+[  198.93s ->   209.18s] templates. And then I'm going to move the home.html file to the templates folder. Now that Flask knows
+[  209.18s ->   218.46s] where to look for our home page template, we can create a new URL rule so that Flask knows what to
+[  218.46s ->   224.54s] display when the user goes to the local host on the default port. So I'm going to create a new
+[  224.54s ->   233.38s] function and I'm going to call it home page. And for now, I'm just going to leave this function blank
+[  234.18s ->   241.62s] and I'm going to be adding a decorator. And this decorator is going to tell Flask when to route
+[  241.62s ->   250.10s] to this specific template. So I'm going to say application.route. And since it's a home page,
+[  250.10s ->   259.87s] I'm just going to use the default URL with a backslash. Now we need to render some content to be
+[  259.87s ->   266.43s] displayed when we arrive at the home page. The home page being the local host on the default port,
+[  266.43s ->   273.71s] local host port 5000. And to do that, I'm going to import render template from Flask. So I'm going to
+[  273.71s ->   282.99s] import render template. And now in the home page function, I'm going to return render template,
+[  282.99s ->   286.83s] and then the template that we just created, home.html.
+[  287.63s ->   294.19s] And what that's going to do is it's going to say, okay, Flask, go to the templates folder and grab
+[  294.19s ->   300.11s] the home.html template and display it to the user whenever they arrive at this URL.
+[  300.11s ->   303.87s] So I'm going to run this instance of Flask and I'll meet you in the web browser.
+[  304.83s ->   310.35s] So here we are in the web browser. I just ran Flask and I went to local host port 5000. You can
+[  310.35s ->   319.07s] accomplish the same thing by going to 127.0.0.1 port 5000. And you're going to go ahead and arrive
+[  319.07s ->   326.83s] at the home page for our web application. And in this case, we're displaying the home.html template,
+[  326.83s ->   335.79s] which we wrote hello world. So this is all good. But the main purpose of using Flask to build a web
+[  335.79s ->   342.83s] application on top of Python is to communicate Python variables to the front end. In this case,
+[  342.83s ->   350.03s] it's the through the home.html template we created so that the user can interpret and read the
+[  350.67s ->   356.59s] information that's being computed on the back end through Python. And to do that, we're going to be
+[  356.59s ->   364.35s] using Jinja and that's going to allow us to pass Python variables dynamically to the HTML template
+[  364.35s ->   371.87s] to display to the user in the web browser like this hello world template does. Okay, so we're back in
+[  371.87s ->   376.75s] Python. And if Flask didn't install it with your pip install Flask, you're going to want to go ahead
+[  376.75s ->   384.11s] and install Jinja with a pip install Jinja. And once you've done that, we're going to use it to
+[  384.11s ->   391.63s] communicate Python variables to our home.html template. So for starters, I'm just going to create
+[  391.63s ->   397.87s] a new Python variable, I'm just going to call it name. And I'm going to say name is equal to Roman.
+[  399.17s ->   408.53s] Now I want to display this variable name and its contents on the home.html template. How do I do
+[  408.53s ->   414.53s] that? Well, fortunately for us, we can use Jinja and Jinja is going to make this an extremely painless
+[  414.53s ->   420.77s] process. So I'm going to go into my HTML and I'm going to create a set of two curly brackets. So
+[  420.77s ->   429.31s] I'm going to say curly bracket, curly bracket, and I'm going to write name. So what this is going to do
+[  429.31s ->   436.51s] is it's going to allow me to pass information to this name variable in the home.html template.
+[  437.07s ->   444.03s] And how do I do that? Well, in render template, when we actually render the home.html template,
+[  444.03s ->   451.23s] I'm going to specify, I'm going to say, Hey, name in the home.html template is equal to
+[  451.87s ->   458.11s] the name variable that we defined right here. And if this isn't clear, this variable can be
+[  458.11s ->   464.59s] anything we want it to be. It could be, it could be X and we would say X is equal to name. It doesn't
+[  464.59s ->   469.95s] matter what we define this variable as, so long as we reference it correctly, when we're passing
+[  469.95s ->   476.35s] information or the relevant information that we want to display to it. So now I'm going to go ahead
+[  476.35s ->   484.21s] and rerun this and I'll meet you in the browser. So here we are in the browser and this is the
+[  484.21s ->   490.13s] previous instance that I have still loaded up. And what I'm going to do now is refresh the page. I'm
+[  490.13s ->   496.13s] just going to hit enter and boom, we have Roman. That is the variable that was declared in Python,
+[  496.13s ->   503.25s] passed to our home.html template and is now being displayed to us on this home template.
+[  504.82s ->   511.22s] So this is essentially everything you need to get started with web application development in Python.
+[  511.22s ->   518.10s] You know how to create an instance of Flask, create a new URL rule to route to a specific
+[  518.10s ->   524.02s] template that we created in HTML. And more importantly, we can pass Python information to
+[  524.02s ->   530.50s] that template using Jinja. So I'm going to go ahead and leave you with that. And I encourage you to
+[  530.50s ->   537.06s] mess around with Flask and Jinja and see what it's capable of. Maybe do some computations in Python and
+[  537.06s ->   545.94s] try displaying it to a HTML template using Jinja. And in later videos, I'm going to dive into including
+[  545.94s ->   553.14s] JavaScript and Ajax to help make your webpage significantly more dynamic and increase the overall
+[  553.14s ->   554.26s] functionality.

@@ -1,0 +1,199 @@
+[    0.00s ->     4.60s] Curious to know how to find the best stocks that produce the most consistent options income?
+[    4.88s ->     7.88s] Well, I'm going to walk you through the three key factors you need to know
+[    7.88s ->    11.36s] before you trade options on any stock that's going to help you make more,
+[   11.76s ->    13.86s] lose less, and do so more consistently.
+[   14.10s ->    16.86s] I'm also, if you stay till the end, I'm going to show you my top five stocks
+[   16.86s ->    18.74s] that I trade consistently using options.
+[   18.92s ->    20.96s] So diving into it, what are the three factors?
+[   21.06s ->    24.72s] Well, I have an options chain pulled up right here so you can see what I look at.
+[   24.92s ->    26.72s] There are a couple things that you want to know.
+[   27.00s ->    28.14s] Number one is volume.
+[   28.14s ->    32.14s] Let's go into the 10 days out, this little options chain right here,
+[   32.36s ->    34.02s] and we want to look at volume.
+[   34.24s ->    38.44s] Volume shows the number of options contracts it traded in that single day.
+[   38.80s ->    42.38s] So that means that in the morning when you look at volume, it may be very low,
+[   42.46s ->    44.76s] but as you go throughout the day, the volume will increase
+[   44.76s ->    46.54s] because the volume resets every single day.
+[   46.62s ->    50.20s] The volume shows you how many contracts are traded within that single day.
+[   50.46s ->    54.60s] You can see here SPY, which is a very liquid stock to trade options on,
+[   54.60s ->    58.18s] has 12,000, 13,000, 8,000, 5,000.
+[   58.28s ->    60.54s] Again, the volume differs for every single strike price
+[   60.54s ->    62.50s] because each strike price is a different contract.
+[   62.96s ->    67.68s] So now you can identify how many options contracts are being traded.
+[   67.82s ->    70.98s] And when it's higher, you'll be able to get in quicker and faster.
+[   71.42s ->    73.02s] Not only that, we have open interest.
+[   73.16s ->    75.08s] And again, these are things that you can enable and disable
+[   75.08s ->    77.06s] on whatever broker that you're looking at.
+[   77.10s ->    79.08s] But the next thing you want to look at is open interest.
+[   79.20s ->    80.04s] What is open interest?
+[   80.04s ->    83.20s] This shows you the number of options contracts being held.
+[   83.56s ->    84.44s] What does this mean?
+[   84.72s ->    86.80s] Well, in order for an options contract to exist,
+[   86.98s ->    89.46s] somebody needs to create the contract and sell it.
+[   89.72s ->    93.30s] If they sell it, they're creating a contract and they're selling it first,
+[   93.44s ->    95.10s] that creates an options contract.
+[   95.56s ->    99.10s] And so this shows us how many contracts are actually available,
+[   99.28s ->   102.54s] how many have been sold to start that creates the contract.
+[  102.74s ->   105.42s] Then from there, you can buy and sell those contracts over and over and over.
+[  105.72s ->   107.82s] But how many contracts have actually been initiated?
+[  107.82s ->   110.54s] So if we're putting this in a stock perspective,
+[  110.54s ->   111.78s] for people who know stocks,
+[  112.06s ->   114.16s] you have the number of shares of a stock available.
+[  114.54s ->   117.00s] And then the volume shows how many shares have been traded that day.
+[  117.14s ->   118.10s] That's the same thing here.
+[  118.20s ->   120.60s] Open interest shows the number of contracts available
+[  120.60s ->   124.22s] and volume shows how many of them were traded in a single day.
+[  125.02s ->   127.14s] And so again, if we're going to be putting on a trade,
+[  127.32s ->   130.12s] we want to make sure we have high open interest and high volume.
+[  130.28s ->   130.52s] Why?
+[  130.80s ->   133.08s] Well, because there needs to be a buyer for every seller.
+[  133.18s ->   135.78s] If I'm trying to enter in a stock, I need someone to sell it to me
+[  135.78s ->   138.24s] or an option, I should say, I need someone to sell it to me.
+[  138.30s ->   140.94s] If I'm trying to exit an option, I need someone to buy it from me.
+[  141.16s ->   144.38s] If there are no people there, if there is no volume there,
+[  144.52s ->   147.02s] I'm going to be stuck with a contract that's losing me money
+[  147.02s ->   150.30s] or I'm going to have to pay at a significant discount,
+[  150.46s ->   153.38s] it gave me losing money to get out of a trade.
+[  153.84s ->   157.40s] So if I want to put on a good or I'm looking for a good stock,
+[  157.46s ->   159.46s] what I want to look for is high open interest
+[  159.46s ->   162.06s] and high volume on a daily basis.
+[  162.06s ->   164.78s] That's what I'm looking at, the few thousand ranges plus.
+[  165.06s ->   169.36s] You can see here that SPY has 11,000, 24,000, 17,000.
+[  169.60s ->   172.90s] Again, the further you get from where the current stock is trading,
+[  173.22s ->   175.22s] the less the volume will shrink up,
+[  175.28s ->   177.00s] or I'm just saying the more the volume will shrink up
+[  177.00s ->   179.88s] because the volume will be highest around what's currently happening
+[  179.88s ->   181.72s] in the market in those current prices.
+[  182.50s ->   184.56s] Next, what you want to look at is what is so important
+[  184.56s ->   186.68s] and a lot of people overlooked.
+[  186.92s ->   188.48s] It's the bid-ask spread.
+[  188.48s ->   192.00s] The bid-ask spread is what you're paying and the cost that you have to buy
+[  192.00s ->   193.96s] when you're getting in and out of these trades.
+[  194.32s ->   197.32s] So for instance, SPY has a very small bid-ask spread.
+[  197.50s ->   200.28s] If we look at the bid right here, it currently says 311.
+[  200.36s ->   202.90s] If we look at the ask here, it says 312.
+[  203.30s ->   205.54s] And so again, that's a one-cent difference.
+[  205.74s ->   208.42s] That means if I want to enter in the contract by buying
+[  208.42s ->   210.50s] and then exit for selling immediately,
+[  210.72s ->   212.48s] I'm going to have a one-cent loss.
+[  212.52s ->   214.20s] I'm going to have that one-cent difference.
+[  214.66s ->   216.82s] And so again, that's a very small difference.
+[  216.82s ->   220.26s] However, there are some contracts that don't trade as much
+[  220.26s ->   222.10s] because the volume in the open interest is lower
+[  222.10s ->   224.26s] where that difference could be significant.
+[  224.64s ->   225.98s] When the distance is significant,
+[  226.28s ->   227.98s] that means if you're going to instantly buy and sell,
+[  228.06s ->   230.52s] you're going to be, by default, losing money.
+[  230.82s ->   232.72s] And so those are some important things you need to know.
+[  233.04s ->   235.48s] So here is an example of what you don't want to do
+[  235.48s ->   236.40s] since we see SPY.
+[  236.50s ->   238.88s] That's a great example of a type of stock
+[  238.88s ->   240.58s] that we want to trade options on.
+[  240.88s ->   242.28s] However, we look at FTX.
+[  242.46s ->   244.00s] This is a great example of one
+[  244.00s ->   245.46s] that you do not want to trade that often.
+[  245.46s ->   246.58s] Why?
+[  246.86s ->   248.66s] Well, if we look at the open interest,
+[  248.76s ->   252.86s] we have 130, 115, 642, 83, whatever.
+[  253.06s ->   254.66s] These are semi-decent, right?
+[  254.72s ->   256.74s] They're hundreds, but still very poor,
+[  257.08s ->   258.76s] a very bad open interest
+[  258.76s ->   261.22s] compared to what we saw with SPY.
+[  261.44s ->   263.80s] Now, again, if we're comparing it to no open interest,
+[  263.88s ->   266.00s] it's better, but still not really that good,
+[  266.30s ->   268.20s] especially when we look at the volume.
+[  268.20s ->   270.78s] The number of contracts that have been traded today
+[  270.78s ->   276.00s] is only in the 73 to 28 to 13 to 27 contract range.
+[  276.12s ->   276.82s] What does this mean?
+[  276.86s ->   279.46s] This means that if I want to trade a few of these contracts,
+[  279.58s ->   281.46s] like let's say I want to size up and trade five,
+[  281.74s ->   283.98s] I'm going to be taking up a majority of the volume.
+[  284.24s ->   285.54s] So that means it's going to be very hard
+[  285.54s ->   287.60s] for me to get out at an ideal level
+[  287.60s ->   289.34s] that I actually want to get out at.
+[  289.66s ->   291.82s] Also, let's take a look at the bid and ask spread.
+[  292.10s ->   295.62s] We can see right here that the bid is 261
+[  295.62s ->   298.02s] and the ask is 274.
+[  298.34s ->   300.28s] That's a 13 cent difference.
+[  300.56s ->   301.96s] That means if I immediately enter
+[  301.96s ->   303.18s] and immediately exit a trade,
+[  303.28s ->   304.28s] it's a 13 cent difference.
+[  304.36s ->   307.24s] I'm going to have a 13 cent or a $13 loss
+[  307.24s ->   308.86s] with nothing happening.
+[  309.12s ->   310.24s] That means if I get in the trade,
+[  310.34s ->   312.38s] it starts to go a bit and nothing happens
+[  312.38s ->   314.80s] or it goes against me and I want to exit by default,
+[  314.90s ->   317.18s] not even factoring in the directional risk,
+[  317.26s ->   318.80s] aka not going in my favor,
+[  318.80s ->   320.56s] I'm going to lose $13
+[  320.56s ->   321.98s] and that's not something I want to do.
+[  322.02s ->   323.60s] I want to have the smallest risk ever
+[  323.60s ->   326.06s] and that's why I'm going to need a tight bid-ask spread.
+[  326.26s ->   328.58s] So when we look at these three key factors,
+[  328.78s ->   330.96s] volume, open interest, and bid-ask spread,
+[  331.10s ->   333.50s] we arrive at some great options.
+[  333.66s ->   336.00s] And so again, what we look at is SPY.
+[  336.32s ->   339.04s] SPY is a very great stock to trade.
+[  339.10s ->   340.62s] As you see here, very high volume,
+[  340.74s ->   342.92s] very high open interest and a tight bid-ask spread.
+[  343.14s ->   344.96s] This is a great option to trade.
+[  345.02s ->   347.52s] It's going to help you create consistent income
+[  347.52s ->   350.44s] if you're selling or allow you to get in and out quickly
+[  350.44s ->   351.62s] if you're day trading options.
+[  352.40s ->   354.18s] Next, we have QQQ.
+[  354.48s ->   357.16s] Again, ETFs tend to be a bit more liquid
+[  357.16s ->   358.84s] and are easier to get in and out of.
+[  359.04s ->   361.76s] You can see here it's in the high hundreds,
+[  362.02s ->   363.16s] almost in the thousands,
+[  363.32s ->   365.88s] and some are in the thousands as well for the volume.
+[  366.16s ->   368.34s] The bid-ask spread is around one to two cents,
+[  368.40s ->   370.10s] so that's still very, very good.
+[  370.54s ->   371.50s] Here are some other options.
+[  371.60s ->   373.56s] We have DIA, which is another ETF.
+[  373.56s ->   376.16s] This one's going to be a bit lower on the totem pole
+[  376.16s ->   378.82s] with volume, but still a decent one to trade
+[  378.82s ->   379.62s] because it's an ETF.
+[  379.78s ->   382.28s] You can see here the open interest is in the thousands range
+[  382.28s ->   383.94s] and then the volume is in the hundreds range.
+[  384.34s ->   387.96s] But again, we also have that two to three cent bid-to-ask price,
+[  388.04s ->   388.80s] so that's really good.
+[  389.64s ->   392.40s] If we're looking at other things outside of an ETF,
+[  392.60s ->   394.68s] since I give you three examples of ETFs,
+[  394.86s ->   398.04s] we can look into highly popular stocks known as the FANG stocks,
+[  398.14s ->   399.98s] Facebook, Amazon, Apple, Netflix, and Google.
+[  400.32s ->   401.58s] So let's pull up Apple real quick.
+[  401.58s ->   402.70s] You can see an Apple example.
+[  402.80s ->   404.24s] If we go out roughly 10 days out,
+[  404.48s ->   406.66s] you can see here really high open interest,
+[  406.66s ->   410.66s] really high volume, and a nice tight bid-ask spread.
+[  410.74s ->   413.48s] You can see here a one cent to two cent bid-ask spread.
+[  413.86s ->   417.44s] So Apple is a great thing to trade options on.
+[  417.70s ->   418.84s] Now, something you do have to note,
+[  419.08s ->   421.14s] the larger in size your stock price gets,
+[  421.28s ->   424.16s] the larger the bid-ask price will be by default.
+[  424.28s ->   426.96s] So if we move to Amazon, AMZN,
+[  426.96s ->   428.92s] we can see here that we're looking at,
+[  429.02s ->   432.44s] oh, I forgot the recent stock split.
+[  432.82s ->   434.74s] Anyways, Amazon is a great stock.
+[  434.80s ->   436.68s] It's a high volume and low split.
+[  436.84s ->   438.48s] If I want to show you a higher price stock,
+[  438.54s ->   440.30s] like SPX or Google, for instance,
+[  440.66s ->   444.26s] you can see here how the bid-ask spread is 20 cents.
+[  444.52s ->   446.28s] So we have a 20 cent bid-ask spread.
+[  446.40s ->   448.22s] And so again, that changes massively.
+[  448.38s ->   449.70s] It's something to be aware of.
+[  450.06s ->   453.16s] Anyways, those are my top stocks that I want to show you.
+[  453.60s ->   456.38s] Spy, QQQ, DIA, Apple, Amazon,
+[  456.80s ->   458.92s] and then those are kind of your basket
+[  458.92s ->   461.66s] of the best stocks to trade options consistently on.
+[  461.90s ->   464.96s] I hope you take away the importance of these three levels,
+[  465.06s ->   467.52s] volume, open interest, and bid-ask spread.
+[  467.58s ->   468.84s] If you have any other questions
+[  468.84s ->   471.06s] or you want to learn how to trade options
+[  471.06s ->   472.44s] and credit spreads the way I do,
+[  472.74s ->   474.62s] make sure to click the link down below
+[  474.62s ->   476.20s] and join my free credit spreads course.
+[  476.26s ->   476.96s] Just put in your email,
+[  477.06s ->   478.98s] you'll get my credit spread series course.
+[  478.98s ->   482.26s] That is in videos and a PDF guide to help you trade them.
+[  482.52s ->   484.06s] All right, guys, see you in the next video.

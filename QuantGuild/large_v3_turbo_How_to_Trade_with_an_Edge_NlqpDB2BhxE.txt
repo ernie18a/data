@@ -1,0 +1,291 @@
+[    0.46s ->     9.02s] This idea of edge in the trading space comes up all of the time. What's your edge? What's your
+[    9.02s ->    15.20s] strategy's edge? How are you choosing to make these optimal decisions in the face of uncertainty
+[   15.20s ->    21.42s] in a way that will positively impact your expected value? Because in these environments,
+[   21.42s ->    28.72s] the expected value of a strategy is directly related to the positions that that strategy
+[   28.72s ->    35.24s] is endorsing and the positions that you end up taking at the end of the day. It's the same thing
+[   35.24s ->    42.12s] in poker. You can bet your entire bankroll pre-flop or you can check, call, try to see some
+[   42.12s ->    46.54s] cards, get some more information. Maybe you're really good at reading players. That influences
+[   46.54s ->    52.86s] your expected value, the decisions you make, so on and so forth. In this video, what I want to do is
+[   52.86s ->    59.38s] I want to define this concept of edge and I want to show you how you can trade in an environment
+[   59.38s ->    65.16s] where you have this perfect edge. Then I want to extend it to the markets. I want to show you the
+[   65.16s ->    71.00s] idea of edge in a quantitative capacity, edge in a qualitative capacity. Then I want to wrap up with
+[   71.00s ->    76.36s] some anecdotal stories and some closing thoughts and future topics. As always, this Jupyter notebook
+[   76.36s ->    81.20s] will be available in the description below. I'll also be posting it to the Quant Guild library on
+[   81.20s ->    86.90s] GitHub where I post all of my Jupyter notebooks and associated YouTube videos. At the top of this
+[   86.90s ->    92.18s] notebook, you'll notice some related content on pricing, why we care about pricing and identifying
+[   92.18s ->    98.26s] mispricings, trading in a statistical capacity as a market participant or a market maker. So
+[   98.26s ->   105.16s] I certainly recommend that you check those videos out. Moreover, I am super stoked to announce a massive
+[  105.16s ->   111.04s] update to QuantGuild.com. All of the games have been developed to help you apply your probability
+[  111.04s ->   116.76s] and statistics to the financial markets. 90 plus lessons in math, finance, and
+[  116.76s ->   123.48s] probability created by myself specifically for quantitative finance. But it doesn't stop there.
+[  123.54s ->   128.80s] It certainly was a busy summer. I've also launched live courses that you can take with me on
+[  128.80s ->   134.60s] QuantGuild.com. For this August cohort, we are launching financial mathematics and quantitative
+[  134.60s ->   139.46s] trading, and there are still a few seats left. So please, if you're interested in supporting the
+[  139.46s ->   145.00s] channel so I can continue to make videos just like this one, check out QuantGuild.com.
+[  145.00s ->   151.60s] Without further ado, let's jump right in and start discussing this idea of edge by defining it with
+[  151.60s ->   156.92s] a simple example. Let's start by setting the scene here. Trading is about making optimal decisions in
+[  156.92s ->   163.68s] the face of uncertainty. It is not a game of chance like roulette. No matter what action I take in roulette,
+[  164.04s ->   169.78s] I'm always going to lose money statistically as I continue to play because I'm subjecting my wealth
+[  169.78s ->   177.26s] to the house edge. If I come up with the expected value for one play of roulette, it's negative. And
+[  177.26s ->   183.76s] if I continue to play, I am going to subject my wealth path to this negative expected value or this
+[  183.76s ->   190.36s] negative edge, and I'm going to lose all my money. Here's a very simple example. On the left is a chart
+[  190.36s ->   198.28s] where I randomly choose black, red, or green with equal probability. And on the right is a strategy where I
+[  198.28s ->   204.36s] choose black, then red, then green, then black, then red, and I do that sequentially. No matter what
+[  204.36s ->   210.44s] I do, there is no optimal set of actions that I can take that's going to take this expected value
+[  210.44s ->   217.26s] from negative to positive. I'm always subjecting my wealth to the randomness associated with the
+[  217.26s ->   222.80s] probability mass function governing roulette, and it's fixed to be negative so the house always wins.
+[  222.80s ->   229.58s] That's the house edge. This is what edge looks like as a player if your opponent, that is the house,
+[  229.98s ->   236.32s] has the edge. My wealth path is going to look like this over time. Effectively, the house knows how to
+[  236.32s ->   243.72s] trade with an edge, right? The transaction being a player going to roulette, putting money on black,
+[  243.88s ->   250.96s] green, or red, and then realizing some sort of payoff, right? The house knows how to trade with that edge.
+[  250.96s ->   256.12s] Which the players who are playing roulette don't. Otherwise, they wouldn't play. That's the optimal decision
+[  256.12s ->   264.06s] to make. So let's extend this idea now to another game of chance involving a market where our action
+[  264.06s ->   272.26s] or inaction directly contributes to our expected value being positive or negative and our associated PNL
+[  272.26s ->   279.08s] over time. So let's look at a game where if I roll a dice, I receive a payoff based on the value that I went
+[  279.08s ->   284.46s] long or short at. So for example, if I go long at four, I roll a dice. If it's six, then I make two
+[  284.46s ->   291.56s] bucks. If I go short at three, I roll a dice. It's one, then I make two bucks. So the outcome is going
+[  291.56s ->   298.48s] to be based on whatever price I go long or short at, right? This expected value, this three and a half,
+[  298.58s ->   304.02s] right? This is the expected value of a dice roll. That's not going to change over time, right? But keep
+[  304.02s ->   309.22s] in mind, there's no machine learning algorithm. There's no AI algorithm in this entire world that
+[  309.22s ->   315.52s] is going to be able to predict the outcome of my dice roll, right? The best we can do is this
+[  315.52s ->   320.60s] expectation. In fact, that's really all machine learning and artificial intelligence is. It's
+[  320.60s ->   326.14s] essentially non-linear conditional expectations, right? We're not predicting anything. This word
+[  326.14s ->   332.38s] predict is thrown around all the time, but it's not a prediction. You're predicting a level. You're
+[  332.38s ->   338.70s] computing some sort of expectation. Very rarely is it going to be the value associated with your
+[  338.70s ->   345.24s] expectation. In fact, it can't even be three and a half, the dice roll. So when I say that there's
+[  345.24s ->   349.52s] no such thing as price prediction without insider information, this is what I'm talking about.
+[  349.80s ->   354.46s] If you don't have insider information, the best you can do is to come up with some sort of level,
+[  354.86s ->   360.08s] some sort of target level to base your decisions around. Sometimes that'll be right. Sometimes that'll
+[  360.08s ->   366.26s] be wrong. And how you act based around that level and how you essentially deduce that level will
+[  366.26s ->   371.94s] determine whether or not you impact your expected value in a positive or negative way. Back to this
+[  371.94s ->   377.74s] game of chance. If we look at the expected value of a dice roll being three and a half, we can inform
+[  377.74s ->   384.84s] our decisions on whether to go long or short based on this level. And it's going to enable us to
+[  384.84s ->   390.68s] accumulate positive expected value over time. So what I have here is I have a market that is going
+[  390.68s ->   396.50s] to quote a bid and an offer. The bid is just a price that you can sell at. And the ask or offer is the
+[  396.50s ->   401.86s] price that you can buy at. So in our dice roll example, if the ask or offer is three, then I'm
+[  401.86s ->   408.68s] allowed to buy at three. And if I realize, let's say I roll the dice and it's five, I can make $2.
+[  408.68s ->   415.72s] The bid and offer are going to be generated randomly around this level three and a half.
+[  415.88s ->   422.82s] And what I'm going to do is I am going to use this idea of eggs to accumulate positive expected value.
+[  423.32s ->   430.64s] And I'm going to accumulate PNL as I continue to play iterations of this game. And that is because my
+[  430.64s ->   438.66s] actions directly impact my PNL. If I choose to transact when the bid is higher than three,
+[  438.66s ->   446.42s] and a half. So let's say I can sell at four, then I have edge on the downside. Four is higher than
+[  446.42s ->   451.54s] three and a half. So the expected value of a dice roll is lower than the price that I can sell at.
+[  451.54s ->   458.82s] That's edge. If I instead buy low, lower than the three and a half, then I have edge on the other
+[  458.82s ->   465.08s] side. So this is the idea of edge. And this is how we can actually implement it strategically in our
+[  465.08s ->   471.96s] decision-making to accumulate wealth. So what I have here is two charts that are very similar to this
+[  471.96s ->   479.30s] in the roulette case with a game that our optimal action influences our expected value in PNL.
+[  479.52s ->   485.96s] And that is if I choose to transact randomly, this is my wealth path in the dice roll game. It goes all
+[  485.96s ->   492.68s] the way down to eventually zero. But if I choose to act optimally where I have edge, look at my wealth
+[  492.68s ->   498.62s] path. I'm accumulating a significant amount of PNL over time. Now, it's very important to note that
+[  498.62s ->   504.78s] this is not, this is not suggesting that every transaction is going to yield a positive outcome.
+[  505.08s ->   513.26s] This is the average path. This heavy green path here is the average path. Some paths do significantly
+[  513.26s ->   518.74s] better. Some barely break even. In fact, some go bankrupt before they have the opportunity to reach
+[  518.74s ->   523.56s] these nice wealth thresholds up here. So it's very important to keep in mind that we're just realizing
+[  523.56s ->   530.58s] one sample path, even though we have this edge. Now, on average, it may look like this,
+[  531.04s ->   536.74s] but we're going to experience one of these paths, right? That's this idea of the ensemble average
+[  536.74s ->   542.24s] versus the time average. But again, I'm going to punt on that and save it for another day. If I was to set
+[  542.24s ->   546.20s] up in New York City, a booth, right? If I set up a table before, you know, I get kicked out.
+[  546.20s ->   552.22s] If I set up a table and I try to make a market with this dice roll game and I tell people,
+[  552.40s ->   559.60s] hey, you can, you know, you can sell at two and buy at five, right? If they don't have any concept
+[  559.60s ->   565.62s] of expected value and edge, my wealth path is going to look something like this. I'm going to be the
+[  565.62s ->   571.20s] casino, right? That's exactly what the casino is doing. And if I set up a table like that on the
+[  571.20s ->   577.30s] street, if the common man doesn't have understanding of expected value, then this is what my wealth
+[  577.30s ->   581.68s] path is going to look like on average relative to, you know, one of these sample paths, it's going to
+[  581.68s ->   587.26s] be one of them, but I'm going to accumulate that edge over time. Whereas everyone transacting with me,
+[  587.34s ->   592.24s] this is what their wealth path would look like. Now, that's a case where I'm setting the market and
+[  592.24s ->   600.28s] I'm using this idea of edge to accumulate positive expected value, right? It's the same as with the
+[  600.28s ->   608.06s] casino, but the only difference here is my action and my optimal action or my choice to, you know,
+[  608.14s ->   613.20s] buy or sell is impacting my expected value. Whereas in the roulette example, there's nothing that I can
+[  613.20s ->   618.96s] do except not play. That's going to be my optimal action. This is how you trade with an edge. This is
+[  618.96s ->   624.72s] exactly what the casino is doing. Each outcome itself is random. I don't know the value of my
+[  624.72s ->   631.94s] dice roll. I don't know what roulette is going to land on, but this notion of EV is going to allow us
+[  631.94s ->   638.90s] to either accumulate wealth or lose wealth over several iterations of playing that game. And we saw
+[  638.90s ->   646.24s] that in one case, our actions don't matter. And in another case, they do. So let's extend this now
+[  646.24s ->   652.16s] to the markets where our actions certainly do matter. We're dealing with this randomness, but this is
+[  652.16s ->   657.68s] now a game of really an incomplete information because we don't have a static level. There is no
+[  657.68s ->   663.42s] static three and a half that we can use. Just as I said earlier, there's no price prediction. The same
+[  663.42s ->   669.18s] thing is true with the dice roll. There is no way to predict the value of a dice, but we still want to
+[  669.18s ->   675.82s] discern some sort of level to make optimal decisions based off of. There are so many ways to do this.
+[  675.82s ->   682.46s] Let's take a look at some examples of quantitative edge. I want to start by saying that we're not
+[  682.46s ->   687.20s] talking here about arbitrage, a risk-free profit where our equity just goes up and to the right.
+[  687.88s ->   694.22s] And you can cite sharps in the 10s, 20s, 30s, where it's a ridiculous metric in the first place in that
+[  694.22s ->   699.76s] context because really you're just talking about getting stuck with the bill, if you will. You're not
+[  699.76s ->   704.46s] able to execute on your risk-free profit, but we're not talking about arbitrage here. That's my main
+[  704.46s ->   709.70s] point. There are systematic inefficiencies in the market that can be exploited in a quantitative
+[  709.70s ->   714.30s] capacity, especially with sufficient data. Once you start to get into the space of operating with
+[  714.30s ->   722.76s] big data, large amounts of news, text, maybe even videos, audio, you can extract a lot of signal and
+[  722.76s ->   729.10s] make optimal decisions in this uncertainty, constructing portfolios that exhibit this expected
+[  729.10s ->   734.98s] value and accumulation of expected value over time. There are fundamentally different problems
+[  734.98s ->   739.56s] that you face as a retailer or an institution. Institutions deal with the scalability issue.
+[  739.92s ->   745.48s] As you continue to increase the capital allocated to a strategy, that strategy's edge is going to
+[  745.48s ->   750.40s] decline. That just makes sense. From a retailer perspective, how do you handle that large amount
+[  750.40s ->   756.16s] of data? How do you deploy your capital in an algorithmic capacity? It's not an easy task.
+[  756.16s ->   763.32s] There are teams of people working on those problems. Another worth mentioning in this space is that our
+[  763.32s ->   770.16s] statistical edge is very hard to discern. We don't know if the sample path that we're on is just a
+[  770.16s ->   776.00s] bad luck sample path. Let's take a look at this example here where we have edge, but look at some
+[  776.00s ->   782.06s] of these sample paths. They do go bankrupt. They do go bankrupt before they're able to accumulate wealth.
+[  782.06s ->   789.44s] We don't know which sample path we're on. We're trying our best to deduce if we have edge based
+[  789.44s ->   795.64s] on some level that we come up with because we don't have a static level. We're trying to figure out if
+[  795.64s ->   802.62s] that edge is still even viable now because it can change over time. Just because a strategy worked
+[  802.62s ->   807.68s] for the last five years doesn't mean it's going to work this year. There are all of these different
+[  807.68s ->   811.80s] moving parts that we also have to be aware of. So what are we actually looking at here when I talk
+[  811.80s ->   816.24s] about quantitative edge? Well, this is what a trading signal would look like. This is a monotonic
+[  816.24s ->   820.38s] relationship that you'd like to see between the quantile breakdown of returns by the trading signal
+[  820.38s ->   826.42s] where the lowest value of your signal has an average return that is negative and the highest
+[  826.42s ->   832.80s] bucket of your signal has an average value that's positive. You would go net short these equities,
+[  832.80s ->   838.82s] net long these equities. This is like some sort of cross-sectional return strategy where you're
+[  838.82s ->   843.02s] trying to predict returns in the cross-section. So you go long a basket of equity, short a basket
+[  843.02s ->   849.26s] of equities, and this is the associated P&L. You're trying to accumulate that P&L, right, based on this
+[  849.26s ->   855.50s] edge over time. But as I said, not an easy task. There are a lot of places to look. You can look at
+[  855.50s ->   860.88s] option implied volatility. You can look at earnings events. There are systematic inefficiencies in the
+[  860.88s ->   865.38s] market that you can capitalize on. But again, nothing is guaranteed. This is on a statistical
+[  865.38s ->   870.92s] basis, right? It's the same way if I play this dice roll game. I could go bankrupt before I accumulate
+[  870.92s ->   876.96s] all this wealth. It's entirely possible that my wealth path is just unlucky. But it's very difficult
+[  876.96s ->   882.46s] to tease out, especially when you don't actually know if the level that you're coming up with is
+[  882.46s ->   889.96s] correct for your edge, whether or not you're just lucky or unlucky, right, with your strategy. All of
+[  889.96s ->   893.92s] these things, there are techniques to deal with them, so on and so forth. But this is what it would look
+[  893.92s ->   900.20s] like in a quantitative capacity in real life. This is the best that we can do in the context of edge
+[  900.20s ->   906.40s] in a quantitative way. The best way to think about quantitative edge is to think about the way that
+[  906.40s ->   913.36s] strategies are deployed at different firms, right? Each firm doesn't run just one strategy with one
+[  913.36s ->   919.36s] expected value, right? The firms operate in different capacities. Sometimes the CIO is going to make
+[  919.36s ->   923.74s] everybody be net long or short, and each team has to figure out how to be net long or short.
+[  924.40s ->   929.74s] Sometimes, you know, everybody can act individually, and that heterogeneity may provide
+[  929.74s ->   937.74s] better risk assurances and whatnot. But what I'm trying to say here is if each team is operating their
+[  937.74s ->   944.60s] own strategy, each team is trying to come up with a way to have positive EV. And if you have a whole
+[  944.60s ->   949.92s] bunch of different teams operating a whole bunch of different strategies, all trying to maximize EV,
+[  950.68s ->   956.78s] then that sure as heck is better than just putting all of your eggs in one basket. For example, in this
+[  956.78s ->   962.04s] one strategy where you may go bankrupt, or even in the dice example, where you may go bankrupt before you
+[  962.04s ->   967.08s] can accumulate that wealth over time. So I think that's the best way to think about quantitative edge.
+[  967.08s ->   973.26s] If that's quantitative edge, then what the heck is qualitative edge? Well, the efficacy of qualitative
+[  973.26s ->   981.90s] edge comes under fire very quickly due to the lack of structure in an algorithmic capacity behind the
+[  981.90s ->   988.06s] decision-making process, right? Typically, qualitative edge will come from some sort of information
+[  988.06s ->   992.94s] advantage. I'm not talking about insider information. I'm talking about experience, right? Let's think of
+[  992.94s ->   999.52s] something like a poker player. Let's say I'm a terrible poker player. So I take somebody who is
+[  999.52s ->  1004.04s] a professional poker player and I tell them, hey, can you tell me what to do so that I have the best
+[ 1004.04s ->  1009.12s] chance of winning out of all of these folks that I'm playing with? He's like, okay, yeah, sure. So I'm
+[ 1009.12s ->  1014.96s] sitting there with my hand and he's like, okay, now do this. I'm like, why? Why should I do that?
+[ 1016.42s ->  1021.26s] Is he going to sit there and explain the 10 million and one different reasons why I should do that? Is he
+[ 1021.26s ->  1025.88s] going to tell me? Because this guy's bluffing? Because this guy is about to, you know, bet his bankroll
+[ 1025.88s ->  1032.08s] and this guy. And is he going to go through? No, he's not. So in a qualitative capacity, it's much more
+[ 1032.08s ->  1039.30s] difficult to define the decision-making process because there's so many moving pieces. But it's kind of
+[ 1039.30s ->  1044.08s] ridiculous to suggest that it doesn't exist because, you know, you look at something like poker where things
+[ 1044.08s ->  1049.90s] like, you know, reading other folks and figuring out when is the time to bluff and like all of those things
+[ 1049.90s ->  1055.42s] are too abstract to quantify. Sure. You could try to impose structure to explain some of that
+[ 1055.42s ->  1061.12s] variation. And I'm sure you can do a pretty darn good job at it. But the point is that there is a
+[ 1061.12s ->  1067.28s] qualitative edge as well. So I come up with a couple of different examples here, but I want to show an
+[ 1067.28s ->  1072.96s] example based on a perspective that I have on volatility. And I'm using this example of tariffs in
+[ 1072.96s ->  1079.68s] early 2025. Fear is always mispriced in the markets. The so-called leverage effect is well
+[ 1079.68s ->  1084.94s] documented, a stylized fact suggesting that as volatility increases, there's a disproportionate
+[ 1084.94s ->  1091.42s] response in the associated price level. And as volatility declines, the price level recovers,
+[ 1091.54s ->  1098.08s] but at a slower rate relative to the decline. Okay. If this is the case, what is my qualitative
+[ 1098.08s ->  1105.20s] edge? Well, I look at this as a mispricing based on fear rather than the world is going to end now for
+[ 1105.20s ->  1110.36s] the sake of these charts, I have to define it in a quantitative way. But when I actually go about
+[ 1110.36s ->  1117.40s] executing this strategy as volatility is rising, I am just going to continue to buy more of the
+[ 1117.40s ->  1123.98s] associated ETF, or I'm going to choose a little threshold that I say, okay, you know what?
+[ 1123.98s ->  1131.74s] This seems very high now. I'm going to dump a lump sum in. And that's my qualitative edge is I look
+[ 1131.74s ->  1138.14s] at this as a mispricing based on fear rather than some sort of quantitative algorithmic inefficiency
+[ 1138.14s ->  1144.70s] that I am going to deploy systematically. So let's look at these two examples, right? If I deploy a lump
+[ 1144.70s ->  1152.38s] sum based on this volatility increase, I look at volatility as a mean reverting process. That's my
+[ 1152.38s ->  1158.38s] qualitative edge. So I say, okay, I deploy a lump sum when the VIX is over 30. If the VIX is over 30,
+[ 1158.44s ->  1163.64s] I deployed a lump sum, my drawdown would have been 13%. But a few months later, now we're at the end
+[ 1163.64s ->  1174.12s] of July, I'm back up 112,000. So I went from 100,000 drawdown of 13% to 87,000. Now I'm up to 112,000.
+[ 1174.64s ->  1179.84s] That's one way to do it. Survive that drawdown, you'll be okay. Okay, what about by the way down?
+[ 1179.84s ->  1186.32s] Okay, well, I can instead deploy maybe 5-10% of my capital at a time as the volatility is rising.
+[ 1186.50s ->  1192.82s] And then I either run out of cash, or the volatility drops below the level that I'm willing
+[ 1192.82s ->  1199.62s] to buy at, and I stopped buying the underlying or the associated ETF. And if I did it in this
+[ 1199.62s ->  1206.26s] capacity with a level of 30 and a 10% investment every day that it's above 30, then my drawdown is
+[ 1206.26s ->  1214.56s] even lower. It's 98,000, so roughly a 2% drawdown. And I'm back up to 115k at the end of July.
+[ 1215.08s ->  1225.08s] So the qualitative edge in this sense is when I reach this $87,000 drawdown, so it's a $13,000 drawdown,
+[ 1225.16s ->  1234.18s] right? 13% drawdown from 100k, or a 2% drawdown with this more gradual approach. I'm not worried
+[ 1234.18s ->  1240.36s] about the strategy, right? I'm not waiting for this to recover, and I'm like, oh, I hope this
+[ 1240.36s ->  1245.04s] recovers, right? It's fundamentally a different perspective on the situation. So the qualitative
+[ 1245.04s ->  1253.38s] edge comes from outcome, and eventually when volatility normalizes, I am expecting to realize
+[ 1253.38s ->  1260.72s] this positive value. And if I don't, then maybe I trade out at a lower level, and I'll discern what
+[ 1260.72s ->  1267.52s] that's going to be based on how the volatility ends up playing out. So maybe the volatility stays
+[ 1267.52s ->  1272.48s] high for longer than I anticipated, and I'm not willing to sit with this drawdown. So I'm going to
+[ 1272.48s ->  1277.50s] get out, wait for vol to get higher, and then drop it back in at a lower level. But that's discretionary.
+[ 1277.58s ->  1283.90s] That's at my own discretion for whether or not I'm going to do that. Moreover, this sample path only
+[ 1283.90s ->  1290.00s] realizes one time. It's a very important idea because we try to look at these systematic inefficiencies,
+[ 1290.00s ->  1294.60s] and sometimes they're there. But other times, if we're trying to trade in this discretionary
+[ 1294.60s ->  1300.98s] capacity, you only realize one sample path one time. So think of it like an election or betting on
+[ 1300.98s ->  1308.40s] an election. The actual candidate that's elected is only going to be elected at that one point in time
+[ 1308.40s ->  1316.06s] once. There is no ability to repeat that experiment a large number of times to see if the probabilities
+[ 1316.06s ->  1322.94s] or the money was correct or any of that. It's only going to actualize one time. So this idea of
+[ 1322.94s ->  1328.12s] qualitative edge is certainly more elusive, but we can't suggest that it doesn't exist because if you
+[ 1328.12s ->  1334.08s] look at something like poker and the ability to read people or read the table, figure out what to do
+[ 1334.08s ->  1340.26s] and when, that is fundamentally qualitative, right? We can, again, try to impose structure to explain
+[ 1340.26s ->  1347.50s] variability in each of those different areas. But that's, again, a more complicated and definitely
+[ 1347.50s ->  1355.50s] a non-trivial problem. All that being said, this should be evident why nobody is going to teach you
+[ 1355.50s ->  1362.62s] to trade, right? If we go back to this dice roll example, yeah, I could teach you to trade here,
+[ 1363.02s ->  1369.60s] 100%. If I told you, okay, you have this dice market, the static expected value is three and a half.
+[ 1370.02s ->  1377.78s] You should go long when the ask or offer is below three and a half, short when the bid is above three
+[ 1377.78s ->  1382.82s] and a half. That's a set and forget strategy. You might go bankrupt by the time you accumulate
+[ 1382.82s ->  1390.10s] a significant amount of wealth, but I can teach you to trade that 100%. This quantitative edge,
+[ 1390.30s ->  1396.88s] I could teach you to trade that, right? I could show you a trading system, whether it be active
+[ 1396.88s ->  1401.94s] or retired. I could show you what we've done in the past to generate wealth, but there's nothing
+[ 1401.94s ->  1406.86s] guaranteeing that that system is going to continue to operate or work. And that's the exact same argument
+[ 1406.86s ->  1413.80s] with the qualitative edge. So the reason why I'm highlighting this is because I want to emphasize
+[ 1413.80s ->  1421.70s] that learning is really the key here. Learning. You are the key to the problem that is trading with
+[ 1421.70s ->  1428.62s] edge, not someone else or some sort of money printing trading system. You are the key. You have to
+[ 1428.62s ->  1435.48s] learn the space and learn to make optimal decisions in the face of uncertainty, knowing that the space
+[ 1435.48s ->  1441.36s] is fundamentally random, fundamentally uncertain. In other words, if you try to look to things like
+[ 1441.36s ->  1446.64s] the news, the news just wants your attention. Every uptick in the S&P 500. Oh, it's, you know,
+[ 1446.94s ->  1451.30s] everything's all good, but every downtick is the end of the world. That'll get your attention. If you
+[ 1451.30s ->  1458.48s] have a retirement portfolio, brokers, they just want your commission. You can download an app and buy
+[ 1458.48s ->  1465.18s] stock before your deposit even clears. You could do that with cryptocurrency. Learning is the
+[ 1465.18s ->  1471.82s] only way to make these optimal decisions in the face of uncertainty. I don't ask anybody if my
+[ 1471.82s ->  1476.40s] actions are optimal. I make those decisions myself, just like a professional poker player would.
+[ 1476.78s ->  1482.18s] Just as I said, no good poker player is going to sit there and tell you what to do, especially if
+[ 1482.18s ->  1487.46s] you're asking for the rationale behind his decision. Why would a trader do that? So what you shouldn't do
+[ 1487.46s ->  1494.74s] is buy or sell irrationally, right? Every uptick is to the moon, every downtick is the apocalypse,
+[ 1494.74s ->  1502.38s] just buying and selling with no intent or purpose or no strategy, right? No edge. I have a great
+[ 1502.38s ->  1509.04s] anecdotal story that I'd like to tell on the subject. So I train and compete in Brazilian Jiu Jitsu. When I
+[ 1509.04s ->  1514.32s] was in the locker room after training one time, one of my training partners, let's call him John for the
+[ 1514.32s ->  1519.96s] sake of the story, walked in with two of my friends. Now, my two friends know that I have this
+[ 1519.96s ->  1526.46s] background in quantitative research and quantitative trading, but John did not. So John began to lecture
+[ 1526.46s ->  1532.82s] us about how he spent the last year of his life learning to trade. And he had, you know, a crazy
+[ 1532.82s ->  1541.92s] experience. It was a good learning process, but he ended up losing $2,000 on Dogecoin. I know that's not a
+[ 1541.92s ->  1548.84s] crazy loss, but something that I was trying to tease out is what he meant by learn, because he said that
+[ 1548.84s ->  1555.30s] he learned a lot, but he lost two grand. So I was very confused. So I started to ask him what he meant
+[ 1555.30s ->  1561.20s] by learned. I was like, oh, you know, well, that's, that's crazy, man. Sorry to hear you lost, lost two
+[ 1561.20s ->  1568.36s] grand, but what kind of strategies did you try? And he was puzzled. I asked him, you know, what, what was
+[ 1568.36s ->  1574.94s] the macro regime? What kind of macro environment were you trading in? Again, puzzled? What is the
+[ 1574.94s ->  1583.20s] supply of Doge? Do you know what the supply of the currency is? Is it a finite supply? Do you know what
+[ 1583.20s ->  1591.24s] a cryptocurrency is? My point is he didn't know what he was even buying, right? There's no, there's no
+[ 1591.24s ->  1596.98s] learning that actually occurred. So, you know, in this space, when you're dealing with uncertainty and
+[ 1596.98s ->  1603.14s] you're trying to learn and impose structure, you need to actually learn. If you can't answer those
+[ 1603.14s ->  1610.56s] questions, then why would you buy Dogecoin? Goodness gracious. So my point is what you should do is
+[ 1610.56s ->  1616.50s] master your quantitative skills, learn how markets function so you can make those optimal decisions
+[ 1616.50s ->  1623.18s] yourself. Once you get to that point, I think even Alex Honnold, the free climber had a great comment
+[ 1623.18s ->  1628.56s] because somebody had asked him, Hey, how do I know what I'm ready to, to free climb, right? Climb those,
+[ 1628.64s ->  1633.42s] those crazy mountains without any ropes. And he's like, it's not something that you get,
+[ 1633.50s ->  1638.10s] get signed off on, right? You're good. You're good to go, go free climb, right? It's the same thing
+[ 1638.10s ->  1643.54s] with trading, right? Nobody signed off for a professional poker player or professional trader,
+[ 1643.54s ->  1649.80s] or even decisions that I would make in a discretionary or quantitative capacity, right? Those are decisions
+[ 1649.80s ->  1656.46s] that I am confident and comfortable making from this experience in quantitative research, trading,
+[ 1656.46s ->  1664.82s] and learning. So that is the point. The key is to learn. Some closing thoughts. It's important to fully
+[ 1664.82s ->  1671.26s] understand the idea of edge and optimal decision-making in the face of uncertainty in a closed
+[ 1671.26s ->  1677.88s] and a quasi-closed environment, just like we saw in the beginning of this video. Because if you can't
+[ 1677.88s ->  1685.98s] act on edge when it's static and it's not moving, then how can you possibly hope to act on it when
+[ 1685.98s ->  1692.62s] you are operating with a moving target that you can't even see, right? That's what I had discussed
+[ 1692.62s ->  1698.70s] in that video on expected stock returns don't exist. These mean levels don't exist in that static
+[ 1698.70s ->  1704.12s] convergence sense. That's one of the challenges we face. Again, we don't know if we're on a bad sample
+[ 1704.12s ->  1710.12s] path. I've seen people cite the central limit theorem that if your strategy is good, we'll converge to
+[ 1710.12s ->  1717.62s] that positive EV. So incorrect. You know, it's difficult to gauge if strategy even had edge,
+[ 1717.62s ->  1723.62s] or if it was lucky, and now we're just at best breaking even or losing money or if we're in some
+[ 1723.62s ->  1728.66s] sort of drawdown. These are all very canonical problems. And there are a variety of different
+[ 1728.66s ->  1734.10s] techniques and strategies implemented to try to get around them. Some future topics I'd like to
+[ 1734.10s ->  1738.90s] discuss. Building systems for executing these strategies. Again, this isn't just a set and
+[ 1738.90s ->  1743.94s] forget. This is based on a lot of different things, right? Like, I'm not going to trade in the same way
+[ 1743.94s ->  1751.82s] when fear is arbitrarily high and the VIX is at 40 as I'm going to trade now. You look at something
+[ 1751.82s ->  1755.54s] like a hedge fund, where do they make all their money? Do they make all their money in a bull market?
+[ 1755.54s ->  1759.96s] Or do they make all their money when there's autonomous pricings and crazy amounts of fear?
+[ 1761.10s ->  1768.48s] The efficacy of time series approaches I also want to discuss because I have a lot to say on the
+[ 1768.48s ->  1774.98s] subject of prediction and machine learning and AI for prediction and what AI is actually learning as
+[ 1774.98s ->  1780.54s] essentially a nonlinear conditional expectation. I'd also like to discuss the classical finance
+[ 1780.54s ->  1787.00s] literature, factor models, cross-sectional return predictability, and of course, the difference
+[ 1787.00s ->  1793.38s] between retail and institutional trading. But for now, that is going to do it on this video of how to
+[ 1793.38s ->  1799.08s] trade with an edge. I hope you enjoyed. I hope you learned something. I hope you continue to learn.
+[ 1799.58s ->  1804.60s] Please, if you enjoyed this video and want to see more like it, leave a like, drop a comment below,
+[ 1804.60s ->  1812.46s] subscribe, check out quantguild.com to support my channel and videos just like this one. Other than
+[ 1812.46s ->  1817.32s] that, thank you so much for watching, and I will see you in the next video.

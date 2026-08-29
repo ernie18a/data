@@ -1,0 +1,428 @@
+[    0.46s ->     6.06s] Brownian motion is the most important mathematical object in all of quantitative
+[    6.06s ->    13.02s] finance and financial engineering. It's hard to understate that. How many institutions use it to
+[   13.02s ->    19.72s] power their risk engines, their pricing models, so on and so forth. We better have a perfect
+[   19.72s ->    26.10s] understanding of the dynamics of that process if we have any hope to build more sophisticated
+[   26.10s ->    31.10s] models. And that is exactly the purpose of this video. I'm going to walk you from theory
+[   31.10s ->    36.94s] to practice. Everything you need to know about Brownian motion. We'll talk about the idea of a
+[   36.94s ->    44.02s] random variable, a normal or Gaussian distribution, stochastic processes, the definition of Brownian
+[   44.02s ->    51.82s] motion to fully understand how the process works. Then we'll move away from the lab into practice.
+[   51.82s ->    59.46s] We'll bridge that gap and see exactly how it's applied in industry to price European options.
+[   59.58s ->    64.80s] Unlike with Brownian motion, the probability and statistics of sample paths in practice
+[   64.80s ->    71.80s] do not converge. But you know what does converge to a probability of one? Your access to a Jupyter
+[   71.80s ->    75.50s] notebook with a new Quant Guild video. This Jupyter notebook will be linked in the description below.
+[   75.78s ->    79.78s] I will also post it to the Quant Guild library on GitHub, where you can find all of my Jupyter
+[   79.78s ->    84.74s] notebooks and associated YouTube videos, along with all of the source code for my Quant builds.
+[   84.96s ->    88.20s] At the top of this Jupyter notebook, you'll notice some related Quant Guild videos applying
+[   88.20s ->    93.56s] probability and statistics to finance and trading. This idea of time series analysis, stochastic
+[   93.56s ->    98.54s] differential equations, finite differences for solving partial differential equations numerically,
+[   98.54s ->   105.02s] the infamous Arch and Garch models, Markov chains and hidden Markov models specifically for
+[  105.02s ->   109.92s] modeling latent volatility processes. If you're unfamiliar with any of these ideas,
+[  110.16s ->   114.94s] I highly recommend you check these videos out first before tackling one like this.
+[  115.08s ->   118.40s] Moreover, these videos certainly take a lot of effort to create. So if you'd like to help support
+[  118.40s ->   122.42s] the channel so I can continue to create videos just like this one, please like, comment, subscribe,
+[  122.54s ->   127.04s] share. It helps me out tremendously. It is always greatly appreciated. And if you'd like to master
+[  127.04s ->   133.00s] your quantitative skills, check out quantguild.com. We have an absolutely massive update to the
+[  133.00s ->   138.08s] platform with the release of our first course, Quant Coding, where I take you through everything
+[  138.08s ->   143.92s] you need to know about Python from A to Z to build a trading system with interactive brokers and their
+[  143.92s ->   152.10s] Python API. And this isn't a one off course. This is included with Quant Guild membership. What's also
+[  152.10s ->   157.68s] included? An adaptive practice engine that scales with your skill levels so you can progress to more
+[  157.68s ->   164.20s] more difficult topics, over 90 lessons in math, probability, finance, interview questions with
+[  164.20s ->   170.22s] fully worked solutions, trading games, so you can apply what you learn, all of the math, probability,
+[  170.36s ->   177.32s] and statistics to the real world. This is the platform that I wish that I had when I was studying
+[  177.32s ->   184.14s] to become a quant and everything is included with membership and you can get started right now for free.
+[  184.14s ->   191.16s] So if you'd like to help support the channel and master your quantitative skills, check out quantguild.com.
+[  191.20s ->   195.96s] Without further ado, let's get started by discussing this idea of a random variable. What is a random
+[  195.96s ->   202.14s] variable anyway? Well, effectively, it's just a distribution. It's a set of possible outcomes, each with an
+[  202.14s ->   209.76s] associated probability or likelihood of occurring. They are fully specified by their distribution function,
+[  209.76s ->   215.30s] their mass or density function, depending on if we're dealing with a discrete or continuous random
+[  215.30s ->   221.44s] variable, or their characteristic function. The reason why all of these are equivalent is because
+[  221.44s ->   228.64s] we're applying simply just operations to go back and forth between all of these different objects.
+[  228.64s ->   236.60s] If I have a probability density function and I integrate, I get the distribution function. If I take the
+[  236.60s ->   242.42s] derivative, I get back the density function. Those are unique operations. Moreover, if I take the
+[  242.42s ->   248.72s] Fourier transform of the density function, I get the characteristic function. So the reason why all
+[  248.72s ->   254.62s] three of these are equivalent statements for a specific random variable is because the operations
+[  254.62s ->   261.08s] that we're performing on these objects yield unique objects themselves. So we can effectively just go
+[  261.08s ->   266.84s] back and forth between a distribution or density function and the density function and the characteristic
+[  266.84s ->   274.76s] function. So we can effectively define a random variable in terms of any of these objects. Let's take
+[  274.76s ->   281.80s] a look at an example of a random variable now. This is a normal random variable. This is the probability
+[  281.80s ->   289.80s] density function here. And it's important to note that we can't predict the outcome of any one draw of this
+[  289.80s ->   295.40s] random variable. That's not the purpose of random variables. Instead, we can say something about the
+[  295.40s ->   302.28s] probability or likelihood of an occurrence or a range of occurrences. So what you'll see here on the
+[  302.28s ->   310.20s] right is this is a histogram. These bars here represent draws from this distribution. I have 500 draws on the
+[  310.20s ->   317.48s] right here and you can see it's starting to effectively map out the original normal distribution that all of the
+[  317.48s ->   324.04s] data was drawn from. And as we're going to see later on, this will actually converge as the number of
+[  324.04s ->   330.76s] samples approaches infinity. But in any case, if we're looking at this probability density function, if we
+[  330.76s ->   337.32s] look at a specific point, are we looking at a probability? Well, no, this is a continuous random
+[  337.32s ->   343.56s] variable. This is a normal distribution or a Gaussian. If I look at a point on this chart, what I'm really
+[  343.56s ->   351.00s] looking at is a relative likelihood of a realization around that point. So if I said, okay, what is the
+[  351.00s ->   357.56s] likelihood of observing a value near this point here in the center versus this point here out in the
+[  357.56s ->   362.84s] tail? Well, you would tell me, hey, there's a lot more mass underneath the point in the center than there
+[  362.84s ->   369.96s] is out in the tail. So it's likely we're going to see a value near the point in the middle relative to the
+[  369.96s ->   375.48s] point in the tail. So it's not a probability. If we were dealing with a discrete random variable,
+[  375.48s ->   380.60s] think of something like a coin flip or a dice roll, we would actually get a probability of a
+[  380.60s ->   386.04s] specific outcome. But when we're dealing with a continuous random variable, we don't have that
+[  386.04s ->   391.88s] notion. And that's because effectively the sample space is infinite, right? The probability of any
+[  391.88s ->   397.80s] one draw is effectively zero, but that doesn't mean that it can't occur. All it means is that we're
+[  397.80s ->   403.16s] looking at a probability density function in a relative sense. So we're looking at it as,
+[  403.16s ->   409.88s] hey, what's the relative likelihood of draws near say this point relative to this point. That's how we
+[  409.88s ->   415.24s] can interpret the density function in a continuous sense. So again, on the right here, we see the
+[  415.24s ->   422.04s] empirical distribution. These are draws from this normal distribution. And if we effectively draw towards
+[  422.04s ->   429.40s] infinity, it will then converge to this theoretical distribution. How is the normal random variable
+[  429.40s ->   435.32s] defined? Well, it's defined in terms of its probability density function, its PDF or its cumulative
+[  435.32s ->   441.56s] distribution function, its CDF. Effectively, we just integrate or differentiate to go back and forth.
+[  441.56s ->   447.80s] And I have two charts here to help us visualize exactly what these look like. So on the left here,
+[  447.80s ->   453.80s] I have the PDF. We just saw this above. And now I have this slider, this vertical line. And this is
+[  453.80s ->   461.32s] precisely what I just mentioned. The PDF is not a probability. It is giving us the relative likelihood of
+[  461.32s ->   469.00s] points around that value. So if I said, hey, what's the relative likelihood of points around zero relative
+[  469.00s ->   475.48s] to negative two? Well, if you go up and over on this PDF, you can see that there's far more mass
+[  475.48s ->   482.52s] underneath zero than there is negative two. So it's more likely we're going to observe points around
+[  482.52s ->   487.96s] zero than we are negative two. That's how we interpret the PDF. It is not a probability.
+[  487.96s ->   494.68s] If we want probabilities, we have to integrate the area underneath this curve. And that's what you're
+[  494.68s ->   501.40s] seeing on the right here with the CDF. If I integrate, say, from negative infinity all the way up to
+[  501.40s ->   509.64s] zero, I'm going to get a probability of 50%. And that's because the normal distribution is symmetric.
+[  509.64s ->   517.24s] If I go all the way up to positive infinity, I will get a probability of one. That is effectively saying
+[  517.24s ->   523.48s] the draw from this entire sample space is going to exist in the sample space. No kidding. That's how
+[  523.48s ->   530.12s] the random variable is defined. So if I integrate, I can get a specific probability of a draw being within
+[  530.12s ->   536.76s] a region. So if I wanted the probability of a draw being less than negative two, I would get roughly
+[  536.76s ->   543.80s] two point four percent. And that is effectively found by simply integrating the probability density
+[  543.80s ->   548.92s] function. We can also define the normal random variable in terms of its characteristic function.
+[  548.92s ->   554.60s] And to do this, all we're doing is taking the Fourier transform of the PDF, and that's a unique
+[  554.60s ->   561.00s] operation. So here I have the probability density function. I take the Fourier transform. I get the
+[  561.00s ->   567.96s] characteristic function. If I apply the inverse Fourier transform, I just get back out the original
+[  567.96s ->   575.00s] density function. And that's what you're seeing in this visualization. I have the original PDF here for
+[  575.00s ->   582.04s] our normal random variable. I take the Fourier transform. I get the characteristic function. I have the real
+[  582.04s ->   590.04s] and the imaginary part. Then if I take the inverse Fourier transform, I get back out the original PDF.
+[  590.04s ->   596.92s] So all of these are equivalent. We can define the random variable or any random variable in terms of its
+[  596.92s ->   604.12s] distribution, its mass or density function, or its characteristic function. All random variables have
+[  604.12s ->   610.92s] accompanying statistics. And these statistics converge with probabilistic certainty. We'll see what that means
+[  610.92s ->   617.16s] in a moment. But first, let's start by defining these statistics. We have this idea of a mean,
+[  617.16s ->   625.40s] average, or expected value, and this idea of variance. The mean is effectively just the probability
+[  625.40s ->   633.40s] weighted sum or integral of all possible outcomes. It's going to be your best guess for what that random
+[  633.40s ->   642.20s] variable is going to be. If I told you to guess 10,000 times what the output of a normal random variable
+[  642.20s ->   649.88s] would be, then the value that you should guess to minimize your error on average is going to be the
+[  649.88s ->   658.52s] expectation. Again, we can't predict anything. We can't predict the draw of any one value. But statistically, we can
+[  658.52s ->   665.64s] minimize our error by guessing the expectation. Now, what about our error? On average, how far away
+[  665.64s ->   672.28s] are we from whatever value we draw? Well, that is going to be based on the spread of our distribution.
+[  672.28s ->   681.48s] We can measure that with variance. Variance is defined as the expected or average deviation away from
+[  681.48s ->   688.20s] the mean value. It's a measure of spread or distance. Specifically, it's the expected square deviation
+[  688.20s ->   693.96s] away from the mean, but you should think of it as a distance measure. Effectively, we're saying,
+[  693.96s ->   702.68s] hey, on any given draw, on average, how far away are we from the mean value that we compute above?
+[  702.68s ->   707.88s] There are other statistics of interest, but we're going to focus on mean and variance because that is
+[  707.88s ->   714.52s] going to dictate the center and spread of a normal distribution. Random variable x here follows a
+[  714.52s ->   722.12s] normal distribution, and we define it in terms of a mu and a sigma. That dictates the expectation and
+[  722.12s ->   727.88s] variance, respectively. If we take a look at this chart, we can see a few different normal or gaussian
+[  727.88s ->   734.84s] distributions, each with a different parameterization. This blue one is known as a standard normal
+[  734.84s ->   740.36s] distribution. It has a mean of zero, a variance of one. That's what makes it standard normal,
+[  740.36s ->   745.80s] effectively standardized. And if we look at the other distributions, we can see they have different
+[  745.80s ->   753.72s] spreads, different variances, and different centers based on the mean. That is exactly what the mean
+[  753.72s ->   759.48s] and variance dictate. Keep in mind, here we're looking at the mean and variance of the data generating
+[  759.48s ->   766.12s] distribution. These are population distributions. We're actually going to observe draws that look
+[  766.12s ->   774.68s] like this histogram. What's the relationship between the population mean and variance and the empirical
+[  774.68s ->   781.24s] mean and variance? Well, this gets into the idea of the law of large numbers. And I have a great
+[  781.24s ->   787.40s] animation here to explain exactly what's going on. The law of large numbers is effectively telling us
+[  787.40s ->   795.88s] as we continue to sample from the same distribution and compute these sample statistics. If we have a
+[  795.88s ->   803.96s] large enough sample size, as that sample size approaches infinity, we are going to converge to those
+[  803.96s ->   813.40s] population values. My sample mean is going to converge to my population mean. My sample variance will converge
+[  813.40s ->   819.40s] to my population variance, as is the case with the other statistical moments. Because remember,
+[  819.40s ->   826.68s] take a look at the definition of variance. It's in terms of the expectation. Well, if the expectation
+[  826.68s ->   833.32s] converges to a single value, then the variance is going to converge to a single value. And as is the
+[  833.32s ->   840.20s] case with the higher order moments as well, if we take a look at skewness, kurtosis, so on and so forth.
+[  840.20s ->   846.68s] What you see in this animation here is I'm effectively drawing from the same normal distribution
+[  846.68s ->   852.68s] and I'm taking the mean and I'm taking the variance. And what you see here is this horizontal line in
+[  852.68s ->   860.76s] both cases is representing the theoretical value, the population value for each of those objects.
+[  860.76s ->   866.76s] And as we continue to draw more samples, you see this convergence. That's not happening by accident.
+[  866.76s ->   873.96s] That's happening thanks to the law of large numbers. This ensures statistical convergence.
+[  873.96s ->   878.44s] This is the strong law of large numbers. This is almost short convergence. We also have
+[  878.44s ->   884.28s] probabilistic convergence, but we're not going to focus too much on the technical details.
+[  884.28s ->   890.20s] We can just say, thanks to the law of large numbers, if we repeatedly sample from the same distribution
+[  890.20s ->   897.40s] and we record sample statistics, that is the mean and the variance, those will converge to the population value.
+[  897.40s ->   903.64s] This is where things get really cool because the law of large numbers doesn't just work for the mean and the variance.
+[  903.64s ->   908.76s] It also works for probabilities. And that's thanks to this idea of a Bernoulli random variable.
+[  908.76s ->   919.96s] We can represent any event as an indicator function and we can model it as a Bernoulli random variable if we just look at one draw from a population distribution.
+[  919.96s ->   929.00s] And if we continue to draw and continue to observe the outcome of that indicator function, take the average, that's actually a probability.
+[  929.00s ->   946.12s] That's exactly what a Bernoulli random variable's mean represents. And effectively, what I'm showing you here is how you can prove that the empirical distribution is going to converge to the population or theoretical distribution if you have enough draws.
+[  946.12s ->   955.48s] This is, again, thanks to the law of large numbers. And that is an incredibly cool result and an incredibly cool idea.
+[  955.48s ->   965.00s] This doesn't just work for mean and variance. If you wanted to determine the probability of a specific event based on one or multiple random variables,
+[  965.00s ->   973.32s] you could just use an indicator function and the law of large numbers to estimate the probability of that event occurring.
+[  973.32s ->   980.12s] And we use that idea here to prove that this empirical distribution will in fact converge to the theoretical one.
+[  980.12s ->   984.44s] As powerful as these techniques are, they have their limitations.
+[  984.44s ->   988.60s] And that is because in practice, we don't have convergence.
+[  988.60s ->   994.68s] Anytime we're building a model, we're making assumptions about the dynamics of the data generating distribution.
+[  994.68s ->   999.88s] That is the distribution that we're actually seeing the data come from.
+[  999.88s ->  1004.60s] So, for example, here, this is the data generating distribution, the population distribution,
+[ 1004.60s ->  1007.96s] and these bars represent the data that we observe.
+[ 1007.96s ->  1013.00s] We know for certain in this particular case, these bars come from this distribution.
+[ 1013.00s ->  1018.28s] But in practice, we don't get to see the data generating distribution.
+[ 1018.28s ->  1024.36s] And that can lead us to make assumptions that are certainly incorrect.
+[ 1024.36s ->  1027.72s] So what I have here is a data generating distribution.
+[ 1027.72s ->  1033.24s] And what you're observing is the center and the spread change over time.
+[ 1033.24s ->  1037.00s] What we end up observing is just a fixed distribution.
+[ 1037.00s ->  1041.00s] We're just going to take all that data and visualize it as a histogram.
+[ 1041.00s ->  1046.20s] And if I was to just naively model this distribution, I would say, okay, well,
+[ 1046.20s ->  1051.72s] we're more likely to observe negative values over here than we are positive values.
+[ 1051.72s ->  1054.20s] But is that always the case?
+[ 1054.20s ->  1059.40s] Well, no, look, the data generating distribution actually started out here towards the right side.
+[ 1059.40s ->  1065.72s] And that means the likelihood of observing these values was much higher at one point in time
+[ 1065.72s ->  1066.68s] than another.
+[ 1066.68s ->  1070.84s] This is an absolutely crucial idea to grasp.
+[ 1070.84s ->  1078.76s] The likelihood and the relative variance of observing outcomes at any one point in time
+[ 1078.76s ->  1081.80s] in reality is going to change.
+[ 1081.80s ->  1085.64s] You can think of something like a very volatile period for the stock market.
+[ 1085.64s ->  1089.16s] We're more likely to observe negative returns.
+[ 1089.16s ->  1096.84s] But in a massive bullish market, we're probably not as likely to observe those negative returns.
+[ 1096.84s ->  1104.20s] And that's because this unobservable data generating distribution is going to change over time.
+[ 1104.20s ->  1108.12s] We can't just naively model a fixed distribution.
+[ 1108.12s ->  1113.88s] And that is precisely why we are going to look at this idea of a stochastic process.
+[ 1113.88s ->  1118.44s] Having discussed the idea of random variables, stochastic processes are very easy to understand.
+[ 1118.44s ->  1122.12s] They're just random variables over some sort of index.
+[ 1122.12s ->  1123.64s] It could be the draws.
+[ 1123.64s ->  1124.76s] It could be time.
+[ 1124.76s ->  1128.20s] We have both discrete and continuous time processes.
+[ 1128.20s ->  1133.72s] And what ends up happening is instead of just getting a distribution of outcomes,
+[ 1133.72s ->  1138.36s] like we saw at the start of the lesson, like we saw from this convergence,
+[ 1138.36s ->  1143.32s] like we saw from this unobservable data generating distribution that changes over time,
+[ 1143.32s ->  1146.04s] we're going to get a sample path.
+[ 1146.04s ->  1152.12s] And each step in the sample path is effectively going to be a distribution.
+[ 1152.12s ->  1155.16s] And that is precisely what this animation shows.
+[ 1155.16s ->  1157.96s] In this case, the distribution is fixed.
+[ 1157.96s ->  1161.24s] The green line represents the draw at each step.
+[ 1161.24s ->  1166.20s] And each step is effectively just a draw from the normal distribution.
+[ 1166.20s ->  1168.92s] That's all a stochastic process is.
+[ 1168.92s ->  1171.64s] You can see here this constructs a sample path.
+[ 1171.64s ->  1178.84s] If we just connect the dots, that is the sample path for this particular stochastic process.
+[ 1178.84s ->  1182.52s] Each is just a draw from the normal distribution.
+[ 1182.52s ->  1186.52s] And it's over an index of, in this case, we're calling it time.
+[ 1186.52s ->  1188.44s] That's all a stochastic process is.
+[ 1188.44s ->  1192.68s] If I play this animation again for you, we are going to get a different sample path.
+[ 1192.68s ->  1194.04s] Did I set a random seed here?
+[ 1194.04s ->  1194.60s] I did.
+[ 1194.60s ->  1198.92s] If I was to change this, remove the random seed, rerun this cell,
+[ 1198.92s ->  1202.76s] then what you'll find is I'm going to get a brand new sample path.
+[ 1202.76s ->  1207.72s] And that's because each step is effectively a distribution.
+[ 1207.72s ->  1209.48s] And what distribution is it?
+[ 1209.48s ->  1211.00s] Well, it's a normal distribution.
+[ 1211.00s ->  1213.80s] This is how we just defined the stochastic process.
+[ 1213.80s ->  1216.60s] It is a collection of random variables.
+[ 1216.60s ->  1219.40s] And at the start of this lesson, what did we say a random variable was?
+[ 1220.12s ->  1221.64s] It's a distribution.
+[ 1221.64s ->  1227.24s] So this animation here is showing precisely what a stochastic process is
+[ 1227.24s ->  1234.84s] and how to interpret each point, each step in the sample path that we end up observing.
+[ 1234.84s ->  1240.20s] Each step is just a distribution, a set of possible outcomes.
+[ 1240.20s ->  1244.04s] Given that a stochastic process is just a collection of random variables,
+[ 1244.04s ->  1250.36s] we can apply the law of large numbers just as we did above to observe convergence in both
+[ 1250.36s ->  1253.00s] probabilities and statistics.
+[ 1253.00s ->  1255.88s] This is an incredibly useful idea.
+[ 1255.88s ->  1260.36s] And I have a great chart to visualize exactly what's going on.
+[ 1260.36s ->  1263.64s] What I've done here is I've simulated a whole bunch of paths.
+[ 1263.64s ->  1268.76s] So above, I just simulated one and each step is a normal distribution.
+[ 1268.76s ->  1273.80s] Now I'm looking at not just one sample path, but a whole bunch of sample paths here.
+[ 1273.80s ->  1277.72s] And I have this slider that's going to allow me to observe
+[ 1277.72s ->  1282.20s] the distribution at any step in this stochastic process.
+[ 1282.20s ->  1285.56s] And what you're going to find is anywhere that I select,
+[ 1285.56s ->  1288.44s] you're going to observe an empirical distribution
+[ 1288.44s ->  1292.12s] that looks like the theoretical normal one that we saw above.
+[ 1292.12s ->  1298.20s] And that's because this stochastic process, we can apply the law of large numbers to
+[ 1298.20s ->  1305.40s] and observe the convergence in distribution in the cross section of any one of these sample paths.
+[ 1305.40s ->  1311.80s] In other words, we saw that each step here was drawn from a normal distribution.
+[ 1311.80s ->  1313.88s] Well, let's think about step 100.
+[ 1313.88s ->  1322.28s] What if I was to create not just one sample path, but 10, 100, 1000, 10,000.
+[ 1322.28s ->  1328.12s] And I observe at step 100, all of the points from all of those processes.
+[ 1328.12s ->  1330.44s] That is exactly what this chart is doing.
+[ 1330.44s ->  1335.56s] And if I observe the distribution of points from all of those sample paths,
+[ 1335.56s ->  1341.88s] you're going to see that it is going to converge to the theoretical distribution
+[ 1341.88s ->  1345.24s] that is generating the point at that step.
+[ 1345.24s ->  1352.76s] This is a very important idea because sometimes we have the theoretical distribution outright.
+[ 1352.76s ->  1355.72s] We can just simulate a draw from it.
+[ 1355.72s ->  1360.28s] But if we don't, then we have to simulate sample paths.
+[ 1360.28s ->  1362.84s] And we know if we simulate enough paths,
+[ 1362.84s ->  1367.16s] that the empirical distribution will converge to the theoretical one.
+[ 1367.16s ->  1371.16s] That is why this relationship is so important to understand.
+[ 1371.16s ->  1378.44s] Sometimes you're not going to be able to just draw from the theoretical distribution directly.
+[ 1378.44s ->  1385.16s] You will have to simulate a whole bunch of paths to be able to observe an empirical distribution
+[ 1385.16s ->  1391.32s] that you can then compute statistics on to produce a price for your financial instrument.
+[ 1391.32s ->  1399.56s] And you know that price is going to be reasonable because it converges to the population statistics
+[ 1399.56s ->  1402.68s] thanks to the law of large numbers.
+[ 1402.68s ->  1406.12s] Understanding now population versus empirical distributions,
+[ 1406.12s ->  1409.08s] random variables that is our normal random variable,
+[ 1409.08s ->  1413.16s] and stochastic processes along with the relationship between a sample path
+[ 1413.16s ->  1416.76s] and the distribution of any one step of that sample path,
+[ 1416.76s ->  1419.48s] we can now discuss Brownian motion.
+[ 1419.48s ->  1422.12s] The definition of Brownian motion is as follows.
+[ 1422.12s ->  1425.08s] The process itself starts at zero.
+[ 1425.08s ->  1429.16s] There are independent increments so long as they are disjoint.
+[ 1429.16s ->  1431.08s] We have stationary increments.
+[ 1431.08s ->  1434.76s] That means the increment themselves follows a specific distribution.
+[ 1434.76s ->  1436.04s] And would you look at that?
+[ 1436.04s ->  1437.24s] It's normal.
+[ 1437.96s ->  1441.80s] And almost all sample paths are continuous functions of t,
+[ 1441.80s ->  1443.80s] but are nowhere differentiable.
+[ 1443.80s ->  1450.52s] So if the increment follows a normal distribution, how is that different from the process we looked
+[ 1450.52s ->  1451.40s] at up here?
+[ 1451.40s ->  1454.36s] If I was to run this again and get a different sample path,
+[ 1454.36s ->  1458.36s] aren't we just drawing from a normal distribution at each step?
+[ 1459.00s ->  1461.72s] Isn't that effectively what Brownian motion is?
+[ 1461.72s ->  1468.28s] Well, no, because at each step here, the distribution we're drawing from is effectively fixed.
+[ 1468.28s ->  1475.32s] If we come on down here and we look at an animation of Brownian motion, what you'll find is the normal
+[ 1475.32s ->  1483.24s] distribution defining the distribution at each step is going to flatten over time.
+[ 1483.80s ->  1485.80s] And what does that actually mean?
+[ 1485.80s ->  1492.84s] Well, as time continues to progress, the distribution becomes more and more uncertain,
+[ 1492.84s ->  1498.92s] more and more spread out. And that's exactly what you would expect to occur in reality,
+[ 1498.92s ->  1504.84s] right? If we were to extend time, let's say going out a year, two, three years,
+[ 1504.84s ->  1509.80s] we don't know where the process is going to be. So we want to model that uncertainty. And that's
+[ 1509.80s ->  1517.16s] exactly what Brownian motion captures, but the distribution in the cross section is still normal.
+[ 1517.16s ->  1523.72s] We still have precisely what that distribution is. So notice here all the way at the end of this
+[ 1523.72s ->  1531.24s] process, the tails go from 60 to negative 60. If I replay this animation, it starts at 20 and
+[ 1531.24s ->  1540.36s] negative 20. That is perfectly showcasing how the variance of the process is going to continue to
+[ 1540.36s ->  1549.96s] increase as the time step becomes larger. That is what it means to be Brownian motion that comes
+[ 1549.96s ->  1558.20s] directly from this definition. You can see here, we can achieve this distribution at time. In this case,
+[ 1558.20s ->  1564.28s] all the way at the end time cap T, we observe that we can either look at all of the increments
+[ 1564.28s ->  1572.04s] in the process, or we can just look at the increment from zero all the way to the end of the process.
+[ 1572.04s ->  1579.72s] We get the same distribution. So really what I'm saying here is we don't need to simulate the entire
+[ 1579.72s ->  1587.24s] sample path to understand the distribution all the way at the end here. That is a critical idea. This is
+[ 1587.24s ->  1594.60s] not the case for certain stochastic processes. In this case, thanks to independent increments,
+[ 1594.60s ->  1599.96s] we can just look at that increment from zero all the way to the end of the process and observe this
+[ 1599.96s ->  1608.28s] theoretical distribution. But sometimes we can't do that. Sometimes we don't have that theoretical
+[ 1608.28s ->  1614.84s] distribution analytically, and we have to simulate paths. Then if we simulate enough paths, we will observe
+[ 1614.84s ->  1621.64s] convergence, just as we saw in this example here for the stochastic process, just as we saw here in
+[ 1621.64s ->  1628.20s] this convergence to a normal distribution, we will find convergence to that terminal distribution, which
+[ 1628.20s ->  1636.52s] is what we need if we are to price financial instruments. We need to effectively model that
+[ 1636.52s ->  1643.48s] theoretical distribution at the terminal time capital T. Further illustrating this idea, we can visualize
+[ 1643.48s ->  1649.32s] the empirical and theoretical cross section of a series of Brownian motion paths. That's exactly
+[ 1649.32s ->  1654.76s] what I have here in this animation. I'm simulating a whole bunch of Brownian motion paths. And on the
+[ 1654.76s ->  1660.36s] right, I'm observing the theoretical distribution and the empirical distribution. And thanks to the law of
+[ 1660.36s ->  1665.72s] large numbers, they will certainly converge. And that is precisely what we see here. So you can see I
+[ 1665.72s ->  1672.20s] simulated a whole bunch of sample paths and I got this green empirical distribution. But because we're
+[ 1672.20s ->  1679.16s] dealing with Brownian motion, we know what the terminal distribution is outright. That converges
+[ 1679.16s ->  1685.96s] by the law of large numbers. It doesn't converge by accident. This is crucial to understand. And I keep
+[ 1685.96s ->  1692.36s] reiterating it to make the point that sometimes, depending on the stochastic process we're dealing with,
+[ 1692.36s ->  1699.56s] we actually need to simulate sample paths to approximate the theoretical distribution. Sometimes we don't know
+[ 1699.56s ->  1706.36s] what this purple line is. And the only way to retrieve a reasonable approximation is through simulation.
+[ 1706.36s ->  1711.64s] That is going to depend on the process you're simulating. If you're dealing with a fractional Brownian motion,
+[ 1711.64s ->  1720.52s] for example, you need the entire memory of the path to get the appropriate draw at time capital T.
+[ 1720.52s ->  1726.76s] There's no way around it. That's how that process is defined. Here, we have stationary increments implying a
+[ 1726.76s ->  1733.56s] Markovian structure. That is precisely why we have this terminal distribution. And again,
+[ 1733.56s ->  1739.40s] everything converges in either case, whether we have memory or no memory in the path,
+[ 1739.40s ->  1745.64s] thanks to the law of large numbers. That's the theory. What about practice? How do we bridge this gap?
+[ 1745.64s ->  1751.08s] Well, one of the first applications of Brownian motion in finance was by the father of quantitative
+[ 1751.08s ->  1757.80s] finance, but actually a 1900 in his dissertation using an arithmetic Brownian motion to price options.
+[ 1757.80s ->  1764.52s] What we have here is the payoff of a European call option. This is known at some time in the future.
+[ 1764.52s ->  1769.96s] If you tell me what the stock price is going to be, I'll tell you how much that option contract is
+[ 1769.96s ->  1777.24s] worth, what the payout of that contract is going to be. But we don't know what the stock price is going
+[ 1777.24s ->  1783.88s] to be in the future. In any case, we need to pay for that contract today. We need to come up with some
+[ 1783.88s ->  1792.20s] model for the uncertainty of the stock price itself. And this is where we can apply Brownian motion.
+[ 1792.20s ->  1798.84s] If we look at this idea of an arithmetic Brownian motion, we're defining a stock price in terms of some
+[ 1798.84s ->  1808.44s] sort of drift that is the overall trend over time and shocks to that drift defined by Brownian motion.
+[ 1808.44s ->  1817.16s] And we know what about Brownian motion? We know the distribution at every step of the sample path,
+[ 1817.16s ->  1824.60s] thanks to the independent increments. This is just an affine transformation. That means we know every single
+[ 1824.60s ->  1832.44s] step in the arithmetic Brownian motion sample path is going to follow a normal distribution with a
+[ 1832.44s ->  1841.32s] shifted mean and a scaled variance. What we're observing here now is the stock price process. It is a model
+[ 1841.32s ->  1849.32s] powered by Brownian motion. And at this terminal time, capital T, we see the theoretical distribution, and we
+[ 1849.32s ->  1855.08s] know that outright, thanks to this idea of an independent increment. It's just a transformation
+[ 1855.08s ->  1861.64s] of the increment, which means it's also going to follow a normal distribution. And we see the empirical
+[ 1861.64s ->  1867.40s] distribution, if we were to sample a whole bunch of stock price paths, it will converge to that
+[ 1867.40s ->  1873.80s] theoretical distribution, not by accident, thanks to the law of large numbers. Just as above, we can
+[ 1873.80s ->  1881.08s] observe that convergence of the empirical increment to the theoretical one, not just for Brownian motion,
+[ 1881.08s ->  1887.24s] but also for this arithmetic Brownian motion. That's exactly what you see here. And that's how we can also
+[ 1887.24s ->  1895.40s] go about pricing these European option contracts. Remember earlier, I said, we're dealing with a random
+[ 1895.40s ->  1901.72s] variable. The best guess that we can produce is what the expectation. Well, what's the stochastic process?
+[ 1901.72s ->  1909.72s] It's a collection of random variables. It is a distribution at some particular index. And if we
+[ 1909.72s ->  1918.68s] look at this call option, its value is dictated by the stock price at what time capital T. Well, what is,
+[ 1919.40s ->  1926.28s] what is the stock price at time capital T? Nobody knows. It's a random variable. It's a distribution.
+[ 1926.28s ->  1932.68s] Okay. So how do we go about producing a price for this contract then? Well, let's just take the
+[ 1932.68s ->  1941.48s] expectation of the payoff as a function of this random variable. And that is exactly how we produce
+[ 1941.48s ->  1950.04s] the price of this option contract underneath the dynamics of any stock price process. Now, in this case,
+[ 1950.04s ->  1956.12s] we're dealing with an arithmetic Brownian motion. And I could go about trying to solve this integral
+[ 1956.12s ->  1961.64s] analytically. Very rarely when you're dealing with these pricing functionals, will you have an
+[ 1961.64s ->  1968.20s] analytical solution? Sometimes you will. Black-Scholes, you do. Heston, quasi-closed form thanks to FFT.
+[ 1968.84s ->  1977.96s] But we can also just simulate the price thanks to, again, the law of large numbers. And that's exactly what
+[ 1977.96s ->  1983.64s] you see here. We're just going to use the definition effectively of a function of a random variable
+[ 1983.64s ->  1990.28s] to find the expectation. And by the law of large numbers, that will converge. Essentially, what I'm
+[ 1990.28s ->  1996.04s] going to do is I'm going to simulate a stock price path and I'm going to compute the payout of the option.
+[ 1996.04s ->  2002.76s] So here's the strike price at time capital T. This was in the money. I'll record the payout and I will
+[ 2002.76s ->  2012.22s] discount it back to the present. Then I'll do it again. I'll observe the payout. I will discount
+[ 2012.22s ->  2017.44s] it back to the present and make sure that I don't have a random seed here. It doesn't look like I have
+[ 2017.44s ->  2026.24s] a random seed. I'll run this again. I'll get a different path. I'll record the payout, discount
+[ 2026.24s ->  2030.56s] it back to the present. I'm going to do that a large number of times. Effectively, I'm just
+[ 2030.56s ->  2038.48s] sampling the terminal distribution of the stock price process. Do I need to simulate the arithmetic
+[ 2038.48s ->  2046.08s] Brownian motion to get the terminal distribution? Well, no, I don't have to because thanks to the
+[ 2046.08s ->  2050.96s] independent increments that we observed here and we observed here, we know what the theoretical
+[ 2050.96s ->  2058.00s] distribution is. We know the empirical distribution. If we continue to sample paths is going to converge.
+[ 2058.00s ->  2065.20s] So let's just use the terminal distribution outright. That is going to make this far faster.
+[ 2065.20s ->  2070.16s] And what you're going to observe is if I continue to sample from that
+[ 2070.16s ->  2076.80s] theoretical terminal distribution and I plot the payouts and I discount them back to the present,
+[ 2076.80s ->  2084.88s] I will converge then to the theoretical option price. What you're seeing here is the payoff function
+[ 2084.88s ->  2091.68s] of the option contract. Each point represents a sample from the terminal distribution. Again,
+[ 2091.68s ->  2097.44s] I know what it is outright. Thanks to independent increments. Arithmetic Brownian motion is
+[ 2097.44s ->  2102.80s] just an affine transformation of the Brownian motion. So I can draw directly from that terminal
+[ 2102.80s ->  2109.36s] distribution that will allow me to produce points on this payoff diagram. Then I discount it back to the
+[ 2109.36s ->  2114.56s] present. I do this for a whole bunch of points, take the average and look what happens to the average.
+[ 2114.56s ->  2123.24s] As I continue to sample, it converges to the theoretical option price, given the stock price follows an
+[ 2123.24s ->  2128.44s] arithmetic Brownian motion. But Roman, your assumptions are wrong. Stock prices don't follow
+[ 2128.44s ->  2135.16s] an arithmetic Brownian motion, a Bachelier framework, or even a Black-Scholes, Bates, Merton, Heston,
+[ 2135.16s ->  2142.60s] a rough volatility framework. No kidding. If we had the dynamics of the stock price process,
+[ 2142.60s ->  2148.76s] we wouldn't need a model in the first place. Let me propose to you a hypothetical. You're sitting
+[ 2148.76s ->  2154.76s] there on a trading desk and you're serving a business function, making a market. What are
+[ 2154.76s ->  2158.52s] you going to do? You're going to sit there and say, I'm not going to make an assumption because
+[ 2158.52s ->  2163.88s] I know it's wrong. Okay. Quote a price for your client. Do you want to do that in the dark? No,
+[ 2163.88s ->  2168.52s] you're going to want to use a model to make an informed decision about the price,
+[ 2168.52s ->  2175.64s] along with any other adjustments for counterparty risk, liquidity, so on and so forth. These comments
+[ 2175.64s ->  2183.32s] are outrageous and miss the entire point of the space. You need to use models to make informed
+[ 2183.32s ->  2189.64s] decisions under uncertainty. Too long didn't watch. Here's your executive summary. Random variables
+[ 2189.64s ->  2196.04s] represent a set of possible outcomes with associated probabilities and likelihoods. We can never predict
+[ 2196.04s ->  2203.00s] the outcome of any one event. That's not the purpose of random variables. Our purpose is to define
+[ 2203.00s ->  2209.32s] the likelihood or probabilities of certain states of the world. Random variables have statistical
+[ 2209.32s ->  2216.60s] and distribution convergence. In reality, we're using random variables to model uncertainty.
+[ 2216.60s ->  2224.12s] That lacks statistical and distribution convergence due to non-stationarity. Normal random variables are
+[ 2224.12s ->  2230.84s] useful as sample averages by the central limit theorem follow a normal distribution. This effectively
+[ 2230.84s ->  2237.40s] bridges the gap between probability and statistics, but we still suffer from that non-stationarity.
+[ 2237.40s ->  2243.64s] As things change over time, that distribution will certainly not converge. Brownian motion is also
+[ 2243.64s ->  2250.44s] defined in terms of a normal or Gaussian distribution, so clearly we're going to see this normal distribution
+[ 2250.44s ->  2257.16s] everywhere. Stochastic processes themselves are collections of random variables over some sort of
+[ 2257.16s ->  2264.36s] index. It could be a draw or time. We can never predict one sample path. Again, that's not the point.
+[ 2264.36s ->  2270.44s] We're trying to assess the likelihood of different states of the world. Brownian motion is defined by
+[ 2270.44s ->  2278.36s] its zero mean, independent and stationary Gaussian increments, and is almost surely continuous. We observe how
+[ 2278.36s ->  2285.24s] uncertainty increases in the increment in larger time steps that captures that time-varying dynamic.
+[ 2285.88s ->  2291.56s] This is the core use of a stochastic process. Now, in practice, we may choose to model a stock price
+[ 2291.56s ->  2298.04s] process with the stochastic process powered by the Brownian motion to model that uncertainty. And that's
+[ 2298.04s ->  2304.52s] exactly what we saw with the arithmetic Brownian motion above when we used it to price a European call
+[ 2304.52s ->  2311.72s] option. With stochastic processes, we observe the nice properties of convergence we saw with random
+[ 2311.72s ->  2318.28s] variables. And that's just because it is a collection of random variables over an index. So we observe the
+[ 2318.28s ->  2325.08s] same statistical and distribution convergence. Now, again, in terms of the stochastic process, we have this
+[ 2325.08s ->  2332.28s] idea of a path and that path may have memory or it may be memory lists. And depending on the process we're
+[ 2332.28s ->  2338.92s] dealing with, we may have the analytical distribution, the theoretical distribution at any step like we
+[ 2338.92s ->  2344.92s] observed with the Brownian motion and the arithmetic Brownian motion, or we may not have the theoretical
+[ 2344.92s ->  2350.92s] distribution if we require the entire sample path to create each step of the sample path. It will depend
+[ 2350.92s ->  2356.04s] on the process you're dealing with and the covariance structure. But in any case, we observe statistical,
+[ 2356.04s ->  2362.52s] probabilistic and distribution convergence at each step in the process, so long as we have sufficient
+[ 2362.52s ->  2367.80s] samples. And there's also this idea of ergodicity, whether you're dealing with an ergodic or a non-ergodic
+[ 2367.80s ->  2373.48s] system. But I have a video dedicated to that topic on optimal bet sizing. I'll leave a link to it in the
+[ 2373.48s ->  2379.24s] description below. Now, in reality, in this case, we used arithmetic Brownian motion to go about pricing our
+[ 2379.24s ->  2385.80s] European call. We will require more sophisticated modeling. We are going to need to go even beyond
+[ 2385.80s ->  2391.64s] black trolls to model skew and term structure of volatility to extrapolate prices for our desk,
+[ 2391.64s ->  2398.04s] specifically for exotic instruments. And that's because we need to consider things like arbitrage.
+[ 2398.04s ->  2404.76s] Are we accidentally arbitraging ourselves by the current liquid pricing of these option contracts?
+[ 2404.76s ->  2412.92s] So when it comes to trading for a desk, a lot goes into it. Brownian motion is the engine that powers
+[ 2412.92s ->  2418.36s] all of these models. Some future topics, technical videos and other discussions to look forward to
+[ 2418.36s ->  2422.52s] this idea of advanced Markov chains, absorbing states, communication classes, ergodicity,
+[ 2422.52s ->  2426.68s] stationary distributions. We've already talked about Markov chains on this channel. We looked at an
+[ 2426.68s ->  2432.04s] application in quantitative finance, but I'd like to break out the iPad and kind of backfill with some more
+[ 2432.04s ->  2437.16s] theory. If you're interested, please leave a comment below. It helps me figure out what kind of content
+[ 2437.16s ->  2442.68s] to create next. We already talked about Brownian motion and arithmetic Brownian motion. This is that
+[ 2442.68s ->  2449.48s] additive process. I'd like to get into geometric Brownian motion, a multiplicative process and derive
+[ 2449.48s ->  2455.72s] the black trolls PDE. Then we can look at analytical and numerical solutions. I think that will tee up nicely
+[ 2455.72s ->  2461.00s] this idea of an automated delta neutral trading system. This is something that I've been playing around
+[ 2461.00s ->  2466.44s] with for quite some time. I've built out a lot of the infrastructure that will certainly be a very
+[ 2466.44s ->  2473.76s] big project of a video to put together. We still have to tackle this Kalman filter and non-stationarity.
+[ 2473.76s ->  2480.24s] I've talked at length recently about non-stationarity. It's a big problem in quant modeling. The Kalman
+[ 2480.24s ->  2488.32s] filter is just one example of a process that aims to produce a new mean over time. I would like to also
+[ 2488.32s ->  2495.36s] maybe get into more qualitative subjects, maybe popular quant models for informed trading buy side
+[ 2495.36s ->  2500.96s] versus sell side quants. And I've been putting together this quant roadmap, how I would start
+[ 2500.96s ->  2508.40s] learning. If I had to start over, I'm uncertain of the level of interest in this qualitative content,
+[ 2508.40s ->  2513.36s] but if it interests you and you'd like to see it in the near future, leave a comment below. That's going to
+[ 2513.36s ->  2517.60s] do it for this video on brownie emotion for quant finance. I hope you enjoyed. I hope you learned
+[ 2517.60s ->  2521.76s] something. This video certainly took a lot of effort to put together. So if you enjoyed it,
+[ 2521.76s ->  2527.92s] please like comment, subscribe, share again, helps me out tremendously always greatly appreciated.
+[ 2527.92s ->  2531.84s] I'll leave a link to our discord below. If you'd like to join and connect with me and other quants in
+[ 2531.84s ->  2538.56s] the quant guild community, check out quant guild.com and that absolutely massive update with the release of
+[ 2538.56s ->  2545.12s] courses to master your quantitative skills. Other than that, thank you so much for watching and I will
+[ 2545.12s ->  2546.96s] see you in the next video.

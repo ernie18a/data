@@ -1,0 +1,156 @@
+[    0.16s ->     4.24s] This is $12, and this is $1 million cash.
+[    4.24s ->     8.76s] I'm going to show you exactly how to achieve this what seems to be impossible task with
+[    8.76s ->    13.32s] the exact blueprints of steps needed for anyone to retire a millionaire.
+[   13.32s ->    17.59s] But wait, we already have an issue.
+[   17.59s ->    35.95s] Quickly realized that many people don't necessarily have high paying jobs, or are
+[   35.95s ->    39.87s] already pretty old and can't spend tons of time trying to grow their money.
+[   39.87s ->    41.15s] So I had to do some digging.
+[   41.15s ->    45.51s] I had to scavenge the internet to try to find the different techniques and financial plans
+[   45.51s ->    50.15s] to help solve the age old question on how to retire a millionaire.
+[   50.15s ->    54.95s] But to do it somewhat fast, seeing just how far we can stretch the limits and find out
+[   54.95s ->    60.15s] just how much we needed to become a person with $1 million.
+[   60.15s ->    64.39s] After searching for what seemed to be hours on the internet for ways to become a millionaire
+[   64.39s ->    68.83s] with little amounts of cash, I stumbled upon a community called the FIRE movement.
+[   68.83s ->    73.67s] This is a new financial movement being embraced by millennials and really any adult who wants
+[   73.67s ->    74.87s] to retire early.
+[   74.87s ->    87.75s] It stands for Financially Independent Retirement Early.
+[   87.75s ->    92.07s] You can find them on certain websites, Reddit, forums, and there's even books about it.
+[   92.07s ->    95.03s] The moment I found this, I was instantly intrigued.
+[   95.03s ->    99.91s] I quickly figured out it's a community of people who dive into the analytics of exactly
+[   99.91s ->   102.63s] what you would need to retire at any age you want to.
+[  102.63s ->   106.07s] After reading countless amounts of threads and posts, it got me thinking.
+[  106.07s ->   110.71s] Retirement isn't an age, it's a financial number, and there's no law that says you have
+[  110.71s ->   112.39s] to work until you're 65.
+[  112.39s ->   114.71s] I realized that it's all about knowing what you need.
+[  114.71s ->   119.27s] Knowing the exact amount of money you need each and every week to continue living your lifestyle
+[  119.27s ->   121.99s] without working another day in your life.
+[  121.99s ->   124.55s] So what is this simple financial equation?
+[  124.55s ->   129.51s] How do I calculate exactly how much money I need each and every week to retire a millionaire?
+[  129.51s ->   133.27s] First we have to go over a key factor in all of this, the three subgroups.
+[  133.27s ->   136.15s] As we all know, not everyone is in the same position.
+[  136.15s ->   137.91s] One of you might be working at Wendy's.
+[  137.91s ->   140.31s] One of you might have a high paying job but you're 50.
+[  140.31s ->   144.63s] You could be a huge spender, a saver, college student, a 16 year old in high school.
+[  144.63s ->   145.43s] You get my point.
+[  145.43s ->   150.79s] There's countless amounts of different combinations on what your current financial situation currently is.
+[  150.79s ->   153.67s] And some of you spend money way faster than others.
+[  153.67s ->   158.71s] So we need to pinpoint which subgroup you're in so we can then calculate the exact plan you need
+[  158.71s ->   160.39s] to execute this strategy.
+[  160.39s ->   163.03s] The first subgroup is what's called leanfire.
+[  163.03s ->   168.39s] This first group is willing to live in a minimalist lifestyle to cut expenses as much as possible.
+[  168.39s ->   171.99s] These are the types of people that order off the value menu at McDonalds.
+[  171.99s ->   173.91s] Or they cut off the heat in the winter.
+[  173.91s ->   176.47s] Or they're buying single ply toilet paper.
+[  176.47s ->   178.63s] Or they make YouTube videos for a living.
+[  178.63s ->   179.27s] Wait, what?
+[  179.27s ->   180.23s] You get the gist.
+[  180.23s ->   184.79s] They take a lot more sacrifices in their early lifestyle and live off the bare essentials.
+[  184.79s ->   188.23s] But the advantage of this is you can retire a lot earlier.
+[  188.23s ->   193.83s] In general, lean investors try to aim to survive on only $25,000 annually.
+[  193.83s ->   196.55s] The second subgroup is what's called FIRE.
+[  196.55s ->   197.67s] Yeah, that's it.
+[  197.67s ->   201.11s] This is what most people would consider normal financial independence.
+[  201.11s ->   204.23s] Living your normal, regular lives without needing to work again.
+[  204.23s ->   207.59s] Sure, you're not going to be driving Ferraris or going to Fiji anytime soon.
+[  207.59s ->   209.19s] Awwww
+[  209.19s ->   212.39s] But still, you're not going to have to worry about money within reason.
+[  212.39s ->   214.55s] And you're not going to have to work if you don't want to.
+[  214.55s ->   217.83s] The third and final subgroup is what's called FATFIRE.
+[  217.83s ->   219.43s] This is for the big spenders.
+[  219.43s ->   221.27s] The people who don't want to have to worry about,
+[  221.27s ->   222.71s] Hey, can I afford that?
+[  222.71s ->   226.55s] These are the types of people who have one of those robot dogs as a pet.
+[  226.55s ->   230.15s] This subgroup is spending around $200,000 a year.
+[  230.15s ->   234.71s] So now that we have gone over all the subgroups, hopefully you have identified which kind of retirement
+[  234.71s ->   237.19s] you would like and the type of lifestyle you would want.
+[  237.19s ->   238.39s] Now, it's very important.
+[  238.39s ->   242.15s] You should also be honest with yourself on what your spending habits are and how much
+[  242.15s ->   243.43s] you usually spend a year.
+[  243.43s ->   247.19s] Now that we know all the subgroups, what's this magical blueprint to figure out how much
+[  247.19s ->   248.15s] we need to save?
+[  248.15s ->   252.87s] Well, we should first go over the basics of what FIRE actually is and the strategy behind it.
+[  252.87s ->   257.91s] The whole idea behind FIRE is that you work a job, grow and save that income to a big sum of money
+[  257.91s ->   261.99s] called a nest egg, which is the goal for the amount of money you want for the end game.
+[  261.99s ->   266.79s] Once you have that amount of money, you can retire early and do what's called the 4% rule.
+[  266.79s ->   271.03s] The 4% rule is something that came from a research paper called the Trinity Study.
+[  271.03s ->   275.59s] In this study, they found if you only took 4% from your total investment portfolio,
+[  275.59s ->   280.15s] it was very unlikely that you would exhaust that full nest egg for 30 years.
+[  280.15s ->   285.27s] So basically, you have your investment portfolio, you take 4% out every year for your expenses,
+[  285.27s ->   289.91s] the investments sustain the withdrawal requirements, so you can constantly repeat this process
+[  289.91s ->   293.99s] and not have to work another day in your life. Sounds pretty nice, right?
+[  293.99s ->   298.55s] In other words, if you can live off 4% of your total investment portfolio,
+[  298.55s ->   303.03s] hypothetically, your investment should be able to take care of you for 30 years.
+[  303.03s ->   306.87s] Now, if you want to stay on the safe side to counteract the high inflation rates,
+[  306.87s ->   312.39s] bad markets, world problems in general, it's best advised for you to try to only spend 3%
+[  312.39s ->   317.35s] of your total investment portfolio. The reason being, it's a lot safer and more reliable,
+[  317.35s ->   322.71s] and has a way higher success rate. So for these examples, we'll be using that 3% number.
+[  322.71s ->   329.27s] So what that means is if you have $100,000 invested, you can only spend $3,000 a year
+[  329.27s ->   333.91s] without running out of money for 30 years. If you have $1,000,000 invested,
+[  333.91s ->   337.51s] you can only spend $30,000 every year. You get the point.
+[  337.51s ->   340.95s] So the more money you have invested, the more money you can spend, obviously.
+[  340.95s ->   344.79s] Now we can move on to the next step, which involves how much money you spend,
+[  344.79s ->   348.71s] versus how much money you need in your nest egg. First, you're going to want to calculate all
+[  348.71s ->   353.99s] your expenses. Your rent, your car payment, food, bills, everything. So calculate however much you're
+[  353.99s ->   358.79s] spending each and every year on average. Now as a quick hint, the lower this number is,
+[  358.79s ->   362.23s] the better, as it'll make it a lot easier to obtain the end goal.
+[  362.23s ->   368.63s] So let's say after calculating all your expenses, you spend an average of $30,000 a year. All you do is
+[  368.63s ->   375.75s] take $30,000 divided by 3%, which would give you $1,000,000. Which means in order to retire,
+[  375.75s ->   381.91s] you need $1,000,000 and you can spend $30,000 every year for 30 years and not have to work
+[  381.91s ->   387.03s] one of those years. This also means though, you can't change the amount you spend. So it's not
+[  387.03s ->   392.95s] like the 7th year you can decide to buy a yacht. You have to stay at that $30,000 limit every year.
+[  392.95s ->   399.75s] Say if you want to up the budget and spend $200,000 every year. Well, you would need $6.67 million
+[  399.75s ->   405.51s] in order to retire without working for 30 years. So the amount you need to retire is completely
+[  405.51s ->   410.15s] based off your spending habits and how much you spend per year. But it's a great way to think about
+[  410.15s ->   415.03s] retirement and planning for that. This is why all these fire enthusiasts are so cheap and don't like
+[  415.03s ->   420.15s] spending their money. Because they know just how much of an impact money invested has on you in your
+[  420.15s ->   424.87s] later years. Now, maybe you don't care about retiring early per se. Maybe you just want to
+[  424.87s ->   430.39s] know from your age how much you need to invest every single week in order to become a millionaire.
+[  430.39s ->   435.27s] Well again, I did some digging. In order to do this successfully, you have to have a plan.
+[  435.27s ->   439.91s] This is the plan that I use that I use in my own personal life that works pretty well for me.
+[  439.91s ->   443.83s] You guys can implement it in your life as well and see if it works for you. Here's the plan.
+[  443.83s ->   448.47s] The first thing you need to do is automate your savings. I have my bank account set up to where
+[  448.47s ->   452.79s] every time money gets deposited into my bank account, a certain percentage is
+[  452.79s ->   457.03s] automatically transferred to my investment account. This instantly removes any obstacles
+[  457.03s ->   461.75s] that would come forth when normally trying to save money. Like for example, how often have you said,
+[  461.75s ->   466.87s] I'm going to save $50 from this next paycheck and invest it. Then the next paycheck comes around and
+[  466.87s ->   473.03s] one, you either completely forgot about you saving it or two, you say, it, I don't need to save my money.
+[  473.03s ->   477.19s] And instead buy a high grade stainless steel watermelon cutter on Amazon.
+[  477.19s ->   481.99s] This does look pretty cool though. This happens all the time. And what I found is by automating
+[  481.99s ->   486.95s] this process, it makes this task a lot smoother. Since this is all happening in the background,
+[  486.95s ->   491.51s] you almost kind of forget about that $50, since it never really showed up in your bank account in
+[  491.51s ->   496.55s] the first place. But in the background, it's being invested, and your wealth is slowly being
+[  496.55s ->   501.35s] built from investments. The next step in this plan is determining how much money you actually need
+[  501.35s ->   506.95s] to save in order to become a millionaire. Now for these results, I assumed you would be investing in
+[  506.95s ->   513.99s] a low cost index fund, like VOO, which on average gives an annual return of 12%. This is taking into
+[  513.99s ->   519.11s] consideration inflation rates and everything like that. Then in these test results, I'm also assuming
+[  519.11s ->   524.79s] you're going to retire at age 70, as that's the new retirement age according to SUSE, whoever that is.
+[  524.79s ->   529.83s] Now, while researching this information, I quickly found out, the younger you are, the less amount of
+[  529.83s ->   534.55s] money you need to save per week. If you're a little older, it's still not a problem. Obviously, the
+[  534.55s ->   538.95s] older you are, the more catching up you have to do, but it's really not that bad. Here's the numbers
+[  538.95s ->   544.47s] I found. This is on a per week basis. So as you can see, if you're 20 years old, you only have to
+[  544.47s ->   551.99s] invest $8 every week into an index fund for 50 years and you will be a millionaire by 70. Only $8
+[  551.99s ->   558.87s] every week. If you're 55, you have to invest $530 every week for 15 years to become a millionaire.
+[  558.87s ->   562.87s] This is also assuming you're starting from a $0 balance in your bank account.
+[  562.87s ->   566.55s] Now, like I said, all of this is based off the returns of an index fund. Sure,
+[  566.55s ->   570.79s] there are other investments out there that perform a lot better or yield higher returns,
+[  570.79s ->   575.51s] but the reason I picked an index fund for this everyday Joe strategy is because you literally
+[  575.51s ->   580.55s] don't need any financial education to make money from an index fund. You also don't need to spend
+[  580.55s ->   585.43s] countless hours researching individual stocks if you're not into that sort of thing. On top of that,
+[  585.43s ->   590.55s] index funds are usually very consistent over long periods of time. They're also highly diversified
+[  590.55s ->   595.03s] and not as volatile as a normal stock would be. Let's take a look at what these earnings would
+[  595.03s ->   599.75s] actually look like. Now, as you can see with these graphs, the earnings are exponential because of
+[  599.75s ->   604.71s] compounding. Your money is just constantly reinvesting into itself. So as you can see, sure,
+[  604.71s ->   609.27s] the gains are a little at the beginning for the first 10 years, but as more and more time goes on,
+[  609.27s ->   613.83s] the gains get bigger and bigger. A little goes a lot in these financial scenarios.
+[  613.83s ->   617.75s] After doing all this research, I found that there's no magic pill you can take. There's
+[  617.75s ->   622.55s] no way to make this all happen instantly. It all really comes down to how much money you're saving,
+[  622.55s ->   626.07s] how much money you're making, and how much money you want to spend when you retire.
+[  626.07s ->   629.75s] So if you want to retire comfortably, just stay consistent with your investments,
+[  629.75s ->   632.23s] try not to spend as much, and you'll do just fine.
+[  632.23s ->   637.19s] It can be really hard to do this though with years like 2022 for example, where there was just a huge
+[  637.19s ->   641.83s] pandemic, there's war happening in Ukraine, inflation rates are as high as they've ever been,
+[  641.83s ->   646.47s] and we're in a massively overvalued stock market. That's why I took the time to research on what
+[  646.47s ->   651.19s] Warren Buffett does during these high inflation times, and see how he's personally investing in
+[  651.19s ->   656.07s] 2022. If you're interested in that, go check this video out because it's extremely interesting,
+[  656.07s ->   659.27s] and it may just help you make money in the year of 2022.
+[  659.27s ->   669.91s] Thanks for watching, and I'll see you guys next time.

@@ -1,0 +1,205 @@
+[    0.00s ->    15.58s] My life is forever changed by the kindness, support, and strength that you guys, Quant Guild, has given me over the last 48, 72 hours.
+[   15.58s ->    39.22s] And while I can't see Java this second and he remains in stable condition, I am going to continue to be there for you guys and help you master your quantitative skills, continue my mission, and I'm going to do so today by talking about the Law of Total Expectation.
+[   39.22s ->    54.56s] I hope to have more information later today about Java and how he's doing and when he's going to be able to come back home, and I will keep you guys updated as soon as I know more information, you will.
+[   56.14s ->    64.14s] So let's start with this idea of the Law of Total Expectation.
+[   64.14s ->    88.33s] This is one of my favorite ideas. I actually first really understood it in a class on stochastic processes, and it really changed the way that I think about statistics and how we take outcomes and scale them by probabilities in different regions of a sample space.
+[   88.33s ->    97.99s] So let me kind of just draw for you the diagram that we typically work with, and that's this idea of just a sample space here.
+[   98.79s ->   114.48s] And we usually call this omega, big omega, and this is just pretty much everything that can happen if we sum the probability of this entire space, we're going to get 1 or 100%.
+[  114.48s ->   135.40s] It's pretty much everything that can happen, and within this sample space, right, whether we're looking at a dice roll or coin flips or heights or whatever, if it's discrete or continuous, it doesn't really matter, we can always introduce the idea of a partition.
+[  135.40s ->   148.21s] The idea of a partition is that we can perfectly separate this sample space into one of a set of categories.
+[  149.09s ->   159.89s] So, for example, if I'm using gender, right, we can separate this into male and female.
+[  159.89s ->   185.52s] All right, and please don't get mad at me right now for this, but the two genders here can perfectly partition the sample space, and we're able then to use this law of total expectation to our advantage if we know something perfectly partitions the sample space.
+[  185.52s ->   205.55s] How might we do that, well, we have this idea of an expectation, and by definition, the expectation is the expected value of, let's say, random variable x, and we're going to call random variable x maybe the height of people in a particular population.
+[  205.55s ->   222.19s] This could be the world, this could be the world, this could be the world, this could be the world, this could be a school, this could be a workplace, it doesn't really matter, this is going to be equal to, and we have this idea of just the discrete and continuous expected value by definition.
+[  222.19s ->   234.35s] So, in the discrete sense, it's going to be the sum of all outcomes in a particular set, we'll call that A, times the probability that A occurs.
+[  234.71s ->   245.99s] So, we're effectively normalizing all of the quantitative values, well, not really normalizing, I guess you could think of it that way, but we're scaling all of the values by their corresponding probabilities.
+[  245.99s ->   261.87s] So, if we have, let's say, a height of 51 with a probability of 0.16, then we're going to multiply these two together, and we're going to do that for every single height, and that's what's going to give us the expected value.
+[  261.87s ->   275.75s] Now, of course, it doesn't really work too great there, because it really reminds us more of a continuous random variable, something like height, something discrete we typically think about, like a coin flip or a dice roll.
+[  276.61s ->   281.71s] But if we're dealing with a continuous random variable, we're really dealing with a probability mass function.
+[  281.71s ->   301.14s] So, this is going to be equal to, then, instead, the integral, which is just a continuous summation, anyway, of x times the probability mass function of random variable x, right, parameterized by x dx, okay?
+[  301.38s ->   304.48s] And we're just going to integrate across the entire support chi.
+[  304.58s ->   305.90s] There's a lot of x's there.
+[  306.24s ->   307.36s] They're not all equivalent.
+[  307.36s ->   311.82s] This is going to be the x to parameterize the function and the integrand.
+[  312.14s ->   313.92s] This is random variable x.
+[  313.96s ->   315.26s] In that case, that's the height.
+[  315.64s ->   319.52s] And this is going to be the support for the probability density function.
+[  320.88s ->   324.56s] So, this is, by definition, the expectation.
+[  324.94s ->   336.56s] But it turns out that a lot of the times, it's easier to compute the expectation conditionally than it is to just compute it unconditionally.
+[  336.56s ->   338.92s] So, this is an unconditional expectation.
+[  339.54s ->   354.06s] If I have just the expected value of height, so x, remember, is going to be height, and I say that it's, like, call it 5'5", we don't know if that's the average height of males, females.
+[  354.06s ->   356.80s] We have no idea, right?
+[  356.82s ->   361.30s] It's just a compression of everything in this sample space, right?
+[  361.32s ->   369.80s] You can think of each point as a different individual in this population, and they're going to live in their corresponding partition appropriately.
+[  369.80s ->   375.96s] And we're effectively just compressing all that information down into this one value here.
+[  377.31s ->   377.75s] Okay.
+[  378.95s ->   383.27s] So, how can we use the law of total expectation to our advantage here?
+[  383.37s ->   385.57s] What exactly is it anyway?
+[  385.57s ->   391.27s] Well, it turns out that this is going to be equal to the expected value by definition here.
+[  391.63s ->   409.06s] If we use a couple of our axioms from probability and statistics, it turns out that this is going to be equal to the expected value of height given a particular partition.
+[  409.70s ->   412.40s] So, in this case, we have a partition of male and female.
+[  412.82s ->   414.42s] So, I'm going to put male here.
+[  414.42s ->   418.64s] And then what I'm going to do is I'm going to take this conditional expectation.
+[  418.64s ->   420.72s] This isn't all that difficult to interpret.
+[  420.96s ->   425.32s] It's just the average height given that you're looking at males, right?
+[  425.38s ->   431.78s] So, instead of looking at this entire population, we're just going to look at males, okay?
+[  432.92s ->   436.66s] So, that's one component of this unconditional expectation.
+[  436.88s ->   438.44s] It's effectively a decomposition.
+[  438.86s ->   440.70s] So, what are we going to do then?
+[  440.70s ->   444.76s] Well, we're going to scale it by the probability of observing a male.
+[  445.22s ->   452.58s] And I've always looked at it like here's the thing that you want in an unconditional way.
+[  453.04s ->   455.40s] And then here's the condition.
+[  456.10s ->   458.12s] We got to find the expected value.
+[  458.12s ->   461.04s] Then we have to find the corresponding probability for the condition.
+[  461.24s ->   467.06s] And this is how we're just gluing together pieces of the overall unconditional expectation.
+[  467.44s ->   469.38s] So, now when we add, right?
+[  469.42s ->   471.62s] What do we need to add to get the rest of the space?
+[  471.62s ->   476.02s] Well, male and female partition the entire space, right?
+[  476.06s ->   479.00s] That makes up 100% of the sample space.
+[  479.66s ->   483.18s] So, we're just going to need to glue the female piece together now.
+[  483.26s ->   491.61s] So, it's going to be the expected value of X given female and then times the probability of being a female.
+[  491.61s ->   499.67s] And this is actually going to equal, if we find each of these components individually, remember how we found the original 5, 5.
+[  499.85s ->   503.71s] Well, if we glue all these pieces together, we're going to get that same 5, 5.
+[  505.77s ->   506.21s] All right?
+[  507.37s ->   510.87s] That's this idea of the law of total expectation.
+[  510.87s ->   518.79s] Now, in a frequentist sense, this is a very important idea here.
+[  519.41s ->   531.55s] In a frequentist sense, right, if we continue to sample from the same population distribution, the same data generating distribution, these are all going to converge, right?
+[  531.59s ->   539.51s] Because this is a compression of probability and outcome in a discrete or continuous sense, right?
+[  539.51s ->   540.45s] It's the same idea.
+[  540.89s ->   548.93s] We're just conditioning on a subset of the sample space here, which is just effectively giving us a new omega, right?
+[  548.99s ->   550.01s] Same thing with female.
+[  550.07s ->   552.05s] It's just effectively giving us a new omega.
+[  552.05s ->   559.91s] We're just normalizing then by the quantity of males and quantity of females in those partitions, right?
+[  559.97s ->   561.75s] They're subsets of the sample space.
+[  561.75s ->   569.11s] But in the frequentist sense, these are all going to converge to their true values.
+[  569.31s ->   570.81s] So what do I mean by that?
+[  570.89s ->   572.75s] Well, if you have a small sample, right?
+[  572.81s ->   574.23s] We can think of it like this.
+[  575.95s ->   584.11s] If I have a small sample, then I might observe height as I continue to take more samples, right?
+[  584.49s ->   589.37s] I'm going to observe, let's take a look at the expected value of height given male.
+[  589.37s ->   594.27s] Well, I'm going to observe this over the quantity of samples that I have.
+[  594.33s ->   598.79s] So this on the y-axis here is expected value of height given male.
+[  599.05s ->   606.97s] And on the x-axis here, we have the number of males that I've sampled in this particular population omega.
+[  606.97s ->   624.22s] You're going to find that as you continue to take samples, that this is going to eventually cumulatively converge to the true theoretical expectation.
+[  625.08s ->   626.88s] And that is by the law of large numbers.
+[  626.88s ->   640.02s] Asymptotically, in a frequentist sense, the law of large numbers says that all probabilities, statistics, and distributions are going to converge to their data-generating distributions, right?
+[  640.78s ->   642.26s] Now, what's the problem here?
+[  642.84s ->   651.90s] In practice, right, this is kind of true, and it's useful for the most part for the statistics and probabilities that we need in practice.
+[  651.90s ->   665.06s] However, the problem is, over time, this theoretical expectation changes, and that's because the data-generating distribution changes in kind of a broader sense.
+[  665.18s ->   667.36s] There really is no data-generating distribution.
+[  667.36s ->   682.76s] We're imposing that structure on the space, and this is kind of the problem with using probability and statistics in finance just out the gate super aggressively, is you're not going to have this nice frequentist convergence, right?
+[  682.76s ->   697.50s] Asymptotically, in finance, if you look at stock returns, if you look at anything like that, you're not going to have probabilities, distributions, and statistics converge because the data-generating distribution is changing over time.
+[  697.50s ->   707.26s] The way that you can think about this is, imagine I have a school, see if I can draw, yeah, crushed it.
+[  707.54s ->   716.04s] I have a school in, call it the 1900s, maybe like 1902, and I have a school today, right?
+[  716.98s ->   722.51s] Completely different schools, maybe a school in 2026.
+[  722.51s ->   739.40s] If I take a look at the expected value of height given male in 1902, is this going to be equal to the expected value of height given male in 2026?
+[  740.06s ->   743.89s] I mean, absolutely not, right?
+[  743.95s ->   747.25s] There's so many different factors that go into this, right?
+[  747.51s ->   749.05s] Are these in the same location?
+[  749.05s ->   756.23s] Time plays a significant role in the population's average height, right, over time.
+[  756.41s ->   765.21s] There's so many things that are going to change the distribution of males over time and their corresponding heights.
+[  765.77s ->   772.67s] And that's why in real life, we don't see these statistics, probabilities, so on converge.
+[  773.13s ->   776.53s] There is no fixed data-generating distribution.
+[  776.53s ->   782.55s] Yes, we have the central limit theorem, but the central limit theorem only holds under specific conditions.
+[  782.83s ->   795.20s] And in real life, when you have this time variation, this non-stationarity, that's when you get misled and you're not actually looking at correct probability statistics and distributions.
+[  796.34s ->   799.10s] So these are most certainly not equal, right?
+[  799.10s ->   812.42s] It's going to be a function of a variety of different things, but nevertheless, we can see then, right, in the overall expectation, if we have all that information.
+[  812.60s ->   814.28s] So let's say we have this information.
+[  814.96s ->   820.30s] Let's say we have the probability of male in both time frames.
+[  820.30s ->   839.88s] We have then the same for females, the expected value of height given female times the probability of female, the expected value of female and the probability of female in both time periods, right?
+[  839.98s ->   843.42s] Hopefully you see now in the stock return sense what we're building to.
+[  843.42s ->   856.64s] Clearly, here, the two unconditional expected values, the expected value of height in 2026, is not going to be equal to the expected value of height in 1902.
+[  857.12s ->   865.50s] Which is why your stock returns in the early 2000s are, on average, are not going to be equal to your stock returns now, right?
+[  865.58s ->   866.24s] They're companies.
+[  866.38s ->   867.12s] It's amorphous.
+[  867.12s ->   874.20s] We're not dealing with frequency-based probability statistics and distributions in real life.
+[  874.74s ->   880.42s] Instead, we're imposing that structure to try to make sound decisions under uncertainty.
+[  880.78s ->   893.12s] What you're seeing here is then, if I can decompose this expectation into these different legs, I can see what changed most dramatically over this time period.
+[  893.68s ->   896.14s] Was it the average height of males?
+[  896.14s ->   897.86s] Is that what changed dramatically?
+[  898.60s ->   900.88s] Was it the probability of being a male?
+[  901.12s ->   902.84s] Is that what changed dramatically?
+[  903.86s ->   905.84s] Was it the average height of female?
+[  906.10s ->   907.82s] Is that what changed dramatically?
+[  908.26s ->   910.52s] Or the probability of being a female?
+[  911.30s ->   916.16s] All of these go into the unconditional expectations.
+[  916.16s ->   927.82s] So, when there's significant deviation in the unconditional expectation, you can decompose into the individual parts, and over time, you can see what is drifting, what is changing.
+[  927.96s ->   930.50s] You can do distribution distance measures.
+[  930.92s ->   932.08s] The list goes on.
+[  932.08s ->   938.46s] But keep in mind, we don't have this frequency interpretation that we do in the classroom.
+[  938.68s ->   940.90s] It's more amorphous, right?
+[  941.18s ->   943.20s] So, what do I mean by that?
+[  943.34s ->   957.65s] Well, what's really nice about the law of total expectation is so long as you can partition the sample space, you're going to be able to decompose anything, even if it is more amorphous, right?
+[  957.65s ->   964.91s] Even if it's extremely chaotic, even if the distributions change violently over time, it doesn't change the fact that this is true.
+[  964.99s ->   973.91s] It does change the fact that it may not be stable over time, which is exactly why you perform this sort of analysis here in a temporal sense.
+[  973.91s ->   977.57s] But let's apply this idea now to trading, right?
+[  977.69s ->   987.03s] So, if I have a, let's call it a win and a loss in terms of a trade, right?
+[  987.07s ->   999.49s] And this is a sample space of all of my trades, then I'm going to be able to partition the sample space perfectly by whether or not a trade was a win or a loss.
+[  999.49s ->  1016.57s] This is one of the first things that I talk to any sort of, anyone who comes to me for professional consulting, this is one of the first things I ask them to show me is the distribution stability over time of their strategy, right?
+[ 1016.57s ->  1030.50s] If they are trading some sort of inefficiency, whatever it is, but trades are going to live in one of these two partitions, right?
+[ 1030.52s ->  1036.02s] A subset of the overall sample space, you're going to have your winning trades, you're going to have your losing trades, right?
+[ 1036.06s ->  1043.06s] Now, the particularly keen among you will notice that this is likely to be more granular, right?
+[ 1043.26s ->  1046.68s] It's probably not going to just be your wins and your losses.
+[ 1046.68s ->  1049.22s] You're also going to have like sub regimes.
+[ 1049.22s ->  1055.44s] So, you're going to break this up into like a low, a mid, and a high volatility regime.
+[ 1055.44s ->  1064.10s] And then you'll even segment again by other conditional factors, macro factors, political factors, whatever.
+[ 1064.60s ->  1066.56s] And then you'll look at your win and loss.
+[ 1066.80s ->  1075.76s] You can apply the law of total expectation in the exact same way, as long as you're dealing with a partition of the sample space.
+[ 1075.76s ->  1090.50s] So, more formally here, right, a partition is just going to be if I take the union of all of these different events, then I'm going to get the original sample space.
+[ 1090.50s ->  1102.06s] And if I take the intersection of all of these events, such that I'm dealing with two different events, then we are going to be completely disjoint.
+[ 1102.48s ->  1104.74s] And there's not going to be any overlap.
+[ 1104.82s ->  1108.32s] And that's what you see in all of these partitions that I'm drawing, right?
+[ 1108.34s ->  1111.36s] I'm drawing them effectively so they have no overlap.
+[ 1111.36s ->  1115.98s] They're just slicing and dicing this original sample space here.
+[ 1115.98s ->  1131.31s] So, let's take a look then at the idea of the expectation of trading P&L, right?
+[ 1131.31s ->  1133.73s] So, each one of these is going to be a trade.
+[ 1133.99s ->  1143.47s] That means that we're going to have, by the law of total expectation, the expected value of your P&L, given a winning trade, times the probability of a winning trade,
+[ 1143.47s ->  1151.11s] plus the expected value of your P&L, given a losing trade, times the probability of a losing trade.
+[ 1151.95s ->  1157.79s] And the problem here is that these are typically extremely unstable, right?
+[ 1158.05s ->  1168.89s] So, what you're going to have to do is you're going to have to continue to condition on different elements, volatility regimes, strategies, to try to create reasonable stability.
+[ 1169.13s ->  1171.71s] That is what your trading edge is effectively.
+[ 1171.71s ->  1176.37s] If you have an edge, then this is going to be reasonably stable over time.
+[ 1176.49s ->  1180.59s] We often talk about discretionary trading being performance.
+[ 1180.83s ->  1181.93s] It swings at bat.
+[ 1182.59s ->  1191.05s] Even still, if you have an edge and you decompose your trades over time, you should see reasonable stability here, right?
+[ 1191.05s ->  1207.89s] The mean should be, on average, positive with reasonably constrained variance such that you're not blowing out or such that you actually have, like, structurally orthogonal risk to just pure market exposure that you're taking advantage of.
+[ 1207.89s ->  1212.17s] But that goes into other types of analysis that you would do.
+[ 1213.07s ->  1219.45s] So, the thing here to keep in mind is we don't have that nice frequentist convergence, right?
+[ 1219.49s ->  1226.85s] If I have N trades here, and I'm looking at the expected P&L of my winning trades, right?
+[ 1226.85s ->  1233.11s] As I make more trades, this doesn't have to converge to anything, right?
+[ 1233.67s ->  1236.19s] Now, we say here with height that it did.
+[ 1236.81s ->  1247.05s] The only reason why I'm saying it does with height is because it's likely more stationary, at least ephemerally, than it is for something like your trades.
+[ 1247.05s ->  1253.50s] Unless you have a really good strategy, then it's going to exhibit that kind of stability, right?
+[ 1253.74s ->  1264.14s] But if I take the average height of people in a workplace, people in a school, that tomorrow isn't really going to change all that violently, that distribution, right?
+[ 1264.88s ->  1271.36s] But over 10, 20, 50, 100 years, then you're going to observe those significant differences, right?
+[ 1271.36s ->  1282.80s] Now, in finance, we actually observe those significant differences quite quickly, and distributions are going to change very aggressively over the short, mid, and even long term.
+[ 1283.10s ->  1288.98s] It just depends on what it is you're trying to trade and what it is you're doing, all right?
+[ 1289.62s ->  1293.60s] So, just keep that in mind in the context of the law of total expectation.
+[ 1293.60s ->  1303.90s] You can always decompose an unconditional expectation into a series of conditional expectations, and each conditional expectation is scaled by their corresponding probability.
+[ 1304.22s ->  1311.80s] In a frequentist sense, if we're in the classroom, so to speak, in the lab, and we're just drawing from fixed distributions,
+[ 1311.80s ->  1322.66s] then if I just keep increasing the amount of either people that I'm taking the average height of, or I keep increasing the total number of trades,
+[ 1323.02s ->  1333.24s] eventually I'm going to converge to the true values of all of these, the probabilities, statistics, and even distributions.
+[ 1333.66s ->  1339.84s] But if we're not in the classroom, then convergence is not guaranteed, and that's the entire game.
+[ 1339.84s ->  1348.96s] The entire game is trying to figure out stability and trying to make the best decisions that you possibly can in a forward-looking sense without that information,
+[ 1349.16s ->  1352.86s] knowing that this information is somewhat flawed, right?
+[ 1352.94s ->  1358.34s] And you can use backtesting, walkforward testing to try to figure out how flawed it is.
+[ 1358.44s ->  1362.04s] Obviously, there is bias in doing that.
+[ 1362.14s ->  1364.32s] It's historical data, right?
+[ 1364.58s ->  1368.28s] All empirical research in that sense is data mining.
+[ 1368.28s ->  1376.80s] I heard that from somebody recently, just to keep their privacy.
+[ 1378.10s ->  1381.30s] And I loved that idea.
+[ 1382.34s ->  1387.32s] And if you've actually uncovered something structural, then you can continue to take advantage of it.
+[ 1387.98s ->  1390.40s] So that's the idea of the law of total expectation.
+[ 1390.40s ->  1393.62s] I hope you enjoyed this video.
+[ 1393.74s ->  1394.56s] I hope you learned something.
+[ 1395.08s ->  1401.94s] I would love to continue to do more discussions on probability and statistics if there's interest,
+[ 1402.38s ->  1406.14s] kind of continuing to bridge this gap between the classroom and practice.
+[ 1408.69s ->  1411.27s] Thank you guys for all the support.
+[ 1411.93s ->  1413.83s] It means so much to me.
+[ 1413.83s ->  1418.86s] I really thank you.
+[ 1419.58s ->  1420.08s] Thank you.
+[ 1421.29s ->  1423.41s] As soon as I know more, I'll let you know more.
+[ 1425.05s ->  1428.58s] And thank you guys for being there for me.
+[ 1432.68s ->  1434.24s] Thank you for watching this video.
+[ 1434.78s ->  1439.41s] And I'll see you in the next video.
+[ 1439.41s ->  1469.39s] Thank you.

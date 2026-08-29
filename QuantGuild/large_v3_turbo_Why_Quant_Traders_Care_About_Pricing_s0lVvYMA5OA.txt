@@ -1,0 +1,250 @@
+[    0.46s ->     7.08s] If you have any desire to get into quant trading, whether you're looking at shops like
+[    7.08s ->    12.50s] Jane Street or Citadel, you can't avoid the fabled technical interview where you're going
+[   12.50s ->    18.12s] to be challenged with a variety of brain teaser-like questions revolving around some
+[   18.12s ->    24.82s] sort of probability and statistics. Why? Why do they care so much about these ideas and why do
+[   24.82s ->    30.28s] they care that you understand them? Well, fundamentally, quant trading is all about
+[   30.28s ->    37.28s] pricing and finding mispricings, but what in the heck does it mean to price something? In this
+[   37.28s ->    42.34s] video, I want to talk about why quant traders care about pricing. I want to talk about probability
+[   42.34s ->    47.62s] and statistics as it relates to this idea of pricing, and hopefully this will give you a
+[   47.62s ->    52.48s] better idea as to why it's so important that you understand intuitively all of these things
+[   52.48s ->    57.98s] and you've mastered the tools necessary to solve such challenging technical questions
+[   57.98s ->    63.72s] before you tackle real-world problems and start building your own trading strategies.
+[   63.98s ->    68.56s] Quant trading is just a game, and it's a game about optimal decision-making in the face of
+[   68.56s ->    74.22s] uncertainty. And in this game, you're competing against the best and brightest in the world,
+[   74.34s ->    81.36s] PhDs in math, computer science, physics. So if quant trading is just a game, then let's start with
+[   81.36s ->    88.62s] the simplest version that I can think of to discuss this idea of probability and statistics applied to
+[   88.62s ->    94.60s] price and pricing. And that is this notion of a coin flipping game. What we're going to do is we're
+[   94.60s ->    98.82s] going to talk about this coin flipping game, talk about a dice rolling game, and then we're going to
+[   98.82s ->   105.16s] talk about a trading game. And hopefully you'll see my point and why pricing is really all that matters
+[  105.16s ->   110.60s] at the end of the day in order to accumulate wealth or accumulate that idea of a trading edge
+[  110.60s ->   116.62s] or a positive P&L over time. If some of the concepts in this video seem a bit foreign to you
+[  116.62s ->   121.90s] or you need a refresher, I highly encourage you check out our open source resources available on
+[  121.90s ->   127.68s] GitHub, Medium, and of course, YouTube. You can even check out quantguild.com for structured lessons
+[  127.68s ->   132.94s] and practice questions. Nevertheless, we're going to continue with this idea of a coin flipping game
+[  132.94s ->   138.42s] to get started. The game goes like this. We flip a coin, its heads, we get two bucks. We flip a coin,
+[  138.52s ->   145.96s] its tails, we get nothing. The question is how much should I pay for that game? Well, clearly this
+[  145.96s ->   151.74s] is an agreement between two parties, right? Because somebody has to pay me that $2, but they're not
+[  151.74s ->   157.70s] going to host this game for free. If they hosted this game for free, I would just play it as many times
+[  157.70s ->   163.70s] as I possibly could and generate a large amount of wealth for free. So nobody in their right mind
+[  163.70s ->   168.72s] would host this game for free. They're not going to say, hey, I'm going to let you flip my coin and
+[  168.72s ->   174.18s] I'm at risk of paying you two bucks, but I get nothing for that risk, right? But what is the correct
+[  174.18s ->   182.02s] price to pay? So from statistics, from probability, we have this idea of an expected value. So the
+[  182.02s ->   189.74s] probability of heads is 50%. The probability of tails is 50%. We multiply the payout $2 by the
+[  189.74s ->   196.12s] probability of heads, which is 50%. We multiply the payout of tails, which is zero by 50%. So it
+[  196.12s ->   203.76s] doesn't matter, we get zero. And we're left with this $1 here because 2 times 0.5 is in fact 1. That
+[  203.76s ->   210.82s] is going to be the expected value of the game. Great. We have this expected value, this average,
+[  210.82s ->   216.20s] this mean value. How does this help us? Well, to answer the question, how much should we pay for
+[  216.20s ->   222.18s] this game? This could be one way to answer that question. So in this first scenario, what I want
+[  222.18s ->   228.80s] to suggest is we pay this fair price. Now it's very helpful to look at this game as a series of games
+[  228.80s ->   234.72s] in the context of how much we pay to play it. So what I've done here is I've simulated a number of
+[  234.72s ->   240.08s] games. So what I have here is I have our wealth over time paying this quote unquote fair price.
+[  240.08s ->   247.16s] That is if we pay $1 to play it and we add the expected value of the game, then we've netted out
+[  247.16s ->   253.14s] a zero expected value. Essentially our wealth has an expected value of zero playing this game,
+[  253.22s ->   261.20s] assuming we pay $1 to play it. That is the expected value of the game. So what happens when I actually
+[  261.20s ->   267.06s] play a hundred of these games? You say, oh, well, that's strange because in this iteration,
+[  267.06s ->   272.04s] if you look at the cumulative wealth, we actually made money, we made six bucks.
+[  273.34s ->   280.38s] So I don't understand. I thought we, I thought we paid the expected value and we were supposed to
+[  280.38s ->   287.46s] end up with what? We were supposed to end up with a net net, right? Now that is a very confusing point
+[  287.46s ->   293.06s] often for students is, you know, every time I run this simulation, I'm going to get a different
+[  293.06s ->   298.78s] outcome. So here I made $8 as my terminal wealth value after playing this game a hundred times.
+[  298.90s ->   304.48s] If I rerun this here, look, I'm at a loss. If I run this again, I'm at another loss and so on and so
+[  304.48s ->   310.26s] on and so on. Now, when we talk about paying the expected value of the game to play it,
+[  310.90s ->   316.22s] and we're saying that we end up with this, you know, risk neutral, this, this fair game,
+[  316.22s ->   323.55s] what are we actually saying? Well, we're saying if we did this, this, the series of 100 games say
+[  323.55s ->   329.49s] 10,000 times, and we took the average terminal wealth, that would be zero. And that's exactly
+[  329.49s ->   334.55s] what I have down here. So what I've done is I've simulated this game now a very, very large number
+[  334.55s ->   340.97s] of times, and I've taken the average terminal wealth. So the average terminal wealth across these
+[  340.97s ->   349.33s] 10,000 paths is close to zero. It's negative 12 cents. So that is this idea of paying the expected
+[  349.33s ->   355.37s] value or, you know, what is the fair price of this game? That is what it means is it's not in the
+[  355.37s ->   361.17s] context of, okay, we simulate one sample path a large number of times. No, no, no, that's, that's not at
+[  361.17s ->   366.57s] all what we're talking about. This is an accumulation process of the wealth of the game. This could have
+[  366.57s ->   372.15s] booms and busts. This turns into some sort of gamblers ruin almost where, you know, if you have
+[  372.15s ->   376.27s] some sort of wealth threshold, you're trying to make it to, you know, what is the expected number
+[  376.27s ->   381.99s] of times proportionally, you would make it to that threshold. You can extend this into a wide variety
+[  381.99s ->   386.65s] of problems. I'd love to make a video on gamblers ruin another day. That's a very common hedge fund
+[  386.65s ->   392.21s] interview question. But nevertheless, this is what we're saying is if I continue this simulation out
+[  392.21s ->   400.09s] to say 1000, right, that doesn't guarantee that I'm going to have my cumulative wealth be based at
+[  400.09s ->   406.27s] zero. That's not going to converge to zero. That's not at all what's happening here. But here, what
+[  406.27s ->   414.09s] we're seeing is it is in fact about zero for a series of these games to be played. So I've played 100
+[  414.09s ->   420.69s] games 10,000 times and I've taken the average terminal wealth and the distribution of the average
+[  420.69s ->   429.59s] terminal wealth is in fact mean zero because we've in fact paid the expected value of the game. And
+[  429.59s ->   436.21s] that's exactly what we would expect to see. We have the probability information for this game. The
+[  436.21s ->   442.93s] probability mass function that governs a coin flip is simply 50-50. As we get into harder and more
+[  442.93s ->   449.17s] complicated games, discerning that probability mass or density function is the challenging part. That's why
+[  449.17s ->   453.73s] we come up with models to be able to impose these probabilities to try to figure out if we can
+[  453.73s ->   459.95s] accumulate some sort of edge over time. That's the whole point of this. If everybody knew the density
+[  459.95s ->   466.37s] that governed a particular asset, then we wouldn't have this game, this giant game that everyone's
+[  466.37s ->   472.23s] playing. So this is all in the context of pricing, right? We just figured out, okay, we found this
+[  472.23s ->   477.21s] average value, this average payout for this particular game where I flip a coin, it's heads,
+[  477.21s ->   482.29s] I get two bucks, flip a coin, it's tails, I get nothing. We said the expected value is one. If I
+[  482.29s ->   488.91s] pay that, then if I played this game over a series of a large number of paths, then on average, my
+[  488.91s ->   494.93s] terminal wealth would be zero because that's what it means to pay the fair value of the game.
+[  495.57s ->   503.27s] So how does this play into pricing? Well, we priced this as what? $1. But suppose the person that
+[  503.27s ->   512.31s] was hosting this game did not understand basic probability and statistics. Well, then maybe I
+[  512.31s ->   521.41s] could propose that I pay below the expected value. What does that look like? Well, supposing that I
+[  521.41s ->   527.55s] pay below the expected value, I can still simulate instances of this game where I'm going to make
+[  527.55s ->   538.70s] money and where I'm going to lose money. However, if I do this a large number of times, what happens
+[  538.70s ->   547.86s] to my wealth? The terminal wealth distribution is no longer mean zero. Not at all. That's because we
+[  547.86s ->   556.44s] have this drift, this upward trend on average over time. That's what this drift, this positive expected
+[  556.44s ->   564.86s] value over time over several iterations of this game means. So if trading is just a game,
+[  565.46s ->   571.00s] then aren't we going to want to try to identify these mispricings such that over a series of a
+[  571.00s ->   577.42s] large number of trades, we're accumulating such positive expected value drift as well in the form
+[  577.42s ->   586.38s] of P&L? That's exactly right. So the flip side is also true. I can pay above the expected value or
+[  586.38s ->   593.36s] above the fair price of the game. And for any individual price path of the game, so this is 100
+[  593.36s ->   598.82s] instances of the game, 100 instances, so on and so on and so on, right? We could make money or we could
+[  598.82s ->   607.24s] lose money. But on average, for a large number of paths, what does this look like? Well, if we pay over
+[  607.24s ->   613.14s] the expected value, then we are going to have a negative drift. We're going to have negative expected
+[  613.14s ->   619.46s] value over time. And this is contributing to then negative P&L. Let's compare all three of these
+[  619.46s ->   626.10s] scenarios in a pretty cool looking chart. So what I have here is wealth over time for the instance
+[  626.10s ->   632.06s] that you're paying above the fair price or expected value. So in this case, you're paying $1.2 to play
+[  632.06s ->   640.10s] that game. And you can see the trend line here, you are in fact losing money over time. And all of these
+[  640.10s ->   646.14s] sort of red lattice points here are going to be each iteration of that series. So we're simulating
+[  646.14s ->   654.24s] out 100 games 10,000 times or so. And you're going to see that some of these cases tend to be less
+[  654.24s ->   659.62s] likely. And some of these cases tend to be more likely. But on average, you are in fact losing
+[  659.62s ->   664.72s] money. The flip side is true. If you're paying below the expected value or below the fair price,
+[  664.72s ->   671.12s] you are accumulating that wealth. And of course, you have less likely outcomes towards the upper end
+[  671.12s ->   677.10s] of 40 towards your 100th iteration of the game. Nevertheless, on average, you are accumulating
+[  677.10s ->   684.44s] positive P&L for that game. And if you pay the fair price or the expected value, then you're going to
+[  684.44s ->   691.48s] have some of course above some of course below. But on average, you are going to be net zero for being
+[  691.48s ->   700.42s] involved in that game assuming you pay the fair price. So this is an example of a game where you
+[  700.42s ->   707.26s] have uncertainty. And the optimal decision that you need to make in the face of this uncertainty is, do
+[  707.26s ->   715.56s] you play the game? Do you choose to pay to play the game? Well, if somebody offered me less than $1 to
+[  715.56s ->   721.38s] play this game, I in fact would because I know I have edge. If they said I have to pay more than
+[  721.38s ->   729.16s] $1, then I am not interested in playing that game. And then of course, if they offer me $1, then that
+[  729.16s ->   735.88s] is going to be a risk neutral game. And I can decide whether or not I want to play it based on
+[  735.88s ->   742.64s] my risk preferences. Now, of course, you can argue for any of these cases, it's based on your risk
+[  742.64s ->   748.62s] preferences. So, you know, maybe I'm willing to pay $1.2 to play this game because I'm willing to take
+[  748.62s ->   755.52s] that risk even though I have a negative edge in that case. So, you know, the probability and
+[  755.52s ->   760.94s] statistics that bake into the fair price of the game isn't the only thing that you get to consider,
+[  761.06s ->   767.22s] right? What about liquidity? What if this is an extremely illiquid game and the chance to come
+[  767.22s ->   773.26s] about playing it comes only once in a while? Well, then you're going to have to pay some sort of premium
+[  773.26s ->   779.34s] for that game. So, the expectation or the fair price of the game is really a baseline price to
+[  779.34s ->   783.88s] consider. Then there are other factors as well. Of course, this is for the real world. But in the
+[  783.88s ->   790.64s] context of trading just being a game, this is exactly what it means to find and identify and act
+[  790.64s ->   800.50s] on a mispricing. And the mispricing and pricing in general is founded solely on the fair value of the
+[  800.50s ->   806.86s] game or the expected outcomes of the game. And that's usually derived from some sort of probability
+[  806.86s ->   812.80s] mass function, probability density function, whatever it is that allows you to take the possible payouts,
+[  813.32s ->   818.78s] weight them by their likelihood, and then come up with this theoretical expected value. This can be in
+[  818.78s ->   824.64s] fact applied to any type of game of chance. We're going to look at a dice game now, and then we're going
+[  824.64s ->   831.20s] to look at a real world trading example. And we're just going to gamify this idea of an option
+[  831.20s ->   838.44s] contract. So, let's start with a dice game. We are going to say if we roll a dice, we are going to get
+[  838.44s ->   843.32s] the payout for whatever value it lands on. So, if it lands on a six, we get six bucks. Lands on three,
+[  843.40s ->   847.80s] we get three bucks. What is the fair price of this game? Well, we can compute the expected value by
+[  847.80s ->   853.56s] weighting each of these outcomes by their probability. It's a uniform, discrete uniform distribution. So,
+[  853.56s ->   859.66s] we get three and a half. Three and a half is the expected value of the dice roll. So, that is the
+[  859.66s ->   866.34s] quote-unquote fair price to pay. Again, I can simulate this game, right? So, if I play this game
+[  866.34s ->   871.62s] a thousand times, who knows? Maybe my wealth will be positive. Maybe it'll be negative. Maybe it'll be
+[  871.62s ->   879.66s] positive. We don't know. But if we simulate this, say, set of games a large number of times, then we know
+[  879.66s ->   886.88s] we are going to be about zero. We know if we were to run this price path a whole bunch of times,
+[  886.98s ->   891.30s] whole bunch of times, whole bunch of times, and we take our final wealth value, and we take the
+[  891.30s ->   898.24s] average of all of our final wealth values, we would, in fact, have zero. Moreover, if we were to pay below
+[  898.24s ->   903.52s] the expected value, then, of course, we would expect to accumulate that wealth over time. So, if we
+[  903.52s ->   909.00s] pay below three and a half for that game, we would expect to accumulate that wealth, accumulate that
+[  909.00s ->   914.32s] edge, that P&L over time. And if we paid above the expected value, then we would, of course,
+[  914.76s ->   921.82s] lose that wealth, that P&L, that value over time. So, if we look at all three scenarios here,
+[  922.16s ->   928.52s] you can see, okay, well, in the case of the paying the fair price, we are about this zero. If we are
+[  928.52s ->   935.12s] paying below, we are accumulating that edge. And if we're paying above, then we are losing that edge,
+[  935.12s ->   941.22s] losing that P&L. So, this is just the same idea of that coin flip game applied to a different game,
+[  941.28s ->   946.04s] and that is this dice roll. So, somebody is still taking the other side of that game, right? Who's
+[  946.04s ->   950.34s] going to pay you? Somebody has to pay you that money. Same thing with the coin flip. Somebody's
+[  950.34s ->   954.20s] paying you that two bucks. Same thing with the dice roll. Somebody's paying you that one, two,
+[  954.26s ->   959.06s] three, four, five, or six dollars based on the outcome of the dice roll. And then you two are going
+[  959.06s ->   964.56s] to come to some agreed upon price that's going to allow you to transact and play this game.
+[  965.65s ->   970.25s] This is exactly how an option contract works. So, what we're going to do now is we're going to look
+[  970.25s ->   977.23s] at the option contract through this gamified lens and see how we can apply this idea of expectation to
+[  977.23s ->   983.29s] the price of the option contract. This is not just market making. This is not just option contracts.
+[  983.45s ->   989.13s] This goes for any sort of quantitative trading strategy as well. If I'm looking at a giant cross-section
+[  989.13s ->   995.01s] of firms, let's say I'm looking at the Russell 3000 and I'm using a whole bunch of news sentiment
+[  995.01s ->  1000.75s] to inform my trades, then what I may have is a giant cross-section of sentiment for all of these
+[ 1000.75s ->  1006.57s] stocks. I'm going to rank by the top quartile and bottom quartile, and I'll create some sort of
+[ 1006.57s ->  1012.99s] long short portfolio. And what I'm doing in that context too is I'm identifying mispricings. I'm
+[ 1012.99s ->  1018.67s] saying, hey, in the top quartile, these are typically what? Undervalued. In the bottom quartile,
+[ 1018.67s ->  1023.73s] these are typically overvalued. I'm creating a long short portfolio to try to capitalize on some
+[ 1023.73s ->  1029.37s] sort of statistical mispricing. So, that might be a video for a later date, but nevertheless,
+[ 1029.93s ->  1036.09s] this concept still applies to that setting as well, not just market making and pricing derivative
+[ 1036.09s ->  1042.69s] contracts. In the pricing of option contracts, we always see this idea of randomness over time,
+[ 1042.81s ->  1048.65s] a stochastic process, a Brownian motion. Why do we do this? Why do we care about these models?
+[ 1048.67s ->  1055.93s] I hear in pretty much every video that I discuss a model, oh, well, that's wrong. Yes, no kidding,
+[ 1056.03s ->  1061.15s] it's wrong. If we all knew the dynamics of the market, then we would have no need for any model
+[ 1061.15s ->  1068.97s] ever. But why do we try to impose these models outright in the first place? It's because all of
+[ 1068.97s ->  1074.71s] these things are a game, just as the coin flip game, just as a dice roll game. An option contract
+[ 1074.71s ->  1081.07s] itself is a game, and trying to trade a cross-section of stocks is also just a game. So, what we have
+[ 1081.07s ->  1088.59s] here is we have this stock price process. This is a geometric Brownian motion, and what we're doing is
+[ 1088.59s ->  1095.05s] we're simulating this price process out to some terminal time t equals one. In this case, that's going
+[ 1095.05s ->  1103.31s] to be a year, and this model is going to allow us to simulate what the price could be in some fixed
+[ 1103.31s ->  1108.13s] number of time or intervals, whatever we choose. It could be one year, it could be six months.
+[ 1108.47s ->  1114.09s] You can discretize the days to be daily, weekly. However you choose to simulate this process,
+[ 1114.21s ->  1120.25s] this model allows us to simulate the dynamics of what a stock price path could look like.
+[ 1120.25s ->  1126.07s] But if I run this again, we're going to get a completely different path. And if I run this
+[ 1126.07s ->  1131.23s] again and again and again and again, we're going to get different paths. And just as if we played the
+[ 1131.23s ->  1136.29s] coin flip game a hundred times, we played another hundred times, we're going to get a different
+[ 1136.29s ->  1141.93s] wealth accumulation. Same thing if I simulate these price paths over and over again, I'm going to get
+[ 1141.93s ->  1148.91s] different price paths. The point of these models is not to try to predict where the stock is going
+[ 1148.91s ->  1156.43s] to be. No, it's trying to discern some sort of fair value for this game that is these contracts
+[ 1156.43s ->  1161.99s] and determine how much we should in fact pay for them so that we can be either risk neutral or we
+[ 1161.99s ->  1169.06s] can achieve some sort of positive or negative edge. So what is this game? Well, I'm going to propose
+[ 1169.06s ->  1175.40s] this game to you. Suppose you have this model here and we can generate these price paths.
+[ 1175.40s ->  1180.84s] Okay. I'm going to say, let's, let's pick this blue line. We're just going to look at this blue
+[ 1180.84s ->  1191.95s] line. Let's see. Maybe I will just do the first, the first line here. We'll just do the blue line.
+[ 1193.38s ->  1198.77s] Here's the game that I proposed to you. I'm going to pick a threshold. You're going to know the
+[ 1198.77s ->  1205.23s] threshold, but I'm going to pick a threshold. In this case, it's going to be 120. Okay. If the stock
+[ 1205.23s ->  1210.81s] price ends above 120, then I'll pay you the difference. So if it's 125, I'll give you five
+[ 1210.81s ->  1220.08s] bucks. Okay. But if it ends below 120, then I'm not paying you anything. Okay. This is very similar
+[ 1220.08s ->  1227.28s] to that coin flip. Is it not heads? I give you two bucks tails or heads, uh, heads. I win two bucks
+[ 1227.28s ->  1233.26s] tails. I win nothing. It's very similar to that game. But in this case, you might be able to make a lot
+[ 1233.26s ->  1239.92s] more if the stock in fact goes much higher than 120. So if I run this, let's play this game once.
+[ 1240.40s ->  1248.32s] Boom. It lands at, what is this? 107, 106, something like that. You got nothing, right? But I still got
+[ 1248.32s ->  1256.12s] paid. I still got paid. You paid me to play this game. I run this again. Boom. Below 120. I still got
+[ 1256.12s ->  1262.22s] paid to play this game. You get nothing. Run this again. Boom. I get paid here. Whoa. I just got blown out.
+[ 1262.22s ->  1273.38s] This is 220. I owe you a hundred bucks. I owe you a hundred dollars. So what would we agree upon to,
+[ 1273.38s ->  1278.90s] to pay for, for kind of setting this game up, right? How much would I be willing to accept?
+[ 1278.96s ->  1282.64s] And how much would you be willing to pay in this instance? You made a hundred dollars,
+[ 1282.64s ->  1288.22s] but in the previous three instances, you didn't make anything. And I just collected however much
+[ 1288.22s ->  1292.20s] money you paid me. Cause I'm not going to pay this, play this game for free, right? If I'm at risk of
+[ 1292.20s ->  1300.24s] losing a hundred dollars, I'm going to owe you some money. So how much should we agree that this game
+[ 1300.24s ->  1307.52s] is worth? Well, this is how you go about pricing an option contract. So you can, you know, go through
+[ 1307.52s ->  1311.20s] some sort of analytical argument like black souls and, you know, fair enough, continuous delta hedging,
+[ 1311.30s ->  1316.16s] blah, blah, blah. It's not practical, no transaction costs, flat bowl surface, you know, all of the
+[ 1316.16s ->  1322.46s] things that everybody shouts at me in my discord and comment section, but even still in this case,
+[ 1322.46s ->  1327.16s] pricing is a game. So what we're going to do is, well, let's just play this game a large,
+[ 1327.26s ->  1332.38s] large number of times, right? Large, large, large, large, large number of times and see what the
+[ 1332.38s ->  1338.42s] average payout is of the game. We'll see what the average payout is. Yeah. There's some time value
+[ 1338.42s ->  1342.62s] of money in there. I'll take care of that. Don't worry, but we'll see what the average payout is.
+[ 1342.62s ->  1346.58s] And that's the fair price of the game in the same way that we calculated the expected
+[ 1346.58s ->  1351.46s] value of our dice roll and the expected value of a coin flip here. We're doing the exact same
+[ 1351.46s ->  1355.12s] thing. And that's how we price a derivative contract. So I come on down here. I'm going
+[ 1355.12s ->  1358.94s] to run this simulation a large number of times for a fixed parameter set. And then maybe I'm
+[ 1358.94s ->  1365.86s] going to use 120 because that's the example that I gave. And then I get that the expected value of
+[ 1365.86s ->  1371.40s] the game is $6 and seven cents. Of course, if I run this again, I'm going to get, you know,
+[ 1371.40s ->  1375.54s] different values and I'm going to want to increase this simulation number. I'm going to want to increase
+[ 1375.54s ->  1382.26s] the precision of it and whatnot. Sure. But this is a rough estimate for the expected value. And if we
+[ 1382.26s ->  1391.25s] wanted to, we could even visualize a distribution of the payoffs. And we can see now that suppose that
+[ 1391.25s ->  1400.29s] we chose to pay less than the $6. Well, what would happen if $6 is the expected value of the game? Then
+[ 1400.29s ->  1405.21s] that's how much we should pay for us to expect to achieve what net net, just like the coin flip $1
+[ 1405.21s ->  1411.51s] achieves a net zero expected value of the game. If we continue to play it, but what if we pay below
+[ 1411.51s ->  1417.51s] $6? Well, we're going to accumulate positive edge. If we pay, if we pay above $6, we're going to
+[ 1417.51s ->  1422.65s] accumulate negative edge. And if I just run this simulation here, that's exactly what we see.
+[ 1423.01s ->  1429.21s] That's exactly what we see. If we pay $1 and 24 cents, then we're accumulating this positive value. If we pay
+[ 1429.21s ->  1434.91s] $11, that's almost double what it's actually worth, we're accumulating this negative value.
+[ 1435.31s ->  1441.87s] And this chart and this example for an option contract is the exact same argument as the coin
+[ 1441.87s ->  1447.89s] flip game, which is the exact same argument as even ephemerally, your distribution can be,
+[ 1448.29s ->  1452.31s] oh, you've generated wealth or oh, you've lost wealth. But on average, what does it look like?
+[ 1452.69s ->  1457.49s] On average here, we're not making money. On average here, we're making money. On average here,
+[ 1457.49s ->  1462.67s] we're losing money with a dice roll game. On average here, we're making money. On average
+[ 1462.67s ->  1469.51s] here, we're losing money with an option contract, which is just a game. On average, we're making
+[ 1469.51s ->  1477.35s] money when we pay below. On average, we're making a loss or accumulating loss when we pay above.
+[ 1477.59s ->  1481.39s] Trading is just a game about optimal decision-making in the face of uncertainty
+[ 1481.39s ->  1487.33s] and identifying mispricings by applying tools from probability and statistics, computer science,
+[ 1487.49s ->  1495.19s] math, and so on. We haven't discussed any of these tools. I've simply applied them and spoken them in
+[ 1495.19s ->  1501.05s] plain English, and I've avoided as much technical jargon as possible. But in reality, you need to be
+[ 1501.05s ->  1507.89s] able to master things from these domains in order to attack technical interview questions should you
+[ 1507.89s ->  1514.35s] have a desire to get into the quant trading space. This is why these questions exist. Because if you
+[ 1514.35s ->  1521.73s] don't understand fundamentally what's going on mechanically to facilitate the generation of
+[ 1521.73s ->  1531.07s] wealth, then how on earth can you possibly hope to research signal or optimize signal or deploy strategy
+[ 1531.07s ->  1537.93s] or monitor strategy or retire strategy? You need these tools. They're necessary tools,
+[ 1538.09s ->  1547.29s] and that is why these questions are asked in such interview settings. All trading is is a game.
+[ 1547.61s ->  1552.23s] Thank you so much for watching. I hope you enjoyed this video. I highly encourage you to check out our
+[ 1552.23s ->  1557.81s] open source resources if you are interested in brushing up on these necessary skills. Again,
+[ 1557.81s ->  1563.71s] you can check out our YouTube Medium GitHub, check out QuantGuild.com, Structured Lessons,
+[ 1564.11s ->  1570.63s] games that apply these topics so that you can master your quantitative skills. Again,
+[ 1570.71s ->  1574.17s] thanks so much for watching, and I will see you in the next video.

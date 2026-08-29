@@ -1,0 +1,42 @@
+[    0.46s ->     5.94s] Hey guys, Roman here, quantitative researcher and trader, founder of QuantGuild. Today,
+[    6.04s ->     9.62s] I'm going to explain everything you need to know about Black Scholes implied volatility
+[    9.62s ->    16.92s] in three minutes. Let's start with the contracts themselves. European option contracts give the
+[   16.92s ->    21.90s] holder the right but not obligation to buy or sell the underlying at a predetermined price
+[   21.90s ->    28.02s] called the strike price at a time in the future known as the maturity. It's very easy to determine
+[   28.02s ->    33.10s] the payoff at that time in the future. It's simply just this max function you see here.
+[   33.66s ->    39.42s] What is the problem? We don't know what we should pay today for this payoff potential. We have no
+[   39.42s ->    46.32s] idea where the underlying asset is going to be at that time in the future. The Black Scholes pricing
+[   46.32s ->    53.00s] argument says if we can hold a portfolio that replicates the payoff of that contract in every
+[   53.00s ->    58.82s] state of the world, then by a no arbitrage assumption, the prices must be equal. That
+[   58.82s ->    65.46s] is of that replicating portfolio and the contract itself, the option contract. And what we get here
+[   65.46s ->    70.48s] is the Black Scholes equation. If we hold that replicating portfolio, it yields this PDE.
+[   70.68s ->    76.94s] Once we solve it, we get the Black Scholes model. The Black Scholes model has five inputs,
+[   77.36s ->    82.92s] spot, strike, time to maturity, the risk-free rate, and volatility. What we're noticing
+[   82.92s ->    90.44s] here is this yellow dashed line, the Black Scholes model price is going to converge at time capital
+[   90.44s ->    98.96s] T once the option expires to the payoff function that we saw above. Now, how do we actually get the
+[   98.96s ->   105.80s] inputs to this Black Scholes model? Well, the law of supply and demand actually creates them in
+[  105.80s ->   111.18s] equilibrium for us. The market gives us the spot price, the strike price, and time to maturity are
+[  111.18s ->   117.18s] just baked into the contract. We have proxies for the risk-free rate. We even have the option price
+[  117.18s ->   122.98s] in the market. We can go out today on Interactive Brokers and just buy an option contract. But what
+[  122.98s ->   128.94s] don't we know? We don't know the volatility. So effectively, we have a function where we know
+[  128.94s ->   135.28s] four of the inputs and the output, we're just missing one. We can effectively back out that missing
+[  135.28s ->   142.98s] input so that the two sides of the equation match. That is what yields this minimization problem here.
+[  143.48s ->   147.74s] Visually, this is what the minimization problem looks like. If I run it here for you,
+[  147.86s ->   154.58s] we're going to be picking different volatilities until our model price matches what we observe
+[  154.58s ->   160.34s] in the market. Now, don't get it confused. Realized volatility is not implied volatility. Realized
+[  160.34s ->   166.04s] volatility is a backward-looking latent process. We can't directly observe it. We can proxy for it
+[  166.04s ->   171.46s] using statistics like variance and standard deviation, unlike implied volatility, which
+[  171.46s ->   176.92s] we're directly backing out from market prices. Implied volatility is not backward-looking. It is
+[  176.92s ->   183.02s] forward-looking. It tells us how traders are demanding to be compensated today for bearing risk,
+[  183.02s ->   189.72s] both hedgeable and unhedgeable. This brings us to the implied volatility skew
+[  189.72s ->   195.16s] and surface. The volatility skew or smile is just going to consist of a set of implied
+[  195.16s ->   200.12s] volatilities for the same underlying fixing the maturity date and varying the strike price.
+[  200.58s ->   205.70s] In a black-sholes world, this should be flat. We certainly don't observe that. In the real world,
+[  205.76s ->   210.14s] we don't deal with complete markets. Not everything is perfectly hedgeable. Traders demand more
+[  210.14s ->   215.20s] compensation, especially on the downside for the out-of-the-money puts, to bear that unhedgeable
+[  215.20s ->   219.92s] risk. If we don't just include a series of strikes, but also a series of maturities,
+[  219.92s ->   225.54s] we get the implied volatility surface. That's going to do it for this video on the black-sholes
+[  225.54s ->   228.72s] implied volatility in three minutes. I hope you enjoyed. I hope you learned something. I'll leave
+[  228.72s ->   232.98s] a link to this Jupiter notebook in the description below. Check out quantguild.com to master your
+[  232.98s ->   237.64s] quantitative skills. Other than that, thank you so much for watching, and I will see you in the next
+[  237.64s ->   238.26s] video.

@@ -1,0 +1,175 @@
+[    0.00s ->     3.50s] So do you want to retire but don't have as much money as you would like?
+[    3.78s ->     7.28s] Or maybe you just have a lot of savings that you want to start using to generate a side income
+[    7.28s ->     9.84s] so you can spend more time with your family and less time at work?
+[   10.30s ->    12.98s] Well, if you use the strategy I'm about to teach you in today's video,
+[   13.26s ->    17.76s] you'll be able to make a 2.25% return every single month regardless if the market goes up,
+[   17.88s ->    23.14s] down, or sideways. That means that if you're trading with a $185,000 account,
+[   23.42s ->    28.28s] you'll be able to make $50,000 a year in consistent income.
+[   28.28s ->    30.40s] Now let me show you exactly how that works.
+[   30.68s ->    34.88s] Also, after I share this strategy, I'm going to walk you through my exact risk management rules
+[   34.88s ->    39.32s] and strategy that's going to help you not blow up your account or experience large losses
+[   39.32s ->    43.26s] so that you can actually do this consistently and safely in retirement.
+[   43.58s ->    47.84s] So if you're ready to stop worrying about retirement or want to learn how to use this strategy
+[   47.84s ->    51.98s] to generate a side income, then smash that subscribe button and let's get started.
+[   52.18s ->    55.82s] So this strategy is called a credit spread strategy. If you've never heard of it, it's quite simple.
+[   55.82s ->    60.26s] It's simply betting that a stock will stay above a certain level. So let's say they have a stock
+[   60.26s ->    64.58s] trading here. Our bet is the stock will stay above this level. As long as the stock stays above it,
+[   64.84s ->    69.42s] we make money. So that means if the stock goes up, we make money. If the stock stays the same,
+[   69.66s ->    74.76s] we make money. If the stock goes down but stays above our level, we make money. The only time we
+[   74.76s ->    78.50s] lose money is if the stock goes down below our level. And if you stay tuned until the end when I
+[   78.50s ->    83.04s] talk about my risk management rules, I'll show you how to take your losses and massively shrink them.
+[   83.04s ->    87.70s] Anyways, so let's walk through how this strategy works. So essentially, we're betting that a stock
+[   87.70s ->    93.28s] stays above a certain level, but how do we structure that trade? Well, essentially what we do is we're
+[   93.28s ->    97.88s] going to sell a put option and then buy another one below it. So let's say the stock is trading and
+[   97.88s ->   103.76s] we think it'll stay above this level right here. Well, we're going to sell this put option. Again,
+[  103.80s ->   107.78s] I'll walk you through this and over here soon. And then we're going to buy another put option.
+[  108.20s ->   112.58s] Why do we do this? Because when we sell a put option, this allows us to make money as long as the stock
+[  112.58s ->   117.16s] stays above this level. But that also gives us an infinite amount of loss. And we don't want that
+[  117.16s ->   120.20s] amount of loss, especially in retirement. We're trying to keep things safe and conservative.
+[  120.76s ->   126.64s] So what should we do? Well, we should buy a put option below it. And this is going to cap our
+[  126.64s ->   131.88s] losers so that we have a smaller loss. But instead, it's also going to cap our winners. Regardless, this
+[  131.88s ->   136.44s] is how you structure a credit spread trade. You sell a put at the level you think the stock will stay
+[  136.44s ->   141.84s] above and you buy one below to create protection and to create the credit spread. Your next question
+[  141.84s ->   145.72s] is probably, okay, this is cool, but how do I know what levels to pick and when to put on these
+[  145.72s ->   151.08s] trades? Well, let's walk through that using tradingview.com. You need access to a charting
+[  151.08s ->   156.10s] platform, whether that's through your broker or online. I'm using tradingview.com. It's a free site.
+[  156.44s ->   160.68s] But anyways, what you want to do is you want to go to the indicator section, go on to moving average
+[  160.68s ->   166.26s] and add a moving average, simple right here. Some call it a simple moving average. Once we do that,
+[  166.30s ->   170.04s] we're going to go into the settings of this and we're going to change the length. Length of nine
+[  170.04s ->   174.36s] means that it looks at the last nine candles to generate this line. Well, we want to go out a bit
+[  174.36s ->   179.38s] further. Let's put 50. We can either use 50 or 200. Both of these work well. Let's actually use 200.
+[  179.90s ->   186.86s] So this shows right here what the stock is doing. If the stock that we're looking at is above this 200
+[  186.86s ->   193.08s] day moving average line, then the stock is bullish. If the stock's bullish, that's when we're going to
+[  193.08s ->   197.96s] bet the stock stays above a certain level. If the stock is below this, we're going to do the opposite.
+[  198.20s ->   202.48s] We're going to bet the stock stays below a certain level. So for instance, if the stock is below,
+[  202.58s ->   206.10s] then we'll bet that the stock is going to go down in general. If the stock's above, we're going to bet
+[  206.10s ->   210.56s] the stock's going to go up in general. That's how we put on these credit spread trades. So after we know
+[  210.56s ->   215.60s] this, now how do we structure what levels to pick? How do I know what level to pick and have a high
+[  215.60s ->   221.20s] win rate to make money with this? Well, simply follow this formula. You take wherever the stock
+[  221.20s ->   226.24s] is trading now, you take the close price. So right here, it says 445.99. Let's just round up to 446
+[  226.24s ->   231.96s] for easy numbers. So we're going to go 446 and we're going to multiply it by 0.97. So 0.97.
+[  232.52s ->   237.52s] Okay, cool. This means that we're going 3% below the stock price. It's a really great level to use
+[  237.52s ->   242.06s] for credit spreads if you want to be super safe, which is what we want to do. So right here, it shows a
+[  242.06s ->   249.08s] level of 433. So again, you can also to be a bit, if you want to make a bit more. So what we do is we
+[  249.08s ->   254.90s] simply take where the stock has recently closed for today. So for instance, it says 445.99. So
+[  254.90s ->   260.32s] we'll just round up to 446 for easy numbers. So we're going to go up and say 446 and we're going
+[  260.32s ->   267.10s] to multiply it by 0.97 or 0.975. Let's just say 0.975. Then round up to the nearest whole number.
+[  267.10s ->   273.80s] This allows us means that we go out about 2.5%, roughly 3% below the stock's current price.
+[  273.94s ->   276.98s] So that gives us some margin of safety, which I'll explain here in a second.
+[  277.30s ->   281.68s] So that means that the level right here says 434.85. So let's round up to the nearest whole
+[  281.68s ->   287.96s] number. So 435. What does this mean? This means that we want to place our level at 435. So let's
+[  287.96s ->   295.72s] zoom in. Where is 435? Let's add a charting to this table. So 435 is right here. So let's take a look.
+[  295.72s ->   301.18s] So right here, that means that we're betting the stock will stay above this level. 435 is the
+[  301.18s ->   304.54s] level. Now, like I said, to structure a credit spread, we have to buy one right below. So it's
+[  304.54s ->   308.06s] going to be something like this. So this is how we structure our credit spread. As long as the
+[  308.06s ->   312.80s] stock stays above this level, we make money. Now, how much money are we going to make and how do we
+[  312.80s ->   317.18s] place this on the broker? Well, let me walk you through exactly me placing it on Robinhood right
+[  317.18s ->   321.56s] now. All right. Well, you can use any broker for this, but I will use Robinhood because it looks super
+[  321.56s ->   325.92s] easy and it's very user-friendly. So I'm going to type in SPY, which is one of the best things to
+[  325.92s ->   330.90s] trade credit spreads with. So the strategy, please use SPY. Again, you can use others, but SPY is one
+[  330.90s ->   336.10s] of the best. Then go here into Builder, click on Put Credit Spread. Again, it's a put credit spread if
+[  336.10s ->   340.84s] the stock is currently above that blue line that we mentioned. If it's below and we're betting for the
+[  340.84s ->   344.82s] stock to go down, then we'll use a call credit spread. But for this one, since it's above, we're going to use
+[  344.82s ->   352.01s] a put. So here we're going to go to a proper distance. That's going to be roughly 10 to 18
+[  352.01s ->   356.93s] days, somewhere in there. So for this example, we'll do 10 days out. So you can see 10 days right
+[  356.93s ->   363.58s] here, September 22nd. Next, we have a width of one. And then we pick the level we found. So we
+[  363.58s ->   369.44s] discovered 435 was our level. So we scroll down here to 435 right here. It's currently trading at
+[  369.44s ->   375.36s] 12 cents or 11 cents, 12 cents, something like that. Now, your goal is to collect from around 12 cents to
+[  375.36s ->   380.06s] 15 cents. That's the goal. If you can collect between 12 and 15 cents, it's a good trade to
+[  380.06s ->   385.90s] put on. So what does credit mean? What does it say here when I have a 11 cent total credit? That
+[  385.90s ->   390.14s] means the money they're going to pay you to put this trade on. Remember, this is a bet. You are
+[  390.14s ->   394.78s] betting someone. So they're going to give you $10 if you're right, and you're going to have to pay out
+[  394.78s ->   399.02s] if you're wrong. So we'll explain that here in a second. But essentially here, your max profit is 12
+[  399.02s ->   403.92s] and your max loss is 88. So what does this look like? This means that when we're right,
+[  403.92s ->   410.76s] we're going to make roughly $12. When we're wrong, we're going to lose about $88. Now,
+[  411.00s ->   418.10s] when we're using this line, aka the trend to follow and put on a credit spread with this type of level,
+[  418.20s ->   423.24s] we're going to have around a 90% win rate. So that's really good. That means 90% of the time,
+[  423.30s ->   429.04s] we're going to make $12 and 10% of the time, we're going to lose $88. Okay, cool. But also,
+[  429.04s ->   432.98s] I'm trying to do this in retirement. I don't really want to lose $88. It's a lot of money. Why?
+[  432.98s ->   437.56s] Well, because if I'm only making $12 for winner, I'm going to need like five, six winners to offset
+[  437.56s ->   443.58s] just one loser. Okay, so how do we do this? This is where my risk management strategy comes into
+[  443.58s ->   449.54s] effect. So let's do this together. The risk management strategy is a stop loss. But where
+[  449.54s ->   455.28s] is our stop loss put? Well, like I said, a credit spread is a bet that a stock will stay above a
+[  455.28s ->   460.60s] certain level. So the stock will stay above this level, then how do we know when this bet will not
+[  460.60s ->   465.16s] work out in our favor? Well, maybe when the stock breaks this level. So that's our stop loss. When
+[  465.16s ->   469.84s] the stock breaks below our main level. So for instance, for this example, 435, when the stock
+[  469.84s ->   476.44s] gets below 435, we're going to stop out of this trade. So typically, if we let a stock go below
+[  476.44s ->   485.12s] our level and expires in the money, then we're going to experience this max loss of $88. But if we exit
+[  485.12s ->   491.74s] when our strike price or 435 in this example is broken down below, then we're going to exit at 50
+[  491.74s ->   495.78s] cents. When a stock breaks its strike price, it's trading at half the width. So 50 cents is just
+[  495.78s ->   502.76s] math. Okay. So that means that if we get $12 to put this trade on, and we're going to exit at 50,
+[  502.94s ->   508.80s] what's the difference? That's $38. So that means when I win, I win $12. And with the stop loss risk
+[  508.80s ->   512.04s] management rule, again, that's not it of the risk management, that's just our stop loss,
+[  512.04s ->   518.26s] is I'm going to experience a $38 loss. Again, with this, I'm going to have roughly an 85% win
+[  518.26s ->   525.02s] rate. So 85% win rate, you're going to make 12, you're going to risk 38. Is this a good trade to
+[  525.02s ->   529.50s] put on? Absolutely. You should be taking this trade every single day, but I want you to have
+[  529.50s ->   534.78s] confidence to know why. So let me explain the math. This is the math of long-term expectancy. We take
+[  534.78s ->   539.34s] the amount of times we'll win times the amount we win minus the amount of times we'll lose minus the
+[  539.34s ->   544.96s] amount we'll lose. So let's do a simple example. Let's say with this setup right here, we take 100
+[  544.96s ->   550.50s] trades. So out of 100 trades, we have an 85% win rate. That means we're going to win 85 times.
+[  550.88s ->   556.36s] How much do we win when we win? Well, in this example, we win $12. Now, if we have an 85% win
+[  556.36s ->   561.20s] rate, we take 100 trades. How many trades will we lose? We're going to lose 15 trades. How much do
+[  561.20s ->   569.60s] we lose when we lose? We lose $38. That's a positive return of $450. That means out of 100 trades,
+[  569.60s ->   575.06s] if you took the 100 trades in a row, which is about the number of trades you'll make in a single
+[  575.06s ->   581.80s] year, you'll end up with $450 of profit, and that's off one spread. So one spread for the year.
+[  582.32s ->   586.32s] Why for the year? Because you should be taking two spreads. I'll break this down in a second.
+[  586.66s ->   595.40s] One spread is going to equal $450. Now, why is this? Well, like I said, 100 trades. Now, why?
+[  595.40s ->   602.32s] Why? Because your rule every single week should be to put on two trades, put on two of these trades.
+[  602.38s ->   607.62s] If you can put on two of these trades every single week, then you'll be able to have monthly reoccurring
+[  607.62s ->   612.70s] income. Why? Because every week, you'll have something reaching, a credit spread reaching
+[  612.70s ->   618.38s] expiration date. And every single time you do that, then guess what? It's amazing because you have
+[  618.38s ->   624.00s] monthly income, or I should say weekly income coming in. And so if you do one spread per trade,
+[  624.08s ->   627.82s] so you're doing two spreads basically a week, one spread trade, one spread trade, one spread trade,
+[  628.18s ->   634.76s] then you'll make $450 on average in one single year. So what happens when you have a large,
+[  634.76s ->   641.16s] large account like a $185,000 account? Well, now let's talk about my second part of my risk management
+[  641.16s ->   648.36s] rule, which is sizing. What should your size be? You should exceed no more than 3% of your portfolio.
+[  648.82s ->   656.70s] Now, why is this? So how much should we risk on a $185,000 account? Well, for consistency and growth,
+[  656.82s ->   661.00s] we should risk no more than 3% per trade. If you want to risk less because you want to be more
+[  661.00s ->   665.88s] conservative, that's fine. And you can do the same numbers here. Simply, we take our total account value,
+[  665.88s ->   674.84s] $185,000 times 3%. And then we do the math here. So let's walk through this. I can't do that math in
+[  674.84s ->   683.38s] my head. So $185,000 times 0.03 gives us $5,550. Wow, that's a nice number. $5,550. Cool. Okay,
+[  683.64s ->   690.10s] now to put on one spread, it takes $100. So we're going to divide this max loss by $100 to figure out
+[  690.10s ->   694.00s] how many spreads we should be in one trade. So simply, we're going to move the zero a couple times,
+[  694.00s ->   701.24s] we're going to get about 55 spreads per trade. This is a safe way to trade, 55 spreads per trade.
+[  701.64s ->   706.54s] This means that if we extrapolate this out, we're going to be in 55 spreads for one single trade.
+[  706.84s ->   710.94s] So if we take this data here, how much do we stand to make for each trade versus how much do we stand
+[  710.94s ->   716.10s] to lose for each trade? Well, let's quickly do the math. If we have 55 spreads per trade and we make
+[  716.10s ->   723.98s] $12 per spread, that means every single trade will make $660. And like I said, your goal is to what?
+[  724.00s ->   729.06s] Put on two trades a week. So if you have two trades expiring every week and they make money,
+[  729.16s ->   735.90s] that's $1,200 in weekly income that you get from doing this. Now, what about our losses? Because
+[  735.90s ->   743.96s] we do have to factor that in. I'm going to stand to lose $2,000 on a single trade. So yes, my loss is
+[  743.96s ->   748.00s] way greater than my win, but that's because I have a really high win rate and that's what I can do.
+[  748.00s ->   753.96s] We want consistency, but we will have those bigger losing months. But again, with the stop
+[  753.96s ->   759.02s] loss, it's a way, way better than what it would have been. So that's how we do that. Again, that's
+[  759.02s ->   765.82s] what a 3% risk per trade. If you want to risk less like 2% or even 1%, that's fine. But let's show
+[  765.82s ->   771.32s] the math on a yearly return using 55 spreads per trade. So that's going to be because one spread is
+[  771.32s ->   776.50s] $450 for a total return for the year. So that's simply going to be our total number of spreads,
+[  776.50s ->   786.70s] 55 times $450. That's a total return of $24,000. So if one spread equals a $450 return by the end of
+[  786.70s ->   793.70s] the year, then if we see what we're doing with 55 spreads times 450, that gives us a 20, basically
+[  793.70s ->   800.74s] $5,000 return for the year. So 25K return for the year when we factor in profits, losses, and everything
+[  800.74s ->   806.00s] when we risk 3%. But now let's walk through some numbers. What happens if you only risk one? What
+[  806.00s ->   810.78s] happens if you risk five? Anything like that, let's walk through it. This is a tool for my members
+[  810.78s ->   815.28s] called the Predictor Future Performance using our previous alerts. The exact strategy that I just
+[  815.28s ->   820.10s] walked you through has been backtested, and I've been trading it for almost a year now. And again,
+[  820.14s ->   826.12s] we have all the backtests here since 2000, and I think around 10. And so because of that, we can see
+[  826.12s ->   831.62s] the data here. And so if we risk 3% per trade, we can see what we're doing. Again, we're going to plug in
+[  831.62s ->   837.66s] an account value of $185,000, and we can see what our growth would have been. So that would have given
+[  837.66s ->   843.60s] us a 27% annualized return, and that would have been roughly what we would have made. But again,
+[  843.66s ->   848.52s] if we want to actually bump that up, and let's say make $50,000 a year, then what we need to do is do
+[  848.52s ->   857.74s] a 5% return. Now we're going to be at roughly 49% return for the year. So we have $185,000, and we have
+[  857.74s ->   863.46s] a 49% return for the year. That's almost a $90,000 return every single year. So what happens if we
+[  863.46s ->   871.24s] make that a 4% return? Well, that's going to be roughly a 38% return. So what's 38% return a year
+[  871.24s ->   878.56s] off of this? That's a $70,000 yearly return. So again, we can kind of play with these numbers and
+[  878.56s ->   883.34s] what works best. Again, if you're trading and you risk 3%, you're going to have a 27%
+[  883.34s ->   889.84s] annualized return. So that's going to be roughly $50,000 a year. But again, what if we only do 2%?
+[  890.64s ->   895.30s] You'll be looking at roughly an 18% return a year. So again, all this still beats the market. It's all
+[  895.30s ->   900.66s] about how safe and consistent you want to be. Regardless, if you're trading with $185,000,
+[  901.06s ->   906.14s] you can use it to retire. Is it the safest? Absolutely not. You should be trading with more.
+[  906.22s ->   912.24s] You should be trading with maybe 200, 250. I would say that's a safe borderline. Again,
+[  912.24s ->   916.56s] the more, the merrier. In retirement, you don't know what expenses are coming up and what has to
+[  916.56s ->   921.02s] be paid for. So the more you can trade with, the better. But on a bare minimum, if you really want
+[  921.02s ->   926.28s] to get by, you could do it off $185,000. If you want to learn more about credit spread trading and
+[  926.28s ->   931.34s] how I do it in my exact strategy, I have a free course link down below that will walk you through
+[  931.34s ->   936.38s] every single strategy I use for every different type of market to have a really high win rate and to
+[  936.38s ->   940.80s] lower your losses and make greater returns. Anyways, that's down below and linked for free.
+[  940.80s ->   942.30s] Anyways, I'll see you in the next video.

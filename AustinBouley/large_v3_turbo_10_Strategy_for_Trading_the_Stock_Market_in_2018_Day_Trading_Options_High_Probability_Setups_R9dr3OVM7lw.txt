@@ -1,0 +1,77 @@
+[    0.46s ->    25.00s] Hey guys, what's up? It's AEB Trades and I know I've been gone for a bit, but I've been working on a lot of personal business stuff and now I'm going to get back on it. I have videos planned for every day this week and the weekend and the next week, so that will be fun posting. I'm probably going to be posting at 3 every day because that's when the market closes around my time, but we'll see what happens.
+[   25.00s ->    48.10s] So, this is the first video that I wanted to do to get back into it. It's covering a specific video over the 10% strategy that I use because I haven't gotten a lot of questions on it. The 10% strategy, again, I'm going to link the video below where I show a link to the video where I discuss my top 3 patterns that I use to trade the stock market.
+[   48.10s ->    64.58s] In this video, I mentioned the 10% strategy. The strategy is something that has been very useful in the current trading environment and I have a lot of questions that I've got on Discord from it.
+[   64.58s ->    76.78s] So, I just recently, like today, this morning, got on a call with someone from Discord, like a Discord member, and we talked for about an hour or so about trading.
+[   77.14s ->    85.90s] And a lot of the trading was talked about the specific strategy and a bunch of other stuff. So, I wanted to make a video just over it.
+[   85.90s ->    97.06s] So, first, I wanted to look at SPY, okay? So, SPY, there's a lot happening with SPY. I'm going to go out to the 15-minute just so that we can show some more stuff.
+[   97.42s ->   110.14s] So, if you look here, we were trading in between a range of 282 and 284. Then we dropped way below. Buyers stepped up, volume picked up, and then pre-market, we saw this huge rush, and then now we're just shooting back up.
+[  110.14s ->   124.04s] So, that's something to watch for is the buyers are still here, so just be aware of that. So, to highlight the example of the top 10% strategy or the 10% strategy, I have both sides of the spectrum.
+[  124.50s ->   134.46s] The first one is Netflix, okay? So, the 10% strategy means that the first day that something happens and it closes within the bottom or the top range.
+[  134.46s ->   143.04s] So, the range for this day is in between 343 and 336, and it closed right here near the bottom of the range.
+[  143.22s ->   148.98s] What are we looking for when this happens? Well, we're looking for it to close in the bottom part of the range.
+[  149.06s ->   161.56s] So, if it closes in the bottom part, then we're looking for aftermarket hours to stay near the close or drop some, and then the next morning, pre-market, we're looking for some more red movement.
+[  161.56s ->   166.24s] We're looking for it to drop some, and that's exactly what Netflix did.
+[  166.36s ->   173.38s] So, we closed in the bottom part of the range, and then we, and the pre-market on Wednesday, we dipped down, okay?
+[  173.50s ->   178.78s] So, that is very important. Huge setup, a huge sign of weakness.
+[  179.48s ->   183.48s] So, then let's zoom in, and let's see how we approach this.
+[  183.76s ->   187.70s] So, we know that we have a pre-market level here of 332.21.
+[  187.70s ->   190.10s] This will be our area of support.
+[  190.50s ->   197.52s] So, we try to come up here during, when the market opened, we try to shoot up here, and nothing happened.
+[  198.06s ->   201.52s] It was probably just a quick shoot-up, because people were taking profits.
+[  202.00s ->   210.52s] Like, if you short on the way down, you make money coming when a stock falls, then in order to get out of the position, you have to buy the stock back.
+[  210.52s ->   218.68s] So, that's why when you always see a lot of red, you see a quick push-up, because the short sellers are trying to cover their position.
+[  219.06s ->   220.14s] So, this must have been that.
+[  220.94s ->   225.80s] And then we see this huge dip down, but we don't close below the support.
+[  226.14s ->   229.84s] Instead, we bounce up, we test this high again, and then we start to close.
+[  229.84s ->   241.14s] And so, in between this is definitely our consolidation period, but we're below VWAP, and we're holding below this EMA line, okay, the exponential moving average.
+[  241.26s ->   253.70s] We are holding below that line, and as we break through these two lines, which is our only hope of support, we start to fail, and that is a clear short down to the next support level of 324.
+[  253.70s ->   261.96s] So, that is how you use the 10% strategy when it's going down.
+[  262.08s ->   265.90s] Now, let's look at Boba for an example of it going up, okay?
+[  266.28s ->   279.20s] So, as we can see here, our range for the day is in between 169 and 165.39, and we close here in the top range.
+[  279.50s ->   281.98s] So, now that we close in the top range, what are we looking for?
+[  281.98s ->   294.30s] We're looking for a stock, since we're close in the top range, that during the aftermarket is either holding the same price level, or it goes up, or it goes up a bit.
+[  294.40s ->   298.64s] And then in the pre-market, we're also looking for some upwards action, okay?
+[  298.74s ->   304.24s] So, we see a lot of upwards action during pre-market, which is great.
+[  304.24s ->   307.54s] And that means we're holding the other strategy.
+[  307.98s ->   314.42s] This plan will most likely work in your favor, not all the time, because I'm not a financial advice person.
+[  314.58s ->   315.48s] Link down there.
+[  315.56s ->   316.44s] I do have a disclaimer.
+[  317.04s ->   319.32s] And I'm not saying it will always work.
+[  319.32s ->   324.50s] It just helps you to pick a general direction of the stock.
+[  325.22s ->   327.34s] So, we can see here, mark it open.
+[  327.74s ->   328.54s] We shot up.
+[  328.84s ->   336.04s] We bounced along trend lines here, and then we just continued up for the day to around 175.60.
+[  336.04s ->   340.18s] So, that is just another way to use it again.
+[  340.40s ->   348.38s] It's very helpful in many different ways, just something to watch out for.
+[  348.82s ->   351.14s] It shows itself in many ways.
+[  352.26s ->   361.56s] For example, this is not necessarily a close in between the top portion of the range or the bottom portion of the range.
+[  361.56s ->   364.32s] But look at this consolidation of price.
+[  364.94s ->   370.94s] The price traded in between this level and this level, okay?
+[  371.28s ->   382.15s] For a stock as big as Boeing, that's the price of around $338 to stay within a $1 range.
+[  382.33s ->   383.61s] That's never going to happen.
+[  384.01s ->   385.93s] Obviously, something is going to happen.
+[  386.35s ->   389.71s] So, how do I know what stocks to watch for to see big movement?
+[  389.71s ->   391.79s] I look from the previous day.
+[  392.07s ->   392.71s] Did it run?
+[  392.83s ->   394.37s] Did it close in the top percent of the range?
+[  394.45s ->   396.01s] Did it close in the bottom percent of the range?
+[  396.25s ->   397.31s] Does it have news?
+[  397.65s ->   401.29s] Okay, this is an example of something where I was like, dang, look at this consolidation.
+[  401.67s ->   402.99s] Something has to happen here.
+[  403.57s ->   408.63s] And the next day, it opened up below the support line.
+[  408.89s ->   410.43s] And then we tried to push up in the morning.
+[  410.57s ->   412.75s] We couldn't hold this support line, and we crashed.
+[  413.09s ->   414.45s] We just flat out crashed.
+[  414.45s ->   418.95s] If you didn't want to catch it there, you could have caught some bounces here with some flags.
+[  420.33s ->   421.45s] Some triangles.
+[  422.33s ->   423.75s] It's whatever you like to trade.
+[  424.11s ->   428.85s] I just want to open your eyes to show you that you can trade in any market environment.
+[  429.35s ->   430.09s] So, don't be scared.
+[  430.97s ->   431.51s] All right, guys.
+[  431.57s ->   432.99s] I hope you learned something from this video.
+[  433.07s ->   433.95s] Please like, comment, and subscribe.
+[  434.41s ->   436.19s] See you all tomorrow and the next day.
+[  436.25s ->   436.97s] I have videos planned.
+[  437.09s ->   437.37s] All right.
+[  437.37s ->   437.67s] Bye.
+[  437.67s ->   438.67s] Bye.

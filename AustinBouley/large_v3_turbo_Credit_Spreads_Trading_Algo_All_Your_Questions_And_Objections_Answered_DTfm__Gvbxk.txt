@@ -1,0 +1,216 @@
+[    0.27s ->     5.39s] Hey guys, I want to answer your questions and objections about the Credit Spread Trade Ideas
+[    5.39s ->    10.23s] Algo. Now there's a lot of people who want to know the specifics and nitty-gritty details about
+[   10.23s ->    14.61s] it and that's what I'm here to share in today's video. If you're someone who just goes, okay,
+[   14.69s ->    19.19s] the win rate's good, I need to collect this much money and this is how I trade and I'm going to
+[   19.19s ->    24.81s] win and make money long term, good. Do your thing. Don't watch this video. I do not want this video
+[   24.81s ->    29.09s] to confuse people. These are for people who like knowing these specifics and mainly for people
+[   29.09s ->    33.29s] who overthink and analyze. Remember when you do that, it makes it harder to trade because you're
+[   33.29s ->    37.23s] thinking about so many different things. But if you want to know the specifics, here they are.
+[   37.57s ->    42.77s] All right, let's dive into the Trade Ideas Algo. How does it work and what is it based on? Well,
+[   42.85s ->    47.95s] this algo relies on a proprietary trend following and mean reverting trading system. What does this
+[   47.95s ->    51.95s] mean? It means that when we look at the market, the market can either be doing one thing,
+[   52.33s ->    58.25s] going in favor of a trend. It has to be going in some direction, right? And so we do that by
+[   58.25s ->    65.39s] predicting that using a normal distribution type of curve. And so we see that here when the market's
+[   65.39s ->    69.73s] above this green line, it's trending up. When the market's below the red line, it's trending down.
+[   69.85s ->    75.27s] So we do put credit spreads here, which make money up. We do call credit spreads to the downside.
+[   75.71s ->    81.41s] When it bounces at a yellow line, that is mean reverting. That means that it's going to slow down
+[   81.41s ->    86.01s] or reverse. So when we hit here, you can see it kind of slowed down and started to reverse. So if it hits
+[   86.01s ->    93.13s] this, then we do put credit spreads to make money on the way up and vice versa on this side. If the
+[   93.13s ->    99.19s] stocks are hitting the top of the yellow lines, we know it's going to slow down and probably reverse.
+[   99.39s ->   105.89s] So we get on call credit spreads to the downside. That is how this works. All these strategies step
+[  105.89s ->   111.61s] by step are laid out in my free trading hand guide linked down in the description below. So if you want
+[  111.61s ->   117.53s] to know the specifics behind these strategies for free, what you need to do, when and why, that free trading
+[  117.53s ->   125.21s] guide is down below. Okay, then what it does is this algo takes all these strategies that I just talked about
+[  125.21s ->   131.49s] and converts them all into easy to follow trade alerts. It goes, all right, this stock, this strategy,
+[  131.89s ->   137.47s] this is the alert, this is the expiration date you need to pick, this is how you put on the put credit spread,
+[  137.47s ->   142.27s] this is the credit you want to collect, this shows you your historical win rate, this shows you your
+[  142.27s ->   148.15s] analyzed return, and this helps you place trades and tracks to trade, etc, whatever. But what it does
+[  148.15s ->   153.57s] is take these strategies that I've shared with you, and it makes them super easy to follow and in real
+[  153.57s ->   157.59s] time. So you can see these, just check them in five minutes, be like, oh, is there a trade today?
+[  157.67s ->   163.41s] Cool, I want to take that. If not, move on. Anyway, this is literally the best credit spread trading
+[  163.41s ->   168.91s] algo in the world right now, I dare say it, because it works and helps our members generate profits,
+[  169.03s ->   174.19s] and it only takes 10 minutes a day, or 10 minutes a week even. Okay, now again, if you want to view
+[  174.19s ->   179.31s] the historical backtest for yourself, because we'll be kind of going through that here in today's video,
+[  179.79s ->   189.29s] you can go, I made it public, you go to HTTPS app.10%creditspreads.com slash report,
+[  189.29s ->   195.43s] you can see it for the $1 width, the $2 width, and various other different stocks. So again,
+[  195.45s ->   201.05s] if you want to see what each strategy returns and how it's been since 2005, you can view that here
+[  201.05s ->   205.73s] before we get into the specifics. All right, objection number one that I've gotten from some
+[  205.73s ->   212.43s] new people and members as well is, the backtest doesn't use historical options data, so how can it
+[  212.43s ->   218.35s] be accurate? Okay, so again, we're referencing this, which shows it gives you the return that it's
+[  218.35s ->   223.47s] expecting based on each one of the returns and what it's done historically, and all these returns
+[  223.47s ->   229.43s] come together to create our annualized return and win rate. So let's keep this backtest in mind
+[  229.43s ->   234.83s] when we're going through these questions. Okay, so if the backtest doesn't use historical options data,
+[  234.99s ->   241.07s] how can it be accurate? All right, well, here are my points. This is true. This algo and historical
+[  241.07s ->   246.69s] backtest does not use real options data, right? So I currently don't have access to historical
+[  246.69s ->   253.33s] options data, but I do have stock market daily data from a reliable data provider. I use the
+[  253.33s ->   258.31s] information from the data provider and VIX data, which is volatility data, which I'll explain why
+[  258.31s ->   263.35s] in a second, from the Chicago Board of Exchange. It comes straight from them. So both of these are
+[  263.35s ->   270.49s] super reliable sources of information to calculate an accurate spread price using the Black Skulls pricing
+[  270.49s ->   275.81s] model. All these returns and losses you see on the historical data or the historical backtest
+[  275.81s ->   282.35s] is based on the spread price determined from the Black Skulls pricing model. This is a pricing model
+[  282.35s ->   288.85s] started in 1973. It's used by most financial firms, and this is just a reliable approach to options.
+[  289.07s ->   293.55s] Again, there are some caveats, but we'll be covering that here soon. The historical win rate is based on
+[  293.55s ->   299.57s] the idea that a stock will say above or below a certain strike price, and that win rate is not affected
+[  299.57s ->   305.05s] by the options price. Let's break this point down because this is important. The win rate you are
+[  305.05s ->   312.01s] seeing on these backtests are not based on the options price. Historical options pricing does not
+[  312.01s ->   317.37s] matter for the win rate. Why? Because all we're looking at is, hey, will this stock stay above this
+[  317.37s ->   323.33s] level by the end of this date? And we're just trying to find patterns like that in the stocks to determine
+[  323.33s ->   328.07s] these win rates. So all these win rates are based on patterns and reliabilities. So again, the win
+[  328.07s ->   335.03s] rate is not affected by the fact that we do not have real historical options pricing. All right,
+[  335.27s ->   340.25s] using this win rate, which is not affected by options prices, we can determine the minimum amount
+[  340.25s ->   345.65s] of credit required, which I'll go into in a bit. These strategies are stock heavy and used to determine
+[  345.65s ->   352.23s] patterns or stocks. Then we use options to take advantage of these probabilities. So the question here,
+[  352.23s ->   357.37s] the backtest doesn't use historical options data. So can it be accurate? Yes, it can be. The win
+[  357.37s ->   362.75s] rate is 100% accurate. We're using stock data that is consistent, that is reliable. We're using
+[  362.75s ->   368.63s] volatility index to determine options pricing from VIX, but all this anyways, it is accurate. Let's dive
+[  368.63s ->   374.05s] into some other questions though. Objection number two, the black schools pricing model ignores dividend
+[  374.05s ->   380.19s] and assignment risk. So does this affect the algos win rate? It's a great question. The algos win rate,
+[  380.19s ->   387.07s] once again, is based on stock data and stock patterns, not option prices. The win rate is,
+[  387.07s ->   392.29s] will the stock stay above this level or below this level by a certain date? You don't need options data
+[  392.29s ->   397.47s] to determine the win rate of that. Since all that is based on stock historical data, which I have
+[  397.47s ->   402.45s] accurately from reliable stock providers, there's nothing you need to worry about. The win rate is
+[  402.45s ->   408.95s] intact and correct and accurate. This means the win rate of the algorithm isn't changed based on the
+[  408.95s ->   414.89s] options price or the black schools pricing model calculated price. The stock data that I have in
+[  414.89s ->   421.21s] this algos uses also factors in dividends, stock splits, reverse splits, news, etc. So all that is
+[  421.21s ->   425.95s] already factored into the win rate. Like, well, is my win rate going to be affected when foam sea news
+[  425.95s ->   431.93s] comes out, when interest rates rise, decrease, whatever? Yes, this is all already accounted for.
+[  432.73s ->   437.81s] Number three, regarding early assignment risk, the black schools pricing model assumes that you can't be
+[  437.81s ->   444.87s] assigned early. And the early exit rules I created for the algo eliminates the early assignment risk to
+[  444.87s ->   453.71s] virtually nothing. So yes, the black schools pricing model assumes a lot of different things. In order
+[  453.71s ->   461.21s] to determine an accurate options price, you need to assume a few things. So you need to assume no
+[  461.21s ->   466.71s] dividends. So again, we need to assume that there's going to be no dividends for this stock. Each time I
+[  466.71s ->   472.61s] calculate the black schools pricing model for this algo, it assumes what is happening in that moment
+[  472.61s ->   476.63s] in real time. So if there's a dividend, it will factor that in. If there's not, it won't. So you
+[  476.63s ->   480.99s] don't need to worry about that assumption. Next, random markets. Yes, the markets are random. We don't
+[  480.99s ->   486.03s] assume we can predict it. We're just looking at trends. So yes, that assumption holds. No transaction
+[  486.03s ->   491.37s] costs. Yes, the black schools price pricing model does not factor in transaction costs into the
+[  491.37s ->   497.49s] opposite price. But guess what? In the historical back test, I factor in commissions for each spread
+[  497.49s ->   502.55s] you put on. So I am already factoring in the transaction costs. So that assumption, you don't
+[  502.55s ->   509.41s] need to worry about it. Risk-free rate and volatility known. Yes, it assumes these are constant when you're
+[  509.41s ->   515.29s] calculating black schools pricing model. But because I have the VIX data straight from the Chicago board of
+[  515.29s ->   521.17s] exchange, which is where that data comes from, I can have an accurate volatility measure. So I can
+[  521.17s ->   528.55s] accurately create these option prices or predict these or predict the current option value. Next,
+[  528.85s ->   533.67s] it assumes returns are normally distributed. This is just mathematically correct. And no early
+[  533.67s ->   539.93s] assignment risk. As mentioned here, there is an early assignment risk in the options world. But if you
+[  539.93s ->   545.21s] follow the rules I created and put around this algorithm, guess what? You don't need to worry about
+[  545.21s ->   549.17s] early assignment risk because it goes down to virtually nothing. I've explained these in
+[  549.17s ->   554.11s] different videos and different blog articles. If you want to learn more about that, go and check
+[  554.11s ->   559.23s] that out. Most of the assumptions are accounted for, as I just explained, in the algo and using
+[  559.23s ->   565.63s] various rules. But you are right in the fact that option prices we calculate aren't always 100%
+[  565.63s ->   571.41s] accurate. But that doesn't affect the win rate. And again, it may not be 100% accurate, but we are 99,
+[  571.41s ->   578.79s] if not 99.9% accurate in our option price calculations. Objection number three, not all
+[  578.79s ->   583.55s] the trade alerts can be entered. So does this affect the win rate and return? Once again, amazing
+[  583.55s ->   590.35s] question. The algo's win rate is determined by historical stock prices and is used to determine
+[  590.35s ->   596.63s] the minimum credit to enter the trade. So let's talk about this. Why does this matter? Well, like we
+[  596.63s ->   602.53s] said, the win rate is based on historical stock data, which we know across the board is accurate
+[  602.53s ->   605.91s] here. We're not using calculations. We're not guessing. We're not doing anything. We know
+[  605.91s ->   611.05s] the historical stock data. We know that our win rate is accurate because of that stock data.
+[  611.61s ->   616.55s] Now, how do we determine our long-term win rate? This is called positive expectancy, aka a profitable
+[  616.55s ->   622.37s] strategy, must be over zero. And the higher above zero, the more successful the trading strategy. I've
+[  622.37s ->   627.23s] covered this in numerous videos. So what is the formula for a profitable strategy or positive
+[  627.23s ->   633.89s] expectancy? It's the win rate times your profit minus the loss rate times your loss. So let's take
+[  633.89s ->   638.97s] a generic strategy. Let's say our strategy that we're using here with the algo has a 90% win rate
+[  638.97s ->   644.87s] and it wants you to collect at least, or you're able to collect 15 cents. Okay. So if you can have
+[  644.87s ->   651.59s] a 90% win rate and collect 15 cents, that means that you have a 10% loss rate and you'll lose 85 cents per
+[  651.59s ->   655.97s] trade. Just that's how spreads work. That means you'll have a long-term positive expectancy of
+[  655.97s ->   661.87s] five or because each options contract represents 100 shares. That means you're going to make long
+[  661.87s ->   669.01s] term $500 over a hundred trades with a $1 wide. That's kind of what's expecting. So if the win
+[  669.01s ->   675.41s] rate is 90%, then we should aim to collect a 15 cents for $1 wide. We can also collect 14 and 13
+[  675.41s ->   680.19s] cents and still make money. But if we want to make the most money, let's try to collect 15 cents or more.
+[  680.19s ->   685.47s] Okay. That means you shouldn't enter the trade if you can't collect around 15 cents. Why? Well,
+[  685.47s ->   690.41s] because you want to have this long-term positive rate, which again is based on a win rate, which we
+[  690.41s ->   697.91s] know is correct with this algo. This means very rarely the Black Skull's pricing calculation will
+[  697.91s ->   704.13s] be off or show that you can collect the minimum when you can't. This deviance from the actual spreads
+[  704.13s ->   709.43s] price can cause the historical return shown on the backtest to be a bit off. However, the calculation is
+[  709.43s ->   716.21s] rarely, and again, I'm guessing less than 1% off. If you are collecting a credit that will result in a
+[  716.21s ->   722.01s] long-term positive expectancy, then you don't need to be concerned. So a lot of people are like, okay, Austin,
+[  722.11s ->   726.83s] it shows in the historical backtest that it was able to collect this, but I was only able to collect it was
+[  726.83s ->   733.27s] maybe 2 or 3 cents off, right? And so we're going to be like, Austin, does that affect the long-term
+[  733.61s ->   738.91s] actual return, not win rate, because we know the win rate is consistent? Well, if we're just looking at that,
+[  739.03s ->   746.75s] yes, it will differ from the historical annualized return that it shows. However, all we're looking at
+[  746.75s ->   752.71s] is this positive expectancy. We know the win rate is correct. We know the loss rate is correct. Can you
+[  752.71s ->   758.75s] collect a profit and thus a loss that will end in a positive expectancy? If so, then it doesn't
+[  758.75s ->   766.03s] matter what you're doing or what the Black Skulls pricing model is pricing it at. If you can have
+[  766.03s ->   770.35s] a positive long-term expectancy, you're going to make money with this program. And that's how this
+[  770.35s ->   775.99s] algo works. So if you're collecting a credit that will result in a long-term positive expectancy,
+[  775.99s ->   783.05s] then like I said, you don't need to be concerned. I am currently contacting Options Data Providers as
+[  783.05s ->   789.83s] we speak to integrate this into the algo and make the backtest more accurate. However, it is currently
+[  789.83s ->   794.63s] as accurate as mathematically possible. So there's no need to worry. This is a very small issue.
+[  795.03s ->   801.13s] We're talking less than 1% of the time, is this an issue? And 99% of the time, you're able to collect
+[  801.13s ->   805.69s] the minimum credit, you're going to make money, and it doesn't massively affect the win rate or your
+[  805.69s ->   810.23s] long-term rate. Because again, we've already covered the specifics of that. So again, I don't
+[  810.23s ->   814.61s] want you getting lost in the minutiae and all the specifics and all the details. I just want you to
+[  814.61s ->   819.27s] understand this is math, this is working, and this is how you're going to make money. Don't get caught
+[  819.27s ->   824.72s] up in the details. This is the best thing we have right now. But it's always getting better, and that's
+[  824.72s ->   829.90s] my goal. Objection number four, how long have I been trading this algo, and do I have account
+[  829.90s ->   834.44s] statements? Well, it's currently the end of July, just for reference, and I've been trading this
+[  834.44s ->   842.16s] strategy since March 2023 with verified results. Every single trade I take has been put in Discord
+[  842.16s ->   848.20s] alerts. I've shown every entry and exit. Not only that, I've showcased my trades tracker,
+[  848.34s ->   854.30s] which is where I track all my trades in the group four multiple times. I've also shown my broker
+[  854.30s ->   859.42s] history in numerous different trading videos. Whenever I share a trading recap video, I make
+[  859.42s ->   864.42s] sure to always show the broker info so that you know that that was a real trade. Not only
+[  864.42s ->   869.80s] that, if you want to see all my results, I will be more than happy to send you a copy
+[  869.80s ->   875.30s] of my broker reports if you email me at hello at theimpeccableinvestor.com. I will redact
+[  875.30s ->   879.56s] some important info, like my account number, if my social security is on there, anything
+[  879.56s ->   885.00s] like that, but you will get the trade data. It is very closely aligned with exactly what
+[  885.00s ->   888.66s] the historical backtest shows. I've taken almost every trade from the historical backtest.
+[  889.02s ->   890.72s] If you want to know what I've done, just look at that.
+[  890.72s ->   895.30s] Okay, next, I have been trading the underlying trend following strategies, which is what
+[  895.30s ->   899.12s] I showed at the very beginning on slide two or something, which shows you, hey, we trend
+[  899.12s ->   904.22s] here, trend down, whatever. I've been following that approach to just trade stocks since March
+[  904.22s ->   908.72s] 2018 and then been able to consistently outperform the market. I've been doing this for almost
+[  908.72s ->   913.68s] five years now with stocks. Only recently have I switched to credit threads, but I've been
+[  913.68s ->   918.12s] using this approach for five years now. This approach that I developed is based on the
+[  918.12s ->   921.72s] turtle traders, which were able to create hundreds of millions of dollars for people
+[  921.72s ->   924.36s] who didn't even know what they were doing in the market and were taught simple trend
+[  924.36s ->   929.16s] following systems. This system does work. Next, I've created a software for this trend
+[  929.16s ->   933.60s] following system called the Impeccable Stock Software that has helped over 10,000 traders.
+[  934.02s ->   939.26s] 10,000 is just what I say. It's actually closer to 20,000 now. Other traders easily predict
+[  939.26s ->   940.28s] stock trends and profit.
+[  941.46s ->   946.02s] All right, if you have any more objections, objection number more, send me an email at
+[  946.02s ->   949.46s] hello at theimpeccableinvestor.com. I would love to address it. This is a really important
+[  949.46s ->   953.08s] concept. At the end of the day, remember this. This is so important. At the end of the day,
+[  953.14s ->   958.80s] remember this. Please remember this before you ever, ever message me. Overthinking and overanalyzing
+[  958.80s ->   964.32s] will prevent you from trading and actually seeing real results. If you are being hung up on every
+[  964.32s ->   970.24s] small detail, on not understanding options fully, you just need to commit. Guys, spreads are just
+[  970.24s ->   974.00s] simply placing a bet that will stay above a certain level. If you start trying to get into the weeds
+[  974.00s ->   978.50s] and specifics of it, yes, it's good to, but if you allow that to stop you from trading,
+[  978.90s ->   983.52s] stopping you from following alerts, stopping you from following high probability win rate trades,
+[  983.78s ->   989.08s] then that is going to affect your win rate more than these small, tiny details you are concerned
+[  989.08s ->   993.94s] about. Remember, overthinking and overanalyzing will prevent you from seeing the trading results
+[  993.94s ->   999.62s] that you actually want. Please don't let this weigh you down. I am taking care of all the math
+[  999.62s ->  1005.22s] and the numbers so that you don't have to. All right. There is no perfect trading strategy or
+[ 1005.22s ->  1011.12s] system. So again, if you're looking for a holy grail system, 100% win rate, unflawed, whatever,
+[ 1011.48s ->  1016.74s] that does not exist. I have spent so much time every single day perfecting the strategy,
+[ 1016.84s ->  1023.40s] making it better, looking at your feedback, making it better. And again, it's still not without flaws,
+[ 1023.40s ->  1028.58s] but it's the best it can be at this moment. It will continue to get better over time. But one thing I
+[ 1028.58s ->  1033.54s] do want to say is although there is no perfect system, I truly believe that this is the best
+[ 1033.54s ->  1039.42s] credit spreads trading algo on the internet right now. But at the end of the day, this algo should
+[ 1039.42s ->  1046.31s] be judged on the results it can help others get. Here are six case studies. You can click down below
+[ 1046.31s ->  1061.15s] on this video or go to app.app.10%creditspreads.com slash case-studies. You can go read about how all
+[ 1061.15s ->  1068.13s] these people have made over 15 winning trades in a row, have grown their account by at least 10% in
+[ 1068.13s ->  1074.01s] their first month and so many other accomplishments. Some traders up around 30 trades and they've only
+[ 1074.01s ->  1081.03s] lost two. Some traders who have made almost $30,000 so far. Again, these are real life case studies
+[ 1081.03s ->  1086.11s] of them telling their stories about this program. Not only that, I have so many profit reports from
+[ 1086.11s ->  1092.29s] our discord you can see here. Let's highlight some. This person said, hey, I'm up 54.3% just following
+[ 1092.29s ->  1099.87s] this algo. That's $8,700 just following this. And he says, guys, look, he says, for me, it also is taking
+[ 1099.87s ->  1105.77s] another hit coming on. Okay, whatever. My only guess is the only problem now is that the market
+[ 1105.77s ->  1111.93s] is so green. There really aren't any good trades. Anyways. Okay, server Jeff here. Great job. I'm
+[ 1111.93s ->  1116.67s] in the same boat. I started with 3K. Now it's 6.5K. Do you know what that means? It means using this
+[ 1116.67s ->  1120.99s] algo, he's doubled his account. All right, this one's got to say the program is really working. Thanks
+[ 1120.99s ->  1124.87s] for putting this algo together. My portfolio is up 41% since 4-4. It's only been two months.
+[ 1124.87s ->  1130.43s] It's literally 40% in two months. That's insane. Okay, this one right here. Today, I managed to take
+[ 1130.43s ->  1134.79s] to look at my transactions. Even with two losses, I managed to have a 10% gain for the single month.
+[ 1135.07s ->  1141.27s] Guys, do you see that? With losses, he's still making a 10% gain in one month. That's what most
+[ 1141.27s ->  1147.19s] people strive to make in a single year. That's insane. Right here, I've grown my account by 103%
+[ 1147.99s ->  1154.25s] since March. Thank you. 41 trades, 38 winners, three losses, all because of the salgo.
+[ 1154.25s ->  1160.35s] It's not perfect, but it's sure very close to it. All right, if you want to learn more,
+[ 1160.61s ->  1166.19s] you can click down in the description and make sure to sign up for the announcement. This algo
+[ 1166.19s ->  1171.43s] is closed and only opens for four days a month because I like to spend the rest of the month
+[ 1171.43s ->  1176.57s] dedicated to helping my members succeed as credit spread traders using this algo and mastering the
+[ 1176.57s ->  1182.27s] system. Because of that, it's only open for four days. It is opening very soon. It's opening July 27th
+[ 1182.27s ->  1186.03s] and closing July 30th. So if you would like to get access to this or at least learn more,
+[ 1186.15s ->  1191.27s] click the description down below. Remember, I'm worrying about the math so you don't have to.
+[ 1191.33s ->  1196.19s] I hope this explains some and answered your objections and gave you more insight. But don't
+[ 1196.19s ->  1202.89s] worry about it. Trade high probability setups. Remember the long-term positive expectancy formula
+[ 1202.89s ->  1206.95s] and you will be good. All right, guys. See you in the next video.

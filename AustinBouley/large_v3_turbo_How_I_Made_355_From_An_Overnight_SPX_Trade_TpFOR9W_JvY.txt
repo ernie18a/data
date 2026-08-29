@@ -1,0 +1,85 @@
+[    0.00s ->     5.12s] In this video, I wanted to break down a trade that made me $355 overnight.
+[    5.30s ->     9.12s] I want to show you exactly how I did it, the strategy I used, and how you can do the same thing as well.
+[    9.40s ->    16.48s] Diving into it, here's the trade I entered here on August 27th and exited the first thing in the morning on August 28th, the very next day.
+[   16.76s ->    18.02s] I made $355.
+[   18.46s ->    19.98s] Here is a tasty trade.
+[   20.28s ->    24.54s] My broker, you can see where I entered here at 9.34 a.m. Central Standard Time,
+[   24.54s ->    31.88s] and exited the next day at 8.30 a.m. for a $355 profit minus commissions and fees of about $349.
+[   32.26s ->    33.46s] So that was the trade.
+[   33.56s ->    35.44s] Now, how exactly did I do this?
+[   35.44s ->    37.92s] If we zoom out of the trade, we can look at a lot of things.
+[   38.08s ->    40.50s] First off, we were in a prior downtrend.
+[   40.60s ->    44.04s] In a prior downtrend, you can see here that it's sharply reversed.
+[   44.26s ->    47.04s] When it's sharply reversed, it formed a high right here.
+[   47.12s ->    48.90s] This was known as our resistance level.
+[   48.90s ->    55.64s] And so I was playing off this being a very strong level because it got rejected once, twice, and then got rejected again.
+[   55.74s ->    57.98s] So I was waiting for the breakout above this level.
+[   58.36s ->    61.20s] So that's what I was looking at when it comes to a longer-term time frame.
+[   61.28s ->    67.60s] When we're zooming in, the strategy that I used was an ORB strategy, which stands for Opening Range Breakout.
+[   67.92s ->    72.52s] Basically, I wait for the first hour of the day, all that data to form a pattern,
+[   72.94s ->    76.08s] and then I look at it, and I break, and I enter above the breakout.
+[   76.22s ->    77.40s] So let's just look at it here.
+[   77.40s ->    79.76s] Here's the very first candle of the day.
+[   80.12s ->    86.80s] When I look at the first hour of the day, all the way up until 1030, this is the first hour of the trading day.
+[   87.28s ->    94.10s] What I do is I chart a high where the market has hit, so the highest point inside of that zone.
+[   94.68s ->    99.56s] You can see right here, this was the highest point that the market reached within the first hour of the day.
+[  100.12s ->   106.66s] As soon as the market broke above and closed above this highest point, that's when I entered the trade.
+[  106.66s ->   115.96s] So right here, at basically 9.33 Central Standard Time, I entered the trade, and then I let the trade go on and was able to close it here.
+[  116.32s ->   118.20s] So what exactly are my conditions?
+[  118.28s ->   123.50s] As I just mentioned, to enter, I need to break above the high from the first hour.
+[  123.84s ->   127.36s] And when I enter the trade, I enter a simple put credit spread.
+[  127.36s ->   129.98s] So a put credit spread is what I trade.
+[  130.46s ->   132.40s] I make sure to trade 1DTE.
+[  132.66s ->   135.40s] This gives me enough time to be in the trade that day.
+[  135.74s ->   139.92s] Most of the time, the trade will close in a single day following our take profit and stop loss rules.
+[  140.24s ->   142.84s] But sometimes you get an overnight trade like this.
+[  142.84s ->   150.94s] So it's a 1DTE trade, and that has, based on all the back this I've done, given me a higher return because I just have more time to be right on the trade.
+[  151.22s ->   153.70s] So 1DTE done on SPX.
+[  153.96s ->   157.54s] And when I enter the trade, I am selling the 30 Delta level.
+[  157.94s ->   162.96s] So I'm selling the put at 30 Delta, and then I'm buying the one that's $20 below it.
+[  162.96s ->   175.10s] So, again, if I sell a put at 3,000, just rough numbers, then I'm going to buy the option that is $20 below that, or 2,980.
+[  175.18s ->   179.08s] That's how I pick the different strike prices, and that's how I enter the trade here at this level.
+[  179.46s ->   180.68s] Now, how do I exit?
+[  181.12s ->   182.66s] Exit rules are very simple.
+[  183.06s ->   184.86s] Take profit is 40%.
+[  184.86s ->   189.58s] So 40% take profit, that's what triggered this.
+[  189.58s ->   192.32s] I think the day it closed was about 25% profit.
+[  193.32s ->   198.92s] Overnight, due to theta decay, time just going on, it reached the take profit zone.
+[  199.30s ->   208.72s] So as soon as the market opened in the morning, literally first thing in the morning, the trade got closed out for about a 68% profit, greater than the 40%.
+[  208.72s ->   212.36s] But obviously, we target that 40% as our initial take profit.
+[  212.72s ->   219.28s] From there, our stop loss to protect our downside is going to be roughly a 50% stop loss.
+[  219.28s ->   226.02s] The stop loss that I use is actually closing the trade once the short strike is hit, so the 30 delta level that we picked.
+[  226.38s ->   234.98s] Once that strike price gets, once it goes below that level, then I'll close out that trade, which equates to roughly a 50% stop loss.
+[  235.22s ->   238.72s] Now, why is this trade already so much better than so many other trades?
+[  238.82s ->   243.16s] Because number one, most of the ODT trades, they just get in at a particular time of day.
+[  243.16s ->   245.68s] This one actually trades with the trend.
+[  245.84s ->   250.76s] It waits for a resistance to form, and then it waits until the breakout happens, so you're trading with the trend.
+[  251.18s ->   255.36s] Number two is you're not having small wins followed by one huge loss.
+[  255.64s ->   259.66s] Here, we have a 40% profit and a roughly 50% stop loss.
+[  259.74s ->   263.76s] So on average, I make about $300 per trade, and I lose about $400.
+[  263.76s ->   269.26s] So that means that a loser only takes up one and a half winning trades max.
+[  269.62s ->   277.50s] So that way, I can easily stay on top of my trades and have a smooth return curve instead of having one that looks like that when I have a huge loss.
+[  277.82s ->   280.84s] So anyways, that is the power of this trade.
+[  280.94s ->   281.70s] It's super simple.
+[  281.80s ->   284.16s] If it gets held overnight, obviously just hold it.
+[  284.46s ->   286.08s] That's why it's a credit spread trade.
+[  286.16s ->   289.44s] You've already defined your risk that you have a max amount you're okay to lose.
+[  289.80s ->   291.26s] But that is how I did it.
+[  291.26s ->   294.24s] Now, I also did this without ever looking at the chart myself.
+[  294.54s ->   298.56s] You can see here, Austin, how are you able to exit like right at 830 first thing in the morning?
+[  298.62s ->   299.46s] That's really fast.
+[  299.72s ->   303.74s] That's because I had a bot that was doing this whole thing for me.
+[  304.00s ->   311.08s] So again, I am the creator of a tool called the Options Auto Trader, which allows you to automate any options strategy you have.
+[  311.30s ->   313.90s] One of my favorite ones is the opening range breakout.
+[  314.06s ->   316.22s] You can see right here, I call my daily income bot.
+[  316.52s ->   320.54s] And you can see not all winners because, again, you're not going to be perfect in this strategy.
+[  320.54s ->   323.50s] But you can see here, long term, I'm making money, which is good.
+[  323.84s ->   327.80s] You can see here that trade right here on 827, $355.
+[  328.24s ->   334.40s] This was opened by the bot and closed by the bot, all managed for me based on the rules I set.
+[  334.50s ->   338.58s] I just said, hey, enter the breakout the first hour and manage it based on these rules.
+[  338.66s ->   339.04s] And I did.
+[  339.14s ->   340.74s] You can see I have other bots here as well.
+[  341.10s ->   343.00s] But if you want to check that out, click the link down below.
+[  343.10s ->   348.86s] The first link in the description will have you in my actual trading plan of this strategy that you can go do it yourself by hand.
+[  348.86s ->   354.04s] And then the second link is to start a 30-day trial if you want to check out how bots can work for your account as well.
+[  354.32s ->   354.70s] See you guys.

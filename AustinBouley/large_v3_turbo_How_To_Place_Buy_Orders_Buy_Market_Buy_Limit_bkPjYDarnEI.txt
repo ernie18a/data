@@ -1,0 +1,45 @@
+[    0.12s ->     4.44s] This video I'm going to discuss all the different buy order types.
+[    4.44s ->     9.32s] So now the execution of these buy orders will all look different on your different types
+[    9.32s ->    15.48s] of broker platforms, but the how it works and why they work are all the exact same.
+[   15.48s ->    20.08s] So please understand the reasoning and how to place these orders, but when it comes down
+[   20.08s ->    24.04s] to the actual execution, it will look different on each platform.
+[   24.04s ->    30.36s] So I'm just going to go here and I'm going to click buy just to initiate a trade here.
+[   30.36s ->    35.22s] So this is the buy side, I'm now on the buy side of a trade.
+[   35.22s ->    40.62s] The first or the default order it gives you is limit order, or at least it does on the
+[   40.62s ->    44.88s] TD Ameritrade platform, but I want to go over starting at market.
+[   44.88s ->    50.38s] So the market buy order, if I press this, it will buy immediately at wherever the current
+[   50.38s ->    54.30s] stock price is trading at when my order executes.
+[   54.30s ->    58.18s] So right now it's at 295.44.
+[   58.18s ->    60.62s] That is where my order would execute.
+[   60.62s ->    65.26s] It may be a little high, a little low by a few cents, but it all depends on where the
+[   65.26s ->    66.26s] order is.
+[   66.26s ->    70.68s] I do not recommend this order because you do not have control of where you will buy in
+[   70.68s ->    71.68s] at.
+[   71.68s ->    75.38s] It's going to buy you in at wherever it feels like buying you in at.
+[   75.38s ->    76.86s] I prefer limit order.
+[   76.86s ->    82.20s] So a buy limit order states the lowest price you are willing to pay for that stock.
+[   82.20s ->    90.00s] So for instance, if it's at 295.44 and you say, I will pay or I will buy this stock as
+[   90.00s ->    98.82s] long as it's above $295, then you would place a limit buy and your limit price would be 295.
+[   98.82s ->   104.88s] So it would be 295, which means as long as the stock is above 295, it will execute on
+[  104.88s ->   110.24s] the number of shares you want, which is specified right here just because it's a practice order.
+[  110.24s ->   117.16s] Your next type of order is a stop, but that will go into that here and the next section with
+[  117.16s ->   118.16s] the sell order.
+[  118.16s ->   119.16s] So yeah.
+[  119.16s ->   122.88s] Very simple with buying, you have a market and you have a limit order.
+[  122.88s ->   126.50s] Now your limit is going to be your go-to because you have control over where you're buying.
+[  126.50s ->   127.00s] Dealtore and ask you to let it help you.
+[  127.00s ->   127.78s] They're easy for you.
+[  127.78s ->   129.32s] Well, thanks caller, you're buying.
+[  129.32s ->   130.18s] If you want to learn about $395,000, you're buying.
+[  130.18s ->   131.26s] November 2, 2011.
+[  131.26s ->   131.40s] I think it's going to be your doering dollars in that 605 pretty much.
+[  131.40s ->   132.40s] See you later today.
+[  132.40s ->   133.40s] The market is open to all the stores.
+[  133.40s ->   134.40s] The market is going to be around $395,000 upon $40,000 against man facing Harvard.
+[  134.40s ->   139.40s] And we always have money for you.
+[  139.40s ->   141.38s] The market is royal and sell out, $495,000 against Patty 4,000 or $4,000 into
+[  141.38s ->   142.38s] the same place.
+[  142.38s ->   143.38s] The market is going to be the market.
+[  143.38s ->   144.06s] On the market, one thing is gonna be the market, one thing we that can usually
+[  144.06s ->   144.44s] are selling.
+[  144.44s ->   145.92s] Smartly this coming year-toldown賞, the market.

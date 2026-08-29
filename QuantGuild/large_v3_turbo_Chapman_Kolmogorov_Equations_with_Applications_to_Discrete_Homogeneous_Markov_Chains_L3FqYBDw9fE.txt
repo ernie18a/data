@@ -1,0 +1,269 @@
+[    1.06s ->     8.12s] Welcome back. Today we're going to talk about the Chapman-Komagorov equations for a discrete,
+[    8.48s ->    18.54s] homogeneous, or stationary Markov chain. One where we have time as being independent to the process.
+[   19.12s ->    29.06s] In other words, the transition from time 1 to 2 or time 20 to 21 is equivalent. So we are
+[   29.06s ->    35.42s] agnostic to the time dimension essentially. So each transition probability is equivalent. That's
+[   35.42s ->    41.24s] what it means for it to be homogenous, for it to be stationary. And we have this Markov chain here
+[   41.24s ->    47.18s] with transition matrix P. We're going to define what this Markov chain is in the context of an
+[   47.18s ->    52.48s] example, and we're going to motivate why we even want to consider the Chapman-Komagorov equations
+[   52.48s ->    60.24s] to help us define an end-step transition. So consider these two coins. We have coin 1
+[   60.24s ->    68.00s] that throws heads with probability 0.7, tails with probability 0.3, and then for coin 2 we throw
+[   68.00s ->    75.88s] heads with probability 0.6 and tails with probability 0.4. So if we have an equal chance of selecting
+[   75.88s ->    81.64s] either coin on the first day, then what is the probability that on the second day we are going
+[   81.64s ->    87.18s] to throw coin 1. And we are going to assume that on the previous day, if we throw a heads,
+[   87.36s ->    92.14s] then on the next day we'll throw coin 1. And on the previous day, if we throw tails, we're going
+[   92.14s ->   103.94s] to throw coin 2. So this can very easily be designed as a two-state Markov chain where we have state 0
+[  103.94s ->   116.44s] as being coin 1 and state 1 as being coin 2. We can draw out this diagram with two nodes. We have
+[  116.44s ->   126.45s] state 0, state 1. The probability of staying in state 0 is going to be the probability of throwing
+[  126.45s ->   134.31s] a heads if we're already in state 0. So if we're in state 0, that means we are using coin 1. And the
+[  134.31s ->   140.43s] probability of staying with coin 1 is going to be the probability of throwing a heads, which is going
+[  140.43s ->   149.81s] to be 0.7. Necessarily, the probability of transitioning to the other state is going to be
+[  149.81s ->   159.91s] 0.3. And then using the same logic, we're going to have 0.6. Oops, sorry. We're going to have 0.6 going
+[  159.91s ->   171.80s] back to state 0 from state 1 as coin 2 has a 0.6 probability of throwing a heads. And then the
+[  171.80s ->   179.97s] probability of staying in state 1 is going to be 0.4. Okay? So essentially, the probability of
+[  179.97s ->   186.37s] staying in state 1 is the probability of throwing a tails, given that you're already in state 1 and
+[  186.37s ->   195.00s] the probability of a tails is going to be given by that 0.4. All right? So using this diagram,
+[  195.00s ->   201.44s] we can construct a transition matrix, right? We have our transition matrix P, which tells us how
+[  201.44s ->   208.46s] we transition from state to state. So we have state 0, state 1, state 0, state 1. If we go from state 0 to
+[  208.46s ->   218.11s] state 0, we have 0.7, then 0.3, 0.6, 0.4, just reading off our diagram here. And we want to
+[  218.11s ->   225.11s] know what is the probability that on day 2 we throw coin 1. So what is the probability that on day 2
+[  225.11s ->   232.81s] we are in state 0? Okay? So let's go ahead and write out this probability. So what is the probability
+[  232.81s ->   244.00s] that x2 is equal to 0? Okay? Well, we can use the law of total probability. So this is equivalent to
+[  244.00s ->   254.32s] the sum of i is equal to 0 to infinity of the probability that x2 is equal to 0, given that x1
+[  254.32s ->   264.04s] is equal to i times the probability that x1 is equal to i. Okay? And we know that the state space
+[  264.04s ->   269.98s] is discrete, right? It's finite. So it's not just discrete, rather, but it's finite. So instead of
+[  269.98s ->   275.40s] going to infinity, we're just going to go to the max of the state space, which is 1 here. So we have
+[  275.40s ->   289.86s] two states, 0 and 1. And we know that the probability that x1 is in state 0 is going to be 1 half.
+[  290.42s ->   296.14s] So here I'm just substituting i equals 0 directly into this summation, and then we're going to have
+[  296.14s ->   304.28s] another term for that second state that is also going to be 1 half. This is by the law of total
+[  304.28s ->   310.98s] probability, right? These two have to sum to 1, right? And where are we getting these 1 halves from?
+[  311.08s ->   317.78s] Well, what is the probability that on the first day we use coin 1? Well, there's an equal probability,
+[  318.22s ->   323.56s] right? So if we say here there's an equal chance of selecting either coin, we know on the first day
+[  323.56s ->   329.72s] there's an equal probability of being in either state 1 or state 0. So what is this turning into?
+[  329.86s ->   336.24s] Well, the probability that we're going to flip a heads on the second day is just going to be given
+[  336.24s ->   343.28s] by a weighted average, right? Because we know the probability of staying in state 0 is 0.7,
+[  346.24s ->   352.80s] multiply that by 1 half. Then the probability of going from state 1 to state 0 is 0.6,
+[  352.80s ->   362.28s] multiplied by 1 half. This is going to be 0.3 plus 0.35, so 0.65, okay? And this is quite intuitive
+[  362.28s ->   371.66s] because if we draw this out as a tree, we know that there is essentially going to be a 0.7 chance
+[  371.66s ->   382.26s] of going to a heads and a 0.3 chance of going to a tails under the case that we pick coin 1.
+[  382.80s ->   392.62s] And then there is a 0.6 chance of going to a heads or a 0.4 chance of going to a tails if we choose
+[  392.62s ->   401.08s] coin 2. And all we're doing is we are taking these probabilities and we are weighting them by the
+[  401.08s ->   408.10s] probability of selecting coin 1 or coin 2, which is going to also just be 1 half and 1 half.
+[  408.10s ->   416.03s] That's what's going to give us this 0.65. So that's pretty intuitive. And what that does is it allows
+[  416.03s ->   424.33s] us to find the probability that on day 2, we are going to be flipping coin 1. So that means that the
+[  424.33s ->   435.85s] probability that x2 is going to be in state 0 is equal to 65%, right? Or 0.65. Now, this is very nice.
+[  435.85s ->   441.85s] This is a very elegant solution just using the law of total probability. But you'll notice very
+[  441.85s ->   447.77s] quickly that a very difficult and insufferable problem is going to start to arise. That is,
+[  447.83s ->   455.41s] what happens if instead of a single step, we have an arbitrary number of steps? So in other words,
+[  455.41s ->   464.61s] what is the probability that x sub, let's say, 27 is equal to 0, right? This is going to equal,
+[  464.87s ->   473.21s] right, by the law of total probability, the sum of i is equal to 0 to infinity, but the state space is
+[  473.21s ->   483.71s] finite. So it's to 1 of the probability that x sub 27 is equal to 0 given x1 is equal to 0 times,
+[  483.71s ->   493.22s] oops, not 0, i times the probability x1 is equal to i. But this is starting to become a little bit of an
+[  493.22s ->   502.94s] issue here, right? Because we don't know what this transition probability is from the first step to
+[  502.94s ->   512.15s] the 27th step, right? That's not given by P. That transition matrix is defined in terms of a single
+[  512.15s ->   522.99s] step. So going from 1 to 2 is the same as going from 26 to 27, but it is not the same as going from
+[  522.99s ->   532.45s] 1 to 27. That is a 26-step transition. That is not defined by P. So what we need to do is we need to
+[  532.45s ->   546.08s] introduce a new idea of an arbitrary step transition matrix, okay? So we know that given our state space at any
+[  546.08s ->   552.20s] point in this process, we can expect to be somewhere in the state space. So what we're going to do is we're going to
+[  552.20s ->   561.14s] define a transition matrix for such a step. So this is a 26-step transition, but we're going to define an arbitrary
+[  561.14s ->   570.30s] one, okay? So what I'm going to do is I'm going to create a little definition here, okay? And I'm going to say P in
+[  570.30s ->   584.68s] parentheses N is going to be defined as P to the parentheses N of 0, 0, P to the parentheses N of,
+[  584.84s ->   591.80s] this is going to be 0, 1, so on and so forth. And then we're just going to define that on the diagonal,
+[  591.80s ->   604.25s] and we have P1, 0, so on and so forth, okay? P to the N. And what this is, is this is an N-step transition
+[  604.25s ->   619.29s] matrix, okay? N-step transition matrix, all right? It's very important that you understand this says
+[  619.29s ->   628.13s] nothing about the probabilities that are intrinsic to this matrix, okay? What we're simply doing is
+[  628.13s ->   634.19s] we're defining this to be the N-step transition matrix. We're saying there are some probabilities
+[  634.19s ->   641.05s] that exist that we need to figure out that go into each of these different entries, and we're defining
+[  641.05s ->   648.53s] it as sucked. We're saying P to the parentheses N is that N-step transition matrix, okay? So it's saying
+[  648.53s ->   655.97s] after N-steps, what's the probability of going from state 0 to state 0, given a specific Markov chain,
+[  657.43s ->   664.07s] okay? Of course, a homogeneous Markov chain, right? This is a very important idea, all right? Once again,
+[  664.17s ->   669.39s] this is not a matrix to a power. We're not talking about matrix products. We're not talking about
+[  669.39s ->   675.53s] anything quite yet. All we're saying is that there exists some N-step transition matrix out there
+[  675.53s ->   682.99s] that we're defining to be in notation like so, that is going to give us the probabilities that we are
+[  682.99s ->   696.88s] looking for. So in other words, if we had, let's say, P to the 26, right? We would be able to solve
+[  696.88s ->   705.86s] for this value, right? Quite easily, because P to the 26 is exactly what we're looking for entry-wise
+[  705.86s ->   714.30s] right here. We need P to the 26th. We need the value at I zero, and then we need to iterate
+[  714.30s ->   720.44s] through all of our states. But once again, we're just defining this as a structure. We don't know
+[  720.44s ->   728.76s] what the actual value of this transition matrix is, this N-step transition matrix. So how can we go
+[  728.76s ->   736.70s] about deriving the value or the values or the entries of this N-step transition matrix?
+[  737.20s ->   741.88s] We're going to use the Chapman-Komagorov equations, the idea of conditional probability,
+[  742.10s ->   748.99s] Bayes' theorem, and mathematical induction to go about proving this. So we introduced this idea of
+[  748.99s ->   754.09s] an N-step transition matrix. How can we formalize it? Well, if we take a look here, what we were saying
+[  754.09s ->   761.29s] is the 26-step transition matrix at the entry I zero is going to give us this corresponding probability
+[  761.29s ->   768.53s] we're looking for. So if we abstract that idea a little bit, then what we get is the probability
+[  768.53s ->   775.87s] after N-steps of going from state I to state J is essentially equal to the probability
+[  775.87s ->   785.57s] of X sub N equal to J given X sub zero is equal to I. So in other words, it's the idea of going
+[  785.57s ->   795.05s] I to J after N steps. All right. And once again, this doesn't say anything at all about our actual
+[  795.05s ->   801.52s] values, the entries in this matrix. But what we're going to do is we're going to leverage the idea of
+[  801.52s ->   808.78s] the law of total probability to go ahead and rewrite this in a form that's going to allow us to prove
+[  808.78s ->   816.16s] what the values of the entries are in that N-step transition matrix. So what I'm going to do is I'm
+[  816.16s ->   824.22s] actually going to define P to the N plus N going from state I to J. So this is all arbitrary, right?
+[  824.22s ->   830.28s] So we have an arbitrary number of steps, an arbitrary state space, I to J, whatever it is, this is going
+[  830.28s ->   843.15s] to be equal to the probability of X sub N plus N being J given X sub zero is equal to I, assuming that
+[  843.15s ->   851.11s] our process starts at zero. All right. And this is pretty clear from what we had defined here and what
+[  851.11s ->   859.86s] we looked at in the context of our previous example. But how is this going to help us? Well, we know that
+[  859.86s ->   868.92s] we are going to N plus M and we're going to assume that N and M are natural numbers. Of course,
+[  868.92s ->   874.38s] there is a bit of an edge case here, but we're just going to ignore that edge case and we're going to
+[  874.38s ->   884.22s] proceed assuming that there is some sort of intermediate step between zero and N plus M. In other words,
+[  884.22s ->   891.36s] think of a timeline where we start at zero and we're trying to go to N plus M, but we're going to
+[  891.36s ->   898.86s] make a pit stop at M, which we know has to exist because I'm saying that N and M are natural numbers.
+[  898.86s ->   907.92s] Um, you can also say that they are just strictly positive integers. So plus, um, however you want
+[  907.92s ->   915.70s] to define N and M, I'm simply saying that, you know, to get to N plus M, we can make a pit stop at M and
+[  915.70s ->   925.31s] then go to N plus M. Okay. So knowing this by the law of total probability, we can go ahead and rewrite
+[  925.31s ->   933.35s] this conditional probability here. This is equivalent to the sum across the state space
+[  933.35s ->   946.41s] of the probability that X sub N plus M is equal to J and X sub M is equal to, let's use K, given X sub zero
+[  946.41s ->   954.69s] is equal to I. And of course, we are going to be iterating across the state space for K. K is equal to zero
+[  954.69s ->   959.43s] to one. Uh, we don't actually need to write it like this, but it's going to be a bit more elegant.
+[  959.43s ->   964.59s] Well, actually I'm assuming that we're, we have an arbitrary state space, so we should be using
+[  964.59s ->   971.09s] infinity here rather without loss of generality, we can continue the proof here. Um, so forgive me,
+[  971.09s ->   976.59s] we're not using a, um, we're not using the original state space. We're using a general state space here.
+[  976.59s ->   986.46s] Okay. So we know we're going from zero to M to N plus M. All right. Now there's a way to rewrite this
+[  986.46s ->   993.30s] probability, which is quite convenient. And the way to rewrite this probability is to recognize the
+[  993.30s ->  1003.87s] definition of conditional probability. So if we recall, let's recall the probability of A given B
+[ 1003.87s ->  1013.61s] B is equal to the probability of A and B divided by the probability of B, right? It's the intersection
+[ 1013.61s ->  1020.59s] of the events A and B given B has already occurred. If you think about it like a Venn diagram, it makes
+[ 1020.59s ->  1029.53s] a lot more sense, right? So if we take a look at a Venn diagram here, we have event A, we have event B,
+[ 1029.53s ->  1037.43s] and this is A and B right here. And what we're saying is B has already occurred. So we want to
+[ 1037.43s ->  1045.81s] figure out the probability of A given that B already occurred, but we, we can't have A occur anywhere
+[ 1045.81s ->  1054.11s] here because we know B occurred. So we're going to be looking at the ratio of overlap to the ratio of
+[ 1054.11s ->  1064.31s] B as an event space. Okay. That is exactly what this probability is saying. Now, this is a good review
+[ 1064.31s ->  1069.97s] of conditional probability, but one thing that you'll have to recall about the conditional probability is
+[ 1069.97s ->  1077.57s] if this statement is true unconditionally, if we condition it on another variable, then it has to be
+[ 1077.57s ->  1085.22s] true as well. So for example, if I introduce a new variable C, right? So let's say I condition this on
+[ 1085.22s ->  1094.46s] variable C, right? Then this is going to be conditioned on variable C right here. And then
+[ 1094.46s ->  1106.56s] this is going to be the joint condition of B and C. Okay. So this is exactly the same as what we just
+[ 1106.56s ->  1112.44s] wrote. We're just conditioning everything on event C. All right. And that's a very important idea to
+[ 1112.44s ->  1117.80s] remember is nothing is actually changing with this definition, but we're conditioning the entire space
+[ 1117.80s ->  1122.76s] on C and we're allowed to do that, right? If it's true unconditionally in general, it's going to be
+[ 1122.76s ->  1130.44s] true if we condition everything on that event as well. Okay. So what does this mean? Well, how can we
+[ 1130.44s ->  1139.10s] use this idea in this statement that is going to be the trick here? All right. Well, if we multiply this
+[ 1139.10s ->  1148.09s] to the other side, right, we multiply this value to this side, then we get something that looks very
+[ 1148.09s ->  1156.96s] similar to what we have above. So you should multiply that to the other side, right? And what do we
+[ 1156.96s ->  1167.28s] notice here? Let me go ahead and slide this up. So recall, there we go. What do we notice? This is
+[ 1167.28s ->  1183.49s] the same as this statement, right? So this is our A, right? This is our B. This is our C in this statement
+[ 1183.49s ->  1194.86s] here. So what can we do? Well, we can rewrite it as this statement equivalently, equivalently, where
+[ 1194.86s ->  1199.98s] we know our A, B, and C. So that's exactly what I'm going to do. I'm going to say that this is equal to
+[ 1199.98s ->  1208.36s] the summation from K equals zero to infinity of, instead, we'll do the probability of A. So that's
+[ 1208.36s ->  1219.40s] x sub n plus m equals J, right? That's our A here, given B and C, which is x sub m equals K,
+[ 1219.96s ->  1230.16s] and x sub zero equals I, times the probability of B given C, and B is x sub m equals K. And then we know
+[ 1230.16s ->  1239.52s] that x sub zero is C, x sub zero is equal to I. And that will do it, okay? So we're making that
+[ 1239.52s ->  1246.62s] substitution right here, all right? Now, it looks pretty fancy, but really, we're just using the
+[ 1246.62s ->  1250.88s] definition of conditional probability. And if you've never seen the definition of conditional
+[ 1250.88s ->  1257.50s] probability conditioned on another event, it's going to look pretty weird. But hopefully, the
+[ 1257.50s ->  1262.26s] different colors here made it a little more digestible. But we noticed something here.
+[ 1262.46s ->  1267.73s] Hopefully, we noticed something here. What do we notice here in this particular statement? Well,
+[ 1268.15s ->  1279.53s] we're given what? x sub m and x sub zero. But we know x is a Markov chain, right? So if we know x sub m,
+[ 1280.29s ->  1293.84s] then x sub zero doesn't matter. Because why? We don't have this long-term memory structure,
+[ 1293.84s ->  1306.52s] right? We don't care about what happened at zero, if we know k happened at m, right? So this,
+[ 1306.90s ->  1313.22s] everything here, doesn't matter. Because we're looking at the transition from m to m plus n,
+[ 1313.50s ->  1322.09s] it doesn't matter that i was, or zero was i, because we already made it to k, all right? And that's the
+[ 1322.09s ->  1328.19s] idea of the Markovian structure here being exploited, because now we can remove the dependency
+[ 1328.19s ->  1338.91s] on x zero. So this is equal to the sum, k equals zero to infinity of the probability of, we're going
+[ 1338.91s ->  1343.29s] to get rid of this guy, because like I just said, the state at time zero doesn't matter, because we're
+[ 1343.29s ->  1355.03s] in state k at time m. So this is x sub n plus m equals j, given x sub m equals k. And then this
+[ 1355.03s ->  1363.98s] is going to be times x sub m equals k, given x sub zero is equal to i, all right? Now, I don't want
+[ 1363.98s ->  1370.96s] this to seem hand wavy at all. This is literally by the Markovian assumption that we have here. This is
+[ 1370.96s ->  1378.56s] the Markovian structure. The Markov chain itself is saying, hey, we know what state we're in past
+[ 1378.56s ->  1387.02s] zero, and we're going to use that to help discern the state of n plus m. We don't need state zero to
+[ 1387.02s ->  1396.42s] discern that probability. In other words, to make this more formal, the probability of x sub n plus m
+[ 1396.42s ->  1407.90s] is equal to j, given x of m is equal to k, x sub zero is equal to i. This is equivalent to x of m plus m
+[ 1407.90s ->  1419.94s] is equal to j, given x of m is equal to k. That's the idea of independence here, okay? Remember, when
+[ 1419.94s ->  1426.92s] the conditional probability adds no new information, then they're completely independent, right? So we
+[ 1426.92s ->  1436.95s] don't care what happened to x zero if we know what happened to x m, okay? But what do we know
+[ 1436.95s ->  1445.66s] about these two statements? Where have we seen these before? Right here. This is how we defined
+[ 1445.66s ->  1456.63s] our n-step transition entry, right? We've seen this before. So instead of zero and n plus m,
+[ 1456.63s ->  1464.53s] what do we have? We have zero and m, and then m and n plus m. So this is going to turn into,
+[ 1464.87s ->  1470.59s] again, by the definition of an n-step transition matrix, right? This is going to be equal to
+[ 1470.59s ->  1482.62s] the sum from k equals zero to infinity of the transition of n to n plus n, which is just an
+[ 1482.62s ->  1488.82s] n-step transition. So it's going to be p to the n. Remember, this is not a power. This is the
+[ 1488.82s ->  1496.38s] transition matrix, the entry that says we're going from k to j. So we're going from state k to state j.
+[ 1497.18s ->  1505.92s] And then we have zero to m, which is an m-step transition, right? So here we have zero to m,
+[ 1505.92s ->  1514.32s] an m-step transition. So we have p to the m, and then we're going to go from state i to state k.
+[ 1515.24s ->  1522.72s] And that is going to be it, okay? So we can go ahead and rearrange these. These are just a,
+[ 1523.02s ->  1531.48s] these are two scalar values, right? And what do we notice here, right? Don't lose sight of the original
+[ 1531.48s ->  1542.58s] idea. So p to the n plus m sub ij is equal to this sum product, right? But what is this sum product?
+[ 1542.76s ->  1560.00s] Hopefully it looks familiar. This is the definition of matrix multiplication, okay? So what we really
+[ 1560.00s ->  1574.78s] just showed here, okay, is the idea that, this implies, if every element in ij is the sum product
+[ 1574.78s ->  1581.76s] from k to the entire space, through the entire state space, the sum product of p to the n times p to the
+[ 1581.76s ->  1591.48s] n, then we are literally showing that the matrix n plus m, right? So the transition, the n plus m step
+[ 1591.48s ->  1596.32s] transition matrix is equivalent to the n step transition matrix is equivalent to the matrix product
+[ 1596.32s ->  1608.59s] of the n step transition matrix and the m step transition matrix, okay? So that's pretty handy.
+[ 1609.45s ->  1619.33s] But again, this says nothing of the actual values of the n step transition matrix, the m step transition
+[ 1619.33s ->  1628.42s] matrix. How can we use this to figure out what those values should be? Okay. And if you don't have any basis
+[ 1628.42s ->  1634.50s] in mathematical proof, then this can be quite confusing, because a lot of textbooks, a lot of articles, they just
+[ 1634.50s ->  1640.44s] kind of stop here. And they're like, Oh, this is the Chapman Kalmagorov equation. And it shows us the n step
+[ 1640.44s ->  1646.04s] transition matrix is the the series of matrix products is like, well, we're kind of that's, that's hand wavy.
+[ 1646.04s ->  1652.70s] That's a lot of hand waving. We're missing the idea of induction here. Okay, we need the idea of
+[ 1652.70s ->  1658.42s] mathematical induction. All right. And what do I mean by induction? Well, I'm talking about the case of
+[ 1658.42s ->  1666.36s] how can we prove that the values of this in general are something specific, something some sort of are
+[ 1666.36s ->  1673.22s] governed by some sort of equation, okay? So we have this idea that the n plus m step transition matrix is
+[ 1673.22s ->  1680.72s] the product of the n step plus the m step. But how can we prove in general, um, that the values are
+[ 1680.72s ->  1686.22s] something? Well, what we can do is we can use induction. Okay. So I'm going to say n is equal to
+[ 1686.22s ->  1698.46s] one, which is equal to m. What do we notice? We notice P to the one plus one is equal to P to the one,
+[ 1698.46s ->  1708.54s] P to the one, right? That is by this guy right here. All right. That is the Chapman Kalman-Grav
+[ 1708.54s ->  1714.42s] equations. What we're doing is the corollary to figure out the values of this arbitrary transition
+[ 1714.42s ->  1724.02s] matrix here. Okay. So we know that the, essentially the two-step transition matrix is given by a product
+[ 1724.02s ->  1731.08s] of one-step transition matrices, but a one-step transition matrix is just the transition matrix.
+[ 1731.08s ->  1740.84s] So this is actually equal to the matrix product of P and P, which is equal to P squared. Okay.
+[ 1741.14s ->  1748.97s] This is very important. These are not equivalent by definition. This is a consequence of the Chapman
+[ 1748.97s ->  1760.10s] Kalman-Grav equations right here. Okay. So P parentheses squared, or sorry, P parentheses two is not
+[ 1760.10s ->  1767.76s] equivalent directly, but through this relationship that we just showed right here. Okay. So now we
+[ 1767.76s ->  1777.24s] showed that when n is one and m is one, that we have this idea of it holding for, or this idea that
+[ 1777.24s ->  1785.16s] the two-step transition matrix is the matrix product of the one-step transition matrix with itself. So
+[ 1785.16s ->  1797.86s] the transition matrix squared. All right. So what we want to do is we want to show P to the n is equal
+[ 1797.86s ->  1804.22s] to the transition matrix raised to the n power. Wouldn't that be nice? That would be a very easy
+[ 1804.22s ->  1814.03s] way to compute the value for this problem right here. And any subsequent arbitrary transitions we're
+[ 1814.03s ->  1822.51s] trying to do, uh, given a homogeneous Markov chain. Okay. So let's assume this is how we can use
+[ 1822.51s ->  1836.55s] adduction. So let's assume this holds for n is equal to K. Okay. So what does that mean?
+[ 1837.21s ->  1843.21s] That means P to the K plus one. All right. And this is the K plus one step transition matrix
+[ 1843.21s ->  1869.66s] is equal to P to the K plus one. Okay. So this is essentially what we are, uh, we are assuming here.
+[ 1869.66s ->  1891.85s] Okay. So let's consider N is equal to K plus one. Okay. So the K plus one transition matrix from one
+[ 1891.85s ->  1906.69s] is given by P to the K plus one plus one. Okay. And what is this going to be? This is equal to
+[ 1906.69s ->  1916.63s] P to the K plus one, P to the one, right? But what is key? What is, what is, uh, P to the K plus one?
+[ 1916.89s ->  1921.25s] Well, we know by our induction hypothesis, and that's what this guy is called here,
+[ 1921.73s ->  1934.80s] the induction hypothesis. We know that it is going to be the transition matrix, um, P to the K
+[ 1934.80s ->  1941.50s] times the transition matrix P to the one. Uh, and we know subsequently, again, this is by our induction
+[ 1941.50s ->  1951.59s] hypothesis that it's equal to P to the K plus one. So by direct substitution, this is equal to P to the
+[ 1951.59s ->  1961.04s] K plus one times P, right? Cause P to the one is the same as a one-step transition matrix, which is
+[ 1961.04s ->  1968.84s] our original transition matrix. And this is going to be equal to P to the K plus one plus one.
+[ 1968.84s ->  1979.75s] And that right there is the end of our proof. So we just proved that this relationship holds
+[ 1979.75s ->  1987.83s] for any arbitrary, uh, any arbitrary step essentially, right? So this is what we proved
+[ 1987.83s ->  2002.73s] right here, this corollary. Okay. So this implies that P to the N is equal to the original transition
+[ 2002.73s ->  2008.73s] matrix raised to the N power. So a series of N matrix products with itself. All right. Remember,
+[ 2008.73s ->  2016.41s] this is not an element wise operation. Okay. We're not taking each element and multiplying that element
+[ 2016.41s ->  2022.09s] by itself. That's wrong. What we're doing is we're computing N matrix products. All right. And that's
+[ 2022.09s ->  2028.87s] what this relationship here is really shine. All right. Now it's really easy to figure out this
+[ 2028.87s ->  2037.59s] original question, right? What was our original question? We just proved the values of the N step
+[ 2037.59s ->  2043.83s] transition matrix P to the N are given by the original transition matrix raised to the N power.
+[ 2043.83s ->  2049.43s] So let's go back to the original question, which was the 26 step transition matrix, right? For this
+[ 2049.43s ->  2064.23s] particular game here. Okay. Just paste it down here so we could finish the problem. And we know this is
+[ 2064.23s ->  2071.27s] P to the 26 I zero. So what I'm going to do is I'm going to say, this is equal to, right? By the law,
+[ 2071.27s ->  2079.83s] total probability, we need to iterate through all cases of I, we have zero and one. So we have P 26,
+[ 2080.71s ->  2092.79s] zero, zero times the probability that we are throwing coin one on day one, which again is going to be one
+[ 2092.79s ->  2100.52s] half because we have an equal probability of selecting either coin. So P to the 26, zero, zero times one
+[ 2100.52s ->  2110.09s] half plus P to the 26. We can also start at coin two. So state one to state zero times one half.
+[ 2111.40s ->  2117.56s] And what do we know about these transition matrices? Well, the 26 step transition matrix
+[ 2117.56s ->  2124.60s] matrix is by this corollary, the original transition matrix raised to the N power,
+[ 2124.60s ->  2134.31s] which is 26. So this is equal to P to the 26, zero, zero, one half plus P to the 26,
+[ 2135.19s ->  2142.15s] one, zero to the one half. Okay. And this is, I believe approximately, um, 0.6, if I recall from the
+[ 2142.15s ->  2148.71s] simulation, um, and running the closed form solution. So this closed form solution, uh, in Python,
+[ 2148.71s ->  2157.58s] it's, it's like 0.6 repeating. And there you have it. That is it. The, the major thing to remember
+[ 2157.58s ->  2165.50s] with the Chapman Kolmogorov equations is that we need the Chapman Kolmogorov equations, um, and the,
+[ 2165.50s ->  2172.82s] the corollary from the, the equations themselves to show this relationship here. Okay. Because
+[ 2172.82s ->  2179.78s] out the gate, this is not true out the gate. All right. Remember when we have the parentheses,
+[ 2179.78s ->  2185.94s] we're just defining that that transition matrix has to exist. All right. We're not saying anything
+[ 2185.94s ->  2191.14s] about the values in those entries. We're simply just saying that they exist and we need to figure
+[ 2191.14s ->  2196.50s] out what those values are. And this proof right here that we walked through shows what those values
+[ 2196.50s ->  2202.95s] are. And that proof using induction shows the corollary that the N step transition matrix here
+[ 2203.91s ->  2211.51s] is given by the series of N matrix products, P to the N. All right. So that is going to do it for
+[ 2211.51s ->  2218.87s] this video. I hope you enjoyed it. I hope this was a, uh, a very clear, um, a very clear introduction,
+[ 2218.87s ->  2224.63s] slash example, slash proof of the Chapman Kolmogorov equations in the context of an example. I'll leave
+[ 2224.63s ->  2230.31s] an article linked below that contains code for simulation to show the convergence of the empirical
+[ 2230.31s ->  2235.59s] probabilities to these values. Um, if you have any questions, please feel free to leave them in the
+[ 2235.59s ->  2240.95s] comments below. Um, other than that, thank you so much for watching and I will see you in the next one.
+[ 2240.95s ->  2241.95s] Okay.
+[ 2241.95s ->  2242.95s] Thank you.
+[ 2242.95s ->  2244.95s] Thank you.
+[ 2244.95s ->  2245.35s] Thank you.
+[ 2245.35s ->  2245.75s] All right.
+[ 2245.75s ->  2246.29s] Thank you.
+[ 2246.29s ->  2246.57s] Thank you.

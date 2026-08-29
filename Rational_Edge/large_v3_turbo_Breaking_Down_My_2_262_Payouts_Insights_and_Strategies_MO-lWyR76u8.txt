@@ -1,0 +1,131 @@
+[    0.48s ->     7.68s] so welcome back in this new update video about my progress so this month in january now i'm
+[    7.68s ->    15.36s] recording in this video on the 9th of february later but today i received my second payout of
+[   15.36s ->    25.04s] the month so in january i was able to make around 1200 z equal to 1000 euro on ftmo and as you can
+[   25.04s ->    32.00s] see on the last video i showed those two payout and like the second one i got it on the 8th of
+[   32.00s ->    39.44s] january because i stopped trading for the 14 days period and so i started trading again on the 9th
+[   39.44s ->    49.20s] of january and then like around the 23rd i received my first payout of january okay and then today i
+[   49.20s ->    55.76s] received the second payout but both of those payout i make the amount you know four or five days
+[   55.76s ->    63.04s] something like that in this case i think i trade for probably two days to achieve this amount but
+[   63.04s ->    71.92s] on average like you see here a lot of payout okay so it's like or now i got six payout in four months
+[   71.92s ->    81.68s] and and a half okay so yeah i think it's more reasonable to make a lot of payout smaller amount
+[   81.68s ->    89.36s] when you have like only one source of income okay i'm only funded with this prop firm ftmo so i think
+[   89.36s ->    96.88s] it's very fair to have like a frequent payout instead of big payout once in a month or maybe once
+[   96.88s ->   104.80s] in two months okay it's also like from the emotional perspective it's different it's much easier for me
+[  104.80s ->   111.04s] and also it's like it's not like a big dopamine release when i achieve the the big payout but it's
+[  111.04s ->   119.04s] like say okay and i think it's great those are the two payout for january okay of course now you see
+[  119.04s ->   126.16s] 23rd of january and then 9th of february because i have to wait 14 days but both of those profits
+[  126.16s ->   132.96s] i made those i made those money in january so in february this month i'm gonna start trading
+[  132.96s ->   140.32s] today okay so it's a little it's not perfect my month because it's starting as you see here on the
+[  140.32s ->   148.88s] 9th of february but i don't really care okay both of those profits were made in january okay so yeah
+[  148.88s ->   156.80s] that's it a little i i want to be transparent with you so now i'm going to show you here i'm going to
+[  156.80s ->   164.32s] blur my name and also the certificate here because like probably it's going to show the exact certificate
+[  164.32s ->   170.80s] with my name and i don't want to but as you can see this is for the next and like this is the dashboard
+[  170.80s ->   177.36s] i'm not going to in the home page because like you're going to see many things so yeah i i'm not
+[  177.36s ->   186.72s] sure but i was able to achieve the first challenge target so it's like eight percent and then now i'm
+[  186.72s ->   194.96s] trading on the second phase like the five percent and this is like a 100k is the challenge so yeah i
+[  194.96s ->   201.92s] think it's like good to show also this type of achievement because like of course like the payout
+[  201.92s ->   208.96s] is like the best thing to show but also that i'm trying to increase the amount of money i'm managing
+[  208.96s ->   215.68s] and also on different prop firm okay if you need like a discount on those type of prop firm i think i
+[  215.68s ->   222.96s] have some something some code i'm gonna leave them in the comment okay so now you can see the account
+[  222.96s ->   230.16s] number so that's perfect so this is like the 100k challenge with ftmo and as you can see here also
+[  230.16s ->   238.32s] this one is going very very well i'm oh that's i mean it doesn't help so currently i'm trading this
+[  239.04s ->   247.12s] since 13th of november okay and so you can say oh you're trading a lot of time for in this challenge
+[  247.12s ->   254.80s] but you can actually see here the progress okay and it's going really really well so now you can
+[  254.80s ->   262.40s] understand why i achieved the for the next challenge sooner of course it's like a 8k target and now you
+[  262.40s ->   270.72s] can you cannot see exact the exact number but as you can see here i was around 7 000 usd and i had like a
+[  270.72s ->   279.44s] peak equity of around 8 000 usd so that's the moment i achieved my challenge challenge uh target
+[  279.44s ->   286.80s] on for the next so that's why i achieved that on for the next and not on ftmo because as you might
+[  286.80s ->   294.24s] know or maybe maybe you don't know on ftmo you have achieved to achieve a 10 target and so yeah i'm
+[  294.24s ->   303.76s] around right now i'm 60 65 of the target so yeah and also the performance here is like a little
+[  304.32s ->   311.60s] worse than my daronex portfolio that i'm going to show you now because i'm merging two different
+[  311.60s ->   319.20s] portfolio i call them portfolio one and portfolio two both of them have different algorithms but i
+[  319.20s ->   324.88s] thought in the beginning that it was like not correlated not not that much correlated but i
+[  324.88s ->   332.16s] found out later that it's actually really correlated so you maybe see here that like after a big win
+[  332.16s ->   339.76s] you see woo a lot of losses same thing here and same thing here that's why there is this problem okay
+[  339.76s ->   344.96s] of course it's helping a little bit on the performance but not in the not in the last like
+[  344.96s ->   350.64s] three months in the last three months it was a lot correlated and the second portfolio didn't make much
+[  350.64s ->   357.12s] profit so that's why you see this like equity that is that doesn't seems really nice but you know i
+[  357.12s ->   363.36s] don't really care i learned a lot of things the first thing i learned is that but like this is the
+[  363.36s ->   370.40s] consistency this is like very good but yeah and i think you can easily use that i'm going to show you
+[  370.40s ->   379.36s] on the calendar so i think it's here or something maybe maybe it's better if i show you here so i did
+[  379.36s ->   387.68s] some analysis on my python code and my python scripts on the quant analysis folder and i find out that
+[  387.68s ->   395.76s] i could increase my risk as i am doing profit okay that's like a simple concept but i didn't know
+[  395.76s ->   404.64s] how efficient that was okay and actually is very very efficient and is like dropping the days of
+[  405.20s ->   413.12s] trading trading for a challenge and what that means is like of course every thousand usd okay on 100k
+[  413.12s ->   422.16s] you are going to increase your risk by a 0.1 okay and that's i'm talking about my multiplier so you can
+[  422.16s ->   427.92s] increase your profit for the same thing and but it's different of course like on every type of
+[  427.92s ->   434.08s] portfolio that's based on my data so you cannot copy my thing you can copy my process i think that's
+[  434.08s ->   441.68s] awesome and you can improve that okay but you cannot like copy my same data but the concept is simple
+[  441.68s ->   451.52s] when i was here around 3k in profit i should have increased my risk by 0.3 okay and if i if i did that
+[  451.52s ->   461.44s] okay in that position maybe after this drawdown i was like minus 1k or minus 2k in jordan okay but then
+[  461.44s ->   475.84s] with this profit here if you multiply 7k by 0.3 is 2k more plus this 7 000 is like 9 000 sd and i mentioned
+[  475.84s ->   485.44s] that i was around 8k with my equity so you have to do the same math with 8k and if you multiply that
+[  485.44s ->   495.36s] it's going to be 2 400 usd plus the 8k and as you can see that's a total of 10k 10 000 usd i could have
+[  495.36s ->   504.80s] easily achieved my profit target like last week if i was doing the right risk management okay but i find out
+[  504.80s ->   513.20s] about this just like one week ago or maybe two so as i'm as i'm keep trading and keep going okay and
+[  513.20s ->   520.72s] keep doing analysis trying to keep my progress trying to do progress i find out i'm finding out
+[  520.72s ->   526.40s] all of those things and i think it's awesome because like i'm improving overall and i think
+[  526.40s ->   533.20s] is that that's like the main goal okay it's like of course making money but you cannot make money if
+[  533.20s ->   539.52s] you're not improving okay so everything you learn you should write everything down and then trying
+[  540.16s ->   548.56s] not to do the same error over and over again okay so that's like the last thing on ftmo now i'm gonna
+[  548.56s ->   557.44s] show you my darwinx portfolio and as you can see here is going really really well okay i just achieved the
+[  557.44s ->   566.64s] 30 percent i was like last week i was around 31 okay and that's almost in one year and one month
+[  566.64s ->   574.83s] because i started i started that on january 23rd on wait that's one year one year of time because i
+[  574.83s ->   582.51s] started on the 22 of january 2025 okay and now we are on the 9th of february so it's like one year
+[  582.51s ->   592.99s] okay and i did actually in one year i did like a 37 point 38 percent okay 38 percent and i think that's
+[  592.99s ->   601.63s] not fair wait my my jordan here is not fair because like here it says minus five percent minus six i think
+[  602.27s ->   610.91s] at one point because like it showed here yeah minus six point five six but actually it's not like that
+[  610.91s ->   619.55s] because like my risk my risk here it was much higher and some some position lose more money than
+[  619.55s ->   626.19s] the previous one and so yeah it sucks but like actually i think the better way to see my performance
+[  626.19s ->   635.71s] over the last year actually is with this and as you can see that's 38 percent around around 38 percent
+[  635.71s ->   642.99s] that's awesome okay maybe you see here like a bigger increase compared to this one but this is much
+[  642.99s ->   650.51s] more reliable okay because after this one there was like at this big jordan okay and then around here
+[  650.51s ->   658.11s] i changed completely the risk allocation on my algorithms okay i learned that i was risking too much
+[  658.11s ->   666.03s] there was no risk allocation okay i was very very almost holding on index the index were all correlated
+[  666.03s ->   672.03s] so that's why when i was losing i was losing a lot and it was when i was making money i was making a lot
+[  672.03s ->   678.03s] of money here i stopped trading because i was up like eight percent in a month or something yeah eight
+[  678.83s ->   685.15s] but in the two months i was made up like 14 that's that was crazy and i thought okay maybe let's stop
+[  685.15s ->   694.51s] trading but you know i learned okay and then that's the end equity okay the end the last performance
+[  694.51s ->   700.27s] and you can easily see the switch okay from here everything seems much more steady and that's
+[  700.27s ->   709.55s] perfect and yeah currently i'm managing around on this 97 000 euro okay and it's like i think around
+[  710.19s ->   720.83s] 21k of private investor and yeah here private investor 21k and then 80k of inia allocation and then the
+[  720.83s ->   729.39s] beginning of this year i did make two percent in january and in february since like the first week i made
+[  729.39s ->   739.39s] around one percent and then yep that's pretty much it now i'm currently position 149 on darwinia gold
+[  739.47s ->   746.91s] that's really good also because you have to think about that in darwinx we are around probably 9 000
+[  746.91s ->   757.31s] people we have we are 634 on the darwinx gold and in the silver one we are yeah around around 9 000 so
+[  757.31s ->   765.55s] we're currently probably 9 400 that's a good amount and and yeah you think that think think that
+[  765.55s ->   775.71s] that is a good position mine where i'm like number 140 something off isn't that's the that's different
+[  775.71s ->   785.15s] it's like not of 9 000 9 9 000 people but i think i'm still in the top 500 people in darwinx and that's
+[  785.15s ->   794.67s] really really good so my goal here guys is to achieve a bigger private investor allocation and you can
+[  794.67s ->   803.23s] actually be part of my process because like darwinx is offering like the possibility to to invest in
+[  803.23s ->   811.23s] like single trader and that's awesome that's my like score and like everything about my strategy
+[  811.23s ->   818.19s] and yeah yeah i think it's really good a good platform you can actually use my code if you want
+[  818.19s ->   823.95s] want to have like a discount i'm going to leave that in the comment of course and yeah i think
+[  823.95s ->   829.79s] it's like i'm going to have like one month free and you're going to have like 25 off the first month
+[  829.79s ->   839.15s] so i think it's very useful and then yeah if you have like now i'm paying 45 euro a month for this but
+[  839.15s ->   849.55s] in the next months i'm going to move my darwinx zero to my to the darwinx to the real darwinx where
+[  849.55s ->   857.31s] i'm not i'm not going to have to pay 45 euro a month so yeah that's pretty much it and darwinx is
+[  857.31s ->   863.79s] like an awesome platform you can actually have like you can build this type of track record
+[  863.79s ->   870.83s] verified track record live and i think it's really really nice okay and last thing here i'm going
+[  870.83s ->   880.35s] to show you also i got recently a big payout i think yeah that's the total payout but i was able to
+[  880.35s ->   888.67s] make 900 euro in the last three months with darwinx so yeah that's also nice to to see also the progress
+[  888.67s ->   895.31s] that you're making progress but at the same time you're making little money and also here i'm working
+[  895.31s ->   904.11s] on a 100k allocation that i paid 500 euro i'm currently around 70 percent so i'm very close to
+[  904.11s ->   911.15s] unlock that and yeah i think after that i'm going to be much much more better on the performance fee
+[  911.15s ->   919.47s] side because i'm going to have like 97 000 plus 100k so i i like that because like it means that
+[  919.47s ->   928.19s] my overall performance is giving me something back okay now i let's say it gave a lot of energy to build
+[  928.19s ->   936.03s] all this but then if i'm managing more money over the time i'm i'm going to make a lot of more money
+[  936.03s ->   943.31s] and i think it's is really nice really really nice so guys for this video is that's it it's all this is
+[  943.31s ->   950.59s] my member member code if you want to join darwinx make sure to use the code because like you're going
+[  950.59s ->   958.67s] to have like a 20 off and i think it's like great to have something that you're working on okay like
+[  958.67s ->   965.87s] in this case i'm always focusing on how i can improve my track record how i can improve my
+[  965.87s ->   973.07s] performance and you can see that from beginning of 2025 everything changed okay that's after one year
+[  973.07s ->   978.83s] okay but i think around this period here so probably it was i don't remember but probably it was like
+[  978.83s ->   987.39s] september or october i change a lot of things and all of those changes are showed here okay because
+[  987.39s ->   995.23s] like the equity curve is much more stayed here so that's it for this video and i'm really happy you're
+[  995.23s ->  1003.47s] oh oh now it's like updated i'm currently a little more but yeah make sure to leave a like on this video
+[ 1003.47s ->  1010.75s] and if you have any type of questions just write them on the comment section and you can ask me
+[ 1010.75s ->  1018.11s] everything i'm not going to show or explain my algorithms in details because like it's not happening
+[ 1018.11s ->  1027.23s] in darwinx we have like a correlation factor okay and if you show your algorithms other people are going
+[ 1027.23s ->  1034.11s] to use them so i think it's not like there is no point to me of showing those stuff so yeah that's
+[ 1034.11s ->  1041.55s] pretty much it see you on the next video

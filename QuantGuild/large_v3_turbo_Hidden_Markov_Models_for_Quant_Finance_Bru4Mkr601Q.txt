@@ -1,0 +1,515 @@
+[    0.46s ->     7.49s] Awesome to see so many people requesting a video on hidden Markov models. And I can't blame them
+[    7.49s ->    12.93s] because Markov chains and hidden Markov models are some of the most powerful tools in all of
+[   12.93s ->    18.87s] quantitative finance. But for some reason, when we first go about studying these ideas in a formal
+[   18.87s ->    24.45s] classroom setting, whether we're talking about random variables, we're talking about Markov
+[   24.45s ->    32.47s] chains, heck, regressions, machine learning, even these hidden Markov models, there seems to be a
+[   32.47s ->    39.19s] big gap between theory and practice. We're so concerned in a formal classroom setting with
+[   39.19s ->    46.33s] these models, how they're constructed mechanically, how they work, what assumptions they make. We never
+[   46.33s ->    52.03s] get any perspective from industry, how they're actually applied in practice. Well, that's exactly
+[   52.03s ->    58.49s] what this video is for. We're going to talk about these hidden Markov models for specifically quant
+[   58.49s ->    63.95s] finance. And we're going to build up to it by starting with this idea of a latent random variable.
+[   63.95s ->    69.55s] You can think of something like volatility or a volatility regime. Then we're going to dive into
+[   69.55s ->    74.97s] theory and practical applications. We're going to look at Markov chains for modeling these different
+[   74.97s ->    81.91s] latent spaces. And then we'll create the extension to hidden Markov models. In this context, it's
+[   81.91s ->    88.35s] important to note that latent variables are always unobservable. This is exactly what is meant by the
+[   88.35s ->    95.47s] term latent, but you know what are always observable? My Jupyter notebooks. This Jupyter notebook will be
+[   95.47s ->   100.23s] linked in the description below. I will also post it to the Quant Guild library on GitHub, where you can
+[  100.23s ->   105.15s] find all of my Jupyter notebooks and associated YouTube videos, along with the source code for my
+[  105.15s ->   111.13s] quant builds. And this Jupyter notebook certainly includes a lot of code for these hidden Markov models.
+[  111.13s ->   115.65s] And we'll talk about all of it in this video. But if you're looking specifically for implementations
+[  115.65s ->   120.53s] of the forward backward algorithm, the Baumwelch algorithm, you can check out this Jupyter notebook
+[  120.53s ->   125.21s] and implement the code yourself. At the top of this Jupyter notebook, you'll notice some related
+[  125.21s ->   131.21s] Quant Guild videos applying probability and statistics to finance and trading, further bridging that gap
+[  131.21s ->   137.09s] between theory and practice. If you're unfamiliar with any of these ideas, why the expectation is the best we
+[  137.09s ->   142.09s] can do in the face of randomness, time series analysis in the context of quant finance, retail
+[  142.09s ->   146.65s] versus institutional trading, trading versus investing, and of course, this idea of a Markov
+[  146.65s ->   152.39s] chain. I highly recommend that you check those videos out first before tackling one like this.
+[  152.49s ->   156.53s] Moreover, these videos certainly take a lot of effort to create. So if you'd like to help support
+[  156.53s ->   161.29s] the channel so I can continue to create videos just like this one, please like, comment, subscribe,
+[  161.29s ->   166.01s] share. It helps me out tremendously. It is greatly appreciated. And if you'd like to master your
+[  166.01s ->   171.55s] quantitative skills, check out quantguild.com. Maybe you come from a background in business,
+[  171.67s ->   176.91s] economics, computer science, heck, maybe you're an aspiring quant and you aren't too sure where to
+[  176.91s ->   181.47s] focus your efforts on your quant journey. Maybe you're a working professional looking to sharpen
+[  181.47s ->   187.23s] those quantitative skills for a technical interview. In any case, Quant Guild is for you. We have over 90
+[  187.23s ->   193.21s] quant lessons in math, probability, finance, an adaptive practice engine that scales with your
+[  193.21s ->   198.81s] skill level so you can progress to more and more difficult topics with gamified rank-based progress,
+[  199.29s ->   205.89s] interview questions with fully worked solutions, trading games, coming soon, courses from A to Z in
+[  205.89s ->   212.43s] math, statistics, finance, coding, and all that's included with Quant Guild membership. And you can get
+[  212.43s ->   217.21s] started right now for free. So if you'd like to help support the channel and master your
+[  217.21s ->   222.79s] quantitative skills, check out quantguild.com. Without further ado, let's get started by
+[  222.79s ->   229.45s] discussing latent random variables. First, by understanding random variables and why we model
+[  229.45s ->   235.55s] things as random variables. So when we're in a classroom setting, typically we learn about things
+[  235.55s ->   241.97s] like different distributions, their definitions in terms of a density, mass, distribution, characteristic
+[  241.97s ->   247.35s] function. And all of that is certainly necessary, but I want to focus on the intuition here.
+[  247.55s ->   254.35s] Okay. We talk a lot about the math, the construction, how everything works mechanically,
+[  254.35s ->   260.09s] but we don't talk about the qualitative interpretation. And my point here is when I model something like
+[  260.09s ->   266.29s] stock returns as a random variable here, I say stock returns equals S and this follows a normal
+[  266.29s ->   272.11s] distribution. I'm not saying anything about the stock returns. I'm not trying to suggest that they
+[  272.11s ->   279.09s] are, you know, truly a random variable or not. No, what I'm trying to do is impose some structure
+[  279.09s ->   286.39s] on the likelihood of different states of the world. That is exactly what I'm doing. When I impose the
+[  286.39s ->   291.33s] structure of a random variable, I'm going to get some sort of distribution. In this case, it's a normal
+[  291.33s ->   297.79s] distribution and all of the outcomes are going to have different likelihoods associated with them.
+[  298.29s ->   302.65s] And that is what I'm looking for. Cause as a portfolio manager, I'm going to want to know
+[  302.65s ->   309.01s] what is the likelihood of me observing an extreme loss within the next year? What about an extreme
+[  309.01s ->   314.65s] gain? So on and so forth. And that's what we get by imposing this structure. Let's take a look at
+[  314.65s ->   320.59s] this example. I have stock returns defined as a normal distribution. This purple line represents
+[  320.59s ->   326.91s] one observed stock return. Okay. Well, what can we infer based on this distribution? Well,
+[  327.41s ->   333.89s] the returns that we are most likely to observe exist where there is the most mass close to zero,
+[  334.05s ->   339.45s] close to the mean, close to the center of the distribution. We're less likely to observe
+[  339.45s ->   347.63s] returns in the tails and the extremes. There's not as much mass there. And the normal distribution has
+[  347.63s ->   354.23s] this idea of the empirical rule. In fact, it tells us that we can observe 68% of the data within plus
+[  354.23s ->   362.85s] or minus one standard deviation away from the mean, the center of this distribution, 95% between plus or
+[  362.85s ->   371.83s] minus two standard deviations and over 99% between plus or minus three standard deviations away from that
+[  371.83s ->   377.55s] center. What is the importance of this? Well, if I'm trying to model a stock return as a normal
+[  377.55s ->   384.29s] random variable, then if I continue to observe different daily returns, I'm going to get that
+[  384.29s ->   390.79s] purple vertical line representing my daily return in a whole bunch of different spots. But the empirical
+[  390.79s ->   397.45s] rule tells me 68% of the time, I'm going to find it right here in the center between plus or minus
+[  397.45s ->   403.77s] one standard deviation away from that mean. And imposing the structure of the random variable
+[  403.77s ->   409.67s] gets me that likelihood. I didn't have that without this structure. It's telling me something about
+[  409.67s ->   416.09s] possible states of the world and the associated likelihoods. I'm never going to be able to predict
+[  416.09s ->   423.09s] where this purple vertical line falls. That's not my goal. I'm trying to get a sense of the likelihood
+[  423.09s ->   430.01s] of observing different values. That is precisely what I get with this random variable. So what's the
+[  430.01s ->   434.97s] problem with this model? Well, there's a lot of problems with this model in practice. And we're
+[  434.97s ->   441.11s] going to look at a real example right now of the violated assumptions. What I have here is NVIDIA
+[  441.11s ->   446.35s] stock returns, and I'm going to try to model them as a normal random variable. Effectively,
+[  446.53s ->   451.03s] that's what I'm saying here is stock returns are being modeled as a normal random variable.
+[  451.29s ->   457.69s] Then I get this distribution and I can assess all of the likelihoods of different possible stock returns.
+[  457.69s ->   462.57s] That would be certainly useful information for me. Well, what does this tell me? It says
+[  462.57s ->   468.87s] the likelihood of me observing something way out here, right? Way out in this tail,
+[  468.99s ->   476.15s] all the way beyond maybe four standard deviations is near zero. The likelihood of observing something
+[  476.15s ->   480.75s] like that is near zero. Well, let's take a look at this model. I'm going to take that normal
+[  480.75s ->   486.09s] distribution that we saw up here. I'm going to fit it to my NVIDIA returns. And hopefully right away,
+[  486.09s ->   491.47s] you can already see this does not look like it's capturing the peak in this of the NVIDIA return
+[  491.47s ->   497.95s] distribution correctly. These blue bars represent the NVIDIA returns. This purple distribution is our
+[  497.95s ->   504.81s] model, our random variable model for these returns. And right away, we can see if we go out into the
+[  504.81s ->   512.35s] extremes, we're observing values all the way in these extremes. These are supposed to have a near zero
+[  512.35s ->   518.67s] probability of occurring. But we're observing a bunch of very, very positive returns. But not just
+[  518.67s ->   528.47s] very positive returns, also very, very negative returns. Supposedly, over 99% of the data is supposed
+[  528.47s ->   536.49s] to fall between plus or minus three standard deviations away from this mean. Okay, well, we're observing all of
+[  536.49s ->   544.41s] these extremes. What is the likelihood of observing those extremes? Well, if we abided by this model,
+[  544.93s ->   549.93s] remember, we're modeling this with a purple distribution here, it clearly doesn't look to
+[  549.93s ->   557.27s] be doing a great job. Let's talk about it in plain English. If the purple distribution was the true
+[  557.27s ->   565.45s] distribution for NVIDIA returns, that is, if NVIDIA returns really came from this purple distribution that
+[  565.45s ->   571.39s] we're trying to use to assess the likelihood of different states of the world, then every single
+[  571.39s ->   581.97s] one return we saw beyond four standard deviations would take an average of 125.3 years to see for the
+[  581.97s ->   591.73s] first time. We are dramatically underestimating the risk in these tails using a normal distribution.
+[  591.73s ->   597.55s] Clearly, we haven't waited over a thousand years to observe all of these extremes, right? So what's
+[  597.55s ->   604.57s] going on here? Well, our model is not effectively capturing the dynamics of NVIDIA stock returns,
+[  604.79s ->   611.11s] and that leaves us with terrible probabilities and likelihoods associated with these different
+[  611.11s ->   617.35s] states of the world. We need a better model. But why is this the case? Why is this model so bad?
+[  617.35s ->   623.91s] Well, let's take a look at this cool animation to better explain what's going on here. So our goal
+[  623.91s ->   630.89s] is to model the data generating distribution. That's our objective. We want to know the distribution
+[  630.89s ->   638.67s] that is actually producing the NVIDIA stock returns. That is effectively what I'm saying this purple
+[  638.67s ->   646.59s] distribution is in this animation. When I run this, check out what happens. It changes over time.
+[  646.59s ->   654.61s] So at any one point in time, the likelihood of observing different stock returns is going to
+[  654.61s ->   660.29s] change. We can't model it with a fixed distribution. Think of it this way. If there's a whole bunch of
+[  660.29s ->   666.73s] fear and volatility, yeah, negative returns are far more likely than positive returns in a period of
+[  666.73s ->   672.15s] stability. If I run this again, you can see the likelihood itself change. Here it's more likely for
+[  672.15s ->   676.97s] positive returns. Here it's more likely for negative returns. And that's going to continue to change
+[  676.97s ->   682.41s] over time. This distribution, the shape of the distribution, is going to change over time. And
+[  682.41s ->   687.93s] the parameters, the mean, the standard deviation, the variance, everything else that we care about
+[  687.93s ->   694.47s] is also going to change over time. So this is not a trivial problem. This is unobservable in the first
+[  694.47s ->   700.15s] place. Otherwise, we wouldn't even need a model. We would just use the true data generating
+[  700.15s ->   704.95s] distribution at any one time to come up with the likelihood of these different states of the
+[  704.95s ->   711.17s] world. So what we're trying to do effectively is come up with a more effective way to capture these
+[  711.17s ->   718.25s] dynamics. So we don't have something like this, where we are dramatically, dramatically underestimating
+[  718.25s ->   724.49s] the likelihood of these different states of the world that are certainly of interest to us.
+[  724.49s ->   730.47s] Now that we understand random variables, their place in modeling, and all of the problems that we face,
+[  730.77s ->   736.63s] how can we go about correcting these violated assumptions in practice? The fact that, what, our
+[  736.63s ->   742.03s] distribution isn't static, it's going to change over time, right? How are we going to go about correcting
+[  742.03s ->   747.59s] this so we can come up with better likelihoods? That is our objective here. Well, this brings us to the
+[  747.59s ->   756.73s] idea of a latent random variable. And I'm just going to go ahead and say it, volatility is the latent
+[  756.73s ->   762.59s] random variable that we're going to be analyzing here. What I'm saying is this idea of realized
+[  762.59s ->   771.83s] volatility or a volatility regime is going to drive the likelihood of returns based on wherever that
+[  771.83s ->   778.37s] regime is at. Now here's the catch. We can't directly observe volatility in the market. I can't
+[  778.37s ->   784.73s] just go to Yahoo finance, hop on my interactive brokers terminal and check out what volatility is
+[  784.73s ->   790.49s] today. It doesn't work like that. Now we do have model proxies for things like implied volatility. We
+[  790.49s ->   798.51s] can proxy for things like realized volatility, but in essence, the process itself is latent. We can't
+[  798.51s ->   804.01s] directly observe it. We're always going to be proxying for it. And what I have here is a modified
+[  804.01s ->   809.41s] animation. So it's very similar to what we saw up here, but now I have this idea of a latent
+[  809.41s ->   818.11s] variance or volatility process. And this is going to drive the volatility of the return distribution
+[  818.11s ->   823.95s] as it continues to change over time. I'll play this for you again here. You can see volatility is
+[  823.95s ->   829.27s] going to continue to change and that's going to continue to mold the shape of this unobservable
+[  829.45s ->   835.57s] data generating distribution. So hopefully you're starting to get a fuller picture. Now our goal was
+[  835.57s ->   841.39s] to what originally we wanted to just model this data generating distribution. We wanted to come up
+[  841.39s ->   846.43s] with likelihoods of different States of the world for stock returns. What is the likelihood of a massive
+[  846.43s ->   852.25s] loss, a massive gain? We really need to know that information, but now we're starting to see the fuller
+[  852.25s ->   859.97s] picture here. Oh, that data generating distribution, it changes over time. Moreover, it's a function of
+[  859.97s ->   867.89s] unobservable variables, these latent variables, this latent volatility process. So we need to somehow
+[  867.89s ->   874.89s] come up with a model that is capable of capturing all of the dynamics, all of these dynamics in a
+[  874.89s ->   881.83s] parsimonious way, something that is effectively going to say something in a more appropriate capacity
+[  881.83s ->   886.67s] about the likelihood of different events in these different States of the world. Cause when
+[  886.67s ->   894.59s] volatility is say here, it's what 2.6, the likelihood of an extreme gain or an extreme loss
+[  894.59s ->   900.11s] is going to be dramatically different than when it's what near zero. And that is going to be the
+[  900.11s ->   905.35s] function of the model that we developed. We need to be able to capture that dynamic. Some things to
+[  905.35s ->   911.19s] note, right? This latent volatility process is not the only latent variable that's going to impact
+[  911.19s ->   917.77s] this data generating distribution, the data generating distribution that governs the returns that we
+[  917.77s ->   922.79s] actually end up seeing at the end of the day. So we need to keep that in mind as well. If we just
+[  922.79s ->   929.29s] model only this latent volatility process, we're certainly going to be omitting other latent variables.
+[  929.49s ->   934.41s] Maybe there's this component of trend or momentum, who knows, but it's important to note.
+[  934.41s ->   942.69s] Moreover, I said that this latent process was unobservable. Well, then how can we observe it?
+[  942.75s ->   949.23s] Here I have an example using realized volatility. We're proxying for this measure using this idea of
+[  949.23s ->   956.39s] a rolling window. Essentially what I'm doing is I'm going to look at a 20 or 60 day rolling window for
+[  956.39s ->   962.83s] some sort of benchmark mean level. And then I'm going to compute the variance around that window
+[  962.83s ->   969.51s] and the associated standard deviation, which is our proxy for volatility. And as you can see here,
+[  969.65s ->   977.71s] the window that I choose is going to change the proxy value. That is an incredibly important idea
+[  977.71s ->   984.03s] because what is a reasonable question to ask? Well, which window do I use? Do I use a 20 day,
+[  984.03s ->   994.25s] a 60 day, an 80 day, 150 day, a year? What is my optimal window size? All right. So that is a very
+[  994.25s ->  1001.89s] reasonable question. Do I use a fixed mean level? How do we assess the efficacy of the proxy for this
+[ 1001.89s ->  1008.25s] latent process? Are there better ways of going about proxying for it? Is this rolling window not a great
+[ 1008.25s ->  1014.05s] measure? Should I use some sort of aggregate volatility feature? That's actually very common
+[ 1014.05s ->  1018.91s] in practice. You'll take a whole bunch of different volatility measures for realized volatility,
+[ 1018.91s ->  1023.93s] and you'll do some sort of dimensionality reduction, maybe a principal component analysis,
+[ 1023.93s ->  1029.15s] and you'll come up with this one component representing a compression of all of those
+[ 1029.15s ->  1035.25s] volatility features. In any case, that is how we need to think about this latent process.
+[ 1035.25s ->  1042.79s] There's a lot of different ways to proxy for this unobservable process value. And I just mentioned
+[ 1042.79s ->  1047.47s] a whole bunch of different ways we could do that. In this particular example, we're just going to focus
+[ 1047.47s ->  1053.01s] on this proxy for realized volatility using a rolling window. But I figured it would be important
+[ 1053.01s ->  1058.95s] to note that in a data science sense, there's a lot of different things we can do to extract and
+[ 1058.95s ->  1064.71s] analyze common variation across all of these measures, and maybe come up with an even more
+[ 1064.71s ->  1072.63s] appropriate proxy for this true latent process that is going to be driving this unobservable data
+[ 1072.63s ->  1078.17s] generating distribution. Now there's literally a lot of moving parts here, but I think this is going
+[ 1078.17s ->  1085.47s] to continue to make more sense as we get into the Markov chain model. At this point, we've built a lot
+[ 1085.47s ->  1091.43s] of intuition about the challenges we face in practice when it comes to modeling these uncertain events,
+[ 1091.43s ->  1098.19s] modeling the likelihood of different states of the world. And this is exactly what it means to step out
+[ 1098.19s ->  1104.85s] of the classroom, to bridge the gap between theory and practice. Now we have a really good understanding
+[ 1104.85s ->  1111.65s] of why a static random variable, something like what we observed at the start of this video,
+[ 1112.15s ->  1117.23s] is insufficient to capture the dynamics of returns we observe in practice, right?
+[ 1117.23s ->  1123.93s] If we tried to, then what would happen? Well, we see these extreme events occurring and our model
+[ 1123.93s ->  1129.75s] says, hey, you would have had to observe those returns for over a hundred years to observe one
+[ 1129.75s ->  1135.93s] extreme return. We observed a ton of different extreme returns. We would have needed to observe
+[ 1135.93s ->  1142.41s] over a thousand years of data. Well, clearly something's off. And what's off is the true data
+[ 1142.41s ->  1149.17s] generating distribution that we are trying to model is changing over time. The likelihood of
+[ 1149.17s ->  1157.25s] these extreme events are changing over time. Not only that, but the shape of that distribution,
+[ 1158.25s ->  1163.69s] not just the shape, but also the statistics are going to be governed by some sort of latent process
+[ 1163.69s ->  1168.93s] or processes, something like volatility. You can think like a volatility regime or a trend regime,
+[ 1168.93s ->  1176.11s] bullish, bearish, sideways, so on and so forth. That is going to also govern the location in terms
+[ 1176.11s ->  1183.35s] of the shift and the spread of the data generating distribution. And all of that will change the
+[ 1183.35s ->  1189.77s] likelihood of observing these different outcomes. That is the actual stock returns themselves.
+[ 1190.21s ->  1196.55s] So clearly we need to come up with a model, not just some sort of naive random variable model that says,
+[ 1196.55s ->  1200.07s] hey, you know, there are all these different states of the world that we're going to consider,
+[ 1200.17s ->  1205.63s] but no, we need to consider these different regimes. We need to consider this latent process.
+[ 1205.93s ->  1211.63s] We need to consider this latent regime. We need to consider how that impacts the unobservable data
+[ 1211.63s ->  1219.63s] generating distribution, and then the likelihood of what we actually observe in reality. This is precisely
+[ 1219.63s ->  1227.63s] what we will use Markov chains for. We will then extend this to the idea of a hidden Markov model.
+[ 1227.73s ->  1232.97s] Now, if you're unfamiliar with Markov chains, fret not, because last week I did a video on Markov chains
+[ 1232.97s ->  1238.69s] specifically for quantitative finance. We looked at a real world example. We applied Markov chains
+[ 1238.69s ->  1244.23s] in that capacity. I highly recommend you check that video out. If you're unfamiliar with Markov chains,
+[ 1244.23s ->  1250.77s] if you have familiarity with them, this idea of a state transition diagram, this idea of a transition
+[ 1250.77s ->  1256.87s] matrix, then you are ready to continue. But that video is by no means a prerequisite. It will just
+[ 1256.87s ->  1262.31s] certainly help with your understanding of the models that we will discuss herein. Nevertheless,
+[ 1263.03s ->  1268.85s] we will continue to progress as if you did not see that video. Effectively, what we're doing with the
+[ 1268.85s ->  1276.09s] Markov chains is considering this latent process, whether it be volatility, trend, momentum, so on
+[ 1276.09s ->  1281.83s] and so forth. We're going to do this by considering discrete states. So, in the context of volatility,
+[ 1282.07s ->  1290.19s] a low, mid, and high volatility regime, maybe in terms of trend, bull, bear, and sideways, so on and so
+[ 1290.19s ->  1295.43s] forth. But bear with me. This will make far more sense why we're doing this in a moment. Let's motivate
+[ 1295.43s ->  1302.99s] this state transition model. What I have here is two different return distributions. I have the same
+[ 1302.99s ->  1309.35s] stock just during different regimes. I have a high volatility regime, the start of 2025 when we had all
+[ 1309.35s ->  1315.41s] those tariffs, and then what I'm calling a low volatility regime, a period of relative stability,
+[ 1315.57s ->  1321.53s] September to December 2024. And what you'll notice here is if we look at the mean return
+[ 1321.53s ->  1327.75s] of both distributions, you can see that the mean return during this high volatility regime is
+[ 1327.75s ->  1335.85s] negative. The mean return during this low volatility regime is positive. We don't just want to lump those
+[ 1335.85s ->  1340.95s] together, right? If we lump those together, then effectively what we're doing is something like
+[ 1340.95s ->  1350.67s] this. We're not going to effectively capture the time-varying dynamics of the data-generating
+[ 1350.67s ->  1355.93s] distribution, which is exactly what we see in this animation. So we can't do that. We need to
+[ 1355.93s ->  1362.87s] instead model it, and we are going to use Markov chains to do that. Now, even though we're capturing
+[ 1362.87s ->  1370.75s] this dynamic that is going to improve our ability to come up with likelihoods for different states of
+[ 1370.75s ->  1375.65s] the world, we're still making a whole bunch of assumptions. It's very important to note that.
+[ 1375.65s ->  1381.85s] These Markov chains assume the Markov property, local conditional dependence. We have to estimate
+[ 1381.85s ->  1388.33s] these transitions somehow. We need to use data for that. We need to come up with different buckets for
+[ 1388.33s ->  1393.95s] realized volatility, which is a proxy for the latent process, which itself is unobservable.
+[ 1394.49s ->  1399.61s] There are assumptions going into this model, but it's important to note that whenever you develop a
+[ 1399.61s ->  1404.59s] model, you have to make assumptions. And the closer you can get to reality, the better the likelihoods you
+[ 1404.59s ->  1410.93s] come up with are going to be. That is effectively our goal here. We want to parsimoniously develop
+[ 1410.93s ->  1419.25s] models that effectively capture dynamics we observe in real data. So we're going to do just that using
+[ 1419.25s ->  1425.47s] this idea of a Markov chain. So what I have here effectively is a low, mid, and high volatility state.
+[ 1425.47s ->  1433.97s] I am going to reduce this process to one of these three states based on historic volatility.
+[ 1434.31s ->  1443.31s] The 33rd percentile will be low, 33rd to 66th will be mid, and 66th and up will be high. I can estimate
+[ 1443.31s ->  1449.87s] all of that from data and I can come up with transition probabilities. If you're unfamiliar with how to do that,
+[ 1450.13s ->  1455.45s] you can check out my video on Markov chains. I do exactly that in that video. Once I do
+[ 1455.45s ->  1464.19s] that, I will effectively be able to model this latent process that is to govern the unobservable
+[ 1464.19s ->  1470.77s] data-generating distribution. And then hopefully I should be able to capture dynamics just like this,
+[ 1470.85s ->  1477.31s] where during periods of low volatility, I have a different distribution than periods of high volatility.
+[ 1477.75s ->  1483.51s] And that is precisely what I am going to do. So what does this actually look like? Well, I drew the Markov chain
+[ 1483.51s ->  1488.71s] diagram here for you. And effectively, all I'm saying is there are three states. We could be in
+[ 1488.71s ->  1495.95s] one of low, mid, or high volatility. As far as the current volatility regime goes, we can transition to
+[ 1495.95s ->  1503.09s] any state from any state. So I could go from mid to mid, I could go from mid to low, I could go mid to
+[ 1503.09s ->  1511.91s] high, so on and so forth. And if I fit this Markov chain model to historic data based on the percentiles
+[ 1511.91s ->  1519.99s] that I outlined here for you, I can actually go ahead and plot the Nvidia stock price path with
+[ 1519.99s ->  1526.13s] all of the different volatility regimes. And that is essentially what I'm doing here. So you can see
+[ 1526.13s ->  1533.11s] here in the green, I was in a low volatility regime. Then I was in high, then mid, then low,
+[ 1533.25s ->  1539.73s] then mid, and so on and so forth. You can see the regime is going to change over time. And I'm
+[ 1539.73s ->  1548.29s] effectively capturing the regime as I've defined it in terms of the historic data. Now, what is this
+[ 1548.29s ->  1556.09s] actually going to be used for? Well, check out this diagram. And this is a great diagram if I do say so
+[ 1556.09s ->  1562.91s] myself. I may be a little biased, but effectively what we're doing here is we are capturing this
+[ 1562.91s ->  1570.49s] dynamic. We are capturing the latent volatility process to the unobservable data generating
+[ 1570.49s ->  1579.71s] distribution to the observed stock returns by using a Markov chain to estimate the latent state
+[ 1579.71s ->  1585.79s] and then produce an estimation of the data generating distribution. And you can see here,
+[ 1585.79s ->  1593.41s] this is actually going to change what? Over time. And that is why this is so effective. We're now
+[ 1593.41s ->  1599.25s] moving even further out of the classroom to try to confront these challenges that we're facing in
+[ 1599.25s ->  1607.23s] reality by modeling these dynamics using Markov chains to estimate the state of a latent process.
+[ 1607.87s ->  1614.47s] And then what? Produce a conditional distribution. And this whole thing is going to depend on time.
+[ 1614.47s ->  1620.49s] We have day one, day two, so on and so forth. So effectively what we're doing here is we're
+[ 1620.49s ->  1626.85s] saying, Hey, this is the latent process. We're reducing it to a state transition space. We will
+[ 1626.85s ->  1633.81s] produce the estimated state for this day, and that will produce the conditional distribution,
+[ 1634.29s ->  1640.81s] the regime distribution. And that is really what we saw. What? What we saw in this animation.
+[ 1640.81s ->  1646.97s] This is the regime distribution that our Markov chain is going to produce. And we can use that to
+[ 1646.97s ->  1654.61s] come up with better likelihoods, better estimations for probabilities of events. And that is our goal.
+[ 1655.13s ->  1662.23s] And that is exactly what we saw in this example, motivating this transition from a low, mid,
+[ 1662.33s ->  1670.31s] high vol state to better capture these dynamics. And this diagram hits it home by showing how we're doing
+[ 1670.31s ->  1677.25s] this, how we're actually using Markov chains to come up with a distribution to estimate the
+[ 1677.25s ->  1682.31s] likelihoods of different states of the world. This is far better. And yeah, we're making assumptions
+[ 1682.31s ->  1690.79s] still, but this is far better than what? 1000 years to observe these events in the tail.
+[ 1690.79s ->  1698.92s] Well, this model should be far closer to reality. It should come up with far better likelihoods of
+[ 1698.92s ->  1705.32s] observing those events in the data, those events that we've seen in the historic data. Fortunately for
+[ 1705.32s ->  1709.90s] us, I've already implemented this entire process, and we're going to take a look at the results in a
+[ 1709.90s ->  1716.74s] moment. So if you want to come up with your own latent state transition models like this one, you can check out
+[ 1716.74s ->  1721.38s] this Jupiter notebook link in the description. It's posted on the Quant Guild library. But I also need
+[ 1721.38s ->  1729.08s] to note that there are a ton of ways to produce this conditional distribution. We can consider other
+[ 1729.08s ->  1733.60s] techniques like Arch and Garch models. I have a video on the Arch and Garch models, that conditional
+[ 1733.60s ->  1738.98s] heteroscedasticity capable of capturing the leverage effect, capable of capturing volatility
+[ 1738.98s ->  1745.62s] clustering, that excess kurtosis that we've even observed all the way up here in this return
+[ 1745.62s ->  1751.14s] distribution. That is precisely why we're underestimating risk. So I'll leave a link to
+[ 1751.14s ->  1756.74s] that video in the description below. Highly recommend you check that out. That is just one of many ways
+[ 1756.74s ->  1764.90s] you can enhance this regime dependent distribution to improve the likelihoods that you end up coming up
+[ 1764.90s ->  1770.42s] with. And that's really going to be the goal at the end of the day, right? We want to come up with
+[ 1770.42s ->  1776.58s] the best likelihoods possible, but in a reasonably parsimonious way. There's always going to be
+[ 1776.58s ->  1784.82s] this trade-off between complexity and efficiency, this bias and variance. So something to think about
+[ 1784.82s ->  1791.30s] as you model in this space, but nevertheless, let's take a look at the outcome. What I've done effectively
+[ 1791.30s ->  1798.74s] here is I have produced three different distributions. Now, in this case, I am still fitting a Gaussian. I'm
+[ 1798.74s ->  1805.22s] still fitting a normal random variable, just like we did at the start of this video, but now I'm making
+[ 1805.22s ->  1811.78s] it dependent on the volatility regime. And what you'll notice is the low volatility regime has the
+[ 1811.78s ->  1819.46s] least amount of variance. Then the mid volatility regime has more variance. And then the high volatility
+[ 1819.46s ->  1825.62s] regime has the most variance. And this is exactly what we would expect to see. It is a function of the
+[ 1825.62s ->  1832.18s] model by construction because that is how I estimated my Markov chain states. But nevertheless,
+[ 1832.18s ->  1838.02s] we're able to more effectively capture those dynamics. We're saying, hey, when uncertainty is
+[ 1838.02s ->  1845.54s] higher, the spread of returns should probably be larger. The likelihood of observing extremes in high
+[ 1845.54s ->  1853.70s] volatility regimes is what? Significantly more than that of the low and mid volatility regime. You can see
+[ 1853.70s ->  1859.30s] there's far more mass underneath the red line than there is the yellow and the green. And that is
+[ 1859.30s ->  1865.46s] the dynamic that we wanted to capture. When we looked at the example with Nvidia returns here,
+[ 1865.46s ->  1871.54s] we wanted to say, hey, really that likelihood of extreme events is going to change over time. And that
+[ 1871.54s ->  1877.54s] is precisely what we are capturing when we consider these different volatility regimes, when we consider
+[ 1877.54s ->  1884.90s] different distributions for these different latent states. Two very important considerations here. Number
+[ 1884.90s ->  1893.30s] one, it's very nice to model the dynamics using this sort of process because it's very easy to interpret.
+[ 1893.30s ->  1898.98s] You get one of three different distributions and the likelihood of different states of the world will
+[ 1898.98s ->  1905.94s] change based on your current state. So that's really nice, right? Because if you're in a high
+[ 1905.94s ->  1911.78s] volatility regime, you can very clearly see why you're producing different likelihood estimates
+[ 1911.78s ->  1918.42s] than a low volatility regime. And that interpretability isn't always going to be there.
+[ 1918.42s ->  1924.34s] And we'll see why when we talk about hidden Markov models. But for now, number one, in this particular
+[ 1924.34s ->  1930.34s] process, when we go about modeling the real world dynamics, we are getting that nice interpretability.
+[ 1930.34s ->  1936.02s] But number two, this the second very important consideration is we are still very far from
+[ 1936.02s ->  1943.46s] reality. This is a process, a latent volatility process, and we've reduced it to three states.
+[ 1943.46s ->  1949.54s] It's really a stochastic process. And the same is true with this data generating distribution.
+[ 1950.42s ->  1957.46s] We have just reduced it to three conditional gousians. But in reality, it doesn't have to be normal.
+[ 1957.46s ->  1963.38s] So important considerations when you are assessing the efficacy of this model. We're still
+[ 1963.38s ->  1968.18s] very far from what reality is. There are far more effective ways to enhance
+[ 1968.82s ->  1974.82s] these distributions and the associated model likelihoods. But we certainly are stepping in
+[ 1974.82s ->  1980.10s] the right direction. We're leaving the classroom. We're approaching this now as a practitioner,
+[ 1980.10s ->  1985.94s] dealing with these violated assumptions, these challenges that we observe in practice.
+[ 1985.94s ->  1991.70s] A reasonable question to ask is, are we stepping closer to reality with this type of model? We've
+[ 1991.70s ->  1997.14s] added a whole bunch of complexity, but is it actually getting better? Well, I would say so,
+[ 1997.14s ->  2002.42s] because now we're starting to capture these dynamics, right? This idea of a latent process,
+[ 2002.42s ->  2009.38s] driving a data generating distribution, and then the subsequent likelihoods of the different stock returns.
+[ 2009.38s ->  2013.70s] But we're doing this in a simplified way, right? We're saying this is really only three states.
+[ 2013.70s ->  2017.54s] We're saying that there are only then three data generating distributions, but still,
+[ 2018.34s ->  2024.90s] this should outperform a fixed distribution like we observed earlier, right? Well, what we can do is we
+[ 2024.90s ->  2032.34s] can benchmark it against what we saw with this NVIDIA example. With this NVIDIA example, we saw what is
+[ 2032.34s ->  2041.30s] known as excess kurtosis in an empirical return distribution. And effectively, what I'm saying is
+[ 2041.86s ->  2048.98s] the tails of an empirical distribution, that is, these NVIDIA returns, the observed historical data,
+[ 2048.98s ->  2057.62s] are fatter than what a normal distribution can fit. And what that means is, if we look at the kurtosis value
+[ 2058.18s ->  2064.58s] of the normal distribution here, it will have a kurtosis value of three, the kurtosis value of the
+[ 2064.58s ->  2072.90s] NVIDIA returns will be far greater than that three representing a leptocurtic distribution, or as I said,
+[ 2072.90s ->  2085.14s] a fat tailed distribution. All right. So did our Markov chain model do any better at capturing those fat tailed
+[ 2085.14s ->  2091.94s] dynamics? Well, what I can do is I can simulate a whole bunch of returns and I can compare it to a
+[ 2091.94s ->  2099.46s] normal distribution and see how well it does at capturing that fat tailed effect. And what you can
+[ 2099.46s ->  2106.58s] see here is based on the simulated returns across all of the different volatility regimes, I'm actually
+[ 2106.58s ->  2113.70s] getting simulated returns from that Markov chain model that exhibit this excess kurtosis. You can see
+[ 2113.70s ->  2120.90s] these blue bars representing the data drawn from this model process that we just fit across all of
+[ 2120.90s ->  2127.22s] these distributions, you can see that it exhibits excess kurtosis. And in this case, it exhibits excess
+[ 2127.22s ->  2136.66s] kurtosis of 0.687. In other words, it has a kurtosis value of 3.687. Excess kurtosis is simply just
+[ 2136.66s ->  2142.98s] the kurtosis of the distribution subtracting out three, and that is the kurtosis of the normal distribution.
+[ 2142.98s ->  2150.10s] So you can see we are starting to capture that fat tailed effect. In other words, we are stepping
+[ 2150.66s ->  2158.66s] much closer to reality than was offered by our original fixed random variable, making this to be
+[ 2158.66s ->  2165.30s] a very effective first step at modeling different states of the world. So what's the deal here? Well,
+[ 2165.30s ->  2170.90s] I kind of just came up with the low, mid and high volatility states. What about a mid high?
+[ 2170.90s ->  2177.86s] What about a mid low? What about six states? And we throw some in between, so on and so forth. This
+[ 2177.86s ->  2183.94s] turns into another problem, we have to decide how we want to actually go about modeling these latent
+[ 2183.94s ->  2189.86s] states. Do we want to use a latent process instead? Do we want to treat it as a stochastic process?
+[ 2190.50s ->  2196.58s] That could be a topic for another day. Nevertheless, we also have to consider there isn't just one latent
+[ 2196.58s ->  2202.18s] state that drives the regime or return distribution. There could be a whole bunch.
+[ 2203.14s ->  2209.78s] And I have a diagram to depict this relationship. Essentially, we omitted the fact that there are
+[ 2209.78s ->  2216.18s] other latent factors. There are other latent processes that can drive the shape and spread
+[ 2216.82s ->  2222.74s] and location of these distributions. So we need to somehow include them
+[ 2223.62s ->  2228.34s] in the construction of these conditional distributions. We could do this again by maybe
+[ 2228.34s ->  2232.58s] even expanding the state space here. So now I'm not just going to have what?
+[ 2233.30s ->  2237.94s] Low, mid and high volatility. But I also have another latent factor I want to consider.
+[ 2237.94s ->  2247.30s] Maybe trend. And now I have what? Nine total states. Low bear, mid bear, high bear, low bull,
+[ 2247.30s ->  2254.74s] mid bull, so on and so forth, right? This turns into a very difficult problem, right? What latent factors
+[ 2254.74s ->  2261.22s] matter? Which ones explain the most variability in the subsequent return distribution? How should I go
+[ 2261.22s ->  2269.94s] about modeling these states? I just showed you one way of proxying for volatility based on percentiles.
+[ 2269.94s ->  2275.86s] But that's not the only way. I could use rolling windows. I could use different rolling windows.
+[ 2275.86s ->  2281.70s] There's so many different ways to do this. And that is why it is a tricky problem. There is no one size
+[ 2281.70s ->  2287.30s] fits all approach. We need to consider what it is we are trying to model and come up with different
+[ 2287.30s ->  2292.90s] ways to effectively capture those dynamics. So in terms of volatility, I mentioned you could,
+[ 2292.90s ->  2298.42s] I mentioned you can use principal component analysis. You could do some sort of, of a
+[ 2298.42s ->  2303.78s] decomposition of variability explained. You can press all of that into one volatility feature.
+[ 2303.78s ->  2309.38s] Maybe you do that with trend as well, but again, so on and so forth. It's not a trivial problem.
+[ 2309.38s ->  2315.62s] You get to dictate how to model these different latent factors, these different latent processes
+[ 2316.18s ->  2323.78s] in this Markov chain model. It's not an easy problem because we're explicitly defining the criteria
+[ 2323.78s ->  2329.06s] for that latent space, what it means to be in a low, mid or high volatility regime.
+[ 2329.06s ->  2334.82s] Then we have to do the same for trend. What does it mean to be in a bullish trend, a bearish trend,
+[ 2334.82s ->  2343.14s] a sideways trend, so on and so forth. Now, what if we could do this automatically? And what I mean to say
+[ 2343.14s ->  2350.26s] is we have all of these different latent features. Maybe there's this trend, momentum, volatility,
+[ 2350.26s ->  2357.14s] and we can model them outright, maybe with some sort of proxy using a Markov chain. But what if we could
+[ 2357.14s ->  2367.14s] just define a certain number of states and then use the data that we've observed in practice to estimate
+[ 2367.14s ->  2375.46s] those states directly and their subsequent conditional distributions? Well, that would bring us to this
+[ 2375.46s ->  2385.62s] idea of a hidden Markov model. And effectively, what we're doing with this hidden Markov model is
+[ 2385.62s ->  2391.70s] we are compressing all of these latent processes into a finite number of states.
+[ 2391.70s ->  2401.46s] So what I mean is if we have this idea of a latent process that drives our data generating distribution,
+[ 2402.10s ->  2408.18s] then we said in this case, it was a volatility process. We compress that to three states, but
+[ 2408.18s ->  2416.02s] there are other processes, trend, momentum, so on and so forth. What if we compressed all of them without
+[ 2416.02s ->  2424.10s] needing to define or observe them into three states? Well, that would certainly be nice if we could do
+[ 2424.10s ->  2430.74s] that. And that is effectively what a hidden Markov model is doing. It's doing this compression of those
+[ 2430.74s ->  2440.66s] latent features into a pre-specified number of states. So we are effectively learning the hidden states
+[ 2440.66s ->  2448.02s] from data. Now, this is where it gets a little tricky because we don't just have a very clear cut,
+[ 2448.02s ->  2454.98s] nice interpretation of what these latent states are. It's compressing all of them down into these
+[ 2454.98s ->  2462.58s] different states, state one, state two, state three, that will carry different dynamics in the subsequent
+[ 2462.58s ->  2469.94s] distribution that it governs. So we can still analyze the subsequent mean, standard deviation,
+[ 2469.94s ->  2477.22s] volatility, so on and so forth of the distribution that these states output, but we may not get a
+[ 2477.22s ->  2483.46s] very clear interpretation like we did in this example. I could tell you right here, low, mid,
+[ 2483.46s ->  2491.06s] or high vol regime. Here, I can't really tell you what latent space three is or latent state three is
+[ 2491.06s ->  2496.50s] or latent state two or latent state one. I can look at the statistics to see what it's kind of capturing
+[ 2496.50s ->  2502.82s] and the conditional distribution, but I can't directly give you what it is because it's a compression
+[ 2502.82s ->  2509.06s] of all of that latent information. This is very similar to the idea of principal component analysis.
+[ 2509.06s ->  2514.90s] When you get that eigenvector, that linear combination of your feature space into the principal
+[ 2514.90s ->  2521.70s] component, I can't tell you what that is. I can tell you maybe what dominates the, you know, the amount of
+[ 2521.70s ->  2526.98s] of mass and the variation explained for that component, but I can't tell you what PC one is.
+[ 2526.98s ->  2532.10s] I can't tell you what PC two is directly. I'm going to have to infer it based on the
+[ 2532.74s ->  2537.22s] values that I observe in the, the loadings, the eigenvector. It's the exact same thing here.
+[ 2537.22s ->  2543.78s] I can't tell you what latent state three is capturing directly, but if I look at the statistics
+[ 2543.78s ->  2549.94s] of the subsequent distribution, then I might get an idea of what it is very similar to here,
+[ 2549.94s ->  2554.42s] right? If I look at this distribution, this red distribution, I could be like, yeah, well,
+[ 2554.42s ->  2561.06s] clearly it's capturing more variance in the return space than this, what this low vol regime. And,
+[ 2561.06s ->  2564.98s] you know, really that's the analysis we're going to have to do. If we start to use a hidden Markov
+[ 2564.98s ->  2572.18s] model again, it's really nice because we don't have to explicitly define the latent process and
+[ 2572.18s ->  2578.90s] the compression to a state space outright in an explicit way. It's going to infer it from the data.
+[ 2578.90s ->  2585.14s] That's why it's such a powerful tool. Now, whether or not that lack of explainability is worth it
+[ 2585.14s ->  2590.34s] for the model improvement, that remains to be seen. It's going to be a function of the data,
+[ 2590.34s ->  2595.94s] a function of your problem. So how do we fit a hidden Markov model to data? We understand this
+[ 2595.94s ->  2601.22s] structure. We just walked through it with Markov chains and we extended it to this idea of other
+[ 2601.22s ->  2608.90s] latent processes and this compression of latent processes, but now we need to actually fit it
+[ 2608.90s ->  2613.70s] to the observed data. And we're not just talking about a distribution. We're actually talking about
+[ 2613.70s ->  2620.90s] the observed returns. That's what we're fitting this hidden Markov model to. And that brings us to
+[ 2620.90s ->  2629.38s] the forward algorithm, the backward algorithm and the bomb Welch algorithm, which is going to implement
+[ 2629.38s ->  2636.42s] both the forward and backward algorithm. Now, this is certainly beyond the scope of this video. If you
+[ 2636.42s ->  2641.94s] would like a dedicated video on these algorithms, I would certainly be happy to do that. It is definitely
+[ 2641.94s ->  2647.78s] more of a niche topic. Nevertheless, if you're interested in how they are structured and the mathematics
+[ 2647.78s ->  2651.78s] behind them, I'll leave a link again to this Jupyter notebook in the description below,
+[ 2651.78s ->  2656.10s] posted on the quant guild library. You can check it out for yourself and you can also check out the
+[ 2656.10s ->  2662.66s] bomb Welch algorithm, which is going to implement again, the forward backward algorithm to train,
+[ 2662.66s ->  2669.70s] essentially the hidden Markov model on the observed data. And I use training, fitting, parameter
+[ 2669.70s ->  2675.86s] inference, blah, blah, blah, all that interchangeably. And here I say effectively,
+[ 2676.58s ->  2684.18s] two technical didn't read TTDR. If that's not a thing, it is now effectively what we're doing to
+[ 2684.74s ->  2689.06s] fit or train this hidden Markov model is we're going to choose a certain number of states.
+[ 2689.70s ->  2697.70s] This is still up to us. So we can choose three, five, 10, whatever it is. At some point, it becomes
+[ 2697.70s ->  2705.06s] computationally very expensive to fit that model. So we do have to be careful and it is very easy to overfit.
+[ 2705.62s ->  2713.14s] But we get to choose the specific number of latent states. Great. Now we need to use the forward
+[ 2713.14s ->  2719.70s] backward algorithm. We do a forward pass and a backward pass, and we combine it to get state
+[ 2719.70s ->  2725.94s] probabilities. So alpha and beta combined to get gamma and the associated transition probabilities.
+[ 2725.94s ->  2733.46s] The bomb welch algorithm is going to update the parameters to maximize the likelihood until it
+[ 2733.46s ->  2739.54s] converges. And that is effectively what we're doing here. We are going to use this bomb welch
+[ 2739.54s ->  2747.86s] algorithm to use the forward backward to calculate the expected state occupancies. Really all this means
+[ 2747.86s ->  2756.98s] is we are coming up with latent states that maximize the likelihood of observing the series of data that
+[ 2756.98s ->  2764.58s] we did from those states. I urge you to listen to that again. That is literally what this algorithm is
+[ 2764.58s ->  2772.02s] doing. Again, we are maximizing the likelihood of observing data from these latent states.
+[ 2772.58s ->  2780.90s] That is how this algorithm functions. And some of the benefits are it learns the optimal transitions and
+[ 2780.90s ->  2786.58s] emissions using both the past and future information from any point in time.
+[ 2786.58s ->  2796.26s] And these parameters are MLEs and they exhibit all of the nice asymptotic properties of the MLE estimator.
+[ 2796.26s ->  2802.42s] So I've actually written all of the code here to implement the forward backward, the bomb welch.
+[ 2802.42s ->  2809.22s] So if you'd like to go about estimating your own hidden Markov model, you can implement this code
+[ 2809.22s ->  2818.82s] yourself. I've done it here on the three latent state hidden Markov model that we diagrammed above.
+[ 2819.46s ->  2826.26s] And as you can see here, I get three very different looking conditional distributions
+[ 2826.26s ->  2834.66s] than the ones that I defined above for the volatility regimes. Keep in mind, I defined these
+[ 2834.66s ->  2842.30s] latent states explicitly. I was just considering volatility in these conditional distributions,
+[ 2842.30s ->  2851.58s] but now I'm considering everything from volatility to trend, to maybe a momentum, so on and so forth.
+[ 2851.58s ->  2858.22s] These latent states are compressions of those latent factors. So if we look now at the return
+[ 2858.22s ->  2863.58s] distribution for these different states, you can see, okay, this is what? Latent state one has a standard
+[ 2863.58s ->  2870.38s] deviation of 1.48. Latent state two has a standard deviation of 1.74. Latent state three has a
+[ 2870.38s ->  2877.66s] standard deviation of 6.46. I would certainly say that latent state three is capturing some sort of
+[ 2877.66s ->  2886.22s] volatility dynamic because look at the spread of the returns that it is modeling. It has a very high
+[ 2886.22s ->  2893.34s] degree of variance there. So that is effectively what our hidden Markov model is doing.
+[ 2893.34s ->  2899.26s] It's essentially doing what we did earlier with the Markov chains, but now it's considering, hey,
+[ 2899.26s ->  2905.26s] there are other latent factors, latent processes that we want to consider, and we want to compress them
+[ 2905.26s ->  2913.42s] all into a single state. And we want to transition from that state to other latent states. And that's going
+[ 2913.42s ->  2920.78s] to produce our conditional distributions. And keep in mind, those conditional distributions are hopefully
+[ 2920.78s ->  2927.50s] going to have better likelihoods to estimate different states of the world with. That is what
+[ 2927.50s ->  2933.98s] we are after at the end of the day. We want to be able to effectively estimate different states of the
+[ 2933.98s ->  2943.87s] world based on the true data generating distribution. And we can see here, there are also some important
+[ 2943.87s ->  2951.79s] considerations. We can overfit this model. We do lose interpretability. And simpler models may explain
+[ 2951.79s ->  2958.43s] similar or even more variability while maintaining interpretability. So just because we are fitting a
+[ 2958.43s ->  2963.87s] hidden Markov model here, and it's all fancy, and we have these latent states, and we're capturing these
+[ 2963.87s ->  2969.79s] very interesting compressed dynamics in each of these latent states, it does not mean that a less
+[ 2969.79s ->  2976.35s] complicated model can't outperform. Okay, we would have to assess the robustness of these models out of sample,
+[ 2976.35s ->  2984.99s] determine if the lack of explainability or more difficulty in really teasing out that explainability is worth the
+[ 2984.99s ->  2992.51s] performance improvement. But in any case, business certainly won't be happy with this model that we produce.
+[ 2992.51s ->  2999.55s] Business likes explainability. So if we're looking for explainability, it's hard to argue with some sort of
+[ 2999.55s ->  3006.59s] Markov chain construction for these latent states. Too long didn't watch, here's your executive summary.
+[ 3006.59s ->  3013.15s] Very quickly, when we step out of the classroom, we realize that the models we learned are insufficient
+[ 3013.15s ->  3019.95s] at capturing the dynamics we experience in reality. We need to bridge this gap between theory and practice.
+[ 3019.95s ->  3027.95s] In reality, we face a lot of challenges. We saw that distributions change over time. The parameters of
+[ 3027.95s ->  3034.03s] these distributions change over time. Moreover, they're a function of a lot of different latent
+[ 3034.03s ->  3040.99s] processes, things we can't observe. It makes for a very difficult challenge. We can't observe the data
+[ 3040.99s ->  3048.75s] generating distribution, and that changes over time. We can't observe the latent processes that impact the
+[ 3048.75s ->  3055.47s] data generating distribution that we also can't observe, but we can proxy for. And our goal is to model
+[ 3056.11s ->  3062.43s] the possible states of the world in the best way that we can, coming up with the best possible
+[ 3062.43s ->  3069.15s] likelihoods for observing all of these different possible outcomes. It's a very difficult problem.
+[ 3069.15s ->  3076.11s] So a naive model is going to fix some sort of distribution. It's not going to be capable of
+[ 3076.11s ->  3082.27s] capturing those time varying dynamics. And the consequence of using a model like that is,
+[ 3082.27s ->  3088.43s] we are going to get terrible likelihoods of different events. We'll dramatically underestimate
+[ 3088.43s ->  3095.39s] risk. We're not matching what we're going to observe in reality. Nowhere close to it. We saw with
+[ 3095.39s ->  3102.03s] Nvidia herein that it would have taken over a thousand years to observe the data that we've already
+[ 3102.03s ->  3109.95s] observed if we assumed a naive model. So we extended this. We extended this to the idea of using a Markov chain
+[ 3109.95s ->  3117.07s] to model this latent process, this latent volatility process. We defined it in an explicit way. We came
+[ 3117.07s ->  3123.39s] up with different buckets for volatility. We came up with these conditional distributions that are starting
+[ 3123.39s ->  3131.31s] to get at this idea of time variance. They were regime dependent. They changed over time. And we saw that
+[ 3131.31s ->  3137.87s] that was better at capturing the dynamics we observed in the market. We saw excess kurtosis in that subsequent
+[ 3137.87s ->  3144.83s] distribution. And that's what we observe in practice. But then we said, okay, well, volatility
+[ 3144.83s ->  3150.83s] isn't the only latent process. There are more. Maybe there's trend, momentum, more that I can't even
+[ 3150.83s ->  3159.71s] define. If there was a way to somehow compress all of those latent processes into a series of states,
+[ 3159.71s ->  3165.31s] that would probably be very effective. That is exactly what a hidden Markov model does.
+[ 3165.31s ->  3172.11s] It takes all of those latent driving states and compresses it into essentially a series of
+[ 3172.11s ->  3178.51s] states that you define. So you get to define the quantity of latent states and all of those processes
+[ 3178.51s ->  3185.55s] that could be governing the subsequent distribution, the outcomes of the state of generating distribution,
+[ 3185.55s ->  3190.91s] are going to be compressed in that state space. Now, again, as you increase that state space, you may
+[ 3190.91s ->  3197.87s] capture more dynamics, but you are certainly going to face a computational issue. It will become
+[ 3197.87s ->  3204.11s] extremely inefficient as you expand that state space. Nevertheless, that is the effectiveness of
+[ 3204.11s ->  3211.47s] the hidden Markov model. You do not need to explicitly define these states. They are learned from data,
+[ 3211.47s ->  3217.87s] but that does mean you need data. And that also certainly means you can overfit the model. Whether the
+[ 3217.87s ->  3224.75s] lack of explainability in the latent states in your hidden Markov model is worth the improvement in
+[ 3224.75s ->  3231.23s] performance is going to depend on your problem. You may not see a performance improvement relative to
+[ 3231.23s ->  3237.47s] the Markov chain approach that we just outlined. It is not always the case that more complicated
+[ 3237.47s ->  3244.51s] models or models that compress information are going to outperform simpler, more explainable models.
+[ 3244.51s ->  3249.87s] It's going to be a function of your problem and it will be a function of your institution and whether
+[ 3249.87s ->  3256.11s] or not they demand explainability over performance. Some future topics, I would like to discuss
+[ 3256.11s ->  3262.27s] technical videos and other discussions, advanced Markov chains. This was an extension to the video on
+[ 3262.27s ->  3268.43s] Markov chains for Quant Finance. So I hope this is received well. I would like to do another video on
+[ 3268.43s ->  3273.47s] advanced topics in Markov chains, absorbing states, communication classes, ergodicity,
+[ 3273.47s ->  3278.99s] stationary distributions, things you can use to enhance the models we discussed herein,
+[ 3278.99s ->  3283.71s] similar to how I said you can bring in other ideas like arch and garch. I'd like to talk about
+[ 3283.71s ->  3290.59s] stochastic calculus topics in stochastic calculus, stochastic processes, Brownian motion, arithmetic,
+[ 3290.59s ->  3296.43s] geometric Brownian motion, and deriving the Black-Scholes equation. This idea of the PDE,
+[ 3296.43s ->  3302.75s] analytical and numerical solutions, and the connection between all of these and simulation,
+[ 3302.75s ->  3307.23s] and other techniques for producing option prices in a Black-Scholes framework. Those are some more
+[ 3307.23s ->  3311.95s] technical discussions. I would certainly like to discuss all of these topics, but let me know what
+[ 3311.95s ->  3317.47s] you'd like to see in the comment section below. It certainly helps me figure out what content to
+[ 3317.47s ->  3324.11s] produce next, much like this video on hidden Markov models. I'd also like to get back to some quant
+[ 3324.11s ->  3329.39s] builds. I still want to build this earnings event option trading dashboard. I want to do this
+[ 3329.39s ->  3334.59s] automated Delta neutral trading system. I think I've seen some comments requesting this video,
+[ 3335.47s ->  3339.15s] but let me know. Let me know if this is something you'd like to see. I'm starting to think, hey,
+[ 3339.15s ->  3345.87s] now that we've covered Markov chains, hidden Markov models, we can start to implement those techniques
+[ 3345.87s ->  3350.99s] in this live trading system. I think that would be pretty cool. But again, let me know your thoughts
+[ 3350.99s ->  3356.51s] in the comments below. And that's going to do it for this video on hidden Markov models for quant
+[ 3356.51s ->  3362.83s] finance. I hope you enjoyed. I hope you learned something. This video certainly took a lot of effort to
+[ 3362.83s ->  3369.79s] create. So if you enjoyed, please like, comment, subscribe, share. It helps me out tremendously. Again,
+[ 3369.79s ->  3377.39s] it is greatly appreciated. Check out quantguild.com to master your quantitative skills. Other than that,
+[ 3377.39s ->  3382.19s] thank you so much for watching and I will see you in the next video.

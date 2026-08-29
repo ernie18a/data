@@ -1,0 +1,428 @@
+[    0.02s ->     5.64s] I personally work with a handful of options traders one-on-one and they each pay me $5,000.
+[    6.32s ->    10.24s] Once a month I do an in-depth training on something very specific and last month I did
+[   10.24s ->    15.00s] a training on the 1DTRB options strategy. It's literally printing money for me right now
+[   15.00s ->    19.30s] and exactly how to trade it in every type of market. This strategy has personally doubled
+[   19.30s ->    24.38s] the amount of money that I've used. I use about $2,000 to trade this strategy on a small account
+[   24.38s ->    30.94s] and it's made me $1,600 in the last three months. This training may seem boring. It may not seem
+[   30.94s ->    35.92s] like your normal hypey YouTube video but it's very dense, very educational and if you actually
+[   35.92s ->    41.46s] deploy this strategy you are going to hopefully make some money. Let's dive in and watch this
+[   41.46s ->    47.34s] training. Super excited to share. Let's dive into it. This monthly live training is over the Simple
+[   47.34s ->    52.22s] 1DTE ORB which stands for Opening Range Breakout. Don't worry I'll explain that more in a second
+[   52.22s ->    57.12s] if you've never heard of it. Strategy that generates $200 to $500 a day without having
+[   57.12s ->    62.24s] huge losses like most 0DTE traders have. Are you guys excited for this? We've got 10 people
+[   62.24s ->    66.26s] on the call. I want to hear some thumbs up if we're good to go. We've got a lot of people
+[   66.26s ->    71.36s] on here. Also got thumbs up. Sweet. We're good to go then. This fits into our options bot portfolio
+[   71.36s ->    76.12s] system where it comes down into two different breaks. Number one we have a daily income system
+[   76.12s ->    79.86s] which is this ORB bot that I'll explain here in a second and our monthly income system which
+[   79.86s ->    85.02s] you guys are very familiar with. We run bullish bots and bullish markets, bearish bots and bearish
+[   85.02s ->    89.08s] markets and then we can add various other bots like free money bots and things like that to
+[   89.08s ->    94.26s] capitalize even more deeply on different small setups. But the monthly income system is designed
+[   94.26s ->    99.46s] to help us generate anywhere from 3% to 5% a month consistently in every type of market by aligning
+[   99.46s ->   103.56s] the right strategy with the right market and we're able to do this consistently. Now here's the
+[  103.56s ->   108.66s] problem. A lot of you guys love seeing daily activity, volume, your ADHD and you just want
+[  108.66s ->   114.00s] trades to be going on. And so that's where we invented the daily income bot to help you
+[  114.00s ->   119.06s] see that daily activity, daily movement and profits that you can see stuff actually happening
+[  119.06s ->   123.40s] without risking too much of your money. And that's what we're going to dive into. So this
+[  123.40s ->   129.02s] strategy is an opening range breakout strategy. If you've never heard of it, it's basically the
+[  129.02s ->   134.16s] name explains it all opening range breakout. We look at the opening of the market over a certain
+[  134.16s ->   139.56s] time period. This time period is 60 minutes. We look at the first hour of the market. We check
+[  139.56s ->   145.10s] out the high. What was the high over the last hour? Whenever it breaks that high, that's when
+[  145.10s ->   151.58s] we get into the trade. So we basically set over the first 60 minutes, what is our resistance
+[  151.58s ->   155.84s] point? What's the high we reach? As soon as we break that resistance, meaning momentum is
+[  155.84s ->   161.16s] moving higher. That's when we enter this trade. So here's an exact setup for one of the trades
+[  161.16s ->   166.52s] that happened last week. Okay. Here was the first 60 minutes of trading activity. Did pretty well.
+[  166.56s ->   170.26s] This is a one minute chart, by the way. So that's why there's so many candles. One minute chart,
+[  170.42s ->   175.92s] 60 candles here, 60 minutes of trading activity. Our high got put right here. So we drew out the high.
+[  176.08s ->   182.16s] The high got put here. As soon as the high broke, that's when we entered the trade and traded to the
+[  182.16s ->   187.54s] upside. That's what an opening range breakout is. Step by step, look at the first 60 minutes to find
+[  187.54s ->   193.12s] the high. Once the high breaks for that day, then you enter the trade. And this was the exact trade
+[  193.12s ->   202.22s] I did here. It made me about $113. So what are the exact strategy rules behind this? The exact rules
+[  202.22s ->   207.54s] are quite simple. 60 minute opening range breakout. As I just discussed, feel like the first 60 minutes
+[  207.54s ->   212.56s] chart, the highest point, whenever that highest point breaks, that's our entry. Why? Because momentum's
+[  212.56s ->   216.40s] pushing higher or breaking resistances. We're probably going to play that quick upside move.
+[  216.80s ->   223.06s] DTE is one DTE. Okay. So you're right. I've never been a fan of zero DTE and back testing. I showed
+[  223.06s ->   226.34s] this. I did a lot of testing before doing this. Obviously, I'm only going to give you something
+[  226.34s ->   231.64s] that I'm willing to use myself. Zero DTE had a way lower win rate than one DTE. And you might be
+[  231.64s ->   237.52s] wondering why go one DTE because it gives us more time. Simply put. Okay. We have more time to be
+[  237.52s ->   242.32s] right. The market trends up. If we happen to hold that trade overnight, guess what?
+[  242.72s ->   249.22s] Not volatility. Theta decay still impacts overnight activity. So that overnight trading period,
+[  249.58s ->   254.66s] theta decay is doing its work on the position. So even if the trade opens where it previously was
+[  254.66s ->   261.08s] the last day, guess what? You still are making money because of that theta decay increase. So a lot
+[  261.08s ->   265.32s] of times you hold the trade overnight and then you close it first thing that next morning because
+[  265.32s ->   269.98s] theta decay got you into your profit target. So anyway, one DTE gives us more time and has
+[  269.98s ->   274.72s] dramatically increased our win rate compared to using a zero DTE. So it's still a very short-term
+[  274.72s ->   280.04s] trade. Most of these trades only last 30 minutes or so. But if you do happen to hold longer,
+[  280.20s ->   284.68s] that's what happens. Okay. Here's how we structure the actual trade though. So one DTE,
+[  284.82s ->   290.34s] we do a short put at the 35 Delta. This means we chart out the high on a 60 minute opening range
+[  290.34s ->   296.56s] breakout. As soon as that high is broken, we sell a put at 35 Delta. We then buy the put below it.
+[  296.62s ->   303.50s] That's $20, a $20 strike price below. We do take profit at 40% and we do a stop loss when it hits our
+[  303.50s ->   310.20s] short put. Again, it touches our short put. Here's an example trade. Okay. July 8th, these are random
+[  310.20s ->   314.64s] numbers made up, didn't happen. Maybe it did. I don't know. I just made up these numbers. So let's say
+[  314.64s ->   321.30s] it's July 8th, we have an opening range breakout where it broke the resistance at $5,500. Okay.
+[  321.38s ->   328.58s] That's BX. Okay. That means the DTE we're going to do is July 9th. So the day after our short put,
+[  328.70s ->   334.70s] let's just say a 35 Delta is roughly 5,350. And then what we're going to do is, oops, that got messed
+[  334.70s ->   341.56s] up. I did $200 difference. It should be 20. That means our long put would be at 5330. So we'd have a
+[  341.56s ->   347.98s] short put at 5350 and a long put at 5330. $20 difference for the long put. Let's say a trade
+[  347.98s ->   353.34s] price of around $4. That's the average about you're going to get. You're going to get between $2 and $6.
+[  353.82s ->   358.54s] So a $4 average trade price is what you'll get, which means that puts your take profit. You'll
+[  358.54s ->   366.66s] close the trade once it hits $2.40 and you'll have a stop loss once SPX hits 5350. That's the strategy.
+[  366.78s ->   371.00s] If you want to trade it yourself manually, that's exactly how you would do it. But obviously we're not going to
+[  371.00s ->   375.98s] do that because we like automation. But let me give you three real examples of real trades that
+[  375.98s ->   382.32s] I've done since implementing the system. Here is July 2nd when I started running this spot in my
+[  382.32s ->   389.94s] account. Okay. You can see here, this was the high that the first 60 minutes of the market set.
+[  390.42s ->   397.26s] Later in the day, the market broke this high. My bot entered a trade. I can see here at 1040,
+[  397.26s ->   403.38s] entered the trade. And the next thing you know, the next morning it closed out. Even if the market
+[  403.38s ->   407.92s] would have stayed where it was the next day, we still would have been able to close out for a good
+[  407.92s ->   415.64s] profit. But in this case, got in for $5, got out, oops, got out for 30 cents, led to a profit of $470.
+[  416.16s ->   423.10s] Not too bad. Example number two here, the first 60 minute high was right here, which made this
+[  423.10s ->   429.16s] our resistance. As soon as it broke at 1040 shortly after the high was formed, what happened
+[  429.16s ->   434.70s] was, is we can see here the market trended up pretty quickly, pretty fast, pretty well, which led
+[  434.70s ->   441.54s] to us closing that trade in 26 minutes, resulting in a $113 profit, a 40% return on my money. Not bad
+[  441.54s ->   446.24s] at all. Example number three, loser. Not all of them are going to win here. And I'll show you the stats
+[  446.24s ->   450.36s] on our win rate here in a second. But we had one, two winners. And then the third one, which was
+[  450.36s ->   455.36s] yesterday, July 8th was a loser. You can see here, this was the high from the first hour.
+[  455.56s ->   462.24s] It broke here for a brief second, came back down, and then it exited right here. And so again,
+[  462.24s ->   469.20s] got in for about five bucks, got out for about $760, lost $270 on that trade, was in it for about
+[  469.20s ->   475.14s] 48 minutes. So those are three real trade examples there. Now let's show you what you can expect long
+[  475.14s ->   480.78s] term. Again, back tests are not guaranteed of future returns, but they do help us understand
+[  480.78s ->   486.38s] some common rhythms and patterns. So again, just for that disclaimer there. And we're looking at this
+[  486.38s ->   490.60s] as a very consistent return. Again, you have wins, losses, whatever. But what we're looking at
+[  490.60s ->   497.92s] is in general, we have a 60, I think it's a 62.5% win rate, meaning 63% of the time you're going to win.
+[  497.92s ->   505.60s] And when you win about $252. So on average, you're making $250 per one contract per trade.
+[  506.04s ->   513.40s] When you lose about $311. And so this checks out, and that's why I wanted to show you a 66% win rate
+[  513.40s ->   517.78s] means you're going to win two trades out of three. And so that means one of the three are going to
+[  517.78s ->   521.74s] lose, but you're still going to net make a profit long term. And that's exactly why I want to show
+[  521.74s ->   527.00s] these examples is the last three trades show this historical data pretty well. You can see here,
+[  527.00s ->   536.80s] made 500, winner, made 100, winner. It's a $500, about $550 profit combined. Is that $470? Is that
+[  536.80s ->   545.20s] $500? $600? $600 profit total with two wins. And then let's just say $300. $300 loss. So three trades,
+[  545.54s ->   553.42s] what happened here is I ended up with a net of a $300 profit with all the three trades and had my 66%
+[  553.42s ->   559.38s] win rate because around there, because I had one loser out of three trades. Now again, backtesting
+[  559.38s ->   563.66s] shows that roughly the same. You can see here over the last, again, this has been backtested since
+[  563.66s ->   568.36s] 2022, but all the numbers I could include in here without you having to squint your eyes too much.
+[  568.64s ->   575.12s] As you can see, February, this is all with one contract, made $700. March made $400. April made $8.
+[  575.12s ->   582.38s] May made $1,500. June made $1,700, $1,200. This is all with one contract, which is amazing.
+[  582.78s ->   587.60s] Shows you the power of what we can do if we just do one or two contracts at a time just to add and
+[  587.60s ->   593.64s] supplement some of the returns. What's amazing here is our max drawdown that we've seen in a
+[  593.64s ->   601.00s] single month is largest is $413. And that was the largest from 2022 is this most recent trade in June
+[  601.00s ->   607.96s] 2025. $400 drawdown. What's great in the way that I'll talk about here in a second is structuring
+[  607.96s ->   615.30s] your buying power used in a way where your monthly income bots more than cover the losses that you'll
+[  615.30s ->   621.20s] ever have using this so that you have your consistent income. And if something goes very
+[  621.20s ->   627.34s] bad on this one DTE strategy, well, you're still going to end the month break even. Okay. So that's
+[  627.34s ->   633.16s] the whole goal to have this help supplement returns without cutting and massively hurting your overall
+[  633.16s ->   637.84s] return. So here's how to automate it. It's super simple. I wanted to make sure you guys have the
+[  637.84s ->   642.20s] easiest way to do it because again, that's the whole automate with ease, right? So log into the
+[  642.20s ->   648.12s] options auto trader. When you go to the strategy database under our options bot portfolio, which only
+[  648.12s ->   653.10s] own income accelerator clients like you guys have access to, you'll click on that and you'll see a daily
+[  653.10s ->   659.90s] income bot right here. 62% win rate about $250 win when you win about $300 and 11 loss when you lose
+[  659.90s ->   665.56s] click start using this bot. It preloads all the settings for you. Yes. It even watches for the
+[  665.56s ->   671.38s] opening breakout for you based on the 60 minute breakout and you just put how much money you're
+[  671.38s ->   677.30s] going to use. Now, the question is now how much money should you use? So let's dive into buying power
+[  677.30s ->   682.62s] allocation. Okay. Buy power allocation. This is after thinking about it for a while, the way that I do it.
+[  682.62s ->   689.56s] So this is a rule that you guys already know of. That's our 30 to 50% rule, typically called the 30%
+[  689.56s ->   696.52s] rule. I'm going to give a second here to speak. The 30% rule, which comes from the futures options
+[  696.52s ->   702.26s] world, because when we use futures options, that buying power is variable, which means when we enter
+[  702.26s ->   708.84s] a trade and it says it takes $7,000, if the market goes down, that trade will require more money from us.
+[  708.92s ->   714.44s] Now, this doesn't apply to ETF for stock options, but it does apply to futures options. And just a
+[  714.44s ->   718.42s] cross the board. And in order to make sure that we manage risk correctly, we should never have all
+[  718.42s ->   723.84s] our time one trade. So what we do is we break that down between 30 to 50%. If you want less risk on
+[  723.84s ->   730.82s] the account, you put 30% of your account into trades. If you are moderate risk, about 40%. If
+[  730.82s ->   736.40s] you're a higher risk, more faster growth, you put 50%. Okay, cool. Now that we know how much money from
+[  736.40s ->   741.04s] our account to allocate as a whole, how much goes to the daily income versus how much goes to the
+[  741.04s ->   745.20s] monthly income box. And so that's why I break down. I was like, how should I do this? And I
+[  745.20s ->   749.90s] was thinking of max drawdowns, all that stuff. And the max drawdowns actually worked very well with
+[  749.90s ->   756.32s] the 80-20 rule. So this is something called the Barreto principle, which states that 80% of our
+[  756.32s ->   760.36s] results come from 20% of our efforts. So when I look at it, what is the most consistent long-term
+[  760.36s ->   765.84s] results we can do as option sellers? That is long-dated option selling strategies, which we're already
+[  765.84s ->   771.08s] doing our monthly income system aligned with the market. So that means 80% of our buying power
+[  771.08s ->   775.62s] should be focused on what's going to make us a majority or bulk of our money. So that's where
+[  775.62s ->   781.42s] I put our monthly income system as 80% of our invested capital, and then the daily income system
+[  781.42s ->   787.32s] being 20%. And this actually works out in such a way where your max loss on the daily income system
+[  787.32s ->   792.62s] will be roughly equal to your average monthly profits of the monthly income. That way, worst case
+[  792.62s ->   797.78s] scenario of a bad month with a daily income bot, then guess what? You're still breaking even for
+[  797.78s ->   805.50s] the month. Let's put this into real numbers, okay? If you have a $10,000 account size, okay? I know a
+[  805.50s ->   811.46s] lot of you guys don't because we don't take people in this program under $25,000. But if you do, I just
+[  811.46s ->   815.34s] want to show an example. If you're under $25,000 right now, for some reason, maybe you have another
+[  815.34s ->   820.34s] account you're trying to grow up to $25,000, right? Because you need $25,000 to properly implement
+[  820.34s ->   825.00s] our monthly income system. If you're under $25,000, whether it's just your total account or
+[  825.00s ->   830.24s] another account you're trying to grow, if you're under $10,000, what I would push you to is I would
+[  830.24s ->   838.18s] try to do it all inside the daily income bot. That way, you can grow that quickly, then get to a
+[  838.18s ->   843.24s] point where you're over $25,000, and then you can scale from there with our whole options bot portfolio.
+[  843.66s ->   847.50s] Now, let's break down an average account size. The average account size between you guys is around
+[  847.50s ->   852.46s] $50,000 to $100,000. So I wanted to give you an example. The $50,000 account size, okay? Let's
+[  852.46s ->   860.08s] assume we're allocating 40% of it, okay? So that means this. For trades of the $50,000, $20,000 of
+[  860.08s ->   866.94s] it would be in trades and $30,000 would be in cash. How do we split this up? 80-20. 80% of our funds
+[  866.94s ->   871.72s] will be inside of our monthly income system, which is our bullish and bearish spots that adjust to the
+[  871.72s ->   879.58s] market. And that means $4,000 of it would be in our daily income bot. For our $100,000 account,
+[  879.68s ->   884.70s] that means if we're doing 40%, it would be trading with $40,000. $60,000 would be in cash. Splitting
+[  884.70s ->   890.26s] this up between the two, around $32,000 would be in our monthly income bots, and $8,000 would be in
+[  890.26s ->   896.66s] the daily income system. Now, the daily income system, let's say we're allocating, what's an easy
+[  896.66s ->   904.86s] number, $3,000 to it. Each trade of the daily income bot takes about $1,500 to put a trade on
+[  904.86s ->   911.00s] for this daily income bot. So it still does take some money. So if you have, let's say, a $4,000
+[  911.00s ->   919.14s] allocation, you can set that on your buying power allocation here. Oops, sorry. I should have put it
+[  919.14s ->   924.58s] there again. You can set that amount here, but the only thing is your bot will only place as many
+[  924.58s ->   931.68s] trades as you tell it in the trade details. So if you have more than $1,500 to allocate to this bot,
+[  932.04s ->   937.22s] what you need to do is you need to divide whatever amount that is. So let's say $4,000 by $1,500,
+[  937.72s ->   943.70s] and that gives me two trades. I know I can open up two trades with this bot. So in that instance,
+[  943.70s ->   948.92s] what you'll ideally want to do is you'll want to go into the trade details and up the quantity from
+[  948.92s ->   955.56s] one quantity to two quantity to match the buying power use. So in other cases, like our monthly
+[  955.56s ->   962.56s] income system, what we do is we just set the max buying power. We'll slowly enter trades over time
+[  962.56s ->   967.16s] until we've hit that max buying power. Now for the one DTE, we're not going to be opening multiple
+[  967.16s ->   970.84s] trades. We're only going to have one trade running at a time. So we want to make sure that we set the
+[  970.84s ->   976.18s] quantity of the number of trades we're contracted opening at a time to be equal to hit that buying
+[  976.18s ->   980.48s] power usage. Now I know I've gone into a lot of stuff, but overall, does this make sense?
+[  980.54s ->   984.70s] Any questions, put it in the chat, put it in the Q and a channel, and I'll make sure to get to it.
+[  984.70s ->   988.86s] But overall, I hope this made sense. Some of you guys are looking to deploy soon,
+[  988.92s ->   993.22s] whether that's just on your paper account or on your live money account. Sean says,
+[  993.32s ->  1000.41s] makes sense. Awesome. Awesome. Makes sense. Any questions? No questions. That's always good.
+[ 1000.85s ->  1004.57s] Let's do something coming in the Q and a channel. Paul says, what time of day,
+[ 1004.57s ->  1009.35s] time of trading day can entry occur? Great question, Paul. Let's dive into it. Let me pull
+[ 1009.35s ->  1015.00s] up my trading view. Let's dive into what this exactly looks like. Okay. Sorry. Those were all
+[ 1015.00s ->  1022.79s] the drawings I put together for today's thing. Okay. This is SPX. Okay. Obviously opened,
+[ 1022.95s ->  1029.51s] gapped up this morning, ran huge, then we did. So if we're looking at it, we can place a trade
+[ 1029.51s ->  1034.85s] because it's a one DTE throughout the entire day. Let's say, let me chug out this high here. So
+[ 1034.85s ->  1046.42s] in the first 60 minutes, so 930 here is the first time here, right here, 950, 1030. Yep. So the high
+[ 1046.42s ->  1054.67s] of the first 60 minutes was right here. High of the first 60 minutes was right here. Awesome. Good
+[ 1054.67s ->  1061.17s] to go on that. Now we basically have all day to wait for it to get here. It's currently 1220. So
+[ 1061.17s ->  1065.37s] that's about two and a half hours left of the market. And then two and a half hours left of the
+[ 1065.37s ->  1069.79s] market. It comes up and breaks this level. We're still going to enter the trade because we're
+[ 1069.79s ->  1074.11s] going to hold it overnight. We're going to collect that data decay from overnight and then trade the
+[ 1074.11s ->  1082.77s] direction that way. So you have up to all day for it. Now, in all honesty, the probability of this
+[ 1082.77s ->  1086.63s] coming all the way up here and breaking is very unlikely. But you can see here on this, it's in
+[ 1086.63s ->  1093.01s] the first 30 minutes. It formed the high here. And then it took most of the day. And then it broke
+[ 1093.01s ->  1099.27s] here at at two o'clock at central standard time. No, this is the SDU or get one, whatever you want
+[ 1099.27s ->  1104.59s] to consider it. We're around 12 here. And then it went out and did that. But anyways, good question.
+[ 1104.71s ->  1108.79s] We can enter the trade throughout the entire day because the one DG. So we have the other day.
+[ 1109.19s ->  1114.09s] So we have the bot will enter any time between after the first hour to five minutes before the
+[ 1114.09s ->  1118.95s] market closes to enter the trade if it breaks above that resistance point. So the options auto
+[ 1118.95s ->  1124.53s] trader settings is between the right after the last hour and five minutes before the market closes.
+[ 1124.53s ->  1129.72s] If it breaks above that resistance, it's going to enter the one DG trade. Let's see three more
+[ 1129.72s ->  1135.92s] Q and A's here. If a trade is open today and does not close the day, a second trade cannot be open
+[ 1135.92s ->  1142.06s] tomorrow. Question mark. Depends on the buying power usage, right? Remember, we're setting opening
+[ 1142.06s ->  1148.80s] highs. And I guess it depends. Let me break this down. If you're doing if you have under $25,000,
+[ 1148.80s ->  1156.79s] this is where it comes in. Under $25,000, you're subject to the PDT rule. If you're subject to the
+[ 1156.79s ->  1163.85s] PDT rule, there's two options. One, limit your bot to only trade three times a week. Okay. That is
+[ 1163.85s ->  1167.33s] option number one. Okay. If you limit your bot to trade no more than three times a week, you'll stay
+[ 1167.33s ->  1175.77s] within the PDT rule. You'll be fine. Option number two is remove the exit rules. Okay. Remove exit rules.
+[ 1175.77s ->  1182.37s] And now why would we want to remove exit rules? Because we don't exit the trade and we let it
+[ 1182.37s ->  1189.17s] expire. Guess what? We didn't close the trade. So it doesn't count as a PDT. After backtesting this,
+[ 1189.33s ->  1196.15s] having no exit still works, but it's more variable. So as you saw the backtested return, it looks like
+[ 1196.15s ->  1202.71s] this, right? It's like that. If you remove all your exits because you're under $25,000, you want to
+[ 1202.71s ->  1209.07s] trade this every day. I just want to let it expire. It looks more like this. So it still gets you to
+[ 1209.07s ->  1214.87s] where you're going, but the amount that you lose when you lose is quite large. You do get to make a bit
+[ 1214.87s ->  1219.41s] more though, but you're losing a lot. And the whole goal here is to have that consistent return where
+[ 1219.41s ->  1224.57s] there's no huge losses. And so that's why we have our stop and our take profit. Anyways, if you're under
+[ 1224.57s ->  1229.61s] $25,000, you're subject to PDT rule. Those are two options. My ideal option would just be let it trade
+[ 1229.61s ->  1235.09s] three times a day. Sometimes you might have the bot just a lot of times the bot just may hold overnight and
+[ 1235.09s ->  1239.07s] then it'll close the next day. And guess what? Not a PDT rule. So it's fine. Anyways, if you're above
+[ 1239.07s ->  1245.23s] $25,000, you're basically just letting this go every single day. It triggers. Now on average, you're looking
+[ 1245.23s ->  1251.17s] at three trades a week. Okay, so this is not going to execute every day. When we look at the historical data, it
+[ 1251.17s ->  1256.45s] places three trades a week on average. Obviously, some weeks might have no trades. It's just a bearish
+[ 1256.45s ->  1261.31s] week and the market's going down. There's nothing to do. Other weeks, maybe every single day. But on
+[ 1261.31s ->  1265.99s] average, we're looking at three days a week, this bot will execute a trade. I don't think I answered
+[ 1265.99s ->  1270.05s] that question correctly, but I did go into some other topics. Okay, let's see. If a trade is open
+[ 1270.05s ->  1275.47s] today and does not close today, a second trade cannot be open tomorrow. Great question. So yeah,
+[ 1275.51s ->  1280.45s] so first off, this is talking about buying power usage. But then when it comes to opening and closing
+[ 1280.45s ->  1287.45s] trades, it typically is going to close the next day, either for stop or profit. But if you do happen
+[ 1287.45s ->  1294.51s] to have another trade open, then it depends on how much buying power you have available, right? Just
+[ 1294.51s ->  1298.63s] like with our monthly income. So if you have enough buying power available and you're not using it all
+[ 1298.63s ->  1307.43s] yet, then it will place another trade. But these trades, we have an hour or more to actually be able
+[ 1307.43s ->  1314.47s] to enter the trade. So you're giving your trade most of that day, the next day up to an hour.
+[ 1314.97s ->  1321.31s] And typically theta decay is very rapid on what is now a zero DTE bot the next day or zero DTE the
+[ 1321.31s ->  1326.21s] next day. And so you're going to close that trade out before the next one ever opens. Typically,
+[ 1326.21s ->  1330.83s] you don't have overlapping. It does happen very frequently. It can happen. But most of the time
+[ 1330.83s ->  1335.17s] that trade gets closed out before. And if you do have a trade running already, it will open a trade
+[ 1335.17s ->  1341.98s] based on how much buying power you set available for that bot. Okay. Can it carry over to the next
+[ 1341.98s ->  1349.66s] day opening? Absolutely. In that example, I showed you July 3rd, my bot did. No, this is the first
+[ 1349.66s ->  1356.72s] ever trade I did right here. This $470 return I got was from it entering here and then gapping up the
+[ 1356.72s ->  1363.06s] next day and then closing that next day. So this was awesome because obviously I got to have a 94%
+[ 1363.06s ->  1368.72s] return. It's pretty good. But yeah, this was an instance where it held overnight. It's completely
+[ 1368.72s ->  1374.22s] okay to do that. Like I mentioned, overnight data decay is still impacting you. So it's going to help
+[ 1374.22s ->  1381.77s] either make more or offset losses if it goes to the downside overnight. Yeah. Any other questions
+[ 1381.77s ->  1385.81s] about that? Is that making sense? Feel free to put it in the chat or in the Q&A channel.
+[ 1385.81s ->  1395.31s] So that is the 1DTE bot. The ROI on this thing is awesome. Margin for approximately one week,
+[ 1395.83s ->  1403.81s] one win per week. Yeah, exactly. That's why Trump, as I mentioned at the beginning of this training,
+[ 1404.17s ->  1409.89s] I am not a 1DTE or 0DTE person. I've always said never do it, but I'm personally running this strategy
+[ 1409.89s ->  1417.23s] on my own account because of purely the amount I win when I win and the amount I lose when I lose.
+[ 1417.37s ->  1424.05s] I win 250 and I lose 300 and I have a 60% win rate. If I knew nothing else about that trade,
+[ 1424.21s ->  1429.69s] that is a bet and a trade should take every single time. But what I also know is that this is an
+[ 1429.69s ->  1435.31s] opening range breakout trade, which means I'm already aligning myself with the direction of the
+[ 1435.31s ->  1439.87s] market, which means if the market breaks above a resistance level, showing there's bullish momentum,
+[ 1439.87s ->  1445.47s] I take a bullish trade. Across the board, great trade. So yeah, if we look at it from a
+[ 1445.47s ->  1449.65s] statistical perspective, like Trone is saying, I can break that down here to just show what he's
+[ 1449.65s ->  1461.98s] saying. It's pretty simple here. But okay, if we have three trades a week on average, and on average,
+[ 1461.98s ->  1467.76s] we have a 60 something percent win rate, that means we have two winners and one loser. One L,
+[ 1467.76s ->  1475.30s] two does. This as you saw, on average makes you 250 $250 per winner. So let's say on average,
+[ 1475.36s ->  1482.62s] we have two wins. That's a $500 profit is for one contract. And one loser. So that's going to
+[ 1482.62s ->  1491.24s] regenerate, let's say 300. Let's just around 320. That means my net profit is going to be $180 per
+[ 1491.24s ->  1500.68s] contract. And it takes me about $1,500 of buying power per contract. So I can't do the math like
+[ 1500.68s ->  1510.23s] that. So 180 divided by 115. That's a 12% return on your money per week, on average, which is great.
+[ 1510.89s ->  1517.52s] Anyway, there's risk, there's volatility, nothing's perfect. Obviously, not saying this is perfect.
+[ 1517.52s ->  1523.40s] What I am saying, if we're able to allocate a small portion of our account to this, it can really
+[ 1523.40s ->  1528.38s] help juice our returns, bring in daily income while we're waiting for our monthly income big
+[ 1528.38s ->  1534.66s] boy trades to close out and generate that monthly income. So by pairing these two things together,
+[ 1535.00s ->  1540.10s] you really do set yourself up for success. And yeah, that's it. Scott here says if the trade closes
+[ 1540.10s ->  1546.70s] out the next morning, and it was at your max buying power, will another trade be placed on the second
+[ 1546.70s ->  1552.64s] day after the prior trade closes? Yes. Yes. This bot is only allowed to place one trade per day.
+[ 1552.76s ->  1557.38s] It doesn't matter if a trade had already closed that day, right? Let's say on this instance,
+[ 1557.54s ->  1563.72s] this because my, my, my bot placed these trades back to back, right? This is July 2nd, my trade right
+[ 1563.72s ->  1569.48s] here, it broke here, my trade entered. What happened is it didn't close out, it closed out the next
+[ 1569.48s ->  1575.26s] morning. And then an hour later, it placed the next trade, oops, placed the next trade, and then it got
+[ 1575.26s ->  1580.90s] out right here. So, you know, entry on this breakout, close the next trade on this close.
+[ 1581.46s ->  1587.78s] Then the next day it traded on the breakout and then closed at the high. So yeah, it enters one
+[ 1587.78s ->  1593.20s] trade per day, excuse one trade per day. If another trade closes that day, it's fine. I'll still open
+[ 1593.20s ->  1599.30s] a trade. Great question, Scott. Let me make sure I answered all the Q&A here. Pat says, should all bots
+[ 1599.30s ->  1604.38s] have Market Craft safeguard on? Great question. So this is more of a portfolio question, which is fine.
+[ 1604.38s ->  1609.94s] And the answer is no. Let me break this out here. Daily chart here, put on a market analysis
+[ 1609.94s ->  1618.30s] indicator. Let's actually go to ES. Let's dive into this. So what the market crash safeguard says
+[ 1618.30s ->  1623.58s] is that, hey, if the market comes into this range right here, and then breaks below it, right? So if
+[ 1623.58s ->  1629.94s] it comes up above this range, and then breaks back down, the sign, the chances of the market crashing
+[ 1629.94s ->  1634.62s] and moving lower is higher. So it's going to close out your winning trades, close out your trades in
+[ 1634.62s ->  1640.90s] general, and then give you a 30 day reset period before it allows it to reenter the trade. That
+[ 1640.90s ->  1645.36s] way you can allow the market to reset like something like this, get out for this, get out before this,
+[ 1645.76s ->  1650.12s] get out before here. It's not going to work every single time here, you know, this and trigger,
+[ 1650.54s ->  1656.70s] but it's not every single time to just help a lot, right? And with that in mind, we do not want
+[ 1656.70s ->  1661.42s] our bearer spots to have market crash safeguard on because the market crash safeguard were prevented
+[ 1661.42s ->  1667.22s] from entering during this during the next 30 days of the market trending down. And so a bearer spot
+[ 1667.22s ->  1671.12s] should never have on the market crash safeguard because then it would prevent it from doing its
+[ 1671.12s ->  1676.80s] job, which is entering when the market's trending down. Your bullish spot is the only bot or maybe
+[ 1676.80s ->  1680.18s] your free money bot as well, depending on which one it is. But your bullish spot should be the only
+[ 1680.18s ->  1684.66s] one that's running the market crash safeguard. Your bearer spot shouldn't because you want it to make
+[ 1684.66s ->  1689.08s] money down. And the opening range breakout has no settings like that. When you click on to use
+[ 1689.08s ->  1693.66s] that bot, it doesn't have the market crash safeguard set because we run this strategy in every type of
+[ 1693.66s ->  1698.62s] market. If the market's trending down, no worries, because we're only going to trade once we break
+[ 1698.62s ->  1704.52s] the high. And with that, the opening range breakout already factors in the micro trend itself by using
+[ 1704.52s ->  1709.04s] the opening range breakout. So when it comes to market crash safeguard, only to be used on bearish,
+[ 1709.36s ->  1712.86s] only to be used on bullish, not to be used on bearish or opening range breakout. Good question.
+[ 1712.86s ->  1717.66s] Sweet. Any other questions, whether about how this fits into your portfolio, this strategy,
+[ 1717.66s ->  1723.62s] or anything in general about our option spot portfolio system? I'll make some conversation
+[ 1723.62s ->  1728.98s] while I wait for you guys to ask a question. If not, it's all good. But basically what's going on
+[ 1728.98s ->  1734.08s] here is this is the option spot portfolio system. We have a monthly income system that brings in the
+[ 1734.08s ->  1741.04s] consistent monthly income, aligns with the market to have that consistent return. We use a small portion
+[ 1741.04s ->  1748.48s] of that remaining balance to put on the daily income bot and let that run. Obviously start off
+[ 1748.48s ->  1754.66s] with paper, see how it works, move it to one contract each of the trade, and then slowly scale
+[ 1754.66s ->  1759.92s] up from there based on what your account size allows. But even doing one contract, two contracts,
+[ 1760.16s ->  1766.86s] three contracts is another $1,000 or so a week, which is pretty good. It's about $180 a week calculated
+[ 1766.86s ->  1772.32s] on average per week with winners and losers. It's about a $200 profit per week. If you're doing
+[ 1772.32s ->  1778.14s] three contracts, that's another $600 a week, which is not bad at all for just a side bot.
+[ 1778.54s ->  1782.64s] Anyway, so that whole system together, the monthly income system, the daily income system is what's
+[ 1782.64s ->  1788.38s] called our option spot portfolio system to help you make money in every type of market almost every
+[ 1788.38s ->  1793.90s] day. Again, market allowing. Sweet. There is one more question here. David says, now that we have the
+[ 1793.90s ->  1797.70s] daily income bot, should we not use the bullish bounce strategy or bearish rejection? Yeah. So
+[ 1797.70s ->  1804.10s] the very question, the two core bots is a bullish bot and a bearish bot, a bullish bot when the market
+[ 1804.10s ->  1809.62s] is trending up, a bearish bot when the market's trending down, you can run your bullish bot here.
+[ 1809.84s ->  1815.04s] And then in this zone, we run a combination of bullish and bearish bots together. Now, when you have
+[ 1815.04s ->  1821.50s] your bot setting as bullish or bearish, it does this for you automatically. And then this, I would say
+[ 1821.50s ->  1826.10s] that is the bear essential, a bullish and bearish bot. If you want to juice up your returns even
+[ 1826.10s ->  1829.90s] more, what you can do is you can add the free money bot, which would be, this would be the free
+[ 1829.90s ->  1836.86s] money bearish rejection bot. And this would add the free money bullish bounce bot. So again,
+[ 1837.04s ->  1843.02s] not required. Bullish bearish essential aligned with the market, which the bot does for you.
+[ 1843.26s ->  1847.36s] If you want to juice up your returns, do the daily income. If you want to juice it up even more,
+[ 1847.36s ->  1849.70s] do the free money bullish, free money bearish. Free money bearish,
+[ 1849.70s ->  1856.40s] but tool is the long term bullish, long term bearish essential to generating consistent monthly
+[ 1856.40s ->  1860.56s] income, juice returns with a daily income bot and juice it even more with the free money bots.
+[ 1861.28s ->  1865.52s] Make sense. So basically, we're starting with something as simple as can possibly be,
+[ 1865.66s ->  1870.94s] which is a bullish long term bearish long term adjusted to the market when it's trading in the
+[ 1870.94s ->  1875.60s] direction we want. And then we can juice up our returns as we want a daily income bot,
+[ 1875.60s ->  1880.32s] and the free money bots as needed. Again, all those settings are inside the options auto trader,
+[ 1880.42s ->  1884.18s] you just say, hey, this bot is either a bullish bot, a bearish bot, it's my daily income bot,
+[ 1884.48s ->  1890.08s] or it's my free money bots, each one. And then you can set those and then it will only trade it
+[ 1890.08s ->  1895.44s] during those particular markets. Sweet. For those of us switching from the four bot system,
+[ 1896.10s ->  1900.56s] what should we do when we switch to the new bullish or bearish bot? Deactivate the old one?
+[ 1900.56s ->  1904.00s] No. Yeah. The bullish and bearish bots you were running before are the same ones you're running
+[ 1904.00s ->  1909.14s] now. It's literally where there's, if you were set up with the four bot system, and you had your
+[ 1909.14s ->  1918.84s] bullish bot, your bearish bot, your sideways bot, and your free money bot, all that you're doing is
+[ 1918.84s ->  1922.66s] this stays the exact same. This stays the exact same. Free money, that can stay the exact same.
+[ 1923.00s ->  1928.06s] The only thing that's changing is this, and you have the option to do the daily income bot instead.
+[ 1928.06s ->  1933.73s] So there's literally nothing that needs to be changed here. It's still a four bot system. If
+[ 1933.73s ->  1937.63s] you use all the bonds, you have the bullish bot, all the settings stay the same. Bearish bot,
+[ 1937.77s ->  1941.37s] all the settings stay the same. Our automation system still works. Nothing you need to change.
+[ 1942.46s ->  1947.24s] The sideways bot got removed because as I was looking, I want to make this as simple as possible,
+[ 1947.56s ->  1951.52s] and that breaks down into just a bullish or bearish bot. And I was like, okay, what about the sideways
+[ 1951.52s ->  1956.44s] bot? And I looked at all the history of my trades, and I realized that most of my losses came from
+[ 1956.44s ->  1961.10s] the sideways bot. And that's because I have a defined top and defined bottom. If any one of
+[ 1961.10s ->  1967.38s] these breaks, I'm losing money. And so instead, I removed this, and I installed the daily income
+[ 1967.38s ->  1971.18s] bot instead. And then again, you have the free money bot as well. So if you're coming from the
+[ 1971.18s ->  1975.30s] four bot system, nothing needs to change besides removing the sideways bot and installing the
+[ 1975.30s ->  1979.45s] daily income bot if you want. What's the strategy with the free money bot?
+[ 1979.45s ->  1986.35s] Yeah, great question. The free money bot is all taught inside of the program. So when you're
+[ 1986.35s ->  1990.07s] inside of the owed income accelerator coaching program inside of circle, there's an in depth
+[ 1990.07s ->  1996.59s] training for each specific bot. But the free money bot right here, this is simply a put debit spread
+[ 1996.59s ->  2002.19s] strategy. And now let me just clear out this too many drawings here right now. Okay, this free money
+[ 2002.19s ->  2011.12s] bot right here, let's come back is a put debit spread. And now it's strategically a put debit spread.
+[ 2011.12s ->  2018.67s] But because right here, volatility is low. And when the market drops, volatility is going to increase.
+[ 2019.39s ->  2024.39s] And what trades take advantage of volatility increase, that's a debit trade. So that's why
+[ 2024.39s ->  2028.23s] we do a put debit spread not only doesn't make money when the market drops, but when the volatility
+[ 2028.23s ->  2033.39s] spikes, which inevitably will, then we're not only making money on the direction of the trade,
+[ 2033.49s ->  2037.89s] but we're making money on the volatility change. Same thing with the free money bot down here. This is a
+[ 2037.89s ->  2042.69s] put credit spread. Why? Because put credit spreads make money on the way up. So now we're making money
+[ 2042.69s ->  2047.47s] on direction. And in this instance, volatility is very high. And as it goes up, volatility will
+[ 2047.47s ->  2051.25s] decrease to put credit spreads not only make money from the upward direction, but from the volatility
+[ 2051.25s ->  2056.53s] change. So the free money bots only execute in these markets. And they are designed to take
+[ 2056.53s ->  2062.34s] advantage of both the trend and both the volatility play. Dale says, is there a type of market we should
+[ 2062.34s ->  2067.22s] not run the daily income bot? Yeah, so I was I've been I've been testing this backtesting it for
+[ 2067.22s ->  2072.50s] multiple weeks now and then putting into my own trading account. And what I found is that it doesn't
+[ 2072.50s ->  2078.90s] matter what markets you put it in by not running it in a certain market, you actually get worse returns
+[ 2078.90s ->  2085.48s] because it's already factoring in the market itself. Right. Let's see if we can dive into a specific
+[ 2085.48s ->  2092.05s] market. Let's remove drawings or move everything. So yeah, it should be running in every market.
+[ 2092.05s ->  2096.77s] And that's because it's using the opening range breakout. So it's already factoring in
+[ 2096.77s ->  2103.77s] that move. Let's find, for instance. Okay, so look here, it was a recent down stretch, right? This
+[ 2103.77s ->  2108.85s] recent was a down market. So you might be thinking this is a bullish strategy. Why should I run it
+[ 2108.85s ->  2113.73s] here? If you look at it, the high of the day and high for the first hour, I don't know exactly where
+[ 2113.73s ->  2117.41s] it is. But it's something like here. Guess what, it never broke above it again, because it's trending
+[ 2117.41s ->  2123.88s] down. So that did not enter a trait here. Okay, let's see this high, it did break. So you would
+[ 2123.88s ->  2130.60s] have had a loss here, which is fine. Here breaks the high does not close above there. That's a long
+[ 2130.60s ->  2137.80s] wick closes here, runs up, maybe a close, I don't know. Here, the high is here, it breaks, runs higher.
+[ 2137.80s ->  2142.92s] Okay, so if he, it really just depends. But when that's a bad example, because I'm just pulling it
+[ 2142.92s ->  2148.40s] up right now. But when I back tested it, and I removed, for instance, using our long term strategy,
+[ 2148.40s ->  2152.94s] where, hey, we know when the market's bullish, and we know when it's not bullish, come back
+[ 2152.94s ->  2158.38s] indicator analysis, we know when the market's trending up, and we know when it's not. And so I
+[ 2158.38s ->  2162.68s] was like, Okay, cool. This is a bullish strategy. What if I only run it when the market's green? What if I
+[ 2162.68s ->  2168.18s] only run it when the market's bouncing? And there wasn't the returns were the same? Okay.
+[ 2168.78s ->  2173.40s] The win rate was the same, but the returns were way less because I had less trades that I was in.
+[ 2173.80s ->  2180.84s] Right. So by not trading during these bearish times, the win rate stays the same, but I miss out
+[ 2180.84s ->  2185.76s] on my overall return because I'm not getting my frequency of trades up. There is no difference
+[ 2185.76s ->  2191.44s] running it or not during certain markets, you just run it across the board. The only entry is your 60
+[ 2191.44s ->  2196.04s] met an opening range breakout. Sure. These are more q&a questions. Okay, pulse. Okay,
+[ 2196.10s ->  2200.30s] I got it. Beautiful. Love it. Awesome. Sweet. Cool. I think I answered all the questions. I'll give
+[ 2200.30s ->  2204.42s] it another minute here to see if there's any other final questions. But that was the training for this
+[ 2204.42s ->  2208.74s] month. I hope it lived up to the hype and gave you guys a strategy you can actually deploy and go
+[ 2208.74s ->  2215.06s] after. I noticed you guys were wanting a zero to one D DTE strategy. And although I was against it deep
+[ 2215.06s ->  2219.94s] inside, I was wanting one too. So after talking to I think it was at least five different zero to D
+[ 2219.94s ->  2224.32s] full time traders. This is the strategy I found and fell in love with. And the one that I'm running.
+[ 2224.54s ->  2229.04s] So I hope you guys like that I have this and actually fully integrated into the software that
+[ 2229.04s ->  2234.60s] took some time for me to build out for to look at every it watches the market every single minute
+[ 2234.60s ->  2239.34s] of the day. And it goes, Okay, what's the high? Did we break it or not? For this breakout and then
+[ 2239.34s ->  2243.94s] execute your bot, which is only available for you guys is open income accelerator clients. So
+[ 2243.94s ->  2251.69s] welcome aboard. Anyways, one more question from Pat Ryan path. Yeah, Pat Ryan for a 25k account is a
+[ 2251.69s ->  2256.99s] cheap for 14 day of proper bear bot. Yes. Yeah, the bear bot is either a put debit spread or it's a
+[ 2256.99s ->  2263.32s] long put the cheap for today hedge is a long put. Paul says, Can you ever imagine a separate bearish
+[ 2263.32s ->  2268.04s] version of the daily income bot? And great question. I did. I thoroughly tested it where
+[ 2268.04s ->  2272.40s] basically let me explain this for those of you who are in order to it. So again, the opening range
+[ 2272.40s ->  2280.94s] breakout, right, we're looking for okay, the first 60 minutes, the first 60 minutes of the day, we
+[ 2280.94s ->  2288.42s] chart out the high and the low. And so the question is the low gets broken. Should we do a call credit
+[ 2288.42s ->  2296.02s] spread to make money on the way down? And I've run this backtest numerous times. And it just does not
+[ 2296.02s ->  2302.56s] perform well. And you can run it if you feel free to paper trade that version. But the backtest don't
+[ 2302.56s ->  2307.10s] show it working consistently. And the reason why I think so is because the market is in general is
+[ 2307.10s ->  2312.52s] an uptrending asset. So when it dips, people want to, when it goes down, people want to buy the dip.
+[ 2312.84s ->  2318.76s] And so it just doesn't work out that well. So I would like there to be a bearish version. So I could
+[ 2318.76s ->  2323.96s] always be running some type of versions every day I could run a trade. But in this instance, it didn't.
+[ 2324.10s ->  2328.12s] No, don't get me wrong. I'm still playing with that idea. I'm still backtesting it. If I do
+[ 2328.12s ->  2332.92s] come across a way to make it work, I will definitely share it with you guys. And we can
+[ 2332.92s ->  2337.72s] run both sides. But for now, with the current structure and the strategy settings that I found,
+[ 2338.02s ->  2344.00s] only trading the upside bullish side was the best performing return. So yeah, great question, Paul.
+[ 2345.55s ->  2353.48s] Sweet. Awesome. Awesome. That was the monthly training. Once again, I hope you guys found it
+[ 2353.48s ->  2361.00s] enjoyable. Glad that we had a decent crew here today. Again, a part of the system, there is a monthly
+[ 2361.00s ->  2365.48s] bot breakdown where I take a look at your account, understand what's going on, all that stuff.
+[ 2365.58s ->  2370.54s] I'm putting those together as we speak. So hopefully by the end of the day, if not tomorrow
+[ 2370.54s ->  2376.70s] at the latest, you guys will get an email from me with a report and a screen share about how
+[ 2376.70s ->  2381.12s] your account's doing anything. I would change settings, things like that. So look out for
+[ 2381.12s ->  2385.00s] that email tomorrow. That's basically the structure of this program. We helped you install
+[ 2385.00s ->  2388.36s] this option spot portfolio system, which is now our monthly income system and our daily
+[ 2388.36s ->  2391.94s] bot. And then I'll follow up with you every 30 days to make sure it's in line to help you get
+[ 2391.94s ->  2396.48s] your targets. So based on the targets you told me and onboarding, I'll make sure I bring that up
+[ 2396.48s ->  2400.36s] inside of the report that I put together. Thank you guys again for joining it. I hope you have a
+[ 2400.36s ->  2406.42s] great Wednesday. Thursday, tomorrow is our weekly office hours coaching. So if you have any questions
+[ 2406.42s ->  2410.36s] or want to talk about anything, feel free to show up there 12pm Central Standard Time. I will see you
+[ 2410.36s ->  2415.62s] there. Anyways, thank you guys so much. The recording will be up when it comes up. Install this bot at least on
+[ 2415.62s ->  2421.12s] paper, give it a shot. See how it works. When you're ready, scale up with one contract 234. And I can't
+[ 2421.12s ->  2423.78s] wait to see your returns with it. Anyways, guys, have a great rest of your day.

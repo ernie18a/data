@@ -1,0 +1,92 @@
+[    0.53s ->     5.15s] In this video I want to talk about a question that a lot of people have. Are people consistently
+[    5.15s ->     8.99s] profitable from trading credit spreads? So if you're wondering okay yeah credit spreads have
+[    8.99s ->    13.07s] a high win rate but your losers are a lot larger than your wins. Are you actually going to win
+[   13.07s ->    17.61s] long term? Like who is actually doing this and how do they do it? Those are the two questions I
+[   17.61s ->    23.47s] will be discussing in today's video. So let's jump in and explain how credit spreads work. So by
+[   23.47s ->    29.75s] default you know that credit spreads have a high win rate by default because you lose more than
+[   29.75s ->    34.61s] you stand to win. So let's kind of walk through this for you here if I pull up a pin. All right
+[   34.61s ->    39.29s] so if we're trading a normal credit spread let's say a dollar wide credit spread that means that
+[   39.29s ->    43.69s] the stock is trading and we think the stock will continue higher if we're trading a put credit
+[   43.69s ->    49.63s] spread and so if the stock stays above this level we make money. So at this level let's say we make
+[   49.63s ->    57.77s] $30 but we stand to lose $70. So again you have around a nine let's just say add here an 85% win
+[   57.77s ->    63.67s] rate right by default. So you're going to win 85% of the time but the problem is you win a smaller
+[   63.67s ->    70.61s] amount but you lose a larger amount. So your larger loss can actually take out a ton of losers I mean
+[   70.61s ->    75.27s] a ton of winners and so with that you have to understand okay are these actually profitable
+[   75.27s ->    80.03s] long term. Well let me break down the math how you know if your trading is going to be profitable
+[   80.03s ->    84.85s] long term and what to look for. Well let's get a real example let's go to the trading chart here I
+[   84.85s ->    90.29s] like to go roughly 14 to 16 days out and we can come here. Okay we can also change these levels
+[   90.29s ->    96.59s] here to what we want to look at. Let's look at delta. Delta is going to give us a theoretical level
+[   96.59s ->   102.17s] of how likely our trade is to make money for us. Again there's another way to do it is to simply do
+[  102.17s ->   110.41s] probability of in the money you can do that as well which is just one minus the delta. Anyways let's
+[  110.41s ->   116.49s] keep this up for now. Okay let's say we wanted 85% win rate. So that means the probability of in the
+[  116.49s ->   121.35s] money needs to be 15% or we can also do the probability of out of the money which I think
+[  121.35s ->   126.63s] is this one right here is going to be roughly 85%. So anyways we have these numbers by default we have
+[  126.63s ->   133.91s] a theoretical level based on that. So for instance an 85% probability of making money is the same thing
+[  133.91s ->   140.69s] as a 15 delta just because one minus 15. Anyways so this is our 85% win rate trade. What do we do?
+[  140.75s ->   148.33s] Well we sell this level. Oops and we buy this next one. Cool this gives us a 13 cent credit as it's
+[  148.33s ->   154.67s] trading right now. So okay 12 cents. Okay let's just say I'm saying I had 12 cents longer. So let's just
+[  154.67s ->   161.78s] say a 12 cent credit. Okay cool. So we have an 85% win rate. This is math that you should be doing
+[  161.78s ->   169.92s] with every single trade. An 85% win rate. We have a 12 dollar credit which by default gives us a how
+[  169.92s ->   177.78s] much of a loss? Well 100 because it's a $1 widespread minus 12 gives us an $88 loss. So this is a bit
+[  177.78s ->   184.34s] worse than the 3070 but it's 12888. Okay cool but we have an 85% win rate so that's good right? But will
+[  184.34s ->   190.20s] you be consistently profitable at that rate? Well let me show you how you can determine that. You simply
+[  190.20s ->   195.02s] need to put in this. Once you know your win rate, your win amount, and your loss amount it's simply
+[  195.02s ->   201.00s] just this. We're going to do 85 which is our win rate in a number form not the percentage form so
+[  201.00s ->   208.42s] not 0.85 but 85. Then we're going to multiply that by 12 because that means how much are we going to
+[  208.42s ->   215.12s] win? We're going to win 85 times out of 100 and we're going to win $12. Cool. Now we're going to
+[  215.12s ->   219.62s] subtract the amount you lose which is going to be you're going to lose 15 trades out of 100 and we're
+[  219.62s ->   225.74s] going to multiply that by our loss amount of $88. Okay so to take this trade right here if we take
+[  225.74s ->   229.22s] this trade over and over and over and over yes we're going to have a lot of wins in a row because
+[  229.22s ->   234.86s] it's an 85% win rate but if you can see here by default it gives us a minus 300 return. So that
+[  234.86s ->   241.49s] means this right here is going to have a long-term return of minus $300. So tell me if you can have an
+[  241.49s ->   247.59s] 85% win rate but you collect $12 and you'll lose 88. Should you take this trade? Absolutely not.
+[  247.59s ->   253.11s] This is what a lot of credit spread traders do. They go awesome trading credit spreads at a super
+[  253.11s ->   259.21s] high win rate. I can just put on an 85% trade over and over and over and over and make a ton of money.
+[  259.39s ->   264.17s] That's what they see and that's what they go for. Now this is the problem. They're not looking at your
+[  264.17s ->   268.31s] long-term expectancy. Very simple math that tells you if you do this trade over and over and over
+[  268.31s ->   272.61s] based on how much you stand to make, how much you stand to lose and your win rate will you actually
+[  272.61s ->   278.09s] make money. This shows right here you won't. So even though you have an 85% win rate you need to
+[  278.09s ->   283.25s] bump it up if you want to have a long-term positive return. So now that we know that we need to know
+[  283.25s ->   288.91s] that yes trading credit spreads can be profitable but we do need an edge. An edge means something that
+[  288.91s ->   294.15s] we know that others don't so that we can bump our win rate to be a bit higher thus giving us a positive
+[  294.15s ->   302.95s] long-term return. So what can that be? Well the one that I love using myself is called following
+[  302.95s ->   307.49s] the trend. Sorry I'm looking at this whole chart. I'm looking at what I should do. Anyways let's look
+[  307.49s ->   312.65s] at the chart here. So following the trend is my simple method of understanding what I should be
+[  312.65s ->   318.81s] doing. So for instance this right here we're going to go in we're going to look at indicators here which
+[  318.81s ->   325.55s] is right here. I'm going to be honest I have not actually ever used this before. So give me a quick
+[  325.55s ->   333.97s] second. We'll just add a line. Okay you can see here how if we're looking at this stock or QQQ you can
+[  333.97s ->   339.55s] see here that it's following a trend. A trend is higher highs and higher lows. So this shows you exactly
+[  339.55s ->   343.61s] what's going on with the stock. If the stock is making lower lows and lower highs and then it's trending
+[  343.61s ->   349.65s] down. So what does this mean? Well it simply means that the stock is trending up. I should be trading
+[  349.65s ->   355.11s] put credit spreads during this entire time. But when is exactly what's my edge? When do I get the
+[  355.11s ->   362.05s] highest return for the higher win rate when I'm trading put credit spreads in this way? Well the
+[  362.05s ->   368.03s] closer I get to this line which is where it seems to bounce every single time the closer or the higher
+[  368.03s ->   373.07s] my win rate will be and the more credit I get to collect. So for instance it's really far off this
+[  373.07s ->   379.03s] line. But if this line was trading closer to here then guess what? I would have the ability to
+[  379.03s ->   384.67s] collect roughly 20 to 25 cents right? And I would have to go out less far. And so again that's how
+[  384.67s ->   389.71s] I increase my win rate is by doing that. So for instance if I'm waiting for this to sell offerings
+[  389.71s ->   395.55s] it's a red day so far it may be a good time to enter into a trade. So by default if I know the trend is
+[  395.55s ->   402.21s] going in my favor I can set up a credit spread like this for instance where you where you gain 12 and
+[  402.21s ->   409.83s] you lose 88 but because I'm trading with the trend this bumps my 85% win rate up to 95%. So again this has
+[  409.83s ->   414.15s] been historically back tested and I'll show you exactly how to know these these numbers and the
+[  414.15s ->   418.79s] step-by-step plans for the strategy you take at the very end but please stay tuned. Okay so let's say we
+[  418.79s ->   426.11s] bump our win rate up to 95% by doing this. What are our new numbers? Okay well this changes to 95 times we win
+[  426.11s ->   434.37s] we win $12 minus we lose five times and we lose $88. Now we have a positive $700. So that means we have a
+[  434.37s ->   441.61s] win rate of 95% and we have these same two numbers we're actually going to end up plus 700. So that is
+[  441.61s ->   448.73s] amazing. Plus 700 is obviously a huge difference. It's a $1,000 difference from minus 300. So that's how
+[  448.73s ->   453.19s] you can actually really change your results. So a lot of credit spread traders are just going based off
+[  453.19s ->   458.11s] the theoretical numbers but have no trading edge. If you're using support and resistance, you're using
+[  458.11s ->   462.87s] MACD, you're using something that consistently helps you know the general direction that a stock will go
+[  462.87s ->   469.65s] that is an edge and that will help you bump your win rate up on credit spreads on a theoretical 85%
+[  469.65s ->   475.07s] to the actual 95% or higher than that. And so that's what you're looking to do. If you want to be
+[  475.07s ->   479.89s] consistently profitable from trading credit spreads you need to have an edge. I actually give you my edge
+[  479.89s ->   486.07s] for free and the description down below is a free trading PDF that walks through the exact
+[  486.07s ->   492.15s] strategies that I use and create. It shows you step by step how to take them, the entry rules you
+[  492.15s ->   496.61s] need to look for, the exit rules and everything. So all that is step by step down below for free.
+[  496.77s ->   502.57s] So check that out. But anyways, to answer the common question I get, are people consistently
+[  502.57s ->   509.95s] profitable with trading credit spreads? Yes, I am. My members, I have 150 paying and active members
+[  509.95s ->   515.91s] inside my 10% credit spreads community are all making money and they do so consistently. I see
+[  515.91s ->   519.83s] on Reddit, I see on YouTube, people who have an edge who know the general direction of the market
+[  519.83s ->   523.69s] will be profitable. All right, guys, I hope this helped. If you enjoyed this video, please smash that
+[  523.69s ->   526.87s] subscribe button because I come up with videos every single day to help you become a better credit
+[  526.87s ->   531.07s] spread trader and smash that thumbs up button. All right, guys, I'll see you in the next video.

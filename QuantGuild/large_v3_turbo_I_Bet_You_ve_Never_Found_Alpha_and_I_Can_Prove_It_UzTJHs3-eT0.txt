@@ -1,0 +1,67 @@
+[    0.46s ->     8.43s] I recently sat in on a meeting with a client and his asset manager, some guy with a couple hundred
+[    8.43s ->    16.83s] mil under management. But before the meeting, I ran some numbers on his portfolio. I stripped out
+[   16.83s ->    22.93s] a couple of discretionary picks from my client and found that the portfolio constructed by the
+[   22.93s ->    31.83s] manager's expertise was simply trading the market portfolio. So naturally in the meeting,
+[   31.95s ->    40.47s] I introduced myself as a quantitative researcher and I asked explicitly, what have you done for
+[   40.47s ->    50.27s] my client and his portfolio other than just trade raw beta exposure? To which he responds,
+[   50.27s ->    63.22s] what is beta? Phenomenal. You pass your series 65 and it's just handshakes and golf swings,
+[   63.44s ->    73.28s] but mathematically it is embarrassing and it's how you lose client capital. Maybe if he studied on
+[   73.28s ->    79.90s] quantguild.com, he wouldn't have looked like such an idiot. Today, we're going to strip away the noise
+[   79.90s ->    88.50s] to see exactly what's going on underneath the hood of a portfolio or a trading strategy so you can
+[   88.50s ->    96.56s] avoid looking like that guy. First things first, market beta is the wind blowing. The capital asset
+[   96.56s ->   103.98s] pricing model attempts to explain portfolio or trading strategy returns with respect to the broader
+[  103.98s ->   109.52s] market. We're not going to talk too much about this pricing model here. Yes, it doesn't account
+[  109.52s ->   115.62s] for 100% of the variations. Yes, we have other pricing models, Fama, French, momentum factors. There's a
+[  115.62s ->   121.02s] joint hypothesis problem. The notion of orthogonal returns is alpha. If you don't know what any of this
+[  121.02s ->   126.48s] is, you're certainly in rough shape. Nevertheless, for the purposes of this discussion, the market
+[  126.48s ->   135.22s] component is the economy driving returns. We have no control over it. Within a trading strategy or a
+[  135.22s ->   144.46s] portfolio, you are going to have exposure to this market factor. What you're seeing here is exactly
+[  144.46s ->   153.40s] that. It's the market factor over time. Exposure in the green zones yields positive return. Exposure in
+[  153.40s ->   161.06s] the red zones yields negative return. And shocker, this looks like the S&P 500 price path,
+[  161.06s ->   169.02s] and that is exactly what it emulates. It is effectively just market exposure. When it comes
+[  169.02s ->   178.52s] to beta, you are a passenger for the ride. You do not get to dictate what the exposure looks like
+[  178.52s ->   188.18s] at any given time. When it comes to your portfolio or your trading strategy, everybody wants to get into
+[  188.18s ->   195.62s] the back tests and building strategies, but nobody wants to learn the necessary quantitative skills.
+[  196.24s ->   203.00s] Here we have an example of a moving average strategy. I guarantee you, nobody who paints this
+[  203.00s ->   209.38s] on a chart knows the difference between filtering, smoothing, and forecasting. Nevertheless,
+[  210.14s ->   216.30s] let's take a look at a trading strategy. This might as well be the asset manager's portfolio
+[  216.30s ->   222.58s] from the story at the start of this video. In any case, let's look at the equity curve.
+[  223.28s ->   229.46s] This appears to be a promising trading strategy, right? The equity curve is certainly up and to the
+[  229.46s ->   236.96s] right. The sharp ratio is about one, a reasonable max drawdown, reasonable number of trades over the
+[  236.96s ->   243.60s] years. Maybe we trade this on a variety of different names. So what's the problem here? Well,
+[  243.60s ->   252.44s] is this an alpha, this trading strategy? Probably not. In fact, it's probably just beta, just like that
+[  252.44s ->   259.14s] asset manager's portfolio. If I run this animation here, you're observing the equity curve from the
+[  259.14s ->   267.44s] strategy above, the S&P 500 performance for that period, and the relative buy and hold of the underlying
+[  267.44s ->   280.34s] asset. What I want you to notice here is that the beta is 1.14, meaning the strategy's performance
+[  280.34s ->   290.20s] relies statistically on the market's performance during that exact same period. What we just learned
+[  290.20s ->   298.66s] a moment ago is we have absolutely no control over that. So effectively here, beta accounts for all of
+[  298.66s ->   309.32s] your return. No skill, no strategy, no edge, just accumulating transaction costs. But Roman, the signal
+[  309.32s ->   317.18s] tells us when to get into the trade and when to get out of the trade. We're not just exposed to beta all the
+[  317.18s ->   327.74s] time. Well, no, we're not timing anything. In fact, let's consider that the strategy is offering some
+[  327.74s ->   334.66s] timing advantage. Let's watch what happens when there is a massive regime change. If that were true,
+[  335.02s ->   342.04s] we would be safe. If we look at the same strategy over the same period, and then extend it a little bit
+[  342.04s ->   349.84s] into the future where we have a massive equity drawdown from the S&P 500, what happens? The strategy
+[  349.84s ->   360.34s] has almost a negative 20% return, and the beta increases. It becomes even more exposed to the
+[  360.34s ->   367.38s] market. Shocker, you're not trading an inefficiency, an alpha. You're not generating returns orthogonal to
+[  367.38s ->   374.10s] the market. Well, Roman, this is why we have regime switching models. We don't need to trade during
+[  374.10s ->   384.68s] times of economic distress. Surely there's some alpha there. Regime modeling is also probably just
+[  384.68s ->   392.20s] beta. What I'm going to do here is use a Markov chain model to determine three different regimes,
+[  392.20s ->   399.44s] low volatility, medium volatility, and high volatility. I'm only going to trade that strategy
+[  399.44s ->   410.58s] during a period of low volatility. Surely this is not just beta. If we take a look at the chart above,
+[  410.68s ->   417.92s] you will see green zones indicating low volatility. That is where we are able to enter and exit trades,
+[  417.92s ->   425.84s] periods of high and mid volatility in red and orange respectively. We will not trade in, and that is why
+[  425.84s ->   435.96s] you see cash for a majority of our strategy equity. Surely there must be some alpha here. If we take a look
+[  435.96s ->   446.06s] at the regression equation below, you will see that there is not only no alpha, but it is also statistically
+[  446.06s ->   456.02s] insignificant. That is because you are not trading an inefficiency. You are simply trading beta. Here's
+[  456.02s ->   465.74s] the truth about alpha and retail trading. There is an inverse relationship between how easy a signal is to
+[  465.74s ->   475.26s] develop and the efficacy of that signal. Please ask yourself, did I fetch clean pre-processed feature
+[  475.26s ->   482.22s] engineer and develop a model for a massive time series of hundreds of millions of rows painfully stored
+[  482.22s ->   490.62s] in parquet files using some form of crazy alternative data to inform my portfolio construction? Do I
+[  490.62s ->   496.44s] understand the difference between bearing price risk and being compensated in the cross section
+[  496.44s ->   504.68s] versus orthogonal return alpha? Do I understand the difference between asymptotics in the classroom,
+[  504.68s ->   512.76s] relative to the non-stationary, uncertain real world? Am I trading a basket of equities in the cross
+[  512.76s ->   522.76s] section or a composite portfolio of strategies? Do I have the knowledge or experience to carry my lack of
+[  522.76s ->   531.64s] any of the above? If the answer is no to any or all of these, which is far more likely, you should be studying
+[  531.64s ->   540.60s] trading and learning, not spamming back tests and certainly not trading. That'll do it for this one. I hope you enjoyed.
+[  540.60s ->   550.60s] I hope you learned something. Master your quantitative skills on Quant Guild and never look like that asset manager.
+[  550.60s ->   559.56s] Thank you so much for watching and I'll see you in the next video.

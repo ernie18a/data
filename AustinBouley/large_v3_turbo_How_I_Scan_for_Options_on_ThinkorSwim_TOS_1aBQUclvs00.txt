@@ -1,0 +1,64 @@
+[    2.77s ->    20.99s] Hey guys, I'm back, Austin Billy. I'm going over how to find options to trade, how to find good stocks that have good options. We're looking for a lot of volume, we're looking for a lot of open interest, but I'll go into that further. I'm going to teach you how to scan for them, and how to just find ones that have good patterns.
+[   20.99s ->    44.14s] So this is your TOS platform by TD Ameritrade, and you can go into trading and blah blah blah, but what I'm going to take to first is the scan. So to scan, I go in here. So when I do this, you're going to have a bunch of random stuff up on here, so you can just exit them all out if you'd like, or you can keep them.
+[   44.14s ->    60.96s] Basically for options, I'm going to go add filter for options. You can add basically whatever you want. Implied volatility, LAS, net change, gamma, you know, all the good Greeks and whatnot we have with options. I'm going to show you how mine's set up.
+[   60.96s ->    83.20s] So I have implied volatility. I want it to be high, so that I know that stuff is happening with the stock, it's moving. I want the bid to be in between 20 cents, and I just put the bat near the curve more because you can go all the way up to like $41, which is $4,100 per contract.
+[   83.20s ->    99.24s] Too much for me. I like to trade a lot of small contracts. Then I go to open interest. I like to have it actually at about $500. That's just where I dragged it and I found it just went there.
+[   99.66s ->   107.72s] And then volume, about $600. I mean, I want it to be a decent amount of volume so that I know that I can get in and out of this option fairly well and quickly.
+[  107.72s ->   122.62s] And lastly, you can change this however you want. I went and I clicked stock filter, and you can basically put whatever you want there, but I specifically did this because I like my stock to be on the high end.
+[  122.62s ->   138.12s] Basically, I'm checking to make sure that this stock is a legitimate company, and legitimate companies usually have a decent size market cap as well as the price for the ticker and slash stock.
+[  138.12s ->   148.82s] So I do that. I hit scan, and instead of having to copy all these down and then go into charts, you can create a watch list.
+[  149.28s ->   154.06s] You go under your watch list, you go to personal, and then, oh, I guess I need to save the scan first.
+[  154.06s ->   167.42s] So, this scan, once you create the scan that you'd like, you go into here, you click save scan query, you put in the name, I'm going to put example, that's how I like this one, so save that to example.
+[  167.92s ->   177.84s] I'm going to go here, I'm going to go to personal, I'm going to go to example, and it's going to pull up all the stocks that was on my previous list that I scanned.
+[  177.84s ->   187.64s] Now, if y'all haven't done this already, link one and link your watch list to one, so now you can just click and move around on this.
+[  188.06s ->   194.78s] So now, basically, I'm just looking for charts that I like, charts that I can see consistent patterns in.
+[  195.04s ->   200.74s] For instance, this one, it likes to follow trend lines pretty well, and it breaks, and it does good.
+[  201.14s ->   205.10s] It follows trend lines again, it breaks, and it does well. That works good.
+[  205.10s ->   210.78s] So now, what we're going to check next is we're going to go into our trade, we're going to check out, what do we have here?
+[  211.32s ->   215.36s] Volume. Look how low this volume is. I cannot do anything with that volume.
+[  215.70s ->   223.98s] Like I said, I'm looking for at least over 500 for volume and open interest is preferable, but of course, I'd like a lot more than that.
+[  224.80s ->   230.42s] So, that's going to be a no. I can continue. Of course, I can use my, I already have that one in there.
+[  230.42s ->   238.04s] Bob already have that. Let's see, city. Let's see, we have a lot of good stuff going on here.
+[  238.14s ->   240.84s] If I connect all that, we've got a triangle breakout pattern.
+[  241.26s ->   245.74s] So, it follows patterns well. It follows the trend well, as we can see.
+[  247.68s ->   251.90s] So, this one is not bad. Let's look at the trade aspects of it.
+[  251.90s ->   264.30s] Ooh, I love that volume. That's pretty good volume, pretty good open interest, and we're looking at about $52.79 per contract, which is brilliant.
+[  264.40s ->   267.00s] If you have a smaller account, the volume is there.
+[  267.18s ->   276.21s] I will definitely add that now to my, or not my watch list, but yeah, I guess it's my active options watch list.
+[  276.21s ->   285.96s] What's next? I can already tell you, because I saw from the trade that the volume is too low.
+[  286.36s ->   294.52s] Of course, if you want to go check the monthlies, like these monthlies have good volume, so maybe if you want to trade monthly options, you can trade there.
+[  295.18s ->   301.08s] Something else, if you want to check, you can also go in here and change the net change to see how much it changed that day.
+[  301.08s ->   314.28s] So, for instance, if you would have, I mean, you can't say would have, because you don't know what's going to happen, but if you would have bought this put this morning, it would have increased 1,300%, which is basically 13 times your money.
+[  314.76s ->   319.54s] So, if you put in, I'll say, $100 times 13, you make $1,300.
+[  321.22s ->   325.54s] So, that's pretty cool, but I'm going to change it back to open interest, because I'm not too worried about that.
+[  325.62s ->   329.36s] I just want to see and make sure the volume and interest is there for me to buy it.
+[  329.36s ->   335.20s] So, cat, I mean, yeah, I guess for monthlies, it's really good.
+[  335.38s ->   337.32s] I'll just add that, you know, it never hurts.
+[  338.24s ->   339.52s] Let's continue to look at these.
+[  340.64s ->   344.08s] Of course, I can just use my AeroPad if I want to go through.
+[  345.36s ->   355.04s] I can do some pattern, Facebook, I already have that on there, Netflix, NVIDIA, I already have that on there, and XPI, some light conductors, you know, Shopify.
+[  357.88s ->   359.34s] Patterns aren't really consistent.
+[  359.34s ->   360.86s] I mean, like, it's slow-moving.
+[  360.94s ->   365.44s] It's not an up-and-down stock, so I can't really do much with it unless I want to strangle or straddle it.
+[  365.68s ->   367.16s] That's not my method right now.
+[  367.86s ->   368.86s] Maybe in the future.
+[  370.30s ->   373.42s] Tesla, WDC, Western Digital.
+[  375.02s ->   375.66s] I'm good.
+[  375.66s ->   380.50s] So, that's all that came up on my stock watch list.
+[  380.58s ->   386.02s] Of course, I can change the parameters and scan and then re-save it so I can get more options.
+[  386.32s ->   391.18s] If I basically, if I went all the way down to zero and I scanned, I could get a bunch of options here.
+[  391.18s ->   395.90s] And then I just go here, I go, well, I guess I didn't save it.
+[  396.26s ->   401.06s] We're going to go, we're going to save, scan, save, yes, okay.
+[  401.74s ->   405.92s] Go here, personal, sample, and now I have all those stocks.
+[  406.62s ->   407.92s] Oh, look, JC Penney's in here.
+[  408.04s ->   408.94s] I haven't checked out JC Penney.
+[  410.29s ->   410.55s] Nah.
+[  410.55s ->   418.69s] So, basically, what I look for is I look for big-name companies, companies that I've heard of, that everybody's heard of, that has a lot of volume and open interest.
+[  420.17s ->   426.02s] Open interest, huge volume, not too big.
+[  426.38s ->   430.20s] I'm more focused on volume than I am open interest because volume is intraday.
+[  430.34s ->   432.24s] Open interest is how many people is holding it.
+[  432.54s ->   436.08s] So, I don't know if they want to sell enough, but the volume is what I'm really looking for.
+[  436.82s ->   440.94s] So, that was a brief overview of how I scan and look for stocks.
+[  441.70s ->   442.50s] I hope that helped.
+[  442.90s ->   443.72s] See you all next time.
+[  443.98s ->   473.96s] See you all next time.

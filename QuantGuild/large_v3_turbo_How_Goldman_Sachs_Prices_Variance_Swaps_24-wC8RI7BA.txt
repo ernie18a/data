@@ -1,0 +1,317 @@
+[    0.46s ->     7.47s] hey guys roman here quantitative researcher and trader founder of quant guild today we're going
+[    7.47s ->    13.53s] to talk about how goldman sachs prices variance swaps i'll start with a brief discussion about
+[   13.53s ->    20.89s] what a variant swap is how its payoff functions what it means to take a long or a short position
+[   20.89s ->    27.51s] in this particular product i'll briefly mention some critical notes about the variant swap from
+[   27.51s ->    35.63s] the history to the discretization and practical implementation and then we'll focus on explicitly
+[   35.63s ->    44.13s] deriving the risk neutral price for this particular product for the variant swap using stochastic
+[   44.13s ->    50.47s] calculus and the car madden replication theorem if you're looking to follow along with written notes
+[   50.47s ->    55.99s] i'll leave a link in the description below to the lecture notes that i'm using to guide this
+[   55.99s ->    61.77s] discussion i'll also post them on the quant guild library on github where you can find all of my
+[   61.77s ->    68.59s] lecture notes jupiter notebooks associated youtube videos and all of the source code for my quant
+[   68.59s ->    73.27s] builds moreover these videos certainly take a lot of effort to create so if you'd like to help support
+[   73.27s ->    78.27s] the channel so i can continue to create videos just like this one please like comment subscribe share
+[   78.27s ->    84.41s] it helps me out tremendously it is always greatly appreciated and if you'd like to master your
+[   84.41s ->    90.79s] quantitative skills check out quant guild.com maybe you come from a background in business economics
+[   90.79s ->    96.71s] computer science and aren't too sure where to get started on your quant journey maybe you're an
+[   96.71s ->   103.65s] aspiring quant or a working professional looking to sharpen those technical skills or even pivot into
+[  103.65s ->   110.59s] the quant space in any case quant guild is for you we have over 90 quant lessons in math probability
+[  110.59s ->   117.51s] finance an adaptive practice engine that scales with your skill level so you can progress to more and more
+[  117.51s ->   127.67s] difficult topics with gamified rank based progress over 100 hours of lecture content topics that you would
+[  127.67s ->   136.75s] find in a master's in financial engineering program but for a fraction of the price so if you'd like to
+[  136.75s ->   143.81s] help support the channel and master your quantitative skills for trading and market making roles check
+[  143.81s ->   149.65s] out quant guild.com without further ado let's get started by discussing this idea of a variant swap what
+[  149.65s ->   157.47s] is a variant swap well all it is is simply a forward contract on annualized variants on a particular
+[  157.47s ->   165.41s] underlying what is a forward contract well a forward contract is simply going to specify a maturity date
+[  165.41s ->   173.63s] and a delivery price if i'm long that contract then at maturity i have the obligation to buy
+[  173.63s ->   183.59s] at the delivery price if i am short that contract then i have the obligation to sell at the delivery price now
+[  183.59s ->   194.13s] the underlying is not wheat or cattle in this case it is going to be variants so when i look to take a long
+[  194.13s ->   201.85s] or a short position in a variance swap i'm going to determine what the delivery price or the implied
+[  201.85s ->   211.11s] variant strike is this is effectively what k is this is going to be the market's best guess at what the
+[  211.11s ->   220.95s] realized volatility is throughout the life of this variance swap now of course something else is going to happen
+[  220.95s ->   226.89s] altogether and that's going to be what we actually realize this is going to be the realized stock
+[  226.89s ->   233.73s] variance to determine the payoff of the variant swap at maturity we are going to take the difference
+[  233.73s ->   240.67s] the difference between the variance that was actually realized throughout the life of that contract and
+[  240.67s ->   249.81s] the implied variance strike if the realized variance is greater than the implied variance then this is going to be
+[  249.81s ->   257.69s] positive if i am long the contract then i am going to be able to effectively buy at the implied
+[  257.69s ->   265.29s] variance strike sell at the realized stock variance i will just be effectively collecting this difference
+[  265.29s ->   274.91s] and my payoff is going to be of course determined by the initial amount per volatility point whatever size i had
+[  274.91s ->   282.49s] in this particular variant swap now keep in mind there really isn't anything to deliver this is simply going to be
+[  282.49s ->   293.79s] a cash flow now if it is the case that the realized stock variance is less than the implied variance strike
+[  293.79s ->   303.93s] then this will be negative if i had a long position then i would be forced to buy at the higher implied variance strike
+[  303.93s ->   312.89s] and sell at the lower realized stock variance of course relative to the notional amount per bull point
+[  312.89s ->   321.95s] my size in this variant swap and i would realize a loss a negative cash flow if i was taking a short position
+[  321.95s ->   329.53s] then those two cash flows would be reversed this is effectively what it means to be long or short
+[  329.53s ->   339.19s] a variance swap if i'm long then i want realized stock variance to be arbitrarily higher than the implied
+[  339.19s ->   348.39s] variance strike and vice versa if i'm short then i want realized variance to be lower than the implied
+[  348.39s ->   355.67s] variance strike then my payoff will of course be relative to whatever sizing i have in this particular
+[  355.67s ->   363.57s] swap now before we move into the pricing of the variant swaps there are a few critical notes first
+[  363.57s ->   372.35s] off payoff is going to occur at maturity unlike similar products say interest rate swaps which may realize
+[  372.35s ->   379.27s] cash flow throughout the life of the contract in this case we're only going to realize the payoff of a
+[  379.27s ->   387.77s] variance swap at maturity and that's due to this interesting issue of convexity if variance spikes early on
+[  387.77s ->   397.57s] within the contract's maturity there may be a massive payout but that may not be justified in the context of
+[  397.57s ->   405.71s] the variance to be realized throughout the entire contract itself so due to this issue payoff is going to occur
+[  405.71s ->   415.81s] at maturity moreover it's not technically a pure volatility play this has to do with the additivity of
+[  415.81s ->   424.81s] variance relative to the square root of variance but i more explicitly document this in my lecture notes
+[  424.81s ->   432.69s] link in the description if you'd like to take a look at exactly what i mean by this the goldman sachs
+[  432.69s ->   439.81s] and the seba implementation for the vix the discretization logic is available but i won't cover
+[  439.81s ->   447.11s] it explicitly in this video i would be absolutely stoked to do a video dedicated to the discretization
+[  447.11s ->   454.35s] of this continuous formula if there's interest please let me know in the comments below but in any case
+[  454.35s ->   462.19s] that will also be listed in my lecture notes and i wanted to make the remark that understanding the full
+[  462.19s ->   471.39s] history will certainly paint a fuller picture of this pricing argument i would love to do a video
+[  471.39s ->   480.59s] dedicated to the history of this particular product as well from car madden to the goldman sachs team so
+[  480.59s ->   487.23s] on and so forth all of the academic papers and desk notes let me know if there's interest in that
+[  487.23s ->   496.83s] drop a comment below so what is our objective here our objective is to determine the fair price the
+[  496.83s ->   506.03s] delivery price or the implied variant strike kvar of this forward contract on annualized variance for a
+[  506.03s ->   514.89s] particular underlying the variance swap so to do this we're going to use arbitrage pricing theory our objective
+[  514.89s ->   528.96s] derivative is to find kvar in a risk neutral sense to do this first because we're trading a derivative
+[  528.96s ->   535.76s] contract we need to assume some dynamics for the underlying so what i'm going to do is i'm going to
+[  535.76s ->   544.00s] say that the underlying follows this diffusion the instantaneous return is decomposed into a drift component
+[  544.56s ->   554.01s] and a volatility component where w of t is just a standard brownian motion now what is it that we're
+[  554.01s ->   561.61s] actually looking for well we're looking for the annualized realized variance that's going to
+[  561.61s ->   570.09s] simply be defined as this integral it's going to be one over cap t the integral from zero to time cap t of
+[  570.09s ->   581.69s] the squared volatilities across time that is going to formally define our annualized realized variance
+[  581.69s ->   590.17s] throughout the life of this particular contract relative to this underlying process now of course we can't
+[  590.17s ->   599.85s] just directly trade variance we need to express this in terms of observable market variables
+[  600.09s ->   605.05s] to accomplish this let's take a look at a transformation of the original price process
+[  605.05s ->   612.01s] what i'm going to do is i'm going to define a function f of s sub t that's our stock price process
+[  612.01s ->   619.85s] and this is just going to be the natural logarithm of the stock price process now we are dealing with
+[  619.85s ->   626.49s] geometric multiplicative dynamics if we take the logarithm we're then going to be dealing with
+[  626.49s ->   634.09s] additive dynamics so this isn't out of the ordinary and moreover this transformation is actually going
+[  634.09s ->   642.33s] to explicitly satisfy the derivative requirement to be able to substitute in the observable market
+[  642.33s ->   651.77s] characteristics for this variance so now that we have this transformation of our stock price process
+[  651.77s ->   656.73s] what are we going to do well we're going to take a look at the differential it's a differential of a
+[  656.73s ->   665.05s] time dependent function of a stochastic process this is going to call for ito's lemma notice there is no
+[  665.05s ->   676.25s] dependency on time explicitly so if i apply ito's lemma i'm going to be left with d of f s sub t which is
+[  676.25s ->   688.89s] equal to d the natural logarithm s sub t this is going to be made up of then only the first derivative
+[  688.89s ->   699.69s] with respect to s sub t d s sub t plus one half this is the second order term the second derivative with
+[  699.69s ->   708.89s] respect to s sub t and then of course we're going to be dealing with that second order term d s sub t squared
+[  710.17s ->   720.22s] fortunately for us the first and second derivative are very easy to find it's just going to be the
+[  720.22s ->   730.96s] first derivative of the natural logarithm that's just going to be 1 over s and the derivative of
+[  730.96s ->   739.52s] 1 over s for our second derivative is just going to be negative 1 over s sub t squared so these are
+[  739.52s ->   747.12s] quite trivial to find but what about these guys well these are just going to be given by our
+[  748.00s ->   764.91s] underlying dynamics so we know that d s sub t is equal to mu t s sub t dt plus sigma t s sub t d w t but what
+[  764.91s ->   779.29s] about d s sub t squared well this is going to be all of that just squared but what do we know about our
+[  779.29s ->   793.53s] rules from stochastic calculus well we know dt squared is going to go to zero we know dwt dt is going to go to
+[  793.53s ->   802.33s] zero and we know that dwt squared this is of course our quadratic variation it can't just be infinitely
+[  802.33s ->   812.19s] smooth it's going to accumulate variation according to it's going to go to dt so in other words when i
+[  812.19s ->   818.99s] actually expand out this square the first term squared that's going to go to zero because dt squared goes to
+[  818.99s ->   826.99s] zero the cross term to the product of these guys well that's going to zero because dt dwt that's going
+[  826.99s ->   833.31s] to go to zero what about the last term here when i square this whole thing well that's not going to go
+[  833.31s ->   845.39s] to zero because i get dwt squared we know that goes to dt so turns out that d s sub t squared is going to go to
+[  845.39s ->   855.47s] sigma squared dt s sub t squared and dwt squared is just going to go to dt this is just going to be
+[  856.03s ->   862.51s] applying effectively ito's lemma to this transformation and then we're just going to take a
+[  862.51s ->   869.55s] look at our dynamics for the underlying and we are going to use our rules from stochastic calculus to
+[  869.55s ->   879.47s] effectively remove some of these terms now that we have these dynamics what do we notice well we have
+[  879.47s ->   886.91s] this variance term that is certainly desirable we're looking for market observable characteristics that we
+[  886.91s ->   894.03s] can effectively substitute in to this equation for annualized realized variance and it seems like we're
+[  894.03s ->   900.59s] almost there so now that we have all of this information let's just plug it back into this
+[  900.59s ->   909.36s] differential here so i'm going to copy this guy i'm going to paste it down here fortunately for us
+[  909.36s ->   915.60s] we know what everything is now so we can just make the substitutions what i'm going to do is start with
+[  915.60s ->   923.12s] this first term here we know that the first derivative with respect to the stock price process of our
+[  923.12s ->   929.68s] log transformation is just going to be one over s sub t and then we're just left with
+[  930.48s ->   938.08s] the differential d s sub t and this second component here is just going to be made up of the
+[  938.64s ->   944.80s] second derivative of our transformation our log transformation with respect to the stock price
+[  944.80s ->   950.40s] process and we know that that's just going to be the derivative of this guy which is in fact
+[  950.40s ->   959.04s] negative so we get negative one over two one over s sub t squared then what about our diffusion
+[  959.04s ->   965.45s] component squared well we know that it's just going to be equivalent to that guy there we used our rules
+[  965.45s ->   974.09s] from stochastic calculus we removed dt squared and the cross term dwt squared is going to behave like dt
+[  974.09s ->   985.29s] so we are left with sigma squared t s sub t squared dt fortunately for us these guys are going to cancel out
+[  986.01s ->   995.05s] and if you recall this entire thing was equal to d l n of s sub t this was what we were after all along
+[  995.05s ->  1002.01s] and why we applied ito's lemma we have our log transformation here i'm looking for the
+[ 1002.01s ->  1009.93s] differential of this time dependent function of a stochastic process and now i'm left with this
+[ 1009.93s ->  1024.92s] expression here this is going to be d l n s sub t is equal to d s sub t over s sub t minus one half sigma
+[ 1024.92s ->  1055.88s] the differential of our log transformation now this is in differential form but we want to
+[ 1055.88s ->  1063.24s] we want to integrate to find the realized variance that is our objective remember we're trying to
+[ 1063.24s ->  1073.56s] find an equivalent of this but using market tradable instruments so if i come on down here i'm going to
+[ 1073.56s ->  1080.92s] now express this in integral form so i'm going to integrate from zero to t one half sigma squared dt
+[ 1081.64s ->  1090.28s] this is going to be equal to then i'll integrate the other side as well zero to cap t d s sub t s sub t
+[ 1091.16s ->  1103.64s] less the integral from zero to cap t of d l n s sub t all right so what can we actually solve for here
+[ 1104.44s ->  1109.64s] well we can solve for this quite easily using the fundamental theorem of calculus if we're
+[ 1109.64s ->  1117.32s] just going to be integrating the derivative of l n s sub t over effectively the index t then it's just
+[ 1117.32s ->  1121.80s] going to be the difference of the logs and the difference of the logs is going to amount to
+[ 1122.44s ->  1132.20s] simply the log ratio of the difference so this is going to turn into then one half integral zero to t
+[ 1132.20s ->  1143.32s] sigma squared d t this will be equal to zero to cap t d s sub t over s sub t minus this is just then
+[ 1143.32s ->  1155.85s] going to be l n of s sub cap t over s sub zero if i multiply both sides now by two divided by t
+[ 1155.85s ->  1167.69s] i'm just going to multiply everything by two over cap t what am i left with well one over cap t the
+[ 1167.69s ->  1179.66s] integral from zero to cap t sigma squared dt this is equal to then two over cap t the integral from zero to cap t
+[ 1179.66s ->  1196.09s] d s sub t d s sub t over s sub t minus l n of s sub t s sub zero now why is this awesome well because what does
+[ 1196.09s ->  1207.44s] this look like over here this is our annualized realized variance this is v we can just make the substitution now
+[ 1207.44s ->  1221.32s] and we know that v is equal to two over cap t the integral from zero to cap t d s sub t over s sub t
+[ 1222.20s ->  1233.58s] minus l n s sub cap t over s sub zero and we have effectively found a way to express the annualized
+[ 1233.58s ->  1241.98s] realized variance in terms of what market instruments things that we can actually observe and trade in
+[ 1241.98s ->  1249.42s] the market all right more technically why is this such a big deal well effectively the annualized
+[ 1249.42s ->  1258.62s] realized variance is being expressed by a composite portfolio holding a continuously rebalanced stock
+[ 1258.62s ->  1267.50s] position and a short position in an instrument with this log payoff and if that's the case then
+[ 1268.14s ->  1276.06s] using arbitrage pricing theory and a no arbitrage argument if we find the risk neutral expectation
+[ 1276.06s ->  1283.82s] herein we should be deriving then the fair price the delivery price of that forward contract the implied
+[ 1283.82s ->  1290.38s] variance strike of our variance swap what does this actually look like well we're just going to take
+[ 1290.38s ->  1297.58s] the risk neutral expectation so what i'm going to say is i'm going to say that the k var that we were after
+[ 1298.22s ->  1307.58s] is going to be equivalent to the risk neutral expectation of v and this is going to then be the risk
+[ 1307.58s ->  1316.94s] neutral expectation of what we just solved for two over cap t the integral from zero to cap t of this stock
+[ 1316.94s ->  1330.49s] position less this short position and an instrument with this log payoff all right now fortunately for
+[ 1330.49s ->  1335.61s] us we know that we're operating under this risk neutral measure now we no longer have this notion of
+[ 1336.25s ->  1345.77s] the real world measure p that we proposed for our underlying dynamics so we know in order for these
+[ 1345.77s ->  1354.65s] dynamics to be risk neutral this stock position must earn the risk free rate by linearity of expectation
+[ 1354.65s ->  1362.01s] i'm allowed to distribute this expectation to each of these terms this is of course non-random so what's
+[ 1362.01s ->  1371.77s] going to happen here is this is going to go to our cap t effectively from zero to cap t if we maintain
+[ 1371.77s ->  1378.81s] that continuously rebalanced position we must earn the risk free rate so this is going to look like
+[ 1380.48s ->  1389.52s] two over cap t r times cap t that's what this first term has effectively gone to less the risk
+[ 1389.52s ->  1399.87s] neutral conditional conditional expectation of this particular log payoff if you're wondering where
+[ 1399.87s ->  1407.63s] this rt came from that is simply just the change of measure we're going from the p measure to the q
+[ 1407.63s ->  1414.99s] measure we're no longer being compensated for bearing risk we are going to then just earn in expectation
+[ 1414.99s ->  1423.47s] the risk free rate r over time zero to cap t that difference in time is simply cap t and that's why
+[ 1423.47s ->  1430.27s] we are left with the product of r and cap t it's simply in expectation under the risk neutral measure
+[ 1430.27s ->  1436.59s] we are going to be earning the risk free rate that is exactly what this is suggesting and that is the
+[ 1437.23s ->  1444.35s] notion of the change of measure keep in mind our objective is to find this risk neutral or fair price of
+[ 1444.35s ->  1452.51s] the ford contract today the implied variant strike the delivery price of the variant swap k var and
+[ 1452.51s ->  1459.39s] we've already done most of the heavy lifting we have shown that we can represent the annualized realized
+[ 1459.39s ->  1468.59s] variance by this portfolio of a continuously rebalanced stock position that after taking the risk neutral
+[ 1468.59s ->  1475.55s] expectation just goes to the risk free rate accumulated over time less than of course effectively it's just
+[ 1475.55s ->  1485.39s] a short position in this log payoff so we can't trade this log payoff directly we're kind of back where we
+[ 1485.39s ->  1490.75s] started right we needed a way to represent the variance in terms of something tradable a tradable
+[ 1490.75s ->  1497.23s] portfolio we've done this now now we're not dealing with variance directly but we can't trade this log
+[ 1497.23s ->  1502.91s] payoff directly in the markets fortunately for us we have the car madden replication
+[ 1502.91s ->  1510.91s] theorem which states for any twice differentiable function or payoff function which we certainly have here
+[ 1510.91s ->  1517.31s] this log of a quotient is certainly twice differentiable we're going to be able to replicate that payoff
+[ 1517.31s ->  1523.87s] with a series of options contracts so let's go ahead and take a look at how this actually works so
+[ 1524.43s ->  1528.59s] by the car madden replication theorem we're going to take a look at the expansion
+[ 1529.71s ->  1537.87s] about an arbitrary point relative to this payoff function so in this case we're no longer dealing
+[ 1537.87s ->  1544.35s] with f as our transformation we're dealing with f as our payoff function so i'm going to say here
+[ 1546.33s ->  1554.73s] f of s sub cap t is going to be equal to negative the log of this quotient s sub t and in
+[ 1554.73s ->  1564.81s] this case we'll just choose an arbitrary point s star so we are working with now this payoff this is
+[ 1564.81s ->  1575.08s] what we're trying to replicate using options contracts so if we go ahead and expand about this arbitrary
+[ 1575.08s ->  1582.67s] point s star we're going to get that this is equal to and this is just an expansion of the function
+[ 1582.67s ->  1590.03s] the function evaluated at s star plus the first derivative evaluated at s star times of course
+[ 1590.03s ->  1596.96s] the difference pretty standard up until this point now we have our puts and our calls we are going to
+[ 1596.96s ->  1605.85s] effectively integrate from 0 to s star these are our puts the second derivative evaluated at k
+[ 1607.13s ->  1617.68s] k k less s sub cap t positive dk this is going to be the put component and then we have s star
+[ 1618.32s ->  1631.26s] to infinity this is going to be our call component all right now fortunately for us these are quite easy to
+[ 1631.26s ->  1643.42s] find the payoff function evaluated at the payoff function so if we evaluate the payoff function at let's say s star
+[ 1643.42s ->  1653.98s] we'll start with this guy here we are going to get f of s star this is equal to negative the log of s star over s star
+[ 1654.70s ->  1663.10s] this is negative just the log of one which is of course going to be zero then if we take a look at f
+[ 1663.10s ->  1676.32s] the first derivative with respect to s star we are going to get negative one over s star and if we take a
+[ 1676.32s ->  1689.18s] look at the second derivative evaluated at not s but k which is what we need for our put and call components
+[ 1689.18s ->  1701.74s] we are going to get one over k squared all right so that is effectively going to be the coefficients
+[ 1702.54s ->  1709.26s] for each of these terms here we're going to be able to substitute everything in now and we're going to
+[ 1709.26s ->  1724.36s] get negative the log of s cap t s star is equal to we'll start with this guy here we're going to get
+[ 1724.36s ->  1733.56s] effectively just zero then we're going to have to plug in f prime s star plus the difference that's just
+[ 1733.56s ->  1745.88s] going to be this ratio here negative one over s star so we get s sub cap t less s star over s star and
+[ 1745.88s ->  1758.49s] this whole thing is going to be negative then we have our put component which is going to be one over k
+[ 1758.49s ->  1774.96s] squared the integral from zero to s star of k less s sub cap t positive dk and then we have the call
+[ 1774.96s ->  1787.82s] component as well plus the integral from s star to infinity of one over k squared k minus s sub t
+[ 1787.82s ->  1804.17s] minus k positive dk cool so now that we have this representation effectively of the log payoff what are
+[ 1804.17s ->  1811.61s] we trying to do well we're trying to find the risk neutral expectation so let's just take the risk
+[ 1811.61s ->  1818.57s] neutral expectation of both sides of the equation so what i'm going to do here effectively is and maybe
+[ 1818.57s ->  1830.36s] i'll just resize this for simplicity is i am going to be taking the risk neutral expectation of both
+[ 1830.36s ->  1837.88s] sides of this equation so i'm going to find that negative that is this short position right of this
+[ 1837.88s ->  1846.60s] risk neutral expectation of this log payoff is going to be capable of being represented as this
+[ 1847.48s ->  1855.00s] risk neutral expectation of the right hand side and everything on the right hand side is tradable we
+[ 1855.00s ->  1861.80s] effectively and it may be an infinite strip of calls and puts but they are tradable so we're going to have
+[ 1861.80s ->  1867.56s] to do some adjustments for discretization sure but in any case this is theoretically sound so we're going
+[ 1867.56s ->  1873.88s] to be dealing with then the risk neutral conditional expectation of this guy here s star is an arbitrary
+[ 1873.88s ->  1880.44s] reference point so that's non-random and we're just dealing with s sub cap t which under risk neutral
+[ 1880.44s ->  1887.64s] dynamics is just going to be the spot price accumulating the risk free rate in expectation so
+[ 1887.64s ->  1895.98s] we're going to be dealing with negative s sub zero the spot price evolving at the risk free rate less s
+[ 1896.94s ->  1906.49s] sub star over s sub star then when we take the risk neutral expectation of the integrals what are we
+[ 1906.49s ->  1915.85s] dealing with here well we're effectively just dealing with our puts and our calls if we recall the risk
+[ 1915.85s ->  1928.62s] neutral expectation of s sub cap t less k positive under the diffusion dynamics we assumed is just going to
+[ 1928.62s ->  1941.95s] be the value of a call in this case or if it's going to be the difference of the strike and the price at
+[ 1941.95s ->  1950.67s] maturity this is going to be our put so really all we're dealing with here is different calls and puts so
+[ 1950.67s ->  1957.71s] it's calls and puts at varying strikes so when we use linearity and we distribute this
+[ 1958.67s ->  1967.02s] risk neutral expectation to these infinite series of calls and puts this infinite strip of options here
+[ 1967.74s ->  1973.50s] really what we're just doing is we're saying hey we have calls and puts across a variety of strikes that
+[ 1973.50s ->  1983.82s] we need to go about replicating this log payoff and that makes this formula here or this integral i should
+[ 1983.82s ->  1992.64s] say e to the and we are going to have to discount this back to the present or consider the discounting
+[ 1992.64s ->  1998.24s] in a forward sense the forward compounding it's going to be evolving at the risk new uh the risk-free
+[ 1998.24s ->  2006.88s] rate we're going to integrate then from zero to s star one over k squared that's going to be the weighting
+[ 2006.88s ->  2014.67s] and in this case we just have our put so it's going to be the put at a particular strike and we are going
+[ 2014.67s ->  2022.99s] to be effectively integrating over the strikes so that's our strip of puts now we have our strip of
+[ 2022.99s ->  2031.07s] calls so we're going to go from s star all the way to infinity one over k squared the calls integrating
+[ 2031.07s ->  2041.07s] over the calls so that is effectively how we are going from just these payoff dynamics to the actual
+[ 2041.07s ->  2048.27s] calls and puts at the varying strikes because given these risk neutral dynamics for the underlying
+[ 2048.27s ->  2053.39s] diffusion we're just dealing with the calls and the puts that's what this max function is after all
+[ 2053.39s ->  2060.27s] it's just going to be a put payoff and a call payoff and we don't know what the price is at time cap t
+[ 2060.91s ->  2068.35s] but via black trolls we do know what it is in the risk neutral sense via the diffusion dynamics that we
+[ 2068.35s ->  2075.79s] have so then we can just parameterize it by a k and that's effectively all we're saying here
+[ 2075.79s ->  2087.47s] all right so this is actually going to yield then this right hand side here this is the risk neutral
+[ 2087.47s ->  2099.00s] conditional expectation of this log payoff so we can represent that as this portfolio of the spot
+[ 2100.25s ->  2106.81s] this particular portfolio of the spot that we're trading the underlying and a collection it's really an
+[ 2106.81s ->  2113.45s] infinite strip of puts and calls if we combine everything now we'll see that we've effectively
+[ 2113.45s ->  2121.05s] replicated the annualized realized variance as this portfolio of a continuously rebalanced stock
+[ 2121.05s ->  2127.45s] position with this log payoff we can't directly trade that log payoff so we used the car madden
+[ 2127.45s ->  2134.97s] replication theorem we see that we can represent effectively this log payoff as an infinite strip of calls
+[ 2134.97s ->  2142.33s] and puts we combine these pieces of the puzzle together we get our risk neutral our fair delivery price
+[ 2142.33s ->  2152.33s] our fair implied variance strike for this forward contract the price of the variance swap k var
+[ 2153.13s ->  2160.17s] so let's just go ahead and do this we'll put all of these pieces together before we do this because
+[ 2160.17s ->  2167.85s] we have come up with an arbitrary point s star we've done this in general we'll be able to generalize this
+[ 2167.85s ->  2177.29s] implied variance strike in doing so we just need to recall a log identity if i have negative ln the ratio of s
+[ 2178.01s ->  2187.93s] cap t over s zero then i am effectively able to multiply this by s star over s star that's just
+[ 2188.57s ->  2197.39s] one if i do a little bit of rearranging then i'm going to get negative ln this is going to be s
+[ 2198.59s ->  2209.90s] sub cap t over s star times s star over s zero and then by our log rules this product is going to be
+[ 2209.90s ->  2222.62s] be just the addition so it's going to be negative ln s sub cap t over s star plus ln of s star over s zero
+[ 2223.34s ->  2232.54s] if i distribute the negative through this is just negative ln the ratio of s sub t over s star less ln of s star
+[ 2232.54s ->  2244.54s] s star over s zero so now we know what everything is and we can go ahead and plug it in accordingly so we know
+[ 2244.54s ->  2256.84s] that k var just with a little bit of algebra is going to be equal to 2 over cap t times r cap t
+[ 2256.84s ->  2270.52s] less s sub 0 over s star evolving at the risk-free rate less 1 minus the natural log of the ratio s star over s
+[ 2271.32s ->  2285.24s] 0 plus e to the rt this is going to be our strip of puts 0 to s star p of k weighted by that k squared
+[ 2285.24s ->  2297.88s] dk and the same for our calls going from s star to infinity we're going to have ck k squared dk
+[ 2297.88s ->  2309.87s] dk and this is going to be effectively the risk neutral price the fair price of that forward contract
+[ 2310.43s ->  2318.83s] our variance swap if we're long this variant swap and realize volatility is higher than this delivery price this
+[ 2318.83s ->  2327.07s] implied variant strike we are going to receive a payoff but if realized is lower and we're long we are going to lose
+[ 2327.07s ->  2336.35s] the difference and vice versa if we are short if we head on over actually to emmanuel durman dot com
+[ 2336.35s ->  2345.79s] we can see a quantitative strategy note by goldman sachs published in 1999 more than you ever wanted to know
+[ 2345.79s ->  2355.63s] about volatility swaps 99 a great year i love this but less than it can be said let's see what they derive
+[ 2355.63s ->  2367.20s] as their risk neutral variant swap formula we can see similar methodology here believe it would be
+[ 2370.67s ->  2376.75s] there we go right about here we can see the fair value of future variants can be related to the
+[ 2376.75s ->  2383.63s] initial fair value of each term on the right hand side of equation 21 by using the identities in 2325
+[ 2383.63s ->  2396.48s] we obtain that the implied variant strike is going to be exactly what we got here and that is effectively
+[ 2396.48s ->  2406.32s] the argument used the argument to derive the risk neutral price of the variant swap it's just a forward
+[ 2406.32s ->  2415.92s] of course we're going to be the same price we're using no arbitrage argument arbitrage pricing theory
+[ 2415.92s ->  2425.12s] to produce this price if we got different prices then arbitrage would exist let's wrap up with a brief
+[ 2425.12s ->  2431.68s] summary and a discussion qualitatively about what each of these terms actually are what is this
+[ 2432.32s ->  2442.56s] s star term why did we go about this transformation here why did we include it in this expansion when we
+[ 2442.56s ->  2450.88s] were going about car madden replication for this log payoff well to take it from the top just to provide
+[ 2450.88s ->  2459.77s] a brief summary of the argument what we're looking for is effectively the delivery price the fair price the
+[ 2459.77s ->  2468.33s] implied variance strike of this variance swap it's just a forward contract we're going to rely on an arbitrage pricing
+[ 2468.33s ->  2476.41s] argument we're going to assume standard diffusion dynamics we can find the annualized realized variance as
+[ 2476.41s ->  2484.73s] this continuous integral and we're going to first consider a log transformation on the price path once we do that we're
+[ 2484.73s ->  2492.65s] going to notice that if we apply ito's lemma we're going to be able to get an expression for variance and we're
+[ 2492.65s ->  2501.61s] going to actually be able to express this annualized realized variance in terms of tradable instruments in the
+[ 2501.61s ->  2508.81s] market and that is where we get this expression here we are effectively able to isolate
+[ 2509.69s ->  2518.89s] the accumulation of variance over time using this decomposition of a continuously rebalanced stock
+[ 2518.89s ->  2530.86s] position and a log payoff now we're going to take the risk neutral expectation and we get the accumulation of
+[ 2531.66s ->  2536.70s] drift in the risk neutral sense we're just going to be earning the risk free rate and expectation
+[ 2537.26s ->  2543.26s] and we are going to have a short position in this log payoff but we can't trade this log payoff
+[ 2543.82s ->  2551.66s] directly in practice so what we're going to do is we're going to use car madden and their replication theorem
+[ 2552.22s ->  2560.54s] to effectively represent it as an infinite strip of calls and puts but if you notice i chose an arbitrary point as star
+[ 2560.54s ->  2568.06s] this is typically denoted a hinge or a pivot this is what is going to separate the out of the money calls
+[ 2568.06s ->  2574.22s] and puts in other words i don't want to trade in the money options they're liquid they're more difficult
+[ 2574.22s ->  2582.38s] more costly to trade i want to trade out of the money liquid options so that's why include i included this
+[ 2582.38s ->  2591.90s] as star it's without loss of generality so now if i come down here i apply the risk neutral expectation
+[ 2592.54s ->  2601.00s] we find that we can represent the log payoff in that capacity holding that portfolio we put all of the
+[ 2601.00s ->  2608.04s] pieces of the puzzle together we note that we can represent that desired log payoff effectively as
+[ 2608.60s ->  2615.48s] this difference here with respect to our hinge or pivot points and we're left with this variant swap
+[ 2615.48s ->  2623.16s] pricing formula so effectively these are our adjustment terms for operating with this hinge
+[ 2623.72s ->  2632.04s] this pivot point if we were to make it equivalent to the ford or the spot ford then we would just be left
+[ 2632.04s ->  2637.96s] with an infinite series uh an infinite strip effectively of in the money out of the money options we would have
+[ 2637.96s ->  2647.24s] no adjustment term but in this case the hinge is going to allow us to select only the desired options
+[ 2647.24s ->  2653.48s] to trade and that is what this right hand side is effectively doing it's replicating that log payoff
+[ 2654.04s ->  2661.08s] which is replicating the annualized realized variants but we're able to specify this hinge point
+[ 2661.08s ->  2670.44s] here all right now typically in the context of the vix and and sebo's implementation of this we're going to
+[ 2670.44s ->  2681.40s] be using for that selection the first strike below the ford and that is how it is chosen in a discretized
+[ 2681.40s ->  2687.64s] capacity because of course we can't directly trade an infinite strip of options
+[ 2687.64s ->  2694.52s] options so in reality we're going to use a finite set of options we're going to be discretizing these
+[ 2694.52s ->  2702.20s] integrals and the methodology used by sebo to construct the vix is going to consider a star
+[ 2702.20s ->  2711.00s] to be that first strike below the ford if you would like a video discussing the discretization of
+[ 2711.00s ->  2721.48s] this variance swap pricing formula i would be more than happy to do so we could take an options chain
+[ 2721.48s ->  2729.08s] we can go about producing then the price of the variant swap and then maybe we could even compare it
+[ 2729.08s ->  2738.68s] to what is realized to see how well the prices reflect the true realized volatility and we can even discuss
+[ 2739.24s ->  2748.12s] volatility trading strategies about these variants swaps so if you're interested certainly let me know in the comments below
+[ 2748.68s ->  2753.80s] otherwise that is going to do it for this video on how goldman sachs
+[ 2754.44s ->  2761.48s] prices variance swaps i hope you enjoyed i hope you learned something this video certainly took a tremendous amount of effort
+[ 2761.96s ->  2767.08s] to put together so if you enjoyed it and you want to see more like it in the future please like comment subscribe share
+[ 2767.08s ->  2775.64s] again it helps me out tremendously it is always greatly appreciated check out quant guild dot com to master
+[ 2775.64s ->  2782.84s] your quantitative skills for trading and market making roles other than that i want to thank you
+[ 2782.84s ->  2791.40s] so much for watching and i will see you in the next video
+[ 2791.40s ->  2793.40s] you
+[ 2793.40s ->  2795.40s] you

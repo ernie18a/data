@@ -1,0 +1,352 @@
+[    0.11s ->    17.63s] If there was ever a video where I revealed all secrets, it would be this one, and it's because I'm going to ask you a very simple question that nobody seems to be able to answer, and that is, why do we backtest anything?
+[   17.63s ->    37.05s] That's historical data. You're going to, what, find a trading strategy that worked in the past, and then in the future, it's going to unfold in such a way that that same strategy is going to make you profitable?
+[   37.05s ->    52.97s] What does that sound like? That sounds like overfitting historic data. But Roman, we have walk-forward testing. That doesn't mean anything. You have no idea how the future is going to unfold. Think about a casino.
+[   52.97s ->    71.39s] If you were trying to assess the efficacy of a new game in your casino, what would you do? Would you plop the game down and take a look at your players over the last 3, 6, 12 months with respect to the performance of that game, and that's going to guide your decision-making?
+[   71.39s ->    96.28s] Absolutely not, because it was never about the individual players. When I use a casino example, it sounds trivial. But now, swap out the players for individual U.S. equities, Apple, Amazon, Google, NVIDIA. The list goes on. Not so trivial anymore, because it was never about the players. It was always about the game.
+[   96.28s ->   120.84s] I'm going to sit here in front of this Jupyter Notebook until I come up with a strategy that beats the market. The reason why that's not hard to do is because if you understand what is producing the returns in a segment of your portfolio, then you are going to be able to identify opportunities for orthogonal return streams.
+[  120.84s ->   132.88s] This isn't just about diversification. This is about physical and stochastic independence. Those of you that watch my math videos, my mathematical videos, you're the ones who are going to be extraordinarily successful.
+[  132.88s ->   159.66s] The very few thousand of you that watch my videos on volatility drag, talking about portfolio construction, my more esoteric quantitative research that I post to Sanctuary QR here, you guys are the ones who are going to be able to construct successful portfolios, be successful risk allocators, because you understand it's not about the players. It's about the game.
+[  159.66s ->   185.48s] When we take a look at the S&P 500, we're looking at a game. We're looking at a game, and that game is raw beta exposure, passive beta. If you take a look at any pricing model, whether we're talking about bonds options, whether we're talking about risk premia, CAPM, Fama French, pricing models, if you didn't study finance, hell, if you studied finance, you probably don't even understand this.
+[  185.48s ->   193.48s] But those pricing models don't predict anything. They don't predict anything. They fail.
+[  193.48s ->   203.04s] Do you know how much of the literature begins with something like factor models fail to predict stock prices?
+[  203.24s ->   211.82s] I can't even count how many times I've read that in an abstract. It's not a secret. That's not what these pricing models are used for.
+[  211.82s ->   221.20s] These pricing models are used for understanding and explaining streams of returns in your portfolio.
+[  221.98s ->   240.32s] Because we have these models, we are then capable of constructing more robust portfolios, taking advantage of different clever ways to introduce leverage to improve our geometric return compounding over time, and of course, the trajectory of our wealth.
+[  240.32s ->   254.36s] Let's just go ahead and get started here by querying the SPY ETF, we're going to query it, visualize it, and then we're going to print the Sharpe ratio and the associated geometric growth rate.
+[  254.36s ->   274.76s] So what I'm going to do here is I'm going to say query SPY ETF from, let's just go back to pre-COVID 2019 and visualize it and print the Sharpe, our measure of risk-adjusted return, and the geometric growth rate.
+[  274.76s ->   281.11s] So we're going to use IB API to get the data.
+[  282.48s ->   291.34s] We're going to be using the trader workstation here to get the SPY ETF data and any other data that we might need.
+[  291.42s ->   295.58s] I'll leave a link in the description below if you'd like to get started with interactive brokers.
+[  295.70s ->   296.68s] They're the only broker I use.
+[  296.74s ->   302.38s] I've been with them for over 10 years, if you can believe it, in a trading and investing capacity.
+[  302.38s ->   307.30s] And we use them on this channel for every single one of my quant builds.
+[  307.62s ->   309.98s] Let's take a look at this game.
+[  310.82s ->   313.38s] This is what I mean by beta exposure.
+[  313.62s ->   315.16s] It's not about the individual players.
+[  315.16s ->   316.66s] It's about the game.
+[  316.74s ->   322.26s] What happens when you take all of the individual players, all of them, Apple, NVIDIA, Google, Amazon?
+[  322.42s ->   324.28s] Yeah, maybe NVIDIA has an outsized weight right now.
+[  324.32s ->   325.36s] I don't want to talk about that.
+[  325.80s ->   329.44s] We're talking about what happens when you put all of those players together.
+[  329.44s ->   332.32s] U.S. equities, market exposure.
+[  332.74s ->   333.98s] That's what you see here.
+[  334.62s ->   338.94s] Just because the market did well doesn't mean it's going to do well in the future.
+[  339.56s ->   340.32s] Look at Japan.
+[  341.10s ->   342.40s] How long did it take?
+[  343.26s ->   344.40s] Trough to peak recovery.
+[  345.36s ->   345.72s] Anyone?
+[  346.26s ->   347.86s] Peak to trough, trough to peak, recovery?
+[  349.06s ->   349.50s] Decades?
+[  350.70s ->   353.02s] Why can't that happen with U.S. equities?
+[  353.42s ->   354.06s] You know what's funny?
+[  354.42s ->   357.20s] Nobody knows if that's going to happen with U.S. equities.
+[  357.20s ->   360.88s] It doesn't matter if you have $100 or $100 billion.
+[  361.60s ->   363.76s] Nobody has any clue what's going to happen here.
+[  364.02s ->   372.16s] The most successful companies in the entire world are going to continue to compete with each other to try to generate returns for their shareholders.
+[  372.16s ->   373.74s] That is literally their obligation.
+[  374.36s ->   378.74s] But they don't get to decide what happens to the macro economy.
+[  379.18s ->   380.46s] That's not up to them.
+[  380.46s ->   385.94s] So, when I look at a chart like this, all I can think about is what game am I playing here?
+[  386.97s ->   390.31s] I'm playing a game of just raw beta exposure, macro exposure.
+[  390.49s ->   391.27s] Effectively, what?
+[  391.91s ->   395.33s] This is going to ride on the entire global economy.
+[  395.79s ->   399.15s] You take a look at these drawdowns, right?
+[  399.37s ->   403.05s] Whether or not they align with actual recession, we're not talking about that right now.
+[  403.09s ->   406.09s] We're talking about what happens to our equity curve.
+[  406.09s ->   416.59s] If we take a look at this here, our Sharpe ratio is 0.73 and our growth rate is 11.67%.
+[  416.59s ->   419.90s] I know what game I'm playing here.
+[  420.52s ->   426.28s] So, what I want to do as the casino is introduce another game.
+[  427.21s ->   428.75s] What game might that be?
+[  428.85s ->   432.07s] This is the difference between physical and stochastic independence.
+[  432.07s ->   436.41s] On a day-to-day basis, you know what has nothing to do with each other?
+[  436.87s ->   438.25s] Apple and Cigna.
+[  438.59s ->   440.41s] They have nothing to do with each other.
+[  441.01s ->   441.81s] Absolutely nothing.
+[  441.89s ->   444.03s] Oh, Roman, maybe they make a handshake deal here and there.
+[  444.51s ->   445.11s] Come on, guys.
+[  445.19s ->   446.95s] Nothing to do with each other, right?
+[  447.37s ->   448.67s] That's diversification.
+[  449.33s ->   450.77s] No, it's not.
+[  451.73s ->   452.69s] No, it's not.
+[  453.23s ->   455.39s] Empirically, they're stochastically independent.
+[  455.55s ->   457.25s] Maybe in a sample.
+[  457.39s ->   458.15s] Until when?
+[  459.27s ->   461.45s] Until you need it.
+[  462.36s ->   463.98s] To be diversified.
+[  464.30s ->   469.98s] Then the correlation explodes to one and everything just tracks that drawdown.
+[  471.30s ->   474.18s] That's because they're on fire.
+[  474.60s ->   480.72s] If you're the casino and you're losing big on blackjack today because everyone's on fire,
+[  480.82s ->   482.04s] that's the exact same idea.
+[  482.16s ->   483.70s] Yeah, it's independence a little different,
+[  483.82s ->   487.16s] but it's the exact same idea as just having this market exposure.
+[  487.88s ->   489.28s] I need a different game.
+[  489.28s ->   493.46s] So what is physically independent from this market exposure?
+[  494.76s ->   496.32s] Think about like sports betting.
+[  496.74s ->   498.26s] That has nothing to do with this.
+[  498.36s ->   501.64s] The market could be crashing in the most severe way possible.
+[  501.80s ->   504.08s] If LeBron makes that three, that contract's paying out.
+[  504.48s ->   506.14s] Think about prediction markets.
+[  506.40s ->   513.24s] If I have a hairdryer and I can head on over to some sort of temperature gauge and game the system,
+[  513.24s ->   514.50s] that's going to pay out.
+[  514.50s ->   516.78s] It doesn't matter what the market's doing at all.
+[  517.60s ->   520.22s] Doesn't matter what the market's doing at all.
+[  520.46s ->   522.64s] This is what is meant by other games.
+[  523.12s ->   526.04s] Orthogonal return streams.
+[  526.72s ->   531.96s] There are so many different ways to produce orthogonal return streams.
+[  532.18s ->   534.62s] When you look at something like this price path, right?
+[  534.76s ->   536.08s] What am I thinking of?
+[  536.08s ->   542.64s] I look at these drawdowns here and I'm like, wow, I really would have liked to have been long volatility right about here,
+[  542.78s ->   545.30s] right about here, right before it imploded.
+[  545.56s ->   546.62s] Same with this.
+[  547.77s ->   549.73s] This isn't about timing the market.
+[  550.07s ->   553.19s] This is about engineering a portfolio for success.
+[  553.69s ->   557.13s] If I take a look at a volatility surface and I asked you, hey,
+[  557.29s ->   562.21s] I want you to come up with a long convexity sleeve for this portfolio.
+[  562.21s ->   567.49s] Would you be able to pick an option that is statistically underpriced relative to all the other ones?
+[  568.91s ->   569.79s] Probably not.
+[  570.03s ->   570.41s] Can I?
+[  570.71s ->   571.15s] Absolutely.
+[  571.89s ->   573.93s] But that's because I've done that research.
+[  574.05s ->   576.77s] And then it's like, okay, well, Roman, that's backtesting, isn't it?
+[  577.37s ->   579.25s] All empirical research is backtesting.
+[  579.37s ->   579.83s] Sure is.
+[  580.45s ->   581.57s] 100% is.
+[  582.21s ->   582.51s] Right?
+[  582.69s ->   586.23s] It doesn't mean that it's going to be inefficiently priced going forward.
+[  586.45s ->   588.97s] But I'll tell you what, if I have to pick one,
+[  588.97s ->   592.41s] I'm not going to go with the one that's been historically overpriced.
+[  592.85s ->   595.11s] I'll pick the one that's been historically underpriced.
+[  595.17s ->   597.79s] And then if I have a liquidity event or just some sort of market crisis,
+[  597.79s ->   599.29s] I want to be in good shape.
+[  599.47s ->   599.83s] All right?
+[  599.89s ->   603.63s] So that's what I'm thinking about in the context of these massive drawdowns.
+[  603.67s ->   605.99s] What about in something like this, this slow bleed?
+[  606.01s ->   607.55s] This is particularly painful.
+[  607.93s ->   612.13s] If you can't pluck that point out on the volatility surface,
+[  612.13s ->   615.97s] then this guy here, that's just going to be, it's going to be terrible.
+[  615.97s ->   618.77s] You're going to have your negative carrier from that convexity leg.
+[  618.77s ->   623.89s] And then on top of that, you're just going to be eating this, this beta exposure here.
+[  623.89s ->   627.03s] So think about like short-term trend following, right?
+[  627.03s ->   628.57s] That has nothing to do with this either.
+[  628.81s ->   632.41s] If this goes down, then maybe it's going to track well,
+[  632.41s ->   635.13s] and it's going to keep tracking on the way down.
+[  635.29s ->   637.51s] It's not going to beat the market on its own.
+[  637.75s ->   639.87s] That's not the purpose of that strategy.
+[  640.15s ->   642.63s] This is why I obsess over the mathematics.
+[  642.63s ->   645.47s] And I'm so stoked when you guys do as well,
+[  645.47s ->   650.07s] because if you understand what it means to reduce your volatility drag,
+[  650.29s ->   654.83s] and you understand how that impacts your geometric growth rate,
+[  654.83s ->   658.95s] then you will understand how to engineer a portfolio.
+[  659.33s ->   661.95s] So let's find this other game.
+[  661.95s ->   667.49s] I'm going to take all of this code, and I'm going to plop this in here.
+[  667.49s ->   674.27s] And instead of SPY, I'm going to go with a trend following managed futures ETF.
+[  675.11s ->   683.91s] Now, I could also do a long convexity sleeve and pluck out that point on the volatility surface.
+[  684.17s ->   689.47s] And that is the professional quantitative research that I'm producing here.
+[  689.63s ->   694.29s] If you want to read this paper, I'm producing an entire research series on this topic,
+[  694.29s ->   701.95s] how you can effectively pluck that inefficiently priced put on the volatility surface
+[  701.95s ->   705.59s] to have lower bleed over time,
+[  705.59s ->   708.45s] so that when you approach these massive crises,
+[  709.01s ->   713.33s] you effectively minimize your negative carry,
+[  713.63s ->   717.57s] and you maximize your payout in the event of those crises.
+[  717.57s ->   724.45s] But I'll leave a link in the description below if you are interested in that research.
+[  725.70s ->   728.72s] So what we're going to do is, instead of using that put,
+[  728.78s ->   730.92s] we're going to use a managed futures.
+[  731.32s ->   739.60s] So what I'm going to do here is I am going to swap out SPY for DBMF
+[  739.60s ->   749.32s] and still keep the chart and print the sharp and the geometric growth rate.
+[  751.54s ->   752.20s] All right.
+[  752.34s ->   753.32s] Looks good.
+[  755.72s ->   757.14s] Give this a run here.
+[  758.93s ->   759.23s] Cool.
+[  761.52s ->   763.08s] 0.16 sharp.
+[  763.68s ->   767.73s] 1.24% growth rate.
+[  768.09s ->   770.43s] Why would you include this in a portfolio?
+[  771.11s ->   775.66s] This makes absolutely no sense to include in a portfolio, right?
+[  775.66s ->   776.10s] Right?
+[  777.07s ->   777.51s] Right?
+[  778.68s ->   780.36s] This is a completely different game.
+[  781.04s ->   784.02s] Take a look at the S&P 500, the SPY ETF.
+[  784.58s ->   786.92s] Take a look at the managed futures ETF.
+[  788.09s ->   789.69s] They have nothing to do with each other.
+[  790.98s ->   792.46s] They have nothing to do with each other.
+[  792.88s ->   795.66s] If you just put your entire portfolio into DBMF,
+[  795.92s ->   798.66s] why are you doing that?
+[  799.16s ->   802.38s] The objective here is not to outperform the S&P 500.
+[  802.64s ->   806.66s] It's to offer a diversification benefit.
+[  806.66s ->   813.56s] And I hate just saying diversification in an arbitrary way because depending on what level
+[  813.56s ->   819.94s] you are, if you've, you know, never heard of, of orthogonal return streams, you can say
+[  819.94s ->   825.50s] diversification when you're holding Starbucks and Apple, but that's not what that is.
+[  825.56s ->   826.86s] That's not what we're talking about.
+[  826.94s ->   828.92s] We're talking about it at the highest level.
+[  828.92s ->   834.46s] I don't need a backtest to tell you that these things are the closest to physically independent
+[  834.46s ->   839.72s] that you can get for some sort of exchange traded product.
+[  839.88s ->   842.46s] I don't need a backtest to tell you that.
+[  842.86s ->   844.46s] This is beta exposure.
+[  845.14s ->   847.52s] This is not.
+[  848.10s ->   848.88s] This is not.
+[  849.12s ->   852.06s] And if you don't believe me, let's just run the regression.
+[  852.26s ->   853.46s] So let's see how this is stored.
+[  853.46s ->   856.64s] I don't even know this is stored as returns.
+[  857.36s ->   864.67s] So I'm going to need a separate returns for DBMF.
+[  865.13s ->   869.47s] And then I'm going to use the returns from that chart above.
+[  869.97s ->   873.01s] And I'm going to run a cap M regression.
+[  873.01s ->   879.77s] So run a cap M regression of SPY on DBMF.
+[  879.97s ->   882.93s] Yes, it's SPY on DBMF.
+[  883.67s ->   885.51s] SPY is returns.
+[  886.31s ->   891.55s] DBMF is returns underscore DBMF.
+[  892.03s ->   894.08s] Let's run this regression.
+[  899.86s ->   901.62s] That's taken a lot longer than it should.
+[  905.06s ->   905.54s] There we go.
+[  906.58s ->   909.67s] What is our XY?
+[  909.67s ->   915.97s] Now we're using the same returns by accident because I didn't rerun.
+[  916.45s ->   919.51s] I didn't rerun the cell above.
+[  919.97s ->   924.17s] I have to rerun the SPY cell.
+[  926.20s ->   927.20s] Run this guy.
+[  928.91s ->   929.97s] Stores it in returns.
+[  930.65s ->   932.59s] Stores this in returns DBMF.
+[  933.07s ->   933.91s] Give this a run.
+[  934.51s ->   935.63s] Look at our R squared.
+[  936.31s ->   939.51s] It went from one because we were regressing SPY on SPY.
+[  939.59s ->   940.63s] That's literally what it is.
+[  940.63s ->   942.31s] Look at our R squared.
+[  942.47s ->   943.03s] It's zero.
+[  944.42s ->   951.14s] So 0% of the variation in SPY returns are explained by the DBMF ETF.
+[  952.60s ->   952.96s] Okay.
+[  953.54s ->   955.00s] They're completely different games.
+[  955.94s ->   959.46s] They are completely different games.
+[  959.76s ->   961.32s] What happens if we combine them in a portfolio?
+[  961.32s ->   963.00s] I don't know.
+[  963.20s ->   963.70s] Let's see.
+[  964.38s ->   967.44s] Did you watch my video on Volatility Drag or my fireside chat last week?
+[  967.92s ->   969.98s] Where I pretty much obsessed about this idea.
+[  970.58s ->   971.54s] Let's check it out.
+[  973.25s ->   981.41s] Construct a 50% portfolio of returns and returns DBMF.
+[  981.53s ->   982.67s] They're different games, right?
+[  983.03s ->   984.05s] Let's see what happens.
+[  984.05s ->   987.80s] Let's give this guy a run here.
+[  987.92s ->   988.18s] Okay.
+[  989.14s ->   994.02s] Let's go ahead and print the sharp and the growth rate.
+[  994.40s ->   997.96s] So we can see that we have SPY.
+[  998.32s ->  1005.54s] And then we have our blue mixture portfolio in between and DBMF that managed futures underneath.
+[ 1005.54s ->  1014.14s] And if we take a look at the sharp ratio and the growth rate, you'll notice, okay, the growth rate is 6.92%.
+[ 1014.14s ->  1019.02s] And the sharp ratio is 0.64%.
+[ 1019.02s ->  1031.46s] That's not better than just raw beta exposure, 0.73% and 11.67%.
+[ 1031.46s ->  1034.48s] Why would we ever combine these two?
+[ 1034.54s ->  1035.78s] It doesn't make any sense.
+[ 1038.24s ->  1038.66s] All right.
+[ 1039.28s ->  1042.50s] Well, what else is going on here?
+[ 1042.50s ->  1053.48s] When you achieve this benefit, what are you gaining, right, for this lower risk adjuster return and growth rate?
+[ 1054.14s ->  1057.46s] Well, let's take a look at the max drawdown.
+[ 1062.71s ->  1065.67s] Also print the max drawdown.
+[ 1068.68s ->  1071.22s] Probably could have just done it in a new cell, but you get the idea.
+[ 1071.74s ->  1072.56s] Give this a run.
+[ 1076.42s ->  1079.86s] Minus 25.36%.
+[ 1079.86s ->  1086.96s] If you had a million-dollar portfolio, you would have been down at $1.250,000.
+[ 1088.10s ->  1089.20s] You get the idea.
+[ 1089.32s ->  1089.92s] Peek to trough.
+[ 1090.48s ->  1090.96s] All right.
+[ 1091.36s ->  1096.42s] What about in this portfolio where we're playing just two different games?
+[ 1098.09s ->  1099.55s] Print the...
+[ 1099.55s ->  1103.51s] We're going to also print the max drawdown.
+[ 1105.50s ->  1112.11s] Once we do that, and it shouldn't take a rocket scientist to tell you what's going to happen,
+[ 1112.39s ->  1114.63s] 15%.
+[ 1114.63s ->  1117.67s] So hold on a second.
+[ 1117.75s ->  1118.27s] Hold on a second.
+[ 1119.05s ->  1123.49s] When the S&P 500 was down 25%, we were down 15%.
+[ 1123.49s ->  1129.17s] So when everyone else was getting $0.75 on the dollar, we were getting $0.85 on the dollar.
+[ 1131.63s ->  1135.05s] So hopefully now you're starting to see why this is so important.
+[ 1135.15s ->  1138.69s] I don't need a backtest to tell you that these two games have nothing to do with each other.
+[ 1138.69s ->  1143.41s] More importantly, when you're getting $0.75 on the dollar, I'm getting $0.85 on the dollar,
+[ 1143.61s ->  1145.61s] and I'm going to buy your house.
+[ 1146.51s ->  1151.69s] I'm going to buy your assets while they're cheap, and I'm going to improve my growth rate,
+[ 1151.89s ->  1153.55s] and I'm going to play the long game.
+[ 1153.55s ->  1159.03s] And not only am I going to survive, but I'm going to obliterate your portfolio value,
+[ 1159.03s ->  1162.33s] because you have no idea how volatility drag works.
+[ 1162.51s ->  1167.19s] You have no idea how volatility drag works once you start to induce leverage.
+[ 1167.73s ->  1169.37s] There's a nonlinear effect.
+[ 1169.87s ->  1170.43s] Check it out.
+[ 1170.93s ->  1176.09s] If I take a look at this max drawdown here for the S&P 500, it's 25%.
+[ 1176.09s ->  1179.29s] So let's induce some leverage.
+[ 1179.29s ->  1184.09s] So what I'm going to do now is I'm going to take this guy here,
+[ 1184.09s ->  1186.21s] and I'm just going to print the results with leverage.
+[ 1186.71s ->  1190.33s] Print the results with 2x leverage.
+[ 1190.91s ->  1196.08s] Oh my goodness.
+[ 1196.56s ->  1197.56s] Oh my goodness.
+[ 1197.90s ->  1202.14s] 50%, 46.81% max drawdown.
+[ 1202.64s ->  1208.12s] A sharp ratio of 0.73 and a growth rate of 24.7%.
+[ 1208.12s ->  1209.46s] What's the problem here?
+[ 1209.96s ->  1212.21s] This is not how you survive.
+[ 1212.21s ->  1215.05s] You can very well blow out your account on leverage.
+[ 1215.65s ->  1217.63s] 50% drawdown.
+[ 1218.41s ->  1220.01s] 0.73 sharp.
+[ 1220.69s ->  1222.31s] 24% growth rate.
+[ 1222.39s ->  1223.81s] But you're not going to get there.
+[ 1223.89s ->  1226.95s] You're not going to survive to the long run.
+[ 1227.73s ->  1228.41s] I am.
+[ 1229.19s ->  1232.59s] And that's because if I induce leverage in this portfolio,
+[ 1233.21s ->  1234.33s] let's see what happens.
+[ 1235.18s ->  1239.60s] Use 2x leverage on the returns.
+[ 1239.60s ->  1247.14s] We're obviously going to increase our max drawdown.
+[ 1247.14s ->  1249.36s] But look at what happens.
+[ 1249.86s ->  1258.39s] We go from minus 15% to minus 22.78%.
+[ 1258.39s ->  1262.45s] Our sharp ratio is 0.72.
+[ 1262.45s ->  1265.53s] So we didn't beat the market.
+[ 1266.09s ->  1267.85s] What does that even mean?
+[ 1267.85s ->  1271.47s] 0.73 versus 0.72.
+[ 1271.93s ->  1277.19s] And this growth rate that you're not actually going to achieve because you're going to blow
+[ 1277.19s ->  1284.13s] out on leverage without a hedge-legging place turns into something that you can actually achieve.
+[ 1284.13s ->  1287.47s] 12.52%.
+[ 1287.47s ->  1295.93s] So effectively, what I'm telling you here is I just constructed a strategy that beat the market.
+[ 1295.93s ->  1300.89s] If we go back over to the S&P 500 without leverage, right?
+[ 1301.35s ->  1304.11s] I want you to pay very close attention to these statistics.
+[ 1304.11s ->  1307.17s] A sharp ratio of 0.73.
+[ 1308.01s ->  1310.37s] A growth rate of 11.67%.
+[ 1310.37s ->  1313.93s] A max drawdown of 25%.
+[ 1313.93s ->  1315.33s] It says 2x leverage.
+[ 1315.45s ->  1316.45s] This is with 1x leverage.
+[ 1316.55s ->  1317.69s] I just set the parameter here.
+[ 1318.40s ->  1319.58s] Come on down here.
+[ 1320.88s ->  1326.64s] We beat all of them in terms of growth rate and max drawdown, but not the sharp ratio.
+[ 1326.74s ->  1328.12s] It's all about the sharp ratio.
+[ 1328.58s ->  1330.46s] It's not all about the sharp ratio.
+[ 1330.46s ->  1338.60s] The maximization problem on the efficient frontier for the sharp ratio is not the same as for
+[ 1338.60s ->  1345.36s] the growth rate that your portfolio is actually subject to or any constraint with respect to
+[ 1345.36s ->  1346.82s] max drawdown.
+[ 1347.06s ->  1351.80s] What I'm saying here is leverage here is not equivalent to leverage above.
+[ 1352.34s ->  1357.84s] And that may be trivial to some of you, but it is a revelation to others.
+[ 1357.84s ->  1365.57s] This is a strategy that beat the market, entirely beat the market in terms of geometric growth.
+[ 1365.65s ->  1366.97s] Now, how can we make this better?
+[ 1367.57s ->  1370.61s] Well, we can be capitally efficient.
+[ 1370.83s ->  1376.09s] We can be more efficient when you're selling things on 75 cents on the dollar or worse,
+[ 1376.11s ->  1378.45s] because you're using leverage with raw beta exposure.
+[ 1378.61s ->  1379.83s] You get 50 cents on the dollar.
+[ 1380.03s ->  1381.47s] I'm going to buy your stuff.
+[ 1382.01s ->  1387.27s] When I buy your stuff, I'm buying it cheap and it's going to compound again faster.
+[ 1387.27s ->  1392.81s] And I'm going to blow out your portfolio in the long run, while you probably blow out your
+[ 1392.81s ->  1395.31s] account on leverage.
+[ 1396.28s ->  1397.04s] All right.
+[ 1397.18s ->  1400.28s] So that's the big idea for today.
+[ 1400.46s ->  1408.18s] I don't need a back test to tell you whether or not things are unrelated, physically independent.
+[ 1408.18s ->  1413.96s] That is the purpose of portfolio construction, portfolio engineering.
+[ 1414.42s ->  1421.68s] And that is exactly what we're trying to do as professional allocators, quant hedge fund managers,
+[ 1422.30s ->  1424.78s] any sort of quantitative researcher, trader, whatever.
+[ 1425.46s ->  1426.84s] That is what we're doing.
+[ 1427.71s ->  1429.81s] That is quite literally what we're doing.
+[ 1429.89s ->  1431.11s] We don't have a crystal ball.
+[ 1431.37s ->  1433.23s] We don't know what the future holds.
+[ 1433.35s ->  1435.91s] We are trying to engineer our portfolios for success.
+[ 1435.91s ->  1438.25s] We're trying to be the casino, right?
+[ 1438.33s ->  1439.85s] That is what we're trying to do.
+[ 1440.03s ->  1444.09s] And we want as many games as possible.
+[ 1444.37s ->  1445.99s] And that's going to do it for this video.
+[ 1446.11s ->  1446.87s] I hope you enjoyed it.
+[ 1446.87s ->  1448.03s] I hope you learned something.
+[ 1448.25s ->  1452.65s] This certainly is a very big idea in quantitative finance.
+[ 1452.65s ->  1458.69s] And it's literally what separates academics from practitioners, being able to construct
+[ 1458.69s ->  1467.31s] and assume this risk, building a portfolio of casino games, orthogonal return streams.
+[ 1467.53s ->  1472.81s] I'll leave a link in the description below if you would like to check out this website where
+[ 1472.81s ->  1476.85s] I'm just going to be writing all of my quantitative research.
+[ 1476.85s ->  1478.99s] I'm also looking for contributors.
+[ 1479.65s ->  1485.49s] So if you're interested in quantitative finance, you're an aspiring student, an academic, a practitioner,
+[ 1485.49s ->  1493.11s] and you would like to collaborate or contribute your own quantitative articles, certainly reach
+[ 1493.11s ->  1496.27s] out, check out the site, sign up, submit some articles.
+[ 1496.27s ->  1512.34s] Other than that, I want to thank you so much for watching and I will see you in the next video.

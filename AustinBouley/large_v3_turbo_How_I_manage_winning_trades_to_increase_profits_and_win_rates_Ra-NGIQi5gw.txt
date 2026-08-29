@@ -1,0 +1,21 @@
+[    0.00s ->     4.14s] this video I'm going to walk you through how to manage a winning trade there are only two ways
+[    4.14s ->    10.00s] to do this based on our system that is proven to not only make me money but make so many others
+[   10.00s ->    14.46s] money in the process just by following this simple procedure again all shown inside the
+[   14.46s ->    20.46s] membership following the algo alerts and the rules that we implement and follow but what are these
+[   20.46s ->    25.90s] rules for managing a winning trade number one hold until expiration it is very important all
+[   25.90s ->    29.92s] these strat all these strategies the algo alerts and everything and everything like that has the
+[   29.92s ->    37.24s] highest win rate and allows us to make money when we hold until expiration why well because historically
+[   37.24s ->    42.50s] this is how these strategies were created and work best and number two it's called theta time time
+[   42.50s ->    49.58s] decay when we are credit spread sellers we are sellers so we profit from time or time decay next
+[   49.58s ->    55.00s] is we want to close the trade early now again there's a specific rule rule for this which is
+[   55.00s ->    61.40s] if you can close the trade for five cents or less and there are more than five days left in the
+[   61.40s ->    67.16s] trade you should close the trade early why well because this boosts your win rate just back testing
+[   67.16s ->    72.64s] proves this because you're out of the trade you took most of the profits and now you can take those
+[   72.64s ->    77.34s] profits and roll them into the next trade so now you don't have a lot of money tied up just waiting
+[   77.34s ->    82.96s] for the end of the expiration period so again the rule is five cents or less and more than five days
+[   82.96s ->    87.16s] so that means let's say there's six days left in a trade and your current spread is trading for four
+[   87.16s ->    91.44s] cents it's best to close that trade out early all right those are the two main ways to manage a
+[   91.44s ->    95.94s] winning trade if you have any other questions please use the chat box below or attend our next
+[   95.94s ->   100.36s] office hours calls in the discord group chat all right i hope this made sense i'll see you in the
+[  100.36s ->   102.20s] next support video or inside discord
+[  102.20s ->   102.36s] you

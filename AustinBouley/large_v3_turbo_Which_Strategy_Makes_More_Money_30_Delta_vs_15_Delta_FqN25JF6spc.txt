@@ -1,0 +1,132 @@
+[    0.12s ->     3.26s] hey guys what's up in this video I'm going to talk about why I should lose
+[    3.26s ->     8.96s] less more often the 15 versus 30 Delta credit spread debate shown in pure math
+[    8.96s ->    13.28s] you can make an educated decision on which is best for you and why so let's
+[   13.28s ->    18.14s] dive into the numbers okay so first off there are some important numbers we need
+[   18.14s ->    23.68s] to know when we're looking at a 15 oops right here my bad more looking at a 15
+[   23.68s ->    29.04s] Delta there's something we need to know so 15 Delta versus a 30 Delta let's
+[   29.04s ->    33.18s] look at the math and what this means first off Delta is just an understanding
+[   33.18s ->    40.02s] of based on volatility based on the stock how far away from the stock are we so
+[   40.02s ->    44.70s] friends a 15 Delta would be further away than a 30 Delta so if we're looking at a
+[   44.70s ->    48.04s] stock chart right here and let's say the stock is here and we're trading a put
+[   48.04s ->    52.02s] credit spread meaning that we want to be we want to be further away from the stock
+[   52.02s ->    56.58s] price a 15 Delta would be here and a 30 Delta it would be here so you can see
+[   56.58s ->    61.58s] the difference a 30 a 30 that was a lot closer which means we make more but we
+[   61.58s ->    67.04s] have a lower win rate and the 50 Delta is here which means we win less but we
+[   67.04s ->    71.54s] lose less because the win rates a lot higher so how is this determined what is
+[   71.54s ->    78.12s] our theoretical probability of a win rate based on our Delta well the Delta the
+[   78.12s ->    84.26s] inverse of the Delta is your probability of winning the tree so you simply take the
+[   84.26s ->    88.40s] width of the spread so let's say it's a $1 widespread like most people trade and we
+[   88.40s ->    96.14s] subtract it by 15 so 1 minus 15 that's going to give us a what a 85 percent win
+[   96.14s ->   101.24s] rate so 85 percent of the time we are going to win with a 15 Delta now for a 30
+[  101.24s ->   105.32s] Delta what's our win rate well one mine 100 minus 30 we're going to get a 70
+[  105.32s ->   109.32s] percent win rate so you see here there's a 15 percent difference in win rate so 15
+[  109.32s ->   111.26s] percent difference okay we know that so far
+[  111.26s ->   115.04s] next let's take a look at average credit what credit are we expecting to
+[  115.04s ->   118.76s] make here and there well roughly we can expect to make the Delta this again is
+[  118.76s ->   124.88s] very rough map but again we can collect around 15 cents at a 15 Delta and around
+[  124.88s ->   131.26s] 30 cents at a 30 Delta okay so it's a 15 cent difference okay now how does the
+[  131.26s ->   136.02s] long-term win rate play out now that we know our average win and our win amount we
+[  136.02s ->   139.92s] can determine what our expected long-term return is now we're probably going to get a
+[  139.92s ->   144.24s] zero because that's how this simple math works are you trying to make money with
+[  144.24s ->   147.42s] credit spreads or just trying to understand my strategy we're trying to
+[  147.42s ->   151.38s] find a strategy that works in any market well I put together a free course called
+[  151.38s ->   154.86s] the ultimate credit spread system course it walks you through how it works every
+[  154.86s ->   158.88s] strategy for every different type of market how to generate monthly income the
+[  158.88s ->   162.54s] exit rules we use the minimum credit trade sizing and all that so if you're
+[  162.54s ->   166.32s] interested click the description down below to get free access anyways hope you
+[  166.32s ->   169.68s] enjoy the rest of this video but to determine your expected return you
+[  169.68s ->   174.14s] simply do the amount of times you win times the amount you win when you do win
+[  174.14s ->   180.66s] minus the amount you lose times the amount you lose when you do lose so again for a
+[  180.66s ->   186.60s] $1 wide strike it's going to be 1 minus 15 that's going to get you 85 and so
+[  186.60s ->   192.32s] again this is going to zero out why well because you have the same numbers on each
+[  192.32s ->   196.94s] side so that's why it's not going to work out long term to do this because
+[  196.94s ->   201.94s] there's no edge to this trading system but that's why we add stop-loss rules so
+[  201.94s ->   208.28s] again if we add a stop-loss rule I'm going to exit at 200% of my max loss then
+[  208.28s ->   215.36s] that changes from 85 is the amount of times we win against roughly we win 15 minus
+[  215.36s ->   220.46s] we're going to lose 15 times and if we're going to lose 2% so that means we're
+[  220.46s ->   229.06s] going to lose 30 so now we can determine what our long-term expected range is so
+[  229.06s ->   234.16s] 85 times we're going to win 15 minus we lose 15 times times we lose 30 each time
+[  234.16s ->   240.28s] that's going to give us an $825 expected return so over a hundred trades trading
+[  240.28s ->   245.44s] one spread we can expect to make $825 now we know that number let's take a look at
+[  245.44s ->   249.44s] this number okay so as before like I mentioned I wanted to show this to show
+[  249.44s ->   254.30s] that when you're trading expected ranges based on these deltas and percentages
+[  254.30s ->   258.20s] you're gone it's going to be zero because markets are efficient and they
+[  258.20s ->   262.34s] don't work out well but when we add edges when we add our ability to increase our
+[  262.34s ->   266.18s] win rate more than Delta different things like that then we set ourselves up which
+[  266.18s ->   269.24s] is what this whole YouTube channel is for to show you how to get that edge
+[  269.24s ->   275.90s] anyways if we're moving on here let's use the same stop-loss type of system here so
+[  275.90s ->   280.22s] we're going to have in seventy percent one right we're going to set 70 times and
+[  280.22s ->   284.96s] when we win we're going to win 30 minus we're going to lose 30 times and when we
+[  284.96s ->   290.06s] lose we're using a 200 we're going to lose 60 cents so let's take a look at the
+[  290.06s ->   296.84s] map what does this give us here we go we have 70 times we lose what time we win 30
+[  296.84s ->   303.68s] each time we lose 30 times and we lose 60 each time oops I did that wrong times
+[  303.68s ->   311.41s] each time that gives us a $300 long-term win rate all right so the difference here
+[  311.41s ->   315.79s] is it looks like that the 15 Delta is better for our trading right we have a
+[  315.79s ->   321.19s] lower expected return okay cool so now that we know this we're trading based off
+[  321.19s ->   326.29s] deltas trading based off normal trading levels it is more profitable to be here
+[  326.29s ->   330.55s] right because you're going to make 825 versus 300 all right now let's start to
+[  330.55s ->   334.03s] add some trading edges like I discussed it's the whole point of this channel and
+[  334.03s ->   337.35s] the whole point of helping you if you don't have an edge then you should do
+[  337.35s ->   340.67s] this which is just going to be a standard default basically type of taste
+[  340.67s ->   345.05s] tasty trade setup but let's talk about some edges how do you have a trading edge
+[  345.05s ->   349.15s] trading with the trend is your number one edge so again there's so many
+[  349.15s ->   354.89s] different ways to do this but to keep it bare minimum simple go to your chart add on
+[  354.89s ->   360.89s] indicators at a simple moving average is what this is change your length to 50 and
+[  360.89s ->   365.51s] boom your set now if you simply do this and you trade put credit spreads when the
+[  365.51s ->   370.85s] stock is above it and sell call credit spreads when a stock is below it this is
+[  370.85s ->   376.25s] an edge with this edge this is the probability you get you go from this to
+[  376.25s ->   381.77s] this so we go from an 85 per person when right with a 10 Delta or whether with a 15
+[  381.77s ->   386.99s] Delta to an 85 percent rate with a 10 Delta so now we're trading 10 Delta so
+[  386.99s ->   392.39s] we're going out even further and we have an 85 percent win rate and so what do we
+[  392.39s ->   396.11s] get to do with this not only that we get to change our stop-loss rule so edge
+[  396.11s ->   400.13s] number one is going to be trend this is this is what the trend gives us attend
+[  400.13s ->   406.34s] Delta with an 85 percent win rate this is what this strategy gives us we can do a 30
+[  406.34s ->   413.60s] Delta and have a 71 percent win rate so these are our type of approaches so when
+[  413.60s ->   417.80s] we follow the trend these are our percentages with the Delta so by default
+[  417.80s ->   424.22s] a 10 dollar or a 10 Delta should have a 90 percent win rate but with this we have
+[  424.22s ->   427.94s] an 85 percent win rate and so again we are lower than the average but I'll show
+[  427.94s ->   431.46s] you here is the next part it's going to benefit that even more next year we have a
+[  431.46s ->   435.84s] 30 Delta which should be roughly a 70 percent win rate but it becomes that 71
+[  435.84s ->   439.62s] now how did these play out well we also had a stop loss here which is our second
+[  439.62s ->   444.12s] edge but not just any generic stop loss we're going to exit when our strike is
+[  444.12s ->   450.60s] broken so exit when strike is broke broken allows us to only risk 40 dollars in
+[  450.60s ->   456.64s] this sense and allows us to only risk 20 dollars in this sense why because we
+[  456.64s ->   460.78s] exit when our strike price is broken our short strike price is broken now the
+[  460.78s ->   465.10s] spread is trading at 50 cents so if it's a bit so 50 cents is our new max loss and
+[  465.10s ->   469.52s] that becomes this so now look now let's do the math here so you're going to win 85
+[  469.52s ->   480.54s] times times you're gonna win $10 each minus 15 times 40 I don't I'm pretty sure I
+[  480.54s ->   484.98s] don't have to do this math anymore I can just quickly do it here anyways 85 times 10
+[  484.98s ->   493.92s] minus teen times 40 that gives us a 250 dollar long term effective value now let's
+[  493.92s ->   498.00s] look at this one so we're gonna do we're going to win 71 percent of the time we're
+[  498.00s ->   503.30s] gonna win $30 then that means we're gonna lose 29 times and we're going to lose
+[  503.30s ->   510.38s] 20 dollars a fifteen hundred dollar expected return one five five zero fifteen
+[  510.38s ->   514.28s] hundred dollars expected return so what do we learned here well we're gonna trade
+[  514.28s ->   518.48s] purely based off deltas ignoring trend ignoring direction and just putting on a
+[  518.48s ->   522.62s] book credit spread every single day and you just want to follow a two times X stop a
+[  522.62s ->   527.96s] stop-loss rule this is your go-to a 15 Delta with roughly 85 percent win rate
+[  527.96s ->   532.94s] collecting 15 cents looks solid right eight hundred and twenty five dollars
+[  532.94s ->   536.84s] expected return with the 2x stop-loss however if you want the greatest return
+[  536.84s ->   543.20s] you use a trend following strategy 30 Delta stop loss of 20 cents or roughly
+[  543.20s ->   546.80s] winning winning short strike strike strike price broken this gives you a one
+[  546.80s ->   550.20s] thousand five hundred and fifty dollar expected return so again if you want to
+[  550.20s ->   554.12s] learn how to implement this for yourself I literally have a free course out
+[  554.12s ->   557.84s] there link down below that tells you and walks through how to do this step step by
+[  557.84s ->   562.58s] step but simply I'll explain it to you right now just because you need to know
+[  562.58s ->   567.56s] this stuff when the market is above the moving average we're trading put credit
+[  567.56s ->   570.98s] spreads minutes below we're trading call so let's say it's above we're trading a
+[  570.98s ->   573.38s] put credit spread what we're going to do is we're going to look at the stock's
+[  573.38s ->   579.02s] current close price we're going to multiply that by 0.99 aka what's 1% away from
+[  579.02s ->   583.78s] the stock price that's going to give us our short strike and then once we have a
+[  583.78s ->   586.48s] short strike right then we're going to buy the strike below it to set up our call
+[  586.48s ->   589.84s] credits with the size set up the trade our expiration date will be the current
+[  589.84s ->   596.08s] date plus seven days so plus seven and then round to the next Friday so today
+[  596.08s ->   601.96s] is February 6th so that means that it's going to go to February 13th there's
+[  601.96s ->   606.22s] going to be seven days and then if we add to next Friday our expiration date
+[  606.22s ->   610.06s] would be September 15th if today is the 6 that means our expiration date would be
+[  610.06s ->   614.68s] September 15th just for example and we're gonna use a stop loss where we exit when
+[  614.68s ->   618.04s] our short strike price is broken this is the rough rules if you follow these
+[  618.04s ->   621.88s] rules you can hit this these steps these these criteria and have a long-term
+[  621.88s ->   626.26s] expected return with a 71 percent win rate all right guys that is my math
+[  626.26s ->   631.24s] explanation the system the strategy behind how and why you should lose more I
+[  631.24s ->   636.28s] should take this out lose less more often anyways if you enjoyed this please
+[  636.28s ->   640.60s] smash the subscribe button I will see you in the next video

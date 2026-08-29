@@ -1,0 +1,123 @@
+[    0.00s ->     3.96s] What if I told you one candle can completely change your life?
+[    4.02s ->     7.02s] You see, every candle is like a book telling a story.
+[    7.08s ->    10.36s] And there's so much information in every single candle.
+[   10.48s ->    16.28s] So much so that you can predict where price will go by simply just looking at one candle.
+[   16.38s ->    20.90s] To understand this topic further, we have to dive deeper in a term called liquidity.
+[   21.08s ->    23.64s] Now, I'm sure all of you have heard this term before.
+[   23.82s ->    28.38s] Liquidity is such a powerful topic because it's literally what makes the market move.
+[   28.38s ->    31.76s] Without liquidity, the market really wouldn't move that much.
+[   33.45s ->    33.65s] Me?
+[   35.49s ->    36.75s] Just hanging around.
+[   37.21s ->    41.95s] You see, these big banks and hedge funds need liquidity in order to enter their trade.
+[   42.11s ->    46.53s] Unlike you and me, these big firms are dealing with such huge amounts of money,
+[   46.75s ->    48.75s] they don't trade like a normal person.
+[   48.83s ->    52.19s] It's actually one of the few drawbacks of trading with so much money.
+[   52.25s ->    56.93s] For example, if I want to enter a position, I can really enter whenever I want.
+[   56.93s ->    59.61s] Since I'm not dealing with hundreds of millions of dollars,
+[   59.81s ->    62.99s] there will always be enough sellers to counteract my buy order.
+[   62.99s ->    67.25s] But on the other side of the rainbow, this is where big firms run into a problem.
+[   67.35s ->    69.17s] They are dealing with so much money,
+[   69.37s ->    74.05s] there are simply not enough sellers for them to enter the trade at the price they want.
+[   74.13s ->    75.31s] So what do they do?
+[   75.45s ->    77.57s] They create the sellers themselves.
+[   77.77s ->    80.19s] Now, big firms have multiple ways to do this.
+[   80.33s ->    82.63s] One way is they create a scary narrative.
+[   82.63s ->    84.97s] For example, Apple a couple months ago.
+[   85.09s ->    90.23s] On a mysterious night, Apple came out with a huge scary narrative that they were getting sued.
+[   90.31s ->    91.23s] Pretty scary, right?
+[   91.33s ->    95.55s] And this press release got sent out everywhere, getting a lot of eyes on it.
+[   95.57s ->   101.13s] And this news was so impactful that it dropped Apple's stock price close to 20%,
+[  101.13s ->   103.75s] leaving the market in absolute chaos.
+[  103.87s ->   107.59s] But you know what happened a month after this press release got sent out?
+[  107.59s ->   111.93s] Apple bought back $110 billion worth of stock.
+[  112.05s ->   116.51s] Just to clarify, that is the largest share buyback in U.S. history.
+[  116.61s ->   122.95s] Now, is this a coincidence that a huge scary narrative came out right before they bought back all of this stock?
+[  123.09s ->   124.61s] Maybe, but I really doubt.
+[  124.69s ->   129.49s] Apple was wanting to buy so much of their own stock, they had to create the sellers themselves.
+[  129.75s ->   134.99s] Now, this might be a bit dramatic of an example, but you need to know how these big firms think.
+[  134.99s ->   141.61s] Another way these firms will drive down price before they enter is by hitting retail traders' stop losses.
+[  141.81s ->   145.37s] They will look at the chart, see where most traders have their stop losses,
+[  145.63s ->   150.37s] intentionally driving down the price to this area to hit all of these stop losses.
+[  151.29s ->   152.87s] Which creates liquidity.
+[  153.09s ->   154.45s] Now, why am I telling you this?
+[  154.47s ->   157.39s] Because liquidity plays such an important role.
+[  157.49s ->   161.51s] And luckily for you, just like these big firms, we can take advantage of that.
+[  161.57s ->   162.39s] Here's how to do it.
+[  162.45s ->   163.89s] But first, look what I found.
+[  163.89s ->   165.37s] Have you ever heard of copy trading?
+[  165.53s ->   170.51s] Copy trading is a feature that allows you to automatically copy trades a professional trader.
+[  170.67s ->   173.27s] For example, you can go on a site called Hankertrade.
+[  173.35s ->   175.05s] Click the copy trading section.
+[  175.17s ->   176.77s] Then, click top performing.
+[  176.93s ->   181.65s] And you can see all of the top traders that offer copy trading on this platform.
+[  181.65s ->   187.65s] But what's really cool is you can see their win rate, how much they have profited, and also their risk factor.
+[  187.65s ->   192.75s] So maybe you want to follow somebody who has a high win rate, but also has a very low risk tolerance.
+[  192.75s ->   199.81s] You can simply click this follow button, and it'll automatically take all the trades this specific trader is taking for you.
+[  199.81s ->   202.99s] So you can literally copy all of their trades automatic.
+[  203.13s ->   203.97s] Pretty cool, right?
+[  203.97s ->   209.75s] If you're new to trading or even don't have the time to trade by yourself, I would definitely recommend checking it out.
+[  209.75s ->   212.59s] It's a super easy way to start growing your portfolio.
+[  212.59s ->   217.45s] If you're interested, I'll leave a link in the description so you can try out this new feature yourself.
+[  217.45s ->   218.79s] Okay, back to the video.
+[  218.79s ->   220.19s] First, go to trading view.
+[  220.19s ->   222.89s] I'll leave a link in the description if you don't yet have it.
+[  222.89s ->   225.43s] Go to your chart and click the daily time frame.
+[  225.43s ->   227.59s] You're going to want to find the market bias.
+[  227.59s ->   229.95s] This will usually be pretty easy to spot.
+[  229.95s ->   232.21s] For example, here the chart looks like this.
+[  232.21s ->   234.27s] You guessed it, we have a bullish bias.
+[  234.27s ->   235.87s] Here the chart looks like this.
+[  235.87s ->   237.09s] We have a bearish bias.
+[  237.09s ->   237.85s] Simple enough.
+[  237.85s ->   238.95s] It's not rocket science.
+[  238.95s ->   239.93s] That's the first step.
+[  239.93s ->   241.23s] Finding the market bias.
+[  241.23s ->   245.35s] If we are overall bullish, we want to buy below the market open.
+[  245.35s ->   249.41s] If we are overall bearish, we want to sell above the market open.
+[  249.41s ->   250.41s] Here's what I mean.
+[  250.41s ->   252.13s] Make sure you're on the daily time frame.
+[  252.13s ->   254.31s] Find your bias so here we are bullish.
+[  254.31s ->   259.79s] Then, go to the latest candle and mark the open and the close of this candle.
+[  259.79s ->   262.07s] Next, go to a smaller time frame.
+[  262.07s ->   267.29s] These lines represent the open and the close on a higher time frame that we just marked.
+[  267.29s ->   270.97s] The green line is the open, the red line is the close.
+[  270.97s ->   275.97s] So if we are targeting liquidity, we only want to start looking for buys once price goes
+[  275.97s ->   279.99s] beneath this green line, giving us some sell side liquidity.
+[  279.99s ->   280.99s] Just like this.
+[  280.99s ->   286.03s] Next, we need some sort of confirmation that price is willing to reverse from this point.
+[  286.03s ->   289.21s] An easy way to do this is to mark a break of structure.
+[  289.21s ->   293.65s] This will be the previous high before price gave us this sell side liquidity.
+[  293.65s ->   297.29s] Mark it on your chart and wait for price to come above this point.
+[  297.29s ->   299.15s] Next, we need a place to enter.
+[  299.15s ->   301.71s] My favorite way to do this is with a fair value gap.
+[  301.71s ->   305.23s] A fair value gap is a price jump that indicates an imbalance.
+[  305.23s ->   310.33s] You can mark this gap by finding the fast move, mark the candle before the move, and the candle
+[  310.33s ->   311.33s] after the move.
+[  311.33s ->   313.29s] This area is the fair value gap.
+[  313.29s ->   315.59s] Wait for price to come to this area.
+[  315.59s ->   316.59s] Enter here.
+[  316.59s ->   321.05s] Set your stop loss below this recent low, and set your take profit at the market close
+[  321.05s ->   322.35s] we marked before.
+[  322.35s ->   326.83s] As you can see, it gives a great risk to reward ratio, where we're only risking a little
+[  326.83s ->   330.71s] bit for a huge gain, which is exactly what we want.
+[  330.71s ->   334.75s] Wait for price to play out, and boom, you got a super profitable trade.
+[  334.75s ->   336.01s] Here's a short example.
+[  336.01s ->   337.85s] First, go to the daily time frame.
+[  337.85s ->   339.51s] As you can see, we have a bearish bias.
+[  339.51s ->   340.51s] Good.
+[  340.51s ->   343.07s] Mark the open and the close of the latest candle.
+[  343.07s ->   344.75s] Go to a smaller time frame.
+[  344.75s ->   348.35s] The green line is the open, the red line is the close.
+[  348.35s ->   351.23s] Since it's a red candle and we're shorting, it's reversed.
+[  351.23s ->   353.39s] Wait for price to break the market open.
+[  353.39s ->   356.53s] Next, mark our break of structure, which is the latest low.
+[  356.53s ->   360.77s] Then wait for price to break this break of structure to show it's changing momentum.
+[  360.77s ->   362.15s] Mark down your fair value gap.
+[  362.15s ->   364.43s] Wait for price to come to this fair value gap.
+[  364.43s ->   365.71s] Enter your short trade here.
+[  365.71s ->   368.13s] Set your stop loss above the market open.
+[  368.13s ->   370.71s] Set your take profit at the market close.
+[  370.71s ->   373.01s] And just like that, you got another winning trade.
+[  373.01s ->   377.03s] Try this strategy out yourself and let me know how it worked for you on Instagram.
+[  377.03s ->   378.79s] I would love to hear you guys' progress.
+[  378.79s ->   381.25s] Thanks for watching and I'll see you guys next time.

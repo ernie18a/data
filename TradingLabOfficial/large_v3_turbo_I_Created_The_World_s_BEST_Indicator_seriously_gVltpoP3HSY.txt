@@ -1,0 +1,222 @@
+[    0.16s ->     5.12s] I spent the last 8 months carefully coding the best indicator I possibly could, spending
+[    5.12s ->     9.84s] months after months optimizing the performance to the best it could possibly be, backtest
+[    9.84s ->    14.96s] after backtest, and I'd like to say, I think my work has finally paid off.
+[   14.96s ->    20.38s] Now, you guys know I deal with a lot of indicators.
+[   20.38s ->    22.14s] A lot of indicators.
+[   22.14s ->    26.90s] I've curated my own personal private strategy that I haven't shared on this channel ever
+[   26.90s ->    31.46s] before and engineered it into one single indicator.
+[   31.46s ->    34.92s] Adding features to it that no other premium indicator has.
+[   34.92s ->    39.60s] When I said I wanted to make the best indicator out there, I meant it.
+[   39.60s ->    44.20s] Real time buy and sell signals giving you the best entries for longs or shorts.
+[   44.20s ->    48.28s] Optimize take profit points so you get out of the trade at perfect spots.
+[   48.28s ->    51.68s] Automatic support and resistances so you don't have to waste time drawing them.
+[   51.68s ->    55.88s] A trend table that will give you useful metrics and let you know how the market is trending
+[   55.88s ->    57.18s] with just a glance.
+[   57.18s ->    61.42s] Fair value gap signals where the bot will automatically tell you if there's a fair value gap on
+[   61.42s ->    63.04s] the chart in real time.
+[   63.04s ->    66.72s] Customizable settings to where you can change the sensitivity based on if you're a more
+[   66.72s ->    68.68s] aggressive or passive trader.
+[   68.68s ->    73.72s] Other popular indicators already pre-installed into one indicator so you don't need TradingView
+[   73.72s ->    76.64s] premium to have three or more indicators on your chart.
+[   76.64s ->    79.88s] And all of these features are just the tip of the iceberg.
+[   79.88s ->    81.56s] Alright, that sounds awesome.
+[   81.56s ->    85.74s] I'm going to show you how to use this indicator correctly, the best optimal settings for it,
+[   85.74s ->    89.76s] how to avoid false signals, and how to use it to the best of its ability.
+[   89.76s ->    91.38s] Well, enough talk.
+[   91.38s ->    93.14s] Let's see how it works in a real trade example.
+[   93.14s ->    98.24s] So for this first example, we only have custom bar coloring and baseline enabled in the settings.
+[   98.24s ->   101.78s] So our chart is pretty simple right now, but I really just want to show you what a simple
+[  101.78s ->   105.52s] trade looks like first and then we can get into all the advanced settings after.
+[  105.52s ->   109.44s] The chart we are looking at is AMD on the 3 hour time frame.
+[  109.44s ->   114.02s] From all the back tests we did, the 3 hour time frame seemed to provide the best results.
+[  114.02s ->   116.90s] This indicator works on all time frames.
+[  116.90s ->   122.70s] And all markets that have sufficient volume, including stocks, forex, crypto, futures, etc.
+[  122.70s ->   127.38s] But just know from our back test results, the 3 hour time frame seemed to perform the best.
+[  127.38s ->   130.36s] Now first off, you have 4 different entry types.
+[  130.36s ->   132.98s] Strong buy Buy Sell Strong sell
+[  132.98s ->   137.42s] A strong buy has a greater chance of being a successful trade than a normal buy.
+[  137.42s ->   139.02s] Same thing goes with the sell signals.
+[  139.02s ->   141.02s] So just keep that in mind when using the indicator.
+[  141.02s ->   143.94s] So look how beautiful this indicator works.
+[  143.94s ->   145.62s] So here we have a strong buy.
+[  145.62s ->   147.06s] So we enter the trade.
+[  147.06s ->   149.80s] We wait a little bit and then we see the first take profit mark.
+[  149.80s ->   153.50s] The cool thing about this indicator is it will give you a take profit mark based on your
+[  153.50s ->   156.82s] trading sensitivity from the sensitivity you put in the settings.
+[  156.82s ->   160.66s] This is also where you can start putting your own twist on the indicator depending on your
+[  160.66s ->   161.74s] risk tolerance.
+[  161.74s ->   166.48s] So if you wanted to be on the safer side, you would sell 75% of your position at the first
+[  166.48s ->   167.48s] take profit mark.
+[  167.48s ->   171.72s] If you wanted to be a little on the riskier side, you would only sell 25% here and let
+[  171.72s ->   173.08s] the other portion ride.
+[  173.08s ->   176.82s] It really depends on the style of trader you are and what you're comfortable with.
+[  176.82s ->   180.68s] But just make sure you sell a certain percentage here for guaranteed profits.
+[  180.68s ->   184.16s] So we sell some of our position here and let the other half ride.
+[  184.16s ->   188.04s] The chart continues to go up and we end up getting another take profit mark.
+[  188.04s ->   190.40s] This is where you would close the rest of your position.
+[  190.40s ->   192.32s] And look what ends up happening after.
+[  192.32s ->   197.14s] The market starts to consolidate, so the indicator got us out right at the perfect point, right
+[  197.14s ->   199.06s] before the market starts consolidating.
+[  199.06s ->   203.10s] And we ended up making some pretty good profits, as this was a 7% gain.
+[  203.10s ->   204.70s] After that trade, we look for another.
+[  204.70s ->   207.32s] We wait a little and end up getting another buy signal.
+[  207.32s ->   211.20s] Now like I said earlier, strong buys perform better than regular buys.
+[  211.20s ->   213.98s] But the regular buys can still give some really good entries.
+[  213.98s ->   215.32s] So we enter the trade.
+[  215.32s ->   216.32s] The market goes up.
+[  216.32s ->   217.62s] We get our first take profit.
+[  217.62s ->   220.32s] We sell a percentage of our trade here and let the rest ride.
+[  220.32s ->   224.50s] The market starts losing a bit of its momentum, and then we get our final take profit mark,
+[  224.50s ->   227.40s] getting the absolute top of this move as well.
+[  227.40s ->   229.62s] So that's two successful trades so far.
+[  229.62s ->   230.72s] Let's see what happens next.
+[  230.72s ->   234.88s] The market starts heading downwards now, and we end up getting our first sell signal, which
+[  234.88s ->   236.40s] is a signal to go short.
+[  236.40s ->   238.12s] So we enter our first short trade.
+[  238.12s ->   239.76s] We then see what the market does next.
+[  239.76s ->   243.32s] It looks like the indicator was right, because the market starts heading downwards.
+[  243.32s ->   246.94s] We get our first take profit mark, so we sell a percentage of our position here
+[  246.94s ->   248.24s] and let the rest ride.
+[  248.24s ->   251.84s] The market continues to head downwards, and we get our final take profit mark and sell
+[  251.84s ->   253.38s] the rest of our position.
+[  253.38s ->   258.64s] So this indicator does work with both long and short trades, and you can disable or enable
+[  258.64s ->   263.42s] them in the settings in case you prefer one over the other.
+[  263.42s ->   268.38s] As you can see, this indicator is working beautifully so far, and we are 3 for 3.
+[  268.38s ->   270.32s] These are just the basic entries and exits.
+[  270.32s ->   273.70s] Oh, just wait till I show you how to actually optimize this indicator.
+[  273.70s ->   277.06s] I'm going to speed through these last couple trades as I think you guys are starting to
+[  277.06s ->   277.84s] get the hang of it.
+[  277.84s ->   282.18s] We get a buy signal, take profit mark, sell the percentage, market goes up, get our final
+[  282.18s ->   285.70s] take profit mark, sell the position, market consolidates for a few.
+[  285.70s ->   290.02s] We get a sell signal, take profit mark, sell the percentage of the position, wait, get
+[  290.02s ->   292.74s] a second take profit mark, sell the rest of our position.
+[  292.74s ->   296.90s] Now if you just look at this chart, look how beautifully the indicator bought and sold the
+[  296.90s ->   298.02s] bottoms and tops.
+[  298.02s ->   301.00s] I'm so proud, you did good son, you did good.
+[  301.00s ->   308.30s] Now sadly the indicator isn't always going to give us perfect entries and exits like this.
+[  308.30s ->   312.20s] Sometimes it'll give you a false entry signal in a consolidating market, and it'll end
+[  312.20s ->   313.54s] up being a losing trade.
+[  313.54s ->   318.20s] But luckily for you, I'm about to show you ways you can know it's a false signal before
+[  318.20s ->   319.14s] it even happens.
+[  319.14s ->   323.18s] Introducing the trend table.
+[  323.18s ->   327.74s] The trend table provides useful metrics so you can easily see how the market is performing,
+[  327.74s ->   328.74s] just a glance.
+[  328.74s ->   334.08s] It'll tell you the trend, trend strength, momentum, volatility, volume, EMA close, and
+[  334.08s ->   338.44s] the stock's flow, which are all very key areas you should be looking at before entering
+[  338.44s ->   339.44s] a trade.
+[  339.44s ->   343.38s] You can turn this option on in the settings on the indicator called show key metrics.
+[  343.38s ->   347.78s] So going back to the false entry signal example, here the indicator gives us a buy signal.
+[  347.78s ->   351.70s] But if we look at the trend table, nearly all the metrics are bearish, which could be
+[  351.70s ->   354.50s] a good indication this is not a good buy signal.
+[  354.50s ->   356.46s] So we would disregard this signal.
+[  356.46s ->   359.92s] And look what happens, we were actually in a consolidating market, and the price starts
+[  359.92s ->   363.18s] moving sideways, giving us what would have been a losing trade.
+[  363.18s ->   364.88s] So we really dodged a bullet there.
+[  364.88s ->   369.46s] In order to get a high probability setup for a long, you want most of these metrics to be
+[  369.46s ->   370.46s] bullish.
+[  370.46s ->   373.52s] And obviously for short trades, you want most of the metrics to be bearish.
+[  373.52s ->   377.50s] If a lot of the metrics are the opposite of the entry signal, it's a pretty good indication
+[  377.50s ->   378.96s] the market is consolidating.
+[  378.96s ->   382.36s] You can even confirm trades with their custom baseline feature.
+[  382.36s ->   386.08s] If you don't see it on your chart, go to the settings and check this baseline feature.
+[  386.08s ->   390.20s] You would only enter a trade if you get a buy signal and the baseline is green.
+[  390.20s ->   394.62s] If you get a buy signal and the baseline is red or gray, you would not enter that trade.
+[  394.62s ->   398.76s] I even got some messages from viewers that said they just entered trades depending on
+[  398.76s ->   402.54s] purely the color of the baseline, without using any buy or sell signals.
+[  402.54s ->   404.76s] And they said it actually worked pretty well.
+[  404.76s ->   407.84s] Even though I wouldn't recommend this, just know you could always do that too.
+[  407.84s ->   412.22s] The next tip I have to optimize this indicator's performance is using the automatic support
+[  412.22s ->   413.22s] and resistances.
+[  413.22s ->   417.02s] Now I do have to say, these things are really cool.
+[  417.02s ->   421.58s] What the indicator will do is show you the closest support and the closest resistance to
+[  421.58s ->   422.80s] the current price.
+[  422.80s ->   427.23s] This is so you don't get something like this.
+[  427.23s ->   431.53s] Where you have 10,000 different lines of support and resistances on your chart making it
+[  431.53s ->   432.53s] super cluttered.
+[  432.53s ->   435.53s] The red line is the resistance, the green line is the support.
+[  435.53s ->   439.93s] The indicator will automatically adjust the support and resistances in real time, which
+[  439.93s ->   441.45s] is pretty damn cool.
+[  441.45s ->   445.69s] So how I like to use them is by using them as potential take profit points.
+[  445.69s ->   449.89s] As an example, we know this red line is a point in the chart where price is likely to
+[  449.89s ->   450.89s] hesitate.
+[  450.89s ->   454.83s] So we should sell a percentage of our position at this resistance if price ever hits it.
+[  454.83s ->   458.85s] That way, if price can't break the resistance and rejects, we still made some money.
+[  458.85s ->   459.97s] So here's an example.
+[  459.97s ->   461.39s] We get a buy entry signal.
+[  461.39s ->   465.19s] We enter and as you can see, price starts heading towards our resistance.
+[  465.19s ->   466.35s] Then it hits.
+[  466.35s ->   470.51s] Even though we did not get a take profit signal, we are still going to close a percentage of
+[  470.51s ->   473.91s] our position here as we know this is a key resistance level.
+[  473.91s ->   475.29s] So we do just that.
+[  475.29s ->   479.77s] Price actually does exactly as we expected and bounces off the resistance and then later
+[  479.77s ->   482.01s] the indicator tells us to exit the trade.
+[  482.01s ->   485.77s] Where this originally would have been a losing trade, we actually made money from this and
+[  485.77s ->   486.39s] made it a winning trade.
+[  486.39s ->   491.15s] It's definitely important to use these automatic support and resistances to really make sure
+[  491.15s ->   493.03s] you're getting the most out of the indicator.
+[  493.03s ->   497.43s] If you really, really want to optimize the indicator and go the extra mile, you can manually
+[  497.43s ->   502.11s] plot support and resistances on the daily time frame by seeing really key turning points
+[  502.11s ->   503.11s] in the market.
+[  503.11s ->   507.31s] These will be very strong resistances and you can use these levels as take profit points
+[  507.31s ->   508.31s] as well.
+[  508.31s ->   512.87s] We also do the same type of thing with pivot points which we actually pre-built in the indicator
+[  512.87s ->   513.87s] with many others.
+[  513.87s ->   518.69s] Now these are daily pivot points, which means price usually respects them pretty heavily.
+[  518.69s ->   522.63s] So they can also be great support and resistances and potential take profit points.
+[  522.63s ->   523.63s] Here's an example.
+[  523.63s ->   527.67s] We get a buy signal, price heads upwards and starts slowing down at the pivot point.
+[  527.67s ->   530.83s] Even though we didn't get a take profit point, it might be a good idea to close your
+[  530.83s ->   535.01s] position here as we know the pivot point will have a lot of resistance, which if you did,
+[  535.01s ->   537.73s] you turned what would have been a losing trade into a winning one.
+[  537.73s ->   541.25s] You can also use them as supports and put your stop losses below them.
+[  541.25s ->   545.27s] So if you entered a trade and price ends up breaking the pivot point, it might be a good
+[  545.27s ->   549.85s] idea to exit the trade, even though you didn't get an exit signal, as price breaking a daily
+[  549.85s ->   552.39s] pivot point is usually a pretty bearish signal.
+[  552.39s ->   556.43s] These are just some simple ways of how you can increase the win rate and profitability of
+[  556.43s ->   557.43s] the indicator.
+[  557.43s ->   561.57s] The last feature I really want to talk about is probably the coolest feature of the indicator,
+[  561.57s ->   563.57s] and that is the fair value gap.
+[  563.57s ->   567.69s] If you don't know what the fair value gap is, to put it quick and simply, it's basically
+[  567.69s ->   572.25s] when price spikes up or down super fast to where buyers or sellers don't have enough
+[  572.25s ->   573.83s] time to counter at the movement.
+[  573.83s ->   577.81s] So there's basically an imbalance in the market, and price will usually retrace back
+[  577.81s ->   582.51s] to this point, and then after that, head back to where it was before, giving us a great
+[  582.51s ->   583.59s] trade opportunity.
+[  583.59s ->   587.65s] How you would mark an imbalance is taking the candle before the move and the candle after
+[  587.65s ->   590.87s] the move, and this is the area where the imbalance is.
+[  590.87s ->   595.37s] We have an option on the indicator, where it will automatically spot these imbalances for
+[  595.37s ->   599.93s] you and tell you if they are bullish or bearish in real time, so you don't have to do any
+[  599.93s ->   600.93s] of the work.
+[  600.93s ->   604.67s] Here's an example, price shot up super fast right here, not giving the sellers enough
+[  604.67s ->   609.03s] time to counter at the movement, so naturally, there's an imbalance, and the indicator senses
+[  609.03s ->   612.63s] this and draws a green rectangle for the bullish imbalance area.
+[  612.63s ->   617.17s] Price continues to head upwards, but naturally, price will want to head back to this area for
+[  617.17s ->   618.17s] a retracement.
+[  618.17s ->   622.61s] So what you would do is, wait for price to come back to this area, enter when it does,
+[  622.61s ->   626.73s] set your stop loss at the swing low, and set your take profit mark at the recent high,
+[  626.73s ->   631.43s] and look what happens, it was a winning trade, and you can see it retraced right exactly at
+[  631.43s ->   632.43s] the fair value gap.
+[  632.43s ->   635.93s] I think it's also very important to mention that you want to wait for price to get to
+[  635.93s ->   639.99s] the halfway mark of the fair value gap, as this will give you the best risk to reward
+[  639.99s ->   643.63s] ratio, and sure you're going to miss out on some of the trades because sometimes they
+[  643.63s ->   647.83s] won't come all the way down to the halfway mark, but a lot of the time, price will come
+[  647.83s ->   649.87s] to this halfway mark and bounce there.
+[  649.87s ->   653.43s] You can do the exact same thing for shorts, the imbalance will just be red.
+[  653.43s ->   658.71s] They can also be used as great take profit marks and stop losses, green ones being supports,
+[  658.71s ->   660.39s] and red ones being resistances.
+[  660.39s ->   664.89s] You should also know that imbalances on higher time frames will be more accurate and hold
+[  664.89s ->   667.39s] a lot more weight than ones on lower time frames.
+[  667.39s ->   672.21s] This is a very simplified and basic tutorial on how to do this, you can get much more advanced
+[  672.21s ->   675.95s] with it, but you'd be surprised on how often this works in your favor.
+[  675.95s ->   681.39s] If you implement volume, trading patterns, divergences, price action, risk management,
+[  681.39s ->   685.05s] etc, this indicator performs extremely well.
+[  685.05s ->   688.95s] Hopefully I got across the point you shouldn't just simply blindly follow the buy and sell
+[  688.95s ->   693.35s] entries, you should be incorporating other trading techniques on top of the indicator to
+[  693.35s ->   695.19s] improve it that much more.
+[  695.19s ->   698.91s] But if you made it this far in the video, I'd simply just like to say thanks for watching
+[  698.91s ->   703.35s] all the way through, and as a token of my appreciation, here's the coupon code for the indicator.
+[  703.35s ->   706.79s] I'll just make it end of video, I know, real original right?
+[  706.79s ->   708.79s] But seriously, thanks for watching all the way through.
+[  708.79s ->   712.11s] If you would like to check out the indicator, I'll leave a link in the description, or you
+[  712.11s ->   715.23s] can just go to tradinglab.ai to read more about it.
+[  715.23s ->   716.67s] Thanks for watching, and happy trading!

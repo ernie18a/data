@@ -1,0 +1,86 @@
+[    0.00s ->     4.98s] In this video, I want to talk about the three best ETFs for credit spread traders.
+[    5.36s ->     9.60s] If you're looking for something to trade, you should be trading these three ETFs on repeat.
+[    9.78s ->    15.26s] This is what I do and what my members do and what allows us to make 5% to 10% every single month.
+[   15.58s ->    20.20s] Why? Because they're reliable, consistent, super liquid, and other reasons that I'll talk about here,
+[   20.32s ->    21.64s] they're super profitable.
+[   22.04s ->    25.32s] So let's get into these three ETFs without wasting your time.
+[   25.32s ->    31.80s] All right, so number one, by default, we need to talk about why ETFs and why not stocks.
+[   32.06s ->    36.62s] Well, if you haven't seen my other video on why you should be trading credit spreads on ETFs,
+[   36.64s ->    42.00s] it's because they're diversified, they move slower, and they're not affected by single news and outlier risk.
+[   42.26s ->    45.22s] So your credit spreads have, by default, have higher win rates.
+[   45.52s ->    47.72s] Not only that, ETFs are very liquid.
+[   48.10s ->    52.72s] All right, so number one, the number one stock I like, which I assume you guys will know this, is SPY.
+[   52.72s ->    56.34s] This is one of the most popular ETFs to trade options on.
+[   56.70s ->    63.78s] Why? Well, because it tracks, currently, 506 of the top companies, and it's super duper liquid.
+[   63.92s ->    64.70s] So what does this mean?
+[   64.78s ->    73.72s] The 506 companies means it's really diversified, so a single risk in even one sector will be mitigated from other sectors,
+[   73.80s ->    77.22s] unless it's the tech sector, because I think the tech sector makes up roughly 10% of SPY.
+[   77.22s ->    82.00s] But anyways, you get the point, is that SPY is very consistent and very reliable,
+[   82.30s ->    86.40s] and we can trade credit spreads on it often, because it's also super liquid.
+[   86.50s ->    89.68s] There's a lot of people trading these options, which means we can easily get in and out,
+[   89.90s ->    91.44s] especially if we're doing large size.
+[   91.72s ->    97.12s] For instance, I'll do 25, 30, sometimes even 35 contracts of spreads at a time,
+[   97.20s ->   102.90s] so that's roughly 70 contracts at one time, and have no problem with execution.
+[  102.90s ->   105.52s] So that's why I like SPY.
+[  106.22s ->   109.86s] We also have, and again, if you stay tuned until after I cover these three,
+[  110.10s ->   114.22s] I'll go into the stats of why I like these stocks and the numbers behind it.
+[  114.50s ->   115.70s] Number one is DIA.
+[  115.90s ->   117.90s] This is the Dow Jones Industrial Average.
+[  118.28s ->   123.28s] Same reasons, very diversified, very safe, and has very good liquidity.
+[  123.90s ->   126.92s] But again, there's actually one with better liquidity than this.
+[  126.92s ->   132.46s] But anyways, so this tracks, I believe, 31 different stocks in the market.
+[  132.82s ->   135.74s] So again, these tracks the stock 31s in the U.S.
+[  135.84s ->   141.26s] So not as diversified as SPY, but these still very closely mimic each other.
+[  141.68s ->   146.38s] Now, last but not least, we have Q, Q, and Q.
+[  146.74s ->   148.74s] This is going to be our tech sector.
+[  148.82s ->   149.86s] That looks like a clock, not a Q.
+[  149.98s ->   150.54s] Okay, Q.
+[  150.54s ->   153.04s] So this is our tech sector.
+[  153.40s ->   158.46s] It tracks, I believe, 102 of the most popular tech stocks.
+[  159.16s ->   163.40s] Again, QQQ roughly makes up 10% of SPY.
+[  163.50s ->   165.88s] I say that as in SPY is 10% of tech.
+[  166.22s ->   167.92s] But anyway, this is a diversified tech.
+[  167.98s ->   170.20s] So this will move a bit faster, will move a bit quicker,
+[  170.26s ->   172.78s] because tech stocks are more of a high-growth type of area.
+[  173.42s ->   175.96s] So again, if you're looking to invest in stocks somewhere,
+[  176.14s ->   178.76s] QQQ may be more advisable over SPY.
+[  178.76s ->   182.64s] But again, because QQQ does move a lot,
+[  183.06s ->   186.42s] this means that the stock's volatility is a bit higher.
+[  186.72s ->   189.22s] Thus, you're able to collect more credit on these trades.
+[  189.64s ->   192.92s] These right here, whoops, these trades are safe and consistent.
+[  193.50s ->   197.86s] These are also consistent, but you're going to have a lower win rate
+[  197.86s ->   199.92s] because you get to collect more credit,
+[  200.26s ->   203.58s] so you make more money on these spreads with that.
+[  203.70s ->   206.48s] So that's kind of the fun point with QQQ.
+[  206.48s ->   208.76s] Anyways, why do I like these?
+[  208.92s ->   209.88s] What are my stats?
+[  210.00s ->   213.22s] Well, when you employ a trend-following strategy,
+[  213.34s ->   215.72s] where you simply wait for the market to be trending up,
+[  215.98s ->   218.32s] and you follow it, which is the turtle strategy right here.
+[  218.38s ->   219.58s] This is an uptrending strategy.
+[  220.06s ->   223.36s] And you use it with credit spreads on SPY.
+[  223.50s ->   226.34s] SPY $1 with the uptrending strategy.
+[  226.74s ->   229.78s] You have a 93% historical win rate since 2005,
+[  230.20s ->   232.48s] with an annualized return of almost 35%.
+[  232.48s ->   234.16s] That's insane.
+[  234.34s ->   234.98s] That's awesome.
+[  235.90s ->   238.36s] DIA, what do we see here from the uptrending strategy?
+[  238.46s ->   239.16s] Let's let it reset.
+[  239.52s ->   240.66s] Go to the uptrending strategy.
+[  241.02s ->   245.46s] We see a 90% win rate with a 23% annualized return.
+[  245.80s ->   246.50s] That's awesome.
+[  246.58s ->   248.72s] You're literally 3Xing the average market return.
+[  249.04s ->   251.66s] What do we see on QQQ for the uptrend strategy?
+[  252.06s ->   256.44s] We see a 90% return with a 26% annualized return.
+[  256.84s ->   258.92s] Why do they have the same win rate?
+[  259.00s ->   262.26s] Why are they different from DIA and QQQ?
+[  262.36s ->   266.54s] Because like I say, QQQ, you collect a higher credit because volatility is higher.
+[  266.96s ->   269.20s] So anyways, this is our annualized returns.
+[  269.30s ->   272.18s] You can see here all over 3X the average market return
+[  272.18s ->   278.80s] simply by trading uptrends, credit spreads, put credit spreads on these 3 ETFs.
+[  279.00s ->   280.50s] Alright guys, I hope you enjoyed this video.
+[  280.50s ->   284.78s] If you're looking to learn more about credit spreads and how to profit from them,
+[  284.90s ->   285.68s] I am your guy.
+[  285.78s ->   287.84s] I come up with videos every single day for you.
+[  288.16s ->   289.66s] So click the subscribe button.
+[  289.98s ->   291.42s] Alright, I'll see you in the next video.

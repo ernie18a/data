@@ -1,0 +1,175 @@
+[    0.00s ->     4.08s] Hey guys, this video I'm going to walk you through four ways to cut your trading taxes in half.
+[    4.40s ->     7.68s] Now again, as someone who makes a decent amount of money by selling options,
+[    7.68s ->    13.60s] you can see here so far this year we're only 29 days into the year that I've made roughly $6,800
+[   13.60s ->    16.98s] that there should be some way to cut my taxes down.
+[   17.26s ->    20.48s] And again, I've been able to do this for the last three years as a trader.
+[   20.64s ->    24.14s] I've learned these rules, these strategies and ways to cut my taxes down.
+[   24.24s ->    28.64s] And I save as much as $3,000 every year just by using these rules.
+[   28.64s ->    35.60s] Anyways, before I get into what these are, let me first say I'm not a financial advisor or a CPA or any tax expert.
+[   35.98s ->    40.28s] So please do your own research and contact a professional if you want to use one of these.
+[   40.40s ->    41.70s] So let's dive in.
+[   41.96s ->    46.74s] The first one we're going to talk about today is we can use Section 1256.
+[   47.08s ->    52.40s] This is a way to dramatically cut down your taxes and it's something that I recommend for all options traders.
+[   52.90s ->    57.64s] So what exactly does Section 1256 for futures or SPX mean?
+[   57.64s ->    62.16s] If we're trying to understand what goes on here with taxes, let's say for easy numbers,
+[   62.42s ->    66.66s] we generate $100,000 of trading profits this year.
+[   67.04s ->    70.40s] Okay, this is taxed at the normal income tax bracket.
+[   70.54s ->    75.68s] So let's say that normal income tax bracket is, let's say, 25% is what you fall into.
+[   76.00s ->    81.42s] So that means that you're going to pay $25,000 of taxes on this profit that you made.
+[   81.42s ->    84.72s] So there's trading profit here and you're only, and you have to pay this much.
+[   84.76s ->    88.46s] It means you're only going to end up with $75,000 that you get to keep.
+[   89.16s ->    92.18s] Now, this is what happens when you're trading options on normal assets.
+[   92.18s ->    98.78s] However, you can still use the same strategies that you're using now that work, but you can put them on a different asset.
+[   98.88s ->   102.86s] And what I mean by that is if you're trading SPY, instead you can trade SPX.
+[  102.86s ->   110.62s] If you're trading SPY or something similar, maybe gold ETFs or something like that, you can then trade the futures form of it.
+[  110.72s ->   115.42s] So ES or MES for smaller accounts, or maybe crude oil futures, something like that.
+[  115.44s ->   117.66s] You could trade the options on those assets instead.
+[  118.06s ->   121.56s] So the Section 1256 rule refers to futures and SPX.
+[  121.56s ->   127.58s] And so if you do that, you get to dramatically cut down your taxes by 60% basically.
+[  127.82s ->   130.14s] So this is how it works this way.
+[  130.20s ->   132.16s] Let's say we have a $100,000 profit.
+[  132.46s ->   135.40s] We get to split up how much each tax pays.
+[  135.60s ->   139.78s] So it's called a 60-40 split for the 1256 section.
+[  140.20s ->   144.42s] So basically what this looks like is 60% of our profit would be $60,000.
+[  144.86s ->   147.06s] 40% of our profit would be $40,000.
+[  147.06s ->   156.84s] And so this 60% is going to be taxed at a long-term tax bracket, which for most people is roughly 0% with a high of 15%.
+[  156.84s ->   160.10s] So let's say we do have to pay 15% on this.
+[  160.34s ->   161.92s] That means I only have to pay 15%.
+[  161.92s ->   167.88s] And again, I'm doing rough math because I don't know the exact math on this, but it's probably around $6,000, $9,000.
+[  168.00s ->   168.80s] I don't know, maybe $9,000.
+[  168.90s ->   171.32s] I'm a rough guess for this that I have to pay on taxes here.
+[  171.42s ->   175.62s] So instead of paying the whole 25%, I only need to pay 15% on this.
+[  175.62s ->   177.44s] And so now this is $40,000.
+[  177.66s ->   180.08s] And so on the 40%, I pay my normal amount.
+[  180.26s ->   182.74s] So this looks like it'd be roughly $10,000.
+[  183.54s ->   189.54s] And so if we add that together, that means with the 60-40 split with long-term taxes and short-term taxes,
+[  189.64s ->   195.70s] again, 60% long-term tax, 40% short-term tax, that gives me a total taxes of $19,000.
+[  195.78s ->   200.26s] That's a net saving of $6,000 just by changing the asset.
+[  200.26s ->   205.86s] If I went from SPY to SPX or SPY to ES, doing the same strategy, I'm still going to have the same win rate,
+[  205.98s ->   211.76s] still the same consistency and things like that because it's the same asset or an index version.
+[  212.18s ->   216.10s] So again, I get to save $6,000 of taxes, which means at the end of the day,
+[  216.10s ->   220.04s] I get to actually keep $81,000 instead of $75,000.
+[  220.36s ->   225.30s] So this right here alone could save you $6,000 depending on how much profit you make.
+[  225.30s ->   230.68s] Again, I do this by trading futures options because now I also have the greater leverage
+[  230.68s ->   233.74s] that comes from futures options, which means I make a greater return,
+[  234.04s ->   235.98s] but I also get to cut my taxes down.
+[  236.32s ->   239.90s] Now, if we're looking into the specifics here, let's make this screen a bit larger.
+[  240.24s ->   244.16s] I did share this with you guys from, I believe it's Green Trader Tax website or something.
+[  244.30s ->   248.50s] It was, but you can see here the difference based on where your normal tax bracket is.
+[  248.66s ->   250.96s] We typically had a 35% tax bracket.
+[  251.78s ->   253.42s] This is how it gets broken down, okay?
+[  253.42s ->   258.54s] With the blended 60-40, you'll end up only paying a 23% tax overall.
+[  259.00s ->   262.36s] That means instead of a 35% tax, you'll pay a 23% tax.
+[  262.42s ->   265.74s] That means you save 12% on taxes, which is insane.
+[  265.84s ->   270.66s] So again, you can see the different returns that you save based on where your normal income tax bracket is.
+[  270.84s ->   273.96s] And so again, doing that alone by simply keeping the same strategy,
+[  274.04s ->   276.60s] but changing the asset can do a lot for your taxes.
+[  277.10s ->   279.98s] Next is method number two, avoid the wash sale rule.
+[  280.24s ->   282.18s] For a lot of people, they don't even know what this is,
+[  282.18s ->   285.04s] which is fine because I didn't know about it for the first two years of trading.
+[  285.04s ->   291.66s] A wash sale rule refers to what happens when you lose a trade and then you enter back into it.
+[  291.74s ->   299.34s] So let's say you had a $5,000 loss on a trade and then turn around within 30 days,
+[  299.34s ->   303.96s] you go and re-enter the same trade because maybe it dips down and you hit your stop loss.
+[  303.96s ->   308.40s] So now you see it's recovering and so you want to re-enter to remake that profit back, right?
+[  308.56s ->   317.32s] If you re-enter here, then that means this $5,000 loss gets voided and you cannot use it to offset your taxes.
+[  317.32s ->   321.60s] So that means if you make $10,000 on this new trade,
+[  321.60s ->   327.98s] the IRS will see it as you have $10,000 to pay a tax on, not the net difference,
+[  328.00s ->   332.46s] which is the real difference, which is $10,000 minus $5,000 because you actually only have a $5,000 profit.
+[  333.02s ->   339.14s] And instead of paying tax on $5,000, you have to pay tax on $10,000 because it voided this because you entered in too soon.
+[  339.14s ->   341.32s] Now, this is called the wash sale rule.
+[  341.54s ->   349.42s] If you enter in the same asset or an almost identical asset within 30 days, it voids the loss of the previous trade.
+[  349.64s ->   352.10s] Okay, so this could cost you a lot of money.
+[  352.34s ->   357.26s] And so what you want to do is move to two different assets.
+[  357.92s ->   360.66s] Basically have assets that are similar, but not identical.
+[  360.88s ->   365.14s] So you can have SPY, you can have QQQ, which is the tech version of it.
+[  365.24s ->   368.38s] Then you can have maybe IWM if you're doing ETFs.
+[  368.38s ->   372.54s] Again, if you're doing futures, you can do S, then you can do maybe CL,
+[  372.92s ->   375.12s] and then you can also do maybe GC for gold.
+[  375.52s ->   380.06s] And so what you're doing here is you're trading this with one slow, consistent strategy.
+[  380.38s ->   383.04s] And so you're doing this, and once you take a loss, you move to the next one.
+[  383.24s ->   384.24s] You keep trading this.
+[  384.34s ->   386.02s] Once you have a loss, you can move to the next one.
+[  386.38s ->   390.08s] Once you keep trading this, once you have a loss, you then roll back to the original one.
+[  390.08s ->   393.14s] And now you're hitting different assets, and you're trading it consistently,
+[  393.32s ->   397.46s] and now you're not overlapping trades, so you never hit the wash sale rule.
+[  397.46s ->   402.04s] So now you can take all your losses and count them against all the money you made
+[  402.04s ->   405.56s] to actually have a realistic amount that you should pay taxes on.
+[  405.86s ->   407.38s] Again, if you're doing futures, the same thing.
+[  407.46s ->   411.52s] Start with ES, then go to CL, then go to GC, and then flip around.
+[  411.62s ->   413.34s] Again, find the assets you like best.
+[  413.68s ->   415.20s] Now, again, if you're going to do this type of strategy
+[  415.20s ->   417.74s] where you rotate the assets you do around this reason,
+[  418.08s ->   424.20s] make sure that you're using an option strategy that tends to have a higher win rate.
+[  424.20s ->   425.26s] Why?
+[  425.50s ->   429.80s] Because it's harder to rotate between so many assets if you're taking losses every day
+[  429.80s ->   432.26s] because then you don't have to be rotating and waiting every 30 days.
+[  432.60s ->   437.94s] So you want a win rate, I would say, 80% plus, and then you can let that run out.
+[  438.20s ->   442.34s] Now, a fun side effect is if you're doing a high win rate trade like this,
+[  442.54s ->   446.06s] and you have a loss, typically it leads to a string of losses.
+[  446.20s ->   449.38s] So you get out of the trade and you typically avoid a lot of string of losses.
+[  449.38s ->   452.62s] So by switching these assets, it can actually help you out as well.
+[  452.72s ->   455.64s] So that's avoiding the wash-sell rule by rotating your assets.
+[  455.76s ->   459.28s] The next method to cut your taxes down is called the M2M election.
+[  459.44s ->   464.56s] This is a tax election you can take on your filing every year when you file your taxes.
+[  464.80s ->   468.02s] It's called M2M, which stands for mark-to-market election.
+[  468.44s ->   472.40s] What this means, it means that the IRS is classifying you as a trader.
+[  472.54s ->   476.28s] So this is how you are known as what is called trader status.
+[  476.28s ->   478.98s] And so the MTM gives you this status.
+[  479.30s ->   482.72s] And so if it does, now you don't have to worry about the wash-sell rule
+[  482.72s ->   484.54s] because they know you're doing this actively.
+[  484.74s ->   487.92s] And so the wash-sell rule no longer applies to you, which is good.
+[  488.04s ->   489.82s] So no more wash-sell.
+[  490.00s ->   491.46s] Sorry, my handwriting is terrible.
+[  491.58s ->   492.46s] No more wash-sell.
+[  492.78s ->   494.98s] You can also write off expenses.
+[  495.32s ->   498.90s] So again, depending on how it can be handled, you can write off commissions.
+[  498.90s ->   502.80s] You can write off your internet fees, your computer, everything you use to trade,
+[  503.00s ->   505.06s] because this is where you generate most of your income.
+[  505.06s ->   509.96s] Now, this is a great status to fall into, but it's very hard to classify as this.
+[  510.28s ->   513.56s] And again, there is no set standards in the IRS rulebook.
+[  513.88s ->   519.70s] But basically, if you're doing this, 90% of your income, or more, again, this is just my personal opinion.
+[  520.02s ->   522.92s] I'm not a registered professional, so please seek one.
+[  523.04s ->   527.30s] But 90% of your income, of all your income total, should come from trading.
+[  528.10s ->   528.40s] Okay?
+[  528.58s ->   532.82s] And this also means 90% of your income, and you should be placing a few trades a day.
+[  532.82s ->   534.60s] It should be something that you actively do.
+[  535.02s ->   538.52s] So I would say, depending, 10 to 100 trades a week, right?
+[  538.60s ->   541.96s] And this is a classification that shows you, hey, I'm an active trader.
+[  542.06s ->   543.36s] My money comes from trading.
+[  543.52s ->   544.72s] I do a lot with it.
+[  544.94s ->   546.86s] And then the IRS can see that.
+[  547.04s ->   552.64s] So most trader statuses will only work for people who trade full-time as their primary source of income.
+[  552.64s ->   557.66s] And if you're doing that, if you have a full-time job, then you most likely cannot classify as this.
+[  557.98s ->   562.44s] However, this is a good classification, in my opinion, for people who have retired.
+[  562.76s ->   566.28s] And now they're using options selling to generate monthly income.
+[  566.54s ->   570.74s] And most of their retirement income is coming from the income generated from trading.
+[  571.12s ->   574.70s] And so if you're retired, you can then look into how much this is doing.
+[  574.78s ->   575.84s] And you can do trader status.
+[  575.92s ->   578.94s] So you can write off expenses, commissions, things like that.
+[  579.12s ->   580.92s] And you can also avoid the wash sale rule.
+[  580.92s ->   584.10s] Now, a lot of people won't be able to do that.
+[  584.32s ->   586.08s] But that's why we have method number four.
+[  586.42s ->   588.96s] Method number four is trading through a business.
+[  589.42s ->   594.62s] So when you're trading through a business, you get similar type of ranking as trader status.
+[  594.62s ->   602.14s] But when you trade through a business, and by business, I mean you create a dedicated LLC or separate company that you trade through.
+[  602.58s ->   608.20s] And so when you set up a separate company that you trade through, you then need to open up a business bank account,
+[  608.20s ->   612.92s] a business trading account, and everything is done underneath the business.
+[  613.02s ->   619.64s] And when it is, you're still subject to things like the wash sale rule, but now it's being treated, and it is a business.
+[  619.64s ->   621.58s] So that means you can write off expenses.
+[  622.18s ->   625.12s] And so again, you should talk to a professional about what exactly you can write.
+[  625.28s ->   628.18s] But you can consider writing off commissions, because that's the cost of doing business.
+[  628.18s ->   630.94s] You can write off your internet, your home office, things like that.
+[  630.94s ->   637.10s] So you can start writing off more expenses, because it's what you use as a trader to generate profits.
+[  637.62s ->   646.54s] And so an LLC is another way to help you offset your losses with, I should say, offset your taxes with losses and other categories by trading as a business.
+[  646.72s ->   650.70s] And so again, if you're going to do it as a business, again, the IRS does look into this.
+[  650.76s ->   654.96s] So make sure you're treating it as a business, a separate business entity, separate business bank accounts,
+[  655.16s ->   659.78s] separate business trading account, and all that stuff so that it's separate and different entities.
+[  659.78s ->   663.82s] Those are the four ways to cut your trading taxes in half.
+[  664.02s ->   666.60s] This is the easiest way by just switching to a different asset.
+[  666.88s ->   673.86s] This is something by rotating your assets so that you can actually avoid having incorrect tax amount and having to pay more than you should.
+[  673.98s ->   675.60s] If you're retired, look into this.
+[  675.84s ->   679.70s] If you're not retired, but trading actively, look into trading through a business account.
+[  679.92s ->   681.02s] All right, guys, I hope you learned something.
+[  681.20s ->   687.24s] If you're someone who wants to learn more about options strategies, options selling, how to retire using options strategies,
+[  687.24s ->   689.56s] I share everything I know on this channel.
+[  689.86s ->   692.64s] So smash that subscribe button and I'll see you in the next video.

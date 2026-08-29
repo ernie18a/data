@@ -1,0 +1,201 @@
+[    0.00s ->     4.38s] Hey guys, I'm about to show you the exact strategy I use to make a living trading option.
+[    4.60s ->     7.16s] It's super easy to use. It works on any time frame.
+[    7.54s ->    11.76s] So if you've been struggling to grow your account or generate monthly income using options,
+[   11.86s ->    13.26s] then you're in the right place.
+[   13.78s ->    16.68s] And if you stay till the end, I'll actually give you my private indicator
+[   16.68s ->    21.18s] that will help you apply and implement this strategy so that you can do it faster.
+[   21.34s ->    23.22s] So that not only will you be learning today,
+[   23.28s ->    26.78s] but you'll be also getting something to implement this and start trading today.
+[   26.78s ->    31.30s] That is my goal, to take you from knowing nothing to actually making money by the end of this video.
+[   31.48s ->    34.72s] So if you're excited, smash that subscribe button and let's get into it.
+[   35.28s ->    38.22s] So there are a lot of different strategies in the options world.
+[   38.34s ->    43.94s] You have strangles, straddles, ratio spreads, credit spreads, naked options.
+[   44.10s ->    45.74s] Again, all these things can be confusing.
+[   46.50s ->    49.80s] I want to show you just one of the strategies that I use.
+[   49.86s ->    53.82s] And if you master this like I have, you can use it to generate monthly income.
+[   53.82s ->    57.28s] That's right. I don't do any of these complicated options stuff.
+[   57.36s ->    58.68s] I just pick one strategy.
+[   58.84s ->    61.36s] I learn it and I master it and that's how I'm able to make money.
+[   61.76s ->    63.10s] And so what strategy is that?
+[   63.14s ->    64.76s] That's the credit spread strategy.
+[   65.10s ->    68.26s] And why did I pick that one and why am I encouraging you to use it?
+[   68.48s ->    72.20s] Because it's so simple to do and the idea behind it is amazing.
+[   72.40s ->    73.48s] Let me walk you through it.
+[   73.70s ->    75.80s] All right, how does a credit spread make money?
+[   76.14s ->    81.66s] A credit spread makes money by thinking or betting that a stock will stay above a certain level.
+[   81.66s ->    86.40s] So for instance, we see right here, this is the S&P 500 ETF SPY.
+[   86.70s ->    90.56s] Right here you can see we have a support level, a.k.a. a level that the market dipped down to
+[   90.56s ->    92.88s] and the market's trading right here.
+[   93.32s ->    97.34s] So this means that this is probably a level where the stock will stay above.
+[   97.82s ->    98.98s] So that sounds good, right?
+[   99.30s ->   102.80s] And so if that happens, if the stock stays above this level
+[  102.80s ->   105.92s] and I made the credit spread bet that it does, then I make money.
+[  106.22s ->   109.90s] So what does that mean from the standpoint of making money?
+[  109.90s ->   110.92s] Well, let me show you.
+[  111.28s ->   113.50s] If the stock goes down, oops, let me pull a brush.
+[  113.88s ->   118.80s] If the stock goes down and then still stays above my level, I make the money.
+[  119.02s ->   121.50s] If the stock stays the same, I make money.
+[  121.78s ->   124.46s] If the stock goes up, I make money.
+[  124.70s ->   126.66s] That's how amazing a credit spread trade is.
+[  126.70s ->   130.86s] The only way I lose is if the stock goes down and breaks my level and stays below it.
+[  131.28s ->   135.42s] So again, when we're looking at credit spreads, it's so much easier than stocks.
+[  135.42s ->   140.50s] How many times were you right on a stock, but you got stopped out and then the stock went
+[  140.50s ->   143.18s] in your favor or you bought a stock and then it did nothing.
+[  143.34s ->   145.06s] Or maybe you bought a stock and it went against you.
+[  145.38s ->   149.18s] All these situations are times where credit spreads would have made money.
+[  149.40s ->   151.04s] And so that's the amazing part of credit spread.
+[  151.16s ->   154.60s] So now that you know what a credit spread is, essentially betting that a stock stays above
+[  154.60s ->   159.38s] a certain level, how do we use this strategy that's taken me six years to build?
+[  159.76s ->   160.00s] All right.
+[  160.20s ->   161.30s] So let's walk through this.
+[  161.34s ->   164.10s] Let me clear the chart here and let's dive in a bit further.
+[  164.10s ->   169.42s] So the first part of this strategy that I put together is understanding what is the
+[  169.42s ->   170.36s] market doing now?
+[  170.46s ->   172.18s] Number one, what is the trend?
+[  172.66s ->   172.94s] Why?
+[  173.12s ->   177.28s] Because you may have tried so many different strategies across YouTube from different gurus
+[  177.28s ->   178.66s] and paying for courses and whatever.
+[  178.98s ->   182.74s] And what they don't tell you is when that strategy works.
+[  182.90s ->   185.34s] There are different phases of the market.
+[  185.52s ->   189.42s] There's uptrends, there's downtrends, and there's sideways markets where you don't know
+[  189.42s ->   190.34s] what's going on.
+[  190.34s ->   196.64s] And in each different phase, there's different strategies that work and other ones that don't.
+[  196.92s ->   201.02s] So if you were trying to make money with a strategy and you didn't, it's not your fault.
+[  201.24s ->   205.90s] It's because they didn't tell you that it only works within a certain specific trading
+[  205.90s ->   206.60s] time frame.
+[  206.92s ->   211.22s] So for instance, when a stock is trending up, there are certain bullish strategies we look
+[  211.22s ->   211.44s] for.
+[  211.50s ->   214.34s] When the market's trending down, there are certain bear strategies we look for.
+[  214.38s ->   217.84s] And when it's neutral, we tend to take safer plays because we don't know what the
+[  217.84s ->   218.54s] market will do.
+[  219.06s ->   222.26s] And so that's step number one, which is what is the trend.
+[  222.56s ->   225.86s] So we can do that by adding an indicator to our chart.
+[  226.68s ->   232.94s] So right here, this is called the credit spreads trending ban indicator or trend trading indicator,
+[  233.14s ->   234.50s] which is the one that I built.
+[  234.60s ->   236.60s] It's taken me six years to build.
+[  236.74s ->   242.50s] And I typically charge, or at least for the last five years, I've charged $997 to accesses,
+[  242.50s ->   243.78s] but I'm giving it to you for free.
+[  243.78s ->   247.26s] So if you want to continue to walk through this video with me with this indicator, just
+[  247.26s ->   248.48s] click the link down below.
+[  248.88s ->   250.96s] It's free to get this indicator.
+[  251.08s ->   256.74s] Just simply put it in your email and I will send you the code or the access link.
+[  256.78s ->   260.10s] You just click on the link and it will be prefilled into your trading view account.
+[  260.30s ->   262.32s] So that's how easy it is for you.
+[  262.64s ->   266.62s] So now that you've done that, now that you clicked down below and got this indicator for
+[  266.62s ->   268.80s] free, let's walk through how to use it.
+[  269.04s ->   270.94s] So like I said, we need to identify the trend.
+[  270.94s ->   272.46s] Which way is the market going?
+[  272.66s ->   279.10s] So we want to be bullish or doing bear, I mean, bullish strategies when the stock is
+[  279.10s ->   280.00s] above this green line.
+[  280.28s ->   283.76s] So when the stock breaks above this green line, it's showing that all the momentum and the
+[  283.76s ->   285.72s] strength is to, is to, is to the upside.
+[  285.90s ->   288.16s] So anything above this green line is bullish.
+[  288.58s ->   290.32s] Anything below the red line, guess what?
+[  290.40s ->   291.56s] Surprise, is bearish.
+[  291.86s ->   296.24s] Anything in the middle is neutral market, sideways territory where we don't know what's
+[  296.24s ->   296.90s] going to happen.
+[  296.90s ->   299.62s] So how do we adjust for each one of these markets?
+[  300.10s ->   303.40s] Well, put credit spreads, make money on the way up.
+[  303.74s ->   303.98s] Why?
+[  304.26s ->   308.56s] Well, because a put credit spread, as in the first example, is betting that the stock will
+[  308.56s ->   310.84s] stay above, say above a certain level.
+[  311.20s ->   315.38s] So if it's staying above a certain level, if it moves further up, it gets further away from
+[  315.38s ->   315.84s] our level.
+[  315.96s ->   316.82s] So we're making money.
+[  318.02s ->   321.64s] Now vice versa, call credit spreads, make money on the way down.
+[  321.72s ->   321.88s] Why?
+[  321.92s ->   324.66s] Because you're betting that a stock will stay below a certain price.
+[  324.66s ->   328.46s] And so that means that if the stock goes down, it's going further away from your level.
+[  328.60s ->   329.78s] So you're making money.
+[  330.10s ->   331.26s] So what does this tell us?
+[  331.28s ->   335.32s] If we're above the green line, we're going to be using put credit spreads, a bullish
+[  335.32s ->   335.98s] strategy.
+[  336.28s ->   340.30s] So if the stock is below the red line, we'll be using call credit spreads because they
+[  340.30s ->   341.52s] make money to the downside.
+[  341.92s ->   346.06s] Now what happens in the middle when the market goes up and down and gaps like crazy and we
+[  346.06s ->   348.06s] don't exactly know what's going on?
+[  348.28s ->   353.20s] Well, simply put, we use put credit spreads that are really far out of the money.
+[  353.20s ->   354.46s] What does that mean, Austin?
+[  354.60s ->   359.34s] It means that we are betting that the stock will stay above a level, but we're going way
+[  359.34s ->   359.94s] far out.
+[  360.28s ->   360.98s] Why is that?
+[  361.14s ->   364.84s] Well, because when we're in this phase, the market can go up and down and gap and do crazy
+[  364.84s ->   366.98s] things because there is no clear direction.
+[  367.40s ->   370.38s] And when there's no clear direction, we want to be safer with these plays.
+[  370.72s ->   374.42s] So what we do is we bet that the stock will stay above a certain level because the market
+[  374.42s ->   378.14s] just overall historically is more bullish than bearish, right?
+[  378.16s ->   378.88s] Because it's gone up.
+[  378.88s ->   383.26s] So we're going to take that bet, but also we're going to go as far out or far away from
+[  383.26s ->   386.18s] the stock price as we can so that we're super safe.
+[  386.52s ->   390.42s] And so we'll be betting, for instance, that we would say above this level while it's here
+[  390.42s ->   394.42s] so that we're super far away from it so that our bet is most likely going to pay out and
+[  394.42s ->   394.62s] win.
+[  394.96s ->   396.26s] So that's how we do it.
+[  396.90s ->   402.10s] Now let's deep dive into, now that we know the trend, now that we know how to take advantage
+[  402.10s ->   405.98s] of each phase, what does this look like actually played out?
+[  405.98s ->   409.26s] Now, okay, let me show you a really cool thing about this indicator.
+[  409.60s ->   413.34s] It should be on yours by default, but I wanted to hide it in here for traumatic effect.
+[  413.62s ->   416.34s] You can click on show credit spreads recommendation.
+[  417.04s ->   424.16s] So if I click here and show it right here, it tells me based on the trend what credit spread
+[  424.16s ->   425.24s] trade I should set up.
+[  425.42s ->   428.48s] Now, there's some things you need to adjust here and change.
+[  428.48s ->   436.12s] So for instance, when we are above this level, we are above the green line, the ideal out
+[  436.12s ->   440.36s] of the money percentage is probably going to be between 2 to 3%.
+[  440.36s ->   443.28s] So again, we can put 2.5 just for reference.
+[  443.74s ->   449.26s] So now that we have that, based on being 2.5% out of the money or away from the stock, we
+[  449.26s ->   450.36s] can trade this trend.
+[  450.44s ->   453.66s] It tells me a put credit spread right because it's above the green line.
+[  454.32s ->   456.10s] It tells me to go 14 days out.
+[  456.10s ->   457.14s] That's your expiration.
+[  457.28s ->   459.40s] I'll show you how to set this up in a broker here soon.
+[  459.90s ->   464.20s] And your details show sell a 431 and buy the 430.
+[  464.28s ->   466.64s] That's how you structure your credit spread trade.
+[  466.76s ->   468.70s] And I'll walk you through that here in a second.
+[  469.00s ->   469.90s] But that's how it does.
+[  469.96s ->   471.20s] And it shows you how to set it up.
+[  471.26s ->   475.88s] So if you're above the green line, make sure you're out of the money percentages between
+[  475.88s ->   477.42s] 2 to 3%.
+[  477.42s ->   484.83s] If you are within this gray line, within the neutral sideways market territory, what you
+[  484.83s ->   488.71s] want to do is you want to come in here and you want to set it to being a little bit of
+[  488.71s ->   489.35s] further out.
+[  489.63s ->   491.03s] So what does further out mean?
+[  491.09s ->   493.35s] It means being roughly 3 to 4%.
+[  493.35s ->   495.25s] So you can put 3.5%.
+[  495.25s ->   501.67s] So when you're inside the gray area, set it to 3.5% and your levels will adjust accordingly.
+[  502.07s ->   506.97s] When you're inside or when you're below the stock, what levels should you be watching for?
+[  506.97s ->   514.55s] Well, simply put, you'll be watching for being above the stock by roughly 3% as well.
+[  514.89s ->   516.05s] So we'll come in here.
+[  516.11s ->   519.23s] If we're below, we'll put in 3% and that's how it'll work.
+[  519.51s ->   523.61s] So that's how you use this indicator to place these trades.
+[  523.69s ->   525.01s] That's exactly how I've done it.
+[  525.21s ->   528.71s] If you want the specifics of it, you can actually click the trading handbook down below, which
+[  528.71s ->   529.75s] is completely free too.
+[  530.01s ->   531.41s] Let me show you how that works.
+[  531.49s ->   534.11s] So first things first, let's go to the stock that we're looking at, SPY.
+[  534.11s ->   538.47s] So if we go to SPY here, we're going to go into trade SPY options.
+[  539.01s ->   543.87s] Then we're going to go into builder because we look at this and let's adjust it to the
+[  543.87s ->   544.27s] correct one.
+[  544.39s ->   545.45s] We're above the stock.
+[  545.53s ->   548.83s] So we want to make sure it's a percentage out of the money is 2.5 roughly.
+[  549.45s ->   550.49s] It's going to be our best bet.
+[  551.19s ->   554.71s] Now it says put credit spread 434.29.
+[  555.01s ->   556.89s] So if we go in here, oops, wrong one.
+[  557.25s ->   558.63s] We go to put credit spread.
+[  558.79s ->   560.21s] We locate that right here.
+[  560.79s ->   562.81s] We make sure the width is one.
+[  562.81s ->   565.61s] We go out to our expiration date about 14 days out.
+[  565.67s ->   572.91s] So we look for these, the one in the parentheses, that's roughly 14 days, 431, 430 right here.
+[  573.31s ->   574.75s] Collect about 11 cents.
+[  575.15s ->   579.09s] You'll have a stop loss as explained in the handbook at 50 cents.
+[  579.59s ->   583.33s] So that means you're going to risk $4 to make $1.
+[  583.75s ->   586.89s] And then again, like he says here, we have a really high win rate.
+[  586.89s ->   591.91s] So if we look at this, we have, I mean, this is just rough math, but you have roughly with
+[  591.91s ->   596.31s] a 11%, you have roughly around an 85% win rate with that.
+[  596.65s ->   602.29s] And so an 85% win rate to risk $4 and make one is a trade you should take every single
+[  602.29s ->   602.59s] day.
+[  602.89s ->   607.71s] And so you simply just put on this trade, click review order, finish, and you're good.
+[  607.95s ->   612.11s] Anyways, guys, that's how you implement the exact system that's taken me over six years
+[  612.11s ->   614.37s] to build perfect and test.
+[  614.65s ->   616.19s] And yes, I give it all to you for free.
+[  616.27s ->   617.23s] So I hope you enjoy it.
+[  617.23s ->   620.39s] And I hope you subscribe anyways, guys to see you in the next video.

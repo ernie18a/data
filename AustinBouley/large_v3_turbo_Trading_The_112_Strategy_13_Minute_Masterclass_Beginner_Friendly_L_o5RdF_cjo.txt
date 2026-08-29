@@ -1,0 +1,147 @@
+[    0.18s ->     6.78s] Hey guys, welcome to lesson number two on the 112 masterclass. So guys, this is one of the
+[    6.78s ->    11.86s] most amazing strategies ever. But again, the base of it is selling put. So if you don't
+[   11.86s ->    15.76s] understand what selling a put is and the idea that you make money where it stays above a certain
+[   15.76s ->    19.82s] level, you need to understand that. So make sure to go back and watch lesson number one.
+[   20.56s ->    25.66s] Anyways, what is the 112? Let's talk about some things you must know before we get started. One,
+[   25.66s ->    32.22s] what markets does it work best in? Well, because the base of a 112 trade is selling puts,
+[   32.50s ->    37.86s] it has the same type of outcome. You want the market to be bullish, the market to go up,
+[   38.18s ->    43.98s] and you want it to go sideways or go range bound. So up or range bound are your best markets for it.
+[   44.54s ->    49.16s] Next, who is the strategy best for? It's best for someone who wants slow, consistent profits. Guys,
+[   49.22s ->    53.78s] remember when you're selling options, you become the casino, you become the house, which means that
+[   53.78s ->    59.48s] you have all the odds in your favor, but you're not making a ton of huge 10x moves. You're just
+[   59.48s ->    64.62s] making those small wins over and over and over. And so because of that, it's definitely slower,
+[   64.90s ->    69.88s] but it's consistent profits. It's for someone who wants passive income. I feel like Austin,
+[   70.00s ->    74.72s] I've spent all my life working hard to make this money. And I want something safe and consistent.
+[   74.86s ->    80.16s] The 112 is the strategy for you. At least it's the one that I do and use all my money that I've made
+[   80.16s ->    86.30s] through business and in life using. So last, it's for someone who likes that they can turn
+[   86.30s ->    91.92s] trades into hedges. So hedges give us downside protection and 112s can be structured perfectly,
+[   92.06s ->    96.30s] as I'll be teaching in this lesson, to be converted into hedges to protect your account.
+[   96.88s ->   101.94s] Next, what are some of the cons of the 112? You could lose thousands during a pullback or market
+[  101.94s ->   107.16s] crash. Again, this is the same as puts because the base of this trade is selling puts. And again,
+[  107.16s ->   111.34s] you don't always see the max profit from the bear trap. When I show you what the profit graph here
+[  111.34s ->   116.36s] looks like in a second, there's a bear trap section, and you won't always make that profit
+[  116.36s ->   120.78s] despite what other people are telling you. So you need to keep that in mind. Next, trading account
+[  120.78s ->   125.00s] size and limits. You need full margin approval. So if you're trading on Tasty Trade, that means the
+[  125.00s ->   129.68s] works account. Now, not only that, you need a futures approval. Now again, if you have the works
+[  129.68s ->   134.98s] account, it's just a single click of a button, enable futures, wait about 24 to 48 hours, and they will
+[  134.98s ->   139.46s] enable it no problem, given you have enough money in your account. Next, if you're trading with ES,
+[  139.78s ->   146.28s] you're talking about $8,000 of buying power for a 112. If you're doing it on MES, then we're talking
+[  146.28s ->   153.51s] about $800 in buying power. How is the 112 constructed? So it's constructed, the base of it
+[  153.51s ->   158.61s] is two short puts. So that's where we get all our income from. So you can see here the two short puts,
+[  158.69s ->   163.19s] these two puts are entered far out of the money, about a five to 10 delta. So we go about there.
+[  163.19s ->   168.29s] And that's what brings in the income for this trade. So these puts are used as the base of the
+[  168.29s ->   173.07s] strategy, provide the main source of income for this trade. Again, just like selling puts,
+[  173.33s ->   177.63s] when we move these puts closer to where the stock is trading, we're going to make more money,
+[  177.93s ->   183.83s] but we're going to decrease our win rate in the process. I find that five to 10 delta for these two
+[  183.83s ->   189.51s] short puts work best. Now, once we've collected a good amount of premium, a good amount of income by
+[  189.51s ->   195.79s] selling these two puts, we're going to use some of that money that we received to buy a put debit
+[  195.79s ->   201.77s] spread. What is a put debit spread? A put debit spread is created by buying a put and then selling
+[  201.77s ->   207.25s] a put below it. This creates what is known as a put debit spread, which is defined risk trade that
+[  207.25s ->   213.49s] makes money when the market drops. So essentially what we are doing, we are selling puts to bring in
+[  213.49s ->   218.25s] income. We're using some of that income to put on a hedge to give us some downside protection.
+[  219.37s ->   225.61s] So the put debit spread is what increases the downside profit, creating what we see as the bear
+[  225.61s ->   231.03s] trap. So again, that is the structure of it. And how far in the future do we go? Well, like a normal
+[  231.03s ->   237.87s] put, we go about 45 to 120 days. Now, what does the profit and loss graph look like? It looks like
+[  237.87s ->   243.15s] this. So the base of the trade is selling puts. So that's why we have that infinite profit to the
+[  243.15s ->   248.99s] upside. And then to the downside, if the stock moves down, we can make even more money. Why?
+[  249.09s ->   253.97s] Because of the put debit spread that gives us downside protection. So typically we enter the trade
+[  253.97s ->   260.09s] around this part on the profit graph, which means that if it goes up or goes sideways or stays in this
+[  260.09s ->   264.75s] range, we make about the same amount. If the market really drops, then we get into our big profit
+[  264.75s ->   270.17s] zone. And this is the amount of profit we'll see at expiration. However, if the market starts
+[  270.17s ->   276.81s] dropping and drops quickly, we'll probably hit our stop loss before we're able to realize the profit
+[  276.81s ->   282.97s] here, because we only get this profit if we hold through expiration, which could mean holding through
+[  282.97s ->   290.65s] a ton of losses. Next, how do we manage the 112 to give us that protection? Number one is we need a
+[  290.65s ->   295.39s] stop loss. So we need to make sure we're protected to the downside. So you typically manage your losses
+[  295.39s ->   300.71s] around two to 400% based on the initial credit received. This typically requires you having to
+[  300.71s ->   305.57s] watch the trade every single minute of every single day to see if it gets there. But again,
+[  305.71s ->   309.63s] I'll be showing you in a second how to connect it to the auto trader so that it manages it for you.
+[  309.69s ->   316.77s] But we're looking at about a 200 to 400 to 400% stop loss. Next is you typically manage your profits
+[  316.77s ->   323.91s] between 80 to 95% based on the hedge that you're wanting to turn it into. So let's talk about hedges.
+[  324.01s ->   329.01s] How do we turn the 112 into hedges? And what does that look like? So when we're turning something into
+[  329.01s ->   335.33s] a hedges, we have four different possibilities for the trade. Either we close out the entire trade,
+[  335.51s ->   340.81s] which again will help us receive the max profit that we are realizing, like I actually realized the
+[  340.81s ->   346.09s] profit we're seeing, but we get no downside protection. Next option is a put debit spread.
+[  346.09s ->   352.09s] So like mentioned before, this 112 is created by having a put debit spread and selling puts.
+[  352.25s ->   356.15s] So if we just close out these puts, once these puts reach a good profit,
+[  356.37s ->   361.13s] then we collect a profit here and we let this put debit spread hedge that makes money to the
+[  361.13s ->   367.23s] downside. We leave that trade on giving us downside protection. So what do we do here?
+[  367.49s ->   373.23s] Well, we'd like to target about a 90% profit target on those two short puts. Meaning that once the
+[  373.23s ->   380.79s] two short puts that we sold way out of the money hit a profit of 90%, then we'll close those trades
+[  380.79s ->   386.19s] leaving us with the put debit spread and giving us that downside protection. Next option is the ratio
+[  386.19s ->   393.67s] spread. So again, for the ratio spread, what we do is we sell or we close the option that we sold as a
+[  393.67s ->   398.87s] part of the put debit spread. So again, we have two sold puts, we sell a put and we buy a put that's
+[  398.87s ->   404.43s] kind of the order of it in order and the, and we sell that put and buy that put to create the put
+[  404.43s ->   409.27s] debit spread. But if we get rid of this put that we sold a part of the put debit spread, we then
+[  409.27s ->   414.37s] create a trade that's called a ratio spread, which gives a lot of downside protection. As you can see
+[  414.37s ->   421.81s] here, I currently on my ES 112 have a ratio spread that, that my trade that was winning got converted
+[  421.81s ->   428.77s] into. And if I click on the hedge here, you can see this ratio spread is giving me $24,000 of
+[  428.77s ->   434.23s] downside protection. That means that if the market were to crash 10% tomorrow, this trade is going to
+[  434.23s ->   439.67s] start making me multiple thousands of dollars, tens of thousands of dollars because of the downside
+[  439.67s ->   444.53s] protection that I have. So that's how awesome it is to actually have that downside protection. So
+[  444.53s ->   451.77s] a ratio spread costs more, it takes more of the profit that you made, but it gives you a larger
+[  451.77s ->   457.63s] downside protection versus a put debit spread, which would only give you about $2,000 of downside
+[  457.63s ->   463.03s] protection. So that's kind of how that works. A ratio spread, you're looking to target about an
+[  463.03s ->   468.47s] 80% profit target on that short put of the put debit spread that you want to close. But again,
+[  468.55s ->   473.15s] the auto trader will look at those individual positions for you based on what hedge you're looking
+[  473.15s ->   478.47s] at. Next is the long put hedge. So again, this means that we're closing every single short
+[  478.47s ->   482.07s] position. So we close the short put with the put debit spread and we close the two
+[  482.07s ->   488.61s] far out of the, of the money short, uh, short puts, which leaves us with just one long put that
+[  488.61s ->   494.05s] gives us a great downside. Um, again, you typically rarely want to do this because you're giving up
+[  494.05s ->   498.99s] so much profit because the, just having on a long put costs a lot of money. Um, so you're giving up
+[  498.99s ->   503.17s] basically all of your profit and more to have on this long put. Um, and again, you should really
+[  503.17s ->   507.57s] only do that if you believe that, that, that the market will crash soon because then it will really
+[  507.57s ->   513.79s] pay off. Okay. What are the best practices for the one, one, two, how do we structure this trade?
+[  514.03s ->   518.19s] Well, we're looking at a put debit spread. You buy the 25 Delta put and you sell the 23,
+[  518.19s ->   523.39s] three Delta put. That's typically how you structure the put debit spread. Now for the two short puts,
+[  523.39s ->   529.13s] I personally, like I said, five to five to 10 Delta is best. I like this seven Delta. It gives me a
+[  529.13s ->   535.69s] really high, really high, uh, win rates still. And, um, I'm able to collect a bit more than if I were
+[  535.69s ->   540.53s] to do it at a five Delta. Again, you want to go when your days in the future, when you're looking
+[  540.53s ->   546.73s] at this for your DTE is 45 days to 120. I like the sweet spot of 90 days. Uh, so 90 days is typically
+[  546.73s ->   553.05s] how I trade now for a stop loss. I like to have a 300% stop loss to protect my trades. So I put on a
+[  553.05s ->   558.81s] three, a three, a 300%. And then again, I always keep a ratio hedge on, but we'll talk, we'll talk,
+[  558.81s ->   563.95s] we'll talk about that in a second. Um, but once I have the hedge on, then I close all my trades
+[  563.95s ->   571.71s] entirely close the entire trade at an 80% profit. So hedges, I like to have on one ratio hedge at all
+[  571.71s ->   577.29s] times. Why? Because I just showed you a ratio hedge is giving me $24,000 of downside protection.
+[  577.45s ->   582.09s] So just one ratio hedge is giving me a ton of protection to the downside, uh, which is amazing.
+[  582.09s ->   586.87s] So I just have on one of those because it costs a lot to have on. Um, and then all the other trades,
+[  586.87s ->   594.33s] um, I just close out the entire, the entire trade to see the max profit instead. Um, next. Okay. So
+[  594.33s ->   599.15s] now how do we automate the one, one, two strategies so that we can have it manage our entries, our
+[  599.15s ->   604.73s] exits, our stops, our take profit and our hedges all for us. So again, you, you can go through the
+[  604.73s ->   608.61s] document here if you have it, which is linked down below. Um, or I'll just walk you through it
+[  608.61s ->   613.85s] myself. So again, we go to the options, auto trader, we'll click on create an auto trader. Um,
+[  613.85s ->   617.93s] we're going to connect our account and we can, we can create an auto trader from scratch,
+[  617.93s ->   622.57s] or you can pick an auto trader and I have mine preloaded in here. So you just click on what you
+[  622.57s ->   626.09s] want to trade it with and you can do that. Um, but again, I'm going to show you how to,
+[  626.09s ->   630.49s] how to create it from scratch. So we're going to do the one, one, two strategy. We're going to pick
+[  630.49s ->   635.21s] the asset we want to do it on. And, uh, MES is a great starter for small accounts. Again,
+[  635.21s ->   641.77s] I preloaded all the best practices in here for you already. So 90 days until expiration 25,
+[  641.77s ->   645.85s] 23 and five Delta. Again, let's actually bump this up to seven, five is best practice,
+[  645.85s ->   652.17s] but seven Delta makes you a bit more. Um, so we're going to enter a trade every week. Um,
+[  652.17s ->   656.73s] so that means that, uh, once a week on Wednesdays, this is kind of golden. This is what I do. Again,
+[  656.73s ->   661.53s] if you have more buying, buying power available, um, then you want to make sure to kind of do it a bit
+[  661.53s ->   667.16s] more like Monday, Wednesday, and Friday. Next, we're going to set up, set up our management rules.
+[  667.16s ->   672.20s] Um, so what that looks like is, uh, we're going to set up the tape profit and stop loss, uh, based on
+[  672.20s ->   678.20s] our best practice, our best practice this year, which is 380%. So we're going to go 300%. I mean,
+[  678.20s ->   684.52s] 80% on the tape profit, 300% on the stop loss. Now, if we want our trade to be converted into a hedge
+[  684.52s ->   689.56s] force automatically, we can set that up here as well. So again, if you just want to close out the entire
+[  689.56s ->   694.84s] position, you can do that. If you want to close out and turn it into a PDS hedge, uh, then that
+[  694.84s ->   701.24s] means that once, um, our two short puts reach an 80% profit, uh, then it will, then it'll close those
+[  701.24s ->   706.36s] puts and turn it into a put debit spread hedge for us. Or we can turn it into a ratio hedge, which
+[  706.36s ->   711.96s] means that whenever that short put from the put debt from the put debit spread hits an 80% profit
+[  711.96s ->   717.72s] target or whatever I provide here, then it will close out that one position and leave me with a ratio
+[  717.72s ->   722.20s] hedge. I'm just going to close the entire position and I won't have a hedge on for this example.
+[  722.20s ->   728.12s] Next is buying power allocation. How much money do I want to use for this auto trader? Um, well,
+[  728.12s ->   735.00s] again, I think $20,000 is a great spot for ES, uh, starting if you're doing on an MES and starting
+[  735.00s ->   742.12s] then 10,000, 5,000 to 10,000 is a great starter for MES. Next, we can enable the market crash safeguard
+[  742.12s ->   746.92s] to get us out before crashes happen. Not all of them, but we can do most of them. Um, and then again,
+[  746.92s ->   750.92s] you also have required email trade approval, um, which again, if you want to have a bit more
+[  750.92s ->   755.32s] control over your account, which is fine, I don't do it, but if you do, it's there as an option.
+[  758.10s ->   763.30s] Just like that review and approve. We can see here takes about $800 of buying power. I'm gonna make
+[  763.30s ->   768.26s] about nine, $96 per trade. And I can read all these specifics about how the auto trader is
+[  768.26s ->   772.34s] structured here. Just like that, I can save the auto trader and then turn it live. And that is how,
+[  772.34s ->   777.22s] uh, or that is what a one, one, two, uh, strategy is. And that's how to automate it.
+[  777.22s ->   782.66s] This is one of the best strategies. So if any, it, if, if you are struggling on where to start,
+[  782.66s ->   787.78s] just go to, to the auto trader and replicate my strategy, the one, one, two strategy, uh,
+[  787.78s ->   791.94s] strategy on MES. And you can get this party started because it's one of the greatest passive
+[  791.94s ->   796.34s] income strategies strategies. All right, guys. I hope that makes sense. Um, I will see you in the next
+[  796.34s ->   803.78s] lesson.

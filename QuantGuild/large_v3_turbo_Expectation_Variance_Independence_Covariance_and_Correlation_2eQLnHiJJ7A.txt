@@ -1,0 +1,663 @@
+[    0.46s ->     9.60s] We are back. Today we're talking about random variables, expectation, variance, independence, covariance, and correlation.
+[   10.44s ->    16.62s] We're going to keep everything in a discrete setting, making it as intuitive as possible.
+[   16.84s ->    23.44s] We're going to go over the idea of expectation and variance when we have scaling and shifting,
+[   24.16s ->    30.58s] how the analytical expression can be interpreted in the context of both the expectation and the variance,
+[   30.58s ->    35.58s] and then we're going to talk about that in conjunction with another random variable.
+[   35.84s ->    44.38s] So when we have two random variables in the same expression, how can we apply these operations to such expressions?
+[   44.84s ->    52.04s] Then maybe we'll sprinkle in some simulations and some Python to help out with the intuition here.
+[   52.80s ->    55.56s] So like I said, we're going to keep everything in a discrete setting.
+[   55.56s ->    63.84s] So the discrete expectation is going to be defined as some LaTeX in here.
+[   65.86s ->    72.76s] Math BBE of X, where X is a discrete random variable, is going to be equal to sigma.
+[   73.54s ->    81.24s] So we're summing over A such that the probability of A is greater than zero.
+[   81.24s ->    88.02s] And the sum that we're actually computing is A times the probability of A, okay?
+[   88.28s ->    95.68s] So this is the expectation, the expected value, the average, the mean of X, okay?
+[   95.86s ->    99.18s] So we're summing over where A is some outcome.
+[   99.32s ->   103.88s] We're multiplying that with the probability, where the probability is strictly greater than zero.
+[  103.88s ->   111.80s] That right there, that sum across the entire space of possible outcomes, is going to be the expectation, okay?
+[  112.12s ->   114.40s] Don't get it necessarily backwards.
+[  114.66s ->   118.74s] This is not the missed frequent outcome of the random variable.
+[  118.84s ->   122.82s] This is not the expected value, as weird as that is to say.
+[  122.82s ->   131.78s] And you'll see why in a moment, but this really is just a measure of the space.
+[  131.90s ->   132.90s] It's the first moment.
+[  133.40s ->   138.44s] But if you're actually going to ask somebody, and think about how hard it is to answer this question,
+[  138.76s ->   147.02s] if I asked you what is the expected value, could you tell me what that was without saying,
+[  147.02s ->   153.18s] oh, it's the average, or oh, it's, you know, what we expect the random variable to be most of the time,
+[  153.26s ->   156.20s] like, that's the wrong interpretation.
+[  156.54s ->   159.76s] Really, the correct way to interpret it is in terms of this summation.
+[  160.00s ->   166.32s] That is the product of the outcome with its corresponding probability across the entire space.
+[  166.32s ->   170.92s] And you'll see why those interpretations are wrong when we go over this dice roll example.
+[  171.50s ->   176.56s] Something as simple as the average, you may have been interpreting wrong forever.
+[  177.02s ->   181.92s] And that's just really interesting how quickly probability and statistics can make things
+[  181.92s ->   184.84s] that you thought you knew very confusing.
+[  185.12s ->   186.90s] So let's just talk about this dice roll.
+[  188.34s ->   190.02s] Dice roll example.
+[  190.58s ->   198.84s] So if we have a dice, right, we know the probability mass function for that corresponding outcome of a dice roll.
+[  198.84s ->   212.88s] That is, we have p of a, so we'll say p of a is equal to, it's just equal to 1 6th, where a is the outcome of the dice roll.
+[  212.96s ->   216.06s] We know this could be 1, 2, 3, 4, 5, or 6.
+[  216.06s ->   221.36s] And then we also know that anywhere else, we are going to have 0.
+[  222.52s ->   222.82s] Okay.
+[  223.70s ->   226.02s] So this is our probability mass function.
+[  226.12s ->   229.16s] We know that we can reach 1, 2, 3, 4, 5, or 6.
+[  229.38s ->   233.38s] Those are our outcomes with 1 6th probability each.
+[  233.52s ->   236.70s] If we abide by this definition of the discrete expectation,
+[  236.70s ->   242.00s] then we're going to restrict the domain to that where the probability of a is greater than 0.
+[  242.44s ->   244.98s] That would be where a is 1, 2, 3, 4, 5, or 6.
+[  245.16s ->   246.78s] We're not looking at 1.5.
+[  246.86s ->   247.96s] We're not looking at 0.
+[  248.16s ->   249.22s] We're not looking at 7.
+[  249.44s ->   252.36s] We're looking at 1, 2, 3, 4, 5, and 6.
+[  252.74s ->   256.20s] And then we're going to sum these products.
+[  256.32s ->   261.24s] We're going to sum 1 times the probability of 1, which is going to be 1 times 1 6th.
+[  261.38s ->   265.28s] Then we're going to sum 2 times the probability of 2, which is 1 6th.
+[  265.28s ->   270.10s] And we're just going to go ahead and do that for everything in this domain here.
+[  271.26s ->   271.62s] Okay.
+[  271.62s ->   277.66s] So if I was to do this analytically, what this would look like is applying this formula.
+[  278.42s ->   293.56s] We would have essentially, this would be the expected value of a dice roll, random variable X.
+[  294.46s ->   306.07s] We would have math BBE of X is equal to, we would factor out the 1 6th because we have
+[  306.07s ->   308.89s] a constant probability for every single outcome.
+[  309.39s ->   317.09s] And then all we would have to do is sum from I is equal to 1 all the way to 6.
+[  321.58s ->   321.84s] Okay.
+[  321.84s ->   326.98s] And this would be the expected value of our dice roll here.
+[  327.02s ->   329.18s] And we could do this in Python relatively easily.
+[  329.18s ->   331.90s] I'm going to say import NumPy as MP.
+[  332.34s ->   335.42s] I'll say, I'll do this in a new cell.
+[  335.60s ->   336.12s] Might as well.
+[  339.22s ->   344.92s] I'll say A is equal to MP dot array, 1, 2, 3, 4, 5, 6.
+[  344.92s ->   350.94s] And then if I was to compute this sum right here, then all I would have to do is I would
+[  350.94s ->   359.10s] have to say S is equal to sum A, print S divided by 6, right?
+[  359.18s ->   363.58s] Because we're multiplying by this 1 6th out in front of the summation.
+[  363.58s ->   369.76s] That would be the same thing as multiplying this by 1 over 6 or just dividing the final
+[  369.76s ->   370.74s] product by 6.
+[  370.94s ->   373.14s] And we get our 3.5.
+[  374.12s ->   374.38s] Okay.
+[  374.52s ->   376.24s] So this is literally what's happening.
+[  376.24s ->   382.44s] If I was to call something like MP dot mean of A, I get 3.5 as well.
+[  383.12s ->   386.60s] That is analytically what is happening behind the scenes, right?
+[  386.66s ->   392.24s] We are just going to go ahead and sum up the product of all of our outcomes with their corresponding
+[  392.24s ->   398.52s] probabilities, and that is going to be the expectation, the expected value, the mean,
+[  398.64s ->   400.84s] the average, so on and so forth, right?
+[  401.44s ->   403.78s] But I mean, it's kind of silly, right?
+[  403.78s ->   412.48s] Because 3.5 is the expected value, but is 3.5 possible with our dice roll?
+[  414.17s ->   415.33s] No, right?
+[  415.55s ->   419.15s] I don't want to harp on this all video, but this is exactly what I'm trying to say is like,
+[  419.15s ->   426.01s] we actually interpret the average wrong most of the time, wrongly most of the time, right?
+[  426.01s ->   430.83s] If I was to say, oh, it's, you know, the value that we can expect the most from a random variable,
+[  431.01s ->   433.45s] it's like, no, that's actually not the case at all.
+[  433.89s ->   437.01s] In fact, that would be probably the mode, right?
+[  437.05s ->   440.27s] Because the mode would be the value we can expect the most.
+[  440.93s ->   443.39s] The median would be our middle value, right?
+[  443.39s ->   450.45s] Maybe the median is located with the mean, then we have that the mean here, the expected value,
+[  450.93s ->   454.47s] aligns with the median, and we have some symmetry, or maybe, you know,
+[  454.53s ->   459.41s] there's all these different aspects of a random variable that we have to consider,
+[  459.51s ->   462.05s] but, you know, that's something that we need to consider as well,
+[  462.13s ->   467.81s] is that the formal definition of the expectation is not that it's the most popular outcome or anything like that.
+[  467.81s ->   474.13s] Really, all it is, is this summation of the product of possible outcomes with their corresponding probabilities.
+[  475.40s ->   477.46s] That's what an expectation is, right?
+[  477.64s ->   483.50s] If you told me, hey, like, it's the most popular outcome, or it's what we expect the outcome to be,
+[  483.94s ->   488.99s] then do we expect it to be 3.5, the dice roll?
+[  491.31s ->   491.59s] No.
+[  491.85s ->   497.25s] But there are other statistical implications, right, of what 3.5 could do for us, right?
+[  497.25s ->   501.91s] Maybe if we were like, hey, you know, we want to roll a dice,
+[  502.51s ->   509.17s] and we want to get a dollar value for whatever value we roll, right?
+[  509.39s ->   513.13s] 1, 2, 3, 4, 5, or 6, we would win 1, 2, 3, 4, 5, or 6 dollars.
+[  513.51s ->   518.63s] But we're playing a game, and we're saying, hey, you get one re-roll.
+[  519.09s ->   521.53s] When should you choose to re-roll statistically?
+[  521.67s ->   523.37s] What would be the implication there?
+[  523.37s ->   531.23s] If you rolled a 4, then the expectation would suggest that you probably don't want to re-roll,
+[  531.37s ->   533.27s] because you would do worse, typically.
+[  534.66s ->   540.26s] But, you know, if you were to roll a 2, then statistically it's saying, hey, you can do better.
+[  541.02s ->   545.14s] So that's how you would, you know, use and leverage the expectation.
+[  546.06s ->   548.10s] But don't get this whole idea twisted.
+[  548.10s ->   552.96s] It's actually kind of weird once you actually try to formalize the interpretation,
+[  553.58s ->   558.62s] because it's not the most common outcome or what we can expect to see most of the time.
+[  559.22s ->   562.38s] Really, it's just defined in terms of this sum product here.
+[  563.20s ->   565.16s] Okay, enough harping on that, all right?
+[  565.30s ->   569.30s] Hopefully I made that point clear, and hopefully I made the point of how we can use it clear.
+[  569.30s ->   572.68s] Now let's talk about this idea of linearity among expectations.
+[  581.02s ->   588.97s] So suppose we had some sort of transformation to our random variable X.
+[  589.55s ->   596.51s] Okay, so we're going to scale our dice roll by R, and then we're going to shift it by T.
+[  598.24s ->   602.36s] The question that I have for you is, how does this affect the overall expectation?
+[  604.27s ->   610.01s] Okay, well, let's think about this in terms of the definition of our discrete expectation here.
+[  610.01s ->   611.43s] This is a summation.
+[  612.03s ->   615.95s] So a shift in scale should work relatively nicely, because everything is linear, okay?
+[  616.03s ->   618.01s] Hence the linearity of expectations, right?
+[  618.63s ->   625.06s] So if we were to go ahead and shift everything by T, okay?
+[  625.10s ->   626.26s] Forget about R for a second.
+[  626.36s ->   627.38s] Suppose R is 1.
+[  627.64s ->   629.20s] What happens with this summation?
+[  629.92s ->   633.48s] Well, we're going to have our new T term, right?
+[  633.56s ->   637.67s] Because everything is shifted, okay?
+[  637.67s ->   644.35s] So essentially, we would have this A plus T, right?
+[  644.47s ->   654.15s] And then we would have this shift that's constant to the entire space, okay?
+[  654.47s ->   662.33s] So really, the only thing that's going to happen with a shift is the entire expectation is going to be shifted in that direction as well.
+[  662.33s ->   673.95s] So it may be a little confusing perhaps, but really, whenever we shift the random variable X by T, we're just going to shift the entire space by T, right?
+[  674.01s ->   682.32s] Because if we have 1, 2, 3, 4, 5, and 6, then all of a sudden I shift everything up by 1, what's going to happen?
+[  682.32s ->   690.56s] Well, 1 is going to go to 2, 2 is going to go to 3, 3 is going to go to 4, 4 is going to go to 5, 5 is going to go to 6, 6 is going to go to 7, right?
+[  690.76s ->   693.74s] And then we're still going to have this summation across the space.
+[  694.08s ->   702.24s] Then we're going to divide by this 1 sixth, and we are going to have just the entire shifted expectation.
+[  702.24s ->   711.30s] So it's going to be the exact same thing as shifting the whole expectation rather than doing it one at a time, okay?
+[  711.46s ->   712.82s] So what does this look like?
+[  713.30s ->   725.92s] Well, if I was to take MP array, 1, 2, 3, 4, 5, 6, and through broadcasting, I was to add a T, and I would say T is equal to 1 from that previous example.
+[  725.92s ->   732.96s] Then if I was to take this mean, I would get, look, 4.5, okay?
+[  733.88s ->   738.10s] If I was to shift it by 5, I would get 8.5.
+[  738.44s ->   743.10s] The original expectation was, if we recall, 3.5.
+[  743.40s ->   754.20s] So all I'm doing is I'm shifting every point by T, and if I shift every point by T, then I'm just shifting the original expectation by T as well, okay?
+[  754.20s ->   762.80s] So we could see that here through broadcasting, or what I could do is I could say for I in A.
+[  764.01s ->   769.05s] So let's just go ahead and make A the original vector, 1, 2, 3, 4, 5, and 6.
+[  769.51s ->   772.29s] Here, what I'm going to do is I'm going to come up with that summation.
+[  772.85s ->   781.21s] So I'll say S is equal to 0, and then I'm going to say S plus equals I plus 1.
+[  781.21s ->   788.75s] So this is going to be adding that 1, 2, 1, and then 2, then 3, then 4, then 5, then 6.
+[  788.97s ->   793.21s] And that's the exact same thing that we talked about up here, is A turns into A plus T.
+[  793.87s ->   800.47s] If we come down here, I can either multiply this by 1 sixth or do it at the end, S divided by 6.
+[  801.11s ->   803.19s] I get my 4.5, right?
+[  803.57s ->   805.99s] Because I'm shifting by T when, in this case, T is 1.
+[  805.99s ->   807.73s] So hopefully this makes sense.
+[  807.79s ->   810.49s] I'm breaking down the steps, but really we have this summation here.
+[  810.69s ->   817.07s] So this sort of transformation plays very nicely with the expectation operation, right?
+[  817.77s ->   822.96s] So we know that the T is left unaffected, okay?
+[  823.04s ->   834.23s] So we know whenever we have a shift, we can just pull it outside of the expectation.
+[  834.23s ->   839.23s] So we can shift the final value, essentially, by T.
+[  839.67s ->   840.71s] But what about a scaling?
+[  840.83s ->   842.11s] How does a scaling affect it?
+[  844.43s ->   845.67s] Well, think about the scaling.
+[  846.45s ->   849.81s] We pretty much do the exact same thing with the 1 sixth probability.
+[  850.07s ->   851.39s] We've been doing it at the end, right?
+[  851.73s ->   852.85s] We divide by 6.
+[  853.27s ->   855.01s] Well, what if we had RA here?
+[  855.59s ->   856.33s] This is a summation.
+[  856.53s ->   858.85s] Can't we just pull the R to the outside of the sum?
+[  859.59s ->   860.67s] We sure as heck can.
+[  861.43s ->   863.49s] Why can't we do that with the A and the P of A?
+[  864.21s ->   868.51s] Well, because A and P of A are dependent on the term and the summation, right?
+[  868.99s ->   873.79s] So we can do that with the 1 sixth strictly because it's constant across the entire space.
+[  873.91s ->   877.05s] But, you know, we don't necessarily have that in the general sense.
+[  877.73s ->   884.11s] So in this case, if we have RA or RA plus T, well, we know that the T is going to shift everything.
+[  884.11s ->   892.01s] Again, the R is just going to scale the original expectation because we can pull that R to the outside of the summation.
+[  892.53s ->   895.37s] And then we're just left with the original expectation.
+[  896.83s ->   899.13s] So let's go ahead and hammer this point home as well.
+[  899.59s ->   901.77s] So I'll say R is equal to 2.
+[  902.49s ->   909.79s] If I do R times this vector here of all possible outcomes, then you'll see our original expectation of 3.5.
+[  910.23s ->   911.19s] We multiply it.
+[  911.23s ->   912.19s] Look, we get 7.
+[  912.19s ->   921.50s] OK, the same thing is going to be true here, where if we take a look, we have, again, I have to make this 1.
+[  922.32s ->   924.66s] I'll make this the original expectation.
+[  925.26s ->   935.18s] Now, if I multiply each one by R as well, right, where R is going to be 2, we will also get that 7.
+[  935.18s ->   940.42s] OK, so the second one here is us throwing the R in the summation.
+[  940.74s ->   942.78s] Essentially, that's what the for loop is acting as.
+[  942.78s ->   943.90s] It's acting as the sum.
+[  944.52s ->   946.84s] OK, and then here we're applying it more directly.
+[  947.18s ->   951.14s] So we know that we can just take this R outside of the expectation.
+[  954.13s ->   958.83s] And this is exactly how we should think about the expectation operator, essentially.
+[  959.77s ->   969.59s] OK, so whenever we have a scaling by R and a shift by T, we can just take the scaling factor outside of the expectation, multiply it by the original expectation.
+[  969.59s ->   975.35s] We can take the shift outside of the expectation as well and just shift the entire scaled expectation.
+[  975.83s ->   983.65s] Very important, you do not apply the shift prior to the scaling because T itself is not affected by R.
+[  983.65s ->   986.68s] OK, just keep that in mind.
+[  986.68s ->   994.34s] OK, so now we can go ahead and see, right, if we have an original expectation here of 3.5.
+[  994.34s ->   999.78s] If we were to shift by 5, scale by 2, you should be able to do this in your head, right?
+[  999.86s ->  1004.96s] Because you scale 3.5 by 2, then you get 7 plus 5, it's going to be 12.
+[ 1005.86s ->  1006.76s] Yeah, we get 12.
+[ 1006.76s ->  1010.96s] OK, so that's how we can use the linearity of expectations here.
+[ 1012.44s ->  1014.04s] So that's going to do it for expectations.
+[ 1014.20s ->  1015.04s] Hopefully this was clear.
+[ 1015.16s ->  1017.88s] Hopefully you see now why this is such a useful idea.
+[ 1018.58s ->  1024.14s] And it turns out that we don't necessarily need variable independence.
+[ 1024.78s ->  1029.66s] In fact, we actually don't need variable independence to apply the linearity of the expectation.
+[ 1029.66s ->  1042.94s] So this linear property here to multiple random variables in the same expression, of course, we have to be very careful when we have products of different random variables.
+[ 1043.28s ->  1051.66s] But it turns out if we have two random variables that are or are not independent, then we can still distribute in this same fashion.
+[ 1052.88s ->  1058.78s] OK, so we're going to talk a little bit about that in a moment after I talk about variance.
+[ 1058.78s ->  1061.28s] OK, so let's talk about variance first.
+[ 1062.57s ->  1064.09s] Variance is an elusive topic.
+[ 1065.63s ->  1068.07s] Once again, it can get very complicated very quickly.
+[ 1068.55s ->  1074.87s] But we're going to talk about everything in the context of a population variance here, a discrete population variance.
+[ 1075.09s ->  1077.63s] So let's just talk about discrete variance.
+[ 1078.41s ->  1082.03s] I'm going to say bar of x is equal to.
+[ 1082.03s ->  1091.19s] And in this case, we're trying to come up with a measure of expected deviation from the mean.
+[ 1092.05s ->  1104.69s] OK, so if the mean is a measure of the average, the expectation, so on and so forth, all the different names for the first moment,
+[ 1104.69s ->  1114.23s] then the variance itself is going to be a measure of the expected deviation from that particular value.
+[ 1115.07s ->  1133.15s] OK, and what this looks like in terms of expectations is it's going to be the expectation of x squared minus the expectation of x quantity squared.
+[ 1133.15s ->  1154.27s] OK, this isn't the formal definition, if you will, because here what I'm doing is I am just going through and applying this rule that you can derive from the formal definition.
+[ 1154.27s ->  1161.67s] Really, the formal definition is looking at the difference between an outcome and the expectation.
+[ 1162.47s ->  1165.73s] And when you have that difference, you have to consider the distance.
+[ 1166.11s ->  1170.25s] So you would look at either an absolute value or a square.
+[ 1171.03s ->  1174.65s] And in the case of variance, you look at squared deviations.
+[ 1174.65s ->  1178.79s] So this is a consequence of that definition.
+[ 1179.05s ->  1184.47s] If you go ahead and you just distribute everything out, you can reduce it to this guy here.
+[ 1184.51s ->  1188.75s] And this is definitely the most widely used formula for variance.
+[ 1189.33s ->  1195.93s] And then you'll also have, of course, like your have your sample variance formula, sample standard deviation, so on and so forth.
+[ 1196.29s ->  1199.27s] But here we're talking once again about population variance.
+[ 1199.27s ->  1207.09s] All right, so how can we calculate the population variance of a dice roll?
+[ 1207.09s ->  1213.67s] Well, let's just go ahead and take this vector here and let's compute these two expected values.
+[ 1214.45s ->  1219.67s] We already know what those expected values should be as we've defined the discrete expectation right here.
+[ 1219.87s ->  1227.71s] So I'm going to say A is equal to this vector and we will multiply it with itself element wise product.
+[ 1227.71s ->  1231.91s] I believe that's the Hadamard product and we have this guy here.
+[ 1232.71s ->  1241.35s] And if I was to say X2 is equal to MP mean of A, then we would have our E of X squared.
+[ 1242.05s ->  1249.99s] And then we're just going to subtract off the expectation of X, which we know is 3.5 squared.
+[ 1249.99s ->  1264.96s] OK, so I'm just going to say B is equal to the original vector and then I'll say X is equal to MP dot mean B squared.
+[ 1265.96s ->  1269.42s] And then here we will print the variance.
+[ 1269.66s ->  1276.40s] We'll say X2 minus X, print V and we get 2.917 ish.
+[ 1276.40s ->  1279.56s] So that is going to be the the formal variance.
+[ 1280.46s ->  1289.79s] OK, so that is the expected deviations from the mean squared of our dice roll.
+[ 1291.18s ->  1301.92s] OK, so now what I'd like to talk about is this idea of a shift and a scale.
+[ 1301.92s ->  1311.80s] OK, so now we have a shift T and a scale R.
+[ 1312.28s ->  1318.50s] How does this affect our original random variable variance?
+[ 1322.88s ->  1327.46s] Well, in this case, it's going to be relatively difficult to see.
+[ 1329.46s ->  1334.78s] So perhaps we should look at the formal definition of variance here.
+[ 1334.78s ->  1356.06s] We'll have one over N and then we have sigma and then we'll sum over X minus B of X squared.
+[ 1356.72s ->  1361.92s] And this would be.
+[ 1362.40s ->  1369.08s] Yeah.
+[ 1369.32s ->  1375.65s] OK, so here we see now the formal definition of variance.
+[ 1375.77s ->  1380.17s] We have the expected deviation squared.
+[ 1380.45s ->  1380.97s] Right.
+[ 1380.97s ->  1382.71s] That's exactly what we're looking at here.
+[ 1383.11s ->  1387.39s] I might be a parenthesis off or so.
+[ 1388.25s ->  1394.45s] But in reality here, what I'm trying to get at is when we have a shift, right?
+[ 1395.90s ->  1396.82s] It's going to bug me.
+[ 1396.90s ->  1398.26s] So let me just add this guy.
+[ 1404.72s ->  1405.14s] Okie dokie.
+[ 1405.42s ->  1414.70s] So what I'm getting at here is if we have a shift by T, then how does this affect the deviation from our expectation?
+[ 1415.46s ->  1418.70s] Does it affect our deviation from the expectation?
+[ 1418.70s ->  1422.48s] To illustrate this, I would really like to make a plot.
+[ 1422.70s ->  1427.68s] So import mapplotlib.pyplot as PLT.
+[ 1427.68s ->  1438.86s] And what I'm going to do is I'm going to create a random vector X, MP.random.normal, 0, 1, 1000.
+[ 1439.64s ->  1450.56s] And then we'll do, actually this will be Y and X will be MP.a range 0 to 1,000, I believe.
+[ 1450.56s ->  1455.15s] Maybe 1 to 1,000.
+[ 1455.15s ->  1458.15s] I want to make sure that they're the same size.
+[ 1458.67s ->  1460.55s] We'll do 0 to 1,000.
+[ 1460.91s ->  1462.59s] Up to, but not including.
+[ 1465.06s ->  1467.06s] PLT.plot.
+[ 1467.26s ->  1470.04s] And then we're going to plot our X and our Ys.
+[ 1470.04s ->  1472.54s] So now we have this noise.
+[ 1472.70s ->  1474.62s] Maybe a scatter plot would actually be better.
+[ 1475.16s ->  1475.26s] Yeah.
+[ 1475.88s ->  1476.14s] Okay.
+[ 1477.70s ->  1481.04s] So now I need a horizontal line.
+[ 1483.04s ->  1485.50s] X, isn't it H line?
+[ 1485.64s ->  1486.88s] X, H line.
+[ 1487.72s ->  1490.46s] Then MP.mean of Y.
+[ 1491.24s ->  1491.86s] Yeah, there we go.
+[ 1492.42s ->  1492.66s] Okay.
+[ 1492.82s ->  1494.86s] And then color equals red.
+[ 1495.58s ->  1495.98s] Nice.
+[ 1496.18s ->  1497.12s] That's exactly what I want.
+[ 1497.12s ->  1497.76s] Okay.
+[ 1497.96s ->  1500.04s] So let's illustrate this point, right?
+[ 1500.30s ->  1506.46s] So all of these points you can think of as outcomes of our random variable.
+[ 1506.76s ->  1512.34s] And you can think of this line, this red line, as our mean, okay?
+[ 1512.34s ->  1515.46s] As our expectation, our average value here, all right?
+[ 1515.60s ->  1524.76s] And what we're trying to do is we're trying to measure the expected deviation squared from the mean, all right?
+[ 1524.76s ->  1528.04s] Ignore the fact that this is a sample and not the population, all right?
+[ 1528.26s ->  1532.24s] I'm trying to show you what happens when we shift by this T, okay?
+[ 1532.48s ->  1534.18s] Should it affect the variance, okay?
+[ 1534.58s ->  1537.78s] Variance is going to be essentially the distance, okay?
+[ 1538.00s ->  1541.36s] And I'm going to go ahead so I don't accidentally resample this.
+[ 1541.80s ->  1544.18s] I'm going to put this in a new plot here, okay?
+[ 1544.18s ->  1553.66s] So remember, variance is trying to measure the deviation of this point from this red line, this point, this point, so on and so forth.
+[ 1553.72s ->  1555.64s] All of the points to this red line.
+[ 1556.10s ->  1568.56s] If I shift every point, so if I say plus T, plus T, and I make T equal to 100, right?
+[ 1568.56s ->  1574.90s] If we look at this, right, look at this plot, did anything change this point's deviation from this line?
+[ 1575.96s ->  1577.32s] What about this point's deviation?
+[ 1577.50s ->  1578.54s] This is the original plot.
+[ 1579.42s ->  1588.34s] No, the only thing that shifted was the axis where it is in space, not its relative distance from the mean, okay?
+[ 1588.36s ->  1589.34s] This is very important.
+[ 1589.86s ->  1591.56s] You can see it clear as day here.
+[ 1591.92s ->  1596.26s] Shifted by T, the relative distance of this point to this line does not change.
+[ 1596.26s ->  1605.24s] This is that same point, and that distance is the exact same to that line, because the mean shifts by 100, and that point shifts by 100, okay?
+[ 1605.62s ->  1609.98s] So T shouldn't affect the variance at all, and it doesn't.
+[ 1610.34s ->  1612.64s] So we can just go ahead and throw that out.
+[ 1612.86s ->  1613.96s] We can throw T out.
+[ 1614.02s ->  1619.52s] Any constant, any shift that's inside a variance operator, we can throw out.
+[ 1619.74s ->  1622.02s] It's not going to affect the variance, and it shouldn't.
+[ 1622.24s ->  1623.46s] This is literally why.
+[ 1623.54s ->  1624.70s] You can see it in this chart.
+[ 1624.70s ->  1627.32s] Like, this isn't, like, oh, you know, this is the idea.
+[ 1627.56s ->  1630.82s] This is literally why we don't see it, okay?
+[ 1632.39s ->  1633.31s] What about a scale?
+[ 1634.11s ->  1635.51s] How does a scale affect it?
+[ 1635.95s ->  1646.21s] Well, hopefully it's a little more clear here, but if I was to go through this guy and scale the random variable by R, we no longer have this linearity.
+[ 1646.21s ->  1655.87s] We have this quadratic nature of the variance operator acting on the original variable with the scaling R.
+[ 1656.51s ->  1659.03s] So R is actually pulled out and squared.
+[ 1659.51s ->  1666.85s] So this operation here on Rx plus T is R squared variance of X, okay?
+[ 1666.85s ->  1677.97s] So if I come down here, right, we can see this by scaling all of the points here by R.
+[ 1678.07s ->  1681.09s] So I'm going to say R is equal to 2, okay?
+[ 1681.13s ->  1685.64s] Now I'm going to have R times Y, R times Y.
+[ 1685.64s ->  1687.84s] If I run this, watch what happens.
+[ 1689.71s ->  1696.01s] Look at the deviations, okay?
+[ 1696.35s ->  1700.05s] What about R is 6?
+[ 1711.88s ->  1714.74s] Hopefully this is becoming a little more clear as we see.
+[ 1715.42s ->  1721.18s] This scaling here in a relative sense is different, right?
+[ 1721.18s ->  1724.38s] It's going to be different than just a simple shift.
+[ 1725.06s ->  1729.10s] You can see it relative from this point to this point.
+[ 1729.24s ->  1740.86s] But this is where the relative distance of this point to this is changing from this point, say, to this point, okay?
+[ 1741.30s ->  1745.54s] But we can see this more clearly when we actually compute the variance itself.
+[ 1745.62s ->  1746.72s] So let's just go ahead and do that.
+[ 1747.16s ->  1749.58s] So hopefully the charts were helpful.
+[ 1749.72s ->  1752.58s] Now let's go ahead and look at the actual analytical solution.
+[ 1752.68s ->  1755.20s] So we have this guy here.
+[ 1755.62s ->  1764.08s] If we were to compute the variance in closed form, then we would have B, BDOF is equal to 0.
+[ 1764.46s ->  1766.80s] This is our variance, right?
+[ 1766.96s ->  1768.60s] So this is our original dice roll.
+[ 1768.86s ->  1778.68s] If I was to multiply B by R, so let's say R is equal to 5, T is equal to 10, then what would I have?
+[ 1778.68s ->  1789.69s] I would have B, R times B plus T, and then we get R times B plus T is 72, right?
+[ 1789.87s ->  1790.99s] Let's make T 100.
+[ 1790.99s ->  1793.51s] It doesn't affect it, right?
+[ 1793.95s ->  1797.57s] It doesn't affect the variance, and it should not affect the variance, right?
+[ 1798.29s ->  1799.09s] We can add 0.
+[ 1799.21s ->  1800.29s] It's not going to affect the variance.
+[ 1800.65s ->  1803.57s] But this scaling factor will, right?
+[ 1803.57s ->  1811.37s] So if we have it as 1, we have the original variance as 2, we multiply the original variance by 4.
+[ 1811.89s ->  1812.99s] We can see that here.
+[ 1813.65s ->  1814.97s] So we're scaling.
+[ 1815.41s ->  1816.25s] R is 2.
+[ 1816.69s ->  1818.05s] Take the original variance.
+[ 1818.57s ->  1820.95s] Multiply by R squared.
+[ 1820.95s ->  1826.80s] And we get the exact same value, okay?
+[ 1827.08s ->  1833.30s] And that is just going to be a function of the quadratic nature of the variance operator, okay?
+[ 1833.46s ->  1835.38s] It is no longer linear.
+[ 1836.57s ->  1845.79s] So that's pretty much all I wanted to say for how we can use variance and use the expectation in the context of some sort of shift and scale.
+[ 1845.79s ->  1852.61s] Now, what becomes pretty interesting, too, is you'll see a lot of the times we multiply by the square root of 250.
+[ 1854.43s ->  1867.07s] It's pretty interesting because if you think about it, what we're trying to do is we're trying to, especially in finance, most of the time, we're trying to annualize, say, like portfolio variance.
+[ 1867.07s ->  1877.07s] And if you wanted to multiply x by 250, or 252, rather, then you would have to multiply by something squared.
+[ 1878.12s ->  1885.84s] So if we multiply by the square root of 252, then this square is implicit, and it's going to essentially multiply that out there.
+[ 1890.56s ->  1891.36s] Hopefully that's clear.
+[ 1892.10s ->  1900.67s] If not, let's take a look at a quick example in the context of annualizing portfolio variance, right?
+[ 1900.67s ->  1907.41s] So we have, let's say that the variance of x is equal to t, right?
+[ 1907.49s ->  1909.51s] And we want to annualize this.
+[ 1909.97s ->  1913.27s] So we would have 252.
+[ 1915.05s ->  1917.37s] We want to multiply x by 252.
+[ 1917.87s ->  1928.21s] So then we would have something along the lines of times 252.
+[ 1928.83s ->  1936.84s] So we would do, let's see, how do I want to explain this?
+[ 1936.84s ->  1959.70s] We would say that, let r equal mp.square root of 252.
+[ 1962.25s ->  1985.58s] Then r squared variance of x is equal to variance of r times x, which is equal to variance of 252x times x.
+[ 1985.58s ->  1988.58s] Maybe that's a little more clear.
+[ 1989.12s ->  2018.50s] All right, so suppose x is a stock return set.
+[ 2018.98s ->  2022.88s] And we want to annualize variance.
+[ 2022.88s ->  2058.37s] We multiply by square root of 252x is equal to 252 times the variance of x, which is equal to 252 times, that's probably more clear.
+[ 2058.37s ->  2063.08s] Okay, so this is how it would be used in practice, for example, right?
+[ 2063.08s ->  2074.22s] So if we know this equation, right, and we wanted to annualize a stock return set, then we will multiply the original data by the square root of 252.
+[ 2074.22s ->  2084.10s] And then the reason we do that is because the variance is going to be scaled by 252 in this context here, right?
+[ 2084.18s ->  2085.84s] We have 252 times sigma squared.
+[ 2087.36s ->  2088.78s] Okay, hopefully that's clear.
+[ 2089.52s ->  2093.12s] This would be an example of where we would apply something like this.
+[ 2093.12s ->  2095.48s] I'm going to digress from that.
+[ 2096.32s ->  2100.10s] I just wanted to sprinkle in a little more quantity to finance.
+[ 2100.26s ->  2104.68s] And I know that the idea of annualizing variance can be kind of confusing.
+[ 2105.12s ->  2110.72s] But hopefully that's more clear now because we went over how this sort of scaling works.
+[ 2112.91s ->  2113.19s] Okay.
+[ 2115.00s ->  2118.66s] All righty, so now I think it's time to talk about the idea of independence.
+[ 2118.66s ->  2129.05s] Okay, we talked about how if we have two random variables that aren't independent, then we can still use the linearity of expectations.
+[ 2129.05s ->  2138.67s] But that's not necessarily true when we have variance, especially some sort of scaling shift and then maybe another shift by another random variable.
+[ 2139.03s ->  2143.45s] Turns out that independence does matter quite a bit in that context.
+[ 2143.45s ->  2152.33s] Okay, so what I'm going to do here is I'm going to say that I have, let's say, two random variables.
+[ 2153.31s ->  2158.25s] Okay, let's just go ahead and create a new section here.
+[ 2160.40s ->  2165.14s] Talk about two random variables.
+[ 2165.60s ->  2168.18s] We'll have random variable X.
+[ 2169.87s ->  2173.77s] We will say that it is distributed normally.
+[ 2174.53s ->  2176.13s] We'll say standard normally.
+[ 2176.13s ->  2185.01s] We'll say we have Y is equal to 2X plus 10.
+[ 2187.10s ->  2189.14s] Okay, so we have two random variables here.
+[ 2189.42s ->  2190.50s] X is a random variable.
+[ 2190.62s ->  2192.06s] In this case, it is now continuous.
+[ 2192.80s ->  2195.14s] We have Y, which is a random variable.
+[ 2195.54s ->  2197.34s] In this case, it is a function of X.
+[ 2197.62s ->  2199.02s] X is a random variable.
+[ 2199.46s ->  2202.30s] Thus, Y is also a random variable.
+[ 2202.98s ->  2203.14s] Okay.
+[ 2203.60s ->  2204.74s] Are X and Y independent?
+[ 2205.00s ->  2207.12s] Well, we know Y is defined in terms of X.
+[ 2207.16s ->  2209.06s] So no, no, they're not independent.
+[ 2209.06s ->  2212.82s] But can we still apply the linearity of expectations?
+[ 2213.26s ->  2214.86s] Turns out we sure can.
+[ 2215.38s ->  2215.56s] Okay.
+[ 2216.08s ->  2219.85s] So let's look at this idea.
+[ 2220.31s ->  2226.22s] The solution to the following equation.
+[ 2226.22s ->  2237.94s] So what if we have RX plus T plus Y, we'll say 2Y plus 5.
+[ 2238.18s ->  2244.16s] And all of this is in an expectation.
+[ 2248.79s ->  2259.57s] Well, it's pretty easy, actually, because we know we can apply this linearity of expectation right here and just distribute this expectation to random variable X.
+[ 2259.57s ->  2269.47s] So this is going to be equal to, maybe instead of 2 and 5, we'll just use X and Z.
+[ 2271.15s ->  2285.22s] So then we have R times the expectation of X, right, plus T plus X times the expectation of Y plus Z.
+[ 2285.22s ->  2291.65s] So we're just going to go ahead and distribute that expectation to our random variables.
+[ 2293.42s ->  2293.64s] Okay.
+[ 2293.64s ->  2297.72s] What is the expectation of X?
+[ 2297.82s ->  2304.95s] Well, that's going to be zero by the standard normal density here.
+[ 2306.40s ->  2308.66s] What is the expectation of Y?
+[ 2308.96s ->  2312.96s] Well, if we apply the expectation to Y, we're applying it to 2X plus 10.
+[ 2313.34s ->  2315.08s] We know the expectation of X is zero.
+[ 2315.08s ->  2318.08s] So the expectation of a constant is just going to be a constant.
+[ 2318.46s ->  2319.94s] So we know that that's going to be 10.
+[ 2320.76s ->  2320.94s] Okay.
+[ 2321.12s ->  2323.64s] So we can actually just go ahead and solve this directly.
+[ 2323.74s ->  2324.56s] It's actually quite easy.
+[ 2324.82s ->  2330.04s] We can just go ahead and plug in whatever numbers we want, and we will get the desired solution.
+[ 2330.70s ->  2333.94s] So I'm going to say, right, we know this expectation is zero.
+[ 2334.22s ->  2339.18s] Then we have T plus Z plus X times E of Y, which is just going to be 10.
+[ 2339.18s ->  2347.67s] So this is going to be equal to 10 times X plus T plus Z.
+[ 2348.76s ->  2351.30s] That is going to be the solution to this guy right here.
+[ 2352.64s ->  2353.92s] 10X plus T plus Z.
+[ 2354.54s ->  2354.80s] Okay.
+[ 2355.30s ->  2357.38s] Well, we can go ahead and test this out.
+[ 2357.68s ->  2360.84s] We can say X is equal to MP dot random dot normal.
+[ 2361.24s ->  2362.22s] Zero, one.
+[ 2362.62s ->  2364.06s] We'll do 1,000.
+[ 2364.66s ->  2368.00s] Y is equal to 2 times X plus 10.
+[ 2368.68s ->  2370.66s] Just verify we have the right vector.
+[ 2371.08s ->  2371.28s] Yep.
+[ 2372.06s ->  2373.70s] So now we have X and Y.
+[ 2374.10s ->  2377.20s] Let's make it 10,000 so it's a little closer to what it should be.
+[ 2377.64s ->  2378.66s] Again, this is a simulation.
+[ 2379.00s ->  2379.76s] This is a sample.
+[ 2380.36s ->  2385.72s] Central line of theorem law, large numbers is going to make this approximately this solution.
+[ 2386.26s ->  2387.66s] I'm not going to talk too much about that.
+[ 2387.74s ->  2389.74s] I have other videos on that if you are interested.
+[ 2390.16s ->  2392.50s] But let's just go ahead and look at this analytical solution here, right?
+[ 2392.50s ->  2397.52s] So we're saying that the expectation of this guy here is 10X plus T plus Z.
+[ 2397.84s ->  2399.42s] So let's define everything.
+[ 2399.42s ->  2401.98s] R, T, X, Z.
+[ 2402.46s ->  2405.05s] We'll say R is 5.
+[ 2405.41s ->  2407.15s] We'll say T is 7.
+[ 2407.51s ->  2409.15s] We'll say X is 3.
+[ 2409.57s ->  2410.47s] Z is 4.
+[ 2411.87s ->  2412.15s] Okay.
+[ 2412.41s ->  2417.83s] So now we're going to print 10 times X plus T plus Z.
+[ 2418.37s ->  2419.09s] We have 41.
+[ 2419.09s ->  2420.15s] Okay.
+[ 2420.39s ->  2422.99s] What is the actual analytical solution here?
+[ 2423.15s ->  2424.91s] Let's go ahead and compute it.
+[ 2425.23s ->  2430.79s] We should have, we're going to have EX is equal to MP dot mean X.
+[ 2430.79s ->  2433.93s] EY is equal to MP dot mean Y.
+[ 2434.13s ->  2436.37s] And then we're going to print, what is it?
+[ 2436.45s ->  2444.03s] R times EX plus T plus X times EY plus Z.
+[ 2444.03s ->  2447.19s] And then we get 41.278.
+[ 2447.19s ->  2448.77s] And that's pretty darn close to 41.
+[ 2448.77s ->  2449.91s] Our analytical solution.
+[ 2450.29s ->  2451.89s] This is our simulated solution.
+[ 2452.27s ->  2453.97s] The exact same thing pretty much, right?
+[ 2454.27s ->  2458.61s] If I keep running this, it's going to converge to that 41 right here.
+[ 2459.61s ->  2459.75s] Okay.
+[ 2460.23s ->  2468.35s] So here we see that we can apply the linearity of the expectation to two random variables,
+[ 2468.55s ->  2469.71s] even if they're not independent.
+[ 2469.85s ->  2470.85s] We didn't check for independence.
+[ 2471.31s ->  2472.53s] We didn't care about independence.
+[ 2472.89s ->  2473.85s] We got the right answer.
+[ 2474.69s ->  2474.95s] Okay.
+[ 2475.47s ->  2478.49s] What about in the context of variance?
+[ 2478.65s ->  2480.11s] How does this affect variance?
+[ 2481.52s ->  2487.24s] Well, it turns out variance is actually quite dependent on independence.
+[ 2488.44s ->  2489.56s] Dependent on independence.
+[ 2490.52s ->  2491.04s] Jeez Louise.
+[ 2491.90s ->  2498.56s] So the fact that these two are not independent is going to drastically affect the corresponding
+[ 2498.56s ->  2499.44s] variance.
+[ 2500.22s ->  2500.34s] Okay.
+[ 2500.78s ->  2505.38s] Really, what that means is we can't distribute nicely like we did here.
+[ 2506.04s ->  2513.37s] In other words, if I was to have these guys in the context of variance.
+[ 2514.15s ->  2516.83s] So let's come down here and take a look at variance.
+[ 2517.47s ->  2518.98s] All right.
+[ 2519.02s ->  2519.84s] There we go.
+[ 2519.84s ->  2521.84s] In the context of variance here.
+[ 2522.92s ->  2529.82s] We are going to ask, does the variance of x plus y equal the variance of x plus the variance
+[ 2529.82s ->  2530.42s] of y?
+[ 2531.43s ->  2531.79s] Right.
+[ 2531.79s ->  2553.56s] And that's a fair question to ask because we know that the expectation of x plus y is equal to the expectation of x plus the expectation of y, even without any sort of independence among the variables.
+[ 2553.56s ->  2556.38s] So is this true?
+[ 2556.38s ->  2560.16s] Is the variance of x plus y equal to the variance of x plus the variance of y?
+[ 2560.16s ->  2561.56s] Well, we can just test this.
+[ 2561.56s ->  2563.28s] We can just test this, right?
+[ 2563.28s ->  2564.28s] We have x plus the variance.
+[ 2564.28s ->  2566.28s] We have x plus the variance of x plus the variance.
+[ 2566.28s ->  2570.70s] We can go ahead and we can compute the variance and see if they're the same.
+[ 2570.70s ->  2572.25s] Right.
+[ 2572.25s ->  2576.61s] And so what I'm going to do is and bear with me, I'm just going to use the population variance.
+[ 2576.61s ->  2585.77s] variance. I'm going to say VX is equal to MP variance of X, DDOF equals 0, VY equals MP dot
+[ 2585.77s ->  2596.77s] variance of Y, DDOF equals 0. And I'm just going to go ahead and print the variance of X plus the
+[ 2596.77s ->  2604.09s] variance of Y. And that is going to be this right hand side over here. Now what I'm going to do is
+[ 2604.09s ->  2611.71s] I'm going to sum the two random variables. So I'm going to have Z is equal to X plus Y. And that's
+[ 2611.71s ->  2619.59s] actually going to give me a new vector here. And I'm going to compute MP dot variance of Z, DDOF
+[ 2619.59s ->  2628.15s] 0. And if you take a look here, we actually don't get the same variance. So this left hand side is
+[ 2628.15s ->  2636.53s] not equal to this right hand side. Okay, that's pretty interesting. But why is that the case?
+[ 2636.59s ->  2642.89s] Well, it turns out that we have to take into account the way that these variables are related to one
+[ 2642.89s ->  2647.97s] another. And that is going to be given by independence, whether or not they are independent.
+[ 2648.17s ->  2655.53s] So if they are independent, and Y had nothing to do with X, this would be true. But because Y is
+[ 2655.53s ->  2661.27s] defined in terms of X, they are dependent, and we're going to have some covariance. Okay.
+[ 2662.54s ->  2670.62s] So I can compute the covariance, I can say MP dot cove, and I can use the X and the Y vector here
+[ 2670.62s ->  2678.80s] to compute the covariance. And if we look at the covariance of X and Y, there's a symmetric matrix,
+[ 2678.80s ->  2685.78s] right? We have the covariance of X and Y on the off diagonals here. I'm just going to go ahead and
+[ 2685.78s ->  2692.18s] grab that element. So I'm going to say 01. This is going to be the covariance. Okay,
+[ 2692.38s ->  2699.06s] maybe I should specify DDOF equals zero. Now, here's the interesting thing. Do you notice
+[ 2699.06s ->  2705.44s] that this right hand side could equal this left hand side if we include the covariance?
+[ 2705.44s ->  2722.98s] What I mean is, let's do XV plus VY plus two times the covariance. Now, what do we get? We get the
+[ 2722.98s ->  2734.20s] variance of the sum. So it turns out that if we have the covariance term, then we have this equation
+[ 2734.20s ->  2742.74s] being true. So maybe this equation really isn't true. But really what I'm trying to say is when
+[ 2742.74s ->  2750.70s] we add this covariance term back, we can make it true. So this is not true in general. So this is
+[ 2750.70s ->  2759.48s] true if the variables are independent. But if the variables are dependent, like in this example,
+[ 2759.48s ->  2771.42s] then we can see that we have to add back plus two covariance of X and Y. And that's exactly what we
+[ 2771.42s ->  2781.44s] get here. Okay, you can see when we add back the two covariance of X and Y, then we just go ahead here
+[ 2781.44s ->  2792.41s] and we get the original variance of X plus Y. All right. So that's pretty interesting. So this is going
+[ 2792.41s ->  2800.59s] to be true in general. And the reason this is true in general is because if we have that the random
+[ 2800.59s ->  2807.11s] variables are independent, then we have that the covariance is actually going to be zero. And those
+[ 2807.11s ->  2812.71s] two random variables are going to be uncorrelated. Okay, so that's a pretty interesting result here.
+[ 2812.71s ->  2818.71s] And we can go ahead and test that actually by creating another normal sample. But in reality,
+[ 2818.71s ->  2824.43s] this is really what I wanted to cover in the context of covariance, right? That is this idea that the
+[ 2824.43s ->  2830.77s] variance of X and Y is not equal to the variance of X plus the variance of Y in general. That is,
+[ 2830.77s ->  2835.91s] unless we have independence. Otherwise, we have to consider this covariance term to make this
+[ 2835.91s ->  2840.69s] equation true. And that's exactly what we see here. When we consider covariance, we have the right
+[ 2840.69s ->  2847.97s] hand side equal to the left hand side, where if we have the lack of the covariance term, we just consider
+[ 2847.97s ->  2855.43s] the sum of the two variances, we're missing that value of four, the twice the covariance term. So
+[ 2855.43s ->  2862.49s] that's just something very important to hopefully, hopefully this is visual enough to see this idea
+[ 2862.49s ->  2873.90s] right here. Okay. All right. So that's pretty handy. That's pretty interesting. We talked about
+[ 2873.90s ->  2885.24s] expectation, variance, covariance. Now, what about the idea of correlation? Well, really the idea of
+[ 2885.24s ->  2891.30s] correlation is to attach some sort of interpretation to covariance because covariance is kind of confusing,
+[ 2891.30s ->  2898.70s] right? Like what is this? What is covariance of X and Y? Well, it turns out if we were to expand
+[ 2898.70s ->  2904.82s] the variance of X plus Y formally in terms of the definition of variance, which we've defined up
+[ 2904.82s ->  2920.71s] here, then we would find that the covariance of X and Y is equal to the expectation of EX, let's see,
+[ 2920.71s ->  2942.48s] of E, of E, X, Y minus the expectation of E, X, E, Y. There we go. So this is actually how we define
+[ 2942.48s ->  2950.06s] covariance. And we can actually see this. We can see this directly. If we were to go ahead and compute,
+[ 2950.06s ->  2961.70s] let's say, let's say Q is equal to, we will do X times Y. And then we do E, Q is equal to MP dot mean
+[ 2961.70s ->  2975.91s] Q. And then we do E, X, which I believe we still have. Yep, we do. So we could do E, Q minus E, X times E,
+[ 2975.91s ->  2985.45s] Y. And we get that simulated covariance, that 2.012, right? And that's exactly what we had here
+[ 2985.45s ->  2993.84s] when we called our NumPy covariance function, right? That's exactly what we had. It's the exact same
+[ 2993.84s ->  3002.61s] thing. Okay. So this is just how we would compute it directly by hand using this guy here. Okay. But
+[ 3002.61s ->  3008.35s] this is still pretty confusing, right? Because if I have a scatter plot, I already imported map plot
+[ 3008.35s ->  3014.87s] live. So if I did PLT dot plot, we want to plot X's and Y's together. Let me do a scatter, right?
+[ 3015.53s ->  3022.55s] Scatter plot here. Then this is a very nice interpretation of what we got cooking here,
+[ 3022.87s ->  3028.13s] strictly because we have such a nice definition of Y in terms of X. It's just pretty much a line,
+[ 3028.13s ->  3038.92s] right? What if we also had another normal distribution? We'll say plus maybe we can add
+[ 3038.92s ->  3051.35s] some noise, perhaps. Let's do X plus, how should we define this guy here? Maybe this is sufficient
+[ 3051.35s ->  3064.08s] enough. X plus Y. Now let's add some noise. We'll add N to comma five. Okay. So we're going to add some
+[ 3064.44s ->  3069.28s] noise here with a mean of two and a variance of five. So what I'm going to do is I'm going to come
+[ 3069.28s ->  3078.52s] down here. I'm going to say plus MP dot random dot normal two and then five. I think that's standard
+[ 3078.52s ->  3105.96s] deviation. Is that standard deviation? DLQ dot scatterer X and then a thing that's still very
+[ 3105.96s ->  3120.32s] linear. Oh, it's broadcasting. That's why. 10,000. There we go. There we go. That's better.
+[ 3120.32s ->  3127.02s] That's what I was going for. 225, 10,000. It was broadcasting a single draw from the normal
+[ 3127.02s ->  3133.50s] distribution. But now we have 10,000 random normal points, 225. That's what we were going for,
+[ 3133.72s ->  3140.38s] right? So we have two and then five. There we go. That's what we're looking for here.
+[ 3141.86s ->  3150.77s] How do you interpret covariance in this context, right? Like the expectation of X, Y minus expectation
+[ 3150.77s ->  3160.20s] of X times expectation of Y. There's not much to interpret there. But it turns out if we normalize
+[ 3160.20s ->  3169.40s] this, this idea of covariance by the variance, the square root of the variance of the product of X and
+[ 3169.40s ->  3177.56s] Y, then we end up with something that's far more interpretable. So if we decide, hey, we take the
+[ 3177.56s ->  3186.42s] covariance of X and Y, and we divide out the square root of the variance of X, variance of Y,
+[ 3186.70s ->  3196.82s] we get something called rho. And rho is a correlation coefficient that is always going to be in between
+[ 3196.82s ->  3203.41s] negative one and one. So this turns out to be quite handy because now we have a very simple
+[ 3203.41s ->  3212.96s] interpretation of the relationship between X and Y based on some sort of linear scale, if you will,
+[ 3213.38s ->  3220.10s] from negative one to one. That is, the closer we are to one, the more positive and linear the relationship.
+[ 3221.22s ->  3226.08s] And the closer we are to negative one, the more negative and linear the relationship. The closer we are to zero,
+[ 3226.14s ->  3232.34s] the more uncorrelated we are. And it's pretty cool because if you were to scale any of these,
+[ 3232.34s ->  3240.14s] you can check this by scaling any of these random variables here, you'll see that scaling doesn't affect this
+[ 3240.14s ->  3252.11s] correlation coefficient. So if we multiply X by R, then we pull out R here, right? And then if we multiply X by R
+[ 3252.11s ->  3258.83s] here, we pull out the R, but it's squared, but it's still underneath the square root. So it turns into R, and then the R's
+[ 3258.83s ->  3270.19s] cancel. Okay, so in other words, right? It's not going to affect anything. If we have R and then R, right,
+[ 3270.19s ->  3280.39s] this is going to be the same thing as we take an R out of the covariance, and then we take an R
+[ 3280.39s ->  3288.49s] out of the square root, right? And then they're going to cancel. Because remember, we have R squared outside,
+[ 3288.49s ->  3292.91s] and then we have a square root, and that turns into R. And that's going to cancel at the top,
+[ 3292.97s ->  3301.49s] and then we're just left with the original definition of row. So this sort of standardization,
+[ 3301.95s ->  3307.19s] turning it into this range from negative one to one is going to make it far more interpretable.
+[ 3307.65s ->  3310.49s] And that's how we can actually go ahead and derive this correlation coefficient,
+[ 3310.49s ->  3323.49s] which is quite interesting. So let's go ahead and do this. So let us take MP dot core of X and Y.
+[ 3324.03s ->  3340.11s] Is it correlation? I don't even remember. Core cof, core cof, X and Y. Okay, and the core cof here is
+[ 3340.11s ->  3346.87s] one, not really a shocker, because we have a function, a direct function of the random variable X here.
+[ 3346.87s ->  3356.61s] But let's go ahead and add some noise. So MP dot random dot normal two, five, 10,000. There we go.
+[ 3356.75s ->  3365.07s] Now we have our correlation coefficient here. I'm going to make this actually fixed as A. So I'll have
+[ 3365.07s ->  3376.20s] A is equal to Y plus some noise. Then we can compute this correlation coefficient as 0.34-ish.
+[ 3376.20s ->  3383.62s] Now if we go down, we can use the formula that we have up here. We'll just standardize that covariance.
+[ 3384.12s ->  3392.59s] So if we have this covariance here, then we would do the covariance of X and A. We're going to
+[ 3392.59s ->  3399.79s] say this is the cove. We will say S is the normalization. We'll say MP dot square root.
+[ 3399.79s ->  3410.42s] Then we need the variance. V of X is equal to MP dot variance. Variance of X, DDOF equals 0.
+[ 3411.16s ->  3421.12s] Variance of A, MP dot variance of A, DDOF equals 0. Square root of X, I'm sorry, VX times VA.
+[ 3421.12s ->  3431.08s] And then if we take the ratio that is the covariance over S, we get 0.34. And that is matching the solution
+[ 3431.08s ->  3439.02s] from NumPy. Awesome. So that's just about everything I wanted to talk about today on the context of
+[ 3439.02s ->  3444.04s] independence, the context of variance, expectation, covariance, and correlation.
+[ 3444.04s ->  3451.00s] We can see that if these guys are independent, oh, this is actually the last thing I want to touch on.
+[ 3451.40s ->  3457.94s] The last thing I want to touch on is this idea of independence and covariance being 0. So if the
+[ 3457.94s ->  3465.32s] variables are independent, then covariance is 0. But covariance being 0 does not mean the variables
+[ 3465.32s ->  3471.10s] are independent. Okay. That's very important. If you have a 0 covariance, that does not mean
+[ 3471.10s ->  3477.38s] that the two variables are independent. It does mean, however, that they are uncorrelated.
+[ 3477.56s ->  3485.32s] Independence is far stronger, though. You can make use of a large number of theorems and
+[ 3485.32s ->  3494.10s] corollaries from independence, but not from lack of correlation. Okay. So that's very important to
+[ 3494.10s ->  3502.34s] go ahead and understand there. Okay. Let's see if we can maybe wrap this up with an example.
+[ 3502.34s ->  3515.16s] So X is equal to MP dot random dot normal 0 1 10,000. Y is equal to MP dot random dot
+[ 3515.16s ->  3533.87s] was some maybe 5 10,000. The X equals MP dot variance. X DDOF equals 0. The Y equals MP dot random dot
+[ 3533.87s ->  3552.23s] variance of Y DDOF equals 0. Print. We're going to do VX plus VY. And then we can do X plus Y
+[ 3552.23s ->  3563.38s] MP dot variance. DDOF equals 0. And there we go. We have an example here of where the correlation,
+[ 3563.38s ->  3570.14s] uh, I'm sorry, the, uh, well, subsequently the correlation, but also the covariance, uh, is almost
+[ 3570.14s ->  3577.04s] zero via simulation. So we could say that they are in fact uncorrelated. Um, but we can't say
+[ 3577.04s ->  3580.54s] anything about their independence. It turns out they are independent by the way that we've constructed
+[ 3580.54s ->  3586.38s] them. But if we look here, we can see that the left-hand side and the right-hand side are about
+[ 3586.38s ->  3593.21s] equal, right? And that is because the two variables are in fact independent. Okay. But of course,
+[ 3593.21s ->  3598.89s] this is a simulation. So we're going to have some unintended noise. It's going to act as some sort
+[ 3598.89s ->  3603.43s] of correlation, but this is so arbitrarily close to zero that you can just say that these guys are
+[ 3603.43s ->  3609.59s] uncorrelated, but we wouldn't be able to say anything about their dependence or independence
+[ 3609.59s ->  3615.29s] if we didn't know their governing distributions here. Okay. So just a quick recap. I just want
+[ 3615.29s ->  3620.41s] to go over everything one last time. Um, we have this idea of an expectation. Again, this expectation
+[ 3620.41s ->  3627.29s] is not, you know, what we would expect the outcome to be, but rather it is the summation of the product
+[ 3627.29s ->  3632.55s] of possible outcomes with their corresponding probabilities all across the particular space in
+[ 3632.55s ->  3637.59s] which you were looking at. In this case, we looked at a dice roll example. We computed, um, the idea
+[ 3637.59s ->  3642.31s] of the linearity of expectations. That is, if we have a scale and a shift, what does that look like?
+[ 3642.63s ->  3648.37s] We talked about this idea of, of a scale and a shift in the context of variance as well. Variance
+[ 3648.37s ->  3655.31s] being the, um, expected square deviations from the mean, from the expectation, which we defined prior.
+[ 3655.63s ->  3661.47s] Uh, we talked about an application analyzing portfolio variance. That is, uh, why do we multiply
+[ 3661.47s ->  3667.55s] by the square root of two 52? And that is because if we multiply the data vector of portfolio
+[ 3667.55s ->  3673.39s] returns X by the square root of two 52, uh, then it turns out that we are going to be able to
+[ 3673.39s ->  3679.33s] go ahead and find the variance multiplied by two 52. That's going to give us the annualized
+[ 3679.33s ->  3691.16s] variance here. Okay. Alrighty. Um, and then we took a look here at this idea, um, and took a look here
+[ 3691.16s ->  3702.40s] at this idea of, uh, uh, of distributing the, uh, the variance. We have a shift. The shift doesn't
+[ 3702.40s ->  3708.04s] affect the variance, doesn't affect the, uh, the deviations, the expected deviations, but the scaling
+[ 3708.04s ->  3714.40s] does. Um, and we, we saw that here with the R squared. And then we took a look at two, uh, random
+[ 3714.40s ->  3721.46s] variables. Um, and we talked about solving, um, some sort of summation of different random variables
+[ 3721.46s ->  3726.18s] using linearity of expectations. Uh, even if those two variables are not independent in this case,
+[ 3726.18s ->  3730.90s] they are dependent. Um, but we could still use that property. Here's a simulated solution. Here's
+[ 3730.90s ->  3736.42s] the precise solution. Uh, we talked about that in the context of variance, how independence is important.
+[ 3737.06s ->  3742.64s] Um, talked about how this idea is true in general. Uh, and then we talked about the definition of
+[ 3742.64s ->  3747.28s] covariance and correlation and how correlation doesn't change even when you scale the original data,
+[ 3747.28s ->  3751.76s] which is quite nice. Uh, and then we talked about this idea that just because two variables
+[ 3751.76s ->  3756.96s] are uncorrelated does not mean that they're not dependent. We do not know anything about their
+[ 3756.96s ->  3765.98s] independence via correlations. All right. That's going to do it for this video. I think, uh,
+[ 3765.98s ->  3770.62s] the only thing that I wish I went over a little bit more is this example with annualizing portfolio
+[ 3770.62s ->  3774.94s] variance, but I will digress for now. Perhaps we'll talk about that in another video that doesn't look
+[ 3774.94s ->  3779.90s] entirely correct to me. Um, but that was kind of just on a whim ad hoc. I'd like to talk more about
+[ 3779.90s ->  3784.94s] that another time. Uh, but otherwise I hope you found this video useful. Um, you know,
+[ 3784.94s ->  3790.46s] this is a lot of probability, a lot of, um, statistics in this particular example here.
+[ 3790.46s ->  3795.34s] Um, well, not, not really a lot of probability. We bridge the, some of the gap of probability
+[ 3795.34s ->  3801.10s] with CLT and large numbers implicitly. Um, but I hope you found it useful, a lot of useful stuff in
+[ 3801.10s ->  3805.50s] here. Uh, thank you so much for watching. If you have any questions, please leave them in the comments
+[ 3805.50s ->  3811.10s] below or join my discord. Please join my discord. We, uh, we are getting a lot of new members every
+[ 3811.10s ->  3816.72s] day and, uh, it's always nice to talk to everybody in there. Go buy my courses. It helps me out,
+[ 3816.72s ->  3821.92s] helps me make videos like this one. Uh, of course, if you enjoyed it, please leave a like subscribe.
+[ 3821.92s ->  3825.92s] Other than that, I will see you in the next one. Thanks.

@@ -1,0 +1,95 @@
+[    0.00s ->     5.96s] Hey guys, what's up? It's AB Trades and if you don't know me, I run a YouTube channel that focuses on teaching people how to day trade options.
+[    6.34s ->    12.04s] I've received a lot of comments recently on the best course to buy to learn how to day trade options.
+[   12.36s ->    18.38s] So I thought I'll just post a bunch of videos out there that's basically like a free course for day trading options.
+[   18.86s ->    25.76s] So right now we are on day two of the seven day strategy where I'm going to show you all strategies that people make you pay money for to learn.
+[   25.76s ->    32.88s] So today we're talking about MACD Divergence. Yesterday was RSI Diet Divergence and if you want to see the next videos to come,
+[   33.32s ->    37.34s] please subscribe and turn on those notifications so you can see the videos when they come out.
+[   37.66s ->    41.78s] Also, please like and comment so I know what y'all want and I know that you're liking these videos.
+[   42.16s ->    44.42s] Now let's get into MACD Divergence.
+[   45.10s ->    53.88s] So MACD Divergence, first off, go into your indicators and do MACD, MACD, Moving Average Crossover,
+[   53.88s ->    57.88s] and you'll just add it and you can keep it at the defaults.
+[   58.56s ->    66.96s] So when we get into it, RSI Divergence, so the relative strength index and how it was diverging from the path of price.
+[   67.28s ->    71.82s] So when price started to get overextended, you know, moving too far up,
+[   71.86s ->    76.76s] but then the relative strength index showed that the strength was decreasing, that's when we had the reverse.
+[   77.22s ->    81.00s] This is basically the same thing, but now with moving averages.
+[   81.00s ->    83.74s] So the way that it works is it's also the same thing.
+[   83.84s ->    86.88s] It works best at new high of days and new low of days.
+[   87.22s ->    92.60s] So when you're breaking into a new high of day, which means the stock is going into a new high,
+[   93.06s ->    97.34s] then look for the RSI Divergence and now that we're going to cover the MACD Divergence,
+[   97.54s ->    99.20s] because that's when they're most prevalent.
+[   99.38s ->   103.26s] Also, when a stock starts to make a new low of day, we're also going to look for this.
+[  103.26s ->   109.20s] So if we're going to pull up the MACD, you can see here that the two bottoms here that we made from the morning and spy
+[  109.20s ->   113.54s] forming an uptrend type line, right?
+[  113.68s ->   119.56s] But the MACD is showing more of a downtrend, showing that the strength is reversing.
+[  119.88s ->   125.08s] So when we're coming back down, we're showing that this is diverging from the path of this.
+[  125.08s ->   133.92s] Therefore, since we are on the oversold side or the below zero, the negative side of the MACD,
+[  134.38s ->   137.30s] then we're going to see that push back up in the other direction.
+[  137.90s ->   146.00s] Also, when we form these two tops, it's forming also that uptrend while the MACD is showing a divergence back to the zero line,
+[  146.16s ->   148.16s] which is the neutral, right?
+[  148.16s ->   154.36s] Which means that we're having more of a downward push from right here, because it's diverging from the path of MACD.
+[  154.98s ->   161.56s] So since we have these two tops, so basically when you see the stock around this point,
+[  161.90s ->   168.66s] you'll see that MACD is starting to curl over, and you'll see that this is starting to diverge from the path of MACD,
+[  168.96s ->   176.34s] and that's when you enter, since this is in the positive zone for a put if you're playing options or shorting if you're trading stocks, right?
+[  176.34s ->   184.83s] Again, MACD divergence is almost the same thing as RSI divergence in the fact that it works best on SPY,
+[  185.01s ->   188.99s] but it does also work on other stocks, and I'll show you other examples of that as well.
+[  189.47s ->   194.33s] And also, if you were wondering in the other videos why I mentioned stochastic divergence, I meant to say MACD.
+[  194.77s ->   201.99s] All right, so if you can see here, the two bottoms here are forming an uptrend while the MACD is diverging from that uptrend
+[  201.99s ->   203.43s] and forming more of a downtrend here.
+[  203.85s ->   206.43s] I'm just using that to define the way that the lines are pointed.
+[  207.21s ->   212.31s] And that's when the MACD starts curling, that's when we get the push in the opposite direction.
+[  212.69s ->   219.89s] We also have the two tops here forming more of a downtrend line, but the MACD is diverging from that line,
+[  220.17s ->   225.31s] forming more of an uptrend line, and the MACD starts to curl down, and that's when we get that move to the downside.
+[  225.85s ->   230.83s] Again, like I said, with all these strategies that I will show you, not all of them are 100%.
+[  230.83s ->   236.59s] They're not going to work every single time, nor every single day, but they are something that's good,
+[  236.67s ->   238.47s] and it may work for you, right?
+[  239.27s ->   245.65s] So we can see here, top, top, but MACD this whole time is starting to form lower lows
+[  245.65s ->   254.53s] and head back down to the zero or neutral zone when we're talking about the moving average converging dot diverging thing,
+[  254.61s ->   255.71s] which is what MACD is.
+[  255.71s ->   263.69s] So we're having these higher highs, but we're starting to converge and diverge from the path of the stock,
+[  263.79s ->   267.77s] and that's why we get this reversal here when MACD starts to curl down.
+[  267.77s ->   271.21s] So I can show you all a bajillion patterns, right?
+[  271.31s ->   274.21s] Like here, this is diverging, but MACD is pushing to the upside.
+[  274.35s ->   275.05s] This is pushing up.
+[  275.11s ->   278.67s] This is pushing to the downside, and that's why we're getting that reversal, right?
+[  278.89s ->   280.05s] This is pushing down.
+[  280.27s ->   281.57s] This is pushing up, right?
+[  281.83s ->   284.67s] It's basically the same thing as the RSI divergents.
+[  284.93s ->   290.87s] But now let's get to Apple where we're going to see some more examples of it.
+[  290.87s ->   302.70s] So if we look here, we're having this push to the upside while MACD shows a drastic diverging path from this line,
+[  302.82s ->   307.14s] and that's why when MACD starts to curl down, we get that move to the downside.
+[  307.86s ->   312.44s] The beautiful part about this is that you can see how we're pushing down, but we're diverging to the upside.
+[  312.56s ->   316.76s] MACD starts to curl up about here, and that's when we get that progression back to the upside.
+[  316.76s ->   325.20s] So the cool part about this is that not only does it work over one day, but you can go out further to maybe even the 15 minute.
+[  325.52s ->   326.24s] You know what I mean?
+[  326.52s ->   335.02s] So like if we can find a new one when we're making higher highs, so I have not looked at this yet,
+[  335.10s ->   341.76s] but if you can see here, I'm looking at a diverging path when here on this high and this high are decreasing,
+[  342.20s ->   344.16s] but this high and this high are increasing.
+[  344.16s ->   348.88s] So when MACD starts to roll over here, that's why we have this huge little red day here,
+[  348.96s ->   353.28s] because the MACD started to curl down and diverging path of what the overall thing.
+[  353.62s ->   358.74s] So you can also use it on a longer day time frame, just to understand that that may help as well.
+[  359.12s ->   362.86s] We can also use it on SPY and see if we can find something useful.
+[  363.34s ->   370.86s] For instance, you can see here how these two lows are pushing to the downside while MACD is converging to the upside.
+[  370.86s ->   374.18s] So we knew that maybe we had something to the upside again.
+[  374.24s ->   375.38s] It won't always work.
+[  376.06s ->   377.60s] No strategy ever will.
+[  378.28s ->   380.34s] But still, it's something that is very useful.
+[  380.54s ->   384.90s] Look, we have this converging, but the diverging is more converging to the upside,
+[  385.04s ->   386.72s] if you can see the trend line that's holding there.
+[  387.20s ->   389.66s] So again, this is another strategy.
+[  389.66s ->   394.62s] The RSI divergence, which I mentioned yesterday, and MACD divergence, which I mentioned now,
+[  395.22s ->   399.94s] are strategies that people use to day trade, specifically SPY options, and I know it works.
+[  400.24s ->   402.22s] They're not my favorite, but I know it works.
+[  402.30s ->   403.86s] And still, people charge money for this, guys.
+[  403.90s ->   407.70s] I'm releasing this free course, so please like, comment, and share so we can get this out.
+[  407.70s ->   413.66s] However, the strategies that I will be mentioning in the upcoming five days are my favorite.
+[  413.82s ->   417.56s] Triangle patterns are next, top and bottom 10% plays.
+[  418.04s ->   420.16s] TTM scalper, very, very good.
+[  420.56s ->   423.58s] Height can actually, moving average, that is more of a passive,
+[  423.78s ->   425.82s] and you can play that on a long-term time frame.
+[  426.22s ->   429.22s] Trading, swing trading, that one's really good, and also VWAP.
+[  429.50s ->   434.12s] So guys, the next videos to come, I promise, will be a lot better than these if you did not like it.
+[  434.12s ->   436.24s] But again, like, comment, and subscribe.
+[  436.42s ->   440.70s] I know y'all keep reminding y'all, but I'm releasing free course content
+[  440.70s ->   443.64s] and a lot of material that I really want people to love.
+[  443.94s ->   446.36s] So I need y'all to comment and tell me what's up.
+[  446.62s ->   447.76s] All right, guys, see y'all tomorrow.

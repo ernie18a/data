@@ -1,0 +1,176 @@
+[    0.20s ->     1.20s] Risk management.
+[    1.20s ->     5.28s] One of those things you hear about all the time, but oddly enough, never pay really much
+[    5.28s ->     6.28s] attention to it.
+[    6.28s ->     7.72s] That is, until now.
+[    7.72s ->    12.40s] What if I told you all you had to do was apply one simple tweak to your current strategy
+[   12.40s ->    15.12s] that would instantly boost your trading profit?
+[   15.12s ->    19.60s] Like actually, implementing this trick on any trading strategy has been statistically
+[   19.60s ->    21.80s] proven to generate better profit.
+[   21.80s ->    26.28s] Once you apply this tweak, your take profits will grow, your risk will shrink, and it will
+[   26.28s ->    31.52s] take you from this average looking setup to this sniper looking entry with jaw dropping
+[   31.52s ->    32.52s] profits.
+[   32.52s ->    34.04s] But, what's the secret trick?
+[   34.04s ->    38.12s] Well, first things first, we need to go on a chart, go to the 4 hour time frame.
+[   38.12s ->    39.12s] This is important.
+[   39.12s ->    43.24s] Next, we first need to implement our areas of supply and our areas of demand.
+[   43.24s ->    48.28s] If you don't know, demand is the start of a strong move upwards, supply is the start
+[   48.28s ->    49.76s] of a strong move downwards.
+[   49.76s ->    54.24s] For example, if we had this move where there was a strong impulse to the upside, we would
+[   54.24s ->    56.64s] find the candle that started this move.
+[   56.64s ->    57.88s] So, this one.
+[   57.88s ->    61.68s] Grab our little rectangle tool on the side and mark from the lower wick to the higher
+[   61.68s ->    64.20s] wick of the candle that started this move.
+[   64.20s ->    65.84s] This is our area of demand.
+[   65.84s ->    66.84s] Pretty easy, right?
+[   66.84s ->    70.76s] This area is where large institutional orders started coming in.
+[   70.76s ->    74.00s] Often times, price will come back down to this area of demand.
+[   74.00s ->    78.08s] Traders will then proceed to have the exact same mindset, enter here, and then proceed
+[   78.08s ->    79.68s] to make some juicy profits.
+[   79.68s ->    81.88s] It's the exact same thing with supply.
+[   81.88s ->    85.40s] Find the start of a strong move downwards, grab your little rectangle tool, mark from
+[   85.40s ->    88.96s] the lower wick to the higher wick of the candle that started that move.
+[   88.96s ->    93.20s] Wait for price to come back up to the area of supply again, enter a short, proceed to
+[   93.20s ->    94.60s] make millions of dollars.
+[   94.60s ->    96.56s] But we ran into a major problem.
+[   96.56s ->   101.36s] So if we're purely going off the whole supply and demand strategy, we might get a setup that
+[  101.36s ->   102.52s] looks like this.
+[  102.52s ->   106.92s] Where we have the start of a strong move upwards, we mark our area of demand by marking the first
+[  106.92s ->   108.16s] candle of said move.
+[  108.16s ->   111.28s] We would then wait for price to come back down to our area of demand.
+[  111.28s ->   115.64s] Now, if we're entering into this position normally, we would enter as soon as price
+[  115.64s ->   117.36s] entered into our area of demand.
+[  117.36s ->   121.24s] We would set our stop loss below the area of demand, and for our take profit, it would
+[  121.24s ->   126.00s] really only make sense for us to target the recent highs for the most probable outcome.
+[  126.00s ->   128.84s] But this is exactly where the problem resides.
+[  128.84s ->   132.36s] This risk to reward setup is absolute poop, like really poop.
+[  132.36s ->   138.72s] To be a bit more specific, this exact trade had a 2.14 risk to reward ratio.
+[  138.72s ->   144.72s] Meaning if we're risking $100, we are only potentially getting back $214, which may not
+[  144.72s ->   145.92s] sound bad to some.
+[  145.92s ->   150.40s] Hell, if you use this exact same strategy, you would probably still be profitable.
+[  150.40s ->   156.08s] But with that said, what if somehow, some way, we could raise this risk to reward number?
+[  156.08s ->   161.02s] To where we would still be following the exact same strategy, but we would be risking even
+[  161.02s ->   163.42s] less and profiting even more.
+[  163.42s ->   164.96s] That would be pretty good, right?
+[  164.96s ->   166.96s] Actually, I just got an idea.
+[  166.96s ->   170.84s] Let's test out this new Siri-based audio editing software I just got.
+[  170.84s ->   174.42s] Hey Siri, play classical music.
+[  174.42s ->   177.10s] Sorry, I didn't quite get that.
+[  177.10s ->   182.22s] Um, can you play some classical music?
+[  182.22s ->   186.26s] Sure, playing rock music now.
+[  186.26s ->   187.26s] Rock?
+[  187.26s ->   190.34s] No, no, Siri, stop.
+[  190.34s ->   192.78s] Play classical music.
+[  192.78s ->   194.86s] Did you say how to double your money?
+[  194.86s ->   196.14s] How to double my money?
+[  196.14s ->   197.14s] What?
+[  197.14s ->   200.30s] That doesn't even sound similar to what I-
+[  200.30s ->   201.50s] Yes, you heard it right.
+[  201.50s ->   203.06s] You can double your money.
+[  203.06s ->   204.38s] How do I do that?
+[  204.38s ->   209.30s] Well, there's a Forex broker out there that I personally use and their name is Hankertrade.
+[  209.30s ->   212.82s] If you use the link in my description and it's your first time depositing, they will
+[  212.82s ->   215.10s] match whatever you first deposit.
+[  215.10s ->   221.18s] So say if you first deposit $69, they will match that and give you $69.
+[  221.18s ->   222.18s] That's pretty cool.
+[  222.18s ->   226.46s] If you need a new Forex broker and want that deposit bonus, use the link in my description.
+[  226.46s ->   230.04s] All right, now let's go over how to get a better risk reward.
+[  230.04s ->   234.04s] To do this, we're going to go over a little topic called zone refinement.
+[  234.04s ->   236.28s] Zone refinement is pretty simple actually.
+[  236.28s ->   239.68s] For example, here we have two screenshots of the exact same chart.
+[  239.68s ->   243.00s] One on the 4 hour time frame and one on the 1 hour time frame.
+[  243.00s ->   247.76s] Just like before, we have the start of a strong move upwards, so we'll mark our area of demand
+[  247.76s ->   251.00s] on the 4 hour time frame just like we did before.
+[  251.00s ->   256.12s] But instead of entering as soon as price hits our area of demand on the 4 hour time frame,
+[  256.12s ->   260.14s] we're going to move to a smaller time frame to refine our zone even more.
+[  260.14s ->   264.18s] So here on the 1 hour time frame, our 4 hour zone is right here.
+[  264.18s ->   270.08s] But if we look closely, our 1 hour demand zone is within the zone but is much smaller.
+[  270.08s ->   271.76s] So we'll mark out this one too.
+[  271.76s ->   276.82s] So now we have a refined 1 hour zone within our 4 hour zone.
+[  276.82s ->   281.26s] Instead of entering as soon as price hits our demand zone on the 4 hour time frame, we're
+[  281.26s ->   284.92s] going to enter at our refined zone on the 1 hour time frame.
+[  284.92s ->   288.54s] So we wait for price to come to our 1 hour zone, enter here.
+[  288.54s ->   293.22s] We're still going to set our stop loss below the 1 hour demand zone and set our take profit
+[  293.22s ->   295.38s] at the recent highs just like we did before.
+[  295.38s ->   297.58s] But look at the key differences.
+[  297.58s ->   302.18s] The picture on the left, where we didn't refine our entry, our stop loss is bigger,
+[  302.18s ->   308.86s] our entry is worse, and our take profit is smaller, and we have a risk to reward of 5.15.
+[  308.86s ->   313.08s] But if you look at the picture on the right, we have a way better entry, our stop loss is
+[  313.08s ->   317.42s] smaller, meaning we're risking less, and our take profit is bigger, meaning we have
+[  317.42s ->   323.06s] the potential to make more money, and we have a risk to reward of 11.12.
+[  323.06s ->   327.66s] Both are using the exact same strategy, but one is just more redefined.
+[  327.66s ->   332.72s] I think you can see the obvious better choice, the one where the math is on our side.
+[  332.72s ->   337.16s] But this is just the idea, let's jump into an actual trade example.
+[  337.16s ->   340.66s] First things first, we do our first step and hop on the 4 hour time frame.
+[  340.66s ->   345.34s] Here we have a pretty strong downtrend, but price is starting to show signs that it wants
+[  345.34s ->   346.34s] to do a reversal.
+[  346.34s ->   351.14s] How I can tell it wants to reverse is it just started to shift in trend direction, and has
+[  351.14s ->   354.58s] made a break of structure right here, so we'll keep that in mind.
+[  354.58s ->   358.64s] To start us off with this trade setup, we're going to first mark our area of demand.
+[  358.64s ->   363.14s] To do this, we find the first candle that started the strong move to the upside.
+[  363.14s ->   366.18s] In this scenario, that would be this candle right here.
+[  366.18s ->   370.80s] So we grab our little rectangle tool on the left and mark from the lower wick to the higher
+[  370.80s ->   372.88s] wick of this candle.
+[  372.88s ->   376.69s] This is our demand zone.
+[  376.69s ->   380.69s] So if we were to plan this trade out normally, we would wait for price to come to our area
+[  380.69s ->   381.69s] of demand.
+[  381.69s ->   385.01s] We would enter as soon as it does and set our stop loss right below it.
+[  385.01s ->   389.25s] We would then target the most recent high, which is this high right here.
+[  389.25s ->   396.15s] So if we use these exact parameters, our risk to reward would be 5.23, which in the end,
+[  396.15s ->   397.85s] isn't really a bad trade at all.
+[  397.85s ->   401.07s] Hell, I'd take a 5.23 risk reward all day.
+[  401.07s ->   402.45s] That's actually pretty good.
+[  402.45s ->   406.69s] But as my grandma used to say, why settle for a low risk reward when you can get a better
+[  406.69s ->   407.69s] one?
+[  407.69s ->   412.13s] We're going to switch to the one hour timeframe to refine our demand zone even more.
+[  412.13s ->   416.07s] So now that we're on the one hour, we can instantly see we have more candles now.
+[  416.07s ->   419.99s] We still have the exact same setup, just more candles in our view.
+[  419.99s ->   422.63s] Our four hour demand zone is still here.
+[  422.63s ->   428.97s] But if we look closely, our one hour demand zone would actually be right here at the candle
+[  428.97s ->   430.57s] that started this trend.
+[  430.57s ->   436.37s] So by doing this one simple trick, this one simple change, we can do what every hedge fund
+[  436.37s ->   443.66s] manager dreams of doing, we can do this.
+[  443.66s ->   448.86s] Now look, this may not seem like much, but we improved our risk reward ratio from just
+[  448.86s ->   457.66s] a measly 5.23 to a whopping 7.6 by simply dropping to a lower timeframe and refining our zones.
+[  457.66s ->   463.10s] That's it. That quick and simple, easy trick just improved our risk reward by 2.4.
+[  463.10s ->   468.66s] Meaning we're risking less now and we have the potential to gain even more money and who
+[  468.66s ->   469.98s] doesn't want more money?
+[  469.98s ->   473.10s] So now that we have it set up, we're going to go to the four hour timeframe.
+[  473.10s ->   478.10s] And rather of entering up here at this high, we're now entering at a more discounted price
+[  478.10s ->   483.86s] in a refined area, which is going to give us the best risk reward for this trade.
+[  483.86s ->   485.30s] Let's see what happens.
+[  485.30s ->   487.62s] Price comes down to a refined zone.
+[  487.62s ->   489.38s] We enter as soon as it does.
+[  489.38s ->   494.58s] The market proceeds to push up with huge amounts of strain and beautifully hits our top.
+[  494.58s ->   498.74s] Even though this strategy is great, we've ran into a major problem.
+[  498.74s ->   500.82s] You see, I'm sure you've had this thought already.
+[  500.82s ->   506.10s] Well, if I can get a better entry from going to the four hour to the one hour, that also means
+[  506.10s ->   511.86s] I can get an even better entry from going into the one hour to the 30 minute, then the 30 to the 15,
+[  511.86s ->   516.50s] then the five, and then continuously go all the way down to the very millisecond.
+[  516.50s ->   520.18s] In that my friends is what I'm going to call over refinement.
+[  520.18s ->   523.70s] Over refinement is a problem simply because of this reason.
+[  523.70s ->   527.22s] Say if we went to the five minute timeframe for this specific trade,
+[  527.22s ->   531.38s] we would have to zoom all the way down to this five minute demand candle.
+[  531.38s ->   535.54s] And the problem with that is sure, we now have an amazing risk reward.
+[  535.54s ->   538.34s] And an even better one than we did before.
+[  538.34s ->   541.94s] But since we've narrowed it down so much, if we zoom back out,
+[  541.94s ->   545.14s] price never came down to our five minute demand zone.
+[  545.14s ->   547.94s] Don't over refine and don't zoom in too much.
+[  547.94s ->   551.22s] Because you'll end up with missed positions just like this one.
+[  551.22s ->   556.34s] To make sure you don't over refine, just follow what I call the two steps down rule.
+[  556.34s ->   560.98s] So if you're on the daily timeframe, you can only refine down to the four hour,
+[  560.98s ->   562.34s] and then the one hour timeframe.
+[  562.34s ->   566.26s] If you're on the four hour to start out with, you can only go down to the one hour,
+[  566.26s ->   567.38s] and then the 30 minute.
+[  567.38s ->   569.78s] If you're starting off with the 30 minute timeframe,
+[  569.78s ->   572.66s] you can go down to the 15 minute, and then the five minute.
+[  572.66s ->   577.86s] My point being, you can only go down two steps from the original timeframe you started on.
+[  577.86s ->   581.78s] This will make it so you don't over refine and end up with a missed position.
+[  581.78s ->   584.98s] Add this trick to your arsenal, to any of your trading strategies,
+[  584.98s ->   587.54s] and it'll help you get more sniper entries.
+[  587.54s ->   588.26s] Try it out.
+[  588.26s ->   589.62s] Let me know how it works for you.
+[  589.62s ->   599.39s] Also, I've been getting a lot of comments saying I need to post more,
+[  599.39s ->   603.07s] and you're probably right, I'm kind of slacking recently.
+[  603.07s ->   604.19s] I'll try to do better.
+[  604.83s ->   605.23s] Maybe.
+[  605.87s ->   606.27s] We'll see.

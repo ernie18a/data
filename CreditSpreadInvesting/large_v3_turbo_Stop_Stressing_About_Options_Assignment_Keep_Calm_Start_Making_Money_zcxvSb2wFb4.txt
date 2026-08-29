@@ -1,0 +1,90 @@
+[    0.00s ->     4.36s] So recently, I've been getting assigned more frequently, and if you follow my IG at Credit
+[    4.36s ->     7.84s] Spread Investing, you've seen a post on how I actually don't care about getting assigned.
+[    8.12s ->    11.24s] After watching this video, if you stress about selling options, this is going to help you become
+[   11.24s ->    15.68s] zen and stress-free. Let's think about the psychological part about why we're scared of
+[   15.68s ->    21.12s] assignment or even of an option being in the money as an option seller. It's because we're afraid of
+[   21.12s ->    26.16s] losing money. So let's just use selling puts as an example. If it gets assigned or if it's in the
+[   26.16s ->    31.00s] money, there's a couple things that might stress you out. One, if it gets assigned, we're going to
+[   31.00s ->    35.66s] buy that stock for less than what it's worth, so it's automatically a bad feeling, which then
+[   35.66s ->    40.82s] directly leads to you exiting that trade early before assignment. Or number two, if you don't
+[   40.82s ->    45.40s] have enough money to buy 100 shares of that stock since you're selling a put, you might be forced
+[   45.40s ->    49.84s] to exit early or you might even get margin called by the brokerage. So a lot of times, you make 20
+[   49.84s ->    55.36s] bucks once or twice, and then you lose 200 bucks on one giant loss, and it wipes out all your gains,
+[   55.36s ->    58.72s] which is why some people actually don't like selling options. Today, I'm going to show you
+[   58.72s ->    63.10s] how I avoid that mistake and how you can too. So make sure you guys like this video and subscribe
+[   63.10s ->    66.94s] so you guys can learn how to replace that full-time income by trading options and investing
+[   66.94s ->    72.04s] smartly. So why don't I actually care about getting assigned? Trading, as you all know or will learn,
+[   72.28s ->    77.34s] is all about having that right mindset. So let's talk about how we can create having that stress-free
+[   77.34s ->    83.12s] mindset. And in order to do that, we need to get rid of our stress-inducers and change how we view
+[   83.12s ->    88.16s] selling options. So let's start off with the easiest rule in the system. The first rule is
+[   88.16s ->    95.16s] that we only sell puts on stocks that we have cash to buy and calls on the stocks that we have 100
+[   95.16s ->   100.52s] shares to sell. If you don't have the money to buy it, then you'll be stressed thinking about
+[  100.52s ->   107.10s] assignment if and when the option gets in the money. You might end up buying that option back
+[  107.10s ->   113.14s] at many, many times what it's worth. Let's take an example. I sold an Apple put recently
+[  113.14s ->   119.80s] at $170 strike price. The collateral hold on that is actually $17,000 because I have to buy 100 shares
+[  119.80s ->   124.58s] of that stock. If I didn't have the cash, there's really two options, right? You get emotional and
+[  124.58s ->   129.38s] you exit the trade early because you're afraid of assignment. And then it could be possible that
+[  129.38s ->   133.04s] Apple actually ends up being out of the money and you feel even worse, right? You spent money
+[  133.04s ->   137.08s] closing it out and Apple actually ended up out of the money and you would have made max profit.
+[  137.28s ->   141.42s] Or you're just sitting in the trade for as long as you can, hoping that Apple doesn't continue to
+[  141.42s ->   147.20s] drop. And if it continues to drop, then maybe your brokerage margin calls you and it closes it for you.
+[  147.44s ->   150.36s] Now, if you're more advanced, maybe you'll limit your downside by turning it into a credit spread by
+[  150.36s ->   155.62s] buying a long put. But still, these are all mentally exhausting. So what we'd like to do here on
+[  155.62s ->   159.62s] this channel is we'd like to keep it simple. If you don't have the cash to buy 100 shares of that
+[  159.62s ->   164.24s] stock, don't sell a put on it. Instead of setting a put on Apple, you could sell it on a lot of other
+[  164.24s ->   171.48s] stocks. Like another example, I sold a reference put recently at $6. All I needed was $600. Same
+[  171.48s ->   175.46s] thing on the call side. If you don't have 100 shares to sell, don't sell calls. So let's take
+[  175.46s ->   180.94s] another example from my trades. I sold a call on Microsoft at 400. If I didn't have 100 shares of
+[  180.94s ->   184.68s] Microsoft, I would be stressed because Microsoft is currently at 430. If you don't have 100 shares of
+[  184.68s ->   189.18s] that stock, first acquire the 100 shares of that stock and then sell calls on it. If you don't,
+[  189.18s ->   194.18s] don't sell it. This is to keep things simple and stress-free. So let's go to rule number two.
+[  194.76s ->   199.48s] When I sell puts, I only sell it on stocks that I want to own at a specific price point.
+[  200.26s ->   204.98s] And two, when I sell calls, I already own 100 shares of that stock. So I'm willing to part with
+[  204.98s ->   211.54s] those shares at a specific price point. Let me walk you through why this helps you remain stress-free.
+[  212.08s ->   216.64s] I'll give you another example with a real-life trade. I was doing stock analysis and I realized
+[  216.64s ->   221.72s] stock Southwest Airlines is probably a pretty good buy, in my opinion. So after all of my analysis,
+[  221.72s ->   227.08s] I decided I wanted to buy Southwest Airlines at what I deemed to be a fair price, which is $24 a share.
+[  227.54s ->   233.46s] And therefore, I went out and sold puts at $24 a share. Ticker symbol LOVE at that point in time
+[  233.46s ->   242.00s] was $27.20 a share. I sold a put out at $24 a share for a month out expiry November 3rd.
+[  242.00s ->   246.78s] I collected $31 for that one contract. But starting from October 8th, halfway through my
+[  246.78s ->   253.50s] contract, Southwest went in the money. It dropped below $24 and stayed in the money until expiry,
+[  253.78s ->   260.10s] which I was then assigned. And I was forced to buy LOVE at $24 a share when it was at $23.70.
+[  260.32s ->   267.76s] Now, the question is, why didn't I panic and buy it back? At its bottom, LOVE hit $22.50 a share.
+[  267.76s ->   276.38s] And the option that I sold was actually worth $350. It was almost 10 times what I received for
+[  276.38s ->   282.52s] selling that put. A lot of guys may have had this experience. You see 100%, 1,000% in this case,
+[  282.60s ->   287.04s] and you start panicking because that number is huge. It would have been really easy for me to
+[  287.04s ->   291.00s] want to exit that trade at any time because I see that number and I go, oh crap, this is really,
+[  291.04s ->   296.28s] really, really bad. And it might get even worse, right? LOVE could have gone all the way down
+[  296.28s ->   300.76s] and never rebounded back to $23.70. You never know, right? So you wanted to exit in order to
+[  300.76s ->   305.46s] minimize your losses. And on the other side, if I didn't want to own 100 shares of LOVE,
+[  305.78s ->   309.68s] or because like we talked about earlier, I didn't have the money to own LOVE, 100 shares of LOVE,
+[  309.78s ->   313.88s] then I'm going to not want to get assigned and I'm going to buy that option back at many,
+[  313.98s ->   318.70s] many times multiplier, right? This is the challenge that all option sellers face because it's only when
+[  318.70s ->   323.30s] you're selling options that you can lose more than you can make, right? I can collect $24,
+[  323.30s ->   330.30s] but I can lose $2,400. So let's just run this example through to the end. I got assigned at $24
+[  330.30s ->   335.68s] a share. I was forced to buy 100 shares of that stock, even though Southwest was below the $24
+[  335.68s ->   342.30s] price point. Lucky for us, Southwest Airlines went up and rebounded up to a peak of $3,483
+[  342.30s ->   347.88s] off in March. At its peak, I was up around 40% on just the stock itself. That's not including the
+[  347.88s ->   353.24s] calls that I could have sold along the way, generating even more income, right? Southwest
+[  353.24s ->   357.54s] Airlines is now at $26.15. It's fallen back again, right? Which means that I could potentially sell
+[  357.54s ->   362.64s] more put. Even without selling the put, I would still be up $2 a share, which is around 10%.
+[  363.20s ->   371.64s] And so if I had bought the option back when it dipped at its lowest to around $22 at its bottom,
+[  371.64s ->   378.08s] I would have not only spent money to get out of a winning trade by collecting $300 and then buying
+[  378.08s ->   382.92s] it back at like $350, right? I would have lost $320. And I would have missed out on the opportunity
+[  382.92s ->   390.32s] to sell calls on it as the market, as Southwest continued its way up to $34.83. So that would
+[  390.32s ->   394.98s] have been the worst case scenario. But because I had the conviction of not being afraid of assignment,
+[  394.98s ->   401.12s] because I had the cash to cover buying 100 shares of Southwest, and two, wanting to buy Southwest
+[  401.12s ->   406.62s] at $24 a share, having this conviction by following those two rules will allow you to be okay with
+[  406.62s ->   410.96s] assignment and really help you with not being without buying it back and closing the option
+[  410.96s ->   415.80s] trade because of your fears of assignment. If there's one takeaway from this video,
+[  416.72s ->   421.82s] it's to use selling options as a way to acquire stocks that you want to own and sell stocks that
+[  421.82s ->   426.26s] you no longer want to own. That way, you're not quote unquote trading, and you're just generating
+[  426.26s ->   429.88s] really passive income by selling an option and just leaving it.
+[  429.88s ->   435.34s] And I've done this following those two very simple rules month after month for years. And
+[  435.34s ->   441.32s] I wouldn't even call it profitable, but I've been generating consistent income every month for as
+[  441.32s ->   445.30s] long as I have been doing this. And if you guys want to see how much you guys can make
+[  445.30s ->   450.24s] by selling options in this way, make sure you guys check out this video that I linked in the
+[  450.24s ->   454.04s] end screen right here. If you've enjoyed this video, make sure you guys click that like button
+[  454.04s ->   457.50s] and subscribe to the channel. I'm on a mission to show you how to escape your nine to five
+[  457.50s ->   462.24s] with options trading and selling and smart investing. Until next time, make sure you guys
+[  462.24s ->   463.78s] stay safe in the market. Peace.

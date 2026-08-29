@@ -1,0 +1,122 @@
+[    0.00s ->     6.13s] we're up almost 41 year to date on our public portfolio and it's been incredible i asked you
+[    6.13s ->     9.25s] guys on ig what do you guys want to see and it seems like most of you guys want me to talk about
+[    9.25s ->    12.57s] overall market conditions today we're going to talk about the state of the economy we'll talk
+[   12.57s ->    17.35s] about how we got these gains in this account and more importantly we'll talk about what i plan on
+[   17.35s ->    22.09s] doing in the future okay so first things first let's just talk a little bit about my account
+[   22.09s ->    30.09s] this account is currently sitting at 112 000 which is amazing we are up in a month 4.15
+[   30.09s ->    38.63s] as compared to 2.39 on the sp500 and year to date we're up 41.33 as compared to the 16.68 on the
+[   38.63s ->    43.17s] sp500 and if you guys want to follow along with this portfolio's performance make sure you guys
+[   43.17s ->    47.37s] subscribe to the channel because i'll be giving regular updates and in this account we're really
+[   47.37s ->    52.13s] just following the put selling strategies that we laid out in the master class that i'll link in the
+[   52.13s ->    57.87s] upper right hand corner this is exactly how i go about making a lot of money through selling puts
+[   57.87s ->    63.39s] again check that video out if you guys need more contacts so with that being said let's talk a
+[   63.39s ->    68.89s] little bit about market situations and the first thing i want to touch on the sp500 or the overall
+[   68.89s ->    75.03s] market as of friday is now at all-time highs inflation reading came in lower than expected and
+[   75.03s ->    81.65s] that pushed that market up and it now broke and is at all-time highs so there's a lot of optimism in
+[   81.65s ->    87.07s] the market there's a lot of investments in ai which is causing stock markets to go up but at the flip
+[   87.07s ->    92.29s] side there's also a lot of pessimism softening neighbor markets a lot of job losses a lot of
+[   92.29s ->    96.95s] layoffs and on the top of that government shutdowns which way or may not have ended by the time this
+[   96.95s ->   101.65s] video release but there's a lot of uncertainty the cnn fear gauge right now is apparently at the fear
+[  101.65s ->   106.11s] side and obviously a caveat i don't have a crystal ball i have no idea what's going to happen tomorrow
+[  106.11s ->   110.51s] or what's going to happen a month from now but this is just my read on the situation how that's going to
+[  110.51s ->   115.69s] impact my investing in option selling choices going forward let's first talk about market valuations
+[  115.69s ->   120.99s] one of my favorite metrics to gauge how expensive or how cheap a market is called the shiller p it looks
+[  120.99s ->   127.71s] at the price of the market divided by the average of the past 10 years of inflation adjusted earnings
+[  127.71s ->   135.63s] unlike p.e it shows how expensive stocks are relative to their long-term earning power if you look
+[  135.63s ->   145.41s] at the chart shiller's p historically is around 16 to 17 times right now it's at 39 to 40 times that's
+[  145.41s ->   152.47s] more than almost double the long-term average what this tells us is the market is extremely expensive
+[  152.47s ->   157.69s] and the market's already pricing in years of future growth for me when i'm trying to sell puts right now
+[  157.69s ->   162.85s] is actually one of the hardest times to sell puts because we're trying to sell puts on stocks that are
+[  162.85s ->   169.65s] great companies but are fairly valued because we don't want to buy and acquire stocks that have no
+[  169.65s ->   175.27s] room left to grow on top of that there's another indicator called the buffett indicator which is
+[  175.27s ->   183.31s] the total u.s stock market compared to the gdp and right now it's at 220 and buffett himself will say
+[  183.31s ->   187.55s] that this is extremely expensive right but what's causing these valuations behind valuation being high
+[  187.55s ->   192.09s] isn't necessarily a bad thing if the market can actually hit those valuations we saw with nvidia
+[  192.09s ->   196.13s] earlier this year where four like valuations were extremely high but nvidia kept hitting every single
+[  196.13s ->   200.57s] earnings mark and their stock continued to go up so let's talk a little bit about why these valuations
+[  200.57s ->   206.49s] are high s&p 500 like i said was at all-time highs and is mainly powered by the ai boom we've partaken
+[  206.49s ->   214.01s] in this rise up if you look at our portfolio holding you can see asml is up 42 nvidia is up 32 we sold a lot
+[  214.01s ->   222.29s] of puts on nvidia and our tsmc shares that were assigned from our puts are up 61 so we've ridden
+[  222.29s ->   227.93s] this wave up most of most companies that are particular are leading in the ai boom are listed
+[  227.93s ->   233.71s] on the american stock exchange and are american companies think of nvidia google microsoft a lot
+[  233.71s ->   238.53s] of foreign capital a lot of capital is pushing these stocks up because they don't want to miss on it
+[  238.53s ->   244.51s] that's not to say that this the boom won't continue but because it's boomed for so long
+[  244.51s ->   250.51s] there could be a potential that the valuations aren't hit so let me show you what i mean by that
+[  250.51s ->   255.71s] if you look closer at individual stocks and their valuations so as an example amd's trailing p
+[  255.71s ->   263.87s] is 151 and its forward p is 50 which means that as of right now if you buy one share of amd you are
+[  263.87s ->   270.57s] paying 151 for earnings as of today and you're paying 50 for one dollar of earnings one year from
+[  270.57s ->   277.75s] now so amd has to either double or triple their earnings to hit wall street's expectations that is
+[  277.75s ->   283.77s] extremely hard to do and if amd for example doesn't hit that metric their stock will probably regress
+[  283.77s ->   289.35s] and fall and that is true for a lot of other stocks nvidia is sitting at 35 times p and that's
+[  289.35s ->   294.77s] extremely high for a company that is the largest market cap in the world microsoft is at 31 apple
+[  294.77s ->   300.49s] is like 28 or so and these companies are expensive right because they are investors are assuming that
+[  300.49s ->   305.73s] there's going to be insane revenue and growth and profit growth for the next year benefiting from ai
+[  305.73s ->   310.63s] they are phenomenal businesses don't get me wrong we have nvidia we have tsmc but they are priced for
+[  310.63s ->   316.41s] perfection the s&p 500 right now is extremely concentrated at the top i saw this one table i mean it showed
+[  316.41s ->   322.69s] that the mac 7 the magnificent 7 which is like microsoft nvidia uh meta amazon google and tesla
+[  322.69s ->   329.61s] they make up around 33 to 35 percent of the s&p 500 that is higher than back at the height of the dot
+[  329.61s ->   335.17s] com bubble in terms of concentration that just shows you that these ultra blue chip ultra mega caps
+[  335.17s ->   341.65s] have grown a lot in valuations the mid cap the small caps have not grown so this tells me one of two
+[  341.65s ->   347.09s] things one there's either a buying opportunity in the smaller and mid cap so you can see me selling
+[  347.09s ->   355.45s] more puts on companies like knee on iot right or that the ultra big caps are overvalued and the market
+[  355.45s ->   361.99s] will regress to the norm and the scary part is if any one of these seven or all seven were to fail to
+[  361.99s ->   367.79s] hit that lofty expectation that we talked about earlier the s&p 500 will drop and if it drops that
+[  367.79s ->   373.47s] can potentially impact every other stock in the s&p 500 because there's correlation and that could
+[  373.47s ->   378.21s] impact our public portfolio and your portfolio as well talk let's talk about macroeconomics for a
+[  378.21s ->   382.49s] little bit inflation is still high it's at three percent so we feel that each and every day when we
+[  382.49s ->   387.33s] go out and shop right cost of living has increased pretty dramatically there is now a softening the
+[  387.33s ->   393.57s] labor market there's a lot more job cuts and layoffs there's also a lot less hiring a lot less job
+[  393.57s ->   400.19s] openings what that also causes is they causes the fed to drop interest rates right to try and stimulate
+[  400.19s ->   404.37s] the economy however they're kind of stuck between a rock and a hard place inflation is still high
+[  404.37s ->   411.09s] with a weakening labor market which means that if they were to reduce their interest rates the fed fund
+[  411.09s ->   417.15s] rate they're potentially increasing the money supply that can push inflation further up right interest
+[  417.15s ->   423.49s] rates usually are rate are raised to lower inflation but that also has an impact on the labor
+[  423.49s ->   428.01s] market because it's harder to borrow money it's harder harder to stimulate growth which then leads
+[  428.01s ->   432.73s] to a softening in the labor market right you can see how they're diametrically opposed to each other
+[  432.73s ->   438.11s] so the fed right now is trying to figure out what's the best course of policy and the worst case scenario
+[  438.11s ->   443.57s] is if they're not able to maintain control right you can go into a recession even worse maybe
+[  443.57s ->   447.53s] stackflation so for me when i read this i go there's a lot of uncertainty in the market
+[  447.53s ->   456.49s] it's probably harder to trade than it was five to ten months ago when labor market was still strong
+[  456.49s ->   461.95s] and inflation was coming down and the fed could just keep interest rates high because they're not
+[  461.95s ->   466.81s] forced to lower interest rates right it makes things a lot less volatile a lot less uncertain
+[  466.81s ->   474.01s] therefore a lot easier to trade so there is pros and cons as you can clearly tell from this video right
+[  474.01s ->   478.65s] pros in the market with ai you know pushing valuations up with a lot of foreign investment
+[  478.65s ->   482.97s] coming in because they want to partake in the ai boom but on the flip side there is a lot of
+[  482.97s ->   487.81s] macroeconomic situations or fiscal policy that causes uncertainty in the market on top of that
+[  487.81s ->   493.53s] high valuations mean there's less room for error so the way i read it now is after 41 growth in our
+[  493.53s ->   498.95s] public portfolio that there's a lot less upside and there's a lot more downside so what does that do
+[  498.95s ->   503.43s] with our plan going forward overall what that means for this account is we are not going to try and
+[  503.43s ->   508.97s] make much more money we're going to try and protect our gains i don't want to lose the 41 percent that
+[  508.97s ->   514.45s] we made so i'm not going to try and optimize for profit what that means is one we're going to be
+[  514.45s ->   519.45s] selling a lot less puts we're keeping we're going to keep a lot more money in cash for the possibility
+[  519.45s ->   523.99s] that the market may drop and like we said in the put selling masterclass again i'll link in the upper
+[  523.99s ->   530.15s] right hand corner when market drops vix spikes and when vix spikes it's good for us because we sell
+[  530.15s ->   537.83s] options at a higher premium and two stock valuations drop therefore we buy stocks at a better price
+[  537.83s ->   542.17s] right right now prices aren't right for us to sell puts so we don't want to overstretch ourselves we
+[  542.17s ->   547.66s] won't do that number two when we're selling puts you'll see a lot less yield on the puts we're trying
+[  547.66s ->   554.14s] to you know i told you to target 1.5 to 2.5 percent i might drop it down to 1.25 1 percent i'm not trying
+[  554.14s ->   558.34s] to overreach right because again i don't need that money i'm not trying to make too much money number three
+[  558.34s ->   563.22s] on the flip side i'm trying to find value in this market i'm trying to find stocks i believe in 10
+[  563.22s ->   567.48s] years from now at a fairly good value so you'll see a lot more stocks in the small to mid cap
+[  567.48s ->   573.58s] market you'll see it you already see it with iot company that i really really like and you'll see
+[  573.58s ->   578.70s] it with me because the risk is so high that i need better reward for the risk go by these mid cap
+[  578.70s ->   584.06s] companies or small cap companies have much higher upside and so these plays become much more valuable to
+[  584.06s ->   590.36s] me because i can make potentially more money with the same downside risk as a potentially selling it
+[  590.36s ->   595.74s] on a stock like tesla and lastly i might plan on hedging right i know there's a put selling only
+[  595.74s ->   600.70s] account so i might sell some calls maybe but again i don't want to really sell it on my tsm because i
+[  600.70s ->   605.08s] believe in it 20 years down the line and honestly tsmc's valuation is pretty good compared to everybody
+[  605.08s ->   612.28s] else's in the semiconductor market and two if i were to hedge i would actually buy a very far out of the
+[  612.28s ->   619.02s] money leap a put option to protect myself to capture some of the downside if the stock market
+[  619.02s ->   624.74s] were to reverse all right so that's that's about it um let me know down in the comment section below
+[  624.74s ->   629.54s] if you guys like content like this uh i think it's very fun to make because it's kind of like
+[  629.54s ->   633.58s] predicting a crystal ball that we have no idea what's going to happen on top of that it is what
+[  633.58s ->   638.48s] i think about when i sell and manage my portfolio again let me know down in the comment section below
+[  638.48s ->   642.80s] if you guys want me to add or do less of these commentary hopefully it was helpful and if you
+[  642.80s ->   645.72s] guys like content like this make sure you guys like and subscribe to the channel it will really
+[  645.72s ->   649.82s] help me out because i'm trying to provide the best content for you guys so yeah you can also learn how
+[  649.82s ->   653.80s] to retire early like i did then to all the members that have joined my community you guys are amazing
+[  653.80s ->   658.04s] thank you so much that means the world to me that you guys are even supporting my channel if you guys
+[  658.04s ->   661.92s] want to learn more about my put selling strategy i'll link in the end screen here and two if you guys
+[  661.92s ->   665.66s] want to learn more my credit spread strategies which is my predominant way of trading short-term
+[  665.66s ->   669.88s] volatility i love that strategy check out this video in the end screen here as well and like
+[  669.88s ->   672.52s] always stay safe in the market until next time peace

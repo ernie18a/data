@@ -1,0 +1,94 @@
+<!-- tradingview-pine-id: PUB;68e15477b19a4805abfc17bdde6af79d -->
+<!-- tradingviewscripts-format: 1 -->
+# Institutional MACD Zone Crossover Strategy [v6]
+
+Source: https://www.tradingview.com/script/uZysDAzx-CAPITAL-MANTRAS/
+
+## Description
+
+Strategy Branding Titles
+Alpha-Zone Volume Matrix
+
+Institutional Momentum Flow
+
+Zero-Line Volume Core
+
+High-Conviction Crossover Protocol
+
+Core Capital Mantras
+"Trade the zone, confirm with volume, protect the capital."
+
+"No volume support means no institutional weight."
+
+"Ride the positive delta; respect the negative drift."
+
+"Capital follows confirmation, not speculation."
+
+---
+
+## Source Code
+
+````pine
+//@version=6
+indicator("Institutional MACD Zone Crossover Strategy [v6]", overlay=false)
+
+// ==========================================
+// 1. INPUT PARAMETERS & MACRO CONFIGURATION
+// ==========================================
+fastLength   = input.int(12, "MACD Fast Length (EMA)")
+slowLength   = input.int(26, "MACD Slow Length (EMA)")
+signalLength = input.int(9,  "MACD Signal Length (EMA)")
+
+// ==========================================
+// 2. MACD CALCULATION & PLOTTING
+// ==========================================
+[macdLine, signalLine, histLine] = ta.macd(close, fastLength, slowLength, signalLength)
+
+// Plotting MACD Lines with specified features
+plot(macdLine, "MACD Line (Blue)", color=color.blue, linewidth=2)
+plot(signalLine, "Signal Line (Orange)", color=color.orange, linewidth=2)
+hline(0, "Zero Line", color=color.gray, linestyle=hline.style_dashed)
+
+// ==========================================
+// 3. VOLUME SUPPORT FILTER
+// ==========================================
+volSMA = ta.sma(volume, 20)
+volumeSupporting = volume > volSMA
+
+// ==========================================
+// 4. ZONE & CROSSOVER CONDITIONS
+// ==========================================
+// Positive Zone: MACD line > 0
+// Negative Zone: MACD line < 0
+
+// Condition 1: Blue line crosses orange line to come on top in the Positive Zone
+bool positiveCrossover = ta.crossover(macdLine, signalLine) and macdLine > 0
+
+// Condition 2: Orange line crosses blue line to come on top in the Negative Zone 
+// (Equivalent to MACD line crossing under Signal line while both are below zero)
+bool negativeCrossunder = ta.crossunder(macdLine, signalLine) and macdLine < 0
+
+// Categorize into Standard vs. Volume-Supported Signals
+bool isVolumeBuy  = positiveCrossover and volumeSupporting
+bool isRegularBuy = positiveCrossover and not volumeSupporting
+
+bool isVolumeSell  = negativeCrossunder and volumeSupporting
+bool isRegularSell = negativeCrossunder and not volumeSupporting
+
+// ==========================================
+// 5. CHART VISUALIZATION & SIGNALS
+// ==========================================
+plotshape(isVolumeBuy, title="Volume BUY Signal", style=shape.labelup, location=location.bottom, color=color.green, text="Volume BUY", textcolor=color.white, size=size.small)
+plotshape(isRegularBuy, title="BUY Signal", style=shape.triangleup, location=location.bottom, color=color.lime, text="BUY", textcolor=color.black, size=size.small)
+
+plotshape(isVolumeSell, title="Volume SELL Signal", style=shape.labeldown, location=location.top, color=color.maroon, text="Volume SELL", textcolor=color.white, size=size.small)
+plotshape(isRegularSell, title="SELL Signal", style=shape.triangledown, location=location.top, color=color.red, text="SELL", textcolor=color.black, size=size.small)
+
+// ==========================================
+// 6. AUTOMATED ALERT CONDITIONS
+// ==========================================
+alertcondition(isVolumeBuy, title="Alert: Volume BUY", message="MACD Volume BUY Signal Triggered in Positive Zone.")
+alertcondition(isRegularBuy, title="Alert: BUY", message="MACD BUY Signal Triggered in Positive Zone.")
+alertcondition(isVolumeSell, title="Alert: Volume SELL", message="MACD Volume SELL Signal Triggered in Negative Zone.")
+alertcondition(isRegularSell, title="Alert: SELL", message="MACD SELL Signal Triggered in Negative Zone.")
+````

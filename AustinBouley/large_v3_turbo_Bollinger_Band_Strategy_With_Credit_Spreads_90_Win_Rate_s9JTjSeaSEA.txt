@@ -1,0 +1,56 @@
+[    0.00s ->     4.58s] Hey guys, in this video I'm going to walk you through how to use the Bollinger Band Indicator
+[    4.58s ->     9.36s] to consistently profit using credit spreads. So again, if you don't know what credit spreads are,
+[    9.44s ->    14.02s] they're essentially a bet that a stock will stay above or below a certain level. So for instance,
+[   14.10s ->    19.12s] if we have a call credit spread trade-on, then we think that the stock will stay below this level.
+[   19.42s ->    23.84s] If it stays below this level by the end of a date that we pick, then we make money.
+[   24.20s ->    28.66s] Put credit spreads also on the other side. Let's say we think a stock will stay above this level.
+[   28.66s ->    34.40s] If it does by the end of our expiration date, then we make money. So how can we use this idea of
+[   34.40s ->    39.38s] credit spreads to profit with the Bollinger Band? Well, there's two main ways. Number one is a
+[   39.38s ->    45.04s] counter trend approach and number two is a trending approach. Now a trending approach yields the most
+[   45.04s ->    50.02s] profit in the easiest, fastest way, but I'm going to start off with the counter trend and then go
+[   50.02s ->    53.30s] into trend following. So again, if you want to learn more about credit spread trading,
+[   53.64s ->    57.90s] click the subscribe button because I make a video every single day on how to profit from credit
+[   57.90s ->    63.30s] spreads. If you want my complete credit spreads trading guide and handbook, it's for free link
+[   63.30s ->    68.70s] down below. Anyways, here we go. So how do we trade with the Bollinger Band? Well, first settings
+[   68.70s ->    72.48s] that we're going to have here is we add the ball, the Bollinger Band to our chart, which is what this
+[   72.48s ->    78.36s] is. We set the length period to 200 as middle line represents the 200 day moving average line.
+[   78.72s ->    85.08s] And then we bring the standard deviation out to 2.5. We'll change this later. So I'll show you those
+[   85.08s ->    90.02s] settings in a second, but this is what we set up for the counter trend trade. Now, how is the
+[   90.02s ->    95.08s] counter trend trade work? Well, you can see here, if we look at this so far, this stock seems to be
+[   95.08s ->   100.02s] going up. How do we know that? Well, we have eyes, but also you can see here that the highs are getting
+[  100.02s ->   105.00s] higher over time and the lows are also getting higher as well. So this is moving up, but is there
+[  105.00s ->   110.80s] a way to enter a trade here? Yes. If you have a strong green candle that breaks through this upper range
+[  110.80s ->   117.22s] here that the Bollinger Band creates, we can take a call credit spread around here, profit, and it's
+[  117.22s ->   124.26s] most likely with a 90% win rate accuracy going to stay below this level. This is an easy way to trade
+[  124.26s ->   130.92s] credit spreads to make money. When a stock gets overextended as shown by the Bollinger Band, then we
+[  130.92s ->   136.86s] can take advantage with call credit spreads. Same way to the downside. What we see here is that the market
+[  136.86s ->   143.60s] goes below this level and then forms a doji candle, which again, I have a video in depth on
+[  143.60s ->   148.34s] this if you want to learn more. But you can see we break through this line, we form a doji candle,
+[  148.68s ->   153.36s] so we can do a put credit spread around here. As long as the stock stays above this level in about
+[  153.36s ->   159.34s] a week or two, then we make money, which it does add a 90% win rate. So that is the counter trend
+[  159.34s ->   163.26s] strategy when we're trading against the trend. For instance, the trend is down here, but we're doing
+[  163.26s ->   166.98s] more of a bullish approach. For instance, the stock is here, but we're doing more of a bearish trade.
+[  167.36s ->   171.92s] So how do we do it with the trend? Well, if we come in here to our settings, as I said we would
+[  171.92s ->   177.46s] later, you see here the length is 200 and the standard deviation for counter trend is 2.5.
+[  177.76s ->   183.64s] For trending, we want it to be 1. So we update it to 1 and we move on. Now, how do we decipher this?
+[  183.92s ->   189.46s] Well, simply, if the stock is above the Bollinger Band line, that means the momentum and strength
+[  189.46s ->   194.60s] is to the upside. We are trending in an uptrend market. Same thing to the downside. The market
+[  194.60s ->   201.66s] is below the bottom blue Bollinger Band. Then we are trending down. So as we know, put credit
+[  201.66s ->   205.22s] spreads are bullish strategies. They make money on the way up, right? Because we're trying to stay
+[  205.22s ->   210.12s] above a certain level. Call credit spreads are bearish strategies. Why? Because we're trying to get
+[  210.12s ->   216.30s] to stay below a certain level. So when we have that set up, we can trade these downside, we call credit
+[  216.30s ->   221.92s] spread trades and these upsides with put credit spread trades. So again, let's say the stock is
+[  221.92s ->   226.18s] trending up. We find the recent low, we find support. We say, hey, if it stays above this
+[  226.18s ->   231.54s] level, we'll do that. And that's how you can trade trending approaches with credit spread
+[  231.54s ->   237.20s] sending 90% win rate. So again, I'm not only just doing this and guesstimating a 90% win rate,
+[  237.44s ->   243.60s] I can say here, I have an historical back test since 2005 for QQQ. You can see right here,
+[  243.60s ->   249.72s] that's an 88% win rate and makes an 8% return a year. This is a turtle strategy, which is the
+[  249.72s ->   255.64s] uptrending strategy that I just showcased, where if it gets above the Bollinger Band, essentially,
+[  255.86s ->   259.94s] it's now uptrending up. Then we use put credit spreads through profit on the way up. That's what
+[  259.94s ->   267.86s] the turtle strategy is. That's a 90% win rate and a 27% annualized return a month. That's insane.
+[  267.86s ->   275.86s] You can 3X the average market return, almost 4X, by simply following the Bollinger Band and trading
+[  275.86s ->   280.26s] credit spreads. If you want to learn exactly how to place the true turtle strategy right here and
+[  280.26s ->   285.84s] make roughly 27% a year, then click down below and grab your free trading handle, where I walk you
+[  285.84s ->   290.66s] through step by step exactly how to implement all these strategies for free. All right, guys,
+[  290.72s ->   295.78s] I hope you enjoyed this video. I release credit spread videos every single day to help you become a
+[  295.78s ->   299.50s] better credit spreads trader. All right, guys, I will see you in the next video.

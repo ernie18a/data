@@ -1,0 +1,96 @@
+[    0.10s ->     3.56s] Hey guys, in this video I'm going to walk you through how to sell options for a living.
+[    3.94s ->     7.86s] Not only am I going to show you the exact strategy to use and step by step how to trade it,
+[    7.88s ->    10.48s] but I'm going to show you how to understand the best times to trade it.
+[   10.50s ->    14.08s] Because the thing is, there's so many different types of option strategies and they all work.
+[   14.22s ->    16.36s] The problem is they all work in different types of markets.
+[   16.44s ->    20.74s] So I want to show you which one works best in each market and how to trade them step by step
+[   20.74s ->    22.78s] so that even if you're a beginner you can get started today.
+[   22.94s ->    25.56s] So let's dive in to what is going on here.
+[   25.56s ->    31.22s] Number one, let's look at a simple indicator that everybody has access to called the Bollinger Band.
+[   31.32s ->    33.78s] So go to a chart where that's trading view like I'm doing here.
+[   34.10s ->    37.92s] I'm going to add on the indicators, I'm going to add Bollinger Bands.
+[   38.48s ->    41.80s] Just like this, when I add this to my chart, this is how most people see it.
+[   41.86s ->    45.28s] What we actually want to do is we want to come in here and change this and I'll tell you why here in a second.
+[   45.64s ->    52.76s] But if we change this to from 20 to 200, then what do we do here is we get to see the overall view of the market.
+[   52.76s ->    58.64s] And I love using this because this is math and math helps us break down when we should be trading each strategy.
+[   58.90s ->    64.94s] Okay, so we're inside of this range right here, which is the middle blue line to the top red line.
+[   65.18s ->    66.80s] This is a bullish market.
+[   66.96s ->    68.70s] Okay, bullish market.
+[   68.80s ->    71.34s] And so again, we're going to be using bullish option strategies.
+[   71.44s ->    72.38s] I'll explain here in a second.
+[   72.82s ->    80.18s] When we break down below the bottom of the lower band, this is also bullish as well because we're bouncing, we're breaking up higher.
+[   80.18s ->    85.60s] So bullish is going to be both in the top section and below the bottom section.
+[   85.70s ->    87.18s] These are when you should be using bullish strategies.
+[   88.06s ->    89.12s] The same thing for bearish.
+[   89.22s ->    91.82s] Okay, if we're down in this section, you should be using bearish.
+[   91.98s ->    94.18s] And if we're up above here, you should be using bearish.
+[   94.78s ->    97.02s] I'm going to put BR here just for short term, bearish.
+[   97.34s ->    99.74s] So bearish strategy, bullish strategy, bearish strategy, bullish strategy.
+[   99.90s ->   103.22s] So what are different option strategies that take advantage of this?
+[  103.26s ->   108.58s] To keep it super simple, if you want to do a bullish strategy, that's going to be my favorite, which is a 1-1x trade.
+[  108.58s ->   114.10s] And if you stay until the end of this video, I'll actually give you access to my free trading plan for this strategy because it's one of my favorites.
+[  114.50s ->   121.30s] So again, using a 1-1x, I'll be a 1-1 strategy, a 1-1-2 strategy or something like that to take advantage of bullish markets.
+[  121.70s ->   123.38s] Now for bearish markets, it's super simple.
+[  123.72s ->   125.06s] You will just buy a put.
+[  125.14s ->   127.34s] So I'm going to put plus sign put, buy a put.
+[  127.62s ->   130.04s] If you buy a put, that'll make money when the market drops.
+[  130.30s ->   131.62s] That's going to be the best way to do it.
+[  131.62s ->   139.42s] And so again, you'll be buying puts during these bearish areas and doing a 1-1x strategy or 1-1 strategy in the bullish zones.
+[  140.10s ->   142.30s] So why do I want to make this video right now?
+[  142.34s ->   144.04s] Because it's super important that we do this, guys.
+[  144.26s ->   146.70s] The market almost never crashes this much.
+[  146.92s ->   153.08s] And again, this is like a once in a five-year period that we're happening right now where the market dropped, it hit the zone, and now it's bouncing up.
+[  153.08s ->   160.48s] This is the best time where we're going to have the lowest risk, the highest return, the highest win rate, greatest credit all across the board.
+[  160.78s ->   162.66s] Great time to trade a 1-1x strategy.
+[  162.78s ->   164.52s] So I wanted to make sure to teach you about that.
+[  164.58s ->   165.12s] So let's dive in.
+[  165.42s ->   167.86s] What is the 1-1x strategy?
+[  168.00s ->   168.74s] Super simple.
+[  169.10s ->   170.86s] I love trading the 1-1-1s.
+[  171.06s ->   172.28s] So again, 1-1-1s.
+[  172.32s ->   174.88s] And what this is, we're basically doing a put debit spread.
+[  175.26s ->   180.06s] So again, I'll explain that if you don't know what that is here in a second, but a put debit spread and then a short put.
+[  180.36s ->   182.08s] That's exactly how the trade is structured.
+[  182.08s ->   185.24s] So let's say the market is trading here like it is right now.
+[  185.44s ->   191.36s] I'm basically doing a put debit spread, which means I'm buying a put here and I'm selling a put below it.
+[  191.64s ->   198.86s] And this creates a trade called a debit spread, where if the market goes down past this level, I make money.
+[  199.26s ->   202.30s] But what I also do is I come down here and I sell puts.
+[  202.66s ->   207.78s] So when I sell puts, what I do is I then make up enough credit to make money to the upside.
+[  207.86s ->   210.60s] So the 1-1-1x is an amazing trade because it's consistent.
+[  210.60s ->   217.54s] It makes money as long as the market stays above a level that I pick and it has a hedge built into it because of the put debit spread.
+[  217.98s ->   220.04s] Now, how exactly is this traded?
+[  220.20s ->   221.16s] It's super simple.
+[  221.52s ->   223.26s] The 1-1 trade is done like this.
+[  223.66s ->   227.68s] We structure the trade by buying a 25 delta.
+[  227.68s ->   229.66s] So we're going to buy the 25 delta put.
+[  229.98s ->   232.76s] We're going to sell the 23 delta put.
+[  233.40s ->   238.50s] And then for the 1-1-1 strategy, I'm then going to sell one of the 10 delta puts.
+[  238.92s ->   242.88s] This is how the 1-1 trade is structured, just like that.
+[  243.44s ->   247.00s] We're going to close the trade in about a 50% profit target.
+[  247.12s ->   248.78s] Again, you can do between 25 to 50.
+[  248.86s ->   249.60s] I like 50.
+[  249.60s ->   251.10s] I like to close trade sooner.
+[  251.58s ->   255.72s] And then again, I'll have a 200% stop loss on this trade.
+[  256.04s ->   258.38s] And then again, in addition, that's how the trade is structured.
+[  258.48s ->   259.32s] That's how I structure the trade.
+[  259.42s ->   260.58s] That's how I enter and exit the trade.
+[  260.94s ->   267.92s] But as I showed here on the chart, I also want to make sure I'm only entering and only trading 1-1-1 trade when we're in this upper portion.
+[  267.92s ->   277.22s] And after we bounce off this lower portion, if we start breaking above this zone, I want to make sure to close my 1-1-1 trade as soon as possible because the likelihood of it pulling back is high.
+[  277.66s ->   287.08s] And if I'm in this position, I most likely want to cut my trade before they hit the 200% stop loss because most likely they're going to hit the 200% stop loss if we're in a downtrending market.
+[  287.56s ->   292.28s] And so again, that way I can cut my losses down dramatically, can avoid a lot of losses.
+[  292.28s ->   299.86s] And so not only am I setting myself up with the best risk to reward, but at the same time, I'm putting myself in the ideal market to have success.
+[  300.32s ->   303.22s] And so that's exactly how you should be selling options.
+[  303.34s ->   307.00s] Make sure that you're picking the right strategy for the different types of markets.
+[  307.16s ->   308.82s] You have the trade plan mapped out.
+[  308.90s ->   310.58s] You have your take profit, your stop loss.
+[  310.88s ->   313.14s] And again, this is my go-to plan for the 1-1-1.
+[  313.38s ->   314.48s] This has personally helped.
+[  314.48s ->   323.64s] I can count on literally 10 people who I have seen their accounts so far this week make at least $1,000 using this strategy because of the market that we're in.
+[  323.74s ->   325.24s] So please go exploit this.
+[  325.50s ->   326.56s] Now's the best time.
+[  326.90s ->   327.92s] Go check it out.
+[  328.20s ->   328.94s] Be consistent.
+[  329.18s ->   332.20s] And that's how you generate consistent income from options.
+[  332.50s ->   332.84s] All right, guys.
+[  333.04s ->   333.84s] See you in the next video.
+[  333.96s ->   338.50s] If you do want my trading plan, click the link down below to grab my free 1-1-2 book, which has the trading plan.

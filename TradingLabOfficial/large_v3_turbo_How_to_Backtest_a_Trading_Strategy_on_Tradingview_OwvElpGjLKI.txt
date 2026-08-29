@@ -1,0 +1,136 @@
+[    0.24s ->     4.40s] Have you ever thought to yourself, I wish I could instantly test my strategy without
+[    4.40s ->     9.48s] waiting months or even years, just to see if my trading strategy is even good or not.
+[    9.48s ->    14.32s] Well what if I told you there's a way to test any trading strategy you want on years
+[   14.32s ->    19.72s] of data from the past, instantly, to see right then and there if your trading strategy is
+[   19.72s ->    21.96s] profitable or not.
+[   21.96s ->    26.56s] Instead of just believing a YouTuber that says they have a 100% win rate strategy, why
+[   26.56s ->    31.12s] not test it yourself to see if it really is that good or not, and see how it compares
+[   31.12s ->    33.60s] to your strategy that you're currently using.
+[   33.60s ->    38.00s] In this video, I'm going to show you exactly how to do that, by backtesting your strategy
+[   38.00s ->    43.44s] on TradingView with past years of data, so you can see just how successful your trading
+[   43.44s ->    45.18s] strategy really is.
+[   45.18s ->    48.80s] First things first, we need to go to TradingView, I'll leave a link in the description.
+[   48.80s ->    53.28s] And as a side note, this is completely free to use and you don't need a paid subscription
+[   53.28s ->    55.60s] or anything, which is pretty awesome.
+[   55.60s ->    58.92s] Once you're on TradingView, go to the chart option on the top here.
+[   58.92s ->    62.30s] Then type in any security you want to test your strategy on.
+[   62.30s ->    65.92s] This will work with anything, stocks, forex, crypto, whatever.
+[   65.92s ->    69.66s] For this example, I'm going to test the Vanguard S&P 500.
+[   69.66s ->    73.50s] Now for this video, we're going to test a very simple trading strategy, just so you
+[   73.50s ->    76.64s] guys can kind of get a grasp on the basics of backtesting.
+[   76.64s ->    80.32s] If this video gets a good response and you guys really want to see more of this, I'll
+[   80.32s ->    83.18s] do a second video where I'll get a little bit more advanced.
+[   83.18s ->    88.00s] The trading strategy example we'll do is just a simple moving average strategy.
+[   88.00s ->    89.00s] It's pretty simple.
+[   89.00s ->    92.08s] We'll have a 20 day moving average and a 50 day moving average.
+[   92.08s ->    96.74s] We want to buy when the 50 day crosses below the 20 day, and we want to sell when the 50
+[   96.74s ->    98.84s] day crosses above the 20 day.
+[   98.84s ->   101.30s] Like I said, very basic and simple.
+[  101.30s ->   104.46s] But this is just to show you the basics of backtesting.
+[  104.46s ->   108.64s] I should also mention that TradingView has a page where it has a bunch of pre-built in
+[  108.64s ->   111.78s] variable functions, so you don't have to custom make all of them.
+[  111.78s ->   115.72s] We're going to be using a lot of them in this video, so I'll leave that in the description
+[  115.72s ->   117.66s] as well if you want to go check that out.
+[  117.66s ->   121.34s] So once you type in whatever security you want to test, you're going to go down and
+[  121.34s ->   124.20s] click on this bottom tab that says Pine Editor.
+[  124.20s ->   127.86s] The very first line is what we want to name our trading strategy.
+[  127.86s ->   130.84s] So we're going to name this Simple Moving Average Strategy.
+[  130.84s ->   132.90s] Next, we're going to set our variables.
+[  132.90s ->   137.66s] The first one we'll call EMA20 for a 20 day moving average, and the second one we'll
+[  137.66s ->   140.84s] call EMA50 for a 50 day moving average.
+[  140.84s ->   144.54s] Next we're going to use the built in EMA function from the TradingView page I was talking
+[  144.54s ->   145.54s] about before.
+[  145.54s ->   148.06s] So we just type in EMA parentheses.
+[  148.06s ->   150.24s] Now this function takes two parameters.
+[  150.24s ->   155.04s] The first parameter is if you want the EMA to read from the open or close of a candle as
+[  155.04s ->   156.00s] a reference point.
+[  156.00s ->   160.30s] With moving averages, it's probably best you read from the close, so we'll do that for
+[  160.30s ->   161.30s] this strategy.
+[  161.30s ->   163.42s] Then the second value is the time frame.
+[  163.42s ->   166.26s] So for a 20 moving average, we're going to set it to 20.
+[  166.26s ->   169.72s] Then you're going to do the exact same thing for this one, but make it 50.
+[  169.72s ->   175.10s] So this part of the code is defining basically what we call a 20 EMA and a 50 EMA.
+[  175.10s ->   180.48s] So instead of typing all this code over, we can just type in 20 EMA or 50 EMA.
+[  180.48s ->   183.06s] Next we're going to set our long and short conditions.
+[  183.06s ->   187.26s] So we want to go long if EMA20 is above the EMA50.
+[  187.26s ->   191.36s] Then we want to go short if the EMA20 is below the EMA50.
+[  191.36s ->   196.02s] So keep in mind these aren't entry points, but they are just simply telling the bot what
+[  196.02s ->   199.70s] we define as a long and what we define as a short.
+[  199.70s ->   204.70s] To do entry points, we're going to use another built in function which is strategy.entry.
+[  204.70s ->   208.66s] The first parameter is the name, so we call this entry long.
+[  208.66s ->   211.88s] And then the second parameter is what we actually want it to do.
+[  211.88s ->   214.14s] So type in strategy.long.
+[  214.14s ->   217.18s] The third parameter is how many shares you want to purchase.
+[  217.18s ->   220.04s] So in this example we'll just do 1000 shares.
+[  220.04s ->   223.68s] Then the fourth parameter is when we actually want to execute the trade.
+[  223.68s ->   228.94s] So we type in win equals long, which is saying we want to execute a long trade when these
+[  228.94s ->   231.06s] parameters above are met.
+[  231.06s ->   235.48s] So as an overview we have the name, whether we want to go long or short, the amount of
+[  235.48s ->   237.82s] shares, and when we want to execute.
+[  237.82s ->   240.60s] Then we're going to do the same exact thing for a short trade.
+[  240.60s ->   245.92s] So name this short, strategy we want is short, still have it as 1000 shares, then we want
+[  245.92s ->   248.84s] it to execute it when the short condition is true.
+[  248.84s ->   252.84s] Right now we have it set up to where it's longing and shorting, but it's not actually
+[  252.84s ->   257.06s] closing positions at this time, it's just constantly opening trades.
+[  257.06s ->   259.66s] So let's set it up to where it actually closes them.
+[  259.66s ->   262.58s] To do that just simply use strategy.close.
+[  262.58s ->   266.84s] Then we're going to give it a few values to tell the bot when we want it to close a position.
+[  266.84s ->   269.90s] So we want to reference what position we want to close.
+[  269.90s ->   273.54s] So we want to close a long trade when short is true.
+[  273.54s ->   275.64s] Then we'll do the opposite for a short.
+[  275.64s ->   278.50s] So close out a short position when long is true.
+[  278.50s ->   284.16s] So just all this code alone in theory will buy every time when the 50 day crosses below
+[  284.16s ->   288.50s] the 20 day and will sell when the 50 day crosses above the 20 day.
+[  288.50s ->   291.36s] It'll also do the opposite with short trades.
+[  291.36s ->   292.84s] Let's run it to see if it works.
+[  292.84s ->   297.50s] To do that, go to the tab up here, add the chart, and that will start our backtest.
+[  297.50s ->   298.88s] So it looks like it worked.
+[  298.88s ->   303.22s] The cool thing about TradingView is that it'll actually display on the chart where it bought
+[  303.22s ->   304.22s] and sold.
+[  304.22s ->   307.84s] This way you can check to see if the bot is running correctly and buying and selling where
+[  307.84s ->   309.18s] you actually want it to.
+[  309.18s ->   311.10s] You also have these three different tabs.
+[  311.10s ->   316.80s] The overview tab will show you an equity curve, your net profit, amount of trades, max drawdown,
+[  316.80s ->   318.50s] average trade, etc.
+[  318.50s ->   322.86s] So this is the tab you want to be looking at to see how successful your strategy actually
+[  322.86s ->   323.86s] is.
+[  323.86s ->   325.60s] And it looks like this strategy wasn't that bad.
+[  325.60s ->   330.10s] The performance summary basically gives the same information but in a table format.
+[  330.10s ->   334.72s] Then there's the list of trades tab where it'll show you every single trade and when
+[  334.72s ->   336.50s] and how it was executed.
+[  336.50s ->   339.00s] So you can see here we went back to 2020.
+[  339.00s ->   342.08s] So maybe you don't want to test all the way back to 2020.
+[  342.08s ->   346.72s] Well you actually can edit the script to where you can tell the bot a specific amount of time
+[  346.72s ->   347.62s] you want to test.
+[  347.62s ->   351.88s] To do that just go to the line right here and create a start and end variable.
+[  351.88s ->   354.78s] Then we're going to use the prebuilt timestamp function.
+[  354.78s ->   361.78s] So we're going to set our start to let's say 2021 January 1st and then hours then minutes.
+[  361.78s ->   366.60s] Then we'll make our end point let's say 2021 August 1st.
+[  366.60s ->   372.90s] So this is saying it'll only do trades from January to August on only the S&P 500.
+[  372.90s ->   374.50s] Then we have to make an if statement.
+[  374.50s ->   380.10s] So if time is greater than or equal to our start variable and if time is less than or
+[  380.10s ->   383.36s] equal to our end variable we will run this code below.
+[  383.36s ->   385.06s] Then you just indent this.
+[  385.06s ->   390.54s] Then go to the add to chart button and boom it only did trades from January to August.
+[  390.54s ->   394.66s] I should also mention that when you're getting this error below when you click added chart
+[  394.66s ->   400.58s] just go to the first line of your code and type in slash slash at version equals 4.
+[  400.58s ->   402.34s] That'll get rid of the error.
+[  402.34s ->   406.26s] Now maybe you want to see your actual indicators from the bot on the chart.
+[  406.26s ->   408.34s] Well there's actually a way to do that too.
+[  408.34s ->   410.98s] There's a prebuilt function called the plot function.
+[  410.98s ->   416.34s] So you just do plot, parenthesis, then whatever indicator you want, the name, the color, then
+[  416.34s ->   417.06s] the width.
+[  417.06s ->   420.98s] Then boom it shows you the moving averages on the chart which is pretty cool.
+[  420.98s ->   424.74s] But maybe you want it actually overlaid on the chart as you normally would have it when
+[  424.74s ->   425.94s] you add these indicators.
+[  425.94s ->   429.06s] To do that just go here and set overlay to true.
+[  429.06s ->   432.50s] Then bada bing bada boom you have the indicator overlaid on the chart.
+[  432.50s ->   437.54s] Like I said guys this is a very basic strategy and example but I just wanted to show you the
+[  437.54s ->   440.26s] very basic opportunities you have with backtesting.
+[  440.26s ->   445.46s] If you want to see a tutorial that's more advanced and how to backtest some more advanced strategies,
+[  445.46s ->   449.06s] let me know in the comments and give this video some love and like the video.
+[  449.06s ->   451.62s] And if it gets enough love I'll make a second tutorial.
+[  451.62s ->   455.70s] Because there's some pretty crazy things you can do with trading view backtesting.
+[  455.70s ->   459.94s] Now that you know how to backtest you should try backtesting one of my strategies like this one
+[  459.94s ->   463.78s] where I show you one of my secret strategies that has a pretty high success rate.
+[  463.78s ->   466.42s] Thanks for watching and I'll see you guys next time.

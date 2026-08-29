@@ -1,0 +1,121 @@
+[    0.00s ->     5.00s] Today, I want to share with you guys my put selling only account so that we can demonstrate
+[    5.00s ->    10.74s] and reinforce the put selling strategies and concepts that I laid out in the 90 minute
+[   10.74s ->    14.66s] masterclass that I'll link in the upper right hand corner right here. If you guys haven't seen
+[   14.66s ->    19.22s] that video, I recommend you guys pause this video and watch it first and then come back to this one.
+[   19.38s ->    24.14s] Hi, I'm Credit Spread Investing. I retired from corporate at the age of 31 by learning how to
+[   24.14s ->    29.64s] safely invest in trade options. And now my new mission is to teach you how to do the same.
+[   30.00s ->    34.06s] If you guys like content like this, make sure you guys subscribe and like the video because it
+[   34.06s ->    39.56s] really helped me out and let YouTube know that this is a video worth watching. So let's head on over to
+[   39.56s ->    44.16s] our account so that we can take a look at how we implement our strategy and the psychology behind
+[   44.16s ->    52.99s] it. So our account is currently sitting around $83,600. We had peaked at $86,000 a couple days
+[   52.99s ->    57.85s] ago and now we've lost a little bit of value. But the account value actually isn't that important.
+[   57.85s ->    65.07s] What I want to bring your attention to is the performance. Our year to date return is at 23.28%
+[   65.07s ->    71.94s] as compared to the S&P 500's 8%. And again, just to remind you, this account is really just
+[   71.94s ->    76.78s] selling puts at the moment. In the future could be calls and credit spreads, which means that we're
+[   76.78s ->    81.58s] able to get this return by just following the strategy that I linked out in the video linked in
+[   81.58s ->    85.66s] the upper right hand corner. So I would recommend that you guys take a look at that video to make sure
+[   85.66s ->    90.24s] that you guys understand the strategy, but I'll summarize it real quick. The first rule is that
+[   90.24s ->    94.76s] we only sell cash secure puts on stocks that we want to own, which means that we only buy stocks and
+[   94.76s ->   101.52s] we can buy 100 shares of. Number two is that we never buy back an option at a loss. And three,
+[  101.98s ->   108.22s] we try to roll if you can get a credit, try to target 1.5 to 2.5% a month. But if we can't roll it,
+[  108.22s ->   113.60s] or if it goes too far in the money, then we have to let the option get assigned and we end up buying
+[  113.60s ->   118.94s] 100 plus shares of that stock. So in this video, I'm going to really show you guys the psychology
+[  118.94s ->   124.54s] behind why those rules exist and how we go about implementing that strategy. So you can see right
+[  124.54s ->   131.82s] here in my account that we have two shares of ASML, three shares of IoT, Samsara, nine shares of NVIDIA,
+[  131.82s ->   137.60s] and 205 shares of TSM. These two shares, three shares, nine shares, and five shares of TSM are all
+[  137.60s ->   144.82s] stocks that we bought using the credit that we collected from selling puts. We take half of the
+[  144.82s ->   152.06s] money and we buy those shares. 200 shares of TSM, those are from the puts that we got assigned.
+[  152.66s ->   158.42s] Okay. And you can see here, these shares are doing pretty well, up 28%. NVIDIA is up 31%. IoT is down
+[  158.42s ->   163.94s] 12%. And ASML, for some reason, it's a short up, but it's probably down around one or two percent as
+[  163.94s ->   174.21s] well, which leads us to how we got the performance. We've collected around $5,227 of total credit in
+[  174.21s ->   184.85s] 2025. We had around $10,000 of gains in the TSM shares that were assigned from our puts. And we had
+[  184.85s ->   195.35s] around a $460 game from the stocks that we bought by dripping in our option money. Now, what is more
+[  195.35s ->   201.91s] important? Here is the execution of the strategy. So the first thing is IoT or Samsara. I don't really
+[  201.91s ->   207.59s] recommend beginners sell puts on small cap stocks because they're usually unprofitable and more
+[  207.59s ->   211.81s] volatile. And I didn't talk about it in the video, but I'll make a different video about this at a later
+[  211.81s ->   217.99s] date. But one of the things we did talk about is that we want to buy stocks in situations or sectors
+[  217.99s ->   224.41s] that we have an edge in, invest in what you know, right? And so Samsara is in an industry that I used
+[  224.41s ->   230.31s] to work in. So I know better than most how this industry pans out. And Samsara is the industry leader
+[  230.31s ->   236.85s] in this space. So I feel relatively confident it's a high conviction play for me. So for IoT,
+[  236.85s ->   243.31s] I have a $41 put option that is currently in the money, right? I collected close to 300 bucks or so
+[  243.31s ->   249.41s] on this one option. What we plan on doing as according to our rules is we are going to let this
+[  249.41s ->   257.73s] option get assigned if we can't roll it for a credit that equals around 1.5% a month. So let's just do
+[  257.73s ->   263.53s] that right now. So if we want to roll this out, it expires on August 15th. Let's just say we want to
+[  263.53s ->   271.87s] roll it out to two weeks later, August 28th at the same strike price, give or take. It seems like
+[  271.87s ->   276.75s] we can net around $50 or so. The bid-ask rate is kind of wide because it's after hours, but I'm
+[  276.75s ->   284.70s] guessing we can net around 50 bucks, which means that we're around a 1% or so for a two-week rollout,
+[  284.98s ->   291.32s] which means that in a month, we're averaging maybe 2% or 1.75%, which is actually a pretty decent roll.
+[  291.32s ->   296.82s] So if you want to roll, this could be an option. But what I plan on doing with this stock is because
+[  296.82s ->   302.72s] it still has three weeks left, I'm going to let this option decay out a little bit further and see
+[  302.72s ->   308.04s] what happens to Samstar over the next couple of weeks. And then when we come back or I'll post on
+[  308.04s ->   315.94s] IG, link below, we may actually roll this for credit if we're able to. And again, disclaimer, if we're not,
+[  315.94s ->   323.82s] we'll let it get assigned. Now moving on to NVIDIA. NVIDIA is actually one of the more interesting
+[  323.82s ->   330.89s] stocks we want to talk about in this video. It expires in close to two weeks, August 1st,
+[  330.95s ->   337.87s] 90% decayed out, which means in two weeks, we made 90% unrealized gains. So what we want to do here is
+[  337.87s ->   341.45s] we either want to close it because there's two weeks left and we're only going to get 10%,
+[  341.45s ->   347.33s] which is kind of a waste of time, or we roll it out to a later date so that we can get more money.
+[  348.23s ->   353.31s] Now, the reason that I'm a little bit more hesitant about rolling out NVIDIA is because right now
+[  353.31s ->   358.25s] NVIDIA is at an all-time high or close to an all-time high. It's at $167. If you look at NVIDIA's
+[  358.25s ->   364.01s] PE chart, it's currently sitting at $55. And the reason that's a little bit more concerning is because
+[  364.01s ->   370.29s] over the last 12 months, it's actually at $50. NVIDIA has never been a cheap stock, but now it's
+[  370.29s ->   377.06s] currently a lot more expensive than it was only three months ago. So if we did this series three
+[  377.06s ->   382.12s] months ago, I would have easily told you, roll it up, roll it out. NVIDIA is a great buy at this price
+[  382.12s ->   387.30s] point. Now that it's a little bit inflated, we have to think a little bit. Is this a price point?
+[  387.46s ->   393.10s] Is this a stock that we're willing to buy a hundred shares of if the option drops in the money? So that
+[  393.10s ->   397.82s] is what's going through my mind when we're rolling because as you talked about, having the conviction
+[  397.82s ->   402.66s] behind your play is going to be the most important thing. You are going to come up with a situation
+[  402.66s ->   406.54s] where the option falls in the money and you're going to be like, oh wait, I actually may not
+[  406.54s ->   414.02s] want to let it get assigned. $16,000 is actually a lot of money. Maybe I don't do that. So let's roll
+[  414.02s ->   418.82s] this out and just see how much money we can get. So let's assume that we're going to roll it out for
+[  418.82s ->   427.20s] a month out, right? So August 22nd. And we'll roll it to maybe roll it up to maybe $150. We'll get
+[  427.20s ->   433.32s] around $145 for a two-week roll. That's actually not too bad. What happens if we roll it up to $155?
+[  434.08s ->   440.50s] We'll get a $230, which is a 1.5% for around a three-week roll. That's actually not bad at all.
+[  441.08s ->   447.16s] So maybe the right call for us to do here is actually to roll it out to $155, maybe even $160,
+[  447.16s ->   453.48s] if you really wanted to, $353, be very aggressive with it and play before earnings come out on
+[  453.48s ->   457.46s] August 27th. Maybe that's the right way to do it. And if NVIDIA continues to go up,
+[  458.36s ->   462.16s] then maybe we move on to a different stock. Which brings us to the point, the reason that
+[  462.16s ->   465.74s] we're being a little bit more hesitant about selling options, as you can kind of tell from
+[  465.74s ->   471.86s] this video, is because VIX is very, very, very low. As we talked about in the Masterclass
+[  471.86s ->   477.14s] option video, linked again in the upper right-hand corner, we do not want to be selling
+[  477.14s ->   484.94s] options when VIX is really low. The reason for that is because when VIX spikes, even if the
+[  484.94s ->   491.12s] stock price stays the same, the option price will go up, which means that as auction sellers,
+[  491.28s ->   498.36s] we will lose money. We want to be selling options when VIX is very high. Back in April, I made a short
+[  498.36s ->   504.20s] about it. And we want to be avoiding selling puts down here. And with a lot of macroeconomic
+[  504.20s ->   511.06s] situations coming in, like tariff deals coming in at the end of July, interest rate cuts maybe coming
+[  511.06s ->   515.20s] in or not coming in, there's probably a lot of macroeconomic situations that sort of elevate VIX
+[  515.20s ->   521.20s] to a point where it becomes less productive for us to be selling options. And so this is why I'm
+[  521.20s ->   528.80s] actually so hesitant or so careful about selling options right now, because of VIX being as low as it is.
+[  528.80s ->   535.66s] Which brings us to the last option in this video, TSM. I haven't made a video about how to sell
+[  535.66s ->   540.06s] covered calls. I actually am not that aggressive when I sell covered calls. I just sell more puts
+[  540.06s ->   546.36s] than I do quick calls. But the same thing applies to TSMC. TSMC is actually one of my favorite stocks.
+[  546.46s ->   551.98s] I have a very long-term bullish sentiment on the stock. As you can tell, it's around 57% of our account.
+[  551.98s ->   560.08s] But with TSMC and all-time high, as well as S&P 500 and all-time high, there could be a situation
+[  560.08s ->   568.40s] here where there's more downside risk than there is upside risk. So the question here is, do I want
+[  568.40s ->   575.64s] to sell a covered call on TSMC? I don't really like capping my upside gain in the long term if this is a
+[  575.64s ->   580.48s] stock that we want to hold for 5 to 10 years. It's just easier to just keep it. But if you want to
+[  580.48s ->   585.30s] kind of swing trade it, like wheel it a little bit, then yes, you could theoretically sell a call
+[  585.30s ->   591.14s] at this option, at this price point. Now, let's run through this hypothetical. If I wanted to sell
+[  591.14s ->   597.44s] an option on TSMC, what I would do is go to the option trade, and I would sell a call. And again,
+[  597.48s ->   606.82s] let's just do 20 to 30 days from today. And TSMC was at a high of 248. So let's just say that I want
+[  606.82s ->   613.42s] to sell it at $250, which means that we can get around $320 on this one option, which is actually
+[  613.42s ->   620.98s] not that bad. Now, the question is, am I willing to part with that stock? And potentially, I think
+[  620.98s ->   625.84s] maybe yes, because again, it's at an all-time high. We've made 30% on it. If it runs up to $250,
+[  626.24s ->   631.28s] then we'll be even further up. And I'm probably okay with parting that stock in the money to reduce
+[  631.28s ->   635.46s] my risk in case there's a swing to the downside. What we do here is we want to make sure that we're
+[  635.46s ->   639.22s] minimizing our risk as much as possible. All these stocks in our account, with maybe the exception
+[  639.22s ->   643.50s] of IOT, are all cashflow positive, all very profitable companies. They're not going to go
+[  643.50s ->   648.18s] bankrupt anytime soon. So the risk to the downside is actually very minimal. What we're trying to do
+[  648.18s ->   652.92s] is trying to optimize as best we can. Hopefully, that was really insightful about the thought
+[  652.92s ->   659.08s] process. I try to articulate it as best as I can. If you guys have any questions, please do let me know
+[  659.08s ->   663.56s] down in the comment section below. If you guys have any asks of what you guys want to see in a series
+[  663.56s ->   667.54s] like this, again, let me know because I want to make sure that I'm fulfilling what you guys want
+[  667.54s ->   671.98s] to see when I give these portfolio updates. If it's helpful, if it's not helpful, because if it's not
+[  671.98s ->   676.30s] helpful, then I'll just move on and do something else. Again, I want to make sure you guys understand
+[  676.30s ->   682.67s] the reasoning, the thought process, the risks, especially when it comes to trading options,
+[  683.21s ->   688.67s] so that you are blindsided when you first start trading options or you continue to trade options.
+[  689.03s ->   692.21s] I want to make sure you guys get the full picture. You guys like content like this,
+[  692.21s ->   697.71s] real and transparent. Make sure you guys like the video and subscribe to follow along with this
+[  697.71s ->   702.09s] account's progress. If you guys want to learn more about selling options, again, I'll link that
+[  702.09s ->   708.13s] masterclass in the end screen right here, and I will also link my favorite option strategy credit
+[  708.13s ->   714.84s] spreads, which I will probably do on this account as well, in the end screen here. Like always,
+[  714.96s ->   717.92s] stay safe in the market. Until next time, peace.

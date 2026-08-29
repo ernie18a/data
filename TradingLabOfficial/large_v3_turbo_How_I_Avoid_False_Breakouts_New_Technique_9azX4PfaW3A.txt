@@ -1,0 +1,70 @@
+[    0.00s ->     4.84s] Has this ever happened to you? You get this very classic chart setup where price made a high,
+[    5.04s ->    10.48s] retracted back down, and came back to test that high again. You watch closely as this candle
+[   10.48s ->    16.26s] slowly starts to come to this resistance point. Tons of volume starts coming in and more and more
+[   16.26s ->    22.30s] buyers are starting to enter. The candle is getting bigger and bigger. You wait eagerly to enter as
+[   22.30s ->    27.80s] once price breaks this high, you expect the price to skyrocket and make tons of money. And then
+[   27.80s ->    35.42s] suddenly it happens. You quickly rush to your broker and buy as many shares as possible. You are ready
+[   35.42s ->    40.42s] to sit back and watch the gains come into your account. Oh wait, what's happening? The price,
+[   40.50s ->    45.36s] it's starting to slow down. What? Sellers are starting to enter. Oh no, it's starting to reverse. What?
+[   45.46s ->    50.30s] It's crashing. And it turns out you entered into a false breakout and lost all your money.
+[   51.30s ->    56.82s] Well, what if I told you this is one of the most common ways traders lose money? If only there was
+[   56.82s ->    61.86s] a way to avoid these false breakouts completely and make sure this never happens to you again.
+[   62.06s ->    67.16s] Well, actually there is. What if I told you I found a brand new technique to make sure this
+[   67.16s ->    72.36s] never happens to you ever again and you can actually capitalize on moves just like this one
+[   72.36s ->    76.88s] and know they are coming before they even happen? That would be pretty cool, right? Well,
+[   76.96s ->    82.76s] to understand why this move happened, we first have to understand what caused it. And the answer
+[   82.76s ->    88.70s] is liquidity. You see, the markets are ran based off liquidity. In other words, liquidity is basically
+[   88.70s ->    93.86s] fuel for the market to move. Without liquidity, the market wouldn't move. So let me paint you a
+[   93.86s ->    98.26s] picture. If you were in a long trade in this specific example, where would you set your stop
+[   98.26s ->   103.76s] loss? Well, most traders are going to set their stop loss right below this low probably. As if price
+[  103.76s ->   109.24s] goes below this low, you'd expect the price action to turn bearish and continue to head downward.
+[  109.24s ->   115.02s] And the funny thing is a majority of the market has the exact same style of thinking. So what ends
+[  115.02s ->   121.66s] up happening is a lot of stop loss orders are going to be set in this area. So price is naturally
+[  121.66s ->   127.06s] going to want to head towards it. And once price breaks this low, all hell breaks loose and it's going
+[  127.06s ->   132.80s] to trigger all these stop losses. But the big hedge funds and private equity firms know this and they
+[  132.80s ->   140.04s] use all these stop losses as liquidity to enter big positions. So oftentimes price will do this break,
+[  140.12s ->   145.38s] the big companies will enter their positions and the price will end up reversing, resulting in a false
+[  145.38s ->   151.22s] breakout or in other words, creating liquidity. The market is ran by liquidity. Once you realize this,
+[  151.32s ->   157.08s] it will change the way you trade forever. So how can we make a strategy based off of this information
+[  157.08s ->   161.96s] to make sure we can capitalize on moves just like this one? Well, that's why I clicked this video,
+[  161.96s ->   167.48s] right? It's actually pretty simple. So this is a pretty common chart setup. You'll have equal highs
+[  167.48s ->   173.28s] right here and equal lows right here. Now, most new traders will call these points support or resistance,
+[  173.28s ->   179.86s] but actually these points are liquidity. And this is where the strategy actually starts to take place.
+[  179.98s ->   185.30s] But before we get into the actual strategy, we first have to understand another core concept,
+[  185.44s ->   191.68s] which is fair value gap. A fair value gap is simply when price moves up or down an insane amount
+[  191.68s ->   196.86s] creating an imbalance in the market. You can mark this area by simply marking the wick before the
+[  196.86s ->   202.42s] big candle to the wick after the big candle. Then we can see an area where price hasn't touched.
+[  202.42s ->   207.86s] This candle moved up so quickly that it didn't give sellers the chance to correct this move,
+[  207.96s ->   213.78s] creating an imbalance in the market. So naturally price will want to come back to this area to test
+[  213.78s ->   219.12s] again. Remember this because it's important to the strategy. So going back to the example before,
+[  219.12s ->   225.48s] oftentimes if you go on a higher timeframe, like the one hour or daily, there will usually be a bullish
+[  225.48s ->   231.90s] fair value gap right below this liquidity somewhere right here. And there will also be a bearish fair
+[  231.90s ->   237.30s] value gap above these highs somewhere right here. So going back to the point I made earlier,
+[  237.30s ->   243.62s] price will naturally want to come down to this point to test this fair value gap. So we now have
+[  243.62s ->   248.72s] that information we can work around. Once it hits this fair value gap, it will want to repeat the
+[  248.72s ->   254.12s] process. Well, you may ask, where's the new liquidity? The liquidity is right here at these
+[  254.12s ->   259.80s] equal highs. So price will naturally want to come take out this liquidity now. And while doing that,
+[  259.98s ->   265.62s] price will usually move up so fast that it'll leave another fair value gap. Then we'll naturally
+[  265.62s ->   271.68s] want to reverse back down to this new fair value. Once price gets here, it'll naturally want to take out
+[  271.68s ->   277.40s] more liquidity. And where else to do that other than the highs and made in the beginning, right about now,
+[  277.40s ->   281.68s] you should be getting that light bulb in your head. Price will naturally want to take out these highs,
+[  281.80s ->   286.72s] creating liquidity, and then hit that bearish fair value gap. It will eventually hit this bearish fair
+[  286.72s ->   293.06s] value gap and then repeat the whole entire process to the downside. I actually shared a trade exactly
+[  293.06s ->   298.46s] like this with my private discord group. The private discord is basically where me and a bunch of other
+[  298.46s ->   304.88s] professional analysts share all of our trades in real time, both entries and exits. We even keep track
+[  304.88s ->   309.96s] of all the trades we place and share the monthly results every month so you can see how good the
+[  309.96s ->   314.88s] analysts are doing. It's also a great place to talk to other traders and ask questions about your own
+[  314.88s ->   320.02s] trading. And not to mention, people are absolutely loving the signal. If you want to become a better
+[  320.02s ->   325.82s] trader and want to see exactly what I'm trading at all times, join the discord. I'll leave a link in
+[  325.82s ->   330.84s] the description. But here's the thing, the chart doesn't even necessarily need to look exactly like
+[  330.84s ->   335.52s] this. For example, here we have this chart. We have a high right here and a low right here. Both
+[  335.52s ->   340.86s] are liquidity. Then on a higher timeframe, we have a fair value gap right here. Price takes out this
+[  340.86s ->   345.82s] liquidity, which gives it fuel to head downward. While it comes down, it leaves a small fair value
+[  345.82s ->   351.32s] gap. Price comes back up to it, continues to fall. Now price breaks this liquidity and we know it has an
+[  351.32s ->   357.30s] end goal of trying to get to this fair value gap on a higher timeframe. While doing this, it left a huge
+[  357.30s ->   362.74s] fair value gap to the downside. Price comes back to this fair value gap to test it, then reverses back
+[  362.74s ->   368.14s] down. So now we have two points of liquidity left and the market will continue to do this forever.
+[  368.36s ->   373.42s] One thing you should take from this video is price will always look for two things, liquidity and
+[  373.42s ->   379.12s] imbalances. The best moves occur after liquidity has been swept. If you want price to go higher,
+[  379.24s ->   384.64s] you actually need price to go lower first. If you want price to go lower, you want price to go higher
+[  384.64s ->   388.54s] first. Once you understand this concept, your trading will change forever.

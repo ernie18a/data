@@ -1,0 +1,94 @@
+[    0.00s ->     5.56s] I found a strategy so good that if you use it correctly, it can not only predict the exact
+[    5.56s ->    11.46s] point where price is going to reverse, like it did here, here, here, and here, but it can also
+[   11.46s ->    17.22s] find the perfect places to set your take profit. And all of this is done by using the Fibonacci
+[   17.22s ->    22.46s] retracement tool. Yeah, you probably have heard of it. But unfortunately, most traders use it
+[   22.46s ->    27.30s] completely wrong. I'm going to show you how to use it correctly and give you my secret settings
+[   27.30s ->    31.52s] that I use for it. And on top of that, give you a strategy that will give you sniper entries
+[   31.52s ->    35.86s] with tight stop losses and huge take profit. First, you're going to go to trading view.
+[   35.92s ->    39.02s] If you don't yet have it, I'll leave a link in my description. You're going to go to the
+[   39.02s ->    44.20s] left category bar, click the second icon. This will give you the Fibonacci tool. Place it on
+[   44.20s ->    52.62s] your chart, go to the settings, change the values to 0, 0.706, 0.618, 1, and 0.79. This will
+[   52.62s ->    59.93s] give you three main levels that look like this. These levels are what's called or where
+[   59.93s ->    65.41s] price has the highest probability of pulling back to and reversing. So in essence, you would
+[   65.41s ->    69.63s] normally use the Fibonacci as follows. You grab your Fibonacci tool. You mark from the low
+[   69.63s ->    74.57s] of the trend to the high of the trend. This will mark out your level. Price will often come
+[   74.57s ->    80.11s] back down and have the highest probability of reversing at the golden zone. Set your stop
+[   80.11s ->    85.15s] loss below the golden zone. Set your take profit at the highs. And now you have a trading strategy
+[   85.15s ->    90.33s] that works pretty decent. But here's the thing. This strategy is nice and all. And if you test
+[   90.33s ->    95.61s] it, it does work pretty often. But you will also quickly figure out it doesn't work all
+[   95.61s ->    99.69s] of the time. And sometimes price will just break the golden zone and you're left with
+[   99.69s ->   104.45s] a losing trade that hit your stop loss. So we need to figure out a way to raise the probability
+[  104.45s ->   110.89s] of our setup. So the golden zone holds way more often and we get way more winning trades. To do
+[  110.89s ->   116.37s] this, I've created a five step strategy that will make the Fibonacci tool work so good. And once you
+[  116.37s ->   121.83s] replicate the strategy on your charts, you will instantly see why I made a video about it. To start
+[  121.83s ->   127.07s] us off, we're going to start with the first step, which is finding a high interest area. Now, there are
+[  127.07s ->   132.21s] multiple ways to find a high interest area, but this is my favorite way of doing it. First, you want to
+[  132.21s ->   137.31s] go on a higher timeframe, like the four hour or daily timeframe. For this example, we'll be using
+[  137.31s ->   142.13s] the four hour. Next, you're going to find a fair value gap. You can have bullish fair value gaps
+[  142.13s ->   147.29s] and bearish fair value gaps. A fair value gap is simply a three candle formation where price moves
+[  147.29s ->   153.53s] up or down an insane amount, creating a huge candle. In this example, the price moved up so
+[  153.53s ->   159.83s] quickly that it didn't give sellers enough time to counteract the movement, creating an imbalance in
+[  159.83s ->   165.11s] the market. Naturally, sellers will want to retest this zone. You can mark a fair value gap by simply
+[  165.11s ->   170.07s] marking the candle's top wick before the big move to the candle's lower wick after the big move.
+[  170.07s ->   175.99s] This zone is the fair value gap itself. If you open up your chart, you will see these gaps everywhere.
+[  175.99s ->   181.27s] Oftentimes, especially on higher timeframes, price will retrace back down to the zone, fill the
+[  181.27s ->   186.31s] imbalance, and retrace back up to test the highs again. Which, if you're thinking like I'm thinking,
+[  186.31s ->   190.31s] we can use this to our advantage and profit solely from this idea.
+[  190.31s ->   191.99s] I am the chosen one.
+[  191.99s ->   197.19s] So, what you want to do, go on the four hour timeframe and simply find a high interest zone,
+[  197.19s ->   202.23s] or in other words, find a fair value gap. This is just an example, but usually the gap will be
+[  202.23s ->   207.19s] somewhere in this area. While price comes down to this gap, it'll normally do something that looks
+[  207.19s ->   212.95s] like this, creating lower lows and lower highs. This brings us to step number two of our five step
+[  212.95s ->   219.11s] formula, finding liquidity on a lower timeframe. This is where price sweeps a low before entering
+[  219.11s ->   224.23s] our gap. Liquidity is basically just open orders in the market. Naturally, there will be a lot of
+[  224.23s ->   229.75s] stop losses below these lows, which in return provides liquidity and we can take advantage
+[  229.75s ->   233.43s] of the losers in the market. Loser, loser.
+[  233.43s ->   238.55s] So, after you find your high interest area, you're going to go to the 30 minute timeframe. Price should be
+[  238.55s ->   244.79s] breaking a low to provide liquidity before entering into our high interest zone. Something like this,
+[  244.79s ->   250.31s] where price breaks this low before entering into our zone. Once it does that, it should hit our high
+[  250.31s ->   255.75s] interest zone. And we move to step three, which is finding a change of character. We want to confirm
+[  255.75s ->   261.51s] that our high interest zone is strong. And the best way to do that is we want price to bounce exactly
+[  261.51s ->   267.43s] at our zone and then break the previous high. This will give us our change of character and confirms that
+[  267.43s ->   272.95s] our high interest zone is valid and bullish momentum is starting to occur. Once we get that,
+[  272.95s ->   277.91s] we move to step number four, which is actually placing our Fibonacci tool. You're going to mark
+[  277.91s ->   283.67s] from the low in the high interest zone to the high of where the change of character is. This will mark
+[  283.67s ->   289.43s] out our Fibonacci sequence, but even more importantly, it'll mark our golden zone, which gives us the most
+[  289.43s ->   295.03s] optimal area for a potential reversal. We want to wait for price to come back down to our golden zone,
+[  295.03s ->   299.59s] and then we move to the final step, which is entering the trade. Once price hits our golden
+[  299.59s ->   306.23s] zone, we can set our stop loss and take profit. What I like to do is enter right at the 71% level,
+[  306.23s ->   311.27s] set my stop loss below the most recent low and set my take profit at the top of the range.
+[  311.27s ->   316.31s] Now, this is the beginner way of doing things. I do have a secret trick where we can optimize our
+[  316.31s ->   322.39s] take profit even more to get better take profit levels and increase our risk to reward. But we'll get
+[  322.39s ->   327.51s] to that in a little bit. Let's do an actual real life chart example using this strategy.
+[  327.51s ->   331.83s] So first things first. First, go to the four hour timeframe. We want to find an uptrend,
+[  331.83s ->   337.03s] something that looks like this. During this uptrend, there should be a high interest area
+[  337.03s ->   342.79s] or a fair value gap. Here, there's a beautiful fair value gap right here. So we'll mark it on our chart.
+[  342.79s ->   347.59s] Next, move to a smaller timeframe. I personally like the 15 minute for this. As you can see, we have a
+[  347.59s ->   352.47s] fair value gap still printed from the higher timeframe. As price comes down, it creates a nice
+[  352.47s ->   358.31s] liquidity point right here. Price breaks this liquidity and enters into our gap. When price is
+[  358.31s ->   363.03s] in our gap, we need it to break the previous high, giving a change of character. Let's see what it
+[  363.03s ->   368.39s] does. It does end up breaking the high, confirming that our fair value gap from the four hour timeframe
+[  368.39s ->   373.75s] is strong. Once this happens, grab your Fibonacci tool, mark from the low where it swept the liquidity
+[  373.75s ->   379.03s] to the high that created the change of character. This will mark our golden zone, where we want price
+[  379.03s ->   383.99s] to retrace to. You're going to want to enter as soon as price reaches our golden zone. Set your
+[  383.99s ->   388.71s] take profit at the high of where the change of character happened and set your stop loss below
+[  388.71s ->   394.07s] the low of where it bounced at the fair value gap. And just like we expected, it bounced perfectly at
+[  394.07s ->   398.95s] our golden zone and hit our take profit. That's the power of this strategy. I really want you to
+[  398.95s ->   404.79s] notice how price bounced exactly when it hit our golden zone. That's the power of this Fibonacci tool.
+[  404.79s ->   409.27s] Let's do one more example so you really get a feel for this strategy. We go on the four hour
+[  409.27s ->   413.91s] timeframe, first find an uptrend, then find a fair value gap in that uptrend. Once you find that,
+[  413.91s ->   419.19s] move to a smaller timeframe. As price starts coming down to our gap, it creates this low, or in other
+[  419.19s ->   425.27s] words, our liquidity before the gap. Price ends up grabbing this liquidity before entering our gap. Then
+[  425.27s ->   430.39s] it enters our gap. Next, we want to see a change of character to prove our gap is strong and will
+[  430.39s ->   435.43s] hold, which is exactly what happens by price breaking this high. Once that happens, we grab
+[  435.43s ->   440.55s] our Fibonacci tool, mark from the low in our fair value gap to the high of where the change of character
+[  440.55s ->   445.03s] is. This will provide us with our golden zone. Wait for price to come to our golden zone,
+[  445.03s ->   450.07s] set your take profit at the high, set your stop loss below the low, boom, we got another winning
+[  450.07s ->   454.95s] trade. And again, notice how price bounced exactly when it hit our golden zone.
+[  454.95s ->   457.91s] God, I love this Fibonacci tool. It might be my new favorite tool.
+[  457.91s ->   461.19s] But one thing that I really want you to notice, if we go back to our example,
+[  461.19s ->   466.87s] you can see our take profit and stop loss. In this specific example, we only had a 2 to 1
+[  466.87s ->   472.71s] risk reward ratio, which is good, but it's not great. Do you want to see my secret trick on how
+[  472.71s ->   478.55s] I improve my risk reward with this specific strategy? So we get huge wins just like this one.
+[  478.55s ->   483.03s] Click the link in my pinned comments and I'll send you a complete PDF guide on how to do it.
+[  483.03s ->   487.19s] Well, that's how you use the Fibonacci tool. Try it out. Let me know how it works for you. See you next time.

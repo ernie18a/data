@@ -1,0 +1,84 @@
+[    0.32s ->     5.20s] Algorithmic trading. Now, what good are all the concepts and trading strategies we've talked about
+[    5.20s ->    11.22s] up until this point if we cannot implement them in live markets and especially use Python
+[   11.22s ->    17.92s] and the computing power it offers to assist in trade execution? Well, that's exactly what I aim
+[   17.92s ->    23.74s] to answer for in this video where we are going to be building an algorithmic trading system in
+[   23.74s ->    30.40s] Python to help us execute trades using these different strategies. In any case, with live
+[   30.40s ->    35.84s] trading, we're going to need a broker to help facilitate our trades. So in this case, I'm using
+[   35.84s ->    41.12s] interactive brokers. They offer relatively low account minimums, but more importantly, they also
+[   41.12s ->    48.16s] offer a Python API. Now, I've had a couple of years of experience with the Java API and very recently
+[   48.16s ->    54.96s] they released a Python version of their API and that's what we're going to be using today to build
+[   54.96s ->    60.92s] out our trading system. So before we get started, you are going to need an interactive brokers account
+[   60.92s ->    66.64s] and you're going to need to install the latest version of their API gateway. And this is what
+[   66.64s ->    72.68s] allows Python to connect to interactive brokers and manage your account. Now, we don't actually need
+[   72.68s ->    79.20s] a fully funded account. We obviously would if we wanted to engage in live trading, but to get started
+[   79.20s ->    85.46s] with the API, you can just use the paper trading option. In addition to creating an account and
+[   85.46s ->    91.48s] installing the API gateway, you're going to need to install the Python API. To do that, you can just run
+[   91.48s ->    99.08s] a pip install on IB API and you'll have everything that you need to get started. Before we actually get
+[   99.08s ->   104.56s] started coding, I want to offer some insight into the structure of the API and the way that we send
+[  104.56s ->   112.04s] and receive information from interactive brokers. There are two main classes in the interactive brokers
+[  112.04s ->   119.60s] Python API. And the first one is the eWrapper class. And the second one is the eClient class. Now,
+[  120.24s ->   127.70s] the server responds to Python in the form of callback methods within the eWrapper class.
+[  127.70s ->   135.98s] Python requests data from the server from the eClient class. And it creates a closed form loop where
+[  135.98s ->   141.44s] eClient requests information from the server and the server responds in the form of callback methods
+[  141.44s ->   149.04s] in the eWrapper class. So this is how we're going to be sending and receiving data to and from the
+[  149.04s ->   156.88s] server. And this is where we can do things like request market data or execute trades and request
+[  156.88s ->   164.36s] account details. All of that is done in the eClient class. And all of the information is sent to callback
+[  164.36s ->   171.36s] methods in the eWrapper class. So now that you have a general idea of the structure of the API,
+[  171.36s ->   176.04s] we can go ahead and get started coding our own implementation. So for starters, we need to
+[  176.04s ->   182.28s] implement or rather import the eWrapper and eClient classes. So I'm going to say from
+[  182.28s ->   193.63s] ibapi.wrapper import eWrapper from ibapi.client import eClient. And these are the two classes
+[  193.63s ->   198.97s] that are going to be responsible for sending and receiving data from the server. So we're going to
+[  198.97s ->   206.43s] create our own subclasses for custom implementations of server requests and data handling. So for
+[  206.43s ->   214.31s] starters, I'll say class API controller is a subclass of eWrapper. And what that means is within this
+[  214.31s ->   220.59s] class, we're going to be receiving data from the server. And I'm just going to leave a blank
+[  220.59s ->   228.65s] constructor for now. We also need to build out a custom implementation of the eClient class. So I'm
+[  228.65s ->   240.15s] going to say class API socket is a subclass of eClient. And unlike the eWrapper subclass, we actually
+[  240.15s ->   246.15s] need to take a parameter. And in this case, the parameter is actually going to be the eWrapper
+[  246.15s ->   254.93s] class. So the reason for this is because when we send requests to the server, we need to have a
+[  254.93s ->   262.05s] destination for the data that the server wishes to respond with. And in this case, that is going to be
+[  262.61s ->   269.57s] our instance of the eWrapper class for the API controller. So we're going to call the constructor
+[  269.57s ->   281.11s] of the eClient class, and we are going to feed it the wrapper instance. Now that we have the subclasses
+[  281.11s ->   288.55s] of the eWrapper and eClient class set up to handle our custom implementations, we can build out another
+[  288.55s ->   296.47s] class that's responsible for essentially housing both components. And we're going to call that class
+[  296.47s ->   305.19s] the trading application. And the trading application is going to take an API controller and an API socket.
+[  305.19s ->   313.27s] So essentially, what I mean by this is the trading application class is going to be able to send and
+[  313.27s ->   321.76s] receive data from the server. So we're also going to need to initialize the constructors from the super
+[  321.76s ->   332.28s] classes within the trading application constructor. So we are going to call the API controller's
+[  332.28s ->   345.32s] constructor. We are going to call the API sockets constructor. And if you recall, the API socket
+[  345.32s ->   352.76s] takes a wrapper. And in this case, the wrapper is just the instance of the trading application class.
+[  352.76s ->   359.24s] So we can just say the wrapper is equal to self. Alrighty, so now that we've effectively built out
+[  359.24s ->   367.16s] a class capable of sending and receiving data from interactive brokers, we need to talk about the way
+[  367.16s ->   375.56s] in which requests are handled. Now, whenever a request for data is made through the eClient class,
+[  375.56s ->   384.28s] it gets added to a queue. And that queue is cleared every single time the run function is called. And
+[  385.36s ->   392.16s] so the way that that works is we can say, hey, let's request some market data on an equity. And
+[  392.16s ->   398.56s] we will also request account updates. And those two things are going to sit in the queue until the run
+[  398.56s ->   403.84s] function is called. And then the queue will execute each request and send the data to the appropriate
+[  403.84s ->   411.04s] callback methods. Now, we don't want to continue to call run every single time we make a request. So what
+[  411.04s ->   419.04s] we can do is we can persist the run function on its own thread using the concepts of multi-threading,
+[  419.04s ->   424.32s] using the concept of multi-threading. So to accomplish this, we're going to need to import
+[  424.32s ->   435.80s] threading. And as soon as we call the constructors for the API controller and API socket respectively,
+[  435.80s ->   448.07s] we can create a new thread T and target the run function. And then as soon as we create that
+[  448.07s ->   454.92s] thread, we can start it. And what we're effectively doing is saying every single time we put a request
+[  454.92s ->   462.92s] in the queue, it's going to be executed. And that is going to operate independently or concurrently
+[  462.92s ->   469.80s] of other processes within our algorithmic trading system. Now we pretty much have everything we need
+[  469.80s ->   475.88s] to get a proof of connection from the server. And to do that, we're going to create a callback method
+[  475.88s ->   486.56s] in our eWrapper subclass. And this callback method is going to be called connectack. And this callback
+[  486.56s ->   492.96s] method is going to be pinged when a successful connection is instantiated between the Python
+[  493.84s ->   501.36s] script and the server. So whenever the connection is instantiated, we're just going to print connected.
+[  503.33s ->   510.21s] In order to ping a callback function or to receive data from the server, we need to make a request from
+[  510.21s ->   518.37s] the eClient class. Now the eClient class already has all of these functions built in. So in this case,
+[  518.37s ->   525.33s] we want to connect to the server. So I'm actually going to just go ahead and call
+[  526.05s ->   536.45s] self.connect. And this is referencing the API socket subclass of the eClient, which houses all of these
+[  536.45s ->   546.45s] request functions. Now we are using the API gateway, the interactive brokers API gateway. So we're going to
+[  546.45s ->   558.64s] give it the host, which in this case is localhost or 127.0.0.1. The port is 4002 for default paper
+[  558.64s ->   566.24s] trading. And the client ID will be zero. Also keep in mind that to accept a connection, you may need to
+[  566.80s ->   576.40s] enable connections within your IB gateway or trader workstation settings under API. And it's relatively
+[  576.40s ->   581.20s] straightforward. It's just a checkbox, but there you can also actually change the port in which you
+[  581.20s ->   590.24s] connect through the localhost. Alrighty. So I just booted up my IB API gateway. I logged into the paper
+[  590.24s ->   597.84s] trader. And to connect successfully from Python to interactive brokers, all I have to do is create
+[  597.84s ->   606.80s] an instance of this trading application class. If I go ahead and I run this, as you can see,
+[  606.80s ->   613.52s] the callback method is pinged by the server and we get connected. This lays the groundwork for
+[  613.52s ->   619.92s] everything that we could possibly imagine within algorithmic trading. We can automate trade execution,
+[  619.92s ->   625.60s] we can automate trade reporting, we can automate strategies, we can automate maintaining delta neutral
+[  625.60s ->   632.88s] positions. We can do almost anything within this structure and this connection to our interactive
+[  632.88s ->   640.72s] broker's account.

@@ -1,0 +1,76 @@
+[    0.00s ->     5.76s] Welcome back to the Swing Trade Blank for a Living. In this video, we're going over the ETF
+[    5.76s ->    10.02s] QQQ, where I'm going to go over the best strategies for this stock, some characteristics
+[   10.02s ->    16.28s] you need to know, and how to actually profitably trade QQQ over and over and over. Now, I really
+[   16.28s ->    22.04s] love ETFs. If you haven't noticed, in this series, we covered SPY and we covered XLF already. I love
+[   22.04s ->    26.12s] ETFs because they're consistent. They're automatically diversified. If for some reason
+[   26.12s ->    31.72s] you can't sell, they're good to hold long term. And also, they offer the ability to do other
+[   31.72s ->    36.84s] things. For instance, they typically have a lot of options volume if you want to do covered calls
+[   36.84s ->    42.10s] against your portfolio. And not only that, they allow for leveraged versions of this. So for
+[   42.10s ->    47.14s] instance, when I talk about buying this, you can also buy a leveraged form and make way more money.
+[   47.24s ->    53.04s] Now again, that also increases your risk. So again, you can play it safe by using QQQ, or you can play
+[   53.04s ->    59.16s] it more risky to make more profit by using a leveraged form like TQQQ. Anyways, getting into
+[   59.16s ->    62.80s] the video, what do we need to know about QQQ? As always, we're going to start off with support and
+[   62.80s ->    67.20s] resistance. So support is where the stock has reached a high up before and topped out. As you
+[   67.20s ->    71.74s] can see here, this is a resistance level because we reached a high and we topped out there. Here is
+[   71.74s ->    77.12s] another resistance level because we reached this high and we kind of topped out. Here's another
+[   77.12s ->    81.36s] resistance level. We reached this high and topped out. And then support levels are going to be
+[   81.36s ->    86.02s] where the market has bottomed and then bounced at. So here is a level. Again, we can kind of
+[   86.02s ->    91.78s] extend this one out because why? The stock bounced there. As you can see, old resistance becomes new
+[   91.78s ->    95.84s] support. That's kind of how this works. Here's another support level where the market has bounced
+[   95.84s ->   100.40s] before. So these levels help us understand where the market is going to have strength and where it's
+[  100.40s ->   104.82s] going to have weakness. So again, as you can see here, we had weakness here. Then we started crashing.
+[  104.94s ->   109.86s] We knew that support was coming in at 340. Why? Because that was prior resistance. Anyways, that helps us
+[  109.86s ->   114.54s] do our first step, which is understanding the levels in this stock or the levels of this market.
+[  114.96s ->   118.54s] The next step we need to do is assess trend and assess direction. So again, for that,
+[  118.78s ->   123.04s] we use a 200-day moving average, which is quite simply just a moving average line. So again,
+[  123.08s ->   126.76s] you can add this to your TradingView platform or any platform, whether it's Yahoo, Finance,
+[  126.88s ->   131.74s] Broker, whatever, by adding the moving average, going to settings and making it a 200 period.
+[  132.12s ->   136.78s] And so that's typically how this works. When the stock or when the ETF is above this line,
+[  136.78s ->   140.62s] the market is bullish. When it's below, it's bearish. And so that kind of helps give us an
+[  140.62s ->   144.62s] idea of where this direction is going. It also acts as a support and resistance level.
+[  145.20s ->   149.96s] Anyways, what are some things we need to know about swing trading QQQ? Well, the first thing we need to
+[  149.96s ->   159.24s] understand is that just like SPY is doji candles at key levels are very important. So again, here is an
+[  159.24s ->   164.58s] example of some doji levels at a key level. So here was an all-time high level. A doji candle was
+[  164.58s ->   168.48s] formed, a strong red candle, and then we kind of had some consolidation showing that, hey,
+[  168.60s ->   172.92s] we're probably pushing down. And now another example here, we had a doji candle at this
+[  172.92s ->   178.56s] resistance and we started pushing down. So again, this shows that doji candles at key levels do play
+[  178.56s ->   182.38s] an important characteristic. Here's a doji red candle that shows that there's just some
+[  182.38s ->   187.60s] indecision and support coming into play here, as well as some resistance happening at the upper
+[  187.60s ->   194.08s] point. So again, here's a great example to the downside, right? Where we got, where we know that
+[  194.08s ->   199.06s] we're kind of drawing on support here. We formed this doji candle. We have a strong green candle
+[  199.06s ->   202.38s] that's indicative that, hey, we're actually starting to reverse this trend. So anyways,
+[  202.50s ->   206.30s] as always, doji candles near support and resistance are going to be very, very important.
+[  206.82s ->   212.54s] Also with SPY, this works as well because it is an ETF, this QQQ tracks the NASDAQ index,
+[  212.66s ->   217.38s] which is also a future in the NASDAQ futures. And since this is a future, what works well with it
+[  217.38s ->   223.00s] is known as the moving average convergence divergence or MACD. Again, this can also be added on almost any
+[  223.00s ->   228.32s] platform. And what we're looking for is we're looking for a divergence between the high levels
+[  228.32s ->   237.30s] of the stock chart and the levels on the MACD. For instance, here you can see that if I draw this
+[  237.30s ->   243.50s] right here, the highs kind of stayed the same, but these lows dropped and that shows a divergence,
+[  243.64s ->   249.00s] right? There's a difference between the direction of the line between the stock and on the MACD,
+[  249.00s ->   253.66s] which is indicative, especially since we're at this reversal or at this high of a reversal.
+[  253.80s ->   257.00s] And that's how we kind of have that sell off. Now, again, this happens on many different levels
+[  257.00s ->   264.16s] as well. We can check and probably find some other ways. Again, the best levels to swing trade QQQ on
+[  264.16s ->   269.00s] is for each candle represents one day and each candle represents one hour. So when we come down to the
+[  269.00s ->   274.14s] hour, we can definitely find a lot of these MACD plays and kind of help learn from there. Here's an
+[  274.14s ->   279.74s] example of a smaller reversal play. You can see here how the lows are getting lower and then the MACD
+[  279.74s ->   284.58s] is actually kind of picking up here and that shows a reversal. And again, you can kind of get in with
+[  284.58s ->   290.18s] your risk low and trip that back up to the upside. So again, here's a great example. Here's another
+[  290.18s ->   295.56s] example of this little downside movement where we have these going up and then this coming back down
+[  295.56s ->   299.24s] showing that, hey, we're at a resistance point and we're coming back down. We kind of had that move
+[  299.24s ->   306.16s] back down to the downside. So anyways, this is a great example of using MACD on a ETF because ETFs,
+[  306.24s ->   310.54s] especially ones backed by futures, work extremely well. Anyways, guys, these are some of the
+[  310.54s ->   315.74s] characteristics and the best strategies for string trading QQQ. As always, my favorite one is a trend
+[  315.74s ->   320.30s] trading approach, which is finding the trend and buying in. The impeccable stock software helps to do an
+[  320.30s ->   326.34s] amazing job at this by doing the math, understanding where the trend is on the stock, giving you the best levels
+[  326.34s ->   330.08s] to buy at, where your take profit should be, where your shop loss should be, what your risk to reward
+[  330.08s ->   334.08s] is, and also showing you how much money you can make a year. The beautiful part about QQQ is you
+[  334.08s ->   339.16s] can make about an 18% return a year. That's insane. That's literally 3x the market average or 2x the
+[  339.16s ->   343.76s] market average. That's awesome. Not only that, again, if you do the compound of returns, it's about
+[  343.76s ->   348.58s] a 24% return a year. You can see past performance, see if this is a type of stock that you want to
+[  348.58s ->   352.38s] trade. And you can see based on the alerts of the software and trend trading how it's performed in the
+[  352.38s ->   356.32s] past. So again, this is an amazing stock. If you want to generate some consistent income,
+[  356.32s ->   361.48s] want to beat out the market and just do well. Again, this software is one of the best in the
+[  361.48s ->   365.58s] market right now, rated by Benzinga for swing traders. I highly recommend you give it a try.
+[  365.92s ->   371.14s] It's a seven-day free trial. Link in the description below. A completely free trial,
+[  371.24s ->   375.30s] no credit card required. Check it out. Don't miss out. Anyways, guys, if you enjoyed this series,
+[  375.30s ->   379.40s] smash the subscribe button because we have another video coming on Bank of America.

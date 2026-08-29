@@ -1,0 +1,128 @@
+[    0.00s ->     2.48s] Here's another reason why I love credit spreads.
+[    2.70s ->     6.12s] If you don't know what credit spreads are, make sure you check out this video first,
+[    6.32s ->     9.52s] linked in the upper right-hand corner, and then come back to this video.
+[    9.80s ->    14.24s] First, let's start with the trade that I took in my Roth IRA, a relatively small account,
+[   14.36s ->    14.82s] this week.
+[   15.06s ->    22.32s] I sold a SPY 435-433 put credit spread on August 22nd with an expiry of August 23rd,
+[   22.44s ->    23.40s] just one day later.
+[   23.94s ->    28.14s] I collected $21 of spread and I sold 10 of them, which means that I collected a total
+[   28.14s ->    32.04s] of $210 for a total invested capital of around $2,000.
+[   32.56s ->    39.20s] SPY ended up at $444 one day later, and so these options expired worthless, and I generated
+[   39.20s ->    44.58s] 10.5% ROI, or for a flat amount of $210 in the course of one day.
+[   44.80s ->    48.24s] And this is the main reason why I love selling options, in this case credit spreads, right?
+[   48.34s ->    52.64s] Selling options is a great way for us to trade and generate profits, even when you have some
+[   52.64s ->    54.26s] other commitment like work.
+[   54.42s ->    54.66s] Why?
+[   54.84s ->    57.84s] Because we don't really have to worry about how far the market moves in one direction
+[   57.84s ->    59.44s] or another, we just have to get the general direction.
+[   59.64s ->    65.10s] When we sell options out of the money in particular, the option itself has no intrinsic value.
+[   65.22s ->    68.88s] If it were to get assigned at that moment, it would be worthless.
+[   68.88s ->    74.48s] The only value it has, extrinsic, which comes from somebody believing that the market will
+[   74.48s ->    80.84s] go in that direction and to that strike price and is willing to pay some credit to us because
+[   80.84s ->    81.50s] of their beliefs.
+[   82.02s ->    86.94s] And so when we sell options, in particular credit spreads, what we're doing is essentially trying
+[   86.94s ->    90.56s] to take advantage of someone's interpretation of the market while trying to use as little
+[   90.56s ->    91.68s] capital as possible.
+[   91.68s ->    94.08s] This is really why it's great for small accounts.
+[   94.50s ->   100.20s] So let me show you how to sell credit spreads and take advantage of market trends and people
+[  100.20s ->   101.38s] misinterpreting these trends.
+[  101.54s ->   104.72s] First, let's talk about the two-step process to find these good opportunities.
+[  105.12s ->   107.54s] Number one, we have to understand the short-term trend.
+[  107.92s ->   110.52s] Is the market in an uptrend, downtrend, or is it going flat?
+[  110.52s ->   114.30s] We then want to trade the trend because the trend is our friend.
+[  114.84s ->   121.22s] Now, number two, is there a large macro event like CPI or Powell's speech that can throw
+[  121.22s ->   122.70s] volatility into the market?
+[  123.36s ->   128.34s] No, then that's good because we don't really want something to come in and shake up the
+[  128.34s ->   129.82s] trend that we have already analyzed.
+[  130.00s ->   132.70s] Remember, the trend is our friend and we want to trade the trend.
+[  132.86s ->   137.98s] So let's examine the trade that I took this week to really hone in on how to sell credit
+[  137.98s ->   142.96s] spreads, SPY, from this week to take a look at how to figure out number one, which is
+[  142.96s ->   143.56s] trend.
+[  143.68s ->   148.44s] This is Friday, Thursday, Wednesday, Tuesday, Monday, and then Friday of last week.
+[  148.48s ->   150.78s] So we're just going to scroll a little bit to Friday of last week.
+[  152.21s ->   156.09s] So if you look at the previous week, the trend is pretty obvious that it's down.
+[  156.55s ->   158.89s] And on Friday, it hit a low of 4.33.
+[  159.41s ->   163.03s] And then theoretically, you would think that if the trend were to continue down, it would
+[  163.03s ->   167.13s] form another lower high and then bounce back down, kind of like what my cursor is doing
+[  167.13s ->   167.37s] here.
+[  167.37s ->   172.47s] But what we're looking for here is to see whether or not the trend will continue to go
+[  172.47s ->   177.03s] down for us to trade down in the short term, because we're really only trading weeklies
+[  177.03s ->   180.27s] here, right within the week, or is the trend going to reverse?
+[  180.53s ->   182.71s] So on Monday, it opened up to a high.
+[  182.99s ->   185.85s] But if you can kind of tell, this is still not a higher high.
+[  186.11s ->   189.61s] It can still be considered within that downtrend, right?
+[  189.63s ->   193.01s] You can go from A to a B to a C and then continue to go down.
+[  193.01s ->   199.81s] But one positive note here is that on Monday, it formed a higher low, right?
+[  199.91s ->   205.61s] This pattern here seems to indicate that there could be a potential of a reversal pattern,
+[  205.69s ->   208.73s] which means that the short-term trend has shifted from downtrend to an uptrend.
+[  209.11s ->   213.99s] What I'm doing now is that I am waiting to see whether or not this uptrend is confirmed
+[  213.99s ->   216.79s] and we can take this uptrend trade.
+[  217.45s ->   218.49s] And so on Monday, I didn't trade.
+[  218.59s ->   220.97s] So on Tuesday, what I'm looking for is a higher low.
+[  221.17s ->   224.23s] Higher low would indicate that this went from A to a B to a C.
+[  224.35s ->   227.69s] It formed a higher high to a D.
+[  228.05s ->   229.97s] Now I'm just looking for the E for my entry.
+[  230.57s ->   235.09s] And I decided to enter a trade on this day, the 22nd.
+[  235.09s ->   239.89s] And I sold it at 435, which is slightly below the previous low.
+[  240.78s ->   242.50s] And the play here is very simple.
+[  242.74s ->   244.98s] I know the trend now is going up.
+[  246.97s ->   251.69s] I expect the trend to continue to go up the following day.
+[  251.97s ->   253.87s] And I sold it for an expiry of 823.
+[  254.69s ->   256.17s] And I'll talk about why.
+[  256.71s ->   261.35s] But the principle of 822 this day and this entry on this day is very simple.
+[  261.35s ->   265.81s] You see there's support right here because you see this long wicks.
+[  265.81s ->   269.55s] And you know that the trend in the short term seems to be up.
+[  269.95s ->   271.69s] So what we're doing is we're going to try and trade the trend.
+[  272.15s ->   276.57s] Now, the question is, why did I sell it for 823 and not like 825 on Friday?
+[  276.63s ->   277.85s] Because that's normally what I would do.
+[  278.31s ->   279.47s] This comes to point number two.
+[  280.09s ->   284.53s] Is there a large macro event in the next two days or so or during the week
+[  284.53s ->   288.75s] that can throw a wrench in the overall trend?
+[  288.81s ->   290.53s] You don't want increased volatility here.
+[  290.53s ->   291.89s] You actually want predictability.
+[  291.89s ->   296.11s] On Friday, there was Powell's Jackson Hole speech.
+[  296.49s ->   299.27s] So you can see on Thursday, the market went crazy, right?
+[  299.29s ->   302.25s] You can see large bodies, larger volumes.
+[  303.15s ->   306.89s] That's the reason why I sold it for the day after for 823,
+[  306.89s ->   311.35s] because I expect this pattern to hold at least for one more day.
+[  311.45s ->   317.21s] When 824 comes and people are starting to get cold feet about what Powell might say on Friday,
+[  317.37s ->   318.97s] I don't want to mess with that, right?
+[  318.97s ->   324.09s] However, if there was no Powell speech, if there's no CPIs or earnings on a company,
+[  324.09s ->   327.39s] you can sell it for Friday end of week because you kind of understand that the trend
+[  327.39s ->   331.77s] is now shifting towards the upside and you can let that play out.
+[  331.97s ->   335.39s] Spired on Wednesday at like 434, 444, right?
+[  335.43s ->   336.75s] I made max profit.
+[  337.21s ->   338.79s] However, we have to talk about risks.
+[  339.25s ->   343.21s] The risk here is unfortunately, because you're selling it on a shorter timeframe,
+[  343.21s ->   346.89s] you are taking on a decent amount of risk because if the market does overreact,
+[  347.13s ->   351.31s] there is no time for your spreads to recover.
+[  351.71s ->   354.35s] What that means is let's say that on Wednesday, right?
+[  354.39s ->   357.27s] This didn't hold in a gap down, maybe down to 435.
+[  357.57s ->   362.59s] We're using on-demand, which is a function that Thinkorswim has to look back at the historical value of a spread.
+[  362.59s ->   368.21s] So this is essentially a market open on Wednesday, the 23rd.
+[  368.67s ->   373.23s] So you can see that the moment the market opened, I was basically right out of the money.
+[  373.41s ->   376.47s] I am at $14 a spread now, I made $7 a spread.
+[  377.21s ->   378.61s] I'm just going to analyze this trade, right?
+[  378.85s ->   387.20s] And we want to see what happens if the market opened up instead of right at 439, it opened up.
+[  387.22s ->   388.86s] What happens if it opened up like 436?
+[  389.54s ->   390.72s] And this is what I mean by risk.
+[  390.72s ->   393.00s] You're right here, this is the day open at 439.
+[  393.26s ->   397.84s] If you're at 437, you would be down $25 a spread.
+[  398.00s ->   400.78s] So you would be at like $40 a spread.
+[  400.92s ->   404.94s] If you're at 435, you can see it just starts exponentially increasing.
+[  405.84s ->   408.22s] You would be at, you'd be down like $63.
+[  409.08s ->   412.42s] So your spread would be worth $77, right?
+[  412.46s ->   413.62s] So this is kind of the risk.
+[  413.78s ->   417.64s] If it doesn't pan out, you're going to end up losing a lot more money than you would make.
+[  418.10s ->   419.86s] So you have to understand your risk here.
+[  419.86s ->   426.54s] This is why I tend to not sell weeklies as often because there's not enough time for you to recuperate if the market overreacts.
+[  427.48s ->   438.98s] However, when the setup looks good like it does this week, then it's a very fruitful endeavor because you can make a lot of money in a very short amount of time without having to actively manage to trade.
+[  438.98s ->   440.22s] So that's about it.
+[  440.32s ->   441.92s] Let me know if you guys have any questions down in the comments below.
+[  442.00s ->   444.66s] I just want to make a quick video about how else I use credit spreads.
+[  444.98s ->   448.44s] If you guys like content like this, make sure you guys like the video and subscribe to the channel.
+[  448.54s ->   449.58s] It will really help the channel out.
+[  449.96s ->   453.34s] If you guys have any questions or comments, drop a comment down in the comments below.
+[  453.72s ->   458.84s] If you guys want to learn more about how I day trade credit spreads, make sure you guys check out this video link to the end screen right here.
+[  459.36s ->   460.64s] Until next time, stay safe in the market.
+[  460.64s ->   461.38s] Peace.

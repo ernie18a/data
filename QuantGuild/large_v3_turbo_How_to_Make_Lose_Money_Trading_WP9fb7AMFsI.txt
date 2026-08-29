@@ -1,0 +1,201 @@
+[    0.46s ->    10.22s] and we are back welcome back today what I want to do is talk about problems with statistics in
+[   10.22s ->    16.96s] trading this is the only video that you need to understand probability and statistics in the
+[   16.96s ->    22.48s] context of trading this is not going to teach you all of probability and statistics but this is
+[   22.48s ->    29.08s] going to highlight some of the major issues with the application of probability and statistics at
+[   29.08s ->    35.10s] an undergraduate graduate level in the context of trading some sort of product whether it be a
+[   35.10s ->    42.08s] derivative product equities etc I've been doing a lot of trading recently on my own and I thought
+[   42.08s ->    47.60s] that this would be particularly relevant and interesting so without further ado let us head
+[   47.60s ->    57.71s] on over to my Jupiter notebook and we can go ahead and get started so clearly we need to model
+[   57.71s ->    64.77s] the particular product that we are trading if we had the underlying density the structure of the
+[   64.77s ->    70.97s] underlying density for the process there would be literally no reason to develop a model we would
+[   70.97s ->    77.01s] just use that density to derive all of our statistics and probabilities and all would be well in the world
+[   77.01s ->    84.83s] but instead we're left with this this open-ended issue of of modeling the dynamics of some sort of
+[   84.83s ->    92.03s] process whether it be a stock price path or the appropriate value for a derivative product whatever
+[   92.03s ->    97.15s] it is we're trying to model or whatever it is we're trying to price or anything like that it's a very
+[   97.15s ->   104.69s] open-ended question now what I want to do is start with a very fundamental issue in statistics and that is
+[  104.69s ->   112.43s] parameter estimation and I want to progress down to the idea of stationarity and edge in trading and how all of these
+[  112.43s ->   117.55s] things kind of work together and by the end of this video you'll have a really nice big picture of
+[  117.55s ->   125.07s] how statistics can be used for trading and identifying profitable trading strategies and identifying if
+[  125.07s ->   131.07s] your strategy could be profitable but also the pitfalls that you can run into in implementing your trading
+[  131.07s ->   138.35s] strategy so number one is parameter estimation so I had said that if we knew the underlying structure of the
+[  138.35s ->   145.15s] density or the dynamics of the process we would have no reason to implement a model that's pretty fancy
+[  145.15s ->   151.07s] what does that mean well what I'm saying is I'm going to draw a parallel to a coin flip
+[  151.71s ->   158.19s] process here so what I have here is I'm going to flip a coin 10 times and the parameter for each coin flip
+[  158.59s ->   161.95s] that is the probability of the heads is going to be 0.5
+[  162.91s ->   168.11s] so each coin flip has a 50 chance of landing on a heads I'm going to constitute that as a success
+[  169.34s ->   174.22s] and then that's going to be an outcome of one if I land on a tails then I'm going to get a zero
+[  175.42s ->   180.78s] and I'm going to do this 10 times and what you'll see here is I have a list of the outcomes
+[  181.90s ->   189.74s] and I have two heads and I have eight tails now clearly this is random every time I do 10
+[  189.74s ->   196.62s] coin flips I'm going to get a different set of results it's finite that is in in the context of
+[  196.62s ->   202.94s] how many combinations or permutations of heads and tails are there there is a finite number of those
+[  202.94s ->   211.10s] but each trial itself of 10 coin flips is going to be random so parameter estimation is a fundamental
+[  211.10s ->   217.66s] problem in statistics and we have a lot of tools to be able to estimate population parameters so again
+[  217.66s ->   224.46s] parameter being this 0.5 if we knew what this 0.5 was in the context of the the stock market whether
+[  224.46s ->   230.62s] it be some sort of like I said derivative product or underlying equity process regardless if we knew
+[  230.62s ->   236.78s] what the parameter set was in the dynamics then we wouldn't need to estimate anything so we don't have
+[  236.78s ->   242.22s] that 0.5 in the context of the market so the best we could do is look at data and try to build a model
+[  242.22s ->   249.74s] using that data to parameterize some sort of model this brings us to problem one parameter estimation we
+[  249.74s ->   255.10s] have a lot of tools at our disposal confidence intervals simulation variance reduction we have
+[  255.10s ->   261.98s] a lot of tools we can use historic data whether or not that's appropriate we'll talk about in problem two
+[  262.62s ->   268.80s] but here is just one example of an issue with parameter estimation well take a look at this
+[  268.80s ->   276.16s] what if these 10 trials were the only trials that i could observe i can't repeat this process
+[  277.28s ->   282.64s] think about it the previous 10 days of trading only occurs one time i can't repeat that
+[  283.52s ->   290.72s] so if i take the average number of heads here i'm going to get 20 percent that's going to be my estimated
+[  290.72s ->   297.23s] parameter the particularly keen among us may be talking about variance and confidence intervals and
+[  297.23s ->   302.43s] you know i i commend you but let's go ahead and digress from that notion for now and just take a
+[  302.43s ->   309.47s] look at a simple parameter estimation we have two of the 10 flips being heads so wouldn't it be reasonable
+[  309.47s ->   316.35s] if i didn't know what the parameter was we know the population parameter is 0.5 but if i didn't know
+[  317.15s ->   325.12s] 20 might be a reasonable guess okay that brings us to the first issue of parameter estimation okay there
+[  325.12s ->   333.50s] is a lot that you can do simulation variance reduction aiding and tightening the the bounds of
+[  333.50s ->   339.58s] a confidence interval to provide a more precise estimate as to whether or not that interval contains
+[  339.58s ->   346.70s] the parameter but again this is a fundamental issue so that's going to be problem one parameter
+[  346.70s ->   354.82s] estimation is how do you determine what that parameter should be in the context of a trading strategy
+[  354.82s ->   361.86s] you're not just looking at 0.5 as the probability of heads or tails you're looking at the probability
+[  361.86s ->   368.98s] of a winning trade and the probability of a losing trade it's the same idea as a coin flip heads and tails
+[  370.72s ->   380.32s] but here you need to estimate that probability do you trade 100 days is that enough data to estimate
+[  380.32s ->   385.98s] your probability so hopefully this is starting to become a little bit more apparent as to why this is an
+[  385.98s ->   391.82s] issue you only have so much money to trade with and more often than not if you're testing a strategy
+[  391.82s ->   396.54s] you're going to lose it so what about back testing can't you just back test your strategy and then
+[  396.54s ->   402.54s] take a look at the probabilities well yes and no this brings us to problem two so problem one is
+[  402.54s ->   408.30s] parameter estimation you can either trade live and try to determine your your winning probabilities
+[  408.86s ->   412.62s] and determine whether or not your strategy is going to be profitable in the long run if you have some
+[  412.62s ->   418.06s] sort of edge otherwise you can back test but what's the problem with back testing that's that's this
+[  418.06s ->   426.78s] idea of stationarity so what is the issue with this idea of stationarity well in the context of our coin flip
+[  426.78s ->   432.78s] experiment you can take a look at each coin flip as an experiment you could take a look at each trade
+[  432.78s ->   440.94s] as an experiment the population parameter 0.5 is not going to change that is a key underlying
+[  440.94s ->   447.98s] assumption of our parameter estimation is that it is not a function of time if we come down here to
+[  447.98s ->   454.94s] the idea of stationarity let's take a look at what happened here well in the previous 10 coin flips
+[  454.94s ->   464.19s] i have observed seven heads so i've estimated the parameter to be 0.7 but the true parameter is
+[  464.19s ->   471.84s] actually 0.46 okay if we were to reiterate this experiment let's say another 10 trades go by or 10
+[  471.84s ->   477.44s] coin flips you can use either as an example here we have a pretty reasonable estimation of the parameter
+[  477.44s ->   484.96s] the true parameter is 0.51 and our estimation was 0.5 but we repeat this again and we could see okay our
+[  484.96s ->   492.00s] estimated parameter here is 0.2 but the true parameter is 0.4 and all i'm saying is i'm letting
+[  492.00s ->   499.84s] this p value change with time randomly so i'm saying the parameter p is a random function of time which is
+[  499.84s ->   506.88s] very reasonable for the dynamics that govern a stock price process or some sort of trading strategy that
+[  506.88s ->   513.76s] is a time dependent function of a stochastic process and this is the key issue we're either
+[  513.76s ->   519.36s] underestimating or overestimating or overestimating the probability because the parameter changes over
+[  519.36s ->   526.00s] time when does it change i have no idea is it going to change every 30 minutes every 20 minutes every
+[  526.00s ->   533.52s] hour every 10 days we have no idea you can back test all you like but this is the same reason why
+[  533.52s ->   539.52s] historic results are not indicative of future performance is because of this key issue with with
+[  539.52s ->   546.40s] stationarity stationarity we have no idea what the parameter is going to be and when because if we did
+[  546.40s ->   550.72s] we wouldn't need to try to model anything we wouldn't need to try to estimate any parameters
+[  551.68s ->   559.04s] so this is the key issue with stationarity that is the parameter of the underlying density or the
+[  559.04s ->   565.12s] parameters of the underlying density or the dynamics of the process are going to change over time and you'll
+[  565.12s ->   572.40s] see a lot of different processes that try to emulate this behavior and what ends up happening is you
+[  572.40s ->   579.28s] have some sort of stochastic term that evolves over time and that's scaled by some sort of time dependent
+[  579.28s ->   584.24s] function and you know you can take a look at things like maybe a local volatility you could take a look
+[  584.24s ->   590.72s] at stochastic volatility that aim to capture that that parameterization over time but it is a very
+[  590.72s ->   597.28s] non-trivial task and of course the dynamics themselves are stochastic so we have this fundamental issue
+[  597.28s ->   603.60s] here so that's the second problem here we're going to transition to this idea of edge but before we do
+[  603.60s ->   609.60s] i want to emphasize that these are not the only issues these are just some very prevalent issues in
+[  609.60s ->   617.68s] applying basic statistics to the idea of trading you could have violations of independence you could have
+[  617.68s ->   624.16s] a violation of the density assumption that you're assuming your returns are distributed as you could
+[  624.16s ->   628.88s] say that they're normally distributed or log normally distributed when in reality they have
+[  629.52s ->   634.24s] excess kurtosis and they're leptocurtic and all the moments don't match and you have all of these different
+[  634.24s ->   641.12s] issues there's volatility clusters leverage effects so on and so forth so there are a variety of issues baked into the
+[  641.68s ->   647.60s] actual empirics of the financial markets but for now let's just take a look at these in the context of a
+[  647.60s ->   654.00s] simple trading strategy and see why we have an issue with parameter estimation and stationarity
+[  654.00s ->   664.14s] by looking at a trading strategy so what is edge let's start with this idea of edge i think in simple
+[  664.14s ->   669.90s] terms we can just say edge is the idea that if you were to reiterate this experiment whether it be
+[  669.90s ->   678.78s] playing roulette or trading a particular strategy in the long run you're gonna make money and that can
+[  678.78s ->   686.62s] constitute what's known as a positive drift in other words supposing that you don't go bankrupt first
+[  686.62s ->   693.20s] which is more of like a gambler's fallacy sort of problem you will make money in the long run assuming
+[  693.20s ->   701.12s] this expectation is strictly positive and is going to maintain its positive nature over time key word
+[  701.12s ->   711.70s] maintain positive nature over time time okay let's break down this this expectation here and talk about
+[  711.70s ->   718.58s] the implications so for any trading strategy s we could say that that's buy on close sell on open buy
+[  718.58s ->   724.66s] on open sell on close buy on open sell midday buy when there's an imbalance sell when there's momentum
+[  724.66s ->   734.08s] whatever it may be we can define a trading strategy s and the expected pnl will always be as follows the
+[  734.08s ->   742.72s] expectation of s is equal to the expected pnl when you win times the probability of a win plus the
+[  742.72s ->   749.12s] expected pnl when you lose times the probability you lose and that is going to be the same as the
+[  749.12s ->   755.12s] unconditional average of your overall pnl but this is going to give you more information why because
+[  755.12s ->   761.92s] it tells you how your win and loss ratio plays into your overall trading eggs your expectation of your
+[  761.92s ->   771.15s] pnl over time okay but what are these values clearly we do not know we can get these values one of two ways
+[  771.15s ->   776.75s] we can back test obviously there's a whole set of issues with back testing you can have look ahead bias
+[  776.75s ->   782.59s] you can fit a curve you can do ten thousand and one things wrong in estimating these probabilities
+[  782.59s ->   789.23s] even more issues and bias than i've already discussed or you could trade live you could trade
+[  789.23s ->   793.47s] live with your own money and then try to estimate these probabilities so this takes us to that first
+[  793.47s ->   798.83s] issue of parameter estimation how much is enough what is a reasonable amount of data to use and when do
+[  798.83s ->   805.39s] you change these values maybe you change them on a rolling basis every week maybe every two weeks
+[  805.39s ->   811.39s] so on and so forth it's important to keep that in mind is they are not stationary so these two
+[  811.39s ->   818.88s] issues immediately play into the expected pnl of our trading strategy so what do i do well i'm going
+[  818.88s ->   825.04s] to take data that i have here from trades and i'm going to compute the expectation of my trading strategy
+[  825.04s ->   834.88s] the expected pnl so here's my data i have pnl of 150 120 90 100 minus 300 minus 100 and minus 50.
+[  834.88s ->   841.28s] i have four wins and three losses so what can i do well i can derive each piece of this equation
+[  841.28s ->   849.36s] and then glue it together to get the overall expectation so the expected pnl when i win is 115
+[  850.16s ->   859.44s] the expected pnl when i lose is minus 150 the probability of a win is 0.57 roughly and the probability
+[  859.44s ->   869.92s] of a loss this should be a loss is 0.43 roughly so when i multiply the probability of a win times the
+[  869.92s ->   878.40s] expected pnl of a win plus the probability of a loss times the expected pnl of a loss then i'm going
+[  878.40s ->   884.48s] to get the overall expected pnl and that's exactly what this equation here is telling us it's saying if i
+[  884.48s ->   890.16s] take the average winner multiplied by the probability of winning plus the average loser times the
+[  890.16s ->   898.35s] probability of losing then i get the unconditional average pnl okay this is great so my unconditional
+[  898.35s ->   903.55s] average pnl is 1.42 what i'm going to do is i'm actually going to simulate this trading strategy over
+[  903.55s ->   911.39s] time so here i'm going to simulate it for 252 days i'm going to assume that on each day i'm either going to
+[  911.39s ->   919.79s] have a win or a loss according to this estimated parameter set here and after a year of trading
+[  919.79s ->   928.45s] this is my outcome well that's not good i'm down 3 000 bucks that's terrible well if i rerun this look
+[  928.45s ->   936.85s] i'm up 750 dollars so where's my edge why am i not seeing my edge well if i keep running this i'm
+[  936.85s ->   945.28s] going to get different charts it's stochastic but if i increase the days to say 2 000 now we're starting
+[  945.28s ->   953.28s] to see some drift if i make it a hundred thousand now we're starting to see some drift if i make this
+[  953.28s ->   961.26s] a million now we're starting to see what i mean by this this drift right we're seeing this this edge
+[  961.98s ->   967.66s] that's exactly what we have here is even though it's stochastic we have this edge we're going to have
+[  967.66s ->   976.22s] losses we may have big losses we're going to have wins we may have big wins over time everything's
+[  976.22s ->   984.86s] going to average out such that we will generate money over time we will be profitable in the long
+[  984.86s ->   993.74s] run you just have to survive the short run here we survive the short run here we survive the short run
+[  993.74s ->  1000.43s] here we do as well here maybe we would have gone bankrupt first again more of a gambler's fallacy
+[ 1000.43s ->  1006.99s] problem from a stochastic processes class but you catch my drift pun intended so what we have here
+[ 1006.99s ->  1012.11s] is we have the equity curve of our strategy and we can see that edge over time as i increase the number
+[ 1012.11s ->  1018.19s] of time steps we get this curve going up and to the right that is our income over time that's what we
+[ 1018.19s ->  1026.59s] want to see from a trading strategy okay but very easily these parameters just as we saw up here
+[ 1026.59s ->  1033.07s] in the context of stationarity and parameter estimation they could be wrong first of all there's
+[ 1033.07s ->  1039.63s] no reason why the probability of a win should be 0.57 and the probability of a loss should be 0.43
+[ 1039.63s ->  1048.64s] what if in reality we estimated wrong we estimated the coin flip wrong here we said 20 so why is this
+[ 1048.64s ->  1057.04s] enough data to estimate the probability of a win right if i run this equity curve look at that that's
+[ 1057.04s ->  1062.72s] terrible that is terrible what if we don't include transaction costs this could be even worse
+[ 1063.44s ->  1070.40s] okay so in the context of parameter estimation and stationarity there's no reason for this curve
+[ 1070.40s ->  1077.38s] to maintain the same parameter set or the parameter set that we've estimated in the first place is
+[ 1077.38s ->  1086.64s] already wrong so those are two potential issues in this idea here okay why is the law of total
+[ 1086.64s ->  1092.08s] expectation helpful well if you keep reevaluating this on a weekly basis maybe you stay current maybe
+[ 1092.08s ->  1098.56s] every 30 days so you know it's completely arbitrary you can determine whether or not you're gaining losing
+[ 1098.56s ->  1103.20s] eggs or you know you can take a look at your edge over time and and even plot that and see if in the
+[ 1103.20s ->  1109.84s] long run you will have a reasonable strategy that is capable of of generating money so what i have here
+[ 1109.84s ->  1116.00s] is a little app i mean i could barely call this an app i would say but if i change this slider i'm going
+[ 1116.00s ->  1122.80s] to compute the edge of the trading strategy s so this is my win probability here and you'll notice that
+[ 1122.80s ->  1127.92s] the loss probability is just going to be the complement one minus whatever this value is
+[ 1127.92s ->  1133.04s] so if i make the win probability lower let's take a look at what happens to my edge
+[ 1134.00s ->  1140.08s] goes away minus 70. well that makes sense right because the probability of a loss is much greater
+[ 1140.08s ->  1145.20s] than the probability of a win and the expected value of a loss is much greater than a win so this is
+[ 1145.20s ->  1153.38s] a terrible strategy this is a terrible strategy but if my win percentage is like 80 then let's take a look
+[ 1153.38s ->  1160.66s] at my edge 67.299 that's that's fantastic here that's fantastic let's take a look at the equity
+[ 1160.66s ->  1170.10s] curve under this condition look at that that's one year if i have 80 wins and my win expectation my
+[ 1170.10s ->  1175.86s] my average winner is 115 bucks my average loser is 150 that's my equity curve trading that for a year
+[ 1175.86s ->  1184.80s] assuming that i can get one trade in a day but what if my win is 10 bucks and my loss is 150 yeah
+[ 1184.80s ->  1191.44s] i have an 80 win rate but what's my edge minus 17 what's my equity curve look like that's a terrible
+[ 1191.44s ->  1198.86s] equity curve that is a terrible terrible equity curve so this is just something to keep in mind that
+[ 1198.86s ->  1205.34s] you know when you are trading a particular strategy these things are objective these things exist whether you
+[ 1205.34s ->  1211.42s] like it or not you have a win probability that is a time dependent stochastic function and you also
+[ 1211.42s ->  1217.58s] have a expectation and a you have a win expectation and a loss expectation that is the average winner
+[ 1217.58s ->  1222.86s] your average winning trade and your average loser your average losing trade whether you like it or not
+[ 1222.86s ->  1227.50s] those things are present and they're always evolving through time so you're going to have to do your
+[ 1227.50s ->  1232.62s] best to estimate these values there's a lot of different techniques in the literature i'm not saying
+[ 1232.62s ->  1237.58s] these are impossible problems to solve but they are problems that you are going to have to deal with
+[ 1237.58s ->  1241.74s] you have to determine whether or not you're using enough data to estimate your parameters are you using
+[ 1241.74s ->  1247.74s] too much old data should you weight new data more how are you looking at your average winner and loser
+[ 1247.74s ->  1253.58s] has there been a regime change is it different post covid is there a new regulation that impacted your over
+[ 1253.58s ->  1259.74s] so do you see how there's so much that goes into determining the actual parameters associated with the
+[ 1259.74s ->  1266.14s] trading strategy trading strategies don't always work sometimes they work for a couple years then
+[ 1266.14s ->  1272.22s] they stop working you just got to survive a bonus cycle or two and you'll get rich and then you'll get
+[ 1272.22s ->  1278.06s] fired or the firm will go bankrupt you know so these are kinds of the ideas that i wanted to cover in
+[ 1278.06s ->  1284.70s] today's video to shed some light on what's actually going on in trading it's not that necessarily people
+[ 1284.70s ->  1291.42s] know more than other people or they have some sort of magic crystal ball unless they're insider trading
+[ 1291.42s ->  1297.58s] which is you know always going to happen anyway but in the context of edge this is exactly what it
+[ 1297.58s ->  1302.94s] means is like look at this we have negative edge over time we're just losing money versus here if the
+[ 1302.94s ->  1309.68s] loss is only 27 bucks what kind of edge do we have five bucks of edge that's a great equity curve
+[ 1310.98s ->  1317.62s] so i hope you found this this video informative if nothing else maybe maybe slightly entertaining
+[ 1317.62s ->  1325.38s] but these are practical statistical tools you can add to your toolbox right now to evaluate how you're
+[ 1325.38s ->  1330.34s] trading you can take a look at your expected loss expected win look at the probability and see hey like
+[ 1330.34s ->  1334.66s] you have a negative edge over time you're just going to keep losing money or you're going to keep making
+[ 1334.66s ->  1341.62s] money maybe depending on how the parameters evolve over time so i'm going to put a link to this jupiter
+[ 1341.62s ->  1349.30s] notebook in the description box below if you'd like to check it out i'll post it on my github and you
+[ 1349.30s ->  1352.98s] can play around with these charts if you have any questions you can leave them in the comment section join
+[ 1352.98s ->  1359.22s] the discord tend to be a little more responsive there um but i hope you've enjoyed this video
+[ 1359.22s ->  1365.86s] talking about some problems with statistics in trading and i will see you in the next one if you'd
+[ 1365.86s ->  1380.38s] like to see more content like this please let me know other than that thanks for watching

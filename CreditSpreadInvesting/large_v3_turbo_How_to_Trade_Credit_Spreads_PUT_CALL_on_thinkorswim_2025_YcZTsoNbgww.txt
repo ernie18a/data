@@ -1,0 +1,169 @@
+[    2.83s ->     9.25s] So you're looking to open up your first credit spread on TD Ameritrade, the Thinkorswip platform, but you're not exactly sure how to do it.
+[    9.63s ->    11.41s] Perfect. You guys come to the right place.
+[   11.89s ->    13.81s] Today in this video, I'll show you guys how to walk.
+[   14.17s ->    23.65s] I'll walk you guys through step by step on how to open up both a put and a call credit spread on the Thinkorswip platform, which is owned by TD Ameritrade.
+[   23.77s ->    29.95s] So if you have a TD Ameritrade account, you have free access to this trading platform.
+[   29.95s ->    36.61s] Okay, so trading credit spreads on this platform is the same as any other platform.
+[   36.95s ->    39.89s] The first step is that you have to choose the stock that you want to trade.
+[   40.17s ->    43.63s] So it doesn't matter how you find the stock.
+[   43.77s ->    52.55s] It could be because you guys looked at a graph and you really like the price action on the graph or you just really want to be in the trade because you heard some good news on it, so on and so forth.
+[   53.07s ->    56.27s] It goes without saying, you have to have a stock in mind ready to trade.
+[   56.27s ->    69.33s] So once the obvious is over, I'll go over to the trade tab right here where my cursor is hovering and make sure that you have the correct stock ticker in this upper left-hand corner that I'm hovering.
+[   69.79s ->    72.27s] So for today, I was just looking at Amazon.
+[   73.13s ->    75.95s] I really like the price action and the level that it's currently at.
+[   75.95s ->    80.36s] So I want to sell a put credit spread for the $3,000 strike price.
+[   81.02s ->    82.62s] So I'm selling Amazon.
+[   83.38s ->    91.24s] And then to make sure that you're selling credit spreads, you have to go to the spread ticker right here and then click vertical.
+[   91.44s ->    94.78s] This is all the options that you guys can sell or buy.
+[   95.02s ->    97.96s] In this case, a vertical spread is also called a credit spread.
+[   98.14s ->    98.98s] So click on that.
+[   98.98s ->   102.86s] Now, I'm going to shorten this list a little bit.
+[  104.08s ->   105.58s] I want to sell.
+[  105.66s ->   106.36s] You can choose any date.
+[  106.52s ->   111.24s] In this scenario, I'm going to choose 31 days out, days to expiry in this column right here.
+[  111.88s ->   114.60s] But you can choose any date that you want.
+[  114.70s ->   116.00s] So let's just go with February 12th.
+[  117.24s ->   120.36s] And I want to sell for the $3,000 level, correct?
+[  121.32s ->   123.90s] So you can go to, let's go to $10,000.
+[  124.06s ->   125.10s] You don't see $3,000.
+[  125.26s ->   125.98s] You go to $12,000.
+[  126.62s ->   127.08s] There you go.
+[  127.08s ->   132.66s] You see, there's $2,980 and $2,990 and $2,990 and $3,100.
+[  133.54s ->   137.54s] So for me, because I sell based off of levels, I want to sell below $3,000.
+[  138.60s ->   141.72s] You can see that there's no $3,000 on here.
+[  141.78s ->   144.88s] And this happens sometimes depending on the week that you're selling for.
+[  146.02s ->   151.70s] It may or may not have the exact strike price that you're trying to sell for.
+[  151.94s ->   152.42s] And that's okay.
+[  152.48s ->   153.06s] That's pretty normal.
+[  153.38s ->   156.84s] So in this case, because there's no $3,000, I'm going to sell at the $2,990.
+[  156.84s ->   159.44s] Because I want to sell below $3,000 and I want to buy the $2,980.
+[  159.80s ->   164.08s] So if you want to sell the credit spread, you click on the bid option.
+[  164.26s ->   166.90s] If you want to buy a credit spread, you click on the ask.
+[  167.18s ->   170.16s] And you can tell by the color on the thinkorswim platform.
+[  170.30s ->   173.78s] Green means that it's a debit, which means that you're paying money for something.
+[  175.16s ->   179.30s] Red means that it's a credit, which means that you're receiving money for something.
+[  180.16s ->   183.59s] So now let's head down to this bottom portion right here.
+[  183.91s ->   185.87s] This is where you have your order entry.
+[  186.09s ->   187.73s] So you want to double check the information.
+[  187.85s ->   188.61s] This is really important.
+[  189.03s ->   190.09s] Make sure it's a vertical spread.
+[  190.51s ->   194.35s] Make sure you're selling the $2,990 put for February 12th on Amazon.
+[  194.85s ->   200.09s] You're buying the $2,980 put for Amazon on February 12th.
+[  200.21s ->   201.21s] And here's the quantity.
+[  201.37s ->   202.49s] So I just want to sell one.
+[  204.28s ->   207.28s] Now, since we clicked on bid, we're selling a credit spread.
+[  207.76s ->   214.98s] You can see from credit, this price right here is just the mid price that TD Ameritrade has automatically entered for you.
+[  215.06s ->   216.74s] It's the mid between the bid and the ask.
+[  218.24s ->   221.78s] You can lower it or you can raise it according to what you want to do.
+[  222.36s ->   225.44s] But in this scenario, I'm just going to use the mid price to open up the trade.
+[  225.98s ->   231.22s] So after double checking to make sure that everything is correct, click confirm and send.
+[  231.22s ->   240.51s] And here is just an order confirmation screen where you can double check the specifications of the spread that you're opening.
+[  240.65s ->   243.37s] Max profit is the $357 that you just entered.
+[  243.99s ->   247.05s] Max loss is the total spread minus your total profit.
+[  247.45s ->   254.63s] So you have a 10 point spread, which means that your total liability is $1,000 minus your total profit, $357, which equals $643.
+[  255.19s ->   256.15s] Now, that's one right here.
+[  256.15s ->   266.99s] As long as your resulting buying power for options is positive, this trade or this order will go through the thinkorswim platform and won't get rejected.
+[  268.07s ->   268.77s] Okay, cool.
+[  268.85s ->   271.09s] So let's just go and press send.
+[  272.11s ->   276.29s] Now, if it filled, you'll see a dialogue pop up in the upper left hand corner.
+[  277.39s ->   278.57s] In this case, we did.
+[  278.57s ->   285.03s] And so in this scenario, since we're teaching you how to open one, I'm going to go ahead and modify this order.
+[  285.59s ->   302.41s] But if another option for you, if you don't really care to be in the order and to have this order fill immediately, you can just leave it open and have someone come in and buy it and place the same price as the one that you just bid for that you asked for.
+[  302.41s ->   302.57s] Sorry.
+[  303.29s ->   305.37s] So let's go to a cancel and replace order.
+[  305.97s ->   307.89s] And so you can kind of tell the price has dropped.
+[  308.33s ->   309.89s] Mid has dropped to like $345.
+[  310.13s ->   313.51s] So I'm going to lower this price because I really want to be in the trade in this scenario.
+[  313.59s ->   315.07s] So I'm just going to accept $335.
+[  315.71s ->   315.97s] Okay.
+[  316.37s ->   317.17s] And confirm and send.
+[  317.17s ->   319.47s] So you see the credit, the max profit has dropped.
+[  319.65s ->   323.87s] The max loss has increased, but I'm still positive on the resulting buying power for option.
+[  324.07s ->   328.21s] So I'm going to go ahead and send this order in to TD Ameritrade and see what happens.
+[  328.93s ->   332.79s] Now you see on the upper left-hand corner right here, this spread has been sold.
+[  334.53s ->   335.43s] That's been confirmed.
+[  336.27s ->   336.39s] Okay.
+[  336.65s ->   338.99s] And another thing that you can do is you can just come in here and double check.
+[  339.19s ->   340.19s] So I already have a couple.
+[  340.41s ->   341.93s] So this is just increased by one.
+[  344.49s ->   346.53s] So now I want to sell a 30.
+[  346.69s ->   349.55s] I want to go and sell a credit, a call credit spread.
+[  349.87s ->   351.85s] So for me, what I do is I go back to the chart.
+[  352.79s ->   357.51s] I come back here and I'm like, okay, I want to sell for the $35.50 level because that's the previous high.
+[  358.21s ->   359.41s] So I go back to trade.
+[  360.72s ->   365.64s] And now instead of selling a put right here, I want to go right here and sell a call.
+[  366.30s ->   368.62s] So you don't see $35.50 in this column.
+[  368.78s ->   369.94s] So I'm going to go to $14.
+[  370.34s ->   371.72s] $35.50 is pretty out of money.
+[  372.20s ->   373.30s] So now I'm going to have to go to all.
+[  373.66s ->   376.22s] I'm going to scroll all the way down until I find $35.50.
+[  377.54s ->   377.76s] Okay.
+[  377.86s ->   380.00s] So $35.50 is around here.
+[  381.17s ->   384.03s] So what do I have to press again?
+[  384.03s ->   388.69s] I have to press, as you can see, ask is a debit spread.
+[  389.39s ->   391.13s] Bid is a credit spread.
+[  391.13s ->   392.55s] So I want to sell a credit spread.
+[  393.55s ->   398.82s] So once again, come in here, double check your order information, vertical, sell.
+[  399.04s ->   400.10s] This time I'm selling a call.
+[  400.20s ->   401.10s] So $35.50 call.
+[  401.34s ->   403.28s] And I'm buying a higher strike price.
+[  403.34s ->   407.02s] So $35.60 call for Amazon for February 12th.
+[  407.02s ->   408.92s] In this case, I just want to sell one again.
+[  409.98s ->   410.60s] Change that.
+[  411.24s ->   412.80s] And the price, again, is the same.
+[  413.58s ->   418.18s] And so in this case, I just want the order to execute at a higher probability.
+[  418.36s ->   422.24s] So I'll just lower the price by $0.10 and see if that will close.
+[  422.32s ->   423.16s] So just go to confirm.
+[  423.44s ->   425.68s] After double checking your information, click confirm.
+[  426.40s ->   428.04s] In this case, max profit is $100.
+[  428.50s ->   431.54s] Max loss is $900 because it's still a 10-point spread minus $100.
+[  431.90s ->   434.18s] So $1,000 minus $100 equals $900.
+[  435.40s ->   437.16s] Resulting buying power for options still positive.
+[  437.66s ->   438.86s] Now I'll send this order in.
+[  439.52s ->   439.92s] Perfect.
+[  440.28s ->   443.10s] It closed at $106.
+[  443.86s ->   444.90s] So, okay.
+[  445.18s ->   446.48s] Now I can come back and double check.
+[  446.74s ->   447.22s] That is here.
+[  447.30s ->   448.10s] I used to have one.
+[  448.88s ->   449.76s] Now I have two.
+[  450.22s ->   452.76s] Which confirms that this order was properly placed.
+[  453.89s ->   454.09s] Okay.
+[  454.53s ->   455.45s] And that's about it.
+[  455.59s ->   462.07s] So that's how you open up both a call and put credit spread on TD Ameritrade's thinkorswim platform.
+[  462.45s ->   466.41s] If you have any questions, leave a comment in the comment section below.
+[  466.41s ->   468.77s] And if you like the video, please give me a thumbs up.
+[  468.91s ->   476.21s] And subscribe to this channel for more credit spread information and more financial news and investing tips.
+[  476.83s ->   477.09s] All right.
+[  477.21s ->   477.75s] See you guys.
+[  478.33s ->   479.33s] Thanks for visiting.
+[  479.77s ->   480.51s] I'll see you guys next time.
+[  480.97s ->   481.25s] Peace.
+[  481.25s ->   482.25s] Peace.
+[  482.25s ->   483.25s] Peace.
+[  483.25s ->   484.25s] Peace.
+[  484.25s ->   485.25s] Peace.
+[  485.25s ->   486.25s] Peace.
+[  486.25s ->   487.25s] Peace.
+[  487.25s ->   488.25s] Peace.
+[  488.25s ->   489.25s] Peace.
+[  489.25s ->   490.25s] Peace.
+[  490.25s ->   491.25s] Peace.
+[  491.25s ->   492.25s] Peace.
+[  492.25s ->   493.25s] Peace.
+[  493.25s ->   494.25s] Peace.
+[  494.25s ->   495.25s] Peace.
+[  495.25s ->   496.25s] Peace.
+[  496.25s ->   497.25s] Peace.
+[  497.25s ->   498.25s] Peace.
+[  498.25s ->   499.25s] Peace.
+[  499.25s ->   500.25s] Peace.
+[  500.25s ->   501.25s] Peace.
+[  501.25s ->   502.25s] Peace.
+[  502.25s ->   503.25s] Peace.
+[  503.25s ->   504.25s] Peace.
+[  504.25s ->   505.25s] Peace.
+[  505.25s ->   506.25s] Peace.
+[  506.25s ->   507.25s] Peace.
+[  507.25s ->   508.25s] Peace.
+[  508.25s ->   509.25s] Peace.

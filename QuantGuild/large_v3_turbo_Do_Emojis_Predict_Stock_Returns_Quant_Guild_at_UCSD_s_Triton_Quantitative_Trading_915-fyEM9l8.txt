@@ -1,0 +1,786 @@
+[    0.46s ->     6.95s] The following is a quantitative research talk that I gave to the University of California,
+[    7.07s ->    14.99s] San Diego's Triton Quantitative Trading Group. I discuss my paper, which uses emojis to produce
+[   14.99s ->    21.09s] return predictability in the cross section. I outline what it means to have a career in
+[   21.09s ->    27.65s] quantitative research, how to position yourself for such a career. I dive into the quantitative
+[   27.65s ->    34.81s] research pipeline all the way from data acquisition to data analysis. And I wrap up with a wonderful
+[   34.81s ->    42.63s] Q&A. Over 70 attended the event, which spilled over into two classrooms. It was awesome to see
+[   42.63s ->    48.59s] so much participation. It was amazing to work with such a great organization. And I look forward to
+[   48.59s ->    53.63s] doing more seminars like this in the future. Moreover, these videos and talks certainly take
+[   53.63s ->    58.29s] a lot of effort to create. I do not charge universities or organizations for these
+[   58.29s ->    62.23s] seminars. So if you'd like to help support the channel so I can continue to create videos
+[   62.23s ->    67.99s] just like this one and host more free open source quantitative research seminars, please
+[   67.99s ->    73.35s] like, comment, subscribe, share. It helps me out tremendously. It is greatly appreciated.
+[   73.35s ->    79.79s] And if you'd like to master your quantitative skills, check out quantguild.com. Maybe you come
+[   79.79s ->    85.57s] from a background in business, economics, computer science, physics, and aren't too sure where to
+[   85.57s ->    90.47s] get started on your quant journey. Maybe you're an aspiring quant and you're wondering where to
+[   90.47s ->    96.21s] focus your study efforts. Maybe you're a working professional looking to switch industries or
+[   96.21s ->   101.61s] sharpen those quantitative skills for a technical interview. In any case, quantguild is for you.
+[  101.61s ->   107.83s] We have over 90 quant lessons in math, probability, finance, an adaptive practice engine that scales
+[  107.83s ->   113.21s] with your skill level so you can progress to more and more difficult topics with gamified rank based
+[  113.21s ->   119.87s] progress. Interview questions with fully worked solutions, trading games coming soon, courses from
+[  119.87s ->   127.59s] A to Z in math, probability, statistics, finance, data science, coding, all from the ground up. And all
+[  127.59s ->   132.99s] that's included with quant guild membership. And you can get started right now for free. So if you'd like to
+[  132.99s ->   140.03s] help support the channel and master your quantitative skills, check out quantguild.com. Without further
+[  140.03s ->   149.39s] ado, I present to you and UCSD's Triton Quantitative Trading, modeling stock returns with emojis. Let's
+[  149.39s ->   159.22s] kind of begin by talking about navigating the quant space here. And it's certainly intimidating when you
+[  159.22s ->   167.06s] first get started because there's so much to learn. It's such an interdisciplinary subject, right?
+[  167.78s ->   176.18s] It combines essentially, right? It combines math, probability and statistics, computer science,
+[  176.18s ->   183.22s] finance. And, you know, you could argue it starts to combine other fields and some fields, subfields as
+[  183.22s ->   189.94s] well, like linguistics, artificial intelligence, reinforcement learning, all those kind of very
+[  189.94s ->   196.02s] niche topics in all of these subjects. It kind of feels like it gets out of control very quickly. So,
+[  196.02s ->   201.54s] you know, really what I like to say when you start to consider the quant space, whether or not you're
+[  201.54s ->   208.82s] considering your career as a quant, the first thing you should do is assess your compatibility for the
+[  208.82s ->   217.14s] role. And this is not a trivial task. And it's very, it's very difficult to tease out if this is
+[  217.14s ->   224.26s] something that you'd actually like to do professionally. I love math. I absolutely love
+[  224.26s ->   230.66s] every part of working on a difficult problem, trying to figure out if there's some sort of analytical,
+[  230.66s ->   238.66s] numerical solution, whatever it may be. I absolutely love every component of it. I also really like to
+[  238.66s ->   247.22s] build software. So I make for a fantastic researcher in the context of empirical research. I can build,
+[  247.78s ->   256.10s] I can prototype, I can come up with solutions very, very quickly. And even though this is the case,
+[  256.74s ->   264.74s] I've always had a preference for theory, but I never was particularly suited to the theoretical work.
+[  264.74s ->   270.26s] I was always suited to the empirical work. And that's, that's a very important distinction there,
+[  270.26s ->   276.90s] being able to identify if you're compatible for this space. Is this something that, you know,
+[  276.90s ->   283.62s] you actually want to go out and pursue full time? This is the type of role that you want spending,
+[  283.62s ->   288.98s] you know, a majority of your day on these difficult problems. And then once you, once you assess,
+[  288.98s ->   296.18s] you know what, this is the sandbox that I want to play in, it comes time to position yourself,
+[  296.74s ->   302.90s] to position yourself based on a combination of your interests and natural skillset. So
+[  303.86s ->   310.26s] when it came to my interests and natural skillset, right, I had said I'm an empiricist, but I have a
+[  310.26s ->   317.94s] preference for theory. So I took a two pronged approach to positioning myself as a quant. I had
+[  317.94s ->   326.10s] this hand in quant research and trading. This consists of a ton of empirical work, very practical.
+[  326.10s ->   332.50s] This is, you know, not a place where we're just going to, you know, sit in the lab and come up with
+[  332.50s ->   337.54s] like some crazy strategy. No, this is really about coming up with something that you can,
+[  337.54s ->   342.90s] you can execute on, right? This is really empirical work that we are dealing with. Now,
+[  342.90s ->   348.74s] there's, of course, going to be a component of theory to it, to ensure that you can kind of cross
+[  348.74s ->   355.30s] between the lab and practice, so to speak, you know, going from going from more of an academic space
+[  355.30s ->   361.06s] to a practitioner space. So there is some theory there, but not as much as I had a preference for.
+[  361.06s ->   367.70s] So I always took this focus on equities and equity derivatives in the context of quant research,
+[  367.70s ->   375.62s] quant trading. Now, that was the empirical prong, but what about the theoretical prong? My personal
+[  375.62s ->   384.74s] preference, right? Derivatives pricing. There is a ton of theory involved, and that is what I had
+[  384.74s ->   391.70s] a preference for studying stochastic processes, studying pricing theory, specifically equity
+[  391.70s ->   399.70s] options, extrapolating exotic prices. This is where all of my interest pretty much still lies.
+[  400.26s ->   405.06s] In terms of this two-pronged approach, I still have a very strong preference towards
+[  405.06s ->   411.54s] this theoretical work. It's what I prefer to wrestle with all day. And the nice thing about this
+[  411.54s ->   417.62s] theoretical work is there's even space for machine learning and artificial intelligence in current
+[  417.62s ->   424.98s] streams of literature. So I really like taking this two-pronged approach because it enables me to
+[  424.98s ->   433.22s] pursue opportunities that I'm particularly suited for. And it gives me a little more versatility in
+[  433.22s ->   439.14s] my approach when it comes to things like the job market or different projects that I'll operate on in
+[  439.14s ->   446.82s] a contract capacity. That was my approach. Now, in terms of the roles that I was looking at,
+[  446.82s ->   453.30s] I was looking specifically in QR and QT, right? These are quant research, quant trading roles.
+[  454.34s ->   460.50s] And I never really was particularly suited to quant dev. That kind of just took the computer
+[  460.50s ->   465.62s] science a little too far than I was interested in. I never really had an interest in developing low
+[  465.62s ->   473.70s] latency systems. I have experience with C, C++, Java. So I'm aware of how these systems operate,
+[  473.70s ->   479.46s] how they're built, the different design patterns, so on and so forth. But that's not what I wanted to
+[  479.46s ->   485.94s] spend all of my time on. And that's a really important distinction is figuring out what it is
+[  485.94s ->   491.46s] you're going to be spending your whole day on. You want to be enjoying the work, right? And that's
+[  491.46s ->   498.42s] that's something that I wish that I focused on more earlier as a student, because I think I would
+[  498.42s ->   504.26s] have kind of ping-ponged around less and I would have focused more on this two-pronged approach.
+[  504.98s ->   511.14s] So I would certainly encourage you as a student, if you're looking to get involved in this space,
+[  511.14s ->   517.22s] you know, you're already a part of the quant trading club here. That's a fantastic start. Continue to
+[  517.22s ->   523.46s] assess your compatibility for different roles in the space and then look to start to position yourself
+[  523.46s ->   528.98s] for these different roles. Maybe you start writing. Maybe you start a blog and you start talking about
+[  528.98s ->   535.22s] quant research. Maybe you start talking about pricing theory. Who knows? That'll depend on your
+[  535.22s ->   542.02s] interest. But that is my advice when it comes to getting started navigating the quant space. And this is
+[  542.02s ->   548.66s] certainly a rabbit hole. We could dive down and talk about this for hours at end, how to go about
+[  548.66s ->   554.58s] structuring this optimally, but I will digress for now. But I think this is a great place to begin the
+[  554.58s ->   562.34s] talk because this kind of shows you where we're working in. This shows you context for the research
+[  562.34s ->   571.30s] project that I built in an academic capacity. So this talk specifically is focusing on a project in this
+[  571.30s ->   578.02s] space and the quant research trading space, but from an academic perspective. So research in an academic
+[  578.02s ->   585.06s] and industrial setting are somewhat equivalent, but their outcomes certainly vary. Roughly, you can
+[  585.06s ->   592.74s] think of this as pursuing some sort of open source publication versus some sort of for-profit
+[  592.74s ->   599.62s] implementation. And this will largely depend on your firm and the types of problems that you're working on.
+[  599.62s ->   608.42s] So let's talk about this difference between academic and industrial research. We're focusing on this idea
+[  608.42s ->   614.98s] of quant research, quant trading, and we're going to talk about my academic paper here, how many words is
+[  614.98s ->   626.23s] a picture worth using emojis from social media to predict future stock returns. Now, I very much dislike
+[  626.23s ->   633.59s] the word predict because I think it sends the wrong signal to especially students who are first getting
+[  633.59s ->   643.33s] involved in this space that these returns are in fact predictable. I want to, and if it's beating a
+[  643.33s ->   648.45s] dead horse, fantastic. That means the point was delivered. I want to overemphasize that there is no
+[  648.45s ->   654.45s] prediction in this space. There's no such thing as predicting a future return. There's no such thing as
+[  654.45s ->   661.09s] predicting a price path. Effectively, everything is uncertain, and we typically model it in terms
+[  661.09s ->   667.41s] of randomness to model that uncertainty. And when you're making trading decisions, whether it's in
+[  667.41s ->   673.57s] this context in a quantitative trading capacity or as a discretionary trader, you can frame this as a
+[  673.57s ->   681.09s] market maker. The list goes on. You're assigning likelihoods to different outcomes, and you're executing
+[  681.09s ->   686.61s] trades based on those likelihoods, and that's how you continue to accumulate wealth. We're not going
+[  686.61s ->   693.81s] to take our entire portfolio and bet it on black, and then, oh, if we hit, great. And if we don't,
+[  693.81s ->   699.57s] we're out of money, and now we need to raise more capital. It doesn't work like that. So I don't like
+[  699.57s ->   704.21s] the word predict for that reason. I want you to think in terms of prediction here, think about
+[  704.21s ->   711.49s] explainability. It's able to produce some facet of explainability in the cross-section. It is
+[  711.49s ->   718.21s] essentially coming up with a very valid way to assess the likelihood of different moves in a
+[  718.21s ->   723.97s] forward-looking sense. And that's really what I want to emphasize here in the context of prediction.
+[  723.97s ->   731.33s] All right. So what's the difference between academic and industrial, private, whatever research,
+[  731.33s ->   739.06s] right? Well, academic research, I'll focus on a few components, all right? First, if you're trying
+[  739.06s ->   747.94s] to answer a research question, it is difficult to get data. And what I mean by difficult is, and we'll
+[  747.94s ->   754.10s] see later on in the context of this paper, the question that you're trying to answer may or may
+[  754.10s ->   761.38s] not have valid data sources available. In this sense, right, with this particular paper, what would
+[  761.38s ->   768.02s] I need to answer this research question? Well, I'm going to need data from social media. How do I go
+[  768.02s ->   774.34s] about getting it? Institutions certainly have data sources, but I'm going to have to pay for those
+[  774.34s ->   778.90s] data sources. They're not available for free. Now, sometimes institutions will actually have
+[  778.90s ->   785.22s] academic access, and you'll be able to build those engines to manage those data pipelines yourself.
+[  785.22s ->   789.46s] We'll talk about this in a moment, but even still, if you have to build that entire pipeline yourself,
+[  789.46s ->   797.86s] that is certainly going to be a large project. It's a big effort, so difficult to get data, all right?
+[  797.86s ->   805.46s] That's what I want to emphasize here. You could spend months building an engine to query all this data
+[  805.46s ->   811.94s] to try to answer a question, and then you don't get any result. Now you got to pivot. Maybe there is no
+[  811.94s ->   817.43s] result there at all, and now you're scrapping the whole project. And this happens a lot in the space.
+[  817.43s ->   823.03s] In the context of academic research, a PhD is typically necessary for tenored positions.
+[  823.59s ->   830.71s] If you want to pursue a career in academia, you certainly need a PhD, and that is a dedication
+[  830.71s ->   835.67s] in itself. You have to know that that's where you want to be, all right? And of course, all of your
+[  835.67s ->   841.57s] contributions are typically open source. Now, there is some industrial collaboration. You can consult
+[  841.57s ->   849.49s] privately, and yeah, you have a lot of flexibility as an academic once you get there, but the pursuit
+[  849.49s ->   857.81s] of that goal, academic research, that has to be your trajectory, okay? There, of course, is a publisher
+[  857.81s ->   864.85s] parish culture in some sense, but again, I'll digress from this so we can talk about industrial research.
+[  864.85s ->   871.33s] Now, in the industrial research sense, private research, it is easier to get data. And when I say
+[  871.33s ->   876.93s] easier, what I mean is if you're at a big institution, maybe they're a fintech company, a data provider,
+[  876.93s ->   884.29s] maybe they're some sort of bank or hedge fund, very likely they will have a lot of data. They will have
+[  884.29s ->   890.85s] access to a lot of data, and you as a researcher will be able to ask and answer interesting questions
+[  890.85s ->   897.73s] with a call of an internal API. That is awesome. That is awesome. You don't have to spend
+[  897.73s ->   905.27s] an incredible amount of time building that data processing engine, that data querying engine,
+[  905.27s ->   913.22s] and you can just continue to iterate, continue to ask more research questions. So in that sense,
+[  913.22s ->   920.50s] yeah, research is going to be faster in the industry, right? Moreover, a PhD is not necessary for
+[  920.50s ->   927.38s] these roles, all right? When I got my first QR role, it was without a master's degree, okay?
+[  928.50s ->   934.98s] Moreover, in this context, it's not usually open source, your contributions, right? Mostly they're
+[  934.98s ->   941.30s] going to be internal. Sometimes there's collaboration with academics, sure, right? You see that at tech
+[  941.30s ->   947.62s] companies. Maybe you see that in some sort of like pure research capacity. You're trying to make an
+[  947.62s ->   954.82s] algorithm more efficient, things like that. But in terms of trading and research, yeah, that's going
+[  954.82s ->   961.86s] to be, it's going to be proprietary, right? I have a remark slash opinion at the bottom of this slide,
+[  961.86s ->   969.46s] and I try to separate as best I can the difference between fact and opinion for everyone that listens to
+[  969.46s ->   978.18s] any of my content. And my remarks slash opinion is, do not get a PhD because you want to go into
+[  978.18s ->   984.58s] quant research, and it's going to be, you know, arbitrarily easier to do that. You should get a
+[  984.58s ->   990.42s] PhD for the same reason that you should get a graduate degree, because you really, really love
+[  990.42s ->   998.42s] what you're going to learn, and you want to study it in that capacity. That is my best piece of
+[  998.42s ->  1006.18s] subjective advice for you. Pursue a PhD or a graduate degree because you have a passion for this subject,
+[ 1006.74s ->  1013.86s] okay? Passion does not equal want to make lots of money, right? Those two things are not equal. Otherwise,
+[ 1013.86s ->  1021.46s] I promise those five years, five plus years will be quite, quite difficult, all right? So fair enough.
+[ 1023.68s ->  1027.92s] Knowing this is the difference between academic and industrial research, right? We're going to focus
+[ 1027.92s ->  1035.60s] on this academic research component. That is the capacity this project was created in. So there's
+[ 1035.60s ->  1043.28s] really no notion in an academic sense of qualitative research when it comes to finance. Even if you
+[ 1043.28s ->  1049.76s] don't get a PhD in math, computer science, statistics, some sort of quantitative, you know,
+[ 1049.76s ->  1056.24s] purely quantitative field, you're going to be operating in a quant capacity anyway, if you get
+[ 1056.24s ->  1062.24s] it in some sort of like more qualitative, and I use that very loosely, qualitative field like finance or
+[ 1062.24s ->  1068.40s] economics, you are going to be running regressions. You are going to be trying to tease out causality.
+[ 1068.40s ->  1074.88s] I promise there is no such thing as a PhD program in finance where you don't touch Python,
+[ 1075.36s ->  1081.60s] SAS, any form of linear regression, fuzzy regressions with different discontinuities to try to tease out
+[ 1081.60s ->  1088.59s] causality, so on and so forth. Every single type of PhD in the academic space at this point is going to
+[ 1088.59s ->  1094.67s] involve some quant work, all right? And, you know, here I say, yeah, I suppose there certainly are
+[ 1094.67s ->  1106.66s] varying degrees of quant, but again, I'll digress. All right, this brings us to the academic research
+[ 1106.66s ->  1113.86s] questions for this particular project. Academic research questions about emojis. So when I was
+[ 1113.86s ->  1121.46s] working in industry, I found I was working specifically with social feeds, news, social text,
+[ 1121.46s ->  1126.18s] text. And, you know, one of the things that I observed, and, you know, I'm sure many of you
+[ 1126.18s ->  1134.18s] may have observed as well, is the meaning of words and, you know, words in the linguistic sense,
+[ 1134.18s ->  1139.54s] sense, computational linguistics, if you're studying language processing, they're called tokens.
+[ 1140.58s ->  1147.54s] So these tokens tend to change meaning over time. You know, I have an example here to the moon,
+[ 1147.54s ->  1156.10s] rocket ship, a moon emoji. And we know now, right, in terms of like, you know, a crypto finance bro,
+[ 1156.10s ->  1160.34s] whatever, you know, we're just saying, all right, let's watch this stock go up, or we're calling for
+[ 1160.34s ->  1169.94s] it to go up. And, you know, that's great. But what about 10, 15 years ago? What did to the moon mean?
+[ 1169.94s ->  1177.06s] Did it mean anything at all? In the context of finance? No, likely not, right? So very quickly,
+[ 1177.06s ->  1184.18s] we see that the velocity of language is, it's certainly faster in the context of social media,
+[ 1184.18s ->  1193.30s] for sure. But even still, right? While this language changes over time, we can ask some very
+[ 1193.30s ->  1199.86s] interesting and important questions. So the first one here is, does the meaning of words or tokens
+[ 1199.86s ->  1206.35s] change over time? Well, as I gave this example with emojis, yeah, it's not a novel idea, right? Language
+[ 1206.35s ->  1209.95s] velocity is well studied. If you talk to a linguist, then they're going to be like, yeah,
+[ 1210.27s ->  1214.27s] you know, old English is very different. Look at Shakespearean English, right? You go way back,
+[ 1214.27s ->  1219.43s] and I'm not a linguist by any means. I just have a preference for studying language processing,
+[ 1219.43s ->  1223.85s] right? But you talk to a linguist, they'll be like, yeah, you know, look, this stuff changes over time
+[ 1223.85s ->  1229.71s] very clearly, right? They'll probably largely agree with you that the velocity of language changing over
+[ 1229.71s ->  1236.27s] time has increased with with things like social media, slang, different slang comes in and out of
+[ 1236.27s ->  1242.49s] use, so on and so forth. So the first question that I had was, does the meaning of, of these words,
+[ 1242.49s ->  1250.24s] tokens change over time? All right. A more important idea, right? Is there any way to capture that
+[ 1250.24s ->  1256.70s] meaning at a specific point in time? Now, this isn't necessarily novel in the linguistic sense,
+[ 1256.70s ->  1262.44s] but it's certainly relevant for a back test, right? Because I just told you 10, 15 years ago to the
+[ 1262.44s ->  1269.05s] moon didn't mean anything, right? We're talking about going to outer space, right? This is no finance
+[ 1269.05s ->  1276.33s] context at all. So is there a way to capture this meaning at a specific point in time? More importantly,
+[ 1276.33s ->  1284.97s] can we capture it as it changes through time? This idea of sort of a mean process changing over time
+[ 1284.97s ->  1293.05s] is paramount to quantitative finance. Every model that you build is going to suffer from the reality
+[ 1293.05s ->  1301.85s] of non-stationarity. Every single model, that is a very, very difficult problem to deal with.
+[ 1301.99s ->  1307.95s] In practice, you can try to model these, this non-stationary, non-stationarity with exogenous
+[ 1307.95s ->  1315.23s] factors. You can try to incorporate some sort of regime changing models, some sort of, of mean
+[ 1315.23s ->  1321.83s] process that changes over time. But even, even with those models, it's not a trivial problem. It's a
+[ 1321.83s ->  1329.35s] very, very difficult problem to deal with in practice. Okay. So if there is a way of capturing
+[ 1329.35s ->  1336.37s] this meaning at a specific point in time, can we apply this methodology to emojis? I don't see why not,
+[ 1336.37s ->  1342.73s] right? If emojis are just another token, another word, then why can't we apply this point in time,
+[ 1343.69s ->  1350.31s] this point in time measure of meaning for a word to the emoji tokens themselves?
+[ 1350.79s ->  1359.73s] Now, several models do this, but none in a time varying capacity. So out of the box, if we just look at
+[ 1359.73s ->  1366.69s] different models to model language, yeah, they handle emojis and this is well documented. There's
+[ 1366.69s ->  1371.65s] plenty out of the box that do this, but again, this time varying component, that's what we're,
+[ 1371.65s ->  1378.55s] we're interested in. Now, this is probably the most important question. Do emojis offer unique
+[ 1378.55s ->  1386.01s] information? Unique information, incremental information in cross-sectional return prediction.
+[ 1386.01s ->  1390.81s] You all know how I feel about the word prediction, but I'm going to use it here. All right. Now we're
+[ 1390.81s ->  1395.59s] really getting somewhere in terms of a novel research question. So hopefully this is making
+[ 1395.59s ->  1402.01s] sense. The series of questions that kind of built to this, this big ask, right? Everything may be
+[ 1402.01s ->  1406.49s] well-defined, well-studied, but you know, you start to put all of these pieces together. You start to
+[ 1406.49s ->  1411.89s] approach the frontier of knowledge and maybe you're making a very tiny dent in what is well-documented,
+[ 1411.89s ->  1417.03s] what is well-known. And then that's from more of an academic perspective. Then you can see if you can
+[ 1417.03s ->  1423.02s] profit from it in the, you know, in the industrial setting. All right. So now we're asking this
+[ 1423.02s ->  1429.50s] question, do emojis offer unique information in cross-sectional return prediction? How do we answer
+[ 1429.50s ->  1435.92s] these questions? What does quant research look like? Everyone wants to be a quant researcher. Everyone
+[ 1435.92s ->  1442.20s] wants to be a quant trader. You're a scientist. You are answering questions. That is effectively what
+[ 1442.20s ->  1449.50s] you're doing. You're trying to expand knowledge. All right. Here is a process map of this academic
+[ 1449.50s ->  1455.30s] research process. I could walk through an entire, you know, slide deck of the scientific method,
+[ 1455.54s ->  1462.14s] applying it, you know, appropriately, so on and so forth. But here we're just going to focus on
+[ 1462.14s ->  1470.30s] three critical stages, data acquisition, data science, and then data analysis. All right.
+[ 1470.30s ->  1479.07s] This is really where you can start to see if you're suited for a role in research, because I've always
+[ 1479.07s ->  1487.51s] been very suited to empirical work. I can prototype quickly. I can implement APIs quickly and believe it
+[ 1487.51s ->  1494.89s] or not, I wrote all this code without AI. This was before Chack GPT. I didn't have, I didn't have
+[ 1494.89s ->  1501.19s] co-pilot. I didn't have Gemini. I didn't have cursor. This was, this was a, a heinous landscape
+[ 1501.19s ->  1506.39s] before this, these AI development tools were around. I mean, this was all written from Stack
+[ 1506.39s ->  1511.33s] Overflow. You know, this was, this was hard work. So the, the times have certainly changed and your
+[ 1511.33s ->  1515.89s] ability to, you know, produce new research and the speed in which you can iterate has certainly
+[ 1515.89s ->  1520.91s] changed. But, you know, effectively, I want to outline these three stages of the research process.
+[ 1520.91s ->  1527.99s] So as I said, I was suited for this work. I'm a very strong empiricist. So this is where I spend
+[ 1527.99s ->  1536.66s] most of my time. Data acquisition. How do we get data? Academic access, institutional access,
+[ 1537.66s ->  1544.46s] query it yourself. That would be a project. All right. After data acquisition, data science.
+[ 1544.46s ->  1554.24s] How do we model the data? Cleaning and pre-processing, sentiment modeling, feature engineering.
+[ 1555.24s ->  1561.62s] You know, I find a lot of times when students take, and really, I think it's a shame when students
+[ 1561.62s ->  1571.44s] take linear algebra, differential equations, they don't immediately see how crucial those skills
+[ 1571.44s ->  1579.38s] are. When it comes to even a process pipeline like this, to, to produce effective research
+[ 1579.38s ->  1587.22s] in this stage of sentiment modeling, feature engineering, you have to be capable in the sense
+[ 1587.22s ->  1593.92s] of, of, you know, computing a, a principal component analysis. What are you doing? Right? How does that
+[ 1593.92s ->  1599.24s] actually function? What, what do I do? I'm not just throwing different tools from my toolbox at these
+[ 1599.24s ->  1604.02s] different problems. I need to understand theoretically what's going on. What does the spectral decomposition
+[ 1604.02s ->  1611.56s] look like? Is there a gradual decay? Is there a rapid decay? These things matter because they impact
+[ 1611.56s ->  1618.70s] the results downstream. If you don't understand theoretically what's going on, then how on earth
+[ 1618.70s ->  1626.52s] is your analysis step going to be sound? If upstream, you were just like, yeah, I think I threw PCA at the
+[ 1626.52s ->  1631.38s] problem. Then I threw ICA at the problem. And then I was like, oh, really, I should normalize it. So I
+[ 1631.38s ->  1636.44s] threw a normalizer at it. Like we, we can't operate like that, right? We need to understand the theoretical
+[ 1636.44s ->  1642.56s] basis for our decision-making, what assumptions go in to each step along the way, and how those
+[ 1642.56s ->  1649.20s] assumptions could be violated in practice, and how that impacts our overall analysis step. It's critical
+[ 1649.20s ->  1657.74s] to producing valid research, right? In an academic sense, yeah, you could e-mine your way to a
+[ 1657.74s ->  1662.72s] publication. Maybe it's extremely difficult to corroborate. You have a proprietary data set.
+[ 1662.80s ->  1668.42s] Fantastic. But you can't profit off of that, right? You can't trade with that information.
+[ 1669.20s ->  1673.16s] It's food for thought, things to think about. So once you move past this data science step,
+[ 1673.16s ->  1678.10s] you acknowledge, okay, a lot goes into it. You need to be a very high-level programmer,
+[ 1678.50s ->  1683.64s] a very high-level mathematician, statistician, to understand the implementation of all of these
+[ 1683.64s ->  1689.82s] tools in your toolbox, how they work together. Now you can effectively put together a data set
+[ 1689.82s ->  1697.82s] for analysis. This is where you do regressions. You do back tests. You look at things like stability
+[ 1697.82s ->  1708.36s] in a forward-looking sense, all right? 95% of the time is spent on data acquisition and data
+[ 1708.36s ->  1715.80s] science. You must enjoy this part of the work, all right? The fun part is the data analysis part.
+[ 1715.90s ->  1720.04s] Everyone wants to do the back test. I want to do the back test. I don't want to do the data
+[ 1720.04s ->  1725.42s] acquisition work. I don't want to do the data science work, right? Now, I've always fortunately
+[ 1725.42s ->  1732.54s] enjoyed that component of it. As an empiricist, I really appreciated the math. Theoretically,
+[ 1732.64s ->  1738.34s] how it was applied in practice, I didn't mind spending 95% of the time on the data acquisition,
+[ 1738.88s ->  1746.30s] on the data science. But if you do, then really you need to start to pivot. Think about different
+[ 1746.30s ->  1751.20s] roles in the space. If you don't want to operate in this capacity, maybe you're more suited to be a
+[ 1751.20s ->  1756.48s] risk taker, more in the trading space itself. Maybe you're more suited to be a developer,
+[ 1757.04s ->  1764.97s] focusing on low latency programming, so on and so forth, right? Now, I will say, depending on the firm
+[ 1764.97s ->  1771.39s] that you work at, it will dictate whether or not you get to iterate very quickly on research ideas,
+[ 1771.39s ->  1777.19s] or if you have to spend time on the data acquisition and data science step. That's a very
+[ 1777.19s ->  1781.55s] important distinction, right? Because some firms, you're going to have to do that all yourself.
+[ 1781.85s ->  1786.89s] You'll acquire the data from some sort of internal data API call. Maybe it exists in some sort of lake,
+[ 1786.99s ->  1792.23s] whatever. And then you do all the data science yourself, and then you produce the results yourself.
+[ 1792.53s ->  1799.93s] You wear a lot of hats in that sense. Sometimes there are teams of PhDs, some of the smartest dudes
+[ 1799.93s ->  1806.45s] and smartest ladies in the world who are maintaining those components of the pipeline.
+[ 1806.93s ->  1812.67s] They're working on this data science or working on this data acquisition, and then they're supporting
+[ 1812.67s ->  1817.99s] that as an internal product. And then researchers go about producing data analysis so they can continue
+[ 1817.99s ->  1823.99s] to iterate very quickly. And that makes sense, right? Because everybody is essentially optimally
+[ 1823.99s ->  1829.27s] performing in a parallel capacity, right? So it depends on the firm you work at. It depends on the size
+[ 1829.27s ->  1835.77s] of the firm you work at, and so on and so forth there. All right? So this is the process map
+[ 1835.77s ->  1844.50s] for academic research. Let's walk through this research process where we actually deliver a result
+[ 1844.50s ->  1852.80s] in the context of my academic paper. So this process is to answer these questions. Does the meaning of
+[ 1852.80s ->  1859.44s] words change over time? Is there a way to capture the meaning at a specific point in time? Can we apply
+[ 1859.44s ->  1866.82s] this methodology to emojis? And do emojis offer unique information in cross-sectional return
+[ 1866.82s ->  1885.66s] prediction? Step one, data acquisition. All right? We need to figure out what data we need to answer this
+[ 1885.66s ->  1890.99s] question. This is not something that anybody is just going to sit there and tell you, right? You have to
+[ 1890.99s ->  1897.57s] figure this out. This is research, right? You collaborate with others. Maybe you should use, you know, this
+[ 1897.57s ->  1901.37s] type of data. Maybe you need this. Maybe you need this. Here's what other people have done before.
+[ 1901.81s ->  1906.95s] This is where a literature review comes in handy. What has been done? Don't reinvent the wheel.
+[ 1907.59s ->  1913.05s] That stuff is all open source. Hop on Google Scholar. If you have a question, go on Google Scholar,
+[ 1913.19s ->  1918.09s] type it in, see what papers may go about answering it. It's not going to answer it directly, right?
+[ 1918.09s ->  1927.51s] If you're like, okay, maybe CEO facial expressions have some sort of return predictability, right? You're
+[ 1927.51s ->  1932.71s] not just going to go on Google Scholar and see a paper, oh, CEO facial, it doesn't work quite like
+[ 1932.71s ->  1937.43s] that, right? You actually have to conduct the literature review yourself. See what has been
+[ 1937.43s ->  1943.41s] done in that space so you can continue to extend results. You don't necessarily have to reinvent the
+[ 1943.41s ->  1950.99s] wheel, right? So that's going to help you in determining what data you actually need to answer
+[ 1950.99s ->  1956.83s] these questions. Data required, all right? So what do we acquire for this particular project? Well,
+[ 1956.97s ->  1964.16s] we need an equity universe. We can't just pick whatever stocks we want. That doesn't make any
+[ 1964.16s ->  1969.68s] sense. Well, I'm going to pick NVIDIA because I like NVIDIA. I'll pick Apple. I'll pick Amazon. No,
+[ 1969.68s ->  1977.28s] I need an equity universe, all right? So am I using the S&P 500? Am I using the Russell 3000?
+[ 1978.06s ->  1984.60s] What am I going to choose? What am I going to choose these stocks from to analyze return
+[ 1984.60s ->  1993.64s] predictability in the cross-section, okay? I need pricing data. I need high-quality pricing data.
+[ 1994.06s ->  1998.86s] Where do I get this from? I can't just go on Yahoo Finance and get returns from Yahoo Finance.
+[ 1998.86s ->  2004.56s] Again, the quality of the data here is going to dictate whether or not downstream my results are
+[ 2004.56s ->  2011.12s] even reasonably valid, right? I'm trying to control for a lot of measurement error along the way,
+[ 2011.50s ->  2017.20s] right? I can't just induce error wherever I like or, you know, take kind of a shortcut. I need to ensure
+[ 2017.20s ->  2023.50s] that every step of the way, I'm producing a high-quality result. So pricing data. I need high-quality
+[ 2023.50s ->  2032.59s] pricing data. And probably the elephant in the room, social data. Where do I get this? Where do I get
+[ 2032.59s ->  2042.99s] this social text data from? Tweets. Where do I get this from? All right? How I access this data will
+[ 2042.99s ->  2049.39s] depend on the scope of your project. As I said, academic or institutional work. So fortunately,
+[ 2049.39s ->  2057.68s] from an academic perspective, the equity universe and the pricing data, get out of town. That was easy.
+[ 2058.42s ->  2066.02s] That was easy. My co-author had the Russell 3000 equity universe that's rebalanced every year in July.
+[ 2066.46s ->  2072.84s] This is changing going forward. That's a big deal. It was rebalanced once a year. And then going forward,
+[ 2072.88s ->  2079.52s] it's going to be twice a year. I'm not sure when the new changes is going to be made. But this is how
+[ 2079.52s ->  2085.62s] it used to function. So it was every year. So I had a list every year to ensure that what? I didn't
+[ 2085.62s ->  2094.16s] bias my data, right? I didn't bias how I was going to be producing the analysis downstream. So, okay.
+[ 2094.58s ->  2099.76s] I have my equity universe. It's going to change over time. And I'm accounting for that. Very important.
+[ 2100.60s ->  2107.28s] Pricing data. You can hop on words. You guys familiar with words? Maybe you've heard it before.
+[ 2107.28s ->  2113.26s] It's an academic database. You can access a lot of data in an academic capacity here.
+[ 2113.44s ->  2122.26s] That's where we got the pricing data from. All right. The scope was academic. Very easy to access.
+[ 2123.71s ->  2129.25s] What about the social text data, right? Now, if I was operating in an institutional capacity,
+[ 2129.25s ->  2136.37s] then I wouldn't have access to words necessarily. But my institution would certainly have the Russell 3000.
+[ 2136.37s ->  2143.93s] It would certainly have the pricing data. Now, of course, we're operating in an academic way here. So
+[ 2143.93s ->  2149.73s] we're trying to figure out how we go about getting the social text data, right? We crossed off equity
+[ 2149.73s ->  2155.86s] universe. We crossed off pricing data. Where do I get this social text data from? In an institutional
+[ 2155.86s ->  2163.64s] capacity, that is way too expensive. That is way too expensive. All right. This is not something where
+[ 2163.64s ->  2173.38s] you're going to drop tens of thousands of dollars on access to data to try to answer a question that
+[ 2173.38s ->  2178.32s] may or may not have some sort of solution that is publishable, right? That's not how we can operate
+[ 2178.32s ->  2183.60s] in an academic capacity in an efficient way. So there's no academic access for this data
+[ 2183.60s ->  2189.56s] in the context of it being prepackaged institutionally, right? That's a very big distinction
+[ 2189.56s ->  2195.88s] here. It wasn't prepackaged institutionally. All right. Institutions did have it in a prepackaged
+[ 2195.88s ->  2205.73s] sense, but too expensive. Doesn't leave us many options, you know? And this is really where it
+[ 2205.73s ->  2211.45s] comes into play here. You got to kind of scrap yourself up by the boots there and go to work and
+[ 2211.45s ->  2218.75s] do it yourself. So this is effectively where at this point of the process, I realized very quickly,
+[ 2218.75s ->  2225.30s] I had to build the query engine and we were going to go about constructing this entire data pipeline
+[ 2225.30s ->  2232.50s] from scratch. Okay. What does that actually look like? Right? I mean, I say these things,
+[ 2232.80s ->  2238.24s] a data pipeline. Oh, you know, we got data from a data pipeline, but I want to tell you how it works.
+[ 2238.80s ->  2248.34s] How did I actually get this data, right? Data acquisition. What do we do? I'm not just going to an
+[ 2248.34s ->  2253.70s] institution or some sort of academic, you know, university, whatever that has this data already.
+[ 2253.78s ->  2260.71s] I need to go get it. I need to construct the data set myself. All right. How do I do this? Well, first
+[ 2260.71s ->  2267.85s] we need our equity universe. This is easily accessible, right? I had access to this. It rolls
+[ 2267.85s ->  2277.83s] over time. Then I need to query data. I need to query data from somewhere. Where do I query data from?
+[ 2277.83s ->  2286.91s] Well, Twitter, this is before X, Twitter had an academic API. It was capped. You could only query a
+[ 2286.91s ->  2295.85s] certain quantity of tweets in an academic way. And what you would do essentially is construct this
+[ 2295.85s ->  2302.67s] iterative API call to Twitter to send you tweets based on some sort of criteria.
+[ 2302.67s ->  2312.81s] And the criteria that we used was every single tweet containing a cash tag. And you can see here,
+[ 2312.89s ->  2319.61s] I have cash tag Apple as an example. That's point two here. I'm looking for tweets from Twitter that
+[ 2319.61s ->  2326.30s] contain a cash tag. How do I determine the cash tags? That's going to be based on my equity universe.
+[ 2326.30s ->  2334.50s] Okay. So my equity universe at that specific point in time tells me, you know, 3000 tickers that I need
+[ 2334.50s ->  2341.34s] to query tweets for. All right. I need to account for the rebalancing. So I'm going to query tweets
+[ 2341.34s ->  2348.84s] up until that equity universe is good until then I truncate and I have a new equity universe and I do
+[ 2348.84s ->  2355.46s] this in a rolling capacity. Now, one thing that you will very quickly notice, and this is where
+[ 2355.46s ->  2360.74s] things start to blow up and things start to get very difficult is how many tweets do you think there
+[ 2360.74s ->  2369.28s] were, right? There were a lot of tweets. I'm storing all of that data. Okay. This took quite some time
+[ 2369.28s ->  2375.06s] to query, not just because we were capped in terms of how many tweets we could pull in an API call,
+[ 2375.06s ->  2384.80s] but it's a lot of data, right? Over 87 million tweets, 87 million. That's a lot of data.
+[ 2385.54s ->  2390.80s] That's a lot of data for a prop data set. And it's just sitting right here on my desk on an SSD right
+[ 2390.80s ->  2397.91s] now, but it's, it's a lot of data, right? You're going to pull that into some sort of data warehouse.
+[ 2398.01s ->  2403.81s] It'll exist hopefully in a lot of different places. You'll have some sort of AWS bucket. You'll have some
+[ 2403.81s ->  2409.87s] some sort of hard copy as well. And that is effectively how you go about constructing
+[ 2409.87s ->  2419.73s] some sort of data pipeline, data acquisition pipeline. All right. Since Twitter was purchased
+[ 2419.73s ->  2429.10s] by X, Elon Musk purchased Twitter, right? The API access is no longer available for academics. It is
+[ 2429.10s ->  2438.68s] now a paid access point. So this entire, you know, dynamic of being able to just query tweets in an
+[ 2438.68s ->  2444.18s] academic capacity isn't really there anymore. So this is still novel in that sense. If somebody had
+[ 2444.18s ->  2449.16s] institutional funding to go out and fetch those tweets, then yeah, they could continue to roll the
+[ 2449.16s ->  2455.24s] ball forward on this research and look to trade in a live capacity with it. But we'll talk about that
+[ 2455.24s ->  2462.12s] more towards the end of the, of the talk here. So in, in the context of data acquisition, this is
+[ 2462.12s ->  2469.22s] precisely how it works when you have to do it yourself, because an institution either academically
+[ 2469.22s ->  2474.40s] or, you know, privately doesn't have access to the pool of data that you need to answer the question.
+[ 2474.78s ->  2482.32s] You got to build that yourself. Now I want to emphasize the best questions don't have prepackaged
+[ 2482.32s ->  2488.98s] data solutions available to you to answer them. Essentially what I'm saying is there's this sort
+[ 2488.98s ->  2496.08s] of inverse relationship between data accessibility and the rank of how interesting the question is
+[ 2496.08s ->  2500.68s] that you're interested in answering, right? The harder it is to get data, the more interesting
+[ 2500.68s ->  2512.07s] questions you can answer. And that's really where you can make the biggest dent. All right. It's always
+[ 2512.07s ->  2518.91s] easier to speak in terms of a data base than it is to just tell you what it looks like. I don't
+[ 2518.91s ->  2524.21s] understand really why more presentations don't include just a simple table. We always operate in
+[ 2524.21s ->  2530.35s] what data frames and R, Python, whatever we're using, right? So we should kind of just get a gist of
+[ 2530.35s ->  2537.01s] what it looks like. My data acquisition pipeline that I just showed you produces these tables,
+[ 2537.01s ->  2543.83s] these data frames. I have the firm. Where did I get the firm from? Well, when I run the query,
+[ 2543.89s ->  2550.03s] I got to pick the ticker, right? The ticker was dictated by an equity universe and that rolls
+[ 2550.03s ->  2556.59s] throughout time. So every single document that Twitter returned to me in an API call, I'll have
+[ 2556.59s ->  2565.31s] a firm attached to it. This is what it looks like. Firm document to the moon, Apple bearish on Apple
+[ 2565.31s ->  2572.00s] to the moon, Amazon. You get the picture here. There's also a timestamp for all of the tweets.
+[ 2572.66s ->  2578.76s] This is particularly important. If you're trying to do any return predictability, you need to what
+[ 2578.76s ->  2589.73s] consider a cutoff or actionable time, right? Before 920 AM on a trading day. Of course, this is going to
+[ 2589.73s ->  2596.67s] roll throughout time as well. So 2017 to 2018, 2018 to 2019, you can see the equity tickers that are
+[ 2596.67s ->  2602.61s] involved in this data set are going to roll as the Russell 3000 rolls, right? It's going from July to
+[ 2602.61s ->  2612.87s] July, right? So you'll see the constituents change over time as well. Now, we're ready to move on to
+[ 2612.87s ->  2618.11s] the data science step in the process. This is the data acquisition step. Now we got to talk about the
+[ 2618.11s ->  2626.73s] data science step. This is where things kind of just begin to get, I'll just say it, it gets bananas,
+[ 2626.73s ->  2638.57s] bananas, absolutely bananas. There are probably an infinite number of questions that you can ask
+[ 2638.57s ->  2648.88s] at this stage. How do I manage stop words? Foreign languages? An imbalance in data across firms. You
+[ 2648.88s ->  2658.08s] think that Apple is going to have as many tweets as AMD? Outliers in any capacity, what do we do?
+[ 2658.08s ->  2667.43s] How do we extract signal from the text? Signal, tradable signal that produces return predictability
+[ 2667.43s ->  2673.22s] in a cross section? How do we handle multiple measures of sentiment? There's not just one way
+[ 2673.22s ->  2681.25s] to determine if something is positive or negative. There's emotion, right? Happy, angry, sad. Which one
+[ 2681.25s ->  2687.02s] should we pick if we're trying to predict returns in a cross section? How do we handle documents,
+[ 2687.02s ->  2695.22s] these tweets, with multiple firms? How do we do that? If there's a tweet and it says, what,
+[ 2695.30s ->  2702.30s] to the moon, hashtag Apple, but I hate Amazon. How do we handle that? Do we treat that as one
+[ 2702.30s ->  2708.96s] document? That's noise, right? This is before LLMs. We didn't have the ability, and of course,
+[ 2709.00s ->  2714.40s] it's still computationally inefficient, but we couldn't just ask an LLM to interpret the document.
+[ 2714.40s ->  2719.28s] And even if we did that, there's going to be some error there because there's a non-zero probability
+[ 2719.28s ->  2724.72s] of failure. So hopefully, I'm not just going to continue to read these off to you. Hopefully,
+[ 2724.72s ->  2731.89s] you're starting to see where the research experience comes into play here, right? You need
+[ 2731.89s ->  2736.41s] to understand all the tools that you have in your toolbox. You need to understand what it is you're
+[ 2736.41s ->  2741.81s] looking at in terms of a data set and the things you can do to aid in answering all of these
+[ 2741.81s ->  2747.55s] questions. This is acquired through experience. You talk with senior researchers. You talk with
+[ 2747.55s ->  2752.63s] senior data scientists. You figure out, maybe I need to bring in other data. Maybe that will help
+[ 2752.63s ->  2760.41s] alleviate some of these concerns about signal to noise. Who knows, right? We could spend, and I would
+[ 2760.41s ->  2766.11s] love to, trust me, we could spend all day talking about all of these questions, the different
+[ 2766.11s ->  2771.47s] methodology, different approaches. But I want to focus on the primary contribution of this research,
+[ 2771.67s ->  2777.07s] right? These point-in-time sentiment modeling techniques, right? That's what we were talking
+[ 2777.07s ->  2783.90s] about as a research question for the start of this presentation here, right? That is effectively
+[ 2783.90s ->  2790.44s] where we're trying to go. We're trying to build this ability to measure sentiment of emojis at a specific
+[ 2790.44s ->  2796.48s] point in time. So let's focus on that question. All of these other questions, extremely valid,
+[ 2796.48s ->  2803.02s] right? They need to be handled. They can be handled in so many different ways, right? This is that
+[ 2803.02s ->  2808.50s] experience component. This comes into understanding the quantitative techniques in your toolbox and
+[ 2808.50s ->  2814.62s] being able to apply them. What is this idea of variation explained? If I have 20 sentiment measures,
+[ 2814.84s ->  2820.24s] but two of them explain the most variation, then how many do I need? What kind of linear combination of
+[ 2820.24s ->  2825.88s] all those sentiment measures can I produce to effectively compress all that information into one or two
+[ 2825.88s ->  2833.61s] that are linearly independent? Linear algebra. You need those quantitative techniques to answer
+[ 2833.61s ->  2840.95s] these questions. Otherwise, you're just going to be shooting in the dark. All right. Let's talk about
+[ 2840.95s ->  2849.51s] this idea of point-in-time sentiment. It's a very cool idea, and it's actually really intuitive. So
+[ 2849.51s ->  2857.88s] here, words in a social context, tokens, we can talk about words, we can talk about emojis,
+[ 2857.88s ->  2864.64s] whatever we like, whatever we like. The sentiment, how positive it is, how negative it is, its meaning
+[ 2864.64s ->  2872.46s] changes over time. There are many approaches to modeling sentiment. Dictionaries, machine learning
+[ 2872.46s ->  2880.06s] techniques, now we have LLMs, but how do we assign meaningful scores to this text at a specific point
+[ 2880.06s ->  2888.76s] in time without introducing our own bias? Now I know to the moon has this positive score, but is there a
+[ 2888.76s ->  2895.82s] way to do that in an unsupervised way? I want the text essentially to speak for itself. So how should I
+[ 2895.82s ->  2904.29s] model these emojis? You look at stock chart up, stock chart down, green, red, rocket ship, happy, angry,
+[ 2904.29s ->  2911.67s] and yeah, you want to rank these scores, right? Here's a tweet for you. Cash tag, Apple stock chart
+[ 2911.67s ->  2917.43s] up. We want to effectively throw it into a model and have it produce a sentiment score. And you can
+[ 2917.43s ->  2923.43s] see that score is positive, right? And you all would probably agree with me that that should be a positive
+[ 2923.43s ->  2930.31s] score for the tweet. We need to build this model. We need to effectively build this model to produce
+[ 2930.31s ->  2941.84s] and extract the score for analysis and regressions, back tests, so on and so forth. All right. How do
+[ 2941.84s ->  2948.26s] we do this? We want the scores to be intuitive. They should make sense. We have a problem if stock
+[ 2948.26s ->  2956.12s] chart down is positive. We have a problem if rocket ship is negative. We need to be able to have an
+[ 2956.12s ->  2962.12s] intuitive representation of these emojis in terms of the score, but also account for variation
+[ 2962.12s ->  2972.26s] over time. This is where the idea of a point in time sentiment measure comes in. Effectively, what
+[ 2972.26s ->  2979.74s] we're doing is we're applying a general sentiment model. This is something that we would consider to
+[ 2979.74s ->  2990.04s] be relatively stable over time. Time invariant. Amazing. Did the meaning of amazing, not in a sarcastic
+[ 2990.04s ->  2998.88s] sense. Did the raw meaning of amazing change all that much from 2000 to 2025? Probably not, right?
+[ 2999.99s ->  3006.81s] What about great? Good. Yeah, probably not. What about bad? Awful. Terrible. Probably not. So what we're
+[ 3006.81s ->  3012.79s] going to do is we're going to start by applying a general sentiment model to all of these documents.
+[ 3012.79s ->  3019.53s] So you see each of these documents, right? I'm going to apply a general sentiment model. Each document
+[ 3019.53s ->  3026.98s] is then going to get a score. All right. Then how do I produce a score for the emojis? I'm going to take
+[ 3026.98s ->  3034.82s] an average of the sentiment across all of the documents, and then I'm going to use that as the
+[ 3034.82s ->  3043.58s] score for the emoji. Now, by the central limit theorem, this would be normal at the point in time.
+[ 3043.58s ->  3051.12s] That is an incredibly useful result. That is incredibly useful because now I can answer
+[ 3051.12s ->  3057.36s] questions about that score. I can answer hypothesis tests about if it's indifferent from zero,
+[ 3057.58s ->  3064.90s] right? Is it greater than zero? Is it less than zero? I can apply those hypothesis tests because
+[ 3064.90s ->  3073.54s] I don't care if the meaning changes over time. I need to know now. I want to know at this point in
+[ 3073.54s ->  3079.70s] time. So even though there's this time varying nature to the center of the normal distribution
+[ 3079.70s ->  3085.36s] by the central limit theorem, it doesn't matter because at this point in time, I want to know,
+[ 3085.36s ->  3091.76s] is this positive or is this negative? That is key here. And it is a very elegant idea.
+[ 3093.12s ->  3100.62s] Effectively, what we're doing is we are developing measures for the emojis, the sentiment of those emojis
+[ 3100.62s ->  3107.34s] in an unsupervised way. I'm letting the data speak for itself. And this is also going to account
+[ 3107.34s ->  3123.40s] change in the meaning over time. So what were the results? Well, let's look at how this actually
+[ 3123.40s ->  3134.88s] is constructed. If we look at lots of tweets in 2000 with the rocket ship emoji, we can see billionaires
+[ 3134.88s ->  3141.00s] going to the moon, right? That's going to produce what? Zero for positive, zero for negative. That
+[ 3141.00s ->  3146.04s] doesn't really have any sentiment attached to it, right? We're going to look at a ton of tweets in
+[ 3146.04s ->  3151.87s] 2000 with the rocket ship emoji. We'll take a look at the overall sentiment, positive and negative.
+[ 3152.19s ->  3160.10s] We'll take the average and that's what we're going to assign to the rocket ship emoji. So you could see
+[ 3160.10s ->  3168.50s] in 2000, right? The meaning of the rocket ship emoji is going to be based on what was observed in 2000.
+[ 3169.50s ->  3176.36s] And the same is going to be true for 2018. We're going to apply that general sentiment model.
+[ 3176.60s ->  3183.60s] We will take the overall average of the aggregate sentiment and apply that to the rocket ship emoji.
+[ 3183.60s ->  3193.33s] So this is the methodology, but does it actually work? This was the really cool result of this
+[ 3193.33s ->  3200.77s] model structurally. This is what we find in the data after applying this methodology specifically to
+[ 3200.77s ->  3208.73s] emojis. We find what stock chart up is positive. Stock chart down is negative. Green is positive.
+[ 3208.73s ->  3214.57s] Red is negative. Rocket ship moon positive. Happy face positive. Angry swearing face negative.
+[ 3214.91s ->  3224.09s] I didn't assign those scores to those emojis. The data literally spoke for itself and told me
+[ 3224.09s ->  3233.56s] those values for each of those emojis. That is cool. That is effectively social text speaking for itself
+[ 3233.56s ->  3243.10s] at a specific point in time. Now that we have a model capable of assigning text, specifically emojis,
+[ 3243.10s ->  3247.96s] this point in time score. This point in time score. We can do this for all of the documents in our
+[ 3247.96s ->  3256.22s] database. So you see this table now, right? Firm document score. We can apply the model to each
+[ 3256.22s ->  3263.38s] of these documents and get a score. They make sense economically, intuitively, and we didn't impose
+[ 3263.38s ->  3271.78s] any structure, whether or not they were positive or negative explicitly. That is so cool. That is so cool.
+[ 3271.78s ->  3277.80s] The data literally spoke for itself. And it told us that all of these were positive and negative,
+[ 3277.86s ->  3284.28s] respectively. And it makes sense intuitively. If you were to just look at these emojis,
+[ 3284.78s ->  3294.33s] that's awesome. Okay. So is it useful? That was a lot of effort. That took a lot, right? We go through
+[ 3294.33s ->  3301.89s] the data querying process. We go through the data science process. That was a fraction of the data
+[ 3301.89s ->  3308.33s] science process, right? That was an outline of a key contribution of the paper in terms of methodology.
+[ 3310.69s ->  3317.99s] That didn't get into any other components of the data science itself, right? So 95% of the work at
+[ 3317.99s ->  3324.07s] this point is already done upstream, the data acquisition, the data science steps that took
+[ 3324.07s ->  3330.35s] months, months of my computer, just sitting there running these pre-processing engines,
+[ 3330.51s ->  3336.09s] these acquisition engines. And it took, you know, just an incredible amount of time because
+[ 3336.09s ->  3342.13s] I effectively, what I queried this data from scratch. And then I ran these pre-processing steps
+[ 3342.13s ->  3348.11s] and this data science step and this new methodology for point-in-time sentiment all from scratch.
+[ 3348.49s ->  3352.91s] There was nobody to maintain a data set. I didn't just query it from an institution,
+[ 3352.91s ->  3357.67s] right? I didn't query it from a private institution, a public institution, whatever.
+[ 3358.59s ->  3365.20s] Had to build it myself. So 95% of the time was spent there. Now we get to the fun part. Is it useful?
+[ 3366.24s ->  3370.70s] We answered all those other questions. We answered those questions upstream,
+[ 3370.70s ->  3377.02s] data acquisition, data science. Now we get to the data analysis step. This is the fun part.
+[ 3377.66s ->  3383.26s] This is the part where we get to go, awesome. Let's take a look and see if this is actually
+[ 3383.26s ->  3402.73s] useful. Do emojis offer unique information in cross-sectional return prediction? In the finance
+[ 3402.73s ->  3410.33s] literature, there's a lot of study of text and the impact in future stock returns in a variety of
+[ 3410.33s ->  3416.97s] different contexts. We have Lager McDonald. We have Tetlock. We have a lot of different studies
+[ 3416.97s ->  3424.51s] that look at a combination of news, corporate 10Ks. We have even social texts, Antweiler and Frank.
+[ 3424.93s ->  3432.64s] So this has been studied before, but what about in the context of emojis? If we are trying to figure
+[ 3432.64s ->  3440.10s] out if this measure is useful, we need to consider established sentiment measures in the literature,
+[ 3440.70s ->  3446.78s] word-based sentiment measures. So that is effectively what we do. We're going to conduct a regression
+[ 3446.78s ->  3455.00s] analysis and we are going to account for things that have known explainability and variation of
+[ 3455.00s ->  3461.08s] future returns. We're going to look at established sentiment measures. We're going to look at past returns.
+[ 3461.08s ->  3468.34s] We're going to look at firm size, book-to-market ratio, time-fixed effects, news sentiment, corporate
+[ 3468.34s ->  3474.16s] disclosures. We're going to use heteroscedastic robust standard errors. We need to consider this
+[ 3474.16s ->  3484.38s] autocorrelation structure. What do we observe? What is our big result here? We observe emojis after accounting
+[ 3484.38s ->  3495.06s] for all of these effects still offer statistically significant return predictability. Here, we observe
+[ 3495.06s ->  3502.42s] the cumulative abnormal returns as our dependent variable in the cross-section and find an economically
+[ 3502.42s ->  3512.18s] meaningful result in the incremental information offered by emojis. All right, this is the main purpose
+[ 3512.18s ->  3518.46s] of the paper, the main result of the paper. If there wasn't an economically meaningful interpretation,
+[ 3518.60s ->  3524.22s] there would be no use for this practically. And in academic setting, whether or not it can be published,
+[ 3524.28s ->  3531.40s] publish the subject for discussion. But a one standard deviation change in our point in time
+[ 3531.40s ->  3537.36s] sentiment measure for emoji is associated with an incremental annualized return of more than
+[ 3537.36s ->  3549.24s] five percent. Moreover, there's no evidence of this price movement reversing in the coming weeks
+[ 3549.24s ->  3556.12s] or months. That's a big component to analysis in this literature, whether or not the result is
+[ 3556.12s ->  3564.62s] ephemeral. Moreover, we can start to slice and dice the data in different ways. New gen accounts versus
+[ 3564.62s ->  3571.02s] old gen accounts. We look at things like accounts that were created 2020 plus versus accounts that
+[ 3571.02s ->  3579.34s] were created before 2020. Turns out most of that alpha is driven by those new gen accounts versus the
+[ 3579.34s ->  3588.07s] accounts that were these old gen accounts before 2020. This is really where, you know, you can continue
+[ 3588.07s ->  3594.17s] to iterate off of a data set like this. Now that we have this data set, what other interesting questions
+[ 3594.17s ->  3600.77s] can we answer in an academic research capacity? What other levers can we pull? What other questions
+[ 3600.77s ->  3607.51s] are there that are open-ended in the literature, in the social sentiment literature, so on and so forth?
+[ 3612.24s ->  3620.60s] Yeah, yeah, yeah. Cool, cool, cool. But is it tradable, right? Is it tradable? Long answer.
+[ 3621.42s ->  3628.28s] We have a lot of considerations and optimizations to make to determine if this is something that is
+[ 3628.28s ->  3638.06s] in fact tradable, right? In an institutional capacity, right? You have, you can deal with
+[ 3638.06s ->  3643.22s] this overhead. You can deal with this data acquisition overhead. Let's say that I built
+[ 3643.22s ->  3648.76s] this data query pipeline. There's no more academic access, but I need to fund it privately in order to
+[ 3648.76s ->  3653.36s] trade it in real time, right? That's not something that you're going to face as an issue in an
+[ 3653.36s ->  3659.86s] institutional capacity, right? So in terms of infrastructure for the data pipeline process,
+[ 3661.18s ->  3666.08s] institutionally, yeah, I mean, that's not too much of a concern, but privately, right? As some sort of
+[ 3666.08s ->  3670.26s] retail quant trader, there's no way. There's absolutely no way you're going to fund that.
+[ 3670.46s ->  3676.11s] Just in terms of sheer risk of that alpha decaying, there's no way. Execution speed,
+[ 3676.21s ->  3684.22s] who's going to build that system for you, right? Does the speed matter? What timeframe are we looking to
+[ 3684.22s ->  3690.18s] trade these over? A day? A week? What kind of portfolio turnover are we looking at? Are we looking
+[ 3690.18s ->  3699.57s] at transaction costs that eat away the entire performance of this strategy? How efficient is
+[ 3699.57s ->  3708.03s] our pipeline? Can we get all the data that we need before 920? If we can't, is it sufficient to run
+[ 3708.03s ->  3715.49s] statistics on the data that we have as a proxy for the portfolio that we trade on that given day?
+[ 3715.69s ->  3723.24s] All of these things are things that we have to think about when we go about deploying these
+[ 3723.24s ->  3730.08s] strategies in practice. If we actually are observing a statistical mispricing, we conduct our regression
+[ 3730.08s ->  3735.08s] analysis, we do our back tests, and we see some sort of sharp ratio we like, some sort of drawdown we
+[ 3735.08s ->  3740.14s] like, and we're interested in its ability to produce similar results in a forward-looking setting.
+[ 3740.14s ->  3745.36s] Effectively, we should see stability in those performance metrics, and we should see the
+[ 3745.36s ->  3751.10s] performance metrics decay as we allocate more capital to the strategy, right? That's just how
+[ 3751.10s ->  3757.08s] scalability works. It's not a trivial problem. It's a very difficult problem. And why your performance
+[ 3757.08s ->  3764.12s] metrics decay in practice could be due to a variety of different reasons. You allocated too much capital,
+[ 3764.20s ->  3767.54s] it's crowded out, other people are trading it, there's no more statistical mispricing,
+[ 3767.54s ->  3773.56s] it converges, right? So it converges, collapses, the decay in performance value. This is a question
+[ 3773.56s ->  3778.48s] that all of you, anyone who's interested in quantitative trading should be extremely eager to
+[ 3778.48s ->  3789.58s] ask. If you have a strategy that is working, when do you stop trading it? When is too much degradation
+[ 3789.58s ->  3796.43s] in terms of performance? That is a very important question to ask. So long answer here,
+[ 3796.43s ->  3805.07s] it depends. Short answer, I'll say yes. And I've seen strategies like this one deployed in several
+[ 3805.07s ->  3815.60s] different capacities at several different firms. All right. So in terms of the research process,
+[ 3815.70s ->  3822.06s] right, we walked through each of these stages, the data acquisition process, the data science
+[ 3822.06s ->  3830.64s] process and the data analysis process. I'm hoping that this elucidates the space for you in the
+[ 3830.64s ->  3836.42s] context of what research actually is going to look like if you decide to step into a role in that
+[ 3836.42s ->  3844.00s] capacity, right? In reality, there's a lot more that goes into this entire process, right? You're
+[ 3844.00s ->  3850.48s] considering at each stage, is there any bias? Are we doing everything correctly? What quantitative tools
+[ 3850.48s ->  3857.04s] can we apply to maybe improve our signal to noise ratio? What things upstream? What different levers can
+[ 3857.04s ->  3864.06s] we pull? How is that going to impact everything at that point in the process? And of course, downstream? We
+[ 3864.06s ->  3871.08s] haven't even spoken about this idea of overfitting, right? You can overfit noise. That's very
+[ 3871.08s ->  3878.84s] possible. If you try to select optimal hyperparameters, you very well easily could overfit to a
+[ 3878.84s ->  3883.80s] particular result that you found and then out of sample. It doesn't, it's not reproducible and you
+[ 3883.80s ->  3888.78s] don't have this stability in a forward-looking setting and it's not tradable. And that's a big
+[ 3888.78s ->  3895.96s] problem. And that's not an easy problem to solve. So this entire process is, it's very difficult.
+[ 3895.96s ->  3907.58s] And, you know, I have a remark for you here that 98 plus percent of the questions that you ask or try
+[ 3907.58s ->  3916.36s] to answer may not have very interesting answers at all or actionable answers. They may yield in fact
+[ 3916.36s ->  3924.38s] unsatisfying or inconclusive or even misleading answers. This is the nature of the industry. You know,
+[ 3924.38s ->  3931.76s] you could spend six months a year to several years wrestling on a particular question or project and
+[ 3931.76s ->  3941.60s] it very well may come to essentially nothing. But I want to emphasize that that's not a sunk cost. And I
+[ 3941.60s ->  3947.38s] think a lot of times when we, when we hear about this space of, of academic or industrial research, we're
+[ 3947.38s ->  3954.06s] very quick to, you know, just throw out, Oh, you know, you, you wasted all that time on a project and
+[ 3954.06s ->  3960.86s] it didn't come to fruition. No, not, not at all. You were developing as a researcher throughout that
+[ 3960.86s ->  3968.54s] entire process. That is not something that you can take lightly. Experience is not gifted to you. It is
+[ 3968.54s ->  3975.92s] earned. If you go through six months a year and you don't get a project that comes to fruition,
+[ 3975.92s ->  3985.74s] you accumulated a lot of experience. Again, earned. It is not gifted to you. It is not a sunk cost.
+[ 3986.16s ->  3993.70s] You are always developing as a researcher. And that is the goal in this space. If you have any desire to
+[ 3993.70s ->  4001.12s] be some form of, of academic or, you know, industrial researcher, keep this in mind as you operate in the
+[ 4001.12s ->  4008.10s] space, remain optimistic. It's not about finding results. That is not the point. We're not trying
+[ 4008.10s ->  4014.72s] to data mine interesting results to publish. We're trying to develop as researchers so that we can
+[ 4014.72s ->  4022.14s] continue to improve how we iterate, how we operate, and of course, the quality of our research that we
+[ 4022.14s ->  4032.70s] produce. So with that, I will say thank you guys. I definitely appreciated the time. It was wonderful
+[ 4032.70s ->  4038.96s] to speak with all of you today. I hope you enjoyed. I will leave this open to questions if anybody has
+[ 4038.96s ->  4045.06s] any. If you guys have questions about, you know, whether it's this research project, general career
+[ 4045.06s ->  4051.28s] questions, whatever it may be, very happy to field those now. But again, Rudy and the exec team there,
+[ 4051.28s ->  4056.12s] thank you so much for putting this together. It was, it was a great experience here. Thank you guys.
+[ 4064.25s ->  4070.81s] Just wanted to say, we have a room of over 70 people that filled up. It was overflowing. So a lot
+[ 4070.81s ->  4075.21s] of interest. Thank you so much for your industry experience. And so the research side, so most people
+[ 4075.21s ->  4079.93s] are interested in the academia side and the research. So thank you so much for coming to talk. And any
+[ 4079.93s ->  4085.37s] questions, I'll just like funnel them over. Does anyone have a question? Yeah, question right now?
+[ 4085.37s ->  4089.01s] I have a question. Yeah, ask them what you get while this computer is running.
+[ 4091.01s ->  4097.81s] Do you have any pastimes while you let the code run?
+[ 4099.39s ->  4106.27s] So it's funny you say that I had the remote desktop on my phone. So I would check in on it when I was
+[ 4106.27s ->  4112.61s] on a run or at the gym and just make sure everything was, was business as usual there.
+[ 4112.61s ->  4117.45s] Um, you know, I tried to keep myself busy with the theoretical research side, trying to continue
+[ 4117.45s ->  4123.71s] to conduct literature reviews and, and work on other projects that didn't demand my, my computer,
+[ 4123.71s ->  4128.55s] uh, in that capacity. That's a good question. I've never gotten that one before. That's a good one.
+[ 4129.23s ->  4131.35s] Yeah. Thank you. Thank you. Any more questions?
+[ 4131.75s ->  4131.99s] Yep.
+[ 4132.13s ->  4133.09s] What's the specs?
+[ 4134.30s ->  4137.30s] What specs are your computer? A lot of people interested in your computer today.
+[ 4137.30s ->  4143.82s] Oh, dude, my, I need an upgrade. I'll tell you that much. Um, I just installed a whole bunch of
+[ 4143.82s ->  4150.46s] RAM on my computer cause I have to edit these videos. So I have about as much RAM as you possibly
+[ 4150.46s ->  4159.88s] can have. I think I have 256 or 128 gigabytes of RAM. Um, I have an, I have an RTX 4090. Um,
+[ 4159.88s ->  4164.34s] and I think everything else is just kind of like whatever this kid who built my computer
+[ 4164.34s ->  4170.12s] shows for me. So, you know, that's, that's what I'm working with. Um, but I, I need a new one
+[ 4170.12s ->  4175.82s] because this was built in like 2020, I think 22. So it's, uh, it's time for an upgrade, I think.
+[ 4176.30s ->  4178.56s] Yeah. Yeah. No more questions?
+[ 4178.66s ->  4179.02s] Can you hear me?
+[ 4179.60s ->  4181.44s] Uh, go for it or else I'll find it over.
+[ 4181.62s ->  4188.56s] Um, on your, uh, sorry, I'm not really good. I'm not trying to invest. So on your, uh, research on emojis,
+[ 4188.68s ->  4194.08s] like to, um, predict like, um, stop movements, what are your thoughts on,
+[ 4194.08s ->  4201.29s] like, uh, gambling sites, using that sentence, odds, uh, to, uh, someday somethings
+[ 4201.29s ->  4205.93s] that's ever since the Supreme court, um, I've reversed the decision. It just, um,
+[ 4206.49s ->  4211.97s] resulted in lots of, like, sports betting sites and, um, I'm going to specify, uh,
+[ 4211.97s ->  4219.13s] specify like politics. So sports betting sites, like, um, the outcome of an election,
+[ 4219.13s ->  4225.25s] like hours in advance. And, uh, as well, like if tariffs were going to be placed on,
+[ 4225.69s ->  4230.09s] so I was wondering, uh, what are your thoughts on using, like, that data?
+[ 4230.09s ->  4231.09s] Um, I'm excited.
+[ 4234.54s ->  4238.36s] That's a fantastic question. And I actually have a lot of thoughts on this. Now,
+[ 4238.62s ->  4241.70s] I just want to ask you one clarifying question. Are you talking about specifically,
+[ 4241.70s ->  4247.10s] like the implied odds based on what the market is pricing those trades at right now,
+[ 4247.10s ->  4250.10s] or like in terms of predictability, what do you mean?
+[ 4251.06s ->  4251.72s] Predictability, yes.
+[ 4252.42s ->  4253.38s] I don't know.
+[ 4255.18s ->  4256.88s] I kind of predict the general direction.
+[ 4257.40s ->  4261.96s] In the general direction. Yeah. So in, in essence, my opinion on it is,
+[ 4262.36s ->  4267.88s] you know, I I'm very like structurally a frequentist in terms of statistics.
+[ 4267.88s ->  4272.60s] So anytime I look at these betting sites and I see an implied probability,
+[ 4272.60s ->  4276.82s] I don't think about it in terms of, you know, if it's 80,
+[ 4276.90s ->  4282.04s] 90% implied probability for one candidate or this particular event outcome,
+[ 4282.04s ->  4285.56s] I don't think of it in terms of, Oh, you know,
+[ 4285.62s ->  4289.48s] nine out of 10 times that will be the occurrence.
+[ 4289.66s ->  4295.16s] All I think about it as is in terms of market impact,
+[ 4295.16s ->  4300.96s] the market isn't going to react as much as if it was the contrary event.
+[ 4300.96s ->  4304.94s] Right. So if something's being priced at 90% implied odds,
+[ 4304.94s ->  4308.08s] then that means if the other event occurs,
+[ 4308.08s ->  4311.90s] the market is going to over-exaggerate to that response. Right.
+[ 4311.90s ->  4315.54s] Cause that's not what the expectation was as a trader,
+[ 4315.54s ->  4318.54s] you can structure very interesting trades around that. Right.
+[ 4318.54s ->  4324.64s] So if you think, Hey, like 90%, there's no way, there's no way it's like 60%.
+[ 4324.64s ->  4329.50s] Then it might be worth taking a swing in that capacity because if you're right,
+[ 4329.58s ->  4332.52s] the disproportionate response in the market is something that you can
+[ 4332.52s ->  4336.16s] effectively capitalize on, but that's how I think about it.
+[ 4336.24s ->  4336.32s] Now,
+[ 4336.36s ->  4340.60s] if you look at like the actual regression response and like its ability to like
+[ 4340.60s ->  4343.72s] forecast or predict event outcomes. Yeah.
+[ 4343.72s ->  4348.42s] Yeah. You know, there's a lot of literature on suggesting that the there's no
+[ 4348.42s ->  4351.28s] implicit bias, right? Since there's money on the line,
+[ 4351.38s ->  4355.10s] people just are going to act with their purest intent to make money.
+[ 4355.26s ->  4359.40s] So there's no bias in those statistics, you know, supposedly.
+[ 4360.06s ->  4362.32s] So in terms of predicting event outcome, yeah,
+[ 4362.32s ->  4365.84s] it can do a pretty darn good job, but in a binary sense, right?
+[ 4366.16s ->  4368.94s] Again, think about it more in terms of market impact,
+[ 4368.94s ->  4370.92s] I think is the best way to go about it.
+[ 4370.92s ->  4374.66s] Not nine out of 10 times something would occur based on these implied,
+[ 4374.66s ->  4378.44s] implied odds. That's, that's how I like to think about that space.
+[ 4379.31s ->  4381.51s] Great answer. Any more questions?
+[ 4382.35s ->  4383.05s] I have a question.
+[ 4384.05s ->  4387.29s] I have a question regarding your data acquisition strategy,
+[ 4387.43s ->  4388.49s] because I feel like that's the most,
+[ 4388.77s ->  4391.47s] one of the most important parts because that trickles down into everything,
+[ 4391.57s ->  4391.77s] right?
+[ 4392.09s ->  4395.07s] So if you make a mistake or not as efficient,
+[ 4395.07s ->  4397.31s] there would be like a drastic impact on the result.
+[ 4397.31s ->  4405.39s] You had filtered the API to only get the tweets with included like a dollar sign,
+[ 4405.47s ->  4406.35s] the trigger symbol, right?
+[ 4406.53s ->  4411.40s] The, yeah, like, like AAP or AMC for Amazon.
+[ 4412.47s ->  4418.89s] But why did you not like consider also taking in data that just had the name of
+[ 4418.89s ->  4419.47s] the companies?
+[ 4419.73s ->  4420.25s] All of them,
+[ 4420.31s ->  4422.39s] there might be some confusion if someone's talking about like,
+[ 4422.63s ->  4424.27s] like an apple they're eating or, you know,
+[ 4424.27s ->  4427.33s] the company or the Amazon rainforest, but still there,
+[ 4427.33s ->  4430.85s] there would still be a way to like filter that down to like get the accuracy of
+[ 4430.85s ->  4431.87s] it referring to the company.
+[ 4432.01s ->  4432.05s] Like,
+[ 4432.07s ->  4436.93s] is there a reason why you didn't go down that route and just saw it stuck to
+[ 4436.93s ->  4437.51s] the diggers?
+[ 4438.63s ->  4440.47s] Yeah, no, that's, that's a really good question.
+[ 4440.47s ->  4446.59s] And it turns out to be more of like a signal to noise thing where I didn't
+[ 4446.59s ->  4450.47s] want to create a named entity recognition problem for myself.
+[ 4450.81s ->  4452.57s] So what you were talking about there,
+[ 4452.63s ->  4454.09s] it's exactly the right intuition, right?
+[ 4454.09s ->  4456.57s] Apple that you're eating versus the apple of the stock.
+[ 4456.95s ->  4459.13s] And that turns into an NER problem.
+[ 4459.13s ->  4461.73s] And it's, it's largely solved now, right?
+[ 4461.77s ->  4463.73s] If I ask an LLM, is this talking,
+[ 4463.87s ->  4469.05s] is this body of text talking about the company versus the stock?
+[ 4469.05s ->  4471.29s] Yeah, it's going to be able to respond effectively.
+[ 4472.11s ->  4473.73s] But at the time, like really,
+[ 4473.89s ->  4477.23s] I didn't want to spend too much time on that problem because then I have to
+[ 4477.23s ->  4479.09s] defend my choice in an NER model.
+[ 4479.09s ->  4485.55s] Is the measurement of the NER effectively introducing more signal than noise?
+[ 4485.73s ->  4488.15s] That's another question that I have to ask and answer.
+[ 4488.27s ->  4493.69s] So I stuck with the tickers because I know for certain that if I query a
+[ 4493.69s ->  4496.73s] document that contains that cash tag in Twitter,
+[ 4496.73s ->  4500.49s] that cash tag is literally referring to a financial ticker.
+[ 4500.71s ->  4507.49s] So I'm kind of trying to just avoid that step altogether, whether or not it enhances.
+[ 4507.65s ->  4511.79s] And that's a really good question that you're asking because whether or not that enhances
+[ 4511.79s ->  4516.25s] signal value is extremely valid and very likely, right?
+[ 4516.25s ->  4519.03s] Intuitively, like you and I could probably agree.
+[ 4519.15s ->  4519.41s] Yeah.
+[ 4520.07s ->  4521.25s] Economically, it makes sense.
+[ 4521.31s ->  4524.87s] I'm going to get a better signal value if I include those tweets.
+[ 4525.27s ->  4528.03s] But that turns into another modeling problem.
+[ 4528.25s ->  4531.23s] And, you know, effectively, if we can do that, then awesome.
+[ 4531.35s ->  4532.71s] We can enhance our signal value.
+[ 4533.27s ->  4535.61s] This is the iterative research process.
+[ 4535.61s ->  4537.05s] But that's, that's a great question.
+[ 4537.47s ->  4538.15s] A great question.
+[ 4540.52s ->  4541.04s] Any more questions?
+[ 4544.05s ->  4544.27s] Yeah.
+[ 4544.27s ->  4553.93s] So if, you know, an independent trader wants to create the strategy using relatively low
+[ 4553.93s ->  4557.93s] income, what would you, how would you recommend getting started?
+[ 4559.71s ->  4560.23s] Yeah.
+[ 4560.31s ->  4569.39s] So I will say in terms of getting involved in the space, my number one best piece of advice
+[ 4569.39s ->  4576.15s] that I give, and this is, you know, based on my own experience is start to build projects.
+[ 4576.35s ->  4583.71s] And that could be, if you have no idea where to start, try to replicate results of studies
+[ 4583.71s ->  4586.41s] that are available in an open source capacity.
+[ 4586.65s ->  4590.65s] You just heard me talk about this research paper for the past hour.
+[ 4590.79s ->  4594.31s] Try to build it on a small scale.
+[ 4594.73s ->  4597.43s] Try to come up with a way to web scrape tweets.
+[ 4597.71s ->  4599.87s] Come up with a sentiment model.
+[ 4600.37s ->  4601.19s] Produce scores.
+[ 4601.69s ->  4603.43s] Look at the cross-sectional scores.
+[ 4603.43s ->  4609.77s] See if there's a correlation between stock returns at that point in time, contemporaneously,
+[ 4609.77s ->  4611.73s] or even in a forward looking sense.
+[ 4611.93s ->  4619.73s] When it comes to actually trading and trading on your own, it starts to get to this kind
+[ 4619.73s ->  4624.51s] of like gray area of, you know, I can't really teach you what to do.
+[ 4624.65s ->  4626.07s] I can't really do it for you.
+[ 4626.07s ->  4632.11s] I really like using poker as an analogy because I can't play the hand for you, right?
+[ 4632.19s ->  4634.35s] Because then you're not a poker player.
+[ 4635.25s ->  4640.49s] And the only way for you to get involved in the space is to experience it and understand
+[ 4640.49s ->  4644.01s] what's going on so you can make those informed decisions yourselves.
+[ 4644.15s ->  4645.87s] And that comes from experience, right?
+[ 4645.87s ->  4652.13s] I think a big theme throughout this talk was experience, developing experience as a researcher,
+[ 4652.67s ->  4657.95s] understanding the space, understanding the quantitative tools that are available to you.
+[ 4658.47s ->  4663.23s] And, you know, that's largely what I would say is if you're looking to get started, start
+[ 4663.23s ->  4664.49s] getting involved in the space.
+[ 4664.77s ->  4665.69s] Start building projects.
+[ 4666.96s ->  4667.10s] Yeah.
+[ 4667.34s ->  4667.62s] Great.
+[ 4667.74s ->  4668.26s] Great answer.
+[ 4669.22s ->  4669.72s] Yeah.
+[ 4669.82s ->  4670.38s] Any more questions?
+[ 4671.32s ->  4671.84s] Questions?
+[ 4672.32s ->  4672.44s] No.
+[ 4674.62s ->  4674.92s] Clap.
+[ 4675.08s ->  4675.28s] Okay.
+[ 4675.38s ->  4675.78s] Clap again.
+[ 4675.78s ->  4681.90s] Well, it's been a pleasure having you, Roman.
+[ 4682.08s ->  4686.24s] I know you have an appointment or another commitment after this, so we'll let you go.
+[ 4686.32s ->  4687.38s] But thank you so much for your time.
+[ 4688.16s ->  4692.64s] I have shared your community over with our Discord as well, so they will find it there.
+[ 4692.88s ->  4694.14s] And also, we shared your YouTube channel.
+[ 4694.38s ->  4698.92s] So if you want to talk about anything related to your website or your course, keep in mind
+[ 4698.92s ->  4699.64s] and shout it out.
+[ 4700.34s ->  4701.88s] Yeah, you guys are always welcome.
+[ 4702.30s ->  4704.76s] We have the channel and the Discord for you guys.
+[ 4704.76s ->  4709.28s] If you guys want to ping me ever, if you want to pick my brand, always happy to answer any
+[ 4709.28s ->  4713.92s] questions when it comes to, you know, what you're thinking about in the context of a research
+[ 4713.92s ->  4717.04s] project, in the context of your career.
+[ 4717.04s ->  4721.78s] If you're looking at getting involved as a researcher, trader, developer, whatever it
+[ 4721.78s ->  4726.44s] is, if you ever want to, you know, just hop on and, you know, ping me in the chat, I'm
+[ 4726.44s ->  4730.50s] very happy to interact and answer any questions that you guys might have.
+[ 4731.24s ->  4734.78s] Project suggestions, resumes, CVs, all that as well.
+[ 4735.36s ->  4739.02s] You know, feel free to hop on and just give me a shout.
+[ 4739.84s ->  4740.52s] Sounds great.
+[ 4740.66s ->  4740.84s] Yeah.
+[ 4740.96s ->  4741.74s] Well, thank you so much.
+[ 4742.18s ->  4742.36s] Yep.
+[ 4742.40s ->  4742.98s] Let's wrap it up.
+[ 4743.22s ->  4743.54s] Thank you.
+[ 4743.64s ->  4743.94s] Awesome.
+[ 4744.06s ->  4744.80s] Thank you, guys.
+[ 4744.92s ->  4745.86s] Thank you so much, guys.
+[ 4745.94s ->  4746.32s] Take care.
+[ 4746.44s ->  4748.02s] Have a great, great evening over there.
+[ 4748.48s ->  4748.60s] Yeah.
+[ 4748.64s ->  4749.18s] Have a good night.
+[ 4749.42s ->  4749.90s] Have a good night.
+[ 4750.42s ->  4750.88s] Bye-bye.
+[ 4755.06s ->  4755.52s] All right.
+[ 4755.54s ->  4759.06s] And that's going to do it for this seminar at UCSD.
+[ 4759.16s ->  4760.22s] It was a wonderful experience.
+[ 4760.22s ->  4766.30s] Thank you again to Rudy and the exec team over there at the Crichton Quantitative Trading.
+[ 4766.88s ->  4771.58s] Very grateful for the opportunity to speak about my research and, you know, share some knowledge
+[ 4771.58s ->  4772.70s] in the quant space.
+[ 4773.42s ->  4775.24s] I hope you enjoyed this video.
+[ 4775.60s ->  4779.16s] It was certainly a very exciting one for me to put together.
+[ 4779.28s ->  4780.38s] I hope you learned something.
+[ 4780.38s ->  4785.64s] Thank you so much for watching, and I hope to do more of these in the future.
+[ 4786.14s ->  4789.96s] Other than that, I'll see you in the next video.

@@ -1,0 +1,34 @@
+<!-- tradingview-pine-id: PUB;wXLB80W4zNQB9zbK3LFGfca1IpfI5OgH -->
+<!-- tradingviewscripts-format: 1 -->
+# Average Force
+
+Source: https://www.tradingview.com/script/5v1UnBrN-Average-Force/
+
+## Description
+
+Average Force is an oscillator that calculates sentiment, then smooths the result to produce a nice indicator for determining the trend.
+
+---
+
+## Source Code
+
+````pine
+//@version=4
+study("Average Force", "AF")
+
+af(Series, High, Low, Period, PostSmooth) =>
+    period       =     max(1, int(Period))
+    highestHigh  = highest(High,  period)
+    lowestLow    =  lowest( Low,  period)
+    HHminusLL    = highestHigh - lowestLow
+    averageForce = HHminusLL==0.0 ? 0.0 : (Series - lowestLow) / HHminusLL - 0.5
+    sma(averageForce, max(1, int(PostSmooth)))
+
+period = input(18, "Period", input.integer, minval=1)
+smooth = input( 6, "Smooth", input.integer, minval=1)
+
+AF = af(close, high, low, period, smooth)
+
+Color = AF>0.0 ? color.yellow : color.fuchsia
+plot(AF, color=Color, style=plot.style_columns)
+````

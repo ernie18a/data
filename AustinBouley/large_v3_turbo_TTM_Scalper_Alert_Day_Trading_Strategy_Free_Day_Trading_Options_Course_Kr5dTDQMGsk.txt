@@ -1,0 +1,125 @@
+[    0.54s ->     1.54s] Hey guys, what's up?
+[    1.54s ->     5.34s] It's AVTrades and I run a YouTube channel that teaches people how to day trade options.
+[    5.34s ->     8.66s] Today is day five of the seven-day strategy release.
+[    8.66s ->    14.50s] So there are seven strategies that I use to day trade the stock market.
+[   14.50s ->    18.02s] And so I am releasing one every single day and today is day five.
+[   18.02s ->    21.46s] So if you want to view the previous ones, go look on my YouTube channel and if you want
+[   21.46s ->    25.42s] to be kept up to date of the ones to come, please subscribe and turn on those alerts
+[   25.42s ->    26.90s] so you'll be notified.
+[   26.90s ->    31.86s] And also like and comment, so one, I know that you're liking the content or dislike
+[   31.86s ->    36.02s] it so I know that you're not and comment on what you want to see next and what you liked.
+[   36.02s ->    40.14s] Alright, so today we're going to talk about a TTM Scalper Alert.
+[   40.14s ->    44.04s] This is something that you can use solely by itself or it's something that you can use
+[   44.04s ->    48.54s] and how I use it is I couple it with other strategies, especially ones that I've mentioned
+[   48.54s ->    51.66s] already in the previous videos.
+[   51.66s ->    55.06s] So let me first show you how to get to TTM Scalper Alert.
+[   55.06s ->    63.38s] The problem is TTM Scalper Alert is not on every software or trading platform.
+[   63.38s ->    67.06s] I know for sure, because I'm using it, that it's on the Thinkerform platform.
+[   67.06s ->    69.30s] I cannot testify that it is on others.
+[   69.30s ->    75.34s] It is not on Tastyworks, it's not on others because it's a special indicator.
+[   75.34s ->    77.66s] But let me show you how to do it.
+[   77.66s ->    87.22s] You go to Studies and you go TTM and you can see the TTM LRC, TTM Scalper Alert, TTTM Squeeze,
+[   87.22s ->    89.54s] Trend, Trend Alert, and Wave.
+[   89.54s ->    91.78s] I think the Trend Alert is one that I made.
+[   91.78s ->    92.78s] I forget.
+[   92.78s ->    96.26s] I programmed one, maybe I named it different.
+[   96.26s ->    99.94s] TTM Scalper Alert is the one that we're going to look at.
+[   99.94s ->   108.26s] But when it's set on default, look how many arrows you get, it's just way too overwhelming.
+[  108.26s ->   118.02s] So the way that I've seen most success with it is setting it in between 0.4 and 0.5.
+[  118.02s ->   125.46s] So more times than not, I just go 0.5 and it eliminates extraneous points, right?
+[  125.46s ->   127.70s] So it cleans up the chart a lot more.
+[  127.70s ->   132.30s] So you can definitely use this just to trade by itself.
+[  132.30s ->   140.10s] The problem is this is a lagging indicator, so when you see, for example, let's look at
+[  140.10s ->   141.10s] this specifically.
+[  141.10s ->   146.38s] So when you see that it gave a cell signal here, it did not give the cell signal on this
+[  146.38s ->   154.74s] candle, it gives it on the third candle, something like that, the second or third candle, then
+[  154.74s ->   156.02s] it pops up.
+[  156.02s ->   162.70s] So yes, it is quite of a lagging indicator, but that's why I don't solely use it by itself.
+[  162.70s ->   164.74s] It can be used by itself.
+[  164.74s ->   170.82s] If you look at the results, obviously it can look, let's just go through and let's look
+[  170.82s ->   171.82s] at some.
+[  171.82s ->   177.14s] See, look, let me do that, right?
+[  177.14s ->   182.72s] Sell, buy, back, sell, buy, back, buy, sell, right?
+[  182.72s ->   188.38s] This can totally work on its own and I would love to see someone just take one contract and
+[  188.38s ->   191.86s] trade it in the direction that the arrow points every single time.
+[  191.86s ->   198.82s] And again, if you want to eliminate the extraneous solutions, just start to increase the number
+[  198.82s ->   199.98s] on the TTM alert.
+[  199.98s ->   202.98s] So what is TTM scalper, right?
+[  202.98s ->   204.98s] I'm sure that's what a lot of people are asking.
+[  204.98s ->   207.90s] See, look, you can see that cleans up the chart a lot better.
+[  207.90s ->   212.02s] It is a pivot indicator.
+[  212.02s ->   214.02s] So it reads price action.
+[  214.02s ->   218.34s] It's basically doing what you should be doing yourself and what you should be able to do
+[  218.34s ->   220.02s] yourself, right?
+[  220.02s ->   224.60s] But it reads price action at pivot points.
+[  224.60s ->   229.44s] So pivot points are levels in the stock market where things tend to reverse, right?
+[  229.44s ->   233.94s] So it's reading the pivot levels and it's reading the price action to determine if it should
+[  233.94s ->   234.94s] be a good buy or sell.
+[  234.94s ->   238.52s] And that's why it's a lagging indicator because it can't determine that right on the spot,
+[  238.52s ->   241.08s] just like we can't usually determine that right on the spot.
+[  241.08s ->   245.54s] It takes like one or two candles after that to finally confirm its bias.
+[  246.96s ->   252.82s] So continuing on, I said it can be used by itself, especially, look, if we shrink it,
+[  252.82s ->   254.82s] we set it at 0.7, right?
+[  254.82s ->   256.32s] Oh, stop doing that.
+[  256.32s ->   259.06s] We set it at 0.7, okay?
+[  259.06s ->   262.58s] And you could obviously have bought or put around here and made money, right?
+[  262.58s ->   265.10s] You could have bought a call around here and made money.
+[  265.10s ->   268.14s] You could have bought or put around here and made a lot of money, right?
+[  268.14s ->   271.70s] But I think the best, so what am I saying is you can use it by itself.
+[  271.70s ->   279.40s] It's not 100% like everything, but it can help you use to assist because if you remember
+[  279.40s ->   286.74s] from the RSI divergence video I did, this was an RSI divergence.
+[  286.74s ->   290.58s] So you can couple that with the TTM scalper alert.
+[  290.58s ->   291.58s] Why?
+[  291.58s ->   294.72s] Because you go, okay, this is, I can see that, of course, you would have the RSI indicator
+[  294.72s ->   295.72s] also pulled up.
+[  295.72s ->   298.80s] Be like, I can see this is an RSI divergence.
+[  298.80s ->   302.72s] This may be pushing to the upside, but the relative strength is decreasing.
+[  302.72s ->   305.92s] So we're going to see a reversal here, right?
+[  305.92s ->   308.46s] So that's what you could be seeing on the RSI.
+[  308.46s ->   314.26s] But then after we start to really see it reverse here and you want that extra bit of confidence,
+[  314.26s ->   317.56s] you have that TTM scalper alert that pops up and goes, hey, you know what?
+[  317.56s ->   319.46s] It's a sell signal, right?
+[  319.46s ->   324.06s] And so therefore, you have the RSI divergence and TTM scalper on your side.
+[  324.06s ->   328.94s] As day traders, we will never know everything, but if we can get almost everything or as much
+[  328.94s ->   333.42s] as we can lined up into one trade, then we're doing so well, right?
+[  333.42s ->   339.22s] So let me move this back down to 0.5, let me move this back down to 0.5.
+[  339.22s ->   345.22s] And again, adjust with the numbers, play, test, that's all I got to where I'm at.
+[  345.22s ->   348.72s] I just tested with everything at random times, right?
+[  348.72s ->   353.52s] So let's see, I want to see a good example.
+[  353.52s ->   358.02s] Let's see, do we have a, but yeah, I mean, okay, here we go.
+[  358.02s ->   361.02s] No, not what I'm looking for.
+[  361.02s ->   365.52s] Let's see, Apple, don't fail me now.
+[  365.52s ->   371.32s] What I'm looking for is one of my favorite setups, the triangle pattern setup, where it
+[  371.32s ->   377.57s] is confirmed by the TTM scalper alert.
+[  377.57s ->   386.26s] So if we can see here, we're having this, not the best triangle setup in the world, but
+[  386.26s ->   389.82s] you have your solid base, so it's a descending triangle, like I mentioned in the previous
+[  389.82s ->   392.50s] video, so make sure you go back and watch that.
+[  392.50s ->   396.56s] And we're having the low starting to get lower, and we're starting to push through this support,
+[  396.56s ->   397.56s] right?
+[  397.56s ->   401.18s] You can see that now that we're reversing and heading back down to the support, we're
+[  401.18s ->   403.18s] setting up for a triangle setup.
+[  403.18s ->   405.18s] So how do you know it's time to enter?
+[  405.18s ->   408.26s] Well, first off, you go, okay, well, the triangle pattern is telling me it's time to enter a
+[  408.26s ->   409.62s] put, right?
+[  409.62s ->   413.08s] But then you have this TTM scalper alert that says, hey, guess what?
+[  413.08s ->   418.12s] It's also a sell signal now, so you have that double ounce of confidence to trade, hey,
+[  418.12s ->   419.12s] you know what?
+[  419.12s ->   422.14s] I think, I really think that these two things are lining up at the same time, it must be a
+[  422.14s ->   423.14s] sell signal.
+[  423.14s ->   426.24s] Again, it must be, not everything will always work out in your favor.
+[  426.24s ->   428.86s] But still, this work works out well.
+[  428.86s ->   429.86s] Easy, 30%, right?
+[  429.86s ->   433.48s] Definitely not going to question that at all.
+[  433.48s ->   436.10s] Maybe 20, who knows?
+[  436.10s ->   437.10s] Exactly.
+[  437.10s ->   446.18s] Just use it, and you can use it by itself, by increasing the number and the indicator.
+[  446.18s ->   449.80s] For it, you can also couple it with other things, right?
+[  449.80s ->   456.36s] Also, like, VWAP bounces, which VWAP is the last video, the last strategy that I'm going
+[  456.36s ->   458.02s] to talk about.
+[  458.02s ->   462.68s] And so there's not much more I can say about this or explain, because it's an indicator
+[  462.68s ->   466.40s] that uses pivot points and price action, and it's been programmed already, so I can't
+[  466.40s ->   468.22s] fully explain more.
+[  468.22s ->   470.18s] So I hope that helped, and I hope y'all can use that.
+[  470.18s ->   474.80s] And I hope that I can see y'all tomorrow tuning in for day six.
+[  474.80s ->   475.30s] See y'all next time.
+[  475.30s ->   491.92s] See y'all next time.

@@ -1,0 +1,51 @@
+[    0.00s ->     4.52s] common sense that your percent winners is going to be much higher one standard deviation but the
+[    4.52s ->     8.94s] p l difference and the standard deviation of returns is extraordinary almost three times
+[    8.94s ->    14.02s] hey guys as you just saw in that video tasty live has been selling puts for a while that was a video
+[   14.02s ->    19.42s] that got over 400 000 views and it was 10 years ago why could selling puts worse if you've been
+[   19.42s ->    23.20s] in the option space for any amount of time you know that selling puts is very consistent and
+[   23.20s ->    27.94s] very reliable why well because you're betting that the stock will stay up when we're trading
+[   27.94s ->    34.24s] the s p 500 or spy the market goes up in general there are a few crash periods when when the market
+[   34.24s ->    39.24s] drops which you have to be aware of but in general the market's going up so if we're placing a bet that
+[   39.24s ->    43.32s] the stock for instance will stay above a certain level which is what selling input is you're simply
+[   43.32s ->    49.14s] saying i bet that the stock will stay above this level and if it does i'll make money and so the
+[   49.14s ->    55.64s] reason why the the the win rate for this trade is in the 94 range is because look at this if the stock
+[   55.64s ->    61.06s] goes up you make money if the stock goes sideways you make money if the stock goes down and then just
+[   61.06s ->    66.54s] doesn't break your level you make money so the only reason you start to lose if it breaks your level and
+[   66.54s ->    73.10s] most times you can do like a 10 drop and still be safe and so that's exactly why selling puts is one
+[   73.10s ->    78.44s] of the greatest strategies ever so i took i took it upon myself to be like okay can we automate this
+[   78.44s ->    82.78s] process i am busy i know you're busy you have a job you have a family of things you want to do you
+[   82.78s ->    87.62s] don't want to be stuck to the screen 24 7 right taste tasty trade says trade small trade awesome
+[   87.62s ->    91.80s] but then you have so many trades that it's hard to manage so that's why i created this system called
+[   91.80s ->    96.46s] the options auto trader to allow you to manage the entire process and so what this looks like is you
+[   96.46s ->   103.38s] simply create an auto trader you connect your account you create an auto trader and first off we can do
+[  103.38s ->   108.34s] a ton of different strategies but for this one we're going to recreate the tasty live selling puts
+[  108.34s ->   113.44s] and again they sell a 16 delta because that's about a one standard deviation move so let's make
+[  113.44s ->   120.70s] that a 16 delta for 45 days out on spy again we can do it on spx futures whatever so this is how
+[  120.70s ->   124.84s] tasty live structures their trade so if you're confused on strike selection and delta and you're
+[  124.84s ->   129.06s] like i just don't know what i look at when i see an options chain well you can set this up and it will
+[  129.06s ->   136.66s] do it for you perfectly at every time and so uh we can define how often we we we want to enter the
+[  136.66s ->   141.10s] trade we can enter every day once a week once a month whatever right now it's set up for once
+[  141.10s ->   147.26s] once a week on wednesdays which is fine with me next uh take profit percentage um again they like
+[  147.26s ->   153.22s] to manage at a 50 take profit so once once your trade reaches a 50 profit then close it and they
+[  153.22s ->   158.42s] also like to manage the trade early at 21 days you know this from tasty trade right where their stats
+[  158.42s ->   163.42s] and their studies show that if you close a trade when there's 21 days left then you avoid a lot of gamma
+[  163.42s ->   169.06s] risk uh and vega risk and things like that so all you need to put in here is 21 for 21 days and it
+[  169.06s ->   174.74s] will close the trade at 21 days and we can save and continue and now we just define how much money
+[  174.74s ->   180.20s] do we want to allow this auto trader to uh to to to trade with we can just give it 5 000 that'll be a
+[  180.20s ->   185.00s] good starting number we can save and continue okay i guess i need at least 7 000 to trade this
+[  185.00s ->   192.04s] let's do 7 000 to trade this and just like that you can see here i've recreated the tasty live now
+[  192.04s ->   197.10s] maybe like austin i am not really much of an options person how would i recreate this if i
+[  197.10s ->   202.98s] don't know the numbers well you can actually click on pick an auto trader instead and i preloaded the
+[  202.98s ->   208.56s] best practice of put selling from the tasty live team based on their research and so again you can
+[  208.56s ->   214.16s] trade it on spy or spx or es and so that's exactly what this is so if you want to replicate the the
+[  214.16s ->   219.72s] tasty live put selling strategy that has a 94 win rate just click on trade with spy tell them how much
+[  219.72s ->   224.56s] money you want to trade with for this auto trader and then set and set it up and take it live again
+[  224.56s ->   230.88s] i've been doing this with a 112 trade over the last three uh three months now and again you can see
+[  230.88s ->   236.58s] here i've made about 17 000 and i have 7 000 in open trades you can see here each one of my trades is
+[  236.58s ->   241.14s] doing in the thousands which is awesome well again except for the new trades that just recently got
+[  241.14s ->   246.14s] entered but yeah so again this is how awesome it is because again we can take something that's proven
+[  246.14s ->   251.40s] and that works but just options selling and finally automate it so you can regain your regain your time
+[  251.40s ->   257.46s] your freedom have time for hobbies or family and just know that your trades are protected even if
+[  257.46s ->   263.92s] you're at work so that's exactly how i created a way to automate the entire tasty live 45 dte put
+[  263.92s ->   270.52s] strategy and if you like it click the link down below to either get started now or to actually watch
+[  270.52s ->   274.88s] an in-depth training on how to automate any strategy all right guys see you in the next video

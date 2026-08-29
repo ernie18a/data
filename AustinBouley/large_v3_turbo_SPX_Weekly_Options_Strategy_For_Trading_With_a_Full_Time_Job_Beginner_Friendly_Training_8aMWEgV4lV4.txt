@@ -1,0 +1,156 @@
+[    0.11s ->     4.53s] Hey guys, welcome to today's training video where I'm going over SPX weekly options.
+[    4.61s ->     7.89s] I'm going to show you a trading strategy that works even if you work full-time.
+[    8.31s ->    11.63s] And so again, I'm going to start off here to map out what exactly is going on.
+[   11.87s ->    15.71s] Then I'll jump into the chart to show you how to actually execute these trades.
+[   15.83s ->    17.27s] So let's jump in.
+[   17.53s ->    20.21s] For those who are starting off, you may be like, okay, SPX, cool.
+[   20.31s ->    23.35s] What's SPX and how does it compare to SPY?
+[   23.49s ->    25.51s] So we have SPX and we have SPY.
+[   25.85s ->    29.23s] Both of these track the S&P 500 index.
+[   29.23s ->    35.39s] So the S&P 500 index is an index that tracks the 505 most popular stocks in the economy.
+[   35.57s ->    38.81s] Again, they're added and adjusted based on just what the economy is doing.
+[   39.39s ->    46.05s] And so again, these track how the overall market and economy health is from a stock market perspective.
+[   46.27s ->    50.03s] Anyways, SPX is a non-tradable asset.
+[   50.17s ->    54.13s] And what I mean by that is you cannot buy shares of SPX because it's the index.
+[   54.45s ->    57.25s] You can see here, it's literally the S&P 500 index.
+[   57.25s ->    59.69s] It's priced around $4,369.
+[   60.19s ->    66.85s] Now again, SPY tracks the S&P 500 index but as an ETF, which means you can buy shares of this.
+[   67.13s ->    71.05s] Anyways, let's talk about how the options differ and why you might want to pick one over the other
+[   71.05s ->    75.35s] because this strategy not only works, well, the one that I'm going to teach you today,
+[   75.59s ->    78.49s] not only works on SPX but also works on SPY.
+[   78.59s ->    82.27s] So this is going to be your move to pick which one is best for you.
+[   82.63s ->    83.87s] Anyway, let's start off with SPY.
+[   83.87s ->    88.09s] SPY is great for any account, again, especially smaller accounts.
+[   88.19s ->    93.45s] Let's say a 5K minimum or it could even be a $100 minimum but just to give something,
+[   93.53s ->    94.79s] let's say a 5K minimum on SPY.
+[   95.45s ->   101.21s] SPX is going to be looking, if we have a 5K minimum on SPY, then we'll want a 50K minimum
+[  101.21s ->   102.73s] on SPX.
+[  102.73s ->   103.51s] Why is this?
+[  103.83s ->   107.71s] Well, because SPX is 10X of SPY.
+[  108.15s ->   110.17s] So SPY is currently trading around $300.
+[  111.15s ->   113.17s] SPX is trading around $3,000.
+[  113.63s ->   115.71s] So everything here is increased.
+[  116.07s ->   117.81s] So again, what is good about this?
+[  117.91s ->   121.49s] Well, let's say you're starting to size up your trading, starting to take, let's say,
+[  121.53s ->   127.23s] 50 contract sizes on SPY and that's leading to a lot of commissions because your trade size
+[  127.23s ->   130.35s] is 50 each, well, it's 10X the size.
+[  130.45s ->   135.69s] Since it's 10X the size, in order to get the same amount of profits, you can do 10 times
+[  135.69s ->   136.97s] less the amount of trade.
+[  137.09s ->   142.33s] So again, you'll do 5 contracts instead of 50 because you'll be dividing by 10.
+[  142.45s ->   144.03s] So you'll only need to do 5 contracts.
+[  144.21s ->   144.93s] So what does this mean?
+[  144.93s ->   150.81s] It means that you can use less contracts and create the same return as you would if you're
+[  150.81s ->   151.55s] trading SPY.
+[  151.91s ->   156.25s] Not only that, SPX has the advantage of being cash settled.
+[  156.69s ->   160.79s] So again, cash settled is a beautiful thing versus assignment risk.
+[  161.17s ->   162.09s] So what is this?
+[  162.33s ->   166.25s] Well, when you're trading a stock option, you have assignment risk, which means that if
+[  166.25s ->   170.47s] it expires in the money, they can assign you the stock for your option.
+[  170.93s ->   172.87s] SPX does not have a tradable asset.
+[  172.87s ->   175.09s] You cannot buy a stock of it.
+[  175.39s ->   179.39s] So if it expires in the money or against you, then what's going to happen?
+[  179.53s ->   179.81s] Nothing.
+[  179.95s ->   181.57s] They just simply settle it as cash.
+[  181.65s ->   182.97s] So there's nothing to worry about there.
+[  183.37s ->   188.21s] And last but not least, the biggest advantage of SPX over SPY is going to be tax advantage.
+[  188.69s ->   191.85s] So again, you're taxed at what is, I believe, 60-40.
+[  192.19s ->   195.35s] So again, ignore my terrible mouse drawing.
+[  195.69s ->   199.91s] But 60-40 advantage, again, this is not applicable to SPY.
+[  199.91s ->   206.01s] So this means that of the income that you make trading SPX, 60% will be taxed at your
+[  206.01s ->   210.33s] normal income tax bracket, and 40% will be taxed at a long-term tax bracket, which is
+[  210.33s ->   210.93s] a lot lower.
+[  211.43s ->   213.91s] So which one should you pick moving forward?
+[  214.31s ->   216.93s] SPX is going to be for people with larger accounts.
+[  217.37s ->   220.01s] SPY will be for people with smaller accounts looking to scale.
+[  220.35s ->   221.29s] That's all this is.
+[  221.59s ->   224.81s] Now, the strategy, now that you know which thing you're trading with, is based around
+[  224.81s ->   229.57s] trend following, the idea that the market follows a consistent moving pattern.
+[  229.89s ->   233.71s] If you're seeing the market highs get higher and higher and higher, and the lows get higher
+[  233.71s ->   235.63s] as well, we are in an uptrend.
+[  235.73s ->   238.87s] Uptrend means you buy or sell, put credit spreads.
+[  239.01s ->   241.31s] So again, if you see the market going up, put credit spreads.
+[  241.63s ->   245.29s] If you see the market going down, which is the inverse, lows are getting lower.
+[  245.99s ->   248.81s] And I mean, highs are getting lower, and lows are getting lower as well.
+[  249.15s ->   250.83s] This is known as a call credit spread.
+[  250.83s ->   251.19s] Why?
+[  251.47s ->   254.93s] Well, because put credit spreads make money on the way up, call credit spreads make money
+[  254.93s ->   255.99s] on the way down.
+[  256.27s ->   257.45s] So let's break this down.
+[  257.53s ->   259.59s] Okay, how do I know if the market's trending up or down?
+[  259.67s ->   263.15s] Well, you can simply just look at the stock, hey, does this look like it's moving up?
+[  263.47s ->   264.99s] Yeah, in general, this looks like it's moving up.
+[  265.03s ->   266.19s] It looked like it was moving down here.
+[  266.47s ->   267.79s] Now it looks like it's starting to move higher.
+[  267.91s ->   268.31s] Okay, cool.
+[  268.43s ->   269.17s] Put credit spreads.
+[  269.61s ->   273.69s] Next, another way of deciphering trend is by looking at the moving average, which is
+[  273.69s ->   274.87s] what this blue line is here.
+[  274.87s ->   278.35s] You go to the indicator section, you have the moving average line, and you see what's starting
+[  278.35s ->   279.03s] to trade up.
+[  279.03s ->   281.61s] And again, you can see here, it's starting to move up.
+[  281.67s ->   284.99s] You can see this blue line here, which is a moving average line, is starting to point
+[  284.99s ->   285.25s] up.
+[  285.53s ->   287.59s] And so since it's pointing up, you can be here, okay, cool.
+[  287.67s ->   288.37s] We're moving higher.
+[  288.65s ->   290.43s] This would be a put credit spreads trade.
+[  291.13s ->   291.43s] Cool.
+[  291.73s ->   294.31s] Now, where do you enter your put credit spreads trade?
+[  294.53s ->   297.99s] Well, this is the beauty and why anybody can do it, especially those who work full time.
+[  297.99s ->   302.83s] All you need to do is come in here, whether the market is open, closed, whatever, you
+[  302.83s ->   306.53s] come in here, where's the nearest support, let's say around 4,300.
+[  307.07s ->   307.69s] Okay, cool.
+[  307.83s ->   309.81s] You set an order for 4,300.
+[  310.05s ->   315.25s] You set a limit order, which means that once it fills, the credit spread trade fills at that
+[  315.25s ->   318.46s] level, then you don't have to do anything else.
+[  318.56s ->   322.46s] And when you set a limit order, you also don't have to be around for the order to fill, which
+[  322.46s ->   326.10s] means if you're in a meeting and your credit spread limit order is hit, it will enter the
+[  326.10s ->   329.54s] trade for you and you'll be able to enter a trade without having to do anything.
+[  329.92s ->   331.58s] So again, using limit orders.
+[  331.92s ->   335.50s] So again, with credit spreads, if you've never heard of a credit spread, the way that these
+[  335.50s ->   339.40s] trades are structured is you pick a level that you're betting the stock will stay above
+[  339.40s ->   340.88s] for a put credit spread.
+[  341.20s ->   342.60s] So for instance, we're picking this level.
+[  342.72s ->   342.90s] Why?
+[  342.98s ->   345.14s] Because it's previous resistance, which will now be support.
+[  345.40s ->   348.92s] It looks like it's dipping down in a current uptrend, so it's probably going to reverse
+[  348.92s ->   350.04s] here and start heading higher soon.
+[  350.04s ->   355.96s] So again, what we see here is that this level, if the market stays above this level by my expiration
+[  355.96s ->   357.50s] date, then I make money.
+[  357.86s ->   362.58s] So for instance, let's say that our expiration date, because these are set it and forget it
+[  362.58s ->   366.24s] trade for people who work full time, let's say we're going about three weeks out, okay?
+[  366.52s ->   370.86s] So in three weeks, if the stock stays above this level, no matter what it does, let's say
+[  370.86s ->   376.04s] it does something like this, and it closes here, then again, I will make money.
+[  376.04s ->   378.18s] I will make about $20, okay?
+[  378.68s ->   384.90s] Now, if the stock goes below this and closes below it, then I will lose $80.
+[  384.90s ->   386.94s] This is roughly with a $1 wide spread.
+[  387.06s ->   390.52s] That's not exactly how it works on SPX, but just for general concepts.
+[  391.02s ->   392.26s] That's how this works, okay?
+[  392.58s ->   397.10s] So again, more times than not, these trades, especially when you're trading with the trend,
+[  397.36s ->   399.40s] have an 85 to 90% win rate.
+[  399.48s ->   403.72s] That means you're going to win most of the time, and again, you'll have a 20 to 80% win
+[  403.72s ->   403.90s] rate.
+[  404.14s ->   405.86s] That's exactly how these trades are structured.
+[  405.98s ->   409.22s] If you want to learn step by step how you can place these trades and the rules behind
+[  409.22s ->   412.18s] it, click down below and check out the Trading Handbook.
+[  412.18s ->   416.70s] Again, if you want access to these alerts for you so that you don't have to worry about
+[  416.70s ->   419.98s] where to pick, you don't have to worry about doing all this technical analysis, finding
+[  419.98s ->   424.80s] the right stocks, going to SPX, whatever it is, then again, I have it right here, SPX
+[  424.80s ->   427.62s] trade alerts, which tells you exactly what to do.
+[  427.68s ->   429.30s] For instance, this alert came out yesterday.
+[  429.72s ->   432.86s] Again, I have a 93% win rate, historically speaking.
+[  433.18s ->   437.84s] If I trade this, I have a 15% annualized return, which means I will double the average market
+[  437.84s ->   443.84s] return, and it tells me exactly what to do, the expiration of the option to pick, a put
+[  443.84s ->   448.84s] credit spread to put on, the levels to put on, and everything like that for you, as well
+[  448.84s ->   452.94s] as the minimum credit that I need to collect in order to put this trade on.
+[  453.20s ->   456.42s] This is everything you need to know right here for you.
+[  456.42s ->   460.94s] Now, this right here is called my 10% Credit Spreads Inner Circle Program.
+[  461.36s ->   465.62s] This program is only open four days a month and then closes, so I can spend the rest of
+[  465.62s ->   470.92s] the month focusing on my members and ensuring they have success with credit spread trading.
+[  471.22s ->   472.96s] And so right now is the first day of this program.
+[  473.06s ->   473.40s] It's open.
+[  473.48s ->   474.58s] It'll close in three days.
+[  474.64s ->   478.08s] So if you miss out, you miss out, and you won't be able to join until next month.
+[  478.30s ->   482.34s] So anyways, guys, if you're interested in trading credit spreads of any kind, SPX,
+[  482.34s ->   487.78s] SPY, whatever, to generate consistent monthly income, check out this program, first link
+[  487.78s ->   488.36s] down below.
+[  488.64s ->   490.84s] All right, guys, I will see you in the next video.

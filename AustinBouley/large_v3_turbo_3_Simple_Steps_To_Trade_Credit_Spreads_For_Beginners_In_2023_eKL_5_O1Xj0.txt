@@ -1,0 +1,64 @@
+[    1.21s ->     6.01s] In this video, I'm going to walk you through credit spreads trading in 2023 for beginners.
+[    6.15s ->    10.95s] So if you've never traded before, or maybe you're a little lost and need some help, this is the
+[   10.95s ->    15.35s] perfect video for you. We're going to be covering three main concepts. That is the basics of how
+[   15.35s ->    20.57s] credit spreads work, the strategies that actually work for credit spreads in this market right now,
+[   20.61s ->    25.11s] and then three is your weekly game plan and your mental aspect of trading. So let's dive
+[   25.11s ->    29.51s] into number one, the basics. All right, we have two different types of credit spread trades that
+[   29.51s ->    34.63s] we can put on. And a lot of people try to confuse you by talking about all the intricacies of credit
+[   34.63s ->    39.89s] spreads, but all I want you to think about when you hear credit spreads is think betting on a certain
+[   39.89s ->    44.65s] level. So if you hear credit spreads, think, all right, I'm betting on a certain level. Okay, so
+[   44.65s ->    49.29s] for instance, if you're trading a put credit spread, you are betting that the stock will stay above a
+[   49.29s ->    53.61s] certain level. So if the stock is trading here, you are betting the stock will stay above this level.
+[   53.89s ->    58.33s] If it does, you make money. If it doesn't, you lose money. That's how simple the bet is.
+[   58.33s ->    63.77s] Now with call credit spreads, it's the same thing, but in reverse. Let's say you're betting the stock
+[   63.77s ->    67.31s] will stay below a certain level. So this is a level. As long as the stock stays below it,
+[   67.37s ->    71.41s] you make money. If the stock goes above it, then you lose money. All a credit spread is,
+[   71.41s ->    76.25s] is a bet about a certain level. Either it's going to stay above or below. If it's a put credit spread,
+[   76.31s ->    79.77s] your betting is going to stay above. If it's a call credit spread, your betting is going to stay
+[   79.77s ->    84.01s] below. That's how simple credit spreads are. If you want the specifics of setting them up,
+[   84.01s ->    89.97s] I have multiple different videos on YouTube about how to specifically set up these trades
+[   89.97s ->    94.81s] with your specific broker. So I recommend you go watch those, but essentially what you're doing,
+[   94.87s ->    98.93s] I'll say it's a put one. You're going to sell the level that you're betting on. So you're going to
+[   98.93s ->   105.27s] sell this put contract, and then you're going to buy the put right below it to define your risk.
+[  105.53s ->   109.45s] But again, if you want to learn more about these specifics there, you can go to those videos to put
+[  109.45s ->   113.91s] on the trade, but essentially you're selling one to collect a credit. Then you're buying and paying
+[  113.91s ->   118.29s] some of that credit back, but the net is still a credit because you'll receive more credit here
+[  118.29s ->   123.37s] than you pay here, and thus you have a credit spread. So this allows you to define your risk,
+[  123.37s ->   129.47s] which means you have a known risk amount. You also have a known profit amount, and you should know
+[  129.47s ->   133.91s] ideally what your win rate is for this level, which we'll be talking about on the strategy section.
+[  134.03s ->   138.47s] Number two is you need a strategy. So for instance, you can go down to the link in the description
+[  138.47s ->   146.33s] below to check it out, or go to app.theimpeccable, app.10percentcreditspreads.com
+[  146.33s ->   154.43s] and actually do Dash Trading Handbook to get access to this little document here.
+[  154.79s ->   159.33s] But it'll walk you through the exact strategies you want to do. My favorite is the Turtle Strategy.
+[  159.47s ->   163.89s] This is an uptrending market strategy. So whenever the market is trending up, making higher highs
+[  163.89s ->   171.15s] and higher lows, you just simply follow this game plan. The game plan is this. Determine your short
+[  171.15s ->   177.89s] strike price by taking the stock close price times 97%. So go under the current price by 3%.
+[  177.89s ->   190.08s] So again, number one, 97% of close price, 97% of close when uptrending, when going up,
+[  190.08s ->   195.60s] went uptrending. Number two, that's how we're going to set up the level that we're betting on.
+[  195.92s ->   201.38s] Number two is our expiration date. What is our expiration date? Right there it says
+[  201.38s ->   207.92s] the current date plus 12. That's how simple it is. We're going to go out roughly that far and
+[  207.92s ->   213.12s] round to the next Friday. That is going to be our expiration date. And these are the only numbers
+[  213.12s ->   217.96s] you need to set up a trade. You need to know the level you're betting on. Then you go one below that.
+[  217.96s ->   222.62s] For instance, that A put credit spread to define your risk. Then number two, you go the expiration
+[  222.62s ->   227.68s] date. Once you do that, you can put on this trade to set it and forget it model. And then again,
+[  227.76s ->   234.32s] you can manage losers how you want using this little guide here. It's sizing rules, exit rules,
+[  234.38s ->   238.56s] and all that down here at the bottom. But it also made YouTube videos on that. Next, the mental,
+[  238.76s ->   243.72s] what is your strategy for credit spreads? Well, quite simply, if you want to consistently make
+[  243.72s ->   248.76s] money with credit spreads, your goal is to put on at least two trades a week. So that's the whole
+[  248.76s ->   253.80s] goal. Put on two trades every single week. And again, you do that by using the strategies here
+[  253.80s ->   260.88s] in this guide. But again, two trades a week is quite simple. Again, if you can put on two trades
+[  260.88s ->   266.92s] every single week, you're going to make roughly 5% to 10% a month return on your overall account.
+[  267.28s ->   270.98s] That's insane. That's what most people strive for in a single year. You can do in a single month.
+[  270.98s ->   277.62s] I know because I do this, my members do this, and so many other people who aren't even members
+[  277.62s ->   282.06s] send me and results just using this trading handbook that they're able to generate great
+[  282.06s ->   288.84s] returns. So again, the mental aspect of it is your whole job is to show up each week, put on two
+[  288.84s ->   293.24s] trades regardless of what the market is doing. Don't think about the future. Don't think about all
+[  293.24s ->   299.08s] this stuff. Follow these systems and these systems will guide you to profitability. All right,
+[  299.08s ->   302.36s] guys, if you want to learn more and want to get my help with your credit spread trading,
+[  302.48s ->   307.06s] click down below. I have access to my program that's open right now. It's only open four days
+[  307.06s ->   312.64s] a month, and then I close it for the rest of the month to spend all my time and energy helping my
+[  312.64s ->   317.06s] members make money. Well, it's open right now, and I don't want you to miss out, especially if you've
+[  317.06s ->   321.86s] been waiting on a chance to get help with credit spreads. Anyways, if you're still on the journey to
+[  321.86s ->   325.96s] learn credit spreads and you want help for free, smash the subscribe button because I come out with a
+[  325.96s ->   329.40s] video every single day to help you become a better credit spread trader. All right, guys,
+[  329.44s ->   330.62s] I'll see you in the next video.

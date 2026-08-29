@@ -1,0 +1,117 @@
+[    0.18s ->    15.74s] Hey YouTube, it's Roman, and today what I want to do is build off of the previous video where we solved the stochastic differential equation for geometric Brownian motion, and we ended up with this closed form solution here for the stock price process.
+[   15.74s ->    22.40s] So what I'd like to do today is build geometric Brownian motion in Python. I'm kind of just going to do it on the spot and see what we come up with.
+[   23.42s ->    29.78s] You'll notice I have a previous video that used to be titled geometric Brownian motion, but it's now titled arithmetic Brownian motion.
+[   30.18s ->    42.54s] In that video, I actually refer to the simulation as geometric Brownian motion, but it is not. It's arithmetic Brownian motion, and the solution to arithmetic Brownian motion is trivial.
+[   42.54s ->    59.98s] Essentially, you're starting with this representation here. I'll make a future video talking about arithmetic Brownian motion in more detail, because that and the Bachelier model started to become more popular with the whole negative rates and current events.
+[   59.98s ->    70.02s] So for now, this video is going to be on geometric Brownian motion. So we have this closed form solution for a stock price process. We're going to build it in Python.
+[   70.02s ->    78.48s] So I have my Jupyter notebook up here, and for starters, I'm just going to import some libraries so that we can just refer to them as we need them.
+[   78.48s ->    88.93s] So I'm going to have pandas, numpy, matplotlib, and then as we need more, I can always import them.
+[   90.32s ->    99.55s] So let's take a look at the solution here. We have a few parameters. We have sigma, we have mu, and then we have our initial stock price.
+[   99.55s ->   106.89s] And that's just about it. So we're also going to need to specify a time to maturity and a time step.
+[  107.31s ->   115.37s] So essentially a terminal time t to step until, so we can keep generating, keep generating that path.
+[  115.83s ->   120.47s] So let's go here. And then we also need to clarify how many paths we'd like to generate.
+[  120.47s ->   135.10s] So for starters, let's just have a function. We're going to call it geometric Brownian motion, and then we're going to take as parameters S sub zero.
+[  135.26s ->   144.24s] So that's going to be the initial stock price. We'll take mu, which is our drift term, sigma, which is our volatility term, a time until expiration,
+[  144.24s ->   153.08s] or a time to maturity, or terminal time t. And then we're going to take a dt value, and then the number of simulations n.
+[  154.54s ->   160.72s] Okay, so let's think about how we can kind of go about constructing this algorithm here.
+[  160.86s ->   165.38s] So we're going to need exponential, and we're going to need this process here.
+[  165.58s ->   170.58s] So we're going to need mu minus one off sigma squared cap t.
+[  170.58s ->   178.82s] So let's just, let's just build that in right now. So let's just have a temporary variable X is equal to, or, you know, let's, let's start with a list.
+[  179.52s ->   186.20s] So let's do prices is equal to a list with S sub zero in it.
+[  188.25s ->   194.67s] Okay, cool. And then what we can also do is we can specify for I in range n.
+[  194.67s ->   200.01s] So we're going to simulate n paths. So we can create another list up here called paths.
+[  201.64s ->   206.08s] And now let's take a look at what we have.
+[  206.48s ->   213.14s] This setup is going to establish a list of paths that we're going to generate based on geometric Brownian motion.
+[  213.82s ->   216.00s] Then we're going to create n paths.
+[  216.50s ->   219.30s] And we're going to start with this list of prices here.
+[  219.30s ->   230.25s] And what we're going to do now is we're going to say for, or let's create a helper variable called time.
+[  231.19s ->   233.21s] And we're going to set it equal to zero.
+[  233.95s ->   244.40s] And then we'll say while time plus dt is less than cap t.
+[  246.02s ->   251.56s] So pretty much we're going to add our step in time to the time index, if you will.
+[  251.56s ->   256.36s] And while that's less than our terminal time t, then we're going to do this.
+[  256.52s ->   261.32s] We're going to say prices.append.
+[  262.08s ->   265.28s] And this is where we're actually going to generate the increment.
+[  265.56s ->   273.10s] So to generate the increment, we take the previous price and then multiply it by the exponential to this process here.
+[  273.10s ->   281.98s] So what we're going to do is represent the exponential with numpy.
+[  282.82s ->   285.04s] So we're going to do mp.exp.
+[  285.44s ->   287.58s] So it's going to be the e portion of it.
+[  289.76s ->   293.96s] Then the previous price is just going to be the latest index here.
+[  294.22s ->   297.10s] So we can do prices minus one.
+[  297.10s ->   300.14s] So that's going to be S sub zero.
+[  300.14s ->   304.88s] And then when we append the next price, it'll be S one and so on and so forth.
+[  305.56s ->   310.82s] So now we have this, we have e, we have our mu and sigma trivially.
+[  310.94s ->   314.42s] We have our dt because that's provided to us in the function.
+[  314.60s ->   317.30s] So let's just add that in the exponential first.
+[  317.30s ->   324.28s] So we have our mu minus 0.5 times sigma squared.
+[  325.69s ->   328.51s] And we can ensure that this is correct by doing that.
+[  331.02s ->   331.42s] Okay.
+[  331.52s ->   334.02s] So we have this first term here.
+[  334.44s ->   336.66s] We're going to multiply it by our dt.
+[  337.22s ->   340.54s] So we have that times dt.
+[  342.34s ->   356.98s] And then, so we're going to do plus sigma times the Brownian increment here.
+[  356.98s ->   368.48s] So we're going to do sigma times, and then we need a mp.random.normal 0.
+[  369.06s ->   373.70s] And then it's going to be mp.square root of dt.
+[  374.06s ->   375.64s] So I believe, I believe that's it.
+[  377.44s ->   379.75s] Let's just take a look.
+[  379.95s ->   382.25s] numpy random normal.
+[  382.91s ->   388.26s] So it's going to be 0 square root.
+[  388.28s ->   389.50s] So it's mu sigma.
+[  389.50s ->   393.96s] So that's how we can generate from a standard normal distribution if we did 0, 1.
+[  394.56s ->   400.86s] But we know that the Brownian motion is, standard deviation is going to be the square root of the time step.
+[  400.96s ->   405.48s] So that's going to be the accurate representation of this here.
+[  405.58s ->   407.34s] So that's how we're generating the Brownian increment.
+[  407.82s ->   411.96s] Then we have this volatility term, the dt here, and we already know all that stuff.
+[  411.96s ->   423.46s] So effectively, what we have here is everything up until the time is capable of being less than the terminal time t.
+[  423.68s ->   425.40s] So we need to make up for that difference.
+[  425.66s ->   431.30s] So when this isn't true, then that means the step in time is going past the terminal date.
+[  431.30s ->   454.78s] So what we can do is we could say, if cap t minus time plus dt is greater than 0, then what we really need to do is, or let's see, we know that that's going to be true.
+[  454.78s ->   459.81s] So we need to do this minus time is really, yeah.
+[  459.91s ->   468.35s] So that's, to generate the last step in time, what we're going to do is less than or equal to t, less than or equal to.
+[  468.75s ->   470.45s] So then this is greater than 0.
+[  470.65s ->   482.03s] To generate this last step in time, if dt doesn't perfectly get us to cap t, then we're going to subtract the current time index from the terminal time to get the last dt.
+[  482.03s ->   499.77s] So the last step in time, so pretty much you can think of it as if we're going with, let's just say, you know, we have a five day cap t here and our time step is incrementing in imperfect increments.
+[  499.77s ->   516.13s] So if we generate like four days of prices and we only have like a half day left, but our dt is one day, then we don't want to generate the last price as if it's a one day increment.
+[  516.33s ->   518.55s] We want to generate it as if it's a half day increment.
+[  518.55s ->   535.29s] So if this is going to be 4.5, so this is the index of time, and this is the terminal date, which is five days, then we're going to say that if the difference here is greater than zero, we're going to increment by that difference instead of the given dt.
+[  535.29s ->   545.11s] So we're going to just say prices that depend prices minus one instead of dt, it's going to be this t minus time, and then we're going to do this t minus time here as well.
+[  546.48s ->   558.16s] So we're going to do this, and then once we do that, we're going to have our entire sample path so we can append the entire sample path to the prices, and then we can return the paths once we're done.
+[  558.16s ->   569.12s] Okay, cool. So now we have this function here where we're capable of less than or equal to.
+[  569.64s ->   575.54s] Okay, now we're capable of simulating geometric variety of motion. Let's give it a try.
+[  575.54s ->   590.03s] So let's just say s sub 0 is equal to 100. We'll say mu is equal to maybe a 0.8%. Sigma is equal to 30%. Cap t is equal to, let's do one year.
+[  590.59s ->   594.67s] dt will do daily 252, and then m will do 100.
+[  597.15s ->   606.92s] So now let's run this function and store it in a variable called sample paths, because we're returning the paths here.
+[  606.92s ->   618.98s] And we should be able to just run that. And then what we can do now is we can plot it by saying for path in sample paths.
+[  620.10s ->   632.73s] We'll do plt.plot. Oh, you know what? You know what we forgot to do? It's taking so long because we didn't increment the time here.
+[  633.25s ->   642.73s] So every step, what we're going to do is add time plus equals dt. That's what we forgot here. That's why that loop is taking forever.
+[  642.73s ->   655.30s] Okay, there we go. So by incrementing this time variable here, we're effectively moving throughout time and simulating the next price.
+[  655.94s ->   661.86s] And then here we're counting for the potential difference if dt isn't perfectly summing to cap t.
+[  662.36s ->   666.14s] And then we're going to do that n times, and that's going to generate n sample paths.
+[  666.50s ->   669.82s] And now we can plot the sample paths.
+[  669.82s ->   674.04s] So this is sample paths, and then we can plot the sample paths here.
+[  675.62s ->   678.48s] Cool. So then we have our geometric Brownian motion.
+[  679.30s ->   684.36s] This is effectively, it's definitely not the most efficient solution.
+[  684.64s ->   686.44s] There are better ways of doing it.
+[  686.50s ->   694.54s] In fact, I think on Wikipedia, if you go Wikipedia geometric Brownian motion,
+[  694.80s ->   703.30s] they give you a Python solution, which is significantly more efficient.
+[  703.30s ->   708.57s] It's vectorized. So we have exponential.
+[  708.81s ->   714.37s] So this is the solution here, mp e to the mu minus sigma divided by two.
+[  714.49s ->   721.34s] So that's this right here, this represented here.
+[  722.10s ->   725.22s] So we have that random normal times the square root of dt.
+[  725.82s ->   729.04s] But the only difference is we're vectorizing it using NumPy
+[  729.04s ->   733.60s] and then using NumPy operations to make it more efficient.
+[  733.60s ->   736.84s] So if you're interested in efficiency, you can definitely check out the solution too.
+[  737.98s ->   742.89s] But this was just going to be a simple implementation,
+[  743.57s ->   747.49s] kind of accounting for the discrepancy in the previous video
+[  747.49s ->   750.59s] that was originally titled geometric Brownian motion.
+[  750.73s ->   756.49s] I wanted to clarify by solving it first and then implementing it in a Jupyter notebook.
+[  756.65s ->   759.97s] So as always, if there are any questions, feel free to leave them in the comments.
+[  760.07s ->   762.53s] I'll do my best to try to respond to them.
+[  762.61s ->   765.07s] If you have any ideas for future videos, also please let me know.
+[  765.07s ->   769.39s] But hopefully this made sense and hopefully this basic algorithm,
+[  769.59s ->   774.25s] though not efficient, made it very clear what we were doing by incrementing.
+[  775.03s ->   779.25s] So you can see we have daily time steps up to 252 business days.
+[  779.77s ->   781.39s] We can do 365.
+[  782.05s ->   783.13s] It doesn't really matter.
+[  783.23s ->   786.33s] It depends on what you're trying to simulate for.
+[  786.41s ->   788.25s] It depends on what you're trying to account for.
+[  788.25s ->   792.65s] But as always, thank you for watching and I'll see you in the next one.

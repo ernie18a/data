@@ -1,0 +1,219 @@
+[    1.10s ->     5.90s] Are you broke or don't have much money but still want to trade and make money consistently from
+[    5.90s ->    21.44s] the market? I totally get it. I started trading with just $1,000 back in 2018 and it was really
+[   21.44s ->    32.53s] tough. I blew up my account twice and that was really hard because I was just going to college
+[   32.53s ->    37.11s] and working at Kroger so I hardly had any money. So the money that I did have, I completely lost
+[   37.11s ->    47.33s] twice. But if I would have had this strategy that I'm about to show you in this video that I would
+[   47.33s ->    51.27s] have actually been able to make money and grow my account a lot faster and not, I would have blown
+[   51.27s ->    59.38s] it up twice. But if I would have used the strategy I'm about to show you in this video, I would have
+[   59.38s ->    69.82s] actually made money and not blown up my account and would have done so consistently. So if you're
+[   69.82s ->    74.68s] ready to learn the strategy that only takes $100 and learn my risk management rules so that you
+[   74.68s ->    80.24s] don't blow up your account like I did as a small account trader, then smash the subscribe button
+[   80.24s ->    88.74s] and let's get this party started. All right. So let me explain how this $100 option strategy works.
+[   88.74s ->    93.00s] It's called credit spreads. If you've never heard of them before, I'm about to make it super duper
+[   93.00s ->    97.42s] simple. Essentially, you have a stock and you're betting that the stock will stay above that level.
+[   97.66s ->   102.56s] Wow. So hard. So let me show you this visually. Let's say you have a stock here that's trading
+[  102.56s ->   107.10s] and you're like, hmm, this level right here, I don't think the stock will go below it. If you're
+[  107.10s ->   113.90s] right, you make money. Let's say you make $20. If you're wrong, then you lose 80. That's how this
+[  113.90s ->   118.60s] works. Simply, you're making a bet that a stock will stay above a certain level. And now when I show
+[  118.60s ->   124.22s] you how to do it and the way that we're about to do it, you can have upwards of an 80 to 90% win
+[  124.22s ->   128.66s] rate with this and consistently generate money from the market. So let's walk through how this
+[  128.66s ->   133.44s] is done. All right. Well, the market always works in phases. The market's either going up, down,
+[  133.50s ->   138.80s] or sideways. And again, if we want to be able to know that, we can use one simple indicator to tell
+[  138.80s ->   151.90s] us what's going on. All you need to do is access a charting platform. You can use your broker or website,
+[  151.90s ->   157.08s] whatever. I'm using tradingview.com. So let's check this out. Go to the indicator section,
+[  157.46s ->   161.88s] add on a simple moving average. So type in simple moving average. Some brokers, you just type in
+[  161.88s ->   167.16s] moving average. Either way, it works. I'm going to actually just type in moving average and simple
+[  167.16s ->   171.62s] right here. Perfect. Okay. Now that we have that, we're going to go into the settings and change it.
+[  171.70s ->   176.60s] So the settings, by default, the length is nine. This means that it gets its value by looking at the
+[  176.60s ->   182.10s] last nine candles on the chart. We want to go a bit further. We want to look at a 50 period moving
+[  182.10s ->   187.98s] average. So again, we can use 50, 200. Those are two of the most popular links. Anyways, but for this
+[  187.98s ->   193.08s] video, we will use 50. All right. For the sake of this, we know which way the market's going to go
+[  193.08s ->   198.78s] in general when the stock is above or below this line. If the stock is below this line, we're more of
+[  198.78s ->   203.70s] a bearish. The stock's going to be heading downward. If we're above it, the stock's going to go up. You can see
+[  203.70s ->   207.22s] here, the stock broke above it. It had trended up. The stock broke below it. It slowed down and went
+[  207.22s ->   212.32s] a bit red. You can see here below is red, above it's green. A general scenario rule to follow.
+[  212.74s ->   217.12s] Okay. So now that we know the general direction that it's going and we want to bet that it will
+[  217.12s ->   221.68s] stay above a certain level, but what do we do? Well, simply we wait for the stock to be above the
+[  221.68s ->   227.34s] blue line. Once it is, we simply go out to the nearest support level and put on a put credit spread.
+[  227.72s ->   231.94s] So for instance, we can simply go out. So let's say this little level here, because it looks like
+[  231.94s ->   236.26s] support. Guess this, this is our level. And then as long as the stock stays above this,
+[  236.34s ->   240.54s] then we make money. So again, that's how we put on these trades, but let me walk through
+[  240.54s ->   247.65s] the specifics of it real fast. All right. Ignore my handwriting, but really it only takes three
+[  247.65s ->   252.71s] simple steps and processes. Number one, you need to identify what level do I think the stock will
+[  252.71s ->   257.59s] stay above. And we do this in a simple way. You simply take, where's the stock now? Again,
+[  257.59s ->   261.81s] you want it to be above that blue line, the moving average. But once it's above that,
+[  261.81s ->   275.60s] you simply say, hmm, what level is it at? And then multiply it by 0.97. So let's do this together.
+[  275.86s ->   283.42s] Let's say that this stock is trading at $400 and we multiply it by 0.97. This means we go 3% below
+[  283.42s ->   287.58s] where the stock is. And that comes out to 388. Now, again, you'll just round it to the nearest
+[  287.58s ->   291.48s] whole number if this isn't a whole number, but that means that if it's trading at 400,
+[  291.76s ->   297.40s] we're going to use a level of 388. If we use this, we'll have a really high win rate as in the stock
+[  297.40s ->   301.58s] will hardly ever go below this level, especially when it's above the blue line.
+[  305.96s ->   309.76s] Now, next we need to log into our broker and actually place this trade. This is super simple.
+[  309.92s ->   314.34s] So the way that we structure this is now that we have this level, we know we're going to sell the
+[  314.34s ->   326.22s] first level and buy the next level. So 388 followed by buying 387. Now, why are there two levels? Well,
+[  326.26s ->   330.60s] I gave you a large overview of how credit spreads work. Essentially, you're betting on the level,
+[  330.60s ->   335.90s] but how it actually is structured is using two different options. So for instance, let's say
+[  335.90s ->   339.76s] we're using this same example here where we're betting that the stock will stay above this level.
+[  339.94s ->   346.78s] The level that we bet on is 388, aka it's the level that we sell. So we're going to sell to open a put
+[  346.78s ->   352.20s] credit spread. What does this do? This allows us to make money as long as the stock stays above this
+[  352.20s ->   357.82s] level. However, this gives us unlimited risk by selling a naked option, by selling just one option.
+[  357.82s ->   364.72s] So we come down below this level, just $1 below, and we buy another put. What does this do? Well,
+[  364.80s ->   368.84s] it caps the amount of money we make. So before with this, let's say we would have made $5,
+[  369.40s ->   375.68s] but we had unlimited risk. Now, when we combine these together, we're only going to make probably
+[  375.68s ->   381.86s] what? $1 or less. And now we're going to have capped losses. So now we have versus unlimited losses.
+[  382.10s ->   386.84s] Now we have a loss of, let's say $2, right? So something like that. So now that we have our capped
+[  386.84s ->   391.62s] losses, we also have capped profits, but with that gives a super high win rate. And we can bet
+[  391.62s ->   396.74s] and be right. Whether the stock goes up, stays the same, or goes down, but stays above our level,
+[  396.82s ->   400.74s] we still make money. That's a beautiful part of credit spreads. So we're going to place this
+[  400.74s ->   404.64s] trade. We're going to buy, or I'm sorry, we're going to sell the 388, and we're going to buy the
+[  404.64s ->   410.32s] 387. So let's actually go into a broker. So here's an example, Robinhood account. Let's walk through
+[  410.32s ->   414.32s] it together. Again, you can do it with any broker. So let's say we're trading SPY. And this is,
+[  414.32s ->   419.32s] again, we're all using just fake numbers here. So SPY, and we said that it was trading at 400.
+[  419.42s ->   425.48s] It's actually trading at 446. So let's actually pull a real example here. So again, 446.12. And
+[  425.48s ->   430.82s] then again, we go out 0.97. So that gives us 432.7. So that means we're going to round up to the
+[  430.82s ->   436.98s] total number. So 433. So the level we're going to sell for this put credit spread is 433. So let's
+[  436.98s ->   442.22s] look into the SPY options chain. We're going to go into builder. We're going to click on put credit
+[  442.22s ->   448.00s] spread, input credit spread. We're going to change our expiration date to go out two to three weeks.
+[  448.32s ->   451.90s] So again, that's going to be roughly 16 to 18 days. So let's find the one around 16 to 18 days.
+[  452.24s ->   455.74s] Okay. That looks like around 14 days right here. We can guess we can take this one.
+[  456.10s ->   460.32s] See how that works. Dollar wide. Okay, cool. So now we're going to look for what level do we have in
+[  460.32s ->   466.48s] mind? Well, we had the 0.97. So let's see if we reload that. That means the 433. So let's go scroll
+[  466.48s ->   472.64s] down here to the 433. Maybe we're going to have to do a different strike. Let's do 22. All right,
+[  472.72s ->   477.86s] 22. We'll go to $1 wide because I know I just did this work. So we're going to scroll down to the
+[  477.86s ->   483.42s] 433. 433 right here. 433. And then again, we buy the one right below it. 432 has protection.
+[  483.74s ->   489.60s] That comes up as $0.08. So again, what does this mean? This means we can put the trade on for $0.07
+[  489.60s ->   493.70s] total credit. That means the money that they're going to give us for putting this trade on,
+[  493.70s ->   497.98s] which means that we have the chance to make, okay, I guess it's $7.08. So we have the chance
+[  497.98s ->   503.50s] to make $8 with the chance to lose $0.92. So that seems like a huge discrepancy, right? Like we're
+[  503.50s ->   508.94s] not collecting that much money to make enough to offset losses, right? Well, I'll explain that in
+[  508.94s ->   515.44s] the risk management rules soon. But what I do want to tell you is you want to target the 10 to 12 cent
+[  515.44s ->   521.02s] range. If you get between 10 and 12 cents, you'll have roughly an 80 to 90% win rate and you'll be able
+[  521.02s ->   524.94s] to do this on repeat. And with the stop loss rules I'm about to show you, you're going to be able to
+[  524.94s ->   529.44s] make money long-term. So remember, if it's trading at $0.08 and now $0.09, you want to collect it
+[  529.44s ->   534.42s] around 10 to 12 cents. So again, if you can't do that, then again, you don't want to put the trade
+[  534.42s ->   539.18s] on or maybe just move up to this level and put on this trade instead. When you put on the credit
+[  539.18s ->   550.53s] spread trade, you want to make sure it's around 10 to 12 cents. Okay. So let's recap real quick.
+[  550.63s ->   554.67s] We have a credit spread that's essentially betting that we're going to stay above a certain level.
+[  554.67s ->   560.31s] What we do is we sell a put and then we buy the put below it to create this credit spread structure.
+[  560.81s ->   567.25s] We find our levels by going 3% below the current price, aka multiplying it by 0.97. And we want to
+[  567.25s ->   571.55s] aim to collect between 10 to 12 cents. Okay. Let's say we can collect 10 cents. If we're collecting 10
+[  571.55s ->   577.47s] cents, that means they're paying us $10 to put this trade on. That means that we are going to be able
+[  577.47s ->   584.43s] to make $10 and we're risking $90. So again, with this, we're going to have an approximate win rate
+[  584.43s ->   590.15s] of let's just say 85%. It's going to be somewhere in this range, 85% win rate. So that means that 85%
+[  590.15s ->   594.93s] of the trade we put on will be winners and we'll make $10. 15% of the time, we're going to lose and
+[  594.93s ->   601.21s] we're going to lose $90. So how do we monitor and use a risk management approach so we don't lose
+[  601.21s ->   606.35s] $90? That's a lot of money compared to the $10 that we're making. Well, as we said here, how do we
+[  606.35s ->   611.17s] know this bet works? Well, like I mentioned in this example right here, all we're doing is betting
+[  611.17s ->   616.71s] that a stock will stay above a certain level. Now again, if we hold until expiration and the stock
+[  616.71s ->   621.79s] is below our level, then we're going to hit a max loss of $90. That's a lot of money. But what if,
+[  621.85s ->   626.39s] since we're betting the stock stays above this level, that when it breaks this level, we get out
+[  626.39s ->   633.39s] instead. So that's our stop loss rule. Monitor is our stop loss rule, aka we get out when the stock
+[  633.39s ->   637.05s] breaks our short level. So what's our short level for this example? Well, in this one right here,
+[  637.05s ->   644.11s] we had it at $400, then $388. So $388, when the stock that we're trading here breaks or goes below
+[  644.11s ->   650.75s] $388, we're going to get out of our trade. This is a stop loss. This stop loss will be placed at
+[  650.75s ->   657.57s] $0.50. So again, if we're getting in at $0.10, then we're getting out at $50 for a loss. That means
+[  657.57s ->   663.87s] they gave us $10 to enter the trade and we're paying $50 to exit the trade, then we're going to
+[  663.87s ->   671.37s] lose $40. So with a stop loss rule, this changes from making $10 instead of losing $90, we're going
+[  671.37s ->   677.85s] to lose $40. So that's a lot better, right? And our win rate is only going to drop by about 5%. So
+[  677.85s ->   682.03s] we're going to have about an 80% win rate on this. Again, I've done the back test. If you want to do
+[  682.03s ->   687.61s] that, I have longer videos for that. But you can see here. So now that we're going to make $10 and risk
+[  687.61s ->   692.07s] $40 and 80% of the time, we're going to make $10 and 20% of the time, we're going to lose $40. This is a
+[  692.07s ->   696.05s] great trade, something you should take over and over and over. How do I know that? How does this
+[  696.05s ->   699.69s] work? Well, not only do I have hundreds of members doing it, but let's show you the math because that's
+[  699.69s ->   703.39s] what's important, knowing and understanding why. All right, this is called long-term expectancy.
+[  703.91s ->   708.41s] You take the number of trades you've taken times the amount you're going to win times, or I should
+[  708.41s ->   712.39s] say minus the amount you're going to lose times the amount times you lose. So let's just say we're
+[  712.39s ->   716.57s] going to do 100 trades. So out of 100 trades, if we have an 80% win rate, that means we're going to win
+[  716.57s ->   724.53s] 80 trades. How much do we win when we win? Well, we win $10. All right. Now out of 100 trades,
+[  724.61s ->   728.59s] if we have an 80% win rate, how much are we going to lose? We're going to lose 20 trades. How much
+[  728.59s ->   738.91s] do we lose after each time we lose? We lose $40. So that gives us, so we get 10 cents to put on this
+[  738.91s ->   744.41s] trade, then that means that we're going to set up this structure. That means we get 10, but if we lose
+[  744.41s ->   750.95s] the trade, we're going to lose $90. And this is going to give us roughly a 90% win rate. What does
+[  750.95s ->   755.71s] this mean? This means 90% of the time we're going to win $10 and 10% of the time we're going to lose
+[  755.71s ->   760.93s] $90. So that's how this trade is structured, but that's a lot of money to lose when you're wrong,
+[  760.99s ->   765.57s] right? Like $90 compared to the $10 you're making. That means for every one loser you have, you have
+[  765.57s ->   771.17s] to have nine winners just to break even. So what is the risk management rules that we're going to use?
+[  771.17s ->   776.35s] It's called monitoring. Step number three, we're going to put in a stop loss. So what is a credit
+[  776.35s ->   780.55s] spread? What does it do? Well, like I said, it's betting that a stock will stay above a certain
+[  780.55s ->   785.53s] level. So when the stock breaks that level, we should exit the trade. That is our stop loss when
+[  785.53s ->   790.25s] the stock breaks that level. So in this hypothetical situation, where we have a stock trading at 400,
+[  790.55s ->   797.81s] we go 3% below the current price, which means we're going to sell the put at 388. That means once the
+[  797.81s ->   803.39s] stock goes below $388, then we're going to stop out of the trade. When we stop out of the trade,
+[  803.43s ->   808.21s] it's going to be stopped around 50 cents. So that means that we're getting in at 10 cents and we're
+[  808.21s ->   815.07s] getting out at 50 cents. So that's a net loss now of 40 cents or $40 because each spread is equals to
+[  815.07s ->   820.81s] 100 shares. So you multiply by $100 to find your real value. So now we have the same profit. We're
+[  820.81s ->   827.41s] still collecting 10 cents, but instead of our losers being $90, which is meant we hold until expiration,
+[  827.41s ->   832.89s] we're wrong. Instead, we're going to have a stop loss when this first level is hit and we're going
+[  832.89s ->   837.77s] to actually have a loss of 40. So that's a lot better, right? That's literally less than half.
+[  838.13s ->   844.05s] So now this gives us roughly an 85% win rate. So our win rate doesn't actually drop too, too much.
+[  845.38s ->   851.34s] So again, 85% of the time, we're going to make $10 and 15% of the time, we're going to lose $40.
+[  851.74s ->   855.62s] This is a great trade to take over and over and over, especially as you're trying to grow your
+[  855.62s ->   861.42s] account. And not only that, but generate consistent monthly income as you start to scale your account
+[  861.42s ->   866.58s] to a larger value. So let's talk about risk management here and how this works and talking
+[  866.58s ->   871.54s] about why you should take this trade when you're trading. Well, let's talk about the math here.
+[  871.98s ->   876.34s] So if we go into it, this is called long-term expectancy. So when we go into it, we basically
+[  876.34s ->   880.62s] do the amount of times we're going to win times the amount we win minus the amount of times we're
+[  880.62s ->   884.92s] going to lose times the amount we lose. All right. So let's, let's do this. If we're doing a hundred
+[  884.92s ->   890.62s] trades, we've an 85% win rate. That means we're going to win 85 trades. How much do we win each
+[  890.62s ->   895.80s] time I win? Well, like we said, $10. Okay. Now we need to subtract out our losses. If we have a hundred
+[  895.80s ->   899.94s] trades and we have an 85% win rate, how many trades are we going to lose? Well, we're going to lose 15
+[  899.94s ->   905.94s] trades, not 25, 15. And how much money do we lose when we lose? Well, we lose 40. So that gives us a
+[  905.94s ->   912.66s] long-term return of $250. That means that over a hundred trades, we're going to end up with a net
+[  912.66s ->   919.48s] return of $250 if we're trading with one spread for all these trades. So that gives us a positive
+[  919.48s ->   925.24s] return. What does this also show you? It means that if we collect the 12 cents, 13 cents, 14 cents,
+[  925.42s ->   929.00s] that you can sometimes collect with these trades, then your long-term expectancy is going to be even
+[  929.00s ->   935.06s] larger. But regardless, this is a profitable long-term strategy. And so again, how do we grow our
+[  935.06s ->   939.76s] account with this with a small account with $100? What does this take? Well, first off, to put on
+[  939.76s ->   946.02s] one spread, like we've been talking about. So putting on one spread, it only takes a hundred
+[  946.02s ->   951.16s] dollars to put on. It takes a hundred dollars in collateral to put this trade on. But I do have to
+[  951.16s ->   956.28s] be honest with you here. In order to place a spread to trade, you need a margin account.
+[  956.94s ->   963.48s] By having a margin account, most brokers, especially in the US, require you have a minimum account value
+[  963.48s ->   970.86s] of $2,000. So one thing that is possible is putting in $2,000 into your broker, getting approved for
+[  970.86s ->   976.46s] margin, then removing 2,000 and trading with less. But regardless, in order to trade with a margin,
+[  976.56s ->   982.58s] you typically have to have $2,000. So although this trade can be placed with $100, you need at least
+[  982.58s ->   990.14s] $2,000 for most brokers in the US. But anyways, one broker trade requires $100. Why? Well, because
+[  990.14s ->   994.72s] that's just the collateral you put up for the trade if you're trading a $1 wide. And so again,
+[  995.16s ->  1001.04s] for this, in order when we're taking the bet, we put up $100. If we're right, we get our hundred back
+[ 1001.04s ->  1008.70s] with the money we won. If we're wrong, then again, actually, we just stop out. So we just close the
+[ 1008.70s ->  1012.92s] trade early and we get our collateral back. So that's really not a problem at all. But anyways,
+[ 1013.24s ->  1018.92s] one spread, one trade takes $100. And that's kind of how you do it. But how do you manage risk if you
+[ 1018.92s ->  1024.54s] have the option to do a lot of spreads? Well, you want to stick with what is called the 10% trading
+[ 1024.54s ->  1030.36s] rule, which is what we do is we take our account value. Let's say you're trading with $2,000. You
+[ 1030.36s ->  1037.82s] multiply your account size by 10%. Again, this is the max. You should never go over 10%. That gives us 200.
+[ 1038.58s ->  1043.92s] Now, how many spreads can we enter? Well, each spread takes $100. Divide that by 100. And this
+[ 1043.92s ->  1050.96s] means that based on the 10% max loss rule, we can enter two spreads. So if we have a $1,000 account,
+[ 1051.04s ->  1056.92s] in order to manage risk correctly, we can enter two spreads. And again, we can grow that over time as
+[ 1056.92s ->  1061.14s] our account grows. You can do more if you want, but this is the recommended risk management size that
+[ 1061.14s ->  1066.22s] I have for you. Anyways, guys, I hope you enjoyed the $100 option strategy explained video. Again,
+[ 1066.22s ->  1071.04s] I have so much more for you. If you click the link down below, I have a very in-depth credit
+[ 1071.04s ->  1075.56s] spread trading strategy, free course for you that goes through so many lessons of sizing,
+[ 1075.90s ->  1079.86s] rules, strategies, and so much more that can help you become a better credit spread trader.
+[ 1080.24s ->  1083.14s] Anyways, guys, see you in the next video. Peace.
+[ 1083.14s ->  1084.14s] Peace.
+[ 1084.14s ->  1085.14s] Peace.
+[ 1085.14s ->  1086.14s] Peace.
+[ 1086.14s ->  1087.14s] Peace.
+[ 1087.14s ->  1088.14s] Peace.
+[ 1088.14s ->  1089.14s] Peace.
+[ 1089.14s ->  1090.14s] Peace.
+[ 1090.14s ->  1091.14s] Peace.
+[ 1091.14s ->  1092.14s] Peace.
+[ 1092.14s ->  1093.14s] Peace.
+[ 1093.14s ->  1094.14s] Peace.
+[ 1094.14s ->  1095.14s] Peace.
+[ 1095.14s ->  1096.14s] Peace.
+[ 1096.14s ->  1097.14s] Peace.
+[ 1097.14s ->  1098.14s] Peace.
+[ 1098.14s ->  1099.14s] Peace.
+[ 1099.14s ->  1100.14s] Peace.
+[ 1100.14s ->  1101.14s] Peace.
+[ 1101.14s ->  1102.14s] Peace.
+[ 1102.14s ->  1103.14s] Peace.
+[ 1103.14s ->  1104.14s] Peace.
+[ 1104.14s ->  1105.14s] Peace.
+[ 1105.14s ->  1106.14s] Peace.
+[ 1106.14s ->  1107.14s] Peace.
+[ 1107.14s ->  1108.14s] Peace.
+[ 1108.14s ->  1109.14s] Peace.
+[ 1109.14s ->  1110.14s] Peace.
+[ 1110.14s ->  1111.14s] Peace.

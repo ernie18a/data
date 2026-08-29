@@ -1,0 +1,61 @@
+[    0.34s ->     5.80s] Hey guys, I've been getting this question a lot. How to view the profit graph slash profit curve
+[    5.80s ->    10.82s] on TastyTrade so that you can see where you'll make money, where you'll lose money and all the
+[   10.82s ->    16.06s] specifics about it, especially for people who are new to the TastyTrade broker. So let me walk you
+[   16.06s ->    20.82s] through that so that you can understand all these numbers for your trade. So if we dive into this
+[   20.82s ->    25.12s] right here, first thing you need to do is you need to use the desktop platform. So you can go
+[   25.12s ->    33.34s] to TastyTrade.com and go under trading platforms and then go into desktop and download the one that
+[   33.34s ->    38.02s] works best for your desktop. And so that's kind of the best way to structure this. Now, if we go back
+[   38.02s ->    44.06s] into the platform here and we structure a trade, I can show you exactly how this works. So by default,
+[   44.48s ->    49.52s] this is what your platform will look like when you click on trade right here and then go to the trade
+[   49.52s ->    55.72s] mode, which is what it will be by default. Again, let's say we want to structure a strangle trade
+[   55.72s ->    61.36s] or let's say actually, let's just do a 1-1-2 trade. So we go out to the 90 day mark roughly, and we,
+[   61.54s ->    68.02s] this is just how I typically set one up. I buy the one closest to 25 and I sell the one closest,
+[   68.24s ->    74.30s] whoops, sell the one closest to 23 and then two at the seven delta mark. So something like this
+[   74.30s ->    78.64s] is how it's structured 1-1-2. So this is how most people see it, but they want to see the curve that is
+[   78.64s ->    84.08s] associated with it or the graph. And so what you do is first off, you click on analysis right here,
+[   84.12s ->    88.88s] which will give you more details. And then you can see this dropdown of new menus shown. And then
+[   88.88s ->    93.32s] we're going to go to the curve. So we click on curve and this will show us this. So the first thing we
+[   93.32s ->    97.86s] want to do is we want to kind of click this down arrow so we can see more of the curve. And then
+[   97.86s ->   102.54s] again, I'm going to zoom out. And so zoom out, you can see right here, it shows at 40. I want to press
+[  102.54s ->   107.54s] the minus until I get to a hundred so that I can see the entire graph. Now, if I want to go back and
+[  107.54s ->   111.98s] forth, I can use my mouse or I can just click these arrows to kind of move backward or forward
+[  111.98s ->   117.62s] like this. Then again, I want to make sure that I'm only looking at one trade. So you can see here,
+[  117.68s ->   122.86s] here's the trade that I'm looking at. I know this because again, if I'm looking to enter a trade,
+[  122.92s ->   128.86s] it's going to show these little tab icons. Again, all these are other trades that I'm in. So I want
+[  128.86s ->   133.54s] to make sure I unselect all these other trades and only look at this one trade so that the profit
+[  133.54s ->   139.56s] graph is not skewed. Let me move it a bit this way here. So now we can see what this 112 profit
+[  139.56s ->   147.68s] graph looks like. And so we can see here by enabling at expiration, enabling the PNL expiration
+[  147.68s ->   153.22s] and by clicking on PNL Theo. So enable this one, this one, and this one, we can now kind of see
+[  153.22s ->   158.58s] what these curves look like and what's going on here for these trades. So first off, this green and
+[  158.58s ->   164.80s] red area mark of the curve shows us what happens at the expiration date. And so we can see this
+[  164.80s ->   173.10s] on this little info. So see if you click on info, this little gray box here, again, PNL EXP is at
+[  173.10s ->   178.92s] expiration when this contract expires. If it's trading at this level, what's my, what's my profit? If it's
+[  178.92s ->   185.60s] trading here, what's my profit? And it shows all that for us. Now the orange line shows us where our
+[  185.60s ->   192.10s] profit and loss is theoretically going to be, um, if the market were to drop. So you, so you can see
+[  192.10s ->   197.82s] here, if the market drops, it's going to lead to a loss despite being in the bear trap. That's what
+[  197.82s ->   203.64s] happens. The bear trap is only the profit you see at the expiration date, but you can now judge where
+[  203.64s ->   210.00s] your loss will be and around what price for a specific trade by viewing the profit graph. Now, again,
+[  210.00s ->   215.12s] there's other more advanced things you can do. Um, like you can add in all your other trades to see
+[  215.12s ->   219.92s] what your total profit and loss looks like across all your accounts. So if you're trying to kind of
+[  219.92s ->   225.74s] like smooth out that smooth out that curve and, and, and eliminate risk, then you can do that as
+[  225.74s ->   229.72s] well. But you can see here with all the one, one, two structured on, it goes down pretty hard here,
+[  229.72s ->   234.96s] but you can see this kind of type of graph that, that, that it's creates. So now I can see a portfolio
+[  234.96s ->   240.82s] risk of how much my account will lose at certain price points in the market. So for instance, if the
+[  240.82s ->   246.78s] market gets down to 50 to gets down to 5,200, 5,200, then my, then my overall account will be
+[  246.78s ->   252.36s] down about $8,000. And so again, I can now know how many hedges I need to put on and things like
+[  252.36s ->   257.62s] that to kind of help to help protect against this. Um, so that's how you can view the prop,
+[  257.74s ->   262.80s] the profit graph. Also, if you want to consider, um, some movements. So like, if you want to kind
+[  262.80s ->   268.28s] of future forecast, what might happen and how price will adjust accordingly, you can do that as well.
+[  268.28s ->   273.74s] So on the evaluate at date, you can be like, okay, let's say, um, two weeks from now, you're
+[  273.74s ->   278.78s] right. You just zoom in to, uh, two, two weeks from where the current, from where the current date
+[  278.78s ->   286.64s] is. And let's say that the implied volatility, which means volatility increases what happens.
+[  286.68s ->   292.36s] I can see if all, I can decrease the ball, I can increase the ball or do whatever it is I want to do.
+[  292.42s ->   296.12s] Let's say I want to increase it because again, this is going to increase my risk. So again,
+[  296.12s ->   301.46s] I can increase these all by seven and I can see how that would impact the market because
+[  301.46s ->   306.30s] volatility increasing is what would happen if the market were to drop. And so then I can see them
+[  306.30s ->   310.68s] all from one place right here. So we can say roughly a 7% increase. So now I can kind of look
+[  310.68s ->   314.58s] at the profit and loss graph and see what's adjusting from there. So that's how you see the
+[  314.58s ->   319.10s] prop, the profit and loss graph on tasty trade. I hope that makes sense. If you enjoyed this and you
+[  319.10s ->   323.78s] want to see more stuff like this, I'm a one, one, two options trader, and I teach you exactly what I do.
+[  323.78s ->   328.28s] And I show you my results and my real results and real profits. So again, if you want to learn more
+[  328.28s ->   332.36s] from me, then click the subscribe button down below. Anyways, I'll see you in the next video.

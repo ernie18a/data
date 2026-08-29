@@ -1,0 +1,183 @@
+[    0.46s ->     6.14s] Hey guys, Roman here, quantitative researcher and trader, founder of QuantGuild.
+[    6.58s ->     7.78s] Welcome to QuantStrats.
+[    7.98s ->    12.28s] In this series, we're going to talk about quantitative trading strategies and bridge
+[   12.28s ->    15.00s] the gap between theory and practice.
+[   15.00s ->    21.70s] I find oftentimes we will explore a variety of different strategies and models, but very
+[   21.70s ->    27.62s] rarely do we actually discuss the implications in our decision making in the live markets.
+[   27.78s ->    30.44s] And that's exactly the goal of this series.
+[   30.44s ->    35.72s] And exactly what you see here in front of me, this is a Kalman filter trading system
+[   35.72s ->    41.10s] that aims to implement this mean reversion trading strategy in practice.
+[   41.24s ->    46.22s] What we're going to do today is talk about theoretically what mean reversion should look like.
+[   46.30s ->    48.24s] We're going to start in the classroom.
+[   48.40s ->    53.98s] We'll talk about the Ornstein-Ollenbach stochastic process, this idea of trading mean reversion,
+[   54.06s ->    56.54s] what it should look like for your equity curve.
+[   56.54s ->    59.24s] And then we will branch out to reality.
+[   59.24s ->    66.18s] We'll talk about non-stationarity, this idea that there is no long-term mean, and we'll
+[   66.18s ->    72.74s] talk about the implications of the Kalman filter to aid in solving this problem.
+[   72.74s ->    78.22s] As we approach the classroom, this Jupiter notebook, to discuss theoretically what mean reversion
+[   78.22s ->    83.78s] and trading mean reversion should look like, and you'd like to access the source code for
+[   83.78s ->    89.32s] either this Jupiter notebook or the Kalman filter trading system, I'll leave a link in the description
+[   89.32s ->    89.72s] below.
+[   89.72s ->    94.72s] I'll also post it to the Quant Guild Library on GitHub, where you can find all of my Jupiter
+[   94.72s ->    99.54s] notebooks and associated YouTube videos, along with all of the source code for my quant builds.
+[   99.54s ->   105.28s] But I must explicitly state, because the Kalman filter system has execution capacity, either
+[  105.28s ->   113.30s] in a discretionary or an algorithmic way, you should not trade with this system live, especially
+[  113.30s ->   118.54s] if you have no idea what an Ornstein-Ollenbach process is.
+[  119.08s ->   125.10s] Master first your quantitative skills, your math, probability, statistics, and finance so that
+[  125.10s ->   130.68s] you can make informed decisions in the face of uncertainty, or target trading and market
+[  130.68s ->   131.74s] making roles.
+[  131.74s ->   135.92s] What better place to do this than QuantGuild.com.
+[  136.20s ->   142.68s] Over 100 hours of lecture content, an adaptive practice engine, 90 plus quant lessons, the list
+[  142.68s ->   143.64s] goes on.
+[  143.72s ->   145.62s] You can get started for free today.
+[  146.16s ->   148.04s] Check out QuantGuild.com.
+[  148.74s ->   153.62s] Let's talk about what mean reversion and trading mean reversion should look like in theory.
+[  153.62s ->   158.34s] We don't know what the mean of a stock price process should be.
+[  158.44s ->   161.68s] We don't even know what the expected return should be.
+[  161.96s ->   163.32s] So what can we do?
+[  163.46s ->   167.12s] Well, we can observe some data and estimate a mean.
+[  167.42s ->   168.78s] That's what we're going to do here.
+[  169.04s ->   171.00s] I'm going to start by observing the stock price.
+[  171.08s ->   175.64s] I'll estimate a mean, and then I'm going to use that to inform my trading decisions.
+[  175.74s ->   180.28s] What you're seeing here on the right is trading this mean reversion strategy.
+[  180.28s ->   185.06s] Effectively, I'm going long anywhere we're way below the mean, and I'm going short anywhere
+[  185.06s ->   186.44s] we're way above the mean.
+[  186.92s ->   192.52s] And you can see my equity curve here is just accumulating P and L. Sure, sometimes I lose
+[  192.52s ->   197.08s] a trade here and there, but for the most part, it's up and to the right, and that is exactly
+[  197.08s ->   197.92s] what we'd like to see.
+[  198.02s ->   206.38s] But what I want you to notice is in this simulation here, I've estimated the mean level from observed
+[  206.38s ->   207.26s] data.
+[  207.26s ->   214.26s] It is not precisely the true theoretical mean of the Ornstein-Ollenbach process.
+[  214.84s ->   216.72s] What is the implication of this?
+[  216.84s ->   218.92s] Well, the implication is profound.
+[  219.54s ->   224.98s] We don't need the precise theoretical mean to be able to generate wealth.
+[  225.12s ->   232.18s] Effectively, we just need appropriate bet sizing and to be correct on average to be able to
+[  232.18s ->   235.12s] generate wealth with this strategy.
+[  235.12s ->   236.98s] It can't be that easy, can it?
+[  237.04s ->   237.82s] Well, it's not.
+[  238.18s ->   240.44s] Academically, this is justified.
+[  240.70s ->   246.00s] In fact, asymptotically, we will be trading in a statistically optimal way.
+[  246.22s ->   251.32s] By the law of large numbers, we will approach the long-term mean of this Ornstein-Ollenbach
+[  251.32s ->   251.96s] process.
+[  252.38s ->   257.76s] And if we trade around that mean, we will be generating wealth in an optimal way.
+[  257.82s ->   261.28s] And then it just comes down to optimizing our bet sizing.
+[  261.44s ->   263.42s] All right, what's the problem in reality?
+[  263.42s ->   268.54s] The problem in reality is the law of large numbers asymptotically does not converge to
+[  268.54s ->   269.58s] the long-run mean.
+[  269.90s ->   276.44s] Prices, stock price processes do not follow an Ornstein-Ollenbach, a mean reverting stochastic
+[  276.44s ->   277.12s] process.
+[  277.72s ->   282.48s] Moreover, the parameterization is subject to change over time.
+[  282.48s ->   287.96s] So it could revert to a mean for a period, then it can stop, then it can start reverting
+[  287.96s ->   290.42s] again, so on and so forth.
+[  290.42s ->   295.04s] That will wipe out this beautiful equity curve that you see here.
+[  295.04s ->   304.46s] So the problem effectively now is we can measure a mean, we can observe data, but how do we observe
+[  304.46s ->   304.68s] it?
+[  304.80s ->   312.10s] Do we observe it over five minutes, 30 minutes, 30 seconds, one hour daily, monthly?
+[  312.76s ->   315.72s] What is the correct time frame?
+[  316.40s ->   319.28s] More importantly, when should we update this mean?
+[  319.28s ->   325.08s] If this mean is subject to change over time, we don't want to be trading around a stale
+[  325.08s ->   325.36s] mean.
+[  325.44s ->   327.88s] That's going to destroy our equity curve.
+[  328.32s ->   333.36s] This is exactly the problem that we face in practice.
+[  333.82s ->   338.66s] This is where the Kalman filter can offer a helping hand.
+[  338.86s ->   343.08s] We're now ready to approach the Kalman filter trading system.
+[  343.20s ->   347.84s] Anytime you follow a trading strategy, you're going to be making assumptions.
+[  347.84s ->   351.68s] Without a crystal ball, there is nothing else that you can do.
+[  352.16s ->   357.96s] You can act statistically optimally, statistically suboptimally in the classroom, but even still,
+[  358.18s ->   362.32s] there's no guarantee how that is going to function in the real world.
+[  362.42s ->   363.66s] This is effectively poker.
+[  364.42s ->   369.74s] You don't have an indicator that's going to help you win every single hand of poker, tell
+[  369.74s ->   372.22s] you when to fold, when not to fold.
+[  372.44s ->   377.82s] Statistically, sure, some things are more optimal than others, but sometimes you lose on
+[  377.82s ->   380.66s] the turn, and that's the way that it goes.
+[  380.96s ->   385.94s] There is no one single indicator, one single model that's going to make you a profitable
+[  385.94s ->   386.62s] trader.
+[  386.98s ->   390.56s] That comes from a combination of knowledge and experience.
+[  391.20s ->   392.98s] So what is it that we're looking at here?
+[  393.08s ->   396.08s] Well, effectively, the Kalman filter is trying to do that.
+[  396.12s ->   399.76s] It's trying to combine knowledge and experience.
+[  399.76s ->   405.94s] What I have here in this live Kalman filter trading system is an Ornstein-Ollenbach process
+[  405.94s ->   407.80s] calibrated to data.
+[  408.28s ->   410.06s] In this case, I'm using one-minute bars.
+[  410.20s ->   417.90s] I have a calibration window of 60 bars, and I find that the mean is this gray dashed line.
+[  418.60s ->   420.26s] Well, what's the problem with this?
+[  420.30s ->   423.52s] We already talked about this when we were in the Jupyter Notebook in the classroom.
+[  423.62s ->   426.42s] That mean is subject to change over time.
+[  426.42s ->   428.24s] When do we update it?
+[  428.46s ->   434.30s] How much has it changed by since I calibrated the original process?
+[  434.44s ->   437.24s] Those are all very good and important questions.
+[  437.38s ->   442.62s] We can even try to answer them with some back tests and walk-forward tests, and then we can
+[  442.62s ->   448.00s] observe out of sample if we're acting optimally, if there's stability in our decision-making.
+[  448.22s ->   451.18s] But at the end of the day, it's still no guarantee.
+[  451.48s ->   453.78s] So what is it right now that we're looking at?
+[  453.78s ->   456.96s] What is it that we're trying to do with this Kalman filter?
+[  456.96s ->   461.16s] So I mentioned that it's trying to combine knowledge and experience.
+[  461.30s ->   462.14s] What is the knowledge?
+[  462.26s ->   464.62s] Well, the knowledge is an assumption component.
+[  464.80s ->   466.32s] It is our laws of physics.
+[  466.46s ->   471.32s] I'm assuming that the stock price follows a mean reversion process.
+[  471.64s ->   477.20s] And when I calibrate that process to this observed data, like we saw in the classroom,
+[  477.20s ->   481.22s] I get my long-term mean to be this gray dashed line.
+[  481.62s ->   484.98s] Whether it is or is not, we will never know.
+[  485.36s ->   488.66s] But we do know that it is subject to change over time.
+[  488.76s ->   494.88s] But how much has it changed since I originally calibrated that process?
+[  495.00s ->   500.94s] Well, the Kalman filter is going to combine that ground truth, that model assumption,
+[  500.94s ->   503.82s] with the data that I'm actually observing.
+[  504.16s ->   507.18s] That is this green line here.
+[  507.28s ->   510.34s] The green line is the Kalman filter mean.
+[  510.68s ->   517.02s] You can see that it has moved the Ornstein-Olenbach's long-term mean down.
+[  517.28s ->   518.58s] Why is that the case?
+[  518.66s ->   519.72s] Well, look at the trend.
+[  520.18s ->   522.40s] The trend is dragging that mean down.
+[  522.40s ->   529.84s] The Kalman filter is being informed by the data that it's experienced, the long-term mean level.
+[  529.98s ->   536.16s] It is effectively combining the knowledge of the model with the experience of the data
+[  536.16s ->   539.36s] that it is seeing in the live market.
+[  539.50s ->   545.36s] Anytime you have a model capable of adapting with the market, it is a double-edged sword.
+[  545.92s ->   548.80s] Sure, it's going to be able to adapt in real time.
+[  548.80s ->   557.14s] However, the sensitivity to noise is going to be the primary concern and why it is not a free lunch.
+[  557.52s ->   563.12s] Effectively, you as the quant, the trader, the researcher, you are going to have to set
+[  563.12s ->   567.32s] how noisy you anticipate the data that you observe to be.
+[  567.54s ->   572.74s] This is going to dictate how much the mean level is going to change over time
+[  572.74s ->   580.00s] as you observe new data relative to the fixed parameterization of the laws of physics,
+[  580.48s ->   582.70s] your original mean reversion model.
+[  583.24s ->   588.10s] And what I have here is effectively a lever that you can flip to see what it looks like
+[  588.10s ->   594.44s] to trust the model more, the original Ornstein-Olenbach, which you calibrate to the data originally,
+[  594.76s ->   601.18s] or trust the market data more, in which case it's going to adapt much more aggressively.
+[  601.18s ->   610.60s] That is the trade-off when you implement a model capable of adapting to market prices in real time.
+[  610.80s ->   612.42s] You never get something for nothing.
+[  612.58s ->   613.62s] There is no free lunch.
+[  614.02s ->   615.94s] That is your trade-off.
+[  616.00s ->   619.88s] Now that we have a reasonable idea of what's going on in this trading system,
+[  619.88s ->   623.64s] how do we actually generate trades and make money with it?
+[  623.72s ->   626.02s] Well, I can't tell you how to play your hand of poker.
+[  626.16s ->   628.16s] You can't tell me how to play mine.
+[  628.54s ->   630.80s] There are a lot of different ways you could go about doing this.
+[  630.80s ->   636.00s] Like I said earlier, you can go about conducting back tests, walk-forward tests to try to find an optimal window.
+[  636.00s ->   639.80s] When you should re-parameterize your Ornstein-Olenbach,
+[  640.16s ->   644.12s] what kind of noise you should anticipate in observed market data.
+[  644.58s ->   646.64s] There is a quantitative approach to it.
+[  646.94s ->   651.42s] But again, there's no asymptotic guarantee like we have in the classroom.
+[  651.42s ->   654.36s] You could go through and jump through all of those hoops.
+[  654.36s ->   659.16s] And at the end of the day, when you deploy it live, everything falls apart.
+[  659.56s ->   668.48s] Moreover, you could be sitting here trading Apple for the last 10 years and understand qualitatively the dynamics based on macro factors,
+[  668.60s ->   672.00s] political factors, sector factors, the list goes on.
+[  672.00s ->   685.76s] And you could use this as a model to inform your decision making and you could outperform systematic strategies just because you have a better grasp on the overall climate of the market.
+[  685.84s ->   687.92s] Some key takeaways today for you.
+[  688.20s ->   691.98s] The mean level that you calibrate for reversion is certainly going to change over time.
+[  691.98s ->   695.62s] You just need to be reasonably correct on average to make money.
+[  695.62s ->   700.76s] Just because you calibrate it in one window, it doesn't mean that it is going to be correct.
+[  700.76s ->   702.74s] It is subject to change over time.
+[  702.74s ->   706.08s] Who knows what the true mean actually is.
+[  706.22s ->   716.18s] Moreover, when you deploy models to aid in trying to circumvent this issue of mean changing over time, like the Kalman filter, there is no free lunch.
+[  716.18s ->   725.98s] You can either trust the model more, hold steadfast in the underlying laws of physics that you assume and trade aggressively back to that level.
+[  726.30s ->   732.24s] Or you can trust the data more, in which case you are certainly subject to more whipsawing.
+[  732.38s ->   742.82s] You are subject to your assumptions violently changing over time, in which case you are not going to be capable of watching those DCs play out or generating any wealth.
+[  742.82s ->   749.60s] That's going to do it for this video on trading, mean reversion strategies, this QuantStrats video.
+[  749.98s ->   750.66s] I hope you enjoyed.
+[  750.92s ->   751.84s] I hope you learned something.
+[  751.84s ->   756.34s] If you like this video and you want to see more like it in the future, please like, comment, subscribe, share.
+[  756.40s ->   757.38s] It helps me out tremendously.
+[  757.68s ->   759.28s] It is always greatly appreciated.
+[  759.74s ->   769.84s] Check out QuantKill.com to master your quantitative skills before approaching a project like this, before approaching the markets, or for targeting trading and market making roles.
+[  770.24s ->   772.72s] Other than that, I want to thank you so much for watching.
+[  772.82s ->   775.62s] And I will see you in the next video.

@@ -1,0 +1,325 @@
+[    0.00s ->     5.45s] so my thousand week goal you know that that started like there was a point where i was making
+[    5.45s ->    12.14s] like 500 a day on zero dp hey guys welcome to this video this is carl from our group um he's
+[   12.14s ->    15.84s] been doing really well in the options world and he has his own kind of twist to it doing different
+[   15.84s ->    21.06s] types of option strategies so i wanted to bring him on so he could walk you guys through what he
+[   21.06s ->    25.58s] sees in uh in the market and the types of trade that he puts on so thank you so much for making
+[   25.58s ->    30.78s] the time um and the little tech difficulties to get on here carl i appreciate it um explain more
+[   30.78s ->    37.44s] about yourself and how you got into options oh hey thanks uh professor uh sorry about that delay uh
+[   37.44s ->    44.80s] trying to pray out computers at this time um so long story short i started trading around 2019
+[   44.80s ->    52.19s] uh look let me preface that with i was still in the military at the time and so like trading was
+[   52.19s ->    59.81s] very niche you know everyone's buying long calls and uh buying put so i kind of got into that um
+[   59.81s ->    67.45s] didn't make any money so like most people trading that way um and then i got into options and i started
+[   67.45s ->    76.15s] trading options around 2020 during the covid crash so it kind of like when i leave my post in the group
+[   76.15s ->    83.91s] chat for uh for the group that kind of taught me patience with the market and understanding and
+[   83.91s ->    91.85s] looking at what do i need to do to adjust um i actually never traded with stops when i first started
+[   91.85s ->    99.76s] trading you know i joined the service um it was seven dtes because at that time zero dte wasn't
+[   99.76s ->   107.18s] uh every day it was just monday wednesday fridays so i started you know successful you know get little
+[  107.18s ->   112.60s] 50 cents here and there a week you know i thought was the best thing in the world trading uh under 25k
+[  112.60s ->   122.76s] count so you know pdt was still a thing um and then it progressed from there to what i post now in the
+[  122.76s ->   129.90s] group um it's just like i never stopped trying to learn about trading and i think that's the hardest part
+[  129.90s ->   138.52s] for retail traders now is understanding that it there's no one way the the best way to trade is
+[  138.52s ->   145.34s] the way that makes you happy and makes you money you know your plan could work for six months and as
+[  145.34s ->   150.96s] we've seen with this market right now you have to adjust that plan or it's not going to work you're
+[  150.96s ->   155.86s] going to get frustrated you're going to want to quit and this is like i think my first real successful
+[  155.86s ->   162.18s] year of trading in the last three four years i've been doing it um and it wasn't easy you know i've
+[  162.18s ->   171.76s] i've had three four k day losses i've made three k in one day so you you have to you can't you can't
+[  171.76s ->   178.08s] expect trading to be easy you can't expect it all to be rainbows um like this week is already starting
+[  178.08s ->   183.04s] out terrible i think i sent you that message earlier when i asked you we're still on for today you
+[  183.04s ->   187.62s] know like everyone likes hearing about the winds but you have to be very transparent because
+[  187.62s ->   195.10s] when people see your successes the the fomo of trading happens and next thing you know like people
+[  195.10s ->   200.00s] want to emulate the way you trade and when it goes south you know they look at you for the reason why
+[  200.00s ->   206.04s] it went bad and you know you have to you have to understand how to trade that way and you have to
+[  206.04s ->   211.90s] be dedicated to it it's not fun it's i had to do it today and it was very tiring um between trying to
+[  211.90s ->   217.04s] find signal at work being at work you know trying to read this market that went nowhere i mean we
+[  217.04s ->   221.30s] went what 20 points in one direction and the other and it was probably the hardest market to trade
+[  221.30s ->   227.30s] because the market would go stagnant for an hour i'm like all right good i can get this iron fly on
+[  227.30s ->   234.14s] oh no put it on the market moves 10 points now i got fixed in my plan so i close out i get back in
+[  234.14s ->   240.01s] market moves 10 points again and actually dropped back down i could have got out for a better credit
+[  240.01s ->   245.47s] but you know it's i managed to salvage the account today so i'm happy but yeah that's kind of like
+[  245.47s ->   252.48s] me in a nutshell uh when it comes to trading yeah i love it yeah go ahead sorry oh no yeah that was
+[  252.48s ->   256.38s] kind of it like i start rambling on and on about this all day because it's way easier to talk about
+[  256.38s ->   261.16s] it than it is typing yeah well i mean yeah i mean what i was going to say is one thing that i appreciate
+[  261.16s ->   266.16s] about you carl is you're a very patient dude as you just mentioned how like you have these goals to
+[  266.16s ->   270.50s] hit like a thousand dollar a week return but you're not going to force those trades i think
+[  270.50s ->   274.52s] that's a very important lesson for traders who are like it's money money money and you're like no
+[  274.52s ->   280.48s] it's process it's rules it's got to follow it even if it sucks and so i'm glad i'm glad you mentioned
+[  280.48s ->   285.46s] that um anyways i loved hearing about your background and uh thank you for your service but
+[  285.46s ->   290.98s] what i really want to dive into and i know what a lot of people want to know is um what do you look
+[  290.98s ->   294.86s] at in the market and what trades are you putting on like how do you be like okay this is happening
+[  294.86s ->   301.90s] this is what i'm doing so uh i know i mentioned i think last week when i was posting some of my
+[  301.90s ->   306.28s] results and you know some of the other the traders in the group wrapping questions it's a
+[  306.28s ->   312.73s] so i subscribe to a bunch of different i don't like call them alert services like a bunch of
+[  312.73s ->   317.83s] different groups and everyone puts out a different perspective on the market yeah yeah there's groups
+[  317.83s ->   322.77s] that are like they're still bullish on the market which is fine i mean but their idea of bullish
+[  322.77s ->   328.05s] might be it moved up 10 points and they think the market's about to take off and then it drops 20
+[  328.05s ->   334.85s] um you know so i look at that i look at you know there's a lot of excellent traders out there on
+[  334.85s ->   342.85s] twitter who post their analysis or whatever you want to call it and you know i'll kind of wait until
+[  342.85s ->   349.32s] the market opens that's the one big thing i changed from trading as soon as the market opens to
+[  349.32s ->   356.94s] waiting to 10 a.m 10 30 because by then a lot of the news has been digested uh any overnight moves
+[  356.94s ->   364.94s] are either going to be continuing or they're going to reverse uh so you know but i don't really get too
+[  364.94s ->   371.84s] far deep technical wise i look for a credit and depending on what i'm doing um if i go one side only
+[  371.84s ->   380.24s] i'll put on like a five wide xpx zero tt spread trying to get you know 40 to 50 cents a contract
+[  380.24s ->   387.96s] because i find that when i roll if i have to roll those um it take one it takes up less buying power
+[  387.96s ->   397.54s] and two if i decide not to roll it i can uh invert it into an iron fly which is really interesting if
+[  397.54s ->   405.32s] you have the patience to ride out a negative or positive move against you and watch it play out
+[  405.32s ->   411.02s] and that's some of those trades i've posted in the group uh were from converting uh spreads into
+[  411.02s ->   419.60s] iron flies um but outside of that if i do an iron condor i'm trying to get about 70 cents and i kind
+[  419.60s ->   425.34s] of let the market play out i'm about i'm looking at about 80 yes sir so let's simplify this a bit just
+[  425.34s ->   430.36s] because i know like people who are new are kind of like okay where do i go from here so um can you
+[  430.36s ->   437.95s] pull up charts on your platform one sec i think it's on the very left oh yeah we're there yeah so
+[  437.95s ->   443.01s] let's just walk through today walk me through you're like okay the market gapped down what are your
+[  443.01s ->   447.49s] thoughts and what trades are you putting on and how i know today did not necessarily work out best in
+[  447.49s ->   454.20s] your favor but i just want to kind of hear your thought process behind trades okay so well let's start
+[  454.20s ->   460.48s] with me doing something stupid and putting on an overnight spread which the funny thing about that
+[  460.48s ->   466.84s] spread i end up trading the same almost the same exact strikes about two or three times a day if i
+[  466.84s ->   473.52s] just let the spread play out after the news i would have been done and had my little 150 130 and i could
+[  473.52s ->   478.22s] have went on about my day but no i can't get out of my own way like most traders so here we are
+[  478.22s ->   486.80s] so you know if you watch i watch futures overnight i do sometimes uh trade them and which is weird is
+[  486.80s ->   493.24s] that we had that nice close up into the uh yesterday and then immediately when futures opened up it just
+[  493.24s ->   499.14s] dropped all the way down so i'm watching it it's going up down luckily there was no news at 8 30
+[  499.14s ->   505.88s] so there was it was nothing to really push it one way or the other um so when the market opened up
+[  505.88s ->   512.10s] i'm gonna call what it is i panicked a little bit so i immediately converted into an iron fly so what
+[  512.10s ->   521.41s] that means is so let me bring this up real quick so this was actually my original trade was 45 40
+[  521.41s ->   528.13s] 45 35 and this was the credit so when the mark this is the credit spread so when the market opened up
+[  528.13s ->   534.49s] it opened up right around here um and you couldn't really get a read on it it was back and forth back
+[  534.49s ->   540.29s] and forth a lot of that's waiting on the jobs report so i just took a risk so my max loss with
+[  540.29s ->   547.15s] three contracts i think was 1500 for the sake of math excuse me so if i and i had three contracts so
+[  547.15s ->   555.24s] if i put on an iron fly which is selling the same put and call and i put on three of those it gave me a
+[  555.24s ->   562.88s] max credit of we'll say a thousand so my my loss my max loss let's say the market just tanked would be
+[  562.88s ->   570.64s] 500 yeah and if i did nothing else so the beauty of trading that way is you can limit your losses
+[  570.64s ->   576.34s] now what we ultimately want to do is the market to come back and end somewhere in this little
+[  576.34s ->   590.29s] uh channel right here which i'll bring up see if it pops up this way because you i won't pull up
+[  590.29s ->   596.05s] but you want it the market would if the market entered somewhere in the middle i would keep the
+[  596.05s ->   604.79s] credit on both ends and you can get a pretty decent payout uh so when the market took off
+[  604.79s ->   613.10s] i just i closed it out for i think uh 30 loss but with the market moving up that original spread
+[  613.10s ->   619.80s] the the negative value of that spread also changed and started moving positive so i was able to get out
+[  619.80s ->   626.58s] for about 300 loss altogether so you know that sounds like a lot for most traders but if you think
+[  626.58s ->   634.84s] big picture you know that that is a great uh uh salvage of your day at 10 o'clock in the morning
+[  634.84s ->   639.34s] it's not how i want to start my day i'm already having a terrible day day trading so here we go
+[  639.34s ->   644.66s] with the credit spreads on top of that so and that that kind of goes into that that mental psyche uh
+[  644.66s ->   651.50s] sometimes you do have to walk away and clearly i didn't as we heard in my story so um when that
+[  651.50s ->   657.60s] went away i took a took a break and just kind of watched what the market wanted to do and as we
+[  657.60s ->   663.08s] noticed with spx and even with spy because i know you and a couple other traders in the group talk about
+[  663.08s ->   669.66s] the support and resistance which is another thing that i use a lot um it's been in this 20 point range
+[  669.66s ->   674.88s] even though we shot up almost 4600 what did it automatically do drop back down between 45 70
+[  674.88s ->   680.70s] and then all the way back down to 45 50 60 area it has been in that area for the last couple days
+[  680.70s ->   689.44s] so what i did was i put on a it's a more narrow hour condor uh but you get about 70 cents five wise
+[  689.44s ->   696.42s] pretty easy to manage uh and then i put on an iron fly in between because the market was trading right
+[  696.42s ->   702.54s] around here for most of the morning so i put an iron fly right here let's see if it does it
+[  702.54s ->   709.86s] hold on one second let me reset it we're dealing with the closed market so it's being a little weird
+[  709.86s ->   719.97s] so this is basically the spread i ended up with and then i put an iron fly right around here
+[  719.97s ->   728.53s] 10 wide and you put it on early enough your spread can cover the loss so let's say my max loss on that
+[  728.53s ->   737.17s] iron fly is 200 bucks i took in a credit of 800 but the spread i have around it at this case the
+[  737.17s ->   744.19s] iron condor i brought in 300 so if all things don't play out equally and that market ends up somewhere
+[  744.19s ->   752.33s] outside of that tent it still walk away with 100 bucks uh and you can be and you can scalp these iron
+[  752.33s ->   759.21s] flies if the market hovers back and forth as the time and decay happens you can squeeze out about
+[  759.21s ->   766.29s] 100 200 bucks pretty quickly now my rule of thumb with iron flies is if it reaches my long put which
+[  766.29s ->   773.03s] on this case would be the 45 75 or the 45 55 i close out so the first time i did closed out it was a
+[  773.03s ->   782.36s] 30 loss but guess where the market ended back up 45 65 so yeah hindsight trading is me kicking myself
+[  782.36s ->   789.78s] the entire time watching this market sit here all day until i go okay well i think the market's
+[  789.78s ->   795.50s] going to move back down i think it's going to stay closed back around the 45 55 area so i put on
+[  795.50s ->   801.76s] another trade at 45 60 and this is where the greed comes in this is the hard part for trading even
+[  801.76s ->   808.80s] someone who's done it only four or five years and i have my rules but when you have good success doing
+[  808.80s ->   813.78s] something it takes you getting bit a couple times to realize that okay maybe i need to go back to
+[  813.78s ->   822.16s] being strict about taking profits uh my count was read about 120 all said and done after i put
+[  822.16s ->   828.88s] everything on i think i was up about 150 and the market was hovering right around 45 60 and i tried
+[  828.88s ->   836.48s] to milk it try to get that 100 market moves back up to 45 70 i waited it out waited it out it broke
+[  836.48s ->   843.06s] through a couple times i said okay i'll just close out um that was a bigger loss uh because i waited
+[  843.06s ->   847.52s] later in the day to put it back on but the market moved back down so i could have got out for another
+[  847.52s ->   856.90s] 150 so it's you have to you have to trust what you want in the plan that you use and how you use it
+[  856.90s ->   862.92s] and accept that loss because tomorrow you know is another trading day so at the end of the day my account
+[  862.92s ->   869.20s] overall and that's how i look at things is i could be losing on a svx zero dte trade but
+[  869.20s ->   875.33s] my account's green so i might just close out this trade you know why why let a bigger loss ruin my
+[  875.33s ->   884.09s] overall green day uh so i managed to claw back to a negative 35 day and i'll take that as a victory
+[  884.09s ->   891.34s] um i know i posted in the group last week uh one of my big losses that one point that was a 2k loss and
+[  891.34s ->   900.30s] i managed to snaggle some stuff on the on a very tight window on this uh option tree to cut that
+[  900.30s ->   906.68s] down to a 700 loss a lot of sweating uh i had to definitely crack a beer open that last 10 minutes
+[  906.68s ->   913.94s] because that uh like you're just watching this market and i've seen it move 10 points in two minutes
+[  913.94s ->   924.82s] uh i know a lot of traders don't use ndx in the group that's another uh uh uh uh similar to spx you
+[  924.82s ->   929.38s] know there's no uh shares assigned it's used for zero dte i've watched that move four hundred dollars in
+[  929.38s ->   938.90s] one day so you don't ever be afraid to give up uh give up the contracts and close it out you know
+[  938.90s ->   944.70s] live the fight another day but also don't ever let green turn to red and that's one aspect i learned
+[  944.70s ->   952.84s] from another trader who mostly who taught me a lot of what i do now um because i remember when i first
+[  952.84s ->   958.04s] joined the group i was talking about rolling my trade and i remember you would chime in and tell
+[  958.04s ->   962.50s] me that uh you know that's something we don't suggest here so i'd always have to put not a
+[  962.50s ->   970.55s] recommendation and you know it's it's one of those things that i don't i don't push people to roll
+[  970.55s ->   975.83s] trades because it can get you in trouble and i've seen it um you got to know what to throw the towel in
+[  975.83s ->   984.15s] but it is definitely a handy tool if you understand the mechanics mechanics of it and that goes back
+[  984.15s ->   988.51s] to a lot of things that you preach and a few other traders preach is the support and resistance you
+[  988.51s ->   996.57s] know if you can get past support get past resistance and it holds you know now you've made a couple
+[  996.57s ->  1001.19s] hundred extra dollars off that original trade but you know you never know until the market opens back
+[ 1001.19s ->  1009.01s] up but yeah i know that was a lot to dump on in a small short window no you're good so it's
+[ 1009.01s ->  1015.65s] so from a high level overview your strategy is essentially hold on i have this ding in the
+[ 1015.65s ->  1019.69s] background i don't know if you can hear it anyways i can hear but i didn't notice it the first couple
+[ 1019.69s ->  1028.15s] times okay anyways um so your high level strategy here is to take a credit spread based on the direction
+[ 1028.15s ->  1034.71s] you think the stock may go and then if it kind of flattens out that that day which 60 70 percent of
+[ 1034.71s ->  1039.39s] the time the market goes nowhere within a single day you convert it into an iron fly to kind of
+[ 1039.39s ->  1047.37s] increase your credit and offset any uh any losses that's kind of like the the strategy yeah it is um
+[ 1047.37s ->  1057.71s] it's a math game there's a what there's a uh a white paper i read on this and there's a guy who
+[ 1057.71s ->  1064.03s] specifically trades this way and i don't know if you're part of like tasty tasty groups uh facebook
+[ 1064.03s ->  1071.54s] uh so he's in that group if you can finagle the math to work out perfectly you could almost have a
+[ 1071.54s ->  1079.26s] zero losing trade but you're trading you know 15 20 points from the market and using the conversion
+[ 1079.26s ->  1085.64s] the credit to override any losses one way or the other so you know you can still take a loss
+[ 1085.64s ->  1095.42s] by converting um if the math doesn't add up right so i typically if i convert that means i'm pretty much
+[ 1095.42s ->  1102.36s] almost reaching my short strike and so at the best case scenario is i want the market to continue to
+[ 1102.36s ->  1108.60s] tank i collect all that credit anyway narrows my loss on the put side for example but then i can
+[ 1108.60s ->  1112.68s] add a couple credit spreads on the call side so it'll really cut down and open up my profit window
+[ 1112.68s ->  1122.08s] a little bit more it's it's a lot in verbiage and make more sense if i was to post like pictures of it
+[ 1122.08s ->  1126.72s] when i do it which i have i don't have any buried on this is a new computer because i blew up my other
+[ 1126.72s ->  1130.94s] one so i don't have any pictures buried on here but i can definitely dig some up from another group that
+[ 1130.94s ->  1138.46s] i've showed this similar way of trading um and i could post it in our in our group so they can
+[ 1138.46s ->  1144.42s] actually see and i can put little uh little paragraphs each one on what that does and how
+[ 1144.42s ->  1152.20s] your profit when if you open up that profit window it really negates uh any mistake you made before
+[ 1152.20s ->  1160.26s] two i always recommend to traders that they understand uh how to use a risk graph the risk graph is the one
+[ 1160.26s ->  1168.50s] thing i use to understand trades i take on and off for example i think early last week
+[ 1168.50s ->  1176.85s] i had a spread that was so far underwater as nothing i could do but if i took it off now i can see my
+[ 1176.85s ->  1183.41s] profit tent go up exponentially so i closed that spread out now that left me with another couple
+[ 1183.41s ->  1188.51s] hundred dollars in profit potential because now that losing trade has already been covered is no longer
+[ 1188.51s ->  1195.17s] eating away at the potential profits i can make so if you understand how to use this it will change
+[ 1195.17s ->  1205.04s] your life as a trader especially doing zero dte stuff if you're doing long term uh like seven 14 day
+[ 1205.04s ->  1213.10s] uh exploration trade it lets you know like what you need the market to do to be fully profitable 50
+[ 1213.10s ->  1221.02s] 60 60 but as a zero dte trader what i mainly focus on which i'm thinking about reducing that now
+[ 1221.02s ->  1229.23s] because it drives me insane every day is uh understanding how adding trades and taking away
+[ 1229.23s ->  1236.29s] trades changes the landscape for which you can make profits and it's the that single-handedly is
+[ 1236.29s ->  1242.45s] one of the best things i've ever learned about trading and it's it's saved me nine and a half times
+[ 1242.45s ->  1247.91s] out of ten trading this way they're trading in general but definitely trading with these uh iron
+[ 1247.91s ->  1256.03s] flies and converting and adding uh layering in spreads on top of spreads to really uh bring in profit
+[ 1256.03s ->  1264.15s] potential because you know if i'm risking if i can make a thousand on five thousand bp i call that a win
+[ 1264.15s ->  1271.53s] now and i know traders who trade for 30 40 cents on a thousand you know and they they think that i
+[ 1271.53s ->  1277.37s] trade too risky i'm able to look at the r and r return you know it would i'd rather i'd rather risk
+[ 1277.37s ->  1284.91s] five thousand to make two thousand than risk 30 on a thousand so you know but it's not easy you have
+[ 1284.91s ->  1292.33s] to be able to manipulate your the the way you're trading the market on the fly and it requires a lot
+[ 1292.33s ->  1299.17s] of paying attention and dedication to it and believe it or not i do it from my phone nine times
+[ 1299.17s ->  1307.01s] 90 99 of the time i'm on my phone trading and it's it's it's i enjoy it you know it gives me
+[ 1307.01s ->  1313.07s] something to do like i work in a cubicle i teach law enforcement and this downtime it's a holiday so
+[ 1313.07s ->  1319.30s] not a lot of students on board so this is how i spend my day and uh it's going to make me feel older
+[ 1319.30s ->  1328.61s] than i already do now and i'm 40 so the it's a hobby a hobby that turned into a not a career but a
+[ 1328.61s ->  1334.99s] full daily job like seven days a week i'm always reading something i'm listening i'm reading you
+[ 1334.99s ->  1339.51s] guys's group chats even though i don't talk too much all the time i'm always reading what everyone's
+[ 1339.51s ->  1345.41s] saying i'm always looking at the charts everyone's posting so you know that helps especially when i do
+[ 1345.41s ->  1351.87s] trade spy and i use uh i use some of your trades that are that you post or the other members post
+[ 1351.87s ->  1358.85s] because i i don't pay attention as often to spy so it's not that it's new to me but it's new to me
+[ 1358.85s ->  1366.39s] trading uh a farther out dte that i'm used to i usually do four days out you know try to scalp 150
+[ 1366.39s ->  1371.77s] bucks off of it so you really like sport resistance plays but when you're out like two or three weeks
+[ 1371.77s ->  1377.91s] that's definitely a bigger uh bigger window for error and i really do appreciate all the work that
+[ 1377.91s ->  1384.69s] you and the other traders post because it makes my life easy i'm always not ashamed to admit my losses
+[ 1384.69s ->  1391.61s] but it makes me want to post my trade so other other traders can learn about you know how to how can
+[ 1391.61s ->  1396.85s] you trade the market you know a million different ways but what's the best way to find a way to be
+[ 1396.85s ->  1402.78s] successful and stick to that for sure yeah i mean that's enough rambling yeah no that that's
+[ 1402.78s ->  1406.84s] the one thing that i love about community and myself over the last six years of trading i've
+[ 1406.84s ->  1411.94s] learned so much from others whether that's youtube or research papers that people have done or discord
+[ 1411.94s ->  1416.76s] just forums you know you just learn so much from there and if not if you don't learn something like
+[ 1416.76s ->  1420.86s] tangible you at least start and then you start like okay that's one ground and then you like start
+[ 1420.86s ->  1427.24s] bouncing from there to other things yeah and so um i appreciate you saying all that and kind of
+[ 1427.24s ->  1430.86s] showing like what you do here with the profit graph and for those who don't know what that
+[ 1430.86s ->  1436.60s] what that is it shows you how much the stock that you're trading can move how much you you'll make
+[ 1436.60s ->  1441.66s] and where you want it to be based on the trade setups you have but for people who want to try to trade
+[ 1441.66s ->  1446.16s] a bit more like you where they take just these default credit spreads which is what we mainly
+[ 1446.16s ->  1450.94s] specialize here in this program and start adding other trades to it like for instance how i put on
+[ 1450.94s ->  1454.82s] an iron condor this week instead of just one credit spread because we've been range bound
+[ 1454.82s ->  1458.98s] so i'm kind of changing those trades or someone who kind of wants to like learn more about options
+[ 1458.98s ->  1465.52s] and adjust these trades to increase returns but also offset losses what would you write what would
+[ 1465.52s ->  1473.77s] you like recommend they do and learn and like in what order um i'm not against paper trading so i'm
+[ 1473.77s ->  1478.93s] going to put that out there but i think if you really want to understand the mechanics of a trade
+[ 1478.93s ->  1484.65s] paper trading is the best way to go the only issue i don't even call it an issue but i'm only
+[ 1484.65s ->  1491.38s] hesitant to push it because it doesn't have the emotional factor you know it you can you can almost
+[ 1491.38s ->  1497.86s] set a trade like i i did this one testing synthetic strangles on spy and i totally forgot about it got a
+[ 1497.86s ->  1504.99s] sign it was up like two hundred thousand dollars so you know paper trading you have to dedicate your
+[ 1504.99s ->  1511.05s] time to sit in front of the market and try it and figure it out before you get into trading real money
+[ 1511.05s ->  1517.33s] i will never disagree with that my only disagreements with paper trading is without that emotional factor
+[ 1517.33s ->  1524.22s] um you're you're more likely to just do a part of the trade plan without understanding why
+[ 1524.22s ->  1529.10s] because you know at the end of the day there's no money in risk involved so you know i only have
+[ 1529.10s ->  1534.18s] if i just add this conversion now and then if you did that with live money you might be out two
+[ 1534.18s ->  1539.08s] three hundred dollars if the market moves against you so definitely i would definitely paper trade it
+[ 1539.08s ->  1545.89s] i can post the link to the white paper gotta dig it out of my phone it if i sound like i'm confusing
+[ 1545.89s ->  1553.37s] that white paper is confusing because they look at different uh deltas so you know they i think they
+[ 1553.37s ->  1559.67s] all i think 20 delta was the best way to try to trade it but you know most traders and i mention this
+[ 1559.67s ->  1567.87s] all the time uh you have to get used to seeing red uh unrealized losses are just that um i've had my
+[ 1567.87s ->  1572.43s] account spend down a couple grand just to go green the next day because trades worked out in my favor
+[ 1572.43s ->  1582.64s] so once you accept the red you then accept on how to adjust to make the trade go green or less red for
+[ 1582.64s ->  1589.12s] you in some cases and then you have to just do it um i actually got away from doing this for a while
+[ 1589.12s ->  1596.84s] and one day i just said let me see if i still got it and as you guys saw in the group the group they
+[ 1596.84s ->  1602.70s] started working out for me and then i started throwing all these last hour iron flies uh they
+[ 1602.70s ->  1610.54s] were going real well until monday and then today so you know two three days out of the month that
+[ 1610.54s ->  1615.68s] are crap are good for you because it reminds you keeps you uh grounded it keeps you humble about
+[ 1615.68s ->  1623.44s] trading because you know being successful for 25 days straight gets a little air of confidence under
+[ 1623.44s ->  1628.66s] you and then the market reminds you very quickly that it's always in control and usually that's how
+[ 1628.66s ->  1636.62s] it happens to me so i would definitely uh read that white paper and then just ask questions because
+[ 1636.62s ->  1642.00s] it's you know the more i talk about it the more i understand what i'm actually doing because i'm
+[ 1642.00s ->  1647.38s] explaining it it's easy in my head it's easy for me to sit in front of the computer play my graph
+[ 1647.38s ->  1654.91s] figure out okay where can i get you know 60 70 more cents here or there versus trying to explain
+[ 1654.91s ->  1661.93s] to somebody but the more i explain it the more the logical i can make it for them the easier it is
+[ 1661.93s ->  1666.69s] for me to do it and then i can i'm really always willing to help people trade it's one thing i actually
+[ 1666.69s ->  1673.21s] found myself the most thing i enjoy out of this is helping other traders and if you if you don't ask
+[ 1673.21s ->  1678.81s] questions you're never gonna learn you just have to understand that the way you trade or the way
+[ 1678.81s ->  1684.11s] anybody else trades in that group it's the way we feel comfortable so take what we feel comfortable
+[ 1684.11s ->  1690.33s] with and see if you can apply it to your trade plan you'd be surprised how many uh how many times i've
+[ 1690.33s ->  1695.81s] changed the way i trade over the last three or four years and this is the this year has been the way
+[ 1695.81s ->  1702.17s] that i've been most successful so i'm always tweaking it more trying to find less uh mind numbing
+[ 1702.17s ->  1708.68s] uh painful ways of trading zero dte but that that is the beauty and the curse of it
+[ 1708.68s ->  1713.92s] you know the market can run on you 100 points which we've seen before and reverse 100 points
+[ 1713.92s ->  1719.38s] you just get stuck one way or the other but that's just trading it's losses gonna happen
+[ 1719.38s ->  1725.62s] just have to accept them what you do the next day that defines you as a trader for sure yeah i love
+[ 1725.62s ->  1730.72s] that i think paper trading is great just to learn how the options and things are moving but i'm
+[ 1730.72s ->  1737.28s] definitely a big um proponent of doing like one option one small option and just trade because then
+[ 1737.28s ->  1744.12s] you see how it moves because as you mentioned oh definitely as an option seller there's most of
+[ 1744.12s ->  1748.84s] your trade that you're holding you're gonna be red and then it's gonna make a move slightly in
+[ 1748.84s ->  1753.68s] your favor or theta decay is gonna come in and then you see that winning trade but like you you're in
+[ 1753.68s ->  1757.80s] the red a lot and so that's something that's different from traders who aren't used to option
+[ 1757.80s ->  1766.60s] selling but um sorry i appreciate a thing that you've uh covered um and and i i love it um and
+[ 1766.60s ->  1770.22s] i know that people are going to learn a lot from it and uh i hope you send me that white paper because
+[ 1770.22s ->  1775.08s] i'll link it down in the description in this video and uh hopefully you get the chance i know you're
+[ 1775.08s ->  1781.20s] busy to uh pull out those screenshots and uh messages that you have and uh if you can post them in
+[ 1781.20s ->  1788.90s] the uh and in the chat oh yeah absolutely um yeah and i'll pin them so that we can easily reference
+[ 1788.90s ->  1794.32s] them in the future but um yeah i mean you shared a lot is there any like last few thoughts that you
+[ 1794.32s ->  1802.39s] want to share before we end the call um like that so my thousand week goal you know that that started
+[ 1802.39s ->  1809.18s] like there was a point where i was making like 500 a day on zero dp um i know there's people who make
+[ 1809.18s ->  1818.03s] way more than that but 500 was good for my account and the market bit me bit me good so i backed it
+[ 1818.03s ->  1826.21s] down so my rule of thumb was that 1 000 a week um i don't care how i get there whether it's zero dpe
+[ 1826.21s ->  1832.99s] trading weekly spreads it's just a goal to make it there if i don't make it that week you know what i
+[ 1832.99s ->  1840.41s] i don't change my goal line so right now i'm in the hole i think 300 bucks for my weekly goal and like
+[ 1840.41s ->  1848.05s] i mentioned in the uh the other day or last week you know i trade a 33 000 account this way 33 000 is
+[ 1848.05s ->  1853.91s] my cutoff not one that keeps me out of trouble i won't do anything stupid uh but that is the goal
+[ 1853.91s ->  1860.63s] so i don't take that thousand out until i get to 33 000 so if it takes me three weeks then so be it
+[ 1860.63s ->  1867.83s] the goal is just to make it there and that's that is the one thing that keeps me out of trouble and i
+[ 1867.83s ->  1873.59s] think most traders have to have realistic goals so if i want to make get there i shoot for two or
+[ 1873.59s ->  1879.56s] three hundred a day if i don't make it i don't make it so you know it's i have other trades on that are
+[ 1879.56s ->  1884.74s] going to compensate for being short for the day and you know it's not the end of the world you know
+[ 1884.74s ->  1892.08s] i've vended goals at 800 for the week but i don't change it i wait i make my thousand and then i take out
+[ 1892.08s ->  1897.58s] that thousand i restart the goal again but i don't ever i don't ever stop trading because i hit the
+[ 1897.58s ->  1905.64s] goal i did one day and then i lost it all one day and then i got it all back the next day so you know
+[ 1905.64s ->  1912.08s] it's that's the way trading is and you know it's just be realistic have the realistic expectations and
+[ 1912.08s ->  1917.65s] you know and enjoy it if you don't enjoy it then it's not a good way to lose money but yeah i think
+[ 1917.65s ->  1923.31s] that pretty much sums it up for for the most part i'll dig out all that stuff and send it out to you
+[ 1923.31s ->  1930.21s] and uh it's interesting read it definitely changed perspective on trading for a lot of new traders who
+[ 1930.21s ->  1940.20s] who join your group and you know and and see how how multiple ways even have you evolved and added more
+[ 1940.20s ->  1945.16s] things to the group with the strangles and the uh the cash secure puts because i remember when you
+[ 1945.16s ->  1950.73s] at spx i think i was the only one using it and you know that was exciting to me because that's
+[ 1950.73s ->  1956.51s] how i trade and so i think it would be good for other traders to see like hey this is what you
+[ 1956.51s ->  1960.49s] know the professor has to offer you know what can you learn from him anybody else in the group but how
+[ 1960.49s ->  1965.49s] do you make those those algos work for you in your favor so yeah i'll definitely send all that over
+[ 1965.49s ->  1972.39s] here in the next couple days a lot of digging through yeah awesome i have um yeah i'll make sure to
+[ 1972.39s ->  1978.43s] share my my my commentary on that paper after i read it um but thank you again for making the time
+[ 1978.43s ->  1984.80s] even despite the technical difficulties and uh i appreciate everything you shared carl oh no worries
+[ 1984.80s ->  1991.04s] uh i was definitely nervous i'm not a camera person but um it's funny i teach for a living which is odd
+[ 1991.04s ->  1996.06s] because hearing when you ask me if i want to do this i'm like i don't know but you know i get in
+[ 1996.06s ->  2001.66s] front of people i travel the country talking to people oh wow the one thing talking about trading you
+[ 2001.66s ->  2006.38s] think i wouldn't be nervous about but you know it's i think we don't we don't want to sound stupid
+[ 2006.38s ->  2011.40s] when we talk about things we like and the market is the market can be a cold place traders can be
+[ 2011.40s ->  2018.54s] very cold to you when you don't trade the way they do so you know i try to not step on toes i'm just
+[ 2018.54s ->  2025.46s] like putting out information for viewing and thinking outside the box so yeah i appreciate the opportunity
+[ 2025.46s ->  2030.48s] to get down here and uh talk about something i enjoy doing you know whether i'm winning or losing
+[ 2030.48s ->  2036.88s] yeah yeah i mean we're we never win all the time so we need to learn from both the losers and the
+[ 2036.88s ->  2043.46s] winners so i i love that you shared that awesome yeah well thanks professor i appreciate your time
+[ 2043.46s ->  2048.40s] all right sweet see you see you carl thanks thanks again have a good one yeah have a good night
+[ 2048.40s ->  2061.84s] and i have a good night
+[ 2061.84s ->  2062.22s] you
+[ 2062.22s ->  2062.44s] you
+[ 2062.44s ->  2062.54s] you
+[ 2062.54s ->  2063.04s] you
+[ 2063.04s ->  2066.82s] you
+[ 2066.82s ->  2067.52s] you
+[ 2067.52s ->  2069.44s] you
+[ 2069.44s ->  2070.02s] you
+[ 2070.02s ->  2070.04s] you
+[ 2070.04s ->  2071.04s] you

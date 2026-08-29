@@ -1,0 +1,169 @@
+[    0.91s ->     9.91s] Today, I'll show you a simple but powerful range breakout strategy similar to the previous one, or ORB.
+[    9.91s ->    19.81s] The opening range breakout is just applied on a different range of time, and you can apply that on every type of asset.
+[   19.81s ->    25.81s] For today, I'm going to show you the breakout strategy applied to gold and dollar yen.
+[   25.81s ->    33.81s] And then I'll use Quant Analyzer to build a portfolio and see how diversification improves the results.
+[   33.81s ->    40.77s] Okay, this is the M15 gold chart.
+[   40.77s ->    43.77s] The strategy is very simple.
+[   43.77s ->    46.77s] You mark a range of time.
+[   46.77s ->    53.77s] In this case, this is an indicator of Asian session, London session, and then New York session is not marked up.
+[   53.77s ->    56.77s] For example, this is the Asian range.
+[   56.77s ->    59.77s] And then if the price break through, that's an entry.
+[   59.77s ->    61.77s] If the price break below, that's an entry.
+[   61.77s ->    73.82s] In this case, I'm not going to use exactly the Asian range, but the time range is inside the Asian session.
+[   73.82s ->    76.21s] That's the EA.
+[   76.21s ->    79.21s] And this is the visual mode.
+[   79.21s ->    82.21s] We are on the five minute chart.
+[   82.21s ->    86.01s] That's a visual backtest.
+[   86.01s ->    88.01s] That was the first trade.
+[   88.01s ->    92.01s] This one was the range start, and that was the range end.
+[   92.01s ->    99.01s] So when the range finish, and then after the range finish, you have a high and a low.
+[   99.01s ->   108.01s] If the price break above the high, and then also close above, because that's another filter I add.
+[  108.01s ->   111.58s] The same thing for the short.
+[  111.58s ->   114.58s] In this case, we had to wait six minutes.
+[  114.58s ->   120.58s] Six minutes close above, and then we can trade, so we can open the position.
+[  120.58s ->   128.22s] In this case, it was a win, and the position close exactly here.
+[  128.22s ->   129.22s] Why?
+[  129.22s ->   132.22s] So this is at 18.55.
+[  132.22s ->   134.22s] A forced close.
+[  134.22s ->   142.22s] I use these forced close, as I showed you on the last video, to prevent and avoid swap fees overnight.
+[  143.22s ->   148.22s] It's working very well, because I will show you the backtest from 2018 till now.
+[  148.22s ->   150.22s] Even with this type of closure, it's working well.
+[  150.22s ->   153.60s] So let's see another trade.
+[  153.60s ->   155.60s] You can see the range.
+[  155.60s ->   156.60s] That's the high.
+[  156.60s ->   157.60s] That's low.
+[  157.60s ->   160.60s] Maybe it's going to change a little bit more.
+[  160.60s ->   163.14s] Oh, okay.
+[  163.14s ->   164.14s] Perfect.
+[  164.14s ->   170.14s] So that's the perfect condition where my filter improved the strategy.
+[  170.14s ->   176.78s] Because for a simple breakthrough strategy, that was an endpoint.
+[  176.78s ->   183.78s] But with my filter, we're not going to go in with the simple touch of the line.
+[  183.78s ->   191.93s] So in this case, we didn't open any trade before 18.55.
+[  191.93s ->   193.93s] So no trade for the day.
+[  193.93s ->   194.93s] It's very simple.
+[  194.93s ->   198.92s] And then let's see another trade.
+[  198.92s ->   201.92s] This one, unfortunately, was kind of break even.
+[  201.92s ->   205.92s] But that's the risk management.
+[  205.92s ->   213.62s] Because with the trading stop loss, sometimes you're going to reduce profit.
+[  213.62s ->   220.62s] Like in this case, because without a trading stop, our position, it could be closed up here.
+[  220.62s ->   222.62s] But not in this case.
+[  222.62s ->   224.62s] So no problem.
+[  224.62s ->   231.62s] After seven years and a half, my backtest show that the trading stop is actually much better.
+[  231.62s ->   237.62s] Also to improve the share ratio and win rate.
+[  237.62s ->   244.23s] Now I'm going to show you the backtest without the visual mode.
+[  244.23s ->   246.23s] Because it's not useful now.
+[  246.23s ->   250.49s] The equity line is kind of good.
+[  250.49s ->   253.49s] Of course, it has the drawdown.
+[  253.49s ->   260.42s] But overall, after seven years and a half, it's a very good equity line.
+[  260.42s ->   266.80s] And the good factor, our recovery factor.
+[  266.80s ->   275.18s] Of course, this is 11, but is on one minute, open, high, low, close.
+[  275.18s ->   279.18s] And that's kind of fake number.
+[  279.18s ->   283.18s] Because it changed a little when you switch to RealTix data.
+[  283.18s ->   288.18s] My RealTix data report is going to be a little less.
+[  288.18s ->   291.18s] Around nine, but still very good.
+[  291.18s ->   302.18s] These things mean that you could have a 17 drawdown for 187% profit over seven years and a half.
+[  302.18s ->   304.18s] And that's nice.
+[  304.18s ->   310.43s] Because you could think about, let's say, S&P or Nasdaq.
+[  310.43s ->   312.43s] Where you had the same performance.
+[  312.43s ->   314.43s] Maybe a little bit less for the S&P.
+[  314.43s ->   318.43s] But, of course, with three times the drawdown.
+[  318.43s ->   322.87s] And that's applied only on one asset.
+[  322.87s ->   333.86s] Now, I'll show you on Quant Analyzer how to improve your performance.
+[  333.86s ->   335.86s] Your yearly performance.
+[  335.86s ->   337.86s] Let's say monthly, etc.
+[  337.86s ->   343.86s] Just applying the same concept, the same strategy on different assets.
+[  343.86s ->   348.86s] Now, I'm going to show you on USDJPY, USDJPY.
+[  348.86s ->   352.86s] And just with two assets, this strategy is going to improve.
+[  352.86s ->   358.10s] Here we have the gold equity chart.
+[  358.10s ->   360.10s] The one you saw before.
+[  360.10s ->   365.10s] And then this one is for USDJPY.
+[  365.10s ->   371.42s] And on Quant Analyzer, we can build a portfolio like this.
+[  371.42s ->   372.42s] That's perfect.
+[  372.42s ->   377.42s] The blue line is going to be the aggregate equity line.
+[  377.42s ->   384.42s] So, if you see this one, it's the gold equity line.
+[  384.42s ->   387.42s] And this one is the USDJPY equity line.
+[  387.42s ->   392.42s] Maybe it's better if I show you just the sub equities only.
+[  392.42s ->   398.78s] In some period, if you had just one algo on one asset,
+[  398.78s ->   401.78s] you could see some period of drawdown.
+[  401.78s ->   404.78s] Like here, and then like here again, and here.
+[  404.78s ->   409.35s] But what happens if you apply the same strategies?
+[  409.35s ->   414.35s] More assets and more strategies with different conditions.
+[  414.35s ->   416.35s] Uncorrelated.
+[  416.35s ->   425.18s] But even just two is going to improve a lot of the performance over the years.
+[  425.18s ->   431.50s] Like in this case, of course, USDJPY and gold are not correlated.
+[  431.50s ->   433.50s] And you can easily see it here.
+[  433.50s ->   439.50s] Because when gold is not performing well, USDJPY is performing well.
+[  439.50s ->   443.50s] There are many factors that can influence the asset.
+[  443.50s ->   447.14s] But we're not looking at those.
+[  447.14s ->   451.14s] We're just applying the same concept to different asset class.
+[  451.14s ->   452.14s] That's it.
+[  452.14s ->   454.14s] That's the portfolio.
+[  454.14s ->   459.14s] If you see the aggregate equity line is much more stable.
+[  459.14s ->   466.14s] On the overview here, you are going to see a higher return on drawdown ratio.
+[  466.14s ->   473.14s] Like the recovery factor from nine that we saw on gold and on USDJPY.
+[  473.14s ->   475.14s] Actually, it was like around 11.
+[  475.14s ->   479.14s] We see here at 17.15.
+[  479.14s ->   481.14s] That's much better.
+[  481.14s ->   483.14s] With kind of the same drawdown.
+[  483.14s ->   490.10s] Because on USDJPY, we had a bigger drawdown like 2K.
+[  490.10s ->   496.10s] I didn't put exactly the same risk on those in this case.
+[  496.10s ->   497.10s] But you could do that.
+[  497.10s ->   499.10s] Yeah, that's it.
+[  499.10s ->   504.10s] And quanta analyzer is very powerful.
+[  504.10s ->   510.10s] Because you can analyze your portfolio and your algorithms in a simple way.
+[  510.10s ->   515.87s] From here, you can check and see many other factors.
+[  515.87s ->   518.87s] Many more data like stagnation days.
+[  518.87s ->   520.87s] That's 170.
+[  520.87s ->   521.87s] That's higher.
+[  521.87s ->   528.87s] So it means that for 170 days, we saw stagnation on equity.
+[  528.87s ->   533.87s] So like period where price didn't make anything like this period here.
+[  533.87s ->   534.87s] Okay?
+[  534.87s ->   536.87s] Didn't make any gain.
+[  536.87s ->   544.74s] The more assets and algos you have on your portfolio, the better it's going to be.
+[  544.74s ->   549.66s] So I'm going to show you the last thing here.
+[  549.66s ->   550.66s] Okay?
+[  550.66s ->   552.66s] Recompute stats.
+[  552.66s ->   557.59s] Here are the yearly average return.
+[  557.59s ->   563.59s] With that account size, you could have made 54% a year.
+[  563.59s ->   564.59s] That's good.
+[  564.59s ->   569.01s] Those are the performance over the years.
+[  569.01s ->   575.49s] 2018, we saw a very low profit year on 2023.
+[  575.49s ->   578.49s] The more algo you have, the better it's going to be.
+[  578.49s ->   581.97s] That's the basic concept.
+[  581.97s ->   585.51s] And you can see from the...
+[  585.51s ->   588.51s] Okay, that's the portfolio correlation.
+[  588.51s ->   589.51s] We have only two.
+[  589.51s ->   591.51s] It's not that useful now.
+[  591.51s ->   597.51s] But when you have maybe, let's say, 10 algorithms or maybe 20, it's going to be much better.
+[  597.51s ->   602.51s] I'm going to show you this on the next video.
+[  602.51s ->   603.51s] Maybe the one later.
+[  603.51s ->   607.51s] I have portfolio actually with around 12 algorithms.
+[  607.51s ->   610.51s] And the situation is much different.
+[  610.51s ->   613.51s] The return on 200 ratio is around 40.
+[  613.51s ->   616.51s] Last thing is Monte Carlo simulation.
+[  616.51s ->   620.51s] Let's say with 100 simulation.
+[  620.51s ->   621.51s] Randomize.
+[  621.51s ->   622.51s] Okay.
+[  622.51s ->   623.86s] This one.
+[  623.86s ->   624.86s] Okay.
+[  624.86s ->   626.41s] That's the chart.
+[  626.41s ->   634.41s] So, the Monte Carlo simulation is just showing you the possibilities that you could have in the future.
+[  634.41s ->   641.41s] Not only with this type of strategy or portfolio, but with any type of portfolio.
+[  641.41s ->   647.41s] The blue line here in the middle is the one we actually back test.
+[  647.41s ->   652.78s] So, that's the equity line of my portfolio with those data.
+[  652.78s ->   664.78s] But the Monte Carlo simulation, what it does is going to take all of the different trades and mix them like 4,000 trades and mix the profit and loss.
+[  664.78s ->   669.78s] Not modifying them only on the daily timeframe, but also like weekly and monthly.
+[  669.78s ->   674.78s] What that means is going to mix all of those data randomly.
+[  674.78s ->   675.78s] That's it.
+[  675.78s ->   684.68s] And if you mix those data, you will see this outlier, very good outlier.
+[  684.68s ->   692.06s] But then after like the first 500 trades, it made like 14,000.
+[  692.06s ->   694.06s] Maybe you'll see the same here.
+[  694.06s ->   697.06s] So, with a lower performance overall.
+[  697.06s ->   702.06s] And that's just to show you how confident you could be.
+[  702.06s ->   708.06s] Here, there is a high probability that the Mars Jordan is going to be 4,000 USD.
+[  708.06s ->   710.06s] It's like 50%.
+[  710.06s ->   714.63s] It's just to be more realistic.
+[  714.63s ->   715.63s] And that's it for this video.
+[  715.63s ->   716.63s] Like and subscribe.
+[  716.63s ->   717.63s] And subscribe.
+[  717.63s ->   718.63s] And subscribe.

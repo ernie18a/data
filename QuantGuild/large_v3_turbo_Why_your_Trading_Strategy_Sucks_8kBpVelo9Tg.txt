@@ -1,0 +1,50 @@
+[    0.00s ->     5.52s] I'm not going to sugarcoat it. Your trading strategy sucks and it's not your fault. You
+[    5.52s ->    12.40s] probably just don't understand the underlying risk that you're exposed to. The point of trading is
+[   12.40s ->    19.38s] to make money and if you don't understand the structure that exists to keep you from blowing
+[   19.38s ->    25.70s] out your account, what hope do you have? Let's talk about first why your trading strategy sucks,
+[   25.70s ->    31.14s] whether you're spamming backtests on TradingView, QuantConnect, I don't recommend it, but you
+[   31.14s ->    37.00s] eventually come up with something that looks maybe like this. You have a sharp ratio of 0.8,
+[   37.18s ->    42.74s] not even a one-to-one risk reward, but it seems like there's something there. Maybe you even
+[   42.74s ->    50.34s] conducted your backtest appropriately. Maybe there is no look-ahead bias. Maybe this actually has some
+[   50.34s ->    56.58s] validity in a forward-looking capacity, but this sharp ratio isn't great. Your max drawdown is
+[   56.58s ->    62.88s] around 15%. The total return about 13%. Is there even any alpha here? Did you run a regression
+[   62.88s ->    70.06s] to see if it's correlated with the S&P 500? Beyond the point right now, how can we make this strategy
+[   70.06s ->    76.90s] better? It's not about just grinding, optimizing parameters for this particular strategy
+[   76.90s ->    82.72s] to artificially inflate the sharp by either decreasing the variance of your return profile
+[   82.72s ->    91.56s] or increasing the expectancy. No, it's about creating a portfolio that's engineered for success.
+[   91.98s ->    97.24s] Let's take a look at two different strategies now. You have that first one that you developed and
+[   97.24s ->   103.82s] you were able to find a second one. And this second one has a sharp ratio of 0.9. If we take a look here,
+[  103.82s ->   112.04s] the equity curves are completely different. They're uncorrelated with one another. That seems promising.
+[  112.18s ->   118.68s] There might be some sort of diversification benefit there. But what does that benefit imply? Well,
+[  118.78s ->   125.40s] if we apply a 50-50 weighting to both of those trading strategies that have not super impressive sharp
+[  125.40s ->   131.40s] ratios, but reasonable sharp ratios, then when we combine those two strategies together, they are going
+[  131.40s ->   136.62s] to have a much higher sharp ratio. So if we apply an equal weighting to both of those strategies
+[  136.62s ->   144.04s] that are structurally uncorrelated, check it out. We get a sharp ratio of 1.2. It takes something that
+[  144.04s ->   149.60s] doesn't look all that impressive, like a 0.8 and a 0.9 sharp ratio, and it turns it into something that
+[  149.60s ->   158.14s] actually looks pretty promising. Now, what is the downfall of this ideology, especially in a backtesting
+[  158.14s ->   165.46s] capacity? You need to understand the underlying risk that you are exposed to. If you're trading two
+[  165.46s ->   171.98s] U.S. equity strategies, that correlation structure in these two different trading strategies that
+[  171.98s ->   179.92s] seem to be uncorrelated will break down during market distress. That is because they are not
+[  179.92s ->   186.06s] physically independent and they are not stochastically independent. It is all about physical
+[  186.06s ->   191.82s] and stochastic independence, not arbitrary diversification because you are subject to the
+[  191.82s ->   200.22s] same risk if both strategies are just plays on U.S. equity exposed to arbitrary beta. Let's take a look
+[  200.22s ->   207.12s] at what this means. If I have a trading strategy on this top chart here, that is 50% U.S. equities
+[  207.12s ->   214.64s] and 50% something else. You can even think of making markets on sports. That is those sports betting
+[  214.64s ->   222.42s] contracts. Those have quite literally nothing to do with each other. An insane market drawdown
+[  222.42s ->   230.34s] in U.S. equities is not going to impact market making on sports. Okay, that's this top chart
+[  230.34s ->   235.50s] here. What about this bottom chart? Both are U.S. equities strategies. If we take a look at
+[  235.50s ->   241.42s] what happens here during a nasty drawdown, my equity curve is much smoother when I have that
+[  241.42s ->   247.74s] physical independence. That is to be expected because the correlation structure during market
+[  247.74s ->   254.24s] distress is going to completely break down. Correlations approach one. Everything moves
+[  254.24s ->   261.30s] together if we're just trading two U.S. equities strategies or anything that has an arbitrarily high
+[  261.30s ->   268.98s] beta that moves with the market. That is why it is all about physical and stochastic independence.
+[  268.98s ->   276.24s] That is what trading is about. It's about making money, yes, but through positioning and survival.
+[  276.90s ->   281.72s] If you have this physical and stochastic independence, and physical always implies stochastic independence,
+[  281.98s ->   288.40s] you are going to be able to survive. You can make leveraged bets. You're not going to worry about nasty
+[  288.40s ->   294.44s] drawdowns like this and a lack of diversification. You want a smooth equity curve, a reasonable risk
+[  294.44s ->   300.68s] to return profile, and that is going to be the goal at the end of the day so that you can, of course,
+[  300.86s ->   304.40s] lever up without fear of blowing out.
+[  304.40s ->   309.88s] So that will be the wind. So that will be the kind of discharging opportunity for you to
+[  309.88s ->   312.36s] envision you, even if you want to get people who are still in the morning, you can get people
+[  312.36s ->   314.78s] going to see you, even more examples on the railing. You can win begeating this
+[  314.78s ->   315.10s] way.

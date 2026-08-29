@@ -1,0 +1,136 @@
+[    0.00s ->     0.64s] Hey guys, what's up?
+[    0.66s ->     3.42s] In this video, I'm going over how I made $592
+[    3.42s ->     5.28s] from trading SPY options.
+[    5.36s ->     7.32s] I'm gonna walk you through step-by-step how I did this.
+[    7.60s ->     9.00s] So not only you can see it's possible,
+[    9.00s ->    10.60s] but also learn the reasoning behind
+[   10.60s ->    11.92s] so you can do this for yourself.
+[   12.36s ->    13.52s] So anyways, if I'm breaking down,
+[   13.60s ->    15.24s] first I wanna prove to you that I did it.
+[   15.50s ->    19.12s] So again, you guys can see here on my close trades here,
+[   19.22s ->    23.20s] SPY, I entered on April 24th, expiration of May 12th.
+[   23.40s ->    24.36s] These were the details.
+[   24.50s ->    25.84s] I collected 28 cents a credit.
+[   25.84s ->    31.18s] I traded 25 credit spreads as my size and I made $592.
+[   31.60s ->    33.80s] Now again, if you wanna use this credit spread tracker,
+[   33.88s ->    36.02s] you can, it's completely free and it's linked in my bio.
+[   36.34s ->    38.30s] But anyways, if you want actual proof from my broker,
+[   38.44s ->    38.86s] here it is.
+[   38.90s ->    41.48s] You can see here I bought in on this date right here,
+[   42.12s ->    45.32s] sold on this date right here and made $625
+[   45.32s ->    47.48s] minus fees, roughly $590.
+[   47.90s ->    50.52s] So anyways, looking back at the platform, here we go.
+[   50.80s ->    53.26s] So right here is April 24th where I bought
+[   53.26s ->    56.28s] and then I ended up selling around this right here
+[   56.28s ->    60.26s] on May 10th, I closed out the trade early.
+[   60.60s ->    62.74s] Now again, this is kind of what we're looking at here
+[   62.74s ->    63.70s] for the profit range.
+[   63.80s ->    67.44s] I ended up making roughly 60% on this trade.
+[   67.54s ->    69.74s] So yes, I did have to put up a decent amount of money
+[   69.74s ->    70.24s] for this trade.
+[   70.32s ->    75.58s] I put up roughly $4,000 roughly to put on this trade,
+[   75.88s ->    77.58s] making me roughly $600.
+[   77.98s ->    79.14s] So that's kind of how it works
+[   79.14s ->    80.42s] in the credit spread trade world.
+[   80.76s ->    82.22s] So anyways, let's break down the details.
+[   82.22s ->    84.68s] So if we're looking at the overall market
+[   84.68s ->    86.94s] being the S&P 500, what we saw here
+[   86.94s ->    90.14s] is that the market was trending down.
+[   90.32s ->    91.50s] If we can see here in this phase,
+[   91.56s ->    92.80s] we have a downtrending phase.
+[   92.88s ->    93.02s] Why?
+[   93.14s ->    95.18s] Because the highs are getting lower.
+[   95.60s ->    97.82s] Next thing you know, we break this trend line
+[   97.82s ->    99.16s] and showing that we're starting to push higher.
+[   99.42s ->   100.66s] So when we break through a trend line,
+[  100.72s ->   101.84s] then we draw a new trend line
+[  101.84s ->   103.54s] towards the opposite direction.
+[  103.84s ->   105.48s] You can see here, we have an uptrend,
+[  105.58s ->   107.48s] it breaks this line, it comes down downtrend,
+[  107.58s ->   108.80s] breaks this line, then trends up.
+[  109.02s ->   110.84s] Well, that's exactly what we're seeing here
+[  110.84s ->   112.04s] is a strong trend up.
+[  112.30s ->   113.42s] So because we're trending up,
+[  113.46s ->   115.52s] I followed the exact rules that I give you
+[  115.52s ->   118.24s] every single time, including in my trading handbook,
+[  118.44s ->   119.56s] which is if it's trading up,
+[  119.96s ->   121.38s] take the current close price,
+[  121.46s ->   123.20s] go 3% below that price,
+[  123.26s ->   125.26s] and that is where your strike price would be.
+[  125.30s ->   126.22s] Let's see the specifics here.
+[  126.22s ->   128.98s] I believe it was $400,398.
+[  129.10s ->   130.98s] So right here, I entered here,
+[  131.06s ->   132.08s] and I went all the way down.
+[  132.20s ->   133.80s] I was able to go down to 3%.
+[  133.80s ->   136.32s] I could do $400 right here as my strike price.
+[  136.68s ->   138.74s] Now, why does this work as a good strike price?
+[  138.82s ->   140.78s] Well, number one, it's the strategy I follow.
+[  140.84s ->   143.56s] My systematic approach is go out 3%,
+[  143.56s ->   146.26s] and that historically, and an uptrending market,
+[  146.38s ->   147.86s] gives me a 90 plus percent win rate.
+[  148.16s ->   150.70s] Not only that, this $400 level is a whole dollar level.
+[  150.80s ->   152.02s] $400 is a whole dollar level,
+[  152.06s ->   153.78s] is a very strong area of resistance.
+[  153.78s ->   156.28s] Not only that, if we can see the support line
+[  156.28s ->   158.42s] right here coming up, or this trend line coming up,
+[  158.72s ->   160.70s] that it would have bounced around 400.
+[  160.82s ->   162.18s] So this would have been a great support level
+[  162.18s ->   163.24s] for it to bounce regardless,
+[  163.68s ->   165.14s] even if it came down to slow.
+[  165.48s ->   167.34s] Anyway, so I'm setting my level at 400.
+[  167.48s ->   168.82s] This means that since I'm trading
+[  168.82s ->   170.08s] or selling credit spreads,
+[  170.38s ->   172.32s] that as long as the stock stays above this level
+[  172.32s ->   173.60s] by my expiration date,
+[  173.88s ->   175.86s] then I get to keep all the money they gave me,
+[  175.90s ->   177.58s] roughly $625.
+[  178.24s ->   180.10s] Now, if I'm looking at this trade,
+[  180.20s ->   181.66s] it started to go against me,
+[  181.66s ->   184.14s] but again, I kind of let these trades play out.
+[  184.28s ->   185.78s] I only start to manage early.
+[  185.94s ->   187.92s] If we're in the last week of trading
+[  187.92s ->   189.66s] or last three days of trading,
+[  189.66s ->   191.06s] then I start to manage the trades.
+[  191.38s ->   192.96s] So there's nothing I really have to worry about here.
+[  193.04s ->   194.96s] I was really just set it and forget it
+[  194.96s ->   196.54s] on this type of trade.
+[  196.86s ->   198.68s] Then I woke up here on Wednesday,
+[  199.30s ->   202.18s] and I actually kind of closed out of this trade
+[  202.18s ->   204.76s] because I was going to a conference that week,
+[  204.78s ->   205.68s] a hedge fund conference,
+[  205.68s ->   208.80s] and so I decided not to worry about this trade
+[  208.80s ->   211.00s] because I knew a lot of volatility
+[  211.00s ->   212.10s] was going to come into the market.
+[  212.52s ->   215.26s] Ended up buying back early for roughly $0.03,
+[  215.64s ->   218.74s] and so that's how I collected and made most of my money.
+[  218.84s ->   220.04s] I sold for roughly $0.28
+[  220.04s ->   222.40s] and then bought it back for $0.03.
+[  222.58s ->   225.82s] So I made $0.25 per contract and had 25 contracts.
+[  226.16s ->   228.22s] That's where I got to roughly the profit that I'm at.
+[  228.64s ->   230.94s] So that is kind of how this trade went on,
+[  230.96s ->   232.16s] and that's how it was set up.
+[  232.16s ->   233.38s] This is my spy trade.
+[  233.66s ->   235.76s] Again, if you want to be able to track your own trades,
+[  235.80s ->   237.38s] you can use the credit spread tracker linked
+[  237.38s ->   239.72s] in the description below.
+[  239.90s ->   240.72s] But anyways, if you're wondering,
+[  240.86s ->   242.66s] okay, Austin, what's the general gist behind this trade?
+[  243.18s ->   244.02s] Identify the trend.
+[  244.12s ->   245.08s] What trend are you in?
+[  245.16s ->   247.12s] And trade the credit spread that aligns with that best.
+[  247.36s ->   250.04s] If you're trending up, sell a put credit spread.
+[  250.12s ->   253.72s] If you're trending down, sell a call credit spread.
+[  254.04s ->   256.20s] And again, it's always best to sell
+[  256.20s ->   257.74s] your put credit spreads on red day.
+[  257.80s ->   258.86s] So if you can do that, that's awesome.
+[  259.18s ->   261.54s] All right, guys, this is Austin from 2% Credit Spreads.
+[  261.54s ->   263.90s] If you enjoyed this video, smash the subscribe button,
+[  264.14s ->   265.90s] and I'll see you in the next video.
+[  266.32s ->   271.72s] P.S. I have a credit spread masterclass going on right now.
+[  271.94s ->   273.42s] So if you click the link in my bio
+[  273.42s ->   276.44s] and actually check out this credit spreads tracker
+[  276.44s ->   277.48s] that's completely free.
+[  277.72s ->   280.10s] You have to put in your email though to use this,
+[  280.32s ->   282.10s] then you'll also get that super secret
+[  282.10s ->   283.24s] credit spreads masterclass.
+[  283.50s ->   284.60s] All right, guys, see you in the next video.

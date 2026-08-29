@@ -1,0 +1,162 @@
+[    0.16s ->     5.00s] Imagine knowing how many traders were placing orders in a stock, before those orders were
+[    5.00s ->     6.44s] even fulfilled.
+[    6.44s ->    10.44s] Imagine knowing the sizes of those orders, the speed at which buyers found sellers for
+[   10.44s ->    15.68s] them, and the prices of not only the highest and lowest orders, but also the prices beyond
+[   15.68s ->    18.40s] that at any given time.
+[   18.40s ->    22.72s] In other words, imagine having a lens through which you could see a stock's liquidity,
+[   22.72s ->    27.96s] the supply and demand, reliable supports and resistances, all in real time, before the
+[   27.96s ->    30.28s] rest of the market ever found out.
+[   30.28s ->    33.92s] Welcome to the world of level 2 market data.
+[   33.92s ->    38.58s] You will often see many trading streamers, usually day traders, that have the level 2
+[   38.58s ->    40.22s] on their screen when trading.
+[   40.22s ->    45.20s] This is because of the major advantage it gives them, and it can give so much information on
+[   45.20s ->    46.42s] the stock they're looking at.
+[   46.42s ->    50.92s] It can tell you if a stock is about to break out, it can tell you if buyers are losing interest,
+[   50.92s ->    53.84s] and it can also tell you if sellers are taking control.
+[   53.84s ->    57.68s] If you don't have the level 2 knowledge in your trading arsenal, you're definitely missing
+[   57.68s ->    59.60s] out on some key information.
+[   59.60s ->    64.56s] In order to understand the level 2, we should probably go over the level 1 data first.
+[   64.56s ->    65.56s] Makes sense right?
+[   65.56s ->    70.66s] The level 1 data is usually right above level 2, you've probably heard most of it before.
+[   70.66s ->    75.16s] It's more of the basic type data of the two types, but a lot of traders still use it.
+[   75.16s ->    78.46s] Level 1 data generally provides the following information.
+[   78.46s ->    83.54s] Bid price, bid size, ask price, ask size, last price, last size.
+[   83.54s ->    87.18s] The level 1 data provides plenty of basic intel for a stock.
+[   87.18s ->    92.34s] You can just think of the level 2 as an expanded and more in-depth version of the level 1.
+[   92.34s ->    95.54s] In other words, picture the level 1 as a rough outline.
+[   95.54s ->    99.18s] It gives you somewhat of what you need, but just the pure basics.
+[   99.18s ->   104.48s] But the level 2 gives traders a clearer picture of what's actually going on with the stock.
+[  104.48s ->   108.32s] Because it provides more data and more information on the stock's movement.
+[  108.32s ->   113.06s] More information on trading prices, trading sizes, and more importantly, more information
+[  113.06s ->   116.50s] on who's in control, the buyers or the sellers.
+[  116.50s ->   120.74s] At first the level 2 data looks just like a bunch of flashing lights and numbers moving
+[  120.74s ->   122.56s] up and down randomly.
+[  122.56s ->   126.38s] Almost kind of like an airplane cockpit, there's so many buttons and dials you don't even know
+[  126.38s ->   127.38s] what you're looking at.
+[  127.38s ->   129.10s] I completely understand that.
+[  129.10s ->   133.22s] But once you kind of know what you're looking for, it becomes a lot easier to read.
+[  133.22s ->   137.54s] So usually the level 2 looks something like this, where everything is moving rapidly and
+[  137.54s ->   139.96s] colors and numbers are flashing and changing.
+[  139.96s ->   144.16s] So I thought I'd take a screenshot so we can slow down and know exactly what we're
+[  144.16s ->   147.08s] looking for without confusing changes and whatnot.
+[  147.08s ->   152.58s] So as said before, all this information right here is the level 1 data, your very basic foundation
+[  152.58s ->   153.58s] data.
+[  153.58s ->   155.12s] Below that is the level 2.
+[  155.12s ->   156.54s] We have these two tables.
+[  156.54s ->   160.44s] The one on the left is the bids, or you can think of them as the buyers.
+[  160.44s ->   164.62s] So this right here is the highest price the market is willing to pay for the stock at
+[  164.62s ->   168.10s] the time, which in this example is AWX.
+[  168.10s ->   172.88s] So the highest the buyers are willing to pay right at this very moment is 530.
+[  172.88s ->   177.44s] The table on the right is the ask, or you can think of them as the sellers.
+[  177.44s ->   182.76s] So this right here is the lowest price the market is willing to sell AWX for, which is
+[  182.76s ->   183.76s] 535.
+[  183.76s ->   188.84s] These letters that you're seeing are abbreviations for exchanges, so it just shows what exchanges
+[  188.84s ->   190.54s] these orders are coming from.
+[  190.54s ->   194.38s] Then we have these numbers, which are the sizes of the orders.
+[  194.38s ->   201.22s] So for example, this guy wants to buy 200 shares of AWX if the price ever reaches 530.
+[  201.22s ->   207.20s] Then there is this person who wants to sell 500 shares if the price ever reaches 535.
+[  207.20s ->   211.28s] Now can you start seeing why these numbers might be very valuable information?
+[  211.28s ->   212.72s] I should also be clear.
+[  212.72s ->   215.02s] All of these orders are limit orders.
+[  215.02s ->   216.40s] So they're all pending.
+[  216.40s ->   219.90s] They haven't been filled yet, they are just requests for where buyers and sellers have
+[  219.90s ->   221.08s] their orders set to.
+[  221.08s ->   225.48s] If you did want to see live orders, orders that are being filled right at this very moment,
+[  225.48s ->   228.16s] you would look at the time in sales, which is right here.
+[  228.16s ->   231.60s] These are all the orders that have been filled and are currently being filled.
+[  231.60s ->   236.42s] So you can see the price where they were filled and how many shares that are bought or sold.
+[  236.42s ->   241.50s] Green means it was a buy, red means it was a sell, and gray means it was inside of the spread.
+[  241.50s ->   244.98s] So we went over all the data and what it means on the level 2.
+[  244.98s ->   248.60s] But how do we use it in order to tell if buyers or sellers have control?
+[  248.60s ->   254.18s] Well, from my experience, the level 2 works best with key levels of resistance or support.
+[  254.18s ->   260.10s] So as an example, say we have this chart, and we found an all time high right here at 530.
+[  260.10s ->   263.86s] And we're wondering if the price is going to break through this key resistance or not.
+[  263.86s ->   266.30s] This is where the level 2 comes into play.
+[  266.30s ->   272.02s] If we look at the level 2 data, we can see a big stack of buyers exactly at the 530 mark.
+[  272.02s ->   277.40s] You can also see there are 5 separate orders from 5 separate exchanges at 530.
+[  277.40s ->   281.66s] Whenever this happens, the level 2 will make all these blocks the same color.
+[  281.66s ->   283.54s] So in this instance, it's green.
+[  283.54s ->   287.98s] It does this so we can quickly see in the blink of an eye who's in control, the buyers
+[  287.98s ->   289.04s] or the sellers.
+[  289.04s ->   291.14s] This is actually called stacking.
+[  291.14s ->   295.76s] Often people will say, oh the bids are stacked, meaning there's a bunch of buyers from different
+[  295.76s ->   298.54s] exchanges trying to buy at a specific price.
+[  298.54s ->   303.68s] So in this instance, at our key resistance level of 530, there are 5 different buyers willing
+[  303.68s ->   307.40s] to buy at this price, compared to the one seller that wants to sell.
+[  307.40s ->   311.44s] Since we see more buyers than sellers, we can be more confident the price will break through
+[  311.44s ->   313.06s] this key resistance level.
+[  313.06s ->   315.90s] Just picture it as 5 kids vs 1 kid in a fight.
+[  315.90s ->   317.18s] Who's more likely to win?
+[  317.18s ->   318.18s] The 5 kids.
+[  318.18s ->   322.22s] So whenever trading near a key level of support or resistance, you want to see if there are
+[  322.22s ->   327.32s] more buyers or more sellers stacked, and you can quickly do that by seeing the big stacks
+[  327.32s ->   328.32s] of color.
+[  328.32s ->   330.32s] But this is not all you should be looking for.
+[  330.32s ->   331.32s] Oh no.
+[  331.32s ->   333.38s] There's much more information at hand.
+[  333.38s ->   336.54s] You should also be looking at the sizes of the orders.
+[  336.54s ->   341.20s] As an example, yeah, there could be orders to buy at 530 from 5 different exchanges and
+[  341.20s ->   343.64s] only one sell order from one exchange.
+[  343.64s ->   348.82s] But if these 5 buy orders are buying 100 shares each, and the sell order is trying to sell
+[  348.82s ->   353.98s] 10,000 shares, even though there are more exchanges trying to buy at that specific price,
+[  353.98s ->   357.24s] the size of that one sell order is massive.
+[  357.24s ->   361.68s] So if we were going back to the fight example, sure there might be 5 kids, but the person by
+[  361.68s ->   366.78s] themself is a UFC fighter, which could probably take 5 kids at once.
+[  366.78s ->   370.44s] I know it's a weird example, but hopefully I'm getting my point across.
+[  370.44s ->   374.96s] So you should not only be looking for big stacks, but also be looking at the sizes of
+[  374.96s ->   375.96s] the orders.
+[  375.96s ->   379.80s] So say if there is a huge seller selling 60,000 shares.
+[  379.80s ->   385.54s] It might not be a good time to enter, as 60,000 shares is a lot of shares to be bought up,
+[  385.54s ->   388.84s] and it'll almost act as a wall the buyers have to break through.
+[  388.84s ->   394.00s] So if you wanted to go long at a specific level, you want to see big stacks in the bid section,
+[  394.00s ->   398.82s] with big order sizes, and you want to see small stacks in the ask section, with small
+[  398.82s ->   400.22s] order sizes.
+[  400.22s ->   404.72s] Complete opposite if you wanted a short, small stacks in the bid section, big stacks in the
+[  404.72s ->   405.72s] ask section.
+[  405.72s ->   410.06s] You can also use the level 2 to see where key levels of support and resistance are.
+[  410.06s ->   414.60s] So if there's a big order size all the way down here on the bid, that's most likely
+[  414.60s ->   418.78s] a strong support level, because a lot of buyers are willing to buy down here.
+[  418.78s ->   422.72s] If there's a huge order on the ask, it's likely to be a key resistance.
+[  422.72s ->   426.86s] The higher the number of shares, the more reliable the support or resistance will be.
+[  426.86s ->   431.68s] The amount of orders and the sizes of them are a key metric with the level 2, but a just
+[  431.68s ->   433.70s] as important metric is volume.
+[  433.70s ->   440.84s] If there's no volume, the price will not move, which means you won't make money.
+[  440.84s ->   445.68s] We want to be in when there's a lot of movement, which nicely enough, the level 2 tells us that
+[  445.68s ->   446.98s] information too.
+[  446.98s ->   450.98s] For that, we want to be looking at the time in sales, this right here.
+[  450.98s ->   454.52s] We don't necessarily need to be looking at the numbers, but we want to be looking at
+[  454.52s ->   456.76s] the colors and how fast it's moving.
+[  456.76s ->   460.60s] If we want it to go long, because we think it's about to break that key resistance level,
+[  460.60s ->   464.80s] we want to see tons of green in the times in sales window, telling us there's a lot
+[  464.80s ->   466.08s] of buying going on.
+[  466.08s ->   470.38s] Not only that, but we want it to be moving fast, almost like one of those money counter
+[  470.38s ->   471.38s] machines.
+[  471.38s ->   479.50s] If the time in sales is showing a lot of green, and it's moving fast, this is telling us a lot
+[  479.50s ->   484.16s] of buyers are coming in at once, in a short period of time, giving us more confidence
+[  484.16s ->   485.56s] that the price will go up.
+[  485.56s ->   489.66s] Look at the difference between these two stocks, look at the speed of the time in sales.
+[  489.66s ->   492.96s] You can see that one stock has way more volume than the other.
+[  492.96s ->   496.88s] So picture it on a chart, there's a ton of buyers entering trades making the chart go
+[  496.88s ->   500.52s] up, but not only that, the volume is going up as well.
+[  500.52s ->   504.72s] More and more people are getting excited and entering this trade, but then the key resistance
+[  504.72s ->   509.78s] level comes up, and a lot of people realize that, so they get hesitant and stop buying.
+[  509.78s ->   513.52s] That's when normally you'll see the time in sales slow down, and when that happens
+[  513.52s ->   517.40s] at a key resistance level like this, more often than not, it'll reverse.
+[  517.40s ->   522.12s] So as a quick recap, if we wanted to go long for a breakout trade at the 530 mark, which
+[  522.12s ->   528.32s] is a key resistance, we want to see a lot of stacks at 530 and big order sizes, especially
+[  528.32s ->   529.92s] compared to the sellers.
+[  529.92s ->   534.68s] Then we also want to be seeing a bunch of green in the time in sales and it moving fast,
+[  534.68s ->   536.92s] like one of those money counter machines.
+[  536.92s ->   540.50s] Now I know I'm telling you to look at a lot of different things at the same time.
+[  540.50s ->   545.14s] It can be a little overwhelming at first, especially with the heat of the moment when trading, and
+[  545.14s ->   548.08s] it almost seems like there's too much going on at once.
+[  548.08s ->   551.58s] But just like anything, reading the level 2 is a skill.
+[  551.58s ->   554.08s] The more you do it, the better you become reading it.
+[  554.08s ->   559.46s] When I read a level 2, I can instantly tell who's in control, the buyers or the sellers.
+[  559.46s ->   563.12s] At first it may take you a bit, but you'll get the hang of it, I promise.
+[  563.12s ->   567.62s] Reading the level 2 is a very important skill to have when day trading, but another skill
+[  567.62s ->   572.88s] that is equally as important, if not more important, is being able to read candlesticks,
+[  572.88s ->   575.42s] to tell which direction the market is about to head.
+[  575.42s ->   579.58s] In this video, I go over some of the most popular candlestick patterns and explain how
+[  579.58s ->   580.58s] to trade around them.
+[  580.58s ->   584.34s] Go check that out, thanks for watching, and I'll see you guys next time.

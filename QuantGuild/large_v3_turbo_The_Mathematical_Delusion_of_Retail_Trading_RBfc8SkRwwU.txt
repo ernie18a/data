@@ -1,0 +1,125 @@
+[    0.00s ->     4.64s] what we're doing here is looking at a stock chart of apple before earnings as you can see there's
+[    4.64s ->     9.36s] some pretty aggressive consolidation so there's definitely edge in this trade we're going to take
+[    9.36s ->    14.40s] a nice position before earnings and if you take a look at the bar by bar replay there's a nice
+[   14.40s ->    20.56s] gap up and we're able to walk away with a nice profit you know what the problem is with retail
+[   20.56s ->    26.32s] trading that that's the problem if you don't understand the underlying math probability and
+[   26.32s ->    31.68s] statistics at play that sounds like something when in reality it's a whole bunch of nothing if
+[   31.68s ->    36.80s] i say there's eggs in this trade does that mean that the trade is profitable absolutely not
+[   36.80s ->    43.28s] we can't even compare it to different states of the world because there is no counterfactual
+[   43.28s ->    49.68s] edge in a single trade is not equivalent to edge over time what if i could replay that event a
+[   49.68s ->    56.00s] thousand times let's take a look at different paths we could have walked in fact on that earnings
+[   56.00s ->    63.12s] events only one path gapped up an incredibly lucky event when every single one of the other paths
+[   63.12s ->    72.16s] gapped down we never get to actually realize those realities everything happens only one time edge in
+[   72.16s ->    78.96s] a single trade does not mean edge over time you see people these crypto moonshot investors trading
+[   78.96s ->    85.68s] coaches posting pictures of their pnl up to plus ten thousand percent on crazy lever deep out of the
+[   85.68s ->    92.48s] money option plays that isn't how the space functions the problem with this space is the
+[   92.48s ->    99.76s] statistical mechanisms in general are amorphous what does that mean it means you need to understand
+[   99.76s ->   104.88s] the statistics first but then when you approach them in the real world they don't actually work
+[  104.88s ->   111.12s] so theoretically what do we need to be able to make money trading well we need positive edge that
+[  111.12s ->   116.32s] doesn't mean every single trade is going to be a winner that means on average we need to make money
+[  116.32s ->   123.20s] each trade and if on average you make money each trade your wealth is going to increase on a positive
+[  123.20s ->   129.52s] trajectory otherwise you're going to eventually lose all of your money and yes roman the system is
+[  129.52s ->   136.08s] non-ergotic i understand we have an absorbing state and i understand the space itself that is the trading
+[  136.08s ->   145.28s] space is not ergodic this is not a class on stochastic processes this is a discussion about edge and edge
+[  145.28s ->   153.28s] being amorphous we have literally no idea what contributed to this stock price gapping up after
+[  153.28s ->   160.48s] earnings literally no idea plenty of times plenty of times companies post good earnings and they gap down
+[  160.48s ->   168.00s] or they trade sideways and eventually gap down we have literally no idea and no capacity to predict
+[  168.00s ->   176.96s] the outcome if we did then this entire space would operate differently going into the options markets
+[  176.96s ->   182.64s] when you look at a straddle if everyone knew the direction what do you think price would reflect
+[  183.28s ->   189.92s] this is why understanding the space and the underlying mathematics actually matters all right if you take
+[  189.92s ->   195.92s] a look at this expected value equation decomposing a trader's eggs you can take a look at it as
+[  195.92s ->   202.72s] the probability they win a trade times the expected winner plus the probability they lose a trade times
+[  202.72s ->   209.60s] the expected loser but what the problem is here is in real life we don't have classroom convergence these
+[  209.60s ->   215.68s] values are not only amorphous in the sense that we don't know what goes into them explicitly but to
+[  215.68s ->   223.44s] make matters worse they all change over time this is why lines on a chart can be very misleading and
+[  223.44s ->   229.12s] very confusing because if i said hey let's take a look at this crazy consolidation here clearly we're
+[  229.12s ->   233.92s] gonna ride this channel up and there's gonna be a nice gap up and you know we're gonna ride the you
+[  233.92s ->   239.28s] know the support on this new level well what does that mean does that mean anything can you actually
+[  239.28s ->   246.40s] prove that it does anything absolutely not and the reason for that is because the space not only is
+[  246.40s ->   254.32s] amorphous but there is an unfathomable number of combinations of not only price but different factors
+[  254.32s ->   260.48s] that go into a single trade don't believe me well people love to back test trading strategies and
+[  260.48s ->   266.08s] something that i've been talking about for years in the retail spaces when are you getting into your trade
+[  266.08s ->   271.20s] and why if you look at a one hour candle it's like oh roman i'm back testing on one hour candles do you
+[  271.20s ->   277.20s] realize that there's over and take a liquid instrument like apple over six million possible
+[  277.20s ->   286.16s] entry exit conditions in a single bar in a single bar okay well what does this go into why am i talking
+[  286.16s ->   291.60s] even about this idea of the unfathomable number of entries and exits in a single bar because
+[  292.16s ->   297.12s] the information quality available online you see trading gurus you see professionals it's
+[  297.12s ->   303.60s] it's just a clash it's crazy you see professionals if somebody had real edge they wouldn't share it
+[  303.60s ->   308.08s] that makes literally no sense if you look at this chart i'm happy to tell you i traded mean reversion
+[  308.08s ->   314.64s] on apple within this one hour candle i'm happy to if i made a little bit of money trading this particular
+[  314.64s ->   320.96s] bar you will have no capacity to emulate that in a discretionary semi-systematic hell even a systematic
+[  320.96s ->   328.72s] capacity if i don't just hinge you my python script but nobody wants to think about this nobody wants to
+[  328.72s ->   334.24s] actually learn the math and apply it to the real world they just want to print money in the markets
+[  334.24s ->   341.52s] and of course you know the trading gurus want to sell their courses and that is really the problem with
+[  341.52s ->   347.44s] these trading coaches and trading gurus the notion of alpha and alpha decay like the professionals saying hey
+[  347.44s ->   352.40s] nobody would share useful information if it was actually useful it's like well no because
+[  352.40s ->   357.76s] the trading coaches themselves they can be correct it doesn't mean you're going to make money doesn't
+[  357.76s ->   362.08s] mean it's going to work all the time but there are facets of what they're saying that may be correct
+[  362.08s ->   368.32s] which is why they entice so many to their schools think of it like a poker coach
+[  369.12s ->   373.52s] right if you don't know how to play poker hiring a poker coach is going to be tremendously useful
+[  373.52s ->   377.84s] they'll teach you the hands they'll teach you the basic ideas of of equity and the pot
+[  378.64s ->   383.12s] so on and so forth but they're not going to sit there and play the hand for you right
+[  383.92s ->   391.52s] a trader who is consistently capable of trading independently is not going to take that risk for you
+[  392.40s ->   397.60s] right unless they're managing your capital so i want you to think about that in this particular
+[  397.60s ->   403.28s] context right because if you take a look at the total possible entry number of entries and exits in a
+[  403.28s ->   410.64s] single one hour candle right on average you really can't test these things right drawing a particular
+[  410.64s ->   418.80s] line on a chart at a particular time is part of that amorphous expectation right is there any structure
+[  418.80s ->   424.08s] there that you're trading when you draw that line maybe unintentionally you are uncovering some
+[  424.08s ->   431.04s] port of some sort of support or resistance and maybe there is some edge in a single trade or a time
+[  431.04s ->   437.68s] series sense but that's a research question right arbitrarily drawing on a chart and just saying
+[  437.68s ->   443.28s] oh there's support here and it's going to bounce right that's a research question that doesn't make
+[  443.28s ->   448.40s] any sense there's no formal basis for that but rejecting it altogether just because it sounds
+[  448.40s ->   455.12s] ridiculous is also a ridiculous premise we love to clown technical analysis but we don't consider that
+[  455.12s ->   461.28s] it may have merit in the amorphous expectation that is your trading pnl that's outrageous that's
+[  461.28s ->   467.20s] outrageous it's just dismissing a concept because what that's what guru traders want to propagate as
+[  467.20s ->   473.12s] something that can make you profitable in the long run clearly there is a lot to this space and we've
+[  473.12s ->   478.48s] just scratched the surface these last two problems are what i consider to be the biggest problems with
+[  478.48s ->   486.72s] retail algorithmic trading so where can you go to discuss back tests trading strategies the broader
+[  486.72s ->   494.48s] markets as a whole what's going on right now well that's exactly why i built discourses.io and i
+[  494.48s ->   503.28s] gamified the entire process play the markets like an rpg you can discuss the live markets in the symposium
+[  503.28s ->   509.92s] post your thoughts about particular names stocks etfs futures currencies the list goes on you can head
+[  509.92s ->   517.60s] on over to the commons post about trading strategies back tests get feedback from others participating in
+[  517.60s ->   525.84s] these markets it is a high signal community there is no place for botting no place for spamming you can
+[  525.84s ->   532.96s] even engage in a social prediction market and you can place bets for reputation on
+[  533.28s ->   539.92s] different underlyings cryptos stocks and their direction for the day week and month there are
+[  539.92s ->   545.76s] a ton of other features there's an entire loot system an exchange system and there's way more to
+[  545.76s ->   551.28s] discuss in that product so if you're interested you can just head on over to create an account it's
+[  551.28s ->   556.88s] entirely free i definitely recommend you check it out if you're looking to discuss ideas like this
+[  557.44s ->   566.77s] in a high signal space so with that what are these last two big problems what i consider to be the
+[  566.77s ->   572.53s] biggest problem is in the retail algorithmic trading space well the first is this idea of implied
+[  572.53s ->   578.77s] probability collapsing to a single event there is no counterfactual if i play this animation for you
+[  578.77s ->   585.81s] here right we only walk one of these paths we never get to see what the other ones are we don't know if
+[  585.81s ->   593.89s] this trade had positive ev just in the time sense for our overall equity curve or in the single trade
+[  593.89s ->   601.33s] ensemble sense that's a really big problem because we can result very aggressively in other words if i
+[  601.33s ->   607.25s] was to draw on a chart here let's say we walk this green path and i say okay well we have some massive
+[  607.25s ->   614.29s] support here and i anticipate a gap up and we ride this channel and that happens we are going to want to
+[  614.29s ->   619.41s] confirm that right there's going to be a bias wonder what kind of bias that might be called but
+[  619.41s ->   624.93s] we're going to want to be correct and we're really going to have no idea that that trade has negative
+[  624.93s ->   629.73s] edge and if we continue to trade this sort of strategy over time we would continue to lose money
+[  629.73s ->   634.29s] and the worst of it is if we try to run this in some sort of back test just because it was true for
+[  634.29s ->   639.97s] the last 10 years does not mean it's going to be true going forward because again we don't have
+[  639.97s ->   647.46s] asymptotic convergence in the real world okay well that's a really big problem and this plays into the
+[  647.46s ->   653.86s] idea of arbitrary strategy criticisms why bother right why bother trade a particular strategy
+[  654.50s ->   660.18s] right how do you know if it's going to be optimal if you're going to beat the market generate alpha do
+[  660.18s ->   665.94s] you know what alpha is as a measure of orthogonal return it's not excess return from the benchmark
+[  665.94s ->   671.62s] whatever benchmark you select that's not at all what alpha is one of the things that drives me
+[  671.62s ->   679.14s] absolutely crazy is arbitrary strategy criticisms i don't sell covered calls because that caps your
+[  679.14s ->   685.54s] upside okay well what if it doesn't then it didn't cap your upside you're talking about in the cross
+[  685.54s ->   692.74s] section on average in the cross section on average but what if it doesn't right here's one example of
+[  692.74s ->   700.10s] selling a call a cover call right before the earnings event you can see most of these paths
+[  700.10s ->   706.98s] expired out of the money if it gaps up then oh no we're going to cap our upside right but you're going
+[  706.98s ->   713.06s] to realize one of these paths if you realize one of the paths that gapped down then you would just walk
+[  713.06s ->   719.94s] away with your premium and probably some equity drawdown but you didn't cap your upside at all and
+[  719.94s ->   724.82s] you can argue that on average right if you do this in the time average sense then you're going to cap
+[  724.82s ->   731.78s] your upside and if you just bought and held the under that's that's just punting and moving the goal
+[  731.78s ->   738.50s] post right that's that's an arbitrary criticism you're not actively trading the strategy generating a
+[  738.50s ->   744.26s] return comparing it to what your spot buy and hold was and we already know the problem with that where did
+[  744.26s ->   750.18s] you buy and where are you holding and where are you holding until we want to call market tops and
+[  750.18s ->   757.38s] bottoms right this isn't investing this is trading so with that i hope this sheds some light on some of
+[  757.38s ->   763.78s] the problems with retail trading retail semi-systematic systematic algorithmic trading i hope you enjoyed
+[  763.78s ->   767.30s] this video it certainly took a lot of effort to put together so if you liked it and you want to see more
+[  767.30s ->   772.66s] like it in the future please like comment subscribe share it helps me out tremendously it is always greatly
+[  772.66s ->   778.90s] appreciated check out discourses.io if you would like to discuss the live markets create threads on
+[  778.90s ->   784.42s] trading strategies back tests receive feedback from the community bake bets in the social prediction
+[  784.42s ->   791.22s] market the list goes on other than that i want to thank you so much for watching and i will see you
+[  791.22s ->   794.18s] in the next video

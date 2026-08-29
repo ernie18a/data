@@ -1,0 +1,133 @@
+[    1.34s ->     8.32s] We are so back. Roman here, quantitative researcher and trader, founder of Quant Guild.
+[    8.50s ->    14.48s] Today, I'm going to show you how to read an options chain, exactly what to look at when
+[   14.48s ->    19.66s] you're going about building your options strategies and placing your trades. We're going to be using
+[   19.66s ->    25.28s] Interactive Brokers and their trader workstation for this video, but you can head on over to any
+[   25.28s ->    29.78s] site you'd like to check out an options chain. We're just going to happen to have live market
+[   29.78s ->    34.72s] data within the Interactive Brokers trader workstation. If you're looking to get set up
+[   34.72s ->    39.88s] with Interactive Brokers, I will leave a link in the description below. And if only there was a video
+[   39.88s ->    45.84s] to get you started with your market data subscription so you could access a live data
+[   45.84s ->    50.78s] feed. Oh, wait, I have one of those on my channel. I will leave a link to it in the description below.
+[   50.88s ->    55.62s] If you'd like a full tutorial to create your account, get started with the market data
+[   55.62s ->    59.38s] subscriptions. They're a few dollars every single month, and then you can head on over to this
+[   59.38s ->    64.80s] trader workstation where you can visualize the options chain alongside this video.
+[   64.80s ->    69.54s] When you first launch your trader workstation, and that's exactly what we have here. I'm in a
+[   69.54s ->    75.54s] paper trading environment. You're going to see on the bottom, we have a mosaic and a classic TWS tab.
+[   75.74s ->    79.66s] I am a fan of the classic, so we're going to click on that classic tab, and it's going to bring you to
+[   79.66s ->    84.32s] your portfolio page. And you can see here, this is my current portfolio messing around with a whole
+[   84.32s ->    89.34s] bunch of different options positions. How do I go about bringing up the options trader? Well,
+[   89.34s ->    94.56s] fortunately for us, on this top bar here, you're going to see the option trader button. We're going
+[   94.56s ->   100.78s] to click on this guy, and this is going to bring up the options trader window. Now, you may or may
+[  100.78s ->   105.90s] not have an active quote. If you're looking for an active quote for a particular underlying, you're
+[  105.90s ->   110.62s] going to head on over to this upper left-hand corner here, and you're going to type in a symbol.
+[  110.76s ->   116.92s] You can type in an index like the S&P 500, SPX, select index, and then boom, you'll get your quotes.
+[  116.92s ->   122.72s] Or you could pick a particular name. In this case, I have NVIDIA here, and we're going to be able to
+[  122.72s ->   128.72s] take a look at the options chain for NVIDIA. So what is it that we're actually looking at here?
+[  128.90s ->   134.06s] Well, this is going to be the options trader window, and there's a lot of information for us to
+[  134.06s ->   140.40s] digest. So here, we're taking a look at the actual underlying itself, some very useful statistics.
+[  140.40s ->   146.64s] We're going to have the change in implied volatility, the last implied volatility, we're going to have
+[  146.64s ->   151.06s] the option volume, a whole bunch of very useful metrics for us here. And of course, we can
+[  151.06s ->   156.82s] customize all of these columns however we would like. When we come on down here, we're actually
+[  156.82s ->   162.96s] going to take a look at the options chain itself. And the way that an options chain is structured is
+[  162.96s ->   168.62s] you're going to have calls on the left and puts on the right. You're going to have to select a
+[  168.62s ->   174.00s] specific expiry. And then all of the calls and puts are going to be for that particular maturity
+[  174.00s ->   181.74s] date. So in this case, we're looking 23 days out May 15, 2026 for NVIDIA. Now, when we come on down
+[  181.74s ->   186.24s] here, we're going to see the at the money calls and puts. Now, you'll see that the ones that are
+[  186.24s ->   192.24s] in the money are highlighted in blue. You can see that the in the money calls are going to be
+[  192.24s ->   198.40s] anywhere that the strike price is currently less than the spot price. What is the current
+[  198.40s ->   203.10s] spot price of NVIDIA? Well, our options trader is going to have it up here for us. It's currently
+[  203.10s ->   208.92s] trading at 201. So that means anything below 201 in terms of a strike price is currently in the
+[  208.92s ->   213.84s] money. That is why it's highlighted in blue. That is for the call side of the chain. What
+[  213.84s ->   218.22s] about for the put side of the chain? If we head on over to the right side here, we're going to see
+[  218.22s ->   224.46s] that the opposite is true. Anywhere that we are below the strike price in terms of the current spot
+[  224.46s ->   230.10s] price, that means that the put is currently in the money. So all of these rows are going to be
+[  230.10s ->   235.44s] highlighted in blue, indicating that those puts are in the money. Now, if we head on over to these
+[  235.44s ->   241.64s] rows that are not highlighted in blue, those are the rows that are of primary interest to us.
+[  241.98s ->   246.04s] These are certainly going to be more liquid, and these are the ones that we're interested in
+[  246.04s ->   252.86s] trading. There's a lot going on here. So what should we consider when we're taking a look
+[  252.86s ->   257.52s] at these options on the call or the put side? Let's start with the call side here.
+[  258.10s ->   266.00s] So all of these calls are going to range from more likely to expire in the money to less likely to
+[  266.00s ->   271.06s] expire in the money. You can see that the ones that are more likely to expire in the money are going to
+[  271.06s ->   276.94s] be more expensive. We're going to talk about the bid and the ask in a moment. But for now, take a look
+[  276.94s ->   282.18s] at the bid and ask and consider it to just be the price. And what you can see is the further away you go
+[  282.18s ->   290.24s] from the spot price, the cheaper the option is. Why is that the case? Well, the further away it is
+[  290.24s ->   295.34s] from the current price in the market, the less likely, the more uncertain we are that it is going
+[  295.34s ->   301.40s] to expire in the money. What else should we consider here? Well, we're going to look at the volume.
+[  301.50s ->   308.00s] That's a measure of liquidity, certainly. We can also take a look at the delta, gamma, vega, and theta.
+[  308.00s ->   314.80s] I'm going to make dedicated videos on these Greeks. But for now, one of the things that I want to note
+[  314.80s ->   323.56s] is this idea of delta. Typically, delta is referred to as a rough estimate of the probability that the
+[  323.56s ->   334.40s] option is going to expire in the money. This is a very rough interpretation. And the reason I say that
+[  334.40s ->   341.16s] is because this delta here is going to change throughout the day, throughout the week, throughout
+[  341.16s ->   348.98s] the month. It is not a constant probability. This is what confuses a lot of new traders. When you see
+[  348.98s ->   355.38s] this delta, it's like, oh, there's a 50% chance that, you know, roughly 50%, right? 49.9% chance
+[  355.38s ->   361.90s] that this is going to expire in the money. So I'm risking, right? $600 of premium if I buy this. And then,
+[  361.90s ->   369.72s] you know, there's a 50% chance that I make out with a win. No, absolutely not. That is not at all
+[  369.72s ->   377.50s] how the Greeks work. That is not at all how real trading functions. Probabilities are amorphous.
+[  377.62s ->   382.66s] They change over time. This is going to be a function of the current market conditions,
+[  382.74s ->   388.80s] the current market supply and demand based on the way that the market is currently viewing the
+[  388.80s ->   396.40s] uncertainty over the next 23 days. That is what is dictating this current delta. That is crucial to
+[  396.40s ->   401.46s] understand. If you don't understand this idea and the difference between frequentist and Bayesian
+[  401.46s ->   408.52s] statistics, the idea of convergence and what a real probability is relative to a probability that we
+[  408.52s ->   414.42s] might view in the market, you should check out quantguild.com. This is exactly why I built
+[  414.42s ->   420.88s] QuantGuild to teach you the math, statistics, finance, everything required to engage with the
+[  420.88s ->   426.92s] market on your own or as a professional. So if you're interested in formal lecture,
+[  427.20s ->   432.30s] formal study on the mathematics, probability, and statistics required to engage with the markets
+[  432.30s ->   439.12s] as a retailer or a professional, check out quantguild.com. Coming back to this options chain now,
+[  439.22s ->   442.50s] we have a rough idea of what it is we're looking at. We get some pricing information,
+[  442.50s ->   447.50s] some liquidity information, and some information regarding the probability of whether or not that
+[  447.50s ->   453.28s] option is going to expire in the money. The same is true for the put side. We just are going to look
+[  453.28s ->   458.80s] at the puts that are currently below. That is the strike price is currently below the spot price in the
+[  458.80s ->   464.44s] market of the underlying. So here we're going to take a look at the price. No different. The only
+[  464.44s ->   471.38s] difference is it's going to be descending, going up instead of ascending, going up in price. That's
+[  471.38s ->   477.62s] because the put is going to be less likely to expire in the money the further up the chain you
+[  477.62s ->   483.62s] go. We still have a measure of liquidity. We still have a measure of probability. But you'll
+[  483.62s ->   489.46s] notice that the probability is negative. It is not a negative probability. It is not a negative
+[  489.46s ->   497.34s] probability. You can still take the inverse, multiply it by negative one. You will get a probability
+[  497.34s ->   503.94s] estimate. This is roughly 45% of expiring in the money. So if everything that I've set up into this
+[  503.94s ->   509.42s] point is true, that these are not actual probabilities, where do we get this from? Well,
+[  509.52s ->   514.58s] this is literally from the Black-Scholes portfolio replication argument. This is literally from a
+[  514.58s ->   521.70s] geometric Brownian motion. In the Black-Scholes framework, we are backing out the implied volatility
+[  521.70s ->   527.24s] from the market equilibrium prices. And we are going to get a measure of delta, gamma,
+[  527.36s ->   532.58s] vega, theta, the partial derivative of the pricing function with respect to all of the inputs of the
+[  532.58s ->   537.62s] Black-Scholes model. And if we do that with respect to the underlying, we are going to get delta.
+[  539.15s ->   547.15s] All that is to say is it is a model. It is a model probability. And we know that all models are wrong,
+[  547.15s ->   556.37s] but some are useful. The purpose of having a model is to make model-informed decisions. It is not to be
+[  556.37s ->   563.39s] correct every single time, but to inform your decision-making in the face of uncertainty. These
+[  563.39s ->   572.63s] probabilities, as we'll call them, are always going to be wrong. If I traded a 0.4 delta put or call
+[  572.63s ->   579.65s] a million times, the probability is not going to converge. If I just take the ratio of all of those
+[  579.65s ->   585.57s] trades to ones that expired in the money, ones that expired out of the money, it is not going to
+[  585.57s ->   593.89s] converge to 40%. Like we would see with a coin flip 50-50 or a dice roll. If I was to roll a million
+[  593.89s ->   598.91s] dice, we would see one-sixth around the board for one, two, three, four, five, and six as outcomes.
+[  598.91s ->   605.39s] We will not see these probabilities actually converge over time. It is based on the way that
+[  605.39s ->   612.78s] the market is currently pricing these options. What more should we know about this options chain?
+[  612.86s ->   617.18s] Well, we're taking a look at the bid and we're taking a look at the ask. What exactly is that?
+[  617.76s ->   624.94s] Well, the bid and the ask is going to be what we can either buy an options contract at or sell it
+[  624.94s ->   630.30s] back to the market at. So the ask is what we are allowed to purchase the contract at.
+[  630.66s ->   638.36s] The bid is what we are allowed to sell the contract at. And there is a mid price that is going to be
+[  638.36s ->   646.36s] half of the distance between either side of the spread. We can't actually trade at the mid price.
+[  647.25s ->   652.97s] There is a market maker who is responsible for providing liquidity to these markets or market makers,
+[  652.97s ->   658.25s] and they get the luxury of setting the spread. They have a completely different business function
+[  658.25s ->   664.83s] than us as traders, as speculative traders. It is a completely different operation. And I talk
+[  664.83s ->   671.35s] at length on this channel about what exactly that function is and how they make money.
+[  671.81s ->   679.72s] What you will notice is as options become less liquid, the spread is going to increase. And if you
+[  679.72s ->   685.32s] start to trade different strategies, you are going to see the spread get wider and wider and wider.
+[  685.48s ->   689.74s] If you begin to backtest your own options strategies, if you use something like
+[  689.74s ->   697.12s] options Omega or interactive brokers to backtest your strategies, you may see a very nice equity
+[  697.12s ->   702.86s] curve. You might say, Oh, I'm a genius. I'm going to make a gazillion dollars. But as soon as you take
+[  702.86s ->   709.98s] the spread into account, in reality, you are going to be in for a rude awakening. The more intricate
+[  709.98s ->   717.32s] your strategy, typically the wider the spread, the more correct you have to be in order for your
+[  717.32s ->   724.79s] expected value function to make you money over time. The last component of this options chain that
+[  724.79s ->   730.45s] we're going to talk about in this video on reading an options chain, the basics of reading an options
+[  730.45s ->   738.71s] chain is this idea of the implied volatility. The implied volatility is going to be backed out
+[  738.71s ->   745.21s] of the current market prices. It is subject to change over time, just like everything else you see
+[  745.21s ->   751.65s] here, the probabilities, the delta, the prices, everything is subject to change with the underlying
+[  751.65s ->   759.31s] and how uncertainty evolves throughout time. It's very important to note that this at the money
+[  759.31s ->   766.77s] implied volatility measure is a compression. Not every single option is going to have the exact
+[  766.77s ->   775.09s] same implied volatility. And that is a consequence of the volatility smile or the volatility skew,
+[  775.15s ->   781.13s] the volatility surface, which I also talk at length on this channel about. That's going to do
+[  781.13s ->   784.67s] it for this video. I hope you enjoyed it. I hope you learned something. I would certainly like to make
+[  784.67s ->   790.97s] more videos on options and options trading in the future theory, building strategies, and of course,
+[  791.01s ->   796.53s] the live implementations with interactive brokers. Again, link in the description to go ahead and get
+[  796.53s ->   800.95s] started with interactive brokers. If you would like, they're the only broker I recommend. I've been with
+[  800.95s ->   807.93s] them for over 10 years trading and investing. Let me know in the comment section below what you'd like
+[  807.93s ->   815.31s] to see next in terms of content. Other than that, it's good to be back. Thank you so much for watching
+[  815.31s ->   818.75s] and I will see you in the next video.

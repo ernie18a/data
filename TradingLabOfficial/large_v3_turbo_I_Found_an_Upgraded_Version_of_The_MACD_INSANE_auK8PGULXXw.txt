@@ -1,0 +1,201 @@
+[    0.24s ->     5.88s] The MACD indicator, an absolute staple in the trading world used by millions every single
+[    5.88s ->     6.88s] day.
+[    6.88s ->    11.08s] But if you've used the MACD before, you'll notice it comes with a slight flaw.
+[   11.08s ->    15.16s] You see, the MACD is great when the market is trending, it actually does a pretty good
+[   15.16s ->    16.16s] job.
+[   16.16s ->    21.40s] But when the market starts consolidating and moving sideways just the slightest bit, well,
+[   21.40s ->    24.40s] let's say the MACD performs not so good.
+[   24.40s ->    30.85s] And I've got to say in all honesty, it's the biggest piece of dog shit.
+[   30.85s ->    36.69s] But what if I told you, I found a brand new indicator that is basically the super ultra
+[   36.69s ->    41.23s] mega upgraded version of the MACD, and it performs way better.
+[   41.23s ->    47.47s] I actually tested this indicator and it performed three times as good as the normal MACD, which
+[   47.47s ->    50.85s] if you can do the math, that means more profit, which we all like.
+[   50.85s ->    54.91s] I'm going to show you what this indicator is, the best settings for it, and at the end
+[   54.91s ->    59.49s] of the video, I'll give you a secret strategy you can use right now in order to use this
+[   59.49s ->    62.05s] thing to the best of its capabilities.
+[   62.05s ->    67.05s] Let's not waste any time, let's get straight into it.
+[   67.05s ->    72.07s] So to understand this absolute overpowered indicator, we first have to understand the
+[   72.07s ->    75.07s] normal MACD.
+[   75.07s ->    80.21s] With the normal MACD, when this blue line crosses above the orange line, or when the histogram
+[   80.21s ->    84.23s] turns green, that means the market is bullish and uptrending.
+[   84.23s ->    85.97s] This is where you would normally buy.
+[   85.97s ->    90.49s] When the blue line crosses below the orange line, and the histogram is red, that means
+[   90.49s ->    93.11s] the market is bearish and is downtrending.
+[   93.11s ->    94.81s] This is where you would normally sell.
+[   94.81s ->    99.89s] Now, any monkey with a computer could do this strategy, but the major downside of this specific
+[   99.89s ->   105.08s] strategy is that it does not work well in consolidating markets.
+[  105.08s ->   109.90s] For example, here, the blue line crossed above the orange line, giving us a buy signal.
+[  109.90s ->   114.82s] But if we look above, the market is consolidating at this time, so the indicator wasn't so accurate.
+[  114.82s ->   119.34s] Which, if we actually entered this trade, it would have been a bad signal and we would
+[  119.34s ->   121.34s] have lost money.
+[  121.34s ->   131.76s] Now, what if I told you that this new and upgraded version of the MACD indicator will eliminate
+[  131.76s ->   136.34s] these false signals, so we only get entry signals when the market is trending.
+[  136.34s ->   137.82s] That would be pretty cool, right?
+[  137.82s ->   139.82s] Well, I'm about to blow your mind.
+[  139.82s ->   141.30s] First, go to trading view.
+[  141.30s ->   143.10s] I'll leave a link in the description.
+[  143.10s ->   145.34s] Once you're on the chart, go to the indicators tab.
+[  145.34s ->   149.38s] Type in impulse MACD and click this one by lazy bear.
+[  149.38s ->   158.84s] You will then have the indicator added to your chart.
+[  158.84s ->   163.86s] As you can see, it looks super advanced and just a tad bit complicated with all these different
+[  163.86s ->   164.86s] colors.
+[  164.86s ->   168.82s] Let me show you the settings I personally use, so it's just a tad bit easier to read.
+[  168.82s ->   172.34s] Go to the settings of the indicator, make sure you're on the style tab.
+[  172.34s ->   177.18s] Change all these colors to blue, then make sure to change the formatting to a line.
+[  177.18s ->   183.10s] Next, change this impulse histo setting to red and make sure the formatting is set to columns.
+[  183.10s ->   187.90s] Then finally, we are going to change the color of the impulse MACD signal to orange.
+[  187.90s ->   191.98s] This will make the indicator look just like the original MACD indicator and make it a lot
+[  191.98s ->   192.98s] easier to read the signals.
+[  192.98s ->   197.98s] So, let's move on how to read this indicator, and then after that, I'll go over an actual
+[  197.98s ->   200.82s] strategy you can implement and use right now.
+[  200.82s ->   203.36s] Okay, so where do we start?
+[  203.36s ->   205.38s] Wait a minute, do you guys see that?
+[  205.38s ->   208.22s] My chart, it looks a little weird.
+[  208.22s ->   209.66s] You guys really don't see that?
+[  209.66s ->   211.16s] Here, let me zoom in.
+[  211.16s ->   214.72s] Eh, it's still kind of small.
+[  214.72s ->   218.30s] Let's zoom in just a little bit more.
+[  218.30s ->   221.16s] Wait a minute, is that, is that Joe Biden?
+[  221.16s ->   226.16s] Yes, Trading Lab, it is me, the flamingo version of Joe Biden.
+[  226.16s ->   231.16s] Flamin, wha, wha, why are you a, you know what, never mind, what are you doing on my chart?
+[  231.16s ->   237.16s] I want to tell you about my broker, that has only 4% commissions, they are pretty dandy.
+[  237.16s ->   242.16s] Joe, you're an idiot, your commissions are huge, my broker's commissions are only 2%.
+[  242.16s ->   245.60s] Donald, get out of the video, this is my time to shine.
+[  245.60s ->   248.16s] Joe, you're old, you don't know how to trade Forex.
+[  248.16s ->   253.16s] Guys, guys, I'm sorry to tell you, but both of your brokers don't sound that good.
+[  253.16s ->   260.16s] Rather than having 4% commissions or 2% commissions, on hanker trade, you can get 0% commissions.
+[  260.16s ->   266.16s] Yes, you heard me correct, 0% commissions for STP accounts, beating almost every forex
+[  266.16s ->   267.16s] broker out of the water.
+[  267.16s ->   272.52s] If you need a new forex broker and want good commission rates, I would 100% recommend checking
+[  272.52s ->   273.52s] them out.
+[  273.52s ->   276.16s] You get a deposit bonus if you use the link in my description.
+[  276.16s ->   279.16s] Ok, ok, enough with the sponsorship, let's get back to the strategy.
+[  279.16s ->   284.16s] Now, what makes this indicator so superior to the original MACD is this.
+[  284.16s ->   289.16s] Instead of like the original MACD, where it gives you false signals when the market is
+[  289.16s ->   290.16s] consolidating.
+[  290.16s ->   294.16s] With this upgraded version, it won't give you signals at all when the market is consolidating.
+[  294.16s ->   298.16s] It will only give you signals when the market is trending.
+[  298.16s ->   302.16s] Making it perform way better than the original MACD indicator.
+[  302.16s ->   306.90s] So, the strategy is simple.
+[  306.90s ->   308.90s] It's kind of like the old MACD.
+[  308.90s ->   313.90s] When the blue line crosses above the orange line, that is signaling there's bullish momentum,
+[  313.90s ->   314.90s] and you should buy.
+[  314.90s ->   319.90s] When the blue line crosses below the orange line, this is signaling there's bearish momentum,
+[  319.90s ->   320.90s] and you should sell.
+[  320.90s ->   324.90s] When the lines are moving sideways like this, that indicates the market is consolidating,
+[  324.90s ->   327.90s] and you should not be taking any trades.
+[  327.90s ->   332.90s] Now, using these signals works pretty well, but there are some little tweaks we can make
+[  332.90s ->   335.90s] to make it perform so much better.
+[  335.90s ->   338.90s] Let's get into some actual strategies we can use around it.
+[  338.90s ->   343.90s] First thing, we want to add overbought or oversold zones to our indicator.
+[  343.90s ->   347.90s] You can do this by simply clicking this line tool on the left and clicking anywhere on the
+[  347.90s ->   348.90s] new MACD indicator.
+[  348.90s ->   353.90s] We are going to add two lines, an oversold line and an overbought line.
+[  353.90s ->   357.90s] We'll make the oversold line green, and make the overbought line red.
+[  357.90s ->   361.90s] Now, you may be asking, how the hell do I know what level to put these lines?
+[  361.90s ->   362.90s] Good question.
+[  362.90s ->   366.90s] If we take a look at the indicator closely, there's going to be some minor crossovers
+[  366.90s ->   371.90s] that don't go far from the zero line, and we're also going to have some major crossovers
+[  371.90s ->   373.90s] that happen far away from the zero line.
+[  373.90s ->   377.90s] Essentially, the smaller this crossover is, the weaker it is.
+[  377.90s ->   383.90s] So, if we want to only enter strong signals, we need a way to separate the minor and major crossovers.
+[  383.90s ->   388.90s] To do this, just zoom out on your chart, and then you're going to see some minor crossovers
+[  388.90s ->   389.90s] and some major crossovers.
+[  389.90s ->   392.90s] Draw a horizontal line separating them.
+[  392.90s ->   397.90s] For this specific example, my line is at the negative 8.24 level.
+[  397.90s ->   399.90s] So, that's the oversold line.
+[  399.90s ->   404.90s] For the overbought line, you're going to use the exact same number, just make it the positive
+[  404.90s ->   405.90s] version of the first number.
+[  405.90s ->   407.90s] So, the strategy is simple.
+[  407.90s ->   413.90s] We only want to enter trades once the indicator gives us a buy or sell signal that is outside
+[  413.90s ->   415.90s] our overbought and oversold zones.
+[  415.90s ->   416.90s] Here's an example.
+[  416.90s ->   421.90s] Here, the blue line crossed above the orange line, but if we take a closer look, it happened
+[  421.90s ->   426.90s] between the zones, meaning it's a weak signal, so we don't enter this long trade.
+[  426.90s ->   430.90s] Good thing we didn't, because it would have been a losing trade and we would have lost money.
+[  430.90s ->   431.90s] Here's another example.
+[  431.90s ->   435.90s] The blue line once again crossed above the orange line, but this time it did it below
+[  435.90s ->   437.90s] our oversold zone.
+[  437.90s ->   440.90s] So, we can now consider this a strong buy signal.
+[  440.90s ->   444.90s] We enter here, set your stop loss right below the recent swing low, and you're going to
+[  444.90s ->   449.90s] set your take profit ratio 1.5 times larger than your stop loss.
+[  449.90s ->   452.90s] And, as you can see, it was a beautiful winning trade.
+[  452.90s ->   456.90s] Let's do one more example, then I'll show you how we can improve this even more.
+[  456.90s ->   459.90s] Here, the blue line crosses below the orange line.
+[  459.90s ->   464.90s] It also did this above our overbought zone, so this means we can now enter a short trade.
+[  464.90s ->   470.90s] Enter here, set your stop loss above the recent swing high, set your take profit 1.5 times larger
+[  470.90s ->   475.90s] than your stop loss, and just like that, we have another winning trade.
+[  475.90s ->   481.90s] A quick tip about this specific strategy, instead of using a set 1.5 risk to reward ratio, you
+[  481.90s ->   483.90s] can have a dynamic take profit.
+[  483.90s ->   485.90s] What I mean by this is this.
+[  485.90s ->   490.90s] All the rules are the same, so if the blue line crosses above the orange line in the oversold
+[  490.90s ->   491.90s] zone, you enter.
+[  491.90s ->   497.40s] But, instead of setting a set take profit, you would only sell once the blue line crosses
+[  497.40s ->   499.90s] below the orange line, giving you a sell signal.
+[  499.90s ->   503.90s] This will allow bigger winners and allow the indicator to rise the momentum more.
+[  503.90s ->   507.90s] Feel free to do your take profit strategy either way, just thought I'd share that as
+[  507.90s ->   508.90s] well.
+[  508.90s ->   513.90s] The final strategy I like using with this indicator is how I personally use it on a day to day basis.
+[  513.90s ->   516.90s] I like to use this indicator for finding breakouts.
+[  516.90s ->   518.90s] This is how I do it.
+[  518.90s ->   520.90s] First, you want to look for a strong market consolidation.
+[  520.90s ->   525.90s] You can do that by simply looking at the new MACD indicator and looking for the blue and
+[  525.90s ->   530.90s] orange line to be moving sideways for a long period of time, like this.
+[  530.90s ->   535.90s] It is very important that it's been doing this for a while, because we want a strong
+[  535.90s ->   536.90s] consolidation.
+[  536.90s ->   540.90s] We don't want the indicator to just be moving sideways for a little bit, like this, because
+[  540.90s ->   542.90s] this can provide a false signal.
+[  542.90s ->   547.90s] So, look for the indicator to give a sideways line for a good period of time, like this.
+[  547.90s ->   552.90s] The reason why we are looking for a consolidation period is because whenever price breaks consolidating
+[  552.90s ->   557.90s] those zones, it usually jumps up or down a huge amount, which we can then try to catch
+[  557.90s ->   559.90s] that wave and ride that momentum for some huge profit.
+[  559.90s ->   575.90s] The cool thing about this breakout strategy is whenever the price does break out, it really
+[  575.90s ->   579.90s] breaks out, resulting in some really crazy gains.
+[  579.90s ->   580.90s] So, this is how you do it.
+[  580.90s ->   585.52s] You wait for the market to be consolidating by checking the MACD indicator and make sure
+[  585.52s ->   588.40s] the lines are moving sideways for a good amount of time.
+[  588.40s ->   593.58s] Now, there are some ways you can significantly increase the chance of catching a breakout.
+[  593.58s ->   598.90s] What I like to do is pair this new MACD with my private indicator from tradinglab.ai.
+[  598.90s ->   604.24s] There's a trend table on my indicator that we can use to our advantage beautifully.
+[  604.24s ->   609.70s] What I do is check the consolidation metric on the table on my private indicator just to
+[  609.70s ->   611.86s] make sure the market is indeed consolidating.
+[  611.86s ->   616.76s] If both the lines are sideways for a good amount of time and the trend table from the private
+[  616.76s ->   622.54s] indicator confirms the market is in consolidation, I only then start to look for a breakout trade.
+[  622.54s ->   626.10s] You do this by waiting for the lines to cross in either direction.
+[  626.10s ->   628.60s] They can either cross upwards or downwards.
+[  628.60s ->   631.50s] In this example, the lines start to cross upwards.
+[  631.50s ->   636.34s] This is giving us a buy signal telling us the market wants to start doing a bullish breakout
+[  636.34s ->   637.94s] out of the consolidation.
+[  637.94s ->   642.48s] Right when this indicator deviates from moving sideways to upwards, we can start to look for
+[  642.48s ->   643.82s] a long entry here.
+[  643.82s ->   649.72s] Now, what I like to do is again use my private indicator for some extra confirmation to really
+[  649.72s ->   651.34s] confirm this breakout trade.
+[  651.34s ->   655.44s] There's a tool on my indicator called the breakout probability tool.
+[  655.44s ->   660.44s] What it does is look at all the past candles from the previous chart history and their positioning
+[  660.44s ->   666.50s] and gives you the exact probability of which direction the very next candle will likely go.
+[  666.50s ->   670.90s] So since we got a buy signal from the new MACD indicator, we want to make sure the next
+[  670.90s ->   674.98s] candle has a higher probability of going up compared to down.
+[  674.98s ->   679.78s] Which if we open the probability indicator, it's signaling the very next candle has a higher
+[  679.78s ->   682.22s] probability of going up than down.
+[  682.22s ->   687.48s] So that gives us the confirmation that this is a good buy signal and an upwards breakout will
+[  687.48s ->   688.48s] likely happen.
+[  688.48s ->   691.72s] Once we get both confirmations, we enter a long trade.
+[  691.72s ->   694.02s] Set your stop loss at the previous low.
+[  694.02s ->   698.36s] Then since breakouts tend to usually have bigger moves, we can actually set our take profit
+[  698.36s ->   700.64s] three times bigger than our stop loss.
+[  700.64s ->   705.86s] Or again, we can use the dynamic strategy of only exiting once the blue line crosses beneath
+[  705.86s ->   708.54s] the orange line to give us some bigger room for profit.
+[  708.54s ->   709.76s] It's really up to you.
+[  709.76s ->   714.48s] But as you can see, we caught this upwards breakout perfectly right before it even happened.
+[  714.48s ->   719.04s] And by doing so, we made some absolutely crazy gains.
+[  719.04s ->   722.98s] If you'd like to add my private indicator to this strategy for some extra confirmation,
+[  722.98s ->   725.30s] I'll leave a link to it in the description.
+[  725.30s ->   730.24s] Have you ever wondered what would happen if you gave a robot $30,000 to trade for you?
+[  730.24s ->   731.24s] No?
+[  731.24s ->   732.24s] Just me?
+[  732.24s ->   733.18s] Well, that's exactly what I did.
+[  733.18s ->   738.48s] I gave a robot $30k to trade for me and didn't touch it for a whole month.
+[  738.48s ->   740.36s] Yeah I know, I'm a whack job.
+[  740.36s ->   743.98s] Anyways, the results, they were pretty interesting to say the least.
+[  743.98s ->   746.22s] Go check that video out, it's pretty mind blowing.
+[  746.22s ->   748.54s] Thanks for watching, and I'll see you guys next time.

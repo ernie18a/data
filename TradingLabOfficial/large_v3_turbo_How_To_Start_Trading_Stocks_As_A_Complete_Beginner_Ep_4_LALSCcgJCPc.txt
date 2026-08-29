@@ -1,0 +1,177 @@
+[    0.20s ->     7.60s] I am proud to announce the greatest series to ever be on YouTube.
+[    7.60s ->     8.60s] Episode 4.
+[    8.60s ->    11.72s] You guys love this series, so here we are, making episode 4.
+[   11.72s ->    15.22s] I know, I know, I'm taking huge amounts of time to upload these episodes.
+[   15.22s ->    18.56s] It's been 84 years.
+[   18.56s ->    22.82s] But don't they say good things take time, or something like that?
+[   22.82s ->    23.82s] Yeah, let's go with that.
+[   23.82s ->    26.98s] Now, if you guys watched episode 3, that was a big one.
+[   26.98s ->    31.62s] We went over actual market structure, and if you don't know that, well, you're kind
+[   31.62s ->    32.62s] of f***ed.
+[   32.62s ->    35.86s] But I do have to say, this one just might take the cake.
+[   35.86s ->    39.96s] This episode is going to completely transform your trading.
+[   39.96s ->    46.20s] In this episode, we are going to go over momentum, which arguably could be more important than
+[   46.20s ->    47.20s] market structure.
+[   47.20s ->    49.16s] Momentum has a huge role in trading.
+[   49.16s ->    52.48s] If you don't have momentum, you don't have a good trade.
+[   52.48s ->    54.26s] All good trades have momentum.
+[   54.26s ->    57.82s] I'm going to teach you how to find momentum, how to trade around it, and I'm going to
+[   57.82s ->    62.64s] give you three different hacks that I use in my everyday trading plan to pinpoint this
+[   62.64s ->    63.64s] momentum.
+[   63.64s ->    67.14s] And if you pair this with the tricks I told you in previous episodes, you're going to
+[   67.14s ->    69.28s] start seeing some serious results.
+[   69.28s ->    71.64s] I'm done talking, let's get on with the value.
+[   71.64s ->    77.88s] Well, I'm not done talking because I have to talk to you to teach the tricks, but I'm
+[   77.88s ->    80.18s] done with the intro.
+[   80.18s ->    81.18s] You get what I'm trying to say.
+[   81.18s ->    84.16s] Alright, so why do we need momentum in the first place?
+[   84.16s ->    88.94s] One of the biggest reasons why traders look for momentum is because momentum literally
+[   88.94s ->    91.16s] makes your life so much easier.
+[   91.16s ->    95.54s] For one, when a chart is moving up and down a lot, it's a lot easier to predict.
+[   95.54s ->   100.54s] When a chart is moving sideways or is consolidating, it's a lot harder to predict what is going
+[  100.54s ->   101.54s] to happen next.
+[  101.54s ->   105.00s] So as a trader, you want to see a lot of movement on your charts.
+[  105.00s ->   109.56s] Now this may be a lot easier said than done, especially if you're trading in real time
+[  109.56s ->   112.00s] and not just looking at a chart from the past.
+[  112.00s ->   114.34s] That is, until you see these tricks.
+[  114.34s ->   116.70s] Let's start simple and start with the first trick though.
+[  116.70s ->   119.40s] The first trick is absolutely fire.
+[  119.40s ->   120.94s] It's absolutely wicked.
+[  120.94s ->   122.74s] It's candlesticks.
+[  122.74s ->   124.34s] Those were candlestick puns.
+[  124.34s ->   126.34s] But not wax candles.
+[  126.34s ->   127.34s] Oh no.
+[  127.34s ->   128.84s] The candles on your chart.
+[  128.84s ->   133.44s] A lot of people overlook this, but candlesticks can tell a story of a chart.
+[  133.44s ->   138.22s] I like to think of the chart as a book and each candlestick is a little page of what that
+[  138.22s ->   139.76s] book is trying to tell.
+[  139.76s ->   141.64s] What I mean by that is this.
+[  141.64s ->   146.88s] Whenever you look at a candle, you can see what the buyers or sellers are currently thinking,
+[  146.88s ->   148.44s] literally in real time.
+[  148.44s ->   150.70s] Which is basically a cheat code when trading.
+[  150.70s ->   153.96s] Now as I'm sure most of you know, there are candlestick patterns.
+[  153.96s ->   158.72s] Sure they can be useful, but what I'm about to teach you will make it so you won't
+[  158.72s ->   160.68s] have to memorize any of those patterns.
+[  160.68s ->   163.06s] You just need to look for these certain cues.
+[  163.06s ->   166.62s] When looking at these candles, we are looking for a few characteristics.
+[  166.62s ->   168.32s] The first one is the wick.
+[  168.32s ->   171.36s] The wick itself can tell us a lot.
+[  171.36s ->   176.34s] So if we have a candle that looks like this, this is saying that sellers got the price all
+[  176.34s ->   181.90s] the way down to here, but the buyers fought them off and got the price back up to here.
+[  181.90s ->   187.00s] Which is a pretty bullish sign, as you can almost think of it as the buyers won the battle.
+[  187.00s ->   191.12s] If the candle looks like this, this means the buyers got the price all the way up to
+[  191.12s ->   195.92s] here, but the sellers came in and fought them off and got the price back down.
+[  195.92s ->   198.02s] Which is a pretty bearish sign.
+[  198.02s ->   202.14s] Just this simple wick idea can give a pretty good indication where the chart is going to
+[  202.14s ->   206.26s] head next, and what the buyers and sellers are currently thinking.
+[  206.26s ->   208.64s] The bigger the wick, the stronger the sentiment.
+[  208.64s ->   214.08s] So for example, if we see a candle like this with a long lower wick, we can assume that
+[  214.08s ->   216.26s] the chart will head upwards after this.
+[  216.26s ->   221.12s] As it's showing the buyers fought off the sellers and are now in control, which it does
+[  221.12s ->   222.66s] head upwards after this.
+[  222.66s ->   226.98s] If we see a large candle like this with a big upwards wick, we can assume the chart is
+[  226.98s ->   228.04s] about to fall.
+[  228.04s ->   232.82s] As it's showing the sellers are winning the battle, which is exactly what it ends up doing.
+[  232.82s ->   238.26s] This can be used on any time frame, but just know they will be stronger and more consistent
+[  238.26s ->   239.94s] on higher time frames.
+[  239.94s ->   242.18s] Now I also think this is worth mentioning.
+[  242.18s ->   245.56s] You should not enter purely based on a candlestick.
+[  245.56s ->   250.26s] For example, seeing a large lower wick and entering a long right after it forms, no, do
+[  250.26s ->   251.58s] not do that.
+[  251.58s ->   254.60s] How I like to think of trading is almost like a checklist.
+[  254.60s ->   258.28s] The more checks you have, the more likely the trade will go in your favor.
+[  258.28s ->   263.12s] So this candlestick thing can be used as a good indication of what the chart is likely
+[  263.12s ->   266.40s] to do next, but you shouldn't enter purely based off of it.
+[  266.40s ->   271.44s] You should use it paired with everything that I'm about to teach you and use it as an extra
+[  271.44s ->   273.20s] check on that checklist.
+[  273.20s ->   276.98s] Now it's time to go to the second trick, and this is when we start getting into some
+[  276.98s ->   278.90s] really cool stuff.
+[  278.90s ->   282.86s] This one single trick will help your trades immensely.
+[  282.86s ->   286.28s] But first, how would you like to double your money?
+[  286.28s ->   290.21s] Yes, you heard him right, you can double your money.
+[  290.21s ->   291.93s] How do I do that?
+[  291.93s ->   296.47s] Well there's a forex broker out there that I personally use and their name is Hankertrade.
+[  296.47s ->   300.33s] If you use the link in my description and it's your first time depositing, they will match
+[  300.33s ->   302.27s] whatever you first deposit.
+[  302.27s ->   307.49s] So say if you first deposit $69, they will match that and give you $69.
+[  307.49s ->   309.33s] That's pretty cool.
+[  309.33s ->   313.73s] If you need a new forex broker and want that deposit bonus, use the link in my description.
+[  313.73s ->   317.67s] Alright, this next trick I use for every single trade I take.
+[  317.67s ->   321.35s] Once I implemented this trick, it instantly made my strategy work better.
+[  321.35s ->   323.89s] It involves using this.
+[  323.89s ->   324.89s] This.
+[  324.89s ->   326.66s] This.
+[  326.66s ->   327.66s] This.
+[  327.66s ->   328.66s] This.
+[  328.66s ->   329.66s] This.
+[  329.66s ->   330.66s] This.
+[  330.66s ->   335.08s] This is the same metrics table for my private indicator and it gives a ton of useful metrics
+[  335.08s ->   337.76s] of what's currently happening in real time.
+[  337.76s ->   342.90s] I created this table because I know just how important metrics like momentum and volatility
+[  342.90s ->   343.90s] are.
+[  343.90s ->   348.66s] And I wanted a fast way to present those values so I could use it to my advantage when trading
+[  348.66s ->   349.66s] live.
+[  349.66s ->   358.52s] So what we are looking for are a couple metrics.
+[  358.52s ->   360.68s] The first metric is volatility.
+[  360.68s ->   364.46s] Like I said in the beginning of the video, the more the price moves, the easier it is
+[  364.46s ->   365.46s] to predict.
+[  365.46s ->   368.36s] The less it moves, the harder it is to predict.
+[  368.36s ->   372.30s] Volatility is the rate at which the price increases or decreases.
+[  372.30s ->   377.90s] In a perfect world when we are entering trades, we want the volatility metric set to high.
+[  377.90s ->   382.34s] As this tells us the price is moving a lot, which is exactly what we want.
+[  382.34s ->   385.44s] The next metric we want to look at is the momentum metric.
+[  385.44s ->   390.30s] Now this metric is one of the most important as that's what this whole video is about.
+[  390.30s ->   394.72s] If you are entering long trades, you want this to be green and say bullish.
+[  394.72s ->   398.84s] If you are entering in short trades, you want this to be red and say bearish.
+[  398.84s ->   402.74s] You can also use this to tell when the trend is starting to change.
+[  402.74s ->   407.22s] For example, say if we were in a long trade here and the chart is going up and the momentum
+[  407.22s ->   408.22s] is set to bullish.
+[  408.22s ->   412.68s] We are in the clear and know we can stay in the trade, but once it gets to this point
+[  412.68s ->   417.06s] and the price hits a pretty strong resistance and the momentum on the trend table turns
+[  417.06s ->   422.66s] to bearish, this could be a good sign to exit the current trade as the momentum is starting
+[  422.66s ->   423.66s] to change.
+[  423.66s ->   428.44s] And you can also see here that one of the candles right here had a long upper wick,
+[  428.44s ->   430.32s] which is what we were talking about before.
+[  430.32s ->   434.72s] So because we have a strong resistance and because we have a large upper wick on this candle
+[  434.72s ->   439.76s] and the trend table turned to bearish, we would exit this trade, which good thing we did because
+[  439.76s ->   442.40s] the chart heads downwards right after this.
+[  442.40s ->   446.86s] Hopefully you're starting to see when all of these tips are put together how powerful
+[  446.86s ->   448.12s] they can actually be.
+[  448.12s ->   452.90s] You can also use this strength metric to see the strength of the current momentum.
+[  452.90s ->   455.84s] The higher the number, the stronger the move is.
+[  455.84s ->   458.12s] The lower the number, the weaker the move is.
+[  458.12s ->   461.10s] Overall, this trend table is extremely helpful.
+[  461.10s ->   465.48s] I cannot recommend it enough, it completely changes the way you look at the market.
+[  465.48s ->   469.72s] If you're interested in checking out the indicator, you can go to tradinglab.ai or I'll
+[  469.72s ->   470.98s] leave a link in the description.
+[  470.98s ->   474.20s] Okay, so we know the first two tricks I use for momentum.
+[  474.20s ->   477.08s] The third trick is just like the cherry on top.
+[  477.08s ->   479.76s] The third trick involves using volume.
+[  479.76s ->   483.70s] Volume is a very, very, very important part in trading.
+[  483.70s ->   487.84s] Like I've said time and time again, we want a lot of movement on charts.
+[  487.84s ->   491.84s] The only way you can have a lot of movement is by having a lot of volume.
+[  491.84s ->   496.34s] But when looking at volume, it can kind of be confusing on what's happening because it
+[  496.34s ->   499.14s] looks just like a lot of random rectangles on your chart.
+[  499.14s ->   504.72s] Well, here's a simple but very effective way to use volume in order to see the momentum
+[  504.72s ->   505.72s] of the chart.
+[  505.72s ->   510.62s] When you're in a long trade, you want the bullish volume to be increasing, as this will
+[  510.62s ->   512.32s] make the chart head upwards.
+[  512.32s ->   516.64s] So what you want to see is something like this, where the bars are getting larger and
+[  516.64s ->   519.18s] larger and all of them are green.
+[  519.18s ->   523.16s] This shows there's bullish momentum and it's getting stronger and stronger.
+[  523.16s ->   527.90s] You don't want to see something like this, as this means the chart is probably consolidating
+[  527.90s ->   530.58s] and not moving a lot and there's no momentum.
+[  530.58s ->   536.14s] As an extra little hint, the trend table from my private indicator also has a volume metric.
+[  536.14s ->   540.76s] It will basically identify all of this for you and tell you if the volume is currently
+[  540.76s ->   543.94s] bullish, bearish, or if there's no trend at all.
+[  543.94s ->   549.26s] This is a very simple little trick, but volume is very, very important when deciding to enter
+[  549.26s ->   550.26s] or not.
+[  550.26s ->   553.14s] If you don't have volume, you don't have a good trade.
+[  553.14s ->   558.50s] So if you pair the market structure technique from episode three with the candlestick characteristics,
+[  558.50s ->   562.88s] the trend table, and the volume trick, you will definitely start seeing your trades become
+[  562.88s ->   563.88s] more profitable.
+[  563.88s ->   568.56s] Again, if you're interested in the trend table, you can go to tradinglab.ai to get access
+[  568.56s ->   569.82s] to the private indicator.
+[  569.82s ->   573.82s] I promise I'll release episode five, eventually.
+[  573.82s ->   575.36s] Probably in like nine months.
+[  575.36s ->   577.32s] Just kidding I'll release it soon, maybe.

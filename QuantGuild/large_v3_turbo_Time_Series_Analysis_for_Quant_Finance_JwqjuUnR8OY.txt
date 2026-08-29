@@ -1,0 +1,404 @@
+[    0.46s ->     7.76s] All right, it's time. It's time to open Pandora's box. We're going to discuss
+[    7.76s ->    16.68s] time series analysis. Now, time series analysis is the most misunderstood and misrepresented topic
+[   16.68s ->    23.36s] in all of quantitative finance. And I say this as both an academic and a professional,
+[   23.36s ->    31.68s] someone who has taken undergraduate courses, graduate courses, PhD level courses, research
+[   31.68s ->    40.04s] seminars and time series analysis econometrics, but also somebody who has deployed production
+[   40.04s ->    48.60s] systems using these techniques for pricing and market making. I see the disconnect. I see the
+[   48.60s ->    53.90s] disconnect in the classroom. I see the assumptions that professors are making that are immediately
+[   53.90s ->    59.78s] violated in practice. And largely the reason for this misunderstanding and disconnect is because
+[   59.78s ->    66.60s] what is trivial isn't always what's spoken aloud. Nobody wants to ask these questions to get a
+[   66.60s ->    71.48s] better interpretation of it, but we need concrete examples to be able to understand these techniques
+[   71.48s ->    76.24s] if we have any hope of implementing them in practice. So in this video, what I want to do is
+[   76.24s ->    80.92s] correct a lot of misinterpretations and misunderstandings associated with time series
+[   80.92s ->    88.12s] analysis. Talk about the major tasks that is filtering, smoothing, and forecasting. I want to move on to
+[   88.12s ->    95.12s] this idea of a prediction. The fact that there is no such thing as a prediction, and largely that's thanks
+[   95.12s ->   101.78s] to machine learning and artificial intelligence. Then I want to discuss this idea of alternate data and
+[  101.78s ->   108.80s] how we can use alternate data to improve forecasts in some cases, going beyond just simple time series
+[  108.80s ->   114.20s] models. And we're going to use the big short as an example. As expected, there's a time series
+[  114.20s ->   118.98s] pun for you. This Jupyter notebook will be linked in the description below. I will also post it on the
+[  118.98s ->   124.10s] QuantGuild library on GitHub, where you can find all of my Jupyter notebooks and associated YouTube videos.
+[  124.46s ->   128.62s] At the top of this Jupyter notebook, you'll find some related QuantGuild videos on ideas like
+[  128.62s ->   134.48s] applying statistics to the market, the idea that even though our model is incorrect, it does not
+[  134.48s ->   141.40s] preclude us from generating wealth over a series of trades over time, if we have edge in some sort
+[  141.40s ->   145.90s] of trading model, and if we size our bets appropriately. So if you're unfamiliar with those
+[  145.90s ->   151.52s] ideas, I certainly encourage you check out those videos. Moreover, if you'd like to support the channel
+[  151.52s ->   156.30s] so I can continue to create videos just like this one, and if you'd like to master your quantitative
+[  156.30s ->   161.96s] skills, check out QuantGuild.com. Quantitative finance is such an interdisciplinary field,
+[  162.06s ->   167.86s] combining ideas from statistics, computer science, finance, math, the list goes on. There's so many
+[  167.86s ->   173.60s] places to look, so many things to learn. That's where QuantGuild.com comes in. We have over 90 quant
+[  173.60s ->   180.06s] lessons targeted in math, probability, finance, an adaptive practice engine that scales with your skill
+[  180.06s ->   185.36s] level so you can progress to more and more difficult topics. Interview questions with fully worked
+[  185.36s ->   192.82s] solutions. Coming soon, classes in math, statistics, coding, all from the ground up, all included with
+[  192.82s ->   198.16s] QuantGuild membership. So if you'd like to support the channel and master your quantitative skills, check out
+[  198.16s ->   205.82s] QuantGuild.com. Without further ado, let's begin with this idea of a time series. What are we actually
+[  205.82s ->   216.42s] performing analysis on? Well, all a time series is, is a collection of observations over a series of time
+[  216.42s ->   223.44s] and typically these observations occur at equal time intervals. So you could think of something like a
+[  223.44s ->   229.38s] stock's closing price. We observe it every single day and we plot that chart and we get the stock's price
+[  229.38s ->   236.95s] over time. Okay. That's typically what we see when we look up a stock chart. We see these regular time
+[  236.95s ->   244.35s] intervals, evenly spaced. Now this doesn't have to be the case, right? We could have an irregular time
+[  244.35s ->   250.51s] series as well. You can think of something where we're missing data. Maybe we're looking at some sort
+[  250.51s ->   258.12s] of illiquid product that only trades every now and again. We're not going to be able to get information
+[  258.12s ->   264.04s] at those equally spaced increments necessarily. And what that's going to do is create an irregular
+[  264.04s ->   270.10s] time series where the time interval is not uniform. It's going to be dictated based on when we see
+[  270.10s ->   278.24s] those observations. So both of these can be the case. And another key component of the time series
+[  278.24s ->   285.18s] is this sort of piecewise linear interpolation. What we're actually doing is connecting the dots. You can
+[  285.18s ->   292.70s] see it more in this irregular time series example here, but we're kind of just omitting everything
+[  292.70s ->   299.02s] in between the two points in time. We don't know what occurred between those two points in time. We're
+[  299.02s ->   305.76s] just connecting the dots via this interpolation. So another important component of the time series.
+[  306.10s ->   310.96s] Same thing with the close to close. If we were looking at some sort of stock price, even though this
+[  310.96s ->   317.34s] is a regular time series between two points, we don't know what's happened. So definitely worth
+[  317.34s ->   326.00s] mentioning. Moreover, with these time series, statistics tend to be elusive. This is for one of
+[  326.00s ->   334.12s] a variety of reasons. And this could be due to lack of stationarity. This could be due to having a unit
+[  334.12s ->   341.52s] root depending on the series that we are working with. So as far as a time series goes, this is what
+[  341.52s ->   346.70s] it looks like. But it's important to keep in mind that any sort of analysis we do on this particular
+[  346.70s ->   355.58s] path is analysis on something and some quantity. A lot of folks will forget this when they start to
+[  355.58s ->   363.62s] analyze their time series path. You still have something underneath functionally that is occurring,
+[  363.62s ->   369.18s] right? So if this is a stock price, you have a company that is functioning and is going to impact
+[  369.18s ->   375.82s] the value of that stock price. And that is completely separate information from what is being portrayed
+[  375.82s ->   382.70s] in this price. Now, the price is consequence of that company's operations, but there are things that
+[  382.70s ->   389.82s] occur and information that can occur outside of this price series that can be used to inform it.
+[  389.82s ->   394.52s] And we'll talk about that later on. But it's a very important distinction to make and a very
+[  394.52s ->   402.58s] important note. We can't lose sight of the actual values that are being plotted on this chart. Broadly
+[  402.58s ->   410.70s] speaking, a time series can be decomposed into trend, shock, and seasonality. Now, each one of these
+[  410.70s ->   417.40s] things doesn't necessarily have to be present or stable in a time series. Let's first discuss what these
+[  417.40s ->   422.68s] are, and then we'll discuss what I mean by present and stable. So take a look at this time series
+[  422.68s ->   429.64s] example up here. This could be sales over time. This could be a stock price over time, whatever you'd
+[  429.64s ->   435.82s] like it to be. And I've conducted this time series decomposition, and I've identified a trend component.
+[  436.24s ->   442.98s] I've identified a seasonal component, and I've identified some random shocker or noise component.
+[  442.98s ->   449.20s] Now, when we look at a time series and we decompose into these different components,
+[  449.46s ->   455.44s] we have to indicate what these are. So trend is this long-term underlying directional move,
+[  455.58s ->   464.08s] this overall trajectory. Seasonality is a pattern that is occurring over these fixed intervals.
+[  464.08s ->   474.86s] And then a shock or residuals are random fluctuations or unexpected events in the data. Now, this isn't
+[  474.86s ->   482.82s] as satisfying as it should be, but these random shock components are still being defined in an expected
+[  482.82s ->   488.54s] way. And that becomes more apparent when you look at specific models. But for now, we're just going to
+[  488.54s ->   495.92s] talk about this idea of trend and seasonality. There's nothing ensuring that this trend continues
+[  495.92s ->   503.56s] in the future. There's nothing ensuring that this seasonality continues in the future. When we look
+[  503.56s ->   511.06s] at a time series in this decomposed sense, what we're saying is, okay, it tends to exhibit this trend
+[  511.06s ->   519.66s] component. It tends to exhibit this seasonal component. Should this continue, then we can expect
+[  519.66s ->   527.56s] similar behavior in the future. And that's why I really like this idea of an expectation, not this idea
+[  527.56s ->   536.18s] of a prediction, because it's telling you what is expected behavior if status quo continues. Now, if this
+[  536.18s ->   544.06s] is some sort of business, right, let's say this is a tech business, and a new product comes out, maybe some
+[  544.06s ->   551.16s] sort of AI product comes out, and it kills the viability of this product, then this trend component
+[  551.16s ->   560.26s] is gone. In fact, it might now exhibit a negative trend. If you try to apply this idea to a stock price, you
+[  560.26s ->   565.66s] would see this happen all the time. If you did it on a short time interval, you would have this trend
+[  565.66s ->   571.50s] component, and then eventually the trend component is going to flip in the other direction, and you're not going
+[  571.50s ->   580.74s] to get any meaningful information from it. So this goes into the idea of stability. And if these components
+[  580.74s ->   588.92s] are stable over time, and everything continues as status quo as expected, then it can be useful information. If this
+[  588.92s ->   595.36s] was a corporate budget, if this was sales, this could definitely be useful information. But like I said,
+[  595.36s ->   603.76s] those big regime changes are not accounted for in this information. So that is kind of this
+[  603.76s ->   608.34s] distinction that I'm trying to bring into this space is we take a look at this, we see these shock
+[  608.34s ->   614.54s] components, right? There is this randomness that's being accounted for, isn't there? That's what we're
+[  614.54s ->   621.66s] seeing in these random fluctuations. We see this overall trend, we see this seasonality. But aren't those
+[  621.66s ->   629.06s] unexpected events being accounted for in this shock component? Not entirely. We're defining that shock
+[  629.06s ->   634.28s] and that randomness in a very specific way. So there's a lot of moving pieces here in this space.
+[  634.40s ->   640.68s] But we can see that this trend component, this seasonal component, really the big idea here is if those are
+[  640.68s ->   647.32s] stable over time, then we can expect similar behavior in a forward looking sense. If they're not, think
+[  647.32s ->   654.04s] something like trying to apply this idea to intraday stock prices for trading, you will not see any sort
+[  654.04s ->   661.36s] of stability, it will not be useful information for you to trade around. Now relative to the shocks in
+[  661.36s ->   668.90s] our time series, that is, these irregularities around an otherwise stable trend and seasonal component,
+[  669.52s ->   675.96s] we have a couple of different tasks. We don't necessarily know what's causing these spikes
+[  675.96s ->   683.54s] in either direction. And typically in a model, we assume something about these shocks. We assume
+[  683.54s ->   690.10s] something about these errors. Maybe they're normally distributed. Maybe there's a variance in these
+[  690.10s ->   697.22s] shocks that evolve over time. Maybe that variance is constant, depending on your model. But when it comes
+[  697.22s ->   704.84s] to this series, our objective is going to be to try to discern its state without the noise component.
+[  704.84s ->   713.36s] This sort of expected mean level. And that brings us into the different tasks that we are going to try
+[  713.36s ->   722.50s] to perform. We're going to try to either filter, smooth, or forecast. So filtering is estimating the
+[  722.50s ->   732.36s] current state using past and present data to try to reduce that noise. So if we take a look at this time
+[  732.36s ->   741.00s] series here, we should have a nice smooth seasonal component and a trend component, but it's choppy.
+[  741.00s ->   748.46s] What we're trying to do with filtering is discern what the actual state is devoid of that noise,
+[  749.04s ->   755.48s] devoid of these shocks. Now, of course, it's not entirely satisfying because those irregularities,
+[  755.60s ->   760.72s] we're trying to define them in a way that's productive. But again, those are irregularities.
+[  760.72s ->   765.14s] It's not going to even account for all of the irregularities that we're going to observe. We
+[  765.14s ->   771.44s] could observe massive regime shifts, just like in the case of a new product coming out and destroying
+[  771.44s ->   777.62s] our company's sales. But in this example here, what we're looking at is a time series. This is our data,
+[  777.74s ->   784.60s] this blue line. And I'm applying this filtering technique. It's a moving average. And all that's
+[  784.60s ->   790.76s] going to do is take a window of these points and take the average, and it's going to continue to
+[  790.76s ->   796.04s] roll that window forward. And you can see this confidence interval band. That is essentially
+[  796.04s ->   803.50s] the confidence that the data lies within those two bounds. That is a filtering technique. We're trying
+[  803.50s ->   809.60s] to produce the current state. We're trying to use past data and current data to figure out what the
+[  809.60s ->   818.04s] current state is devoid of this noise. This is not predictive. So if you throw a moving average
+[  818.04s ->   827.56s] over a chart on trading view, or any sort of trading program, that's all you're doing is you're trying
+[  827.56s ->   833.22s] to remove this noise to discern the current state. It says nothing of what the future state is going to
+[  833.22s ->   840.60s] be. Smoothing is the other direction. We're actually looking backwards. We're trying to figure out what
+[  840.60s ->   850.90s] the state was. So we're trying to use current data and future data to look back and figure out what the
+[  850.90s ->   857.44s] state was devoid of this noise. This is interesting because it requires global path knowledge. You can
+[  857.44s ->   863.10s] roll this forward. That starts to look like filtering. But here what we're doing is we're even using
+[  863.10s ->   870.32s] values up here to inform values back here. And that creates this purple line. This is an exponential
+[  870.32s ->   876.38s] smoothing technique. And what this is doing is it's trying to tease out where the actual state of the
+[  876.38s ->   885.57s] time series was based on the global path that we have access to. And of course, we have this idea of
+[  885.57s ->   890.71s] forecasting. And forecasting is going to be essentially trying to produce an expectation,
+[  890.71s ->   899.05s] a best guess at what is to come based on what has been observed and the current state.
+[  899.39s ->   905.51s] Forecasting is a great source of confusion for students, traders, non-technical people,
+[  905.51s ->   912.49s] because it's very easy to look up on YouTube how to predict stock prices or on Medium how to predict
+[  912.49s ->   917.81s] stock prices. You get an article, you get all this code. It shows you a model that says fit and predict.
+[  917.81s ->   925.23s] And all of a sudden, you're producing forecasts, these predictions, these predictions very loosely,
+[  925.49s ->   933.25s] that will always certainly be incorrect. And it's very difficult to understand why because the
+[  933.25s ->   942.99s] wrapper around these techniques is using a word like prediction. And you're not predicting anything,
+[  942.99s ->   950.23s] you're producing an expectation. If status quo, that expectation might be reasonable.
+[  950.67s ->   956.07s] If not status quo, it is terribly unreasonable. And I've talked about this at length in one of my
+[  956.07s ->   962.05s] previous videos called What Does AI Actually Learn? The expectation in the face of randomness,
+[  962.57s ->   969.39s] whether you're looking at a random event like a dice, a dice roll, or a random event like the closing
+[  969.39s ->   975.85s] price of Apple tomorrow, the expectation is the best that you can do. If you're using more advanced
+[  975.85s ->   982.52s] techniques, it's a nonlinear conditional expectation. Check out that video on What Does AI Actually Learn
+[  982.52s ->   989.16s] if you're interested. But this is why forecasts are and always will be wrong. If you roll a dice,
+[  989.74s ->   996.62s] the literal best guess that you can give is the expectation. If I rolled an infinite number of dice,
+[  996.62s ->  1004.96s] the quantity that is going to minimize the mean squared error for all of those rolls is 3.5. That
+[ 1004.96s ->  1014.02s] is my literal best guess. A dice can't land on 3.5. It can't land on 3.5, but that's still my best
+[ 1014.02s ->  1020.44s] guess. So without a crystal ball, there's no such thing as a prediction. All right. It's very important
+[ 1020.44s ->  1027.26s] to understand this idea. The expectation is a far better characterization of the space because
+[ 1027.26s ->  1036.40s] if things evolve as expected, then this is what the future could look like at best with status quo,
+[ 1036.60s ->  1043.22s] but at worst, we are violently wrong. And this can happen with massive regime changes. All right.
+[ 1043.32s ->  1048.66s] We barely have a measure for what a good expectation actually is. I've talked about this in the past too.
+[ 1048.74s ->  1053.24s] There's no such thing as expected stock returns, so on and so forth. You can check those videos out if
+[ 1053.24s ->  1059.24s] you want to dive into those ideas, but let's just solidify it with a whole bunch of examples and come
+[ 1059.24s ->  1065.74s] up with some very intuitive interpretations. I think that's going to be the best way to go about
+[ 1065.74s ->  1070.90s] this. It's worth noting before we look at these intuitive examples that even though these forecasts,
+[ 1071.12s ->  1078.48s] expectations, these levels are difficult to estimate and are incorrect, it doesn't preclude us
+[ 1078.48s ->  1084.82s] from making optimal decisions in the face of uncertainty if our models are correct on average.
+[ 1085.38s ->  1088.74s] And this makes sense, right? If we have a series of decisions that are being made,
+[ 1089.20s ->  1094.12s] having a model is certainly better than not having a model. We're dealing with randomness,
+[ 1094.26s ->  1100.08s] an uncertain outcome. And our goal is to find some sort of edge in that decision-making in the face of
+[ 1100.08s ->  1105.70s] uncertainty. And a model certainly can inform that. So we'll see an example of this in a market-making
+[ 1105.70s ->  1110.60s] capacity. And even though these assumptions are violated in practice, these models are still
+[ 1110.60s ->  1116.14s] effective at accumulating wealth over a series of trades over time. So that's when it'll become
+[ 1116.14s ->  1121.40s] more apparent. But for now, bear with me, we'll talk about these assumptions and we'll talk about
+[ 1121.40s ->  1127.04s] the implications in practice. When it comes to model forecasts and the associated model assumptions,
+[ 1127.04s ->  1132.64s] some are more insulting than others. If we look at something like a no-arbitrage assumption,
+[ 1132.64s ->  1138.66s] it's not really a crazy assumption, right? If there's a static mispricing in the market,
+[ 1138.66s ->  1145.68s] it's not a crazy idea that an institution with a low latency capacity is going to immediately trade
+[ 1145.68s ->  1152.34s] that out, right? That's not a crazy assumption. Those mispricings, sure, they exist, but they're
+[ 1152.34s ->  1158.38s] taken advantage of very quickly. So that idea is not too crazy of an assumption. And the impact in our
+[ 1158.38s ->  1164.58s] model subsequently is not going to be that crazy. If we look at something like a constant volatility
+[ 1164.58s ->  1168.64s] assumption, yeah, that's a pretty crazy assumption, right? With something like Black-Scholes. And
+[ 1168.64s ->  1174.60s] I've discussed this at length in the pricing of exotic options. Yeah, we can't price consistently
+[ 1174.60s ->  1179.48s] using the Black-Scholes model if we assume constant volatility. That is a violently wrong assumption.
+[ 1179.48s ->  1187.32s] But if we assume a constant volatility, we can back out this notion of implied volatility and observe
+[ 1187.32s ->  1194.42s] the implied volatility surface. That is a pretty significant use of the model, if nothing else,
+[ 1194.62s ->  1202.40s] but to find this quantity of what traders are pricing uncertainty at. So models have different uses,
+[ 1202.98s ->  1207.88s] different assumptions and implications, and models have different impacts in how you go about using
+[ 1207.88s ->  1212.60s] them. But when it comes to time series analysis, you know, the first thing that your professor is going
+[ 1212.60s ->  1218.40s] to do is tell you to assume stationarity. That statistical moments are going to evolve
+[ 1218.40s ->  1224.22s] deterministically, that is, in a static capacity over time. Mean, variance, autocorrelation,
+[ 1224.34s ->  1231.50s] autocovariance. And this isn't the case. This isn't the case in practice. You know, I gave an example a
+[ 1231.50s ->  1240.02s] moment to go with Apple returns. But this is true for a variety of different reasons. Regimes change.
+[ 1241.17s ->  1251.13s] Companies 20 years ago aren't the same companies now. And their data generating distributions are evolving
+[ 1251.13s ->  1257.41s] over time in a random capacity. And we're doing our best to model them. But it's a very important
+[ 1257.41s ->  1264.85s] distinction. Because in the classroom, you're going to assume stationarity. In practice, you're not going
+[ 1264.85s ->  1267.73s] to have stationarity. And you're going to have to deal with it. And there's a lot of different ways
+[ 1267.73s ->  1273.45s] we can deal with it. But we need to understand, you know, why this is the case in practice first.
+[ 1273.71s ->  1279.85s] And then we can go about understanding different models to correct the violation of this assumption.
+[ 1280.03s ->  1285.03s] Let's start to build this intuition. And to do so, we're going to look at a couple of examples.
+[ 1285.03s ->  1291.03s] And we're going to apply this idea of forecasting, observe some sort of big regime change or event,
+[ 1291.23s ->  1298.31s] and then look at the outcome and implication in the new model. An argument can be made here,
+[ 1298.45s ->  1304.49s] you know, stock prices have a unit root. So we should be using returns. Returns are stationary.
+[ 1305.21s ->  1312.35s] If you try to test for stationarity, it's a little silly. There really is no reliable tests for
+[ 1312.35s ->  1319.01s] stationarity. This likely has to be a separate video if we're going to dive into this idea of,
+[ 1319.01s ->  1324.13s] you know, unit roots, we're going to dive into this idea of stationarity and stationarity tests.
+[ 1324.51s ->  1327.41s] If this is something you'd like to see in the future, let me know. That's certainly a more
+[ 1327.41s ->  1333.83s] technical video. But for now, let's just talk about this idea relative to some sort of earnings event.
+[ 1333.83s ->  1343.03s] So we have this stock price path, right? And this stock price path is status quo up until this
+[ 1343.03s ->  1348.37s] particular earnings event. After this earnings event, you can see the stock price jumps all the
+[ 1348.37s ->  1354.61s] way up here. It creates a new level, right? Our naive time series forecast is just going to produce
+[ 1354.61s ->  1363.47s] this level here, right? Clearly, this is violently wrong. And there has been a massive change in
+[ 1363.47s ->  1370.03s] the subsequent stock price. You can say that the dynamics of the stock price path have changed
+[ 1370.03s ->  1376.97s] entirely. You could say that the return distribution changed entirely. You would have to model it and test
+[ 1376.97s ->  1383.91s] it. It's a research question. It's an open discussion. It's likely more reasonable to model this
+[ 1383.91s ->  1391.35s] forecast in two states of the world using the option market, using the straddle and what traders are
+[ 1391.35s ->  1396.69s] pricing the uncertainty of this event at and what they're pricing in the jump to be on the upside or
+[ 1396.69s ->  1402.37s] the downside. That's likely a better forecast. Now, does that tell you which direction to trade in?
+[ 1403.01s ->  1409.91s] No, absolutely not. If you had insider information, yeah, you'd be able to predict it. But without insider
+[ 1409.91s ->  1416.93s] information or information from alternate data informing the outcome of this event, no time series
+[ 1416.93s ->  1423.17s] model is going to be able to capture this effect. Let's continue to build this intuition with some
+[ 1423.17s ->  1428.51s] more examples. Temperature is by far my favorite example because it exemplifies this idea of an
+[ 1428.51s ->  1434.33s] expectation. What do I mean by this? Well, if I asked you in the heart of December, what do you think
+[ 1434.33s ->  1442.61s] the temperature in New York City is going to be? Would you say 100 degrees Fahrenheit? No, right?
+[ 1442.67s ->  1450.01s] You'd say probably something freezing, 20 degrees Fahrenheit. And let's take it even one step further.
+[ 1450.13s ->  1454.25s] Let's say you said, okay, you know, Roman, I think it's going to be 20 degrees Fahrenheit in the heart
+[ 1454.25s ->  1460.64s] of December in New York City. I say, okay, let's say on that day, it was 20 degrees Fahrenheit.
+[ 1460.64s ->  1467.52s] What do you think it's going to be tomorrow? Would you say 100 degrees Fahrenheit if yesterday it was
+[ 1467.52s ->  1475.28s] 20 degrees? No, you would stick with what? Something roughly around 20 degrees Fahrenheit.
+[ 1475.78s ->  1482.84s] And this is the idea of time series analysis. It doesn't know anything that we don't know or can't
+[ 1482.84s ->  1489.24s] understand qualitatively. It's trying to model these different components of trend, seasonality,
+[ 1489.24s ->  1497.04s] shocks to both of those components. And it's not going to extrapolate in any sort of magical way,
+[ 1497.08s ->  1501.72s] just like we saw with this earnings example. It's not going to be able to tell us if it's going to
+[ 1501.72s ->  1508.52s] jump up or down. That's not what these models are being used for. They're being used to analyze
+[ 1508.52s ->  1515.62s] status quo and extract this overall trajectory and seasonal component. If there is a structural break
+[ 1515.62s ->  1520.50s] and things change, that completely changes the dynamics of the system. It could completely change
+[ 1520.50s ->  1527.14s] the outlook and expectations associated with a model. And that's exactly what we see here, right?
+[ 1527.62s ->  1531.86s] It turns into a larger discussion if you want to argue for stationarity, against stationarity,
+[ 1531.86s ->  1538.02s] if you think the data generating distribution changed here or didn't change. But that is the intuition
+[ 1538.02s ->  1544.10s] is, you know, we're looking at this in terms of some sort of expectation. Just think about that temperature
+[ 1544.10s ->  1550.34s] in New York City as an example. It's the perfect way to understand not only filtering and smoothing, but also
+[ 1550.34s ->  1558.96s] forecasting its expected state of the world. Let's talk about another example of time series analysis and
+[ 1558.96s ->  1565.94s] bring in this idea of alternative data to inform our forecast. So what I have here is my bench press
+[ 1565.94s ->  1575.62s] progress from January 24 to January 25. And what you'll see is my level was roughly around 350.
+[ 1575.62s ->  1581.94s] So I was oscillating a little bit, you know, sometimes it goes up, sometimes it goes down. I have this variability
+[ 1581.94s ->  1592.23s] in my performance. And then all of a sudden it dropped December 9th, 2024. It dropped down to this new axis
+[ 1592.23s ->  1600.34s] here. I had to create a twin axis. It dropped so low to 45 pounds. What the heck happened? Well, I tore my
+[ 1600.34s ->  1610.18s] pack. So I'm not bench pressing 350 anymore. That level is gone. That level is nowhere near what my current
+[ 1610.18s ->  1622.70s] level is now and to present in 2025. That is a structural break in the system. The data being used to
+[ 1622.70s ->  1629.10s] generate points for this time series is coming from an entirely different distribution than it was over
+[ 1629.10s ->  1634.70s] here. And this is really what I'm trying to get in terms of status quo and a forecast that time
+[ 1634.70s ->  1642.22s] series model doesn't have that information. It doesn't have that information, right? Until we observe it
+[ 1642.22s ->  1650.81s] on the time series. Here's the interesting thing. Could we get that information before it comes up
+[ 1651.53s ->  1658.89s] in the time series? My doctor had that information. Anybody in the waiting room who chatted with me
+[ 1658.89s ->  1665.53s] had that information. So there is a way to come up with a better forecast beyond just pure time series
+[ 1665.53s ->  1672.09s] analysis using alternative data. That's how we can get information. I think this is a really cool way of
+[ 1672.09s ->  1676.17s] looking at the space because you can think about this now, not just in terms of my,
+[ 1676.17s ->  1683.58s] my bench press and my terrible bench press now, but, but you can look at this in terms of a stock price,
+[ 1685.35s ->  1693.43s] right? Jumps happen, but is there other information we can use and take advantage of? Can we get an edge
+[ 1694.31s ->  1701.43s] before that jump is, is realized? I'm not talking about insider information exclusively talking about
+[ 1701.43s ->  1709.35s] things like using pictures of Walmart parking lots, CEO facial expressions, sentiment. Is there any
+[ 1709.35s ->  1713.27s] information edge to glean there? So that's a very interesting way to think about the space using
+[ 1713.27s ->  1717.83s] alternative data. We'll continue with that idea in a moment, but for now, we're going to move on to this
+[ 1717.83s ->  1724.23s] idea of forecasts and how we can use forecasts, even though they're incorrect and our models are wrong
+[ 1724.23s ->  1730.71s] to generate wealth. We have a pretty good idea of what a forecast is at this point, right?
+[ 1730.71s ->  1735.59s] It's not a prediction. It's an expectation and different types of models and different assumptions
+[ 1735.59s ->  1741.67s] and different types of data will give you different expectations, but this isn't going to be correct,
+[ 1741.67s ->  1748.79s] right? There's not one level. We can't directly observe that, that parameter. So what can we do?
+[ 1748.79s ->  1755.51s] Is it okay if we're mostly correct? It turns out that, yeah, it is okay if we're mostly correct,
+[ 1755.51s ->  1761.27s] and I have a pretty cool series of animations to go about showing you how this is the case. So
+[ 1761.27s ->  1767.91s] what I have here is the outcome of a dice roll, right? The outcome of a dice roll does not change
+[ 1767.91s ->  1775.35s] over time. Everything has a one-sixth probability, one through six, and the expectation of the dice roll,
+[ 1775.35s ->  1782.07s] the average value is just 3.5. Okay. That's what I have here. I have a series of outcomes and I have
+[ 1782.07s ->  1789.75s] this, this expectation. Now, if we're a market maker and we want to make a market for these dice roll
+[ 1789.75s ->  1797.03s] outcomes, what I can do is I can use this expectation to quote a spread around and I'll have this bid ask
+[ 1797.03s ->  1803.83s] offer and I will essentially be buying at the ask offer, selling at the bid and collecting the spread
+[ 1803.83s ->  1811.83s] around this expectation. Now, the dice rolls aren't going to change over time. That expectation
+[ 1811.83s ->  1817.27s] isn't going to change over time. So I really don't have to adjust my quotes. If I run this animation,
+[ 1817.27s ->  1821.83s] you'll see a market making animation in this capacity here. These are different realizations
+[ 1821.83s ->  1828.47s] of the dice rolls. I'm quoting a bid ask offer around this expected level. I have arrivals according
+[ 1828.47s ->  1834.63s] to a Poisson distribution and I have buyers and sellers on both sides and I'm accumulating this,
+[ 1834.63s ->  1839.91s] this P and L over a series of trades. So this is a pretty cool animation, but what is it showing you?
+[ 1839.91s ->  1845.11s] Well, it's showing you that even though the outcome is random, I was still able to accumulate wealth
+[ 1845.11s ->  1850.95s] based on this theoretical spread because I know what the expected value is. Remember the expectation is
+[ 1850.95s ->  1856.23s] the best that we can do in the face of this randomness, right? Okay. Well, this is a really easy
+[ 1856.23s ->  1860.55s] problem, right? Why can't I just do this if I'm trying to make a market in an institutional capacity?
+[ 1860.55s ->  1870.68s] Well, your mid price changes over time, right? Stock prices change over time. So your expectation
+[ 1870.68s ->  1877.98s] that mid level is going to change over time. So what do I do? This is where time series models can come
+[ 1877.98s ->  1886.54s] in handy. This is one of the places where if you apply these ideas correctly, the idea of a forecast,
+[ 1886.54s ->  1893.90s] this expectation, this expected level and are correct on average, you can realize P and L,
+[ 1893.90s ->  1898.22s] you can realize wealth over time. And that's the goal. You're making optimal decisions in the face
+[ 1898.22s ->  1901.98s] of uncertainty. You're collecting the spread. You have a different host of risks. I've talked about
+[ 1901.98s ->  1906.14s] this in retail and institutional trading. Check out that video if you're interested. But what I'm
+[ 1906.14s ->  1912.62s] going to show you now is this exact same market where I have buyers and sellers engaging with my bid,
+[ 1912.62s ->  1919.58s] ask spread, my bid and my offer. And I'm going to have it so that the weight of the dice is going
+[ 1919.58s ->  1926.70s] to evolve randomly over time. So I know theoretically in this market, the expected value is 3.5. So if
+[ 1926.70s ->  1932.54s] this was a stock, the expected value didn't change. And we realized a whole bunch of different prices
+[ 1932.54s ->  1938.30s] around that expected value. In real life, it's going to change. And that's what I have down here.
+[ 1939.86s ->  1945.46s] In this market making example, I'm going to use a time series model to predict the expectation.
+[ 1945.46s ->  1950.18s] Let's see how I do in terms of my P and L, but we're just going to use a moving average to try to
+[ 1950.18s ->  1955.86s] discern what the level is. See, it's going to be moving just like a stock's price. And now I'm going
+[ 1955.86s ->  1960.02s] to be trading around this theoretical level. My spread is going to be quoted around this,
+[ 1960.66s ->  1966.26s] this theoretical mid price and check it out. I was still able to accumulate P and L, even though I
+[ 1966.26s ->  1972.74s] didn't know what the actual expected level was, it was changing randomly over time,
+[ 1972.74s ->  1980.42s] but I was correct. On average, I was able to collect this spread and I was able to make a profit.
+[ 1980.42s ->  1986.42s] This is the perfect example of, even though my model is wrong and I am certain it's wrong,
+[ 1987.14s ->  1989.06s] I was able to make money.
+[ 1989.06s ->  1995.38s] So now we get a really full picture of this space, right? Forecasts are not predictions,
+[ 1995.38s ->  2000.66s] they're expectations. If these forecasts or expectations are correct on average,
+[ 2000.66s ->  2007.70s] then we can generate wealth as seen in this market making example. But what about that
+[ 2007.70s ->  2013.46s] qualitative example that I was talking about earlier with my bench press with information?
+[ 2013.46s ->  2022.50s] Well, let's use the 2008 financial crisis as an example. If I just use the time series approach
+[ 2022.50s ->  2030.02s] to modeling these credit default swaps, then what would it look like? Would the value of those swaps
+[ 2030.02s ->  2038.41s] just have continued to increase over time? Well, yeah, right? If I use just a pure time series approach,
+[ 2039.13s ->  2043.91s] then I'm going to get something that looks like this, right? I'm going to get some sort of forecast.
+[ 2044.15s ->  2048.87s] It's like, oh, if status quo maintains and yeah, there's just going to continue to increase in value.
+[ 2049.88s ->  2054.44s] But what actually happened, right? Look at the big short. If you haven't watched the big short
+[ 2054.44s ->  2058.76s] and you want to get into quant finance, you definitely have to have watched the big short
+[ 2058.76s ->  2063.96s] for sure. You know, that's on a short list of movies with, you know, Wall Street, Boiler Room,
+[ 2063.96s ->  2068.52s] definitely check those out. But here we're looking at this time series model that is absolutely
+[ 2068.52s ->  2073.40s] incorrect, right? We have this crazy default event and the value of these just went to the floor.
+[ 2074.28s ->  2080.52s] But people were able to predict that outcome, right? If you look at the big short, a lot of
+[ 2080.52s ->  2087.00s] people made out on that trade. But why was that the case? They didn't use some sort of time series
+[ 2087.00s ->  2094.68s] model, right? They were able to observe what? That there wasn't actually any value. They used
+[ 2094.68s ->  2100.20s] alternative data, right? Maybe they visited the homes in person. Maybe, you know, they were looking
+[ 2100.20s ->  2104.84s] at, you know, default rates on mortgages and they actually dove into the data. This is alternative
+[ 2104.84s ->  2110.04s] data. We're not just looking at a time series of the prices of this particular instrument.
+[ 2110.04s ->  2114.52s] We're using alternative data to inform what we think is going to happen that the market hasn't
+[ 2114.52s ->  2120.92s] caught up on yet. Sure. Maybe with technology and the dissemination of information now it's different,
+[ 2120.92s ->  2127.00s] but this again is a really great example of, wow, like information predated that move to inform
+[ 2127.00s ->  2132.36s] trading decisions beyond just cursory time series forecasting. And if you tried to use this
+[ 2132.36s ->  2139.40s] time series model to forecast what was going to happen, you would be violently wrong. So I think this is a
+[ 2139.40s ->  2145.96s] really cool way to look at the time series space because you're getting a better picture of what
+[ 2145.96s ->  2151.16s] it is you're actually working with, right? It's not just a line on a chart. You know, there's some sort
+[ 2151.16s ->  2156.60s] of data generating distribution. Something's happening to produce those points on the chart.
+[ 2156.60s ->  2162.76s] And if you think in conjunction with whatever model you're using to forecast, smooth, filter,
+[ 2163.56s ->  2168.92s] along with this alternative data approach, then you're getting a very full picture of
+[ 2168.92s ->  2173.88s] the space. Now, as we saw in the market making example above, sometimes it is sufficient to just
+[ 2173.88s ->  2180.44s] use a time series model. So we saw that in a market making capacity above, we can also see that in a
+[ 2180.44s ->  2186.20s] pricing capacity here below. So what I've done is I've implemented what's called a Kalman filter.
+[ 2186.20s ->  2190.36s] If you're interested in a video on this particular topic, I'm happy to do so. It's certainly far more
+[ 2190.36s ->  2195.72s] technical. We'll get to this when I have my closing thoughts and future topics. Nevertheless, I wanted to
+[ 2195.72s ->  2201.64s] show you what this looks like where we don't need alternative data. So in the sense of trying to
+[ 2201.64s ->  2208.76s] forecast some sort of outcome, it may be entirely productive to just consider a time series technique,
+[ 2208.76s ->  2214.84s] just like in the market making sense. So here with the financial crisis in these credit default swaps,
+[ 2214.84s ->  2221.96s] yeah, the alternative data was necessary to make the appropriate forecast. In this market making sense,
+[ 2221.96s ->  2228.20s] if we had that alternative data to prevent some sort of crazy, you know, trading around a wild price
+[ 2228.20s ->  2233.64s] movement, that could certainly help us, but likely we'll be trading at such a high frequency, it's not
+[ 2233.64s ->  2238.84s] going to necessarily matter. We'll just adjust and continue to move from that, that new, that new
+[ 2238.84s ->  2248.76s] break, that new jump, whatever it is. And in the context of pricing, largely the, the former is the
+[ 2248.76s ->  2253.16s] case. We don't need to introduce this alternative data. So what I've done here is I've illustrated an
+[ 2253.16s ->  2259.56s] example of time series analysis in pricing where we have some sort of product that is extremely
+[ 2259.56s ->  2264.60s] illiquid and it's only trading at irregular intervals, but we have liquid proxies for what
+[ 2264.60s ->  2270.62s] the price of that instrument could be. That's pretty interesting, right? So we observe these red dots,
+[ 2270.62s ->  2277.26s] which are trades, and then we're informing the price of that illiquid instrument based on how these
+[ 2277.26s ->  2282.38s] other instruments are trading. So what you can see, if we zoom in on any one of these points, right,
+[ 2282.38s ->  2288.22s] as these other products are moving around, that is informing the forecast, the estimate
+[ 2288.78s ->  2294.86s] for this illiquid product. So this blue line is tracking what it thinks the value of the
+[ 2294.86s ->  2301.34s] illiquid product is at those points in time without actually observing it. It's using these other liquid
+[ 2301.34s ->  2307.74s] instruments as a proxy. And that is the perfect application of, of a time series analysis. And
+[ 2308.54s ->  2316.06s] this can even be more sophisticated machine learning approaches. I've seen it in practice. So I wanted
+[ 2316.06s ->  2323.90s] to emphasize that there are cases where alternative data can be useful to inform, but may not altogether
+[ 2323.90s ->  2328.86s] be that necessary. So we looked at a market making example where that could be the case. Time series
+[ 2328.86s ->  2334.46s] is sufficient. We looked at a pricing example where this could be the case. That could be sufficient.
+[ 2334.46s ->  2340.06s] We also looked at some other examples in the context of, you know, 2008 financial crisis,
+[ 2341.10s ->  2345.58s] the bench pressing, where there's some sort of massive structural break and alternative
+[ 2345.58s ->  2350.06s] information could be useful in a forecasting capacity. It's largely going to be based on your
+[ 2350.06s ->  2356.30s] problem. But I think so long as we're considering this idea of alternative information being included
+[ 2356.30s ->  2362.14s] in your analysis for some sort of forecast, or lack thereof, then, you know, that is certainly
+[ 2362.14s ->  2369.18s] sufficient to summarize time series models certainly have their place. And they are more than sufficient
+[ 2369.18s ->  2376.38s] for a variety of applications, even though they are, of course, incorrect, even without this idea of
+[ 2376.38s ->  2383.42s] alternative data. Now, the space itself is heavily problem dependent. So our choice of model,
+[ 2383.42s ->  2387.98s] our assumptions, the implications of those assumptions, whether or not they're violated,
+[ 2387.98s ->  2394.86s] will definitely depend on the problem at hand. Moreover, in terms of forecasting, whether it's for
+[ 2394.86s ->  2400.22s] this particular space that we're interested in applying these time series models, or just blanket
+[ 2400.22s ->  2409.02s] forecasts in general, they are expectations at best. Alternative data may, in fact, inform better
+[ 2409.02s ->  2414.30s] decision making than just a raw expectation from these different types of models. That is essentially
+[ 2414.30s ->  2420.70s] constructing a new model. And perhaps we can realize some sort of information advantage, some sort of edge
+[ 2420.70s ->  2427.58s] before a realization in the associated time series. Some future topics I would like to discuss,
+[ 2427.58s ->  2436.46s] I'd like to go into more technical detail into this space. AR, MA, ARMA, ARIMA models, definitely a more
+[ 2436.46s ->  2442.22s] technical discussion. I'd have to gauge interest on this. If we really want to sit behind these models in a
+[ 2442.22s ->  2447.90s] technical capacity, define them, their expectations, go about forecasting with them, so on and so forth.
+[ 2448.54s ->  2454.70s] I'd also like to talk about market making models. I think that's a very interesting topic. Avondala and
+[ 2454.70s ->  2463.90s] Stojkov have a market making model that is very renowned and used even in market making competitions
+[ 2463.90s ->  2469.42s] that Citadel will do with their students. I'd like to talk about the Kalman filter,
+[ 2469.42s ->  2475.02s] definitely popular for non-stationary systems. I've deployed production systems with this technique.
+[ 2475.98s ->  2482.62s] Maybe algorithmic systems using the Kalman filter, like a Kalman mini series. Maybe build it in Python
+[ 2482.62s ->  2487.02s] and deploy it using interactive brokers, some live data. If there's interest there, I'd love to build
+[ 2487.02s ->  2493.90s] something like that. I know Arch and Garch have been requested, so that's certainly in the queue as well.
+[ 2493.90s ->  2500.22s] And then maybe a more interesting topic would be some sort of like full surface arbitrage. It's very
+[ 2500.78s ->  2505.82s] common to, you know, fit some sort of model to a market implied full surface and then do some sort
+[ 2505.82s ->  2511.90s] of surface arbitrage. Of course, before that video, I would have to talk about model calibration and,
+[ 2511.90s ->  2516.06s] you know, that has been on the docket for quite some time as well. And that's going to do it for this
+[ 2516.06s ->  2520.86s] video on time series analysis for Quant Finance. I hope you enjoyed it. I hope you learned something.
+[ 2520.86s ->  2525.50s] This is a tricky space. And I said we opened Pandora's box at the beginning of this video,
+[ 2525.50s ->  2531.18s] and that's largely because we did. Everybody has an opinion when it comes to time series analysis,
+[ 2531.18s ->  2537.50s] the efficacy of time series analysis. I'm speaking more towards the intuitive understanding of it.
+[ 2537.50s ->  2543.10s] What is trivial isn't always what's spoken aloud. So I wanted to connect these ideas of,
+[ 2543.10s ->  2548.54s] you know, what we're observing on a chart to real life events. We look at something like an earnings
+[ 2548.54s ->  2554.54s] event. We look at temperature over time. We look at me bench pressing and injuring myself. We look at
+[ 2554.54s ->  2561.98s] something like market making and the evolution of an expectation of price over time. And immediately,
+[ 2561.98s ->  2568.54s] you know, with those examples, all of our models are incorrect. And in different cases in different
+[ 2568.54s ->  2575.34s] states of the world, our model is still useful for making informed decisions in the face of uncertainty.
+[ 2575.34s ->  2580.30s] And other times it's not, you know, when we have those big structural changes, we look at something
+[ 2580.30s ->  2586.38s] like an earnings call, and there's a massive jump in either direction. Our model isn't going to inform
+[ 2586.38s ->  2591.82s] that we look at market making where we have this expected level, then yet certainly can be sufficient
+[ 2591.82s ->  2597.34s] in that capacity. So it's interesting. And then once you start to bring in this idea of alternative data,
+[ 2597.34s ->  2603.42s] you can really inform decision making kind of in tandem with this idea of time series. And then of course,
+[ 2603.42s ->  2607.98s] if you just bring in machine learning, we're talking about nonlinear conditional expectations,
+[ 2607.98s ->  2613.42s] you can check that video out what does AI actually learn. And you know, that really kind of connects
+[ 2613.42s ->  2619.42s] all of these ideas very nicely. That being said, thank you so much for watching. If you'd like to see more
+[ 2619.42s ->  2624.06s] videos like this one in the future, please like comment, subscribe. Let me know if you want to see any of
+[ 2624.06s ->  2631.02s] those future topics. Check out quant guild on discord, check out quant guild.com master your quantitative
+[ 2631.02s ->  2636.06s] skills. Other than that, I will see you in the next video.

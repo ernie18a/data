@@ -1,0 +1,79 @@
+[    0.02s ->     5.52s] Hey guys, in this video I want to walk through how the mother of all credit spread trading strategies came about.
+[    5.90s ->    12.40s] So if you don't know, the way that this system is built is based off a trend following system.
+[   12.80s ->    14.38s] Now where did trend following come from?
+[   14.48s ->    20.82s] Well, inside the fact that trend following has been used for decades and almost centuries now by some of the wealthiest traders around,
+[   21.18s ->    28.54s] Richard Dennis, Ed Sakoda, Bruce Kovner, billionaires have made their wealth through trend following
+[   28.54s ->    30.70s] and hedge funds even use it to this day.
+[   30.82s ->    37.68s] But outside of all those facts, what does this mean to us and what is the story behind how we can use it to take advantage of the market right now?
+[   38.20s ->    43.68s] And so how the mother of all credit spread trading strategy started was using a long-term trend approach.
+[   44.08s ->    50.34s] So for instance, have you ever noticed that most of the money that you make from the market is when the market's moving in a certain direction?
+[   50.64s ->    55.40s] I don't know about you, but I realized that every time I tried to catch the top or bottom or like predict,
+[   55.40s ->    60.86s] okay, I think it's going to top out here or it's going to bottom out here so I should buy or I should sell, whatever.
+[   61.32s ->    62.82s] I was almost always wrong.
+[   63.08s ->    67.44s] I either sold and the market kept going in my favor and I could have made a lot more money
+[   67.44s ->    73.24s] or I bought thinking it was going to bounce and it ended up keep going and it kept going against me and I lost money.
+[   73.38s ->    81.60s] And so I started looking back at all my trades about five years ago and decided, you know what, trend following, there might be something to it.
+[   81.60s ->    84.44s] So I researched it and the math is there.
+[   84.54s ->    90.94s] There have been decades and centuries of mathematical studies done proving that trend following outperforms the market,
+[   91.28s ->    97.66s] has less volatility, and even will outperform the market during crash periods.
+[   97.86s ->   102.36s] And so that's why I created this original trending band indicator to show me the long-term trend.
+[  102.62s ->   103.68s] Now, how does this work?
+[  103.92s ->   109.56s] Well, if the stock is above this green line, that means that the market is trending up long-term, right?
+[  109.56s ->   113.04s] It's trending up and the momentum is going to the upside.
+[  113.50s ->   119.24s] If the stock is below the red line, that means the momentum and the trend is headed towards the downside.
+[  119.66s ->   124.36s] So what we're seeing here is that we can identify the long-term uptrend, long-term downtrend,
+[  124.44s ->   127.04s] and then in the middle here is sideways or neutral action.
+[  127.38s ->   130.32s] There is no clear direction or trend when it's inside the span.
+[  131.16s ->   133.78s] And so that's what I was using to trade credit spreads.
+[  133.78s ->   140.88s] And you can imagine why I grew my account so quickly and why it went so well is because of periods like this,
+[  140.98s ->   144.40s] where the long-term trend is up and it's just trending up.
+[  144.44s ->   147.90s] And no wonder I can just place a put credit spread and I make money.
+[  148.66s ->   154.12s] However, around here is when it started to dip down in the market.
+[  154.38s ->   155.44s] Sorry, I can't talk sometimes.
+[  155.44s ->   163.00s] And I noticed that, okay, yes, the long-term trend is up, but there is another trend in play, the short-term trend.
+[  163.08s ->   165.06s] What is happening in the immediate trend?
+[  165.48s ->   170.44s] And so what I noticed is that you can actually add something to this to make it more adaptive.
+[  171.26s ->   178.44s] And so if we're looking at it here, it's now installed in the free trading indicator that all of you guys have access to.
+[  178.44s ->   183.30s] Again, if you don't message me in the Discord and I will give you access to it.
+[  183.68s ->   186.20s] But right here, just click enable short-term trend.
+[  186.28s ->   188.94s] By default, it should be put on the 10-period moving average.
+[  189.28s ->   190.88s] But again, you can change it if you like.
+[  191.34s ->   197.64s] And so now long-term trend prevails, but we also have a short-term trend analysis.
+[  197.92s ->   204.38s] So if we look at this, when a trend starts getting overextended, it's then going to look at the short-term trend.
+[  204.48s ->   206.64s] A short-term trend, again, looking if it's pointing down.
+[  206.64s ->   212.04s] If this range is pointing down, then that means we're having a short-term downtrend.
+[  212.12s ->   215.82s] So short-term downtrend, short-term downtrend, and a long-term uptrend.
+[  215.98s ->   224.62s] So that's how we're able to adapt the strategy and take puts and call credit spreads and profit no matter which way the market's going.
+[  224.84s ->   230.36s] So the high-level overview of the mother-of-all credit spread strategies is simply this.
+[  230.76s ->   233.20s] There's a long-term trend that prevails.
+[  233.20s ->   244.18s] If that long-term trend is unknown, a.k.a. it's in this middle line, or it's overextended, it's been trending up way too long based on a mathematical level,
+[  244.86s ->   248.92s] and the short trend is down, then we'll take call credit spreads.
+[  249.56s ->   254.18s] If both the short-term and the long-term trend are up, then we'll take put credit spreads.
+[  254.18s ->   263.04s] Using that, we now have a 75% win rate, and for every trade, if we're right, we make $25.
+[  263.52s ->   265.76s] If we're wrong, we lose $25.
+[  266.32s ->   273.58s] So that means a risk-to-ward of one-to-one, which means that if we have a loser, a loser will only offset one winner.
+[  273.92s ->   274.94s] Why is this amazing?
+[  274.94s ->   282.16s] If you're a credit spread trader for any amount of time, you know the biggest problem when trading credit spreads is that one loser will knock out nine winners.
+[  282.46s ->   287.62s] If you're using a stop loss, it'll knock out maybe four to three winners or three to four winners.
+[  288.00s ->   292.26s] But now with this approach, one loser only knocks out one winner.
+[  292.68s ->   298.72s] So that means that you have win-win-win-win, lost, it's only taking from one winner, and then it can continue winning again.
+[  299.02s ->   303.82s] So that's exactly how the mother-of-all credit spreads trading strategies work.
+[  303.82s ->   309.86s] Now, I called it that because back last summer, I was invited to a private hedge fund conference.
+[  310.36s ->   317.84s] And every single hedge fund I talked to that exclusively traded options said they all did the same thing.
+[  318.40s ->   323.26s] They traded credit spreads, and they did it by looking at the trend.
+[  323.60s ->   324.26s] That's right.
+[  324.60s ->   330.52s] Hedge funds with over 10 million of assets under management, which means they're trading with $10,000 plus,
+[  330.52s ->   334.66s] are trading credit spreads on SPY using the trend.
+[  334.66s ->   340.28s] So if you want to know, I already was using that strategy, but then I kind of doubled down on it because, hey,
+[  340.56s ->   344.94s] the biggest hedge funds in the world are doing it, and that's why I'm having so much success,
+[  344.96s ->   350.52s] because I'm using both the long-term trend, the short-term trend, and credit spreads to take advantage of this,
+[  350.58s ->   354.54s] hence why it's called the mother, or the mother of all credit spreads trading strategies.
+[  354.54s ->   361.94s] Anyways, that's a high-level overview of how the strategy came about, how it works, and everything like that.
+[  362.16s ->   368.30s] The details of it is I spent so many nights, all night, sleepless nights, backtesting,
+[  368.42s ->   372.52s] perfecting, and figuring out the exact criteria you need to profit.
+[  372.88s ->   378.20s] And in the next modules, I'm going to show you what is the criteria for the bullish strategy,
+[  378.20s ->   384.58s] what is the criteria for the bearish strategy, and how do I use that to make money today?
+[  384.78s ->   386.70s] So I'm going to be going over that in the next module.
+[  386.82s ->   388.76s] I hope the high-level overview made sense.
+[  389.04s ->   393.26s] Long-term, short-term trend, take advantage of it with credit spreads.
+[  393.50s ->   394.90s] All right, guys, see you in the next lesson.

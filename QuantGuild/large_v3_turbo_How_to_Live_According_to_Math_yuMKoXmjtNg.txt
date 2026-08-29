@@ -1,0 +1,216 @@
+[    0.46s ->     7.50s] Over the years, I've met a tremendous number of very successful people by almost every
+[    7.50s ->    13.30s] conventional metric. Financially prestige status, yet they were miserable. I've met
+[   13.30s ->    18.32s] people who were not successful by those conventional metrics, yet they were
+[   18.32s ->    26.60s] very happy. And probably the largest set, I've met a tremendous number of people who were just
+[   26.60s ->    36.22s] miserable. Yet the mathematics that explains all of that behavior stands. That is exactly what I
+[   36.22s ->    42.48s] want to talk about in today's video. This is fundamentally different from all of the other
+[   42.48s ->    49.70s] content that I produce on my channel, and that's because it's such an important idea to me. The
+[   49.70s ->    56.46s] idea of knowledge and experience and understanding exactly the structure of the environment that
+[   56.46s ->    64.84s] you're operating in allows you to make for more optimal actions and leads to a better life.
+[   65.28s ->    73.01s] For this discussion, we need to at least agree on a couple of different mathematical objects. I'm
+[   73.01s ->    76.75s] going to borrow a lot of terminology from the reinforcement learning literature, the machine
+[   76.75s ->    82.15s] learning literature, to explain exactly what's going on here. So we're going to start with this idea
+[   82.15s ->    88.95s] of a policy function. So we're going to start with a policy function. I'm going to denote it pi.
+[   90.22s ->    98.38s] And what this is, is going to be a function that dictates our actions based on our environment. This
+[   98.38s ->   103.90s] is quite literally how we go about every single day. We get up in the morning and we experience
+[  103.90s ->   111.90s] an environment and we immediately start making choices. Get out of bed, shower, get a cup of coffee.
+[  112.62s ->   120.00s] The list goes on. This policy function pi is going to discern that action based on the environment
+[  120.00s ->   127.98s] that you experience. But is it aimless? Well, no. It's looking to optimize a utility function.
+[  127.98s ->   142.29s] A utility function is the easiest way to abstract away our individual preferences. I can't tell you
+[  142.29s ->   151.39s] what your utility function is. You can't tell me what my utility function is. I'm interested in acting
+[  151.39s ->   160.42s] and optimizing a specific set of preferences that's unique to me. The same for you. There are people
+[  160.42s ->   168.06s] right now who have decided that the optimal action is clicking out of this video. They've decided that
+[  168.06s ->   175.24s] the optimal action for their utility function is leaving a tremendously hateful comment in the comment
+[  175.24s ->   185.86s] section below. I can't tell you how to optimize for your utility function. But in any case, we don't act
+[  185.86s ->   194.26s] against what we believe to be our own self-interest, our best interest. Nobody acts in that capacity.
+[  195.56s ->   202.92s] We're always looking to optimize for a utility function. That is going to dictate your choice
+[  202.92s ->   211.56s] of action. So we have this idea of a policy function, a utility function, and we have some things that we
+[  211.56s ->   222.30s] interact with and things that generate actions, such as our environment, and how we perceive those actions,
+[  223.70s ->   233.45s] which I will denote A, via a response R. So our environment and our action is going to produce
+[  233.45s ->   240.01s] a response based on that particular environment after you interact with it. What does this look like
+[  240.01s ->   251.73s] visually? Well, let me just draw a diagram. Here's me. Here is my environment, and I am going to act
+[  251.73s ->   258.85s] within this environment, and the environment is going to produce a response. How are these generated?
+[  258.95s ->   266.17s] They're not generated randomly. I have a policy function that is going to dictate my action A
+[  266.17s ->   273.85s] within this environment, and that is going to produce for me a response based on that action
+[  273.85s ->   281.37s] and my environment, and it is going to be an input into my utility function. I'm either going to derive
+[  281.37s ->   287.41s] some sort of satisfaction or dissatisfaction from that response, and this is quite literally how life
+[  287.41s ->   293.85s] works. When we were very young, we learned that the action of touching a very hot pot on the stove in
+[  293.85s ->   299.39s] our environment yields a negative response, and that's likely to decrease our utility function,
+[  299.49s ->   306.55s] decrease our satisfaction. So we don't do that. We don't exploit that behavior. We instead exploit
+[  306.55s ->   314.47s] behavior that we know leads to positive responses, right? We work hard. The act of working hard is an
+[  314.47s ->   322.39s] action within our environment that tends to lead to a positive response and an increase in utility.
+[  322.39s ->   330.42s] In computer science, we consider that the difference between exploiting a behavior that's known versus
+[  330.42s ->   338.76s] exploring one that is not, and that is certainly the trickier idea here. Sometimes we don't know
+[  338.76s ->   350.93s] how an action in an environment is going to respond. We don't. If we go and we try to interview for that
+[  350.93s ->   359.43s] job, right? Well, of course, we want a certain response, right? But in placing a lot of interest
+[  359.43s ->   368.75s] in this response, we may not be acting optimally. In any case, that's the exploration. That is the
+[  368.75s ->   376.15s] randomness of our environment. We are trying to increase our utility, but sometimes this response
+[  376.15s ->   385.31s] doesn't go as intended based on the action within our environment. Maybe we bomb the interview. Maybe
+[  385.31s ->   393.95s] we don't successfully get a date when we go and we ask that girl out. This is how the world functions.
+[  394.23s ->   401.39s] If it was deterministic, then it would be tremendously easy to optimize our utility function, but it's not.
+[  401.39s ->   409.45s] Let's talk more about why that is the case and why this explains all of the behavior that I discussed
+[  409.45s ->   416.70s] at the start of this video. So I'm going to draw you a picture here of a utility function.
+[  417.14s ->   426.47s] This is an abstraction, certainly, but geometrically, the idea still holds. So we have our utility function
+[  426.47s ->   434.50s] and we have a response from the environment based on an action and the environment at the time of that
+[  434.50s ->   449.44s] action. Here is what the utility function might look like. Okay. Now, not everybody wants to continue
+[  449.44s ->   458.93s] to optimize this utility function. That's a very important distinction because if we are at what is
+[  458.93s ->   465.49s] known as a local maximum, you can think of this as a series of peaks and troughs, and there's always
+[  465.49s ->   476.95s] going to be higher highs to effectively fight for, we eventually get to what is known as a local max
+[  476.95s ->   487.39s] based on our environment and our actions. And this local max is exactly where you find people who
+[  487.39s ->   499.69s] aren't successful and happy and people who are maybe getting by, but are miserable. And that is going to be
+[  499.69s ->   509.75s] solely based on their principles. So the thing that I haven't yet discussed about this structure
+[  509.75s ->   517.13s] is the idea of your principles. And the reason why I wanted to include this in this mathematical
+[  517.13s ->   522.63s] framework is because it makes it more dynamic. So I'm going to say that we have our principles P
+[  522.63s ->   531.77s] and this policy function PI and this utility function U is actually going to be under a specific set of
+[  531.77s ->   538.79s] principles. So now when we look at this utility function, it's actually under a specific set of
+[  538.79s ->   545.25s] principles. The reason why this is important is because if you have a principle that says, Hey,
+[  545.25s ->   553.97s] I am optimizing for money, that is going to yield an entirely different utility function than one
+[  553.97s ->   562.64s] that is optimizing for free time, time with your friends and family. You can say that it's just going
+[  562.64s ->   568.36s] to be a different utility function, but that is exactly what making it a function of your principles
+[  568.36s ->   576.48s] does. So in other words, your utility function may look something like this. If you prioritize money,
+[  576.56s ->   584.28s] but now if you prioritize time with your friends and family, it might look entirely different.
+[  584.28s ->   594.44s] So maybe now you're starting to see why being at these local maxes and mins for different people
+[  594.44s ->   602.86s] leads to different outcomes, non-successful people, unsuccessful people being happy versus
+[  602.86s ->   611.50s] people who are getting by and miserable. They can be in the exact same environment with the exact same
+[  611.50s ->   617.04s] actions, but based on their principles and the shape of their utility functions, it will dictate whether
+[  617.04s ->   624.76s] or not they are happy versus whether or not they are miserable. It is a function, not only of
+[  624.76s ->   634.62s] their policy function and utility function, but their principles. If somebody has principles that wealth
+[  634.62s ->   640.64s] is the most important thing to them, then they're going to be sitting here looking up at everything
+[  640.64s ->   647.32s] they could have. How aren't you going to be miserable versus somebody with a completely different set of
+[  647.32s ->   657.45s] principles where they prioritize their family? And they say, wow, instead of looking up and prioritizing
+[  657.45s ->   664.73s] wealth, they're looking down and saying, wow, look at everything that I could lose if I spent more time
+[  664.73s ->   673.14s] chasing wealth than time with my family. An incredibly important idea. And structurally, it explains a lot.
+[  673.14s ->   681.08s] Nobody wants to act against their own self-interest, but how we perceive this locality is fundamentally
+[  681.08s ->   691.64s] different based on our principles. Okay. Understanding that, understanding our actions are in an environment
+[  691.64s ->   697.24s] that yield a response, that are going to produce utility in either direction, positive or negative
+[  697.24s ->   704.78s] utility. What is our objective? Well, our objective is to get more utility rather than less utility under a
+[  704.78s ->   711.87s] specific set of principles. In other words, I want to move up into the right. I want to continue to grow.
+[  713.59s ->   721.55s] But what does growth look like? This is where the knowledge and experience comes in and why I appreciate
+[  721.55s ->   731.34s] this structure so much? Is this linear? It cannot be linear. It cannot be up into the right, a straight line.
+[  732.16s ->   740.32s] Progress has to be cyclical to some capacity. There has to be a local downtrend. What do I mean by this?
+[  740.42s ->   749.32s] Well, if I'm at this local max and I want to achieve higher highs, I have to change my situation.
+[  749.32s ->   756.90s] I have to explore the space. This gets into the idea of exploring versus exploiting. You can't just
+[  756.90s ->   764.64s] continue to achieve higher highs by exploiting the same set of actions. If you want something that
+[  764.64s ->   770.66s] you've never had, you're going to have to do something you've never done. But that act in itself
+[  770.66s ->   778.82s] is going to decrease your utility. Notice, at this local max, if I want to progress, I need to
+[  778.82s ->   786.64s] decrease my utility in order to move up into the right. I'm not talking about just arbitrarily
+[  786.64s ->   793.52s] decreasing your utility and sending your utility function on a downtrend, quitting your job,
+[  793.64s ->   797.48s] casting out your friends and family. Everyone is free to do that, but we're not going to do that.
+[  797.56s ->   802.94s] We're not going to act against our own self-interests. We're going to try to move up into the right.
+[  802.94s ->   808.46s] We're going to try to grow. We're going to try to optimize our action for our utility function
+[  808.46s ->   815.16s] under a specific set of principles. People who understand this, understand that this is a natural
+[  815.16s ->   822.78s] cycle of growth. They understand in order to progress, I am going to need to perform explorative
+[  822.78s ->   827.94s] action. I am going to need to do things I've never done before, and I'm not going to be good at them
+[  827.94s ->   834.36s] right away. I am going to need to decrease my utility temporarily in order to be able to fight
+[  834.36s ->   840.26s] for these new highs. The people that understand this, understand that this is the natural cycle
+[  840.26s ->   845.30s] of growth. You don't need to understand this mathematical framework to be able to pursue that.
+[  845.30s ->   851.82s] People who are serial entrepreneurs, who quit their prestigious jobs early on in their career,
+[  852.72s ->   858.54s] that is something that they have earned through experience. They don't understand necessarily
+[  858.54s ->   865.52s] the formal mathematical structure, this idea of optimizing a policy function for your utility
+[  865.52s ->   870.38s] function based on a set of principles in an environment, but they don't have to because
+[  870.38s ->   875.68s] they understand that that's the natural cycle of growth. They want to keep achieving these higher
+[  875.68s ->   882.90s] highs. That is exactly why I'm making this video today because this is a topic that is so important
+[  882.90s ->   888.74s] to me after seeing so many people who consider themselves in their lives stuck, miserable.
+[  889.20s ->   896.32s] They don't understand this cycle of growth. Now, if you don't wish to act, if you don't wish to
+[  896.32s ->   901.38s] perform explorative action because there is risk involved, you're going to have to decrease
+[  901.38s ->   908.82s] your utility ephemerally to achieve more, then you can't comment on people who are willing
+[  908.82s ->   917.88s] to do that. That is the trade-off. You can either choose to exploit action and stay at a locality or
+[  917.88s ->   924.06s] you can perform explorative action. I can't guarantee you that the explorative action is going to progress
+[  924.06s ->   930.32s] you towards your goals. In fact, a lot of explorative action doesn't. I have built a tremendous number of
+[  930.32s ->   936.48s] apps over the years that have had absolutely no traction, that have went nowhere. I still enjoyed
+[  936.48s ->   942.28s] building them and I still learned a lot from that process, but that was me exploring and then
+[  942.28s ->   949.82s] effectively decreasing my overall utility. But without that explorative phase, I wouldn't be able
+[  949.82s ->   955.78s] to continue to be confident in exploring and continuing to traverse up into the right in this
+[  955.78s ->   963.98s] utility function. That is the hardest thing to understand. In order to grow, you have to lose utility
+[  963.98s ->   970.98s] locally. You have to. It's explorative action. And the reason why we lose utility for that
+[  970.98s ->   977.54s] explorative action is because it is, there is perceived risk, sure, but it's also because we love
+[  977.54s ->   984.42s] equilibrium. We love equilibrium. We have no idea what's going to happen. That is certainly scary and
+[  984.42s ->   992.18s] that is certainly going to make it such that when you're trying to pursue growth, decreases in utility
+[  992.18s ->  1000.98s] may feel extremely violent. You may not have a swing like this, but a swing like this, hopefully it's more
+[ 1000.98s ->  1007.44s] V-shaped and the recovery is a lot quicker, but not necessarily. It might take a long time for you to scale
+[ 1007.44s ->  1019.46s] back up. But that is going to be a function of your environment and your actions. Understanding that that is
+[ 1019.46s ->  1023.78s] what the cycle of growth looks like. Understanding that you have to sometimes take steps backwards
+[ 1023.78s ->  1035.48s] to move forwards is part of the process. So that is, I mean, that is a profound idea.
+[ 1036.63s ->  1042.63s] That is a profound idea. So why don't we all just do this? Why don't we all just optimize our utility
+[ 1042.63s ->  1050.31s] functions, move up into the right, explore and lose utility, lose utility locally to achieve higher
+[ 1050.31s ->  1059.52s] highs. Why don't we all just, just do this? Well, it doesn't make it any less painful in the short
+[ 1059.52s ->  1066.90s] run. It doesn't make it any less painful to lose utility in the short run. It certainly does not.
+[ 1067.66s ->  1074.10s] And the harder part of this entire process isn't realizing that you're going to have to be
+[ 1074.10s ->  1079.98s] uncomfortable to go to the gym or quit your job or start interviewing again. That isn't even necessarily
+[ 1079.98s ->  1084.06s] the hard part, but the hard part is actually discerning the shape of this utility function to
+[ 1084.06s ->  1092.08s] begin with. The assumption that I made to be able to conduct all of this analysis, the idea of
+[ 1092.08s ->  1097.96s] exploiting behavior that you're exploiting or behavior that you're exploring behavior in terms
+[ 1097.96s ->  1106.06s] of action. The assumption that I've made is that, you know, your principles and that's the hard part
+[ 1106.06s ->  1112.59s] that right there. That right there is everything because if your principles are a time varying
+[ 1112.59s ->  1120.19s] function, you're not going to be able to optimize anything. Just like I drew earlier, if you prioritize
+[ 1120.19s ->  1126.21s] instead something else, your utility function is going to look completely different. And that's
+[ 1126.21s ->  1133.16s] because you're operating with different principles. This is where it starts to look like you are acting
+[ 1133.16s ->  1141.16s] randomly. At some points, money is the most important thing in the entire world. And then it turns into
+[ 1141.16s ->  1146.30s] time with your friends and family. And then it's, oh, I want a healthy balance of both.
+[ 1147.00s ->  1157.06s] How can you optimize for that principle if it continues to change? That is what makes this difficult,
+[ 1157.06s ->  1168.00s] understanding what it is that you actually want. And this is the thing I think that this is something
+[ 1168.00s ->  1175.50s] that I hold incredibly close to the vest. And that's because it takes a significant amount of
+[ 1175.50s ->  1183.78s] probability mass in an extremely negative tail event for people to actually live the way that they
+[ 1183.78s ->  1192.40s] would be preferring. So my principles are fixed. I know exactly what it is I'm about. I know how much
+[ 1192.40s ->  1198.66s] time I wish to spend with my friends and family, how much money I consider to be acceptable, what I want
+[ 1198.66s ->  1204.64s] to do with my time. Producing these video lectures gives me the most amount of utility that I could ask
+[ 1204.64s ->  1221.00s] for. My principles are not a time varying function. Now, when I talk about probability and a tail event,
+[ 1221.00s ->  1229.14s] what am I saying? I'm saying, effectively, if I was to get hit by a bus tomorrow, if I was to get
+[ 1229.14s ->  1236.92s] diagnosed with a terminal illness, what would change for me? Would I quit my job and start a new
+[ 1236.92s ->  1244.92s] career or whatever? No. I know exactly what it is that I would prefer to be doing. And that is exactly
+[ 1244.92s ->  1250.54s] what I'm doing right now. That is exactly what I do leading up to this point twice a week, posting videos
+[ 1250.54s ->  1258.86s] on Tuesday and Friday on technical topics because I love it. That is my principle. That is what I am
+[ 1258.86s ->  1267.12s] optimizing for. Should I get diagnosed with that illness? I will post on Tuesday and Friday. Maybe
+[ 1267.12s ->  1273.60s] I'll try to get a few more videos out before, you know, I kick the bucket. But until then, that is what
+[ 1273.60s ->  1283.51s] I'm optimizing for. Why does it take a tail event to force principles into different people's lives?
+[ 1285.61s ->  1292.05s] Is it easier said than done? 100%. Who said it was going to be easy? But why all of the sudden,
+[ 1292.29s ->  1298.71s] when life becomes real, do we choose to fix our principles? Why don't we choose to fix our
+[ 1298.71s ->  1307.96s] principles while we can today? While we can do something about it? And sure, I'll get a whole
+[ 1307.96s ->  1315.06s] bunch of crazy comments on, you know, oh, Roman, you know, we hope you get this illness or we hope
+[ 1315.06s ->  1325.65s] you get hit by the bus. But that's satiating their utility function. And I'm actually quite content with
+[ 1325.65s ->  1331.33s] that because that justifies my argument. For whatever reason, that terrible action of leaving
+[ 1331.33s ->  1336.63s] that comment in this environment is giving them a response that benefits their utility function.
+[ 1337.39s ->  1343.53s] More power to them. Do I think that they're going to be happy? Do I think that they are going to be
+[ 1343.53s ->  1351.15s] content? No, but for whatever reason, it optimizes their utility function, which strengthens my argument.
+[ 1351.15s ->  1361.35s] So I'll find a lot of satisfaction in that. In any case, the purpose of this video today is to
+[ 1361.35s ->  1369.43s] give you more insight into how I think about things structurally, mathematically, philosophically.
+[ 1370.37s ->  1376.93s] There's nothing I'd rather be doing. I have principles. They're fixed based on a combination
+[ 1376.93s ->  1384.37s] of knowledge and experience. I refuse to work for anybody. I refuse to be told what to do. I want to
+[ 1384.37s ->  1392.51s] acquire as much knowledge and experience as I possibly can. I want to share as much of it as I
+[ 1392.51s ->  1399.59s] possibly can. I want to articulate it in an eloquent way, which is what I'm trying to do here. And
+[ 1399.59s ->  1409.80s] effectively, you can look at this as what I'm doing right now. I was at a local max. I want to continue
+[ 1409.80s ->  1418.04s] to grow and progress and lecture in this capacity and apply this mathematical structure, not just to
+[ 1418.04s ->  1425.24s] quantitative finance, but progress in general. Maybe I'm going to decrease my utility briefly
+[ 1425.24s ->  1434.60s] in order to make that progress. This is explorative behavior. I have no idea how this is going to
+[ 1434.60s ->  1442.90s] impact my discovery, my channel. You know, is my utility function to grow this channel to
+[ 1442.90s ->  1449.76s] millions and millions of people? Absolutely not. Do I want high impact? Do I want the people that
+[ 1449.76s ->  1455.20s] appreciate and understand this structure to use it if it's useful? Yeah. Use it if it's useful.
+[ 1455.24s ->  1461.82s] If it's not, pitch it. Get a different model for your behavior. That's totally acceptable.
+[ 1462.32s ->  1469.60s] But for me and for my growth, this perfectly explains what it is that I'm doing right now.
+[ 1469.82s ->  1475.74s] I have an environment that I've been acting in, producing content in the quantitative finance
+[ 1475.74s ->  1481.80s] space Tuesday and Friday every single week. Now it's a Sunday video, right? I've had explorative
+[ 1481.80s ->  1488.04s] videos in the past where I tried to do weekly market reviews that didn't do particularly well. I wasn't
+[ 1488.04s ->  1495.02s] particularly interested in doing them and that was explorative behavior. Maybe that led me down here,
+[ 1495.18s ->  1503.80s] decreased my utility temporarily, but hey, I tried and now I'm trying again, but I'm producing something
+[ 1503.80s ->  1511.34s] that I care far more about, which I believe explains a tremendous amount of the behavior
+[ 1511.34s ->  1519.08s] that we observe in our peers, our colleagues, the list goes on. The takeaway from this video,
+[ 1519.32s ->  1528.46s] if it's anything at all, is why do we have to have probability mass in a tail event for us to fix and
+[ 1528.46s ->  1536.68s] operate under principles that we know we would prefer to operate under anyway today? That's the
+[ 1536.68s ->  1546.74s] objective here is to provide some structure to understand and articulate that idea. I've, it's not
+[ 1546.74s ->  1558.22s] easy. You know, I worked my entire life seemingly to become a quant and I did not like taking orders.
+[ 1558.22s ->  1564.18s] I loved mathematics and I still do, which is exactly why I do what I do on a daily basis,
+[ 1564.18s ->  1575.45s] but I quit and everyone thought that I was crazy. Immediately losing status among friends and family,
+[ 1575.79s ->  1586.59s] losing money, right? But my principles, my principles were far more important to me.
+[ 1586.59s ->  1596.61s] I didn't need probability mass in a tail event to fix those principles and find the utility function
+[ 1596.61s ->  1605.64s] that I want to operate under. So I hope that gives you a better understanding of how I operate,
+[ 1606.38s ->  1615.01s] how I think about things. I hope you find this structure useful. I hope you enjoyed this video.
+[ 1615.01s ->  1620.53s] I hope you learned something. This is certainly different, but like I said, a very important
+[ 1620.53s ->  1628.09s] topic to me because I believe it explains a lot of the behavior that we observe. The idea of being
+[ 1628.09s ->  1634.33s] very successful by every metric, but miserable. You're not principled. You were optimizing somebody
+[ 1634.33s ->  1642.89s] else's utility function. The idea of by other people's metrics being very happy because you're principled
+[ 1642.89s ->  1650.17s] and you've optimized your utility function. And then the idea of being stuck in a locality,
+[ 1650.17s ->  1659.33s] just being miserable because you don't know that you need explorative action to grow. So that being
+[ 1659.33s ->  1669.84s] said, again, I hope you enjoyed. I want to thank you so much for watching. And if it satisfies your
+[ 1669.84s ->  1675.58s] utility function and it's an optimal action for you, certainly let me know in the comments below if
+[ 1675.58s ->  1682.90s] you'd like to see more videos like this one in the future. Other than that, again, thanks so much
+[ 1682.90s ->  1686.58s] for watching and I'll see you in the next video.

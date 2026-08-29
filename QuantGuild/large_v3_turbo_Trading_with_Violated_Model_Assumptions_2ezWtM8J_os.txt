@@ -1,0 +1,246 @@
+[    0.46s ->     6.49s] so you've built a trading model that you are satisfied with you've run the back test the
+[    6.49s ->    12.65s] back tests look fantastic you've built an algorithmic way to deploy it in the live
+[   12.65s ->    18.93s] markets after all said and done one thing is for certain and one thing only and that is your model
+[   18.93s ->    25.09s] is incorrect now just because your model is incorrect does not preclude you from making
+[   25.09s ->    29.85s] money it's a very important distinction and hopefully as you've seen in my more recent
+[   29.85s ->    35.25s] videos this is going to be the case that all models are wrong some are in fact useful and
+[   35.25s ->    40.73s] you can in fact generate pnl with a model that is fundamentally incorrect there's a lot of facets
+[   40.73s ->    47.85s] of game theory involved there's a lot of facets of statistics and stochastic processes but we're not
+[   47.85s ->    53.03s] going to dive into the the technical details here in general what i want to do in this video is i want
+[   53.03s ->    59.67s] to talk about trading with violated model assumptions because in any case when you develop
+[   59.67s ->    65.17s] some sort of model whether it's for pricing trading what what have you your assumptions are most
+[   65.17s ->    70.61s] likely going to be violated in practice now why is this actually useful information because
+[   70.61s ->    76.61s] violations of particular assumptions give you information as to whether or not your estimated
+[   76.61s ->    83.11s] quantity is overestimated or underestimated so what we're going to do is we're going to walk through
+[   83.11s ->    91.17s] different ideas in the modeling space we're going to talk about parametric models in this idea of kurtosis
+[   91.17s ->    96.83s] we're going to talk about independence we're going to talk about stationarity and we're going to look at
+[   96.83s ->   104.27s] some implications in trading in both the investing sense and the algorithmic trading sense we'll start
+[  104.27s ->   111.37s] with this idea of excess kurtosis before we get into excess kurtosis what the heck is kurtosis well
+[  111.37s ->   117.15s] typically if we look at a bell curve if we look at a gaussian and normal distribution all of those
+[  117.15s ->   123.97s] are equivalent and we look at the tails a measure of peakedness of that distribution is something
+[  123.97s ->   130.71s] called kurtosis the fourth statistical moment now the kurtosis of a normal distribution is three
+[  130.71s ->   139.83s] that is anything in excess of three is called excess kurtosis so typically when we visualize a return
+[  139.83s ->   148.39s] distribution we see that the tails are larger than the normal distribution parameterized by that return
+[  148.39s ->   156.17s] series mean and standard deviation what do i mean by this well if i take a look at the kurtosis of this
+[  156.17s ->   165.43s] return series you can see that the kurtosis of amazon from 2021 to 2022 daily returns is 6.35 that means
+[  165.43s ->   173.87s] it's excess kurtosis is 3.35 so in excess of the normal distribution how much kurtosis is there in other
+[  173.87s ->   183.39s] words how fat are those tails what are the implications of this in trading if i'm investing and i have a stock
+[  183.39s ->   190.89s] portfolio typically i'm concerned about how much money i could lose given any specific time period and the
+[  190.89s ->   198.99s] likelihood of of losing that money common measure for this is value at risk what i can do is i can take
+[  198.99s ->   205.69s] the mean and standard deviation of my portfolio or of a stock and i can compute this measure of risk i can
+[  205.69s ->   213.63s] say hey given some confidence threshold 99 confidence 95 confidence whatever it is how much money am i
+[  213.63s ->   222.53s] likely to lose or at max it essentially puts a bound on the the problem within a given given time period
+[  222.53s ->   229.13s] so in other words let's say that i have a portfolio let's say the portfolio consists of a variety of
+[  229.13s ->   234.13s] different stocks and i take the average return over the past year and i also compute the standard
+[  234.13s ->   242.51s] deviation then i'm going to be able to put a bound on the likelihood of a loss exceeding that specific
+[  242.51s ->   250.39s] value so i'm 99 confident that my portfolio won't lose more than 20 within a given year for example
+[  250.39s ->   259.94s] the problem with this is that we are using a normal distribution a gaussian we are imposing that on the
+[  259.94s ->   266.52s] structure of the return space when in reality this is not the case now kurtosis is not the only assumption
+[  266.52s ->   271.42s] being violated there independence is also being violated and also stationarity but we're going to get to
+[  271.42s ->   275.78s] those we're going to talk about this mainly in the context of kurtosis so what i've done here is i've
+[  275.78s ->   282.24s] plotted the return distribution for general motors relative to a normal distribution parameterized by
+[  282.24s ->   289.28s] that in sample mean and standard deviation and what you can see here is that it is not exactly normal this
+[  289.28s ->   296.58s] is not fitting this line at all moreover if you look at the empirical versus normal value at risk you can
+[  296.58s ->   302.88s] see that it over and underestimates it at different confidence thresholds so it is not even a great
+[  302.88s ->   311.14s] measure for the actual value at risk of your portfolio in sample if you were using this in the live markets on
+[  311.14s ->   317.48s] your live portfolio you wouldn't even have this in sample data it would be even more insulting this
+[  317.48s ->   324.86s] assumption being violated and that's precisely what i have here i have the previous year's worth of data
+[  324.86s ->   331.66s] being used to compute the value at risk for the following year and you can see the parametric
+[  331.66s ->   337.60s] means of computing the value at risk severely underestimates the true value at risk for that
+[  337.60s ->   343.48s] following year so in other words if i use data from 2021 to try to inform 2022 look at this error gap
+[  343.48s ->   350.16s] for each confidence threshold this is the idea of excess kurtosis this is the idea that we are
+[  350.16s ->   356.66s] underestimating tail risk now we're underestimating tail risk sure on both sides in some cases that is
+[  356.66s ->   362.58s] if we were to actually look at the probability of those extreme values occurring relative to a normal
+[  362.58s ->   368.60s] distribution the probability of of values in that region occurring will be arbitrarily higher but on
+[  368.60s ->   375.80s] both sides of that distribution so it's important to understand that in the context of this assumption
+[  375.80s ->   383.90s] being violated it's not just in one direction you may see in some cases the parametric value at risk
+[  383.90s ->   389.86s] is going to extremely overestimate the value at risk and that comes from the heavy tails on both sides
+[  389.86s ->   397.14s] so it's important to understand this violation because when you see extreme values in either case
+[  397.14s ->   403.48s] it's going to mess up your value at risk you might be drastically underestimating your value at risk
+[  403.48s ->   410.00s] or drastically overestimating your value at risk so in the context of investing that's why this measure
+[  410.00s ->   416.32s] is important what is a more appropriate measure of your value at risk there's a lot of work being done
+[  416.32s ->   422.12s] in this space there's a lot of work in a generative context attempting to generate returns that are
+[  422.12s ->   428.92s] similar to different environments or regimes you've seen in the past and there's there's work being done
+[  428.92s ->   435.90s] in the generative machine learning sense for this this level too but nevertheless it's important to keep
+[  435.90s ->   442.14s] in mind that all of these models will inform different values based on the assumptions that are being made
+[  442.14s ->   450.56s] very important to know it's both over and under estimation depending on how much time in the return
+[  450.56s ->   457.66s] series for the parametric model is being spent on either side of that distribution many times in statistics
+[  457.66s ->   466.36s] we talk about independent and identically distributed draws there's a lot wrong with assuming iid sampling
+[  466.36s ->   476.44s] especially in a portfolio let's talk about why well first is we know that in the context of excess
+[  476.44s ->   482.36s] kurtosis when things get bad things get really bad so the likelihood of extreme draws is higher relative
+[  482.36s ->   488.14s] to something like a normal distribution sure that can be the case but we often talk about this idea
+[  488.14s ->   495.10s] of trend and i use air quotes because i use that idea loosely but when things get bad things tend to
+[  495.10s ->   501.46s] ride bad like a roller coaster downhill so what i mean is we see tariffs come out for the first time
+[  501.46s ->   507.06s] in quite some time and everything takes a hit right the general market takes a hit everything
+[  507.06s ->   514.70s] idiosyncratically kind of dissipates and the market drives everything downhill that is a violation of
+[  514.70s ->   521.24s] independence right everything is moving together in one direction so anytime you're assuming that
+[  521.24s ->   527.74s] these returns are iid or even independent from one another whether it's on a stock by stock basis or a
+[  527.74s ->   534.96s] series of returns for the same stock being independent we know this this clearly is just not the case and
+[  534.96s ->   539.62s] depending on the regime and the macro regime and the administration and decisions being made and
+[  539.62s ->   545.06s] and all of these different things this will be more or less true at different points in time
+[  545.06s ->   552.00s] so everything in this video is not in an absolutist sense because based on the current market conditions
+[  552.00s ->   557.62s] the interpretation of this independent structure is going to change maybe things are more independent
+[  557.62s ->   564.06s] at some times and less independent at others that is definitely true but what is this idea of
+[  564.06s ->   570.42s] a correlation structure well we've talked in the past about principal components pertaining to
+[  570.42s ->   578.56s] different facets of risk for a stock and what i want to do here is i want to show you how this correlation
+[  578.56s ->   586.42s] structure exists and can hurt your interpretation of risk it can hurt your interpretation of diversification
+[  586.42s ->   596.72s] but it can also be used to your advantage to develop portfolios that are say neutral to different facets of risk
+[  596.72s ->   603.62s] so for starters what i have here is i have microsoft amazon apple and general motors i'm going to scroll on down
+[  603.62s ->   609.02s] here and i'm going to conduct a principal component analysis you can see that within the first two
+[  609.02s ->   615.32s] principal components i've explained 80 percent of the variation among the return space first three over
+[  615.32s ->   621.22s] 90 so that's a significant amount of variation in the past we've analyzed this idea of a market component
+[  621.22s ->   627.84s] an industry component and an idiosyncratic component what i mean is roughly 60 of the variation in that
+[  627.84s ->   635.24s] return space is explained by some sort of market component and this can be seen by looking at all of the loadings
+[  635.24s ->   640.02s] on each of the individual stocks and if you take a look at the correlation with the first principal
+[  640.02s ->   646.52s] component and the s&p 500 returns there's a strong correlation between the two that is as the first
+[  646.52s ->   653.40s] principal component increases the returns tend to increase for the s&p 500 if you look at the second
+[  653.40s ->   659.62s] component the industry component should likely be less correlated with the s&p 500 this is also the case
+[  659.62s ->   665.28s] and the idiosyncratic component should probably be even less correlated with the s&p 500 and this is also
+[  665.28s ->   672.27s] the case so in this context of lack of independence right what we really want to do is we want to find
+[  672.27s ->   678.51s] a way to isolate then the independent components so in a trading context right if we are trying to
+[  678.51s ->   683.07s] develop some sort of trading strategy maybe it's some sort of pairs trading strategy then this
+[  683.07s ->   689.39s] correlation structure we want it to exist this covariance structure we want it to exist but in the
+[  689.39s ->   695.55s] context of diversification we really don't right we really don't want correlation among the stocks to
+[  695.55s ->   701.23s] exist we want it to essentially be neutral right that's the whole point is that the idiosyncratic
+[  701.23s ->   706.43s] components kind of cancel each other out but given that this correlation structure exists is there a way
+[  706.43s ->   715.23s] to extract perhaps the orthogonal elements such that we can trade a neutral portfolio here is one way to do
+[  715.23s ->   719.79s] that so if we take a look at these principal components right we know that if we develop a
+[  719.79s ->   726.75s] portfolio of all of these stocks and we're trying to diversify clearly we have this problem that the
+[  726.75s ->   732.99s] market component is not going to be diversified away that is we can diversify away this idiosyncratic
+[  732.99s ->   739.47s] and industry component but we can't diversify away this market component but is there a way that we can
+[  739.47s ->   746.59s] develop a weight in these stocks such that we diversify away that market component in other
+[  746.59s ->   752.99s] words can we have exposure just to this idiosyncratic component essentially that's what we're going to do
+[  752.99s ->   759.55s] with pc3 so what we're going to do is we are going to develop a portfolio based on the weight that is the
+[  759.55s ->   766.75s] linear combination of the stocks proposed by principle component three that is the idiosyncratic exposure
+[  766.75s ->   773.55s] to develop our portfolio and what you'll see here is the rolling correlation between the s p 500 return
+[  773.55s ->   780.43s] and the principle component three is roughly means zero maybe a little negative but look at the equity
+[  780.43s ->   786.11s] curves you have the equity curve of the s p 500 during this interval and the equity curve of our pc3
+[  786.11s ->   795.26s] portfolio we're rich we're genius this is perfect just go net long pc3 whatever the factors are whatever the
+[  795.26s ->   802.46s] loadings are for each of the stocks and we are set we're market neutral we're orthogonal to the market
+[  802.46s ->   808.78s] return and this is great okay that's definitely not what's happening here right what's happening
+[  808.78s ->   814.70s] here is we have idiosyncratic exposure and idiosyncratic exposure outperform the s p in this
+[  814.70s ->   819.74s] particular selection of stocks during this point in time that's precisely what we're looking at here
+[  819.74s ->   825.26s] moreover this principle component analysis is done in sample that's not to say that you couldn't
+[  825.26s ->   830.06s] extend this and conduct further research and develop some sort of portfolio that is in fact
+[  830.06s ->   837.66s] productive out of sample on a rolling basis but that's a video for another day what i've done here is
+[  837.66s ->   843.02s] i've just shown you that this independence assumption though it's violated in practice
+[  843.66s ->   849.26s] there are tools that we can use to get closer to that actual independence and what we've done here is
+[  849.26s ->   853.66s] we've used principal component analysis to do that and determine some sort of linear combination of
+[  854.38s ->   862.22s] assets in our portfolio to accomplish this and develop a portfolio that is maybe closer to this idea of
+[  862.22s ->   870.14s] of independent now what are some of the implications of violations of independence in the sense that we
+[  870.14s ->   878.78s] don't use tools like pca well you can look at 2008 where you know everything in a portfolio is maybe
+[  878.78s ->   883.74s] assumed to be uncorrelated with one another and and risk metrics tell you one thing when in reality
+[  883.74s ->   889.74s] the likelihood and probability of loss and extreme loss in that case was severely underestimated and
+[  889.74s ->   894.86s] that's the problem with this independence assumption the independence assumption is that
+[  894.86s ->   899.74s] you're underestimating risk again this is going to go in both directions relative to your period
+[  899.74s ->   905.66s] relative to the correlation in that period but nevertheless it's going to over and underestimate risk so
+[  905.66s ->   914.70s] in this assumptions violated setting we really need to understand which facet or which assumption is
+[  915.98s ->   925.82s] responsible for this estimation error right because if we have a regime where the tails are particularly fat and
+[  925.82s ->   932.38s] something happens right that's going to say one thing and a period of high correlation and a period of
+[  932.38s ->   937.50s] of these correlated assets moving together in one direction is going to say say another thing because
+[  937.50s ->   943.26s] that's a lack of independence versus tail risk and that's exactly what we're seeing here relative to
+[  943.26s ->   949.10s] the first example with the excess kurtosis now something to keep in mind in this setting here is
+[  949.10s ->   955.50s] this is in sample if we were to do this out of sample what would this look like this brings us to
+[  955.50s ->   962.22s] number three this brings us to non-stationarity and time varying parameters this will hopefully bring
+[  962.22s ->   968.22s] everything together that we've talked about up until this point but the idea of non-stationarity is in a
+[  968.22s ->   975.58s] parametric sense all of these parameters are changing over time their stochastic processes themselves
+[  975.58s ->   981.98s] they don't converge as time marches on this makes sense if you just think about it logically and you
+[  981.98s ->   988.78s] think about a company in the early 2000s relative to to now it's not the same company so would you
+[  988.78s ->   995.82s] assume that the returns would converge to a mean value given 25 years of changes at that company likely
+[  995.82s ->  1001.58s] no it's completely different regime now right macro regime administration and that company in general
+[ 1001.58s ->  1006.30s] is completely different so that's just one argument for why these parameters change over time
+[ 1006.30s ->  1013.74s] but what are the implications well if we take a look this is the exact same strategy that i just
+[ 1013.74s ->  1018.62s] visualized here i've taken the principal component three and i've constructed a linear combination of
+[ 1018.62s ->  1025.02s] assets in my portfolio and i am trading that as my portfolio and this is the equity curve subsequently
+[ 1025.02s ->  1031.82s] if i did this out of sample for the following five years so now i'm looking at 2022 to 2025 i'm using
+[ 1031.82s ->  1041.50s] information from 2022 to construct the weights going forward and here what we have is the s p 500 clearly
+[ 1041.50s ->  1050.38s] outperforms that pc3 portfolio so even though in this instance idiosyncratic exposure outperformed s p 500
+[ 1050.38s ->  1057.58s] or market exposure here it's not the case at all idiosyncratic exposure did not outperform in fact it likely
+[ 1057.58s ->  1064.54s] changed because the levels and that is not just the levels but also the loadings on each of the factors
+[ 1064.54s ->  1070.46s] are going to change over time for the principal component so that is the idea also of non-stationarity
+[ 1070.46s ->  1075.90s] is that it's not going to converge as time marches on so those loadings are also going to change
+[ 1075.90s ->  1082.14s] which is why this portfolio may not even be an accurate representation of the true pc3 portfolio
+[ 1082.14s ->  1090.58s] just something to keep in mind in that time variant sense moreover when we start to look at different
+[ 1090.58s ->  1096.42s] mean levels of returns you can see that based on how we compute the mean we're going to get a different
+[ 1096.42s ->  1103.06s] value and there is no one correct value you can't just look up hey what was the mean return of apple
+[ 1103.06s ->  1108.74s] stock this year right how do you compute that are you computing that on a rolling basis is it the
+[ 1108.74s ->  1115.22s] cumulative average is it going to be you know some sort of weighted measure there's 10 million and
+[ 1115.22s ->  1119.30s] one different ways to compute that and that's because it's a time varying parameter so here you
+[ 1119.30s ->  1125.22s] can see that the cumulative mean is going to kind of stabilize for this period around a negative value
+[ 1126.26s ->  1131.22s] but if the s p 500 stabilized around a negative value we would certainly be hurting more than we are
+[ 1132.10s ->  1137.62s] in general and that's just not the case right for this particular period it ended up being more
+[ 1137.62s ->  1142.90s] negative and as time marches on it's going to end up being closer to zero and more positive this is
+[ 1142.90s ->  1149.54s] from 2021 to 2022 if you look at 2022 to 2025 this is absolutely not the case moreover look at these
+[ 1149.54s ->  1154.98s] measures we look at the 10-day rolling mean we look at the 30-day rolling mean they track completely
+[ 1154.98s ->  1162.02s] different levels so this is the idea of the the non-stationarity and this is where if you try to
+[ 1162.02s ->  1168.10s] parameterize a distribution by the some sort of historic mean or some sort of historic standard
+[ 1168.10s ->  1173.54s] deviation because remember you need to use historic mean to compute the historic standard deviation
+[ 1174.26s ->  1181.70s] all of these are wrong in general right and then if you use a parametric model you assume normality
+[ 1181.70s ->  1186.58s] or something like that you parameterize it based on this data which is already wrong now you're double
+[ 1186.58s ->  1192.66s] wrong and then you start to look at things like okay we're assuming that it does follow this distribution
+[ 1192.66s ->  1198.10s] we're assuming that that mean is correct we're also going to assume independence what in the world is
+[ 1198.10s ->  1205.06s] happening all of these stack on top of each other to create more and more wrong inferences so
+[ 1206.34s ->  1213.22s] that's really the the purpose of this video is to show under the hood what what is actually happening
+[ 1213.22s ->  1220.29s] and and what are the implications of these violations in practice so in the context of
+[ 1220.29s ->  1226.69s] using some sort of normal distribution let's look at all of the layers as to to why it's wrong so
+[ 1227.57s ->  1233.70s] we start with this idea of estimating a mean we start with this idea of estimating mean return
+[ 1234.82s ->  1239.46s] in order to measure variance standard deviation any other statistical moment we need the mean
+[ 1240.10s ->  1245.54s] and we know it's not a stationary process we know that mean is not going to converge to a specific
+[ 1245.54s ->  1250.66s] value maybe more measures are more correct than others i probably don't want to use data from early
+[ 1250.66s ->  1259.14s] 2000s to inform apple stock return for this year right but nevertheless we have to discern some sort of
+[ 1259.14s ->  1267.49s] mean level okay so that first mean level is incorrect then we need to assume some sort of distribution
+[ 1267.49s ->  1274.42s] if we're using some sort of parametric model so we assume normality and if we assume normality
+[ 1274.42s ->  1279.94s] we have to parameterize that distribution by a mean and variance and that mean and variance is coming
+[ 1279.94s ->  1287.44s] from this flawed historic data okay but we also know that that normal distribution doesn't exhibit the
+[ 1287.44s ->  1293.68s] kurtosis that we've seen empirically so now you're double wrong the mean is wrong and your tail
+[ 1293.68s ->  1303.90s] risk estimation is also wrong okay well what happens when we analyze the parametric model for
+[ 1303.90s ->  1310.54s] all of the stocks in our portfolio we try to look at something like the value at risk we're assuming that
+[ 1310.54s ->  1316.06s] everything is iid and there's no correlation structure you can always impose a correlation
+[ 1316.06s ->  1319.10s] structure you can always do things to correct these assumptions but that's not the point
+[ 1319.90s ->  1327.02s] if we look at it just in the context of a basic normal distribution we're assuming that the draws
+[ 1327.02s ->  1333.42s] are iid and that's also incorrect for a number of different reasons because the parameters change
+[ 1333.42s ->  1338.86s] over time the draws themselves are not independent there could be this idea of trend if everything is
+[ 1338.86s ->  1343.42s] bad and things keep getting worse then there is going to be some covariance structure
+[ 1343.42s ->  1352.46s] all of these things make these models incorrect so it's very important that you understand where
+[ 1353.10s ->  1360.70s] the incorrect and the error contribute to the different levels and measurement errors in the
+[ 1360.70s ->  1368.54s] quantities that you are trying to observe and measure because if you know that your parametric model
+[ 1368.54s ->  1376.86s] is going to underestimate risk on both sides of the distribution then your value at risk measures may
+[ 1376.86s ->  1383.26s] be severely over and underestimating for a particular period same thing with the correlation structure if
+[ 1383.26s ->  1390.30s] there is no covariance structure then you may be underestimating the risk when in reality there is some
+[ 1390.30s ->  1396.14s] sort of covariance structure and the risk measure should be higher same thing with this non-stationarity if a
+[ 1396.14s ->  1404.45s] mean level is lower than it is going to be then you may be underestimating your your risk or
+[ 1404.45s ->  1410.05s] overestimating your risk is going to be overestimating versus underestimating relative to what that true
+[ 1410.05s ->  1418.29s] level is going to be for the following period there really is no correct way to measure these values for
+[ 1418.29s ->  1424.29s] your models it's all going to be left to what you are trying to do the assumptions you're willing to make
+[ 1424.29s ->  1430.77s] and how you want to handle how they're violated in practice and your interpretation of the violations
+[ 1430.77s ->  1436.13s] in practice so here what i've done is i've also visualized the value at risk this is the one day
+[ 1436.13s ->  1442.93s] value at risk for a portfolio but to measure the mean what you'll see maybe in a very basic undergraduate
+[ 1442.93s ->  1449.97s] finance class is hey let's just measure the daily return for the past year and use that okay but is that
+[ 1449.97s ->  1455.89s] really a reasonable measure for that level of that distribution well here what we're doing is we're
+[ 1455.89s ->  1464.69s] looking at a 30 day window 60 day 120 and 252 day window we're looking at the 90 95 and 99 value at risk
+[ 1464.69s ->  1469.73s] and what we have here is a series of different measures which one is going to be the most correct
+[ 1469.73s ->  1476.21s] well that's entirely arbitrary to the period that you're analyzing both in and out of sample so this is
+[ 1476.21s ->  1482.45s] going to come down to just the overall modeling process where you're going to have to go through
+[ 1482.45s ->  1486.37s] you're going to have to collect some data you're going to have to develop this idea of a model you're
+[ 1486.37s ->  1491.25s] going to have to fit this model to some sort of in sample data you're going to validate this model and
+[ 1491.25s ->  1496.69s] you're going to test this model on some sort of out of sample data and then you're going to compare
+[ 1496.69s ->  1502.77s] this to a different model and that is just going to be the research process in general some closing
+[ 1502.77s ->  1508.69s] thoughts relative to this idea of trading with violated model assumptions just because your
+[ 1509.33s ->  1514.21s] assumptions are violated does not mean that you can't make money but it is important to understand
+[ 1514.21s ->  1521.33s] how this impacts your risk profile how this impacts your profitability how these regimes
+[ 1521.33s ->  1529.09s] and structural shifts changing over time may impact the overall viability of your model and
+[ 1529.09s ->  1535.17s] this is why the trading landscape is really a full-time job there is no set and forget
+[ 1535.17s ->  1540.05s] trading system where you just turn it on and it prints money for you there are different strategies
+[ 1540.05s ->  1547.09s] that you run under different conditions and market climates and whatnot and the strategies have
+[ 1547.81s ->  1553.73s] different types of edges and whatnot and when you deploy those strategies under certain regimes it
+[ 1553.73s ->  1559.33s] starts to turn into this art of okay we've seen this before it's likely that this edge is still
+[ 1559.33s ->  1565.57s] there or we haven't really seen this type of strategy deployed in this environment before
+[ 1565.57s ->  1571.97s] maybe we should hedge maybe we shouldn't deploy this strategy in this environment and it starts
+[ 1571.97s ->  1578.93s] to become a bit of an art and discretionary rather than just simply input output when you're trading
+[ 1578.93s ->  1585.09s] with you know maybe something like implied volatility what causes a spike in implied vol for you to want
+[ 1585.09s ->  1592.61s] to collect some sort of risk premium may and you may be inclined to to not trade that strategy right so
+[ 1592.61s ->  1599.25s] if something like an idiosyncratic risk for that firm caused a spike in implied vol maybe you're like
+[ 1599.25s ->  1604.77s] oh we've seen this before it's all good it's going to normalize we'll collect the spread but what if it's
+[ 1604.77s ->  1610.85s] some sort of macro factor something like tariffs which you you don't see all the time is that vol going
+[ 1610.85s ->  1616.45s] to normalize in time for you to collect some sort of of spread or profit that's exactly the work that
+[ 1616.45s ->  1628.45s] goes into trading that's exactly the art that it is

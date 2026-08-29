@@ -1,0 +1,407 @@
+[    0.46s ->     8.84s] markov chains are extremely popular probability models due in part to their versatility they can
+[    8.84s ->    15.60s] be applied in so many different ways they can take what seems to be a very very difficult problem
+[   15.60s ->    23.12s] in probability and turn it into something that is so easily solved so it's no wonder i see
+[   23.12s ->    29.10s] everywhere in my discord and my youtube comment section requests for a video on markov chains
+[   29.10s ->    34.94s] applied to quantitative finance and of course advanced extensions these regime switching models
+[   34.94s ->    40.04s] this idea of a hidden markov model so on and so forth but we got to start somewhere so what we're
+[   40.04s ->    46.40s] going to do in this video is take a look at markov chains in the context of quant finance to motivate
+[   46.40s ->    51.70s] and understand this idea of a markov chain we're going to look at a real world example from
+[   51.70s ->    57.06s] quantitative finance this is a model that a quant would actually build in the real world in fact i've
+[   57.06s ->    62.82s] actually seen it built and deployed in this capacity at a firm so what we're going to do is
+[   62.82s ->    68.64s] start with this idea of a random variable talk about then this idea of random variables over a
+[   68.64s ->    74.30s] series of steps a stochastic process then we're going to talk about this independence assumption
+[   74.30s ->    81.08s] and realize very quickly in our real world example this independence assumption is not going to be
+[   81.08s ->    86.38s] sufficient for our model and that is where markov chains come in then we'll talk about markov chains
+[   86.38s ->    93.06s] we'll talk about the assumptions we'll talk about the application and we'll wrap up with some closing
+[   93.06s ->    98.08s] thoughts and future topics very rarely when you're building some sort of quant model is it safe to
+[   98.08s ->   104.70s] assume independence however when it comes to a quant guild video it is always safe to assume that you
+[  104.70s ->   109.96s] will have access to a jupiter notebook this jupiter notebook will be linked in the description below i will
+[  109.96s ->   115.26s] also post it to the quant guild library on github where you can find all of my jupiter notebooks and
+[  115.26s ->   120.78s] associated youtube videos along with all of the source code for my quant builds at the top of this
+[  120.78s ->   126.06s] jupiter notebook you'll notice some related quant guild videos applying statistics to finance and
+[  126.06s ->   131.90s] trading covering ideas like retail versus institutional trading trading versus investing
+[  131.90s ->   139.64s] time series analysis its place in quantitative finance why the expectation or a non-linear conditional
+[  139.64s ->   147.24s] expectation in a machine learning sense is the best forecasts we can produce in the face of uncertainty
+[  147.24s ->   154.10s] and randomness all of these videos applying statistics are certainly candidates for applications
+[  154.10s ->   161.48s] of markov chains so if you are unfamiliar with any of these ideas especially the idea of applying statistics
+[  161.48s ->   167.56s] in the space this idea of overfitting this idea of forecasting i highly recommend that you check these videos
+[  167.56s ->   173.56s] out before approaching one like this moreover these videos certainly take a lot of effort to create
+[  173.56s ->   178.28s] so if you'd like to help support the channel so i can continue to create videos just like this one
+[  178.28s ->   184.04s] please like comment subscribe share check out channel membership it helps me out tremendously it is so
+[  184.04s ->   191.00s] greatly appreciated and if you'd like to master your quantitative skills check out quant guild.com maybe you
+[  191.00s ->   197.08s] come from a background in business economics physics and aren't too sure where to get started on your
+[  197.08s ->   201.88s] quant journey maybe you are a working professional and you're looking to sharpen those quantitative
+[  201.88s ->   208.52s] skills in any case quant guild is for you we have over 90 quant lessons in math probability
+[  208.52s ->   213.88s] finance and adaptive practice engine that scales with your skill level so you can progress to more and
+[  213.88s ->   220.52s] more difficult questions with gamified rank based progress interview questions with fully worked
+[  220.52s ->   228.92s] solutions trading games coming soon courses from a to z in math statistics coding and all that's included
+[  228.92s ->   234.20s] with quant guild membership and you can get started right now for free so if you'd like to help support
+[  234.20s ->   241.00s] the channel and master your quantitative skills check out quant guild.com without further ado let's get
+[  241.00s ->   248.04s] started with this idea of a random variable so we can build towards this idea of a stochastic process
+[  248.60s ->   257.16s] and this real world example from quant finance so what are random variables and why do we use them well
+[  257.16s ->   264.68s] anytime the outcome of an event is uncertain and we want to consider various possible states of the world
+[  265.24s ->   271.64s] we generally model these events as random variables now whether or not these events are truly random is
+[  271.64s ->   277.96s] subject for discussion that's definitely a topic for another time but in any case when we go about
+[  278.12s ->   283.40s] modeling this uncertainty as a random variable we typically assume some sort of distribution
+[  284.04s ->   290.60s] and what that does is it tells us something about the likelihood of different outcomes for that
+[  290.60s ->   296.12s] particular event so what does this actually look like well here i have three different random variables i
+[  296.12s ->   303.40s] have x y and z and these all have different distributions so x is a normally distributed random
+[  303.40s ->   311.88s] variable y is distributed via a binomial distribution and z a Bernoulli now it's tempting to treat these
+[  311.88s ->   320.68s] variables like deterministic quantities from algebra pre-calc calc so on and so forth but x y and z
+[  320.68s ->   327.80s] here are not numbers they are distributions whenever you have a random variable whether it's in an equation
+[  327.80s ->   335.00s] or you're defining it as such you need to think of these letters literally as distributions they represent
+[  335.64s ->   341.80s] sets of possible outcomes it's not just one outcome so whenever you see it in an equation think hey
+[  342.36s ->   350.04s] that letter literally represents a distribution a set of possible outcomes all with different probabilities
+[  350.04s ->   357.16s] and likelihoods so i actually plot these distributions for you here we have x we have y and we have z
+[  357.80s ->   364.44s] all of which follow different distributions so this letter x literally means this distribution
+[  364.44s ->   370.20s] y means this one and z means this run this one we have a normally distributed random variable
+[  370.76s ->   377.96s] binomially distributed and a Bernoulli distributed random variable all three of these are fully
+[  377.96s ->   385.08s] characterized by their distribution functions and those distribution functions enable us to visualize
+[  385.64s ->   393.96s] the subsequent distributions just as we see them here so these random variables are literally these charts
+[  393.96s ->   400.04s] as we see them here now it's really important to note whenever we define something as a random variable
+[  400.04s ->   406.12s] we can't say anything about what the outcome is going to be it just tells us something about the
+[  406.12s ->   413.80s] likelihood of different outcomes so let's look at z for example the distribution is fully characterized
+[  413.80s ->   423.24s] by this bar chart there's a 70 chance of observing one from z or a 30 chance of observing zero now even
+[  423.24s ->   433.72s] though it's extremely unlikely we could still see 10 zeros in a row from z so when it comes to modeling
+[  433.72s ->   443.88s] random events with random variables all we're trying to do is get a sense of the likelihoods associated with
+[  443.88s ->   450.68s] different outcomes that's all we're trying to do so if i'm looking at returns in my portfolio for example
+[  450.68s ->   457.48s] i'm probably going to consider hey what is the likelihood of observing an extreme loss maybe
+[  457.48s ->   464.28s] something like 10 20 percent in a day or a week that the likelihood of that event is definitely going
+[  464.28s ->   470.76s] to be of interest to me and if it's not to you then maybe you shouldn't be a portfolio manager but
+[  470.76s ->   478.20s] in any case this is how we use randomness in practice we're trying to answer these questions
+[  478.76s ->   484.68s] about different states of the world by tying different likelihoods to these certain outcomes
+[  484.68s ->   489.96s] so what is the elephant in the room the question that your finance professor isn't going to want to
+[  489.96s ->   496.12s] answer well how do we go about coming up with these probabilities if we're interested in all of these
+[  496.12s ->   502.60s] states of the world then how do we effectively come up with a random variable the parameters for that
+[  502.60s ->   510.44s] random variable or the likelihoods of all of these outcomes that are uncertain do we use historic data
+[  511.08s ->   517.32s] but i thought historic data was an indicative of future performance all those data points already
+[  517.32s ->   523.88s] happened it says nothing of what's going to happen i mean think of it this way if we have apple and
+[  523.88s ->   529.16s] historic data was a reasonable proxy for what was going to happen then how far back do we
+[  529.16s ->   535.40s] look do we look back a week a month a year five years ten years apple was an entirely different
+[  535.40s ->   542.60s] company ten years ago not to mention that the overall macro climate the administration everything
+[  542.60s ->   549.64s] was entirely different ten years ago that is nowhere near reasonable to include that in a model for
+[  549.64s ->   558.76s] today so what i'm getting at here is the data generating distributions for these uncertain events change over time
+[  559.56s ->   567.36s] to understand what this actually means i have an example here so imagine we're looking at stock returns
+[  568.24s ->   576.24s] this purple distribution governs the different likelihoods of returns we observe on any given day
+[  577.04s ->   583.52s] and what's going to happen is this distribution is going to change over time but we can't observe it all we
+[  583.52s ->   591.04s] can observe is the outcomes of this distribution so what you'll notice is as i play this animation you can
+[  591.04s ->   600.16s] see that we're realizing values what in the extremes over here and over here if we just model it as a purple
+[  600.16s ->   607.28s] distribution then it's going to look like wow this was really unlikely it's also going to look like
+[  607.28s ->   616.13s] wow this was really unlikely right but look at the animation the likelihood changes over time at one
+[  616.13s ->   622.45s] point it was very likely to observe values over here and at another point it was very likely to observe
+[  622.45s ->   629.97s] values over here this is more akin to what we see in reality we don't get to observe this data
+[  629.97s ->   636.05s] generating distribution but certainly the probabilities and likelihoods of different values
+[  636.61s ->   642.45s] change over time now there are very effective ways to model this time variance that we're seeing
+[  642.45s ->   649.09s] in this animation in fact i did a video on the arch and garch models last week so if you're interested
+[  649.09s ->   655.09s] in modeling volatility i highly recommend you check that video out but in any case we saw conditional
+[  655.09s ->   663.57s] heteroscedasticity was able to better capture the dynamics observed empirically by making the
+[  663.57s ->   672.21s] volatility term vary over time based on what was just recently observed in the process so there are
+[  672.21s ->   678.77s] effective ways of capturing these dynamics but acknowledging that they're there is the most important
+[  678.77s ->   684.05s] step it's the first step and the most important step otherwise we're just going to go and produce
+[  684.05s ->   690.13s] naive models that omit this very important reality check now that we have a good understanding of
+[  690.13s ->   696.69s] random variables their place in modeling and some important considerations in quant finance we can
+[  696.69s ->   704.29s] approach this idea of a stochastic process and it sounds crazy but all a stochastic process is is a random
+[  704.29s ->   711.89s] process well we know randomness very well at this point so what is a random process well it's just a
+[  711.89s ->   721.09s] series of outcomes of a random variable or a set of random variables over a series of steps or time so
+[  721.09s ->   728.45s] it's just a random variable indexed at different points and you get to define what those points are
+[  728.45s ->   736.13s] so i have a very simple example here to hit this point home this is a stock portfolio whose value is
+[  736.13s ->   742.93s] governed by a dice roll so a dice roll is a random variable i'll call it d we know d then is a
+[  742.93s ->   748.45s] distribution of possible outcomes we know it's a dice roll so it's got to be one through six i plot
+[  748.45s ->   756.69s] the distribution here this is a discrete uniform distribution and every single day i am just going to
+[  756.69s ->   764.05s] roll a dice and that's going to dictate my portfolio value for that day and you can see here i get this
+[  764.61s ->   771.09s] sample path for my portfolio value for the next 100 days now if i was to re-simulate this i would get
+[  771.09s ->   777.73s] a different sample path and so on and so forth that is what a stochastic process is typically you'll be
+[  777.73s ->   784.21s] able to simulate some sort of path that path may have a whole bunch of properties and we're going to
+[  784.21s ->   790.61s] consider and analyze those properties that is what is of interest to us so here for example on day
+[  791.49s ->   798.05s] nine my portfolio value is five but if i was to rerun the simulation it could be anything from this
+[  798.05s ->   805.17s] dice roll that is the general gist of a stochastic process so what was the point of this example with
+[  805.17s ->   810.77s] the dice rolls well we're trying to approach these markov chains we need to understand this idea of
+[  810.77s ->   820.37s] independence no matter what information i give you on any day here whether it's day 49 and we're looking
+[  820.37s ->   827.73s] to figure out what the portfolio value is going to be on day 50 it doesn't matter any information that i
+[  827.73s ->   836.45s] give you is not going to influence the likelihood of the next outcome the next outcome is still going to
+[  836.45s ->   842.69s] be a dice roll every single dice roll is independent that is the key here especially when we're looking
+[  842.69s ->   851.57s] at this stochastic process no matter what information i give you every single day is going to be governed
+[  851.57s ->   859.33s] by this random variable outcome when we look at markov chains this is not the case and we're going to see
+[  859.33s ->   868.85s] why in a moment by looking at a violation of this assumption in practice in our real world example
+[  868.85s ->   875.73s] our real world example has to do with a portfolio of loans so imagine you're trying to analyze the risk
+[  875.73s ->   881.25s] associated with this portfolio of loans maybe you work at some sort of credit agency and you're
+[  881.25s ->   888.21s] particularly interested in modeling these different states of the world well we need to consider this
+[  888.21s ->   894.85s] process of loans over time let's break down this real world example to motivate why we want to use
+[  894.85s ->   902.93s] markov chains to model this portfolio so this is a portfolio of dozens and dozens hundreds and hundreds
+[  902.93s ->   914.13s] of loans and each loan at any point in time can either be current 30 to 59 days late or delinquent
+[  914.77s ->   922.93s] 60 to 89 days late or 90 plus days late and we're gonna just exclude default all together for now
+[  924.10s ->   929.30s] okay well then what does this look like for our portfolio well we have a portfolio of a lot of these
+[  929.30s ->   937.22s] loans and we can look at the overall proportion of loans in that portfolio that are in any one of these
+[  937.22s ->   944.92s] states and i have a pie chart to break this down as an example here so this is our loan portfolio in
+[  944.92s ->   955.40s] this particular portfolio it's not doing too great 50 are current 20 are 30 to 59 days late 60 to 89 days
+[  955.40s ->   963.80s] late we have 20 and then 10 are 90 plus days late that is a rough portfolio of loans so what's the deal
+[  963.80s ->   970.12s] here well this is not just going to stay the same every single month it's going to change over time
+[  970.76s ->   978.28s] so what we're going to do is we're going to try to model the proportion of loans in each of these states
+[  978.28s ->   985.80s] over time by simulating it as a stochastic process this is exactly what we did here with the dice rolls so
+[  985.80s ->   991.64s] what i'm going to do is i'm going to look at historic data i am going to measure a proportion
+[  991.64s ->   997.24s] according to this estimator i'm not going to dive into the weeds of that right now but what i'm going
+[  997.24s ->  1002.44s] to do is i'm going to try to simulate a couple of months of this portfolio to see
+[ 1002.44s ->  1010.28s] what the overall proportion of loans that are late are in each category okay well let's do this
+[ 1010.92s ->  1020.71s] so in month zero i have 100 current loans in my portfolio all right well this is exactly like
+[ 1020.71s ->  1028.28s] starting right here in a sample path okay we're starting at this initial state then i'm going to
+[ 1028.28s ->  1034.60s] simulate a draw simulate a draw and keep marching forward in time but instead of visualizing it as
+[ 1034.60s ->  1039.72s] a path i'm going to visualize it as a bar chart so we can look at the proportion of loans in each
+[ 1039.72s ->  1048.29s] category so here what i have is i have month zero everything's current month one okay now we're at 81
+[ 1049.09s ->  1063.25s] our current now we have four percent are 30 to 59 days late but hold on a second we have 11 are 60 to 89 days
+[ 1063.25s ->  1073.57s] late and four percent are 90 plus days late these states are not possible because this is just stepping
+[ 1073.57s ->  1082.21s] forward in time one month a loan in our portfolio can't jump from current to 90 plus days late in one
+[ 1082.21s ->  1091.33s] month clearly there's a problem with this construction with this simulation this is the perfect example of how
+[ 1091.33s ->  1098.77s] naive independence does not match reality if i assume that each step is drawing from
+[ 1099.33s ->  1104.85s] these distributions whether they're the 30 to 59 day distributions the current distributions
+[ 1104.85s ->  1110.29s] so on and so forth if i assume every single month we're just going to draw independently from those
+[ 1110.29s ->  1116.13s] distributions i'm going to end up with something like this something that actually is not possible in
+[ 1116.13s ->  1123.65s] reality and we want to create a model that's as close to reality as possible in a parsimonious way
+[ 1124.53s ->  1130.29s] we're not doing that at all here we just went from all current loans to some that are 60 to 89 days
+[ 1130.29s ->  1138.61s] late 90 plus days late that's literally impossible so independence is completely out the window here
+[ 1138.61s ->  1145.33s] now if you're thinking maybe what i'm thinking then maybe what we should do is restrict this simulation
+[ 1145.33s ->  1155.25s] to say hey we can only draw values that are 30 to 59 days late in this next step and then in the next step
+[ 1155.25s ->  1165.73s] we can only draw values in the next bucket up if we observed values already in the previous bucket and if
+[ 1165.73s ->  1170.53s] you're if you're kind of catching what i'm floating out there really what you're doing is you're
+[ 1170.53s ->  1178.21s] starting to impose this idea of local conditional dependence and that is effectively captured by a
+[ 1178.21s ->  1186.21s] markov chain so maybe you beat me there but that is this idea here we want to navigate away from this
+[ 1186.21s ->  1194.45s] naive independence because it is not capturing reality we can't possibly observe a transition like this
+[ 1194.45s ->  1202.69s] but if we model it as a markov chain we will never observe a sequence of evolutions that cannot
+[ 1202.69s ->  1211.17s] happen that is the power of these markov chains this local conditional dependence this markovian structure
+[ 1211.17s ->  1218.85s] and we're going to discuss all of these things right about now now a markov chain can be diagrammed
+[ 1218.85s ->  1224.21s] extremely effectively so i actually want to start with the diagram and then move towards the
+[ 1224.21s ->  1229.89s] properties and applications let's look at this diagram it looks kind of crazy but it actually
+[ 1229.89s ->  1237.81s] makes a lot of sense so what i have here is i have what's called a state transition diagram for this
+[ 1237.81s ->  1245.81s] markov chain and effectively what i'm doing is i'm modeling each loan in my portfolio and i'm saying hey
+[ 1245.81s ->  1252.85s] the loan can only exist in one of these four states again i'm excluding default for the sake of this
+[ 1252.85s ->  1262.45s] example so a loan can either be current it can be 30 to 59 days late 60 to 89 days late or 90 plus days
+[ 1262.45s ->  1270.53s] late and each of the arrows here dictates where it can go from each state so if it's current it can stay
+[ 1270.53s ->  1278.29s] current so the arrow points back to itself or it can jump to 30 to 59 days late but it can't jump to
+[ 1278.29s ->  1286.29s] 60 to 89 days it can't jump to 90 plus days and that makes sense because each one of these transitions
+[ 1286.29s ->  1296.37s] the arrows out represents one month 30 days you can't possibly just jump to this orange or red circle
+[ 1297.33s ->  1304.77s] and you'll see similar logic at each one of these other states 30 to 59 well i can go back to current
+[ 1305.57s ->  1316.21s] or i will stay 30 to 59 days late or i will transition to 60 to 89 days late i can't jump from 30 to 59
+[ 1316.21s ->  1326.05s] all the way to 90 plus remember each increment is with is a 30 day step so i can't just transcend time and
+[ 1326.05s ->  1332.93s] jump to 90 plus days that would be like what we observed in this naive example here when we saw one
+[ 1332.93s ->  1341.09s] month step had 90 plus day late loans it doesn't make any sense so effectively this transition diagram
+[ 1341.73s ->  1351.09s] is capturing the dynamics of those loans that we're looking for and that is like the perfect example of a
+[ 1351.09s ->  1357.81s] markov chain bringing what would otherwise be a very naive model closer to reality we're better
+[ 1357.81s ->  1363.33s] capturing the transition of each of these states and the associated probabilities before we get into
+[ 1363.33s ->  1369.17s] the probabilities let's talk about now some properties of markov chains to actually understand
+[ 1369.17s ->  1375.01s] how they work when it comes to markov chains there are a couple of key properties that i want to highlight
+[ 1375.01s ->  1380.85s] here and we'll talk about some more properties along with the assumptions in the application below but
+[ 1380.85s ->  1387.33s] for now let's talk about this idea of the memoryless property the time homogeneity and the finite state
+[ 1387.33s ->  1395.33s] space the finite state space is probably the easiest idea to understand we can only have a finite number of
+[ 1395.33s ->  1404.45s] states okay not too much of a stretch there but what about this idea of time homogeneity well transition
+[ 1404.45s ->  1412.13s] probabilities are constant over time this is a tricky problem because we're assuming that these
+[ 1412.13s ->  1418.77s] transition probabilities from each of these states so that is maybe this current loan state to the 30 to
+[ 1418.77s ->  1427.89s] 59 days state current loan to current loan so on and so forth all of these transitions are constant over
+[ 1427.89s ->  1439.06s] time now based on what i showed you up here is that likely to be the case probably not right so very
+[ 1439.06s ->  1446.77s] important to consider that what about this idea of the memoryless property well effectively this is saying
+[ 1446.77s ->  1454.13s] hey it doesn't matter where i've been it only matters where i am so it doesn't matter if i was 90 plus days
+[ 1454.85s ->  1462.69s] delinquent or 60 to 89 days delinquent in the past if i'm current now that is what is going to dictate my
+[ 1462.69s ->  1469.89s] transition probability that is the probability of going from current to current or current to 30 to 59 days late now
+[ 1470.21s ->  1476.53s] whether or not that's reasonable it depends on the dependency structure of your problem maybe if you spent a
+[ 1476.53s ->  1484.21s] whole lot of time in 90 plus days delinquent and you get back to current maybe you're at a higher risk
+[ 1484.21s ->  1490.29s] of going back to that state that's not going to be captured in this particular model you'd have to
+[ 1490.29s ->  1495.57s] expand your state space it would create a whole bunch of complexity so on and so forth so when it
+[ 1495.57s ->  1501.25s] comes to these markov chains those are some key properties and considerations when you go about
+[ 1501.25s ->  1509.09s] constructing this as your probability model now what's really cool is this diagram that we've observed
+[ 1509.09s ->  1516.37s] can construct what's called a transition matrix and this transition matrix contains probabilities of
+[ 1516.37s ->  1522.21s] transitioning from and to all of these different states and here we're dealing with months okay so keep
+[ 1522.21s ->  1528.45s] in mind in this example we're looking at transitions that occur from from a month to month perspective
+[ 1529.78s ->  1538.74s] okay so this transition matrix looks something like this there are probabilities and there are zeros zeros
+[ 1538.74s ->  1544.66s] represent a zero probability of transitioning to that state from another state and this makes sense right
+[ 1544.66s ->  1550.82s] so if there are no arrows then there's going to be a zero probability of transition so for example i can't
+[ 1550.82s ->  1558.96s] go from current to 90 that's not possible so the probability of a transition from current
+[ 1559.60s ->  1568.96s] you read it in the rows first current to 90 plus is zero and we can read this for any state transition so
+[ 1568.96s ->  1578.56s] what is the probability of going from 30 to 59 days to 60 to 89 days well i'll go to 30 to 59 and then
+[ 1578.56s ->  1587.68s] i'll find my column 60 to 89 and that is my probability of transition right there it's p sub 2 3 so that is how the
+[ 1587.68s ->  1595.20s] transition matrix works i find in the row my current state and i find in the column the state that i am
+[ 1595.20s ->  1602.00s] going to transition to and then i can read out the corresponding probability in fact these probabilities
+[ 1602.00s ->  1608.24s] can be filled in and i have an example here here are a whole bunch of probabilities that i've estimated
+[ 1608.24s ->  1613.68s] from data and we're going to look in a moment how to actually come up with these estimations from data in
+[ 1613.68s ->  1619.44s] practice but for now i just want to show you how to fill in a transition matrix so what i'm going to
+[ 1619.44s ->  1626.77s] do is i'm going to track the transition of each of these states to different states and to themselves
+[ 1626.77s ->  1632.45s] and i'm just going to go ahead and fill in the transition matrix so for example the transition
+[ 1632.45s ->  1639.57s] of a current loan to itself has a 0.99 probability so i'll go down to my transition matrix current to
+[ 1639.57s ->  1646.45s] current 0.99 and i'm going to do this for every transition and remember this is on a monthly basis
+[ 1646.45s ->  1652.93s] and you can see here i have a completely filled out transition matrix with all of the probabilities
+[ 1652.93s ->  1660.69s] of transitioning between different states now that we have this we can answer some really really cool
+[ 1660.69s ->  1666.93s] questions now here's an example question that we might want to ask what is the probability of starting
+[ 1666.93s ->  1675.65s] in the current state and then after three months ending up in the 90 plus days delinquent state
+[ 1676.45s ->  1682.85s] what is the probability of that well we need to be able to somehow compute multiple state transitions
+[ 1683.41s ->  1689.89s] so i'm not just talking about a one month transition that's given by these probability values but now we need
+[ 1689.89s ->  1698.21s] to consider multiple steps this is effectively what we were trying to do here but remember we have this
+[ 1698.21s ->  1704.05s] independence assumption this didn't capture reality here we're using markov chains so we're going to be
+[ 1704.05s ->  1711.33s] able to capture that dependency structure how do we answer that probability question well we can use the
+[ 1711.33s ->  1720.13s] chapman kalmagarov equation and that is going to let us compute those arbitrary step transitions and
+[ 1720.13s ->  1727.33s] associated probabilities in other words if i wanted to figure out what the probability of going from
+[ 1727.33s ->  1737.25s] current to 90 plus days delinquent was i could just use the chapman kalmagarov equation and then find the
+[ 1737.25s ->  1744.37s] entry in the corresponding matrix and that will give me my probability now who in their right mind would
+[ 1744.37s ->  1751.49s] derive this result that we're seeing here from the chapman kalmagarov equation well i would believe it or
+[ 1751.49s ->  1758.29s] not i have a very very old video and article that fully derives this result that we're seeing here so
+[ 1758.29s ->  1764.21s] if you'd like to check it out i will leave you to it nevertheless the actual implementation of this
+[ 1764.21s ->  1773.81s] result is very very easy literally all we're doing to figure out these probabilities is multiplying this
+[ 1774.37s ->  1783.17s] transition matrix that we filled out together from our transition diagram with itself and the number of
+[ 1783.17s ->  1791.01s] times that we multiply it together with itself will dictate the number of steps in the future what a
+[ 1791.01s ->  1796.69s] a tremendously elegant result here i have a couple examples of the really cool questions we can
+[ 1796.69s ->  1802.45s] answer so for example what is the probability of going from current to delinquent in 12 months well
+[ 1802.45s ->  1808.21s] i can apply the result from the chapman kalmagarov equation i can see here i'm taking the matrix power
+[ 1808.21s ->  1815.33s] so this is the transition matrix that we defined together up here from the diagram and all i'm going
+[ 1815.33s ->  1822.77s] to do is i'm going to multiply that matrix with itself 12 times and then i am going to get the
+[ 1822.77s ->  1831.57s] corresponding row and column to that transition so remember if i'm looking for current to 90 days
+[ 1831.57s ->  1838.69s] delinquent then what i'm going to do is i'm going to look in the zero throw and the zero one two three
+[ 1839.33s ->  1845.73s] third column and that's exactly what i do here i have the zero third column i run this and i can see
+[ 1845.73s ->  1855.57s] that there's a 0.1826 percent chance of me going from current to 90 plus days delinquent in 12 months
+[ 1855.57s ->  1861.33s] i take this one step further and i show actually all of the transition probabilities for 12 months
+[ 1861.33s ->  1867.25s] you know starting from these different states you could start from current 30 to 60 60 to 90 90 plus
+[ 1867.25s ->  1872.77s] and we get a whole bunch of different probabilities and this makes sense right because if you start in
+[ 1872.77s ->  1881.25s] 90 plus days delinquent then the probability of you going from 90 to 90 is probably higher than
+[ 1881.25s ->  1888.13s] going from current to 90 and this is exactly what is captured these dynamics in the markov chain
+[ 1888.13s ->  1896.37s] with this local conditional dependence and these state transitions it is extremely impressive and very very
+[ 1896.37s ->  1903.25s] cool all of these questions that would otherwise be very difficult to answer especially with some
+[ 1903.25s ->  1911.33s] sort of naive model like this are very easily answered with what i mean this is only a couple lines
+[ 1911.33s ->  1919.17s] of code i do a matrix power and i get the correct index from the matrix i mean it doesn't get much easier
+[ 1919.17s ->  1926.21s] than that all of the hard work was done by markov the structure of the markov chain and the chat
+[ 1926.21s ->  1930.93s] man kolmogorov equations so now we can go ahead and answer really cool questions so we looked at
+[ 1930.93s ->  1937.01s] the probability ones what about the idea of an expectation now i'm not just going to consider the
+[ 1937.01s ->  1945.01s] expected value of a markov chain in that sense i'm going to consider this idea of a state distribution
+[ 1945.01s ->  1955.09s] vector and what this is is a probability distribution across all states at time t so this could be month
+[ 1955.09s ->  1961.73s] zero month one so on and so forth and this is going to tell us something about the likelihood of states
+[ 1962.29s ->  1968.93s] at different points in time if this sounds familiar well this is precisely what we were talking about
+[ 1969.89s ->  1977.89s] in this naive example and in the context of modeling uncertain outcomes with random variables
+[ 1979.03s ->  1986.55s] so that is precisely what we're doing here when we use this state distribution vector we're looking at
+[ 1986.55s ->  1994.87s] this likelihood of being in any of these states at a given point in time and of course as time progresses
+[ 1995.83s ->  2003.11s] those distributions are going to change and it turns out in this particular case they will actually converge
+[ 2003.67s ->  2012.79s] to stable values a very very important idea now until we actually converge to those stable values
+[ 2013.43s ->  2020.95s] the initial distribution is going to matter a lot and it's going to change the likelihood of observing
+[ 2020.95s ->  2028.55s] different different distributions at different points in time and this makes sense because if we think
+[ 2028.55s ->  2039.11s] about it let's look at this example here i have 50 current 20 30 to 59 days and then i have 30 60 to 89
+[ 2039.11s ->  2046.95s] days zero that are 90 plus days and i can look at the expected proportion of loans that will be 90 plus
+[ 2046.95s ->  2054.34s] days delinquent after 12 months i could see it's roughly seven percent okay well what if i started with
+[ 2054.34s ->  2066.15s] 30 30 30 30 in 90 plus days does that mean that my expected proportion of loans is going to go up or
+[ 2066.15s ->  2073.27s] down well if i'm starting with more loans at 90 plus days you better believe this is going to be higher
+[ 2073.27s ->  2084.23s] let me rerun this 27 now the expected proportion of loans that will be 90 plus days 27 so this initial
+[ 2084.23s ->  2091.99s] distribution certainly matters a lot but what if we increase the amount of time then does it matter
+[ 2092.71s ->  2100.69s] what if i make this 100 okay that goes down to 13 what if i make this a thousand that goes down to three
+[ 2100.69s ->  2108.31s] ten thousand three point eight percent okay so after ten thousand transitions i'm seeing something like
+[ 2108.31s ->  2119.86s] 3.8 here for 90 plus days delinquent okay well what if i start in that original state so instead of 30
+[ 2120.34s ->  2128.77s] being 90 plus days delinquent i'll go back down to 60 to 89 days being 30 percent when i run this again
+[ 2129.33s ->  2137.33s] wait a second we still see this 3.8 percent that is the convergence that i was talking about here
+[ 2137.33s ->  2145.41s] in the short run there's going to be a degree of variability based on where you start in the
+[ 2145.41s ->  2152.98s] proportion of time spent at each of these states and that's going to be largely based on your initial
+[ 2152.98s ->  2160.42s] distribution like i said if you have more high risk loans at the start then yeah in the short run
+[ 2160.42s ->  2166.34s] you're going to be at a higher risk but in the long run if we continue to observe the transitions
+[ 2166.34s ->  2175.04s] that we saw in the diagram then we actually observe this convergence and we can actually see it in a
+[ 2175.04s ->  2184.92s] chart here we can see all of these state distribution vectors converging to these probabilities
+[ 2184.92s ->  2192.12s] and it doesn't matter the initial state vector that's exactly what we saw here we saw that it
+[ 2192.12s ->  2205.81s] converged to 3.8 in the case that 30 was the 60 to 89 days or 30 was the 90 plus days so that is a key
+[ 2205.81s ->  2213.17s] property of this particular construction now there are other key properties of markov chains recurrence
+[ 2213.17s ->  2219.65s] irreducibility this idea of a steady state absorbing states this is how you would likely model some sort of
+[ 2219.65s ->  2227.01s] default periodicity ergodicity and transients communication classes so on and so forth i would
+[ 2227.01s ->  2233.17s] certainly need to do another video to discuss all of these so if you'd like to see another video on
+[ 2233.17s ->  2238.77s] advanced markov chains and there may be extensions in hidden markov models and regime switching models
+[ 2238.77s ->  2246.13s] please like comment subscribe let me know down below and we will see what we can do in a future
+[ 2246.13s ->  2254.53s] video nevertheless we will continue on now to the application how do we actually come up with states
+[ 2254.53s ->  2262.21s] and probabilities if we're going to go about using these markov chains in practice we saw an example
+[ 2262.21s ->  2271.17s] above where it was relatively easy to define the states they were almost just given to us right we know
+[ 2271.17s ->  2277.73s] a loan is going to be characterized either by current 30 plus or 30 to 59 days delinquent so on and so
+[ 2277.73s ->  2284.93s] forth right those states are presented to us it's very easy to construct states i have a couple examples
+[ 2284.93s ->  2294.69s] here of volatility market trend liquidity you could do like low medium high bullish bearish sideways it's
+[ 2294.69s ->  2302.45s] very easy to come up with states but how do we actually go about estimating probabilities because
+[ 2302.45s ->  2309.33s] if we can define states and you know this could be for some sort of you know regime switching model if
+[ 2309.33s ->  2315.25s] we're trying to to go into hidden markov models whatever it may be that we are actually trying to
+[ 2315.25s ->  2322.29s] develop a model for defining the states and the transitions and the subsequent transition matrix
+[ 2323.01s ->  2329.33s] that typically isn't the hard part the hard part is how do we estimate these probabilities right
+[ 2330.13s ->  2335.97s] you could probably draw me a diagram like a very nice diagram and come up with the transition matrix
+[ 2335.97s ->  2341.73s] but how do we actually get these probabilities that is the question that we have to answer
+[ 2342.53s ->  2350.05s] and to answer this we need to understand this idea of maximum likelihood estimation maximum likelihood
+[ 2350.05s ->  2357.41s] estimation is actually extremely intuitive whether or not it is actually effective that's subject
+[ 2357.41s ->  2364.85s] for discussion especially after the animation that i showed you up here with the way that
+[ 2364.85s ->  2373.16s] these distributions can change over time nevertheless the idea of maximum likelihood estimation is to
+[ 2373.16s ->  2381.80s] observe data so for example we observe this gray data and the gray data was generated by the red dashed
+[ 2381.80s ->  2389.16s] distribution and what we're going to do is we're going to use the mle to fit the distribution to the data
+[ 2389.16s ->  2395.88s] we've observed it's going to produce the highest likelihood of generating that data it's the distribution
+[ 2396.44s ->  2402.60s] that has the highest likelihood of generating the data that we've seen that's very intuitive right what
+[ 2402.60s ->  2408.04s] other distribution do you want to use beyond the one that had the highest likelihood of generating the
+[ 2408.04s ->  2414.44s] data that you've seen and you can see in this example here it does a pretty darn good job it tracks that red
+[ 2414.44s ->  2422.20s] line very very closely so if we understand this idea in this setting well it's the exact same thing for
+[ 2422.84s ->  2430.04s] markov chains we can apply this maximum likelihood estimation and you can see it will actually converge
+[ 2430.04s ->  2437.72s] to the true probabilities of our transition matrix and this is only going to be true if a whole bunch of
+[ 2437.72s ->  2444.68s] assumptions hold and so on and so forth but nevertheless it is a very effective way of producing these
+[ 2444.68s ->  2451.88s] probabilities and the maximum likelihood estimation has a whole bunch of very very nice properties
+[ 2451.88s ->  2457.56s] as we collect more samples our empirical probabilities converge to true probabilities that's what we
+[ 2457.56s ->  2464.84s] observe here these estimates are consistent which means more data leads to better estimates the convergence
+[ 2464.84s ->  2470.76s] rate follows the law of large numbers but early estimates can certainly be volatile due to small
+[ 2470.76s ->  2477.48s] samples as we see here so we do have all of these very nice properties associated with this
+[ 2478.36s ->  2484.92s] with this idea of maximum likelihood estimation but again whether or not it's actually appropriate subject
+[ 2484.92s ->  2488.68s] for discussion maybe there's different things we can do to make it more or less appropriate
+[ 2489.32s ->  2495.56s] especially if we consider how these distributions change over time but as a first pass this is one way
+[ 2495.56s ->  2503.24s] of going about estimating these probabilities so how do we actually do this well we we need to derive the
+[ 2503.24s ->  2510.12s] maximum likelihood estimate estimate estimator for a markov chain to accomplish this we have to maximize
+[ 2510.12s ->  2515.32s] the log likelihood function and i'm not going to walk through all the math i actually have a video again
+[ 2515.32s ->  2520.20s] another very old video on this topic so if you'd like to check it out i'll leave you to it but
+[ 2520.20s ->  2528.12s] nevertheless once we derive the maximum likelihood estimate of the transition probability we can see it's
+[ 2528.12s ->  2537.00s] extremely intuitive all it is is the simple proportion of transitions out of the state to a different
+[ 2537.00s ->  2544.44s] state from the original state it is essentially how we would intuitively go about coming up with this
+[ 2544.44s ->  2551.88s] proportion anyway it's just like how if you wanted to come up with a raw probability estimate you would
+[ 2551.88s ->  2558.60s] just take what the total number of favorable outcomes out of the total number of outcomes it's effectively
+[ 2558.60s ->  2568.92s] the exact same thing and it's kind of cool to see such a heavily computational process spit out such an
+[ 2568.92s ->  2577.08s] intuitive result and we can use that to actually develop the probabilities in our transition matrix from
+[ 2577.08s ->  2583.72s] data so what i have here is i actually have a synthetic loan transition data set something that
+[ 2583.72s ->  2591.32s] you could observe in practice a whole bunch of different loans and we can apply the mle estimator
+[ 2591.32s ->  2597.48s] to derive these probabilities and that is exactly what i do here i'm actually using this data
+[ 2597.48s ->  2604.92s] to produce these transition probabilities and what you'll see here is i have my transition matrix that is
+[ 2604.92s ->  2612.68s] estimated from the data and i have the true transition matrix you can see it tracks very very closely and
+[ 2612.68s ->  2620.12s] as i observe more data in this particular case it will converge to this original transition matrix
+[ 2620.12s ->  2629.32s] thanks to the probability or thanks to the associated properties and assumptions of the mle and the markov
+[ 2629.32s ->  2634.68s] chains so what are these assumptions that allow us to produce these probability estimates well
+[ 2635.24s ->  2642.20s] the markov property the future state depends only on the current state not past states time homogeneity
+[ 2642.20s ->  2648.28s] transition probabilities are constant over time ergodicity there's a unique stationary distribution
+[ 2648.28s ->  2655.56s] sufficient data we have enough transitions that have been observed to estimate all probabilities and
+[ 2655.56s ->  2661.00s] independence each loan in this case the transitions are independent of other loans and
+[ 2661.00s ->  2666.36s] you know two and five in this case are going to be our biggest concern this goes into the idea of
+[ 2666.36s ->  2671.88s] clustering right if there's a whole bunch of defaults you know maybe everybody's losing their job all
+[ 2671.88s ->  2678.04s] at the same time that independence assumption is likely going to be violated now this isn't independence
+[ 2678.04s ->  2684.84s] in the sense of states this is independence in the context of a series of loans in our portfolio
+[ 2685.56s ->  2691.08s] moreover this idea of time homogeneity whether or not these transition probabilities are constant over
+[ 2691.08s ->  2697.24s] time yeah that's going to be subject for discussion again this goes back to the animation that we looked
+[ 2697.24s ->  2703.56s] at all the way at the start of this video right these are certainly going to change over time so in terms
+[ 2703.56s ->  2710.36s] of the assumptions that are going to be violated in the mle and the markov chain that is these
+[ 2710.36s ->  2715.32s] probabilities that we're generating for this transition matrix two and five are certainly some
+[ 2715.32s ->  2723.16s] big concerns of course this idea of the markov property that is also a concern because there could be this
+[ 2723.72s ->  2732.12s] longer range dependence maybe we need to expand to more states so on and so forth but nevertheless if
+[ 2732.12s ->  2738.20s] if we do make these assumptions then we get all of these nice properties like i mentioned earlier
+[ 2738.20s ->  2746.20s] consistency asymptotic efficiency asymptotic normality that's a huge one the distribute the distribution
+[ 2746.20s ->  2753.00s] approaches normality as the sample size grows invariance maximum entropy some phenomenal
+[ 2753.00s ->  2760.28s] properties we get which of course may or may not be true based on whether or not and how severely
+[ 2760.28s ->  2766.60s] the assumptions are violated too long didn't watch here is your executive summary when modeling something
+[ 2766.60s ->  2774.28s] as a random variable independence is way too strong of an assumption that can lead to extremely inaccurate
+[ 2774.28s ->  2781.56s] models we saw how jumping from month zero to month one led to us modeling 90 plus day
+[ 2782.44s ->  2791.08s] delinquent loans from all current loans in 30 days a loan became 90 plus days delinquent that's not
+[ 2791.08s ->  2798.36s] possible so independence in that context made absolutely no sense a major correction can be applied by
+[ 2798.36s ->  2805.32s] considering the simplifying assumption of local conditional dependence rather than full independence
+[ 2805.96s ->  2813.64s] that is this idea of a markov chain we can effectively model these dynamics these states and transitions to and
+[ 2813.64s ->  2820.60s] from different states based on what's possible in this local dependency structure this is governed by a
+[ 2820.60s ->  2828.28s] transition matrix with corresponding probabilities that can easily be estimated from data using the result from the
+[ 2828.28s ->  2837.88s] mle we saw above now though markov chains aid in the modeling process offering more accurate or reasonable i think
+[ 2837.88s ->  2845.16s] would be a more appropriate way to state it estimate there are many assumptions that are still going to be violated in
+[ 2845.16s ->  2851.88s] practice so this is far from a cure-all typically these markov chains are a first step in the modeling
+[ 2851.88s ->  2858.68s] process if we were to consider some sort of regime switching hidden markov model for example understanding
+[ 2858.68s ->  2866.52s] these is a first step toward more comprehensive applications some future topics i would like to discuss
+[ 2866.52s ->  2873.48s] technical videos and other discussions advanced markov chains there is so much to discuss when it comes to
+[ 2873.48s ->  2878.76s] markov chains i'd like to break out the ipad answer a whole bunch of really interesting questions maybe
+[ 2878.76s ->  2885.72s] some some citadel jane street interview questions tackle these ideas of communication classes ergodicity
+[ 2885.72s ->  2893.16s] stationary distributions initial state vectors absorbing states so on and so forth if you'd like to see
+[ 2893.16s ->  2899.88s] a video on these topics please let me know in the comments below i would certainly love to do one on
+[ 2899.88s ->  2906.84s] advanced markov chains of course other extensions too like hidden markov models and other implementations
+[ 2907.40s ->  2912.68s] i'd also like to get back to more quant builds i still want to build that earnings event options
+[ 2912.68s ->  2918.92s] trading dashboard i'd also like to do a live kalman filter model with regime dynamics i think that would be
+[ 2919.56s ->  2927.24s] so cool along with this automated delta neutral trading system kind of algorithmically capitalizing on
+[ 2927.24s ->  2934.20s] vol speculation we could even use markov chains and other time series models to aid in these speculative
+[ 2934.20s ->  2940.20s] positions i've been fleshing out this video for for quite some time too so let me know in the comments
+[ 2940.20s ->  2945.32s] if that is something that you would like to see and that's going to do it for this video on markov chains
+[ 2945.32s ->  2951.40s] for quant finance i hope you enjoyed i hope you learned something this video certainly took a lot of effort
+[ 2951.40s ->  2957.16s] to create so please like comment subscribe share check out channel membership it helps me out tremendously
+[ 2957.16s ->  2964.84s] so i can continue to create videos just like this one check out quantkill.com to master your quantitative skills
+[ 2965.56s ->  2971.16s] other than that thank you so much for watching and i will see you in the next video

@@ -1,0 +1,60 @@
+[    0.06s ->     6.46s] Hey guys, what's up? I want to walk you through how I made roughly $550 trading IWM credit
+[    6.46s ->    11.04s] spreads. So again, you can see here on the Tasty Trade platform, which is my broker that I bought
+[   11.04s ->    16.70s] on April or I sold the credit spreads on April 4th. And I bought them back on the 17th and it
+[   16.70s ->    20.16s] took a few orders to get in because there were some partial fills. But anyways, you can see here
+[   20.16s ->    27.24s] my profit was roughly $600 on this trade, but then I paid roughly $70 in commission. So that
+[   27.24s ->    33.42s] ends up to roughly what $530 in profit on this trade minus commissions and fees. So that's
+[   33.42s ->    37.54s] exactly how this trade works. It's very consistent and very reliable. And I want to walk you through
+[   37.54s ->    42.32s] not this trade, but explain the thought process behind this trade so that you can take this trade
+[   42.32s ->    46.30s] for yourself as well and understand it because credit spreads, if understood, are a very reliable
+[   46.30s ->    51.88s] and profitable trading strategy. So let's jump into the charting platform on TradingView and walk
+[   51.88s ->    58.58s] through this trade. So this right here is IWM, which is the ETF that I traded. IWM, for instance,
+[   58.86s ->    66.44s] likes its ranges. You can see here over the last few years, since about 2020, it's been trading in
+[   66.44s ->    70.44s] ranges. You can see here's a trading range where it just trades up and down, up and down, up and down.
+[   70.90s ->    74.68s] This is great to know because when you're trading in ranges, you have solid support and solid
+[   74.68s ->    79.98s] resistance points. So for instance, if you're trading a put credit spread, which makes money as long as
+[   79.98s ->    84.38s] the stock stays above a certain level, then again, you can wait till the stock drops down to these
+[   84.38s ->    89.56s] support levels. Sell, I put credit spread, and now you're going to very consistently make money.
+[   90.24s ->    94.60s] Now, again, it had that very strong pattern that I've seen in the past. And then I noticed that it
+[   94.60s ->    99.56s] was forming that pattern again. You can see here where we have a very solid support and we have a
+[   99.56s ->   104.96s] very solid resistance right here. Now, what does this tell me about the trade? This tells me that
+[  104.96s ->   110.90s] if we have a lot of movement sideways, when you're trading a credit spread, you are selling an
+[  110.90s ->   115.12s] option. When you're selling an option, you can make money from Theta Decay as time progressing.
+[  115.96s ->   121.20s] Theta Decay will decrease the options price, which will in turn make you money because you sold it,
+[  121.54s ->   126.68s] even when the stock does nothing and stays still. So if you have a day where the market goes up,
+[  126.92s ->   133.92s] down, and then closes neutral, the stock makes no money, but you as an options seller will make
+[  133.92s ->   139.02s] money because of Theta Decay. So knowing that we're trading in this range and the market for IWM
+[  139.02s ->   145.50s] is very, very flat, I know that we have a great opportunity to make money from Theta Decay using
+[  145.50s ->   150.24s] our credit spread options. Now, again, seeing that we're closer to this bottom range, what I wanted
+[  150.24s ->   155.80s] to do is put credit spread. Why? Because if we're closer to this bottom range, then I know that I have
+[  155.80s ->   161.28s] a higher chance of it supporting this level. So again, where am I going to buy? Well, again, I missed out
+[  161.28s ->   167.68s] on all this because I came and looked at IWM around this price. So when is the best time to
+[  167.68s ->   172.68s] sell put credit spreads? Well, when the market goes down. Why? Because when the market goes down,
+[  172.94s ->   179.02s] volatility increases, thus inflating the price of put credit spreads, meaning that one of two things,
+[  179.30s ->   185.16s] I can either go to the same strike I was wanting and collect more premium, or two, I can actually
+[  185.16s ->   189.84s] collect the same premium I wanted to, but go out further. Thus, I have a higher win rate and I am safer.
+[  189.84s ->   195.72s] So again, that's why I waited for this huge red day right here, this April 4th, to enter the IWM
+[  195.72s ->   201.50s] trade. You can see here, it kind of flatlined the next few days, then traded very flat in here,
+[  201.56s ->   207.12s] which helped me collect a lot of my premium and a lot of my Theta Decay. And right here on April 14th,
+[  207.12s ->   212.26s] I closed the position. So again, this is the beautiful part of a put credit spread. Why? Well,
+[  212.30s ->   217.44s] because I know that my support is going to be somewhere around here, 168. I believe I put on a 169,
+[  217.44s ->   224.72s] 168. So I believe that my strike price break even was 169. And then I bought the 168 as protection.
+[  224.98s ->   229.74s] So this was my spread. This means for those who are new to credit spread trading, it means that as
+[  229.74s ->   237.56s] long as the stock, as long as IWM stayed above 169 by expiration date, I would have kept all the money
+[  237.56s ->   243.44s] they gave me and realized a max profit. And so right here on April 14th, again, it was way above and
+[  243.44s ->   247.58s] we're getting close to expiration. So I was able to close, I was able to close the trade out for a
+[  247.58s ->   252.34s] few cents, which again, is more advisable. So I can roll into the next trade and not wait for that
+[  252.34s ->   258.90s] for those few cents. Anyways, that was the IWM trade. But it was also based on first and foremost,
+[  259.02s ->   264.10s] the quant trading strategy that I put together back, back tested and proven to make money. Now,
+[  264.12s ->   269.52s] again, that's right here, the trade ideas algo. It's taken me five years as a professional trader to
+[  269.52s ->   276.60s] put together this approach to see that I can have a 90% historical win rate and 97% historical win
+[  276.60s ->   280.54s] rate and whatever else, depending on what I'm trading. And it tells me exactly what to do and
+[  280.54s ->   285.14s] how to do some of the book credit spread trade. And so again, I've looked at this, it recommended
+[  285.14s ->   290.56s] this trade, I kind of saw that the that the technicals backed it up. And again, I put that
+[  290.56s ->   295.92s] trade on. Now again, if you want to get these trades for yourself for free, you can get access by
+[  295.92s ->   300.02s] again, going to the link below is going to access you to this site, scroll down to the very bottom
+[  300.02s ->   304.40s] and click on test our alerts. And I'll send you three free alerts. Anyways, guys, if you enjoyed
+[  304.40s ->   308.88s] this video and my breakdown of it and how you can use put credit spreads to make money, or if you
+[  308.88s ->   312.62s] just really want to click the link below and get access to three free trades, if you like any of
+[  312.62s ->   316.90s] that stuff I've given you today in this video, please smash that thumbs up and subscribe button
+[  316.90s ->   318.28s] and I'll see you in the next video.

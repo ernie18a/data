@@ -1,0 +1,28 @@
+[    1.34s ->     8.52s] We're back. Give me three minutes. I'll give you what a critical value is and why it is useful.
+[    9.06s ->    14.88s] So first, we need to understand why the normal distribution. Usually, we define lowercase
+[   14.88s ->    19.54s] phi as this. This is a probability density function. Not going to dive too much into
+[   19.54s ->    25.22s] this definition or why it's important, but what we do know is by the law of large numbers and
+[   25.22s ->    30.78s] the central limit theorem, we can bridge the gap between statistics and probability. This is going
+[   30.78s ->    37.20s] to allow us to conduct statistical inference about the population parameters. So in other words,
+[   37.38s ->    43.88s] these theorems, the result of these, allow us to, regardless of the distribution, take a look at
+[   43.88s ->    50.92s] the sample average of a particular random variable like a stock price or population height, and we
+[   50.92s ->    56.08s] know it's going to follow a normal distribution. So it's going to look something like this after
+[   56.08s ->    60.58s] standardization. So this is going to be the distribution of the sample average.
+[   60.78s ->    68.38s] So that's lowercase phi right here. What about capital phi? Well, capital phi is integrating
+[   68.38s ->    73.76s] this curve, so finding the area, and that is going to give us a corresponding probability.
+[   74.68s ->    80.16s] So the formal definition here of capital phi is if we have some random variable capital X,
+[   80.38s ->    85.48s] the probability that it's less than or equal to little x is given by this integral of that PDF
+[   85.48s ->    93.08s] we had defined earlier. Okay. And we know that any random variable sample average is going to follow
+[   93.08s ->    98.92s] this distribution. So we can integrate and find a corresponding probability. So if we take a look at
+[   98.92s ->   106.00s] this, the probability that the random variable X is less than or equal to little x is going to be 95%.
+[  106.00s ->   113.00s] That's going to be integrating from negative infinity all the way up to this value. What is this value?
+[  113.00s ->   121.02s] That value is the critical value. So in other words, what value corresponds to a 95% probability?
+[  121.60s ->   128.86s] What value for little x do we have to plug in here to get a 95% probability? That is your critical
+[  128.86s ->   135.44s] value. That is what capital phi inverse does. So if I go ahead here and I say stats.norm.ppf,
+[  135.44s ->   143.20s] that's this inverse cumulative normal distribution here, I'm going to say what value right here is
+[  143.20s ->   152.00s] going to give me a 95% probability. And it turns out that that value is approximately 1.65. So then
+[  152.00s ->   158.78s] if I was to plug in 1.65 into this cumulative distribution function for a standard normal random
+[  158.78s ->   166.94s] variable, I am going to get a 95% probability. That is the relationship between critical values
+[  166.94s ->   172.14s] and the corresponding cumulative distribution function and that cumulative distribution functions,
+[  172.14s ->   177.58s] corresponding probability density function. I hope you enjoyed. I have longer videos on this subject,
+[  177.58s ->   180.62s] but that is it in under three minutes. Thank you for watching.

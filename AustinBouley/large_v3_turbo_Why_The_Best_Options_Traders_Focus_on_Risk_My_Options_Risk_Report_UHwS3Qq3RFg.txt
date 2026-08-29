@@ -1,0 +1,94 @@
+[    0.10s ->     4.00s] The best options traders focus on risk, not profit.
+[    4.38s ->     8.20s] And I'm going to walk you through exactly how I lay this out for my coaching clients.
+[    8.52s ->    12.64s] For each one of my coaching clients, I put together what I call the four core bots report,
+[   12.70s ->    17.96s] which I analyze the four strategies that they are using to capitalize in every market.
+[   18.26s ->    23.12s] And I want to show you how I look at risk and how important it is to ensure your long-term
+[   23.12s ->    23.66s] performance.
+[   23.98s ->    28.04s] If you really want to have consistency, you need to be able to engineer it.
+[   28.04s ->    29.90s] You need to be able to know why it's going to happen.
+[   30.24s ->    32.44s] You don't want it to happen as a consequence.
+[   32.44s ->    35.00s] If you made money and you don't know why, you did it wrong.
+[   35.14s ->    36.58s] So let's look at this.
+[   36.84s ->    39.92s] So first off, what is this idea of four core bots?
+[   39.92s ->    43.36s] I just want to say that you need a strategy for every type of market.
+[   43.78s ->    46.76s] When the market is trending up, you need a strategy for that.
+[   46.82s ->    48.98s] When the market is trending down, you need a strategy for that.
+[   49.06s ->    52.38s] When the market goes sideways, you need a strategy for that as well.
+[   53.14s ->    55.98s] And so that is where each one of these strategies come into play.
+[   55.98s ->    58.24s] And so I did block out this person's name.
+[   58.34s ->    60.88s] This is a real report that I put together for someone.
+[   61.32s ->    63.64s] These are the four things that I look at that are superficial.
+[   63.80s ->    65.60s] Number one, what's the account size?
+[   65.90s ->    68.34s] Number two, what's the income goal they want to eventually hit?
+[   68.62s ->    72.46s] Number three, what do I think they can hit in the next 30 days?
+[   72.46s ->    75.32s] Which is really just 2% of whatever the account size is.
+[   75.68s ->    78.84s] All options traders should be targeting a 2% return.
+[   78.94s ->    81.34s] I think it's something that can be done in most markets.
+[   81.34s ->    83.92s] And so $500 is the profit target.
+[   84.00s ->    88.02s] And then the risk tolerance, which was how much money are they okay with losing?
+[   88.36s ->    95.52s] And so the way that I phrase this is, hey, if we have a terrible crash, COVID-style situation,
+[   95.52s ->   100.84s] and the market crashes overnight, how much of your money are you okay losing?
+[  101.20s ->   103.40s] Is it $5,000, $10,000, $2,000?
+[  103.50s ->   104.24s] There's no right number.
+[  104.38s ->   107.92s] What are you comfortable with losing if the worst case happens?
+[  108.32s ->   110.34s] And for this person, it was $5,000.
+[  110.34s ->   113.90s] So you, for yourself, you need to map out these numbers.
+[  114.18s ->   117.34s] If you don't know these numbers, you don't know what you're trying to go toward.
+[  117.72s ->   119.96s] So I know this is a different type of video.
+[  120.06s ->   124.86s] I'm not talking about trading strategies, but it is very much of you need to know your plan.
+[  125.00s ->   127.60s] If you have no plan or no goal, you don't know where you're going.
+[  128.04s ->   133.72s] So mapping out your account size, your monthly income goal, your 30-day profit goal, and your
+[  133.72s ->   138.36s] risk tolerance will help you build out a strategy in a trading system that will actually
+[  138.36s ->   139.20s] help you get there.
+[  139.20s ->   144.18s] So once you have those numbers mapped out, then you look at what strategy do I want to
+[  144.18s ->   145.68s] use for each type of market?
+[  145.78s ->   149.96s] Now, obviously, I help my coaching clients pick out ones that they can use that best fit
+[  149.96s ->   151.68s] their goals and account size.
+[  151.76s ->   155.56s] For this person, they're using a put credit spread for their bullish strategy.
+[  155.66s ->   159.22s] They're using a, they're buying puts for their bearish strategy.
+[  159.32s ->   162.32s] They're using an iron condor for their sideways strategy.
+[  162.32s ->   167.10s] And they're using this as their free money bot, which is in extreme situations, which
+[  167.10s ->   169.20s] is a bot that has about a 100% win rate.
+[  169.52s ->   171.72s] But I'm not going to get into that, saving that for my coaching clients only.
+[  172.24s ->   177.54s] Anyways, for these three right here, I then map out how much money are they allocating to
+[  177.54s ->   178.24s] each bot?
+[  178.50s ->   182.90s] This makes sure they're not over allocating their money or over trading.
+[  182.90s ->   189.34s] If you're trading with $25,000, you should be in no more, the amount that you should actually
+[  189.34s ->   192.70s] be trading with is anywhere from 30 to 50% of that.
+[  193.08s ->   194.68s] Obviously, lower risk is 30.
+[  194.78s ->   197.64s] This person was okay going up to 50%.
+[  197.64s ->   202.32s] So that means they could have up to $12,000 in open trades.
+[  202.62s ->   204.90s] Now, we're not running all these bots at the same time.
+[  205.00s ->   209.18s] If anything, the bots that are overlapping are going to be your bullish and bearish bots.
+[  209.18s ->   215.26s] And so since these are overlapping, the allocation combined, $5,000 plus $5,000 is $10,000, which
+[  215.26s ->   219.44s] stays within that limit and make sure that they're not over trading and make sure they're
+[  219.44s ->   223.44s] trading position sizes is in line with their overall market account.
+[  224.02s ->   227.80s] So that's number one, making sure your allocation is not over allocated.
+[  228.24s ->   233.20s] Number two, we then break down what is the average profit and loss per trade that they're
+[  233.20s ->   234.50s] going to be doing with this strategy.
+[  234.64s ->   237.86s] You can see here a $300 profit, a $1,300 loss.
+[  237.86s ->   239.78s] You can see here the breakdown for each one.
+[  240.16s ->   241.48s] Why do we do this?
+[  241.76s ->   246.98s] Because we want to make sure that when we overlap strategies, like put a bullish and a bearish
+[  246.98s ->   254.28s] together, that the bearish bot isn't capitalizing or taking all the profit from the bullish bot.
+[  254.36s ->   258.74s] We want our bullish bot to make money and our bearish bot to be a small supplement of that.
+[  259.04s ->   263.88s] Ideally, 20 to 30% of what the profit is from the bullish bot.
+[  263.88s ->   268.28s] That we still get our downside protection, but we're not spending too much money on it.
+[  268.70s ->   272.02s] And so when we look at that, we're able to put all the profit and losses together and
+[  272.02s ->   274.30s] see, will we actually end up with a profit?
+[  274.50s ->   278.68s] Is that profit the profit goal that we started with?
+[  278.78s ->   279.04s] Okay.
+[  279.04s ->   282.90s] So here is just a recap of what's going on.
+[  282.90s ->   287.38s] If we dived in too deep, I just want to let you know, if you want to have consistent profit,
+[  287.50s ->   288.74s] you need to engineer it.
+[  289.12s ->   292.28s] Consistent profits isn't just something that you stumble into.
+[  292.38s ->   294.20s] It's something you design and you create.
+[  294.20s ->   299.32s] So make sure you understand your account size, your monthly goal that you're trying to, what
+[  299.32s ->   304.40s] you realistically can hit in 30 days, what your risk tolerance is, design your strategies
+[  304.40s ->   305.04s] around it.
+[  305.18s ->   310.76s] Don't over allocate it and make sure that when you actually place trades, your profit is
+[  310.76s ->   313.72s] going to line up with your 30 day profit target.
+[  313.88s ->   315.66s] That is how I do it for my coaching clients.
+[  315.74s ->   319.80s] That's the report I put together on all of their accounts to do it for them every 30 days.
+[  319.80s ->   323.92s] If that's something you would like to work with me to do for you, click the link down
+[  323.92s ->   325.92s] in the description and I would love to work with you.

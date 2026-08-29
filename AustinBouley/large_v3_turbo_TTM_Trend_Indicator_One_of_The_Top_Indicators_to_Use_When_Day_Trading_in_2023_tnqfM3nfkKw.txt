@@ -1,0 +1,58 @@
+[    0.39s ->     5.03s] Welcome to this video where we are going to discuss the TTM trend indicator.
+[    5.21s ->     9.65s] If you haven't been to my channel before, please hit that subscribe button and turn on those alerts
+[    9.65s ->    16.67s] as I am the impeccable investor and I teach everyone how to day trade, how to invest, everything about the stock market.
+[   17.07s ->    18.29s] Alright, moving on.
+[   18.49s ->    24.19s] So we're going to look at the TTM trend alert or indicator system.
+[   24.49s ->    27.85s] So if you want to go here, if you're on the TD Ameritrade Thinkorswim platform,
+[   27.85s ->    30.11s] you can see here that we have a TTM trend.
+[   30.63s ->    34.01s] And you can click OK and apply it and then your candles will change colors.
+[   34.59s ->    39.87s] So again, you can mess with the colors in your custom settings, but blue means bullish, red means bearish.
+[   40.29s ->    46.81s] So it's basically an advanced version of the Heiken Ashi candles, which if you don't know what that is,
+[   46.85s ->    48.89s] that is a trend-based candle system.
+[   49.33s ->    51.51s] This shows you the trend of the market.
+[   51.97s ->    56.97s] So is it good to buy calls or buy the stock when it turns blue?
+[   56.97s ->    60.19s] That's up to you to determine.
+[   60.33s ->    68.41s] But I'm going to show you how you can use this in a combination with other things to help push your profit potential up and your rate of success.
+[   68.41s ->    73.35s] So if you can see here from the 15-minute, we can do swing trading alerts from it, right?
+[   73.67s ->    77.85s] It gives us a good indication of what things are going in a longer time frame.
+[   77.85s ->    83.47s] Because in the minute-to-minute, we have too much fluctuation that we don't really see much action.
+[   83.47s ->    85.51s] However, this can really help for swing trading.
+[   85.83s ->    90.29s] If we bring in another indicator on top of this called the whole moving average,
+[   90.67s ->    95.69s] we come in here to the settings and we adjust it to 50, which is what I like to use.
+[   95.81s ->    99.21s] But remember, you can play around and use anything you want.
+[   99.73s ->   106.29s] You can see here that if we make sure that when it's blue and the trend is blue, we have caught a nice move, right?
+[  106.61s ->   108.15s] So this is turning red.
+[  108.23s ->   109.39s] The trend is turning red.
+[  109.45s ->   110.47s] You got a nice move down.
+[  110.85s ->   113.29s] So remember, this is a great thing to put together.
+[  113.29s ->   116.45s] This is like one of the ultimate swing trading strategies right here.
+[  117.07s ->   118.45s] You go on a 15-minute chart.
+[  118.55s ->   121.61s] You have the TTM trend and the whole moving average.
+[  122.09s ->   125.33s] Both of these indicators do their best to eliminate lag.
+[  125.59s ->   130.53s] So you're going to see almost immediate moves in the market and it's going to adjust accordingly.
+[  131.33s ->   131.85s] All right, guys.
+[  132.05s ->   134.93s] Another thing that will help you is hitting that thumbs up button.
+[  134.99s ->   135.97s] It's going to help you profit.
+[  136.39s ->   136.61s] All right.
+[  136.67s ->   137.19s] No, guys.
+[  137.65s ->   141.33s] For real, though, it does help the algorithm and it gives me some support
+[  141.33s ->   143.35s] knowing that you do like the content that I'm providing.
+[  144.05s ->   144.31s] All right.
+[  144.37s ->   145.29s] But moving on here.
+[  145.37s ->   147.47s] So this is the TTM trend.
+[  147.55s ->   151.77s] You can even do it on a daily when you're analyzing the market, right?
+[  151.79s ->   154.85s] You can be like, okay, we are now in a bear market, right?
+[  155.07s ->   159.45s] Because when you analyze stocks, you want to make sure you know the long-term trend.
+[  159.45s ->   161.69s] So the long-term trend here was bullish.
+[  161.81s ->   165.39s] So you would have tried to find those patterns that looked like it was breaking out to the upside.
+[  165.79s ->   169.31s] However, when you're in these areas, you're looking more of a bearish predicament.
+[  169.53s ->   172.75s] So you know that you're going to have some bearish action happening here.
+[  172.85s ->   174.35s] Let's look for some downside plays.
+[  175.09s ->   175.41s] All right, guys.
+[  175.45s ->   176.41s] Thank you so much for tuning in.
+[  176.47s ->   181.81s] If you haven't seen the other TTM videos, please go to my YouTube channel and go check them out
+[  181.81s ->   184.49s] as TTMs are one of the best indicators around.
+[  184.99s ->   185.41s] All right, guys.
+[  185.45s ->   186.41s] Thank you so much for watching.
+[  186.53s ->   187.83s] Please like, comment, and subscribe.
+[  187.83s ->   188.97s] I'll see you in the next video.

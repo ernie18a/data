@@ -1,0 +1,413 @@
+[    0.00s ->     8.18s] Moment of truth. Run. Boom. Here's our user interface. Just as we drew it up, we are going
+[    8.18s ->    14.54s] to connect to the trader workstation. Successful connection. We are making the connection request
+[   14.54s ->    20.00s] via the e-client to trader workstation. It is responding to the callback methods in e-wrapper.
+[   20.12s ->    25.98s] We are going to add a symbol to trade. Naturally, NVIDIA, as we add this symbol, we are going to
+[   25.98s ->    31.32s] create a thesis. We're going to have ChatGPT create a trading thesis. We are going to query news from
+[   31.32s ->    37.34s] trader workstation. Send it over to ChatGPT. It constructs a trading thesis and a price target,
+[   37.34s ->    46.56s] and it places an order with the trader workstation based on that price target with the ability to
+[   46.56s ->    53.18s] reevaluate that thesis over time, providing it the original thesis and news point in time,
+[   53.18s ->    61.16s] updating that position, cutting losses, doubling down, or holding. And this is a fully automated
+[   61.16s ->    71.28s] AI trading system built from scratch in Python. They say it's going to take over the world. Well,
+[   71.34s ->    77.92s] it better be able to manage our equity portfolio today. We're going to build a fully automated AI
+[   77.92s ->    84.58s] trading bot in Python. We are literally going to let a large language model ChatGPT make trading
+[   84.58s ->    90.54s] decisions for our portfolio. We're going to build this entire project from scratch together. I'm
+[   90.54s ->    96.10s] going to do so in real time. I anticipate running into some roadblocks along the way. You're going to
+[   96.10s ->   101.58s] be able to see how I resolve them in real time. And by the end of this video, we're going to have a
+[  101.58s ->   110.20s] fully-functionated algorithmic trading system that is driven entirely by ChatGPT. I'm going to show
+[  110.20s ->   114.00s] you everything from the connection to the trader workstation. That's where we're actually going to
+[  114.00s ->   119.32s] execute trades with Interactive Brokers and their Python API. I'll leave a link in the description
+[  119.32s ->   122.36s] below if you'd like to get started with them. They're the only broker I use. I've been with them
+[  122.36s ->   129.70s] for over 10 years in a trading and investing capacity. And I use them for all of my quant builds
+[  129.70s ->   135.58s] just like this one. We're also going to use OpenAI's API. I'm going to walk you through everything
+[  135.58s ->   140.48s] there. We're going to do two smoke tests, combine everything into a user interface at the end of the
+[  140.48s ->   148.62s] day, and allow ChatGPT to make trading decisions with our portfolio. The efficacy of this is certainly
+[  148.62s ->   156.18s] subject for discussion. And every single time this system is used, the results are going to change.
+[  156.18s ->   161.42s] The response for one input is going to be different from the next. So if you implement this on your
+[  161.42s ->   166.34s] accounts, you may make a tremendous amount of money, in which case you're welcome. Otherwise,
+[  167.16s ->   172.56s] if you lose a tremendous amount of money, this video is purely for educational purposes. This is
+[  172.56s ->   178.60s] not financial advice, though I'm sure some of you could use it. Without wasting any time here,
+[  178.70s ->   184.38s] let's get started by discussing the infrastructure. How do we connect to the trader workstation?
+[  184.38s ->   191.94s] How does that even work? Well, we're going to need to set up a Python client first. So I'm going to
+[  191.94s ->   199.40s] draw a block here. This is effectively going to be our Python script. Okay. And we need somewhere to
+[  199.40s ->   204.46s] execute our trades. And that's going to be the trader workstation. This is interactive brokers.
+[  205.02s ->   211.72s] And in order to make requests to the server, we need an API. Fortunately, interactive brokers has an
+[  211.72s ->   221.12s] SDK for Python. And within that SDK, within the IB API, you can just run a pip install IB API. And you'll
+[  221.12s ->   230.34s] be able to access it in Python. There are two main classes. The first is to request data from the trader
+[  230.34s ->   239.46s] workstation. And that is going to be the e-client. The second is going to be to receive responses via
+[  239.46s ->   249.00s] callback methods. And that is the e-wrapper. So the e-client is where we initiate requests to the server.
+[  249.66s ->   256.14s] Things like a connection request, a disconnect request, requesting portfolio information, account
+[  256.14s ->   265.01s] information, net liquidation value, and of course, placing trades. How do we get responses from the server?
+[  265.01s ->   272.33s] Well, that is where the e-wrapper comes in. The e-wrapper has callback methods and the trader workstation
+[  272.33s ->   279.50s] is going to send responses to those callback methods. This is a pretty standard loop. We can
+[  279.50s ->   285.56s] build a nice user interface here with some buttons, right? To maybe buy stock, sell stock. We're just
+[  285.56s ->   289.28s] going to restrict to U.S. equities for this video for simplicity's sake. You could extend to other
+[  289.28s ->   294.68s] products, options, futures. You could be product agnostic for sure. U.S. equities for simplicity's sake
+[  294.68s ->   300.00s] here. But where does ChackGPT come in? Of course, we can create a window where we can just press a
+[  300.00s ->   306.76s] button and buy and sell. But how can we give ChackGPT the ability to actually execute those
+[  306.76s ->   311.76s] trades? This is where things get really interesting. And I've long said that at some point, these large
+[  311.76s ->   317.52s] language models are only going to be so smart. And we're going to need to make them appear smarter or
+[  317.52s ->   324.34s] have them do more things by just giving them access to function calls, allowing it effectively to
+[  324.34s ->   330.58s] do stuff. Whether or not that is a good idea, again, is subject for discussion. Dumping your
+[  330.58s ->   338.48s] entire CRM to your client base doesn't seem like a good idea. You probably have a perception of that
+[  338.48s ->   346.64s] risk, but ChackGPT certainly does not. Just like how if it sets a $300 price target for NVIDIA and uses all
+[  346.64s ->   353.72s] of the leverage in your account to exercise that thesis, it may not be a good idea, right? It has
+[  353.72s ->   360.14s] no actual perception of risk. But hey, let's see what happens. That's part of the fun here. So we're
+[  360.14s ->   369.39s] going to have ChackGPT here. And in a similar fashion, we're going to be reaching out to ChackGPT,
+[  369.55s ->   376.29s] sending requests, effectively sending it a prompt, right? With some information. Maybe it'll be about a
+[  376.29s ->   382.39s] ticker, some news. We'll ask it to construct a thesis, maybe for the next couple of weeks,
+[  382.45s ->   388.87s] next couple of months, next couple of years. The timeframe is entirely up to you, right? And
+[  388.87s ->   393.93s] ChackGPT is then going to respond with some information. What information is it going to
+[  393.93s ->   401.21s] respond with? Well, it's going to respond with specifically the thesis, the price target,
+[  401.21s ->   407.93s] and the most important part, arguments for the function call. This is where things get really
+[  407.93s ->   417.23s] cool. This is where you take text that you send to ChackGPT and turn it into a function call
+[  417.23s ->   425.13s] in your Python clients. So what we're actually doing there is we are giving ChackGPT a query like,
+[  425.13s ->   432.21s] hey, given all this information, would you buy or sell, construct a price target, and then execute
+[  432.21s ->   438.73s] a trade. But it's just going to respond with text, right? How can we actually get it to execute a trade
+[  438.73s ->   446.51s] in Python? That's where we provide ChackGPT the function stub and the necessary parameters. Then
+[  446.51s ->   451.95s] it will respond with all of the aforementioned information, but also the parameters for the
+[  451.95s ->   458.07s] function. And that function then is going to execute the trade with the trader workstation.
+[  458.25s ->   464.55s] So to start here, what we're going to do is we're going to boot up cursor, and we are going to conduct
+[  464.55s ->   472.45s] a smoke test with the trader workstation. So what is that going to look like? I'm going to create a
+[  472.45s ->   477.63s] controller class first. So what I'm going to do is effectively try to connect to trader workstation.
+[  477.63s ->   483.33s] And to do so, I'm going to make sure that my trader workstation is configured correctly. I'll go to
+[  483.33s ->   491.43s] settings. I'll go over to API settings, enable active X and socket clients, disable read only API,
+[  491.43s ->   499.41s] because I want ChackGPT to be able to execute trades and manage my active risk. Again, not too sure
+[  499.41s ->   505.17s] that's going to be a good idea, but we will certainly see. The socket port is 7497 for this paper trading
+[  505.17s ->   510.27s] account. That is configured correctly. So now we're ready to go to start the smoke test. So I'm going
+[  510.27s ->   522.53s] to say, create a smoke test for IB API connecting to TWS, create a controller class implementing the
+[  522.53s ->   535.44s] E client and E wrapper and create a basic connection request to the trader workstation. So this is
+[  535.44s ->   539.44s] effectively doing exactly what I outlined here, right? This is going to be the Python script.
+[  539.64s ->   545.16s] We have one class that's going to contain both the E client and E wrapper. This is going to allow us to
+[  545.16s ->   553.14s] use that single class to both send requests to TWS, this guy here, and receive it back to the Python
+[  553.14s ->   560.36s] script file. And once we do that, we can work on the open AI smoke test. So actually, while we are
+[  560.36s ->   566.86s] writing this code here, let's head on over to platform.openai.com and we're going to create a
+[  566.86s ->   573.08s] new API key. So what I'm going to do is I'm going to click create secret key, and I'm going to call
+[  573.08s ->   581.50s] this ChackGPT trading bot. I will create a secret key here and boom, there we go. It's going to provide
+[  581.50s ->   589.68s] for me this secret key. I'll head on back over to cursor and I'll open a new tab. And I guess software
+[  589.68s ->   597.12s] engineering is just glorified, I guess, glorified cooking at this point. I have so many, so many
+[  597.12s ->   604.04s] things going on in the kitchen here. We're going to create a smoke test for this, this API, this open
+[  604.04s ->   616.18s] AI API. So I'm going to say, create a smoke test using the open AI Python SDK, hard code my secret key.
+[  616.64s ->   625.88s] This is for purely, purely demonstration purposes. We would never hard code our secret key in production.
+[  626.22s ->   632.70s] We would use environment variables. We would ensure everything is stored safely. We wouldn't
+[  632.70s ->   638.86s] give it to chat in this capacity, but for the sake of this video, it will certainly suffice.
+[  638.86s ->   646.58s] If we head on back over to the platform here, I'm going to revoke the key once this video is over,
+[  646.66s ->   656.16s] obviously. It looks like they have some sort of CSS error on their dashboard here. I guess
+[  656.16s ->   663.94s] I guess we're going to have to give NVIDIA a couple, a couple more billion dollars to fix this CSS.
+[  663.94s ->   673.44s] Cause it looks like the table row, the table, the table row containing the column names is overwriting
+[  673.44s ->   682.47s] the first row with my, with my secret key. So I guess we're going to have to ping Sam Altman to get
+[  682.47s ->   690.48s] them to fix that with a, another massive investment. Um, okay. But after that, I'm sure, I'm sure the CSS
+[  690.48s ->   695.74s] will be fixed. So here's our smoke test. Here's our, our, our IB smoke test. Let's see what we got
+[  695.74s ->   706.94s] going on here. We'll run the controller first, see if we connect successfully. Here's our test TWS
+[  706.94s ->   713.16s] smoke going to run this guy. Boom. Okay. It ran one test. Looks like it passed. We'll run the smoke
+[  713.16s ->   720.42s] test for open AI and that passed as well. So both of these have successfully connected to
+[  720.42s ->   726.96s] trader workstation and chat GPT. What is the next step here? Well, the next step is going to be
+[  726.96s ->   735.98s] to create a user interface such that we can give chat GPT the tickers that we would like it to trade.
+[  736.14s ->   741.08s] Then when we run this application another time, it's going to automatically query those positions.
+[  741.08s ->   747.02s] It's going to be able to actively manage the risk on those. It's going to update the thesis
+[  747.02s ->   754.30s] over time and either cut our losses, double down, um, or of course, create new theses. So what should
+[  754.30s ->   762.88s] this user interface look like? Well, I'm thinking it should have a menu bar at the top for a connection.
+[  763.14s ->   770.56s] So we could have something like TWS here. We'll have connect disconnect. I'm thinking typically what I do
+[  770.56s ->   776.20s] on my apps is I have some sort of bar here. That's just going to be red or green for the connection
+[  776.20s ->   782.10s] status. So you can just add a glance, see if you're successfully connected to the server. I would like
+[  782.10s ->   792.56s] a input here for the ticker, and I would like to be able to add it to our portfolio below. And then I would
+[  792.56s ->   798.00s] also like some console logs here. So we can see what's going on with our connection to the server.
+[  798.20s ->   806.10s] We can see if we are successfully connecting to chat GPT, every leg effectively of this pipeline that
+[  806.10s ->   812.50s] is requesting information from TWS pricing information, news information, sending it over
+[  812.50s ->   817.12s] to chat GPT, having it construct a thesis and a price target, and then sending back the arguments
+[  817.12s ->   822.12s] for the functions, which we're going to talk about in a moment, how exactly that works.
+[  822.70s ->   828.73s] But for now, let's continue talking about this. So this is going to be the portfolio. This is going
+[  828.73s ->   835.97s] to be the console logs. We're going to have the target here. This will be the target price. This
+[  835.97s ->   844.29s] is going to be the thesis. And I say we have some buttons here. I think what we'll do is we'll have a
+[  844.29s ->   851.19s] create thesis button. So we'll be able to select a symbol in our portfolio. For the sake of this
+[  851.19s ->   855.77s] video, for simplicity's sake, we're going to use U.S. equities. And I'm thinking when we select
+[  855.77s ->   861.63s] this ticker, we're going to be able to create a thesis. And that is what's going to start this
+[  861.63s ->   865.93s] entire pipeline. So it's going to query pricing information for that ticker. It's going to query
+[  865.93s ->   870.37s] news information. It'll send it over to chat GPT. It'll construct a thesis, a price target.
+[  870.37s ->   876.73s] It'll respond with an order that is a position to take. And it'll actually place that trade with
+[  876.73s ->   884.46s] the trader workstation. I think also we'll have a button then to re-evaluate the thesis.
+[  887.37s ->   894.63s] So as this is unfolding in real time, you'll be able to click re-evaluate and you'll be able to
+[  894.63s ->   900.49s] run that entire pipeline again. But you're also going to have the thesis history. So we're not just
+[  900.49s ->   907.33s] going to contemporaneously, whenever you click the re-evaluate thesis button, send new information,
+[  907.47s ->   912.53s] just whatever the spot news is and the price to chat and have it construct an entirely new thesis.
+[  912.65s ->   915.85s] We don't want it to forget what it thought about originally. So what we're going to do is
+[  915.85s ->   921.49s] we're going to save that as a JSON file with a timestamp. If we re-evaluate, we're going to give
+[  921.49s ->   926.87s] it that past information, what it was thinking at that point in time, and then tell it to re-evaluate.
+[  926.87s ->   934.49s] Should we double down, cut our losses, take our profits, so on and so forth. If we have a tremendous
+[  934.49s ->   943.49s] number of tickers in this portfolio, it is likely we're going to want to re-evaluate all. Just one
+[  943.49s ->   950.45s] button to re-evaluate everything. So maybe you do it every day at like 11 o'clock post-market open,
+[  950.65s ->   956.43s] kind of like in that post-open lull. If you have a significant number of tickers, you're not going to
+[  956.43s ->   962.59s] want to just select the ticker, click re-evaluate, select the ticker, click re-evaluate. You may want
+[  962.59s ->   968.17s] to do this on an individual basis. Maybe you don't want to re-evaluate one. There's, I mean,
+[  968.17s ->   971.71s] you could do really anything here, right? So this is just going to be sufficient. I think
+[  971.71s ->   979.45s] for what it is we are trying to accomplish. So let's get started building this UI, and then let's
+[  979.45s ->   985.41s] talk about how we can actually have ChatGPT construct or actually call functions for us
+[  985.41s ->   990.83s] in Python. So that is going to be effectively this guy here, ChatGPT coming back to Python.
+[  990.83s ->   996.37s] We don't want it to just give us a response, right? It's a large language model. It's just
+[  996.37s ->  1001.29s] matrix multiplication at the end of the day, coming up with some tokens. We don't want it to just give
+[ 1001.29s ->  1007.39s] us tokens to buy or sell. We want it to actually call a function. We're going to go over exactly how
+[ 1007.39s ->  1012.19s] that works, but first we're going to start by building this user interface. So I used to say
+[ 1012.19s ->  1018.53s] building user interfaces is some sort of hell, but now fortunately for us, we can just take a
+[ 1018.53s ->  1024.43s] screenshot, going to copy this guy, throw it into cursor here. And what I'm going to do is I'm going
+[ 1024.43s ->  1029.55s] to have it build this in a single script, and I'm going to have it build it in a single script,
+[ 1029.67s ->  1034.85s] not because a monolithic, not because a monolithic script for running this sort of program is a good
+[ 1034.85s ->  1042.73s] idea, but because I'm going to post the entire script to discourses after this video. So what
+[ 1042.73s ->  1054.24s] I'll do is I will, let me open up the, this guy here. I'm going to create a new file. I'm going to call
+[ 1054.24s ->  1063.02s] it ChatGPT tradingbot.py. And what I'll do is I'll start a new agent window, and I'm going to throw
+[ 1063.02s ->  1069.68s] this Python script in here. And what I'll do is I'll paste the screenshot that I just drew. So
+[ 1069.68s ->  1075.56s] literally what I drew on my iPad here is what I wanted to build. And I'll say, create this tkinter
+[ 1075.56s ->  1086.24s] user interface, such that we have a menu bar for connecting, disconnecting to and from TWS.
+[ 1086.24s ->  1099.35s] We will have an input for a ticker and adding it to our portfolio. We will also query all active
+[ 1099.35s ->  1108.83s] positions into that portfolio table. Then based on what is selected, we will be able to create a thesis,
+[ 1108.83s ->  1123.47s] three buttons in the upper right for create thesis, re-evaluate thesis, and re-evaluate all thesis.
+[ 1123.47s ->  1136.12s] Underneath that, we will have the thesis saved for the selected portfolio holding in the left table.
+[ 1136.12s ->  1147.87s] Underneath that, we will have the accompanying price target. And under both the target and portfolio
+[ 1147.87s ->  1157.87s] table, the console logs. We will build out the button functionality, focus on staging for now,
+[ 1158.31s ->  1166.67s] and TWS core functionality using similar logic to our controller. Remember,
+[ 1166.67s ->  1171.11s] we built the controller in our smoke test. If you come on over here to this controller,
+[ 1171.47s ->  1181.75s] you will see that it is going to our TWS smoke test. It is going to connect and disconnect.
+[ 1182.07s ->  1186.53s] We have our controller here. E-wrapper is where we're receiving information from the server.
+[ 1186.63s ->  1192.59s] E-client is where we're going to be able to connect, execute other requests. So we can connect to the
+[ 1192.59s ->  1199.69s] server, place orders, request portfolio information, request holdings, account, net lick, even news for
+[ 1199.69s ->  1207.05s] particular tickers. And here's an example of a method from the e-client, the connect TWS. That's what
+[ 1207.05s ->  1212.45s] we're implementing here. We're going to use this controller, right? But in a monolithic way.
+[ 1212.45s ->  1224.92s] Do not rely on other scripts. Rewrite the controller into the trading bot PY file, make it monolithic,
+[ 1224.92s ->  1233.16s] probably spelt wrong, but I am the math guy. I am the math guy. So that's a big prompt. This is
+[ 1233.16s ->  1236.98s] building out the user interface, the core functionality. We can't do everything there
+[ 1236.98s ->  1244.94s] yet because we need to connect to open AI. And we're going to bake that in using the open AI Python
+[ 1244.94s ->  1251.92s] SDK. But before we do that, I want to talk a little bit about how we can get track GPT to make function
+[ 1251.92s ->  1258.02s] calls, because this is really cool. This is where it goes from just spitting out text to actually
+[ 1258.02s ->  1264.58s] providing arguments for functions that it can execute. So what I want to do is in this open AI smoke
+[ 1264.58s ->  1273.74s] test, I really want to start with a basic question where we don't call a function and it responds via
+[ 1273.74s ->  1279.68s] text. And then I want to do one where it actually calls a function. So what I'm going to do here is
+[ 1279.68s ->  1290.78s] in this smoke test, I'm going to say, ask chat, what two plus two is and print the response.
+[ 1293.82s ->  1301.62s] So what we're going to do is we're going to use the open AI, the open AI key that we have here,
+[ 1301.62s ->  1308.82s] we're going to send a prompt via the API and receive a response, but the response is purely text.
+[ 1309.10s ->  1315.91s] Okay. It's not making a function call here. So when I run this guy, right, let's see, it ran the
+[ 1315.91s ->  1323.18s] smoke test. I don't want to run it as a unit test. I actually want to run it as its own script. So what
+[ 1323.18s ->  1331.60s] I'm going to do is I'm going to call it example open AI function calls dot py. And I'm going to say
+[ 1331.60s ->  1344.36s] here using the open AI API, Python SDK, and a hard coded private key. And we can get that hard coded
+[ 1344.36s ->  1353.20s] private key from, let's see, where did it put it? Did it add it as an environment variable? Nope.
+[ 1353.20s ->  1371.07s] All right. We will get it from the smoke test, ask chat, what two plus two is and print the response
+[ 1371.07s ->  1381.54s] to the terminal. So this is just a simple prompt. We're asking it to return what two plus two is.
+[ 1381.54s ->  1388.98s] This is the simple matrix multiplication returning some sort of text response. So this is effectively
+[ 1388.98s ->  1398.36s] all track GPT is, but we want to not have it execute that operation just via text. We want it to actually
+[ 1398.36s ->  1404.28s] execute the analytical expression. So what do I actually mean by this? Let's see if we can run
+[ 1404.28s ->  1411.56s] this guy here and get a response. Missing open AI key set it. All right. Well, I don't know what it
+[ 1411.56s ->  1416.94s] is. So I'm just going to delete and create a new one. I'm going to deal with this in track GPT
+[ 1416.94s ->  1426.29s] trading by API key, create copy. It's trying to store it as an environment variable. I don't want
+[ 1426.29s ->  1431.11s] to do that. Even though in prod, you definitely should, but this is a YouTube video. I don't know
+[ 1431.11s ->  1439.09s] what you expect from me. Let's hard code the API key. Don't use environment variables. You should
+[ 1439.09s ->  1443.37s] use a get ignore. You should use environment variables. Yeah, yeah, yeah. I know. But like I
+[ 1443.37s ->  1451.24s] said, for simplicity sake, for the sake of this tutorial, we are going to show exactly how we can
+[ 1451.24s ->  1457.68s] get chat to execute functions in Python. Okay, cool. So now we're going to provide the API key to
+[ 1457.68s ->  1465.50s] the Python SDK. I'm going to run this guy here. And what I want you to notice is it prints two plus two
+[ 1465.50s ->  1474.78s] equals four. Okay. So it executed the analytical expression, right? It did not. It did not. It did
+[ 1474.78s ->  1482.08s] not because what it's doing is it's actually responding via best prediction based on what
+[ 1482.08s ->  1488.58s] it has been trained on. It's not actually executing two plus two. It's not executing the addition
+[ 1488.58s ->  1494.58s] operation. So we can change that. All right. What I want you to notice is here, what we're doing is we
+[ 1494.58s ->  1501.74s] are not providing it any infrastructure to actually be able to extract the arguments for the addition
+[ 1501.74s ->  1507.82s] operation, and then execute that function. So we're just saying what is two plus two answer briefly,
+[ 1507.82s ->  1514.06s] and we get some sort of text response, and we can try to strip the answer here, or maybe tell it, hey,
+[ 1514.18s ->  1519.62s] like answer with just the answer, right? But it might put for period, that's going to be difficult
+[ 1519.62s ->  1524.50s] to strip, right? Really, what we want to do is we want to extract the arguments and
+[ 1524.50s ->  1530.78s] execute the operation. So what we're going to do is we're going to create an addition function. So
+[ 1530.78s ->  1536.69s] what I'm going to do is I'm going to say, okay, for this example, open AI function call, create an
+[ 1536.69s ->  1548.71s] addition function, then tell the API that the function exists and do the same two plus two,
+[ 1548.71s ->  1557.29s] but show the actual function call from chat in the terminal. So what we're doing now is we're going
+[ 1557.29s ->  1563.31s] to create a Python function, tell chat that this function exists and have it extract the arguments
+[ 1563.31s ->  1570.15s] from our text to provide to the function in our Python script. And then it's going to call that
+[ 1570.15s ->  1577.29s] function as a response. And we will actually have the analytical operation executed. It's not going to
+[ 1577.29s ->  1583.23s] just be based on next token prediction, right? It's not just the matrix multiplication and predicting
+[ 1583.23s ->  1589.47s] the next best token via text. It's actually executing the operation. That's absolutely huge
+[ 1589.47s ->  1595.21s] because we're going to be able to actually execute buy and sell orders with the trader workstation
+[ 1595.21s ->  1602.63s] because of this. So the e-client, for example, is going to have the ability to place an order.
+[ 1602.63s ->  1606.65s] You can place a limit order, a market order, whatever you like, parent child orders with
+[ 1606.65s ->  1612.41s] take profits and stop losses, whatever you like to do. We need chat to know that those functions exist
+[ 1612.41s ->  1617.45s] and that it can provide arguments to them so that it can call them. So here, what we've done is
+[ 1617.45s ->  1624.47s] we've added a tool, a function. The name is add. The description adds two numbers together and returns
+[ 1624.47s ->  1631.81s] their sum. It has two properties, right? Two parameters, a and b. Their objects, their numbers,
+[ 1632.41s ->  1640.73s] floats likely to generalize. They are required, a and b, to add together. But that is going to
+[ 1640.73s ->  1648.00s] literally be a function. That is a function that we are providing to chat and we're going to actually
+[ 1648.00s ->  1658.13s] be able to execute that function. Okay? So what I'll do here is I'll keep all. I'm going to run this
+[ 1658.13s ->  1670.28s] guy here. And now what I want you to notice is we have the call of the function itself, the function
+[ 1670.28s ->  1679.37s] name, and the arguments. We asked it what? If we go back to our original prompt, we said,
+[ 1679.37s ->  1688.51s] what is 2 plus 2? Use the add function to compute it. Do not guess the sum without calling add. So
+[ 1688.51s ->  1694.29s] now we're not telling it to predict the next token, right? Scouring the internet training chat on the
+[ 1694.29s ->  1700.67s] abundance of text, it's likely seen 2 plus 2 equals 4, right? There's some noise likely, 2 plus 2 equals
+[ 1700.67s ->  1707.19s] 5 equals 1 for whatever reason, right? Wherever it's seen it, somewhere on the internet. But we don't want
+[ 1707.19s ->  1712.15s] that noise in the response. We just want to use the actual analytical expression 2 plus 2.
+[ 1712.69s ->  1717.39s] And that's what we're doing here. We're using the analytical expression, extracting the arguments
+[ 1717.39s ->  1723.41s] to provide to that function. And then we can actually call the function. The reason this is
+[ 1723.41s ->  1730.72s] substantial is because we don't need the arguments to just be fixed numbers. 2 plus 2. This is where it
+[ 1730.72s ->  1737.49s] gets really cool. This is where we can provide chatGPT things like news. The current price of a
+[ 1737.49s ->  1743.41s] particular equity. And tell it, hey, I have this place order function where you get to set the size,
+[ 1743.53s ->  1749.31s] the number of shares. You get to determine the entry price that you're willing to pay. Is it the
+[ 1749.31s ->  1756.38s] market price? Is it a limit entry, right? Long or short? That is what we're using this for. This
+[ 1756.38s ->  1765.10s] mechanism here of telling chat that we have a function that we can use is extremely productive.
+[ 1765.10s ->  1771.68s] Extremely productive. It's also very dangerous. This is exactly how entire CRMs can get dumped to
+[ 1771.68s ->  1777.62s] your entire client base by accident. It has literally no sense of risk. It has no idea what
+[ 1777.62s ->  1783.72s] it means to use all of your portfolio leverage on a single deep out of the money option. If that is
+[ 1783.72s ->  1787.88s] something that you would like to do, you would like to have chat have that capacity, you're more than
+[ 1787.88s ->  1795.68s] welcome to do so. You may become a millionaire or you may end up flat broke. Do remember me if you
+[ 1795.68s ->  1803.22s] become a millionaire. I certainly believe that I deserve some percentage of that P&L being the person
+[ 1803.22s ->  1809.30s] to aid in that trading decision to some capacity. Though, if you lose all your money, this is not
+[ 1809.30s ->  1814.26s] financial advice. So what we're going to do now is take all of this stuff. We're going to head on back
+[ 1814.26s ->  1819.88s] over here. We're going to have our user interface. So if we go to this chat GPT trading bot, I'll boot
+[ 1819.88s ->  1826.38s] this guy up here. We have a nice interface. I'll go TWS connect. Looks like we have connected
+[ 1826.38s ->  1832.12s] successfully. Okay. I didn't add the green or red bar for connections. So maybe I will tell it to do
+[ 1832.12s ->  1837.42s] that. So it looks nicer. I'll be able to select this, create thesis, reevaluate thesis, reevaluate all
+[ 1837.42s ->  1848.33s] theses. Um, I'm probably going to hide any position that doesn't have a, a quantity greater than zero
+[ 1848.33s ->  1855.77s] trying to figure it out. That's something that I would like to do. Maybe if I wanted to add a new
+[ 1855.77s ->  1863.86s] ticker, I think like JPM add, it's going to have a zero quantity, but the source is manual for now.
+[ 1863.92s ->  1870.23s] That's probably better. So, you know, what we're going to do is we're going to say add a green bar
+[ 1870.23s ->  1879.74s] under the menu bar in red or green based on connection status. So we can see at a quick
+[ 1879.74s ->  1893.15s] glance, if we are connected, if the TWS queried position is zero or not greater than zero, same
+[ 1893.15s ->  1901.46s] thing. You could have fractional shares, I guess. Then do not show it in the portfolio view. We will
+[ 1901.46s ->  1913.12s] not show the portfolio. We will not show the ticker if we have a net zero position. Okay. All right. So
+[ 1913.12s ->  1924.92s] what else do we want here? Let's think we're going to need to now include the open AI Python SDK
+[ 1924.92s ->  1935.66s] with the hard-coded private key, just like we would have in production. No doubt. We need to also save
+[ 1935.66s ->  1945.38s] the state of our portfolio and our thesis over time so that every time we open this app and close it,
+[ 1945.44s ->  1952.85s] we're going to be saving the information and we'll be able to then reevaluate the thesis at different
+[ 1952.85s ->  1958.09s] points in time. And we'll be able to update our positions again, doubling down, cutting losses,
+[ 1958.09s ->  1968.65s] taking profit. That sounds pretty good to me. So let's work on that next part. Now we will say,
+[ 1971.87s ->  1982.75s] implement in the monolithic, mono, monolithic scripts. We're going to use now the example,
+[ 1983.39s ->  1988.83s] open AI function call that I showed you, right? This is effectively giving chat the ability to
+[ 1988.83s ->  2001.07s] call functions on our Python client. We're going to implement this such that we, uh, we also need to
+[ 2001.07s ->  2008.75s] query news. So what we're going to do is select that we have functionality in the create thesis button
+[ 2008.75s ->  2022.66s] and reevaluate thesis button and reevaluate all thesis buttons. Here is the workflow. Stage one.
+[ 2023.44s ->  2035.08s] We are going to query news for the selected ticker in the portfolio. I guess we need to tell it based
+[ 2035.08s ->  2044.04s] on whatever symbol is selected as a row in the portfolio table. Here is the workflow stage one,
+[ 2044.04s ->  2050.44s] query the news for the selected ticker in the portfolio stage two. We are going to
+[ 2050.44s ->  2067.63s] send the news and the spot price to chat GPT via open AI's Python SDK stage three. And we're going to ask it
+[ 2067.63s ->  2077.07s] there for a thesis, ask it for a thesis and a price target. This is where the example open AI function
+[ 2077.07s ->  2089.26s] calls script is useful. We need it to be able to return the necessary information, not just relying on token
+[ 2089.26s ->  2103.05s] prediction. Stage three, we will save the response thesis and price target as with a date stamp with
+[ 2103.05s ->  2111.79s] a pro thesis and target with a date stamp. And this is going to allow us to then reevaluate it over time.
+[ 2112.83s ->  2124.33s] So this is the workflow when creating a thesis button with a date stamp, save the response thesis and price
+[ 2124.33s ->  2139.02s] target with a date stamp and execute a market order based on the thesis. Call it 100 shares.
+[ 2141.47s ->  2148.75s] Stage four. So I think that's, I think that's it. Yes. That's, that's pretty much it.
+[ 2148.75s ->  2158.35s] Ensure on load or close. We save the JSON responses when reevaluating. And this is, I guess,
+[ 2158.35s ->  2166.22s] where it starts to get really interesting when reevaluating as, as no perception of our overall
+[ 2166.22s ->  2171.42s] net lick, we could definitely give it our net lick. We could tell it what we think in terms of risk.
+[ 2171.42s ->  2174.54s] Obviously it's not really going to have any idea of what that looks like.
+[ 2176.81s ->  2182.81s] But when we reevaluate, we're either going to want to maybe double down, cut our losses or take profit.
+[ 2182.81s ->  2193.77s] So when reevaluating provide chat, the previous JSON of the thesis and timestamp and price target.
+[ 2193.77s ->  2205.88s] So it doesn't just make a contrarian decision. It will then have to decide whether to stick to its guns
+[ 2206.68s ->  2218.09s] or cut its losses. If we have a net zero position, we will be able to create a thesis once again.
+[ 2220.57s ->  2226.83s] And then I guess reevaluate all just calls that for every position.
+[ 2228.11s ->  2234.19s] That should be everything that we need to get this actually functioning. So let's take a look at the
+[ 2234.19s ->  2240.27s] update. Now we have this horizontal bar for our connection status. I can go to TWS connect. We have
+[ 2240.27s ->  2244.91s] successfully connected. We have two positions, but they're not being displayed because they have net
+[ 2244.91s ->  2252.19s] zero quantity. I can manually add, say JPM, add, and now I will be able to create a thesis.
+[ 2253.15s ->  2260.99s] And we should be able to send the news that we query from the trader workstation. So if I go over to,
+[ 2260.99s ->  2274.51s] maybe I go to my watch list here and I'll add, say JPM, right click news. We're going to send these news
+[ 2274.51s ->  2280.03s] articles, these news headlines for JPM to chat GPT along with the spot price. We'll have it come up
+[ 2280.03s ->  2287.23s] with a thesis and a price target. And then we are going to have it execute a trade based on that thesis.
+[ 2287.23s ->  2291.63s] You can give it more information. You can continue to condition such that you tell it to
+[ 2291.63s ->  2299.39s] use different time horizons, maybe short-term a week, four weeks, three months, a quarter, maybe
+[ 2300.67s ->  2307.95s] six months, a year, a couple of years. You can do this in any capacity, right? The efficacy of all of
+[ 2307.95s ->  2316.27s] this is certainly subject for discussion. I have literally no idea how this will perform. Nobody does.
+[ 2316.27s ->  2322.83s] You cannot backtest this something like this in this capacity. Um, there's so much bias. If you
+[ 2322.83s ->  2328.27s] try to backtest it in any capacity, I would treat this more like a filter for decision making. Think
+[ 2328.27s ->  2333.95s] of it more like, like poker than anything else. It's like, is this guy bluffing? No amount of back
+[ 2333.95s ->  2338.03s] testing is going to help me with this one decision right now. It's going to collapse to a binary zero or
+[ 2338.03s ->  2344.19s] one at the end of the day, this is going to be, maybe it'll work really well. Sometimes maybe it won't
+[ 2344.19s ->  2350.99s] other times. Um, I would say, because this could be used by a very large number of people that
+[ 2350.99s ->  2355.95s] it's going to be an incredibly skewed distribution. Likely, if we just implemented this blindly
+[ 2355.95s ->  2360.75s] for a very large sample size, a very few select people will make a tremendous amount of money.
+[ 2360.75s ->  2365.87s] And then everyone else is going to probably, you know, blow out their account. Um, like I said,
+[ 2365.87s ->  2371.47s] if it is the former, then I definitely think I deserve a percentage of the P and L.
+[ 2371.47s ->  2375.95s] If it's a little louder than this was for educational purposes only. And this is not
+[ 2375.95s ->  2382.22s] financial advice. So while this is implementing the monolithic scripts, I'm going to post on
+[ 2382.22s ->  2386.94s] discourses about this endeavor. So I'll go over to the commons. Uh, I'm going to,
+[ 2387.58s ->  2391.02s] cause this is where I'm going to post the monolithic script at the end of the day.
+[ 2391.02s ->  2395.74s] So if you'd like access to this script, I'm going to post it on discourses. I'm rolling out a new
+[ 2395.74s ->  2401.26s] update to prod where you can actually add scripts to a post. And I'm just going to pin this to
+[ 2401.26s ->  2406.54s] my profile. So if you want to access it, you can head on over to discourses. I'm going to select the,
+[ 2407.74s ->  2413.21s] I guess the trading strategies, maybe machine learning. Now I'll do trading strategies,
+[ 2413.21s ->  2424.40s] trading strategies tab. I'm going to say I'm currently recording a video building a chat GPT
+[ 2427.21s ->  2442.41s] trading bot from scratch using IB API and open a eyes Python SDK, literally recording the video.
+[ 2442.41s ->  2455.24s] As I type, if you'd like access to the source code, like this message, I'll create a new post later on.
+[ 2455.80s ->  2467.68s] After I roll an update to prod that allows me to attach Python scripts to these posts.
+[ 2470.28s ->  2477.08s] Cool. Give her the old post. And I didn't have my daily find yet today. So I'm going to see what I
+[ 2477.08s ->  2488.44s] get today. Oh, let's go. That's sick. I got a, an exotic. All right. Word. All right. That worked out
+[ 2488.44s ->  2496.57s] really good. That's so sick. Dang. All right. On, on cam too. I'll equip it. People are getting some
+[ 2496.57s ->  2502.49s] pretty monster finds today, but, uh, awesome. Uh, that's great. That that's the loot system baked
+[ 2502.49s ->  2507.69s] into, uh, into discourses there. So, you know, as you post, you can find loot and then you can,
+[ 2507.69s ->  2513.21s] you know, flex it on your, your account there. Um, let's see here. Let's go back over to cursor.
+[ 2514.43s ->  2522.04s] See how we're doing here. Is it using an environment variable again? Come on, dude,
+[ 2522.04s ->  2527.00s] don't use environment variables. Do, do it like we're supposed to in prod and hard code the private
+[ 2527.00s ->  2539.60s] key, like a man. Let's see. I'll head on over to this example. Take this API key and give it a quick
+[ 2539.60s ->  2552.89s] search. See what ends up happening here. I don't see it hard coded. Do not hard code. Don't tell me what to
+[ 2552.89s ->  2561.88s] do. Are you joking me? Dude, hard code this. This is outrageous. All right. No. Why are you using
+[ 2561.88s ->  2567.16s] URL lib? I told you it doesn't make any sense. How is it scraping news? Don't tell me it's,
+[ 2567.16s ->  2571.40s] it's trying to web script. It's fetching Yahoo finance headlines. I'm going to take over the world.
+[ 2571.40s ->  2580.92s] Ladies and gentlemen, I want it to use the IB API to fetch the news headlines. That is outrageous.
+[ 2580.92s ->  2588.76s] That is, that is absolutely outrageous. All right. Let's get this fixed. Um, do not use external
+[ 2588.76s ->  2604.56s] sources for news. You should be using IB API and fetching news there. Also, this is for testing purposes.
+[ 2605.84s ->  2616.67s] Hard code, the secret key like a man. All right. And then we should be all set. That should be
+[ 2616.67s ->  2620.51s] everything that we need. Let's give it a quick run here and see how we're working with this Yahoo
+[ 2620.51s ->  2627.39s] finance web scraping nonsense. Um, okay. Open AI key is not set because it tried to push it into an
+[ 2627.39s ->  2633.39s] environment variable. That is exactly what we are dealing with right now. So I'm going to wait for
+[ 2633.39s ->  2640.43s] this to hard code the private key as I had intended, and then we can work from there. I cannot believe
+[ 2641.31s ->  2649.29s] that I told it to use, I told it to hard code it and it's sidestepping, sidestepping me. It says,
+[ 2649.29s ->  2658.49s] do not hard code. You see this? It's telling me, do not hard code. Come on, man. All right. And then we're
+[ 2658.49s ->  2675.58s] going to see if we could place, uh, a trade with, uh, losing video. It's worked with the video. See what's
+[ 2675.58s ->  2692.86s] going on in discourses while we're waiting. Clarity act will pass revolutionary for crypto. It was a
+[ 2692.86s ->  2700.96s] pretty crazy day for NVIDIA today. I will say it was a pretty crazy day. Was it two ran up today,
+[ 2700.96s ->  2707.36s] right? Two, two 35. That's crazy. Let's see what a chat GPT thinks for a price target for NVIDIA.
+[ 2711.18s ->  2725.15s] Of course, after this nonsense, here are our functions that we're providing to
+[ 2726.11s ->  2736.97s] chat investment decision. We're going to receive thesis price target order side and rationale.
+[ 2738.09s ->  2751.23s] Very, very useful. I've got to have that Paris baguette cold brew before chat loses
+[ 2751.23s ->  2765.64s] all of my money. Looks like we've hard coded the API key. Very good. It's work. It says requested
+[ 2766.44s ->  2772.52s] prefer in environment variables. Yes, we, we, you know, we know how it should be in pride.
+[ 2772.52s ->  2778.44s] We understand remove the, get ignore and hard code it into your script and then push to prod
+[ 2778.44s ->  2791.69s] just like everyone else does. Good. We got rid of the Yahoo finance headlines.
+[ 2792.25s ->  2796.89s] We have now news helpers for the interactive brokers callback method for news.
+[ 2798.14s ->  2807.58s] Keep scrolling on down here. Fetch IB news headlines. Very good news providers.
+[ 2809.00s ->  2813.16s] All right. Awesome. This looks great. If you find that you have any trouble running
+[ 2813.16s ->  2818.76s] this sort of system, you may just need to configure your market data subscriptions.
+[ 2818.76s ->  2822.20s] It's a few dollars every month to get access to this type of live data.
+[ 2823.00s ->  2826.76s] I have a video actually dedicated to this topic. I'll leave a link to it in the description below
+[ 2826.76s ->  2832.36s] on requesting market data from interactive brokers. I walk you through everything from, you know,
+[ 2832.36s ->  2835.56s] getting into your account and then setting up the market data subscription.
+[ 2835.56s ->  2838.76s] If you need any help with that. Otherwise, if you've configured it yourself,
+[ 2838.76s ->  2840.92s] you should be good to go. So what I'm going to do is I'm going to run this guy here.
+[ 2842.00s ->  2845.20s] Head on over here. This is our Python client.
+[ 2845.92s ->  2851.04s] Just as we drew it up on our iPad. Absolutely outstanding.
+[ 2851.04s ->  2858.00s] We scroll up. Here is the framework. Python to TWS back to Python out to chat.
+[ 2858.00s ->  2862.16s] Chat comes back with a trading decision, sends it over to trader work station.
+[ 2862.72s ->  2869.12s] I'm going to connect. I'm going to add NVIDIA as a ticker.
+[ 2871.10s ->  2877.13s] NVIDIA not found. Come on, man. What do you mean NVIDIA not found?
+[ 2878.01s ->  2882.60s] JPM. Okay. I'm getting NVIDIA not found.
+[ 2887.56s ->  2895.18s] Likely because quantity from server is zero. What a nonsense error.
+[ 2910.49s ->  2916.41s] Yeah, that was the issue. So we're going to have a manual row for NVIDIA,
+[ 2917.58s ->  2934.25s] even if the position server side is zero. So I'm going to kill this. Okay.
+[ 2935.88s ->  2948.27s] That looks like it should do it. Give this a run. All right. Moment of truth. Boom.
+[ 2948.27s ->  2955.28s] Here's our client. Just as we drew it up. Trader workstation connect, successfully connected
+[ 2955.28s ->  2960.48s] to the trader workstation. Add a ticker. NVIDIA naturally add. Boom.
+[ 2961.36s ->  2970.08s] Send this out to track GPT. Create a thesis. Can't find EID with ticker one zero. What is this?
+[ 2971.28s ->  2978.72s] One zero zero three. Very close. Very, very close. Let's see. Give this error to this.
+[ 2978.72s ->  2982.48s] Just a function call error, right? Cancel this guy here.
+[ 2984.40s ->  2991.12s] Looks like, did it respond with a thesis? It sure did. So it was able to draw up a thesis.
+[ 2992.56s ->  2996.72s] Credible market resilience supported by positive momentum due to such events. So cool.
+[ 2996.72s ->  3004.64s] Based on contemporaneous news and our price target of two 50. Very, very cool. So what I'm going to do is
+[ 3004.64s ->  3011.28s] I'm going to kill this guy and in efforts to clean up the error in the terminal, I'm going to give it
+[ 3011.28s ->  3018.80s] one last run before we go. And then I want to test the reevaluation and we should be off to the races and
+[ 3018.80s ->  3028.92s] we will have a fully automated trading system where track GPT is at the helm, constructing theses and
+[ 3028.92s ->  3044.60s] managing our risk. God help us. After this is all set. Boom. Keep moment of truth run. Boom. Here's our user
+[ 3044.60s ->  3052.76s] interface. Just as we drew it up, we are going to connect to the trader workstation, successful
+[ 3052.76s ->  3057.80s] connection. We are making the connection request via the e-client to trader workstation. It is
+[ 3057.80s ->  3063.80s] responding to the callback methods in e-wrapper. We are going to add a symbol to trade naturally.
+[ 3063.80s ->  3069.56s] In video, as we add this symbol, we are going to create a thesis. We're going to have chat GPT,
+[ 3069.56s ->  3074.12s] create a trading thesis. We are going to query news from trader workstation, send it over to chat GPT.
+[ 3074.12s ->  3082.52s] It constructs a trading thesis and a price target, and it places an order with the trader workstation
+[ 3083.08s ->  3090.28s] based on that price target with the ability to reevaluate that thesis over time, providing it
+[ 3090.28s ->  3097.72s] the original thesis and news point in time, updating that position, cutting losses, doubling down or
+[ 3098.44s ->  3108.68s] holding. And this is a fully automated AI trading system built from scratch in Python.
+[ 3109.72s ->  3116.20s] This video certainly took a tremendous effort to put together. Words cannot articulate.
+[ 3116.84s ->  3120.76s] I hope you enjoyed. I hope you learned something. If you want to see more videos
+[ 3120.76s ->  3126.44s] like this in the future, please like, comment, subscribe, share. It helps me out tremendously.
+[ 3126.44s ->  3134.36s] It is always greatly appreciated. I'm going to post the source code for this on discourses.io. I'm going
+[ 3134.36s ->  3140.68s] to pin it to the top of my profile. So, head on over there if you would like this original source code.
+[ 3140.68s ->  3150.36s] Other than that, I want to thank you so much for watching and I will see you in the next video.

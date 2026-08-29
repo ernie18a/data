@@ -1,0 +1,417 @@
+[    0.46s ->     6.64s] Differential equations come up all the time in quant finance, and they are nothing to shy away
+[    6.64s ->    12.24s] from. In fact, we should be stoked anytime we see a differential equation because we have so many
+[   12.24s ->    19.52s] tools and techniques available to go about solving them. So where in quant finance do we tend to see
+[   19.52s ->    24.76s] these equations come up? Well, particularly in the pricing of financial derivatives, something like
+[   24.76s ->    30.38s] an option contract, typically what we do is we go about assuming some sort of model framework. This
+[   30.38s ->    35.66s] could be a Black-Scholes framework, some sort of stochastic volatility framework like a Heston
+[   35.66s ->    41.50s] framework, and we go through an argument to construct a partial differential equation, this
+[   41.50s ->    47.98s] pricing differential equation that when solved will give us a function that tells us how much to pay for
+[   47.98s ->    53.62s] this contract under a specific model framework. Now, sometimes we can go about solving that
+[   53.62s ->    58.38s] differential equation. Something like a Black-Scholes equation can be solved analytically. We actually end
+[   58.38s ->    63.46s] up with an equation that fairly represents the contract price under the Black-Scholes assumptions.
+[   64.10s ->    69.56s] Essentially, you give me five parameters, the volatility, the stock price, the risk-free rate,
+[   70.00s ->    75.42s] the strike price, and the time to maturity, and I can tell you the price of the contract under a Black-Scholes
+[   75.66s ->    81.92s] model framework. But what about something like a stochastic volatility framework? That partial
+[   81.92s ->    85.98s] differential equation, that pricing differential equation doesn't have an analytical solution.
+[   85.98s ->    91.90s] So how do I go about recovering the price in that framework? Well, that's exactly what this video
+[   91.90s ->    98.04s] is about. This video is about deploying the finite differences technique to go about approximating these
+[   98.04s ->   104.00s] pricing differential equations when analytical methods are unavailable. To fully understand and
+[  104.00s ->   110.36s] master why these approximations work, what we're going to do is look at a very simple example of a
+[  110.36s ->   116.52s] pricing differential equation that we can solve in closed form. We're going to look at the definition
+[  116.52s ->   122.28s] of a derivative, and we're going to understand why the definition of a derivative tends to get a bad rap,
+[  122.46s ->   127.98s] and we're going to look at the idea of a derivative approximation. And once we have this idea of a
+[  127.98s ->   133.60s] derivative approximation, then we can go about approximating solutions to differential equations,
+[  133.60s ->   139.52s] because all differential equations are, are equations involving derivatives. Then once we understand
+[  139.52s ->   144.80s] why we can go about approximating solutions to differential equations, we can extend this to
+[  144.80s ->   150.98s] partial differential equations. And lastly, we can attack the Black-Scholes equation with this finite
+[  150.98s ->   155.34s] differences technique. As always, this Jupyter notebook will be available in the description below.
+[  155.48s ->   159.72s] I will also post it to the Quant Guild library, where you can find all of my Jupyter notebooks
+[  159.72s ->   164.62s] and associated YouTube videos. At the top of this notebook, you'll notice some related Quant Guild
+[  164.62s ->   170.20s] videos on stochastic calculus, applications of pricing models in market making and trading,
+[  170.40s ->   176.80s] and why the expectation is sufficient in the face of randomness to generate P&L. Moreover,
+[  176.80s ->   181.88s] these videos certainly take a lot of effort to make, so if you're interested in supporting the
+[  181.88s ->   187.56s] channel, please subscribe, like, leave a comment below. Check out QuantGuild.com if you're interested in
+[  187.56s ->   193.40s] mastering your quantitative skills. We have over 90 quant lessons in math, probability, and of course,
+[  193.74s ->   199.14s] finance, an adaptive practice engine that scales with your skill level so you can continue to progress
+[  199.14s ->   206.50s] to harder and harder topics, trading games, live classes with myself, and coming soon, over 75
+[  206.50s ->   212.82s] completely worked quant interview questions. Lots to look forward to on QuantGuild, but without further
+[  212.82s ->   219.78s] ado, let's go ahead and get started by talking about this idea of a pricing differential equation.
+[  219.92s ->   224.26s] I have two examples of pricing differential equations here. The first, we can solve analytically,
+[  224.36s ->   230.38s] and the second, we cannot. The first is a Black-Scholes equation. If I go about solving this partial
+[  230.38s ->   234.78s] differential equation, I get a function that tells me the option price under the Black-Scholes
+[  234.78s ->   242.54s] assumptions. Terrific. The second equation here is a Heston equation, and if I was to go about
+[  242.54s ->   246.72s] solving this, then I get a function that tells me the option price under the Heston assumptions,
+[  246.72s ->   253.88s] but the problem is I can't go about solving this second equation analytically. The Black-Scholes
+[  253.88s ->   261.00s] equation, I can solve analytically, and I'll actually get a function where I can plug in all of the inputs
+[  261.00s ->   268.24s] and get an option price, but I can't do that for the Heston pricing differential equation. This is where
+[  268.24s ->   273.90s] finite differences comes in. We need a way to go about approximating solutions to these pricing
+[  273.90s ->   279.06s] differential equations that we otherwise can't solve for analytically. Let's build some intuition
+[  279.06s ->   284.66s] first about these pricing differential equations. Instead of a Black-Scholes model or a Heston model,
+[  285.12s ->   290.08s] let's just look at what I'm going to call the QuantGuild model. We're going to look at a QuantGuild pricing
+[  290.08s ->   295.40s] differential equation. If we solve it, then we're going to get a function that tells us the price of an
+[  295.40s ->   300.60s] option contract under the QuantGuild model and the QuantGuild model assumptions. This is a toy example,
+[  300.60s ->   306.60s] but it's very easy to see what we're actually doing. Under the QuantGuild model argument, I get
+[  306.60s ->   311.50s] this differential equation. It's no different than a Black-Scholes argument or a Heston argument,
+[  312.00s ->   316.80s] but this differential equation is very easily solved by simply integrating both sides.
+[  317.34s ->   322.50s] I've plotted the differential equation on the left here, and I've plotted the solution on the right here.
+[  322.50s ->   327.66s] If we apply the initial condition, we can even find the particular solution, this green line.
+[  328.28s ->   335.30s] This green line is just going to tell us the value of the option contract under the QuantGuild framework
+[  335.30s ->   343.42s] for any particular stock price. That is all we're doing when we go about solving these more complicated
+[  343.42s ->   348.78s] real-world differential equations, partial differential equations, pricing differential equations.
+[  348.78s ->   355.42s] What we're doing is we're taking the model assumptions, deriving some sort of differential equation,
+[  356.14s ->   362.94s] solving it for a function that tells us the option price based on an input or set of inputs. That's
+[  362.94s ->   369.54s] all we're doing. And in the case of this example here, an analytical solution is available to us.
+[  369.94s ->   377.20s] In fact, we find the analytical or closed form solution to be f of x is equal to the square root of x plus
+[  377.20s ->   383.88s] one. And that's this green line. Similarly, the Black-Scholes equation has an analytical solution.
+[  384.28s ->   391.78s] So it has an equation that tells us the price. The Heston pricing differential equation does not have
+[  391.78s ->   397.78s] a similar equation or closed form solution. Very important to make that distinction. That's why we
+[  397.78s ->   402.96s] looked at this toy example. Now, before we move on, a very reasonable question to ask is,
+[  402.96s ->   408.28s] why do we care about a pricing differential equation that doesn't have an analytical solution?
+[  408.38s ->   412.70s] Shouldn't we just use one that has an analytical solution? Black-Scholes has an analytical solution.
+[  412.80s ->   419.54s] Let's just use that. Well, the Black-Scholes model has assumptions that aren't consistent with what we
+[  419.54s ->   423.58s] observe in the market. I have some really cool videos, how to price exotics, how to trade with the
+[  423.58s ->   428.12s] Black-Scholes implied volatility surface that cover this topic. Certainly encourage you to check those
+[  428.12s ->   434.32s] videos out. Essentially, what I'm saying is the pricing model given by the solution to the Black-Scholes
+[  434.32s ->   443.82s] equation is insufficient to price and trade options on your trading desk. So we need solutions to these
+[  443.82s ->   450.90s] more complicated pricing differential equations like a Heston model that don't have analytical solutions.
+[  450.90s ->   456.88s] So that's answering the question, why are we bothering even approximating solutions with finite
+[  456.88s ->   463.10s] differences? Because a Black-Scholes model is insufficient to go about pricing contracts
+[  463.10s ->   469.12s] that we are trading on our trading desk. Check out those other videos if you're curious to get into
+[  469.12s ->   473.98s] more depth as to why that is the case. So we know now that we need these more complicated models without
+[  473.98s ->   479.90s] analytical solutions. So we need to be able to approximate them somehow. How do we go about
+[  479.90s ->   484.18s] approximating them? Well, the finite differences technique is what we're after. How do we build up to this idea
+[  484.18s ->   489.44s] of finite differences for approximating differential and partial differential equations? Well, we got to
+[  489.44s ->   495.22s] start from the beginning, the idea of the definition of a derivative. Now, this will give a lot of students
+[  495.22s ->   501.16s] nightmares and PTSD, but I promise the definition of a derivative is 10 times more useful than your
+[  501.16s ->   507.30s] Calc 1 professor made it out to be. We learn the definition of the derivative in terms of a limit.
+[  507.30s ->   516.22s] We see that f' of x is equal to the limit as h approaches 0 of f of x plus h minus f of x over h. Assuming the
+[  516.22s ->   524.34s] function is differentiable, then this is the limit definition of a derivative. Okay, we also learn it as just
+[  524.34s ->   531.74s] the slope of the tangent line to a point on the corresponding function f of x. So essentially, anywhere on this
+[  531.74s ->   538.70s] function, you give me any x, the derivative will tell me the slope of the corresponding tangent line.
+[  539.64s ->   542.90s] Now, when you first apply this
+[  542.90s ->   549.70s] definition of a derivative, you may apply it in some sort of proof setting or trying to find derivatives the long way
+[  549.70s ->   556.74s] using the formal definition. So here, for example, is how you can prove the power rule to find the derivative
+[  556.74s ->   563.56s] of some sort of polynomial. And this is a mess. It's no wonder that students absolutely hate this
+[  563.56s ->   569.26s] limit definition. Look at this. I mean, this is just terrible. Versus actually just using the power rule?
+[  569.74s ->   573.44s] What, you take the exponent, throw it in front, and subtract one from the exponent?
+[  574.78s ->   580.62s] That's what we all cling to. But this, this is a mess. This is what professors have you do for
+[  580.62s ->   585.74s] homework for hours on end. But what I want to get after first is why the definition of a derivative
+[  585.74s ->   591.34s] is actually so incredibly useful. And I've actually talked about this in the past on the on this
+[  591.34s ->   597.90s] channel. But the power of the definition of the derivative comes in the idea of an approximation.
+[  598.82s ->   605.18s] So the definition of the derivative is in terms of this limit. It's the limit as h approaches zero.
+[  605.18s ->   612.82s] It's an infinitesimal. h is infinitesimally small. But we don't have to make h infinitesimally small.
+[  612.82s ->   619.12s] We could just make h very small. We have computers. Instead of making it infinitesimally small,
+[  619.20s ->   626.40s] let's just make it 0.00001. And instead of it being a hard equality, we can just say it's approximate.
+[  627.16s ->   632.62s] And that's exactly what I have here. We can approximate a derivative by saying instead of
+[  632.62s ->   641.01s] h being infinitesimally small, h is just small. This is so powerful because now we don't even need to
+[  641.01s ->   647.47s] take the derivative in the limit sense. We can just plug in a small value for h and get something
+[  647.47s ->   654.79s] that's really, really close to the value of a derivative. Here's an example. I have a polynomial. I have
+[  654.79s ->   662.79s] x squared here. We know the derivative is 2x. But instead of actually just taking the derivative, I'm going
+[  662.79s ->   673.23s] to approximate it using this idea of a small h. And the actual derivative at this point 1 is 2. But the
+[  673.23s ->   683.51s] approximation is 2.0000 all the way to 0.1. That's a pretty darn good approximation. That is definitely
+[  683.51s ->   692.35s] sufficient should we be trying to approximate the actual value at that point. So we actually didn't even use
+[  692.35s ->   700.85s] the derivative at all. We just approximated it using the original function. Because all we needed here
+[  700.85s ->   710.22s] was the original function evaluated at x plus h and at x. That's all we used to find the approximate
+[  710.22s ->   717.08s] value of the derivative. We didn't apply any sort of limit or even rules like the power rule to get
+[  717.08s ->   726.12s] this approximation that is pretty darn good. So what is the big idea here? Well, we have this approximation
+[  726.12s ->   735.50s] of a derivative from the limit definition. But what do you notice about the equation, this approximation here?
+[  736.44s ->   745.48s] Well, it involves the original function and a derivative. That's kind of like a differential equation, isn't it?
+[  745.48s ->   751.82s] A differential equation is an equation that involves a derivative? What if we rearrange this equation?
+[  752.82s ->   760.22s] Well, if we rearrange this equation, look what we get. We multiply h on both sides. Then we just go about
+[  760.22s ->   769.94s] adding f of x to the other side. And we actually get what looks like some sort of solution to the
+[  769.94s ->   776.14s] differential equation. All we're going to do is take some sort of condition, some sort of initial
+[  776.14s ->   784.30s] condition, plug it in for this f of x. Then we're going to add a very small value for h times the
+[  784.30s ->   791.28s] derivative value at that same point. And we're going to solve for the next point on that function.
+[  791.28s ->   799.94s] So this is the idea of the finite differences scheme. This is essentially Euler's method, the Ford
+[  799.94s ->   806.84s] finite differences approximation technique for a differential equation. The real magic here is we
+[  806.84s ->   811.62s] don't need the function. Remember, we're trying to recover the function. We just need some sort of
+[  811.62s ->   818.12s] initial boundary condition so that we can work with the derivative. Because if we have a differential
+[  818.12s ->   823.16s] equation, think back to our pricing differential equations that we looked at at the top here,
+[  823.58s ->   830.60s] we know what the derivative is. The differential equation literally governs the dynamics of the
+[  830.60s ->   836.90s] differentials. That's literally what we're looking at here. So we have this f prime of x.
+[  837.62s ->   845.64s] We have this f prime of x given by our differential equation. We have this f of x given by some sort of
+[  845.64s ->   851.68s] initial condition. And if we have this right-hand side, then we can solve for this value at x plus
+[  851.68s ->   857.30s] h. And then we can do this recursively. Then we'll just move this to the right-hand side and solve for
+[  857.30s ->   863.40s] the next value and do this iteratively again and again and again. What does this actually look like?
+[  863.48s ->   869.12s] Well, when we go about solving a differential equation in this capacity, what we're actually doing
+[  869.12s ->   875.48s] is stepping through the function using the derivative iteratively. And I have a beautiful
+[  875.48s ->   882.00s] animation to illustrate this. So what I have here is this pricing function, this pricing function in
+[  882.00s ->   888.16s] green. We don't know this pricing function. This is what we're trying to recover via an approximation,
+[  888.16s ->   894.28s] something like a finite differences. So through our pricing differential equation, we're trying to
+[  894.28s ->   900.34s] recover this green pricing function. But we don't know what that is. So what we're going to do is
+[  900.34s ->   906.36s] we're going to deploy this method of going about approximating that function. And this is what it
+[  906.36s ->   913.34s] looks like. It's actually going to be painting out the function by recursively iterating through
+[  913.34s ->   919.60s] all of the points in this particular domain until some sort of boundary. And then we're going to be able
+[  919.60s ->   927.16s] to interpolate and we're going to be able to figure out the value or the price of the option at any
+[  927.16s ->   932.86s] particular point. So let's say we have this point one here, the stock price is one, how much should we
+[  932.86s ->   938.84s] pay for the contract? Well, we can zoom in here and we can say, oh, based on the approximation, we should
+[  938.84s ->   944.82s] pay one dollar for that derivative. So this is how we go about approximating pricing differential
+[  944.82s ->   951.84s] equations. And this is why it works. In a moment, we're going to do a deep dive into how this recovers
+[  951.84s ->   956.58s] the pricing function from a pricing differential equation. I'm actually going to code this line by
+[  956.58s ->   962.58s] line so you can see how it works recursively. But I want to make a note before we look at that,
+[  963.10s ->   969.54s] that extrapolation is going to be an issue. And what do I mean by extrapolation? Well, as you can see here,
+[  969.54s ->   974.80s] I'm doing a pretty darn good job of approximating the pricing function, that green line that
+[  974.82s ->   980.18s] we're after, right? So I'm after that green line, I'm doing a pretty darn good job. But let's say
+[  980.18s ->   986.91s] that I stop approximating and I stop stepping through this function at five. This is not going
+[  986.91s ->   994.21s] to be a good approximation for then 10 or 50 or 100. I'm going to need to continue that approximation
+[  994.21s ->   999.85s] out to ensure that I'm getting a reasonable approximation and that I don't have a significant
+[  999.85s ->  1005.07s] error. I'm not going to be able to extrapolate to the entire space of the pricing functional.
+[ 1005.17s ->  1009.95s] That's why we have an analytical solution. If it's available to us great, then it's going to be
+[ 1009.95s ->  1014.75s] correct everywhere. But when we're doing something like an approximation, we need to make sure that
+[ 1014.75s ->  1021.27s] the grid that we are approximating over encompasses the inputs that we are after. So in other words,
+[ 1021.53s ->  1028.33s] if I wanted to price this option contract with a stock price of three, I certainly need to approximate
+[ 1028.33s ->  1034.53s] out much further than three to ensure that I'm getting a good approximation. So something to keep in
+[ 1034.53s ->  1039.39s] mind as you're working with these numerical techniques, this is something that a lot of
+[ 1039.39s ->  1044.15s] numerical techniques when you go about approximating solutions will suffer from. Even neural networks
+[ 1044.15s ->  1050.17s] have issues with approximating outside of samples. So keep that in mind. The domain here that you are
+[ 1050.17s ->  1056.35s] approximating for certainly matters. If we understand this animation and the approximation for the
+[ 1056.35s ->  1061.55s] derivative, then we understand finite differences. That's literally all we're doing is we're using an
+[ 1061.55s ->  1066.85s] approximation for the derivative, rearranging the equation, and then iteratively solving for
+[ 1066.85s ->  1072.59s] the function of interest. We have it in terms of the derivative. We know what the derivative is. We
+[ 1072.59s ->  1079.27s] have a differential equation. We want to find the function whose derivative is involved in that
+[ 1079.27s ->  1083.97s] differential equation. And that's all we're doing is we're taking this approximation, whether it's a
+[ 1083.97s ->  1089.15s] forward difference, a backward difference, a central difference, or even a second derivative. We're going to see
+[ 1089.15s ->  1093.71s] that in a moment with the partial differential equation. But this is all we are doing. This is
+[ 1093.71s ->  1099.55s] all the finite differences scheme is for approximating solutions to these differential and partial
+[ 1099.55s ->  1105.65s] differential equations, these pricing differential equations. So if we understand the approximation of
+[ 1105.65s ->  1112.05s] a derivative, we understand how to rearrange it, we can understand why this iterative method for
+[ 1112.05s ->  1119.51s] we're covering the function works, and we understand then the finite differences method for approximating
+[ 1119.51s ->  1125.27s] these pricing differential equations. No better way to understand why this works and this iterative
+[ 1125.27s ->  1131.73s] approach works than a completely worked example. So let's use the Quantkild pricing differential equation,
+[ 1131.85s ->  1138.69s] that toy example from the start of this Jupyter notebook, to develop a numerical solution via finite
+[ 1138.69s ->  1143.43s] differences. So the pricing differential equation is given by this guy here. And let's go step by step.
+[ 1143.75s ->  1148.11s] What's the first step, we're going to start with this differential equation, we need to discretize
+[ 1148.11s ->  1155.52s] the space. Remember, we're going to be stepping through in a discrete capacity to approximate the solution.
+[ 1155.78s ->  1162.52s] So we got to start by developing the space. So we're going to have x sub n equal n times h for n is equal
+[ 1162.52s ->  1168.84s] to zero one all the way up to capital n. This is the granularity of the space. Essentially, it's going to be
+[ 1168.84s ->  1176.98s] the distance between all of the points on this particular function of interest. So the more
+[ 1176.98s ->  1183.00s] granular, the more accurate. What is the finite differences approximation? Well, we derived this
+[ 1183.00s ->  1189.18s] earlier, right? This is the approximation of a derivative. We can plug this in to our differential
+[ 1189.18s ->  1195.10s] equation that we have, right? So instead of f prime on the left hand side, we know this is equivalent
+[ 1195.10s ->  1202.06s] to dy dx, or y prime or f prime. Well, I'm just going to put it in terms of dy dx. So the derivative
+[ 1202.06s ->  1207.30s] is approximately equal to this different quotient here, this difference quotient. I'm just going to
+[ 1207.30s ->  1211.52s] plug that in on the left hand side. That's the left hand side of this pricing differential equation.
+[ 1212.48s ->  1217.86s] All right, well, now I'm going to multiply h over and then add y sub n. And that's going to solve for
+[ 1217.86s ->  1225.16s] y sub n plus one. So now what I have is I have an equation given y sub n. We can start at zero. We know
+[ 1225.16s ->  1233.02s] the initial condition is f of zero is equal to one. So y sub zero is equal to one. We know the derivative.
+[ 1233.58s ->  1239.20s] It's a differential equation. The pricing differential equation literally tells us the derivative. And then
+[ 1239.20s ->  1246.18s] I can go about solving for the next point of that function. And I'm going to do this iteratively. So once
+[ 1246.18s ->  1251.68s] I have y sub n plus one, then I can move y sub n plus one to the right hand side, and then I could
+[ 1251.68s ->  1258.02s] solve for y sub n plus two. And what I'm going to do is I'm going to essentially be recovering
+[ 1258.02s ->  1265.16s] that green pricing function that we solved for at the start of this video, this particular solution,
+[ 1265.38s ->  1270.24s] but I'm going to do it iteratively. I'm going to do it numerically. And that's because I have this
+[ 1270.24s ->  1276.04s] initial condition. I know the differential equation, and I know the derivative approximation by
+[ 1276.04s ->  1281.04s] rearranging, I can iteratively solve for that function of interest, the pricing function.
+[ 1281.10s ->  1285.78s] This is so easy to implement that I'm going to do it off the cuff. Let's just start with step one,
+[ 1286.32s ->  1291.88s] discretize the space, we need to come up with that input grid. So I'm just going to use numpy x is
+[ 1291.88s ->  1300.50s] equal to np.lin space, we will start at something close to zero, but not precisely zero. And we will build
+[ 1300.50s ->  1306.82s] our way up. Okay, well, now we need to define the derivative for this recursive equation.
+[ 1307.24s ->  1313.68s] I'll say f prime is equal to we'll use a lambda function. And we're going to say it's equal to
+[ 1313.68s ->  1319.18s] one half times x raised to the negative one half power, exactly as it's defined in our pricing
+[ 1319.18s ->  1326.33s] differential equation. Now we need an array to keep track of all of the points that are approximating
+[ 1326.33s ->  1330.47s] the function that we are after that pricing function. Remember, don't lose sight of the goal
+[ 1330.47s ->  1335.51s] here, we have a pricing differential equation, we want to find the pricing function. So I'm going to
+[ 1335.51s ->  1341.57s] say y hat is equal to, I'm going to keep an array with the value one in it, because our initial
+[ 1341.57s ->  1349.85s] condition here is actually going to be y sub zero equals one. So what we need now is we need to match
+[ 1349.85s ->  1356.73s] up this domain with the space that we've discretized. Because keep in mind, what we've done actually here
+[ 1356.73s ->  1364.45s] is we've created this grid, but point zero zero zero one doesn't match up with one, right? Zero matches
+[ 1364.45s ->  1370.29s] up with one, that's that initial condition. But we can't plug zero into this derivative, because we're
+[ 1370.29s ->  1375.03s] going to get something divided by zero, we're going to get one over the square root of zero that that
+[ 1375.03s ->  1380.81s] doesn't work. So I'm just going to call this x sub d. And we're going to throw zero in here as the
+[ 1380.81s ->  1387.19s] correct domain. Okay, what are we going to do now? Well, now we got to recursively step through this
+[ 1387.19s ->  1395.21s] function to add points to y sub hat and y sub d. All right, let's do this. So I'll say for i in range,
+[ 1395.21s ->  1402.95s] we'll start at one, and we will go all the way to 2000. I will say y sub hat. So we're going to append
+[ 1402.95s ->  1413.37s] to the domain x sub i. And then we will append to y hat the top value, the latest value of the
+[ 1413.37s ->  1419.91s] approximation. And that's given by this y sub n. So initially, all we have is y sub zero, then we're
+[ 1419.91s ->  1427.29s] going to add the derivative evaluated at the point x sub i, that's this x sub n. And then we're going to
+[ 1427.29s ->  1433.30s] scale it by h, which is just going to be the increment in the domain. And that's it, that is going to be
+[ 1433.30s ->  1440.85s] the approximation. This is literally this block of code, this is what two, four, six, seven lines of
+[ 1440.85s ->  1448.01s] code is literally equivalent to this in constructing the approximation for the pricing function. That's
+[ 1448.01s ->  1453.75s] how easy the finite differences method actually is. So here we've actually constructed this
+[ 1453.75s ->  1458.43s] approximation. If I was to print out these function values, this would be the functions
+[ 1458.43s ->  1466.63s] approximation at each point of the discrete grid x sub d. That is exactly what we are seeing in this
+[ 1466.63s ->  1473.01s] animation here. We're covering the pricing function governed by the pricing differential equation
+[ 1473.01s ->  1478.99s] of the quant guild model assumptions in our toy example. This is the analytical solution. This is
+[ 1478.99s ->  1485.71s] the approximation via the finite differences. Seems we've fully mastered this topic applied to regular
+[ 1485.71s ->  1491.53s] differential equations, the ordinary differential equation. Let's extend this now to the partial
+[ 1491.53s ->  1497.59s] differential equation case. Finite differences and approximating these PDEs is literally as easy
+[ 1497.59s ->  1503.03s] as approximating ODEs in the toy example that we just walked through. The only difference is now we can
+[ 1503.03s ->  1510.95s] tackle real problems because the Black-Scholes equation is a PDE. The Heston equation is a PDE.
+[ 1510.95s ->  1519.63s] So if we can apply finite differences to PDEs, we can solve those pricing models. Fantastic. So let's walk
+[ 1519.63s ->  1525.57s] through this example. We're going to look at a heat equation, a 1D heat equation, which is a partial
+[ 1525.57s ->  1531.33s] differential equation. Why do we care about the heat equation, you might ask? This is physics. I don't
+[ 1531.33s ->  1537.77s] want to talk about physics. I want to talk about finance. Well, the Black-Scholes equation is referred to
+[ 1537.77s ->  1543.99s] as a second order parabolic PDE, partial differential equation. That's likened to the heat equation from
+[ 1543.99s ->  1549.67s] physics. Particularly relevant, I would say. So let's look at what the solution looks like. This is
+[ 1549.67s ->  1555.59s] the solution to the heat equation. It looks quite elegant. We need to recover this. This is the function
+[ 1555.59s ->  1562.09s] that we are after. So remember, in this case, we have a multivariable function, a function of more than
+[ 1562.09s ->  1567.67s] one input. So this could be stock price and volatility producing option price. In this case,
+[ 1567.67s ->  1573.35s] this is position and time producing temperature. But the point is, we're moving away from that case
+[ 1573.35s ->  1578.43s] of one dimension, right? We now have more than one dimension. And this in principles apply for the
+[ 1578.43s ->  1582.83s] finite differences. That's what makes it such a powerful technique. So what we're going to be doing
+[ 1582.83s ->  1589.69s] is iteratively constructing this surface, just like we iteratively constructed the pricing function
+[ 1589.69s ->  1596.07s] solution. Instead, now we're moving up in the number of dimensions that we have. And we are going to
+[ 1596.07s ->  1602.33s] iteratively construct this. In fact, I'll just show you the animation for it first. The animation for it
+[ 1602.33s ->  1609.47s] looks something like this as we go about constructing it. That's pretty cool. So we're literally going to
+[ 1609.47s ->  1614.79s] discretize the grid and step through iteratively, just like we did in the previous case. And this is
+[ 1614.79s ->  1619.43s] literally what it's going to be doing. It's going to be stepping through, constructing an approximation
+[ 1619.43s ->  1625.51s] equation for the actual analytical solution to the pricing differential equation. In this case,
+[ 1625.55s ->  1629.97s] it's the heat differential equation, the heat partial differential equation. But via finite
+[ 1629.97s ->  1634.15s] differences, we can numerically approximate the solution. And what we're going to do is we're going
+[ 1634.15s ->  1640.05s] to walk through the steps, step by step, which is roughly equivalent to the ordinary differential
+[ 1640.05s ->  1645.41s] equation case with finite differences. But this time for a partial differential equation, which has
+[ 1645.41s ->  1651.81s] more than one dimension to it. Let's walk through step by step. Step one is to discretize the inputs.
+[ 1651.91s ->  1656.95s] In this case, it's space and time. If it was a pricing function, maybe it's going to be stock price and
+[ 1656.95s ->  1662.71s] volatility. We just did this in the example above. We only had one input in the example above. So I only
+[ 1662.71s ->  1668.77s] had to discretize X. That was the stock price. Here in this heat equation, we have space and time.
+[ 1668.77s ->  1675.91s] It's equally easy to discretize two things as it is equally easy to discretize one thing. It's all the
+[ 1675.91s ->  1681.51s] same. I'm just going to do Linn space more than once, right? So here I'm going to discretize my space
+[ 1681.51s ->  1686.85s] and time inputs. Then I'm going to recall my finite difference approximations. Goodness gracious,
+[ 1686.97s ->  1692.59s] the definition of a derivative and its approximation is important because it allows us to now approximate
+[ 1692.59s ->  1701.99s] these partial derivatives. Wow. Fantastic. Next plug in these approximations directly into the heat
+[ 1701.99s ->  1707.97s] equation. This is essentially acting as our pricing differential equation. We have these approximations
+[ 1707.97s ->  1715.87s] throw them in. Fantastic. Then we just solve iteratively in the exact same capacity as the example
+[ 1715.87s ->  1721.39s] above. The ordinary differential equation and the partial differential equation are roughly equivalent in
+[ 1721.39s ->  1729.33s] terms of difficulty to solve via finite differences. Finite differences is an incredible technique for
+[ 1729.33s ->  1735.01s] solving these differential equations. It's almost absurd how effective it is. The only thing that I'm
+[ 1735.01s ->  1738.91s] going to make a note of in this partial differential equation sense since we've gotten to this point is
+[ 1738.91s ->  1746.05s] stability needs to be ensured. Otherwise, we're not going to be developing an accurate solution. All
+[ 1746.05s ->  1752.95s] stability is really referring to in this case is the grid that we are discretizing needs to satisfy
+[ 1752.95s ->  1761.25s] this inequality condition. Otherwise, it will be unstable or unstable rather, and the errors will grow
+[ 1761.25s ->  1766.47s] as we step through time. We don't want that. So we can ensure stability by just satisfying this
+[ 1766.47s ->  1772.93s] requirement. And this is really easy because all it is saying is the delta T divided by delta X squared
+[ 1772.93s ->  1779.80s] needs to be less than or equal to one half. As long as we satisfy that, then it's stable. And we choose
+[ 1779.80s ->  1785.68s] what that is up here when we discretize our inputs. So as long as we choose inputs that are stable,
+[ 1786.18s ->  1792.48s] then this is good to go for approximating our solution to the partial differential equation
+[ 1792.48s ->  1797.82s] to the pricing differential equation, which will give us the pricing function that we are after.
+[ 1797.82s ->  1802.88s] What I'm going to do now is walk through the implementation of the solution to the partial
+[ 1802.88s ->  1808.62s] differential equation using finite differences in this example for the 1D heat equation. Keep in
+[ 1808.62s ->  1812.76s] mind, this is a little different because we have to apply the initial condition and the boundary
+[ 1812.76s ->  1819.10s] condition for the PDE, but it operates in the exact same way as the ordinary differential equation
+[ 1819.10s ->  1824.98s] example that we worked above. So functionally, it's exactly the same. We just need to keep in mind
+[ 1824.98s ->  1829.82s] that it's a little bit different because we have more variables. And in this case, we have more than
+[ 1829.82s ->  1834.36s] one condition to apply. Okay. For starters, what I'm going to do is I'm going to pick this diffusion
+[ 1834.36s ->  1839.94s] coefficient alpha. I'm just going to pick one in this case. So let's just walk through this step by
+[ 1839.94s ->  1846.52s] step. Alpha is equal to 1.0. I'm going to decide the total length of space and time. I'm going to say
+[ 1846.52s ->  1853.30s] L is going to be 1.0. That's going to be the length of space. And the T is going to be 1.0.
+[ 1853.30s ->  1859.76s] That's going to be the total time. Then I'm going to figure out how many points in this space that
+[ 1859.76s ->  1868.48s] I have by picking an increment. So DX will be equal to 0.1 and DT is going to be equal to 0.005.
+[ 1868.80s ->  1875.66s] And this is where we need to satisfy that stability requirement. So what we can actually do now is
+[ 1875.66s ->  1884.34s] we can create just this, this little check. If alpha times DT divided by DX squared is greater than
+[ 1884.34s ->  1891.78s] 0.5, we will have violated this condition. And the error as we increment is going to grow in time.
+[ 1891.84s ->  1897.98s] We don't want this. So let's just print if the stability condition is violated. If I run this for
+[ 1897.98s ->  1904.38s] this choice of DX and DT, we're good. We don't violate the stability condition. But if I was to
+[ 1904.38s ->  1910.78s] increase this numerator or decrease this denominator too much, then I would violate this condition. So
+[ 1910.78s ->  1916.12s] if I made this five and I run it, I violate the stability condition, then I'm not going to be able
+[ 1916.12s ->  1924.61s] to iteratively construct this solution. Okay. So we know if we pick 0.005, we run this,
+[ 1924.61s ->  1930.21s] we don't violate the stability condition. We're good. We will take it. All right. Now we're ready to
+[ 1930.21s ->  1936.71s] construct the actual grid. Remember we're dealing with a function. That's three dimensions. We have
+[ 1936.71s ->  1943.61s] this grid of position and time. And this Z axis here is telling us heat. This could be stock price
+[ 1943.61s ->  1949.21s] and volatility telling us option price, so on and so forth. We need to construct a grid of points.
+[ 1949.61s ->  1954.79s] Okay. So what we're going to do is X is equal to MP dot Lynn space. We're going to pick the total
+[ 1954.79s ->  1963.97s] number of points to be N. And in this case, N is going to be equal to the integer of L divided by DX
+[ 1963.97s ->  1973.39s] plus one. So essentially this is the floor of the total number of points in the space and time that
+[ 1973.39s ->  1982.27s] we are discretizing. N and M, that's the total number of points from zero to capital T and zero to capital L.
+[ 1982.27s ->  1989.45s] So that's where this is coming from. This is how we can develop the actual grid of points T is equal
+[ 1989.45s ->  1995.47s] to MP dot Lynn space. So we're going from zero to one, zero to one. We have a total of N points in space,
+[ 1995.47s ->  2005.77s] M points in time. Now we will create a grid. So when we look down at the function, we actually have this
+[ 2005.77s ->  2013.71s] grid that is space and time. This could be stock price and volatility. And we're mapping space and
+[ 2013.71s ->  2019.75s] time to heat. And in the case of a pricing differential equation, we would be mapping say
+[ 2019.75s ->  2026.29s] volatility and stock price to option price. So we're going to construct that grid. That's exactly what
+[ 2026.29s ->  2030.99s] we're looking at. When we look down, this is the 2d grid. We're going to construct this grid
+[ 2030.99s ->  2039.45s] grid as X comma T. We will do MP dot mesh grid from here. We're going to create an array to now store
+[ 2039.45s ->  2045.57s] all of the points on this surface that we are approximating. Because remember the goal of solving
+[ 2045.57s ->  2049.17s] this partial differential equation numerically, don't lose sight of the goal as we're in the weeds
+[ 2049.17s ->  2055.57s] here. The goal is to construct this surface. We need to store those points somewhere. So what we're
+[ 2055.57s ->  2063.07s] going to do is create an array, a 2d array to store these points. I'm going to say U is equal to MP dot
+[ 2063.07s ->  2072.85s] zeros M by N, the total number of points in time and space. All right, terrific. From here, we can
+[ 2072.85s ->  2078.89s] apply the initial and boundary conditions. This is slightly different than the case that we did with
+[ 2078.89s ->  2084.63s] the ODE, but it's the exact same idea. We're just going to be applying, this is going to be the initial
+[ 2084.63s ->  2089.87s] condition. This is the boundary condition. Don't get too hung up on this for this particular example.
+[ 2090.77s ->  2097.15s] It's operating in the exact same way as F of 0 equals 1, but in the case of the 1d heat equation,
+[ 2097.51s ->  2102.73s] this is going to be the initial condition, and this is going to be the boundary condition that we have
+[ 2102.73s ->  2109.37s] to apply before we go about iterating through the solution. All right, now we're going to create a
+[ 2109.37s ->  2113.43s] nested for loop to iterate through the solution. What we're doing now is going to be applying
+[ 2113.43s ->  2121.39s] this update. So we have this first order approximation, second order approximation.
+[ 2121.39s ->  2129.41s] We're going to combine them in our heat equation, and if we solve iteratively for J plus 1, then we
+[ 2129.41s ->  2135.18s] are going to be approximating the surface. Essentially, we are going to be constructing
+[ 2135.18s ->  2143.22s] the surface like this using two for loops. So let's go ahead and do this. We're going to use two
+[ 2143.22s ->  2147.68s] for loops, and we're going to step through. We're going to say for J in range 0 to M minus 1,
+[ 2148.20s ->  2155.12s] for I in range 1 to N minus 1. We're going to create this update term, which is exactly what
+[ 2155.12s ->  2160.24s] we're doing here. We're applying this update iteratively, just like we did in the ODE case.
+[ 2160.58s ->  2165.68s] We're going to append to the top and then grab from the top to continue to iteratively construct
+[ 2165.68s ->  2171.08s] points in this grid space. The only difference is now we have to navigate this in the 2D sense,
+[ 2171.08s ->  2176.24s] because we have space and time. Okay. Well, this is pretty easy then. So we're going to construct
+[ 2176.24s ->  2182.44s] this update, right? This is based on our central difference here. And what we're going to do is
+[ 2182.44s ->  2190.46s] we're going to use this term here, alpha delta T divided by delta X squared, as that increment in
+[ 2190.46s ->  2198.18s] the space time. So instead of R, this should really be alpha times DT divided by DX squared.
+[ 2198.18s ->  2207.69s] And that is going to be our update. And that is the update defined by step four. And now what we'll
+[ 2207.69s ->  2213.15s] do is we'll just make sure that it's finite and apply the update. So we'll say if MP dot is finite,
+[ 2213.75s ->  2226.22s] not man is finite. So if the update is finite, then you at the step J plus one, I is going to be equal
+[ 2226.22s ->  2232.18s] to the previous step plus the update. That's literally what we did in the ODE case. All right.
+[ 2232.24s ->  2238.38s] If it's not, then we're just going to keep it the same. So we will just say that the step in J is just
+[ 2238.38s ->  2245.86s] going to be equal to just J comma I. And this is going to be sufficient for approximating that partial
+[ 2245.86s ->  2250.94s] differential equation solution. So this is roughly equivalent to what we did with the ODE case.
+[ 2250.94s ->  2256.36s] And really all this is, is, I mean, how many lines of code is this to approximate a solution to a
+[ 2256.36s ->  2262.28s] partial differential equation? It's certainly more than the ODE, but for bang for your buck,
+[ 2262.76s ->  2268.00s] this is incredible. This is such a simple way to go about approximating a solution.
+[ 2268.00s ->  2275.22s] So if we run this and we print out the values for you, this is literally what we're seeing
+[ 2275.22s ->  2282.82s] on the surface here as the numerical solution. So what we're doing is we're approximating this
+[ 2282.82s ->  2291.08s] 1D heat equation or our pricing differential equation, our pricing function. And we're doing
+[ 2291.08s ->  2296.02s] this now with just a grid of points. We're discretizing a grid of points and we're stepping
+[ 2296.02s ->  2303.08s] through the grid of points and constructing the approximation for, in this case, the heat equation,
+[ 2303.08s ->  2308.12s] which is temperature based on position and time, space and time. But if this was a pricing
+[ 2308.12s ->  2313.76s] differential equation, like the Black-Scholes equation, then we could use, say, volatility
+[ 2313.76s ->  2319.18s] and stock price. And then the surface value on the z-axis here would be the corresponding option
+[ 2319.18s ->  2324.00s] price. So this is how we go about approximating solutions to partial differential equations.
+[ 2324.18s ->  2330.02s] It's certainly a little more involved in terms of the space that we're working with. We have
+[ 2330.02s ->  2337.42s] more inputs to discretize and approximate, but the actual methodology is roughly equivalent
+[ 2337.42s ->  2342.84s] to the ODE case. I mean, literally all we're doing is discretizing the inputs, substituting
+[ 2342.84s ->  2347.88s] in the finite difference approximations, and then stepping through the solution. It's literally
+[ 2347.88s ->  2352.10s] the same algorithm. The only difference is we have maybe different initial conditions, boundary
+[ 2352.10s ->  2358.68s] conditions, and stability to keep in mind. But this is why the finite differences is such
+[ 2358.68s ->  2363.34s] a powerful technique for approximating solutions to these differential equations.
+[ 2363.34s ->  2369.82s] I mean, geez louise, we really mastered finite differences applied to quantitative finance.
+[ 2369.82s ->  2373.74s] We looked at ordinary differential equations, partial differential equations, how to go about
+[ 2373.74s ->  2380.12s] solving them with finite differences. I coded implementations in each case for you. We know
+[ 2380.12s ->  2385.88s] the place that partial differential equations have in quant finance. If we assume a model framework,
+[ 2385.88s ->  2392.10s] we can develop a partial differential equation, and we can go about solving it even if we can't solve
+[ 2392.10s ->  2398.74s] for it analytically. I just showed you how to for a generic 1D heat equation. We can apply the exact
+[ 2398.74s ->  2405.48s] same set of steps to the Black-Scholes equation, to the Heston equation, to any partial differential
+[ 2405.48s ->  2409.94s] equation. Yeah, there are different schemes. Yeah, there are different error assurances and whatnot,
+[ 2409.94s ->  2417.06s] but the general recipe is exactly the same. Step one, discretize space and time. In the case of the
+[ 2417.06s ->  2422.70s] Black-Scholes equation, what, we have stock price and time? All right, fantastic. Now we have our finite
+[ 2422.70s ->  2429.85s] difference approximations. We know all about those. Plug it into the Black-Scholes PDE. That was given at
+[ 2429.85s ->  2435.37s] the start of this video. I'm going to create a separate video deriving the Black-Scholes PDE, the Black-Scholes
+[ 2435.37s ->  2440.63s] equation, the Heston equation. Then we'll have the entire picture from the first argument all the way
+[ 2440.63s ->  2448.28s] to the price. Fantastic. And this is the recursive equation that we are going to solve iteratively
+[ 2448.28s ->  2455.12s] using just the loop, just like we did in the previous example. And what I have here is I have
+[ 2455.12s ->  2460.94s] finite differences applied to Black-Scholes. And what I have is the comparison of the finite
+[ 2460.94s ->  2466.18s] differences solution to the analytical solution. So what I'm trying to show you here is the grid
+[ 2466.18s ->  2473.68s] that you are using matters a lot. This is a bad grid. This is a better grid. And this is the
+[ 2473.68s ->  2479.64s] analytical solution. So you can see as the grid gets better, it better approximates the true solution.
+[ 2479.64s ->  2486.66s] So if we don't have the true solution, we certainly know we need to use a very, very appropriate grid
+[ 2486.66s ->  2492.42s] to go about approximating these PDEs. Man, what a video. We have certainly mastered finite differences
+[ 2492.42s ->  2496.58s] in this video for quantitative finance and the pricing of financial derivatives, specifically
+[ 2496.58s ->  2504.82s] options under a specific model framework. I mean, goodness gracious, I cannot overemphasize how powerful
+[ 2504.82s ->  2511.54s] this technique is for solving differential equations. I mean, it's just so impressive from the limit
+[ 2511.54s ->  2516.28s] definition of a derivative to the approximation to the application of the approximation.
+[ 2516.28s ->  2523.14s] In the solution to these differential equations. Goodness gracious. So cool. It's important to note
+[ 2523.14s ->  2527.54s] in the context of the Black-Scholes equation, Heston equation, if we're dealing with different
+[ 2527.54s ->  2532.32s] options, we may have different boundary conditions, so on and so forth. In this case, you know, in the
+[ 2532.32s ->  2536.94s] case of the Black-Scholes equation that I approximated here, we're just looking at a European call.
+[ 2537.88s ->  2543.78s] But the option contract will certainly change the dynamics. Important to note something for a future
+[ 2543.78s ->  2550.64s] video, perhaps. I would also like to cover in later videos, yes, the derivation of the Black-Scholes
+[ 2550.64s ->  2554.50s] equation, the Heston equation, these pricing partial differential equations. So essentially,
+[ 2555.06s ->  2561.64s] the equations we looked at at the start of this video, where do these come from? I want to discuss
+[ 2561.64s ->  2569.04s] how we can derive them using this continuous time hedging argument, the idea of no arbitrage pricing.
+[ 2569.04s ->  2573.46s] I also want to talk about risk-neutral pricing change of measure, binomial trees getting to the
+[ 2573.46s ->  2578.54s] foundation of pricing and quantitative finance. I would like to also code more advanced PDE
+[ 2578.54s ->  2582.90s] approximations. You saw how the partial differential equation was certainly more involved, so maybe
+[ 2582.90s ->  2587.84s] specific videos on applying finite differences to Black-Scholes, Heston, talking about different
+[ 2587.84s ->  2593.62s] schemes for discretization could be helpful. Moreover, talking about conditions, errors, less exciting,
+[ 2593.62s ->  2600.16s] but certainly extremely necessary. That is going to do it for this video on finite differences option
+[ 2600.16s ->  2607.00s] pricing for Quant Finance. I hope you enjoyed. I hope you learned something. This certainly took a long
+[ 2607.00s ->  2612.28s] time to make, so if you enjoyed and want to see more videos like this one, please leave a comment below,
+[ 2612.42s ->  2619.02s] like, subscribe. It helps me out a lot. Check out QuantGuild.com. Join our Discord. Other than that,
+[ 2619.02s ->  2623.36s] thank you so much for watching, and I will see you in the next video.

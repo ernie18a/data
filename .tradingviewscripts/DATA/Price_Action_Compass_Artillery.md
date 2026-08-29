@@ -1,0 +1,348 @@
+<!-- tradingview-pine-id: PUB;888d4afa065b41c78bd11013e3386b65 -->
+<!-- tradingviewscripts-format: 1 -->
+# Price Action Compass [Artillery]
+
+Source: https://www.tradingview.com/script/EniKiSNI-Price-Action-Compass-Artillery/
+
+## Description
+
+Price Action Compass is a price-action checklist indicator that enforces five classic price-action entry rules as one system. It classifies the market as UPTREND, DOWNTREND or TRADING RANGE and only prints a signal when every rule for the current mode agrees, so the chart itself enforces a disciplined process instead of leaving each condition to memory.
+
+WHAT IT DOES
+
+1) Trend Rule - trend is defined by fast/slow EMA structure plus EMA slope over a lookback, so signals only ever point with the trend.
+2) No Counter-Trend Rule - long setups are blocked in a downtrend and short setups are blocked in an uptrend.
+3) Trading Range Rule - when the range height over the lookback stays under an ATR-based cap, the script switches to range mode and only looks for fades at the edges: buys in the lower edge zone, sells in the upper edge zone.
+4) Second-Entry Rule - in trend mode the script counts pullback entries against the EMA and, by default, only signals the second entry (a pullback attempt that failed once and then resumed). First attempts are skipped as the statistically weakest.
+5) Signal Bar Rule - the entry bar itself must qualify: a minimum body-to-range ratio, a close in the top portion of the bar for buys (bottom for sells), and a maximum bar size in ATR terms so entries are not taken on climactic bars.
+
+WHY THESE FIVE TOGETHER
+
+Each rule alone is a well-known discretionary filter. The point of combining them is that they form a single state machine: the mode decides which rules apply, the entry counter tracks setup quality within that mode, and the signal-bar test validates the exact bar you would enter on. Removing any one of them changes the behaviour of the whole, which is why they are published as one tool rather than separate scripts.
+
+The five-rule framework is the classic price-action methodology taught by Al Brooks, in the summarized form popularised by Thomas Wade. The concept credit belongs to them; all code in this script is original, written from scratch using only Pine built-ins, with no third-party or reused open-source code.
+
+WHAT YOU SEE ON THE CHART
+
+- BUY / SELL labels on qualifying bars (tagged "2nd" when the second-entry rule produced them)
+- Signal-bar highlighting on bars that pass Rule 5
+- The fast/slow EMA pair with a shaded structure zone between them
+- Projected stop and target zones for the most recent signal, based on the SL buffer and R:R inputs (drawn for reference, not as advice)
+- A compact dashboard showing Mode, entry counts in each direction, current signal-bar quality, the active signal state, session signal count and the configured R:R
+
+INPUTS
+
+Direction (Both / Long Only / Short Only), Trend (fast EMA, slow EMA, slope lookback), Trading Range (lookback, max height as ATR multiple, edge zone percent), High-Probability Setup (require 2nd entries), Signal Bar (min body/range, close strength, max size in ATR), Risk (stop buffer in ticks, R:R target) and Visuals (label sizes, dashboard position, five colour themes). Defaults were chosen for liquid intraday futures on 1-15 minute charts, but every threshold is exposed so the tool can be tuned to any symbol or timeframe.
+
+ALERTS
+
+Three alert conditions are included: BUY signal, SELL signal, and Any signal.
+
+BEHAVIOUR NOTES
+
+Signals are evaluated on the live bar and confirmed at bar close, so a forming signal can appear and disappear until its bar closes. The script uses no higher-timeframe requests and no lookahead. It draws up to 500 labels/lines/boxes, so very dense charts recycle the oldest drawings first.
+
+This is an educational and analytical tool for studying price action. It does not predict future results and it is not financial advice.
+
+---
+
+## Source Code
+
+````pine
+//@version=6
+// ═══════════════════════════════════════════════════════════════════════
+// Price Action Compass [Artillery] — Thomas Wade / Al Brooks "5 Rules"
+// ═══════════════════════════════════════════════════════════════════════
+// 1) Trendline/Trend Rule  -> trade WITH the trend (EMA structure + slope)
+// 2) Don't Counter-Trend   -> longs only in uptrend, shorts only in downtrend
+// 3) Trading Range Rule     -> in a range, BUY the low edge / SELL the high edge
+// 4) High-Probability Setup -> only the 2nd entry (pullback that fails+resumes)
+// 5) Signal Bar Rule        -> entry bar must be a strong, valid signal bar
+// Educational tool. Not financial advice.
+// ═══════════════════════════════════════════════════════════════════════
+
+indicator('Price Action Compass [Artillery]', shorttitle='PA Compass', overlay=true,
+          max_labels_count=500, max_lines_count=500, max_boxes_count=500)
+
+grp_dir = "Direction"
+dirInput   = input.string("Both", "Trade Direction", options=["Both","Long Only","Short Only"], group=grp_dir)
+allowLongs  = dirInput == "Both" or dirInput == "Long Only"
+allowShorts = dirInput == "Both" or dirInput == "Short Only"
+
+grp_trend = "Trend  (Rules 1 & 2)"
+emaFastLen = input.int(20, "Fast EMA", minval=2, group=grp_trend)
+emaSlowLen = input.int(50, "Slow EMA", minval=5, group=grp_trend)
+slopeLen   = input.int(5,  "Slope lookback", minval=1, group=grp_trend)
+
+grp_range = "Trading Range  (Rule 3)"
+rangeLook   = input.int(20,  "Range lookback (bars)", minval=5, group=grp_range)
+rangeMaxAtr = input.float(2.5,"Max range height (ATR mult) to count as range", step=0.5, group=grp_range)
+edgePct     = input.float(20.0,"Edge zone (% of range)", minval=5, maxval=45, step=5, group=grp_range)
+
+grp_setup = "High-Probability Setup  (Rule 4)"
+require2nd = input.bool(true, "Only signal 2nd+ entries (high prob)", group=grp_setup)
+
+grp_sig = "Signal Bar  (Rule 5)"
+bodyMin   = input.float(0.5, "Min body / range", minval=0.1, maxval=1.0, step=0.05, group=grp_sig)
+closeReq  = input.float(0.6, "Close strength (0.6 = top/bottom 40%)", minval=0.5, maxval=0.95, step=0.05, group=grp_sig)
+maxBarAtr = input.float(2.5, "Max signal bar size (ATR mult)", step=0.5, group=grp_sig)
+
+grp_risk = "Risk"
+slBufTicks = input.int(2,   "SL buffer (ticks beyond signal bar)", minval=0, group=grp_risk)
+rr         = input.float(2.0,"Target R:R", minval=0.5, step=0.5, group=grp_risk)
+maxPerDay  = input.int(0,   "Max trades/day (0 = unlimited)", minval=0, group=grp_risk)
+
+grp_vis = "Visuals"
+show_labels = input.bool(true,  "Show BUY/SELL Labels", group=grp_vis)
+show_proj   = input.bool(true,  "Show TP/SL Projections", group=grp_vis)
+show_ema    = input.bool(true,  "Show EMAs + Trend Cloud", group=grp_vis)
+show_range  = input.bool(true,  "Show Range Box", group=grp_vis)
+show_count  = input.bool(true,  "Show entry-count markers (1/2)", group=grp_vis)
+show_dash   = input.bool(true,  "Show Dashboard", group=grp_vis)
+show_barclr = input.bool(true,  "Color signal bars", group=grp_vis)
+proj_len    = input.int(15,     "Projection Bars", group=grp_vis)
+
+grp_theme = "Theme  (colors only)"
+theme = input.string("Midnight Calm", "Theme",
+     options=["Midnight Calm","Neon Night","Sunset Vibes","Matrix Code","Arctic Frost"], group=grp_theme)
+
+f_bull() =>
+    switch theme
+        "Neon Night"    => color.rgb(0, 229, 255)
+        "Sunset Vibes"  => color.rgb(255, 183, 77)
+        "Matrix Code"   => color.rgb(0, 230, 118)
+        "Arctic Frost"  => color.rgb(179, 229, 252)
+        => color.rgb(100, 181, 246)
+f_bear() =>
+    switch theme
+        "Neon Night"    => color.rgb(255, 0, 229)
+        "Sunset Vibes"  => color.rgb(239, 108, 77)
+        "Matrix Code"   => color.rgb(200, 60, 60)
+        "Arctic Frost"  => color.rgb(144, 164, 174)
+        => color.rgb(239, 83, 80)
+f_accent() =>
+    switch theme
+        "Neon Night"    => color.rgb(255, 215, 64)
+        "Sunset Vibes"  => color.rgb(255, 213, 79)
+        "Matrix Code"   => color.rgb(105, 240, 174)
+        "Arctic Frost"  => color.rgb(224, 247, 250)
+        => color.rgb(66, 165, 245)
+
+bull_c   = f_bull()
+bear_c   = f_bear()
+accent_c = f_accent()
+dash_bg  = color.rgb(13, 17, 23, 5)
+
+atr     = ta.atr(14)
+emaFast = ta.ema(close, emaFastLen)
+emaSlow = ta.ema(close, emaSlowLen)
+
+bool fastUp = emaFast > emaFast[slopeLen]
+bool fastDn = emaFast < emaFast[slopeLen]
+bool trendUp   = emaFast > emaSlow and fastUp and close > emaSlow
+bool trendDown = emaFast < emaSlow and fastDn and close < emaSlow
+
+float rngHi = ta.highest(high, rangeLook)
+float rngLo = ta.lowest(low, rangeLook)
+float rngH  = rngHi - rngLo
+float rngMid = (rngHi + rngLo) / 2.0
+bool inRange = (not trendUp and not trendDown) and rngH <= atr * rangeMaxAtr
+float edge = rngH * edgePct / 100.0
+bool nearLow  = close <= rngLo + edge
+bool nearHigh = close >= rngHi - edge
+
+float barRng = high - low
+float barBody = math.abs(close - open)
+bool barSizeOk = barRng > 0 and barRng <= atr * maxBarAtr
+bool bodyOk    = barRng > 0 and (barBody / barRng) >= bodyMin
+float bullClose = barRng > 0 ? (close - low) / barRng : 0
+float bearClose = barRng > 0 ? (high - close) / barRng : 0
+bool bullBar = barSizeOk and bodyOk and close > open and bullClose >= closeReq
+bool bearBar = barSizeOk and bodyOk and close < open and bearClose >= closeReq
+bool bullTrig = bullBar and high > high[1]
+bool bearTrig = bearBar and low  < low[1]
+
+var int  upEntryN  = 0
+var bool upPulled  = false
+var int  dnEntryN  = 0
+var bool dnPulled  = false
+bool longEntry  = false
+bool shortEntry = false
+
+if not trendUp
+    upEntryN := 0
+    upPulled := false
+if not trendDown
+    dnEntryN := 0
+    dnPulled := false
+if trendUp
+    if low <= emaFast
+        upPulled := true
+    if upPulled and bullTrig
+        upEntryN += 1
+        upPulled := false
+        longEntry := true
+if trendDown
+    if high >= emaFast
+        dnPulled := true
+    if dnPulled and bearTrig
+        dnEntryN += 1
+        dnPulled := false
+        shortEntry := true
+
+var int tradesToday = 0
+bool newDay = ta.change(time("D")) != 0
+if newDay
+    tradesToday := 0
+bool underCap = maxPerDay == 0 or tradesToday < maxPerDay
+
+bool longSig  = false
+bool shortSig = false
+string longTag  = ""
+string shortTag = ""
+
+if not inRange
+    if trendUp and longEntry and allowLongs and underCap and (not require2nd or upEntryN >= 2)
+        longSig := true
+        longTag := upEntryN >= 2 ? "2nd" : "1st"
+    if trendDown and shortEntry and allowShorts and underCap and (not require2nd or dnEntryN >= 2)
+        shortSig := true
+        shortTag := dnEntryN >= 2 ? "2nd" : "1st"
+else
+    if nearLow and bullTrig and allowLongs and underCap
+        longSig := true
+        longTag := "RNG"
+    if nearHigh and bearTrig and allowShorts and underCap
+        shortSig := true
+        shortTag := "RNG"
+
+var float lastEntry  = na
+var float lastSL     = na
+var float lastTP     = na
+var bool  lastIsLong = true
+
+if longSig
+    lastEntry  := close
+    lastSL     := low - slBufTicks * syminfo.mintick
+    float risk = lastEntry - lastSL
+    lastTP     := risk > 0 ? lastEntry + risk * rr : na
+    lastIsLong := true
+    tradesToday += 1
+if shortSig
+    lastEntry  := close
+    lastSL     := high + slBufTicks * syminfo.mintick
+    float risk = lastSL - lastEntry
+    lastTP     := risk > 0 ? lastEntry - risk * rr : na
+    lastIsLong := false
+    tradesToday += 1
+
+// ════════════════ EMAs + TREND CLOUD ════════════════
+p_fast = plot(show_ema ? emaFast : na, "Fast EMA", color=color.new(accent_c, 0), linewidth=2)
+p_slow = plot(show_ema ? emaSlow : na, "Slow EMA", color=color.new(color.gray, 30), linewidth=1)
+cloud_c = trendUp ? color.new(bull_c, 88) : trendDown ? color.new(bear_c, 88) : color.new(color.gray, 94)
+fill(p_fast, p_slow, color=show_ema ? cloud_c : na, title="Trend Cloud")
+
+var box rngBox = na
+if show_range and inRange and barstate.islast
+    box.delete(rngBox)
+    rngBox := box.new(bar_index - rangeLook, rngHi, bar_index + 5, rngLo,
+         border_color=color.new(accent_c, 45), bgcolor=color.new(accent_c, 93), border_width=1, border_style=line.style_dashed)
+
+if show_count and longEntry and upEntryN > 0 and not longSig
+    label.new(bar_index, low, str.tostring(upEntryN), style=label.style_label_up,
+         color=color.new(accent_c, 60), textcolor=color.white, size=size.tiny)
+if show_count and shortEntry and dnEntryN > 0 and not shortSig
+    label.new(bar_index, high, str.tostring(dnEntryN), style=label.style_label_down,
+         color=color.new(accent_c, 60), textcolor=color.white, size=size.tiny)
+
+var line  entry_ln  = na
+var line  tp_ln     = na
+var line  sl_ln     = na
+var label entry_lbl = na
+var label tp_lbl    = na
+var label sl_lbl    = na
+var box   tp_box    = na
+var box   sl_box    = na
+
+f_clear() =>
+    line.delete(entry_ln)
+    line.delete(tp_ln)
+    line.delete(sl_ln)
+    label.delete(entry_lbl)
+    label.delete(tp_lbl)
+    label.delete(sl_lbl)
+    box.delete(tp_box)
+    box.delete(sl_box)
+
+if show_proj and longSig and not na(lastTP) and not na(lastSL)
+    f_clear()
+    int eb = bar_index + proj_len
+    float slp = lastEntry - lastSL
+    float tpp = lastTP - lastEntry
+    entry_ln := line.new(bar_index, lastEntry, eb, lastEntry, color=color.new(color.gray,20), style=line.style_dotted, width=1)
+    tp_ln    := line.new(bar_index, lastTP, eb, lastTP, color=color.new(color.rgb(0,200,83),0), style=line.style_dashed, width=2)
+    sl_ln    := line.new(bar_index, lastSL, eb, lastSL, color=color.new(color.rgb(255,82,82),0), style=line.style_dashed, width=2)
+    entry_lbl := label.new(eb, lastEntry, "ENTRY " + str.tostring(lastEntry, "#.##"), style=label.style_label_left, color=color.new(color.rgb(45,50,60),10), textcolor=color.white, size=size.small)
+    tp_lbl := label.new(eb, lastTP, "TP +" + str.tostring(tpp, "#.#") + " pts", style=label.style_label_left, color=color.new(color.rgb(0,150,60),10), textcolor=color.white, size=size.small)
+    sl_lbl := label.new(eb, lastSL, "SL -" + str.tostring(slp, "#.#") + " pts", style=label.style_label_left, color=color.new(color.rgb(200,50,50),10), textcolor=color.white, size=size.small)
+    tp_box := box.new(bar_index, lastTP, eb, lastEntry, bgcolor=color.new(color.green, 90), border_color=color.new(color.green, 85))
+    sl_box := box.new(bar_index, lastEntry, eb, lastSL, bgcolor=color.new(color.red, 92), border_color=color.new(color.red, 88))
+
+if show_proj and shortSig and not na(lastTP) and not na(lastSL)
+    f_clear()
+    int eb = bar_index + proj_len
+    float slp = lastSL - lastEntry
+    float tpp = lastEntry - lastTP
+    entry_ln := line.new(bar_index, lastEntry, eb, lastEntry, color=color.new(color.gray,20), style=line.style_dotted, width=1)
+    tp_ln    := line.new(bar_index, lastTP, eb, lastTP, color=color.new(color.rgb(0,200,83),0), style=line.style_dashed, width=2)
+    sl_ln    := line.new(bar_index, lastSL, eb, lastSL, color=color.new(color.rgb(255,82,82),0), style=line.style_dashed, width=2)
+    entry_lbl := label.new(eb, lastEntry, "ENTRY " + str.tostring(lastEntry, "#.##"), style=label.style_label_left, color=color.new(color.rgb(45,50,60),10), textcolor=color.white, size=size.small)
+    tp_lbl := label.new(eb, lastTP, "TP +" + str.tostring(tpp, "#.#") + " pts", style=label.style_label_left, color=color.new(color.rgb(0,150,60),10), textcolor=color.white, size=size.small)
+    sl_lbl := label.new(eb, lastSL, "SL -" + str.tostring(slp, "#.#") + " pts", style=label.style_label_left, color=color.new(color.rgb(200,50,50),10), textcolor=color.white, size=size.small)
+    tp_box := box.new(bar_index, lastEntry, eb, lastTP, bgcolor=color.new(color.green, 90), border_color=color.new(color.green, 85))
+    sl_box := box.new(bar_index, lastSL, eb, lastEntry, bgcolor=color.new(color.red, 92), border_color=color.new(color.red, 88))
+
+if show_labels and longSig
+    label.new(bar_index, low, "▲ BUY " + longTag, style=label.style_label_up, color=bull_c, textcolor=color.black, size=size.normal)
+if show_labels and shortSig
+    label.new(bar_index, high, "▼ SELL " + shortTag, style=label.style_label_down, color=bear_c, textcolor=color.white, size=size.normal)
+
+bar_col = color(na)
+if show_barclr
+    if longSig or shortSig
+        bar_col := color.rgb(255, 215, 0)
+    else if bullBar
+        bar_col := color.new(bull_c, 30)
+    else if bearBar
+        bar_col := color.new(bear_c, 30)
+barcolor(bar_col, title="Signal Bar Color")
+
+if show_dash and barstate.islast
+    var table d = table.new(position.top_right, 2, 8, bgcolor=dash_bg, border_width=1, border_color=color.new(color.rgb(60,60,60), 40), frame_color=color.new(accent_c, 40), frame_width=1)
+    table.cell(d, 0, 0, "◈ COMPASS", text_color=accent_c, text_size=size.small, bgcolor=color.new(accent_c, 88))
+    table.cell(d, 1, 0, "ARTILLERY", text_color=bull_c, text_size=size.small, bgcolor=color.new(accent_c, 88))
+    table.cell(d, 0, 1, "Mode", text_color=color.gray, text_size=size.tiny)
+    string mode = inRange ? "RANGE" : trendUp ? "UPTREND" : trendDown ? "DOWNTREND" : "NEUTRAL"
+    color  modeC = inRange ? accent_c : trendUp ? color.lime : trendDown ? color.red : color.gray
+    table.cell(d, 1, 1, mode, text_color=modeC, text_size=size.tiny)
+    table.cell(d, 0, 2, "Up entries", text_color=color.gray, text_size=size.tiny)
+    table.cell(d, 1, 2, str.tostring(upEntryN), text_color=color.white, text_size=size.tiny)
+    table.cell(d, 0, 3, "Dn entries", text_color=color.gray, text_size=size.tiny)
+    table.cell(d, 1, 3, str.tostring(dnEntryN), text_color=color.white, text_size=size.tiny)
+    table.cell(d, 0, 4, "Signal bar", text_color=color.gray, text_size=size.tiny)
+    string sb = bullBar ? "BULL" : bearBar ? "BEAR" : "-"
+    color  sbC = bullBar ? color.lime : bearBar ? color.red : color.gray
+    table.cell(d, 1, 4, sb, text_color=sbC, text_size=size.tiny)
+    table.cell(d, 0, 5, "Signal", text_color=color.gray, text_size=size.tiny)
+    string sg = longSig ? "BUY" : shortSig ? "SELL" : "WAIT"
+    color  sgC = longSig ? color.lime : shortSig ? color.red : color.gray
+    table.cell(d, 1, 5, sg, text_color=sgC, text_size=size.tiny)
+    table.cell(d, 0, 6, "Trades", text_color=color.gray, text_size=size.tiny)
+    table.cell(d, 1, 6, maxPerDay == 0 ? str.tostring(tradesToday) : str.tostring(tradesToday) + "/" + str.tostring(maxPerDay), text_color=color.white, text_size=size.tiny)
+    table.cell(d, 0, 7, "R:R", text_color=color.gray, text_size=size.tiny)
+    table.cell(d, 1, 7, "1:" + str.tostring(rr, "#.#"), text_color=accent_c, text_size=size.tiny)
+
+alertcondition(longSig, "PA Compass BUY", "Price Action Compass: BUY ({{ticker}}) at {{close}}")
+alertcondition(shortSig, "PA Compass SELL", "Price Action Compass: SELL ({{ticker}}) at {{close}}")
+alertcondition(longSig or shortSig, "PA Compass Any Signal", "Price Action Compass: Signal at {{close}}")
+````

@@ -1,0 +1,258 @@
+<!-- tradingview-pine-id: PUB;R6wIMuiKQn0mLiH6wnelFjAxJqs6X6dS -->
+<!-- tradingviewscripts-format: 1 -->
+# Max Drawdown Calculating Functions (Optimized)
+
+Source: https://www.tradingview.com/script/Rhj1nNLH-Max-Drawdown-Calculating-Functions-Optimized/
+
+## Description
+
+Maximum Drawdown and Maximum Relative Drawdown% calculating functions.
+
+I needed a way to calculate the maxDD% of a serie of datas from an array (the different values of my balance account). I didn't find any builtin pinescript way to do it, so here it is.
+
+There are 2 algorithms to calculate maxDD and relative maxDD%, one non optimized needs n*(n - 1)/2 comparisons for a collection of n datas, the other one only needs n-1 comparisons.
+
+In the example we calculate the maxDDs of the last 10 close values. 
+
+There a 2 functions : "maximum_relative_drawdown" and "maximum_dradown" (and "optimized_maximum_relative_drawdown" and "optimized_maximum_drawdown") with names speaking for themselves.
+
+Input : an array of floats of arbitrary size (the values we want the DD of)
+Output : an array of 4 values [maxDD, peak, trough, iterations] 
+
+I added the iteration number just for fun.
+
+Basically my script is the implementation of these 2 algos I found on the net : 
+
+var peak = 0;
+var n = prices.length
+for (var i = 1; i < n; i++){
+    dif = prices[peak] - prices;
+    peak = dif < 0 ? i : peak; 
+    maxDrawdown = maxDrawdown > dif ? maxDrawdown : dif; 
+}
+
+var n = prices.length
+for (var i = 0; i < n; i++){
+    for (var j = i + 1; j < n; j++){
+        dif = prices - prices[j];
+        maxDrawdown = maxDrawdown > dif ? maxDrawdown : dif; 
+    }
+}
+
+Feel free to use it.
+
+@version=4
+
+---
+
+## Source Code
+
+````pine
+// Maximum Drawdown and maximum relative drawdown% calculating functions.
+// I needed a way to calculate the maxDD% of a serie of datas from an array, I didn't find any builtin way so here it is.
+// The function is not optimized, as n*(n - 1)/2 comparisons are needed for calculate the maxDD of a collection of n datas
+// In the example we calculate the maxDDs of some exemple datas but basically the function can be used in any situation
+// There a 2 functions : maximum_relative_drawdown and maximum_dradown. 
+// They take in input : an array of floats of arbitrary size
+// Output : an array of 3 values [maxDD, peak, trough] of the datas in input
+// I built them this way because this is what I needed but it can easilly be changed and adapted to other needs
+//@version=4
+
+study("Max Drawdown Calculating Functions (Optimized)", overlay = true)
+
+
+var yposition = float(na)
+
+array_of_values = array.new_float(0)
+
+
+
+maximum_relative_drawdown(array_of_values) =>
+    
+    return = array.new_float(4)
+
+    peak_value = float(na)
+    trough_value = float(na)
+    relative_diff = float(0.0)
+    maximum_relative_drawdown = float(0.0)
+
+    total_iterations = 0
+
+ 
+    for i = 0 to array.size(array_of_values) - 1
+        for j = i to array.size(array_of_values) - 1
+            total_iterations := total_iterations + 1
+            relative_diff := 100*(array.get(array_of_values, i) - array.get(array_of_values, j)) / array.get(array_of_values, i)
+            if (maximum_relative_drawdown < relative_diff)
+                maximum_relative_drawdown := relative_diff
+                peak_value := array.get(array_of_values, i)
+                trough_value := array.get(array_of_values, j)
+    
+    array.set(return, 0, maximum_relative_drawdown)
+    array.set(return, 1, peak_value)
+    array.set(return, 2, trough_value)
+    array.set(return, 3, total_iterations)
+
+            
+    return
+
+
+optimized_maximum_relative_drawdown(array_of_values) =>
+
+    return = array.new_float(4)
+    peak_index = int(0)
+    peak_value = float(na)
+    trough_value = float(na)
+    diff = float(0.0)
+    maximum_drawdown = float(0.0)
+
+    total_iterations = 0
+
+    for i = 1 to array.size(array_of_values) - 1
+        diff := 100*(array.get(array_of_values, peak_index) - array.get(array_of_values, i))/array.get(array_of_values, peak_index)
+        total_iterations := total_iterations + 1
+        if (maximum_drawdown < diff)
+            maximum_drawdown := diff 
+            peak_value := array.get(array_of_values, peak_index)
+            trough_value := array.get(array_of_values, i)
+        if (diff < 0)
+            peak_index := i  
+    
+    array.set(return, 0, maximum_drawdown)
+    array.set(return, 1, peak_value)
+    array.set(return, 2, trough_value)
+    array.set(return, 3, total_iterations)
+
+    return
+
+
+
+
+
+
+optimized_maximum_drawdown(array_of_values) =>
+
+    return = array.new_float(4)
+    peak_index = int(0)
+    peak_value = float(na)
+    trough_value = float(na)
+    diff = float(0.0)
+    maximum_drawdown = float(0.0)
+
+    total_iterations = 0
+
+    for i = 1 to array.size(array_of_values) - 1
+        diff := array.get(array_of_values, peak_index) - array.get(array_of_values, i)
+        total_iterations := total_iterations + 1
+        if (maximum_drawdown < diff)
+            maximum_drawdown := diff 
+            peak_value := array.get(array_of_values, peak_index)
+            trough_value := array.get(array_of_values, i)
+        if (diff < 0)
+            peak_index := i  
+    
+    array.set(return, 0, maximum_drawdown)
+    array.set(return, 1, peak_value)
+    array.set(return, 2, trough_value)
+    array.set(return, 3, total_iterations)
+
+    return
+
+maximum_drawdown(array_of_values) =>
+    
+    return = array.new_float(4)
+
+    peak = float(na)
+    trough = float(na)
+    diff = float(0.0)
+    maximum_drawdown = float(0.0)
+
+    total_iterations = 0
+
+    for i = 0 to array.size(array_of_values) - 1
+        for j = i to array.size(array_of_values) - 1
+            total_iterations := total_iterations + 1
+            diff := array.get(array_of_values, i) - array.get(array_of_values, j)
+            if (maximum_drawdown < diff)
+                maximum_drawdown := diff
+                peak := array.get(array_of_values, i)
+                trough := array.get(array_of_values, j)
+
+    array.set(return, 0, maximum_drawdown)
+    array.set(return, 1, peak)
+    array.set(return, 2, trough)
+    array.set(return, 3, total_iterations)
+
+    return 
+
+
+
+
+
+    
+
+
+
+
+
+
+
+draw_information_panel(text,y)=>
+    
+    var label info_panel = na
+    info_panel_text = string(na)
+    info_panel_position_x = int(0)
+    info_panel_color = color(na)
+
+    
+    // we delete the old one
+    label.delete(info_panel)
+
+    info_panel_position_x := time 
+    info_panel_text := text
+
+
+    info_panel_color := color.white
+    info_panel := label.new(x=info_panel_position_x, y=y, text=info_panel_text, xloc=xloc.bar_time, yloc=yloc.price, color=color.black, style=label.style_labeldown, textcolor=info_panel_color, size=size.normal)
+
+
+get_string() =>
+    text = string(na)
+
+    result = array.new_float(4)
+
+
+    text := "--- The last 10 close values : ---\n"
+
+
+    for i = 0 to array.size(array_of_values) - 1
+        text := text + tostring(array.get(array_of_values, i)) + "\n"
+
+
+    text := text + "\n--- Results ---\n"
+
+
+    result := maximum_relative_drawdown(array_of_values)
+    text := text + "Max Relative Drawdown = " + tostring(array.get(result, 0)) + "% (from " + tostring(array.get(result, 1)) + " to " + tostring(array.get(result, 2)) + ")(iterations = " + tostring(array.get(result, 3)) +")\n"
+    
+    result := optimized_maximum_relative_drawdown(array_of_values)
+    text := text + "*optimized*Max Relative Drawdown = " + tostring(array.get(result, 0)) + "% (from " + tostring(array.get(result, 1)) + " to " + tostring(array.get(result, 2)) + ")(iterations = " + tostring(array.get(result, 3)) +")\n"
+
+    result := maximum_drawdown(array_of_values)
+    text := text + "Max Drawdown = " + tostring(array.get(result, 0)) + " (from " + tostring(array.get(result, 1)) + " to " + tostring(array.get(result, 2)) + ")(iterations = " + tostring(array.get(result, 3)) +")\n"
+    
+    result := optimized_maximum_drawdown(array_of_values)
+    text := text + "*optimized*Max Drawdown = " + tostring(array.get(result, 0)) + " (from " + tostring(array.get(result, 1)) + " to " + tostring(array.get(result, 2)) + ")(iterations = " + tostring(array.get(result, 3)) +")\n"
+    
+
+    text 
+
+yposition := highest(15) + atr(14)
+
+if barstate.islast
+    
+    for i = 1 to 10
+        array.push(array_of_values, close[i])
+
+    draw_information_panel(get_string(), yposition)
+````

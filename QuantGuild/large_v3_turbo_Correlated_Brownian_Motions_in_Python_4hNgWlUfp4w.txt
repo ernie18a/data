@@ -1,0 +1,98 @@
+[    2.58s ->     7.26s] Hey YouTube, it's Roman. Today I want to talk about generating correlated Brownian motions in Python.
+[    7.92s ->    11.70s] First, I want to walk through why we would want to even do this in the first place,
+[   11.70s ->    16.40s] and then I'm going to give you two different ways of accomplishing this sort of generation.
+[   17.08s ->    22.62s] So if you take a look here, we have a practical example of what correlation in the market looks
+[   22.62s ->    28.82s] like. We have the S&P 500 plotted with the VIX from January to August of 2016. And if you take
+[   28.82s ->    34.46s] a look, these two assets are relatively negatively correlated with one another. So when one moves in
+[   34.46s ->    38.84s] one direction, the other moves in the other direction. And this is the case for many assets
+[   38.84s ->    44.66s] in the market. Say we wanted to do some sort of risk analysis on a portfolio, or if we wanted to
+[   44.66s ->    50.48s] price some exotic or some path dependent option with respect to a basket of equities, we're going
+[   50.48s ->    55.00s] to want to take into account the empirical correlation between those assets so that we can
+[   55.00s ->    59.12s] have better analytics, we can have better risk metrics, we can have better prices.
+[   59.72s ->    65.18s] And to do that, we're going to need some way to generate this correlation or impose this correlation
+[   65.18s ->    71.96s] on our simulation. And that is exactly what the generation of correlated Brownian motions aims to
+[   71.96s ->    76.62s] accomplish. Hopefully that's enough motivation. Now we can actually get started with the generation.
+[   76.90s ->    81.04s] So there are two different ways we can generate the correlated Brownian motions. I'm going to start
+[   81.04s ->    85.76s] with the Cholesky decomposition, and then we're going to go to more of an analytical way of doing
+[   85.76s ->    94.99s] it. So for starters, I'm going to go ahead and import numpy as np and then import mapplotlib.pyplot
+[   94.99s ->   102.03s] as plp. So we can perform our linear algebra operations and generation, and then we can also visualize
+[  102.03s ->   107.15s] the processes themselves. So what is the Cholesky decomposition? Well, instead of doing some
+[  107.15s ->   111.47s] analytical linear algebra, I'm just going to tell you if we have a Hermesian positive definite
+[  111.47s ->   117.95s] matrix A, we can decompose it into a product of L and L transpose, where L is the lower triangular
+[  117.95s ->   124.27s] matrix and L transpose is the corresponding upper triangular matrix, the product of which yields the
+[  124.27s ->   129.15s] original matrix A. If all of this sounds foreign to you, don't worry, we're going to do this all
+[  129.15s ->   133.79s] programmatically. So you're going to be able to see what a Hermesian positive definite matrix is.
+[  133.79s ->   138.51s] You can just think of something like a correlation matrix. And then the actual decomposition is going to
+[  138.51s ->   143.71s] be done for us in NumPy. So we're not going to be doing any linear algebra here. Let's go ahead and
+[  143.71s ->   148.67s] set up this Hermesian positive definite matrix, or in other words, let's just go ahead and set up a
+[  148.67s ->   154.03s] correlation matrix that we want to impose on two Brownian motions. So you can think of the two Brownian
+[  154.03s ->   160.43s] motions as the driving process for two different assets, say the S&P 500 and the VIX, for example.
+[  160.43s ->   165.63s] So we're going to specify a correlation that we want to impose. I'm going to say rho is equal to
+[  165.63s ->   172.75s] negative 0.9. So that is going to be the correlation that we want to impose on the two Brownian motions.
+[  173.47s ->   181.39s] Next, we're going to define the correlation matrix itself as capital C is equal to mp.array.
+[  181.39s ->   187.87s] Then we're going to create a matrix with two rows for the two assets with two columns. So we're going
+[  187.87s ->   194.11s] to say one for the correlation of an asset with itself, and then rho for the correlation of the two
+[  194.11s ->   199.07s] assets with each other. And then we're going to do the same thing just in the opposite order for the
+[  199.07s ->   205.71s] second row as seen in a traditional correlation matrix. So now we have the correlation structure
+[  205.71s ->   210.75s] that we're trying to impose on these Brownian motions. Now to go ahead and find the Cholesky
+[  210.75s ->   216.19s] decomposition of this correlation matrix or this Hermesian positive definite matrix, we can go ahead
+[  216.19s ->   225.39s] and say l is equal to np.linaug.cholesky and then pass the correlation matrix through and we're done.
+[  225.39s ->   231.63s] Now we have the Cholesky decomposition. So it is that easy. Now I want to specify the time step for
+[  231.63s ->   238.03s] the Brownian motions themselves. I'm going to say dt is equal to 1 over 252. So we're going to be taking a
+[  238.59s ->   243.79s] daily time step between Brownian motion increments. And to simulate the Brownian motions themselves,
+[  243.79s ->   250.99s] I'm going to say x, which is going to be a matrix of our two assets is equal to np.random.normal.
+[  250.99s ->   257.39s] And it's going to be mean zero with a standard deviation of the time step raised to the power
+[  257.39s ->   263.87s] of one half. So square root of the time step. And we can do that by saying dt raised to the power of
+[  263.87s ->   271.71s] one half. And then I want to simulate two assets and a thousand steps for each asset. So you can think of
+[  271.71s ->   279.23s] this as essentially generating 1000 daily time steps for two different Brownian motions. Now we can
+[  279.23s ->   282.99s] actually go ahead and correlate these Brownian motions. How are we going to do that? Well, we're
+[  282.99s ->   293.79s] going to use the Cholesky decomposition. So we can say the cx is equal to np.l and x. So this is now going
+[  293.79s ->   301.63s] to contain our correlated paths. So if we wanted to go ahead and plot this, we can say for path in cx
+[  302.19s ->   309.23s] plt dot plot. And then remember, we're still in the difference space. So we can say path dot cum sum.
+[  309.95s ->   316.19s] And look, take a look, we have our correlated Brownian motions. So we're starting at zero. And we have a
+[  316.19s ->   323.07s] negative point nine correlation matrix imposed on these two random paths. If you're still not buying the
+[  323.07s ->   328.67s] original correlation matrix was imposed on these two processes, then we can go ahead and say mp dot
+[  328.67s ->   335.55s] core coef for correlation coefficient, then pass through the cx matrix. And if you take a look,
+[  335.55s ->   341.39s] we get ones on the diagonals just as any correlation matrix because that is the Brownian motion correlated
+[  341.39s ->   348.03s] with respect to itself. And then the off diagonals are going to be the negative point nine that we had
+[  348.03s ->   353.87s] imposed earlier. So we can see that the Cholesky decomposition is very effective at imposing a
+[  353.87s ->   358.99s] correlation structure on these two processes. So that's going to be one method of correlating
+[  358.99s ->   363.79s] Brownian motions. What about another method? Well, here is a more analytical method for you that is
+[  363.79s ->   370.35s] going to yield the same results. So if we have, say, two Brownian motions, we have w t1 and z of t,
+[  370.35s ->   375.63s] you can see that the increment is distributed normally with a mean zero and standard deviation of square
+[  375.63s ->   381.95s] root of the time step. The two Brownian motions are orthogonal to one another. Then we can go ahead
+[  381.95s ->   389.47s] and impose a correlation structure using the coefficient rho on w of t1 and w of t2
+[  390.35s ->   398.99s] by essentially satisfying the equation w of t2 is equal to rho w t1 plus root one minus rho squared z of t.
+[  398.99s ->   404.51s] So if we can satisfy that and use the Brownian motions as they're defined, then we can accomplish the
+[  404.51s ->   409.71s] same thing as the Cholesky decomposition did. We actually have all the pieces to the puzzle here.
+[  409.71s ->   414.99s] So we generated two Brownian motions originally. So what I'm going to do is I'm going to pick the second
+[  414.99s ->   424.83s] one as our z of t process. So I'm going to say z of t is equal to x1 and w t1 can be the first process.
+[  424.83s ->   432.67s] So I'm going to say w t1 is equal to x0. Okay. Well, now that we have our w t1 and z of t and they both
+[  432.67s ->   438.19s] satisfy Brownian motions and they're orthogonal to one another, we can go ahead and construct this w t2.
+[  438.19s ->   450.19s] So w t2 is equal to rho times w t1 plus mp dot square root one minus rho squared.
+[  450.99s ->   456.11s] And that is going to be multiplied by the zt. Now, where did I come up with that? Well,
+[  456.11s ->   460.75s] that's defined right here. So we have our Brownian motions satisfying that they're orthogonal to one
+[  460.75s ->   464.99s] another, satisfying that the increment is distributed normally means zero standard deviation square
+[  464.99s ->   473.23s] root of the time step. And we built this process w t2 based on w t1 and z of t. Just as before,
+[  473.23s ->   479.63s] we can go ahead and plot this. So I'm going to say plt dot plot. I'm going to say w t1 dot cum sum.
+[  479.63s ->   485.47s] So that's going to plot the w t1. So the first asset. And then I'm going to say plt dot plot
+[  485.47s ->   492.11s] w t2. So the second asset, cum sum. And if we go ahead and do this, we'll see we actually get the
+[  492.11s ->   498.35s] same two paths with the same correlation structure. These two charts are exactly the same. We didn't do
+[  498.35s ->   504.11s] any regeneration of variables or anything like that. We simply imposed the correlation structure
+[  504.11s ->   508.99s] in a different fashion. If you still don't believe me, we can go ahead and do the exact same thing we
+[  508.99s ->   513.95s] did before with NumPy to check the correlation of these two assets with respect to one another. We can
+[  513.95s ->   524.43s] say MP dot array and we can fill the array with w t1, w t2. Then we can call MP dot core coef on this
+[  524.43s ->   531.15s] array and we get an output of look at that ones on the diagonal and then negative 0.886. If we go up
+[  531.15s ->   536.43s] here, we get negative 0.886. So we have the exact same result just using a different methodology.
+[  537.07s ->   540.91s] Well, thank you so much for watching. I hope you enjoyed this video on correlated Brownian motions
+[  540.91s ->   546.19s] using a Kleski decomposition than a more analytical solution there towards the end. If you have any
+[  546.19s ->   549.87s] questions about anything that we talked about in this video, feel free to leave them in the comments
+[  549.87s ->   553.71s] below. You can always reach out to me via email if you have any more specific questions. I'm happy to
+[  553.71s ->   558.99s] help however I can. Other than that, I will see you in the next video.
+[  558.99s ->   560.35s] I will see you in the next video.
+[  560.35s ->   560.39s] Where are you guys?
+[  560.39s ->   561.05s] Here you go.
+[  561.05s ->   562.43s] Thank you.
+[  562.43s ->   563.79s] That was it.
+[  563.79s ->   563.91s] Here we are.
+[  563.91s ->   565.17s] Let's get started.

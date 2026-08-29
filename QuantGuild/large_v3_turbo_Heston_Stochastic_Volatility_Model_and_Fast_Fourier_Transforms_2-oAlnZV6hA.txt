@@ -1,0 +1,347 @@
+[    1.94s ->     7.70s] Monte Carlo simulation is too slow. It certainly can be too slow sometimes, especially when our
+[    7.70s ->    14.66s] goal on a trading desk is to quote prices consistently and efficiently. We already
+[   14.66s ->    19.44s] know we need to go beyond Black Shoals. In the past couple of weeks, I've been talking about
+[   19.44s ->    25.10s] the idea that the Black Shoals model is insufficient for quoting prices on a trading
+[   25.10s ->    31.00s] desk. And we extended the idea to this Heston stochastic volatility model, which can better
+[   31.00s ->    38.12s] capture the dynamics observed in a market implied volatility surface. But we also talked about how
+[   38.12s ->    44.60s] there is no closed form solution to the prices in a Heston stochastic volatility model. Well,
+[   45.12s ->    49.90s] fret not, because in this video, we're going to look at the fast Fourier transform, specifically
+[   49.90s ->    57.50s] an inversion technique available to us to recover the prices under a Heston stochastic
+[   57.50s ->    63.84s] volatility model very, very quickly. This will allow us to consistently and efficiently quote
+[   63.84s ->    70.90s] prices for our trading desk. My goal is to distill several years of probability and statistics,
+[   71.12s ->    76.42s] math, and quantitative finance into this one video to save you the number of headaches I've
+[   76.42s ->    80.54s] had putting the pieces of this puzzle together myself. So what we're going to do is we're going
+[   80.54s ->    85.20s] to start with the idea of options. We're going to look at Black Shoals. We'll talk about why it's
+[   85.20s ->    89.70s] insufficient. We'll talk about Fourier transforms. What the heck are they? We'll talk about
+[   89.70s ->    94.30s] characteristic functions from probability and statistics, how they're related to Fourier
+[   94.30s ->    98.82s] transforms. Then we're going to look at the work by Carr Madden. We're going to look at how we can
+[   98.82s ->   105.26s] recover option prices via the Fourier inversion. And then we'll wrap up with some closing thoughts and
+[  105.26s ->   109.80s] future topics. As always, this Jupyter notebook will be available in the description below. I will also
+[  109.80s ->   114.48s] post it on the Quantkild library on GitHub, where you can find all of my Jupyter notebooks and
+[  114.48s ->   119.74s] associated YouTube videos. So if you just want the code to be able to price options in this framework
+[  119.74s ->   125.08s] efficiently, you can just go ahead and check out the link in the description. Moreover, at the top of
+[  125.08s ->   130.38s] this Jupyter notebook, I have related Quantkild videos. If you want to understand any of these topics
+[  130.38s ->   134.72s] on a deeper level, or maybe you need some background, videos in stochastic calculus,
+[  134.88s ->   140.36s] applications sitting on a trading desk of these models, statistical bases for pricing, and of
+[  140.36s ->   146.22s] course, why the expectation is sufficient in practice for generating P&L. And lastly, as we get
+[  146.22s ->   150.92s] started here, if you're interested in mastering your quantitative skills, check out Quantkild.com.
+[  150.98s ->   156.66s] We have over 90 quant lessons, fully worked interview questions, an adaptive practice engine that scales
+[  156.66s ->   162.62s] with your skill level, applied trading games, and much more. So if you're interested in supporting
+[  162.62s ->   168.52s] the channel so I can continue to create free videos and open source resources, just like this one,
+[  168.86s ->   174.16s] check out Quantkild.com. Without further ado, let's begin putting together all of the pieces of the
+[  174.16s ->   181.60s] puzzle to understand Fourier inversion for pricing options in a Heston framework. Now that sounds crazy,
+[  181.74s ->   186.42s] but by the end of this video, that statement will be crystal clear. We're going to start with this idea
+[  186.42s ->   192.82s] of an option contract. Option contracts and pricing are fundamentally what financial engineering
+[  192.82s ->   199.28s] is all about. We're trying to figure out how much we should pay for this thing today, and we don't know.
+[  199.52s ->   206.28s] It's random, so we have to assume a whole bunch of things and create a model. And the best models are
+[  206.28s ->   214.42s] going to be ones that capture as much variability as possible in the empirical prices that we observe,
+[  214.42s ->   220.66s] while saying as little as possible about the true distribution. We don't want to make too many
+[  220.66s ->   225.48s] assumptions such that the prices that we're producing are just completely impractical. So
+[  225.48s ->   229.84s] let's get started with this idea of an option contract, right? An option contract is going to
+[  229.84s ->   235.10s] give the holder the right but not obligation to buy or sell an underlying asset at some point in the
+[  235.10s ->   241.26s] future at a predetermined price. Okay, what does that mean? Well, at some point in the future,
+[  241.26s ->   246.60s] maybe it's a month from now, maybe it's two months, maybe it's a year from now. If you tell me the
+[  246.60s ->   253.28s] stock price, I can tell you how much I would pay you based on that option contract. So let's say one
+[  253.28s ->   260.56s] year from now, we have this option contract, and the underlying asset is $120. Well, in that case,
+[  260.56s ->   270.78s] I would have made $20. Okay, what if it was $80? Well, in that case, I would make $0. So we know based
+[  270.78s ->   279.18s] on where the stock price ends, how much we are going to receive from the option contract. But we
+[  279.18s ->   284.86s] don't know where the stock price is going to end. So what we have to do is we have to assume some sort
+[  284.86s ->   291.14s] of model to account for this randomness. And the Black-Scholes model is going to assume what's
+[  291.14s ->   297.12s] called a geometric Brownian motion. And that is the dynamics governing the stock price process.
+[  298.47s ->   304.65s] Okay, so if we have this idea of randomness, and we know that wherever the stock price ends up
+[  304.65s ->   311.01s] is going to be random, then what is our best guess in the face of this randomness? Well,
+[  311.01s ->   316.33s] the best guess that we have in the face of this randomness is going to be the expectation,
+[  317.37s ->   322.05s] the simple expectation. So whenever we're trying to figure out how much we should pay
+[  322.05s ->   328.05s] for a contract today, we have to use the expectation. We don't know what state of the
+[  328.05s ->   333.01s] world we're going to be in. We don't know if the stock price is going to be $120 or if it's going to
+[  333.01s ->   339.81s] be $60. We don't know. So the best that we can do is take the expectation. So what you see here is
+[  339.81s ->   346.33s] how much we should pay for this option contract is actually written in terms of an expectation.
+[  346.33s ->   351.63s] So there are a couple of other moving pieces going on here. It's a risk neutral expectation.
+[  351.97s ->   356.19s] We have a discounted risk neutral expectation to account for the time value of money,
+[  356.19s ->   363.95s] but we can ignore that for now. The real idea here is that as we are trying to determine what
+[  363.95s ->   369.57s] to pay for this particular financial instrument, we are accounting for the randomness by assuming
+[  369.57s ->   375.57s] some sort of model. Black-Scholes will assume a geometric Brownian motion and we will take the
+[  375.57s ->   381.89s] expectation and that will be the best that we can do to produce a fair price for this contract today.
+[  381.89s ->   387.21s] Believe it or not, this is actually very easily visualized. The solutions to both of these equations
+[  387.21s ->   393.43s] are visualized by this chart. So if I run this chart, you'll see I'll get a different stock price
+[  393.43s ->   400.23s] sample path, right? And the option contract is going to pay out based on where the stock price
+[  400.23s ->   406.31s] ends. So here it ends very, very high relative to the strike price. So I receive a payout over here.
+[  406.77s ->   412.21s] If I was to run this again, you'll see it ends lower than the strike price. So I don't receive a payout.
+[  413.01s ->   417.93s] Okay. Well, how much should I pay for this contract? I don't know where I'm going to be in the future.
+[  418.03s ->   422.43s] Well, remember, we're dealing with this expectation here. This is the equation that we need to solve to
+[  422.43s ->   429.83s] figure out the fair price of this contract. So what I can do is run this a whole bunch of times.
+[  429.83s ->   436.77s] Maybe I run this 10,000, 50, a hundred thousand times. And based on all of the places where the
+[  436.77s ->   443.99s] stock price ends, I'm just going to take the average value of all of the payoffs of the corresponding
+[  443.99s ->   449.49s] options. And that's going to give me the fair price of the option contract. It's going to tell me
+[  449.49s ->   457.93s] how much I should pay today for this possibility of a payoff. That is exactly what this equation is
+[  457.93s ->   463.53s] telling us. So this is how we go about pricing options in a Black-Scholes framework. In fact,
+[  463.63s ->   470.79s] there are a ton of different ways to get to the fair price of this option contract. That is this
+[  470.89s ->   477.99s] equation here. And you could do this through solving a partial differential equation. You could do this from
+[  477.99s ->   483.51s] approximating a partial differential equation. You could do this through simulation of sample paths
+[  483.51s ->   490.09s] like we did here. You could even solve the stochastic differential equation and just find the distribution
+[  490.09s ->   497.23s] of stock prices all the way here at time capital T. And that looks exactly like this. And then you can
+[  497.23s ->   504.43s] use simulation to produce prices. So there is no shortage of producing, no shortage of ways to produce a
+[  504.43s ->   511.35s] price for this particular option contract in a Black-Scholes framework. Okay. And we have a
+[  511.35s ->   517.01s] closed form solution in a Black-Scholes framework. So it's very, very quick to be able to produce the
+[  517.01s ->   522.63s] price of a European option in a Black-Scholes framework. But we know that we can't use a Black-Scholes
+[  522.63s ->   528.01s] framework. We know if we're sitting on a trading desk and we want to extrapolate exotic prices,
+[  528.01s ->   535.09s] then we can't use a Black-Scholes model. If you're curious as to why, check out how to price exotic
+[  535.09s ->   540.63s] options. Check out how to trade with the option implied volatility surface, the Black-Scholes
+[  540.63s ->   546.33s] option implied volatility surface. I have videos dedicated to those ideas. We know that we can't
+[  546.33s ->   552.09s] use a Black-Scholes model to quote prices. It doesn't quote consistent prices. If we use a Black-Scholes
+[  552.09s ->   557.99s] model, we're going to exhibit arbitrage. So we need a different model. And I've alluded to this idea
+[  558.01s ->   564.47s] of a Heston stochastic volatility model. And what a Heston stochastic volatility model is going to do
+[  564.47s ->   569.87s] is it's going to assume very similar stock price dynamics as the Black-Scholes model. It's still
+[  569.87s ->   576.41s] a multiplicative stochastic differential equation. The only difference is the volatility term here,
+[  576.55s ->   584.45s] sigma, is no longer constant. We have this term V now that is a stochastic process itself. So we're
+[  584.45s ->   590.47s] actually dealing with two stochastic processes here in a Heston framework. The first is this stock
+[  590.47s ->   598.83s] price process. So here is a stock price path. And the second is this variance process. This variance
+[  598.83s ->   604.27s] process is assumed to be mean reverting, and it might look something like this when simulated. So we're
+[  604.27s ->   610.41s] actually dealing with two stochastic processes that are correlated with one another. This is better
+[  610.41s ->   617.21s] capturing the dynamics of volatility in the market. More importantly, unlike the Black-Scholes model,
+[  617.49s ->   624.03s] this Heston model will be able to quote consistent prices based on what we observe in the market.
+[  624.49s ->   631.17s] This is why we need to go beyond Black-Scholes. If we don't quote consistent prices, then we're going
+[  631.17s ->   637.69s] to be quoting prices that may exhibit arbitrage. And over a series of a large number of trades,
+[  637.69s ->   645.65s] if you are exposing yourself to arbitrage, you are going to lose a lot of money in this zero-sum game
+[  645.65s ->   651.19s] of trading derivatives. To summarize, we can't use the Black-Scholes to quote consistent prices,
+[  651.19s ->   656.71s] so we're going to use a Heston model. Okay, what's the problem? Well, unlike the Black-Scholes model,
+[  657.07s ->   662.53s] where we have a variety of solutions available to us, in fact, we have a closed form solution
+[  662.53s ->   667.33s] available to us, meaning if you just plug in parameters, you get an option price.
+[  668.01s ->   674.93s] The Heston model framework does not have a closed form solution. I can't just give you
+[  674.93s ->   681.43s] parameters to the Heston model and you give me a price. That would be great, but we don't have
+[  681.43s ->   688.17s] a solution to the partial differential equation in that capacity. So what do we do? Well, just like
+[  688.17s ->   694.77s] above here, can't we just simulate paths and then take the average payoff? Can't we just solve this
+[  694.77s ->   703.07s] equation numerically by simulating? Yeah, of course we can. That's always an option. And that's actually
+[  703.07s ->   709.55s] exactly what I do here. I have a stock price path, I have a variance process path, and I have the
+[  709.55s ->   715.75s] corresponding payoff based on where the stock price ends. And if I run this a number of times, you'll see
+[  715.75s ->   722.77s] that the option payoff is going to change based on where the stock price path ends. And if I did this
+[  722.77s ->   730.57s] 10,000, 100,000, a million times, then I could produce an approximate price. I can take the average
+[  730.57s ->   736.01s] of all these payoffs just like I did above with Black-Scholes, and I can solve that expectation
+[  736.01s ->   743.03s] problem. I can tell you the fair value of the contract today based on the Heston model framework.
+[  743.03s ->   751.53s] But this is terribly slow. Now, it's not terribly slow in generating one price. We can just simulate
+[  751.53s ->   758.25s] a million paths if we have to and produce a price. That's fine. But it's terribly slow if we have to
+[  758.25s ->   768.83s] calibrate it to a market surface, a grid of prices. How do you calibrate a model to a grid of prices? You need
+[  768.83s ->   776.85s] to solve a minimization problem from calculus. And that's an iterative process. So every time you want
+[  776.85s ->   783.83s] to change the parameters of the model to produce new prices, you need to simulate more paths. That's
+[  783.83s ->   789.99s] how this works. If I was to change the parameters of this Heston model, and I just simulated a million
+[  789.99s ->   796.69s] paths, I would need to simulate another million paths and another million paths as I continue to change
+[  796.69s ->   804.23s] the parameters of the model framework. And I need those parameters to match the market. That's why this is
+[  804.23s ->   810.35s] terribly slow. I'm going to do a video in the future on this calibration process. But the reason why I
+[  810.35s ->   816.85s] haven't discussed this calibration process is because this is terribly slow. We need a way to make this pricing
+[  816.85s ->   824.63s] faster. Hence, the Fourier inversion and the point of this video. This brings us to the Fourier transform and the
+[  824.63s ->   831.33s] place of Fourier transforms in quantitative finance. We're going to talk now about what the heck a
+[  831.33s ->   838.17s] Fourier transform is, the idea of a discrete Fourier transform, a fast Fourier transform, and an inverse
+[  838.17s ->   842.91s] Fourier transform. Then we're going to talk about characteristic functions. And we're going to combine
+[  842.91s ->   850.09s] these ideas then to produce prices for a Heston framework without simulating the paths. It will be
+[  850.09s ->   855.39s] significantly faster. It's actually very easy to understand the Fourier transform relative to
+[  855.39s ->   862.11s] pricing and quant finance without getting too involved into the Fourier transform itself. The only
+[  862.11s ->   869.19s] thing we really have to know is that the Fourier transform is defined by this integral, and it takes some
+[  869.19s ->   875.89s] sort of input signal in the time domain, and it maps it to some output signal in the frequency domain.
+[  875.89s ->   881.97s] Now, that might sound complicated, but really all we're doing is taking some sort of input,
+[  881.97s ->   889.57s] mapping it to an output, and they're going to be one-to-one. In other words, if I take a Heston stock
+[  889.57s ->   898.43s] price process in the time domain, then I apply a Fourier transform to that Heston stock price process,
+[  898.43s ->   905.87s] and I end up in the frequency domain. Well, there's only one Heston stock price process in the frequency
+[  905.89s ->   914.05s] domain that matches up to the Heston stock price process in the time domain. So in the Fourier transform
+[  914.05s ->   921.97s] sense, all we're doing is taking an input signal, mapping it to an output signal from the time domain
+[  921.97s ->   928.13s] to the frequency domain. That's all we're doing when we apply a Fourier transform in this sense.
+[  928.13s ->   932.37s] That's really all we need to understand about Fourier transforms if we're going to go about pricing
+[  932.37s ->   937.33s] options in a Heston framework. We just need to know that we can go back and forth in that capacity,
+[  937.33s ->   942.93s] and what it actually means. So now let's talk about practically how we're going to do this.
+[  942.93s ->   947.33s] We write the Fourier transform in terms of an integral, but practically we don't operate in a
+[  947.33s ->   954.37s] continuous space. We don't have an infinitesimally small quantity or a quantity of infinity on a computer.
+[  954.37s ->   959.41s] We have very small and very large, but we don't have infinity. So instead of using an integral,
+[  959.41s ->   965.97s] we're going to use a summation. That's all an integral is, is a continuous summation, right?
+[  965.97s ->   970.45s] So we're going to actually operate with what's called a discrete Fourier transform.
+[  970.45s ->   975.49s] Nothing changes from our initial intuition about it. We're just mapping an input signal from the time
+[  975.49s ->   982.85s] domain to an output signal in the frequency domain. In fact, I have some examples here. I have an example
+[  982.85s ->   991.01s] of cyclical functions with different cycle lengths, and what I'm doing is I'm taking this signal from the
+[  991.01s ->   996.29s] time domain and I'm mapping it to the frequency domain, and you can see what we're extracting in
+[  996.29s ->  1003.49s] each case is the cycle length. This is actually particularly useful even in determining economic cycles.
+[ 1003.49s ->  1008.77s] There are some applications in time series for determining structure and seasonality,
+[ 1008.77s ->  1015.41s] but I will digress and save that for another day. So the discrete Fourier transform is the
+[ 1015.97s ->  1022.29s] practical application of the theoretical Fourier transform. The intuition is exactly the same,
+[ 1022.29s ->  1028.37s] time to frequency. That's it, some input signal and time to output signal and frequency,
+[ 1028.37s ->  1035.84s] and it's one to one in that sense. Okay, so is there a way to make the discrete Fourier transform faster?
+[ 1036.64s ->  1044.16s] There certainly is. And it's called the fast Fourier transform, or the discrete fast Fourier transform.
+[ 1044.16s ->  1050.16s] And it's the exact same idea still. We're going from time to frequency. We have some input signal to
+[ 1050.16s ->  1056.80s] some output signal, time to frequency. The only difference here is the time complexity of the algorithm
+[ 1056.80s ->  1064.72s] is improved. It's faster relative to the discrete Fourier transform that we saw here. But it's still the
+[ 1064.72s ->  1069.84s] exact same transformation. It's the exact same algorithm. Very important to keep that in mind.
+[ 1070.48s ->  1078.31s] Okay, so we can apply the fast Fourier transform to go from time to frequency. How do we go back?
+[ 1079.11s ->  1088.79s] We know that this is going to map to one thing in the time domain. This frequency domain is going to map to
+[ 1088.79s ->  1094.79s] one time domain. This is going to map to one time domain. It's one to one in that sense. So how do we go back?
+[ 1094.79s ->  1101.75s] We're going to use the inverse fast Fourier transform. The inverse fast Fourier transform is going to
+[ 1101.75s ->  1107.67s] allow us to take something in the frequency domain and then map it back to the time domain. That's all
+[ 1107.67s ->  1111.91s] we're doing here. When we're operating with the Fourier transform in this capacity, we are taking some
+[ 1111.91s ->  1117.83s] sort of input signal in time, mapping it to some output signal in frequency. And then if we use the
+[ 1117.83s ->  1126.15s] inverse transform, we're going from frequency back to time. We can see it visually here. I have this signal
+[ 1127.27s ->  1135.68s] in the time domain. I apply the fast Fourier transform. Now I'm in the frequency domain.
+[ 1136.40s ->  1143.60s] Then I apply the inverse fast Fourier transform. Now I'm back in the time domain. It's the exact same
+[ 1144.24s ->  1150.80s] original signal. So if we understand this, we understand Fourier transforms sufficiently for
+[ 1150.80s ->  1158.48s] pricing in the Heston framework. How on earth is a Fourier transform related to our Heston framework?
+[ 1159.60s ->  1164.64s] Well, we need to understand this idea of a characteristic function. And if we understand
+[ 1164.64s ->  1168.40s] Fourier transforms, then we pretty much already understand the idea of a characteristic function.
+[ 1168.96s ->  1174.08s] Think of something like a dice roll. A dice roll is defined by its probability mass function.
+[ 1175.33s ->  1181.65s] That dice roll has a unique characteristic function. Just like the Fourier transform,
+[ 1181.65s ->  1187.57s] I can go back and forth. I could go from the dice roll probability mass function to the characteristic
+[ 1187.57s ->  1192.29s] function, and then back and forth and back and forth. There's only one characteristic function
+[ 1192.29s ->  1198.69s] for that dice roll. So if I have the characteristic function of the dice roll, that's the same thing as
+[ 1198.69s ->  1205.57s] having the probability mass function of the dice roll. I can go back and forth freely. Same thing is
+[ 1205.57s ->  1212.72s] true with a normal distribution. And in fact, I plot it here to show you. I have a normal distribution here.
+[ 1213.44s ->  1217.44s] I also have the real and imaginary parts of the characteristic function.
+[ 1218.16s ->  1226.32s] If you gave me this chart here, or you gave me these two charts, I would have the exact same information.
+[ 1226.32s ->  1233.92s] I could transform the characteristic function back to the normal distribution, or I could transform
+[ 1233.92s ->  1240.08s] the normal distribution to the characteristic function. I can go back and forth just like the
+[ 1240.08s ->  1246.40s] Fourier transform. So what's actually happening here? Well, let's look at the definition of a characteristic
+[ 1246.40s ->  1253.12s] function. We see that it's written in terms of an expectation, and we have this e to the itx,
+[ 1253.12s ->  1259.44s] where x is the random variable. It could be a dice roll, a normal distribution, or our stock price
+[ 1259.44s ->  1266.60s] process. Well, the expectation is written in terms of an integral. So when I expand this out, what do we get?
+[ 1267.32s ->  1276.80s] Doesn't this look exactly like the Fourier transform? This is an integral of e to the itx. It's
+[ 1277.52s ->  1283.04s] it's mathematically equivalent to the Fourier transform. Disregard the sign change. It's
+[ 1283.04s ->  1292.53s] mathematically equivalent. Look at the Fourier transform. It's no coincidence that these are
+[ 1292.53s ->  1299.41s] roughly equivalent. And doesn't this actually look shockingly similar to the value of our
+[ 1300.13s ->  1305.65s] option contract from the start of this video? Didn't we write it in terms of an expectation
+[ 1305.65s ->  1313.36s] and an integral? If we go back to the start of this Jupiter notebook, yeah, this looks very,
+[ 1313.36s ->  1318.40s] very similar. And it's no coincidence. There's going to be a very strong connection between all of these
+[ 1318.40s ->  1325.36s] ideas. And it's how we're going to go about recovering the option contract price in a Heston
+[ 1325.36s ->  1330.56s] framework. So if we understand the idea of a Fourier transform, taking something from the time
+[ 1330.56s ->  1335.92s] domain, mapping it to the frequency domain, we understand the idea of a characteristic function
+[ 1335.92s ->  1340.00s] being able to map a random variable to its characteristic function and back.
+[ 1340.72s ->  1347.04s] We fully understand these ideas sufficiently to be able to use them to price options in a Heston
+[ 1347.04s ->  1352.32s] framework. Equivalent to the inverse fast Fourier transform, if you gave me a characteristic
+[ 1352.32s ->  1358.08s] function, I could tell you the probability mass or density function of a random variable
+[ 1358.08s ->  1364.64s] by applying the Fourier inversion. In that sense, I'm recovering the random variable. So you give me a
+[ 1364.64s ->  1372.16s] characteristic function, I apply my Fourier inversion, and I'll recover the PMF or the PDF. So you give me
+[ 1372.16s ->  1378.00s] the characteristic function of a random variable here, I apply that inversion, and look, I get the
+[ 1378.00s ->  1385.60s] original random variable. That's exactly what I did here. I took this random variable, this normal random
+[ 1385.60s ->  1393.04s] variable, I applied the Fourier transform to get the characteristic function, this is the real part,
+[ 1393.04s ->  1400.88s] this is the imaginary part, and then I just do the Fourier inversion. And I get back from the characteristic
+[ 1400.88s ->  1408.48s] function, the original PDF. So all we're doing in both of these cases, the cases of the Fourier transform
+[ 1408.48s ->  1413.44s] and the characteristic function, is we're mapping something that's one-to-one, meaning there's only
+[ 1413.44s ->  1420.32s] one input to one output and one output back to that one input, in the time to frequency, or in the sense of
+[ 1420.32s ->  1426.08s] the random variables with the characteristic function, the idea of a probability mass or density function
+[ 1426.08s ->  1430.48s] to the subsequent characteristic function, and back and forth and back and forth.
+[ 1430.48s ->  1436.48s] Now we're ready to approach this seminal work by Carr Madden. I'm a big enthusiast of this work,
+[ 1436.48s ->  1441.84s] so I'm honored to be able to talk about it. Remember, at the start of this video, the option
+[ 1441.84s ->  1446.56s] contract, we don't know what state of the world the stock price is going to be in. The best that we can do
+[ 1446.56s ->  1453.92s] to determine the fair value is to use an expectation. The expectation of the randomness governed by the
+[ 1453.92s ->  1458.96s] model for our framework, a Black-Scholes framework or a Heston framework. In this case, we're dealing
+[ 1458.96s ->  1466.04s] with a Heston framework. If we expand the expectation in terms of the definition, then we get this crazy
+[ 1466.04s ->  1473.12s] looking integral. Okay, well, we can't solve this integral in closed form. If we could, we wouldn't
+[ 1473.12s ->  1480.71s] even be having this conversation, we would just be solving this integral in closed form. Okay, so let's
+[ 1480.71s ->  1485.11s] think about what we talked about in this video. What if we apply the Fourier transform? Could we apply a
+[ 1485.11s ->  1494.08s] Fourier transform to this? Well, we actually can't. And the reason for that is this option pricing
+[ 1494.08s ->  1499.92s] function is not square integrable. We didn't talk about this as a necessary condition for the Fourier
+[ 1499.92s ->  1508.96s] transform. All you need to know is if we try to apply the Fourier transform to this call option price,
+[ 1509.52s ->  1516.64s] it wouldn't work in the way that we had discussed earlier, where it maps the what input signal from
+[ 1516.64s ->  1525.65s] time to frequency. It's not going to work if it doesn't satisfy that condition. So are we, are we,
+[ 1525.65s ->  1531.33s] is all hope lost? Do we not apply the Fourier transform? Well, Carr Madden introduced this idea of a
+[ 1531.33s ->  1538.29s] damping factor, and it's this exponential term here. And what they're doing is they're just scaling the call
+[ 1538.29s ->  1544.77s] price by this exponential factor. So I have this new C term here, which is equal to the product of
+[ 1544.77s ->  1553.88s] the original call price times this damping factor. Okay. How does that help? Well, I can apply the
+[ 1553.88s ->  1560.56s] Fourier transform now. So I have this modified call price, which is damped by the stamping factor,
+[ 1561.12s ->  1567.88s] and I can apply the Fourier transform. So if I can apply the Fourier transform, then I can apply the
+[ 1567.88s ->  1574.12s] inverse Fourier transform. Time to frequency, frequency back to time. That's all that I'm doing
+[ 1574.12s ->  1581.08s] here. So the first stage of this is understanding that if we look at the option pricing problem,
+[ 1581.08s ->  1587.68s] we have this expectation, we have this integral. If I wanted to apply the Fourier transform, I can't.
+[ 1587.68s ->  1592.96s] It's going to break down. It doesn't satisfy one of the necessary conditions to be able to apply the
+[ 1592.96s ->  1600.24s] Fourier transform. So a clever trick. Let's introduce a factor that makes it square integrable,
+[ 1600.24s ->  1605.92s] that ensures that we satisfy the necessary conditions for the Fourier transform. That is
+[ 1605.92s ->  1611.52s] exactly what we see here. We apply this damping factor and all of a sudden we can apply the
+[ 1611.52s ->  1618.48s] Fourier transform to the call option pricing function. And then if we can apply the Fourier transform
+[ 1618.48s ->  1624.96s] time to frequency, we could go back frequency to time. Why is this such an important idea? Because
+[ 1624.96s ->  1629.84s] if we can apply the Fourier transform to option prices and this option pricing function,
+[ 1630.72s ->  1638.32s] and we know the characteristic function that governs the randomness of our stock price process,
+[ 1638.32s ->  1645.76s] in this case a Heston framework, then we can develop a relationship between the two. And because now
+[ 1646.40s ->  1654.40s] we can actually take the Fourier transform and we know the characteristic function of the Heston stock
+[ 1654.40s ->  1662.56s] price process, then we can actually just apply the Fourier inversion directly to get the option price.
+[ 1662.56s ->  1669.84s] No simulating paths, no approximating PDE solutions via finite differences. We can just go about
+[ 1669.84s ->  1677.60s] Fourier inversion of the characteristic function. An absolutely bananas idea. Let's take a look at how
+[ 1677.60s ->  1683.52s] we derive this key equation. Essentially, we're starting with this Fourier transform. That's all we're
+[ 1683.52s ->  1689.52s] looking at here. This is nothing that we haven't already spoken about. This is the, what? The damped
+[ 1689.52s ->  1697.52s] call, C sub T. We're applying the Fourier transform. That's all we're doing here. Okay, if this is the
+[ 1697.52s ->  1703.60s] case, we can substitute in the call price formula. That's exactly what we're doing here. This is the
+[ 1703.60s ->  1711.09s] original integral that we had for the expectation. That's all we're doing. We're just going to change the
+[ 1711.09s ->  1716.13s] order of integration. This is a double integral. We're free to do that. Okay, what does this actually
+[ 1716.13s ->  1723.97s] look like? If we evaluate then the inner integral and simplify, then we're left with this characteristic
+[ 1723.97s ->  1732.50s] function. Phi sub cap T of U is the characteristic function of the log price process for the Heston
+[ 1732.50s ->  1740.92s] framework. Why is this so amazing? Because this is known. This is known in closed form. This is what
+[ 1740.92s ->  1749.24s] it's given by. Yeah, it looks crazy. But there's nothing in this equation now that we don't have.
+[ 1750.20s ->  1759.49s] Think back to this original integral. If this is the option price, how do you solve this? You don't know
+[ 1759.49s ->  1767.68s] what this is. But after applying these crazy transformations, you get to this equation and
+[ 1767.68s ->  1776.72s] you know what everything in it is. Every single term is well defined. You don't have something that you
+[ 1776.72s ->  1786.39s] can't solve analytically. Okay, so what do we do? Well, we just apply the inverse Fourier transform.
+[ 1786.39s ->  1792.31s] We're going from this space of what? We applied a Fourier transform. We recognize that, oh,
+[ 1792.31s ->  1798.23s] when we apply a Fourier transform, we can substitute in the characteristic function for the Heston log
+[ 1798.23s ->  1805.11s] stock prices. And now there's nothing that we don't know. So what we've done is we've, this is
+[ 1805.11s ->  1811.67s] essentially what we've done is we're operating in the time space. We can't solve this. So we do a
+[ 1811.67s ->  1817.91s] Fourier transform to the frequency space. We switch the order of integration, integrate and realize,
+[ 1817.91s ->  1826.88s] oh, wait a second. In the frequency domain, we can substitute in the characteristic function of
+[ 1826.88s ->  1833.92s] the log stock prices. And we're operating in this frequency domain now where everything is defined.
+[ 1834.64s ->  1840.16s] Remember when we were in the time domain, not everything was well defined. We don't know what
+[ 1840.16s ->  1846.23s] this is, but when we apply the Fourier transform and we're operating in the frequency domain,
+[ 1846.23s ->  1853.03s] everything is well defined. Plug in all the numbers. If I do the inverse transform back to the time
+[ 1853.03s ->  1859.83s] domain, I'm just going to get the option prices. That is incredible. That is incredible. We went from
+[ 1859.83s ->  1867.11s] time where we couldn't solve analytically to frequency where we can, and then go back to time
+[ 1867.11s ->  1872.87s] with the correct solution. That is, that is absolutely bananas and why I am a car Madden enthusiast.
+[ 1872.87s ->  1876.47s] Now, of course, I'm not going to walk through all of the code that implements this. I've already
+[ 1876.47s ->  1880.07s] written it out for you. You can check it out on GitHub, the link in the description below on the
+[ 1880.07s ->  1885.59s] Quant Guild library, if you would like to price options in this capacity. But one thing to keep
+[ 1885.59s ->  1893.91s] in mind is the reason why this result works is because we have the Heston characteristic function
+[ 1893.91s ->  1901.67s] of the log stock prices, this giant expression here. If we didn't have this, then we wouldn't know
+[ 1902.23s ->  1908.47s] this right hand side of the equation in the frequency domain. And if we took the inverse
+[ 1908.47s ->  1915.19s] Fourier transform, we'd still be left with an unsolvable analytical expression like this one here.
+[ 1915.19s ->  1921.83s] So keep that in mind. That's the reason why this works is because we know what this fee function is.
+[ 1921.83s ->  1926.55s] It's given by this guy here. All right. The implementation is difficult. I won't lie to
+[ 1926.55s ->  1933.19s] you. The, the, the implementation is something that would take quite some time to actually develop.
+[ 1933.19s ->  1937.83s] I've done it for you here. I've also written out a general recipe. So if you're trying as an exercise
+[ 1937.83s ->  1943.03s] to build the implementation yourself, hopefully this offers you some, some guidelines. Essentially,
+[ 1943.03s ->  1945.91s] what we're doing is we're formulating the Heston characteristic function,
+[ 1946.47s ->  1952.31s] and we're applying this damping factor to the original call option prices. This, this key
+[ 1952.31s ->  1958.31s] equation that we're developing that introduces a relationship between what the log stock prices
+[ 1958.31s ->  1963.59s] and the corresponding option prices in a Heston framework. So once we do that, we can discretize
+[ 1963.59s ->  1969.59s] this grid that's for our fast Fourier transform and the, the inverse fast Fourier transform.
+[ 1969.59s ->  1975.11s] And once we do the inverse fast Fourier transform, remember we're applying it in a sense that is
+[ 1975.11s ->  1980.31s] going to allow us to recover the original option prices that we are then going to have to correct
+[ 1980.31s ->  1985.35s] because we still apply that damping factor, but that's very easily done because we have what it's
+[ 1985.35s ->  1992.63s] just an exponential. So we can just apply this correction and we will end up with the correct option
+[ 1992.63s ->  1998.07s] prices. Something to keep in mind here is that we are discretizing the Fourier transform. So we're
+[ 1998.07s ->  2003.75s] introducing an error anytime we discretize some sort of continuous process. And in this case,
+[ 2003.75s ->  2010.47s] we are approximating an integral, right? Via summation. And there is this discretization scheme
+[ 2010.47s ->  2016.47s] such that these weights are what's called Simpson weights. I'll do another video on quadrature numerical
+[ 2016.47s ->  2021.83s] integral approximation in the future. If there's interest, it's a very niche topic. So I'm not sure
+[ 2021.83s ->  2026.23s] how much appeal there will be, but something to keep in mind as we walk through this example,
+[ 2026.23s ->  2031.43s] in the sense that it is exact theoretically, but of course we're going to have some sort of
+[ 2031.43s ->  2036.79s] discretization error. And that's what we're going to face anytime we try to go about discretizing some
+[ 2036.79s ->  2042.87s] sort of continuous process or operation. So let's take a look at the code here that is being written based
+[ 2042.87s ->  2049.43s] on this process, which we discussed above. And the real beast is tackling this Heston characteristic
+[ 2049.43s ->  2056.79s] function. So what I've done in this Python code is I've defined these Heston parameters as the
+[ 2056.79s ->  2061.99s] parameters for the Heston model that we're trying to calibrate to say a market implied volatility surface.
+[ 2062.71s ->  2068.87s] And I've defined then the Heston characteristic function in terms of the necessary components
+[ 2068.87s ->  2075.03s] along with the Heston parameters. And I've applied the Simpson weights. Again, this is the quadrature.
+[ 2075.03s ->  2081.43s] I'll digress, perhaps a video for another day. Then I developed this argument for the fast Fourier
+[ 2081.43s ->  2090.71s] transform for the call price. And I use put call parity to produce the put prices based on the call
+[ 2090.71s ->  2098.87s] price via the fast Fourier transform. So this is the function that is applying the car Madden argument
+[ 2098.87s ->  2106.15s] to the Heston option prices. You could see it's very, very quick. So if I was to run this,
+[ 2106.15s ->  2112.47s] you could see I get an option price almost instantaneously. Here is simulation. It's pretty
+[ 2112.47s ->  2117.83s] quick. But if I was to do this for a grid, this would certainly be faster. And what I do here is I
+[ 2117.83s ->  2124.07s] produce a grid of prices to compare it to Monte Carlo to see how the accuracy is. I do 80 to 120. You could
+[ 2124.07s ->  2130.79s] see they are roughly equivalent. And of course, the Monte Carlo should converge then to the fast Fourier,
+[ 2130.79s ->  2136.63s] which should then converge to the theoretical price. Of course, assuming the approximation,
+[ 2136.63s ->  2142.15s] the discretization of that transform was approaching a continuous space. Some closing
+[ 2142.15s ->  2147.75s] thoughts and future topics. Goodness gracious, this was an intricate video to create, but I am an
+[ 2147.75s ->  2154.31s] enthusiast of car Madden with my whole heart for a variety of professional and academic reasons.
+[ 2154.31s ->  2159.43s] So I'm very happy to be able to do a video on this topic. I hope you enjoyed. I hope you learned
+[ 2159.43s ->  2163.99s] something. If you like this video, please like comment, subscribe. It lets me know that you want to see
+[ 2163.99s ->  2169.75s] more content like this in the future. Some future topics that I would like to discuss model calibration.
+[ 2169.75s ->  2174.31s] I think we are now ready. We've talked about the implied volatility surface. We talked about
+[ 2174.31s ->  2181.11s] how to essentially price and trade exotic options. And the only component that we were missing to that
+[ 2181.11s ->  2186.31s] entire pipeline was the model calibration step. We just didn't have efficient means of going about
+[ 2186.31s ->  2192.39s] calibrating a model. Now we do. So I'd like to talk about calibration. I'd also like to talk about PDE
+[ 2192.39s ->  2199.43s] methods for approximating, say, exotic prices. I think those can be also very interesting. I'd also like to
+[ 2199.43s ->  2203.91s] use machine learning and neural networks to approximate pricing functionals. I've talked about this in the past.
+[ 2204.23s ->  2208.95s] I've done a lot of research on this in a professional setting. So I would like to talk
+[ 2208.95s ->  2212.95s] about that topic as well, if there's interest. So let me know if you'd like to see any of these ideas
+[ 2212.95s ->  2217.11s] in the future, in the near future. I have a long queue, but I'm always interested in adding more
+[ 2217.11s ->  2224.40s] based on what you guys want to see. So please let me know. Other than that, thank you guys so much for
+[ 2224.40s ->  2233.44s] watching, and I will see you in the next video.

@@ -1,0 +1,262 @@
+[    0.10s ->     5.68s] Hey team, welcome to masterclass number three, the final one we have and it's going over so much.
+[    5.74s ->    10.94s] It's going over pulling back the curtain on what I'm actually doing in my $200,000 account,
+[   11.08s ->    15.62s] how I'm allocating money, what I'm trading and how I'm doing it to be able to generate monthly
+[   15.62s ->    19.78s] income on a consistent basis. So I'm only going to show you the thought process I went through on
+[   19.78s ->    23.76s] how to put money into what strategies and what trades, et cetera, but I'm going to give it to
+[   23.76s ->    29.26s] you step-by-step exactly how I do it so that you can do it for yourself too, even if you have a
+[   29.26s ->    32.88s] smaller account. So let's dive right into the training because there's so much great stuff to
+[   32.88s ->    37.70s] cover here. Also, if you stay till the very end, I'll show you how to get access to the auto trader,
+[   37.78s ->    41.12s] which is something that so many people have been emailing me about like, awesome, when can we get
+[   41.12s ->    45.38s] access? I want access, whatever. And so guys, don't worry, calm down, take a deep breath. We're going
+[   45.38s ->    49.36s] to go over this together. You're going to, you're going to learn a lot. And again, the auto trader
+[   49.36s ->    53.78s] will be presented at the end. So here's, uh, in the first mat in the first match plus, I taught you
+[   53.78s ->    58.68s] about the strategy that 11 newbie traders used to make $12,000 in the first 30 days. Here's some proof
+[   58.68s ->    66.92s] Neil made $800 in his first 30 days. Ryan made $3,500 in his first 30 days. Keith has made over
+[   66.92s ->    71.80s] $200 since joining. David's made a little over a thousand dollars. And again, the strategy that
+[   71.80s ->    74.82s] they're all using is called the one, one, two strategy. If you want to learn more about it,
+[   74.84s ->    79.38s] make sure to go watch the in-depth video of masterclass number one. Now, again, this strategy
+[   79.38s ->    84.52s] makes money in virtually every market. Okay. And bullish market, it makes 700 to a thousand dollars in
+[   84.52s ->    88.50s] roughly two weeks because it's a bullish trade. So when the market goes in our favor, we make money
+[   88.50s ->    92.96s] faster and neutral markets. When it's doing nothing, we make 700 to a thousand dollars in
+[   92.96s ->    96.42s] roughly a month. When the market is going down, that's right. You heard me. When the market is
+[   96.42s ->   102.60s] going down, we make money. We make even more money. Actually, we make three to $4,000 when in about two
+[  102.60s ->   108.16s] months, when the market is trending down. Now during a market crash, I mean that we see a 10% drop or
+[  108.16s ->   113.28s] more in a matter of a day or two, we will lose three to $4,000. So again, not all trades are perfect.
+[  113.28s ->   118.74s] We will lose money here, but still in general, this is a great strategy. So how do we place the
+[  118.74s ->   124.08s] one, one, two trade? Well, again, this is just for summary. We place it on ES, MES, CLGC. Again,
+[  124.12s ->   128.44s] if you want to learn the specifics, go watch masterclass one, but it's a 90 day out trade.
+[  128.54s ->   132.46s] We have a put debit spread and naked puts. We put that trade together. It creates this amazing
+[  132.46s ->   137.08s] strategy. And the second masterclass, they taught you how to protect and scale your account.
+[  137.28s ->   141.78s] We talked about how a one, one, two is made up of one long put, one short put, and two short puts,
+[  141.78s ->   146.96s] and we can change those to create a put debit spread hedge, which will give us $2,000 of downside
+[  146.96s ->   151.16s] protection if a crash were to happen. And how we can take the one, one, two after we've already
+[  151.16s ->   157.30s] made profit and turn it into a ratio spread, which will give us $20,000 or more of crash protection.
+[  157.50s ->   162.36s] Who here would like to know that if the market crashes, my account will be protected up to $20,000.
+[  162.60s ->   166.16s] That's right. That's insurance saying that, Hey, if the market crashes and you lose money,
+[  166.20s ->   171.30s] I will write you a $20,000 check. That's what the ratio spread hedge does to our accounts. And so I
+[  171.30s ->   178.20s] taught all that in masterclass number two. And so again, you want to make sure that you have
+[  178.20s ->   181.92s] enough hedges to cover all your trades, hitting their stop losses. But again, I covered that in
+[  181.92s ->   186.24s] masterclass number two. So how do I use all this information that I gave you, masterclass number
+[  186.24s ->   191.98s] one and masterclass number two, to create a personal trading plan and blueprint? Well, I'm going to show
+[  191.98s ->   197.64s] you how I did it. Then you can use it. My thought process behind allocating these trades to do it for
+[  197.64s ->   204.06s] your own account. So let's start off by determining how much capital I have to allocate to trade. So
+[  204.06s ->   211.34s] using a $200,000 account, I should only allocate $100,000 to trades. As we discussed before,
+[  211.74s ->   216.64s] 50% of my account's buying power should be used and I should not exceed that. So again,
+[  216.68s ->   220.80s] we cover this in masterclass number one. When you're trading futures, you have span margin,
+[  220.80s ->   225.88s] which can increase. So in order to be safe, in order to stay in your trades, use no more than 50%
+[  225.88s ->   231.30s] of your account's buying power. You'll still be able to generate a reliable, large return off
+[  231.30s ->   236.74s] using only 50% of your money and you're being safe. So I want a majority of my trades to come
+[  236.74s ->   245.50s] from ES, the S and B 500 futures. Why? Because it's the most diversified. Um, and, um, and I would
+[  245.50s ->   252.82s] also like to diversify it. But again, the ES alone tracks 11 different sectors, five over 500 different
+[  252.82s ->   258.14s] companies. And so by default, it's diversified. So it's not going to be subject to any one piece
+[  258.14s ->   263.84s] of news, one piece of a company failed report, something like that. Um, again, this is a very
+[  263.84s ->   269.58s] consistent stock. So when trading a very consistent stock or futures with a very consistent strategy,
+[  269.58s ->   274.64s] that's how I win long-term. Now, again, because my account is larger over a hundred thousand,
+[  274.64s ->   280.28s] I can start to allocate some money to other trades. So putting 80% of my portfolio or the a hundred
+[  280.28s ->   285.84s] thousand dollars that I have to trade because of my buying power safety measures, I'm putting 80%
+[  285.84s ->   291.94s] or roughly 80,000 in ES one, one twos. And I'm putting the other 20% in CL, which is crude oil
+[  291.94s ->   298.70s] one, one twos or cash. So let's look into this. Now that I know how I'm splitting it up, I have 80%
+[  298.70s ->   304.64s] NES and 20% in CL. Um, how do I actually hedge my downside? Well, like we talked about in masterclass
+[  304.64s ->   309.64s] number two, I wouldn't have on at least one ratio spread per trade. So what do I mean by that?
+[  309.64s ->   315.56s] A ratio spread is the largest hedge that I can put on from my one, one, two converting my one,
+[  315.56s ->   321.40s] one, two into a hedge. And so again, a ratio hedge gives me roughly $20,000 of downside protection.
+[  321.64s ->   327.70s] So I will always have one ratio spread on. So again, with my current trades, I'll show you here
+[  327.70s ->   333.30s] in a second, when I, uh, reveal back, um, and show go behind the scenes of what I'm doing in my own
+[  333.30s ->   339.76s] account, you'll see this, but I have on one ratio spread for, uh, for ES. When that ratio spread
+[  339.76s ->   344.00s] expires, I'm going to put on a new one. And then from then on, I'm only going to put on put debit
+[  344.00s ->   348.06s] spread hedges. Why? Because put debit spread hedges are cheaper to have on. So I get to keep
+[  348.06s ->   353.84s] more money and it still allows me to put on an extra hedge. We covered all that on why
+[  353.84s ->   360.34s] a masterclass number two. So since CL is more volatile than ES, cause CL is crude oil. It's
+[  360.34s ->   366.08s] only one thing so that if oil inventories, a fight in Saudi Arabia, something like that happens,
+[  366.44s ->   371.82s] crude oil will react faster and more. So it's more volatile. It moves more. So since,
+[  371.82s ->   378.96s] since CL moves more than ES, my CLs have a larger stop loss compared to ES to allow the market to move
+[  378.96s ->   383.90s] more and the trade still to work out in my favor, right? Yes. As a slower moving asset. So I have a
+[  383.90s ->   390.48s] 200% stop loss on that. Now for CL, I'm going to make it larger than 200% so I can stay in the trade
+[  390.48s ->   395.78s] and still make money. So what is all this info? I just said, how does it translate into a game plan
+[  395.78s ->   400.60s] step-by-step? But let me show you, this is my 2024 trading blueprint subject to change,
+[  400.68s ->   405.96s] but probably won't be since I love these trades. All right. ES one, one, two. This is the trade
+[  405.96s ->   412.10s] structure. 90 DTE. So I go 90 days out in the future. I put on a put debit spread based on the
+[  412.10s ->   418.74s] 25 Delta and the 23 Delta. I do a seven Delta naked put. I have a take profit target of 75%
+[  418.74s ->   425.12s] and a stop loss of 200%. Because of my account size, I can enter in multiple times a week.
+[  425.16s ->   429.68s] If you're someone who has a smaller account size, only do it once a week. And if you have a smaller,
+[  429.84s ->   434.72s] smaller account size, then do this same thing on MES as we discussed in mask cost number one. But
+[  434.72s ->   440.04s] because of my account size and I want to get up to roughly $80,000 of buying power,
+[  440.28s ->   444.34s] I'm going to be putting on a trade every single Tuesday and Thursday. So my buying power uses
+[  444.34s ->   450.56s] roughly $80,000. Why? Well, like I said, I want to use 80% of my, of my money. Now again,
+[  450.56s ->   456.34s] the average one, one, two trade takes about a month to hit its profit target. When we're at around a 70
+[  456.34s ->   462.32s] to 80% profit target, it takes about a month. So if each trade takes about a month and each trade costs
+[  462.32s ->   467.58s] me about $10,000 to put on with buying power, that that's a bit exceeding what it is. It's typically
+[  467.58s ->   474.36s] around $67,000, but just to be safer, it takes about $10,000 to have that trade on. So four weeks
+[  474.36s ->   480.34s] and a month, two trades a week, that's about $80,000 of buying power that I'm using by putting
+[  480.34s ->   484.04s] on a trade every single Tuesday and Thursday on, uh, on ES the way that I traded here.
+[  484.04s ->   490.24s] So that's how I allocate 80% of my money. Most of my money is ES one, one, two structured,
+[  490.24s ->   496.22s] just like this. As you see here, the other 20% is put into CL crude oil, just to offer some
+[  496.22s ->   501.54s] diversification. Why? Cause as I'll show you in a second, um, there are times like this past week
+[  501.54s ->   507.62s] when ES will go down, but gold, I mean, a gold, uh, crude oils, CL will go up. And so therefore I can
+[  507.62s ->   513.20s] diversify my portfolio and offer some protection outside of just the amazing one, one, two and hedges,
+[  513.20s ->   518.30s] but also with different asset classes. So the CL one, one, two trade structure, almost the same
+[  518.30s ->   525.48s] thing. 90 DTE, a put debit spread at 25, 23. However, because the CL is my hedge, uh, my
+[  525.48s ->   530.68s] diversification hedge, it's not something that I want to make a lot of money on. It's something that
+[  530.68s ->   536.14s] I want to be there to give me extra protection and an asset class diversification. It'll still make me
+[  536.14s ->   541.64s] money, but it's not my main money maker. So I am going with a five Delta naked put. This means that
+[  541.64s ->   546.86s] I'm going to make less money, but my win rate is higher. So I'm okay. Going with a higher win
+[  546.86s ->   552.30s] rate and collecting less money because this is a diversification, not my main source of income.
+[  552.30s ->   557.20s] My main source of income is the ES. I'll still make income from CL, but I want it to be safer.
+[  557.34s ->   562.62s] And so that's why I'm going at five Delta naked puts have a 75% profit target and a 300% stop loss
+[  562.62s ->   567.04s] because it's more volatile. So I can stay in the trades longer. I'll enter this trade, uh, once a week,
+[  567.04s ->   571.22s] either doing a red day or on a Friday. So again, it gives me Monday, Tuesday, Wednesday, Thursday.
+[  571.56s ->   577.34s] If it was a red day in those days, I'll enter. If not, um, it will enter on Friday. Um, that's the
+[  577.34s ->   581.94s] game plan. Again, this is all structured and set up on the auto trader for me. Now, again, my buying
+[  581.94s ->   588.06s] power on being used is $20,000. So again, I'm, if I have one trade lasts about a month, it takes about
+[  588.06s ->   594.34s] $5,000 of collateral to put up for this trade. I'm in four weeks a month, one trade a week. It's about,
+[  594.34s ->   598.66s] uh, $20,000 of buying power. So that's how I allocate my different positions.
+[  599.58s ->   603.48s] So if you manage these trades yourself, you should follow these steps. Number one,
+[  604.28s ->   608.04s] monitor the market every day, see what it's doing and see how your trades are performing.
+[  608.92s ->   613.54s] Place a trade. If it meets your criteria, or if you have the buying power available,
+[  613.54s ->   618.16s] remember you want to be up to 50% of your buying power and do not exceed it. So if you have around
+[  618.16s ->   622.30s] 40% still there, because it just closed the trade, put on another one. Step number three,
+[  622.30s ->   627.62s] enter a trade by placing the one, one, two as two separate orders. Um, again, so you're going to put
+[  627.62s ->   631.24s] on the put debit spread and the naked puts, you have to do it as two separate orders because you
+[  631.24s ->   636.32s] can't submit it as one. Once you do the two set, the two separate orders, um, then you can group them
+[  636.32s ->   640.14s] together in the broker and then watch it from there. Now group the trade on the brokers. You can view
+[  640.14s ->   644.98s] performance as one trade instead of a separate monitor your positions for the take profit and stop
+[  644.98s ->   648.78s] loss. Turn the trades into hedges to help protect your account. Does this seem like a, like a lot of
+[  648.78s ->   653.58s] steps like Austin, I'm trying to trade. So I had more time for my family. Uh, I have less time in
+[  653.58s ->   656.70s] front of the screen when I come home from work, right? Like Austin, I'm trying to automate this.
+[  656.70s ->   662.38s] Help me out. Okay. So this is, uh, then use the options auto trader, uh, to have this all done for
+[  662.38s ->   666.70s] you. So what do I mean by this? Well, let me show you a quick demo of how this works and you'll
+[  666.70s ->   670.86s] understand because we'll also show you how my account is working. So let's dive into it right now.
+[  670.86s ->   676.14s] Let's just get a nice page refresh. This is the options auto trader. Very simple. Um, it shows me
+[  676.14s ->   681.58s] what's going on here are my two auto traders right now. I have the ES 90 DTE one, one, two structured
+[  681.58s ->   688.06s] exactly as I told you, um, in, uh, this little step-by-step guide here. So it's structured just
+[  688.06s ->   693.50s] like this. Um, if you want to copy it, you can literally just go into the auto trader. Once I show
+[  693.50s ->   700.30s] you how to get access, um, create an auto trader, click, um, on the strategy D on the strategy database.
+[  700.30s ->   705.18s] And then in one click, you can import the way that I trade this one exactly as I do. So, um, again,
+[  705.18s ->   709.82s] don't have to worry about memorizing what I do, uh, just one click and you can import the strategy
+[  709.82s ->   717.18s] into your own account. Um, so I have the ES 90 DTE trade and I have the CL 90 DTE trade. So you can
+[  717.18s ->   722.70s] see here, uh, my CL trade just got put on today. Um, again, I'm at break even cause again, the trade
+[  722.70s ->   726.54s] just got put on. Um, the reason why I don't have more trade structure here is because I've been working
+[  726.54s ->   730.46s] so much on the auto trader that I haven't had time. Uh, it's like fully set up and figure out how I want
+[  730.46s ->   734.54s] to allocate accounts. Um, but again, my ES has been running for a while. So you can see
+[  734.54s ->   739.26s] performance on that. Um, you can see how almost all my trades are a max profit, but again,
+[  739.26s ->   744.46s] this is the way that I'll be trading moving forward. My CL trade, my ES trade, diversified
+[  744.46s ->   750.54s] hedges and everything I need. For instance, here is an ES trade that hit at 75% profit target.
+[  751.18s ->   755.58s] Then it got turned into a hedge. This trade has become a hedge. It turned into a ratio hedge. Now I
+[  755.58s ->   760.22s] have $20,000 of downside protection. So now the auto traders are going to keep placing trades every
+[  760.22s ->   764.30s] single Tuesday and Thursday, because now my account is protected from those hedges. So again,
+[  764.86s ->   768.94s] this is the auto trader. Really? There's nothing much to it because it does it all for itself. You
+[  768.94s ->   773.90s] can see here, my auto traders, you can see here, 25, 23 put Delta seven put, uh, the CL is the five put
+[  773.90s ->   777.82s] you can see my 200 for the stop loss, 75% profit target. Again, all these are set when you're creating
+[  777.82s ->   783.90s] an auto trader and then you see all the data here. So again, account performance and individual
+[  783.90s ->   787.90s] auto trader performance. You can see how your account's doing over time. This was the recent
+[  787.90s ->   792.78s] dip, um, and whatnot's going on $10,000 of buying power being used and I'm making
+[  793.93s ->   801.61s] 2,500 off $10,000. So that's an amazing return. That's a 20% return on my money on this ES trade.
+[  801.61s ->   807.77s] Hence what the ES is my money maker. So guys, uh, this is what the auto trader is. It's very simple.
+[  807.77s ->   813.93s] Again, you'll just be able to log in, select create auto trader. Um, and then again, you'll be able to
+[  813.93s ->   818.81s] either import my own trade that I use or, or create it from scratch using the exact systems
+[  818.81s ->   821.93s] that I've given you throughout these master classes. And then it will automate everything
+[  821.93s ->   826.33s] for you. It'll do take profit. We'll do stop loss. It'll do early management. If you want to exit
+[  826.33s ->   832.01s] early, anything you want to do, it will basically do it for you. Um, again, you can manage all your
+[  832.01s ->   837.61s] performance from here in one place and even see how well your profit is doing. All right. So let's
+[  837.61s ->   841.37s] explain more about what you're going to get when you get access to the auto traders. So
+[  842.17s ->   845.93s] again, what we're doing here is we're going to allow you to finally automate your options,
+[  845.93s ->   850.25s] trading, generate monthly income and have peace of mind. Again, this is guaranteed or two times
+[  850.25s ->   854.09s] your money back. No questions asked. Yes. I put my money where my mouth is. Again,
+[  854.09s ->   859.13s] if you're not able to automate your options trading, you're not able to generate any income in the first
+[  859.13s ->   864.25s] 30 days, or you do not have peace of mind. I will give you two times your money back. So again,
+[  864.25s ->   869.69s] the options auto trader is for men or really any traders who want to provide for their family
+[  869.69s ->   874.17s] without having to be glued to the screen 24 seven or missing their baby. Say their first words,
+[  874.17s ->   880.01s] AKA guys, don't miss out on the precious time that you have. Time is something that we cannot get back.
+[  880.01s ->   883.93s] And so again, that's why we should be using an auto trader to save us time. And not even that,
+[  883.93s ->   889.53s] it does a better job than us, um, at making money. So it enables you to automate your options
+[  889.53s ->   895.37s] trading strategy, get out before mark, uh, get out before, uh, make crashes automatically and
+[  895.37s ->   899.29s] protects you from being screwed by market makers and brokers, right? How many times have you tried
+[  899.29s ->   903.53s] to automate an order on your broker, but then it got instantly executed and then you lost money,
+[  903.53s ->   907.45s] right? That's because the market makers and brokers are screwing with you. And now with this auto
+[  907.45s ->   912.17s] trader, it won't, it won't let that happen. So the options auto trader is more than just software.
+[  912.17s ->   918.09s] It's your go-to assistant that is helping ensure your trading success by improve, uh, by, by providing
+[  918.09s ->   923.37s] you with proven strategies, handling entries, exits, and so much more. In the last two months alone,
+[  923.37s ->   928.73s] my $200,000 account has consistently made a 3% return each month without me needing to monitor
+[  928.73s ->   934.09s] the markets at all. You heard, you heard me right. I spent no time placing trades and I've still been
+[  934.09s ->   938.17s] able to make over $10,000 so far. That's what I've been doing on my trading. Again,
+[  938.17s ->   942.17s] I really just got my account plugged in, so I'm not fully doing that all in the auto trader,
+[  942.17s ->   947.77s] but I am now. So don't just take my word for how amazing the auto trader is though. The auto,
+[  947.77s ->   953.13s] uh, the auto trader beta sellers have experienced a remarkable 83% win rate with profits ranging
+[  953.13s ->   958.73s] from a hundred to $1,200 per trade. The worst trade so far being $72 guys, how cure, how much
+[  958.73s ->   963.45s] would you like for your worst trade to only be $72 also of the beta testers. They're not all using
+[  963.45s ->   966.97s] a one, one, two strategy. Some are using credit spreads and that's what's dragging down the win
+[  966.97s ->   972.01s] rate of the entire group of everyone using one, one, uh, two trades. They're all at a hundred percent
+[  972.01s ->   977.29s] win rate. So again, stick with the one, one, twos. They work. That's why I taught that. Okay. But beyond the
+[  977.29s ->   981.45s] numbers, it's about the peace of mind. It brings. Imagine being able to enjoy life's precious moments,
+[  981.45s ->   986.49s] your child's soccer game, your baby's first words, those important times when your wife needs you
+[  986.49s ->   992.25s] without being scared of what is happening with your trades or the looming market crash. Beta
+[  992.25s ->   996.65s] testers have been able to share stories just like this of stress-free vacations, being able to trade
+[  996.65s ->  1002.33s] with a new sense of peace, which is a testament to the power of our auto trader. One beta tester even
+[ 1002.33s ->  1006.89s] shared his experience of finally, of finally being able to enjoy a stress-free vacation in Cabo without
+[ 1006.89s ->  1012.81s] checking the market and returning home to see a profit of $682 in his trading account because of
+[ 1012.81s ->  1017.77s] the options auto trader. Guys, who here would love to go on vacation and come back and realize
+[ 1017.77s ->  1022.25s] your account has not only been safe, but made money. That's the amazing part of the auto trader.
+[ 1023.61s ->  1027.85s] Again, today I'm going to extend a special invitation to you. If you're a busy professional
+[ 1027.85s ->  1032.89s] or a devoted family man who values both financial success and quality time with your loved ones,
+[ 1032.89s ->  1038.17s] this options auto trader is for you. It's not just about automating your trading strategy,
+[ 1038.17s ->  1043.21s] it's about giving you back your time, your life's most valuable asset. If you're ready to take control
+[ 1043.21s ->  1048.17s] of your financial future and automate your trading, then I'm going to give you three free gifts when you
+[ 1048.17s ->  1054.01s] start your subscription to the auto trader today. Gift number one is the options auto trader masterclass,
+[ 1054.01s ->  1059.61s] a $200 value. You're going to see me screen share just like this video where I walk you through
+[ 1059.61s ->  1064.49s] setting up an auto trader using everything inside the software that you know how to use it and fully
+[ 1064.49s ->  1068.41s] take advantage of it in less than 15 minutes. It's going to be the greatest masterclass ever
+[ 1068.41s ->  1074.09s] for someone who wants to go and go through even if you're not tech savvy on how to set up and use
+[ 1074.09s ->  1078.73s] this software. Free gift number two is the plug and play strategy database. I have gone through and
+[ 1078.73s ->  1084.09s] created strategies that I use myself. I've gone through and reached out to some of the biggest options
+[ 1084.09s ->  1089.37s] traders around like Joseph Bucket, like Tom Kings, like Trade Busters, things like those. And they've
+[ 1089.37s ->  1093.61s] given me all the requirements for their strategy. I even bought their courses for thousands of dollars
+[ 1093.61s ->  1098.41s] to plug in their strategies into here. So now with one click, you can import proven strategies
+[ 1098.41s ->  1101.53s] that work. So if you don't have a strategy, if you don't know what you're doing, or if you just want
+[ 1101.53s ->  1106.33s] to mimic someone like me or someone you know, you can just with one click, import their strategy and
+[ 1106.33s ->  1112.55s] into your account. Free gift number three is the options auto trader had a $19 value. Guys,
+[ 1112.55s ->  1117.91s] this is an amazing thing. Again, I'm going to ship you out personally the hat. So if you want access to that,
+[ 1117.91s ->  1122.79s] please do. Again, the only people who have access to this right now are the beta testers have this
+[ 1122.79s ->  1128.15s] hat and my brother and myself. So again, this is a very, a very limited hat. Now remember just the
+[ 1128.15s ->  1132.95s] free gift. Number one is the masterclass. You will see step-by-step how to set up the auto
+[ 1132.95s ->  1137.43s] trader to generate monthly income on autopilot, how to protect your account from crashes and everything
+[ 1137.43s ->  1141.27s] you need to know to make an effortless profit every month. You also get the number two, the strategy
+[ 1141.27s ->  1145.19s] database. So you plug and play tool with one click. You'll be able to replicate any strategy
+[ 1145.19s ->  1150.15s] from people like Tom King, Joseph Bucket, options genius, and so many others like myself.
+[ 1150.15s ->  1155.83s] And again, options number or the free gift number three is I'll ship you out the hat. I will cover
+[ 1155.83s ->  1162.07s] the cost of the hat and shipping and everything as long as you're in the US. Okay. If you'd like
+[ 1162.07s ->  1168.39s] to get access to the auto trader and these three free amazing bonus gifts, then click the button down
+[ 1168.39s ->  1173.35s] below. So again, the button down below this video should be there. Again, if you refresh the page,
+[ 1173.35s ->  1178.07s] you'll have to wait again, but remember I'm only allowing a hundred people to get access during
+[ 1178.07s ->  1182.31s] this early access launch. So make sure you sign up before it's too late. Now guys, here's something
+[ 1182.31s ->  1186.55s] warning. This is early access mean that all the major bugs and issues have been fixed and worked
+[ 1186.55s ->  1192.15s] through with the auto traders. It will successfully place your trades, monitor your trades, do everything
+[ 1192.15s ->  1197.11s] it needs to do. I, it will work as advertised, right? It will do what I said it will do. It'll
+[ 1197.11s ->  1201.67s] import trade, show performance, all that. However, if you're looking for an auto trader that has a
+[ 1201.67s ->  1206.79s] massive team behind it, has software that has all the bells and whistles that can do every precise
+[ 1206.79s ->  1211.27s] thing you want. This is not that. Okay. I just want to be honest. This is not that. However,
+[ 1211.27s ->  1216.15s] if you are someone who wants your trades to be automated, who wants everything managed automatically,
+[ 1216.15s ->  1221.19s] and you want me, the founder and developer to actually listen to your recommendations on what
+[ 1221.19s ->  1225.59s] should be built and added and added to the software next, then this is the perfect opportunity for you,
+[ 1225.59s ->  1229.75s] for people who want to automate their trades. This will do that. Who want to manage their trades.
+[ 1229.75s ->  1232.55s] This will do that. Who want to see the performance. This will do that. Import current trades,
+[ 1232.55s ->  1236.31s] whatever you want to do, it will do that. It won't have all the bells and whistles though. That's what
+[ 1236.31s ->  1241.19s] I'm currently still building. And I will actually listen to you. I will hear from you. I will want to hear
+[ 1241.19s ->  1245.83s] from you. You will get emails from me personally about how I can improve the software and I will listen and I
+[ 1245.83s ->  1250.31s] will build what you want. So this is your chance to not only have all your trades are automated,
+[ 1250.31s ->  1254.31s] but have a software built as you would want it built. And to sweeten the deal even more,
+[ 1254.31s ->  1258.15s] not only do you get access to the auto trader and only do you get these three gifts, but I will give
+[ 1258.15s ->  1262.71s] you a hundred dollars off your purchase. And so again, uh, this isn't actually right. You will get
+[ 1262.71s ->  1267.27s] a hundred dollars off your purchase for the first six months. That's right. For the first six months,
+[ 1267.27s ->  1271.51s] while I'm building in all the bells and whistles, I'm building the team behind this program to come
+[ 1271.51s ->  1275.51s] behind you and support you and help you. Like I want you to be, I want you to be successful.
+[ 1275.51s ->  1280.63s] I'm literally so concerned with cut with, with customer success. It's like my biggest concern,
+[ 1280.63s ->  1284.23s] like my beta sellers, I will email every single week. I'll reach out to them. Like they know
+[ 1284.23s ->  1288.55s] that I care about people having success with this product and I care about you too. But so,
+[ 1288.55s ->  1292.79s] and in addition to all that, um, while I'm building in all the bells and whistles for the first six
+[ 1292.79s ->  1296.39s] months, you will get a hundred dollars off a month. So every single month you will have a hundred
+[ 1296.39s ->  1300.39s] dollars off your subscription at the end of these six months. It will go back to the normal price.
+[ 1300.39s ->  1305.27s] Um, but again, all that you could find out linked in the button below. So if you are
+[ 1305.27s ->  1309.27s] ready to start using the auto trader, want to claim your three free gifts and want a hundred dollars
+[ 1309.27s ->  1313.99s] off your purchase for the next six months, then use the coupon code early access. All right,
+[ 1313.99s ->  1318.95s] guys, click the button down below, fill out your details, put in the coupon code early access,
+[ 1318.95s ->  1329.83s] and I will see you on the inside.

@@ -1,0 +1,391 @@
+[    0.46s ->     8.10s] When it comes to researching equity alpha, there's generally an inverse relationship between data
+[    8.10s ->    14.98s] accessibility and opportunity in these subsequent alphas. And what I mean by this is if a data set
+[   14.98s ->    22.96s] is easily accessed and a signal is easily extracted, then anybody can trade it. Relative
+[   22.96s ->    29.84s] to a data set that's very difficult to acquire and a signal that's difficult to extract,
+[   29.84s ->    36.66s] there is going to be far more opportunity in the latter. This is exactly why we explore alternative
+[   36.66s ->    42.86s] data to produce trading signals. And in this video, we're going to explore one type of this data,
+[   42.94s ->    48.76s] that is this text data. I'll provide a survey of natural language processing. We'll cover some
+[   48.76s ->    53.60s] different techniques in the field to turn qualitative data into quantitative data that
+[   53.60s ->    59.06s] we can then analyze for a signal. And we'll wrap up with a discussion of how we can put all of these
+[   59.06s ->    65.96s] pieces together to produce a trading strategy. It can be very difficult to acquire this alternative
+[   65.96s ->    73.16s] data. In fact, firms that I've worked at have bought and sold entire companies based solely on
+[   73.16s ->    80.64s] their proprietary data. Now, even though alternative data is difficult to access, there is something that
+[   80.64s ->    86.22s] is very easy to access. And that's going to be my Jupyter notebooks. This Jupyter notebook will be
+[   86.22s ->    90.36s] linked in the description below. I will also post it to the Quant Guild library on GitHub,
+[   90.62s ->    95.50s] where you can find all of my Jupyter notebooks and associated YouTube videos, along with the source
+[   95.50s ->    99.78s] code for my quant builds. At the top of this Jupyter notebook, you'll notice some related Quant Guild
+[   99.78s ->   105.78s] videos applying probability and statistics to finance and trading. This is a necessary skill set
+[  105.78s ->   111.08s] if you're looking to approach alternative data sources. You'll find videos discussing time series
+[  111.08s ->   117.52s] analysis, retail versus institutional trading, trading versus investing, this idea of accumulating an edge
+[  117.52s ->   123.98s] over a series of trades, quant versus discretionary trading, and of course, busting three trading myths
+[  123.98s ->   129.50s] that these trading gurus love to propagate. Moreover, these videos certainly take a lot of effort
+[  129.50s ->   133.36s] to create. So if you'd like to help support the channel so I can continue to create videos just like
+[  133.36s ->   137.78s] this one, please like, comment, subscribe, share. It helps me out tremendously. It is always greatly
+[  137.78s ->   142.96s] appreciated. And if you'd like to master your quantitative skills, check out quantguild.com.
+[  143.34s ->   147.78s] Maybe you come from a background in business, economics, computer science, and aren't too sure
+[  147.78s ->   153.12s] where to get started on your quant journey. Maybe you're an aspiring quant or a working professional
+[  153.12s ->   158.98s] looking to sharpen those technical skills. In any case, Quant Guild is for you. We have over 90 quant
+[  158.98s ->   165.04s] lessons in math, probability, finance, an adaptive practice engine that scales with your skill level
+[  165.04s ->   170.90s] so you can progress to more and more difficult topics with gamified rank-based progress, interview
+[  170.90s ->   179.90s] questions with fully worked solutions, trading games, courses from A to Z in coding, math, probability
+[  179.90s ->   186.58s] statistics, and more on the way. And you can get started right now for free. So if you'd like to help
+[  186.58s ->   192.82s] support the channel and master your quantitative skills, check out quantguild.com. Without further
+[  192.82s ->   199.32s] ado, let's get started by discussing this idea of natural language processing with a very simple
+[  199.32s ->   209.16s] question. In general, does text data impact stock prices? Now, I can give you a long academic
+[  209.16s ->   215.62s] answer that causality in finance is difficult to discern. Correlation doesn't imply causation with
+[  215.62s ->   222.26s] respect to future returns. Causality tests are weak at best. Due to the nature of the space,
+[  222.26s ->   228.96s] it's very endogenous. We can't isolate experiments to a controlling treatment group, so on and so forth.
+[  229.70s ->   236.24s] That's the long answer. The short answer is here's a tweet from Elon Musk about Dogecoin and the
+[  236.24s ->   244.04s] subsequent price response in Dogecoin. Leaving the academic proof for causality aside, clearly text has
+[  244.04s ->   250.92s] some impact on the prices we observe in the market. And surely not all documents are going to be weighted
+[  250.92s ->   257.86s] the same, right? This tweet by Elon Musk is going to carry far more weight than if I tweeted Dogecoin
+[  257.86s ->   264.30s] is the people's crypto. So these are all things to keep in mind as we continue to construct models
+[  264.30s ->   270.52s] around alternative data sources. Now, it is also worth noting, just because alternative data sources
+[  270.52s ->   278.12s] provide a unique source of signal, it does not mean that it is without noise. And I think a fun example
+[  278.12s ->   285.86s] and a very popular example of this is the idea of a named entity recognition problem becoming confused.
+[  285.86s ->   293.68s] So for example, here's another tweet by Elon Musk that is referring not to Dogecoin, but the organization
+[  293.68s ->   301.84s] Doge. And if we had some sort of model that was using Doge here to refer to in both of these tweets,
+[  301.84s ->   309.60s] the coin, then we would end up generating a trading decision here that was actually misinformed. It's
+[  309.60s ->   316.46s] noise in our data series. And there's a very well known example of this. There's an article
+[  316.46s ->   323.42s] out there that discusses how trading algorithms would buy up Berkshire Hathaway anytime Anne Hathaway
+[  323.42s ->   329.84s] was in the news. That's a classic example of this confusion. But we'll talk about these problems later on,
+[  329.84s ->   335.28s] of course, in the context of trading. But it is worth noting early on, just because we have a
+[  335.28s ->   341.64s] unique source of signal, it does not mean that it is without noise. Of course, our objective is to find
+[  341.64s ->   347.90s] the signal within the noise. Fortunately for us, there's an entire field of study concerned with
+[  347.90s ->   355.04s] this, and that is natural language processing, or NLP. And we're going to cover a little overview of
+[  355.04s ->   359.78s] this field so we can better understand the techniques available to us to go about solving
+[  359.78s ->   364.44s] different problems in the space, especially in the context of constructing some sort of trading
+[  364.44s ->   371.44s] strategy. So first off, how should we refer to these bodies of text? Well, we have this idea of a
+[  371.44s ->   379.50s] corpora, documents, and tokens. A corpus, or plural corpora, is just a large structured collection
+[  379.50s ->   388.18s] of natural language texts. This could be all articles on a news website. This could be all tweets in some
+[  388.18s ->   395.84s] sort of tweet set. It could be a decade of SEC filings, so on and so forth. The corpus is just a
+[  395.84s ->   402.66s] collection of documents. So what is a document? Well, a document is an individual piece of text
+[  402.66s ->   409.86s] within a corpus. So if I have a corpus of tweets, then each document is a tweet. Okay, then what is
+[  409.86s ->   416.94s] a token? Well, a token is the smallest unit of text with meaning. This can be a word, a symbol,
+[  417.12s ->   424.76s] a punctuation mark, even an emoji. And typically what we do is we go through a process known as
+[  424.76s ->   431.58s] tokenization, where we take a document and split it up into its tokens. And then we get a list,
+[  431.58s ->   437.82s] effectively, of all of the words or symbols within a particular document. So for example,
+[  437.96s ->   444.52s] right, this tweet by Elon Musk is going to be a document. This is likely a part of a larger corpus,
+[  444.52s ->   450.58s] which is just going to be a giant set of tweets. So here I have an example of what this might look
+[  450.58s ->   457.16s] like in Python. This is our corpus. And as you can see here, we just have a series of different tweets.
+[  457.16s ->   465.58s] This tweet is referring to Bitcoin, this one, Amazon, NVIDIA, so on and so forth. Now a token is
+[  465.58s ->   472.46s] going to refer to each word or symbol, depending on how granular we want to get in the tokenization
+[  472.46s ->   480.04s] process of each of these documents. Now, clearly, right, there's a problem here, right? This text
+[  480.04s ->   488.64s] data isn't anything that we can perform analysis on in a quantitative way. In other words, we can go
+[  488.64s ->   494.08s] through this process of, you know, developing a corpus, getting all of these documents, finding
+[  494.08s ->   502.48s] tokens, sure, but we need some quantitative framework for analyzing this data and extracting
+[  502.48s ->   510.40s] a signal. This gets into the idea of tokenization and a vector representation of our documents.
+[  510.40s ->   517.34s] What I have here is Elon Musk's tweet, I'm going to tokenize it, I then get a list of words or tokens,
+[  517.86s ->   525.56s] Dogecoin is the people's crypto. But this is still a qualitative representation. If I want to perform
+[  525.56s ->   534.72s] quantitative analysis, I need some mathematical way to express this information. So what I'm going to do
+[  534.72s ->   543.74s] is I'm going to construct a table. And this table is going to have words as the columns. And each row
+[  543.74s ->   551.18s] is going to be a document. I have some example documents here. So I have Elon Musk's tweet as Doc1,
+[  551.18s ->   561.60s] Doc2 is NVIDIA stock and Doge crypto are good by Doc3 is Apple stock is good. And what I'll do is in
+[  561.60s ->   568.86s] this table for each entry, I'll just record the number of times that I observe a particular word
+[  568.86s ->   577.26s] in a document. So do I see the word by in Elon Musk's tweet? Well, no. So I'll put a zero. Do I see the
+[  577.26s ->   587.04s] word stock? No, I'll put a zero. So on and so forth. This here is a table, but it's actually a mathematical
+[  587.04s ->   596.38s] object. This is a matrix. This is what we call the document term matrix. And this is a quantitative
+[  596.38s ->   605.36s] representation of our qualitative information. And we can now perform quantitative analysis with this
+[  605.36s ->   614.00s] mathematical object. Doctor matrices are typically very large and very sparse. Corpora can have
+[  614.00s ->   621.64s] millions or even hundreds of millions of documents in them. And each column is effectively a word that's
+[  621.64s ->   629.92s] been seen in at least one document. It's essentially a word bank for our corpus. So we're going to have a
+[  629.92s ->   637.72s] very large matrix, but that matrix isn't going to be entirely filled out. Each document is going to
+[  637.72s ->   644.48s] have a different set of words. And sure, some may be common. But as you can see in this very small
+[  644.48s ->   651.62s] example, we're already observing a lot of zeros. And as the number of words in our word bank increases,
+[  651.62s ->   659.36s] we're just going to observe more and more zeros. There's a lot we can do to enhance this doc term
+[  659.36s ->   665.68s] matrix. We can reduce the dimensionality by cutting off words that don't appear frequently enough.
+[  665.68s ->   671.94s] We can, instead of using raw counts, use something known as the term frequency inverse document
+[  671.94s ->   680.34s] frequency to enhance the information quality of each of these documents. And we can even store it as a
+[  680.34s ->   686.00s] sparse matrix to be more efficient. But all of these topics are beyond the scope of this video.
+[  686.00s ->   691.82s] Instead, what I want to do is focus on this particular doc term matrix that we've constructed
+[  691.82s ->   699.48s] here. We're considering only the words buy stock and crypto in each of these three documents. But
+[  699.48s ->   705.52s] because we're operating in three dimensions, we can actually visualize mathematically what each of these
+[  705.52s ->   712.14s] documents look like. And that is what I've done here. In this three dimensional plot, I have
+[  712.14s ->   721.26s] buy crypto and stock as our three dimensions. And we can see where each document now lives with respect to
+[  721.26s ->   731.24s] these three dimensions, they are effectively vectors in this space, we can now ask interesting questions about
+[  731.24s ->   738.90s] these documents, and answer them in a quantitative way. The first question that I'm going to ask is how can we
+[  738.90s ->   747.30s] measure document similarity? Can we just maybe measure the distance between points now in space, and
+[  747.30s ->   753.50s] points that are then closer together are going to be more similar? Well, let's give it a shot. I'll apply
+[  753.50s ->   761.44s] Euclidean distance here to each of the points. And what do we notice? Well, each of the points have the same
+[  761.44s ->   770.64s] Euclidean distance to each other. But does the information quality of each of those documents reflect
+[  770.64s ->   779.74s] this? Well, no, if we go back up and take a look at the tweets or documents, what do we note? Well, the
+[  779.74s ->   787.18s] first document is about crypto. The second document is about stock and crypto. And the third document is just
+[  787.18s ->   794.92s] about stock. So one and three are similar to two, because two mentions both stock and crypto. But one and three
+[  794.92s ->   801.48s] have nothing to do with each other, right? One is about crypto, and three is about stock. So if we use Euclidean
+[  801.48s ->   811.80s] distance to try to measure similarity, we're not getting the desired output. We're not measuring similarity. Here, we're
+[  811.80s ->   818.22s] just saying what based on Euclidean distance, they're all equally similar to each other. But this is not
+[  818.22s ->   826.08s] the case. So we need a different way to measure the similarity between these vectors. This gets into the
+[  826.08s ->   834.06s] idea of cosine or document similarity. And if we're going to talk about cosine, we need to do a quick review
+[  834.06s ->   841.66s] of pre calc. Shout out to my pre calculus teacher, if you saw my video, my life as a quant. Here, we'll note
+[  841.66s ->   849.70s] that the cosine of 90 degrees is zero, the cosine of zero is going to be one. And because cosine is a
+[  849.70s ->   855.68s] cyclical function, any multiple that brings us back to either this standard position here or 90 degrees
+[  855.68s ->   863.90s] will also yield zero or one. And I have visually what that looks like here in this chart. Now, what I'm
+[  863.90s ->   870.80s] showing you here is effectively, two documents instead of in three dimensions, I have two dimensions here.
+[  870.80s ->   877.30s] And what I want you to notice is the angle now between the two documents, we're not considering
+[  877.30s ->   884.64s] just the distance between the points, right? We're not looking at that we're looking at angle. So here,
+[  884.82s ->   892.70s] what I want you to notice is, as the angle between these two documents becomes smaller, what happens to
+[  892.70s ->   902.18s] the cosine of that angle? Well, it becomes larger, right? And as the angle becomes arbitrarily small
+[  902.18s ->   908.38s] and then zero between the documents, what happens? Well, we're dealing then with the same documents
+[  908.38s ->   917.76s] with respect to these dimensions of interest. So we get a cosine of one. And if the angle between them
+[  917.76s ->   925.94s] is 90 degrees, we get a cosine of zero. What is this telling us here? Well, what it's telling us
+[  925.94s ->   934.62s] is how similar these documents are to each other, these vectors, but relative to the dimensions that
+[  934.62s ->   942.96s] we're working with. In other words, if I now take a look at the angles between our documents in this
+[  942.96s ->   950.14s] three-dimensional space, what do you notice? Well, the angle between document one and document three
+[  950.14s ->   961.40s] is 54.7 degrees. And the angle between documents one and three is going to be 90 degrees. What is this
+[  961.40s ->   971.62s] telling us? Well, if we go back up to this unit circle here, a 90 degree angle implies a cosine of zero.
+[  971.62s ->   978.84s] So those documents, if we're using cosine as a measure now of similarity, cosine is saying,
+[  978.96s ->   984.86s] hey, the score is zero. They're not similar to one another. But what if the angle was closer to
+[  984.86s ->   993.74s] 54 degrees? We now get a score of 0.588. It's saying, hey, there is some similarity between
+[  993.74s ->  1001.32s] these documents now. So if I scroll on down here and I take the cosine now of the
+[ 1001.32s ->  1007.72s] angles between each of these documents in this three-dimensional space of buy stock and crypto,
+[ 1008.30s ->  1015.66s] what you'll notice is I get 0.577 for the cosine of the angle between doc one and two.
+[ 1016.04s ->  1025.76s] I get zero for the cosine of the angle between doc one and three. And I get 0.577 for the cosine of
+[ 1025.76s ->  1031.42s] the angle between doc two and three. This captures the relationship that I discussed earlier when we
+[ 1031.42s ->  1037.72s] were just reading the tweets, right? Document one here is about crypto. Document three isn't about
+[ 1037.72s ->  1044.40s] crypto, but document two is. So if we were to compute a similarity score between one and three, we should
+[ 1044.40s ->  1050.40s] probably get zero. Three is about stock and one is about crypto. That's exactly what we have here.
+[ 1050.40s ->  1058.53s] The cosine of that angle is zero. And if we look back at our chart, we can see visually that the
+[ 1058.53s ->  1066.51s] angle between those two vectors is 90 degrees. In this space, they aren't similar to each other
+[ 1066.51s ->  1073.31s] at all. But what about relative to document two? Document two mentions both stock and crypto. So
+[ 1073.31s ->  1079.13s] we would like to see a similar score, right? Between documents one and two and three and two.
+[ 1079.13s ->  1086.69s] And that's exactly what we see here. The cosine between both of those angles for documents one
+[ 1086.69s ->  1094.93s] and two and two and three are the same. We get 0.577. And that's exactly what we see visually
+[ 1094.93s ->  1101.75s] in this three-dimensional space. We can see that, hey, document three is mentioning what? Stock.
+[ 1102.21s ->  1108.97s] Document one is mentioning crypto. And these vectors are similar then to document two.
+[ 1108.97s ->  1116.45s] So not in the Euclidean distance sense, but with respect to the angles between the vector. If we take
+[ 1116.45s ->  1125.93s] the cosine of that angle, we then get a similarity score. So we now have a quantitative way to measure
+[ 1125.93s ->  1133.47s] the similarity between documents. But this doesn't just hold for a three-dimensional space
+[ 1133.47s ->  1140.23s] as we've been looking at here. This holds for an arbitrary number of dimensions, which is very useful
+[ 1140.23s ->  1148.23s] because if I want to consider more intricate relationships, then I'm going to need more words
+[ 1148.23s ->  1155.35s] in my doctor matrix. But I can't visualize that then. Instead, I have to understand that even though
+[ 1155.35s ->  1162.63s] geometrically I can't visualize this relationship, algebraically I can still make the same extension.
+[ 1162.63s ->  1168.93s] So in other words, I can apply this idea of cosine similarity, not just to a three-dimensional
+[ 1168.93s ->  1175.93s] space, but to any number of dimensions, which is very useful as the size of my doctor matrix
+[ 1175.93s ->  1184.65s] continues to increase. So how does this help us extract some sort of signal? Well, given I now have
+[ 1184.65s ->  1191.77s] the ability to compute similarity, I can construct a signal vector. So that vector can contain words like
+[ 1191.77s ->  1200.55s] maybe buy, long, anything else that might indicate a buying action. And I can compute the similarity now
+[ 1200.55s ->  1207.33s] of each document relative to that signal vector. And that's exactly what I'm doing here. So I still have
+[ 1207.33s ->  1213.77s] my three original documents, stock one, two, and three. And what I've done now is I've added this signal
+[ 1213.77s ->  1220.83s] vector. So I'm just saying that this vector lives only on the buy dimension. And what I want to do is I want
+[ 1220.83s ->  1227.17s] to compute the similarity of all of my documents relative to this signal vector. And what do you
+[ 1227.17s ->  1235.39s] notice? Well, documents one and three have a 90 degree angle between them and the signal vector.
+[ 1235.53s ->  1241.61s] So what's the score going to be? Well, certainly that's going to be zero if I take that the cosine
+[ 1241.61s ->  1247.79s] of those angles. And that's exactly what I get here. So for documents one and three relative to my signal
+[ 1247.79s ->  1259.16s] vector, I get a similarity score of zero. But what about document two? Well, document two has a 54.7
+[ 1259.16s ->  1264.82s] degree angle between it and the signal vector. And if I take the cosine of that angle, I actually get
+[ 1264.82s ->  1274.40s] 0.577. And that is non-zero. That implies some similarity between that document and the signal
+[ 1274.40s ->  1280.92s] vector. Effectively, I've extracted a quantitative way to map that qualitative document, the original
+[ 1280.92s ->  1287.58s] tweet, to some sort of measure of signal strength. Now, there's a catch here. In this particular
+[ 1287.58s ->  1293.86s] framework, we're not going to be able to observe the intricate dependencies that we see in actual
+[ 1293.86s ->  1303.06s] language. And a very simple example of this is instead of buy, what if we see don't buy? That's
+[ 1303.06s ->  1309.48s] going to change the entire dynamic of the signal that we get. We compute this positive similarity
+[ 1309.48s ->  1318.30s] score here. But in reality, if this document here said don't buy, it wouldn't change the similarity
+[ 1318.30s ->  1325.80s] score that we just computed. So this gets into the broader idea of natural language processing. It's a
+[ 1325.80s ->  1333.04s] very deep sea. We've just scratched the surface of necessary topics to discuss its place in quant trading,
+[ 1333.04s ->  1337.80s] and how to go about extracting signal, which is what we're going to discuss further in a moment.
+[ 1338.00s ->  1343.92s] But there are a lot of tasks in this space. Language modeling, that is predicting word sequences,
+[ 1344.56s ->  1350.18s] large language models like CheckGBT Gemini, sentiment analysis, producing whether or not some document
+[ 1350.18s ->  1356.56s] is positive, negative, or neutral, topic modeling, uncovering main topics in some sort of set of
+[ 1356.56s ->  1362.60s] documents in a corpus, even named entity recognition, which is extremely important if you are
+[ 1362.60s ->  1371.36s] trying to build an actionable trading strategy. You need to know not just a score or a signal for your
+[ 1371.36s ->  1377.88s] document, but what instrument should you trade based on that signal? If I can tell you what,
+[ 1378.40s ->  1388.16s] that the signal for this particular document is going to be 0.577, that's great. But now what instrument
+[ 1388.16s ->  1394.38s] do I buy or sell? And that's what we're going to get into now, pivoting from this space of natural
+[ 1394.38s ->  1400.92s] language processing, talking instead about extracting signal from text, focusing on this idea of building an
+[ 1400.92s ->  1406.98s] actionable trading strategy. Up to this point, we've focused on this idea of a doc term matrix,
+[ 1406.98s ->  1415.50s] then producing some sort of similarity score to derive a signal value. But we don't necessarily need to
+[ 1415.50s ->  1420.80s] create a document term matrix to produce a signal. There are a lot of different ways that we can do
+[ 1420.80s ->  1428.50s] this. And classically, the finance literature has deployed dictionary based methods, where you have
+[ 1428.50s ->  1435.34s] effectively a word bank, and each word has some sort of score associated with it. Then what you do is you
+[ 1435.34s ->  1441.50s] take your document and you iterate through your dictionary and you score everything in that document.
+[ 1441.50s ->  1448.46s] Then you'll produce whether or not that document is overall positive or overall negative, and then use
+[ 1448.46s ->  1455.30s] it for your downstream analysis or trading strategy. So what does this actually look like? Well, I have
+[ 1455.30s ->  1461.18s] this function here that might represent the score that we would give a particular word. So excellent,
+[ 1461.40s ->  1469.00s] fantastic, amazing gets two, good, nice, pleasant, positive gets one, so on and so forth. And what I'm going to
+[ 1469.00s ->  1476.26s] do is I'm going to apply this now to all of these documents, I have example tweets, and I'll apply
+[ 1476.26s ->  1483.60s] this dictionary based method to these documents, and I'll observe then the overall score, which I can
+[ 1483.60s ->  1493.18s] interpret to be my signal value. And when I plot then the score of all of these words, and I have two
+[ 1493.18s ->  1501.02s] example documents here, what do you notice? Well, I don't see any bars, I'm not recording any positive,
+[ 1501.02s ->  1508.56s] negative, or even a composite score for these documents. And the reason why I'm doing this here
+[ 1508.56s ->  1517.84s] is because this dictionary is too generic. It doesn't have any financial lexicon or jargon for the finance
+[ 1517.84s ->  1527.36s] industry. Buy, long, things like that are actions that we may consider good or positive. We need to score
+[ 1527.36s ->  1535.42s] those words. Same thing with short or sell, we need to score those as well. So effectively, in this example, we
+[ 1535.42s ->  1543.14s] didn't capture the financial lexicon. And what I've done here is I've built out a dictionary now of words that
+[ 1543.14s ->  1552.20s] include financial lexicon. So I have amazing, improved, beat, raised, I also have downgraded, weak,
+[ 1552.84s ->  1558.34s] words like that. And if I analyze now these two example documents, what do you notice, I actually
+[ 1558.34s ->  1566.36s] get scores associated with them. So each of these documents now that contain text pertaining to
+[ 1566.36s ->  1572.66s] specifically finance, I'm able to score appropriately. This is just another way to
+[ 1572.66s ->  1579.68s] extract signal from alternative data using this dictionary-based methodology. You can see here,
+[ 1579.78s ->  1585.24s] I have words receiving positive scores, then some that receive negative scores in this document and
+[ 1585.24s ->  1592.86s] this one as well. And the efficacy of your dictionary is going to be based on how you construct it and the
+[ 1592.86s ->  1599.62s] rules that it follows. In other words, right, I haven't mitigated the issue that I discussed earlier,
+[ 1599.62s ->  1607.42s] even in the context of cosine similarity. The document good is certainly positive. And the document not
+[ 1607.42s ->  1615.36s] good is certainly negative. If I just deploy a dictionary-based method naively, what do you notice
+[ 1615.36s ->  1623.26s] here? Well, both of these documents, right? I see not a good buy and is a good buy. They get the same
+[ 1623.26s ->  1631.24s] score. Both are positive, but clearly this is not the case. We need some way to capture these dependencies
+[ 1631.24s ->  1640.32s] in our tokens. And this gets into the idea of what's known as an n-gram. An n-gram is a contiguous
+[ 1640.32s ->  1650.14s] sequence of n items, typically words or tokens, from a given text or speech sample. When n is one, we have a
+[ 1650.14s ->  1657.78s] unigram, n is two, we have a bigram, three is a trigram, so on and so forth. Effectively, what
+[ 1657.78s ->  1664.62s] we're doing is we're going to look at not just one word, but then a sequence of words. So if I consider
+[ 1664.62s ->  1671.14s] now, I go back to this example here, not just unigrams in my dictionary-based model, where I'm
+[ 1671.14s ->  1676.86s] just looking at a word individually, right, and providing a score, I'm instead going to consider
+[ 1676.86s ->  1684.12s] not just bigrams, but also trigrams, right? Let's take a look at the trigrams in apple is not a good
+[ 1684.12s ->  1695.50s] buy, right? The first trigram is apple is not. Then I get is not a, then not a good. So if I consider
+[ 1695.50s ->  1704.26s] the trigram, I'll capture then the word not relative to good. And I can actually negate the value
+[ 1704.26s ->  1710.44s] of that dictionary score. And that's exactly what I do here. What I've done is I've enhanced
+[ 1710.44s ->  1718.22s] the naive dictionary model, and I've considered bigrams and trigrams. What I'll do here is now
+[ 1718.22s ->  1724.88s] I'll consider each word individually, but I'll also consider bigrams and trigrams. And what you can
+[ 1724.88s ->  1734.08s] notice here is apple is a good buy is still positive, but apple is not a good buy flips to
+[ 1734.08s ->  1741.46s] negative. And this is now better capturing that negation dependency. There are a lot of models
+[ 1741.46s ->  1748.34s] that will outperform this very basic dictionary-based model that I have produced for you here. One such
+[ 1748.34s ->  1755.26s] example is the Vader model. It's a prepackaged sentiment model in the natural language toolkit,
+[ 1755.70s ->  1763.52s] Python package, specifically designed for social text. The model out of the box does not have financial
+[ 1763.52s ->  1770.64s] lexicon in its dictionary, but you can very easily add it and then take advantage of all of the rules
+[ 1770.64s ->  1777.66s] that are baked into the model, including this idea of negation. So what I've done here is I've added
+[ 1777.66s ->  1785.44s] two different documents, and I've applied now the Vader model right out of the box in the natural
+[ 1785.44s ->  1792.60s] language toolkit package to both of those documents, and it will give you a score. It'll give you a
+[ 1792.60s ->  1800.28s] negative score, a neutral score, a positive score, and then an aggregate compound score of the text
+[ 1800.28s ->  1807.22s] document that you are looking at. And all you have to do is give the model your string. You don't have to
+[ 1807.22s ->  1814.16s] do any form of tokenization. You don't have to do any vectorization into a doctrine matrix. You're
+[ 1814.16s ->  1820.24s] simply just applying the dictionary-based model outright. At this point, we've discussed a few
+[ 1820.24s ->  1827.60s] different ways to extract signal from text. We looked at cosine similarity. We have this vectorized
+[ 1827.60s ->  1833.36s] representation of our documents. We have some sort of target signal vector, and that cosine similarity
+[ 1833.36s ->  1840.22s] produces a score. We looked at sentiment-based methods where we have a dictionary and we produce some
+[ 1840.22s ->  1847.90s] sort of score. But in reality, this sentiment analysis or signal extraction process from text
+[ 1847.90s ->  1856.00s] is a data science problem. And we're going to benefit from machine learning approaches, especially
+[ 1856.00s ->  1865.08s] as the size of our data set becomes arbitrarily large. And it's definitely beyond the scope of this video, but I
+[ 1865.08s ->  1873.72s] actually have an article on this topic written on Medium. There, I deploy neural networks specifically for a
+[ 1873.72s ->  1882.00s] classification problem. That is this sentiment analysis problem. And it will outperform the basic dictionary-based
+[ 1882.00s ->  1890.92s] methods and the cosine similarity method that we had discussed earlier. So if you're interested in more intricate
+[ 1890.92s ->  1898.32s] approaches deploying machine learning, I highly recommend that you check out that article. I'll leave a link to the
+[ 1898.32s ->  1903.92s] article in the description below if you're interested in these more intricate approaches. But in any case, we have the
+[ 1903.92s ->  1912.64s] ability to produce a signal value for this alternative data. How do we trade with it? Well, we're one step
+[ 1912.64s ->  1919.70s] away. If we can produce a signal value, whether we use some sort of similarity vector or even a dictionary-based
+[ 1919.70s ->  1927.92s] approach, we still need to link that document to some equity, right? If we're going to produce a trading
+[ 1927.92s ->  1936.48s] strategy, we need to know what to buy or sell. And this gets into the idea of a named entity recognition
+[ 1936.48s ->  1943.36s] problem. This is exactly what I discussed at the start of the video, that idea of Doge being Dogecoin or
+[ 1943.36s ->  1949.68s] Doge the organization, Anne Hathaway or Berkshire Hathaway. Here, I'm taking a look at this document,
+[ 1949.84s ->  1956.26s] Buy Apple Stock. Well, clearly that's a positive signal, right? But are we referring to the apple, the fruit,
+[ 1956.26s ->  1966.70s] or apple, the company? This is where we need to build a named entity recognition model. We need to
+[ 1966.70s ->  1973.70s] be able to identify in a document whether or not we're dealing with an organization or a fruit. And
+[ 1973.70s ->  1981.88s] then we need to label that organization so we know which equity to buy or sell in our portfolio. So what
+[ 1981.88s ->  1987.78s] I've done here is I've implemented a very simple named entity recognition model using spaCy. I've
+[ 1987.78s ->  1994.50s] downloaded it here and I've applied it to this particular document. Apple announced new products
+[ 1994.50s ->  2001.54s] today. And what do you notice? Well, the model produces the apple organization. It also identifies
+[ 2001.54s ->  2009.95s] a date that is today. So this is a named entity recognition model, but just as we discussed earlier,
+[ 2009.95s ->  2015.85s] we're dealing with alternative data. So even though we can extract signal, we're still subject to
+[ 2015.85s ->  2023.15s] noise. And what you'll notice here is if I have this tweet or this document, that apple was delicious,
+[ 2023.81s ->  2031.31s] my named entity recognition model actually gets confused. And this is exactly where you can have
+[ 2031.31s ->  2038.77s] unintended consequences downstream in your buying and selling decisions. You do not know off the cuff
+[ 2038.77s ->  2046.07s] how many documents in your corpus, maybe for this particular trading day, are noise relative to
+[ 2046.07s ->  2052.05s] signal. You're going to want to ensure that in one of a variety of different ways that are beyond the
+[ 2052.05s ->  2058.91s] scope of this video. But this is just a simple example to show you that you do have a lot of noise in all
+[ 2058.91s ->  2064.55s] of these documents that you are considering. If you have alternative data, this is what makes it a data science
+[ 2064.55s ->  2070.21s] problem. You're trying to find the signal in the noise. You need to come up with some way to filter
+[ 2070.21s ->  2079.23s] out documents like this that may disguise themselves instead of as the fruits, the company apple. At this
+[ 2079.23s ->  2084.63s] point, you may be saying to yourself, Roman, just use track GPT or another LLM. These are mostly
+[ 2084.63s ->  2092.11s] solved problems, right? If I ask an LLM, Hey, is this referring to a fruit or an organization? It's going to be
+[ 2092.11s ->  2099.69s] able to tell me. But the problem is we're dealing here with such an absurd amount of data that
+[ 2099.69s ->  2106.21s] transformer models certainly can reason through an individual document. But what if I need an answer to
+[ 2106.21s ->  2114.03s] that question for millions of documents? I'm not going to be able to do that in an efficient way. Now, machine
+[ 2114.03s ->  2119.59s] learning approaches, right? Machine learning approaches to some sort of signal extraction or named entity
+[ 2119.59s ->  2125.97s] recognition problem, they're going to be very fast. Most of them are vectorized in operations and
+[ 2125.97s ->  2134.07s] I'll be able to produce then some sort of entity or some sort of signal very quickly. So just because
+[ 2134.07s ->  2140.11s] we have some model capable of producing maybe even what could be considered a very accurate score,
+[ 2140.65s ->  2148.47s] it doesn't mean that we can deploy it here. Something to consider as you begin constructing models of your
+[ 2148.47s ->  2155.21s] own. Understanding now how to extract signal from alternate data and link it to some sort of
+[ 2155.21s ->  2162.33s] tradable instrument, we can talk about this idea of a cross-sectional equity trading strategy, a quant
+[ 2162.33s ->  2171.43s] trading strategy. And I think the important thing to note here is when you produce a signal, we're not
+[ 2171.43s ->  2179.35s] just going to trade based off of one signal for one document, for example. We're going to look at
+[ 2179.35s ->  2187.21s] instead a collection of documents pertaining to one firm. So we'll look at Apple, for example. I'm going
+[ 2187.21s ->  2194.89s] to take all of the documents, all of the tweets maybe, or news articles about Apple from 12 a.m. today
+[ 2194.89s ->  2204.35s] to maybe 9 20 a.m. right before the market opens. And what I'll do is I'll compute my signal value for
+[ 2204.35s ->  2211.23s] all of those documents. I'll extract some sort of signal from that alternate data. And then I'll take
+[ 2211.23s ->  2219.75s] the average and that's going to be the signal value of Apple today. But I'm not just trading Apple in my
+[ 2219.75s ->  2227.33s] portfolio. I have a lot of different names to consider, maybe every name in the S&P 500 or the
+[ 2227.33s ->  2236.25s] Russell 3000. And what I'll have if I repeat that process for each name is now a data set of different
+[ 2236.25s ->  2247.19s] names with an associated signal value. And what I can do is I can produce a quantile breakdown of that
+[ 2247.19s ->  2254.65s] signal value. And I can go and construct a long portfolio of the names with the highest signal
+[ 2254.65s ->  2262.71s] value and a short portfolio of names with the lowest signal value. That is effectively a market
+[ 2262.71s ->  2270.61s] neutral portfolio that I'm trying to then capture some sort of structural inefficiency with that I've
+[ 2270.61s ->  2277.07s] observed in this alternate data. So what do I need to see for this to work out? Well,
+[ 2277.19s ->  2284.91s] if I look at historic data, then this structural inefficiency is an artifact that exists within
+[ 2284.91s ->  2294.79s] the data, I should observe some sort of distribution like this. Each item on the x axis here is a signal
+[ 2294.79s ->  2302.75s] quantile. And what you'll notice is each bucket is going to have a different mean return. And we observe
+[ 2302.75s ->  2309.75s] this monotonic increasing relationship, which means as the signal value that we've extracted from
+[ 2309.75s ->  2319.63s] alternate data increases, the subsequent mean future return also increases. This is exactly what you'd like
+[ 2319.63s ->  2325.51s] to see because on average, if you go long this bucket and short this bucket, then you will produce
+[ 2325.51s ->  2333.01s] alpha in a market neutral sense, you're taking advantage of a structural inefficiency that you've
+[ 2333.01s ->  2338.27s] observed using this alternative data. And that's exactly what we see here, we have this long leg of
+[ 2338.27s ->  2343.57s] the portfolio, we have this short leg of the portfolio. And if I construct a long short portfolio,
+[ 2343.57s ->  2348.85s] that's this yellow line here, you can see that I have effectively a market neutral portfolio,
+[ 2348.85s ->  2357.39s] and I'm capturing that alpha using this alternative data source to inform my portfolio holdings. What you're
+[ 2357.39s ->  2364.11s] observing here is not a trivial task, and you're going to have to construct some sort of backtesting
+[ 2364.11s ->  2371.33s] infrastructure to be able to observe if your signal that you've extracted from this alternative data is
+[ 2371.33s ->  2378.59s] even viable. And we often talk about the time variant distributions governing these return processes
+[ 2378.59s ->  2385.57s] these stock price processes. Just because you see some sort of distribution that looks like this now,
+[ 2385.57s ->  2390.85s] it doesn't mean that it's going to persist in the future, even in a quant trading sense, this could be
+[ 2390.85s ->  2395.99s] for one of a variety of reasons, your alpha could get crowded out, maybe data becomes more accessible
+[ 2395.99s ->  2403.41s] and more people trade this structural inefficiency, so on and so forth. But in any case, this is the
+[ 2403.41s ->  2410.57s] framework for constructing quant trading strategies. If there's interest in this topic, I'd be happy to do
+[ 2410.57s ->  2417.79s] more videos on it in the future. But that will largely be based on your guys's interest. So leave
+[ 2417.79s ->  2422.39s] a comment below if this is something that you would like to see too long didn't watch here is your
+[ 2422.39s ->  2427.55s] executive summary. There's often an inverse relationship between data accessibility and opportunity
+[ 2427.55s ->  2436.29s] in subsequent alphas. If data is very easily accessed and signal is easily extracted, then everyone can
+[ 2436.29s ->  2443.99s] trade it. Alternative data like text can be rich of signal, but it's not without noise. We saw an
+[ 2443.99s ->  2451.09s] example herein of Elon Musk tweeting about Doge, the coin, and Doge, the government organization.
+[ 2451.83s ->  2457.27s] Other quant fields like natural language processing, NLP, are concerned in many cases with
+[ 2457.27s ->  2464.37s] extracting this signal from noise. We borrow techniques in a quantitative capacity from other
+[ 2464.37s ->  2471.31s] fields all the time in this setting. Docturnal matrices are just one quantitative representation
+[ 2471.31s ->  2478.07s] of the qualitative information we see in text. If we want to perform quantitative analysis, we need
+[ 2478.07s ->  2484.43s] some sort of quantitative or mathematical representation of qualitative information that we see.
+[ 2484.43s ->  2490.11s] Similarity scores and machine learning techniques can be directly applied to this Docturnal matrix,
+[ 2490.53s ->  2497.77s] but this largely becomes a data science problem. Other techniques for signal extraction certainly
+[ 2497.77s ->  2504.15s] exist. The finance literature has long considered dictionary-based approaches to produce some sort of
+[ 2504.15s ->  2510.39s] sentiment score, for example, but as I just mentioned, there are a lot of different ways to extract
+[ 2510.39s ->  2518.79s] signal. Once we have a signal, we still need to know what to trade. Just because we have a document
+[ 2518.79s ->  2524.87s] and we know this document suggests that we buy a stock, it doesn't mean we know which stock to buy,
+[ 2525.03s ->  2533.39s] and this now then becomes a named entity recognition problem to determine what to buy or sell. Again,
+[ 2533.55s ->  2539.25s] this named entity recognition problem is not without noise, and this can impact our subsequent trading
+[ 2539.25s ->  2545.03s] decisions as I just mentioned with that idea of Doge the organization or Doge the coin.
+[ 2545.85s ->  2552.61s] Now, once we've established means of producing a signal and an instrument to trade, we can then
+[ 2552.61s ->  2558.39s] construct a cross-section of a basket of equities that we're interested in trading. You can think of
+[ 2558.39s ->  2564.53s] maybe the S&P 500 or the Russell 3000. In other words, we're not just looking at one document,
+[ 2564.53s ->  2570.85s] but many documents. We're not just looking at one firm, but many firms, and we're going to then go
+[ 2570.85s ->  2576.91s] long the bucket of equities with the highest signal value and short the bucket of equities with the
+[ 2576.91s ->  2583.39s] lowest signal value to produce a market-neutral portfolio. And we're aiming to profit from this
+[ 2583.39s ->  2589.51s] structural inefficiency that we observed thanks to this alternative data. That is going to be an
+[ 2589.51s ->  2595.83s] artifact of historical pricing data. In other words, if we have the capacity to profit from it,
+[ 2595.91s ->  2602.21s] we will then see that in our back tests. Some future topics, technical videos, and other
+[ 2602.21s ->  2608.09s] discussions to look forward to. This idea of maybe researching quant trading strategies. Herein,
+[ 2608.13s ->  2613.91s] we talked briefly about extracting signal from alternative data, how to create the map to some sort of
+[ 2613.91s ->  2619.41s] tradable instrument. If there's interest, maybe we can talk about this entire research pipeline.
+[ 2619.51s ->  2624.47s] Maybe cross-sectional equity backtesting and trading. That's a part of this entire process.
+[ 2624.97s ->  2632.91s] I do also want to talk about AI in quant trading, using AI to produce signal values, not just for text
+[ 2632.91s ->  2639.87s] data, but for images and other alternative data sources. I do maybe also want to talk about advanced
+[ 2639.87s ->  2645.43s] NLP topics. We're just kind of scratching the surface here. I would like to talk about language
+[ 2645.43s ->  2653.13s] modeling, maybe transformer architectures that gets into maybe more linguistics and data science. But if
+[ 2653.13s ->  2659.25s] there's interest, I certainly would like to discuss it. I still want to break out the iPad and give a
+[ 2659.25s ->  2665.65s] lesson on Markov chains. Talk about absorbing states, communication classes, ergodicity, stationary
+[ 2665.65s ->  2671.35s] distributions. If there's interest in something like this, it's certainly different. Definitely let me know
+[ 2671.35s ->  2677.09s] in the comments below. Some topics that are of particular interest to me, I don't know how much
+[ 2677.09s ->  2681.75s] appeal there will be to everyone else, but non-Markovian models, fractional Brownian motions,
+[ 2681.87s ->  2688.87s] this Volterra process, maybe deriving the Black-Scholes equation and transforming it into the heat equation to
+[ 2688.87s ->  2695.01s] then solve for the Black-Scholes model. Kalman filters and non-stationarity has been on the docket for quite some
+[ 2695.01s ->  2702.79s] time. Maybe even risk neutral measures, this idea of a change of measure, and the Feynman CAC linking the
+[ 2702.79s ->  2709.27s] partial differential equation to the conditional expectation, and other topics in AI and finance like
+[ 2709.27s ->  2714.97s] reinforcement learning for delta hedging. I have a great deal of interest in all of these topics. It's
+[ 2714.97s ->  2720.21s] very hard for me to focus on what content to make next. So if you have a preference, please let me know
+[ 2720.21s ->  2725.59s] in the description below. I also want to continue with our quant builds. I like this idea of a delta
+[ 2725.59s ->  2733.03s] neutral trading system, maybe capitalizing on gamma or theta exposure, that idea of gamma scalping in an
+[ 2733.03s ->  2738.87s] algorithmic capacity. I do also like the idea of a Kalman filter model with regime dynamics. We've
+[ 2738.87s ->  2743.17s] already talked about Markov chains and hidden Markov models on this channel. I think that could be a
+[ 2743.17s ->  2750.09s] cool project in a live setting, and maybe even this idea of approximating pricing functionals and
+[ 2750.09s ->  2756.11s] model calibration using neural networks. So a lot of cool topics. Let me know what you'd like to see
+[ 2756.11s ->  2760.91s] in the comments below. And that's going to do it for this video on natural language processing for
+[ 2760.91s ->  2765.95s] quant trading. I hope you enjoyed. I hope you learned something. This video certainly took a lot of effort to
+[ 2765.95s ->  2769.91s] create. So if you enjoyed it and you want to see more like it in the future, please like, comment,
+[ 2769.91s ->  2774.35s] subscribe, share. Again, it helps me out tremendously. It is always greatly appreciated.
+[ 2774.81s ->  2779.19s] Check out QuantGuild.com if you'd like to master your quantitative skills. I'll leave a link in the
+[ 2779.19s ->  2783.83s] description below if you'd like to join our discord to connect with me and other quants in the QuantGuild
+[ 2783.83s ->  2790.45s] community. Other than that, I want to thank you so much for watching, and I will see you in the next video.

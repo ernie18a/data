@@ -1,0 +1,136 @@
+[    0.00s ->     4.40s] In this video, I'm going to walk you through six different options trading strategies that can make
+[    4.40s ->    10.58s] you as much as $100 a day, if not $200, maybe even $300. If you see here on my broker over the last
+[   10.58s ->    19.04s] 30 days, I've made roughly $6,800, which equates to about $229 per day that I've made using these
+[   19.04s ->    24.34s] exact strategies. And again, I've also helped over 600 other traders do this and generate a verified
+[   24.34s ->    31.18s] profit of over $600,000 for all their accounts combined. So let's dive in to this video, which
+[   31.18s ->    35.06s] is going to break down each strategy. So here's the first one. We're going to go over what the
+[   35.06s ->    39.32s] strategy is, an explanation of it, the backtest, and how to trade it for every single strategy.
+[   39.44s ->    43.54s] So let's dive into the first one. The first one is a single trade is pretty easy to understand.
+[   43.90s ->    48.00s] Let's pretend like this is a stock. So the stock is trading here. We're betting that the stock will
+[   48.00s ->    52.70s] stay between two levels. We're betting that it'll stay above this bottom level and below this top
+[   52.70s ->    57.46s] level. If it does, we make money. This is what a strangle trade is. It's super easy. So if we're
+[   57.46s ->    62.22s] looking at the backtest here, you can see this again, I'll try to link the backtest down below
+[   62.22s ->    68.22s] if I can. But you can see here a 98% win rate on this trade, an average winner about $800 and average
+[   68.22s ->    73.08s] loser about $7,000. Again, there's a ton of great, great ways to manage risk, which I get into in other
+[   73.08s ->    78.46s] videos on my channels. But this is still a great and consistent strategy when you're using it in the best
+[   78.46s ->    82.22s] markets for it. So now you might be asking, okay, this is the strategy. What is the best markets?
+[   82.22s ->    86.84s] You're going to be looking at the best markets of slow bullish strategies. This means we're slowly
+[   86.84s ->    91.38s] moving higher. Sideway strategies means that we're staying in between a support and resistance,
+[   91.62s ->    98.20s] obviously, because we want to play the range. And then also a slow downtrend as well. So a slow bear
+[   98.20s ->   103.54s] market. So either one of those markets is how it's going to work best. And so how I personally trade
+[  103.54s ->   111.58s] the strategies based on this backtest, which is going to be a 120 DTE trade. So I go out 120 days in the
+[  111.58s ->   118.30s] future. What I do is I do a 10 delta put for my selection, and I do a five delta call. This skews
+[  118.30s ->   122.26s] it a bit higher because in general, the market moves higher. So these are the best ones. I manage
+[  122.26s ->   130.12s] it at a 25% take profit, and I close the trade at a 300% stop loss. This means that I make a 25% return
+[  130.12s ->   135.12s] on the trade, close it. If I make a 300% loss, close the trade out is there. And then again, there's
+[  135.12s ->   139.66s] other ways to manage risk. But I cover that in other videos. This is just for the strategies. That is the
+[  139.66s ->   144.32s] first one, the strangle strategy. This is what it is. This is the best markets. And this is how to
+[  144.32s ->   149.16s] trade the exact rules for the strategy. All right, cool. For the next strategy that we're looking at
+[  149.16s ->   154.64s] is a calendar spread strategy. If we look at the backtest, you can see here, this is the 3-4
+[  154.64s ->   160.60s] calendar spread, which again, has been very consistent over the last couple years. And so
+[  160.60s ->   167.40s] basically, we're doing a put debit spread trade. And how we're doing this is we're offsetting it
+[  167.40s ->   172.36s] by a calendar. So there's different expiration dates. So you can see here, we're going to sell
+[  172.36s ->   178.42s] the put at the 3-DTE mark. And then we're going to buy the put at the 4-DTE mark. And we're going
+[  178.42s ->   184.48s] to take profit at 15%. So what exactly does this trade look like? It looks like this. It's a put
+[  184.48s ->   190.46s] debit spread. So that means it's going to make money as the market goes down. And so again, in general,
+[  190.56s ->   197.18s] the market tends to have some down periods every once and a while. And so again, if we can capitalize on
+[  197.18s ->   204.14s] that's nice. But again, this works best in bearish markets, as well as sideways markets,
+[  204.14s ->   210.04s] because we get you capitalize on the theta decay that happens on the short side. This is what we're
+[  210.04s ->   217.30s] looking at. Again, we have a 3-DTE for the put that we're selling. And we have a 4-DTE for the put
+[  217.30s ->   222.28s] that we're buying. And so again, we're going to sell, I'm going to say minus one put. And then
+[  222.28s ->   226.64s] actually, yeah, we're going to sell this put and then we're going to buy this put. And they're both
+[  226.64s ->   231.60s] going to be on the same strike price. So for instance, if SPY is currently trading at $5,000,
+[  232.14s ->   237.32s] and that means we're going to sell the put at $5,000 at the 3-DTE level, and then we're going
+[  237.32s ->   242.80s] to buy the put at $5,000 at the 4-DTE. Now, because of the expiration dates on this, we can
+[  242.80s ->   249.32s] only do this trade on Monday and Monday plus Friday, because there is no 3 and 4 expiration
+[  249.32s ->   254.46s] on any other times except for Monday and Friday. So those are going to be the best times to run that.
+[  254.46s ->   259.48s] And then again, we have a 15% take profit that we just let the trade hit. And if not,
+[  259.56s ->   263.70s] we just let the trade run through. So we have a set loss amount, and we have a tight take profit,
+[  264.00s ->   271.20s] which then leads to a very consistent 91% win rate. And again, that's awesome, because in this trade,
+[  271.26s ->   274.64s] you're only in it for about a day, which is great. You're in a trade for about a day,
+[  274.64s ->   278.92s] and you're able to make about $100 per trade. This is a very great one that I've seen a lot of my
+[  278.92s ->   284.76s] members using my automation software, which automates over 5,000 trades a day. A lot of
+[  284.76s ->   290.40s] members use this to make good money. Now, what is the next strategy that I've seen a lot of people
+[  290.40s ->   296.18s] make money with and have made money with myself? That is the 1-1-1 strategy. Well, the 1-1-1 is
+[  296.18s ->   300.76s] essentially, it's a bullish strategy. So let's say the market is going higher, where you're betting
+[  300.76s ->   305.58s] that the market stays above a certain level. So essentially, it's a put selling strategy.
+[  305.58s ->   309.56s] But if the market goes down, you have a little hedge zone where you make more money.
+[  309.90s ->   312.72s] So if the market goes up, you make money. If the market goes sideways, you make money,
+[  312.78s ->   317.84s] about a 1x payout. If the market slowly drifts into this range, you get to make a 2x payout,
+[  318.08s ->   322.26s] and the market breaks this level, that's where you start losing. And so that's what a 1-1-1 is,
+[  322.28s ->   327.50s] it's basically a short put, but a hedge built in. And so this, again, works best for bullish markets
+[  327.50s ->   333.08s] and sideways markets, because there's no cap on the upside. So that's why it's a bullish market
+[  333.08s ->   337.12s] strategy. But also, beta decay, it takes effect in sideways markets, so that helps.
+[  338.12s ->   341.92s] So this trade is a longer-term trade. And so what I mean by that is we're going out.
+[  342.54s ->   350.60s] And by that, I mean we are going out to the 90 to 120 DTE mark trade, because we go out further,
+[  350.60s ->   354.56s] it allows us to collect more profit, collect more money, and increase our win rate.
+[  355.12s ->   361.58s] And then what we do with this is we're going to buy a put at the 25 delta level. We're going to sell
+[  361.58s ->   367.94s] a put at the 23 delta level, and then we're going to sell another put at the 10 delta level.
+[  368.18s ->   373.80s] So this put is creating our income. These puts are creating our downside hedge that makes more
+[  373.80s ->   378.70s] profit if the market drops. And basically, we're looking at this strategy right here, a 1-1-1.
+[  378.70s ->   385.84s] You can see here, 25, 23, 10 delta, 1-21, 20, 1-20. We do a 50% take profit, and we close the trade
+[  385.84s ->   391.10s] early at 21 days. And you can see here, very consistent 83% win rate. Now, one of my favorite things
+[  391.10s ->   397.10s] about this strategy and why I use it as well is because we have roughly the same amount of winners
+[  397.10s ->   402.60s] and losers. So our win amount is about 1,100, and our loss is about 1,500. So they're roughly the
+[  402.60s ->   407.40s] same. So when I lose, it's only going to take out one and a half, maybe one of my winners,
+[  407.40s ->   412.80s] which is awesome. I don't want one loser taking out a ton. And so with an 83% win rate, this tends to
+[  412.80s ->   417.46s] be a very good bot, especially when you stay in those uptrending and sideways markets. That's a
+[  417.46s ->   423.80s] 1-1-1 trading strategy with that. Again, 50% take profit on that, and you're going to close
+[  423.80s ->   428.64s] the trade early at 21 days. This means that once you've been in the trades, let's say you enter at
+[  428.64s ->   434.70s] 120 days. Well, it's 100 days that pass, so there's 21 days or less left until it expires. You'll close
+[  434.70s ->   440.54s] out that trade. So that is the 1-1-1 trade in the backtest as well. If we dive into strategy number
+[  440.54s ->   446.06s] four is the iron condor calendar. So if we look into the details of this, this is actually very
+[  446.06s ->   450.72s] interesting. You can see here over the last couple of years has been fairly consistent on
+[  450.72s ->   455.36s] the slower side, but something to look out to is that you will have larger losses on this type of
+[  455.36s ->   462.38s] strategy. But essentially what you're doing is you're doing a condor, but the ones that you're
+[  462.38s ->   466.90s] buying, like the options that you're buying are going to be further out in time. So you're doing
+[  466.90s ->   472.92s] a 3DTE, you're selling that put, and then you're selling the call at 3DTE as well, but then you're
+[  472.92s ->   478.46s] going to buy the 7DTE put. So you're doing an iron condor structure, but the ones that you're buying
+[  478.46s ->   483.00s] are further out. And this kind of creates more of a debit spread structure. You're able to actually
+[  483.00s ->   488.38s] buy and have a set risk, but at the same time, you're also allowing it to collect the theta decay
+[  488.38s ->   494.34s] of the short options as well. And again, there is really no take profit or stop loss on this trade.
+[  494.34s ->   500.16s] So please be aware that you can see great wins as well as great losses. But again, this is a
+[  500.16s ->   504.32s] weekend income bot that I've seen people make a lot of good money with. Plus you're only on the
+[  504.32s ->   509.46s] trade for three days. Now I would recommend this for larger accounts only. Do your research on it,
+[  509.52s ->   514.62s] paper trade this first, but that is the iron condor. It's hard to sketch out exactly what the
+[  514.62s ->   521.44s] profit graph looks like on that, but that's the iron condor calendar. Next is the 1-1-2 strategy.
+[  521.44s ->   528.08s] This is very similar to the 1-1-1. And let's say the market is trending here. It's the same type of
+[  528.08s ->   533.04s] trade as the 1-1-1. We're betting that the stocks is above a certain level. If it does come down,
+[  533.04s ->   538.96s] we have a hedge roll and up here we'll make 1x of profit. Here we'll make 2x. But instead of selling
+[  538.96s ->   543.76s] one put here, we're selling two puts. So we're buying a put. Again, all these things are the
+[  543.76s ->   549.84s] same except for the bottom one. So we're buying a put at the 25 delta level. We're selling a put at the
+[  549.84s ->   558.72s] 2023 delta level. And then we're selling two puts at the 7 delta level. So we go further out. But
+[  558.72s ->   563.04s] overall, we're collecting more credit because we have two of these. So this has an average win
+[  563.04s ->   567.60s] amount of about 1,000. Depending on how you trade it, this will have an average win amount of about
+[  567.60s ->   572.52s] $2,000. Again, you're just collecting more money. But with that, you're also adding more risk. So this
+[  572.52s ->   577.42s] is why it's further down on the list because there's more risk to this trade. But overall, same structure,
+[  577.42s ->   581.74s] it's going to give you a good return. If we look at the exact numbers here, you'll see that it does
+[  581.74s ->   586.70s] well, but it does drop off with the risk a lot. Like I mentioned, you have a lot more risk for this
+[  586.70s ->   591.16s] strategy. You're also in this trade a lot longer. So you're in this trade about 60 days. And that's
+[  591.16s ->   596.94s] how you're running this 112 body. And you can see 25 delta 23 delta seven delta is how this trade is
+[  596.94s ->   603.06s] being structured. Last but not least is probably what a lot of you guys are using, which is the
+[  603.06s ->   608.96s] zero DTE iron condor. So this one's a very popular trade amongst our users, basically the trade trading
+[  608.96s ->   614.96s] here, we're basically betting that it stays between two levels. But we also buy options to define our
+[  614.96s ->   620.62s] risk. And so the way that we do this is quite simple. Okay, when there's what it's when there's
+[  620.62s ->   627.12s] two hours left before the market closes, we then enter this iron condor, that's plus or minus $20.
+[  627.12s ->   634.34s] Okay, so that means if just for easy numbers, the SPX is trading at $100. That means that we're going
+[  634.34s ->   642.24s] to do a call credit spread at the 120 mark. And we're going to do a put credit spread at the $80
+[  642.24s ->   651.40s] mark. So $20 from here, $20 from here, giving us a $40 wide level. We also to avoid PDT risk, because I
+[  651.40s ->   656.96s] know a lot of people who do the zero DTE iron condors don't have enough money to get past the PDT rule,
+[  656.96s ->   661.46s] which means you can only make so many trades in a certain amount of period. This is so what we do
+[  661.46s ->   667.42s] is we just let the trade expire. So what we do is we just let the trade expire in the money or expire
+[  667.42s ->   672.20s] out. So either we make money or we don't make money. Either way, when the trade expires, it doesn't count
+[  672.20s ->   678.08s] as a PDT rule against us, allowing us to do the zero DTE trade every single day. And so again, we do
+[  678.08s ->   684.88s] plus or minus 20. And then we do plus or minus $5. So we're creating a $5 with credit spread for each
+[  684.88s ->   688.86s] side. That's how it's run. I mean, let that trade expire. And so we look at the backtest of this,
+[  688.88s ->   692.76s] you can see here up and down depends on what you're doing. Obviously, you'll have better results. If
+[  692.76s ->   698.48s] you avoid foamsie days, avoid market news days and things like that, you'll be able to increase your
+[  698.48s ->   702.72s] win rate. It can also increase your win rate by making sure that you only collect a certain amount
+[  702.72s ->   707.70s] of credit. But you can see here plus or minus 20, depending on if it's a put or call, then we go a $5
+[  707.70s ->   712.94s] wide difference. I have about an 84% win rate will make about 70 to $100 per trade,
+[  712.94s ->   718.60s] and we'll lose about $300 per trade. And so anyways, all these strategies combined are a
+[  718.60s ->   724.64s] way to generate at least $100 per day, again, depending on your account size and your risk.
+[  724.86s ->   729.16s] But again, they're put in my favorite order of strangles, 111, 112s. These are great.
+[  729.42s ->   733.96s] You have the calendar spreads for defined risks, the iron condor and the iron condor for defined
+[  733.96s ->   737.64s] risks as well. Anyways, these are the six pack strategies. If you learned something,
+[  737.64s ->   740.88s] please smash that subscribe video and I'll see you in the next one.

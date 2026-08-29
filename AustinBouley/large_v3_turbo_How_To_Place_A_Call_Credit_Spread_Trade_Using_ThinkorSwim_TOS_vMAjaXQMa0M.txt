@@ -1,0 +1,24 @@
+[    0.00s ->     5.64s] I'm going to walk you through how to place a call credit spread trade on the Thinkorswim platform
+[    5.64s ->    10.38s] also known as TOSS. So I'm going to use the 10% credit spread broker walkthrough to show you
+[   10.38s ->    14.26s] exactly what you need to do step by step. So for instance we're going to go into here we're going
+[   14.26s ->    18.06s] to click on TD Ameritrade Thinkorswim which is the TOSS platform. It's going to walk you through
+[   18.06s ->    23.40s] step by step how to put on a call credit spread. Okay so here we go. Number one we want to once we
+[   23.40s ->    28.68s] have the TOSS platform open click on the trade tab and enter the stock that you're looking for.
+[   28.68s ->    32.88s] So for instance you'll be entering SPY here if you're if you're looking for SPY and you're
+[   32.88s ->    38.22s] clicking on the trade tab. Number two click on the strikes drop down and select all. So there's
+[   38.22s ->    43.48s] a strikes drop down right here above the options chain table that will typically that will say
+[   43.48s ->    47.90s] four or six by default. You want to click on the drop down and select all so you see the whole list
+[   47.90s ->    52.78s] of options. Number two you want to find the expiration date that is the one that you're
+[   52.78s ->    57.02s] comfortable with and looking for. So for instance if you're following the alert here you'll be doing
+[   57.02s ->    63.48s] July 28th 2023. Cool. Number three how do you see the vertical spread trade? Well you're going to see
+[   63.48s ->    70.24s] this options chain filter spread etc on right above the options chain right above strikes all. Change
+[   70.24s ->    75.42s] the spread single which is what it is by default to spread vertical and now you'll be seeing vertical
+[   75.42s ->    82.70s] credit spread trades. Number four go on to the left side of the chart and find the strike prices that
+[   82.70s ->    88.34s] you're looking for. You can find it by looking at 456-457 for this alert or simply by looking for
+[   88.34s ->    92.70s] the credit you want. When you're putting on a call credit spread you're selling the price for the
+[   92.70s ->    97.66s] strike that is closest to the stock price and buying the one that is further away. Number five once you've
+[   97.66s ->   104.26s] clicked on the bid part of the of the spread you want then you'll see this red mark pop up down here
+[  104.26s ->   109.76s] you'll be able to put on your call credit spread you'll look at the credit down here which is the slider
+[  109.76s ->   114.24s] the mid price slider is greater than or equal to 12 cents you can put on this trade and that's what
+[  114.24s ->   118.64s] you're looking for the amount that you can collect. Once you do all that you click confirm and send and
+[  118.64s ->   122.84s] move on. That is how you put on a call credit spread on the thinkorswim platform.

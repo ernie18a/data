@@ -1,0 +1,88 @@
+[    0.15s ->     3.47s] Hey guys, what's up in this video? I'm talking about why I'm changing my strategy
+[    3.47s ->     7.45s] So I change it from a 10 Delta through a 30 Delta to a 25 Delta at my still trading credit spreads
+[    7.45s ->    10.25s] What am I doing? Well, I'm gonna walk you through exactly what it is
+[   10.25s ->    16.13s] I'm doing what I've changed in the exact rules and systems behind it so you can start trading exactly like me if you want to
+[   16.13s ->    19.95s] By the end of this video, so let's walk through why am I changing it?
+[   19.95s ->    23.81s] And is it worth it to you to change to okay for those who have been following for a while?
+[   23.81s ->    31.31s] You know that I have an 85 or 84% average win rate, and I'm collecting roughly 15 cents per trade
+[   31.31s ->    36.47s] So this is what I typically do so again this means that one I make 50 I make
+[   36.47s ->    40.31s] $15 for every time I win and I lose roughly
+[   41.21s ->    43.21s] again because I sell at
+[   43.43s ->    48.57s] 50 cents because that's what my stop-loss is then I get out at roughly 35 cents
+[   48.57s ->    55.23s] So this is my stop loss, so I'm making 15 and risking 35 with an 84% win rate
+[   55.23s ->    57.33s] This works out long term. How do I know that well?
+[   57.33s ->    62.25s] This long-term expectancy value you simply take 84 the amount of times you win in a 100 trade period
+[   62.25s ->    69.39s] 84 times winning 15 minus the amount of times you you lose so 16 times the amount you lose which is 35
+[   69.39s ->    76.11s] Would give me $700 so now I have an expected return of $700 so this is the strategy I've been using
+[   76.11s ->    80.43s] Now you may be wondering Austin. How can you get an 84% win rate with with all these strategies?
+[   80.43s ->    84.17s] Are you trying to make money with credit spreads or just trying to understand my strategy?
+[   84.17s ->    86.21s] We're trying to find a strategy that works in any market
+[   86.21s ->    90.11s] Well, I put together a free course called the ultimate credit spread system course
+[   90.11s ->    94.07s] It walks you through how it works every strategy for every different type of market
+[   94.07s ->    99.35s] How to generate monthly income the exit rules we use the minimum credit trade sizing and all that
+[   99.35s ->   104.99s] So if you're interested click the description down below to get free access anyways, hope you enjoy the rest of this video as well
+[  104.99s ->   112.11s] Simply this you follow the trend so this is a system that I've been using for the last six years of trading
+[  112.11s ->   115.31s] I've been trading stocks for five years options for almost a year now of
+[  115.87s ->   124.19s] Doing this and trend following is amazing why because it's the idea of following the big money and big moves and big waves in the market
+[  124.19s ->   127.23s] So friends you can see here there's periods when the market's trending up
+[  127.23s ->   131.33s] There's periods when it's turning down there's periods when it's sideways and not necessarily knowing what it's doing
+[  131.33s ->   136.77s] We can see here the market takes cycles and waves if you take advantage of these moves and trade in that direction
+[  137.01s ->   138.45s] You can make a lot of money
+[  138.45s ->   145.33s] Increase your win rate and do so more profitably and more consistently so trend following is the underlying strategy that is still the same
+[  145.33s ->   148.71s] I'm not changing that I'm changing the way I set up credit spreads
+[  148.71s ->   154.21s] So this is the way I originally set up credit spreads. This is my expected value. So what am I doing now?
+[  154.21s ->   159.62s] Well now I have roughly a 71% win rate. I am collecting
+[  160.58s ->   162.58s] roughly
+[  162.58s ->   164.34s] 27 cents per trade
+[  164.34s ->   168.78s] So that means that I am risking the same the same amount of my stop-off. So I'm risking
+[  169.46s ->   171.38s] $23 so just for easy sake
+[  171.38s ->   174.82s] I am risking $1 to make $1 with the with this system
+[  174.82s ->   181.22s] So that's going to be with a 70% win rate that's going to equal what this changes from 71% win rate
+[  181.22s ->   187.22s] So so it's the 71 times the amount I win which is 27 minus the amount I lose which is more so 29
+[  188.02s ->   189.78s] times
+[  189.78s ->   190.82s] 23
+[  190.82s ->   193.14s] That gives me a
+[  193.14s ->   199.54s] $1,250 long-term return so you can see here. I'm almost doubling my expected return value
+[  199.54s ->   204.98s] So what in the world does this mean? Well, it means that this is the most prop prop prop prop strategy
+[  204.98s ->   208.34s] But what else does it mean it also means I'm going to lose way more often
+[  208.34s ->   214.74s] So again with this strategy you you can have like max drawdown which means like the number of losers and in a row
+[  214.74s ->   216.10s] It's probably around 10
+[  216.10s ->   219.94s] Well, the number of losers in a row with this strategy is going to be around 15
+[  221.22s ->   225.78s] Losers maybe even more than that maybe 18 so 15 to 18 losers and in a row
+[  225.78s ->   230.58s] So again, you are losing a less amount you're only losing 23 cents per loss versus 35
+[  230.58s ->   236.98s] But you will lose more often because your win rates a lot less however because you're collecting almost double the amount
+[  236.98s ->   242.18s] You typically collect that not only lowers the amount you lose, but it increase the amount you win
+[  242.34s ->   248.34s] So that's why it is more profitable to use the strategy now again. We're still using the trend following aspect
+[  248.34s ->   253.54s] So again, this is the math the expected value behind why I'm changing the credit spread that I'm taking
+[  254.10s ->   258.02s] However, the entry criteria the rules that we use is all saying the exact same
+[  258.18s ->   262.10s] So let me walk walk you through that so you can actually start to implement it for yourself
+[  262.58s ->   266.74s] First off. There's a course down in the description below that explains it all in depth, but I'll give you a quick
+[  267.54s ->   273.30s] Overview number one assess which direction the stock is going so looking at the s&p 500
+[  273.30s ->   278.74s] It's above this line the 50 period moving average then we're trending up if it's trending up
+[  278.74s ->   282.66s] We're going to use a put credit spread if it's below it's trending down
+[  282.66s ->   287.06s] We're going to use a call credit spread so right now it's above so we're going to use a put credit spread
+[  287.30s ->   292.82s] We look at the close price so right now the current close price on this stock or trading price is 448
+[  293.30s ->   296.74s] So we're going to go 448 and we're going to go one percent away
+[  297.22s ->   301.54s] So 0.99 then we're going to round to the nearest whole number so this gives us 443.52
+[  301.78s ->   306.74s] Rounding to the nearest whole number that's 444 so that means that we're going to take to get our
+[  306.74s ->   309.46s] Strike price we're going to take
+[  311.92s ->   313.92s] The close times
+[  314.24s ->   322.08s] 0.99 and that will give us our short strike so in this instance 444 and then we're going to buy the next one below so
+[  322.08s ->   327.84s] 443 this is how we set up the strike price okay expiration date how do we figure that out well
+[  327.84s ->   332.64s] It's quite simple we're going to take the current date we're going to plot we're going to plus we're going to add
+[  333.28s ->   335.68s] Seven days and then we're going to round to the next friday
+[  336.48s ->   342.48s] so for instance today is september 6th so that means adding seven days that becomes september 13th
+[  342.48s ->   347.04s] Which is a wednesday so we're going to actually bring that to the next friday so september 15th
+[  347.04s ->   352.16s] so september 15th in this instance would be the expiration date that we pick for this trade cool
+[  352.16s ->   357.36s] Okay next how much credit are we collecting oops i'm touching my face now um credit
+[  359.60s ->   364.56s] How much credit do we collect well quite simply all we need to collect is at least
+[  364.56s ->   368.24s] one dollar risk one dollar return so that means we need to collect
+[  368.80s ->   375.92s] 25 cents plus so we can collect 25 cents or more we are absolutely golden and we're going to make a lot of money with this
+[  375.92s ->   381.28s] Strategy here are the three rules and setups to do to have a profitable trade to trade this
+[  381.28s ->   384.80s] And expect a return of twenty five hundred dollars again what are the rules
+[  385.52s ->   390.32s] you want to make sure that you're placing two trades a week and if you can do that with these
+[  390.32s ->   396.96s] exact subs and criteria you will be able to make money long term if you want to learn exactly how
+[  396.96s ->   401.68s] i do this again there's a free course link down below but anyways you can also subscribe because
+[  401.68s ->   407.04s] this channel gives you ways to make money as a credit spread trader rules edges and things that you can use
+[  407.04s ->   412.88s] to actually start applying today unlike other channels that talk about theory and fake stuff anyways guys
+[  412.88s ->   414.88s] see you in the next video

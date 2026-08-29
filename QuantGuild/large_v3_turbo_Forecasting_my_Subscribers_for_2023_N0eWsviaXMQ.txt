@@ -1,0 +1,62 @@
+[    0.50s ->    29.42s] Hey YouTube, it's Roman. I got a fun one for you today. We are going to be forecasting my subscribers and we are going to be using our knowledge from calculus to make some inferences about the data. YouTube Creator Studio provides to me all of the subscriber data over time. So if that is one of you, thank you so much. If it is not, please help me out. And if I can't convince you at the start of this video, then maybe I can convince you by the end of this video.
+[   29.42s ->    47.38s] So let's go ahead and get started by importing pandas as pd. We're going to import numpy as mp. And then we are going to do matplotlib.pyplot as plt. So we can read in our data, we can manipulate it, and then we can also visualize it.
+[   47.38s ->    63.84s] To read in the data, I'm going to say subs is equal to pd.read.csv. And the file that my subscriber count over time is saved in is called subs underscore zero five zero seven twenty twenty two dot csv.
+[   63.84s ->    71.48s] And now I can go ahead and print the head of this data frame so we can see what it looks like.
+[   72.24s ->    81.94s] OK, cool. So the way that the subscribers are stored for us are in terms of the addition or removal of a subscriber.
+[   82.50s ->    89.00s] So on a particular date, we are going to have how many subscribers were either added or removed to my account.
+[   89.00s ->   100.50s] Now plotting this isn't going to yield much information for us. It's actually going to yield just about as much information as if we were to take the first order difference of the stock price and develop returns.
+[  100.50s ->   109.08s] So if I was to say plt.plot subs subscribers, it kind of just looks like a white noise process.
+[  109.58s ->   116.00s] Right. And it's not centered around zero, thankfully. So so I have some growth to my channel.
+[  116.24s ->   124.34s] At least I have some data to go ahead and posit that. But this doesn't necessarily tell us a lot about the growth or the future growth.
+[  124.76s ->   129.34s] So let's see if we can come up with some different representation of this chart.
+[  129.34s ->   136.00s] Since this chart represents change, we can actually save the cumulative sum of subscribers and then plot that.
+[  136.20s ->   138.52s] And we should get something that looks a little more like a line.
+[  138.74s ->   143.36s] So that's going to show my subscriber count, not the change in subscribers over time.
+[  143.36s ->   160.04s] So I can say subs and I can say cumulative subscribers is equal to mp.cumsum and then I'm summing the change in subscribers on a daily basis.
+[  160.04s ->   172.96s] Now, if I was to go ahead and visualize this, plt.plot subs, and I'm going to be visualizing the new cumulative subscribers column.
+[  173.83s ->   180.81s] There we go. We have a plot showing my subscribers from the start of my channel all the way up until now.
+[  180.81s ->   188.55s] Instead of some neural network or complicated statistical model to try to forecast where my subscribers are going to be, we can just look at this chart.
+[  188.93s ->   194.11s] It's very linear. And when I say very linear, I mean it just looks like a line.
+[  194.11s ->   205.57s] And in fact, if we were to subsample this chart, meaning if we were to look at like 0 to 100, then that would be the first 100 days my channel was around.
+[  205.99s ->   208.75s] And it still looks actually quite linear.
+[  209.01s ->   216.11s] If anything, then it may be a little concave, but it's still very linear.
+[  216.11s ->   222.71s] And if we were to take a different subsample, say day 200 to day 300, again, it still looks very linear.
+[  223.25s ->   233.31s] And if we visualize the entire series, we can pretty much just draw a line from 0, 0 all the way to 1,400, 700.
+[  234.23s ->   239.43s] And we will get a very simple line representing my subscriber count over time.
+[  239.85s ->   242.01s] So what is the slope of this line?
+[  242.01s ->   245.87s] Well, you can compute that very easily by seeing 700 and 1,400.
+[  246.27s ->   246.89s] It's about 2.
+[  247.11s ->   256.59s] If you wanted to do it mathematically, we would just say mp.mean, and we would take the average value of my change in subscriber count over time.
+[  256.91s ->   261.21s] And that is given to us by the initial column, subscribers.
+[  262.15s ->   264.29s] And we could see it is about 2.
+[  264.29s ->   271.17s] So that is consistent with this chart that we produced here, this sort of white noise looking chart.
+[  271.17s ->   275.31s] If we were to take the average, it is approximately 1.88.
+[  275.65s ->   276.97s] So what does this mean for me?
+[  277.25s ->   282.69s] Well, fortunately for me, there's some evidence that my channel is growing over time.
+[  282.93s ->   285.85s] But at what rate is the real question?
+[  286.43s ->   292.51s] Well, if you were to look at this chart, there is no non-linearity.
+[  292.51s ->   305.17s] It's a very linear relationship between subscribers and time for me, meaning the average change in subscribers is approximately 2, if we were to look at this, on a daily basis.
+[  305.93s ->   310.23s] So that means on average, I gain about 2 subscribers a day.
+[  310.85s ->   316.55s] Now, the upshot is my change in subscribers on average is positive.
+[  316.67s ->   317.23s] It's not negative.
+[  317.35s ->   318.05s] So I am growing.
+[  318.05s ->   324.19s] But the relationship between time and cumulative subscribers is linear.
+[  324.97s ->   340.43s] So if you were to look at the rate of change in my cumulative subscribers or the rate of growth in my channel over time, it is relatively constant, meaning I'm not growing at a growing rate.
+[  340.75s ->   345.71s] I'm just growing at a constant rate of approximately 2 subscribers per day.
+[  345.71s ->   351.25s] Based on this data, I can go ahead and make a prediction one year from today how many subscribers I'm going to have.
+[  351.71s ->   361.87s] And to do that, I can take the average daily change in subscribers and multiply it by 365, considering the fact that it seems to be a very linear relationship.
+[  361.87s ->   373.19s] And I can add the current number of subscribers that I have by saying subs, cumulative subscribers, dot values, and then the most current value.
+[  373.77s ->   382.79s] And if I was to maintain this growth for the next year, I would end up with 2,034 subscribers.
+[  382.79s ->   385.59s] So some YouTube channels, they like to set goals.
+[  385.79s ->   390.09s] Maybe it's a goal for a subscriber count by a certain date or likes by a certain date.
+[  390.39s ->   399.43s] What I would like to do and set a goal for this channel is essentially take this relationship between time and subscriber count and have it become nonlinear.
+[  399.63s ->   405.89s] So I would like to see the rate of change in my subscriber count change over time.
+[  405.89s ->   412.17s] So instead of it being 1.88 per day, maybe it'll be 2 by next year, or maybe it'll be 3.
+[  412.55s ->   418.33s] So that is going to be the goal for this channel, to see if we can increase this rate of growth over time.
+[  418.41s ->   420.23s] Thank you so much for watching. I hope you enjoyed it.
+[  420.25s ->   427.03s] This was meant to be a quick one, a fun one to forecast the subscribers out one year and kind of get an idea of where I'm heading.
+[  427.03s ->   433.13s] And hopefully by now I've convinced you to help me out on my journey to apparently 2,034 subscribers.
+[  433.77s ->   439.61s] If not, then to hopefully reach my goal of an increasing rate of growth.
+[  440.19s ->   444.03s] But as always, if you have any comments or questions, please leave them below.
+[  444.13s ->   447.61s] You can always feel free to shoot me an email. I'm happy to help however I can.
+[  448.47s ->   452.62s] Otherwise, I will see you guys in the next video. Thanks so much for watching.

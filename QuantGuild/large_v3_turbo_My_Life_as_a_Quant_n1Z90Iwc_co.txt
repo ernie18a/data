@@ -1,0 +1,83 @@
+[    0.46s ->    41.64s] What's going on guys? My name is Roman Pellucci. I'm a quantitative researcher and trader. I really never thought I would do a video like this, but I find myself largely disagreeing with a lot of the advice and material that I find online as it pertains to getting started in quantitative finance and selecting it as a career in general.
+[   41.66s ->    59.90s] And this is this is completely off the cuff. I don't have a script. I'm really just going to say what I think in terms of this subject that is getting started in quant finance and my life as a quant.
+[   59.90s ->    74.41s] When I first learned of quantitative finance, I was very young. I was probably in middle school or high school and I very quickly became obsessed with it.
+[   74.41s ->    80.17s] I would try to code as many solutions as I could to to different problems in the space.
+[   80.27s ->    85.23s] I would build trading systems with interactive brokers, API, mainly in Java.
+[   85.23s ->    91.31s] At the time, I had just come off of spending most of my days trying to build mods for Minecraft.
+[   92.17s ->    94.31s] And of course, that's all Java based.
+[   94.31s ->   103.87s] So the extension was relatively easy to make to reading documentation and writing my own code to execute trades.
+[  104.09s ->   106.77s] But what's the the problem there?
+[  106.85s ->   112.87s] Well, there's no knowledge of the math or statistics required to build a strategy.
+[  112.87s ->   119.07s] So as a kid, I would build these these algorithmic trading systems to execute trades.
+[  119.07s ->   122.11s] Right. I could do it for futures options.
+[  122.27s ->   129.57s] It didn't matter the underlying instrument, but I had no idea how to build trading strategies.
+[  129.57s ->   138.59s] I had no idea that there wasn't just, you know, I thought that there was this magical strategy that you could find and deploy.
+[  138.59s ->   141.15s] And then that would be it. You'd be printing all this money.
+[  141.71s ->   147.15s] I had a fundamental lack of knowledge about what the space entailed.
+[  147.27s ->   156.41s] Right. So what I ended up doing is I ended up falling in love essentially with math, probability and statistics.
+[  156.81s ->   162.01s] I studied really hard in high school and I dig your your typical high school things.
+[  162.01s ->   170.35s] I think maybe I'm not the typical quant, not not your not your typical quant, but, you know, I played football.
+[  170.35s ->   175.23s] I played lacrosse and I really enjoyed always being an athlete to this day.
+[  175.33s ->   183.29s] I'm still very involved in sports and the gym, Brazilian jujitsu, lifting and running.
+[  183.29s ->   196.41s] But I'll digress from that for now. I decided to focus really on math in high school and I had a terrible, terrible basis for math.
+[  196.41s ->   201.67s] My my math background was weak. I didn't know my rules from algebra.
+[  201.67s ->   217.11s] My precalculus is where everything changed. I had an incredible precalculus teacher and, you know, she she essentially caught me up on everything that I needed to know in algebra and also taught me precalculus.
+[  217.11s ->   226.16s] And I'm very, very grateful for that. So from there, I studied Calc one, Calc two, as you usually do in B.C. calculus.
+[  226.16s ->   232.36s] And in college, I chose a very specific major. I wanted to study quantitative finance.
+[  232.86s ->   240.44s] So I went to James Madison University down in Virginia was the only university there that I applied to.
+[  240.44s ->   247.44s] I had no interest in going anywhere else because they had a major in quantitative finance that I could double major very easily.
+[  247.62s ->   257.16s] with mathematics. So that's what I did. I had no interest in rankings, no interest in target, non target schools.
+[  257.16s ->   264.16s] I didn't care. All I wanted to do was study this material so I could better understand the space.
+[  264.16s ->   275.72s] Okay, so I go on down there. And I learned, I learned a lot. I learned a lot about pricing.
+[  275.72s ->   283.72s] I learned a lot about probability statistics. And it was a very enlightening experience.
+[  283.72s ->   293.26s] And during my time in college, I started a blog, I started very briefly making YouTube videos.
+[  293.26s ->   300.26s] This goes back over, I guess, five years now to 2020 when I made my first YouTube video.
+[  300.26s ->   303.26s] I think it was a Monte Carlo simulation at the time.
+[  303.26s ->   317.06s] And I had no plans for, for doing YouTube. I had no plans to build a, build a company or, or be an independent quant researcher or quant trader at the time.
+[  317.06s ->   331.08s] Um, I, I was just, you know, looking to, to learn more about the space and what I found myself targeting around my junior year of college were these roles, obviously in New York city.
+[  331.08s ->   338.10s] I wanted to get into maybe market making more on the sell side, the buy side didn't interest me as much.
+[  338.10s ->   353.34s] I found far more interest in the sell side. And that's really where most of my interest lied. But as I was interviewing for different roles, I actually ended up interviewing for a quant research role at Bloomberg.
+[  353.76s ->   366.20s] And that's kind of, that's kind of where I opened Pandora's box. So I joined an incredible team right out of my, my undergraduate experience.
+[  366.20s ->   392.56s] So I got an internship there, my junior year of college, and I joined Bruno Dupierre's team. He innovated the space with the local volatility model, similar to Durman's work, but in continuous time, the simplest extension to the Black-Scholes model, where you can, of course, calibrate to liquid instruments.
+[  392.56s ->   416.32s] And my, my, my mind was, was absolutely blown. I, I don't think I was ready, uh, to, to learn as much as I did. It was, it was an incredible experience and they are, are surely the smartest people that I've met in my entire life that, uh, that are on that team.
+[  416.32s ->   418.88s] They're over, uh, that are on that team there over, uh, over, over at Bloomberg.
+[  421.08s ->   427.44s] And I operated as a quantitative researcher there with, with two passions effectively.
+[  427.44s ->   431.82s] And I have them to thank for acknowledging what those are.
+[  432.16s ->   437.04s] The first is pertaining to the pricing of financial derivatives.
+[  437.36s ->   443.42s] That remains probably my favorite subject to study to this day.
+[  443.42s ->   451.60s] Pretty much every single video that I post on YouTube, every single one has a stochastic process in it.
+[  451.90s ->   457.04s] And that is the basis for all of pricing, right? Stochastic processes.
+[  457.76s ->   464.02s] So I'm forever grateful to that experience, figuring out what it is that I really liked.
+[  464.30s ->   466.34s] That was one arm of it.
+[  466.34s ->   479.30s] The other was of, on more of the empirical side where it was about researching trading strategies, but using alternative data.
+[  480.38s ->   485.42s] And I think a lot of people just use the word alternative data.
+[  485.42s ->   495.08s] It could mean anything, but I was interested in everything from, from text documents, tweets, news, whatever, to facial expressions in videos.
+[  495.08s ->   505.80s] So I really was able to, to get a holistic view of the quant research, quant trading space from my experience at Bloomberg.
+[  506.44s ->   510.40s] And that really teed up everything that I did after that.
+[  510.50s ->   517.56s] Every single independent contract, every single role that I had was, was coming off of that incredible experience.
+[  517.56s ->   539.76s] But I want to emphasize that I didn't go to a target school and I think far too much pressure is placed on going to a target school or going to a target graduate school, whatever that means, rather than on the material that you're, you're learning.
+[  539.76s ->   555.29s] Like, I was probably 21 at the time of my, my internship and I was already calibrating models independently to volatility surfaces.
+[  555.29s ->   571.35s] And, and that's not to say that, you know, it's an impressive feat or anything like that, but I knew, I knew how the space functioned because I wanted to, it wasn't about wearing some sort of badge of prestige.
+[  571.35s ->   587.69s] It was about, it was about, it was about learning and that's, I think what I loved the most about my experience in academia was the focus on learning rather than the focus on prestige or this or that.
+[  587.69s ->   596.11s] I, I, I, I, I still reject it to this day, I, I hate anything that has to do with, with gatekeeping or prestige.
+[  596.53s ->   602.61s] And that is really what motivated me to build Gwant Guild.
+[  603.17s ->   613.47s] And my objective now fundamentally is just to continue to learn because I absolutely love it.
+[  613.47s ->   627.73s] continue to educate and help as many people in the space as possible, as many aspiring quants, as many people looking to pivot into the space, or even just learn about the space as a hobby as possible.
+[  628.07s ->   637.55s] While I continue to trade, continue to conduct my own independent research, and of course, operate on these independent contracts.
+[  637.55s ->   656.85s] One of my favorite things that I do now is I'll have institutions, individuals, whoever reach out to me for, for short-term contracts, just to help them build a project or understand the results or help interpret the results or analyze them.
+[  657.59s ->   665.61s] And, you know, that's something that I will look to continue to do and share more as I continue to do it with the, the Quant Guild community.
+[  665.61s ->   668.96s] There are some things, of course, I can't share.
+[  669.22s ->   675.22s] There are some things that I can, and, and everything that I can, I'll look to share in the, in the near future.
+[  675.72s ->   681.74s] If you're a part of the, the newsletter on the Quant Guild website, that's where I'll share most of my most current updates.
+[  682.32s ->   690.76s] And if you've been a part of the channel for quite some time, then you know that I will always continue to post technical material,
+[  690.76s ->   701.88s] my own interpretations and thoughts on a weekly basis, twice a week, certainly an aggressive schedule there, but there's nothing that I'd rather do.
+[  702.46s ->   711.00s] So this is, this is a different video, you know, I really don't like talking about myself.
+[  711.00s ->   716.06s] I don't like talking necessarily, like I have all of the answers or that I know everything.
+[  716.22s ->   722.78s] I certainly don't, but I live and breathe quantitative finance and that will never change.
+[  723.42s ->   732.62s] So with that, this is a completely uncut, unscripted video discussing my life as a quant.
+[  732.62s ->   745.38s] And, you know, I hope it gives you more information about the space, what's possible in the space, and maybe it'll give you direction for getting started.
+[  745.90s ->   748.48s] You can check out a lot of the playlists on my channel.
+[  748.80s ->   750.68s] You can check out quantguild.com.
+[  751.30s ->   756.84s] You can ping me in discord, send me an email, support at quantguild.com.
+[  756.84s ->   765.94s] But with that, I hope you enjoyed this video and want to thank you so much for watching.
+[  767.20s ->   769.42s] I will see you in the next one.

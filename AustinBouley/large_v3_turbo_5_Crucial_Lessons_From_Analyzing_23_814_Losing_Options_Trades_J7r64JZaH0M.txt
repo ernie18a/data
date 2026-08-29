@@ -1,0 +1,62 @@
+[    0.14s ->     8.42s] Here are the five biggest takeaways I learned from analyzing over 23,841 losing options trades.
+[    8.68s ->    12.68s] If you don't know who I am, my name is Austin Bully, and I am the founder of the Options Auto
+[   12.68s ->    17.44s] Trader, which is an options automation tool that handles over a million dollars of trading volume
+[   17.44s ->    24.98s] every single day. And I pulled data from over 23,000 losing trades, and I asked AI to analyze
+[   24.98s ->    29.70s] what the five biggest takeaways are, and I'm going to walk you through them and explain
+[   29.70s ->    36.02s] why. Number one is high credit doesn't always mean high safety. And we've talked about this
+[   36.02s ->    40.66s] a lot is just because you're receiving a high premium, a high credit on a trade doesn't
+[   40.66s ->    45.08s] mean that it's a great trade. It does mean the potential for more profit, but the same
+[   45.08s ->    50.64s] exact time it means more potential for loss. Okay, so the higher credit you receive is a
+[   50.64s ->    54.76s] direct proportion to how much money you can make, but also how much you stand to lose.
+[   54.98s ->    62.68s] A 200% stop loss with a $40 credit is a lot different than a 200% stop loss on a $20 credit.
+[   63.20s ->    68.94s] So make sure that you understand that high premium doesn't always mean lower risk. In fact,
+[   68.98s ->    74.34s] it actually means higher risk. So that's takeaway number one. Takeaway number two is longer DTE,
+[   74.62s ->    81.28s] so bigger tail exposure. So if you know anything about me, I am a fan of going between 90 to 120
+[   81.28s ->    86.78s] DTEs out in the future. It means when I sell or trade an option, I'm going three to four months
+[   86.78s ->    91.60s] out. Why? This gives me more time in the trade to be right in case something happens in the market,
+[   91.94s ->    97.46s] lowers my volatility risk, and allows me to collect more credit, which as we just talked about is not
+[   97.46s ->   101.62s] the entire goal. That's why I talked about the two things that help with risk when you do this.
+[  101.62s ->   106.28s] But to understand that the further out in time you go, it does mean you have a larger tail risk.
+[  106.68s ->   112.32s] It means that you need to keep your buying power and your allocation per individual trade at a
+[  112.32s ->   119.82s] manageable level under 5% or even less around 1% if you can. Why? Because the tail risk on longer
+[  119.82s ->   125.96s] trades can be larger. Meaning if the market drops hard, your losses on a trade like this is going to
+[  125.96s ->   131.86s] be quite larger. Why? Well, as we just talked about it, premium is higher. And so in order to help us
+[  131.86s ->   138.68s] control that risk better, we need to make sure that we're trading with a proper account allocation per
+[  138.68s ->   147.67s] every single trade. Number three is 28 to 30 DTE strategies are also risky, even though they fall in
+[  147.67s ->   153.21s] the theta decay sweet spot. So in another video, and specifically in Tasty Trade, they talk about how
+[  153.21s ->   161.59s] 45 DTE is a great level. And it is, but you have a lot of volatility and risk exposure at that point
+[  161.59s ->   167.53s] compared to something like a 90 to 120 days out. What I mean by that is if you look at a 45 DTE
+[  167.53s ->   176.19s] option at 10 delta versus a 90 DTE, the same delta level, the vega, the volatility market risk is going
+[  176.19s ->   181.77s] to be in half, literally 50% of what that is. And so if you're trying to cut risk down, you want to make
+[  181.77s ->   186.83s] sure you go further out in time. So if you are going to 45 days, maybe around 28 days, still
+[  186.83s ->   193.13s] understand the closer and you go, you are making profit faster, but your risk is higher. Number four
+[  193.13s ->   198.91s] is most catastrophic losses came from strangles. I actually find this very fascinating. And it's
+[  198.91s ->   203.59s] actually a line with what I've been telling a lot of my coaching clients, which is this is that you if
+[  203.59s ->   209.51s] you have under $100,000, you shouldn't be doing strangles. And the truth is why? Because the market
+[  209.51s ->   214.09s] trades in different directions and strangles plays off a neutral market means that we're betting it's
+[  214.09s ->   218.05s] going to stay below a certain level. And we're betting it's going to stay above a certain level
+[  218.05s ->   222.23s] it stays in this level, we make money. But more times than not, the market is trending in a certain
+[  222.23s ->   227.53s] direction, either up or down. And it tends to break these zones, which leads to losses for us.
+[  227.53s ->   234.91s] And so if you're using strangles, particularly long DTE strangles, you have the potential to have a lot
+[  234.91s ->   240.47s] of losses. Instead, you want to trade with the market trend. And you want to make sure that if
+[  240.47s ->   244.23s] the market is trending up, I'm just going to use a bullish idea like short puts, I'm just gonna make
+[  244.23s ->   248.67s] money on the way up, I'm not going to restrict my upside. Same thing to the downside, the market's
+[  248.67s ->   253.59s] trending down, I'm not going to profit on something that's trying to stay above a level, I want to make
+[  253.59s ->   259.45s] money on the way down fully. And so a strangle caps it by giving you these two upside levels or downside
+[  259.45s ->   265.85s] levels that could potentially break it. So I found that strangles that have the propensity to lose
+[  265.85s ->   272.80s] more because of that. Next five, many huge losses were preventable with stops and defined risk.
+[  272.92s ->   277.64s] I don't know how many times I've said this. But when it comes to options trading, there's a lot of
+[  277.64s ->   284.48s] risks that we just don't understand that happen to us every day. One of that is market makers hunting
+[  284.48s ->   289.84s] our stop losses. So if you have a market maker, they can see your order, and they can adjust the
+[  289.84s ->   295.42s] market to exit prematurely, so that you end up with a loss and they turn around and take that trade
+[  295.42s ->   302.60s] for a profit. So market makers. And so for that reason is why a lot of people don't use stop losses, but
+[  302.60s ->   310.04s] yet stop losses could have prevented a lot of the biggest losses that it saw when analyzing 23,000 of
+[  310.04s ->   316.84s] these losses. And so a stop loss is amazing, because it can cut that risk down. But at the same time, unless
+[  316.84s ->   322.52s] you're using an automation system like the options auto trader, you won't be able to fully implement
+[  322.52s ->   327.30s] stop losses because market makers will see that order and trigger it early. But if you're using a tool
+[  327.30s ->   332.30s] like the options auto trader, it hides your order from the market maker. That way you actually have a stop
+[  332.30s ->   337.90s] loss that nobody can see and manipulate the market to execute. So it will actually protect your downside and
+[  337.90s ->   342.92s] give you the ability to have a real stop loss. Anyways, if you're interested in the options auto trader and
+[  342.92s ->   347.62s] avoiding market makers and automating your trading, click on the description down below. I hope you
+[  347.62s ->   353.96s] enjoyed this and found a takeaway from the five takeaways of 23,000 losing trades. Anyways, I hope
+[  353.96s ->   355.80s] you enjoyed this video and I'll see you in the next one.

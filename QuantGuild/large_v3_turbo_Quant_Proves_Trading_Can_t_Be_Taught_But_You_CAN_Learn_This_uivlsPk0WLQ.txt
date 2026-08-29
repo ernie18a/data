@@ -1,0 +1,475 @@
+[    0.46s ->     7.41s] As a professional quantitative researcher and trader, I want to tell you and prove to you
+[    7.41s ->    15.13s] mathematically that nobody can teach you to trade. Trading can't be taught. Whether we're talking
+[   15.13s ->    21.25s] about market making, quantitative trading, discretionary trading, in any case, there is
+[   21.25s ->    29.01s] no fixed set of rules that you can follow to indefinitely make money trading. The space
+[   29.01s ->    36.13s] literally doesn't function in that way. Now, trading gurus, they will sell you the lifestyle,
+[   36.47s ->    42.03s] right? They quit their nine to five. They get to live their lives on their own terms, whatever that
+[   42.03s ->    50.31s] means, even if it involves scamming people. And it's all nonsense. And in this video, we're going
+[   50.31s ->    56.31s] to prove mathematically why this is the case. We're going to build a better understanding of
+[   56.31s ->    63.03s] the space itself. And we'll talk about what it is that you can actually learn from the pros.
+[   63.27s ->    70.55s] Trading in any form involves risk. If you have any hope of generating a return beyond a risk-free rate,
+[   70.55s ->    78.43s] then you have to be at risk of losing money. But as we'll see later on, the likelihood of making and
+[   78.43s ->    84.77s] losing money is certainly going to change under different circumstances. Now, the only thing that
+[   84.77s ->    90.89s] I know of that is entirely risk-free is assuming you'll have access to a Jupyter notebook with a
+[   90.89s ->    95.45s] new Quant Guild video. This Jupyter notebook will be linked in the description below. I will also post
+[   95.45s ->    99.59s] it to the Quant Guild library on GitHub, where you can find all of my Jupyter notebooks and associated
+[   99.59s ->   104.39s] YouTube videos, along with all of the source code for my quant builds. At the top of this Jupyter
+[  104.39s ->   109.39s] notebook, you'll notice some related Quant Guild videos applying probability and statistics to finance
+[  109.39s ->   114.63s] and trading. This idea of time series analysis, retail versus institutional trading, trading versus
+[  114.63s ->   120.29s] investing, Markov chains, hidden Markov models specifically for Quant Finance, and of course,
+[  120.41s ->   126.87s] this idea of model-informed decision-making. That is, making optimal decisions in the face of
+[  126.87s ->   131.39s] uncertainty. If you're unfamiliar with any of these ideas, I highly recommend you check these videos
+[  131.39s ->   137.37s] out first before tackling one like this. Moreover, these videos certainly take a lot of effort to create,
+[  137.37s ->   141.71s] so if you'd like to help support the channel so I can continue to create videos just like this one,
+[  141.77s ->   146.49s] please like, comment, subscribe, share. It helps me out tremendously. It is greatly appreciated,
+[  146.75s ->   152.47s] and though nobody can teach you how to trade, I can teach you the skills necessary for this
+[  152.47s ->   159.49s] industry. No nonsense, no shortcuts, just mastering your quantitative skills. If you're interested,
+[  160.05s ->   165.23s] check out QuantGuild.com. Maybe you come from a background in business, economics, computer science,
+[  165.23s ->   170.71s] physics. Heck, maybe you're an aspiring Quant, and you aren't too sure where to get started on your Quant
+[  170.71s ->   175.49s] journey. Maybe you're a working professional looking to switch industries or sharpen those
+[  175.49s ->   181.73s] quantitative skills for a technical interview. In any case, QuantGuild is for you. We have over 90 Quant
+[  181.73s ->   187.29s] lessons in math, probability, finance, an adaptive practice engine that scales with your skill level,
+[  187.35s ->   191.99s] so you can progress to more and more difficult topics with gamified rank-based progress,
+[  191.99s ->   198.07s] interview questions with fully worked solutions, trading games coming soon, courses from A to Z in
+[  198.07s ->   203.93s] math, probability, statistics, finance, coding, all from the ground up, and all that's included
+[  203.93s ->   208.75s] with QuantGuild membership, and you can get started right now for free. So if you'd like to help support
+[  208.75s ->   215.13s] the channel and master your quantitative skills, check out QuantGuild.com. Without further ado, let's get
+[  215.13s ->   220.59s] started by building towards this idea of proving mathematically why nobody can teach you to trade,
+[  220.59s ->   227.35s] and what it is exactly we can learn from the pros by first discussing this idea of edge or expected
+[  227.35s ->   235.63s] value. Anytime we're dealing with a game or a system that involves randomness or uncertainty modeled as
+[  235.63s ->   242.93s] randomness, you can think of things like roulette, blackjack, poker, or trading, we want to know something
+[  242.93s ->   251.61s] about the outcome in terms of our wealth. But the problem with these spaces is that the outcomes are
+[  251.61s ->   258.87s] inherently uncertain. We don't know what is actually going to happen to our wealth if we spin the wheel
+[  258.87s ->   266.83s] one time, if we play a hand of blackjack, if we execute a trade. So we need some way of quantifying what we
+[  266.83s ->   273.99s] expect to have happen to our wealth after we interact with one of these games or systems.
+[  274.63s ->   281.79s] And typically what we do is we put it in terms of the expected value. The expected value, your edge,
+[  281.97s ->   289.25s] is really just the average. What we expect to have happen to our wealth after one play of any of these
+[  289.25s ->   297.51s] games or interacting with any of these systems one time. Is that positive or is it negative? We'll talk
+[  297.51s ->   302.95s] about how to compute the expected value in a moment, but for now we just got to understand the idea that
+[  302.95s ->   309.05s] if it's positive, the expected value, our edge is positive, we can accumulate wealth as we continue
+[  309.05s ->   315.07s] to interact with any of these games or systems. If it's negative, then we're going to lose money the
+[  315.07s ->   320.57s] more we interact with that gamer system. The problem is, and here's where things get a little
+[  320.57s ->   328.93s] tricky, just because your expected value or your edge is positive at one point in time, it doesn't
+[  328.93s ->   335.79s] mean that it is going to continue to be positive. And that is a very important idea. And that is for
+[  335.79s ->   342.25s] a variety of reasons, which will become more apparent as we progress throughout this video. But for now,
+[  342.25s ->   347.61s] let's further understand this idea of edge by looking at two traders in the short run versus
+[  347.61s ->   353.99s] the long run. So here I have trader A and trader B. Trader A is this blue path, trader B is this purple
+[  353.99s ->   360.43s] path. And my question is, which trader would you prefer to allocate capital to? Each has executed,
+[  360.57s ->   366.41s] it looks like roughly 50 trades. Well, based on what I just said, we probably want to pick the trader
+[  366.41s ->   373.21s] that has positive edge, positive expected value or positive EV, because that means they're going to
+[  373.21s ->   379.07s] be accumulating wealth, the more that they trade, even though each trade outcome itself is uncertain.
+[  379.23s ->   385.33s] If they're acting with this positive EV, they will continue to make money as they trade more and more.
+[  385.57s ->   391.55s] If we look at trader A here, clearly, this isn't positive EV, right? Because what he lost money
+[  391.55s ->   397.77s] throughout these 50 trades, look at trader B, he in fact made money. So trader B is where we should
+[  397.77s ->   404.17s] allocate our capital, right? Well, again, this is where things get a little tricky. We haven't really
+[  404.17s ->   411.37s] observed enough data to determine whether or not the traders are on a reasonable trajectory for their
+[  411.37s ->   418.65s] wealth paths. And what I mean here is instead of looking at 50 trades, let's look at 1000. And here we
+[  418.65s ->   426.47s] see trader A accumulates all this wealth, where trader B ends up blowing out his account. And this
+[  426.47s ->   436.09s] is for a variety of reasons in the context of edge or EV. And really what it comes down to is a lot of
+[  436.09s ->   443.71s] different ideas. The first one being that your edge can change over time. And your ability to adapt and
+[  443.71s ->   449.81s] change to that new edge is what will dictate whether or not you are successful in the long run.
+[  450.01s ->   457.25s] There is no fixed policy that you can continue to follow indefinitely to create wealth. You must
+[  457.25s ->   464.83s] continue to adjust. Moreover, we actually didn't observe enough data to see if that expected value
+[  464.83s ->   471.89s] that we saw in the short run in the small sample was indicative of long run performance. And that is
+[  471.89s ->   478.29s] precisely what we see here. Trader A actually was acting with positive expected value, a positive edge
+[  478.29s ->   485.43s] here. But we didn't observe enough data to see him accumulate that wealth over a series of trades. And
+[  485.43s ->   493.53s] the opposite is true with trader B. Clearly, edge is very important. In this context, it dictates the
+[  493.53s ->   501.87s] trajectory of our wealth paths for a series of trades. So how do we go about computing it? Well,
+[  501.87s ->   509.01s] let's start by understanding the definition of the expectation for a fixed edge in a game of
+[  509.01s ->   516.91s] chance. This will make understanding it for dynamic edges much simpler. So here what I have is the
+[  516.91s ->   526.69s] definition of the expected value EV or edge. It is very easy to compute when the probabilities of
+[  526.69s ->   534.01s] different outcomes are well defined and stable. This means that the total set of possible outcomes is
+[  534.01s ->   540.71s] essentially fixed. And the probabilities of those outcomes don't change in different circumstances.
+[  540.83s ->   549.63s] A good example of this is roulette. The probability of landing on black, red, or green does not change over
+[  549.63s ->   556.05s] time, does not change in different environments. And that sample space, red, green, and black,
+[  556.05s ->   563.29s] does not change. We don't just have blue randomly thrown in there sometimes. So because those
+[  563.29s ->   572.17s] environments are fixed, well defined, stable, it makes computing that edge very simple. And I have
+[  572.17s ->   578.81s] a great example here in the context of roulette. To compute our edge as a player, all we have to do
+[  578.81s ->   586.65s] is figure out how much money we make if we win versus how much money we lose if we lose. And we just
+[  586.65s ->   593.17s] multiply those values by the probability of a win versus a loss, and we will get our player edge. This
+[  593.17s ->   600.53s] will tell us what happens to our wealth if we continue to play this game. Okay, well for roulette,
+[  600.63s ->   607.69s] what do we have? If I put up a dollar, my payoff if I win is going to be a dollar. And if I lose,
+[  607.69s ->   614.75s] then I just lose that dollar that I put up. So I can apply this idea here to my player wealth per
+[  614.75s ->   621.57s] play of roulette. That's going to give me my edge, my expected value, my EV. And all that's going to be
+[  621.57s ->   630.03s] is my $1 bet. That's this payoff if I win multiplied by 18 over 38, the probability I win. Then I need to
+[  630.03s ->   636.17s] add what? The payoff if I lose. In this case, I put up a dollar, so I just lose a dollar times the
+[  636.17s ->   643.35s] probability I lose. And that's going to be 20 over 38. Notice these two probabilities add up to
+[  643.35s ->   649.69s] one. You can't tie here. You win or you lose, right? And I don't need a calculator to tell you
+[  649.69s ->   658.09s] this is going to be negative. Why? The payoff is the same, but the probability that I lose
+[  658.09s ->   665.83s] is greater than the probability that I win. When I add up those values, I'm certainly going to get
+[  665.83s ->   673.45s] something that's less than zero. And I do. My player edge is negative 0.0526. This negative EV means if I
+[  673.45s ->   679.71s] continue to play roulette statistically, I will always lose all of my money to my counterparty.
+[  679.77s ->   686.27s] Who's my counterparty here? Well, that's the casino. These games are zero sum. That means if I add up
+[  686.27s ->   693.23s] the total wealth that is made and lost, it will add up to zero. In other words, if I make a hundred
+[  693.23s ->   700.33s] bucks, somebody's got to lose a hundred bucks. The exact same thing is true for expected value.
+[  700.47s ->   708.87s] This is a very important idea here. You can see the player EV is negative. Somebody has to get that
+[  708.87s ->   715.61s] positive EV. Somebody has to offset this to zero. So who's the player's counterparty? That's going to be
+[  715.61s ->   724.55s] casino. So the casino has a positive EV effectively. They get all of the positive EV from the player
+[  724.55s ->   734.93s] that adds up to zero, right? This is the opposite sign. Negative 0.0526 plus positive 0.0526. We get
+[  734.93s ->   740.49s] zero. So that's nice in theory, but what does this actually look like? Well, I have 10 players who are
+[  740.49s ->   749.55s] going to bet $100 per play. How do I get their EV per play? Well, I'll take this $1 bet EV, and I'll
+[  749.55s ->   758.27s] just multiply it by 100. So I get minus 526 per bet on average. That's what they're expected to lose
+[  758.27s ->   765.85s] each time they play. That is the slope of this negative line. All of these red lines are player
+[  765.85s ->   772.01s] wealth paths, and you can see it tracks that theoretical loss. Okay, well, we just said it's
+[  772.01s ->   780.05s] a zero-sum game, right? So the slope of this line is what? Negative 526? Shouldn't the casino slope
+[  780.05s ->   788.95s] have then a positive slope of 526 to offset that to zero? Why do they have a positive slope of
+[  788.95s ->   800.05s] 5263? It's off by an order of magnitude 10 times? Well, this is why it's really good to be the casino
+[  800.05s ->   809.54s] because each one of these players is acting with what? Negative 526 EV. But there are 10 of them.
+[  809.54s ->   817.50s] So if you multiply that by 10, the casino is going to profit by that order of magnitude more. So it's
+[  817.50s ->   825.14s] clearly very good to be the casino in a zero-sum game with a fixed negative edge. There's nothing
+[  825.14s ->   830.22s] that any of these players can do to change the fact that they will just continue to lose money
+[  830.22s ->   835.74s] statistically over time until they go bankrupt, and the casino then will accumulate all of their
+[  835.74s ->   842.84s] negative expected value as positive expected value. And the more players there are, the steeper
+[  842.84s ->   848.68s] their profit slope is going to be. At this point, we have a really good understanding of edge and how
+[  848.68s ->   856.82s] it impacts our wealth path in some sort of game or system. But it's not always true that positive
+[  856.82s ->   865.20s] expected value will leave you to accumulate wealth on average. This is kind of counterintuitive,
+[  865.38s ->   870.56s] but it gets at the idea of ergodicity. It's beyond the scope of this video, and we're going to assume
+[  870.56s ->   875.84s] in here that we're looking at an ergodic system. But I have a video on this topic where I talk about
+[  875.84s ->   881.40s] the time average, the ensemble average, and optimal bet sizing, additive versus multiplicative bets.
+[  881.60s ->   886.26s] I'll leave a link to it in the description below if you'd like to check it out. We're now ready to
+[  886.26s ->   892.60s] approach this idea of a dynamic edge. In this example of a fixed edge, there is nothing that a
+[  892.60s ->   897.94s] player can do. There's no action they can take to change the fact that they're going to continue to
+[  897.94s ->   906.30s] lose money if they keep playing the game. But this isn't true in the sense of a dynamic edge.
+[  906.94s ->   917.14s] That is, player action can actually influence edge, expected value, or EV. Their actions are dictated by
+[  917.14s ->   923.66s] some sort of policy function. This is a very important idea that I'm borrowing from machine learning,
+[  923.66s ->   929.04s] reinforcement learning, artificial intelligence literature. This idea that when you choose some
+[  929.04s ->   934.98s] sort of action, you're choosing it based on some sort of policy function. And that policy function
+[  934.98s ->   941.54s] is based on your environment. It's based on this current point in time. That is what is determining
+[  941.54s ->   947.62s] your choice, your choice in action. You can think of it in the context of roulette. Why did you choose
+[  947.62s ->   952.16s] black? You can think of it in the context of blackjack, which we'll look at in a moment.
+[  952.16s ->   961.56s] Why are you choosing to hit or stand? The choice from the player is going to impact the player's edge.
+[  961.72s ->   969.08s] And we know now that that is going to impact the player's wealth path in that game or system. So what
+[  969.08s ->   974.30s] should our policy function be? This is exactly the question you should be asking right now, because
+[  974.30s ->   981.72s] if our policy function influences our edge and our edge being positive or negative influences the
+[  981.72s ->   989.10s] trajectory of our wealth path, then we need to pick a policy function that maximizes what? Our expected
+[  989.10s ->   996.12s] value to give us the best possible wealth path trajectory. This is the idea that we are building
+[  996.12s ->  1003.44s] towards. And this is how we will prove that nobody can teach you to trade and understand exactly what it
+[ 1003.44s ->  1010.26s] is we can learn from the pros. Let's get started here with an example using blackjack. I have two
+[ 1010.26s ->  1017.56s] different policy functions for blackjack here. The first policy says to stand anytime we observe 16 or
+[ 1017.56s ->  1025.26s] higher. The second policy function says to stand anytime we observe 20 or higher. So essentially policy
+[ 1025.26s ->  1035.40s] function two will hit up to 19. Is that generally positive or negative EV? Well, we can plot these
+[ 1035.40s ->  1043.24s] policy functions and the expected wealth path over a series of hands to see which one has better EV,
+[ 1043.46s ->  1051.94s] which policy is influencing our edge in a more positive way. And what you'll notice here is look at the
+[ 1051.94s ->  1060.52s] negative slope of policy two versus the negative slope of policy one. Clearly policy one has better EV.
+[ 1061.04s ->  1067.10s] Look at the slope. It's far more shallow than this slope, which means we're losing money at a slower rate.
+[ 1067.22s ->  1075.58s] Now it's not positive, but it is a better policy. So if I was to compare these two policies, which one
+[ 1075.58s ->  1084.28s] would I choose? Well, I would act on policy one because it has much better EV. This is what it means
+[ 1084.28s ->  1092.22s] to have better EV based on some sort of policy function. Here we can see mathematically and visually
+[ 1092.22s ->  1099.38s] what is happening. We can see that we're losing more per hand. If we operate with a bad policy,
+[ 1099.38s ->  1106.32s] like policy two versus something like a better policy, which is losing less per hand. So what I'm
+[ 1106.32s ->  1114.08s] saying here effectively is policy one is better than policy two. It contributes more to positive
+[ 1114.08s ->  1122.48s] expected value. And our goal is eventually to find some sort of policy that is going to yield positive
+[ 1122.48s ->  1128.70s] expected value. It's crucial to note here. We're free to choose any policy we like. I can act with policy
+[ 1128.70s ->  1136.20s] policy one policy to whatever strategy I want. I can deploy for this system. My goal is obviously
+[ 1136.20s ->  1145.52s] to find the pie, the policy that yields the maximum expected value possible. But just because I'm free
+[ 1145.52s ->  1156.12s] to choose any policy I like, and I'm free to optimize that policy. It doesn't mean that one exists that will
+[ 1156.12s ->  1166.86s] enable me to have positive EV. So in this example here, yeah, policy one has more positive EV than policy
+[ 1166.86s ->  1174.64s] two. But you can see that the net EV of the strategy is still negative. It still has negative edge. I'm
+[ 1174.64s ->  1182.64s] still going to lose all my money if I continue to play. This is a very important idea as we continue to
+[ 1182.64s ->  1190.30s] consider different policy functions. We can see here just because policy one is better than policy
+[ 1190.30s ->  1196.52s] two, it doesn't necessarily mean that we are going to be accumulating wealth over time. But we still
+[ 1196.52s ->  1204.50s] need to consider the function of policy one in our overall strategy. Absolutely crucial to note in the
+[ 1204.50s ->  1211.44s] context of poker and trading. So the reason why this policy function is so important is because it
+[ 1211.44s ->  1216.58s] dictates the EV of our strategy, right? And that impacts the trajectory of our wealth path.
+[ 1217.10s ->  1223.72s] What's even more interesting is when we looked at this negative fixed edge in roulette, I told you
+[ 1223.72s ->  1229.70s] there's nothing that the players could do to have positive expected value. If they keep playing the game
+[ 1229.70s ->  1236.80s] with their fixed bet, then they would in fact lose all their money. But what if they had an optimal
+[ 1236.80s ->  1244.68s] policy function, there's only one thing that they can control? That is their bet size. It doesn't matter
+[ 1244.68s ->  1251.72s] if they put it on black, red, or green. We said there's negative expected value. But what if there was a
+[ 1251.72s ->  1261.30s] policy to adjust their bet size? Does that make their overall expected value positive? Well, actually,
+[ 1261.30s ->  1267.06s] it does. And it gets into this idea of martingaling roulette. In other words, effectively, what we're
+[ 1267.06s ->  1275.88s] going to do is every time we lose, we are going to double down to try to win back that loss. And if you
+[ 1275.88s ->  1282.84s] actually compute the overall expected value of this strategy, it actually has positive expected value.
+[ 1282.84s ->  1291.90s] So the player path trajectory is now not negative as it was before, but it's now positive. And you can
+[ 1291.90s ->  1299.30s] see that players can actually continue to make money playing roulette with this betting strategy. Now,
+[ 1299.42s ->  1306.46s] is this something you could actually implement in practice? Absolutely not. Casino tables have limits
+[ 1306.46s ->  1312.80s] for this reason. You can see at some point, you will have an absolutely absurd drawdown where
+[ 1312.80s ->  1319.22s] you will need to double up to such an extreme amount of capital that you won't be able to produce
+[ 1319.22s ->  1327.26s] it for that bet. But in any case, theoretically, yes, there is a way to beat roulette with just an
+[ 1327.26s ->  1335.16s] optimal policy. And that optimal policy is just going to be to double down on losses. This is exactly how
+[ 1335.16s ->  1341.38s] all of the pieces of the puzzle fit together. And this is exactly why nobody can teach you to trade.
+[ 1341.38s ->  1348.52s] Here we're looking at what? This is a fixed negative edge. This is roulette. Nothing changes. This
+[ 1348.52s ->  1357.40s] environment is entirely fixed. Our optimal policy function, this idea of a martingale betting strategy
+[ 1357.40s ->  1364.88s] is changing our theoretical expected value. And it's changing the trajectory of our wealth path. It's
+[ 1364.88s ->  1374.08s] making it positive. Now that optimal policy is fixed. This optimal policy, which yields a positive
+[ 1374.08s ->  1383.52s] expected value is in fact fixed. It doesn't change over time. This is not true in the context of poker
+[ 1383.52s ->  1389.48s] and trading. We're going to look at more examples of this in a moment. But for now, let's go back to
+[ 1389.48s ->  1395.56s] this blackjack example. I'm going to show you an optimal policy. An optimal policy for blackjack can
+[ 1395.56s ->  1403.64s] be found by counting cards. You can see that the wealth path trajectory now is positive, along with
+[ 1403.64s ->  1410.84s] the expected value for each hand played. This is exactly, as I said a moment ago, how all of the
+[ 1410.84s ->  1416.94s] pieces of the puzzle fit together and how we can better understand the space. We have a policy function.
+[ 1416.94s ->  1425.42s] We have our expected value and we have our wealth path trajectory. Our objective is to find an optimal
+[ 1425.42s ->  1435.76s] policy to maximize our expected value, to maximize our wealth path trajectory. And we can see here
+[ 1435.76s ->  1446.44s] that this certainly is a policy that is acting with positive EV. Now that doesn't mean, if we go back here,
+[ 1446.44s ->  1453.42s] that policy one is not acting with more positive EV than policy two, this is a very important idea.
+[ 1453.42s ->  1462.18s] Policy one, this idea of acting with, with better EV is still true. And components of this policy
+[ 1462.18s ->  1472.72s] are embedded in this one. That idea is absolutely crucial. It is absolutely critical. Just because
+[ 1472.72s ->  1481.04s] this policy outperforms policy one that we observed up here, it doesn't mean that this strategy,
+[ 1481.04s ->  1490.86s] this dynamic of standing anytime we observe 16 or higher is not embedded implicitly somewhere in
+[ 1490.86s ->  1498.98s] this optimal policy. That is, I can't even stress how critical it is to note because what I'm essentially
+[ 1498.98s ->  1506.98s] saying is we want to continue to optimize our strategy from different angles. Policy one is
+[ 1506.98s ->  1515.88s] contributing information to how we can act in a more positive way relative to policy two. And the
+[ 1515.88s ->  1521.24s] dynamic is essentially saying something about the likelihood of the next card observed and whether or
+[ 1521.24s ->  1528.88s] not, we're going to bust. And that dynamic is included in this optimal policy function. And this is
+[ 1528.88s ->  1534.70s] starting to get at what you can actually learn from the pros. At this point, we can see the objective,
+[ 1535.24s ->  1542.78s] be the casino, right? That is our objective. The outcome of any one play, any one hand or any one trade
+[ 1542.78s ->  1549.96s] is going to be uncertain, but we want to figure out some sort of policy function that's capable of
+[ 1549.96s ->  1556.24s] influencing our expected value in a positive way, positive enough to yield a wealth path trajectory
+[ 1556.24s ->  1564.38s] that again is positive. That is our objective here. We now are ready to talk about poker and trading
+[ 1564.38s ->  1573.92s] this idea of learning to play poker and learning to trade and exactly what it is we can learn from
+[ 1573.92s ->  1580.92s] the pros. We now have sufficient understanding of policy functions, expected value, and the impact in our
+[ 1580.92s ->  1588.86s] wealth path trajectory to talk about this idea and essentially prove that nobody can teach you to trade.
+[ 1589.08s ->  1596.32s] Mathematically, our objective is to learn pi star. That is the optimal policy function. In other words, it is the
+[ 1596.32s ->  1602.28s] maximum expected value, the maximum expected value, the maximum edge we can have based on all possible
+[ 1602.28s ->  1607.96s] actions for this game, for this system, whether we're talking about blackjack, whether we're talking
+[ 1607.96s ->  1618.08s] about roulette, poker, or trading. We're trying to find this pi star. That is our objective. And it is not an
+[ 1618.08s ->  1624.22s] easy task. And it's not something that you can naively just throw machine learning at to solve it as a
+[ 1624.22s ->  1630.84s] problem. In other words, if I was to try to deploy some sort of machine learning algorithm to solve this
+[ 1630.84s ->  1638.24s] equation, to find pi star, I still need to define everything. I need to define all of the actions the
+[ 1638.24s ->  1644.50s] agent can take, the data that it has access to, how it's going to go about making decisions based on some
+[ 1644.50s ->  1651.16s] sort of environment it's experiencing. It is not a trivial problem. It's not something that you can just
+[ 1651.16s ->  1659.58s] throw AI at to solve for so many reasons. Now, I have a very simple example of how AI is insufficient
+[ 1659.58s ->  1668.14s] in this reinforcement learning example. I actually use an AI, ML, RL model, whatever you want to call
+[ 1668.14s ->  1675.06s] it to try to learn how to play blackjack optimally. And what do you see here? Well, it does better than
+[ 1675.06s ->  1683.40s] just a naive strategy. But it's not like it's counting the cards, right? And what I'm getting
+[ 1683.40s ->  1693.74s] at here is AI is not a cure-all. We have an economic basis for this strategy. In other words, we understand
+[ 1693.74s ->  1701.02s] probabilistically why it should work and why it yields positive expected value. And what I'm getting at here
+[ 1701.02s ->  1707.38s] is this is the equation that we're trying to solve. But we can't just throw machine learning at the
+[ 1707.38s ->  1713.70s] problem and expect it to learn something useful. It could be overfitting noise. It could be not
+[ 1713.70s ->  1721.32s] considering time variant dynamics. There's so many reasons why it's going to be incapable of learning
+[ 1721.32s ->  1728.30s] this optimal policy function pi star. In fact, it's largely probably going to be easier for us to either
+[ 1728.30s ->  1740.34s] impose a policy on our own, like counting cards or to learn it ourselves from experience. And that is what I'm
+[ 1740.34s ->  1749.26s] trying to tell you here is our goal is to find pi star. There is no playbook. There is no fixed set of rules.
+[ 1749.26s ->  1757.48s] There is nothing anybody can give you beyond experience and you developing your own pi star
+[ 1757.48s ->  1767.24s] function to be able to act optimally in this space. And this goes for poker. This also goes for trading.
+[ 1767.58s ->  1774.12s] And we're going to look at examples of what it means to learn this pi star function. But this is
+[ 1774.12s ->  1783.10s] precisely why nobody can teach you to trade. You literally have to develop your own pi star function.
+[ 1783.20s ->  1790.36s] It's not something that somebody can just hand you. It is literally how you go about making decisions
+[ 1790.36s ->  1799.56s] in the face of uncertainty to maximize your expected value. And that policy function is learned over time,
+[ 1799.56s ->  1807.82s] learned through experience. And I have a few really good examples of this to hit this point home. Nobody
+[ 1807.82s ->  1814.46s] can teach you to play poker and nobody can teach you to trade. These examples prove it mathematically.
+[ 1815.10s ->  1821.08s] Effectively, your objective is to find pi star. You want to optimize your expected value. These are games
+[ 1821.08s ->  1827.92s] of uncertainty. These are games of incomplete information. We are trying to act in an optimal way. If they were
+[ 1827.92s ->  1835.54s] entirely random, we wouldn't see the same faces at every single poker tournament. The pros would not have
+[ 1835.54s ->  1844.06s] any basis for long-term wealth generating potential, acting with positive EV. But they are, and they do,
+[ 1844.18s ->  1851.28s] and their performance is stable. That's because they're acting with positive expected value. That pi star,
+[ 1851.28s ->  1860.30s] their optimal policy function is learned after an incredible number of hands. That experience is not
+[ 1860.30s ->  1866.28s] something that you can just teach someone. You can't just go out and learn that. That raw experience
+[ 1866.28s ->  1872.98s] of understanding the probability of different events occurring and who it is you're playing against
+[ 1872.98s ->  1879.44s] changes everything. If you have a high probability of winning, so in this case, what I'm looking at is a
+[ 1879.44s ->  1885.78s] hand of pocket aces, and I have this case where you hit trips. You have roughly, what, an 80% chance of
+[ 1885.78s ->  1893.14s] winning? But if you're playing against somebody that's terrible, then does it really matter if you
+[ 1893.14s ->  1899.06s] have an 80% chance of winning if they don't even know what that means? But what if you're playing
+[ 1899.06s ->  1906.56s] against somebody who does? Doesn't that completely change how you bet? And doesn't that impact your
+[ 1906.56s ->  1912.36s] expected value? We talked about that all the way up here. How much you bet impacts your expected
+[ 1912.36s ->  1918.52s] value. So all of these things are coming together to essentially paint a picture that, wow, really,
+[ 1918.80s ->  1923.90s] nobody can teach you that optimal policy function. It's something that you're going to have to learn
+[ 1923.90s ->  1930.76s] all on your own. Let's talk about what it is you learn through experience. Any poker player who has
+[ 1930.76s ->  1937.76s] pocket aces knows that you're going to be folding over 50% of the time, whether or not they can
+[ 1937.76s ->  1943.50s] quantify that for you, or they play it by feel based on, you know, the pre flop raise, or, you know,
+[ 1943.52s ->  1949.30s] after they see the flop and, you know, they, they hit trips or something else happens that subject for
+[ 1949.30s ->  1955.04s] discussion. But in any case, they're effectively learning the likelihoods of different states of
+[ 1955.04s ->  1963.92s] the world. And with that comes the ability to change how they bet based on the probability that
+[ 1963.92s ->  1972.12s] they win. That is effectively a component of their pie star, their optimal policy. But moreover,
+[ 1973.06s ->  1980.12s] they don't have to be betting when they have a high likelihood of winning either. They could still bluff.
+[ 1980.12s ->  1990.48s] And this is why the overall expected value is going to change based on way too many factors that a
+[ 1990.48s ->  1996.62s] fixed playbook could account for. If you're playing with somebody that's terrible, and you try to bluff,
+[ 1996.92s ->  2001.56s] then that does nothing because they don't know that you're trying to bluff, and they don't even know
+[ 2001.56s ->  2006.86s] what hand they have. But if you're playing with somebody who understands, wow, I see two aces on the
+[ 2006.86s ->  2013.64s] flop. I don't really have anything good. And now the likelihood of me winning is significantly lower
+[ 2013.64s ->  2020.10s] because if somebody's got a an ace in the hole, then I am done. That changes the entire betting
+[ 2020.10s ->  2026.88s] dynamics of the game, the overall expected value for both players. And this is also where the idea
+[ 2026.88s ->  2031.86s] of it being a zero sum game comes into play. So if you're playing against somebody that's terrible,
+[ 2031.86s ->  2038.28s] and they play with terrible EV, then you can take all that. You can have extremely positive EV.
+[ 2038.70s ->  2046.22s] The outcome of any one hand is uncertain. Nobody, nobody, even with these probabilities,
+[ 2046.86s ->  2052.42s] can tell you how to play pocket aces. If you're sitting at the table against a pro,
+[ 2052.64s ->  2058.36s] and you have pocket aces, you hit trips on the flop, then what are you going to do? You're going to go all
+[ 2058.36s ->  2066.94s] in. Why would he call that? Right? That's not going to happen. Moreover, even if he did, you could still
+[ 2066.94s ->  2074.62s] lose. You have an 80% chance of winning. It's not an invitation to blow out your bank roll. This is what
+[ 2074.62s ->  2081.68s] you have to keep in mind. This is exactly why nobody can teach you what to do. You need to learn your
+[ 2081.68s ->  2089.56s] optimal policy function, maximize your EV. But this is exactly where we can learn from the pros.
+[ 2089.56s ->  2098.94s] We can learn different ways to adjust our pi star to have more positive expected value. And this is
+[ 2098.94s ->  2105.42s] what I was teasing out when we looked at the blackjack example here, relative to what the card counting
+[ 2105.42s ->  2111.66s] example, these different policies. We said, wow, this policy here is much better than this one.
+[ 2111.68s ->  2120.98s] Well, this policy here is clearly much better than this one. We're actually taking components from all of
+[ 2120.98s ->  2127.74s] those different policies and rolling them into one. That is what we can learn from the pros. General
+[ 2127.74s ->  2136.80s] strategies to help improve the overall EV of our game. Not how to win one hand, not how to win one trade,
+[ 2136.80s ->  2143.48s] but things we can do that when combined all together will help influence our edge in a positive
+[ 2143.48s ->  2149.14s] way. That doesn't mean that it's going to be positive, but it's certainly getting it in the
+[ 2149.14s ->  2155.86s] right direction. Let's take a look at what it means to accumulate wealth with an experience-based
+[ 2155.86s ->  2162.86s] optimal policy function. Here, we have a few different states of the world with our pocket aces. One where we
+[ 2162.86s ->  2169.28s] hit trips, one where we hit trips with a flush draw, and one where we don't hit trips at all.
+[ 2169.66s ->  2176.16s] And the probabilities here are the probabilities of winning against five opponents with random hands.
+[ 2176.40s ->  2183.66s] If we come on down here, we can see that if we bet appropriately when we hit trips, then we're doing
+[ 2183.66s ->  2189.60s] a pretty darn good job of accumulating wealth. Now, what if there's a flush draw on the table? Well,
+[ 2189.60s ->  2195.42s] we're going to want to bet appropriately too, and that's going to turn into near zero EV. We do not
+[ 2195.42s ->  2202.50s] want to bet when we observe a flush draw. Now, what if we just bet naively when we had pocket aces? If
+[ 2202.50s ->  2207.84s] we're a novice player, we don't understand that it's really not that good of a hand if we don't hit
+[ 2207.84s ->  2215.40s] anything else. Well, you're going to lose all of that money. Now, this is not the expected value of
+[ 2215.40s ->  2223.62s] your wealth path playing poker. This is the expected value of your wealth path in a very small corner of
+[ 2223.62s ->  2233.77s] the game of poker. So, if I experience pocket aces and I always act suboptimally, then I'm contributing
+[ 2233.77s ->  2242.73s] to my overall strategy with negative EV. But if I act optimally, then I will be what? Adding to my
+[ 2242.73s ->  2249.71s] overall strategy with positive EV. This is why it's so important to experience and understand the
+[ 2249.71s ->  2254.81s] system that you're working with. Nobody can teach you how to play this hand. Nobody can.
+[ 2255.98s ->  2261.10s] It's experience-based. Whether or not you are going to bluff, whether or not you are going to
+[ 2261.10s ->  2266.38s] make an outsized raise because you hit trips and there's no flush draw, whatever it may be,
+[ 2266.70s ->  2270.92s] nobody can tell you exactly what to do. It's based on who you're playing with. What if they don't want
+[ 2270.92s ->  2275.96s] to call your raise? You're not going to be able to profit on that increased likelihood of winning,
+[ 2276.38s ->  2283.20s] so on and so forth. But if you do continue to accumulate experience and you understand who
+[ 2283.20s ->  2288.74s] you're playing against and how much they might be willing to risk and the relative strength of your
+[ 2288.74s ->  2296.64s] hand, then yeah, you can make these decisions to accumulate that positive edge over a series of
+[ 2296.64s ->  2305.20s] hands. And again, this is just for one hand. There are what? I mean, there's an absurd number of
+[ 2305.20s ->  2311.16s] possible hands that you could have. And in addition to that, it's based on who's at your table.
+[ 2311.64s ->  2317.62s] The environment. Are you tired? Did you just lose? All of those things change everything. And it also
+[ 2317.62s ->  2325.96s] changes how other players play. Understanding this and being able to adjust your policy function
+[ 2325.96s ->  2333.62s] based on all of these ideas is what separates the good players from the great players. And it is
+[ 2333.62s ->  2341.02s] precisely what we can learn from the pros. Again, nobody can teach you this pi star. It's learned
+[ 2341.02s ->  2348.20s] through experience, but we can continue to enhance it with little tips, with different things that may
+[ 2348.20s ->  2356.46s] influence the overall EV in a positive way. This exact same logic can be applied to trading. And I
+[ 2356.46s ->  2364.44s] have a great example here, trading options, selling a straddle. Sure, systematically, we observe that
+[ 2364.44s ->  2370.20s] volatility may be overpriced relative to what is realized in a forward looking sense. We can profit
+[ 2370.20s ->  2376.74s] from this with some sort of short vega position. In general, this is the strategy. You are an insurance
+[ 2376.74s ->  2384.76s] seller. But the way we go about doing this is our policy function. And we know that's going to
+[ 2384.76s ->  2390.78s] dictate the overall edge. Just because statistically, yeah, there's a tendency for it to be overvalued,
+[ 2390.78s ->  2396.84s] it doesn't mean we can profit from it in this particular trade. Our ability to execute those
+[ 2396.84s ->  2403.12s] trades and accumulate wealth is based on our policy function. That is exactly what is going to
+[ 2403.12s ->  2409.28s] determine whether or not we accumulate wealth or we don't. And here I have two examples, one with a
+[ 2409.28s ->  2416.82s] good policy function, an optimal policy function, and one with a suboptimal policy function. In the
+[ 2416.82s ->  2422.26s] context of trading, right, we don't have this idea of a counterparty like in poker. We don't have this
+[ 2422.26s ->  2430.12s] idea of like raising bluffs. We don't have this idea of the other player, you know, not being good at the
+[ 2430.12s ->  2436.96s] game. The dynamics are different, right? But the whole idea of optimizing our expected value is
+[ 2436.96s ->  2444.32s] exactly the same. So trader A here is acting as an insurance seller, selling these straddles. His
+[ 2444.32s ->  2451.56s] objective is still to maximize his expected value. That is his goal with each trade. Now what you're
+[ 2451.56s ->  2459.02s] going to observe here is trader A is continuously updating his pi star. He's continuing to learn,
+[ 2459.02s ->  2464.90s] he's continuing to act optimally. He's considering, you know, different things when he goes about
+[ 2464.90s ->  2470.52s] placing a trade as the overall environment. It's going to be a function of time, his policy pi star.
+[ 2470.72s ->  2476.50s] It's not just going to be a fixed policy. There is no fixed policy. There is no fixed playbook that
+[ 2476.50s ->  2481.92s] will enable him to act with positive EV. It's going to depend on the current macro climate,
+[ 2482.18s ->  2486.00s] the current regime. What are we working with? Do we have a high volatility regime,
+[ 2486.00s ->  2490.76s] low volatility regime? What's our current administration? How do people feel about tech?
+[ 2490.88s ->  2498.76s] All of these things play into the decisions that trader A makes based on experience. And what we
+[ 2498.76s ->  2505.62s] can see here is trader A has fewer drawdowns and he has overall better performance than trader B,
+[ 2505.78s ->  2513.80s] who naively is just trading this strategy of selling vol. And he isn't vetting whether or not it's a good
+[ 2513.80s ->  2518.68s] idea at this point in time. He isn't vetting whether or not the overall strategy he's been
+[ 2518.68s ->  2523.66s] running is positive or negative expected value. He has these massive drawdowns and he's trying to
+[ 2523.66s ->  2528.96s] catch these swings back up. In essence, you know, he doesn't have an optimal policy function. He's
+[ 2528.96s ->  2537.12s] trying to find this pi star, but he isn't acting or experiencing in an optimal way. Your objective
+[ 2537.12s ->  2545.12s] here is to accumulate experience to generate wealth. And if you are taking big old swings at different
+[ 2545.12s ->  2552.12s] trades, different hands going all in, then you're not doing that. You should effectively, once you've,
+[ 2552.12s ->  2560.06s] once you've experienced, once you've learned, you should effectively be absolutely stoked to go to
+[ 2560.06s ->  2566.72s] work because your expected value is positive. That means you're generating wealth. That is the
+[ 2566.72s ->  2572.68s] objective to turn yourself into some sort of optimal policy function that is capable of generating
+[ 2572.68s ->  2579.80s] wealth. You should not be irritated to trade or to play poker. If you're a pro, your objective is
+[ 2579.80s ->  2583.64s] to accumulate wealth. And if you're acting with positive EV, you go to work. That means you're
+[ 2583.64s ->  2590.06s] making money. That is the objective here. So when we look at this space, that is how we have to think
+[ 2590.06s ->  2594.66s] about it. We have to think about it in terms of EV. We think about it in terms of a policy function
+[ 2594.66s ->  2600.54s] and what levers are we pulling in that policy function? How are, how are we making those
+[ 2600.54s ->  2606.60s] decisions, right? What are we doing that is going to influence our EV at the end of the day?
+[ 2607.36s ->  2613.52s] That is what we need to consider. That is what you can learn. You can't learn a fixed set of rules.
+[ 2613.52s ->  2619.48s] There is no system, no strategy that indefinitely prints money. All of these things, including your
+[ 2619.48s ->  2627.36s] pi star, have to continuously change. It is a never solved game. One that continues to operate
+[ 2627.36s ->  2634.52s] and change as time progresses. Just about the only thing that you can learn is to enhance your pi star.
+[ 2634.94s ->  2640.36s] You want to accumulate as much knowledge as possible. Think about it like understanding the outcome
+[ 2640.36s ->  2647.30s] of different hands in the poker sense. And you want to accumulate all of this knowledge to be able
+[ 2647.30s ->  2653.28s] to enhance that optimal policy function. So here are some tips from the pros. Probably the most
+[ 2653.28s ->  2659.46s] important idea is this idea of tight bankroll management. If you lose all your money, you can't
+[ 2659.46s ->  2666.58s] continue to try to make money. You know, people play way too loose when it comes to trading or poker.
+[ 2667.12s ->  2673.74s] And it's not a good idea. You can't just take big old swings. Even if you have a pretty high
+[ 2673.74s ->  2679.16s] probability of winning, you have to size your bets appropriately. And this gets into number two,
+[ 2679.42s ->  2685.08s] understanding bet sizing and dergodic theory. Edge is nothing without effective bet sizing.
+[ 2685.90s ->  2693.58s] You should not play every hand. You should not place a trade just to place a trade. Sometimes there is
+[ 2693.58s ->  2700.22s] nothing to trade. You should cut losses early. You should not wait for it to come back. You should not
+[ 2700.22s ->  2708.86s] over bet on a bluff if you don't think it's going to work. It's not a good idea, especially if you have
+[ 2708.86s ->  2714.60s] more information, right? So if you see vault spike and you're in a terrible position, it's not an
+[ 2714.60s ->  2719.60s] invitation to just sit there and wait for it to get worse. Same thing with poker. If you raise pre-flop
+[ 2719.60s ->  2725.10s] and you observe a flush draw, it's not an invitation for you to make it worse for yourself. Cut your losses.
+[ 2725.10s ->  2731.32s] Don't play emotionally. It's easier said than done. Yeah, a hundred percent, but you can't recover
+[ 2731.32s ->  2739.90s] big losses on big swings back up. It is always suboptimal. Here's a very basic simulation.
+[ 2740.46s ->  2747.38s] Both are experienced players. Both have an optimal policy function, but the player on the left here
+[ 2747.38s ->  2754.90s] has a good bankroll policy. The player on the right here does not, and he loses all his money.
+[ 2754.90s ->  2761.78s] This is why you have to be very careful when you continue to operate in this space, because
+[ 2761.78s ->  2769.32s] if you observe a loss, it is not an invitation to try to catch a win on a swing back up. As you can
+[ 2769.32s ->  2774.66s] see here, if we continue to run thousands and thousands of this simulation, you will see it is
+[ 2774.66s ->  2781.54s] always statistically suboptimal. You will always lose all of your money if you continue to operate
+[ 2781.54s ->  2791.84s] in that way. What it is an invitation to do is to trade, to play poker, whatever it is with positive
+[ 2791.84s ->  2798.78s] expected value, just as you were doing all along. Check out my video on retail versus institutional
+[ 2798.78s ->  2806.22s] trading. I talk about my year two dates trading performance. I show you, I experience a terrible
+[ 2806.22s ->  2812.88s] drawdown, but I don't blow out my account. I continue to act with positive EV and I make
+[ 2812.88s ->  2818.38s] all of my money back, but it did take quite some time. That is how this space functions.
+[ 2818.94s ->  2825.38s] You must continue to go to work to get paid. It is not easy. There is no shortcut. There is no fixed
+[ 2825.38s ->  2832.44s] strategy. There is no such thing as being able to what? Like the gurus say, you know, live life on your
+[ 2832.44s ->  2838.48s] own terms, quit your nine to five. It is a fallacy. You're always going to be bearing risk,
+[ 2838.84s ->  2846.12s] optimizing your pie star to trade or act optimally in the face of uncertainty. And you will always be
+[ 2846.12s ->  2853.72s] at risk of losing money based on this chart here. Clearly experience alone isn't enough, right? Because
+[ 2853.72s ->  2859.58s] you can't just keep blowing out your account to gain that experience. So what else do you need beyond
+[ 2859.58s ->  2866.92s] experience? Well, you also need knowledge. Experience alone is not sufficient. Neither is
+[ 2866.92s ->  2874.28s] knowledge. Both of them are necessary to find an optimal pie star. Neither is sufficient, but
+[ 2874.28s ->  2882.86s] knowledge and experience is a deadly combination. Moreover, model informed decision making dramatically
+[ 2882.86s ->  2889.56s] enhances edge. This is why even though models are wrong, and I see it on almost every
+[ 2889.56s ->  2894.90s] video that whatever model I am talking about is making these assumptions, which are violated.
+[ 2895.52s ->  2902.40s] Yes, I understand that, but they're helping you make informed decisions in the face of uncertainty,
+[ 2902.56s ->  2910.22s] optimal decisions. They're enhancing your policy function, your overall edge. That is the objective.
+[ 2910.72s ->  2918.08s] Okay. So in this context, when it comes to learning some sort of pie star, keep that in mind. All right.
+[ 2918.08s ->  2925.94s] Experience and knowledge, a deadly combination. What should you learn about in the trading space
+[ 2925.94s ->  2933.00s] to enhance your knowledge, enhance your pie star, your overall edge, you need to understand macroeconomics,
+[ 2933.14s ->  2940.74s] behavioral finance, politics, math, probability, statistics, the list goes on. It is not easy.
+[ 2941.08s ->  2945.48s] There are no shortcuts. This is how the space works.
+[ 2945.48s ->  2951.72s] Some considerations for you. Market making, quant trading, discretionary trading, all are different
+[ 2951.72s ->  2959.42s] methods of optimizing expected value. Effectively, your goal is still the same. The way you go about
+[ 2959.42s ->  2965.76s] constructing your policy function is different. There's a mathematical justification for each.
+[ 2966.22s ->  2973.70s] We will discuss this in a future video. Moreover, this idea of stability can persist even with
+[ 2973.70s ->  2982.24s] learned experience. This is the single best argument for discretionary trading that there is. It is the
+[ 2982.24s ->  2989.02s] fact that you will continue to see the same poker pros at tournaments. You will continue to observe
+[ 2989.02s ->  2996.82s] stable performance in some sort of optimal pie star, even if it's time variant. And that is a very
+[ 2996.82s ->  3003.42s] important idea and a topic that we will further discuss in my video on quant versus discretionary
+[ 3003.42s ->  3008.78s] trading. Too long didn't watch. Here's your executive summary. Nobody can teach you a fixed
+[ 3008.78s ->  3015.08s] strategy for games of incomplete information that involve uncertainty. The environments of things like
+[ 3015.08s ->  3022.26s] poker and trading are far too dynamic along with the edge for fixed rigid policies. There is no one
+[ 3022.26s ->  3029.00s] playbook that somebody can just hand you to print you money. It literally does not function that way as a
+[ 3029.00s ->  3036.18s] space. Beyond structural alphas or market making, these are different topics altogether. We will discuss
+[ 3036.18s ->  3045.38s] them in another video. A single trade does not dictate your wealth path. A series of trades does. And the
+[ 3045.38s ->  3052.10s] overall expected value dictated by some sort of policy function, which determines how you place the trade,
+[ 3052.26s ->  3061.36s] is learned through a combination of experience and knowledge. Now, people often ask me, like, if this is the
+[ 3061.36s ->  3068.14s] case, why don't we just deploy AI reinforcement learning machine learning to learn this optimal policy
+[ 3068.14s ->  3076.22s] function? Well, you need to feed them that data. They don't ingest data the same way as a human poker
+[ 3076.22s ->  3081.92s] player or a human trader. It literally is different. You would have to discretize the entire
+[ 3081.92s ->  3088.14s] set of data into an interval tick based. Then you'd have to pass it to the agent. Then it would have
+[ 3088.14s ->  3096.72s] to optimize for EV based on a series of actions. It's a mess to operate with. It's a mess. There's
+[ 3096.72s ->  3102.06s] evidence in the literature that it's effective in the context of hedging. And yeah, there's structure
+[ 3102.06s ->  3107.98s] to learn there for sure. But poker players and traders, the human poker players and traders,
+[ 3107.98s ->  3113.06s] are literally learning all of this information in real time in a continuous sense. And they're able
+[ 3113.06s ->  3122.00s] to ingest that information without any computational complexity or offline trading. So a very important
+[ 3122.00s ->  3128.88s] thing to note there. Optimal policy functions go beyond experience. They demand knowledge, strategy,
+[ 3128.88s ->  3134.24s] and understanding of the dynamics of the space. This goes beyond raw probabilities. We looked at an
+[ 3134.24s ->  3139.96s] example with good bankroll management and poor bankroll management. We saw even if you act
+[ 3139.96s ->  3147.64s] optimally, if you have terrible bankroll management, you will still go bankrupt. So it's not just about
+[ 3147.64s ->  3156.65s] experience and acting optimally, but you have to have structure to that pi star function. Experienced
+[ 3156.65s ->  3163.17s] players and agents can only inform us about decisions for our policy function to aid in maximizing
+[ 3163.17s ->  3169.15s] as your expected value. In other words, nobody can teach you to trade, but they can tell you what a
+[ 3169.15s ->  3175.75s] good structure is for your policy function and how you can enhance your policy function to make
+[ 3175.75s ->  3183.09s] more positive EV decisions over time. That is effectively what I'm, I'm proving mathematically
+[ 3183.09s ->  3189.17s] by showing you that the EV is a function of your policy function. And that policy function has to be
+[ 3189.17s ->  3197.99s] learned through experience. This gets at the idea that there is no one size fits all system or rule
+[ 3197.99s ->  3206.19s] to print money trading. It's about accumulating EV over a series of hands, trades, etc. And this is
+[ 3206.19s ->  3213.17s] what separates those who make money from those who don't. Some future topics I would like to discuss
+[ 3213.17s ->  3217.85s] technical videos and other discussions. Advanced Markov chains is certainly on the docket. I've gotten a
+[ 3217.85s ->  3222.15s] few requests for those. If this is something that you'd like to see sooner rather than later, please let me
+[ 3222.15s ->  3226.59s] know in the comments section below. I'd like to get into stochastic processes, Brownian motion,
+[ 3227.23s ->  3231.99s] arithmetic, geometric, additive, multiplicative, Brownian motion, deriving the Black-Scholes equation,
+[ 3232.51s ->  3238.91s] PDEs, numerical solutions versus analytical solutions, connections to simulated prices. These are more
+[ 3238.91s ->  3244.67s] technical topics, but certainly on the docket, things that I would like to get back to. I know the Kalman
+[ 3244.67s ->  3250.05s] filter has been on the docket for quite some time as well. This idea of non-stationarity is a big
+[ 3250.05s ->  3254.51s] problem in quant modeling. If this is something that you would still like to see again, please let
+[ 3254.51s ->  3260.51s] me know in the comments section below. Some other discussions, is the market random quant versus
+[ 3260.51s ->  3266.75s] discretionary trading? Again, these are all ideas that I've had for quite some time. Along with these
+[ 3266.75s ->  3272.01s] ideas for quant builds, building this earnings events, options trading dashboard, this live Kalman
+[ 3272.01s ->  3277.01s] filter implementation with regime dynamics. Since we've now covered Markov chains and hidden Markov
+[ 3277.01s ->  3283.13s] models, that's accessible to us now. We still have to cover the Kalman filter first, but in any case,
+[ 3283.51s ->  3289.43s] that can then be dropped into some sort of delta neutral trading system, which I think is this big
+[ 3289.43s ->  3293.79s] project that we're kind of building towards here. So let me know in the comments what you would like
+[ 3293.79s ->  3300.19s] to see in the coming videos. That's going to do it for this video on proving trading can't be taught,
+[ 3300.19s ->  3306.95s] but as we've seen, there is still a lot to learn. I hope you enjoyed the video. I hope you learned
+[ 3306.95s ->  3313.29s] something. This video certainly took a lot of effort to create, so please like, comment, subscribe,
+[ 3313.57s ->  3320.51s] share. Again, it helps me out tremendously. It is so greatly appreciated. Check out quantguild.com
+[ 3320.51s ->  3326.33s] to master your quantitative skills. Other than that, thank you so much for watching,
+[ 3326.33s ->  3329.17s] and I will see you in the next video.

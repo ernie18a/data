@@ -1,0 +1,88 @@
+[    0.94s ->     8.72s] Hey guys, what's up? It's ABTrades doing a day trading recap how I made 40% on SPY put contracts today.
+[    9.20s ->    13.48s] So I'm not going to just show you where I got in and where I got out, but I'm going to fully explain.
+[   13.94s ->    22.68s] So with the premium group in the course, as often as I can, I release either a live trading or a day trading recap video.
+[   23.26s ->    29.66s] So I'm going to go into as much explanation as I do in the course doing the day trading recap videos,
+[   29.66s ->    34.00s] and I'm going to use this YouTube video as the one I'm putting in the course.
+[   34.10s ->    38.42s] So I'm going to be providing as much content as I can into this video.
+[   38.90s ->    43.52s] So if you're hesitant or if you're hesitating about watching this video, please pay attention.
+[   43.70s ->    45.46s] Please take notes. I'm going to talk about everything.
+[   45.84s ->    51.10s] This is going to be course content level here because I know this is SPY and the group trade SPY.
+[   51.24s ->    54.48s] So I thought, you know what, let's talk about SPY just a little bit more.
+[   54.66s ->    59.60s] So as always in the morning, we look at pre-market notes.
+[   59.88s ->    62.36s] So this is the pre-market notes from today.
+[   63.16s ->    69.40s] We notice that there's no important news, so we're not noticing anything that's going to be major affecting the market.
+[   69.90s ->    79.00s] Then we notice that SPY is in a support zone right here in between 268.30 or 35 and 269 right here.
+[   79.00s ->    84.24s] It says we may see a balance from the 269 or a little above than short.
+[   84.44s ->    87.54s] That was my estimation for the day.
+[   87.54s ->    89.74s] Now, why did I see that on pre-market notes?
+[   90.24s ->    94.94s] Well, because ever since the past, we've been uptrending, making these ranges and getting higher.
+[   95.30s ->    96.88s] We hit almost this triple top here.
+[   96.94s ->   100.60s] One, two, three, before we actually started to reverse here.
+[  100.94s ->   106.58s] We saw a 10% continuation play here to the downside-ish on SPY.
+[  106.58s ->   113.26s] And then we started to actually push up and get rejected at these previous support levels so that we're pushing down.
+[  113.40s ->   116.18s] This shows that, hey, we're in more of a pullback here.
+[  116.30s ->   122.80s] With it selling off after hours, we're noticing that we're having some more momentum pulling to the support zone.
+[  122.80s ->   134.04s] So, seeing that we have here a high here on SPY pre-market, and we're also seeing that we have a long-term support here, and we're starting to break through this.
+[  134.10s ->   137.40s] If we can get up above here, this is our crucial area of resistance.
+[  137.82s ->   140.80s] Now that we're pushing into here on SPY, we've just got to watch out.
+[  140.80s ->   143.66s] But, you see, we knew that we were selling off.
+[  143.82s ->   145.16s] Momentum is to the downside.
+[  145.78s ->   148.80s] So, if we see this push up here, we know that we can see a push down.
+[  149.22s ->   156.06s] And we also are seeing, you know, this creation of higher or lower highs in the market on SPY.
+[  156.40s ->   161.50s] So, with that all together, above 269 was the perfect time to short.
+[  161.50s ->   169.16s] So, looking at it on the one-day, one-minute chart, or on the 10-day, one-minute, specifically one-minute, we were getting inputs here.
+[  169.16s ->   178.08s] I was alerting out to the group on the live alerts here that it looks like I was picking up SPY puts here at around 8.33,
+[  178.36s ->   183.08s] and I was slowly adding to the position as it went up, and we got out at 8.47.
+[  183.64s ->   191.76s] So, if we look here at 8.33, I was adding here, and as it went up, I was adding, and I was adding, and I was trying to add as much as I could.
+[  192.52s ->   196.06s] I was only able to get in two contracts, which was so sad.
+[  196.06s ->   202.62s] I was adding more and more, or at least as much as I could, and then we started seeing Facebook and Apple start to roll over.
+[  203.08s ->   207.28s] That rolling over led to this test of this crucial support.
+[  207.78s ->   209.10s] How did we know this was support?
+[  209.30s ->   213.84s] This is where we were going to check if we were going to get out of this put position or hold it,
+[  214.28s ->   218.18s] because this is where previous support was, 269.10.
+[  218.42s ->   222.12s] And we also have the EMA here, and we also have the VWAP here.
+[  222.12s ->   224.72s] This is a three levels of support.
+[  225.18s ->   230.08s] So, after we started to show that we were going to break through this level of support, we waited to see it drop.
+[  230.80s ->   234.92s] This huge momentum to the downside is not something that should be overlooked.
+[  235.36s ->   241.90s] So, we didn't sell here on this candle, but we waited, and we saw this roll over, the continuation of this candle,
+[  242.12s ->   245.40s] a continuation of selling down here, right here.
+[  245.40s ->   250.84s] We saw some support at the open of SPY.
+[  251.20s ->   257.28s] So, that's where we exited puts right here for SPY at around 40% profit.
+[  257.48s ->   259.40s] Other people made 48%.
+[  259.40s ->   265.66s] Then we saw this push-up and the VWAP in the exponential moving average took it short again here on SPY,
+[  265.80s ->   268.10s] down to the downslide, a slow fade.
+[  268.48s ->   270.88s] VWAP again, fade downside.
+[  271.30s ->   274.66s] So, that was our trades on SPY today and the group.
+[  274.66s ->   278.36s] So, we made, someone made over 140%.
+[  278.36s ->   284.80s] I think I can actually pull these up again right here, screenshot, 140% think I'm done.
+[  285.20s ->   291.86s] I mean, it's just understanding the patterns here, understanding that we have overhead resistance on SPY,
+[  292.18s ->   296.28s] and understanding that these will act as resistance on the way down.
+[  296.28s ->   299.48s] So, seeing that was huge and understanding SPY.
+[  299.58s ->   305.88s] If we push up into a resistance zone when it's weak, we should short into strength, not short into weakness.
+[  306.00s ->   309.74s] When you're shorting up here, when you're buying puts up here, your risk is this.
+[  310.28s ->   312.72s] Your profit is all the way down here.
+[  313.10s ->   320.72s] When you're buying puts and you're chasing to this downside movement, you're only profiting this much while you're risking all this.
+[  320.72s ->   326.46s] So, understand, you short into strength, you short into strength, you short into strength, and you short into strength.
+[  326.90s ->   328.48s] That's how you make money on puts.
+[  328.74s ->   332.22s] Just like you buy low and sell high, you sell high and you buy low.
+[  332.44s ->   333.34s] That's how shorting works.
+[  333.38s ->   333.84s] All right, guys.
+[  333.90s ->   335.02s] I hope that makes sense.
+[  335.44s ->   337.70s] Now, this is the quality of content I provide.
+[  337.70s ->   347.98s] We also looked at volume here, seeing that when we pushed up into VWAP and EMA, the volume here is showing, hey, we don't have volume here to stop this move.
+[  348.30s ->   357.26s] So, seeing that we have less volume into this push, showing that, hey, we're not going to stop the stock here, stop SPY from moving up to the upside.
+[  357.60s ->   360.90s] Because if there was movement here, then something would have happened.
+[  361.10s ->   366.04s] No volume shows, hey, I'm allowing SPY to get rejected here, and I'm allowing it to fall.
+[  366.04s ->   370.22s] Also here, you see the volume was up high, coming up to the VWAP.
+[  370.46s ->   373.96s] Then when it's at VWAP here, volume starts to dissipate.
+[  374.28s ->   378.70s] This dissipating volume allows it saying, hey, I'm okay with it falling more.
+[  380.06s ->   381.64s] So, that's what we're seeing here.
+[  381.72s ->   385.44s] Every time we get up, volume starts to shrink, like, hey, I'm okay with it falling here.
+[  385.66s ->   387.16s] That's basically what it's saying.
+[  387.24s ->   391.64s] Then when we start to see the volume pick up on these moves, we know, hey, we're at the support, volume's picking up.
+[  391.94s ->   394.62s] We're looking at a reversal with time to cover our puts.
+[  394.62s ->   398.38s] So, again, guys, that is the recap on SPY.
+[  398.46s ->   399.64s] I hope it made sense.
+[  399.72s ->   401.14s] I hope you were able to make money today.
+[  401.28s ->   403.34s] Please like, comment, and subscribe.
+[  404.18s ->   404.88s] Enjoy your weekend.

@@ -1,0 +1,81 @@
+<!-- tradingview-pine-id: PUB;e647ca9eb5524ef9a701f02cce8f9983 -->
+<!-- tradingviewscripts-format: 1 -->
+# 3D Sine Wave
+
+Source: https://www.tradingview.com/script/iM9tK3IZ-3D-Sine-Wave/
+
+## Description
+
+It's a 3D sine wave! Cool!
+
+I made a cube follow a sine wave, it doesn't reflect any data on the chart, it just looks pretty. There are some settings to play around with, too.
+
+You could plug the cube into any input you like, just replace the 'wave' variable with whatever you want. 
+
+Watch it on the 1 second timeframe!
+
+---
+
+## Source Code
+
+````pine
+//@version=5
+//@barnabygraham
+indicator(title='3D Sine Wave',max_lines_count=500)
+wave_height = input(100)
+wave_duration = input(50)
+
+n=bar_index
+
+f_sine_wave_1(_wave_height, _wave_duration) =>
+    _pi = 3.14159265359
+    _w = 2 * _pi / _wave_duration
+    _sine_wave = _wave_height * math.sin(_w * n)
+    _sine_wave
+
+wave = f_sine_wave_1(wave_height, wave_duration)
+
+yChoice=input.string('Regular','Shape',options=['Regular','Irregular'])
+x=input(20,'X')
+y1=input(100,'Y')
+y2=y1-100-wave
+y=yChoice=='Regular'?y1:y2
+
+lb=input(50,'Lookback')
+
+t=math.round(n/4)
+u=t>t[1]?1:0
+
+coloring=input.string('Half Opaque','Coloring Style',options=['Opaque','Half Opaque','Wave 1','Wave 2'])
+
+opac=coloring=='Opaque'?0:coloring=='Half Opaque'?50:coloring=='Wave 1'?50-wave:coloring=='Wave 2'?(wave/4)+50:na
+
+linecolor=input.color(color.new(color.lime,75),'Line Color')
+topcolor=input.color(color.new(color.yellow,50),'Top Color')
+bottomcolor=input.color(color.new(color.blue,50),'Bottom Color')
+rightcolor=input.color(color.new(color.orange,50),'Right Color')
+leftcolor=input.color(color.new(color.purple,50),'Left Color')
+
+a=line.new(n,wave,n-x,wave,color=linecolor)
+b=line.new(n-1,wave-y,n-1-x,wave-y,color=linecolor)
+c=line.new(n,wave,n-1,wave-y,color=linecolor)
+d=line.new(n-x,wave,n-1-x,wave-y,color=linecolor)
+e=line.new(n,wave,n[1],wave[1],color=linecolor)
+f=line.new(n-1,wave-y,n[1]-1,wave[1]-y,color=linecolor)
+g=line.new(n-1-x,wave-y,n[1]-1-x,wave[1]-y,color=linecolor)
+h=line.new(n-x,wave,n[1]-x,wave[1],color=linecolor)
+
+linefill.new(a,a[1],color.new(topcolor,opac))
+linefill.new(b,b[1],color.new(bottomcolor,opac))
+linefill.new(c,c[1],color.new(rightcolor,opac))
+linefill.new(d,d[1],color.new(leftcolor,opac))
+
+line.delete(a[lb])
+line.delete(b[lb])
+line.delete(c[lb])
+line.delete(d[lb])
+line.delete(e[lb-1])
+line.delete(f[lb-1])
+line.delete(g[lb-1])
+line.delete(h[lb-1])
+````

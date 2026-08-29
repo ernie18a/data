@@ -1,0 +1,131 @@
+[    2.58s ->     7.00s] Hey YouTube, it's Roman. Today what I want to do is talk about market implied volatility. Now
+[    7.00s ->    13.82s] implied volatility is a very deep sea and it can get complicated very quickly, especially when you
+[   13.82s ->    19.84s] start to consider the relationship between the implied volatilities and a particular price. Is
+[   19.84s ->    24.44s] it a market price? Is it a model price? There's a lot going on. So what I want to do is I want to
+[   24.44s ->    31.86s] unpack the implied volatility surface in its most basic form and just give you a fundamental idea of
+[   31.86s ->    37.84s] what we're looking at. All right, let's get right into it. So what we have here is a very interesting
+[   37.84s ->    45.36s] problem space. We have an option contract that is of a European style payoff, meaning we can only
+[   45.36s ->    51.76s] exercise that expiration, and we want to figure out some theoretical value of this option. Okay,
+[   51.88s ->    57.12s] well in order to do that, first we need to come up with a model for the underlying equity. So in a
+[   57.12s ->    61.00s] Black-Scholes framework, we're going to assume that the underlying equity follows a geometric
+[   61.00s ->    67.60s] Brownian motion. So you can see this ds over s is essentially the return, mu dt is the expected
+[   67.60s ->    74.12s] return, and sigma dwt is the shock to that expected return. So if you haven't seen geometric
+[   74.12s ->    77.80s] Brownian motion before, I've made a bunch of videos on this in the past, you should go check those out
+[   77.80s ->    82.18s] and then come back if you want a deeper understanding of this framework. But it's not necessarily
+[   82.18s ->    88.12s] required to understand this notion of implied volatility. So in a Black-Scholes framework,
+[   88.12s ->    93.86s] we have this theoretical option price that's fundamentally based on the notion of the
+[   93.86s ->   100.08s] underlying equity following a geometric Brownian motion. So after developing and solving a stochastic
+[  100.08s ->   106.96s] differential equation, we end up with a closed form solution for a European option parameterized
+[  106.96s ->   116.38s] by the risk-free rate R, a strike price K, the spot price S, the time to maturity T, and the volatility
+[  116.38s ->   123.20s] sigma. Now when I say closed form pricing solution, I mean those five parameters, so a vector of R5
+[  123.20s ->   129.94s] gets mapped to a price in R1, and we essentially turn those five parameters into an option price.
+[  129.94s ->   136.46s] Now, let's take a closer look at these five parameters. We start with the risk-free rate. We
+[  136.46s ->   141.48s] have plenty of proxies in the market for a risk-free rate, so if we ever wanted to get a good value to
+[  141.48s ->   146.62s] plug into our pricing function, we could find it. What about the strike price? Well, that's predefined
+[  146.62s ->   152.22s] for whatever contract you're trying to come up with the price for. So again, you can define that as
+[  152.22s ->   158.46s] needed. The spot price, you can always just go to Yahoo Finance and get the value of any equity very easily.
+[  158.46s ->   163.46s] Just type in the ticker. It'll give you the value. The time to maturity, just like the strike price,
+[  163.52s ->   170.46s] is predefined for the particular option contract, so that's as needed. But then we have this sigma
+[  170.46s ->   177.06s] term, this volatility term. What about that sigma term? Well, that's not as clear, right? We can't
+[  177.06s ->   182.36s] just go on Yahoo Finance and type in a ticker and it's going to spit out the volatility that we're going
+[  182.36s ->   189.42s] to want. That's not how it works, right? We don't have this notion of a volatility to plug directly
+[  189.42s ->   195.78s] into a Black-Scholes pricing function. So let's kind of just review what we have so far. We have
+[  195.78s ->   202.58s] a function that can take five parameters, map it to a theoretical option price, but in reality,
+[  202.58s ->   209.54s] we only have four of those five parameters. So how can we come up with a price or how is this
+[  209.54s ->   216.44s] theoretical pricing function even helpful? Well, if you recall from economics, and I am by no means
+[  216.44s ->   222.20s] an economist, so please economists out there, forgive me for butchering this law of supply and
+[  222.20s ->   228.32s] demand idea here, but we know that the market is going to set a price for any good or service,
+[  228.70s ->   234.00s] right? So if you go out to Walmart and you want to buy a birdhouse for whatever reason,
+[  234.00s ->   239.74s] you can go and buy a birdhouse at the market price for the birdhouse. Very similarly, if you wanted to
+[  239.74s ->   246.68s] go out and buy an option that's expiring in one year with a underlying spot price of 100 and a
+[  246.68s ->   254.94s] strike price of 100 and a risk-free rate of say 0.1%, then you can go into the market and you can find
+[  254.94s ->   261.68s] an option that satisfies those particular specifications for that contract and there will be a price.
+[  261.68s ->   268.30s] There will be a market price for that option. And that's what I want to emphasize is in reality,
+[  268.30s ->   275.32s] the only parameters we have are those four, a proxy for a risk-free rate, a strike price,
+[  275.58s ->   286.12s] time to maturity, a spot price. And then we also have the market option price. So we have what we're
+[  286.12s ->   294.50s] trying to end up with mapping five to one where we only have four and then one, which already
+[  294.50s ->   303.04s] arbitrarily exists in the market. So this is, this is a major key takeaway is that there's a difference
+[  303.04s ->   309.84s] between a theoretical price and the market price. So the Black-Scholes framework is going to imply a
+[  309.84s ->   316.87s] theoretical price within that framework. And then the market for that same contract is going to provide
+[  316.87s ->   323.83s] a market price. To further hammer home this idea of the market being able to provide a price,
+[  324.39s ->   330.23s] I want to go ahead and go to Yahoo Finance. And I just pulled up Apple and I went over to options over
+[  330.23s ->   336.47s] here to take a look at the options chains. And if we scroll down here, we can see that we actually
+[  336.47s ->   343.25s] have the price of these options. This is the last price of this particular option contract right
+[  343.25s ->   349.99s] here. It was $54.25. They're usually traded in blocks of 100. So this would be a very expensive
+[  349.99s ->   356.51s] option. It's, it's deep in the money. So, you know, we, we're not going to get it very cheap, but
+[  356.51s ->   363.69s] we have this, this market price of an option. So, so hold on, let's take a look at what we have,
+[  363.69s ->   369.19s] right? Theoretically, if we wanted to come up with a theoretical price, right? We would need
+[  369.19s ->   374.65s] these five parameters, the risk-free rate, strike price, time to maturity, spot price, and then the
+[  374.65s ->   382.17s] volatility to map to a Black-Scholes price. But in the market, we have only four of those minus the
+[  382.17s ->   389.89s] volatility and we have a market price. So, so what's, what's going on here? Well, what we can
+[  389.89s ->   399.69s] actually do is we can use the Black-Scholes pricing function to back out a volatility that maps directly
+[  399.69s ->   409.89s] to the market price of the option. That volatility that we input as the fifth parameter into the pricing
+[  409.89s ->   418.15s] function that maps to the market price is called implied volatility. So jumping back to our Jupiter
+[  418.15s ->   423.91s] notebook, if we take a look at this chart, we can see implied volatility on the Z-axis and the strike
+[  423.91s ->   433.57s] and maturity on the X and Y-axis. And we can see that for a grid of vanilla options, the implied
+[  433.57s ->   440.29s] volatility is backed out using a Black-Scholes model. So I want to emphasize, this is another huge
+[  440.29s ->   446.71s] key takeaway besides the theoretical and market price being different. I want to emphasize that the
+[  446.71s ->   455.01s] volatility surface is always quoted in terms of Black-Scholes volatility. So there is, like I
+[  455.01s ->   461.27s] said earlier, there is no way to Google, right? Apple's volatility, right? We can't just get a
+[  461.27s ->   467.17s] volatility to plug into this pricing function and, and map to a theoretical price. There is no notion of
+[  467.17s ->   473.83s] this, but what there is a notion of is a Black-Scholes implied volatility, which takes the volatility and
+[  473.83s ->   479.87s] maps it to the current market price. And that's exactly what we have here. We have a surface of
+[  479.87s ->   487.29s] these volatilities that map perfectly to the market prices. All right. I think that's enough talking and
+[  487.29s ->   491.83s] it's time to actually see this in action. So we're going to go ahead and use the best quantitative
+[  491.83s ->   497.31s] finance Python library out there. I may be a little biased because it's mine, but we're going to go ahead
+[  497.31s ->   503.21s] and import Qfin and get started with seeing how we can actually back out the volatility for these
+[  503.21s ->   512.98s] particular options. So I'm going to say Qfin.options.BlackScholesCall. And then we can see that
+[  512.98s ->   519.60s] the Black-ScholesCall class is going to take the five parameters to come up with the theoretical price
+[  519.60s ->   524.22s] in a Black-Scholes framework. Now, what we can do to actually make this a little more tractable is take
+[  524.22s ->   529.72s] a look at the parameters that we do have in the market and then try to back out this notion of a Black-Scholes
+[  529.72s ->   535.00s] implied volatility. So let's go ahead and do this. I think it's a pretty fun exercise. So let's go back to our
+[  535.00s ->   542.34s] options chain for Apple and we can consider the current spot price for Apple, which is $145.38. We'll go down
+[  542.34s ->   550.88s] here. We'll say S is equal to $145.38. We'll say the time to maturity is, at the time that I'm recording this,
+[  550.88s ->   563.50s] it is six days until the 10th of June 2022. So I will say T is equal to six divided by 252. The strike price is going to be
+[  563.50s ->   572.46s] $145. So we're going to be considering this option, which is at the money. And the current risk-free rate, we can just say
+[  572.46s ->   581.02s] is negligible. So we can just say it's like 0.001 or something. So 0.001. Those are our four known market
+[  581.02s ->   590.08s] parameters. Now, what about the market option price? Well, we can see right here that it's $3. So I'm just
+[  590.08s ->   599.58s] going to go ahead here and put option price OP is equal to $3. So we have four of the five parameters
+[  599.58s ->   606.10s] and we have a market option price that we're trying to get to. So what we could do conceptually is take this
+[  606.10s ->   613.72s] black shows call class, we can plug in the market spot price, we can guess a volatility. So I'll just put in 10% for
+[  613.72s ->   620.76s] now, we can put in the strike price, we can look at the time to maturity, and we can also put in the risk free rate. And then we
+[  620.76s ->   627.66s] can print out the price of this option in this theoretical framework. Now, if you look, we have
+[  627.66s ->   636.88s] 1.0985. And the market price is three. What can we tinker with? Well, that is the implied volatility.
+[  637.08s ->   644.74s] That's what we're trying to find. We can maybe add a little 0.15, maybe add a little bit more. So now that's
+[  644.74s ->   650.72s] too high. So now we've got to go back down, maybe to 2.5. That's too low. So you can see what I'm
+[  650.72s ->   656.92s] getting at here. I'm essentially just guessing implied volatilities and trying to squeeze the
+[  656.92s ->   664.20s] difference between the true market price of three and the output of the theoretical price by the one
+[  664.20s ->   669.78s] degree of freedom that we have, which is this volatility parameter, this implied volatility by the
+[  669.78s ->   674.68s] market. Now, there is a better way to do this. And we're actually going to do this using SciPy.
+[  675.32s ->   681.14s] This idea of optimization is another huge concept in financial engineering. We're going to develop
+[  681.14s ->   685.56s] this cost function that we want to minimize. And that is the distance between the theoretical Black
+[  685.56s ->   691.76s] Scholes price and the observed market price. So I'm going to say def diff, and we're actually going
+[  691.76s ->   699.08s] to take volatility as a parameter to this function. Then we're going to return the numpy absolute value
+[  699.08s ->   708.42s] of the observed market price minus this theoretical Black Scholes price with whatever volatility we
+[  708.42s ->   718.34s] input into this function here. So I actually need to import numpy as mp. Now what I can do is,
+[  718.44s ->   723.46s] since this function is defined, I can call it with a sigma diff, and I'll just put in like 0.1,
+[  723.46s ->   729.96s] and that is going to return the absolute difference between the market option price and this theoretical
+[  729.96s ->   739.44s] option price for a given sigma. In this case, the distance is 1.90. Now to find the optimal volatility
+[  739.44s ->   744.90s] to plug in to minimize the distance, what we can do is we can use SciPy. So I'm going to say
+[  744.90s ->   755.53s] from SciPy.optimize import least squares. Now what I can do is I can just say least squares,
+[  755.85s ->   762.68s] and I can pass the difference function to it. And then I can pass an initial guess for volatility.
+[  762.68s ->   768.88s] You can use 0.1. And when we run this, we're actually going to minimize that function, and we're
+[  768.88s ->   776.26s] going to find the optimal parameter, the implied volatility for this particular option. And if you
+[  776.26s ->   785.82s] take a look here, and we actually print out the solution, we get 0.3137. So we get 31.38% implied
+[  785.82s ->   791.78s] volatility. Meaning if we go back to this original Black Scholes theoretical pricing function,
+[  791.78s ->   806.05s] and we plug in this 0.3137.759 to our sigma, then we get a 2.99999999. And if we cheat and we do
+[  806.05s ->   816.41s] mp.round, and we round to five decimal places, we get our perfect market option price of three. So we
+[  816.41s ->   824.13s] have successfully found the market implied volatility of approximately 31.38%. If we go
+[  824.13s ->   831.37s] back to our option chain, and we look, that is pretty darned close to the 36.23%. It's all going
+[  831.37s ->   838.11s] to depend on the rest of these parameters that you are kind of playing around with. Thank you so much
+[  838.11s ->   844.55s] for watching. I hope you enjoyed. I hope this kind of solidifies the idea of what implied volatility is.
+[  844.55s ->   848.97s] You know, when we look at an implied volatility surface, we are essentially looking at the
+[  848.97s ->   856.69s] collection of the Black Scholes volatilities that create the market prices. And in order to do that,
+[  856.75s ->   862.65s] we did that together down here numerically in Python. So whenever you look at an implied volatility
+[  862.65s ->   867.81s] surface, that is essentially what you are looking at. So once again, thank you so much for watching.
+[  867.89s ->   872.05s] If you have any questions, please leave them in the comments below. If you have any, you know,
+[  872.05s ->   878.67s] requests or suggestions for future videos, you know, feel free to leave them again below or shoot me an
+[  878.67s ->   884.51s] email. I'm happy to answer any more specific questions there as well. We are hard at work
+[  884.51s ->   891.83s] on our first course here, Introduction to Python, heavily oriented towards application. So stay tuned
+[  891.83s ->   898.47s] for that. That's coming out in June. We are very excited to release our first course. So yeah,
+[  898.47s ->   901.81s] thank you so much again, and I will see you in the next one.

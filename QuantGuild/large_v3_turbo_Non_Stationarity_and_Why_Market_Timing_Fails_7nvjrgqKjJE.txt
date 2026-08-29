@@ -1,0 +1,652 @@
+[    0.46s ->     6.18s] Hey guys, Roman here, quantitative researcher and trader, founder of QuantGuild.
+[    6.38s ->    12.52s] You may have heard it before, the old adage that time in beats timing the market.
+[   12.92s ->    20.74s] Why is this the case and what role does stationarity and non-stationarity play in this old wisdom?
+[   20.90s ->    23.40s] Well, that's exactly what we are going to discuss today.
+[   23.50s ->    28.52s] We're going to talk about the idea of generating wealth in the face of randomness.
+[   28.52s ->    33.74s] Then we're going to pivot and talk about this idea of stationarity and non-stationarity,
+[   33.84s ->    38.92s] how this disrupts that idea of what every trader is trying to do statistically.
+[   39.50s ->    44.22s] And then we will extend to this notion of market timing and regimes.
+[   44.50s ->    49.06s] Though you may not have access to the regime that you are trading or investing in,
+[   49.40s ->    54.18s] you will always have access to my Jupyter notebooks anytime I release a new QuantGuild video.
+[   54.32s ->    56.68s] This Jupyter notebook will be linked in the description below.
+[   56.68s ->    59.16s] I'll also post it to the QuantGuild library on GitHub,
+[   59.62s ->    62.96s] where you can find all of my Jupyter notebooks and associated YouTube videos,
+[   63.30s ->    66.08s] along with all of the source code for my Quant builds.
+[   66.26s ->    69.30s] At the top of this Jupyter notebook, you'll notice some related QuantGuild videos,
+[   69.40s ->    73.06s] applying probability and statistics to finance and trading.
+[   73.16s ->    77.98s] This idea of time series analysis, retail versus institutional trading, trading versus investing.
+[   78.42s ->    83.88s] This idea of expected value and accumulating expected value over a series of trades over time.
+[   84.28s ->    86.00s] Quant versus discretionary trading.
+[   86.00s ->    91.54s] And of course, busting three trading myths that these trading gurus love to propagate.
+[   91.72s ->    94.04s] If you're unfamiliar with any of these ideas,
+[   94.10s ->    99.68s] I highly recommend you check these videos out first before tackling one like this.
+[   99.78s ->   102.22s] Moreover, these videos certainly take a lot of effort to create.
+[  102.32s ->   106.16s] So if you'd like to help support the channel so I can continue to create videos just like this one,
+[  106.22s ->   107.80s] please like, comment, subscribe, share.
+[  107.94s ->   109.44s] It helps me out tremendously.
+[  109.44s ->   110.98s] It is always greatly appreciated.
+[  110.98s ->   116.92s] And if you'd like to master your quantitative skills for trading and market making roles,
+[  117.04s ->   118.98s] check out QuantGuild.com.
+[  119.08s ->   122.30s] Maybe you come from a background in business, economics, computer science,
+[  122.30s ->   125.48s] and aren't too sure where to get started on your Quant journey.
+[  125.60s ->   130.48s] Maybe you're an aspiring Quant or a working professional looking to sharpen those technical skills
+[  130.48s ->   132.80s] or pivot into the Quant space.
+[  132.90s ->   135.20s] In any case, QuantGuild is for you.
+[  135.28s ->   138.78s] We have over 90 Quant lessons in math, probability, finance,
+[  139.12s ->   142.96s] an adaptive practice engine that scales with your skill level
+[  142.96s ->   148.30s] so you can progress to more and more difficult topics with gamified rank-based progress.
+[  148.30s ->   155.14s] Over 100 hours of Quant lecture content, structured courses,
+[  155.74s ->   160.12s] topics that you would find in a master's in financial engineering program,
+[  160.40s ->   163.34s] but for a fraction of the price.
+[  164.00s ->   168.30s] So if you'd like to help support the channel and master your quantitative skills
+[  168.30s ->   173.30s] for trading and market making roles, check out QuantGuild.com.
+[  173.36s ->   177.36s] Without further ado, let's get started by talking about the purpose of probability
+[  177.36s ->   180.64s] and statistics for trading and investing.
+[  181.26s ->   186.98s] At a high level, our objective is to impose a framework for modeling uncertainty.
+[  187.60s ->   190.26s] Nobody knows what's going to happen.
+[  190.90s ->   193.56s] Nobody knows what the outcome of a dice roll is going to be.
+[  194.04s ->   199.28s] Nobody knows if the market's going to get rug pulled next month, this year, in 5, 10 years.
+[  199.40s ->   201.44s] Nobody has any idea.
+[  202.12s ->   206.44s] Probability and statistics offers a framework for evaluating
+[  206.44s ->   207.74s] this uncertainty.
+[  208.38s ->   213.24s] How likely is it in the next month, year, 5 years, 10 years,
+[  213.34s ->   215.44s] is it to observe that behavior?
+[  215.60s ->   218.52s] Now, obviously, we don't have the true dynamics.
+[  218.76s ->   223.02s] We don't actually know what the probability of those particular events
+[  223.02s ->   226.80s] or that particular rug pull event is going to be.
+[  227.04s ->   229.10s] So what do we typically do?
+[  229.20s ->   232.56s] Typically, we model it based on historic data.
+[  232.56s ->   234.50s] But we've all heard it before.
+[  234.76s ->   238.36s] Past performance isn't indicative of future performance.
+[  238.62s ->   240.40s] So what's going on here?
+[  240.54s ->   246.10s] In an academic setting in university, very rarely do we tackle this issue head on.
+[  246.22s ->   250.84s] Professors will have you walk through the exercise of pulling data from a Bloomberg terminal.
+[  251.34s ->   253.60s] Maybe they'll give you a parametric model and they'll say,
+[  253.60s ->   260.14s] hey, fit this model to that data and then you'll assess your risk or develop some sort of forecast.
+[  260.30s ->   264.36s] But they don't discuss the impact of non-stationarity on that forecast.
+[  264.54s ->   268.94s] If you've ever taken a time series class, on day one, I guarantee you,
+[  268.98s ->   271.02s] the professor says something along the lines of,
+[  271.56s ->   276.82s] for the purposes of this class, we're going to assume that every time series is stationary.
+[  277.04s ->   278.80s] That's not the real world.
+[  278.80s ->   281.24s] So what's going on here?
+[  281.64s ->   286.14s] How can we better understand this academic assumption in the context of the real world?
+[  286.26s ->   289.82s] Well, in reality, we don't know what's going to happen.
+[  290.20s ->   292.52s] But we don't need to predict what's going to happen.
+[  292.64s ->   298.12s] We just need to be correct, roughly on average, to be able to generate wealth.
+[  298.30s ->   303.16s] This is in the context of trading, market making, and even investing.
+[  303.58s ->   307.28s] So what we're going to do here is we're going to start in a very simple world.
+[  307.28s ->   310.16s] We're going to talk about a dice roll market.
+[  310.60s ->   314.84s] And then we're going to gradually scale out of this classroom into the real world
+[  314.84s ->   318.54s] and talk about why we don't need to be perfectly correct
+[  318.54s ->   325.64s] when we use probability and statistics to inform our decision making to accumulate wealth.
+[  325.78s ->   328.94s] In this example here, we're making a market on a dice.
+[  329.08s ->   330.94s] Now, a dice is just a random variable.
+[  331.12s ->   334.96s] It's fully specified by its probability mass function, distribution function,
+[  334.96s ->   337.26s] characteristic function, moment generating function.
+[  337.64s ->   340.66s] There are plenty of transformations you can apply to this mass function
+[  340.66s ->   343.30s] to get a whole bunch of different mathematical objects.
+[  343.42s ->   346.00s] But in any case, the randomness is well defined.
+[  346.44s ->   350.62s] We know that the probability of landing on a 1, 2, 3, 4, 5, and 6 is just 1 sixth
+[  350.62s ->   351.86s] with equal probability.
+[  352.34s ->   355.58s] And there's going to be zero probability mass everywhere else.
+[  356.06s ->   360.18s] We can never predict the outcome of this dice roll.
+[  360.18s ->   362.68s] There's nothing that we can do to predict it.
+[  362.68s ->   366.58s] But we don't need to in order to accumulate wealth.
+[  367.16s ->   370.28s] Now, if we can't predict it, what is our best guess?
+[  370.72s ->   374.72s] Well, it turns out if you solve the minimization problem using calculus,
+[  375.10s ->   380.94s] the best guess for our dice roll is going to be the expected value, 3.5.
+[  380.94s ->   387.68s] So if we know that 3.5 is our best guess, how can we use that statistic,
+[  388.00s ->   391.02s] that population mean, to generate wealth?
+[  391.26s ->   396.74s] Well, I have a great animation here for you to really understand what's going on.
+[  396.90s ->   402.16s] I am going to effectively treat 3.5 as the best guess,
+[  402.38s ->   409.68s] and I'm only going to take long positions if the transaction is available below 3.5.
+[  409.68s ->   416.10s] I'm only going to take short positions if the transaction is available above 3.5.
+[  416.20s ->   419.22s] This is exactly what it looks like to make a market.
+[  419.46s ->   423.28s] You have your fair value, and then you have some spread around that.
+[  423.36s ->   426.80s] And your goal as a market maker is to accumulate that spread.
+[  426.92s ->   430.34s] So here, we know what the theoretical expected value is.
+[  430.48s ->   434.60s] We're going to be trying to accumulate this wealth over a series of trades.
+[  434.78s ->   436.80s] And that's exactly what you see here.
+[  436.80s ->   439.36s] The outcome is entirely random.
+[  439.68s ->   441.14s] But look at our equity curve.
+[  441.58s ->   446.86s] We're accumulating wealth as we continue to trade based on that simple rule.
+[  447.32s ->   449.78s] That's because we know what the best guess is.
+[  450.10s ->   452.18s] The best guess is 3.5.
+[  452.32s ->   455.98s] We're only going to transact about that spread.
+[  456.12s ->   460.76s] If we can't buy theoretically low and sell theoretically high,
+[  460.92s ->   463.56s] we're not going to transact at all.
+[  463.56s ->   467.94s] This logic holds for a general trading strategy and investing.
+[  468.26s ->   472.42s] If you don't have an edge, why are you trading that strategy?
+[  472.42s ->   477.40s] And why are you investing in that instrument or non-security?
+[  477.72s ->   479.66s] It doesn't make any sense.
+[  479.72s ->   480.84s] It's suboptimal.
+[  480.84s ->   486.02s] Now, in this example here, we are operating in a classroom setting.
+[  486.02s ->   490.88s] What that means is every single state of the world, 1 through 6, is known.
+[  491.44s ->   494.76s] And the probability of each state of the world is also known.
+[  494.86s ->   495.58s] It's 1 sixth.
+[  496.22s ->   502.42s] Moreover, our best guess, our expectation, our mean, our average is also known.
+[  502.42s ->   508.62s] We need the true probabilities to develop the best guess.
+[  509.12s ->   511.64s] So everything here is known.
+[  512.34s ->   512.70s] Okay.
+[  513.18s ->   514.82s] Well, what if it's not?
+[  514.98s ->   517.92s] Clearly in the real world, we're not going to have this information.
+[  518.64s ->   524.74s] Well, if we don't know the distribution, but we do keep rolling the same dice,
+[  524.98s ->   530.74s] then we can use the law of large numbers to approximate the best guess.
+[  530.74s ->   537.20s] Effectively, what I mean is, assuming we didn't know what the true probability mass function was,
+[  537.24s ->   541.18s] we didn't know what the probability of each state of the world was going to be,
+[  541.52s ->   547.08s] then we could actually approximate this best guess by just observing more data.
+[  547.48s ->   554.92s] So what we're going to do here in this animation is we're going to observe, let's say, 50 dice rolls.
+[  554.92s ->   558.86s] We're going to approximate the best guess, the expectation,
+[  558.86s ->   561.98s] and that's what we're going to use to trade.
+[  562.20s ->   564.82s] So this is starting to become closer to reality.
+[  564.82s ->   567.56s] We don't have the true probability mass function.
+[  567.64s ->   568.80s] We don't know the true dynamic.
+[  568.80s ->   570.60s] So let's observe data.
+[  570.70s ->   572.86s] Then we're going to estimate that best guess.
+[  573.04s ->   574.94s] That's what we're going to use to trade.
+[  575.12s ->   577.18s] So as you can see here, I'm observing data,
+[  577.18s ->   579.46s] and this is the mean that I observe.
+[  579.64s ->   581.04s] Then I go about what?
+[  581.04s ->   588.62s] I go about trading with the estimated mean with only 50 dice rolls and look at my equity curve.
+[  589.26s ->   590.94s] It's not doing so great.
+[  591.74s ->   595.06s] Well, this could be for one of a variety of different reasons.
+[  595.18s ->   597.80s] Well, in this case, we're rolling the same dice.
+[  597.92s ->   600.80s] We just haven't observed enough data yet.
+[  600.94s ->   603.26s] Take a look at our best guess.
+[  603.26s ->   608.42s] It's starting to get closer to 3.5, but right now it's around 3.66.
+[  608.94s ->   613.00s] So we're not actually accumulating an edge if the theoretical value,
+[  613.06s ->   617.56s] the theoretical value, the best guess, is actually 3.5.
+[  618.06s ->   619.48s] So what should we do?
+[  619.54s ->   622.52s] Well, the law of large numbers suggests asymptotic convergence.
+[  623.10s ->   624.92s] We should just observe more data.
+[  625.20s ->   628.52s] If we observe more data, observe more dice rolls,
+[  628.94s ->   632.42s] then our best guess is going to become more and more accurate.
+[  632.42s ->   634.40s] Makes sense to me.
+[  634.76s ->   636.02s] So let's go ahead and do that.
+[  636.32s ->   640.80s] Instead of just observing 50 rolls, let's observe significantly more.
+[  641.24s ->   646.20s] And what you're going to find is that expectation is going to become closer and closer to
+[  646.20s ->   650.34s] the theoretical best guess thanks to the law of large numbers.
+[  650.40s ->   652.50s] And take a look at what happens to our equity curve.
+[  653.16s ->   656.12s] It is now on a positive trend.
+[  657.53s ->   661.65s] This is exactly what the law of large numbers offers.
+[  661.65s ->   667.35s] If we have a series of random variables from the same distribution,
+[  667.35s ->   671.61s] then we're going to be able to approximate the expectation,
+[  672.21s ->   675.47s] the best guess, just like we had up here,
+[  675.99s ->   679.11s] when we actually knew what it was,
+[  679.13s ->   681.09s] when we had the probability mass function,
+[  681.41s ->   683.57s] but exclusively from data.
+[  683.57s ->   689.63s] We didn't need to know what the probability mass function was here or even here.
+[  689.87s ->   694.39s] We're just going to take the average of the data that we observe,
+[  694.71s ->   696.91s] and we're going to treat that as our best guess.
+[  697.01s ->   702.73s] The law of large numbers is going to guarantee that that converges to the theoretical best guess.
+[  702.83s ->   703.93s] And as you've observed here,
+[  704.27s ->   708.13s] when we observe not an insufficient amount of data,
+[  708.13s ->   709.73s] but a sufficient amount of data,
+[  709.73s ->   713.69s] then we're actually going to be doing pretty well in accumulating wealth,
+[  713.81s ->   717.13s] even when the outcome is entirely random.
+[  717.51s ->   720.27s] In the academic or classroom sense,
+[  720.47s ->   726.71s] this also holds for our trading strategies and our investment decisions.
+[  726.95s ->   728.05s] In other words,
+[  728.09s ->   733.12s] if we don't have access to the probability mass function,
+[  733.12s ->   734.04s] density function,
+[  734.14s ->   739.04s] the joint distributions required to produce the best guess,
+[  739.52s ->   745.58s] then we can just observe a whole bunch of data and we'll be able to approximate it.
+[  746.12s ->   752.52s] And if we've observed sufficient data and we understand what the best guess actually is,
+[  752.70s ->   754.92s] we'll be able to accumulate wealth,
+[  755.16s ->   757.58s] even if the outcome is entirely random.
+[  757.58s ->   759.58s] But like I just said,
+[  759.86s ->   763.00s] that only holds in the classroom sense.
+[  763.12s ->   765.50s] There's an elephant in the room.
+[  765.62s ->   771.76s] And that elephant is the notion of stationarity and non-stationarity.
+[  772.02s ->   775.04s] I get this comment all the time,
+[  775.10s ->   776.44s] whether it's on YouTube,
+[  776.88s ->   780.92s] whether it's on another social platform or in my discord,
+[  781.30s ->   786.94s] how do we take something that's non-stationary and make it stationary?
+[  786.94s ->   794.54s] That is probably a byproduct of academia's explanation of stationarity.
+[  794.54s ->   799.16s] And it is profound how many,
+[  799.32s ->   803.28s] even professionals don't entirely understand this idea.
+[  803.48s ->   808.22s] You can't make something that is non-stationary, stationary.
+[  808.68s ->   810.16s] In reality,
+[  810.16s ->   813.78s] we're not dealing with a distribution like a dice roll.
+[  813.78s ->   817.42s] What we're doing is we're treating an uncertain outcome.
+[  817.42s ->   823.16s] You can think of Apple stock return tomorrow as a random variable,
+[  823.16s ->   824.06s] but it's not.
+[  824.20s ->   830.68s] It's just the composite of an unfathomable amount of deterministic decisions.
+[  830.68s ->   833.46s] And maybe even some stochastic components,
+[  833.46s ->   835.82s] depending on how philosophical you want to get.
+[  836.26s ->   839.20s] But we can't model all of those.
+[  839.34s ->   844.12s] So the best that we have is to treat a lot of the variation as noise
+[  844.12s ->   848.76s] and come up with different models to explain as much of the variation as possible.
+[  849.46s ->   853.54s] This is why you can't make something that's non-stationary stationary.
+[  853.54s ->   859.52s] It is not a random variable that you can just tinker with functionally
+[  859.52s ->   863.68s] to impose some classroom assumption.
+[  864.42s ->   866.96s] That's not at all what we're dealing with in the real world.
+[  867.06s ->   868.10s] We're dealing with reality.
+[  868.82s ->   870.20s] Anything can happen.
+[  870.40s ->   873.30s] And nobody knows what that's going to be.
+[  873.68s ->   874.86s] Because like I said,
+[  875.26s ->   878.84s] there are way too many inputs to actually model.
+[  878.84s ->   883.38s] This is also why stationarity tests are largely nonsense.
+[  883.54s ->   888.26s] If you observe real-world data and you conduct a stationarity test,
+[  888.68s ->   892.10s] yeah, it may appear stationary for that sample.
+[  892.54s ->   897.42s] But when there's a massive regime change and everything's different,
+[  897.94s ->   901.30s] then yeah, you're seeing the effect of non-stationarity.
+[  901.46s ->   907.32s] So in reality, a stationarity test on real-world data is just ridiculous
+[  907.32s ->   909.92s] because you know it's not stationary.
+[  910.52s ->   913.22s] What we really care about is the notion of stability.
+[  913.54s ->   915.20s] There's a very big difference.
+[  915.74s ->   919.30s] We're looking for trading strategies, investment strategies,
+[  919.46s ->   923.54s] market-making strategies that are reasonably stable over time.
+[  923.60s ->   928.18s] That is, the distribution isn't just going to break across regimes,
+[  928.18s ->   933.34s] different perturbations of the parameter space, so on and so forth.
+[  933.68s ->   936.32s] Stability is what we look for in the real world,
+[  936.68s ->   937.90s] not stationarity.
+[  937.90s ->   940.48s] Stationarity is a simplifying classroom assumption.
+[  941.06s ->   945.26s] Non-stationarity is what we always deal with in practice.
+[  945.82s ->   946.22s] All right?
+[  946.38s ->   949.58s] So what does this actually look like?
+[  949.74s ->   953.68s] What is the impact of non-stationarity
+[  953.68s ->   957.98s] on our market-making, trading, and investment strategies?
+[  958.30s ->   960.48s] I have a fantastic animation here
+[  960.48s ->   963.50s] that's going to take another step out of the classroom
+[  963.50s ->   965.42s] based on what we've already seen.
+[  965.56s ->   967.70s] What I'm doing here is I'm observing data.
+[  967.80s ->   969.78s] We don't have the true probability mass function,
+[  969.90s ->   971.70s] so I'm going to estimate our best guess
+[  971.70s ->   974.30s] for making a market based on the data I observe.
+[  974.60s ->   975.68s] That's what I have here.
+[  975.74s ->   976.74s] I start making a market.
+[  976.84s ->   978.08s] I'm doing reasonably well.
+[  978.08s ->   979.58s] But what happens?
+[  979.88s ->   983.46s] After quite some time, the distribution changes,
+[  983.68s ->   986.56s] and we're no longer dealing with a six-sided dice.
+[  986.78s ->   988.56s] We're dealing with a 10-sided dice,
+[  988.64s ->   990.84s] and we're still making a market for a six-sided dice.
+[  991.95s ->   996.45s] Well, what happens if I don't adapt to this new distribution?
+[  997.44s ->   999.60s] I'm going to lose an incredible amount of money
+[  999.60s ->  1002.94s] because my best guess has changed,
+[ 1003.14s ->  1008.08s] and this idea of non-stationarity distributions changing over time
+[ 1008.08s ->  1011.58s] is going to hold now for not just market making,
+[ 1011.68s ->  1014.54s] but trading strategy development and investment strategies
+[ 1014.54s ->  1018.84s] because if you don't adapt to new distributions,
+[ 1018.84s ->  1022.36s] you are going to be operating with older stale information,
+[ 1022.36s ->  1024.34s] and this is what it's going to look like
+[ 1024.34s ->  1025.86s] in the context of your equity curve.
+[ 1025.98s ->  1027.52s] If you've ever run a back test,
+[ 1027.52s ->  1030.40s] you'll see a trading strategy might work for a little while,
+[ 1030.54s ->  1032.96s] then it stops working, and then it works again.
+[ 1034.10s ->  1035.88s] That's a consequence of non-stationarity.
+[ 1035.88s ->  1038.58s] You have no idea what regime it worked in.
+[ 1038.90s ->  1040.88s] You have no idea what regime it doesn't work in.
+[ 1041.16s ->  1044.00s] These are all components of, and a byproduct of,
+[ 1044.34s ->  1046.54s] modeling the real world.
+[ 1046.70s ->  1049.52s] If this is the case, why is it so difficult to model?
+[ 1049.66s ->  1052.54s] Clearly, we should just move from a six-sided dice
+[ 1052.54s ->  1054.36s] to a 10-sided dice.
+[ 1054.48s ->  1057.42s] Well, what I've done here is I've taken a single step
+[ 1057.42s ->  1060.18s] out of the classroom through each of these examples,
+[ 1060.18s ->  1063.54s] and we went from knowing the best guess
+[ 1063.54s ->  1066.36s] to approximating the best guess
+[ 1066.36s ->  1069.26s] to now approximating the best guess
+[ 1069.26s ->  1071.04s] when there's a regime change,
+[ 1071.08s ->  1072.62s] and we see the issue here, right?
+[ 1072.70s ->  1074.38s] So why don't we just go ahead
+[ 1074.38s ->  1076.72s] and approximate the best guess again
+[ 1076.72s ->  1078.74s] after the regime change?
+[ 1078.78s ->  1080.50s] We go from blue to green.
+[ 1081.31s ->  1084.27s] This is where things get tricky.
+[ 1084.27s ->  1088.75s] We have no idea when the regime is changing.
+[ 1089.65s ->  1093.43s] When should we update our best guess?
+[ 1093.89s ->  1096.13s] How much data should we use?
+[ 1096.55s ->  1099.55s] What this looks like for us is just a series,
+[ 1100.03s ->  1102.21s] like this, of different returns.
+[ 1102.79s ->  1106.05s] This is effectively going to be the six-sided dice
+[ 1106.05s ->  1108.21s] or the 10-sided dice.
+[ 1108.21s ->  1110.93s] Do we know when it changes
+[ 1110.93s ->  1113.59s] from a six-sided dice to a 10-sided dice?
+[ 1114.27s ->  1117.07s] Well, it's a little easier here because what?
+[ 1117.27s ->  1119.73s] We know a six-sided die can't roll 10,
+[ 1119.99s ->  1121.85s] but what about when we roll a five?
+[ 1122.63s ->  1124.51s] Did that come from a six-sided dice
+[ 1124.51s ->  1125.67s] or a 10-sided dice?
+[ 1126.51s ->  1128.53s] Here, you're seeing the true dice roll,
+[ 1128.91s ->  1131.67s] what produced the value on this series above,
+[ 1131.93s ->  1135.33s] but in reality, we have no idea what it is.
+[ 1135.33s ->  1139.35s] So you can see even here, we roll a five and a five.
+[ 1139.51s ->  1140.93s] This came from a six-sided dice
+[ 1140.93s ->  1144.11s] and this five came from a 10-sided dice.
+[ 1144.19s ->  1147.05s] You would have no idea which to use.
+[ 1147.51s ->  1151.53s] This is why it's a difficult modeling problem.
+[ 1152.19s ->  1155.87s] This is how non-stationarity impacts
+[ 1155.87s ->  1158.77s] our modeling assumptions and decisions
+[ 1158.77s ->  1162.53s] and optimal decision-making in the face of uncertainty.
+[ 1163.01s ->  1164.47s] What model should we select?
+[ 1164.47s ->  1167.51s] What parameterization is arbitrarily good
+[ 1167.51s ->  1170.15s] for dealing with the current environment?
+[ 1170.57s ->  1172.41s] This is why it's a difficult problem
+[ 1172.41s ->  1176.13s] and effectively why we all still have jobs.
+[ 1176.29s ->  1179.41s] We need to constantly develop new models,
+[ 1179.83s ->  1182.59s] new parameterizations to make optimal decisions
+[ 1182.59s ->  1184.89s] under uncertainty today.
+[ 1185.57s ->  1188.17s] There is no one model that you can create,
+[ 1188.27s ->  1191.23s] no one parameterization that you can fix
+[ 1191.23s ->  1195.07s] to get away with optimal decision-making indefinitely.
+[ 1195.07s ->  1197.37s] The space is always changing.
+[ 1197.87s ->  1199.07s] It's non-stationary.
+[ 1199.51s ->  1202.45s] And that is the reality of modeling the real world.
+[ 1202.83s ->  1206.85s] Understanding this, we're ready to approach real data.
+[ 1207.17s ->  1210.41s] And we're ready to correct one of the,
+[ 1210.41s ->  1214.07s] I would say, more violent academic exercises
+[ 1214.07s ->  1216.61s] that finance professors will have you do
+[ 1216.61s ->  1219.63s] in the classroom now understanding this notion
+[ 1219.63s ->  1220.75s] of non-stationarity.
+[ 1220.75s ->  1223.51s] So what I've done is effectively that exercise
+[ 1223.51s ->  1225.95s] that I had mentioned earlier.
+[ 1226.17s ->  1226.99s] My professor told me,
+[ 1227.07s ->  1230.37s] hey, go get this data from say interactive brokers.
+[ 1230.53s ->  1233.59s] We're going to get SPY ETF return data
+[ 1233.59s ->  1236.21s] and we're going to plot it as a histogram.
+[ 1236.45s ->  1237.89s] That's what you're going to see here.
+[ 1238.23s ->  1240.33s] He gave me a parametric model.
+[ 1240.41s ->  1242.35s] He said, parameterize this model
+[ 1242.35s ->  1244.17s] using that historic data.
+[ 1244.17s ->  1247.21s] So I did, I have my normal distribution here
+[ 1247.21s ->  1250.03s] as a yellow dashed distribution.
+[ 1250.39s ->  1253.81s] And I'm going to observe the probability
+[ 1253.81s ->  1257.49s] of a three sigma event in my left tail,
+[ 1257.59s ->  1261.91s] the probability effectively of a massive negative return.
+[ 1262.83s ->  1266.05s] And what you'll notice here is if I go out into the tail,
+[ 1266.23s ->  1269.49s] you're going to see my yellow dash distribution.
+[ 1269.49s ->  1270.79s] That's my professor's model.
+[ 1270.79s ->  1273.93s] And it is going to dramatically underestimate
+[ 1273.93s ->  1278.65s] the risk of that crash relative to even this KDE fit
+[ 1278.65s ->  1281.55s] of the empirical data.
+[ 1281.95s ->  1285.13s] That is due to excess kurtosis.
+[ 1285.61s ->  1287.91s] Excess kurtosis means fat tails.
+[ 1288.45s ->  1290.99s] The probability of extremes on the downside
+[ 1290.99s ->  1294.21s] and on the upside are larger
+[ 1294.21s ->  1297.29s] than a normal distribution would imply.
+[ 1297.95s ->  1300.33s] What is this a consequence of?
+[ 1300.33s ->  1302.27s] Well, based on everything we've talked about
+[ 1302.27s ->  1303.45s] in this video so far,
+[ 1303.89s ->  1306.37s] you should likely just guess non-stationarity.
+[ 1306.51s ->  1308.67s] And if you did, you would be correct.
+[ 1309.09s ->  1312.75s] The problem is when we look at this type of distribution,
+[ 1313.11s ->  1315.87s] what we're actually doing is compressing,
+[ 1316.15s ->  1319.31s] again, an unfathomable amount of information
+[ 1319.31s ->  1324.51s] into a 2D chart that doesn't even incorporate time.
+[ 1325.15s ->  1327.89s] This compression is not representing
+[ 1327.89s ->  1331.89s] the true population data generating distribution over time.
+[ 1332.11s ->  1334.47s] We have no idea what that looks like.
+[ 1334.53s ->  1337.99s] And in fact, it is subject to change.
+[ 1338.19s ->  1340.15s] So what I have here is just a proposition
+[ 1340.15s ->  1344.39s] for what it may look like over time over different regimes.
+[ 1344.39s ->  1346.07s] I have a low VUL regime,
+[ 1346.45s ->  1347.71s] a medium VUL regime,
+[ 1347.71s ->  1349.39s] and a high VUL regime.
+[ 1349.39s ->  1351.21s] And what you're observing here
+[ 1351.21s ->  1354.91s] is how these time variant distributions
+[ 1354.91s ->  1359.07s] are going to contribute to the actual returns
+[ 1359.07s ->  1362.69s] that we compress into just a histogram.
+[ 1362.69s ->  1366.63s] This is probably the most important idea
+[ 1366.63s ->  1368.95s] to correct from the classroom
+[ 1368.95s ->  1371.97s] because nine out of 10 times,
+[ 1371.97s ->  1373.69s] you're just going to be visualizing
+[ 1373.69s ->  1374.77s] this return distribution,
+[ 1374.77s ->  1377.79s] and you're just going to be treating these tails
+[ 1377.79s ->  1379.81s] as a static compression.
+[ 1380.51s ->  1382.35s] But in reality, it's dynamic.
+[ 1383.29s ->  1387.69s] And if you can model when you are under different regimes,
+[ 1387.93s ->  1391.63s] you are going to be getting more accurate probabilities
+[ 1391.63s ->  1395.65s] and statistics to make your decisions with.
+[ 1395.65s ->  1399.13s] And that is the whole purpose of probability
+[ 1399.13s ->  1400.77s] and statistics in the real world,
+[ 1400.89s ->  1402.49s] to make informed decisions.
+[ 1402.65s ->  1405.07s] But your informed decisions are only as good
+[ 1405.07s ->  1408.19s] as your models, your parameterizations,
+[ 1408.57s ->  1410.79s] and your interpretations.
+[ 1411.19s ->  1413.67s] We've effectively left the classroom altogether now.
+[ 1413.75s ->  1415.59s] We're talking about real world data here.
+[ 1415.75s ->  1418.03s] And I think it's important to understand still
+[ 1418.03s ->  1420.81s] that these distributions are just a model.
+[ 1420.81s ->  1422.23s] They don't actually represent
+[ 1422.23s ->  1423.71s] what's generating the data.
+[ 1424.23s ->  1426.53s] Remember, that comes from an unfathomable,
+[ 1426.97s ->  1429.47s] uncountable number of decisions
+[ 1429.47s ->  1431.93s] that produce the actual return
+[ 1431.93s ->  1433.27s] that we see in the market.
+[ 1433.27s ->  1436.23s] That comes from not just the market trading,
+[ 1436.45s ->  1438.89s] but also the operations of the company,
+[ 1439.27s ->  1441.17s] macro factors, political factors,
+[ 1441.55s ->  1443.67s] all of that simply compressed into what?
+[ 1444.15s ->  1445.75s] A little bar on this chart.
+[ 1446.13s ->  1448.63s] So anytime we develop regime-based models,
+[ 1448.63s ->  1451.09s] time variant models, just keep that in mind.
+[ 1451.43s ->  1453.45s] We're trying to develop a framework
+[ 1453.45s ->  1456.05s] for modeling that uncertainty.
+[ 1456.79s ->  1459.01s] And certainly understanding this notion
+[ 1459.01s ->  1461.63s] of non-stationarity is going to allow us
+[ 1461.63s ->  1462.93s] to develop better models,
+[ 1463.29s ->  1465.71s] come up with better probabilities and statistics,
+[ 1465.95s ->  1469.59s] and that is going to inform better decision-making
+[ 1469.59s ->  1472.23s] in the face of uncertainty.
+[ 1472.23s ->  1475.53s] So hopefully now it's clear
+[ 1475.53s ->  1478.83s] why market timing is difficult.
+[ 1479.07s ->  1481.39s] If our objective is to model
+[ 1481.39s ->  1484.03s] in the best possible capacity,
+[ 1484.57s ->  1486.99s] the population data generating distribution,
+[ 1487.83s ->  1489.05s] when does it change?
+[ 1489.59s ->  1491.43s] What I have here is the same animation
+[ 1491.43s ->  1492.93s] that you saw earlier
+[ 1492.93s ->  1496.75s] with the dice rolls going from a D6 to a D10,
+[ 1496.75s ->  1499.23s] but now with returns.
+[ 1499.89s ->  1501.71s] This is what we actually see
+[ 1501.71s ->  1504.17s] as the return time series.
+[ 1504.83s ->  1507.81s] But we don't know what the population
+[ 1507.81s ->  1510.69s] data generating distribution state currently is.
+[ 1511.17s ->  1515.11s] Is it in a high state, a medium state, a low state?
+[ 1515.37s ->  1516.09s] Is it trending?
+[ 1516.29s ->  1516.99s] Is it reverting?
+[ 1517.57s ->  1519.41s] We have no idea.
+[ 1520.01s ->  1523.47s] Is it more likely to go from a high to mid state
+[ 1523.47s ->  1524.75s] or a high to low state?
+[ 1524.75s ->  1528.95s] This gets into the idea of Markov chain models,
+[ 1529.67s ->  1530.93s] hidden Markov models,
+[ 1531.41s ->  1534.15s] and even Gaussian mixture models
+[ 1534.15s ->  1536.31s] starting to approach machine learning methodology
+[ 1536.31s ->  1538.71s] for this type of problem.
+[ 1538.83s ->  1540.69s] I have videos on this channel
+[ 1540.69s ->  1544.01s] on Markov chains and hidden Markov models already
+[ 1544.01s ->  1547.59s] discussing the notion of modeling latent distributions
+[ 1547.59s ->  1549.89s] and effectively trying to model
+[ 1549.89s ->  1551.45s] these time variant distributions.
+[ 1551.91s ->  1553.89s] I would love to do a video in the future
+[ 1553.89s ->  1555.25s] on Gaussian mixture models.
+[ 1555.73s ->  1556.63s] If there's interest,
+[ 1557.19s ->  1560.27s] please let me know in the comments below.
+[ 1560.55s ->  1561.23s] Too long, didn't watch.
+[ 1561.29s ->  1562.47s] Here's your executive summary.
+[ 1562.61s ->  1563.51s] We can generate wealth
+[ 1563.51s ->  1565.61s] without knowing the outcome of a random variable
+[ 1565.61s ->  1567.49s] thanks to probability and statistics.
+[ 1567.73s ->  1568.33s] And in fact,
+[ 1568.69s ->  1571.11s] we don't need to be arbitrarily correct.
+[ 1571.21s ->  1573.47s] We just need to be correct roughly on average.
+[ 1573.59s ->  1575.49s] As we saw when we took one step
+[ 1575.49s ->  1577.41s] out of the classroom into the real world
+[ 1577.41s ->  1579.77s] where we needed to approximate the mean,
+[ 1579.87s ->  1580.45s] the expectation,
+[ 1580.59s ->  1580.97s] the average,
+[ 1581.07s ->  1584.39s] our best guess using the law of large numbers.
+[ 1584.95s ->  1586.93s] Now, of course, in the real world,
+[ 1586.93s ->  1589.11s] we don't have the law of large numbers
+[ 1589.11s ->  1590.09s] in the central limit theorem
+[ 1590.09s ->  1592.03s] because those require distributions
+[ 1592.03s ->  1593.63s] to be stationary.
+[ 1594.15s ->  1595.63s] Now, stationarity in academia
+[ 1595.63s ->  1598.05s] is often described as distributions
+[ 1598.05s ->  1601.31s] that are invariant across re-sampling.
+[ 1601.31s ->  1604.57s] And non-stationarity is just the opposite.
+[ 1605.19s ->  1606.11s] But in reality,
+[ 1606.25s ->  1608.49s] non-stationarity is the real world.
+[ 1608.63s ->  1610.17s] It isn't just the notion of
+[ 1610.17s ->  1612.45s] lack of invariance across re-sampling.
+[ 1612.55s ->  1614.49s] No, it's the notion that
+[ 1614.49s ->  1616.69s] the distribution is subject to change
+[ 1616.69s ->  1617.65s] at any given time
+[ 1617.65s ->  1620.31s] for an incredible number of reasons
+[ 1620.31s ->  1621.99s] because in reality,
+[ 1622.59s ->  1625.47s] these outcomes don't follow a distribution.
+[ 1625.81s ->  1627.51s] They come from a combination,
+[ 1627.63s ->  1628.61s] a large combination
+[ 1628.61s ->  1630.73s] of deterministic decisions
+[ 1630.73s ->  1633.31s] that are actually being made by people.
+[ 1633.83s ->  1635.37s] And depending on how philosophical
+[ 1635.37s ->  1636.07s] you want to get,
+[ 1636.15s ->  1639.19s] there could be stochastic components as well.
+[ 1639.45s ->  1641.27s] Because we can't model
+[ 1641.27s ->  1644.85s] all of those uncountable,
+[ 1644.93s ->  1647.87s] unfathomably large number of inputs
+[ 1647.87s ->  1650.19s] in that system that produce the output,
+[ 1650.37s ->  1653.19s] we treat it effectively as random,
+[ 1653.31s ->  1653.81s] as uncertain.
+[ 1654.45s ->  1656.67s] And that's why when we approach
+[ 1656.67s ->  1657.85s] modeling in the real world,
+[ 1658.17s ->  1659.81s] we're always dealing with this notion
+[ 1659.81s ->  1660.97s] of non-stationarity.
+[ 1661.65s ->  1664.45s] This is also why we can't make something
+[ 1664.45s ->  1666.81s] that's non-stationary, stationary.
+[ 1667.47s ->  1669.15s] One of the first thing that students,
+[ 1669.29s ->  1670.59s] even professionals,
+[ 1670.79s ->  1671.79s] will try to do is they'll say,
+[ 1671.85s ->  1672.23s] hey, you know,
+[ 1672.45s ->  1674.45s] I have this non-stationary distribution.
+[ 1674.61s ->  1675.65s] How can I make it stationary?
+[ 1675.83s ->  1677.81s] No, you can't do that.
+[ 1677.87s ->  1678.99s] You're not actually dealing
+[ 1678.99s ->  1679.75s] with a distribution.
+[ 1679.75s ->  1681.31s] You're dealing with the real world
+[ 1681.31s ->  1682.39s] and you're treating it
+[ 1682.39s ->  1684.21s] as a random variable,
+[ 1684.35s ->  1685.27s] something that's uncertain,
+[ 1685.55s ->  1686.91s] to hopefully inform
+[ 1686.91s ->  1688.17s] your decision-making.
+[ 1688.67s ->  1690.43s] But you can't make something
+[ 1690.43s ->  1691.77s] in the real world stationary.
+[ 1691.95s ->  1693.51s] You can't make it a distribution.
+[ 1695.13s ->  1697.03s] This corresponds to the notion
+[ 1697.03s ->  1699.43s] of why modeling and parameterization
+[ 1699.43s ->  1700.05s] is difficult,
+[ 1700.05s ->  1701.41s] as we've seen herein.
+[ 1701.89s ->  1703.09s] It's difficult to choose.
+[ 1703.17s ->  1704.33s] Where did this data come from?
+[ 1704.39s ->  1706.69s] Did it come from this distribution
+[ 1706.69s ->  1707.89s] or this distribution?
+[ 1708.55s ->  1708.93s] Moreover,
+[ 1708.93s ->  1710.63s] if they're constantly changing
+[ 1710.63s ->  1711.83s] and we can't observe it,
+[ 1712.03s ->  1713.27s] how are we going to dictate
+[ 1713.27s ->  1714.37s] what's next
+[ 1714.37s ->  1715.73s] and what distribution
+[ 1715.73s ->  1717.43s] it came from?
+[ 1717.55s ->  1718.65s] This is why market timing
+[ 1718.65s ->  1720.65s] is a difficult problem
+[ 1720.65s ->  1722.29s] and why market timing
+[ 1722.29s ->  1723.33s] often fails.
+[ 1723.85s ->  1724.07s] Hence,
+[ 1724.63s ->  1726.15s] the age-old adage,
+[ 1726.65s ->  1729.35s] time in beats timing.
+[ 1729.77s ->  1731.65s] Our goal isn't stationarity
+[ 1731.65s ->  1733.35s] in our distributions
+[ 1733.35s ->  1734.29s] for market making,
+[ 1734.41s ->  1735.25s] trading, investing.
+[ 1735.43s ->  1735.69s] No,
+[ 1736.07s ->  1737.15s] it is stability.
+[ 1737.35s ->  1738.19s] If we have a good,
+[ 1738.31s ->  1739.45s] robust strategy,
+[ 1739.45s ->  1740.87s] then we should be able
+[ 1740.87s ->  1742.93s] to perturb the parameter space.
+[ 1743.41s ->  1744.07s] We should be able
+[ 1744.07s ->  1745.83s] to re-sample across regimes
+[ 1745.83s ->  1748.09s] and observe reasonable stability.
+[ 1748.35s ->  1748.83s] If not,
+[ 1749.11s ->  1749.95s] we should be able
+[ 1749.95s ->  1751.35s] to model breaks
+[ 1751.35s ->  1753.45s] and then recover stability.
+[ 1754.01s ->  1754.95s] And that is exactly
+[ 1754.95s ->  1755.75s] what it looks like
+[ 1755.75s ->  1758.25s] to model the real world.
+[ 1758.39s ->  1759.29s] Some future topics,
+[ 1759.43s ->  1760.23s] technical videos,
+[ 1760.37s ->  1761.31s] and other discussions
+[ 1761.31s ->  1762.55s] to look forward to.
+[ 1762.71s ->  1763.97s] I'd like to get into
+[ 1763.97s ->  1764.85s] more applications
+[ 1764.85s ->  1766.23s] of the Poisson process,
+[ 1766.57s ->  1767.49s] the Hawks processes,
+[ 1768.09s ->  1768.81s] Merton and Bates
+[ 1768.81s ->  1770.03s] jump diffusion models,
+[ 1770.41s ->  1772.73s] even more market making models,
+[ 1772.73s ->  1774.29s] and extending,
+[ 1774.51s ->  1775.55s] not just to this notion
+[ 1775.55s ->  1776.59s] of collecting a spread,
+[ 1776.67s ->  1777.79s] but inventory management,
+[ 1778.01s ->  1779.27s] so on and so forth.
+[ 1779.33s ->  1780.79s] More qualitative videos,
+[ 1780.97s ->  1782.17s] like my first year
+[ 1782.17s ->  1783.09s] as a quant,
+[ 1783.45s ->  1784.71s] and why hedge funds
+[ 1784.71s ->  1786.43s] are actually secretive,
+[ 1786.81s ->  1788.59s] based on my experience
+[ 1788.59s ->  1790.11s] consulting with them.
+[ 1790.61s ->  1791.95s] Non-Markovian models,
+[ 1792.45s ->  1793.17s] change of measure,
+[ 1793.29s ->  1793.99s] rough path theory,
+[ 1794.15s ->  1794.97s] Sigvold models,
+[ 1795.15s ->  1796.27s] more stochastic calculus,
+[ 1796.39s ->  1797.33s] and financial mathematics.
+[ 1797.33s ->  1799.17s] But, of course,
+[ 1799.35s ->  1800.01s] the next videos
+[ 1800.01s ->  1801.05s] will largely be based
+[ 1801.05s ->  1802.11s] on your interest.
+[ 1802.53s ->  1803.51s] So please let me know
+[ 1803.51s ->  1804.21s] in the comments
+[ 1804.21s ->  1805.29s] what you guys
+[ 1805.29s ->  1806.33s] would like to see next.
+[ 1806.47s ->  1807.01s] And don't worry,
+[ 1807.09s ->  1807.75s] I haven't forgotten
+[ 1807.75s ->  1809.13s] about our quant builds.
+[ 1809.47s ->  1810.83s] I would really like to do,
+[ 1810.93s ->  1811.57s] now that we've already
+[ 1811.57s ->  1812.81s] covered the Kalman filter,
+[ 1813.29s ->  1815.53s] a video on implementing it live
+[ 1815.53s ->  1817.43s] with interactive brokers
+[ 1817.43s ->  1818.53s] in Python.
+[ 1818.99s ->  1819.65s] I think that would be
+[ 1819.65s ->  1820.93s] a very exciting quant build.
+[ 1821.05s ->  1821.45s] But again,
+[ 1821.79s ->  1822.91s] let me know in the comments
+[ 1822.91s ->  1825.05s] what you would like to see next.
+[ 1825.51s ->  1826.19s] And that's going to do it
+[ 1826.19s ->  1827.63s] for this video on non-stationarity
+[ 1827.63s ->  1829.61s] and why market timing fails.
+[ 1829.73s ->  1830.45s] I hope you enjoyed.
+[ 1830.77s ->  1831.87s] I hope you learned something.
+[ 1831.97s ->  1832.97s] This video certainly took
+[ 1832.97s ->  1834.21s] a tremendous effort
+[ 1834.21s ->  1834.95s] to put together.
+[ 1835.05s ->  1835.75s] So if you enjoyed it
+[ 1835.75s ->  1836.37s] and you want to see more
+[ 1836.37s ->  1837.11s] like it in the future,
+[ 1837.51s ->  1838.31s] please like, comment,
+[ 1838.41s ->  1839.05s] subscribe, share.
+[ 1839.17s ->  1840.63s] Again, it helps me out tremendously.
+[ 1841.11s ->  1842.53s] It's always greatly appreciated.
+[ 1842.99s ->  1844.51s] Check out quantguild.com
+[ 1844.51s ->  1846.73s] to master your quantitative skills
+[ 1846.73s ->  1848.89s] for trading and market making roles.
+[ 1849.29s ->  1850.01s] Other than that,
+[ 1850.01s ->  1851.71s] I want to thank you so much
+[ 1851.71s ->  1852.49s] for watching
+[ 1852.49s ->  1853.83s] and I will see you
+[ 1853.83s ->  1855.37s] in the next video.

@@ -1,0 +1,104 @@
+[    0.14s ->     4.78s] Hey guys, I want to walk you through options, commissions, and fees across all brokers.
+[    5.02s ->     5.24s] Why?
+[    5.38s ->     8.80s] Well, because commissions and fees are the silent killer of your account.
+[    9.06s ->    12.86s] They take away so much profit, especially when you're trading credit spreads.
+[   13.14s ->    17.84s] So I want to make sure you understand it and make sure that you are in the right place
+[   17.84s ->    19.66s] of the right broker getting the right commissions.
+[   20.18s ->    23.62s] And I'm even going to reveal to you how you can kind of negotiate those lower and which
+[   23.62s ->    25.30s] brokers do that for you.
+[   25.30s ->    29.60s] So let's go through this so that you can actually start to add some more profit back to your
+[   29.60s ->    30.06s] profit.
+[   30.14s ->    32.54s] Instead of having to pay these super high commissions.
+[   33.12s ->    35.26s] Okay, well, I wrote this article here.
+[   35.38s ->    40.18s] You can go down in the description below and read this article for yourself.
+[   40.48s ->    43.48s] But I have this image here that kind of walks you through it.
+[   43.78s ->    45.50s] So Robinhood is free.
+[   45.94s ->    49.88s] So again, that is going to be the one free platform to trade options on.
+[   49.94s ->    50.86s] So that's going to be very great.
+[   50.86s ->    56.22s] If you have an account less than $10,000, I would highly encourage you to use Robinhood.
+[   56.62s ->    56.92s] Why?
+[   56.92s ->    60.68s] Well, because, again, you won't get the best executions.
+[   61.16s ->    62.18s] Support sucks.
+[   62.18s ->    64.00s] But it is completely free.
+[   64.00s ->    68.18s] So the money you make, the small amount you do make, you won't have to pay commissions
+[   68.18s ->    68.48s] on.
+[   68.70s ->    69.98s] So that's going to be the best.
+[   70.32s ->    73.76s] Next, you have Webull, which is going to be the next best option above that.
+[   74.08s ->    74.30s] Why?
+[   74.38s ->    75.78s] Because their support is a bit better.
+[   75.88s ->    77.60s] Their platform is a bit more comprehensive.
+[   77.60s ->    79.84s] But they also have free commissions.
+[   80.34s ->    84.50s] Now, again, when you come down to specifics, they do have some very small fees.
+[   85.04s ->    89.28s] And so, again, you can see your .000244 per contract for the option sells.
+[   89.70s ->    90.94s] And so, again, you can look at that.
+[   91.12s ->    92.02s] Very, very small.
+[   92.14s ->    93.16s] Very minuscule.
+[   93.54s ->    94.56s] But, again, it's still there.
+[   94.64s ->    96.64s] But, again, for the main commissions, that's free.
+[   96.64s ->   100.36s] So you won't see too much limiting you on that standpoint.
+[  101.20s ->   105.08s] Now, again, the reason why I don't use these two options, not because they're not good,
+[  105.34s ->   107.00s] is because I'm trading with a six-year account.
+[  107.10s ->   112.64s] If I have an issue, I want to be able to instantly call support or pop open chat and
+[  112.64s ->   114.12s] they can handle everything for me.
+[  114.34s ->   117.60s] Those are two things you're not going to necessarily get with Robinhood and Webull.
+[  118.06s ->   123.24s] Anyways, you have these right here, which tend to be the most widely used in America,
+[  123.24s ->   130.94s] which is E-Trade, Tasty Works, which is now Tasty Trades, TD Ameritrade, Charles Swab,
+[  131.24s ->   132.16s] and Fidelity.
+[  132.60s ->   135.02s] So these are going to be your top U.S. brokers.
+[  135.46s ->   140.50s] Again, most by default have a $0.65 per contract fee.
+[  140.60s ->   144.18s] You can see E-Trade, TD Ameritrade, Charles Swab, and Fidelity.
+[  144.58s ->   149.50s] Now, again, they all have these generic fees that get applied onto it for closing the trades.
+[  149.50s ->   157.42s] They're all around roughly 0.0035, just because that's what the underlying wire transfer is
+[  157.42s ->   161.34s] basically costing for the Chicago Board of Exchange.
+[  161.78s ->   167.02s] But anyways, when we come to Tasty Works, or now Tasty Trade, that's going to be one of
+[  167.02s ->   167.86s] the better options.
+[  168.00s ->   168.16s] Why?
+[  168.28s ->   171.20s] Well, because under these fees, you can see here a $10 max per leg.
+[  171.50s ->   175.62s] So yes, you're paying $1 per contract, but let's say you're trading 50 contracts.
+[  175.74s ->   178.20s] Let's say you buy 50 option calls.
+[  178.20s ->   187.40s] Okay, well, instead of 50 contracts at $0.65 per contract in and out, so $1.30 total,
+[  187.86s ->   192.10s] for Tasty Works, you don't have to pay closing, and you only pay $10 max.
+[  192.22s ->   199.48s] So instead of paying, let's say, $1 per contract, so $50, you're only paying $10 to enter 50 contracts,
+[  199.68s ->   202.92s] and there's no commission cost to close.
+[  203.22s ->   204.56s] So by default, that's just $10.
+[  205.00s ->   206.16s] That's all you have to pay.
+[  206.16s ->   210.28s] So if you're trading with a larger account, Tasty Works and Tasty Trade not only has a
+[  210.28s ->   213.02s] great platform, but the commissions will save you a ton.
+[  213.38s ->   217.04s] Now, I will have to tell you from personal experience, as well as experience from a ton
+[  217.04s ->   221.24s] of members inside my Inner Circle program, you can work with E-Trade, you can work with
+[  221.24s ->   225.16s] TD Ameritrade, and sometimes Fidelity.
+[  225.30s ->   227.16s] But the best one to work with is TD Ameritrade.
+[  227.16s ->   234.10s] If you have over $10,000 in your account, and you are actively trading credit spreads or
+[  234.10s ->   238.86s] any type of options, you're just actively trading, which is you do it often, then you can open
+[  238.86s ->   240.16s] your message box up.
+[  240.40s ->   245.66s] I would do this once a month until they say no and say, hey, I really love this platform.
+[  246.08s ->   249.62s] Would you mind working with me to lower the commission cost?
+[  249.62s ->   253.92s] Because I would really hate to switch to Tasty Trades since they have a better commission.
+[  254.14s ->   255.10s] Can you help me out?
+[  255.24s ->   255.80s] Question mark.
+[  256.18s ->   257.04s] Something like that.
+[  257.16s ->   260.16s] And send that every single month, and typically they can lower you down.
+[  260.28s ->   263.32s] I know people as low as $0.35 on TD Ameritrade.
+[  263.44s ->   268.76s] So if you like that platform, again, work with them because they want to work with you if you
+[  268.76s ->   269.76s] are making them money.
+[  270.89s ->   276.17s] For the international users, you have interactive brokers and trade stations, both around $0.65
+[  276.17s ->   278.71s] and your various fees.
+[  279.05s ->   280.67s] So that's something you have to understand as well.
+[  281.01s ->   286.41s] I've never worked with interactive brokers or trade stations as I am a US-based user, a
+[  286.41s ->   287.41s] US citizen.
+[  287.83s ->   291.59s] So I can't, or at least I haven't found a need to.
+[  292.19s ->   296.37s] And so again, I'm sure you can negotiate that like most platforms, but I don't have experience
+[  296.37s ->   296.93s] with that.
+[  297.37s ->   301.35s] Anyways, these are commissions and fees you must understand when trading credit spreads.
+[  301.35s ->   307.07s] If you don't, it's going to be very detrimental to your trading because you're going to be
+[  307.07s ->   310.61s] giving up so much profit and you're going to look back and be like, oh, I was up, down,
+[  310.69s ->   314.13s] whatever, but now I'm actually net negative because of all these commissions.
+[  314.25s ->   317.63s] So make sure you're aware of what you're paying in commissions, if you're reducing it correctly,
+[  318.01s ->   322.19s] and where you should be moving your accounts to have the best return possible.
+[  322.55s ->   325.73s] Anyways, that's what we cover in the options comparison table.
+[  325.83s ->   328.15s] I just wanted to quickly make that known to you.
+[  328.15s ->   331.63s] Again, guys, if you enjoyed this, please smash the thumbs up button.
+[  331.71s ->   335.41s] If you want to learn more about credit spread trading options in this world, please smash
+[  335.41s ->   341.77s] the subscribe button because I release daily videos on how to get better at trading credit
+[  341.77s ->   342.07s] spreads.
+[  342.33s ->   343.69s] All right, guys, I'll see you in the next video.

@@ -1,0 +1,103 @@
+[    0.00s ->     5.14s] Hey guys, in today's video I'm going to talk about the four biggest mistakes that credit spread
+[    5.14s ->    11.66s] traders make that are leading to them losing more and not only that but having a lower win rate so
+[   11.66s ->    16.92s] therefore not being profitable in the long run. So if you're a new credit spread trader or you've
+[   16.92s ->    22.14s] been trading for a while make sure you take note of these biggest mistakes. Number one and most
+[   22.14s ->    27.22s] importantly because this is the one I see the most credit spread traders just assume that credit
+[   27.22s ->    31.26s] spreads have a high win rate so they should trade them regardless and yet they do not know their
+[   31.26s ->    37.94s] numbers. If you don't know your numbers your trades could be leading you to your account being blown up
+[   37.94s ->    42.88s] instead of actually growing because you need to know what is your win rate and how much money are
+[   42.88s ->    48.52s] you making for every trade. Don't just assume oh cool yeah credit spreads are a high probability trade
+[   48.52s ->    52.92s] I'm going to make money and grow my account. That's not true that's not how it works. Let me walk you
+[   52.92s ->    58.62s] through the numbers here. Okay this is called a long-term positive expectancy calculation.
+[   59.36s ->    63.40s] There are only two numbers you need with credit spreads that is your win rate and the amount of
+[   63.40s ->    68.42s] money you make when you win. Now again if you click the link down in the description you can actually
+[   68.42s ->    73.66s] figure this out for yourself. I actually built I realized I should have showcased this earlier
+[   73.66s ->    81.74s] that I built a free credit spread tracker. Again anybody can use it but again it shows your trade
+[   81.74s ->    89.32s] history and you can get your accuracy and your average win per trade with that. So again you can
+[   89.32s ->    94.96s] do that there. Anyways enough about that free tool but let's take a look at this. Okay so once we know
+[   94.96s ->   101.91s] our win rate so we need our win rate which again is the number of winning trades you've had out of the
+[  101.91s ->   108.27s] total trades you've made. And so again then we have our how much credit we collect for our winners
+[  108.27s ->   114.79s] on average. Okay I'm going to give you my average stats. Okay so my average win rate as you just saw
+[  114.79s ->   123.09s] is a 94%. 94% win rate on my credit spreads. What is my average collected credit? My average collected
+[  123.09s ->   132.84s] credit is 25 cents. On average I collect 25 cents. So okay cool so now that I collect 25 cents on average
+[  132.84s ->   139.84s] with a win rate of 94%. Now how do I determine if I'm going to make money long term with this
+[  139.84s ->   149.03s] approach? Well what you do is you take your win rate so 94. You multiply that by the credit so just do
+[  149.03s ->   158.98s] 0.25. So this means let's say out of 100 trades 94 of your trades will make 25 cents. Cool so that's for
+[  158.98s ->   165.92s] the winners. Now what's our losers? Well if out of 100 trades you win 94 that means you lose six so
+[  165.92s ->   172.74s] minus six times the size of our loser. What's the size of our loser? Well if I collect 25 cents on
+[  172.74s ->   182.66s] average that is because I'm trading $2 wides. So with a $2 wide spread that means a $2 spread minus 0.25
+[  182.66s ->   191.86s] gives me my max loss. So it's $1.75 as my max loss. Now if we plug this into a calculator we can see
+[  191.86s ->   201.52s] if this will work out long term. So let's check this out. 94 times 0.25 minus 6 times 1.75. Look at
+[  201.52s ->   209.76s] that. I have a positive 13, 1, 3. Anything above 0 means you're going to be positive long term. 0 means
+[  209.76s ->   214.60s] your account is going to stay the same. Negative means your account is going to lose value over
+[  214.60s ->   222.14s] time and continue to get smaller. My recommendation is aim for a positive 5. Anything greater than 5.
+[  222.40s ->   227.02s] Right here this is almost 3 times 5. That means that I'm going to have a very positive long term
+[  227.02s ->   233.44s] growth in my account because of my win rate and my credit. Again this tells you everything. Know
+[  233.44s ->   239.30s] this formula and apply it to everything. Because again if you have a positive long term
+[  239.30s ->   244.90s] expectancy you'll make money in the long run. I know so many traders who think they're doing well
+[  244.90s ->   248.18s] or they're trading a strategy that works but they don't know their numbers and it never works out
+[  248.18s ->   253.10s] for them. All right the rest of these things or mistakes that I'm going to share with you in
+[  253.10s ->   257.30s] today's video have nothing to do with math. So don't worry about that. This is the first and only
+[  257.30s ->   264.36s] math heavy thing. All right let's dive into number two which is called liquidity. So a lot of people
+[  264.36s ->   270.76s] do not understand liquidity. Guys just like the stock market where in order to get into a stock
+[  270.76s ->   274.74s] somebody needs to sell it to you and you need to buy it from someone who's selling and when you're
+[  274.74s ->   278.58s] trying to get out of a stock trade you need to sell it to somebody who's willing to buy.
+[  278.98s ->   283.48s] There's always a transaction. There's somebody on this side and there's somebody on this side.
+[  283.56s ->   287.76s] The same thing works in the options world. There's somebody on the side and somebody on this side.
+[  287.96s ->   292.46s] If you're trying to buy or sell and there's nobody on the other side you're not going to get in
+[  292.46s ->   298.62s] or out of that trade and that is very bad. So we need to look at liquidity. So this right here is
+[  298.62s ->   304.44s] the Tasty Trades platform browser version. Again but this is shown on any broker. Again when you're
+[  304.44s ->   311.90s] on the options chain of any broker you can edit the columns. Edit it to be volume. Just like this.
+[  312.04s ->   317.72s] You can see how many options were traded that day. Now again this resets every single day. So if
+[  317.72s ->   322.38s] you're looking at this at market open it's probably going to say zero or you know a minute before
+[  322.38s ->   327.74s] market open it's going to be zero. So what I like looking at is open interest since volume resets
+[  327.74s ->   333.68s] every day. Open interest is the amount of contracts currently open for that strike price.
+[  334.36s ->   342.20s] So you can see here there's 15.6 thousand shares open. This is annoying. 15.6 thousand shares open.
+[  342.54s ->   350.40s] Wow. Never had that happen before. 15.6 thousand shares available which means that if I'm trying
+[  350.40s ->   357.94s] to get in with 10 option contracts then I'll have no problem because that's 15.6 thousand. It's a very
+[  357.94s ->   363.04s] small percentage of the total open interest. Now what is the bad stock? Well let's take a look at
+[  363.04s ->   369.50s] that McDonald's. It's going to get a little worse here. Wait for all the data to populate. Here we go.
+[  369.90s ->   377.66s] Open interest. 0, 0, 0, 0, 15, 32, 281, 72. You see how hard this is going to be to enter
+[  377.66s ->   384.28s] and exit a credit spread trade or an options trade when you have an open interest like this.
+[  384.60s ->   390.00s] There is no volume. No one here to take the other side of your trade. You may be able to get in and
+[  390.00s ->   395.22s] get out but you're going to have to do a super wide spread from where the bid is currently trading.
+[  395.68s ->   399.80s] So in the long run you're going to lose a lot of money. Make sure you're trading something that has a
+[  399.80s ->   406.18s] lot of open interest and a lot of volume. Okay next the biggest mistake is strategy. I know people
+[  406.18s ->   412.34s] who do not know proper strategy. They're like oh well I can do this and this. I've seen this on
+[  412.34s ->   418.08s] Tasty Live or I've seen some YouTuber talk about this. What you want to look for in a strategy.
+[  418.22s ->   424.88s] Number one. One that has been back tested and is proven to work. You have a back test. You see that
+[  424.88s ->   431.38s] it works. Number two. Something where you see that it works but can also match your trading style. If you
+[  431.38s ->   435.46s] work full time there are going to be a lot of strategies that just do not work for you. It's going to add
+[  435.46s ->   439.32s] stress. You're going to try it and you're not going to execute it correctly and you're going to lose.
+[  439.82s ->   445.76s] So make sure it matches the amount of time and your lifestyle that you have. So after that once
+[  445.76s ->   452.84s] you know it works. Once it matches your lifestyle. Make sure you dive deep on understanding that
+[  452.84s ->   459.62s] strategy. You got a fundamental level. Big picture. Why exactly does this strategy work? Can I simplify it
+[  459.62s ->   465.16s] and explain it to a toddler? If you can't explain the strategy to a toddler then guess what? It's not
+[  465.16s ->   469.80s] going to work because simple strategies make the most money. I've been in this game for six years
+[  469.80s ->   475.86s] and that's typically how this works. So my so my strategy if I were to explain it to a little kid
+[  475.86s ->   483.00s] would be why look at a graph and I go is it going up or is it going if it's going down. If it looks like
+[  483.00s ->   488.02s] it's going up then I sell a put credit spread. If it looks like it's going down then I sell a call
+[  488.02s ->   492.58s] credit spread and that's how simple it is. Again there's some more specifics to it but that's the high
+[  492.58s ->   498.96s] level of it. Okay and you can see just like that here. Wow that's getting annoying. Anyways whatever
+[  498.96s ->   504.02s] here we go. So we have the moving average line. If it's above it the market's going up so we sell
+[  504.02s ->   507.64s] put credit spreads. If the market's below it and it's going down then that's selling call credit
+[  507.64s ->   511.74s] spreads. But again if you want these specifics on it I have a free trading handbook. No email no
+[  511.74s ->   517.42s] nothing required. I'm giving it to you. This handbook is quite large and goes over my entry rules
+[  517.42s ->   522.78s] my my my trading sites my exact strategy step by step how to implement them. So for instance
+[  522.78s ->   530.32s] what the strategy is and what market it works in the entry rules step by step the video if if you if
+[  530.32s ->   534.84s] you want to watch that and a complete back test. So all that is here for you if you struggle with
+[  534.84s ->   540.98s] strategy. All right last but not least is patience. A lot of you guys think you're going to become winners
+[  540.98s ->   546.78s] overnight maybe in the next year or whatever. You need to understand this is a game that yes can be
+[  546.78s ->   552.52s] one but it is a consistent journey and a consistent process and it will take time. If you're following
+[  552.52s ->   556.86s] a strategy that works like the strategies that I just gave you then you will be able to speed up
+[  556.86s ->   562.36s] your returns quite dramatically because you'll be able to skip all the stupid mistakes that I made in
+[  562.36s ->   566.50s] the beginning and that others make and a lot of new people make. So you'll be able to skip that so
+[  566.50s ->   571.62s] that's good but it still will take some time. Most of the traders that I teach settle into this
+[  571.62s ->   577.04s] strategy in about a a month or two and then on month three they're flourishing and they're doing
+[  577.04s ->   581.22s] it and they don't need any help and they're making money. So again it's all about the process
+[  581.22s ->   588.70s] you follow. Anyways guys I hope you take heed of those mistakes kind of learned from them and are
+[  588.70s ->   593.42s] able to continue growing as a credit spread trader. That's what this channel is for to help you be a
+[  593.42s ->   597.24s] better credit spread trader. Anyways if you enjoyed this video and learned something please smash that
+[  597.24s ->   602.40s] thumbs up button and subscribe button because I make videos like this all the time. Anyways my
+[  602.40s ->   607.80s] name is Austin. I'm here with 10% credit spreads and I'm so excited you watch and I'll see you in the next
+[  607.80s ->   608.04s] video.

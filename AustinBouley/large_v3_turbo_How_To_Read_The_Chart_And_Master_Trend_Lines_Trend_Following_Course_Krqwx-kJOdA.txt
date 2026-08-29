@@ -1,0 +1,100 @@
+[    0.00s ->     4.56s] What's up? This is video number one of Trend Following Secrets, where we're going to go over
+[    4.56s ->    11.02s] how to actually read a chart. So like candles, trend lines, all that good stuff. So again,
+[   11.14s ->    16.34s] let's just jump in and start getting into it. So again, this is a stock chart. You can find these
+[   16.34s ->    21.68s] anywhere. So this is tradingview.com. If you want to use this one, it's free. You can also go to
+[   21.68s ->    27.98s] yahoofinance.com. You can use the broker that you use to buy and sell stocks. They should all have
+[   27.98s ->    33.54s] charts as well. So again, all stock platforms will typically have a stock chart. So what you want
+[   33.54s ->    39.04s] to do is you just want to open up the full edition stock chart and kind of get an overview of what's
+[   39.04s ->    46.18s] going on. So again, as we can see here, we have price on the y-axis, and then we have the date or
+[   46.18s ->    53.44s] time on the x-axis. So again, going across here, this is what the stock has done throughout its
+[   53.44s ->    57.58s] history. This is where the price of the stock has moved. You can see here the stock was lower.
+[   57.98s ->    64.20s] Back in early 2020. Now it's higher back in late 2021. So you can see that it's growing overall.
+[   64.68s ->    69.44s] The candles that you see here at the bottom, these lines, this is called the volume. It shows how
+[   69.44s ->    74.08s] many shares are being traded. And it's just an overview of what a stock chart is. Again,
+[   74.14s ->    78.60s] I'm not going to go too much into it because I hope you guys know this already. But if not,
+[   78.64s ->    83.14s] you can definitely check out one of the masterclass videos to learn more about reading a chart.
+[   83.14s ->    87.82s] But I'm going to jump into it from a trend following perspective. Okay. So again,
+[   87.94s ->    92.38s] there are two different types of trends in the market of an uptrend and a downtrend. There's also
+[   92.38s ->    97.90s] a neutral, but we're going to ignore that right now. An uptrend is where your lows are getting higher
+[   97.90s ->   103.54s] over time, and your highs are also getting higher over time. When you see that, you know the stock is
+[  103.54s ->   108.22s] in an uptrend, and that means it's trending up. When a stock is trending up, that means we can draw
+[  108.22s ->   112.42s] trend lines from the bottoms and actually make a decent trend line and show that there are
+[  112.42s ->   117.84s] connections just like that. That's a trend line. Now, there can be trends inside trends. So for
+[  117.84s ->   124.02s] instance, as you can see here, the long-term trend that we're looking at right now is an uptrend.
+[  124.08s ->   129.84s] But if we zoom in, you can see here that we actually have a downtrend within this uptrend.
+[  129.90s ->   136.16s] You can see here, downtrend, downtrend channel right here inside this uptrend. And then guess what?
+[  136.16s ->   139.76s] We have a downtrend, we hit this line, then we uptrend, then we downtrend, then we uptrend,
+[  139.82s ->   145.34s] then we downtrend, then we uptrend. So guys, trends are in everything and every single time frame.
+[  145.42s ->   149.38s] So I just wanted to stress that point. A trend is simply just showing you which direction the
+[  149.38s ->   154.72s] stock is going for that moment. The closer you zoom in, or the smaller of a time frame you go into,
+[  155.14s ->   160.58s] the shorter that trend will last. So again, this is a day chart. So the daily trend we have,
+[  160.58s ->   167.54s] or the trends we have marked out here should last at least a month to two months, if not years. But
+[  167.54s ->   172.00s] again, if we go into a shorter time frame where there's a one minute chart, which means each candle
+[  172.00s ->   179.96s] represents one minute. So previously, what you just saw is you saw where the chart went over like a
+[  179.96s ->   186.18s] whole year. This chart just shows a couple days because each candle represents one minute.
+[  186.18s ->   191.96s] So as you can see here, there are trends, but these trends only last a day or a few minutes. You can
+[  191.96s ->   197.34s] see here an uptrend, which only lasted about 30 minutes to an hour. You can see here a downtrend
+[  197.34s ->   202.94s] that lasted only about an hour. So the shorter of a time frame you go into, the shorter that trend
+[  202.94s ->   208.88s] lasts. So what does this mean? Well, if you want to follow the trend, then you have to determine how
+[  208.88s ->   212.24s] long do you want to follow the trend? Do you want to follow it for an hour? Do you want to follow it
+[  212.24s ->   216.88s] for a year? And that's going to determine your time frame you should be on. For everyone starting
+[  216.88s ->   222.70s] off, I recommend you explore trends from a daily time frame. It's just much easier to chart these
+[  222.70s ->   228.32s] out. So anyways, getting back to it, now that we know of uptrends and downtrends and how to make trend
+[  228.32s ->   233.80s] lines, which is what this is here by connecting the lows or connecting the highs, depending on if it's
+[  233.80s ->   239.50s] an uptrend or downtrend. Now we can kind of understand more about the chart. So once we know that the
+[  239.50s ->   244.14s] trend is up, then we know that we have found a nice trending stock. If we try to connect the
+[  244.14s ->   250.44s] bottoms of all of the stock and it's just like neutral where the line's like very flat because
+[  250.44s ->   255.14s] the stock's just going up and down over and over and over, then that's not going to make the best
+[  255.14s ->   260.24s] stock. Because again, I don't know if you've heard this yet before. I know I say it a lot, but I don't
+[  260.24s ->   265.90s] know how much you listen to me, is that a stock's job is to make you money. So if a stock is not making
+[  265.90s ->   270.98s] you money, then you should not be holding onto that stock. And so how do we know if a stock will
+[  270.98s ->   275.56s] make us money? If we're on the daily timeframe and we can chart out the lows that are getting higher
+[  275.56s ->   280.50s] and higher and higher, even if it crashes a few times, we know that long-term the stock will make
+[  280.50s ->   284.54s] us money and that's what we're looking for. So anyways, that is the basis of trend following,
+[  284.66s ->   290.14s] going into the candle specifics. Once we know we have a trend, we're looking to buy at one of two
+[  290.14s ->   296.70s] places, which is going to be either a dip buy or a breakout level. So again, if we're looking to
+[  296.70s ->   302.22s] buy the dip, then first off, we want to establish our trends. As you can see here, for example,
+[  302.22s ->   306.78s] we know that we had a trend here. Now, when we get to this trend line, what are we looking for to know
+[  306.78s ->   310.72s] that it's going to reverse? We're looking for a doji candle. A doji candle is something that has
+[  310.72s ->   315.58s] super long wicks. We can see here that like this candle, let's see if I can zoom in. Nope,
+[  315.58s ->   323.56s] we're going to go back. Go back. Sorry about that. You can see here that this candle has large wicks
+[  323.56s ->   329.00s] where like there's the single lines on each side that that's called the wick long on each side,
+[  329.06s ->   333.78s] but then we have a small body or the actual part that's actually filled in. So again, the box filled
+[  333.78s ->   339.64s] in a small, but the wicks go up quite large. And so when we have a doji candle at a support or
+[  339.64s ->   345.04s] resistance level, that is a key decision maker that we're looking for a reversal, that we're looking
+[  345.04s ->   349.64s] for the stock to change direction. So as you can see here, we came down to this level of support.
+[  349.78s ->   354.62s] We formed a doji and we reversed. You can see the same thing to the upside, right? You can see here
+[  354.62s ->   360.74s] when we reached a level of resistance, we formed a doji, small body, long wicks, small body, long
+[  360.74s ->   365.70s] wicks, and then we reversed to the downside. Then we're looking for the same thing here, right? We saw
+[  365.70s ->   371.36s] a doji, we saw a reversal, we saw a doji, we saw a reversal. So again, how are we looking to buy those
+[  371.36s ->   376.02s] dips? Well, specifically, we're looking for those doji candles at those trend lines that form,
+[  376.22s ->   382.46s] and that's going to help us pinpoint our dip buy opportunities. Now, if a stock is trending up,
+[  382.70s ->   387.82s] meaning that it's going from the bottom left hand to the top right hand, or we have a solid
+[  387.82s ->   393.32s] trend line pointing up, then dip buys are safe to buy regardless, but dojis give us a good entry
+[  393.32s ->   400.62s] candle to get into. Now, we're also looking to buy the breakouts as well. So when we have a trend
+[  400.62s ->   406.78s] line, we can also draw resistance points on top. And so you can see here, if we're trending up,
+[  407.02s ->   411.12s] and we have a resistance point, you can see here, it got rejected here, it got rejected here,
+[  411.18s ->   415.82s] it got rejected here, and it got rejected here. Then that means that if we're trending up with a
+[  415.82s ->   420.72s] solid resistance, that means that the momentum of the trend is still up, right? The stock is
+[  420.72s ->   428.02s] trending higher, but the momentum and the energy of this move is being squeezed into a tight frame,
+[  428.02s ->   432.66s] and that means that it has to explode. So a breakout would be a stock that is trending up,
+[  432.92s ->   439.60s] hitting a resistance level multiple times, and then buying when it breaks above that resistance
+[  439.60s ->   444.64s] level. So you can see here, that is a great entry point to buy into, because we have a stock that's
+[  444.64s ->   449.14s] trending higher, and then we break that resistance level. So again, those are our key points of kind
+[  449.14s ->   455.26s] of reading the chart. Also getting into it a bit further is looking at the volume. Volume is going
+[  455.26s ->   460.72s] to step in large when we see a trend change, and when we see a directional change. You can see here
+[  460.72s ->   465.28s] how we start dropping, and then we know that we're starting to hit that bottom, because we see a lot of
+[  465.28s ->   470.82s] volume stepping up, and then we get to see that reversal. Same thing here, same thing right here.
+[  470.96s ->   476.34s] When we went too high, and we started having that selling off, the volume stopped as well. So volume
+[  476.34s ->   484.82s] typically increases when there's a change in direction, and then it decreases when it understands and
+[  484.82s ->   489.60s] agrees with the trend. Like if it is trending up, and the volume is lower than it was at the high
+[  489.60s ->   494.36s] points, and that trend is likely to continue. So again, that is kind of how you read the chart and
+[  494.36s ->   499.76s] getting into it more from a trend following perspective. So I hope that made sense. We'll
+[  499.76s ->   505.74s] deep dive more into video number two of exactly different type of tactics to follow the trend.
+[  506.04s ->   510.62s] But anyways, I hope this video made sense and explained more. I would recommend for your homework
+[  510.62s ->   518.30s] to go to a trading platform, whether it be your broker, Yahoo Finance, tradingview.com, anything like
+[  518.30s ->   524.22s] that, and just pull up some charts and try mapping your resistance out, where the highs of the stock
+[  524.22s ->   529.24s] are. Map out your support levels, where the lows of the stock are, and most importantly, map out your
+[  529.24s ->   535.06s] trends. See what stocks trends well, and see where things bounce, and start to identify dojis. If you can
+[  535.06s ->   541.92s] learn to identify these small candles at support levels, you'll be able to buy in dips perfectly.
+[  542.32s ->   544.96s] Alright guys, thank you for watching. See you in video number two.

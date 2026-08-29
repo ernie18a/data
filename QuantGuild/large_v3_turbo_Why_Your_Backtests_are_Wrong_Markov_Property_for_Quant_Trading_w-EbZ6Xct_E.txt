@@ -1,0 +1,358 @@
+[    0.46s ->    10.12s] Most, if not all, of algorithmic trading requires just very basic probability and statistics.
+[   10.62s ->    18.44s] Yet, when people come to me with backtests, all of their analysis and results are typically wrong,
+[   18.44s ->    25.96s] and that's because they have a fundamental lack of understanding of the difference between a conditional and an unconditional statistic.
+[   25.96s ->    35.92s] Well, in this video, what I want to do is introduce this idea of the Markov property, specifically for quant or algorithmic trading,
+[   35.92s ->    42.16s] so we can really understand why distributions change under different circumstances.
+[   42.16s ->    47.30s] We're going to take a look at unconditional and conditional distributions, probabilities, and statistics,
+[   47.30s ->    54.10s] look at this idea of the Markov property, and talk about why, in practice, it doesn't work,
+[   54.10s ->    59.20s] and how that impacts all of our backtests and trading strategies.
+[   59.20s ->    63.04s] Though you may not have access to the Markov property in practice,
+[   63.04s ->    68.40s] you will always have access to my Jupyter notebooks anytime I create a new video.
+[   68.52s ->    70.74s] This Jupyter notebook will be linked in the description below.
+[   71.04s ->    73.56s] I'll also post it to the Quant Guild library on GitHub,
+[   73.96s ->    77.34s] where you can find all of my Jupyter notebooks and associated YouTube videos,
+[   77.68s ->    80.70s] along with all of the source code for my quant builds.
+[   80.86s ->    83.94s] At the top of this Jupyter notebook, you'll notice some related Quant Guild videos
+[   83.94s ->    87.76s] applying probability and statistics to finance and trading.
+[   87.76s ->    91.96s] This idea of time series analysis, retail versus institutional trading,
+[   92.34s ->    98.38s] trading versus investing, this idea of accumulating positive expected value over a series of trades,
+[   98.80s ->   101.20s] quant versus discretionary trading, and of course,
+[  101.56s ->   105.82s] busting three trading myths that these trading gurus love to propagate.
+[  106.18s ->   108.10s] If you're unfamiliar with any of these ideas,
+[  108.42s ->   113.36s] I highly recommend you check these videos out first before tackling one like this.
+[  113.36s ->   116.22s] More of these videos certainly take a lot of effort to create,
+[  116.34s ->   120.38s] so if you'd like to help support the channel so I can continue to create videos just like this one,
+[  120.44s ->   122.00s] please like, comment, subscribe, share.
+[  122.30s ->   123.38s] It helps me out tremendously.
+[  123.58s ->   124.96s] It is always greatly appreciated.
+[  125.22s ->   127.80s] And if you'd like to master your quantitative skills,
+[  128.26s ->   129.18s] check out quantguild.com.
+[  130.30s ->   133.66s] Maybe you come from a background in business, economics, computer science,
+[  133.70s ->   137.08s] and aren't too sure where to get started on your quant journey.
+[  137.08s ->   142.52s] Maybe you're an aspiring quant or a working professional looking to sharpen those quantitative skills.
+[  143.08s ->   144.90s] In any case, QuantGuild is for you.
+[  145.02s ->   148.48s] We have over 90 quant lessons in math, probability, finance,
+[  148.80s ->   152.58s] an adaptive practice engine that scales with your skill level
+[  152.58s ->   157.18s] so you can progress to more and more difficult topics with gamified rank-based progress,
+[  157.66s ->   160.54s] interview questions with fully worked solutions,
+[  160.54s ->   167.32s] trading games, courses from A to Z in coding, probability and statistics, math,
+[  167.70s ->   169.54s] and more on the way.
+[  169.72s ->   173.04s] And all that's included with QuantGuild membership.
+[  173.74s ->   175.76s] And you can get started right now for free.
+[  176.32s ->   179.96s] So if you'd like to help support the channel and master your quantitative skills,
+[  180.46s ->   182.30s] check out quantguild.com.
+[  182.30s ->   187.32s] Without further ado, let's understand this idea of an unconditional versus a conditional
+[  187.32s ->   190.60s] distribution, probability, and statistic
+[  190.60s ->   194.04s] so we can approach this idea of the Markov property
+[  194.04s ->   199.54s] and then talk about the implications in our back tests and, of course, our live trade.
+[  199.74s ->   205.70s] So for starters here, let's take a look at a simple example of two fair six-sided dice.
+[  205.82s ->   209.00s] What I'm going to do is I'm going to roll that pair of dice
+[  209.00s ->   212.36s] and take the sum of both outcomes.
+[  213.02s ->   216.76s] And that itself, that sum, is a random variable.
+[  216.96s ->   221.12s] It's fully specified by this probability mass function here.
+[  221.36s ->   224.94s] And I can plot it and it looks something like this.
+[  225.34s ->   229.60s] You'll see here I have all of the possible outcomes for that sum.
+[  229.80s ->   234.38s] And the bar height here is just going to be the probability.
+[  234.90s ->   238.18s] This is the unconditional distribution.
+[  238.18s ->   241.50s] We haven't conditioned on any information.
+[  242.04s ->   246.74s] I haven't said, hey, the first dice is a 1, a 3, a 5.
+[  247.00s ->   249.14s] I haven't seen any information.
+[  249.32s ->   253.12s] I'm simply looking at all of the possible states of the world,
+[  253.52s ->   257.86s] given no information about these two dice that I'm about to roll.
+[  257.96s ->   261.70s] Now, what does this mean for the empirical distribution?
+[  261.70s ->   266.24s] Well, if I'm going to roll two dice and record the outcome,
+[  266.38s ->   268.80s] and I do that a very large number of times,
+[  269.16s ->   275.62s] what you're going to observe is that the frequency of all of the observations that I record
+[  275.62s ->   283.18s] is going to converge to the theoretical frequency given by the probability mass function.
+[  283.38s ->   286.16s] And that, of course, doesn't occur by accident.
+[  286.16s ->   290.28s] That is guaranteed by the law of large numbers.
+[  290.42s ->   294.70s] So if this equation here doesn't make sense to you and this animation does,
+[  294.78s ->   296.96s] they are quite literally the same thing.
+[  297.04s ->   302.72s] That theoretical convergence is guaranteed by the law of large numbers.
+[  302.86s ->   306.36s] Again, this is for the unconditional distribution.
+[  306.74s ->   310.64s] Under the hood, the law of large numbers is using an indicator function
+[  310.64s ->   316.14s] and a Bernoulli random variable to show that the empirical distribution function
+[  316.14s ->   322.94s] and all of the corresponding probabilities converge to the theoretical distribution function.
+[  323.20s ->   328.04s] In other words, this animation is always going to be true.
+[  328.48s ->   331.00s] We'll always observe this convergence.
+[  331.28s ->   335.86s] Now, in that, I suggested that the probabilities must converge.
+[  335.86s ->   341.48s] This is true for any probability statement about the two dice that we roll.
+[  341.78s ->   346.44s] Let's take a look at, for example, the probability that we roll an 11.
+[  346.98s ->   349.04s] Now, this is an unconditional probability.
+[  349.34s ->   353.16s] I still have no information about these two dice.
+[  353.38s ->   356.50s] I didn't say, hey, you know, the first dice landed on a 5.
+[  356.64s ->   358.64s] Now, what's the probability of an 11?
+[  358.76s ->   362.92s] No, I'm looking at, you know, strictly just this idea of two dice.
+[  363.20s ->   364.62s] We don't know what the outcome is yet.
+[  364.62s ->   368.64s] What is the unconditional probability then of an 11?
+[  368.78s ->   373.00s] Well, I can go up to my theoretical mass function, find 11,
+[  373.28s ->   379.32s] and find that the probability here is 0.05 repeating or roughly 6%.
+[  379.32s ->   382.14s] How can I also estimate that?
+[  382.22s ->   384.30s] In other words, how do I know that that's correct?
+[  384.44s ->   389.28s] Well, I can just roll two dice a large number of times,
+[  389.76s ->   392.20s] count the total number of 11s that I see,
+[  392.20s ->   397.46s] and put that over the total number of times that I roll those two dice.
+[  397.64s ->   403.92s] What I'm going to observe if I do that is convergence to this theoretical probability.
+[  404.26s ->   408.48s] These green dots represent every time that I see an 11.
+[  409.02s ->   415.34s] And these red dots, there's so many times I don't realize an 11 in a roll of two dice.
+[  415.44s ->   416.66s] It almost looks like a straight line.
+[  416.66s ->   422.12s] But if I zoom in here, you'll see, yeah, they're actually dots representing the outcome of that roll,
+[  422.32s ->   423.92s] whether or not we rolled an 11.
+[  424.04s ->   425.14s] In that case, we didn't.
+[  425.42s ->   430.06s] If I take the ratio and I do this for a large number of rolls,
+[  430.26s ->   435.28s] you'll see it's going to converge to that theoretical value of roughly 6%.
+[  435.28s ->   438.94s] That's given to us by the law of large numbers.
+[  439.12s ->   443.20s] That is exactly what we're observing here, this probabilistic convergence.
+[  443.58s ->   449.60s] And this is guaranteed for any probability statement about these two dice rolls.
+[  449.84s ->   456.98s] This unconditional probabilistic convergence is actually given by unconditional statistical convergence,
+[  457.32s ->   462.48s] where the statistic of interest is a Bernoulli random variables mean.
+[  462.48s ->   468.48s] That represents the probability of success, and that converges by the law of large numbers.
+[  468.48s ->   473.10s] That's what we're doing to show not just unconditional probabilistic convergence,
+[  473.10s ->   476.52s] but also unconditional distribution convergence.
+[  476.52s ->   484.04s] And we can apply this same idea to the mean of these two dice rolls, that is, the mean of the sum.
+[  484.32s ->   488.20s] So if we take a look at the theoretical mean value, we get 7.
+[  488.20s ->   492.60s] That is going to be our best guess for the sum of these two dice rolls.
+[  492.86s ->   497.76s] If we looked at it as the probability-weighted sum of all possible outcomes,
+[  497.86s ->   502.26s] we would notice the probability mass is symmetric on either side of 7,
+[  502.70s ->   506.60s] meaning the theoretical value is, of course, going to be 7.
+[  506.92s ->   512.82s] Now, if I was to instead of just roll two dice and record whether or not I observed an 11,
+[  512.82s ->   520.22s] as I did in this example, instead I record the mean and I keep track of the mean over my series of dice rolls,
+[  520.34s ->   526.48s] I'm going to observe similar convergence, but in this case, not unconditional probabilistic convergence,
+[  526.64s ->   533.40s] rather unconditional statistical convergence to that theoretical mean value of 7.
+[  533.84s ->   537.10s] Again, this is the law of large numbers.
+[  537.50s ->   539.52s] So why is this important?
+[  539.52s ->   542.68s] Why am I talking about the unconditional distributions here?
+[  543.08s ->   551.00s] Because the unconditional distributions are very rarely, if ever, equivalent to the conditional ones.
+[  551.20s ->   556.02s] Whenever we condition on information, everything changes.
+[  556.48s ->   562.02s] The theoretical mean changes, the theoretical probability changes,
+[  562.26s ->   565.90s] and the theoretical distribution changes.
+[  565.90s ->   572.20s] And the reason why this is extremely important in the context of our back tests
+[  572.20s ->   578.76s] is because any time you look at your entry signal and record your PNL,
+[  578.92s ->   581.78s] then you look at the overall PNL of your strategy.
+[  581.78s ->   586.10s] What you're actually doing is looking at different conditional distributions,
+[  586.10s ->   589.24s] but you're treating them as one distribution.
+[  589.58s ->   591.46s] And that is not correct.
+[  591.46s ->   595.26s] You need to condition on correct information.
+[  595.74s ->   600.68s] Otherwise, you're just taking a whole bunch of distributions that have nothing to do with each other,
+[  600.72s ->   603.12s] and you're throwing them all into one.
+[  603.34s ->   610.24s] We're going to see an example of this after we get past the idea of the Markov property
+[  610.24s ->   616.54s] to fully understand how to properly backtest something in this context.
+[  616.54s ->   621.10s] So now, instead of looking at an unconditional distribution,
+[  621.10s ->   624.32s] let's take a look at a conditional one.
+[  624.40s ->   629.06s] What we're going to say is, hey, the first dice that we're rolling in this pair of two dice
+[  629.06s ->   630.96s] actually landed on a five.
+[  631.56s ->   633.84s] So we're conditioning on information.
+[  634.62s ->   636.74s] How does this change our distribution?
+[  637.02s ->   642.18s] Well, convergence is still there, thanks to the law of large numbers.
+[  642.18s ->   647.64s] But does the theoretical distribution look the same as it did before?
+[  648.38s ->   649.62s] Absolutely not.
+[  649.78s ->   654.16s] The probability of different states of the world has changed entirely.
+[  654.76s ->   660.16s] Take a look at the theoretical distribution here above for our two dice rolls,
+[  660.46s ->   666.43s] and take a look at the conditional theoretical probability distribution here.
+[  667.15s ->   668.55s] They're completely different.
+[  668.55s ->   674.37s] Once we have that initial information, we condition on having already rolled a five,
+[  674.91s ->   676.21s] everything changes.
+[  676.61s ->   679.39s] Convergence is still guaranteed by the law of large numbers,
+[  679.61s ->   681.57s] but the distribution changes.
+[  682.95s ->   684.07s] Probabilities change.
+[  684.17s ->   685.59s] Take a look at this new probability.
+[  685.79s ->   690.51s] Instead of 6% for observing an 11, it's over 15%.
+[  690.51s ->   693.82s] And statistics change.
+[  693.82s ->   698.68s] The theoretical mean value, given we've already observed a five,
+[  698.92s ->   703.24s] is now no longer seven, it's eight and a half.
+[  703.86s ->   708.74s] So everything, once we condition on relevant information, changes.
+[  709.46s ->   713.08s] If we have some sort of trading strategy or a back test,
+[  713.54s ->   717.62s] and we condition on information at disjoint time intervals,
+[  717.62s ->   724.14s] we are implicitly conditioning on path-dependent, filtration-dependent information,
+[  724.14s ->   727.14s] and we're producing different distributions.
+[  727.54s ->   733.50s] This is the conditional distribution of observing a five on the first dice roll.
+[  733.76s ->   739.14s] But this conditional distribution is completely different than if we observed a one
+[  739.14s ->   740.84s] on the first dice roll.
+[  740.84s ->   745.44s] And this has major implications in our back test.
+[  745.62s ->   749.78s] But now that we see that the conditional information,
+[  749.92s ->   753.50s] that is the conditional distributions, probabilities, and statistics,
+[  753.88s ->   758.98s] completely change when we compare them to the unconditional distributions,
+[  759.56s ->   760.92s] probabilities, and statistics,
+[  760.92s ->   769.32s] we can now approach this idea with greater appreciation of the Markov or memoryless property.
+[  769.32s ->   776.14s] The Markov property is telling us something about the conditional information of our random variable.
+[  776.30s ->   781.70s] But we typically don't just look at the outcome of one random variable in this context.
+[  781.70s ->   787.72s] We look at the outcome of a sequence of random variables or a stochastic process.
+[  787.88s ->   792.16s] If that sounds confusing, you can just think of something like a stock price over time.
+[  792.24s ->   795.18s] That is effectively a stochastic process.
+[  795.18s ->   802.78s] The Markov property states that if we look at the conditional distribution probability and statistics
+[  802.78s ->   805.68s] given all of the historic observations,
+[  805.68s ->   815.20s] then that is going to be equivalent to the conditional distribution just given the current observation or state.
+[  815.42s ->   821.58s] That is a massively simplifying assumption in the context of a stock price process.
+[  821.58s ->   825.80s] That means to produce the correct conditional distribution,
+[  825.80s ->   828.38s] I just need the stock price today.
+[  828.54s ->   830.70s] All of the historic information,
+[  830.70s ->   836.68s] all of the historic stock prices are just baked into the stock price that I observed today.
+[  836.82s ->   840.96s] In other words, the distributions are equivalent.
+[  840.96s ->   843.92s] If I include all of that historic data,
+[  844.02s ->   845.52s] all of that historic price data,
+[  845.74s ->   848.88s] or I just consider the price today.
+[  849.54s ->   850.66s] Why is this important?
+[  850.66s ->   854.34s] Because that is a massively simplifying result.
+[  854.34s ->   856.74s] I don't need any of that historic data.
+[  856.90s ->   860.42s] If you are trying to make some sort of prediction algorithm,
+[  860.42s ->   864.80s] then you don't need any of that information if the Markov property is true.
+[  865.02s ->   867.38s] You just need the price today.
+[  867.62s ->   869.82s] And that's going to give you the conditional distribution.
+[  869.98s ->   875.42s] There's no other information that you can then glean in a forward-looking sense.
+[  875.72s ->   878.22s] So what does this actually look like?
+[  878.22s ->   882.54s] Well, instead of looking at the sum of two dice rolls,
+[  882.54s ->   888.78s] what we're going to do is look at the sum over a series of independent dice rolls.
+[  888.78s ->   894.54s] I'm going to roll a dice, record the value, roll another one, record the value, and add them up.
+[  894.54s ->   896.86s] And I'm going to do that 10 times.
+[  896.86s ->   902.46s] This is effectively a stochastic process, and I'm visualizing the outcome here.
+[  902.46s ->   909.38s] In this roll of 10 dice, I've come up with a value, a cumulative sum of 38.
+[  909.90s ->   917.64s] And on the right here, you're going to look at the unconditional distribution of possible terminal values for this sum.
+[  917.92s ->   921.20s] It could be anything along this distribution.
+[  921.20s ->   926.82s] And this blue bar highlights this one set of rolls that we happen to walk.
+[  926.82s ->   929.80s] This is a stochastic process.
+[  930.40s ->   936.86s] Now, why is this important, and how is this relevant to everything that we've discussed so far?
+[  937.10s ->   941.28s] Well, this is the unconditional terminal distribution.
+[  941.28s ->   950.88s] The distribution of sums at step 10 or roll 10 could be one of any of these values.
+[  951.92s ->   957.10s] Okay, well, what if I condition on the first five rolls?
+[  957.54s ->   967.10s] Now, I'm looking at the distribution at step 10 at roll 10, but I already observed five values.
+[  967.10s ->   974.08s] What you're observing here on the left is now, I've already seen this path up to roll 5.
+[  974.76s ->   980.36s] That's going to completely change the distribution at step 10.
+[  981.00s ->   987.78s] That is the idea of a conditional distribution, just like we talked about at the start of this lesson.
+[  988.30s ->   993.42s] We said that the unconditional distribution is very rarely equivalent to the conditional one.
+[  993.42s ->  1000.62s] We can see this is completely different, this conditional distribution, given these first five dice rolls.
+[ 1000.62s ->  1010.62s] If I was to then roll the rest of the dies, I'll create a draw from this conditional distribution, as you see here, this pink bar, right?
+[ 1010.62s ->  1021.20s] Now, I'm conditioning on already observing these five values, but do I need all five of these values?
+[ 1021.52s ->  1028.42s] The conditional probability here of this distribution, given I've already rolled all five of them.
+[ 1028.78s ->  1040.18s] The Markov property says I don't need anything beyond the current roll or the current state.
+[ 1040.18s ->  1046.22s] I can just use this current state to come up with the conditional distribution.
+[ 1046.60s ->  1049.36s] I don't need any of these previous values.
+[ 1050.92s ->  1056.40s] Okay, well, if that's true, then I should get the same conditional distribution.
+[ 1056.78s ->  1057.50s] And I do.
+[ 1058.00s ->  1059.78s] That is exactly what you're observing here.
+[ 1059.78s ->  1070.70s] If I condition on only having this value at roll five or having all of the values back to roll one, I get the same conditional distribution.
+[ 1071.56s ->  1074.74s] That is this idea of the Markov property.
+[ 1074.94s ->  1082.66s] It's tremendously simplifying because I don't need to keep a memory of all of the rolls up to the current state.
+[ 1082.66s ->  1090.68s] I just need the outcome of the current state, the current roll, to figure out what the conditional distribution is.
+[ 1091.16s ->  1095.34s] That is exactly this idea of the Markov property.
+[ 1095.76s ->  1097.46s] That is the information.
+[ 1097.60s ->  1104.92s] If I condition on the entire path, that is equivalent to conditioning on the outcome of the current state.
+[ 1105.28s ->  1107.88s] That is why it is effectively memoryless.
+[ 1107.88s ->  1116.82s] All of that necessary information is encoded into this current value that dictates the conditional distribution of interest.
+[ 1117.24s ->  1120.38s] That is precisely the Markov property.
+[ 1120.38s ->  1127.00s] It should now be very easy to see the problem if the Markov property doesn't hold.
+[ 1127.58s ->  1134.84s] What I'm saying then is I need all of this information to produce the correct conditional distribution.
+[ 1134.84s ->  1141.18s] And that means that if I just condition on this one value, they will not be equivalent.
+[ 1141.18s ->  1146.60s] That is, if I condition on the entire path versus just conditioning on the current state.
+[ 1147.18s ->  1150.48s] And that is the problem in practice.
+[ 1150.80s ->  1152.42s] Are markets Markovian?
+[ 1152.82s ->  1155.32s] Do they exhibit this Markov property?
+[ 1155.88s ->  1159.12s] Plenty of evidence suggests not.
+[ 1159.12s ->  1173.94s] That is, the conditional distribution given the entire path history of filtration series of path histories is not equivalent to the conditional distribution just given the current state.
+[ 1174.08s ->  1181.66s] And for you PhDs watching or reading this Jupiter notebook, yes, we can expand the state space.
+[ 1181.66s ->  1187.98s] But if we need to go back to path inception, then it no longer is a simplifying assumption.
+[ 1188.14s ->  1190.02s] It's path dependent anyway.
+[ 1190.58s ->  1199.48s] Here are some citations in the financial mathematics literature suggesting that the markets are not Markovian.
+[ 1199.48s ->  1208.54s] And here is an example that we are going to discuss in the context of our backtests and our trading systems.
+[ 1208.68s ->  1223.46s] Pretty much everybody backtests incorrectly because there is a fundamental misunderstanding between what you are conditioning on explicitly versus what you're conditioning on implicitly.
+[ 1223.54s ->  1224.64s] What do I mean by this?
+[ 1224.70s ->  1227.80s] Well, let's take a look at this trading system.
+[ 1227.80s ->  1232.58s] I have the same entry signal at two different points in time.
+[ 1232.68s ->  1235.38s] I have this orange entry signal here.
+[ 1235.52s ->  1238.42s] Then I have this red entry signal here.
+[ 1238.52s ->  1244.82s] And I want to talk about the P&L distribution of this particular trading strategy.
+[ 1245.28s ->  1249.04s] Typically, what people do is they're going to run this backtest.
+[ 1249.16s ->  1251.06s] They're going to take a look at the P&L here.
+[ 1251.44s ->  1252.90s] Take a look at the P&L here.
+[ 1253.02s ->  1256.54s] Take a look at the P&L every place that they had that entry signal.
+[ 1256.54s ->  1259.48s] And they'll throw it into a distribution.
+[ 1259.70s ->  1267.80s] And if we take a look at this trading strategy P&L distribution here, you're going to see that we actually have a negative expected value.
+[ 1268.06s ->  1275.64s] And assuming ergodicity, I'm not getting into a giant discussion on whether or not the market or the way that we trade is ergodic based on our sizing.
+[ 1275.64s ->  1279.96s] I have an entire video dedicated to optimal bet sizing if it interests you.
+[ 1280.08s ->  1283.76s] But in this context, we shouldn't trade the strategy, right?
+[ 1284.58s ->  1286.12s] There's negative expectancy.
+[ 1287.06s ->  1290.60s] But this analysis is wrong.
+[ 1290.76s ->  1292.04s] It is not correct.
+[ 1292.58s ->  1302.04s] This is not how we evaluate the efficacy of our strategy because the conditional distributions are different.
+[ 1302.04s ->  1304.16s] That is exactly what I'm saying here.
+[ 1304.32s ->  1307.90s] And I have a great visual to show you why this is the case here.
+[ 1307.90s ->  1318.00s] I have all of this information that I'm conditioning on implicitly when I take a look at the P&L of this first entry.
+[ 1318.26s ->  1326.89s] Then I have all of this information when I look at the conditional distribution on this second entry.
+[ 1326.89s ->  1331.79s] We're not dealing with a Markovian system.
+[ 1332.49s ->  1339.81s] That is, if I condition on all of this information versus all of this information, I am going to get two different distributions.
+[ 1340.95s ->  1351.25s] Theoretically, if I could replay time and trade this one entry a thousand times and trade this second entry a thousand times,
+[ 1351.25s ->  1356.07s] and I looked at the distributions, you would see that they were different.
+[ 1356.07s ->  1360.27s] But this is exactly what we deal with in practice.
+[ 1360.73s ->  1370.87s] The same system giving entry signals at different points in time are not producing the same P&L distributions.
+[ 1371.13s ->  1378.47s] They don't come from the same theoretical distribution that we're trying to approximate by looking at the empirical distribution.
+[ 1378.47s ->  1386.17s] Too often, I see people take a simple moving average crossover and find, oh, you know, it's not profitable.
+[ 1386.49s ->  1390.85s] But in reality, you're just looking at different conditional distributions.
+[ 1390.85s ->  1397.13s] You're not doing anything to try to unify the theoretical P&L generating distribution.
+[ 1397.13s ->  1406.31s] You're just looking at a whole bunch of different conditional distributions and throwing them into one overarching P&L distribution.
+[ 1406.93s ->  1408.39s] And of course, this is incorrect.
+[ 1408.57s ->  1417.63s] That would be equivalent to trying to look at the conditional distribution of our two dice rolls for a five and a one and then just throwing them together.
+[ 1417.63s ->  1420.73s] That doesn't produce any analysis that doesn't produce any analysis that's correct.
+[ 1420.73s ->  1426.31s] There wouldn't be any convergence there to the values that you would be merging.
+[ 1426.65s ->  1433.85s] And it leads to incorrect conclusions about the analysis of our back tests.
+[ 1434.03s ->  1436.53s] So how do we deal with this in practice?
+[ 1436.69s ->  1439.01s] Well, in practice, we have a lot of different options.
+[ 1439.01s ->  1445.97s] We can try to compress the path representation into some sort of reasonable state variable to proxy the path dependence.
+[ 1445.97s ->  1448.93s] You can try to account for a volatility regime.
+[ 1448.93s ->  1457.69s] You can try to account for momentum, a sentiment regime, so on and so forth to try to bucket the P&L distributions correctly.
+[ 1457.69s ->  1463.07s] You could expand the state space to try to capture more path dependent dynamics.
+[ 1463.07s ->  1467.59s] Again, if you have to expand it back to inception, it's not very useful.
+[ 1468.09s ->  1470.01s] That's just going to be path dependent.
+[ 1470.01s ->  1476.65s] And of course, you're going to have to develop more intricate models to capture these explicit dependencies.
+[ 1476.87s ->  1491.19s] And of course, the problem here is we're not just talking about dependency on the price path process, but also the volume path process, the volatility path process, which is unobservable in the first place.
+[ 1491.19s ->  1498.15s] I have videos on Markov chains and hidden Markov models in the past where we've discussed regime dynamics and latent processes.
+[ 1498.47s ->  1502.61s] If you're unfamiliar with these ideas, I highly encourage you check those videos out.
+[ 1502.61s ->  1515.67s] They're directly related to this idea of trying to correctly approximate the theoretical distribution across different intervals within the same trading strategy.
+[ 1515.67s ->  1523.95s] A very important idea to understand if you're going to try to walk your model forward and trade with it in a live setting.
+[ 1523.95s ->  1534.01s] And that being said, some strategies just happen to have very stable P&L distributions across disjoint signal entries and exits.
+[ 1534.21s ->  1538.27s] It's going to depend entirely on your case.
+[ 1538.35s ->  1540.25s] It's on a case by case basis.
+[ 1540.25s ->  1552.05s] I've seen some signals that require a tremendous amount of conditioning on different state variables and some that can just use a raw entry and exit.
+[ 1552.05s ->  1558.97s] Of course, our goal here is to identify the correct and stable theoretical distributions via an empirical proxy.
+[ 1559.21s ->  1566.21s] As you can see here, if we don't do this correctly or if we do this poorly, we're going to get a distribution that's incorrect.
+[ 1566.43s ->  1575.15s] We have negative expectancy here when if we actually condition correctly and we look at the correct theoretical proxies, these empirical distributions,
+[ 1575.15s ->  1584.37s] you can see, hey, here's a case where the entry and exit produces positive expectancy and here's a case where it produces negative expectancy.
+[ 1584.37s ->  1592.77s] If we can separate those two distributions, then we actually have an actionable trading strategy with a positive edge.
+[ 1592.89s ->  1595.31s] And of course, that is our overarching goal.
+[ 1595.31s ->  1612.97s] Unconditional statistics are vastly different than conditional ones impacting the overall distribution probabilities or statistics of the random variable or stochastic process of interest.
+[ 1612.97s ->  1626.33s] The Markov or memoryless property suggests that the information necessary to construct the correct conditional distribution is available in the current state of a stochastic process.
+[ 1626.33s ->  1628.45s] This is something that you have to prove.
+[ 1628.45s ->  1630.69s] It's not something that you just have.
+[ 1630.69s ->  1637.85s] If the Markov property is true, all of the information before the current time t is not useful at all.
+[ 1637.85s ->  1647.09s] All of the information then is just baked into the current state, making it all redundant in constructing the correct conditional distribution.
+[ 1647.29s ->  1653.51s] Now, in practice, the processes that we observe and are trying to model are not Markovian.
+[ 1653.51s ->  1657.79s] And the current state alone doesn't perfectly model the conditional distribution directly.
+[ 1657.89s ->  1665.59s] And we need to include other information to develop a more accurate model, other state variables, so on and so forth.
+[ 1665.59s ->  1680.33s] If we neglect this idea of path dependency, this non-Markovian nature of the processes that we observe in practice, then we will be fooling ourselves or misinforming ourselves via backtests and other statistical procedures.
+[ 1680.33s ->  1686.93s] As everything we do is implicitly operating on a filtration at a time t.
+[ 1686.93s ->  1697.83s] And the path-dependent nature that we observe and practice will greatly and dramatically impact the distributions that we are trying to proxy via our empirical observations.
+[ 1698.33s ->  1701.65s] And that is exactly the idea that we saw at the start of this video.
+[ 1702.03s ->  1705.23s] The unconditional distributions are not equivalent to the conditional ones.
+[ 1705.23s ->  1715.37s] And if we continue to observe empirical conditional distributions from different conditional distributions, then none of the empirical distributions will converge.
+[ 1715.37s ->  1725.41s] So, in reality, we have to account for these path-dependent dynamics by building more intricate models capable of compressing the state's space into reasonable representations.
+[ 1725.93s ->  1739.37s] You can think of low, mid, high volatility regimes, gaining, losing momentum, increase, decrease social attention, so on and so forth, to produce better approximations of the conditional distributions that we will ultimately trade.
+[ 1739.37s ->  1743.61s] Some future topics, technical videos, and other discussions to look forward to.
+[ 1743.71s ->  1749.49s] I'd like to do more career-oriented videos if there's interest, my first quant resume, projects that made me a quant.
+[ 1749.87s ->  1752.91s] If these are interesting to you, let me know in the comments below.
+[ 1753.31s ->  1756.87s] I'd like to expand on this idea of non-Markovian models.
+[ 1756.99s ->  1761.17s] We've seen the impact in a trading strategy sense.
+[ 1761.49s ->  1767.63s] I'd like to extend this to pricing, fractional brownie emotion, Volterra processes, so on and so forth.
+[ 1767.63s ->  1796.85s] This idea of a quant roadmap, how I would study if I had to start all over, deriving the Black-Trolls equation, this is more financial mathematics, partial differential equations, the analytical and numerical solutions to, that heat equation, the risk-neutral measure, the complete versus incomplete market, and unique versus an infinite number of risk-neutral measures, reinforcement learning for delta hedging, approximating pricing functionals with neural networks, anything on rough path theory, the SIG-VOL model calibration and pricing.
+[ 1796.85s ->  1802.19s] I have a tremendous amount of interest in those niche topics, but again, it's going to be largely based on interest.
+[ 1802.31s ->  1805.27s] Let me know in the comments below what you'd like to see next.
+[ 1805.43s ->  1807.53s] And I haven't forgotten about our quant builds.
+[ 1807.71s ->  1819.07s] I'd like to build a live volatility regime classifier, given we've just discussed the necessity to include state variables in our distributions, our conditional distributions.
+[ 1819.07s ->  1823.39s] If there's interest in this quant build, let me know in the comments below.
+[ 1823.49s ->  1830.33s] I've already started fleshing it out, and I know we have some other quant builds on the docket as well, but this one is quite exciting to me.
+[ 1830.49s ->  1833.63s] And that's going to do it for this video on the Markov property for quant trading.
+[ 1833.71s ->  1834.35s] I hope you enjoyed.
+[ 1834.67s ->  1835.59s] I hope you learned something.
+[ 1835.67s ->  1841.73s] This video certainly took a lot of effort to create, so if you enjoyed it and you want to see more like it in the future, please like, comment, subscribe, share.
+[ 1841.73s ->  1843.63s] Again, it helps me out tremendously.
+[ 1844.07s ->  1845.69s] It is always greatly appreciated.
+[ 1846.07s ->  1848.97s] I'll leave a link in the description below to my discord.
+[ 1849.15s ->  1855.87s] If you'd like to connect with me and other quants in the quant guild community, check out quantguild.com to master your quantitative skills.
+[ 1856.11s ->  1861.59s] Other than that, thank you so much for watching, and I will see you in the next video.

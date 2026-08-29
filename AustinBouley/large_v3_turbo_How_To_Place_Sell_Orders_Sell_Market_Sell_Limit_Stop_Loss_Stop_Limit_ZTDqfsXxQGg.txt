@@ -1,0 +1,61 @@
+[    0.00s ->     3.52s] In this video, we're going to discuss all the different sell order types.
+[    3.96s ->     9.28s] This is probably one of the most important videos you can watch because, yes, it's important
+[    9.28s ->    13.78s] to be able to buy into the stock, but what's more important is making sure you get out
+[   13.78s ->    19.08s] of the stock at the right time to make sure you lose less money or, in this case, automatically
+[   19.08s ->    19.98s] lock in profit.
+[   20.52s ->    21.26s] Let's go over this.
+[   21.34s ->    24.78s] I'm going to initiate a sell order.
+[   25.34s ->    26.44s] I'm going to go to edit here.
+[   26.44s ->    34.00s] As I said in the buy order video, it's going to look different executing this on your own
+[   34.00s ->    40.10s] platform, but the essence of it and how each order type works is going to be the same.
+[   40.26s ->    46.22s] Learn how the order type works because it's going to be executed differently on your own
+[   46.22s ->    46.54s] platform.
+[   47.20s ->    50.30s] As you can see here, we have a bunch of different order types.
+[   50.70s ->    55.24s] The first one is going to be our sell limit, I mean our sell market order.
+[   55.24s ->    57.28s] This works just like the buy market.
+[   57.50s ->    64.22s] When I click trade, confirm, and send, it will sell my current shares at whatever price
+[   64.22s ->    65.56s] the current stock price is at.
+[   65.92s ->    69.52s] It's currently at $2.95.44.
+[   70.22s ->    72.90s] It's going to execute at that price.
+[   73.30s ->    75.54s] Now, you may see a little bit of a change.
+[   75.64s ->    80.22s] It may be a couple cents lower, a couple cents higher because by the time I press this order
+[   80.22s ->    86.12s] and it processes and goes through, the stock price may be a bit different.
+[   86.48s ->    90.12s] This is one of the riskiest ones because you don't control where you get out at.
+[   90.76s ->    95.02s] Now, your stop limit order is going to be your minimum level.
+[   95.20s ->    99.76s] As we discussed with the buy limit, it's where you're okay with selling.
+[  100.22s ->   106.40s] Well, your sell limit is going to be where you're okay with getting out at.
+[  106.40s ->   111.92s] So, for instance, if I bought here and I want to get out at $3.10, then I would set my sell
+[  111.92s ->   116.22s] limit at $3.10 because that's where I want to get out at.
+[  116.32s ->   120.80s] So, a sell limit takes profit as you're going to the upside, right?
+[  120.90s ->   126.08s] So, you set it above the current stock price and you set your limit at the price you want
+[  126.08s ->   129.86s] because you're stopping it as you go up.
+[  129.86s ->   135.78s] Now, your next one, which is a sell stop order, this one is the one I prefer.
+[  135.96s ->   139.90s] So, if you're like, Austin, should I do a stop limit or a stop stop loss?
+[  140.46s ->   147.32s] Well, you should definitely do a stop loss because it's the opposite of the limit one here.
+[  147.40s ->   149.70s] So, the limit you set where you want it to take profit.
+[  150.12s ->   153.32s] On the stop loss, you set it below the current stock price.
+[  153.32s ->   158.00s] So, you say, all right, if it goes below $2.80, I want to exit the trade.
+[  158.38s ->   164.26s] So, you would set your stop order price at where you want to get out at if it goes down to that level.
+[  164.58s ->   169.58s] The reason why I prefer this is because when you have a stop limit, you cap your upside,
+[  169.72s ->   173.44s] which means the stock could potentially just keep going up and up and up, right?
+[  173.50s ->   178.22s] Like, if you look at Moderna with the coronavirus, it shot up 250%.
+[  178.22s ->   183.64s] If you had a stop limit on it, you would have gotten out instead of letting it shoot up.
+[  183.72s ->   188.74s] So, a stop loss, you set here, which lets it have all the upside space,
+[  188.86s ->   194.48s] and then you limit your downside space because you have that stop order set in place.
+[  194.98s ->   199.50s] So, again, this is my favorite order and the ones that I recommend in the weekly stock alerts.
+[  199.86s ->   202.12s] Now, your next one is a stop limit.
+[  202.28s ->   205.78s] So, the way that the stop limit works is very simple.
+[  205.78s ->   210.28s] It's a mix of the sell limit and then it's a mix of the stop loss.
+[  210.70s ->   214.90s] So, your limit order is going to be where you want to get out at the upside.
+[  215.12s ->   218.62s] So, let's say if we want to exit at 310, your limit order here would be 310.
+[  219.14s ->   222.36s] And then your stop would be where you want to get out on the downside.
+[  222.54s ->   225.62s] So, if I want to get out at 280 on the downside, you would set your stop at 280.
+[  225.96s ->   231.46s] So, a stop limit is a mixture of a sell limit and a stop loss order.
+[  231.46s ->   236.52s] So, again, these are our primary sell types and I prefer the stop loss order
+[  236.52s ->   239.72s] because it helps you lock in profit as it's going up.
+[  239.82s ->   241.90s] So, like if I bought here and I set my stop here,
+[  242.20s ->   244.90s] it lets me have the opportunity for the stock to go higher,
+[  245.16s ->   247.28s] but then it also will cut me out sooner.
+[  247.56s ->   249.52s] Now, remember, these are just the essence of how it works.
+[  249.60s ->   251.60s] It's going to work differently on your platform.
+[  251.60s ->   254.34s] So, please research that based on your own platform.

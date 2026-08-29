@@ -1,0 +1,109 @@
+[    0.24s ->     6.16s] 2026 has been wild in the market so let's take a look at how our options selling only account has
+[    6.16s ->    11.04s] done this year and we'll talk a little bit about the brand new credit spread that i opened up
+[   11.04s ->    16.32s] just last week so let's get to it our account currently is sitting at a hundred and thirty
+[   16.32s ->    21.84s] thousand dollars up around 8.51 percent year to date over the last year since we started this
+[   21.84s ->    29.36s] account way back in around march and april we're up around 52 percent in the past year astounding
+[   29.36s ->    35.44s] numbers now if you look at our performance again comparing it to the s p 500 we're up 8.51 percent
+[   35.44s ->    42.56s] that's not including today um and the s p 500 is down 0.01 so we're outperforming the s p 500 by
+[   42.56s ->    48.40s] around 8.5 which is crazy because the s p 500 has been flat now over the year the gap is even bigger
+[   48.40s ->    54.64s] right 18.4 to around 52 which goes to show how powerful selling options can be if we're doing it
+[   54.64s ->    60.56s] in a methodical and consistent manner so let's take a look at how we generated those gains over
+[   60.56s ->    67.44s] that certain amount of time year to date we're going from 11 767 dollars to a real life profit of
+[   67.44s ->    74.72s] around 13 927 24 and these are just this is just options income these are all the trades that i took
+[   74.72s ->    81.84s] in terms of sold puts and sold calls as you can see right here and in terms of income you can see that
+[   82.72s ->    88.08s] we are averaging around over the last year 2.4 percent monthly annualized yield on a monthly
+[   88.08s ->    97.30s] average we're around 865 dollars a month january we got of 8 50 february around 962 45 and then
+[   97.30s ->   102.74s] march which we just started we're at 294 dollars and i think this is the cool part monthly yield
+[  102.74s ->   107.62s] this is blended which means that you have cash incurred puts plus your covered calls and you average
+[  107.62s ->   113.86s] that out to whatever this yield is month january at 1.9 right february is a little lower at 1.4 and
+[  113.86s ->   118.42s] currently in march at 0.8 and the reason for that is actually pretty simple right we've been selling
+[  118.42s ->   123.46s] a lot of cash secured puts at a 2.4 monthly yield figma is doing great iot is actually one of my
+[  123.46s ->   128.02s] favorite stocks we'll talk about that another time on this channel i'll make a video dedicated to iot for
+[  128.02s ->   133.78s] sure and then we talked about netflix like we talked about 2.6 percent and then here the covered
+[  133.78s ->   138.74s] calls i've been selling more and more covered calls recently just to demonstrate how to do it
+[  138.74s ->   144.74s] and we're about 0.6 percent and again our strategy is very simple we try to aim for 1.5 to 2.5 percent
+[  144.74s ->   150.66s] on the put side and i'm trying to average out a 0.1 to 0.2 percent on the covered call side so you
+[  150.66s ->   155.54s] blend that together and you're going to be a little bit lower than the 1.5 percent and if you just look
+[  155.54s ->   160.66s] at year to date we're at two thousand one hundred and six dollars a total credit collected year to date
+[  160.66s ->   166.42s] average around 700 a month again our yield here is about 1.4 percent monthly yield one thing i like
+[  166.42s ->   171.30s] to do i don't have too many ticker symbols that i trade really ivkr netflix iot nvidia you can see
+[  171.30s ->   177.86s] they're very consistent on 2.3 percent a month right and then um like you talked about cover calls 0.5
+[  178.82s ->   183.38s] our strategy on this channel is very simple we sell cash secured puts until we get assigned and then we
+[  183.38s ->   190.58s] sell cover calls to add a little bit of income on top or to exit a position but the cover calls is
+[  190.58s ->   196.26s] very secondary to the strategy you can see right here 98 percent of the profit comes from cash
+[  196.26s ->   203.62s] secured puts only 1.7 of it comes from covered calls now if you look at just year to date same idea
+[  203.62s ->   209.94s] right 91.6 of the profit comes from cash secured puts 8.4 comes from covered calls and this is how
+[  209.94s ->   214.42s] it kind of breaks down in terms of year to date and you see this tsm right here these are all covered
+[  214.42s ->   221.62s] calls at 87.31 profit that we realize when we roll out our options all right so let's get to the
+[  221.62s ->   226.66s] main topic of today which is the microsoft credit spread that i opened we're going to talk about why
+[  226.66s ->   232.66s] we opened it i want to talk about how we're going to manage this trade and if you guys are curious about
+[  232.66s ->   238.02s] how to sell credit spreads i'm going to link the master class that i made for free up in the upper
+[  238.02s ->   241.78s] right hand corner right here check it out i'll give you everything you need to know about how we're
+[  241.78s ->   249.54s] selling credit spreads so this 385 380 microsoft put credit spread expires on april 2nd in slightly
+[  249.54s ->   257.47s] less than a month and we sold around we sold around five of them and we collected around 623 dollars in
+[  257.47s ->   263.39s] total credit on these five spreads so it comes out to about 105 dollars per spread we opened them up on
+[  263.39s ->   270.43s] february 26th around the 30 to 45 day mark now let's talk about the first part why did i only sell
+[  270.43s ->   275.07s] five if you guys watch my master class you have to understand that trading credit spreads about
+[  275.07s ->   280.75s] managing your downside risk how much money am i willing to lose and as part of that strategy we
+[  280.75s ->   286.59s] are only willing to lose as much money as we can make which is around 600 our account is currently
+[  286.59s ->   293.39s] sitting around 120 000 600 is around 0.5 of my account that's all i'm willing to risk and another
+[  293.39s ->   298.91s] part of this too is you just saw that on average we're getting close to 800 to a thousand dollars a
+[  298.91s ->   303.47s] month of monthly credit that doesn't include credit spreads by just selling one credit spread
+[  303.47s ->   309.79s] you can see that i'm almost making close to the total amount of credit that collected from selling
+[  309.79s ->   314.83s] puts and calls so we don't want to over leverage ourselves here in our master class where we talk
+[  314.83s ->   321.07s] about two percent max per trade here we're going to do 0.5 just to show you guys how repeatable this
+[  321.07s ->   324.99s] can be and how much money you can actually make by just using a small portion of your account
+[  324.99s ->   330.19s] now let's talk a little bit about why i decided to open microsoft when we did so i want to head on
+[  330.19s ->   335.87s] over to robin hood legend just to show you guys how technical analysis impacts spreads one of the
+[  335.87s ->   342.11s] most important things we talk about selling credit spreads is to find ticker symbols that are extremely
+[  342.11s ->   348.19s] predictable in nature here is the microsoft chart for let's just say a year and we're going to look
+[  348.19s ->   353.39s] at the weekly candle one of the things that we see with microsoft is that every single time
+[  353.39s ->   358.43s] it touches this 200 period moving average it bounces up right and to a certain extent it just
+[  358.43s ->   366.35s] goes from a low to a high to a low to a high to a low to a high to a low to a low because it's very
+[  366.35s ->   373.47s] predictable in nature we are assuming that when it gets into these areas of what i call confluence
+[  373.47s ->   379.47s] high interest that we can start looking at trades and the reason that i decided to sell last week is
+[  379.47s ->   384.03s] actually pretty simple i didn't sell anywhere down here mainly because i don't know if volatility is
+[  384.75s ->   388.51s] going to dry up right there's a lot of selling pressure here right it went from
+[  388.51s ->   395.15s] 550 all the way down to like a low of 380. now what i want to see from a technical analysis
+[  395.15s ->   399.07s] perspective and this is why ta is actually really important to understand how to sell spreads again i
+[  399.07s ->   402.35s] made a free master class check it up here in the upper right hand corner if you guys are interested
+[  403.07s ->   407.63s] you want to see a slowing of momentum right this is looks really scary because you don't know if
+[  407.63s ->   411.87s] the next day microsoft's going to crash through and like continue to go down and so once i start
+[  411.87s ->   417.07s] seeing a little bit of slowing especially on the week of february 16th and then especially on february
+[  417.07s ->   423.15s] 23rd this week then i'm like hey this could potentially be a good way for me to enter so i
+[  423.15s ->   428.11s] entered on this candle now this week i just held it right microsoft went up and this is a really
+[  428.11s ->   433.15s] good confirmation candlestick which means that microsoft should theoretically have hit bottom
+[  433.15s ->   438.59s] theoretically no one knows and on the next monday which is in three days or two days whenever this
+[  438.59s ->   443.07s] video releases i will probably open up another credit spread doubling down on our position again
+[  443.07s ->   449.79s] at 0.5 percent around the same 385 390 area why because that's the low of the candle the previous
+[  449.79s ->   454.75s] candle i don't expect microsoft to continue to go down now i think it's going to go up and if i collect
+[  454.75s ->   459.55s] the same amount you can see those two credit spreads combined is going to collect around 1200 bucks
+[  459.55s ->   464.35s] in total premium so that's why we're selling credit spreads on microsoft right now we want to make sure
+[  464.35s ->   469.87s] that we are selling it in a position where we expect the market to go up but we're only using a
+[  469.87s ->   474.83s] little bit of money until we get confirmation that there's a lot of buying power here and because we
+[  474.83s ->   480.59s] see this candle here on march 2nd which is this week we see money come in the next week i'm a little
+[  480.59s ->   485.95s] i have a little bit more confidence to double down into my position and add more spreads kind of layering
+[  485.95s ->   491.55s] it up on top of each other increasing my exposure here but again remember my downside risk is
+[  491.55s ->   496.19s] supposedly going to be the amount of credit that i collected obviously in reality the market could
+[  496.19s ->   503.55s] tank i could lose much more than 100 which is gonna be 600 bucks per trade but if it ever passes 600
+[  503.55s ->   507.47s] i'm out it doesn't really matter right because then i can always roll it out and survive to find
+[  507.47s ->   512.11s] another day make sure you guys understand that because as we said in our master class the biggest
+[  512.11s ->   517.63s] problems with credit spreads is that your risk is usually higher than your reward right if i make
+[  517.63s ->   523.55s] 120 my downside risk is actually 380 so we want to make sure we protect that that's about it i just
+[  523.55s ->   526.75s] want to make sure that we touch on credit spreads briefly on this account and let you guys know that
+[  526.75s ->   531.79s] we are introducing credit spreads into our public portfolio and at the same time i want to ask you guys
+[  531.79s ->   536.91s] this question how are you guys enjoying this series so far let me know what else you guys think i can
+[  536.91s ->   543.23s] add or improve to make these series more helpful for you guys uh to talk about more current events
+[  543.23s ->   548.03s] or just to give you guys more deep dives on stocks like i've been doing in the past hopefully this
+[  548.03s ->   554.19s] portfolio is showing you how to implement our strategies that we talked about in our master
+[  554.19s ->   560.43s] classes and that is ultimately the goal here is to show you guys that we do what we preach and that if
+[  560.43s ->   566.19s] you follow a certain set of rules that the results can look pretty fruitful and if you guys are
+[  566.19s ->   572.03s] interested in the options trading dashboard it is called premium insights it's a dashboard that i
+[  572.03s ->   577.07s] created to help track my options and help me become a better trader we should we still haven't launched
+[  577.07s ->   582.27s] it yet it's expected to launch beginning of next month but the waitlist is still open so if you guys
+[  582.27s ->   586.51s] are interested in signing up supporting the platform there are a couple benefits for the
+[  586.51s ->   591.07s] people who sign up and log in and use the product when it does launch so again thank you guys to
+[  591.07s ->   594.99s] my channel members for supporting me that the way you do like always stay safe in the market
+[  594.99s ->   597.87s] and if you guys want to learn how to sell credit spreads again i'll link it in the end screen right
+[  597.87s ->   600.91s] here and if you guys want to learn how to do some ta i'll link it in the end screen right here
+[  600.91s ->   606.99s] until next time stay safe in the market peace

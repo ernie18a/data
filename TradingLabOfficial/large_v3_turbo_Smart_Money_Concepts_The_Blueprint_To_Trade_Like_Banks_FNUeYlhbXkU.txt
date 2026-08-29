@@ -1,0 +1,172 @@
+[    0.16s ->     6.00s] These are smart money concepts. The same concepts big banks, hedge funds, and big institutions use.
+[    6.00s ->    10.24s] And there's a reason for that. Because of how successful they are.
+[   13.52s ->    15.84s] This is not your ordinary indicator strategy.
+[   15.84s ->    19.60s] These concepts go deep down to the core of how the markets are structured.
+[   19.60s ->    23.28s] And luckily for you, you can take advantage of that from watching this video.
+[   23.28s ->    27.68s] I'm going to explain the exact formula so you can copy the style of these trades
+[   27.68s ->    30.56s] and use these concepts yourself in your everyday trading.
+[   30.56s ->    33.28s] All right, I've already wasted too much time. Let's get straight into it.
+[   37.70s ->    40.10s] All right, where do we begin?
+[   40.10s ->    44.42s] First, we need to go over the structure of a trend to make sure we're using these concepts correctly.
+[   44.42s ->    48.18s] Then we'll go over some actual live trades to see the strategy in action.
+[   48.18s ->    52.98s] And at the very end of the video, we'll go over a secret trick to make this strategy perform
+[   52.98s ->    56.82s] to a whole new level. So to put it as simply as possible,
+[   56.82s ->    61.22s] a normal uptrend will look like this, making higher highs and higher lows.
+[   61.22s ->    65.54s] Every time a new high is broken, this is what's called a bullish VOS,
+[   65.54s ->    69.06s] or a bullish break of structure, breaking the previous high.
+[   69.06s ->    73.38s] It will then eventually lose momentum and start heading the other direction.
+[   73.38s ->    76.10s] This is very important to understand.
+[   76.10s ->    81.14s] In order for this to be an official reversal, price has to break this prior higher low,
+[   81.14s ->    83.70s] which is right here. Once this move has happened,
+[   83.70s ->    89.54s] that is called a chach or a change of character, which can identify when a reversal is about to
+[   89.54s ->    94.42s] happen. Now, you'll see these absolutely everywhere you look if you go look at the chart right now.
+[   94.42s ->   100.34s] But what we're looking for is something extremely specific. In order to make this change of character
+[  100.34s ->   106.58s] significant, we want this previous high to be in an area of interest. For example, a supply or demand
+[  106.58s ->   113.06s] zone or an order block. The stronger this area of interest is, the better. This will significantly
+[  113.06s ->   117.78s] increase the success rate of the change of character. Picture it like this. A kite. Yeah,
+[  117.78s ->   122.18s] it's pretty good at flying. That is like the change of character by itself. It gets the job done,
+[  122.18s ->   127.46s] but it's still a kite in the end. But if you grab that same change of character and add a strong area
+[  127.46s ->   133.06s] of interest to it, that kite turns into an S16 fighter jet. Big difference. Once we have a change
+[  133.06s ->   138.58s] of character in an area of interest, we can expect price to start heading in the opposite direction,
+[  138.58s ->   144.26s] downwards. Making lower highs and lower lows, creating bearish break of structures. Then once
+[  144.26s ->   148.90s] it comes to the bottom, it'll repeat the whole process again by creating a bullish change of
+[  148.90s ->   153.94s] character. So that's the idea behind the strategy. Very simple. But there are some specifics we have
+[  153.94s ->   159.38s] to go over to make this strategy as successful as possible. First, the most important thing is you
+[  159.38s ->   165.46s] need to locate a key area of interest. We want this area of interest to be as strong as humanly possible.
+[  165.46s ->   169.94s] The stronger it is, the more likely the chart will move in the direction we want it to.
+[  169.94s ->   174.82s] So what do I mean by strong areas of interest? Well, there are a couple things you can look for,
+[  174.82s ->   180.10s] but I'll show you the best performing ones. The first one is a liquidity grab and a key supply
+[  180.10s ->   184.66s] or demand zone on a high time frame. What you would do is go on a higher time frame,
+[  184.66s ->   189.38s] like the one hour or above. The higher the time frame, the stronger the area will be.
+[  189.38s ->   195.30s] Next, you want to find a very key area of supply or demand. You can find this by finding areas
+[  195.30s ->   200.74s] where price rejected multiple times, like here for example. What you want is price to do a liquidity
+[  200.74s ->   205.54s] grab. A liquidity grab is simply when price breaks this recent high or low, does a fake out,
+[  205.54s ->   210.34s] and reverses in the opposite direction. The reason we want a fake out is this.
+[  210.34s ->   214.66s] There are going to be people entering long positions of this recent break. So you know what
+[  214.66s ->   219.06s] they're going to do? They're going to set their stop losses here. So if price does end up doing a
+[  219.06s ->   224.82s] false breakout, once price comes back down, it'll hit all these stop losses, adding fuel to the fire,
+[  224.82s ->   230.02s] and increasing the momentum and the likelihood of the price continuing to head down. Which we
+[  230.02s ->   235.38s] can take advantage of by entering a short and making that sweet old cash as the chart tanks.
+[  235.38s ->   240.34s] Keep in mind, you can do the exact same thing with long trades, you just do the complete opposite.
+[  240.34s ->   246.34s] So a false breakout or a liquidity grab on a higher time frame is the first example of a key area of
+[  246.34s ->   251.14s] interest. The second way you can look for a key area of interest is by finding an order block.
+[  251.14s ->   256.26s] An order block is basically an area where the big money institutions like to enter or exit.
+[  256.26s ->   261.46s] These areas are a high interest because usually price does strong reversals at these levels because
+[  261.46s ->   265.78s] of the amount of money that's entering or exiting. Which is exactly what we're looking for.
+[  265.78s ->   270.18s] Now, shameless plug, I already made an indicator that'll show you all of this. It'll show you the
+[  270.18s ->   274.98s] break of structures, change of characters, key areas for liquidity grabs, and show you order blocks
+[  274.98s ->   280.50s] where big money institutions are likely to enter and exit. So I'm going to be using the indicator for the
+[  280.50s ->   285.78s] examples in this strategy. You can do this strategy without the indicator, but 1, it will not only
+[  285.78s ->   291.62s] help you identify these key areas and let you identify them quickly on the fly, but 2, it'll show you
+[  291.62s ->   297.06s] these areas you otherwise wouldn't know like these order blocks. It's really a game changer and I use it
+[  297.06s ->   301.62s] myself on a day to day basis when I trade. If you want to try it out with this strategy, try it out for
+[  301.62s ->   306.50s] a month, I'll put a link in my description, I guarantee you'll love it. So what I do when using this
+[  306.50s ->   312.10s] strategy, I'll go to the settings of the indicator and disable absolutely everything besides the smart
+[  312.10s ->   316.90s] money concepts. This will enable everything you need for this strategy. As you can see, the indicator
+[  316.90s ->   321.78s] is already labeled everything for us. It's beautiful. Okay, so let's do some live examples.
+[  321.78s ->   324.66s] Hey trading lab, do you know how to double your money?
+[  324.66s ->   328.26s] Double money? What? Is that hit rapper Eminem?
+[  328.26s ->   332.26s] Yep, it's me, Eminem. I'm here to show you how to double your money.
+[  332.26s ->   337.94s] Okay, kind of weird and off topic, but I guess how do you double your money?
+[  337.94s ->   340.90s] It's really simple. It's called Hanco Trade. Look it up.
+[  340.90s ->   348.90s] Hanco Trade. Yes, they can double your money and it's extremely simple. They offer a first time 100%
+[  348.90s ->   354.18s] deposit bonus. So that means whatever you first deposit, they will match that and give it to you for
+[  354.18s ->   360.26s] absolutely free up to 25 grand. Have you heard that Hanco Trade has some of the lowest fees on the
+[  360.26s ->   365.86s] Forex market as well? Morgan Freeman? Apparently everybody knows about Hanco Trade. Yes, Morgan,
+[  365.86s ->   370.90s] Hanco Trade does have some of the lowest fees on the Forex market. They are my favorite Forex broker.
+[  370.90s ->   375.06s] If you haven't already, go to my description and check them out and make sure you get that first
+[  375.06s ->   380.34s] time 100% deposit bonus by using my link. Alright, let's get back to the video and go over some live
+[  380.34s ->   384.98s] trades for this strategy. Make sure you're on a higher time frame like the one hour. One of the key
+[  384.98s ->   390.18s] things to look at are these low and high lines. These are the lines price needs to break and do a
+[  390.18s ->   394.90s] liquidity grab at like I was talking before. If you wanted to do it manually, you would just zoom
+[  394.90s ->   400.18s] out on a higher time frame and find where price is rejecting or getting supported a lot. So you
+[  400.18s ->   405.62s] would make that line and that's the line price has to do a liquidity grab. Here, the indicator does it
+[  405.62s ->   410.66s] for us. If we want to do a short, we want price to do a liquidity grab at the high. If we want to do
+[  410.66s ->   415.70s] a long, we want price to do a liquidity grab at the low. Here's a live example with the trade I took
+[  415.70s ->   420.74s] myself using these exact same concepts. The indicator already drew our lines where price
+[  420.74s ->   425.38s] has to make a liquidity grab for us. If you aren't using the indicator, you would just zoom out and
+[  425.38s ->   431.46s] see where price rejected or supported a lot. So the very first thing we look for is price to do a
+[  431.46s ->   436.90s] liquidity grab or a false breakout. Let's see what happens. Price came up to this area of interest,
+[  436.90s ->   442.74s] passed it, and rejected. So this is the liquidity grab we are looking for. Since it was a bearish area
+[  442.74s ->   447.30s] of interest, we will look for signs to enter a short trade. The next step is we need price to
+[  447.30s ->   451.94s] make a change of character. The indicator will label this for us. If you're doing it manually,
+[  451.94s ->   456.50s] just follow the guide I said at the beginning of the video. As you can see, price fell very hard
+[  456.50s ->   461.46s] after doing this liquidity grab and made a gap while falling down. This is very important,
+[  461.46s ->   466.42s] so keep this in mind for later. After that, it falls a little more creating a change of character.
+[  466.42s ->   472.42s] This is step 2 completed. Price MUST make a change of character after the liquidity grab
+[  472.42s ->   476.74s] or the signal is no good. So we have two indications this is a good short.
+[  476.74s ->   482.10s] Next, we need to know where to enter. What I like doing is entering on a fair value gap or a gap in
+[  482.10s ->   488.18s] general. A fair value gap is simply when price falls or goes up so fast that it doesn't give buyers or
+[  488.18s ->   493.14s] sellers enough time to enter the market, which creates an imbalance in the market. Oftentimes,
+[  493.14s ->   498.50s] price will want to come back up or down to this fair value gap and reject. You can have a bullish
+[  498.50s ->   504.10s] fair value gap and a bearish fair value gap. They make very great entries and are usually extremely
+[  504.10s ->   508.82s] strong. My indicator will mark these for you, red rectangles being bearish fair value gaps,
+[  508.82s ->   513.30s] green rectangles for bullish fair value gaps. Quick tip, if you are using the indicator,
+[  513.30s ->   519.06s] I only like turning the fair value gaps on after I find a liquidity grab and a change of character,
+[  519.06s ->   523.70s] because they do make the chart a little messy, so in this scenario, this is where I would enable the
+[  523.70s ->   528.42s] fair value gaps. If you aren't using the indicator and want to do it manually, you can mark a
+[  528.42s ->   532.98s] fair value gap by taking the previous candle's wick before the big move, then taking the next
+[  532.98s ->   538.58s] candle's wick after the big move. This rectangle area is the fair value gap itself. If the big move
+[  538.58s ->   544.34s] is moving down, it's a bearish fair value gap. If the big move is moving up, it's a bullish fair value
+[  544.34s ->   550.26s] gap. Now, if you trade stocks, oftentimes when price falls or goes up super fast, it'll create a gap,
+[  550.26s ->   555.46s] like the one here. This basically has the same functionality as a fair value gap. If you don't trade
+[  555.46s ->   560.90s] stocks and trade forex or something, just look for fair value gaps and just disregard this gap
+[  560.90s ->   566.02s] thing as these will not happen in forex. But since this chart is a stock example,
+[  566.02s ->   571.86s] there are gaps on this chart, so we will be using them in this example along with fair value gaps.
+[  571.86s ->   576.90s] So now that we have a liquidity grab and a change of character, I go to the settings of the indicator
+[  576.90s ->   582.66s] and enable fair value gaps. This will indicate where all the fair value gaps are automatically for us.
+[  582.66s ->   588.42s] What we want is price to come back up to a fair value gap or a gap after making a change of character.
+[  588.42s ->   593.22s] This gap right here will work perfectly, as price will most likely want to return to this point
+[  593.22s ->   597.62s] because there's an imbalance in the market at this area. Let's see what happens.
+[  597.62s ->   602.26s] Price comes back up to this gap just like we thought it would. Now, if you want to be in the trade for
+[  602.26s ->   607.14s] sure, you can enter right at the beginning of the gap, so you would enter a short right here.
+[  607.14s ->   612.10s] If you want a little better entry, you can wait for price to come up to the halfway point of the gap,
+[  612.10s ->   616.98s] so you would enter right here. I find a lot of times price will come to this halfway point and
+[  616.98s ->   622.74s] then reject. But just keep in mind, sometimes price will only come to the starting point of the gap,
+[  622.74s ->   627.54s] and if you were waiting for the halfway point, you would have missed out on the trade. So in the end,
+[  627.54s ->   631.78s] it's up to you which way you want to do it, but those are the two different ways you can do it.
+[  631.78s ->   637.46s] So price made a bearish liquidity grab, a change of character, then came back up to a normal gap,
+[  637.46s ->   642.74s] or a fair value gap. This is where we enter our short trade. We set our stop loss at the high of
+[  642.74s ->   647.70s] this move. We set our take profit at the low. What I really like about the strategy is that it gives
+[  647.70s ->   652.98s] a great risk to reward ratio basically every time, which is super great. Let's see what happens.
+[  652.98s ->   657.46s] It was a winning trade. Now, just to prove to you how successful this strategy really is,
+[  657.46s ->   661.86s] I'm not going to even cherry pick charts. I'm simply just going to stay on this chart and you can
+[  661.86s ->   667.54s] see 1 how often this happens in the market and 2 how successful this strategy really is.
+[  667.54s ->   673.30s] So you can see once price hit or take profit, while doing that it actually broke our low line
+[  673.30s ->   678.50s] and rejected, creating a bullish liquidity grab. So we can start looking for a long trade now.
+[  678.50s ->   682.82s] The next thing we need is a bullish change of character. Let's see what happens.
+[  682.82s ->   687.54s] Price ends up going up and making a bullish change of character. That's step 2 completed.
+[  687.54s ->   691.06s] Now we need price to enter into a fair value gap. As you can see,
+[  691.06s ->   694.98s] price created 2 bullish fair value gaps as it was going up previously.
+[  694.98s ->   698.18s] Now here's a little rule of thumb. If you want to be on the safer side,
+[  698.18s ->   703.22s] you should wait for price to come down to the lower fair value gap, so this one right here.
+[  703.22s ->   708.66s] Just know, price will not always do this and will end up rejecting on the higher fair value gap,
+[  708.66s ->   711.94s] so you wouldn't miss out on this trade if you were waiting for the lower one.
+[  711.94s ->   717.38s] I usually just do the first fair value gap, so this one right here, but if you want better entries
+[  717.38s ->   722.18s] and better risk to rewards, wait for the lower fair value gap, just know you may miss out on
+[  722.18s ->   728.18s] some trades. So we wait for price to hit this fair value gap, which it does. We enter here.
+[  728.18s ->   733.14s] You can set your stop loss right below this move, or set it all the way below this liquidity line.
+[  733.14s ->   737.86s] It really just depends on your personal risk tolerance. Either or will work, but I'd recommend
+[  737.86s ->   743.38s] doing your own testing. After we set our stop loss, we set our take profit at the high of the last move,
+[  743.38s ->   749.14s] and look what happens. Another easy trade. Oh, but wait, we aren't done yet. As you can see,
+[  749.14s ->   754.34s] when price hit or take profit, it did another liquidity grab from the previous high, so we
+[  754.34s ->   759.30s] keep our eyes out for another potential short. We see price make a bearish change of character,
+[  759.30s ->   765.14s] so that's step 2 completed. Next, all we need is for price to come back up to this bearish fair value
+[  765.14s ->   771.30s] gap for our entry, which it ends up doing. We enter here, set our stop loss either at the high of this
+[  771.30s ->   776.50s] move or set it all the way above this liquidity grab depending on your risk tolerance. Set the
+[  776.50s ->   781.78s] take profit at the low of the last move. Let's see what happens. Another winning trade. As you can
+[  781.78s ->   786.66s] see, none of these were cherry picked at all. If you go look at your charts and see a liquidity grab,
+[  786.66s ->   792.42s] a change of character, and a fair value gap all in correlation, it brings in a massive success rate.
+[  792.42s ->   798.82s] Now here's one more extra little trick you can do with a strategy that performs insanely well.
+[  798.82s ->   804.34s] Instead of looking for a liquidity grab, you can use an order block. What you want is price to come
+[  804.34s ->   810.50s] to an order block and respect it like this. It needs to respect it. If it breaks through it like
+[  810.50s ->   815.94s] this with a big bodied candle, it's not a good order block. It's okay if it has big wicks going
+[  815.94s ->   820.82s] through it like this, it just needs to show signs of slowing down and respecting the order block.
+[  820.82s ->   824.82s] Once you see price respecting the order block, you can do the exact same strategy,
+[  824.82s ->   829.62s] just with order blocks instead of liquidity grabs. So next, we look for a change of character,
+[  829.62s ->   834.82s] which we get. We wait for price to create a fair value gap and come to it, which it does.
+[  834.82s ->   841.06s] We set our stop loss, set our take profit, boom, more easy money. Next, we're going to go over what
+[  841.06s ->   846.82s] hedge funds, yes, the big boys who control billions of dollars in the stock market every single day,
+[  846.82s ->   852.02s] think about technical analysis. And the answer, it may just surprise you. Go check that out.
+[  852.02s ->   854.82s] Thanks for watching, and I'll see you guys next time.
+[  854.82s ->   857.70s] Hey trading lab, do you know how to double your money?

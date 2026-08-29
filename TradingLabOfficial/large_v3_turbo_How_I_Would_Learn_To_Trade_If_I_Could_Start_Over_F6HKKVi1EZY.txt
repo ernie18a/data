@@ -1,0 +1,221 @@
+[    0.00s ->     4.28s] I have made $303,000 last year in trading alone.
+[    4.46s ->     7.72s] Now, for some context, I've been trading for 11 years now.
+[    7.94s ->     8.66s] God, I feel old.
+[    8.72s ->    12.06s] I originally went to college for finance, graduated, got my degree,
+[   12.22s ->    14.32s] and was thinking about going into investment banking.
+[   14.42s ->    16.26s] You know, the whole typical college route.
+[   16.32s ->    18.54s] But then something pivotal happened in my life.
+[   18.66s ->    20.06s] Something so monumental.
+[   20.32s ->    23.48s] Something that completely altered the direction I wanted to go.
+[   23.76s ->    24.98s] I watched The Wolf of Wall Street.
+[   25.08s ->    27.38s] So the 18-year-old version of myself said,
+[   27.52s ->    28.72s] hey, that seems pretty cool.
+[   28.80s ->    29.64s] I want to try that.
+[   29.64s ->    32.30s] So I said, f***ing in a cubicle the rest of my life.
+[   32.38s ->    36.98s] Why would I do that when there's stock trading?
+[   37.08s ->    38.60s] I instantly got hooked.
+[   38.70s ->    42.24s] And I quickly realized I could make just as much money from trading,
+[   42.46s ->    45.44s] if not more, than a quote-unquote real job.
+[   45.60s ->    46.32s] So I thought.
+[   46.44s ->    47.72s] Then reality hit.
+[   47.76s ->    49.82s] When I first started trading, I was terrible.
+[   49.94s ->    51.76s] Like, actually, I was absolute garbage.
+[   51.86s ->    55.50s] For the first three years, I didn't make a single cent from trading.
+[   55.62s ->    56.68s] Absolutely nothing.
+[   56.84s ->    58.70s] Actually, I was losing money.
+[   58.70s ->    62.66s] And I could only imagine if I found a video exactly like this one,
+[   62.74s ->    66.58s] where I had a mentor teaching me step-by-step on how to go about trading
+[   66.58s ->    68.58s] and actually make a career out of it.
+[   68.62s ->    70.74s] You know, some young Padawan type s***.
+[   70.86s ->    74.10s] Because then I could have not only learned a lot more from the beginning,
+[   74.36s ->    77.00s] but I could have also skipped those three negative years
+[   77.00s ->    80.18s] and instantly improve my learning curve right from the start
+[   80.18s ->    83.26s] and not make all the stupid mistakes I made in the beginning.
+[   83.26s ->    84.74s] So let's get straight to it.
+[   84.74s ->    85.96s] I once asked Warren Buffett,
+[   86.04s ->    88.40s] why don't more people copy your investment strategy?
+[   88.58s ->    91.22s] It's not that difficult to understand in principle.
+[   91.34s ->    92.62s] And he said, oh, Jeff, that's easy.
+[   92.76s ->    95.70s] My approach is a get rich slowly scheme.
+[   95.84s ->    97.14s] People don't like those.
+[   97.26s ->    99.60s] But there's a lot of truth in that for everything,
+[   99.70s ->   103.68s] which is if you can think in terms of seven years instead of three years,
+[  103.84s ->   106.94s] and you can defer gratification and think long term,
+[  107.04s ->   109.94s] that will give you a head start against all of your competitors.
+[  109.94s ->   111.62s] Because most people can't do that.
+[  111.84s ->   113.94s] One thing I always like to tell traders
+[  113.94s ->   117.88s] is that this whole building wealth game is a marathon, not to sprint.
+[  118.00s ->   120.40s] You have to have a long term mentality,
+[  120.70s ->   123.52s] which 99% of people don't really have.
+[  123.58s ->   125.56s] And the reasoning behind that is YouTube.
+[  125.74s ->   129.80s] YouTube has helped destroy the mindset of millions of profitable traders.
+[  130.06s ->   132.56s] They see the YouTuber flexing their Lamborghinis,
+[  132.68s ->   133.84s] buying fancy watches,
+[  134.06s ->   136.50s] and making hundreds of thousands of dollars in a day,
+[  136.66s ->   139.62s] making stupid amounts of money in a short period of time.
+[  139.62s ->   140.94s] Now, don't get me wrong.
+[  141.06s ->   142.60s] It can definitely get to that point.
+[  142.70s ->   146.10s] But you have to understand this is not the norm.
+[  146.30s ->   149.90s] This only happens if you have large amounts of capital to begin with.
+[  150.00s ->   152.40s] You see, there might be a month where you make 5%,
+[  152.40s ->   156.36s] which realistically 5% in a month is a huge number.
+[  156.52s ->   159.52s] Now, if you think 5% is not a huge number,
+[  159.72s ->   162.82s] your mindset is already massively misaligned.
+[  162.92s ->   166.74s] That is because you are not thinking of this game from a long term perspective.
+[  166.74s ->   171.32s] You are thinking of it from a point where you currently are in the short term.
+[  171.44s ->   172.72s] Now, I completely get it.
+[  172.80s ->   175.40s] Say if we have two traders, Trader A and Trader B.
+[  175.52s ->   177.48s] Trader A is trading with only $100.
+[  177.94s ->   181.42s] 5% of $100 is absolute garbage for Trader A.
+[  181.60s ->   182.86s] You only made $5.
+[  183.30s ->   184.52s] Great, enough to buy a coffee.
+[  184.72s ->   187.00s] Trader B is trading with a million dollars.
+[  187.14s ->   189.64s] Well, now that 5% is $50,000.
+[  190.02s ->   193.00s] $50,000 in a month is pretty damn good.
+[  193.00s ->   196.24s] Trader A and Trader B took the exact same trade,
+[  196.34s ->   197.82s] the exact same amount of risk,
+[  197.96s ->   199.96s] the exact same amount of percent in returns,
+[  200.18s ->   203.50s] and even more frustrating, did the exact same amount of work.
+[  203.56s ->   207.62s] But Trader B nearly made $50,000 more than Trader A.
+[  207.74s ->   211.98s] So seeing this, Trader A thinks they need to risk more of their money
+[  211.98s ->   215.34s] to get higher and faster returns like Trader B.
+[  215.40s ->   217.38s] Because they want that Lamborghini now.
+[  217.48s ->   218.58s] I want it now!
+[  218.58s ->   221.74s] And $5 in returns is not going to cut it.
+[  221.82s ->   222.94s] Which by doing this,
+[  223.08s ->   227.16s] they end up doing three catastrophic things that kill their portfolio.
+[  227.46s ->   228.84s] They end up raising their risk,
+[  228.96s ->   230.10s] lowering their entry standards,
+[  230.34s ->   232.88s] and most importantly, rush the process.
+[  233.10s ->   235.34s] Which will eventually end up biting them in the butt
+[  235.34s ->   238.00s] and getting them in the process you're likely in now.
+[  238.08s ->   239.44s] Of lose money, make money.
+[  239.54s ->   240.60s] Lose money, make money.
+[  240.72s ->   241.80s] Lose money, make money.
+[  241.86s ->   244.46s] And consistently stay in the exact same spot.
+[  244.56s ->   246.64s] Or even worse, start going negative.
+[  246.64s ->   249.36s] Which in return, keeps them in the exact same cycle.
+[  249.64s ->   251.60s] The cycle of a losing trader.
+[  251.80s ->   254.70s] Now, the good thing is, we can get you out of that cycle.
+[  254.80s ->   256.82s] But in order to get you out of that cycle,
+[  257.00s ->   258.40s] you first have to understand,
+[  258.52s ->   263.02s] big profit target expectations are literally killing your performance potential.
+[  263.20s ->   264.74s] Now, say if you're trading with $1,000.
+[  265.12s ->   267.02s] If we target only 5% a month,
+[  267.12s ->   269.90s] 5% of $1,000 is $50 a month.
+[  269.98s ->   272.70s] Again, if you're trading with only $1,000 right now,
+[  272.82s ->   275.02s] this may seem completely pointless to you.
+[  275.02s ->   278.78s] $50 is absolutely nothing and will not pay the bills.
+[  278.92s ->   281.08s] Even worse, it'll not buy the Lamborghini.
+[  281.28s ->   284.14s] But safely raise your account balance to $100,000.
+[  284.38s ->   287.26s] 5% of $100,000 is $5,000 per month.
+[  287.32s ->   290.42s] 5% of $500,000 is $25,000 per month.
+[  290.48s ->   293.26s] 5% of a million is $50,000 per month.
+[  293.34s ->   295.08s] And this brings me to my next point.
+[  295.18s ->   297.60s] Why does it seem like the rich traders get richer
+[  297.60s ->   299.68s] and the poor traders stay poor?
+[  299.74s ->   302.60s] Because the rich traders don't have to target high percentages
+[  302.60s ->   304.36s] to make a shit ton of money.
+[  304.44s ->   306.72s] They don't have to risk a lot to get a lot.
+[  306.80s ->   310.26s] So they can stay in the game a lot longer with a lot less risk
+[  310.26s ->   312.92s] and still make exceptionally good returns.
+[  313.16s ->   314.78s] Now, you might be sitting there thinking,
+[  315.02s ->   315.96s] Well, thanks, Trading Lab.
+[  316.04s ->   318.06s] It's pretty obvious the more money you have,
+[  318.12s ->   319.38s] the more money you'll make.
+[  319.44s ->   321.50s] But that's not the point I'm trying to make.
+[  321.50s ->   324.38s] You have to understand the profitable traders
+[  324.38s ->   325.90s] that are making all of this money
+[  325.90s ->   328.20s] have a very long-term mindset.
+[  328.46s ->   329.70s] Let me blow your mind real quick.
+[  329.78s ->   332.80s] Even if you're only starting with $1,000 right now,
+[  332.84s ->   335.98s] $1,000, then target it again, say 5% a month,
+[  336.06s ->   338.64s] which even 5% a month is still pretty high,
+[  338.76s ->   340.48s] but we'll go with it for this example.
+[  340.58s ->   344.24s] 5% with $1,000 is $50 the first month,
+[  344.36s ->   347.12s] which again is probably absolute garbage to you.
+[  347.12s ->   351.36s] But if you made 5% every single month starting with only $1,000
+[  351.36s ->   354.92s] and kept reinvesting that money in your next trades,
+[  355.00s ->   357.40s] do you know how much you would have in the end
+[  357.40s ->   359.92s] if you consistently did that for 20 years?
+[  360.08s ->   362.86s] You would have $121 million.
+[  362.98s ->   367.68s] $121 million in 20 years getting only 5% a month,
+[  367.82s ->   369.42s] starting with only $1,000.
+[  370.00s ->   372.48s] If that doesn't open up your eyes, I don't know what will.
+[  372.62s ->   374.54s] You don't need to be going for home runs.
+[  374.68s ->   376.68s] You need to be going for base hits.
+[  376.68s ->   378.06s] The point I'm trying to get in your head
+[  378.06s ->   380.74s] is 5% may seem like a small amount now,
+[  380.82s ->   383.00s] and it probably is a small amount now.
+[  383.06s ->   386.16s] But if you consistently do it and keep your snowball intact,
+[  386.28s ->   390.26s] the compounding of that 5% can do absolute wonders.
+[  390.48s ->   394.24s] So don't think about the $50, think about the 5%.
+[  394.24s ->   398.08s] But this next tip makes the last one look like a grain of sand.
+[  398.22s ->   400.00s] Look, if you want to get better at football,
+[  400.26s ->   403.34s] I can guarantee you if you practice with Tom Brady,
+[  403.50s ->   405.00s] you would get better at football.
+[  405.00s ->   408.96s] And if you wanted to become the best in the world at toasting bread in a toaster,
+[  409.18s ->   413.54s] you'd probably hang out with someone who's weirdly good at toasting bread.
+[  413.66s ->   416.46s] My point is, trading is no different.
+[  416.68s ->   419.92s] Now, here's the part I wish someone told me on day one.
+[  420.02s ->   421.76s] If you want to become better at trading,
+[  421.94s ->   426.64s] it is super detrimental you surround yourself with profitable traders.
+[  426.64s ->   432.10s] Because if you were like me, you'll end up making the same mistake over and over,
+[  432.32s ->   435.36s] and there's nobody there to tell you what you're doing wrong.
+[  435.56s ->   439.48s] Which, if you're doing this, your learning curve will be very slow,
+[  439.62s ->   442.80s] and your first couple of years, you'll likely be losing money.
+[  442.96s ->   445.74s] Let me show you what actually changes your learning curve.
+[  445.82s ->   448.88s] When you're surrounded by good traders, you can show your chart,
+[  449.00s ->   450.48s] someone points out what you're missing,
+[  450.48s ->   453.98s] you're able to watch how other people think through a setup.
+[  454.14s ->   458.74s] And most importantly, you can press years of trial and error in two weeks.
+[  458.90s ->   460.26s] There's a lot of ways to do this.
+[  460.36s ->   464.08s] You can go to trading conferences, trading competitions, networking,
+[  464.34s ->   466.78s] whatever it is you need to do it.
+[  466.82s ->   469.14s] But for me, it was joining a trading community.
+[  469.30s ->   473.36s] For example, I have a discord community with 50,000 people in it,
+[  473.42s ->   477.12s] and all of them are trying to do exactly what you're trying to do,
+[  477.12s ->   478.56s] become better at trading.
+[  478.68s ->   481.18s] What's nice about this is you can post your charts,
+[  481.30s ->   484.62s] ask questions, and see other people's ideas and strategies.
+[  484.86s ->   489.56s] But the main goal we focus hard on is how to think about trades,
+[  489.62s ->   490.60s] not just copy them.
+[  490.70s ->   494.58s] I've personally hired a team of eight professional analysts in the discord
+[  494.58s ->   497.62s] to do just one thing, share all of their trades
+[  497.62s ->   499.80s] that they personally take throughout the day,
+[  499.90s ->   503.46s] every single one, where they're entering, where they're exiting,
+[  503.46s ->   506.42s] and most importantly, you can see how they think
+[  506.42s ->   507.70s] about the trade itself.
+[  507.80s ->   510.38s] So you can see the process, not just the outcome.
+[  510.50s ->   514.22s] I myself even post every single trade I take in there as well.
+[  514.38s ->   517.14s] That $300,000 I made last year from trading,
+[  517.34s ->   520.42s] I shared every single trade I took in the discord
+[  520.42s ->   522.02s] while getting to that point.
+[  522.16s ->   525.36s] But my biggest rule with this discord is transparency.
+[  525.66s ->   528.04s] You see, we post a monthly performance report,
+[  528.16s ->   530.72s] and we post it no matter what the month looks like.
+[  530.72s ->   533.94s] It's good, bad, ugly, it doesn't matter, we post it.
+[  533.94s ->   536.36s] This monthly report provides two things.
+[  536.52s ->   539.44s] One, you get to see which analyst performs the best,
+[  539.62s ->   543.88s] and two, it allows me to see if any analyst ever underperforms,
+[  543.88s ->   546.34s] so I can remove them from the group as a whole
+[  546.34s ->   549.14s] and cycle in better analysts to take their place.
+[  549.22s ->   552.72s] This keeps the quality of the trades super top tier.
+[  552.82s ->   555.78s] For example, this was our yearly report for 2025.
+[  555.78s ->   560.28s] We had one of our best years yet with over 1,600 trades,
+[  560.42s ->   564.90s] a 77% win rate, and an average gain of 98%,
+[  564.90s ->   566.30s] which I'm super proud of.
+[  566.36s ->   567.86s] And don't just take my word for it.
+[  567.92s ->   570.80s] This discord has genuinely helped lots of people,
+[  570.92s ->   574.98s] like these guys, these guys, these guys, them, and them.
+[  575.16s ->   576.24s] And here's some more.
+[  576.34s ->   578.28s] You don't have to join my community,
+[  578.50s ->   580.94s] but I'd at least recommend trying one.
+[  580.94s ->   582.72s] Because the fastest way to get good
+[  582.72s ->   586.36s] is feedback from people who are already where you want to be.
+[  586.50s ->   587.94s] But if you want to check ours out,
+[  588.06s ->   589.48s] the link is in the pinned comments.
+[  589.62s ->   591.36s] And since you made it to the end of the video,
+[  591.54s ->   593.94s] I'd like to say thanks by giving you a discount code.
+[  594.04s ->   595.56s] I'll call it Toaster.
+[  595.88s ->   596.52s] See you next time.

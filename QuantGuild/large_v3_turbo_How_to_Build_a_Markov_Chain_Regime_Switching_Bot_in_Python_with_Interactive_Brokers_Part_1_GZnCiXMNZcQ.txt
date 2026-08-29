@@ -1,0 +1,964 @@
+[    0.46s ->     6.97s] hey guys roman here quantitative researcher and trader founder of quant guild if you're looking
+[    6.97s ->    14.73s] to get into algorithmic trading then your strategy must consider the overall regime that you are
+[   14.73s ->    20.45s] trading in whether that is a low mid or high volatility regime whether you're considering
+[   20.45s ->    28.93s] momentum or reversion social attention so on and so forth if you do not consider these things then
+[   28.93s ->    36.77s] all of your statistics within a back test will be incorrect just like i discussed in my previous
+[   36.77s ->    44.37s] video what we're going to do in this two-part series is create a live markov chain regime switching
+[   44.37s ->    53.01s] system and that is exactly what you are seeing here this system is going to operate on five second bars
+[   53.01s ->    58.85s] we're going to get tick data from interactive brokers i'll leave a link in the description below
+[   58.85s ->    62.69s] if you'd like to get started with interactive brokers i highly recommend them i've been
+[   62.69s ->    69.01s] using them for over 10 years at this point and what we're going to do is use them to acquire this tick
+[   69.01s ->    76.29s] data and build this system that you're seeing here this live markov chain regime switching model what
+[   76.29s ->    84.29s] we're going to do is in this video build the shell so that we can effectively record this bar data and
+[   84.29s ->    89.25s] then in the next part we're going to talk about the markov chain model itself integrate it into this
+[   89.25s ->    97.97s] system and then you'll be ready to either drop this into your own trading strategies or extend this into
+[   97.97s ->   104.61s] other regimes i'll give you a quick demonstration of how this system works when we run this application
+[  104.61s ->   111.25s] we get a nice user interface here i can connect to interactive brokers through my local host and my
+[  111.25s ->   118.53s] port and then once i connect i can select the equity that i would like to effectively classify the
+[  118.53s ->   125.73s] volatility regime of so in this case i'm going to use apple and as you can see here i have the current
+[  125.73s ->   134.45s] 30 second candles for the apple stock right here and what we're going to do is we are going to start the
+[  134.45s ->   143.25s] stream of data for apple and create these five second bars and what we're going to do in this
+[  143.25s ->   151.33s] process is calibrate our markov chain model to the previous 60 bars of data so we can see what the
+[  151.33s ->   157.81s] current temperature of the market is so we can effectively classify the regime based on what the
+[  157.81s ->   164.05s] current market state is we don't want to go too far back otherwise these regimes are going to be stale so
+[  164.05s ->   169.01s] we're going to look 60 bars back we're operating on this short time frame and what you're seeing
+[  169.01s ->   175.17s] here is the markov chain model in action so it classified the volatility emissions here as a low
+[  175.17s ->   182.85s] volatility regime then here a high vol regime here a mid and then back to low and mid and it's going
+[  182.85s ->   189.97s] to continue to operate in this capacity and if we would like to recalibrate the model we can just click
+[  189.97s ->   198.29s] this recalibrate button and then all of the data from the previous 60 bars at the spot time will be
+[  198.29s ->   204.21s] used to effectively fit the markov chain model so this is a very cool system we're going to head on
+[  204.21s ->   212.05s] over to vs code and build this shell from scratch and then in the next video we're going to integrate the
+[  212.05s ->   217.49s] markov chain model and then you can drop it right into your trading systems or of course create your own
+[  217.49s ->   223.89s] regime extensions all right here we are in vs code we're going to be building this entire project
+[  223.89s ->   231.81s] from scratch without ai just like the good old days if you're only interested in the source code
+[  231.81s ->   236.93s] i completely get it i'll leave a link to the project in the description below i'll also post it
+[  236.93s ->   244.05s] to the quant guild library on github where you can find the source code for all of my quant builds
+[  244.05s ->   251.01s] in any case i highly encourage you follow along it certainly is the best way to learn so we're going
+[  251.01s ->   258.26s] to go ahead and get started here with our necessary imports i'm going to start by importing t kinter
+[  258.26s ->   265.06s] for our user interface i'm going to say import t kinter as tk import t kinter or i should say from
+[  265.78s ->   274.18s] t kinter import ttk and message box then i'm going to import threading so we can handle the stream
+[  274.18s ->   287.09s] of data import time and of course date time so we can handle those dates that we're going to display
+[  287.09s ->   295.41s] to the user we should probably also import the map plot lib version of dates but we'll see if we need
+[  295.41s ->   303.57s] it later on so we also need collections we're going to create a queue for our bar data i will say from
+[  303.57s ->   310.53s] collections import dq so that we can have this rolling set of bars it's a fixed sized queue
+[  311.65s ->   320.53s] i will import matplotlib.pyplot as plt to handle the candles that we're going to display to the user in
+[  320.53s ->   328.37s] the interface i also need a few more things to display that canvas on the tkinter user interface
+[  328.37s ->   340.37s] i'm going to say from that plot lib dot back ends dot back end i think it's tk ag import figure canvas tk ag
+[  341.84s ->   348.88s] we also need to add some patches for the candles so i'm going to say from that plot lib dot patches
+[  348.88s ->   356.78s] import rectangle okay that should be everything we need for the user interface
+[  356.78s ->   367.10s] and the candle chart now we need the imports for interactive brokers so i will say from ib api dot client
+[  367.82s ->   380.46s] import eclient from ib api dot wrapper import e wrapper and then from ib api dot contract import contract
+[  381.42s ->   389.42s] the eclient is how we are going to send requests to interactive brokers whether we're using the gateway
+[  389.42s ->   395.82s] or the trader workstation that is how our application is going to send requests for data to the server
+[  395.82s ->   403.50s] and then it's going to respond in the implementation of the e wrapper now the contract itself is to specify
+[  403.50s ->   410.30s] the security for the data that we are streaming so you could use a futures you could use an option it
+[  410.30s ->   417.26s] doesn't matter what you choose here we're just going to be using equities for the sake of this build
+[  417.90s ->   425.90s] so we're going to import contract and then i will also import warnings and then i'm just going to ignore
+[  425.90s ->   437.23s] warnings so i'll say dot filter warnings we're going to ignore these user warnings and this is for map plot
+[  437.23s ->   447.52s] lib we know what we're doing here all right so these are the necessary imports for this build we can now
+[  447.52s ->   453.28s] build the wrapper for interacting with interactive brokers so i'm going to create a class for this
+[  453.28s ->   462.90s] i'm going to say class ib app and we're going to implement e wrapper and eclient and this class is
+[  462.90s ->   470.58s] then going to be capable of sending data i'm sorry sending requests to interactive brokers via the eclient
+[  470.58s ->   476.42s] and receiving the the data for those requests via the e wrapper implementations within this class so
+[  476.42s ->   483.62s] i'm going to say def init self callback in this case we'll say none and then i'm going to
+[  483.62s ->   494.18s] initialize the eclient self and self that's just saying hey superclass the ib app is going to be
+[  494.18s ->   503.68s] capable of both sending and receiving requests and data respectively we're going to have a flag for
+[  503.68s ->   513.04s] whether or not we are connected to the server we are going to keep track of the last price of the
+[  513.04s ->   522.13s] instrument that we are tracking we are going to keep track of the bid price we are going to keep track of
+[  522.13s ->   530.00s] the ask price we are going to keep track of the historical data for calibrating our markov chain
+[  530.00s ->   538.88s] model and i will also keep track of whether or not the threading event for querying that historical data
+[  538.88s ->   544.08s] is complete so we can move on to the rest of the program so i'll call it his done i'll say this is equal to
+[  544.08s ->   553.39s] threading dot event and we also need to keep track of the callback when tick data arrives so i will say
+[  553.39s ->   564.37s] self dot callback is equal to callback all right so that is the constructor for our ib app class we now
+[  564.37s ->   571.49s] need to handle a few different callback functions from interactive brokers in the e wrapper by implementing
+[  571.49s ->   575.65s] them so what i'm going to do is i'm going to say death error we're going to start with this guy here
+[  575.65s ->   584.85s] we're going to take a request id an error code an error string and an advanced order reject json
+[  589.97s ->   599.54s] and this is a function that we are implementing in the e wrapper from the e wrapper class and this is
+[  599.54s ->   607.14s] where interactive brokers is going to send any errors that we might have in our data request or in some
+[  607.14s ->   612.82s] form of response as you can see it's going to give us the request id and the associated error code and
+[  612.82s ->   619.86s] an error message so we're implementing this and then we can print it to the user hey you know your request
+[  619.86s ->   626.34s] id 1 5 10 whatever it is has this particular error code and and it's going to print out the the error
+[  626.34s ->   632.78s] message from the server so we're going to handle that here we're going to say if error code is in
+[  633.34s ->   639.26s] here is a set of codes that are non-error messages they're just connection confirmations or data farm
+[  639.26s ->   649.42s] statuses we're going to say 2 1 0 4 2 1 0 6 2 1 5 8 and 2 1 7 6 if we have any of those we're just going
+[  649.42s ->   655.90s] to return in this callback we don't need to consider anything we don't need to report this this is just
+[  655.90s ->   667.14s] confirming connection or data status if we have an error code of 10 1 6 7 then we are going to be
+[  667.14s ->   674.86s] using delayed market data so we're just going to make that note we're going to say note using
+[  676.19s ->   681.71s] delayed market data and this is going to print to the console not our user interface and then we will
+[  681.71s ->   689.55s] return otherwise if we are pinging this function that is our servers pinging this function we have
+[  689.55s ->   695.15s] some form of error to report so i'm just going to print the error as a formatted print statement i'm
+[  695.15s ->   710.02s] going to say error with the request id and we will display the request id we will also display the error code
+[  716.02s ->   728.86s] then on a new line i am going to print the message all right and that's going to do it for this error
+[  728.86s ->   735.82s] function so when the server has any issues to report it's going to report it to this function and if it's
+[  735.82s ->   740.94s] just a blanket confirmation that we've connected we have appropriate market data farm status then we're
+[  740.94s ->   746.46s] just going to ignore this function call if we're using delayed market data then we're just going to make
+[  746.46s ->   751.26s] that note to the user otherwise we certainly will have an error and we're going to print that out to
+[  751.26s ->   757.58s] our console we can also create a logger in the user interface that could be a nice extension if
+[  757.58s ->   766.10s] you're interested in building off of this project but this will certainly suffice for now okay we are
+[  766.10s ->   779.95s] now going to implement the next valid id function and within this next valid id function we are going to
+[  779.95s ->   789.63s] parameterize it with an order id this is going to be the next valid order id that we can use to submit
+[  789.63s ->   795.71s] some sort of order to the server whether we're trying to buy or sell some sort of underlying contract
+[  796.35s ->   802.51s] but the trick here is if we're pinging this function that means we've connected to
+[  803.23s ->   810.99s] the server we can use the connect acknowledged function from the e wrapper or we could just use
+[  810.99s ->   817.47s] this next valid id function to note that we are effectively connected so what i'm going to do here
+[  817.47s ->   824.35s] is i'm just going to say self dot connected is equal to true the only way to reach this function is if the
+[  824.35s ->   831.39s] server is responding with a valid order id so that certainly means that we are connected i'm just going to
+[  831.39s ->   840.11s] say print connected to tws we could also use the connect act function it's really dealer's choice
+[  840.11s ->   846.51s] here you could use connect act disconnect act it's entirely up to you but for the sake of this since
+[  846.51s ->   852.27s] we're not actually dealing with any orders i'm just going to acknowledge the connection within that callback
+[  853.70s ->   861.22s] all right so now we need to handle historic data not just the historic data request to the server
+[  861.22s ->   866.18s] but when the server responds with that data we need to store it somewhere well when we created
+[  866.18s ->   872.58s] this ib app class we already created a dictionary to store the data in so that's exactly where we're
+[  872.58s ->   883.86s] going to put it i'm going to say def historical data self rec id bar and the server is going to respond
+[  883.86s ->   892.34s] with that bar data that we are then going to store so if rec id is not in self dot historical data
+[  893.30s ->   900.26s] self dot historical underscore data that is our dictionary then what i'm going to do is create a
+[  900.26s ->   907.14s] new list i'm going to say self dot historical data within that dictionary the key that i'm going to use
+[  907.14s ->   915.78s] is the rec id and i am going to store an empty list and then within that empty list i can retrieve this
+[  915.78s ->   922.66s] empty list by just calling the dictionary with the key value of the rec id i'll say self dot historical
+[  922.66s ->   931.78s] data rec id and then i'm dealing with this is now a list object i will say dot append and then here i'm
+[  931.78s ->   946.96s] going to append a dictionary of open high low close i'm going to say o maps to bar dot open h maps to bar dot
+[  946.96s ->   966.67s] high l maps to bar dot low and then c maps to bar dot close so anytime a historical data request is fulfilled
+[  966.67s ->   973.15s] by the server it's going to hit this function it's going to provide a bar of historical data
+[  973.15s ->   979.79s] and we're just going to append it to this list it's exactly what we're doing here all right
+[  981.55s ->   988.91s] as you can see if we create a new request when we recalibrate right we click that recalibrate button
+[  988.91s ->   993.87s] as i demonstrated at the start of this video then what's going to happen we're going to have
+[  993.87s ->  1000.75s] a new market data request for the latest set of historical data and it's going to be a new request
+[ 1000.75s ->  1007.31s] id so we'll create a new list and then we're going to store that new historical data in a brand new list
+[ 1007.31s ->  1014.19s] for that new request id that is exactly what is going on here that's how we can ensure that we're not
+[ 1014.19s ->  1021.86s] using stale data to calibrate our model all right so that's going to do it for this historical data
+[ 1021.86s ->  1028.34s] callback function then what we're going to do is on historical data end we are just going to make
+[ 1029.62s ->  1043.25s] notes to the user here historical data ends self rec id start and we are just going to call self dot
+[ 1043.25s ->  1051.57s] hist done and we are going to set it all right so the signal is complete here and
+[ 1052.37s ->  1058.93s] we are all set on receiving the historical data request that means our model is effectively
+[ 1058.93s ->  1065.81s] capable of being calibrated to it and then we can implement that model directly on live data all
+[ 1065.81s ->  1071.09s] right so we do need to wait for that historical data request to complete before we can start the
+[ 1071.09s ->  1081.76s] stream of live data with the calibrated markov chain model all right so that is going to do it for the
+[ 1081.76s ->  1093.07s] historical data callback functions callback methods now we need to handle the tick data for the live
+[ 1093.07s ->  1104.61s] data stream so i'm going to call def tick price self rec id tick type price and attribute and then here
+[ 1104.61s ->  1111.41s] i'm just going to say if price is less than or equal to zero then we are going to return all right
+[ 1114.54s ->  1119.58s] clearly that is not a price that we are working with we're either dealing with frozen data or we're
+[ 1119.58s ->  1128.38s] not receiving market data whatever a negative or zero value for price implies but if we are streaming
+[ 1128.38s ->  1133.50s] data correctly we're going to make it past this return statement here and we're going to say if tick
+[ 1133.50s ->  1140.86s] type is equal to four then what does that mean well that's going to be the last traded price i'll say
+[ 1140.86s ->  1146.38s] self dot last price is equal to price and that's going to be the price within this callback what's
+[ 1146.38s ->  1152.94s] going to happen is on the start of the application when we click that start stream button after we've
+[ 1152.94s ->  1159.02s] connected already then a new market data subscription is going to be created with a request id
+[ 1159.66s ->  1166.62s] and every single time there is a tick update to the price it's going to ping this callback method with
+[ 1166.62s ->  1173.42s] the request id and the price and the associated tick type so here this is going to be the last
+[ 1173.42s ->  1181.74s] traded price if we use tick type of four and we can say if self dot callback then we can just say self dot
+[ 1181.74s ->  1195.28s] callback price price date time now and that is effectively going to be the price and the associated
+[ 1195.28s ->  1202.61s] time that we received that tick all right so we're going to handle that later on but for now let's continue
+[ 1202.61s ->  1215.44s] here within the tick price callback method so what if we have instead a tick type of one a tick type of
+[ 1215.44s ->  1223.60s] one corresponds to the bid price so i'm going to say self dot bid price is equal to then price a tick type
+[ 1223.60s ->  1237.12s] of then two corresponds to the ask price all right so this is going to update the necessary fields within
+[ 1237.12s ->  1246.00s] our ib app class based on the response from the server keep in mind the price here is a parameter
+[ 1246.00s ->  1254.56s] of this callback method all right that is the price that the server is going to respond with the associated
+[ 1254.56s ->  1260.24s] tick type all right so if the tick type is four then we know we're dealing with the last traded price
+[ 1260.80s ->  1270.05s] if the tick type is one that is going to be the bid price so that's how we know which to assign the price
+[ 1271.25s ->  1284.94s] during that particular call of this method and then if we wanted to extend this to volume regimes or even
+[ 1285.82s ->  1292.94s] social sentiment momentum reversion whatever it may be then we could use tick size it would look something
+[ 1292.94s ->  1305.66s] like this if i had def tick size self rec id tick type size i could get the volume but i am going to leave
+[ 1305.66s ->  1314.80s] that as an extension if you're interested in working off of this implementation all right if we have
+[ 1314.80s ->  1329.04s] some sort of last trade time as well then that is going to arrive in the tick string callback but
+[ 1329.04s ->  1338.56s] we're already handling the time using the date time module here so these are some extensions you can
+[ 1338.56s ->  1346.24s] implement if you choose to do so it is roughly equivalent to implementing connect act disconnect act
+[ 1346.96s ->  1355.44s] you can use either methodology it's not going to impact the function of the application that we are building
+[ 1355.44s ->  1368.38s] together all right so now that we've built out the ib app class we can move on to this open high low close
+[ 1368.38s ->  1377.02s] bar class all right this is going to represent a candlestick bar i'll say class open high low close
+[ 1377.02s ->  1384.38s] bar and then i'm going to create a constructor and within this constructor i'm going to have a timestamp
+[ 1384.38s ->  1393.17s] and an open price and this is going to be when the bar started so i'll say self dot timestamp is equal to
+[ 1394.05s ->  1408.50s] timestamp self dot open is equal to open price self dot high is equal to open price self dot low is equal to
+[ 1408.50s ->  1420.98s] open price because keep in mind this is going to be the start of the bar all right so we're actually
+[ 1420.98s ->  1430.10s] creating the bars that the user is going to be observing all right so when we initialize a new bar
+[ 1430.10s ->  1435.38s] everything is the same right we just are dealing with a tick of data so the open high low and close
+[ 1435.38s ->  1441.30s] are all equivalent but as things change then we're going to update that information accordingly so we
+[ 1441.30s ->  1447.54s] define the fields as the default open tick price and then we are going to set the tick count in this
+[ 1447.54s ->  1454.42s] case when we create this new bar to one and then the current regime to zero this is our volatility regime
+[ 1455.39s ->  1464.83s] the markov chain model is going to produce zero for low one for mid and two for high you can specify
+[ 1464.83s ->  1472.72s] this however you like but this is how we're going to do it within this series all right now we need
+[ 1472.72s ->  1479.20s] to create a function to update our bar data we have an open lie open high low and close and a tick count
+[ 1479.20s ->  1487.04s] to update so i am going to create a function called def update with a price and what i'm going to do is
+[ 1487.04s ->  1496.16s] i'm going to say self dot high is equal to max of the current high and this new price self dot low is
+[ 1496.16s ->  1504.08s] equal to the min of the current low and the price self dot close is going to be equal to the price
+[ 1504.08s ->  1511.36s] in any case right because we're going to continue to update this bar until we roll to the next one
+[ 1511.36s ->  1518.96s] right so in any case the close when we update this particular bar is going to be the latest price
+[ 1518.96s ->  1529.25s] that we observe all right and then of course we are going to increment the tick count okay
+[ 1530.13s ->  1536.61s] the logic here is we only need to update the high if we've seen a new high that's why we're calling this
+[ 1536.61s ->  1543.57s] max function and the same logic applies with the low we don't actually have to store an array of that
+[ 1543.57s ->  1552.75s] data we can just continue to make this update to the open high low and close the open of course is
+[ 1553.31s ->  1561.63s] not necessary for the display all right we're going to create a new property now and this property is
+[ 1561.63s ->  1570.56s] going to be volatility and in this case we can use quadratic variation we could do it as some sort of
+[ 1570.56s ->  1576.80s] price range a percentage of the close price i'm going to do it just as a percentage of the close price for
+[ 1576.80s ->  1583.04s] simplicity's sake you can define your volatility measure however you would like you can calibrate
+[ 1583.04s ->  1588.96s] a gaussian you can use standard deviations whatever you'd like to do in this case i'm just going to say
+[ 1588.96s ->  1599.92s] return self dot high minus self dot low divided by self dot close if self dot close is greater than zero
+[ 1599.92s ->  1607.52s] otherwise we're going to produce a zero value for volatility we do not want to divide by zero all
+[ 1607.52s ->  1613.44s] right so that is going to be the case here the close is always going to be greater than zero unless
+[ 1613.44s ->  1620.64s] we're not streaming data in that case our application would throw an exception so that is exactly why i am
+[ 1620.64s ->  1630.99s] conditioning on a positive close price here so now that we've built the class to handle our open high
+[ 1630.99s ->  1639.79s] low close bar data we can build the class for our markov chain regime switching model this is what we are
+[ 1639.79s ->  1647.63s] going to do in the next video but we're still going to define the functions to be used in this application
+[ 1647.63s ->  1655.94s] here in so i'm going to say class markov regime i'll create a constructor i'll just leave it blank for
+[ 1655.94s ->  1665.66s] now i'm going to create a function called calibrate and this is going to calibrate to historical bars
+[ 1665.66s ->  1673.66s] as we've already handled above then i'm going to create a class called gaussian likelihood and this is
+[ 1673.66s ->  1685.79s] for our bayesian updating of the current regime based on the emission probabilities and then i will create
+[ 1688.86s ->  1697.07s] a function to actually get the regime all right so this is going to be implementing a markov chain
+[ 1697.07s ->  1702.99s] model we're going to calibrate it to historical data we are going to segment the historical data into
+[ 1702.99s ->  1709.95s] different volatilities based on percentiles this is how i am developing the notion of volatility you can
+[ 1709.95s ->  1716.19s] use whatever measure you would like there are plenty of measures you could use even a series of measures
+[ 1716.19s ->  1721.63s] and then compress them using some sort of principal component analysis in a linear sense or you could
+[ 1721.63s ->  1729.07s] even you do some form of non-linear dimensionality reduction with some sort of auto encoder this is python
+[ 1729.07s ->  1736.35s] after all so you could implement pytorch very easily to develop that structure in any case i have a
+[ 1736.35s ->  1745.23s] video on markov chain models and hidden markov models that walk you through exactly what they are and why
+[ 1745.23s ->  1751.71s] they're useful in practice and i apply them in two very interesting settings and the hidden markov models
+[ 1751.71s ->  1757.95s] video actually deals with latent volatility processes so if you're unfamiliar with those topics i highly
+[ 1757.95s ->  1764.59s] encourage you check those videos out they are directly applicable to this system that we are building
+[ 1764.59s ->  1771.63s] and if you wanted to make your own extensions using those different types of models or even alternative
+[ 1771.63s ->  1780.03s] regimes or extending the state space then you certainly can do so so this is the markov regime model
+[ 1780.03s ->  1785.31s] class i'm going to leave it as a blank shell for now we are going to approach this in the next part of
+[ 1785.31s ->  1794.83s] this video now we're ready to actually create the main user interface so i'm going to say class live market
+[ 1795.55s ->  1805.04s] dashboard and here in the constructor i'm going to take the root of the application this is when
+[ 1805.04s ->  1810.88s] i call tk.root i'm effectively just creating the window and then i need to populate it with everything
+[ 1810.88s ->  1817.52s] that i want to see all my buttons all my charts this that and the other so what i'm going to do in this constructor
+[ 1818.08s ->  1827.15s] is say self.root is equal to root self.root.title is going to be live market data dashboard
+[ 1828.62s ->  1833.98s] self.root.geometry is going to be 1200 by 800
+[ 1835.66s ->  1843.42s] self.root.configure i want a background color to keep this nice dark theme so i'm going to use 0d
+[ 1844.14s ->  1854.22s] 1117 and then i am going to continue with this dark theme i will say self.style is equal to ttk.style
+[ 1855.10s ->  1864.43s] and then self.style.theme use and we're going to use clam here and then we'll call self.configure
+[ 1865.82s ->  1877.31s] dark theme and we're going to have to build that function okay so now within this live market data
+[ 1878.03s ->  1884.19s] dashboard here i'm going to create a new interactive brokers app i'm going to initialize
+[ 1884.19s ->  1893.07s] that ib app class that i created above i'm going to say self.ib app is equal to ib app and now i can
+[ 1893.79s ->  1906.19s] assign a callback if you recall above when i use self.callback i am indicating a price string the
+[ 1906.19s ->  1913.47s] actual price associated with that tick update and the associated date time so that is what we are going
+[ 1913.47s ->  1922.91s] to have to implement within this live market dashboard class so i'm going to call that self dot on tick data
+[ 1923.47s ->  1930.43s] and that is going to be the callback of interest and that is what is going to effectively update the tick
+[ 1930.43s ->  1936.99s] data once we receive it from the server remember this tick data is going into the bars that we are
+[ 1936.99s ->  1946.50s] displaying to the user in those open high low close candles we are going to say that we are disconnected
+[ 1946.50s ->  1952.58s] by default so connected is equal to faults then we will say self dot streaming is equal to faults by
+[ 1952.58s ->  1962.66s] default until we are effectively connected and start streaming data i'm going to now fix my bar duration
+[ 1962.66s ->  1967.46s] i'm going to say self dot bar duration and you can make this whatever you like depending on the interval
+[ 1967.46s ->  1974.98s] that you are trading i'm just going to make it five seconds per open high low close bar the max bars
+[ 1974.98s ->  1982.42s] that i'm going to display is going to be 10 plus the present bar it's going to be rolling in that queue
+[ 1982.42s ->  1993.10s] so we can continue to pop the last item the open high low close bars will be equal to then dq max length
+[ 1993.10s ->  2001.73s] is equal to then self dot max bars so we have this fixed length q self dot current bar is going to be
+[ 2001.73s ->  2007.81s] equal to none until we actually create it we've already created the class for these bars so it's
+[ 2007.81s ->  2016.42s] going to be pretty easy to handle and display them on the chart then we'll say self dot bar start time
+[ 2016.42s ->  2024.18s] is equal to none again we're going to handle that when we receive tick data self dot price history is
+[ 2024.18s ->  2031.38s] going to be equal to dq and we will set the max length to a default of 100 this is going to be our
+[ 2031.38s ->  2039.94s] recent tick prices if we wanted to store them for whatever reason we can even use this to not
+[ 2039.94s ->  2048.50s] necessarily fetch historical data for the latest 60 bars we could just use this price history queue
+[ 2048.50s ->  2060.05s] depending on how far back we want to calibrate the markov chain model all right i'm going to create a
+[ 2060.05s ->  2070.50s] last update time and a regime model which is of course our markov regime class implementation there
+[ 2074.72s ->  2083.20s] only a few more things we need to create a bar lock which is a threading lock to protect the bar from
+[ 2083.20s ->  2092.88s] race condition conditions on updates we need to create an update thread this is for bar management
+[ 2092.88s ->  2100.24s] it's going to be a background thread and we're going to set running equal to faults and then we're going to
+[ 2100.24s ->  2106.48s] create these functions to help set up the user interface we'll call it setup ui and we'll call it
+[ 2106.48s ->  2117.54s] setup chart and that should do it for our live market dashboard constructor let's work on making some of
+[ 2117.54s ->  2127.86s] these necessary methods within our class like the on tick data method the setup ui setup chart even the
+[ 2127.86s ->  2133.38s] configure dark theme so let's just start with the theming because i think that is going to be the
+[ 2133.38s ->  2142.10s] easiest to do so i'll say configure dark theme and what i'm going to do is i'm going to set the background
+[ 2142.10s ->  2152.82s] color equal to the other color that i was using earlier 0d 1117 this is our main background color
+[ 2152.82s ->  2164.77s] then we have our foreground color this is going to be c9 d1 d9 and then we will have an accent color
+[ 2165.57s ->  2177.20s] this is going to be two three eight six three six and then an entry background color this is going to be
+[ 2178.40s ->  2193.97s] one six one b22 all right very good now i'm going to call that style that we created earlier and
+[ 2193.97s ->  2202.82s] configure everything i'm going to say t frame we will make the background the background color so we're going
+[ 2202.82s ->  2211.30s] to configure the t frame and the t kinter root that we're applying the styling to so we're going to
+[ 2211.30s ->  2226.30s] configure t frame t label frame we'll make the background the background color the foreground the
+[ 2226.30s ->  2241.50s] foreground color shocking i know we will make the label frame labels have the correct background color
+[ 2241.50s ->  2257.65s] color and of course the correct foreground color and then we're also going to apply a font we will
+[ 2257.65s ->  2264.29s] make it 10 points and bold you can use whatever font you'd like that you have installed so we apply
+[ 2264.29s ->  2270.53s] the foreground color apply the font apply the background color we're going to do the same actually
+[ 2270.53s ->  2277.81s] for the button and for the label so we have consistent styling i'm just going to copy and paste this so i
+[ 2277.81s ->  2285.15s] don't have to retype the whole thing so we did it for the label frame label we did it for the label
+[ 2285.15s ->  2293.30s] frame now we're going to do it for the t label in general and we're not going to use bolding for just
+[ 2293.30s ->  2306.42s] the arbitrary label we're just going to have it as 10 point fonts and then for the button we are going to
+[ 2306.42s ->  2315.28s] apply nine point font and that should look good i think we also need padding for the button as well
+[ 2316.75s ->  2327.17s] so i'll add padding 10 and 5 height and width should be reasonable width and height i should say
+[ 2328.05s ->  2336.85s] now we need to create a map for the t button and this is going to be for the active and inactive
+[ 2336.85s ->  2342.85s] statuses the active or disabled so i'm going to say background is equal to and then i'm going to create
+[ 2342.85s ->  2353.41s] a tuple of active and then i will set the color to 2 ea 043 so that is going to be the active state and
+[ 2353.41s ->  2372.03s] then disabled is going to have a color of two one two six two d two one two six two d same difference but
+[ 2373.36s ->  2380.56s] fair enough all right that is going to be the active and disabled map for the button now we need to do the
+[ 2380.56s ->  2389.12s] entry for where we actually type the security the symbol that is for the data that we're going to be
+[ 2389.12s ->  2396.80s] streaming i will say self dot style dot configure t entry and then here we're going to say field
+[ 2396.80s ->  2408.14s] background is equal to entry background foreground is equal to foreground color and then the insert color
+[ 2408.14s ->  2415.34s] will just be the foreground color will just be the foreground color and that should do it for our
+[ 2415.34s ->  2423.58s] entries and then we can also add accents as well to the button so i will say style dot i really should
+[ 2423.58s ->  2434.29s] say self dot style dot configure and we are going to say accent dot t button and we will apply a background of
+[ 2434.29s ->  2451.06s] da 3633 and a foreground of whites okay and then we're going to map create a map for that accent button
+[ 2451.06s ->  2460.38s] button as well i'm just going to copy that map from earlier accent dot t button and then active i'm going
+[ 2460.38s ->  2474.53s] to use instead here we're going to say f85 149 and then i will use the same disabled status there all
+[ 2474.53s ->  2481.49s] right so that's how we're going to configure this dark theme that's going to do it for this method we
+[ 2481.49s ->  2488.13s] can now move on to setting up the user interface itself we've styled all of the widgets that we're
+[ 2488.13s ->  2494.61s] going to place within our roots that is we're going to have buttons we're going to have label frames
+[ 2494.61s ->  2500.77s] we're going to have that map plot lib figure canvas that we're going to call updates to we'll have
+[ 2500.77s ->  2507.57s] rectangle patches for the candles but we're going to build those as we get to them for now let's continue
+[ 2507.57s ->  2514.37s] building this user interface so we have a place to put all of those items i'll call it setup ui self
+[ 2515.01s ->  2523.09s] and then mainframe is equal to ttk dot frame self dot root padding is equal to and i will say 15
+[ 2523.89s ->  2531.73s] and then mainframe dot grid i'll say row is equal to zero column is equal to zero sticky is equal to
+[ 2532.61s ->  2542.69s] n sue so north south east and west and then self root dot column configure and we're going to have
+[ 2542.69s ->  2552.29s] a weight of one in the zeroth column and we're going to do the same for the zeroth row and the mainframes
+[ 2552.29s ->  2558.29s] zeroth row and or zeroth column and second row so i'll say self dot root dot row configure
+[ 2558.29s ->  2571.73s] zero weight one and then to the mainframe column configure zero weight one and then mainframe dot row
+[ 2571.73s ->  2581.97s] configure two weights one and that's because the chart row is going to expand right we don't necessarily
+[ 2581.97s ->  2589.89s] want the entry fields at the top the local host the port where we're typing the security the symbol
+[ 2589.89s ->  2595.25s] for the data that we're streaming to expand we want that chart too so what we're doing here is
+[ 2595.89s ->  2604.29s] we have that root right that we are providing to the constructor of this live market dashboard class
+[ 2604.29s ->  2612.77s] we're assigning that root to the root field the root variable within this instance of the live market
+[ 2612.77s ->  2619.97s] dashboard and we're going to put a frame within that root window that we can then add widgets to
+[ 2619.97s ->  2627.89s] label frames buttons charts whatever and we are just aligning that mainframe within that root window
+[ 2627.89s ->  2633.89s] row zero column zero it's going to be sticky to every end of the original frame that's the
+[ 2633.89s ->  2641.09s] north north south east and west there and then we're going to configure the weight of the root
+[ 2641.09s ->  2646.13s] application itself and then the weight of the mainframe so keep in mind right we have the root
+[ 2646.13s ->  2651.73s] window but that's not where we're placing the widgets we have the mainframe that lives in the root
+[ 2651.73s ->  2657.73s] window and that is exactly where we're placing everything and the reason why we did a weight of one
+[ 2657.73s ->  2663.41s] in the second row here is because that is where the chart is going to live
+[ 2663.41s ->  2670.37s] we only have effectively depending on how you look at it just one column so the zeroth column will get
+[ 2670.37s ->  2679.97s] all of the weight in the root of the application and the mainframe all right so let's start by creating
+[ 2679.97s ->  2685.33s] now each of the sections for connecting for streaming data so on and so forth i'm going to start with this
+[ 2685.33s ->  2691.17s] header frame this is going to be ttk dot frame i'm going to put it within this mainframe the header
+[ 2691.17s ->  2699.81s] frame is going to have a grid layout row zero column zero sticky to the east and west right this is just
+[ 2699.81s ->  2707.44s] the fields we don't need it expanding north and south we'll have some padding on the y-axis 0 15
+[ 2707.44s ->  2715.01s] that should suffice and now i'm going to be adding some labels to this header frame all right so i'm
+[ 2715.01s ->  2723.26s] going to have a title label this is going to be tk dot label we're going to place it within the header
+[ 2723.26s ->  2737.74s] frame i'm going to call this a live regime switching application and i'm going to assign some font here
+[ 2738.46s ->  2752.32s] just to make this look nice i'll have jet brains mono 18 we'll make it bold and then the background i will
+[ 2752.32s ->  2761.54s] do 0 d 1 1 1 7 just as we've been doing before i probably should have a variable for this globally but
+[ 2761.54s ->  2772.72s] here we are so 58a6 ff and then that is going to do it for this label we need to choose how it lives
+[ 2772.72s ->  2784.35s] within this header frame i'm just going to pack it to the left side all right now we need a label for
+[ 2784.35s ->  2791.25s] the status of the application whether or not we are connected i'll say self dot status indicator is equal
+[ 2791.25s ->  2800.85s] to tk dot label header frame text is equal to initially we'll say disconnected and then i'm
+[ 2800.85s ->  2808.42s] going to of course assign a font here i'll use the one that we were using prior 10 point bold
+[ 2809.76s ->  2820.75s] and then the same background here man i'm really in too deep on this background foreground color but
+[ 2820.75s ->  2828.06s] is what it is same background color and uh foreground color we're just going to use f85
+[ 2829.58s ->  2840.18s] 149 okay so when we're disconnected it's going to display in that capacity that black and red to stay
+[ 2840.18s ->  2849.38s] on theme we now need to choose where it lives in that header frame so keep in mind right what we're
+[ 2849.38s ->  2854.90s] working with here is we have our root we have our main frame that's the whole thing here we're placing
+[ 2854.90s ->  2859.78s] now a header frame at the top and now we're putting widgets within that header frame we have
+[ 2859.78s ->  2864.90s] the label for the the live regime switching model and now we're going to have the label for whether
+[ 2864.90s ->  2871.06s] or not we are connected the live regime switching model was packed to the left we'll pack this then
+[ 2871.06s ->  2880.06s] to the right and we'll have some padding on the x all right so now we need a control panel for
+[ 2880.06s ->  2886.14s] everything those are just the labels now we need to create a frame for the control so i'm going to say
+[ 2886.14s ->  2894.14s] control frame is equal to ttk dot label frame and within this label frame we're going to place it in
+[ 2894.14s ->  2900.54s] the main frame so this is not the header this is the label frame for the controls of the application
+[ 2900.54s ->  2908.46s] connect disconnect stream recalibrate so on and so forth so that's going to be the control panel
+[ 2909.42s ->  2919.95s] i'll have some padding we're placing this in row one column zero of that main frame remember we have
+[ 2919.95s ->  2928.85s] what the second row reserved for the chart the candles so this control frame lives above it we're
+[ 2928.85s ->  2936.00s] going to say control frame dot grid we're not packing it in there right we're going to place it
+[ 2937.55s ->  2944.27s] explicitly in row one we already have the header frame in row zero so we'll throw this in row one
+[ 2944.27s ->  2950.35s] we'll throw it in column zero there's really only one column sticky towards of course the east and west
+[ 2950.35s ->  2956.51s] we don't need it to expand like the mainframe to the end of the root we just need it to expand to the
+[ 2956.51s ->  2966.85s] left and right then we'll have some padding on the y and that will do it for the placement of this
+[ 2966.85s ->  2973.57s] frame now we need to populate it with things we need to populate it with a host import entry button to
+[ 2973.57s ->  2981.97s] connect everything like that so i will create a connection section this will be ttk dot frame we're
+[ 2981.97s ->  2987.49s] going to put it in the control frame and i'm just going to pack this in there i'm going to say pack
+[ 2987.49s ->  2996.85s] we're going to fill the x space and i will have some padding on the y-axis 0 and 10. now i'm going to
+[ 2996.85s ->  3011.06s] place a label in the connection section the text will be host we're going to pack this to the left
+[ 3011.06s ->  3018.45s] side and put some padding on the x so that we can put the entry i want you to notice that i am not
+[ 3018.45s ->  3024.69s] creating a variable to store this label i am initializing this label object and immediately
+[ 3024.69s ->  3032.21s] packing it inside the connection section i cannot access this label if i want to unless i go into the
+[ 3032.21s ->  3037.73s] connection frame and somehow retrieve all of the widgets that were stored in it that are being
+[ 3037.73s ->  3044.05s] placed within it so i don't need to store this label as a variable i can just pack it directly into
+[ 3044.05s ->  3051.14s] my frame that is what i'm doing there unlike the host variable itself which i do want to access that's
+[ 3051.14s ->  3056.10s] how i'm going to create the connection request to the server for interactive brokers i'm going to say
+[ 3056.10s ->  3064.72s] self dot host bar is equal to tk dot string bar this is going to keep track of the value in that entry
+[ 3064.72s ->  3075.52s] our local host is 127.0.0.1 that is the default host and the host entry is then going to be a
+[ 3076.48s ->  3082.43s] tkinter entry we're going to place it in this connection setting the text variable that is going
+[ 3082.43s ->  3088.43s] to link the entry that you know whatever the user types in this host entry to some sort of variable on
+[ 3088.43s ->  3094.99s] the back end in this case it's going to be the host var is going to store that content so that is how
+[ 3094.99s ->  3100.59s] we connect the entry to a variable to use to create the request i'll say text variable is equal to self
+[ 3100.59s ->  3107.31s] dot host bar and then the width of this entry we can just make it 12. it doesn't need to be too large
+[ 3107.31s ->  3113.23s] it's just the host now this host doesn't actually live in the connection section yet because we haven't
+[ 3113.23s ->  3118.35s] told it how to live there how to place it so i'm going to say host entry and we're going to pack
+[ 3118.35s ->  3132.59s] it to the left side and we will say padding x 0 and 15. the reason why this works is because we're
+[ 3132.59s ->  3138.75s] padding the host label or we're packing the host label to the left with reasonable padding on the x
+[ 3139.39s ->  3145.47s] axis right left and right and really we're just throwing padding on the right side there
+[ 3145.47s ->  3152.99s] so then when we pack this entry we've linked it to this variable host bar so whenever we want to
+[ 3152.99s ->  3160.03s] request whatever the user typed in there we can just access this host bar but the point is when we
+[ 3160.03s ->  3165.55s] pack this host entry now it's going to be placed beside this label we pack this to the left then we
+[ 3165.55s ->  3172.10s] pack this to the left all right so nothing too complicated there and then we can actually just do
+[ 3172.10s ->  3177.86s] the exact same thing with the port it's just going to pack the label for the host the entry for the
+[ 3177.86s ->  3182.26s] host the label for the port then the entry for the port so i'm just going to copy all this
+[ 3184.45s ->  3191.98s] and i'm going to put the port pack to the left of course the default port for paper trading is 7497
+[ 3192.70s ->  3199.02s] and then we can pack it there as well but do keep in mind we have to change the string variable and the
+[ 3199.02s ->  3205.34s] entry this label is not being stored as a variable it does not matter but for the host bar we do need
+[ 3205.34s ->  3211.82s] to change this to the port bar this is no longer the host entry this is the port entry and we can
+[ 3211.82s ->  3220.05s] just place that there we do need to make sure that we map it to the correct port bar as well so now this
+[ 3220.05s ->  3226.93s] is the exact same thing that we had for the host but now specified for the port living in the connection
+[ 3226.93s ->  3238.14s] section okay we're now ready to add connect and disconnect buttons i'm going to say self dot connect
+[ 3238.14s ->  3246.00s] button is equal to ttk dot button we're going to place it in the connection section the text is going
+[ 3246.00s ->  3255.87s] to be connects the command is going to be self dot connect ib makes sense to me we certainly want to
+[ 3255.87s ->  3261.47s] connect to connect to interactive brokers if our connection button is clicked so that is going to
+[ 3261.47s ->  3269.15s] be our function to connect to interactive brokers we're going to have to create that as well self dot
+[ 3269.79s ->  3275.31s] connect button we are going to pack it inside this connection section we're going to place it on the
+[ 3275.31s ->  3285.04s] left side as well and we will also have padding on the right side of the button so everything is just
+[ 3285.04s ->  3291.20s] going to be packed linearly from left to right all of these different sections all right so that's our
+[ 3291.20s ->  3300.43s] connect button now we can do the same thing for the disconnect button ttk dot button the connection
+[ 3300.43s ->  3307.73s] section is where we're going to place it the text is going to be disconnect instead of connect now the
+[ 3307.73s ->  3317.06s] command is going to be self dot disconnect ib which we will also have to create the state currently is
+[ 3317.06s ->  3324.26s] going to be disabled we cannot disconnect unless we are connected style accent dot t button we've
+[ 3324.26s ->  3336.16s] already configured what that looks like all right let's add a a visual separator now i'll say sep is
+[ 3336.16s ->  3347.07s] equal to ttk dot separator place it in the control frame orient it horizontally and then we can just fill
+[ 3347.07s ->  3359.79s] the x with that separator have some padding over and under 10 should do it all right now we need to
+[ 3359.79s ->  3367.86s] create a section to request a live data stream to do this i'm going to create a new section data section
+[ 3369.04s ->  3374.80s] is equal to ttk dot frame we're going to place this in the control frame of course but where we are just
+[ 3374.80s ->  3391.68s] going to pack it filling the x axis left to right all right now we need inputs for the symbol that we
+[ 3391.68s ->  3398.88s] are streaming so i'm going to say ttk dot label this is going to exist in the data section the text is
+[ 3398.88s ->  3405.60s] going to be symbol and here i'm going to pack it to the left side this is exactly what we did above
+[ 3407.84s ->  3414.08s] throw some padding on the x-axis to the right side of the label we're not storing it in a variable
+[ 3414.08s ->  3420.40s] we are just adding this symbol label now i need a variable to keep track of what was entered just
+[ 3420.40s ->  3428.32s] as i did above with the host and port self dot symbol var is equal to tk dot string var the value is
+[ 3428.32s ->  3433.68s] going to be in this case we'll just default to apple now we can create the entry for the symbol
+[ 3437.89s ->  3444.05s] place it in the data section the text variable will be that symbol of our that we just created
+[ 3445.49s ->  3457.34s] self dot symbol var the width can be reasonably small as well and then the font we will default to
+[ 3458.46s ->  3466.22s] jetbrains mono 11 and that will do it for a symbol entry but we need to tell it where to live
+[ 3466.78s ->  3470.54s] and that is going to be of course in the data section but we are just going to pack it
+[ 3471.78s ->  3483.68s] just as we did above to the left side cool now we need the buttons i'm going to say
+[ 3485.94s ->  3491.54s] self dot stream button is equal to ttk dot button we're going to place it in the data section the text
+[ 3491.54s ->  3502.74s] is going to be to start the data stream the command the command is going to be self dot toggle stream and
+[ 3502.74s ->  3507.94s] we are going to create that as well the current state is going to be disabled until we are connected
+[ 3508.98s ->  3521.46s] we are just going to pack it in just like everything else to the left side and then
+[ 3523.41s ->  3530.61s] that should do it for the streaming we also need a button to choose to whatever the user chooses to
+[ 3530.61s ->  3539.89s] to recalibrate the markov chain regime switching model so we'll create that button now and the
+[ 3539.89s ->  3545.89s] function for recalibration we will handle in the next part of this series so i'll say self dot recal
+[ 3545.89s ->  3552.13s] button is equal to ttk dot button we're going to put it in this data section here the text is going
+[ 3552.13s ->  3563.57s] to be to recalibrate and the command is going to be self dot recalibrate model the state will be disabled
+[ 3566.48s ->  3577.86s] we are then going to pack this button to the left just as the others have the same amount of padding on
+[ 3577.86s ->  3585.62s] the right side of it and that should do it for the streaming and the calibration button so we have the
+[ 3585.62s ->  3592.18s] entry for the symbol that we are going to be streaming whatever contract it is it could be
+[ 3592.90s ->  3598.26s] an equity it could be a futures it could be an etf it doesn't matter you can specify the contract
+[ 3598.26s ->  3604.66s] however you like in fact you can add more toggles for the security type so on and so forth if you
+[ 3604.66s ->  3612.02s] wanted to it's a very easy extension you just just add a combo box to this section here and then when we
+[ 3612.02s ->  3617.86s] create the data request you can just fetch it directly from that combo box but in in any case that
+[ 3617.86s ->  3624.90s] should do it for the the interactions here now we're going to want to specify the price
+[ 3625.78s ->  3632.98s] and that's going to be the current price streams from the server that's the spot price of the asset
+[ 3632.98s ->  3638.98s] we can use last bid or ask however we want to the last trade price or whatever the the current quotes
+[ 3638.98s ->  3644.26s] are um but that's going to be entirely up to you and whatever you'd like to display so
+[ 3644.26s ->  3649.94s] i'm just going to display the last i'm going to say price frame is equal to ttk dot frame we're going
+[ 3649.94s ->  3655.70s] to put this in the data section as well i'm going to pack it in and i'm going to place it on the right
+[ 3655.70s ->  3666.77s] side then i'm going to create a label for this within this price frame and i'm going to call it
+[ 3667.57s ->  3675.09s] the last price and this last price will have a similar font as we used before
+[ 3679.12s ->  3688.46s] and then i'm going to just pack it in to the left side of this price frame then i'll have some padding
+[ 3688.46s ->  3697.22s] on the right side of this widget that's the pad x there all right now do keep in mind right there's a
+[ 3697.22s ->  3706.10s] lot of moving pieces here but we're creating a frame for the data section to place these widgets inside
+[ 3706.10s ->  3713.54s] right we still have our root our main frame which expands to the north south east and west of the
+[ 3713.54s ->  3720.66s] application then we're creating smaller sub frames within it to place widgets there so within our data
+[ 3720.66s ->  3726.50s] section right we're placing this price frame to display the last price same thing with everything
+[ 3726.50s ->  3730.98s] else we've been doing up until this point right we have our control frame that's where the data
+[ 3730.98s ->  3739.62s] section lives and the control frame lives within the if we go back up here the control frame lives
+[ 3739.62s ->  3749.81s] within the main frame all right so now that we have this label indicating our last price we need a place
+[ 3749.81s ->  3755.49s] to display it right so i'm going to actually create a variable now for this label that we can access with
+[ 3755.49s ->  3762.53s] new data this is very different because instead of it just being a label that lives within this frame
+[ 3762.53s ->  3772.11s] we can update it by accessing this variable i'm going to say this is equal to tk dot label i will
+[ 3772.11s ->  3778.11s] place it in the price frame the initial price is just going to be zeroed out we don't have a price to
+[ 3778.11s ->  3784.35s] display the font is just going to be that jetbrains font that we've been using up until this point
+[ 3787.54s ->  3795.06s] leave it as 16 point bold font and let's actually make the background color and the foreground color match
+[ 3795.06s ->  3811.34s] as well we'll use that same background color we've been using zero d zero d one one one seven and then
+[ 3811.34s ->  3823.52s] for the foreground here we will use seven ee seven eight seven that green styling all right and then we
+[ 3823.52s ->  3830.32s] need to place it within this price frame so i'm going to call self dot price label dot pack and we will put
+[ 3830.32s ->  3837.50s] it on the left so we will pack it to the left so keep in mind this price frame lives on the right but
+[ 3837.50s ->  3844.86s] we're packing the label for last price to the left and this actual label indicating the price to the
+[ 3844.86s ->  3853.34s] left so the label actually lives to the left first then we place this price label in that's going to be
+[ 3853.34s ->  3859.26s] after it so it's going to be effectively i'll mirror it for you watching it's the last price label
+[ 3859.90s ->  3865.82s] we're packing it to the left and then the actual price gets packed to the left here so the label
+[ 3865.82s ->  3872.86s] reads from left to right and then this label here is stored in a variable that's how we update the price
+[ 3874.51s ->  3881.94s] all right so now we can move on to the chart itself and the chart frame so what we're going to do is
+[ 3881.94s ->  3889.54s] create a chart frame and this is going to be equal to ttk dot label frame and then we are going to place
+[ 3889.54s ->  3894.58s] this within the main frame we know where this is going to exist column zero row two that's how we
+[ 3894.58s ->  3904.58s] assign the weights earlier so the text here is going to be live open high low close with markov regime this
+[ 3904.58s ->  3910.34s] is going to be five second bars as we used earlier you can use whatever you like the padding is going
+[ 3910.34s ->  3922.54s] to be 10 and then we are going to place this as i said grid row two column zero sticky and we want this
+[ 3922.54s ->  3931.10s] to be sticky within this particular grid because this is going to be the chart frame so as this grows
+[ 3931.10s ->  3938.46s] and expands we want it to grow and expand in every direction all right so now i can configure the column
+[ 3938.46s ->  3948.11s] and that is going to have a weight of one and i can configure the row and that is going to have a
+[ 3948.11s ->  3954.70s] weight of one that's where the it's where the container for the figure is going to live effectively
+[ 3956.05s ->  3965.66s] so let's create this container it is going to be a frame that exists in the chart frame and of course we
+[ 3965.66s ->  3983.50s] are going to place it in row zero column zero same behavior north south east and west sticky to the north
+[ 3983.50s ->  3991.74s] south east and west as we continue to grow the window as it gets resized then i will say self dot
+[ 3991.74s ->  3998.70s] chart container dot column configure and we are just going to assign the same weights as prior
+[ 3998.70s ->  4019.62s] column configure and row configure all right that looks good so that is where our chart is going to
+[ 4019.62s ->  4028.34s] live now we we could add a frame at the bottom for the statistics that we're observing that is you
+[ 4028.34s ->  4034.10s] know how many bars we've queried um you know how many ticks per the current bar so on and so forth so
+[ 4034.10s ->  4039.94s] so let's do that i'm going to create a stats frame this is equal to ttk dot frame we're going to place
+[ 4039.94s ->  4045.14s] this in the main frame where does this live this is going to live below that chart frame so i'm going
+[ 4045.14s ->  4052.98s] to say stats frame dot grid row three and then column this is going to be zero sticky to the east and west
+[ 4052.98s ->  4057.86s] just like our control panel we don't want it growing to the north and south padding y we're going to have
+[ 4057.86s ->  4068.90s] 10 and zero so padding on the top in that case and then we can have a whole bunch of labels so i'll say
+[ 4068.90s ->  4079.54s] self dot stats labels is equal to this dictionary and then i'm going to populate a list of tuples
+[ 4079.54s ->  4094.38s] i'll have bars zero i'll have high and i'll leave it empty i'll have low and i'll leave it empty
+[ 4094.38s ->  4113.34s] and then i'll do regime leave it empty and then ticks per bar i will leave it as zero then i'm just
+[ 4113.34s ->  4123.81s] going to say for i name and value in enumerate and we're just going to enumerate these stats
+[ 4125.66s ->  4131.34s] for the sake of construction this is going to save us a lot of time instead of just typing everything out
+[ 4131.34s ->  4138.06s] i'm going to say frame is equal to ttk dot frame stats frame within this stats frame i'm just going
+[ 4138.06s ->  4148.51s] to pack to the left side with some padding on the x-axis so that we can add all of these labels i'll
+[ 4148.51s ->  4155.62s] say ttk dot label and we're going to place this within that frame we just created the text is going
+[ 4155.62s ->  4160.82s] to be what well it's going to be what we are enumerating over i'll use a formatted string here
+[ 4161.54s ->  4168.88s] and i'm just going to use the name and that is going to of course correspond with a value so the
+[ 4168.88s ->  4176.40s] font here i will just use the font we've been using all along i'll use nine point i won't bold it
+[ 4177.04s ->  4189.30s] and i'm going to pack this to the left side now that we have the correct label right i want you to
+[ 4189.30s ->  4195.86s] see what we have here right we're just enumerating these statistics here right so we're just unpacking
+[ 4195.86s ->  4201.46s] this list effectively of tuples and we have the name so that's going to be bars here then we're
+[ 4201.46s ->  4206.10s] going to have the corresponding value all right so how do we place that value well i'm going to create
+[ 4206.10s ->  4211.86s] a label i'm going to call it tk dot label place it in the frame the text is going to be the corresponding
+[ 4211.86s ->  4218.42s] value the font in this case we will make it now jet brain so it's different than the label make it 10
+[ 4218.42s ->  4226.08s] we'll make it bold here for the value and we will assign a similar background color and foreground
+[ 4226.08s ->  4241.46s] color as we've been using all along in e all right and then we're going to pack it to the left side so
+[ 4241.46s ->  4260.08s] it lives right next to its own label have some padding to the left of it and then within the stats labels
+[ 4260.96s ->  4269.52s] dictionary we're going to create a key that is the name of the particular label and its corresponding value
+[ 4269.52s ->  4275.12s] and assign it to the label that we are storing the value in this is very important here because
+[ 4275.12s ->  4281.60s] what we've done now in this live market dashboard is created a new dictionary for the stats labels
+[ 4281.60s ->  4291.52s] and we are linking the name of the statistic bars regime high low ticks bar whatever it is we are using
+[ 4291.52s ->  4298.48s] that as the key to this dictionary to retrieve the corresponding label that is presenting the value
+[ 4298.48s ->  4304.24s] to the user interface that's exactly what we're doing here we don't care about the label itself we care
+[ 4304.24s ->  4310.48s] about the label presenting the value because that's what we have to update all right so that is going
+[ 4310.48s ->  4320.18s] to then do it i believe for this setup ui function this method we can now move on to setting up the
+[ 4320.18s ->  4326.02s] chart let's create this method here for setting up the chart i'll call it def setup chart very creative
+[ 4326.90s ->  4337.70s] and i will start by setting the matplotlib style to use a dark background and then i'm going to establish
+[ 4337.70s ->  4349.22s] a figure and an axis within this live market dashboard i'll say self.fig self.axe is equal to plt.subplots
+[ 4350.94s ->  4356.86s] the fig size we're going to use is just pulled by six pretty standard the face color is going to be
+[ 4356.86s ->  4365.06s] a dark color the one that we've been using all along and then we're gonna do the same thing for the axis
+[ 4365.06s ->  4375.22s] but change the face color ever so slightly for a little bit of contrast 161 b22 keeping that dark theme
+[ 4376.96s ->  4384.80s] all right so let's go ahead and style the rest of the chart to be in line with this dark theme
+[ 4384.80s ->  4391.68s] i'm going to start with the tick params i'll set the colors to be in this case 8b
+[ 4392.32s ->  4399.12s] 949e and we're going to keep that light and we'll set the label size to be nine so that's going to give it
+[ 4399.12s ->  4408.19s] contrast against the dark background now i'm going to do the spines we'll do the bottom we'll set the
+[ 4408.19s ->  4424.72s] color to three zero three six three d so it's an off gray and we're going to do that for the top left
+[ 4424.72s ->  4448.18s] and right as well okay and then we're going to do the same for the grids so everything matches grid
+[ 4450.13s ->  4456.08s] we'll make the alpha point two so there's some transparency we're going to use the same color
+[ 4456.08s ->  4469.14s] that we just used for the spines oops i called this p signs this needs to be spines all right
+[ 4469.78s ->  4481.78s] the line style will make it dashed and that should do it for the spines and the grid styling we can move
+[ 4481.78s ->  4491.70s] on to the labels and title now so we can we can say self dot x dot set x label we'll make it time this
+[ 4491.70s ->  4500.34s] is the again chart for the candles we're operating on five second bars we're going to be receiving ticks
+[ 4500.34s ->  4507.38s] from the server and we're going to be just stepping through time in these intervals of five seconds
+[ 4508.18s ->  4518.82s] so the color here is going to be 8b 949 e that's going to be that off white color the font size is
+[ 4518.82s ->  4530.14s] going to be 10 and we're going to do this again for the y label but instead of time this is obviously
+[ 4530.14s ->  4539.07s] going to be price and then i'm going to set the actual title of the chart to be waiting for data
+[ 4539.63s ->  4546.35s] and we will update it when we actually receive data so i'll just make the default color c9 d1 d9
+[ 4546.35s ->  4554.61s] to keep it off white the font size will be 12 the font weight will be bold then when we actually have
+[ 4555.33s ->  4562.05s] data to update the chart with after that thread clears meaning we've retrieved the historical data
+[ 4562.05s ->  4567.57s] we've calibrated our markov chain model and then we start updating the chart with live tick data
+[ 4567.57s ->  4575.25s] we can then update the title all right now i'm going to create the actual canvas this is going to be
+[ 4575.25s ->  4586.37s] that figure canvas tk ag and this is where we assign the figure and the chart container now within this
+[ 4586.37s ->  4599.41s] canvas we are going to get the tk widget and we are going to place it in a grid row zero column zero
+[ 4600.05s ->  4609.23s] sticky to the north south east and west all right so we've told the chart right this is our figure canvas
+[ 4609.23s ->  4615.63s] we've told it the figure to display where it should live and then we get that widget itself
+[ 4615.63s ->  4622.19s] from the canvas right so we've assigned the canvas to this figure canvas tk ag widget that's how we
+[ 4622.19s ->  4629.47s] display it on our frame so we get this widget and then we place it in a grid layout within the container
+[ 4630.11s ->  4635.79s] row zero column zero it has the weight that we configured in row zero column zero and we want it to be
+[ 4635.79s ->  4644.11s] sticky to all sides of that frame so it can grow in any direction as the frame expands or shrinks
+[ 4644.75s ->  4654.11s] when we resize it so now the only thing left to do is to set a tight layout for the figure and to actually
+[ 4654.11s ->  4663.55s] draw the canvas all right so that should do it for setting up the ui setting up the chart we can now move
+[ 4663.55s ->  4674.75s] on to the server interactions that is actually making server requests using the ib app and the e client
+[ 4674.75s ->  4684.67s] implementation so first we need to create a method to create a contract to request data for so we're going
+[ 4684.67s ->  4691.79s] to provide a symbol here based on our ui we can just input apple nvidia google amazon it doesn't matter
+[ 4691.79s ->  4695.55s] we're just going to default to an equity so what i'm going to do is i'm going to say def create
+[ 4695.55s ->  4707.54s] contract self symbol and then i'm going to create a new instance of this contract class that we imported
+[ 4707.54s ->  4719.33s] above and i'm going to assign a symbol based on whatever we provide to this method and then i'm going
+[ 4719.33s ->  4732.32s] to set the default security type to stock i'm going to set the default exchange to smart and the default
+[ 4732.32s ->  4740.88s] currency to us dollars and then i'm going to return the contract now if you wanted to integrate other
+[ 4740.88s ->  4749.12s] security types you certainly could you could add a combo box to where we set up our ui
+[ 4751.01s ->  4759.41s] as you can see right about here we have our symbol and this is where the user is going to enter into
+[ 4759.41s ->  4767.09s] this entry apple nvidia google whatever equity they want to stream pricing information for but you could
+[ 4767.09s ->  4776.56s] also just add a combo box for security type options futures so on and so forth and then fill out the
+[ 4776.56s ->  4784.08s] remaining required parameters for the contract to query the appropriate data and then you could build
+[ 4784.08s ->  4790.72s] this regime switching model for not just an equity then it could be for any security that you would like
+[ 4790.72s ->  4796.08s] so that's a nice extension if you're interested in building off of this project but in any case we're
+[ 4796.08s ->  4801.52s] just going to assume that we're trying to stream equity pricing information so we will stick with a stock
+[ 4801.52s ->  4807.60s] for the security type of course if you wanted to stream something else you would add it here as
+[ 4807.60s ->  4813.98s] well right you would have security type and then you would provide it as an argument here but that's
+[ 4813.98s ->  4819.82s] not what we're working with we're going to assume just equity pricing information is what we're looking
+[ 4819.82s ->  4826.54s] to stream we've created our contract now using that method we can now create our method to connect
+[ 4827.18s ->  4841.95s] to interactive brokers we are going to try to get the host information from our host var remember
+[ 4842.59s ->  4855.60s] this host var is stored in our live market dashboard class that is directly linked to our entry same
+[ 4855.60s ->  4869.54s] with the port var so we're going to get the host that the user enters we are going to get the ports but
+[ 4870.66s ->  4877.22s] if we're trying to connect to interactive brokers we can provide the host as a string the port has to be
+[ 4877.22s ->  4887.18s] an integer so i'm going to cast this to an integer i'm going to create a new function to target
+[ 4887.90s ->  4896.96s] using threading i'm going to try to run the self dot ib app dot connect to the host import the client id
+[ 4896.96s ->  4904.96s] that i'm going to use is one you can make this your master client id of zero five three whatever you set
+[ 4904.96s ->  4910.24s] in your interactive broker settings it's entirely up to you i'm just going to use client id one here if you
+[ 4910.24s ->  4915.36s] have multiple applications running this can be particularly useful but in any case i will then
+[ 4915.36s ->  4931.86s] call self dot ib app dot run i will accept an exception as e and then print the error that has been thrown
+[ 4935.22s ->  4942.61s] as a connection error if you're wondering why this isn't occurring in the callback function
+[ 4944.03s ->  4954.72s] that we created here it's because this error is not server side it's client side we're trying to
+[ 4954.72s ->  4960.64s] initialize a connection so before the server can respond with any errors from a request we make
+[ 4960.64s ->  4967.12s] we need to connect to it so here if we have an error in our connection thread we haven't actually accessed
+[ 4967.12s ->  4972.80s] the server yet so it can't respond to that error method that we implemented above from the e-wrapper so
+[ 4972.80s ->  4977.76s] if we actually have an error on the client side here we're just going to print it as an exception
+[ 4978.64s ->  4988.27s] all right now i need to target this connect thread i'm going to say thread is equal to threading dot
+[ 4988.27s ->  5001.65s] thread target is equal to the connect thread implement pass through true thread dot start for i underscore
+[ 5001.65s ->  5014.08s] whatever in range 50 if self dot ib app dot connected we will break this loop otherwise we will sleep
+[ 5015.12s ->  5024.59s] for 0.1 seconds all right so what's going to happen here is we're going to run this thread and we are
+[ 5024.59s ->  5031.95s] going to target this connect thread function we're going to try to connect to the server we're going to
+[ 5031.95s ->  5044.13s] wait within this loop and if the server responds with a successful connection what's going to happen
+[ 5044.13s ->  5052.27s] well it's going to ping our callback method for next valid id it's going to set connected equal to true
+[ 5053.07s ->  5061.36s] and because we implement the ib app within our live market dashboard we can look for
+[ 5062.86s ->  5069.42s] self dot ib app dot connected so if it is connected that means the server triggered that flag and we
+[ 5069.42s ->  5085.86s] can break out of this loop all right assuming that we've connected successfully we can set the
+[ 5085.86s ->  5093.84s] connected flag within the live market dashboard to be true we can then disable the connect button
+[ 5101.26s ->  5130.70s] we can enable the stream pricing data button and we can set the status indicator to connected and of course
+[ 5130.70s ->  5142.64s] i'm going to want to change the foreground color to indicate that we are connected to green if even after
+[ 5142.64s ->  5150.08s] we've waited for that thread to attempt a connection we are not connected then i need to create a message
+[ 5150.08s ->  5158.88s] box for the user to see there is an error and that error is that we have failed to connect
+[ 5159.52s ->  5172.06s] to tws or the gateway failed to connect to interactive brokers we also need to accept any general errors
+[ 5172.70s ->  5181.07s] that we may have when initializing this thread to connect that's exactly what we're doing here we have
+[ 5181.07s ->  5190.37s] this try statement and if we have any errors there we are going to show a message box with an error
+[ 5200.86s ->  5206.85s] that is a connection error and we will print it to the console this is the exact same thing we did here
+[ 5207.97s ->  5214.50s] but this may not be where the exception is thrown it could be here it could be here it could be here
+[ 5214.50s ->  5222.11s] so on and so forth so we will handle that general case there but we will print or not print it we're
+[ 5222.11s ->  5227.39s] going to show it as a message box to the user what the actual connection error was we can now create the
+[ 5227.39s ->  5238.91s] method to disconnect so i'll say def disconnect ib this is much easier um if we are streaming data
+[ 5240.05s ->  5245.41s] then we are going to stop the stream which is another method that we're going to create otherwise
+[ 5245.41s ->  5252.93s] we will just call self dot ib app we'll access the e client and we will say disconnect and then we will
+[ 5252.93s ->  5260.05s] set connected to be false there is a cleaner way to do this where we could use the connect act and
+[ 5260.05s ->  5267.95s] the disconnect act but for what we're trying to do here this will certainly suffice if we did use the
+[ 5267.95s ->  5274.03s] connect act disconnect act then that's where we would set the flags for the live market dashboard
+[ 5274.83s ->  5282.19s] what we would do is we would access the flag from the ib app and then assign the value here
+[ 5282.19s ->  5286.91s] to whatever the ib app is persisting because that would be the most consistent with the server but
+[ 5286.91s ->  5293.31s] again this is just really visual at this point here since we're operating in the live market dashboard
+[ 5294.11s ->  5303.39s] in any case once we have set the connected flag to faults we can then reconfigure the button states
+[ 5303.39s ->  5315.23s] so we're going to want to re-enable the connect button and then we're going to want to disable
+[ 5316.11s ->  5326.16s] the disconnect button we're going to do the same for the stream button we're going to do the same
+[ 5326.16s ->  5334.48s] for the status indicator button and then we are going to accept a general exception as e and then print
+[ 5334.48s ->  5350.16s] that we have some form of a disconnect error let's create a method now to toggle the streaming of the
+[ 5350.16s ->  5359.68s] live data i'll say def toggle stream and i'll say if not self dot streaming then we are going to say
+[ 5359.68s ->  5372.77s] self dot start stream else self dot stop stream this is the stream of live pricing data now we need to
+[ 5372.77s ->  5385.65s] create the method to actually start and stop the stream if we are not connected then we can't stream
+[ 5385.65s ->  5392.93s] anything so i'm just going to return otherwise let's get the symbol that the user entered so we'll do
+[ 5392.93s ->  5401.82s] self dot symbol var that's what's tracking the entry dot get to uppercase so we get the string if they
+[ 5401.82s ->  5407.42s] entered it lowercase or mixed at least we'll force it to uppercase store it in this new symbol variable
+[ 5407.42s ->  5415.10s] if there's nothing the user enters a blank entry then we are going to show them a message hey you have
+[ 5415.10s ->  5438.93s] to enter a symbol and we will break out of this start stream method okay now we're going to use the
+[ 5439.89s ->  5450.21s] bar lock to clear the open high low close bars we are going to set the current bar to none
+[ 5452.69s ->  5462.96s] we're going to set the start time of the current bar to none we are going to clear the price history
+[ 5463.76s ->  5473.28s] and we are going to create a brand new markov regime model so we're going to reinitialize that object
+[ 5478.14s ->  5483.50s] we can now create the contract to stream data for because we have the symbol we're just going to call
+[ 5483.50s ->  5490.06s] self dot create contract past the symbol that we just retrieved from the symbol var that's exactly
+[ 5490.06s ->  5494.94s] what we did here whatever the user enters we're going to get it set it to uppercase throw it in
+[ 5494.94s ->  5501.66s] this create contract method store it as a contract here now we can create a market data request to
+[ 5501.66s ->  5505.98s] interactive brokers we're going to create two requests we're going to request historical data to
+[ 5505.98s ->  5512.86s] calibrate our markov chain model then we're going to create a live data request self dot ib app dot
+[ 5512.86s ->  5521.12s] historical data dot clear start by clearing the historical data that we have if there is any
+[ 5521.12s ->  5526.80s] because we can always start or stop the stream at any time so we're effectively just resetting our data
+[ 5526.80s ->  5535.28s] structures here we'll do the same with the hist done tracking the historical data thread so his done dot
+[ 5535.28s ->  5547.81s] clear now we're going to request historical data all right we are going to specify the contract which
+[ 5547.81s ->  5555.74s] we've already done we're going to look for 300 seconds we are going to look for five second bars
+[ 5556.54s ->  5569.41s] we're going to be looking for trades and then we are going to be looking for using the formatted date
+[ 5569.41s ->  5575.17s] faults faults keep up to date faults we're going to be setting chart options to an empty list that should
+[ 5575.17s ->  5581.09s] be everything so effectively here we're showing trades we're showing the bar size settings here we're
+[ 5581.09s ->  5587.25s] showing the duration of the historical data request our end date time is arbitrary because we're requesting
+[ 5587.25s ->  5597.65s] back this duration of 300 seconds over five second bars and that should do it two is going to be the
+[ 5597.65s ->  5609.01s] request id for this historical data so when the server responds back to our client in the historical data request
+[ 5609.73s ->  5617.68s] what is going to happen it's going to ping this historical data function with a request id of
+[ 5619.25s ->  5627.25s] two and it's going to provide the bars the five second bars going back 300 seconds and we're going to
+[ 5627.25s ->  5634.05s] append them then to this list that stores the data with the key of the request id which in this case is
+[ 5634.05s ->  5640.77s] two so that's exactly what's happening there all right the rest of these are just arbitrary parameters
+[ 5640.77s ->  5647.01s] you can switch these based on the type of historical data that you are looking for whatever that may be
+[ 5647.01s ->  5653.97s] in this case we're just looking for the trades over this interval and you can calibrate your markov chain
+[ 5653.97s ->  5659.97s] model however you like i'm just choosing to use five second bars but if your strategy demands a different time
+[ 5659.97s ->  5665.97s] interval then you can look back however long you want if you're trying to run this on some form of a back test
+[ 5665.97s ->  5671.25s] back test you could just calibrate the parameters to whatever interval you like so you know this is
+[ 5671.25s ->  5677.33s] just for the sake of this this example here we're going to use 300 seconds of historical data five
+[ 5677.33s ->  5688.37s] second intervals that's going to correspond to 60 bars all right so now we have to calibrate we have to
+[ 5688.37s ->  5700.51s] calibrate the markov chain regime model i'm going to say if self.ibapp.hisdata.wait timeout is equal to 10
+[ 5701.39s ->  5714.14s] and 2 is in self.ibapp.historicaldata what does that mean historical data then that means we have
+[ 5714.14s ->  5721.98s] successfully retrieved our historical data so our request was fulfilled because we have the request
+[ 5721.98s ->  5730.94s] id2 as a key within our historical data dictionary so that means i can say self.regimemodel.calibrate
+[ 5730.94s ->  5737.90s] remember we still have to create this function in the next part of this series but i'm going to call
+[ 5737.90s ->  5743.90s] calibrate on this historical data so i'm just going to get this historical data from the dictionary
+[ 5744.30s ->  5752.78s] using that request id of two and then i can print that we have what calibrated a regime model with
+[ 5752.78s ->  5776.24s] and then we can say the length of the historical data that we have in our dictionary cool so we still
+[ 5776.24s ->  5787.86s] need to build this calibrate method within the markov regime class all right now we can move on
+[ 5787.86s ->  5795.78s] to requesting the live market data so i'm going to say self.ibapp.rec market data we are going to use
+[ 5795.78s ->  5801.38s] a request id of one here this is for the live data we're going to use the contract we are going to just
+[ 5801.38s ->  5812.13s] set the generic tick list to an empty string we want to fetch everything from the contract we will set a
+[ 5812.13s ->  5819.01s] snapshot to false regulatory snapshot to false and we will leave the market data options as an empty list
+[ 5819.57s ->  5827.09s] we are looking for all of those trades the last prices the bid and the ask i'm going to set streaming
+[ 5827.09s ->  5833.01s] equal to true i'm going to set running equal to true because at this point if we've made it this far
+[ 5833.01s ->  5838.69s] we've made our requests and we are actively streaming data we are actively running the application
+[ 5838.69s ->  5845.41s] we've calibrated the model now we are going to have to configure the stream button because we want to
+[ 5845.41s ->  5855.46s] update the text to say stop stream and the style here is going to be the accent of the t button as we
+[ 5855.46s ->  5863.62s] configured earlier we also want to configure the recalibrate button because we have now calibrated
+[ 5863.62s ->  5869.22s] the mark of chain model to historic data at whatever spot information is available to us over
+[ 5869.22s ->  5875.14s] the last 300 seconds if we wanted to recalibrate over that interval then we could if we click this
+[ 5875.14s ->  5882.18s] button but we have to enable it it was disabled by default so now we enable the recalibrate button
+[ 5882.18s ->  5892.91s] and we will update the status indicator to say that we are actively streaming data and we're streaming it
+[ 5892.91s ->  5909.79s] for this symbol i'll change the foreground color for the sake of readability keep it a nice blue and now
+[ 5909.79s ->  5919.15s] we can start a background thread for bar time management so i'm going to create this update
+[ 5919.15s ->  5925.63s] thread here i'm going to say this is equal to threading dot thread the target is going to be self dot bar
+[ 5925.63s ->  5932.66s] manager this is going to be a loop that we create we're going to enable pass through here and then
+[ 5933.30s ->  5943.86s] we're going to start this thread to continue to run that bar manager we also need to update the chart
+[ 5943.86s ->  5951.94s] so i'm going to call this chart update loop method here that we also need to create so that is effectively
+[ 5951.94s ->  5958.02s] everything we do in the stream we create our historical data requests we calibrate our markov chain model
+[ 5958.02s ->  5964.18s] we then create a live market data request we enable the flags for streaming running we create our thread
+[ 5964.18s ->  5972.66s] to update everything we call the method to update our chart and now we're ready to progress to the rest of
+[ 5972.66s ->  5987.14s] these methods to ensure the functionality we of course need to manage the stream if we choose to stop it
+[ 5987.70s ->  5996.24s] we are going to set running to faults we're going to set streaming to faults and we are going to try to
+[ 5996.24s ->  6005.30s] cancel the market data subscription what request id is it well the live market data request is one
+[ 6007.55s ->  6014.50s] so we're going to cancel that request and if we have an exception where we try when we try to cancel the
+[ 6014.50s ->  6030.51s] market data request i'm just going to accept a general exception and print it all right in the case
+[ 6030.51s ->  6037.31s] that we accidentally disconnect from the server and we try to click the stop stream button in this case
+[ 6037.31s ->  6042.51s] we may have some form of an error so we're going to just catch it and then print it to the console
+[ 6043.90s ->  6052.94s] okay now we also need to turn off the buttons right so after we have stopped the stream we cancel the stream
+[ 6052.94s ->  6063.81s] we need to update the states so the stream button can be toggled again to start the strip the stream the
+[ 6063.81s ->  6076.58s] style is going to go back to a t button the recalibrate button we are going to disable because
+[ 6076.58s ->  6083.62s] we don't have any data coming in so we can't calibrate it to the spot data that we're observing
+[ 6085.74s ->  6098.83s] the status indicator is going to go back to connected and we will change that foreground color back to
+[ 6100.82s ->  6111.06s] green all right of course we need that method to recalibrate the model but this is what we are going
+[ 6111.06s ->  6124.32s] to work on in the next part of this series that markov chain model all right now we need to manage what
+[ 6124.32s ->  6137.86s] we do on a tick of data we have the data type the value and the time stamp this is the callback method
+[ 6138.98s ->  6150.78s] that we assigned in the constructor of our ib app class callback is going to be if we go back to our
+[ 6150.78s ->  6158.22s] dashboard this on tick data method and if you recall what did we do within the tick price
+[ 6159.10s ->  6166.38s] well we used this method we provided a price the actual value based on the tick type which is just
+[ 6166.38s ->  6173.02s] the last trade price and then we gave it the current time of that tick so now we're going to build this
+[ 6173.02s ->  6183.50s] out here to actually update the ui if data type is equal to price which is the only case where we
+[ 6183.50s ->  6188.54s] actually call this method anyway but if this is the case and the value is greater than zero we
+[ 6188.54s ->  6193.74s] don't actually have control over that latter portion if we're receiving stale quote uh receiving stale
+[ 6193.74s ->  6200.14s] quotes or maybe there's some sort of error in our stream it may be zero or less than zero so we're
+[ 6200.14s ->  6205.34s] going to check to see if this value is in fact positive then we're going to use our bar lock again
+[ 6205.98s ->  6212.70s] and we are going to store the tick in the price history so i'm going to access the price history list
+[ 6212.70s ->  6223.63s] i'm going to append the timestamp and the value and if the current bar is none then what i'm going to
+[ 6223.63s ->  6236.64s] do is i'm going to set the current bar to a new open high low close bar for this timestamp and value
+[ 6237.36s ->  6245.52s] i'm going to set the bar start time to the timestamp otherwise what do i do well i don't need to create a
+[ 6245.52s ->  6251.84s] new bar remember this is actually what we're doing in the chart with the queue we have these open high
+[ 6251.84s ->  6259.20s] low close bars and every five seconds we're rolling to another bar if the current bar is none we need
+[ 6259.20s ->  6266.00s] to create one if the current bar exists what do we do we update it with this pricing information with
+[ 6266.00s ->  6271.92s] this new tick information i call self current bar dot update and i give it this new value we've already
+[ 6271.92s ->  6286.30s] created this we've already created this right right here we update with the current value on that tick
+[ 6287.26s ->  6292.78s] we will update the high if it's a new high update the low if it's a new low otherwise we will set it to
+[ 6292.78s ->  6307.71s] the close and increment the tick count all right so that is how we will handle the bar lock otherwise we
+[ 6307.71s ->  6313.15s] are just going to update the label with this pricing information so i'm going to say root dot after
+[ 6314.43s ->  6322.46s] zero lambda self dot price label dot config text is equal to
+[ 6323.42s ->  6330.70s] format is string and we're just going to use a value rounded to two decimal places for our price
+[ 6333.04s ->  6342.32s] that's the pricing label if you recall that's why we stored it as a variable when we set up the ui
+[ 6342.32s ->  6348.18s] right here we have that label that we didn't store in a variable indicating the last price
+[ 6348.18s ->  6354.90s] now we have this variable that we can update with the new pricing information as ticks come in
+[ 6357.33s ->  6367.97s] all right so that should do it for the on tick data method we can now move to create the method for the
+[ 6367.97s ->  6375.12s] bar manager this is going to be that loop bar manager loop and what we're going to do is we're going to
+[ 6375.12s ->  6386.13s] say while self dot running time dot sleep is 0.1 we're going to check every 100 milliseconds to look for a
+[ 6386.13s ->  6398.78s] bar lock and we're going to say if self dot current bar is not none and self dot bar start time is not
+[ 6398.78s ->  6406.46s] none then we're clearly dealing with a bar right so we're going to look for the elapsed time as elapse
+[ 6406.46s ->  6414.94s] being equivalent to date time dot now minus self dot bar start time and we're going to look at the total
+[ 6414.94s ->  6422.90s] seconds that is the time elapsed and this is how we're going to dictate whether or not to roll forward
+[ 6422.90s ->  6430.98s] to a new bar so if the elapsed time is greater than or equal to the self dot bar duration what does
+[ 6430.98s ->  6437.38s] that mean well we need to create a new bar so i'm going to say self dot open high low close bars dot
+[ 6437.38s ->  6445.06s] append self dot current bar this is quite literally the candle object that we created earlier we're just
+[ 6445.06s ->  6450.98s] going to append it to the list right this is effectively our queue and we are going to create
+[ 6450.98s ->  6459.22s] then a new bar but of course we need to get the regime from our markov chain model so after we roll
+[ 6459.22s ->  6465.62s] to the next bar i'm going to use the regime model to get the regime and we are going to give it a list
+[ 6465.62s ->  6473.06s] of the open high low close bars to determine the current regime as we roll into the next bar we have not
+[ 6473.06s ->  6483.18s] built this out yet we are going to build this out in the next part of this series we are now going to
+[ 6483.18s ->  6490.54s] set the last price equal to the current bar close and then we are going to roll it forward so i'm going
+[ 6490.54s ->  6498.46s] to say self dot current bar is equal to the open high low close bar of date time now and the last price
+[ 6498.46s ->  6509.42s] and then i'm going to set the bar start time to the current time all right and that is how we are going
+[ 6509.42s ->  6516.70s] to effectively just manage all of our bars so what we're doing here is again we are just checking for
+[ 6516.70s ->  6522.14s] the time elapsed within the current bar if we're greater than or equal to the current bar duration then
+[ 6522.14s ->  6529.26s] we're going to append the current bar to this queue of open high low close bars this is a fixed size we're going
+[ 6529.26s ->  6535.10s] to calibrate to the current regime or not calibrate rather we're going to use the markov chain model
+[ 6535.10s ->  6541.66s] to get the current regime and then we're going to set the last price to the current bars close we're
+[ 6541.66s ->  6547.10s] going to set the current bar to a brand new open high low close bar and that's where we're going to
+[ 6547.10s ->  6553.74s] populate it with the current time and the last trade price and then we are just going to set the bar
+[ 6553.74s ->  6561.50s] start time now to the current time and then we just repeat this again and again and again to continue
+[ 6561.50s ->  6570.93s] to roll the chart forward so that is our bar manager loop now we need to update the chart so i will say
+[ 6574.16s ->  6580.56s] def update chart loop what we're going to do here is we're going to check to see if we are running
+[ 6581.12s ->  6585.28s] so if we're not running we're just going to return right we can't really do anything if we're not running
+[ 6585.28s ->  6593.02s] otherwise we are going to draw the open high low close chart we are going to update the stats
+[ 6598.62s ->  6606.46s] and then we are going to schedule an update in the next 200 milliseconds and save the idea for cleanup
+[ 6606.46s ->  6614.38s] or save the id for cleanup on close so i'm going to say self dot root dot after 200 self dot update
+[ 6614.38s ->  6623.49s] chart loop all right so that's how we're going to update the chart now we need to create these methods
+[ 6623.49s ->  6629.65s] here to draw the open high low close chart and update these statistics on the bottom for our
+[ 6629.65s ->  6642.85s] application so i'm going to say def draw open high low close chart self dot axe dot clear with self dot bar
+[ 6642.85s ->  6652.06s] lock bars is equal to list self dot open high low close bars current is equal to self dot current bar
+[ 6652.06s ->  6664.98s] remember we've already updated this in our bar manager loop if the current is not none that means
+[ 6664.98s ->  6672.42s] the current bar is not none it's assigned to an open high low close bar object then bars is equal to bars
+[ 6672.42s ->  6682.69s] plus current we are going to add effectively that list of open high low close bars to paint
+[ 6686.45s ->  6697.65s] if not bars then we are just going to set the styling of the face to be 161 b22 so we're going to have that
+[ 6697.65s ->  6709.81s] dark styling we're going to set the title to be waiting for data effectively we have no bar data in our queue
+[ 6709.81s ->  6732.35s] i'll set the font size to 12 the font weight to bold the grid i'll leave as the same styling as before
+[ 6738.83s ->  6749.12s] and i will use an off gray and some dashes for the grid again keeping that same styling so if we don't
+[ 6749.12s ->  6754.40s] have any bars we'll keep that dark node styling set the chart title to waiting for data we have no data to
+[ 6754.40s ->  6762.88s] display otherwise otherwise we can calculate the prices and we can enumerate through the bars
+[ 6762.88s ->  6770.56s] to draw the actual candles on the screen so i'll say all prices is equal to bar dot low for bar in bars
+[ 6770.56s ->  6783.26s] plus bar dot high for bar in bars and the price min and the price max is just going to be the min
+[ 6783.26s ->  6795.46s] of all the prices and the max of all the prices the price range will just be the price max minus the price
+[ 6795.46s ->  6807.70s] min and we'll have some padding based on the price range we'll multiply it by 10 percent and leave it as
+[ 6808.34s ->  6818.82s] 0.01 so the price range times 10 percent um versus 0.01 will dictate the padding and then y min y max is
+[ 6818.82s ->  6830.54s] just going to be the price min minus the padding and the price max plus the padding all right that is
+[ 6830.54s ->  6839.18s] going to help us scale the y axis so we can actually see the candles appropriately that is effectively
+[ 6839.18s ->  6845.98s] what we're using this price range for we're getting all of the open high low close bars we're looking at
+[ 6845.98s ->  6851.66s] the price max and the price min across that range of bars remember we're going to have 50 seconds of
+[ 6851.66s ->  6859.42s] data here five second bars 10 bars in total being displayed plus the spot bar we're going to create
+[ 6859.42s ->  6864.46s] padding based on the price range that we find here it's going to be the max between 10 percent of the
+[ 6864.46s ->  6872.70s] price range and 0.01 and that's going to help if we have you know maybe just no volume whatsoever no
+[ 6872.70s ->  6878.06s] no price movement then uh you know we can just stick with this smaller padding here for the y-axis
+[ 6878.06s ->  6884.70s] then we can set the y min and the y max base to the price min less this padding price max whoops price
+[ 6884.70s ->  6897.98s] max plus the padding cool and now we're going to assign the current regime to the chart this is what
+[ 6897.98s ->  6902.46s] we're going to paint on top of the chart and if you had some sort of trading strategy this is where
+[ 6902.46s ->  6907.90s] you could get the regime and pass it to that module as well so we're going to say if current is not
+[ 6907.90s ->  6916.26s] none that means we actually have bar data this is where we are going to get the regime's current state
+[ 6916.98s ->  6927.18s] we're going to do this in the next part cool so now i'm going to set the width of the bars to be 0.6
+[ 6928.06s ->  6934.38s] and i'm actually going to enumerate through all of the bars and draw them on top of the figure
+[ 6935.26s ->  6947.47s] so i'm going to say for i and bar in enumerate bars we are going to create a rectangle this rectangle is
+[ 6947.47s ->  6956.99s] going to be the background for the specific candle at an index so what i mean is each candle is going to
+[ 6956.99s ->  6962.27s] have that background and that background is going to be the color of the current volatility regime
+[ 6962.27s ->  6967.95s] that is exactly what we are creating here so i'm going to start with the x y position for this bar's
+[ 6967.95s ->  6977.79s] background i'm going to set that equal to i minus 0.5 so it is centered and i am going to put it at the
+[ 6977.79s ->  6988.11s] y min so that we span the entire portion of the chart then i am going to set the width of the bar to be
+[ 6988.11s ->  6993.95s] one and as you can see here the candle is going to then reside within it because i'm setting the width
+[ 6993.95s ->  7003.55s] of the candle to be 0.6 then i'm going to set the height to the y max less the y min and that is
+[ 7003.55s ->  7009.39s] exactly why we are placing it at the y min it's going to then span the entire chart i will set the
+[ 7009.39s ->  7018.42s] face color to be fully transparent and we will update this with the current regime
+[ 7021.95s ->  7030.67s] based on our markov chain in the next part of this series the edge color is going to be none
+[ 7031.63s ->  7038.43s] we will set alpha equal to zero we'll make it completely transparent for now and we are going
+[ 7038.43s ->  7045.87s] to set the z order to zero that is to ensure that this is the background then we are going to add
+[ 7045.87s ->  7054.03s] this as a patch to the axis self dot axis dot add patch this background and remember we're doing this
+[ 7054.03s ->  7060.59s] for each bar so we're going to do this effectively 11 times 10 for the bars that we're storing 11 for
+[ 7060.59s ->  7081.42s] the spot bar let's create a color and an edge color for our candles we will do 3fb 950 for the inner part
+[ 7081.42s ->  7090.70s] of the green candle we will do 7e 787 for the outer part if bar dot close is greater than or equal to
+[ 7090.70s ->  7101.90s] bar dot open otherwise we are going to create a red candle that is going to be f85 149 and the outline
+[ 7101.90s ->  7114.80s] color will then be ff7b 72 we will create the body bottom and the body height that is going to be the
+[ 7114.80s ->  7126.21s] min of the bar open and bar close and the max of the absolute difference of the bar close and the bar open
+[ 7127.25s ->  7137.89s] and 0.001 so we want it to have some mass right so if the difference is zero we're going to set the
+[ 7137.89s ->  7146.69s] body height to be 0.001 and we are going to set the bottom to be the min of the open and close whatever
+[ 7146.69s ->  7157.89s] is smaller all right now we can actually draw the candlestick i'll say rect is equal to rectangle i'm
+[ 7157.89s ->  7163.97s] going to use similar logic as before but now i'm dealing with the actual candle itself not the background
+[ 7163.97s ->  7173.09s] dictating the regime i'll do i minus width over two and i'll use the body bottom that is going to be
+[ 7173.65s ->  7179.49s] effectively the open or the close the smallest price that's the starting point of this rectangle on the y
+[ 7179.49s ->  7189.36s] axis for our candle the width i decided above is 0.6 so that way it sits inside of the regime
+[ 7190.48s ->  7195.20s] i will give it the appropriate body height which i calculated here is the absolute difference between
+[ 7195.20s ->  7200.56s] the close and the open and it's going to be the max between that and zero so there is some mass to
+[ 7200.56s ->  7209.02s] allocate then i'm going to set the face color equal to the color that we decided above based on whether
+[ 7209.02s ->  7213.82s] or not it opened higher or lower it's going to be green or red the edge color we're going to do the
+[ 7213.82s ->  7227.44s] same the line width i'm going to set to 1.5 i'll have some transparency it'll make it look a little
+[ 7227.44s ->  7236.78s] nicer and i'll set the z order to 2 so it sits on top of the regime whoops gotta scroll down alpha 0.9
+[ 7236.78s ->  7247.68s] z order of 2. so that way it sits on top of the regime rectangle all right now keep in mind we're
+[ 7247.68s ->  7255.20s] enumerating right so i is going to be enumerating with each of the bars so that's why we're placing
+[ 7255.20s ->  7261.36s] them in the correct locations if you're wondering why this works that's that's precisely why we are
+[ 7261.36s ->  7267.28s] centering the background at each tick and that's what we're doing here with this difference and we're
+[ 7267.28s ->  7275.20s] doing the same with the rectangle that's why i'm dividing the width by two so it's even within the
+[ 7275.92s ->  7283.62s] the tick okay so now that i've done that i have to add it as a patch to the chart so i'll do self dot
+[ 7283.62s ->  7289.94s] axe dot add patch i'll add that rectangle and we're going to do this 11 times right this is a loop
+[ 7289.94s ->  7301.36s] right that's exactly what we're doing here for all of the candles i'm now going to draw the lower and the
+[ 7301.36s ->  7311.20s] upper wick so i'm just going to call self dot axe dot plot and i'm going to use the current index and
+[ 7311.20s ->  7320.67s] the bar low and the body bottom and i'm going to use the edge color here set the line width to be 1.5
+[ 7320.67s ->  7327.55s] and the z order to be one this way i draw the wick underneath the body of the candle and i'm going to
+[ 7327.55s ->  7336.35s] do that for both the lower wick here i can just paste this again and instead of the low i'm going
+[ 7336.35s ->  7344.35s] to then instead of the low and the body bottom i'm going to use the bar high and i'm going to use the
+[ 7344.35s ->  7354.59s] body bottom plus the body height so i am placing the wick in the correct location and that should do
+[ 7354.59s ->  7362.70s] it for the wicks so that's going to be the lower wick and the upper wick respectively bar dot low
+[ 7363.26s ->  7372.75s] the body bottom body bottom plus body height bar height yes that's correct cool so now we're going
+[ 7372.75s ->  7380.75s] to highlight the current forming bar with a vertical dotted line so we know what the spot candle is this
+[ 7380.75s ->  7389.62s] is just going to be a nice touch so i'm going to say if i is equal to length of bars minus one and
+[ 7389.62s ->  7401.95s] current is not none then self dot axe dot v i think it's axe v line x is equal to one color is equal to
+[ 7401.95s ->  7412.91s] and i will say five eight a six ff alpha is equal to 0.3 line style is equal to we can just use a colon for
+[ 7412.91s ->  7422.27s] those dots line width we will set to two so we will have a vertical line at the spot bar now i can configure
+[ 7422.27s ->  7438.05s] the axis face color self dot axe dot set face color one six one b two two nothing we haven't seen before
+[ 7439.09s ->  7447.97s] for our dark theme and now i'm going to set the x axis labels to the bar time stamps so i'll say x labels
+[ 7447.97s ->  7465.82s] is equal to bar dot time stamp dot we're going to format the string time here to hours minutes seconds
+[ 7467.87s ->  7479.38s] for all of the bars in the bars queue cool and then we're going to set the x ticks to be the range of the
+[ 7479.38s ->  7485.23s] bars so it's going to be the range of the length of the bars so starting at zero going out to the length
+[ 7485.23s ->  7492.83s] of the bars that's cool then we can actually set them so set the x tick labels to be these time
+[ 7492.83s ->  7500.91s] stamps and we're going to have some rotation so they look nice we'll make it 45 degrees and we will set
+[ 7500.91s ->  7508.91s] it to the right and we will make the font size eight so that'll do it for the timing and now we're going
+[ 7508.91s ->  7521.47s] to do the price range on the y axis self dot x dot set y limb to be y min y max self dot x dot set x limb
+[ 7521.47s ->  7535.01s] to be minus 0.5 to the max of the max bars less 0.5 and the length of the bars minus 0.5 and the reason
+[ 7535.01s ->  7541.17s] why we're doing this is because the bars populate left to right dynamically so you know at some point
+[ 7541.17s ->  7548.05s] we're going to have all of the bars being shown on the chart and that max statement is going to be
+[ 7548.05s ->  7554.69s] irrelevant but as we're building it we're going to need to use the dynamic length of the bars in the queue
+[ 7554.69s ->  7561.49s] and then the y limb here is just going to dictate the current price range y min to y max that's really
+[ 7561.49s ->  7574.30s] nothing special so now i think we should format the y axis to have three decimal places so i'll say self
+[ 7574.30s ->  7590.59s] dot x dot y axis dot set major formatter plt dot funk formatter lambda x underscore we're going to format
+[ 7590.59s ->  7603.04s] the string x to have three decimal places all right so that'll be i think useful especially when there's
+[ 7603.60s ->  7611.12s] like no trading volume to still see what's going on and that's part of the reason why we used the max
+[ 7611.12s ->  7617.60s] between the difference and point zero zero one here so that we actually have some mass to visualize on
+[ 7617.60s ->  7633.60s] the candles and now we can just apply styling to the to the axis itself the spines um it should work
+[ 7633.60s ->  7643.02s] from earlier we will find out but we already set it here so i don't think we need to set it again
+[ 7644.22s ->  7648.06s] oh we cleared it though maybe the parameters will stay we'll see
+[ 7648.06s ->  7654.90s] if not we're just going to copy and paste this but we'll see when we test it so i'll just make note of
+[ 7654.90s ->  7670.51s] that may need to reapply styling otherwise we can just set the x label to be time the color we can set
+[ 7670.51s ->  7686.26s] to be 8b949e that's that off weight size 10 and i'll just do the same thing here for the y label but
+[ 7686.26s ->  7703.38s] instead of time it will be price all right now we need to update the regime the current regime that's
+[ 7703.38s ->  7714.42s] being displayed so i'm gonna say symbol is equal to self dot symbol var dot get dot upper and the regime
+[ 7714.42s ->  7724.02s] names in this case i'm just going to do a low mid and a high volatility regime you can extend this to
+[ 7724.02s ->  7728.18s] whatever you want however you want to classify them but we're going to build this again in the next part
+[ 7728.18s ->  7735.78s] of this series here for now we're just going to for each regime name we are going to get the current bar
+[ 7736.58s ->  7746.50s] regime and if the bars exists otherwise we are going to populate with an na so we're just going to check
+[ 7746.50s ->  7753.30s] to see if we've classified a regime if not we'll just put na and we can update then the chart with
+[ 7753.30s ->  7767.22s] this regime so we have the symbol we have the regime which is the current regime we then have the length
+[ 7767.22s ->  7793.18s] of the bars over however many bars we have the color for this title we will make c91 d9 the font size is
+[ 7793.18s ->  7803.06s] going to be 12 the font weight can be bold all right and now all we have to do is set the figure to have a
+[ 7803.06s ->  7817.65s] tight layout and draw the idle wonderful we can now update our statistics with the new bar information
+[ 7817.65s ->  7831.33s] given we are now running the bar loop so i can say def update stats self with self dot bar lock bars equals
+[ 7831.33s ->  7840.14s] list self dot open high low close bars current is equal to self dot current bar if the current bar
+[ 7840.14s ->  7853.18s] exists then bars is equal to bars plus the current bar if not then we will just return there is nothing to
+[ 7853.18s ->  7863.55s] update in terms of the bar statistics and now we can just update all of the labels self dot stats dot
+[ 7863.55s ->  7871.23s] labels or it's really i think it's underscore labels for the bars we are going to configure that
+[ 7871.95s ->  7887.50s] to have a text of the current length of the bars cool we can look at all of the highs as the bar dot highs
+[ 7887.50s ->  7898.61s] for b and bars we can look at the lows as the lows for bars and bars this is just going to be a list of all
+[ 7898.61s ->  7907.41s] of the highs and lows and our five second bars remember that's just the q for our that's just going to be
+[ 7907.41s ->  7921.94s] our q for the bar data we can then update the labels so i'll update high with the text for the current max
+[ 7921.94s ->  7937.58s] which is just going to be the max of all of the highs and we're going to do the same for the lows but of
+[ 7937.58s ->  7952.27s] course it'll be the min all right we can update the regime in the statistics as well regime names is
+[ 7952.27s ->  7988.32s] equal to low mid and high volatility the regime colors blue yellow and red the current regime we can just
+[ 7988.32s ->  8002.83s] get from the current bar if bars is not empty otherwise we'll just make it zero then we can update
+[ 8002.83s ->  8013.28s] the regime label by configuring it the text will equal the regime names given the current regime
+[ 8014.98s ->  8023.23s] and the foreground color is going to be the regime color of the current regime so we're using the
+[ 8023.23s ->  8029.15s] current regime it's going to be what zero one or two and we are going to get the regime name and the
+[ 8029.15s ->  8034.35s] regime color accordingly we're going to default otherwise to zero maybe we use negative one if we
+[ 8034.35s ->  8042.27s] don't want to default to a low vol regime but i'll just leave it as zero for now all right and if
+[ 8042.99s ->  8051.07s] we do have current bar information then we can get the ticks for this bar so we can say the ticks per bar
+[ 8052.42s ->  8062.98s] config the text to be the current tick count casted to a string and then store it in that text and
+[ 8062.98s ->  8073.62s] that's going to do it for the update stats method so now we just have to handle closing and then the main
+[ 8075.36s ->  8083.60s] load function and we'll be ready to test this application on application end we will have this
+[ 8083.60s ->  8096.19s] method effectively ensure a clean close so we will say def on closing self dot running is equal to false
+[ 8097.50s ->  8114.05s] if we have the attribute after id then we will say self dot root dot after cancel self dot after id
+[ 8115.62s ->  8134.48s] and if we are connected self dot connected try if we are still streaming data to cancel the market data
+[ 8134.48s ->  8150.16s] subscription and then disconnect from the server and if we have any form of exception we will just print it
+[ 8155.90s ->  8172.13s] to the console right and then we will destroy the root of the application and that will do it for
+[ 8172.13s ->  8181.41s] our clean close so effectively what we're doing here is we're just canceling the scheduled chart updates
+[ 8181.41s ->  8189.01s] to prevent the any errors that we might have as we're trying to shut down the application here and then
+[ 8189.01s ->  8194.45s] here we're just going to try to cancel that data subscription and disconnect cleanly from the server
+[ 8194.45s ->  8199.89s] if we have any issues they're sending those requests off then it will be printed to the console
+[ 8200.45s ->  8209.44s] and then of course we will just destroy the user interface that root window there all right so that's
+[ 8209.44s ->  8217.04s] going to do it for this live market dashboard class we can now move to the main application entry point
+[ 8217.04s ->  8228.06s] we will say def main and i'm going to create a new root for the t kinter window and i will provide that
+[ 8228.06s ->  8240.54s] then to the constructor of the live market dashboard and i will establish a protocol for this route on
+[ 8240.54s ->  8254.61s] window close we are going to call that function call that method on closing within the application on that
+[ 8254.61s ->  8270.03s] root window and then we'll execute root dot main loop and if name is equal to main we will then execute
+[ 8270.67s ->  8280.19s] that main load function and we're now ready to test our application as i've gone back over the code i've
+[ 8280.19s ->  8288.91s] acknowledged a few errors that we can very easily correct the first is if we go to line roughly 131
+[ 8289.55s ->  8298.30s] i have this threading lock this should be a capital l if we check out the disabled button
+[ 8301.42s ->  8311.66s] or the disconnect button i did not pack this button to the left side so it will not be visible so i will
+[ 8311.66s ->  8330.51s] say self dot disconnect button dot pack side to the left the connection flag in the live market dashboard
+[ 8330.51s ->  8340.54s] also needs to be updated correctly if we go down to where we actually connect to the server via the ib app
+[ 8340.54s ->  8352.62s] itself i have self dot connect equal to true this should be connected is equal to true where i set the axis face
+[ 8352.62s ->  8365.90s] color it should be set face color not set face and i believe this color code is too long which is why we're
+[ 8365.90s ->  8375.18s] not seeing an example color here this should be off white so c9 d1 d9 then we will have effectively that
+[ 8375.18s ->  8384.14s] off white that we are looking for again instead of face i should have face color here in our rectangle
+[ 8384.14s ->  8389.74s] for the background for the regime in this case it's just going to be transparent but this is where we
+[ 8389.74s ->  8398.78s] would update the regime color and the same with the edge color in the actual candle bar itself it should
+[ 8398.78s ->  8406.62s] just be edge color the underscore is for the color that we assigned above based on if we opened up higher
+[ 8406.62s ->  8420.66s] from the previous close and the rotation of the x ticks is spelt wrong here this should be rotation all
+[ 8420.66s ->  8434.77s] right and then i believe that should do it we can give this guy a run here and we get our live regime
+[ 8434.77s ->  8441.57s] switching dashboard here i could add some padding to the right of the entry symbol if i would like to as
+[ 8441.57s ->  8454.62s] well and go over to the symbol entry where i pack it i'll add some similar padding to the stream button
+[ 8454.62s ->  8461.66s] for example give this a run again added a little bit of padding on that right side now i can connect
+[ 8462.30s ->  8468.94s] there we go so it's connected i can disconnect all right it changed the color but it didn't change
+[ 8469.58s ->  8483.73s] to disconnected if we scroll on down to where we disconnect the status indicator should change the text
+[ 8487.17s ->  8505.98s] to disconnected that should be correct there we can also change the color to maybe a red instead and this
+[ 8505.98s ->  8518.93s] would be disconnected all right looks good connect disconnect there we go connect start the stream
+[ 8520.18s ->  8528.78s] now if we start the data stream we should observe prices well first we're gonna actually pull the
+[ 8528.78s ->  8533.50s] historical data and then we're going to stream the prices it looks like we're having
+[ 8534.06s ->  8540.83s] an error with the x limit it should be because we're requiring the tick price correctly we just need
+[ 8540.83s ->  8553.07s] to set the x limit this should be set underscore x limit set underscore x limit this is where we draw
+[ 8553.07s ->  8563.38s] the open high load close chart itself give this another run all right connect disconnect connect start stream
+[ 8564.42s ->  8577.07s] query the historical data start to try to stream the tick data to bars and it looks good we are
+[ 8577.07s ->  8585.23s] aftermarket hours right now but we are effectively streaming five second bars we have one tick per bar
+[ 8585.95s ->  8592.75s] the open high low close is just going to be the same as the the tick price and that is going to be the
+[ 8592.75s ->  8599.47s] shell for our live regime switching model that's going to do it for this first part in a two-part
+[ 8599.47s ->  8606.75s] series of building a live markov chain regime switching model i hope you enjoyed this first
+[ 8606.75s ->  8612.43s] part i hope you learned something this video certainly took a tremendous effort to put together
+[ 8612.43s ->  8617.87s] so if you'd like to help support the channel so i can continue to make quant builds just like this one
+[ 8617.87s ->  8624.99s] please like comment subscribe share it helps me out tremendously it is always greatly appreciated
+[ 8624.99s ->  8631.71s] if you'd like to master your quantitative skills learn how to code projects like this from scratch
+[ 8631.71s ->  8638.83s] all of the necessary python check out quant guild.com other than that i want to thank you
+[ 8638.83s ->  8645.95s] so much for watching and i will see you in the next video

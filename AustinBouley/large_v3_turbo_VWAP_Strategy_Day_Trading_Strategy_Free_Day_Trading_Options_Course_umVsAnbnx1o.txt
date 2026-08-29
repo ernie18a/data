@@ -1,0 +1,117 @@
+[    0.00s ->     5.86s] Hey guys, what's up? It's ABTrades, and I run a YouTube channel that focuses on how to teach people how to day trade options.
+[    6.20s ->    14.88s] I'm laughing now because we're on day 7, which is the final day of the 7-day strategy release series that I have been doing.
+[   15.20s ->    25.10s] So we've covered RSI Divergence, MACD Divergence, Triangle Patterns, 10% Play, CTM Scalper Alert, High Kanashi Moving Average, and finally VWAL.
+[   25.10s ->    31.84s] So, if y'all have not seen that, please go back to the YouTube channel and watch all those. They're full of value and content.
+[   32.04s ->    38.00s] This is information that people charge money in courses for you to buy that I'm providing for you for free on YouTube.
+[   38.18s ->    47.94s] So please like, comment, tell me what else you want to see, and also please subscribe because up next is an options series where I go in-depth about how much I know about options
+[   47.94s ->    54.30s] and what else there is to know about options so that you don't make the same mistakes that I did when I was starting out.
+[   54.30s ->    59.16s] So, please like, comment, and subscribe even though I mentioned that already. Let's get on to VWAL.
+[   59.50s ->    67.50s] So, once you pull up on your indicators VWAL, so VWAL is just volume weighted average price, but when you look at VWAL,
+[   67.80s ->    72.36s] it's going to give you a top band, a middle band, and a bottom band.
+[   72.80s ->    76.32s] Yes, you can trade with that, but that is not how I use VWAL.
+[   76.32s ->    81.54s] So, when I go to the upper band, I unclick show plot, and the lower band, I unclick show plot.
+[   81.74s ->    83.52s] So, I just have this middle band here.
+[   84.02s ->    85.18s] Why do I trade like that?
+[   85.38s ->    90.78s] Because the upper and bottom band just get in my way, and also S&B Capital do not do that,
+[   91.00s ->    94.60s] and I like to model my trading style after them because they are the best in the business.
+[   95.40s ->    97.04s] Just look them up if you don't know them.
+[   97.04s ->   103.02s] So, I want to show you some examples of how you can use VWAL when trading.
+[  104.54s ->   109.30s] And what I will say is there are a lot of strategies that I've talked about, like RSI, Dot Divergence,
+[  109.40s ->   112.96s] and MACD Divergence that works primarily on SPY the best.
+[  113.52s ->   115.52s] And there are other strategies that work with all.
+[  116.08s ->   121.08s] VWAL is one I will have to say that it does not work the best on SPY.
+[  121.08s ->   125.24s] Why? Because, let me repeat the name, Volume Weighted Average Price.
+[  125.82s ->   128.16s] SPY is not affected by volume.
+[  128.64s ->   134.72s] You could have 2.5 million shares traded, which is a lot, so much.
+[  135.24s ->   139.86s] Like, look, on this huge one, the Fed spoke, that was how many shares?
+[  140.54s ->   145.52s] It was 2.2 million shares traded in that one minute.
+[  145.52s ->   153.88s] Yes, it went up, but you could have 2.5 million traded here, and it would not move.
+[  154.52s ->   160.78s] ETS, which I'm going to explain in the options series, are not based off volume and how many people are trading it.
+[  161.12s ->   165.54s] So, when you have a volume weighted average price where the line has been calculated with volume,
+[  166.06s ->   167.36s] there will be something off.
+[  167.44s ->   171.48s] So, this mainly works with other stocks, even though it can be applied to SPY.
+[  172.87s ->   174.77s] So, let's look at an example here.
+[  174.77s ->   181.49s] VWAL works best when there's no consolidation and when it is working on a trending day,
+[  181.55s ->   185.93s] when you have large moves to the upside, downside, or it's trending in general.
+[  186.27s ->   190.73s] So, as you can see here on SPY, we had that huge push up, then we had this huge push down,
+[  190.93s ->   195.05s] then we had this consolidation on VWAL, and then we pushed back up to the upside.
+[  195.19s ->   196.37s] We were continuing the trend.
+[  196.81s ->   199.21s] Let's move to Apple and see some other examples.
+[  199.21s ->   207.25s] So, VWAL is basically like an advanced version or like an EMA on steroids or an exponential moving average
+[  207.25s ->   211.55s] or a simple moving average on steroids because it also incorporates volume, which is huge.
+[  211.99s ->   216.49s] So, it will always act as a support or resistance in a trading day.
+[  216.49s ->   219.41s] So, let's see what else we have.
+[  219.89s ->   221.25s] Do we have anything in Apple?
+[  222.51s ->   223.83s] It goes forward, we had something.
+[  223.97s ->   224.81s] If not, it's fine.
+[  227.25s ->   228.23s] Oh, here we go.
+[  228.35s ->   228.93s] I'm missing it.
+[  229.37s ->   233.45s] So, as you can see here, VWAL will act as support and resistance.
+[  233.67s ->   239.09s] So, it's the same way that when there's a support and resistance line, it will go up,
+[  239.09s ->   241.99s] it will test it, and then it will break through, and it will go up, and it will test it, right?
+[  242.33s ->   243.33s] Same thing with VWAP.
+[  243.39s ->   244.77s] We pushed up in a VWAP.
+[  244.87s ->   247.85s] We broke just to test it, then we broke straight through.
+[  248.49s ->   252.81s] Then, because that was a solid support and resistance line, we came back down,
+[  252.91s ->   255.81s] and we tested that VWAP just to validate support.
+[  256.31s ->   259.19s] So, you will see a lot of bounces and stuff around VWAP.
+[  259.51s ->   264.03s] But also, the reason why we use VWAP is because of breakups and breakdowns.
+[  264.03s ->   269.43s] So, for instance, here, throughout the day, SPY is holding VWAP as a support,
+[  269.77s ->   271.99s] and when we try to bounce here again, we can't.
+[  272.17s ->   273.43s] So, we break through.
+[  273.87s ->   277.93s] Usually, when there's a good break of VWAP, you have a strong big candle,
+[  278.47s ->   286.17s] a strong candle, a long candle with minimal wick and a lot of body that breaks through,
+[  286.29s ->   289.17s] and that means that it's going to be the prevailing trend now.
+[  289.61s ->   292.93s] Again, it works best on trending days and not consolidation,
+[  292.93s ->   296.09s] but you can see here we have this huge body, and it pushes through,
+[  296.15s ->   297.39s] and then we run down the rest of the time.
+[  297.85s ->   302.88s] Same thing on, everything on Amazon, not much.
+[  303.64s ->   305.50s] I know that VA has a lot here.
+[  306.06s ->   312.74s] So, especially on this, you can see here we are, this is, it's acting as a support,
+[  312.90s ->   316.34s] like a resistance point in Boeing.
+[  316.60s ->   320.32s] Boeing is respecting VWAP as its resistance.
+[  320.58s ->   322.68s] You can see that every time we come up to it, we're getting rejected.
+[  322.68s ->   323.80s] Coming up to it, we're getting rejected.
+[  324.18s ->   329.30s] We have this huge green body candle, and then we start to explode to the upside.
+[  329.74s ->   333.60s] Again, it's not the same every single time, but look, VWAP also holds,
+[  333.78s ->   337.86s] oops, VWAP also holds as support.
+[  337.98s ->   339.64s] Remember, support and resistance.
+[  340.08s ->   342.90s] So, we come down from a trending day, and it holds as support,
+[  342.98s ->   344.26s] and then we continue to bounce off.
+[  344.54s ->   347.98s] We come here, we're holding VWAP as support, and then we continue back up.
+[  347.98s ->   351.62s] So, again, this is like an advanced version of support and resistance,
+[  351.80s ->   354.30s] but one that you don't have to find because the line's there for that.
+[  355.58s ->   360.22s] So, you can see here we're trending down, right, and then VWAP holds it,
+[  360.36s ->   364.34s] and then we have the continuation of the run down, right?
+[  364.34s ->   367.96s] And, again, VWAP can also be used in addition to other patterns
+[  367.96s ->   371.12s] because, as we see here, we're semi in a triangle pattern here,
+[  371.62s ->   374.98s] and then we have the rejection to add VWAP, and then we have the run down.
+[  375.30s ->   377.24s] So, you can also use it in multiple things.
+[  377.36s ->   379.26s] Now, let's look at JPM, JP Morgan.
+[  379.26s ->   384.18s] We're having a trending day to the upside.
+[  384.56s ->   391.80s] Then we start to come down, and we start to, whoops-a-daisy, come back, come back, JPM, JPMorgan.
+[  392.54s ->   394.84s] We're having a trending day to the upside.
+[  395.00s ->   400.04s] Then we start to consolidate on VWAP as support, and then we continue back to the upside.
+[  400.56s ->   403.32s] You can see we did that once, and we did that twice, and we just continue.
+[  403.68s ->   403.94s] Why?
+[  404.04s ->   408.32s] Because VWAP will always act as either a support or resistance.
+[  408.32s ->   412.44s] So, as you can see here, VWAP holds it as support from the trending,
+[  412.64s ->   414.64s] and then we continue to trend in the same direction.
+[  415.04s ->   419.08s] Then when we break below VWAP and test it, we see a move to the downside.
+[  419.66s ->   422.80s] So, again, VWAP is just a good support and resistance, and why do I bring this up?
+[  422.82s ->   426.28s] Because it's the same thing as the TTM scalper alert, which was a previous video,
+[  426.34s ->   430.96s] if you want to go back and watch that, about it can be used on its own,
+[  431.04s ->   434.16s] but it's super beneficial to be used with other strategies,
+[  434.16s ->   439.80s] coupled with the RSI divergence, MACD divergence, 10% plays, triangles,
+[  440.22s ->   445.78s] and sometimes the height can actually, depending on how, on the long-term time frame,
+[  446.02s ->   448.18s] or the time frame that you're using.
+[  448.60s ->   451.76s] So, again, I hope you all enjoyed this seven-day series of strategies.
+[  451.92s ->   455.98s] I hope you all got a lot of value from it, and I hope you all are referring this to friends,
+[  455.98s ->   460.58s] because this is some really good value and content that I'm being, that I am providing.
+[  461.04s ->   463.64s] It's so much information that I've always been scared to share,
+[  463.74s ->   465.88s] because I was like, no, I need to know all this, and this is all mine,
+[  466.30s ->   470.14s] but I have been able to release it, and now we're going to go on to the options series.
+[  470.72s ->   474.46s] So, again, please like, comment, and subscribe to tell me how it's going.
+[  474.64s ->   478.98s] Stay up to date and see all the new videos I'm coming out with that are value-packed.
+[  479.60s ->   482.08s] All right, guys, thank you all so much for tuning into this series.
+[  482.38s ->   483.38s] See you all in the next series.

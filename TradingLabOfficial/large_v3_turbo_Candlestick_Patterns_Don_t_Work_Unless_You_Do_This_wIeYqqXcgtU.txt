@@ -1,0 +1,108 @@
+[    0.00s ->     5.76s] This is a candlestick. And if formed in a specific formation, it can tell you a story of what the
+[    5.76s ->    11.16s] market is planning to do now. But what if I told you everything you know about candlestick patterns
+[   11.16s ->    17.54s] is a lie. Hammers, dojis, engulfing candles, all of it. None of this will work unless you pair it
+[   17.54s ->    22.24s] with this secret trick. You see, most retail traders treat candlestick patterns like cheat
+[   22.24s ->    26.78s] codes. They grab their little candlestick pattern mouse pads that they bought on Amazon and blindly
+[   26.78s ->    31.12s] look at trades with the same chart pattern. And while yes, candlestick patterns can be used for
+[   31.12s ->    35.76s] predicting price, a lot of people use them completely wrong. They see a bullish engulfing
+[   35.76s ->    41.18s] candle and they think, great, what a great time to buy. But then the price tanks. But what if I told
+[   41.18s ->    46.54s] you there's a strategy you can execute in order to know when this was about to happen. Every candle
+[   46.54s ->    51.84s] you see is one of these three types of candles. Indecision candles, control shift candles, and
+[   51.84s ->    56.62s] strength candles. Let's start with the most powerful one, the strength candle. These candles have
+[   56.62s ->    62.42s] large bodies and small wicks. This is a strength candle and shows that buyers or sellers are in
+[   62.42s ->    70.07s] complete control at this time. But this candle can get even stronger. If a strength candle is printed
+[   70.07s ->    76.17s] with a large body and no upper wick for a bullish candle, this is an extremely strong candle as it's
+[   76.17s ->    82.01s] showing that buyers had absolutely no resistance from sellers at this point. It's the exact opposite for
+[   82.01s ->    87.37s] bearish candles. If the candle has a large red body with no lower wick, that shows sellers had no
+[   87.37s ->    92.49s] resistance from buyers at this point. Now these candles are pretty rare in the market. But if seen,
+[   92.49s ->    98.41s] it shows extreme buyer or seller control. But just like most things in life, size matters. For example,
+[   98.41s ->   103.09s] you could get this strength candle in different sizes. Here we have four examples. And all of these
+[  103.09s ->   108.33s] examples are strength candles with uninterrupted buying. But the largest strength candle is the
+[  108.33s ->   114.17s] strongest and the best indication that buyers are in control. Even though candle number four is still a
+[  114.17s ->   119.37s] strength candle, it's a lot weaker indication than candle number one. Large strength candles show
+[  119.37s ->   123.93s] massive buying. Small strength candles show less aggressive buying. But what happens when that
+[  123.93s ->   129.53s] control suddenly shifts? That brings us to candle number two. This candle shows who's losing the battle
+[  129.53s ->   135.21s] and who's about to take over. These are also called control shift or reversal candles. Candle wicks show
+[  135.21s ->   140.25s] rejected price action. So if you have a large upper wick, that shows buyers try to move the price up,
+[  140.25s ->   145.85s] but got rejected and sellers took over and brought the price down. These control shift candles have
+[  145.85s ->   151.29s] long wicks with small bodies. For this candle, the body of the candle is pretty irrelevant. It doesn't
+[  151.29s ->   157.29s] matter if the candle's green or red. What tells you the real story is the wick. So oftentimes these candles
+[  157.29s ->   162.97s] can show reversal points. With candles showing large lower wicks, we can expect price to move up. If we see
+[  162.97s ->   168.25s] candles showing large upper wicks, we can expect price to move down. Now when no one's in charge,
+[  168.25s ->   176.18s] the candle looks very different. That brings us to candle number three. This candle means no one's
+[  176.18s ->   181.86s] in control. An indecision candle looks like this. They have wicks on both sides with small bodies.
+[  181.86s ->   187.54s] They show equal effort from both buyers and sellers, but no real progress. Now there's a lot of different
+[  187.54s ->   193.78s] ways this can look. It could look like this, this, this, or this. All of these are indecision candles.
+[  193.78s ->   199.22s] Main thing you have to remember is there's a small body with equal wicks on either side. People often call
+[  199.22s ->   204.66s] these dojis. But these candles usually appear before major breakouts or reversals. Because the
+[  204.66s ->   209.94s] market is trying to decide what it wants to do next, but hasn't completely decided on which way
+[  209.94s ->   214.98s] it wants to go yet. You should never trade purely based off these candles, because this candle doesn't
+[  214.98s ->   220.42s] tell us who's in control. But when paired with this next candle, that completely changes everything.
+[  220.42s ->   226.10s] For example, if an indecision candle is printed, but then directly after a control shift candle is
+[  226.10s ->   231.46s] printed, this shows us that buyers have won in the indecision battle. And we can wait for price
+[  231.46s ->   237.38s] to do a pullback to this indecision candle and enter here. You can also use it as a clear reversal
+[  237.38s ->   242.42s] point. For example, price dropped strong down to this area of demand. But right when it reaches it,
+[  242.42s ->   247.46s] some indecision candles showed up showing that price is hesitating. And if paired with a strength
+[  247.46s ->   253.30s] candle, it can show buyers are starting to step in. But all of this began with the indecision candle
+[  253.30s ->   258.98s] showing signs of slowing down the sellers. So let's put all we've learned to the test and do
+[  258.98s ->   263.86s] a real life chart exam. But before we get into that, let me show you something. I found a new broker,
+[  263.86s ->   272.18s] tripleafx.com. And this is no ordinary broker. They offer Forex stocks and crypto. Yes, a three for one.
+[  272.18s ->   278.34s] So no matter what silly little thing you trade, they have it. Best part is they have 0% commissions.
+[  278.34s ->   284.26s] Yes, you heard me right. 0% commissions for all of your trades. So unlike most brokers,
+[  284.26s ->   289.14s] where you have to pay fees for every single trade you take, I mean, really sit down and think about
+[  289.14s ->   294.26s] it. If you're taking hundreds of trades, those fees can really add up to where you're paying hundreds,
+[  294.26s ->   300.82s] if not thousands of dollars. On here, it's absolutely free. Plus they're available in 176 different
+[  300.82s ->   305.86s] countries and fully regulated. If you want to try them out, use the link in my description and you will get
+[  305.86s ->   311.70s] unlimited 0% commissions. If you use my link, you're welcome. Now let's take all three candle
+[  311.70s ->   316.98s] types and drop them into a real trading example. So here we have some price action for me. We started
+[  316.98s ->   322.10s] with a slight downtrend, but if you look closely, something very interesting is happening. During
+[  322.10s ->   327.54s] this downtrend, we got three indecision candles showing price is hesitating at this price and
+[  327.54s ->   332.02s] doesn't know whether it wants to go up or down from here. One key thing to note though,
+[  332.02s ->   336.90s] is that this red candle has a large lower width, meaning sellers try to get the price lower,
+[  336.90s ->   342.58s] but buyers stepped in and brought the price back up, which means buyers are showing interest at this
+[  342.58s ->   347.54s] price level. After this price prints a strength candle, showing buyers are showing massive interest
+[  347.54s ->   352.74s] now. So we can expect price to start heading upwards from here. Price does exactly as we expect and does
+[  352.74s ->   357.94s] a sharp upwards move, printing multiple strength candles. Another key thing to note, if you take a close
+[  357.94s ->   362.50s] look, it took a while for sellers to get the price down to here. But when the buyers stepped in,
+[  362.50s ->   367.30s] they erased all of that work that the sellers did within a couple of candles. So in essence,
+[  367.30s ->   372.90s] it took sellers 22 candles to get down to this point, while the buyers did the same amount of
+[  372.90s ->   378.74s] work within four candles. So that's very important to understand. So knowing that buyers are showing
+[  378.74s ->   384.18s] more strength, we can expect the buyers to continue this control and keep moving the price upward,
+[  384.18s ->   388.82s] which is exactly what happened. Since price started a strong upwards move from this point,
+[  388.82s ->   394.18s] we can call this area our area of demand. We can mark this area of demand by marking the low of the
+[  394.18s ->   399.54s] candle that started that move to the high of that same candle. This is our area of demand,
+[  399.54s ->   404.98s] and shows buyers are starting to get interested once price reaches this area. So we'll also keep
+[  404.98s ->   410.34s] that in mind for later. The price ends up moving up a bit more, and then this candle gets printed,
+[  410.34s ->   416.18s] a red control shift candle with a large upper width. This is saying buyers try to raise the price higher,
+[  416.18s ->   421.30s] but sellers came in and brought the price back down, showing sellers have control up here.
+[  421.30s ->   426.58s] Directly after that, we have a red strength candle, meaning sellers are confident at this price,
+[  426.58s ->   431.14s] and are ready to bring the price back down, which is exactly what happens. Now that we have a strong
+[  431.14s ->   436.58s] move to the downside, we can mark our area of supply. To do this, we find the start of a strong move
+[  436.58s ->   441.78s] downwards, and mark the low to the high of the candle that started this move. This is our area
+[  441.78s ->   447.86s] of supply, and shows that sellers started to take control once price reaches this area. So we'll also
+[  447.86s ->   453.30s] keep that in mind for later. Price continues to move down a bit from here, so now we have this setup.
+[  453.30s ->   458.74s] And this chart is telling a very clear and interesting story. First, look at the speed the buyers got the
+[  458.74s ->   464.18s] price up. They got the price up extremely quick and within only a couple of candles. While the sellers
+[  464.18s ->   469.22s] still got the price back down, but the move is much slower and took them a lot of candles to get
+[  469.22s ->   474.42s] the price back down. So right off the rip, we can see the buyers have more control during this time.
+[  474.42s ->   479.06s] Another key thing to note, price has just hit our area of demand, which like I said before,
+[  479.06s ->   484.50s] a massive amount of buyers stepped into this area before, and we can expect them to do the same thing
+[  484.50s ->   489.62s] here. Another key point is while touching this area of demand, a green control shift candle was
+[  489.62s ->   494.98s] printed. Meaning sellers try to drive the price down below our area of demand, but just like before,
+[  494.98s ->   500.50s] buyers stepped in by the masses and took control and drove the price back up. Not only that, but
+[  500.50s ->   505.94s] after this control shift candle was printed, a green strength candle was printed directly after,
+[  505.94s ->   511.46s] showing even more signs of buyer momentum. So now it's pretty clear that buyers have complete control.
+[  511.46s ->   516.42s] So now we have to take advantage of this and find a place to enter. To do this, we're going to wait for
+[  516.42s ->   521.46s] price to come back down to our control shift candle, which is exactly what happened. Not only that,
+[  521.46s ->   527.14s] it printed another control shift candle, which is another great sign. We enter once price hits our
+[  527.14s ->   532.26s] control shift candle, set our take profit at the area of supply where sellers started to take control,
+[  532.26s ->   537.78s] then set our stop loss right below our original area of demand. With this setup, there's no guessing.
+[  537.78s ->   543.22s] We have analyzed the chart and found areas where buyers and sellers have complete control. And just like
+[  543.22s ->   547.78s] that price hits our take profit, just like we expected. But with all that said, there's a key
+[  547.78s ->   552.34s] thing you should understand. You should never enter purely based on a candle. For example,
+[  552.34s ->   557.54s] you shouldn't enter purely just because you see a green strength candle. That will not work in the
+[  557.54s ->   562.90s] long run. Instead, use these candles as like a book telling a story. You need to find multiple
+[  562.90s ->   568.90s] correlations and find areas where buyers and sellers show complete control based off their candlestick.
+[  568.90s ->   573.94s] Once you find that, you can easily identify the zones where buyers are likely to win and where
+[  573.94s ->   578.42s] sellers are likely to win. Implement this in your trading and you will instantly see your take
+[  578.42s ->   588.42s] profits getting hit way more often.

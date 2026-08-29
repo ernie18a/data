@@ -1,0 +1,121 @@
+[    0.46s ->    22.34s] Welcome back. Today I'd like to discuss the idea of analytical and numerical differentiation, which can be particularly useful in understanding difference equations and differential equations, also in understanding the idea of numerical solutions to differential and partial differential equations.
+[   22.34s ->    39.14s] So I'd like to kind of build the groundwork for those later videos by starting with this idea of analytical and numerical differentiation. There's a lot of use cases, a lot of use cases in machine learning, in finance, physics, so on and so forth.
+[   39.14s ->    68.50s] So let us begin with this idea of a derivative. The definition of a derivative is given a function f of x, f prime of x is equal to the limit as h approaches 0 of f of x plus h minus f of x divided by h, which is essentially saying as we change the input a little bit, how can we expect the function value to change?
+[   68.50s ->    77.96s] That's pretty much all it's saying. You may have heard it as the instantaneous rate of change, slope of the tangent line. All of these things are also objectively true.
+[   78.38s ->    84.34s] I have not defined the conditions for differentiability. I have simply just discussed this definition.
+[   85.12s ->    96.04s] Let's apply this definition to a very simple function. So if I have a function, let's say g of x is equal to x squared, how can I find the derivative?
+[   96.04s ->   107.19s] Well, many of you may be screaming power rule right now, and fair enough. If you know that g prime of x is just simply going to be equal to 2x, great.
+[  107.61s ->   119.11s] There are plenty of derivative rules that you need to learn. Power rule, product rule, chain rule, derivatives of cyclical functions, sine, cosine, tangent, derivatives of inverse trig functions.
+[  119.11s ->   129.53s] There's plenty to learn, and there's plenty to understand. But you also need, or maybe at one point, have applied the formal definition of the derivative to the function.
+[  129.53s ->   140.83s] In calculus 1, this kind of is, you know, much to many students dismay, a pain, because you can just use the power rule and get the derivative, and it's quite easy.
+[  140.83s ->   153.29s] Or you can go through the entire limit definition argument. And just to kind of show you why it's agonizing, if you've never seen it before, then we would need to apply that definition to this function g.
+[  153.29s ->   164.83s] So we would say the limit as h approaches 0 of g of x plus h minus g of x divided by h, then we would have to use our knowledge of limits.
+[  164.93s ->   171.79s] We would say this is equal to x plus h squared minus x squared divided by h.
+[  171.79s ->   177.76s] Of course, we still have the limit as h approaches 0.
+[  178.42s ->   187.87s] And then here we would get x squared plus 2xh plus h squared minus x squared divided by h.
+[  188.23s ->   190.41s] And of course, it's the limit as h approaches 0.
+[  191.23s ->   193.41s] And here you'll see the x squareds cancel out.
+[  194.07s ->   195.73s] h is going to cancel out here.
+[  195.87s ->   202.33s] And we're just left with the limit as h approaches 0 of 2x plus h, which is simply 2x.
+[  202.33s ->   205.01s] It's the same thing we get from our power rule.
+[  209.04s ->   219.82s] I really wish that math professors in college, instead of making you grind out these limit definition arguments for the derivative of different functions,
+[  220.14s ->   225.44s] would show you why the limit definition is so useful.
+[  226.54s ->   228.22s] It's not useful for this.
+[  229.56s ->   235.20s] 99.999 whatever percent, going out a thousand decimal places if you have to, of students,
+[  235.20s ->   239.58s] are not going to be researching mathematics at an academic level.
+[  239.94s ->   245.58s] And I think it does them an incredible disservice to just make them grind away at these types of problems.
+[  245.58s ->   248.48s] Not necessarily in the context of their mathematical development.
+[  248.60s ->   249.44s] I'm all for that.
+[  249.86s ->   255.46s] But it discourages the actual use and application of what a derivative is.
+[  255.46s ->   268.68s] In fact, I oftentimes look to the definition more than all of the rules because it's so intuitive and easy to implement in a numerical setting.
+[  269.24s ->   270.90s] What do I mean by this?
+[  271.40s ->   277.64s] Well, these two ways got us to the same answer, but we also have the power of computers at our disposal.
+[  277.64s ->   287.54s] And one thing that you'll realize is calculus deals with infinity, infinitely large and infinitely small.
+[  288.02s ->   294.84s] But you don't need to get infinitely small to get a very reasonable answer, or even the answer that you're looking for.
+[  294.84s ->   296.90s] And what do I mean by this?
+[  296.90s ->   313.80s] Well, if we know that g prime of x is equal to the limit as h approaches 0 of g of x plus h minus g of x divided by h,
+[  313.80s ->   328.35s] doesn't it follow that this would be approximately equal to g of x plus h minus g of x divided by h when h is small?
+[  328.85s ->   336.34s] In fact, that's true, right?
+[  336.50s ->   342.50s] And most of the time, that is enough precision to use the derivative for what we want to use it for.
+[  343.28s ->   347.38s] You can think of this very simply as if you have $2.
+[  347.38s ->   349.93s] Let's say you have $2.
+[  350.73s ->   355.93s] Is this not approximately equal to 2.03?
+[  356.53s ->   357.53s] $2.03?
+[  358.13s ->   359.85s] Do you really care about the $0.03?
+[  360.55s ->   366.05s] If you were trying to buy a bag of chips or a bottle of water at a convenience store and you were really hungry,
+[  366.19s ->   367.07s] you were really thirsty,
+[  367.85s ->   371.69s] are you really going to care about that very marginal error?
+[  373.21s ->   375.17s] More often than not, no.
+[  375.17s ->   383.07s] And what I'm trying to emphasize here is you're not going to care about it for the use case that you're going to use the derivative for anyway.
+[  383.77s ->   387.27s] So it turns out that this approximation is incredibly useful.
+[  388.07s ->   390.17s] Why is this approximation so useful?
+[  390.17s ->   396.13s] Because instead of going through this entire limit argument or trying to use our rules from calculus,
+[  396.73s ->   402.98s] so long as you have a function, you can compute the derivative.
+[  403.40s ->   407.36s] You don't need to use the limit argument and you don't need to use any rules,
+[  407.72s ->   411.68s] like the power rule, the product rule, the chain rule,
+[  411.78s ->   414.60s] and you can still arrive at a value for the derivative.
+[  414.60s ->   417.83s] Incredibly powerful.
+[  418.73s ->   419.77s] Incredibly powerful.
+[  420.27s ->   423.39s] No rules from calculus and no limits.
+[  424.49s ->   425.75s] So how does this work?
+[  426.11s ->   431.66s] Well, it's not exactly a proof, but here's a good example.
+[  434.74s ->   441.63s] Let's say h of x is equal to x cubed.
+[  441.63s ->   446.35s] And I want to find the derivative, h prime of x.
+[  448.69s ->   449.05s] Okay.
+[  449.53s ->   452.27s] Well, let's say I don't know my rules.
+[  452.43s ->   453.77s] I don't know the power rule.
+[  453.83s ->   454.53s] I don't know any rules.
+[  454.89s ->   458.57s] Let's say all I have is the limit definition, but I'm no good at limits.
+[  459.05s ->   460.47s] Maybe there's not even a solution.
+[  461.92s ->   463.46s] Let's say it is differentiable.
+[  463.70s ->   466.04s] Let's kind of just throw that off to the side.
+[  466.14s ->   469.98s] If you're screaming cusp or screaming discontinuities,
+[  470.46s ->   472.52s] then let's just kind of dismiss that.
+[  472.52s ->   474.36s] Let's assume that the function is differentiable.
+[  474.74s ->   478.84s] Here, x cubed is a polynomial function, continuous everywhere, differentiable everywhere.
+[  479.28s ->   480.30s] But we don't know.
+[  480.38s ->   481.24s] We're no good at limits.
+[  481.50s ->   482.42s] We don't know any rules.
+[  483.00s ->   492.37s] Well, we know that this is approximately equal to h of x plus some small value.
+[  492.43s ->   500.19s] Let's call it delta x minus h of x divided by delta x.
+[  503.66s ->   505.48s] Do we need a derivative here?
+[  505.48s ->   507.46s] Do we need a limit definition?
+[  507.62s ->   508.30s] Do we need rules?
+[  508.42s ->   508.56s] No.
+[  509.44s ->   514.32s] We just need to pick a small delta x.
+[  516.64s ->   517.90s] So let's do this.
+[  517.96s ->   519.80s] Let's go ahead and pick a small delta x.
+[  520.12s ->   524.86s] I'm going to say delta x is equal to 0.0001.
+[  526.32s ->   527.68s] 0.0001.
+[  527.68s ->   530.46s] Okay, so what does that imply?
+[  530.46s ->   545.90s] That implies that h prime of x is approximately equal to, let's do x plus 0.0001 cubed minus x cubed divided by 0.0001.
+[  545.90s ->   548.28s] That's our derivative.
+[  549.69s ->   551.01s] It's as simple as that.
+[  551.07s ->   553.43s] That's our numerical solution for the derivative.
+[  553.59s ->   554.37s] It's an approximation.
+[  555.09s ->   560.53s] Of course, we have an analytical solution and we can compute some error and you can do some error analysis.
+[  560.53s ->   564.35s] And it's a very interesting subject to study.
+[  564.55s ->   570.51s] But for now, let's just kind of come up with a very simple application and take a look at the results.
+[  570.51s ->   579.48s] So let's do, I'm going to put in purple here, h prime of x is equal to 3x squared.
+[  580.24s ->   581.68s] We know this to be true.
+[  581.90s ->   584.16s] We know this to be true using the power rule.
+[  585.51s ->   588.69s] We know h prime of 1 is equal to 3.
+[  591.30s ->   592.98s] I'm going to use blue as the approximation.
+[  594.72s ->   600.50s] What is h prime of 1 when we use the approximation?
+[  600.50s ->   614.92s] Well, h prime of 1 is approximately equal to 1 plus 0.0001 cubed minus 1 divided by 0.0001.
+[  615.38s ->   619.92s] I'm going to go ahead and plug this into a calculator, which I'm going to do it on my phone.
+[  619.92s ->   633.71s] So 1.0001 cubed minus 1 divided by 0.0001.
+[  634.31s ->   635.71s] And look what we get.
+[  636.98s ->   639.50s] 3.0003.
+[  647.38s ->   647.76s] Okay.
+[  648.30s ->   657.90s] So in other words, we have h prime of 1, I'll say hat, is approximately equal to h prime of 1.
+[  657.90s ->   666.74s] We have 3.0003 is approximately equal to 3.
+[  668.00s ->   672.52s] And here's where you have to ask yourself, is that good enough?
+[  672.86s ->   675.14s] Or do we really need the precision?
+[  675.66s ->   679.76s] And that's going to depend on the problem that you are working on.
+[  680.04s ->   687.96s] If we're working on a machine learning problem, then really, does it matter if we're off by a little bit?
+[  689.68s ->   690.92s] Maybe, maybe not.
+[  690.92s ->   696.51s] But we really just need to figure out what direction to step in in a machine learning context.
+[  697.19s ->   699.17s] But that's going to be a video for another day.
+[  699.85s ->   706.23s] I hope you've enjoyed this video discussing analytical and numerical differentiation.
+[  707.68s ->   708.72s] See you in the next one.

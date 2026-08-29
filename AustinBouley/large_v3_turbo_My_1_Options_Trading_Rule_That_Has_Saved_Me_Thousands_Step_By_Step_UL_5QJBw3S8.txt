@@ -1,0 +1,83 @@
+[    0.00s ->     7.30s] Hey guys, in this video I want to talk about trade risk and trade sizing from the idea of looking at losing streaks.
+[    7.40s ->    16.58s] Why? Because when we trade credit spreads, which have a naturally high win rate, that leads to losing streaks or a period of losers in a row.
+[   16.84s ->    22.36s] So if we look at that as our max loss, we can use that to determine what our trade size should be. Why is this important?
+[   22.88s ->    27.14s] Well, we are only as good as we are emotionally stable.
+[   27.14s ->    35.44s] And so in order for that to be true, we need to be trading at a size and at a level that is comfortable for us and our max loss.
+[   35.60s ->    41.88s] This is going to vary for everyone. The general rule is do not exceed 5% of your account and any one trade.
+[   42.14s ->    48.44s] Again, you can see that via the PDF that I've given you. It's listed all right here, trade sizing.
+[   48.74s ->    53.56s] But I'm going to walk you through how to determine the sizing for your specific case.
+[   53.56s ->    56.42s] So what we're going to be looking at is our max loss percentage.
+[   56.56s ->    64.12s] So if we're using the mother credit spread trading strategy, which I just taught you, you can see here we have over the last eight years,
+[   64.18s ->    67.68s] there was a losing period of five losers in a row.
+[   67.82s ->    72.42s] So if we're using that as our base case, we'll have five losers in a row.
+[   72.56s ->    74.80s] How do we determine our trade sizing off that?
+[   74.80s ->    80.54s] So first thing we need to do is understand how much are we willing to risk at any one point?
+[   80.86s ->    81.76s] What does that mean?
+[   81.98s ->    88.80s] Let's say just for easy math, we have a $100,000 account.
+[   89.80s ->    94.76s] OK, how much of this account are you OK at losing and any one losing streak?
+[   94.84s ->    96.10s] OK, loser, loser, loser, loser.
+[   96.34s ->   100.74s] At the end of those losing streaks, how much do you want your account to be worth?
+[  100.74s ->   105.82s] So if we're thinking about that, some people would say, I'm OK losing $10,000.
+[  106.28s ->   107.66s] I'm OK losing 20.
+[  107.86s ->   109.12s] I'm OK losing 30.
+[  109.24s ->   113.48s] Others say I'm OK only losing $1,000 in a losing streak.
+[  113.80s ->   119.36s] For me, if I experience a losing streak, I am comfortable losing $20,000.
+[  119.48s ->   119.68s] Why?
+[  119.78s ->   122.28s] Because I know losing streaks are not that common.
+[  122.40s ->   123.16s] They do happen.
+[  123.42s ->   126.56s] But once they do, they're typically followed by a ton of string of losers.
+[  126.68s ->   127.88s] I'll make it way back and more.
+[  127.88s ->   136.24s] So I am personally OK with using and losing $20,000 if I have a losing streak of five losers.
+[  136.72s ->   139.34s] So how do I determine my trade sizing?
+[  139.44s ->   142.54s] First off, just plug in your own numbers for how this works.
+[  142.62s ->   145.88s] So if you have a $10,000 account, do that.
+[  145.96s ->   147.64s] Just follow the same process I'm doing.
+[  147.78s ->   150.60s] And if you're only OK with risking $1,000, do that too.
+[  150.68s ->   152.34s] Just follow the exact same process I do here.
+[  152.48s ->   157.02s] OK, so now that I have the $100,000 account example, I'm OK losing $20,000.
+[  157.02s ->   158.20s] OK, cool.
+[  158.50s ->   164.36s] So in a percentage form, how much am I OK losing of the $100,000 account?
+[  164.48s ->   166.40s] Well, you just do 20 divided by 100.
+[  166.88s ->   169.52s] And that's going to give me, for easy math, 20%.
+[  169.52s ->   172.78s] I'm OK losing 20% after a losing streak period.
+[  173.14s ->   174.40s] Well, what is our losing streak?
+[  174.52s ->   175.16s] How many happen?
+[  175.26s ->   180.16s] Well, we just showed here five is our typical losing streak little scenario.
+[  180.16s ->   185.40s] So if five is the losing streak pattern, then I'm going to come back here and take our 20%.
+[  185.40s ->   188.62s] That's my max loss that I want to lose after a losing streak.
+[  189.08s ->   190.56s] Divide that by five.
+[  191.06s ->   194.26s] And that's going to give me 4% risk.
+[  194.26s ->   201.33s] So that means that I should be risking 4% per trade, right?
+[  201.39s ->   207.53s] Because if I have five losers in a row, each at 4%, I'm going to hit a 20% loss.
+[  208.11s ->   214.23s] So now that I know that I have a 4% risk per trade, what does that look like in terms of sizing?
+[  214.57s ->   218.37s] Well, what is 4% of my account size, $100,000?
+[  218.37s ->   226.03s] 4% of that is going to be 0.04 or is going to be, if I just do simple math, $4,000.
+[  226.21s ->   229.27s] That means I'm risking $4,000 per trade.
+[  229.57s ->   231.73s] Now, what does that look like in sizing?
+[  231.73s ->   238.45s] Well, if each spread requires $100 of collateral to put on, that means $4,000.
+[  238.45s ->   240.15s] Let's actually just make this in long form.
+[  240.57s ->   244.69s] $4,000 is what I extend risk per one trade.
+[  244.69s ->   258.19s] And if each trade costs $100 to put on, then that gives me 0, 0, 0, 0, 40 spreads as my recommended trade size based on my own risk tolerance level.
+[  258.83s ->   264.35s] So, again, if you follow me through this process, you'll know what this looks like for you and your account size.
+[  264.77s ->   267.53s] But, again, 40 is my recommended trading size.
+[  267.75s ->   270.81s] So that's what you should be trading for your different accounts.
+[  271.15s ->   273.49s] This is roughly where I'm at with my small account.
+[  273.49s ->   283.19s] I'm a bit less than on my larger account percentage-wise because I'm okay taking more risk on my smaller account than I am on my larger account.
+[  283.49s ->   286.17s] But, again, that's how you adjust your own risk tolerance level.
+[  286.53s ->   287.75s] The key point is here.
+[  288.05s ->   290.73s] Once you determine your sizing, you need to stick to it.
+[  290.73s ->   302.82s] So even if you experience a losing streak where this goes down because you lost with 40 spreads and your account value is now at 80K, you can't do 4% of 80K.
+[  302.96s ->   304.80s] You can, but you're not going to recover as quickly.
+[  305.18s ->   307.76s] Instead, you need to stick with your 40 trade size.
+[  307.84s ->   311.10s] You need to stick to the same trade size so that you recover quickly.
+[  311.10s ->   318.32s] Like I said, when we're trading the mother strategy, one loss will offset one winner.
+[  318.78s ->   326.42s] So if we have five losers in a row using 40 spreads, then we need to stick to 40 spreads so that we have five winners.
+[  326.58s ->   328.14s] We're now back to break even, right?
+[  328.14s ->   335.70s] If we use less than, let's say we use 20 spreads after losing, now we need 10 spreads to get back to the same level.
+[  336.12s ->   342.20s] So whatever your trade sizing ends up being, remember, you must stick with it, losing, winning, whatever.
+[  342.42s ->   351.46s] You can readjust it maybe monthly, maybe every few months once you have built up and grown enough on your account and feel comfortable with it.
+[  351.54s ->   354.00s] But you want to stick with the same size for a while.
+[  354.32s ->   355.50s] All right, I hope that makes sense.
+[  355.54s ->   356.20s] I hope it explains it.
+[  356.20s ->   360.20s] If you have any questions, please shoot me a message on Discord and I'll respond as quickly as I can.
+[  360.44s ->   361.66s] All right, I'll see you in the next lesson.

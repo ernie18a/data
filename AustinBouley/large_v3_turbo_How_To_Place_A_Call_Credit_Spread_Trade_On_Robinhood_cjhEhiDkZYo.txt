@@ -1,0 +1,18 @@
+[    0.00s ->     4.62s] walk you through how to place a call credit spread trade on the Robinhood platform. I'll
+[    4.62s ->     8.80s] be showing you through the 10% credit spreads broker walkthrough method. So again, I click
+[    8.80s ->    13.58s] on need help placing the trade, click on Robinhood. It's going to walk me through the exact steps I
+[   13.58s ->    17.80s] need to take to put on the call credit spread. Number one, enter the stock I want to trade
+[   17.80s ->    24.46s] into the search bar. Number two, click on the trade options for that broker at the bottom
+[   24.46s ->    30.50s] underneath the stock details. Number three, click on the builder button. The builder button is located
+[   30.50s ->    36.62s] right under the spy or I should say the ticker you're looking at and the trading details. Step
+[   36.62s ->    41.62s] four, click on call credit spread. This is located under the vertical spreads category. So you see
+[   41.62s ->    45.26s] vertical spreads, then you'll see call credit spread and that's the trade you want to place.
+[   45.68s ->    50.16s] Step number five, select the expiration date from the drop down section. So you can see here
+[   50.16s ->    55.08s] on the right hand side of the drop down section, you'll see the expiration date. Select the one
+[   55.08s ->    60.16s] that you're looking for. Step six, put on the correct strikes of the spread that you're looking
+[   60.16s ->    65.44s] for. So let's say you're looking to place a call credit spread at a level of 456 where you don't
+[   65.44s ->    71.78s] think it will get above 456. Look for 456, 457. Scroll until you find it, then click on the plus button.
+[   72.18s ->    78.32s] Step number seven, place the trade. The total credit is greater than or equal to 12 cents. The total credit
+[   78.32s ->    82.78s] shows you how much credit you can collect by putting on that trade. And if it satisfies your
+[   82.78s ->    87.66s] requirements, click continue and place the trade. That's how simple it is. That is how you place a
+[   87.66s ->    90.06s] call credit spread on the Robinhood platform.

@@ -1,0 +1,36 @@
+[    0.00s ->     4.28s] Hey guys, what's up? We're going through the Trinity System Strategy, which is a step-by-step
+[    4.28s ->     9.98s] strategy to help you make money selling naked puts. Again, this is going to be on the S&P 500
+[    9.98s ->    14.62s] or SPY. It's going to help you outperform the market and has an 87% win rate. So let's walk
+[   14.62s ->    19.50s] through the exact steps you need to put on this trade. Now again, this trade and rules are coming
+[   19.50s ->    24.42s] straight from the Ultimate List of SPY Trading Strategies PDF. You can get this for free linked
+[   24.42s ->    28.70s] down below in the description. But basically, I went through the internet and I found all the
+[   28.70s ->    33.16s] best performing strategies that were backtested and this is what it is. Now, strategy number
+[   33.16s ->    38.02s] seven, the Trinity System, is what we're going over in today's video. So number seven here is this. It
+[   38.02s ->    43.64s] was found on financialtechwiz.com. And again, it's a simple strategy based on the idea that the market
+[   43.64s ->    49.70s] is overall bullish and options selling is profitable long-term due to theta decay. All right, so here are
+[   49.70s ->    53.22s] the rules. Okay, actually, first let's show the backtest. You can have some proof. You can see
+[   53.22s ->    59.92s] here the blue line is a look at this strategy and the performance of it compared to the red line,
+[   60.00s ->    66.14s] which is the S&P 500 over time. You can see here the S&P 500 has done its thing since roughly 2005
+[   66.14s ->    72.72s] to roughly 2021. And you can see here the blue line really, although it does have massive drops down,
+[   72.92s ->    78.82s] does dramatically outperform the market long-term. Now again, you also have an 87.7% win rate. And again,
+[   78.82s ->    85.52s] if you want this system and strategy for yourself, just click down in the description. But the rules
+[   85.52s ->    91.46s] for this strategy is quite simple. You go to the S&P 500, which is SPY right here. What you want to do
+[   91.46s ->    99.36s] is you want to every week sell a 15 delta put option closest to 90 days until expiration. Now again,
+[   99.46s ->   105.10s] it's recommended to do it every single week to generate weekly income. But again, if you only have
+[  105.10s ->   111.20s] enough money to do it once a month, the strategy will still work well for you. So anyways, as often
+[  111.20s ->   119.04s] as you can, sell a 15 delta put option closest to 90 days until expiration. You'll also use a take profit
+[  119.04s ->   128.10s] of 60%, which means that if the option contract decreases in value by 60%, then you'll exit early
+[  128.10s ->   134.80s] for a profit. Now you'll have a stop loss of minus 200. That means that if you sold the options contract
+[  134.80s ->   145.00s] at 50 cents, if it goes up to 30, 45, sorry, I'm doing my math wrong. If it goes up to $2,
+[  145.70s ->   152.14s] then that means it's going to be time to exit that trade. Because again, 100% growth on $50 is another
+[  152.14s ->   157.86s] 50, so that'd be 100. And then another 100% growth would be 200. So again, at $2, you would exit.
+[  157.86s ->   165.00s] So again, your losses are going to be large as defined here. And during strict moving down
+[  165.00s ->   169.84s] periods, you'll have a lot of losses as shown here. But in the long run, your winners will
+[  169.84s ->   176.34s] way outnumber your losers and you'll see this huge win streak. So these are kind of some different
+[  176.34s ->   182.60s] approaches when you are trading. Again, this strategy got it here as option strategies, credit
+[  182.60s ->   187.02s] spread strategy, selling puts, normal just stock swing trading and day trading. So again,
+[  187.02s ->   191.80s] if you want more strategies here, but if you are an option seller, I highly recommend the Trinity
+[  191.80s ->   196.52s] system. And again, if you want to read more, go to financialtechwiz.com. All right, guys,
+[  196.54s ->   200.56s] if you enjoyed this super short video on this strategy called the Trinity system, please smash
+[  200.56s ->   204.40s] that thumbs up button and subscribe button if you want to learn more about options and credit
+[  204.40s ->   205.86s] spreads. See you in the next video.

@@ -1,0 +1,77 @@
+[    0.08s ->     8.88s] In this video, I'm going to walk you through my go-to bearish strategy, the strategy I use to profit from crashes, from volatility spikes, and from just downtrending markets.
+[    9.42s ->    16.30s] It helps me protect my account, but also make money on the downside as well to give me more peace of mind and allow me to sleep at night.
+[   16.38s ->    17.96s] The market crashes, I'm okay.
+[   18.36s ->    24.26s] In this video, I'm going to walk you through step-by-step what the strategy is, how it works, how to place it, when to enter and when to exit.
+[   24.36s ->    24.94s] Does that sound good?
+[   24.94s ->    30.46s] All right, so diving into it, here is the back test behind it, and you might be saying, wow, Austin, this strategy sucks.
+[   30.82s ->    32.16s] And yes, it does suck.
+[   32.24s ->    36.42s] If you use a bearish strategy in all markets, you're going to lose.
+[   36.74s ->    40.52s] And you can see here, when the market does drop, you can see these nice spikes.
+[   40.76s ->    49.72s] These spikes right here are $10,000 to $20,000 profit spikes, with this large one being a huge spike of about $50,000, $60,000 profits.
+[   49.78s ->    53.92s] You can see here, these spikes are when you should be entering the bearish trades.
+[   53.92s ->    63.24s] And so the first thing I want to cover before we dive into anything else is, how do we know when to turn on our bearish bots that we're not losing money for no reason?
+[   64.24s ->    66.66s] There's two big problems I see with most options traders.
+[   66.80s ->    75.18s] Number one, either they never have a bearish bot or never have a bearish strategy to protect the downside, or they have a bearish strategy, but they trade it all the time.
+[   75.44s ->    77.86s] There's only a certain time that you should be trading this.
+[   77.86s ->    84.04s] And what I do is I go on to indicators, which can be done on any charting platform, whether you're on your broker or trading view, whatever.
+[   84.52s ->    88.70s] On indicators, go to something, type in Bollinger Bands.
+[   89.54s ->    95.80s] This is a free strategy that everyone has access to that you probably used before, but you've been using it wrong.
+[   96.16s ->   101.20s] What you want to go in here is go into the settings and change the length from 20 to 200.
+[  101.20s ->   104.34s] This shows us something very cool.
+[  104.66s ->   107.62s] This shows us our expected trading range.
+[  108.26s ->   111.88s] When we are inside of this band, that is normal trading activity.
+[  112.08s ->   119.72s] When we exit either the top side or the bottom side, that means that we are outside of our expected range and we're likely to pull back in.
+[  119.86s ->   124.20s] Meaning, if we break out to the top side or hit this zone, we're probably going to pull back.
+[  124.50s ->   127.08s] If we break out of this bottom zone, we're probably going to bounce up.
+[  127.08s ->   129.98s] You can see break here, down, hit here, down.
+[  130.40s ->   132.14s] So, how do we use this?
+[  132.80s ->   142.76s] Well, in order to save us money and not be hedging 24-7, I hedge when I am particularly outside of this red line, but around this red line.
+[  142.88s ->   145.58s] This area is when I am hedging.
+[  145.86s ->   152.68s] That way, I'm only hedging during points of time, points in the market, where it is likely to pay off for me.
+[  152.68s ->   158.12s] So, that I'm not spending money on pointless hedges that will never make me money and instead just lose me money.
+[  158.24s ->   168.82s] So, the number one thing you can do to not lose money for no reason with hedges is to only put on hedges when you're at all-time highs or levels like this where the market is likely to pull back.
+[  169.46s ->   169.76s] Sweet.
+[  170.14s ->   171.32s] So, that is when we enter.
+[  171.58s ->   173.52s] Now, what exactly is this hedge that I'm doing?
+[  173.52s ->   182.82s] And there's two main ones that I use, but the one that I wanted to walk through in this video because it's super simple and cheap is what I call the cheap 14-day hedge.
+[  183.06s ->   185.38s] Now, what is the cheap 14-day hedge?
+[  185.52s ->   189.70s] It's simply buying a put 14 days out in the future.
+[  190.08s ->   194.80s] So, again, I like to target about a 20 to 30 delta for my trade.
+[  194.80s ->   210.56s] I have a 14 DTE on that, means I go 14 days in the future, and I hold this to about a 200 to 300% profit, and I allow a 100% stop loss, a.k.a. I'm okay with losing the entire position.
+[  211.64s ->   222.46s] I typically pair this with a really solid bullish strategy so that I have money coming in that I'm collecting from premium to help offset or pay for this hedge.
+[  222.46s ->   233.80s] So, this hedge will give me about $2,000 worth of protection, which is amazing, and it will cost me anywhere from $250 to $350, let's just say $300.
+[  234.40s ->   241.74s] So, putting on this hedge cost me $300, gives me about $2,000 of downside protection, and so this is great.
+[  241.92s ->   242.16s] Why?
+[  242.34s ->   251.92s] Because if I pair it with a bullish strategy that I can collect enough premium to cover the $300, then I'm basically getting a free hedge, which is awesome.
+[  251.92s ->   253.60s] And so, that's how I do it.
+[  253.68s ->   266.14s] My go-to bullish strategy, if you haven't seen that video yet, is the 1-1-1 strategy, which gives me about a $900 profit per trade, and I have about a $4,000 loss per trade.
+[  266.62s ->   273.30s] So, what this does is when I combine the two trades together, I actually get a thing like this.
+[  273.30s ->   280.90s] My profit then drops by $300, because that's how much the hedge costs, but my losses drop by $2,000.
+[  281.30s ->   293.22s] That means when I combine the hedge and the 1-1-1, or basically your bullish strategy with your bearish protection, like the cheap 14-day hedge, you get an insane ratio.
+[  293.22s ->   302.92s] I still get to keep my 90% win rate on the 1-1-1, which is the predominant trading strategy, because that is what's making most of the money.
+[  303.32s ->   309.80s] And now my profit comes out to be about a $600 net profit, taking away the money that I paid for the hedge.
+[  309.80s ->   316.08s] But my losses drop down to only $2,000 instead of $4,000.
+[  316.50s ->   325.50s] Who here would like to have a 90% win rate, where 90% of the time you're making $600, and the other 10% of the time you lose $2,000?
+[  325.62s ->   332.48s] That's an insane ratio, and that's what you're able to do when you pair both a bullish and a bearish together.
+[  333.02s ->   338.38s] Now, remember, you only want to be doing the bearish near this level, but that's how you do it.
+[  338.38s ->   340.24s] That is the cheap 14-day hedge.
+[  340.30s ->   346.70s] You can also do things like put debit spreads and whatnot, but the whole goal here is to make sure you're trading the right strategy in the right market.
+[  346.80s ->   355.30s] I've seen too many options traders get screwed, especially in the recent market, trying to trade one strategy, thinking it's some holy grail that will make money in all markets.
+[  355.90s ->   361.18s] Every strategy works, but it only works in one particular market.
+[  361.18s ->   366.54s] Trade bullish strategies and bullish markets, bearish strategies and bearish markets, and combine them when the market is uncertain.
+[  366.54s ->   377.74s] That is the idea behind the four core bots methodology and trading system that I put together, and I actually have a training on it linked down below, so check out that free training if you're interested.
+[  378.16s ->   379.68s] If not, I hope to see you in the next video.
+[  379.68s ->   380.68s] If not, I hope to see you in the next video.
+[  380.68s ->   381.68s] If not, I hope to see you in the next video.
+[  381.68s ->   382.68s] If not, I hope to see you in the next video.
+[  382.68s ->   383.68s] If not, I hope to see you in the next video.
+[  383.68s ->   384.68s] If not, I hope to see you in the next video.
+[  384.68s ->   385.68s] If not, I hope to see you in the next video.
+[  385.68s ->   386.68s] If not, I hope to see you in the next video.
+[  386.68s ->   387.68s] If not, I hope to see you in the next video.
+[  387.68s ->   388.68s] If not, I hope to see you in the next video.
+[  388.68s ->   389.68s] If not, I hope to see you in the next video.
+[  389.68s ->   390.68s] If not, I hope to see you in the next video.
+[  390.68s ->   391.68s] If not, I hope to see you in the next video.
+[  391.68s ->   392.68s] If not, I hope to see you in the next video.
+[  392.68s ->   393.68s] If not, I hope to see you in the next video.

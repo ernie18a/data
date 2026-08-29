@@ -1,0 +1,144 @@
+[    0.00s ->    27.00s] Are you curious how to trade options and credit spreads in a low volatility market where it's hard to make a lot of money, but at the same time you're risking a lot more and you want to know how do I offset this risk? How do I actually make money when VIX is low? I'm going to walk you through exactly what low volatility means and how I make money from it. And also if you stay till the end, I'm going to show you the exact trades I have placed today to take advantage of the market so you can learn how I'm actually doing it in real time. So let's dive into it.
+[   27.00s ->    56.98s] So number one, what is a low volatility market? Low volatility refers to VIX. If you go to any type of stock chart, like friends, this is tradingview.com and you type in VIX, you're going to see the volatility index. And so this shows you how much the stock market is moving, also known as the fear index. When fear is higher, this volatility index is higher. When VIX is higher, options prices are higher, which means you make more money and you risk less at the same time. Versus when VIX is low, you make less money.
+[   57.00s ->    79.92s] Which if you're trading a credit spread also means that you're going to lose more because credit spreads have an inverse relationship between how much you make and how much you're risking. So as your profit goes up, your risk goes down. But as your profit goes down, your risk goes up with credit spread. So when VIX is higher, you're able to collect a lot more credit, which means that you're able to go further away from the stock price and have a higher win rate.
+[   79.92s ->    88.64s] When VIX is lower, like it's been since October, October, November, we're now in December to almost three months now, we're getting into a low volatility market.
+[   88.82s ->    98.36s] So it's really hard to be able to enter credit spreads at the levels of prices that we've been able to previously this year, like all throughout September, November, also in August.
+[   98.72s ->   105.28s] And also we had at the beginning of the year, specifically around March and May, when volatility was higher than it was now.
+[  105.28s ->   112.38s] It used to be around $20. Now VIX is around 13. And so when VIX is lower, that means that we kind of have to adjust the way we trade options.
+[  112.38s ->   120.40s] So let me walk you through now that you know what high volatility and low volatility mean and how it affects options, specifically credit spreads.
+[  120.56s ->   122.26s] How do you make money from it?
+[  122.26s ->   127.48s] Well, this all goes back to the simple credit spreads course that I put together in the trading handbook.
+[  127.56s ->   135.96s] So let's go through the trading handbook. Now, if you want to watch the video courses, the first link in the description below, just insert your email and you'll get the course and this PDF for free.
+[  136.06s ->   142.78s] But anyways, if we look at the bullish play guy, which means how we trade put credit spreads, you can see here we're targeting a 30 delta.
+[  143.20s ->   145.30s] And so what exactly does a 30 delta mean?
+[  145.36s ->   147.60s] Well, let's go to SPY and I'll actually show you what that means.
+[  147.60s ->   151.98s] A 30 delta is showing you how far away from the stock that you're going.
+[  152.36s ->   159.46s] So for instance, when VIX is higher, when volatility is higher, we could probably go this far away for a 30 delta.
+[  159.82s ->   164.92s] And now we'd have this much room of margin for our stock to go against us where we still make money, right?
+[  164.96s ->   170.28s] Because for anyone who doesn't know this, a credit spread is a bet that a stock will stay above a certain level.
+[  170.62s ->   173.46s] This being our level. So as long as the stock stays above it, we make money.
+[  173.54s ->   175.36s] So if it goes down but stays above it, we make money.
+[  175.36s ->   178.62s] If it goes up, we make money. If it goes sideways, we make money.
+[  179.04s ->   191.86s] And so in a high volatility market, because things are scarier, things are riskier, we can go further away and collect more money, which gives us a higher margin of safety.
+[  192.22s ->   200.60s] However, in our current market, a low volatility market, we have to move our strike price for a 30 delta up closer to the current stock price.
+[  200.60s ->   207.36s] And so this increases our risk, right? Because it's the higher likelihood chance that the stock goes against us.
+[  207.48s ->   215.96s] The only thing is, when the market is also very low in volatility, the likelihood chance of it shooting around and going crazy is a lot lower.
+[  216.06s ->   219.94s] You can see here the volatility has been low, but the stock has been trading in a range.
+[  220.28s ->   222.34s] And so again, those are two things you need to watch out for.
+[  222.34s ->   227.60s] Now, what we really are trying to answer is here, how do we trade in low volatility markets?
+[  227.90s ->   235.42s] Well, you're going to have to come up and move your strike prices up higher so that you can collect enough credit that it's worth your trade.
+[  235.58s ->   240.58s] The way that I like to trade credit spreads is I like to collect for a $1 wide stock.
+[  240.66s ->   243.40s] I like to collect anywhere from 20 to 25 cents.
+[  243.40s ->   249.46s] And so previously in the year, I could have been trading this far out, but now I have to trade about this far.
+[  249.60s ->   250.96s] So I have to trade closer.
+[  251.38s ->   253.62s] And the way that is, it's just because the volatility is lower.
+[  253.72s ->   255.78s] So I have to move it up.
+[  256.04s ->   258.46s] But I'm not just moving it up for the sake of moving it up.
+[  258.52s ->   261.66s] I'm looking at, okay, the market is trading in trends.
+[  261.72s ->   262.78s] The market is trading in a range.
+[  262.86s ->   265.16s] You can see here, it's slowly moving higher.
+[  265.54s ->   268.16s] It's pushing down and then it's being recovered.
+[  268.36s ->   269.88s] And there's some support here.
+[  269.88s ->   273.68s] So I am entering credit spreads when it starts to dip down.
+[  273.76s ->   276.18s] So when it dips down, that's when I enter the put credit spreads.
+[  276.38s ->   278.36s] The same way is what I'm doing.
+[  278.42s ->   280.76s] And I'll show here through my live trades in a second.
+[  281.04s ->   283.94s] Is that look, the market's starting to roll over and top out, right?
+[  284.00s ->   286.46s] We're starting to hit into a key resistance level.
+[  286.62s ->   287.86s] We're starting to get weak.
+[  287.98s ->   290.24s] We're not showing any strong momentum to the upside.
+[  290.66s ->   292.06s] And so again, we're starting to roll over.
+[  292.26s ->   297.34s] So at the same time, when the market spikes up like this, what I can do is I can sell call credit spreads.
+[  297.40s ->   298.46s] Let's make money to the downside.
+[  298.46s ->   305.70s] So by default, I'm creating what is known as an iron condor, where as long as the stock stays between two prices, I make money.
+[  306.00s ->   318.10s] So this is a great way to profit from the market when you are in a low volatility market, specifically when you are at a crucial level where you're seeing a lot of range bound action.
+[  318.10s ->   331.46s] You can see right here, the market has been staying range bound for a few weeks now, a couple weeks, and there's nothing much more to do but to enter put credit spreads when the market goes down, enter call credit spreads when the market goes up, and trade this range.
+[  331.46s ->   338.08s] And so again, when the market has low volatility, when you want to enter is when it's going against your position.
+[  338.08s ->   345.40s] So for instance, if you want to enter a put credit spread, which is a bullish play, what you want to do is you want to enter when the market drops or when it turns red.
+[  345.40s ->   352.86s] Why? When the market turns red, that's going to increase volatility, allowing you to get a better entry into a put credit spread.
+[  353.32s ->   354.70s] Same thing, but vice versa.
+[  354.80s ->   359.16s] If you wanted to get into a call credit spread, which is playing the downside, wait for a push up.
+[  359.34s ->   367.14s] That's going to increase the call option premium, which is going to allow you to go further out and allow you to do and get a better trade.
+[  367.14s ->   371.62s] So that is how you trade credit spreads in a low volatility market.
+[  371.74s ->   374.76s] You need to move that up to a 30 delta like I've taught in my courses.
+[  374.88s ->   381.68s] You need to move it up a bit closer, but not only that, you need to be more specific with the timing of your trades.
+[  382.18s ->   387.42s] Not only that, I forgot to measure something really important, is you want to make sure that you are sizing appropriately.
+[  387.68s ->   394.70s] When we get into low volatility markets, which is typically associated with uptrends because there is no fear when the market is consistently trending up,
+[  394.70s ->   398.66s] which is what we're seeing here, the market is consistently trending up, so there's no fear.
+[  399.00s ->   401.54s] So why would we need that VIX to be higher?
+[  401.74s ->   404.80s] Anyways, we need to make sure we are sizing correctly.
+[  405.14s ->   409.46s] It's okay to follow the trend when we're breaking resistances and making new levels and having strong momentum,
+[  409.46s ->   414.78s] but when we get near these key levels and we're starting to slow down and roll over, which is a good sign of a reversal,
+[  415.18s ->   417.98s] what we want to do is we want to make sure we're sizing accordingly.
+[  418.40s ->   423.24s] So I like to size, specifically in this period right here, I'm sizing around 50% of my account size.
+[  423.24s ->   426.56s] So typically, or I should not account size, of a normal trading position.
+[  427.02s ->   429.80s] So typically, I'll put on 15, 20 spreads.
+[  429.98s ->   437.12s] Now I'm putting on 5 to 10 spreads for my position because I know that a reversal is likely.
+[  437.50s ->   441.58s] So now I have my trade in, I am in a position, I have the ability to make money,
+[  441.70s ->   443.88s] which is what I've been doing over the last few weeks here,
+[  444.24s ->   447.08s] but if it starts to reverse against me, I'm not going to lose a lot,
+[  447.24s ->   450.42s] and then I can go in heavier with the direction of the trend.
+[  450.42s ->   453.78s] So again, as you're starting to roll over, make sure you size accordingly.
+[  454.16s ->   455.90s] Now again, what are the two current trades I took?
+[  456.00s ->   458.34s] Well, yesterday, you can see here the trades that I took.
+[  458.44s ->   463.88s] I took a put credit spread 450, 449 at 20 cents is what I collected.
+[  464.00s ->   466.16s] This is nine days out, and this is my plan.
+[  466.22s ->   467.76s] I'm going to close the trade early.
+[  467.84s ->   471.64s] If I can get 6 to 5 cents, that's my take profit.
+[  472.16s ->   474.72s] But again, my stop loss is going to be the 50 cent mark,
+[  474.80s ->   476.30s] aka when my strike price gets broken.
+[  476.68s ->   477.70s] So that's for the downside.
+[  477.70s ->   479.72s] I think the market will stay above 450.
+[  480.18s ->   483.20s] And again, as we can see here, the market's staying above 450.
+[  483.74s ->   485.60s] If I, oops, that's my drawing price.
+[  485.68s ->   486.34s] Let's remove this.
+[  486.68s ->   489.98s] Market staying above 450 would reference this right here.
+[  490.06s ->   490.84s] So I'm moving this.
+[  490.98s ->   491.84s] I got 450.
+[  492.12s ->   494.54s] So roughly here was my 30 delta.
+[  494.98s ->   498.16s] Now at the same time, what I did was, because we're very range bound,
+[  498.24s ->   500.64s] we're very sideways, and the market can go either way,
+[  500.90s ->   503.22s] I wanted to make sure that I profit from both sides.
+[  503.22s ->   506.64s] So I came in here, and I put on this same thing, but a call credit spread,
+[  506.70s ->   507.54s] which I'm going to the downside.
+[  507.68s ->   512.46s] It's a 464, 463, and I collected 22 cents per spread on that trade.
+[  512.64s ->   518.16s] So you can see here, if I duplicate this and go to 464, which is way above here,
+[  518.18s ->   519.26s] I was able to get in.
+[  519.34s ->   521.60s] Again, you can see here, because the market's pushing higher,
+[  521.90s ->   524.94s] that calls are elevated, so I can go further away with my calls.
+[  524.94s ->   528.46s] But anyways, up here around the 464 level, if I exaggerate this right here,
+[  528.90s ->   531.28s] 464, this price.
+[  531.62s ->   534.58s] And this is what I structured as an iron condor.
+[  534.68s ->   536.38s] Again, I was just putting on credit spread trades,
+[  536.64s ->   539.14s] but when you put them together like this, it's called an iron condor.
+[  539.46s ->   542.24s] Anyways, all you need to know is I'm betting that the stock will go higher.
+[  542.48s ->   544.02s] I'm also betting that this stock will go lower,
+[  544.08s ->   545.96s] because I think the market can go any direction.
+[  546.28s ->   548.74s] If it stays in the middle, this is my max profit,
+[  548.78s ->   550.60s] where I profit from both of these trades.
+[  550.78s ->   553.26s] If the market goes against me and breaks this side,
+[  553.26s ->   554.82s] I'm going to close out of this trade early,
+[  555.06s ->   556.62s] and I'm going to let this trade run.
+[  556.86s ->   559.62s] It will be a bit of a break-even trade if that happens,
+[  559.66s ->   561.72s] but then I'll be able to double down and get in
+[  561.72s ->   565.40s] when this breaks into more trades that make money to the downside.
+[  565.66s ->   569.12s] So anyways, I am safe right here if the market continues to go range-bound,
+[  569.20s ->   570.26s] which is what it's been doing,
+[  570.34s ->   573.26s] because the market has very low volatility.
+[  573.74s ->   575.84s] But at the same time, if it starts to reverse,
+[  575.90s ->   577.24s] because we're at this resistance level,
+[  577.56s ->   582.30s] I can neutralize that position by turning it into a break-even trade
+[  582.30s ->   585.50s] and giving myself the opportunity to get into the trend at a better time.
+[  585.66s ->   588.90s] So this is how I'm handling a low volatility market.
+[  589.02s ->   590.90s] This is how I've done it in the past,
+[  591.00s ->   592.12s] and this is how I do it now.
+[  592.18s ->   594.58s] To recap, you need to move your strike prices up.
+[  594.88s ->   599.34s] You need to be more looking into when should I be entering,
+[  599.42s ->   601.28s] what is the absolute best time to enter,
+[  601.54s ->   603.22s] because you want to make sure that you're entering correctly.
+[  603.68s ->   605.82s] And three, you want to make sure you're sizing correctly.
+[  605.96s ->   609.06s] So that is how I trade credit spreads in a low volatility market.
+[  609.06s ->   610.78s] If you have any questions about my approach,
+[  611.02s ->   612.74s] make sure to click the first link down below
+[  612.74s ->   614.56s] and start your free credit spreads course.
+[  614.84s ->   615.94s] All right, guys, see you in the next video.

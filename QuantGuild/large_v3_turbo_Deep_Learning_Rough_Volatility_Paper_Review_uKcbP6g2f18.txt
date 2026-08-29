@@ -1,0 +1,165 @@
+[    2.64s ->    23.90s] Hey YouTube, it is good to be back. Finally, I am in a beautiful new office here. I got a little art studio set up over there. As you can tell, I even got some new video toys here. I got a stock ticker going up there so you can see we're after hours for equities so there's not going to be much movement, but we'll see some crypto action hopefully.
+[   23.90s ->    46.46s] But nevertheless, I figured what better way to get started with these videos again than to dive right into a paper review. In this case, we're going to be looking at this paper. This is one of my favorite papers in the deep learning for pricing space. It is on deep learning volatility, a deep neural network perspective on pricing and calibration in rough volatility models.
+[   46.46s ->    69.28s] Let's go ahead and set the scene for this paper. So the traditional calibration problem is one where we have some model framework, say maybe a Black-Scholes or maybe a Heston, and we have some grid of vanilla prices that we would like to fit our model to to then go about pricing, say, some exotic instrument.
+[   69.28s ->    91.30s] Now, in the case of rough volatility models, unlike a Black-Scholes, unlike a Heston, where Heston, we have Fourier pricing and Black-Scholes, we have a closed form solution, rough volatility models are very computationally expensive to simulate and then subsequently price respective instruments.
+[   91.30s ->   109.94s] So this approach is very interesting because we know in the deep learning space, everything is vectorized, right? So if we train a deep neural network to learn the pricing map, then perhaps this becomes a very, very fast process.
+[  109.94s ->   128.14s] So this is essentially the stage for this paper, right? We have this efficiency issue and we're looking to see if we can apply deep learning, not as a substitute for a stochastic model, but rather as an efficiency boost, if you will.
+[  128.28s ->   138.24s] So in this context, we're not actually applying deep learning to substitute the financial mathematics. We're using it as a speed up.
+[  138.24s ->   149.50s] Okay, so let's go ahead and break down their model framework. So for starters, they define this M here as M of theta, where theta is an element of this cap theta.
+[  150.20s ->   159.16s] What are they talking about? Well, M represents a model, and they make the distinction of stochastic or parametric, it really doesn't matter.
+[  159.16s ->   169.24s] And it is parameterized by theta, where theta is some n-dimensional vector corresponding to the model's parameters.
+[  169.98s ->   179.32s] So in the case of M, you could have a Black-Scholes, and you would have the corresponding Black-Scholes parameters baked into the theta vector,
+[  179.32s ->   185.98s] or you could have a Heston, and then the Heston parameters are baked into that corresponding theta vector.
+[  185.98s ->   193.08s] It just allows us to essentially come up with an arbitrary framework to refer to any stochastic model.
+[  193.38s ->   198.52s] We can see how they then define a pricing map. So you can see this pricing map, P.
+[  199.06s ->   204.04s] We are mapping M of theta and then this zeta to Rm.
+[  205.22s ->   211.88s] What does this mean? Well, if we have a stochastic model, we can develop prices under that model framework, right?
+[  211.88s ->   218.10s] If we have a Black-Scholes, we can get Black-Scholes prices. If we have a Heston, we can get Heston prices, right?
+[  218.10s ->   224.46s] And if we wanted to use a Bergomi or Ruff-Bergomi, then similarly, we could get prices under that framework.
+[  225.20s ->   231.62s] Now, what we see here is M of theta and zeta. Zeta represents the instruments that we're pricing.
+[  231.62s ->   238.69s] And then the instruments that we're pricing are essentially going to just be a collection or a grid.
+[  239.49s ->   243.09s] It depends on how you'd like to define your one or many instruments.
+[  243.81s ->   251.49s] And then based on that specification of the instruments that you're pricing, you are going to get a vector in Rm.
+[  251.49s ->   261.91s] So if we have five instruments that we are trying to price, so zeta is a vector of five instruments, and we have a Black-Scholes model, for example,
+[  262.43s ->   269.17s] then we are going to go ahead and price those five instruments under the Black-Scholes parameter set, theta,
+[  269.49s ->   274.85s] and it is going to map to five prices, so a vector in R5.
+[  275.29s ->   279.37s] Naturally, we ask the question, well, what theta should we choose?
+[  279.37s ->   283.19s] Zeta is relatively easy to develop, right?
+[  283.29s ->   289.77s] We have some grid of liquid vanilla options or something like that that we just pull from the market.
+[  290.47s ->   295.99s] And their price in the market is actually given by this P market of zeta.
+[  296.45s ->   298.93s] So we know what these contracts look like.
+[  298.99s ->   300.07s] We know how they're priced.
+[  300.83s ->   307.79s] We know our model specifications, so we can choose Black-Scholes, we can choose Heston, we can choose Ruff-Bergomi.
+[  307.79s ->   309.59s] What don't we know?
+[  309.65s ->   311.03s] We don't know theta, right?
+[  311.07s ->   316.61s] We don't know how to parameterize that model to go about pricing some exotics.
+[  317.39s ->   319.41s] So how do we choose theta?
+[  319.55s ->   325.93s] Well, it turns out what we can do is we can look at the market prices for these zeta instruments,
+[  325.93s ->   328.89s] and that is given by P market of zeta.
+[  329.83s ->   335.15s] And we can look at our pricing map developed for whatever model it is that we specify.
+[  335.39s ->   337.63s] So M of theta is whatever model we choose.
+[  338.25s ->   343.45s] And then we have this pricing map with respect to the instruments zeta.
+[  343.45s ->   353.57s] We can come up with a distance between the market prices and the prices given by our pricing map
+[  353.57s ->   355.81s] with respect to the model framework that we choose.
+[  356.31s ->   362.94s] This just turns into a very simple minimization problem where we're trying to minimize the distance
+[  362.94s ->   369.70s] between all of the model-specified prices and the market-specified prices.
+[  369.70s ->   375.30s] So we can just figure out what theta hat is by solving this minimization problem.
+[  375.40s ->   379.02s] So we're going to say argmin, some arbitrary delta function,
+[  379.12s ->   384.70s] where delta is going to be a measure of distance between our model prices and the market prices.
+[  385.32s ->   391.16s] That is going to be how we parameterize our model for pricing of other instruments.
+[  391.16s ->   400.47s] So solving this minimization problem is going to yield the appropriate parameter set to use
+[  400.47s ->   403.31s] under any model framework that we like.
+[  403.45s ->   408.95s] Now, I know that was quite a mouthful, but let's just kind of boil this down to what it is, right?
+[  408.99s ->   410.51s] This is the calibration problem.
+[  410.99s ->   413.79s] At the end of the day, what we're saying is we have some model.
+[  414.13s ->   417.05s] We have some model that we want to use to price instruments.
+[  417.83s ->   419.45s] That model takes some parameters.
+[  420.19s ->   421.93s] What should those parameters be?
+[  422.47s ->   427.13s] Well, we're going to use current market prices to help us decide what those parameters should be.
+[  427.89s ->   431.99s] And in solving this minimization problem, that's exactly what we're doing.
+[  432.55s ->   439.91s] If you want to get super technical with me, then in reality, we're not solving this ideal delta calibration problem.
+[  439.91s ->   445.33s] This is an ideal delta calibration problem where we know the pricing map.
+[  445.33s ->   451.25s] This may be the case for like a Black-Scholes, but definitely not the case for a rough Bergami, right?
+[  451.37s ->   458.57s] So in reality, we're going to have this approximate delta calibration problem.
+[  459.49s ->   467.17s] If we had this ideal delta calibration problem, then that kind of defeats the entire purpose of this paper, right?
+[  467.17s ->   471.65s] Like we don't need to deep learn Black-Scholes, right?
+[  471.67s ->   473.75s] We have a closed form solution for that.
+[  473.87s ->   478.11s] So there's really no reason to do this for an ideal delta calibration problem.
+[  478.11s ->   481.73s] But for an approximate delta calibration problem, this is very useful.
+[  482.45s ->   485.85s] Now, what is an approximate delta calibration problem?
+[  486.15s ->   490.07s] Well, we don't necessarily have a closed form solution for the pricing map.
+[  490.07s ->   498.69s] In that case, we have to use numerical techniques, 99.9% of the time it's Monte Carlo simulation, to develop these prices.
+[  498.69s ->   505.19s] So we would simulate a whole bunch of rough Bergami paths, price our vanilla instruments.
+[  505.49s ->   511.33s] And yes, unfortunately for the rough model family, we even need to use simulation for vanilla instruments,
+[  511.55s ->   514.89s] which do have some numerical errors.
+[  514.89s ->   524.23s] So that's why it is considered a numerical approximation, but nevertheless, it is the same thing as the original minimization problem.
+[  524.37s ->   528.33s] The only difference is this is incredibly computationally expensive.
+[  528.71s ->   529.55s] Think about it.
+[  529.55s ->   536.37s] If every time I wanted to price a new set of instruments, instead of passing it through a function, like with Black-Scholes,
+[  536.47s ->   539.89s] where I can just spit out a price, I have to run a simulation.
+[  539.89s ->   546.41s] And not only that, but I have to run a big simulation to make sure the numerical error is very small in the pricing.
+[  546.81s ->   548.67s] And that's going to take a ton of time.
+[  549.01s ->   553.17s] I mean, fractional brownie in motion isn't exactly something that just grows on trees.
+[  553.75s ->   556.73s] It's definitely going to be computationally expensive.
+[  557.09s ->   559.23s] So this is really the big problem.
+[  559.51s ->   561.51s] It's finding this theta hat.
+[  561.63s ->   562.71s] This is what we want.
+[  563.11s ->   565.15s] We want to be able to pick any model.
+[  565.63s ->   569.29s] We want to be able to say, hey, I can find theta hat and I can find it efficiently.
+[  569.29s ->   572.11s] If we can't find it efficiently, it's not of much use to us.
+[  572.59s ->   575.29s] So that is what they are attempting to do here with deep learning.
+[  575.49s ->   578.87s] They're trying to say, hey, what we can do is we can front load this process.
+[  579.39s ->   586.41s] We can simulate a whole bunch of rough Bergomi prices for a random parameter set.
+[  587.19s ->   592.53s] Then what we're going to do is we're going to learn this pricing map of the rough Bergomi model
+[  592.53s ->   595.49s] to their subsequent prices for vanilla options.
+[  595.49s ->   601.67s] Once the deep learning model learns that pricing map, then what can we do?
+[  601.75s ->   604.83s] Well, we can apply that pricing map to this setting.
+[  604.83s ->   612.67s] So instead of having to run a simulation every time we are trying to solve this particular price,
+[  612.79s ->   617.65s] this P tilde here, we can just pass it through a deep neural network.
+[  617.65s ->   619.87s] And that is very quick.
+[  619.87s ->   623.11s] So this requires many functional iterations to solve, right?
+[  623.17s ->   629.35s] So if we wanted to minimize this distance delta, we are going to need to keep trying and trying
+[  629.35s ->   633.53s] and trying different parameters until we converge at an optimal solution.
+[  634.03s ->   640.79s] Every time we would want to try a parameter set without a deep learning model,
+[  641.05s ->   642.55s] we would need to run a new simulation.
+[  642.55s ->   649.83s] But because we have a deep neural network that learned the pricing map for our model M,
+[  649.87s ->   651.71s] in this case, I just assume it's a rough Bergomi,
+[  651.97s ->   659.11s] we can just run the parameter set through that model and then spit out a price and see how it looks
+[  659.11s ->   660.47s] compared to the market instruments.
+[  660.57s ->   662.73s] And then boom, we can try new parameters and just keep going.
+[  662.89s ->   666.55s] So it is extremely efficient compared to the alternative.
+[  667.09s ->   668.75s] And that's exactly what they're doing here.
+[  668.75s ->   675.81s] We're going to learn P tilde, which is this pricing map for model M with parameters theta,
+[  676.09s ->   678.41s] given a set of instruments zeta.
+[  678.71s ->   681.77s] We are going to learn that pricing map.
+[  682.19s ->   686.13s] Then we are going to go about solving this calibration problem.
+[  686.43s ->   687.95s] And it's going to be much more efficient.
+[  688.63s ->   692.79s] Now, you'll actually notice they're converting prices to Black-Scholes volatilities.
+[  692.79s ->   698.43s] And the reason they're doing this is just so they don't have to impose a weighting scheme on the prices.
+[  698.43s ->   701.89s] It's just going to help with the minimization problem.
+[  702.57s ->   709.55s] The overall architecture of the neural network that is being used to approximate these prices
+[  709.55s ->   714.75s] is relatively simple, all things considered.
+[  714.93s ->   720.43s] I mean, you have an input shape of the dimensionality of your theta vector.
+[  720.43s ->   724.91s] So it's based on the model that you select and how it's parameterized.
+[  725.97s ->   731.67s] Then you have, I believe, 30 nodes per hidden layer with four hidden layers.
+[  732.13s ->   736.35s] And then they're using a fixed grid of 11 by 8 for strikes and maturities.
+[  737.01s ->   739.45s] But this could be whatever you like.
+[  740.19s ->   746.21s] So it's actually, all things considered, a very simple structure to achieve this speedup.
+[  746.27s ->   748.43s] It's just how it's being applied that's very clever.
+[  748.43s ->   754.03s] The actual means of solving the minimization problem is actually kind of simple,
+[  754.55s ->   759.35s] given that the neural network itself is differentiable.
+[  759.81s ->   765.09s] So let's just assume that we can generate our prices for some model M.
+[  765.11s ->   767.05s] Let's just say Ruff-Bergomi for this case, right?
+[  767.05s ->   774.17s] So let's just say we can generate a whole bunch of parameters for separate Ruff-Bergomi simulations.
+[  774.95s ->   780.51s] And each one of those simulations is going to correspond to a grid of vanilla prices.
+[  780.51s ->   791.96s] Well, now that we have our training set, we can just train a neural network on that data to learn that map between Ruff-Bergomi parameters and subsequent prices.
+[  791.96s ->   797.42s] Once that's learned, we have a grid of market prices.
+[  797.62s ->   803.74s] We have an output of a neural network, which is just a giant composite function, right?
+[  804.40s ->   806.28s] Of the same dimensionality.
+[  806.28s ->   811.60s] So we can just use a standard gradient descent to find theta hat.
+[  811.68s ->   815.92s] So it's actually really elegant when you look at the way that this is being applied.
+[  816.04s ->   817.16s] And it's very clever.
+[  817.76s ->   820.78s] It's using deep learning really as a tool.
+[  820.78s ->   827.08s] It's saying like, hey, you know, we have a hammer, but this is a screw.
+[  828.00s ->   831.56s] And deep neural networks are our screwdriver.
+[  832.10s ->   838.04s] So it's a very clever application of artificial intelligence in this capacity.
+[  838.52s ->   842.78s] To test their methodology, they look at down and out barrier options.
+[  842.92s ->   844.70s] What better exotic to look at?
+[  844.70s ->   857.90s] And they confirm that the average absolute errors are less than 10 bps with a standard deviation of 10 bps, which is incredibly impressive for a Ruff-Bergomi model.
+[  858.04s ->   862.50s] I mean, this is something that was never going to be calibrated, right?
+[  862.50s ->   874.34s] Like if we wanted to run a calibration of a Ruff-Bergomi model to a market implied volatility surface, I would say, well, how many days do I have to do this?
+[  874.34s ->   878.98s] Right, like this is, even with GPU, this is an incredibly daunting task.
+[  879.12s ->   889.90s] So this is a very cool, a very unique application of deep learning for efficiency in financial mathematics.
+[  890.14s ->   892.84s] That is going to do it for this first video back.
+[  892.98s ->   894.12s] Boy, it's good to be back.
+[  894.50s ->   898.30s] I want to go ahead and thank the authors for their contribution.
+[  898.48s ->   900.80s] I really did get a lot of joy out of reading this paper.
+[  900.80s ->   905.48s] I found it incredibly interesting, and I really enjoyed learning from it.
+[  905.60s ->   907.32s] So thank you to them.
+[  907.76s ->   913.88s] If you have any questions, comments, suggestions for future videos, please leave them in the comments below.
+[  914.30s ->   919.14s] If you have any specific questions, you want to reach out to me, just shoot me an email, roman at quantkill.com.
+[  919.14s ->   926.26s] I'm very happy, very excited to announce that we are working on our next course, Machine Learning and Artificial Intelligence.
+[  926.54s ->   928.30s] It is going to be a blast.
+[  928.44s ->   930.48s] I'm looking forward to releasing that very soon.
+[  931.04s ->   932.42s] So stay tuned.
+[  932.76s ->   935.82s] Thanks so much for watching, and I will see you in the next video.

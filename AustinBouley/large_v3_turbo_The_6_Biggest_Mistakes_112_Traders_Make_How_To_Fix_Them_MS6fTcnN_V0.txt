@@ -1,0 +1,152 @@
+[    0.00s ->     5.22s] Hey guys, I've personally seen over a thousand 1-1-2 trades, verified trades, and I know
+[    5.22s ->     9.10s] where each 1-1-2 trader is going wrong, and I want to show you how to fix these.
+[    9.30s ->    13.46s] Because if these are left unchecked, you could lose tens of thousands of dollars on your
+[   13.46s ->    15.50s] 1-1-2 trades if they're not set up correctly.
+[   15.58s ->    21.04s] So let's dive in to the six deadliest mistakes that I see most 1-1-2 traders make.
+[   21.48s ->    26.38s] So if we're looking at it here, mistake number one is that you're not hedging correctly.
+[   26.80s ->    29.24s] Guys, 1-1-2s have a lot of exposure.
+[   29.24s ->    33.64s] You have a lot of sold puts on futures, and if the market crashes, we're talking about
+[   33.64s ->    34.96s] huge losses.
+[   35.30s ->    38.66s] And so if you don't hedge your accounts correctly, it's not going to work.
+[   38.76s ->    40.36s] Now, what does hedging correctly mean?
+[   40.70s ->    46.08s] It means that your total account risk is equivalent to your total hedge protection.
+[   46.48s ->    50.26s] And so now 1-1-2s are amazing because they can be turned into hedges, but we want to make
+[   50.26s ->    54.02s] sure that the number of hedges we have on is equivalent to the amount of risk that we have
+[   54.02s ->    54.74s] in the account.
+[   54.84s ->    56.12s] So let me move my face real fast.
+[   56.44s ->    57.64s] What is account risk?
+[   57.64s ->    61.46s] Account is the sum of all your open trades hitting their stop loss.
+[   61.66s ->    66.82s] Let's say you have five trades, and if each trade hits your stop loss, that's a, let's
+[   66.82s ->    68.38s] just say a $5,000 loss.
+[   68.44s ->    75.48s] So $5,000 loss times five trades, that's a $25,000 loss you'll take if they hit your stop
+[   75.48s ->    75.72s] loss.
+[   75.78s ->    78.40s] So that's what my account risk is, $25,000.
+[   78.82s ->    80.64s] Now, what is my total hedge protection?
+[   80.64s ->    85.22s] Well, it's the amount of money I'll make from my hedges if the market drops.
+[   85.36s ->    91.10s] So now I need to determine how much my hedges will make, and I want it to be equivalent or
+[   91.10s ->    95.02s] hopefully more than $25,000 so that I know my hedges are balanced out.
+[   95.10s ->    97.68s] A lot of people just love taking the 1-1-2 profits.
+[   97.90s ->   102.44s] They don't convert them into proper hedges, and now they're screwed when the market turns
+[  102.44s ->   104.90s] back and they have this huge $25,000 loss.
+[  104.90s ->   105.76s] I've seen it, okay?
+[  107.69s ->   112.95s] So again, if you use the options auto trader, which is a way to automate your 1-1-2, it shows
+[  112.95s ->   114.07s] you all these numbers.
+[  114.17s ->   118.81s] So it shows you what your crash protection is, and you want to make sure that your crash
+[  118.81s ->   124.77s] protection total is equivalent to what the cost or risk on the account is.
+[  125.11s ->   131.47s] And so again, that's kind of how you want to structure this, is make sure your account
+[  131.47s ->   133.53s] risk is equivalent to your hedge protection.
+[  133.53s ->   138.53s] If you have a hard time determining your hedge protection, you can use a tool like the options
+[  138.53s ->   138.99s] auto trader.
+[  139.67s ->   141.87s] Now, mistake number two is getting bored.
+[  142.19s ->   146.77s] Guys, a lot of 1-1-2 traders get bored, and this is where I've seen so many traders give
+[  146.77s ->   149.59s] back profits they should not have given back.
+[  149.95s ->   153.47s] They see the 1-1-2, and it's so consistent, but it's slow, right?
+[  153.55s ->   155.87s] It takes about a month for a trade to finish.
+[  156.11s ->   156.73s] They close.
+[  156.89s ->   161.51s] They make about a 12% return on their money, which is insane, but they don't see it or they
+[  161.51s ->   166.27s] don't recognize the power of it because of how slow or long it took for them to get that
+[  166.27s ->   166.65s] profit.
+[  167.17s ->   171.35s] And instead, what they do is they go, oh, look, zero DTE trading, and they start doing
+[  171.35s ->   171.61s] that.
+[  171.91s ->   174.57s] Oh, look, credit spread trading, and they start doing that.
+[  174.65s ->   177.93s] Oh, look, day trading, all this stuff, and they start pursuing these different avenues,
+[  177.93s ->   182.53s] and then it leads them to giving back a lot of profits that they previously made from
+[  182.53s ->   186.45s] their 1-1-2s because they're trying these stupid strategies, when instead, you understand
+[  186.45s ->   190.75s] sometimes the boring stuff is the best stuff, and so if you can see here, this normal curve
+[  190.75s ->   195.47s] of progress is what it looks like if you stick with 1-1-2s instead of jumping to all these
+[  195.47s ->   199.51s] other strategies, losing money with them, and then your 1-1-2s are having to pay out its
+[  199.51s ->   201.63s] wins to cover these losses instead.
+[  202.27s ->   206.67s] So guys, understand 1-1-2s get boring, but they're the most consistent and most profitable
+[  206.67s ->   210.91s] trade around right now, and you need to be okay with it being boring because that's how
+[  210.91s ->   211.77s] money is really made.
+[  212.37s ->   213.83s] Next is being over-leveraged.
+[  213.83s ->   216.25s] I see so many 1-1-2 traders over-leveraging.
+[  216.65s ->   223.33s] Guys, your buying power being used should be no more than 50% of your account value, okay?
+[  223.53s ->   231.03s] So if you have a $10,000 account, you should have no more than $5,000 in trades, right?
+[  231.15s ->   235.07s] If you want to just break that down again, if you have $100,000, you should have no more
+[  235.07s ->   237.81s] than $50,000 in active trades, okay?
+[  237.83s ->   238.59s] Do you understand that?
+[  238.77s ->   241.91s] If we break this down based on account size, it looks like this.
+[  241.91s ->   250.07s] So based on a positional understanding of this, if you have a $10,000 to $50,000 account,
+[  250.45s ->   257.11s] you should be trading the MES-1-1-2s, which are a lot smaller, and entering one to two times
+[  257.11s ->   257.93s] a week, okay?
+[  258.27s ->   260.65s] So again, very small position sizing.
+[  261.01s ->   266.69s] If you're trading a $50,000 to $100,000, you're trading ES-1-1-2s once a week, and your
+[  266.69s ->   271.17s] max cap should be one position as you go each week, and you shouldn't scale with that.
+[  271.59s ->   277.09s] You don't start scaling ES until you get to a $100,000 account, where you can do 1-1-2s,
+[  277.11s ->   281.57s] you can enter twice a week, and then you can start scaling your position sizing.
+[  282.01s ->   285.15s] So guys, regardless of where you are, make sure you're trading the right asset and you're
+[  285.15s ->   289.11s] sizing your account correctly, so that when a pullback does happen, you're not screwed
+[  289.11s ->   290.71s] and scared of losing thousands, all right?
+[  291.13s ->   293.81s] Mistake number four is worst-case planning.
+[  294.07s ->   299.69s] I see a lot of people ignore the fact that 2020 happened, where the market literally crashed
+[  299.69s ->   303.55s] 10% to 20% in a matter of two weeks.
+[  303.85s ->   308.59s] Guys, if that happens, you're hitting all your stop losses, and you're probably not even
+[  308.59s ->   310.91s] getting out of the correct stop loss level, okay?
+[  311.15s ->   312.13s] So which means you're losing more.
+[  312.13s ->   316.77s] And I say that because number one, as I mentioned, you need to make sure you're hedging correctly,
+[  316.77s ->   319.81s] and number two, make sure to understand worst-case planning.
+[  319.91s ->   325.29s] So what I do is I use the Bollinger Band to understand when the market is overextended.
+[  325.47s ->   329.79s] When it's overextended is when the market is above this blue line.
+[  329.99s ->   334.23s] That's when I close out of my positions to keep on my hedges, and so that's how I avoid
+[  334.23s ->   338.03s] pullbacks like this, pullbacks like this, and other different market crashes.
+[  338.03s ->   343.83s] So I use a Bollinger Band to show me when the market is trading outside of its ranges, and
+[  343.83s ->   346.35s] then I don't trade the 1-1-2 during that phase.
+[  346.35s ->   350.87s] And it helps me avoid most of these major turndowns and major crashes.
+[  351.67s ->   354.69s] Now, again, if you want to enable this by default because you hate reading charts, you
+[  354.69s ->   359.31s] can use a tool like the Options Auto Trader link down below, which you can enable this
+[  359.31s ->   361.79s] market crash safeguard, and it will do this for you.
+[  361.83s ->   366.47s] When it's at a high risk, it won't let you put on the 1-1-2 trades and will instead hedge
+[  366.47s ->   367.03s] your accounts.
+[  368.32s ->   371.06s] Next is mistake number five, not using stop losses.
+[  371.06s ->   377.40s] Again, because I have access to over 1,000 1-1-2 trades, verified trades, I can see the
+[  377.40s ->   377.66s] data.
+[  377.98s ->   379.64s] And I've also done back tests with this.
+[  379.82s ->   385.92s] If you do not have a stop loss on a 1-1-2, your average loss per trade when you lose is
+[  385.92s ->   387.38s] $13,600.
+[  388.06s ->   391.42s] Guys, are you okay with losing $13,000 on a single trade?
+[  391.42s ->   393.06s] You shouldn't be if you are.
+[  393.14s ->   393.98s] That's just too much.
+[  394.28s ->   400.24s] Now, when you use a stop loss around the 200% to 300% level, you can actually cap your loss
+[  400.24s ->   405.62s] to around $5,000, which is literally a third of what it would be if you didn't use a stop
+[  405.62s ->   405.94s] loss.
+[  406.66s ->   409.16s] So now, what does this look like?
+[  409.38s ->   414.28s] Well, again, you can see here that the Options Auto Trader shows you what your total profit
+[  414.28s ->   418.06s] will be and then what your total loss will be and then how close you are to your take
+[  418.06s ->   419.34s] profit or your stop loss.
+[  419.34s ->   421.96s] But let's calculate the expected returns.
+[  422.36s ->   422.56s] All right.
+[  422.62s ->   427.98s] So again, we know that a 1-1-2, let's just say on the safer end, has a 93% win rate.
+[  428.34s ->   433.32s] So again, if we have a 93% win rate and we have the chance of making $850 with the chance
+[  433.32s ->   441.20s] of having a 7% loss rate and losing $2,000, that means we're going to net $640 long term.
+[  441.68s ->   446.70s] Expected returns long term, we're going to make good, good money.
+[  446.70s ->   452.60s] Now, if we were to have no stop loss and we do the same expected return, we're only going
+[  452.60s ->   455.70s] to have a $90 return, which is really cool because it's positive, which is we're going
+[  455.70s ->   459.06s] to make money long term, but we're going to have a lot of huge losses and it's not nearly
+[  459.06s ->   461.56s] as good as what it would be if we had a stop loss.
+[  461.64s ->   466.40s] So make sure you're using stop losses and you're monitoring them every single day so
+[  466.40s ->   468.48s] that you don't overextend your stop loss.
+[  468.54s ->   472.12s] If you don't have time for it, use a tool like the Options Auto Trader that can watch for
+[  472.12s ->   475.24s] from four stop losses on your account, like literally 24.
+[  475.40s ->   476.38s] So, all right.
+[  476.56s ->   478.82s] The last and final mistake is emotions.
+[  479.00s ->   483.26s] Guys, so many of you guys are like, yeah, the 1-1-2 is passive, but then you're still
+[  483.26s ->   484.98s] letting emotions dictate your trading.
+[  485.38s ->   488.14s] What does emotions look like when you're doing this?
+[  488.16s ->   492.06s] It means waiting for the perfect entry where you're like, okay, I need to time it here.
+[  492.18s ->   493.28s] I need to chart it.
+[  493.32s ->   494.02s] I need to do this.
+[  494.06s ->   494.60s] I need to do that.
+[  494.60s ->   499.58s] Now, again, it's good to kind of understand that red days make you more credit or make you
+[  499.58s ->   503.44s] more money, so it's best to do that, but again, it's putting off trades because you're
+[  503.44s ->   504.10s] scared to enter.
+[  504.48s ->   509.16s] It's also those who push back their stop losses because they think the market will recover
+[  509.16s ->   510.36s] and they're not doing that.
+[  510.44s ->   513.02s] So, guys, don't let emotions dictate your trading.
+[  513.14s ->   517.54s] If you're someone who that is common for, then you need to help remove those emotions by
+[  517.54s ->   520.52s] using an automated trading system like the Options Auto Trader.
+[  520.62s ->   523.50s] But regardless, these are the six biggest trading mistakes.
+[  523.50s ->   529.52s] If you would like my free PDF that walks you through so much more about the 1-1-2, but
+[  529.52s ->   534.40s] also the six biggest mistakes and how I fix them, then again, you can click the link down
+[  534.40s ->   536.34s] below to get access to this free PDF.
+[  536.78s ->   539.74s] All right, guys, I hope you enjoyed this video, and I'll see you in the next one.

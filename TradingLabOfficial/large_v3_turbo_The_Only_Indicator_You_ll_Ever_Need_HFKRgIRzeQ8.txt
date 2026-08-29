@@ -1,0 +1,166 @@
+[    0.14s ->     6.46s] I found an indicator that is dangerously accurate and, as you can see, it works fucking amazing.
+[    6.46s ->    10.64s] One day I was searching the internet for what I hoped to be the best indicator out there.
+[   10.64s ->    14.50s] Now some people would call this a waste of time, because there's not an indicator out
+[   14.50s ->    18.40s] there that can actually work that good, and they're probably right.
+[   18.40s ->    23.46s] But even knowing this, I checked indicator after indicator, and all of these indicators
+[   23.46s ->    29.18s] were promising huge gains, but when I backtested them, they were all just complete shit.
+[   30.14s ->    34.54s] I was actually pretty depressed, because I felt I was being lied to by these indicator
+[   34.54s ->    40.32s] creators, promising these huge gains, but all I was getting was my stop loss getting hit.
+[   40.32s ->    45.14s] After hours of searching through indicators, I stumbled upon one that looked somewhat promising.
+[   45.14s ->    50.10s] I added it to my chart, expecting some mediocre indicator that would be right somewhat of the
+[   50.10s ->    51.10s] time.
+[   51.10s ->    52.34s] But then, I checked the chart history.
+[   52.34s ->    56.46s] I was immediately blown away from how accurate this indicator appeared to be.
+[   56.46s ->    61.86s] It was doing a surprisingly good job at finding where the trend started and ended, and this
+[   61.86s ->    64.42s] was without optimizing the indicator at all.
+[   64.42s ->    69.14s] I was starting to get extremely excited, because I thought I stumbled upon a gold mine.
+[   69.14s ->    70.96s] But there was a huge problem.
+[   70.96s ->    74.10s] Upon closer inspection, I was starting to see some problems.
+[   74.10s ->    79.14s] This indicator was doing a spectacular job at finding good trades when the market was trending,
+[   79.14s ->    80.14s] like this.
+[   80.14s ->    84.56s] But where the problem started arising was when the market was moving sideways and didn't
+[   84.56s ->    85.86s] have a lot of movement.
+[   85.86s ->    89.82s] That's when the indicators started making false signals, and really brought down the
+[   89.82s ->    90.82s] win rate of the indicator.
+[   90.82s ->    96.10s] So I had to think of a way to completely redesign this indicator, a way to alter the mechanics
+[   96.10s ->   101.54s] and absolutely change the mathematics and calculations to where they only calculated upon the solution.
+[  101.54s ->   102.70s] I changed the settings.
+[  102.70s ->   103.70s] Yeah.
+[  103.70s ->   104.70s] I changed the settings.
+[  104.70s ->   105.70s] First things first.
+[  105.70s ->   106.70s] You need to get on TradingView.
+[  106.70s ->   109.42s] If you don't yet have it, I'll leave a link in the description.
+[  109.42s ->   111.54s] Next, go to your chart and click indicators.
+[  111.54s ->   114.38s] You are going to search EMA trend meter.
+[  114.38s ->   115.50s] Click this one right here.
+[  115.50s ->   118.98s] Next, click this little gear icon to enter the settings menu.
+[  118.98s ->   123.62s] Now, one of the main reasons why this indicator was inaccurate was because it was a little
+[  123.62s ->   124.50s] too sensitive.
+[  124.50s ->   128.50s] And it would enter a buy or a sell from just little movement.
+[  128.50s ->   129.50s] So I had to fix that.
+[  129.50s ->   137.74s] Change the EMA baseline to 13, the EMA fast to 21, the EMA medium to 34, and then finally
+[  137.74s ->   140.06s] the EMA slow to 55.
+[  140.06s ->   143.98s] Then click the styles tab and uncheck this shapes box right here.
+[  143.98s ->   147.02s] Then voila, your indicator is more accurate.
+[  147.02s ->   148.62s] Wow, that was easy.
+[  148.62s ->   150.54s] But there's still a major problem.
+[  150.54s ->   155.10s] So sure, we made this indicator less sensitive, so it will only give you signals when there's
+[  155.10s ->   156.46s] a greater chance of a trend.
+[  156.46s ->   159.42s] But we didn't really fix the problem I mentioned before.
+[  159.42s ->   162.78s] It's still giving us signals when the market is consolidating.
+[  162.78s ->   167.66s] And as we all know, indicators in consolidating markets don't really work that well.
+[  167.66s ->   170.38s] So we really have to find a solution to that.
+[  170.38s ->   175.42s] After hours of research of trying to find a solution to this problem, I finally found the
+[  175.42s ->   176.46s] perfect fit.
+[  176.46s ->   177.82s] This.
+[  177.82s ->   179.90s] Okay, I promise it's cooler than it looks.
+[  179.90s ->   186.06s] To add it to your chart, type in stochastic momentum index, and select this one by surge,
+[  186.06s ->   188.62s] surge it, surges, this guy.
+[  188.62s ->   193.26s] Go to the settings of this new indicator, go to the styles tab, and change the color of the
+[  193.26s ->   195.98s] stochastic to white, then raise the opacity.
+[  195.98s ->   198.38s] So we now have two indicators on our chart.
+[  198.38s ->   201.90s] One for finding trends, and one to make sure we aren't consolidating.
+[  201.90s ->   202.94s] The perfect duo.
+[  202.94s ->   204.38s] So what's the strategy?
+[  204.38s ->   206.14s] First, you have to select a time frame.
+[  206.14s ->   208.86s] Now this indicator will work for all time frames.
+[  208.86s ->   214.22s] But for my backtesting, I found that it works extremely well on higher time frames.
+[  214.22s ->   217.90s] So I'd suggest using the one hour, four hour, or daily.
+[  217.90s ->   221.02s] So we'll just use the four hour for the examples in this video.
+[  221.02s ->   223.42s] The strategy is actually pretty simple.
+[  223.42s ->   227.98s] First, if you're interested in entering a long trade, you first need all three of these
+[  227.98s ->   230.54s] lines to be green, just like this.
+[  230.54s ->   235.58s] If two of the lines are green, and one is still red, we do not enter this trade.
+[  235.58s ->   239.58s] All three of these lines must be green in order to enter a trade.
+[  239.58s ->   244.70s] If you simply just do this in itself on a higher time frame, and look at the chart history,
+[  244.70s ->   249.10s] you will see just simply by doing this, it works very, very well.
+[  249.10s ->   250.22s] Like, just look at this.
+[  250.22s ->   252.86s] This area, the indicator is green, chart is going up.
+[  252.86s ->   255.82s] This area, the indicator is red, the chart is going down.
+[  255.82s ->   257.18s] It works extremely well.
+[  257.18s ->   258.62s] I'm actually quite surprised.
+[  258.62s ->   261.66s] But in old trading lab fashion, we can make it better.
+[  261.66s ->   263.34s] So now we have this second indicator.
+[  263.34s ->   267.58s] First thing, we need this white line to go beneath this bottom blue line.
+[  267.58s ->   270.14s] This will make sure there's volatility in the market,
+[  270.14s ->   272.46s] and there's movement or a pullback happening.
+[  272.46s ->   274.62s] Next, to make sure we have bullish momentum,
+[  274.62s ->   278.14s] this white line must cross above this red line.
+[  278.14s ->   281.02s] If we get this combination, we can enter a trade.
+[  281.02s ->   282.38s] So let's go over an example.
+[  282.38s ->   287.58s] After that, I'll give you one more indicator that completely changes this indicator's performance
+[  287.58s ->   288.78s] by a landslide.
+[  288.78s ->   290.94s] First, we go in the four hour time frame.
+[  290.94s ->   294.70s] Next, we wait for the trend meter to have all of these lines green.
+[  294.70s ->   295.98s] So we're good here.
+[  295.98s ->   300.94s] Next, we wait for the second indicator to go below this blue line like this.
+[  300.94s ->   305.10s] Next, we wait for the white line to cross and go above the red line.
+[  305.10s ->   309.26s] Once this happens, check your trend meter and make sure it's still all green.
+[  309.26s ->   311.26s] We're good so we can enter the trade.
+[  311.26s ->   314.78s] Now, this is the point where you can kind of put your own twist on the indicator.
+[  314.78s ->   318.06s] The take profit and stop loss can be built around your own liking.
+[  318.06s ->   321.82s] I found pairing these indicators with fair value gaps, order blocks,
+[  321.82s ->   324.30s] and liquidity works extremely well.
+[  324.30s ->   329.18s] These are kind of advanced topics, so I'm not going to go over all of that in this video.
+[  329.18s ->   331.74s] I've already made multiple videos on these topics,
+[  331.74s ->   334.30s] so if you don't know what I'm talking about, check those out.
+[  334.30s ->   337.82s] If you do know what I'm talking about, good, you save some time.
+[  337.82s ->   339.50s] You can apply it to this indicator.
+[  339.50s ->   343.58s] An alternate way you can use this indicator is what I'm going to call the noob way.
+[  343.58s ->   345.26s] It still works extremely well,
+[  345.26s ->   350.54s] but just know you can get a lot more out of this indicator by adding all these other confluences.
+[  350.54s ->   354.30s] So we're going to enter here, set your stop loss below the recent low,
+[  354.30s ->   358.30s] then you're going to set your take profit at a two to one risk to reward ratio.
+[  358.30s ->   361.26s] Let price play out and boom, you got a winning trade.
+[  361.26s ->   365.34s] Okay, let's go over a short example, and then I'll give you the final indicator
+[  365.34s ->   367.90s] to skyrocket the results of this strategy.
+[  367.90s ->   371.18s] First, make sure all three of these lines are red this time.
+[  371.18s ->   376.54s] Next, make sure the stochastics index's white line has gone above this top blue line.
+[  376.54s ->   380.22s] Then finally, the white line should cross below the red line.
+[  380.22s ->   383.34s] Check again and make sure your trend meter is all still red.
+[  383.34s ->   386.94s] Enter the short trade, set your stop loss above the recent high,
+[  386.94s ->   390.70s] and set your take profit at a two to one risk to reward ratio.
+[  390.70s ->   393.50s] And boom, you got another easy winning trade.
+[  393.50s ->   397.74s] All right, how about we increase the accuracy of the strategy a bit more, eh?
+[  397.74s ->   400.06s] I don't know why I said A. I'm not Canadian.
+[  400.06s ->   402.06s] It just kind of felt good in the moment. Moving on.
+[  402.06s ->   406.62s] Now, this part is completely optional, but when I added it to the strategy,
+[  406.62s ->   411.34s] increase the win rate by 9%, which may seem like a small number,
+[  411.34s ->   416.86s] but in the long run, that could be the difference of thousands, if not tens of thousands of dollars.
+[  416.86s ->   420.70s] Now, one of the big problems with this indicator is consolidating market.
+[  420.70s ->   426.38s] 99% of the losing trades this indicator had were taken in consolidating markets.
+[  426.38s ->   432.30s] So, if we found a way to avoid these trades, it would make this indicator absolutely insane.
+[  432.30s ->   434.78s] Luckily for you, I found the perfect solution.
+[  434.78s ->   437.98s] I created an indicator that does all of that for you.
+[  437.98s ->   443.58s] It will give you important metrics like trend, momentum, volatility, and volume,
+[  443.58s ->   447.10s] and will automatically calculate if it's bullish or bearish.
+[  447.10s ->   453.26s] But not only that, it will automatically tell you if the market is consolidating or trending.
+[  453.26s ->   457.02s] Hopefully, that little hamster wheel in your head is spinning right about now.
+[  457.02s ->   462.38s] So, you can go to tradinglab.ai to get the indicator. I'll also leave a link in the description.
+[  462.38s ->   468.14s] The only thing that kind of sucks is that my indicator is on MT5, which is another charting platform.
+[  468.14s ->   473.90s] So, you do have to have both trading view and MT5 open at the same time for the strategy.
+[  473.90s ->   475.18s] So, that kind of sucks.
+[  475.18s ->   478.94s] But let me tell you, it's 100% worth it for the result.
+[  478.94s ->   482.70s] So, we're going to do the exact same thing, but just add the trend table.
+[  482.70s ->   484.86s] Make sure the trend meter is all green.
+[  484.86s ->   487.50s] Make sure the white line dips below the blue line.
+[  487.50s ->   490.62s] Then make sure the white line crosses above the red line.
+[  490.62s ->   493.34s] Next, go to the trend table on MT5.
+[  493.34s ->   496.54s] In an ideal world, we want to see all these metrics green.
+[  496.54s ->   501.18s] But most importantly, we want the consolidation metric to say trending.
+[  501.18s ->   503.82s] If we see this, it means we can enter the trade,
+[  503.82s ->   506.86s] knowing we have a great chance of winning it in a trend.
+[  506.86s ->   509.98s] Enter the trade, set your stop loss below the recent low,
+[  509.98s ->   513.50s] set your take profit to a 2 to 1 risk-to-reward ratio,
+[  513.50s ->   515.58s] and boom, you got a winning trade.
+[  515.58s ->   518.22s] This strategy works extremely well.
+[  518.22s ->   521.10s] And to be honest, I'm kind of proud of myself for finding.
+[  521.10s ->   522.30s] Try it out for yourself.
+[  522.30s ->   523.82s] Let me know how it works for you.
+[  523.82s ->   526.70s] Thanks for watching, and I'll see you guys next time.
+[  526.70s ->   531.26s] Thank you so much.
+[  531.26s ->   538.46s] Thank you.
+[  538.46s ->   538.66s] quis針
+[  538.66s ->   542.26s] Subtitled
+[  542.26s ->   542.38s] Subtitled
+[  542.38s ->   543.30s] Subtitled

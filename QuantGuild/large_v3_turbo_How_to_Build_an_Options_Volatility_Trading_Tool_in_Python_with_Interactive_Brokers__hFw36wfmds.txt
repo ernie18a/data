@@ -1,0 +1,1404 @@
+[    1.34s ->     7.08s] Welcome back to another quant build. In this video, we're going to code the volatility crush
+[    7.08s ->    14.18s] trade analyzer from scratch in Python. We're not going to use any AI, we're not going to use
+[   14.18s ->    20.14s] cursor, copilot, anything like that. We are going to build this project together from scratch
+[   20.14s ->    30.78s] to learn as much as possible. I get asked all the time, you know, Roman, is AI going to replace
+[   30.78s ->    35.68s] quant jobs? Is there no more opportunity in quantitative finance? Is there no more
+[   35.68s ->    43.72s] opportunity in software engineering? And my answer is always the same. There is arguably more
+[   43.72s ->    51.76s] opportunity than ever because of these tools. Some will cite a negative correlation with junior
+[   51.76s ->    57.52s] talent. It's like, oh, wow, you know, AI is replacing junior talent. It's giving senior engineers
+[   57.52s ->    67.68s] more capacity. But we don't know what the net effect is going to be on the space. We don't
+[   67.68s ->    74.60s] know. Somebody at some point is going to have to fix the spaghetti code that these senior
+[   74.60s ->    80.94s] engineers wrote for the past year or two with cursor because of all of these security concerns
+[   80.94s ->    87.88s] and latency issues. Somebody's going to have to fix it, right? So these things have a tendency to reach
+[   87.88s ->    93.32s] an equilibrium. You know, we can look at this as some sort of agile transformation process. This space
+[   93.32s ->   100.72s] always goes through different types of iterations. So it's not strange to the space. We see these types
+[  100.72s ->   108.08s] of transformations, these big changes, these big process changes happen every so often. And these
+[  108.08s ->   113.96s] things have a tendency to reach equilibrium. In terms of opportunity, I mean, goodness gracious,
+[  114.58s ->   119.98s] there's arguably so much more opportunity. Everyone wants to be a quant. Everyone wants to be an
+[  119.98s ->   126.96s] engineer, but nobody wants to do quant or engineering work. That's hard work. Building this stuff from
+[  126.96s ->   135.62s] scratch, that's hard. Leet coding, that's hard. But there's only so many things that they can ask you in a
+[  135.62s ->   142.58s] technical interview. If you have a solid quantitative toolkit, if you master your quantitative skills,
+[  143.24s ->   149.02s] if you learn, what is it, like 20 leak code patterns, there's going to be barely any technical
+[  149.02s ->   157.14s] questions that you can't solve. So it leaves so much room for hungry students to actually want to learn
+[  157.14s ->   164.14s] and understand against what? The rest of them who just want to be lazy and plug in the interview
+[  164.14s ->   169.58s] question to track GPT. So when it comes to these videos, the goal is to learn as much as possible.
+[  170.04s ->   174.86s] These videos certainly take a significant amount of effort to put together. So I hope you enjoy them
+[  174.86s ->   182.68s] and, you know, take away from these, these builds as much as you possibly can about coding in this
+[  182.68s ->   188.52s] space. That being said, if you get stuck or you need to check out the project source code for some help,
+[  188.52s ->   195.16s] I will leave a link to it in the description below. I will also post it on the quant guild library on
+[  195.16s ->   201.88s] GitHub, where you can find all of my source code for these quant builds and all of my Jupiter notebooks
+[  201.88s ->   208.46s] and associated YouTube videos. For this build, we also need access to interactive brokers for
+[  208.46s ->   214.84s] market data, pricing data and implied volatility data. I'll leave a link in the description below to
+[  214.84s ->   220.12s] go ahead and get started with interactive brokers. I highly recommend you check them out. I've been
+[  220.12s ->   225.88s] with them for over 10 years in a trading capacity, investing and algorithmic trading. They're the
+[  225.88s ->   231.24s] only broker I use and I highly recommend their API. So if you want to get started with interactive
+[  231.24s ->   236.96s] brokers, check out that link in the description below for this particular build. Before we get started
+[  236.96s ->   242.28s] here, if you would like to support the channel so I can continue to create these quant builds and other
+[  242.28s ->   249.40s] videos, and if you'd like to master your quantitative skills, check out quantguild.com. Maybe you come
+[  249.40s ->   255.24s] from a background in business, economics, computer science, and aren't too sure where to begin on your
+[  255.24s ->   262.76s] quant journey. Quantitative finance is such an interdisciplinary field combining ideas from statistics,
+[  262.76s ->   270.20s] math, computer science, of course, finance. Well, Quant Guild is for you. We have over 90 quant lessons
+[  270.20s ->   276.52s] targeted in math, probability, finance, an adaptive practice engine that scales with your skill level
+[  276.52s ->   282.84s] so you can progress to more and more difficult topics, interview questions with fully worked solutions,
+[  283.56s ->   293.80s] courses coming soon in math, statistics, coding, all from the ground up from A to Z. So if you'd like to
+[  293.80s ->   300.36s] support the channel and master your quantitative skills, check out quantguild.com. Without further
+[  300.36s ->   308.04s] ado, let's get into a demonstration of this volatility crush trade analyzer before we go about building it
+[  308.04s ->   313.16s] from scratch. So what I have here is I have this panel for connection. I'm going to connect to my
+[  313.16s ->   320.44s] interactive brokers trader workstation over here and I'm on the paper trading account. So the port is going to
+[  320.44s ->   327.80s] default to 7497. This is my local host. So I will connect. Now I am connected. I'm going to open up
+[  327.80s ->   337.08s] the option trader here so we can take a look at some at the money options for Nvidia and go about pricing
+[  337.08s ->   346.04s] this volatility crush trade. So I'm going to pick this September 12th expiration and I'm going to pull
+[  346.04s ->   353.24s] open this volatility crush trade analyzer. Now there is no earnings event. There is nothing to suggest
+[  353.24s ->   361.16s] that this implied volatility is going to crush, but supposing that there was, this is the type of trade
+[  361.16s ->   367.56s] that we're going to go about analyzing. Now, if you'd like to see an example of a volatility crush trade,
+[  367.56s ->   374.28s] check out my video on how to trade option implied volatility crush. So how does this tool work?
+[  374.28s ->   379.16s] Well, something that you'll notice here is my at the money implied volatility is 2.2%.
+[  380.28s ->   385.48s] And when it comes to these trading tools, you have to figure out if you're working with a daily
+[  386.20s ->   392.76s] unit of implied volatility or an annual unit of implied volatility. A lot of folks are commenting on
+[  392.76s ->   398.12s] some of my quant builds that they're getting, you know, implied volatility in the hundreds. Well,
+[  398.12s ->   405.08s] you're scaling an already annualized measure of volatility. So mine is defaulting to daily here,
+[  405.08s ->   411.48s] but I can fix this by going into my settings. So if I open up my settings here, I can go to volatility
+[  411.48s ->   418.12s] and analytics and my units right now are being quoted in daily. I want them quoted annually. So I will
+[  418.12s ->   426.28s] change this. Now, when I open up my option trader, I go back to Nvidia. I can see that I have an annualized
+[  426.28s ->   431.88s] measure of implied volatility. So just depends on how you want to report it. Typically folks will report
+[  431.88s ->   437.40s] it in an annual capacity. So now that we have this tool, how does it work? Well, I can go about fetching
+[  437.40s ->   444.04s] data for a particular ticker. We're looking at Nvidia here, and this is the option chain associated with
+[  444.04s ->   451.88s] Nvidia for this particular expiration. I'm going to go back to this tool. I put in seven days to expiration.
+[  451.88s ->   457.88s] That is when this particular option is going to expire. You can see that my implied volatility is
+[  457.88s ->   465.24s] 546%. That's incorrect, right? I was using daily vol, but now I'm using annualized vol. So I'm going to
+[  465.24s ->   474.31s] go ahead and plug in the annualized measure here at 34.9%. And the strike price that I'm going to use is
+[  474.31s ->   479.43s] 165. So it's going to default to the spot, but you're going to want to change that to whatever option
+[  479.43s ->   485.27s] you're looking at pricing. So here I'm going to use 165. Then you can see, I can go about pricing a
+[  485.27s ->   491.83s] straddle. So I'll hit price straddle and it's priced at roughly 645. I can go about constructing this trade
+[  491.83s ->   499.67s] in the option trader by looking at the strike of 165. So that matches the straddle in this tool.
+[  499.67s ->   504.87s] I'm going to sell and sell, and you can see this is going to give me a straddle here.
+[  504.87s ->   513.51s] And the performance profile that it is giving me right now is roughly 653 is the premium for this
+[  513.51s ->   519.67s] straddle. And that's because the quote is changing slightly. There's, you know, maybe a couple of
+[  519.67s ->   525.11s] different things to tinker with in terms of the black souls formula and the IV it's going to change
+[  525.11s ->   530.71s] every so often. And that quote on interactive brokers is going to continue to refresh, but nevertheless,
+[  530.71s ->   535.67s] this is certainly sufficient for what we're looking to do. So now what I'm going to do is analyze an IV
+[  535.67s ->   543.19s] crush scenario. So supposing the spot price didn't move at all. Let's say that the new implied volatility
+[  543.19s ->   549.67s] was 20%. What would happen? Well, if I took a short position, then I would have some P and L here.
+[  549.67s ->   555.59s] So I can take a look at that negative Vega position that I have looking at this short straddle and see how
+[  555.59s ->   561.51s] much I would profit. So in this case, it's 267. If I was to just sell that option, this isn't
+[  561.51s ->   567.27s] accounting for things like theta. This isn't accounting for things like any other sort of
+[  567.27s ->   575.11s] higher order, higher order change, but nevertheless, this is a reasonable proxy for what our profit could
+[  575.11s ->   580.79s] be. So what if there was a price movement? Well, we can see now how this is going to impact our overall
+[  580.79s ->   586.31s] P and L from the sort of old crush trade. So what if the new spot price moved to like, let's say one
+[  586.31s ->   592.28s] six day. Well, that's certainly a, a huge chunk of the profit from the trade. What if it moved to
+[  593.00s ->   599.40s] 155? Well, that completely changed the situation, right? We're no longer profiting from this whole
+[  599.40s ->   604.76s] crush. So that's the point of this tool is it's able to show you different states of the world based
+[  604.76s ->   610.68s] on where the spot price moves and the new implied volatility after the volatility crush.
+[  611.08s ->   615.80s] You can enhance this tool in one of a thousand different ways. You could add this idea of time
+[  615.80s ->   622.12s] decay. You could add other higher order sensitivities. There's a lot you can do to enhance this tool,
+[  622.12s ->   626.68s] but for this particular build, this is what we're going to use. And it certainly is useful for
+[  626.68s ->   631.32s] analyzing different states of the world, because when you're quoted that option and you're looking at
+[  631.32s ->   638.44s] the performance profile in terms of Ivy crush, it isn't necessarily going to show you what the overall
+[  638.44s ->   646.28s] P and L could be relative to your Delta position after the, the move, right? Cause you don't know
+[  646.28s ->   651.40s] what it's going to be. And that's where this tool comes in. So you can estimate it with different
+[  651.40s ->   656.12s] states of implied volatility. See what your profit could be, analyze these different states of the
+[  656.12s ->   661.32s] world to enhance your decision-making. All right, let's go ahead and get started here with our imports.
+[  661.32s ->   666.52s] We're going to be using a lot of packages and libraries to help us out with this build for our
+[  666.52s ->   674.61s] user interface. We're going to use T Kinter TK enter. So I'm going to start by importing T Kinter as TK.
+[  674.61s ->   683.62s] That's pretty typical from T Kinter import TTK and message box. We're going to import threading.
+[  684.74s ->   696.82s] We will import pandas as PD import numpy as NP from IB API dot clients. We will import E clients
+[  699.06s ->   710.53s] from IB API dot wrapper. We will import E wrapper from IB API dot contract. We will import contract.
+[  712.64s ->   723.60s] From date time, we will import date time and time delta. And we can ignore warnings. So I'll say warnings dot filter
+[  723.60s ->   736.76s] warnings, just ignore. Okay. Now with all of these packages, if you get a module not found error, then
+[  736.76s ->   741.32s] you haven't pip installed that package. So what you're going to want to do is you're going to want
+[  741.32s ->   750.12s] to open up your command prompt or the terminal in your VS code. And you're going to want to go about
+[  750.12s ->   756.44s] typing pip install, and then whatever module you're missing, you may even need to type
+[  757.64s ->   763.64s] pip three install. So if I was missing pandas, then maybe I would write pip three installed pandas.
+[  763.64s ->   770.20s] If that didn't work, I would do pip installed pandas, so on and so forth. Now you have to be careful
+[  770.20s ->   776.68s] with the module name, something like scikit learn might be, you know, pip install scikit learn, but you
+[  776.68s ->   781.56s] may not import it as such. So for a particular package, you're going to want to look up the
+[  781.56s ->   788.44s] documentation for how to go about installing it correctly. But these are going to be the packages
+[  788.44s ->   795.08s] that we're going to use for this particular build for for math and handling different matrices and
+[  795.08s ->   802.28s] vectors. We'll use NumPy for data and data frames. We'll use pandas to access the trader workstation that
+[  802.28s ->   813.64s] is interactive brokers. We are going to use this IB API. And for time and handling time delta that is
+[  813.64s ->   820.92s] changes in time, we will use date time. Threading is to handle parallel processing to some capacity,
+[  820.92s ->   826.84s] because in Python, we don't really have this pure idea of multi threading with global interpreter lock.
+[  827.48s ->   833.56s] Nevertheless, we're going to import threading so we can run this process and then make calls to
+[  833.56s ->   839.24s] interactive brokers. And then tkinter is for our user interface. All right, first things first,
+[  839.24s ->   847.16s] we need to create some sort of warehouse to interact with trader workstation to make requests for market
+[  847.16s ->   854.68s] data and receive those market data requests. Typically, this is done in some sort of IB app,
+[  854.68s ->   859.64s] some sort of interactive brokers app class, some sort of controller class. And that's exactly what
+[  859.64s ->   864.92s] we're going to build here. So I'm going to start with this idea of an IB app. And this is going to
+[  864.92s ->   873.48s] implement the eWrapper and eClient. And what those are, are going to be references to the interactive
+[  873.48s ->   881.32s] brokers API for how we go about receiving data from trader workstation via this eWrapper and
+[  881.32s ->   889.24s] requesting data via this eClient. So how does this work? Well, I'm going to create this constructor for
+[  889.24s ->   903.19s] this class. And then in this class, I am going to initialize this eClient as self and self. So
+[  903.19s ->   910.95s] what I'm doing is I'm essentially calling this, this eClient object, I'm saying, Hey, this IB app is going to
+[  910.95s ->   917.67s] be where I'm going to request data from, but also where I want you to send data to when that request
+[  917.67s ->   924.21s] is fulfilled. I'm going to want to create a flag here called connected, I'm going to start by sending
+[  924.21s ->   929.57s] it equal to false because we don't know if we're yet connected to interactive brokers, the server
+[  929.57s ->   935.09s] itself is going to tell us if that is the case. And then it's going to flip that flag from false to true.
+[  935.89s ->   942.63s] Then we're going to create a dictionary for market data. We're also going to create a dictionary for
+[  942.63s ->   951.88s] historical data. And now we need to handle a whole bunch of different cases with this particular
+[  951.88s ->   957.64s] wrapper and client setup. The first is an error. How are we going to go about handling an error?
+[  957.64s ->   963.24s] So I'm going to create a function called error. And this isn't a function that I'm just making up
+[  963.24s ->   970.12s] on the spot. This is expected structure from the interactive brokers API. All of the things that
+[  970.12s ->   977.48s] I'm going to input into this particular function are what interactive brokers is going to send me
+[  977.48s ->   982.68s] in the case of an error. It's going to send me the request ID that caused the error,
+[  983.48s ->   990.44s] the associated error code, the error string, and any other arguments that it needs to send me.
+[  991.16s ->   997.40s] Now, there are some errors that we particularly do not care about. For example, if the error code is
+[  998.04s ->  1009.24s] 2176 and we get this fractional share error in the error string, then we don't really care about that.
+[ 1009.24s ->  1015.48s] That is not going to impact our app. We can just return. Otherwise, let's just go about printing
+[ 1015.48s ->  1020.96s] the error so we can see what it is in the console. So I'm going to print error. And in this case,
+[ 1020.96s ->  1028.07s] it's just a formatted print statement. I'm going to print the error code. And then I will also print
+[ 1028.07s ->  1037.56s] the error string. So this is going to be the error callback function. If the trader workstation has an
+[ 1037.56s ->  1043.48s] error in some sort of request we make, maybe the request is invalid, whatever it is, it is going to send
+[ 1043.48s ->  1049.00s] it here. One of the first things that happens when you connect to the trader workstation from Python
+[ 1049.56s ->  1056.52s] is the server responds with the next valid order ID. This is how you know you've connected to the server.
+[ 1056.52s ->  1063.56s] If you're placing trades, then you're going to want to use a unique order ID for whatever trade you are
+[ 1063.56s ->  1070.68s] executing. And you don't want trades to accidentally have the same order ID. So this is a function that's
+[ 1070.68s ->  1077.08s] going to continue to increment that unique ID to ensure that you don't place, you know, an order
+[ 1077.08s ->  1084.92s] with the same ID. So what does this look like? Well, it's def next valid ID. We'll say self and order ID.
+[ 1084.92s ->  1090.36s] So the server is going to call this function and it's going to give us the valid order ID to use.
+[ 1090.36s ->  1096.92s] Now we're not placing trades in this particular app. So what can we do? Well, we can trigger the flag
+[ 1096.92s ->  1104.44s] that we've connected to the server. The only way this function is called is if the server pings it. So
+[ 1104.44s ->  1115.17s] I'll say self dot connected is equal to true. And then I will print connected to IB TWS. Okay,
+[ 1116.21s ->  1123.17s] now we need a way to go about fetching this historical data. So we can use live prices,
+[ 1123.17s ->  1129.09s] or we can use historical data, I'm going to focus on the historical data component for now. So let's
+[ 1129.09s ->  1137.41s] build this function to request historical data. I'll say def historical data self rec ID and bar.
+[ 1138.47s ->  1143.83s] All right, when we make a request to the trader workstation for historical data,
+[ 1143.83s ->  1150.47s] we submit the request with an ID. Then the server goes and gets that historical data,
+[ 1150.47s ->  1157.27s] and it sends it to this function with that ID. It also returns the bar information. So that is the
+[ 1157.27s ->  1164.39s] the data that we queried. So how do we want to handle this? Well, if the rec ID is not in
+[ 1164.39s ->  1172.13s] the historical data dictionary, then what do we want to do? We want to initiate that key,
+[ 1172.13s ->  1178.53s] that rec ID in the dictionary, and we want to set it to an empty list. And what we're going to do is for
+[ 1178.53s ->  1184.37s] that request ID, we're going to store this bar data. So I'm going to say self dot historical data
+[ 1185.25s ->  1191.65s] for this particular rec ID dot append. And now I'm going to put in all this data.
+[ 1192.29s ->  1202.29s] Date is going to map to shocking bar dot date open is going to map to bar dot open. And we're going to
+[ 1202.29s ->  1215.92s] do this for all of the bar information. So we have the high, we have the low, we have the close,
+[ 1218.18s ->  1229.65s] and we also have the volume. Okay. And that's how we can go about handling the historic data request
+[ 1229.65s ->  1235.97s] once the server responds with it. So this isn't the function to make the request. This isn't a
+[ 1235.97s ->  1240.85s] function to make the request. None of these functions are making a request to the server.
+[ 1240.85s ->  1247.73s] This is where the server is going to respond to our app with information. We use the e-client
+[ 1248.29s ->  1255.57s] to go about making these requests to the server. And those requests have an ID. And then as you can see,
+[ 1255.57s ->  1262.37s] the server is going to ping back with that ID and whatever data is associated with that request.
+[ 1262.37s ->  1267.73s] One last function that's going to be useful for us in this IB app is the idea of a historical
+[ 1267.73s ->  1275.06s] data end. This is going to tell us essentially when the server is done responding with the historic
+[ 1275.06s ->  1283.54s] data. So I'll say def historical data end, and I will say self rec ID for some sort of start and
+[ 1283.54s ->  1289.86s] end. And I will come up with a formatted print statement that the historical data has been received
+[ 1289.86s ->  1297.17s] for the particular rec ID, in this case, whatever the server responds with. Okay,
+[ 1298.29s ->  1306.69s] that is going to be our IB app. This is how we are going to go about handling requests to and from
+[ 1306.69s ->  1313.09s] the trader workstation. The IB app implements both the e-wrapper and the e-client. We're handling here,
+[ 1313.09s ->  1319.09s] the historic data, this is going to allow us to get the implied volatility data, it's going to allow us to
+[ 1319.09s ->  1325.01s] get the pricing data, we're going to handle errors in this callback function, we're going to validate
+[ 1325.01s ->  1329.57s] that we're connected with this next valid ID function, and we're going to store all relevant
+[ 1329.57s ->  1334.37s] data in this historical data dictionary. We don't need this market data dictionary,
+[ 1334.37s ->  1339.33s] but I'll leave it here in case you want to use live pricing information. In that case,
+[ 1339.33s ->  1345.81s] you would just use the tick price function. All right, now it's time to build the user interface.
+[ 1345.81s ->  1353.17s] The goal that we're working towards is to have the ability to create this user interface that is able
+[ 1353.17s ->  1358.61s] to make requests to the server, and then once those requests are fulfilled by the server,
+[ 1358.61s ->  1365.09s] return it back to the user interface. So essentially what we want to do is we want to be able to create
+[ 1365.09s ->  1374.93s] an instance of this class to handle those requests, but also allow a user interface to make those requests,
+[ 1374.93s ->  1382.37s] and then display the results of those requests in the user interface. Because if we can do that in
+[ 1382.93s ->  1388.29s] some sort of console, that's great. But remember, this is a tool we're trying to build, you know,
+[ 1388.29s ->  1393.81s] this could be for some sort of trader or non-technical person who wants to go about using this this tool.
+[ 1393.81s ->  1398.85s] So we don't want them to just have command line access, we want some sort of user interface. So
+[ 1398.85s ->  1404.47s] that's what we're going to build together right now. I'll say class volatility crush analyzer,
+[ 1405.19s ->  1413.30s] def init self root. And what I'm doing here in this constructor is I'm saying, okay, when we create
+[ 1413.30s ->  1419.54s] a new instance of this volatility crush analyzer, we're going to pass it a frame. Okay, that's the
+[ 1419.54s ->  1426.55s] application. And this frame is going to have a title, geometry, things like that. But more importantly,
+[ 1426.55s ->  1435.01s] we can place items in this frame, we can have a sub panel for connections, we can have a sub panel for
+[ 1435.81s ->  1444.52s] the pricing, we can have a sub panel for fetching market data, so on and so forth. So we'll say self.root
+[ 1445.32s ->  1452.84s] is equal to this root, self.root.title, we will give it a title volatility crush analyzer,
+[ 1452.84s ->  1465.76s] self.root.geometry. I will say, we will do 1200 by 800. This can be whatever you like.
+[ 1466.72s ->  1470.88s] Now we need to go about creating the connection. And like I said, right, this is the user interface,
+[ 1470.88s ->  1477.28s] we want to be able to make requests and display requests to and from the server, right. So I'm going
+[ 1477.28s ->  1486.98s] to create a new instance of that IB app. Okay, and then I'm going to set the idea of connected to false
+[ 1486.98s ->  1495.14s] here. This is fundamentally different from the connection in the IB app. Okay, very important
+[ 1495.14s ->  1503.38s] distinction. Self.IB app still has its own connected variable. So if we go up here, we look at self.connected,
+[ 1503.38s ->  1513.14s] right, this is for the IB app class. Self.connected here is for the volatility crush analyzer. So I can
+[ 1513.14s ->  1520.82s] still access the connected flag in IB app by doing something like self.ibapp.connected.
+[ 1521.86s ->  1527.94s] This is going to be the flag that tells us whether or not we actually are connected to the server. So
+[ 1527.94s ->  1536.90s] we're going to use this to help update this guy here, once we actually make a successful connection. Okay,
+[ 1538.26s ->  1547.06s] for market data, I'm going to say self.currentspot is equal to none, self.currentiv is equal to none,
+[ 1547.86s ->  1557.20s] self.ticker is equal to none. Do keep in mind the units that you are reporting on interactive brokers.
+[ 1557.20s ->  1562.96s] If you're reporting in daily units, you can scale by annualized vol, which is the square root of 252.
+[ 1563.92s ->  1570.40s] If you are reporting in annual units and you try to scale by the square root of 252,
+[ 1570.40s ->  1576.40s] you're going to get a massive value. I know I had a lot of people ping me on discord and comment on
+[ 1576.40s ->  1582.40s] all my previous videos in that case. So just be careful with what you have in your settings for
+[ 1582.40s ->  1588.24s] interactive brokers. Make sure you understand if you're reporting in units that are daily or annual.
+[ 1588.24s ->  1593.84s] We can say for the option contracts that we're going to be pricing that the risk free rate is 0.05.
+[ 1594.48s ->  1601.52s] This is at your discretion. We can even proxy this with treasuries. But for the sake of this build,
+[ 1601.52s ->  1608.08s] we're just going to use 0.05. And now I'm going to call self.setupui. And that's going to be a
+[ 1608.08s ->  1612.88s] function that we create together to go about building this frame. So that's going to do it for
+[ 1612.88s ->  1619.04s] this constructor. Now we need to go about building a function to create a contract specifically for
+[ 1619.04s ->  1625.92s] an equity. So for this, we're looking at equities. We're going to create a function called def create
+[ 1626.88s ->  1635.68s] equity contract. And we will say that this takes a symbol as an input. And what this function is doing
+[ 1635.68s ->  1643.20s] is it's creating a contract object from the interactive brokers API here. This is going to
+[ 1643.20s ->  1650.64s] tell the trader workstation specifically what security you're requesting data for or are looking
+[ 1650.64s ->  1657.89s] to place a trade with. It is very specific on purpose, right? We do not want to get that wrong.
+[ 1658.53s ->  1665.25s] And that is why we have this idea of a contract. So this contract is going to have a symbol that is
+[ 1665.89s ->  1675.11s] equal to symbol dot upper. So this is like AAPL, NVDA. We will take that as an input from the user.
+[ 1675.11s ->  1682.37s] If they enter it all lowercase, we'll just help them out, put it to uppercase. That's what's expected by
+[ 1682.37s ->  1695.24s] the trader workstation. The security type is equal to stock. This is in fact a stock SDK. The exchange,
+[ 1695.24s ->  1707.51s] we will say is smart and the currency is USD. Then we will return this contract object that we just
+[ 1707.51s ->  1713.11s] built. So here, this is create equity contract. This is just going to save us some headaches of,
+[ 1713.11s ->  1717.67s] you know, what the security type is, the exchange and the associated currency. It looks like I
+[ 1717.67s ->  1724.77s] spelled exchange wrong here. Okay. Exchange. And all we got to do is pass a symbol that is a stock
+[ 1724.77s ->  1733.06s] or an equity to this function. And we will get a valid contract to request data for. All right. Now
+[ 1733.06s ->  1743.86s] we got to go about creating our UI. So what I'll do is I'll say def set up UI self and keep in mind,
+[ 1743.86s ->  1751.46s] right? This self parameter is for these functions that are a part of this volatility crush analyzer
+[ 1751.46s ->  1756.42s] class. All right. This is a special type of function. This is the constructor. That is when we
+[ 1756.42s ->  1763.14s] initially create this object. When we instantiate it, we need to pass some sort of frame. That's the
+[ 1763.14s ->  1768.66s] user interface. Okay. Then we'll create an IB app and we have access to all this other information.
+[ 1768.66s ->  1779.78s] More specifically, our user interface has access to this information. Okay. So in setup UI, what I'm
+[ 1779.78s ->  1784.10s] going to do now is I'm going to create the main frame. So I'm going to say main frame is equal to
+[ 1784.10s ->  1792.10s] ttk.frame self.root padding is equal to 15. So I'm just going to add some, some nice padding around it,
+[ 1792.10s ->  1798.50s] and I'm going to give it this grid layout. So I'm going to say mainframe.grid row is equal to zero
+[ 1798.50s ->  1808.90s] column is equal to zero. I'll say sticky and I'll make it west, east, north and south.
+[ 1809.70s ->  1817.14s] And what we're doing here is we're, we're giving the frame in this route, a specific layout. And
+[ 1817.14s ->  1823.38s] typically what you do when you create different, different widgets, different elements in a
+[ 1824.18s ->  1831.14s] user interface is you define the element itself. You might define a variable associated with that
+[ 1831.14s ->  1837.94s] element. So as it gets changed, you can do things with the variable. So maybe you need to update a
+[ 1837.94s ->  1843.86s] table. Maybe you need to make a new data request, whatever it is. But once you define that object,
+[ 1843.86s ->  1848.82s] you're going to place it in the frame. So you're going to give it some sort of layout. Maybe it's
+[ 1848.82s ->  1854.18s] a grid layout and you have a row and column. Maybe it's a specific X and Y position.
+[ 1855.70s ->  1861.94s] When it comes to user interfaces in this context, zero, zero is the upper left hand corner in case you,
+[ 1861.94s ->  1868.34s] you weren't aware. So if you're trying to place things in like a static position in your user interface,
+[ 1868.34s ->  1875.46s] zero, zero is upper left. So X increases that moves the item to the right. So it moves it to the right.
+[ 1876.34s ->  1882.50s] And as Y increases, it moves it down. Okay, just something to be aware of, as you go about making
+[ 1882.50s ->  1891.67s] your user interfaces. Now, we're going to go about constructing the grid weights, just for the
+[ 1891.67s ->  1899.38s] responsiveness of the app. So I'll say self dot root dot column config, zero weight, we'll give it a
+[ 1899.38s ->  1907.38s] weight of one self dot root dot row configure. So not config, but configure zero weight of one,
+[ 1910.37s ->  1921.08s] then we'll say mainframe dot column configure, we will say zero comma weight, one, and then mainframe
+[ 1921.08s ->  1936.63s] dot row. And now we can go about creating a title and this, this title label just for our app, we'll say
+[ 1937.27s ->  1948.96s] title label is equal to TTK dot label, mainframe text, we will say volatility crush trade analyzer.
+[ 1950.37s ->  1960.85s] I'll say the font, let's make it Arial, we'll do 16, we'll do bold, this can be whatever you like.
+[ 1961.89s ->  1966.13s] So now, just like I was saying earlier, right, we defined this widget, this label,
+[ 1966.13s ->  1973.41s] now we need to place it. So title label dot grid, this tells us where to put it. Row is equal to zero,
+[ 1974.13s ->  1983.49s] column is equal to zero, column span is equal to two, pad y is equal to zero comma 20. So we just want
+[ 1983.49s ->  1991.09s] padding on that that y axis there. As we go about constructing this user interface, I certainly
+[ 1991.09s ->  1997.17s] encourage you to look up the documentation for anything that you don't understand. I can't possibly
+[ 1997.17s ->  2004.93s] explain literally every parameter and every single field. And, you know, that's just going to be the
+[ 2004.93s ->  2009.81s] nature of the beast that we're working with here. But if you need to know what something is, so for
+[ 2009.81s ->  2016.13s] example, right, like, if you're unfamiliar, what, you know, pad y or pad x does this idea of padding,
+[ 2016.13s ->  2021.81s] because you're unfamiliar, maybe with user interface construction, then look up the documentation for
+[ 2021.81s ->  2028.29s] it. All of this stuff is extremely well defined. And it's very easy to look up what these things are.
+[ 2028.29s ->  2036.69s] What is, you know, padding in this sense for this frame? What is sticky, right? Those are things that
+[ 2036.69s ->  2042.45s] you can very easily find in the documentation. And I certainly encourage you to do so because,
+[ 2042.45s ->  2047.57s] you know, spending endless hours on stack overflow, trying to figure out what these
+[ 2047.57s ->  2053.25s] different parameters and different objects are and how they work is where all of the learning
+[ 2053.25s ->  2057.97s] happens and how you become a very, very good engineer. So highly recommend that you do that.
+[ 2057.97s ->  2063.97s] If that's the case, maybe if anything here is unclear, nevertheless, we will continue with this build.
+[ 2063.97s ->  2069.17s] So if you noticed in the app, we have this left column and a right column, right? The left column
+[ 2069.17s ->  2074.29s] had the connection, had the initial spot price, the initial straddle price, the right side had the
+[ 2074.29s ->  2079.49s] essentially the post trade analysis right after the IV crush. So let's create those two columns,
+[ 2079.49s ->  2084.61s] right? We have this left frame, TTK dot frame. This is nothing we haven't seen before. We already
+[ 2084.61s ->  2090.05s] created that main frame above, and that's where we're putting it in this main frame. Now we need
+[ 2090.05s ->  2096.61s] to place the frame. So we're going to say frame dot grid. We're going to put this in row one, column zero.
+[ 2097.70s ->  2104.90s] Sticky. We're going to say TK dot west, TK dot east, TK dot north, TK dot south. We're going to give it
+[ 2104.90s ->  2112.45s] some padding. I'll say pad X is equal to zero comma 10. And we're just going to do the same thing for
+[ 2112.45s ->  2119.81s] the right frame. Right frame is equal to TTK dot frame. Put it in the main frame, right frame dot grid,
+[ 2119.81s ->  2132.39s] row one, column one, sticky. We're going to do TK west, TK east, TK north, TK south. We will do pad
+[ 2132.39s ->  2141.27s] X is equal to 10 comma zero. Okay. So there's padding on both sides in that sense of the padding
+[ 2141.27s ->  2148.31s] on the X axis, the left and right padding. So that is going to be the two columns. I'm also going to give
+[ 2148.31s ->  2154.07s] each one. I'm going to configure the weight for each of the columns. I'm going to say
+[ 2156.29s ->  2166.95s] left frame dot column configure. I will say zero comma weights one right frame dot column configure
+[ 2167.59s ->  2178.56s] zero comma weights one. Okay. Now we can go ahead and set up different sections. So we're going to have
+[ 2178.56s ->  2184.48s] a connection section, a market data section, a straddle section for the current straddle,
+[ 2185.72s ->  2193.80s] a scenario straddle for that post IV crush, a PNL section, a new Greek section, and then a status
+[ 2193.80s ->  2203.38s] section, of course. So let's just go ahead and create these functions one by one. And we're going
+[ 2203.38s ->  2209.22s] to use them here to build each of those of those sections. So before we create them, we're going to
+[ 2209.22s ->  2214.26s] implement them, then one by one, we're going to create them. So I'll start with this idea of a setup
+[ 2215.38s ->  2222.42s] connection section here. We're going to pass the left frame as a parameter. Then we're going to pass the
+[ 2222.42s ->  2229.14s] row that the connection section lives in. So remember we have this application, we have these two sides,
+[ 2229.14s ->  2234.02s] right? We have this, this, my camera's reversed. So I'm going to use, I'm going to use my right hand
+[ 2234.02s ->  2241.70s] for your left. So we have this, this panel, the left frame itself is going to contain the connection.
+[ 2241.70s ->  2248.82s] It's going to contain the data query, the straddle pricing, the right frame is going to contain that
+[ 2248.82s ->  2255.14s] scenario straddle and the new Greeks, right? So those are our two frames and each one of those frames,
+[ 2255.14s ->  2261.06s] it's the left frame and the right frame, there's columns, right? So we want the setup connection
+[ 2261.94s ->  2267.22s] panel to be in the left frame on the zeroth row. And that's what we're going to do then for the
+[ 2268.42s ->  2275.54s] setup market data section. We're going to put this in the left frame, but in the first row, we want it
+[ 2275.54s ->  2286.05s] below the connection section, setup current straddle section again, left frame, but now below the
+[ 2286.05s ->  2293.81s] market data section. So we'll make that two self dot setup, current Greeks section again, we want that
+[ 2293.81s ->  2305.33s] in the left frame, but in the third row, and that should do it for the left column. Okay. Now the
+[ 2305.33s ->  2310.37s] right column is going to have the scenario section, the P and L, the new Greeks and the status. So
+[ 2310.37s ->  2315.41s] let's go ahead and use those functions. And then of course we have to go and make all these functions
+[ 2315.41s ->  2323.40s] here. So set up scenario section. We're going to put this now in the right frame, the zeroth row.
+[ 2324.74s ->  2330.90s] We'll set up the P and L section. We will put this in the right frame first row again, beneath that
+[ 2330.90s ->  2347.68s] scenario section. Then the new Greeks, we will put this beneath the P and L section. Then the status
+[ 2347.68s ->  2355.78s] section we will put at the bottom of that frame. Okay. So essentially now what we've done is,
+[ 2356.26s ->  2360.66s] is we've established how all of these items are going to be laid out. We have these two,
+[ 2361.30s ->  2368.26s] two sides of the user interface, this left frame and this right frame, we have connection market data
+[ 2368.26s ->  2377.46s] straddle Greeks. Then we have scenario P and L new Greeks, and the status. Now we need to actually make
+[ 2377.46s ->  2384.42s] these functions so they work in this setup UI. So the setup UI function is done. Now we actually have
+[ 2384.42s ->  2389.86s] to go about building all of these guys here. It's actually pretty easy to make each of these functions.
+[ 2390.82s ->  2403.04s] So let's just do it one by one. Def setup connection section, self parent row. I mean, this is what
+[ 2403.04s ->  2409.62s] we told the setup connection function we were going to give it in the setup UI function, right?
+[ 2409.62s ->  2414.26s] So we call this setup UI function. We establish all the framing, we establish the columns that
+[ 2414.26s ->  2418.98s] different items can live in. And now for this particular connection section in the upper left
+[ 2418.98s ->  2425.28s] hand corner, where are we putting it? The left frame in the zeroth row. So naturally we're going
+[ 2425.28s ->  2430.56s] to take the parent, which is going to be that left frame and the row that it should live in the zeroth row.
+[ 2430.56s ->  2438.60s] Alright, let's actually create this label frame. The connection frame is going to be ttk dot label frame.
+[ 2439.40s ->  2446.92s] We're going to give it the parent that we passed to the function. The text is going to be in this case,
+[ 2446.92s ->  2458.96s] we can say interactive brokers connection. And then we can add some padding, maybe 15. 15 is likely,
+[ 2458.96s ->  2464.80s] likely reasonable there. Okay. Then what we're going to do is we've just created this, right?
+[ 2464.80s ->  2468.56s] We told it where it lives, but now we've got to place it, right? So it lives in the parent,
+[ 2468.56s ->  2475.28s] but where are we placing it in the parent? Well, we're going to use a grid, right? Con frame dot grid
+[ 2475.28s ->  2483.89s] row is equal to row. Remember, that's what we passed to this function here. What about the column?
+[ 2484.77s ->  2490.58s] Well, we're going to throw it in column zero. We'll say sticky. In this case, we want it sticky to
+[ 2490.58s ->  2496.82s] west and east. And then we're going to give it some padding on the Y we'll say zero and 15.
+[ 2498.02s ->  2503.46s] All right. We'll configure the columns and we will give it some different weights here. So I'm going to say
+[ 2504.50s ->  2512.98s] con frame dot column config, I will say one and weights one. And then I'm going to give column three
+[ 2512.98s ->  2524.07s] a weight of one as well. Okay. So that's going to change how different columns in this grid layout
+[ 2524.07s ->  2531.28s] are weighted. Now, all we have to do is set up different labels and entries for the connection.
+[ 2531.28s ->  2537.12s] So I'll say ttk dot label con frame, right? That's where we're going to put it. The text is going to be
+[ 2537.12s ->  2545.76s] host. And what's the host? Well, the host is just going to be the local host row zero column zero.
+[ 2546.56s ->  2558.58s] We'll just add some padding on the X. And I will also make it sticky to the West. Once we've added
+[ 2558.58s ->  2567.99s] this label, we need some sort of entry to be able to keep track of the host value. It's going to be
+[ 2567.99s ->  2574.47s] one, two, seven dot zero dot zero dot one, right? That local host. But if we have an entry, we need
+[ 2574.47s ->  2581.75s] a way to retrieve that value from the user interface, right on the backend here and do something with it.
+[ 2581.75s ->  2585.59s] In this case, we're sending it as a request to connect to the trader workstation.
+[ 2586.15s ->  2592.87s] So what I'll do is I'll create a string bar self dot host bar is equal to tk dot string bar.
+[ 2593.59s ->  2599.19s] And the value will start out as one, two, seven dot zero dot zero dot one.
+[ 2600.55s ->  2605.19s] All right. And that's pretty straightforward. So this variable is going to track
+[ 2605.19s ->  2614.07s] the value in that host entry. So I'll say ttk dot entry con frame text variable. Well, this is what
+[ 2614.71s ->  2620.23s] is going to track whatever's in that entry. And that's going to be this self dot host bar.
+[ 2621.49s ->  2629.20s] Okay. The width here, we'll just make it 15, nothing crazy. And then we can also choose to
+[ 2629.20s ->  2634.40s] give it a grid layout here. So what we can do, and this is starting to get into the idea that like,
+[ 2634.40s ->  2641.12s] once you start to understand what you're working with, it becomes easier to stack operations. So
+[ 2641.12s ->  2646.96s] let's just quickly understand this idea, right? So what I've did, what I've done here is I've created
+[ 2646.96s ->  2654.32s] this connection frame, right? That's, that's this label frame object. So once I create it,
+[ 2654.32s ->  2659.76s] I store it in this variable and then I call dot grid on that variable, right? So I'm doing that
+[ 2659.76s ->  2668.61s] in two separate, two separate steps here, but I can just call dot grid on this whole object here.
+[ 2668.61s ->  2673.57s] It's the exact same thing. All I'm doing is I'm storing it in this variable first,
+[ 2674.37s ->  2681.06s] then I'm calling it. Okay. So you can do this in, um, in a couple of different ways,
+[ 2681.06s ->  2687.86s] but one thing that we can do here is just create this entry and place it instead of storing it in a
+[ 2687.86s ->  2693.62s] variable altogether. Now, keep in mind when you call grid itself, right? What we're doing here is
+[ 2693.62s ->  2700.82s] we're not storing this in a variable. So look at with TTK label frame, I'm storing that label frame
+[ 2700.82s ->  2708.18s] in the connection frame. I need that variable, but in the case of this entry, I don't because I don't
+[ 2708.18s ->  2715.86s] need to access the object for the value in this entry. I have this host bar. It's a very important
+[ 2715.86s ->  2724.18s] distinction. We can't do dot grid here and store it in the connection frame because we need access
+[ 2724.18s ->  2730.02s] to that object, but here it doesn't matter. So what I'm going to do is instead of storing this in a
+[ 2730.02s ->  2735.78s] variable and then calling grid, I'm going to do dot grid and just place it. So I'm going to create
+[ 2735.78s ->  2741.14s] in place in one line, and then I'm not going to have a reference to that particular object. So I'm going
+[ 2741.14s ->  2747.78s] to do dot grid and then here, I'm going to say row is equal to zero column is equal to one. I will say
+[ 2747.78s ->  2758.18s] pad X is equal to zero comma 15, and then I will make it sticky and I will give it west, uh, west and
+[ 2758.18s ->  2768.34s] east. Okay. So that is what we will do there. And that should be, if you need to see it, all we're doing
+[ 2768.34s ->  2774.34s] is adding some padding X and making it sticky in this, in this grid. All right. But keep in mind,
+[ 2774.34s ->  2778.02s] we're not storing this in a variable, right? We're creating it and placing it.
+[ 2778.02s ->  2784.18s] And all of the text is being accessed via this string var. All right. Very important to note
+[ 2784.18s ->  2790.74s] that I used connection frame as an example, but you're not allowed to call label frame and then dot
+[ 2790.74s ->  2795.78s] grid, and then access the label frame via this connection frame. That's not how that works.
+[ 2795.78s ->  2801.70s] All right. So this is one example of how you can combine operations. If you know what objects
+[ 2801.70s ->  2806.85s] you're working with. All right. So I definitely encourage you, if that was confusing at all,
+[ 2806.85s ->  2811.73s] go back and watch it a few times to understand which objects are going where and what we're
+[ 2811.73s ->  2817.65s] actually storing in different variables so that you can, you know, better understand how all of these,
+[ 2817.65s ->  2822.05s] I call it just, you know, like Lego pieces are, are fitting, fitting together. All right. If we
+[ 2822.05s ->  2825.41s] understand that, then it's super easy to understand this next part. Cause we're just going to do that
+[ 2825.41s ->  2831.17s] with the port variable. Now TTK dot label, throw this in the connection frame. And then we will say
+[ 2831.17s ->  2846.50s] text is equal to port, throw it in a grid layout row, and then set this equal to zero column. We'll set
+[ 2846.50s ->  2861.67s] this equal to what do we do zero one. And then we will do pad. X is equal to zero comma five. Nope.
+[ 2861.67s ->  2867.99s] This should be column two because we have, yep. We have the entry in column one. So we'll throw this
+[ 2867.99s ->  2880.32s] in column two pad X. Okay. So we'll make it pad X zero five. And we'll also make it sticky west and east.
+[ 2881.62s ->  2891.09s] All right. So now we will do the same thing with a port variable. We will create a string variable.
+[ 2891.09s ->  2897.65s] The value will initially be seven, four, nine, seven. That is the default port for the paper trading.
+[ 2897.65s ->  2904.80s] So I'll leave that there. And then we'll also place this entry in the con frame. In fact, we can just
+[ 2904.80s ->  2915.09s] copy this whole thing here. We'll just copy that entry, paste it. And then instead of host bar,
+[ 2915.09s ->  2921.43s] this is just going to be the port bar. Okay. We can make the width a little bit shorter because
+[ 2921.43s ->  2926.71s] the port is shorter. And then of course, instead of column one, this is going to live in column three.
+[ 2928.13s ->  2937.65s] And we, again, we'll have zero 15 padding, and then we will do sticky on the west and east.
+[ 2938.53s ->  2944.29s] All right. So that will do it for the entries, the labels and entries for our host and port.
+[ 2944.85s ->  2949.65s] Now we need to make some buttons to connect, disconnect and display the status of the connection.
+[ 2949.65s ->  2957.51s] So I will say button frame equals CTK dot frame con frame. That's where we're going to throw it.
+[ 2957.51s ->  2960.39s] Then it'll say button frame dot grid. This is where we're going to place it.
+[ 2960.39s ->  2968.55s] Row one column zero, right? Column span. We'll make this four. Again, this is going to be row one,
+[ 2968.55s ->  2974.47s] right? Look at where everything else lives that we just created the host, the host entry, the port
+[ 2974.47s ->  2981.11s] and the port entry all live in row zero. Okay. So this is going to be the next row, column zero,
+[ 2981.11s ->  2986.95s] column span is equal to four. We'll add some padding on the Y, because again, this is going to be in
+[ 2986.95s ->  2992.63s] the next row. So we want vertical padding, and now we're going to add a connection button.
+[ 2992.63s ->  2998.23s] So we'll have this connect button. This will be equal to TTK dot button, and we're going to throw
+[ 2998.23s ->  3003.51s] this in the button frame. So all of this stuff stacks very logically together, right? So in
+[ 3003.51s ->  3008.55s] this connection section, we have this left frame parent, right? So we have the app,
+[ 3009.27s ->  3016.64s] we have this left frame. Now we're going to create a connection frame up top. And in that connection
+[ 3016.64s ->  3022.24s] frame, we're going to create what host port, and then underneath that a button for connect,
+[ 3022.24s ->  3027.76s] disconnect, and status. That's exactly what we're doing here. So create this button,
+[ 3027.76s ->  3036.34s] throw it in the button frame. The text will be connect to IB. The command is going to be equal to
+[ 3036.90s ->  3044.66s] self dot connect IB. And we will work out what that is later on. Same thing with disconnect.
+[ 3045.30s ->  3049.30s] Self dot, well, I guess first we have to place this button, right? That would be nice. So
+[ 3049.30s ->  3052.66s] we created it right with the CTK dot button, but we still have to place it.
+[ 3053.22s ->  3061.70s] Self dot connect button is equal to pack, or not equal to, what am I saying? We're not assigning it.
+[ 3062.34s ->  3067.86s] We're doing dot pack and we're just going to pack this to the left side. So TK dot left,
+[ 3067.86s ->  3074.02s] and we'll have some padding on the X for the other button. All right. So here, we're not using a grid
+[ 3074.02s ->  3080.66s] layout. We're just going to pack it in to the button frame that we created. So the button frame
+[ 3080.66s ->  3087.78s] lives in a grid layout, but the button itself, the connect button and the disconnect button is,
+[ 3087.78s ->  3096.00s] is not going to. Okay. Let's create the disconnect button. Self dot disconnect button is equal to
+[ 3096.72s ->  3102.16s] TTK dot button. Okay. We'll throw this in the button frame, right? Text is going to be disconnect.
+[ 3102.96s ->  3108.24s] Great. The command is going to be what we're going to create later. Self dot disconnect IB.
+[ 3108.96s ->  3115.92s] The state is going to start as disabled. You can only disconnect if you're already connected.
+[ 3116.72s ->  3121.04s] Now we're going to pack this button in. Remember we created it. Now we got to tell it where to live
+[ 3121.04s ->  3126.88s] in the UI. So just because we gave it a parent doesn't mean it knows where to place it in the
+[ 3126.88s ->  3136.13s] parent, right? Dot pack side is going to be TK dot left. And then we don't need padding because
+[ 3136.13s ->  3142.23s] this is going to be the last item for that row. So we have host port, we have connect,
+[ 3142.23s ->  3151.17s] disconnect, and then we can add status status label is equal to TTK dot label. And then in this
+[ 3151.17s ->  3155.65s] case, we're just going to throw this in the button frame, but we'll throw this underneath those buttons.
+[ 3155.65s ->  3165.48s] It'll start as disconnect, disconnected, and then the foreground, we will make it red.
+[ 3167.38s ->  3171.22s] And then, you know, once it's connected, we can change the foreground to say green.
+[ 3171.22s ->  3178.18s] Um, and then we want to throw this in a grid layout in the parent, right? So I guess actually
+[ 3178.18s ->  3182.66s] this shouldn't live in the button frame. This should live in the connection frame because
+[ 3182.66s ->  3187.70s] remember the button frame takes care of the connect and disconnect button. And that button
+[ 3187.70s ->  3193.70s] frame lives in the overall connection frame, which has host port the buttons. And now we want the status
+[ 3193.70s ->  3201.78s] to be below that. So we will put con frame instead. Then we'll do grid row is equal to two column is
+[ 3201.78s ->  3210.82s] equal to zero column span is equal to four. And then we'll add some padding on the Y and that will do it
+[ 3210.82s ->  3220.44s] for this connection section. All right. That will do it. Fortunately for us, this is pretty rinse and
+[ 3220.44s ->  3224.68s] repeat at this point. Let's not lose sight of the goal, right? We have this user interface,
+[ 3225.08s ->  3230.60s] we have this left panel, this right panel, we threw a new connection frame right at the top of this left
+[ 3230.60s ->  3239.08s] panel. And in there we have three rows and those three rows have the, the host and the port, the
+[ 3239.08s ->  3244.20s] entries, the buttons, and then the status for the connection. If we understand how to do it for one
+[ 3244.20s ->  3249.72s] little frame in that left left frame panel, we can do that for every single section. And that's all we're
+[ 3249.72s ->  3256.69s] going to do now. So let's do this now for the, for the market data section, we're going to set up the
+[ 3256.69s ->  3262.37s] market data section. Okay. Self parent and row. This is the exact same thing that we did above.
+[ 3263.01s ->  3267.89s] All right. But this time we're just going to do it for market data. All right. So the data frame,
+[ 3268.53s ->  3275.09s] okay, not a pandas data frame, but the data frame in our user interface is going to be ttk.label frame,
+[ 3276.44s ->  3285.43s] throw it in the parent, give it text. We'll say market data and parameters, give it some padding,
+[ 3285.43s ->  3294.21s] call it 10. Okay. Now we got to tell where the frame lives. Again, we're going to throw this in what
+[ 3294.21s ->  3302.45s] the row given by the function column zero sticky. We'll make it sticky to the west and sticky to the
+[ 3302.45s ->  3311.97s] east. And then we will do pad Y is equal to zero comma 15. And then we'll do a, a column configure
+[ 3314.53s ->  3321.57s] and we'll wait that first column as a one. So what row are we using? What parent are we using for this
+[ 3321.57s ->  3326.93s] market data connection? Well, remember we're throwing this in the left frame of our application
+[ 3326.93s ->  3335.91s] in row one beneath row zero, which is the connection, connection frame. All right. So pretty straightforward.
+[ 3335.91s ->  3339.99s] Now we just need to create the ticker, spot price, strike price, all of that information.
+[ 3339.99s ->  3346.42s] So let's just do it. ttk.label. We're going to throw this in the data frame. We need to get the ticker.
+[ 3348.93s ->  3352.85s] We don't need to store this anywhere. This is just a label, right? This is the same idea
+[ 3353.41s ->  3358.05s] that I mentioned above when we were talking about the entry, right? We don't need to store it anywhere.
+[ 3358.61s ->  3363.73s] We have this variable to access data. So I can just call grid outright. Same thing with the label,
+[ 3364.53s ->  3372.69s] exact same situation. So I'm going to call grid here. I will say row is equal to zero. Column is equal to
+[ 3372.69s ->  3381.97s] zero. Pad X is equal to zero comma 10. Pad Y is equal to zero comma eight. And then sticky, we will make it
+[ 3381.97s ->  3392.21s] sticky to the West. Cool. Now I will do ticker frame. Okay. TTK dot frame data frame. That's where we're
+[ 3392.21s ->  3401.81s] putting it. The ticker frame is going to exist in row zero column one. We will make it sticky to the West
+[ 3401.81s ->  3410.45s] and to the East, just like everything else. Pad Y is equal to zero comma eight. And then we will do a
+[ 3410.45s ->  3418.47s] column configure. We will give it a weight, the zeroth column, a weight of one. All right. Well,
+[ 3418.47s ->  3422.15s] now we're just going to do everything with the entries that we did above for the host and port,
+[ 3422.15s ->  3429.83s] but this time for market data. So self dot ticker bar is going to track the value in the input field
+[ 3429.83s ->  3434.55s] that the user is going to give us for the ticker TK dot string bar. You can make this whatever you
+[ 3434.55s ->  3439.43s] like. You can make this Apple, you can make this Amazon. I'm going to make it in video and VDA.
+[ 3441.04s ->  3446.56s] Now we need to create and place an entry again. It doesn't matter if I store it in a variable
+[ 3446.56s ->  3454.68s] because I have this string var tracking its value. So what will I do? I'll put it in the ticker frame.
+[ 3455.32s ->  3461.32s] I will say the text variable tracking its value is self dot ticker bar. Then I will make the width
+[ 3461.32s ->  3467.40s] of this entry 12. I'll make the font again, just to keep it aerial. I'll call it aerial.
+[ 3467.40s ->  3472.60s] I'll call it 10 and I'll call it bold. You can use whatever you like here. And then I'm just going to
+[ 3472.60s ->  3476.28s] pack this in. So instead of using a grid layout, I'm just going to say dot pack
+[ 3477.81s ->  3484.56s] side, I'll pack it to the left. Okay. And that's going to be our entry. So if you need to see that
+[ 3485.92s ->  3493.68s] I am going to pack it to the left and I'm calling that dot pack after I define entirely the TTK entry.
+[ 3496.16s ->  3501.01s] Now I'm going to create the fetch button. This is again, just another button. I'm going to throw it
+[ 3501.01s ->  3508.77s] in the ticker frame. Okay. And then I will say the text is equal to fetch data. I will say the command
+[ 3508.77s ->  3517.09s] is equal to self dot fetch market data, which we still have to create. The initial state should
+[ 3517.09s ->  3521.49s] be disabled because if we're disconnected, we shouldn't be able to fetch market data.
+[ 3522.29s ->  3525.65s] Then of course, I want to go about what? I want to pack it
+[ 3525.65s ->  3540.66s] side TK dot right and give it some padding on the left hand side there. Okay. Wonderful.
+[ 3541.22s ->  3547.70s] So what have we done here? We've thrown these in the ticker frame, right? We're padding it. We're
+[ 3547.70s ->  3555.72s] packing it into the left and right, giving it some padding. And that is going to be the button to
+[ 3555.72s ->  3564.60s] fetch the market data and the entry for the ticker. Okay. All right. Now we need to create
+[ 3564.60s ->  3572.12s] the spot price, strike price, implied volatility and expiration entries. And again, this is largely
+[ 3572.12s ->  3575.24s] just going to be rinse and repeat. So what I'm going to do is I'm going to create it once and then
+[ 3575.24s ->  3582.60s] I'm just going to copy and paste and make a couple of changes. TTK dot label data frame text is equal to
+[ 3583.32s ->  3592.04s] spot price. That spot price. I am going to place in a grid row is equal to one column is equal to zero
+[ 3592.68s ->  3599.88s] pad X. We'll throw some, some padding on the X. I'll say zero comma 10 padding on the Y. I will say
+[ 3600.52s ->  3605.92s] zero comma eight, really whatever you like. I'll make it sticky towards the west.
+[ 3607.60s ->  3613.12s] All right. That's going to be the label for the spot price. Then I need to create a spot price string var.
+[ 3614.00s ->  3626.32s] to track the entry value, TK dot string bar. And I will create then TTK dot entry. I will throw this
+[ 3626.32s ->  3633.04s] in that data frame. The text variable tracking, the spot price value is given by what self dot spot
+[ 3633.04s ->  3640.16s] price bar. That's what we just created here, right? That's string bar. I'll make the width of this
+[ 3640.16s ->  3651.88s] text field 15, the font we can keep as, again, I'm just going to keep it as Arial bold. And then I'm
+[ 3651.88s ->  3657.80s] going to throw the grid layout. Remember after we define the entry itself, that particular object
+[ 3657.80s ->  3666.12s] outside, I can access that placement function. So grid, and we're going to place this in row one,
+[ 3668.44s ->  3675.80s] column equals one. I'll make it sticky. And then really, I just have to copy and paste this a couple
+[ 3675.80s ->  3681.24s] of times for the rest of the fields. So I'll say, we'll put this in the sticky towards the west and
+[ 3681.24s ->  3689.46s] sticky towards the east. And the padding on the Y will be zero comma eight. And these are stacked on
+[ 3689.46s ->  3694.02s] top of each other, right? We have the spot, we have the strike, we have implied volatility days
+[ 3694.02s ->  3700.90s] to expiration. So let's just copy this and kind of rinse and repeat this. So spot, then we have what
+[ 3700.90s ->  3709.38s] strike, then we have implied volatility, then days to expiration. So let's now modify everything. So we
+[ 3709.38s ->  3715.54s] have the strike price. This has to be now what not spot price bar, but it has to be the strike bar.
+[ 3716.50s ->  3721.78s] So I'll copy this, I'll put this here, right? We're going to change the row that it exists in.
+[ 3722.58s ->  3731.22s] So instead of row one, it's going to exist in row two. So that's going to be the label, right?
+[ 3731.22s ->  3738.42s] The label exists in row one for spot, row two for strike, row three for implied volatility,
+[ 3738.42s ->  3745.70s] and then row four for the days to expiration. So let's just modify these here so we don't get confused.
+[ 3745.70s ->  3752.74s] This is going to be IV percentage. And then this is going to be the days to expiry.
+[ 3753.38s ->  3759.70s] So we have one through four there, then each of the items themselves has a different row
+[ 3759.70s ->  3769.38s] configuration, right? So this is going to live in row one. So then this next one here has to live in row
+[ 3769.38s ->  3785.16s] two, then it has to live in row three, then it has to live in row four. Okay, fantastic. So that is the,
+[ 3785.88s ->  3788.52s] I think that's all of the changes that we have to make here.
+[ 3789.48s ->  3795.16s] Um, and then, oh, we can't forget. We need to change these string variables. So we're going to use
+[ 3796.12s ->  3801.64s] not spot price. This is IV var, and we will do days var here.
+[ 3806.32s ->  3812.16s] Cool. And then I will make the self dot spot, or instead of self dot spot, I'll make this self dot days var,
+[ 3812.80s ->  3818.88s] and then self dot IV var. So all of these entries are now tracking the appropriate fields, right?
+[ 3818.88s ->  3824.96s] So this is going to be the entry for implied volatility. IV string bar tracks it strike,
+[ 3824.96s ->  3834.44s] track, strike days tracks, expiration spot tracks spot. Cool. Um, we can default
+[ 3835.48s ->  3840.60s] the value to the days to expiration. This is inputted by the user anyway. So I'll just make it 30.
+[ 3841.32s ->  3846.60s] And they're going to be able to put in, you know, whatever option, uh, they're looking at in the
+[ 3846.60s ->  3854.44s] option trader. Okay. So largely that's going to do it for, um, this function. We can add a button to
+[ 3854.44s ->  3860.76s] price the straddle that we're interested in trading. And this is where things start to get really
+[ 3860.76s ->  3864.60s] interesting, right? So, you know, I'm showing you how to build this from scratch, but if you,
+[ 3864.60s ->  3867.88s] and I'm doing this for a straddle, right? So if you watched my previous video,
+[ 3867.88s ->  3872.76s] I showed you how to, um, trade volatility crush with the idea of a short straddle, right?
+[ 3872.76s ->  3877.00s] There's a lot of different things you can do. A lot of different positions you can take
+[ 3877.00s ->  3881.88s] that have a short Vega position, maybe with different types of, of Delta exposures and
+[ 3881.88s ->  3887.16s] whatever, um, that allow you to capture that IV crush effect. I'm using a straddle here,
+[ 3887.16s ->  3891.56s] but if you wanted to try to capture this was with a different type of spread, or maybe you want to use
+[ 3891.56s ->  3898.92s] like, um, an iron condor or a strangle or whatever, you can go about constructing a different,
+[ 3899.96s ->  3903.88s] a different strategy. So I'm going to show you how to do it with a straddle, uh, with a straddle,
+[ 3903.88s ->  3909.40s] but I want you to be able to do it with any type of option. So that would be a really good extension
+[ 3909.40s ->  3913.72s] to this. I show you how to do this for a straddle. We're going to use black tools to price that
+[ 3913.72s ->  3920.28s] straddle. You should try to do it for like a strangle, add a new field that allows you to have
+[ 3920.28s ->  3926.52s] different, um, different strike prices for the column put option, right? Being able to create
+[ 3926.52s ->  3931.80s] these extensions is a great way to learn more without just, you know, taking the training wheels
+[ 3931.80s ->  3937.24s] off and trying to build something from scratch outright. And then maybe just going to AI for help,
+[ 3937.24s ->  3942.52s] but like try to make these extensions on your own first. So now we need a button to be able to price
+[ 3942.52s ->  3950.93s] this strategy. So self dot price button, TTK dot button, throw this into the data frame.
+[ 3950.93s ->  3954.61s] The text is going to be to price a straddle. Again, it doesn't have to be a straddle.
+[ 3956.10s ->  3960.74s] Certainly recommend, um, you know, creating an extension based on a different option
+[ 3962.80s ->  3967.60s] self dot price currents straddle. That's a function that we're going to have to create. We're going to have
+[ 3967.60s ->  3972.72s] to build a function for the black souls price and all of the Greeks. We will do that together.
+[ 3972.72s ->  3976.96s] The state of course will be disabled. If you weren't able to fetch prices,
+[ 3976.96s ->  3980.24s] because you weren't connected, then we can't price anything. Then of course,
+[ 3980.24s ->  3985.36s] we got to place this button. I'm just going to place it in the last row, row five column,
+[ 3985.36s ->  3992.24s] we'll throw it in column zero column span. We'll just say two and we'll give it some padding on the
+[ 3992.24s ->  3999.68s] Y we'll make it 10 and zero. And that will do it for this market data section. Now we can just
+[ 3999.68s ->  4005.04s] do this again, but for the current straddle, and then we'll do it for the Greeks and so on and so
+[ 4005.04s ->  4010.72s] forth. So this is going to be the next section. So we have the current straddle. And in this section,
+[ 4010.72s ->  4016.88s] we will take again, a parent and a row. We already established this above in our main frame in that
+[ 4016.88s ->  4026.82s] left frame. So I'll just say what pricing frame is equal to TTK dot label frame. And here I will throw
+[ 4026.82s ->  4033.86s] it in the parent, the text will be current straddle pricing. And this is going to have padding of 10.
+[ 4035.33s ->  4041.65s] And then the pricing frame is going to be placed in a grid layout, the row, it's going to exist in the
+[ 4041.65s ->  4046.69s] row that we give it based on the function. Remember, we're in this left frame, we have connection,
+[ 4046.69s ->  4051.49s] then we have the market data, and now we have the straddle pricing. So that's going to update
+[ 4051.49s ->  4057.89s] dynamically based on the row we give it in that left frame. So we have this row, the column is equal
+[ 4057.89s ->  4067.97s] to zero, sticky is equal to tk dot we will do west and east. Again, pad y, we will throw zero comma 15.
+[ 4069.96s ->  4079.76s] I will also add some weighting to the first column. And that will suffice. Now I need to add a label for
+[ 4079.76s ->  4085.92s] the call price. So I'll throw this in the pricing frame, the text will be the call price of the
+[ 4085.92s ->  4091.76s] option. We'll throw this immediately in a grid layout because we again, this is just a label,
+[ 4091.76s ->  4102.64s] we don't need it. So row zero, column zero, pad x, we'll do zero comma 10, pad y, we will do eight,
+[ 4102.64s ->  4118.04s] or maybe zero comma five. And we'll do sticky to the west. Okay, now I need to come up with a label
+[ 4118.04s ->  4124.20s] for the call price. And then I will place it. I can't just do that in one step because I need to
+[ 4124.20s ->  4132.12s] update this based on the Black Scholes pricing. So I'm going to say self dot call price label is equal to
+[ 4132.12s ->  4140.60s] ttk dot label pricing frame text is equal to I'm going to make this zero comma, or I'll just make this
+[ 4140.60s ->  4149.00s] zero dollars off the bat by default. The font will be, we'll say Arial. Again, just keeping it consistent.
+[ 4149.88s ->  4157.96s] 11 bold, I really probably should have put this in some sort of field for the class. So I could change
+[ 4157.96s ->  4162.76s] it in one place and have it, you know, stay consistent. But I definitely encourage you to
+[ 4162.76s ->  4169.72s] do that on your own. And then I will start by creating this foreground as green, because this
+[ 4169.72s ->  4176.85s] is in fact, a call option could have that indicating long or short to just depends on on what you want
+[ 4176.85s ->  4186.69s] to do. Now I need to place it. So we'll do call price label dot grid, row zero, we'll throw it in the
+[ 4186.69s ->  4193.65s] first column. And then I will make it sticky to the west. And I will give it some padding, I'll make
+[ 4193.65s ->  4202.21s] it zero and five. Cool. Now I'm going to do the same for a put, but I'm just going to copy and paste
+[ 4202.21s ->  4208.87s] this because we already did it. Cool, there's my put. If you have any sort of tabbing that is tabbed in
+[ 4208.87s ->  4217.27s] like this, you can always do shift tab to untab it and tab to retab it. So it's a helpful tip there.
+[ 4217.27s ->  4223.43s] Instead of call price, this is a put price. Instead of row zero, where do we want this to live? This,
+[ 4223.43s ->  4231.91s] this to live underneath in row one, column zero still is sufficient. And then we want the label
+[ 4231.91s ->  4240.61s] to instead be the put price label. And then we will use that here too. And then instead of row zero,
+[ 4240.61s ->  4249.28s] this is going to exist in row one underneath the call price label, and then everything looks
+[ 4250.00s ->  4257.76s] sufficient there. Um, this is red though, right? We want this to be a put, not green. So we'll make
+[ 4257.76s ->  4267.27s] this red. Cool. Now let's just add a little separator because we want to essentially separate
+[ 4267.27s ->  4273.27s] that from a straddle. So we'll combine the two then, right? So we have this pricing frame.
+[ 4273.27s ->  4281.56s] We'll orient this horizontally, and then we will place this separator in the second row.
+[ 4282.44s ->  4289.00s] And then we'll put this in column zero. The column span will be two. And then we will make this sticky
+[ 4289.00s ->  4298.23s] towards the west and the east pad. Why we'll make that say eight. Now we'll do the straddle and I'll
+[ 4298.23s ->  4307.36s] just copy this and do it again for the straddle. So I will make this instead of put price straddle price.
+[ 4308.79s ->  4316.23s] And then instead of row one, this will exist in row three, because remember row two is taken by this
+[ 4317.19s ->  4329.56s] horizontal separator pad X. That looks fine. Oh man. I put put really, come on. That should be red.
+[ 4329.56s ->  4338.79s] What am I thinking foreground, red foreground, green for the straddle. We'll do blue goodness gracious.
+[ 4338.79s ->  4345.91s] All right. Um, good red for the put green for the call blue for the straddle. We'll make it a little
+[ 4345.91s ->  4351.59s] bigger since that's what we're looking for anyway. Uh, and then where do we put it? We'll put it in
+[ 4351.59s ->  4360.29s] row three and that will do it for the straddle pricing section. So this is the current straddle
+[ 4360.29s ->  4367.17s] pricing based on the market implied volatility, uh, and the associated spot price. And then of course,
+[ 4367.17s ->  4373.89s] we're picking the strike and we're picking the days to expiration that is going to be freely up to us.
+[ 4373.89s ->  4378.05s] All right, cool. We only have one more section in this left frame and then we're done. So I'll say
+[ 4378.05s ->  4388.00s] def set up. We'll do the current Greeks. Now current Greek section, um, self, and then we will do parent
+[ 4388.00s ->  4394.87s] row. This is exactly what we had done above. So we're making all these functions, right? Let's not
+[ 4394.87s ->  4402.60s] lose sight of what we're doing here. We have that panel left frame, right frame. We did this one,
+[ 4403.24s ->  4408.12s] this one, this one. Now we're going to do the Greeks and we're done with the left frame. Then we'll move
+[ 4408.12s ->  4415.80s] on to the right frame. Okay. Um, again, this is pretty simple. This is pretty much what we've been
+[ 4415.80s ->  4425.24s] doing. So we'll say Greeks frame is equal to TTK dot label frame. I'll put this in the parents. I will make
+[ 4425.24s ->  4434.39s] the text equal to the current Greeks and then the padding, I will set that equal to 10. I will put
+[ 4434.39s ->  4444.15s] the Greeks frame dot grid as row equals row column is equal to zero sticky is equal to TK West TK East.
+[ 4445.16s ->  4453.28s] Then I will say pad Y is equal to zero comma 15. Lovely. And then I'm going to give some weight to the
+[ 4453.28s ->  4462.64s] first and third column. So I'll do column configure one weights, one frame column, configure three weight,
+[ 4462.64s ->  4471.04s] one cool. Uh, now what I'm going to do is pretty much what I did above with the, um,
+[ 4472.32s ->  4479.78s] with the column put prices. Oh, Jesus. Look, I left this as put. You see this. It's a rookie
+[ 4479.78s ->  4490.02s] mistake right there. Rookie mistake. That should be straddle straddle price label. And this should
+[ 4490.02s ->  4495.54s] be straddle price label. So if you caught that before me, good on you. So straddle price label,
+[ 4495.54s ->  4499.94s] straddle price label. That's good for that guy. Um, and now we can just copy and paste this
+[ 4501.49s ->  4510.53s] copy and paste this idea here. Um, let's see, row one, two. Yeah, this is all good. Okay, cool.
+[ 4510.53s ->  4519.35s] So we'll just copy and paste this guy. Now we'll throw this here. And what are we trying to display
+[ 4520.07s ->  4529.57s] Delta, gamma, Vega and theta. All right. Delta, gamma, Veda, Vega and theta. Let us start with
+[ 4532.87s ->  4538.31s] the frame. We're placing the label and we'll throw it in the Greeks frame here. The text will be what
+[ 4538.31s ->  4545.51s] Delta first row. We're going to start in row zero. Then everything else is fine, but really we don't
+[ 4545.51s ->  4551.99s] need 10. We used to need five. This is smaller than what we were working with above aerial 14,
+[ 4551.99s ->  4557.19s] probably unnecessary. Ariel 10 is probably sufficient. Can leave it as bold. We don't need to make the
+[ 4557.19s ->  4564.31s] foreground any color and just leave it as plain old text. And instead of pricing frame here,
+[ 4564.31s ->  4572.53s] we'll throw this in the Greeks frame row. This will be in row through this in row zero column one.
+[ 4574.10s ->  4581.22s] And instead of straddle price label, this is going to be the Delta label and that's what we will use
+[ 4581.22s ->  4597.25s] there as well. Super easy. Let's do this again. Do this again for gamma. Do this again for Vega.
+[ 4599.35s ->  4610.44s] Do this again for theta. Not going to make that same mistake last time either. Gamma, Vega, theta.
+[ 4611.73s ->  4621.00s] Cool. This is going to be the theta label. Cool. This will be the Vega label.
+[ 4623.04s ->  4631.24s] This will be the gamma label. We'll replace all of those. Good. All of these are in the Greeks frame
+[ 4631.24s ->  4637.24s] as they're supposed to be. Now I need to make sure that all of the rows and columns are correct. I want
+[ 4637.24s ->  4643.08s] to put Delta and gamma together, right? First and second order sensitivity. And then I'll put, um,
+[ 4643.08s ->  4650.20s] Vega and theta together, even though they're, they're not, um, explicitly related by some sort of, um,
+[ 4651.08s ->  4657.32s] variable you're differentiating with respect to. So here I'm going to put this Delta in row zero column
+[ 4657.32s ->  4665.62s] one. Then I'm going to make the gamma label in column two. I will leave this in row zero column one,
+[ 4665.62s ->  4674.34s] row zero column three, and then I will increment down to row one, um, for the Vega and theta.
+[ 4674.34s ->  4679.70s] So I'll put this in row one, put this in row one. This will then also be in column three.
+[ 4680.96s ->  4690.60s] This will be in row one column zero. This will be in row one column two. Okay. So that's going to go
+[ 4690.60s ->  4703.49s] label Vega, then the actual Vega value, then the theta label and the theta value. And then above that
+[ 4703.49s ->  4709.49s] will be Delta, Delta value, gamma, gamma value. All right. And that's what we've built here.
+[ 4710.29s ->  4714.61s] And that's going to do it for that left frame. Now we can move on to the right frame. So we'll start
+[ 4714.61s ->  4724.37s] with the scenarios section, def set up scenario section. And then in this case, right, we're
+[ 4724.37s ->  4732.37s] dealing with, um, the same idea of a parent and a row, but the difference here, the parent is now
+[ 4732.37s ->  4738.58s] the right frame, right? So we were dealing with the left frame. Now we're dealing with the right frame.
+[ 4738.58s ->  4750.24s] So we're going back to row zero. Okay. Now we can create a little scenario frame and this is really
+[ 4750.24s ->  4754.40s] the, uh, the bread and butter here, right? Cause this is what we're after. We want to see what,
+[ 4755.12s ->  4760.40s] what the price of the straddle is, is in different state of the world. So I'll throw it in this parent.
+[ 4760.40s ->  4769.32s] The text will be scenario analysis. Cool. We'll make this padding equal to say 10 and then scenario
+[ 4769.32s ->  4779.08s] frame dot grid row is equal to row column is equal to zero sticky. We'll make this maybe TK west TK east
+[ 4779.80s ->  4786.45s] and then pad Y is equal to zero 15. Wonderful. This is the exact same thing that we did above with all
+[ 4786.45s ->  4792.53s] the other different frames for the Greeks, for the market data, for the connection panel. It's,
+[ 4792.53s ->  4798.53s] it's, uh, the, the same setup, right? So now I'm going to give it, um, some column weight. I'll give
+[ 4798.53s ->  4805.91s] the first one, some weight, give it away to one. That'll be sufficient. Now I'm going to essentially
+[ 4805.91s ->  4815.27s] just take the entries that we did up here for days to expiration. I'm going to copy that. I'm going to
+[ 4815.27s ->  4826.82s] use that as the framework for this scenario analysis. Okay. So instead of the data frame,
+[ 4826.82s ->  4834.52s] we're going to be using this scenario frame, the text will be new spot price, right? Cause that's
+[ 4834.52s ->  4847.22s] what we're testing row zero. We will leave the padding X at 10, padding Y at eight and sticky at
+[ 4848.18s ->  4852.34s] west is sufficient. The initial value here, we'll just leave a blank.
+[ 4854.12s ->  4859.00s] So we'll just get rid of that. Again, this entry doesn't live in the data frame. It's going to
+[ 4859.00s ->  4864.60s] live in the scenario frame. We need to create a new text bar here to track that new spot price.
+[ 4864.60s ->  4870.12s] So I'm going to call it new spot price. And that's what I'm going to use as this tracking variable here.
+[ 4870.76s ->  4879.51s] The, this is width, this says widget. All right. That's something to go fix. Let's scroll up.
+[ 4880.74s ->  4889.49s] We're scrolling up now to the scenario frame. We're going up to the market data frame. Aha.
+[ 4889.49s ->  4899.91s] So I said widget here. Nah, nah, that should be width. Width. All right. That's a, that's a classic,
+[ 4899.91s ->  4906.42s] uh, classic issue in a field for, uh, a really an argument for this particular, uh,
+[ 4908.21s ->  4917.78s] particular class width, width, not widget width, width, width. So if you caught that before me,
+[ 4918.66s ->  4925.62s] awesome. So we got width, that should be fine. And then instead of widget here, that is again going
+[ 4925.62s ->  4933.06s] to be width. When we run this, if we get some sort of error that, you know, there's no widget, um,
+[ 4933.78s ->  4939.06s] parameter, then yeah, we'll, we'll just change it to width. All right. So that's the new spot price.
+[ 4940.02s ->  4944.34s] Um, this is in the scenario frame again, like, let's just make sure that all of this is correct. So we
+[ 4944.34s ->  4953.70s] have the idea here. Um, this doesn't live in, in what row four, this is row zero column one for the
+[ 4953.70s ->  4960.18s] scenario. Um, sticky is fine. Pad Y is fine. That's all sufficient. So that is good for the new spot
+[ 4960.18s ->  4968.93s] price. Now let's just copy and paste this for the new IV shift tab. So this is going to be the new IV
+[ 4970.13s ->  4975.22s] percent. And you know, as you're going through this, just make sure you're,
+[ 4975.22s ->  4979.38s] and I know I mentioned this earlier, but make sure you know what units of implied volatility
+[ 4979.38s ->  4983.94s] you want to work with. If you want to work with annual units, or if you want to work with, um,
+[ 4983.94s ->  4989.06s] different types of units, then, uh, that that's at your discretion. It's whatever you want to do. So
+[ 4989.06s ->  4993.78s] just make sure you're scaling it correctly. So we'll, we'll use new IV percentage here,
+[ 4993.78s ->  5002.50s] rows zero. Okay. We will make this row one and then we will do the same for the actual
+[ 5003.14s ->  5011.60s] string bar and the entry. So I don't know what that was. New spot price is really going to be the new
+[ 5011.60s ->  5018.52s] IV bar. We will use that as the tracker for this entry. So remember, this is the scenario analysis.
+[ 5018.52s ->  5024.20s] We have a label for the new spot, new IV, we have entries, and then we need to track the values in
+[ 5024.20s ->  5029.96s] those entries. And that's what we're doing here. Instead of column one, this will be in column,
+[ 5030.92s ->  5038.61s] this should be row one, column zero. This should be row one, column one. Yeah. Row one, column one.
+[ 5041.12s ->  5046.48s] Cool. So it'll be the label, then the entry label entry, and that will do it. And then we're tracking
+[ 5046.48s ->  5051.76s] it correctly. Good. Everything looks good there. Now we need a button to analyze this.
+[ 5052.72s ->  5059.12s] That's what we will do. We will do self dot analyze button is equal to ttk dot button.
+[ 5059.68s ->  5068.96s] And we will say scenario frame text is equal to analyze scenario. And then here command is equal to
+[ 5068.96s ->  5077.78s] self dot analyze scenario, which we also have to build. Now I hope it goes without saying, but the
+[ 5077.78s ->  5083.54s] the black shoals price doesn't, doesn't, um, and the black shoals model doesn't perfectly predict
+[ 5085.52s ->  5092.96s] what the change in your option contracts value is going to be. And it doesn't tell you how to
+[ 5092.96s ->  5098.48s] perfectly hedge your exposure, right? So like in terms of like rebalancing a delta hedge,
+[ 5098.48s ->  5103.36s] it's not going to be a perfect hedge with your, with your delta value. It's a linear approximation
+[ 5103.36s ->  5109.76s] to, to the, the delta function from the black trolls model, but that linear approximation,
+[ 5109.76s ->  5115.60s] yeah, there's some error. It's a pretty darn good, um, approximation, but it's not a perfect hedge,
+[ 5115.60s ->  5124.80s] right? And as things change and the market moves and you know, the delta value changes in a way that's,
+[ 5124.80s ->  5128.40s] that's reasonably expected. And it's always going to be consistent with the price
+[ 5128.40s ->  5132.72s] is actually observed because of the implied volatility. That's what we're backing out every
+[ 5132.72s ->  5138.16s] time. So the Greeks will, will somewhat reflect the change, but the actual impact in price,
+[ 5138.16s ->  5142.72s] it's not going to be a perfect representation of that. So I do want to, I want you guys to keep
+[ 5142.72s ->  5148.88s] that in mind in the context of, of pricing and the black shoals model, just because we're using this
+[ 5148.88s ->  5154.16s] model and essentially we're, we're using it to back out this implied volatility. And then we're using
+[ 5154.16s ->  5159.28s] the implied volatility, whether it's a future volatility and we're doing a scenario analysis,
+[ 5159.28s ->  5165.36s] or it's the spot IV to price these options. The prices will be consistent with what we observe
+[ 5165.36s ->  5172.48s] for that particular option or strategy, but it's not perfectly predictive of what the value is going to
+[ 5172.48s ->  5180.00s] be. And you know, that's because it's a model price. Now, eventually when it moves and you get that
+[ 5180.00s ->  5186.80s] new IV, yeah, it's going to match because that's how IV works. We're backing out the IV from whatever
+[ 5186.80s ->  5192.40s] the market is pricing it at. So don't get those two things twisted. It looks consistent, right?
+[ 5192.96s ->  5197.92s] But it's not consistent in that sense. So very important to understand that I have a lot of
+[ 5197.92s ->  5202.96s] videos on theoretical pricing. Check those out. If you're unfamiliar, going to do more in the future
+[ 5202.96s ->  5208.56s] to hopefully hammer that idea home. For now, we just created this analyze button.
+[ 5208.56s ->  5217.84s] I spelt analyze wrong in that command analyze scenario. Good. Disable it till we're connected.
+[ 5217.84s ->  5224.48s] Then we'll say self dot analyze button. We're going to place it in row two. We'll place it in column zero
+[ 5225.12s ->  5236.93s] column span to pad Y, we'll say 10 comma zero. Cool. And that will do it for the scenario section.
+[ 5236.93s ->  5242.77s] All right. We're almost done here, actually. So now we just got to do this for the P and L, the new
+[ 5242.77s ->  5252.21s] Greeks and the status. So let's do this for the P and L. I am going to just go ahead and create this
+[ 5252.21s ->  5261.59s] function def set up P and L section. I'll say self parent row. Cool.
+[ 5263.14s ->  5270.18s] Now I need a new label frame. I'll just take this one, just take this one, reuse it a little bit.
+[ 5270.18s ->  5276.77s] So we'll say P and L frame, and then I will make all of these P and L frames. We're going to again,
+[ 5276.77s ->  5284.29s] use the parent and row respectively. Um, column config. There is fine zero 15 sufficient padding 10 fine
+[ 5284.29s ->  5295.54s] scenario analysis. We will change this to P and L analysis. And then now we need labels and we need
+[ 5296.18s ->  5302.10s] separators. So I'm just going to get this from up here. Let's use the call. Um, or we can just use,
+[ 5302.10s ->  5308.76s] uh, theta. So we'll use theta as an example here. I'll copy the theta set. Come on down here,
+[ 5310.36s ->  5320.40s] paste it there. And then I will use the P and L frame instead of theta. This is going to be the
+[ 5321.60s ->  5333.06s] new straddle price. This is going to be in column zero row zero. Okay. We'll make this,
+[ 5333.06s ->  5347.49s] give this some padding, make this 10 zero comma eight. Okay. TK West P and L frame. This is not a
+[ 5347.49s ->  5357.97s] fatal label. This is the new straddle label. We will throw this in row zero column one.
+[ 5359.17s ->  5367.92s] The padding will add a little more padding. That'll be good. Um, and then we'll make this blue for the
+[ 5367.92s ->  5373.52s] straddle, right? So we'll do foreground just to match what we had earlier. And then we'll
+[ 5374.56s ->  5381.84s] chain this, change this to 12, make it a little bigger. Okay. So this is after the scenario that
+[ 5381.84s ->  5387.28s] we observed, right? So we observe a new volatility and a new spot price. Now we want to see what the
+[ 5387.28s ->  5398.12s] new straddle price is going to be. Okay. I'll add a separator and then I'll essentially display the
+[ 5399.08s ->  5402.76s] P and L for a long straddle and a short straddle. So I'll say
+[ 5403.64s ->  5407.08s] separator really. I'm just going to take the separator from above. We already wrote this
+[ 5414.69s ->  5419.01s] past it. Where are you separator? There you are. You're in the current straddle section.
+[ 5420.21s ->  5428.82s] Cool. I'll take you, put you here, throw this in the P and L frame. Okay. This is in
+[ 5428.82s ->  5439.38s] row zero, right? Column one, the separator we want. And then row one column zero span two is fine.
+[ 5440.26s ->  5451.14s] Padding is fine. Now we'll just reuse this for the, um, we'll reuse this for the long and short straddle
+[ 5451.14s ->  5464.66s] P and L there's our long straddle P and L there's our short straddle P and L. Okay. Um, we don't need
+[ 5464.66s ->  5474.00s] to make the foreground anything here. That's fine. 12 is fine. The padding is fine. The rows in columns,
+[ 5474.00s ->  5479.76s] again, let's make this, this is row zero row one. This is going to be row two. This is going to be
+[ 5480.40s ->  5488.39s] row three. And then again, this will be row three. This will be row two. And then this should be in
+[ 5488.39s ->  5494.95s] column one. This is in column one. So again, these are label and then the associated, um,
+[ 5494.95s ->  5499.75s] value, right? So label value, label value. So they're going to share a row, but have different
+[ 5499.75s ->  5506.88s] columns. It's the gist of what's going on here. Okay. These aren't new straddle labels. This is going
+[ 5506.88s ->  5524.84s] to be P and L long label, and then it's going to be P and L short label. Cool. That's good. And that
+[ 5524.84s ->  5533.40s] looks good. That should do it for this particular section. Um, we don't need necessarily padding on
+[ 5533.40s ->  5544.93s] the short label. You can probably get rid of that. That is probably okay. I think that is good.
+[ 5546.34s ->  5555.65s] Row zero, row zero, column one, row one. Good. Then row two, row two, column zero, column one,
+[ 5555.65s ->  5561.81s] row three, row three, column zero, column one. Good. That follows the design pattern that I just
+[ 5561.81s ->  5567.57s] laid out. And that is our P and L section. Now we can come up with the section for the new Greeks,
+[ 5568.61s ->  5577.35s] and then we can update our status. And then, uh, then we'll be done. We can actually move on to some
+[ 5578.07s ->  5588.39s] some pricing functions. Cool. Let's do the new Greeks. Now def set up new Greeks section
+[ 5589.43s ->  5596.53s] self. Remember we take this parent, we have a row. Cool. Now I'm just going to take the frame from above.
+[ 5596.53s ->  5600.85s] We're going to use waiting on one and three. So I'll just take it from the other Greek section
+[ 5601.49s ->  5608.66s] and modify it a little bit. So it's not going to be the Greeks frame. It's going to be the new Greeks
+[ 5608.66s ->  5619.19s] frame. Cool. Cool. Cool. One, three, one, three, not current Greeks, new scenario Greeks,
+[ 5620.90s ->  5625.30s] scenario Greeks padding done. That's totally sufficient. We're going to throw it in the parent
+[ 5625.30s ->  5631.38s] rows. Going to match the row of what we defined here in our setup UI function, where we're calling this,
+[ 5631.38s ->  5639.57s] this, then we will come on down here. Cool. That should do it. Set up new Greeks. Good.
+[ 5639.57s ->  5644.21s] So that is going to be our new frame. Now let's add the labels. We're going to have new Delta,
+[ 5644.21s ->  5652.68s] new gamma, new Vega, new theta. Let's just take it from here. So I'm just going to copy
+[ 5653.81s ->  5663.24s] Delta, gamma, Vega, theta. I'm going to paste it here. All right. All we're doing is taking all of
+[ 5663.24s ->  5669.11s] those labels and reusing them. And we're going to give it a new label and we're going to give it a new
+[ 5669.11s ->  5678.98s] frame. Nothing crazy. So new Greeks frame, new Greeks frame, new Greeks frame, new Greeks frame,
+[ 5678.98s ->  5685.94s] new Greeks frame, new Greeks frame, new Greeks frame, new Greeks frame. Fantastic. And then
+[ 5685.94s ->  5695.32s] all of the rows and columns should be the same. Nothing changes. Fantastic. Um, these have dollar
+[ 5695.32s ->  5703.94s] signs associated with them. Really? They shouldn't necessarily just be in units of dollars. Uh, so I
+[ 5703.94s ->  5708.02s] will back that out from the other section as well. So if we go back to the current Greeks, I'm just going
+[ 5708.02s ->  5718.15s] to get rid of the dollar signs. Cool. All right. And, uh, nothing else changes. So that's going to be
+[ 5718.15s ->  5727.41s] the set up new Greek section. And now we just need to update the status set up status section,
+[ 5728.47s ->  5739.08s] self parent row, last one status frame is equal to TTK dot frame. Really. This will be a label frame
+[ 5740.39s ->  5747.56s] and we will throw this in the parents. The text will be status. Padding is equal to 10.
+[ 5748.68s ->  5757.94s] The status frame we will place in row, whatever the row is. And then the column we will place in
+[ 5757.94s ->  5767.54s] column zero sticky. We will do sticky west, east, north, and south. And give it some padding on the
+[ 5767.54s ->  5777.16s] why there's zero comma 15. Remember frame. We did everything in the left. This is the last thing
+[ 5777.16s ->  5782.76s] in the right. So that right frame is the parent. That's where we're placing this label frame.
+[ 5782.76s ->  5788.60s] And it's the last item in that parent frame. All right, let's give some weight to this now.
+[ 5788.60s ->  5801.04s] So I will say status frame dot column configure. We'll say zero weight one status frame dot row
+[ 5801.04s ->  5815.62s] configure zero weight one. And then parents, we will do dot row configure and we will say row weights one.
+[ 5816.34s ->  5821.38s] So this is going to be actually looking to configure the row for the parent, whatever row this status
+[ 5821.38s ->  5827.86s] section lives on. In this case, I think it's four, three, zero, one, two, three. Uh, so we're going to
+[ 5827.86s ->  5840.53s] change the weight of that parent, uh, row. Okay. Self dot status bar is just going to be the string var
+[ 5841.25s ->  5851.28s] for our connection status here, ready to connect to interactive brokers, IBTWS.
+[ 5851.28s ->  5860.47s] And then we will have some sort of display status display tdk dot label. In this case,
+[ 5860.47s ->  5866.71s] we'll throw it in the status frame. The text variable is going to be that status bar self dot status bar.
+[ 5868.42s ->  5876.98s] Cool. Then we will have a wrap length of, let's say 300. It's probably fine for what we're doing. We'll
+[ 5876.98s ->  5885.86s] just justify, justify it left and the font. We'll just keep it consistent as ariel. We'll throw ariel nine
+[ 5885.86s ->  5901.40s] there. Cool. Self dot status display grid row zero column zero sticky and we will make it west east and
+[ 5901.40s ->  5910.48s] north. So that will be our display in the status section. And that will do it. That will do it for
+[ 5910.48s ->  5917.52s] all of these sections. Now we can move on to the core functionality of this user interface here.
+[ 5917.52s ->  5924.32s] This is the fun part. Let's, uh, let's make some functionality here. Def update status. Let's
+[ 5924.32s ->  5929.52s] update the status. Now we have some sort of message we want to display to that status display. We'll get
+[ 5929.52s ->  5939.70s] a timestamp. We'll say date, time dot. Now we will format it in terms of, we will say hours
+[ 5941.54s ->  5950.76s] minutes seconds. And then we can display that as self dot status bar dot set. And then in this case,
+[ 5950.76s ->  5959.94s] we have the timestamp as the timestamp. Nope, not time delta timestamp. And then here we will display
+[ 5959.94s ->  5972.05s] whatever message we have. Cool. Self dot root dot update idle tasks for some housekeeping with our UI.
+[ 5973.76s ->  5978.64s] Now we need to create the function to connect to interactive brokers. This is the cool stuff here.
+[ 5978.64s ->  5986.08s] All right. We're going to say death connect IB. Okay. Where did we see this before? This is not a
+[ 5986.08s ->  5993.04s] function in the IB API. We're going to use the IB API to create the connection to the trader workstation,
+[ 5993.60s ->  5999.04s] but we use this in our connect button. So if we go on up to the connection section,
+[ 5999.60s ->  6009.46s] our connect button used this here. It's exactly what we see. That's what we're creating right now.
+[ 6009.46s ->  6014.98s] So try host is equal to self dot what? How do we get the host? Well, remember we created a variable
+[ 6014.98s ->  6024.50s] that tracks the input in that entry. Self host var dot get. Easy. Port is an integer, but in the entry,
+[ 6024.50s ->  6033.14s] it's a string. We're going to cast it to an integer self dot port var dot get. Wonderful. Now we will update
+[ 6033.14s ->  6044.66s] the status. We will say connecting to IB at host and the associated port. So that's why we created
+[ 6044.66s ->  6048.42s] this update status here. It's going to give us a timestamp and whatever we're trying to do
+[ 6048.98s ->  6054.82s] in our user interface. Okay. So that's going to be very useful to discern what is happening on the
+[ 6054.82s ->  6063.00s] backend. If there's anything that we should be aware of. Now we are going to create a thread to
+[ 6063.00s ->  6068.60s] manage this connection request. That's why we imported threading at the start of this. So deaf
+[ 6068.60s ->  6076.92s] connect thread. What we're going to do is we're going to try to go about self dot IB app dot connect
+[ 6076.92s ->  6085.64s] at this host and port zero is going to be the client ID. Okay. You can go into your TWS and manage your
+[ 6085.64s ->  6092.84s] client ID to be, you know, whichever value for your master client ID, different client IDs need
+[ 6092.84s ->  6097.64s] to be created if you want to have different connection requests running at the same time.
+[ 6097.64s ->  6104.04s] So this client's ID zero, this client ID one, so on and so forth. For now, if that doesn't mean anything
+[ 6104.04s ->  6111.00s] to you, it's one connection. So in this case, the connection has ID zero. That's sufficient, right? But
+[ 6111.00s ->  6117.56s] you can have multiple connections going. So self IB dot connect. So this now this connect function that
+[ 6117.56s ->  6124.52s] we're calling here, this is directly related to the IB API that we imported up here because we created
+[ 6124.52s ->  6131.40s] this IB app. And remember, we implemented the E wrapper and the E client connect is a part of the E
+[ 6131.40s ->  6138.28s] client. This is an implementation of both of these classes. So IB app has access to that connect
+[ 6138.28s ->  6145.64s] function. And where do we create the IB app? Well, we created it when we ran the constructor for our
+[ 6145.64s ->  6153.35s] volatility crush analyzer. So we did right here. That's why we have access to it. So we're going
+[ 6153.35s ->  6162.58s] to call this connect function self dot IB app, we're going to try to run it. And if we have any sort of
+[ 6162.58s ->  6170.10s] exception, we will just go ahead and self dot update the status that hey, there was some sort of connection
+[ 6170.10s ->  6180.77s] error. And we will log that as E. Now in that main try request, we're going to try to create this thread
+[ 6180.77s ->  6187.49s] object, we'll call threading dot thread, and our target will be that connect thread function daemon
+[ 6187.49s ->  6194.93s] is equal to true. And then we will start this thread. So we're trying to run this connection request.
+[ 6196.61s ->  6204.13s] Okay, that's what we're trying to do with this thread. Let's wait to see if we receive a connection
+[ 6204.13s ->  6213.56s] request. So we will wait for ion range 100 if self dot IB app dot connected, how are we how are we
+[ 6213.56s ->  6220.76s] ensuring that this is actually set to true? We never set it to true, did we? Well, the only way that it's
+[ 6220.76s ->  6229.40s] set to true is if what the server response to the next valid order ID, and then it will ping this
+[ 6229.40s ->  6236.28s] callback function and set this flag equal to true. That's the only case in this entire program where
+[ 6236.28s ->  6240.84s] we can have that connection be set to true. So that's what we're looking for here. Alright,
+[ 6240.84s ->  6254.36s] did the server actually respond to our app? If it did, let's get the server version. If the server
+[ 6254.36s ->  6262.12s] version is not none, and the server version is greater than zero, then we can break this, that means
+[ 6262.12s ->  6273.75s] we got data. Otherwise, we will pass if there's an exception, and we will sleep for 0.1. Alright,
+[ 6276.36s ->  6290.08s] it looks like we still have to import time. I swear I imported time. Maybe I didn't. No, I guess I
+[ 6290.08s ->  6299.83s] didn't import time. So import time, this will allow us to, this will allow us to to sleep that thread.
+[ 6299.83s ->  6305.59s] It's just a pause in the execution here as we wait to see if we received a connection.
+[ 6312.00s ->  6320.79s] What is next? We're going to need to handle that connected case by enabling a whole bunch
+[ 6320.79s ->  6333.25s] of buttons, right? Alright, so if we did connect successfully, right, then we should be able to say,
+[ 6333.25s ->  6341.22s] if self dot IB app dot connected, that is going to be true if we connected. And if that's the case,
+[ 6341.94s ->  6357.44s] then we can set the server version to be self dot IB app dot server version. And then if server version
+[ 6357.44s ->  6366.16s] is not none, and server version is greater than zero, then we can go ahead and set all of these
+[ 6366.16s ->  6372.48s] flags in the volatility crush analyzer. So keep in mind, right, there's a difference between self dot
+[ 6372.48s ->  6378.80s] connected, that is the connection flag in this volatility crush analyzer, and the flag in the IB
+[ 6378.80s ->  6384.80s] app. Those are two different flags. Self dot connected is equal to true in the vol crush analyzer.
+[ 6384.80s ->  6390.24s] Now let's configure all the buttons. Self dot connect button dot config. Well,
+[ 6390.24s ->  6397.78s] the state is now disabled. We don't need to connect, we're already connected. Self dot disconnect
+[ 6397.78s ->  6406.69s] button dot config. State is equal to normal. Okay, we can now disconnect because we're successfully
+[ 6406.69s ->  6419.88s] connected. We can also fetch data. Normal. Same thing with pricing. Now that we can fetch data,
+[ 6419.88s ->  6430.82s] we can go about pricing things. Normal. We can set the status, the status label to be connected.
+[ 6432.21s ->  6442.48s] And we can make that foreground green. Cool. And then we can just update the status and that status
+[ 6442.48s ->  6452.88s] panel that we have successfully connected to IB TWS. And then we can have the server with the server
+[ 6452.88s ->  6464.80s] version. Cool. All right. Now, if we don't have any server version, then we need to update the status
+[ 6464.80s ->  6475.27s] that what we didn't get any any data from the server. So we connected, but server version
+[ 6476.39s ->  6483.51s] is not available. And that is a separate issue. So we will log that. And then we can also just accept any
+[ 6483.51s ->  6489.91s] sort of exception as E and we can just update the status. If there's some sort of exception, say,
+[ 6489.91s ->  6498.31s] you know, connection established, but version check, and that's the server version check that failed.
+[ 6498.31s ->  6503.75s] And there was some sort of error and we will log that error. So there's a difference between no server
+[ 6503.75s ->  6510.92s] version being available and connecting. That's what we have here. And there being an error checking the
+[ 6510.92s ->  6522.55s] server version, which we will then log. Okay. Cool. Um, of course, else, right. We didn't connect.
+[ 6522.55s ->  6530.95s] So if connected, well, else what self update status that, Hey, we failed to connect to IB TWS.
+[ 6532.24s ->  6538.80s] It's a separate issue. All right. And of course that should realize in some sort of exception,
+[ 6538.80s ->  6550.29s] which we will catch here, right? Try except as E and then we will say self dot update status.
+[ 6550.29s ->  6556.00s] And then this is where we'll just say, Hey, we, um, had some sort of connection error.
+[ 6558.90s ->  6566.85s] And then we'll put, um, that exception and keep this as a formatted, formatted, uh, string there.
+[ 6568.21s ->  6574.21s] And that's it for the connect function. Cool. So now we've effectively created this thread to connect
+[ 6574.21s ->  6579.57s] to interactive brokers from our controller, our IB app. If we successfully connect,
+[ 6579.57s ->  6585.01s] then the server will respond to that valid ID callback function, increment that flag to true
+[ 6585.01s ->  6592.04s] from zero to one false to true. We'll check the server version and we will initialize all of our
+[ 6592.04s ->  6599.16s] user interface items. And then if we have a series of failures here, we'll say, you know, what happened
+[ 6599.16s ->  6613.78s] in the status section of our app far easier and less exciting death disconnect. I be self here.
+[ 6613.78s ->  6621.38s] We're just going to try to what self dot IB app dot disconnect that's baked into the IB app. Remember
+[ 6621.38s ->  6628.98s] we're implementing e-wrapper, e-client, e-client has that disconnect function. Self dot connected is equal to
+[ 6628.98s ->  6637.22s] defaults. Okay. Then we will say self dot connect button dot config. We want that state to be
+[ 6637.22s ->  6643.33s] normal now because we're disconnected. All right. And then we will say self dot disconnect button
+[ 6643.33s ->  6649.97s] dot config state is equal to disabled. We've disconnected. We don't want to be trying to
+[ 6649.97s ->  6655.65s] disconnect again or have the user try to same thing with the fetch button. I'm just going to copy and
+[ 6655.65s ->  6660.61s] paste this dot config because we need to use it for the fetch button. We're going to disable that.
+[ 6660.61s ->  6667.49s] We can't fetch data if we're not connected. We can't price things if we're not connected. We can't
+[ 6667.49s ->  6678.93s] analyze things if we're not connected. And I think that will do it. Um, I might be, no, that's good.
+[ 6678.93s ->  6687.81s] Yeah. We can't do any of that stuff if we're not connected. Okay, cool. We need to update the status.
+[ 6687.81s ->  6692.77s] Um, this is going to be the status label. We're going to say that we have new texts that we are
+[ 6692.77s ->  6696.69s] in fact disconnected, right? In this case in the foreground, then we'll just make red
+[ 6697.33s ->  6704.21s] instead of green after being connected. Um, we will also create a function to clear any data
+[ 6704.21s ->  6711.97s] that we may have queried. And then we will also update on the status to be disconnected.
+[ 6718.66s ->  6726.18s] Good. And then we will of course, accept an exception as E and we will just update the,
+[ 6726.18s ->  6732.85s] the status that there was some sort of disconnect error. If there was in fact a disconnect error,
+[ 6734.20s ->  6739.16s] and that is going to do it for the connection functions. So we have our ability to connect.
+[ 6739.72s ->  6744.60s] If we successfully connect, we initialize everything in our user interface. Then if we connect
+[ 6744.60s ->  6750.36s] successfully, we're able to disconnect and this disconnect function is going to call the IP
+[ 6750.36s ->  6757.56s] disconnect function, then disable everything in our user interface until they reconnect. And that's
+[ 6757.56s ->  6763.32s] exactly the functionality that we want. We don't want them trying to fetch market data, create a request
+[ 6763.32s ->  6769.56s] to the server if they're not connected to the server. So this logic handles all that. Let's now create this
+[ 6769.56s ->  6778.04s] function to clear data if we disconnect. So I'm going to say def clear data. And what do we want to do?
+[ 6778.04s ->  6790.96s] Well, we want to set the current spot to none and the current IV to none. That's what it defaults as.
+[ 6791.68s ->  6799.72s] Then we have all of these labels we want to reset. So I will say labels to reset.
+[ 6800.68s ->  6807.97s] And this is kind of just going to be like a little bit of a kind of a lazy way to do it. But you know,
+[ 6807.97s ->  6812.85s] we're going to create a list of all of these different labels in our volatility crush analyzer.
+[ 6812.85s ->  6819.73s] So I'll say self dot call price label, self dot put price label, self dot straddle price label,
+[ 6820.53s ->  6831.89s] self dot delta label. I'm going to do this for the gamma, for the vega, for the theta. I'm going to do
+[ 6831.89s ->  6841.25s] this then for the new straddle. I'm going to do this for the new, um, or the PNL long and the PNL short.
+[ 6843.41s ->  6856.40s] And then I will do this for the new delta, new delta label. Oh no. Did I forget to, to change that?
+[ 6856.40s ->  6866.26s] That's embarrassing. Did I leave it as the old values? Let's scroll up. Yup. Yup. Happens to the best of us.
+[ 6866.26s ->  6872.02s] All right. In our new Greek section, remember when I copy and pasted all those Greeks from the, uh,
+[ 6872.02s ->  6877.46s] from the initial Greek section, I forgot to change the labels. So we have new delta label,
+[ 6877.46s ->  6885.86s] and then I will do this for all of them. New gamma label, new vega label. And then of course I will do
+[ 6885.86s ->  6895.70s] this for the new theta label. All right. So new delta, new gamma, new vega, new theta. Scroll on down
+[ 6895.70s ->  6907.22s] here. Now we'll see them. New, there we go. New delta label, new gamma label, new vega, and new theta.
+[ 6908.26s ->  6918.96s] Um, new theta. There it is. Okay. Those are all the labels that we have to reset. And we also need to
+[ 6918.96s ->  6924.32s] clear the entry inputs. Those are arguably easier. So it's like you have the spot bar,
+[ 6926.05s ->  6931.57s] uh, spot price bar. I can just set that to nothing. And the same thing is the case for
+[ 6931.57s ->  6939.57s] like the strike bar. I can set that to nothing. Um, same thing for the IV var, set that to nothing.
+[ 6939.57s ->  6946.53s] All of those entries, um, along with the new spot, I can set that to nothing.
+[ 6947.41s ->  6955.25s] And then the new IV var, I can set that to nothing. Those are easy to reset, but all of these labels,
+[ 6955.25s ->  6960.93s] instead of just typing this out, we can just use a for loop and yeah, it's a little lazy maybe,
+[ 6960.93s ->  6968.44s] but you know what? We're going to reset everything. And here's one way you can do it for label in
+[ 6968.44s ->  6976.69s] labels to reset. We're just going to iterate through all of these labels. We will say if price
+[ 6977.65s ->  6986.26s] is in the string of the label, then we will just reset it to a dollar amount. So label dot config,
+[ 6986.98s ->  6993.38s] we know we're dealing with some sort of price. So we will just make it dollar sign zero zero zero,
+[ 6993.38s ->  7003.54s] and we'll make the foreground black. And then otherwise we can just, uh, otherwise we can
+[ 7003.54s ->  7011.46s] just go ahead and configure it as just, just zeros. So I'll say text is zero point, whatever, zero,
+[ 7011.46s ->  7019.54s] zero, zero, zero, zero, zero. And, um, that'll be if say delta, um, is in the string of the label
+[ 7020.79s ->  7036.07s] in str label, um, or gamma is in the str of the label. That should be sufficient there. Um,
+[ 7036.07s ->  7050.04s] yeah, that's fine. So essentially we're making it three decimals of precision. If it's delta or
+[ 7050.04s ->  7060.50s] gamma, otherwise we'll just make it two. Um, this, this largely doesn't matter and we'll just make it
+[ 7060.50s ->  7075.28s] black. Okay. There we go. And that is how we will reset all the labels. Cool. Um, if has attribute
+[ 7075.28s ->  7087.72s] self IB app, then what do we want to do? Well, if that object exists in this volatility crush analyzer,
+[ 7087.72s ->  7095.96s] then we will just clear it. We will clear all of the data IB app dot historical data door, his
+[ 7096.68s ->  7104.92s] door, it called data dot clear. And all this is, is, you know, we have this IB app. And if we can
+[ 7104.92s ->  7115.81s] access that object, we already created it in the constructor here, we already created the IB app.
+[ 7115.81s ->  7122.21s] And all we're saying here is if this exists in this instance of the volatility crush analyzer,
+[ 7123.09s ->  7129.25s] then go to the historic data and clear that dictionary. That's all we're doing. It's nothing
+[ 7129.25s ->  7133.49s] particularly crazy. It's just going to say, you know, Hey, if we want to clear the data,
+[ 7133.49s ->  7139.89s] let's just clear the historic data that was queried from the server, um, in that IB, IB app. So that's
+[ 7139.89s ->  7146.92s] what we're doing there in this function to go about clearing that data. Okay. Uh, now we can
+[ 7146.92s ->  7151.56s] need to actually go about fetching market data. This is the cool stuff, right? How do we get the
+[ 7151.56s ->  7159.56s] pricing and implied volatility data? So we're going to say def fetch market data self. And,
+[ 7159.56s ->  7164.52s] you know, if not self dot connected, so if they were able to get here for whatever reason,
+[ 7164.52s ->  7171.16s] then we can, we can show a message box and show it as an error and say, Hey, like, you know,
+[ 7171.16s ->  7176.84s] you're not connected to interactive brokers. And if you're not connected, you're not going to be able
+[ 7176.84s ->  7189.60s] to, you know, request this market data. So we'll just return. Okay. Otherwise we can get the ticker
+[ 7189.60s ->  7195.68s] from that ticker bar and uppercase it. Right. And we can update the status to be, Hey, we're going to
+[ 7195.68s ->  7204.29s] try to fetch this data. We're fetching historical data for, and this is whatever ticker is entered in
+[ 7204.29s ->  7214.96s] that entry. Cool. Let's clear the, uh, the previous data before. So we'll say self dot IB app dot market
+[ 7214.96s ->  7220.72s] data. This is for the live data dictionary. I'm going to clear it here again. If you want to use
+[ 7220.72s ->  7227.36s] the live dictionary, um, you will just create a new callback function for tick price in the IB app.
+[ 7227.36s ->  7231.92s] We're not focusing on that here. So you don't actually need this, but I will leave it there in
+[ 7231.92s ->  7238.56s] case you want to modify this. So self dot IB app, we want to clear that historical data before we clear
+[ 7238.56s ->  7244.88s] it. We, we query this new data. So I will clear it there as well. How do we create this contract?
+[ 7244.88s ->  7252.64s] Well, we got this ticker from the entry field, right? This self dot ticker of our is tracking that
+[ 7252.64s ->  7259.92s] entry. Now we need to create a contract to tell the server what stock we're after, what stock we're
+[ 7259.92s ->  7266.00s] after data for? Well, that's why we created this create equity contract function. Now we're going
+[ 7266.00s ->  7275.28s] to use it. We will say contract is equal to self dot create equity contract. What ticker self dot
+[ 7275.28s ->  7284.80s] ticker. The one that we just got from the entry right here. Easy. What about the end date date,
+[ 7284.80s ->  7295.01s] time dot now. All right. So let's just go ahead and fetch data, essentially spot data using this historical
+[ 7295.01s ->  7304.77s] method. So we will try to self dot IB dot rec historical data. And this right here. Now,
+[ 7304.77s ->  7313.67s] what we're doing is we're using this function that's baked into the IB API. So if we go up to our IB
+[ 7313.67s ->  7319.83s] wrapper, this is a part of the client. We're sending a request to the server. This request is going to have
+[ 7319.83s ->  7326.87s] a request ID, then the server is going to come back to our callback function here with the request ID we
+[ 7326.87s ->  7337.41s] sent and all of the associated data. And that's what we're doing here. Rec ID, we'll say one contract.
+[ 7337.41s ->  7343.49s] Well, we already made the contract right there and date time. Well, we just created the end date time
+[ 7343.49s ->  7351.73s] using date time now right there. And we're just going to format this as we have percent year percent
+[ 7351.73s ->  7362.58s] month percent day percent hour percent or colon percent minutes colon percent seconds. That's a
+[ 7362.58s ->  7375.96s] mouthful. Then we need to set the duration to be we can do five days here. And then the bar size
+[ 7376.76s ->  7398.07s] is going to be one day we want to look at trades use RTH. We will say, yes, the format date. Yes.
+[ 7399.54s ->  7404.66s] Keep up to date faults. It doesn't matter if this is up to date or on a rolling basis
+[ 7405.30s ->  7412.80s] and we will leave chart options as blank. Okay. So we're going to try to make this historical data
+[ 7412.80s ->  7422.07s] request and we will accept an exception like you. Sorry, I got to scroll down. All right. So we did
+[ 7422.07s ->  7435.70s] in case you didn't see these last few options here and then we will accept exception as E
+[ 7436.58s ->  7443.46s] and then here we will just go ahead and update the status. So self update status and we will say F
+[ 7443.46s ->  7452.85s] um, we'll do a formatted string. We will say error, error requesting price data and we'll throw whatever
+[ 7452.85s ->  7466.00s] error it comes back to us with. All right. Um, and it looks like this wasn't closed. I'm not sure what
+[ 7466.00s ->  7476.26s] that's about self die V dot rec data. That looks fine. That looks correct. Oh, I'm missing a comma.
+[ 7476.26s ->  7489.00s] That's fine. Cool. All right. That's for the pricing data. Now we need to do this again for the volatility,
+[ 7489.00s ->  7501.33s] implied volatility. So I'm sure you copy and paste this. And you might be wondering, it's like, Hey,
+[ 7501.33s ->  7508.53s] like how, how are we handling this? Right? These are our historical data requests. Where are we handling
+[ 7508.53s ->  7515.35s] this? We already wrote this functionality. We wrote this up here and our IB app. See,
+[ 7516.66s ->  7522.77s] that's where we're handling it. So now for this volatility, what we're going to do is rec ID.
+[ 7522.77s ->  7529.97s] We're going to increment this to two and then same contract, same duration settings and so on and so on.
+[ 7529.97s ->  7539.70s] But instead of trades, it's going to be option implied volatility error, requesting
+[ 7540.50s ->  7547.78s] IV data if we do get an error and then otherwise we are going to wait for the data. So we will say
+[ 7548.34s ->  7557.38s] self dot root dot after 3000 self dot process market data, which we also have to write and we will write
+[ 7557.38s ->  7562.10s] that next. So this is how we're going to fetch the market data. We are going to check to see if we're
+[ 7562.10s ->  7566.90s] connected. If they magically somehow tried to fetch market data without a connection, we're just going to
+[ 7566.90s ->  7571.62s] break this function. We're going to return. Otherwise we'll get the ticker from the entry,
+[ 7571.62s ->  7577.86s] set it to uppercase, update the status that we're requesting historical data, clear whatever was there,
+[ 7577.86s ->  7584.66s] create a contract, create the end date to be right now, and then request this backward looking historical
+[ 7584.66s ->  7590.58s] data based on an end period of right now. We're going to do that for price and we're going to do that for
+[ 7591.22s ->  7597.86s] implied volatility. How is it being stored? Well, this is rec ID one. We're sending this request to
+[ 7597.86s ->  7603.54s] the server. This is rec ID two. We're sending this request to the server. When it comes back,
+[ 7604.18s ->  7609.94s] it goes to our wrapper here. It goes to our controller, our IB app, and it says, Hey,
+[ 7610.90s ->  7614.58s] request one came back with price data. We're going to put this in the dictionary.
+[ 7615.14s ->  7621.86s] request two came back with implied volatility data. We're going to put that in this dictionary.
+[ 7621.86s ->  7626.74s] That is exactly how this functions. Okay. So that is how we fetch the market data.
+[ 7626.74s ->  7631.94s] Now we need to process it. All right, let's do it. Let's write this function to process the market data.
+[ 7638.29s ->  7646.45s] What are we going to do? Well, we got to check to see if one is in self dot IB app dot historical data.
+[ 7647.01s ->  7652.85s] So if that key exists, then the server responded with data. So we'll say len self dot IB app
+[ 7653.57s ->  7665.56s] historical data one is greater than zero, right? One is not indexing anything. This is the key for the
+[ 7665.56s ->  7673.40s] request ID. All right. So that's what we're looking for here. So if we did find data, right? The length is
+[ 7673.40s ->  7679.24s] greater than zero. And if that exists as a key, now let's look to process that pricing data.
+[ 7679.24s ->  7686.76s] So we'll say price data is equal to self dot IB app dot historical data. And now we can get that bar
+[ 7686.76s ->  7693.16s] data from the historical data dictionary with a key of one. That's going to be the pricing bar data.
+[ 7693.16s ->  7702.12s] The latest bar is simply going to be the price data. That's the list at the last index minus one,
+[ 7703.16s ->  7709.88s] the current spot we will use as the latest close. So I'm going to set this equal to the latest bar.
+[ 7710.52s ->  7717.62s] And we're going to use the key close to get the absolute latest close in that spot. Of course,
+[ 7717.62s ->  7725.14s] if this was in the live market, then you could have update be true, right? Keep up to date. You
+[ 7725.14s ->  7730.02s] could, you could set that to true and try to roll this forward, or you could just use a live market
+[ 7730.02s ->  7735.14s] data request. I would just use a live market data request. That's a good extension to try for yourself.
+[ 7735.14s ->  7740.90s] All right. Um, and I don't mean just have AI do it. I mean, like actually try, try to code it yourself.
+[ 7742.18s ->  7746.98s] Okay. So we have this latest bar now self dot updates. What we want to update the status.
+[ 7746.98s ->  7757.96s] We want to tell the user interface that the latest closing price is going to be the self dot current
+[ 7757.96s ->  7764.20s] spot. Okay. So essentially, yes, we were able to get it and we'll round it to two, two decimals.
+[ 7765.08s ->  7774.18s] Um, we could also cite the date, but I'm not going to bother. We can, um, also suggest if we didn't find
+[ 7774.18s ->  7780.10s] the key in this process market data function call, then we can, you know, update the status that,
+[ 7780.10s ->  7787.62s] Hey, no historical price data was received. And then we can just return because we didn't find anything.
+[ 7788.71s ->  7794.31s] We can do this again for implied volatility. It's the exact same thing because we process that market
+[ 7794.31s ->  7800.71s] data in what the exact same way it goes to the same callback function. So I'm going to go to here.
+[ 7800.71s ->  7806.39s] I'm going to go to here and then I'm going to go to here instead of price data. This is going to be
+[ 7806.39s ->  7813.27s] IV data. Now we do have to handle this a little bit differently. Um, depending on if we want to scale
+[ 7813.27s ->  7822.50s] it by 252 or not. So, you know, it depends on how you want to do it. If you want to set your trader
+[ 7822.50s ->  7829.62s] workstation to daily vol or annual vol, you can choose to scale it by, um, scale it by the square
+[ 7829.62s ->  7833.86s] to 252 here to annualize it. I'm going to leave that up to you. I'm going to assume it's already
+[ 7833.86s ->  7838.42s] annualized, so I'm not going to bother scaling it here. It's going to make it a lot easier.
+[ 7838.42s ->  7844.74s] So I'm just going to say the IV, um, data is equal to, you know, this historical data with the key of
+[ 7844.74s ->  7852.10s] two. That's our second request that we made right here. And the latest bar is not going to be just the
+[ 7852.10s ->  7860.31s] latest bar, but the latest IV. And we can just get this from the IV data and it's the latest,
+[ 7861.59s ->  7865.03s] the latest item in the list. So minus one, and we're going to access that close.
+[ 7865.99s ->  7875.67s] And that's going to be the, the latest IV that we have there. Okay. So if this is the case,
+[ 7875.67s ->  7887.19s] then we can just go ahead and update the IV data as self dot current IV. We can set this equal to
+[ 7888.07s ->  7895.62s] the latest IV, the latest IV. This is essentially what we do here. It's just one extra step. We could
+[ 7895.62s ->  7904.26s] do this. Um, just like the pricing here. So we get the last item in the list, get the last item in the
+[ 7904.26s ->  7910.10s] list that is a dictionary. So then we get the close from that dictionary and that's going to be the
+[ 7910.10s ->  7918.95s] current IV. Same thing with the current spot price. Okay. Um, we could update the status with IV.
+[ 7919.91s ->  7931.81s] So we could say like, Hey, you know, um, we got latest IV data and we can put self dot current IV.
+[ 7932.37s ->  7939.48s] And then we could do 0.2 F a percent. That could be the IV data. So I'm just going to leave it as
+[ 7939.48s ->  7944.60s] annual, um, and IB. So if you needed to scale it here, this is where you do it. And then I would
+[ 7944.60s ->  7953.19s] just put IV data received. If there is no key in, uh, in that historical data dictionary too,
+[ 7953.19s ->  7963.19s] that means we didn't receive any historical IV data. All right, cool. Um, now we will set the
+[ 7963.19s ->  7972.04s] spot strike and IV var, and then we will call, um, call a function to price a straddle and that is
+[ 7972.04s ->  7980.61s] going to be our next step. So, okay, cool. We have processed one and two that historic bar data.
+[ 7981.17s ->  7988.85s] Now I will say self dot spot price bar dot set. And then here, this is just going to be what the
+[ 7988.85s ->  7998.02s] self dot current spot. Uh, and this is going to be to two, that's totally sufficient. Self dots,
+[ 7999.30s ->  8011.75s] um, strike bar set, same thing. We will do self dot current spot to two. That's totally fine.
+[ 8012.31s ->  8019.56s] And then self dot IV bar dot set. Um, and then we will do self dot current IV
+[ 8020.90s ->  8036.42s] to two is fine. Now, maybe four. Now these are the entries, right? These are the variables tracking
+[ 8036.42s ->  8042.10s] the entry values. Keep that in mind here, right? So these current, this current IV variable,
+[ 8042.82s ->  8050.90s] this, um, current spot variable, those are variables in our Volcrush analyzer that are storing the spot
+[ 8050.90s ->  8060.21s] price and the spot IV. They're not what's being displayed directly in the UI. That's the spot var,
+[ 8060.21s ->  8067.01s] the strike var, and the IV var. Remember that's what we created here in this setup market data section.
+[ 8067.01s ->  8072.05s] So what we have is the string var, the entry tracks that value. So don't forget that.
+[ 8072.85s ->  8079.97s] All right. And then once we set all of those, we can go about pricing this current straddle,
+[ 8080.93s ->  8084.29s] right? Cause now we have everything we need to go about pricing the straddle.
+[ 8084.29s ->  8091.17s] We have the spot, we have the strike, the time to maturity, which is given in that market data section
+[ 8091.73s ->  8098.13s] by the user, the implied volatility from interactive brokers. Now we can go about pricing this straddle.
+[ 8098.13s ->  8105.72s] All right, let's build this function then. Def price current straddle. How do we do this? Well,
+[ 8105.72s ->  8116.28s] we got to get values from all of those variables. So let's try to get the spot price as a float from
+[ 8116.28s ->  8126.61s] self.spotpricevar.get. Still, this is in the volatility crush analyzer. I forgot to put self in
+[ 8126.61s ->  8132.82s] there. So we'll try to get the spot price. Now you might be wondering, it's like, Hey Roman, like,
+[ 8132.82s ->  8139.38s] why aren't we using the current spot from the server? Remember the user gets the choice
+[ 8140.58s ->  8146.18s] for whatever they want to price the straddle at. They can choose their time to expiration,
+[ 8146.18s ->  8152.34s] their spot, their strike. We need to get it from the entry and we're getting it from the entry through
+[ 8152.34s ->  8160.05s] this string var. Keep that in mind, right? If you tried to use the current spot here and the user
+[ 8160.05s ->  8166.45s] changed the spot price, then your program would be using whatever was queried from the server.
+[ 8166.45s ->  8171.09s] It wouldn't match what they entered. Okay. Very important logic error that you can make there.
+[ 8172.29s ->  8178.93s] Same thing for the strike price, right? Self.strikevar.get. Cool.
+[ 8179.65s ->  8192.66s] IV percent float self dot IV var dot get cool days to expiry. This is going to be an integer from the
+[ 8193.22s ->  8202.87s] days bar that we're getting. Okay. And then we can accept value error and then give it a message box,
+[ 8202.87s ->  8212.69s] show error, um, some sort of error that, Hey, you know, please enter a valid number for all parameters.
+[ 8213.83s ->  8222.88s] Right. And if we do get this value error, we can just return. Otherwise we can now go about pricing
+[ 8222.88s ->  8229.52s] this straddle. All right. So let's prepare all of these inputs into some sort of Black Scholes pricing
+[ 8229.52s ->  8237.04s] function. So I will say IV decimal, this will be a decimal representation, um, is going to be the IV
+[ 8237.04s ->  8246.63s] percent divided by 100. T is going to be days to expiry divided by 365. Okay. You could say, Hey,
+[ 8246.63s ->  8253.91s] why aren't you using 252 for trading days? Well, data doesn't take a day off, right? So T is equal to
+[ 8253.91s ->  8262.47s] days to expiry divided by 365 R is equal to whatever we set the risk-free rate at, at the
+[ 8262.47s ->  8268.15s] beginning of this, um, this volatility crush analyzer class. So that's in the constructor.
+[ 8268.15s ->  8273.19s] You can set that freely. Heck, you can even make that a parameter in your market data section if you
+[ 8273.19s ->  8279.19s] so wanted to. So for now, I'm just going to fix it on the backend here. All right, let's go ahead and
+[ 8279.19s ->  8289.70s] price these calls and puts, and of course the straddle. Now I haven't talked about this on this
+[ 8289.70s ->  8296.26s] channel, but option payoffs. Now I'm not talking about the pricing function. All right. But I'm
+[ 8296.26s ->  8305.91s] talking about the, the payoffs explicitly right now. All right. They, if you look at like a call,
+[ 8305.91s ->  8312.23s] right, you can very easily analyze the payoff based on the terminal value of the stock price.
+[ 8312.95s ->  8316.87s] So when it expires, if you give me the stock price value, I could tell you the payoff.
+[ 8316.87s ->  8321.59s] It's just a hockey stick diagram, right? When you construct different strategies,
+[ 8321.59s ->  8327.11s] spreads, whatever the heck you're working with, all of those are just, they're, they're additive.
+[ 8327.11s ->  8332.87s] It's very easy to see like, okay, well, if I have a call on a put at the same strike price,
+[ 8332.87s ->  8341.51s] then what happens is I have this net zero from the call on this side and this net zero from the put on
+[ 8341.51s ->  8348.23s] this side, but I have a positive slope here and a negative slope here that creates the straddle V.
+[ 8348.23s ->  8354.39s] So, I mean, this is really just what this is. These are just max functions, you know, from,
+[ 8354.39s ->  8359.11s] from math. So those payoffs are very easy to do, um, to visualize.
+[ 8359.83s ->  8363.59s] Um, and for any strategy, super easy to visualize.
+[ 8364.71s ->  8368.39s] Now the net portfolio effect is obviously going to be different based on your strategy,
+[ 8368.39s ->  8373.51s] right? If you're longer straddle or shorter straddle, your, your vega exposure is going to be
+[ 8373.51s ->  8378.23s] different. Your, um, overall theta exposure is going to be different things like that,
+[ 8378.23s ->  8382.87s] but that goes more into, you know, pricing and, and, uh, and strategy. So if that's something we
+[ 8382.87s ->  8387.91s] want to talk about in the future, let me know if we want to build some sort of like app to calculate
+[ 8387.91s ->  8392.23s] those, um, automatically, I think that would be pretty cool. Let me know. Maybe we'll build something
+[ 8392.23s ->  8400.92s] like that. Otherwise let's price these options. We're going to create a black souls call function.
+[ 8400.92s ->  8405.96s] The spot price is going to be an input. So is the strike price, the time to maturity,
+[ 8405.96s ->  8412.68s] the risk free rate, and of course the implied volatility. Now those are the what five inputs to
+[ 8412.68s ->  8417.72s] the black souls function, strike spot, time to maturity, risk free rate, and volatility.
+[ 8418.36s ->  8426.08s] So a map from our five to our, and we have this associated call price, same thing with the flip
+[ 8426.08s ->  8436.00s] price. So we're going to have a black souls put. Now we can maybe just use put, uh, call put parody,
+[ 8436.00s ->  8441.60s] put call parody to come up with, uh, with that value. After we code the black souls call,
+[ 8442.24s ->  8447.68s] then we have this strike price and we have this associated risk for rate. And of course the,
+[ 8448.40s ->  8454.48s] the expiration risk rate and the implied volatility, the straddle is simply just going to be what the
+[ 8454.48s ->  8462.64s] call plus the, the put price. That's all it is. Remember like we're pricing these using implied
+[ 8462.64s ->  8467.12s] volatility. So of course we're going to match the market price with black souls. This is not magic.
+[ 8467.84s ->  8474.64s] The, the IV from the market is using black souls to back out the volatility parameter.
+[ 8474.64s ->  8479.28s] We're going to perfectly match the market parameter for one option. It's not consistent
+[ 8479.28s ->  8484.32s] for the entire volatility surface, but for what we're doing here, this straddle price is going
+[ 8484.32s ->  8489.12s] to be accurate. Then we can perform scenario analysis. It would be cool if you made this program
+[ 8489.12s ->  8495.60s] automatically update as IV changed. I encourage you to try that as a extension to this project.
+[ 8496.87s ->  8502.39s] All right. Now we need to calculate all of the Greeks, all of the Greeks. And, uh,
+[ 8503.27s ->  8509.35s] there certainly are a whole bunch of Greeks that we need to calculate. So let us go about calculating
+[ 8509.35s ->  8517.75s] delta as self dot calculate delta. And we will create this function. And again, we have all of the
+[ 8517.75s ->  8524.15s] parameters for the black trolls model. Um, and then we are going to discern whether it is a call or put,
+[ 8524.15s ->  8533.64s] in this case, it's a call. Then we are going to have our gamma. We'll calculate gamma. We have,
+[ 8533.64s ->  8538.84s] I'm just going to copy all of these inputs because we have to make all these functions anyway,
+[ 8538.84s ->  8545.72s] but we're still using the same black trolls inputs. So here I'm going to calculate gamma, delta, gamma,
+[ 8545.72s ->  8554.87s] vega, self dot calculate vega. Again, we'll use those black trolls inputs, um, times two for the
+[ 8554.87s ->  8559.75s] call input vega. So these are, this is for the straddle. All right. Just keep that in mind. This
+[ 8559.75s ->  8570.02s] is for the straddle here. Theta is equal to self dot calculates theta. Then we will take those inputs.
+[ 8570.74s ->  8577.62s] We have a call and then we have to do this for a put as well. So for gamma and vega, we're good
+[ 8577.62s ->  8582.58s] for the straddle. We multiply it by two because we have twice the vega exposure for a call and a put.
+[ 8582.58s ->  8589.06s] Remember both are long vega. If we are long a straddle for short, then we're twice short vega
+[ 8589.70s ->  8596.02s] gamma here. This is sufficient for gamma. And then for delta, we have to add the delta exposure from
+[ 8596.02s ->  8603.04s] the put and the theta exposure from the put. So I'm going to copy this. And when we create this
+[ 8603.04s ->  8613.38s] function, we're going to allow the option as an input to be a call or a put. Okay. And that is how
+[ 8613.38s ->  8623.88s] we can go about producing the delta, um, delta and theta. All right. That's quite easy. Then we can go and
+[ 8623.88s ->  8630.68s] set the labels, um, for these values. So I can just say self dot call price label, um, dot config.
+[ 8631.91s ->  8635.83s] And then in this case, the text is just going to be what I'm going to set it equal to the
+[ 8636.47s ->  8645.03s] associated call price. Make this a formatted string call price rounded to two. That's fine.
+[ 8645.59s ->  8653.01s] Foreground green, green for a call. And then I'm going to do the same thing
+[ 8653.65s ->  8658.77s] for a put and the same thing for the straddle. So this will be the put price label.
+[ 8659.49s ->  8665.73s] This will be the straddle price label. And then this will be the put price.
+[ 8665.73s ->  8675.49s] This will be the straddle price and it will be red and blue respectively. Okay.
+[ 8675.49s ->  8685.73s] Uh, same thing with the delta, gamma, theta, Vega labels, self dot delta label dot config. We can set that
+[ 8685.73s ->  8697.57s] equal to let's say, um, the text is going to be, we can just format it as whatever delta is rounded to
+[ 8697.57s ->  8708.10s] three. Then we can do that for gamma, Vega and theta. So we'll do this for gamma. We'll do this for
+[ 8708.10s ->  8717.62s] Vega. We'll do this for theta. And then this will be for gamma. This will be for Vega. And this will be
+[ 8717.62s ->  8725.83s] one, two, three, four, theta. Cool. That'll do it. Um, we could do two for theta and Vega. That's
+[ 8725.83s ->  8736.29s] probably fine. Um, dealer's choice. Then we want to set analyze to normal. So remember we, we didn't
+[ 8736.29s ->  8744.13s] actually update the analyze button when we connected because we want them to fetch market data before
+[ 8744.13s ->  8752.61s] analyzing any sort of, um, any sort of scenario situation here, right? So now that we've gone
+[ 8752.61s ->  8761.89s] about pricing the straddle, we can set the analyze button to enabled or, or normal. All right. And then
+[ 8761.89s ->  8768.45s] we can set default values too, if we wanted to, for the scenario analysis, it can be useful as a
+[ 8768.45s ->  8775.49s] benchmark. So, you know, if you just populate the scenario analysis in that right frame with the
+[ 8775.49s ->  8784.69s] current spot, it's a good starting point. So I'll just say, if not self dot new spot, bar new spot,
+[ 8784.69s ->  8792.52s] bar, uh, did I not update that either? Let's take a look. It should be new spot bar. Let's see in our,
+[ 8807.48s ->  8823.59s] no, this is fine. New spot price. I think this maps to the same thing. Yeah, that's fine. New spot price
+[ 8823.59s ->  8842.79s] is fine. Okay. So if the new spot price dot get is none. So that means this is empty. We are going to
+[ 8842.79s ->  8856.02s] update it with the spot price we got from the server rounded to two decimal places. Same thing with the
+[ 8856.02s ->  8865.80s] new, um, IV. If it's nothing, then we will just update the new IV bar. We will set it with whatever
+[ 8865.80s ->  8880.79s] we got from the server. It's going to be the IV percent. Then we can update the status that we have
+[ 8882.77s ->  8895.68s] priced the straddle at this value. We can also add the call and put value if we want, add the call
+[ 8895.68s ->  8911.35s] price and then add the put price to make that to two decimal places each. Cool. And that will do it
+[ 8911.35s ->  8920.47s] for pricing the current straddle. So we have this new spot price, um, and this new IV var tracking those
+[ 8920.47s ->  8927.83s] entries in the scenario analysis. And what we're saying is, Hey, let's set those equal to whatever
+[ 8927.83s ->  8935.35s] values we queried from the server. Um, should they not have anything in them already for scenario analysis?
+[ 8935.35s ->  8941.27s] So that is, is going to be a useful tool for us. As we fetch that data, it'll populate something in
+[ 8941.27s ->  8946.31s] a relative sense. So it's like, Hey, if the spot stays, whatever the spot is right now, we can change
+[ 8946.31s ->  8952.23s] IV. If we want to change spot, we can change spot, so on and so forth. Well, here's the bread and
+[ 8952.23s ->  8959.03s] butter now, right? We need to analyze this new scenario. So we're going to apply the black shoals pricing
+[ 8959.03s ->  8964.87s] function in this new scenario that the user gives us with a new spot price and a new implied
+[ 8964.87s ->  8970.23s] volatility. So we'll create a function called analyze scenario. And we've already mapped these
+[ 8970.23s ->  8977.27s] functions to the buttons, right? Don't forget, like when we created these buttons above here,
+[ 8977.27s ->  8983.03s] fetch market data, like we assigned that function up here, and then we created it down here,
+[ 8984.07s ->  8991.49s] right here. So we've already created the, the button that's going to access this function.
+[ 8991.49s ->  8996.77s] Now we're creating the functionality. So to do this, it's actually quite easy. It's literally what we
+[ 8996.77s ->  9001.46s] did before, but we're just going to access the parameters from the scenario analysis,
+[ 9001.46s ->  9010.96s] right? So we'll try to get the new spot, which is going to be the new spot var dot get. Then we're
+[ 9010.96s ->  9020.96s] going to get the new IV, which is going to be self dot new IV var dot get. Again, this is not new.
+[ 9020.96s ->  9031.28s] This should be new spot price. Yeah. New spot price, new IV var. Very good. And then we want to
+[ 9031.28s ->  9040.64s] convert this to percent. So from a percent, we'll divide by 100. If we get a value error,
+[ 9040.64s ->  9046.72s] then we will just log that as a message. So we'll say message box that show error and error,
+[ 9046.72s ->  9061.78s] invalid spot price or IV values. And then we'll, we'll return. So remember we're not getting the
+[ 9061.78s ->  9068.90s] spot or the IV from the market data variables that we requested from the server. We're getting it from
+[ 9068.90s ->  9075.94s] the entry because the user is pricing this stuff. We don't want to assume what they're trying to price
+[ 9075.94s ->  9081.62s] it with. We don't want to assume they want to use the current spot in this scenario analysis. We want
+[ 9081.62s ->  9086.66s] them to have the freedom to choose that value. So that's what we've done here. That's how we've
+[ 9086.66s ->  9095.12s] gotten these values. Now let's use them. So what we have to do is we have to try to get the strike,
+[ 9095.92s ->  9101.04s] right? Because the strike doesn't change in the scenario analysis. It's a very important point here.
+[ 9101.04s ->  9105.84s] It's the same option, right? That's the whole point of this. It's the same option.
+[ 9106.48s ->  9110.24s] The difference is there's some implied volatility crush. We're trying to apply to it.
+[ 9110.88s ->  9117.92s] Okay. So same option, same days to expiration, right? Whether or not this is appropriate,
+[ 9117.92s ->  9123.20s] that's completely up to you, right? You can say like, Hey, we're actually losing a day. So we're
+[ 9123.20s ->  9130.08s] gaining that theta if we're net short. So apply that in, in an extension here, we're just going to
+[ 9130.08s ->  9137.36s] look at the net effect of a vol crush and a delta move. So days var dot get cool. Now we have our
+[ 9137.36s ->  9144.24s] strike price, our time to maturity, our days to expiration. We can accept a value error. If any of
+[ 9144.24s ->  9151.44s] these are wrong, then I'm just going to copy this value error, how we handled it there. Then we will
+[ 9152.00s ->  9163.57s] show a message box and we will say what invalid strike price or days to expiry. All right.
+[ 9165.04s ->  9176.96s] I will get the days to expiry as this divided by 365, right? Whether you want to use 252, 365
+[ 9177.76s ->  9187.54s] subject for discussion, R is equal to self dot risk free rate. The new call price is equal to
+[ 9188.10s ->  9192.82s] self dot black shoals. And this is where we're going to apply that black shoals call black shoals,
+[ 9192.82s ->  9200.18s] black shoals put on this new scenario. So we have black shoals call, we're going to apply it to the new
+[ 9200.18s ->  9207.30s] spot. We're going to apply it to the old strike and the old time to expiration and the old risk free rate,
+[ 9207.30s ->  9213.32s] but the new IV, and that's going to be the new call price. We're going to do the same for the new
+[ 9213.32s ->  9221.40s] put price with the black shoals put function. We're going to do it with the new spot price,
+[ 9222.52s ->  9227.96s] the old strike price, old time to maturity, old risk free rate, but the new implied volatility,
+[ 9229.62s ->  9235.88s] the new straddle price. Well, that's just going to be the sum of the two new call price plus new
+[ 9235.88s ->  9247.32s] put price. All right. Now we can get the original straddle price and do some analysis. Did we make
+[ 9247.32s ->  9252.12s] money? Did we lose money? Was long, was long better? Was short better? Let's, let's take a look. So the
+[ 9252.12s ->  9261.00s] original straddle price is given by whatever we priced it at. We can say self dot straddle price label dot
+[ 9261.56s ->  9271.09s] c get, and we can get that text and just replace the dollar sign with nothing. Okay. So we're actually
+[ 9271.09s ->  9278.85s] getting that value from the original label. And now we can come up with PNL long and short. So our PNL
+[ 9278.85s ->  9287.89s] long is going to be new straddle price minus the original straddle price, right? And then PNL short is
+[ 9287.89s ->  9299.70s] just what, it's just negative that, right? It's just original minus new, not new minus original
+[ 9299.70s ->  9307.41s] because you're short. Okay. The new straddle label now can be configured to have this text of
+[ 9309.11s ->  9316.23s] the new straddle price, right? And we can throw a dollar sign there if we like the new straddle price.
+[ 9316.23s ->  9327.75s] And we can even, um, round it. We'll make the foreground blue. Cool. Uh, and then the long
+[ 9327.75s ->  9337.59s] color will make it green. If the PNL long is greater than zero, otherwise we'll make it red.
+[ 9337.59s ->  9345.43s] And then same thing with short, right? So the short will be green. If the PNL short is greater than zero,
+[ 9345.43s ->  9350.47s] otherwise it'll be red. So this is, these are mutually exclusive and you know, except for the
+[ 9350.47s ->  9357.67s] case that they're net zero. Um, otherwise long is green when short is red, red, uh, short is green
+[ 9357.67s ->  9365.91s] when long is red. That's the only case that this could be. All right. Um, now we can assign those,
+[ 9365.91s ->  9374.47s] those PNL labels, right? We can say self dot PNL label or PNL long label is going to be configured to
+[ 9374.47s ->  9384.23s] have this text of, let's say PNL long. And we will have positive, let's say 0.2 F.
+[ 9385.36s ->  9393.44s] And then the foreground is going to be the long color. So based on whatever scenario we're in,
+[ 9393.44s ->  9400.56s] and then the same thing with the short label here. So doctrine fig text F, and then we will do, um,
+[ 9400.56s ->  9412.53s] to F it will be the PNL short. And then the color is again, going to be whatever the short color is.
+[ 9418.63s ->  9425.19s] So we've computed the PNL. Now we're updating the labels with the PNL values. Now we need to
+[ 9426.15s ->  9430.39s] get the new Greeks and update the Greeks, but we can just get the Greeks from above.
+[ 9430.39s ->  9437.01s] So that's what I'm going to do. Copy and paste these values here because it's the same pricing.
+[ 9437.01s ->  9442.37s] We just have to update the spot and the IV we're using. So now I'm going to come down here. I'll paste
+[ 9442.37s ->  9450.20s] this and instead of Delta, it's new Delta. This is local to the function. So it doesn't matter as
+[ 9450.20s ->  9455.72s] much, but for the sake of consistency, I'll keep it like this. This is going to be K instead of
+[ 9455.72s ->  9463.80s] strike price. Cause that's what we got from the entry here. Okay. It's not IV decimal anymore.
+[ 9463.80s ->  9471.32s] It's new IV, right? Let's see. Yep. New IV and new spot. And that's how we're going to go about
+[ 9471.32s ->  9477.40s] pricing all of these. So we're using the new spot, new spot, new spot, new spot, new IV,
+[ 9478.12s ->  9486.45s] new IV, new IV, and new IV. Same thing for the put. We have to use the new IV, new IV.
+[ 9487.25s ->  9495.75s] We're using K for the strike, K for the strike, and then the new spot and the new spot.
+[ 9497.91s ->  9505.11s] Very good. And now we can go about updating all of those labels. And this again is, is quite easy
+[ 9505.11s ->  9509.27s] because it's just what we did above. So I'm just going to copy and paste this and I'm going to replace
+[ 9510.07s ->  9519.75s] these original Greeks with just the new, the new values. So we have what new Delta label.
+[ 9523.56s ->  9534.21s] We have the new gamma label, new Vega label, and then the new Theta label. And then this is just
+[ 9534.21s ->  9544.77s] going to be new Delta. This is new gamma, new Vega, new Theta. Then we can update the status if we like,
+[ 9544.77s ->  9554.85s] like self dot update status scenario complete. And then we can get some sort of new price,
+[ 9555.99s ->  9568.55s] like new straddle price to be whatever the new straddle price is. That's probably fine.
+[ 9568.55s ->  9573.67s] And then we can, we could add like long, short P and L, but that's, that's probably fine for this. So
+[ 9573.67s ->  9579.83s] that is sufficient for the scenario analysis. Now we need to actually code the functions for
+[ 9579.83s ->  9585.03s] the Black-Scholes call. Black-Scholes put and the Greeks, and we're just about done.
+[ 9585.03s ->  9590.07s] When it comes to the Black-Scholes model, I get all of these comments about, you know,
+[ 9590.07s ->  9594.15s] the assumptions not being true in practice. There's no such thing as continuous trading. There's no such
+[ 9594.15s ->  9600.07s] thing as, uh, uh, no transaction costs. There's no such thing as, uh, an asset following a geometric
+[ 9600.07s ->  9608.07s] Brownian motion, so on and so forth. And to that, I say we're missing the entire purpose of the model
+[ 9608.07s ->  9615.27s] in the sense of, of what it gives us the implied volatility, right? Like that implied volatility
+[ 9615.27s ->  9624.79s] surface is, is literally directly a consequence of the Black-Scholes model. So I think they're kind of
+[ 9624.79s ->  9628.71s] missing the entire picture there. If they're saying like, oh, you can't use it for trading.
+[ 9628.71s ->  9633.11s] You can't use it for this. You can't use it for that. You tell that to any sort of exotics trader. It's
+[ 9633.11s ->  9638.87s] like, Hey, like Black-Scholes is useless. Well, okay. What are they going to calibrate their stochastic
+[ 9638.87s ->  9644.55s] model to if they're going to extrapolate exotic prices? You know, like it's, um, it's missing the
+[ 9644.55s ->  9649.91s] entire picture of the space. So when it comes to actually producing these functions to develop
+[ 9649.91s ->  9655.11s] option prices, right? We're not clinging to it in the sense that it's, it's perfectly correct,
+[ 9655.11s ->  9661.27s] but rather it's matching the market price based on some sort of input volatility.
+[ 9661.27s ->  9669.35s] Don't get those two things confused, right? This will match market prices because it's a one-to-one
+[ 9669.35s ->  9676.07s] map in that sense, right? We can go from price option price to implied volatility and back and
+[ 9676.07s ->  9681.03s] forth, fixing the other parameters. I have a lot of videos talking about the Black-Scholes model.
+[ 9681.03s ->  9685.75s] I'm going to do more videos in the future, deriving the argument from scratch, going about solving the
+[ 9685.75s ->  9691.11s] partial differential equation, numerically, analytically sit via simulation, so on and so
+[ 9691.11s ->  9696.95s] forth. Look forward to that. But for now, don't get it too confused. And don't worry too much about the
+[ 9696.95s ->  9703.67s] assumptions really here. The magic is in telling us what the expected change in the option price is
+[ 9704.31s ->  9709.51s] based on these model assumptions, based on what we're observing in the market and any sort of implied
+[ 9709.51s ->  9717.11s] volatility crush and, and, uh, underlying price movement. So what I'm going to do is I am going to
+[ 9719.04s ->  9723.52s] call, uh, create a function for the Black-Scholes call, Black-Scholes put,
+[ 9723.52s ->  9733.59s] I'm going to import, um, at the top here, uh, say from scipy dot stats import norm.
+[ 9734.39s ->  9740.61s] And now I can go about building all of these functions. So I'll say def Black-Scholes call,
+[ 9743.22s ->  9750.26s] and the Black-Scholes call is going to take a spot, a strike, time to maturity, a risk-free rate, and a
+[ 9750.26s ->  9759.40s] volatility term there. D1 is equal to MP dot log S over K. And then this is going to be plus
+[ 9760.44s ->  9771.80s] R plus 0.5 times sigma. And this is going to be squared. And then this will be times T divided by
+[ 9771.80s ->  9787.80s] sigma times the square root of T. All right. D2 is D1 minus sigma times MP dot square root T. Okay.
+[ 9789.16s ->  9796.44s] So this is the classic D1, D2. These are just variable substitutions to make the, uh, formula easier.
+[ 9797.60s ->  9805.12s] So when we return it, it's just going to be the price times the normal CDF of D1 less the strike
+[ 9805.84s ->  9819.36s] times the discount factor of MP dot exp negative R times cap T, um, times norm dot CDF of D2.
+[ 9820.40s ->  9825.52s] If you're unfamiliar with this, I have plenty of videos discussing this idea. Um, and I'm going to
+[ 9825.52s ->  9829.36s] do more in the future. So, so bear with me if you're unfamiliar with this, this argument,
+[ 9829.36s ->  9833.04s] but this is the closed form solution to a Black-Scholes call. We're going to do it for a
+[ 9833.04s ->  9840.00s] Black-Scholes put. If you're as impatient as me, sometimes, um, I do have an article online that you
+[ 9840.00s ->  9846.80s] can read. It's completely free. It's the entire, um, Black-Scholes derivation. So not just the equation,
+[ 9846.80s ->  9852.56s] the partial differential equation, but also this model price, that article walks through literally
+[ 9852.56s ->  9858.64s] step-by-step and it's a narrative by me. I wrote it like almost, it's almost 10 years ago now. Oh my
+[ 9858.64s ->  9863.60s] God. Um, so if, if you're interested, you can go ahead and check that out. So, um, that's where this
+[ 9863.60s ->  9867.76s] model price comes from. The Black-Scholes equation is a partial differential equation. The Black-Scholes
+[ 9867.76s ->  9874.52s] model gives us this, this price. So then we have the Black-Scholes put, it's going to take the same
+[ 9874.52s ->  9881.24s] inputs, but things are just shuffled around a little bit. So here, what do we have? Well, essentially,
+[ 9881.24s ->  9888.12s] it's the exact same thing. So we have this exact same situation here, but the difference, right?
+[ 9888.92s ->  9894.04s] Again, the big difference here is we are switching the order. So it's going to be
+[ 9895.48s ->  9904.36s] this guy here, that strike price times that discount factor with the CDF of D2, less that strike price
+[ 9904.36s ->  9913.48s] there. Okay. List that strike price. Uh, and in this case, it's going to be negative D1 and negative D2.
+[ 9915.14s ->  9922.31s] That is going to be our Black-Scholes call input. And then, you know, what is, what is delta?
+[ 9923.51s ->  9929.83s] What is gamma, vega, and theta? Well, if we partially differentiate these functions
+[ 9930.71s ->  9937.03s] with respect to the spot price, that's delta, the spot price twice, that's gamma,
+[ 9938.15s ->  9943.83s] the time to maturity, that's theta, and the volatility, that's vega. So that's, uh, that is
+[ 9943.83s ->  9951.19s] essentially all we are, all we are doing here when we come up with the delta, gamma, vega, and theta. So
+[ 9951.19s ->  9961.11s] let's do that now. We will calculate the delta to be SKTR sigma. Remember I said we want this idea of
+[ 9961.11s ->  9967.99s] option type as well, so that we can very easily just switch this formula for, for call and put.
+[ 9967.99s ->  9975.46s] And that's what we're going to do here. So turns out the delta for an option, the partial derivative
+[ 9975.46s ->  9983.62s] with respect to the underlying asset price is just going to be the normal CDF of D1 if it's a call
+[ 9983.62s ->  9992.10s] and negative that if it is a put. So D1 is going to be equal to essentially the same thing we have here.
+[ 9993.57s -> 10003.57s] Cool. If the option type is a call, what do we do? Well, I said it's the normal CDF
+[10003.57s -> 10011.12s] of D1. If it's a put, then we are going to return negative that value and negative D1.
+[10012.00s -> 10018.08s] And that will give us the appropriate delta for a call and a put option. Wonderful. Let's do it for
+[10018.08s -> 10028.52s] gamma. The exact same situation, but here it doesn't matter. Here it doesn't matter. So I will say
+[10031.49s -> 10039.17s] these same inputs as delta, but this is a second order sensitivity, right? So here it's just going to be
+[10039.17s -> 10054.28s] D1. And then we're going to return the normal, actually the normal dot PDF of D1 divided by
+[10054.28s -> 10064.20s] MP dot square root of, or not MP dot square root. Sorry. This is going to be, um, S times sigma times
+[10064.20s -> 10074.45s] MP dot square root of two. Where does that come from? Well, we're just differentiating this guy.
+[10075.01s -> 10082.05s] Doesn't that make sense? Like you have, I mean, this is like stats, like college stats,
+[10082.05s -> 10087.41s] one-on-one, right? If you have a CDF, a cumulative distribution function, well,
+[10088.05s -> 10093.81s] you take the derivative, you get the PDF. Look at the delta. It's defined in terms of the CDF.
+[10093.81s -> 10098.93s] You take the derivative. Yeah. You're going to get a PDF chain rule. You get all this other nonsense too.
+[10098.93s -> 10105.54s] So that's where all of that comes from, if you were curious. So that's our delta. And as you can
+[10105.54s -> 10110.74s] see, the reason why it's the same for the call on the put is these negatives, right? Chain rule.
+[10110.74s -> 10116.98s] They're going to, to cancel out. So net positive derivative of this is the same thing as a derivative
+[10116.98s -> 10123.22s] of negative this and negative this, right? That's again, basic calculus. So now we're going to do
+[10123.22s -> 10136.66s] Vega and we will have the same inputs. And then here we still have D one. So that's what we're using
+[10136.66s -> 10142.82s] here. This D one representation, very handy to just be able to reuse it. And here we're
+[10142.82s -> 10148.50s] differentiating with respect to Vega, this volatility, not, not Vega. We're not differentiating
+[10148.50s -> 10153.62s] with respect to vigor. We're differentiated with respect to volatility. So, um, we're going to return
+[10154.34s -> 10163.38s] S times the normal PDF of D one times MP dot square root of T and then divide it by 100.
+[10163.38s -> 10168.02s] That is going to be our Vega value. And then theta is going to be a little trickier.
+[10170.98s -> 10176.98s] Def calculates theta. So we have the same parameters, but this time we have to consider
+[10176.98s -> 10192.15s] a little bit differently. Okay. So we have good. All right, we'll do this. And what we have here
+[10192.15s -> 10202.23s] is we have D one and D two, like we had in our black Scholes function. But if we have a call,
+[10204.66s -> 10213.94s] then what's going to happen is theta is going to be equal to negative the spot times the normal PDF
+[10213.94s -> 10235.35s] of D one times Sigma divided by two times MP square root of T. All right. We also have to then subtract
+[10235.35s -> 10246.48s] R times K times this, this discount factor here of negative R times capital T times norm dot CDF
+[10247.28s -> 10264.79s] of D two. And that is going to be all then divided by 365. That is our theta value.
+[10264.79s -> 10274.39s] And the difference here is, you know, with, with the put, this is just going to be positive.
+[10274.95s -> 10290.85s] That's going to be our difference here. So we'll say else copy this, paste this, this will be okay.
+[10290.85s -> 10295.73s] So that is going to be our theta value. And that is going to do it for the,
+[10296.93s -> 10303.41s] for the Greeks and the option pricing functions. That is going to do it. All right. I, I really
+[10303.41s -> 10312.88s] didn't, didn't return theta here. Um, I just realized that. So return theta. Cool. And that's
+[10312.88s -> 10317.04s] going to do it for the Greeks. They're actually going to do it for the Greeks. Um, and that's,
+[10317.04s -> 10323.76s] that's it. We wrote 571 lines of code. Um, and we have built everything. So we built the
+[10325.46s -> 10330.34s] implementation of the IB API, where we are going to receive the data that we request
+[10330.34s -> 10336.50s] from that particular object. Then we built this volatility crush analyzer, the whole user interface
+[10336.50s -> 10342.50s] and the associated functionality so that the user can interact with that IB app on the backend.
+[10342.50s -> 10350.16s] And of course, all of these pricing functions to run this. Now we will create a death main
+[10351.78s -> 10360.10s] function here. We'll say root is equal to TK dot TK. Remember we're passing this root frame to
+[10360.82s -> 10367.81s] the volatility crush analyzer's constructor. That's what we're doing here, right? Then we're
+[10367.81s -> 10373.09s] establishing both of those columns, all of the panels in those columns, all the associated widgets,
+[10373.09s -> 10378.45s] all the buttons, linking those buttons to the functionality that we built and everything
+[10379.33s -> 10385.65s] should work as intended, you know, as these things go, the famous fingers crossed moment. So
+[10385.65s -> 10392.92s] we will say volatility crush analyzer. Again, we're going to pass this root to it. So it has that frame
+[10392.92s -> 10401.88s] and then we will say root dot main loop. And then of course we have our main load statement here. If
+[10401.88s -> 10413.16s] root name is equal to main, then we will call this main function. All right, let's check this out and
+[10413.16s -> 10425.19s] see if it works and see how we did. All right. So let's run this. Looks good. Let's connect. Let's fetch data.
+[10429.20s -> 10431.28s] Cool. Looks like everything works.
+[10431.28s -> 10438.00s] We didn't populate the scenario analysis. So something broke. The IV here is being divided by
+[10438.00s -> 10446.00s] 100. It should be scaled by 100, but that's an easy fix. Um, it looks like we have new straddle price
+[10446.00s -> 10452.16s] listed here twice. So this should be PNL long PNL short. Again, that's an easy change, but let's start
+[10452.16s -> 10459.40s] with this error. So let's look at our terminal. Um, we successfully received data. Yep. We saw that
+[10459.40s -> 10469.14s] one and two were a success, but now we're getting this error in price current straddle analyze button
+[10469.14s -> 10483.73s] config normal. That should be state equals normal. So we can go to line four 80 state is equal to normal
+[10483.73s -> 10489.17s] for the analyze config button. Let's go ahead and run this again with that change. Um, actually before
+[10489.17s -> 10496.29s] we do that, let's look for the new straddle label and fix that to be the long and short PNL that should
+[10496.29s -> 10503.44s] be in the scenario analysis section. Um, I'm sorry, the setup PNL section. So in the setup PNL section,
+[10503.44s -> 10507.52s] see, we have new straddle price, new straddle price, new straddle price. We're going to make this
+[10509.28s -> 10516.56s] long PNL. So if you're along the straddle, you could go long straddle PNL. And then of course,
+[10516.56s -> 10531.99s] this is going to be the short straddle PNL. Cool. Let's run this. So it looks connect very nice.
+[10532.63s -> 10544.26s] Fetch data. Very nice. And yep. It populates the scenario analysis with that IV data. And we'll,
+[10544.26s -> 10548.66s] we'll go in and we'll fix the, um, the scaling of the implied volatility. It's, it's correct.
+[10548.66s -> 10556.02s] It's annualized, but we still need to, um, quote it in terms of a percentage here
+[10556.02s -> 10561.22s] that we're, we're displaying in this field, but let's see if our, our pricing is on point. So
+[10561.86s -> 10569.06s] let's go to the option trader here. I'm going to open up. We're using Nvidia as an example.
+[10570.18s -> 10574.42s] Um, and then I will look at the seven days to expiration. I will look at this.
+[10574.42s -> 10581.78s] It's roughly 600 bucks, this straddle at 165. So I'm going to quote this at 165,
+[10582.42s -> 10587.70s] the implied bull of 33.7 with seven days to expiration. And yeah, it looks like we're,
+[10587.70s -> 10592.34s] we're pricing it at roughly 600 bucks, which is great. Remember these are sold in lots of 100.
+[10592.34s -> 10596.50s] And then we can observe the IV crush from that trade should some sort of event happen.
+[10596.98s -> 10601.78s] Um, and yeah, we see this positive short PNL, which is exactly what we would expect to see.
+[10601.78s -> 10606.42s] Um, but remember, right? So, you know, the, the Greeks are non-linear. These are linear
+[10606.42s -> 10611.38s] approximations to the change. That's what these partial derivatives are. But as the,
+[10612.26s -> 10619.38s] the place, the parameters for the function change, the values of the Greeks change, but not linearly.
+[10619.38s -> 10623.94s] So that's a very important note, um, to keep in mind, but as you better understand pricing,
+[10623.94s -> 10629.38s] you'll better understand that idea there. So that is the, the general gist. And that's the, uh,
+[10629.38s -> 10634.34s] the volatility crush trade analyzer from scratch. Let's go back in and fix these,
+[10634.34s -> 10640.82s] these IV values and we'll be all set to fix the volatility scaling issue, just to multiply it by
+[10640.82s -> 10647.78s] 100 to quote it in terms of a percent. All we have to do is go to the process market data function.
+[10647.78s -> 10654.58s] This is after we fetch the market data and change the IV var, that string bar,
+[10654.58s -> 10661.22s] that's tracking the current IV and just scale it by 100 and that will fix everything here.
+[10661.22s -> 10668.34s] And we can test it by checking those at the money straddle prices for a seven day expiration.
+[10668.34s -> 10672.10s] So I'm gonna make it seven days connect, fetch data.
+[10675.56s -> 10679.72s] Very good. Price that straddle around 600 bucks. Observe of all crushed down to
+[10679.72s -> 10689.88s] 20% and yeah, we collect that difference. And that is a successfully working volatility crush
+[10689.88s -> 10696.44s] trade analyzer from scratch. What is that? Roughly 600 lines of code or something like that.
+[10697.16s -> 10703.00s] All without AI. Would you look at that? And that is going to do it for this video on how to build a
+[10703.00s -> 10710.52s] volatility crush trade analyzer in Python with interactive brokers from scratch with no AI.
+[10711.48s -> 10717.24s] I hope you enjoyed. I hope you learned something. These videos certainly take a lot of effort to
+[10717.24s -> 10723.40s] create. So, you know, please like comment if you want to see more videos like this one, subscribe,
+[10723.40s -> 10728.84s] let me know your thoughts, join our discord, check out channel membership. If you would like to support
+[10728.84s -> 10734.52s] this channel. If you want to master your quantitative skills, learn math, probability statistics, coding,
+[10734.52s -> 10742.68s] finance, check out quant guild.com. Other than that, thank you so much for watching and I will see you
+[10742.68s -> 10748.36s] in the next video.

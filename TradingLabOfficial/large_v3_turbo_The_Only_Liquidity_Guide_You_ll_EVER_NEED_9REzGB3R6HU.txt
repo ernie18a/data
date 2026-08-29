@@ -1,0 +1,82 @@
+[    2.00s ->     7.98s] the algorithm. I started focusing on the algorithms a very long time ago. They're
+[    7.98s ->    12.56s] written by a programmer and they have to be written to go somewhere, okay? Where are they
+[   12.56s ->    16.84s] written to go? These technical areas that we're putting out, those algorithms are going to that
+[   16.84s ->    22.66s] as sure as we're having this conversation. There's no doubt. They want to shake out the longs and
+[   22.66s ->    26.68s] they want to get people short. And what do the smart people do that are on the bottom of these
+[   26.68s ->    30.74s] algorithms that are scooping this stuff up? They're feeding into these people. That's what
+[   30.74s ->    36.20s] algorithms do. So I'm able to take advantage of what they've given me and keep printing the money
+[   36.20s ->    45.12s] man. That's what we do. And we do it every day, hundreds of times. Did I spend too much time on
+[   45.12s ->    52.76s] that intro? Eh, probably. Hedge funds spend around on average $90,000 on training per analyst and
+[   52.76s ->    58.22s] training them on basic trading psychology. And once you realize how they look at the market
+[   58.22s ->    63.92s] and more specifically what they look for, you will instantly see your trading portfolio start
+[   63.92s ->    68.96s] to grow alongside with them. But what do they look for? You see, for every winner in the market,
+[   68.96s ->    75.02s] there's a loser. And for every loser in the market, there's a winner. It's basically a 1v1 on Rust and
+[   75.02s ->    80.46s] Call of Duty, but just on a bigger scale. And if your trading strategy doesn't take advantage of
+[   80.46s ->    86.68s] you profiting from the loser, it's probably not a good strategy. So what is a strategy that takes
+[   86.68s ->    93.16s] advantage of you profiting from the people that are wrong? The price is rising, creating higher highs
+[   93.16s ->    99.24s] and higher lows time and time again. But what happens when that narrative suddenly shifts?
+[   99.24s ->   105.16s] Lows get broken. The majority of traders would now see this break as the start of a structure shift,
+[  105.16s ->   109.96s] meaning the majority of traders would see this move as a break of structure and the start of a
+[  109.96s ->   115.96s] reversal to the downside. And they would now expect to see price continue this downwards momentum and
+[  115.96s ->   122.76s] keep heading lower. But they're wrong. But how can you identify this happening before it even happens?
+[  122.76s ->   127.40s] In order to understand this technique, we first need to understand consolidating markets.
+[  127.40s ->   132.92s] Consolidation, explained simply, is just sideways price movement, where price just stays in a range,
+[  132.92s ->   138.12s] moving sideways, without really any volatile moves. Now, the majority of people would tell you
+[  138.12s ->   144.44s] not to trade in consolidating markets. Hell, I even made a video on how to avoid consolidating markets.
+[  144.44s ->   149.48s] But the more I've learned as a trader, the more I've realized consolidating markets present the most
+[  149.48s ->   155.40s] opportunity. The reasoning behind that is liquidity. To understand liquidity, you can just think of it
+[  155.40s ->   160.60s] as areas with large open orders in the market. It's basically just an area where there are a lot of
+[  160.60s ->   166.92s] stop losses and buy orders, or in other words, lots of money. Whenever you have consolidating sideways
+[  166.92s ->   173.40s] price action, it makes the liquidity points very, very obvious. There will naturally be a lot of
+[  173.40s ->   178.28s] stop losses right here for people entering long trades. And there will naturally be a lot of stop
+[  178.28s ->   183.72s] losses right here for people entering short trades. That's just a given. Now, one of the greatest lessons
+[  183.72s ->   189.24s] I've learned as a trader is, in order to be successful at trading, you need to be entering where
+[  189.24s ->   195.24s] most people are exiting. That is because of this simple little trick. If price breaks these equal highs,
+[  195.24s ->   200.68s] that means a lot of people will now see this as the start of an uptrend and will enter a long trade
+[  200.68s ->   206.04s] here. So they will most likely enter in a position like this, placing their take profit and putting
+[  206.04s ->   212.52s] their stop loss either here or here. If price does a fake out, it'll hit all these trader stop losses
+[  212.52s ->   217.88s] that just entered for a long opportunity. And when it hits these trader stop losses, it'll give price
+[  217.88s ->   224.76s] fuel to keep heading lower. So in essence, stop losses make the market move. So when trading,
+[  224.76s ->   231.40s] you basically want to try to trap buyers or sellers and use their stop losses as fuel to drive price
+[  231.40s ->   236.20s] in the direction you are trading. The market's algorithm will naturally be drawn to highs and
+[  236.20s ->   242.76s] lows of this range because it's targeting liquidity. It's targeting orders. It's targeting money. And when
+[  242.76s ->   248.20s] price targets these highs and lows, this is where price will most likely reverse because of what I
+[  248.20s ->   254.12s] just taught you. So if price ever breaks equal highs, you should be looking to short. If price ever breaks
+[  254.12s ->   259.08s] equal lows, you should be looking to enter long. One of my favorite quotes in trading is from the
+[  259.08s ->   263.64s] legendary David Paul. And then you write down on a piece of paper where you're going to buy and where
+[  263.64s ->   270.12s] you're going to put your stop loss. Don't buy it, but put an order in to buy it at where you're going
+[  270.12s ->   275.32s] to put your stop loss. And then just watch how many times the market goes to your order. You should be
+[  275.32s ->   281.48s] putting your entry where others are putting their stop loss. If you do that, you will instantly see how
+[  281.48s ->   286.84s] often it works because you are taking advantage of the losers in the market, just like the algorithm
+[  286.84s ->   291.56s] is trying to do. To prove my point even more, here's a chart. You can see the market was trending,
+[  291.56s ->   297.40s] making higher highs and higher lows. Then all of a sudden it dumps. Then price starts to consolidate
+[  297.40s ->   303.56s] with sideways price movement. This sideways price movement is the market trying to say this area is
+[  303.56s ->   310.92s] fair value for this particular asset at this very moment. So what we do is we mark the highs and lows of
+[  310.92s ->   317.32s] this range. Now the algorithm is going to try to push price outside this range to trigger stop losses
+[  317.32s ->   323.08s] and create liquidity. So what you do is pretty simple. When price breaks this range, you will look
+[  323.08s ->   328.20s] to trade in the opposite direction. So price breaks this upper end of the range. Now the thingy behind
+[  328.20s ->   333.48s] this is simple. As stated before, the market targets liquidity. There are two obvious points of
+[  333.48s ->   339.56s] liquidity for the market to target next. One right here and one right here. Now since the market is
+[  339.56s ->   345.32s] consolidating here, it is way more likely that the algorithm will target the closer liquidity,
+[  345.32s ->   349.88s] because it's a lot easier to get to. And on top of that, by the market consolidating here,
+[  349.88s ->   356.04s] it's saying this range is fair value at the moment for this specific asset. So that's another reason
+[  356.04s ->   361.32s] why this bottom liquidity point is more likely to be targeted. So once price breaks this upper end of
+[  361.32s ->   366.60s] liquidity, you enter a short, target the next liquidity point, make some easy profits, but wait,
+[  366.60s ->   371.00s] we're still not done. Price broke this lower liquidity point, so now we can target the upper
+[  371.00s ->   376.28s] liquidity point, we enter a long, set or take profit at the upper liquidity, easy profits. But
+[  376.28s ->   381.64s] wait, we're still not done. Price broke this upper liquidity point, we enter a short, targeting the lower
+[  381.64s ->   387.64s] liquidity, easy profits. But wait, we're still not done. Price broke this lower liquidity, we target the
+[  387.64s ->   395.00s] higher liquidity, price hits it, easy profits. But wait, we're still not done. Price broke this upper liquidity,
+[  395.00s ->   399.94s] we target the lower liquidity, easy profits. That's the power of this strategy. The market
+[  399.94s ->   406.22s] will always target liquidity, and with consolidating price movement, it makes it very obvious on where
+[  406.22s ->   412.26s] that liquidity is. Now, sure, just because price breaks outside of a range, that doesn't necessarily
+[  412.26s ->   418.04s] mean it will always reverse and target liquidity in the opposite direction. Sometimes it breaks
+[  418.04s ->   423.06s] and just keeps heading in the same original direction. So I'm not saying by any means
+[  423.06s ->   428.32s] liquidity should be your one and only signal to enter a trade. But what I am saying, though,
+[  428.40s ->   434.78s] is that your strategy should incorporate liquidity somehow. Because, like I said before, you need to
+[  434.78s ->   440.26s] take advantage of the losers in the market to make money in the market. So to do that, incorporate
+[  440.26s ->   446.16s] liquidity. You can pair it with supply and demand, order flow, fair value gaps, indicators, whatever.
+[  446.16s ->   452.72s] But the algorithm is literally programmed to make the market move. And the best way to do that is to
+[  452.72s ->   458.86s] target liquidity and stop losses. So next time you look at your chart, think of the obvious place
+[  458.86s ->   464.48s] of where you'd place your stop loss if you entered into the trade right now. And instead of placing your
+[  464.48s ->   471.10s] stop loss there, place your entry there instead. And just look how often it works out in your favor.

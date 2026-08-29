@@ -1,0 +1,110 @@
+[    1.34s ->    12.80s] Welcome back. Today we're going to talk about the idea of a function of random variables where that function is a minimum or maximum function.
+[   13.20s ->    21.00s] Typically in a probability or statistics course, you're going to go through the standard idea of a density function, a distribution function, and so on and so forth.
+[   21.00s ->    36.58s] And you're going to learn all the rules that are associated with those particular structures. But curveballs that are typically thrown on either exams or interview questions are going to be pertaining to more complicated functions of those random variables.
+[   36.58s ->    46.20s] You may have very simple linear transformations of random variables and finding the corresponding density function is going to be quite easy.
+[   46.54s ->    54.50s] But, you know, when you're doing a quant interview or you're taking an exam, you know, you're going to have some curveballs like this.
+[   54.52s ->    62.26s] And it's not necessarily immediately clear how the minimum or maximum function in the probability statement is supposed to be interpreted.
+[   62.26s ->    68.82s] So we're going to talk about an applied example here. We're going to talk about the trick that I use to find the corresponding density function.
+[   69.22s ->    74.34s] And hopefully this will help you in your exams and interviews. So let's go ahead and take a look at the problem setup.
+[   75.30s ->    90.40s] Assume that I have a portfolio of stocks, bonds, and crypto. And we're going to say that their annual return is IID, independent and identically distributed, standard uniform.
+[   90.40s ->   104.08s] All right. Naturally, we may be interested in the minimum of S, B, C, and we can call this random variable Z.
+[  104.68s ->   113.32s] Hopefully it's not difficult to see that Z is a random variable because it depends or is a function of random variables S, B, and C.
+[  113.32s ->   122.16s] We are interested in this quantity naturally, right, because we want to know something about the least return of an asset in our portfolio.
+[  122.40s ->   135.32s] So we can ask questions like, what is the probability that Z is less than or equal to zero, that the smallest return in this portfolio is going to be negative, right?
+[  135.32s ->   140.70s] We can ask questions like that. Of course, this is a standard uniform distribution here.
+[  140.82s ->   145.30s] So that doesn't really apply. But nevertheless, bear with me.
+[  145.38s ->   151.46s] This is just an example of a probability statement that we could ask about these particular assets in our portfolio.
+[  151.46s ->   159.04s] If this was, say, normally distributed or standard normally distributed, then this would be probably a more relevant question.
+[  160.10s ->   167.74s] So we can say that this probability is equivalent to capital FZ of zero.
+[  170.09s ->   170.55s] Okay.
+[  170.91s ->   183.32s] So we clearly need to know the distribution function to be able to answer questions about the probability of the random variable Z over specific regions.
+[  183.32s ->   184.78s] Okay.
+[  185.22s ->   195.34s] So a more interesting non-trivial probability in this context would be the probability that Z is less than or equal to, say, one-half.
+[  195.78s ->   208.32s] This is going to be FZ of one-half, and that is going to be a non-zero, non-trivial probability that we may want to know in the context of this particular example.
+[  208.32s ->   215.92s] So how do we go about finding the corresponding density function for Z, or the distribution function?
+[  216.46s ->   218.90s] Well, we can get started with what we know.
+[  219.34s ->   230.94s] We know that capital F of Z of Z is equivalent to the probability that random variable Z is less than or equal to little Z.
+[  230.94s ->   239.10s] And this is just by the definition of the cumulative distribution function with pretty standard notation.
+[  239.62s ->   253.50s] That is that the capital Z here represents the random variable Z, and little z here is going to correspond to the input function, the value that's being input into the function.
+[  256.79s ->   258.15s] So what is capital Z?
+[  258.15s ->   259.33s] Well, it's defined right here.
+[  259.41s ->   274.86s] So we can substitute in for Z the minimum of S, B, and C, and say that that is less than or equal to the argument for the distribution function little z.
+[  274.86s ->   285.44s] And this is where we're stuck, and we want to find an equivalent probability statement that we can actually solve, because this, if you just take a look at it, it is kind of just arbitrary and confusing.
+[  285.56s ->   289.64s] You can start picking values, but nothing is immediately clear, right?
+[  289.64s ->   295.58s] So what I mean by that is, let's say that S was 1, B was 2, and C was 3.
+[  296.10s ->   301.98s] In the structure of this example, that can never be the case, but assume that those are the realizations, right?
+[  303.08s ->   316.34s] If we parameterize Z by 1, right, then we would say the minimum of S, B, and C is 1, and we're looking for the probability that that is less than or equal to Z.
+[  316.34s ->   327.56s] But in this case, we have three different random variables, and we can't make a general statement about this overall probability.
+[  327.90s ->   337.40s] Mainly what I'm saying here is we know that S is less than or equal to Z, right, because we have 1 for Z and 1 for S, but that doesn't tell us anything about B.
+[  337.40s ->   348.95s] That doesn't tell us anything about C, because here we're saying that S is satisfying this particular constraint, but B and C are larger.
+[  349.07s ->   351.07s] They could be larger or smaller than Z.
+[  351.15s ->   355.41s] We don't necessarily know the particular values.
+[  355.41s ->   371.67s] So there is kind of, you know, we can make an argument for an equivalent probability statement in this context, but it's going to be harder than just doing what I call the trick with a function of random variables where that function is a min or a max.
+[  372.49s ->   377.01s] And that is to essentially create a very simple equivalent probability statement.
+[  377.01s ->   393.04s] So what I always do anytime I see a min or a max is I say, if I see a min, then what I do is I take a less than or equal to inequality and I transform it into a greater than.
+[  393.04s ->   408.71s] For a max function, if I see a greater than, I transform it into a less than or equal to, and that's going to make it very simple to create a equivalent probability statement, and you'll see why in a moment.
+[  408.87s ->   410.67s] So let's just follow this idea.
+[  411.29s ->   414.87s] So what I'm going to do is I'm going to turn the less than or equal to into a greater than.
+[  414.87s ->   431.07s] I can do that by using the rules of a cumulative distribution function, that this is equivalent to one minus the probability that the min of S, B, and C is greater than a given Z.
+[  432.19s ->   439.63s] And now we can come up with an equivalent probability statement to this that's solvable and actually quite easily solvable.
+[  440.31s ->   441.35s] Why is that?
+[  441.35s ->   447.59s] Well, because this statement has what I like to call sort of a domino effect.
+[  448.39s ->   448.65s] All right.
+[  448.79s ->   453.39s] So let's pick a value for S, B, and C.
+[  453.97s ->   457.65s] So I will pick one, two, and three again.
+[  459.24s ->   459.54s] All right.
+[  459.58s ->   462.24s] And let's say that this is true.
+[  463.32s ->   469.02s] So the minimum of S, B, and C is greater than our Z value.
+[  469.02s ->   481.26s] That means we can create a general statement that S is greater than Z, B is greater than Z, and C is greater than Z.
+[  481.72s ->   488.14s] Because if this is true, if this statement is true, let's assume that Z is zero.
+[  488.14s ->   496.16s] If the minimum of these three values is greater than Z, all of them have to be.
+[  497.32s ->   503.02s] So that equivalent probability statement is very easy to essentially derive.
+[  503.02s ->   514.76s] And that is, it's the probability that S is greater than Z, and the probability that B is greater than Z, and the probability that C is greater than Z.
+[  514.76s ->   526.48s] So in this less than or equal to space, the equivalent probability statement is much more difficult to see directly, right?
+[  526.52s ->   531.36s] Because we don't have that necessarily domino style effect, right?
+[  531.36s ->   543.03s] But if we flip the inequality, then we can find that if the minimum of these three values is greater than Z, then we know all of them are.
+[  543.21s ->   547.01s] When that isn't necessarily the case with the less than, right?
+[  547.33s ->   553.61s] Just because the minimum value is less than or equal to Z, that doesn't mean that all of them are less than or equal to Z.
+[  553.61s ->   576.39s] And that is going to be your big trick for these types of questions, because this very easily becomes one minus the probability, like I said, S is greater than Z, and B is greater than Z, and C is greater than Z.
+[  576.83s ->   580.55s] What do we know about our random variables?
+[  581.33s ->   584.21s] They are all independent and identically distributed.
+[  584.21s ->   617.86s] So we can say, by independence, this implies that the probability of S greater than Z, B greater than Z, and C greater than Z is equivalent to the probability that S is greater than Z times the probability that B is greater than Z times the probability that C is greater than Z.
+[  620.16s ->   633.77s] So if this is the case, and I'm just going to go ahead and copy this, so I don't have to rewrite it through this here, then we have one minus this product of probabilities.
+[  633.77s ->   637.55s] What is the probability that S is greater than Z, what is the probability that S is greater than Z?
+[  638.25s ->   663.48s] Well, we know that S, B, and C are IID, standard uniform, which means their density function is Fu of X, which is equal to 1 over the support, 0 everywhere else.
+[  663.48s ->   691.45s] And the cumulative distribution function is given by 1, X, and 0, where we have X within the support, and then we have 1 when we are greater than the maximum value, and then 0 when X is going to be less than or equal to 0.
+[  691.45s ->   707.82s] So this statement here, the probability that S is greater than Z, is going to be given by our cumulative distribution function, just like we had earlier, right here.
+[  707.82s ->   724.51s] So we know that Fu of X is equal to the probability that U is less than or equal to little X, which is equal to 1 minus the probability that U is greater than X.
+[  724.51s ->   744.83s] So if this is the case, then over the support, we have that, this implies, if we sub in X, X is equal to 1 minus the probability that U is greater than X.
+[  745.39s ->   756.97s] So in other words, this implies that the probability that a standard uniform random variable is greater than X is equal to 1 minus X.
+[  756.97s ->   766.38s] So we can sub that in, we can sub that in right here, but instead of little X, we use Z.
+[  767.22s ->   778.53s] So this is going to be equivalent to, maybe I will copy this to continue the work down here, throw this guy right here.
+[  778.53s ->   786.80s] So this is going to be equal to 1 minus 1 minus X cubed, right?
+[  786.84s ->   788.58s] We have 1, 2, 3.
+[  789.12s ->   795.24s] And then instead of X, we use Z as our placeholder variable here.
+[  795.74s ->   799.79s] So I will say that that is 1 minus Z.
+[  800.95s ->   803.53s] And what was this equivalent to originally?
+[  803.53s ->   806.09s] Now we actually have an expression, right?
+[  806.35s ->   813.51s] This expression here is equivalent to this expression here.
+[  814.80s ->   822.08s] Capital F of Z, the original density that we were looking for here.
+[  822.08s ->   833.68s] So we know that capital FZ of little Z is equal to 1 minus 1 minus Z cubed.
+[  834.22s ->   847.92s] And then if we differentiate, we can say that the density is equal to DF, DZ, which is equal to 0 minus,
+[  847.92s ->   860.94s] then we have 3, 1 minus Z squared, chain rule, times negative 1, which is equal to 3, 1 minus Z squared.
+[  861.68s ->   867.20s] And of course, this is over the particular support for this random variable.
+[  867.20s ->   875.48s] So that's going to do it for this quick video on the idea of a function of random variables
+[  875.48s ->   877.74s] where that function is a minimum or maximum function.
+[  878.08s ->   881.90s] You're going to be able to create general probability statements quite easily
+[  881.90s ->   887.82s] if you use this idea here of transforming the inequality into a greater than for a min
+[  887.82s ->   890.80s] or less than or equal to for a max.
+[  891.00s ->   894.82s] A very common problem that you'll see in this particular context as well
+[  894.82s ->   896.88s] is the idea of a Bernoulli random variable.
+[  896.88s ->   902.60s] So if you have a series of IIT Bernoulli random variables with a min or a max function,
+[  902.80s ->   907.76s] then you're going to be able to derive similar insights using this idea here.
+[  908.48s ->   909.96s] So I hope you found this helpful.
+[  910.44s ->   916.20s] There aren't a huge number of resources on deriving these types of densities
+[  916.20s ->   918.56s] because they are, in fact, quite tricky.
+[  919.32s ->   920.90s] But I hope you found this helpful.
+[  921.00s ->   923.02s] I hope this helps you on your exams, on your interviews.
+[  923.02s ->   926.82s] Drop me a comment below if you have any questions or, you know,
+[  926.88s ->   930.60s] comments about this sort of derivation or equivalent probability statement.
+[  931.20s ->   935.86s] Other than that, thank you for watching, and I will see you in the next video.

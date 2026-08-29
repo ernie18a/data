@@ -1,0 +1,55 @@
+[    3.92s ->    23.32s] Professional traders. They're everywhere. 99.9% of traders want to be one, but only 0.0000000001% make it. Will you be next in line to join the lucky few?
+[   23.32s ->    42.32s] Whoa, whoa, whoa! Slow down there, sport. Rome wasn't built in a day. We've got to train you up, give you the best chance of success there is, so that when you take your trades, you make money. So join me, Trading Lab, on this epic journey to make you a certified trader.
+[   42.32s ->    53.62s] Do I spend too much time making these videos? Eh, probably. Okay, so if you clicked this video, you saw the title, saw the thumbnail, and thought, what mistake is he talking about?
+[   53.62s ->    57.62s] It's this. This right here. Ah, I gotta explain it more, don't I?
+[   57.62s ->    62.62s] So, when looking at this chart, I'm sure almost every single one of you think this is a good short play.
+[   62.62s ->    69.62s] Well, sort of. This trade is a forex trade. The Australian dollar and the Swiss firm. Speaking of forex, have you tried?
+[   69.62s ->    81.00s] Hankertrade is one of my favorite brokers of all time, because of these reasons. Some of the absolute lowest fees on the market, their spreads go as low as 0.0 pips,
+[   81.00s ->    94.00s] and if you're an absolute maniac, you can use up to 500x leverage with them. 500x. They also have negative balance protection, in case, you know, you blow up your account. I'm talking to you, 500x leverage people.
+[   94.00s ->   109.00s] And to put the cherry on top, they have a 100% deposit bonus, so whatever you initially deposit, they will match up to 25 grand. Plus, if you click the link in my description, it not only gives you all of those benefits, but it also helps me out. So, click it. Um, where was I?
+[  109.00s ->   116.00s] Okay, so when looking at this chart, I'm sure almost every single one of you think this is a good short play. Well, it is, but let me explain a little bit.
+[  116.00s ->   122.00s] Price at this very strong resistance and is slowly starting to lose momentum, making lower lows. Good sign for a short.
+[  122.00s ->   131.00s] It's also making a bearish divergence with the RSI indicator. Also a good sign for a short. So, in the back of your mind, you know there's a really high chance of the market to crash right here.
+[  131.00s ->   138.00s] So, you're drawing this nice little support area and you're planning to enter a short right when price breaks through the support area.
+[  138.00s ->   142.00s] This trade looks pretty good, doesn't it? So, you may be asking, what's the mistake?
+[  142.00s ->   151.23s] Where most traders would make the mistake is right here. A huge red bearish candle.
+[  151.23s ->   157.23s] Where 99% of the people fail is trying to chase this trade. Do not do this. I know, trust me.
+[  157.23s ->   163.23s] It's easy to look at this and think you're missing out on the trade. You're afraid you won't get another one like it. Don't do it.
+[  163.23s ->   166.23s] Now, here's how you solve this problem. You wait.
+[  166.23s ->   171.23s] Almost always with these types of trades, you will get a second opportunity to enter.
+[  171.23s ->   177.23s] So, when people chase this huge candles breakout like the bad trader they are, they set their stop losses somewhere around this area.
+[  177.23s ->   186.23s] Now, you have to understand something. There will be trades where this exact same scenario happens and the price keeps falling and what I'm about to tell you won't be able to be applied.
+[  186.23s ->   189.23s] Then some of you are going to go to my comment section and say,
+[  189.23s ->   195.23s] Trading Lab, I tried following your strategy but I never got an entry signal and I missed out on the trade all because of you.
+[  195.23s ->   201.23s] If price keeps falling after this big red candle, that's perfectly fine. We just missed the trade. There will always be more.
+[  201.23s ->   206.23s] If you chase this big red candle, I can promise you it will soon bite you in the butt in the long term.
+[  206.23s ->   210.23s] What we are going to do is have patience.
+[  210.23s ->   214.23s] So, obviously now this chart has a very bearish bias.
+[  214.23s ->   221.23s] What we want is for price to come back up to this stop zone where all these previous short breakout traders set their stop losses.
+[  221.23s ->   226.23s] Then we want a liquidity grab and enter a short there for a way better entry.
+[  226.23s ->   229.23s] Doing this will increase your win rate by so much.
+[  229.23s ->   230.23s] So, let's see what happens.
+[  230.23s ->   233.23s] Price falls a little bit more after the big red candle.
+[  233.23s ->   240.23s] It then does exactly what I explained earlier and comes back up to this area where a bunch of the short breakout traders set their stop losses.
+[  240.23s ->   243.23s] You also notice it rejects right off this recent resistance.
+[  243.23s ->   245.23s] This is where you can enter the short.
+[  245.23s ->   248.23s] You just have to make sure it's showing some bearish momentum first.
+[  248.23s ->   253.23s] So, in this example it's showing two upper wicks and a decent sized red candle rejecting.
+[  253.23s ->   258.23s] I guess what I'm trying to say is wait for some confirmation it's rejecting first before entering the trade.
+[  258.23s ->   264.23s] You enter here, set your stop loss right above the resistance and set your take profit right at this mark where the previous low got to.
+[  264.23s ->   267.23s] Giving you a 3.5 risk ratio.
+[  267.23s ->   273.23s] If you're a more aggressive trader you can even set your take profit below this move giving you around a 5 risk ratio.
+[  273.23s ->   278.23s] So, now you're getting a way better entry compared to if you tried chasing this move.
+[  278.23s ->   280.23s] You limited your risk by huge amounts.
+[  280.23s ->   283.23s] Your stop loss is smaller and you have way more confirmation.
+[  283.23s ->   286.23s] And overall it's just a way better trade setup.
+[  286.23s ->   291.23s] And as you can see the trade worked out exactly as we thought it would and we make some huge profits.
+[  291.23s ->   297.23s] Like I said, there will be times where price keeps falling after the initial break and it doesn't give you this opportunity.
+[  297.23s ->   298.23s] That is completely fine.
+[  298.23s ->   300.23s] We missed out on that one trade.
+[  300.23s ->   303.23s] There will always be more and better opportunities in the future.
+[  303.23s ->   309.23s] To improve the strategy even more you could have used the breakout probability tool that I made at this resistance.
+[  309.23s ->   313.23s] And it would have told you there was a higher chance of it rejecting than breaking through.
+[  313.23s ->   316.23s] Which would have helped you prove even more that it was about to reject.
+[  316.23s ->   321.23s] If you want to learn more about that tool, watch this video as it will help you a ton with the strategy.
+[  321.23s ->   323.23s] Thanks for watching and I'll see you guys next time.

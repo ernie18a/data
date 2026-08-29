@@ -1,0 +1,115 @@
+[    0.36s ->     1.36s] Hey guys, what's up?
+[    1.36s ->     5.60s] It's ABTrades and I run a YouTube channel where I teach people how to day trade options.
+[    5.60s ->     9.88s] I'm doing day six of the seven day strategy release.
+[    9.88s ->    14.24s] So there are seven strategies that I use to day trade the market.
+[   14.24s ->    17.92s] These seven strategies are huge.
+[   17.92s ->    22.64s] People charge money to show you how these strategies work and what they are.
+[   22.64s ->    25.24s] I'm giving them away completely free.
+[   25.24s ->    26.88s] So please like the video.
+[   26.88s ->    33.64s] Please comment if you are liking all the content and subscribe and turn on those post notifications
+[   33.64s ->    37.94s] so you can get notified of future videos because I still have one more strategy left to reveal
+[   37.94s ->    38.94s] to y'all.
+[   38.94s ->    42.74s] If you want to view the previous videos, just go back on the channel.
+[   42.74s ->    49.72s] But for now, let's go to the sixth strategy which is the Heiken Ashi Moving Average Strategy.
+[   49.72s ->    52.94s] This is less of a short term play.
+[   52.94s ->    58.94s] The other strategies that I've been mentioning have been more of an intraday timeframe, right?
+[   58.94s ->    64.00s] This will still be, can be used on an intraday timeframe but it's also used on a larger timeframe
+[   64.00s ->    65.50s] more for swing trading.
+[   65.50s ->    70.94s] You're going to take out those monthly contracts that have less theta and you're going to mainly
+[   70.94s ->    71.94s] swing trade.
+[   71.94s ->    75.94s] How do we get to this Heiken Ashi Moving Average Strategy?
+[   75.94s ->    80.62s] First, you're going to go to, on whatever platform you're using, you're going to go to the style
+[   80.62s ->    82.04s] of the candles.
+[   82.04s ->    87.00s] You're going to pick, on the candle type, you're going to pick Heiken Ashi and it's going to
+[   87.00s ->    91.00s] look a little weird for a sec but just follow me.
+[   91.00s ->    96.00s] Then you're going to go to your N indicators and you're going to go to, you can use any
+[   96.00s ->    97.00s] moving average.
+[   97.00s ->    99.00s] You can use a simple, you can use exponential.
+[   99.00s ->   105.00s] Personally, I like the exponential and I like it set at, I think it's 12.
+[  105.00s ->   108.92s] 12, is that right?
+[  108.92s ->   111.53s] Yeah, that's right.
+[  111.53s ->   112.53s] We'll see.
+[  112.53s ->   114.53s] We can adjust it if needed.
+[  114.53s ->   119.53s] As you can see, Heiken Ashi is a trend following candles.
+[  119.53s ->   122.53s] I just have to show you all.
+[  122.53s ->   129.17s] The way that Heiken Ashi works, I really want to zoom in, is it takes the movement of the
+[  129.17s ->   138.17s] candle and the bottom of the candle is the mid price between the open and the close of
+[  138.17s ->   139.17s] the previous candle.
+[  139.17s ->   144.62s] The open and the close of the previous candle is right here.
+[  144.62s ->   146.62s] The bottom of the next candle is right here.
+[  146.62s ->   151.62s] Basically, it's just showing in progression to the previous candles, are we still continuing
+[  151.62s ->   152.62s] the same trend?
+[  152.62s ->   155.62s] Heiken Ashi is used for trend following.
+[  155.62s ->   160.62s] Therefore, one, it does not work on consolidation days and it works best on a longer time frame
+[  160.62s ->   163.62s] to see the overall trend of the market.
+[  163.62s ->   168.62s] If we can see here, obviously the overall trend on Amazon today.
+[  168.62s ->   172.62s] was green bullish, right?
+[  172.62s ->   177.62s] And we can see that we are being supported by our 12 period exponential moving average.
+[  177.62s ->   180.62s] So, let me show you how this works.
+[  180.62s ->   182.74s] So, let's see.
+[  182.74s ->   185.74s] Where can we use it to its full advantage?
+[  185.74s ->   191.74s] So, I would use it on a five-minute chart or more preferably a 15-minute chart.
+[  191.74s ->   195.74s] And I think that for using this, we're not going to be able to use a 12.
+[  195.74s ->   198.74s] I would move it up to 20.
+[  198.74s ->   199.74s] Oops.
+[  199.74s ->   200.74s] Let's move it up to 20.
+[  200.74s ->   203.74s] Again, adjust, play around.
+[  203.74s ->   204.74s] There's no perfect way to do it.
+[  204.74s ->   208.74s] It all just depends on how you see success in doing it.
+[  208.74s ->   213.74s] So, if you can see here, we're basically just trading moving average crossovers, right?
+[  213.74s ->   216.74s] That's all we're doing on a trend following system.
+[  216.74s ->   222.74s] So, if we want to go long on a swing trade, you want to make sure that the candles are green
+[  222.74s ->   227.74s] and they're showing a trending upward and it's above the EMA, basically about it, right?
+[  227.74s ->   237.74s] So, if we can see here, we're coming in and on the day, we are pushing above and we're holding this 20-period moving average EMA.
+[  237.74s ->   238.74s] We're showing green.
+[  238.74s ->   242.74s] We enter above pre-market highs, right?
+[  242.74s ->   245.74s] And we're going to swing trade it and we're going to hold it, right?
+[  245.74s ->   247.74s] A nice hold play.
+[  247.74s ->   248.74s] It's great.
+[  248.74s ->   254.74s] We start to break below and then we're really starting to hold below.
+[  254.74s ->   255.74s] So, right?
+[  255.74s ->   258.74s] You enter and you trade to the downside.
+[  258.74s ->   260.74s] Let me move it out further.
+[  260.74s ->   262.74s] Let's see what time frame can we pick up.
+[  262.74s ->   266.74s] Let's pick up a 30-minute and let's go out to 90 days.
+[  266.74s ->   269.74s] Alright, now you can really see it start to play out here.
+[  269.74s ->   271.74s] You see where all the red is?
+[  271.74s ->   273.74s] That's where you enter for a put.
+[  273.74s ->   274.74s] You see where all the green is?
+[  274.74s ->   275.74s] That's where you enter it.
+[  275.74s ->   277.74s] It just makes trend following a lot easier.
+[  277.74s ->   280.74s] But you're also trading with the moving average crossover.
+[  280.74s ->   283.74s] So, as you can see here, it's best for catching dip bounces.
+[  283.74s ->   287.74s] So, we know that 15,000 is the support for Amazon.
+[  287.74s ->   288.74s] We see it start to bounce.
+[  288.74s ->   290.74s] It crosses above the EMA.
+[  290.74s ->   293.74s] And then it's still holding the green trend.
+[  293.74s ->   295.74s] So, we trade it to the upside, right?
+[  295.74s ->   296.74s] It's that simple.
+[  296.74s ->   300.74s] And then when we start to reverse, it cracks below and we trade it down to the downside.
+[  300.74s ->   302.74s] Let's see it on spot.
+[  302.74s ->   306.06s] So, if you can see here, we zoom in.
+[  306.06s ->   308.06s] We know that we have a double bottom support here.
+[  308.06s ->   312.06s] We cross below it with green candles and we hold it and we trade it up.
+[  312.06s ->   316.06s] We know there's a resistance here at 274.50.
+[  316.06s ->   318.06s] It crosses below the EMA.
+[  318.06s ->   321.06s] You trade it to the downside.
+[  321.06s ->   326.06s] So, it's best to play on bounces where you know that there's going to be a previous support
+[  326.06s ->   330.06s] or a previous resistance in play and you just trade it for the long run.
+[  330.06s ->   336.06s] Now, when you're trading long runs, make sure you are at least 45 days out in expiration
+[  336.06s ->   338.06s] for your options contract.
+[  338.06s ->   343.06s] Again, if that doesn't make sense, this is the sixth video in the seven days.
+[  343.06s ->   347.06s] And after the seven days of strategy, I'm going to go specifically in depth into options
+[  347.06s ->   348.06s] and explaining how that works.
+[  348.06s ->   353.06s] So, if this does not make sense, since you're 45 days out from expiration,
+[  353.06s ->   355.06s] you should understand more videos coming soon.
+[  355.06s ->   358.06s] So, please make sure to subscribe and turn on those alerts.
+[  358.06s ->   359.06s] Alright, guys.
+[  359.06s ->   364.06s] I hope that makes sense and I hope you can learn to take advantage of writing trends,
+[  364.06s ->   369.06s] longer term trends, intraday trends using Heiken Ashi.
+[  369.06s ->   376.06s] It's a very good system if you just want to test with the EMA links and simple moving average links.
+[  376.06s ->   382.06s] This is how I traded Forex a few times because the Heiken Ashi,
+[  382.06s ->   384.06s] you just find the trend and you trade the trend.
+[  384.06s ->   385.06s] The trend is always your friend.
+[  385.06s ->   386.06s] Alright, guys.
+[  386.06s ->   391.06s] I hope you learned something and see you all tomorrow for the seventh strategy.

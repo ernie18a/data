@@ -1,0 +1,120 @@
+[    0.00s ->     3.70s] Hey guys, one of the scariest things just happened in the market today.
+[    3.82s ->     7.56s] It's called a liquidity vacuum, where you're trying to get out of trades,
+[    7.62s ->    10.22s] but no matter what you do, no matter what limit price you set,
+[   10.28s ->    11.80s] you cannot get out of trades.
+[   12.00s ->    14.78s] This is the first time I've ever experienced this trading options
+[   14.78s ->    18.44s] in my literally six years of trading, and this is why.
+[   18.50s ->    21.86s] I want to show you why it happened, how to see it coming in the future,
+[   22.16s ->    25.62s] and how to get out of positions or save yourself in this event.
+[   25.76s ->    29.12s] So what this was, was a spike of VIX.
+[   29.12s ->    31.96s] So we've had a lot of news in the market, just the market crashing.
+[   32.46s ->    35.68s] We've had President Biden saying he's going to step down and not run,
+[   35.80s ->    40.60s] and then we had a huge international crisis and issue with their foreign markets
+[   40.60s ->    42.18s] that then affected this market.
+[   42.42s ->    45.22s] And what we see here is over the last three trading days,
+[   45.70s ->    50.40s] VIX, the volatility index, went up over 300%.
+[   50.40s ->    55.42s] Guys, look, if we see here from August 1st all the way up to today, Monday,
+[   55.42s ->    59.42s] that's a 305% increase in three trading days.
+[   59.48s ->    64.24s] But where it was really bad was today, August 5th, and last night as well.
+[   64.48s ->    66.58s] This created a liquidity vacuum.
+[   66.86s ->    68.06s] What do I mean by this?
+[   68.32s ->    71.10s] I mean that volatility spiked so much,
+[   71.36s ->    75.88s] requiring the buying power of all these futures options to skyrocket,
+[   76.28s ->    78.26s] making all these trades want to exit,
+[   78.26s ->    83.04s] and this volume kind of pulled out all the volume from the market
+[   83.04s ->    86.28s] because they all exited their positions overnight, most of them.
+[   86.70s ->    89.74s] And then what happened was there were no buyers in the market.
+[   90.22s ->    92.82s] And so this really affected micro futures.
+[   93.32s ->    95.68s] So what is the first thing we want to learn from this?
+[   95.86s ->    98.18s] Well, first off, if we're looking at this event here,
+[   98.50s ->   102.66s] this is very uncommon, but it does not mean it cannot and will not happen again.
+[  102.96s ->   103.16s] Right?
+[  103.16s ->   107.28s] If we look at our band here, which shows us a two-standard deviation move,
+[  107.44s ->   111.04s] which encompasses 70% to 80% of normal trading volume,
+[  111.34s ->   116.18s] we skyrocketed past this two-standard deviation move.
+[  116.38s ->   120.96s] We haven't had a move this high until 2018 and 2020.
+[  121.30s ->   126.94s] And even in 2020, the market didn't go up this much in a single day.
+[  127.06s ->   128.64s] It went up slowly but surely,
+[  128.64s ->   132.60s] which is why 1-1-2s and hedges can survive in this type of market.
+[  132.60s ->   137.00s] But when you have volatility skyrocket this high in a single day,
+[  137.10s ->   139.22s] you get snapped out of all your trades.
+[  139.54s ->   143.04s] And then because all the traders got pulled out of their trades,
+[  143.26s ->   144.64s] no one wanted to reenter.
+[  145.08s ->   149.20s] And so there was no volume to exit current positions,
+[  149.36s ->   151.18s] especially if you're trading on lower assets.
+[  151.44s ->   152.86s] So how did this work?
+[  152.90s ->   156.00s] Well, let's take a look at what the current tradings are doing on MES.
+[  156.80s ->   158.36s] So we take a look at MES here.
+[  158.62s ->   159.64s] This is live trading.
+[  159.84s ->   160.98s] We can watch these updates.
+[  160.98s ->   163.02s] As you can see here, the ask price,
+[  163.28s ->   165.66s] which is where sellers want to sell their contracts,
+[  165.90s ->   168.28s] and the bid price is where buyers want to buy,
+[  168.56s ->   170.26s] is a huge discrepancy.
+[  170.34s ->   172.06s] You can see here, 162, 152.
+[  172.12s ->   175.16s] But if you wait, it keeps fluctuating in between.
+[  175.26s ->   181.40s] You can see here that it gaps down to $13, $5, $1.90 to 162.
+[  181.40s ->   187.00s] So buyers say that they want to buy it at $2 and sellers are saying they want to sell it at 162.
+[  187.12s ->   194.32s] This huge difference, it's really hard to get a fill because the distance between is too wide to come up with a good price.
+[  194.60s ->   196.50s] And so you can't get your trades to fill.
+[  196.80s ->   203.22s] Especially if you have things like spreads where now you need two independent options to work together to close it.
+[  203.22s ->   208.88s] It's so hard because the spread, which is that wide, now doubles because you have two options contracts.
+[  209.26s ->   212.00s] So how in the world can we deal with something like this?
+[  212.36s ->   217.72s] Number one, what we can look at is we can look at VIX to predict this from happening again.
+[  217.72s ->   228.06s] If we see VIX start to trend up, see VIX start to move higher, we can slowly start to hedge our positions and or cut off our buying power.
+[  228.26s ->   229.14s] What does that mean?
+[  229.20s ->   239.00s] It means that if you have a 1-1-2 trade like this, all the buying power that's being required and taken for your account comes from these two short puts.
+[  239.36s ->   243.68s] So again, if we see VIX slowly starting to spike up again like this,
+[  243.68s ->   252.22s] what we can do is we can X out the two short puts and close them, freeing up a lot of buying power and leaving us with a put debit spread hedge on.
+[  252.52s ->   258.94s] And even if we're closing it for a loss, at least we're going to save some from a volatility spike.
+[  259.26s ->   263.96s] Now again, something like this is not something you should fear every single time because this very rarely happens.
+[  264.18s ->   268.98s] But good news is again, when the volatility spiked here, most of us got out of our stop losses.
+[  268.98s ->   273.80s] But again, smaller assets like MES suffered.
+[  274.32s ->   279.04s] I know a lot of traders who weren't able to get out of their positions because MES was just too difficult.
+[  279.18s ->   281.34s] The spread was too wide and there wasn't enough volume.
+[  281.66s ->   290.70s] You can see here the volume for today is in like the 20s, which is actually very ironic and hard to understand when the market's moving this much.
+[  290.70s ->   298.54s] Now if we go to a bigger asset like ES, if we look at the same thing, if we go out, I think I was trading around the 45-day mark just to get an example.
+[  298.88s ->   301.28s] You can see here we had 3,200 volume.
+[  301.44s ->   305.66s] You can see here that even when it adjusts, it stays between $5 points.
+[  305.78s ->   305.96s] Why?
+[  306.06s ->   313.30s] Because ES is just a way larger asset and so it's a lot easier to get in and out of and more people are trading it.
+[  313.64s ->   319.92s] MES, less people are trading it and because there were less people trading it and less people wanting to, that's why we had the vacuum.
+[  319.92s ->   327.58s] So something else we can learn here is, okay, if I'm trading MES because I like smaller account sizes and I like taking less risk,
+[  327.94s ->   334.40s] maybe if I have a larger account, maybe size up and go to ES and put on more hedges so that you can kind of do that
+[  334.40s ->   340.92s] or structure the ES trade in a way that requires less buying power so you can have that enhanced liquidity
+[  340.92s ->   345.78s] or you can go to an asset like SPY, which is already going to be less volume.
+[  345.78s ->   350.74s] Now, I know that means you give up your tax efficiency and other things like that that comes with futures options,
+[  350.90s ->   357.10s] but at least you won't get stuck in these bad trades where traders have lost hundreds if not thousands of dollars
+[  357.10s ->   358.52s] because they weren't able to exit.
+[  358.94s ->   368.38s] And so again, this liquidity volume or I should say vacuum happens with the assets that are not traded as actively.
+[  368.38s ->   369.86s] So ES was fine.
+[  370.12s ->   375.86s] I had a CL position that was closed by my options auto trader automatically for me last night.
+[  375.96s ->   381.48s] So I know that CL was fine for the most part, but MES was the one that suffered the most.
+[  381.56s ->   386.94s] So if you trade MES, consider going to ES with hedges or if your account is still too small, go to SPY.
+[  386.94s ->   392.52s] And again, those have ample volume and ample liquidity to deal with these trades.
+[  393.00s ->   394.76s] Now, what do we do moving on from here?
+[  394.82s ->   398.94s] Because the VIX is so high, making all these options prices overstated.
+[  399.34s ->   401.30s] And so again, that's both good and bad.
+[  401.54s ->   404.32s] Now, remember, as option sellers, our goal is to sell premium.
+[  404.42s ->   406.46s] Right now, premium is higher than it's ever been.
+[  406.76s ->   410.78s] So what we want to do is we want to sell premium, but we do want to be aware of our risk levels.
+[  411.12s ->   414.86s] Again, make sure that you're risking no more than 2% per trade.
+[  414.86s ->   423.92s] I overdid that when I traded a ton of 1-1-2s, and all the stop losses kicked out all my wins that I had for the year.
+[  424.22s ->   427.20s] Now, thankfully, I was up $20,000, $25,000 this year.
+[  427.44s ->   431.88s] So when it kicked out those losses, I went back to break even, and thankfully, I went to break even.
+[  432.32s ->   434.02s] So now I can just start building again.
+[  434.34s ->   441.30s] But still, keep your trades, your stop loss, your max loss to be around a 2% risk on the overall account.
+[  441.58s ->   442.54s] That's going to help you out.
+[  442.54s ->   447.98s] Make sure your buying power stays under 50% to 40%, especially when volatility is low.
+[  448.36s ->   454.24s] Guys, if we look here, VIX was down here in the $12, $10, $8 range, which is really low.
+[  454.64s ->   458.72s] And so again, if we're that low, you might want to keep your buying power lower than 50%.
+[  458.72s ->   472.98s] Because as we saw with a spike this big, VIX going up 300%, our buying power went from, at least mine went from 30% up to 75% until I have my stop losses close out my positions.
+[  472.98s ->   475.90s] And so again, that's what we're looking at.
+[  475.98s ->   479.04s] Anyway, so moving on now, you can put on more options selling positions.
+[  479.14s ->   480.20s] That's what I will be doing.
+[  480.50s ->   491.42s] I will be actually making an in-depth video over my strategy and how I'm going to recoup those losses, what happened to my trades, and how I could have prevented it for you guys to be like,
+[  491.42s ->   500.46s] guys, I'm not perfect, this is what I messed up, and I want to show you that, and then also how I'm changing my strategy moving forward more from a buying power risk standpoint.
+[  500.90s ->   512.26s] Anyways, I just wanted to jump in and record this quick video to talk about why this vacuum of liquidity happened, the VIX spike, and things that you can do to circumnavigate it.
+[  512.26s ->   514.06s] Anyways, thank you guys so much for watching.
+[  514.18s ->   521.40s] If you enjoyed this video and want more on options selling and particularly options selling on futures, make sure to smash that subscribe button.
+[  521.66s ->   522.58s] All right, guys, see you in the next video.

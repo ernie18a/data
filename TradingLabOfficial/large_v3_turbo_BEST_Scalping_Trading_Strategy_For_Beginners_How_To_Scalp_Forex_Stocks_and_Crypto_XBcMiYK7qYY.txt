@@ -1,0 +1,116 @@
+[    0.34s ->     3.34s] I'm going to show you a strategy that involves trading with the trend.
+[    3.34s ->     7.46s] I'm going to give you a combination of indicators, a list of rules to follow, and show you a
+[    7.46s ->    11.30s] scalping strategy that has been back tested and proven to work.
+[   11.30s ->    16.34s] It works with almost all markets, all time frames, and most importantly, it works.
+[   16.34s ->    20.74s] What I see a lot of people doing is trying to buy the absolute low on a downtrend, and
+[   20.74s ->    23.46s] trying to hit that exact point of a reversal.
+[   23.46s ->    27.40s] And while yes it would be nice to hit that exact point of a downwards reversal, and make
+[   27.40s ->    32.34s] a ton of money when it reverses, it's extremely unlikely you'll find that exact point the
+[   32.34s ->    33.54s] majority of the time.
+[   33.54s ->    38.20s] If you've watched my videos before, I'm all about probability and success rate.
+[   38.20s ->    41.52s] I'm a huge fan of trading with the chart, not against it.
+[   41.52s ->    45.82s] What I mean by that is that I will only enter trades if the chart is in an uptrend.
+[   45.82s ->    49.06s] With all that said, let's get started with this strategy.
+[   49.06s ->    53.46s] Rule number one, and probably the most important rule, is that we will only be trading with
+[   53.46s ->    54.46s] the trend.
+[   54.46s ->    55.46s] At least with this strategy.
+[   55.46s ->    60.80s] You may be asking yourself, how do I know if a chart is in an uptrend or a downtrend?
+[   60.80s ->    62.30s] Well, it's pretty simple.
+[   62.30s ->    67.46s] Just go to trading view, click the indicators tab, and type in EMA for exponential moving
+[   67.46s ->    68.46s] average.
+[   68.46s ->    72.36s] Then, go to the settings of the indicator, and change the length to 200.
+[   72.36s ->    74.98s] This will give us a 200 day moving average.
+[   74.98s ->    79.72s] I'm also going to change my line to red just so you can see it better, but this is optional.
+[   79.72s ->    84.30s] So with this strategy, we will only enter a trade if the chart is in an uptrend.
+[   84.30s ->    88.64s] Which means, we will only enter a trade if the price is above the 200 day line.
+[   88.64s ->    92.92s] If the price is below the 200 day line, we will not enter the trade.
+[   92.92s ->    96.98s] So this is the first rule of the strategy, you must be trading with the trend.
+[   96.98s ->   101.64s] Meaning, we will only enter a trade if the price is above the 200 day line.
+[  101.64s ->   105.92s] Now that we know rule number one, let's move on to the rest of the rules that must be met
+[  105.92s ->   108.04s] in order for you to enter the trade.
+[  108.04s ->   112.84s] Rule number two involves using the RSI indicator, but with a twist.
+[  112.84s ->   116.76s] Go to the indicators tab and type in RSI divergence.
+[  116.76s ->   118.70s] Make sure to pick this one right here.
+[  118.70s ->   120.78s] Next, we're going to change the settings a bit.
+[  120.78s ->   125.60s] Go to the settings, then uncheck these bottom three checkboxes, so this will clean our chart
+[  125.60s ->   126.60s] up a bit.
+[  126.60s ->   131.98s] Then, go to the middle line tab and change the color to white and make it a solid line.
+[  131.98s ->   133.78s] This is just so it's easier to see.
+[  133.78s ->   139.54s] Now usually, the RSI indicator is used for seeing if the market is overbought or oversold.
+[  139.54s ->   143.54s] But in this strategy, we're going to be using it to find momentum in the market.
+[  143.54s ->   148.94s] So rule number two is that we will only enter a trade if the RSI line is above the middle
+[  148.94s ->   150.00s] white line.
+[  150.00s ->   155.62s] If all the other rules are met and the RSI is below the line, we will not enter the trade.
+[  155.62s ->   161.18s] The cool thing about this customized RSI indicator is that it also shows divergence.
+[  161.18s ->   165.12s] If you don't know what divergence is, to put it simply without going too in depth,
+[  165.12s ->   169.46s] it's basically when the price is moving in the opposite direction as the indicator.
+[  169.46s ->   174.42s] So if you're seeing higher highs on the chart and lower highs on the RSI, that's
+[  174.42s ->   175.42s] divergence.
+[  175.42s ->   179.94s] The cool thing about this RSI indicator is it will automatically show us if bullish divergence
+[  179.94s ->   180.94s] is occurring.
+[  180.94s ->   186.10s] As a quick disclaimer though, I've seen this indicator messed up and not show divergence sometimes,
+[  186.10s ->   188.38s] so you may have to look yourself a time or two.
+[  188.38s ->   192.20s] Just keep that in the back of your head, but nonetheless, this is a great indicator.
+[  192.20s ->   196.54s] So this bullish divergence is not exactly a rule that we have to follow, but it's a
+[  196.54s ->   200.30s] great sign if you see it when all the other rules are aligned.
+[  200.30s ->   201.72s] Let's move to rule number three.
+[  201.72s ->   206.44s] If you've watched my other videos before, you probably know I love momentum candles.
+[  206.44s ->   209.38s] This can be a great way to find the start of a trend.
+[  209.38s ->   214.56s] The specific momentum candle we're going to be looking for is what is called an engulfing candle.
+[  214.56s ->   219.44s] To put it simply, an engulfing candle is a candle where it engulfs the previous candle.
+[  219.44s ->   224.56s] A bullish engulfing candle opens at, or lower than, the previous candle's close.
+[  224.56s ->   229.22s] The length of the bullish candle's body engulfs the previous red candle.
+[  229.22s ->   233.56s] Then the bullish candle closes above the previous candle's open.
+[  233.56s ->   238.28s] This is an engulfing candle, and it's a great way to find the start of a trend.
+[  238.28s ->   242.04s] Instead of looking for this candle ourselves and just looking at the chart all day, we're
+[  242.04s ->   244.68s] going to let an indicator do the work for us.
+[  244.68s ->   248.18s] Go to the indicators tab and type in engulfing candle.
+[  248.18s ->   250.00s] You're going to choose this one right here.
+[  250.00s ->   253.40s] When you add it, you're going to be seeing a bunch of red and green arrows.
+[  253.40s ->   257.10s] Since we're going to be doing long trades in this example, you can just disregard the
+[  257.10s ->   258.10s] red arrows.
+[  258.10s ->   262.08s] So all of these green arrows are bullish engulfing candles.
+[  262.08s ->   266.56s] Rule number three is we will only enter a trade if we see a green arrow.
+[  266.56s ->   269.44s] So let's go over what a successful trade would look like.
+[  269.44s ->   270.44s] 1.
+[  270.44s ->   274.96s] We see the price is over the 200 day line, which implies the chart isn't an uptrend,
+[  274.96s ->   276.84s] so so far so good.
+[  276.84s ->   282.94s] We then make sure the RSI line is above the 50 mark, which it is, so we're all good there.
+[  282.94s ->   288.10s] We do not need to see a bullish divergence, but if we do see one, it's a plus 1 and makes
+[  288.10s ->   290.26s] this trade even more bullish.
+[  290.26s ->   295.36s] Next we look for a green arrow, which I should also mention right now we will only enter the
+[  295.36s ->   298.24s] trade after the green arrow candle closes.
+[  298.24s ->   303.60s] I repeat, only enter after the green arrow candle closes.
+[  303.60s ->   308.46s] This candle could show a green arrow, but then change while the candle is still forming,
+[  308.46s ->   311.84s] and not end up being an engulfing candle when it closes.
+[  311.84s ->   316.28s] So once the candle closes, and there is a green arrow, we will enter the trade then.
+[  316.28s ->   321.82s] For this specific strategy, we will set our stop loss 2 times the length of the entry candle.
+[  321.82s ->   324.70s] We then set our take profit to a 2 to 1 ratio.
+[  324.70s ->   329.32s] It's that simple, and boom, as you can see, the price hits our mark.
+[  329.32s ->   333.44s] Now if you're one of those people who gets panicked easily, or gets out of trades too
+[  333.44s ->   338.18s] early or late, literally just set your take profit, set your stop loss, and just close
+[  338.18s ->   341.16s] your computer, and let the strategy do its work.
+[  341.16s ->   345.82s] This will help you stop trading emotionally and selling too early, or even worse, getting
+[  345.82s ->   347.94s] greedy and moving your take profit.
+[  347.94s ->   353.06s] It is also important to note, you probably won't be trading every day with this strategy,
+[  353.06s ->   355.26s] since we're only trading with the trend.
+[  355.26s ->   359.48s] The chart isn't going to be in a trend 100% of the time, so there will be days where you
+[  359.48s ->   361.50s] simply won't be able to trade.
+[  361.50s ->   365.94s] This is ok, you just need to understand that this is a thing, and you will only trade when
+[  365.94s ->   368.50s] the market is working for you, not against you.
+[  368.50s ->   370.36s] Let's do one more example.
+[  370.36s ->   373.30s] First we make sure our price is above the 200 day line.
+[  373.30s ->   376.48s] We then make sure the RSI is above the 50 line.
+[  376.48s ->   382.88s] We also see that the RSI has a bullish divergence, which is not needed, but it increases the chance
+[  382.88s ->   386.20s] that this will be a winning trade, so that's good.
+[  386.20s ->   391.76s] Then we see a candle with a green arrow under it, indicating it's a bullish engulfing candle.
+[  391.76s ->   394.62s] We then wait for that specific candle to close.
+[  394.62s ->   396.66s] Once it does, we enter the trade.
+[  396.66s ->   400.30s] We set our stop loss 2 times the length of the engulfing candle.
+[  400.30s ->   404.14s] Then put our take profit mark to a to profit ratio, then wait.
+[  404.14s ->   408.06s] We see the price move up, hit our take profit mark, and we exit the trade.
+[  408.06s ->   413.10s] I just showed you a successful trading strategy that works great because you trade with a trend.
+[  413.10s ->   417.36s] All I ask in return is if you take 2 seconds out of your day and like this video.
+[  417.36s ->   420.54s] It seriously means the world to me and helps me out so much.
+[  420.54s ->   425.32s] If you want to see my secret strategy to avoid false breakouts, watch this video because
+[  425.32s ->   433.08s] there are some pretty insane hidden gems in there that will improve your trading so much.

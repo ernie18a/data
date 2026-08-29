@@ -1,0 +1,116 @@
+[    0.00s ->     4.60s] Credit spreads are tailor-made for growing small accounts and for people who are busy with other
+[    4.60s ->    10.02s] obligations like work. First, if you don't know what credit spreads are, pause this video and
+[   10.02s ->    14.70s] check out this tutorial linked in the upper right hand corner. After watching that, then come back
+[   14.70s ->    27.76s] to this video. So on 111, I opened up a 4810, 4815 call credit spread on SPX. I collected a total
+[   27.76s ->    40.36s] credit of $105 per spread. I sold six of them. So I collected a total of $630. I sold this for an
+[   40.36s ->    51.39s] expiry of 118 one week later. This expired out of the money on 118 and I collected this full profit
+[   51.39s ->    59.79s] of $630. My max loss here would be $500 times six because I sold six of them, which
+[   59.79s ->    64.61s] will be $3,000, which is the total number of collateral that I would own minus the 630,
+[   65.09s ->    76.43s] which means that my max loss would actually be $2,370. So this equals my max loss, right?
+[   77.73s ->    82.09s] Obviously, if you did no trade management, this would be the worst case scenario. But on this
+[   82.09s ->    87.39s] channel, as you'll see later on in the video, we'll never risk this much money. That's actually
+[   87.39s ->    91.81s] insane. We'll use a little bit of simple risk manager to make sure that you never lose more
+[   91.81s ->    99.85s] than you can earn, which will be $630. I basically made $630 while risking $2370, which is around a
+[   99.85s ->   107.09s] 25% return on investment. You can also take it over $3,000. At that case, it's slightly less than
+[  107.09s ->   119.69s] 20%. It's around 20%. So the next trade that I took was a 118 SPX 4720, 4715 put credit spread
+[  119.69s ->   129.43s] expiring for a week later on January 25th. Okay. So for this, I collected a credit of $85
+[  129.43s ->   138.45s] spread and I sold six of them like before, which means that I collected $510 of credit for those
+[  138.45s ->   147.27s] six spreads. This one also expired out of the money on 125, which means that my max profit was this
+[  147.27s ->   153.97s] $510 that I collected initially when I opened the spread. So I made max profit here. Again,
+[  153.97s ->   161.28s] if you want to do the max loss, it would be your $3,000 minus your total credit collected,
+[  161.50s ->   168.54s] which would be $2490. Over the span of these two weeks, we had two winning trades. One for a total
+[  168.54s ->   179.51s] win, $630. And then the second one, $510, right? So which means that we made a total profit $1,140
+[  179.51s ->   186.49s] over these two weeks. Now, if you just did some quick calculation, right, we basically risk
+[  186.49s ->   194.64s] approximately 2,500 bucks over these last two weeks because we traded twice, but they both expired
+[  194.64s ->   205.95s] out the money. So our total return on investment is 1140 over 2,500, which is around 45%. If you have
+[  205.95s ->   210.29s] good knowledge of how to trade credit spreads, you can do this semi passively. I'll show you guys later
+[  210.29s ->   216.21s] on in the charts, how passive this can be. If you understand the next three concepts,
+[  216.35s ->   221.29s] it really makes trading credit spreads much easier and much more passive. So number one,
+[  221.43s ->   228.73s] we have to understand what the trend is. The trend is basically to tell you what historically the market
+[  228.73s ->   234.57s] has done in this timeframe, right? Has it gone up? Has it gone down? Has it gone sideways? Normally
+[  234.57s ->   241.66s] speaking, we would always want to trade the trend. And this is what I recommend beginners do because
+[  241.66s ->   245.52s] this is the easiest thing to do is just trade the trend. Now, now that you know the trend,
+[  245.72s ->   249.40s] right, whether it's going up or down or going sideways, then you have to figure out an area
+[  249.40s ->   256.42s] where you feel comfortable selling a credit spread or buying an option, right? This is an area where you
+[  256.42s ->   263.67s] want to try and maximize your profit and increase your chance of winning. But you want to wait for
+[  263.67s ->   268.81s] these areas. And as you'll see later on, where a lot of the market will confirm or reject your
+[  268.81s ->   274.87s] hypothesis. And you'll actually end up minimizing your risk, right? You want to maximize your profit
+[  274.87s ->   280.39s] and minimize your risk. And I spelled that wrong. Whoops. And lastly, this is probably the most
+[  280.39s ->   286.67s] intricate one. You want to look for a criteria of entry, right? A signal, a trigger signal to be like,
+[  286.81s ->   293.70s] yes, my hypothesis has been confirmed. This is the trade that I want to take. This again is to
+[  293.70s ->   300.24s] minimize your risk because you don't want to willy-nilly trade something and have it go the
+[  300.24s ->   305.26s] opposite direction of what you're looking for. So these three steps will help you minimize your
+[  305.26s ->   310.00s] overall risk and honestly help you maximize the amount of credit that you can collect from selling
+[  310.00s ->   314.40s] credit spread. Let's take those three principles that we just talked about, trend, area of interest,
+[  314.64s ->   319.46s] and criterias of entry, and see them in action in the trades that I took. So the first one I want to
+[  319.46s ->   326.70s] talk about is the 111 call credit spread that I sold on SPX. Let's talk about what the trend is
+[  326.70s ->   332.80s] on this day, right? This is SPX on the daily. So the market ever since probably October of last year
+[  332.80s ->   337.60s] of 2023 has been an uptrend. It's pretty obvious, right? It goes from a low and really never formed
+[  337.60s ->   343.62s] another low and just kept going up. If you were to go down a timeframe, a high to a low, and now it's
+[  343.62s ->   351.66s] formed a higher high. So the trend is up. Now, when we're trading weeklies, we have to be a little
+[  351.66s ->   357.16s] bit more cognizant of the short-term trend. And now this is where areas of interest really come into
+[  357.16s ->   363.34s] play. So since we're on the four-hour, you'll see this on the daily as well. This area right here,
+[  363.62s ->   370.54s] 47.80 area where this little gray box is, but I'll make it a little bit bigger for us, is potentially
+[  370.54s ->   375.38s] an area of what we call resistance. Why do you call it a resistance? Because at this level right
+[  375.38s ->   379.84s] here on this day, this is what we call a bearish engulfing candlestick. The market reversed,
+[  380.24s ->   386.72s] came back up, retested it, came back down, right? Into this 46.80 level as support bounced back up.
+[  386.96s ->   393.80s] And on this day, on January 11th, again, you'll see that it re-entered this area and formed another
+[  393.80s ->   400.87s] bearish candlestick. You can see right here, A, the area that we're looking at is somewhere
+[  400.87s ->   406.75s] around here. That's an area of resistance. So this is, let's just drop it down to the 30 now.
+[  406.93s ->   412.19s] This is the day before, January 10th. You can see the market entered this level and subsequently had
+[  412.19s ->   415.69s] a little bit of selling pressure. And this is what you'll see in areas of resistances.
+[  416.07s ->   419.49s] The last one is criteria entry. Because there's really two outcomes. The market can either
+[  419.49s ->   424.74s] continue its bullish trend up, right? And break past this area of resistance. And that way we would
+[  424.74s ->   430.12s] take a bullish trade or it will break down and we would take a bearish trade. Now, how do we know that?
+[  430.12s ->   435.22s] A good indication is what we would call either buying pressure or selling pressure. If this
+[  435.22s ->   440.06s] candlestick, for example, closes above this area of resistance, then it would be a very strong
+[  440.06s ->   445.12s] bullish signal, right? There's buying power coming in. Now, if a signal kind of like this, two consecutive
+[  445.12s ->   452.68s] bearish candlesticks came in on that 111, then you can kind of assume that this is a criteria of entry
+[  452.68s ->   457.18s] that has fulfilled and we can take a bearish trade, right? And so this is exactly what happened.
+[  457.18s ->   462.68s] On 111, you saw 7 o'clock in the morning Pacific time. The market formed two consecutive lower
+[  462.68s ->   470.12s] candlesticks and formed a bearish signal. Now, why did I sell it at 4810 and 4815? I could have sold
+[  470.12s ->   476.76s] at 4800 to be honest with you, but I like to do around 180 above my area of resistance if I'm trading
+[  476.76s ->   481.20s] the opposite direction of the trend. I'm trading bear into an uptrend. So I want to make sure that
+[  481.20s ->   487.20s] I give myself a little bit room for error in case the market went up and I got faked out.
+[  487.46s ->   494.02s] So you can see the market did come up and retest this area, right? And subsequently sold off again
+[  494.02s ->   500.30s] on 112. So this is where we want to talk a little bit about trade management. So how do I know that
+[  500.30s ->   505.26s] the trade has lost, right? We talked about this a little earlier. If the market decided to go up,
+[  505.70s ->   510.30s] for example, on this day and close above it and have another candlestick above that, then I'm out.
+[  510.30s ->   517.40s] So my stop loss is always 180 above the resistance. So in this case, it'll be around 4810. Remember,
+[  517.46s ->   521.70s] that's where I sold my credit spread. Because the market never closed above 4810, even though it
+[  521.70s ->   530.64s] entered that day on Friday, which is 112, I never got stopped out. And then on 117, on 118, which would
+[  530.64s ->   538.12s] be here at close, we were actually out of the money, even though the market was at 4780. Now let's take a
+[  538.12s ->   545.56s] look at the second trade, which is on 118. Now on 118, because I know that this is also an area of
+[  545.56s ->   551.36s] support, right? Let's go back to the daily. The trend is up on 118. So we know that it's highly likely
+[  551.36s ->   556.30s] that the market may continue to go up, right? We want to trade the trend because the trend is our
+[  556.30s ->   562.86s] friend. An area of support is here at 4692. And another area of support might potentially be 4718
+[  562.86s ->   568.58s] to around 4682. That's an area of support. The market may bounce up off of that. So what we're
+[  568.58s ->   573.34s] looking for is basically a bullish signal for us to do so. So let's drop it down to the 30 minutes.
+[  573.40s ->   577.88s] How do we know that the trend continues? One is actually pretty simple. The pattern goes from a
+[  577.88s ->   583.74s] high to a low to a high to a lower low, right? Now to a high and it formed a higher low. And this
+[  583.74s ->   586.90s] pattern right here is actually one of my favorite patterns to trade. That's what we call a bullish
+[  586.90s ->   591.90s] engulfing candlestick into an area of support. Because it formed a higher low, right? And it
+[  591.90s ->   597.72s] pushed up, we can see that the trend has continued to go. Now because I have to work, right? I couldn't
+[  597.72s ->   601.52s] take this trade immediately. But if you wanted to, this would be the best trade to take. You would
+[  601.52s ->   606.42s] sell it on this candlestick open at 11 o'clock because it opened up higher. Now because I didn't
+[  606.42s ->   611.14s] have time to look at my phone now. And so basically I sold at below the previous support, which is 4810,
+[  611.14s ->   614.98s] 4815. Theoretically speaking, in hindsight, because the trend is up, I could have sold below
+[  614.98s ->   621.36s] this one, which is 4740, 4735, for example. I would have made a lot more money. You can do the
+[  621.36s ->   625.34s] same thing either here or here. Either one works because you're expecting the trend to continue,
+[  625.44s ->   628.92s] right? The trend is up. Now the short-term trend is now up and the long-term trend is also up.
+[  629.40s ->   635.64s] Until it expired on 425, it ended at 4880. Remember we sold it at 4720. So we're way out of the money.
+[  635.64s ->   641.60s] Okay. Revisit the first trade. First trade, if I got stopped at 4810, I probably would have lost
+[  641.60s ->   648.04s] maybe 50 bucks per spread, maybe a little bit more. So I'd never risk the max. And same thing here,
+[  648.20s ->   654.00s] my stop loss would have been below this by 180, so around 4730. So if it ever did drop below 4730,
+[  654.04s ->   660.34s] I would probably incur a $50 loss. Okay. So that's basically the trade made 1140 or 45%,
+[  660.34s ->   664.00s] which is really, really good. Obviously you're not going to win every single trade, but if you follow
+[  664.00s ->   668.00s] those three principles, you can sell credit spreads relatively passively. I didn't really
+[  668.00s ->   672.40s] have to look at this ever because it never hit my stop loss. I never exited. I never had to worry
+[  672.40s ->   677.48s] about it. And the trade just expired out of money a week after. And this is the power of understanding
+[  677.48s ->   681.68s] how to trade options, the power of understanding price action, and being able to lever your time
+[  681.68s ->   685.82s] and doing things efficiently. All right. So if you guys want to see another example of how I trade
+[  685.82s ->   689.88s] monthly credit spreads instead of weekly to make things even more passive, make sure you guys check
+[  689.88s ->   694.66s] out this video where I make 60% in a month. And if you guys are interested in learning more,
+[  694.72s ->   697.66s] make sure you guys subscribe. If you have any comments, drop a comment down in the comment
+[  697.66s ->   700.62s] section below. And if you guys liked this video, obviously press the thumbs up button,
+[  700.80s ->   704.26s] really help the channel out. Until next time, stay safe in the market. Peace.

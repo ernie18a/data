@@ -1,0 +1,49 @@
+[    0.56s ->     5.80s] Hey guys, what's up? It's AP Trades and I wanted to talk about an indicator that I found that is
+[    5.80s ->    11.76s] very useful for my type of trading. Again, this may not be useful for you, but I think it is very
+[   11.76s ->    17.38s] useful if you want to capitalize on it. So when it comes down to purely technically trading,
+[   17.98s ->    22.36s] we're looking at support and resistance levels, we're looking at volume, we're looking at time
+[   22.36s ->    28.68s] and sales, and we're looking at the level two of the stock or the ETF. So something that I
+[   28.68s ->    34.42s] personally do is I would chart out the major support levels over the previous intradays
+[   34.42s ->    41.66s] or the previous multi-day time frame. So for example, like, hey, look, this is a major level,
+[   41.72s ->    47.12s] I'm going to watch this level, or I know that this level is significant because blank,
+[   47.42s ->    53.34s] and I pull that from pre-market support and resistance as well as major support and resistance
+[   53.34s ->    59.50s] that was active in the last day. But an indicator that I found, you click on this little studies
+[   59.50s ->    66.18s] chart on the Thinkers1 platform provided by TD Ameritrade, you go to studies, and you type in
+[   66.18s ->    74.56s] daily, high, low. You can also do daily open, which is fine. I mean, you can use it. But the one that we
+[   74.56s ->    81.10s] are focusing on today in this video is daily, high, and low. So I used to, of course, you click that,
+[   81.10s ->    87.54s] and it brings it up. You click apply, blah, blah, blah, whatever. So I've been doing this mainly
+[   87.54s ->    94.68s] for, like, myself. But I found the indicator of the study for it, so I just wanted to share.
+[   95.26s ->   100.98s] So, and I just wanted to show that, look, it charts out the high and low from the previous day.
+[  101.40s ->   108.78s] And you can see how clearly it tries to respect these lines most of the time. And when I charted this,
+[  108.78s ->   118.56s] today is Tuesday, September 11th. Oh, yeah, 9-11. Thank you so much for the first responders and
+[  118.56s ->   123.50s] everybody who responded to that. And it's a tragedy for everyone who went through that.
+[  125.76s ->   130.84s] I just have to say that because I am truly sorry because people, I know this is off tangent,
+[  131.04s ->   137.24s] but I just remembered, people have been infected from the debris and everything that went on in that,
+[  137.24s ->   143.70s] that the amount of people who died during 9-11, there is that many plus more who are dying from
+[  143.70s ->   148.68s] the after effects of it, from breathing in all that stuff. And there's research being done to try
+[  148.68s ->   155.70s] to help these people. So I just want to say that I hope the doctors can do everything. And thank you
+[  155.70s ->   162.28s] for trying to help rescue people. And I will be praying over you and your health. Back to trading.
+[  162.28s ->   168.74s] Sorry about that. When we look at the high and lows from the previous day, we can see that SPY
+[  168.74s ->   174.40s] comes down, hits that 287 level from today, which is a major support. That is from where the February
+[  174.40s ->   184.62s] high was if we go back to the four-hour chart before the massive sell-off or correction in the S&P 500
+[  184.62s ->   190.90s] market. So we come down and buyers step in because we do not want it to drop below that point or else we're
+[  190.90s ->   195.36s] going to see a lot of selling in the market, which is what investors are not wanting at the moment.
+[  195.36s ->   199.38s] We want to see sell-offs around December when people are getting tired, but not right now.
+[  199.76s ->   205.90s] So we see this bounce around 2887 and we push straight through this previous low and then we
+[  205.90s ->   210.32s] bounce right off of that and then we push straight through and then it looks like this daily high is
+[  210.32s ->   217.36s] acting as support. And it's just funny just to see how well the daily high and lows work from the
+[  217.36s ->   224.30s] previous day. I mean, look, you can see we have this huge push and the sell-off returned back to the
+[  224.30s ->   231.20s] previous day, daily low, et cetera, et cetera, et cetera. You see the point here. We can also do
+[  231.20s ->   237.02s] this on other stocks. Again, you want the stocks to be, I swear, don't load on me like this.
+[  237.02s ->   244.88s] Oh, I know what happened. I think the wifi is resetting. Let me do this real quick. Sorry, people.
+[  246.80s ->   253.18s] So we can do this again for other stocks. It's not just the S&P 500 index. Come on,
+[  253.24s ->   264.44s] pull me up. Apply. Oh, okay. Here we go. So we can see the daily high and lows. We push straight up to
+[  264.44s ->   270.66s] this high and then we just shot back down. And then we kind of consolidated around the previous
+[  270.66s ->   275.48s] daily low. And we can see here it works out the same for this, the same for this. Again,
+[  275.54s ->   282.68s] this is not, there's no one indicator, one strategy that will completely make sure it gives you a 100%
+[  282.68s ->   288.06s] success rate in the market. But there are indicators that can help you. For example, look, the daily low
+[  288.06s ->   293.68s] was right here at our pre-market low. So when we drop below it, that was an obvious reason. When we
+[  293.68s ->   299.10s] passed above it, we came and we tested this point because there was a daily high from the previous
+[  299.10s ->   303.68s] day. So this is not an all-in-one indicator. This is something that will really help. And I think
+[  303.68s ->   308.14s] we'll find very beneficial, especially if you are a technically based day trader. All right, guys,
+[  308.24s ->   311.76s] thank you for watching. Please like, comment, and subscribe. See you on the next video.

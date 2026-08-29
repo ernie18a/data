@@ -1,0 +1,225 @@
+[    0.36s ->     3.12s] What do hedge funds think of technical analysis?
+[    3.12s ->     5.56s] Some of them love it, and some of them hate it.
+[    5.56s ->     6.88s] Technical analysis.
+[    6.88s ->     8.64s] Some absolutely live by it, thinking
+[    8.64s ->    11.44s] treadlines, head and shoulders, support and resistances
+[   11.44s ->    13.84s] are basically the Bible of the stock market.
+[   13.84s ->    15.04s] All right, a third way I'm different.
+[   15.04s ->    16.88s] I use technical analysis.
+[   16.88s ->    18.44s] Ooh, right?
+[   18.44s ->    20.40s] And to be fair, there's a lot of traders
+[   20.40s ->    22.64s] that have made a ton of money from using just purely
+[   22.64s ->    23.76s] technical analysis.
+[   23.76s ->    25.56s] Then there's the other side, where people
+[   25.56s ->    27.52s] think technical analysis is basically
+[   27.52s ->    29.24s] astrology for traders.
+[   29.24s ->    30.68s] Sounds like a lot of
+[   30.68s ->    31.72s] Hoopla!
+[   31.72s ->    34.44s] Thinking it's just a bunch of random lines on a chart,
+[   34.44s ->    37.16s] almost like a four-year-old drawing on a wall with a marker.
+[   37.16s ->    38.68s] But who's really right here?
+[   38.68s ->    41.40s] If you went on Reddit and asked if technical analysis worked,
+[   41.40s ->    45.24s] you would instantly start an absolute brawl to the death of internet nerds
+[   45.24s ->    47.40s] fighting over why they believe they are right.
+[   47.40s ->    51.00s] But I don't want to just listen to a random 19-year-old on Reddit.
+[   51.00s ->    52.76s] Sorry, TrueDGen720.
+[   52.76s ->    55.56s] I want to listen to someone who has been in the market for decades.
+[   55.56s ->    58.04s] I want to listen to someone who deals with the transactions
+[   58.04s ->    60.84s] of billions of dollars in a 24-hour period.
+[   60.84s ->    63.24s] I want to listen to a hedge fund manager.
+[   63.24s ->    65.00s] So that's exactly what I did.
+[   65.00s ->    68.36s] I scavenged the internet for interviews with hedge fund managers,
+[   68.36s ->    70.92s] some dating back to 10 to 15 years.
+[   70.92s ->    73.24s] And oh boy, did I find some gems.
+[   73.24s ->    76.68s] I cut up to what I thought were the most interesting points in the interviews.
+[   76.68s ->    79.64s] So we could really answer the age-old question,
+[   79.64s ->    82.92s] what do hedge funds think about technical analysis?
+[   82.92s ->    84.52s] Let's get straight into it, shall we?
+[   84.52s ->    87.16s] Our first contestant is Corvin Caderlo.
+[   87.16s ->    88.76s] I think that's how you pronounce it.
+[   88.76s ->    92.68s] He's an ex-hedge fund manager and systematic trader for JP Morgan.
+[   92.68s ->    95.16s] We'll go over what he thinks about technical analysis,
+[   95.16s ->    98.04s] and then see some other hedge fund managers' responses,
+[   98.04s ->   101.08s] including what a managing director thinks about stop hunting,
+[  101.08s ->   105.88s] and what the retail investor should do to better their chances of surviving the stop hunting.
+[  105.88s ->   109.72s] An algorithmic trader that has worked with a bunch of hedge funds and his thoughts
+[  109.72s ->   114.28s] on support and resistances. And at the very end of the video, we'll go over what this guy,
+[  114.28s ->   119.16s] a man that has managed billions of dollars just himself, thinks about stop losses.
+[  119.16s ->   123.16s] So going back to Corbin, when asked what he thinks about technical analysis,
+[  123.16s ->   124.52s] this was his response.
+[  124.52s ->   126.60s] Some of them love it, and some of them hate it,
+[  126.60s ->   129.56s] and I think you have to really specify what you mean by technical analysis.
+[  129.56s ->   132.04s] If technical analysis means optically looking on the chart,
+[  132.04s ->   134.92s] and looking at heads and shoulders and stuff like that,
+[  134.92s ->   137.48s] it becomes very difficult to test.
+[  137.48s ->   140.52s] You see, you might look at this today and see it's a heads and shoulders,
+[  140.52s ->   143.08s] and in five years' time, you might see something completely different,
+[  143.08s ->   144.04s] maybe a cup with handle.
+[  144.76s ->   148.92s] What influenced you to make those choices, you can't determine, you can't test.
+[  148.92s ->   154.20s] So as long as the thing isn't, you can't write it down as a set of rules that, you know,
+[  154.20s ->   158.20s] even a guy that doesn't speak English and sits in Mongolia can replicate, then it's not.
+[  159.38s ->   161.46s] There's obviously another set of people that say,
+[  161.46s ->   166.42s] well, it's more of an art than a science, and hey, if they make money,
+[  166.42s ->   170.02s] who am I to deny another poker player's place in the sun, yeah?
+[  170.02s ->   172.34s] So ultimately, that's the really great thing about trading,
+[  172.34s ->   175.70s] regardless of how you manage to get that black number at the end of the year,
+[  175.70s ->   177.54s] that's ultimately all that matters.
+[  177.54s ->   181.46s] So after hearing Corvin's response, I completely agree with him.
+[  181.46s ->   186.50s] I like to think my channel has the complete staple of always backtesting strategies to make
+[  186.50s ->   188.02s] sure they work in the long term.
+[  188.02s ->   193.78s] In order to backtest said strategies, there has to be a specific set of rules that you have to follow.
+[  193.78s ->   198.98s] It can't just be, oh, when you get a certain feeling that the chart is losing momentum, no.
+[  198.98s ->   202.42s] The other point he made was, look, if something's working for you,
+[  202.42s ->   206.02s] and I don't necessarily agree with it, who am I to say that it doesn't work?
+[  206.02s ->   208.02s] If it's making you money, it's making you money.
+[  208.02s ->   211.06s] So I think that's another really key thing to take away from this.
+[  211.06s ->   214.02s] You shouldn't just automatically neglect someone's trading idea,
+[  214.02s ->   216.18s] just because it doesn't follow your rule set.
+[  216.18s ->   220.50s] I guess what I'm trying to say is, you should have an open mind when talking to other traders.
+[  220.50s ->   225.46s] Our next speaker is David Paul, a financial trader and managing director of VectorVest.
+[  225.46s ->   229.70s] The main topic he is going to be talking about is if stop hunting and trading exists,
+[  229.70s ->   235.06s] and what the retail trader can do to help better their chances in surviving attacks like this.
+[  235.06s ->   241.54s] It's always looked upon as negative, certainly at the retail trader level.
+[  242.26s ->   248.66s] Institutional traders are taught on their first day that they buy good levels, or they don't buy at all.
+[  248.66s ->   254.26s] Unfortunately, most retail traders will wait for some confirmation before they get in.
+[  254.26s ->   259.62s] That could be a candle pattern, could be a moving average cross, or whatever.
+[  259.62s ->   262.50s] Institutional traders will buy at the level.
+[  262.50s ->   266.98s] Now, most traders will put their stop loss a tick under the last low,
+[  266.98s ->   272.42s] and they will invariably put their stop loss at exactly where the institutional orders are.
+[  272.42s ->   277.14s] I think that institutional traders are just doing what institutional traders do,
+[  277.14s ->   280.26s] putting their entry points at very good levels.
+[  280.26s ->   285.86s] However, if you are trading at the institutional level, it's not always easy to get filled.
+[  285.86s ->   291.22s] At the retail level, if you want to buy 100 shares, you want to buy the pound against the dollar
+[  291.22s ->   294.74s] at a five or a point, you press the little button and you've got it.
+[  294.74s ->   301.62s] At the institutional level, it's not that simple, and you've got on occasions to actually generate
+[  301.62s ->   303.62s] the liquidity to get aboard.
+[  303.62s ->   308.90s] I don't think that anybody looks at where the stops are, but they will say to themselves,
+[  308.90s ->   314.10s] well, we know pretty sure that most of the stops will all be crowded around this obvious level.
+[  314.66s ->   319.30s] So, they will bid the market at that particular level.
+[  319.30s ->   324.18s] All you need is one person to chicken out, and the markets are going to go where the bids are,
+[  324.18s ->   326.34s] and all those people will be taken out.
+[  326.34s ->   333.38s] If you do not think long and hard about where you're going to put your stops,
+[  333.38s ->   337.94s] that you're going to find that you can quite easily die in a sea of stop losses.
+[  337.94s ->   339.70s] And here's an exercise for some people.
+[  339.70s ->   342.34s] The next time you're just about to put a trade on,
+[  342.34s ->   344.50s] you pick up something heavy and you just go,
+[  344.50s ->   350.18s] and then you write down on a piece of paper where you're going to buy and where you're going
+[  350.18s ->   351.22s] to put your stop loss.
+[  351.22s ->   356.82s] Don't buy it, but put an order in to buy it at where you're going to put your stop loss.
+[  356.82s ->   360.26s] And then just watch how many times the market goes to your order.
+[  360.26s ->   365.06s] Markets will go to the obvious stops most of the time.
+[  365.62s ->   372.74s] And one of my rules is that I want to put my entries where the masses put their stops.
+[  372.74s ->   377.78s] If you don't get in at a good level, there's nothing that upsets me more than a guy saying
+[  377.78s ->   380.42s] that this is a very risky trade, I'll use a tight stop loss.
+[  380.42s ->   384.98s] That's just rubbish because you'll get stopped over and over and over again.
+[  384.98s ->   388.42s] The stop needs to be where the stop needs to be.
+[  388.42s ->   393.70s] So if your entry is sloppy, then your stop loss is going to have to be a red bus away
+[  393.70s ->   397.78s] from where you got in at to give yourself a chance of staying in the move.
+[  397.78s ->   400.50s] The average true range will help with that.
+[  400.50s ->   406.10s] Most traders will look at a stop loss of two and a half times the average true range
+[  406.10s ->   407.22s] or something like that.
+[  407.22s ->   412.18s] Nevertheless, if you want to get in with low stop losses at institutional levels,
+[  412.18s ->   413.30s] you've got to be brave.
+[  413.30s ->   417.46s] The institutional traders will use Fibonacci levels.
+[  417.46s ->   418.58s] They will use trend lines.
+[  418.58s ->   422.42s] They will use simple horizontal support and resistance levels
+[  422.42s ->   427.06s] to actually look for confluences to try and place their orders.
+[  427.06s ->   428.66s] Nothing clever, okay?
+[  428.66s ->   433.06s] Unfortunately, most retail traders, as I say, will look for some form of confirmation
+[  433.70s ->   438.18s] and their stop loss will then be too close and they'll get taken out in the noise.
+[  438.18s ->   439.86s] David made some really great points.
+[  439.86s ->   444.50s] Unlike you and me, a huge institution can't just buy in at any given time.
+[  444.50s ->   449.22s] They have so much money, there isn't enough liquidity out there so they can organically
+[  449.22s ->   451.06s] enter at the given price they want.
+[  451.06s ->   456.10s] In order for them to get in at the price they want, they need to create the liquidity themselves,
+[  456.10s ->   462.02s] which in return means making price hit these huge areas of stop losses and buying in at that point.
+[  462.02s ->   467.38s] That's why in a lot of my video strategies like this one, fakeouts and liquidity grabs are a huge
+[  467.38s ->   472.50s] part of the success of the strategy because it's hitting all these trader stop losses and you're
+[  472.50s ->   476.82s] essentially trading with the big money. Another quote I really liked from him was,
+[  476.82s ->   482.42s] the stop loss needs to be where the stop loss needs to be. You shouldn't just make a stop loss small
+[  482.42s ->   486.74s] because you don't want to take on a lot of risk. If you're taking up a lot of risk, it's because
+[  486.74s ->   491.54s] your entry wasn't good. So really pay attention to that next time you enter a trade. The next
+[  491.54s ->   495.38s] interview we're going to look at is Mark, an algorithmic trader that worked with a bunch of
+[  495.38s ->   500.58s] different small hedge funds. Now the main topic he is talking about is if hedge funds use support
+[  500.58s ->   505.38s] and resistances to help make trading decisions. And this answer kind of surprised me.
+[  505.38s ->   511.70s] The question is this, if we are thinking of hedge funds, are they taking support resistance into
+[  511.70s ->   517.78s] account before they're taking a placing a trade or an investment? Now it's important to kind of
+[  517.78s ->   524.18s] distinguish here what we're talking about. I would hazard a guess that hedge funds at the very top
+[  524.18s ->   531.54s] end, like your Bridgewater, like any kind of really big fund that's managing a massive amount of money,
+[  531.54s ->   537.70s] really doesn't care about this because unless they've got a sub fund that's very technical and
+[  537.70s ->   542.10s] small, which I don't think they have because they've got so much money it wouldn't make any sense,
+[  542.10s ->   546.66s] they don't care about this because they're holding times are much longer, they're much more interested
+[  546.66s ->   551.22s] in different things which we'll get to in a second, so they don't. But then when we go down to the smaller
+[  551.22s ->   557.30s] end of the scale, like people who are still running funds, the couple that I've worked with have taken
+[  557.30s ->   563.38s] it into account because they're not a hundred-man team, they're a small team managing a decent amount
+[  563.38s ->   567.46s] of money but a modest amount when you compare it to the big guys and the people in charge of making
+[  567.46s ->   574.58s] those trades may well have a decision-making process that is integrated with some kind of
+[  574.58s ->   580.02s] technicals because they can do it because they're not trying to move 200 million around then maybe
+[  580.02s ->   586.10s] they're moving 20 million around 30, 40, 50 that kind of stuff which is small change compared to the
+[  586.10s ->   591.54s] billions up there so if we look at this process a hedge fund investing capital isn't going to care
+[  591.54s ->   596.34s] about support and resistance because they're looking for an edge elsewhere maybe they're looking for an
+[  596.34s ->   601.38s] edge in some emerging market that someone hasn't seen maybe they recognize that this specific
+[  601.38s ->   605.14s] currency is going to be devalued more against this because they've got information that retail is
+[  605.14s ->   609.94s] going to struggle here and the mining companies and all that so they make a bet based on that now they
+[  609.94s ->   615.62s] don't care about support and resistance there now one caveat to that is that you may well get
+[  615.62s ->   623.54s] traders within the fund who are executing that may take a little bit of stock in terms of no pun
+[  623.54s ->   628.50s] intended of support and resistance if they are manually executing so say they've been given an
+[  628.50s ->   636.02s] order to buy x number of shares in this company now it's their job to get the best possible price now
+[  636.02s ->   641.30s] they may well just put an algo in that just time slices the order volume slices the order and they leave
+[  641.30s ->   645.54s] it and they're off they don't really care they may well do it manually and there may well be a trader
+[  645.54s ->   652.74s] who's looking at charts like us who's executing it in batches and maybe he sees the price at resistance
+[  652.74s ->   657.62s] and says well i'll just see i've got another batch to do i need to do it anyway should i just see if it
+[  657.62s ->   662.74s] backs off from this because i think that we might back off in which case then maybe they do is it is it
+[  662.74s ->   670.18s] kind of uh integral is the word i'm looking for into their whole system and strategy no it's not
+[  670.18s ->   675.46s] they're still going to buy it regardless as we go down or up should i say it becomes less and less
+[  675.46s ->   679.86s] likely traders don't really care about that they just care about getting the order done it's such
+[  679.86s ->   684.42s] a big order that it has to be done regardless and little things like that aren't going to make a
+[  684.42s ->   689.86s] difference but as you come down the scale into the smaller kind of regulated funds then yes you can
+[  689.86s ->   693.38s] imagine that there's going to be some traders in there and they may well be sitting there saying
+[  693.38s ->   696.58s] well actually you know what we're going to take this order but we'll wait because we're hitting
+[  696.58s ->   700.98s] resistance or we're at support now maybe we should start to scale into the position they'll still
+[  700.98s ->   706.34s] have to take the trade anyway but it might mean that they adjust the order as they're doing it
+[  706.34s ->   711.06s] now mark made some really great points the key thing to take away from this is are hedge funds really
+[  711.06s ->   715.62s] looking at support and resistances well the big guys that are dealing with billions of dollars no
+[  715.62s ->   720.74s] because it financially doesn't make sense for them to go that in depth with the charts for liquidity
+[  720.74s ->   726.42s] reasons but the smaller ones they will sometimes use it to help make decisions on when to enter so
+[  726.42s ->   731.38s] say if price is at this resistance level and they were told to buy that specific stock they might wait
+[  731.38s ->   736.26s] a little bit to see if it comes down to support so they can get it at a better price sure they're
+[  736.26s ->   741.54s] gonna buy either way but they may base some of their decision on when to enter based off that support
+[  741.54s ->   746.58s] and resistance is their sole reasoning based off support and resistances no their decisions are
+[  746.58s ->   751.62s] based off other larger factors but they may just use them to get a little more specific on when to
+[  751.62s ->   757.30s] enter our final speaker is andre who is a senior portfolio manager at citizens business bank he's
+[  757.30s ->   762.50s] going to be going over what his thoughts are on stop losses and how traders should be using them
+[  762.50s ->   768.02s] i am going to be a huge contrarian to everybody else who said be careful be careful be careful have tight
+[  768.02s ->   774.58s] stop losses fights up the tight stop losses i am certain is the main reason why most traders don't
+[  774.58s ->   781.38s] make money because before a trade moves your way it usually moves the opposite way because the people in
+[  781.38s ->   786.42s] the market don't want they have to make money from you and they know they're going to close you out
+[  786.42s ->   792.50s] because most of you have tight stop losses so you never get to make money i'd say if you're confident
+[  792.50s ->   799.46s] about a trade don't have tight stop losses have a big big gap between your stop losses so if it
+[  799.46s ->   805.30s] goes down and it backs up to where you want you're still in the trade and you're not taken out i would
+[  805.30s ->   812.34s] say stop losses are i would say it's the main reason why most traders don't make money even when
+[  812.34s ->   818.18s] they get it right when they know the direction is right and they still get taken out it's because
+[  818.18s ->   825.30s] of your stop losses i say don't listen to anyone who says have really tight stop losses if you are
+[  825.30s ->   832.42s] confident don't have tight stop losses you will lose money even if you are right in guessing the direction
+[  832.98s ->   840.41s] are they ever a good idea they're good ideas sometimes but then i would say if you're not sure
+[  840.41s ->   846.33s] about your trade then don't do it don't do it it's it's a good idea if you have a huge position
+[  847.05s ->   853.05s] that you know over the weekend or whatever some massive political event is going to happen and
+[  853.05s ->   859.13s] by the time you can catch up with it it's too late you wiped out so in that case it's good to have a
+[  859.13s ->   867.69s] stop loss but still i would say don't have your stop losses too tight if you can help it you know if you
+[  867.69s ->   875.29s] have to judge where you are what what what time of year you are what what's going on geopolitically whether
+[  875.29s ->   883.21s] it's safe generally to keep your position open without much of a without tight stop loss stop losses
+[  883.21s ->   889.29s] i would say if there is a research done that your people would find is the main reason why when they
+[  889.29s ->   894.73s] guess the market direction right they got they made never made money because they get taken out and the
+[  895.77s ->   902.94s] people who run the markets they know their game they know if they go down before they go up
+[  902.94s ->   908.22s] they're taking you out i completely agree with andre here now it definitely depends on what type
+[  908.22s ->   912.86s] of trader you are just from listening to this interview i can already tell andre and his firm
+[  912.86s ->   918.14s] are major long-term traders so it really makes sense for them to have these huge stop losses whereas
+[  918.14s ->   923.10s] someone who's day trading penny stocks may not really want to have huge stop losses like this so
+[  923.10s ->   928.14s] it really depends on what type of trader you are but i do completely agree with his mentality if you
+[  928.14s ->   933.50s] were confident in a trade there is no reason to have a small stop loss and to back that point up
+[  933.50s ->   938.54s] even more you should only enter a trade in the first place if you're confident in it overall after
+[  938.54s ->   943.10s] listening to all these interviews it does sound like hedge funds use bits and pieces of technical
+[  943.10s ->   948.14s] analysis sure they're not basing their whole decisions purely based on it but they do use it to
+[  948.14s ->   952.86s] a certain point which i found pretty interesting if you found this video helpful or interesting you
+[  952.86s ->   957.74s] should definitely check out this video where i go over a strategy where you can see where hedge funds and
+[  957.74s ->   967.10s] institutional traders are buying and selling thanks for watching and i'll see you guys next time

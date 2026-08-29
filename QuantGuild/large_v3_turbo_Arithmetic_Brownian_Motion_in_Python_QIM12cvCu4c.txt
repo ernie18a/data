@@ -1,0 +1,85 @@
+[    0.88s ->     6.18s] Let's take a look at a practical implementation of geometric Brownian motion in Python.
+[    6.48s ->    13.62s] So for starters, let's import NumPy and let's import math.
+[   15.60s ->    22.84s] Now, what we're going to do is we're going to create a class that aims to model geometric Brownian motion
+[   22.84s ->    33.74s] so that we can generate sample paths for assets that move randomly throughout time in a relatively dynamic fashion.
+[   33.74s ->    37.24s] So we're going to create a class called stochastic process.
+[   38.91s ->    46.86s] And within the stochastic process class, we're going to house all the parameters of geometric Brownian motion.
+[   48.03s ->    52.35s] So in our constructor, we're going to take a drift term.
+[   52.35s ->    55.41s] We're going to take a volatility term.
+[   56.66s ->    59.28s] We're going to take a change in time term.
+[   59.58s ->    65.76s] And we're also going to take a initial asset price.
+[   67.67s ->    74.32s] Now, we're going to set all of these parameters for this instance,
+[   74.64s ->    86.26s] except we also need to create a way to store generated asset prices.
+[   86.26s ->    90.30s] So to do that, we're going to have to create a list.
+[   91.89s ->    96.23s] And this list is going to be called asset prices.
+[   96.97s ->   106.19s] And it's going to be a list that contains the initial asset price provided as a parameter.
+[  107.08s ->   112.64s] And then we're also going to assign current asset price to this initial asset price.
+[  112.64s ->   114.40s] So what's the purpose of this?
+[  114.40s ->   120.24s] Well, we need a way to keep track of where we are and where we're going.
+[  120.46s ->   127.96s] So geometric Brownian motion can be thought of in a computational context of an iterative generation of prices.
+[  128.92s ->   130.92s] And to do that, we need to know where we are.
+[  130.92s ->   134.50s] So hence the current asset price and where we're going.
+[  134.64s ->   142.40s] And where we're going is in the direction of the drift plus the change in volatility plus the change in time.
+[  142.54s ->   146.24s] So that entire right-hand side of the equation is where we're going.
+[  146.24s ->   150.66s] But to determine where we are, we have these two variables.
+[  151.56s ->   154.88s] And that will become a little more clear when we actually build out the time step function.
+[  155.60s ->   157.50s] So what is the time step function?
+[  157.62s ->   160.96s] Well, it aims to do exactly what I just mentioned.
+[  161.08s ->   167.48s] It aims to generate a price based on where we are.
+[  167.48s ->   171.92s] And to do that, we need to draw from a normal distribution.
+[  172.18s ->   182.86s] So the change in Brownian motion term is a random normal with a central tendency or a mean of zero
+[  182.86s ->   190.76s] and a standard deviation of the square root of the change in time.
+[  190.76s ->   194.39s] So that's the change in Brownian motion.
+[  195.11s ->   202.55s] But now all we need to do is compute the change in asset price and append that to the current asset price.
+[  202.63s ->   203.39s] So what does that look like?
+[  203.39s ->   222.45s] We do ds is equal to self.drift, the drift times the change in time times the current price plus the volatility times the
+[  225.75s ->   230.00s] current price times the change in Brownian motion.
+[  230.00s ->   234.56s] And if you look, this is literally just the equation for geometric Brownian motion.
+[  234.56s ->   249.80s] We generated a change in Brownian motion and we used a given volatility, a given drift, and a given time step to generate a new change in asset price.
+[  249.80s ->   269.22s] And to complete this, all we have to do is append this new price to our list so we can take the current asset price and we can add this change and we will have effectively taken a step in time.
+[  269.22s ->   285.02s] Now we need to reset the current asset price as if we don't reset the current asset price, we're just going to be deviating from the initial asset price throughout the entire list of asset prices.
+[  285.02s ->   298.54s] So we're going to reset it to include the change so that next time we call time step, we're going to already have this this accounted for the previous change accounted for.
+[  298.54s ->   315.54s] So the previous change will have the new change added to it and then the sum of the two will be equivalent to the current asset price and then we'll iterate through time step again and again and again to generate as many asset prices as we would desire.
+[  316.22s ->   318.85s] So how does this help us?
+[  318.91s ->   319.99s] What can we do with this?
+[  319.99s ->   339.04s] Well, one way to use this is to generate a bunch of sample paths for an underlying asset with a certain parameter set and to do that we're going to create a for loop and let's just generate 100 for this example.
+[  339.04s ->   355.06s] And all we got to do is create a list called processes and append a new instance of the stochastic processes class with the parameters that we desire.
+[  355.16s ->   364.44s] So we're going to do a drift of 0.2, volatility of 0.3, a delta T of 1 over 365 and initial asset price of 300.
+[  365.59s ->   367.69s] And those are just random parameter values.
+[  367.69s ->   371.23s] So it could be actually modeling some sort of asset.
+[  371.23s ->   373.83s] So you look at the historical returns and you derive a drift.
+[  373.93s ->   390.27s] You look at the historical standard deviation and you derive a volatility and maybe that historical drift and standard deviation is based on daily bars and the current asset price is 300 and you want to derive some sample paths based on all that information.
+[  390.27s ->   397.71s] That could be one hypothetical way of doing it so that it has some basis for risk analysis.
+[  397.71s ->   400.21s] But for now, we're just going to look at random parameters.
+[  400.21s ->   405.44s] How do we generate different asset prices into the future?
+[  405.56s ->   410.60s] Well, we need to project out to a point in time.
+[  411.00s ->   414.34s] So let's just say one year for this sake.
+[  414.48s ->   416.38s] So we're going to say TTE.
+[  416.62s ->   419.58s] So time till expiration is going to be one, one year.
+[  420.24s ->   424.90s] And we're going to be taking daily steps as specified by one divided by 365.
+[  424.90s ->   446.04s] So for each process, each stochastic process in our processes list, we are going to, while the time till expiration minus the processes time step.
+[  446.04s ->   455.67s] So in this case, one over 365, meaning if we have any days left until the expiration, we're going to want to take a time step.
+[  455.67s ->   460.20s] So we'll do process dot time step.
+[  460.20s ->   471.65s] And then we will end up decrementing time step equals or time till expiration is equal to time till expiration minus the processes time step.
+[  471.65s ->   478.53s] And if you look here, we actually have to reset the time till expiration for each process.
+[  478.53s ->   481.50s] So what do we have here?
+[  481.50s ->   492.22s] We have a class that accurately models geometric Brownian motion, and we generate 100 instances of that class with randomized parameters.
+[  492.60s ->   505.60s] And we created a for loop to take one year and take daily time steps and generate asset prices for one year for each process in our list of 100 processes.
+[  505.60s ->   518.76s] So if we wanted to look at our results, we could actually just print the top process in our processes list and print the asset prices.
+[  519.40s ->   523.31s] And if you look here, we get a set of asset prices.
+[  524.33s ->   530.88s] And this may not be, you know, we got to make sure that it follows geometric Brownian motion.
+[  531.02s ->   532.60s] It looks like a stock chart.
+[  532.60s ->   538.06s] To do that, we can actually plot the asset price using matplotlib.
+[  538.18s ->   554.89s] So if we import matplotlib.pyplot as PLT, scroll down here, and we do X equals PLT.plot.
+[  554.89s ->   564.89s] And our X values is just going to be zero to the length of the asset prices list.
+[  565.55s ->   568.07s] So we can take any one because it's uniform.
+[  568.37s ->   572.42s] So we can select the top one.
+[  572.70s ->   579.34s] And then the values that we're plotting are the asset prices.
+[  579.60s ->   584.44s] So we take that, we take the top one, and we can actually plot the asset prices.
+[  584.44s ->   594.59s] And then if we do PLT.show, we get a beautiful chart that looks something like a stock chart.
+[  594.71s ->   598.79s] So let's just recap where we're at.
+[  598.91s ->   601.49s] So we built a stochastic process class.
+[  601.63s ->   607.97s] And this class aims to model the randomness of assets as they move throughout time.
+[  607.97s ->   617.11s] And to do this, we took all the parameters of geometric Brownian motion and assigned them to different values, different fields within the class.
+[  617.11s ->   629.23s] And we used NumPy to generate a change in Brownian motion based on normal distribution with a mean of zero and a standard deviation of the square root of delta T, or the time step.
+[  629.23s ->   657.99s] And using that change in Brownian motion, we were able to figure out where we were given the initial asset price and where we were going by generating the change in price that was created by the change in Brownian motion and appending those values to a list and consequently iterating this process for a certain time until expiration to the future, a certain time in the future, we generate a sample path for the asset.

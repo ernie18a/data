@@ -1,0 +1,216 @@
+[    0.08s ->     5.12s] welcome back in this new video those are the four analysis we're going to see payout probability
+[    5.12s ->    11.44s] first and then prop firm challenge success rate and then portfolio analysis news and then drawdown
+[   11.44s ->    19.20s] analysis so let's start with the equity line with all of the news this is the third analysis we're
+[   19.20s ->    23.52s] going to do just to show you how it's going to look like and this is very useful but then i'm
+[   23.52s ->    27.92s] going to apply machine learning to analyze everything for me because those are a lot of
+[   27.92s ->    34.56s] information all together during six year you have like around three news each month so those are a
+[   34.56s ->    39.44s] lot of news all together i'm gonna apply machine learning for that but now let's start with
+[   39.44s ->    46.88s] probability of my portfolio to achieve the first step and second step of challenge prop firm challenge
+[   46.88s ->    53.04s] so you have here the different scenario so this is 10 plus 5 and then you have 8 plus 5 those are the
+[   53.04s ->    59.92s] let's say fdmo and from the next or something so it's the one you have to achieve first 10 plus a
+[   59.92s ->    65.76s] five percent after and this is like the eight percent first and then five percent after i'm going to go
+[   65.76s ->    71.44s] deep on this analysis because all of the new prop firm are offering this type of scenario so basically
+[   71.44s ->    78.24s] this is all based on my portfolio and of course is equity based because when you analyze those type of
+[   78.24s ->    85.44s] target you have to think about that the equity is always detaching from your balance level okay
+[   85.44s ->    92.40s] so if the balance is 10 000 the equity is the one it says 10 500 when you're in profit okay so you
+[   92.40s ->    97.52s] have to analyze that and not the close position because with the open position you can easily reach
+[   97.52s ->   103.52s] the target a little bit quicker so all those numbers are equity based and this is the scenario with
+[  103.52s ->   111.12s] no multiplier on my risk so this is like my portfolio this is converted to euro and basically
+[  111.12s ->   118.00s] i'm taking as a sample a 50k prop firm challenge the first target is like 4 000 usd and the second
+[  118.00s ->   125.36s] target is 400 4 000 usd plus 2500 okay and this is converted to euro because my portfolio here is in
+[  125.36s ->   133.44s] euro so basically i'm gonna have a 50 chance of passing my first step so like the 4 000 usd
+[  134.00s ->   140.40s] with my risk and my portfolio in 40 trading days so it's like not counting the weekends so this is
+[  140.40s ->   146.96s] around two three months so basically 50 percent that's very low because my portfolio is doing
+[  146.96s ->   153.20s] really well and with this same risk i'm going to show you later i also analyze the failing this type
+[  153.20s ->   160.48s] of risk is very low my failing rate so the failing odds are very low okay but of course also the success
+[  160.48s ->   166.56s] rate is really low i think this is not useless but i'm in a position where i don't care if i'm losing
+[  166.56s ->   174.00s] one challenge maybe two three in one year so why not to increase my success rate okay where we're gonna
+[  174.00s ->   181.84s] get like a good success rate here but it says 90 days okay this is a lot of time i don't want to lose
+[  181.84s ->   188.32s] all of this time because time is equal profit for my portfolio since it's doing really well and yeah
+[  188.88s ->   197.12s] definitely after this type of analysis what i could get out is that i need to increase my risks so in
+[  197.12s ->   202.80s] these two uh different scenario you're going to see the performance improve improve a lot this is a
+[  202.80s ->   210.64s] wine 1.35x my first risk and so you're going to see that like with the same time horizon of 40 days
+[  210.64s ->   219.60s] from 50 percent we're going to achieve 70 around 70 percent okay 67 that's good amount is like around 17
+[  220.77s ->   227.17s] percent more but if you move to let's say 50 days you're going to hit 80 percent and compared to the
+[  227.81s ->   235.65s] 62 that's way better okay but we can easily do more because this is calculating just the first challenge
+[  235.65s ->   241.41s] okay so the eight percent and the eight percent plus the five percent it says that in 50 days i
+[  241.41s ->   248.13s] still have a 50 percent odds to achieve it okay i could increase the risk more but like now i'm going
+[  248.13s ->   256.21s] to show you why i'm doing and taking this type of multiplier okay because i analyze them so basically
+[  256.21s ->   262.77s] this is like a quantitative analysis of my risks it's the same thing as this one but in this case i'm
+[  262.77s ->   270.93s] analyzing the maximum adverse exposure okay so the jordan phases about my equity and not about the
+[  270.93s ->   275.41s] balance because like when you analyze the drawdown you have to analyze the equity journal not the
+[  275.41s ->   281.33s] balance journal because it's different so you're looking at the worst scenario not the best scenario
+[  281.33s ->   290.53s] so basically why i said those number so this is the 1.35 and with the 1.35 i'm going to hit
+[  290.53s ->   298.29s] one fail each year on average okay so those are not perfect number and i cannot rely on those number
+[  298.29s ->   303.25s] perfectly because if you run multiple monte carlo simulation you could have with this type of risk
+[  303.25s ->   309.81s] maybe two or maybe three in some cases random scenario you could have three times this type of fail
+[  309.81s ->   316.69s] failing rate okay rate and but i'm still fine okay i'm really fine with this type of risk and then you see
+[  316.69s ->   324.45s] that like with one 1.63 x the failing rate each year is going to be close to two because if you look
+[  324.45s ->   331.97s] here this is the odds that is increasing by the multiplier it is increasing so it means no risk my
+[  331.97s ->   340.69s] probability to fail those are the number of fail that i could have okay is like less than 0.5 okay so it's like
+[  340.69s ->   348.77s] there is a 30 percent of half of a fail each year it means like one fail let's say one fail every two
+[  348.77s ->   356.05s] years okay but still with a 30 odds so very low now the goal is to look around the middle of this graph
+[  356.05s ->   365.17s] it says conservative one fail a year that's good and that's the 1.35 x but still with the 1.35 x i showed
+[  365.17s ->   372.53s] you that like we're not getting insane performance because like we go we only get like a 80 chance of
+[  372.53s ->   378.85s] passing both phases in 80 days that's still a lot of time okay if you know that times is equal money
+[  378.85s ->   385.73s] when you have something that work you want to increase the odds of passing the both phases and so
+[  385.73s ->   392.85s] that's why i got like the 1.6 the 1.6 is actually here and is a little less than two times failing each
+[  392.85s ->   399.81s] year so let's say 1.9 but the sale is around is around two so you're approximating to two and then
+[  399.81s ->   406.93s] you have the odds actually here the odds are pretty good because like it doesn't say you have 100 odds
+[  406.93s ->   412.45s] of failing two times each year you only have six percent so it doesn't mean that you're going to fail
+[  412.45s ->   420.05s] each year two times as i said before as i'm trying to be as transparent as i can and also very analytical
+[  420.05s ->   427.81s] and map driven okay i'm not going to believe that i can only get this type of failing each year because
+[  427.81s ->   432.37s] if you run monte caro simulation what they are going to do is taking all of your trades let's say this
+[  432.37s ->   439.09s] portfolio tag it takes six thousand trades around and mix them all together okay so i think i could with
+[  439.09s ->   446.29s] this type of risk 1.6 i could easily get to easily get to jordan max jordan each year okay so i'm fine
+[  446.29s ->   453.41s] because i know the odds and so with the 1.6 and this type of challenge so eight plus five we're
+[  453.41s ->   459.89s] getting very good insights let's look at the 76 because 76 it means one every three challenge i'm
+[  459.89s ->   467.09s] going to pass it with four days that's very good very good basically i'm getting also a 50 odds of
+[  467.09s ->   475.33s] passing both phases only in 40 days and here i got around 90 of passing both in 80 days so i'm getting
+[  475.33s ->   481.01s] something much more useful in this scenario and yeah that's pretty much it i think i showed you
+[  481.01s ->   486.69s] everything this is very important the challenge success rate is really useful because like you
+[  486.69s ->   492.69s] understand how to how to handle probability but also here this one i think is much better because
+[  492.69s ->   498.69s] if you know how many times you can fail okay you can adjust your risks on your comfort level let's
+[  498.69s ->   504.93s] say i i know that if i'm using this type of risk i'm going to increase my success rate but then of
+[  504.93s ->   510.53s] course i like with the risk more risk more reward okay so if i'm increasing the reward here of course
+[  510.53s ->   515.81s] i'm going to increase the failing rate in this case but as i saw as i told you before i'm totally fine
+[  515.81s ->   521.81s] with this because my portfolio is working and yeah that's pretty much it this is an update video in this
+[  521.81s ->   531.01s] case here you're going to see different thing first it's like news analysis and then we're going to see
+[  531.89s ->   539.81s] the mfe distribution where where the script is going to analyze only the maximum favorable exposure
+[  539.81s ->   548.05s] so the one we really need when we need to analyze profit target for profit when you want to have a payout
+[  548.05s ->   556.05s] okay you need to analyze the mfe and then payout probability is very useful because it's giving you
+[  556.05s ->   566.21s] more odds to withdraw money because you know that like during the last six years your portfolio on average
+[  566.93s ->   576.05s] with 70 percent of confidence it made around let's say this is like 1 1k in euro so yeah and then you do
+[  576.05s ->   586.29s] all of your calculation based on that so let's begin with the equity comparison with this if scenario okay
+[  586.29s ->   594.45s] and in this case is i use machine learning now i don't have the code here it should be this one okay
+[  594.45s ->   603.81s] news impact and impact analysis and basically what is the concept i decide how to manage different news
+[  603.81s ->   615.73s] scenario okay so this is no fmc before and after 60 minutes this is the same thing for 15 before and 15
+[  615.73s ->   624.69s] after and the same thing for nfp cpi and nfp for different minutes and in the end this is the those are
+[  624.69s ->   632.21s] the equity line my portfolio with all of my algorithms and different strategies is performing
+[  632.21s ->   639.97s] better with all of the news even if sometimes is not benefiting so it's like losing a little bit more
+[  639.97s ->   649.33s] money but overall over six years it did perform better and as you can see from the equity the blue
+[  649.33s ->   658.69s] equity you'll see that each single ear the equity is detaching more and more from the other okay so
+[  658.69s ->   667.73s] that thing mean that it didn't perform better only once but it performed better ear with over ears okay
+[  667.73s ->   674.77s] that's very useful inside because i didn't knew and i was looking for an answer because it's very hard to
+[  674.77s ->   681.41s] analyze that by doing it manually this is the analysis of my portfolio over the
+[  682.29s ->   692.93s] months of each year with news impact as you can see those are the line of nfp f o f f o mc and cpi
+[  692.93s ->   699.41s] okay and this is very super useful insights like when you see people do trading like maybe you see other
+[  699.41s ->   708.85s] people trading with fdmo or other prop firm but i never seen someone doing this type of analysis
+[  708.85s ->   718.45s] on their portfolio okay or on their type of trading style etc so guys this is like how real money are
+[  718.45s ->   727.41s] made okay like i'm just making a few in during 2025 just made a few thousand euros so it's like probably
+[  727.41s ->   736.53s] around 4000 usd and that's just the beginning but like i did trading for over five years okay i could
+[  736.53s ->   745.25s] reach this point just by only by learning during this process during this time and i learned a lot of
+[  745.25s ->   755.33s] things and trust me this is like the best thing to do how to analyze data because like to me for me
+[  755.33s ->   761.89s] doing something like this manually it could have taken probably hundreds of hours maybe even more
+[  761.89s ->   768.53s] but when you learn how to manipulate your own data with python that's completely different even because
+[  768.53s ->   775.41s] this is just a visual this is like useless but machine learning can edit machine learning with this
+[  776.13s ->   783.49s] code and this comparison here and it builds a new equity finding the best solution because this those
+[  783.49s ->   789.41s] are the best solution i have here the scenario comparison and if you see even the scenario with
+[  789.41s ->   798.53s] vix so the volatility index were not that good in the end it performed worst so yeah but i didn't
+[  798.53s ->   804.37s] know before there is so many things that i don't know about my strategy but i want to know i need to know
+[  804.37s ->   812.29s] if i want to trade with real money that all of those comparison all of those scripts here are super useful
+[  812.29s ->   820.21s] even if sometimes they're not giving you good insights like good advice so yeah that was the equity
+[  820.21s ->   829.65s] comparison and trust me was really useful then we have the here another like super useful thing and that's
+[  829.65s ->   840.05s] the mfe and m ae analysis in this case just like maximum favorable exposure because like i was analyzing
+[  840.05s ->   847.89s] my payout frequency so that's another super important thing sometimes when you have a prop firm
+[  848.45s ->   856.45s] account so it's like a funder account you think okay i'm gonna take money when i reach 2k because i think
+[  856.45s ->   864.37s] it's great okay that's the worst things you can do okay because like you're putting a target that
+[  864.93s ->   871.09s] doesn't make any sense fix money target doesn't make any sense with markets this is like a distribution
+[  871.65s ->   879.97s] and there's a full script for this maybe i can show you if i find it i have so many things here that
+[  879.97s ->   889.49s] like who sometimes it's like hard to find everything but yup okay no i didn't found the the code for this
+[  890.21s ->   899.57s] graph here but it was based on the mfe code this one that i show showed you in the first video and
+[  899.57s ->   908.21s] wait okay this part here so the conversion rate it didn't work well if you now i'm gonna show you the
+[  908.21s ->   917.17s] full code so now you can just check it i'm showing the full code and you can just copy it and use it for
+[  917.89s ->   928.45s] your own trade and your own portfolio okay yes like just 200 lines like quick code and yep it's going to
+[  928.45s ->   936.85s] print like a full csv file with all the trades divided by strategy i need it because i wanted to
+[  937.65s ->   945.81s] split my portfolio so yeah and then you're going to see something like this this is based on daily mfe
+[  945.81s ->   952.93s] okay so it's like how many times it's gonna touch a certain amount of currency for example here we got
+[  952.93s ->   965.89s] zero to 200 and it touched that amount 500 times okay and we have around 1500 days okay so 1500 trading
+[  965.89s ->   974.85s] days because it's over six years of time and so it's counting only the trading days but why this is
+[  974.85s ->   982.61s] useful okay so you can think about you can think outside the box and instead of having your own
+[  983.17s ->   991.01s] portfolio with all of the algorithms or ea or anything like that that is gonna okay let's take
+[  991.73s ->   999.97s] like this so i was saying instead of adding your own portfolio in this case this is like my portfolio
+[  999.97s ->  1007.17s] compared to different benchmark in this case is s p 500 now 100 and then gold so it's like the same
+[ 1007.17s ->  1013.73s] performance that all of those assets made over the same period of time and in this case you can see
+[ 1013.73s ->  1021.65s] and you can say oh wait you make less than the nasdaq and less than the gold yeah but if you can see how
+[ 1021.65s ->  1030.69s] stable is my portfolio you can you'll know that you can just double the risk okay still having a very
+[ 1030.69s ->  1040.93s] low drawdown in this case you can see it here so my portfolio return was 152 okay but with the jordan of
+[ 1040.93s ->  1051.41s] 3000 okay euro the nasdaq same period of time it did like a 70 000 euro of jordan okay so
+[ 1051.41s ->  1061.89s] yep is very simple math okay and but i was saying about the mfe that you can easily use the same
+[ 1061.89s ->  1069.41s] portfolio okay with the same trade but then instead of letting the trade close by themselves with the
+[ 1069.41s ->  1078.85s] algorithms you can think okay let's analyze the mfe okay in this case we did it here okay and then
+[ 1079.49s ->  1089.81s] you could say okay we know that 400 times we reach from 200 to 400 euro of profit and in this case
+[ 1089.81s ->  1097.81s] could be let's close all of the position at 400 usd i don't have here my equity curve with this type of
+[ 1097.81s ->  1104.61s] each if scenario but i'm gonna show you maybe in the next video or something like that okay those are the
+[ 1104.61s ->  1112.13s] last two graphs i wanted to show you so i'm not gonna show you anything else after those are still
+[ 1112.77s ->  1119.89s] portfolio compared to different benchmark in this case we have here oh in this case we also have the
+[ 1119.89s ->  1129.33s] oh we also have usd jpy and then we have the ducks so this is german index and as you can see like
+[ 1129.89s ->  1138.69s] of course equities are super correlated in a negative way with vix okay if you see here this is the case of
+[ 1138.69s ->  1147.97s] covid 19 and the vix spiked up like crazy okay like never before and of course like the equities lost
+[ 1147.97s ->  1155.57s] money during that period my portfolio did of course not of course but i tried to build a portfolio a
+[ 1155.57s ->  1163.33s] robust portfolio anti black swan okay so if you don't know what black swan is you can look at online
+[ 1163.57s ->  1170.77s] yeah that's not super useful but i did like a different type of analysis so this is just like
+[ 1170.77s ->  1180.53s] portfolio compared to this okay and sometimes it did give you some insights those are machine learning
+[ 1180.53s ->  1188.77s] metrics okay this is the last graph i'm gonna show you and this is not like super big insights there is
+[ 1188.77s ->  1194.77s] no machine learning it's just like your my equity curve compared to the other assets equity curve okay
+[ 1195.33s ->  1204.13s] and that's super nice to see and i of course i knew that okay but like when you see your performance
+[ 1204.13s ->  1211.25s] compared to the other assets performance it's going to give you confidence okay on managing your own
+[ 1211.25s ->  1218.21s] money okay because as you can see here this is the 2020 year and that's my portfolio compared to
+[ 1218.21s ->  1224.85s] other portfolio sorry the other assets so the benchmark in this case and of course like your own
+[ 1225.49s ->  1232.21s] money and of course in this case it did perform a little less but if you can see the drawdown here
+[ 1232.21s ->  1243.65s] it's 10 times smaller okay yeah and this is really good to see only in 2023 it performed very low compared
+[ 1244.21s ->  1253.57s] but then here you can multiply the risk by five times and still you're going to have a smaller jordan
+[ 1253.57s ->  1261.01s] compared to the other asset and then if you multiply seven by five times you're going to reach like
+[ 1261.01s ->  1268.93s] big bigger performance still maybe my portfolio in the same year in 2023 could have made less money than
+[ 1269.49s ->  1277.01s] nasdaq in this case but then if you look all of the other years is way better so that's the end goal for
+[ 1277.57s ->  1284.85s] everyone having something that is outperforming the equity markets at least because when you invest your
+[ 1284.85s ->  1295.89s] own money you don't want to have this type of drawdown 40 50 i don't know something like that that's crazy to me and i i have money invested but
+[ 1295.89s ->  1306.45s] like i am trying to be as much professional as i can here so i can move all of my money into my portfolio
+[ 1306.45s ->  1315.17s] portfolio okay that is managed by algorithms but analyzed externally from different perspective okay
+[ 1315.89s ->  1324.37s] and constantly analyzed by me and of course machine learning with the goal to be as conservative as i can
+[ 1324.37s ->  1331.89s] but still using leverage and make more money than the markets so more money than my same amount of money
+[ 1331.89s ->  1340.45s] invested in etfs or index so yeah that's it in the next video i'm going to show you next analysis okay
+[ 1340.45s ->  1346.69s] this is like a little update in this case this is like a really nice visualization in this case
+[ 1347.33s ->  1356.53s] is it that's wrong okay so the script is calculating wrong the first and original equity line okay but
+[ 1356.53s ->  1365.49s] still this is how powerful is it python okay so you can have your own equity line plus the other this is
+[ 1365.49s ->  1373.09s] static optimization this is like machine learning optimization and then you have the drawdown comparison
+[ 1373.09s ->  1380.93s] and then all of the other metrics here how you're using the mfe compared to the other scenario so machine
+[ 1380.93s ->  1388.05s] learning scenario and then same thing for metrics perform a matrix comparison and then mfe efficiency
+[ 1388.05s ->  1395.89s] that's like super useful inside and then here is going to give you performance summary and recommendation ml
+[ 1395.89s ->  1400.93s] optimization in this case don't look at this because like it doesn't make any sense like it was
+[ 1401.49s ->  1408.45s] calculating something wrong so like it's going to be for the next update so if you want to be really fast
+[ 1408.45s ->  1415.97s] and also obtain results quicker and don't lose time be sure to download all of your data set
+[ 1416.61s ->  1425.73s] first okay high quality that's important small time frame so m1 should be the best things to do
+[ 1425.73s ->  1432.69s] i could have like ticks data but ticks data is like insane because like probably 50 million row okay
+[ 1432.69s ->  1439.49s] and so it's like you're not you cannot do those analysis with ticks data with a basic computer or
+[ 1439.49s ->  1446.37s] something not even with a powerful computer because like here you're analyzing let's say seven or maybe
+[ 1446.37s ->  1453.65s] 10 or maybe 20 data set at the same time and running script on that so if it's like 50 million row
+[ 1453.65s ->  1460.45s] it doesn't make any sense like it's gonna take ages so those are little advice that i'm learning
+[ 1461.01s ->  1467.89s] during these days super useful for you if you are a beginner or something be sure to have good quality
+[ 1468.45s ->  1476.05s] data and also small time frame because like it's going to be more precise and of course download your
+[ 1476.05s ->  1484.61s] own data okay if you're taking stuff from like yahoo finance and etc it's going to be super slow okay
+[ 1485.41s ->  1493.89s] and then be really organized i use ai to do all of the this structure okay you see all of those are in
+[ 1493.89s ->  1500.85s] the same script area and some of them are completely different so this is like a rescaler target it's
+[ 1500.85s ->  1507.49s] like a different thing and then i have the ma e and mfe and then equity curve is like be sure to
+[ 1508.13s ->  1514.45s] have everything organized because if you want to find something you're going to find it much quicker
+[ 1514.45s ->  1522.05s] if you are organized i think that's a good advice and then the other thing is like with python don't
+[ 1522.05s ->  1530.45s] look for new strategy okay so before looking for new strategy analyze your own trading portfolio okay
+[ 1530.45s ->  1536.93s] or maybe if you're trading manually you can analyze your own track record so it's like your history okay
+[ 1537.49s ->  1546.05s] and then try to think outside of the box and put as many if scenario as you can so let's say let's
+[ 1546.05s ->  1555.41s] replicate the 2008 crisis scenario so you are trying your own strategy on that crisis same thing for
+[ 1555.97s ->  1562.77s] dot-com bubble or something like that okay so you're trying to analyze your portfolio during different
+[ 1562.77s ->  1571.57s] scenario okay and then if you see some weeks both okay like i'm gonna show you my weeks both is i think
+[ 1571.57s ->  1584.45s] in 2023 let's see should be exactly here you see this is minus 388 euro okay that's my lowest equity drawdown
+[ 1584.45s ->  1593.41s] so the equity drawdown dropped around 1000 euro below okay so the year still close really good with
+[ 1593.41s ->  1600.93s] a really good performance because it made this is counting from i think 100k from the beginning on the
+[ 1600.93s ->  1607.17s] trunk but still it was a good year anyway but for me this is my weak spot and each year there is a weak
+[ 1607.17s ->  1616.13s] spot in this case was a little less but the goal is to analyze all of the drawdown and compare them to
+[ 1616.13s ->  1622.61s] the equity so this is like the overall performance but then you're going to have a weak spot in this
+[ 1622.61s ->  1630.85s] like in this case and you want to analyze and then when you reach this point here and you analyze this
+[ 1630.85s ->  1637.97s] compared to other factors or maybe other benchmark like weeks and then other benchmarks like s&p or
+[ 1638.77s ->  1647.33s] other equities at that point you can think about okay let's build a strategy that perform well or maybe
+[ 1647.33s ->  1655.65s] that is gonna perform well in this type of scenario okay as the first few days but i have equity compared
+[ 1655.65s ->  1665.73s] to different economy scenario so in this period we were in a quantitative tightening okay so the fed the
+[ 1665.73s ->  1678.13s] federal reserve in the us was increasing the rate the cpi over cpi the that interest was increasing okay
+[ 1678.13s ->  1684.45s] because they wanted to decrease the inflation okay and so they were increasing the
+[ 1684.45s ->  1692.29s] interest on the debt and so my portfolio performed really bad in that time

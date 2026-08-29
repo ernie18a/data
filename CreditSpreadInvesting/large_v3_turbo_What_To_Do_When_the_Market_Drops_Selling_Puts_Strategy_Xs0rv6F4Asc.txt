@@ -1,0 +1,95 @@
+[    0.00s ->     6.24s] the market over the last month month and a half has been absolutely wild large down days large
+[    6.24s ->    12.00s] updates trump tweets trump's has a press conference energy shocks crude oil pushing up
+[   12.00s ->    17.46s] and it's been absolutely insane and hard to keep track of but one of the comments from my last
+[   17.46s ->    23.02s] video asked about how my portfolio has performed over the last month throughout all this volatility
+[   23.02s ->    28.58s] so today i'm going to share with you guys how the put selling only public portfolio performed
+[   28.58s ->    33.78s] during these tumultuous times so make sure you guys keep commenting down in the comment section below
+[   33.78s ->    39.78s] first things first our accounts currently sitting close to 127 000 if you look at where it was around
+[   39.78s ->    45.34s] a month ago it was sitting around 133 so we're down only six thousand dollars give or take
+[   45.34s ->    56.62s] since that period began i hit a low of around 121 so we lost maybe let's say 12k from peak to trough
+[   56.62s ->    63.52s] take a look at our year-to-date returns we're still up 4.36 as compared to the 3.64 that the
+[   63.52s ->    68.72s] s&p 500 is returning so we're up around seven percentage points now we take a look at our
+[   68.72s ->    75.48s] positions this is why i think things get a little bit more interesting we have both options and stocks
+[   75.48s ->    80.60s] in this portfolio and the stocks are assigned puts that we are forced to buy 100 plus shares of a
+[   80.60s ->    87.06s] certain stock right and so the largest holdings in this account is predominantly tsmc that we got
+[   87.06s ->    96.74s] assigned on iot nvidia and figma now if you just look at tsmc it has gone from like at its peak 390
+[   96.74s ->   104.06s] or 395 all the way down to like 315 and so if we just take like a brief estimation right of how much
+[  104.06s ->   114.12s] we've lost in unrealized gains from tsmc it's close to maybe 30 a share over the last month which is
+[  114.12s ->   122.56s] around six thousand dollars of unrealized losses currently we're only down around 6k so a lot of
+[  122.56s ->   126.94s] the losses have been attributed to these equity holdings the stock holding that's not including
+[  126.94s ->   133.26s] asml nvidia iot i also lost on two credit spreads that we won't talk about today i'll make another video
+[  133.26s ->   138.20s] about that next week or two weeks from now and that lost around 1400 bucks as well if you remove
+[  138.20s ->   144.80s] the equity if you remove the credit spread losses everything else is actually up right all my sold
+[  144.80s ->   149.74s] options are actually up in the market and so that's what we're going to talk about today how to sell
+[  149.74s ->   155.36s] options and how to manage your positions in a very volatile market and we're going to do that by hopping
+[  155.36s ->   163.22s] over to premium insights here i basically filter out every single one of my options trades and
+[  163.22s ->   168.84s] you can see even over the last 30 days i've realized close to a thousand dollars of realized
+[  168.84s ->   173.20s] profit year to date we're up three thousand four hundred and five dollars again does not include
+[  173.20s ->   180.84s] credit spreads if you look at my trades you can tell i have a brand new microsoft cash secured put
+[  180.84s ->   187.20s] i have tsm cover calls figma cover calls ib care that we talked about last video nvidia that i've been
+[  187.20s ->   192.18s] willing for months or close to a year and then iot that i've been rolling for years and you can see that
+[  192.18s ->   197.64s] most of them with the exception of ibkr is out of the money right now let's take a look at our actual
+[  197.64s ->   203.24s] income our cash flow you can see that in march alone i've gone i actually had the most the highest
+[  203.24s ->   209.22s] amount of credit received even though the market was the most volatile the hardest to manage and this
+[  209.22s ->   215.16s] is actually why i think option selling general is such a great tool even in volatile markets so in order
+[  215.16s ->   219.86s] to learn how to sell options successfully in a volatile environment we have to first understand
+[  219.86s ->   227.02s] how we win and how we lose when we sell options we win when iv implied volatility is greater than our
+[  227.02s ->   234.50s] realized volatility what that means is the option moves less than what our option is pricing for what
+[  234.50s ->   241.56s] it's anticipating we lose what our realized volatility is greater than our implied volatility
+[  241.56s ->   246.86s] like we're seeing right now the market is moving a lot more than what our options price for
+[  246.86s ->   251.94s] and like we talked about in our 90 minute master class that is free on this channel i'll link in
+[  251.94s ->   258.00s] the upper right hand corner check it out when overall volatility which can be tracked using an index called
+[  258.00s ->   266.62s] vix when vix is low we do not want to sell options very aggressively and sometimes on this channel like
+[  266.62s ->   273.06s] you guys have seen through my public portfolio playlist we don't even sell options at all and when we do sell
+[  273.06s ->   277.86s] options we're selling it very very far out of the money very similar to what the goldman sachs paper
+[  277.86s ->   283.68s] the art of put selling shows as well the further out of the money you are the higher your risk adjusted
+[  283.68s ->   290.32s] rate of return and so for example right nvidia right now it was at like 185 190 before the drawdown
+[  290.32s ->   297.28s] happened we were selling puts at like 165 170 nvidia needs to move a lot in order for us to even get
+[  297.28s ->   303.94s] close to getting a sign nvidia did get pretty close but it never broke the 165 price and in most
+[  303.94s ->   310.24s] situations vix is going to be low that is just our normal market situations but then vix will spike at
+[  310.24s ->   317.26s] some point in time like it did right now and when vix spikes this is actually a really good time for us
+[  317.26s ->   322.00s] to sell options and that is exactly what we did in our public portfolio and that is exactly why
+[  322.00s ->   329.26s] we outperform the market and two we are able to collect a lot of income in march and i'll give
+[  329.26s ->   338.10s] you another example the microsoft 365 put option i collected close to a thousand plus dollars on that
+[  338.10s ->   345.14s] one option now you can tell microsoft is at like 370 and unlike my nvidia option i'm selling it basically
+[  345.14s ->   351.68s] right at the money as we talked about in our master class we use puts as a way to acquire companies at
+[  351.68s ->   357.82s] great price points and great values we want to be selling puts on high quality companies that we
+[  357.82s ->   365.94s] don't mind owning when a great company is now really well priced we want to get a sign right and so when
+[  365.94s ->   373.18s] vix spikes and the stock drops that is a perfect time for us to go in and sell a put as aggressively
+[  373.18s ->   381.66s] as possible looking to get a sign and the flip side of that is because of us selling it so close to
+[  381.66s ->   388.64s] the money we can collect a lot of premium and so my cost basis for microsoft right now is like 355
+[  388.64s ->   394.24s] because we were able to collect a thousand plus dollars on that one option so that's one of the
+[  394.24s ->   400.34s] takeaways here is that when vix is low we do not want to be selling puts aggressively because the stock
+[  400.34s ->   407.44s] can drop a lot and two our options might end up being very very deep in the money and number two
+[  407.44s ->   414.12s] when vix is very very high when vix spikes we want to be selling puts aggressively on high quality
+[  414.12s ->   420.14s] companies that have become very well priced which leads us to the next reason as to why we succeed in
+[  420.14s ->   427.18s] bear markets which is we never buy back our option at a loss again it goes back to the same idea as to
+[  427.18s ->   433.32s] how we sell puts from a strategic standpoint we sell puts to acquire great companies at fair values
+[  433.32s ->   439.80s] and so if we are selling puts and collecting a hundred dollars a share but then the option goes
+[  439.80s ->   446.24s] into the money and we are now down 400 500 bucks and we close that option we are basically having
+[  446.24s ->   452.26s] one loss wipe out five gains and that is exactly what tail risk is that's what negative skew means we
+[  452.26s ->   460.54s] want to avoid that which means that every time we sell a put we have to expect assignment only sell
+[  460.54s ->   466.82s] cash secured puts from literature and from my own account that selling puts can actually do pretty
+[  466.82s ->   472.84s] well in bear markets as you can see from this chart in the art of put selling selling puts actually
+[  472.84s ->   478.90s] outperforms or does better in down markets because we are accepting premium up front and lowering our
+[  478.90s ->   484.80s] cost basis therefore when and if we get assigned we are actually at a better state than just owning the
+[  484.80s ->   492.50s] equity straight out but you have to be able to get assigned to realize that benefit last note when we
+[  492.50s ->   497.96s] sell puts like i said earlier we are looking to get assigned and so when we do get assigned we are
+[  497.96s ->   503.02s] looking for companies that have upside room to grow right because when we get assigned you want that
+[  503.02s ->   510.14s] equity to appreciate and so this isn't the first time on our channel that we've gone through maybe a
+[  510.14s ->   517.74s] short-term bear market last year on liberation day the market fell by a lot and the 200 tsm shares
+[  517.74s ->   523.12s] that you saw earlier in this video those were all assigned during march and april of last year right
+[  523.12s ->   528.86s] the market fell a lot we got assigned we weren't able to absorb all that volatility but the benefit of
+[  528.86s ->   535.24s] selling puts is that you get to buy a hundred shares of that stock and guess what it has grown almost
+[  535.24s ->   541.52s] a hundred percent at its peak and that is exactly how you can mitigate and actually outperform the
+[  541.52s ->   547.80s] market in bear markets by understanding how to leverage volatility in your favor and two by letting
+[  547.80s ->   555.30s] the benefits and strengths of selling options play in your favor while mitigating against the risks of
+[  555.30s ->   562.48s] selling puts which is the negative skew and the fact that you can lose a lot more money than you can gain
+[  562.48s ->   568.46s] from the credit if you were to close them early and if you watch my playlist of my public portfolio
+[  568.46s ->   574.70s] you can see how we apply these principles each and every week each and every month hopefully that
+[  574.70s ->   578.54s] made a lot of sense if you guys have any questions let me down down in the comment section below
+[  578.54s ->   581.64s] so if you guys learn something like the content make sure you guys click that thumbs up button
+[  581.64s ->   586.16s] and subscribe to the channel and if you guys want to learn how to sell puts my way check out this
+[  586.16s ->   590.36s] masterclass i'll link in the end screen right here and if you guys want to learn how goldman sachs does it
+[  590.36s ->   594.80s] check out this video linked in the end screen right here as well like always stay safe in the market
+[  594.80s ->   596.08s] until next time peace

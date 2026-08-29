@@ -1,0 +1,54 @@
+[    0.46s ->    10.16s] it is a good day for quantitative finance i have updated the gaozhing cookbook with a new recipe
+[   10.16s ->    17.94s] and i've linked all of the old recipes to my videos on my channel if you're an aspiring quant
+[   17.94s ->    24.14s] if you're looking to get into the space of stochastic calculus and pricing financial
+[   24.14s ->    31.08s] derivatives this is the cookbook that i certainly wish that i had when i was a student this is a
+[   31.08s ->    38.02s] passion project of mine it is entirely open source i link out to content on my youtube channel
+[   38.02s ->    47.62s] on my github and even on ssrn any articles that i choose to write so let me give you a tour of this
+[   47.62s ->    54.82s] newly updated cookbook first of course we have the new header with the kiss the quant this is just
+[   54.82s ->    62.04s] absolutely awesome i got all these stochastic processes around me and we have our recipes now
+[   62.04s ->    69.70s] each of these recipes are going to walk through either the continuous time simulation process when
+[   69.70s ->    76.86s] we discretize it numerically or a discrete recipe so let's click into brownie in motion for example to
+[   76.86s ->    82.20s] see what's going on here so here is my video on brownie in motion if you're unfamiliar with that
+[   82.20s ->    88.26s] as a concept you can check this out it's a 40 minute lecture and i walk through a coherent love
+[   88.26s ->    95.88s] expansion to effectively simulate it numerically or we walk through other simulation methodology
+[   95.88s ->   102.22s] and you can do this via just the formal definition using the idea of a normal or a gaussian increment
+[  102.22s ->   107.30s] so on and so forth and then you can actually simulate the process here there are python snippets
+[  107.30s ->   112.16s] available to you if you want to implement it in your own projects the list goes on so that's brownie
+[  112.16s ->   117.56s] in motion that is the engine for all of these processes let's check out now the brownie and bridge
+[  117.56s ->   122.76s] well i have a video on the coherent love expansion of the brownie and bridge from scratch that was a
+[  122.76s ->   127.80s] really fun video to create that is the continuous time recipe there's also of course the discrete
+[  127.80s ->   133.90s] time counterpart and the simulation and the brownie and bridge is very cool because it is going to start
+[  133.90s ->   139.98s] and end at a particular point you could see the empirical versus the theoretical covariance
+[  139.98s ->   147.14s] structure and that is kind of the goal of all of these recipes is to give you an idea structurally
+[  147.14s ->   155.06s] algorithmically of how we can go about step by step simulating these processes for use in practice for
+[  155.06s ->   161.68s] pricing or anything else that you're trying to model here is one on fractional brownie in motion i made this
+[  161.68s ->   168.22s] video a very long time ago and it uses a davies hart scheme for an efficient simulation but that's not a
+[  168.22s ->   174.82s] causal representation with that we have global path knowledge because effectively it's a spectral
+[  174.82s ->   181.08s] decomposition and you can still use it for simulation certainly like you see here and it works and it's
+[  181.08s ->   186.76s] efficient but without that causal representation we run into some trouble that's exactly why we have the
+[  186.76s ->   193.18s] volterra process my corresponding video here for the volterra process i have this simulation methodology
+[  193.18s ->   200.48s] of course it's going to be relatively inefficient because what we require every single increment the
+[  200.48s ->   207.14s] global path so is there anything we can do about that well there certainly is and that leads to this idea
+[  207.14s ->   216.72s] of markovian lifting that's one of my most recent videos on taking the volterra process and some sort of
+[  216.72s ->   222.80s] fractional kernel and approximating it via this series of exponentials which is going to be a
+[  222.80s ->   228.48s] series of orthogonal mean reverting processes so this is going to be the implementation i didn't attach
+[  228.48s ->   236.80s] code to this video so this here is the associated discretization and code just typed up in a very nice
+[  236.80s ->   242.42s] structured way so you have the video of the derivation you have the discrete time recipe the intuition the
+[  242.42s ->   248.04s] actual discretization itself and the general recipe and of course a python implementation and if you want
+[  248.04s ->   254.58s] to just see it in practice right away you can head on over to the simulation tab you can see smoother
+[  254.58s ->   262.00s] paths you can see rougher paths and you can see the empirical covariance matrix attempting to model this
+[  262.00s ->   266.76s] theoretical covariance matrix and you can determine the number of ou factors and you're going to see an
+[  266.76s ->   271.86s] improvement in the empirical covariance structure relative to the theoretical structure you increase the
+[  271.86s ->   278.70s] paths you can change the smoothness or the roughness and you're going to see the empirics better match
+[  278.70s ->   284.44s] the theoretical structure from that lifting but of course it'll be far more efficient but it will also be
+[  284.44s ->   294.38s] an approximation so this is the gaussian cookbook i hope that you enjoy this resource i hope that you
+[  294.38s ->   299.96s] learn a lot from this resource i have a ton of fun contributing to it this is just you know an open source
+[  299.96s ->   305.00s] project that i really like to work on so if you have any questions or comments things you'd like to see
+[  305.00s ->   310.92s] in it extensions editions the list goes on please let me know in the comment section below if you're
+[  310.92s ->   316.92s] looking to master the foundational skills to approach concepts like this and my other open source
+[  316.92s ->   323.72s] resources check out quant guild.com it's exactly why i built quant guild.com so you guys can master your
+[  323.72s ->   332.68s] quantitative skills all in one place other than that this is a quick one today sharing an open source resource
+[  332.68s ->   340.68s] i'd like to continue to develop this and other open-ended resources maybe i'll do series on this channel where i build
+[  340.68s ->   347.72s] those resources from scratch or we can do build alongs maybe stream style if that's something you guys would like to see
+[  347.72s ->   355.29s] certainly let me know in the comment section below other than that i want to thank you so much for watching
+[  356.01s ->   359.29s] and i'll see you in the next video

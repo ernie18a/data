@@ -1,0 +1,103 @@
+[    0.46s ->     5.42s] Hey guys, what's up? In this video, I want to show you how I made roughly 4% or $4,000
+[    5.42s ->    11.60s] on my trading account, trading credit spreads in April of 2023. All right, so I'm going to break
+[   11.60s ->    16.02s] down these trades. I'm going to show you exactly what went into them, what things I traded, why
+[   16.02s ->    20.26s] I traded them, et cetera. So let's jump right into this just to prove that. You can see here,
+[   20.30s ->    25.06s] I pulled up a custom date filter on my history from April 1st to April 30th. You can see here,
+[   25.06s ->    35.14s] I collected $5,530, paid roughly $330 in commissions. So again, that's roughly $5,000 collected,
+[   35.48s ->    39.74s] but a couple of these trades are still open. So although I collected that much premium,
+[   40.16s ->    46.34s] I only actually closed in profit roughly 4,300 minus commissions. So that's where we're standing
+[   46.34s ->    52.62s] here. It's currently May 4th, but again, this is the trading report for April, 2023. So let's dive
+[   52.62s ->    56.24s] into this. You can see all the trades here if you want, but let's dive into it. Starting off with
+[   56.24s ->    62.42s] SPY. SPY is one of my favorite things to trade. I think I had two main trades here on SPY. I just
+[   62.42s ->    67.02s] went through the history report shows. I entered a put credit spread right here, understanding that
+[   67.02s ->    71.68s] the market is trending up. How do we know this? Well, the market can be in different phases. Right
+[   71.68s ->    76.32s] here, you can see it's a trending phase up market. Right here, you can see it's a downtrending phase
+[   76.32s ->    81.74s] market. And in this market, you can see we're sideways, but kind of trending up. So if we can see
+[   81.74s ->    86.20s] this right here, I know that if I buy anywhere near this region, I'm going to be safe because
+[   86.20s ->    90.38s] it has room to the upside and can even come down a bit and I can set up my put credit spread so that
+[   90.38s ->    94.82s] it makes money. For those who have no idea what a put credit spread is, a put credit spread makes
+[   94.82s ->    99.62s] money in three different ways. Number one, it makes money if the stock goes up. So it makes money if the
+[   99.62s ->   106.18s] stock goes in my favor. Number two, it makes money if the stock goes flat and does nothing. And number
+[  106.18s ->   112.10s] three, this trade makes money if it goes down, but not against me. So we'll show you here.
+[  112.92s ->   118.60s] So for instance, I am currently in a trade. I entered, where did I enter? I entered like right
+[  118.60s ->   124.46s] here. But the trade's not closed yet. You can see here, the close is right here. My exit right here
+[  124.46s ->   130.52s] is around 402. So I have a trade price set on this put credit spread, my most recent one at 402. So this
+[  130.52s ->   134.86s] is a trade that is currently still active and I'll cover it in the May recap video. But anyways,
+[  134.86s ->   139.22s] these are the trades that I took for this week. So what we're looking at is I entered here because
+[  139.22s ->   143.30s] the market was trending up or staying sideways. So I know I had a good chance of the market continuing
+[  143.30s ->   148.92s] higher. I was able then to sell this on this day right here a few days later. So I bought on
+[  148.92s ->   156.66s] April 4th on this green candle. And then I sold about a week later here on April 17th. So maybe about
+[  156.66s ->   162.76s] two weeks actually I sold there for roughly a 15% gain on that credit spread. Then I did the same thing
+[  162.76s ->   167.58s] here while I was in this trade. I knew that I have a long term uptrend. I'm trading this
+[  167.58s ->   172.82s] uptrend. But what's amazing is the stock had a very, very strong red day. Now what's amazing
+[  172.82s ->   178.30s] about put credit spreads on red days is that increases your premium and also gets rid of
+[  178.30s ->   182.92s] some tail risk. Now again, this wasn't a huge red day drop. But when you have that huge red
+[  182.92s ->   188.10s] day drop, which isn't that common for the S&P 500, and you are able to enter a put credit
+[  188.10s ->   192.76s] spread, you're able to collect more money and also eliminate the downside risk because it's already
+[  192.76s ->   196.86s] dropped a lot. Now again, it's not going to of course drop as far as it wants, but it helps
+[  196.86s ->   201.88s] eliminate some of that risk when you enter on a red day. So I entered there and then was able to exit
+[  201.88s ->   207.42s] a few days after the other trade right here for roughly about a 16% profit as well. Now I currently
+[  207.42s ->   212.62s] entered this trade as it started to dip and I'm trying to get back into it. My level is 402. So if it
+[  212.62s ->   219.32s] stays above this by tomorrow, then I'll make money. If not, then I'll lose money, but I'll be able to
+[  219.32s ->   225.52s] sell it before the market closes and hopefully be able to collect more than my max loss, which is
+[  225.52s ->   230.14s] typically always possible. And so again, I won't experience the max loss on this trade. But anyways,
+[  230.22s ->   235.26s] that was the SPY trade. Let's look into TLT. We also traded TLT here. So I can see here that I have
+[  235.26s ->   240.20s] a solid resistance level, if I can even make straight lines, and I have somewhat of a support level
+[  240.20s ->   247.36s] right here. So you can see here, my first trade was I bought right here at this level, we can saw
+[  247.36s ->   251.94s] that it formed this doji candle, it was bouncing, then we had a bit of a red day. And as I mentioned,
+[  252.12s ->   256.58s] I love entering put credit spreads on red days, because it eliminates a lot of my downside risk,
+[  256.78s ->   261.72s] as well as also increases premiums, like collect more. And then I was able to sell it right here
+[  261.72s ->   267.26s] at around 106. And again, I was able to make a good 14% profit on this trade. Now again, I currently
+[  267.26s ->   273.82s] entered another trade around here. And it has a limit of 102. So it has a limit of 102 right here.
+[  274.18s ->   279.06s] And then again, this trade is going to expire in May. So I'll cover that in May. But that was my one
+[  279.06s ->   284.38s] trade for TLT GLD, I only had one trade, I wish I would have had more. But you can see here based on a
+[  284.38s ->   288.70s] lot of economic news and what's going on, gold is doing very, very well, a lot of people want to buy
+[  288.70s ->   294.50s] gold, as they want to back their digital currency. And so again, I knew that gold was being bought up,
+[  294.50s ->   298.72s] I also knew that it was trending well. So what I did is I waited for a dip down, I bought the doji
+[  298.72s ->   302.86s] candle because that's indicative of a reverse when you have a doji candle like this small body,
+[  303.16s ->   308.02s] long wicks near a support level or after dropping that's indicative that's going to reverse.
+[  308.20s ->   313.96s] So I did that I traded this gold to the upside made roughly 16% in four days, right? I sold the
+[  313.96s ->   322.54s] credit spread here, 123 and three days of holding, I was able to exit that that credit spread for a 17%
+[  322.54s ->   327.80s] gain. Because again, why? Well, it broke to this recent high and formed a doji candle,
+[  327.96s ->   331.38s] which is indicative of what a reversal as we just covered from this previous one.
+[  331.74s ->   335.14s] And so I knew there's a good chance that it that it was that it was going to go down. So I might as
+[  335.14s ->   340.76s] well take the profit and move on to the next trade with my money. So anyways, I wanted to energy GLD here
+[  340.76s ->   345.98s] again at support, but I didn't because I thought it was going to come back up. But again, that is
+[  345.98s ->   351.70s] hindsight is 2020. I can't say anything about that. Okay, DIA was also a trade here,
+[  351.70s ->   359.78s] I made a DIA trade right here. I just want to map this one out live for you guys here waiting for
+[  359.78s ->   364.78s] this breakout and then ended up breaking out and then was able to close that trade out around here
+[  364.78s ->   370.02s] for a 16% profit. But this one right here is marking where I am currently in a trade that I
+[  370.02s ->   376.44s] entered on April 20th. That is expiring tomorrow, May 5th. So again, I'll be able to cover over this
+[  376.44s ->   382.46s] in the May recap video. But you can see here, my level is 330. So from 330, it looks like it could
+[  382.46s ->   386.94s] potentially bounce having rejected and come down red this far. So I'm holding on to this trade for
+[  386.94s ->   391.00s] this potential balance here tomorrow. If we don't get that bounce, then I'll sell for a small loss,
+[  391.06s ->   397.66s] no biggie. But that's the DIA trade. Last but not least, we have an IWM trade IWN this huge red
+[  397.66s ->   402.96s] candle right here. As always, selling put credit spreads on a red day is very beneficial. Increase
+[  402.96s ->   408.12s] my premium, decrease my downside risk. You can see here kind of slow down to the downside jumped up
+[  408.12s ->   413.46s] because of the market movement, volatility dropping and decreasing because of the upward movement and
+[  413.46s ->   418.64s] other things I was able to make a 15% profit on that credit spread as well. Anyways, guys, this is
+[  418.64s ->   424.10s] kind of the structure of how I do this. I simply just look at support and resistance levels. But also,
+[  424.10s ->   429.06s] I rely on one important factor. If you guys can go to the link in the description below, you can
+[  429.06s ->   434.64s] actually check it out and actually get three free alerts for yourself to try this. But I have this
+[  434.64s ->   440.16s] trade ideas algo that runs through, does all of that is all the math, all the technical analysis and
+[  440.16s ->   446.34s] actually runs historical back tests to show you what you can expect to make on a historical basis since
+[  446.34s ->   451.62s] 2007. And again, it gives you the historical win rate, it gives you your analyzed return and tells you
+[  451.62s ->   456.18s] exactly what to do with these trades right here. And so these are where all these trades came from.
+[  456.18s ->   460.02s] I look at the trade, I can do a quick technical analysis sweep with the chart and I go, okay,
+[  460.02s ->   464.48s] does this make sense? Cool. And then I trade it. So that's exactly how I did this. If you want free
+[  464.48s ->   469.66s] trades for yourself right here, you're using the trade ideas algo, I will give you free trades for it.
+[  469.66s ->   474.52s] You can just go to the link below. You can watch the free training on how this works or simply just
+[  474.52s ->   479.20s] scroll all the way down to the bottom of the page and click test our alerts. Just give me your email and I
+[  479.20s ->   483.16s] will send you free alerts so that you can try it right out. Because the thing is, once you make
+[  483.16s ->   486.68s] money with the system, I know you'll be more likely to join. So I'm going to give you free
+[  486.68s ->   490.92s] alerts that you can make money. All right, guys, thank you so much for watching. That was my recap
+[  490.92s ->   494.42s] video for the trades that I took in April. If you want to learn more about put credit spreads or
+[  494.42s ->   499.16s] credit spreads in general, make sure to smash that subscribe button and alerts bell because I have
+[  499.16s ->   501.22s] so many great videos coming for you.
+[  501.22s ->   513.24s] for sure.
+[  513.24s ->   517.20s] We'll see you next time.
+[  517.20s ->   521.20s] Bye.
+[  521.20s ->   522.54s] Bye.
+[  522.54s ->   525.06s] Bye.
+[  525.06s ->   529.06s] Bye.
+[  529.06s ->   530.22s] Bye.

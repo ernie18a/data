@@ -1,0 +1,127 @@
+[    0.92s ->     6.62s] Welcome to video number four of Trend Following Secrets, which is Stock Selection for Trend
+[    6.62s ->     7.08s] Trading.
+[    7.56s ->    11.80s] So we're just going to jump into it and I'll give you some tips on how to find some trending
+[   11.80s ->    13.30s] stocks in a very quick way.
+[   13.76s ->    17.88s] And so again, like I said, through video number one, through video number three, I kind of
+[   17.88s ->    22.38s] showed you the best way to find or in video number three, I should just say, I showed
+[   22.38s ->    23.64s] you one way to find stocks.
+[   23.72s ->    26.88s] So if you like that, definitely go check out video number three if you missed it.
+[   26.88s ->    30.58s] In video number one and two, I kind of showed you how to identify what a trending stock
+[   30.58s ->    31.72s] is and how to read the chart.
+[   32.04s ->    35.92s] And that's crucial because it's going to help us analyze stocks faster when we're looking
+[   35.92s ->    36.74s] for great stocks.
+[   37.08s ->    40.92s] So anyways, the first way that I'm going to show you is tradingview.com.
+[   41.48s ->    43.94s] So again, you can go here and click on the bottom.
+[   44.04s ->    47.68s] Once you create a free account, you can check out the stock screener.
+[   47.98s ->    51.86s] So again, they do by default, if you scroll down, have a trend following screener.
+[   51.90s ->    54.42s] So this is going to help give you a head start.
+[   54.42s ->    57.74s] So again, you can do that and then you can start adjusting things.
+[   57.88s ->    61.08s] So for instance, we can go in here and we can, so again, trend following is going to
+[   61.08s ->    64.48s] be our default, but we can go into filters and then we can start changing things.
+[   64.78s ->    67.00s] So by default, this is the trend following one.
+[   67.08s ->    69.14s] And now we can start adjusting things as we want.
+[   69.44s ->    74.02s] For instance, let's say that we just did video number three.
+[   74.12s ->    78.00s] And so we know the strongest sectors, which at the moment is the tech.
+[   78.36s ->    80.88s] So I can come down here and type in health tech.
+[   80.88s ->    86.82s] I can go to technology services, finance, so I do well.
+[   87.14s ->    90.78s] And so now I can actually look at the strongest sectors and look for the strongest stocks in
+[   90.78s ->    91.36s] those sectors.
+[   91.88s ->    93.82s] Let's say I want to stay away from small caps.
+[   93.88s ->    95.26s] I want to just do larger caps.
+[   95.60s ->    97.04s] I can do that as well.
+[   97.50s ->   103.54s] If you checked out the webinar where I kind of share my secret strategy and criteria that
+[  103.54s ->   109.12s] I look for, you'll know that I like within or the best trending stocks tend to be within
+[  109.12s ->   110.20s] a certain price range.
+[  110.60s ->   114.10s] So again, we can look and adjust price if we want to do that as well.
+[  114.40s ->   115.56s] And so we can change that.
+[  115.74s ->   118.90s] But again, you can see all the amazing filters that they have here.
+[  119.24s ->   122.14s] And so that's a great way to also search for things as well.
+[  122.46s ->   126.12s] And so again, once you have that, you can kind of come back and you can look at stocks.
+[  126.22s ->   128.46s] So let's take out Royal Bank of Canada.
+[  128.58s ->   131.02s] You can see here that we were trending well for the most part.
+[  131.38s ->   133.12s] You can see TD Ameritrade.
+[  133.76s ->   134.98s] You can see here that's bouncing off.
+[  134.98s ->   139.42s] Imagine if you would have saw this right here, you would have known this stock is trending
+[  139.42s ->   139.90s] higher.
+[  140.02s ->   145.06s] We're forming a doji candle on this moving average, which we said is a very strong level
+[  145.06s ->   145.60s] of support.
+[  145.84s ->   147.94s] And then you buy and you start making your way higher.
+[  148.20s ->   149.66s] So again, this is a great way to find stocks.
+[  149.76s ->   150.82s] It's tradingview.com.
+[  151.04s ->   153.18s] The next way I want to show is finviz.com.
+[  153.28s ->   158.16s] So again, what you're going to do here is I'm going to jump to the technical tab.
+[  158.50s ->   162.84s] And what you want to do here is you want to make sure or kind of check that price is above
+[  162.84s ->   164.40s] the 200 day moving average.
+[  165.04s ->   166.90s] Again, you kind of want to look for that.
+[  167.32s ->   170.72s] If it's above the 50 day, that's going to be stronger as well.
+[  171.18s ->   172.14s] And then, but I don't know.
+[  172.22s ->   176.18s] Again, if you watch the webinar, you'll kind of get a sense of criteria and what you should
+[  176.18s ->   176.88s] be looking for.
+[  177.38s ->   181.74s] So for instance, if I go in here to the, this is a free site.
+[  181.82s ->   182.44s] So there's going to be ads.
+[  183.10s ->   184.66s] I can, I can adjust price.
+[  184.66s ->   192.60s] So let's say over $5, anywhere from five to two, uh, 200 will be our key levels.
+[  192.80s ->   194.48s] Um, I can even go to fundamentals.
+[  195.26s ->   197.76s] Um, do, do, do, do, do, do, do, do, do.
+[  198.44s ->   199.60s] Anything I want to adjust?
+[  199.68s ->   200.16s] Not really.
+[  200.40s ->   202.80s] Um, but it's a great, a great way to find stocks.
+[  202.88s ->   206.48s] But as I mentioned, you need to go through video number one to assess it because when
+[  206.48s ->   208.48s] you hover over it, you'll see that, okay, this stock sucks.
+[  208.54s ->   209.22s] This stock sucks.
+[  209.34s ->   210.22s] This stock sucks.
+[  210.34s ->   211.18s] This stock sucks.
+[  211.18s ->   215.10s] This stock sucks and you'll start to get a better perspective of how things are going.
+[  215.44s ->   218.38s] And then you'll be able to easily assess how a stock is performing.
+[  218.88s ->   221.00s] Um, for instance, this may be one we want to look at.
+[  221.14s ->   223.00s] So I can click in further and see more about it.
+[  223.06s ->   226.20s] You can kind of, you can kind of, you can see more, more details about it here.
+[  226.46s ->   228.48s] So that is one way to do that as well.
+[  228.76s ->   230.74s] Finviz, you also have Yahoo finance.
+[  230.96s ->   232.66s] So you can click here and go to Yahoo finance.
+[  232.74s ->   237.46s] There's a screener tab and go to, uh, the equity screener, which is going to be stock screener.
+[  237.46s ->   241.16s] Uh, you can try to find, see if we have some, uh, prebuilt ones.
+[  241.48s ->   242.96s] Here there used to be prebuilt.
+[  243.06s ->   245.04s] Maybe I missed the section to do it.
+[  245.56s ->   245.98s] Let's see.
+[  246.02s ->   246.62s] Yeah, here we go.
+[  246.70s ->   249.48s] So you can find the prebuilt, uh, the prebuilt screeners here.
+[  249.92s ->   255.46s] Um, so again, growth technology stocks, stocks would be a great place to start, um, for trending
+[  255.46s ->   257.44s] since we know that tech is a hot sector right now.
+[  257.44s ->   260.38s] But for instance, if another sector was hot right now, then we would want to focus on
+[  260.38s ->   260.62s] that.
+[  261.08s ->   263.20s] Um, but again, you can see here, Apple and whatever else.
+[  263.52s ->   266.48s] Um, but again, let's see, let's edit this list and kind of adjust.
+[  266.48s ->   268.34s] We can add filters based on what we want.
+[  268.34s ->   272.64s] So again, we can look for trends and total debt and all that good stuff.
+[  272.64s ->   275.60s] Um, for trend wise, we want to look for a positive performance.
+[  275.60s ->   277.94s] Um, so again, share statistics.
+[  278.32s ->   279.98s] Um, let's look at average volume.
+[  279.98s ->   286.76s] I kind of want to see, um, 52 week price change price end of day.
+[  286.76s ->   292.17s] I want to see performance is what I want to do, um, which is not really what it's showing
+[  292.17s ->   293.29s] me right here.
+[  294.11s ->   298.12s] Um, yeah, it's not giving me a good example.
+[  298.48s ->   303.08s] Um, but anyways, you want, you want to look for a positive five year performance and you
+[  303.08s ->   307.40s] can typically do that by finding long-term performance and then looking for a positive
+[  307.40s ->   308.26s] value on that.
+[  308.34s ->   309.36s] And that's one way to do it.
+[  309.36s ->   312.04s] Anyways, that is another screener that you can take advantage of.
+[  312.04s ->   316.66s] Uh, remember use everything you learned from video one, two, and three to kind of assess
+[  316.66s ->   319.78s] what goes into a trending stock and find those on the screeners.
+[  319.78s ->   325.26s] Now I do have to mention the impeccable stock software because one, um, it's literally a
+[  325.26s ->   326.28s] trend trading platform.
+[  326.28s ->   329.70s] So this screener is built for trend traders to find trending stocks.
+[  329.70s ->   332.10s] This is going to be the best screener around for you.
+[  332.48s ->   335.68s] Um, again, there is a 14 day free trial to check that out.
+[  335.68s ->   340.54s] But again, um, we can look for stocks that are in an uptrend gray, uh, great buy.
+[  340.72s ->   343.62s] Also, I'd like to include the discount and cashflow value.
+[  343.62s ->   347.28s] If you looked at all these other sites, they don't, they, they don't include this, uh, but
+[  347.28s ->   348.06s] this works as well.
+[  348.36s ->   351.30s] Um, again, you can check your risk to reward your, your PE ratio.
+[  351.48s ->   357.48s] Again, if it is up trending, then the algorithm behind this act actually assesses if the stock
+[  357.48s ->   358.52s] is going up and higher.
+[  358.66s ->   362.36s] So again, we know that an uptrend, it works well on that and so much more.
+[  362.36s ->   365.10s] So again, this will be your go-to screener if you want to trend trade.
+[  365.10s ->   368.36s] And I would definitely recommend you, you, you, you check that out.
+[  368.62s ->   369.66s] Um, if not, that's fine.
+[  369.74s ->   371.84s] These, these screeners work, um, just as well.

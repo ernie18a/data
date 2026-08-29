@@ -1,0 +1,103 @@
+[    1.26s ->    12.07s] What's going on, guys? My name is Roman Pellucci. I'm a quantitative researcher and trader, founder of QuantGuild.
+[   12.63s ->    17.77s] And today I want to tell you about how I cracked the quant interview.
+[   18.13s ->    26.11s] I'll tell you about some of my experiences interviewing mainly for Citadel, Acuna, and AQR.
+[   26.37s ->    33.31s] I'll tell you about what worked, what didn't work, and what I learned from each of these experiences.
+[   34.11s ->    41.87s] That ended up shaping the way that I look at the interview process to go on to find a tremendous amount of success.
+[   42.55s ->    48.17s] This is my recommended approach for students that I speak to to this day.
+[   48.67s ->    57.41s] So we'll walk through each of these experiences, talk about the main takeaways, and wrap up with how I look at the entire process today.
+[   57.41s ->    60.71s] Up first is this interview with Citadel.
+[   60.71s ->    63.99s] It was for a quantitative developer role.
+[   64.65s ->    73.05s] I never saw myself as a software engineer or a quantitative developer, but when Citadel calls, you pick up the phone.
+[   73.27s ->    77.05s] So I ended up sitting down with this senior quantitative developer.
+[   77.47s ->    80.33s] He had a PhD in particle physics.
+[   80.33s ->    84.13s] He had pivoted after his postdoc to the quant space.
+[   84.13s ->    89.75s] So we sat down, got to talking, learned about each other's backgrounds.
+[   89.93s ->    95.99s] He was a very cool guy, and that led us right into the technical round.
+[   95.99s ->   111.03s] So we started with some questions about partial differential equations, the connection between some sort of risk-neutral conditional expectation and solution to a parabolic PDE.
+[  111.03s ->   116.21s] It was really just a Feynman CAC we were talking about there.
+[  117.13s ->   127.65s] And after kind of a brief discussion about pricing and applied math, we moved on to more leak code style problems.
+[  127.65s ->   134.59s] And we warmed up with just basic combinatorics, permutations, combinations.
+[  135.59s ->   141.59s] And I had joked, you know, these questions are way too easy.
+[  141.75s ->   143.69s] And I imported iter tools.
+[  144.05s ->   150.33s] For those of you who don't know, Python has a pre-written module for these combinatorics problems.
+[  150.33s ->   157.47s] And, you know, I thought it was pretty funny, but he did not think it was very funny at all.
+[  157.59s ->   164.61s] So we ended up, you know, as you do in these technical interviews, writing the functions from scratch.
+[  164.61s ->   171.97s] We talked about the difference between returning and yielding different objects in some sort of recursive function call.
+[  171.97s ->   185.69s] And this is kind of where the wheels started falling off of the bus, because this led into some very esoteric questions about memory allocation and efficiency.
+[  186.25s ->   194.67s] And I knew what he was asking, but I didn't know the solution or the answers off the top of my head.
+[  194.67s ->   224.43s] And something about the questions kind of bothered me in the sense that I didn't really have any interest in what the answer was, which kind of surprised me, because usually if there's something that I don't understand in math, statistics, probability, whatever it is, then I'm very eager to figure out what it is I don't understand and figure out the solution.
+[  224.43s ->   233.45s] And why that solution is, but I really didn't care when it came to these questions about memory and latency.
+[  234.45s ->   247.19s] And this kind of leads into the first takeaway here from the Citadel experience, and that's you have to be interviewing for roles that you actually want to carry out.
+[  247.19s ->   264.13s] I had no interest in being a quantitative developer or a software engineer, and that wasn't just clear to me as I was trying to answer these questions about memory allocation and efficiency, but it was apparent to my interviewers.
+[  264.13s ->   277.41s] So the first takeaway here is, do not hedge, prioritize the roles that you see yourself sitting in, in terms of what you're targeting in the interview process.
+[  277.61s ->   286.57s] Do not hedge, don't say, hey, you know, I'm a software engineer, so I'm just going to go out and try to interview to be a quant trader,
+[  286.57s ->   295.75s] when I really would prefer to be a trader, but I can always go to engineering now, it's not how you're going to succeed in this interview process.
+[  296.29s ->   303.07s] You cannot hedge, focus on targeting the roles and interviews that you want to sit in.
+[  303.07s ->   308.17s] Now, at the time, I didn't really get to learn this lesson from the Citadel experience.
+[  308.39s ->   322.83s] I had two other interviews queued up with Acuna and AQR, and I was way too focused on those specific interviews to actually take a step back and establish a framework.
+[  322.83s ->   333.35s] So I'm hoping that this gives you some necessary perspective for the space if you are a student currently interviewing for these roles,
+[  333.35s ->   341.79s] or if you're wondering what the approach should be, as we'll get to after these last two experiences here.
+[  341.93s ->   347.07s] So we'll talk about now my interview with Acuna for a quant trading role.
+[  347.07s ->   361.65s] I sat down with a senior quantitative trader, and he asked me a bunch of very simple questions about probability and statistics, some mental math.
+[  362.47s ->   375.59s] But it was clear to me that these questions, and even though I had answered them correctly, really didn't matter all that much to my interviewer.
+[  375.59s ->   385.13s] And I could see a noticeable change in attitude when we began to talk about my trading activities personally.
+[  385.37s ->   401.83s] So at the time, I had developed mid-high-touch trading strategies, and I had built these systems in Java, Python, even a little bit of C++.
+[  401.83s ->   418.11s] And when we started to talk about trading, there was a noticeable shift in the energy in the room, and he was curious about my entry, my exit, how I thought about the space, what edge means to me.
+[  418.11s ->   433.11s] And this kind of gets into the takeaway from the second interview experience, and that's to focus on what you notice matters most to your interviewer.
+[  433.73s ->   444.55s] So that's not an invitation to throw the technical questions, but what it is an invitation for is to understand what's important to the person that you're talking to.
+[  444.55s ->   453.87s] People hire people. Some people care a lot about if you can solve some sort of leak code hard or a stochastic integral.
+[  454.71s ->   467.29s] And other people care more about the soft skills, the qualitative components of the role, because they're going to have to sit next to you every day for the next however long they're in this role for.
+[  467.29s ->   489.49s] So my takeaway from this experience with Acuna was, when you find something that you notice the interviewer is excited about, really lock in on that component and do everything you can to express your passion for the subject.
+[  489.49s ->   500.85s] And that doesn't just build rapport with your interviewer, but it also shows that you have a genuine interest in the role that you're interviewing for.
+[  500.97s ->   508.61s] Last but certainly not least is this interview experience with AQR for a quant research role.
+[  508.61s ->   519.29s] I ended up sitting down with a senior quant researcher and we began by discussing convex versus non-convex optimization problems.
+[  519.81s ->   531.01s] He asked me to derive the solution to least squares using matrices, which isn't particularly difficult if you've seen the argument.
+[  531.01s ->   541.35s] It's very basic optimization from calculus using matrices, but then we pivoted to a broader discussion about numerical optimization.
+[  542.03s ->   553.79s] We talked about this idea of getting stuck at local extrema and the different algorithms available to us to help mitigate this problem.
+[  553.79s ->   565.45s] We talked about gradient descent and the difference between gradient descent and stochastic gradient descent, which most modern optimization routines are a flavor of.
+[  566.31s ->   574.75s] And then this is where he began asking a whole bunch of very esoteric questions about optimization routines.
+[  575.75s ->   582.85s] And this echoes the takeaway from the first and the second interview experience here.
+[  582.85s ->   587.95s] I noticed he cared a lot about these optimization problems.
+[  588.59s ->   602.77s] Now, I didn't know a lot of these different algorithms that he was mentioning to me, but I had a tremendous interest in what they were and the solutions that they facilitated.
+[  602.77s ->   610.95s] So even after the interview, I remember that evening, I was researching those algorithms like a madman.
+[  610.95s ->   612.75s] And this is before LLMS, folks.
+[  613.21s ->   621.39s] This is when men did research like men on Google Scholar and Stack Overflow.
+[  621.87s ->   623.91s] No track GPT back in the day.
+[  624.13s ->   633.47s] But in any case, this third takeaway here is really about this idea of immersion.
+[  633.73s ->   635.19s] What do I mean by immersion?
+[  635.19s ->   645.67s] Well, are you building projects, conducting research or trading without institutional backing when there's no money involved?
+[  645.91s ->   652.51s] In other words, are you fulfilling the role anyway because you love it?
+[  652.95s ->   656.55s] This is often what is also meant by passion.
+[  657.01s ->   658.67s] You're doing this anyway.
+[  658.67s ->   676.31s] What you'll find after you have successfully immersed yourself in the space is during these technical interviews, questions aren't going to appear as esoteric and you're going to have your own opinions about different solutions.
+[  676.31s ->   701.13s] And if you put all three of these together, this idea of focusing on roles that you want to sit in, focusing on what it is the interviewer actually cares about and successfully immersing yourself in the subject or space for whatever role you are targeting has landed me a significant number of offers.
+[  701.13s ->   707.79s] This is when I really felt that I had cracked the quant interview.
+[  707.91s ->   711.27s] Now, this is certainly easier said than done.
+[  711.39s ->   725.97s] We haven't talked about the years of necessary study to even be able to understand the questions that they are asking you in the first place or how to handle successive failures.
+[  726.71s ->   729.01s] Everybody fails technical interviews.
+[  729.01s ->   731.47s] It happens to the best of us.
+[  731.99s ->   738.47s] But how do we go about taking it in stride and coming back for more?
+[  739.33s ->   749.53s] And I think there are two approaches to failure in the quant interview space specifically.
+[  749.53s ->   766.35s] Now, you can either have an unreasonable degree of faith in yourself, which I think is what a lot of startup founders kind of echo this idea of there's 10 million and one reasons why it shouldn't work out, but I'm going to make it work.
+[  766.35s ->   772.39s] And it's kind of this undying faith in oneself, this undying optimism.
+[  772.39s ->   776.53s] Now, I could never achieve that personally.
+[  776.53s ->   784.15s] So I took approach B and approach B is to burn the boats.
+[  784.35s ->   786.39s] There are no other options.
+[  786.63s ->   790.95s] You know, when I feel like running six miles, never.
+[  790.95s ->   794.59s] But I run three miles in one direction without a phone.
+[  794.73s ->   798.99s] And the only way for me to get home is to run back the other way.
+[  799.09s ->   802.31s] So I take that sentiment with me to the interview process.
+[  802.69s ->   808.45s] If I wanted a job, then I was going to get a job as a quant.
+[  808.45s ->   811.01s] But there were no other options.
+[  811.13s ->   813.79s] So that is how I approached failure personally.
+[  814.39s ->   818.31s] And that's what ended up working well for me.
+[  818.39s ->   824.73s] In any case, that's how my quant interview experiences have shaped the way that I look at the quant interview process.
+[  825.17s ->   831.75s] And this framework hasn't just worked well for me, but it seems to have also worked for peers and colleagues.
+[  831.75s ->   838.41s] So I hope you find it useful, and I hope you enjoyed this video.
+[  838.57s ->   844.37s] I ended up hiking this morning to the top of a ski mountain.
+[  845.49s ->   851.37s] And for those of you who maybe have connected with me on LinkedIn will know that I volunteer ski patrol.
+[  851.63s ->   857.17s] And I've been skiing and snowboarding for 15, 17 years at this point.
+[  857.29s ->   859.69s] So I'll look forward to this winter season.
+[  859.69s ->   863.47s] But with that, I want to thank you so much for watching.
+[  863.85s ->   865.89s] I'll look forward to this hike down now.
+[  866.35s ->   869.53s] And I will see you in the next video.

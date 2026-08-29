@@ -1,0 +1,211 @@
+[    0.46s ->    10.52s] it's the end of an era the hair has been cut and because i no longer have the long hair
+[   10.52s ->    16.68s] i have lost all ability to do any sort of quantitative finance i no longer can do
+[   16.68s ->    20.86s] any sort of marcovian analysis i can no longer do my stochastic calculus
+[   20.86s ->    25.46s] and of course that means that i've been suffering on all of my exams as of late
+[   25.46s ->    32.36s] but all jokes aside in this video what i really want to do is i want to talk about the current
+[   32.36s ->    37.96s] landscape the current macro environment the current market environment and discuss some
+[   37.96s ->    43.06s] interesting trends discuss some interesting news to look out for next week and the following week
+[   43.06s ->    49.94s] and really just make a a nice little summary of the current market climate and kind of talk about
+[   49.94s ->    56.54s] you know what my strategy is going forward at least in my own portfolio now this is not investment
+[   56.54s ->    63.54s] advice okay i have absolutely no no interest in giving formal investment advice to all of you
+[   63.54s ->    69.52s] right now what that means is i don't want to hear about your naked call options that you bought after
+[   69.52s ->    76.28s] watching this video that have lost all value i really really cannot stress that enough this is not a
+[   76.28s ->    83.10s] video giving you any form of investment advice in the comments below if you would like to comment
+[   83.10s ->    88.98s] your views or if you would like to speculate or if you would like to engage in some discourse about
+[   88.98s ->    94.18s] my views please do i do encourage that you can also join discord where we can have a more formal
+[   94.18s ->   100.56s] conversation um but yeah let's go ahead and get into it what is going on right now in the economy
+[  100.56s ->   106.08s] what's going on right now in the markets well to nobody's surprise the s&p 500 has been
+[  106.08s ->   116.94s] cooking recently we saw all-time highs not only in the s&p 500 but also with nvidia's market cap
+[  116.94s ->   128.54s] going over a trillion dollars so let's just look at nvidia for a second 2.06 trillion dollars
+[  128.54s ->   135.68s] and if we look at year to date that is some ridiculous growth stock price practically doubling
+[  135.68s ->   144.75s] within this roughly two month period um this is just leading the charge for the s&p 500 right
+[  144.75s ->   162.22s] if we take a look at the s&p 500 let's go to bar chart look at the full chart here we can see an
+[  162.22s ->   171.50s] all-time high how about that we are at an all-time high in the market so what does that mean well let's
+[  171.50s ->   177.52s] take a look at the current sector map let's take a look at the year to date sector map we can see
+[  177.52s ->   183.62s] tech spearheading this of course that's not a surprise we saw nvidia we see all of these technology
+[  183.62s ->   189.36s] stocks that are kind of riding this wave the semiconductors like nvidia we see rambis we see
+[  189.36s ->   198.26s] taiwan semiconductor um all of these ai companies everybody is super hyped up on um a lot of people
+[  198.26s ->   204.96s] are even kind of trying to compare this to the dot-com bubble of you know 1999 2000 2001
+[  204.96s ->   214.38s] but the the big difference between that bubble and this current landscape is they're cash rich
+[  214.38s ->   222.16s] you know those those dot-com companies ipo'd and were burning cash they had absolutely no earnings
+[  222.16s ->   226.00s] to show for it but if you take a look at any of these companies valuations are very strong
+[  226.00s ->   232.50s] moreover we don't see stagnant growth in any of these sectors right you know poor utilities and
+[  232.50s ->   237.64s] real estate down here for sure commercial i believe is what's driving real estate down significantly but
+[  237.64s ->   244.14s] over that we can see everything from staples discretionary industrials we see growth everywhere
+[  244.14s ->   250.56s] right it's important to realize the s&p 500 is a market cap weighted index as well so we see a year
+[  250.56s ->   258.38s] to date growth of 7.7 percent already that is that is cooking right on average it's it's 10 percent
+[  258.38s ->   266.26s] year over year but if we take a look at the equal weighted index right the spw here we see that it is
+[  266.26s ->   274.20s] 3.61 so there's still growth but not as much and of course that's due to the lack of weight in those
+[  274.20s ->   282.06s] companies that are essentially leading the charge in growth for the s&p 500 here all right so we see
+[  282.06s ->   288.14s] this growth in the equity market but what about employment what about the underlying economics that's
+[  288.14s ->   295.56s] driving this growth well in january we saw non-farms at 353 000 smashing analyst estimations
+[  295.56s ->   302.26s] we saw unemployment remained at roughly 3.7 percent and if we take a look at unemployment over the years
+[  302.26s ->   307.96s] i definitely have this chart here it is we can see that it's the lowest so it's remained under four
+[  307.96s ->   315.92s] percent for i think this is the longest time since the 60s since like vietnam for i think the past two
+[  315.92s ->   321.94s] years it's been under four percent and um i didn't read that i heard that on bloomberg daybreak so
+[  321.94s ->   328.22s] you know that is uh an interesting fact that you can take a look at in this chart here um we had
+[  328.22s ->   335.62s] egregious unemployment during the covet 19 pandemic and you know now we're hovering around this pretty
+[  335.62s ->   342.44s] steady 3.5 percent um but of course all of this growth is not without inflation right inflation
+[  342.44s ->   349.24s] is kind of the big bad wolf that we all have to be on the lookout for here um and during the
+[  349.24s ->   354.60s] essentially we'll talk a little bit more about the um the consequence of inflation and and the growth
+[  354.60s ->   359.44s] um but let's let's continue on this this employment and job sort of situation here
+[  359.44s ->   365.64s] so we're going to get more so this is non-farms right there's non-farm payrolls as the the jobs
+[  365.64s ->   371.60s] added in january um this could suffer from a degree of seasonality right so we we could expect this to
+[  371.60s ->   378.26s] normalize in february i believe current estimates are at 180 000 ish give or take 20 000 in either
+[  378.26s ->   384.48s] direction we're actually going to get solid numbers on february's non-farms and unemployment on
+[  384.48s ->   390.26s] march 8th next week so do be on the lookout for that the following week we're going to get more
+[  390.26s ->   395.30s] inflation for february we're going to get cpi and pce we're going to talk about that in a minute
+[  395.30s ->   400.62s] but next week not only are we getting non-farms and unemployment but we're also going to see mr
+[  400.62s ->   406.88s] powell discuss monetary policy at congress so this isn't going to be him raising or lowering rates or
+[  406.88s ->   410.66s] anything like that but it's you know going to be one of those situations where we're gaining
+[  410.66s ->   414.20s] information and our information set and it's going to be priced into the market so we have to
+[  414.20s ->   420.96s] follow closely to see if he has any wisdom to share with all of us so let's go ahead and pivot
+[  420.96s ->   426.10s] now and talk a little bit about inflation right and then we're going to talk about the contractionary
+[  426.10s ->   432.64s] and the expansionary cycles that we've seen over the past couple decades and kind of talk about where
+[  432.64s ->   438.08s] we are right now so let's kind of talk about the current inflation landscape so if we look at core
+[  438.08s ->   445.38s] inflation that's excluding food and energy for pce we have 2.8 core inflation for cpi is going to be
+[  445.38s ->   453.56s] 3.9 okay what's the difference between cpi and pce cpi is a survey pce is based on essentially consumer
+[  453.56s ->   458.60s] purchase data so it's based on data that's the preferred gauge right you want to use the data
+[  458.60s ->   464.58s] rather than what people say is the the case nevertheless we look at both of them here we also
+[  464.58s ->   474.78s] have the headline numbers for cpi at 3.1 the headline numbers for pce at 2.4 focusing in on this pce number
+[  474.78s ->   480.62s] here we can see that we're kind of closing in on the fed's 2% target to some capacity right
+[  480.62s ->   488.70s] if we look at the the core pce here they've made comments in the past that they don't necessarily need
+[  488.70s ->   495.26s] to see inflation get to that two percent to be willing to cut rates but you know right now there's
+[  495.26s ->   501.88s] really no reason to cut rates we're not seeing any sort of cool down we just discussed uh in the context
+[  501.88s ->   510.20s] of the s p 500 the market in each of the sectors it's hard to it's hard to lobby for rate cuts right now
+[  510.20s ->   516.02s] um you know unless you're of course these companies um it's very hard to lobby from an economic
+[  516.02s ->   521.72s] perspective you know why we should cut rates right now interestingly enough if we were to kind of
+[  521.72s ->   528.36s] shift our focus to the yield curve we do have an inverted yield curve and this guy has been with us
+[  528.36s ->   535.10s] since late 2022 early 2023 and what that means is short-term rates are higher than long-term rates
+[  535.10s ->   540.10s] right typically it's the other way around typically you would expect the yield on a 30-year treasury
+[  540.10s ->   546.36s] to be arbitrarily higher than a on the than the yield on a short-term treasury and that's because
+[  546.36s ->   551.46s] you have more risk right if you hold that long-term bond rates could go up rates could go down inflation
+[  551.46s ->   556.56s] could go up inflation could go down etc etc you have all these risks right associated with the price of
+[  556.56s ->   562.18s] that bond that you're holding um but of course right now we have an inverted curve we have the federal
+[  562.18s ->   568.84s] funds rate at roughly 5.3 percent i believe um and that overnight lending rate has pushed up
+[  568.84s ->   578.90s] these short-term rates to i believe we have the one month at like 5.4 percent ish 5.5 percent ish
+[  578.90s ->   589.00s] 5.5 ish percent right and i believe year to date it's up roughly 40 bps um but i'm not going to
+[  589.00s ->   594.34s] double check that right now but we've had this inverted yield curve and typically people are going to say oh
+[  594.34s ->   601.20s] the inverted yield curve that's a a signal for recession i i want to kind of extract and remove
+[  601.20s ->   608.48s] the causality from what an inverted yield curve is an inverted yield curve is endogenous to this
+[  608.48s ->   615.40s] this space essentially of of a contractionary or expansionary economy right or contractionary and
+[  615.40s ->   620.86s] expansionary policy subsequent of the economy i should say and what i mean by that is let's go ahead
+[  620.86s ->   626.34s] and check out this really cool dynamic chart all right on the left we have the yield curve which
+[  626.34s ->   631.98s] is exactly what we just looked at and on the right we have the s&p 500 so let's get on back to 2000
+[  631.98s ->   639.46s] right this is around the dot-com boom and the dot-com bust right yield curve is in transit transition here
+[  639.46s ->   646.46s] right so it's flat and we kind of go over here we see it's kind of normal there it it's got this
+[  646.46s ->   652.62s] concavity to it right it's normal it's normal and then boom these tech companies are cash poor and
+[  652.62s ->   657.60s] they're going bankrupt the yield curve inverts and then the fed cuts rates cuts rates cuts rates cuts
+[  657.60s ->   663.86s] rates cuts rates cuts rates and now rates are super low and we're trying to dig ourselves or
+[  663.86s ->   669.10s] essentially climb out of this uh this kind of moat that we found ourselves in consequent to that bubble
+[  669.10s ->   677.44s] right so low rates this is a normal looking yield curve the cost of money is cheaper relative to
+[  677.44s ->   686.32s] here right relative to earlier in that year 2000 um hopefully stimulating growth encouraging companies
+[  686.32s ->   693.02s] to spend and uh we see that here right we see this period of growth and we see this flattening of the
+[  693.02s ->   700.52s] yield curve and then once again 2007 2008 we get an inverted yield curve and then we see this decline
+[  700.52s ->   706.80s] fed cuts rates fed cuts rates fed cuts rates and then same story we see this growth we see this growth
+[  706.80s ->   714.14s] rates remain almost zero almost zero the fed hasn't looked to to raise rates during this time at all
+[  714.14s ->   720.46s] why didn't the fed raise the rate at all here well this is a story of inflation if we take a look at
+[  720.46s ->   730.80s] inflation let's go to the inflation chart i know it's somewhere here inflation inflation there's
+[  730.80s ->   738.76s] right take a look at the inflation rate right the inflation rate has been entirely reasonable coming
+[  738.76s ->   745.22s] out of that we had you know this this negative inflation right the some some deflation here some
+[  745.22s ->   752.26s] disinflation deflation and now we have this inflation again and inflation stayed relatively stable
+[  752.26s ->   762.36s] for this entire span this entire almost you know 10 to 20 some odd years and because of that rates were
+[  762.36s ->   770.52s] so low i mean i remember you know roughly 10 years ago seeing memes about you know what i really could
+[  770.52s ->   779.76s] use right now for for my um my fixed income um you know my mortgage whatever is uh is some some 8% some
+[  779.76s ->   786.16s] healthy 8% inflation right like we saw rates so arbitrarily low for so long and then of course
+[  786.16s ->   793.94s] as we started to approach you know 2018 2019 2020 we saw rates start to increase again right and you know
+[  793.94s ->   801.42s] we start to see a little trend here 2018 2019 inflation starting to you know it's still normalizing
+[  801.42s ->   809.22s] um but really the the big kind of like jump from this the steady stable period of inflation
+[  809.22s ->   818.26s] and zero rates was of course during 2022 now we did have covid in the meanwhile right the fed was able
+[  818.26s ->   825.62s] to raise rates and of course as we experienced covid once again cut rates right that was essentially what
+[  825.62s ->   831.70s] had happened here we saw towards um and this was almost a 20 year period this was like look at how
+[  831.70s ->   839.96s] arbitrarily low rates were right and then the fed was able to raise rates around looks like 17 18 19
+[  839.96s ->   846.10s] and that gave the fed a little bit of wiggle room so that when covid came they were able to cut rates
+[  846.10s ->   853.78s] again we saw this this sort of uh shock to growth um and then the fed was able to cut rates to help stimulate
+[  853.78s ->   859.56s] more growth so that's where we continued here and this next cycle of growth so this is kind of what's
+[  859.56s ->   866.80s] important to keep in mind is you know all of these cycles here in conjunction with the fed raising and
+[  866.80s ->   875.72s] cutting rates um are based on not only the current health of the the economy the equity market um but
+[  875.72s ->   882.22s] also taking into consideration inflation right so if we take a look at the incredible rise the
+[  882.22s ->   892.52s] meteoric rise of inflation in 2021 to 2022 we can see the fed raised rates an incredible amount right
+[  892.52s ->   901.28s] so it went from near zero rates to roughly two and then four and then now hovering around kind of five
+[  901.28s ->   908.54s] ish percent here um and that brings us to current so this is where we saw the inverted yield curve in
+[  908.54s ->   915.40s] modern times for the first time and that was coming sort of out of 2022 into 2023 and now we're sitting
+[  915.40s ->   920.92s] here with an inverted yield curve what is the difference between this inverted yield curve and
+[  920.92s ->   926.88s] the inverted yield curve that we see here earlier before the financial crisis and this somewhat inverted
+[  926.88s ->   933.22s] yield curve we see here before that dot-com bubble well let's take a look at inflation right the difference
+[  933.22s ->   939.86s] here is i don't even think this goes back to 2001 but if we take a look at the financial crisis here
+[  939.86s ->   945.12s] inflation was relatively steady right if we take a look here inflation is relatively steady we're trying
+[  945.12s ->   951.52s] to close in on the two percent target to see if we can cut rates in general um but the overall health
+[  951.52s ->   957.62s] of the economy right if we take a look at the market heat map again uh it's in a great place right
+[  957.62s ->   962.42s] nobody and this is of course like this is this is what finance is this is what the market
+[  962.42s ->   968.82s] is this is what macro analysis is it's you know we we look at these trends and we take a look and see
+[  968.82s ->   978.26s] what catalysts could exist to you know shock the market into a tremendous recession um or not and
+[  978.26s ->   984.02s] you know there there have been studies done that people tend to be you know overestimating the
+[  984.02s ->   989.80s] possibility of a recession right imagine you know if i if i asked you a year ago two years ago is is there
+[  989.80s ->   993.56s] going to be a recession in 2022 is there going to be a recession in 2023 is there going to be a
+[  993.56s ->   998.76s] recession in 2024 if you went short the market in 2022 good luck you would have gotten killed
+[  998.76s ->  1005.14s] definitely would have gotten limited out of your position for sure um but that's that's kind of my
+[ 1005.14s ->  1012.22s] point here is you know everybody everybody is a genius in a bull market and i'm also able to say
+[ 1012.22s ->  1017.40s] that hedge funds generally have a harder time finding alpha when everything is going up all together
+[ 1017.40s ->  1024.64s] um but but one thing to keep in mind here is the big difference between oh one and this current
+[ 1024.64s ->  1032.90s] situation is these tech companies are cash rich they're definitely not ipoing and then burning cash
+[ 1032.90s ->  1038.52s] going on vacation they are i mean this shows up in their valuation right this is something that we see
+[ 1038.52s ->  1045.16s] right now um but of course there are situations like you know 2007 2008 this is of course a heavy period
+[ 1045.16s ->  1054.02s] of um regulatory action was taken post the 07 08 09 sort of financial crisis here um and then of course
+[ 1054.02s ->  1059.68s] covid was the great catalyst for this kind of brief drawdown here the real question is you know what's
+[ 1059.68s ->  1065.68s] going on right now um and and what are the main drivers of growth and what can we see in the not so
+[ 1065.68s ->  1072.66s] distant future that could be kind of inhibiting this growth and for me it's it's very difficult to see
+[ 1072.66s ->  1078.40s] and i think you know of course hindsight's 2020 but i would speculate that the economy is in tremendous
+[ 1078.40s ->  1083.20s] health because look at this beautiful tool the fed has available in their toolbox that is
+[ 1083.20s ->  1091.10s] they have the ability to cut rates a significant amount right inflation is already pretty arbitrarily
+[ 1091.10s ->  1096.32s] low and i don't think some inflation is bad necessarily right you know if you ask any homeowner is
+[ 1096.32s ->  1102.02s] inflation you know arbitrarily bad though it does take time for wages to catch up i'm sure um they
+[ 1102.02s ->  1106.96s] would prefer some degree of inflation because it makes paying their mortgages easier you know whether
+[ 1106.96s ->  1112.76s] or not they actually feel that effect is conjecture of course but nevertheless we're we're sitting in a
+[ 1112.76s ->  1119.78s] pretty reasonable economic environment to where growth seems real growth seems real across all of these
+[ 1119.78s ->  1126.74s] sectors year to date right not only that but we also seem to have a reasonable macroeconomic
+[ 1126.74s ->  1132.72s] environment in the sense that inflation isn't out of control according to the pce core pce it's closing
+[ 1132.72s ->  1139.88s] in on target headline pce closing on target even closer cpi um you know it's it's a kind of a toss-up
+[ 1139.88s ->  1146.10s] it's a little bit different but you know a little almost more than double but you know nevertheless
+[ 1146.10s ->  1150.78s] it's always going to run a little bit cooler um pce is going to run a little bit cooler than cpi
+[ 1150.78s ->  1157.46s] uh nevertheless to all this is to say i think the economy is in tremendous health and you're going
+[ 1157.46s ->  1163.92s] to start to see some interesting plays right so what i mean by that is if you have a long portfolio
+[ 1163.92s ->  1170.16s] let's say that you're you're saving for retirement what is a good sort of aggregate um waiting for
+[ 1170.16s ->  1173.98s] these different types of securities well you know if you're 60 percent in equities let's say you have
+[ 1173.98s ->  1178.42s] a reasonably diversified equity portfolio maybe just buy the market portfolio which i would entirely
+[ 1178.42s ->  1183.68s] encourage anyone to do because you know the the market if you're not doing it as a full-time job
+[ 1183.68s ->  1187.46s] you're not speculating you're not doing your research then you know there's it's i'm very hard
+[ 1187.46s ->  1195.98s] pressed to say no to an average 10 you know 10 year-over-year uh return so let's say you have a
+[ 1195.98s ->  1201.66s] market portfolio and 60 of your portfolio you have you have bonds and 40 of your other portfolio or the
+[ 1201.66s ->  1208.08s] the same portfolio you have six percent weight in equity 40 weight in bonds what is the the outcome
+[ 1208.08s ->  1212.88s] that we're looking for here well i think we're in a heavily bullish market right and the reason i think
+[ 1212.88s ->  1219.70s] that is because of the year-to-date performance of the s&p 500 right now um moreover we saw strong
+[ 1219.70s ->  1223.64s] job growth in january it could be seasonal we saw low unemployment we're going to get more numbers this
+[ 1223.64s ->  1227.70s] week mr powell is going to speak um and then of course the following week we're going to get
+[ 1227.70s ->  1233.54s] inflation that's going to shed even more light on the situation but to speculate right now i think
+[ 1233.54s ->  1240.66s] that this is a great opportunity to have kind of short to midterm bonds in your portfolio along with
+[ 1240.66s ->  1246.58s] your market portfolio whatever that may be maybe you buy a tracking etf maybe you diversify on your
+[ 1246.58s ->  1251.38s] own and then rebalance you know it's completely up to you how you structure a portfolio um but what
+[ 1251.38s ->  1257.68s] that's going to enable you to do is essentially you're going to have this this rise and of course
+[ 1257.68s ->  1263.10s] there's going to be some variability in the um yield to maturity for the bonds in your portfolio over
+[ 1263.10s ->  1269.56s] time but overwhelmingly what i'm suggesting is you know if the economy does cool down and you see some
+[ 1269.56s ->  1275.54s] retrace in the equity side of your portfolio the fed has the ability to cut rates and when the fed cuts
+[ 1275.54s ->  1280.58s] rates you know that bond prices increase short-term bond prices increase you know all else equal of
+[ 1280.58s ->  1288.02s] course and that can be used to kind of offset those equity losses um until the growth continues kind of
+[ 1288.02s ->  1294.84s] those shocks to the growth that'll offset um i believe that's the so-called fed put um that i've
+[ 1294.84s ->  1301.90s] that i've heard on a podcast recently um but i think that is a reasonable assumption i think we're
+[ 1301.90s ->  1307.04s] also going to see more roll down plays in the yield curve as we see more rate cuts so you're going to
+[ 1307.04s ->  1313.52s] see more you know two years buy a two year um and then sell it at say like a one year or six month
+[ 1313.52s ->  1319.80s] um because obviously if this yield curve normalizes then you're going to be able to collect that
+[ 1319.80s ->  1325.28s] difference should you buy at a higher yield to maturity you can sell it at a lower yield to maturity
+[ 1325.28s ->  1332.48s] for a higher price um so those those bond plays we could see coming back as well um but yeah that's that's
+[ 1332.48s ->  1338.10s] going to do it for my current view my current view of the macroeconomic landscape the market landscape
+[ 1338.10s ->  1342.32s] i think we're in tremendous health as of right now and of course i'm saying this now there could be
+[ 1342.32s ->  1348.06s] some tremendously negative catalysts to occur but if you look internationally i think growth has kind
+[ 1348.06s ->  1353.86s] of stagnated elsewhere you look um you look at china you look at even japan you know i think the
+[ 1353.86s ->  1360.90s] there's an increasing attention on the u.s and um gdp was looking good i think q4 2023 we saw 3.2
+[ 1360.90s ->  1369.60s] um and yeah i mean the the next numbers we have to look out for are um gdp march 28th we got powell
+[ 1369.60s ->  1378.70s] talking next week um we got non-farms unemployment next week we got inflation on the 12th and uh yeah
+[ 1378.70s ->  1384.60s] those are some important indicators to look out for um and maybe i'll make more of these types of videos
+[ 1384.60s ->  1390.46s] in the future if you guys enjoy them so thank you so much for watching i hope you enjoyed the break from
+[ 1390.46s ->  1397.18s] um or stochastic processes discussion from the previous video and uh yeah i'll see you in the next one

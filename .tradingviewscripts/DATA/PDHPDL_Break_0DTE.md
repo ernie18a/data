@@ -1,0 +1,179 @@
+<!-- tradingview-pine-id: PUB;aa41f4630d6b4af8ba088213559d8d0d -->
+<!-- tradingviewscripts-format: 1 -->
+# PDH/PDL Break 0DTE
+
+Source: https://www.tradingview.com/script/9o35mG93-PDH-PDL-Break-0DTE/
+
+## Description
+
+**"PDH/PDL Break 0DTE"** — a same-day intraday breakout strategy meant for 0DTE-style trading windows (e.g., SPY morning session).
+
+**Core idea:** trade a break of yesterday's high or low, but only when trend, momentum, and time-of-day all line up.
+
+**Trend filter:** VWAP vs. a 1-hour EMA (default length 20). VWAP above the EMA = bullish bias; below = bearish. This is the green/red "ribbon" on the chart.
+
+**Momentum filter:** a simplified WaveTrend oscillator measures how far price has stretched from its own 10-period baseline. Trades are only allowed when that stretch is under an extreme threshold (default ±60) and moving in the same direction as the trade.
+
+**Setup:**
+- **Long** — price closes above yesterday's high, trend is bullish, momentum is rising and not overextended, and it's inside the allowed session window (default 9:30–11:30 ET).
+- **Short** — price closes below yesterday's low, trend is bearish, momentum is falling and not overextended, same session window.
+
+Each direction can only fire once per day (`longFired`/`shortFired` reset at each new session).
+
+**Risk management:** stop is placed back at the breakout level itself (PDH for longs, PDL for shorts), and the target is a multiple of that risk (default 2:1 R:R). Any open position is force-closed once the session window ends ("Time Exit"), so it never carries risk past the intended trading hours.
+
+**Extras added along the way:** editable colors for every plot, alert conditions for both breakout directions, and an on-chart status table showing trend, WaveTrend value + its price baseline + dollar drift, session state, and current position — so you can read the strategy's internal state at a glance instead of decoding overlapping chart elements.
+
+---
+
+## Source Code
+
+````pine
+//@version=6
+strategy("PDH/PDL Break 0DTE", overlay=true,
+         initial_capital=10000,
+         default_qty_type=strategy.percent_of_equity,
+         default_qty_value=100,
+         commission_type=strategy.commission.percent,
+         commission_value=0.05,
+         slippage=2)
+
+// ─── INPUTS ───────────────────────────────────────────────
+ema_len        = input.int(20,    "H1 EMA Length",              group="MTF Sniper")
+tgt_rr         = input.float(2.0, "Target R:R",                 group="PDH/PDL Settings")
+wt_extreme     = input.float(60.0,"WaveTrend Extreme",          group="Filters")
+useTimeFilter  = input.bool(true, "Use Time Filter",            group="Filters")
+session_start  = input.int(930,   "Session Start (HHMM ET)",    group="Filters")
+session_end_et = input.int(1130,  "Session End  (HHMM ET)",     group="Filters")
+showTable      = input.bool(true, "Show Status Table",          group="Display")
+
+// ─── COLORS ───────────────────────────────────────────────
+vwapUpCol    = input.color(color.green,               "VWAP Rising",     group="Colors")
+vwapDownCol  = input.color(color.red,                  "VWAP Falling",    group="Colors")
+emaCol       = input.color(color.aqua,                 "H1 EMA",          group="Colors")
+bullRibbonCol= input.color(color.new(color.green, 85), "Bull Ribbon",     group="Colors")
+bearRibbonCol= input.color(color.new(color.red, 85),   "Bear Ribbon",     group="Colors")
+pdhCol       = input.color(color.orange,               "PDH Line",        group="Colors")
+pdlCol       = input.color(color.orange,               "PDL Line",        group="Colors")
+longSigCol   = input.color(color.lime,                 "Long Signal",     group="Colors")
+shortSigCol  = input.color(color.red,                  "Short Signal",    group="Colors")
+sessionBgCol = input.color(color.new(color.blue, 95),  "Session Window",  group="Colors")
+
+// ─── MTF TREND ────────────────────────────────────────────
+h_ema   = request.security(syminfo.tickerid, "60", ta.ema(close, ema_len), gaps=barmerge.gaps_off)
+v_val   = ta.vwap(hlc3)
+is_bull = v_val > h_ema
+
+// ─── WAVETREND (LazyBear) ─────────────────────────────────
+ap   = hlc3
+esa  = ta.ema(ap, 10)
+dv   = ta.ema(math.abs(ap - esa), 10)
+safe = dv == 0.0 ? 0.000001 : dv
+ci   = (ap - esa) / (0.015 * safe)
+wt1  = ta.ema(ci, 21)
+wt_ok      = math.abs(wt1) < wt_extreme
+wt_rising  = wt1 > wt1[1]
+wt_falling = wt1 < wt1[1]
+
+// ─── TIME ─────────────────────────────────────────────────
+etNow     = hour(time, "America/New_York") * 60 + minute(time, "America/New_York")
+startMin  = (session_start  / 100) * 60 + session_start  % 100
+endMin    = (session_end_et / 100) * 60 + session_end_et % 100
+isNewDay  = ta.change(time("D")) != 0
+inTime    = not useTimeFilter or (etNow >= startMin and etNow < endMin)
+exitTime  = etNow >= endMin
+
+// ─── PREVIOUS DAY HIGH / LOW ──────────────────────────────
+var float pdHigh     = na
+var float pdLow      = na
+var float dayHigh    = na
+var float dayLow     = na
+var bool  longFired  = false
+var bool  shortFired = false
+
+if isNewDay
+    pdHigh     := dayHigh
+    pdLow      := dayLow
+    dayHigh    := high
+    dayLow     := low
+    longFired  := false
+    shortFired := false
+else
+    dayHigh := math.max(dayHigh, high)
+    dayLow  := math.min(dayLow,  low)
+
+// ─── ENTRY SIGNALS ────────────────────────────────────────
+// Break above PDH with bullish ribbon → long
+// Break below PDL with bearish ribbon → short
+pdBreakLong  = not na(pdHigh) and not longFired  and close > pdHigh and is_bull     and wt_ok and wt_rising  and inTime
+pdBreakShort = not na(pdLow)  and not shortFired and close < pdLow  and not is_bull and wt_ok and wt_falling and inTime
+
+// ─── EXECUTION ────────────────────────────────────────────
+var float longStop    = na
+var float longTarget  = na
+var float shortStop   = na
+var float shortTarget = na
+
+if pdBreakLong
+    longFired  := true
+    longStop   := pdHigh          // stop: back below PDH
+    longRisk    = close - pdHigh
+    longTarget := close + tgt_rr * longRisk
+    strategy.entry("Long", strategy.long)
+
+if pdBreakShort
+    shortFired  := true
+    shortStop   := pdLow          // stop: back above PDL
+    shortRisk    = pdLow - close
+    shortTarget := close - tgt_rr * shortRisk
+    strategy.entry("Short", strategy.short)
+
+if strategy.position_size > 0
+    strategy.exit("Long TP/SL", from_entry="Long",  limit=longTarget,  stop=longStop)
+
+if strategy.position_size < 0
+    strategy.exit("Short TP/SL", from_entry="Short", limit=shortTarget, stop=shortStop)
+
+if exitTime and strategy.position_size != 0
+    strategy.close_all(comment="Time Exit")
+
+// ─── PLOTS ────────────────────────────────────────────────
+ribbonCol = is_bull ? bullRibbonCol : bearRibbonCol
+p1 = plot(v_val, "VWAP",   color=v_val > v_val[1] ? vwapUpCol : vwapDownCol, linewidth=2)
+p2 = plot(h_ema, "H1 EMA", color=emaCol, linewidth=2)
+fill(p1, p2, color=ribbonCol)
+
+plot(pdHigh, "PDH", color=pdhCol, style=plot.style_linebr, linewidth=2)
+plot(pdLow,  "PDL", color=pdlCol, style=plot.style_linebr, linewidth=2)
+
+plotshape(pdBreakLong,  "PDH Break Long",  shape.triangleup,   location.belowbar, longSigCol,  size=size.small)
+plotshape(pdBreakShort, "PDL Break Short", shape.triangledown, location.abovebar, shortSigCol, size=size.small)
+
+bgcolor(inTime ? sessionBgCol : na, title="Session Window")
+
+// ─── ALERTS ───────────────────────────────────────────────
+alertcondition(pdBreakLong,  "PDH Break Long",  "MTF ODTE: Long breakout above PDH")
+alertcondition(pdBreakShort, "PDL Break Short", "MTF ODTE: Short breakout below PDL")
+
+// ─── STATUS TABLE ─────────────────────────────────────────
+var table statusTable = table.new(position.top_right, 2, 4, bgcolor=color.new(color.black, 70), border_width=1)
+
+if showTable and barstate.islast
+    hdrBg = color.new(color.gray, 60)
+    table.cell(statusTable, 0, 0, "Trend",     text_color=color.white, bgcolor=hdrBg)
+    table.cell(statusTable, 1, 0, is_bull ? "Bullish" : "Bearish",
+               text_color=is_bull ? color.lime : color.red, bgcolor=hdrBg)
+
+    table.cell(statusTable, 0, 1, "WaveTrend", text_color=color.white, bgcolor=hdrBg)
+    table.cell(statusTable, 1, 1, str.tostring(wt1, "#.##"),
+               text_color=wt1 >= 0 ? color.lime : color.red, bgcolor=hdrBg)
+
+    table.cell(statusTable, 0, 2, "Session",   text_color=color.white, bgcolor=hdrBg)
+    table.cell(statusTable, 1, 2, inTime ? "Active" : "Closed",
+               text_color=inTime ? color.lime : color.gray, bgcolor=hdrBg)
+
+    table.cell(statusTable, 0, 3, "Position",  text_color=color.white, bgcolor=hdrBg)
+    posText  = strategy.position_size > 0 ? "Long" : strategy.position_size < 0 ? "Short" : "Flat"
+    posColor = strategy.position_size > 0 ? color.lime : strategy.position_size < 0 ? color.red : color.gray
+    table.cell(statusTable, 1, 3, posText, text_color=posColor, bgcolor=hdrBg)
+````

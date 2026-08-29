@@ -1,0 +1,106 @@
+[    0.12s ->     4.12s] I made one of the most overpowered tools for my private indicator.
+[    4.12s ->     6.24s] The Breakout Probability Tool.
+[    6.24s ->     8.76s] Yeah, it's f***ing awesome.
+[    8.76s ->     9.76s] And the results?
+[    9.76s ->    11.88s] Well, let's say they're pretty good.
+[   11.88s ->    15.88s] So good that you can use it to predict the chance of a breakout occurring.
+[   15.88s ->    18.28s] This is an absolute game changer.
+[   18.28s ->    22.24s] And to prove that point, I'm going to show you how it works, what it is, and how to use
+[   22.24s ->    24.00s] it to the best of its ability.
+[   24.00s ->    27.80s] You can use this tool for finding the chance of a breakout occurring, use it for placing
+[   27.80s ->    32.98s] perfect stop losses based on actual math, or even use it on higher time frames to see
+[   32.98s ->    36.36s] the probability of the chart moving up or down that day.
+[   36.36s ->    39.48s] If you can't tell, I'm extremely excited about this tool.
+[   39.48s ->    43.48s] At the end of the video, I'll give some of my greatest tips for using it so you can enter
+[   43.48s ->    46.24s] great breakout trades just like this.
+[   46.24s ->    47.88s] Alright, let's do this.
+[   47.88s ->    53.20s] To start us off, let's go deep into the indicator's algorithm and show you how this tool actually
+[   53.20s ->    54.20s] works.
+[   54.20s ->    58.36s] This tool helps you understand the likelihood of the next candle's direction, which can
+[   58.36s ->    60.70s] be really useful when creating your trading bias.
+[   60.70s ->    63.48s] Now, you may be asking, how the hell does it do that?
+[   63.48s ->    68.70s] The breakout probability tool calculates the probability of a new high or low of the next
+[   68.70s ->    72.00s] candle and then displays it as a percentage value.
+[   72.00s ->    73.00s] Pretty cool, huh?
+[   73.00s ->    77.76s] This tool is actually always actively backtesting behind the scenes, so you're actually trading
+[   77.76s ->    81.80s] off real live probabilities in real time when using this tool.
+[   81.80s ->    87.10s] What the algorithm actually does is calculates all the green and red candles separately depending
+[   87.10s ->    90.26s] on whether the previous candle was green or red.
+[   90.26s ->    93.20s] Then it'll note if one of the line values was reached.
+[   93.20s ->    97.38s] The first lines will always be at the low and high of the candle.
+[   97.38s ->   102.48s] The algorithm then calculates how many candles reached those levels in past history and displays
+[  102.48s ->   105.08s] it as a percentage value on each line.
+[  105.08s ->   107.66s] So for example, we see this candle is green.
+[  107.66s ->   112.12s] So it'll look at all the past previous green candles, then it'll calculate what the percentage
+[  112.12s ->   115.72s] chance and which level the next candle is likely to hit.
+[  115.72s ->   122.04s] So in the example, we see that a new high has been hit 60.95% of the time, and the low
+[  122.04s ->   124.78s] was hit 30.50% of the time.
+[  124.78s ->   128.94s] Then we also have all these other levels that were hit in the past, but since they're so
+[  128.94s ->   133.58s] low or high from the original point, they have a lower chance of being hit again.
+[  133.58s ->   138.62s] So we see that from this point, the next candle has a higher chance of going up than down based
+[  138.62s ->   141.04s] off of actual past price history.
+[  141.04s ->   144.74s] Since the high value has a greater chance of getting hit than the lower value, we can
+[  144.74s ->   147.74s] predict the next candle will probably go up.
+[  147.74s ->   149.12s] And look what happens.
+[  149.12s ->   150.12s] It goes up.
+[  150.12s ->   151.12s] I'm telling you.
+[  151.12s ->   152.12s] Game changer.
+[  152.12s ->   154.82s] Now there are a lot of different ways you can use this tool.
+[  154.82s ->   158.20s] One of the ways is to predict the probability of a breakout.
+[  158.20s ->   159.30s] Let me show you an example.
+[  159.30s ->   163.86s] So here we have our chart, and as you can see, we have a nice little resistance right
+[  163.86s ->   164.86s] here.
+[  164.86s ->   166.06s] The price then comes all the way up to it.
+[  166.06s ->   169.92s] Now instead of just guessing whether the price is going to bounce off or break through
+[  169.92s ->   174.12s] this resistance, we're going to use the breakout probability tool to see which has
+[  174.12s ->   175.56s] a higher chance of happening.
+[  175.56s ->   177.74s] It breaking out or it rejecting.
+[  177.74s ->   181.78s] So we go to the settings of the indicator and enable the tool on our chart.
+[  181.78s ->   186.12s] Now that the tool is on our chart, you can see the next candle has a higher probability
+[  186.12s ->   191.54s] of going up than down, which means the next candle has a higher probability of breaking
+[  191.54s ->   193.62s] this resistance than rejecting.
+[  193.62s ->   197.54s] So in return, we can predict early that a breakout is about to happen.
+[  197.54s ->   200.36s] So we enter a trade before this even occurs.
+[  200.36s ->   201.36s] Look what happens.
+[  201.36s ->   204.36s] A breakout occurs, and we make amazing profit.
+[  204.36s ->   205.36s] Cha-ching!
+[  205.36s ->   206.36s] Cha-ching!
+[  206.36s ->   208.32s] Now that's not the only way to use this tool.
+[  208.32s ->   209.52s] Oh no.
+[  209.52s ->   211.96s] You can also do it the other way around.
+[  211.96s ->   215.32s] Say if you enter down here and price is going up, you're in the profit.
+[  215.32s ->   219.10s] But price is getting really close to this resistance, and you don't know if you should
+[  219.10s ->   222.82s] exit the trade early or not and wait for it to try to break out.
+[  222.82s ->   226.56s] Well, if we take out the probability tool, there's a higher chance of the next candle
+[  226.56s ->   231.46s] making a low than a high, which means price is likely to reject off this resistance.
+[  231.46s ->   234.44s] So it might be a good idea to exit your trade up here.
+[  234.44s ->   237.42s] So that's exactly what we end up doing, and look what happens.
+[  237.42s ->   239.00s] Price rejects and falls.
+[  239.00s ->   241.90s] So we got out at the perfect point for this trade.
+[  241.90s ->   243.72s] Isn't this tool f***ing awesome?
+[  243.72s ->   245.90s] Just wait, we haven't even got to the good part.
+[  245.90s ->   248.84s] Another way you can use it is for setting up stop losses.
+[  248.84s ->   253.32s] What I mean by this is you can look at the lower values and set your stop loss based on
+[  253.32s ->   256.56s] where the price is most likely not to reach.
+[  256.56s ->   260.90s] So what you would do is go on a higher time frame like the one hour or daily.
+[  260.90s ->   264.24s] Turn on your probability tool and check the lower red values.
+[  264.24s ->   266.24s] See what the odds are for the next candle.
+[  266.24s ->   270.30s] If there's a very low probability, set your stop loss there so there's less of a chance
+[  270.30s ->   271.30s] of it being hit.
+[  271.30s ->   275.86s] The third and final way I like to use this indicator is predicting the direction of the
+[  275.86s ->   277.30s] market for that day.
+[  277.30s ->   279.90s] This is definitely my favorite way to use this tool.
+[  279.90s ->   281.98s] What you would do is go on a higher time frame.
+[  281.98s ->   284.62s] I would recommend checking the daily or weekly.
+[  284.62s ->   287.80s] Turn on the probability tool and look at the percentages.
+[  287.80s ->   292.10s] Here you can see on the daily chart, the next candle has a higher probability of moving
+[  292.10s ->   297.08s] upwards, which means today is likely to be a green day and you can expect the chart to
+[  297.08s ->   298.44s] head upwards that day.
+[  298.44s ->   302.84s] So what you would do is then go to a lower time frame and do all your normal technical
+[  302.84s ->   307.28s] analysis, but now you know in the back of your head that this day is more likely to be
+[  307.28s ->   311.64s] a green day and you can end up using that with your training bias when performing trades
+[  311.64s ->   313.00s] on a lower time frame.
+[  313.00s ->   318.00s] So for example, only taking long trades that day and obviously if it was more likely to
+[  318.00s ->   321.10s] be a red day, you would only take short trades that day.
+[  321.10s ->   325.24s] Like I said, this is an absolute game changer and you really have to use it for yourself to
+[  325.24s ->   345.68s] see how powerful it is.

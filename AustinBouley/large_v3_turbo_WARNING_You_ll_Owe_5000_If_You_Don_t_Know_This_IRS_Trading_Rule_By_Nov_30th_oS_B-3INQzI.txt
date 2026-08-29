@@ -1,0 +1,105 @@
+[    0.14s ->     4.28s] Urgent trading news for traders who don't want to pay the IRS money for no reason.
+[    4.60s ->    13.02s] Again, there's one IRS trading rule that if you do not follow, you will have to pay money for up to $5,000 or more
+[   13.02s ->    15.14s] even if you had a losing year this year.
+[   15.22s ->    19.48s] Since even this year, if you lost money, you'll still have to owe the IRS money
+[   19.48s ->    23.42s] because you didn't pay attention to this one simple IRS rule.
+[   23.68s ->    26.90s] Not only that, it needs to be done by November 30th.
+[   26.90s ->    32.98s] If you don't look into this and you don't take care of this by November 30th, then the IRS will screw you over.
+[   33.36s ->    36.32s] Let's take a look at this. It's called the wash sale rule.
+[   36.40s ->    41.16s] I want to show you how you can know if you are subject to it and how to get around it.
+[   41.42s ->    44.30s] Again, you have to do this by November 30th, so let's dive in.
+[   44.54s ->    46.90s] This rule is called the wash sale rule.
+[   47.04s ->    48.92s] Again, if I can do this here, it's called wash sale.
+[   49.32s ->    55.74s] What this essentially means is that if you are in a trade and then you sell that trade for a loser
+[   55.74s ->    58.86s] because it's your stop loss or whatever, you just want to get out of the trade to get into a new trade,
+[   58.92s ->    64.68s] whatever it is, if you have a loss on a trade and then you re-enter that trade in 30 days,
+[   64.68s ->    68.76s] then guess what? You have triggered a wash sale rule.
+[   69.02s ->    70.72s] So how do you know if this applies to you?
+[   70.80s ->    77.26s] If you trade the same types of ETFs and stocks over and over and over, this will apply to you.
+[   77.46s ->    83.74s] Or if this year you've traded the same stock multiple times in a row, this will apply to you.
+[   83.74s ->    89.48s] So if you don't want to pay money on taxes or taxes on things that you haven't actually paid money on,
+[   89.56s ->    91.14s] then you need to pay attention to this.
+[   91.22s ->   100.16s] So the reason why the wash sale rule was created was so that people couldn't gimmick or gamify or get around the system.
+[  100.30s ->   104.58s] And so what happens is people towards the end of the year when they had a stock going down,
+[  104.70s ->   107.52s] they would sell it, have a loss, right?
+[  107.58s ->   110.16s] The difference between where they bought and sold have a loss.
+[  110.16s ->   113.24s] And this loss, they would write off on taxes.
+[  113.68s ->   117.36s] And then at the beginning of the year, they would just buy back and hope that the stock continues to rise.
+[  117.74s ->   121.96s] So because the people were taking advantage of this by writing losses off on their account,
+[  122.20s ->   128.36s] they decided, hey, if you experience a loss on a stock, then re-enter the stock within 30 days,
+[  129.14s ->   132.66s] then you cannot actually count that loss on your taxes.
+[  133.00s ->   133.62s] What does this mean?
+[  133.62s ->   139.62s] If you're a day trader who's going in and out of the stock, the same stock within 30 days or within multiple days,
+[  139.68s ->   144.48s] as you're trading the same stock over and over and over, especially if you had a losing streak this year,
+[  144.70s ->   149.28s] that means each loss you had and you re-entered to make more money and you ended up losing,
+[  149.64s ->   154.62s] those losing streaks are compounding and you can't actually deduct those losses from your trading.
+[  155.32s ->   159.74s] So that means, let's say, net your account is down because you had a losing streak on one stock,
+[  159.74s ->   165.80s] but then on another stock you made money, the only thing the IRS will look at is where you made money there.
+[  166.02s ->   167.80s] You won't be able to deduct these losses.
+[  167.96s ->   170.46s] And so you'll have to pay taxes on the money you made here,
+[  170.76s ->   174.66s] and you can't deduct these losses to offset it even though your account is in the negative.
+[  175.20s ->   177.50s] So how do we get around this?
+[  177.58s ->   181.66s] Number one, you need to contact your broker or look at your tax report statements.
+[  182.12s ->   185.68s] You need to understand, hey, do I have any wash rules right now?
+[  185.68s ->   190.74s] And so the way that you look at that is by contacting your broker or simply by looking and understanding,
+[  191.08s ->   194.98s] have I traded the same stock over and over and over, and have they been losses?
+[  195.36s ->   200.14s] The way that the wash rule works, again, I need to be completely clear here, I'm not a tax expert.
+[  200.30s ->   206.46s] This is just my experience with trading and working with tax experts over the last five years of trading and doing all this,
+[  206.72s ->   210.98s] is this is how it works, is that the wash-sell rule is just a deferment.
+[  210.98s ->   222.24s] So what happens is, once you re-enter the trade, that loss you had is deferred until you finally close that trade and keep it closed for at least 30 days.
+[  222.60s ->   227.02s] So what this means is, if you've been trading the same stock all year over and over and over and over,
+[  227.08s ->   230.22s] and you've had losses that have been compounding in deferment,
+[  230.42s ->   234.32s] and you want to take those losses and use those losses to offset your taxes with,
+[  234.62s ->   236.88s] so you don't have to pay taxes on it, right?
+[  237.04s ->   239.32s] Because your account's down, you shouldn't have to pay taxes.
+[  239.32s ->   242.68s] So if you want to take those losses and actually use them on your account,
+[  242.86s ->   248.94s] what you need to do is, by November 30th, if you've been trading the same stock, you need to stop trading it.
+[  249.14s ->   257.22s] Why? Because you need to wait at least 30 days for all those deferred losses to kick in as actualized losses in the IRS's eyes.
+[  257.64s ->   260.98s] And so what that means is, November 30th, we're going to say November 30th,
+[  261.52s ->   264.54s] do whatever you want up until November 30th,
+[  264.54s ->   269.22s] but once it hits November 30th, the stocks that you have traded over and over and over,
+[  269.34s ->   271.58s] back to back to back, you need to stop trading.
+[  271.90s ->   274.28s] You can go ahead and keep trading other stocks,
+[  274.44s ->   279.42s] but find other different types of stocks that aren't the exact same or aren't similar to the one that you've been trading.
+[  279.74s ->   283.28s] So for instance, if you've been trading SPY over and over and over and over,
+[  283.44s ->   285.62s] what you need to do is you need to stop trading SPY,
+[  285.62s ->   288.26s] but you also should not be trading anything similar.
+[  288.42s ->   291.74s] So you should not be trading DIA or anything like that,
+[  291.80s ->   296.36s] because the wash sale rule applies to trading things that are similar as well.
+[  296.50s ->   298.16s] You can go ahead and you can trade Apple.
+[  298.56s ->   300.56s] You can go ahead and you can trade Amazon.
+[  300.92s ->   301.46s] That's the AAPL.
+[  301.84s ->   302.94s] You can trade Amazon.
+[  303.14s ->   306.24s] You can trade things like that, but you cannot trade the same one.
+[  306.74s ->   308.94s] And so again, you need this by November 30th,
+[  308.94s ->   312.46s] so that by the time we hit the end of the year, December 31st,
+[  312.46s ->   320.30s] what's going to happen is the wash sale rule won't kick in because you've held it for at least 30 days.
+[  320.74s ->   327.86s] And so now all the deferred losses you have will be able to be actualized on your year's taxes, on 2023's taxes.
+[  328.32s ->   330.18s] And so again, this works for every single year.
+[  330.60s ->   332.88s] So I realize I've given you a lot of information,
+[  333.06s ->   335.58s] so let me simplify this one last time real quick.
+[  336.34s ->   338.76s] The IRS has a rule called the wash sale rule.
+[  338.76s ->   341.82s] It prevents you from taking losses at the end of the year
+[  341.82s ->   343.02s] and writing them off.
+[  343.26s ->   346.58s] So if you re-enter a trade, you won't be able to write off those losses.
+[  346.74s ->   348.02s] Those losses get deferred.
+[  348.14s ->   353.64s] Those losses get deferred until you don't enter that same trade for 30 days.
+[  353.96s ->   359.06s] So November 30th, you need to stop trading the stocks that you trade back to back to back to back
+[  359.06s ->   361.70s] and wait until December 1st to start trading again.
+[  361.80s ->   366.28s] So that by the end of the year, you have realized in the IRS's eyes losses
+[  366.28s ->   368.00s] that you can then deduct on your taxes.
+[  368.00s ->   371.96s] So that even if you made money in other places and your account is down negative
+[  371.96s ->   374.08s] because of these losing streaks, guess what?
+[  374.18s ->   375.88s] You can still offset those losses.
+[  376.06s ->   378.62s] So this does not mean you have to stop trading.
+[  378.72s ->   381.84s] It just means stop trading the same ones you've been trading over and over and over
+[  381.84s ->   382.88s] and do something different.
+[  383.20s ->   384.80s] Anyways, that is my urgent trading news.
+[  385.50s ->   386.48s] I hope this helps you.
+[  386.56s ->   389.22s] If you didn't know about it or if you want more info,
+[  389.38s ->   393.14s] please consult a tax expert as I am not that.
+[  393.40s ->   395.38s] But if you think this will help a trading friend of yours,
+[  395.38s ->   397.52s] please send it to them because this is very important
+[  397.52s ->   402.90s] and can screw up some people when they start doing taxes later in the year.
+[  403.20s ->   404.70s] Anyways, guys, see you later.
+[  404.96s ->   407.06s] Hope you enjoyed it and I'll see you in the next video.

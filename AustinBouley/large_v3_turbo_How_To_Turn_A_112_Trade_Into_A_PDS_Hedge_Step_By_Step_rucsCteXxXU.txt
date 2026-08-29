@@ -1,0 +1,65 @@
+[    0.00s ->     4.60s] Hey guys, I want to show you exactly how to turn the 112 trade into a put debit spread hedge,
+[    4.64s ->     8.36s] what that means, what it looks like, and how much downside protection it will give you.
+[    8.72s ->    12.18s] And so again, let's dive into this so that you know exactly how to do this and can protect your
+[   12.18s ->    18.18s] account with it. So when we're trading 112s, we tend to structure them on as in like once a week,
+[   18.22s ->    22.08s] or maybe even a few times a week, we put on these trades. And so we have all these overlapping
+[   22.08s ->    26.08s] trades. And so what we need to do in order to protect our account is have some hedges on to
+[   26.08s ->    31.16s] protect these 112 trades. Why? Because if the market were to crash or pull back very hard,
+[   31.30s ->    35.64s] we could see a lot of losses with these 112s. And so we want to make sure that they're appropriately
+[   35.64s ->    41.34s] hedged so that our account kind of is buffered from a huge draw down and we don't see as much
+[   41.34s ->    46.26s] red. It can stay in those trades longer and actually see results of the bear trap. So
+[   46.26s ->    50.36s] let's dive in and look at one of these trades. First thing we need to do is understand what
+[   50.36s ->    54.88s] does the 112 trade look like? So if you don't know that, you can simply just click on the group's
+[   54.88s ->    60.74s] trade and click on analyze. And then this will take you to the curve. And so again, if I zoom out
+[   60.74s ->    65.28s] on this curve, I can see the whole thing. And so what I'm looking at here at this curve is actually
+[   65.28s ->    71.04s] a couple of 112s. So let me actually, actually, no, it's just that one. So this is what a 112 graph
+[   71.04s ->    75.84s] looks like if you've never seen it, which is where if the market stays where it's at or goes higher,
+[   75.84s ->    82.80s] I'll make about $1,500. But if the market drops and goes into this bear trap range, I'll make
+[   82.80s ->    89.12s] almost $3,000. So that's the cool part about a 112 trade. But the thing is, is once we hit a
+[   89.12s ->    93.80s] certain profit, we just want to take profits and leave on the hedge. And so in order to do that,
+[   93.86s ->    98.82s] we can create a ton of different hedges. But the easiest one to create is a put debit spread hedge.
+[   99.16s ->   105.22s] Why? Well, because to create a 112 trade, it looks like this. We buy one put, we sell one put,
+[  105.22s ->   109.36s] and then we sell two puts. This one that we bought and the one that we sold creates a put
+[  109.36s ->   116.06s] debit spread. And so with that, we can close out these two short puts and leave the put debit
+[  116.06s ->   120.60s] spread. So what does that look like? Well, if I remove the two short puts, you can see what that
+[  120.60s ->   128.72s] looks like. This put debit spread hedge right here will cost us about $225 to have on. But it will make
+[  128.72s ->   137.58s] us $1,000 if the market were to drop anywhere past 5,343. So you can see here the 5,400 level,
+[  137.58s ->   144.38s] if it drops past that, aka 200 points below where the market is now, this trade will make $1,000.
+[  144.98s ->   151.52s] And so depending on the 112s we have on, $1,000 could help kind of cushion any losses we have.
+[  151.84s ->   157.40s] And so now the question is, how do we know when to put this on and when to convert this into a PDS
+[  157.40s ->   163.18s] hedge? Well, most times what we want to do is we want to wait until these two short puts,
+[  163.18s ->   170.90s] like I just closed here, these two short puts have a profit of 80 to 90%. So once we see these
+[  170.90s ->   177.02s] two short puts have an 80 to 90% profit, which you can see here on the positions tab. If you can see
+[  177.02s ->   183.58s] here, again, these trades are newer. So you can see here how these two short puts have an 18.8%
+[  183.58s ->   190.10s] profit. Once they get to an 80 to a 90% profit target, then you close out these trades and you
+[  190.10s ->   194.50s] leave on the put debit spread hedge. This is the easiest way to put on a hedge. Why? Well,
+[  194.50s ->   199.48s] because we're only closing this and we're leaving on an already structured trade. And not only that,
+[  199.54s ->   208.76s] it only costs $200. So the thing is, if I close these two short puts, I will make about $1,000
+[  208.76s ->   217.00s] typically or more, maybe even $1,300, $1,400. And then I have to give back about $200 for this put
+[  217.00s ->   223.70s] debit spread hedge. So I end up with a net profit on the 112 to trade of roughly $1,100. And then I
+[  223.70s ->   228.74s] get $1,000 of downside protection. Now you may be saying, okay, now that I, now that I have this
+[  228.74s ->   233.66s] hedge on, let's go into the analyze tab again. Now that I have this hedge on where it looks like
+[  233.66s ->   238.66s] this, where I closed the two short puts and I'm left with this put debit spread, what do I do with
+[  238.66s ->   242.80s] it? Do I let it expire? Do I manage it? Do I close it? And that's, that's a great question. So what
+[  242.80s ->   248.76s] you do is hedges are meant to protect your account and to expire worthless. 99% of the time a hedge
+[  248.76s ->   254.06s] will expire worthless. That's just what a hedge does. And so our goal after we convert the one
+[  254.06s ->   260.06s] one to end to a put debit spread hedge is to keep the hedge alive and active all the way until that
+[  260.06s ->   264.44s] trade expires. And then we just let it expire. Why? Because we have defined loss. So we know that
+[  264.44s ->   268.68s] we're going to lose this amount, but we already accounted for that. And then we get this thousand
+[  268.68s ->   273.20s] dollars of downside side side protection that we can just keep for as long as we want, or at least
+[  273.20s ->   278.36s] until the trade expires. And so again, you just let your PDS hedges just be, and that's how you do
+[  278.36s ->   282.30s] it. But the real thing is here, you may be saying, Austin, I don't have time to man, to manage these
+[  282.30s ->   286.04s] trades. I don't want to actually like convert it because then I have to like close certain orders
+[  286.04s ->   291.42s] and all that stuff. Yeah. It's, it's, it's, it's complicated. But if you use this tool that I
+[  291.42s ->   296.84s] created called the options auto trader, you can actually create an automation for your one, one, two,
+[  296.84s ->   302.18s] and you can see here, here's my ES one, uh, one, one, two, where I told it the rules of how to
+[  302.18s ->   308.44s] enter, when to enter, how to manage my trades and all that. And you can see here that once a trade
+[  308.44s ->   313.80s] closes, it will automatically turn it into a hedge for me. You can see here, it turned it into a ratio
+[  313.80s ->   319.20s] hedge. And I can see how much downside protection I have from, from this hedge. You can see how, uh,
+[  319.20s ->   324.52s] how much this hedge is costing me. And with the profit that I made before turning, uh, turning it into a
+[  324.52s ->   328.64s] hedge, you can see my total profit, even fact factoring in the cost of the hedge. Not only
+[  328.64s ->   332.90s] that it's managing my trades and it's doing everything for me. So guys, this auto trader
+[  332.90s ->   337.16s] is amazing. If you want to automate your one, one, two trading. So if you want to do that,
+[  337.22s ->   341.66s] click the link down below and check it out, or even go watch my masterclass link down,
+[  341.72s ->   346.28s] uh, down below to learn all the specifics about it. Anyways, guys, I hope you enjoyed it and hope
+[  346.28s ->   349.78s] you learned how to converge your one, one, two, and do I put debit spread hedge.

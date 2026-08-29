@@ -1,0 +1,35 @@
+[    0.00s ->     3.24s] In this support desk video, I'm going to walk you through how to manage a losing trade.
+[    3.58s ->     7.32s] So if you're a credit spread trader and your trade is currently losing, again, there's a
+[    7.32s ->    11.80s] few things we need to do. Number one, let's define what a losing trade is. A losing trade is defined
+[   11.80s ->    16.90s] when your sold strike price is broken. So if you're trading a put credit spread, which is
+[   16.90s ->    21.50s] you make money to the upside, if the stock goes below your short strike price, now the trade is
+[   21.50s ->    25.56s] officially losing. If you're trading a call credit spread where you're hoping to make money to the
+[   25.56s ->    30.52s] downside, but the stock goes above your short strike price, then you are losing. So again,
+[   30.60s ->    35.26s] if you are being confused and emotionally driven based on your open P&L because it shows a negative
+[   35.26s ->    41.22s] number, then close out your P&L. It's not going to help you stay in the trade and actually follow
+[   41.22s ->    45.52s] the strategy and system. Your trade is only losing once it's broken its short strike.
+[   45.94s ->    49.90s] And here are your two options once that has happened. Number one, the most important one,
+[   49.98s ->    55.26s] hold until expiration. These whole strategies, these whole systems are defined and built around
+[   55.26s ->    60.72s] holding until expiration. That's how you have the highest win rate and it allows you to let the
+[   60.72s ->    65.74s] trade play out and collect data decay. So that is how these trades work. If you come here to the
+[   65.74s ->    70.68s] algo, you scroll down to the historical performance, you see a 90% win rate and a 15%
+[   70.68s ->    75.26s] annualized return following this one strategy. That only comes when you hold until expiration,
+[   75.42s ->    81.88s] even for losers. Now again, how do we manage a losing trade? We do that on expiration day,
+[   81.88s ->    86.68s] which means if on expiration day, your trade is losing, then we close out as early as possible
+[   86.68s ->    91.86s] or do some other methods to manage those losers, which will be covered in another health test article.
+[   92.38s ->    96.98s] Now, next, we can also close the trade early. This is an option. Close it when it breaks our
+[   96.98s ->   101.66s] strike price. However, this will decrease our win rate and overall return, but you can change the
+[  101.66s ->   106.84s] setting in the algo itself. So for instance, you can see here, right here, SPY for the scroll strategy
+[  106.84s ->   112.58s] has a 90% win rate and a 15% annualized return when we hold until expiration day. However,
+[  112.64s ->   118.96s] I come in here to my settings, my profile, I scroll down and I say risk management, exit when it breaks
+[  118.96s ->   123.24s] your strike. Now the back test is going to run and the algo alert is going to show me based on that.
+[  123.52s ->   129.76s] So remember I had a 90% win rate and a 15% annualized return. Now I have an 83% win rate and a 13%
+[  129.76s ->   135.48s] annualized return. What does this tell you? It means that I'm going to roughly make the same,
+[  135.48s ->   140.86s] but I'm going to lose a lot less. And so again, if you're okay with losing less and taking smaller
+[  140.86s ->   145.22s] losses, do this and it'll make roughly the same. However, I can tell you it's dramatically different
+[  145.22s ->   151.46s] for this, right? You can see here, you have an 80% win rate with a 24% annualized return when typically
+[  151.46s ->   158.12s] it's going to be a 93% win rate or somewhere around there with a 35% win rate. So again, this all depends
+[  158.12s ->   163.06s] on what you want to do, but yes, you can adjust the algo to show you what it looks like to close the
+[  163.06s ->   168.46s] trade early. Anyways, you can do all that in your algo membership site. Check that out down below.
+[  168.52s ->   173.34s] If you have any questions, use the chat box or see me inside the office hours discord. All right,
+[  173.34s ->   176.94s] guys, see you inside the chat and hope and let's make some money together.

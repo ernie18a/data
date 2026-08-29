@@ -1,0 +1,103 @@
+[    0.00s ->     4.18s] Hey guys, in this video I'm going to show you how to know when a stock has reached the top or bottom,
+[    4.48s ->     8.58s] how to know when a trend will be reversing, and how to make money from it.
+[    8.68s ->    12.38s] I'm going to walk you through exactly how to use this indicator so that you stay out of crashes,
+[   12.68s ->    17.46s] so that you know when the market reverses, and you know how to get the best entries and exits for your trades.
+[   17.60s ->    22.40s] If you stay until the end, I'll give you the name of this indicator and walk you through how to actually put it on your chart today.
+[   22.58s ->    25.24s] So let's dive in so I can show you how this works and how to make money.
+[   25.24s ->    32.28s] Before we dive into the specifics of this, you can see right here this indicator gave a 789 reversal alert
+[   32.28s ->    37.04s] right before this huge 2020 crash that ended up taking out the market huge.
+[   37.34s ->    44.02s] So isn't that crazy? This indicator could have gotten you out of the crash so that your market and that your portfolio would not have been affected.
+[   44.38s ->    46.82s] Not only that, you could have actually made money to the downside.
+[   47.26s ->    52.88s] Not only that, after this huge rundown, we also got a 789 alert for the reversal to the downside.
+[   52.88s ->    55.20s] So it also predicted the market move back up.
+[   55.24s ->    57.26s] So that's how powerful this indicator is.
+[   57.34s ->    60.44s] Now let me show you how to actually use it and how it works.
+[   61.00s ->    65.40s] So looking at the current market, we can see that it predicts the tops and bottoms pretty well.
+[   65.64s ->    69.14s] Is this something we should use for our trading and only look at this?
+[   69.44s ->    73.98s] No, but when we combine it with other things, it becomes really, really profitable.
+[   74.18s ->    75.58s] So let's dive into how this works.
+[   75.82s ->    80.76s] So you can see here 789 alert, and then it reverses, and we see this downside move.
+[   80.76s ->    82.90s] So you can see here 789 reversal move.
+[   83.54s ->    86.46s] 789, we start to have some consolidation and try to push back up.
+[   86.72s ->    91.82s] Then again, we get the 789 reversal on this very bottom, and then we have this huge run-up.
+[   91.92s ->    94.92s] So again, this can help you with a lot of your trading.
+[   95.04s ->    99.66s] So for instance, if you see a 789, you can put on a skewed strangle to the downside.
+[   99.80s ->   102.86s] You can put on a call credit spread, making money to the downside.
+[  103.18s ->   106.20s] You can get in an inverse ETF, which makes money to the downside.
+[  106.20s ->   111.32s] The same thing here, if you see a 789 buy alert, then again, you can get in a put credit spread.
+[  111.40s ->   112.44s] You can buy the stock.
+[  112.54s ->   117.08s] You can buy a leveraged ETF, whatever you want to do to take advantage of that trend.
+[  117.20s ->   120.42s] This shows us when the trend is reversing.
+[  120.70s ->   125.68s] Not only that, if you combine it with like a simple moving average line, then it can give you an early indication that,
+[  125.84s ->   129.18s] hey, the moving average line is going to switch, and we can get into trades earlier.
+[  129.42s ->   130.54s] But let's say you're in a trade.
+[  130.60s ->   133.34s] Let's say you're shorting the market, and then you get this signal.
+[  133.34s ->   136.40s] It can help you know to get out so that you don't give up profits.
+[  136.68s ->   139.36s] For instance, let's say you have the 789 alert here showing this reversal.
+[  139.70s ->   140.66s] You get into a long trade.
+[  140.74s ->   141.28s] It goes up.
+[  141.32s ->   146.08s] You see the 7 alert, and you get out of the trade so that you know you can lock in your max amount of profits
+[  146.08s ->   148.64s] without allowing the trade to go completely against you.
+[  148.96s ->   152.46s] And so again, that's how amazing this magic indicator is.
+[  152.70s ->   153.84s] So how does this work?
+[  153.92s ->   155.48s] How is 789 calculated?
+[  155.94s ->   160.72s] Well, again, you can research this for yourself by the guy named Thomas Demark,
+[  160.72s ->   164.70s] who helps Paul Tudor Jones, who's a legendary trend follower trait.
+[  165.04s ->   166.92s] And so he helped him do this.
+[  167.20s ->   171.62s] And again, he gave us this indicator, which is usually only available on Thinkorswim,
+[  171.76s ->   173.86s] but I'll show you how to access it here.
+[  174.06s ->   177.66s] You can see here that it's calculated by looking at the prior four days.
+[  177.90s ->   178.88s] So you can see this candle.
+[  178.94s ->   180.44s] We go back 1, 2, 3, 4.
+[  180.68s ->   181.76s] So we look at this candle.
+[  182.02s ->   184.26s] Is this candle closed below this candle?
+[  184.44s ->   185.22s] Yes, green.
+[  185.40s ->   186.76s] So that is the 7th signal.
+[  187.72s ->   189.38s] Again, we look at this in a row.
+[  189.70s ->   191.04s] So we're going to be 1, 2, 3.
+[  191.16s ->   192.98s] Is this candle closed below this candle?
+[  193.06s ->   193.80s] Yes, so that's 1.
+[  194.00s ->   195.90s] Is this candle closed below the fourth one before it?
+[  195.96s ->   197.28s] Yes, yes, yes.
+[  197.46s ->   202.02s] And you can see here, that's how we get 1, 2, 3, 4, 5, and all these numbers.
+[  202.38s ->   206.22s] However, the reversal really only starts to happen on the 7, 8, and 9.
+[  206.46s ->   211.26s] After we're at the 7th time, we are lower than the previous four candles.
+[  211.26s ->   214.54s] Then we start to be very likely the market will reverse.
+[  214.74s ->   220.00s] When we get to the 8th time in a row, we are getting highly likely that the market reverses.
+[  220.12s ->   221.96s] And the final point is number 9.
+[  222.02s ->   223.32s] Number 9 is the final number.
+[  223.76s ->   227.26s] Once it gets to the 9, the reversal is almost imminent.
+[  227.50s ->   230.74s] Not 100% likely because nothing is 100% insured in the market,
+[  230.88s ->   233.70s] but it's really likely that the market will reverse.
+[  233.84s ->   236.94s] So 7, 8, 9 is our goal that we want to see.
+[  237.18s ->   238.86s] If we see 7, that's a good indication.
+[  238.96s ->   240.14s] If we see 8, we're getting closer.
+[  240.14s ->   241.34s] We see 9, it's golden.
+[  241.68s ->   243.38s] We're very likely to reverse.
+[  243.48s ->   245.14s] The trend is going to change on us.
+[  245.46s ->   249.56s] So again, 7, 8, 9, all based on the prior four candles to it.
+[  249.82s ->   253.40s] And again, 7, 8, 9 being the 7th one in a row, the 8th one in a row, and the 9th one in a row.
+[  253.68s ->   257.12s] So again, this is purely a price action indicator.
+[  257.30s ->   260.34s] It's not looking at different things based on different things.
+[  260.38s ->   262.90s] It's like, what is price doing and how is it moving?
+[  263.24s ->   265.08s] And that's how it determines this.
+[  265.86s ->   269.16s] Now, to add this to your chart, it was previously impossible.
+[  269.16s ->   274.96s] The DMARC indicator was only available on Think or Swim, but I just made it available.
+[  275.16s ->   279.22s] I recreated it, reprogrammed it in TradingView and made it publicly available.
+[  279.58s ->   283.70s] So if you go into the indicator section and you just search through public indicators,
+[  283.86s ->   289.58s] DMARC, right here, DMARC indicator trend reversal, you can click this and it will automatically
+[  289.58s ->   290.62s] be added to your chart.
+[  290.82s ->   293.12s] It's a community script that I've released to everyone.
+[  293.12s ->   296.26s] So again, that is available for you guys.
+[  296.38s ->   301.04s] Now, if you're someone who's using a free TradingView account and you can't add any more
+[  301.04s ->   303.48s] indicators to your chart because you'll have to pay for it.
+[  303.52s ->   306.88s] The free account only allows two indicators.
+[  307.28s ->   313.44s] Then you can click the second link in my description below and grab the CSTT indicator, which has
+[  313.44s ->   316.56s] some of the best trend-following indicators all in one.
+[  316.70s ->   319.62s] So that you only add one indicator and you get access to all of these.
+[  319.70s ->   321.90s] It also includes the DMARC indicator on it.
+[  322.12s ->   325.96s] And so that's available down there and you can get access to that as well.
+[  326.20s ->   329.20s] So comment down below and let me know how this is working for you.
+[  329.26s ->   332.56s] I'd love to hear about your success or any ways I can help you.
+[  332.74s ->   333.08s] All right, guys.
+[  333.08s ->   333.88s] See you in the next video.

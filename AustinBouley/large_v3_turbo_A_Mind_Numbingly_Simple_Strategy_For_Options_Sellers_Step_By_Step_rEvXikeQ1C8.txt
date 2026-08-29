@@ -1,0 +1,58 @@
+[    0.00s ->     4.62s] In this video, I'm going to lay out a mind-numbingly simple strategy for option sellers
+[    4.62s ->     8.84s] that anybody can follow as long as you can follow a step-by-step checklist. And I'm actually going
+[    8.84s ->    13.20s] to reveal what that checklist is so you can follow it step-by-step and do it. And yes,
+[   13.24s ->    16.94s] it's super simple. So let's dive in. Okay. And first thing you need to do is you need to add
+[   16.94s ->    20.98s] an indicator to your chart. So I'm going to map this out one by one. Okay. I'm going to bring
+[   20.98s ->    25.90s] this text over. Number one, we're going to add the Bollinger Band indicator. Okay. So that's
+[   25.90s ->    30.86s] going to be super simple. Just come here to indicators, add the Bollinger Band, just like
+[   30.86s ->    36.06s] this, B-O-L-L-I-N-G-E-R, bands. And we're going to make sure we're on the daily chart. So we see
+[   36.06s ->    41.96s] daily price activity. Okay. So number one is the Bollinger Bands. Number two, we want to make sure
+[   41.96s ->    47.26s] we're on the daily chart. Number three, this is how we're going to run the playbook. Okay. The
+[   47.26s ->    53.40s] playbook is simple. When the market hits the red line or breaks above it, we're going to sell a call.
+[   53.40s ->    59.30s] When the market hits the green line, we're going to sell a put. Now, if you're new to these concepts,
+[   59.40s ->    64.30s] let me quickly explain. When you sell a call, you're betting that the stock will stay below a
+[   64.30s ->    69.70s] certain level, aka you're betting that the stock will go down. When you're selling a put, you're
+[   69.70s ->    74.36s] betting the market will stay above a certain level. So you're betting the market will go up or stay where
+[   74.36s ->    79.40s] it's at. And so that's what we're seeing here with the Bollinger Band. The Bollinger Band shows us
+[   79.40s ->    83.96s] kind of what our levels are. It's not 100% because nothing in the market is guaranteed. So if you
+[   83.96s ->    89.40s] think that, go to another video. Sorry. But in general, when the market hits these zones, it tends
+[   89.40s ->    95.70s] to turn around. Okay. And we see the same thing here. A way to confirm this though, is to wait for
+[   95.70s ->    99.96s] the turnover. Wait for the turnover. You can see here, this just continuously trended down. We want
+[   99.96s ->   105.04s] to wait for a few green candles to show that we're pushing back up and vice versa. So things like that
+[  105.04s ->   109.50s] can help you get out of traps. So if we're talking about it here, number one is a daily
+[  109.50s ->   118.00s] chart. Number three, top of chart equals sell calls. And then four, bottom of chart equals
+[  118.00s ->   123.72s] sell puts SP. So what is the framework for this? The strategy is the same, no matter if
+[  123.72s ->   129.82s] we're doing calls or puts. Okay. We're going to go about 30 days out. So 30 DTE. What you're
+[  129.82s ->   134.92s] going to do is you're going to sell the options. So whether that be call or put doesn't
+[  134.92s ->   140.54s] matter, you're going to go about the, depending on you, the 10 to 30 DTE level. If you want more
+[  140.54s ->   144.02s] safety and you want to have a higher win rate, but you're okay with collecting less money,
+[  144.10s ->   149.16s] that'd be a 10 DTE. If you're more risky and you want to collect more money, that'd be a 30 DTE.
+[  149.56s ->   154.54s] You're going to run this by running a 25% take profit. This way you can take profit quickly.
+[  154.90s ->   159.12s] If the market moves in your direction, you'll be able to close that trade. And then again,
+[  159.12s ->   167.34s] we have a stop loss of a 200% stop loss or a trend can continue trend continuation. So basically if
+[  167.34s ->   172.26s] the market continues to trend higher and I sold a call, I'm going to get out, right? Same way here.
+[  172.28s ->   175.68s] If I'm expecting the market to bounce, I see the screen and it continues trending down. I'm going
+[  175.68s ->   182.14s] to cut my losses as well and move on. That way I can cut my losses below 200%. Either way, that's how
+[  182.14s ->   187.06s] you run the strategy. And yes, my nominally simple. Let me walk you through some examples. Okay.
+[  187.06s ->   193.52s] Let's say right here, the market hits the top. So what we're going to do is we wait for the next
+[  193.52s ->   197.70s] red candle. This red candle forms. Cool. We're going to sell a call right here, essentially,
+[  197.84s ->   201.52s] but in the market goes down, the market goes down, stays around here for a little bit. We
+[  201.52s ->   205.88s] have that 25% take profit and the trade closes. Awesome. Same thing happens here. We hit this again,
+[  205.96s ->   211.24s] red candle. We do the sell call. We profit on into the downside, make our 25% profit and run.
+[  211.64s ->   215.78s] Okay. Let's say the market's coming down here. We see this green one. So we want to enter.
+[  215.78s ->   221.06s] What we do is we enter the trade and then we see that it's continuously down because it crossed below
+[  221.06s ->   225.28s] the lowest point here. So we're going to cut our losses, probably about a hundred percent or so
+[  225.28s ->   229.54s] lost right there. So we'll close out that trade and we'll move on to the next one. We'll wait for
+[  229.54s ->   235.44s] a couple of green candles this time, 25% profit, take it there using a sell put strategy. And then
+[  235.44s ->   240.02s] again, we'll do the same thing here. Wait for a green candle here, sell up, hit that 25% profit in a day
+[  240.02s ->   244.38s] or two and keep repeating this process over and over. We're either in call or put, call or put.
+[  244.38s ->   249.02s] Now, if you want to automate the execution of this, you can, but this is just one of many
+[  249.02s ->   253.44s] proven playbooks that I teach my coaching clients. And so if you're interested in getting the entire
+[  253.44s ->   257.80s] playbook that I have, I just click the first link down below and we'll book a free call. And I'll,
+[  258.04s ->   261.14s] I'll be able to see if I can help you actually implement what I'm teaching in this video.
+[  261.42s ->   265.82s] But if you want to go do it yourself, this is the playbook, put the ball on your band on your chart,
+[  265.92s ->   269.62s] go to the daily chart, do the top of the chart. You're going to sell a call bottom of the chart.
+[  269.62s ->   273.94s] You're going to sell a put. This is how you're going to run the strategy and bonus points if
+[  273.94s ->   277.74s] you want to automate it so that it's hands free. But this is a mind numbingly simple strategy that
+[  277.74s ->   281.68s] anybody can follow. Let me know how it works. I would love to see your thoughts in the comments.
+[  281.68s ->   283.60s] I've been doing this, but I want to see your profits as well.

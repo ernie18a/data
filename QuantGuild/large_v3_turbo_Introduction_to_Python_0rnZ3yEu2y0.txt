@@ -1,0 +1,24 @@
+[    1.60s ->     7.10s] Hey YouTube, it's Roman. For those of you who don't know me, I am the course director here
+[    7.10s ->    12.36s] at Quant Guild and I am also a quantitative researcher based in Manhattan. This week I am
+[   12.36s ->    17.26s] so excited to share with you the launch of our first course, Introduction to Python. It's going
+[   17.26s ->    22.46s] to take you from zero to hero in the Python programming language. Without giving too much
+[   22.46s ->    26.54s] of the course away, I wanted to share with you the final project that we work on together.
+[   26.54s ->    32.02s] It is a financial data application, completely interactive using a whole bunch of different
+[   32.02s ->    37.44s] widgets, and you can create this price series, visualize some key metrics, and select a specific
+[   37.44s ->    43.30s] date range for any equity that you choose. The course assumes that you have no prior knowledge
+[   43.30s ->    47.74s] of Python. So if you have no prior knowledge of Python, don't worry. We're going to get you up
+[   47.74s ->    53.02s] and running as fast as possible so you can get started making your own apps. That being said,
+[   53.02s ->    57.34s] if you have some intermediate or advanced Python experience, you can feel free to jump around.
+[   57.34s ->    60.90s] You can skip some of the basic sections and start working with the more advanced sections
+[   60.90s ->    65.96s] sooner rather than later. Now, what makes this course unique is when we walk through the final
+[   65.96s ->    71.30s] project, I'm walking through it with you in real time. I'm going to be coding it on the spot
+[   71.30s ->    76.48s] and we're going to have to look up documentation together. This is an insight into the software
+[   76.48s ->    81.34s] engineering and programming space that isn't offered by any other course. I'm going to show you
+[   81.34s ->    85.86s] what it looks like when you actually need to go sift through the documentation to find
+[   85.86s ->    89.94s] the functions that you're looking for. Students who complete this course will be able to develop
+[   89.94s ->    94.26s] their own research notebooks and applications and have a very strong understanding of the Python
+[   94.26s ->    99.66s] programming language and a very high level understanding of different packages and the
+[   99.66s ->   104.20s] most popular packages used in academia and industry. And if that isn't enough for you,
+[  104.24s ->   109.44s] you'll also receive a unique certificate verifying your completion of the course from Quantkild.
+[  109.44s ->   115.22s] So feel free to check out this course on Quantkild.com. Thank you so much for watching and I will
+[  115.22s ->   116.62s] see you in the next video.

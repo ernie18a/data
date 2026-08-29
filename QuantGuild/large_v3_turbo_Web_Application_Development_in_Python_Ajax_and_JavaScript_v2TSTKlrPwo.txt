@@ -1,0 +1,111 @@
+[    0.24s ->     5.24s] how's it going everybody today what I want to do is continue with the idea of
+[    5.24s ->    12.16s] web application development in Python by adding a new way to dynamically display
+[   12.16s ->    18.52s] content in our HTML template so if you remember last time we successfully
+[   18.52s ->    24.72s] established our web application using flask and we use Jinja to pass a Python
+[   24.72s ->    32.04s] variable to our template through this render template function in our home page
+[   32.04s ->    39.72s] URL rule and it was displayed right here well what if this variable was more
+[   39.72s ->    44.58s] dynamic more importantly what if it was updating relatively frequently what if it
+[   44.58s ->    49.32s] was a stock price or something of that nature well then we would need to either
+[   49.32s ->    56.92s] refresh the page or have some way of requesting the new information from the
+[   56.92s ->    63.42s] variable from the server to display it in the HTML template well instead of having
+[   63.42s ->    68.34s] the user refresh the page we can use something called Ajax what Ajax is going
+[   68.34s ->    74.34s] to allow us to do is it's going to allow us to dynamically display content that
+[   74.34s ->    78.96s] frequently updates or that we need to update frequently without having to
+[   78.96s ->    84.56s] refresh the web page okay so to go ahead and get started here we're gonna be
+[   84.56s ->    89.36s] looking at our HTML and I'm gonna be including this script that's gonna allow
+[   89.36s ->    94.82s] us to use Ajax and I'm gonna leave this in the description below and you're gonna
+[   94.82s ->   101.00s] want to copy and paste that into your HTML so that we know where to find Ajax and
+[  101.00s ->   107.24s] our HTML knows what to do with what we write so now that we have our Ajax script
+[  107.24s ->   111.62s] included we can go ahead and start to consider how we can start to implement
+[  111.62s ->   117.20s] this let's go ahead and make this a little more dynamic in the sense that
+[  117.20s ->   122.24s] instead of having a name variable let's let's do something that's implement some
+[  122.24s ->   127.24s] randomness so we have this variable that doesn't change let's make it so that it
+[  127.24s ->   134.20s] does change so what I'm gonna do is I'm gonna import numpy and instead of
+[  134.20s ->   144.28s] declaring name as Roman I'm gonna switch this to random decimal and random decimal
+[  144.28s ->   152.86s] is going to be NP dot random dot random and that is going to specify or I think
+[  152.86s ->   160.06s] it's dot rand it's going to be a random decimal from zero to one inclusive and every
+[  160.06s ->   164.20s] single time we go ahead and run this application it's going to reassign
+[  164.20s ->   170.14s] random decimal to a new number and then instead of specifying name here we can
+[  170.14s ->   177.96s] specify random decimal and that is going to be displayed in our HTML so when we
+[  177.96s ->   181.86s] run this application we're gonna get a random decimal from zero to one and then
+[  181.86s ->   187.42s] it's going to be displayed in our HTML through this ginger variable and every
+[  187.42s ->   192.64s] single time we stop and rerun this application we are going to have a new
+[  192.64s ->   199.16s] decimal okay so this is all great and all but this isn't really practical
+[  199.16s ->   206.48s] because we need to stop and start our Python script to get a new assignment of
+[  206.48s ->   212.12s] this random decimal variable and in practice this application or this web
+[  212.12s ->   215.54s] application is going to be persisted on something like elastic beanstalk through
+[  215.54s ->   220.16s] Amazon web services or something of that nature and we're not going to be able
+[  220.16s ->   224.42s] to stop and restart the server every two seconds we want to change a variable so
+[  224.42s ->   230.30s] instead what we can do is we can create a new URL rule that's going to allow us to
+[  230.30s ->   234.80s] update this random decimal variable so what I'm going to do is I'm going to create a
+[  234.80s ->   239.58s] new URL rule I'm going to say application dot route and I'm just going to call it
+[  239.58s ->   251.05s] update decimal and is going to be a post request and I'm going to create a function
+[  251.05s ->   260.16s] under it just called update decimal and now this is really where the the magic
+[  260.16s ->   266.46s] happens this is where we can write Python code to modify this variable and have it
+[  266.46s ->   272.64s] update in our HTML to the user on the front end so in our update decimal function I'm just
+[  272.64s ->   278.64s] going to call random decimal and set it equal to MP dot random dot rand and that's
+[  278.64s ->   283.14s] going to allow me to reassign this random decimal to something between 0 and 1
+[  283.14s ->   289.38s] inclusive and it's going to do this through this new URL rule with a post
+[  289.38s ->   295.62s] request and we're going to be able to use Ajax to go ahead and ping this URL rule
+[  295.62s ->   304.48s] and that's going to allow us to get this new value from the server okay so bear with
+[  304.48s ->   309.28s] me now because what I want to do is switch over to HTML and write some JavaScript in
+[  309.28s ->   315.28s] Ajax that's going to allow us to ping this new URL rule which updates our random decimal
+[  315.28s ->   321.28s] variable and then we're going to talk about how to return this variable to our template
+[  321.28s ->   326.28s] using this update decimal function and Ajax in our HTML so I'm going to switch over
+[  326.28s ->   331.28s] here and I'm going to be writing some JavaScript so I'm going to specify that I'm
+[  331.28s ->   338.30s] going to say script and then close that script tag okay now in here what I'm going
+[  338.30s ->   344.30s] to do is I'm going to create a new function I'm going to say function load new
+[  344.30s ->   352.30s] decimal and within this function I'm going to be writing some Ajax so I'm going to say dollar sign
+[  352.30s ->   358.30s] dot Ajax and then I'm going to open up a parenthesis and then open up a curly bracket
+[  358.30s ->   366.56s] enter enter close it with a semicolon and in here I'm going to specify the URL rule that we just set up
+[  366.56s ->   376.56s] so I'm going to say URL and in quotes I'm going to put slash update decimal and this is directly
+[  376.56s ->   384.56s] pertaining to the URL rule that we set up here update decimal then I'm going to specify the type
+[  384.56s ->   397.26s] which is a post request which we also specified in our URL rule here then I'm going to specify a data type
+[  397.26s ->   404.26s] now I did mention that we were going to return something in this function to allow us to update our HTML
+[  404.26s ->   411.26s] in this case the return type or the data type is going to be JSON and we'll talk more in a minute about
+[  411.26s ->   419.60s] what that looks like but for now we're just going to specify JSON and then on success what are we going
+[  419.60s ->   428.08s] to do well we're going to take that data and we are going to update our HTML
+[  428.08s ->   435.08s] alrighty so this is where things get a little complicated now to update our HTML
+[  435.08s ->   445.08s] the simplest way to do this is by specifying a div tag and replacing that tag with new HTML
+[  445.08s ->   455.08s] representing the data that was updated by our URL rule so what I mean by this is let's say this ginger variable
+[  455.08s ->   462.78s] was wrapped in a div tag so I'm going to say div and then I'm going to close that tag and I'm just
+[  462.78s ->   477.50s] going to go ahead and specify that this div tag here has an ID of random decimal okay so this is irrelevant
+[  477.50s ->   483.50s] that it's the same name as the random decimal variable here just keep that in mind that this is just the ID for the
+[  483.50s ->   495.50s] div tag in HTML now when we want to go ahead and update this ginger variable with new information from this URL rule that we generated here
+[  495.50s ->   504.50s] what we're actually doing is replacing the contents in this div tag with new HTML representing this ginger variable
+[  504.50s ->   513.50s] or this random decimal variable here and to do that instead of using the same HTML template which will wind up replacing
+[  513.50s ->   520.50s] the entire web page with a duplicate copy of itself we can create a new template that models just this random variable
+[  520.50s ->   525.50s] and this is all going to make a little more sense when I actually create the template so let's just go ahead and do that
+[  525.50s ->   534.50s] so I'm going to create a new template I'm gonna say new file and I'm just going to call it random decimal model that HTML
+[  534.50s ->   544.50s] and in this random decimal model I'm going to say div and then ID is equal to and I'm going to specify random decimal
+[  544.50s ->   555.21s] then I'm going to close this tag and I'm going to rewrite that ginger variable as X okay now that we have this random decimal model
+[  555.21s ->   570.53s] HTML template here in our JavaScript in our Ajax what we can do is we can say dollar sign random decimal and this is saying okay hey let's look at our HTML
+[  570.53s ->   583.53s] template our home that HTML template find the random decimal div tag right here and we're actually going to go ahead and replace it with the data that we have here
+[  583.53s ->   600.19s] with the data that was returned by our new URL rule so now we need to actually specify what we're returning through our URL rule and we said that we're returning JSON data right here
+[  600.19s ->   607.19s] that's the data type that we're returning so what we're going to want to do is from Flask we're also going to import JSONify
+[  607.19s ->   615.19s] and what this is going to allow us to do is it's going to allow us to take this random decimal HTML template model here and convert it to JSON
+[  615.19s ->   622.19s] to allow it to replace whatever is in this div tag here in our home.html template and if all this sounds a little bit confusing
+[  622.19s ->   628.19s] don't worry it's all going to it's all going to come together relatively intuitively just bear with me for now
+[  628.19s ->   638.45s] so in here we're going to return JSONify with an empty quotes we're going to say render template
+[  638.45s ->   652.70s] and we are going to render the random decimal model.html and we're going to pass that new random decimal to our
+[  652.70s ->   660.70s] jinja variable x okay so if this looks a little confusing all you really need to know is that we are rendering the HTML
+[  660.70s ->   669.70s] template here our random decimal model and just like our home page URL rule we're specifying that the x variable
+[  669.70s ->   681.70s] or x jinja variable is the random decimal that was reassigned one line of code earlier right here by numpy and instead of just returning the
+[  681.70s ->   692.70s] HTML template what we're doing is we're rendering it as a JSON data type and then passing it to this div tag here using Ajax and our
+[  692.70s ->   695.70s] JavaScript right here.
+[  695.70s ->   708.28s] Okay so the last big question mark here is how often or when do we want to call this URL rule to update our random decimal variable
+[  708.28s ->   717.28s] and to answer that what I'm going to go ahead and do is encapsulate this load new decimal function with some more Ajax that's going to allow us
+[  717.28s ->   726.28s] to specify an interval to calling this URL rule update decimal so I'm going to go ahead and say dollar sign
+[  726.28s ->   736.04s] parentheses function and I'm going to get rid of this closing parentheses and I'm going to create a new pair
+[  736.04s ->   745.36s] pair and open a set of curly brackets and I'm going to go ahead and delete the ladder curly bracket now within this function
+[  745.36s ->   755.36s] I am going to say window dot set interval and I'm going to say function again and I'm going to open a new set of curly brackets this time you can keep
+[  755.36s ->   783.81s] both pairs and I'm going to say load new decimals so now after the curly bracket but before the closing parentheses I'm going to say comma 1000 and essentially what I'm doing here is saying every 1000 milliseconds or one second call the load new decimal JavaScript function here and that is what references Ajax which goes ahead and pings our URL rule
+[  783.81s ->   812.81s] and pings our URL rule to update the random decimal variable now we are encapsulating this function right here with this one so underneath the last curly bracket what I'm going to do is I'm going to close the former curly bracket and I am going to also close the parentheses and add a semicolon and that should be the extent of the JavaScript
+[  812.81s ->   829.81s] and Ajax that we are writing for this web application now let's just go ahead and go through the chain of command let's go ahead and walk through what this program is doing so that we can better understand the Ajax and its relationship with our web application
+[  829.81s ->   859.83s] so for starters we have this flask web application that we're running and we're starting with this URL rule for our home page we arrive at our local host through our port and we render this Python variable using Jinja to our HTML right here and we're passing it through this render template function right here and what we're doing is we're saying every
+[  859.83s ->   887.83s] every 1000 milliseconds or every one second call this load new decimal function now when this load new decimal function is called Ajax goes out and it says okay update decimal URL rule it's going to go ahead and call this function and we are going to generate a new random decimal and based on the data that's returned by this update decimal function
+[  887.83s ->   917.79s] this update decimal function which we're specifying is JSON and we are taking the random decimal that was modified in this update decimal function and passing it using Jinja to our random decimal model here and we are taking that random decimal model converting it to JSON and saying in our home that HTML template update this random decimal div with the
+[  917.79s ->   947.43s] data data that was returned by this function which in this case was the jsonified random decimal model template here and that's going to allow us to continuously replace these three lines of HTML with these three lines of HTML that have been updated by this update decimal function so that was a pretty long drawn out explanation but all you really need to know is that we are updating our web application
+[  947.43s ->   954.43s] our web application home page without having to refresh that page without having to refresh that page and that's what Ajax is allowing us to accomplish here so I'm going to go ahead and run this and I'll meet you in the web browser
+[  954.43s ->   984.41s] already so here we are in our browser and as you can see every one second we get a new random decimal so what this is doing is essentially illustrating the power of Ajax every one second we are updating our web application with content from the server without having to refresh the web page and that's really the true application the true power of Ajax and this is not limited by
+[  984.43s ->  1014.41s] by any means to just a simple variable like this concept can be extended to complex HTML models that include images or tables or anything of that nature but this is just an introduction to implementing Ajax to allow us to update variables through a combination of Python and Jinja updating the web application in HTML without refreshing the web page

@@ -1,0 +1,18 @@
+[    0.00s ->     5.28s] I'm going to walk you through how to place a put credit spread on Robinhood if you're using that
+[    5.28s ->     9.90s] as your broker. So I'm going to use the 10% credit spreads broker walkthrough to show you how to do
+[    9.90s ->    14.88s] this. So here we go. If I click on need help placing a trade, then click on Robinhood. It's
+[   14.88s ->    19.56s] going to walk you through the steps you need to do. Step one, you want to enter the stock you want
+[   19.56s ->    26.80s] to trade, enter the search bar. Number two, click on the trade options section below the information
+[   26.80s ->    33.84s] about the stock. Number three, click on the builder tab. The builder tab is located here right under
+[   33.84s ->    39.42s] the stock symbol. From builder, you want to find the vertical credit spread section and you want to
+[   39.42s ->    44.26s] click on put credit spread. So again, there's a put credit spread right here. You'll click on that.
+[   44.32s ->    49.52s] Now we'll set it up for you. Step number five is find the correct expiration date. So you want to
+[   49.52s ->    55.16s] come here to the right hand side of the column. You want to select the right expiration date and
+[   55.16s ->    59.30s] following this alert. It'll be July 21st is what you'll be looking for in this expiration date.
+[   59.90s ->    64.70s] Step six is you want to find the spread that defines the strike prices that you're looking
+[   64.70s ->    70.14s] to trade. So for instance, if you're looking to sell the 361 and buy the 360, you want to scroll
+[   70.14s ->    77.02s] until you find 361, 360. So again, once you do that and you click on it, then again, you'll see what
+[   77.02s ->    82.98s] the total credit is here on this side. If the total credit listed here is greater than or equal to 0.15
+[   82.98s ->    86.76s] then you put this trade on essentially meaning that if you can collect the amount of credit you
+[   86.76s ->    91.86s] want, then click continue and place the trade. That is the step-by-step process on how to place
+[   91.86s ->    94.36s] a put credit spread trade on the Robinhood platform.

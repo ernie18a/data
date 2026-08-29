@@ -1,0 +1,30 @@
+[    0.00s ->     4.50s] This helps us video. I'm going over what's the difference between a $1 wide and a $2 wide credit
+[    4.50s ->     9.68s] spread. So if you know within our ALGO program here on this page, you can see the $1 wide,
+[    9.76s ->    14.68s] this is $2 wide, the $2 wide, or hide it and show the $1 wide. So you can see both options. Well,
+[   14.96s ->    18.82s] what's the advantages and disadvantages of both? So let's dive into it. First off,
+[   18.86s ->    25.06s] a $1 wide credit spread requires a minimum of $100 in collateral per trade,
+[   25.06s ->    31.54s] while this one, the $2 wide, requires a $200 collateral. So what does this mean? Well,
+[   31.70s ->    36.84s] this means that a $1 wide is best for smaller accounts. Anywhere from $2,000 to $30,000 is
+[   36.84s ->    42.26s] recommended. The unique advantage is that it has a higher credit collection percentage,
+[   42.26s ->    49.16s] which means that you have a higher long-term return. This is evident in the historical return
+[   49.16s ->    54.64s] performance. You can see here, if I go to the $1 width, you have on the turtle strategy, which
+[   54.64s ->    62.20s] is our main approach, a 93% win rate and a 35% annualized return. So that's going to be the
+[   62.20s ->    68.02s] highest. It's a 1 width. If we move to 2 width, it's the same win rate, but it moves down to a 29%
+[   68.02s ->    75.10s] instead of a 35. Why? Well, because the closer your width is or the smaller your width, the more
+[   75.10s ->    80.28s] credit you collect. It's just an options thing and it's how it works. So from going to $1 wide to $2
+[   80.28s ->    83.62s] wide, you're going to collect less money, which is you're going to make less of a return.
+[   83.62s ->    89.26s] But the downside with it is as you scale up, you're going to have to have a lot of spreads.
+[   89.64s ->    94.54s] So for instance, let's say you scale up and you'll be doing 100 spreads each of the $1 wide,
+[   94.72s ->   100.18s] you'll start running into liquidity and execution issues, not to mention you'll be paying a lot in
+[  100.18s ->   103.98s] commissions. So again, when you're trading with a lot of size and need a lot of spreads,
+[  104.08s ->   108.40s] it's going to mess up liquidity, execution, and you're going to have to pay a lot in commissions.
+[  108.40s ->   118.88s] This is where the $2 wide picks up. It's recommended for larger accounts, $20,000 plus accounts.
+[  119.32s ->   124.22s] Your unique advantage is it cuts your commission costs in half because a $2 wide spread requires
+[  124.22s ->   129.00s] half the trade size that a $1 wide requires in order to generate roughly the same return.
+[  129.42s ->   134.46s] Okay, cool. So now we're cutting our commissions in half, which means that we're already doubling
+[  134.46s ->   139.34s] our long-term return factoring in commissions. But the downside is you'll have a lower long-term
+[  139.34s ->   143.64s] return compared to the $1 wide since your credit collection percentage drops. However,
+[  143.82s ->   149.32s] because commissions also go down, it kind of offsets it. So in the long run, they're about
+[  149.32s ->   155.38s] equal. But again, I prefer the $2 wide because it has less spreads that I need. So quicker execution.
+[  155.80s ->   160.36s] All right. If you have any other questions about that, open up the chat box or join me in our next
+[  160.36s ->   166.88s] office hours support call. All right. See you guys inside the membership and let's make money together.

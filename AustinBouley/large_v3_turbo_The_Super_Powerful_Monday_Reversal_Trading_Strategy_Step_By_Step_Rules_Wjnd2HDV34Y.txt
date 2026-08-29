@@ -1,0 +1,65 @@
+[    0.72s ->     6.18s] Hey guys in this video I want I want to go over a super powerful Monday reversal strategy
+[    6.18s ->    13.08s] It's gonna walk you through exactly how to trade on Mondays for the S&P 500 step-by-step that has been back-tested
+[   13.08s ->    15.42s] Let me show you the exact rules for this strategy
+[   15.42s ->    19.34s] This comes from the ultimate list of spy trading strategy with a free PDF that I put together
+[   19.34s ->    25.44s] I scoured the internet for the best spy strategies that have been back-tested and proven to work and I put them all in
+[   25.44s ->    33.32s] This free PDF that you can get down below and again we're going over let's see where is it the Monday reversal strategy and the strategy number 15
+[   33.32s ->    38.44s] If I skip to there on the list you can see here that the strategy was found on quantifiedstrategies.com
+[   38.44s ->    40.42s] If you want to go there and learn more about it
+[   40.42s ->    45.80s] But again, it's a simple strategy based on the idea that the market is bullish overall and balances need to happen
+[   45.80s ->    50.18s] You can see why it's a super powerful strategy because if you look at the backtest since
+[   50.18s ->    56.20s] 19 basically 80s you can see here until 2020 is performed super well
+[   56.20s ->    59.76s] And so again, the strategy may not present itself every day or every week
+[   59.76s ->    65.32s] But when it does it's gonna set you up to have a very high win rate and grow your account in the long run
+[   65.32s ->    70.60s] So again, if you like math you like rules you like proven step-by-step strategies
+[   70.60s ->    73.40s] Make sure you that you you download this guide down below
+[   73.40s ->    78.86s] Anyways to look at the rules for the strategy. It's we're going to set our daily time or our time frame to daily
+[   78.86s ->    80.40s] Which means we're going to go to spy
+[   80.40s ->    86.22s] We're going to make sure that our candles represent one day so that each candle represents one trading day
+[   86.22s ->    94.74s] Next we're going to buy the clothes on Monday when the 25 day average is at least lower than 25 cents
+[   94.74s ->    97.54s] Okay, so what does that mean?
+[   97.76s ->   105.74s] It means that we're going to take the high minus the low over the last 25 days and see if it's at least lower than 25
+[  105.74s ->   110.38s] So again, if you can see here, we're gonna take the last 25 days. So today is Monday
+[  110.38s ->   114.24s] So that's what this should be. So let's again take the again
+[  114.24s ->   120.70s] It'll be the low from this one, but let's take a look at this range. I believe this wants us to do the high
+[  120.70s ->   124.44s] Minus the low to get roughly close to our average
+[  124.44s ->   126.84s] But again, it really just depends on that
+[  126.84s ->   131.84s] So let's actually go to quantified strategies calm and look at the Monday reversal strategy
+[  131.84s ->   136.32s] So if I go here just to show you that it's real if I go Monday reversal strategy, and then I do quantified
+[  136.98s ->   139.74s] Strategies you can see here exactly where this comes from
+[  139.98s ->   141.98s] No, we're gonna don't allow for today
+[  141.98s ->   146.16s] I'm coming here to the S&P 500 and Nasdaq is what it works best again
+[  146.16s ->   149.56s] It's all copied exactly see you want to do the high minus the low
+[  149.56s ->   153.94s] These are 25 day average just one of them make sure that that point was there not and then I'm doing it correctly
+[  153.94s ->   164.00s] So you can see over the last 25 days we have 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+[  164.00s ->   171.12s] 16 17 18 19 20 21 22 23 24 25. Okay. Yeah, I can count
+[  171.12s ->   178.22s] Okay, so we have a low of the close lowest for 11 11 and then we have a close high of
+[  178.22s ->   183.04s] 4 4 2 so 4 4 2 minus 4 11 again
+[  183.04s ->   185.90s] We have a whole 31 number so again
+[  185.90s ->   191.78s] We want it to be around 0.25 and so again it wasn't there so since it wasn't there and it's Monday
+[  191.78s ->   197.38s] This setup is invalid now again. Why is it looking for that? Well because the market long term tends to be bullish
+[  197.38s ->   203.66s] And so the market staying relatively flat then we should expect it to start to head up quite soon again
+[  203.66s ->   207.88s] The market's already moving a lot so it's hard to get into that 0.25 range, but again
+[  207.88s ->   210.88s] What it's saying is if it's at least lower than 0.25
+[  211.60s ->   214.08s] From Friday, then again, that's what you're looking for
+[  214.40s ->   218.56s] So that's kind of what it is the 25 day average at least lower than point
+[  218.96s ->   221.92s] 2 5 from Friday, so again, I should have started counting here
+[  221.92s ->   223.94s] So it would have been back to around here anyways, whatever
+[  223.94s ->   227.40s] So the fact that it's not set up which means this Friday would not be a setup
+[  227.40s ->   232.70s] But again, this is just a strategy to put in your in your toolbox and in your toolkit
+[  232.70s ->   235.52s] Which means that when you see this set up you go?
+[  235.52s ->   238.18s] Oh, I know what this is. This is a Monday reversal strategy
+[  238.18s ->   242.44s] I know it works long term. It doesn't happen every single day or every single week
+[  242.44s ->   246.14s] But when it does you can know about it and be aware and take advantage of it
+[  246.14s ->   249.10s] Now again, let's see you're in this trade. How do you exit?
+[  249.48s ->   253.94s] You exit at the close on Friday or when the close is higher than yesterday's high
+[  253.94s ->   258.40s] So you have either a stop loss or a time that or I should say a take profit
+[  258.40s ->   261.22s] Which is where the close is higher than yesterday's high
+[  261.22s ->   264.30s] Or you have a time stop, which is by the end of the week
+[  264.30s ->   270.48s] Again, if it's still in the trade then you're going to exit on Friday
+[  270.48s ->   273.28s] So again, this is the Monday reversal strategy
+[  273.28s ->   276.92s] It's a very powerful strategy. It does not present itself every week
+[  276.92s ->   279.74s] But when it does you want to make sure you are aware of it
+[  279.74s ->   282.14s] Alright guys, thank you so much for watching this video
+[  282.14s ->   284.98s] If you enjoyed it, please smash that thumbs up button and subscribe button
+[  284.98s ->   286.42s] And I'll see you in the next video

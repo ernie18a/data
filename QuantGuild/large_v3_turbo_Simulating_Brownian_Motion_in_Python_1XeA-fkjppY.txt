@@ -1,0 +1,249 @@
+[    0.46s ->     8.18s] Welcome back. Today we're going to talk about simulating Brownian motion and to do so we're
+[    8.18s ->    15.38s] going to start by defining the Brownian motion in a quasi-continuous sense mainly because we're
+[   15.38s ->    21.90s] going to discretize it anyway. So you'll see it's going to be pretty standard and the discretization
+[   21.90s ->    26.46s] scheme is not going to be anything particularly crazy. We'll define it in the general sense
+[   26.46s ->    34.14s] and then we're just going to go ahead and discretize in a unit time increment and then
+[   34.14s ->    41.34s] we'll show the recursive way of simulating the Brownian motion and then the vectorized way and
+[   41.34s ->    47.46s] obviously the vectorized way is going to be arbitrarily better for a variety of efficiency
+[   47.46s ->    56.80s] reasons but nevertheless let's just go ahead and begin this discussion. So we have a Brownian motion
+[   56.80s ->    66.76s] with the following properties namely that the Brownian motion process B of 0 is going to begin
+[   66.76s ->    81.63s] at 0. Then we have that the process B has stationary and independence increments and if we take a look
+[   81.63s ->    91.59s] at one of these increments B of T less B of S for some arbitrary time T and S where T is greater than S
+[   91.59s ->   103.70s] we know this is distributed normally with mean zero and a variance of T less S with zero being or S being
+[  103.70s ->   118.95s] greater than zero and T being greater than S and this here is really where the second property is kind of
+[  118.95s ->   125.91s] reflected in that if we have B of T less B of S this this increment being distributed normally with
+[  125.91s ->   136.17s] mean zero and variance T less S then if we were to take a new increment say if we had another time
+[  136.17s ->   144.26s] index greater than T then these time indices or not just the time indices but rather the Brownian increments
+[  144.26s ->   150.24s] would be orthogonal they would be independent so that is that the increments are independent and we can see
+[  150.24s ->   159.10s] that very simply as the normal distributions being independent and identically distributed moreover the
+[  159.10s ->   166.94s] stationary there is derived from the increment being centered at zero so this is going to be the
+[  166.94s ->   175.52s] relatively rough overarching definition of the Brownian motion at least this will be sufficient for the
+[  175.52s ->   183.18s] simulation that we will be doing in this video okay so this is a more or less the the Brownian motion in a
+[  183.18s ->   198.51s] continuous sense right so this is more of a continuous or you know if you will a quasi continuous definition what
+[  198.51s ->   235.21s] about a discrete in the discrete sense well suppose we had time increments we have zero is equal to T zero which is less than T one which is less than T K which is equal to we'll just say cap T as being the terminal time step here so we have discrete steps in time so in this you know continuous or
+[  235.21s ->   265.19s] quasi continuous definition if you want to talk about you know if you want to talk about you know if you want to talk about you know it being almost surely you know if you want to dive into the formal definition you can but really this will be sufficient for what we're looking at today and that is that if we have these these arbitrary time steps right so S and T this is the continuous sense right because T is just arbitrarily greater than S but here we have discrete steps in time so zero and then we have T one and then we go all the way to T K which is equal to cap T
+[  265.19s ->   294.70s] T and here we can just say like T zero is zero and then T one is one then T two is two for example with unit steps and that's we're going to we're going to be doing but first we're going to formally talk about the recursive nature of the the simulation itself so let's just go ahead and take a look at a couple of different indices of the Brownian motion so B zero that's an easy one is equal to zero and this is the same as B of T
+[  294.70s ->   332.86s] T zero okay so what about B of T one well this is going to be equal to B of zero plus the increment so it's going to be B of T one minus B of zero okay let's just go ahead and do B of T two as well we can say B of T two
+[  332.86s ->   365.78s] B of T two is equal to B of T two is equal to B of T one and then plus the increment that's going to be B of T two plus B of okay and you can really start to see a pattern emerge here and namely in general we could say generally B of T I is equal to B of T I
+[  365.78s ->   392.23s] T I minus one plus the increment B of T I less B of T I minus one okay so that's the idea here generally speaking and we can just define this for I being greater than zero
+[  392.23s ->   426.10s] zero um and this is going to be in the discrete sense so maybe I could just say that I is uh a natural number that should be sufficient okay so this is the Brownian motion in general and this is a recursive formula right because if we start at zero right we can't really start at zero for the recursive formula because zero is defined as zero and I is a natural number so if we start at one we can see that B of T one is equal to B of zero which is what we have here
+[  426.10s ->   454.10s] plus B of T one shocker less B of zero and that's the same thing as B of T zero again this is just how we're defining that initial time step and that is going to give us all of the Brownian motions at each appropriate time index okay so let's just go ahead and take a look at the specific idea of the Brownian increment in terms of the definition how can we actually generate this
+[  454.10s ->   491.38s] um so that we are appropriately generate this um so that we are appropriately generating the Brownian motion suppose we had a standard normal random variable that is z which is normally distributed with mean zero and a variance of one and the first index of a Brownian motion given by this guy right here
+[  491.38s ->   509.86s] so we know this is equivalent to zero plus B of T one less B of T zero and this is of course going to be zero as well but bear with me for a moment we can go ahead and derive more of a general formula here
+[  509.86s ->   528.50s] okay so we're adding so we're adding this Brownian increment so we're adding this Brownian increment to zero so we just have this Brownian increment and we know this is distributed by definition normally with mean zero and a variance of T one less T zero okay
+[  528.50s ->   537.22s] this is from nothing fancy right here we have TBC 40 until the problem and this is nothing fancy right here and this is coming directly from this definition right here okay so this is the first index in
+[  537.22s ->   556.22s] time right here we have T one and we're saying that T one being the first step in time from 0 is just going to be the increment itself distributed normally means 0 variance T one less T zero now of course T zero is 0 so we can just go ahead and get rid of that
+[  556.22s ->   561.22s] just this increment being distributed normally with mean zero and a variance of t1.
+[  561.66s ->   568.72s] How can we simulate that? Well, this is essentially the same thing as scaling a
+[  568.72s ->   574.30s] standard normal random variable by the square root of t1. And we can go ahead and show that
+[  574.30s ->   596.61s] right here. So if we are to scale z by the square root of t1, it follows that b of t1 is equal to
+[  596.61s ->   615.34s] square root of t1z in the sense that they have the same distribution. And we can show this very
+[  615.34s ->   628.90s] easily. We know that any shifted or scaled normal random variable is also normal. Thus, we can look
+[  628.90s ->   646.42s] for the expectation and variance. So let's look at the expectation. So we have the expectation of
+[  646.42s ->   664.75s] the scaled random variable is going to be the expectation of root t1 times z. And here we
+[  664.75s ->   669.77s] know by linearity of expectation that we can distribute the expectation to z. So this is
+[  669.77s ->   678.14s] going to be equal to the same thing here. The only difference being we can take the square root
+[  678.14s ->   683.34s] to the outside and we're left with just the expectation of z. But we know that the expectation
+[  683.34s ->   690.32s] of z is zero by definition of a standard normal random variable. That is given right here. The
+[  690.32s ->   697.02s] expectation is zero. Variance is one. So we know that the expectation is zero. We know that it's a
+[  697.02s ->   702.50s] normal random variable still, right? That's given here. Any shifted or scaled normal random variable
+[  702.50s ->   711.08s] is also normal, right? Of course, this is shifted and scaled by a constant, right? Maybe I'll put that
+[  711.08s ->   732.28s] in parentheses here. By some constants a and b in, we have this expectation. What about the variance?
+[  732.28s ->   744.98s] So now we need the variance of this scaling. So we have variance of this guy here. And we know that
+[  744.98s ->   751.58s] anytime we scale a random variable by some arbitrary constant, in this case, t1 is our arbitrary constant,
+[  751.58s ->   760.76s] we square it, take it to the outside. So then we're left with t1 times the variance of z. And the variance
+[  760.76s ->   772.08s] of z is just one. So you're left with just t1 here. So this implies that the square root of t1 times z
+[  772.08s ->   781.16s] is distributed normally with a mean zero and a variance of t1. And this further implies that the
+[  781.16s ->   791.48s] square root of t1 z is equal to b of t1. Okay. And then maybe I will also put that this is, um,
+[  791.48s ->   799.16s] we can index this standard normal random variable by t1 because we're going to need more standard
+[  799.16s ->   805.58s] standard normal random variables for the other Brownian notion, uh, time indices as well.
+[  806.58s ->   811.76s] Okay. So if this is going to be the case here, we can go ahead and reevaluate this. And we can say
+[  811.76s ->   817.40s] that b of t1 is equal to b of zero plus this Brownian increment. But that Brownian increment is
+[  817.40s ->   822.80s] just going to be given by this standard normal random variable scared scaled by the variance.
+[  822.80s ->   830.84s] Um, or I'm sorry, scaled by the square root of the, uh, time step. Okay. So I'm just going to go
+[  830.84s ->   837.68s] ahead and take this and we are just going to redefine this in terms of the standard normal random variable.
+[  837.68s ->   847.76s] So this is going to be equal to square root of t1 times z of t1. Okay. So that's a realization of a
+[  847.76s ->   854.06s] standard normal random variable here. Uh, we can just go ahead and do this again. So this is
+[  854.06s ->   868.16s] simulating Brownian. Okay. We have the first step, which is just zero, or I guess the starting point
+[  868.16s ->   872.72s] is zero. And the first step is going to be this standard normal random variable scaled by the
+[  872.72s ->   877.58s] square root of t1. What about the second one? We can just go ahead and take that guy and do the exact
+[  877.58s ->   884.59s] same thing. So let's come down here, right? We have B of t1. Well, we know B of t1 now, right?
+[  884.63s ->   889.17s] It's just going to be the square root of t1 scaled by this particular standard normal random variable.
+[  889.63s ->   894.39s] So I'm just going to go ahead and take that, throw that in here. What about this Brownian increment?
+[  895.21s ->   900.49s] Well, the Brownian increment argument we use right here can be used again right here. So let's just go
+[  900.49s ->   912.32s] ahead and do it. So suppose we have another standard normal random variable that is z of, we'll call it t2
+[  912.32s ->   920.29s] now as being distributed normally with a mean zero and a variance one, right? We can go ahead and go
+[  920.29s ->   927.71s] through this exact same argument. The only difference here is instead of scaling the standard normal random
+[  927.71s ->   935.53s] variable by the variable by the time increment t2, we're going to scale it by the difference between
+[  935.53s ->   950.13s] t2 and t1. Okay. So we know that this Brownian increment is distributed normally with mean zero and
+[  950.13s ->   960.29s] a variance t2 less t1. So this is kind of just a game of moments matching, if you will. So really,
+[  960.29s ->   965.89s] we know that the mean zero of this standard normal random variable matches this Brownian increment.
+[  965.89s ->   983.86s] But what about the variance? We just need to scale z of t2. We scale z of t2 by the square root of t2
+[  983.86s ->  1016.30s] less t1. We will find the square root of t2 less t1 times z of t2 is equal to b of t2 less b of t1 in this sense of
+[ 1016.30s ->  1024.13s] their distribution functions. Okay. And this makes sense, right? Because this is the exact same argument
+[ 1024.13s ->  1029.33s] that we use right here, right? So we say that, you know, if we have some standard normal random
+[ 1029.33s ->  1037.11s] variable z with mean zero variance one, we know that the first step in time, this t1 here is just
+[ 1037.11s ->  1042.57s] going to be the Brownian increment from zero, which is just distributed normally with the mean zero and
+[ 1042.57s ->  1049.31s] a variance t1. So if we scale a standard normal random variable by root t1, then we know that they
+[ 1049.31s ->  1053.57s] follow the same distribution. That is that these two are equivalent in the sense that they have the same
+[ 1053.57s ->  1059.35s] distribution functions, right? And if that's going to be the case, and we show that right here with the
+[ 1059.35s ->  1064.79s] expectation of the variance being equivalent and that any shifted and scaled normal random variable
+[ 1064.79s ->  1070.57s] is also going to be normal, we can make that same argument right here for this second Brownian
+[ 1070.57s ->  1077.17s] increment. Namely, that if we have this guy here, a standard normal random variable scaled by the square
+[ 1077.17s ->  1084.09s] root of the difference in time, t2 less t1, then we know that this is equivalent to the Brownian
+[ 1084.09s ->  1089.19s] increment in the sense, again, of their distribution functions. We could go through this whole expectation
+[ 1089.19s ->  1094.45s] thing here that we did right here as well. But there really isn't much of a point because we're going to
+[ 1094.45s ->  1099.93s] reach the same conclusion. We have linearity of expectation distribute to z, that makes this whole thing
+[ 1099.93s ->  1107.81s] zero variance of this quantity here is the exact same situation, we're going to pull out this square
+[ 1107.81s ->  1114.51s] root square it, and we're going to have t2 minus t1, multiplied by z, so the variance of z, which is
+[ 1114.51s ->  1120.07s] just going to be one. So that makes the variance t2 less t1, which is exactly what we have here. So they
+[ 1120.07s ->  1127.98s] are equivalent in the sense of their distribution functions. Okay, so formally, we can replace this b of t2
+[ 1127.98s ->  1137.13s] less b of t1 with this square root, this standard normal random variable scaled by the difference in
+[ 1137.13s ->  1146.32s] time. Alrighty, so hopefully here you start to notice a pattern that's emerging, namely that this is just
+[ 1146.32s ->  1153.96s] going to be the cumulative sum of scaled standard normals by the time step. And really, we can just
+[ 1153.96s ->  1173.54s] write this as b of t i is equal to b of t i, I think we even wrote this above here, b of t i, yeah, so we
+[ 1173.54s ->  1187.04s] have b of t i minus one, just like this. So we have b of t i minus one, there we go. So we have b of t i is
+[ 1187.04s ->  1192.06s] equal to b of t i minus one plus the Brownian increment. But we know that this is really just
+[ 1192.06s ->  1201.74s] going to be the sum of standard normal random variables scaled by the time step, right? So this
+[ 1201.74s ->  1217.65s] is just going to be equal to the sum from i equals, we can say one, because remember, b of zero is zero,
+[ 1217.65s ->  1237.47s] all the way to t of the difference in t of i minus t of i minus t of i minus one times z of t
+[ 1237.47s ->  1254.81s] i. And that should be a sigma. So then if we plug in one, we get square root of t one. So, you know, cap t
+[ 1254.81s ->  1262.43s] is one, for example, right? If we plug in one, then we get the square root of t one times z of t one.
+[ 1263.38s ->  1269.68s] Okay, so this is the essentially the recursive formula that's going to give us the Brownian
+[ 1269.68s ->  1277.54s] motion at whatever index we give it cap t. Maybe cap t is bad notation, I'll just use k as being an
+[ 1277.54s ->  1284.53s] arbitrary index here. Okay, so this is pretty much everything we need to go ahead and start simulating.
+[ 1285.60s ->  1291.58s] Okay, so let's just go ahead and start simulating, right? So if we have this Brownian motion recursive
+[ 1291.58s ->  1299.88s] formula here, then what we can do is we can use a loop, right, to go ahead and define our standard normal
+[ 1299.88s ->  1304.88s] random variable times the time step. In this case, I'm just going to use a unit time step because it's
+[ 1304.88s ->  1309.56s] going to make it the simplest case. We'll do it with a for loop, then we'll do it in the vectorized
+[ 1309.56s ->  1320.73s] sense. So let's start by importing matplotlib.pyplot as plt, import numpy as mp, and that should be
+[ 1320.73s ->  1324.51s] sufficient for what we need here. So let's just go ahead and follow over all the work that we did
+[ 1324.51s ->  1337.07s] right now to simulate it. So b is equal to an empty list. We will say for i in range k. So this is
+[ 1337.07s ->  1342.31s] going to be us generating that standard normal random variable, and we're going to scale it by
+[ 1342.31s ->  1350.63s] the time step here. So we're going to generate 252 days. Okay, and then we're going to say b dot,
+[ 1350.63s ->  1358.51s] we're going to start at 0, b dot append, and then here all we need to do is take the difference in
+[ 1358.51s ->  1365.63s] time, right, and if we're just going to use, you know, unit increments or unit steps, then the square
+[ 1365.63s ->  1370.97s] root of 1 is just going to be 1, so we can leave it at that. We're having fixed unit steps in time,
+[ 1371.05s ->  1377.01s] totally fine. Then we just need to append the standard normal random variable plus the previous
+[ 1377.01s ->  1385.21s] standard normal random variable. So what that's going to look like is we need to access the latest
+[ 1385.21s ->  1395.96s] value plus mp dot random dot normal, and then one standard normal random variable realization.
+[ 1396.64s ->  1404.76s] And if we do this, then is going to generate 252. So we should have 253 values. So I'll make it 251.
+[ 1404.76s ->  1414.58s] And then we should be all set to visualize this. So plt dot plot, and then we will plot b. Okay,
+[ 1414.74s ->  1421.36s] so here is our Brownian motion. Okay, and this is a recursive formula, right? So if I was to go ahead
+[ 1421.36s ->  1427.86s] and show you b, right, we would have our list of cumulative standard normal random variables,
+[ 1428.00s ->  1434.06s] right? This is a cumulative sum. And then if we were to just go ahead and plt dot plot b,
+[ 1434.06s ->  1440.62s] we can continuously regenerate sample paths. Okay, so how do we know this is correct? How do we know
+[ 1440.62s ->  1447.36s] that this is this is right? Well, if we were to do this n times, then we could essentially take a look
+[ 1447.36s ->  1454.66s] at the sample mean and the sample variance and see if it aligns with the theoretical variance and the
+[ 1454.66s ->  1462.56s] theoretical mean. That is, they are the appropriate unbiased estimators. So we should find them
+[ 1462.56s ->  1469.90s] consistent with what we have by definition here. So let's just go ahead and show that. So if I set n
+[ 1469.90s ->  1481.40s] as being 10,000, I say for j in range n, I'm going to simulate this many processes here.
+[ 1482.92s ->  1488.52s] So we're going to have to reset it every single time. So I'll just take this b and I'll throw it in
+[ 1488.52s ->  1495.22s] here. And then what I'm going to do is I'm going to create a separate list of terminal values t is
+[ 1495.22s ->  1502.24s] equal to this. And I'm going to say after we're done simulating Brownian motion, we're going to append
+[ 1502.24s ->  1510.98s] the last value. Okay, so this is going to reset it, this should be fine, then we're going to have a list
+[ 1510.98s ->  1516.86s] of terminal values. Why am I doing this? Well, we should be able to look at the mean and the variance
+[ 1516.86s ->  1524.18s] of t and we should find it consistent with the increment from zero to cap t. So namely, I'll say
+[ 1524.18s ->  1539.47s] mp dot mean cap t, mp dot variance of t ddlf is equal to one. So I'll print this guy here, print this guy
+[ 1539.47s ->  1549.26s] right here. And we get zero approximately, and we get 249. If I do this again, it should be converging.
+[ 1549.40s ->  1554.90s] Yeah, it looks like it's the mean is going to be centered around zero. And the variance is going to be
+[ 1554.90s ->  1560.86s] centered around 252. And that is obviously supposed to be the case, right? Because we have this sample
+[ 1560.86s ->  1567.04s] variance is converging to that population variance. And there's a lot in statistics that's ensuring this
+[ 1567.04s ->  1571.22s] happens. Of course, these statistics are a distribution, they follow a normal distribution.
+[ 1571.84s ->  1577.74s] And we would expect them to be centered around the population moments that is the appropriate
+[ 1577.74s ->  1584.32s] mean and the appropriate variance, zero and cap t respectively. And in this case, keep in mind cap t
+[ 1584.32s ->  1591.78s] is 252. Okay, for essentially business or trading days, right, we have zero as being one, and then we're
+[ 1591.78s ->  1597.78s] generating 251 other indices. So this is one way of doing it, right? So this is the recursive way.
+[ 1597.78s ->  1604.44s] And this is pretty much heresy. So this is the recursive way with loops. And this is atrocious,
+[ 1604.58s ->  1609.18s] right? We would never want to do something like this in practice. But this is sufficient, right? Because
+[ 1609.18s ->  1615.34s] if I was to go ahead and plot the set of sample paths here, I'm pretty sure I could do plt dot plot
+[ 1615.34s ->  1623.12s] B. And ooh, that's going to be a lot of paths. I don't even know if it'll finish. There we go.
+[ 1623.58s ->  1629.30s] You know, this is appropriate. This is the Brownian motion paths going out to 252. That's totally fine.
+[ 1630.52s ->  1634.34s] But this is pretty inefficient, right? This is not how we would want to do things in practice.
+[ 1634.60s ->  1638.74s] We would use a vectorized solution, right? And if we wanted to, we could always scale this,
+[ 1638.82s ->  1644.16s] right? So if we wanted non-unit time steps, right? Non-unit time increments, whatever it may be,
+[ 1644.16s ->  1651.58s] we can always scale the standard normal random variable here by the square root of the time
+[ 1651.58s ->  1656.77s] step. That's always an option to us, always an option for us. But you got to know what you're
+[ 1656.77s ->  1662.17s] simulating, right? What you're simulating purposefully. Okay. Now we're going to look
+[ 1662.17s ->  1668.29s] at the vectorized solution here. So this is the vectorized solution. And what we're going to do is
+[ 1668.29s ->  1674.29s] we're going to say Z is equal to MP dot random dot normal. And these are our standard normal random
+[ 1674.29s ->  1679.89s] variables that we're going to be generating for each time step here. And of course we can, like I
+[ 1679.89s ->  1684.15s] said, always scale it if we wanted to, but just bear with me in this context, we're just going to be
+[ 1684.15s ->  1692.09s] using unit time steps. So in this case, we can generate 251 standard normal random variables,
+[ 1692.25s ->  1697.15s] but we actually don't want to just generate 251. That's one sample path. So what I'm going to do is
+[ 1697.15s ->  1705.06s] I'm going to add 10,000 rows of 251 standard normal random variables. And this is going to be
+[ 1705.06s ->  1710.18s] equivalent to this looped case here where we have N is equal to 10,000, right? But here we have the
+[ 1710.18s ->  1715.38s] shape of 10,000 by 251. We're going to need to add that initial zero and we'll do that in a moment.
+[ 1715.94s ->  1721.42s] But we also need to do the cube sum over the appropriate axis. So if you think of this like a
+[ 1721.42s ->  1728.30s] matrix, right, we're going to have sample paths going across the rows, right? So each row is going
+[ 1728.30s ->  1735.08s] to be a sample path. So we're going to want to sum cumulatively over the columns. Okay. So we're
+[ 1735.08s ->  1738.70s] going to start at the first column. We're going to sum, we're going to sum, we're going to do the
+[ 1738.70s ->  1745.94s] cube sum. So we'll do doc cube sum axis is equal to one. Okay. And a quick way to just check this is
+[ 1745.94s ->  1752.30s] to do PLT dot plot Z of zero, just to take a look and see if it looks like a Brownian path and it
+[ 1752.30s ->  1757.10s] sure does. So this is going to be the correct interpretation, but this isn't the correct
+[ 1757.10s ->  1763.34s] simulated path because we don't have the initial condition appended to it. So what we can do is
+[ 1763.34s ->  1774.01s] we can say MP dot concatenate MP dot zeros, and then we need to create the appropriate number of
+[ 1774.01s ->  1785.36s] zeros. So I'm going to wrap these guys in parentheses here, and then we will do 10,000 by one. So that's
+[ 1785.36s ->  1791.94s] just going to be a column vector of zeros. We're going to concatenate that with our standard normal
+[ 1791.94s ->  1799.16s] random variables here. And then of course we are going to have which axis we want to do this along,
+[ 1799.16s ->  1805.86s] and that is going to be the column space. Okay. So pretty much what we're doing here is we're
+[ 1805.86s ->  1810.74s] generating a matrix of standard normal random variables. We're generating a standard normal
+[ 1810.74s ->  1818.34s] or a matrix that exists in R, if you will, 10,000 by 251. Namely, that's the, you know, each of the
+[ 1818.34s ->  1822.22s] sample paths, right? It's kind of a silly way of classifying it, but you kind of get the gist.
+[ 1822.64s ->  1828.00s] It's a matrix, right? And each row is a sample path. Each column is the time index. And then what we're
+[ 1828.00s ->  1834.48s] doing here is we're concatenating a vector of zeros to the first position. So now all of them will begin
+[ 1834.48s ->  1844.48s] at zero. So we can do plt.plot z zero. And then you'll see here we start at zero and we end wherever
+[ 1844.48s ->  1853.08s] it simulates to, so on and so forth. Right? So this is much more efficient than just doing a looped case
+[ 1853.08s ->  1863.02s] here. Moreover, what we can do is we can even look at the final value of the simulated paths here and
+[ 1863.02s ->  1869.60s] take a look to see if the moments match appropriately. So this is going to be much nicer using index
+[ 1869.60s ->  1879.42s] notation. So if we do z of everything minus one, then we're going to get a vector of all of the final
+[ 1879.42s ->  1887.76s] values of the corresponding z vector here. So then I can just do np.variance of this guy,
+[ 1887.88s ->  1893.84s] ddof equals one. And we can see that this is going to be centered around 252 appropriately as well.
+[ 1894.18s ->  1899.72s] This is, again, a statistic. This is going to be synonymous with the thing that we did above in the
+[ 1899.72s ->  1907.86s] looped case. That is, we created this separate list here to append the terminal values to. Here,
+[ 1907.86s ->  1915.22s] simply all we have to do is say, let's take a look at everything in the last column. Okay? So this is
+[ 1915.22s ->  1922.12s] going to create this exact same list t, but using slice notation with indices here. And then of course,
+[ 1922.12s ->  1932.00s] we should see that this is also centered around zero. And we can do that by printing mp.mean z
+[ 1932.00s ->  1941.99s] everything in the last column. And then we can also print the variance. And there we go, we get this is
+[ 1941.99s ->  1946.67s] going to be centered around zero, this is gonna be centered around 252. And this is the appropriate
+[ 1946.67s ->  1956.79s] corresponding statistics for the increment from zero to time cap t, or time 252, right? If we were to
+[ 1956.79s ->  1963.33s] go ahead and simulate, you know, hundreds and hundreds of these, we can go ahead and see that this is going
+[ 1963.33s ->  1966.89s] to be a normal distribution. In fact, we could actually just go ahead and do that. That might
+[ 1966.89s ->  1971.53s] be something fun to do really quickly to show that this is just a normal distribution. This statistic,
+[ 1971.53s ->  1977.99s] um, this variant statistic is, uh, normally distributed centered around 252. So let's just do
+[ 1977.99s ->  1988.56s] that. We can generate 10,000 sample paths, say 100 times. So we'll do 4i in range n. And then here,
+[ 1988.56s ->  1997.26s] instead of just calculating the variance, we can do t dot append the variance. Um, and then what we're
+[ 1997.26s ->  2006.89s] going to do is we're going to display the variance statistic. Um, so we'll do t dot hist t. Uh, and then
+[ 2006.89s ->  2014.41s] we need to make t an empty list and it should look normal centered around 252. And lo and behold,
+[ 2014.41s ->  2021.79s] it looks normal and it is centered around 252. Uh, as this n increases arbitrarily, um, you know,
+[ 2021.79s ->  2026.37s] this n, this n increase arbitrarily is law, large number, central limit theorem. This is going to
+[ 2026.37s ->  2032.13s] approach the, um, population parameter that we're centered on right here, 252. Large, large numbers
+[ 2032.13s ->  2037.55s] is going to say that converges to the population. Um, you know, if this increases arbitrarily, then
+[ 2037.55s ->  2041.91s] that's going to converge to the population variance. Uh, and then the central limit theorem has to do
+[ 2041.91s ->  2048.80s] with the, um, the, this distribution being, uh, approximately normal. So as the sample size n
+[ 2048.80s ->  2055.40s] increases, uh, this will also become increasingly normal. Um, but that's just kind of a nice tie-in
+[ 2055.40s ->  2060.58s] if you will. So that's going to do it for this, uh, video lecture on simulating Brownian motions. I
+[ 2060.58s ->  2065.14s] hope you found it informative. I think the, um, the most interesting thing to kind of remember about
+[ 2065.14s ->  2071.50s] the Brownian motion is, um, we have this, this increment, right? This Brownian increment from the
+[ 2071.50s ->  2077.60s] previous position that we were in, in the process. And it turns out that that Brownian increment is just
+[ 2077.60s ->  2082.80s] a normal random variable, meaning we can simulate it quite easily by generating a series of standard
+[ 2082.80s ->  2088.24s] normal random variables and then scaling it by some sort of discrete time step. And in this case,
+[ 2088.26s ->  2091.96s] we use a unit time step. So everything's one. So we don't actually have to multiply it by any sort
+[ 2091.96s ->  2097.68s] of product in the vectorized sense or the loot sense. Um, but at the end of the day, we could very
+[ 2097.68s ->  2103.80s] easily if we wanted to. Uh, and then, you know, this is kind of just like a rough proof of the situation.
+[ 2103.80s ->  2109.46s] That is, if we have a standard normal random variable and we shift or scale it, we end up with
+[ 2109.46s ->  2115.96s] another normal random variable, um, based on the scaling and shifting. So we know that those
+[ 2115.96s ->  2121.66s] distributions are equivalent. Um, like I said, these two random variables are equivalent in the sense that
+[ 2121.66s ->  2130.22s] their distributions are equivalent. Um, and that, you know, holds for BT1, BT2, less BT1, um, and all of
+[ 2130.22s ->  2137.24s] the, uh, Brownian increments that we, you know, domino effect style, um, almost inductive recursively,
+[ 2137.40s ->  2144.54s] et cetera, uh, define in this case. And never use this, please. This is just a example. Um, but you should
+[ 2144.54s ->  2150.38s] never, ever approach, um, any sort of simulation problem, um, in, in this structure. It should
+[ 2150.38s ->  2155.80s] typically be done, um, using some sort of vectorized approach here. This, um, loop is really just to show
+[ 2155.80s ->  2164.96s] you the, um, the central limit theorem idea, law, large numbers idea with the variance of the step
+[ 2164.96s ->  2174.28s] from B0 to B cap T being 252, being centered around 252, that variance. Um, but again, you know,
+[ 2174.28s ->  2178.46s] typically you would, you wouldn't want to use loops in the setting for efficiency sake. Um, but I hope
+[ 2178.46s ->  2182.26s] you found this informative. I hope you enjoyed this video. Please leave a like, comment, subscribe.
+[ 2182.98s ->  2188.88s] Uh, if you enjoyed, check out our discord. Um, you know, we have some, some fun conversations in
+[ 2188.88s ->  2194.90s] there, some interview prep stuff, some discussions about different quant topics. Um, you know, you can
+[ 2194.90s ->  2200.04s] always email me roman at quantgill.com if you have any specific questions. Um, but other than that,
+[ 2200.10s ->  2203.74s] yeah, thank you again so much for watching and, uh, I will see you in the next one.

@@ -1,0 +1,124 @@
+[    0.00s ->     5.78s] Fear and risk will always create mispricings. This creates opportunities for people who
+[    5.78s ->    11.28s] understand that these mispricings exist, and that is the entire purpose of today's video.
+[   11.42s ->    16.84s] Take this quote for example, you miss 100% of the shots you don't take.
+[   17.64s ->    24.28s] It's a nice sentiment, but we have no idea what the probability is that we lose the game
+[   24.28s ->    32.77s] given that we take the shot. We also have no idea what the probability is that we win
+[   32.77s ->    44.36s] given that we take the shot. Our ability to measure the relative likelihood of each of these outcomes
+[   44.36s ->    51.40s] is going to dictate the overall expected value, which in turn is going to decide whether or not
+[   51.40s ->    59.36s] we should in fact take the shot. People are terrible at assessing these likelihoods. They assign
+[   59.36s ->    67.40s] way too much probability mass to this tail risk, and that implies an extremely negative expected
+[   67.40s ->    72.40s] value. So what ends up happening is you have all of these conditional probabilities, and
+[   72.40s ->    78.62s] maybe they partition the sample space, whatever, who cares? This is going to compress into an expected
+[   78.62s ->    88.64s] value of the decision, and this is either going to be positive or negative. If you believe that it's
+[   88.64s ->    96.30s] positive, then you are going to take the shot. If you believe that it's negative, you aren't going to
+[   96.30s ->   103.20s] take the shot. Whether you like it or not, this is the math of your decision making. You are assessing
+[  103.20s ->   109.42s] the different possible states of the world. You are assigning implicitly probability mass to different
+[  109.42s ->   115.60s] potential outcomes, and then you are compressing it into one decision. Are you going to act,
+[  116.46s ->   122.16s] or are you not going to act? And that is going to be based on whether or not you believe the action to
+[  122.16s ->   129.22s] be positive or negative EV. Take you talking to a pretty girl, for example, and,
+[  129.22s ->   135.40s] oh sure, Roman, what if there's a girl watching this video? Well, I'm sure she'll get the picture,
+[  135.40s ->   145.30s] but 99.99% of you will resonate with this example. If I told you that you had to go out and talk to
+[  145.30s ->   154.86s] a pretty girl and get her phone number, this elicits such a dramatic response in us biologically. Why?
+[  154.86s ->   163.32s] Most of us severely misprice this risk. Severely misprice this risk. So we say, oh,
+[  163.54s ->   174.81s] what is the probability of rejection given that we approach? What is the probability of success
+[  174.81s ->   183.90s] given that we approach? But do we partition the entire sample space of possible outcomes into
+[  183.90s ->   192.44s] what, success or rejection? Absolutely not. We get way too dramatic about it. Her friends are there,
+[  192.64s ->   200.36s] they're going to clown you, they're going to post you on their story. We go into the extremes of the
+[  200.36s ->   209.88s] tale, and that weighs far heavier on the overall compression into our expected value than anything
+[  209.88s ->   219.56s] else. How could it not be negative when you assign so much probability mass to those tale events?
+[  220.22s ->   227.68s] But we have to stop and ask ourselves this question. There are people that do this. There are people that
+[  227.68s ->   235.76s] go out and meet new people, and they'll approach a pretty girl and they'll ask for their phone number,
+[  235.76s ->   245.28s] and they have positive expected value assigned to this action. We have to ask, what do they know
+[  245.28s ->   252.54s] about the world that everyone else doesn't? Because if it was a negative EV action across the board,
+[  252.60s ->   259.54s] they wouldn't keep doing that. They would be accumulating negative experiences in some sort of
+[  259.54s ->   266.06s] experience function over time, and they would stop, but they don't. They keep doing that. So what is
+[  266.06s ->   274.84s] inhibiting most people from assigning the correct probability mass to possible states of the world?
+[  275.36s ->   283.00s] Knowledge and experience. Risk and perceived risk, along with the assignment of correct probabilities to
+[  283.00s ->   288.42s] each of these different states of the world, comes from understanding what it is to do or say.
+[  288.42s ->   295.88s] That is the knowledge component. And actually feeling what it's like to realize any outcome
+[  295.88s ->   303.32s] in our sample space. That's the experience component. And that is what is going to lead to
+[  303.32s ->   309.94s] better assignment of probability mass to each of the possible states of the world in a forward-looking
+[  309.94s ->   316.18s] sense. This is the performance component of it. And of course, our ability to discern whether or not we
+[  316.18s ->   322.28s] should actually take the action. Another example of this, and this is a big one for people, you speaking
+[  322.28s ->   328.76s] in front of a live audience of 1,000 people. If you told pretty much anybody that they had to get in
+[  328.76s ->   337.52s] front of a crowd of people and talk for 5, 10 minutes about something that they loved or something for work,
+[  337.52s ->   346.76s] this would again elicit such a dramatic response. Why? So we talk about the probability of what?
+[  346.84s ->   357.03s] Humiliation, given you're speaking? What would this even look like? You have someone heckling you in the
+[  357.03s ->   364.71s] audience? I mean, come on. What about the probability that nothing happens, given that you're speaking?
+[  364.71s ->   376.08s] We're going to assign significantly more probability mass to public humiliation than we are. Nothing
+[  376.08s ->   384.00s] happens. I've been speaking in front of a lot of people for quite some time. Humiliation does not
+[  384.00s ->   392.66s] ever happen in the way that we dramatically conjure it up in our minds. Have I been heckled? Sure. Have I
+[  392.66s ->   403.40s] received a tremendous number of absurd comments in a Q&A? Absolutely. But experiencing that enables me to
+[  403.40s ->   411.78s] downplay the probability mass in this humiliation component because 99.99% of the time when I talk,
+[  412.18s ->   418.98s] nobody cares. And the few people that do are going to either take something away from what I have to say,
+[  418.98s ->   423.06s] which is exactly what I was there for in the first place. But they're not going to tell me that.
+[  423.14s ->   430.58s] That's the nothing happens. And worst case scenario, somebody wants to heckle or come talk to me after
+[  430.58s ->   437.02s] and say they dislike the talk. Or this is a very interesting medium because knock, knock, we can't
+[  437.02s ->   441.22s] actually shake hands and you can't talk to me. You can say whatever you like in the comment section below.
+[  441.22s ->   449.66s] So that plays into this, this downside variation, the downside risk. But I've experienced this for quite
+[  449.66s ->   455.42s] some time. I have the knowledge, right, of what it is that I'm doing here, what I'm trying to do, speaking to
+[  455.42s ->   463.08s] all of you, who I'm trying to address. And I don't particularly care about this downside deviation. So when I
+[  463.08s ->   469.70s] compress the probabilities of different states of the world, even after a video like this, I look at the EV and I'm
+[  469.70s ->   478.36s] like positive all the way. No way is it negative EV. If I reach one person that this helps and
+[  478.36s ->   485.78s] understands, you know, in their understanding of a of acting in an environment, fantastic. If I get
+[  485.78s ->   493.78s] what can possibly happen from this, get some crazy comments. I mean, come on, right? The entire purpose
+[  493.78s ->   502.18s] of risk is to be able to perceive it correctly and act. I'm here. That's what I'm doing right now.
+[  502.44s ->   507.96s] Quite literally in front of this camera, I'm, I'm assuming risk. I've literally no reason to do this,
+[  507.96s ->   514.76s] uh, except for, you know, my utility function. If you've seen my previous video and that is my
+[  514.76s ->   521.24s] intention. This is deemed a positive EV action for me. I've compressed the probabilities of all of
+[  521.24s ->   526.58s] these different states of the world to the best of my ability. And this is what I am choosing to do.
+[  527.64s ->   537.26s] So my point here is we're assigning incorrect probability mass on average to this humiliation
+[  537.26s ->   545.20s] component. You haven't experienced it enough to assign correct probability mass to this component.
+[  545.20s ->   553.82s] That's a big and important idea because the irony, and I've seen this in so many organizations over
+[  553.82s ->   561.88s] the years is you look at the leadership, right? The, the president, the CEO, the, the founder,
+[  561.88s ->   570.92s] and a lot of the, a lot of the W2s have a lot to say about those folks, the leadership.
+[  570.92s ->   578.20s] And the CEO gets up in front of, you know, the entire org and they'll give a speech and,
+[  578.30s ->   583.54s] and what, right? The, the W2s, they don't want anything to do with that. They're willing to sit
+[  583.54s ->   588.72s] there and complain and, and throw stones, but they're not actually willing to put themselves
+[  588.72s ->   594.62s] out there. How can you, how can you sit there and judge? But that's what most people do.
+[  594.62s ->   600.86s] And the reason why they don't, you know, take any chances or assume risk appropriately is because,
+[  601.00s ->   606.96s] you know, they are doing this tail events. They are engaging in that behavior. So then they're like,
+[  607.04s ->   611.80s] oh, well, if I have to be up here, that is what those people are going to do to me.
+[  613.26s ->   620.04s] Terrific. Fantastic. That's extremely negative EV. I would not encourage you to behave in that way.
+[  620.04s ->   626.76s] Another great example is you quitting your job. Okay. Well, what is the probability of you being
+[  626.76s ->   637.50s] homeless? Given that you quit, what is the probability that you are successful? Given that
+[  637.50s ->   649.17s] you quit, we're going to assign a tremendous amount of probability mass to these very, I don't want to
+[  649.17s ->   657.73s] say absurd, but for the sake of this video, absurd tail events, we assign way too much probability mass
+[  657.73s ->   665.33s] to them. Can you really get to zero? Can you really get to just zero? If you quit your job and you have
+[  665.33s ->   675.04s] 30 days, 30 days to figure out how to pay all of your bills, could you do it? Maybe, but most people
+[  675.04s ->   681.66s] assign way too much probability mass to those tail events, to those negative tail events. This one's a
+[  681.66s ->   686.24s] little trickier. You can argue skilled labor, unskilled labor. You have no idea how to start a business, no
+[  686.24s ->   692.02s] idea how to build something and then sell it for money. The list goes on. But fair enough, at the end of
+[  692.02s ->   699.46s] the day, right, there are not a tremendous number of business owners. W-2s dwarf business owners. So most
+[  699.46s ->   704.40s] people, if they compress these different possible states of the world, right, is it positive or
+[  704.40s ->   710.00s] negative EV? Well, most people are going to think it's tremendously negative EV, even though the
+[  710.00s ->   715.98s] probability of success, that outcome yields maybe freedom, maybe not even financial freedom, but like
+[  715.98s ->   721.92s] freedom over schedule, your ability to do and say whatever it is that you would like, which is exactly
+[  721.92s ->   730.30s] what I'm doing right now, that doesn't outweigh the downside variation. And you have to ask yourself,
+[  730.44s ->   736.02s] why is that the case? Because there are people that quit their jobs. There are people that quit their
+[  736.02s ->   742.04s] jobs when everyone else says it's crazy. And there are people who take a 99% pay cut to build something
+[  742.04s ->   751.13s] from scratch with no revenue for a tremendous period of time who survive. All right. And that's because
+[  751.13s ->   757.85s] I was able to correctly understand the assignment of probability mass. And I was willing to assume
+[  757.85s ->   764.97s] that risk. Now, did that come down to knowledge or experience? Came down to primarily knowledge and my
+[  764.97s ->   770.67s] confidence in my knowledge. I did not have the experience of that downside deviation until it
+[  770.67s ->   779.77s] was that I left my job. But here we are now. So the takeaway here, and what I kind of want to leave
+[  779.77s ->   787.61s] you with today is to measure and assume risk correctly, we need knowledge and experience.
+[  787.61s ->   793.91s] It's true. Knowledge can carry when experience lacks. It's true. Experience carries when knowledge
+[  793.91s ->   800.83s] lacks. In fact, I would say that most successful, and I'll just say successful arbitrarily because
+[  800.83s ->   806.13s] that measure just it's subject to change. However, you like to measure success.
+[  806.13s ->   812.05s] Most people just do it through experience. It's like, oh, I'm going to quit my job. This doesn't
+[  812.05s ->   817.97s] feel right. I'm going to start a business. And the knowledge to understand this framework or even
+[  817.97s ->   824.37s] their own utility function, if you saw my previous video, doesn't stand. But that mathematical structure
+[  824.37s ->   830.57s] doesn't go away. That is quite literally what it is they are doing. They deem it a positive EV
+[  830.57s ->   838.75s] action. So they choose to take it. If they didn't, they wouldn't be doing it. And that is exactly the
+[  838.75s ->   845.09s] idea of optimizing your utility function from the previous video. So this is about the notion of
+[  845.09s ->   852.33s] optimizing your utility function or some sort of desired outcome based on a risky action via the
+[  852.33s ->   858.37s] assignment, be it correct or incorrect, of probability mass to different states of the world.
+[  858.37s ->   865.59s] Just remember, so long as there are people that assign probability mass to these different states of
+[  865.59s ->   872.47s] the world incorrectly, you are going to have opportunity. If this pretty girl walks past,
+[  872.59s ->   884.66s] I don't know, let's say 100, 100 guys in a day, and 99% of them aren't going to say anything,
+[  884.66s ->   892.16s] then this turns into a geometric random variable. This means that every single day, there's going to
+[  892.16s ->   900.72s] be a 1% chance that somebody actually approaches her. So on average, her expected wait time in days
+[  900.72s ->   909.98s] is going to be 100 days for somebody to go talk to her. This probability mass is not assigned
+[  909.98s ->   917.10s] correctly. Go talk to that pretty girl, gain some knowledge and experience, and make more informed
+[  917.10s ->   920.00s] decisions under uncertainty.

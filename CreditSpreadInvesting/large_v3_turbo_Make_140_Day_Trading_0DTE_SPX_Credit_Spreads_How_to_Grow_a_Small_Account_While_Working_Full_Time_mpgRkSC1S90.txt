@@ -1,0 +1,132 @@
+[    0.00s ->     6.74s] I made $280 over two trading days using only $1,000 from selling zero DTE SPX credit spreads.
+[    7.95s ->    12.57s] It may not seem a lot, but it's 28% ROI over two days. Welcome to the channel. This is Credit
+[   12.57s ->    17.55s] Spread Investing, where I show you my real life trades and the thought process behind them so
+[   17.55s ->    21.25s] that you two can learn and do it yourself if you do want to trade. Make sure you like this video
+[   21.25s ->    25.27s] and subscribe to the channel so that you don't miss a video in the future and become a well-rounded
+[   25.27s ->    29.53s] trader and investor. Like always, let's start with the trade first. Then we'll jump into the
+[   29.53s ->    38.13s] technical deep dive of those trades. First trade was on May 30th. It was a SPX 4220, 4225 call credit
+[   38.13s ->    45.87s] spread for a credit of $95. And I paid $20 a debit to get out of it, resulting in a $75 per spread
+[   45.87s ->    53.25s] profit. I was only trading with $1,000. So I sold two, which resulted in $150 profit or a 50% return
+[   53.25s ->    60.85s] on capital or return on investment. A second trade, which was also a SPX 4195, 4220 call credit
+[   60.85s ->    67.39s] spread in the same direction as the first one for $130 credit and a $65 debit, resulting in a $65
+[   67.39s ->    73.77s] profit per spread. Again, sold two, since I was only trading with $1,000, which resulted in a $130
+[   73.85s ->    80.91s] profit or a 13% return on capital that day. So I guess the first takeaway here, I only took two trades
+[   80.91s ->    85.03s] this week. I was actually on vacation in the mountains in Calgary and wasn't able to get
+[   85.03s ->    90.21s] reception. I also didn't want to trade while I was on vacation the whole time. But a 28% week is not
+[   90.21s ->    94.45s] a bad week at all. Jump into the trades now. If you guys haven't checked out this video linked in
+[   94.45s ->    98.63s] the upper right hand corner, this is essentially my trading system. It's a system called MAC MAC.
+[   99.01s ->   102.59s] And I do this for every trade. At least I try to do this for every trade. Just a quick overview,
+[  102.59s ->   107.21s] M stands for market trend, A stands for area of interest or value, and C stands for criterias
+[  107.21s ->   111.37s] entry. We want to know what the market trend is. So we know if we're going with the trend or against
+[  111.37s ->   115.97s] the trend, we want to know what the area of value is within the area that we're looking at. C, the
+[  115.97s ->   120.45s] criteria of entry is what allows us to enter these trades, right? And by following these three setups,
+[  120.45s ->   126.29s] you're able to maximize the probability of finding these good trade setups. So make sure you guys check
+[  126.29s ->   130.57s] that video out. Again, linked in the upper right hand corner. So I like to start on a daily just to
+[  130.57s ->   134.29s] get a better understanding of the macro trend. Again, we're day trading here. So the macro trend
+[  134.29s ->   139.25s] isn't that important, but we want to make sure that we understand what we're trading into.
+[  139.49s ->   142.35s] The first thing that stands out here is that we're kind of in a long-term channel,
+[  142.63s ->   148.69s] maybe a short-term consolidation. We're at this 41.20. You can see a resistance here,
+[  148.81s ->   154.67s] a resistance here. Now we're just covering about this 4,200 level. We're in this area of resistance
+[  154.67s ->   161.21s] right now, right? And in the short-term, we're in this consolidation period, right between this
+[  161.21s ->   166.19s] 41, 44,000 and 4,200. So around a 200 point difference between the top and the bottom.
+[  166.61s ->   171.67s] We're trading these last two days right here. So 530 and 531. So now what I like to do after that
+[  171.67s ->   176.33s] is to just drop it down to my 30 and I trade on the 30 and a 5. And I start on the 30 just to get
+[  176.33s ->   180.19s] a better understanding what the area is, right? You understand what the trend is now. Now we've got to
+[  180.19s ->   187.93s] understand what the overall short-term trends are and what the areas of values are. One level that I
+[  187.93s ->   192.71s] would obviously draw here and you should only draw the most obvious ones is this level right here
+[  192.71s ->   198.13s] as a support around 4,100. Very similar to what you saw on the daily. Now on the 30, you just see a
+[  198.13s ->   201.67s] little bit more information. So I would just draw, again, these are areas, but I'm just going to draw
+[  201.67s ->   207.07s] a line for simplicity's sake. And right around here. Another pretty obvious one is here. This is the
+[  207.07s ->   212.85s] previous resistance. And you can see that you can probably draw it right around here, right? The previous
+[  212.85s ->   218.87s] high into this area right here. One, two, three. So I would draw one right here as well. And one thing
+[  218.87s ->   223.93s] to note, again, these are all areas of value. These are not lines of value. So even though this is a
+[  223.93s ->   227.95s] line, a hard line, you should never just take it as is. Like you hit it and you enter a trade, right?
+[  228.43s ->   234.01s] These are just areas that you would be eyeing in order for you to enter a trade. And the cool part
+[  234.01s ->   238.07s] about this is, as you can see on the daily, that this lines up really close to these dailies. So these are
+[  238.07s ->   242.69s] high value areas, right? People are eyeing it because our daily areas, these are 30-minute
+[  242.69s ->   246.53s] areas. These are daily trends and 30-minute trends. And so there's going to be a lot of people
+[  246.53s ->   250.69s] eyeing it. So there could be a large move coming out. What we're going to do is we're going to drop
+[  250.69s ->   255.49s] it down to the five and see if there's good criteria of entry for us to enter. And what we're
+[  255.49s ->   261.17s] looking for here is bullish engulfing candlesticks, bearish engulfing candlesticks, a break of
+[  261.17s ->   266.29s] structure, like a lower high forming. All right. So this is the five. So this is the Monday that I
+[  266.29s ->   269.69s] didn't trade because it didn't enter my area of interest, right? And if you go to the five
+[  269.69s ->   272.87s] minute, there's really no, I guess, criteria of entry for me to enter. So I didn't trade
+[  272.87s ->   280.39s] that day. Tuesday, 530, it gapped up into this 420, 4230 level, right? And now I'm interested
+[  280.39s ->   283.87s] in trading. You can see the difference in mentality here. I'm like, okay, even though this one's
+[  283.87s ->   289.45s] close enough, I don't want to trade it and I want to have a better timing. Kind of a stark
+[  289.45s ->   292.63s] difference here. But sometimes I know it's really hard because I always kind of tend to be
+[  292.63s ->   295.75s] like, oh, well, it's close enough, right? And this is where your system really comes into
+[  295.75s ->   300.61s] play. So on Tuesday, it gapped up into this area. So now I'm looking for potentially a
+[  300.61s ->   305.13s] bear trade, a bear side trade, right? Because now it's in this area of resistance. So what
+[  305.13s ->   310.25s] I'm looking for here is like either a bullish engulfing candlestick, a formation of a lower
+[  310.25s ->   314.91s] high, a break of structure. Here you can theoretically take this trade if you wanted to because it
+[  314.91s ->   319.81s] entered an area of value. However, I don't see my criteria of entry, right? You want to hold
+[  319.81s ->   323.39s] to your system. So what I'm looking for, again, is like a bearish engulfing candlestick in this
+[  323.39s ->   329.43s] volume. This candlestick is not nearly as large as I would like it to. And so I just waited. I just
+[  329.43s ->   332.93s] waited to see whether or not there's a better signal for me to enter. You can trade right around
+[  332.93s ->   338.71s] here is another area where you can theoretically trade. This is potentially a formation of lower
+[  338.71s ->   343.79s] high. So you could theoretically enter right here because this is a bearish engulfing candlestick.
+[  343.89s ->   348.85s] It looks relatively strong. Second candlestick confirmed it. But what I'm looking for here is a
+[  348.85s ->   354.95s] break of this previous low. That shows me sustained weakness, right? This is not a bad trade. You can
+[  354.95s ->   358.49s] theoretically trade this, but I want to be a little bit more certain that this weakness is
+[  358.49s ->   364.35s] breaking, right? Because this is still an uptrend. I want the uptrend to subside before I enter a
+[  364.35s ->   369.69s] bearish trade, right? Now, if this is a long-term downtrend, then I think trading this will be fine
+[  369.69s ->   375.55s] for that break of the low. And right around here is when it broke. You see that? At 8.15.
+[  375.55s ->   383.82s] This candlestick is where I entered right here. I sold that 42.20, 42.25 credit spread, right? 42.20
+[  383.82s ->   389.98s] to 42.25 above this previous high, right on this candlestick right here, collected $95, which is
+[  389.98s ->   395.00s] around 18% for that entry. This is the most important part, taking your take profit and stop
+[  395.00s ->   401.30s] loss. A stop loss is if it ever breaks up above this previous high, indicating that the short-term
+[  401.30s ->   405.66s] downtrend is no longer true, I would exit. And what I use, I use 1ATR, right?
+[  405.66s ->   411.48s] So 1ATR is around 5 points. So 22.25, 22.30 is when I would exit. And my take profit's a little bit
+[  411.48s ->   415.34s] looser. I would say around this 200 period moving average. So what I like to do is as the move goes
+[  415.34s ->   421.44s] down here, I like to move my stop losses down as it goes on. So the moment I entered this trade,
+[  421.48s ->   424.90s] I started winning right away. The market continued to go down, continued to go down, continued to go
+[  424.90s ->   429.58s] down. And form a lower low here. So what I would do here at this point is once it formed a lower low,
+[  429.58s ->   435.40s] my take, my stop loss is now 1ATR above this previous high. Previous high is here. So 22.10
+[  435.40s ->   442.76s] plus 5ATR, around 4 now, around 4 points, is 21.42.15. So that's my new stop loss. If it ever breaks
+[  442.76s ->   447.52s] that, then I would, you know, I would get out. As it kind of got into this area right here, I think
+[  447.52s ->   452.16s] this is where I actually got stopped out at 42.15. Yeah, right here is when I got stopped out and
+[  452.16s ->   456.86s] exited, but the day continued to go down, right? So theoretically speaking, like I could have played this a
+[  456.86s ->   462.12s] little bit more risky. Like I could have opened up my stop loss a little bit more, but I was like,
+[  462.14s ->   468.18s] I'm already up 76% on my total credit where I risk it, right? So I just took the profit and I ran with
+[  468.18s ->   472.14s] it, right? Obviously if I, if I had not, I would have made a hundred percent profit, which would have
+[  472.14s ->   478.34s] been $108, $190, which is just $40 more than what I would have collected. But again, the beauty of
+[  478.34s ->   482.40s] credit spreads is that it doesn't actually have to hit a realized take profit level. You can just let it
+[  482.40s ->   486.02s] expire out the money. So you can be a little bit looser with your take profits than you would if you're
+[  486.02s ->   491.04s] buying options. Okay. So we'll move on to the second trade, maybe a continuation of the downtrend.
+[  491.20s ->   494.90s] And here is another example of how you can use different timeframes to trade. And now because
+[  494.90s ->   501.08s] it exited my area of value on the 30 minutes, it's probably unlikely that it will hit my area
+[  501.08s ->   506.70s] value again on, on the, on the 30. So I can look for area values on the five now. And so what a good
+[  506.70s ->   513.32s] area of value would be was, would be here around 42.14, because that's a previous high and a low of 41.90,
+[  513.32s ->   517.64s] which is the previous support. 531, it broke down, it broke down and broke down, right? So
+[  517.64s ->   523.04s] now we're in this area of support, potentially turning into resistance. And you're looking for
+[  523.04s ->   528.54s] signs of weakness here. And right off the bat, you can see this is a very good entry right here on
+[  528.54s ->   535.62s] this candlestick because one, it rejected right off of this level at 41.95. I entered a trade right
+[  535.62s ->   544.40s] here. I collect at 41.95, 42.20. I collected $130 on this one spread at next candlestick open on this
+[  544.40s ->   549.56s] candle right here. And I just let the market kind of run down, right? My stop loss again, just double
+[  549.56s ->   553.94s] check to make sure that you guys always do this as one ATR above this previous high, which is one
+[  553.94s ->   560.84s] going to be around 41.95 or 4,200, right? If it ever breaks past that, I'll take, I'll take my exit.
+[  560.84s ->   566.10s] If it ever doesn't, then I'll just let it run, right? And then as, as it goes down, you move your
+[  566.10s ->   570.98s] stop, you move your stop losses. Now my stop loss is probably around 41.80 because that's the previous
+[  570.98s ->   580.29s] swing low. And right around 10.30 right here, it hit my stop loss, 10.35 right here, hit my stop loss.
+[  581.13s ->   587.75s] And I exit the trade at 50%. So you see the market went up, went up, went up. It kind of tested 41.90,
+[  587.75s ->   594.03s] went back down. Now it tested 41.95, right? At the previous high and it closed lower, right? So
+[  594.03s ->   598.67s] theoretically you could have said, yeah, I could have made max profit of $260 if I traded this day
+[  598.67s ->   604.33s] and then expire out. You probably, maybe you sold out here, right? Maybe you sold out here.
+[  604.71s ->   609.19s] You could have maybe panicked. I don't know, but like, yes, right? You could have done that. But the
+[  609.19s ->   612.97s] whole point of having a system is that you let your system do the work for you and you kind of live with
+[  612.97s ->   616.63s] the pros and the cons. Because what happens if this actually didn't happen? What happens if it did
+[  616.63s ->   622.73s] break past this 41.95 high and shot up? Especially with credit spreads where your
+[  622.73s ->   627.95s] risk is always usually higher than your reward, it's not worth it, right? Because if it broke past
+[  627.95s ->   634.57s] 41.95, your value of your spreads will be extremely high around this area and you'll start losing a lot
+[  634.57s ->   640.73s] more money. And so you want to make sure that you are gathering your gains and realizing them
+[  640.73s ->   644.91s] whenever there are signs of trouble. And that's something that I obviously have trouble with,
+[  644.91s ->   649.13s] especially trying to sell credit spreads, zero DTE. Buying options is slightly different. It's a
+[  649.13s ->   653.01s] completely different game. But in the case of credit spreads, you want to make sure that you
+[  653.01s ->   658.81s] are not taking on more unnecessary risk than you should. So those two days combined, $280, 28%.
+[  658.81s ->   662.73s] That's about it. I hope you guys stay safe in the market and like this type of content. Make sure
+[  662.73s ->   666.97s] you guys like and like the video. Subscribe so you guys don't miss videos like this. Let me know down in
+[  666.97s ->   671.11s] the comment section below if you guys have any questions. If you guys want to learn more about
+[  671.11s ->   675.97s] my trading system that I use for selling 30 to 45 DTEs as well as day trading, as well as selling
+[  675.97s ->   679.89s] options for income, make sure you guys check out this video right here. I think you guys will find
+[  679.89s ->   683.41s] it very interesting and very informational. All right. Until next time. Peace.

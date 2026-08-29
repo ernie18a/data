@@ -1,0 +1,218 @@
+[    0.00s ->     4.32s] Microsoft's stock has been getting absolutely hammered all over the last month.
+[    4.56s ->     7.24s] Wall Street is pricing Microsoft like it's the next Kodak.
+[    7.44s ->    10.78s] Is Wall Street actually correct, or is this a once-in-a-lifetime opportunity?
+[   11.06s ->    13.44s] So today, let's try and answer that question.
+[   13.82s ->    19.48s] So the first thing you have to do is understand Microsoft's business model and how it makes money.
+[   19.86s ->    24.96s] And Microsoft essentially is three giant companies rolled up into one.
+[   24.96s ->    30.82s] Even when they report quarterly earnings, they split all of their revenue out into three separate buckets.
+[   31.06s ->    33.78s] The first one is what they call productivity and business processes.
+[   34.28s ->    36.24s] Think of Microsoft Word, Excel, PowerPoint.
+[   36.58s ->    42.30s] This business line generates close to $35 billion in one quarter.
+[   42.88s ->    47.08s] Next is their intelligent cloud, which includes Azure and their cloud computing department.
+[   47.08s ->    53.18s] And this generates, again, close to $35 billion a quarter.
+[   53.18s ->    58.40s] And their cloud computing business is second only to Amazon's AWS.
+[   59.06s ->    61.12s] And lastly is what they call more personal computing.
+[   61.66s ->    64.66s] This is their Surfaces, their Xboxes, Bing.
+[   65.06s ->    68.86s] This generates $13 billion in quarterly revenue.
+[   69.14s ->    74.66s] So when you really break it down like that, you can really see how diversified Microsoft is as a business.
+[   75.04s ->    79.28s] Now compare that diversification to companies like Meta or Google,
+[   79.28s ->    84.18s] where they're a lot more singular in revenue, such as Google's reliance on ads.
+[   85.00s ->    91.58s] Now, if you even take Microsoft's individual segments and compare it to an average S&P 500 business,
+[   91.92s ->    98.02s] you'll see that they are still multiple times bigger than those already pretty big companies.
+[   98.02s ->   105.56s] We also got to compare how well that business is growing and how well they turn that revenue into actual profit.
+[  105.56s ->   109.60s] If you look at the 40% revenue growth that Azure alone is bringing in,
+[  109.94s ->   115.40s] that in itself is much faster than even small cap companies, many times smaller than they are.
+[  115.56s ->   116.76s] And that is extremely impressive.
+[  117.22s ->   120.88s] If you compare its overall 18% year-over-year revenue growth,
+[  121.02s ->   123.94s] that's still a lot faster than other companies much smaller than them.
+[  124.20s ->   128.38s] So on every single metric, they're doing extremely well.
+[  128.38s ->   132.40s] Now, if you even compare their net margins to other companies, their peer,
+[  132.82s ->   138.24s] you can see that Microsoft does a really good job of translating revenue into actual profit.
+[  138.46s ->   140.02s] Now, at least from a business performance perspective,
+[  140.02s ->   142.26s] you can see that Microsoft is a relatively healthy company.
+[  142.92s ->   148.10s] Massive revenue growth turns revenue into income and has relatively large cash flows.
+[  148.58s ->   152.24s] So the Microsoft picture wouldn't be complete if we didn't talk about OpenAI.
+[  152.74s ->   155.96s] OpenAI, as you guys probably know, is the maker of ChatGPT,
+[  155.96s ->   160.70s] which apparently has close to 1 billion weekly users.
+[  161.10s ->   165.96s] It is one of the fastest growing and most used consumer products in the market today.
+[  166.30s ->   169.42s] And Microsoft actually has direct exposure to it in two main ways.
+[  169.90s ->   172.78s] One, it's one of the earliest investors behind OpenAI.
+[  173.62s ->   176.42s] And to this day, they still own a large portion of the company,
+[  176.54s ->   181.54s] which means that OpenAI's performance, a portion of it is directly owned by Microsoft.
+[  181.54s ->   186.12s] Secondly, Microsoft remains OpenAI's primary cloud provider.
+[  186.50s ->   193.00s] OpenAI has contracted to purchase an incremental $250 billion of Azure services
+[  193.00s ->   198.78s] to continue to run and grow ChatGPT and subsequent products like Codex.
+[  199.24s ->   205.56s] So every time ChatGPT is used, every time API usage grows or your Codex is being used to code,
+[  205.78s ->   207.32s] Microsoft has a path to benefit.
+[  207.32s ->   211.96s] Now, at this point, you might be wondering, hey, everything looks great, right?
+[  212.06s ->   213.72s] Business performance is amazing.
+[  214.06s ->   216.46s] Azure growth is at 40% year over year.
+[  216.62s ->   220.06s] So it just makes sense for us to just buy Microsoft at this point, right?
+[  220.22s ->   220.82s] Hold your horses.
+[  221.32s ->   226.64s] Let's talk a little bit about why Microsoft could potentially be exactly where it is for a reason.
+[  227.20s ->   232.72s] By first talking again about OpenAI and the AI craze.
+[  232.72s ->   238.00s] And before we continue, if you guys like content like this that's actionable and well-researched,
+[  238.02s ->   241.48s] make sure you guys like and subscribe to the channel so that you can learn how to invest
+[  241.48s ->   244.68s] and trade options the right way to help accelerate your road to retirement.
+[  245.02s ->   248.12s] This OpenAI exposure is a double-edged sword.
+[  248.36s ->   251.10s] And it is a proxy for potentially the AI bubble.
+[  251.54s ->   252.16s] Let me explain.
+[  252.38s ->   259.02s] Remember the $250 billion in Azure services that ChatGPT, OpenAI, was obligated to procure from Azure?
+[  259.02s ->   265.34s] That one number tells the whole story, gives Microsoft a singular point of failure.
+[  266.26s ->   273.08s] In Microsoft's fiscal year 26 Q2 earnings call, it said that commercial remaining performance obligation
+[  273.08s ->   280.84s] increased to $625 billion and that 45% of that billing was attributed to OpenAI
+[  280.84s ->   286.06s] is tied to one party that to this day is not profitable.
+[  286.06s ->   291.42s] That Microsoft's future cloud computing performance, it is tied to OpenAI's ability
+[  291.42s ->   296.48s] and to keep monetizing users at scale and turning an unprofitable business somehow profitable.
+[  296.66s ->   299.92s] This isn't necessarily a bankruptcy risk, as we'll talk about later,
+[  300.00s ->   302.84s] because Microsoft's cash flow is more than enough to cover these commitments.
+[  303.28s ->   305.74s] But it is a risk nonetheless.
+[  306.16s ->   308.30s] And on top of that, it is a nervous spin.
+[  308.56s ->   311.96s] If OpenAI slows down, right, they're unable to become profitable.
+[  311.96s ->   315.76s] They shift workloads to other companies like AWS or Google, right?
+[  315.80s ->   318.68s] Or even worse, like the unit economics just doesn't make any sense.
+[  318.96s ->   325.78s] Then investors could realistically start questioning how durable that backlog is.
+[  325.94s ->   328.72s] So let me dive a little bit deeper into this obligation,
+[  328.72s ->   332.64s] because this is really what is causing Microsoft to go down
+[  332.64s ->   336.42s] and could potentially be the reason as to why it might rebound.
+[  336.64s ->   338.10s] So we really need to understand this.
+[  338.10s ->   342.92s] So in order for Microsoft to fulfill that $600 billion in backlog and commitment,
+[  343.46s ->   345.82s] it needs to first build out data centers.
+[  345.98s ->   349.56s] They need to, one, spend a lot of money, build the actual data centers,
+[  349.66s ->   351.88s] and two, fill them up with servers.
+[  352.26s ->   355.60s] NVIDIA GPUs, Micron Memory, Mellanox Networking,
+[  355.74s ->   358.56s] find power sources to power the data center, power agreements,
+[  358.76s ->   360.44s] whether it's nuclear or solar,
+[  360.84s ->   363.96s] in order to support all of that future commitment.
+[  363.96s ->   369.70s] And you can see how much more money Microsoft is spending by looking at their financials.
+[  369.70s ->   372.56s] In order to fulfill their future backlog,
+[  372.80s ->   375.74s] Microsoft has increased their capital expenditure,
+[  375.96s ->   378.86s] the amount of money they're spending to buy these servers
+[  378.86s ->   381.92s] each and every quarter for the last couple of quarters.
+[  382.28s ->   385.56s] Which means that Microsoft to this day is spending a lot of money
+[  385.56s ->   387.50s] building out all these data centers
+[  387.50s ->   390.20s] that may or may not have customers in the future.
+[  390.20s ->   395.76s] Does OpenAI and does Anthropic and other companies have enough demand
+[  395.76s ->   399.00s] to fulfill the amount of supply
+[  399.00s ->   403.74s] that Microsoft and other hyperscalers are putting in to satisfy projections?
+[  404.06s ->   406.94s] Now, obviously, Microsoft doesn't live in a vacuum, right?
+[  407.00s ->   411.62s] And this quote-unquote label of having higher risk didn't come from nowhere.
+[  411.86s ->   414.04s] We talked briefly about the other hyperscalers, right?
+[  414.16s ->   415.20s] Google, Amazon Metal.
+[  415.20s ->   418.78s] And we know that Google's stock has risen a lot,
+[  419.16s ->   423.88s] even though Google's spending has increased just like Microsoft has.
+[  423.96s ->   428.56s] Google, for comparison, is already showing signs of monetizing AI,
+[  428.86s ->   432.14s] their models, and their cloud infrastructure investments
+[  432.14s ->   433.98s] through their core businesses.
+[  434.26s ->   436.18s] Like they've integrated Gemini into Search,
+[  436.42s ->   438.70s] they've improved ad targeting with their models,
+[  438.84s ->   441.96s] and really leveraged their AI model and optimized their pricing.
+[  441.96s ->   444.70s] And you can see that Alphabet's latest earnings
+[  444.70s ->   448.08s] have shown an increase in advertising revenue
+[  448.08s ->   451.60s] alongside an increase in Google Cloud revenue,
+[  451.76s ->   456.44s] which has increased and actually faster than Azure's growth.
+[  456.80s ->   458.92s] So essentially, right, the market is now viewing Google
+[  458.92s ->   463.74s] as leveraging AI to make their core businesses even better
+[  463.74s ->   464.92s] and print more money,
+[  465.06s ->   467.16s] which means that the CapEx that they're spending,
+[  467.30s ->   469.96s] the amount of money they're spending building out all these data centers,
+[  469.96s ->   472.72s] is already getting a return on investment.
+[  472.90s ->   476.42s] That's a completely different picture than what Microsoft is,
+[  476.50s ->   479.26s] which is spend now, get revenue later.
+[  479.46s ->   480.32s] So here's the real question.
+[  480.80s ->   484.30s] Is Microsoft cheap or is it actually priced correctly?
+[  484.58s ->   486.72s] So Microsoft really comes down to one main thing.
+[  487.14s ->   492.30s] Do you think that the risk in the future for the AI buildout
+[  492.30s ->   495.24s] is as dire as what Wall Street is pricing it for?
+[  495.32s ->   496.70s] Because at the very moment,
+[  496.90s ->   498.84s] Microsoft is priced at its cheapest valuation.
+[  498.84s ->   501.32s] Now, obviously, this is my own personal opinion,
+[  501.90s ->   503.36s] but if you guys view my public portfolio,
+[  503.46s ->   505.64s] you guys know I've been accumulating Microsoft shares
+[  505.64s ->   507.90s] ever since it got to around $400 a share.
+[  508.12s ->   511.84s] In my opinion, I think that AI is transformative, right?
+[  511.92s ->   513.96s] AI has changed the way I work.
+[  514.14s ->   516.20s] AI has changed the way that a lot of businesses work
+[  516.20s ->   517.58s] and run their teams.
+[  517.72s ->   521.32s] That I think that the demand risk in the future
+[  521.32s ->   525.34s] is a lot less than what Wall Street projects it to be.
+[  525.70s ->   527.56s] Therefore, this might be an overreaction,
+[  527.56s ->   528.74s] but that doesn't necessarily mean
+[  528.74s ->   530.52s] that you should buy it all at once, right?
+[  530.56s ->   532.64s] Because the market can continue to be irrational
+[  532.64s ->   534.10s] longer than you can be liquid.
+[  534.42s ->   537.22s] So what I've been doing is I've been buying shares slowly,
+[  537.68s ->   539.60s] accumulating it through my public portfolio.
+[  539.78s ->   541.24s] And if you guys want to check it out,
+[  541.76s ->   542.52s] make sure you guys subscribe
+[  542.52s ->   545.14s] and I'll link the link in the upper right-hand corner
+[  545.14s ->   546.32s] for you guys to view the playlist.
+[  546.54s ->   547.46s] So what I've been doing recently
+[  547.46s ->   549.72s] is I've been selling cash-secured puts on Microsoft
+[  549.72s ->   551.34s] over and over and over again,
+[  551.60s ->   554.06s] trying to collect that 1% to 2% a month
+[  554.06s ->   555.14s] to lower my cost basis
+[  555.14s ->   556.58s] and then using that money to buy Microsoft.
+[  556.86s ->   558.32s] And therefore, by doing it this way,
+[  558.40s ->   560.62s] I'm slowly kind of dripping in more shares
+[  560.62s ->   562.86s] and I'm reducing my exposure
+[  562.86s ->   566.52s] while still allowing me the upside
+[  566.52s ->   568.26s] if it does go up
+[  568.26s ->   570.14s] and reducing my downside if it does go down.
+[  570.32s ->   572.00s] Now, you guys follow this channel for a reason, right?
+[  572.00s ->   573.42s] I show you guys different option strategies
+[  573.42s ->   574.30s] to take advantage of it.
+[  574.72s ->   576.52s] But there's also another trade here,
+[  576.64s ->   578.98s] a long-term or even median-term reversal.
+[  579.38s ->   580.06s] Buying leaps
+[  580.06s ->   582.90s] because I'm betting that within two to three years
+[  582.90s ->   584.42s] that Microsoft's stock price
+[  584.42s ->   585.56s] will revert back to the norm.
+[  585.74s ->   586.28s] That's the play.
+[  586.70s ->   588.64s] And I have a lot of leaps in my private portfolio.
+[  589.08s ->   589.78s] At the same time,
+[  589.82s ->   591.34s] I probably wouldn't be selling
+[  591.34s ->   594.88s] too many short-term to medium-term plays
+[  594.88s ->   596.12s] like credit spreads, right?
+[  596.14s ->   597.44s] The main bread and butter of the channel.
+[  597.62s ->   599.06s] And that's because mainly the market
+[  599.06s ->   602.02s] still views Microsoft in a very negative light.
+[  602.50s ->   605.08s] In order for you to become a bullish stock, right?
+[  605.10s ->   606.38s] To trade put credit spreads,
+[  606.90s ->   608.72s] you might need a momentum shift.
+[  608.72s ->   609.66s] But at the same time,
+[  609.70s ->   611.70s] you don't necessarily want to sell call credit spreads.
+[  612.06s ->   613.60s] The market is already so depressed
+[  613.60s ->   615.08s] that it's more unlikely
+[  615.08s ->   616.58s] that it can continue to go down.
+[  616.78s ->   618.02s] So here's my honest takeaway
+[  618.02s ->   619.94s] that because of how robust
+[  619.94s ->   621.76s] the other side of the business is
+[  621.76s ->   623.86s] and how much free cash flow they bring in,
+[  624.20s ->   625.32s] their spend, their capex,
+[  625.66s ->   626.54s] will be eaten up
+[  626.54s ->   627.62s] and within a couple of years,
+[  627.80s ->   630.20s] the Microsoft shares will be completely fine.
+[  630.26s ->   632.00s] Which means that this is a large upside
+[  632.00s ->   635.18s] and a relatively small downside risk.
+[  635.38s ->   636.42s] Well, that's about it.
+[  636.98s ->   638.48s] Let me know down in the comment section below
+[  638.48s ->   639.64s] if you guys like Microsoft
+[  639.64s ->   640.70s] at its current price point,
+[  641.22s ->   642.22s] if you think it's going to go up
+[  642.22s ->   644.02s] or down in the near future.
+[  644.40s ->   645.26s] If you guys like actionable
+[  645.26s ->   646.72s] and well-researched content like this,
+[  646.84s ->   647.64s] make sure you guys like
+[  647.64s ->   649.02s] and subscribe to the channel.
+[  649.22s ->   650.50s] I'm going to link two masterclasses
+[  650.50s ->   651.48s] in the end screen right now
+[  651.48s ->   653.74s] on how to sell puts and credit spreads.
+[  653.84s ->   654.82s] So make sure you guys check them out.
+[  654.92s ->   655.56s] And like always,
+[  655.68s ->   656.46s] stay safe in the market.
+[  656.68s ->   657.26s] Until next time,
+[  658.10s ->   658.38s] peace.
+[  658.38s ->   659.54s] I'll see you next time.
+[  659.54s ->   660.12s] I'll see you next time.
+[  660.12s ->   660.66s] I'll see you next time.

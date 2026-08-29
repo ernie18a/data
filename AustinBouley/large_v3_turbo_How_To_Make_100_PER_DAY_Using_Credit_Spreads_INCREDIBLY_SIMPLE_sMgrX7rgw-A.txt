@@ -1,0 +1,103 @@
+[    0.00s ->     4.34s] This is by far the easiest way to make a hundred dollars a day by trading credit spreads.
+[    4.46s ->     9.28s] It's broken down into four simple steps. Number one, pick a direction. Number two,
+[    9.56s ->    13.24s] pick the right credit spread. Number three, enter the trade. And number four,
+[   13.46s ->    17.66s] make a hundred dollars a day in four simple steps. Not only that, in this video, I'll be
+[   17.66s ->    23.50s] walking through what you need to do for each step. And I will be giving you my private indicator
+[   23.50s ->    29.86s] that will help you implement this system like that. Not only that, I typically charge $997
+[   29.86s ->    34.50s] for people to get access to this indicator, but I'm giving it away to you for free. So you stay
+[   34.50s ->    39.92s] tuned. I will show you not only each step in depth, but how to implement this in seconds for free.
+[   39.92s ->    44.68s] So by the end of this video, you get to walk away knowing how to actually make a hundred dollars a
+[   44.68s ->    49.20s] day. So if you are excited for that, if you enjoy that, if you're ready, smash the subscribe button
+[   49.20s ->    54.58s] and let's dive in. All right. So pick a direction. How do we know to do that? Well, simply we need to
+[   54.58s ->    59.64s] know the trend. Why do we need to know the trend? Well, because if you have traded other strat,
+[   59.64s ->    64.26s] strategies in the past and haven't made money, it's because the person who taught you the strategy
+[   64.26s ->    69.48s] did not tell you when that strategy worked best. There's uptrends, there's downtrends,
+[   69.52s ->    73.54s] there's sideways markets. If you don't trade the best strategy for the market you're in,
+[   73.58s ->    77.96s] you're going to lose money. So the trend. So what is the different approaches here? Well,
+[   78.02s ->    82.78s] if we are in an uptrend, simply we're going to be doing put credit spreads. So again, I'm going to
+[   82.78s ->    87.74s] assume you know what credit spreads are, but if you don't, here's a quick explanation. A credit
+[   87.74s ->    91.10s] spread is simply betting that a stock will stay above a certain level. And if it does,
+[   91.14s ->    95.38s] you make money. If it doesn't, you don't. So a put credit spread makes money to the upside,
+[   95.54s ->   100.34s] a call credit spread makes money to the downside. So when we're in an uptrend, which we can determine
+[  100.34s ->   105.88s] by an indicator, for instance, why I will be giving you today for free. Again, we know if it's being,
+[  106.02s ->   110.16s] if we know, we know if the market's in an uptrend or a downtrend or sideways. So the market's
+[  110.16s ->   113.24s] uptrend, we're going to be doing put credit spreads. If the market's in a downtrend,
+[  113.24s ->   121.72s] we're going to be doing call credit spreads. If the market is neutral or sideways, we're going to
+[  121.72s ->   127.70s] do far out of the money credit spreads. Again, I'll be explaining all that here when we get into
+[  127.70s ->   134.14s] the charts. But this is how you pick a direction. You use the trend determined by an indicator,
+[  134.54s ->   139.24s] and then you can use that trend to put on the right credit spread on a certain distance out.
+[  139.24s ->   144.10s] When we're uptrending, we want to, well, actually this goes into the next one. When we are uptrending
+[  144.10s ->   149.06s] and when we put on a, a put credit spread, it will change based on what trend we're in.
+[  149.60s ->   158.14s] So if we're uptrending, we're going to be placing, um, a roughly 14 days, 24, 14 days until expiration.
+[  158.14s ->   164.12s] So that means we're going to go out 14 days in time. And plus we're going to be roughly, um, uh,
+[  164.12s ->   169.96s] two to 3% out of the money. So out of the money, that means away from the stock price
+[  169.96s ->   174.04s] when we are trending up. So this is how we determine that level. And I'll show you again
+[  174.04s ->   178.10s] in the charts when, when we get specific, I just, I just wanted to give you the highlighted notes here
+[  178.10s ->   184.16s] when we are down trending, okay, the market is going down. We're also going to be 14 days out
+[  184.16s ->   189.66s] and we're going to be roughly, um, two to three, uh, 3% out of the money as well.
+[  189.72s ->   194.44s] But this time it's a call credit spread. So we're going above the stock price, not below it. Like
+[  194.44s ->   200.02s] we are for uptrending. When we are in a neutral market, this is where it really changes. We're
+[  200.02s ->   205.62s] going to be also going out about 16 days. So a little further in time. And we're also going to
+[  205.62s ->   210.10s] be going further out in distance. So three to 4% out of the money. Why? Because when a market's
+[  210.10s ->   214.10s] neutral and sideways, there's no clear direction. It can gap up, down, whatever. And we want that extra
+[  214.10s ->   219.26s] realm of safety. Also, when we're in a neutral market and the market's going up, down and all
+[  219.26s ->   224.12s] these weird ways, guess what? Volatility is higher, which means we still collect the same
+[  224.12s ->   229.48s] amount of money, still make a hundred dollars like we could with these, which are a bit closer
+[  229.48s ->   233.88s] to the money. So that's how you pick the right credit spread, but I'll explain how to make that
+[  233.88s ->   238.20s] super easy with the indicator that I'm giving you because it tells you how to do it. But anyways,
+[  238.56s ->   244.08s] how to enter the trade, you simply go to your broker. So again, there's a lot of brokers
+[  244.08s ->   249.28s] out there. We have Robinhood, which is super easy. Webull, which is also commission-free.
+[  249.64s ->   255.06s] You have Tasty Trade. You also have TD Ameritrade. All these work well. Depending on your account
+[  255.06s ->   259.24s] size, I definitely recommend that you negotiate commissions. That's going to help you a lot.
+[  259.90s ->   264.32s] So those are all the brokers. You're just simply going to place the trade based on the setup here.
+[  264.92s ->   273.36s] So place the trade based on the setups above. So that's how we put on this order. Next,
+[  273.36s ->   276.92s] we're going to aim to make a hundred dollars a day. That's the whole purpose of this video.
+[  276.92s ->   285.08s] So if we're collecting $15 per each spread we put on, then we want to put on roughly the number
+[  285.08s ->   291.14s] of spreads that will equal a hundred dollars a day. So if we're putting on $15 per spread,
+[  291.22s ->   295.72s] if we want to make a hundred dollars, I think that was roughly eight dollars. Yeah, let's just say,
+[  295.82s ->   301.56s] I mean, eight spreads. That's probably close enough. So yeah, we have eight spreads. It's going to put us
+[  301.56s ->   306.76s] over to 120. Actually, we probably only need seven spreads. My mental math is not insanely amazing,
+[  306.96s ->   312.22s] but so seven spreads we need to put on at $50 per spread to make a hundred dollars in that day.
+[  312.66s ->   319.82s] And not only that, we'll have about an 85% win rate doing this. So 85% of the time we'll get to keep
+[  319.82s ->   327.48s] our money. The other time we'll have a stop loss around 50 cents. So that we'll, we'll have that stop
+[  327.48s ->   331.92s] in case it goes against us and we won't lose an incredible amount of money. So now let's go into
+[  331.92s ->   337.60s] the charts and deep dive how this works. So like I mentioned before, there is a trading indicator
+[  337.60s ->   341.78s] that I'm going to give you. This has taken me six years to develop and I typically charge money for,
+[  341.98s ->   345.32s] but I want to give it to you for free because you know what? I decided I just want people to make
+[  345.32s ->   349.46s] money. And if you do, then you'll, then you'll like me and hopefully actually finally subscribe to
+[  349.46s ->   353.88s] this channel. But anyways, if you click down in the description below, there's a credit spreads
+[  353.88s ->   359.34s] trend trading in a indicator. This is what I've literally built. It's this, it shows you the
+[  359.34s ->   364.08s] trends at, at, at every moment. And it also tells you how to put on the right credit spread trade.
+[  364.20s ->   368.76s] So let's dive into this real quick. Again, I'm hoping you went down in the description
+[  368.76s ->   373.86s] and imported this to your chart. It's super simple. Just put it in your email. I'll send you the link.
+[  373.98s ->   378.16s] Yeah. Click the link and it imports it into your trade and to a trading view account, which is free
+[  378.16s ->   383.60s] for anyone. So all that super simple to do anyway. So I'm assuming you've done that now that you've done
+[  383.60s ->   388.94s] that when the market is above this green line, the market is in an uptrend. The market is moving
+[  388.94s ->   393.58s] higher. When the market is below the red line, we are downtrending. We are moving lower. When the
+[  393.58s ->   399.58s] market's in this gray area, this is sideways or neutral market. When that happens, that means that
+[  399.58s ->   405.30s] the market is random. And so what do we do? Well, we simply go in here to the settings of this section
+[  405.30s ->   411.40s] right here and we adjust the percentages based on where we are. So we're currently uptrending. So what did I
+[  411.40s ->   416.70s] say? When we're uptrending, we're going to go roughly two to 3% out of the money. Well, look here.
+[  416.74s ->   421.92s] I have 2.5% percentage out of the money set. So that means we're good there. I don't need to do
+[  421.92s ->   427.06s] anything like that. So check. We're done with that. So now it tells me, okay, now that we're trending
+[  427.06s ->   432.56s] above, it tells me everything I need to do. So I don't have to do the math myself. It says right here,
+[  432.66s ->   437.82s] put credit spread. Cool. I know I'm placing a put credit spread. Number two, 14 days out. Cool. Now I know
+[  437.82s ->   445.06s] what to place it out at. And then it says, details sell the 430, buy the 429. So that's how I set up
+[  445.06s ->   450.10s] this trade. That simple, that easy with this amazing and free indicator that I'm giving you.
+[  450.16s ->   454.74s] This is a super easy example with Robinhood. So we're looking at SPY. So we're going to go to SPY.
+[  455.28s ->   461.75s] Next, we're going to click on trade SPY options. Then we're going to go into builder and put on the
+[  461.75s ->   465.83s] trade it told us to put on. So you can see here, a put credit spread. Why? Because we're bullish. We want
+[  465.83s ->   471.63s] to make money to the upside. So we're going to find put credit spread right here. Next, we're
+[  471.63s ->   476.77s] going to go roughly the distance out. So you can see here, we have the different days. 10 days is
+[  476.77s ->   480.85s] the nearest Friday. So we'll just do that one as well. It's a 10. So roughly around 14. Again,
+[  480.87s ->   485.75s] we could go out further as well. Then we're going to put on the order that it says. You can see right
+[  485.75s ->   492.45s] here, 430, 429. So we're going to look for that. Scroll down 430, 429, 430, 429. Right here,
+[  492.45s ->   499.15s] you can enter for about $9, $10. So we're going to need to put on roughly 10 spreads as we make $100
+[  499.15s ->   505.13s] with this trade. Again, you need to understand the risk at play with your win rate. But that is
+[  505.13s ->   510.03s] how you can easily make $100 a day by putting on these spreads and doing so in the way you're doing.
+[  510.33s ->   517.29s] You have roughly an 85% win rate. And with your stop loss, you're risking roughly $4 to make $1. And
+[  517.29s ->   522.19s] that is the optimal strategy that the trade should take every single day because long term expectancy math
+[  522.19s ->   527.11s] dictates that you'll make money long term. Anyways, guys, I hope that helped. Again,
+[  527.21s ->   531.57s] if you are new to credit spreads and want to understand them better, I have a free course
+[  531.57s ->   536.25s] linked down below that will give you access to what credit spreads are and teaching the exact
+[  536.25s ->   541.45s] strategy that I use. Anyways, guys, I hope you enjoy it and subscribe and I'll see you in the next video.

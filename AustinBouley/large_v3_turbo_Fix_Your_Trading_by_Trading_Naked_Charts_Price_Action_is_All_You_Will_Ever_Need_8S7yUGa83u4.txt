@@ -1,0 +1,153 @@
+[    0.21s ->    14.05s] Hey guys, what's up? It's A.B. Trades here. Welcome to a study Saturday video. These videos are one that you'll always love. So if you like it, please put a thumbs up, please comment, and if you haven't already, please subscribe.
+[   14.05s ->    43.93s] I'm A.B. Trades and I teach people how to day trade options. Today's video is over price action and how that is really the only thing you will ever need when trading. You can see here on my chart right now is what some of the beginner traders charts start to look like. It starts to get overwhelming here. You have random bands, you have a MACD, you have an RSI, sometimes you have multiple VWAPs or you have moving averages and it can even get worse.
+[   44.05s ->    63.27s] So by the time you see these indicators trigger an uptrend, like here, you can see right here we got that uptrend triggered. The uptrend has already gone and passed, right? There's stuff happening in the market daily and in order to capitalize on it, you need to focus on price action.
+[   63.27s ->    78.21s] Indicators by definition give an indication and are lagging in price. So they predict price by lagging in price. So like a moving average takes the average but it doesn't count and to affect the current price.
+[   78.21s ->    88.75s] That's what all these stocks do. They are lagging indicators. They're not staying up to date with the current data that's being provided. They take it over the past, the history.
+[   89.19s ->    98.83s] So you're seeing an average, which is great when investing. It's great when investing long term, swing trading, whatever you're doing. But on day trading, you want to focus on price action.
+[   98.83s ->   105.63s] So what you want to do is you want to go over here and you want to remove everything and get down to the basics.
+[  106.13s ->   114.87s] Alright guys, I'm going to teach you briefly how I personally have price action, draw trends and do that on my chart so I can day trade.
+[  114.87s ->   127.07s] Alright, so looking here, I always go to the daily first. The daily shows key significant levels. As you can see here, we have an all time high here back from around September, October in 2018.
+[  127.65s ->   133.97s] Right? We have this high. We know that highs and tops are going to be new resistance levels in the future.
+[  134.47s ->   141.19s] We also see high, high, high. We have this resistance that came into effect here. We're able to trade the downside because we know this.
+[  141.19s ->   144.65s] So basically, start drawing support and resistance zones. Right?
+[  145.07s ->   153.25s] So, alright, because basically what support and resistance is, is the essence is, this is a market. This is an economy. This is how economics works.
+[  153.33s ->   158.71s] You have zones of supply and you have zones of demand. Right? Demand is where people are willing to buy something.
+[  159.17s ->   163.25s] Supply is where we have too much in production so people don't want to buy as much.
+[  163.63s ->   167.57s] So our support zones are our demand zones. That's where people want to buy.
+[  167.57s ->   171.05s] People want to buy at this price level until they don't. Right?
+[  171.47s ->   176.81s] People have too much in supply here that they start to sell off so it starts to come down.
+[  177.25s ->   182.77s] This is an economy. So when you're drawing these zones, you're basically drawing, alright, in this level of price right here,
+[  183.03s ->   188.49s] between $279 or $280 and $282, we have this supply zone.
+[  188.83s ->   193.47s] This is where there's too much in production and it starts to sell off because it's not worth as much.
+[  193.47s ->   200.69s] And we see that until it isn't. When we get above these supply zones or resistance zones, then we start to come up.
+[  200.69s ->   206.03s] And almost every single time, if you're paying attention to price action, when you break above a resistance,
+[  206.15s ->   211.87s] you come back and you retest that as support. The same thing happens with breaking through support.
+[  212.03s ->   215.13s] So you can see here, we broke through. Let me give you a closer just so you can see this.
+[  215.53s ->   219.99s] We broke through or we validated a support here.
+[  219.99s ->   223.91s] Then we broke through it. Then we came up to retest and then we broke through, right?
+[  224.13s ->   230.53s] It's all about understanding your zone. So when you're drawing support lines, make sure you're taking into effect previous lows.
+[  230.65s ->   237.39s] You can see here, low, low. This is a support zone. High, high. This is a resistance zone. High, high resistance.
+[  237.77s ->   240.13s] We could even draw so many back from here.
+[  240.13s ->   249.23s] But I'm just focusing on the major ones on the daily to say, hey, if it hits these lines, this is a major daily support that I just have to watch out for.
+[  249.83s ->   255.43s] So something else that I've seen traders do is you can actually go in on TOS or whatever your trading platform is.
+[  255.87s ->   263.99s] You can edit the properties and you can change the color so that when you see, let's say, you want your daily levels to be yellow.
+[  263.99s ->   270.21s] When you see a yellow line on your one-minute chart, you know that it's a strong daily support and it just helps you see that.
+[  270.71s ->   275.47s] So remember, we're focusing on price action. So that is price, that is the charts, and that's all we are looking at.
+[  275.85s ->   284.01s] In the mornings and throughout the trading day, we still want a bigger time frame to look out for to see the trends that are going on within the larger trends.
+[  284.45s ->   287.25s] It's the same thing based off of Elliott Waves.
+[  287.25s ->   296.41s] If you know what that is, you basically, if you go to the daily, you can have an Elliott Wave set up, but you can have an infinite amount of waves inside that wave.
+[  296.71s ->   301.39s] So, right, this is a wave up, but you can also have a bajillion different waves inside this one wave.
+[  301.71s ->   307.41s] Basically saying, you can have different type of trends and an uptrend, right?
+[  307.73s ->   316.19s] Since 2019 this year, we've had an uptrend so far, but we've also had on the 15-minute a minor downtrend, a minor downtrend, a minor downtrend, an uptrend, right?
+[  316.19s ->   325.47s] So we also, in addition to knowing our daily overall trend, we need to keep in mind, okay, the overall trend long-term is uptrend.
+[  325.69s ->   334.09s] But going to the 15-minute, at least last week, we had, all right, or two weeks ago, we had a minor trend of down, right?
+[  335.07s ->   337.57s] Trends, you're going to connect the highs and the lows.
+[  337.91s ->   340.47s] So connecting the highs here, it's showing a downtrend.
+[  340.77s ->   343.77s] And connecting here, it's showing a downtrend, right?
+[  343.77s ->   345.69s] Because the channel's moving down.
+[  346.21s ->   352.25s] So when I was predicting, I think it was on Tuesday, I was like, guys, it looks like we have a high at 285.
+[  352.39s ->   359.85s] I was saying that because the market was here, we hit this support on the daily, so I knew that we were going to find some support here.
+[  359.91s ->   361.51s] We started to gap up and push up higher.
+[  362.19s ->   364.47s] And then we had 285, right?
+[  364.49s ->   366.67s] I saw this zone coming down.
+[  366.77s ->   370.03s] So I said, we're going to have some resistance at 285, or we're going to break above.
+[  370.03s ->   374.53s] And we saw that resistance because we identified charts on the 15 minutes.
+[  374.63s ->   381.25s] So the next step, after going to the daily, is looking at the 15-minute chart and understanding the minor trend of the day.
+[  381.59s ->   385.77s] So even though we are in a long-term uptrend, the minor trend was down for these past few weeks.
+[  386.13s ->   390.83s] Now that we bounced and we broke through this downtrend line, we are now forming an uptrend.
+[  390.95s ->   391.51s] Look at that.
+[  391.51s ->   396.41s] The bottoms are connecting, the tops are connecting, and we're moving back in an uptrend.
+[  396.67s ->   397.61s] That's all it is.
+[  397.67s ->   398.61s] We're trending down.
+[  398.73s ->   399.47s] We hit a support.
+[  399.57s ->   400.39s] We trend up.
+[  400.69s ->   402.83s] It's just movement and understanding price action.
+[  403.19s ->   411.95s] If you would have taken calls here, long-term calls, you probably would have been more profitable than waiting for your indicator to indicate that movement up.
+[  412.41s ->   413.87s] Right, guys, we're just looking at price action.
+[  413.99s ->   419.21s] We're understanding support and supply, well, support and resistance zone, supply and demand zone,
+[  419.21s ->   425.49s] understanding that this is the economy, this is the market, it focuses on news, it focuses on how many stock shares are available,
+[  425.81s ->   430.69s] what does everybody want at different price levels, and we can definitely see that through, number one, price.
+[  430.83s ->   432.69s] Number two, volume.
+[  433.11s ->   434.35s] Volume shows a lot.
+[  434.43s ->   436.81s] That is the next part of understanding price action.
+[  437.29s ->   445.39s] When you're looking at areas of support and resistance, you're going to be looking for, especially support, you're looking for increased volume.
+[  445.39s ->   450.63s] So if you can see here, daily chart, just trending, the volume is about here, right?
+[  450.73s ->   452.19s] Or I guess that's just the highest.
+[  452.27s ->   454.25s] But if you want to average, it looks like it's about here, right?
+[  455.37s ->   463.83s] But looking at the support here at the past week on around, looks like it was Monday, when we validated 281,
+[  463.83s ->   470.55s] you can see here that the volume jumped up because people are saying, hey, this is a good value to buy here.
+[  470.97s ->   476.15s] The market works when people all move together, when people all think the same thing will happen,
+[  476.23s ->   481.49s] it's guaranteed to happen because everyone is taking the same assumption and taking the same steps.
+[  481.95s ->   484.65s] So how do we know people are taking the same steps?
+[  485.09s ->   486.83s] Well, we see that it's starting to form support.
+[  486.95s ->   488.21s] We see volume is coming in.
+[  488.27s ->   490.19s] We see people are buying shares.
+[  490.19s ->   493.53s] People are doing stuff at this level and it's holding.
+[  493.93s ->   498.65s] If it was falling through and the volume was increasing, we would say, okay, people don't want this level
+[  498.65s ->   501.89s] and they're selling off everything they have, right?
+[  501.95s ->   505.67s] But no, we saw that we were holding this level and we saw volume coming in.
+[  505.75s ->   508.89s] So we're saying, all right, this is a validated support zone.
+[  509.25s ->   511.29s] The same thing happened here when we reached this high.
+[  511.85s ->   514.97s] Volume got up high because they didn't want this level.
+[  515.05s ->   516.91s] They were selling off everything they had.
+[  516.91s ->   521.97s] So in addition to price, also always pay attention to volume.
+[  522.35s ->   527.65s] After that, you finally move in to your one minute chart or your five minute, your closer
+[  527.65s ->   533.15s] term time frame and you understand the long term, the short term and then you get into
+[  533.15s ->   535.93s] your one minute and that's how you start trading.
+[  536.51s ->   537.21s] All right, guys.
+[  537.29s ->   538.29s] I hope that made sense.
+[  538.37s ->   539.55s] I hope you love this price action video.
+[  539.61s ->   540.51s] I know this was requested.
+[  541.05s ->   545.15s] I'm going to start doing more tutorial videos because I realize I haven't done that many lately.
+[  545.15s ->   548.99s] So if you want that, please comment and let me know what exactly you want me to cover.
+[  549.09s ->   550.69s] I would love to cover anything and everything.
+[  550.81s ->   554.47s] The stock market is what I love to teach and love to do and love to talk about.
+[  554.81s ->   555.87s] I would love to talk about it.
+[  555.91s ->   556.75s] Just give me a topic.
+[  556.89s ->   557.27s] All right, guys.
+[  557.35s ->   558.21s] Thank you for watching.
+[  558.35s ->   560.87s] Please like, comment and subscribe.
+[  560.87s ->   561.09s] All right.
+[  561.09s ->   561.11s] All right.
+[  561.11s ->   561.33s] All right.
+[  561.33s ->   561.35s] All right.
+[  561.35s ->   561.71s] All right.
+[  561.71s ->   562.07s] All right.
+[  562.07s ->   562.35s] All right.
+[  562.35s ->   562.61s] All right.
+[  562.61s ->   562.67s] All right.
+[  562.67s ->   562.77s] All right.
+[  562.77s ->   563.21s] All right.
+[  563.21s ->   563.27s] All right.
+[  563.27s ->   563.31s] All right.
+[  563.31s ->   563.77s] All right.
+[  563.77s ->   564.21s] All right.
+[  564.21s ->   564.31s] All right.
+[  564.31s ->   564.71s] All right.
+[  564.71s ->   565.31s] All right.
+[  565.31s ->   565.33s] All right.
+[  565.33s ->   565.37s] All right.
+[  565.37s ->   565.71s] All right.
+[  565.71s ->   566.27s] All right.
+[  566.27s ->   567.27s] All right.
+[  567.27s ->   567.37s] All right.
+[  567.37s ->   567.47s] All right.
+[  567.47s ->   568.27s] All right.
+[  568.27s ->   569.37s] All right.
+[  569.37s ->   569.43s] All right.
+[  569.43s ->   569.47s] All right.
+[  569.47s ->   570.37s] All right.
+[  570.37s ->   571.37s] All right.
+[  571.37s ->   571.47s] All right.
+[  571.47s ->   572.37s] All right.
+[  572.37s ->   573.37s] All right.
+[  573.37s ->   573.47s] All right.
+[  573.47s ->   574.37s] All right.
+[  574.37s ->   575.37s] All right.
+[  575.37s ->   576.37s] All right.
+[  576.37s ->   577.37s] All right.
+[  577.37s ->   578.37s] All right.
+[  578.37s ->   579.37s] All right.
+[  579.37s ->   580.37s] All right.
+[  580.37s ->   581.37s] All right.
+[  581.37s ->   582.37s] All right.

@@ -1,0 +1,191 @@
+[    0.04s ->     8.40s] Hey team, welcome to this Options Trading Masterclass. In this lesson, I'm going over a very important topic because we're at a crucial level in the market where it's very likely to crash.
+[    8.46s ->    20.92s] I want to show you what hedge to put on right now to not only survive, but to profit from the 2024 crash or at least downtrend that might happen as a result of us being super overextended right now in the market.
+[   20.92s ->    33.46s] So in this lesson, I'm going over explaining the strategy, what it is and why it works step by step. I'm showing you a bag test to prove that this would work and also show you where it will fail so you can stay out of the market during those times.
+[   33.82s ->    40.28s] I'm showing you a real trade example, how to actually put this trade on with a live broker so you can see how it works.
+[   40.42s ->    44.84s] And also I'm going to offer some solutions for if you have a smaller account of how to do this as well.
+[   44.84s ->    52.66s] And I'm going to show you how to automate it so that you don't have to worry about if a crash comes or not. Your accounts can be perfectly handled for you.
+[   53.02s ->    64.50s] Now, if you stay until the end of this video, not only will you learn what this hedge is, how to put it on and how to use it to make hundreds of thousands of dollars during a crash, depending on how you set up the trade.
+[   64.76s ->    69.68s] But you'll also get my free ratio hedge strategy PDF guide so you know exactly how to put on the trade.
+[   69.68s ->    78.76s] You'll get my when to trade what strategy PDF guide and you'll get free access to my private community where you can ask me questions and get my help and see my trade.
+[   78.88s ->    81.82s] So that's everything you get if you just watch this video.
+[   81.94s ->    86.16s] So I hope you are watching. Let's dive in. How does this trade work?
+[   86.22s ->    93.50s] Well, as we've been talking about, let me make my face smaller, that there are great strategies in the market to make monthly income.
+[   93.50s ->   103.28s] 1-1-2's, 1-1-1, short puts, strangles, etc. But when we get to an overextended period like we are right now, a snapback is likely.
+[  103.42s ->   110.74s] And why is that? Well, like I've been showing you, this Bollinger Band is a great example of showing what the normal levels for the market are.
+[  111.04s ->   116.28s] You can see here every time we exceed either to the upside or the downside, we snap back.
+[  116.28s ->   121.18s] So you can see here the market snapped below this and then pushed up and then went below and snapped back up.
+[  121.40s ->   126.98s] We can see here snap or breaks above and snaps down. And right now we are really high above this level.
+[  127.14s ->   133.50s] The last time we were that high above the level, it was, well, here in 2018 and we snapped down hard.
+[  133.66s ->   139.34s] And also here in 2020 where we were up above it a while and then it snapped back really, really hard.
+[  139.34s ->   146.08s] So this is something we need to be careful of. And although selling options are a great strategy, we need to have hedges on that are cheap,
+[  146.18s ->   153.98s] but offer a lot of protection to provide us in times like we are right now at this all-time high, high level where a pullback is very, very likely.
+[  154.12s ->   159.26s] We're already starting to see here on the day, right? But anyways, let's start and look at how this trade works.
+[  159.32s ->   165.20s] This trade works and we structure it when the market is above this Bollinger Band.
+[  165.20s ->   171.06s] What is that? Well, I go to my indicators. I add the Bollinger Band, B-O-L-L-I-N-G-E-R bands.
+[  171.76s ->   177.50s] I go into the settings and then from there I make it 200 with a standard deviation of 2.1.
+[  177.58s ->   180.56s] So I put on this hedge every time the market is above it.
+[  180.78s ->   186.84s] I can also put on the inverse of this hedge when it breaks to the downside, but I can also just sell puts.
+[  187.14s ->   192.18s] So that's why I'm showing you this upside protection, well, upside protection for the downside move.
+[  192.18s ->   195.38s] So that's what it is, and this is the performance.
+[  195.56s ->   201.04s] You can see here during crash periods or downtrends, it performs really, really well.
+[  201.22s ->   207.92s] You can see here during this 2020 slow downtrend move, it made about $300,000.
+[  208.46s ->   214.36s] So let me walk you through how this trade is structured outside of seeing how it performs with crashes,
+[  214.44s ->   215.72s] how it does well during crashes.
+[  215.88s ->   219.70s] So we would have been in here and made a couple tens of thousands.
+[  219.70s ->   224.38s] We would have crashed here, it would have made about $100,000, crashed here, would have been about $10,000 profit,
+[  224.56s ->   226.62s] and then here about $300,000 profit.
+[  226.72s ->   228.84s] So you can see here on the crashes this works.
+[  229.02s ->   232.08s] Now let me show you how to actually structure this trade for an account.
+[  232.66s ->   233.94s] So I'm going to start off.
+[  234.04s ->   236.14s] These are two options to set up this trade.
+[  236.26s ->   240.02s] One is on ES, which is the ES futures, and you're going to have to have a larger account.
+[  240.36s ->   246.04s] You need at least $1,000 to put that trade on, and you need to be okay with losing that $1,000.
+[  246.04s ->   251.10s] Now if you're right, you're going to have a really large payout, but I'm going to show this for the smaller account first.
+[  251.20s ->   255.04s] So we're going to set this trade using MES.
+[  255.64s ->   262.46s] So again, if we follow the PDF guide that you'll get at the end of this video, we go in here to the 45 days out.
+[  262.82s ->   265.54s] We buy a 40 delta put.
+[  265.54s ->   268.14s] So I put that to very close to the market right now.
+[  268.24s ->   272.56s] This means that if the market drops below this level, it's going to start making a lot of money for this put.
+[  272.92s ->   282.18s] Now again, this put will cost us $1,000 to put on, and we don't really want to spend a lot of money to put this trade on.
+[  282.50s ->   285.50s] Or I should say around $300 to put on this trade.
+[  286.24s ->   288.74s] So structuring this trade, I'm going to go to the 45-day mark.
+[  289.04s ->   292.80s] I'm going to buy a 40 delta, which is very close to the current market.
+[  292.98s ->   294.64s] Let me remove that, close to the 40 delta.
+[  295.28s ->   299.70s] And that means as long as the market drops below 40, this put will be printing money.
+[  300.02s ->   305.02s] I'm going to go to the 7 delta mark and sell two puts.
+[  305.12s ->   306.02s] Why sell two puts?
+[  306.02s ->   308.00s] Because it costs a lot of money to buy a put.
+[  308.14s ->   313.46s] So if I sell two, it's going to help offset the price of me buying that one put.
+[  313.46s ->   314.96s] And now look at that.
+[  315.02s ->   319.40s] I only have to put up $5 in collateral for this trade.
+[  319.50s ->   324.66s] Now I'll actually have a $153 loss on this trade if the market doesn't drop.
+[  324.88s ->   326.28s] But now let's look at the curve.
+[  326.36s ->   327.32s] What is my max profit?
+[  327.46s ->   328.20s] $1,800.
+[  329.00s ->   330.54s] Isn't that quite crazy?
+[  330.86s ->   334.96s] So if I zoom out here and go in here, I'm going to have a loss of about $200
+[  334.96s ->   341.48s] if the market stays where it's at or goes up and moves forward and goes higher.
+[  341.94s ->   345.94s] And again, hopefully I have on positions that will make money as the market goes higher.
+[  346.12s ->   349.30s] But this hedge will make money as the market drops.
+[  349.40s ->   353.66s] You can see here as soon as the market starts dropping from where it is now, I start making money.
+[  354.08s ->   360.56s] Now my max profit is right here, $1,800, which is a great profit for only putting up $160 about.
+[  360.56s ->   365.54s] And so $160, the chance to make $1,800, that's 10x on my money.
+[  366.08s ->   370.16s] And again, we want to put these on when we have the highest chance of the market pulling back,
+[  370.24s ->   371.52s] which is when it's overextended.
+[  371.78s ->   373.86s] So right here, this is the ES trade.
+[  373.92s ->   375.52s] This is called a ratio spread.
+[  375.58s ->   377.94s] And when we structure it like this where it's at a loss,
+[  378.32s ->   381.00s] then we have the chance to create this huge hedge and huge profit.
+[  381.48s ->   386.40s] Now where are we going to close this for a take profit and for a stop loss?
+[  386.50s ->   389.62s] Well, take profit is we're going to let this expire.
+[  389.62s ->   393.58s] So either it expires and we lose the max amount on this side, about $200,
+[  394.12s ->   398.22s] or it expires in this zone and we make $1,000 or so.
+[  398.84s ->   402.42s] Now where we want to close it, if it breaks below our break-even point,
+[  402.50s ->   405.70s] our break-even point is right here at $4,290.
+[  406.22s ->   412.40s] That means the market is going to have to drop over 800 points for that to happen.
+[  412.56s ->   413.82s] So it's very unlikely.
+[  414.00s ->   418.00s] But if it does get here, then we'll close the trade for an early exit.
+[  418.00s ->   419.90s] And it's going to be about a break-even trade.
+[  420.00s ->   422.00s] So there's going to be no loss on it anyways,
+[  422.10s ->   423.84s] but it's going to prevent any downside risk.
+[  424.54s ->   428.38s] So this is the ratio spread on a small account in the S.
+[  428.44s ->   431.30s] Now, if we're doing a big boy trade on ES,
+[  431.62s ->   433.44s] we're going to structure the trade the same exact way.
+[  433.50s ->   437.28s] Go out to 45 day mark, go buy the 40 Delta put,
+[  437.28s ->   443.94s] go to the seven Delta and sell two of them to help offset the price, just like this.
+[  444.28s ->   446.22s] And this creates the same thing.
+[  446.60s ->   456.34s] But now I have to, if I lose, I lose $1,500, but my max profit is $18,000.
+[  456.90s ->   460.60s] Now, again, for this trade, I only have to put up $26 because they're like,
+[  460.68s ->   461.88s] oh, it's a very consistent trade.
+[  462.38s ->   465.86s] So I don't have to put up any money, but if I do lose, I will be losing a lot.
+[  465.94s ->   466.86s] So just to keep that in mind.
+[  467.56s ->   469.32s] So again, here's that trade.
+[  469.40s ->   473.94s] I will lose $2,000 if the market stays where it's at or goes up.
+[  474.10s ->   478.66s] But if the market drops, I can make as much as $18,000.
+[  479.22s ->   480.66s] Guys, that's an insane return.
+[  480.74s ->   484.60s] That's almost a 10 X return on my, on my potential loss.
+[  484.70s ->   486.70s] But on the money that I actually have to put up,
+[  486.74s ->   488.80s] I actually have to put up $26 for this trade.
+[  488.96s ->   491.20s] I'm making like a thousand X on my return.
+[  491.34s ->   493.04s] So that's how amazing this hedge is,
+[  493.08s ->   497.64s] especially when we save it for when the market is overextended, like right now.
+[  497.64s ->   500.70s] So if you have current positions on that are long, that you're scared about,
+[  501.16s ->   506.42s] go and put on this hedge and it will help you prevent any downside risk
+[  506.42s ->   509.68s] or downside, you know, movement.
+[  509.78s ->   511.18s] Because as the market moves down,
+[  511.28s ->   513.46s] your short puts or anything you have will lose money.
+[  514.14s ->   518.66s] But then this hedge will offset that, making it a smoother ride down.
+[  518.78s ->   521.04s] And even if the market does continuously downtrend,
+[  521.04s ->   525.50s] like we did see in 2021, we're continuously downtrend,
+[  525.54s ->   529.18s] and we can make $300,000 by just putting on this trade once a week.
+[  529.64s ->   532.98s] Anyways, guys, that is an amazing hedge that I want to show you.
+[  533.08s ->   535.08s] Now let me show you how to save time
+[  535.08s ->   538.56s] and how to automate the strategy because that's what's most important, right?
+[  538.86s ->   540.58s] So you're not always going to be available,
+[  540.58s ->   542.64s] whether it's at your kid's ball game
+[  542.64s ->   545.42s] or it's spending time with your wife on a date night,
+[  545.44s ->   547.36s] like you know she needs and wants, right?
+[  547.44s ->   551.08s] Or taking time away from work to actually relax and decompress.
+[  551.16s ->   552.92s] You don't want to be stuck to the screen.
+[  553.00s ->   554.54s] So how do we automate this?
+[  554.86s ->   559.44s] Well, we use the auto trader here that I am releasing in like two days.
+[  559.44s ->   562.88s] So it's going to be releasing very soon on Monday, February 19.
+[  562.88s ->   565.38s] So make sure you click the link down below to get early access.
+[  565.54s ->   568.34s] But anyways, we're going to click create a new auto trader.
+[  568.54s ->   570.22s] I'm going to connect my broker.
+[  570.54s ->   572.72s] So we can see here after connecting my account,
+[  572.76s ->   576.62s] I can go to create a strategy or select a proven preloaded one,
+[  576.72s ->   578.92s] but I'm going to select the ratio spread.
+[  579.68s ->   581.18s] It's going to show me what this looks like,
+[  581.20s ->   582.54s] where I'm going to sell two and buy one.
+[  582.62s ->   585.46s] This is kind of what it looks like if you structure it normally.
+[  586.06s ->   588.42s] But what I'm going to do here is I'm going to come here onto the ratio spread.
+[  588.46s ->   589.12s] I'm going to change it.
+[  589.12s ->   593.86s] So I'm going to do sell the two seven deltas and the buy the 40 delta put.
+[  594.08s ->   596.50s] This will create the hedge that I'm looking for.
+[  596.78s ->   600.14s] This hedge, again, if I have a larger account, I'm going to do EES.
+[  600.26s ->   602.14s] If I have a smaller account, I can do MES, whatever.
+[  602.72s ->   606.86s] Then I'm going to do the 45 days until expiration instead of doing monthly,
+[  607.06s ->   608.44s] which is what you kind of want hedges to be,
+[  608.50s ->   610.52s] because it assumes that you're putting this on for a hedge.
+[  611.04s ->   613.32s] Then I go weekly on Wednesday.
+[  613.32s ->   616.70s] And then, again, I'm going to have no stop losses, no take profit.
+[  616.78s ->   618.68s] I could do an early management at 21 days.
+[  618.76s ->   619.60s] That might help, too.
+[  620.46s ->   622.98s] If I really want to do a stop loss, I can.
+[  623.38s ->   626.46s] Stop loss would be around 100%.
+[  626.46s ->   630.90s] So 100% would be that whatever my max loss is on that one side.
+[  631.00s ->   632.66s] Remember, for EES, it's like $2,000.
+[  632.82s ->   634.34s] For MES, it's like $200.
+[  634.96s ->   638.58s] So as long as I hit that $200 loss, it will take me out.
+[  638.72s ->   639.70s] So 100%.
+[  639.70s ->   645.29s] Coming here, my buying power, how much money I want to allocate to it.
+[  645.31s ->   646.41s] Let's just say $20,000.
+[  647.65s ->   649.67s] And then a market crash safeguard.
+[  650.21s ->   654.49s] So the market crash safeguard, when you're creating a hedge like you are here,
+[  654.59s ->   656.95s] a ratio spread, it thinks that you're putting on a hedge.
+[  657.07s ->   663.29s] Again, there's other ways in this auto trader to specify whether a ratio spread is a hedge or not.
+[  663.29s ->   666.13s] But if you classify it as a hedge, like I did on this one,
+[  666.81s ->   671.17s] then if you enable market safeguards, then when it crashes, it's likely,
+[  671.61s ->   676.19s] when it's coming, when there's a high chance of it, it will actually enter the trades for you.
+[  676.23s ->   678.63s] So this creates an entry criteria.
+[  678.99s ->   683.97s] So that is what is great about this hedge is it does and manages it all for you.
+[  684.39s ->   687.91s] Now I have a hedge that when the market, oops, sorry about that.
+[  687.95s ->   689.07s] That's an error that I'll fix up soon.
+[  689.07s ->   693.07s] When the market is overextended like it is right now,
+[  693.23s ->   698.89s] I will be able to have this auto trader execute this for me to make upwards of $300,000
+[  698.89s ->   701.93s] during a market downtrend if I use ES.
+[  702.57s ->   707.11s] All right, guys, if you want to get early access to this auto trader and get a discount on it,
+[  707.41s ->   711.37s] and you want access to the ratio hedge strategy PDF guide,
+[  711.37s ->   716.73s] as well as the knowing what strategy to place and win PDF guide,
+[  716.99s ->   720.87s] then click the link down below to join my waitlist community.
+[  721.77s ->   728.13s] This is an amazing trader group where we talk about trades, ideas, trade alerts, profits, ideas,
+[  728.27s ->   733.19s] and there's also a ton of classrooms here so you can learn about options if you're new.
+[  733.27s ->   735.15s] Not only that, inside this group, if you're here,
+[  735.19s ->   737.69s] you'll get early access to the auto trader and a discount.
+[  738.11s ->   739.65s] All right, guys, thank you so much for watching.
+[  739.65s ->   744.55s] I hope you're excited. Stay tuned for your email and YouTube for February 19th
+[  744.55s ->   749.31s] when I'm officially releasing the auto trader to only 10 beta testers.
+[  749.37s ->   751.23s] So if you want to be one of the 10 beta testers,
+[  751.39s ->   753.31s] make sure you pay attention and mark the calendar.
+[  753.65s ->   755.29s] All right, guys, see you on Monday.

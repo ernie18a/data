@@ -1,0 +1,131 @@
+[    0.00s ->     6.00s] 2025 has come and gone. So let's take a look and see how our $115,000 public portfolio
+[    6.00s ->    15.78s] has performed this year. And year-to-date, we are up 38.42% as compared to the 18.74%
+[   15.78s ->    21.28s] that the S&P 500 returned this year, which means that we're beating them by close to 20%.
+[   21.28s ->    27.70s] This portfolio is predominantly a put-selling, option-selling-only account. We are using
+[   27.70s ->    32.54s] options to increase our total return so that we can accelerate our road to retirement. So let's
+[   32.54s ->    39.08s] take a look at what allowed us to get this close to 40% return this year. If you guys are looking to
+[   39.08s ->    45.18s] build repeatable systems that helps accelerate your road to retirement through options, then you guys
+[   45.18s ->    50.22s] might want to stick around for this video. There are a couple parts to this performance, right? And so
+[   50.22s ->    54.04s] we're going to break down the first one, the first one, which is the credit that we collected. If you
+[   54.04s ->    58.90s] hop on over to our dashboard, this tells us the year-to-date performance on the options that we
+[   58.90s ->    65.50s] closed and realized profit on this year. And this year alone, we made $10,742 of total credit,
+[   65.74s ->    75.06s] which accounts for 31.7% return on the invested capital. We still have around $1,100 of open premium
+[   75.06s ->    81.68s] that will expire later on next year. So if we combine everything this year, if you just look purely
+[   81.68s ->    90.48s] at cash flow, we collected close to $11,842 of premium. And then let's talk a little bit about
+[   90.48s ->    96.28s] how we got this quote unquote profit. And then we'll take another view at our cash flow. If you
+[   96.28s ->   105.18s] hop on over to our stats, okay, you can see that most of our trade outcomes is from rolling. 80% of our
+[  105.18s ->   109.72s] trades were rolled, two were bought to close, which means that I didn't end up rolling them out. I just
+[  109.72s ->   114.64s] closed them and opened them up at a later date or moved on to a different stock. Five of them got
+[  114.64s ->   118.84s] assigned and eight of them expired out of the money. And then if you hop on down here, you can
+[  118.84s ->   124.24s] see cash secured puts are a predominant part of our strategy, accounting for 99.7% of our profit.
+[  125.10s ->   130.60s] Covered calls around $33.65. We'll talk a little bit more about the system later on. And you can see
+[  130.60s ->   136.48s] we're only trading like six tickers here, NVIDIA, TSM, Figma, IoT, Nii, and IBQR with NVIDIA and TSM
+[  136.48s ->   143.44s] accounting for around 62% or 63% of our total profit. And let's take a step back and talk a
+[  143.44s ->   146.68s] little bit about our system that we talked about in our masterclass. I'm going to summarize it right
+[  146.68s ->   153.10s] here. When we're selling puts, the first thing is that we only sell cash secured puts, which is we
+[  153.10s ->   160.30s] only sell puts if we can afford to buy a hundred shares of that stock. Number two is we never buy
+[  160.30s ->   166.44s] back an option at a loss. We would rather them get assigned, as you can see from the five options
+[  166.44s ->   174.20s] that were assigned. Number three is we are targeting around a 1.5% to 2.5% monthly yield,
+[  174.60s ->   180.20s] slightly different from the P&L graph that I showed you earlier. Four, we only sell puts on stocks that
+[  180.20s ->   186.64s] we want to own for the long term. Great companies at great values. And we talk about that in depth
+[  186.64s ->   192.06s] in our portfolio updates that I'll also link in the upper right-hand corner right here. Which means
+[  192.06s ->   198.44s] that our put selling strategy is actually a stock acquisition strategy. We are selling puts on stocks
+[  198.44s ->   204.84s] that we want to own and have high conviction on for the long term, and we get paid while we wait for
+[  204.84s ->   209.66s] our puts to get assigned. Okay, I highly recommend you guys check out that video. If you guys are
+[  209.66s ->   215.52s] interested in how we build the system. And then lastly, we only roll if we can get credit for it
+[  215.52s ->   223.60s] around a 1% to 2% every single month. If we can't, then we just let them get assigned. I also made a
+[  223.60s ->   228.06s] video talking about why you should just let these puts get assigned. I'll link in the upper right-hand
+[  228.06s ->   233.60s] corner right here. Now on the call side, we only sell calls in two ways. Number one, we want additional
+[  233.60s ->   239.64s] monthly yield, additional cash flow. Then we sell it at a 0.2% yield every single month. Very, very far out
+[  239.66s ->   244.38s] of the money. We haven't shown this on this channel, but we also use calls as a way to exit
+[  244.38s ->   250.62s] positions. So if a thesis on a stock changes, then we sell calls right at the money and we try to raise
+[  250.62s ->   256.60s] our cost basis as much as possible to try and exit a strategy. Now, if you're not willing to part with
+[  256.60s ->   260.72s] a stock, probably just don't sell calls on it. And you guys want to learn more about comfort calls,
+[  261.12s ->   264.26s] another video linked in the upper right-hand corner. So now that we have that out of the way,
+[  264.34s ->   268.62s] let's talk a little bit about our cash flow, the amount of premium and yield that we collected
+[  268.62s ->   275.64s] each and every month. Remember, we're targeting 1.5% to 2.5% every single month, depending on the
+[  275.64s ->   281.52s] market volatility and market situations. So if you take a look at this cash flow right here,
+[  281.54s ->   286.04s] just look at the yield first. January is where we cleared out this account so that we can do this
+[  286.04s ->   289.94s] challenge. So this one doesn't really count, but I'll just include it in the calculations for now.
+[  289.94s ->   299.66s] You can see that we are averaging 2.4% including January and annualized out to 29.4%. If we exclude
+[  299.66s ->   305.02s] January, we're actually going to be much, much higher. You can see February 3.8%, right? The
+[  305.02s ->   312.58s] lowest month is April, which is 1.3%. But you can see every single month, it's close to around a 2.5%
+[  312.58s ->   316.76s] to 2% yield, right? Sometimes a little higher, sometimes a little lower. And that usually is
+[  316.76s ->   321.64s] because we're being very efficient with our money by rolling them out as they get closer and closer
+[  321.64s ->   326.70s] to expiration. Remember, our average time in this trade is actually 22 days, much less than the 30
+[  326.70s ->   331.60s] to 45 days that we're opening up our puts for. And you can see just our cash flow focus on February
+[  331.60s ->   336.32s] all the way down to December. We collect premium and then we spend money to either roll them out
+[  336.32s ->   340.32s] or close them. 80% of our trades are rolled. So you can see we're spending money to roll it while we
+[  340.32s ->   347.34s] open up a new trade. So we collected $1,600, for example, in February, but we only spent $356 to
+[  347.34s ->   353.64s] close and roll. So we netted out $1,261 at a 3.8% yield. You can see this every single month,
+[  353.72s ->   363.34s] right? Our best performing month was, let's take a look, was March at $1,230. And this is where
+[  363.34s ->   368.00s] volatility was high because of tariffs. And so you can see how volatility actually helps us. But in terms
+[  368.00s ->   373.88s] of actual yield, August was the best because of how efficient we were with our money. This includes
+[  373.88s ->   378.52s] the history of this whole account. From all of last year to this year, we're around $719 a month. But
+[  378.52s ->   384.34s] if you just look at this year, $1,200 a year, which is around $1,000 a month, right? That's how much
+[  384.34s ->   389.94s] we're averaging every single month. Okay, now let's just head on back over to our statistics. And you can
+[  389.94s ->   394.34s] see how the strategy works, right? We're selling predominant cash structure puts because we have a lot of
+[  394.34s ->   400.22s] cash on hand. And we're selling cover calls a little bit to try and add a little bit more
+[  400.22s ->   405.80s] income on top. Now again, focus on the ticker performance. We are looking at acquiring great
+[  405.80s ->   410.16s] stocks at great prices. So you can see we're not trading too many tickers here. We're only trading
+[  410.16s ->   418.30s] six with the predominant major ones as NVIDIA, TSM, that accounts for close again to 63% of our total
+[  418.30s ->   424.80s] credit collected. Now let's focus on another part of our strategy, which is letting our puts get assigned
+[  424.80s ->   430.30s] because they will eventually get assigned. So we see these five trades, we purchased 200 shares of
+[  430.30s ->   437.82s] TSMC back in March, we got assigned on 200 shares of Figma. And then we also got assigned on 100 shares
+[  437.82s ->   444.60s] of IOT earlier this week. Now let's take a look at how these stocks have done. TSM, we have around
+[  444.60s ->   451.38s] 205 shares, but let's just take a look at 200. This stock year today is up 66%. We're up 20 close to
+[  451.38s ->   461.62s] $25,000 on this one stock. On top of that, we have IOT, which is $4,000, which is on 3.6% of our total
+[  461.62s ->   469.06s] account is down 13.62%, which is 700 bucks. And then Figma, which is our biggest loser, we'll talk a
+[  469.06s ->   474.88s] little bit more about this about learnings and how we can improve our execution later on this video is
+[  474.88s ->   483.48s] down 35%, which is around 7% of our total account. So you can see that even with maybe one bad trade
+[  483.48s ->   490.48s] in this account, we're still up close to $20,000 from the puts that were assigned. That's really good,
+[  490.62s ->   494.96s] mainly because we allowed them to get assigned. Again, I would highly recommend you guys watch
+[  494.96s ->   498.54s] that video about why we let our puts get assigned. And this is a very good example.
+[  498.54s ->   506.38s] So you can see $20,000 of capital appreciation, close to $12,000 of credit. So we're at $32,000,
+[  506.54s ->   513.58s] give or take this year alone in terms of returns. Now, the last part of our system is taking some of
+[  513.58s ->   520.92s] the credit and dripping them into stocks that we want to own. Collected close to $12,000 of credit,
+[  521.14s ->   527.42s] we have around $6,000 or so to reinvest into stocks so that we don't miss out on the capital
+[  527.42s ->   533.94s] appreciation as the stock moves up. Because as you can kind of tell with TSM, right, we only collected
+[  533.94s ->   540.80s] $2,000 of credit, but our capital appreciation was $25,000. We want to toe the fine line and get both.
+[  541.62s ->   549.78s] And so you can see NVIDIA, we collected $5,400. Nii, IoT, Figma, IBKR, these were kind of rolled in
+[  549.78s ->   553.32s] to these positions. So we'll just talk about Nii and NVIDIA because those are the cleanest ones.
+[  553.44s ->   557.30s] NVIDIA, we acquired close to $2,000 worth of stock, around half of the credit that we collected.
+[  557.42s ->   565.26s] And we're up around 30%. Look at Nii, we collected around $258 of shares, around three and a half
+[  565.26s ->   570.82s] shares. It's around up 9%. IoT is stuck in here somewhere. You can see we've been dollar cost
+[  570.82s ->   578.56s] averaging in here as we sell puts. And same thing with Figma as we continue to dollar cost average
+[  578.56s ->   584.60s] in at a lower and lower cost basis, as you can clearly see. So let's just talk about how I think
+[  584.60s ->   589.72s] I did managing this account this year. What I did well, what I didn't do so well. So let's just talk
+[  589.72s ->   594.44s] about what I did well, right? As you guys saw in the put selling masterclass, our system isn't
+[  594.44s ->   601.04s] extremely complicated. We are trying to build a repeatable system that is relatively passive so
+[  601.04s ->   607.36s] that we can increase our total returns to accelerate our path to retirement. And I think we followed our
+[  607.36s ->   611.52s] set of rules really, really well, where we never bought back an option at a loss. We rolled them when
+[  611.52s ->   616.14s] we could. And we tried to target that 1.5 to 2% every single month of yield. And you can see how
+[  616.14s ->   622.56s] well we did. And that has allowed us to grow this account by close to 40% year to date. Now, what did I
+[  622.56s ->   627.56s] not do so well? And I think this is probably the coolest part of this video. The takeaway is, as our
+[  627.56s ->   633.54s] account grew, we started selling more on small cap stocks. And we don't talk too much about small cap
+[  633.54s ->   638.52s] stocks. I don't think I performed nearly as well in that category. We use puts as a way to acquire
+[  638.52s ->   644.20s] great companies at good value. And I think when it comes to small cap stocks, patience is really a
+[  644.20s ->   650.30s] virtue here, right? Valuation matters a lot more for small cap stocks because they tend to move a lot
+[  650.30s ->   656.50s] more. Obviously, in the long term, since I have high confidence in both Figma and IoT, especially IoT,
+[  657.08s ->   661.18s] 10 years down the line, if I'm right on these stocks, nothing really matters because they should
+[  661.18s ->   666.90s] appreciate more than the overall market. However, in the short term, the pain can be pretty persistent
+[  666.90s ->   673.04s] because I'm overpaying for the performance that I believe in, right? Figma is cashflow positive,
+[  673.24s ->   677.56s] IoT is cashflow positive. I'm waiting for the market to realize the potential in these stocks. And they
+[  677.56s ->   683.28s] may never come. That's why it's really important for us to be very stringent and very focused on the
+[  683.28s ->   687.92s] value that we're getting when we're buying into this stock. So for example, IoT, I purchased around
+[  687.92s ->   694.08s] of 13 to 14 times price to sales. Figma, I was around 30. So Figma, which is my biggest loser in this
+[  694.08s ->   699.22s] case, I should have been a lot more patient when I was selling puts. Obviously, now I'm dollar cost
+[  699.22s ->   704.18s] averaging into it. I want this to be a larger portion of my account. But in the beginning,
+[  704.38s ->   709.62s] it's a lot more pertinent for us to just be more patient and sell puts when it goes into our high
+[  709.62s ->   713.88s] value zone, as opposed to being opportunistic. So that's something that I'm definitely going to
+[  713.88s ->   719.46s] work on in 2026, as more and more opportunities present itself. Now, if you guys are interested in what
+[  719.46s ->   724.36s] I think is going to happen in 2026, and how I'm positioning myself for that, let me know down in
+[  724.36s ->   728.20s] the comment section below. And if you guys like this video, you guys learned something, consider
+[  728.20s ->   732.00s] liking the video and subscribing to the channel will really help me out. To all the channel members
+[  732.00s ->   737.92s] that are here with me this year, thank you guys so much. I appreciate your support going above and
+[  737.92s ->   742.10s] beyond to support a small channel like mine. It's been a great year. And I can't wait to do more for
+[  742.10s ->   746.42s] you guys. So in 2026. So be on the lookout because we got some cool things coming in for you.
+[  746.42s ->   749.52s] I'm going to link the put selling masterclass right here in the end screen so you guys can
+[  749.52s ->   754.52s] understand the strategy. And then also the playlist of our public portfolios so that you guys can see
+[  754.52s ->   758.78s] the implementation of that strategy. You guys have any comments or questions, let me know down in the
+[  758.78s ->   762.86s] comment section below. And like always, make sure you guys stay safe in the market. Until next time, peace.

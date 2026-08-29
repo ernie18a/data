@@ -1,0 +1,146 @@
+[    0.00s ->     4.72s] I looked through every tool, setting, and chart layout to find 10 amazing hidden gems
+[    4.72s ->     8.24s] on TradingView that you probably didn't even know existed.
+[    8.24s ->    10.32s] Hell, even I didn't know about some of them.
+[   10.32s ->    12.40s] What? I didn't know about this?
+[   12.40s ->    15.76s] So the reason I put all this together is for one solution.
+[   15.76s ->    18.72s] How to become a better trader using TradingView.
+[   18.72s ->    23.52s] Or even more specifically, how do I become a better trader using TradingView?
+[   23.52s ->    28.00s] So I decided to record all the cool hidden gems I found with you guys.
+[   28.00s ->    30.40s] So yeah, leave a like, will ya?
+[   30.40s ->    32.08s] If you've watched my videos before,
+[   32.08s ->    35.52s] you should definitely know I absolutely love TradingView.
+[   35.52s ->    38.40s] In my mind, it's easily one of the best chart platforms out there,
+[   38.40s ->    40.80s] just because it has everything.
+[   40.80s ->    43.04s] To start us off, let's go to TradingView.
+[   43.04s ->    44.32s] I'll leave a link in the description.
+[   44.32s ->    49.04s] If we go to the chart section, this is where the majority of the gems await us.
+[   49.04s ->    50.96s] The first gem is the replay tool.
+[   50.96s ->    53.52s] Now, I use this one all the time.
+[   53.52s ->    56.40s] You can use this tool to replay past chart history.
+[   56.40s ->    58.00s] Now, you might be asking.
+[   58.00s ->    62.24s] Siri, why do I need to replay past chart history?
+[   65.12s ->    67.20s] A bit rude, but Siri's right.
+[   67.20s ->    70.48s] To become a better trader, practice is everything.
+[   70.48s ->    73.84s] And when looking at a full chart the next day, it's easy to say,
+[   73.84s ->    76.24s] Oh yeah, I would have definitely entered right there.
+[   76.24s ->    78.56s] With this tool, you can go to any time frame,
+[   78.56s ->    82.88s] click wherever you want to start, and play out the chart as it would look in real time.
+[   82.88s ->    86.32s] Now, it is going to show full candles from the open to close.
+[   86.32s ->    91.36s] So, it's not exactly like live trading, but still extremely useful for practice.
+[   91.36s ->    94.00s] To do this, just click the replay button up here.
+[   94.00s ->    97.20s] It'll then pop up with a window in this blue selection line.
+[   97.20s ->   100.56s] Click whatever candle you want to start at, then simply click play.
+[  100.56s ->   105.04s] If you want to speed it up or slow it down, you can simply move this dial and it'll do so.
+[  105.04s ->   106.56s] So, yeah, that's pretty cool.
+[  106.56s ->   111.84s] This next tool I literally use every single day, and it's a major time saver.
+[  111.84s ->   114.40s] If you've watched any of my trading strategy videos,
+[  114.40s ->   120.64s] you will instantly figure out that a lot of them have multiple indicators with very specific
+[  120.64s ->   121.12s] settings.
+[  121.12s ->   125.12s] Whenever setting up these strategies, it can be very annoying because you have to search
+[  125.12s ->   129.52s] for multiple indicators and go through each and every one and adjust the parameters,
+[  129.52s ->   133.52s] settings, and colors to your liking for every single indicator.
+[  133.52s ->   137.76s] Then, if you want to switch to a different strategy, you have to do it all over again,
+[  137.76s ->   142.08s] which if you do it enough, you could waste multiple hours doing just this.
+[  142.08s ->   145.04s] Well, let me show you how I speed up this process.
+[  145.04s ->   146.40s] The template tool.
+[  146.40s ->   148.40s] This tool is a huge time saver.
+[  148.40s ->   152.96s] How it works is you simply add all the indicators that you need for whatever strategy you're doing,
+[  152.96s ->   155.28s] then change the settings to whatever your liking is.
+[  155.28s ->   159.04s] Once you have all the indicators added to your liking, go to this template button,
+[  159.04s ->   164.08s] click save indicator template, name it, and it'll save all these indicators and their settings as a
+[  164.08s ->   168.48s] template. So here I have multiple different trading strategies I use. I can just switch
+[  168.48s ->   173.68s] through them with the click of a button and not to spend 10 minutes adjusting them every single time.
+[  173.68s ->   175.12s] Huge time saver.
+[  175.12s ->   180.72s] Speaking about time saving, I bet you didn't know TradingView has a list of keyboard shortcuts
+[  180.72s ->   185.36s] you can use. Just click this hamburger menu up here, scroll down to keyboard shortcuts,
+[  185.36s ->   189.92s] then click whatever section you're interested in. And it'll give you a list of keyboard shortcuts
+[  189.92s ->   192.88s] for that category. So as you can see, there's a lot.
+[  192.88s ->   197.44s] So I'm not going to go through each and every one cause that's boring, but just know they're there.
+[  197.44s ->   202.48s] Now, have you ever thought, oh, I want to remember to get in this stock when it reaches this number
+[  202.48s ->   205.84s] or, oh, this company has really good earnings. I want to remember that.
+[  205.84s ->   210.48s] Well, what I used to do was have a physical journal on my desk and write these notes down
+[  210.48s ->   214.80s] whenever I thought of them. So I could easily just look down and remember that certain thought.
+[  214.80s ->   219.68s] The thing is when trading, sometimes seconds can be the difference between you making money
+[  219.68s ->   224.08s] or you losing money. So the more tools you have on the screen where you already are,
+[  224.08s ->   228.32s] it'll make your life a whole lot easier and will make you a much more efficient trader.
+[  228.32s ->   233.20s] That's when the notes tool comes into play. Just like a journal, you can write down whatever you
+[  233.20s ->   237.92s] want to remember about your trading plays and have it easily accessible right on your chart.
+[  237.92s ->   240.64s] Simple, but a must if you want to be organized.
+[  240.64s ->   243.92s] Speaking about having tools on your chart, you guys are going to like this one.
+[  243.92s ->   250.32s] Imagine being able to actually trade directly on TradingView. Well, TradingView made that possible.
+[  250.32s ->   254.88s] Simply just click the trading panel button and it'll pop up some popular brokers that work with
+[  254.88s ->   259.60s] TradingView. Lots of these brokers are for stocks, some are for forex, some are crypto brokers,
+[  259.60s ->   263.44s] but it gives you a pretty big selection. But you just simply click your broker,
+[  263.44s ->   267.84s] sign into your account, and you can enter and exit trades right from TradingView, which is
+[  267.84s ->   273.04s] freaking awesome. TradingView also offers an option for paper trading. So maybe you're new to trading
+[  273.04s ->   276.96s] and want to practice with fake money. You can simply set up an account and trade with fake
+[  276.96s ->   281.84s] money directly on TradingView to see if your trades are successful and to see if you would make money
+[  281.84s ->   287.28s] or not, which is absolutely great for beginners. Moving on. A huge part of trading is seeing a chart
+[  287.28s ->   292.80s] from multiple perspectives and different timeframes. Maybe you want to see a 1 minute chart and a 5 minute
+[  292.80s ->   298.80s] chart in real time on one screen. Or maybe you want to see a stock your day trading and the S&P 500
+[  298.80s ->   302.96s] side by side to see if they're correlated. Well, that's when the chart layout tool comes in.
+[  303.04s ->   307.20s] Just click this chart icon right here. You can select however many charts you want at once
+[  307.20s ->   312.08s] on one screen, and they give you a ton of selections to choose from. You also have the option to sync
+[  312.08s ->   317.04s] your charts. So maybe you want the charts to switch to whatever ticker symbol at the same time. Or maybe
+[  317.04s ->   320.96s] you want to set it to where if you draw a line on one chart, you want it to show up on the other.
+[  320.96s ->   326.24s] You can do so. This next gem is insanely useful, and you probably didn't even know about it,
+[  326.24s ->   331.04s] because it's pretty hidden. So what you do is go to whatever stock you're interested in,
+[  331.04s ->   335.60s] then of course in the bottom right you have this details page. Here it'll show you some key facts
+[  335.60s ->   340.64s] about the stock, like the volume, earnings, income statement, and so on. Which is pretty cool,
+[  340.64s ->   345.84s] but it gets a lot cooler. So if we scroll down to the bottom, we can see there's this meter.
+[  345.84s ->   350.88s] One for a rating for the technicals, and one for the analyst rating. But if we look closely,
+[  350.88s ->   356.80s] right below this meter is a little button that says more technicals. Click it and it'll bring up this.
+[  356.80s ->   361.44s] Three meters. One for oscillators, one as a summary, and one for moving averages.
+[  361.44s ->   365.84s] Then, if you scroll down, it'll show you exactly how it produced these ratings,
+[  365.84s ->   370.48s] and what factors into them on being a buy or sell. Which is insanely cool.
+[  370.48s ->   375.12s] Then on top of that, you can switch between different timeframes. So you can see if something
+[  375.12s ->   380.16s] is bullish or bearish on the 1 minute time frame, or see what it's like for the long term on the 1
+[  380.16s ->   386.72s] week time frame. Also, as a side note, all of these meters move in real time. Now I'm definitely not saying,
+[  386.80s ->   390.80s] oh, if all three of these meters are strung by, you should definitely enter position.
+[  390.80s ->   395.36s] I'm not saying that at all, but it is a nice feature to look at to get a second perspective
+[  395.36s ->   397.60s] to back up your trading play. So check it out.
+[  397.60s ->   402.32s] Next little gem we have is for chart looks. I get this question all the time.
+[  402.32s ->   405.92s] How did you get your chart to look like that? Mine looks so bad compared to yours.
+[  405.92s ->   409.76s] Well, little Jimmy, let me help you out. If you didn't know the default trading view,
+[  409.76s ->   416.45s] it looks like this. In my eyes, kind of ugly and not very clean. To customize it to your liking,
+[  416.45s ->   420.37s] you can click the setting wheel and it'll take you to the chart settings. Here you can change the
+[  420.37s ->   425.41s] color of your candlesticks, price line, or whatever you like. You can also go to this appearance tab
+[  425.41s ->   429.57s] and change the background of your chart. This is also where you can turn off these annoying background
+[  429.57s ->   434.61s] grid lines to make your chart look a lot cleaner. And just like the indicator templates like we talked
+[  434.61s ->   438.37s] about before, you can do the same type of thing for your chart settings. But first,
+[  438.37s ->   441.25s] can we just acknowledge how disgusting this chart looks?
+[  441.25s ->   446.61s] That's disgusting. Once you have the settings you want, go down here and click the save layout.
+[  446.61s ->   450.77s] This way, if you want to change between two different layouts fast, you can. Also,
+[  450.77s ->   454.69s] if you don't have dark mode on, what are you doing? It's a lot better for your eyes and,
+[  454.69s ->   459.65s] in my opinion, a lot more clean looking than the original look. To do that, just click this hamburger
+[  459.65s ->   465.49s] menu up here and enable the dark color theme and boom, your trading view looks actually decent now.
+[  465.49s ->   469.89s] Next are some of my favorite trading tools. Now, I see a lot of beginners when drawing
+[  469.89s ->   474.69s] their support and resistances, they use this original trend line tool and draw from one point
+[  474.69s ->   478.93s] to another. The thing about this is it's not going to be perfectly straight and it's going to be
+[  478.93s ->   484.53s] crooked. That's when you use the horizontal line tool and it'll draw a horizontal line all the way
+[  484.53s ->   490.29s] across your chart in a perfect straight line. Which brings me to my next point. Say if you're drawing
+[  490.29s ->   495.25s] an ascending support line with the trend line tool. As time goes on, the chart plays out and you're
+[  495.25s ->   499.57s] going to have to constantly move your line up, which can be a pretty annoying process.
+[  499.57s ->   504.61s] Well, the solution, just use this extended line tool and select your two points and it'll go on
+[  504.61s ->   509.25s] indefinitely so you never have to move it. One final tip for the tools section, say if you have
+[  509.25s ->   513.49s] a bunch of lines and drawings on your chart and you just want to look at a clean chart. Instead of
+[  513.49s ->   518.77s] deleting every single line and having to redraw them later, you can just click this icon right here
+[  518.77s ->   523.01s] and you can select if you want to hide your drawings, indicators, or whatever you want, which can
+[  523.01s ->   529.01s] be pretty useful at times. This last one is probably one of the coolest hidden gems on all of trading view.
+[  529.01s ->   533.89s] So maybe you have a specific trading strategy where you enter when the indicators do a specific thing
+[  533.89s ->   539.57s] or when price reaches a certain point and you want to test simply if the strategy works. But you don't
+[  539.57s ->   545.33s] want to spend months testing it or even worse testing it with actual money and it being a losing
+[  545.33s ->   551.33s] trading strategy. Well, what if I told you you could backtest any single strategy on past years of
+[  551.33s ->   557.97s] stock data for any stock and see just how successful that strategy would have been? Well, to your surprise,
+[  557.97s ->   562.29s] you can do that on trading view. Just click this pine editor tab and it'll bring you to where you
+[  562.29s ->   567.01s] backtest. Now I'm going to warn you now, you probably need some type of coding experience to do
+[  567.01s ->   571.81s] this, but it's really not that hard and if I can learn how to do it, you can definitely learn how to
+[  571.81s ->   576.37s] do it. You just type all the code for the indicators and tell trading view the parameters of when you want
+[  576.37s ->   580.45s] to enter and when you want to exit. Once you have all the code typed out, it'll pop up with all the
+[  580.45s ->   585.41s] statistical data and show you key metrics like the win percentage, how much you would have made or lost,
+[  585.41s ->   590.61s] and so much other awesome data. It'll show you every single trade it took and where exactly it
+[  590.61s ->   595.65s] got executed. And you can even see it on the chart of where it took a long or short position.
+[  595.65s ->   600.77s] So why guesstimate on if a strategy is good or not? Use actual statistical evidence to see if
+[  600.77s ->   605.89s] your strategy works. If you haven't backtested before or don't really even know how to code,
+[  605.89s ->   610.53s] luckily for you, I made a video on the basics on how to backtest on trading view.
+[  610.53s ->   620.77s] Thanks for watching, and I'll see you guys next time.

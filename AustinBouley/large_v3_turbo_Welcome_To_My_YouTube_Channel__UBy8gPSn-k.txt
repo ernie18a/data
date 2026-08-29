@@ -1,0 +1,72 @@
+[    0.00s ->     4.80s] Hey, my name is Austin Bully. I've been trading for over 8 years now and I made over $45,000
+[    4.80s ->     9.82s] selling options last year. And on this future channel, I'm going to be giving it all away
+[    9.82s ->    13.66s] and sharing all my secrets. But not only have I been trading, it's been working for myself,
+[   13.76s ->    19.78s] but I've also helped over a thousand other traders personally sell options and have success with it.
+[   20.00s ->    24.04s] If you see here, the leaderboard results of some of my clients, these are connected to real
+[   24.04s ->    28.90s] accounts. You can see here one of my clients made $18,000 so far this month. Another made $15,000,
+[   28.90s ->    32.62s] another made $13,000. Another made $7,000, $7,000, $7,000, $6,000, $5,000, $5,000. So you can see here
+[   32.62s ->    38.20s] what I'm teaching is working for my clients as well, but not to mention the millions of views
+[   38.20s ->    42.54s] that I've got on YouTube so far, helping out people like you. So I wanted to give you a brief
+[   42.54s ->    46.74s] understanding about this YouTube channel in case you're new to show you what's going on and what
+[   46.74s ->    51.96s] I do here. First off, I post videos every single Tuesday and Thursday. So welcome in, make sure to
+[   51.96s ->    56.20s] save your calendar for those dates. What is my trading story though? Let's give you some background
+[   56.20s ->    61.32s] what I am. I found the stock market and started paper trading when I was 16 years old. I opened
+[   61.32s ->    67.26s] up a trading account the day I turned 18 as a birthday present to myself. And I kept funny with
+[   67.26s ->    72.80s] money, working at Kroger. I was a bagger, then a cashier, and I saved up money, put in a trading
+[   72.80s ->    77.12s] account, and I blew up two different trading accounts by trading everything under the sun.
+[   77.34s ->    83.14s] I tried day trading. I tried swing trading, options, binary, Forex, crypto, YOLO options,
+[   83.14s ->    89.62s] everything. But I finally found some consistency, some success when I started selling options. You
+[   89.62s ->    94.86s] may have that story too. But the problem was, is when I went through my first market crash and
+[   94.86s ->   102.58s] volatility spike scenario, I lost $15,000 overnight due to a market drop and a volatility spike,
+[  102.68s ->   108.54s] which absolutely gut wrenching. I was like, what just happened? I felt depressed. I felt like I was
+[  108.54s ->   112.64s] going to lose it all. I was like, how is this possible? I've worked so hard to make this money,
+[  112.68s ->   117.76s] and now it's all gone in a blink of an eye. And so that's pivoted what I was starting to do. I was
+[  117.76s ->   122.14s] like, okay, option selling is consistent. It's amazing. But I need something that helps manage
+[  122.14s ->   127.44s] my positions overnight, that helps me decrease my losses, helps me have fewer losses. And that's
+[  127.44s ->   133.24s] why I went on to building an automation tool to prevent these crazy scenarios. And so I started
+[  133.24s ->   138.90s] using this tool myself after building it for a year, finally saw consistency with fewer losses
+[  138.90s ->   144.42s] and smaller losses when I did have losses. And then I launched this tool called the options auto
+[  144.42s ->   151.74s] trader when I was 23 aka 2023. And I haven't traded since 2024. Like I don't manually place trades and I
+[  151.74s ->   157.42s] haven't done that for almost two years now. And I still make over $40,000 a year each year due to
+[  157.42s ->   162.70s] having this automation software in my options bots. But here's what I want to teach you on this channel.
+[  162.70s ->   167.96s] Look, on this channel, if you've been here before, you know, I teach you the exact strategy step by
+[  167.96s ->   173.62s] step everything you need to know behind how to do it, when to do it, what assets each strategy works
+[  173.62s ->   179.02s] best on as well as the pitfalls to watch out for and how to mitigate them if you can. So I'm going
+[  179.02s ->   182.92s] to be teaching you all the strategies that I've learned over the last four years, and the ones I'm
+[  182.92s ->   187.44s] even using right now to make money in this market. So these videos will be short, straight and to the
+[  187.44s ->   191.78s] point, educational first, and I will give you access to everything. Every single one of these
+[  191.78s ->   196.20s] trainings and videos that I'll be making for YouTube will be done in a Google Doc, it will
+[  196.20s ->   200.94s] go to charts and all that stuff later. But inside this Google Doc, you will have access to it. So
+[  200.94s ->   204.62s] in the first link in the description, you will have access to check out this Google Doc that you can
+[  204.62s ->   209.56s] access any YouTube trainings that as you watch me explain it, you have the actual strategy PDF
+[  209.56s ->   214.20s] guide right there in front of you, you can go use it to trade with. Now, you might be wondering,
+[  214.46s ->   219.76s] what is my goal with posting videos? My goal is simple. My goal is to help you make as much money
+[  219.76s ->   224.38s] as you can as an option seller. So that's absolutely no brainer for you to sign up to
+[  224.38s ->   228.72s] my software, the options auto trader. I'm not going to mention my software a lot when I make
+[  228.72s ->   233.48s] these videos, because that's not the point. The point is to help you make money and to make a lot
+[  233.48s ->   238.02s] of it and to make it consistently. Why? Because if you make so much money that you're like, well,
+[  238.06s ->   241.60s] this is awesome, then you're going to buy deep ball. And again, this is my selfish reason.
+[  241.76s ->   245.32s] You're going to come looking for what else there is to do, which is what my options auto trader
+[  245.32s ->   250.26s] is helps you automate your trading helps you get your time back and helps you have fewer and smaller
+[  250.26s ->   254.98s] losses. But the first goal is just getting started and making money. So that's all I'm talking about
+[  254.98s ->   258.74s] on this channel. Now, if you want to get connected with me, I want to share some things. I previously
+[  258.74s ->   264.00s] had a discord, but I hate discord because of all the scammers. Again, multiple members of our
+[  264.00s ->   267.82s] community have messaged me, they have been scammed, they have sent money to people and first dating to
+[  267.82s ->   272.56s] be me, which is terrible. I hate it. So I'm subject to a new platform called school. It's
+[  272.56s ->   276.76s] completely free. I'll have a ton of trading courses in there in the library section. I'll
+[  276.76s ->   280.78s] go live multiple times a week. And again, that that community is completely free, but it will
+[  280.78s ->   285.88s] be strictly monitored so that no scammers come through. Again, I'm still setting up that new
+[  285.88s ->   290.00s] community. So if you get into it, please know it's still being set up and it's going to be amazing
+[  290.00s ->   295.12s] once it's there. So again, you can go there by clicking the link in the YouTube description down
+[  295.12s ->   300.02s] below. And if you want to check out my software, you can go to www.optionsautosrader.com.
+[  300.02s ->   303.88s] If you've been following me for a while, thank you. I've been on YouTube for about five years
+[  303.88s ->   308.04s] now. So glad that you are here. Again, it means the world to me that you're here. I haven't posted
+[  308.04s ->   311.98s] in about three months because it's taking some time away. My wife and I moved to Tennessee from
+[  311.98s ->   316.34s] Texas. It's been a lot. We got plugged in with the church. It's been amazing seeing God move in
+[  316.34s ->   321.40s] our lives, just really plugging us in. But now that I'm settled, now that I got an office, you can see
+[  321.40s ->   326.36s] here, got the soundproofing going on. We are good to go. YouTube videos will be coming back every
+[  326.36s ->   330.28s] single week and two times a week, every single Tuesday and Thursday. So if you've been here for
+[  330.28s ->   334.34s] a while and you're excited that I'm back, let me know down below in the comments and get ready.
+[  334.46s ->   339.58s] Our first in-depth training will begin on Thursday and all of my videos come out Tuesday and Thursday
+[  339.58s ->   342.60s] every single week. So anyways, thank you. Thank you so much for being here. Hit the subscribe
+[  342.60s ->   344.52s] button and I'll see you in the next video.

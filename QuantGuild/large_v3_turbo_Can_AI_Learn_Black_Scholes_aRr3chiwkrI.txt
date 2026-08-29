@@ -1,0 +1,375 @@
+[    0.46s ->    10.12s] Welcome back. Can AI learn Black-Scholes? More generally, can AI learn to price options?
+[   10.98s ->    15.44s] This is a topic of particular interest to me because it combines data science, machine learning,
+[   15.44s ->    21.06s] artificial intelligence with financial mathematics, areas that I have a great affinity for
+[   21.06s ->    26.64s] and really enjoy studying. This is an area or a topic that I spent a lot of time studying as a
+[   26.64s ->    32.74s] quantitative researcher. So without further ado, I would like to talk about the background required
+[   32.74s ->    39.06s] to understand this problem space. And then I want to walk through very clear, simple, and easy to
+[   39.06s ->    45.22s] understand examples so that we can climb up each rung of the ladder together and understand why
+[   45.22s ->    50.22s] this stream of literature exists in the first place and talk about some very interesting solutions
+[   50.22s ->    55.94s] proposed to solve some very intricate problems. We can develop an argument for Black-Scholes prices,
+[   55.94s ->    62.06s] right? We can assume a geometric Brownian motion, constant volatility, no arbitrage,
+[   62.18s ->    68.80s] no transaction costs, continuous hedging capacity, et cetera. And yes, we can go ahead and use Ito's
+[   68.80s ->    73.32s] lemma. We can derive the Black-Scholes equation, solve that partial differential equation, get
+[   73.32s ->    79.52s] the Black-Scholes model, prices, and generate prices for European calls and puts. That's all well and good.
+[   79.52s ->    87.02s] However, we all know that these assumptions are just not true. We know in practice there are transaction
+[   87.02s ->    92.92s] costs. We know that there is arbitrage. We know that we can't hedge continuously. And of course, volatility
+[   92.92s ->    99.70s] is not constant among other violations and omissions of, you know, the model in the case for the real world,
+[   99.80s ->   107.58s] right? However, there are many models that do aim to capture more dynamics and stylized facts of the market.
+[  107.58s ->   114.24s] So we know that volatility is not constant. So Heston has his model. Dupierre has his local
+[  114.24s ->   120.96s] volatility. We have models that try to treat volatility as either a function locally or as
+[  120.96s ->   126.80s] its own process that evolves throughout time, like a Heston. We also know, for example, that prices can
+[  126.80s ->   131.86s] jump. There are jump diffusion models. We know there are transaction costs and occasional arbitrage and,
+[  131.86s ->   139.02s] you know, so on and so forth. But there is this implicit trade-off, right? If we have a parsimonious
+[  139.02s ->   146.12s] model that is, you know, efficient, something like a Black-Scholes, then we can get an analytically
+[  146.12s ->   151.52s] tractable solution. So the Black-Scholes model is actually a function. You plug in a whole bunch of
+[  151.52s ->   157.24s] parameters and it spits out a price. Something like a Heston, you know, if you consider FFT, that's
+[  157.24s ->   162.30s] totally fine. We have the fast Fourier transform. But something that's more complicated, maybe of
+[  162.30s ->   167.20s] the rough model family, where you have this fractional Brownian motion and long-range
+[  167.20s ->   174.58s] dependency on volatility, then you're not going to have an analytical solution. So what I mean to say
+[  174.58s ->   179.52s] is the more complicated your model gets, the less analytically tractable it probably will be,
+[  179.52s ->   184.96s] and you will require simulation or more computationally expensive means of generating
+[  184.96s ->   190.48s] prices. That isn't too far off or difficult to understand. In essence, what I'm saying is
+[  190.48s ->   194.04s] something like a Black-Scholes with all these assumptions, it's like, yeah, these assumptions
+[  194.04s ->   200.62s] aren't true. But the more things that we assume away, the easier it is to generate a price. And the
+[  200.62s ->   205.78s] less things we assume away, the more difficult it is to generate a price. And that shouldn't be
+[  205.78s ->   212.10s] difficult to see. So something as simple as, you know, removing the constant volatility, so consider
+[  212.10s ->   217.76s] something like a Heston, it becomes very difficult to develop a hedging argument because you don't just
+[  217.76s ->   223.78s] have stock, but you need another option in that portfolio. So I'm going to digress. But there's this
+[  223.78s ->   231.93s] trade-off essentially between model complexity and model efficiency. Now, when we have more
+[  231.93s ->   238.91s] complicated models that, you know, fair enough, they are, you know, less efficient, and they may
+[  238.91s ->   244.45s] not have analytically tractable solutions. So you may need to do some sort of simulation to generate
+[  244.45s ->   255.72s] prices. We very quickly lose capacity to use these models in practice because in real time, we need to
+[  255.72s ->   262.00s] price a very large number of these financial instruments. And what I mean is, you know, generating a whole
+[  262.00s ->   267.70s] bunch of paths and discounting payoffs is great. And you can, you know, approximate prices in that
+[  267.70s ->   273.56s] capacity. But when you're trying to actually price or extrapolate prices based on some sort of market
+[  273.56s ->   281.00s] volatility surface, you need to calibrate your model first to this volatility surface. And this is what
+[  281.00s ->   285.94s] makes it computationally intractable. That is, it's not that, oh, I need to generate a whole bunch of
+[  285.94s ->   290.42s] paths. And, you know, if that doesn't mean too much to you yet, we'll go over what this means in a
+[  290.42s ->   297.04s] moment. But in order to, let's say we can't just plug in our parameters into a function and get a
+[  297.04s ->   302.90s] price like Black Scholes, we have a more complicated model, and we need to simulate a price. Simulating
+[  302.90s ->   307.36s] a price is not as simple as just, okay, let's run like 10,000 simulations and get a price. It's like,
+[  307.42s ->   312.90s] no, no, no, you need to fit that model to a surface first, and all of the different points on that
+[  312.90s ->   318.06s] surface. In order to do that, you need to use some sort of optimization scheme and generate prices
+[  318.06s ->   324.16s] each step of the way. Now, when you do that, you're going to have relative error across obviously all
+[  324.16s ->   329.52s] of your prices because you're simulating them. But moreover, you're going to have to run that
+[  329.52s ->   333.78s] simulation a large number of times because you're not going to fit the surface on your first simulation.
+[  334.56s ->   341.16s] You're not going to fit it on your second simulation, nor your third. So fitting the current
+[  341.16s ->   347.08s] model that you're using to a market surface is a difficult problem, especially if your model is
+[  347.08s ->   353.46s] computationally expensive. You're going to have to simulate a lot of paths. You're going to have to
+[  353.46s ->   361.08s] simulate a lot of paths to generate prices, and this is going to take way too long. So the stream of
+[  361.08s ->   367.80s] literature that I'm discussing today is aiming to do the heavy work, this kind of heavy lifting of
+[  367.80s ->   375.48s] simulating a lot of paths offline when efficiency and timing is not important. And then once you train
+[  375.48s ->   381.54s] an AI or a neural network on the data that you've generated, then in real time, you can just
+[  381.54s ->   385.48s] implement the neural network. And what you have is some sort of function like a Black-Scholes. So it
+[  385.48s ->   390.34s] operates like a Black-Scholes in an analytical way where you give it parameters and it spits out a
+[  390.34s ->   395.96s] price. And this tends to be very, very quick. So essentially what we have is something like a Black-Scholes
+[  395.96s ->   402.14s] that assumes away all of these difficult dynamics, and then we can generate a price. But that price
+[  402.14s ->   408.28s] doesn't really reflect all the dynamics we would like. Then we have something that's a more complicated
+[  408.28s ->   414.88s] model, maybe some sort of rough volatility model or some sort of jump diffusion model. And we simulate
+[  414.88s ->   421.54s] a whole bunch of prices. And then we take a neural network and we say, hey, look at these prices.
+[  422.32s ->   429.16s] Learn the map from the parameters that generated these paths to the prices. And then once that neural
+[  429.16s ->   433.98s] network learns it, we have the same input output that we had with the Black-Scholes. Of course,
+[  434.04s ->   439.20s] this is an approximation. We'll talk about all the implications of this. But that is at a high level
+[  439.20s ->   444.82s] what's going on is we're trying to use neural networks to get that same input output that we get
+[  444.82s ->   450.14s] with a Black-Scholes, but with more complicated models that may capture more dynamics that we are
+[  450.14s ->   455.06s] interested in capturing in our prices. Let's start at the first rung in the ladder together,
+[  455.06s ->   461.94s] this idea of an input and an output to get a price. The Black-Scholes model is the solution to the
+[  461.94s ->   467.18s] Black-Scholes equation. And if you give me five things, I can give you an option price. And of
+[  467.18s ->   473.74s] course, we're assuming everything that's required to derive this model, the original equation, and of
+[  473.74s ->   477.62s] course, the solution, which is this model. So everything that I talked about before, geometric
+[  477.62s ->   482.90s] brownie motion, constant volatility, no arbitrage, all of those things we are assuming is the case.
+[  482.90s ->   489.98s] And we know this isn't the case, but to get this map of parameters to price, we're assuming all of
+[  489.98s ->   496.66s] that is true. So you give me the current price of the stock, you give me a strike price of the option,
+[  496.98s ->   501.90s] you give me the time until maturity, risk-free rate, and a volatility, and I will be able to give
+[  501.90s ->   509.92s] you a Black-Scholes price. We can implement this in Python. And of course, we get an output for the
+[  509.92s ->   514.88s] Black-Scholes price based on a series of five inputs. So these are five example inputs.
+[  515.36s ->   519.80s] This is the underlying asset price, the strike price, the time to maturity, this is the risk-free
+[  519.80s ->   527.52s] rate, and this is the volatility term. So what's happening here is we go through the entire hedging
+[  527.52s ->   532.14s] argument, we find the partial differential equation, we solve the partial differential equation,
+[  532.20s ->   538.94s] we get this function that prices options according to the Black-Scholes model. That is the Black-Scholes
+[  538.94s ->   545.05s] assumptions, everything that we talked about before. What's the problem with this? Well, we know these
+[  545.05s ->   551.13s] assumptions are all violated in practice. So let's say we want to use a more complicated model to price
+[  551.13s ->   557.19s] our options. Well, in order to use a more complicated model to price our options, then we are no longer
+[  557.19s ->   562.87s] assuming that the underlying follows a geometric Brownian motion. We're no longer assuming constant
+[  562.87s ->   570.53s] volatility, for example. No longer assuming that there are no jumps in underlying asset prices.
+[  570.71s ->   576.33s] We're no longer making those assumptions. Now, what is the consequence? The consequence is we don't get
+[  576.33s ->   582.25s] this nice closed form solution. I can't just define a function. You give me five inputs and I spit out an
+[  582.25s ->   588.11s] option price. It no longer works like that. We don't have any assumptions. Now we're going to need a
+[  588.11s ->   594.56s] different tool to generate prices. So originally you gave me five inputs. I plugged those five inputs
+[  594.56s ->   600.42s] into my Black-Scholes function and I get a price. That's very nice. But of course, you know, everyone's
+[  600.42s ->   605.91s] screaming that these assumptions are all violated in practice and fair enough. So how do we generate
+[  605.91s ->   612.81s] prices? What's another way to do that? Well, what we can do is we can go ahead and simulate the dynamics
+[  612.81s ->   619.45s] of the underlying asset. And then we can discount the payoffs to the present and we can generate
+[  619.45s ->   624.83s] prices in that capacity. And that's going to take the risk neutral payoff and it's going to take the
+[  624.83s ->   629.53s] average of the risk neutral payoff at time t equals zero. And if we do that, we're going to find also
+[  629.53s ->   633.97s] the fair value of the option. So here, what I'm doing is I'm simulating a whole bunch of paths
+[  633.97s ->   638.87s] according to the geometric Brownian motion. And this is what's being assumed in a Black-Scholes model.
+[  638.87s ->   646.13s] Now, if I use the same parameter set as before, you'll see that I get a very similar price and
+[  646.13s ->   653.29s] that folks is not a coincidence. Okay. This is another way that we can generate option prices
+[  653.29s ->   660.53s] is via simulation. Now, simulation in this sense is kind of useless because if we're simulating
+[  660.53s ->   666.89s] geometric Brownian motion to get Black-Scholes prices for European call or put option, why would
+[  666.89s ->   671.33s] we do that? We can just go ahead and plug them directly into the equation. So hopefully that
+[  671.33s ->   676.65s] makes sense. You're like, well, wait a second. If I have these parameters, why would I try to simulate
+[  676.65s ->   681.47s] all of these price paths, find the payoff and discount it to the present and take the average.
+[  682.19s ->   688.33s] And then I get some sort of approximate price when I could just plug in all these parameters into this
+[  688.33s ->   695.91s] equation and get the exact price. Okay. That is the fundamental basis for this problem. All right.
+[  696.55s ->   703.09s] We have a function that generates a precise price under the assumptions of the model.
+[  703.63s ->   710.45s] And we also have this tool available via simulation to generate prices by essentially simulating different
+[  710.45s ->   715.57s] states of the world, computing the payoff of that option, discounting it back to the present,
+[  715.57s ->   721.69s] and then taking the average of all of those payoffs. So these are our two tools available to us to
+[  721.69s ->   727.97s] generate prices. Now I would say in more complicated models, it should be very clear. We don't have this
+[  727.97s ->   733.67s] first analytical option available to us. We can't just take the parameters, plug it in and end up with
+[  733.67s ->   740.37s] a price. We would have no reason to use simulation. If that was the case, we would have no reason to even
+[  740.37s ->   745.29s] consider a Black-Scholes, right? We would be talking about some crazy, maybe modified rough
+[  745.29s ->   751.67s] burgundy model if, you know, we could just plug in parameters and get a price with no computational
+[  751.67s ->   756.99s] cost at all. Those types of models, those more advanced, more intricate models that capture more
+[  756.99s ->   763.57s] market dynamics are more computationally expensive. And that's because they require simulation. We need to
+[  763.57s ->   769.69s] simulate all of these price paths going forward. And then we compute some sort of payoff, discount that
+[  769.69s ->   774.79s] payoff to the present, take the average, and then we get an approximate price. Clearly, as the number
+[  774.79s ->   780.27s] of paths increases, the accuracy will increase. And you could use some sort of analysis on the error
+[  780.27s ->   785.57s] and bound the error and so on. But, you know, nevertheless, this is the fundamental idea. We have
+[  785.57s ->   790.57s] two ways of generating prices. We can do it analytically or numerically. Analytically via a function
+[  790.57s ->   796.71s] and numerically via simulation. Now let's pivot to the AI, talk about some neural networks.
+[  796.71s ->   804.58s] If we have a very simple function, f of x equals x squared, this fundamentally is no different than
+[  804.58s ->   813.54s] this. We have several inputs and one output. Here we have one input and one output. It's very important
+[  813.54s ->   819.94s] that you understand that this functionally is exactly the same as the analytical function that is
+[  819.94s ->   826.18s] the Black-Scholes model. That being said, this is obviously very easy to visualize because it's just
+[  826.18s ->   832.86s] two dimensions. We have an x and y, f of x is equal to x squared. And what I'm going to actually do is
+[  832.86s ->   838.46s] I'm going to build a neural network that aims to learn this function. So what I'm going to do is I'm
+[  838.46s ->   843.30s] going to generate a whole bunch of inputs and outputs. We've all seen a parabola before. What I'm
+[  843.30s ->   850.74s] going to do is I'm going to take all of the inputs that is in our domain, the x-axis, in a specific
+[  850.74s ->   856.78s] range, negative two to two. And I'm going to generate outputs according to this function.
+[  857.42s ->   864.38s] That is squaring all of those values. Then what I'm going to do is I'm going to give the neural network
+[  864.38s ->   871.58s] all of the inputs. I'm going to tell it to learn from the inputs, the output, and that output is the
+[  871.58s ->   879.20s] input squared. Okay, so the neural network is trying to learn this parabola. That is the setup for this
+[  879.20s ->   883.78s] problem. Now, if I look only in sample, after I trained this neural network, it performs quite
+[  883.78s ->   888.88s] well. This should not be a surprise as neural networks are universal function approximators.
+[  889.64s ->   894.38s] So here, what we have is in sample, this error is very, very small, and I haven't trained it very much.
+[  894.96s ->   901.22s] Negative two to two. Given what we've seen AI is capable of, and these large neural networks,
+[  901.36s ->   905.94s] large deep neural networks are capable of, you should not be surprised that this can perfectly
+[  905.94s ->   912.60s] approximate pretty much the most trivial quadratic. This is all in sample. Let's take a look at the
+[  912.60s ->   918.50s] out-of-sample performance. When it starts to extrapolate, well, how does it do? Does it do
+[  918.50s ->   922.86s] amazing? No, clearly it doesn't do amazing, right? So the verticals here are the cutoffs
+[  922.86s ->   929.38s] for the training data. And once I use the neural network out-of-sample, it doesn't extrapolate quite
+[  929.38s ->   935.34s] well. But isn't this what we've seen in the case for AI in general anyway? It doesn't tend to
+[  935.34s ->   940.84s] extrapolate very well, and that shouldn't be too much of a surprise. And there are techniques and
+[  940.84s ->   945.52s] different things you can do to improve its ability to extrapolate and whatnot. We're not going to talk
+[  945.52s ->   953.82s] about more of the inner machinations of the neural network itself, but I just want you to be aware
+[  953.82s ->   959.31s] of them. So clearly, we can train a neural network to learn a function. It doesn't necessarily
+[  959.31s ->   964.35s] extrapolate well, so we have to consider that and be careful. And, you know, the different ways that
+[  964.35s ->   968.23s] we can structure our neural network, we can improve or, you know, make this extrapolation better and
+[  968.23s ->   976.10s] worse. Why is this important? Well, if we are trying to use neural networks to price options,
+[  976.84s ->   984.10s] we know that we have two options. We can price them analytically, or we can price them numerically.
+[  984.62s ->   990.96s] What do we know about these prices? We know that a function, c, so let's say this is our Black-Scholes
+[  990.96s ->   996.56s] function, we give five inputs, we get a Black-Scholes price. We know c is approximately equal to
+[  996.56s ->  1004.92s] the simulated or numerical price. What is this c tilde tilde? Well, c tilde tilde is the neural network
+[ 1004.92s ->  1013.14s] learning the approximate price. So pause, that's very intricate. This is very complicated. What's going
+[ 1013.14s ->  1023.28s] on here? Well, five parameter input will give me a price output. Here, a one parameter input is going
+[ 1023.28s ->  1029.60s] to give me one output. So you give me an x, I give you x squared. Here, I'm saying with the Black-Scholes
+[ 1029.60s ->  1037.46s] model, you give me five parameters, I'll give you a price. Well, is that not true for the simulation too?
+[ 1037.46s ->  1044.28s] You just have to run the simulation a large number of times. You give me five parameters, all of these
+[ 1044.28s ->  1050.28s] paths are parameterized in the same way. It would not make sense if they were not parameterized in the
+[ 1050.28s ->  1057.04s] same way. So you give me five inputs for the numerical solution, and I can still give you a price.
+[ 1057.90s ->  1065.26s] Now, what if I tell the neural network, just like I told it here, to learn the inputs, that is the
+[ 1065.26s ->  1073.01s] parameters of the model, and learn that map of the parameters to the model to the subsequent price.
+[ 1073.33s ->  1081.19s] That is this c tilde tilde here. This is the fundamental basis for this entire stream of
+[ 1081.19s ->  1088.61s] literature. Now, we know that this isn't always possible. Clearly, this is not always possible.
+[ 1089.35s ->  1094.09s] But we know that we can numerically simulate, and we can numerically simulate offline. That means we can
+[ 1094.09s ->  1101.01s] generate a very, very large number of these paths, and generate a lot, a lot, a lot of prices.
+[ 1102.01s ->  1107.29s] Once we do that, we end up with a very large data set that we can train our neural network on.
+[ 1107.59s ->  1111.73s] So essentially, what I'm saying is our neural network, just like it learns this quadratic between
+[ 1111.73s ->  1118.25s] negative two and two, we can generate a very, very large parameter space, and we can have our neural
+[ 1118.25s ->  1127.85s] neural network learn the approximate prices for any model. Don't believe me? Let's give this a shot with
+[ 1127.85s ->  1134.93s] the Black-Scholes model and see if our neural network can, in fact, learn the Black-Scholes prices.
+[ 1135.93s ->  1141.57s] This is a math notation for you now. We have the five parameters of the Black-Scholes model in this
+[ 1141.57s ->  1148.67s] vector X being in R5. The analytical mapping is R5 to R. That is, we have these parameters
+[ 1148.67s ->  1156.72s] that output to the price given by the Black-Scholes model. That's what this F function represents,
+[ 1157.14s ->  1163.52s] and that is exactly what this X arrow represents here. You give me this input vector, I give you the
+[ 1163.52s ->  1170.36s] price. That should not be confusing in any shape, way, or form. This is literally the same as a parabola.
+[ 1170.36s ->  1176.12s] The only difference is we don't have one input, we have five. Harder to visualize? Yes. Functionally the
+[ 1176.12s ->  1183.39s] same? Yes. This is an analytical solution. We also have our Monte Carlo approximation, our simulation,
+[ 1183.55s ->  1191.81s] our numerical prices. Okay? It is the exact same thing, R5 to R. That's exactly what I had said here.
+[ 1192.27s ->  1197.95s] You give me parameters, I output real price. You give me parameters, I output approximate price.
+[ 1197.95s ->  1202.93s] That's exactly what I'm saying here in the Monte Carlo approximation. You give me five parameters,
+[ 1203.09s ->  1209.71s] I output price. But why is it F tilde? Because it maps to the expectation of the discounted max.
+[ 1210.65s ->  1216.11s] That's exactly what I said we were doing in the numerical setting. We were simulating all of these
+[ 1216.11s ->  1223.74s] prices. We were simulating all of these underlying asset prices, generating a payoff, discounting it to the
+[ 1223.74s ->  1231.82s] present, and then taking the average. That is exactly what this expectation is, right here.
+[ 1232.54s ->  1235.82s] This vector maps to this expectation, which generates approximate prices.
+[ 1236.46s ->  1242.46s] So, what's happening here? Well, now we have a neural network approximating this relationship.
+[ 1243.02s ->  1249.66s] So, instead of F tilde, I called it C tilde tilde here. Here we have this F of theta, where theta is an
+[ 1249.66s ->  1255.02s] arbitrary parameter set. And the reason why we use theta for an arbitrary parameter set is because we
+[ 1255.02s ->  1260.38s] don't necessarily know what model we're going to assume. But this is true for every model, because it
+[ 1260.38s ->  1266.22s] doesn't matter what parameter set we use. We can take this parameter set, though it may not be in R5,
+[ 1266.78s ->  1272.62s] it's going to be in the dimensionality of theta, and it's going to map to a single price. And that's
+[ 1272.62s ->  1277.90s] exactly what we have here. All of these are consistent. They're all saying the exact same
+[ 1277.90s ->  1285.34s] thing. And if the approximation error goes to zero, and maybe there are some theorems we can apply,
+[ 1285.34s ->  1291.57s] such that this is the case, that would be very nice, then all of these are equivalent.
+[ 1292.37s ->  1297.73s] That being said, quick recap, we have two tools to generate prices given a parameter set for a model.
+[ 1298.62s ->  1304.22s] We have analytical solutions, and we have numerical solutions available via Monte Carlo simulation.
+[ 1304.86s ->  1311.02s] The Monte Carlo simulation takes far too long. Analytical in real time is efficient, it's practically
+[ 1311.02s ->  1318.94s] instant. Numerical in real time is not efficient, and it's not instant. So, what can we do? Well, given
+[ 1318.94s ->  1325.50s] the second ability to generate prices for any model, that is models that don't even have analytical
+[ 1325.50s ->  1332.46s] solutions, we can do this a large number of times offline. Generate random parameter sets, simulate,
+[ 1332.46s ->  1338.78s] generate a price. Generate random parameter set, simulate, generate price. Do this a large number
+[ 1338.78s ->  1345.82s] of times. This is the exact same thing as generating inputs and outputs for a quadratic, which was learned
+[ 1345.82s ->  1352.30s] here. It is the exact same thing. The only difference is the neural network is not learning a quadratic,
+[ 1352.30s ->  1359.26s] it's trying to learn the map of those parameters in the complicated model to the price given
+[ 1359.26s ->  1365.90s] in the setting of that model. And that is going to be the goal of implementing a neural network is
+[ 1365.90s ->  1370.70s] once it learns that relationship, because remember, this isn't necessarily analytically tractable. We
+[ 1370.70s ->  1375.74s] don't necessarily know how to solve this in closed form, but that doesn't mean that we can't
+[ 1375.74s ->  1381.74s] get a solution that is going to develop prices under a specific model that is analytically
+[ 1381.74s ->  1387.18s] intractable. So, what we're doing is we're using the neural network to learn the map of the parameters
+[ 1387.18s ->  1393.58s] to the price. Just as you give me the five inputs to Black-Scholes, I get a price. We generate a whole
+[ 1393.58s ->  1398.54s] bunch of parameters for a difficult model, generate a whole bunch of prices, and we say, hey, neural network,
+[ 1398.54s ->  1403.42s] you figure out this relationship. And then what we can do is once that neural network learns the
+[ 1403.42s ->  1407.98s] market volatility curve as a relationship, we can use it in real time. That curve fitting process,
+[ 1408.78s ->  1416.06s] fitting your model to the market volatility curve is very, very quick, because neural networks are
+[ 1416.62s ->  1424.06s] very, very fast. So, how do I teach a neural network the Black-Scholes price? Well, we don't need
+[ 1424.06s ->  1431.42s] to simulate anything here because we have an analytical solution. This is obviously just an exercise,
+[ 1431.42s ->  1435.98s] but if we can understand it here, then we can understand it in the case it's actually useful.
+[ 1436.62s ->  1442.86s] So, what do I do? I generate a whole bunch of parameters for Black-Scholes prices. I'm generating
+[ 1442.86s ->  1450.86s] 5,000 different prices. All right? So, I have these five parameters, but I have them 5,000 times,
+[ 1450.86s ->  1456.70s] which means when I plug each five into the Black-Scholes model, I'm going to get 5,000 different
+[ 1456.70s ->  1464.70s] option prices. What I do then is I say, hey, given this five, here's the option price. Also, given this
+[ 1464.70s ->  1470.30s] five, here's the option price, and so on and so on and so on and so on. And I say, hey, neural network,
+[ 1470.30s ->  1476.38s] learn the relationship between the five inputs and the price. Then, what I can do is if the neural
+[ 1476.38s ->  1483.10s] network learns effectively, I can give it a set of parameters that is within the bounds of that which
+[ 1483.10s ->  1490.46s] I've generated for it to train with, but I can generate approximate prices under that model and
+[ 1490.46s ->  1496.54s] that model's assumptions. This is extremely useful. In the case of the Black-Scholes right now, no,
+[ 1496.54s ->  1500.22s] not useful at all. We have the analytical solution. Why would I ever do this? Again,
+[ 1500.22s ->  1506.22s] you understand this, you understand the useful case. So, here, I generate all of my parameter sets.
+[ 1506.22s ->  1513.42s] Those are my inputs. But now it's a series of inputs. I have 5,000 inputs. That is, I have
+[ 1513.42s ->  1518.62s] parameter set of five inputs, parameter set of five inputs, parameter set of five inputs,
+[ 1518.62s ->  1526.46s] 5,000 times. Then I have, via the Black-Scholes call function that I created earlier, I have 5,000
+[ 1526.46s ->  1532.14s] option prices. Then I create a very basic neural network. And what I'm saying is I want you to learn,
+[ 1532.78s ->  1538.62s] by 1,000 epochs, the relationship of those five parameters to the option prices. And we do this,
+[ 1538.62s ->  1545.10s] of course, by minimizing the error. But more specifically, we're going to talk about neural
+[ 1545.10s ->  1550.70s] networks, machine learning, and optimization another day. This is going to be with respect
+[ 1550.70s ->  1556.14s] to the video that I did on why the definition of the derivative is useful. So stay tuned for that.
+[ 1556.14s ->  1564.86s] Until then, this neural network, once it learns the relationship, we can go ahead and see,
+[ 1564.86s ->  1569.74s] I'm going to run this one more time, so that I get the output, because I forgot the F in that F
+[ 1569.74s ->  1574.54s] print there. We can see that, hey, check this out, given the parameter set, this is parameter set number
+[ 1574.54s ->  1587.74s] 3,817. The true price is 30.4494, and the approximate price is 30.679. Okay. Given the
+[ 1587.74s ->  1596.78s] parameter set, 425, the true price is 0.0142, and the prediction is negative. Clearly, we would have to
+[ 1596.78s ->  1603.18s] bound this, because the intrinsic price of the option in this case can't be negative. Nevertheless,
+[ 1603.18s ->  1608.78s] we can see that all of these are approximations, and they aren't too far off. So I think it's
+[ 1608.78s ->  1614.54s] reasonable to say that the neural network is learning Black-Scholes. And as we increase,
+[ 1614.54s ->  1619.74s] obviously, the training capacity, maybe we'll make it 5,000 here, for example,
+[ 1619.74s ->  1626.86s] you can see that it is going to generate more and more accurate prices. So here you can see 26.97,
+[ 1626.86s ->  1638.14s] 27.01, 11.89, 11.79. And we really are learning this pricing function that is the Black-Scholes
+[ 1638.14s ->  1644.54s] call function, that is the analytical solution to the Black-Scholes equation. So to answer,
+[ 1644.54s ->  1650.22s] can AI learn Black-Scholes? This isn't necessarily the most effective neural network structure or
+[ 1650.22s ->  1656.14s] optimization scheme. But short answer, yes, it can learn Black-Scholes. More generally,
+[ 1656.14s ->  1661.18s] can it learn option prices? That is a more important question, because it's more general.
+[ 1662.14s ->  1666.94s] Let's talk about what that could look like. Again, we're generating this parameter set,
+[ 1666.94s ->  1670.94s] and this is a pretty constrained parameter set. I just want you to keep that in mind as well.
+[ 1670.94s ->  1675.90s] Like I'm fixing the strike price here, I'm fixing the risk-free rate. So you would want to generate a
+[ 1675.90s ->  1682.06s] large number of permutations of these parameters as well. But again, this is for an analytical
+[ 1682.06s ->  1687.74s] solution. This is the useless case. Let's talk about the useful case. What we've done here is we've
+[ 1687.74s ->  1694.54s] generated, this neural network has learned the Black-Scholes model. This is C tilde tilde. So
+[ 1694.54s ->  1700.86s] if we go back up here, we have the analytical solution, we have the simulated solution, and this is
+[ 1700.86s ->  1708.14s] the neural network approximation of the simulated solution. So C tilde tilde, right now we are saying
+[ 1708.14s ->  1714.78s] that that is approximating the analytical solution. That's what we have here, the analytical solution
+[ 1714.78s ->  1719.98s] to the five inputs. But what if we don't have the analytical solution? We're going to have to replace
+[ 1719.98s ->  1728.94s] this with simulation. And that is really what this C tilde tilde is. It's an approximation of the simulated
+[ 1728.94s ->  1733.82s] price. A HESTA model could be an example of where we need to use simulation to get prices.
+[ 1733.82s ->  1738.62s] Don't want to use a HESTA model? Want to use a more advanced model? Then do the exact same thing we're
+[ 1738.62s ->  1743.34s] about to do with the HESTA model with your more advanced model. Everyone's screaming at me that
+[ 1743.34s ->  1748.86s] volatility is not constant. Well, use this model instead. Volatility here is a stochastic differential
+[ 1748.86s ->  1753.42s] equation governed by an Ornstein-Loback process, and it's going to be mean reverting. That captures the
+[ 1753.42s ->  1758.30s] dynamics of volatility pretty well in the market. Take a look at the VIX. Look at my video on VIX,
+[ 1758.30s ->  1762.46s] Martin Gill volatility trading, for example. We look at the VIX. We look at the mean reverting
+[ 1762.46s ->  1767.34s] nature of the VIX. I think this is a pretty reasonable model. But what parameters should
+[ 1767.34s ->  1774.06s] this model follow for our given underlying? That is going to depend on the current volatility surface
+[ 1774.06s ->  1779.90s] we are trying to extrapolate prices for. Okay. Well, how do we do that? We're going to calibrate
+[ 1779.90s ->  1786.22s] our surface to the market surface, but we don't have an analytical price. I'm dismissing FFT for now
+[ 1786.22s ->  1789.98s] if everyone's saying that we can do some sort of characteristic function transformation. I want to
+[ 1789.98s ->  1795.02s] talk about that. I'm saying, again, we can use the HESTA model as an example for needing simulation,
+[ 1795.02s ->  1799.82s] and that's what we're going to do. So here, our parameter set theta, and I'm not talking about
+[ 1799.82s ->  1804.78s] just the theta that is the long run variance. I'm saying, if we go back and we look at what the neural
+[ 1804.78s ->  1809.66s] network approximation is doing, it's saying, hey, given an arbitrary parameter set theta,
+[ 1809.66s ->  1816.46s] you give me inputs, you give me a price, then I can learn that relationship using a neural network.
+[ 1817.10s ->  1822.70s] Okay. Well, I have a theta. Theta is my parameter set for the HESTA model. S of T, V of T,
+[ 1822.70s ->  1828.38s] kappa theta, chi, W of T, W of T, S and V. Those are correlated Brownian motions.
+[ 1828.38s ->  1834.43s] We have this parameter set, but how do we generate prices for that parameter set?
+[ 1835.39s ->  1841.07s] We can't use an analytical solution. I mean, there is no analytical solution. So we need to simulate.
+[ 1841.71s ->  1847.55s] So I have this discretization scheme, and I simulate the HESTA model forward for a parameter set,
+[ 1847.55s ->  1852.43s] just like I did with the Black-Scholes model. But here, we don't have an analytical solution,
+[ 1852.43s ->  1857.23s] and what is the upshot? We don't have this assumption of constant volatility. That's pretty nice.
+[ 1858.48s ->  1863.76s] Okay. Well, I can generate all these paths for this parameter set and discount back the payoff,
+[ 1863.76s ->  1868.96s] and I can get the average of those payoffs, find this, you know, this price of the option
+[ 1868.96s ->  1875.65s] under this model framework today. But if I wanted to do this live and I wanted to fit that,
+[ 1875.65s ->  1880.53s] that volatility surface again, iteratively through an optimization scheme to the market surface,
+[ 1880.53s ->  1887.25s] that is way too expensive. I need to simulate way too many paths. So what should I do? Well,
+[ 1887.25s ->  1892.93s] I'm going to do exactly what I'm about to do offline, and I'm going to do it for a large number
+[ 1892.93s ->  1897.81s] of parameters. And then I can implement the neural network in real time, and I can accept some error
+[ 1897.81s ->  1902.53s] to be able to implement the model that captures the dynamics that I'm interested in capturing,
+[ 1902.53s ->  1907.89s] relative to the dynamics that are assumed away, that is in something like a Black-Scholes.
+[ 1908.93s ->  1914.85s] So what do I have here? Well, if you take a look at this scheme here, what I'm doing is I'm taking
+[ 1914.85s ->  1921.09s] these inputs, and again, this is no longer a five-dimensional input, right? This vector,
+[ 1921.09s ->  1927.89s] remember this theta vector here, is relative to our model. So theta here, we have S0, V0, T, R,
+[ 1927.89s ->  1938.88s] Kappa, Theta, Chi, and Rho. These are going to be the parameters of the Heston model. So this is not a
+[ 1938.88s ->  1944.64s] five-dimensional input like a Black-Scholes, but this is a one, two, three, four, five, six, seven,
+[ 1944.64s ->  1951.44s] eighth dimension, eight-dimensional vector, or an eight-dimension vector, and that is going to be
+[ 1951.44s ->  1958.08s] our input. Okay? So Black-Scholes, five parameter input price, Heston, eight parameter input price,
+[ 1958.08s ->  1961.60s] but that middle thing that we're inputting these parameters to, we need to make that,
+[ 1961.60s ->  1966.24s] and that's what we're doing with this neural network. So here, I'm going to actually generate a
+[ 1966.24s ->  1971.36s] whole bunch of possible parameter sets. That's exactly what I'm doing here, is I'm generating
+[ 1971.36s ->  1977.76s] a whole bunch of possible parameter sets. All right? My stock prices, my, you know, variants,
+[ 1977.76s ->  1983.12s] and all of this. I'm generating a whole bunch of possible parameter sets. Then I'm actually going to
+[ 1983.12s ->  1990.40s] simulate, okay? I'm simulating these parameters going forward, just like I did here. And then I'm
+[ 1990.40s ->  1995.92s] going to back out the price by finding some sort of payoff and discounting it back to the present,
+[ 1995.92s ->  2000.96s] then taking the average. That's how I'm generating the prices. That's the numerical simulation, the
+[ 2000.96s ->  2006.16s] Monte Carlo simulation. That's our second option. But remember, in real time, that's slow. That's why
+[ 2006.16s ->  2010.72s] we're doing this offline. We're doing this when we have a lot of time and it doesn't matter. So that
+[ 2010.72s ->  2017.92s] when we do require efficiency, our network has already done the heavy lifting offline, again,
+[ 2017.92s ->  2023.44s] when time didn't matter. And then in real time, it's very, very quick and accurate. And that's exactly
+[ 2023.44s ->  2028.32s] the point here is what we're doing is we're training this neural network through all of
+[ 2028.32s ->  2033.28s] these Heston parameters. Now, these are not Black-Scholes parameters. And we end up with,
+[ 2033.28s ->  2037.84s] check this out. Here's a set of inputs. Here's the true price. And here's the neural network
+[ 2037.84s ->  2042.48s] prediction. That's pretty darn good. Here's the true price. Here's the neural network prediction.
+[ 2042.48s ->  2046.72s] And so on and so on. You're like, Hey, these, these predictions are not that great. Well,
+[ 2047.36s ->  2051.92s] I did not train this for very long. I only used a thousand epochs and moreover,
+[ 2051.92s ->  2058.32s] I only simulated 500 paths. So this is awful. This is awful. If I really cared about the precision
+[ 2058.32s ->  2064.32s] of this, of this model that remember, I have eight parameters going into my neural network.
+[ 2064.32s ->  2069.04s] Out comes the price. That's the C tilde tilde. If I really cared about the precision,
+[ 2069.92s ->  2072.88s] then, or not even just the precision, but the accuracy,
+[ 2072.88s ->  2077.81s] then I would need to jack these numbers up, right? I would need to jack these numbers up.
+[ 2077.81s ->  2081.89s] And that's exactly the point. And this error is very well studied. This error is very well
+[ 2081.89s ->  2086.37s] studied. So if you required a certain amount of precision, you can run the statistics very easily.
+[ 2086.37s ->  2090.45s] You can run some sort of confidence interval very easily. But this right here,
+[ 2091.09s ->  2095.01s] this is the main point of the literature literature. And this of course is some fancy,
+[ 2095.01s ->  2099.17s] crazy looking chart that shows, you know, how the neural network prediction fits relative to the
+[ 2099.17s ->  2104.37s] true fit and the error evolving. And then this is, you know, due to the idea of some sort of
+[ 2104.37s ->  2110.29s] extrapolation error as well. If you, you know, come back up to the quadratic example, you can see that
+[ 2110.29s ->  2116.93s] out of a range of parameters, we start to perform poorly. And this particular scheme is generating some
+[ 2116.93s ->  2121.41s] kind of crazy looking error. It doesn't look as linear as it does in the Black-Scholes setting.
+[ 2122.05s ->  2126.13s] But that's not the point of this video. The point of this video is not to optimize the
+[ 2126.13s ->  2132.45s] network to, you know, learn the approximate pricing function via simulation. That's not the
+[ 2132.45s ->  2136.29s] point of this video. We can talk about that another time. If you guys actually care about
+[ 2136.29s ->  2143.57s] the optimal schemes for this stuff, we can talk about it. But this is just about as quant of a topic
+[ 2143.57s ->  2150.05s] as it can get. We're combining neural networks with financial mathematics. And the hope is that we
+[ 2150.05s ->  2154.53s] can improve efficiency. We're kind of double dipping, you know, can we improve efficiency while
+[ 2154.53s ->  2159.01s] keeping these, you know, dynamics that we're capturing intact? Of course, you're not going
+[ 2159.01s ->  2163.81s] to get something for nothing. You're paying some sort of, you know, relative error. But this is an
+[ 2163.81s ->  2168.53s] incredibly interesting topic because you're kind of getting something for nothing because you're
+[ 2168.53s ->  2173.49s] doing all the heavy lifting offline. And if you can constrain that error, then this is going to be
+[ 2173.49s ->  2180.93s] very, very good. So moral of the story, moral of the story is, you know, we have the ability to
+[ 2180.93s ->  2186.61s] price in a given model's framework, analytically or numerically. Most of the time, we can't do it
+[ 2186.61s ->  2191.57s] analytically. So we do it numerically. But in real time, if we have any hope of implementing more
+[ 2191.57s ->  2196.45s] complicated models that capture more dynamics, we can't just simulate in real time, that's going to
+[ 2196.45s ->  2202.69s] take far too long. So what can we do? Well, we can generate all of these parameter sets and prices
+[ 2202.69s ->  2209.25s] via simulation offline. And then we can train a neural network that is essentially a deterministic
+[ 2209.25s ->  2214.29s] function that's trying to act like that analytical function that is that Black-Scholes example.
+[ 2214.85s ->  2219.97s] And once we do that offline and we get a reasonably precise and accurate model,
+[ 2219.97s ->  2226.05s] we can implement that in real time because the neural networks are extremely, extremely fast. It's
+[ 2226.05s ->  2231.73s] just a series of linear transformation and non-linear activations. It's a very, very fast
+[ 2231.73s ->  2236.77s] operation. So if the weights that it learns are correct, then it is an extremely powerful tool,
+[ 2236.77s ->  2243.94s] especially applied in this setting. With that being said, this is probably the most
+[ 2243.94s ->  2251.62s] involved quant topic we've discussed on this channel. So I hope you enjoyed. This is not trivial
+[ 2251.62s ->  2257.62s] subject matter. So if you have any questions, please feel free to leave a comment below. Check out
+[ 2257.62s ->  2262.42s] Discord. You can join our Discord, discuss this idea among others. We have a very active Discord
+[ 2262.42s ->  2268.90s] community and I'm very happy to answer any questions on there or on YouTube, or you can always reach out
+[ 2268.90s ->  2274.10s] to me if you have any questions directly. But other than that, I want to thank you so much for watching.
+[ 2274.10s ->  2283.94s] This is one of my favorite topics. I hope you enjoyed it and I'll see you in the next one.

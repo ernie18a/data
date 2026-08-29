@@ -1,0 +1,111 @@
+[    0.18s ->     1.04s] Hey guys, what's up?
+[    1.06s ->     2.34s] In this video, I want to talk about
+[    2.34s ->     4.88s] the three most important numbers you need to know
+[    4.88s ->     7.34s] about your trading to be a successful
+[    7.34s ->     9.16s] and profitable credit spread trader.
+[    9.46s ->    10.86s] All right, let me break them down.
+[   10.94s ->    13.88s] The three numbers are your win rate.
+[   13.98s ->    16.64s] You must know how often you are making money.
+[   17.08s ->    20.82s] Number two, you must know your average return per trade.
+[   21.16s ->    22.38s] And when you know these two,
+[   22.46s ->    24.12s] then you by default know the third one.
+[   24.14s ->    26.60s] And the third one is your average risk per trade.
+[   26.60s ->    29.00s] Your average risk per trade is going to be
+[   29.00s ->    33.34s] 100% minus your average return per trade.
+[   33.42s ->    37.64s] That means that with an 11.9% average return per trade
+[   37.64s ->    38.92s] for my account right here,
+[   39.10s ->    40.64s] that means that on average,
+[   40.90s ->    45.92s] I am risking roughly, it looks like $88.
+[   46.52s ->    47.74s] Yeah, so if I can do math correctly,
+[   47.86s ->    52.76s] roughly 88% is what I am risking on my average trade.
+[   53.06s ->    55.06s] So now when I know these three numbers,
+[   55.06s ->    56.48s] that is what's going to determine
+[   56.48s ->    58.10s] how profitable I'm going to be.
+[   58.10s ->    60.38s] Now again, since trading this
+[   60.38s ->    62.76s] and entering it in the credit spread trader
+[   62.76s ->    66.66s] since I guess early April, I haven't had a loss yet.
+[   66.96s ->    69.18s] Now again, losses will inevitably come
+[   69.18s ->    70.54s] because that's what they do.
+[   70.70s ->    71.88s] You always have losses.
+[   72.26s ->    76.04s] But again, let's say that this return right here is 95%.
+[   76.04s ->    78.52s] So if I know my average return here
+[   78.52s ->    83.92s] and my trade accuracy and my average loss per trade,
+[   83.92s ->    85.04s] then guess what?
+[   85.12s ->    86.70s] I can determine if I'm going to be
+[   86.70s ->    88.62s] a profitable credit spread trader or not.
+[   88.72s ->    90.18s] Let me show you how to do this math.
+[   90.62s ->    92.62s] Number one, we take our win rate.
+[   92.76s ->    95.82s] So our win rate right here, let's say is 95%.
+[   95.82s ->   101.06s] So 95 and I multiply that times my average percentage return.
+[  101.18s ->   103.32s] So it's going to be 11.9%.
+[  103.32s ->   103.78s] Cool.
+[  104.22s ->   107.76s] Now I subtract the amount of times I'm going to lose.
+[  107.76s ->   110.10s] So if my win rate is 95%,
+[  110.10s ->   112.96s] that means the amount of times I'm going to lose is 5%.
+[  112.96s ->   113.58s] Five.
+[  113.94s ->   114.18s] Cool.
+[  114.30s ->   118.76s] Now I'm going to multiply that by the amount I'm going to lose when I lose.
+[  119.02s ->   119.64s] So what is that?
+[  119.70s ->   124.16s] If my win, my average win return by percentage is 11.9,
+[  124.42s ->   128.24s] then that means my average loss is going to be 88.2.
+[  128.36s ->   129.24s] So 88.2.
+[  129.94s ->   132.68s] Now you can see here, this is a positive number.
+[  133.14s ->   136.50s] Anything over 500 when you get this number is amazing.
+[  136.60s ->   138.18s] Right here, I got 689,
+[  139.72s ->   142.14s] which means that I have a positive expectancy.
+[  142.36s ->   144.02s] If I can keep up my win rate,
+[  144.52s ->   146.54s] keep up my average return per trade,
+[  146.64s ->   149.58s] which by default determines my average loss per trade,
+[  149.98s ->   152.00s] then I'm going to make money in the long run.
+[  152.04s ->   153.24s] No matter how many losses come,
+[  153.30s ->   154.58s] no matter how many winners come,
+[  154.58s ->   155.90s] no matter how many years come,
+[  156.20s ->   157.32s] if I keep up these numbers,
+[  157.44s ->   158.78s] I'm going to make money long term.
+[  158.78s ->   161.30s] Now let's say your win rate is 80
+[  161.30s ->   164.42s] and that makes your loss rate 20.
+[  165.32s ->   166.24s] I need to update this.
+[  166.80s ->   167.94s] Loss rate 20.
+[  168.54s ->   169.92s] And we come here, 0.2.
+[  170.36s ->   172.42s] Just like that of a minus 800% return.
+[  172.50s ->   173.78s] So if you're looking at your numbers
+[  173.78s ->   176.64s] and you start to do this math that I'm showing you right here
+[  176.64s ->   178.48s] and you go, wow, I have a minus 800
+[  178.48s ->   183.76s] or any minus or even roughly a zero or a 100 for your score,
+[  183.94s ->   187.04s] you're going to be having a very hard time making money.
+[  187.14s ->   188.14s] You're just going to break even.
+[  188.14s ->   190.30s] And if it's a negative, you're going to lose money.
+[  190.66s ->   192.64s] Again, we're in this trading game to make money.
+[  192.72s ->   194.66s] So if we're going to trade and make money,
+[  194.70s ->   196.04s] we need to set this up like a business.
+[  196.16s ->   197.26s] We need to know our numbers.
+[  197.38s ->   198.86s] We need to know like a business.
+[  198.92s ->   200.36s] They have their profit and loss sheet.
+[  200.42s ->   201.26s] They have their balance sheet.
+[  201.26s ->   201.92s] They have all this.
+[  202.16s ->   204.36s] As a credit spread trader, you need to have your report.
+[  204.46s ->   205.80s] You need to know these three numbers.
+[  206.14s ->   208.36s] Now again, if you need help determining these numbers,
+[  208.36s ->   210.80s] you can use this free credit spread tracker
+[  210.80s ->   213.68s] and analytics site that I built for you.
+[  213.74s ->   215.18s] I put a lot of time in building this
+[  215.18s ->   217.06s] and it's completely free for anyone to use.
+[  217.32s ->   219.10s] Link is down in the description.
+[  219.24s ->   221.76s] So if you want to check this out, please do.
+[  222.14s ->   224.56s] All you need to do is simply insert
+[  224.56s ->   226.20s] the credit spread trades you've been doing
+[  226.20s ->   229.20s] and it's going to save them and record them all here.
+[  229.54s ->   230.68s] Now, why is this amazing?
+[  230.88s ->   233.04s] Because typically people had to do this
+[  233.04s ->   234.82s] with Excel sheets and all that stuff.
+[  234.86s ->   237.18s] But now you do it with a simple broker
+[  237.18s ->   240.92s] or I mean a super easy web platform online
+[  240.92s ->   244.30s] that you can access on your phone, computer, iPad, whatever.
+[  244.82s ->   246.24s] Anyways, guys, if you enjoyed this,
+[  246.32s ->   247.60s] please smash that subscribe button
+[  247.60s ->   248.68s] and the thumbs up button.
+[  248.68s ->   250.60s] But these are the three most important numbers
+[  250.60s ->   251.98s] you should know about your trading
+[  251.98s ->   254.38s] if you're trying to be profitable long-term.
+[  254.70s ->   255.80s] All right, guys, see you in the next video.
+[  256.20s ->   286.18s] All right, guys.

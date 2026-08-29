@@ -1,0 +1,71 @@
+[    0.00s ->     4.22s] In this video, I'm going to show you the one indicator that can warn you about a market crash
+[    4.22s ->     9.42s] before it happens. I've been using this since 2018 and it has saved me a lot of money in crashes
+[    9.42s ->    14.50s] and even helps me make a lot in my investment account because it shows you exactly where the
+[   14.50s ->    20.08s] market is going and when. This is a free indicator that everybody has access to, but almost nobody
+[   20.08s ->    24.64s] knows how to use correctly. So let me show you. All right, I'm going to make my face smaller and
+[   24.64s ->    29.24s] dive into this. So again, if you're using TradingView for your charts or your broker or whatever,
+[   29.24s ->    34.62s] they should all have this indicator. So go to the indicator section and look for something called
+[   34.62s ->    39.38s] Bollinger Bands. Don't worry, we're going to use this differently than you've probably seen before.
+[   40.00s ->    45.26s] And so again, we're going to click on Bollinger Bands and this is what it looks like and how most
+[   45.26s ->    48.12s] people use it, but it's not how we're going to use it. We're going to go into the settings
+[   48.12s ->    53.98s] and we're going to change the length from 20 to 200. Now what this does is it just looks at a
+[   53.98s ->    60.28s] longer period of time, AKA in the stock world, it looks at about a year of trading activity roughly.
+[   61.06s ->    66.66s] And now what this shows us is this shows us where the market should normally be trading for this
+[   66.66s ->    71.78s] asset. Right now we're looking at the S&P 500. And so this is where the market should be trading in
+[   71.78s ->    77.44s] general. Between the green line and between the red line, this is where normal market activity,
+[   77.70s ->    82.54s] normal trend, normal movement should be happening. Every time we are outside of the range,
+[   82.54s ->    88.96s] whether we're above the red zone or below the green zone, that's when a reversal is super likely
+[   88.96s ->    96.14s] to happen. And now why is this? This zone that we're seeing here is based on a two standard deviation
+[   96.14s ->   101.64s] level. Now I don't want to bore you with math, but if we look at a standard deviation curve,
+[  101.70s ->   108.54s] a bell curve, which you may have heard it in math, is it shows what's likely. And so within two standard
+[  108.54s ->   114.10s] deviations right here, you can see this line right here, the middle one within two standard deviations
+[  114.10s ->   123.38s] of a bell curve, mathematically speaking, that's 95% of the trading. So in this instance, 95% of the
+[  123.38s ->   128.84s] trading activity will happen between the green band and the red band. We're just talking from a pure
+[  128.84s ->   136.28s] math standpoint. So every time we break either above or below that level, there is a 5% chance of it's
+[  136.28s ->   142.04s] staying there. He had a 95% chance of pulling back into that zone. And so this is why we use that.
+[  142.30s ->   148.58s] Every time we break above it, we have basically a 95% chance of it pulling back down if it went above
+[  148.58s ->   155.34s] or pushing back up if it went below. And so that's a very high win rate. I tested this under so many
+[  155.34s ->   161.62s] different scenarios. And over time, I've been using it this 2018 and it works very well. And so here's
+[  161.62s ->   167.38s] how I do it. And here's how I do it to assess the market. So when we're looking at this, there are
+[  167.38s ->   172.08s] three ways that I use this. Number one, to get out of crashes early. Number two, to understand when to
+[  172.08s ->   176.56s] get in for long-term investments. And number three, how to trade the market. So number one, and what
+[  176.56s ->   182.76s] you're here for is how to understand when a market will crash. And how I do that is I look at, is the
+[  182.76s ->   188.88s] stock outside of the red band? And if it is, when it then is outside of it and then comes back inside.
+[  188.88s ->   194.50s] So when it's above the red band and then comes back in, that is my signal of a crash or pullback
+[  194.50s ->   198.86s] being imminent or being likely. And as you can see here, it triggered here. And then the market
+[  198.86s ->   203.56s] crashed a bit. You can see here, it went above and broke down below here. This was a sign of it
+[  203.56s ->   208.50s] pulling back. Again, you can see the same thing here, the same thing here, the same thing here,
+[  208.58s ->   213.94s] right? It breaks down below these levels, breaks down below it, and then it pulls back. So here's my
+[  213.94s ->   218.70s] little rule for this, whether you're an option seller, an investor, whatever, what you want to do
+[  218.70s ->   224.72s] is again, this is what I do. You can make your own rules is I like to wait 30 days. Okay. So
+[  224.72s ->   231.76s] whenever it breaks down below the red line, I like to wait 30 days. I am an option seller. I sell
+[  231.76s ->   238.30s] options. And so I get out of my positions when that happens. And I wait 30 days for the market
+[  238.30s ->   244.86s] to recenter, resettle, to crash and get to a more stable point. And so again, if I'm selling options,
+[  244.86s ->   249.76s] I'm going to close out of my positions. When this crosses, I'm going to get out for 30 days.
+[  250.02s ->   253.76s] They're like, Austin, it doesn't always crash that hard. It doesn't always come down that much.
+[  254.08s ->   259.44s] Yeah, but I'd rather be safe than sorry. By doing this, I was able to get out during here. I was able
+[  259.44s ->   264.66s] to get out during COVID before that happened. And that's how I use it to predict crashes. Now,
+[  264.72s ->   269.46s] again, will it get you out of everything? Absolutely not. There is nothing that is 100% in the market,
+[  269.46s ->   274.06s] but this will still help you understand where the levels of risk are. And the closer you are to this
+[  274.06s ->   280.04s] red band, the closer you are to a pullback and that more likely it is. So if it's the closer you
+[  280.04s ->   283.86s] are to a red band, maybe you should be hedging more. Maybe you should be doing less positions,
+[  284.18s ->   287.70s] whatever it is you want to do. But when it breaks above it and it crosses back down,
+[  287.84s ->   293.42s] that's my signal that a crash is probably likely. Now, I also use this for my long-term investment.
+[  293.52s ->   298.52s] When it breaks down to the bottom and has a 95% chance of breaking back in and recovering,
+[  298.52s ->   302.92s] right? And so that means I have a 95% chance of it bouncing. So when it breaks down below,
+[  303.22s ->   308.18s] this is when I get invested. And for instance, during the COVID, I got out here of my investment
+[  308.18s ->   314.60s] portfolio of about 100,000 or did at the time have $100,000 in spike. And I got out of it here.
+[  314.60s ->   320.76s] And then when it broke down below and then broke back above, this was my sign to reinvest. I reinvested
+[  320.76s ->   325.80s] my money here and it's been chilling ever since. And that's how I get in at good levels for
+[  325.80s ->   330.96s] investments, right? It won't have, it won't get to these levels often. It will get down here often,
+[  330.96s ->   336.02s] but when it does get into this zone, whether it's between the blue and the green line or below the
+[  336.02s ->   340.72s] green line, this is a good time for long-term investments. And right. Cause you get at a very
+[  340.72s ->   347.68s] good level and you allow it to continue to rise. Now, from a trading perspective, I now know that,
+[  347.68s ->   352.94s] when I'm close to this red zone, that's when I put on hedges. When I'm above here, I'm in a bullish
+[  352.94s ->   357.78s] market. When I'm below here, I'm in a bearish market. And so then I changed my strategy based
+[  357.78s ->   363.00s] on where it is. So I've been getting this question a lot of how I use this for different scenarios,
+[  363.16s ->   367.70s] market crashes, how I do it for long-term investments and how I do it for trading.
+[  367.84s ->   371.50s] And this is how I do it. I hope this was a super simple video that you can actually go put into
+[  371.50s ->   376.14s] action and go use it. Now, anyways, this will help save you a lot of headache from crashes.
+[  376.24s ->   380.44s] So I hope you do this. If you have any questions, just put a comment down below. If you enjoyed this
+[  380.44s ->   382.82s] video, smash the light button and I'll see you on the other side.

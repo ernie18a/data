@@ -1,0 +1,128 @@
+[    0.46s ->     6.94s] You just finished your backtest. You take a look at your equity curve. It's a beautiful line up
+[    6.94s ->    13.26s] and to the right, 45 degrees, a sharp ratio of maybe 1.5, 1.7, and you're getting ready for
+[   13.26s ->    19.58s] live deployment and, of course, retirement. But in the quant world, a good-looking backtest
+[   19.58s ->    26.58s] isn't a success. It's a crime scene. Most trading strategies fail when they hit the
+[   26.58s ->    33.90s] live markets, not because of a regime change, but because the math was broken to begin with.
+[   34.24s ->    40.04s] In this video today, we're going to talk about the three most common backtesting pitfalls that
+[   40.04s ->    44.86s] will ruin your trading strategy. While today we'll be covering these specific pitfalls,
+[   45.02s ->    50.76s] the reality is you still need to build a robust model to trade with. If you'd like to master
+[   50.76s ->    56.04s] your quantitative skills required to build these institutional-grade models for trading and
+[   56.04s ->    63.18s] market-making roles, check out QuantGuild.com. We have over 100 hours of lecture content,
+[   63.30s ->    70.22s] an adaptive practice engine that scales with your skill level, all designed to prepare you for the
+[   70.22s ->    76.56s] real world. And if you'd like access to this Jupyter Notebook, the link will be in the description
+[   76.56s ->    81.94s] below, and I'll also post it on the QuantGuild library on GitHub, where you can find all of my
+[   81.94s ->    88.42s] Jupyter Notebooks and associated YouTube videos. Let's take a look at the first pitfall at the
+[   88.42s ->    95.10s] scene of this crime, look-ahead bias. What I have here for you is an animation of a trading strategy.
+[   95.26s ->   100.74s] What I'm going to do is I'm going to use alternative data to come up with a signal for a basket of
+[  100.74s ->   107.44s] equities. I'm going to rank that signal in terms of quantiles. I'm going to go long the top bucket,
+[  107.44s ->   113.26s] short the bottom bucket, create a market-neutral strategy, and I'm going to analyze the equity
+[  113.26s ->   119.72s] curve and the returns across deciles. And what you see here is something that looks very promising.
+[  119.88s ->   125.64s] We have a sharp ratio of three. We have a nice monotonic relationship between the signal bucket
+[  125.64s ->   134.04s] and the forward return. But like we said at the start of this video, a successful backtest is in
+[  134.04s ->   141.84s] fact a crime scene. So what is this pitfall that we're analyzing here? Look-ahead bias. The idea of
+[  141.84s ->   149.42s] incorporating information that isn't available on or at the time that you enter into a trade in making
+[  149.42s ->   156.58s] that trading decision. You can think of this in terms of two envelopes. We have one envelope of all
+[  156.58s ->   163.88s] of the information available to us at or before the time of the trading decision, and information
+[  163.88s ->   170.70s] then that is available after the time of that trading decision. Now, it's an easy idea to grasp. We
+[  170.70s ->   177.66s] don't want to accidentally look into the future. But especially when we're dealing with alternative
+[  177.66s ->   185.08s] data and large data sets, this can become increasingly difficult, especially when you're trying to match
+[  185.08s ->   192.22s] dates across returns, across alternative data sets, whenever that data actually arrived point in time.
+[  192.22s ->   198.82s] What happens when you actually control for this look-ahead bias in something like the strategy
+[  198.82s ->   205.30s] that we just saw above? Well, in the strategy we just saw above, clearly something was wrong.
+[  205.68s ->   212.56s] We had a sharp ratio of three, and that is very exciting to see in a backtest, but also it is a crime
+[  212.56s ->   220.04s] scene. Likely, you've induced some bias in your backtest. When we actually control for that look-ahead bias,
+[  220.04s ->   229.10s] you can see that the performance degrades severely. Now, it's not as insulting when you see a sharp ratio
+[  229.10s ->   239.44s] of three, four, five. But what is insulting is when you see a sharp ratio of maybe 0.9, 1.2. And it seems
+[  239.44s ->   247.46s] like your signal might have some promise. But in fact, it is polluted by this look-ahead bias. What I'm
+[  247.46s ->   253.98s] saying is look-ahead bias isn't necessarily going to contribute to enough variation explained in
+[  253.98s ->   261.26s] forward returns to automatically make your backtest look too good to be true. It, in fact, could just
+[  261.26s ->   269.14s] look promising and still be polluted by look-ahead bias. This can unfortunately come in a variety of
+[  269.14s ->   275.52s] different shapes, ways, and forms. It can come in the form of just including information that was
+[  275.52s ->   282.50s] available one week from today as a signal in your trading decision a week prior. It can come in the
+[  282.50s ->   290.38s] form of using forward data returns from next week to aid in normalizing some sort of signal or return
+[  290.38s ->   298.18s] today or even in the past informing your trading decision. So anytime you're dealing with a backtest,
+[  298.18s ->   302.24s] it's critical that your models, your parameterizations, your alternative data
+[  302.24s ->   308.24s] are always going to be adapted to the filtration. That is, you're only going to be trading with
+[  308.24s ->   314.20s] effectively that first envelope. This brings us to the second pitfall at the scene of the crime,
+[  314.34s ->   322.36s] data snooping, overfitting, P-hacking. This is going to be the most insulting pitfall when you first
+[  322.36s ->   328.70s] get started backtesting trading strategies, especially if you don't have a strong basis
+[  328.70s ->   336.14s] in probability and statistics building models. What you're observing here is two different trading
+[  336.14s ->   343.00s] strategies. I'm using a moving average crossover on the left and a moving average crossover on the
+[  343.00s ->   347.58s] right. But what I'm doing is I'm changing each of the moving averages. I have a three and a five
+[  347.58s ->   354.60s] and a seven and a 12. And I want you to notice the seven and the 12 clearly outperforms the three
+[  354.60s ->   361.48s] and the five. So what am I going to try to trade live with? Well, I'm going to want to trade the one
+[  361.48s ->   367.04s] with a higher sharp ratio, right? Can't we just keep picking different parameterizations of that
+[  367.04s ->   375.28s] strategy until we find an optimal one and then trade with that live? Well, this is the idea of data
+[  375.28s ->   382.70s] snooping, overfitting, or P-hacking. Suppose you tried hundreds of moving average combinations.
+[  383.08s ->   387.80s] You try a combination, it yields a sharp ratio. Try another one, it yields a sharp. Try another,
+[  387.96s ->   394.20s] it yields a different sharp. And you'll just pick a parameterization that has the highest sharp ratio.
+[  394.50s ->   402.86s] But the problem here is you are just overfitting that model's parameterization to historic data.
+[  402.86s ->   409.90s] You're not actually learning anything in a robust way. What does this then look like out of sample?
+[  410.32s ->   415.76s] Well, let's take a look at that 7-12 crossover. So this one performed better with a better
+[  415.76s ->   421.52s] parameterization. Let's try to trade with it live. So I'm going to use that parameterization live,
+[  421.66s ->   430.66s] and I have a negative 1.8 sharp ratio. This is a product of overfitting your model and parameterization
+[  430.66s ->   438.00s] to data. You're just overfitting it in a way where you're pulling different levers until the statistics
+[  438.00s ->   443.58s] look good in a backward-looking sense. You're not actually learning any structure. You don't actually
+[  443.58s ->   449.34s] have an economic interpretation for that parameterization. So in a forward-looking capacity,
+[  449.34s ->   457.12s] it will not emulate that performance. So what do we do about this in practice? Well, anytime you select
+[  457.12s ->   462.66s] a model, you're going to be making assumptions, and that model is going to have a parameterization.
+[  462.78s ->   469.76s] How strong those assumptions hold in a forward-looking sense dictates how robust your model will be
+[  469.76s ->   476.60s] and how good of a job you will do making trading decisions. So in practice, we do something known as
+[  476.60s ->   482.84s] walk-forward validation. Instead of just looking at a whole bunch of historic data and then picking a
+[  482.84s ->   488.88s] parameterization that looks good or yields good performance metrics, we're actually going to chop
+[  488.88s ->   494.82s] our data up into different slices. We're going to chop our data up into maybe a couple of months,
+[  494.98s ->   501.58s] take a look at a model and parameterization, and then try it over the next couple of months on unseen
+[  501.58s ->   509.10s] data. And we do that on a rolling basis to aid in optimizing the parameter set. This will help
+[  509.10s ->   514.56s] control for this type of bias. It's not going to mitigate it completely because you can always try
+[  514.56s ->   521.86s] to mine then the walk-forward testing. In any case, this is starting to approach more concrete
+[  521.86s ->   529.30s] methodology to handle this parameterization problem. A key component of this and a key component
+[  529.30s ->   537.26s] of actually building real robust models is your model should not entirely break down just because you
+[  537.26s ->   544.36s] slightly alter the parameter set. What I mean by this is you should see reasonably stable performance
+[  544.36s ->   551.32s] out of sample in a walk-forward sense. But more importantly, if I was to slightly change these
+[  551.32s ->   560.06s] 7 and 12, maybe I make it an 8 and 12, I shouldn't see severe performance degradation. That is an indicator
+[  560.06s ->   569.52s] of overfitting. So that is this notion of data snooping, overfitting, or p-hacking. The last pitfall
+[  569.52s ->   576.32s] we're going to cover herein is survivorship bias. This is the most slept-on bias in all of back
+[  576.32s ->   583.04s] testing. So what is it? Well, we have a famous analogy. During World War II, analysts mapped bullet
+[  583.04s ->   590.00s] holes on returning planes to determine where to add armor. So we take a look at this plane and we say,
+[  590.06s ->   596.96s] okay, let's just armor it up where all of the red dots are. But what about the planes that got shot
+[  596.96s ->   604.44s] down? We didn't get to record any data from them. So this is the idea of survivorship bias. If we were
+[  604.44s ->   611.00s] to just armor the plane around where all of the bullet holes were recorded, then we wouldn't achieve
+[  611.00s ->   619.44s] the desired outcome. We actually want to armor the plane where we don't see bullet holes. That is
+[  619.44s ->   627.86s] okay. That's planes in World War II. What does that have to do with trading? Well, in the exact same
+[  627.86s ->   634.72s] capacity, if we don't include firms that went bankrupt in our back tests, if we're trading some
+[  634.72s ->   641.54s] sort of cross-sectional strategy or portfolio, we are going to be overestimating our strategy's
+[  641.54s ->   647.56s] efficacy. So what does this look like? Well, what you can see here is a beautiful trading strategy.
+[  647.56s ->   652.80s] All right, I'm going to develop this idea of a trading signal. I have my quantiles. I'll go long
+[  652.80s ->   657.98s] short, create this market neutral portfolio, and everything looks great. I get this nice looking
+[  657.98s ->   667.92s] equity curve. But in this back test, I'm not including firms that went bankrupt. Okay, well, what happens
+[  667.92s ->   676.10s] when I include bankrupt or delisted firms? Let's take a look at that exact same signal. What you're going
+[  676.10s ->   683.40s] to observe is a few of the names that had a tremendous weight in the buckets in varying capacities, that
+[  683.40s ->   689.70s] means going long yielded negative returns, going short yielded positive returns, you can see that the
+[  689.70s ->   698.98s] performance degrades severely and we end up with a negative sharp ratio. This is akin to not armoring
+[  698.98s ->   705.36s] the plane in the plane in the places where there are no bullet holes. Effectively, we're looking at
+[  705.36s ->   715.28s] something that is contradicting decisions that we need to make to achieve the desired outcome. That is why
+[  715.28s ->   725.84s] we need to include delisted firms in our back tests. Same idea as the planes. Otherwise, we're not going to
+[  725.84s ->   733.58s] achieve the desired outcome from our analysis. So what can we do to control for this bias? Well, at each
+[  733.58s ->   740.02s] time T that you're making a trading decision in a back test, you need to predefine an equity universe.
+[  740.46s ->   745.38s] And that equity universe can be based on an index, it can be based on market capitalization,
+[  745.86s ->   754.74s] whatever you would like, but it can't just include firms that survived into the future. It has to include
+[  754.74s ->   761.12s] all of them because today, if you make trading decisions, you don't know which firms are going
+[  761.12s ->   769.10s] to survive five, 10 years into the future. Some honorable mentions. These aren't exactly pitfalls
+[  769.10s ->   775.98s] in themselves. There's certainly more in your face. You can think of them as accomplices to the crime.
+[  775.98s ->   784.70s] If you will, we have transaction costs, the spread and slippage. In other words, if you control for
+[  784.70s ->   791.02s] those three pitfalls that we discussed, look ahead bias, data snooping and survivorship bias,
+[  791.02s ->   797.20s] and you don't have a viable trading strategy, these aren't going to matter at all. If you can't
+[  797.20s ->   803.46s] generate a positive sharp ratio in the classroom, taking steps closer to the real world certainly
+[  803.46s ->   810.14s] isn't going to help you. Transaction costs are going to eat away at your equity curve. The spread
+[  810.14s ->   817.70s] is also going to change what price you're filling at along with slippage. In other words, these are
+[  817.70s ->   824.38s] going to eat away at whatever beautiful equity curve you have, excluding transaction costs that you would
+[  824.38s ->   832.28s] experience in the real world. In short, backtesting is a powerful technique, but it's also one of the most
+[  832.28s ->   840.22s] misapplied techniques in all of statistics. By refusing to trade as if you had a crystal ball,
+[  840.22s ->   846.56s] by refusing to torture your data until it tells you what you want, and of course, by including
+[  846.56s ->   853.74s] firms in the graveyard in your backtests, you aren't just building a better model. You are building
+[  853.74s ->   859.92s] an institutional grade pipeline. That's going to do it for this video on three backtesting pitfalls that
+[  859.92s ->   864.62s] will ruin your strategy. I hope you enjoyed. I hope you learned something. This video certainly
+[  864.62s ->   867.86s] took a lot of effort to put together, so if you liked it and you want to see more like it in the
+[  867.86s ->   872.50s] future, please like, comment, subscribe, share. It helps me out tremendously. It is always greatly
+[  872.50s ->   879.22s] appreciated. Master your quantitative skills for trading and market-making roles on quantguild.com.
+[  879.36s ->   884.98s] Other than that, I want to thank you so much for watching, and I'll see you in the next video.

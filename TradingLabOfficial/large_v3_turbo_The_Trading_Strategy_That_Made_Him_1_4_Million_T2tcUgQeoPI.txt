@@ -1,0 +1,163 @@
+[    0.00s ->     8.30s] This is a guy named Trader Kane. In a single month, he turned just $130,000 into 1.4 million
+[    8.30s ->    13.68s] trading stocks in a month. 1.4 million in a month. That's insane. Now, I don't know about you,
+[   13.84s ->    19.96s] but I would also like 1.4 million in a month. But I was a little skeptical. Maybe he just invested
+[   19.96s ->    25.78s] into some meme coin, got lucky, and that's that. Or maybe he did a YOLO bet on call options and
+[   25.78s ->    31.80s] again, got lucky. Or maybe, just maybe, he was onto something. So in good old trading
+[   31.80s ->    36.84s] lab fashion, I did some digging. I scavenged the internet for days trying to find out who
+[   36.84s ->    42.84s] this guy is and how he did it. I read articles, watched videos, and read anything and everything
+[   42.84s ->    49.58s] I could about him. Then I stumbled upon this, his strategy. I replicated his exact strategy
+[   49.58s ->    54.86s] on my chart. And honestly, guys, this has been one of the first strategies in a long time
+[   54.86s ->    59.88s] where I'm actually blown away by the results. After seeing time and time again of my tape
+[   59.88s ->    63.92s] profit being hit, I instantly knew this guy was onto something.
+[   63.92s ->    69.22s] Now, this strategy probably doesn't make sense to you right now, but in about 7 minutes,
+[   69.22s ->    73.78s] it will. It's a little complicated at first, but pretty easy to understand when you get
+[   73.78s ->    79.08s] the hang of it. You see, Kane's approach wasn't gambling. It wasn't even luck. It was statistical,
+[   79.08s ->    84.72s] programmed in the market's automatic behavior, wrapped in a pretty little bow of real risk management,
+[   84.72s ->    89.74s] that most traders overlook. Kane's strategy isn't about hitting the game ending home run.
+[   89.74s ->    93.78s] It's about getting the easy base hits or the low hanging fruit.
+[   93.78s ->    98.78s] You really going butt? Fucking, I know man. I don't want to do this.
+[   98.78s ->   105.06s] It's honestly, I don't know how to say this, but genius. But that leaves us to the fun part.
+[  105.06s ->   111.16s] What actually is his strategy? Price is falling. When it ultimately reverses, it will likely reverse
+[  111.16s ->   117.16s] into 50% of this original range. Don't believe me? Go onto your chart right now. Find an uptrend
+[  117.16s ->   123.40s] or a downtrend. Measure from the high to the low of that trend. And look how often price reverses
+[  123.40s ->   129.18s] at that 50% mark. It goes down, reverses, comes to the 50% mark, and it does it again here,
+[  129.18s ->   135.06s] here, and here. This happens pretty often. But once this happens, price then should trade
+[  135.06s ->   141.34s] into 50% of this second range. This is the key right here. All he wants to do is short
+[  141.34s ->   146.58s] and trade 50% of this range here. If you don't know, instead of making money while the chart
+[  146.58s ->   150.30s] goes up, shorting is when you make money as the price goes down.
+[  150.30s ->   155.24s] Now, the thinking behind this is simple. The overall trend is trading downwards, meaning
+[  155.24s ->   160.52s] you're trading with the momentum of the long term bias. And with that information in mind,
+[  160.52s ->   165.40s] there are two very likely scenarios that could happen. If price trades down here, great,
+[  165.40s ->   169.50s] the chart continued its long term momentum, and you just made some really good money on
+[  169.50s ->   174.74s] your short, like really good money. The other scenario, sure, maybe it wants to go against
+[  174.74s ->   180.48s] our trade and head upwards in a reversal. But since this overall chart is still in a downtrend,
+[  180.48s ->   187.26s] it is very, very likely it will correct first by going down to 50% of this range first, where
+[  187.26s ->   192.74s] you initially take profit, then it heads upwards from here. So again, this technically wouldn't
+[  192.74s ->   196.82s] be a losing trade, even though it's going in the wrong direction of our trade. All you
+[  196.82s ->   201.10s] need to target is this move right here. You don't need to try to take a long trade here
+[  201.10s ->   205.58s] because it's risky. You don't know where the bottom will be. And on top of that, you
+[  205.58s ->   211.50s] don't know at what price price will reverse. So this trade is pretty risky. You also don't
+[  211.50s ->   216.42s] need to trade this long right here either, because this move is going against the overall trend,
+[  216.42s ->   221.82s] which in some cases it does happen, but it's not very likely. All you need to target is
+[  221.82s ->   226.82s] this small probable move. So you might be thinking, how do you find this small probable
+[  226.82s ->   231.36s] move? Well, actually, this trading concept has been going around since the start of the
+[  231.36s ->   236.74s] financial markets themselves. That is because it involves human behavior. To find the creator
+[  236.74s ->   241.60s] of this concept, we have to go all the way back to the early 1900s, where the stock market
+[  241.60s ->   246.92s] was first getting started. His name was Richard Wyckoff. Now he's a cool dude and all, but
+[  246.92s ->   252.70s] his name isn't very important. What is important is that he found an odd similarity with price
+[  252.70s ->   258.76s] movements and human behavior, which birthed the strategy called AMD. The concept itself
+[  258.76s ->   263.72s] is pretty simple. You have accumulation where price accumulates with consolidating sideways
+[  263.72s ->   268.50s] price movement. You will then eventually have a break of this accumulation in either direction.
+[  268.50s ->   273.38s] This point here is the most important and where the advantage of our strategy takes place.
+[  273.38s ->   278.86s] You see, once price breaks this accumulation, there will now be retail traders entering long
+[  278.86s ->   284.02s] trades as price breaks these highs, as they think this is the start of a nice beautiful
+[  284.02s ->   289.68s] uptrend. What happens when that reality isn't real, and the trade goes against them? They sell
+[  289.68s ->   295.14s] their positions. So when price falls here, it'll be hitting all the stop losses of people just
+[  295.14s ->   300.18s] entering this trade for a breakout opportunity, making them sell all of their position, adding
+[  300.18s ->   305.76s] fuel to the downwards momentum, which the 1% take a short trade here and make all the profits
+[  305.76s ->   310.04s] riding this momentum. You see, the market needs fuel to move. Without fuel, the market would
+[  310.04s ->   316.02s] never move. That fuel is liquidity, and liquidity is just trader stop losses being hit to fuel the
+[  316.02s ->   322.10s] move even more. So we have accumulation, we have manipulation, then we have distribution, which
+[  322.10s ->   328.52s] is AMD. Our goal with this strategy is to take advantage of this manipulation area right here.
+[  328.52s ->   335.10s] But there's one key thing. We will only look to enter this trade from 9.30am to 11.30am
+[  335.10s ->   339.40s] Eastern Standard Time. Now, you might be thinking, why is that important? The reasoning behind
+[  339.40s ->   345.10s] this circles back to our first point. At around 10am, the market will likely manipulate in either
+[  345.10s ->   350.38s] direction. As at 9am, the market isn't open yet, and is usually accumulating before the
+[  350.38s ->   357.60s] market opens. If this happens, once it manipulates, on average, it distributes back into consolidation,
+[  357.60s ->   362.52s] where it originally began. But you also might be thinking, just because price breaks a range,
+[  362.52s ->   367.62s] that doesn't necessarily mean that price will always manipulate in the other direction.
+[  367.62s ->   372.14s] Sometimes it just keeps going up. So if price doesn't manipulate 100% of the time,
+[  372.14s ->   378.46s] how can we say the strategy actually even works? That is why we use the multi-time frame confirmation.
+[  378.46s ->   382.64s] Let me explain. Go to trading view. If you don't yet have it, I'll leave a link in my description.
+[  382.64s ->   388.34s] First, go to the daily time frame. At 9am before the market opens, you're going to mark the low and
+[  388.34s ->   394.68s] the high of the daily candle. These are very probable points of potential liquidity, and where manipulation
+[  394.68s ->   399.68s] is most likely to happen. Ideally, what we want to see is price break these highs or lows between
+[  399.68s ->   407.06s] 9.30 to 11.30am. Once this happens, we move to the 4 hour time frame, and on the 4 hour time frame,
+[  407.06s ->   413.00s] you should see something similar to this, where price is moving sideways, accumulating before the
+[  413.00s ->   419.06s] market opens. At the 10am mark, price should break this range in either direction. You would then move
+[  419.06s ->   424.88s] to the 1 hour time frame for your entry to confirm the manipulation is in full effect. Once you get the
+[  424.88s ->   431.12s] confirmation of the manipulation, you enter the trade to reap the rewards of the distribution and
+[  431.12s ->   437.12s] make all that money, honey. This is just the very basics of his strategy. But we ran into a problem.
+[  437.12s ->   442.48s] None of this is useful if you don't have the correct risk management paired with it. Even though we have
+[  442.48s ->   447.76s] all these parameters, all of this fails without the correct risk management. You see, if we have our
+[  447.76s ->   453.84s] overaccumulation and manipulation, and are entering somewhere around here, all we care about is the
+[  453.84s ->   460.24s] halfway point of the manipulation move. We are just targeting 50% of this move. Now sure, price could
+[  460.24s ->   466.56s] continue to move downwards, and you may say, oh we missed out on so much potential money by exiting so
+[  466.56s ->   471.92s] early. But we don't really care if price distributes. We are just trading the manipulation.
+[  471.92s ->   477.68s] The reasoning behind that is, if we do continue up, we don't want to be caught in this. This is the type
+[  477.68s ->   483.92s] of move that could potentially kill a portfolio. So what you do is set your take profit at this 50%
+[  483.92s ->   489.76s] range, wait for price to hit this mark, you sell 50% of your position, then move your stop loss right
+[  489.76s ->   496.24s] below break even. That way you are taking this trade completely risk free now, no matter what happens.
+[  496.24s ->   501.68s] Even if price comes back up and goes against your trade, you basically break even. You basically just
+[  501.68s ->   507.36s] sell the other 50% of your position and just move on to the next trade without any risk at all.
+[  507.36s ->   512.64s] Let me say that again, you are potentially receiving thousands of dollars without risking
+[  512.64s ->   517.20s] anything. If you get to this point, hopefully you are starting to realize the power of this strategy.
+[  517.20s ->   522.88s] If it continues to go down and follows the trend, you sell more of your position at the lows of this
+[  522.88s ->   529.12s] range and ride this downwards momentum more, grabbing all this extreme profit without any risk.
+[  529.12s ->   534.56s] Now, I'm going to be completely honest. You see, this is a riskier strategy because you are counting on
+[  534.56s ->   539.84s] manipulation to actually occur. But that's why we take profits at break even because it mitigates
+[  539.84s ->   544.88s] that risk. You can do this exact same strategy with long trades. Just flip it around. You have
+[  544.88s ->   551.12s] price moving upwards, it comes down, does a pull back to this 50% mark. All we are looking to trade
+[  551.12s ->   556.64s] is this little upwards move to this 50% mark. It's a little complicated, but once you get used to the
+[  556.64s ->   561.68s] framework, it's pretty easy. And if you go on your chart and just simply look for this setup,
+[  561.68s ->   568.24s] you will be blown away how often price comes to this 50% mark, like it did here, here, here,
+[  568.24s ->   572.48s] and here. I'm telling you guys, it is astounding how often this happens.
+[  572.48s ->   575.84s] But this strategy isn't perfect. It does have its cons.
+[  575.84s ->   580.64s] The first con is you need patience. This setup won't happen every single morning. There will
+[  580.64s ->   585.52s] be mornings where you have to sit on your hands and not take a single trade, which a lot of people
+[  585.52s ->   590.32s] don't have the patience and would end up entering into a trade that doesn't fit all the parameters.
+[  590.32s ->   594.80s] The only way this strategy works is if you're patient enough to wait for the setup.
+[  594.80s ->   600.08s] The second con is the biggest con. And that is, it's somewhat of a risky strategy. Because
+[  600.08s ->   606.24s] in the end, you are looking for a reversal and manipulation to occur. And as we already know,
+[  606.24s ->   612.48s] when the market runs, it really runs. And when you're looking for a reversal in a very bullish market,
+[  612.48s ->   618.24s] it's pretty risky. So we need a way to mitigate this risk as much as possible. That's why we add the
+[  618.24s ->   622.88s] break even tactic. Because if this strategy is performed correctly, you will have a lot of
+[  622.88s ->   627.68s] break even trades. And you have to be fine with that. The reason a lot of break even trades occur
+[  627.68s ->   632.24s] is because we are trying to mitigate the second con, which is our risk. You see, there are two
+[  632.24s ->   637.36s] options when trading. You either need to be right or right out. And when you really sit down and think
+[  637.36s ->   642.16s] about it, it really makes a lot of sense. So we know the general setup of what we're looking for.
+[  642.16s ->   647.12s] But how do we know where to actually enter the trade? Okay, so we have three candles like this.
+[  647.12s ->   652.88s] Price jumped up an insane amount, creating a huge candle. The price moved up so quickly that it
+[  652.88s ->   657.52s] didn't actually give the sellers enough time to counteract this movement, creating an imbalance
+[  657.52s ->   663.44s] in the market. Naturally, sellers will want to retest this zone. And this zone is called a fair value
+[  663.44s ->   668.48s] gap. You can mark a fair value gap by simply marking the candle's top wick before the big move
+[  668.48s ->   673.76s] to the candle's lower wick after the big move. This zone is the fair value gap itself. You can
+[  673.76s ->   678.88s] have a bullish fair value gap and bearish fair value gap. So if you have an uptrend and price
+[  678.88s ->   683.92s] creates a fair value gap up here, usually price will come down to this gap, give sellers a chance
+[  683.92s ->   689.44s] to test this price again. And usually since it's an uptrend, it'll continue to head upwards from this
+[  689.44s ->   694.56s] point. But there's another scenario. If price has the same setup, creates a bullish fair value gap,
+[  694.56s ->   699.92s] but this time price breaks through this fair value gap hard and creates a bearish fair value gap
+[  699.92s ->   705.28s] within the bullish one. This is an inverse fair value gap. If you ever see this on your chart,
+[  705.28s ->   710.64s] this is an extremely bearish signal as it's showing sellers are taking complete control.
+[  710.64s ->   714.88s] So what you would do is wait for price to come back up to this inverse fair value gap,
+[  714.88s ->   720.80s] enter a short once it does, and then make a shitload of money. That is how he enters his trades.
+[  720.80s ->   727.04s] So if you combine the 50% ranges with higher timeframe, accumulation, manipulation, and
+[  727.04s ->   732.40s] distribution, add risk management, and on top of that, add an insanely good entry model,
+[  732.40s ->   737.84s] you get an insanely profitable strategy. So we went over the idea. We did some pretty
+[  737.84s ->   742.88s] basic explanations. Now it's time for the fun part, actually trying. First thing you want to do
+[  742.88s ->   747.92s] is go to the daily timeframe. Price is falling. It then gains a little bit of strength and starts
+[  747.92s ->   752.96s] heading upwards. This is the daily candle for today. The market hasn't opened yet. So we're
+[  752.96s ->   758.56s] going to mark the low and the high of this current daily candle for our most probable points of
+[  758.56s ->   764.80s] liquidity. Also take note how price is consolidating here, which is our accumulation zone from our AMD
+[  764.80s ->   770.24s] strategy we were talking about before. While all this is happening, we then grab our ruler tool on the
+[  770.24s ->   776.24s] left. We measure from the high to the low of this downwards move and notice how price is consolidating
+[  776.24s ->   781.52s] right at our 50% mark. Once we see this, we then switch to the one hour timeframe.
+[  781.52s ->   785.84s] On the one hour timeframe, there are a lot of important things going on. First,
+[  785.84s ->   790.64s] it's now 30 minutes before the market opens. Notice how we have sideways price movement,
+[  790.64s ->   796.24s] which again is our accumulation. The market then opens. We then see price break the highs of the
+[  796.24s ->   802.16s] accumulation at around 1030 Eastern standard time, which we can now anticipate price to manipulate
+[  802.16s ->   808.24s] here. So far, so good. But this exact point is where our plan really starts to form. Price drops,
+[  808.24s ->   814.64s] and it drops hard. But notice this. Price created a bullish fair value gap right here when it manipulated.
+[  814.64s ->   820.32s] But as it went down, it created a bearish fair value gap within the bullish one, which creates our
+[  820.32s ->   825.92s] inversion fair value gap, which gives us the perfect point to enter a short trade. We then wait for price
+[  825.92s ->   830.88s] to come back up to our inversion gap. We're going to set our stop loss above the manipulation move.
+[  830.88s ->   836.48s] Then we're going to set our take profit at 50% of this move here. Then we do the final step,
+[  836.48s ->   841.84s] which is to enter the trade. Price immediately falls after hitting our inversion gap. It then
+[  841.84s ->   848.08s] proceeds to fall to our take profit. We then sell 50% of our position and move our stop loss to break
+[  848.08s ->   854.16s] even. We are now in this trade absolutely risk-free. So no matter what happens from this point,
+[  854.16s ->   860.40s] we don't lose any money whatsoever. We then move our take profit at the lows of the original move
+[  860.40s ->   865.04s] and watch what happens. Price then moves to our final take profit and we sell the rest of our
+[  865.04s ->   871.12s] position exiting fully out of the trade, literally textbook. Add this trick to your arsenal to any of
+[  871.12s ->   876.32s] your trading strategies and it'll help you get more sniper entries. Try it out. Let me know how it
+[  876.32s ->   881.92s] works for you and DM me on Instagram with the results. Thanks for watching and I'll see you guys next time.
+[  881.92s ->   888.02s] You really going to butt? I know man. I don't want to do this.

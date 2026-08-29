@@ -1,0 +1,160 @@
+[    0.27s ->     5.91s] Compound annual growth is one of the most useful measures in all of quantitative finance.
+[    6.07s ->    10.69s] There's a ton of information it provides, use cases, and tricks, but to get there, we
+[   10.69s ->    14.07s] need to first understand the geometric compounding of returns.
+[   14.63s ->    19.91s] Regardless of the portfolio that you hold, whether it's stock, bonds, crypto, derivatives,
+[   20.17s ->    25.43s] some form of alternative assets, you are going to be subject to the geometric compounding
+[   25.43s ->    26.23s] of returns.
+[   26.23s ->    31.89s] What that means is you have initial principle, and it's going to be multiplied every single
+[   31.89s ->    37.25s] day, week, month, year, whatever measure you use, by the returns that you experience.
+[   37.57s ->    40.99s] And that is going to produce then growth on growth.
+[   41.13s ->    45.41s] On the left side here, you're going to experience arithmetic growth, which is just a straight
+[   45.41s ->    45.69s] line.
+[   45.79s ->    46.19s] It's linear.
+[   46.31s ->    46.91s] It's additive.
+[   47.31s ->    50.27s] On the right, you're going to experience geometric growth.
+[   50.41s ->    52.77s] That is this compound growth, growth on growth.
+[   52.89s ->    54.33s] It's multiplicative growth.
+[   54.33s ->    56.69s] That is what produces this curvature.
+[   57.19s ->    58.73s] Arithmetic just means additive.
+[   59.15s ->    61.45s] Geometric just means multiplicative.
+[   62.05s ->    64.25s] The geometric growth produces this curvature.
+[   64.79s ->    70.37s] This is what is known as convexity, which means you are growing then at a growing rate.
+[   71.25s ->    76.55s] Now, this makes a ton of sense if you're talking about something like fixed income with maybe
+[   76.55s ->    82.51s] no reinvestment risk, meaning that you have a fixed interest rate you're guaranteed to
+[   82.51s ->    85.85s] earn over the life of this 30-year investment.
+[   86.47s ->    91.79s] So if I'm investing at, say, I don't know, 4% in year one, I get a 4% return.
+[   92.01s ->    98.11s] I reinvest my interest in principle at 4% again and again and again, and we get this beautiful,
+[   98.37s ->    99.79s] smooth ride up.
+[  101.00s ->   101.48s] Okay.
+[  101.48s ->   102.64s] What's the problem with that?
+[  102.72s ->   106.90s] Well, I don't know about you, but my stock portfolio does not look like this.
+[  106.90s ->   112.42s] Whenever I plot my stock portfolio path, it is extremely jagged.
+[  112.56s ->   113.04s] It's random.
+[  113.20s ->   117.16s] These returns over each period, they're not fixed.
+[  117.56s ->   119.24s] They change, right?
+[  119.30s ->   120.40s] They're completely random.
+[  120.40s ->   124.34s] What I mean by that is, let's take a look at two different stock price paths.
+[  125.06s ->   127.16s] This is what the return profile looks like.
+[  127.20s ->   130.58s] It doesn't mean you're not experiencing geometric returns.
+[  130.58s ->   132.82s] It just means it's not a smooth ride.
+[  133.12s ->   135.18s] That's exactly what you see here.
+[  135.34s ->   137.12s] We have the same initial principle.
+[  137.32s ->   139.90s] In fact, the same final principle as well.
+[  140.32s ->   144.30s] But the path that we took to get there, yeah, it's not smooth.
+[  144.30s ->   152.00s] You're not going to have like a fixed 4% rate each return period like you see here.
+[  152.26s ->   156.12s] When you're dealing with risky assets that are marked to market every single day, you're
+[  156.12s ->   160.50s] going to have a stochastic path that looks like either one of these.
+[  160.66s ->   163.34s] That doesn't mean you're not experiencing the same convexity.
+[  163.40s ->   164.60s] That's exactly what you see here.
+[  164.66s ->   170.56s] We're tracking this gray dashed line, which is effectively the convex return profile.
+[  171.60s ->   172.08s] Okay.
+[  172.08s ->   177.89s] My question to you is, what if it was a smooth ride?
+[  178.61s ->   180.77s] What if it was a smooth ride up?
+[  181.35s ->   187.67s] Yeah, here we experienced maybe a 20% return, then a minus 20%, then a 40%, then a minus 30%.
+[  187.67s ->   195.43s] But what if instead we had a fixed rate every single period to get to this ending point
+[  195.43s ->   198.67s] on either chart from this initial point?
+[  198.67s ->   204.35s] What we would then be doing is we would then be producing a chart that looks like this.
+[  204.55s ->   212.21s] We would be forcing this jagged path to follow this smooth curvature up on either side of
+[  212.21s ->   215.43s] this chart, either the red path or the blue path.
+[  215.43s ->   223.75s] That rate that produces the smooth version of this jagged plot is known as the compound annual
+[  223.75s ->   224.59s] growth rate.
+[  224.59s ->   230.15s] What we're doing is we're saying, hey, instead of treating each period's return as random,
+[  230.35s ->   239.25s] let's instead find the rate that would produce via compound growth, the exact same terminal value
+[  239.25s ->   244.05s] from the principle, creating that smooth ride up.
+[  244.69s ->   246.39s] What does this look like?
+[  246.39s ->   253.23s] Well, on the left, I have a whole bunch of stochastic paths starting at the same initial value and
+[  253.23s ->   255.71s] ending at the same final value.
+[  256.07s ->   259.51s] They all have the same compound annual growth rate.
+[  260.17s ->   266.93s] The actual returns that we experience period to period, they're always subject to be random.
+[  267.82s ->   269.18s] They're random variables.
+[  269.32s ->   270.32s] Nobody knows what they're going to be.
+[  270.38s ->   271.12s] We can't predict them.
+[  271.18s ->   272.14s] There's nothing we can do.
+[  272.14s ->   277.68s] So the compound annual growth measure is just saying, hey, forget about the jaggedness of
+[  277.68s ->   278.14s] that path.
+[  278.28s ->   279.66s] Forget about the randomness of it.
+[  279.78s ->   284.20s] If we did have a fixed rate of interest, what would it look like year over year?
+[  285.04s ->   291.18s] And using that fixed rate, we can then make informed decisions about our portfolio growth.
+[  291.42s ->   295.42s] That doesn't mean we can expect it in the future, right?
+[  295.48s ->   296.36s] We never can.
+[  296.36s ->   300.62s] It's just a statistical model, but it does tell us something about the feasibility of growth
+[  300.62s ->   301.88s] in our portfolio.
+[  301.88s ->   306.66s] This is my primary argument against anybody citing crazy returns.
+[  306.86s ->   311.02s] I talk about this in my video debunking day trading.
+[  311.20s ->   317.28s] If the return measures that these people were citing were possible to reproduce, then they
+[  317.28s ->   320.56s] would have more wealth than is available in the universe, right?
+[  320.70s ->   325.20s] So then it creates an interesting dichotomy of, okay, if you can reproduce it, you would
+[  325.20s ->   327.36s] have more wealth than in the universe.
+[  327.36s ->   333.02s] If you can't, then what's the point in sharing it with others, right?
+[  334.02s ->   340.08s] That is effectively one of the things that compound annual growth is going to be useful
+[  340.08s ->   343.52s] for teasing out is the feasibility of performance.
+[  343.52s ->   348.30s] On the right here, we're seeing it applied to the S&P 500.
+[  348.30s ->   352.52s] This is one of the most prevalent use cases of CAGR.
+[  352.52s ->   359.58s] And if you take a look at the inflation adjusted compound annual growth of the S&P 500, you'll
+[  359.58s ->   361.72s] find that it's roughly 7.5%.
+[  361.72s ->   363.80s] That doesn't break the bank.
+[  363.88s ->   364.98s] It's not a crazy measure.
+[  364.98s ->   369.54s] And that's the kind of performance that we've experienced in the past, right?
+[  369.60s ->   371.50s] The path that we actually walk is jagged.
+[  371.62s ->   372.06s] It's random.
+[  372.32s ->   377.96s] But if we did have a fixed rate, it would look like 7.5%.
+[  377.96s ->   381.86s] So if it was a smooth ride, it would look exactly like this.
+[  381.86s ->   388.60s] If we were just fully invested in the S&P 500 at a 7.5% rate, that doesn't mean you're not
+[  388.60s ->   395.02s] going to have manic swings up 20%, down 30%, up 50%, whatever, year to year, period to period.
+[  395.46s ->   399.74s] It's just telling you, it's a compression of information, what it would have been, the
+[  399.74s ->   402.70s] rate, if it were a smooth ride, all right?
+[  403.10s ->   406.22s] There's some really cool tricks and use cases for it.
+[  406.22s ->   409.90s] One of the first ones is this idea of the rule of 72.
+[  410.72s ->   416.16s] The rule of 72 is effectively telling you that if you take 72 and you divide it by CAGR,
+[  416.16s ->   420.64s] that is the roughly number of years it takes for your principal to double.
+[  421.18s ->   430.82s] So if you take a look here at roughly year 9.6, 19.2, and 28.8, you are doubling at a 7.5% CAGR.
+[  430.82s ->   436.14s] So if you bought the market at roughly year 9.6, you would expect twice your principal.
+[  436.40s ->   439.44s] At year 19.2, you would expect 4X.
+[  439.64s ->   443.40s] And then at year 28.8, you would expect 8X.
+[  443.54s ->   445.88s] And that is this growth on growth on growth.
+[  446.16s ->   448.04s] This is the long game.
+[  448.16s ->   449.06s] This is convexity.
+[  449.18s ->   453.14s] This is what every professional allocator of risk is trying to do.
+[  453.48s ->   457.08s] Make it to the long run to experience this insane growth.
+[  457.36s ->   459.48s] It's not about chasing ephemeral returns.
+[  459.48s ->   466.14s] It's not about chasing tech today because it's hot and producing extremely high returns
+[  466.14s ->   466.78s] ephemerally.
+[  467.18s ->   471.24s] That is not how you maximize this growth in the long run.
+[  471.38s ->   472.60s] Those are competing objectives.
+[  472.74s ->   474.48s] You don't get something for nothing.
+[  474.48s ->   479.26s] As I mentioned, it's a great BS test for trading strategies.
+[  479.82s ->   482.84s] You can just take a look at the principal after 30 years, right?
+[  483.14s ->   489.28s] Take the CAGR of whatever performance they cite and figure out how much money you'd have
+[  489.28s ->   491.46s] with a $10,000, $100,000 investment.
+[  491.46s ->   494.38s] So, here we're taking a look at a $100,000 investment.
+[  494.98s ->   502.14s] And if we use this rate of return that these day traders cite as possible, we would have
+[  502.14s ->   502.44s] what?
+[  502.68s ->   506.94s] This is like $107 trillion after 30 years.
+[  507.06s ->   509.04s] It makes literally no sense, right?
+[  509.06s ->   510.98s] It makes absolutely no sense.
+[  510.98s ->   512.68s] So, it's a very useful BS test.
+[  513.40s ->   517.94s] And like I said earlier, in reality, there is no guarantee.
+[  518.52s ->   522.26s] There is no guarantee that this CAGR is going to continue going forward.
+[  522.34s ->   526.66s] It's just a useful proxy for what the rate we could have expected to grow at year over
+[  526.66s ->   529.98s] year is in expectation and a compression and a smooth ride.
+[  529.98s ->   535.22s] But it doesn't actually give us any information about the environment.
+[  535.46s ->   539.00s] That is, of course, in a forward-looking sense.
+[  539.16s ->   540.70s] That's going to do it for this video on CAGR.
+[  540.94s ->   541.70s] I hope you learned something.
+[  541.78s ->   542.54s] I hope you enjoyed it.
+[  542.58s ->   544.72s] This video certainly took a tremendous effort to put together.
+[  544.82s ->   547.90s] So, if you liked it and you want to see more like it in the future, please like, comment,
+[  548.00s ->   548.60s] subscribe, share.
+[  548.66s ->   549.64s] It helps me out tremendously.
+[  549.90s ->   551.66s] It is always greatly appreciated.
+[  551.90s ->   556.94s] If you're looking to master your quantitative skills for roles in the financial services industry
+[  556.94s ->   562.94s] as a trader, a market maker, or a quant, then check out quantguild.com with over 100 lecture
+[  562.94s ->   567.52s] hours of material from first principles all the way to postgraduate and industry level
+[  567.52s ->   572.28s] material, an adaptive practice engine, over 90 lessons, interview questions, the list goes
+[  572.28s ->   572.76s] on.
+[  572.88s ->   580.10s] It is the place to master your quantitative skills to achieve a role in the financial services
+[  580.10s ->   580.58s] industry.
+[  580.70s ->   583.66s] It's what I wish I had when I was coming up to be a quant.
+[  583.82s ->   585.78s] I'll leave a link to it in the description below.
+[  585.78s ->   592.06s] If you'd like to go ahead and get started other than that, I want to thank you so much for
+[  592.06s ->   595.84s] watching and I will see you in the next video.

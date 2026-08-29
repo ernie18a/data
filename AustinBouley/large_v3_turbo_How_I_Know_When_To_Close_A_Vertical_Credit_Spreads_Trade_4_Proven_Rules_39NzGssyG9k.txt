@@ -1,0 +1,81 @@
+[    0.37s ->     3.93s] In this video, we're going over how I know when to close my credit spread trades.
+[    3.97s ->     7.13s] I'm going to break this down into four simple and easy to follow steps.
+[    7.49s ->     8.71s] One is based on profit.
+[    9.15s ->    10.63s] Two is based on time left.
+[   10.93s ->    11.95s] Three is based on trend.
+[   12.07s ->    14.33s] And then the four is the handbook guide that I'll walk you through.
+[   14.75s ->    18.51s] Again, guys, this is everything you need to know when to close your credit spread trades,
+[   18.57s ->    21.65s] either for a loss, for a profit, knowing what to do and when to do it
+[   21.65s ->    24.41s] so you're no longer scared in the trade and second guessing yourself.
+[   24.57s ->    26.63s] So let's dive right into it.
+[   26.85s ->    28.37s] Number one is profit, okay?
+[   28.37s ->    31.75s] How do I know how much profit to take on the trade?
+[   32.07s ->    34.31s] Well, this comes down to a simple rule.
+[   34.69s ->    40.77s] I always try to close my trade when the spread starts trading for five cents or less.
+[   41.15s ->    41.59s] Why?
+[   41.89s ->    45.91s] Well, because if I have time left, let's say I have more than five days left in this trade,
+[   46.01s ->    49.17s] so let's say five DTE plus.
+[   49.49s ->    54.99s] So if I have five days or more left and the credit spread is currently trading at five cents,
+[   54.99s ->    60.79s] then that means that I've kind of squeezed out the max profit that I can from this trade.
+[   61.21s ->    65.03s] Like what happened is when this trade was trading, it started trending in our favor.
+[   65.19s ->    67.11s] The stock started moving in our favor.
+[   67.55s ->    70.15s] The option or credit spread started dropping in price.
+[   70.47s ->    71.93s] And now we collected most of it.
+[   72.23s ->    77.91s] An option spread typically won't go down below three, two cents, whatever,
+[   77.91s ->    85.59s] or at least you won't be able to collect it at that amount just because of the idea of intrinsic and extrinsic value that comes with time.
+[   86.03s ->    94.73s] And so if you can sell a credit spread or close out the trade for five cents or less, five cents, four cents, three cents, that is the best trade.
+[   94.73s ->    97.71s] Why? Well, because there's still time left in the trades.
+[   97.81s ->   105.21s] Now you're able to collect a bulk of the profit, roll that profit you made into the next trade and continue on
+[  105.21s ->   110.85s] instead of having to wait those extra days just trying to collect a few pennies
+[  110.85s ->   114.13s] instead of collecting that money and moving on.
+[  114.35s ->   115.95s] So that is the profit category.
+[  116.09s ->   117.47s] The time category.
+[  117.47s ->   127.73s] If I am trading a credit spread, my time that I go into the trade with, I go into the trade with the idea that I'm going to hold until expiration.
+[  128.21s ->   133.41s] So every time I put on a trade, my idea is that I'm going to hold this stock until expiration.
+[  133.53s ->   135.09s] You're like, why would you do that?
+[  135.29s ->   137.23s] Well, because that is the strategy I use.
+[  137.29s ->   144.27s] To maintain the 95% win rate that I have, my strategy historically dictates that I hold until expiration.
+[  144.27s ->   151.13s] Now, again, if we're starting to get closer into a certain timeframe where the market starts reversing and trending
+[  151.13s ->   156.39s] and other things that we'll talk about here in a second, like trend in the handbook, then again, I can exit early.
+[  156.79s ->   163.45s] But in a consistence of time, I only exit at the expiration date unless the profit category is hit.
+[  163.91s ->   170.95s] Okay, here is an example of why I would exit a trade early, whether for a loss or for a profit-ish trend.
+[  170.95s ->   175.47s] When the market is trending up, I trade put credit spreads.
+[  175.63s ->   175.87s] Why?
+[  176.19s ->   180.49s] Well, because put credit spreads make money in general as the market goes up or stays flat.
+[  180.69s ->   184.17s] When the market's trending down, I trade call credit spreads.
+[  184.29s ->   184.51s] Why?
+[  184.77s ->   189.75s] Because call credit spreads make money on the way down or when the market stays flat.
+[  190.19s ->   195.21s] And because of this, this is my idea, my thesis when I put on a trade.
+[  195.35s ->   197.73s] Okay, the market's bullish, I put credit spread.
+[  198.05s ->   200.25s] Okay, the market's bearish, but I call credit spread.
+[  200.25s ->   204.03s] When that thesis changes, I'm allowed to exit.
+[  204.67s ->   210.67s] So for instance, if we're in an uptrend and it starts reversing going downtrend, then I can exit and cut my losses.
+[  211.01s ->   214.01s] If it's trending, it bounces and starts coming up higher.
+[  214.15s ->   217.43s] I can exit and take my losses instead of taking the full max loss.
+[  217.83s ->   222.11s] Now, the question is, how do I know when it's reversed or if I'm getting scared based on my emotion?
+[  222.59s ->   223.89s] Well, it's simply this.
+[  223.89s ->   229.75s] I need to have a proven, systematic way to measure the trend, right?
+[  229.85s ->   232.97s] So that I know when it's trending up, I know when it's trending down.
+[  233.07s ->   235.37s] And so I can also measure when that changes.
+[  235.81s ->   241.77s] I use my trending band indicator for that, which is for free I give to all my inner circle members.
+[  241.77s ->   249.73s] But again, essentially what it is, is let's just go very basic, it's not this, but anybody can do this one, is a 200-day moving average line.
+[  250.03s ->   251.49s] Simply add that to your chart.
+[  251.57s ->   255.75s] If it's still above that line, you're still in a bull market, no need to adjust it.
+[  255.95s ->   261.69s] If it breaks through that line, then now the trend's changing and you can exit early based on that criteria.
+[  261.69s ->   264.57s] Last but not least is the trading handbook.
+[  264.95s ->   273.77s] I outline all my rules, the profit one, the time one, the trend one, all that and so much more is laid out in the trading handbook,
+[  273.81s ->   278.47s] which you can get for free when you click the description down below.
+[  278.59s ->   284.19s] You simply just provide your email and you get access to this trading app, which includes every single strategy that I built,
+[  284.53s ->   289.81s] the exit rules, the entry rules, the sizing rules, how much credit to collect,
+[  289.81s ->   293.09s] everything you need to become an expert credit spread trader for free.
+[  293.19s ->   294.65s] I'm giving it all the way to you.
+[  294.91s ->   299.99s] Just click down in the description below and check out the handbook and it'll walk you through every single one of these as well.
+[  300.31s ->   305.27s] But anyways, if you want to know how to close your credit spread trade, you should look at the profit,
+[  305.57s ->   307.49s] you should look at time, and you should look at trip.
+[  307.85s ->   309.49s] All right, guys, thank you so much for watching this video.
+[  309.89s ->   311.05s] Smash that thumbs up video.
+[  311.17s ->   314.83s] If you learned something, smash that subscribe video if you want to become a better credit spread trader
+[  314.83s ->   320.89s] because I post videos on how to become a more profitable and consistent credit spread trader every single day.
+[  321.21s ->   323.15s] So anyways, I hope to see you guys in the next video.
+[  323.31s ->   324.21s] Thank you for watching.
+[  324.37s ->   327.21s] I'm Austin, your host, and I'll see you in the next video.

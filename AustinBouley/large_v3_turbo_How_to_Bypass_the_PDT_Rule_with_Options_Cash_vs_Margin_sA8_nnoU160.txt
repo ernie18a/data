@@ -1,0 +1,67 @@
+[    1.28s ->     3.00s] Hey guys, it's Austin Booley.
+[    3.00s ->     7.32s] Today we're going to go over a cash account versus a margin account for options.
+[    7.32s ->    11.88s] This is a, I wouldn't say problem, but this is like one of the biggest questions that
+[   11.88s ->    13.52s] I see in the group chat.
+[   13.52s ->    18.96s] So of course, if you don't know what the group chat is, I run and a bunch of other admins
+[   18.96s ->    24.52s] basically it's a community of options traders and the link is below, it's a discord group
+[   24.52s ->    26.16s] chat.
+[   26.16s ->    30.94s] So we're going to go over a cash account versus a margin account for options.
+[   30.94s ->    37.48s] So for the margin account, of course you have, when you trade an option, you have instant
+[   37.48s ->    44.58s] settlement of your funds, which means if you trade $200 and you make $500, you immediately
+[   44.58s ->    46.48s] get access to that $500.
+[   46.48s ->    50.56s] However, since you're getting immediate access to funds, you are only allowed to do three
+[   50.56s ->    53.70s] trades in every five business days.
+[   53.70s ->    60.46s] That means if you place a trade on Monday, you have to wait Tuesday, Wednesday, Thursday,
+[   60.46s ->    69.18s] Friday, Monday before you can trade again or use that money, or before that day trade frees
+[   69.18s ->    70.18s] up.
+[   70.18s ->    74.14s] So yeah, so you have to wait five days for every trade that you take.
+[   74.14s ->    78.74s] The minimum account size is $2,000, you have to stay above that.
+[   78.74s ->    83.80s] And when you have a margin account and you're allowed to sell options, which means you can
+[   83.80s ->    87.12s] implement strategies like selling strangles and condors.
+[   87.12s ->    93.54s] So selling options opens you up to unlimited risk because when you buy options, you have
+[   93.54s ->    95.50s] unlimited upside potential.
+[   95.50s ->   100.08s] But when you're shorting an option, which means you sell it first, you basically have
+[  100.08s ->   101.68s] unlimited loss.
+[  101.68s ->   104.44s] So that's why you need a margin account for that.
+[  104.44s ->   106.18s] Now let's go on to a cash account.
+[  106.18s ->   112.50s] You have no instant settlement of funds, which means if you trade with $200 and you make $500,
+[  112.50s ->   116.04s] you do not get that $500 immediately, but you get it the next day.
+[  116.04s ->   126.02s] So let's say if you close that trade for $500 at let's say $1, then you get access to that
+[  126.02s ->   129.84s] $500 at $1 the next day, okay?
+[  129.84s ->   141.82s] So you can day trade as much as you want as long as you have cash available.
+[  141.82s ->   146.16s] There's no minimum account size and you're allowed to buy options only.
+[  146.16s ->   149.92s] That is okay because when you buy options, you have your limited risk.
+[  149.92s ->   154.04s] You're only risking the amounts you pay for the contract.
+[  154.04s ->   158.58s] So for margin in cash, this applies to all normal brokers.
+[  158.58s ->   165.64s] I put normal brokers because Robinhood does not let you use a cash account.
+[  165.64s ->   170.16s] Robinhood requires you that you always have instant settlement on and that you're like
+[  170.16s ->   174.18s] an upper tier level and like margin and something like that.
+[  174.18s ->   180.02s] So Robinhood does not allow cash, which means you have to stick to that three days, three
+[  180.02s ->   183.16s] trades every five days.
+[  183.16s ->   186.32s] For day trading, I would recommend a cash account.
+[  186.32s ->   191.34s] So for a cash account, as long as you have funds, so basically if you split up your funds
+[  191.34s ->   198.08s] like 50-50, so let's say if I have $1,000, we should not be going all in on your positions
+[  198.08s ->   199.70s] on options first off.
+[  199.70s ->   206.62s] But, so let's say you have $1,000, 50-50, you trade $500 one day, $500 the next day,
+[  206.62s ->   210.70s] and then you'll have no problems trading that $500 over and over and over because it's going
+[  210.70s ->   211.86s] to settle the next day.
+[  211.86s ->   216.86s] So like if you place a trade with $500, the next day it will be settled.
+[  216.86s ->   220.88s] Well, the next day it will be settled, but let's say you ended the trade at one and you
+[  220.88s ->   223.86s] want to trade at like in the morning, not after one.
+[  223.86s ->   228.86s] So you use that second $500 and then at the end your other $500 opens and you can just repeat
+[  228.86s ->   233.02s] that process, but for margin, you only get those three trades.
+[  233.02s ->   237.20s] Now, if you're doing a strategy base, like you want to sell strangles or condors or et
+[  237.20s ->   242.40s] cetera, like verticals, it depends, basically if you want to sell a strategy, you have to
+[  242.40s ->   245.02s] have a margin because you cannot sell an option without margin.
+[  245.02s ->   250.02s] So I hope that makes sense, like the difference between a cash account and a margin account,
+[  250.02s ->   254.52s] and how if you have a cash account with options, you basically bypass that PDT rule, which is
+[  254.52s ->   259.28s] the pattern day trade rule, which is saying that you only get three trades every five business
+[  259.28s ->   260.28s] days.
+[  260.28s ->   262.96s] If you have a cash account, your cash settles and you can just keep day trading over and
+[  262.96s ->   263.96s] over and over.
+[  263.96s ->   264.96s] Well, I hope that helps.
+[  264.96s ->   268.18s] I just wanted to make a quick video to explain that so I don't have to keep explaining it
+[  268.18s ->   269.18s] in the group.
+[  269.18s ->   270.18s] All right.
+[  270.18s ->   271.18s] I hope y'all have fun.
+[  271.18s ->   275.56s] I hope y'all learned what y'all need to learn and good luck trading in these markets.

@@ -1,0 +1,77 @@
+[    0.00s ->     4.92s] Hey guys in this video I'm going to show you exactly how to turn a 1-1-2 trade into a ratio hedge
+[    4.92s ->    10.54s] when to do it and why to do it and what that looks like because again if you're scared of
+[   10.54s ->    15.06s] an upcoming market crash and your 1-1-2 is leaving you with thousands of dollars of losses
+[   15.06s ->    20.94s] because each 1-1-2 could turn into a $3,000 loss based on how we do stop losses and so if you want
+[   20.94s ->    26.66s] to prevent that let me show you how to turn the trade into a ratio hedge. So again when we have
+[   26.66s ->    31.20s] a 1-1-2 trade the first thing we need to understand is what the profit graph looks like
+[   31.20s ->    36.14s] so again you can just click on a group and click analysis and this will show you the 1-1-2 trade
+[   36.14s ->    41.28s] right here. Now again this is what it looks like so if the market stays the same or goes up we make
+[   41.28s ->    47.62s] about $1,500 if the market drops into our bear trap level we'll make about $3,000 at the expiration
+[   47.62s ->    53.72s] date and that's kind of how this trade works. Now the real thing is we set up a 300% stop loss on
+[   53.72s ->    60.10s] these trades so that means that one of these trades of $1,500 is kind of that level so 3x that
+[   60.10s ->    66.66s] so that means I could lose $4,500 if this trade were to pull back quickly the market were to crash
+[   66.66s ->    74.04s] and volatility were to spike and so a $4,500 loss per trade could be massive if I have like 10 trades
+[   74.04s ->    79.62s] right that's a $45,000 loss so how do we help protect our account from that and a ratio hedge is
+[   79.62s ->    85.16s] the best way to do it. When I trade 1-1-2s which is all I do now I make sure to have at least one
+[   85.16s ->    92.12s] ratio hedge on for every five to six positions. Why? Well because it'll cover all those losses and
+[   92.12s ->    98.32s] look let me show you what I mean. So we have a 1-1-2 trade and once this trade hits a certain percentage
+[   98.32s ->   104.80s] profit we can turn it into a ratio hedge and just have free downside protection. So a ratio hedge is
+[  104.80s ->   110.76s] created by closing the short put that is associated with the put debit spread. So you can see here we
+[  110.76s ->   116.26s] bought one put we sold one put and then we sold two puts here. That's how we create a 1-1-2. Well the
+[  116.26s ->   122.10s] thing is is we want to create it into a ratio spread what we do is we close the short put that's
+[  122.10s ->   127.70s] associated with the put debit spread. So if we close that then our profit graph turns into this.
+[  128.65s ->   133.63s] What is amazing about this is this trade will cost us a lot more than I put debit spread hedge. It costs
+[  133.63s ->   142.69s] us $1,300 to have on but it gives us at a max $22,000 of profit if it drops into our max zone.
+[  142.97s ->   150.35s] And this max zone is looking at basically this would be a 700 point drop. If it drops 700 points
+[  150.35s ->   157.21s] we'd make 21,000. We could even have the market drop over a thousand points and we'd still be making
+[  157.21s ->   163.05s] money on this hedge. And so that's how amazing this is. It's not an infinite downside protection hedge
+[  163.05s ->   169.01s] like a put debit spread is where no matter how far it goes down we make money. It is limited but the
+[  169.01s ->   176.99s] limit is literally down to $1,200. So the market would have to drop 1,200 points in order for us
+[  176.99s ->   181.87s] not to make money on this hedge. And then if it drops in this max zone we make 21,000. So you can
+[  181.87s ->   188.05s] see here that a ratio heads gives you a lot of protection. Now the downside is we have to pay a
+[  188.05s ->   193.95s] lot for it. A put debit spread we're only paying about $200 for it but we only get $1,000 of
+[  193.95s ->   200.65s] protection. Now we're paying about $1,300 and we get $20,000 of downside protection. And so that's how
+[  200.65s ->   207.49s] amazing a ratio hedge is because again 21,000 if we hit it if we land in that zone could cover up to
+[  207.49s ->   213.35s] like five different 1-1-2s if they all hit their max loss right. And not only that if the market were to
+[  213.35s ->   219.39s] drop it's going to help offset and cushion any losses that we're experiencing while the market
+[  219.39s ->   224.61s] is crashing. And so a ratio hedge is very important. I make sure to always have one on
+[  224.61s ->   229.91s] for at least five to seven trades or something like that so that I can make sure that I'm protected.
+[  230.59s ->   237.83s] So again to recap how do we turn the ratio hedge or turn the 1-1-2 trade into a ratio hedge which is a
+[  237.83s ->   242.87s] great question. And so again if we're looking at the positions tab here what we do is we wait for
+[  242.87s ->   248.91s] this trade to get to around a 70 to 80 percent take profit like the entire trade to get to an 80
+[  248.91s ->   254.17s] percent profit. And once it does then we just close out the short put the one short put that's that is
+[  254.17s ->   259.95s] associated with the put debit spread. So the 1-1 we sell this one and then that will leave us with the
+[  259.95s ->   265.05s] ratio spread. Now if you're saying Austin I want this downside protection but it's a bit confusing of all
+[  265.05s ->   269.91s] the different things I have to do how can I automate this. Well that's a great question. Well you can
+[  269.91s ->   274.95s] actually automate it using this tool that I created called the options auto trader. So what you do is
+[  274.95s ->   279.13s] you set up the rules for how you want to enter it how you want to exit it how you want your trades
+[  279.13s ->   284.29s] managed and all the different trades in between. You can see here I have an ES1-1-2 that's been
+[  284.29s ->   289.07s] completely automated for me for for the last three months and it's made me it's made me nearly
+[  289.07s ->   294.61s] $17,000 on complete autopilot. So that's how awesome this is. You can see here all these trades were
+[  294.61s ->   300.11s] entered automatically where I told it how and when to enter and it did. And not only that I told it
+[  300.11s ->   305.55s] hey I want a ratio hedge to be on when you close the trade. And so look I have a ratio hedge that's
+[  305.55s ->   312.03s] sitting here and if I you can see that it's a hedge. And look it's showing me that I have $24,000 of
+[  312.03s ->   319.13s] downside protection with this hedge. This hedge is costing me about $1,100 and the profit of the of
+[  319.13s ->   325.79s] that one put that I sold. So that profit plus the cost of of this hedge will leave me with a net
+[  325.79s ->   333.79s] profit on this trade of $1,033 which is awesome. So I literally made a net profit of $1,000 and got
+[  333.79s ->   339.33s] $24,000 of downside protection. That's why you guys want to use ratio heads and use automation if you
+[  339.33s ->   344.27s] don't have the time. Now what does that look like? Well let well let let let let me show you exactly how
+[  344.27s ->   349.61s] to create a 112 auto trader. So simply click on create an auto trader connect your broker account
+[  349.61s ->   355.41s] click on create an auto trader click on a 112 trade and then again you you can trade it with ES
+[  355.41s ->   361.49s] MES CL whatever let's say you're trading with MES. You can structure it on the days on days until
+[  361.49s ->   368.11s] expiration the different deltas you want to sell and set up the levels at. So again 25 23 7 is pretty
+[  368.11s ->   375.11s] standard. How often you want to enter that trade once a week once a month most multiple times a
+[  375.11s ->   379.97s] week you you can set that all up here. If you want to enter on only red days you can say that too.
+[  380.33s ->   386.01s] So again all all those rules here we can set our take profit of 80 percent right we can set a stop
+[  386.01s ->   392.03s] loss of 300 and then guess what if we want to turn this trade into a ratio hedge when it hits 80 percent
+[  392.03s ->   397.81s] profit we just simply say hey turn this into a ratio edge and that's how easy it is guys when this
+[  397.81s ->   401.99s] trade hits an 80 percent profit it will turn it into a ratio hedge for you so that you have that
+[  401.99s ->   408.45s] downside side protection with the profit and don't have to do a thing. And so again that's how amazing
+[  408.45s ->   412.97s] how amazing this is next you tell it how much money you wanted to trade with let's just say 5,000 for
+[  412.97s ->   418.29s] this example and just like that you have an auto trader and you guys can see here you see a click
+[  418.29s ->   424.45s] save but again I already have two I have one with ES that's made me almost 17,000 and I have one with CL
+[  424.45s ->   428.37s] that's maybe a thousand so far because again I'm trading with with all with a lot less here. So
+[  428.37s ->   432.11s] guys if you want to automate your one one twos because you're busy you have a family you have
+[  432.11s ->   437.55s] work or you just want more free time than to use literally one of the greatest strategies ever the
+[  437.55s ->   441.41s] one one two and automate it. Anyways I hope you enjoyed this video if you want to check this out
+[  441.41s ->   443.53s] click the link down below if not I'll see you in the next video.

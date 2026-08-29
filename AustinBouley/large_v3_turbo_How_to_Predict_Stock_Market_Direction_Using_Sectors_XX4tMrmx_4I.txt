@@ -1,0 +1,69 @@
+[    0.12s ->     4.88s] All right, guys, what's up? In this video, we're going to be discussing how sectors of the market
+[    4.88s ->     8.68s] predict the overall market. Now, trust me, this is really crucial and really important,
+[    8.78s ->    13.96s] and I promise I won't bore you. So let me just talk about the underlying stuff here, right?
+[   14.08s ->    18.26s] When we invest in a stock, we invest in a company, and a company has business cycles,
+[   18.38s ->    21.36s] right? The company will perform well during certain sector, or I mean,
+[   21.72s ->    28.20s] during different times of the market, but also you'll see that it performs well when interest
+[   28.20s ->    33.62s] rates and increases, or there's a variant for each market, and we can segment these markets
+[   33.62s ->    38.96s] into sectors. And so what we can do is called sector rotation. So basically, if you don't know,
+[   39.32s ->    45.94s] the S&P 500, which we call SPY, predicts the overall market. And so what SPY is doing,
+[   46.04s ->    50.70s] the overall market is doing as well. So when SPY is increasing, we know that the market is healthy,
+[   50.92s ->    55.78s] the market is moving higher, that overall, in general, a majority of the stocks are continuing
+[   55.78s ->    59.56s] to go higher in our green, and we're going to see a positive year for the market.
+[   59.96s ->    64.80s] And so SPY predicts the market. And why is it able to predict the market, or why is it the market?
+[   65.20s ->    72.26s] Because SPY, what is inside SPY, tracks the 11 to 12 different sectors in the market. And because
+[   72.26s ->    76.46s] it tracks these different sectors, it has a good understanding of what's going on. But we can
+[   76.46s ->    82.12s] reverse that and say, if we know where the sectors are going, we know if the market will be green.
+[   82.12s ->    88.38s] And that's awesome, right? For those who invest in trade SPY or the S&P 500, and we can know if
+[   88.38s ->    93.30s] it's going to be green or not, that's a great way to make money, especially as a swing trader.
+[   93.38s ->    98.04s] So let me show you how the sectors can easily predict the direction of the market. All right.
+[   98.26s ->   104.38s] So going back here, there's an idea called sector rotation, where during different phases of the
+[  104.38s ->   110.36s] market, different sectors will do well. And so as you can see here, it kind of outlines that.
+[  110.36s ->   116.50s] When we get to the bottom of a recession, or we're in a full recession mode, right, technology will
+[  116.50s ->   122.06s] do well, discretionary will do well. And obviously, that's true. If we think about the pandemic back
+[  122.06s ->   127.74s] in March 2020, it did well, technology has been exploding the whole time, right? And if you think
+[  127.74s ->   133.90s] about it, we can see this early recovery phase that we had here, which is when we saw back in April
+[  133.90s ->   140.40s] through May through July of 2020, when we started to recover from that dip, healthcare, energy,
+[  140.62s ->   146.66s] consumer staples, they all did well, right? We've been seeing the rise of things like Moderna and
+[  146.66s ->   151.40s] other companies like that producing vaccines, healthcare, and we're seeing that on the rise as
+[  151.40s ->   155.76s] well. We're getting close to this recovery here, and we're starting to see financials do well as
+[  155.76s ->   160.10s] well. But now that we know there are certain sectors that perform well during different stages
+[  160.10s ->   165.34s] of the market, how can you know when the overall market will do well? All right, so if the overall
+[  165.34s ->   172.38s] market is made up of different sectors, then if we know how each sector is performing, and we average
+[  172.38s ->   178.24s] that, then the market will perform that way as well, right? So if you look up each sector, so for
+[  178.24s ->   187.34s] instance, we know if I go here to Google, and I type in the top, let's go technology ETF sector,
+[  187.34s ->   193.04s] right? So if we get the ETF for that sector, we can see here that we can find the top ones for
+[  193.04s ->   199.42s] the sector. Let me go to my favorite website, EFTB, ETFDB. We can find here that we find the top
+[  199.42s ->   205.58s] technology sectors, and we click into that. We can see that these are the sectors, the ETS that we
+[  205.58s ->   210.56s] want to look into. So we'll come here, and we'll look at that. Oops, that's totally not right. XLK
+[  210.56s ->   216.38s] for technology sector, and we can see, are these uptrending? Are these going to perform well?
+[  216.38s ->   221.30s] And when they perform well, when they turn from a neutral to a buy, right? Like when they start
+[  221.30s ->   226.22s] trending up, then we'll know that the market will also start trending up, since a lot of what's in
+[  226.22s ->   230.54s] the market is a technology stock. Now, you may be wondering, okay, Austin, this may be hard. I have
+[  230.54s ->   235.36s] to go through every single sector to know how it's performing well. I have to do technical analysis on
+[  235.36s ->   240.52s] the sector to understand what sector is performing well, and then I sum all those results together to
+[  240.52s ->   246.24s] get the average return. You're right. It's a lot of work, but I can show you an easy way to do
+[  246.24s ->   250.84s] that. And so if you're on the impeccable stock software, whether you have it or you click the
+[  250.84s ->   254.90s] link in the description below to start your 14-day free trial, when you go to the research overload
+[  254.90s ->   260.28s] section, the amazing part of it is it goes right here. There's a sector analysis section, and it
+[  260.28s ->   265.96s] shows you how each sector is doing. It does the technical analysis, the thinking, the brain,
+[  266.28s ->   272.56s] the heavy lifting stuff for you, and it can show you what sectors are performing well and what direction
+[  272.56s ->   277.66s] they're going. And not only that, it shows you, it breaks it down in the sector. So the 12 different
+[  277.66s ->   283.44s] sectors, 10 of these are a buy and two are neutral. What does that mean? It means that the market is
+[  283.44s ->   288.90s] going to continue higher. It has a really high chance of continuing higher because most of the
+[  288.90s ->   293.56s] sectors in the overall market, the overall market being this whole sector, most of them are buys and
+[  293.56s ->   298.38s] two are neutrals. That's a very good sign. Now, if we see neutrals start to increase here and take out
+[  298.38s ->   303.76s] 50% of the sectors, then we're going to know we're going to start headed toward a crash.
+[  303.90s ->   308.18s] When we start seeing sales come in on most of these sectors, like when we see five sectors of
+[  308.18s ->   311.54s] sales, then you're going to really want to get out of your position because we're going to see the
+[  311.54s ->   317.06s] market sell off. So we can use sectors to predict the market as well as using the market to predict
+[  317.06s ->   321.70s] sectors. So this is like a chicken and the egg problem. But guys, using sectors is a really good
+[  321.70s ->   326.88s] way to understand the market. When we can get a good look here on the sector analysis section,
+[  326.88s ->   332.58s] seeing that most of the sectors and the market right now are a buy, then we know that the market
+[  332.58s ->   336.84s] is going to continue higher and that's going to give us confidence when we invest in the market
+[  336.84s ->   342.10s] as a whole. When you see sales start to come up, that's when you know you need to start looking
+[  342.10s ->   347.70s] to reallocate and to take your profits on some of your stocks. All right, guys, I hope that helps.
+[  347.84s ->   352.56s] If you want to learn more about this and see it on the software, start your free 14-day free trial
+[  352.56s ->   357.14s] using the description below or the link in the description below. Anyways, smash that like
+[  357.14s ->   361.00s] button. If you learned something, hit the subscribe button. We're coming out with helpful videos
+[  361.00s ->   363.94s] every single week. All right, guys, see you next time.

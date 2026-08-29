@@ -1,0 +1,344 @@
+[    0.00s ->     7.42s] I shamelessly got into a debate with a discretionary trader about this idea of alpha.
+[    8.30s ->    12.20s] And one of two things always happens when this concept comes up.
+[   12.24s ->    20.70s] Either the person you're talking to is going to cite alpha as some sort of return in excess of a benchmark like the S&P 500,
+[   20.70s ->    32.56s] or they're going to correctly cite it as some sort of performance relative to a selected pricing model that is unexplained.
+[   32.64s ->    38.38s] And of course, you're subject to your classical model and parameter risk in the second case.
+[   38.38s ->    44.66s] But unfortunately for my sanity, this one was the former, not the latter.
+[   45.30s ->    46.96s] And he goes, no shit, Roman.
+[   46.96s ->    52.96s] You know, if I'm generating positive returns in a bull market, it's going to look like beta exposure.
+[   53.68s ->    55.14s] There's a correlation there.
+[   55.82s ->    63.36s] And I really, I really didn't even know where to start in trying to explain the concept.
+[   63.36s ->    69.50s] So I just followed it up with what happens when there is a sideways market or a bear market.
+[   69.50s ->    73.32s] He goes, well, I don't do too hot relative to a bull market.
+[   73.32s ->    78.10s] And sometimes I just feel like I'm taking crazy pills, man.
+[   78.22s ->    81.14s] So I hit up my boy and he's sitting on a VRP desk this summer.
+[   81.14s ->    83.96s] And I tell him, tell him the story, tell him the interaction.
+[   84.80s ->    90.82s] And he goes, well, Roman, you know, if you walk like really fast, it kind of looks like running.
+[   90.94s ->    94.38s] And he got me pretty good with that one.
+[   94.84s ->    96.94s] And shout out to my boy.
+[   97.00s ->    97.76s] You're funny as fuck.
+[   97.80s ->    99.00s] Good luck on that desk this summer.
+[   99.00s ->   103.14s] The point is, it is running, right?
+[  103.54s ->   105.88s] It is beta exposure.
+[  106.60s ->   114.22s] But this brings up a really necessary discussion, one that we really haven't focused on on this channel.
+[  114.22s ->   124.58s] And that's this idea of alpha, an elusive statistical concept when it comes to trading strategies, portfolio management, and the financial markets, right?
+[  124.58s ->   132.68s] Academia loves to propagate that alpha, right, is non-existent.
+[  132.68s ->   141.20s] We can't statistically prove that you have any capacity to outperform via stock selection, this, that, the other.
+[  141.44s ->   145.42s] And they love to articulate that probabilistically, right?
+[  145.66s ->   152.90s] There are just fund managers that are lucky via the effectively law of large numbers.
+[  152.90s ->   155.99s] So, what the fuck is alpha?
+[  156.39s ->   162.03s] That's really the question that we're trying to answer within this video.
+[  162.23s ->   170.77s] To understand alpha, first, we really need to understand beta and why we start with these pricing models.
+[  170.89s ->   173.17s] It's not to predict anything.
+[  173.81s ->   176.41s] Nobody knows what's going to happen next.
+[  176.41s ->   183.51s] In the context of these undiversifiable risks, these undiversifiable risks are producing return streams.
+[  183.77s ->   191.23s] So, you look at something like the broader market, right, SPY, VU, the S&P 500 ETF proxies, right?
+[  191.95s ->   196.57s] Historically, it's done a pretty good job of generating returns, right?
+[  196.99s ->   200.81s] But there's no guarantee that's going to continue into the future.
+[  200.81s ->   204.43s] It's effectively a bet on the broader economy, right?
+[  204.49s ->   213.37s] The smartest people in the world doing battle to try to make progress and, of course, money for their companies.
+[  213.53s ->   215.15s] And we're all just getting a slice of it.
+[  215.29s ->   226.11s] But if there's to be a massive regime change in that particular set of risky assets, everybody is going to be subject to the same drawdown.
+[  227.30s ->   227.68s] All right?
+[  227.68s ->   229.12s] Is there a way to measure that?
+[  229.66s ->   231.34s] Well, as a matter of fact, there is.
+[  231.52s ->   233.24s] And that is with beta.
+[  233.72s ->   239.86s] We're not going to talk about other undiversifiable risk factors right now, extensions to something like a CAPM.
+[  239.86s ->   247.38s] We just want to start with understanding this idea of what it means to produce alpha relative to a pricing model.
+[  247.38s ->   251.18s] So we take something like the S&P 500 returns, right?
+[  251.36s ->   257.80s] And what we want to do is we want to pair them up with the returns that we generate from a particular strategy.
+[  257.80s ->   262.94s] It doesn't matter how we actually get those returns for that particular strategy.
+[  262.94s ->   265.04s] It could be discretionary.
+[  265.04s ->   268.18s] I could be sitting there clicking a buy and sell button.
+[  268.30s ->   270.66s] I could have an algorithm trade it for me.
+[  271.02s ->   276.90s] I could be holding a particular set of assets over a day, week, month, year.
+[  276.94s ->   277.80s] It doesn't matter.
+[  277.90s ->   279.02s] You're going to have a return.
+[  279.02s ->   287.22s] And what you do is you pair up those returns with the broader market returns, and you create a scatter plot.
+[  287.54s ->   298.42s] And that scatter plot is either going to have a trend, up or down, or no trend at all, meaning it's completely uncorrelated, right?
+[  298.42s ->   301.72s] Okay, well, then where is alpha?
+[  301.88s ->   304.42s] That, effectively, is beta.
+[  304.54s ->   311.64s] The slope of that line, that regression line, is telling you your beta.
+[  312.00s ->   320.12s] How does that strategy tend to move with the broader market, which, again, is just the direction the wind is blowing?
+[  320.62s ->   324.58s] Maybe it's blowing favorably, and you have a high beta exposure.
+[  324.68s ->   327.12s] That's going to be particularly good for your return profile.
+[  327.12s ->   330.86s] Maybe you have a very low beta, right?
+[  331.26s ->   335.62s] Then when the market rips, you don't generate as much, necessarily.
+[  336.24s ->   338.30s] Here's where things get interesting.
+[  339.04s ->   343.46s] Where does that regression line sit on the y-axis?
+[  344.34s ->   346.64s] This is the notion of alpha.
+[  346.80s ->   354.56s] So if we take a look here, we're going to see one regression equation, which has a significant amount of beta exposure,
+[  354.56s ->   362.24s] but no alpha at all, which means the strategy is not producing any sort of idiosyncratic return,
+[  362.44s ->   367.20s] meaning it's really just relying on the market to generate returns.
+[  368.10s ->   368.52s] Okay.
+[  368.96s ->   371.40s] Now we're going to take a look at a different strategy,
+[  371.40s ->   378.22s] and I want you to notice that you can see the regression equation is relying on the market to generate returns,
+[  378.22s ->   385.10s] but it's also shifted up, which means relative to just the market driving returns,
+[  385.10s ->   392.44s] the strategy is also producing some unexplainable return relative to this particular pricing model.
+[  392.60s ->   398.22s] Maybe if we account for other factors, right, that alpha, that intercept goes away.
+[  398.22s ->   403.24s] But for now, in the context of this pricing model, that alpha remains.
+[  405.39s ->   405.71s] Okay.
+[  405.87s ->   407.53s] So how do we just get that alpha?
+[  407.77s ->   411.71s] That seems like a very simple question to ask.
+[  411.75s ->   416.43s] How do I shift my regression equation up so that I have an intercept, right?
+[  417.15s ->   420.13s] Because if I can neutralize that beta exposure effectively,
+[  420.69s ->   425.27s] neutralizing that beta exposure means that, I'm going to put another chart here,
+[  425.27s ->   428.91s] the regression equation is going to have roughly a zero slope,
+[  429.03s ->   431.19s] so the line is going to be just horizontal,
+[  431.53s ->   435.63s] and it's going to be placed above, then, the x-axis,
+[  435.99s ->   439.49s] and you're just going to be generating return, which is the alpha,
+[  439.61s ->   442.35s] and that's completely separate from the market return.
+[  442.47s ->   446.01s] Then it's saying, okay, it doesn't matter which way the wind blows,
+[  446.25s ->   450.27s] we're going to be generating that return because it has nothing to do with the broader market.
+[  451.45s ->   453.97s] Why is that return there, right?
+[  453.97s ->   458.47s] Are you capitalizing on some sort of statistical inefficiency, so on and so forth?
+[  458.51s ->   460.23s] That is a quantitative research question.
+[  460.69s ->   464.17s] That's not a trivial question, and if anybody says that it is,
+[  464.67s ->   469.33s] please send them my way because I want to follow that strategy, all right?
+[  469.33s ->   475.33s] If it's so trivial and easily explained as to why they have that inefficiency
+[  475.33s ->   477.55s] that they're capturing in a particular strategy,
+[  477.81s ->   481.69s] I'm totally down to run triple leverage on that strategy,
+[  481.69s ->   488.86s] but it's a quantitative research question why it exists and if it persists, okay?
+[  489.36s ->   491.85s] So that's this idea of alpha.
+[  492.37s ->   498.10s] How does it show up, and how do we find it?
+[  499.77s ->   503.13s] This is a really, really interesting idea
+[  503.13s ->   508.95s] because academia loves to propagate that the markets are efficient, right?
+[  508.95s ->   511.09s] We have the efficient market hypothesis,
+[  511.09s ->   514.17s] and I'm not slamming the efficient market hypothesis.
+[  514.41s ->   516.33s] I think it's a very useful thought experiment,
+[  516.33s ->   519.99s] but it is nowhere near what we face in reality.
+[  520.17s ->   523.17s] Literally everything is mispriced.
+[  523.39s ->   526.19s] I'm not being dramatic when I say that.
+[  526.25s ->   528.17s] Every single option in equilibrium,
+[  529.03s ->   530.77s] hell, your fucking car insurance,
+[  531.45s ->   534.17s] everything is statistically mispriced.
+[  534.17s ->   536.91s] In the context of a fair game, a zero-sum game,
+[  537.41s ->   540.05s] neither party should have an edge,
+[  540.05s ->   542.05s] which means statistically over time,
+[  542.05s ->   545.21s] if we keep engaging in that particular game,
+[  546.01s ->   549.23s] on average, we're both going to have net zero wealth.
+[  550.11s ->   552.01s] But that's not the case in real life.
+[  552.11s ->   553.95s] Think about your car insurance, right?
+[  554.39s ->   556.43s] If insurance wasn't a profitable business,
+[  556.47s ->   557.51s] then nobody would sell it.
+[  557.51s ->   561.55s] But more importantly, I can 100% guarantee you
+[  561.55s ->   563.65s] that these contracts are mispriced
+[  563.65s ->   566.61s] because when you go out to buy your car insurance,
+[  567.29s ->   569.71s] do you get one quote for the same coverage?
+[  569.81s ->   570.91s] No, you get a bunch of quotes,
+[  571.35s ->   572.83s] and they offer you different prices.
+[  573.71s ->   576.77s] Financial theory says, right, law of one price.
+[  577.29s ->   580.29s] There should only be one price for a particular risky asset,
+[  580.93s ->   584.13s] but you just were quoted a whole bunch of different prices, right?
+[  586.20s ->   588.34s] This is a part of a broader idea here.
+[  588.92s ->   592.28s] Because we're talking about this idea of alpha
+[  592.28s ->   596.54s] and capturing then this unexplainable return
+[  596.54s ->   599.12s] according to some sort of pricing model.
+[  601.44s ->   603.78s] Those mispricings create the inefficiencies
+[  603.78s ->   604.80s] that you can exploit,
+[  604.90s ->   610.80s] which then produce that shift in the regression line
+[  610.80s ->   616.70s] on the y-axis to then capture what is recorded as alpha
+[  616.70s ->   619.60s] relative, again, to that particular pricing model.
+[  619.60s ->   621.96s] Where might this show up?
+[  622.04s ->   624.06s] I have a really great example in the context
+[  624.06s ->   625.92s] of everything I've been talking about recently
+[  625.92s ->   628.88s] with volatility drag, black swan events,
+[  629.16s ->   630.26s] and a hedge portfolio.
+[  631.76s ->   636.30s] So let's suppose that we are riding this market beta.
+[  636.74s ->   639.06s] So let's suppose that I have a trading strategy
+[  639.06s ->   641.50s] or I am invested in assets
+[  641.50s ->   644.94s] that produce a positive correlation with the market.
+[  644.94s ->   647.44s] And I have a net zero alpha, all right?
+[  647.62s ->   649.40s] Historically, I have a net zero alpha.
+[  651.10s ->   654.82s] But I'm running a hedge sleeve.
+[  655.04s ->   657.68s] I'm running a hedge program on this portfolio,
+[  657.68s ->   659.50s] which means effectively,
+[  659.50s ->   662.46s] when there is another black swan event
+[  662.46s ->   665.70s] and the bottom blows out 20, 30%,
+[  665.70s ->   669.70s] what's going to happen to my portfolio?
+[  669.70s ->   672.56s] Well, all of the sudden, right,
+[  672.64s ->   677.04s] my returns are no longer going to be severely correlated
+[  677.04s ->   678.64s] with the broader market
+[  678.64s ->   681.38s] because I have that hedge in place, right?
+[  681.46s ->   682.98s] The efficacy of the hedge, of course,
+[  682.98s ->   685.12s] is going to determine whether or not you produce alpha.
+[  685.28s ->   687.46s] But because I have that hedge in place,
+[  688.24s ->   690.50s] I'm not losing money at the same rate
+[  690.50s ->   692.56s] I was gaining money relative
+[  692.56s ->   694.30s] to when the market was in a bull cycle.
+[  694.30s ->   697.36s] When the bottom blew out, my hedge kicked in
+[  697.36s ->   701.44s] and that's going to show up in the pricing model.
+[  701.56s ->   706.32s] Here's the new regression equation as alpha, right?
+[  706.82s ->   708.82s] It's not timing anything.
+[  709.48s ->   710.86s] It is effectively saying,
+[  711.08s ->   715.58s] hey, Roman, your positioning, right, was effective
+[  715.58s ->   718.60s] and it produced a return unexplainable
+[  718.60s ->   720.62s] by this pricing model.
+[  720.76s ->   722.88s] And the academics and purists will say,
+[  722.88s ->   725.68s] oh, Roman, you know that's a statistical anomaly
+[  725.68s ->   726.64s] and this, that, whatever.
+[  726.86s ->   727.82s] And to that, I say,
+[  727.90s ->   729.48s] think about something like baseball.
+[  729.70s ->   731.38s] When somebody steps up to the plate,
+[  731.42s ->   732.72s] that's the perfect example
+[  732.72s ->   735.36s] for every single professional risk allocator
+[  735.36s ->   738.68s] or personal risk allocator, right?
+[  739.14s ->   740.68s] You're stepping up to the plate
+[  740.68s ->   743.34s] and you have no idea what pitch is going to come
+[  743.34s ->   746.30s] and you're going to try to knock it out of the park, right?
+[  746.50s ->   749.60s] You have a batting average, what's expected of you.
+[  749.66s ->   752.10s] That's effectively something like your beta exposure.
+[  752.10s ->   754.84s] If you knock it out of the park, right?
+[  755.34s ->   758.42s] Is that a statistical anomaly, right?
+[  759.06s ->   761.78s] Is that you performing at the upside of your variance window?
+[  761.88s ->   763.22s] It's positioning, right?
+[  763.28s ->   765.42s] You were in the position to swing at the pitch
+[  765.42s ->   768.28s] and it turns out when it was a fastball
+[  768.28s ->   770.18s] right down the middle and you crack it
+[  770.18s ->   772.50s] and you knock it out of the park, right?
+[  773.00s ->   777.27s] That is you producing alpha effectively, all right?
+[  777.27s ->   779.91s] So having that hedge in place, right?
+[  779.99s ->   781.93s] The proper positioning in the portfolio,
+[  781.93s ->   785.23s] this isn't about developing a trading strategy, right?
+[  785.27s ->   788.61s] This is about engineering a portfolio for success,
+[  788.61s ->   790.53s] which is exactly what I'm covering
+[  790.53s ->   795.61s] in my brand new four-week live class
+[  795.61s ->   798.07s] where I talk about running a personal hedge fund.
+[  798.19s ->   801.97s] So if you have significant capital at stake,
+[  802.01s ->   802.91s] if you're triple long,
+[  802.91s ->   804.93s] which means you're long your job,
+[  805.35s ->   806.17s] you're long your house,
+[  806.27s ->   807.19s] you're long your portfolio,
+[  807.19s ->   810.41s] and you're looking to add a hedge sleeve
+[  810.41s ->   811.91s] to your individual portfolio
+[  811.91s ->   813.69s] because you're running it on your own
+[  813.69s ->   814.77s] without a wealth manager,
+[  815.01s ->   819.85s] then I highly recommend you check this course out.
+[  820.57s ->   821.97s] If nothing else,
+[  822.55s ->   825.87s] understand the risk that your portfolio is exposed to.
+[  825.87s ->   829.15s] There is a free quantitative research note
+[  829.15s ->   831.59s] on the course page.
+[  831.79s ->   833.05s] Link in the description below.
+[  833.13s ->   834.25s] You can download it for free.
+[  834.63s ->   837.51s] At least give it a read to understand the risk
+[  837.51s ->   839.17s] that you're exposed to
+[  839.17s ->   841.59s] if you're uninterested in learning
+[  841.59s ->   844.13s] about how to produce a hedge sleeve
+[  844.13s ->   845.95s] for your particular portfolio
+[  845.95s ->   848.53s] and your portfolio goals.
+[  849.86s ->   852.18s] Okay, so this is where alpha shows up.
+[  852.24s ->   855.86s] It shows up when positioning pays off,
+[  855.86s ->   858.72s] right, relative to a particular pricing model.
+[  859.14s ->   863.89s] That is effectively an inefficiency in pricing.
+[  865.29s ->   867.95s] I was able to fund portfolio insurance
+[  867.95s ->   869.67s] and then what happened?
+[  869.77s ->   871.17s] The bottom blew out of the market.
+[  871.37s ->   873.35s] If the market knew that beforehand,
+[  873.99s ->   877.27s] that insurance would have been jacked way up in price.
+[  877.51s ->   880.29s] But because I had that exposure to it
+[  880.29s ->   882.33s] before the crisis, right,
+[  882.91s ->   885.03s] that payoff is going to show up
+[  885.03s ->   887.89s] as alpha in the particular strategy.
+[  888.07s ->   890.89s] It's a really important idea to understand, right?
+[  890.93s ->   892.31s] Because this is the same idea
+[  892.31s ->   894.57s] as an insurance company telling you,
+[  894.67s ->   896.65s] what, after you completely wreck your car,
+[  896.77s ->   898.95s] what, oh, we're just going to give you the old rates.
+[  899.03s ->   901.07s] It was an accident, you know?
+[  901.59s ->   902.81s] You're not going to do it again.
+[  902.87s ->   903.21s] It's like, no,
+[  903.25s ->   906.07s] they're going to jack your fucking rates up, right?
+[  906.59s ->   907.91s] They're going to jack your rates up.
+[  907.97s ->   909.47s] Once that insurance pays out,
+[  909.79s ->   913.03s] once the market absolutely tanks,
+[  913.03s ->   916.29s] insurance in equilibrium is repriced.
+[  916.95s ->   918.29s] Everything jacks way up.
+[  918.37s ->   920.03s] Implied volatility jacks way up.
+[  920.37s ->   922.11s] It's too late to buy insurance.
+[  922.65s ->   923.95s] It's too late to buy insurance.
+[  924.05s ->   925.13s] You already crashed your car.
+[  925.21s ->   926.63s] The market already crashed the car.
+[  927.61s ->   931.03s] So all of this goes into the notion of alpha.
+[  931.03s ->   934.81s] This idea of producing a return
+[  934.81s ->   939.17s] that is orthogonal to some sort of,
+[  939.17s ->   943.41s] some sort of factor in a pricing model.
+[  943.85s ->   946.74s] Whether or not it produces a return
+[  946.74s ->   948.16s] in excess to a benchmark
+[  948.16s ->   949.86s] is subject for discussion.
+[  950.24s ->   951.46s] Sometimes it does.
+[  951.92s ->   953.04s] Sometimes it doesn't,
+[  953.14s ->   956.08s] which is why it's such an infuriating discussion
+[  956.08s ->   958.34s] when, you know, finance majors
+[  958.34s ->   959.52s] or business majors,
+[  959.64s ->   960.22s] whoever the fuck
+[  960.22s ->   961.74s] say that it's just
+[  961.74s ->   963.98s] return in excess to the S&P 500.
+[  964.16s ->   965.36s] It's like, oh, I produced all this alpha.
+[  965.52s ->   966.46s] It's like, I went,
+[  966.54s ->   968.30s] I went double long
+[  968.30s ->   970.30s] Taiwan semiconductors
+[  970.30s ->   972.48s] and I produced all this alpha.
+[  972.62s ->   973.28s] It's like, no, dude,
+[  973.38s ->   975.10s] you just bought a stock
+[  975.10s ->   977.74s] and that stock has an extremely high beta
+[  977.74s ->   978.60s] and maybe there's some
+[  978.60s ->   980.12s] idiosyncratic outperformance,
+[  980.50s ->   983.56s] but that isn't producing alpha.
+[  983.70s ->   984.42s] That's not engineering
+[  984.42s ->   985.68s] a portfolio for success.
+[  985.68s ->   988.78s] That's just buying a particular name, right?
+[  988.98s ->   990.30s] What does that look like
+[  990.30s ->   992.76s] over 5, 10, 15, 20 years, right?
+[  993.92s ->   996.40s] A portfolio with an effective hedge sleeve
+[  996.40s ->  1000.12s] continuously monetizing those drawdowns,
+[ 1000.18s ->  1002.34s] buying assets for 60 cents on the dollar
+[ 1002.34s ->  1004.12s] when you have 85 cents on the dollar
+[ 1004.12s ->  1007.10s] is going to produce significantly higher
+[ 1007.10s ->  1009.88s] compound annual growth
+[ 1009.88s ->  1011.60s] relative to somebody
+[ 1011.60s ->  1013.76s] who is just trying to pick stocks
+[ 1013.76s ->  1016.20s] and achieve that excess return spread,
+[ 1016.30s ->  1019.48s] which isn't even necessarily alpha, right?
+[ 1019.52s ->  1021.28s] They're going to get slaughtered
+[ 1021.28s ->  1022.52s] by volatility drag
+[ 1022.52s ->  1025.14s] because of how high the beta is
+[ 1025.14s ->  1026.98s] for those individual picks
+[ 1026.98s ->  1028.78s] to produce that excess return
+[ 1028.78s ->  1031.46s] in a bull market year.
+[ 1032.64s ->  1033.02s] All right.
+[ 1033.20s ->  1035.72s] So this was effectively
+[ 1035.72s ->  1036.70s] just a discussion
+[ 1036.70s ->  1039.32s] on what exactly alpha is.
+[ 1039.32s ->  1040.88s] I hope it provided
+[ 1040.88s ->  1042.08s] some insight
+[ 1042.08s ->  1043.54s] into the risk
+[ 1043.54s ->  1044.80s] that you're exposed to
+[ 1044.80s ->  1045.82s] and what it really means
+[ 1045.82s ->  1047.06s] to generate alpha
+[ 1047.06s ->  1048.20s] for your portfolio.
+[ 1048.92s ->  1050.16s] If you're interested
+[ 1050.16s ->  1052.38s] in checking out that class,
+[ 1052.52s ->  1053.06s] I'll leave a link
+[ 1053.06s ->  1054.80s] in the description below.
+[ 1055.20s ->  1056.44s] Again, if anything else,
+[ 1056.94s ->  1057.46s] check out
+[ 1057.46s ->  1059.14s] that quantitative research note
+[ 1059.14s ->  1060.26s] to really understand
+[ 1060.26s ->  1061.24s] the risk
+[ 1061.24s ->  1062.66s] that you are exposed to
+[ 1062.66s ->  1063.98s] in your portfolio.
+[ 1064.40s ->  1065.34s] That's going to do it
+[ 1065.34s ->  1067.36s] for the fireside chat today.
+[ 1067.66s ->  1068.30s] I hope you enjoyed.
+[ 1068.30s ->  1069.86s] I hope you learned something.
+[ 1070.26s ->  1070.92s] If you like this video
+[ 1070.92s ->  1072.02s] and you want to see more like it
+[ 1072.02s ->  1072.40s] in the future,
+[ 1072.50s ->  1074.02s] please like, comment, subscribe, share.
+[ 1074.20s ->  1075.66s] It helps me out tremendously.
+[ 1075.88s ->  1078.22s] It is always greatly appreciated.
+[ 1078.70s ->  1079.62s] Other than that,
+[ 1079.68s ->  1080.72s] I want to thank you
+[ 1080.72s ->  1081.94s] so much for watching
+[ 1081.94s ->  1083.66s] and I will see you
+[ 1083.66s ->  1085.98s] in the next video.

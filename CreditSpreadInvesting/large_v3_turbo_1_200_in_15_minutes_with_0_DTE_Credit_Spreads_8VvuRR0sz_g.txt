@@ -1,0 +1,302 @@
+[    0.14s ->     3.32s] So over the last three weeks, I was in Japan on vacation.
+[    3.60s ->     6.54s] And usually when I'm on vacation, I usually don't trade, I disconnect.
+[    6.82s ->    10.56s] But on that one night, because of DeepSeek, I decided that I had to take a look at the market.
+[   10.74s ->    12.16s] And so I decided to trade on that one day.
+[   12.40s ->    19.14s] And in those 15 minutes, I was able to make $1,200 day trading while I was in a different country.
+[   19.60s ->    23.10s] And the best part about this is I actually could have made another $1,000 or so
+[   23.10s ->    25.78s] if I actually wasn't in Japan and was back in the States.
+[   25.78s ->    30.20s] And I'll show you guys how you could have made even more money than me on that day.
+[   30.58s ->    32.06s] So first, let's take a look at that trade.
+[   32.38s ->    39.62s] I traded a $59.95, $6,000 put credit spread on SPX 0DT that expired the same day.
+[   40.12s ->    44.86s] For that one credit spread, I collected $230 and I sold around 10 of them,
+[   45.34s ->    48.56s] which means that my max profit is $2,300.
+[   49.66s ->    52.34s] My max loss would have been $2,700.
+[   52.34s ->    57.00s] So if you look at my max return on investment, it would have been around 89%
+[   57.00s ->    59.42s] because it would be $2,300 divided by $2,700.
+[   60.00s ->    62.34s] And for those of you who are new to how credit spreads work,
+[   62.76s ->    66.46s] if SPX ends up above $6,000 at the end of the day,
+[   66.70s ->    69.72s] I would have made my max profit of $2,300.
+[   70.70s ->    78.06s] If SPX ends up below $5,995, then I'll lose my max loss of $2,700.
+[   78.06s ->    82.50s] And we'll talk a little bit more about later on this video, but we'll never risk $2,700.
+[   83.08s ->    86.58s] We'll risk around $500 or so to try and make that $2,300.
+[   86.98s ->    89.36s] Because I was in Japan, I wasn't going to be trading all night.
+[   89.48s ->    91.24s] It's around midnight or 1 a.m.
+[   91.42s ->    96.74s] And so 15 minutes later, I decided to close out this trade at $110 of spread.
+[   96.88s ->    99.76s] And I realized $1,200 in profits,
+[   99.76s ->   104.06s] which means that my actual return on investment was around 45%.
+[  104.06s ->   107.68s] So now that we know the trade, let's hop over to the charts
+[  107.68s ->   111.50s] so that you guys can visualize how the day panned out with this trade.
+[  111.78s ->   115.78s] Here is the SPX chart on January 28th, the day that I took this trade.
+[  116.28s ->   123.20s] You see, right when market opened, market gapped up from $6,000 all the way up to $60,27 approximately.
+[  123.92s ->   130.20s] The market then abruptly sold off to a low of around $5,994.
+[  130.20s ->   135.72s] And then the market then rebounded kind of off of this 50 period moving average
+[  135.72s ->   142.14s] and went up, back down, formed higher low, then formed a higher high, higher low, higher high, right?
+[  142.18s ->   143.04s] Very simple day.
+[  143.48s ->   150.18s] But if you guys recall, I actually sold a put credit spread at $6,5995, right at the low of the day.
+[  150.46s ->   152.72s] And I sold it at $6.50 Eastern time.
+[  152.86s ->   155.38s] So right around this candlestick right here.
+[  155.70s ->   158.80s] Collected that $230 when I opened this credit spread,
+[  158.80s ->   160.86s] which means that I'm expecting the market to go up.
+[  161.42s ->   164.44s] And in 15 minutes, around 7.04 Eastern time,
+[  164.66s ->   168.12s] I exited the trade by buying back and closing that credit spread
+[  168.12s ->   170.66s] and realizing that $1,200 of profit.
+[  171.12s ->   174.62s] Now, the question is, how did I anticipate that this is going to be the low of the day?
+[  174.74s ->   176.72s] And this is where I might sound like a broken record
+[  176.72s ->   178.52s] if you guys have seen some of my other videos,
+[  178.96s ->   184.00s] but this is where our system, MAX, M-A-C-S, comes into play.
+[  184.00s ->   185.86s] M stands for market trend.
+[  186.40s ->   188.06s] A stands for area of interest.
+[  188.38s ->   190.76s] C stands for criteria of entry.
+[  191.28s ->   193.52s] And then S stands for stop loss.
+[  194.02s ->   197.88s] So let's take a look at this trade using that philosophy
+[  197.88s ->   201.42s] so that you too can replicate this trade every single day
+[  201.42s ->   202.88s] and have success day trading.
+[  203.10s ->   205.26s] So let's just start with M, our market trend.
+[  205.52s ->   206.70s] And in order for us to do that,
+[  206.74s ->   210.56s] I like to hop over to daily to understand the long-term trend.
+[  210.56s ->   212.50s] And then we'll drop it down to a lower timescale
+[  212.50s ->   214.02s] to figure out the short-term trend.
+[  214.52s ->   216.76s] And the long-term trend is actually very easy to understand.
+[  217.18s ->   219.88s] The market has been in an uptrend for the last year and a half.
+[  220.02s ->   222.06s] But if you really want an indicator to tell you that,
+[  222.14s ->   223.92s] you just look at the 200-period moving average.
+[  224.02s ->   225.58s] In this case, it's 200-day moving average.
+[  225.96s ->   228.48s] And it's pointing up, so it's an uptrend.
+[  229.04s ->   231.60s] The 50-period moving average is also up.
+[  231.84s ->   233.26s] Simply put, long-term trend is up.
+[  233.34s ->   234.84s] So if we can, we want to trade in the uptrend
+[  234.84s ->   235.98s] because we have a higher chance of winning.
+[  236.10s ->   237.98s] However, the short-term trend is also very important
+[  237.98s ->   238.82s] because we're day trading.
+[  238.82s ->   242.38s] We don't want to be trading on like a pullback here, for example.
+[  243.02s ->   244.74s] In order for us to find the short-term trend,
+[  244.86s ->   246.76s] I like to drop it down to a lower timescale,
+[  246.84s ->   248.64s] either the hour or the 30 minutes.
+[  248.76s ->   250.12s] So let's just drop it down to the hour.
+[  250.38s ->   252.92s] And the hour, again, you can use your moving indicators
+[  252.92s ->   256.20s] to indicate the trends, but there's also another way.
+[  256.38s ->   257.40s] And so we'll start with the indicators.
+[  258.30s ->   259.96s] 200-period moving average, again, sloping up.
+[  260.52s ->   262.34s] The 50-period moving average is also sloping up.
+[  262.62s ->   263.18s] The trend is up.
+[  263.38s ->   265.56s] Another way to understand this is actually really simple.
+[  265.56s ->   268.10s] You see, there's a low that formed a high,
+[  268.74s ->   271.06s] but it formed a lower low here, right?
+[  271.10s ->   272.26s] That's not a good signal
+[  272.26s ->   274.58s] because then it indicates that there's a lot of selling power.
+[  274.98s ->   277.82s] However, the market then continued to push its way
+[  277.82s ->   280.06s] all the way up to a higher high,
+[  280.12s ->   283.42s] which means that the short-term trend is actually up.
+[  283.70s ->   286.30s] Now we have this pullback on Monday,
+[  286.48s ->   288.86s] which means that this pullback could very well
+[  288.86s ->   292.38s] just be a continuation of the short-term uptrend,
+[  292.38s ->   296.94s] which moves us to the second letter, A, area of interest, right?
+[  296.94s ->   299.14s] We know we want to trade in the bullish direction if we can.
+[  299.60s ->   300.82s] Now we have to find an area
+[  300.82s ->   303.64s] where we would be inclined to look for a trade.
+[  304.14s ->   305.36s] In order for us to draw areas,
+[  305.46s ->   307.52s] we'll drop it down to 30 because we're day trading.
+[  307.98s ->   309.82s] So one area here that's pretty obvious
+[  309.82s ->   313.46s] is this 59.66 area from the previous day.
+[  313.54s ->   314.82s] This is an area of support.
+[  315.06s ->   316.26s] Why is this an area of support?
+[  316.48s ->   319.46s] Back on Thursday, last week,
+[  319.46s ->   322.22s] the market sold off, showed some weakness,
+[  322.34s ->   323.90s] consolidated, and it pushed up,
+[  324.14s ->   326.04s] and it broke past that level, right?
+[  326.14s ->   327.70s] It tried going up, didn't fail,
+[  327.82s ->   329.66s] tried going up, failed, tried going up.
+[  329.80s ->   331.60s] It successfully broke through, right?
+[  331.60s ->   333.50s] So this is a potential area of resistance.
+[  333.88s ->   336.10s] Now as the market swung up, swung high,
+[  336.40s ->   338.78s] and then retraced back into this area, right?
+[  339.46s ->   341.42s] And then you see a lot of buying power right here,
+[  341.48s ->   343.04s] which means that this area of resistance
+[  343.04s ->   344.30s] turns into an area of support.
+[  344.48s ->   345.04s] One more thing.
+[  345.16s ->   346.78s] This is also in the 200-period moving average,
+[  346.78s ->   349.34s] which historically also acts as supports and resistances.
+[  349.50s ->   351.18s] Now we'll extend it to the 28th,
+[  351.18s ->   351.92s] and we'll see what happens.
+[  353.25s ->   354.85s] Now that we know we want to trade in this area,
+[  355.23s ->   357.23s] what we're looking for is actually a C,
+[  357.29s ->   358.55s] a criteria of entry, right?
+[  358.57s ->   361.09s] We are looking for something that allows us
+[  361.09s ->   362.61s] to trade in a bullish direction.
+[  363.21s ->   365.37s] And so for that, we'll drop it down to the five minute,
+[  365.67s ->   367.43s] and it's actually going to be very simple on this day.
+[  367.89s ->   369.61s] When the market opened up and gapped up,
+[  369.93s ->   370.55s] it's a good sign.
+[  370.69s ->   371.79s] We formed a higher high.
+[  372.15s ->   373.33s] So now what we're looking for
+[  373.33s ->   374.95s] is the formation of a higher low.
+[  374.95s ->   377.49s] See that in this area of support that we mapped out here,
+[  377.91s ->   381.71s] that market started stepping in and buying at around 850.
+[  382.11s ->   383.51s] And on this candlestick,
+[  383.57s ->   384.79s] we'll zoom in here just a little bit.
+[  385.49s ->   387.67s] On this candlestick, you can see the market came in,
+[  388.17s ->   389.43s] market bought it back up.
+[  389.75s ->   391.81s] On the next candlestick, it went down,
+[  392.31s ->   394.07s] it went back up, and it closed above.
+[  394.35s ->   396.51s] I not only see buying power,
+[  396.67s ->   398.11s] but I see sustained buying power
+[  398.11s ->   399.49s] because this candlestick has pushed it up
+[  399.49s ->   400.61s] and pushed it past its body.
+[  400.85s ->   402.77s] But I went in and I sold a quick credit spread
+[  402.77s ->   404.47s] because it fulfilled my criteria of entry
+[  404.47s ->   406.49s] of saying bullish intent.
+[  406.83s ->   408.37s] So I basically sold it right at the money,
+[  408.69s ->   411.35s] right, 6,5995, and I collected 230 bucks.
+[  411.69s ->   413.31s] And so the rest of the day is relatively uneventful,
+[  413.39s ->   414.15s] went all the way up.
+[  414.33s ->   417.61s] But then I exited right here at 904
+[  417.61s ->   418.97s] because I had to go to bed.
+[  419.05s ->   420.61s] So once it took out the high of the day,
+[  420.67s ->   422.55s] I was like, I'm done trading and we're good.
+[  422.69s ->   424.05s] So I closed it, exited the trade,
+[  424.11s ->   425.81s] and realized my $1,200 profit.
+[  426.29s ->   427.97s] Now this is where S comes in.
+[  427.97s ->   428.81s] S is stop loss.
+[  428.97s ->   430.29s] S is probably the most important thing
+[  430.29s ->   431.13s] you guys have to understand.
+[  431.13s ->   432.69s] And the best traders are the ones
+[  432.69s ->   435.23s] who know how to cut their losses as fast as possible.
+[  435.49s ->   436.77s] So if I were to enter this trade
+[  436.77s ->   439.43s] and instead of going all the way up to 6,007,
+[  439.47s ->   441.81s] it went all the way back down to 5,9995.
+[  442.13s ->   444.07s] The bullish momentum that I was looking for
+[  444.07s ->   445.13s] actually didn't occur.
+[  445.77s ->   447.99s] An easy way for us to automate this
+[  447.99s ->   450.61s] is you take ATR, which is average true range,
+[  450.83s ->   454.05s] and we subtract that number from when we entered.
+[  454.27s ->   455.63s] So I entered around 6,002,
+[  456.01s ->   457.15s] subtract the average true range,
+[  457.15s ->   457.83s] which is around nine.
+[  457.83s ->   461.55s] So I'll be, I exit around 5,994, right?
+[  461.55s ->   463.75s] If it hits 5,994, then I'm out of this trade,
+[  463.91s ->   465.11s] which makes sense, right?
+[  465.11s ->   467.67s] Because then market has turned red and I'm out.
+[  468.27s ->   471.19s] But if the market continues to go up like it does here,
+[  471.19s ->   473.37s] then it's a really easy trade
+[  473.37s ->   474.89s] and a really easy way for you to win.
+[  475.37s ->   476.51s] So that's basically the trade.
+[  476.69s ->   477.79s] Now let's talk about how you guys
+[  477.79s ->   479.05s] could have made max profit here.
+[  479.17s ->   480.45s] You guys can see the market expired
+[  480.45s ->   482.23s] out of the money way past 6,000.
+[  482.33s ->   483.29s] I would have made max profit.
+[  483.39s ->   485.35s] A really easy way for you to automate this
+[  485.35s ->   487.31s] is to do something that I like to call
+[  487.31s ->   489.15s] like a dynamic stop loss.
+[  489.37s ->   491.55s] If I made $230 on this trade,
+[  491.91s ->   495.47s] once it hits 50% unrealized profit,
+[  495.67s ->   496.93s] so in this case, $115,
+[  497.37s ->   499.07s] then I move my stop loss up to 230,
+[  499.29s ->   501.95s] which means that I cannot lose money on this trade, right?
+[  502.03s ->   503.21s] And I'll show you guys later on in this video
+[  503.21s ->   504.11s] how to set a stop loss.
+[  504.77s ->   507.69s] Now, once it hits $60, $55 or so,
+[  508.19s ->   511.27s] then you move your stop loss to $115
+[  511.27s ->   513.29s] and you're locking in 50% of gains.
+[  513.29s ->   516.51s] And then same thing, once it gets to 12.5%,
+[  516.51s ->   518.55s] you move your stop loss up to 25%
+[  518.55s ->   521.01s] and you're locking in 75% of realized profits.
+[  521.53s ->   523.61s] The reason that this works is because
+[  523.61s ->   526.13s] even during these small pullbacks,
+[  526.63s ->   528.09s] your credit spreads won't get stopped out.
+[  528.29s ->   530.41s] It's only when you have a giant reversal.
+[  530.59s ->   531.65s] For example, in this case,
+[  531.69s ->   532.99s] instead of it stopping at 60.30,
+[  533.05s ->   534.83s] what happens if it went all the way down to 60.10?
+[  535.09s ->   536.43s] That's when you will get stopped out
+[  536.43s ->   537.85s] and you would exit the trade,
+[  537.95s ->   539.55s] either at a profit or at break even.
+[  539.77s ->   541.39s] That's how this dynamic stop loss works
+[  541.39s ->   542.71s] is because it gives you enough room
+[  542.71s ->   543.65s] to let your winners run.
+[  543.93s ->   546.09s] Last thing, we're going to talk about
+[  546.09s ->   548.49s] how we can set up these dynamic stop losses.
+[  549.03s ->   550.69s] So here we have IBKR.
+[  550.79s ->   552.43s] You can do this on Thinkorswim as well.
+[  553.01s ->   555.39s] I don't have an SPX credit spread open right now.
+[  555.55s ->   558.35s] So we're going to use one of my existing credit spreads
+[  558.35s ->   560.47s] that expire tomorrow actually.
+[  561.47s ->   563.47s] And so in IBKR,
+[  563.55s ->   564.75s] what you do is you will go in
+[  564.75s ->   567.89s] and you would close this credit spread.
+[  567.89s ->   569.51s] And you can see right here,
+[  569.67s ->   570.53s] there is an order type.
+[  570.89s ->   572.53s] There is limit, market, stop, stop limit,
+[  572.63s ->   573.37s] trail and trail limit.
+[  573.59s ->   575.97s] What we're going to do is we're going to do a stop limit.
+[  576.41s ->   578.63s] So now our credit spread has hit $115.
+[  579.25s ->   582.13s] And we're entering our first tier of stop loss.
+[  582.39s ->   584.13s] So we're moving our stop loss up to break even,
+[  584.51s ->   585.17s] which is 230.
+[  585.37s ->   587.43s] So we come in here and put a negative 230.
+[  587.55s ->   588.83s] The reason we want to make sure it's negative
+[  588.83s ->   590.51s] is because you want to make sure that it's a debit.
+[  590.67s ->   592.85s] You're paying money to close this out.
+[  592.85s ->   594.55s] If you see right here,
+[  594.61s ->   595.41s] before I put the negative,
+[  595.67s ->   596.17s] it's credit.
+[  596.55s ->   598.07s] And that just means you're opening up a new one.
+[  598.47s ->   599.65s] But make sure that this says debit
+[  599.65s ->   600.97s] regardless of what platform you're on,
+[  601.07s ->   603.01s] Thinkorswim or IBKR.
+[  603.37s ->   604.01s] Make sure it's debit
+[  604.01s ->   605.39s] because you're paying money to close it out.
+[  605.83s ->   607.29s] Stop price means at what point
+[  607.29s ->   609.93s] do you want this order ticket to execute?
+[  610.37s ->   612.98s] And so we want that to be closer
+[  612.98s ->   615.14s] than the actual price.
+[  615.42s ->   616.76s] So what this means here is that
+[  616.76s ->   620.16s] if your credit spread hits $225,
+[  620.16s ->   624.98s] I will go ahead and put in the $230 option
+[  624.98s ->   627.00s] to close it out, right?
+[  627.02s ->   628.04s] If you make this 230,
+[  628.66s ->   630.00s] which means that if it hits 230,
+[  630.10s ->   631.84s] I'll put in an order for 230.
+[  632.02s ->   633.86s] There's a high likelihood that this won't close.
+[  634.18s ->   637.52s] So let's assume that the runner keeps running
+[  637.52s ->   640.28s] and now you're at 25% remaining.
+[  640.66s ->   644.52s] So you want to move your stop loss up again, right?
+[  644.52s ->   648.62s] So instead of 230, now I'm at 115.
+[  648.62s ->   651.56s] And the same thing goes with your stop price.
+[  651.66s ->   653.44s] You want your stop price to be moved up as well
+[  653.44s ->   655.92s] to $1.10.
+[  657.36s ->   659.06s] You put once it hits 110,
+[  659.64s ->   663.12s] then the limit order will be put in for 115.
+[  664.04s ->   665.74s] And you just roll this up dynamically, right?
+[  665.76s ->   669.92s] If you want this to be 0.55 for your next one,
+[  670.00s ->   672.22s] this can be 0.50, right?
+[  672.24s ->   673.20s] You keep rolling it up
+[  673.20s ->   674.58s] and moving that stop loss
+[  674.58s ->   675.56s] closer and closer and closer.
+[  675.72s ->   676.78s] And again, this is to make sure
+[  676.78s ->   678.56s] that you protect your winnings
+[  678.56s ->   680.00s] while giving yourself enough space
+[  680.00s ->   681.04s] to let those winners run.
+[  681.66s ->   682.98s] Last thing I'll point out here though
+[  682.98s ->   685.04s] is you can also do a trailing stop loss.
+[  685.24s ->   686.42s] Trailing stop loss is completely fine.
+[  686.54s ->   688.16s] I just find it to be a little bit less dynamic.
+[  688.74s ->   690.86s] You can use trailing by amount or percentage.
+[  691.20s ->   692.74s] If you don't have the ability to automate
+[  692.74s ->   693.54s] the way that I did,
+[  693.66s ->   695.78s] trailing stop loss also works completely fine.
+[  696.02s ->   697.82s] And if you want to see another example
+[  697.82s ->   699.42s] of me using the same methodology
+[  699.42s ->   701.68s] to make another $1,000 a day,
+[  701.84s ->   703.22s] make sure you guys click on this video link
+[  703.22s ->   704.26s] to the end screen right here.
+[  704.26s ->   705.48s] If you guys like the content
+[  705.48s ->   706.48s] and you guys want to build
+[  706.48s ->   707.40s] your own financial freedom,
+[  707.72s ->   709.12s] make sure you guys get this video a like
+[  709.12s ->   710.24s] and subscribe to the channel.
+[  710.42s ->   711.58s] If you guys have any questions,
+[  711.70s ->   713.48s] let me know down in the comment section below.
+[  713.86s ->   715.62s] Until next time, stay safe in the market.
+[  715.78s ->   716.82s] This is Credit Spread Investing.
+[  717.44s ->   717.76s] Peace.

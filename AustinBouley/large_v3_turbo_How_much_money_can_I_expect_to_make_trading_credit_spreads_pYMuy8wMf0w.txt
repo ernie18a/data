@@ -1,0 +1,67 @@
+[    0.59s ->     4.67s] Hey guys, in this video, I want to be brutally honest with you of how much money you can expect
+[    4.67s ->     9.03s] to make trading credit spreads. This is going to be based on my own experience trading credit
+[    9.03s ->    13.75s] spreads and with the hundreds of other credit spread traders that I've helped. And so again,
+[   13.85s ->    20.23s] I want to set the right expectations for you and give you clarity on what you can actually expect
+[   20.23s ->    25.25s] so that you're not over trading, trying to get too much, or if you're getting too little,
+[   25.37s ->    30.39s] you know it's possible to get more of a return every single month. So let's dive into how much
+[   30.39s ->    35.63s] money you can expect to make. First off, no guarantees. I cannot guarantee you anything.
+[   36.13s ->    43.61s] The numbers and figures that I'll be discussing in today's video are based on averages that I've
+[   43.61s ->    49.49s] seen from stories from myself and from math that I've been able to do from the options market.
+[   49.49s ->    55.53s] But again, there's no guarantee that you will make or lose any amount of money. So let's dive
+[   55.53s ->    62.27s] into that after that guarantee. Okay, so let's go in. What can we expect? Well, for credit spreads
+[   62.27s ->    68.05s] trading, I have all the math and studies backed around my members in my group. So that's the only
+[   68.05s ->    73.23s] numbers that I can give you. You can see here that we're batting around a 90 to 93% win rate.
+[   73.59s ->    79.93s] And we have at least for this one strategy alone, we have a 35% annualized win rate. So that's three
+[   79.93s ->    84.67s] times the average market return. Now, how does this break down? I just wanted to prove to you that again,
+[   84.67s ->    88.87s] if you want to see this for yourself, you can click down below. But I have the numbers to back up what
+[   88.87s ->    94.27s] we're doing. And then I also have all the stats from so many different members who are tracking
+[   94.27s ->    99.17s] their credit spread trade. So I get to see a lot of data. Anyways, in the data that I see, this is
+[   99.17s ->   105.57s] what's coming. A monthly return of, can you guess? Monthly return, because I can't write well,
+[  106.05s ->   112.73s] of 5 to 10%. This is what most credit spread traders who are following a strategy are getting,
+[  112.73s ->   119.46s] 5 to 10% a month. Now, your next question is, okay, cool, but you can't make money every single
+[  119.46s ->   123.88s] month. Correct. You will not make money every single month. So if you're like, wow, credit
+[  123.88s ->   127.72s] spreads have a high win rate. I want to trade them so that I never lose. You're in the wrong space.
+[  127.82s ->   133.92s] You will lose. Okay. So winning months is a 5 to 10%. How much is a losing? That's a terrible L.
+[  133.92s ->   144.09s] Losing month. A losing month can range anywhere from 10% to 20%. This is unacceptable. Again,
+[  144.13s ->   149.73s] this is on the total account value, right? So let's take the extremes for each one to do this
+[  149.73s ->   154.39s] math so you can understand and we can plan for the best and worst. All right, let's take the worst.
+[  154.55s ->   161.94s] So again, let's say you make a 5% monthly return. And the worst on losing months, you lose 20%.
+[  161.94s ->   169.68s] All right. Well, what we're seeing on average, most traders are able to win 10 to 11 months out of the
+[  169.68s ->   177.10s] year and lose the other ones. So for instance, if you're winning 11 months times a 5% return on those
+[  177.10s ->   187.41s] months, you're making 55%. If you're losing one month times the 20% loss, you're averaging a 35% return,
+[  187.41s ->   193.35s] which is what we see, what is common with historical backtest average, 34.98 average. Again,
+[  193.43s ->   198.69s] we're not even factoring in these other strategies that add to that win rate, but this just in general,
+[  199.07s ->   206.73s] about a 35% return net. That means after losses. Okay, cool. What does this look like for your
+[  206.73s ->   211.09s] account? How much money can you expect to make based on these general numbers that I have with
+[  211.09s ->   215.87s] myself and hundreds of credit spread traders that I'm tracking? Well, this is it. Let's say you have
+[  215.87s ->   223.49s] a $1,000 account. Okay, we'll start here and we'll go up. We'll also look at 10,000. 10,000. Then
+[  223.49s ->   232.79s] we'll also look at 100,000. Okay, this are winning months on $1,000 is going to be roughly on the lowest
+[  232.79s ->   240.92s] end. $50. Our losing will be $200. So this is how much you can expect to make every single month.
+[  241.14s ->   246.06s] On your losing month, this will be at $200. So this is what you're looking at for a $1,000 account.
+[  247.20s ->   252.42s] For a $10,000 account, we're just going to add a zero. You can expect to make $500 a month.
+[  253.10s ->   259.04s] But the same way you can also expect to lose $2,000 on a bad month. Okay, cool. But the real thing is,
+[  259.04s ->   264.06s] if you have $10,000 sitting in the bank, how much interest are you being paid on that? Hardly
+[  264.06s ->   271.18s] anything. Maybe $10, right? Now you get $500 basically every single month or most months of
+[  271.18s ->   277.38s] the year. And you can do so basically on autopilot because credit spreads only take five minutes a
+[  277.38s ->   282.68s] week to trade. So that's the beauty of credit spreads. That's $500 that you can cover groceries,
+[  283.20s ->   288.46s] utilities, whatever you want with. Now, this is when the game gets fun, but also a lot more risky.
+[  288.46s ->   291.76s] Well, not a lot more risky. It's the same risk. But when we're looking at this here,
+[  292.02s ->   297.78s] what we see is a $10,000 means that an average month, you'll make $5,000, which is where I am
+[  297.78s ->   306.64s] sitting at right now. An average month, I make $5,000. But what do I lose? I lose $20,000. You see
+[  306.64s ->   314.88s] this risk? This risk is a lot larger with size, but over time, it works out. I have this 35% average
+[  314.88s ->   322.28s] return overall because of how win rates and win percentages work. But this is what you can be
+[  322.28s ->   326.70s] aware of. Look how much money you can stand to make trading credit spreads. But you also have
+[  326.70s ->   332.02s] to factor in the loss because I want to be 100% realistic with you. Losses tend to come in a row.
+[  332.02s ->   339.40s] That's why you see a huge big loss month instead of having like one loss and then your wins kind of
+[  339.40s ->   349.48s] minimize that loss and end up leading to a profitable month. But credit spread losses tend
+[  349.48s ->   354.54s] to come all in a row. But anyways, this is how much you can realistically expect to make from trading
+[  354.54s ->   359.50s] credit spreads. Number one, if you're following a proven strategy like we are, if you want this
+[  359.50s ->   365.90s] strategy for free, you can click down below and check out the trading handbook guide that I have.
+[  365.98s ->   371.36s] It just requires your email. If you want more help on implementing this system, I have a trade
+[  371.36s ->   376.96s] ideas algo that will give you access to alerts that will help you make 5 to 10% a month with a 90%
+[  376.96s ->   381.74s] win rate. And that program is only open for four days a month. I close it for the rest to make sure
+[  381.74s ->   386.78s] that I spend most of my time with my members, ensuring they have success. That program is open right
+[  386.78s ->   391.24s] now, but closing soon. That's the first link down below. All right, guys, I hope I gave you clarity,
+[  391.40s ->   396.18s] set the right expectations and are helping you become a better credit spread trader. That's my
+[  396.18s ->   400.84s] job here. And that's what I do. Anyways, guys, please smash that subscribe button and I'll see you
+[  400.84s ->   401.72s] in the next video.

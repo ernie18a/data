@@ -1,0 +1,118 @@
+[    0.11s ->     5.45s] This is Linda, Linda, an absolute legend of trading.
+[    5.49s ->    12.65s] She's a professional trader who has worked for several hedge funds and even started her own hedge fund in 2002.
+[   12.87s ->    18.09s] And did I mention she made all of her millions using one specific strategy?
+[   18.33s ->    19.21s] I underestimated you.
+[   19.47s ->    22.11s] Yeah, well, maybe next time you will estimate me.
+[   22.21s ->    29.07s] Well, I was interested in little Linda and I wanted to find how she became so successful with her trading.
+[   29.07s ->    32.03s] So I did what I usually do and did some digging.
+[   32.23s ->    38.77s] I scavenged the internet for days trying to find the exact strategy she uses to make her millions.
+[   38.99s ->    43.71s] And let's just say after hours of digging, I finally found it.
+[   43.79s ->    50.47s] She has a strategy called the anti-setup and Linda uses the MACD as her main component for her trades.
+[   50.67s ->    51.99s] Now, I know what you're thinking.
+[   52.29s ->    54.03s] Oh, here we go again.
+[   54.21s ->    55.95s] Another MACD video.
+[   55.95s ->    60.81s] But Linda uses it in a way I've never seen it used ever before.
+[   61.01s ->    63.75s] See, Linda changed the default settings of it.
+[   63.83s ->    66.25s] She even took out the histogram completely.
+[   66.47s ->    72.37s] And she follows a bizarre rule set that completely changes the way you will look at the MACD.
+[   72.73s ->    73.07s] Forever.
+[   73.95s ->    76.83s] And I'm about to share it all with you right now.
+[   76.89s ->    77.91s] Let's get straight to it.
+[   77.91s ->    89.43s] So Linda calls this strategy the anti-setup, meaning she's trying to find the reversal point of a trend at a major pullback point and profiting from the massive move after the pullback.
+[   89.49s ->    92.13s] Let me paint a broad picture of what we're looking for.
+[   92.21s ->    96.47s] Linda would look for a downwards move that's starting to correct like this.
+[   96.47s ->   103.77s] Once it starts to correct, it would do a move like this, where price would start heading in the opposite direction, creating a pullback.
+[  103.83s ->   114.01s] Once she found this setup, she would follow her specific rule set in order to find perfect entries for the specific play, where she would profit from this beautiful correction.
+[  114.17s ->   118.69s] And how she finds the specific move is purely with the MACD.
+[  118.69s ->   120.53s] So, let's add it to our chart.
+[  120.61s ->   122.13s] To do this, go to trading view.
+[  122.33s ->   125.23s] If you don't yet have it, I'll leave a link in my description.
+[  125.47s ->   128.13s] Go to the indicators tab and type in MACD.
+[  128.25s ->   129.83s] Click this one right here.
+[  129.89s ->   135.49s] Now, when you first add the indicator to your chart, the settings of it will be these default settings.
+[  136.90s ->   144.02s] While doing my spying on Linda, I noticed she completely changed these numbers to best suit her strategy.
+[  144.10s ->   145.28s] So, let's do the same.
+[  145.34s ->   146.86s] Go to the settings of the MACD.
+[  146.86s ->   153.76s] You're going to change the fast length of 3, the slow length to 10, and the MACD length to 16.
+[  154.16s ->   156.46s] And then, you're going to want to uncheck the histogram.
+[  156.72s ->   160.84s] You also want to make sure the average type is set to simple.
+[  160.96s ->   164.42s] I'm also going to change the colors of the lines for simplicity's sake.
+[  164.48s ->   168.42s] I'm going to make the MACD line red and the signal line yellow.
+[  168.56s ->   171.70s] Our indicator is now set up and it's looking good.
+[  171.70s ->   177.46s] Now, this strategy will work for all markets and all time frames.
+[  177.66s ->   179.72s] So, let's pick a random stop.
+[  185.28s ->   185.68s] Okay.
+[  186.08s ->   186.82s] AMD it is.
+[  186.88s ->   189.52s] We'll use the one hour time frame for this example.
+[  189.60s ->   192.32s] So, for these examples, we'll be looking for long trips.
+[  192.36s ->   197.92s] Now, like I was saying before, Linda uses the MACD in a way I've never seen used before.
+[  197.92s ->   202.72s] And she follows a very, very specific set of rules to find these setups.
+[  202.84s ->   206.58s] But before we go over that, let me show you the site called Fintura.
+[  206.76s ->   211.20s] Fintura is a forex and crypto broker, but damn, it's a good one at that.
+[  211.26s ->   214.88s] First of all, they don't have KYC requirement, which is nice.
+[  214.98s ->   218.16s] So, you can sign up literally if you're anywhere in the world.
+[  218.22s ->   221.54s] Even if you're on an island with a volleyball, you can use Fintura.
+[  221.54s ->   227.10s] They also have extremely low commissions and spreads, so you're not wasting money like
+[  227.10s ->   228.50s] you would with a normal broker.
+[  228.74s ->   232.56s] And to top it all off, they have a 100% deposit bonus.
+[  232.70s ->   234.90s] All you have to do is use the link in my description.
+[  235.14s ->   239.88s] And if it's your first time signing up, they will match whatever you first deposit.
+[  240.04s ->   240.92s] Yeah, I know.
+[  241.04s ->   242.44s] It's literally free money.
+[  242.56s ->   245.84s] Go create an account with them if you trade crypto or forex.
+[  245.96s ->   249.40s] And at the very least, get the deposit bonus and see if you like it.
+[  249.46s ->   250.42s] Okay, back to the video.
+[  250.42s ->   255.80s] So, like I was saying before, Linda uses a very specific set of rules to find these setups.
+[  255.90s ->   259.58s] The first rule is you need the MACD line to make a new high.
+[  259.70s ->   263.66s] So, here on this chart, the MACD's previous high was right here.
+[  263.76s ->   270.10s] So, in order for us to even consider this trade, the MACD line, the red line, must go above
+[  270.10s ->   272.82s] this level right here, just like this.
+[  272.94s ->   274.98s] That is step one complete.
+[  275.14s ->   278.34s] Step two, we want the signal line, the yellow line,
+[  278.34s ->   281.04s] to move in the direction we are looking to trade.
+[  281.18s ->   284.12s] So, in this example, we are looking for a long trade.
+[  284.22s ->   288.40s] So, we want the signal line to be moving upwards, just like it is here.
+[  288.50s ->   290.20s] That is step two, complete.
+[  290.40s ->   295.14s] Step three is we want the MACD line to revert back to the signal line,
+[  295.18s ->   298.46s] and we want them both to be moving in the opposite direction.
+[  298.46s ->   303.46s] Since we are looking for pullback trades, this discrepancy in the lines is showing signs
+[  303.46s ->   308.12s] that the market is hesitant from this downwards move, or in other words, there's a lot of
+[  308.12s ->   312.68s] buying power coming in, which is exactly what we're looking for when trying to find pullback
+[  312.68s ->   313.84s] trades like this one.
+[  313.84s ->   319.84s] So, here, when the market is doing this pullback, both the MACD line and the signal line cross,
+[  319.84s ->   324.62s] and start to head in different directions, which gives us the signal to enter the trade.
+[  324.62s ->   329.86s] Now, while doing my research, Linda didn't say how she uses her stop loss and take profits.
+[  329.86s ->   332.58s] So, I had to do a little of my own testing.
+[  332.58s ->   337.62s] What I found is that if you place your stop loss right below the low of the move, and your
+[  337.62s ->   341.86s] take profit at the previous high, it works a great percentage of the time.
+[  341.86s ->   344.86s] And, just as you see here, it worked out beautifully.
+[  344.86s ->   347.50s] Here's another long example on Microsoft.
+[  347.50s ->   352.78s] We see a big downwards move, we then look for the MACD line to make a new high from the previous
+[  352.78s ->   358.10s] high, we then look for the signal line to slope in the upwards direction, which it does, then
+[  358.10s ->   362.26s] finally we wait for the MACD line to revert back to the signal line.
+[  362.26s ->   366.06s] We then make sure they both start to head in the opposite direction.
+[  366.06s ->   370.96s] Once all of this happens, we set our stop loss right below the recent low, and set our take
+[  370.96s ->   372.84s] profit at the recent high.
+[  372.84s ->   375.02s] And boom, another profitable trade.
+[  375.02s ->   376.54s] Here's a short example.
+[  376.54s ->   382.24s] We see a big upwards move, we then look for the MACD line to make a new low from the previous
+[  382.24s ->   387.82s] low, which it does, we then look for the signal line to be sloping downwards this time, which
+[  387.82s ->   392.90s] it does, then finally we wait for the MACD line to revert back to the signal line, which
+[  392.90s ->   397.68s] it does, we then make sure they both start to head in the opposite direction, which they
+[  397.68s ->   398.68s] do.
+[  398.68s ->   403.20s] Once all of this happens, set your stop loss at the recent high, then set your take profit
+[  403.20s ->   407.08s] at the recent low, then yet again we get another perfect trade.
+[  407.08s ->   413.26s] I also posted this exact same A&D trade that I went over in this video in my premium discord
+[  413.26s ->   416.34s] to all of my subscribers before I enter.
+[  416.34s ->   421.36s] In this discord, I show all of my entries and exits for all of my trades.
+[  421.36s ->   427.32s] We also have other professional trading analysts who share all of their entries, exits, and analysis
+[  427.32s ->   428.32s] as well.
+[  428.32s ->   431.74s] And it's not just stocks, we have analysts for everything.
+[  431.74s ->   434.82s] Stocks, crypto, forex, and even options.
+[  434.82s ->   439.68s] All of our analysts are proven to be profitable and we keep track of all their statistics and
+[  439.68s ->   442.14s] share them with you on a monthly basis.
+[  442.14s ->   446.78s] If you want to follow along with all of my trades or any of the other professional analysts,
+[  446.78s ->   449.42s] I'll leave a link in the description so you can check it out.
+[  449.42s ->   454.50s] Hopefully you guys enjoyed this video, I really do think Linda's strategy has some great potential.
+[  454.50s ->   457.46s] Try it out for yourself and let me know how it works for you.
+[  457.46s ->   459.50s] Thanks for watching and I'll see you guys next time.

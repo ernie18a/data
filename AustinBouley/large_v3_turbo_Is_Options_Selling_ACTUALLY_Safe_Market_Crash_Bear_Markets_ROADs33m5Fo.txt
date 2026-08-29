@@ -1,0 +1,100 @@
+[    0.00s ->     2.80s] In this video, I'm going to walk through a simple question that I get a lot.
+[    2.94s ->     6.60s] Austin, option selling makes money. It seems cool. You do it. Others do it.
+[    6.64s ->    11.30s] But is it actually safe? And what happens during a market crash or bear markets?
+[   11.40s ->    15.62s] Now, this is something that I hear a lot and I want to address it because this is very important.
+[   15.74s ->    19.96s] You need to understand the risk of what you're getting into before you get into it.
+[   20.00s ->    22.38s] So the question is, is option selling safe?
+[   22.62s ->    26.32s] And first off, no, nothing in the stock market is safe.
+[   26.32s ->    29.78s] When you put money at risk, you have the chance to lose money.
+[   30.16s ->    34.18s] Now, can option selling be profitable and can you make money with it consistently?
+[   34.48s ->    41.28s] Of course, that's true of almost every single thing, whether you choose to go real estate or stock trading or swing trading or Forex.
+[   41.44s ->    44.80s] No matter what it is, there is always something that can work.
+[   44.86s ->    48.80s] It's just what do you want to dedicate yourself to actually knowing and learning?
+[   49.06s ->    58.34s] Now, thankfully, with tools like options bots, you can actually leverage all the best practices I'm about to talk about done for you with just one click.
+[   58.34s ->    62.42s] So, yes, you need to focus, but it actually has gotten a lot easier in our new age.
+[   62.80s ->    65.04s] But with that said, you will lose money.
+[   65.24s ->    69.80s] You will go through bear markets, but a ton of money can be made if you set it up right.
+[   69.92s ->    75.98s] So now that we're on the same page, now that we know that option selling can work, as I'm sure you've seen it from myself, you've seen it from others,
+[   75.98s ->    81.22s] let's talk about some of the biggest risks and how to remove them or reduce them a ton.
+[   81.34s ->    83.20s] You're still going to lose, but how can we reduce it?
+[   83.84s ->    86.52s] Number one is overnight trading.
+[   86.80s ->    88.02s] Okay, why do I want to mention this?
+[   88.14s ->    92.84s] Because, first of all, a good strategy is the number one way to reduce risk.
+[   92.84s ->   100.64s] Okay, so if you have a good strategy, you'll be able to reduce risk a ton, meaning you're actually going to trade a bullish strategy when the market's trending up.
+[  100.70s ->   105.66s] You're going to trade bearish strategy when the market's trending down, all of which you can do in other videos that I've talked.
+[  106.24s ->   107.24s] Number two is position.
+[  107.44s ->   108.08s] Where are we at?
+[  108.16s ->   111.62s] And are we aligning our position sizing based on where the market is at?
+[  112.82s ->   116.62s] After those two things, then we dive into these three safeguards I'm about to dive into.
+[  116.62s ->   117.86s] Number one is overnight trading.
+[  117.98s ->   125.32s] Look, most crashes, most wars, most news, most all this stuff happens overnight.
+[  125.88s ->   135.64s] And a lot of people wake up in the morning only to see the market dropped and they have to wait for the market to officially open to actually get out of position.
+[  135.78s ->   137.22s] So they get out for a huge loss.
+[  137.28s ->   138.64s] They have to wait till the market opens.
+[  138.70s ->   140.00s] They have to mess with filling orders.
+[  140.30s ->   140.96s] And it's hard.
+[  140.96s ->   152.50s] Now, if we take the same strategy, same position sizing, and we do it on futures options instead of normal stock or ETF or index options, we gain a huge advantage.
+[  152.64s ->   152.86s] Why?
+[  153.18s ->   155.84s] Because the futures options, number one, it's super liquid.
+[  156.14s ->   161.38s] Means you can get in and out at almost any time of the day with very little slippage, right?
+[  161.42s ->   166.60s] Which means that we don't have to give up much to get out because of how liquid the contracts are by default.
+[  167.28s ->   169.84s] Number two is it trades overnight.
+[  169.84s ->   176.52s] As I was mentioning, most crashes, most wars, most news that will impact the market tends to come out overnight.
+[  177.16s ->   183.64s] And because that's true, you can now, as a futures options trader, get out of your trade overnight as the market starts crashing,
+[  183.98s ->   193.02s] which means you don't have to wait until the market opens and get out at a huge loss where you're trying to compete your limit order with everyone else who's trying to get out in the first 60 seconds.
+[  193.50s ->   196.96s] Now, with futures options, you can actually get out overnight and reduce your risk a ton.
+[  196.96s ->   204.52s] But not only that, futures options are tax efficient, which means not only do you get the chance to be more liquid, not only do you get the chance to reduce your risk,
+[  204.56s ->   213.38s] but you get the chance to keep more of the money you're making because just from an IRS tax code perspective, you get to keep more money when you use futures options.
+[  213.48s ->   216.50s] It's the same tax efficiency of index options, which is awesome.
+[  216.50s ->   223.58s] So, number one, once you have down a good strategy, once you have position sizing down, I would move to futures options.
+[  223.58s ->   224.68s] That's going to help you a lot.
+[  224.76s ->   225.46s] It's going to be liquid.
+[  225.94s ->   228.52s] It's going to trade overnight and it's going to be tax efficient.
+[  228.98s ->   231.00s] Next is emotions and executions.
+[  231.14s ->   232.96s] OK, a lot of reasons people lose money.
+[  233.08s ->   241.82s] A lot of people run into issues is because of missing entries and exits because of being busy and having like things like a meeting or time with family or something like that.
+[  241.82s ->   250.64s] Or you're entering at the wrong strike price or quantity or you're not able to exit quick enough because the train moves quickly as you're typing in the limit order.
+[  251.22s ->   255.78s] Using automation and using option spots is actually the easiest way to remove all this risk.
+[  255.88s ->   256.74s] Now, I am biased.
+[  256.92s ->   259.08s] I created a tool called the Options Auto Trader.
+[  259.50s ->   263.30s] It currently has over $40 million of assets connected to it.
+[  263.30s ->   267.94s] It's doing over a thousand live trades a day for people and automating it.
+[  268.22s ->   273.26s] And it was rated one of the top automation softwares of 2024 and our first year of launching it.
+[  273.60s ->   274.94s] So, obviously, it's there.
+[  275.10s ->   276.32s] You should check it out.
+[  276.54s ->   282.66s] But if you want to remove the execution risk, the emotion risk, you can safeguard that by using options bots.
+[  283.40s ->   285.06s] Number three is circuit breakers.
+[  285.42s ->   290.76s] So, this is something where like it watches the activity of the market as a whole, the S&P 500.
+[  290.76s ->   294.24s] And if it moves a certain percentage, it's actually going to cut off trading.
+[  294.66s ->   300.56s] So, if you have the right strategy, meaning you have a great stop loss, a great take profit, it's structured correctly,
+[  300.96s ->   305.22s] your position sizing is in check, which means you're not trading with more than you're comfortable with losing,
+[  305.30s ->   309.08s] which I have another video all on position sizing and the rules that I follow around that.
+[  309.74s ->   313.60s] Then what you do is you make sure that you're using futures options and get it overnight.
+[  314.32s ->   319.70s] Number three is you're going to use option spots, automate away the emotions and the execution risk.
+[  319.70s ->   321.98s] And then from there, you're like, hey, what about the other risk?
+[  322.08s ->   328.00s] The other risk is going to be a worst case scenario of which you have stop losses, you have bots managing for you.
+[  328.28s ->   331.40s] But if you have something crazy, that's what circuit breakers are there for.
+[  331.52s ->   337.26s] Meaning if the market drops more than 7%, drops more than 7% in a day, it's going to halt for 15 minutes.
+[  337.62s ->   340.10s] Drops more than 13%, it's going to halt for another 15%.
+[  340.10s ->   344.58s] And then if it drops 20% in a day, then it's going to halt for the entire day.
+[  344.58s ->   348.60s] Now, this will stop trading for you, but it does kind of let the market cool down.
+[  349.46s ->   353.16s] So again, these are all the ways to limit risk as an option seller.
+[  353.30s ->   357.62s] Can you do it well? Yes, but you need to make sure that as an option seller, if you want to be consistent,
+[  357.72s ->   361.38s] if you don't want to have the one-off huge losses, you need to make sure you have the right strategy,
+[  361.48s ->   362.48s] which I've covered in videos.
+[  362.86s ->   364.64s] You want to make sure you have the right position sizing.
+[  365.02s ->   367.66s] You want to make sure you're trading futures options so you can get out overnight.
+[  367.66s ->   374.04s] You want to make sure you're using automation and you want to make sure that you understand how circuit breakers work.
+[  374.10s ->   378.44s] So all that stuff together really helps decrease the risk, decrease the losses.
+[  378.44s ->   381.68s] And when you understand that you can be way more profitable and way more consistent.
+[  381.94s ->   385.86s] So overall, never share with more than you can afford to and always know your risk.
+[  385.96s ->   392.20s] But these are essentially, I said three, but the five ways to limit risk a ton so that option selling should not be scary, right?
+[  392.42s ->   396.10s] If you know all these five things I just mentioned, option selling should not be scary.
+[  396.10s ->   398.46s] You should be excited because you know you can consistently produce money.
+[  398.54s ->   402.36s] If you want to learn more about my strategy, my position sizing rules and all that stuff,
+[  402.58s ->   407.18s] check out our free community on school, which has over 10 different free courses that I put together,
+[  407.48s ->   410.82s] some of which I've sold for $1,000 a piece, but you get them all for free.
+[  411.18s ->   412.66s] Plus this Google Doc is there.
+[  412.92s ->   417.92s] Use the first link inside of the YouTube description or go to school.com slash options on our trigger.
+[  418.30s ->   419.46s] All right, guys, see you in the next video.
+[  419.54s ->   419.98s] Hope this helped.

@@ -1,0 +1,71 @@
+[    0.00s ->     5.68s] Guys, what's up? In this video, I'm going to talk about my three rules to manage risk properly as
+[    5.68s ->    11.26s] a credit spread trader. Because the thing is, if you manage risk too much, you're going to miss out
+[   11.26s ->    16.46s] on the upside of your trades, which is going to be where a bulk of your profits come from.
+[   16.76s ->    21.54s] But if you don't manage them correctly, then your losses will be so large that it's not going to
+[   21.54s ->    25.76s] help you because it's going to be way more than the money you ever make. So anyways, let's talk
+[   25.76s ->    30.64s] about the three rules that I've learned and that I implement and that I teach and make sure all my
+[   30.64s ->    35.70s] students follow. So anyways, here are the three rules. Number one, we need to talk about our trading
+[   35.70s ->    42.52s] size. What is our size when we are trading? We use the 10% rule, but again, it can be adjusted and
+[   42.52s ->    48.28s] I'll talk about how that works. The 10% rule is this. If you're using a strategy like the ones that
+[   48.28s ->    53.44s] I use, which you can use for yourself, I have a strategy handbook, no email, no nothing required
+[   53.44s ->    58.02s] linked in the description below. Because we know that these strategies have a 90 plus percent win
+[   58.02s ->    65.00s] rate and we're going to collect enough money. We know we can use a 10% rule here, which is of the
+[   65.00s ->    70.58s] max loss, which means we enter a credit spread trade, which is a definerous trade. We know what
+[   70.58s ->    77.26s] our max loss is. So for instance, let's say we can enter a $1 wide spread for 20 cents. Okay. So 20 cents,
+[   77.32s ->    82.38s] if we can enter it for 20 cents and it's a $1 wide, just like that, that means we know our risk
+[   82.38s ->    88.70s] for that trade is 80 cents per spread. So if I'm only in one spread, my risk for this trade
+[   88.70s ->    98.22s] is $80. Okay. So for this spread, I'm risking $80 to put on this trade. So $80 to put on this trade.
+[   98.62s ->   107.14s] So if I'm risking $80, how large should my account size be? It should at least be $800 for my account
+[  107.14s ->   116.60s] size, just like this. Why? Well, because 10% of 800 is 80. So we want our max loss to be no more
+[  116.60s ->   123.40s] than 10%. That's kind of how the 10% rule works. So another way to do it is like, okay, cool. I have
+[  123.40s ->   131.36s] a 5k account. What is my max position size I can take? Well, if I'm following the 10% rule,
+[  131.36s ->   141.14s] 5k times 0.1 is going to equal 500. So that means my max loss for any one trade can be $500. So now we
+[  141.14s ->   147.56s] determine what is the max loss for a single spread? Well, let's say the max loss is 50 per spread.
+[  148.04s ->   158.41s] That means that I can enter 10 spreads. So that is kind of how we determine that our max loss
+[  158.41s ->   168.21s] should be no more than 10% of our attire account. Now, yes, 10% is a large number. Some people aren't
+[  168.21s ->   175.47s] okay with that risk. 10% is the maximum, like it's your highest risk. Don't go above 10%. But people who
+[  175.47s ->   184.31s] are safer like me, I sit around four to 5%. I risk no more than four to 5% on every single trade. So I sit
+[  184.31s ->   189.75s] in this range, I'm happy, I'm healthy, I'm living, I'm fine, you need to find what percentage is right
+[  189.75s ->   194.23s] for you and for your account. Now remember, the higher the percentage, the higher your overall
+[  194.23s ->   200.93s] portfolio growth, but also the higher your risk. So again, most of my students do around 10%. I do
+[  200.93s ->   204.49s] around four to 5% because that's where I'm comfortable and safe with my six figure trading
+[  204.49s ->   212.14s] account. All right, number three, after trading size, we need to talk about how do we manage our
+[  212.14s ->   218.24s] losers. And so there's two ways to do that. Number one, which is risk management rule number two,
+[  218.64s ->   225.60s] is going to be our early exit rules. Okay, this has been proven over backtest. If you exit trades
+[  225.60s ->   230.94s] early, you're going to increase your win rate. Why? Because you take money off the table, which means
+[  230.94s ->   235.84s] you take risk off the table and allows you to get into another trade and therefore collect theta,
+[  236.04s ->   240.24s] blah, blah, blah, blah, blah. Anyways, what you need to know is that getting out of trades early are
+[  240.24s ->   246.64s] beneficial. Now how, how do we know when to get out of trades? How we get out of trades here at 10%
+[  246.64s ->   258.12s] credit spreads is this. If we can exit a trade for 5 cents or less, then guess what? We get out of that
+[  258.12s ->   266.06s] trade. I should probably do like this. Zero, 2.05. Anything between this range, we get out of the
+[  266.06s ->   274.36s] trade. Now again, I should also say that plus five days left in the trade. Now this again, I've
+[  274.36s ->   279.40s] proven this via backtest. So if you want to see those backtest, just leave a comment down below or
+[  279.40s ->   285.48s] send me an email to hello at the impeccable investor.com. But anyways, if we can close out
+[  285.48s ->   294.90s] a trade for 5 cents or less and when there's five days left until expiration or at least five or more
+[  294.90s ->   299.90s] days, then we should close early. Why? Because there's no point having that much risk on the
+[  299.90s ->   305.08s] table when we can take a majority of the profit off the table. So if we can take a majority of the
+[  305.08s ->   310.28s] profit off the table, then we should do that and then take that money we made and filter it into the
+[  310.28s ->   316.32s] next trade. Now there's less than five days until expiration and it's trading at this price. Then
+[  316.32s ->   321.60s] again, you can always sell early if you want, but you can also just let it expire worthless and
+[  321.60s ->   326.84s] therefore collect most of the money. So instead of paying back, let's say 3 cents, you get to keep
+[  326.84s ->   335.08s] that 3 cents or $3. So that is one of our early exit rules. Number two is when it comes down to the
+[  335.08s ->   340.20s] day of expiration. On the day of expiration, we hold all our trades until expiration, even
+[  340.20s ->   346.56s] if they're losers. Wow, that's crazy. Why? Because theta decay will make our losers worth less. And
+[  346.56s ->   357.06s] so that's kind of cool. But not only that is if on expiration day, we can close that trade for less
+[  357.06s ->   361.70s] than what our max loss is, then we're winning, right? Because regardless of how much our trade
+[  361.70s ->   367.46s] goes against us, we're only ever going to experience that max loss. So why not hold until expiration day
+[  367.46s ->   372.54s] and to see if we can close it for less, right? And so that's the beautiful part about waiting until
+[  372.54s ->   379.32s] expiration. When you wait until expiration, you're still the same max loss regardless, but maybe you
+[  379.32s ->   385.30s] can exit a bit early and have a smaller loss than you would if you took the whole max loss.
+[  386.00s ->   389.56s] Anyways, that's how we do with expiration. There's a few more specifics, but I'm going to save that for
+[  389.56s ->   396.74s] my inner circle members only. All right, next, the third rule to manage risk is stop loss rules.
+[  397.10s ->   402.32s] Now again, what should your stop loss rule be? I don't use stop loss rules. Why? Because that's not
+[  402.32s ->   407.62s] what my strategy says. I kind of explain my whole risk idea behind these strategies that we trade,
+[  407.70s ->   412.12s] but a stop loss is very important. If you want to learn more about stop losses, I can't teach it here
+[  412.12s ->   419.20s] because I don't do it. It is going to be to go to tastylive.com, search up credit spreads. They have
+[  419.20s ->   425.62s] an 11-year backtest. What they recommend is a 50% profit. Why do I not like that? Because of all the
+[  425.62s ->   432.16s] backtests I've done, a 50% profit is not enough to offset your losers. Anyways, enough said. This is
+[  432.16s ->   437.28s] how you manage risk with credit spreads. If you learn something, please thumbs up and subscribe because I
+[  437.28s ->   442.18s] make videos to help you become a betty, a better credit spreads trader. And that's what I'm here
+[  442.18s ->   446.78s] for. Anyways, guys, see you in the next video and hope you become a subscriber. It's free. Just click
+[  446.78s ->   447.16s] down below.

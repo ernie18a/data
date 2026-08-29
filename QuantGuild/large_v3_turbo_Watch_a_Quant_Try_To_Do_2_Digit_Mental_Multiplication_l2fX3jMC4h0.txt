@@ -1,0 +1,41 @@
+[    2.87s ->     6.91s] Today we're going to see if I can get taken down by basic arithmetic.
+[    7.45s ->    10.33s] Two-digit multiplication up in my head.
+[   10.83s ->    11.87s] Let's see what happens.
+[   12.11s ->    13.19s] I got a stopwatch.
+[   13.51s ->    14.73s] I got seven problems.
+[   15.13s ->    19.19s] I want to see if I can get seven in a row, and I want to see how fast I can do it.
+[   19.55s ->    26.57s] Let's go ahead and get started and see if my background in extremely abstract mathematics
+[   26.57s ->    30.01s] precludes me from basic mental arithmetic.
+[   31.43s ->    32.27s] Let's go.
+[   32.29s ->    42.65s] So 62 times 12, we'll do 2 times 62, 124 plus 10 times 62, 620, 744.
+[   43.45s ->    48.58s] 66 times 73, oh my god.
+[   48.72s ->    61.92s] Okay, 70 times 66, so 7 times 6 is going to be 4,200, and then 7 times 6 is 420.
+[   61.92s ->    66.94s] So 420, so 420, 4,200, 4,620.
+[   66.94s ->    87.30s] And then 3 times 6 is going to be 4,200, and then 3 times 6 is going to be 4,200, so 4,620.
+[   87.30s ->    87.96s] 4,200, 4,220.
+[   87.96s ->    92.94s] So 4,220, 4,60, plus 3 times 0.
+[   93.02s ->    95.04s] So 4,620.
+[   95.04s ->    95.58s] So 1,220 plus 6 is 5,680.
+[   95.58s ->    97.94s] So 4,620 plus 6 is 5,680.
+[   97.94s ->   113.90s] plus 66 is 198 198 plus four six four six two zero so we'll do plus 200 four six two zero four
+[  113.90s ->   128.92s] eight two zero minus two four eight four eight eighteen oh let's go all right 43 82 this one's
+[  128.92s ->   138.56s] easier eighty times forty three eight times four three thousand three thousand two hundred eight
+[  138.56s ->   150.33s] times three is twenty four two hundred forty so three thousand two hundred plus two forty is three
+[  150.33s ->   167.22s] four forty plus eighty six so three four forty plus eighty six is twenty six so eight times four
+[  167.22s ->   183.18s] thirty two hundred plus eight times three so thirty two hundred plus twenty two forty thirty two hundred
+[  183.18s ->   198.35s] two forty thirty four forty thirty four forty plus eighty six or thirty five thirty five twenty six
+[  198.35s ->   210.57s] cool I'm already exhausted mentally oh thank goodness gracious a nice easy one nine times eight seven
+[  210.57s ->   224.36s] thousand two hundred minus eighty is seventy one twenty good eighty four ninety five I think this one's not too
+[  224.36s ->   230.04s] bad either because we could do five times eighty four and just subtract that off a hundred so one hundred
+[  230.04s ->   239.34s] times eighty four is eight thousand four hundred minus five times eighty four which is five times eight is
+[  239.34s ->   254.81s] so four hundred plus twenty so four twenty so seven thousand nine hundred and eighty I believe sweet six of
+[  254.81s ->   261.17s] seven oh nice another good one let's see ninety times ninety eight so we'll just do nine thousand so
+[  261.17s ->   273.80s] one hundred times ninety one hundred times ninety is nine thousand minus one hundred and eighty nine thousand
+[  273.80s ->   289.08s] minus one hundred and eighty so that's gonna be eight thousand eight hundred and twenty last one let's go
+[  289.08s ->   298.40s] fifty four times twenty super easy two times five is one thousand two times four is eight hundred
+[  298.40s ->   308.66s] five hundred it looks like it's one thousand eight hundred no I got lazy goodness gracious one thousand
+[  308.66s ->   320.66s] eight hundred oh my god all right five forty times two is ten eighty oh my god I just lost the firm so
+[  320.66s ->   329.70s] much money all right not bad it took me four minutes 51 seconds to do six correct one incorrect because I got lazy
+[  329.70s ->   337.86s] and that'll do it for this video I hope this was entertaining me trying to do two days of multiplication in my
+[  337.86s ->   345.30s] head a very nice break between the abstract math and quantitative finance videos so I hope you've enjoyed and
+[  345.30s ->   347.30s] I'll see you in the next one

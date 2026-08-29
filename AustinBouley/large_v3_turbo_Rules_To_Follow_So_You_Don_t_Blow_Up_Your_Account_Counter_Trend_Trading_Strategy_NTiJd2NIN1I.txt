@@ -1,0 +1,74 @@
+[    0.46s ->     4.70s] Hey guys, in this video we're going over some rules you need to follow so you don't blow up
+[    4.70s ->     9.02s] your account when you're counter trend trading. That means that when you're trying to predict
+[    9.02s ->    14.36s] reversals, trade bottoms, trade tops, you need to make sure that you implement some rules or else
+[   14.36s ->    19.86s] your accounts can blow up really fast. I've seen this with a lot of our traders who are trying to
+[   19.86s ->    25.10s] counter trend very often and they're seeing the trades go against them and seeing massive losses
+[   25.10s ->    29.70s] because of it. And I don't want you to be one of those people. Now again, do losses happen?
+[   29.70s ->    34.08s] Absolutely. There is no perfect system, but there is one that I want to share with you today. So if
+[   34.08s ->    38.40s] you don't really know how to counter trend or strategies for that, go check out my video from
+[   38.40s ->    42.82s] yesterday where I walked through how to counter trend and predict reversals bottom and top and
+[   42.82s ->    47.32s] how to trade it. Now we're going to talk about the rules in this video. So the rules come from this
+[   47.32s ->    52.60s] 10% credit spread trading handbook and guide and handbook. And if you want this, you can click down
+[   52.60s ->    57.74s] below in the description to get it for free. It's completely free. It has all my strategies, step by
+[   57.74s ->    62.50s] step, credit collection, trade sizing, early exit rules. And what we're talking about today
+[   62.50s ->    67.32s] is counter trend trading rules. So let's jump to that section here. Okay. So counter trend trading
+[   67.32s ->    73.82s] rules. Let's kind of zoom into this here a bit. Okay. Let's just zoom in. All right. If you are
+[   73.82s ->    78.06s] trading a counter trend strategy, like the elastic rejection or bounce strategy, which we talked about
+[   78.06s ->    82.60s] yesterday, which means that if you're trying to predict the top and trade it on the way down
+[   82.60s ->    88.30s] or predict the bottom and trade the bounce up again, you need to follow these rules. So again,
+[   88.42s ->    93.86s] this is what's going on. The first rule only enter a trade on a strong green day for electric or a
+[   93.86s ->    98.86s] strong red day for a bounce strategy. So this is when we kind of went into the strategy rules. But
+[   98.86s ->   103.50s] for instance, when you're trading the downside, looking for a bounce up, you want to make sure
+[  103.50s ->   108.56s] that it's been previously going down very hard. So like, so like this, where it's going down very strong,
+[  108.56s ->   114.16s] very fast. And when on the downside, you want to look for a doji candle, which is indicative of
+[  114.16s ->   119.88s] reversals. Right here, we came down doji, which is long wicks in the small body on a candle long
+[  119.88s ->   124.70s] wicks, small body right here, if you can tell. And so you always see this reversal, see this reversal
+[  124.70s ->   129.48s] once we have a huge long rundown, you can see that here as well. And this doji candle looks a bit
+[  129.48s ->   136.46s] different. So you can see here, we have a huge rundown doji candle here long wicks. And then you can see
+[  136.46s ->   142.14s] here another doji candle and another doji candle. So all in the same range, they don't always predict
+[  142.14s ->   147.44s] the exact spot it's going to reverse. But when you see a strong move downward, followed by a doji
+[  147.44s ->   152.84s] candle, that's a strong sign, it's going to bounce back up. Whoops, we've already messed it up so far.
+[  153.22s ->   158.08s] Sorry, ignore that. Okay, so that's what we're looking at for the downside for the upside. As I
+[  158.08s ->   164.60s] mentioned in the video yesterday, we're looking for a strong push up to the upside, we want to see a
+[  164.60s ->   170.40s] strong green candle pushed through this upper bound range. And then we want to see kind of a
+[  170.40s ->   174.22s] move start down. But you can also enter on this strong green move, we're just looking for a strong
+[  174.22s ->   178.72s] green move. Why? Because that's going to elevate call prices, which is going to allow us to get into
+[  178.72s ->   184.20s] a call credit spread way further out of the money and still collect a decent premium, and therefore
+[  184.20s ->   191.48s] provide us more safety. So strong green on the upside, down fast move with doji candle on the bottom.
+[  191.48s ->   199.34s] Next, the second rule is to size down and only trade 50% of your typical position size. Why? I'm a trend trader.
+[  199.46s ->   205.04s] I've been trading the trend for six years now, and I know how well it works. Why? Because not only does it work
+[  205.04s ->   209.66s] for myself, it's worked for hundreds of other students, and it's been working for decades, and not even that,
+[  209.72s ->   215.90s] almost two centuries. There is mathematical evidence and historical evidence to show traders that have been trading
+[  215.90s ->   222.44s] the trends for over two centuries now, and it worked in. And because of that, I think you should never ever fight the trend.
+[  222.70s ->   228.46s] So when you are doing a counter trend trade, where you're trying to make some money on the opposite play of where it's going,
+[  228.54s ->   234.22s] for instance, this is trending up, but we want to make money on a quick downside move, you want to make sure you put less of
+[  234.22s ->   239.56s] your account size into it, because it is a riskier play, you are betting against the market. It's like you're going surfing,
+[  239.88s ->   245.26s] and you see this huge 50 foot wave coming towards you. And instead of turning your board around and going with the wave,
+[  245.32s ->   250.00s] you're like, hmm, I think I can go straight into it. That's what counter trend trading is. So you have to be very, very careful.
+[  250.40s ->   258.52s] So only use 50% of your max position. So you typically use, let's say 10% of your account into any one trade.
+[  258.52s ->   264.06s] Now only put 5% of your account. Or if you typically put 5% of your account, now put 2.5%.
+[  264.06s ->   270.52s] Just so that if you do lose, it's more manageable. All right, next, the third rule is to immediately
+[  270.52s ->   276.48s] close out any open counter trend positions. If one of your counter trend trades expires in the money,
+[  276.84s ->   283.10s] this is specifically applies to my specific rules. If you're following my trade, my trading rules,
+[  283.10s ->   288.30s] which are listed here, and you're a part of the 10% credit spreads community and trade ideas
+[  288.30s ->   293.76s] I'll go membership. Again, this is for you, and I'll explain it here. Why does this work? Well,
+[  293.80s ->   298.46s] because let's say we have trades, right? Because we put on trades every single week, if not every
+[  298.46s ->   304.26s] other day. And so for instance, let's say a call credit spread trade we put here, then another one
+[  304.26s ->   309.38s] for the next week we put here. So these are talking about different weeks and expiration. Okay, let's say
+[  309.38s ->   315.35s] this week's expiration gets hit. If this week's expiration on our call credit spread gets hit,
+[  315.35s ->   324.29s] which means it's now losing from a strike price basis, this means that there's a 75% chance that
+[  324.29s ->   329.51s] the next trade will also lose. Why? It means that the trend is still going in its favor, momentum is
+[  329.51s ->   334.93s] picking up, and it's not slowing down as much as we thought. Because there's a 75% chance that if this
+[  334.93s ->   339.73s] trade fails, then this trade fails, then what we need to do is if this trade fails, our first one
+[  339.73s ->   346.17s] expiring the closest amount of time, if it expires in the money, so we experienced the max loss,
+[  346.51s ->   351.15s] then and you have another trade out for that next week that's coming in, then you want to close it
+[  351.15s ->   356.29s] out early. Why? Well, because there's a 75% chance it won't make money. So we might as well close that
+[  356.29s ->   362.55s] trade out now so that we don't have another max loss. And instead, we only experience about 25 to 50%
+[  362.55s ->   367.89s] max loss, depending on how much that stock has moved, right? So again, this is one of the rules is to
+[  367.89s ->   374.27s] close out if your prior trade expired in the money. Why? Because the trend is picking up and it's not
+[  374.27s ->   379.29s] something we want to do. So all these counter trend trading rules are listed right here in this
+[  379.29s ->   384.71s] document for free. Yes, I give it for free, nothing required except an email address so I know where to
+[  384.71s ->   389.83s] send it. Link down below. Anyways, guys, if you're trying to get better at credit spreads, trading, or
+[  389.83s ->   394.59s] want more strategies, whatever, I am your guy as I post videos every single day to help you master
+[  394.59s ->   399.85s] strategies and trade credit spreads to make reliable monthly income. So if that's for you,
+[  399.95s ->   404.59s] click the subscribe button and the notification bell, and I will see you in the next video.

@@ -1,0 +1,82 @@
+[    0.00s ->     4.62s] Hope everyone is doing well today. I'm very excited to start this new series on quantitative
+[    4.62s ->     8.90s] finance. This is going to be episode one where we're going to talk about the time value of money.
+[    9.56s ->    15.44s] And my goal in this series is to kind of walk through a natural course progression of a
+[   15.44s ->    20.52s] quantitative finance, essentially major at a university, where we're going to start with
+[   20.52s ->    27.44s] the time value of money and end up with securities pricing and implementing everything that we learn
+[   27.44s ->    34.84s] in an algorithmic trading system at the end of the series. Now, up until this point, I've uploaded
+[   34.84s ->    40.48s] a variety of topics, including some Python programming concepts and some securities pricing
+[   40.48s ->    44.50s] concepts. But I really want to start with the foundation of quantitative finance and what it's
+[   44.50s ->    50.76s] all about. It's actually the algebra to the calculus at the end of the day. And this is the absolute
+[   50.76s ->    55.02s] best place to start at the time value of money. So without further ado, let's dive right in so that
+[   55.02s ->    60.50s] we can take a look at what the time value of money is all about. Now, let's go ahead and just start
+[   60.50s ->    66.34s] off with some intuition. Generally speaking, we would prefer to receive money sooner rather than
+[   66.34s ->    73.68s] later. If I told you that I could give you $100 today, or $100 one year from today, well, generally
+[   73.68s ->    80.82s] speaking, most people would prefer that $100 today. As it would turn out, this is the perfect
+[   80.82s ->    88.58s] implementation of the time value of money. $100 today is worth more than $100 one year from today.
+[   89.10s ->    95.70s] And the reason for that is essentially due to interest, we can invest that $100 today at a risk
+[   95.70s ->   102.06s] free rate of interest versus waiting one year not accumulating any interest and receiving the $100.
+[  103.56s ->   109.38s] Now, of course, in all of this analysis, we're assuming that interest rates are positive. So just keep that in
+[  109.38s ->   116.14s] mind as if they are negative, this intuition flips. So now moving forward, there are essentially two
+[  116.14s ->   123.10s] components to the actual mathematical implementation of the time value of money, there is going to be
+[  123.10s ->   129.32s] finding the future value and finding the present value. And it's essentially just a combination of
+[  129.32s ->   137.66s] compounding and discounting to arrive at whatever time period you are trying to solve for or compare values
+[  137.66s ->   143.86s] of sums in. There is no better way to illustrate this concept than with an example. So let's just get
+[  143.86s ->   149.72s] started. You receive $100 today. If invested at the risk free rate of interest, how much money will you
+[  149.72s ->   155.84s] have in one year? Assume the risk free rate of interest is 2% with annual compounding. Now, disregard the
+[  155.84s ->   162.78s] annual compounding for this problem, we'll get to that in a moment. And if we want to solve for the value
+[  162.78s ->   168.84s] of that $100, one year in the future invested at that risk free rate of interest, then all we simply
+[  168.84s ->   179.24s] have to do is add the rate of interest to one and multiply by the principal or the investment amount.
+[  180.18s ->   186.12s] And then as you can see, mathematically, that works out to 100 times one plus 2%, which is equivalent to 100
+[  186.12s ->   198.78s] times 1.02, which is $102. So $100 one year from today will be worth $102. Now we can compute the
+[  198.78s ->   205.22s] present value in a very similar fashion. We receive $100 one year from today, how much is this worth in
+[  205.22s ->   211.34s] today's dollars? Again, if we assume the risk free rate of interest is 2% with annual compounding, instead
+[  211.34s ->   219.92s] of multiplying by one plus the 2%, we can simply just divide by one plus the 2%. And that is equivalent
+[  219.92s ->   234.92s] to 100 divided by 1.02, which is equivalent to $98.04. So $100 one year from today is worth $98.04
+[  234.92s ->   240.60s] today. Now hopefully that was pretty straightforward. We're simply just multiplying and dividing by
+[  240.60s ->   247.06s] a rate of interest. Now we're going to talk a bit about compounding. So you receive $100 today,
+[  247.06s ->   253.62s] if invested at the risk free rate of interest, how much money will you have in one year? Assume the
+[  253.62s ->   259.20s] risk free rate of interest is 2% with semi annual compounding. So the terms of our compounding has
+[  259.20s ->   263.86s] changed. So we're going to actually have to take this into account in our mathematical implementation
+[  263.86s ->   271.66s] of this. To do this, we're going to modify our generalized formula for future value by adding a
+[  271.66s ->   279.88s] compounding periods per year term, and a number of years of an investment term. So that's going to be N and T
+[  279.88s ->   285.16s] respectively. And you can see that broken down in the second bullet. But it is relatively straightforward. So what we're
+[  285.16s ->   291.62s] going to do is we're going to take our initial principal, our initial investment, 100 and multiply
+[  291.62s ->   300.42s] it times one plus the interest rate divided by the number of compounding periods per year. So in this
+[  300.42s ->   307.04s] case, we're semi annual or two compounding periods per year. And we're going to raise that to the power
+[  307.04s ->   314.60s] of compounding periods per year times the number of years of the investment. So then that entire
+[  314.60s ->   328.09s] quantity is going to be equivalent to 100 times 1.01 squared, which is equal to $102.01. So at the end of
+[  328.09s ->   337.17s] the one year, the value of the investment will be $102.01. Now this is the perfect time to bring up
+[  337.17s ->   343.23s] compounding frequency. And this is going to be a big topic once we move into continuous time. And I'll
+[  343.23s ->   348.25s] bring it up again when we move into continuous time. And I will further discuss what I mean by
+[  348.25s ->   354.39s] continuous time when we get there. But for now, all you need to know is the compounding frequency,
+[  354.39s ->   364.09s] the more frequent the compounding, the more money is worth. So if we go back to our first example,
+[  364.09s ->   374.55s] and we see that we have annual compounding, we arrive at $102 after a year. Now with that same
+[  374.55s ->   383.00s] interest rate, with semi annual compounding, we arrive at $102.01. So what if we went to quarterly
+[  383.00s ->   389.22s] compounding? Well, if we were in quarterly compounding, we would have even more money. And
+[  389.22s ->   396.34s] the same goes for monthly compounding, daily compounding, etc, etc. As the compounding frequency
+[  396.34s ->   404.36s] increases, the future value will also increase. Therefore, as the compounding frequency increases,
+[  404.96s ->   412.62s] the present value will also decrease. So now is probably the perfect time to just introduce the
+[  412.62s ->   418.58s] generalized formula for the time value of money. And that is going to be that the future value is equal
+[  418.58s ->   423.44s] to the present value times one plus an interest rate divided by the number of compounding periods
+[  423.44s ->   429.66s] per year, raised to the number of compounding periods per year multiplied by the number of years.
+[  430.80s ->   437.00s] Using simple algebra, we can go ahead and solve for the present value, meaning we can take any future
+[  437.00s ->   444.82s] value and derive the value of that sum of money in today's dollars. So again, all we're just doing
+[  444.82s ->   450.82s] is dividing that one plus r divided by n to the nt term to the other side so that we can find the
+[  450.82s ->   455.50s] present value. And then we can just go ahead and move back and forth between present value, future
+[  455.50s ->   462.06s] value, present value, future value. And this is going to become more apparent in the next example. But
+[  462.06s ->   469.62s] we can also use this to take a present value or a future value to a specific point in time. So in other
+[  469.62s ->   477.80s] words, if we were looking to figure out what the value of our investment would be at, say, year four,
+[  478.00s ->   486.72s] we can just use t is equal to four, even if the investment life is longer than four. Just to quickly
+[  486.72s ->   490.28s] wrap this video up, I want to look at one more example problem where we have multiple periods.
+[  490.50s ->   498.44s] So let's consider two mutually exclusive investment options. We have option A, where we receive $100 today.
+[  498.44s ->   504.88s] And we have option B, where we receive $120 six years from today. We're going to assume a risk
+[  504.88s ->   513.38s] rate of 3% and quarterly compounding. How much is each option worth in time period $5? Well, to solve
+[  513.38s ->   521.78s] this, first, we're going to take $100 to the future. So we are going to multiply 100 times 1 plus 3%
+[  521.78s ->   531.40s] divided by 4, raised to the 4 times 5 power, and that is going to be equal to $116.12. So investment
+[  531.40s ->   540.44s] option A at time period 5 is equivalent to $116.12. So what we're going to do now is discount option B
+[  540.44s ->   552.24s] back one period. So we are going to take 120 divided by 1 plus 3% divided by 4, raised to the 4 times 1
+[  552.24s ->   561.88s] power, and that is going to give us $116.47. So if we compare these two investments at time period 5,
+[  561.88s ->   571.32s] we see that option B has a greater value than option A. So this has been a quick introduction to the time value
+[  571.32s ->   576.30s] of money. I hope you enjoyed. If you take away one thing from this video, it should be the intuition that
+[  576.30s ->   584.16s] generally speaking, if the sums of money are the same, we prefer to receive our money sooner in general
+[  584.16s ->   589.04s] rather than later due to the accumulation of interest over time. Thanks for watching.

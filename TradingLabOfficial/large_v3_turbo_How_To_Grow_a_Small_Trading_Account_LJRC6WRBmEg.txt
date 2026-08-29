@@ -1,0 +1,180 @@
+[    0.00s ->     4.10s] So you're new to day trading, and have a very small amount of money in your account,
+[    4.22s ->     7.78s] and you want to grow this balance as quickly as humanly possible.
+[    7.86s ->    12.96s] So you can have millions of dollars and sail your private yacht to pick up a fancy pizza in Italy.
+[   13.06s ->    14.02s] Now, I get it.
+[   14.10s ->    17.62s] Not everybody has hundreds of thousands of dollars to start out with.
+[   17.74s ->    20.52s] You may only have, dare I say it, a hundred dollars.
+[   21.38s ->    26.20s] That's exactly why in this video, I'm going to show you my blueprint to grow a portfolio
+[   26.20s ->    32.10s] with only a hundred dollars in it, and perform mathematically proven tactics to grow this
+[   32.10s ->    37.56s] balance to a thriving, successful portfolio with millions of dollars inside.
+[   37.64s ->    41.54s] To start us off, we're going to start with one of the most important tactics that helped
+[   41.54s ->    46.04s] me the most when I was a beginner trader, and that topic is risk management.
+[   46.20s ->    50.36s] Now, I know, risk management is probably one of the most boring topics to talk about,
+[   50.78s ->    56.32s] but I'm telling you right now, it doesn't matter how successful your trading strategy
+[   56.32s ->    60.60s] is, if you don't have good risk management, you will not grow your account.
+[   60.70s ->    65.10s] If your risk management is bad, honestly, you're better off going to the casino and
+[   65.10s ->    68.86s] putting all your money on red, because you're basically gambling at that point.
+[   71.18s ->    71.84s] Those accounts present.
+[   72.00s ->    74.20s] Think of your trading account as a lifeboat.
+[   74.32s ->    79.66s] Every dollar is a passenger you need to protect, and too many passengers and too many routes,
+[   79.82s ->    83.10s] your lifeboat, well, it's very likely it's going to sink.
+[   83.18s ->    87.86s] If you truly want to grow your account, you have to aim for longevity and consistent profit.
+[   87.88s ->    92.32s] The reason why trading with high risk is a problem is because of a little thing called
+[   92.32s ->    93.44s] consecutive losses.
+[   93.60s ->    98.26s] I don't care how good you think your trading strategy is, every trading strategy will have
+[   98.26s ->    99.18s] consecutive losses.
+[   99.42s ->   104.84s] If you have five or seven losses in a row, and you're risking 20% per trade, your lifeboat,
+[  105.00s ->   109.30s] well, let's just say your lifeboat is going to be at the bottom of the ocean very quickly.
+[  109.40s ->   115.18s] This is exactly why some of the most successful traders out there follow what's called the 2% rule.
+[  115.18s ->   119.82s] The 2% rule is simple, only risk 2% of your trading balance per trade.
+[  119.92s ->   120.68s] Let me show you why.
+[  120.82s ->   122.64s] This, this is a trading simulator.
+[  122.78s ->   128.04s] We're going to start with $100, have a win probability of 60%, have two wins for every
+[  128.04s ->   132.44s] loss, take 500 trades, and finally, we'll risk 20% per trade.
+[  132.56s ->   134.64s] Now this, this is absolutely wild.
+[  134.74s ->   139.52s] Even though we have a successful trading strategy with a win rate of 60%, meaning we're winning
+[  139.52s ->   144.88s] more than we're losing, even though our current strategy is successful, our risk has the potential
+[  144.88s ->   147.46s] to absolutely ruin this strategy.
+[  147.52s ->   151.46s] For example, the key statistic we want to focus on is the max drawdown.
+[  151.56s ->   152.50s] So look at this.
+[  152.58s ->   160.26s] If we risk 20% of our capital on each trade, our biggest max drawdown is 90.4%, meaning there's
+[  160.26s ->   165.16s] a probable chance that if we continuously use this exact same setup, we would potentially
+[  165.16s ->   169.36s] end up losing close to 90% of our money we initially invested.
+[  169.52s ->   169.80s] Gone.
+[  170.06s ->   172.10s] Setup in flames, that money, gone.
+[  172.20s ->   174.26s] Even though we have a successful strategy.
+[  174.44s ->   177.04s] Could you handle a 90% loss?
+[  177.16s ->   177.96s] Probably not.
+[  178.04s ->   179.86s] And that's just 20% risk.
+[  179.98s ->   181.76s] Let's see what 50% looks like.
+[  181.86s ->   183.50s] Yeah, 100% drawdown.
+[  183.58s ->   185.96s] And the average is 99%.
+[  185.96s ->   186.90s] That's no bueno.
+[  186.90s ->   191.26s] But take this exact same scenario and add 2% risk per trade.
+[  191.36s ->   194.76s] The biggest amount we could potentially lose is 15%.
+[  194.76s ->   196.00s] That's definitely better.
+[  196.12s ->   197.04s] Now, I get it.
+[  197.10s ->   200.98s] If you want to double or triple your account balance within a day, you're not going to
+[  200.98s ->   204.16s] get there while trading with 2% on a $100 portfolio.
+[  204.40s ->   205.46s] Hell, even 10%.
+[  205.46s ->   208.16s] You have to risk more to get higher returns like that.
+[  208.24s ->   211.76s] Now, I completely realize not everybody has the same risk tolerance.
+[  211.84s ->   215.76s] Some of you might be some crazy lunatics that have insanely high risk tolerances.
+[  215.76s ->   217.26s] Some of you might like to gamble.
+[  217.38s ->   220.56s] Some of you want to make millions of dollars with only a hundred bucks.
+[  220.80s ->   222.16s] So, I know what you're thinking.
+[  222.34s ->   224.72s] 2% is absolute garbage to me.
+[  224.80s ->   225.84s] Which, I get that.
+[  225.88s ->   230.38s] But if you truly want to grow your account not only efficiently, but consistently, it
+[  230.38s ->   235.08s] has been statistically proven that using the 2% rule is the best way to do that.
+[  235.12s ->   240.14s] If you're using just 2%, you can handle a lot more consecutive losses compared to if
+[  240.14s ->   242.60s] you're using 20% or even 50%.
+[  242.60s ->   247.50s] So, if you like math, profits, and a lot of fucking money, use the 2% rule.
+[  247.60s ->   252.10s] But just because we have good risk management doesn't necessarily mean we're making that
+[  252.10s ->   252.62s] money.
+[  254.55s ->   257.79s] That brings me to my next step, the power of compounding.
+[  257.79s ->   262.31s] Now, in order to make money, we have to understand a key concept called compounding.
+[  262.39s ->   265.43s] Imagine you're rolling a small snowball at the top of a hill.
+[  265.43s ->   268.71s] At first, it's tiny, just like your $100 account balance.
+[  268.83s ->   269.09s] Boom.
+[  269.29s ->   269.63s] Roasted.
+[  269.75s ->   273.99s] But as you keep rolling, that snowball picks up more snow with each turn.
+[  274.11s ->   277.31s] By the time it's halfway down the hill, it's fucking massive.
+[  277.51s ->   282.37s] Each rotation adds more than the last because it's picking up the snow from all the previous
+[  282.37s ->   282.83s] turns.
+[  282.99s ->   284.21s] That's compounding, baby.
+[  284.35s ->   285.79s] Every small win matters.
+[  285.89s ->   288.75s] It becomes part of the base for all future wins.
+[  288.79s ->   289.99s] Let's put this into perspective.
+[  290.15s ->   294.09s] Say you're making just a measly 1% gain on your count each and every week.
+[  294.09s ->   295.57s] Now, I know, 1%.
+[  295.57s ->   298.53s] It's a low number and probably isn't a lot of money for you.
+[  298.59s ->   303.91s] But over a year, thanks to compounding, that's roughly a 67% total gain.
+[  304.01s ->   310.45s] That means $1,000 could become about $1,670 by the end of the year.
+[  310.61s ->   314.17s] And that's just with a measly 1% every week.
+[  314.23s ->   319.13s] If you got that number to 2% each week, your account would double within under a year.
+[  319.25s ->   320.79s] Yeah, you starting to see what I mean?
+[  320.79s ->   325.01s] Once your little snowball gets later down the hill, that could potentially be millions
+[  325.01s ->   326.51s] of dollars every year.
+[  326.61s ->   328.15s] It's not about hitting a home run.
+[  328.27s ->   330.37s] It's about hitting consistent base hits.
+[  330.49s ->   334.49s] So you remember our little 2% risk management tactic that you guys complained about?
+[  334.61s ->   336.09s] This is where it pays off.
+[  336.17s ->   341.41s] By avoiding big losses, you keep that snowball intact to roll another day and another day
+[  341.41s ->   342.27s] and another day.
+[  342.39s ->   344.63s] Protect your capital so it can compound.
+[  344.85s ->   347.27s] Guard your capital from big losses with your life.
+[  347.27s ->   351.59s] Your main priority is to make sure that compounding engine continues to operate.
+[  351.71s ->   354.39s] One giant loss can stop our snowball completely.
+[  354.63s ->   355.83s] Don't let that happen.
+[  355.93s ->   357.25s] So we got our risk management.
+[  357.47s ->   358.97s] We now know about compounding.
+[  359.11s ->   361.25s] Now's the fun part, finding your edge.
+[  361.35s ->   363.01s] Now, there's a lot of ways to do this.
+[  363.13s ->   365.77s] YouTube videos, books, or your Uncle Larry.
+[  365.95s ->   366.93s] Hey, I'm Larry.
+[  367.09s ->   368.21s] It's kind of up to you.
+[  368.31s ->   371.95s] I personally like the YouTube option just because, you know, I'm a visual guy.
+[  372.05s ->   373.41s] So I like to watch videos.
+[  373.55s ->   375.51s] Plus, that Larry guy is kind of weird.
+[  375.51s ->   377.81s] But I post strategy videos all the time.
+[  377.93s ->   380.25s] And all of them have a statistical edge.
+[  380.35s ->   382.99s] So you can simply look through those to find a strategy.
+[  383.11s ->   385.25s] Or you can find another YouTuber's strategy.
+[  385.37s ->   386.95s] Kind of rude, but moving on.
+[  387.01s ->   389.27s] It doesn't really matter how you find your edge.
+[  389.45s ->   392.53s] What matters is you actually test the edge yourself.
+[  392.63s ->   396.97s] Find a strategy, go to your charting platform, and actually backtest that strategy.
+[  397.11s ->   397.91s] What's the win rate?
+[  398.03s ->   398.81s] How many wins?
+[  398.93s ->   399.69s] How many losses?
+[  399.91s ->   400.63s] How did it do?
+[  400.71s ->   402.03s] Is it actually profitable?
+[  402.03s ->   404.95s] These are all questions you yourself should know.
+[  405.21s ->   407.69s] And if you don't know, well, you gotta test it.
+[  407.77s ->   408.67s] Now, I get it.
+[  408.79s ->   409.31s] Backtesting.
+[  409.57s ->   410.57s] It's basically work.
+[  410.67s ->   413.45s] Nobody wants to sit down and put in the work to test a strategy.
+[  413.65s ->   415.53s] But remember that whole snowball thing?
+[  415.61s ->   419.97s] If you don't have a statistical proven edge, yeah, that snowball thing, it doesn't work.
+[  420.07s ->   423.63s] So this is definitely the most crucial step in growing your small balance.
+[  423.75s ->   426.79s] If you want the millions of dollars, put in the work and start testing.
+[  426.79s ->   431.39s] So now you should have a statistical edge or basically a backtested trading strategy.
+[  431.49s ->   435.11s] Now it's time to do the final step in the blueprint, and that is to journal.
+[  435.25s ->   436.85s] Now, I'm not talking about-
+[  436.85s ->   438.99s] Dear diary, today I made my first trade.
+[  439.13s ->   439.75s] Type of journal.
+[  439.85s ->   443.69s] I'm talking about a system to easily identify the history of your trades.
+[  443.91s ->   447.81s] Entries, exits, was it profitable, did it fail, if so, why?
+[  447.87s ->   451.01s] All of these questions should be answered for each and every trade.
+[  451.09s ->   453.27s] But why would you waste your time doing this?
+[  453.33s ->   454.97s] Take Conor McGregor, for example.
+[  454.97s ->   457.73s] Conor McGregor, if you don't know, is a UFC fighter.
+[  457.85s ->   463.47s] One day, he's watching back the tape and noticed his opponent moves his right hand slightly before throwing it.
+[  463.49s ->   469.23s] So he went to the gym, started practicing that exact same scenario, where he slightly moves his hand and he counters.
+[  469.55s ->   473.11s] Then the big fight comes, and within nine seconds, this happened.
+[  473.69s ->   475.41s] Conor relaxed and smiling.
+[  476.23s ->   482.36s] My point being, if Conor never looked back at the tape, he would have never known to do what he did.
+[  482.48s ->   483.44s] Same goes with trading.
+[  483.44s ->   488.64s] You can look back at your trades and say, oh, whenever I trade out of boredom at 2 p.m., I lose.
+[  488.76s ->   492.80s] Or, my best trades happen when I follow trends instead of trying to pick bottoms.
+[  493.02s ->   498.70s] Those insights are priceless, and just like Conor, you only get them by reviewing the tapes.
+[  498.84s ->   500.06s] You don't need anything fancy.
+[  500.18s ->   502.46s] A simple spreadsheet or notebook quirks.
+[  502.58s ->   504.60s] I personally use a site called TraderView.
+[  504.60s ->   509.80s] It's basically a site where you can just upload your broker statement, and TraderView gives it a lot of useful metrics,
+[  509.80s ->   514.74s] like each trade, if it was a win or a loss, and overall, how profitable you are.
+[  514.80s ->   517.98s] No, this is not an ad for this site, just thought it was pretty cool.
+[  518.06s ->   519.64s] I'll leave a link to them in the description.
+[  519.64s ->   522.02s] So, this all makes me feel very sentimental.
+[  522.24s ->   525.34s] Making money in stocks really isn't about getting Lambos overnight.
+[  525.46s ->   529.76s] Sure, it can definitely get to that, but in the beginning, it's really about honing in on your edge,
+[  529.90s ->   533.18s] consistently improving said edge, and keeping that snowball rolling.
+[  533.30s ->   536.40s] And on top of all of that, keeping track of your progress.
+[  536.56s ->   538.30s] This mission isn't for the weak.
+[  538.42s ->   539.38s] There will be losses.
+[  539.62s ->   542.74s] There will be days where you question if you're even cut out for this.
+[  542.74s ->   548.34s] There will be nights where your balance is red, and all you have left is the trust within your statistical edge.
+[  548.38s ->   549.92s] But I can promise you one thing.
+[  550.04s ->   555.26s] If you actually apply all of these rules to your trading, you will grow your small account balance.

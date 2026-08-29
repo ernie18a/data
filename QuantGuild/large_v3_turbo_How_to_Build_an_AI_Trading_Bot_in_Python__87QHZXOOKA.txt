@@ -1,0 +1,1116 @@
+[    0.46s ->     6.33s] In this video, we're going to walk through building an AI trading bot.
+[    6.83s ->    12.37s] I've put together this to-do list of basic steps that we're going to walk through in Python.
+[   12.91s ->    16.61s] We're going to start by building a basic user interface for trading,
+[   16.93s ->    21.55s] a space where we can define which equities we would like to trade,
+[   22.23s ->    26.13s] our max position size, different parameters for our strategy.
+[   26.65s ->    31.01s] The second step is going to be to establish a connection to some sort of brokerage,
+[   31.01s ->    32.09s] via an API.
+[   32.53s ->    34.09s] In this case, we're going to be using Alpaca.
+[   34.71s ->    36.17s] It's quite easy to use.
+[   36.57s ->    39.45s] Of course, you can substitute this for any you would like.
+[   40.29s ->    42.17s] Step three will be to develop a strategy.
+[   42.29s ->    46.69s] In this case, we're going to be looking at a Martingale DCA sort of style strategy,
+[   46.69s ->    50.67s] where as an equity dips from our initial entry price,
+[   50.71s ->    53.51s] we will continue to increase our position size.
+[   54.33s ->    56.39s] We will integrate an LLM.
+[   56.39s ->    62.79s] This is the AI component, so we're not using an AI for any sort of signal analysis.
+[   63.55s ->    69.89s] Of course, you could in step three, but this is going to be for position management.
+[   70.41s ->    75.29s] We can ask our LLM about our risk exposure, things of that nature.
+[   75.29s ->    78.87s] And, of course, step five is going to be to deploy.
+[   79.51s ->    83.67s] That is to just essentially run this whole system.
+[   83.87s ->    85.49s] We're going to walk through each of these steps together,
+[   85.67s ->    88.71s] but I will also post the entire project on my GitHub.
+[   88.91s ->    92.25s] If you're interested, I will leave a link in the description below.
+[   92.77s ->    94.57s] All right, let's get started with step one here.
+[   94.63s ->    97.11s] I'm going to go ahead and create a new Python script.
+[   97.63s ->   101.27s] This is a pretty small trading bot, so I'm just going to call this bot.py,
+[  101.27s ->   103.73s] and we should be able to write everything in here.
+[  105.01s ->   107.95s] To get started, we're going to need to import some packages.
+[  108.47s ->   114.39s] I have some notes here on the necessary steps to building this GUI,
+[  114.49s ->   117.13s] so we're going to go through this together, and I'm going to talk about each step.
+[  117.73s ->   121.21s] So first, we're going to import tkenter as tk.
+[  121.35s ->   125.68s] That's going to let us build this user interface.
+[  126.26s ->   128.44s] We're going to import some other things from tkenter.
+[  128.44s ->   132.86s] We're also going to import json, and I'll explain why in a moment.
+[  133.50s ->   137.26s] We're also going to import time, import threading.
+[  137.36s ->   140.78s] This is going to be important for updating our user interface,
+[  141.02s ->   143.60s] and then we're also going to import random.
+[  144.38s ->   147.16s] That should be everything that we need to get started.
+[  148.43s ->   154.97s] One of the first things that we need to do is we need to create a file to save and load data from.
+[  155.45s ->   156.53s] This makes sense, right?
+[  156.53s ->   159.39s] If I close the trading system and I reopen it,
+[  159.49s ->   163.95s] it better know what equities I'm trading and the levels that I'm trading them at.
+[  164.57s ->   166.31s] So that's exactly what we're going to do.
+[  166.37s ->   167.49s] We're going to create a new file.
+[  167.59s ->   168.79s] We're going to call it data file,
+[  169.01s ->   174.59s] and this is going to be equal to, I'm going to call it equities.json.
+[  174.59s ->   178.35s] And this is essentially just going to store the symbols that we're trading.
+[  179.15s ->   184.59s] So Apple, Amazon, for example, and then the levels that we're trading at.
+[  184.69s ->   187.09s] So it's going to record our active positions.
+[  187.09s ->   189.79s] It's going to record the entry price,
+[  189.79s ->   194.91s] and it's going to record the prices that we want to enter at below our initial entry price,
+[  195.01s ->   198.47s] following that sort of Martingale DCA style strategy.
+[  198.47s ->   203.72s] Now what we're going to do is we're going to create some mock functions that we're going to populate later.
+[  203.94s ->   211.48s] We'll call this fetch mock API for a symbol.
+[  212.16s ->   217.44s] And for now, we're just going to return just a price as a dictionary.
+[  217.44s ->   223.02s] So we'll call this price, and I'll say maybe 100 for now.
+[  224.18s ->   226.86s] Def mock chat GPT response.
+[  227.14s ->   233.10s] This is going to be a mock message from our AI, and it's going to look something like this.
+[  233.16s ->   236.32s] We're just going to return a string with a mock message,
+[  236.32s ->   242.63s] and we're going to populate those with our APIs later on.
+[  243.01s ->   245.87s] Now we have to go about building the trading bot class.
+[  245.87s ->   254.05s] What I'm going to do is I'm going to call this trading bot GUI, bot in lowercase.
+[  255.10s ->   256.40s] I'm going to create a constructor.
+[  257.06s ->   261.32s] I'm going to give it a root window since we're using TK enter.
+[  262.14s ->   264.72s] So this automatically populated for me.
+[  264.92s ->   266.98s] I'm going to do self.root is equal to root.
+[  267.14s ->   271.66s] The title is going to be AI trading bot, and we don't have these functions.
+[  272.54s ->   277.24s] So instead, we're going to say self.equities is equal to self.load equities.
+[  277.24s ->   280.28s] We're going to build this load equities function in a moment,
+[  280.46s ->   284.88s] and this is exactly what we have this equities.json file for.
+[  284.98s ->   289.86s] We need to populate the user interface with our saved information.
+[  290.84s ->   299.22s] Essentially, what we're going to do on load and close is we're going to save and load the information to and from this equities.json file.
+[  299.22s ->   303.91s] That's going to do it, I think, for the initial constructor.
+[  304.61s ->   310.05s] We may also need a flag for whether or not a system is running.
+[  310.71s ->   313.56s] So I'll leave this here for now.
+[  313.90s ->   320.00s] This is pretty much telling us whether or not we are actively trading an equity in the system.
+[  320.00s ->   327.24s] So if I add Apple to my system, for example, then we're going to want to be able to toggle that on and off.
+[  327.84s ->   332.94s] So just because it exists in the system doesn't mean we want to actively trade it at the different levels.
+[  333.22s ->   336.02s] And that's exactly what a system flag would do.
+[  336.16s ->   339.28s] We may build that into the equity data itself.
+[  339.42s ->   341.22s] We'll see how this actually shakes out.
+[  341.22s ->   345.96s] Now we need a form to add equities to our bot.
+[  346.06s ->   353.42s] So I'm going to say self.form frame is equal to TK.frame.
+[  353.60s ->   355.44s] And we're going to add it to that root window.
+[  355.96s ->   359.64s] And then we're going to just go ahead and pack that form.
+[  360.66s ->   364.44s] Now we're going to go ahead and create the different labels.
+[  364.88s ->   370.00s] So we're going to do TK label, self.form frame, text symbol.
+[  370.00s ->   372.38s] We're going to do a grid layout, actually.
+[  373.34s ->   374.34s] So, okay, good.
+[  374.38s ->   375.44s] It already did it for me.
+[  375.84s ->   378.72s] Self.symbol label grid row 0 column 0.
+[  378.88s ->   379.52s] That's good.
+[  380.14s ->   385.66s] And now we need to go and add the actual form for it.
+[  386.90s ->   389.62s] So, or we need the entry, actually.
+[  389.80s ->   392.38s] So this AI didn't actually help me all that much.
+[  392.92s ->   395.04s] So we're going to do this.
+[  395.54s ->   399.44s] We'll do dot grid row 0 column 0.
+[  400.26s ->   402.42s] And then here's our entry.
+[  403.02s ->   406.12s] And this is where we're going to go ahead and fill out that symbol.
+[  407.38s ->   408.46s] Order partially filled.
+[  408.58s ->   412.10s] Looks like my trading system just filled an order with interactive brokers.
+[  412.22s ->   412.94s] That's pretty cool.
+[  414.11s ->   418.49s] Self.symbol entry grid 0 1.
+[  418.49s ->   423.17s] So that is going to be for entering an equity symbol.
+[  423.51s ->   426.69s] Now we're going to have to do this for the levels and drawdown of our strategy.
+[  426.89s ->   434.35s] So this is going to be formed to add a new equity to our trading bot.
+[  434.35s ->   443.10s] Now we need a label for, not quantity, but levels.
+[  443.74s ->   448.68s] And the levels is going to have a new entry.
+[  448.88s ->   450.26s] Self.levels entry.
+[  451.04s ->   454.16s] And then we're going to do self.levels entry 1 1.
+[  454.16s ->   458.00s] And then we need one for our drawdown.
+[  458.32s ->   460.54s] So we're going to add this to row 2.
+[  462.06s ->   464.76s] Really, this should be across the columns, not rows.
+[  465.26s ->   469.84s] So column 0, column 1, column 2.
+[  470.38s ->   473.25s] We want them on the same row.
+[  475.62s ->   476.70s] Yeah, this looks good.
+[  479.35s ->   482.55s] 0, 0, 1, 0, 1.
+[  483.49s ->   484.45s] That should be 2.
+[  485.05s ->   488.25s] That should be 2.
+[  488.25s ->   491.23s] That should be 3, should be even, should be 4.
+[  495.13s ->   502.27s] And then self.dot, we're going to do, not quantity, this is going to be levels.
+[  502.59s ->   510.21s] No, drawdown, percentage, self.drawdown entry, and then 1 5.
+[  510.57s ->   511.13s] All right, perfect.
+[  511.61s ->   517.97s] So what we just did is we created a form to add a new equity to our trading bot.
+[  518.23s ->   520.99s] This is going to be the symbol that we are going to trade.
+[  520.99s ->   523.83s] This is going to be the number of levels to trade.
+[  524.03s ->   526.59s] So we're going to assume a uniform position size of 1.
+[  526.71s ->   531.57s] You can edit this very easily on the back end, or you can add a new entry if you would like.
+[  532.01s ->   537.97s] And then we're going to talk about the drawdown to enter a new position at each level.
+[  537.97s ->   547.45s] So that means if we're trading at an entry price of 100, then if we had a drawdown of 10%, that's when we will enter a new position.
+[  547.81s ->   553.21s] And then at another 10% drop, we will enter a new position, and so on.
+[  553.27s ->   556.95s] So that is going to be the idea of this trading strategy.
+[  556.95s ->   566.81s] All right, so now we need a table to track the traded equities.
+[  567.55s ->   574.85s] So I'm going to say self.tree is equal to ttk.treeview, and we're going to go ahead and show headings.
+[  575.01s ->   577.05s] But our columns are going to be symbols.
+[  577.05s ->   579.21s] We're going to do the position.
+[  580.09s ->   582.91s] We're going to do the entry price.
+[  583.47s ->   593.82s] We will also do the levels, which is going to be a dictionary, and the status.
+[  594.34s ->   601.14s] Status may be unnecessary, but regardless, we have this tree view.
+[  601.52s ->   603.02s] Of course, we're going to show headings.
+[  603.02s ->   616.52s] And now we're going to say for call in, and we're going to say symbol, position, entry price, levels, and status.
+[  617.00s ->   622.72s] Then we are going to do self.tree.heading, call, text, call.
+[  623.02s ->   634.58s] So all we're doing is we're setting the heading to these column headers, and we are going to say self.tree.column, call.
+[  634.58s ->   637.82s] We're going to make the width 120.
+[  638.58s ->   642.72s] 120 should be sufficient.
+[  643.48s ->   650.96s] And then we'll do self.tree.pack, and that is going to be where we see our current portfolio.
+[  651.26s ->   658.12s] So essentially what's happening here is we're creating a table, and in this table we have levels that we're trading each equity at.
+[  658.86s ->   663.22s] And based on our API calls, we're going to update this table.
+[  663.22s ->   672.52s] And we're going to update this table with our position for each relative symbol, the entry price, maybe the status of the order, and so on.
+[  673.42s ->   679.04s] And through this table, we're also going to be able to toggle whether or not we are trading that particular equity.
+[  679.66s ->   681.78s] And I think that's everything we need.
+[  682.44s ->   686.92s] So now what we're going to do is we're going to add buttons to add and remove.
+[  686.92s ->   690.70s] Not just add and remove, we also need to toggle equity.
+[  690.92s ->   693.10s] So buttons to control the bot.
+[  693.40s ->   699.84s] We're going to say self.toggleSystemButton is equal to tk.button.
+[  700.38s ->   702.28s] Root, we're going to add it to the main window.
+[  702.70s ->   704.80s] We're going to say toggleSelectedSystem.
+[  708.64s ->   715.88s] And then we're going to say the command for that button is self.toggleSystem, which is going to make sense.
+[  715.88s ->   722.87s] We're going to say self.toggleSystemButton.
+[  723.01s ->   725.73s] We're going to pack pad Y5.
+[  726.39s ->   732.12s] Now we're going to add a remove button, tk.button.
+[  732.68s ->   734.22s] RemoveSelectedEquity.
+[  734.42s ->   736.64s] We're going to make the command removeEquity.
+[  737.32s ->   739.78s] Or we really should make it removeSelectedEquity.
+[  741.54s ->   743.00s] RemoveSelectedEquity.
+[  743.16s ->   744.38s] And we're going to make these, right?
+[  744.38s ->   748.46s] So we don't have the command to loadEquities.
+[  748.88s ->   751.98s] We don't have, or I should say we don't have the function to loadEquities.
+[  752.30s ->   756.48s] And we don't have the functions to toggleSystem or remove the selectedEquities yet.
+[  756.68s ->   759.38s] But that is what we are going to do in a moment.
+[  759.96s ->   762.40s] We're also going to pack the remove button.
+[  762.66s ->   769.10s] And that's going to allow us to add, or not add, but remove from the table.
+[  769.52s ->   771.28s] It's going to allow us to remove from the table.
+[  771.28s ->   775.37s] It seems that I forgot the add button.
+[  775.75s ->   779.35s] So I'm just going to go ahead and put that up here because it should be a part of the form,
+[  780.27s ->   783.03s] the original form to add equities.
+[  783.27s ->   788.29s] So above the table, I'm going to create a new button, self.addButton.
+[  788.61s ->   794.73s] And I'm going to say equals tk, not self.formframe.
+[  797.57s ->   798.69s] We could.
+[  798.69s ->   807.73s] Well, actually, in this case, we would use the form frame because that's the root for this particular widget.
+[  808.03s ->   810.33s] So we're going to use self.formframe here.
+[  810.43s ->   814.37s] Notice we used root down here because we're adding this to a different component,
+[  814.83s ->   818.77s] or we're adding this to a different part of the user interface.
+[  819.17s ->   825.95s] So here we're using self.formframe because we want it to be a part of this symbol levels drawdown form adding an equity.
+[  825.95s ->   832.15s] So we're going to say that, and then we're going to say self.addButton, and then we're just going to put it on 06.
+[  832.77s ->   835.57s] So same row, but the sixth column.
+[  837.02s ->   838.12s] And this makes sense, right?
+[  838.18s ->   839.60s] So the labels are all even.
+[  840.24s ->   842.76s] In this case, the button to add is also even.
+[  843.02s ->   844.88s] So it's going to be in line with those.
+[  844.88s ->   854.16s] And then we're also going to have the row one being the entry, but offset by the odd columns.
+[  854.40s ->   861.44s] So we can see the label, see the entry, see the label, see the entry, and, of course, add the equity at the end of the form.
+[  861.76s ->   867.48s] Then we also have our toggle system button, our remove button, and the tree view of all the equities in our system.
+[  867.48s ->   870.36s] And that should be everything we need.
+[  870.58s ->   876.37s] Now we need to actually make an interface for our AI component.
+[  877.49s ->   880.97s] So what I'm going to do is I'm going to say this is the AI component.
+[  882.07s ->   886.83s] I'm going to say self.chat frame is equal to tk.frame root.
+[  887.65s ->   889.83s] And then we'll say self.chat frame.
+[  890.03s ->   891.21s] We'll just pad.
+[  891.57s ->   893.55s] We'll pack it and pad wide 10.
+[  894.03s ->   895.13s] We need an input.
+[  895.69s ->   898.42s] And this is just going to be a simple entry.
+[  898.92s ->   900.68s] And we're going to add that to the chat frame.
+[  901.46s ->   904.68s] And then we're also going to do self.chat input.
+[  905.20s ->   906.60s] And we're not going to pack it.
+[  906.66s ->   907.54s] I want to do a grid.
+[  907.72s ->   910.90s] So we're going to do grid row 0, 0.
+[  911.02s ->   912.72s] We'll have some pad on the X.
+[  915.26s ->   916.28s] That should be good.
+[  916.82s ->   920.28s] And then we also need a button to send the message.
+[  921.36s ->   924.40s] Send button is equal to tk.button.
+[  924.58s ->   926.54s] We're going to add it to that chat frame.
+[  927.10s ->   927.50s] Send.
+[  927.70s ->   930.60s] We don't have the command or the function send message yet.
+[  930.60s ->   931.88s] That's something we will work on.
+[  933.23s ->   936.65s] And then, of course, we are going to just pack the...
+[  936.65s ->   940.71s] Or we'll do grid for the button and we'll pack the chat output layout.
+[  940.99s ->   942.57s] So we'll do self.send button.
+[  942.81s ->   944.83s] We'll grid 0, 1.
+[  945.15s ->   950.35s] And this is just the same idea as what we did up here with the grid layout.
+[  950.35s ->   958.56s] Now, what we're going to do is we're going to say self.chat output is equal to tk.text.
+[  959.06s ->   962.74s] And we'll say root height is equal to 5.
+[  963.12s ->   971.11s] Width is equal to, we'll say, maybe 50, 60 maybe.
+[  971.11s ->   977.66s] And the state is going to be tk.disabled because, remember, this is a response.
+[  978.26s ->   981.94s] So we don't want to just be able to edit the response from the AI.
+[  982.10s ->   984.70s] We want it to just read as plain text.
+[  985.14s ->   986.96s] And then we're just going to pack this output.
+[  990.22s ->   991.56s] Just going to pack this output.
+[  993.96s ->   994.38s] Okay.
+[  994.98s ->   999.89s] We're going to load the saved data now.
+[  999.89s ->  1003.43s] So we finished building the UI, essentially.
+[ 1003.67s ->  1006.35s] And now what we want to do is we want to start to get into the functionality.
+[ 1006.75s ->  1009.47s] So we're going to load, save the data.
+[ 1009.97s ->  1012.69s] So we will say self.refresh table.
+[ 1014.17s ->  1015.87s] That's going to load from our JSON.
+[ 1016.11s ->  1017.87s] We've got to build this function as well.
+[ 1018.37s ->  1022.15s] Then we're going to say self.running is equal to true.
+[ 1022.65s ->  1026.37s] And this is going to be for auto-refreshing.
+[ 1026.37s ->  1037.29s] And then we have self.auto-update thread is equal to threading.thread.
+[ 1037.89s ->  1045.07s] Target is going to be self.auto-update, which we also have to create.
+[ 1045.59s ->  1049.12s] And then we're going to make long true.
+[ 1051.75s ->  1057.05s] And we're going to just go ahead and start this thread that we've created right here.
+[ 1057.05s ->  1064.90s] This will allow us to query the updates in a continuous fashion.
+[ 1065.24s ->  1068.92s] So on some sort of time increment, maybe it's five seconds or something,
+[ 1069.10s ->  1071.24s] which is why we imported time earlier.
+[ 1071.48s ->  1076.24s] So that's just going to be for auto-refreshing the table with data from our API.
+[ 1077.02s ->  1086.44s] Now we actually need to create the functions that we've used earlier to say add equity, save, and so on.
+[ 1087.18s ->  1089.30s] Let's start by creating a function to add an equity.
+[ 1089.30s ->  1093.94s] So I'll call this add equity, add equity self.
+[ 1094.95s ->  1105.88s] And we're going to say symbol is equal to self.symbol.entry.get.upper.
+[ 1108.10s ->  1113.04s] Levels is equal to self.levels.entry.get.
+[ 1114.28s ->  1119.64s] Drawdown is equal to self.drawdown.entry.get.
+[ 1119.64s ->  1130.41s] So here we're just getting the symbol, levels, and drawdown for the entry form that we had up here.
+[ 1135.21s ->  1138.61s] And this is that add equity command that we're creating right now.
+[ 1146.12s ->  1148.66s] So this also, I think this is still inside the constructor.
+[ 1148.66s ->  1152.02s] Yeah, this is still inside the constructor, so that's my fault.
+[ 1153.04s ->  1154.24s] I've got to tab that out.
+[ 1154.34s ->  1155.28s] Now it's being used.
+[ 1155.44s ->  1156.72s] So I have this tabbed in.
+[ 1157.74s ->  1163.64s] Now if we tab this out, you can see it's actually being used by this button.
+[ 1164.34s ->  1164.50s] See?
+[ 1164.50s ->  1168.99s] All right, so now we're creating this function outside of the constructor.
+[ 1169.73s ->  1172.43s] Symbols, levels, drawdown, all good there.
+[ 1174.17s ->  1177.91s] Now we need to do some handling for valid input.
+[ 1178.09s ->  1191.50s] So if not symbol or not levels.isdigit or not drawdown.replace decimals with nothing.
+[ 1191.50s ->  1195.34s] Then we have it as a number.isdigit.
+[ 1198.27s ->  1200.13s] These are all invalid entries.
+[ 1200.39s ->  1201.67s] This is not going to catch everything.
+[ 1201.83s ->  1203.83s] That's not really the goal of this right now.
+[ 1203.93s ->  1206.69s] But this is a reasonable first line of defense.
+[ 1207.31s ->  1208.73s] Messagebox.showerror.
+[ 1208.89s ->  1212.19s] That means it just did not enter anything that was valid.
+[ 1217.74s ->  1219.54s] We're just going to return from that.
+[ 1221.06s ->  1223.68s] The levels is going to be equal to int levels.
+[ 1224.44s ->  1225.46s] Which makes sense, right?
+[ 1225.46s ->  1231.92s] So if you have five levels and you're trading down in a particular equity, then that's an integer.
+[ 1232.08s ->  1233.30s] You can't have fractional levels.
+[ 1233.40s ->  1234.30s] That doesn't make any sense.
+[ 1235.81s ->  1241.21s] I also like implementing this strategy as an example because blowing out is very difficult.
+[ 1241.99s ->  1248.59s] If you just follow this tutorial blindly, you know, we're using, even if you used 100 levels, right?
+[ 1248.95s ->  1254.18s] You're not necessarily going to be entering a position of 100.
+[ 1254.18s ->  1258.78s] Plus, the API isn't going to let you just use a massive amount of leverage.
+[ 1258.88s ->  1264.88s] So I think this is a very reasonable strategy, even if you're following blindly, which is good.
+[ 1264.96s ->  1266.76s] I like that aspect of it as well.
+[ 1267.52s ->  1269.88s] But we have this levels integer.
+[ 1270.06s ->  1277.76s] We also have the drawdown, which is going to determine the entry price for the next levels.
+[ 1277.76s ->  1290.64s] We, of course, have our entry price, which we're going to have to fetch from the API.
+[ 1293.10s ->  1298.26s] Now we need to determine the prices to trade at for the following levels.
+[ 1298.26s ->  1317.51s] So I'm going to say levels, I'll say level prices is equal to, we'll say I plus one, four, and we're going to round the entry price times one minus the drawdown times I plus one.
+[ 1318.96s ->  1323.62s] We're going to round that to two for I in range levels.
+[ 1323.62s ->  1334.64s] So this is that Martin Gale style DCA strategy, where what I'm doing is I'm taking that drawdown threshold that we set for the equity.
+[ 1335.22s ->  1343.20s] And I am going to trade at each level specified by the drawdown from the entry price.
+[ 1343.20s ->  1351.74s] So we enter at 100, if we have a 10% drawdown per level, then we're going to assume that initial entry price is fixed.
+[ 1352.14s ->  1355.56s] Every $10, we're going to place a buy.
+[ 1355.76s ->  1358.12s] And that is essentially what's happening here.
+[ 1359.32s ->  1361.62s] Okay, let's update the equities now.
+[ 1362.56s ->  1364.68s] This is the data being saved.
+[ 1365.14s ->  1369.00s] So self.equities, we have our symbol.
+[ 1369.00s ->  1376.50s] And we want to make sure this is equal to a dictionary where the position is initially zero.
+[ 1377.40s ->  1383.86s] The entry price is going to be the entry price.
+[ 1384.28s ->  1390.74s] We have the levels where the levels are the level prices.
+[ 1390.74s ->  1398.79s] And we have the status, which is going to be on or off for the system.
+[ 1398.93s ->  1400.33s] So we'll start it as off.
+[ 1401.44s ->  1408.88s] So I think instead of the status being the order status from the API,
+[ 1409.68s ->  1417.06s] instead we'll make this the status of the system where the system can be on or off for any equity in the table.
+[ 1417.60s ->  1419.56s] I think that will make the most sense.
+[ 1419.56s ->  1434.45s] Anytime we go about adding the new symbols to the dictionary, we're going to want to go ahead and save that data.
+[ 1434.73s ->  1438.13s] So we're going to say self.save equities.
+[ 1438.67s ->  1441.65s] And we're also going to say self.refresh table.
+[ 1442.17s ->  1446.35s] And that's just going to save the data and update the table, which makes sense to me.
+[ 1447.01s ->  1449.01s] I want to make sure that this is correct.
+[ 1449.11s ->  1451.01s] I think this notation is correct.
+[ 1451.01s ->  1462.35s] For I in range round, I think this needs to be here.
+[ 1464.32s ->  1467.10s] Yeah, it was not reaching that I.
+[ 1468.82s ->  1471.26s] My round parenthesis was at the end.
+[ 1471.38s ->  1475.04s] It needed to be next to this too to close that function.
+[ 1475.42s ->  1480.56s] I don't want to close the function around the comprehension for this loop here.
+[ 1480.56s ->  1483.96s] That's going to create the level prices effectively.
+[ 1484.14s ->  1487.20s] So if you had that warning as well that I wasn't defined, that's why.
+[ 1487.28s ->  1492.18s] It's because the round function needed to adjust this parenthesis.
+[ 1492.86s ->  1493.14s] All right.
+[ 1493.16s ->  1495.10s] So that's going to do it for the add equity function.
+[ 1495.30s ->  1497.20s] I think that is everything that we need to do there.
+[ 1498.85s ->  1499.15s] Okay.
+[ 1501.13s ->  1504.23s] Now we need to create a function to toggle a selected system.
+[ 1504.23s ->  1507.47s] So I'll call this toggle selected system.
+[ 1510.89s ->  1514.25s] And we will say, let me scroll down, toggle selected system.
+[ 1516.21s ->  1523.08s] We will say selected items equals self.tree.selection.
+[ 1523.30s ->  1525.30s] So we're going to get what is selected in the table.
+[ 1525.60s ->  1529.46s] If not selected items, that means we didn't select anything.
+[ 1529.46s ->  1531.34s] So we're going to have a warning.
+[ 1534.00s ->  1539.70s] The warning is no equity is selected.
+[ 1540.44s ->  1540.92s] Shocker.
+[ 1541.36s ->  1543.09s] We'll return from that.
+[ 1544.18s ->  1553.55s] Otherwise, for item in selected items, we will say symbol is equal to self.tree.item,
+[ 1553.73s ->  1557.83s] the item that we are iterating through in the selected items.
+[ 1558.13s ->  1560.07s] And of course, we're going to look at the values.
+[ 1560.91s ->  1563.21s] We're going to look at zero, the symbol.
+[ 1564.29s ->  1566.09s] And we're going to say self.equities.
+[ 1566.53s ->  1567.91s] That's our equities dictionary.
+[ 1568.19s ->  1570.61s] We just got the symbol from the table.
+[ 1570.99s ->  1572.97s] We will toggle the status.
+[ 1574.45s ->  1586.06s] And we will say Java ternary style if statement on if the self.equities symbol status is going
+[ 1586.06s ->  1586.90s] to be off.
+[ 1588.28s ->  1590.12s] Otherwise, we will turn it.
+[ 1595.70s ->  1596.82s] I think I had that backwards.
+[ 1597.00s ->  1598.46s] So essentially what we're doing is we're looking.
+[ 1598.46s ->  1601.66s] We're saying, okay, if it's off, we're going to turn it on.
+[ 1601.84s ->  1602.84s] Otherwise, turn it off.
+[ 1603.28s ->  1608.72s] And that's what we're doing in this self.equities dictionary, which is saving all of our data.
+[ 1608.98s ->  1613.32s] And we're going to this data and we're looking at the symbol based on what is selected in
+[ 1613.32s ->  1613.76s] the tree.
+[ 1613.76s ->  1616.64s] That is this initial self.tree selection.
+[ 1617.14s ->  1621.64s] And that's how we're iterating through the selection to find the correct symbol and then
+[ 1621.64s ->  1623.08s] toggle that system.
+[ 1623.58s ->  1627.44s] And that is how we're going to determine whether or not we are actively trading that symbol.
+[ 1627.44s ->  1629.38s] We are cooking.
+[ 1629.38s ->  1635.99s] Now, of course, since we've updated the data, we're going to call self.saveequities and we're
+[ 1635.99s ->  1641.07s] going to call self.refresh table and that will do it.
+[ 1641.07s ->  1645.95s] We now need to write code to remove an equity.
+[ 1646.47s ->  1650.37s] So we'll say def remove selected equity.
+[ 1650.91s ->  1653.81s] And this shouldn't be really surprising.
+[ 1654.01s ->  1660.60s] We're just going to get the selection from the table just as we did before.
+[ 1660.60s ->  1669.52s] If nothing is selected, so if not selected items, then clearly we can't remove the equity.
+[ 1670.12s ->  1671.40s] So we're going to warn them.
+[ 1671.56s ->  1675.20s] We're going to say warning, no equity, selected.
+[ 1675.92s ->  1677.91s] We'll return from there.
+[ 1679.32s ->  1683.44s] Then for item in selected items, this is exactly what we just did.
+[ 1683.76s ->  1688.44s] We're going to say symbol is equal to self.tree.item item.
+[ 1688.44s ->  1692.70s] And we will look at the values, look at the zeroth value.
+[ 1693.56s ->  1696.00s] That is going to be the symbol that we've selected.
+[ 1696.58s ->  1701.74s] Then if the symbol is in self.equities, then we are just going to delete it.
+[ 1704.29s ->  1705.21s] .equities symbol.
+[ 1705.91s ->  1710.01s] And then we are going to, of course, need to save that change.
+[ 1710.65s ->  1716.83s] And we are going to need to update, refresh the table.
+[ 1718.40s ->  1720.06s] That shouldn't be too much of a surprise.
+[ 1720.18s ->  1722.72s] This is literally just the opposite of what we did up here.
+[ 1722.72s ->  1724.88s] When we added the equity, we're just removing it.
+[ 1725.32s ->  1727.86s] And we accessed it in the same way as the toggle.
+[ 1728.32s ->  1730.75s] So it shouldn't be too much of a surprise.
+[ 1731.17s ->  1739.55s] Now we're going to fill in sort of just like a filler function for sending a message via the chat GPT or the LLM that you choose to use.
+[ 1739.55s ->  1742.67s] So message is equal to self.chat input.
+[ 1743.09s ->  1744.63s] We're going to get the message.
+[ 1744.63s ->  1750.83s] And on the back end here, once we get that message from the form, we can populate it with the portfolio information.
+[ 1750.83s ->  1755.23s] And then we can ask the AI whatever we would like about our portfolio.
+[ 1755.69s ->  1758.51s] That's our AI portfolio manager, essentially.
+[ 1758.51s ->  1761.85s] So if there's no message, then we're not doing anything.
+[ 1761.97s ->  1766.69s] So we're going to return response is equal to mock chat GPT response.
+[ 1766.89s ->  1768.89s] We have this message as the input.
+[ 1769.03s ->  1769.69s] Makes sense.
+[ 1770.49s ->  1775.20s] Chat output.config state.
+[ 1775.40s ->  1777.20s] This is going to be tk.normal.
+[ 1778.32s ->  1780.06s] Self.chat output.
+[ 1780.32s ->  1783.48s] We're going to insert that message, right, as the response.
+[ 1783.48s ->  1789.21s] So tk.end, and it's just going to be a formatted print statement.
+[ 1789.57s ->  1800.76s] We will say you, and then the message, and then we have a response from the AI.
+[ 1801.56s ->  1804.72s] We could even break it up, actually, into some more new lines after that.
+[ 1804.94s ->  1805.64s] That should be fine.
+[ 1808.07s ->  1809.79s] Of course, this is disabled, right?
+[ 1809.87s ->  1820.41s] So the output, chat output.config, after it's updated, state is equal to tk.end.
+[ 1820.43s ->  1825.05s] tk.disabled, and then we are going to do self.chat input.
+[ 1826.09s ->  1834.65s] We're going to delete what was sent, and that's expected functionality, right?
+[ 1834.71s ->  1838.53s] So if you type something into an input and you send it to chat GPT, your text doesn't
+[ 1838.53s ->  1839.71s] stay in that input form.
+[ 1839.95s ->  1841.05s] That's what we're doing here.
+[ 1841.09s ->  1844.23s] We're just going to delete that from zero all the way to the end of the form.
+[ 1844.75s ->  1851.37s] And here we're inserting at the end of the output field the message that we sent and the
+[ 1851.37s ->  1852.35s] response from the AI.
+[ 1852.71s ->  1856.51s] Of course, we need to get this response from this function, which we will build later on
+[ 1856.51s ->  1859.49s] as we go through the API work.
+[ 1860.37s ->  1861.53s] But we're almost there.
+[ 1861.75s ->  1864.19s] We just need to build a few more functions.
+[ 1864.41s ->  1865.95s] That's going to be it for the send message.
+[ 1866.37s ->  1868.71s] Now we're going to go and update the table.
+[ 1868.71s ->  1880.42s] So the def refresh table function, self to access the table, we'll say for row in self.tree.get
+[ 1880.42s ->  1886.70s] children, self.tree.delete row.
+[ 1887.10s ->  1890.80s] We need to delete everything, right?
+[ 1891.02s ->  1893.28s] And we're going to repopulate it with some new information.
+[ 1893.28s ->  1899.76s] So for symbol data in self.equities.items.
+[ 1900.82s ->  1904.20s] And what this is going to do is it's just going to iterate through all the data that
+[ 1904.20s ->  1904.96s] we have saved.
+[ 1905.20s ->  1908.04s] So we're going to say self.tree.insert.
+[ 1908.50s ->  1912.08s] We're going to insert it into the table.
+[ 1912.58s ->  1917.28s] The values in this tuple, which are going to be the symbol.
+[ 1917.28s ->  1921.07s] It's going to be the data, the position.
+[ 1922.15s ->  1926.25s] It's going to be the data entry price.
+[ 1927.01s ->  1933.46s] It's going to be the string of the data levels.
+[ 1936.47s ->  1939.75s] And it's going to be the status of the system.
+[ 1941.24s ->  1943.74s] And that should be everything for the refresh table.
+[ 1943.98s ->  1947.58s] All we're doing is deleting all of the rows in the table and updating it with the new information.
+[ 1947.58s ->  1953.70s] And we can always just go through and update the equities dictionary whenever we like in
+[ 1953.70s ->  1954.24s] any function.
+[ 1954.34s ->  1960.66s] Of course, in the API for the actual live data, we can go back and we can update this data
+[ 1960.66s ->  1960.96s] here.
+[ 1961.02s ->  1964.32s] And every time we call this refresh table, it's going to update with the correct information.
+[ 1964.66s ->  1966.76s] That's exactly what we're looking to do, right?
+[ 1966.78s ->  1971.30s] We want to update the equities dictionary with live data.
+[ 1971.30s ->  1979.24s] Now, we need to figure out what data to query from the broker, from the API, which is exactly
+[ 1979.24s ->  1980.86s] why we're saving and loading this.
+[ 1981.06s ->  1984.84s] You know, we don't particularly care about the stale price information, but we need to
+[ 1984.84s ->  1988.24s] know what tickers we're trading and whether or not we were actively trading it, which is
+[ 1988.24s ->  1989.24s] why we're keeping the status.
+[ 1989.68s ->  1992.76s] I also want to maintain the drawdown and the levels.
+[ 1993.16s ->  1994.76s] So that's why we have that.
+[ 1994.76s ->  2005.70s] Now, we're going to add an auto update, def auto update, and this is just to auto update
+[ 2005.70s ->  2006.66s] the user interface.
+[ 2006.82s ->  2008.66s] We're going to say while self.running.
+[ 2009.06s ->  2011.36s] We can just go ahead and do time.sleep.
+[ 2011.60s ->  2012.96s] Maybe we'll call it five seconds.
+[ 2013.74s ->  2017.90s] And self.update prices, update prices.
+[ 2018.30s ->  2019.64s] We can go ahead and update the prices.
+[ 2022.32s ->  2024.60s] We need our save equities function.
+[ 2024.60s ->  2027.58s] This is going to allow us to save that dictionary.
+[ 2027.80s ->  2033.44s] So we'll say with open data file as write, or I'm sorry, as read.
+[ 2034.62s ->  2035.12s] No, I'm sorry.
+[ 2035.22s ->  2037.08s] This is a write because we're saving.
+[ 2037.40s ->  2042.71s] So this is going to be a W for write as F.
+[ 2042.87s ->  2049.61s] We will do json.dump self.equities as file F.
+[ 2050.37s ->  2052.23s] That's going to allow us to save the equities.
+[ 2052.43s ->  2053.69s] Now we need to load them.
+[ 2053.69s ->  2062.65s] So loading the equities, we are going to do a with open data file as read.
+[ 2063.15s ->  2073.14s] As F, we're going to do return json.loadf.
+[ 2075.94s ->  2078.48s] We probably need to try accept around this.
+[ 2079.46s ->  2080.56s] So we're going to try.
+[ 2080.76s ->  2081.84s] This isn't Java.
+[ 2081.84s ->  2088.40s] So we're going to use a try block to try to load this file.
+[ 2088.62s ->  2093.68s] And we're going to accept a file not found and a JSON decode error.
+[ 2093.82s ->  2099.22s] So if there's an issue with, for some reason, parsing the JSON, we can just catch that.
+[ 2099.28s ->  2100.88s] We're going to return an empty dictionary.
+[ 2101.76s ->  2104.46s] This really probably should throw a warning as well.
+[ 2104.46s ->  2107.08s] This should never really be the case.
+[ 2107.20s ->  2113.28s] Nothing should trigger this unless you go and you edit the JSON and it can't read into the dictionary.
+[ 2114.71s ->  2118.63s] But that should be, that should suffice for what we're doing here.
+[ 2120.42s ->  2121.76s] Def on close.
+[ 2122.94s ->  2125.36s] So we need to save on close.
+[ 2125.46s ->  2127.02s] So we're going to set running equal to false.
+[ 2127.02s ->  2129.62s] We're going to self.saveequities.
+[ 2130.30s ->  2132.98s] We're going to self.root.destroy.
+[ 2133.58s ->  2137.20s] Some housekeeping stuff.
+[ 2138.63s ->  2141.81s] And then that should be everything we need.
+[ 2141.91s ->  2152.25s] So then we can say if main is equal to main, we will do root is equal to tk.tk.
+[ 2152.49s ->  2153.85s] This is our main window.
+[ 2153.85s ->  2158.39s] We're going to pass that through our trading bot GUI.
+[ 2158.39s ->  2159.91s] There's our root.
+[ 2160.77s ->  2164.35s] Then we will do root.protocol.
+[ 2164.93s ->  2171.29s] We will say on close, which is WM delete window.
+[ 2172.09s ->  2173.77s] App.on close.
+[ 2173.89s ->  2176.25s] That's this on close function we just built here.
+[ 2176.35s ->  2177.23s] So we're going to save.
+[ 2178.40s ->  2180.44s] Make sure running is false and destroy the root.
+[ 2180.92s ->  2184.26s] And then we'll just run that main loop.
+[ 2184.70s ->  2186.71s] Run that main loop there.
+[ 2187.39s ->  2188.93s] So go ahead and run this guy.
+[ 2188.93s ->  2191.56s] All right.
+[ 2191.56s ->  2200.71s] It looks like we're getting trading bot has no attribute toggle system.
+[ 2201.65s ->  2205.39s] So let's go back and try to figure out where this issue is.
+[ 2211.07s ->  2212.19s] Toggle system.
+[ 2215.99s ->  2217.49s] Toggle selected system.
+[ 2218.01s ->  2222.21s] So I'm just going to call this toggle selected system instead.
+[ 2222.43s ->  2223.37s] That was the issue here.
+[ 2223.37s ->  2227.83s] So if you recall when we created this toggle system button, I called this toggle system.
+[ 2228.17s ->  2230.51s] This is toggle selected system.
+[ 2231.61s ->  2232.87s] Toggle selected system.
+[ 2233.67s ->  2238.53s] And now we have our user interface for our AI trading bot.
+[ 2242.34s ->  2243.44s] Our user interface.
+[ 2243.44s ->  2253.70s] Seems like I've offset these by one, these entries for the levels and drawdown, which isn't bad for our first run.
+[ 2253.78s ->  2258.19s] I'm pretty impressed that this turned out as structurally as nice as it did.
+[ 2258.33s ->  2259.01s] Just coding.
+[ 2259.01s ->  2261.59s] So here is the row one.
+[ 2261.69s ->  2262.83s] We're going to make this row zero.
+[ 2263.09s ->  2264.51s] We're going to make this row zero.
+[ 2264.85s ->  2267.01s] And that's going to fix the offset entries.
+[ 2267.81s ->  2272.08s] If I rerun this, we have a nice user interface.
+[ 2272.50s ->  2273.88s] Let's try to add a symbol.
+[ 2274.62s ->  2275.30s] Apple levels.
+[ 2276.14s ->  2279.32s] Let's do five levels with a 5% drawdown.
+[ 2279.58s ->  2280.58s] Add equity.
+[ 2280.58s ->  2291.42s] Looks like I called the, I called this levels entry instead of levels entry by accident.
+[ 2291.58s ->  2292.56s] So let's go fix that.
+[ 2296.53s ->  2298.25s] Levels entry.
+[ 2298.75s ->  2302.06s] You run this guy.
+[ 2302.56s ->  2305.39s] So we'll say apple.
+[ 2306.09s ->  2309.13s] Say five and five.
+[ 2312.64s ->  2314.90s] Tuple doesn't define a round method.
+[ 2316.04s ->  2320.12s] Looks like I have to fix my tuple here.
+[ 2321.82s ->  2323.48s] Round entry price.
+[ 2323.48s ->  2325.93s] Oh, I see.
+[ 2326.31s ->  2328.98s] Round two.
+[ 2334.35s ->  2334.91s] There we go.
+[ 2335.03s ->  2336.33s] I think I have my parentheses backwards.
+[ 2337.37s ->  2338.25s] Let's try this.
+[ 2340.48s ->  2343.20s] So that was for the round function.
+[ 2343.30s ->  2344.08s] I got this error.
+[ 2344.90s ->  2346.92s] Tuple doesn't define round function.
+[ 2347.06s ->  2349.18s] Of course, we still have to add the update prices function.
+[ 2349.86s ->  2352.72s] But if you take a look, this should fix the round.
+[ 2353.24s ->  2355.42s] I think I just stacked the parentheses here by accident.
+[ 2356.14s ->  2357.56s] Let's do symbol.
+[ 2357.78s ->  2359.42s] Apple levels five.
+[ 2359.58s ->  2360.50s] Drawdown five.
+[ 2360.70s ->  2361.20s] Add equity.
+[ 2361.74s ->  2362.24s] There we go.
+[ 2362.38s ->  2365.92s] So here we have our mock entry price of 100.
+[ 2366.14s ->  2368.06s] Our levels that we're going to be trading at.
+[ 2368.44s ->  2371.44s] Whether or not the system is on and off, we can toggle that here.
+[ 2372.16s ->  2372.82s] Toggle on.
+[ 2372.94s ->  2373.64s] Toggle off.
+[ 2374.14s ->  2375.90s] We have our chat component.
+[ 2376.10s ->  2378.30s] So we can enter a message to our AI chatbot.
+[ 2378.56s ->  2379.78s] It'll respond here.
+[ 2380.34s ->  2383.20s] And that should be it for our user interface.
+[ 2383.20s ->  2387.16s] Now, this is not the sexiest user interface in the world.
+[ 2387.68s ->  2394.78s] Nevertheless, it's something that you can enhance when, you know, all of the functionality is as you would like.
+[ 2395.44s ->  2397.94s] I'm not going to spend too much more time on the user interface.
+[ 2397.94s ->  2400.38s] I really want to get into the rest of the functionality of the system.
+[ 2400.38s ->  2402.94s] But this will suffice for what we are trying to do.
+[ 2402.94s ->  2408.38s] Now, when I close the system, you'll see we have an equity stack JSON here.
+[ 2408.60s ->  2413.38s] When I rerun the system, it loads that information, which is exactly what we're looking for.
+[ 2413.38s ->  2419.22s] So we have these symbols that we're trading, the status of the system, on close, saved.
+[ 2419.52s ->  2423.09s] And when we run it, you can see it repopulates.
+[ 2423.45s ->  2424.47s] You can also remove it.
+[ 2425.09s ->  2425.91s] It'll save it.
+[ 2427.11s ->  2427.73s] Rerun it.
+[ 2428.23s ->  2429.37s] And it no longer exists.
+[ 2429.51s ->  2431.29s] So everything seems to be working as intended.
+[ 2431.41s ->  2433.99s] Of course, we don't have our chat GPT integrated.
+[ 2434.17s ->  2436.21s] But if I enter this, I get a mock message.
+[ 2436.51s ->  2437.75s] And this is you.
+[ 2437.95s ->  2441.53s] And then the mock response, we had it just, remember, post the message.
+[ 2441.53s ->  2446.93s] If you recall from our mock API call up here, that is exactly what we had.
+[ 2446.97s ->  2448.67s] It's just going to re-return the message.
+[ 2449.29s ->  2451.91s] So now what we're going to do is we're going to go back to the checklist.
+[ 2453.07s ->  2454.51s] And boom, this is done.
+[ 2455.74s ->  2456.44s] Step one.
+[ 2464.38s ->  2467.40s] Step two is to establish a connection to a brokerage via an API.
+[ 2467.58s ->  2468.84s] So in this case, we're going to use Alpaca.
+[ 2469.06s ->  2471.90s] And we're going to go ahead and get started with the Alpaca API.
+[ 2472.04s ->  2473.58s] I'm going to create a new script here.
+[ 2474.22s ->  2477.90s] Or maybe I'll create a new Jupyter notebook for Alpaca.
+[ 2477.90s ->  2481.82s] Just so that we can walk through the initial connection together.
+[ 2482.10s ->  2483.82s] I'm going to open up Alpaca really quick.
+[ 2484.02s ->  2486.90s] And I'm going to walk you through just setting up an initial connection.
+[ 2487.04s ->  2489.28s] And then how we can integrate this into our bot.
+[ 2489.62s ->  2491.98s] Head on over to Alpaca and create a free account.
+[ 2492.22s ->  2496.02s] You can scroll down and generate some API keys.
+[ 2496.24s ->  2498.20s] I regenerated my keys right now.
+[ 2498.28s ->  2500.28s] I have this key and this secret key.
+[ 2500.40s ->  2502.12s] Of course, your secret key will disappear.
+[ 2502.30s ->  2503.72s] So make sure you keep track of it.
+[ 2503.72s ->  2506.58s] I'm going to go back into the code here.
+[ 2506.82s ->  2510.30s] And I am going to add my key.
+[ 2510.96s ->  2514.57s] I'm going to add my secret key as well.
+[ 2514.67s ->  2516.45s] So this is actually my secret key.
+[ 2516.87s ->  2518.41s] And this is my key.
+[ 2519.31s ->  2521.45s] So I'm going to go ahead and copy this key as well.
+[ 2522.13s ->  2523.47s] Paste this key here.
+[ 2524.39s ->  2529.13s] And once we do that, we can start to actually add the functionality we're looking for.
+[ 2529.13s ->  2537.45s] Queering the prices and also placing trades, that is these buy orders at the levels according to the levels we set.
+[ 2537.51s ->  2540.13s] And the drawdown for each equity in our trading bot.
+[ 2540.59s ->  2545.99s] Because I know it's going to come up, it comes up in pretty much every Python video that I've created.
+[ 2546.19s ->  2553.77s] If you have a module not found error, that means that you need to install the package or the module via pip.
+[ 2553.77s ->  2555.67s] So I opened up my command prompt.
+[ 2555.79s ->  2558.47s] I have pip install alpaca trade API, for example.
+[ 2558.77s ->  2562.09s] And this is going to install the alpaca API.
+[ 2562.33s ->  2564.49s] It's going to let me use it in Python.
+[ 2564.69s ->  2577.15s] So when I actually go about importing it and I say import alpaca trade API as trade API, I'm not going to get a module not found error.
+[ 2577.15s ->  2583.61s] So that goes for any module that is not built into your version of Python.
+[ 2584.15s ->  2587.65s] In this case, the alpaca trade API is most likely not going to be built in.
+[ 2587.71s ->  2593.17s] So I just wanted to touch on that before we get into actually implementing the API.
+[ 2593.47s ->  2596.53s] It makes the most sense to start in a Jupyter notebook.
+[ 2596.87s ->  2602.29s] So I'm just going to copy all of this over to my Jupyter notebook.
+[ 2602.29s ->  2607.25s] And for the API, we're going to have a base URL.
+[ 2607.83s ->  2610.57s] And I believe this base URL, I'm just going to copy and paste it.
+[ 2610.67s ->  2617.04s] It's going to be paper-alpaca or paper-api.alpaca.markets.
+[ 2617.22s ->  2621.02s] Very important also because I don't think that I had mentioned it.
+[ 2621.98s ->  2626.62s] But please make sure you are on the paper trading.
+[ 2627.46s ->  2630.04s] You're not going to get very far anyway if you're not on the paper trading.
+[ 2630.04s ->  2634.08s] And, of course, you can fund a live account and trade with a live account in the exact same capacity.
+[ 2634.62s ->  2639.34s] But for the sake of development, let's start with the paper account.
+[ 2639.72s ->  2640.96s] So go to your paper account.
+[ 2641.12s ->  2643.04s] Generate your API keys for your paper account.
+[ 2643.68s ->  2647.62s] If it doesn't work and you're on the live account, that's probably because you have insufficient funds.
+[ 2647.68s ->  2651.32s] Just make sure that you are on your paper and you go down to the endpoint.
+[ 2651.82s ->  2655.24s] This is going to be the endpoint, alpaca markets v2.
+[ 2655.36s ->  2656.34s] So I'm going to copy that.
+[ 2657.85s ->  2659.11s] I'm going to paste that right here.
+[ 2659.11s ->  2664.63s] And that's what we're going to use to attempt to query some data from alpaca.
+[ 2664.95s ->  2669.33s] So I'm going to say api is equal to tradeapi.rest.
+[ 2670.15s ->  2673.87s] And I'm going to use my key, my secret key.
+[ 2674.47s ->  2676.67s] I'm going to use the base URL.
+[ 2677.47s ->  2680.65s] And the API version is, in fact, version 2.
+[ 2681.33s ->  2682.93s] So I'm going to go ahead and run this.
+[ 2683.07s ->  2685.09s] Everything seems like it's working okay.
+[ 2685.09s ->  2691.51s] And now we're going to actually go ahead and try to create a basic request from this trade api.
+[ 2692.23s ->  2694.39s] And we'll see if we can get some data.
+[ 2695.25s ->  2699.43s] To get data, we're going to create a function def get data.
+[ 2700.13s ->  2702.25s] We'll take a symbol as an input.
+[ 2702.25s ->  2711.47s] And we're going to say try barset is equal to api.getLatestTrade.
+[ 2711.75s ->  2715.70s] Look at the symbol that we give it.
+[ 2716.18s ->  2721.52s] We're going to return that price, barset.price.
+[ 2722.12s ->  2726.43s] And then we're going to accept an exception as e.
+[ 2726.43s ->  2732.01s] And we're just going to catch any error and return a price of negative 1.
+[ 2733.84s ->  2735.34s] Now we can test this function.
+[ 2735.46s ->  2736.58s] I'm going to say get data.
+[ 2737.24s ->  2741.08s] Let's look at the data for Apple, $213.96.
+[ 2742.08s ->  2750.88s] And let's see if we can go here and look at Apple, $213.96.
+[ 2750.88s ->  2752.36s] Looks about right.
+[ 2752.36s ->  2758.68s] So we are successfully fetching the live data from Alpaca.
+[ 2759.32s ->  2763.46s] Now what we have to do is we have to integrate this into our bot.
+[ 2763.68s ->  2769.06s] So if we go to our checklist here, we've established a connection to a brokerage via the API.
+[ 2769.28s ->  2770.76s] That's exactly what we've done here.
+[ 2770.98s ->  2778.18s] Now we need to actually integrate this into our bot to ensure that we are placing buy orders at each of the levels that we create.
+[ 2778.18s ->  2784.34s] We also need to make sure that we are updating the entry price in our data correctly.
+[ 2784.58s ->  2797.27s] So if you recall when we run this trading bot, currently when I create a system for Apple here, it creates my levels.
+[ 2797.45s ->  2799.21s] But the entry price is clearly wrong.
+[ 2799.45s ->  2801.59s] The status of the system is, of course, off.
+[ 2801.89s ->  2808.57s] But what we need to do is when we turn this on, we want to make sure that buy orders are placed at each of these levels.
+[ 2809.23s ->  2814.03s] And we want to update this entry price with the actual entry price that we filled at.
+[ 2814.75s ->  2822.67s] And to do this, what we can do is just iterate through from Alpaca all of the entry prices for our stock in that specific system.
+[ 2823.07s ->  2824.73s] So in this case, the system is for Apple.
+[ 2825.09s ->  2829.43s] We're going to iterate through all the entry prices, take the max, and that's going to be our initial entry price.
+[ 2829.67s ->  2831.63s] Then we're going to have these levels that fill orders.
+[ 2831.63s ->  2841.41s] And we're going to track the quantity at each of these levels to make sure that we are not placing more than one order.
+[ 2841.41s ->  2852.07s] We're going to make sure that every time we run this system, we're going to iterate through from that initial entry price and ensure that, okay, if there are active orders, we're not going to place more active orders.
+[ 2852.07s ->  2857.81s] And then everything should be all set on the trading side and we can get to the AI component.
+[ 2858.49s ->  2858.73s] All right.
+[ 2858.73s ->  2868.11s] The first thing we've got to add to our trading bot here is a function to check to see if an existing order at a price level currently exists.
+[ 2868.11s ->  2871.05s] So what we're going to do is we're going to add it.
+[ 2871.05s ->  2871.95s] We'll add it at the bottom.
+[ 2879.68s ->  2881.60s] I'll add it right here after the send message.
+[ 2881.60s ->  2892.20s] So we'll say def check existing orders self dot or self symbol price.
+[ 2892.68s ->  2894.73s] We will say try.
+[ 2895.27s ->  2897.87s] And this is where we're actually going to use the Alpaca API.
+[ 2898.07s ->  2905.01s] So if we scroll on up over here, you know, we need to add the Alpaca API just as we used it here.
+[ 2905.11s ->  2906.77s] So I'm going to copy this line of code.
+[ 2907.15s ->  2911.89s] I'm going to paste it underneath this secret key so that we can use it.
+[ 2911.89s ->  2915.73s] I also need the base URL so that we can use this API end point.
+[ 2916.71s ->  2923.31s] Then I'm going to scroll on down and we are going to try to get the orders from our account.
+[ 2923.87s ->  2926.11s] API dot list orders.
+[ 2926.61s ->  2938.72s] And we will say status equals open and symbol is equal to symbol for order in orders.
+[ 2938.72s ->  2951.95s] We are going to check to see if the float of the order dot limit price is equal to the price that we are checking, in which case we return true.
+[ 2952.21s ->  2955.15s] And that means that an order already exists for this level and we don't want it.
+[ 2955.15s ->  2972.67s] So we are just going to catch a blanket exception and we are going to say that there is an error in the API and we have an error checking orders and that error is going to be given by E.
+[ 2973.23s ->  2976.45s] We can add that as the F print here.
+[ 2976.45s ->  2982.94s] Otherwise, we are going to return false and that means we need to place an order at that level.
+[ 2983.38s ->  2987.76s] Okay, so this is the first usage of the API in our trading bot.
+[ 2988.60s ->  2996.26s] You know, if we go up here, we can see that we have our key secret key base URL and the API established underneath our imports.
+[ 2996.26s ->  3008.86s] Then if you scroll all the way down to where we've added this function to the trading bot class, then you can see that we have a symbol, a price.
+[ 3008.86s ->  3017.90s] We're going to iterate through all the orders based on the symbol that are open and we're going to check to see, okay, is the limit price of that order equal to the price in our function?
+[ 3018.20s ->  3021.60s] If it is, we'll return true and hey, we're not going to place an order at that level.
+[ 3021.60s ->  3027.62s] Otherwise, we can return false and any errors, we're just going to give a message box showing that there is an API error.
+[ 3028.00s ->  3030.92s] This is our first use of alpaca in our trading bot.
+[ 3031.50s ->  3035.22s] We're also going to need to get current pricing information to set an initial order.
+[ 3035.80s ->  3042.14s] So we're going to say def fetch, I think we should call it fetch market data, fetch alpaca data.
+[ 3043.47s ->  3045.79s] I know we called it get data in our Jupyter notebook.
+[ 3046.71s ->  3050.99s] It really is arbitrary, but fetch alpaca data.
+[ 3050.99s ->  3060.86s] We're going to say self symbol, then we will say try, and it's actually exactly the same as what we wrote here, so I'm just going to copy and paste it.
+[ 3061.46s ->  3072.31s] So we're going to use the get data function to get the bar set for a symbol, and that is going to let us get the current pricing information.
+[ 3072.31s ->  3086.26s] Okay, so now we have pricing information, we have the ability to check orders, and we need to create the functionality to send an order for an initial entry price.
+[ 3087.02s ->  3093.46s] And then based on that initial entry price, we're going to update the data on the back end, set our levels, and then place more trades.
+[ 3093.46s ->  3096.02s] All right, it looks like we need a few more things.
+[ 3096.14s ->  3099.54s] We're going to create a helper function here to get the max entry price.
+[ 3100.06s ->  3112.84s] So get max entry price, self symbol, and we'll say try orders equals api.list orders.
+[ 3112.84s ->  3128.20s] And we're going to say status equals fields, symbols, or symbol is equal to symbol, and the limit will be 50.
+[ 3128.58s ->  3130.42s] You can adjust this as needed.
+[ 3130.58s ->  3139.76s] The prices are going to be the float of the order's average fill, so filled average price.
+[ 3139.76s ->  3148.97s] And this is going to be for order in orders, if order.filled average price.
+[ 3149.39s ->  3157.33s] In other words, assuming we have an average fill price, then we are going to iterate through and check to see which one is the highest,
+[ 3157.87s ->  3162.45s] because that is going to be where we initially entered the equity position.
+[ 3162.87s ->  3166.05s] And we are going to be trading levels based on that drawdown.
+[ 3166.05s ->  3173.05s] We're going to return max of the prices, if prices, otherwise we're just going to do zero.
+[ 3173.21s ->  3175.75s] So if it's empty, we're just going to return zero.
+[ 3175.83s ->  3177.47s] Really, we should probably return negative one.
+[ 3178.99s ->  3179.29s] Okay.
+[ 3181.66s ->  3189.00s] Accept exception as E, and this is just going to be a message box to show that there was an API error.
+[ 3189.00s ->  3202.88s] And this is going to be an error fetching orders as E, and then we'll just return zero from there as a different error code.
+[ 3203.99s ->  3207.43s] And that is what we're going to use to get the max entry price.
+[ 3207.63s ->  3213.15s] So we have the ability to check existing orders, we have the ability to fetch price information,
+[ 3213.15s ->  3217.05s] and the ability to check our max entry price for a symbol.
+[ 3217.05s ->  3224.93s] All right, some housekeeping stuff, it looks like the V2 is specified twice here, that was my mistake.
+[ 3225.11s ->  3229.75s] So this is actually going to append that to this URL, so we can get rid of this V2 here.
+[ 3230.75s ->  3239.89s] Moreover, if we scroll down, I think I forgot in the initial add equity function to add the drawdown.
+[ 3240.97s ->  3241.35s] Silly.
+[ 3242.51s ->  3246.83s] Let's add the drawdown as the drawdown.
+[ 3246.83s ->  3255.38s] This way, we can save that value and use it for later.
+[ 3256.12s ->  3263.20s] We are also going to update this get max entry price function instead of filtering for the symbol on the API call.
+[ 3263.34s ->  3264.22s] I'm going to get rid of that.
+[ 3264.22s ->  3277.01s] And I am going to say, if the order.averagePrice exists, and the order.symbol matches the symbol that we are filtering for,
+[ 3277.65s ->  3281.97s] then we will consider it for a price in the list, and we'll take the max price.
+[ 3282.07s ->  3284.05s] That's going to be our initial entry price.
+[ 3284.39s ->  3290.73s] Then we're going to place buy orders at each level corresponding to the drawdown that we set initially.
+[ 3290.73s ->  3296.59s] Okay, home stretch for the trading system itself.
+[ 3297.07s ->  3298.81s] We need to create a new function here.
+[ 3298.89s ->  3301.29s] This is probably going to be the most involved function.
+[ 3301.55s ->  3303.09s] We're going to call this trade system.
+[ 3303.09s ->  3308.56s] And we're going to iterate through all of the rows.
+[ 3308.56s ->  3314.60s] So we're going to say for symbol data in self.equities.items.
+[ 3315.10s ->  3323.29s] We are going to go ahead and say, if the status of the system is equal to on, that means we are trading.
+[ 3323.99s ->  3328.49s] We're going to say that a position does not exist initially.
+[ 3329.11s ->  3335.76s] We're going to try to get the position from the API.
+[ 3336.48s ->  3345.82s] We're going to get the entry price as the max entry price.
+[ 3349.56s ->  3352.10s] We're going to set the position.
+[ 3355.25s ->  3359.91s] Set the position exists flag to true, should all of this run with no error.
+[ 3360.31s ->  3363.73s] If we don't have any active positions, we're not going to find any data.
+[ 3363.73s ->  3374.60s] So we can actually accept exception as E, and we can say API.submitOrder, and we're actually going to place an initial market order here.
+[ 3375.24s ->  3379.29s] So we'll say symbol is equal to symbol.
+[ 3379.85s ->  3383.73s] That's the symbol that we are trading in that system.
+[ 3383.85s ->  3385.65s] Quantity is equal to one.
+[ 3386.05s ->  3388.11s] The side will be a buy.
+[ 3388.11s ->  3399.36s] We will use a market order, and the time and force will be good until canceled.
+[ 3399.94s ->  3401.68s] So this is our initial order.
+[ 3402.22s ->  3409.74s] We can add a message box to show the info that we have placed an order.
+[ 3409.90s ->  3411.22s] So we'll call this order placed.
+[ 3411.22s ->  3413.82s] This is our initial order.
+[ 3414.38s ->  3422.25s] So we can say initial order placed for, and we can use the symbol.
+[ 3426.08s ->  3429.28s] Let's sleep for two seconds to let it fill.
+[ 3429.56s ->  3435.46s] And then we can say the entry price is equal to self.getMaxEntryPrice symbol.
+[ 3436.12s ->  3446.24s] And this is hopefully going to be our initial entry price based on the order, the initial order that we've submitted here.
+[ 3446.24s ->  3458.83s] We could also print the, we could print the, the entry price.
+[ 3459.39s ->  3463.31s] So we can print the entry price.
+[ 3464.01s ->  3467.01s] We're going to generate levels based on this entry now.
+[ 3467.21s ->  3471.77s] So this is pretty much what we had written before, but we're actually applying it to the real price.
+[ 3471.77s ->  3489.31s] So we're going to say level prices is equal to I plus one, and then round the entry price times one minus the drawdown that we specified when we created that equity system times I plus one.
+[ 3489.31s ->  3497.02s] And then we're going to round that to two, and this is going to be for I in range.
+[ 3497.16s ->  3500.28s] And this is going to be the length of the levels.
+[ 3500.56s ->  3502.98s] So data levels.
+[ 3503.20s ->  3512.65s] So based on the number of levels we have, we are going to want to preserve our existing levels.
+[ 3512.65s ->  3525.24s] So we're going to say existing levels is equal to self.equities.getSymbol with an empty dictionary.getLevels.
+[ 3525.48s ->  3534.86s] And now we're going to actually iterate through the level prices.
+[ 3534.86s ->  3561.86s] So we will say for level in, or we should say level and price, in level prices.items, we're going to say if level in self.equities, symbol, based on the symbol that we're trading, based on the levels, if this exists, then we are going to place an order.
+[ 3563.62s ->  3568.26s] We're going to place an order at the symbol, at the price, and at that level.
+[ 3568.26s ->  3574.57s] Of course, once we do this, we're going to want to make sure that we save.
+[ 3575.15s ->  3579.86s] We're going to make sure that we save this information, so self.saveequities.
+[ 3580.32s ->  3582.20s] We also want to refresh the table.
+[ 3582.74s ->  3586.44s] And this is going to be inside the for loop.
+[ 3587.42s ->  3592.72s] So this is making sure that it's in line with the if statement here.
+[ 3593.26s ->  3598.59s] We're going to make sure that we save the information and update the table.
+[ 3599.11s ->  3610.67s] Level price.
+[ 3610.67s ->  3615.05s] I guess we need to update the equities data as well.
+[ 3615.21s ->  3619.35s] So I should really do that before saving.
+[ 3620.77s ->  3622.99s] So I'll say for level and levels.
+[ 3623.27s ->  3624.69s] We have our existing levels.
+[ 3629.51s ->  3630.87s] All right, so for level and level prices.
+[ 3631.15s ->  3636.69s] If level, okay, I see what's going on here.
+[ 3636.69s ->  3640.91s] So really, this should be level prices and level items.
+[ 3640.91s ->  3656.68s] If level is not in existing levels and negative level not in existing levels, then the existing levels is going to be equal to the level price.
+[ 3656.68s ->  3670.11s] And then self.equities symbol, the entry price, and this is where we're actually going to update the data to be the true entry price.
+[ 3670.11s ->  3676.63s] This is self.equities symbol.
+[ 3676.63s ->  3678.93s] This is going to be the levels.
+[ 3678.93s ->  3683.31s] We're going to update the levels to be the existing levels.
+[ 3683.31s ->  3696.34s] And then we're going to update the position as a flag to indicate that we are in an active position.
+[ 3697.93s ->  3699.97s] Now we go about placing the order.
+[ 3700.09s ->  3710.05s] So now that we have the levels in which the orders need to be placed at based on the initial entry price, and that initial entry price is based on the max entry,
+[ 3710.05s ->  3731.59s] we can go through here and say for level prices and level prices.items, we will say if level in self.equities symbol levels exists, then we can place an order.
+[ 3732.07s ->  3741.08s] Place order, and we're going to place an order at the symbol, at the price, and the level.
+[ 3744.75s ->  3745.15s] Wonderful.
+[ 3745.15s ->  3749.55s] And then we're going to go ahead and save the equities data that we just updated here.
+[ 3749.71s ->  3756.63s] We're going to refresh the table, and we are also going to return if the system is off.
+[ 3757.45s ->  3764.71s] So this is if the system is on, then we're going to go through this argument to try to trade.
+[ 3766.56s ->  3770.12s] Otherwise, we will just return nothing.
+[ 3771.70s ->  3776.72s] Now we've got to write a function to place the order.
+[ 3776.72s ->  3785.97s] So we take a symbol, a price, and a level, and that's going to allow us to update the data on the back end.
+[ 3786.57s ->  3796.08s] So we will say if there's a negative level in self.equities, that means that we have an active order out for that level,
+[ 3796.08s ->  3804.24s] and we don't want to trade, and this could be either a string or an integer representation.
+[ 3804.24s ->  3810.64s] So I'm going to include both, depending on if you've reloaded the system.
+[ 3810.64s ->  3819.02s] Okay, so if we have active orders out, then we're just going to return.
+[ 3820.06s ->  3827.58s] Otherwise, we can try to submit the order, and we're submitting the order for each level iteratively.
+[ 3827.84s ->  3830.98s] That's what this trade system function is doing.
+[ 3830.98s ->  3838.54s] It's iterating through each of the levels, and here we're going to say try api.submit.order.
+[ 3838.54s ->  3843.82s] We're going to submit an order where we have the symbol is equal to the given symbol,
+[ 3844.24s ->  3859.11s] and then we're going to have quantity is equal to one, side is equal to by, type is equal to limit.
+[ 3859.11s ->  3869.91s] The time and force is going to be good till canceled, and the limit price, of course, is going to be the price
+[ 3869.91s ->  3876.42s] that we have passed through as an argument to this function from the trade system function.
+[ 3877.74s ->  3885.14s] And now we need to mark the level in the data so we can update the user interface.
+[ 3885.14s ->  3887.78s] So we'll say self.equities symbol.
+[ 3888.66s ->  3890.34s] We're going to update the levels.
+[ 3890.48s ->  3896.68s] We're going to make it negative level to indicate that we have an active position.
+[ 3896.68s ->  3899.28s] We'll set price equal to the price.
+[ 3899.28s ->  3902.34s] We're going to delete the original positive level.
+[ 3902.34s ->  3909.72s] Delete the original positive level.
+[ 3909.72s ->  3925.84s] And we can even print, if we so choose to, place order for symbol at, and we'll just give it the limit price.
+[ 3925.84s ->  3939.32s] And then if this does not work, then we can just, we'll do a message box, dot show error.
+[ 3940.46s ->  3947.78s] And then the error will be order error, and whatever the response is.
+[ 3952.27s ->  3953.75s] And that should do it.
+[ 3953.75s ->  3958.43s] So these are probably the most involved functions, unsurprisingly.
+[ 3959.23s ->  3962.85s] We are going to check to see if the position exists.
+[ 3962.85s ->  3967.39s] You know, that's kind of just baked into this function call here.
+[ 3968.01s ->  3971.17s] So, you know, we don't really need an if statement directly.
+[ 3971.85s ->  3977.57s] And then we're going to go through this entire argument to set up an initial order, set that as our entry price,
+[ 3977.93s ->  3984.55s] create levels based on that new entry price, based on our drawdown to enter more positions into that equity.
+[ 3984.55s ->  3990.31s] And then we're going to create this function here, which is going to iteratively update the, or I'm sorry,
+[ 3990.41s ->  3992.99s] the trade system iteratively places orders.
+[ 3992.99s ->  3998.73s] And we're going to update the level on the place order function.
+[ 3999.05s ->  4002.57s] And that level is going to be positive if an open order needs to be created,
+[ 4002.57s ->  4005.89s] or negative if an open order already exists.
+[ 4006.95s ->  4013.46s] The last thing to do, it looks like I forgot I got a colon here.
+[ 4013.46s ->  4023.99s] The last thing we need to do here is scroll on down to the def.audit update function.
+[ 4024.39s ->  4025.57s] And I've already updated it here.
+[ 4025.97s ->  4027.43s] Self.tradeSystems.
+[ 4027.49s ->  4029.19s] I believe this was self.updatePrices.
+[ 4029.55s ->  4033.27s] So you'll just replace this with self.tradeSystems.
+[ 4034.28s ->  4034.60s] All right.
+[ 4034.82s ->  4037.28s] Looks like I called this tradeSystems.
+[ 4037.80s ->  4043.06s] And this really should be tradeSystems because we're iterating through each system.
+[ 4043.90s ->  4044.26s] All right.
+[ 4044.26s ->  4046.64s] So now we have tradeSystems, tradeSystem.
+[ 4047.34s ->  4057.02s] If I run this guy here, I'm going to go ahead and create an Apple trade at five levels with a drawdown of 5% from the initial entry price.
+[ 4057.68s ->  4058.58s] We add it.
+[ 4058.86s ->  4064.18s] Its status is currently off, so we're not going to trade anything every time the system attempts to update.
+[ 4064.48s ->  4067.26s] So I will go ahead and toggle it, turn it on.
+[ 4067.26s ->  4071.82s] I get an initial order placed message here.
+[ 4071.96s ->  4081.65s] If I go to my alpaca, we can see that I have placed an order for Apple right here.
+[ 4082.05s ->  4089.37s] It looks like we're getting a little key error.
+[ 4089.37s ->  4093.48s] So we have a key error for level.
+[ 4094.06s ->  4096.52s] Ah, because it should be levels, not level.
+[ 4099.33s ->  4099.85s] Levels.
+[ 4102.63s ->  4103.59s] I do apologize.
+[ 4104.03s ->  4106.89s] This should be levels, not level.
+[ 4107.59s ->  4111.15s] I'm going to go ahead and I'm actually going to remove this Apple ticker.
+[ 4111.37s ->  4115.08s] I'm going to cancel that order on alpaca.
+[ 4115.50s ->  4118.40s] To cancel an order on alpaca, all you got to do is go to your positions.
+[ 4119.08s ->  4122.76s] Cancel, cancel all open, and then we can retry.
+[ 4123.62s ->  4125.48s] So let me rerun this.
+[ 4130.17s ->  4131.39s] Rerun this guy.
+[ 4131.85s ->  4136.39s] Let's create a new Apple trade.
+[ 4137.33s ->  4140.47s] Five levels, 5% drawdown, add the equity.
+[ 4141.05s ->  4143.05s] There's our default data, default levels.
+[ 4143.31s ->  4145.11s] We're going to go ahead and turn it on.
+[ 4146.03s ->  4147.65s] We'll get an initial entry price.
+[ 4148.27s ->  4148.75s] Good.
+[ 4148.87s ->  4149.87s] There's our initial order.
+[ 4150.63s ->  4152.79s] We go on over to alpaca.
+[ 4152.79s ->  4154.81s] We see our Apple trade has filled.
+[ 4155.59s ->  4165.22s] And now we see that we've placed orders at the subsequent levels.
+[ 4165.60s ->  4175.18s] So if we go back into our alpaca here, you can see in the recent orders, we have our 1,
+[ 4175.24s ->  4177.40s] 2, 3, 4, 5 orders.
+[ 4178.52s ->  4184.62s] And they're placed at the limits based on the drawdown that we set in our user interface.
+[ 4184.62s ->  4187.64s] And as you can see now, we're not placing any more orders.
+[ 4187.76s ->  4189.18s] Everything should be correct.
+[ 4189.88s ->  4193.46s] And we are ready to let those orders fill.
+[ 4193.56s ->  4196.74s] And we can go ahead and modify those as we please.
+[ 4196.88s ->  4202.66s] We could enter new systems into our trading bot if we wanted to.
+[ 4202.90s ->  4204.62s] We could add exit conditions.
+[ 4204.74s ->  4205.80s] We could do a whole bunch of things.
+[ 4205.80s ->  4212.08s] We have our level prices here that match our limit prices, negative keys to ensure that
+[ 4212.08s ->  4213.16s] we don't replace orders.
+[ 4213.66s ->  4219.20s] In fact, if I turn this off and I turn this back on, you'll see that it requeries the correct
+[ 4219.20s ->  4221.54s] levels and level information.
+[ 4221.54s ->  4228.38s] You'll also see that it does not accidentally place more trades, right?
+[ 4228.46s ->  4230.54s] It's not placing those trades at the levels.
+[ 4230.72s ->  4233.92s] So we've successfully built our trading bot.
+[ 4234.14s ->  4236.78s] I can go ahead and I can add other equities now.
+[ 4237.10s ->  4239.64s] Here's one for Jang J.
+[ 4240.96s ->  4243.66s] It's going to enter an initial trade as well.
+[ 4243.76s ->  4250.04s] If I turn it on, as soon as we turn it on, here's our initial order for Johnson & Johnson.
+[ 4250.04s ->  4254.02s] And then it's going to update the levels and boom, we are ready to go.
+[ 4254.10s ->  4260.88s] So now we have successfully built the trading component of our bot and we can move on to
+[ 4260.88s ->  4265.44s] the artificial intelligence component, the AI portfolio manager component.
+[ 4266.26s ->  4266.64s] All right.
+[ 4266.78s ->  4269.58s] So we knocked out two, knocked out three.
+[ 4269.92s ->  4272.38s] We're going to do four and then we're ready to go.
+[ 4272.50s ->  4273.32s] We can run this guy.
+[ 4273.94s ->  4279.68s] So of course we need to pip install open AI so we don't get a module not found errors.
+[ 4279.68s ->  4282.08s] So we're going to do pip install open AI.
+[ 4285.59s ->  4292.53s] Once this is good to go, we're going to do what we did before and we are going to create
+[ 4292.53s ->  4298.61s] a new Jupyter notebook and there's going to be openai.ipymp and we can test the API here
+[ 4298.61s ->  4300.59s] before integrating it into our bot.
+[ 4300.77s ->  4306.33s] In this Jupyter notebook, we're going to try to integrate the open AI API and you're going
+[ 4306.33s ->  4308.89s] to need to go to open AI and get an API key.
+[ 4309.87s ->  4315.63s] This is the platform.openai.com slash API keys where you can go and get it.
+[ 4315.83s ->  4317.87s] I'm going to be using this secret key here.
+[ 4317.93s ->  4321.67s] I'm going to delete this afterwards, but this is the key that I'm going to use.
+[ 4321.73s ->  4323.75s] You may need a paid account to access this.
+[ 4323.83s ->  4326.07s] I have a paid chat GPT subscription.
+[ 4326.07s ->  4330.79s] But that being said, you could use any LLM you would like.
+[ 4330.85s ->  4332.17s] It doesn't have to be a chat GPT.
+[ 4332.37s ->  4334.87s] I'm just going to be using it for simplicity's sake.
+[ 4336.04s ->  4336.38s] All right.
+[ 4336.42s ->  4342.27s] We're going to import open AI and open AI.
+[ 4342.81s ->  4346.56s] I'm going to run this guy, make sure everything's imported correctly.
+[ 4346.56s ->  4359.40s] And now we're going to create a function def get, we'll call it send, maybe analyze message.
+[ 4359.96s ->  4361.72s] We'll call it analyze message.
+[ 4362.58s ->  4363.92s] We'll take a message as an input.
+[ 4363.92s ->  4377.83s] And this is really where we're going to be, you know, sending that input message, but also pre-prompting the LLM with the information that we want it to speculate on.
+[ 4378.29s ->  4379.73s] This will make sense in a moment.
+[ 4379.91s ->  4383.51s] So, you know, we need to construct some sort of portfolio data.
+[ 4383.51s ->  4387.43s] And we're going to have to fetch our open orders as well.
+[ 4388.03s ->  4393.29s] So what I'm going to do is I'm going to say portfolio data is equal to fetch portfolio.
+[ 4394.15s ->  4402.60s] And then I will say open orders is equal to fetch open orders.
+[ 4403.77s ->  4412.23s] And what this is going to do is this is going to get the current information for our account and allow our LLM to essentially act as our portfolio manager.
+[ 4412.23s ->  4438.52s] Our pre-prompt is going to be a string, just make this a string, and it's going to have all of the information about our account, but also we're going to give it kind of like this just blanket instruction.
+[ 4438.52s ->  4447.90s] So we'll say you are an AI portfolio manager responsible for analyzing my portfolio.
+[ 4448.68s ->  4453.48s] Your tasks are the following.
+[ 4455.31s ->  4462.96s] One, evaluate risk exposures of my current holdings.
+[ 4462.96s ->  4472.72s] Two, analyze my open limit orders and their potential impact.
+[ 4473.30s ->  4485.00s] Three, provide insights into portfolio health, diversification, trade adjustments, ETC.
+[ 4485.00s ->  4497.54s] Four, we can say, maybe I'll collapse this so we can see, et cetera.
+[ 4498.96s ->  4509.38s] Four, speculate on the market outlook based on current market conditions.
+[ 4509.38s ->  4523.24s] And then maybe five, identify potential market risks and suggest risk management strategies.
+[ 4524.00s ->  4534.02s] Overall, answer the following question with priority, having that background.
+[ 4534.92s ->  4537.60s] And this is just going to be your message.
+[ 4537.60s ->  4553.07s] Okay, you can also add, here is my portfolio, and this will be our portfolio data.
+[ 4553.97s ->  4559.13s] Here is my, or here are my open orders.
+[ 4559.63s ->  4561.17s] Whoops, just scroll down.
+[ 4562.21s ->  4563.57s] Here are my open orders.
+[ 4565.14s ->  4566.50s] Give it the open orders.
+[ 4566.64s ->  4571.62s] So we're getting the open orders, getting the portfolio data, giving it to the prompt.
+[ 4571.62s ->  4578.52s] And then we want them to answer the message from the user based on the input into the forum.
+[ 4580.41s ->  4582.65s] Okie dokie, that should be it.
+[ 4583.03s ->  4593.22s] Now, the response is going to be openai.chatcompletion.create.
+[ 4593.28s ->  4594.68s] And we're going to create a new session here.
+[ 4594.80s ->  4597.40s] Model is equal to GPT4.
+[ 4597.40s ->  4605.10s] Then we're going to say messages equal to, we'll have this dictionary of role.
+[ 4605.60s ->  4608.97s] And then there's the system.
+[ 4609.45s ->  4613.80s] And then the content is going to be the pre-prompt.
+[ 4615.25s ->  4626.63s] And then we can say API key is equal to this crazy API key, which I copied from that developer portal.
+[ 4626.63s ->  4639.54s] Okie, so then the analysis should just be equal to the getPortfolio, what do we call this?
+[ 4640.26s ->  4650.89s] AnalyzeMessage, how is my portfolio doing?
+[ 4651.57s ->  4656.91s] Now we need to create these functions to actually get the data.
+[ 4656.91s ->  4665.20s] So, to get the portfolio data, we need to create depth-fetch-portfolio.
+[ 4667.68s ->  4672.42s] And this is just going to be positions is equal to API.listPositions.
+[ 4676.86s ->  4679.58s] Portfolio is equal to nothing.
+[ 4680.00s ->  4690.22s] And then we're going to say for position in positions, we are just going to append all of the information to the portfolio as a dictionary.
+[ 4690.22s ->  4696.52s] So, we have the symbol is going to be equal to the position.symbol.
+[ 4697.48s ->  4701.90s] We have the quantity is equal to the position.quantity.
+[ 4702.22s ->  4710.78s] We have the entry price is equal to the POS.averageEntryPrice.
+[ 4711.20s ->  4718.89s] We have the current price is going to be equal to the current price.
+[ 4718.89s ->  4731.02s] We have the unrealized PNL equal to the unrealized PNL of our position, respectively.
+[ 4732.04s ->  4735.68s] And then, of course, the side, which is going to be net long or short.
+[ 4736.14s ->  4738.22s] In this system, everything should be long only.
+[ 4740.59s ->  4742.55s] Alright, so that's going to be our portfolio.
+[ 4742.93s ->  4744.55s] And we're going to return this portfolio.
+[ 4745.03s ->  4747.71s] And we're going to use that portfolio in our pre-prompt.
+[ 4747.71s ->  4752.40s] And then we're just going to do the exact same thing with the open orders.
+[ 4756.62s ->  4763.14s] And this is a lot easier because, you know, all we've got to do is orders equal to API.listOrders.
+[ 4763.86s ->  4766.54s] Status is equal to open.
+[ 4767.92s ->  4772.06s] And then we can just say open orders is equal to an empty list.
+[ 4772.30s ->  4774.86s] And then we'll say for order in orders.
+[ 4774.86s ->  4779.79s] We can just do open orders.append.
+[ 4780.25s ->  4786.75s] We're just going to append that dictionary just as we did before, where we have our symbol being the order.symbol.
+[ 4787.29s ->  4792.43s] We have the quantity being the order.quantity.
+[ 4793.17s ->  4799.25s] We have the limit price being equal to the order.limitPrice.
+[ 4799.25s ->  4805.05s] And we have the side being, it's always going to be long here.
+[ 4805.27s ->  4807.59s] So, I think it's buy in this API.
+[ 4807.99s ->  4810.05s] So, I'm just going to leave the side as buy.
+[ 4812.38s ->  4814.18s] That should be okay.
+[ 4815.26s ->  4818.66s] Alright, and then clearly the API is not in this Jupyter notebook.
+[ 4818.86s ->  4820.48s] So, I'm just going to go back to the Alpaca notebook.
+[ 4821.06s ->  4825.79s] I'm going to copy all the information that established that object.
+[ 4825.79s ->  4832.79s] But, run it here, and we should be able to actually get a response from this guy here.
+[ 4832.91s ->  4833.69s] So, let's take a look.
+[ 4835.13s ->  4844.08s] Alright, this is the API removed in v1.
+[ 4844.86s ->  4849.76s] So, I should pip install version 0.28.
+[ 4850.02s ->  4851.02s] So, let's do that.
+[ 4852.60s ->  4855.86s] OpenAI equals equals 0.28.
+[ 4857.32s ->  4859.56s] So, I'm going to run this pip install instead.
+[ 4859.98s ->  4864.36s] And then I'm going to restart this.
+[ 4864.36s ->  4868.73s] So, all I did was I ran this pip install.
+[ 4869.11s ->  4869.81s] Pip install.
+[ 4870.57s ->  4872.81s] OpenAI equals equals 0.28.
+[ 4872.99s ->  4875.17s] Because I was having a version issue, it looks like.
+[ 4877.40s ->  4878.22s] Run this guy.
+[ 4878.36s ->  4879.16s] Run this guy.
+[ 4879.38s ->  4880.30s] Run this guy.
+[ 4881.12s ->  4886.49s] See if we can get a response based on our portfolio.
+[ 4905.16s ->  4905.56s] Okay.
+[ 4907.33s ->  4908.53s] Let's look at the analysis.
+[ 4909.27s ->  4918.24s] And I forgot to return the response.
+[ 4918.24s ->  4923.42s] So, that is going to make it so that the analysis is empty.
+[ 4923.42s ->  4928.70s] So, we'll return the response choices.
+[ 4929.16s ->  4932.12s] I'm going to edit that part out because we sat there for like 20 seconds.
+[ 4932.32s ->  4938.40s] So, choices 0 message and contents.
+[ 4940.06s ->  4943.80s] So, that's going to actually return the information to that analysis.
+[ 4944.98s ->  4946.40s] So, let's try this again.
+[ 4954.48s ->  4956.30s] I can't believe I forgot the return statement.
+[ 4956.80s ->  4958.46s] Explains why this was blank though.
+[ 4959.76s ->  4961.50s] It's going to take a little bit of time.
+[ 4964.30s ->  4965.30s] We run this.
+[ 4966.43s ->  4967.87s] I've analyzed your portfolio.
+[ 4968.55s ->  4969.19s] And boom.
+[ 4969.27s ->  4970.73s] Here's some risk exposures.
+[ 4972.08s ->  4973.74s] Use a concentrated position.
+[ 4973.88s ->  4974.38s] So, on.
+[ 4974.98s ->  4975.72s] So, pretty cool.
+[ 4975.72s ->  4981.14s] Now, we have a way for AI to speculate about our portfolio.
+[ 4981.14s ->  4982.28s] All right.
+[ 4982.40s ->  4985.80s] We got to integrate this now into our trading bot so that it functions.
+[ 4986.14s ->  4987.26s] And then we'll be all done.
+[ 4987.46s ->  4994.56s] And we have a AI trading bot capable of placing trades and managing our portfolio.
+[ 4995.02s ->  4996.04s] Analyzing our portfolio.
+[ 4996.28s ->  5000.88s] So, what I'm going to do is I'm going to first start by copying and pasting these fetch portfolio functions.
+[ 5001.38s ->  5006.50s] These are just, you know, functions that can exist outside of the trading bot class.
+[ 5006.50s ->  5011.86s] And I'm going to be replacing, really, we don't need these anymore.
+[ 5012.54s ->  5019.36s] They're still placeholders for different initial calls in our trading bot class.
+[ 5019.60s ->  5021.22s] So, I'm just going to leave them for now.
+[ 5021.36s ->  5029.68s] And I'm going to place these fetch portfolio and fetch open orders functions right underneath where I define the alpaca API.
+[ 5030.54s ->  5034.74s] Similarly, I'm going to actually define that open AI package.
+[ 5034.74s ->  5037.74s] So, I'm going to say import open AI.
+[ 5039.61s ->  5041.49s] And I'll go back over here.
+[ 5042.11s ->  5045.59s] And I'm going to just go ahead and create this function analyze message.
+[ 5046.65s ->  5049.19s] So, I'm just going to copy all this guy here.
+[ 5050.34s ->  5051.12s] Turn response.
+[ 5051.28s ->  5052.22s] Everything should be good.
+[ 5052.28s ->  5053.28s] So, I'm going to copy it.
+[ 5053.64s ->  5055.14s] I'm going to come back over to the bot.
+[ 5055.40s ->  5060.26s] And notice here, this is the mock response, right, to that initial message.
+[ 5061.38s ->  5064.90s] Instead, we can just make that the actual response.
+[ 5064.90s ->  5068.00s] So, the response here, right, that's this analysis.
+[ 5068.16s ->  5069.10s] We stored it in analysis.
+[ 5069.28s ->  5070.18s] And this was the response.
+[ 5070.56s ->  5074.26s] So, it's actually returning the correct response from the LLM.
+[ 5074.34s ->  5075.28s] So, I'm going to come over here.
+[ 5075.28s ->  5083.17s] And I'm going to just replace this with mock chat GPT response.
+[ 5084.86s ->  5087.84s] You know, if we're particularly lazy, we can just leave it like this.
+[ 5087.92s ->  5090.24s] But I'm going to call this chat GPT response.
+[ 5090.44s ->  5097.86s] I'm going to find that mock chat GPT response where we actually define that send message function.
+[ 5097.86s ->  5104.19s] And I am going to call that chat GPT response.
+[ 5104.97s ->  5107.21s] Because this is no longer a mock function call.
+[ 5107.29s ->  5108.71s] This is a true function call.
+[ 5110.76s ->  5112.38s] And that should do it.
+[ 5112.72s ->  5113.78s] That should do it.
+[ 5113.84s ->  5116.12s] So, this is going to be the moment of truth here.
+[ 5116.20s ->  5120.30s] Let's see if we can run this trading system.
+[ 5120.30s ->  5125.88s] We've got our AI portfolio manager here.
+[ 5126.52s ->  5138.45s] You can ask, what does my risk exposure look like holding both J&J and Apple?
+[ 5138.83s ->  5141.07s] So, we can send this.
+[ 5141.81s ->  5144.11s] This is going to take some time to populate.
+[ 5163.86s ->  5165.12s] And here we go.
+[ 5165.12s ->  5174.46s] So, we have our AI portfolio manager responding to our question based on our pre-prompt.
+[ 5174.96s ->  5177.20s] And this is a pretty hefty response.
+[ 5177.78s ->  5182.06s] You could pre-prompt to make this, you know, shorter.
+[ 5182.64s ->  5187.06s] You could ask more targeted questions or maybe even make it more general.
+[ 5187.70s ->  5190.50s] But this is an AI trading bot.
+[ 5190.60s ->  5194.04s] We have a trading bot that has success.
+[ 5194.16s ->  5196.10s] We really built a system from scratch here.
+[ 5196.10s ->  5197.84s] We built our user interface.
+[ 5198.02s ->  5199.46s] We built a trading component.
+[ 5199.60s ->  5201.72s] So, there's the automated trading component.
+[ 5201.86s ->  5206.52s] And then we also have our portfolio management component, the AI portfolio manager, who can
+[ 5206.52s ->  5208.60s] analyze our risk and risk exposures.
+[ 5208.96s ->  5215.82s] There's so much you can do built off of this just initial shell of a platform.
+[ 5216.04s ->  5217.90s] You can add exit conditions.
+[ 5218.18s ->  5224.50s] You can add events such that the large language model could actually execute trades.
+[ 5224.60s ->  5225.58s] You can do so much.
+[ 5225.58s ->  5231.54s] You can do it based on live news feeds, current macro factors.
+[ 5231.66s ->  5233.06s] You can just go down the line.
+[ 5233.56s ->  5239.54s] But this is probably the most – this is a workshop video really.
+[ 5239.66s ->  5241.58s] We built this entire system from scratch.
+[ 5241.58s ->  5245.42s] I'm going to post this on my GitHub so, of course, you know, you have access to all of the code.
+[ 5245.90s ->  5248.40s] But this is some pretty cool stuff, man.
+[ 5248.48s ->  5259.64s] I really hope you enjoyed building this guy with me or, you know, if you're just checking out the final product, I hope you enjoy, you know, seeing the functionality here.
+[ 5259.64s ->  5264.02s] Essentially, what we've done is we've built this user interface from scratch.
+[ 5264.02s ->  5267.48s] We have the ability to define a trading system for a particular equity.
+[ 5267.48s ->  5272.26s] We specify the levels that we want to trade at, the drawdown percentage for each of those levels.
+[ 5272.48s ->  5276.68s] Then our system automatically places those trades with Alpaca.
+[ 5276.68s ->  5278.50s] It's going to place an initial order.
+[ 5278.60s ->  5279.44s] That's our entry price.
+[ 5279.54s ->  5283.08s] And it's going to define levels below that entry price.
+[ 5283.58s ->  5287.24s] And it's going to do that for every equity in our portfolio here.
+[ 5287.84s ->  5291.12s] We can toggle the systems on and off as we choose to do so.
+[ 5291.12s ->  5293.80s] And we can even, you know, remove them and whatnot.
+[ 5293.98s ->  5304.16s] And we also have this, you know, AI portfolio management component, this AI, you know, this AI aspect where we have an LLM integrated into our trading system.
+[ 5304.40s ->  5308.50s] And it's receiving our portfolio and our trades in real time.
+[ 5308.64s ->  5312.34s] You know, as we ask you questions, it knows what's going on based on our pre-prompting.
+[ 5312.62s ->  5317.00s] So that being said, I hope you enjoy this video where we've built an AI trading bot together.
+[ 5317.00s ->  5322.06s] If you're interested in more videos like this in the future, please let me know.
+[ 5322.34s ->  5324.42s] And I would be happy to make them.
+[ 5324.52s ->  5328.68s] I know this was quite a long one, but I think the final product is pretty cool.
+[ 5329.52s ->  5331.34s] And we can even go about building off of this.
+[ 5331.42s ->  5334.26s] Maybe we do some signal processing with AI.
+[ 5334.54s ->  5339.84s] Maybe we do, you know, some sort of entry exit condition based on the LLM.
+[ 5340.14s ->  5345.56s] There's really an infinite number of ways we could go from here.
+[ 5345.56s ->  5347.96s] So I hope you've enjoyed this video.
+[ 5348.24s ->  5353.66s] This one was quite a long one, but like I said, I think the final product is pretty cool.
+[ 5354.16s ->  5356.68s] And I just want to thank you guys so much for watching.
+[ 5357.24s ->  5359.64s] And I will see you in the next video.

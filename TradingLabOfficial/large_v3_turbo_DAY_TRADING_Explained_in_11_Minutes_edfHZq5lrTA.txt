@@ -1,0 +1,197 @@
+[    0.00s ->     2.60s] I have 11 minutes to explain day trading.
+[    2.74s ->     6.96s] So naturally, I'm going to put $60,000 of my own money on the line.
+[    7.06s ->     8.44s] What could possibly go wrong?
+[    9.00s ->     9.48s] A lot.
+[    9.76s ->    10.76s] A lot can go wrong.
+[   10.82s ->    15.14s] Day trading is basically a game of patient people taking money from impatient people.
+[   15.22s ->    17.10s] But it's also a game of chance.
+[   17.22s ->    23.46s] To understand this game of chance, I'm personally putting $60,000 of my own money on one single
+[   23.46s ->    27.22s] trade using this exact strategy I'm about to share with you.
+[   27.28s ->    29.76s] Will my own strategy actually succeed?
+[   29.76s ->    33.26s] Or will I lose $60,000 in a matter of seconds?
+[   33.54s ->    35.08s] Either way, I guess it's content.
+[   35.18s ->    35.86s] It's now Wednesday.
+[   36.06s ->    38.04s] I woke up at 7.30am today.
+[   38.30s ->    39.06s] I'm in Texas.
+[   39.40s ->    39.76s] Texas.
+[   40.36s ->    42.36s] So market opens in one hour.
+[   42.44s ->    47.08s] I make sure I'm zooted on caffeine and then I proceed to spend the entire morning scrolling
+[   47.08s ->    50.26s] through my trading scanner until I find the one.
+[   51.74s ->    54.18s] I set up all my strategy parameters.
+[   54.42s ->    56.06s] Tactics, tactics, tactics.
+[   56.28s ->    58.06s] I precisely set my limit order.
+[   58.06s ->    63.52s] Then I do the most important step and that is to wait patiently until price hits my order.
+[   63.52s ->    65.52s] Holy f**k, it just hit my order.
+[   65.52s ->    68.30s] Waterfill, waterfill, waterfill, waterfill, waterfill, waterfill.
+[   68.98s ->    71.98s] You see, day trading isn't easy money.
+[   72.12s ->    76.34s] I'm sure the only reason you're even watching this video right now is because you saw some rich
+[   76.34s ->    81.34s] TikToker talking from a helicopter about his Lamborghini that he got from trading stocks.
+[   81.34s ->    85.16s] Here in my garage, just bought this new Lamborghini here.
+[   85.40s ->    85.84s] Knowledge.
+[   86.26s ->    88.18s] But let me tell you something you already know.
+[   88.26s ->    90.04s] The world ain't all sunshine and rainbows.
+[   90.10s ->    92.70s] In fact, most day traders actually lose money.
+[   92.80s ->    93.10s] What?
+[   93.22s ->    94.82s] People lose money while day trading?
+[   95.08s ->    96.54s] Well, yeah, the majority do.
+[   96.62s ->   103.36s] It's a known statistic that only 3% of day traders make a profit and only 1% actually do it consistently.
+[  103.56s ->   107.40s] So in order to make money, you have to become part of the 1% of traders.
+[  107.40s ->   110.68s] And how do you become part of the 1% of traders, you may ask?
+[  110.82s ->   114.40s] Doing exactly opposite of what the 99% are doing.
+[  114.50s ->   116.02s] You see, it's pretty simple, actually.
+[  116.12s ->   121.76s] If 99% of traders are not profitable, that means if you do the exact opposite of what they
+[  121.76s ->   123.40s] are doing, you'll make money.
+[  123.56s ->   125.44s] It sounds stupid, but it's true.
+[  125.58s ->   130.06s] In order to do this, we are going to use one of the core concepts in our strategy, and that
+[  130.06s ->   131.22s] is liquidity.
+[  131.38s ->   136.48s] In order to understand liquidity, we first have to understand how the big billion dollar institutions
+[  136.48s ->   139.40s] trade, or in other words, the 1%.
+[  139.40s ->   144.04s] Now, unlike you and me, where we can simply just buy wherever we want, big institutions
+[  144.04s ->   145.42s] can't really do that.
+[  145.54s ->   151.08s] They are dealing with so much money while trading, there are simply not enough sellers at the
+[  151.08s ->   152.92s] price where they want to buy at.
+[  153.02s ->   154.20s] So what do they do?
+[  154.38s ->   156.82s] They create the sellers themselves.
+[  160.76s ->   162.40s] But how did they do that?
+[  162.40s ->   165.28s] By doing a little thing called manipulation.
+[  165.56s ->   166.98s] Have you ever seen this happen?
+[  167.10s ->   170.40s] Price is coming down to a recent low, a key support area.
+[  170.48s ->   173.22s] Now, what's happening at this low is very simple.
+[  173.34s ->   178.64s] Normal retail traders like you and me are seeing this as a key support and enter when
+[  178.64s ->   179.76s] price comes down to here.
+[  179.80s ->   182.26s] Thinking the price will bounce up from the support.
+[  182.46s ->   186.46s] So where better to place your stop loss than right below this recent low?
+[  186.76s ->   188.40s] That's a pretty normal trade.
+[  188.40s ->   192.88s] As being the normal retail trader you are, you would assume if price crossed this low,
+[  193.06s ->   197.50s] it would be considered a downtrend, lose all of its momentum, and keep crashing downward.
+[  197.62s ->   201.92s] Now, the institutions own this stock already, but they want to buy more of it.
+[  202.00s ->   206.20s] But since they are trading with hundreds of millions of dollars, there are simply not
+[  206.20s ->   209.32s] enough sellers at this price for them to buy from.
+[  209.44s ->   212.00s] So they need to create the sellers themselves.
+[  212.44s ->   217.74s] So what they'll do is start selling their own shares to artificially drive the price down.
+[  217.74s ->   222.32s] They will make it seem like the stock is losing lots of momentum, crashing downwards,
+[  222.66s ->   224.54s] when in reality, it's not.
+[  224.60s ->   228.30s] Which other retail traders will see this and start selling as well.
+[  228.40s ->   231.28s] Which in turn, drives the price down even more.
+[  231.36s ->   236.84s] It will do this to the extent of passing this recent low, which will trigger all of the stop
+[  236.84s ->   238.92s] losses that we were talking about before.
+[  238.92s ->   243.64s] So now there are tons of people selling, trying to get rid of what they are holding.
+[  243.76s ->   249.54s] Which means the institutions can now enter at the price they want, since there are so many sellers.
+[  249.78s ->   254.92s] Price hits these stop losses, institutions buy a fuckload of shares, and price starts heading
+[  254.92s ->   257.08s] in the original direction it was meant to.
+[  257.14s ->   260.00s] Making institutions billions of dollars.
+[  260.46s ->   261.52s] That is liquidity.
+[  261.52s ->   266.10s] Now, the trade we just took broke all-time highs, then reversed back downwards.
+[  266.22s ->   271.54s] So instead of sell-side liquidity, like the last example, this time we got buy-side liquidity.
+[  271.62s ->   273.52s] It's the same concept, just reverse.
+[  273.74s ->   275.80s] So this is why we are looking to short.
+[  275.86s ->   280.32s] If you don't know, instead of making money while the price is going up, shorting is where
+[  280.32s ->   282.30s] you make money as the price goes down.
+[  282.38s ->   285.00s] Price breaking this all-time high is our liquidity.
+[  285.36s ->   289.84s] And actually, all-time highs are usually the most aggressive types of liquidity.
+[  289.84s ->   294.62s] And this is part of the puzzle of how we become part of the 1%.
+[  294.62s ->   299.68s] But just because we find liquidity, that doesn't necessarily mean we found a good trade.
+[  299.82s ->   305.52s] Now, the 1% not only know how to find liquidity and even target liquidity, but they also know
+[  305.52s ->   308.30s] how to find perfect spots to enter their trades.
+[  308.40s ->   312.20s] In order to know where they enter, we have to understand one key thing.
+[  312.42s ->   314.52s] Retail traders don't move the price.
+[  314.64s ->   315.86s] The institutions do.
+[  315.86s ->   320.50s] Now, sure, me and your pennies could possibly move the stock price a smidge, in the grand
+[  320.50s ->   321.14s] scheme of things.
+[  321.20s ->   325.54s] But the majority of price movement comes from hedge funds, banks, and institutions.
+[  325.80s ->   327.76s] That's where the price really moves.
+[  327.80s ->   332.08s] We can find where they're entering by finding key levels of supply and demand.
+[  332.20s ->   334.48s] To do this, go to the 4-hour time frame.
+[  334.54s ->   336.32s] Find the start of a strong move.
+[  336.44s ->   339.78s] Mark the low to the high of the candle that started this move.
+[  340.00s ->   341.60s] This is your area of demand.
+[  341.60s ->   345.06s] You can do the exact same thing with areas of supply.
+[  345.06s ->   346.58s] Find a strong move downwards.
+[  346.58s ->   348.74s] Find the first candle that started that move.
+[  348.74s ->   351.08s] Mark the low and the high of that candle.
+[  351.08s ->   352.54s] This is your area of supply.
+[  352.54s ->   356.56s] The reason we are doing this is because we want to be entering where the big institutions
+[  356.56s ->   357.56s] are entering.
+[  357.56s ->   362.84s] And if price spiked up strong from this price, that means the institutions are probably entering
+[  362.84s ->   363.84s] here.
+[  363.84s ->   368.56s] So we would wait for price to come back down to the zone, enter here, where price is likely
+[  368.56s ->   371.26s] to spike up again, and we make all of the profits.
+[  371.26s ->   375.88s] So if we go back to our trade, we already grabbed the liquidity at the all-time highs.
+[  375.88s ->   377.88s] Next, we need to mark our area of supply.
+[  377.88s ->   381.04s] We mark the first candle that started the downwards move.
+[  381.04s ->   382.72s] This is our area of supply.
+[  382.72s ->   387.74s] And we must wait for price to enter into the zone again, and we enter our short trade.
+[  387.74s ->   392.88s] Now, just because we have liquidity and supply, that doesn't necessarily mean price
+[  392.88s ->   395.16s] will follow exactly what we think it'll do.
+[  395.16s ->   399.86s] You need another layer of confirmation, and that confirmation is a narrative.
+[  399.86s ->   402.22s] Now narratives come in all shapes and sizes.
+[  402.22s ->   404.92s] It could be a sector that has a lot of potential, like AI.
+[  404.92s ->   410.90s] It could be good economic news, Trump makes another tweet, or it could be overhyped.
+[  410.90s ->   415.80s] Now this play is QBTS, and they are a quantum computing company.
+[  415.80s ->   420.84s] It's been going crazy this past month or so with all the AI hype going on recently.
+[  420.84s ->   423.72s] Now to be completely honest, I really do believe in this company.
+[  423.72s ->   428.38s] I think quantum computing is the future, and I think it's a really good company for that.
+[  428.38s ->   433.40s] And I actually traded this exact stock a couple months ago, but the last trade, I was in a
+[  433.40s ->   434.40s] long trade.
+[  434.40s ->   440.54s] I used this exact same strategy, just flipped around, I entered in around $4 and sold around
+[  440.54s ->   441.54s] $18.
+[  441.54s ->   446.18s] It was my biggest trade to date, and I posted it live in my discord group.
+[  446.18s ->   450.02s] But with that said, I think it's extremely overpriced at the moment.
+[  450.02s ->   452.84s] For example, this company is still in its early stages.
+[  452.84s ->   456.20s] They are actually losing money at the making of this video.
+[  456.20s ->   460.80s] Now sure, they could be reinvesting into the company to make it stronger for the future,
+[  460.80s ->   465.34s] and just because they don't have a net profit, doesn't necessarily mean it's a bad company.
+[  465.34s ->   470.92s] At the making of this video, AI stocks are going absolutely bonkers, and anything related
+[  470.92s ->   476.10s] to that is going up along with it, even if the company isn't necessarily making money.
+[  476.10s ->   479.88s] Like just look at this chart, this screams speculation.
+[  479.88s ->   487.16s] And on top of that, it's valued at $5.3 billion with a B. So yeah, I think this stock is overvalued
+[  487.16s ->   488.16s] at this point.
+[  488.16s ->   490.64s] I don't think this is a long term short in any way.
+[  490.64s ->   495.00s] But I do believe at this very moment, it's a speculation play for buyers.
+[  495.00s ->   498.86s] And speculators get scared very, very easily.
+[  498.86s ->   503.56s] And if buyers are freaking out as the chart goes down, that'll just add the momentum
+[  503.56s ->   507.82s] of the stock to plummet, which in return, our short trade makes money.
+[  507.82s ->   513.22s] So we found three main things, liquidity, an area of supply, then a narrative.
+[  513.22s ->   517.80s] So now that we know how I'm trading the stock, now is the time to put my money where my mouth
+[  517.80s ->   523.08s] is, and enter into the short trade for $60,000.
+[  523.08s ->   524.08s] Here's the plan.
+[  524.08s ->   528.42s] Like I've stated, we were patient enough to not only find this play, but to get a liquidity
+[  528.42s ->   532.88s] grab and a key strong area of supply with this candle right here.
+[  532.88s ->   538.08s] As I'm editing this now, it's now Wednesday, price just entered into our area of supply.
+[  538.08s ->   540.42s] So we can finally enter into this trade.
+[  540.42s ->   543.14s] To be completely honest, I'm kind of nervous.
+[  543.14s ->   545.56s] This is definitely a more volatile stock.
+[  545.56s ->   549.48s] Meaning when it goes up and down, it goes up and down a lot.
+[  549.48s ->   554.06s] But I'm going to stick with the ideal facts and play the game of probabilities and enter
+[  554.06s ->   556.22s] into this trade with 60 grand.
+[  556.22s ->   558.62s] We're going to set our stop loss above these highs.
+[  558.62s ->   561.94s] Our entry price was $19.13.
+[  561.94s ->   568.52s] So if price decides to go up from here, we'll lose around 7%, which is roughly around $4,200.
+[  568.52s ->   571.56s] I could buy a lot of cool things with $4,200.
+[  571.56s ->   577.14s] But if this trade goes in the other direction, we'll play it safe and are going to sell 50%
+[  577.14s ->   580.02s] of our position at this area of demand right here.
+[  580.02s ->   584.76s] And we'll sell the other 50% of our position if price breaks these lows and targets these
+[  584.76s ->   585.76s] previous highs.
+[  585.76s ->   589.54s] If price hits our first target, we'll make around 24%.
+[  589.54s ->   595.70s] And if we're selling only 50% of our shares at this point, we'll make around $7,500.
+[  595.70s ->   602.42s] If price goes all the way down to our second take profit, we'll make an additional $9,000.
+[  602.42s ->   609.68s] So if this trade plays out correctly, we could make a total of $16,500 in one single trade.
+[  609.68s ->   610.68s] Let's see what happens.
+[  610.68s ->   612.18s] It hit or take profit.
+[  612.18s ->   618.68s] Price is now at our area of demand and we sold 50% of our position for a profit of around $7,500.
+[  618.68s ->   622.04s] I'll be posting this video now while I'm still in the trade.
+[  622.04s ->   625.94s] For now, we're in the profit and hopefully price can hit our second target.
+[  625.94s ->   629.92s] If you're watching this video as I upload it, in no way am I saying you should short
+[  629.92s ->   631.08s] this stock now.
+[  631.08s ->   632.28s] It's probably too late.
+[  632.28s ->   637.16s] If you want to see all of my trades live, I posted this exact trade and many others
+[  637.16s ->   641.10s] just like it live in my discord group as I'm entering into them.
+[  641.10s ->   645.56s] I give where I'm entering, where I'm exiting, and basically all the information of why I'm
+[  645.56s ->   647.88s] entering into the stock in the first place.
+[  647.88s ->   649.30s] So yeah, there's that.
+[  649.30s ->   652.64s] If you're interested, I'll leave a link to my discord in the description.
+[  652.64s ->   654.48s] But yeah, that's how you trade stocks.
+[  654.48s ->   655.48s] Try it out.
+[  655.48s ->   656.48s] See you next time.
+[  656.48s ->   659.48s] Here in my garage, just bought this new Lamborghini here.
+[  659.48s ->   660.48s] Knowledge.

@@ -1,0 +1,127 @@
+[    0.96s ->     6.00s] Volatility trading, what is it and how can we accomplish it? Well, for starters, let's take a
+[    6.00s ->    15.12s] look at what makes this theoretically possible. In 1973, Fisher Black, Myron Scholes, and Robert
+[   15.12s ->    21.12s] Burton came up with the Black-Scholes equation. And this is essentially a multi-variable equation
+[   21.12s ->    26.56s] that prices puts and calls, put and call options, based on the following parameters. We have the
+[   26.56s ->    32.72s] strike price, the spot price, volatility, time until expiration, and the risk-free rate.
+[   33.97s ->    39.73s] Now, in academia, it's actually taught relatively backwards as we use this theoretical pricing model
+[   39.73s ->    48.31s] to come up with the fair price of a call or put. It's a very common question on a variety of securities
+[   48.31s ->    56.31s] pricing exams. But in practice, we have a market for options. And based on the law of supply and
+[   56.31s ->    61.59s] demand from economics, we know that any good or service in an economy with rational market
+[   61.59s ->    70.15s] participants will determine the fair price or the equilibrium price of that good or service. And
+[   70.15s ->    78.27s] this equation is actually used inversely to calculate the implied volatility as everything else in a
+[   78.27s ->    85.33s] market is given except the volatility. So inversely applying this based on an existing price allows us
+[   85.33s ->    93.73s] to find the forward-looking or the expected volatility in relative to the current price of the option.
+[   94.45s ->    98.61s] So keep this in mind going forward because we are talking about volatility trading that the
+[   99.17s ->   103.65s] expected volatility or the forward-looking volatility is called implied volatility.
+[  104.98s ->   109.46s] Now, straying away from the concept of volatility for a brief moment, we can look at this
+[  110.02s ->   116.98s] multi-variable equation and we can say, okay, it's essentially a multi-variable function that helps
+[  116.98s ->   123.54s] us arrive at the value of a call and a put. And since it's a multi-variable function, we can partially
+[  123.54s ->   129.94s] differentiate it with respect to its inputs to determine the incremental change each parameter has
+[  129.94s ->   136.90s] on the value of the option, holding all the other variables constant. And when we partially differentiate
+[  136.90s ->   144.02s] with respect to the underlying asset or the spot price of the underlying asset, we arrive at delta.
+[  145.60s ->   151.36s] So let's take a look at the call price. If we partially differentiate with respect to the spot price
+[  151.36s ->   157.12s] of the underlying asset, well, the second term drops out completely because the underlying asset
+[  157.12s ->   163.84s] term isn't present at all. And we are left with just one instance of the underlying asset in the first
+[  163.84s ->   170.00s] term and taking the derivative with respect to the underlying asset just yields one times the
+[  170.00s ->   177.04s] cumulative normal distribution function of D1. And since it's a cumulative normal distribution function,
+[  177.04s ->   185.28s] we know that its range is from zero to one. So a call options delta will always be positive or zero.
+[  186.24s ->   192.16s] Now on the same thought, we can partially differentiate the price of a put option with respect to the spot
+[  192.16s ->   197.20s] price of the underlying asset. And it may look a little more involved, but I can assure you it's not.
+[  197.20s ->   202.72s] If you take a look, the first term, just like the call option drops out completely, and the second term
+[  202.72s ->   210.00s] has one instance of the spot price of the underlying asset. So that turns into one. And if you notice,
+[  210.00s ->   217.76s] the cumulative normal distribution is symmetric. So this property holds true for symmetric distributions,
+[  217.76s ->   224.08s] where one minus the distribution of x is equal to the distribution of negative x. So we can
+[  224.08s ->   230.88s] essentially take that negative out and do the one minus the distribution of x. And if we just
+[  230.88s ->   237.20s] distribute that negative through, then we get negative one plus the normal distribution of D1,
+[  237.20s ->   245.44s] the cumulative normal distribution function of D1. And subtracting one from the cumulative normal
+[  245.44s ->   251.76s] distribution function is the same thing as negative, the cumulative normal distribution
+[  251.76s ->   263.81s] function of D1. So the put delta will always be negative or zero. So that was a lot of mathematical
+[  263.81s ->   268.37s] jargon. We talked a lot about the cumulative normal distribution function. We talked a lot about
+[  269.57s ->   274.69s] partially differentiating the multivariable function that explains an options price.
+[  274.69s ->   280.93s] But instead of just calling that a day and calling that delta, I want to offer a more intuitive
+[  281.57s ->   289.57s] explanation for what delta represents in both the case of a call and a put. So for every $1 change
+[  289.57s ->   296.85s] in the underlying asset, we can expect a change of delta in the price of the option. So that's a very
+[  296.85s ->   304.21s] straightforward way of interpreting delta. So if we have a call option with a spot price of the
+[  304.21s ->   312.13s] underlying asset of 100 and a delta of 0.5, well, for every $1 change in that underlying asset,
+[  312.13s ->   320.05s] so if it moves from 100 to 101, we can expect our call option to increase in the value of delta,
+[  320.05s ->   328.21s] in this case, 0.5 or 50 cents. And that holds true for a negative change as well. So for every negative
+[  328.21s ->   334.85s] $1 change in the underlying asset, we can expect a change of negative delta in the price of the option.
+[  334.85s ->   346.29s] So conversely, if we have a put option and the underlying asset is currently priced at $100 and the
+[  347.49s ->   356.93s] the spot price increases $1, then the value of the put will decrease by delta. So if delta was negative 0.5,
+[  356.93s ->   362.93s] in the case of that put option, then the value of our put would decrease by 50 cents.
+[  364.19s ->   370.83s] So since we're aware of the effect a change in the price of an underlying asset has on an option,
+[  371.63s ->   377.55s] we could take an offsetting position relative to the current option that we're holding to ensure that
+[  377.55s ->   385.15s] a change in value of the underlying asset, which isn't inherently random, doesn't affect our portfolio
+[  385.15s ->   393.49s] value. Okay, now let's use what we know about delta to help solve this example problem. So a large client
+[  393.49s ->   401.17s] wants to buy 100,000 call options on apple. The current strike price is 350. The underlying asset
+[  401.17s ->   409.65s] price or the spot price is 320. The assumed risk-free rate is 8%. The time until expiration is one year.
+[  409.65s ->   416.13s] And the current implied volatility, that is the volatility expected by the market is 30%.
+[  417.41s ->   423.17s] Further assume that research suggests realized volatility will be less than the implied volatility.
+[  423.17s ->   429.57s] Now, what does that mean? Well, as volatility increases, the value of our options increase.
+[  430.29s ->   438.85s] This makes sense is the outcome is further unknown and the right, but not obligation to exercise a call
+[  438.85s ->   447.73s] or a put increases in value. So if the realized volatility will be less than the implied volatility,
+[  447.73s ->   454.05s] that implies that the current price of the option is actually inflated. There's a difference there.
+[  454.05s ->   462.37s] There's a spread and we're hoping to capitalize on this difference to ensure a profit. So further,
+[  462.37s ->   469.17s] let's consider our team has opposing views on the direction of apple within the year. So we don't know
+[  469.17s ->   474.93s] or we don't have an opinion on whether or not we're bullish or bearish on apple. So we're tasked with
+[  474.93s ->   480.13s] establishing a portfolio to take advantage of the potential volatility spread while mitigating
+[  480.13s ->   488.56s] directional risk. Alrighty. So here we are in Python and I've already taken the liberty of establishing
+[  488.56s ->   497.92s] a call and put class. And these classes help us find the theoretical price and consequently the delta
+[  497.92s ->   504.80s] for each respective option type based on the Black-Scholes equation. And this will be available
+[  504.80s ->   510.16s] on my GitHub. I'll put a link to it in the description below. And I want to show you how we can use
+[  510.16s ->   518.16s] this to establish the portfolio that the example prompted us to. So for starters, we need to create
+[  518.16s ->   525.04s] an instance of the call class. So we're going to say call and the call is going to take the spot price
+[  525.04s ->   534.16s] of the underlying assets. So in the case of our 100,000 apple calls, the spot price was 320. The asset
+[  534.16s ->   543.04s] volatility, so the implied volatility was 30%. The strike price was 350. The time until expiration was
+[  543.04s ->   554.29s] one year and we assumed a risk-free rate of 8%. So if we want to use this call instance to find the
+[  554.29s ->   561.01s] price of the call option, well, all we have to do is print the price field that's a part of the option
+[  561.01s ->   573.10s] in the class. Printing the price field, we get $36.81 per option. Now, similarly, if we wanted to find the delta,
+[  573.66s ->   585.50s] then all we would have to do is print the delta field. And after we run it, we get a delta of 0.5469,
+[  585.50s ->   593.62s] approximately 0.55. So how does knowing delta help us construct a portfolio that mitigates directional
+[  593.62s ->   603.73s] risk? Well, let's consider the fact that every time apple changes by $1, the value of the call
+[  603.73s ->   613.17s] will change by delta. So as apple increases by $1, the value of the call option will increase by
+[  613.17s ->   621.92s] approximately 55 cents. Now, what does this mean for our position? Well, we're short 100,000 call
+[  621.92s ->   630.24s] options. So that means as the price of apple rises, we're going to be losing money. So the option is
+[  630.24s ->   635.36s] going to be appreciated, but in our position, we're going to be losing money because we're the ones writing
+[  635.36s ->   642.64s] the option. So we're going to want to take an offsetting position in the underlying asset. And what
+[  642.64s ->   648.96s] that means is we're going to be using delta to determine how many shares of the underlying asset
+[  648.96s ->   656.48s] we should buy or sell depending on our position to offset the directional risk. So in our case,
+[  656.48s ->   667.60s] we have 100,000 options. We have sold or written 100,000 call options. So if we print this value,
+[  667.60s ->   682.21s] we should in theory to mitigate directional risk, we should go long 54,695 shares of apple.
+[  683.09s ->   694.13s] So why do we want to go long 54,695 shares of apple if we've sold or written 100,000 call options in this
+[  694.13s ->   699.89s] case? Well, let's look at it from the perspective of our client. Our client is essentially long apple.
+[  699.89s ->   705.33s] He's hoping that apple increases in price because he's going to gain additional value for his option
+[  705.33s ->   711.97s] and that has a greater chance of expiring in the money. So if apple's price increases by one dollar,
+[  711.97s ->   719.81s] according to our interpretation of delta, his option will increase in value by approximately 54 cents per
+[  719.81s ->   727.09s] option. Now, where is that value coming from? Well, it's coming from our side. Financial derivatives
+[  727.09s ->   732.37s] are a zero sum game. There's always a winner and a loser and we're the ones losing in that case.
+[  732.37s ->   743.09s] So we want to offset that exposure and to offset that exposure, we can buy 54,695 shares of apple because
+[  743.09s ->   753.17s] if apple increases by one dollar, our option position may decrease by 54,695 dollars. However,
+[  753.81s ->   764.93s] we also have a new position in the underlying asset that will have increased in value by 54,695 dollars,
+[  764.93s ->   772.67s] effectively mitigating our directional exposure. Now, you may be wondering if we can't make money
+[  772.67s ->   778.35s] by the direction the asset moves in. How are we expecting to profit from this position? Well,
+[  778.35s ->   784.83s] if you remember, our initial assumption was that research suggested that the implied volatility was
+[  784.83s ->   792.67s] overstated. In other words, the current option value was overpriced for the volatility yet to come or the
+[  792.67s ->   800.11s] volatility to be realized by this market. And that is a volatility spread that we're hoping to profit from.
+[  800.11s ->   807.79s] So by mitigating directional risk, taking a long position in the underlying asset, we've enabled
+[  807.79s ->   813.47s] ourselves to receive exposure from the only variable that's productive based on our market research,
+[  813.47s ->   821.71s] and that is volatility. Now, to formally answer the question from the slides, our portfolio consists of a
+[  821.71s ->   835.79s] short position in 100,000 call options on apple and a long position in 54,695 shares of apple. So that's basically volatility trading.
+[  835.79s ->   845.71s] By establishing a risk neutral or a delta neutral portfolio, we're able to speculate on changes in volatility going forward
+[  845.71s ->   853.71s] without having to worry about the direction that the underlying asset moves in. I do, however, want to offer a word of caution
+[  853.71s ->   861.71s] as there are some issues maintaining a risk neutral portfolio that I'd like to discuss. And the first one is that we are essentially building
+[  861.71s ->   870.11s] a portfolio based on a linear approximation of a non-linear function. Now, what do I mean by that? Well,
+[  870.11s ->   877.95s] the position that we have in our option, the price of our option is a non-linear function. It takes five variables
+[  877.95s ->   887.31s] to determine the options price. And delta is just the first derivative of that function. And what do I
+[  887.31s ->   896.51s] mean by that? Well, as price changes over time, delta will change by larger and larger values and smaller
+[  896.51s ->   903.87s] and smaller values depending on where we are in the options pricing function. That means that as the underlying
+[  903.87s ->   912.19s] asset deviates from the initial spot price that you hedge at, we will have to readjust our position,
+[  913.07s ->   921.79s] buying or selling the underlying asset to re-neutralize or make our portfolio risk neutral or mitigate
+[  921.79s ->   928.83s] directional risk again. And the reason I wanted to bring that up and briefly discuss it is because
+[  928.83s ->   936.35s] there are transaction costs associated with the rehedging. And in addition to transaction costs,
+[  936.35s ->   943.63s] you also have a P&L and that P&L could be positive or negative. You may be, you may have to buy more
+[  943.63s ->   950.67s] shares or sell more shares. And I want you to keep in mind that there isn't necessarily an optimal place
+[  950.67s ->   956.11s] to rehedge. That's going to have to be at your own discretion. There's, there's no perfect cost
+[  956.11s ->   962.35s] function explaining, or if there is, and I'm unaware of it, but there is no perfect cost function
+[  962.35s ->   969.63s] explaining when to rehedge relative to your initial hedge. So just something to keep in mind going
+[  969.63s ->   972.91s] forward as you begin to trade volatilities.

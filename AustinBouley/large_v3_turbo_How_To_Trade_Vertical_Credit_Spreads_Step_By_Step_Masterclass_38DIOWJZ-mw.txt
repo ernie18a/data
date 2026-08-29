@@ -1,0 +1,288 @@
+[    0.22s ->     5.30s] Welcome to this masterclass training on mastering credit spreads in 20 minutes or less.
+[    5.38s ->     7.66s] So let's just jump right into it because I don't want to waste your time.
+[    8.28s ->    13.14s] All right, as a disclaimer, you have to understand this video is purely for education and research.
+[   13.28s ->    16.46s] And so it's just to be funny and kind of help you learn how to do stuff.
+[   16.58s ->    19.16s] But it is not intended to be financial advice.
+[   19.28s ->    22.62s] I am not a financial advisor, a tax expert or anything like that.
+[   22.82s ->    25.84s] So please consult one if you want a licensed opinion.
+[   26.40s ->    29.14s] All right, the agenda for today's video is what are options?
+[   29.14s ->    34.82s] Understanding the Greeks, what are credit spreads, credit spread trading rules, how to place a credit spread trade,
+[   35.24s ->    41.02s] do I need to monitor credit spreads, and how to manage risk with credit spreads as well as some real-time opportunities.
+[   41.22s ->    42.52s] So let's get into it.
+[   43.06s ->    44.50s] Number one, what are options?
+[   44.62s ->    47.92s] Well, options are contracts on stocks that give you special rights.
+[   48.32s ->    50.52s] So for instance, we'll explain what each one of those are.
+[   50.60s ->    55.98s] But just so you know, for reference, each one options contract represents 100 shares.
+[   55.98s ->    60.22s] So if you buy a one options contract, it's like you're holding 100 shares.
+[   60.54s ->    63.52s] And this is where the leverage idea comes into effect.
+[   63.82s ->    73.40s] Instead of having to buy 100 shares of a $15 stock, you can buy one contract for, let's say, $100 and control the price movement of 100 different shares.
+[   73.78s ->    79.72s] Before I get too into the depths, that's just basically just know that one options contract is equivalent to 100 shares.
+[   79.72s ->    82.84s] So there are two different types of options contracts.
+[   83.00s ->    85.10s] There are call options and put options.
+[   85.62s ->    91.58s] Call options, the actual definition is it gives you the right to buy a stock at any given price.
+[   91.98s ->    94.70s] What you actually need to know is this bullet point.
+[   94.94s ->    98.94s] Call options contracts go up in value as the stock goes up.
+[   99.00s ->   101.22s] So call options are betting on the stock to move higher.
+[  101.90s ->   105.32s] Put options gives you the right to sell a stock at any given price.
+[  105.32s ->   110.10s] Or what you need to know is a put option goes up in value as the stock goes down.
+[  110.42s ->   113.62s] So if you want to make money from the stock going up, you buy a call option.
+[  113.78s ->   117.12s] If you want to make money from the stock going down, you buy a put option.
+[  117.20s ->   121.02s] And those are the two different ones we're going to be learning about and playing with in today's video.
+[  121.72s ->   124.66s] So if you buy options, you have to pay a price, right?
+[  124.70s ->   125.80s] The same way with stocks.
+[  125.82s ->   129.60s] If you buy a stock, you have to pay a certain price to get those shares.
+[  130.14s ->   133.52s] Now, if you sell options, you receive a premium or a credit.
+[  133.52s ->   138.18s] So what happens is this is a zero-sum game just like this stock world.
+[  138.38s ->   143.18s] Options are a zero-sum game, which means that for every buyer, there must be a seller.
+[  143.54s ->   147.22s] So if you have to buy or you have to pay money to buy an option,
+[  147.54s ->   151.14s] that means if you sell the option, somebody is paying you for that option.
+[  151.54s ->   155.16s] So instead, you receive money or what we call a premium or a credit.
+[  155.54s ->   157.70s] So if you are selling an option, you receive premium or credit.
+[  157.94s ->   159.68s] If you're buying, you have to pay a price.
+[  159.68s ->   165.02s] Options, in order to trade options, specifically credit spreads,
+[  165.08s ->   166.94s] is what we're talking about in today's masterclass.
+[  167.24s ->   170.24s] You need to have options approval on your account.
+[  170.46s ->   174.24s] And you also need to have a margin account with your broker to sell options.
+[  174.34s ->   177.10s] And again, we're going to be selling options for credit spreads.
+[  177.42s ->   182.02s] So again, you can do that in any broker, TD Ameritrade, Fidelity, E-Trade, Robinhood.
+[  182.32s ->   184.88s] You just simply go into the settings, click on options trading.
+[  184.88s ->   188.84s] They typically require you to take a risk assessment quiz, and then they approve you.
+[  188.96s ->   189.74s] It shouldn't be too hard.
+[  190.38s ->   192.52s] All right, now let's look at an options chain.
+[  192.60s ->   198.08s] This is probably what you're seeing when you log on to TD Ameritrade, Fidelity, E-Trade, or anything like that.
+[  198.40s ->   200.08s] What in the world does this whole chart mean?
+[  200.14s ->   201.96s] Well, I'm going to break it down step by step.
+[  202.30s ->   204.12s] In the middle, you have your strike price.
+[  204.22s ->   206.80s] For every option, there's a couple things you need to know.
+[  207.08s ->   210.52s] It has either a call or a put is what the options contract is.
+[  210.52s ->   215.88s] Each contract, though, has what is known as an expiration date when that contract expires.
+[  216.04s ->   218.54s] Options contracts are only good for a certain amount of time.
+[  218.94s ->   225.72s] So again, you have an expiration date when that contract becomes no longer valid and the contract expires or gets executed.
+[  226.18s ->   234.08s] And you also have a strike price because each options contract is betting on the stock to be at or near a certain price.
+[  234.46s ->   236.00s] So for instance, this is Amazon.
+[  236.20s ->   239.30s] You can see here $14.50, $14.47, $14.45.
+[  239.30s ->   246.94s] So if I think the market's going to get to $14.45 by going up, then I would buy a call around $14.45, just a rough example.
+[  247.46s ->   253.84s] So that, again, is what the strike price is, where you think the stock price will be by the end of this expiration date.
+[  254.82s ->   258.64s] Next, the most important ones are bid and ask price.
+[  258.70s ->   260.88s] So you probably see this on most of your trading platforms.
+[  261.36s ->   263.90s] The bid price is where the buyers are trying to buy.
+[  264.20s ->   266.78s] The ask price is where the sellers are trying to sell.
+[  266.78s ->   273.90s] So, again, you can sell here and you can buy here, but if you want to get executed quickly, then you want to sell at the bid.
+[  274.02s ->   275.36s] Why? Because these are where buyers are.
+[  275.44s ->   278.46s] So if you sell at the bid, you will get filled instantly.
+[  278.88s ->   280.08s] The same thing with the ask.
+[  280.16s ->   284.20s] If you buy at the ask price, then you'll get filled instantly as well.
+[  284.44s ->   286.72s] So it really just depends on how fast you're trying to enter.
+[  287.18s ->   289.18s] Next, you want to make sure you monitor volume.
+[  289.36s ->   292.64s] Volume changes every single day, as in volume resets each day.
+[  292.64s ->   298.22s] So if you're looking at the beginning of the day and volume is zero, then it may not be a good indication.
+[  298.92s ->   301.74s] But volume shows the number of contracts traded that day.
+[  302.08s ->   305.34s] And like I said, just like the stock world, options are a zero-sum game.
+[  305.68s ->   309.84s] So what happens is you need to make sure you have volume in order to get in and out of these trades.
+[  311.18s ->   311.98s] Understanding the Greeks.
+[  312.06s ->   315.16s] So there are a lot of Greeks or different things you need to understand about options.
+[  315.26s ->   316.52s] Number one is theta decay.
+[  317.04s ->   320.86s] Theta is the rate of decline of an options contract due to the passage of time.
+[  320.86s ->   323.94s] So remember how we mentioned all contracts have an expiration date?
+[  324.06s ->   325.34s] Let's say it expires here.
+[  325.74s ->   330.18s] Well, all the way up until that expiration date, if nothing else changes in the stock price,
+[  330.58s ->   332.76s] the options contract will just lose value.
+[  333.08s ->   334.24s] And why is this important?
+[  334.32s ->   339.00s] Well, because if you bought the contract here at $5 and the stock doesn't move for the next 30 days,
+[  339.38s ->   339.98s] then guess what?
+[  340.02s ->   343.22s] It's going to be worth zero by the end of those 30 days.
+[  343.36s ->   347.20s] So because that's just how theta decay works with the presence of time.
+[  347.20s ->   352.48s] Now, if you're buying at $5 and then it goes down to zero, you're losing a 100%.
+[  352.48s ->   357.20s] But if you're selling the contract, which means they're giving you $500 to place this trade,
+[  357.54s ->   359.24s] how do you make money when you sell something?
+[  359.30s ->   360.72s] Well, you want it to decrease in price.
+[  360.78s ->   365.50s] So if you can buy it back for $1 or close to zero later, that means you've made this whole money.
+[  365.92s ->   370.94s] So theta decay really helps option sellers because it helps them decrease the options value
+[  370.94s ->   372.50s] and buy back at a cheaper price.
+[  372.76s ->   374.80s] The last one that I want to cover is delta.
+[  374.80s ->   377.10s] Delta is the sensitivity of a price change.
+[  377.46s ->   384.06s] So again, if you have a one delta, that means if the stock moves $1, the options contract will also move $1.
+[  384.48s ->   389.40s] If you have a 0.5 delta, that means if the stock moves $1, the options contract will move 50 cents.
+[  389.82s ->   393.38s] But what this also shows, it shows the probability of it expiring in the money.
+[  393.66s ->   398.96s] If you have a 0.5 delta, that means there's a 50% chance of the stock expiring in the money.
+[  399.28s ->   402.64s] Now again, when you are selling options, you want it to expire out of the money
+[  402.64s ->   404.00s] because that is how it becomes worthless.
+[  404.80s ->   406.88s] Okay, what are credit spreads?
+[  407.00s ->   411.58s] Credit spreads are a directional options play where you make money if the stock goes in your direction
+[  411.58s ->   412.86s] or slightly against it.
+[  413.38s ->   418.26s] Credit spreads are a special option strategy that you get by combining options in a certain way.
+[  418.36s ->   419.66s] Resell one and buy another.
+[  420.10s ->   426.84s] It's created by selling one option and buying a cheaper one to define the risk trade and collect money in the process.
+[  427.02s ->   428.58s] Don't worry about the complex words.
+[  428.64s ->   431.14s] I'm going to be giving you some image examples here soon.
+[  431.14s ->   434.52s] All right, here is a put credit spread explained.
+[  434.92s ->   440.76s] So for instance, we have a strike price here, a strike price here, and this is what the stock price is doing if we follow this as a stock.
+[  441.10s ->   449.88s] Anyways, what we do is we buy a strike price that is closer to the current stock price and we collect a premium for that or collect a credit for that.
+[  449.88s ->   462.42s] Then if we did that, then we would have a limited potential profit and we'd have unlimited risk because we sold something and it could potentially go against us forever.
+[  462.76s ->   468.04s] So what we do is we buy the next strike down and we buy that contract.
+[  468.04s ->   469.90s] That way it limits our loss.
+[  470.00s ->   471.70s] So it's called a defined risk trade.
+[  471.82s ->   471.94s] Why?
+[  472.10s ->   475.86s] Because now we have a limited loss and we like having limited losses.
+[  476.00s ->   477.62s] No one likes having unlimited losses.
+[  478.34s ->   481.14s] Anyway, so that's essentially what it looks like.
+[  481.22s ->   482.90s] So we buy it like this.
+[  483.20s ->   487.08s] If the stock stays above our break-even price, then we make money.
+[  487.20s ->   490.86s] If the stock goes below it, then we lose money and we can only lose the max amount.
+[  491.24s ->   495.34s] So that is how this trade works is buying at a strike price where you think the stock will never get to.
+[  495.52s ->   497.38s] So let's put this into context.
+[  497.38s ->   503.10s] Let's say this right here is a 100-strike put and this right here is a 99-strike put.
+[  503.50s ->   510.48s] So because the 100-strike put is closer to the current stock price, what we have is that we could sell for $1.20.
+[  511.16s ->   516.12s] So we're going to sell it for $1.20 and we're going to buy the one below it for $1.
+[  516.44s ->   517.32s] So what's our difference?
+[  517.38s ->   524.00s] If we get $1.20 and we have to pay $1 for this one, that means we're left with $0.20.
+[  524.00s ->   526.08s] That means we have a net credit of $20.
+[  526.08s ->   531.82s] Because although we collect $0.20, each option, like I mentioned before, represents 100 shares.
+[  532.18s ->   534.40s] So $0.20 times 100 gives us $20.
+[  534.90s ->   538.50s] So we collect $20 of credit for putting on this put credit spread.
+[  538.92s ->   541.82s] So we have this spread here and that's how it kind of works.
+[  541.90s ->   547.32s] Now the collateral, the money that we have to put up for placing this trade is simply $100.
+[  547.68s ->   547.84s] Why?
+[  547.84s ->   550.02s] Because that is the difference between these two things.
+[  550.08s ->   552.70s] This is a $1 wide strike, right?
+[  552.78s ->   554.60s] Between $100 and $99 is $1.
+[  555.00s ->   557.94s] But since we're options, we're going to multiply that by 100.
+[  558.08s ->   559.38s] So that means our risk is $100.
+[  559.84s ->   563.16s] So we have to put up $100 for every spread we trade.
+[  563.56s ->   566.82s] So that means we have a max profit of $20 and a max loss of $80.
+[  567.00s ->   567.46s] Why $80?
+[  567.46s ->   572.12s] Well, because we're max losing $100, but we collected a credit of $20.
+[  572.48s ->   575.96s] And so the $20 is going to offset the $100 and we have a max loss of $80.
+[  578.12s ->   581.22s] So what are some credit spread trading rules that we need to remember?
+[  581.68s ->   584.20s] Well, this is 10% credit spreads.
+[  584.30s ->   588.52s] And so everything kind of revolves around 10% because that's the magic number that I found
+[  588.52s ->   590.78s] on all the statistics for credit spreads.
+[  591.02s ->   594.20s] You should aim for a 10% return on any given trade.
+[  594.20s ->   597.48s] I personally like to aim for 15% of the collateral.
+[  597.92s ->   604.60s] So again, the credit collected divided by the collateral, 15 cents or $15 divided by 100
+[  604.60s ->   607.54s] gives me a 15% return for that trade.
+[  607.68s ->   610.64s] That is your ideal premium collection.
+[  610.82s ->   614.20s] You want to at least collect 10%, but if not around 15%.
+[  615.00s ->   620.56s] Next rule is, and you should only ever put 10% of your account into any one trade.
+[  621.08s ->   621.54s] Why?
+[  621.54s ->   627.00s] Well, because you can lose a lot more than you can make when trading credit spreads.
+[  627.14s ->   630.78s] And so in order to have the math work out in your favor, where you don't have huge losses
+[  630.78s ->   634.98s] that offset all your wins, you need to make sure you're only using 10% of your account.
+[  635.12s ->   639.84s] Because if you put 100% of your account and happen to experience a loss, you just lost 80%
+[  639.84s ->   640.38s] of that account.
+[  640.78s ->   642.56s] So that is why that it is.
+[  642.64s ->   646.04s] Now, again, if you're trading with under 1,000, then again, you want to use one spread.
+[  646.30s ->   650.66s] If you want to know the exact account or number of spreads you should put on per trade,
+[  650.66s ->   657.40s] you can go to the trading platform, 10%creditspreads.com, and there's actually a trade sizing calculator
+[  657.40s ->   657.70s] there.
+[  658.54s ->   658.86s] Okay.
+[  659.06s ->   660.70s] How do we place a credit spread?
+[  660.80s ->   666.32s] Well, again, I'm going to go very high level on this because in 10%creditspreads.com, in
+[  666.32s ->   672.68s] that platform, there is a video broker walkthrough that shows you how to place a trade with each
+[  672.68s ->   674.98s] different type of broker and explains it all there.
+[  674.98s ->   679.34s] But essentially, what we do is we find the expiration date we're looking for, we find
+[  679.34s ->   684.00s] the strike price we're looking for based on the alert or basically based on where we think
+[  684.00s ->   686.44s] the stock will stay above for a put spread.
+[  686.64s ->   689.66s] We want to find a price where we think the stock will stay above.
+[  689.76s ->   694.16s] Because as long as the stock price stays above this by this expiration date, then we keep
+[  694.16s ->   697.12s] all the money they gave us and get our collateral back.
+[  697.48s ->   699.28s] So again, we're going to sell the first one.
+[  699.28s ->   703.80s] So the $3.88, we're going to sell that for what looks like it'd be roughly $2.03, and
+[  703.80s ->   709.18s] then we're going to buy the one right above it, or the $1.87, if you want to consider the
+[  709.18s ->   712.34s] strike price right under, we're going to buy it for $1.83.
+[  712.78s ->   715.30s] So that's going to give us a 20 cent credit.
+[  715.66s ->   719.62s] So we're going to collect $20 for putting on this spread, and we make money as long as
+[  719.62s ->   722.92s] the stock stays above $3.88 by expiration date.
+[  722.96s ->   725.18s] If not, then we have a max loss of $80.
+[  725.18s ->   729.40s] Now for a call spread, it's the exact inverse.
+[  729.74s ->   734.82s] Instead of wanting a stock to stay above a certain price, we want the stock to stay below
+[  734.82s ->   735.82s] a certain price.
+[  736.12s ->   741.94s] So for instance, $4.07 here, I want the stock to stay below $4.07, and then so I'm going
+[  741.94s ->   749.58s] to sell the $4.07 call at around $162, and I'm going to buy the one above it at $138.
+[  749.70s ->   752.32s] So again, that's math that I don't want to do right now.
+[  752.32s ->   755.48s] But it looks like probably, if I was to guess, roughly $24.
+[  756.32s ->   760.52s] So you'll get around $24 in credit for putting on this trade.
+[  760.86s ->   764.00s] And so that's how that works in a call spread versus a put spread.
+[  764.86s ->   768.72s] So do I need to monitor my credit spread trade?
+[  769.06s ->   771.94s] So again, no, you do not need to monitor your credit spread trade.
+[  772.06s ->   775.66s] Credit spread trades are basically meant to expire.
+[  775.66s ->   779.66s] But what I wanted to stress here is there's a difference between daily price movement
+[  779.66s ->   785.76s] or the P&L swings you will experience in your account while holding a credit spread, and
+[  785.76s ->   789.18s] the credit spread end goal that's based on expiration strike.
+[  789.50s ->   795.92s] When we place a credit spread, for instance, a put credit spread, our whole goal is to make
+[  795.92s ->   800.86s] sure the stock stays above $3.88 by this expiration date.
+[  800.86s ->   804.74s] And based on the strategies we trade, which you can learn about in this strategy master
+[  804.74s ->   811.02s] class, we can have a 94, not even a 99% success rate on knowing if it's going to stay above
+[  811.02s ->   813.44s] this strike price.
+[  813.72s ->   817.70s] And so what we do is we place that trade, and our whole goal is to let it expire.
+[  818.12s ->   822.56s] However, if you're holding on to a credit spread, you're going to see daily price movement based
+[  822.56s ->   823.58s] on how the stock trades.
+[  823.84s ->   827.66s] If it's a put credit spread, as the stock moves higher, you'll make money.
+[  827.66s ->   830.28s] And as the stock goes down, you'll lose money.
+[  830.42s ->   831.80s] And you'll see that in the P&L.
+[  831.88s ->   833.04s] The P&L will start to swing.
+[  833.12s ->   834.30s] It'll be like, oh, today I'm up 20.
+[  834.38s ->   835.86s] Oh, today I'm down, whatever.
+[  836.24s ->   841.00s] Now, again, you can only ever gain the max profit of $100.
+[  841.36s ->   844.54s] You can only ever lose your max loss of $80.
+[  844.92s ->   845.90s] So that's kind of how you'll see.
+[  845.98s ->   851.28s] So you won't see a win or loss greater or larger than that when you combine your options.
+[  851.72s ->   853.82s] But what you will see is a P&L swing.
+[  853.92s ->   856.28s] Here is a one month example of an options contract.
+[  856.28s ->   859.58s] You can see how much it moves over time and all this movement.
+[  859.72s ->   862.50s] Again, you can see over time it just decays because of theta decay.
+[  862.64s ->   865.60s] So the price does eventually just get lower and lower and lower.
+[  865.94s ->   868.24s] That's just how time decay works.
+[  868.48s ->   872.16s] But again, you can see here the options contract will move on a daily basis.
+[  872.40s ->   874.38s] But you don't need to be concerned with that.
+[  874.46s ->   880.00s] You're not trying to capture the return from the option credit spread price moving.
+[  880.30s ->   883.08s] You only want to focus on the end goal.
+[  883.08s ->   886.94s] Is it going to be above my strike price by this expiration?
+[  887.10s ->   889.42s] That is the only thing we are concerned about.
+[  889.52s ->   892.98s] And using the strategies we're using, you really just set it and forget it.
+[  893.58s ->   900.84s] So there's no need to monitor your trade because the credit spread strategy is designed to let it expire.
+[  901.02s ->   903.52s] It's designed for you to put it on and then leave it alone.
+[  903.52s ->   914.40s] However, if you want to manage your trades, if you want to monitor them and you want to manage them early, not only will I announce that in the Discord group, but you will also, here are two main rules.
+[  914.74s ->   922.46s] One, if the credit for a spread is less than or five cents or less, then buy the credit spread back to exit and move on to the next trade.
+[  922.46s ->   929.28s] So for instance, let me go back and see here, this put credit spread trade we could put on for 20 cents.
+[  929.46s ->   936.78s] Let's say as time goes on, it stays roughly the same price because of theta decay, this spread now becomes worth five cents.
+[  936.96s ->   942.64s] If it becomes worth five cents and there's still a few days left, there's no point just letting those few days go on.
+[  942.88s ->   950.12s] We can sell it because we're going to collect a bulk of the premium, 20 cents, and we can buy it back for around four or five cents.
+[  950.12s ->   958.66s] So we're going to collect 15 cents, so that's roughly all of the credit that we receive, so we get to collect most of our credit, and now we can move on to the next trade.
+[  958.94s ->   963.88s] So that is the idea of managing early if your spread is less than five cents.
+[  964.34s ->   967.84s] Now, this one is regarding to expiration date for the second early managed rule.
+[  968.16s ->   972.52s] If the stock is below the lowest strike price, this is again for a put credit spread, right?
+[  972.52s ->   988.74s] If the stock price is below this one right here, then our rule is, or on expiration day, then our rule is, and you can buy it back for less than the max loss, then buy the credit spread back to exit.
+[  988.74s ->  1015.28s] For instance, just because it's designed to let it expire, which means you've experienced the max loss, doesn't mean you have to, because you can buy it back, especially on expiration day, due to theta, if the credit spread is trading at, let's say, 65 cents, and your max loss is 85 cents, then you should just buy it back at 65, instead of letting it expire and experiencing the whole 85 cent loss.
+[ 1015.28s ->  1021.22s] So again, we can buy back on expiration day to a certain point and limit our max loss.
+[ 1021.68s ->  1024.28s] So how do we manage risk with credit spreads?
+[ 1024.38s ->  1031.88s] Well, there is one horror story you can go on YouTube and find where someone lost $30,000 with a $1 wide credit spread.
+[ 1032.20s ->  1038.04s] Again, they were using multiple different credit spreads, and this is an isolated case due to something specific.
+[ 1038.22s ->  1042.34s] But again, if you pay attention to the rules I will explain here, this will never happen to you.
+[ 1042.34s ->  1051.38s] So again, that trade happened because let's say we sold, right, let's say it's a put credit spread, and we want it to stay above this strike price, and we bought this one.
+[ 1051.66s ->  1057.40s] What happened was is the stock came in between, and the stock closed in between our two strike prices.
+[ 1057.82s ->  1061.40s] Most brokers will handle this correctly, but in this instance, it didn't.
+[ 1061.40s ->  1072.84s] So what happened was this one expired, and they executed their option towards the end of the day, so they had to sell this one anyways, a whole mess.
+[ 1072.94s ->  1075.00s] How you avoid this, though, is quite simple.
+[ 1075.38s ->  1081.04s] On expiration day, if the stock is between your two strike prices, just buy it back.
+[ 1081.18s ->  1084.58s] You're going to buy it back for maybe four or five cents max.
+[ 1084.58s ->  1092.90s] And so you're going to make a lot of money from your credit, and you don't have to worry about this one rare case that hardly ever happens, but you can avoid it if you want to that way.
+[ 1093.30s ->  1098.66s] If the stock is above it, you can just let the stock expire because there is no risk here.
+[ 1099.00s ->  1102.60s] Now, let's say you have this credit spread on, and you know your max risk.
+[ 1102.66s ->  1104.44s] Let's say you collected $15 in credit.
+[ 1104.64s ->  1107.46s] That means your max risk is $85.
+[ 1107.46s ->  1116.08s] That means that the stock is right here trading at $200, and it drops all the way down to zero, which means the stock literally collapses.
+[ 1116.62s ->  1117.04s] Guess what?
+[ 1117.08s ->  1119.24s] Your max loss is only ever $85.
+[ 1119.62s ->  1121.16s] It's the max you can ever lose.
+[ 1121.60s ->  1132.80s] But again, during a certain phase on expiration day, even if the stock is below this amount by around 1%, you can even buy that spread back and experience less than the max loss.
+[ 1132.80s ->  1142.13s] So again, if you want to learn how to take advantage of credit spreads, make sure to follow the Discord alerts and use the Trade Ideas Algo on the dashboard.
+[ 1142.53s ->  1144.13s] Again, I am here for you.
+[ 1144.33s ->  1147.93s] I want to support you, and I want to make sure you fully understand credit spreads.
+[ 1148.27s ->  1151.33s] Make sure to attend one of my office hours on Discord.
+[ 1151.57s ->  1159.75s] I aim to do two a week so that you can get your questions answered to make sure you fully understand credit spreads, what's going on, your profit potential, and risk.
+[ 1159.75s ->  1162.43s] All I want to say with you is thank you so much for watching this video.
+[ 1162.61s ->  1178.49s] Credit spreads are the easiest and number one way to consistently profit from the market, generate income, and replace your full-time job because they are consistent, they are reliable, and the strategies we use, you will win 94% of the time.
+[ 1178.83s ->  1179.51s] All right, guys.
+[ 1179.67s ->  1182.69s] This was Mastering Credit Spreads in 20 Minutes.
+[ 1182.99s ->  1187.95s] I am your host, Professor Austin, as you will see me on Discord, and I will see you in the next masterclass.

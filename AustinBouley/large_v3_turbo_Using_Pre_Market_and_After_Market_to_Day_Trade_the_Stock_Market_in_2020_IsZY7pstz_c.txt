@@ -1,0 +1,60 @@
+[    0.46s ->    18.68s] Hey guys, what's up? It's ABTrades, and today I want to do a video talking about how you can use aftermarket and pre-market movement of a stock to determine where it will go, help you draw support and resistance lines, as well as to determine the strength and the direction that it's moving.
+[   18.68s ->    35.48s] So, I have a few examples of stocks recently that have showed these same qualities, such as movement in the after and pre-market that has definitely helped throughout the rest of the trading day.
+[   35.48s ->    56.40s] So, the biggest example that I can think of first is NVIDIA from Thursday. So, as we can see here, this is all the movement we did on Wednesday. On Thursday, or on Wednesday aftermarket, we have an aftermarket high here and an aftermarket low here.
+[   56.40s ->    69.06s] So, I put a line straight through here and a line straight through there. Then, in the morning, we gap up. We put a pre-market high here and a pre-market low here.
+[   70.24s ->    79.40s] So, in the morning, first thing in the morning, I chart out these, as well as what happens if it drops below this level. Where is my next support?
+[   79.40s ->    89.84s] I look to the previous day's lows, which is 256. So, I put a line there as well. It had earnings, so that's why it dropped so much.
+[   91.05s ->   104.07s] But, the fundamental trading based off support and resistance, why does it work? Because it's crucial and fundamental to the trading of stocks.
+[  104.07s ->   111.71s] It has always been around. People understand significant levels. They understand, hey, at this price, this happened before.
+[  112.03s ->   119.41s] If it happened at this level and this price before, most likely it will happen again. When a lot of people see that, it's going to happen.
+[  120.46s ->   127.14s] So, we have these lines here drawn out and it respects it throughout the whole day. Will a stock always respect these lines?
+[  127.14s ->   132.20s] No, but it will help give you an indication of how to trade the rest of the day.
+[  132.66s ->   139.04s] For example, in the morning, we drop straight below this pre-market support. We just start crashing.
+[  140.18s ->   145.78s] Then, we continue to drop below this next support level. Then, we drop through this next support level.
+[  146.16s ->   150.66s] Then, we drop all the way down here to the support level that we drew at the beginning from the previous day.
+[  150.66s ->   163.26s] Where do you take a put position? Well, you either take it right after you cross below this one, right after you cross below this one, right after you cross below this one, and you hit support, right?
+[  165.78s ->   167.24s] Sometimes, it's just...
+[  167.24s ->   175.72s] So, stocks, when they're trading, don't always give you quality setups, but when they do, you need to be ready to take advantage of it.
+[  176.28s ->   177.50s] Why do you enter here?
+[  177.50s ->   181.41s] Why do you enter here? Or, if you want to wait, why do you enter here?
+[  183.33s ->   189.13s] Well, it's obvious. Your risk to reward is a lot better when you enter right under the break.
+[  189.57s ->   196.99s] Because, if you enter here, you're risking this much, but you're looking to stand and reward at least this much, or even this much.
+[  197.57s ->   201.91s] Okay? If you enter here, you're risking this much for a reward of this much, right?
+[  202.15s ->   203.91s] Your risk to reward just gets way less.
+[  203.91s ->   217.05s] But, as we can see here, throughout the rest of the day, we validate this support, then we come up, and we just respect all these trend lines, and it just makes it an easy trading day throughout the week.
+[  217.91s ->   226.69s] Make sure you're charting previous days highs, previous day lows, as well as significant levels in the after and pre-market to help you trade the rest of the day.
+[  226.69s ->   230.67s] Okay. I hope you all learned something from not finishing the video yet.
+[  231.43s ->   236.87s] It's late, guys. It's like 11 here, and I'm just trying to catch up on making videos, to be honest. I'm tired.
+[  237.71s ->   242.43s] Okay. Macy's, it had earnings, crashed, right?
+[  242.43s ->   250.01s] We put in a significant pre-market level here, so we're going to put a line there, and also another pre-market level here.
+[  250.41s ->   258.09s] So, we're looking to either go long above 40, or go short below 38.80.
+[  258.29s ->   258.43s] Okay?
+[  259.25s ->   265.09s] So, as we can see here, just the momentum to the downside pushed straight through the support level and just started crashing.
+[  265.09s ->   272.01s] We enter here with a risking up to here, and then a reward up to here.
+[  272.41s ->   275.87s] Again, it's just personally how you want to trade, but that's just another example.
+[  277.13s ->   278.51s] Last example is BABA.
+[  278.57s ->   283.87s] I just want to show what healthy after and pre-market movement looks like.
+[  284.81s ->   288.79s] So, on Friday, we went up, and we closed in the upper portion of this range,
+[  289.11s ->   292.01s] meaning that we should expect it to continue up on the next day,
+[  292.01s ->   296.53s] but instead, on Monday, it gaps down, and you see this choppy movement on the way up.
+[  296.77s ->   299.31s] That just shows that there's a lot of in and decision of price.
+[  299.67s ->   303.13s] Buyers and sellers can't agree on where they want this stock to go.
+[  303.71s ->   309.05s] So, in the morning, we jump straight up to the previous day's resistance level,
+[  309.13s ->   313.35s] and we just crash because we can't hold it because of the consolidation of the pre-pre-market.
+[  314.11s ->   318.55s] Now, as you can see here, pre-market, we're breaking below this support,
+[  318.55s ->   321.63s] and we're crashing down, which carries into the previous day.
+[  322.21s ->   323.67s] So, a lot of movement.
+[  324.09s ->   328.85s] So, I'm not going to say that the movement and pre-market and aftermarket
+[  328.85s ->   330.65s] determine what will happen for the stock.
+[  330.71s ->   335.25s] That is not true, but it does help you give an indication of what's going to happen,
+[  335.31s ->   336.79s] at least for the next 30 minutes.
+[  337.29s ->   341.65s] So, for example, we crash here, and then we start to consolidate a price.
+[  342.75s ->   344.37s] Buyers and sellers don't know what they're doing.
+[  344.37s ->   349.25s] So, this whole day, it's very much of a consolidation pattern.
+[  349.95s ->   353.41s] The next day, we're very uptrending.
+[  353.85s ->   357.09s] The stock is continuing to make higher highs and higher lows,
+[  357.25s ->   360.09s] and again, we see that throughout the first half of the morning.
+[  360.81s ->   364.57s] So, make sure you use pre-market and aftermarket to help you determine
+[  364.57s ->   367.11s] and make the best informed trading decision.
+[  367.61s ->   369.99s] Please like, comment, and subscribe, and see you all in the next video.
+[  369.99s ->   399.97s] Thank you.

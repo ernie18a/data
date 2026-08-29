@@ -1,0 +1,137 @@
+[    0.02s ->    11.14s] Hey, how's it going everybody? Roman Laquan here, and today we're going to continue our discussion on equity options, extending what we were working with last time to the binomial pricing model.
+[   11.80s ->    25.32s] So let's just go ahead and get started here. If we take a look at the binomial pricing model proposed by Cox, Rubin, Stenum, Ross in its simplest form, then we can just represent one step in time.
+[   25.32s ->    31.74s] So let's kind of break this down a little bit to really get a good understanding of what's going on.
+[   31.88s ->    45.56s] So we have some stock price at this current point in time, and what we're going to do is we're going to model this movement of a stock price as either moving up or down by some step delta T.
+[   45.56s ->    50.68s] So try not to get too hung up on the notation. We're going to try to keep this as simple as possible.
+[   50.68s ->    57.12s] We're simply saying that one step in time, the stock price is either going to increase or the stock price is going to decrease.
+[   57.50s ->    66.10s] And then we're also going to assume that there's going to exist a call option where we can derive the value at this terminal step.
+[   66.38s ->    74.04s] So pretty much what I'm saying is we're going to pick a strike price and we're going to be able to evaluate this call option at expiration,
+[   74.72s ->    79.60s] where the expiration is going to be predefined by this delta T here.
+[   79.60s ->    85.36s] This will probably make a lot more sense once we tie values to each of these quantities.
+[   85.36s ->    87.52s] So let's just do exactly that.
+[   87.90s ->    92.78s] Our stock price today, so at this current point in time, is going to be 100.
+[   93.48s ->   100.46s] And after one step, so we'll just say that this is one year delta T, we have two states of the world,
+[  100.52s ->   104.16s] very similar to the previous example we worked with in the other episode,
+[  104.16s ->   112.96s] where we have this up state where the stock price increases to 105 and we have this down state where the stock price decreases to 95.
+[  113.76s ->   121.36s] And as I mentioned on the previous slide, you can see that we have this call option defined where we have some strike price
+[  121.36s ->   128.00s] and we have some terminal spot price and we can derive the value of that call option at expiration.
+[  128.00s ->   131.72s] So you can see we do exactly that right here on this uptick.
+[  131.84s ->   136.20s] The difference between 105 and 100 is 5.
+[  136.38s ->   139.28s] The maximum between 5 and 0 is 5.
+[  139.54s ->   143.28s] And then the difference between 90 and 100 is negative 10.
+[  143.54s ->   148.32s] The maximum between negative 10 and 0 is just going to be 0.
+[  148.50s ->   151.48s] And we're going to keep it simple, excluding the multiplier for now.
+[  151.48s ->   159.54s] But this is just to give you a good idea of, you know, what all of these quantities should look like with numbers tied to them.
+[  159.72s ->   168.02s] So now that we actually tied numbers to everything, let's talk about why we want to model the environment exactly like this.
+[  168.74s ->   170.82s] Why is this helpful in terms of pricing?
+[  172.18s ->   174.10s] Well, let's take a look at this environment.
+[  174.24s ->   175.90s] We have two different securities.
+[  176.10s ->   179.58s] We have the underlying equity, which has value tied to it.
+[  179.58s ->   183.94s] And now we also have this derivative that also has value tied to it.
+[  184.10s ->   187.94s] So we can actually construct a portfolio based on these two different securities.
+[  188.60s ->   192.76s] And what we're going to end up doing is we're going to go long the underlying equity
+[  192.76s ->   197.54s] and we are going to be the writer or short the call option.
+[  198.00s ->   202.06s] So in either state of the world, we can construct the value of this portfolio.
+[  203.02s ->   206.58s] If we take a look here, you can see if the stock price increases,
+[  206.58s ->   212.18s] then we are going to have 105 multiplied by delta,
+[  212.66s ->   217.60s] where delta represents the number of shares in the underlying equity that we own,
+[  218.24s ->   223.16s] less five, which is essentially the exercising of the option.
+[  223.26s ->   224.90s] And since we're the writer, we lose that.
+[  225.90s ->   226.62s] Similar notion.
+[  226.86s ->   229.00s] If the stock price decreases,
+[  229.00s ->   233.76s] then we are going to have 90 times the number of shares that we own,
+[  234.22s ->   237.76s] less zero, since again, you know, representing the exercising,
+[  238.34s ->   240.58s] as we are the writer of that option.
+[  240.90s ->   245.08s] We have two portfolios in either state of the world.
+[  245.82s ->   250.04s] But this represents a system where there is one unknown and two equations.
+[  250.04s ->   253.94s] So we can actually solve for this delta value.
+[  254.62s ->   257.78s] And the reason we want to solve for this delta value is because
+[  257.78s ->   261.96s] if we can match the portfolio value in either state of the world,
+[  262.04s ->   264.50s] whether the stock price increases or decreases,
+[  264.82s ->   267.80s] then we are essentially risk neutral,
+[  268.22s ->   272.58s] meaning whether the stock price increases or the stock price decreases,
+[  272.58s ->   277.94s] we are certain of what the value of this portfolio is going to be
+[  277.94s ->   281.02s] one step into the future by this delta T.
+[  281.90s ->   284.00s] We can go ahead and do exactly that.
+[  284.00s ->   289.00s] As you can see here, we're going to set 105 times delta less five,
+[  289.08s ->   292.44s] equivalent to 90 times delta less zero.
+[  293.06s ->   295.98s] And if you solve for delta, you're going to get one third.
+[  296.58s ->   300.38s] And in either case, if you set delta equivalent to one third,
+[  300.38s ->   304.20s] then you are going to get 30 for the portfolio value.
+[  304.34s ->   306.04s] So this is actually pretty cool, right?
+[  306.08s ->   308.50s] If the stock price were to increase or decrease,
+[  308.84s ->   312.14s] we would know that our portfolio value would be 30
+[  312.14s ->   313.58s] in either state of the world.
+[  315.01s ->   317.95s] If this is the case, and we know what the risk-free rate is,
+[  318.01s ->   320.43s] based on everything we've discussed up until this point
+[  320.43s ->   323.71s] about the time value of money and the previous example
+[  323.71s ->   326.31s] from the last episode with the fair value,
+[  326.31s ->   331.31s] then we can simply discount this 30 portfolio value
+[  331.31s ->   335.81s] back to today, since we know delta T is equivalent to one,
+[  336.13s ->   338.15s] and we can figure out what the value
+[  338.15s ->   339.65s] of this portfolio is today.
+[  340.13s ->   342.67s] Fortunately, we know what delta is,
+[  342.71s ->   344.77s] and we know what the stock price is today.
+[  345.15s ->   348.95s] So the excess is essentially the value of the option.
+[  349.07s ->   350.53s] That's what we're going to be finding.
+[  350.53s ->   357.88s] So if you take a look here, 100 times delta less the value
+[  357.88s ->   361.26s] of the call is equivalent to 30 discounted
+[  361.26s ->   362.16s] at the risk-free rate.
+[  362.30s ->   365.40s] So it's going to be equal to 28.57.
+[  366.28s ->   368.52s] Now we know what delta is.
+[  369.04s ->   374.34s] So if we plug in delta, we get the equity portion
+[  374.34s ->   377.28s] of our portfolio is $33.33.
+[  377.84s ->   379.16s] That's going to be repeating,
+[  379.16s ->   380.84s] but bear with me for the rounding.
+[  381.66s ->   383.48s] Less the value of the call option.
+[  383.62s ->   385.78s] So we can simply solve for that value
+[  385.78s ->   390.60s] by subtracting 28.57, adding the call to the other side,
+[  390.74s ->   394.12s] and we see that the call is worth $4.76.
+[  395.06s ->   397.78s] There are a lot of concepts built into this video,
+[  398.02s ->   401.12s] and there's going to be a lot of different directions
+[  401.12s ->   402.04s] we can go in.
+[  402.56s ->   405.56s] But what I want to highlight is three main things.
+[  405.74s ->   407.60s] One is the title of the slides,
+[  407.60s ->   409.88s] which has been no arbitrage option pricing
+[  409.88s ->   411.00s] throughout this entire video.
+[  411.64s ->   412.86s] So let's start there.
+[  413.36s ->   416.52s] No arbitrage option pricing is a very strong statement.
+[  416.66s ->   420.46s] What we're essentially saying is the value that we derived
+[  420.46s ->   424.38s] for this call option today implies that there's no way
+[  424.38s ->   428.56s] to construct a risk-free profit in either state of the world
+[  428.56s ->   431.54s] based on some combination of the derivative
+[  431.54s ->   433.60s] and the underlying equity.
+[  433.60s ->   437.30s] And that's going to be a very important statement going forward,
+[  437.42s ->   439.78s] especially into more advanced pricing models like Black-Scholes.
+[  440.56s ->   443.10s] So number one is no arbitrage.
+[  443.62s ->   446.22s] Number two is this notion of delta.
+[  447.32s ->   451.78s] Delta is going to be a very large topic of conversation going forward,
+[  451.88s ->   454.84s] especially when we start to derive the Greeks from the Black-Scholes model.
+[  454.84s ->   459.46s] But for now, the entire reason that no arbitrage pricing was even possible
+[  459.46s ->   463.42s] was because we were able to hold delta shares in this portfolio,
+[  463.98s ->   467.50s] setting the portfolio equal to each other in either state of the world,
+[  467.88s ->   473.28s] developing this risk-neutral portfolio to find the no arbitrage price.
+[  473.96s ->   479.42s] And delta, in this case, we didn't come up with any sort of generalized equation for it.
+[  479.42s ->   483.20s] So that's actually going to be the next step before moving on
+[  483.20s ->   486.42s] to the full-scale binomial pricing model.
+[  486.94s ->   490.04s] So the second thing to take away is this notion of delta,
+[  490.22s ->   492.90s] which develops risk-neutrality in our portfolio.
+[  493.80s ->   496.90s] The third and last thing that I hope you take away from this video
+[  496.90s ->   502.80s] is to understand that this is a very simple one-step state of the world.
+[  503.28s ->   506.88s] And in reality, we can construct a very large number of steps
+[  506.88s ->   508.34s] to generate more accurate prices.
+[  508.34s ->   512.22s] This is very similar to, if you have any experience with Monte Carlo pricing,
+[  512.58s ->   515.34s] you can generate more paths to generate more accurate prices,
+[  515.86s ->   517.08s] so on and so forth.
+[  517.18s ->   519.50s] But this will become even more clear
+[  519.50s ->   523.18s] when we start to generate the equation,
+[  523.62s ->   525.34s] the generalized equation for delta.
+[  525.78s ->   528.44s] And then we will be moving on to more advanced,
+[  528.80s ->   532.26s] larger binomial trees with more steps.
+[  532.40s ->   534.66s] And that'll generate, as I said, more accurate prices.
+[  534.66s ->   539.98s] But first, we're going to be deriving this generalized delta,
+[  540.52s ->   542.76s] and that will be in the next episode.
+[  543.08s ->   544.64s] So if you have any questions,
+[  544.76s ->   546.32s] feel free to leave them in the comments below,
+[  546.48s ->   547.80s] and I'll do my best to answer them.
+[  548.08s ->   549.62s] But otherwise, thanks so much for watching.

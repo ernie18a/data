@@ -1,0 +1,61 @@
+[    0.62s ->     7.42s] Hey YouTube, it's Roman. Welcome back to Math Monday. Looks like you caught me in the middle
+[    7.42s ->    11.72s] of a move. I'm in an art studio right now. Check out some of my pieces. I got a nice
+[   11.72s ->    17.92s] abstract one here. I got a nice geometric there. But nevertheless, I got my old audio set up.
+[   17.98s ->    21.26s] You're going to have to bear with me for this week. By next week, we should have everything
+[   21.26s ->    28.00s] back to normal and I'll be in a nice new office setup. So nevertheless, this week we are going
+[   28.00s ->    34.12s] to be checking out the time value of money and the idea of a general formula to apply interest
+[   34.12s ->    39.20s] and compound interest over time. All right. So crash course, time value of money. What
+[   39.20s ->    44.42s] is it? Well, money today is not worth the same as money in the future. In other words, if
+[   44.42s ->    48.86s] you can get money sooner, it's better. Obviously, you probably don't have to be the one to tell
+[   48.86s ->    54.62s] you that. But we can think of the time value of money very simply as if we have this timeline
+[   54.62s ->    62.82s] where T zero. So this is going to be time. T zero is today and cap T is some time in the
+[   62.82s ->    71.10s] future. We can just think of time as money. There's no other way to put it. But we can
+[   71.10s ->    78.78s] invest money today at a risk free rate of interest and assume a risk free rate of return by some
+[   78.78s ->    86.32s] point in the future. So just for example, if we have $100 today, then if we have some risk
+[   86.32s ->    93.36s] free rate of return, let's just call it say maybe 4%, then maybe that's 4% annually. If
+[   93.36s ->   101.54s] cap T is equal to one, then at cap T, if we were to invest this $100 at a risk free rate
+[  101.54s ->   109.60s] of interest, we would be at $104 that one year in the future. So in other words, if somebody
+[  109.60s ->   117.32s] said, hey, I can give you either $100 now, or $100 in the future, maybe one year in the
+[  117.32s ->   125.24s] future, then very clearly, you would want the $100 now so that you could assume this $4 return
+[  125.24s ->   132.20s] on the risk free rate of interest. Moreover, if somebody offered you $103 or maybe $102 one
+[  132.20s ->   138.84s] year into the future, or $100 today, and you knew about this risk free rate, then you would
+[  138.84s ->   146.12s] know that $100 today is more valuable because you can receive that $4 return rather than the
+[  146.12s ->   153.78s] $103 or $102 in the future, which would be less than this value, $104. Like most things,
+[  153.78s ->   159.62s] there is a more general way to write the equation to determine how much interest you are accruing
+[  159.62s ->   166.00s] on your principal or the net value of your investment at the end of its horizon. And what
+[  166.00s ->   171.38s] I mean by that is we can essentially just compile this into a closed form solution for the amount
+[  171.38s ->   179.06s] that your investment is worth at the end of its life. So if we have a principal amount P, and
+[  179.06s ->   187.78s] we multiply it by 1 plus the rate of interest divided by the compound frequency, which we'll
+[  187.78s ->   195.72s] talk about in a second, and we raise this to the compound frequency times the total number
+[  195.72s ->   205.73s] of time periods, this will be equal to the realized value of our investment. So in this case, if we have
+[  205.73s ->   217.73s] P is equal to 100, then A is going to be equal to 104, and we get that by just doing 100 times 1 plus 0.04
+[  218.37s ->   228.93s] divided by 1 raised to the 1 times 1, and this is equal to 104. So that's how we end up with this 104 in
+[  228.93s ->   235.01s] our first example where we go over the time value of money. But in general, this can be applied to
+[  235.01s ->   240.61s] more complicated instruments that exhibit a compounding frequency. Now, this idea of a compounding
+[  240.61s ->   245.73s] frequency is actually quite easy. We're essentially just earning interest on our interest within the
+[  245.73s ->   253.73s] same investment horizon. So if we have, say, a one-year investment horizon, so capital T is equal to 1,
+[  254.53s ->   262.29s] and we had 2 compounding periods, so a compound frequency of 2, then we would earn interest
+[  262.93s ->   268.13s] on that interest. So we would earn interest once, and then interest on that interest again, hence
+[  268.13s ->   279.34s] compound interest. Analytically, what this would look like is we would have $100 times 1 plus 0.04
+[  280.14s ->   286.94s] divided by 2, where we have 2 compounding periods throughout the life of this particular investment,
+[  287.58s ->   295.66s] and we are going to raise this to the 2 times 1, where once again 2 is the compound frequency,
+[  295.66s ->   303.02s] and 1 is the investment horizon. Now, if we compute this value, we will find that this is actually going
+[  303.02s ->   318.75s] to be equal to 104.04. And as it turns out, as m increases, so does a. So the more compound periods
+[  318.75s ->   326.19s] that we have, the higher the value of our accrued interest is going to be. So essentially, this is a
+[  327.07s ->   337.79s] for when m is equal to 2, and r is equal to 4%, and capital T is equal to 1. But all else equal,
+[  337.79s ->   348.27s] should we fix the values of r and cap T? If m increases, then a is also going to increase. This
+[  348.27s ->   356.59s] goes and begs an interesting question. How much can we increase m by? How many compound periods,
+[  356.59s ->   365.63s] how large of a compound frequency can we have given a particular investment horizon? Well, as it turns out,
+[  365.63s ->   373.31s] we can have an infinite number of compound periods within one particular investment horizon.
+[  373.31s ->   382.75s] What would this look like? Well, it would be a is equal to the limit as m approaches infinity of p
+[  383.63s ->   394.35s] times 1 plus r divided by m raised to the mT. And this is actually an interesting equation. And the reason
+[  394.35s ->   402.67s] that this is an interesting equation is because it is actually bounded, meaning as we let m go to
+[  402.67s ->   408.75s] infinity, we're not going to end up with an infinite value. We're going to actually end up with what's
+[  408.75s ->   416.27s] called the continuously compounded rate of interest. And I think that is a great video and a great proof
+[  416.27s ->   420.27s] to walk through in the next Math Monday. That's going to do it for this Math Monday,
+[  420.27s ->   425.47s] a quick review of the time value of money and a general formula for compound interest. I hope you
+[  425.47s ->   430.83s] enjoyed. As I said, in the future, we're going to be back to the original setup, back to the original
+[  430.83s ->   436.43s] audio. So thank you for bearing with me this week. Be sure to check out Quant Guild. We just launched our
+[  436.43s ->   444.75s] first course, Introduction to Python. Use code SUMMER2022 to get $50 off. We are currently developing
+[  444.75s ->   451.95s] our course on machine learning and artificial intelligence. So stay tuned for that. Otherwise,
+[  451.95s ->   456.19s] once again, thank you so much for watching, and I will see you in the next video.

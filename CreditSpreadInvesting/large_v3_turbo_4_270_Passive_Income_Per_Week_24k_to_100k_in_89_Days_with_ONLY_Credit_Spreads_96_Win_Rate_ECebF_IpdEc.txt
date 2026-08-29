@@ -1,0 +1,234 @@
+[    2.19s ->    11.87s] Hey guys, welcome to the channel. Today I'm going to show you guys the overall data and the metrics of how I was able to turn $25,000 into $100,000.
+[   12.47s ->    26.49s] So for those of you who are new, who haven't tuned into the Road to 100K series, and as well as take a look at the deep dive series that I do to walk you guys through the more in-depth detail analysis of what and how I trade credit spreads.
+[   26.49s ->    37.89s] Friends, I created this experiment with $24,000 of my own money to see how fast I can turn it, or if I can turn it to $100,000 by selling only credit spreads.
+[   38.21s ->    55.37s] The credit spread principles are also very simple. I trade 30 to 45 to 60 day out credit spreads to make it as, I would say, passive as I can while maintaining a good rotation of cash into this balance to see if I can accelerate that growth in our account.
+[   55.37s ->    72.23s] I'm trying to make it like a semi-passive income sort of account. My entry criteria are really quite simple. I look at, I use technical analysis to figure out good levels, supports and resistances or moving averages, good price points to enter the trade at, sell credit spreads for.
+[   72.23s ->    79.85s] And then my exit criteria, usually speaking, is close the week of. So for example, if it expires on Friday, I would always close on a Monday or Tuesday.
+[   80.55s ->    92.25s] And so the whole purpose or the whole philosophy behind this experiment is that I want to show that you can trade credit spreads semi-passively while you have other commitments like a nine to five.
+[   92.25s ->   112.79s] And so today, I'll walk you guys through the overall account balance, the history of my account, when I invested my $24,000, I actually invested it in like three main batches, and then how, and some of the interesting data and metrics behind what I sold, how much I got, my average credit to collateral ratio, right?
+[  112.79s ->   123.61s] How many puts and calls that I sell, how many total credit spreads that I sell, stuff like that to give you guys a little bit more insight into what I did over this timeframe.
+[  124.41s ->   127.35s] Hopefully you guys find it interesting. So without further ado, let's get started.
+[  127.35s ->   147.38s] So here, here you have the, uh, my, this account started on 618. Um, I didn't really trade on it too much. You can kind of tell until really, um, when I threw in, when I invested in another $12,000, sorry, $10,000 in on August 11th. Right. And then, so like I said before, I had three main batches.
+[  147.38s ->   161.19s] So this is my second batches. Right now, my principles are around $12,000. And then I kept trading only credit spreads until approximately October 13th, where I threw in another $10,000. So my total principal at this point is $24,000.
+[  161.69s ->   176.17s] And this is where the YouTube journey kind of started. And then I continuously, um, just continued the journey, kept trading, kept trading, kept trading. And then it wasn't, it was until February 15th, about a month ago that I hit the hundred K February 12th, sorry.
+[  176.17s ->   181.31s] Um, where I hit a hundred K February 15th, we maintain that hundred K, um, total account principal.
+[  183.14s ->   195.50s] I'll overlay, uh, this, this Excel graph where I just exported this history right here, export history, um, to show you the, uh, overlap of the investment as well as the total account growth timed on top of each other.
+[  195.90s ->   206.80s] The, let's see, if you, if you were to look at the overall account growth, right, we, we gained around 76 K and roll as an account asset value, which means that from our original 24 K.
+[  207.36s ->   211.68s] investment, we were up 317% at our all time high.
+[  212.76s ->   221.99s] And now if you look at it from like a time perspective, throw in a time, um, amount or a time essence to it, well, we'll do it, but two days, right?
+[  221.99s ->   233.99s] The two dates, if you were to start on the eight 11 investment account, where I started trading very active, I was actively when I started trading this account on eight 11, but the 12 K, uh,
+[  233.99s ->   256.80s] so 14 K principle that I had, it took us around 134 days to get from a 14 K to a hundred K, which approximates out to like $567 a day, which turns into $2,835 a week on average, if you were to linearize it.
+[  256.80s ->   274.29s] And then if you take it from 24 K, when I invested on a 10 13, the, it turns out to be 89 days, which then equates to $854 a day, which equals $4,770 a week over those 89 days.
+[  275.46s ->   277.60s] So that's just a cool way to visualize it.
+[  277.60s ->   288.08s] So if you were to do it from an hourly perspective, I don't, um, so when I first started this account, even now, like I do basically a couple of hours of work on the weekends to prep myself for the market open.
+[  288.24s ->   291.06s] I trade for like 15, 20 minutes to execute it.
+[  291.12s ->   294.24s] So that's just on average, I say I average two hours of work a week.
+[  294.24s ->   305.54s] So if you were to average that out for, for like the 24 K and 89 day scenario, it comes out to be around $2,000 an hour, which is quite stunning.
+[  305.54s ->   310.18s] I think in terms of like how much money, um, it accelerated.
+[  310.38s ->   318.18s] And obviously this, this experiment was done under very prime conditions where the market was doing relatively stable.
+[  318.18s ->   325.84s] There were a couple of bumps in the market, like, uh, presidential elections and U S president elections, put some sort of political turmoil.
+[  326.34s ->   333.48s] Um, but all in all, it was a market continues upward trend as opposed to what happened, you know, uh, over the last month or so.
+[  334.60s ->   338.08s] Um, but yeah, that's, that's actually really, uh, quite interesting to see.
+[  338.34s ->   346.37s] And so if you take that into account, this actually, for me, personally speaking, it has accelerated a lot faster than I expected to.
+[  346.37s ->   357.56s] It almost doubled every quarter or every three months, which is unprecedented in my opinion, in terms of how well, or how, how well we've done as a community, as, as, as, as an account.
+[  361.34s ->   377.58s] Now let's take a look a little bit more in depth about what I sold the data behind, like how much it collected, how many losses I incurred, um, just a little bit more detail into how I got from 24 K to a hundred K.
+[  377.58s ->   384.47s] Okay. So first and foremost, uh, just, I guess a note, the 20, a hundred K is the account value, the asset value.
+[  384.59s ->   398.33s] So, um, what you're going to see here is the amount of credit spreads that I had opened and slash are still open by the time we hit a hundred K, which means that by two 12, this is how many, by two 15, sorry, this is how many credit spreads that we have open.
+[  398.33s ->   406.30s] Including the ones that have not yet expired since, uh, this is what was currently in the account at the time we hit a hundred K.
+[  407.60s ->   411.60s] So with that being said, uh, let's go a little bit more in depth.
+[  411.68s ->   419.40s] And the first question that I do want to kind of show you guys an answer is how many tickers, how many stocks did I trade and how many times did I trade each of those stocks?
+[  419.40s ->   436.16s] So as you can see from the screen and the graph that I present right here, there's, I traded 27 tickers, uh, there were 993 puts and 109 call credit spreads for a total of 1102 credit spreads combined.
+[  436.16s ->   447.12s] And so for a little bit more in detail about the strategy, again, we trade predominantly put credit spreads as the overall market at that time was an upward trend.
+[  447.12s ->   460.34s] And then we started selling more call credit spreads near the back end of the experiment to, you know, add a little bit more for a little bit more credit on top of it, kind of playing both the puts and the calls.
+[  460.34s ->   468.08s] Um, and so we, we traded more puts than we did calls almost, you know, nine times as many, almost actually almost 10 times as many.
+[  468.68s ->   474.66s] Um, and that's the reason, but why we started the calls a little bit late and I don't always a hundred percent add a topper to all the trades.
+[  475.04s ->   479.98s] Um, I, I tend to leave a little bit left, um, on un-topped.
+[  480.12s ->   483.84s] And so for example, I would have 10 call, 10 puts, maybe eight of them.
+[  483.92s ->   489.88s] I would put a topper on by selling a call credit spread and two of them I will leave, uh, un-topped.
+[  489.88s ->   491.44s] So that kind of makes sense.
+[  491.44s ->   504.24s] Um, and then you can kind of see the top quantities, the most, the, the ones that I traded the most, Microsoft, 196 times, AMD, 129 times, and then Netflix, 121 times.
+[  504.38s ->   506.68s] And so those are, those are, those are my top three.
+[  507.98s ->   518.20s] And, and also just to clarify too, when we talk about total, um, number of spreads open, the total quantity, that just means that's how many spreads that open.
+[  518.20s ->   525.02s] So I opened up 109, 196 Microsoft credit spreads, the width or the width, right?
+[  525.14s ->   527.94s] The, uh, the difference between the top leg and the bottom leg is not included.
+[  528.06s ->   529.26s] That's just how many spreads I opened.
+[  529.26s ->   547.76s] So for example, if, um, over the time, over the, the, the, the lifespan of this experiment, I traded, I opened up 196 credit spreads for Microsoft of some five point spreads, some 2.5 spreads, um, all varying different strike prices.
+[  547.76s ->   556.34s] And so, uh, that's just, that just gives you a good understanding of, I guess, what are the more active, uh, tickers that I traded?
+[  556.64s ->   558.22s] What are some of my favorite stocks to trade?
+[  558.72s ->   561.54s] However, uh, the picture is a little bit incomplete.
+[  561.54s ->   570.40s] If you don't look at the amount of collateral, uh, the amount of buying power that was used, uh, to per, per ticker.
+[  570.82s ->   580.14s] And so as you can see from the screen now, when we include that amount, the width of the trade that the numbers kind of, uh, change a little bit, right?
+[  580.14s ->   584.58s] It depends like AMD, for example, there are predominantly 2.5 spreads.
+[  584.58s ->   590.70s] So if, um, while Amazon are more five and 10 point spreads, Microsoft were more five and 2.5 spreads.
+[  590.84s ->   601.12s] And so the amount of collateral that, that were opened, uh, is changed and changes the picture about how, um, what am I, what are some of my favorite tickers to trade?
+[  601.92s ->   602.44s] All right.
+[  602.44s ->   608.94s] So now that we've taken into, into context, I guess the amount of collateral, the width of the spread that we opened.
+[  608.94s ->   615.15s] Let's take a look at the total amount of credit, the amount of buying power collateral that we opened per ticker.
+[  615.31s ->   621.25s] So now I can see on the screen, you can see each ticket broken down by the amount of collateral open.
+[  621.43s ->   629.99s] So collateral was very, it's essentially, you take the width of your trade times the quantity and you get the collateral of that trade, right?
+[  630.15s ->   631.75s] Total collateral open per trade.
+[  631.75s ->   645.61s] And so for example, if I opened up a five, five point spreads on Microsoft, then I have 2,500 in collateral because it's 500 times five plus $2,500 of buying power, buying power collateral can be used interchangeably, I guess, in this context.
+[  645.61s ->   655.05s] And so with the, the, the, with context added on top of quantity, you can see that the picture of my favorite stocks kind of change.
+[  656.59s ->   666.53s] The, the number one stock that I like to trade here is Amazon close to a 60,000, I would say $60,000 put, and then a $12,000 call.
+[  666.53s ->   676.58s] So close to $72,000 worth of collateral for, um, Amazon's now the second favorite will be, it would be Microsoft.
+[  676.76s ->   686.38s] The one that I traded a nine, I opened up 196 spreads in this case, it would be 40 close to $45,000 worth of put credit spreads.
+[  686.38s ->   698.10s] And then a close to $11,500 worth of call credit spreads, which makes it come out to be around $56.25,000 worth of collateral for Microsoft.
+[  698.56s ->   716.29s] And then coming in third is Netflix again, one that I traded previously 121 times for a total of 47.5 inputs and then 6.5 total in calls, which makes it into $54,000 worth of collateral.
+[  716.73s ->   737.02s] Now, if you were to take a look at AMD, right, the AM, the AMD trade that I, um, I said, I opened up 109, 129 credit spreads for AMD, but only my total collateral was actually only $36.35,000, $36,350 worth of collateral.
+[  737.02s ->   747.62s] And so with that context, you can just tell the average credit, the average width of my credit for my AMD is around 2.5, uh, 250 bucks per spread.
+[  747.62s ->   751.40s] Um, and so that's why you see the collateral is actually less.
+[  752.54s ->   761.26s] And before we move on, just in general, uh, we opened up $365,000 worth of call, a put collateral.
+[  761.26s ->   784.10s] And then $49,000 worth of call collateral, combine those two, you have 414.5 approximately worth of collateral or buying power total, which means that we, just to reiterate, we opened close to half a million dollars worth of collateral to bring our account from 24K to 100K, uh, in that timeframe.
+[  784.10s ->   785.86s] That's pretty crazy.
+[  787.29s ->   796.85s] So here you see on the screen, uh, a total, uh, stack bar chart of the calls and the put collected for each one, one of these tickers.
+[  797.83s ->   801.71s] And you can see that there are certain tickers that I just didn't trade in terms of calls.
+[  802.49s ->   813.53s] Um, but there are out of those 27 tickers, obviously all of them have puts and then obviously with differing credit received based on what ticker it is.
+[  813.53s ->   819.59s] And so if you were to just look at the bar chart by itself, there's a couple of things that stand out straight off the bat.
+[  820.61s ->   824.89s] Amazon, Microsoft, Netflix, like we talked about with the opening, with the larger collateral.
+[  825.13s ->   828.43s] Those are also one of our higher collected ones as well.
+[  829.03s ->   831.87s] Amazon, Microsoft, Netflix, AMD also stands out.
+[  831.99s ->   833.19s] Square also stands out.
+[  833.45s ->   837.25s] Tesla's actually up there as well with a little bit above 5,000.
+[  837.25s ->   843.33s] But the, I would say the five biggest ones would be AMD, Amazon, Microsoft, Netflix.
+[  843.99s ->   848.59s] And to give a little bit more context to about the total number of credit that we received.
+[  849.27s ->   856.07s] Amazon, we received around $20,000, $20,556 of credit.
+[  857.82s ->   860.86s] $19,334 were inputs.
+[  861.24s ->   863.60s] $1,222 were in calls.
+[  863.60s ->   880.79s] Coming in second place would be Netflix with a total of $14,085 worth of credit with $13,660 in puts and $425 in calls.
+[  881.49s ->   891.12s] And coming in a close third is Microsoft at $13,611 with $12,552 worth of puts.
+[  891.12s ->   894.10s] And then $1,059 worth of calls.
+[  894.64s ->   899.58s] But AMD, we collected $11,603 worth of puts.
+[  899.72s ->   907.68s] And then NVIDIA total is $7,466 worth of puts and calls.
+[  908.56s ->   917.12s] Now, one thing to, I guess, also note is that something that's just really interesting and really fun to see is that our total calls combined,
+[  917.12s ->   933.62s] we collected $4,558 total puts combined $109,167 worth of puts, combine those two together and we collected $113,725 worth of credit that we received.
+[  934.22s ->   938.08s] Now, next up, let's combine the two information together, right?
+[  938.08s ->   945.24s] Let's see what the average credit to collateral or average credit to buying power ratio is per stock.
+[  945.80s ->   946.02s] All right.
+[  946.48s ->   950.24s] So let's take a look at the new graph, new chart on our screen.
+[  950.70s ->   955.72s] Here, it depicts the total percent credit to collateral ratio collected.
+[  955.72s ->   968.18s] And so in this case, I took the total collected and the total collateral is the total open collateral, which means that it is the amount of money that we have open for each of these tickers.
+[  968.84s ->   972.72s] And so you can see in first place, it comes with Google at 41.4%.
+[  973.88s ->   975.84s] The total collateral open for Google is $1,000.
+[  975.84s ->   986.66s] So put that in context, you can see that there's not a lot of collateral open, but for that one trade or those two credit spreads that I opened, we collect 41.4%.
+[  986.66s ->   992.74s] Now, I think let's take into context, again, the total collateral open Amazon.
+[  992.88s ->   995.98s] We know for a fact that Amazon, Microsoft, and Netflix were the top three that we collected.
+[  996.24s ->   999.50s] So those top three, they're kind of middle of the pack.
+[  999.76s ->  1002.50s] Amazon comes in number one at 34.55%.
+[ 1002.50s ->  1008.50s] Microsoft comes in second with 30.42%, and then Netflix comes in at 29.65%.
+[ 1009.42s ->  1012.66s] A couple more interesting ones, Square is actually fourth on the list.
+[ 1013.26s ->  1019.14s] It's probably my most heavily, it's my most heavily traded one that performed the best, coming in at 36.6%.
+[ 1019.14s ->  1026.18s] And then NVIDIA is in between Amazon and Microsoft, coming in at 31.77%.
+[ 1026.18s ->  1029.08s] Now, the story won't be complete if you can't sum it all together, right?
+[ 1029.08s ->  1040.36s] And so this account summarizes the total 27 tickets that we collected, that we traded, all the credit that we collected, $113,000, right?
+[ 1040.42s ->  1047.62s] The total collateral, the total put collateral, because the calls are always a topper, so they don't affect our bank balance in any way.
+[ 1047.62s ->  1053.50s] Take that all combined, it was the average, I guess, percent total credit to collateral ratio.
+[ 1053.66s ->  1057.54s] It comes out to be around 31%, 31.12%.
+[ 1057.54s ->  1081.98s] So combine everything, which means that you have the 18.5% for PayPal, the 40% for Google's, and you combine that and averages out to 31.12%, which means that any trade, any ticker, any ticker that I opened, we are averaging 31.12% ROI, regardless of the width and the total credit received.
+[ 1081.98s ->  1084.18s] Which is actually pretty stunning.
+[ 1084.26s ->  1086.98s] So if you think about it, an average dividend stock is 8%.
+[ 1086.98s ->  1092.02s] I'm averaging 31.12% over 30 to 45-day to a 60-day period.
+[ 1092.26s ->  1096.54s] This is, I would say, pretty aggressive in terms of allocation for credits to collaterals.
+[ 1096.54s ->  1108.74s] But this is the benefit of just trading it from a technical standpoint, because you're not restricted by in-the-money or out-of-the-money percentages or allocations that could bind or leave some money on the table.
+[ 1108.88s ->  1113.08s] Especially when conditions are prime or good, like it was for the last seven or eight months.
+[ 1114.20s ->  1125.70s] Now that we've talked about how much credit we've received, it would, the picture's still not really complete, because we kind of have to start talking about how much money I spent closing out and how many trades that I lost.
+[ 1125.70s ->  1127.52s] You want to make sure that you can present the whole picture.
+[ 1128.48s ->  1130.14s] And so the credit is just all the ones I opened.
+[ 1130.28s ->  1133.50s] Now we've got to look at the closing side of the equation.
+[ 1134.34s ->  1141.98s] And so on the screen, you'll see a graph about the debit that I spent to close out some of my trades.
+[ 1142.26s ->  1145.74s] Yeah, you'll see the normal tickers that you usually see that we've been trading.
+[ 1146.82s ->  1150.68s] And you'll see something really quite, I guess, interesting in my perspective.
+[ 1150.68s ->  1158.72s] It's that AMD, for example, comes out number one on the amount of debit spent to close it out at $2,941.
+[ 1160.38s ->  1168.10s] And so this is just a really good way for me and for us to kind of visualize how well I've traded some of these tickers.
+[ 1168.54s ->  1173.86s] So take into context, again, the amount of volume that I traded.
+[ 1173.86s ->  1178.84s] And this gets you a pretty good understanding of what trades went well and what trades didn't.
+[ 1179.38s ->  1182.96s] And so let's go back to the AMD example of $2,941.
+[ 1184.16s ->  1186.88s] I traded AMD 129 times, right?
+[ 1186.96s ->  1190.46s] And now if you take a look at Microsoft, it is at $996.
+[ 1190.74s ->  1192.20s] And I traded that 196 times.
+[ 1192.76s ->  1199.76s] You can get an understanding of, on average, I spent more money closing out AMD than I did on Microsoft.
+[ 1199.76s ->  1205.88s] And so I won't go too much into this since this is, I guess, fairly straightforward.
+[ 1206.42s ->  1214.52s] Just for clarity's sake and just for full transparency, this is how much money I traded, how much money I spent to close out my winning and losing trades.
+[ 1214.86s ->  1218.16s] So number one, AMD comes in at close to $3,941.
+[ 1219.04s ->  1221.44s] CRM is second at $2,459.
+[ 1221.44s ->  1228.43s] And then Facebook comes in third at $1,804.
+[ 1228.93s ->  1231.07s] Amazon, $1,680.
+[ 1231.53s ->  1233.11s] And Apple at $1,605.
+[ 1233.97s ->  1237.69s] And then everything else is close to $1,000 or below.
+[ 1239.17s ->  1241.15s] And so take that into context.
+[ 1241.25s ->  1249.63s] And now I think it will be a really, really good time to talk about the number of trades that I lost and how much, I guess, what my worst trade is in this time.
+[ 1249.63s ->  1252.73s] I realized that I only lost nine batches of trades.
+[ 1253.33s ->  1261.03s] So collectively, nine times the total quantity per trade, I equal 41 losing spreads overall.
+[ 1262.41s ->  1274.23s] And as I was inferring or I guess referring to in the other chart, AMD, Salesforce, CRM were some of my losers.
+[ 1274.23s ->  1278.75s] I've also lost some on Apple, Amazon, Facebook.
+[ 1280.15s ->  1285.45s] And so that shows up kind of apparent from the debit.
+[ 1286.19s ->  1295.87s] And just to get even more granular, my worst trade happened on December 9th, 2020, CRM.
+[ 1296.31s ->  1300.47s] I lost $1,236 on this one trade.
+[ 1300.47s ->  1310.41s] I had collected a credit of $672 and I spent $1,900 to close it out, resulting in net loss of $1,236.
+[ 1310.89s ->  1317.75s] My second worst trade was AMD, where I collected a total of $924.
+[ 1318.47s ->  1326.11s] And I spent $2,220 to close it out, resulting in net loss of $1,296.
+[ 1326.39s ->  1328.97s] And that happened on February 19th, 2021.
+[ 1328.97s ->  1332.11s] And then there are a couple more.
+[ 1332.65s ->  1337.33s] The third, Facebook, happened on 9th, 25th, 2020.
+[ 1338.13s ->  1341.71s] I collected $340 for four spreads in total.
+[ 1341.95s ->  1349.85s] And I spent a total of $900 to close it out, resulting in net loss of $560.
+[ 1349.85s ->  1361.11s] Another one would be Apple, where I collected $272 of total credit and had to spend $952, resulting in net loss of $680.
+[ 1362.53s ->  1362.77s] Okay.
+[ 1363.57s ->  1368.11s] There's a couple more where I lost a couple, like $100, $100, $200 there.
+[ 1368.11s ->  1370.95s] But that in grand scheme of things is unsubstantial.
+[ 1371.57s ->  1381.33s] And so if you combine all of those, the losing trades netted me $4,657.
+[ 1381.33s ->  1384.27s] And just round up to $5,000.
+[ 1385.55s ->  1391.37s] And so, yeah, I had, for my losses, the trades that I lost, I lost $4,657.
+[ 1391.79s ->  1400.05s] So if you were to refer back to the debit that I spent, I lost, I spent a total of $17,231 closing out my debit.
+[ 1400.55s ->  1402.67s] Close to $5,000 of it were in losses.
+[ 1402.67s ->  1405.27s] So I spent another $12,000 closing out my normal spreads.
+[ 1407.08s ->  1409.06s] And this is a cool metric.
+[ 1409.44s ->  1417.64s] I don't expect this to continue going forward because the market has been tremendously strong over the last, ever since we started this journey.
+[ 1418.42s ->  1421.72s] So, like I said, I have 41 total spreads that were lost.
+[ 1422.08s ->  1428.86s] I had opened a total of 1,102 spreads, which means that I had a total winning.
+[ 1428.86s ->  1436.26s] I won 1,061 spreads, which means that my total win percentage is 96.28%.
+[ 1436.26s ->  1437.82s] So 96.3%.
+[ 1437.82s ->  1439.34s] And that is exceptional.
+[ 1439.68s ->  1444.84s] I do not believe that this win rate will continue.
+[ 1445.14s ->  1453.64s] However, going forward on this one Road to 100K series or Road to 200K series, I will continue to try and aim for a win rate of 90%, 95%.
+[ 1453.64s ->  1456.98s] More realistically, between 90% and 95%.
+[ 1456.98s ->  1458.92s] But 96.3% is exceptional.
+[ 1460.18s ->  1463.84s] So that was just a, I guess, a cool way to summarize everything.
+[ 1465.86s ->  1468.20s] Now we're going to bring this all full circle, right?
+[ 1468.20s ->  1470.76s] Include the credit minus the debit.
+[ 1471.00s ->  1473.20s] And then you can figure out your total profit.
+[ 1474.42s ->  1477.46s] With the caveat, obviously, there are some credit spreads that are still open.
+[ 1477.60s ->  1480.62s] That will either be a profit or a loss.
+[ 1480.88s ->  1483.18s] But there are still some unopened ones.
+[ 1483.28s ->  1484.40s] So take that into context.
+[ 1484.40s ->  1492.04s] But currently speaking, if you take the credit received minus the debit spent, you'll get your total profit per ticker.
+[ 1492.70s ->  1505.38s] And so straight off the bat, by taking the credit minus the debit, the total profit of our journey comes down to $96,494.
+[ 1505.38s ->  1509.08s] That's still exceptional, right?
+[ 1509.18s ->  1510.64s] We had a couple losses.
+[ 1510.84s ->  1512.30s] We had some bad trades.
+[ 1512.56s ->  1514.94s] But we were able to manage them to the best of our abilities.
+[ 1515.48s ->  1520.54s] Which resulted us in getting a total profit of $96,000.
+[ 1520.60s ->  1523.50s] $96,500 currently.
+[ 1523.50s ->  1533.69s] Which means that if you dive a little deeper, the credit versus the credit received versus the profit table should be relatively similar.
+[ 1534.39s ->  1538.95s] Amazon still comes off as number one with $18,876.
+[ 1540.03s ->  1543.89s] Netflix comes in second at $13,565.
+[ 1544.63s ->  1547.67s] And then Microsoft comes in third at $12,615.
+[ 1547.67s ->  1551.81s] Everything else is then below the $10,000 benchmark.
+[ 1552.39s ->  1556.25s] With AMD coming in fourth at $8,662.
+[ 1556.37s ->  1559.91s] So that one took a larger dip because of the losses that we had.
+[ 1561.74s ->  1566.34s] And then NVIDIA is at $7,161.
+[ 1566.84s ->  1569.48s] Square is at $6,741.
+[ 1569.48s ->  1577.32s] And yeah, I think that basically frames it in a very good and full picture.
+[ 1578.28s ->  1584.44s] From the time that we took $24,000 to $100,000, we collected or we have a total profit.
+[ 1584.88s ->  1585.40s] What's a profit?
+[ 1585.52s ->  1588.84s] Total credit minus debit of $96,500.
+[ 1589.62s ->  1594.40s] With some that still haven't expired.
+[ 1595.40s ->  1598.10s] And I think that's just a really cool picture for you guys to see.
+[ 1598.10s ->  1608.59s] Pausing through, as you can imagine, 1,102 trades is put my Excel work to Excel skills to the task.
+[ 1609.39s ->  1610.35s] But I'm glad we did it.
+[ 1610.63s ->  1617.81s] I'm glad we were able to run through all those trades and just crunch those numbers and get some of these interesting data for you guys to see.
+[ 1618.83s ->  1621.53s] And if you guys made it this far in the video, thank you guys so much.
+[ 1621.95s ->  1626.37s] I know this might have been a little dry just due to all the numbers and all the data that we crunched.
+[ 1626.73s ->  1627.37s] Appreciate your support.
+[ 1627.37s ->  1629.81s] Let me know down in the comments if you have any questions.
+[ 1631.53s ->  1634.60s] And yeah, until next time, safe tradings.
+[ 1635.40s ->  1635.76s] Peace.

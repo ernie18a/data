@@ -1,0 +1,75 @@
+[    0.14s ->     6.80s] Hey guys, what's up? In this video I'm going to walk you through how I swing trade credit spreads on QQQ for a living.
+[    6.92s ->    13.34s] So I'm going to walk you through this, the idea, the strategy, and then at the end of this video I'm going to actually put on a live trade with you.
+[   13.58s ->    19.10s] So if you want to understand the exact specific steps on how I do this, this is the video for you.
+[   19.24s ->    24.14s] If you want to learn more about credit spreads, then please hit subscribe because this is the channel for you.
+[   24.38s ->    25.86s] Anyways, let's dive into it.
+[   25.86s ->    30.46s] So first off, we need to understand the trend. Which way is QQQ going?
+[   30.62s ->    37.66s] If we're looking at the market, it looks like it's generally going up, but I don't like to use generally or ideas to place trades off.
+[   37.74s ->    39.78s] I like to use things that I can measure every day.
+[   40.20s ->    45.82s] So as you can see here that we have a Bollinger Band indicator with, let's see if I can change the settings here,
+[   46.36s ->    49.92s] where we have the length of 200 and the standard deviation of 1.
+[   49.92s ->    55.62s] This is the best approximation of the impeccable stock band that I've created and that I use,
+[   55.78s ->    60.54s] but because the Bollinger Band can be used by anyone, this is what I'm going to use for today's video.
+[   61.00s ->    65.96s] When it's above this top line, it means that the stock is trending up and momentum is increasing.
+[   66.08s ->    68.06s] This means it's in an uptrend and moving higher.
+[   68.06s ->    73.64s] So what we like to see here is when momentum is moving higher and we have strong red days,
+[   73.78s ->    76.80s] that's the ideal time to enter put credit spread trade.
+[   77.14s ->    77.46s] Why?
+[   77.74s ->    83.00s] Well, because the momentum and the strength is pushing upward, like we see here, and it's dropping.
+[   83.12s ->    88.62s] When it drops, it allows us to go out further for our credit spreads and collect more credit
+[   88.62s ->    94.70s] so that we have a safer return that is roughly the same or even more than we would if it was a green day.
+[   94.70s ->   101.14s] So that's why we like to enter or why I like to enter on red days for my put credit spread trades.
+[  101.42s ->   107.72s] This ideally is how it's set up, but again, I like using the 10% credit spreads trade ideas algo,
+[  107.94s ->   111.44s] and if you can see here, let me refresh the screen to get the most recent alert here.
+[  111.84s ->   117.80s] You can see here, QQQ trade, this is going to be the live trade that I put on for you right here.
+[  118.08s ->   121.34s] You can see it tells me the date alerted, which is today, August 2nd.
+[  121.34s ->   124.96s] It tells me I need to go out to the August 18th expiration date.
+[  125.28s ->   129.38s] I need to do the put of $3.66 is the strike price I'm selling.
+[  129.70s ->   131.60s] $3.65 is the strike price I'm buying.
+[  131.84s ->   136.98s] I want to collect at least $0.15 in credit for a $1 wide, and I have a 90% win rate,
+[  137.12s ->   143.30s] and on average, if I only follow this strategy for QQQ, I can make a 27% annualized return.
+[  143.50s ->   146.66s] That's three to four times the average yearly return.
+[  146.66s ->   152.68s] So, what I'm going to do is I'm going to actually follow this alert, but the first thing I want to do is I want to turn it into a $2 wide.
+[  153.12s ->   157.50s] So, again, that's going to be the $3.65, $3.63, and that's going to collect at least $0.28.
+[  157.84s ->   161.72s] So, let's go to the broker, and let's see if I can follow this alert and place it, okay?
+[  161.98s ->   166.54s] So, if I go into TastyTrade here, I have QQQ on my platform right here.
+[  166.86s ->   171.96s] If I go into the trade section, I'm going into August 18th, which I already have a trade on for.
+[  171.96s ->   183.29s] I'm going to come over here. What was the exact price again? It was $3.65, $3.63, $3.65, $3.63.
+[  183.73s ->   187.35s] This is where it wants me. This is the credit spread it wants me to put on.
+[  187.71s ->   194.79s] However, because it's a red day, and I can go out further, thus making my win rate even higher.
+[  194.95s ->   199.63s] So, right now, I have roughly a 90% win rate, and it wants me to collect $0.28.
+[  199.63s ->   205.59s] So, it wants me to collect $0.28, and I'm going to take this, and I'm going to expand it out to where I can get roughly around $0.28.
+[  206.11s ->   214.23s] So, around $3.63, $3.58 is where I can collect $0.28 on this trade, and I'm still further out of the money.
+[  214.49s ->   223.23s] So, it recommends a $3.65, but I can go all the way up to $3.60, giving me $5 of extra room, and I'm still collecting the minimum credit.
+[  223.23s ->   226.39s] Okay, so that's exactly what I'm doing here, $3.60 and $3.58.
+[  226.75s ->   233.85s] So, I'm going to stick around 10 spreads for this one, just because I'm already in this position with 10 other spreads.
+[  234.35s ->   235.55s] So, I'm going to stick with 10.
+[  236.19s ->   239.17s] I'm going to stick, I want to make sure that my mid price, I get at least $0.28.
+[  239.65s ->   242.21s] So, that's the goal here, to stick around $0.28.
+[  242.65s ->   245.87s] Let's see if I can get filled at that level.
+[  245.97s ->   248.79s] So, we're going to undo this, but I want to, actually, I want to get filled at $0.28.
+[  249.63s ->   251.37s] 10, all this stuff is good.
+[  251.83s ->   257.29s] Let's put, review the trade, $0.28 net credit, today, today, today, $3.60, $3.58.
+[  257.87s ->   259.87s] Send the order, just like that, got filled.
+[  260.41s ->   265.65s] Now, I have a credit spread trade-on for QQQ, with $3.60 being my level.
+[  265.85s ->   268.09s] So, now, you can see here, $3.74.
+[  268.61s ->   271.71s] I went all the way down to $3.60, which is near the support.
+[  271.71s ->   277.85s] So, that means I have until August 18th for QQQ to stay above $3.60.
+[  278.11s ->   280.77s] So, let's walk through the specifics of this position.
+[  280.93s ->   282.31s] You can see here all the positions I have on.
+[  282.65s ->   287.03s] But, you can see here, August 18th, the trade that I just put on, the $3.63, $5.8,
+[  287.21s ->   290.97s] I collected $0.28 in credit with 10 spreads.
+[  291.15s ->   297.51s] That means 28 times 10, so I collected $280 in credit for putting on this trade.
+[  297.51s ->   301.75s] So, putting on $280 in credit, what does that look like?
+[  301.83s ->   309.55s] $280, if I place this trade once a week, that's $1,120 every single month.
+[  309.79s ->   313.63s] Now, again, we're not factoring in losses, but that will happen with a 90% win rate.
+[  313.83s ->   317.75s] I'm only going to have one loser out of every 10, roughly.
+[  317.75s ->   319.91s] So, that's kind of what we're going for.
+[  320.25s ->   327.49s] And so, again, I can use QQQ in the exact way I just did to generate $1,000 of extra income a month.
+[  327.91s ->   330.97s] Anyways, guys, if you want to learn more about how to implement this system,
+[  331.25s ->   334.47s] how to follow the trade ideas out, go and get all these alerts for yourself,
+[  334.81s ->   336.51s] click down below to learn more.
+[  336.75s ->   340.23s] And you can also grab my free trading handbook down below as well.
+[  340.23s ->   342.17s] All right, guys, I will see you in the next video.
+[  342.31s ->   343.29s] Don't forget to subscribe.
+[  343.83s ->   349.03s] And I hope this video helped with educational and helps you as a credit registrator.

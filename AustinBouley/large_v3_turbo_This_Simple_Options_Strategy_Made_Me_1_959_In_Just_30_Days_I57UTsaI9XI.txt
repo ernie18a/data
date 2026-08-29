@@ -1,0 +1,143 @@
+[    0.37s ->     5.53s] In this video, I'm going to walk you through a 95% win rate option strategy and my real 30-day
+[    5.53s ->     9.83s] results with it that I've had on my live trading account. This is my go-to strategy right now. And
+[    9.83s ->    13.33s] by the end of this video, I'll show you how to look at the chart to analyze when it's time to
+[   13.33s ->    17.87s] enter the trade. I'll show you how to actually place the trade on the broker and how to manage
+[   17.87s ->    21.27s] it. So by the end of this video, you can walk away doing exactly what I'm doing right now.
+[   21.53s ->    24.97s] Now, I don't expect you to just take me at my word. So here's proof. I'm going to go to my
+[   24.97s ->    29.55s] TastyTrade account. Again, TastyTrade does not have paper accounts, but I'm just going to refresh
+[   29.55s ->    34.15s] the page here. We can take a look at what is actually going on. If I come here, I can look
+[   34.15s ->    42.81s] at the last 30 days. And you can see over the last 30 days, I've made $1,959 minus commissions
+[   42.81s ->    49.11s] and fees. This is the real money I actually get to take home. About a $2,000 per month return.
+[   49.23s ->    53.27s] I've been doing this for a few months now. So let me walk you through how to actually put
+[   53.27s ->    59.53s] on this trade. So this is a 95% win rate strategy that looks like this. It's traded on the SST.
+[   59.55s ->    65.35s] S&P 500. Okay. So you're selling options on one of the S&P 500s. Why did I pick the S&P 500?
+[   65.77s ->    72.63s] Because it's by default diversified. It controls all 11 different sectors. It has about 505 stocks
+[   72.63s ->    76.43s] in it, and it can be traded a bunch of different ways. Whether you want to use futures options
+[   76.43s ->    81.59s] or SPY or index options, you can trade it all. My favorite and personal preference is future
+[   81.59s ->    87.83s] options. So I personally do it on ES. This is how it looks. I sell it put 60 days out in the
+[   87.83s ->    92.19s] future, and I sell it put at 5 delta. I'll explain more about what this means in a second,
+[   92.31s ->    99.61s] but then I manage it at a 25% take profit with a 200% stop loss. So let me show you now on the broker
+[   99.61s ->   104.67s] how I actually put this trade on. This is very important. Okay. So whether you're using Tasty
+[  104.67s ->   110.25s] Trade or Charles Schwab or TradeStation, it all works the same. Okay. Go into your trade tab,
+[  110.31s ->   114.67s] wherever you can put on the trade. You'll see this options chain. What you'll do is you'll make sure
+[  114.67s ->   119.71s] you're looking at the right asset. For me, that's ES. I come in here, and on the options
+[  119.71s ->   123.57s] chain, it shows me days out in the future. This is three days in the future on Monday,
+[  123.91s ->   128.53s] four, five, six. I want to look for the one that's closest to 60 days out in the future.
+[  128.89s ->   134.79s] So if I scroll down here, we can see I have 55 and 62. 62 is the closest. So I'm going to open up
+[  134.79s ->   139.63s] this option chain right here. On the right side is where I can find my puts. I'm going to sell one of
+[  139.63s ->   144.15s] these. I'm going to make sure one of the column is a delta. And the reason why I do this is I want
+[  144.15s ->   151.27s] to look for a 0.05 delta, which is a five delta. So you can see here, minus 0.05, five delta. I'm
+[  151.27s ->   156.29s] going to sell this. So I'm going to sell to open this contract. Now, if we look at this from a
+[  156.29s ->   162.97s] futures options perspective, you can see the returns are really great. Why? My max profit is 975 bucks.
+[  163.29s ->   168.95s] My win rate is 99%. And my buying power, use the amount of money I need to put up to make this 900
+[  168.95s ->   176.15s] bucks is about $6,200. But we have to understand there are some management rules. We have a 25%
+[  176.15s ->   181.87s] take profit and a 200% stop loss. Since that's the case, let's come in here and let me show you how
+[  181.87s ->   187.41s] the math actually works out. If we look at the math, if 975 is the credit we're receiving, and we're
+[  187.41s ->   192.73s] going to take profit at 25%, that means that we multiply by 0.25. And that tells us we're going to make a
+[  192.73s ->   199.27s] profit about $243 bucks if we put on this trade. Now, that is amazing. You might be saying that's
+[  199.27s ->   203.93s] not much money, but really it is an incredible return when you compare it and divide it by
+[  203.93s ->   208.91s] the amount of money that we're putting up to put this trade on. It's about $6,300. That means by the
+[  208.91s ->   215.15s] time this trade closes, you're going to make about a 3.8% return on your money. You put up $6,300,
+[  215.51s ->   221.89s] you make about $250. That is a very good return. 3% in about a week. Trust me, everybody wants to do
+[  221.89s ->   226.99s] that. But let's say, what is the risk? What is our stop loss? We multiply that by two, so we'd have
+[  226.99s ->   234.25s] about a loss of $1,950. So again, you can see here, we'll profit about $250, we'll lose about $2,000,
+[  234.25s ->   239.19s] and that's how this trade is structured. So we would just sell the option, and we would manage it at a
+[  239.19s ->   245.33s] 25% take profit and a 200% stop loss. Now, you might be wondering, why do we do everything that I just
+[  245.33s ->   251.63s] explained? 5 Delta gives us a very high profitability. If you don't know how to read Delta, 5% means
+[  251.63s ->   256.09s] or 5 Delta means that we have a 5% chance of losing, which means if we reverse that, we have
+[  256.09s ->   261.75s] a 95% chance of winning. So that is, first off, really good. It gives us a lot of room to work
+[  261.75s ->   267.51s] with, to be right. Number two is a 60 DTE sweet spot. This allows us to go further out in time.
+[  267.59s ->   272.81s] The further out in time we go, two amazing things happen. Number one, we have more time to be right.
+[  272.81s ->   276.93s] If the market starts to go against us, we have time for it to start going back in our favor. We have
+[  276.93s ->   281.13s] two months to allow the trade to work. Number two, the further out in time you go,
+[  281.39s ->   286.51s] the more theta there is built in, the more the contracts pay you, which means you can make more
+[  286.51s ->   295.69s] money. So that's also awesome. Now, with this 5 Delta, 25% management, and 60 DTE kind of framework,
+[  296.09s ->   301.33s] what is awesome is that these trades on average, if you look at it for a whole back test for the
+[  301.33s ->   306.11s] whole market, closes in about seven days. Why is this awesome? Because it means that I can turn
+[  306.11s ->   310.03s] over trades quickly. I don't have to have 10 open trades waiting for a month apiece.
+[  310.37s ->   317.13s] These trades close in about seven days. My most recent trade closed in two days with a $250 profit.
+[  317.25s ->   323.19s] I had a trade that closed in 24 hours for a 243% profit. These trades close quickly because of our
+[  323.19s ->   328.29s] tight stop loss and our tight take profit. Now, last thing, this works well because of bullish market
+[  328.29s ->   333.37s] alignment. You want to make sure that you're aligning yourself with the market correctly. So that's
+[  333.37s ->   336.91s] where we're going to dive into a chart. Okay. If you haven't used this platform before,
+[  336.97s ->   341.41s] it's called trading view. It's just an easy way to see the stock chart. When we're looking at the
+[  341.41s ->   346.93s] stock chart right here, what we do is we align ourselves with the market. This indicator is for
+[  346.93s ->   351.13s] free. This is my personal indicator that I built. I used to sell it for a thousand bucks a piece
+[  351.13s ->   356.39s] and hundreds of people, thousands of people, honestly, for real, not lying, which is awesome
+[  356.39s ->   361.55s] for me. But anyways, I'm giving it to you for free now because I want you guys to have success with it
+[  361.55s ->   366.75s] and hopefully maybe come back in the future and use my options automation software. So I'm just
+[  366.75s ->   370.31s] trying to build up goodwill. Just honestly, I just want you to know what's going on, but this
+[  370.31s ->   374.15s] indicator is amazing and you get it for free. So if you click the first link down below, you can get
+[  374.15s ->   378.95s] access to this YouTube doc, which has the indicator right here for free that you can just access it.
+[  378.95s ->   383.09s] Okay. But the way this indicator works is it shows us what phase of the market it's in.
+[  383.17s ->   387.09s] So if we're in this green zone, that means we're bullish right here. So this bullish zone is when
+[  387.09s ->   391.57s] we'd be trading this strategy. This short put strategy will be traded here. It would also be
+[  391.57s ->   396.93s] traded here and it would be traded here. So let me explain each of the categories. What you do is on
+[  396.93s ->   401.11s] a weekly basis, you look at your chart, you look at this indicator and it tells you where is the
+[  401.11s ->   407.39s] market. It's either bullish, bearish, overextended or overextended. Okay. We're overextended to the
+[  407.39s ->   411.77s] downside. We want to get in short puts because the likelihood of a bouncing is very high. If we look
+[  411.77s ->   416.57s] at it, every time we got into this bottom green zone, the market bounce. A short put is a bullish
+[  416.57s ->   423.23s] strategy. So by entering a short put here, volatility is elevated, risk is elevated, but we're at a very
+[  423.23s ->   427.75s] overextended point. So we can get in and we can collect a ton of credit on the trade and it's most
+[  427.75s ->   431.73s] likely going to bounce in the next 60 days. We also have the same thing here. You can see every time
+[  431.73s ->   438.07s] we enter this zone, we have some period of it just waiting, but it eventually bounces and comes up
+[  438.07s ->   442.33s] every time we go into this zone because it's just overextended. Same thing with the middle one. When
+[  442.33s ->   446.47s] we're in this middle zone, this is a natural happy uptrend. It just consistently trends up
+[  446.47s ->   450.31s] in this green zone. And so that's what we're going to be doing our short put strategy and our short put
+[  450.31s ->   455.81s] strategy. Now up here, the market is still trending up. So we don't want to stop the trend, but it is
+[  455.81s ->   460.19s] overextended, which means the likelihood of a pulling back is higher and we don't really want to be caught
+[  460.19s ->   465.43s] in a pullback, right? If we look at over time, you can see here broke above, went down, it broke above,
+[  465.51s ->   470.99s] went down, but we still want to take advantage of this uptrend while it lasts. And because of that,
+[  471.05s ->   476.49s] we want to be in our short put, but what we'll do is we'll be at 50% allocation. What does this mean?
+[  476.55s ->   483.23s] This means if I typically do, if I typically allocate $10,000 to this strategy during bullish markets and
+[  483.23s ->   489.29s] this balancing market 10K, right? Then during this, I'm only going to allocate 5K. Why? Because I still want
+[  489.29s ->   492.89s] money in the market. I still want to be making money from these trades, but in case it turns
+[  492.89s ->   497.49s] around against me, I want to make sure my loss is mitigated since I know this is a riskier point in
+[  497.49s ->   502.09s] the market. So now I can adjust my position size and how much risk I'm taking based on the actual
+[  502.09s ->   506.91s] risk in the market. That's why that's there. And so that's why it works very well because high win
+[  506.91s ->   511.41s] rate trade, we turn over every seven days and we align it with the right market. So we're only trading
+[  511.41s ->   516.15s] it when it's going to do well. If we look at a map, we have a 95% win rate. It's a little higher than that
+[  516.15s ->   523.01s] actually, but 95%, we went about 250. We lose about 1,800. That means we make about $140 per trade,
+[  523.05s ->   527.15s] including the wins and the losses. That's still a very great return, especially when you do 10 of
+[  527.15s ->   531.47s] those trades a month, 20, 30, 40, it starts returning great. Now you might be wondering,
+[  531.59s ->   535.87s] okay, that's awesome. Great strategy. Is there any rules around that I need to be aware of? Yes,
+[  535.93s ->   539.89s] there are. We need to make sure we manage our risk correctly so that we can be in this for the long
+[  539.89s ->   544.09s] haul and continue doing trades because as we know, we can still take a loss. We have our stop loss,
+[  544.09s ->   548.89s] right? So the way that I allocate buying power is like this. It's quite simple as you determine if
+[  548.89s ->   553.75s] you're a low risk person, a medium risk trader or a high risk trader. Okay. You don't know your
+[  553.75s ->   558.07s] medium risk. Most people are medium risk. That's where I am. That's 40%. So if we're looking at an
+[  558.07s ->   563.87s] example of a $100,000 account with medium risk, that means we'll have about $40,000 in trades.
+[  564.09s ->   569.95s] All right. And so if that's the case, awesome. We now have 40,000 in trades. As you now know,
+[  569.95s ->   575.85s] this trade, we're doing it on ES. It varies on what asset you're doing. It takes about $6,500 per
+[  575.85s ->   581.83s] trade, right? So if that's the case, I know, cool. I can allocate $40,000, $6,500 per trade.
+[  581.95s ->   586.55s] This means I need about six trades running at a time. So that's how I can know the math and how
+[  586.55s ->   590.79s] frequently I should be putting on trades. So six trades is kind of where you're going with that,
+[  590.81s ->   594.75s] or at least six contracts total, right? You can split that up between, let's say you want to do two
+[  594.75s ->   598.63s] trades with three contracts each or something like that. Now you might be wondering, okay,
+[  598.63s ->   602.41s] Austin, that's cool. I'm kind of managing my risk. What happens to the other 60,000 of this
+[  602.41s ->   606.19s] account? I don't want that cash doing nothing. And I agree it should do something, which is why I
+[  606.19s ->   610.69s] structure my account like this, right? A hundred K account. I have my set amount into the push
+[  610.69s ->   616.07s] strategy. And then the rest goes into what is ESCA, which is a risk-free. I say risk-free because it's
+[  616.07s ->   621.75s] a T-bill ETF. It means it's a treasury bill. It's protected and backed by the government, but it pays a
+[  621.75s ->   626.83s] monthly dividend. And so with that monthly dividend, I get paid monthly on the cash that I put in there,
+[  626.83s ->   632.59s] and I can easily take my cash out of this ETF at any time. And those two things together will make
+[  632.59s ->   637.49s] me anywhere from a two to 4% return per month. This is the strategy that I'm running. And so I
+[  637.49s ->   642.05s] like to eat my allocation low because one losing trade can wipe out seven good ones. Again, that's
+[  642.05s ->   646.71s] still better than most people that wipes out 20 good ones that I see per loser, which is crazy.
+[  647.05s ->   650.43s] But anyways, it's still big. And so that's why I need to make sure my position sizing in check,
+[  650.51s ->   655.01s] my buying power is in check, and I'm only trading in the uptrending markets so that I don't have
+[  655.01s ->   660.07s] as many losses. Now, what I love to show you here is remember how I showed you this activity right
+[  660.07s ->   666.63s] here? I made $1,959 of all these trades here. Guess what? I never even put on any one of these
+[  666.63s ->   671.93s] trades. I have an options bot designed around this strategy that I just taught you that ran this whole
+[  671.93s ->   676.25s] thing. So I didn't watch the trades. I didn't put on the trades. I didn't manage the trades. It all did
+[  676.25s ->   681.71s] it for me. And I can give you access to this bot. So with one click, you can start using it. You just
+[  681.71s ->   685.85s] attach your broker, whether you use Tasty Trade, Charles Schwab, or whatever, and you can get it
+[  685.85s ->   691.61s] going. That, if you want to steal my personal bot that did this right here, you have basically a 30
+[  691.61s ->   696.95s] day trial to go put it to the test for yourself, whether on live or paper money, just by using the
+[  696.95s ->   700.83s] link down below. So check out the link in my description. I'm giving you my bot to try it out.
+[  700.91s ->   705.67s] If you want to continue after the 30 days, it will cost money, but this will make you way more than we
+[  705.67s ->   709.43s] ever charge you. That's the whole goal for you to make money. I really want you to make money.
+[  709.43s ->   713.61s] But I did just want to mention that this is a great strategy. You can go do it yourself. But
+[  713.61s ->   717.29s] if you're someone who wants your time back, you want to decrease risk because you want a bot that
+[  717.29s ->   721.61s] can actually constantly be on top of the market and the trend, this is the tool for you. Go try it
+[  721.61s ->   725.91s] out for 30 days. A link down in the YouTube description, and I will see you in the next video.

@@ -1,0 +1,6 @@
+[    0.50s ->    18.64s] Hello and welcome. I'm Roman. I'm a quantitative researcher and founder of Quant Guild. Quant Guild is an e-learning environment where one can learn the essential skills to becoming a quant, data scientist, software engineer, and everything in between.
+[   18.64s ->    35.78s] Here are some of the courses we are currently developing. We are going to be producing everything from introductory content to Python, quantitative finance, and machine learning, all the way to advanced content with the intent of having each course build upon one another.
+[   36.30s ->    47.06s] We also will be producing open source research and tutorial notebooks available on Quant Guild's GitHub, as seen in this example of a PCA tutorial notebook.
+[   47.06s ->    57.16s] With this, we will also be publishing videos to YouTube on a variety of quant topics, from stochastic differential equations to securities pricing.
+[   57.82s ->    65.46s] So be sure to subscribe to stay up to date with the latest content, and feel free to send me an email if you have any questions or suggestions.
+[   65.98s ->    68.68s] Thank you for watching, and welcome to Quant Guild.

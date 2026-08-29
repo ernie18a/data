@@ -1,0 +1,181 @@
+<!-- tradingview-pine-id: PUB;Fg8ggzLHVSInsJ4sTPzwztNyiEu6ZFfS -->
+<!-- tradingviewscripts-format: 1 -->
+# Tick Chart
+
+Source: https://www.tradingview.com/script/ygNO2G1V-Tick-Chart/
+
+## Description
+
+Hello All,
+
+Tick Chart is created using ticks and each candlestick in Tick Chart shows the price variation of X consecutive ticks (X : Number of Ticks Per Candle). for example if you set Number of Ticks Per Candle = 100 then each candlestick is created using 100 ticks. so, Tick Charts are NOT time-based charts (like Renko or Point & Figure Charts). Tick is the price change in minimum time interval defined in the platform. There are several advantages of Tick Charts. You can find many articles about Tick Charts on the net.
+
+Tick Chart only works on realtime bars.
+
+You can set "Number of Ticks Per Candle" and "Number of Candles" using options. You can change color of body, wicks abd volume bars as well.
+
+The script shows current, minimum, maximum and average volumes. it also shows OHLC values on the last candle.
+
+Tick Chart using different number of ticks
+https://www.tradingview.com/x/0RktNW7V/
+
+Volume info:
+https://www.tradingview.com/x/kV7KC4eS/
+
+Enjoy!
+
+---
+
+## Source Code
+
+````pine
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © LonesomeTheBlue
+
+//@version=4
+study("Tick Chart", max_lines_count = 500)
+ticknumber = input(defval = 5, title = "Number of Ticks Per Candle", minval = 1, group = "Setting 🔨", tooltip="Number of Ticks For Each Candle")
+numcandles = input(defval = 50, title = "Number of Candles", minval = 1, maxval = 160, group = "Setting 🔨", tooltip="Number of Candles Shown on the chart")
+precision = input(defval = 2, title = "Precision", minval = 0, maxval = 5, group = "Setting 🔨", tooltip="Precision is the number of digits in a number")
+bodyupcol = input(defval = color.lime, title = "Body Colors ", group = "Colors 🟡🟢🟣", inline = "bodycolor")
+bodydowncol = input(defval = color.red, title = "", group = "Colors 🟡🟢🟣", inline = "bodycolor")
+wickcol = input(defval = #b5b5b8, title = "Wicks Color ", group = "Colors 🟡🟢🟣", inline = "wickcolor")
+volupcol = input(defval = #26a69a, title = "Volume Colors", group = "Colors 🟡🟢🟣", inline = "volcolor")
+voldowncol = input(defval = #ef5350, title = "", group = "Colors 🟡🟢🟣", inline = "volcolor")
+
+//define/initialize varip variables. using varip is important because on each run they don't get initialized!
+varip int move_count = 0
+varip float last_close_price = 0.
+varip float last_volume = 0.
+varip candle_array = array.new_float(numcandles * 4) // O: 0, H: 1, L: 2, C: 3
+varip volume_array = array.new_float(numcandles, 0)
+varip ticknum = 0
+
+// to catch first move in realtime bar
+if bar_index > 0
+    move_count := move_count + 1
+
+if move_count == bar_index
+    last_volume := volume
+    last_close_price := close
+    for x = 0 to 3
+        array.set(candle_array, x, last_close_price)
+
+// on a new bar reset variables
+if barstate.isnew
+    if array.get(volume_array, 0) != 0
+        last_volume := -array.get(volume_array, 0)
+    else
+        last_volume := volume
+    last_close_price := close
+
+// if reached enough ticks then get the values, otherwise sum/keep them
+if ticknum >= ticknumber
+    if move_count > bar_index
+        for x = 1 to 4
+            array.unshift(candle_array, last_close_price)
+            array.pop(candle_array)
+        array.unshift(volume_array, 0)
+        array.pop(volume_array)
+    last_close_price := close
+    last_volume := volume
+    ticknum := 0   
+else 
+    array.set(volume_array, 0, volume - last_volume)
+    array.set(candle_array, 3, close)
+    array.set(candle_array, 1, max(array.get(candle_array, 1), close))
+    array.set(candle_array, 2, min(array.get(candle_array, 2), close))
+    last_close_price := close
+    if move_count > bar_index
+        ticknum := ticknum + 1
+
+// for visualization
+float maxlevel = array.get(candle_array, 1)
+float minlevel = array.get(candle_array, 2)
+for x = 1 to numcandles - 1
+    if not na(array.get(candle_array, x * 4))
+        maxlevel := max(maxlevel, array.get(candle_array, x * 4 + 1))
+        minlevel := min(minlevel, array.get(candle_array, x * 4 + 2))
+
+channel_width = (maxlevel - minlevel) / 5 // max volume level
+volzeroline = minlevel - channel_width * 1.2
+//var line zline = na
+//line.delete(zline)
+//zline := line.new(x1 = bar_index, y1 = volzeroline, x2 = bar_index - 1, y2 = volzeroline, color = color.white, style = line.style_dotted, extend = extend.both)
+
+get_string(val)=>
+    ret = ""
+    if precision == 0
+        ret := tostring(val, '#')
+    else if precision == 1
+        ret := tostring(val, '#.#')
+    else if precision == 2
+        ret := tostring(val, '#.##')
+    else if precision == 3
+        ret := tostring(val, '#.###')
+    else if precision == 4
+        ret := tostring(val, '#.####')
+    else
+        ret := tostring(val, '#.#####')
+    ret
+
+//draw
+var label vol_lab = label.new(bar_index, 0, text = "", style = label.style_label_left, textalign = text.align_left, color = color.new(color.white, 100), textcolor = color.blue)
+var candles = array.new_line(numcandles * 3) // body:0 , wicks : 1, 2: volume
+if barstate.islast
+    for x = 0 to array.size(candles) - 1
+        line.delete(array.pop(candles))
+        
+    float min_vol = 1e10
+    float max_vol = 0.
+    float total_vol = 0.
+    int volcnt = 0
+    for x = 0 to numcandles - 1
+        array.unshift(candles,
+                      line.new(x1 = bar_index - x, 
+                               y1 = array.get(candle_array, x * 4 + 1), 
+                               x2 = bar_index - x, 
+                               y2 = array.get(candle_array, x * 4 + 2), 
+                               color = wickcol,
+                               width = 1))
+        mindist = abs(array.get(candle_array, x * 4) - array.get(candle_array, x * 4 + 3)) < syminfo.mintick * 2 ? syminfo.mintick * 2: 0.
+        array.unshift(candles,
+                      line.new(x1 = bar_index - x, 
+                               y1 = array.get(candle_array, x * 4), 
+                               x2 = bar_index - x, 
+                               y2 = array.get(candle_array, x * 4 + 3) + mindist, 
+                               color = array.get(candle_array, x * 4 + 3) >= array.get(candle_array, x * 4) ? bodyupcol : bodydowncol,
+                               width = 5))
+        
+        // volume
+        bar_vol = channel_width * array.get(volume_array, x) / array.max(volume_array)
+        array.unshift(candles,
+                      line.new(x1 = bar_index - x, 
+                               y1 = volzeroline, 
+                               x2 = bar_index - x, 
+                               y2 = volzeroline + bar_vol, 
+                               color = array.get(candle_array, x * 4 + 3) >= array.get(candle_array, x * 4) ? volupcol: voldowncol,
+                               width = 5))
+                               
+        if not na(array.get(candle_array, x * 4))
+            min_vol := min(min_vol, array.get(volume_array, x))
+            max_vol := max(max_vol, array.get(volume_array, x))
+            total_vol := total_vol + array.get(volume_array, x)
+            volcnt := volcnt + 1
+    
+    txt = "Current volume = " + get_string(array.get(volume_array, 0)) + "\n" +
+          "Minimum volume = " + get_string(min_vol) + "\n" +
+          "Maximum volume = " + get_string(max_vol) + "\n" +
+          "Average volume = " + get_string(total_vol / volcnt) + "\n" +
+          "Remaining Tick = " + tostring(ticknumber - ticknum) + " / " + tostring(ticknumber) + "\n\n\n\n\n"
+          
+    label.set_text(vol_lab, txt)
+    label.set_xy(vol_lab, bar_index, volzeroline)
+
+//visualization
+//OHLC
+plot(move_count > bar_index ? array.get(candle_array, 0) : na, color = array.get(candle_array, 3) >= array.get(candle_array, 0) ? color.new(color.lime, 100) : color.new(color.red, 100), show_last = 1, editable = false)
+plot(move_count > bar_index ? array.get(candle_array, 1) : na, color = array.get(candle_array, 3) >= array.get(candle_array, 0) ? color.new(color.lime, 100) : color.new(color.red, 100), show_last = 1, editable = false)
+plot(move_count > bar_index ? array.get(candle_array, 2) : na, color = array.get(candle_array, 3) >= array.get(candle_array, 0) ? color.new(color.lime, 100) : color.new(color.red, 100), show_last = 1, editable = false)
+plot(move_count > bar_index ? close : na, color = array.get(candle_array, 3) >= array.get(candle_array, 0) ? color.new(color.lime, 100) : color.new(color.red, 100), show_last = 1, editable = false)
+````

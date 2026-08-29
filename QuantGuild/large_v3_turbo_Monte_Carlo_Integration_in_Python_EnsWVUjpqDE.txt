@@ -1,0 +1,73 @@
+[    1.46s ->     5.94s] Hey YouTube, it's Roman. Today I want to talk about Monte Carlo integration.
+[    6.38s ->    13.22s] We're going to start with a visual interpretation of what Monte Carlo integration is all about,
+[   13.32s ->    19.36s] and then we're going to move over to Python and actually code our own simulation to approximate
+[   19.36s ->    23.42s] a definite integral. I don't want to spend too much time on the math, I just want to start
+[   23.42s ->    28.88s] building some intuition visually. So let's go ahead and draw a chart really quickly. We're
+[   28.88s ->    34.74s] going to have x and f of x, and we can consider some function that perhaps looks like this,
+[   35.06s ->    43.31s] and we have two points, let's say a and b, and we want to figure out the area underneath
+[   43.31s ->    52.29s] this curve between these two points. Now usually, analytically, we could solve this as the integral
+[   52.29s ->    62.67s] from a to b of f of x dx, and that would give us this area here underneath the curve. In
+[   62.67s ->    68.21s] some cases, this integral here won't actually have an analytical solution, so we have to
+[   68.21s ->    73.05s] use numerical methods like Monte Carlo integration to find the value that we're looking for. So
+[   73.05s ->    79.11s] let's establish the method of Monte Carlo integration. What we can do to find the area underneath this
+[   79.11s ->    85.75s] curve if we can't solve for analytically is start by randomly sampling points in the domain. So we
+[   85.75s ->   101.32s] can say xi is equal to x1, x2, all the way to xn, where xi is distributed uniformly from a to b. So what is
+[  101.32s ->   107.34s] that going to look like? If we randomly sample one point, well, maybe it'll fall right here between a and b.
+[  107.34s ->   114.42s] Maybe another one will get this guy, maybe another one this guy, and then as we keep randomly sampling
+[  114.42s ->   121.70s] points, each one has the same probability of being selected from this uniform distribution, and we're
+[  121.70s ->   128.02s] going to end up with a collection of points nicely distributed across the x axis. Given that we know
+[  128.02s ->   134.74s] the function f of x, we can find its value for each of these randomly sampled points. So what we end up
+[  134.74s ->   149.83s] with is a collection of f of x's, f of xi is equal to f of x1, f of x2, all the way to f of xn, where n is the total
+[  149.83s ->   157.43s] number of points we sample from a to b. And we end up with this collection of function values corresponding to
+[  157.43s ->   163.35s] each point in the domain. So this point here is going to correspond to this functional value,
+[  164.07s ->   174.58s] this point to this one, and so on and so forth. We have all of the corresponding functional values
+[  174.58s ->   180.66s] at each of the points we've randomly sampled. If we think about this in terms of our definite integral
+[  180.66s ->   187.14s] definition, this is actually quite similar. We're taking the function evaluated at a certain point,
+[  187.14s ->   193.06s] and then we're also going to consider another point and a function evaluated at that point. The only
+[  193.06s ->   200.10s] difference is we're not developing this notion of a delta x. We are inducing that change randomly
+[  200.10s ->   206.82s] through this distribution of randomly selected x's via that uniform distribution from a to b.
+[  206.82s ->   211.46s] Thinking in terms of our definite integral, if we look at this chart, we know what height is for each
+[  211.46s ->   219.14s] of these rectangles. We know it's just going to be these green lines corresponding to the function's
+[  219.14s ->   226.10s] value at each of the points randomly sampled on the x-axis. So what does that make our width? Well,
+[  226.10s ->   234.74s] we have a constant width of b minus a. That's this length here. We're trying to find the area underneath
+[  234.74s ->   242.66s] the curve between these two points, but the width of this one rectangle, if you will, doesn't change.
+[  243.46s ->   249.22s] Since we have this fixed width, we can find a rectangle for each of the corresponding function
+[  249.22s ->   258.26s] values. So what we end up with is this fixed width of a rectangle here and a height that changes based
+[  258.26s ->   266.82s] on the function's value. So we're ending up with a series of rectangles, as you can see here, for each
+[  266.82s ->   275.62s] of the points that we've evaluated from our random sample that was uniformly distributed from a to b.
+[  275.62s ->   281.94s] What is the area of each of these rectangles? Well, the area of each of these rectangles is simply going
+[  281.94s ->   289.46s] to be defined by the height times the width. So the height is quite clearly f of x and the width
+[  289.46s ->   297.46s] doesn't change. It's always going to be b minus a. That's this length here. So mathematically, we can say
+[  297.46s ->   307.94s] that the area of each of these rectangles abstractly is going to be b minus a times f of x. Now what we
+[  307.94s ->   316.74s] can do is we can sum the area of each of these rectangles across all of our samples by doing a
+[  316.74s ->   324.66s] summation from i equals the first sample to the nth sample. And then we take the fixed area across the x
+[  324.66s ->   333.30s] axis, our width, and multiply it by our height, f of xi. Now we're going to divide by the total number
+[  333.30s ->   338.66s] of samples that we generated from the uniform distribution. And we can do that by multiplying
+[  338.66s ->   347.62s] by 1 over m. And what's really cool about this value is it is essentially the average area of each of
+[  347.62s ->   355.62s] the rectangles that we visualized above in the graph. What's really cool about the average value
+[  355.62s ->   362.82s] of each of the rectangles that we generated above is it is approximately equal to the definite integral
+[  362.82s ->   370.74s] from a to b of f of x dx. Let's head on over to Python and see this in action. All right, back in Python.
+[  370.74s ->   377.30s] Here I have a definite integral from 0 to 2 of 4 x cubed dx. Now there is an analytical solution
+[  377.30s ->   382.58s] available to us and that is 16. We're going to use that as our baseline for our Monte Carlo integration
+[  382.58s ->   390.18s] to see how we're doing. I generated the function using matplot lib below and numpy. So I generate 100
+[  390.18s ->   396.18s] points from 0 to 2 and then I am simply cubing each of those points and then multiplying them by 4.
+[  396.18s ->   402.10s] And I end up with this chart. The upshot of Monte Carlo integration and Monte Carlo simulation in
+[  402.10s ->   408.66s] general is that it is actually really easy to implement via code. So what do we need? Well,
+[  408.66s ->   418.82s] first we need to develop this notion of a function. So def f of x is going to return 4 times x cubed,
+[  418.82s ->   424.10s] which is our function that we're trying to integrate. Then we're going to randomly sample points in the
+[  424.10s ->   432.34s] domain 0 to 2 and we can very easily do that by defining capital x as being equal to mp dot random
+[  432.90s ->   441.70s] dot uniform 0 to 2 and let's do 10,000 points. Now we're going to come up with those green strips.
+[  441.70s ->   446.34s] We're going to evaluate each of these points in the domain according to the function that we have
+[  446.34s ->   453.46s] defined here. So we'll say capital y is equal to f of capital x and that is going to evaluate each of
+[  453.46s ->   461.78s] the points in our sample at the function for x cubed. And now all we need to do to develop the areas
+[  461.78s ->   469.46s] of these rectangles that we have for each of the samples is multiply it by that b minus a. In this case,
+[  469.46s ->   476.10s] b is 2, a is 0, thus b minus a is simply 2. So we can just multiply this entire series by 2.
+[  478.04s ->   485.86s] Now in traditional Monte Carlo fashion, we can simply sum over all of our samples. So sum y
+[  486.50s ->   497.14s] and then divide by the total number of samples, in this case 10,000, and we will get our answer of 15.985,
+[  497.94s ->   504.18s] which is not a bad approximation for our analytical solution, which is 16. I want to thank you guys so
+[  504.18s ->   508.42s] much for watching. I really appreciate it. If you would like to subscribe, like the video,
+[  508.42s ->   513.86s] it helps me out a lot, helps me keep creating cool content like this. As always, if you have any
+[  513.86s ->   517.94s] questions, please feel free to leave them in the comments below. You can always shoot me an email
+[  517.94s ->   524.26s] too if you have a more specific question. Always feel free to come at me with video ideas. I really
+[  524.26s ->   528.42s] appreciate all the video ideas that you guys have been giving me. I'm doing my best to try to get to all of
+[  528.42s ->   544.89s] them. Other than that, thank you guys so much for watching and I will see you guys in the next one.

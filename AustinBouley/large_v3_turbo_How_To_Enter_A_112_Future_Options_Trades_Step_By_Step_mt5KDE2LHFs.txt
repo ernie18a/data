@@ -1,0 +1,115 @@
+[    0.00s ->     4.80s] Hey guys, welcome to this video. I'm going to show you step-by-step exactly how to enter a 1-1-2,
+[    4.94s ->     9.46s] how to pick the right delta strikes, and how to actually enter the trade. And so again,
+[    9.56s ->    13.98s] I will be doing this on my Tasty Trade broker, but you can do it on any broker you want. So by
+[   13.98s ->    18.02s] the end of this video, you'll know how to pick the right levels, what it means, and how to actually
+[   18.02s ->    23.76s] place the trade and get in it. So let's dive in. Guys, I've been using 1-1-2s here, and you can see
+[   23.76s ->    29.26s] on, let me make my face smaller, on CL and ES. And I've been trading these here for a bit,
+[   29.26s ->    36.20s] and I'm making about $5,000 to $6,000 a month, and my account is up now $21,300 since trading
+[   36.20s ->    41.98s] 1-1-2s this year. So that's how awesome this is, and I love it. So let's dive in. How can you enter
+[   41.98s ->    47.00s] a 1-1-2? Well, first off, we need to pick the right asset. Again, if you're trading with an account
+[   47.00s ->    55.28s] that's above $20,000, I would recommend trading ES, because that's what's best for larger accounts.
+[   55.28s ->    60.80s] Each trade takes about $8,000 of buying power. Now, if you have a smaller account, less than
+[   60.80s ->    69.24s] $20,000, you should trade 1-1-2s on MES, which is the same thing as ES, but a micro version of it.
+[   69.32s ->    75.06s] And so it costs a tenth of the price. So it costs about $800 per trade. And so again, that can help
+[   75.06s ->    80.00s] you kind of define which asset you should be trading. Now that you know if you should be trading ES or MES,
+[   80.00s ->    87.92s] here's how you enter that trade. Well, first off, we go to the trade tab here. We go and we pick our
+[   87.92s ->    94.76s] expiration date. So again, for most trades, you want to be between 90 and 120 days. That's typically
+[   94.76s ->   101.02s] your best range. Now, for those of you who want to know what each one means, the further away you go,
+[  101.16s ->   106.38s] so like if you're going to about 120 days, you'll collect more money, but it will take you longer
+[  106.38s ->   110.40s] to make that money because you have to be in the trade for a longer amount of time, like a month,
+[  110.48s ->   115.62s] two months, maybe even three months to be in that trade to realize the profit. Now, the shorter end
+[  115.62s ->   122.40s] you go, let's say 60 or 80 days, then you'll make less money, but you'll make it faster because you can
+[  122.40s ->   127.26s] make it in about a month or less because the contracts are expiring so quickly. And so again,
+[  127.26s ->   132.22s] it's all about what you want to do risk to reward. Now, what I recommend for most people is you just do
+[  132.22s ->   139.14s] a 90 DTE. It's a good middle ground. This is what I do for all my 112 trades is find the expiration
+[  139.14s ->   144.24s] date that is closest to 90. So you can see here we have an 85 and a 95. You can see here actually
+[  144.24s ->   149.60s] that I already have positions on the 85 days out. You can see here my 112s and different things like
+[  149.60s ->   153.94s] that, how they're all structured. But what we're going to do is we're going to start off from scratch
+[  153.94s ->   159.40s] and say we're just going to pick this, the 95 day mark. So again, if in doubt, do 90 days or closest to
+[  159.40s ->   165.44s] it. So this is 95. So we'll pick that. Now, how, how, how do we know what strikes to enter at?
+[  165.76s ->   170.68s] So again, the best practice and rec and rec and recommended is this. So I'll show you how to
+[  170.68s ->   175.10s] structure it, how I do, and then I'll explain why I do that and how you can change it if you want.
+[  175.54s ->   182.40s] So right here, I buy the 25 Delta. So again, which one is closest to 25? I'll just be 27. So I'm
+[  182.40s ->   188.54s] going to buy this one. That's a sell. I'm going to buy this one by this one. And then I'm going to sell
+[  188.54s ->   194.46s] the 23 Delta. So I'm going to sell this one. So buy the 25 or closest to a Delta. Again,
+[  194.50s ->   198.00s] if you don't know what the Delta is, you can click here and change that Delta price.
+[  198.52s ->   203.22s] And then we're going to sell the 23 Delta. This creates our put debit spread that makes money to
+[  203.22s ->   209.12s] the downside, which is a part of the 112. Next, I go down to seven Delta, and then I sell two of these.
+[  209.12s ->   215.28s] I'm going to click on this and up the quantity of two. This is how I structure my 112 trade. I buy the
+[  215.28s ->   223.06s] 27 Delta. I mean, 25 Delta. I sell the 23 Delta, and then I sell two of the seven Delta. So you can
+[  223.06s ->   230.38s] see right here that I'll make $1,400, 1,400 if the trade continues to go up. If the trade hits the
+[  230.38s ->   236.78s] bear trap, then I'll make 3,900. Again, you can see that if you pull up the curve. Now, how much does
+[  236.78s ->   243.52s] this trade cost to put on? Well, it costs $7,000. And guys, remember, because of span margin, which is
+[  243.52s ->   249.14s] the type of margin that futures contracts use, you want to make sure to use at least 50% of your
+[  249.14s ->   253.84s] buying power or less when you're putting on these trades, because the buying power can expand with
+[  253.84s ->   260.22s] risk. Okay. So you can see here, we'll make 1,400 by putting up 7,000. That's a great return,
+[  260.22s ->   264.62s] literally an insane return, 12, 15%, somewhere in there. I think it's actually even closer to 20.
+[  264.80s ->   270.22s] Like it is. Yeah. It's, it's a 20% return. That's how awesome this is. So you make about 20% return
+[  270.22s ->   276.30s] on about 32 to, to, to 45 days is how long this trade takes to close, um, based on take profit
+[  276.30s ->   281.96s] levels. So that's how we structure the trade. Now, what does the seven Delta put do? And how do I know
+[  281.96s ->   287.26s] to do it at this level? This is the base of your trade. The seven Delta is what makes all you,
+[  287.42s ->   292.02s] all your money. So again, if you want to make more money, you can move this up. You can see here,
+[  292.02s ->   297.16s] I used to make 1,400. Now I'll make 2,000 on this trade. So again, this will make more,
+[  297.16s ->   302.86s] but it also lowers my win rate. You can see here, I have a 94% win rate. If I push this back
+[  302.86s ->   308.66s] to seven Delta, I have a 97% win rate, but I make less. So again, that is the change. The further
+[  308.66s ->   314.70s] out I go with this one, my high, the higher, my win rate goes because the less likely it is to hit
+[  314.70s ->   319.60s] this level, but the less money I make. So again, I recommend staying anywhere between five to 10
+[  319.60s ->   325.50s] Delta. That is the zone you, we want to stay in. I like seven because it took seven days for God to
+[  325.50s ->   329.08s] make the year. Okay. Maybe six, but he rested on the seventh day. So I like seven. That's just a
+[  329.08s ->   334.04s] personal preference though. Um, anyways, uh, for the put debit spread, how do we structure this?
+[  334.10s ->   339.44s] Well, I put them back to back if I can, because then that gives me downside protection, but it
+[  339.44s ->   345.34s] doesn't take a lot of, of the profit. The further of a distance between these two are the less money
+[  345.34s ->   351.58s] I make. Um, but also the more downside protection I get. So you can see here, if the market were to crash
+[  351.58s ->   357.84s] at this level, I'll make roughly $4,000. So if, if, if the market were to go down and land in my bear
+[  357.84s ->   364.50s] trap level, I would make 4,000. If I extend this, I now make a thousand. If, if the market goes up,
+[  364.54s ->   370.74s] which is less, but I now make 6,000 if the market were to drop. So expanding this put debit spread is
+[  370.74s ->   378.00s] what creates the wider trap. So again, if you're doing best practice by the 25 Delta, sell the 23 Delta
+[  378.00s ->   382.50s] and sell two of the seven Deltas. That's what I do. And that's what works for me. Um, you'll click
+[  382.50s ->   387.94s] review and send. Now again, uh, you can see here how it works for me because safety trade now supports
+[  387.94s ->   393.66s] it. If your broker for forces you to submit it in different orders. Um, then again, you want to just
+[  393.66s ->   399.04s] enter the seven Deltas that you just sell those puts and then you'll enter in the put debit spread
+[  399.04s ->   403.56s] and then you'll combine them together. But you can see here, I can enter it as just one. And so again,
+[  403.56s ->   408.32s] I'll submit this trade and I'll enter in now. Let me just go back here and say, if you're having a
+[  408.32s ->   413.60s] hard time getting filled, um, we're selling to enter this trade, which means that if you want to
+[  413.60s ->   421.20s] get an instant fill, the best place to put your price is at the bid or at this side. Why? Well,
+[  421.20s ->   426.30s] because if we're selling, we need buyers to take it from us. So the fastest place to get filled is by
+[  426.30s ->   431.98s] putting it closer to 2750. And this would be more of an instant fill. So again, I recommend doing the
+[  431.98s ->   435.96s] mid price first, cause that's, that's going to be your best fill level. Uh, but if you don't get
+[  435.96s ->   440.86s] filled on this price, move it down to the bid price and you should get an instant fill from there.
+[  441.00s ->   444.86s] And so that's exactly how you enter these trades. Now, if you're someone's like, okay, awesome,
+[  444.86s ->   448.22s] this is cool, but it's a bit overwhelming. Like I want to make sure that I place these trades
+[  448.22s ->   454.68s] correctly. Well, that's exactly why I made the options auto trader. It completely automates your
+[  454.68s ->   459.42s] one, one, two trading. You can see here, all my one, one, two, two trades have been placed,
+[  459.42s ->   464.62s] managed and hedged and protected all by the options auto trader based on how I set it.
+[  464.72s ->   468.46s] And this one, one, two auto traders made me 16,000. Now I may be like, how in the world does
+[  468.46s ->   473.54s] this work? Well, simply you create an auto trader, you connect your TC trade account or any
+[  473.54s ->   478.98s] account you have, you create an, uh, an auto trader. And again, you can automate any option
+[  478.98s ->   483.26s] selling strategy. But for this instance, we're doing one, one, twos again, if you're, you know,
+[  483.26s ->   486.66s] small or large, large account depends on what you want to do. Let's just say I want to do an
+[  486.66s ->   493.24s] MES 90 days out. I preload all the best practices. You buy the 25 Delta, you sell the 23 Delta.
+[  493.74s ->   498.24s] And again, between five to 10 for this one, let's just bump this one up to seven. So I sell all two
+[  498.24s ->   503.43s] of the seven Deltas. From there, I say, how often do I want to enter this trade? And it will enter
+[  503.43s ->   508.15s] whenever I tell it to enter. Um, so again, I can enter once a week on Wednesdays. It's pretty standard,
+[  508.15s ->   514.93s] uh, take profit percentage. You know, you typically want it around 80, 80 to 90% stop loss. You can
+[  514.93s ->   520.89s] have a 300% stop loss. And because this automation system is built for one, one, twos, you can even
+[  520.89s ->   525.17s] turn your one, one, two trade into a hedge automatically. So again, I can close the
+[  525.17s ->   531.53s] entire trade at this prop, at, at, at this profit target or at, or at the profit target, I can turn
+[  531.53s ->   535.09s] it into a put debit spread heads, a ratio hedge, whatever I want. Let's just leave it at it. I put
+[  535.09s ->   540.51s] debit spread edge. I say how much money I want to use to trade. Let's say I want to use $2,000 to trade
+[  540.51s ->   546.35s] save and continue. Just like that. I created an, uh, an, an auto trader that will automatically trade
+[  546.35s ->   551.11s] based on all the rules that I set. And so again, I can just save and set that live. But just like
+[  551.11s ->   556.13s] this, I have an ES one, one, two automation and a CL one, one, two. And you can see here that they're
+[  556.13s ->   560.05s] each may, they're each making me, um, thousands of dollars. So that's awesome. I'll keep that
+[  560.05s ->   564.55s] running. So if you're someone who loves the one, one, two, but it hates a man who hates having to
+[  564.55s ->   569.93s] enter managed turn, turn into hedge, or feels like it's a bit too overcomplicated. Um, then again,
+[  569.93s ->   575.07s] you can use this automation system to enter, to have your take profits, manage your exits,
+[  575.25s ->   580.53s] manage your hedges, managed all for you and in one place. And not only that, it makes more sense
+[  580.53s ->   585.39s] than the broker. Why? Cause it shows your whole trade group, uh, group together. It shows the profit.
+[  585.45s ->   590.39s] It shows you based on a simple graph, how close you are to your, to your take profit and how close you
+[  590.39s ->   594.51s] are to your stop loss, depending. And even when it turns the trade into a hedge for you,
+[  594.55s ->   598.91s] you can see the details of that hedge. How much protection is this hedge giving me? How much
+[  598.91s ->   603.53s] does this hedge hedge cost? And based on my other trade that I closed for a profit,
+[  603.67s ->   608.15s] how much total profit will I end up with? It shows it all there for you. Um, and you know,
+[  608.17s ->   612.03s] it, it even gives you graphs and data that take, that tasty trade wouldn't give you. So again,
+[  612.03s ->   616.03s] if you're interested in, uh, in, in automating your one or two, click, click, click the link down
+[  616.03s ->   617.63s] below. All right, guys, see you in the next video.

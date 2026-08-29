@@ -1,0 +1,66 @@
+[    0.04s ->     4.46s] How to profit from the average daily percentage move as a credit spread trader.
+[    4.56s ->     8.88s] I'm going to walk you through what this chart is, how to read it, and how to profit from it.
+[    8.94s ->    10.70s] So let's walk through the specifics here.
+[   11.06s ->    13.48s] First off, this chart came from the Financial Samurai website.
+[   13.60s ->    17.10s] If you want to learn more about that, please feel free to go check that out.
+[   17.36s ->    19.36s] It's also made available by Charter.
+[   19.64s ->    25.22s] But essentially what it's saying is that a stock's daily move will be between minus 1 and plus 1%.
+[   25.22s ->    28.22s] That's where a bulk of our averages is.
+[   28.22s ->    31.72s] Now how do we take advantage of this and what does the outside ranges mean?
+[   31.84s ->    37.14s] Well, first off, if you're trying to understand this, when we look at the daily price action of the S&P 500,
+[   37.78s ->    42.16s] a stock from the open period to the closed period, whether it's an up day or down day,
+[   42.44s ->    44.76s] should be between minus 1 and plus 1%.
+[   44.76s ->    49.14s] When it's outside of that range, we are outside our normal trading range,
+[   49.38s ->    51.46s] and that means that something dramatic is happening.
+[   51.58s ->    52.96s] So how do we take advantage of this?
+[   53.32s ->    57.08s] Are you trying to make money with credit spreads or just trying to understand my strategy
+[   57.08s ->    59.08s] or trying to find a strategy that works in any market?
+[   59.20s ->    63.06s] Well, I put together a free course called the Ultimate Credit Spread System course.
+[   63.16s ->    66.96s] It walks you through how it works, every strategy for every different type of market,
+[   67.26s ->    72.34s] how to generate monthly income, the exit rules we use, the minimum credit, trade sizing, and all that.
+[   72.42s ->    75.36s] So if you're interested, click the description down below to get free access.
+[   75.84s ->    77.28s] Anyways, hope you enjoy the rest of this video.
+[   77.28s ->    84.36s] Well, first off, if the day traded and closed within the minus 1 to plus 1%, you're in a normal trading day.
+[   84.56s ->    85.36s] There's nothing to do.
+[   85.46s ->    85.94s] It's normal.
+[   86.30s ->    92.60s] However, when you see a stock exceeding normal ranges, exceeding plus 1% in a single day,
+[   92.64s ->   101.02s] or exceeding minus 1% in a single day, this should trigger you for the opportunity to take some amazing credit spread trades.
+[  101.32s ->   101.72s] Why?
+[  102.02s ->   103.74s] Well, because, let's take a look at this.
+[  103.74s ->   107.08s] When the stock is trending up, for instance, here's a prime example.
+[  107.18s ->   111.82s] When a stock is trending up, then we get an out-of-normal range stock like this.
+[  112.12s ->   118.94s] So, for instance, if I bring up the measuring thing here, this was a 1.5% move on this large green candle.
+[  119.42s ->   119.56s] Okay?
+[  119.76s ->   122.78s] So we're already seeing the stock is moving higher and higher and higher,
+[  122.86s ->   125.24s] so it's already getting to that overextended period.
+[  125.70s ->   131.18s] Now we have a move where it's above 1%, which is our daily expected move.
+[  131.22s ->   132.42s] So it moves above that.
+[  132.42s ->   133.96s] And then what do we see?
+[  134.04s ->   136.46s] We start to see this small pullback to reset.
+[  137.08s ->   145.00s] So, again, what should we expect to do when we see a previous run-up and then a candle that breaks our average daily percentage range?
+[  145.46s ->   146.62s] Well, simply this.
+[  147.14s ->   149.42s] We're going to put on a call credit spread trade.
+[  149.76s ->   149.98s] Why?
+[  149.98s ->   153.44s] Well, because the market was already starting to get to overextended territory.
+[  154.02s ->   159.96s] Then it really pushed past our daily expected range, which shows that it's going to need to snap back in some way, typically.
+[  160.54s ->   166.64s] And then we can put on a profitable credit spread trade, a call that makes money to the downside for this next dip.
+[  166.64s ->   172.56s] And so, again, we can see the same things in different ways, especially when we're headed down to the downside.
+[  172.90s ->   174.44s] So you can see here we're trading down.
+[  174.60s ->   181.48s] Again, if we have our first initial spike down, because red candles seem to go after one another, you should ignore it.
+[  181.48s ->   189.30s] But after we've been trading down for a bit and you see large candles, you can then start to use, put credit spread trades to take advantage of these markets.
+[  189.70s ->   195.14s] Things like this that really start to exceed expected values should really pull your attention in.
+[  195.40s ->   199.08s] For instance, this candle right here, 4.7% daily move.
+[  199.16s ->   202.52s] That is four to almost five times the daily average move.
+[  202.74s ->   203.88s] This candle should come in.
+[  204.00s ->   204.84s] This is not normal.
+[  205.14s ->   205.96s] We need a reset.
+[  206.36s ->   209.08s] And so learning how to place credit spread trades around it.
+[  209.08s ->   217.26s] So, again, if we're more on a downtrending spike and then we have this huge unexpected move, this huge range, then you can put on a put credit spread.
+[  217.34s ->   220.16s] If you're going to the upside, a call credit spread.
+[  220.90s ->   225.54s] But this is just something that I want you to keep in the back of your mind if you're a credit spread trader.
+[  226.08s ->   227.84s] What is the daily expected move?
+[  227.92s ->   229.06s] Minus one to plus one.
+[  229.58s ->   230.76s] Have we exceeded that?
+[  230.84s ->   233.00s] Have we exceeded that by a crazy amount?
+[  233.12s ->   238.64s] If so, there may be an opportunity to put on a consistent and profitable credit spread trade.
+[  239.08s ->   245.86s] All right, guys, if you enjoyed this video, if you learned something from it, please smash that subscribe button and I will see you in the next video.

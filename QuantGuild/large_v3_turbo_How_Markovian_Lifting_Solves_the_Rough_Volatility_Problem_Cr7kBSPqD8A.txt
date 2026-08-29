@@ -1,0 +1,280 @@
+[    1.34s ->     9.25s] We've all been there. We want to capture features of non-Markovian models without all of the
+[    9.25s ->    16.09s] inefficiency. We want to retain that affine structure. In this video today, we're going to
+[   16.09s ->    22.51s] talk about the idea of Markovian lifting specifically for rough volatility. We're
+[   22.51s ->    28.33s] going to start with a visual interpretation of it related to the Markov property. We're going to
+[   28.33s ->    35.69s] understand this idea of expanding the state space to the entire path or to just whatever we would
+[   35.69s ->    42.35s] like to define it as. And then we're going to see that idea in this lifting process where we take
+[   42.35s ->    49.47s] something that is non-Markovian, that is entirely path dependent, and we instead represent it as a
+[   49.47s ->    56.03s] finite set of Markovian state variables. Before formally discussing Markovian lifting, it's going
+[   56.03s ->    62.13s] to be very useful to look at a simple visualization to understand what expanding the state space
+[   62.13s ->    68.89s] actually means. This is going to give us something geometrically, visually, we can latch on to
+[   68.89s ->    77.11s] when we discuss more complicated math. We discuss this idea of a set of Markovian state variables to
+[   77.11s ->    84.11s] approximate that path dependence. Let's start with this simple visualization. I'm going to draw a chart
+[   84.11s ->    94.12s] here. And this is just going to be one sample path of Brownian motion. So maybe we're at time,
+[   94.12s ->   101.86s] little t. This is our realization at time, little t. And Brownian motion is of course defined in terms
+[  101.86s ->   109.02s] of independent increments. So subsequently we have this Markov property. In other words, in order to
+[  109.02s ->   117.76s] generate the next step of this path, I don't need this entire path that I've traced out. I only need
+[  118.30s ->   124.46s] the current state. If I was to write this as a probability statement, and sure, this is going to be
+[  124.46s ->   130.30s] a discrete representation, but the idea still remains the same. If I was to write this as the probability
+[  130.30s ->   139.34s] of the next step in this stochastic process being arbitrary state I, given all previous information,
+[  139.58s ->   149.50s] the current state, the state before that, all the way back to path inception, well, this would be
+[  149.50s ->   160.86s] equivalent to that same arbitrary transition to state I, given the current state. In other words,
+[  160.86s ->   168.18s] all this information before the current state doesn't matter. It's not going to change the
+[  168.18s ->   176.85s] probability of transition. It's not going to change the next step in this Brownian motion.
+[  177.03s ->   182.81s] This is certainly a nice property, especially in the context of simulation. Every single time I want
+[  182.81s ->   189.73s] to take a step in this process, I don't need the entire path. All I need is the current state. It makes
+[  189.73s ->   196.71s] it very efficient, and we also have other mathematical tools available to us to accomplish
+[  196.71s ->   202.99s] different tasks, finding conditional expectations, solving for options prices, the list goes on.
+[  203.33s ->   210.87s] But in recent years in the literature, we've observed that elements that we previously thought
+[  210.87s ->   217.63s] could be approximated in a Markovian sense are actually better approximated in a non-Markovian sense.
+[  217.63s ->   223.53s] What that means is to generate the next step in this process, we actually do need this entire
+[  223.53s ->   230.37s] path here. Now that creates a computational problem because, well, we already see here that if we have
+[  230.37s ->   235.55s] the current state to generate the next state, that's a nice simplifying assumption, right? We don't need
+[  235.55s ->   240.75s] all this other information. But if we do, we're going to run into a bottleneck. It's going to be
+[  240.75s ->   247.71s] computationally expensive to simulate. We're also going to lose that affine structure for our
+[  247.71s ->   254.89s] mathematical tools. So what is the idea here? Well, can we expand the state space then? What do
+[  254.89s ->   261.77s] I mean by this? Well, here we just assumed that the current state was a single point. Why can't it be
+[  261.77s ->   271.58s] two points? So I'll make it this point here, and I'll make it t minus one. So effectively, I can just
+[  271.58s ->   279.76s] create a new state. I'll say z sub t is actually going to be a composite of those two states.
+[  281.62s ->   286.18s] Terrific. I could just rewrite this probability statement now, right? I could just say,
+[  286.18s ->   297.70s] hey, the probability of z t plus one being in arbitrary state i given z t, z t minus one all the
+[  297.70s ->   308.38s] way back to inception z zero. Well, this is just going to be z t plus one given z t. And now we have
+[  308.38s ->   315.38s] this Markov property. We've recovered the Markovian structure, but now we're expanding it to the previous
+[  315.38s ->   323.76s] two points. Okay. But as I said a moment ago, the literature suggests that we want the entire path.
+[  324.30s ->   335.99s] So can I just expand the state space to be x sub t, x sub t minus one all the way back to inception?
+[  335.99s ->   341.71s] It's like, sure, but this is no longer a simplifying assumption, right? You've just
+[  341.71s ->   351.53s] included the entire path in that next step. So we're really not using it anymore as a simplifying
+[  351.53s ->   358.61s] assumption. If we just expand the state space to be arbitrarily the entire path, that's not going to
+[  358.61s ->   365.07s] help us in terms of an efficient simulation. Sure, we may be able to capture then those path
+[  365.07s ->   372.43s] dependent dynamics, but we're not going to do so in a clever or computationally efficient way. So
+[  372.43s ->   379.01s] this is what it looks like to expand the state space, but we're doing so right now across the time
+[  379.01s ->   386.83s] domain. We can also expand into other domains as well. So just because we're looking at a single
+[  386.83s ->   393.07s] sample path here, it doesn't mean that we can't have another sample path. I could have not just a
+[  393.07s ->   401.15s] Brownian motion, I could have maybe a mean reverting path here too. And I'm going to include that then
+[  401.15s ->   409.37s] in the definition of my state variable, I don't have to just expand it across one domain, I can expand
+[  409.37s ->   415.85s] it across whatever domain I would like, I could expand it across different paths, I could expand it
+[  415.85s ->   422.81s] in any capacity. Now, the difference is, right? Whether or not that structure that
+[  422.81s ->   429.11s] Markovian structure is going to be preserved within each of these states independently. And that's
+[  429.11s ->   434.85s] exactly what we are shooting for with this Markovian lifting, what we're going to look to do is we're
+[  434.85s ->   441.31s] going to look to take that path dependence. And instead of expanding the state space, just arbitrarily
+[  441.31s ->   447.41s] across that time domain going backwards, we're going to look for an approximation, an approximation of
+[  447.41s ->   454.35s] orthogonal processes that are going to remain Markovian. And we're going to have that efficiency,
+[  454.35s ->   461.87s] and we're going to be able to capture those path dependent dynamics, the rough dynamics, if the
+[  461.87s ->   468.61s] stochastics we just walked through to build intuition feels like a leap, and you're looking to master the
+[  468.61s ->   476.57s] necessary quantitative skills for roles in the industry as a quant trader or market maker, check out
+[  476.57s ->   483.53s] quantguild.com. We have an adaptive practice engine that scales with your skill levels so you can
+[  483.53s ->   490.45s] progress to more and more difficult topics with gamified rank-based progress in math, probability,
+[  490.89s ->   499.79s] finance, courses from A to Z, hundreds of hours of lecture content, topics you would find in a
+[  499.79s ->   506.15s] financial engineering program, but for a fraction of the price, with a focus on bringing you from
+[  506.15s ->   513.61s] student to practitioner as quickly as possible. So if you're looking to master the necessary
+[  513.61s ->   520.17s] foundational quantitative skills, check out quantguild.com. Having now this nice geometric
+[  520.17s ->   526.83s] intuition, we can move to this idea of Markovian lifting by motivating it first, writing the rough
+[  526.83s ->   534.11s] Heston model to see exactly the culprit of this non-Markovian structure, this path dependency.
+[  534.11s ->   540.35s] So what I'm going to do here is I'm going to write out the rough Heston model, and the rough Heston model
+[  540.35s ->   549.78s] is as follows. Now what you'll notice is we have these Volterra kernels here. They are going to dictate
+[  549.78s ->   557.54s] the auto covariance structure of the process, and they are in fact path dependent. And I actually have
+[  557.54s ->   563.44s] a dedicated video on this idea of the Volterra integral so that you can see what discretization
+[  563.44s ->   569.38s] and simulation actually looks like. I'll leave a link to it in the description below, but that is
+[  569.38s ->   576.88s] the culprit of this non-Markovian structure, this path dependency. Why do we include it? Well, we have
+[  576.88s ->   584.32s] this idea now that volatility is rough. If we want to capture the dynamics that we observe empirically,
+[  584.32s ->   592.54s] and this has been certainly a hot topic in the literature ever since Scathrol had his paper in
+[  592.54s ->   600.68s] 2014, volatility is rough, we see this extension to rough model families just like this Heston model
+[  600.68s ->   608.24s] has now been extended to capture these dynamics. So we certainly want to include as many components
+[  608.24s ->   613.46s] in our models that are capable of capturing dynamics that we observe empirically, but in an efficient way.
+[  613.46s ->   619.24s] We don't want to just include an insane amount of complexity. It's going to make the model unusable.
+[  619.48s ->   625.42s] So we're kind of stuck right now because that's really where we are. We've included this rough
+[  625.42s ->   632.02s] component to capture those dynamics we observe in the markets in volatility, but in order to make it
+[  632.02s ->   639.80s] useful, if we want to calibrate this model to a skew, then we need to make it efficient. That is exactly
+[  639.80s ->   646.08s] what we're going to do with this lifting process. Of course, we don't have to select a fractional kernel,
+[  646.08s ->   656.39s] but it defeats the purpose of this generalization. So we will define the Volterra kernel as a function
+[  656.39s ->   665.58s] of t to the alpha minus one over the gamma function evaluated at alpha. This is that power law that
+[  665.58s ->   672.60s] gather all suggests. This is that rough nature of volatility that we observe. And in this case,
+[  672.72s ->   678.50s] alpha is going to be a function of the Hurst parameter plus one half. And the Hurst parameter
+[  678.50s ->   687.90s] is going to be strictly between zero and one. Our objective now is going to be to find a transformation
+[  687.90s ->   695.16s] of this so that we are going to be able to move toward approximation. So what is that transformation?
+[  695.58s ->   702.14s] Well, in 2000, we have this idea of fractional Brownian motion and the Markov property. What
+[  702.14s ->   708.54s] we're going to do is conduct a Laplace transform, and we are going to see an alternative representation
+[  708.54s ->   720.28s] of t to the alpha minus one. So let's start by writing gamma evaluated at one minus alpha. This is
+[  720.28s ->   728.38s] going to be equal to using the gamma function, the integral from zero to infinity, u to the one minus
+[  728.38s ->   739.10s] alpha minus one, e to the u, du, or I should say e to the negative u du. What is this going to
+[  739.10s ->   747.28s] simplify to? Well, alpha is less than one and one minus alpha is going to be greater than zero by how
+[  747.28s ->   754.08s] we've defined it here. So we know the integral will converge and we are just going to be left with
+[  754.08s ->   764.18s] the integral from zero to infinity, u to the negative alpha, e to the negative u, du. We can now
+[  764.18s ->   775.56s] make a substitution for u in terms of t. So I'm going to say u is equal to xt, which would imply after
+[  775.56s ->   786.46s] differentiating du is equal to t dx. And now after making that substitution, we can see the limits of
+[  786.46s ->   793.42s] integration are going to remain unchanged, and we're going to be left with a new integral. This is going to
+[  793.42s ->   804.90s] be from zero to infinity, x to the negative alpha, t to the negative alpha, e to the negative xt, t dx.
+[  805.74s ->   811.78s] Very exciting. What do we see in this integral? We see a t to the negative alpha and a t. This
+[  811.78s ->   817.94s] certainly looks like the power law dynamics that we observed earlier in our Volterra kernel. If we are to
+[  817.94s ->   825.12s] now group these and then factor out the t because the integral is independent of t, we can say that
+[  825.12s ->   834.46s] this is equal to t to the one minus alpha, the integral from zero to infinity of x to the negative
+[  834.46s ->   845.12s] alpha, now e to the negative xt dx. And do remember, right, on the left hand side here, we are still left
+[  845.12s ->   851.54s] with that gamma function evaluated at one minus alpha. Well, take a look at what happens if I
+[  851.54s ->   860.26s] divide over now from both sides, t to the one minus alpha, and that gamma function evaluated at one minus
+[  860.26s ->   868.12s] alpha. Well, the sign is going to flip in that exponent. So I'm going to get t to the alpha minus
+[  868.12s ->   876.54s] one. And this is going to be equal to one over the gamma function evaluated at one minus alpha,
+[  876.86s ->   885.52s] now multiplied by the integral from zero to infinity, x to the negative alpha, e to the negative xt dx.
+[  885.92s ->   897.86s] We now have a representation of those power law dynamics in a different functional form that includes
+[  897.86s ->   905.90s] gamma and this integral. So why is this substantial? Well, this is the basis for our lifting. We can
+[  905.90s ->   915.70s] capture the rough dynamics using this infinite series of Markovian processes, specifically an
+[  915.70s ->   921.66s] Ornstein-Ullenbach mean reverting process. That is what is given by that exponential decay,
+[  921.66s ->   929.98s] those exponential dynamics within the context of this integral. Algebraically, why is this the case?
+[  930.06s ->   936.24s] Well, that's because of the semi-group property of exponentials. If I take e to the a plus b,
+[  936.58s ->   944.52s] this is going to be equal to e to the a times e to the b. Let's take a look at this idea in the
+[  944.52s ->   952.02s] context of a mean reverting process. If this is true, if we're representing it in this Markovian way,
+[  952.14s ->   959.22s] this series of Markovian state variables, we should be able to observe then the increment in such a
+[  959.22s ->   966.12s] process does not depend on the entire path. It should just depend on then the current state.
+[  966.92s ->   970.66s] So let's take a look at a single process. I'm going to call it u sub i,
+[  970.66s ->   979.84s] and we are going to look at it from 0 to t. We have those exponential dynamics, t minus s.
+[  980.16s ->   988.44s] We have our standard Brownian increment, and we're interested in an arbitrary time step delta t.
+[  989.30s ->   995.08s] You can think of it in terms of a discretization, however you would like. We have u sub i t plus delta
+[  995.08s ->  1001.48s] t. We want to generate the next step in this process. Well, this is going to be equal to
+[ 1001.48s ->  1009.10s] just substituting in t plus delta t for everywhere we see t. We get 0 to t plus delta t
+[ 1009.10s ->  1019.62s] e to the negative x i t plus delta t minus s d z s. Well, fortunately for us, we have that property.
+[ 1019.62s ->  1027.54s] We can decompose this exponential then into two integrals. So we're going to start first by
+[ 1027.54s ->  1033.86s] splitting up the integral based on the bounds of integration. So I'm going to go from 0 to t,
+[ 1034.40s ->  1039.04s] and then I'm going to go from t to delta t. If you were to think of this as a number line,
+[ 1040.22s ->  1048.66s] we would go from 0 to t. That's going to be our first integral. Then the second integral will be from
+[ 1048.66s ->  1060.74s] t to delta t. So this will be then u i t plus delta t. This is equal to the integral from 0 to t. We have
+[ 1060.74s ->  1081.28s] that same exponential then. And then we have that second integral t to delta t. And if we apply now
+[ 1081.28s ->  1089.58s] the semigroup property, then we can just break this up into two exponentials. We can break it up into an
+[ 1089.58s ->  1101.30s] exponential that contains x sub i delta t, and then x sub i t minus s. So that is exactly what we're going
+[ 1101.30s ->  1112.28s] to do. We can rewrite this then as the integral from 0 to t, e to the negative x sub i delta t,
+[ 1112.28s ->  1121.88s] e to the negative x sub i t minus s. This is, of course, thanks to our semigroup property.
+[ 1124.40s ->  1132.03s] We still have that Brownian increment. We do the same thing then. It doesn't actually matter,
+[ 1132.11s ->  1138.50s] I suppose, if we do it for the next integral because it's the increment. But from t to delta t,
+[ 1138.94s ->  1149.10s] we then have e to the negative x sub i t plus delta t minus s d z s. All right. So now,
+[ 1149.12s ->  1155.66s] if we take a look at this first integral here, what do we notice? We notice that this first term
+[ 1155.66s ->  1161.98s] here, this first exponential, doesn't depend on s. That function can be taken out of the integral.
+[ 1162.18s ->  1167.86s] It's independent of it. So that is exactly what we're going to do. I'm just going to take that
+[ 1167.86s ->  1187.47s] exponential, bring it out in front. And what do we notice? What do we have? Well, this integral
+[ 1187.47s ->  1192.83s] certainly looks familiar to us. That is the definition of our process, if you do recall.
+[ 1193.49s ->  1200.37s] So that is going to then be what? This is going to reduce to e to the negative x i delta t,
+[ 1201.21s ->  1212.21s] u i t. And then we just have this increment, t to delta t, e to the negative x sub i, t plus delta t
+[ 1212.21s ->  1218.59s] minus s d z s. Hopefully now it's clear why we didn't need to apply the semigroup property to this
+[ 1218.59s ->  1225.65s] second integral. Why is that the case? Well, we don't need to. That is the only component of the
+[ 1225.65s ->  1233.55s] integral that is going to be stochastic. We have now this Markovian structure. We don't need the
+[ 1233.55s ->  1243.13s] entire path from 0 to t. We just need the current state to generate then the next state based on this
+[ 1243.13s ->  1249.29s] increment. In other words, if we were to take the difference, then the only difference between t
+[ 1249.29s ->  1257.95s] and the step at t plus delta t would be this integral component. If we think back to our polynomial
+[ 1257.95s ->  1263.47s] dynamics of the power law, we're not going to observe this semigroup property. If we were to look at
+[ 1263.47s ->  1271.67s] the increment in the same capacity, if we recall our Volterra kernel maybe as t minus s to the alpha
+[ 1271.67s ->  1279.49s] minus 1, then let's take a look at that step, t plus delta t. Well, if we do this, then we're going
+[ 1279.49s ->  1289.16s] to observe t plus delta t minus s, just like we saw in this exponential, but it's raised to the alpha
+[ 1289.16s ->  1299.82s] minus 1. This is not equal to delta t to the alpha minus 1 times t minus s to the alpha minus 1.
+[ 1300.00s ->  1308.44s] That semigroup property does not exist here. We use that in this integral so that we could in fact show
+[ 1308.44s ->  1316.22s] that it retained that Markovian structure that we desire. But if we were to just use the polynomial
+[ 1316.22s ->  1323.12s] dynamics that we observed earlier that make it rough, we don't observe that semigroup property
+[ 1323.12s ->  1331.22s] and subsequently we're not going to have that nice Markov process. The increment is going to depend then
+[ 1331.22s ->  1338.92s] on the entire path. Using now this result, we have the Markovian structure of the Volterra-Heston model
+[ 1338.92s ->  1345.92s] 2018, where we're actually going to be looking at these lifting dynamics. We are going to observe
+[ 1345.92s ->  1353.60s] that result that we just found for those rough dynamics in the context of our Volterra kernel
+[ 1353.60s ->  1364.32s] again. So I'm going to have k of t, which is equal to t to the alpha minus 1 over gamma as a function
+[ 1364.32s ->  1372.46s] of alpha. But if you do recall, we can now make that substitution for t to the alpha minus 1. This is going to
+[ 1372.46s ->  1386.57s] then be 1 over gamma of alpha, gamma of 1 minus alpha, times then the integral from 0 to infinity, x to the
+[ 1386.57s ->  1394.89s] negative alpha, e to the negative xt, dx. Those are our mean reverting processes. The Markovian representation,
+[ 1394.89s ->  1403.37s] and if you want a cool mathematical trick, we have the idea of Euler's reflection formula,
+[ 1409.69s ->  1418.97s] which is going to actually allow us to represent 1 over gamma evaluated at alpha, gamma evaluated at 1
+[ 1418.97s ->  1430.65s] minus alpha, as sine of pi alpha divided by pi. And this is certainly going to be more efficient than
+[ 1430.65s ->  1439.69s] evaluating the gamma function at alpha and 1 minus alpha. So that is a very cool and useful formula
+[ 1439.69s ->  1447.81s] for your numerical analysis simulation, whatever it is you are looking to do with this particular
+[ 1447.81s ->  1455.37s] process. So now what we're going to do is we are going to look to discretize this integral.
+[ 1455.37s ->  1464.49s] That is going to be our next objective. So we are going to say then that maybe this will just be c
+[ 1464.49s ->  1473.85s] of a, we'll treat it as a constant then. We can say that k as a function of t is approximately then
+[ 1473.85s ->  1491.64s] the sum of the integral evaluated at bin i minus 1 to bin i of that constant, whether we use the gamma
+[ 1491.64s ->  1499.08s] function or Euler's reflection formula is entirely up to us, x to the negative alpha, e to the negative
+[ 1499.08s ->  1507.40s] x t dx. This is going to be our approximation. The particularly keen among us will notice an issue.
+[ 1507.40s ->  1516.36s] The limit as t approaches zero of this kernel is going to be infinity. This poses a challenge for us
+[ 1516.36s ->  1522.28s] numerically, especially if we're trying to simulate. So what can we do? Well, we haven't actually formally
+[ 1522.28s ->  1529.72s] defined x i and x of i minus one. So what exactly is that? Well, within those bounds, we're going to
+[ 1529.72s ->  1536.84s] have an arbitrary end point. So we have x of i minus one to x of i, there's going to be end points
+[ 1536.84s ->  1543.32s] between them. And the way that we're going to define x of i is in terms of a geometric
+[ 1543.32s ->  1548.60s] progression, we're going to need some of these mean reverting processes to revert to the mean
+[ 1549.16s ->  1556.92s] incredibly quickly. So we're going to have then that x of i is equal to an arbitrary constant
+[ 1557.80s ->  1566.28s] r to the i. This is going to allow us to handle that explosiveness, that singularity as time approaches
+[ 1566.28s ->  1572.12s] zero. We can now move to actually solve this integral. I'm going to be able to approximate
+[ 1572.12s ->  1578.68s] e to the negative x as e to the x i. And that's going to make it independent of the integral. So
+[ 1578.68s ->  1590.20s] we'll be able to factor it out. So we're going to be left with then the summation from one to n.
+[ 1591.24s ->  1598.92s] We have now pulling out that constant c sub a, those are our gammas or sine. However, you choose to
+[ 1598.92s ->  1611.31s] find that value of the integral from x sub i minus one to x sub i, x to the negative alpha dx.
+[ 1612.03s ->  1619.39s] And we are going to then approximate e to the negative x as e to the negative x sub i t.
+[ 1621.77s ->  1627.05s] So then we can actually just solve this integral outright. We can just integrate,
+[ 1627.05s ->  1632.57s] we're going to add one, divide by then the new power. We're going to get x to the
+[ 1633.77s ->  1641.77s] one minus alpha evaluated from x sub i minus one to x sub i. This of course, all multiplied by
+[ 1642.49s ->  1649.45s] one over one minus alpha. And this is going to remain within that summation,
+[ 1652.28s ->  1661.80s] i equals one to n. We still have that constant. We still have that c sub a, and we still have our
+[ 1661.80s ->  1672.51s] e to the negative x sub i t. If we are then to finish solving that integral, we're going to get
+[ 1672.51s ->  1684.38s] the sum i equals one to n, c sub a, then I suppose we could just put that over one minus alpha. Then
+[ 1684.38s ->  1696.94s] we're going to get x sub i, one minus alpha minus x sub i minus one, one minus alpha. And all that multiplied
+[ 1696.94s ->  1712.67s] by e to the negative x sub i t. If we are to just define a new variable w sub i, as then c sub a over
+[ 1712.67s ->  1723.07s] one minus alpha times x sub i, one minus alpha minus x sub i minus one, one minus alpha. This is going to be
+[ 1723.07s ->  1731.95s] our weight. And we are going to be left then with this final Markovian representation where we have
+[ 1731.95s ->  1740.91s] n as however many points we would like to include in this approximation. And we will have then the
+[ 1740.91s ->  1751.23s] summation of w sub i, e to the negative x sub i t, i equals one to however many points we are to
+[ 1751.79s ->  1758.27s] include. So why is this useful at all? Let's go back now to our Ruff-Heston model. Let's observe just
+[ 1758.27s ->  1766.35s] the variance process that had that fractional kernel and let's use this instead. And we're going to
+[ 1766.35s ->  1773.39s] observe then we've recovered the affine structure via this Markovian representation and that is of course
+[ 1773.39s ->  1781.15s] the entire purpose of this Markovian lifting. So the original Ruff-Heston variance process
+[ 1781.15s ->  1791.87s] is given by v sub t is equal to v sub zero plus we'll do the integral from zero to t k t minus s d z s.
+[ 1792.51s ->  1798.99s] This of course is going to be our fractional kernel, but we're going to substitute our discretized kernel
+[ 1799.63s ->  1809.15s] k to the n t minus s. So what we're going to do here is make this substitution. We have k to the n t minus s
+[ 1809.95s ->  1822.04s] as now k t minus s. That is what we have already observed here. Making that substitution, we're going to
+[ 1822.04s ->  1834.56s] see v sub zero plus the integral from zero to t of if we are to just make the substitution i equals one to n
+[ 1835.96s ->  1846.92s] w sub i e to the negative x i t minus s d z s. We are going to see that because we are dealing with the
+[ 1846.92s ->  1853.88s] integral that is a linear operator along with the summation. We are able to just swap the order of
+[ 1853.88s ->  1859.00s] them. So now I'm going to take the summation to the outside, bring the integral to the inside.
+[ 1859.56s ->  1871.58s] This is going to be v sub zero plus the sum i equals one to n of w sub i the integral from zero to t
+[ 1873.08s ->  1892.49s] e to the negative x sub i t minus s d z s. Now, if we take a look at this term, what do we notice?
+[ 1895.07s ->  1900.91s] Well, that certainly looks like a mean reverting process, does it not? Let's define an auxiliary
+[ 1900.91s ->  1911.15s] process now. Let's define u sub i t is equal to the integral from zero to t e to the negative x
+[ 1911.15s ->  1920.27s] sub i t minus s d z s. That, of course, is going to be what we can substitute in there, one of our mean
+[ 1920.27s ->  1930.27s] reverting processes. And if we are to apply ito's formula, what are we going to observe in this
+[ 1930.27s ->  1939.80s] differential? We're going to say duit is equal to we're actually going to get e to the negative x
+[ 1939.80s ->  1954.92s] sub i t minus t d z t plus the integral from zero to t negative x sub i e to the negative x of i t minus s
+[ 1955.72s ->  1966.27s] d z s d z s d t and what you're going to notice is the first term is going to go to one we're going
+[ 1966.27s ->  1973.95s] to be left with just that brownian increment d z t t minus t is zero e to the zero is just going to be one
+[ 1975.31s ->  1980.99s] and then we are going to be able to factor out the negative x of i in the second term we get
+[ 1980.99s ->  1994.73s] zero to t negative x sub i in the front e to the negative x of i t minus s d z s d t and what do we
+[ 1994.73s ->  2007.55s] notice what do we notice well this certainly looks familiar to us this is our auxiliary process so we
+[ 2007.55s ->  2022.51s] can just substitute in now u sub i so we're left with d z sub t minus x sub i now making the substitution
+[ 2022.51s ->  2038.19s] this is u sub i evaluated at t dt why is this substantial well if you recall this is the increment
+[ 2038.19s ->  2055.42s] this is the increment there is no t minus s left there is no looking back to inception of the path
+[ 2056.14s ->  2066.14s] within this increment we are simply looking at what a shock an increment in time and a representation of
+[ 2066.14s ->  2073.34s] the current state that is exactly what it means for it to be markovian and the reason why this is so
+[ 2073.34s ->  2080.86s] cool is because this is a rough heston this is a rough heston these are the dynamics of volatility
+[ 2080.86s ->  2090.86s] under a rough heston model if we lift then the fractional kernel we observe after making that substitution
+[ 2090.86s ->  2097.47s] that what we are no longer dealing with that fractional kernel if we were to look at the
+[ 2097.47s ->  2105.07s] increment right this is linear it certainly is if we're dealing with a process that's markovian here
+[ 2105.07s ->  2109.47s] we're just dealing with a series of markovian processes if we're dealing with a series of
+[ 2109.47s ->  2114.75s] markovian processes we take the increment all of those markovian processes are not path dependent
+[ 2114.75s ->  2123.55s] they're approximating path dependent dynamics and that is so cool and that is exactly the purpose of
+[ 2123.55s ->  2129.87s] this result that is what we're observing here we're observing for a single one of these n
+[ 2131.58s ->  2138.11s] mean reverting processes the increment is certainly going to be markovian there's no more dependence on
+[ 2138.75s ->  2143.71s] s so what is the point of all of this what is the purpose of markovian lifting well
+[ 2143.71s ->  2151.47s] the primary benefit is under these rough model dynamics we have made an approximation a substitution
+[ 2151.47s ->  2159.87s] we have lifted the non-markovian process to one that has a markovian representation it is structurally
+[ 2159.87s ->  2167.07s] affine in other words we took an infinite dimensional volterra process and we have approximated it via a
+[ 2167.07s ->  2175.95s] system of n markov processes that are each structurally affine we have recovered fast fourier transform
+[ 2175.95s ->  2185.23s] techniques we have now crushed our simulation inefficiency we've moved from n squared to linear
+[ 2185.79s ->  2192.43s] and this is going to allow us to not only simulate more efficient paths but also use other tools available
+[ 2192.43s ->  2199.07s] in our toolbox like the fast fourier transform to produce prices for vanillas this is particularly
+[ 2199.07s ->  2207.47s] useful for model calibration calibrating these rough models to liquid instruments the impact of this
+[ 2207.47s ->  2213.55s] lifting is substantial an old colleague of mine actually just produced a paper on the quadratic rough
+[ 2213.55s ->  2222.03s] heston plus model specifically for zero dte options the skew is particularly steep and difficult to
+[ 2222.03s ->  2230.43s] model but in this capacity they are able to provide a better fit using this markovian lifting that we have
+[ 2230.43s ->  2238.91s] just covered in this video now they don't have the fast fourier transform available to them because of
+[ 2238.91s ->  2246.83s] the inclusion of this additional boosting term however if we are to get into the math of the model you are
+[ 2246.83s ->  2255.87s] very quickly going to see that lifting that we just derived we can see here that we have this ou type
+[ 2255.87s ->  2266.11s] process satisfying look for their j processes these j orthogonal structurally markovian processes
+[ 2266.11s ->  2273.55s] they are able to approximate that fractional kernel this is going to help them in the simulation even if
+[ 2273.55s ->  2279.87s] they are not going to be able to directly observe prices or quasi-analytically via the fast fourier
+[ 2279.87s ->  2285.95s] transform they are certainly going to have more efficient simulation i certainly enjoy staying up
+[ 2285.95s ->  2291.79s] to date on the academic literature so if you'd like to see more paper reviews in the future paper
+[ 2291.79s ->  2296.99s] implementations like this one please let me know in the comments below it is certainly more technical
+[ 2296.99s ->  2304.19s] certainly a smaller subset of my overall audience but topics that i absolutely love i certainly don't
+[ 2304.19s ->  2311.31s] need very many reasons to create videos on this matter but in any case that is going to do it for
+[ 2311.31s ->  2317.63s] this video on markovian lifting specifically for rough volatility i hope you enjoyed i hope you learned
+[ 2317.63s ->  2322.03s] something this video certainly took a lot of effort to put together so if you enjoyed it and you want to
+[ 2322.03s ->  2326.99s] see more like it in the future please like comment subscribe share it helps me out tremendously it is
+[ 2326.99s ->  2333.39s] always greatly appreciated check out quant guild.com to master your quantitative skills other than that
+[ 2333.39s ->  2338.35s] i want to thank you so much for watching and i'll see you in the next video

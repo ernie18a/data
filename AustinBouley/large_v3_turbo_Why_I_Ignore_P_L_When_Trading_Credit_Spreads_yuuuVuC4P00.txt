@@ -1,0 +1,58 @@
+[    0.09s ->     5.03s] Hey guys what's up in this video I'm going over why you should ignore your P&L when you're trading
+[    5.03s ->    10.47s] credit spreads. Now again if you've if you have experience in the credit spread world you know
+[   10.47s ->    16.61s] that a credit spread essentially until expiration acts like a stock and the sense of that let's say
+[   16.61s ->    21.59s] you're trading a put credit spread it's going to mimic a stock. If the stock if the stock goes up
+[   21.59s ->    25.39s] and your put credit spread is going to make money if the stock goes down your put credit spread is
+[   25.39s ->    30.25s] going to lose money and so it roughly follows that but now you may be saying okay well what if
+[   30.25s ->    36.53s] I'm down money and that affects my position. Well when it comes to credit spreads all that you should
+[   36.53s ->    44.55s] really be focusing on is two things. One what is the price I set for expiration and number two will it
+[   44.55s ->    48.89s] actually stay above that level. So for instance if you're trading a put credit spread your whole goal
+[   48.89s ->    53.99s] is to find a level find a price based on your strategy based on math whatever to find a level
+[   53.99s ->    58.53s] that you don't think that's or that you think that stock will stay above if you're trading a put credit
+[   58.53s ->    63.53s] spread find a level that you think that stock will stay above and hold that until expiration and by
+[   63.53s ->    69.35s] expiration if it's above that level then you make all the money and you lose none right and so that's
+[   69.35s ->    76.09s] how that strategy works and so if you look at the chart or you look at your position every single day
+[   76.09s ->    82.01s] and you monitor the fluctuations based on the price moving every single day you're going to let your
+[   82.01s ->    86.91s] emotions get too involved. Why do I say that? Well because I've been there you've been there you know
+[   86.91s ->    93.03s] this when your money the money you worked hard for is on the line and you see yourself down $200 up 100
+[   93.03s ->    99.45s] down 300 up 300 and it keeps going like this you really get scared you get invested you're like oh no
+[   99.45s ->   104.63s] what should I do should I pull here should I do this and these emotions this psychology starts messing
+[  104.63s ->   109.47s] with you it starts impacting your trading because you're not sticking to your strategy anymore
+[  109.47s ->   117.25s] right when you see the P&L fluctuate when you see your profit and and your loss you forget about
+[  117.25s ->   122.83s] the two main things I just mentioned you forget what is my level and is it going to stay above that
+[  122.83s ->   127.63s] level do I have a statistical chance of still staying above that level if so stop looking at the
+[  127.63s ->   133.65s] P at the P&L and wait till the trade expires it's all that matters and so again I just wanted to talk
+[  133.65s ->   138.75s] about this because it was inspired by an article that I wrote why you should ignore your P&L when trading
+[  138.75s ->   143.81s] credit spreads and it came down to number one credit spreads are high probability trades by
+[  143.81s ->   149.17s] default when you put these trades on they have a 70 to 80 percent win rate when you follow in uh the
+[  149.17s ->   155.45s] best practices of the industry but when you add it to the strat the strategies that I teach in my inner
+[  155.45s ->   160.99s] circle program but also for free on YouTube that I give you they have 90 to 95 percent win rates so
+[  160.99s ->   166.17s] again you're going to win in the long run so why why worry and weigh yourself down with the daily
+[  166.17s ->   171.77s] P&L fluctuations and instead focus on expiration and sticking to a strategy that you know works
+[  171.77s ->   178.17s] number two is P&L can be misleading right you can be down on a position you can be losing money
+[  178.17s ->   184.35s] but the stock still be above your strike you still be above the level that you need to be above to make
+[  184.35s ->   189.47s] money and so even though you're down money from where you originally bought let's say you're down some
+[  189.47s ->   196.73s] dollars if the if it were to expire today you would make the max profit so again P&L can be very
+[  196.73s ->   201.19s] misleading because it can lead you to think that your strategy is not working that the that the game
+[  201.19s ->   207.81s] idea has planned or has changed and you don't know what to do so again my only goal here is number three
+[  207.81s ->   214.85s] is focus on risk management understand what is my strategy what is my win rate what is my max gain how
+[  214.85s ->   220.59s] much credit am i taking when i when i put this trade on and then what is my max loss if i'm okay
+[  220.59s ->   226.33s] with that max loss if i'm okay with that win rate and max loss combined then i put the trade on i set
+[  226.33s ->   232.39s] it and forget it why weigh myself down and look at it constantly and take up my time by looking at the
+[  232.39s ->   238.43s] P&L fluctuations instead of being like okay i am busy like most of you are i'm instead okay i have a
+[  238.43s ->   244.71s] 90 win rate of making 20 on this trade or losing 80 cool great numbers i'm going to take this trade
+[  244.71s ->   249.19s] every single day i'm going to put this on or every single week whenever the trade presents itself
+[  249.19s ->   253.55s] right and i'm just going to set it i'm going to forget because that's how this trade is structured
+[  253.55s ->   258.87s] that's how the strategy works that's how i'm going to make money if i look at my P at my P&L and i start
+[  258.87s ->   264.53s] trading maybe i sell early here to lock in profits i'm going to start taking in smaller wins and so that
+[  264.53s ->   268.77s] when i do lose it's going to way offset my wins i'm just going to start messing with things
+[  268.77s ->   275.85s] so stop looking at the P&L instead just focus on your strategy know what you're doing and have
+[  275.85s ->   280.33s] your game plan before you ever enter the trade all right guys that is just my daily tip daily advice
+[  280.33s ->   284.27s] for if you're trading credit spreads it's to not focus on P&L too much because it really isn't that
+[  284.27s ->   288.81s] important if you're trading correctly all right guys if you want to know the strategies that i'm
+[  288.81s ->   293.17s] trading have a 95 win rate i'm giving them to you for free no email no opt-in they're on my youtube
+[  293.17s ->   297.99s] channel they're also on my blog site where i write articles every single week on credit spreads
+[  297.99s ->   302.91s] so you have www.10percentcreditspreads.com and all that is linked below in the description
+[  302.91s ->   306.87s] if you like credit spreads if you want to watch more of these videos make sure to smash that
+[  306.87s ->   310.85s] subscribe button and thumbs up button it would mean the world and also leave a comment down below if
+[  310.85s ->   314.53s] you have a question or a video idea all right guys see you in the next video

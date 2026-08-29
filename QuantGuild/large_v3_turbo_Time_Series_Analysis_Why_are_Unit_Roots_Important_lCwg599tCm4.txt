@@ -1,0 +1,102 @@
+[    0.50s ->    15.65s] Hey YouTube, it's Roman. I'm back. Today I want to talk about time series analysis. More specifically, I want to talk about unit routes and why they can lead to a misinterpretation of results from different statistical models.
+[   15.65s ->    33.41s] Now there's no better way to explain something than with an example, so let's actually do this. So what we're going to do is we're going to import YFinance as YF, and then we're going to import Stats Models as SM.
+[   33.41s ->    44.91s] And we're going to see if we can create a linear regression model to forecast the closing price of a stock for the following day using today's close.
+[   45.65s ->    69.48s] Let's go ahead and get some data. I'm going to say Apple equals YF dot ticker and then Apple, and then the data is going to equal Apple dot history. The start, we'll just go back to 2018, and then we can just print this data here.
+[   69.48s ->    80.48s] Okay, cool. So now we have the open high low close for Apple going back to 2018, and we're going to want to create a new column for returns.
+[   80.48s ->   103.70s] So I'm just going to say data returns is equal to data close dot percent change, and then I'm going to drop the first row, because if we look at the first row, you'll see that we have an NAN value for what's this?
+[  103.70s ->   110.95s] So this is January 2nd, because we only pulled data to January 1st, so we're not going to have the day before.
+[  110.95s ->   118.95s] So we're just going to go ahead and drop this. So I'm going to do data dot drop NA axis equals zero for rows, not columns.
+[  118.95s ->   127.95s] And then I'm going to do it in place, meaning I'm going to assign this new data frame to the original data object.
+[  127.95s ->   133.95s] Then if we print this new data, we'll see that we effectively got rid of that NA value.
+[  133.95s ->   149.95s] All right. So now what we would like to do is create a target close and a target returns column, and those two columns are going to have the contemporaneous days following returns or following close information.
+[  149.95s ->   164.95s] So it's going to be looking ahead to that next day, and we're going to see if we can use the current days information to explain essentially a forecasting regression, the close or the returns.
+[  164.95s ->   171.95s] So let's go ahead and do this. What we're going to do is we're going to say data target close.
+[  171.95s ->   181.95s] So this is tomorrow's close is equal to data close dot shift, and we're going to shift it by minus one.
+[  181.95s ->   189.95s] So we're going to create a new column over here, and we're going to effectively shift this entire close series up one.
+[  189.95s ->   193.95s] So we're going to have an NAN value for the last observation.
+[  193.95s ->   198.95s] So we're going to do this, and then we can print the data.
+[  198.95s ->   203.95s] And then you see we effectively shifted the entire series up by one.
+[  203.95s ->   207.95s] So now we're just going to rinse and repeat. We're going to do this for the returns.
+[  207.95s ->   216.30s] Target returns is equal to data returns dot shift minus one.
+[  217.14s ->   224.14s] And then we have the same issue with the NAN values as in the beginning when we created our returns column.
+[  224.14s ->   228.14s] So we can just do drop NA axis zero.
+[  228.14s ->   233.14s] So we're going to be dropping the last row and then in place equals true.
+[  233.14s ->   236.14s] So we expect the change in that object.
+[  236.14s ->   240.14s] So now we are all ready for our regression.
+[  240.14s ->   249.14s] OK, so let's start with the closing price regression and see if we can get any explainability in the future close based on the current close.
+[  249.14s ->   254.14s] So just for starters, I'm going to create a markdown cell and say closing price regression.
+[  254.14s ->   259.14s] And now we're going to actually use the stats models package.
+[  259.14s ->   268.14s] So I'm going to say model is equal to SM dot regression dot linear model dot OLS.
+[  268.14s ->   272.14s] Now we want our Y, which is going to be the target close.
+[  272.14s ->   277.14s] So I'm going to pass through the target close from our data frame.
+[  277.14s ->   283.14s] And now our X is going to be the previous or the current day's close.
+[  283.14s ->   291.14s] And we're going to see if we can essentially explain or forecast this target close based on today's close.
+[  291.14s ->   305.14s] Now, just so we don't have to deal with the consequences of not adding a constant to the regression, we can add a constant to our X series by saying SM dot tools dot tools dot add constant.
+[  305.14s ->   310.90s] And then we can effectively add a constant to that series.
+[  310.90s ->   315.90s] Now we can go ahead and fit this model by saying R is equal to model dot fit.
+[  315.90s ->   321.90s] And we can print our results by saying print R dot summary.
+[  321.90s ->   340.90s] So I do want to just sprinkle in and touch on the idea that this is the moment that every quantitative researcher, every every, you know, mathematical modeler, if you will, is kind of looking forward to and seeing if their hypothesis is validated on some sort of fundamental statistical basis.
+[  340.90s ->   353.90s] And, you know, if it's not, then we're not going to go out of our way to try to correct the hypothesis in this phase because this phase is is more of like a validation.
+[  353.90s ->   357.90s] Right. So we're not actually trying to fix anything here.
+[  357.90s ->   362.90s] There's nothing wrong here. This is what's explaining what we thought would happen.
+[  362.90s ->   369.90s] So we're not going to correct in this process that is in this this back testing process, if you will.
+[  369.90s ->   380.90s] If we get poor results here, we would want to go back to the research process, back to the hypothesis and say, like, hey, you know, why did we think this was the case and why is it not the case?
+[  380.90s ->   384.90s] And then correct from there. Let's test this linear regression.
+[  384.90s ->   389.90s] And all right, we got an R squared of point nine nine eight.
+[  389.90s ->   392.90s] I'm going to quit my day job. I'm going to quit YouTube.
+[  392.90s ->   396.90s] I'm going to go retire to a beach in the Bahamas.
+[  396.90s ->   402.90s] I can I can forecast the closing price with with ninety nine point eight percent explainability.
+[  402.90s ->   405.90s] And and that's it. This is my last video.
+[  405.90s ->   409.90s] No more no more clock. No, I'm I'm I'm kidding.
+[  409.90s ->   412.90s] This is it's it's not the case.
+[  412.90s ->   416.90s] This is just doing a doing my best take at a bit.
+[  416.90s ->   421.90s] But but, you know, so so we have this this really high R squared value.
+[  421.90s ->   424.90s] Right. And a very high adjusted R squared value.
+[  424.90s ->   429.90s] This is just a simple, like, you know, summary print out for a linear regression.
+[  429.90s ->   436.90s] And we want to ask yourself this question, you know, why is this R squared value so incredibly high?
+[  436.90s ->   450.90s] And if this is the case, right, if we can predict the closing price for tomorrow or at least explain ninety nine point eight percent of the variability in closing price, then, you know, what is what is going on?
+[  450.90s ->   457.90s] Because then there would be no need for for any, you know, money managers or anything like that.
+[  457.90s ->   460.90s] We would all just use linear regressions all day long.
+[  460.90s ->   468.90s] I think the answer is going to become clear when we actually take a look at the regression for the returns.
+[  468.90s ->   472.90s] So let's do exactly that. Let's go ahead and create a new markdown.
+[  472.90s ->   483.22s] So we're going to say the return regression and then let's just copy all this code and do the exact same thing with the returns.
+[  483.22s ->   490.22s] So we're going to say target returns and then we're going to say returns.
+[  490.22s ->   496.22s] So simple returns today are trying to explain the returns tomorrow.
+[  496.22s ->   499.22s] So let's do this exact same thing. Run this print out.
+[  499.22s ->   508.22s] And whatever the opposite of boom is, we get an R squared of point zero one five and adjusted R squared to point zero one four.
+[  508.22s ->   520.23s] And we lose all explainability in our in our next day forecast in our in our explainability for next day returns.
+[  520.23s ->   532.23s] So why why is this the case? You know, the title of the video probably gave it away, but it's because the price process of a stock has a unit root.
+[  532.23s ->   541.23s] And instead of diving into the technical implications of, you know, stationarity and its formal definition, how to test for it.
+[  541.23s ->   545.23s] I wanted to illustrate why we actually care about it.
+[  545.23s ->   554.23s] And this is exactly why, because if our process has a unit root, then we're going to get some spurious regressions.
+[  554.23s ->   562.23s] We're going to get regressions that have no actual basis for making proper statistical decisions.
+[  562.23s ->   564.23s] And that's exactly what we see here.
+[  564.23s ->   571.23s] We see we have ninety nine point eight percent explainability and variation of the following day's price.
+[  571.23s ->   583.23s] But if we look at the returns, which are actually more important in our sense, because if we have a portfolio, then, you know, it's great if we have a level for our portfolio that we're, you know, kind of trading around.
+[  583.23s ->   595.23s] Say if our portfolio values, you know, ten thousand dollars, you know, tomorrow the deviation from ten thousand dollars is likely to be, you know, small as is the deviation from the previous day.
+[  595.23s ->   602.23s] But the returns are something that can change quite a bit, you know, across across time.
+[  602.23s ->   606.23s] It's not necessarily guaranteed to stay all positive, stay all negative.
+[  606.23s ->   613.23s] You know, we have periods of higher volatility that tend to lead more volatility.
+[  613.23s ->   621.23s] Higher volatility that's called volatility clustering, higher volatility generally is contemporaneous with negative returns.
+[  621.23s ->   626.23s] These are all stylized facts of the market that we'll go over in more depth over time.
+[  626.23s ->   635.23s] But the moral of the story is that unit roots can cause significant problems in statistical models.
+[  635.23s ->   646.23s] And these linear regressions aren't the only models subject to issues when using, you know, processes with with unit roots.
+[  646.23s ->   652.23s] I think the most natural next question that arises is, OK, Roman, I have this process.
+[  652.23s ->   657.23s] It's got a unit root, but I still want to model it. How should I go about doing this?
+[  657.23s ->   660.23s] What should I do? How do I get rid of this unit root?
+[  660.23s ->   668.23s] And what you can do is essentially what we did in this video, though what we did is more concrete in terms of a price and then the return.
+[  668.23s ->   683.23s] You can do first order differencing, second order differencing, where you take different points in time of your process and difference it with the contemporaneous point and create a new series.
+[  683.23s ->   692.23s] And hopefully that series will reflect the characteristics of of a stationary series, allowing you to move forward with with your modeling.
+[  692.23s ->   703.23s] I hope you enjoyed this video. This was meant to be a quick kind of overview and an introduction to to a very serious time series analysis topic that is very confusing.
+[  703.23s ->   709.23s] I mean, it's it's something that, you know, you're not going to spend necessarily a lot of time on in a time series analysis course.
+[  709.23s ->   718.23s] They kind of just push you through and get you to learn everything from their, you know, seasonality or models, you know, the autoregressive stuff, moving average stuff.
+[  718.23s ->   723.23s] You know, they're not spending a lot of time on necessarily the application and the implications of the application.
+[  723.23s ->   729.23s] So hopefully you found this helpful. If you have any specific questions, of course, leave them in the comments.
+[  729.23s ->   732.23s] I'm happy to get to them. And, you know, you can always shoot me an email.
+[  732.23s ->   736.23s] I'm happy to answer any any, you know, even more specific questions there.
+[  736.23s ->   742.23s] If you have any suggestions for future videos, you know, feel free to leave them leave them below as well.
+[  742.23s ->   746.23s] Check out QuantGuild.com for the latest research.
+[  746.23s ->   753.23s] And we're going to we're going to be pushing out our courses very soon on introduction to Python and introduction to Quant Finance.
+[  753.23s ->   759.23s] So stick around for those. We're going to we're going to be focusing on teaching you the bare bones essentials.
+[  759.23s ->   763.23s] We're going to remove all of the fluff and just get you in and out with with what you need to know.
+[  763.23s ->   767.55s] So thank you again so much for watching and I'll see you in the next one.

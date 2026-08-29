@@ -1,0 +1,113 @@
+[    0.43s ->     9.37s] Hey guys, welcome to this video. I'm going to show you exactly how you can make $495 every single week regardless if the market goes up, down, sideways, or even crashes up to 10%.
+[   10.01s ->    19.75s] So I'm going to walk you through how this strategy works, how to use it, and if you stay until the end, I'll actually show you where you can go download for free my 1-1 trading plan,
+[   19.83s ->    25.55s] which walks you through the strategy, the trading plan, the risk management, the trading rules, and everything like that, including the back test.
+[   25.55s ->    34.47s] So I'm going to walk you through this step-by-step, show you the strategy, and then I'm going to set it up on a broker so you can follow along yourself and also do this.
+[   34.67s ->    43.97s] So if we look at it, the strategy is simply this. The strategy entails selling options on the S&P 500 or whatever thing you'd like to use.
+[   44.03s ->    46.91s] Let's say the S&P 500 is the safest and easiest place to start.
+[   46.91s ->    56.77s] So again, this is best done on futures because of the span margin you get with futures, which helps increase your returns without having to put up a lot of capital.
+[   57.11s ->    64.67s] If you do it on SPY, you'll be able to put up roughly the same capital as you would on a futures, but you'll make 10th of the amount of profit.
+[   64.85s ->    70.95s] So let's walk through this. You'll go to a 45 days until expiration on the ES futures.
+[   70.95s ->    78.95s] You'll essentially do, which is selling a short put. So you'll sell a short put, which means as long as the market stays above that value, you make money.
+[   79.01s ->    80.83s] So you're going to sell a 10 delta short put.
+[   81.25s ->    86.71s] Then you're going to use some of that money that you collected from that put to enter a put debit spread.
+[   86.81s ->    91.41s] So you're going to do a 30 delta long put with a 28 delta short put.
+[   91.41s ->    98.25s] You're going to take profit once your short put, your 10 delta short put has reached 90 to 95% profit, aim for 90% profit.
+[   98.83s ->   104.49s] And then again, there's not really a stop loss because we'll be able to use our put debit spreads as our hedge.
+[  104.81s ->   106.93s] So let me explain how this works in a broker.
+[  107.61s ->   111.73s] So I'm going to be using TastyTrade, but you can use any broker you want to actually set up this trade.
+[  112.01s ->   114.13s] First thing starts, we want to make sure that we're trading ES.
+[  114.37s ->   115.31s] It's going to be a great thing.
+[  115.39s ->   117.77s] And futures are our main trading section.
+[  118.01s ->   119.47s] We're going to go to the trade tab.
+[  120.05s ->   121.47s] We're going to go into the table mode.
+[  121.67s ->   123.03s] I'm going to show you how to set this up.
+[  123.07s ->   124.75s] So I just walked through these strategy rules.
+[  124.83s ->   126.25s] That's exactly what we'll do here.
+[  126.61s ->   129.13s] So you can see here, we'll go to 45 days.
+[  129.43s ->   131.09s] So I'm going to go to 46 here.
+[  131.15s ->   131.69s] That's closest.
+[  132.17s ->   134.03s] And then I'm going to set this trade up.
+[  134.33s ->   138.11s] So again, we're going to be doing our first one, which is selling a put.
+[  138.69s ->   140.69s] Selling a put gives us money.
+[  140.73s ->   143.57s] So we're going to go to the 10 delta mark and sell a put.
+[  143.63s ->   148.03s] So right here, 10 delta, these two, I'm going to pick this one so that has the most open interest.
+[  148.03s ->   149.93s] So I'm going to sell this 10 delta.
+[  150.09s ->   151.19s] Now I'll sell one 10 delta.
+[  151.29s ->   156.13s] That means that if I sell this put, I am going to make $412.
+[  157.07s ->   160.65s] And I'm going to have to put up $6,000 of my own money.
+[  160.69s ->   163.67s] So I put up $6,000 to make $400.
+[  164.17s ->   166.27s] So that's how a short put works.
+[  166.63s ->   171.81s] And I make money as long as the stock stays above $4,410.
+[  171.81s ->   176.25s] So currently, yes, it's trading at $4,800.
+[  176.77s ->   182.41s] So that means that the market can drop 400 points and I would still end up making money.
+[  182.65s ->   184.69s] So that's how selling a put works.
+[  184.97s ->   187.41s] That's what a normal selling put is.
+[  187.67s ->   192.15s] But the 1-1-1 trade includes two other trades, another one and another one.
+[  192.15s ->   196.91s] So what we do is we're going to take some of that money we made, that $412 we're making,
+[  197.07s ->   200.73s] and we're going to use it to create more of a hedge.
+[  201.05s ->   205.79s] And so that hedge means that we're going to buy the 30 delta and we're going to sell the 28 delta.
+[  206.27s ->   211.41s] So now, instead of having a profit of $400, we're giving up some of that money,
+[  211.61s ->   217.23s] but we're going to be making roughly around $400, around maybe $350, something like that instead.
+[  217.23s ->   220.37s] But now we have that hedge to protect us.
+[  220.67s ->   224.19s] If we go to the curve section, we can actually see what this looks like.
+[  224.25s ->   224.97s] So I'm going to go to curve.
+[  225.21s ->   226.31s] I'm going to click on active.
+[  227.09s ->   227.75s] I mean, curve.
+[  228.03s ->   229.19s] I'm going to click on analysis.
+[  229.75s ->   234.65s] Then I'm going to remove all these and only click on the active trades I have or the trade example that I have here.
+[  234.79s ->   237.01s] I'm going to zoom out a bit and I'll show you what this looks like.
+[  237.11s ->   241.69s] So we have right here the put that I sold, the $4,410 put.
+[  241.69s ->   248.17s] As long as the market stays above the $4,410 level to some extent, you will make money.
+[  248.29s ->   251.95s] So that means that the market could drop a very good distance, 400 points.
+[  252.57s ->   256.01s] But not only that, we created this put debit spread.
+[  256.27s ->   258.75s] This put debit spread makes money to the downside.
+[  259.17s ->   264.65s] So that means that we make more money if the market starts to drop because we have the put debit spread.
+[  265.17s ->   269.35s] And so again, if the market still goes up to infinity, we still make money.
+[  269.35s ->   272.51s] So if the stock goes up forever, we make the same amount of money.
+[  272.61s ->   276.85s] If the stock drops into this range with the put debits spread, we make more money.
+[  277.33s ->   279.69s] And then if the stock drops below here, then we start losing money.
+[  279.87s ->   287.53s] So again, you can see here we have a 98% probability of profit and we only have to put up $6,000 for this trade.
+[  287.97s ->   294.01s] So again, in this example right here, the way that that is structured, we're going to make $393.
+[  294.63s ->   297.97s] But like I said, we have a 90% profit target.
+[  297.97s ->   302.21s] So again, the $393 is the profit we're going for.
+[  302.37s ->   304.87s] But again, we want a 90% return.
+[  305.21s ->   314.17s] So that means that we're going to do 90% of $393, which is going to be somewhere around the $360 mark.
+[  314.25s ->   317.09s] So it'll be somewhere around $350, $360.
+[  317.47s ->   323.07s] So for this trade right here, I'll make $350 on $6,000.
+[  323.07s ->   327.11s] And so that is a great return, especially because I don't have to touch it.
+[  327.15s ->   329.09s] I put this trade on and then I let it go.
+[  329.19s ->   334.07s] I can set up the profit taking automatically and I just let the trade go.
+[  334.39s ->   340.59s] So how this trade works is when you get to 90% profit, you're going to take off this put.
+[  340.85s ->   344.17s] So for instance, we're going to get rid of this put right here that we sold.
+[  344.17s ->   350.49s] So again, I am just going to exit out of this one and we'll just show you what the put debit spread alone looks like.
+[  350.63s ->   351.89s] Hold on, let me get closer to it.
+[  352.59s ->   355.97s] The put debit spread is the 30 delta we buy and the 28 delta.
+[  356.15s ->   362.51s] So once we get that max profit, then what we're going to do is we're going to actually just keep on this put debit spread.
+[  362.83s ->   364.17s] Why do we keep that on?
+[  364.39s ->   367.61s] Well, because we've made most of the money that we're going to make in this trade.
+[  367.61s ->   373.57s] So although the trade is 45 days long, we're going to make most of the money in about 26 days.
+[  373.77s ->   378.57s] And now that we take that money, we have another 20 days for those contracts to expire.
+[  378.81s ->   385.37s] Well, in those 20 days, if the market decides to crash, the market can come down and now I'll start making even more money.
+[  385.63s ->   389.37s] So you can see here, I'll make roughly $350 on this trade.
+[  389.51s ->   394.81s] But if the market crashes or at least comes down a bit, I can make up to another $230.
+[  394.81s ->   401.21s] And so that's why it's amazing to use some of the money that you made with selling the put to create this put debit spread.
+[  401.69s ->   405.65s] And so again, this trade requires about $6,000 of collateral.
+[  405.81s ->   409.85s] And how I do it is I enter one every single Monday, Wednesday and Friday.
+[  409.95s ->   411.65s] That's my trading plan for 2024.
+[  412.01s ->   414.85s] Enter a new 1-1-1 strategy every single Monday, Wednesday, Friday.
+[  415.09s ->   422.25s] About every month, I will take a trade off every single week and I'll be making roughly $1,200 a week.
+[  422.25s ->   425.23s] Again, you can follow along on my YouTube journey to understand how that works.
+[  425.31s ->   430.17s] But if you want this free trading guide, you're going to click the first link in the description down below.
+[  430.59s ->   436.57s] Enter your email and you'll get instant access to this PDF guide for the 1-1 trading strategy.
+[  436.93s ->   443.73s] If you are someone who wants to create more income, more consistent income, more consistent income without having to be stuck to the screen,
+[  443.87s ->   446.69s] the 1-1-1 strategy is for you.
+[  446.69s ->   450.31s] You need a decent-sized account, roughly $20,000 to $25,000.
+[  450.85s ->   455.89s] But once you do that and have options approval, full options approval and futures approval,
+[  456.11s ->   459.05s] this will be an amazing strategy that you can use.
+[  459.33s ->   460.65s] I do have to be 100% honest.
+[  460.73s ->   461.87s] I did not come up with this.
+[  462.21s ->   464.95s] It is a strategy that I learned from Tom King.
+[  465.03s ->   466.07s] So you can find him on YouTube.
+[  466.37s ->   471.49s] But it's a great strategy that I recommend and that I am trading myself and adding to my portfolio in 2024.
+[  471.99s ->   472.57s] All right, guys.
+[  472.69s ->   473.57s] See you in the next video.

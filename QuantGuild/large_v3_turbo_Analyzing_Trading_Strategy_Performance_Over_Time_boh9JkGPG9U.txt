@@ -1,0 +1,184 @@
+[    0.46s ->     9.28s] and we are back welcome back today what i want to do is build off of the previous video where
+[    9.28s ->    16.28s] i discuss how to make and lose money trading in the previous video i quantified this idea of
+[   16.28s ->    22.28s] trading eggs which you may have heard before floating around the trading space by using the
+[   22.28s ->    29.74s] law of total expectation essentially what i do is i quantify a trading strategy and i derive the
+[   29.74s ->    36.54s] expected value of that trading strategy on a per trade basis by taking a look at the probability
+[   36.54s ->    45.28s] of winning the probability of losing the average pnl for a winner the average pnl for a loser and if
+[   45.28s ->    53.52s] that is overall positive then we say we have a positive edge or a profitable trading strategy
+[   53.52s ->    59.46s] this is clearly a non-trivial task this is what traders all around the world try to do
+[   59.46s ->    68.34s] on a daily basis but what i wanted to really emphasize today was the idea of when to stop
+[   68.34s ->    74.72s] trading what would otherwise have been a profitable trading strategy and this could be for a variety
+[   74.72s ->    80.44s] of reasons there could be a regime change maybe the macro conditions have changed maybe people have
+[   80.44s ->    86.54s] caught on to this and there's there's less capacity to trade this type of strategy i'm really talking
+[   86.54s ->    91.52s] about systematic trading strategies statistical trading strategies a large cross-section of
+[   91.52s ->   100.16s] equities and you're doing some sort of of condition to buy and sell on a daily basis based on some sort
+[  100.16s ->   109.84s] of signal that you've developed and the idea that i'm trying to emphasize here is the parameters that
+[  109.84s ->   118.72s] we estimate for our trading edge are themselves governed by some sort of unknown density and
+[  118.72s ->   130.50s] that density has the propensity to be non-stationary so the problem is we can't continuously get a good
+[  130.50s ->   138.12s] estimate for the probability of a winner the probability of a loser in fact when we start to lose more than we
+[  138.12s ->   146.52s] win we may never see the conditions for success in that system again this will become more clear when
+[  146.52s ->   150.92s] we start to look at the charts but let's go ahead and break down this idea of eggs really quickly right
+[  150.92s ->   156.84s] here and then we're going to take a look at some charts and hopefully hammer this idea home so we have
+[  156.84s ->   165.08s] eggs defined as the probability of a winning trade times the pnl of the average win less the probability of a losing
+[  165.08s ->   171.56s] trade times the average pnl of a losing trade of course if this is positive you'll make money over
+[  171.56s ->   177.96s] time if this is negative you'll lose money over time the problem is in the context of parameter
+[  177.96s ->   185.00s] estimation we don't necessarily know the we absolutely don't know the density in which these originate from
+[  185.56s ->   192.60s] and that density as i said has the propensity to change over time that's this idea of non-stationarity
+[  192.60s ->   198.84s] so it's definitely a difficult problem it's not impossible to deal with otherwise people wouldn't
+[  198.84s ->   204.36s] trade now whether or not the trading practices are questionable and people are citing statistics
+[  204.36s ->   211.80s] incorrectly is a whole nother ball game whole nother issue but here what i want to do is i want to
+[  211.80s ->   219.24s] highlight this idea of parameter estimation in the context of a stochastic function or a time-dependent
+[  219.24s ->   227.67s] function of a stochastic process that is this edge right here so what i have here is the probability
+[  227.67s ->   233.11s] of a win being 0.55 the average winner is 10 the average loser is eight clearly this is going to
+[  233.11s ->   239.03s] develop some sort of positive edge and this is what our equity curve would look like if we were to trade
+[  239.03s ->   245.83s] this particular strategy over you know a thousand trades or so now this is of course stochastic so if i
+[  245.83s ->   252.55s] re-ran this i would get a different equity curve but notice on average we're accumulating p l i believe
+[  252.55s ->   263.00s] i random seed it here yeah so i random seed it here so let me get rid of the seed but due to the positive
+[  263.00s ->   266.84s] edge even though this curve looks a little bit different every time we run it we still see that
+[  266.84s ->   273.00s] up into the right behavior and that's exactly what we would want to see we don't want to see you know very
+[  273.00s ->   278.92s] choppy activity we don't want to see large draw downs we want to see a very nice smooth equity
+[  278.92s ->   287.40s] curve in fact the smoother that it gets the less supposed or the less risk we have in deploying
+[  287.40s ->   293.56s] this this type of strategy now you know this does not necessarily mean that this is going to hold up
+[  293.56s ->   299.56s] in the next thousand trades and that's that's what i'm about to get to here now of course the actual p l
+[  300.28s ->   308.52s] is arbitrary right you can just it's linear you can just add leverage and you can multiply this entire
+[  308.52s ->   315.32s] curve by four to to increase the profit so we're not talking about any form of you know optimal risk
+[  315.32s ->   319.96s] reward here there's no sharp there's no sortino there's we're not looking at ratios we're not
+[  319.96s ->   325.72s] looking at you know the you know performance metrics associated with the strategy per se
+[  325.72s ->   331.48s] we're just analyzing it from a statistical point of view whether or not this is a good equity curve is
+[  331.48s ->   337.72s] you know depends on a lot of different things it depends on the macro environment the current risk-free
+[  337.72s ->   342.28s] rates it depends what did the s p return what did you know all these all these other things so
+[  342.28s ->   345.48s] we're not going to talk about the performance metrics of the strategy but like i said we're
+[  345.48s ->   350.52s] going to analyze the statistics so clearly there's a positive eggs here if i reran this i would continue
+[  350.52s ->   357.56s] to get different equity curves trading the strategy is productive it would appear okay now the parameters
+[  357.56s ->   367.40s] are 0.55 the average winner is 10 the average loser is minus eight if you use a limit so let's say you have a
+[  367.40s ->   375.64s] limit stop for taking profit and for a stop loss then these could be fixed values and really you would
+[  375.64s ->   382.04s] just be looking at the probability of of wins and losses over time which does simplify the the space
+[  382.04s ->   388.04s] quite a bit but you're still going to deal with these same issues so just keep that in mind even even if
+[  388.04s ->   394.12s] you don't have some sort of trailing stop and your take profit is going to be scaled by you know however
+[  394.12s ->   400.60s] much of a run it goes up you're still going to face this issue so the average winner average loser could
+[  400.60s ->   406.04s] be simplified to fixed values but nevertheless we still have this probability of winning and losing
+[  406.04s ->   412.04s] we have to deal with so what do i mean by the probability of winning and losing being non-stationary
+[  412.04s ->   418.70s] changing over time well probability of winning and losing and perhaps even the average win and
+[  418.70s ->   425.74s] average loss depending on how you enter and exit trades can change so what i mean by this is here
+[  425.74s ->   432.70s] i'm going to add some some sort of decay to the win rate so as you can see with this particular equity
+[  432.70s ->   439.34s] curve the edge decays over time now this could be due to a variety of things as i had mentioned earlier
+[  439.34s ->   445.02s] it could be the the macro environment is completely different it could be rates being higher rates being
+[  445.02s ->   450.78s] lower it could be due to regulatory issues it could be due to this or that or whatever you know that's
+[  451.42s ->   458.94s] that's kind of the the job of the the trader to figure out what is going on with their strategy but
+[  458.94s ->   464.86s] here you can see this is not the up and to the right behavior that we were looking for prior so if we
+[  464.86s ->   471.26s] look at the previous equity curve we see this growth all the way to the thousandth trade but when we look
+[  471.26s ->   478.54s] at the thousandth trade here it starts to plateau and this is what i've seen in quite a few systematic
+[  478.54s ->   485.50s] strategies i've seen sentiment based strategies they work really really well and then 2021 2022 hits
+[  485.50s ->   491.50s] and it starts to plateau and you know the the key question is why why would that be the case and that's
+[  491.50s ->   495.90s] when you go to your current researchers and you say fix this and your current researchers go well it's not
+[  495.90s ->   501.74s] that easy the entire regime for sentiment based strategies has changed because of this because
+[  501.74s ->   508.06s] of that maybe different type of sentiment signals work better in this new regime maybe they don't work
+[  508.06s ->   516.62s] at all but you can quantify what's going on prior to understanding why very easily by just taking a look at
+[  516.62s ->   524.30s] your trading profitability over time in this context so here what we have is we start with 0.55
+[  524.30s ->   531.18s] and i have a linear decay so i'm going 0.55 to 0.4 over the thousand trades so you can see my
+[  531.18s ->   540.46s] profitability goes from 55 wins so that's the probability of winning to 40 and the average
+[  540.46s ->   547.10s] winner is not big enough to outweigh the decrease in probability thus we start to plateau here we don't
+[  547.10s ->   555.72s] get that up into the right behavior okay so what we're looking at here is the change in the
+[  555.72s ->   563.64s] probability of winning or losing a trade over time we don't know the dynamics of that specific
+[  563.64s ->   569.96s] probability if we did it would serve us quite well and there would be no need to develop any sort of
+[  569.96s ->   577.32s] model for it so what could the dynamics of that process that parameter process look like if you will
+[  578.36s ->   584.52s] well it could be mean reverting there could be a drift or trend or there could be a regime shift and
+[  584.52s ->   593.46s] there could be jumps and shifts and parameters all about the the process's space so what could this
+[  593.46s ->   600.02s] look like well this is the linear decay that i had just displayed in the previous equity curve that had
+[  600.02s ->   609.30s] plateaued here i have the probability of winning on the left y-axis here and the equity value on the right
+[  609.30s ->   618.58s] axis here the right y-axis now the parameter starts at 0.55 and this is just a linear decay this is
+[  618.58s ->   625.86s] quite unlikely as to what the actual dynamics of the probability of your winning or losing a particular
+[  625.86s ->   632.26s] trade in a strategy set would be but it's quite a trivial example to see what's going on so what you
+[  632.26s ->   637.30s] can see here is we start at 0.55 and after each trade you know we're doing pretty well we're doing pretty well
+[  637.30s ->   644.42s] we're doing pretty well and then the parameter continues to degrade until it gets to 0.4 and now
+[  644.42s ->   651.30s] we're seeing some plateau in the equity curve itself we're still winning we still have our average winner
+[  651.30s ->   659.06s] is to be greater than the average loser otherwise we would begin to lose equity value here but this is
+[  659.06s ->   665.14s] hopefully a very interesting diagram to see what could be going on in your trading strategy you can see the
+[  665.14s ->   673.40s] probability of your win the probability of winning in your trading strategy is decreasing over time
+[  673.40s ->   679.24s] and the probability of losing is just the complement one minus the probability of a win and that's
+[  679.24s ->   685.69s] increasing over time so this is very is very informative as to what's going on here and this
+[  685.69s ->   691.93s] is nothing that you can't do yourself if you had an excel sheet of your trades and your equity over time
+[  691.93s ->   698.65s] then you could develop this plot on a cumulative basis you would just accumulate the probability
+[  698.65s ->   705.29s] over time and see what happens to this this probability of winning and the corresponding probability of
+[  705.29s ->   713.02s] losing now clearly it's not going to tell the entire story but you know if you see your equity curve
+[  713.02s ->   718.06s] increasing increasing increasing and then plateauing or decreasing then you can take a look at the
+[  718.06s ->   723.82s] probability of winning probability of losing maybe that doesn't change maybe it's still you know 60 40
+[  723.82s ->   730.78s] and you're winning a good fraction of the time but maybe your winners are now smaller than your losers
+[  730.78s ->   735.34s] and your losers are too big and that's what's dragging your equity curve down so you can do this sort of
+[  735.34s ->   740.86s] analysis to see kind of like which lever you need to pull to hopefully you know get your strategy back
+[  740.86s ->   747.43s] in order you can see oh well you know my winners are are still winning so i have a good probability
+[  747.43s ->   753.27s] of win probability of loss but my average winner is decreasing because that's a whole nother dynamic
+[  753.27s ->   759.91s] that we're not even looking at you can plot that as well on a different y-axis but you know these two
+[  760.55s ->   765.99s] that we're looking at here the probability of win probability of loss you can swap that with average
+[  765.99s ->   774.63s] pnl because if you're not using fixed stop loss and profit takes then that itself too could also be
+[  774.63s ->   781.85s] again based on your entry and exit conditions could be a stochastic process as well so here we're taking
+[  781.85s ->   788.01s] a look at the probability of win probability of loss over time this is just a linear decay in performance
+[  788.01s ->   794.33s] if we scroll on down here we're taking a look at a completely different possible process to explain
+[  794.33s ->   799.85s] the dynamics of the probability of winning probability of losing so here what i have is i actually have a
+[  799.85s ->   807.53s] mean reverting process and what i'm trying to show you here is we don't know the density the underlying
+[  807.53s ->   815.13s] density the underlying dynamics of the change in probability over time if we did then we would know
+[  815.13s ->   823.29s] to continue to trade our our strategy or to not trade our strategy but we're going to try to model it and
+[  823.29s ->   829.37s] by modeling it you know we can graph this using using live trading data but what i'm doing here is
+[  829.37s ->   837.58s] i'm simulating possible possible dynamics so previously i showed you the this is just a linear decay in
+[  837.58s ->   846.17s] probability here this is a mean reverting process the probability of winning probability of losing now what
+[  846.17s ->   853.53s] you can see is the probability of winning kind of has this negative drift but then it gets drawn back to a
+[  853.53s ->   862.17s] mean value of 0.51 so there is still that edge but it changes over time now we we're still up into the
+[  862.17s ->   871.21s] right here but not nearly as much as when we had our fixed edge in the beginning right here we go from
+[  871.21s ->   879.46s] 0 to 1750 of course that's random but we come down here and we are 0 to 800 and this is going to have a
+[  879.46s ->   884.82s] completely different sharp ratio if you want to talk about performance metrics i'm sorry 0 to
+[  885.86s ->   890.26s] roughly 800 and this is going to have a completely different sharp ratio compared to the previous
+[  890.26s ->   895.70s] equity curve of course it's going to be much worse because we're simulating the true dynamics of this
+[  895.70s ->   901.14s] probability of win probability of loss you could fit like an orange style and back process the immune
+[  901.14s ->   905.94s] reverting process to your data and stimulate it forward to see what it could look like
+[  905.94s ->   912.82s] um but again there there really is no cut and dry answer as to what you should do now here what i'm
+[  912.82s ->   919.54s] trying to show you is this could be the case you could have a a profitable strategy and over time that
+[  920.10s ->   924.90s] that probability of winning is going to be mean reverting and it's going to come back up maybe to
+[  924.90s ->   933.35s] maintain that positive edge and the profitability of your strategy that's one instance you could have linear
+[  933.35s ->   940.39s] decay or somewhat linear decay very unlikely it's going to be as you know straight line as this but
+[  941.74s ->   947.98s] more likely it'll have some sort of negative drift if there is any at all so here what you can see
+[  947.98s ->   954.06s] is the probability of winning has this negative drift and it starts at like 0.6 and then it starts to
+[  954.06s ->   959.74s] come down and again it's just a stochastic process so it's going to continue down and then maybe it
+[  959.74s ->   965.42s] stabilizes maybe it has some mean reverting tendencies maybe it has some jumps who knows
+[  965.42s ->   972.06s] but these are the possible dynamics of the change in the probability of your wins and your losses in
+[  972.06s ->   979.50s] your trading strategy okay so what can you do to combat this well there's a lot of different things
+[  979.50s ->   986.22s] you can do the simplest thing to start with if you have been trading for a while and you're trading the
+[  986.22s ->   992.54s] same strategy maybe this is systematic maybe you have a specific you know type of day trading strategy
+[  992.54s ->   999.34s] that you use however you choose to trade what you can do is you can just plot your equity curve over
+[  999.34s ->  1006.22s] time and you can plot your wins and losses your cumulative probability of wins and losses over time
+[ 1006.22s ->  1012.06s] and you can see how the they evolve throughout time you can see oh well you know my probability of winning
+[ 1012.06s ->  1017.10s] was significantly larger here the probability of losing was significantly larger here uh and you can
+[ 1017.10s ->  1023.74s] you can kind of check out the dynamics of what your strategies p and l and probability of win and loss
+[ 1023.74s ->  1033.54s] looks like if it looks something like this it may be time to retire the strategy this is a good indication
+[ 1033.54s ->  1043.62s] something like this that unless there is a drastic change in the probability of winning which is
+[ 1043.62s ->  1050.26s] reasonable to even monitor over time so don't actually trade this strategy i would never trade this
+[ 1050.26s ->  1056.26s] strategy if you know the probability of winning was degrading like this and the probability of losing
+[ 1056.26s ->  1062.58s] was increasing and we assume some sort of fixed average win average loser for for our p and l i would
+[ 1062.58s ->  1067.86s] never trade something like this and you shouldn't either but what is reasonable to do is to track
+[ 1067.86s ->  1074.02s] this over time and to see hey like now it's starting to win again right if this blue line starts to
+[ 1074.02s ->  1080.98s] revert heavily back to the mean of a positive edge that then it might be reasonable to trade this strategy
+[ 1080.98s ->  1089.56s] again okay you may choose to use moving averages you may choose to use you know a lot of different things
+[ 1089.56s ->  1096.52s] to quantify a window perhaps of the probability of of winning probability of losing but we're not going
+[ 1096.52s ->  1101.96s] to kind of dive into that in this video it kind of opens a whole separate can of worms of tsa and i'm
+[ 1101.96s ->  1108.04s] not really interested in diving into that in the uh the remainder of this this video here um this is
+[ 1108.04s ->  1113.80s] another good example here if you know you have some sort of mean reverting-esque process like this
+[ 1114.44s ->  1121.24s] then you know here this is even kind of a toss-up should we trade this strategy well we went from
+[ 1121.24s ->  1127.56s] 0.51 all the way down to 0.42 and we plateaued pretty aggressively in all reality with transaction
+[ 1127.56s ->  1133.24s] costs we probably would have lost money here and then we started to come back up here to 0.51
+[ 1133.24s ->  1140.68s] 0.52 ish and you know even this is not enough to to trade this is has a negative drift even though
+[ 1140.68s ->  1147.16s] it's mean reverting this would not be reasonable to trade now it could eventually have a positive drift
+[ 1147.16s ->  1152.60s] and the probability of winning may even be greater than 50 percent then it might be reasonable to
+[ 1152.60s ->  1157.32s] begin trading again so this is what i'm trying to say is when should you stop trading a profitable
+[ 1157.32s ->  1166.20s] strategy well when it stops becoming profitable is an acceptable answer but more quantitatively it's like
+[ 1166.20s ->  1170.60s] well you can look at your edge and you can see the degradation in your performance over time
+[ 1170.68s ->  1177.16s] based on your actual trading data or simulation with fitted parameters if you want to assume some
+[ 1177.16s ->  1184.36s] sort of model and dynamics for your parameters so i hope this video was helpful i hope this video was
+[ 1184.36s ->  1193.64s] interesting in explaining how and when to stop trading a profitable strategy again really what we're
+[ 1193.64s ->  1200.60s] looking at is we're just looking at this idea of edge over time this is just one way to determine whether
+[ 1200.60s ->  1208.44s] or not you should trade a strategy right if we have negative ev we probably shouldn't trade it if we have
+[ 1208.44s ->  1214.76s] positive ev then i think it's reasonable to trade but you know that is something that you're going to
+[ 1214.76s ->  1221.32s] have to determine for yourself based on your own strategies so i hope this was an enjoyable video i hope
+[ 1221.32s ->  1227.72s] these charts were interesting and helped explain the idea visually of what edge is as we're looking
+[ 1227.72s ->  1235.32s] at it with respect to a strategy's win and lose rate and the equity that we are generating by trading
+[ 1235.32s ->  1240.76s] that strategy if you have any questions please feel free to leave them in the comments below if you want
+[ 1240.76s ->  1245.80s] to ask me a question directly i tend to be more responsive on discord that'll be in the description below as
+[ 1245.80s ->  1253.24s] well other than that thank you so much for watching and i will see you in the next video

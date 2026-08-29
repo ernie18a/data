@@ -1,0 +1,95 @@
+[    0.00s ->     3.68s] Ray Dalio is one of the greatest investors under Warren Buffett.
+[    4.08s ->    10.20s] His investment firm, Bridgewater, resulted in a 14.6 return in 2018.
+[   10.78s ->    15.10s] However, what he's really known for is not the billions of dollars that he manages,
+[   15.56s ->    17.24s] but his all-weather portfolio.
+[   17.64s ->    20.76s] His portfolio that lasts through all market conditions,
+[   20.92s ->    24.40s] such as bear markets, recessions, bull markets, consolidation,
+[   25.02s ->    26.26s] it lasts through it all.
+[   26.26s ->    29.42s] So let me show you exactly what is inside his portfolio
+[   29.42s ->    33.20s] so that your portfolio can also become an all-weather portfolio.
+[   33.86s ->    36.62s] This is exactly what he's holding in his portfolio.
+[   36.88s ->    41.86s] His top holding of 18.4% is SPY, the S&P 500 ETF.
+[   42.36s ->    45.02s] What he has here is a lot of diversification.
+[   45.24s ->    48.96s] He has long-term bonds, mid-term bonds, short-term bonds, gold,
+[   49.36s ->    51.68s] and a bunch of different ETFs.
+[   51.68s ->    55.68s] As you can see here, his portfolio is made up entirely of ETFs.
+[   56.54s ->    57.30s] What does that mean?
+[   57.36s ->    58.68s] It means he likes the diversification.
+[   59.42s ->    63.14s] And he likes to be able to invest in a single product that is liquid,
+[   63.48s ->    67.04s] but also get that diversification factor that ETFs offer.
+[   67.40s ->    69.76s] So that's another reason why I promote ETFs,
+[   69.76s ->    73.36s] because investors like Ray Dalio loves ETFs as well.
+[   73.70s ->    78.30s] Now let's deep dive into each specific ETF that he's holding real quick.
+[   78.46s ->    83.08s] The first stock he's holding here is SPY, which is the S&P 500 ETF.
+[   83.50s ->    85.32s] Now this is a great hold for everyone.
+[   85.32s ->    86.82s] I recommend this to anyone.
+[   86.98s ->    87.14s] Why?
+[   87.26s ->    93.84s] Because the average annual return for it is 9.8% and it offers a small dividend.
+[   94.10s ->    98.46s] You have the best of both worlds with capital appreciation and dividends.
+[   99.00s ->   101.72s] This ETF tracks the market.
+[  101.72s ->   108.80s] So it is diversified between 502 stocks and it just generates a good return year over year.
+[  109.12s ->   110.28s] All right, let's get into the next one.
+[  111.18s ->   116.34s] His second top holding is VWO or the Emerging Markets Index Fund.
+[  116.34s ->   122.56s] Now what this is, is it just tracks the average basket of a bunch of different emerging markets.
+[  123.08s ->   129.18s] This means that he gets to invest in emerging markets without being heavily risked
+[  129.18s ->   132.36s] because he is diversified in a basket of holdings.
+[  132.78s ->   137.76s] So as you can see here, this stock does offer a dividend or this ETF does offer a dividend
+[  137.76s ->   140.40s] and it usually holds its value well.
+[  140.50s ->   144.94s] There's nothing too keen on showing that it increases in value a lot,
+[  144.94s ->   147.40s] but it doesn't necessarily decrease over time.
+[  147.86s ->   151.10s] So you have price stability and you have that dividend.
+[  151.90s ->   157.42s] His third top holding is another Emerging Markets ETF, IEMG.
+[  157.78s ->   161.42s] This stock has the same exact thing as VWO,
+[  161.62s ->   164.58s] where the stock appreciation quite isn't there.
+[  164.70s ->   167.28s] We're kind of hovering around the same pivot of $50,
+[  167.82s ->   170.36s] but we do have that nice dividend.
+[  170.60s ->   172.78s] It's very consistent and diversified.
+[  172.88s ->   174.46s] Let's get into his next set.
+[  174.94s ->   180.56s] This is his fourth top holding, IVV, which is another form of SPY.
+[  180.88s ->   185.02s] This is basically the S&P 500 Index of the top stocks.
+[  185.48s ->   187.10s] So what do we see here?
+[  187.16s ->   191.32s] Well, from his top four holdings, we see that he is diversified in the markets.
+[  191.44s ->   193.62s] He loves stocks and he loves the economy.
+[  194.08s ->   197.14s] He's betting on emerging markets and he's betting on the U.S. economy.
+[  197.14s ->   204.52s] So these four are his top holdings, the S&P 500 and two Emerging Markets ETFs.
+[  204.62s ->   206.46s] Now let's get into his bond holdings.
+[  207.08s ->   212.70s] His top bond holding is LQD, which is investment-grade corporate bonds.
+[  213.12s ->   216.18s] So you can get bonds from varying different places.
+[  216.18s ->   217.64s] You can get it from the government.
+[  217.84s ->   221.52s] You can get it from corporations or you can get it from other avenues.
+[  222.04s ->   227.66s] However, investment-grade corporate bonds right under federal bonds is one of the safest ones
+[  227.66s ->   229.60s] because the Fed can print money.
+[  229.70s ->   232.30s] So that's why the Fed usually has the safest bonds.
+[  232.74s ->   236.66s] But investment-grade is the top-rated corporate bonds you can get.
+[  236.66s ->   244.40s] So his risk is very low on these bonds, but yet it seems to appreciate over time with a consistent dividend.
+[  244.84s ->   246.26s] So that's an amazing thing to see.
+[  246.38s ->   249.08s] He loves these ETFs that provide a dividend.
+[  249.48s ->   256.30s] His second top holding on bonds is TLT, which you can see here is the 20-plus-year treasury bond,
+[  256.38s ->   257.94s] which is a Fed bond.
+[  258.14s ->   262.28s] So we have very low risk here, stock appreciation over the long run,
+[  262.34s ->   264.50s] and we do have this consistent dividend.
+[  264.50s ->   270.12s] It is small, but it's consistent, and that's what you need in the stock market.
+[  270.44s ->   276.52s] Just a little bit of money consistently over time is the way that you make money in the stock market.
+[  276.82s ->   280.78s] All right, guys, so you can see here that his two top bond holdings are LQD and TLT.
+[  280.98s ->   282.90s] Let's get into his holdings of gold.
+[  284.26s ->   287.42s] GLD, or S-Spider Gold Shares.
+[  287.76s ->   290.54s] This makes up almost 5% of his portfolio.
+[  290.54s ->   297.02s] This is another way to make your portfolio an all-weather portfolio by also having commodities in it.
+[  297.16s ->   303.88s] In addition to stocks and ETFs, having a commodity is a great way to offset recessions and bear market times.
+[  304.42s ->   309.78s] During bear markets and recessions, you tend to see spike-ups in these commodity prices.
+[  309.78s ->   315.34s] For instance, here in the 2007, 2008, 2009, we had the housing market crisis.
+[  315.76s ->   324.28s] You can see here that gold went from 65, or this gold ETF, went from 65 to around $9,100.
+[  324.94s ->   329.30s] That is a great way to offset your losses in the stock market.
+[  329.70s ->   332.46s] So again, guys, this is his portfolio.
+[  332.66s ->   334.28s] Let's take a quick look again.
+[  334.28s ->   338.10s] So guys, as we discussed, this is his portfolio.
+[  338.46s ->   340.84s] You can see here, I will actually link this website below.
+[  341.22s ->   348.38s] But his main holdings are, you have SBY, which is the S&P 500 on SBY and IVV.
+[  348.64s ->   351.74s] You also have some emerging markets here and here and here.
+[  352.06s ->   357.86s] You have gold at around 5%, and then the rest, you have some great high-term corporate bonds.
+[  357.86s ->   363.72s] So again, guys, this is a way that you won't necessarily beat the market all the time,
+[  363.80s ->   370.04s] but you do have an all-weather portfolio, a portfolio that you don't have to worry about during a bear market or recession.
+[  370.42s ->   371.72s] All right, guys, thank you so much for watching.
+[  371.86s ->   375.14s] If you haven't already, please hit that like button and subscribe with that bell
+[  375.14s ->   378.00s] so that you get alerted every single time a new video comes out.
+[  378.20s ->   379.22s] Thank you so much for watching.

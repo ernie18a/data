@@ -1,0 +1,62 @@
+[    0.00s ->     4.60s] I'm not going to hire a professional risk allocator. I'm just going to buy into VU or
+[    4.60s ->    11.20s] SPY over the next 30 years. That's what they're going to do anyway. And if I have just $57,000
+[   11.20s ->    16.96s] in principle with an average 10% growth rate year over year, I'm going to be well over a million
+[   16.96s ->    23.16s] bucks, maybe a little bit less minus inflation and fees, but that's what they're going to do
+[   23.16s ->    29.48s] anyway. No, not necessarily. There's a lot of mechanics that retailers miss, especially when
+[   29.48s ->    35.40s] they go about managing their own accounts and the impact in the long-term trajectory of their wealth
+[   35.40s ->    41.28s] can be dire. If you haven't studied math, probability, statistics, finance, there is a
+[   41.28s ->    48.10s] giant landscape of mechanics to discuss way beyond the scope of this video, but I'm going to do my
+[   48.10s ->    53.64s] best. Let's start by taking a look at the S&P 500 price path here. You have three sources of risk
+[   53.64s ->    59.34s] effectively, idiosyncratic risk, firm-specific risk, industry risk, and undiversifiable market risk.
+[   59.34s ->    63.82s] Maybe there's different slices of undiversifiable risk. In the context of factor models, we're going
+[   63.82s ->    68.70s] to punt on that for now. If we diversify away the first two by holding a, what do we hear,
+[   68.96s ->    74.24s] diversified portfolio of equities, we're going to get something that looks like this. Effectively,
+[   74.30s ->    79.44s] our risky asset universe is US equities. And if we hold a market cap weighted, equally weighted
+[   79.44s ->    85.08s] portfolio, we're going to get something that looks like this. What's the problem with this?
+[   85.08s ->    91.94s] We're generating returns over time. We continue to buy in. Maybe we continue to decrease our cost
+[   91.94s ->    98.10s] basis during times of economic distress. And year over year, we're pursuing our long-term goal,
+[   98.20s ->   103.04s] right? We're going to be a millionaire in 30 years. And if we continue to add more principle,
+[  103.04s ->   108.82s] it's just going to help that situation. But there are a couple of mechanics at play here that are
+[  108.82s ->   115.20s] severely working against you. Firstly, if you're a retail client, you are likely triple long,
+[  115.56s ->   121.12s] right? You're long your stock portfolio, your house, and of course, your job. During times of
+[  121.12s ->   126.84s] economic distress, we have that peak to trough cycle. We get into a recession. When you need
+[  126.84s ->   132.60s] liquidity, you don't have it. You lose your job. You need money from your stock portfolio. Your stock
+[  132.60s ->   139.28s] portfolio is down. And your home equity, your home equity is down. So if you just buy into VU,
+[  139.38s ->   146.56s] you buy into SPY, when we get these economic crises, eventually, right? We have maybe one or two economic
+[  146.56s ->   153.62s] crises over five or 10 years on average, historically, you're not liquid when you need it.
+[  154.26s ->   161.30s] Even worse, when you get involved in the market, it makes an incredible impact on the overall cost
+[  161.30s ->   167.20s] basis of your portfolio and the trajectory of your wealth. In a one hour bar in a particularly liquid
+[  167.20s ->   173.46s] instrument, there's over 6 million entries, 6 million ticks you could enter on. Of course,
+[  173.52s ->   178.48s] it's going to impact the overall trajectory of your wealth and your cost basis. I want to show you this
+[  178.48s ->   184.48s] really interesting animation here. What I have is that same S&P 500 price path, but the first portfolio,
+[  184.48s ->   192.68s] this blue portfolio here, this blue dashed line, is going to buy in January of 2022. It gets in one
+[  192.68s ->   202.70s] whole year before the orange portfolio in January of 2023. So the blue portfolio is invested longer.
+[  203.60s ->   210.22s] However, the orange portfolio has substantially better portfolio metrics. If we take a look,
+[  210.22s ->   217.12s] we can see the max drawdown is less, the total return is less, and we're effectively just better
+[  217.12s ->   225.46s] off waiting, waiting through 2022 to put our money into the market in 2023. There are a lot of mechanics
+[  225.46s ->   231.16s] at play here, right? This looks like market timing. There's volatility drag, a decreased cost basis being
+[  231.16s ->   236.32s] capital efficient. All of these things are at play here, but I want to make myself perfectly clear,
+[  236.32s ->   242.06s] and there's plenty of literature to support this. You're not timing shit. There's no way you're
+[  242.06s ->   246.92s] going to call market tops and bottoms. It's about engineering a portfolio for success. If you go to
+[  246.92s ->   252.32s] a wealth or a passive manager and they're just holding the S&P 500 for you, yeah, you don't want
+[  252.32s ->   257.52s] to hire that manager, right? They're not going to do anything for you in that triple long market
+[  257.52s ->   262.56s] distress state of the world where you need liquidity when everyone else needs liquidity. So what happens,
+[  262.56s ->   267.58s] right? When everybody needs liquidity, everybody starts selling and you have that violent sell-off,
+[  267.66s ->   272.46s] and now you're selling for cents on the dollar. And that is the mess that you don't want to be a part
+[  272.46s ->   279.58s] of, which is why when you actually have a good risk allocator, you are going to have different overlays
+[  279.58s ->   286.66s] on your portfolio to help mitigate these issues. There's a lot of math at play here, but I just want
+[  286.66s ->   292.98s] to show you a simple animation and this idea of long convexity, which effectively emulates that
+[  292.98s ->   297.84s] market timing that you saw above. So if we take a look at this portfolio here, what we're looking at
+[  297.84s ->   303.32s] is the same blue portfolio above, the one that underperformed getting involved in the market in
+[  303.32s ->   310.22s] 2022. We're looking at that same orange portfolio here that timed the market. You're not timing shit,
+[  310.22s ->   316.14s] but it's a good thought experiment to see what optimal could be. What's this green portfolio? This
+[  316.14s ->   323.84s] green portfolio rivals the orange portfolio. How is that the case? Well, the green portfolio has a long
+[  323.84s ->   331.36s] convexity overlay. What that means is you are going to essentially be allocating a portion of the
+[  331.36s ->   339.04s] portfolio to a hedge leg. During times of economic distress, that hedge leg is going to pay out. And it
+[  339.04s ->   344.82s] turns out if you actually work out the math, this is going to improve your risk adjusted return. It's going
+[  344.82s ->   350.56s] to improve the geometric compounding of wealth over time, because you are being more capitally
+[  350.56s ->   356.06s] efficient. You're decreasing your volatility drag in the correlation sense. You are decreasing your
+[  356.06s ->   361.72s] cost basis because with the money that you have during times of economic distress, you are buying
+[  361.72s ->   368.04s] back into the fire sale effectively, allowing you to generate more returns faster. And that is going to
+[  368.04s ->   376.12s] be the difference between hiring a risk allocator who is optimizing for your long-term growth and somebody
+[  376.12s ->   381.96s] who is just ripping a fee to hold VU or SPY and go golfing with you.

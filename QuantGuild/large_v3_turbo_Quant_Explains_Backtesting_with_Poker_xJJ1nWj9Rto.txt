@@ -1,0 +1,77 @@
+[    1.34s ->     9.57s] Everyone wants to backtest their trading strategy, but nobody wants to verify that it is correct
+[    9.57s ->    15.85s] using proper mathematics and statistics. Well, in this video, what I'm going to do is I am going to
+[   15.85s ->    22.25s] explain proper backtesting methodology, how you should go about looking at your trading strategies
+[   22.25s ->    29.71s] through the lens of poker. Let's start with this idea of an entry signal. When should you enter
+[   29.71s ->    37.73s] into a trade or a hand of poker? Well, what I have here is a simulation of pocket aces. Effectively,
+[   37.83s ->    44.27s] that is your entry signal. What we're going to do is anytime we see pocket aces as our whole cards,
+[   44.27s ->    49.33s] we're going to buy in and we're just going to continuation bet through the flop river and turn.
+[   49.89s ->    55.21s] And if we were to do this against five other players that bet in that exact same capacity and
+[   55.21s ->    61.01s] we flip them, this is what our equity curve would look like. If we played 200 games, we would have
+[   61.01s ->    67.33s] positive expected value. If we just bet in that capacity against five players, we would make money.
+[   67.33s ->    75.29s] There is positive EV with this strategy, and that is just using pocket aces as our entry signal.
+[   75.45s ->    81.03s] Instead of pocket aces, consider some sort of moving average crossover or any other trading signal,
+[   81.03s ->    86.49s] and you have a bridge from trading to poker. We're looking for an entry signal that produces
+[   86.49s ->    93.43s] positive expected value. We can decompose this expected value into the probability that we win
+[   93.43s ->    99.51s] or lose and our average winnings or losses. And what you'll see is if we are profitable,
+[   99.51s ->   106.07s] then we are going to have a P&L distribution that outweighs on the winning side, the losing side.
+[  106.07s ->   113.01s] And that is exactly what it means to have positive expected value. So we found a profitable trading
+[  113.01s ->   120.73s] strategy. We just will buy in to the poker hand anytime we have pocket aces. And if we do this
+[  120.73s ->   127.65s] statistically, we're just going to make money. So let's use this signal in the live markets.
+[  127.79s ->   135.03s] Let's trade live with this pocket aces signal. Well, what happens? Clearly, we're not accumulating
+[  135.03s ->   142.31s] any wealth here. We actually have negative expected value. What happened? Well, in reality,
+[  142.31s ->   147.43s] the P&L distribution that we're going to realize from the live markets or when we play poker in
+[  147.43s ->   154.35s] reality isn't going to resemble that of our back tests or any sort of unconditional probability
+[  154.35s ->   159.75s] distribution that we simulate on. And what I mean by that is if we take a look at this example here,
+[  159.75s ->   166.49s] this is only going to be the case for static betting. Nobody is bluffing. Nobody is betting up
+[  166.49s ->   172.55s] a better hand. In this case, we found an entry signal, but there are different regimes where this
+[  172.55s ->   178.95s] is going to work and where this is not going to work. And that is exactly what's happening when we
+[  178.95s ->   185.87s] move over to the live markets. The places that it works, we need to double down on. And the places
+[  185.87s ->   193.03s] that it doesn't work, we need to fold, hedge our risk. This is made evident by the P&L distribution
+[  193.03s ->   198.49s] broken up into wins and losses along with the corresponding probabilities. You can see that
+[  198.49s ->   204.19s] the losing distribution dominates the winning one. That is exactly what it means to have negative
+[  204.19s ->   210.61s] expected value. And this decomposition here shows us what we can do to get back to positive
+[  210.61s ->   217.47s] expectancy. We can either increase our winners. We can increase the probability of winning or decrease
+[  217.47s ->   225.17s] the probability of losing or decrease our loser. That is how we can get back to positive expectancy.
+[  225.17s ->   230.17s] How can we do that in the context of our poker entry signal? We need to either increase our winner
+[  230.17s ->   235.73s] or decrease our loser. Well, we can easily decrease our loser by playing tighter. We can play more
+[  235.73s ->   241.87s] conservatively and fold hands when somebody is betting up big. And that is exactly what we're
+[  241.87s ->   247.47s] going to do here. Anytime somebody is betting up a big hand beyond the flop, we're just going to fold.
+[  247.93s ->   253.31s] And if we trade these pocket aces, this entry signal in the live market, what you're going to see here
+[  253.31s ->   259.91s] now is something that looks more positive in terms of expected value. And that is exactly our goal when
+[  259.91s ->   265.51s] we develop these entry signals. We have to understand that the conditional is fundamentally different
+[  265.51s ->   271.33s] from the unconditional. And that is exactly what you are seeing here when we transition to the live market
+[  271.33s ->   278.77s] from our back test. The conditional is different from the unconditional. And it is our job to effectively
+[  278.77s ->   285.59s] bet up where we have more of an edge and hedge down where we have less of an edge. That is what makes for
+[  285.59s ->   292.15s] an effective strategy. In this example here, the lever that I pulled was to decrease our loser. If we look at the
+[  292.15s ->   298.07s] P&L distributions, they look roughly the same. In fact, the probability of a loss via either just
+[  298.07s ->   304.01s] losing outright or a fold actually increases, but we've decreased our average loser by so much,
+[  304.33s ->   311.17s] we got back to positive expectancy. And it's those kinds of tricks that you introduce into your overall
+[  311.17s ->   318.49s] trading strategies to improve the expected value. This is exactly why we consider things like volume,
+[  318.49s ->   324.01s] volatility, sentiment, all of these different regimes. So when we actually enter into a trade,
+[  324.19s ->   330.19s] we can either bet up the cases that we have more of an edge, or maybe forget the entry altogether.
+[  330.41s ->   338.69s] If in that case, we have less of an edge. And this is exactly why your back test is wrong.
+[  338.83s ->   344.19s] Trading signals are evaluated in terms of their expected value and associated risk. And risk is just
+[  344.19s ->   350.27s] a measure of deviation from expected value. That's all your sharp ratios or Tino ratio,
+[  350.39s ->   357.81s] so on and so forth is measuring. But what you have to understand is the same entry signal at different
+[  357.81s ->   364.47s] points in time are fundamentally different. If you take a look here, I have a moving average crossover
+[  364.47s ->   370.49s] strategy. And you'll take a look at the exact same entry signal at two different points in time.
+[  370.49s ->   379.85s] One is a winner and one is a loser, but they are fundamentally different. This is exactly the same idea as
+[  379.85s ->   386.89s] playing pocket aces in the case of everyone is just continuation betting through the turn and the case
+[  386.89s ->   394.19s] where you actually have somebody betting up after the flop river or turn. That is what makes them
+[  394.19s ->   400.47s] fundamentally different signals. You have to handle each case differently, which is exactly what
+[  400.47s ->   407.23s] why in practice we consider the macro climate, the volatility regime, volume spread, so on and so
+[  407.23s ->   416.53s] forth to better classify the expected value of the overall trading system relative to the entry at any
+[  416.53s ->   423.97s] point in time. You will find when you do this effectively stability in your PNL distributions.
+[  423.97s ->   431.37s] What that means is you will observe empirically in your back test for each regime that you condition on
+[  431.37s ->   437.79s] a PNL distribution. Some will maybe have more positive expectancy than others, but if you trade
+[  437.79s ->   444.61s] those distributions in a walk forward or a live sense, they will remain stable. That means that you
+[  444.61s ->   451.13s] will have a positive expected value and your equity curve will look something like this. In the context of
+[  451.13s ->   457.81s] stochastic processes, I am not making any remarks about bet sizing or ergodicity here. I have a video
+[  457.81s ->   463.81s] on that topic. If it interests you, I will leave a link to it in the description below. That's going to
+[  463.81s ->   468.21s] do it for this video explaining proper backtesting methodology with poker. I hope you enjoyed. I hope
+[  468.21s ->   472.27s] you learned something. These videos certainly take a tremendous effort to put together, so if you enjoyed
+[  472.27s ->   476.77s] it and you want to see more like it in the future, please like, comment, subscribe, share. It helps me out
+[  476.77s ->   481.77s] tremendously. It is always greatly appreciated. If you're looking to master your quantitative skills,
+[  482.25s ->   487.93s] check out quantguild.com. If you're looking to engage in discussions about the financial markets,
+[  488.37s ->   493.95s] check out discourses.io. Other than that, I want to thank you so much for watching,
+[  493.95s ->   496.69s] and I will see you in the next video.

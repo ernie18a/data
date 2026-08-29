@@ -1,0 +1,117 @@
+[    0.06s ->     6.96s] In this video, I'm going to teach you how to generate weekly income using my simple 1DT ORB option strategy.
+[    7.28s ->    11.14s] This is the same strategy that I've talked to over 500 people so far, including my father-in-law,
+[   11.26s ->    14.18s] who's used this strategy to make $1,000 in his first two weeks.
+[   14.52s ->    18.00s] Here's my TastyTrade account. You can see SPX is where I trade this.
+[   18.28s ->    24.06s] I've done it over the last 60 days. You can see here I made almost $1,300 trading with just one contract.
+[   24.26s ->    28.14s] So that's the power of this. Whether you have a small account or a large account, you can use this to generate money.
+[   28.14s ->    33.30s] This strategy is broken into three parts, the breakout, the entry, and the management.
+[   33.82s ->    40.40s] So how exactly do we look for a breakout? Well, ORB is an acronym that stands for opening range breakout.
+[   40.78s ->    45.90s] We're going to look at what the market is doing in the morning, and then we're going to find a breakout point from that level.
+[   45.98s ->    50.48s] So here, let me show you. We look at the first hour of the day for the breakout.
+[   50.64s ->    56.26s] You can see here the market opens at 930. We're going to wait until 1030, which happened right here.
+[   56.26s ->    62.60s] And this becomes our opening range breakout zone. So we map out the first hour of the day, which is right here.
+[   62.88s ->    69.14s] And what we do is we look at where was the high from that first hour. The high from the first hour was right here.
+[   69.42s ->    73.98s] So we chart our high. This satisfies condition number one, which is our breakout.
+[   74.18s ->    82.30s] So for the breakout, we look at the first hour of the day and we find the highest point and we wait for a breakout.
+[   82.30s ->    88.60s] So we're going to wait for the breakout. What does waiting mean? It means we want to see a close above that level.
+[   88.74s ->    94.32s] So we want to see or we want to wait for the market to not just hit this, but close above it.
+[   94.54s ->   101.02s] So you can see here, if we zoom into this candle, it actually was able to close above that level just barely, but it did.
+[  101.40s ->   106.08s] This would signify an entry. So I'm not waiting for a pullback and things like that.
+[  106.08s ->   113.44s] I'm just keeping it simple where if the market closes above that previous high, then I'm going to enter the trades.
+[  113.80s ->   119.26s] That's what I look for the breakout. So now that we know the breakout zone, how do we enter this trade?
+[  119.50s ->   125.80s] OK, I've tried a lot of different option strategies and the one that I found to be the most successful is I put credit spread trade.
+[  125.80s ->   134.28s] Why? Because we define our risk, we control how much risk we take, and we also get to control other factors like profit and risk to reward ratios.
+[  134.68s ->   139.28s] That's a lot easier to do that with a defined risk trade. Also, it's more advantageous for small accounts.
+[  139.50s ->   144.12s] How exactly do we place this trade? The trade is very simple. It's a put credit spread trade.
+[  144.22s ->   147.68s] We're waiting for the breakout, right? We're looking for the market to break above the high.
+[  147.78s ->   152.54s] That means we're assuming the market is bullish and the way to take advantage of that is they put credit spread.
+[  152.54s ->   159.40s] And so I put credit spread. What we're going to do is we're going to sell the 30 delta level and then we're going to buy $20 below it.
+[  159.86s ->   162.94s] Now, again, this is up to you. So let me just show you an example here.
+[  163.06s ->   168.14s] If the market broke above here, which it did, let's say we enter a 30 delta trade.
+[  168.28s ->   173.94s] That 30 delta makes our strike price about here. And then that means we're going to buy $20 below it.
+[  173.94s ->   181.68s] So this is how we create a credit spread, which means that as long as the market stays above this level right here, we will make money.
+[  181.68s ->   186.52s] That's how I put credit spread works. So again, our entry is just a simple put credit spread.
+[  186.62s ->   189.64s] If you want to see how it's on the broker, it's simple. We'll come over here to trade.
+[  189.86s ->   194.26s] We'll go to SPX. That's what we traded on. We'll do a one DTE.
+[  194.38s ->   199.08s] You can see I already have a position on right here. Basically, we go to a 30 delta and we sell that.
+[  199.08s ->   202.50s] So right here, 31 delta, the closest. So you sell that position.
+[  203.00s ->   208.06s] Then you go $20 away. So $6,485 was the contract that was sold.
+[  208.06s ->   213.96s] Then we're going to go $20 away from that. So that becomes $6,465. We're going to buy that one.
+[  214.24s ->   217.84s] This is the ideal setup that I backtested over a thousand different strategies.
+[  217.84s ->   224.36s] And this works the best. You can see here that we're going to have a profit of about $300 if we let this go all the way through.
+[  224.58s ->   227.34s] And it takes about $1,600 of buying power.
+[  227.62s ->   231.14s] So overall, not too bad. But again, we have take profits and stop losses.
+[  231.14s ->   232.42s] It's going to affect this as well.
+[  232.42s ->   237.78s] Now, if you have a smaller account, you can only do $10 away. That will make the buying power drop down to $800.
+[  238.36s ->   245.52s] Or you can make it as small as a $5 difference, make it a $400 per trade buying power usage.
+[  245.70s ->   249.82s] So again, you can change how much money this takes based on how wide this is.
+[  250.18s ->   252.92s] Now, do you know that it's going to impact your max profit?
+[  253.02s ->   254.30s] You can see here if I do a $5.
+[  254.82s ->   258.18s] Yes, I'm only risking $400, but I only have a chance to make $100.
+[  258.18s ->   262.60s] Versus here, I am risking, what, $1,600, but I have a chance to make $335.
+[  263.10s ->   266.58s] So I'm definitely just getting that higher return there as well.
+[  266.72s ->   268.50s] That's the type of strategy we put on.
+[  268.58s ->   270.50s] Now, how exactly do we manage this trade?
+[  270.94s ->   278.06s] Manage it breaks down into two criterias, which is a take profit and a stop loss.
+[  278.18s ->   280.56s] So if I come in here, we're going to do a take profit.
+[  280.72s ->   282.72s] So TP is going to be 40%.
+[  282.72s ->   286.26s] So this means once the trade has reached a 40% take profit,
+[  286.26s ->   289.18s] so let's say it's trading and we sold it at a dollar credit,
+[  289.34s ->   295.70s] then once the trade gets down to a $0.60 credit, meaning we collected $0.40, 40%,
+[  295.70s ->   297.10s] we're going to close the trade.
+[  297.48s ->   302.12s] Now, we also have a stop loss SL, which I do at the short strike.
+[  302.48s ->   303.62s] So what does this mean?
+[  303.78s ->   306.78s] Wherever we sell this 30 delta put,
+[  307.10s ->   309.92s] what we can do is we can hold on to this position
+[  309.92s ->   313.98s] until the market comes down and hits this zone.
+[  313.98s ->   317.18s] Once it hits this strike, the strike price we have here,
+[  317.30s ->   319.76s] we will close out the trade for a stop loss.
+[  320.12s ->   326.06s] Now, that tends to be anywhere from 40% to 60% for a stop loss.
+[  326.26s ->   328.76s] Again, varies on really where you got into the trade.
+[  329.14s ->   330.60s] But why am I doing this?
+[  330.60s ->   333.66s] Because I know that the market can sometimes pull back.
+[  333.92s ->   337.30s] The market can do other things on its trend while it's going up.
+[  337.54s ->   339.78s] And so I want to give it plenty of room to work.
+[  339.78s ->   342.90s] And so that's why I'm like, okay, if it breaks this short strike price,
+[  342.96s ->   346.02s] it means the trend's probably changing, not going the direction I want.
+[  346.24s ->   348.32s] So I'm just going to get out of the trade and let it be.
+[  348.84s ->   351.54s] And so 90% of the time, what's going to happen is we're going to hit
+[  351.54s ->   354.36s] either our take profit or stop loss in the first day.
+[  354.46s ->   357.62s] But if it doesn't, because we're doing a 1DTE trade,
+[  357.68s ->   359.48s] which is we're going out one day in the future.
+[  359.64s ->   360.86s] So make sure I put that in here.
+[  361.10s ->   363.14s] I know I said that earlier, but I want to make sure it's clear.
+[  363.14s ->   369.75s] 1DTE, again, a 1DTE for this, just like that.
+[  369.83s ->   370.87s] So I got a 1DTE contract.
+[  371.19s ->   373.93s] Now, if I am not able to close that trade out today,
+[  374.23s ->   376.25s] what I'm going to do is I'm going to wait till the next day.
+[  376.29s ->   377.67s] So it will be held overnight.
+[  377.85s ->   380.33s] That's why it's important to make sure that your credit spread,
+[  380.41s ->   383.85s] the spread difference is something that you're comfortable and okay with.
+[  384.09s ->   387.15s] So again, that's one way to manage that risk as well.
+[  387.53s ->   389.15s] And so, yeah, that's it's the trade.
+[  389.29s ->   391.39s] Breakout, wait for the first hour, find the highest point,
+[  391.39s ->   394.81s] wait for a close above, enter a 1DTE, put credit spread,
+[  394.93s ->   398.35s] sell the 30 Delta, buy whatever away based on the risk you want to take,
+[  398.63s ->   402.39s] then manage it at a 40% take profit and a stop loss of the short strike,
+[  402.63s ->   405.47s] which could also be equivalent to a 50% stop loss.
+[  405.61s ->   409.23s] This has generated roughly a 60 to 65% return.
+[  409.71s ->   410.67s] That's what I was saying.
+[  411.15s ->   411.71s] So wrong.
+[  412.05s ->   416.21s] 60 to 65% win rate, which has allowed us to do well,
+[  416.27s ->   420.31s] because with a 40% take profit and roughly a 50% stop loss,
+[  420.31s ->   423.19s] our win and loss rate is approximately the same.
+[  423.53s ->   425.27s] So instead of having small win, one large loss,
+[  425.49s ->   428.49s] we now have decent size win, decent size win,
+[  428.57s ->   431.39s] and then a loss that takes up about a winner and a half,
+[  431.51s ->   433.45s] which means we can come back from trades quickly.
+[  433.91s ->   436.17s] So that is the power of using this.
+[  436.21s ->   438.99s] It puts you in the favor of the trend because you're waiting for a breakout.
+[  439.21s ->   441.95s] It helps you limit your losses because I put credit spread.
+[  442.35s ->   443.95s] And it's just simple mechanical.
+[  444.09s ->   447.91s] You wake up SPX, same symbol, same strategy every single day.
+[  447.91s ->   449.79s] And that's how you can run this strategy.
+[  450.21s ->   453.11s] So anyways, that is my newest 1DT ORB opposite strategy.
+[  453.21s ->   454.55s] If you want the exact trade plan,
+[  454.61s ->   457.11s] you can click the link down below and get the PDF form of it
+[  457.11s ->   459.63s] so that you can actually go and start putting this into action.

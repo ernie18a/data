@@ -1,0 +1,36 @@
+[    0.50s ->    16.94s] Alright guys, it's Austin Booley. Again, I'm doing a quick video. It should be super, super quick. Hopefully it is of how options contracts actually make money if you're day trading them. Okay, sorry I'm not showing my face, but again it's a quick video and I'm in a weird place.
+[   16.94s ->    41.04s] Alright, so of course we can do this with any stock or ETF or index fund, but right now I have SPX pulled up. And let's go to trades so we can check out the options here. So just so I can show you all how this works, you all can do this with anything. I'm going to pull up the first one I see. This works with every single contract on TD Ameritrade.
+[   41.04s ->    65.42s] You go in, you right click on the contract that you want to look at. So for example, this is the $2,605 strike price, the call. So if we look, I copy this, I go up into my charts and I paste it in. This is what the actual contract traded, okay?
+[   65.42s ->    84.20s] So this is the actual price movement of the contract. So as we know, Friday was a very red day in the markets. So that's why this call went down. It went down, looks like about 69%. Okay, but since the markets went down, I guess we want to look more at a call.
+[   84.20s ->   101.17s] Let's go back to our SPX. Okay, so we obviously know the puts were up so much. So I was focusing on the $1,620 call. This was a call I got at $2,60. Let's take a look at it.
+[  101.17s ->   119.76s] Of course, these contract prices traded in conjunction to the stock price or ETF or index price. So when the stock or ETF moves, these put contracts, like if it moves down, the put contracts increase in price.
+[  119.76s ->   137.41s] If the stock or ETF goes up, then the call contracts increase in price, okay? So remember, it was a very red day I picked up. So this must not be the one I picked up down at $5,60. Yeah, I traded it much less than that.
+[  137.41s ->   151.21s] But whatever. So it was a red day. So if you would have bought some put contracts at the break of the triangle, I know you can't really see it here. But on the SPX chart, there was a perfect setup for a triangle. I know it's going to look nothing like this.
+[  151.21s ->   166.91s] But on the SPX chart, it was like, oh, triangle breakout. And so you would have bought here, I mean, $14, that is a lot for stock. Hold on. But I mean, as you can see, if you would have bought the contract here at $14 a contract, it went down.
+[  166.91s ->   180.01s] So the put contracts increased to $37 a contract. So the way the contract prices increase is it increases in your direction. If it goes down, the put contracts go up. If it goes up, the call contracts go up.
+[  180.01s ->   192.25s] So just for a very quick example. Oops, I'm still on the specific call. Let's go to SPX. I'm going to look at the chart. Nope, nope, nope, nope, nope, nope, nope. Charts.
+[  192.25s ->   204.19s] Yeah, if you're wondering why that was only like $0.04 of my net liquidity, it's because it is. I moved my money out of TD to Tacey Works. It's in the process right now.
+[  204.19s ->   218.01s] So let's look at this. Obviously, it was a sharp drop. So you put contracts would have increased. So I would have entered at the first rejection of the EMA line and the break below this line.
+[  218.01s ->   229.33s] So right there, that is $8.48 Monday. So let's go to this and I'll show you how it actually works. I hope I'm not going over too much time. I want it to be a short one.
+[  229.33s ->   248.90s] Monday, Monday, $8.48. I would go faster if this would go faster. $8. And that works. Go. Sorry, it's going to take a while to lower because TD Ameritrade is slow on this.
+[  249.34s ->   260.74s] But I just want to show you all how this works. So obviously, we get that rejection of the EMA. It breaks below our line. We go in. We're like, okay, since puts would be good right now, let's go back.
+[  260.74s ->   277.38s] So I would have traded the zero day because it would have been the most volatile ones and the most inexpensive ones. So I prefer when the contracts are about $100 a contract and I buy like, let's go this one and this one looks good.
+[  277.38s ->   290.10s] It's because we're buying a put because we want it to go down. We buy at $160 about. Place it at the mid. I would personally, on this, I'll pick up three contracts. Send.
+[  291.21s ->   302.85s] Okay. Now we have the three put contracts at $148 a contract. So $148 times three. That is how much it costs to enter this trade.
+[  302.85s ->   317.68s] Now, if we go to the charts, obviously, it's going down in our favor. So let's pull this trade tab. Obviously, we're up $21 just so it makes more sense. You can see it out here.
+[  318.18s ->   330.00s] Let's see if I can. Yeah, I can. Okay. So now we can see P&L and resemblance to the chart.
+[  330.00s ->   344.08s] So now as we watch the chart drop further, of course, we're up more money. All right. So we're watching it drop. We're currently up $21. But again, you would be up more.
+[  344.08s ->   357.12s] So you had $148 a contract times three. So you paid $444 plus commissions to get into this trade. And right now, it's sitting at $155 a contract.
+[  357.26s ->   364.34s] So your trade price is what you bought it at. The mark of what it currently is. It's going down. It's going in our favor.
+[  364.34s ->   370.62s] So our puts are increasing in value. The same thing works for the call, but the opposite direction.
+[  372.10s ->   379.74s] Let's just speed this up because we all know how this ends. 15. I don't need that. 0. All right.
+[  381.86s ->   385.06s] Now we're way down here. Now let's wait for this to increase in price real quick.
+[  385.06s ->   397.83s] So obviously, it dropped so far since when the stock goes down, the puts increased in price.
+[  398.37s ->   407.37s] So the puts went from $148 a contract to $3,200 a contract. So with three contracts, I entered for $444.
+[  407.91s ->   419.05s] And we are now at $3,275 a contract, which gives me a P&L of $9,000 for the day with only three contracts.
+[  419.05s ->   427.17s] The reason why our P&L is that big is because of this crazy move again. Crazy moves like that don't happen, but you still see that huge percentage gains.
+[  427.75s ->   436.56s] We would close out for the day, of course. So in the middle of here, firm, send. Just let my contracts know.
+[  437.14s ->   443.06s] So $8,826 on the day. That is just how the puts increase. Of course, the calls increase in the same way.
+[  443.78s ->   448.32s] I'm going to have to upgrade that, but I hope that helps. I hope this was a quick, quick video and I didn't mean for today too long.
+[  448.32s ->   452.58s] If you want to join a chat, it would be Options Traders, which is down in the link below.
+[  452.84s ->   454.00s] All right, bye and hope that helps.

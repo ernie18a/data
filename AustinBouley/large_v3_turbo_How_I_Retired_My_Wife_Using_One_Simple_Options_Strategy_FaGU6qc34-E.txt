@@ -1,0 +1,264 @@
+[    0.00s ->     4.50s] I'm going to show you exactly how I retired my wife using one simple option strategy.
+[    4.62s ->     8.72s] This is the same strategy that's making me $4,000 a month on average,
+[    9.00s ->    13.18s] and the same strategy that I taught over 10,000 traders who are now supplementing
+[   13.18s ->    16.16s] and some even fully replacing their 9 to 5 income.
+[   16.48s ->    20.12s] So in this video, I'm going to walk you through number one, the proof.
+[   20.36s ->    22.54s] So you can actually see broker returns that I'm making this.
+[   22.64s ->    24.46s] It's not just some fluff thing, right?
+[   24.50s ->    28.04s] I'll show you the one simple strategy, which includes the back test,
+[   28.04s ->    30.78s] how we enter it, the entry rules, the exit rules,
+[   30.94s ->    33.98s] how we plug it into a broker so that you can walk away from this video,
+[   34.30s ->    35.56s] actually being able to do it.
+[   35.76s ->    39.52s] I'll show you the risk management strategy so that even during a market crash,
+[   39.54s ->    41.02s] you can use this to make money.
+[   41.24s ->    45.02s] And we'll show you how to automate the entire thing so that it can be passive
+[   45.02s ->    46.92s] so that you're no longer stuck to the screen.
+[   47.12s ->    49.88s] Because again, if you do this correctly, you might be stuck to the screen.
+[   49.94s ->    51.26s] So we want to automate that as well.
+[   51.74s ->    53.10s] So let's dive into the video.
+[   53.20s ->    54.74s] Number one, proof of broker returns.
+[   54.94s ->    57.52s] Let me make my face smaller so we have more room for action.
+[   57.52s ->    58.10s] Here we go.
+[   58.14s ->    61.52s] If I go to my broker, if I refresh the page here, give it a second to load.
+[   61.86s ->    64.70s] And then I go to the date filter and go year to date.
+[   64.86s ->    68.66s] So far this year, I've used this strategy to make $8,500.
+[   69.26s ->    71.64s] Now we're in the midst of a very big crash.
+[   71.86s ->    76.88s] I was closer to a $12,000 profit, which would put me around $4,000 a month.
+[   77.00s ->    80.64s] But again, we're about $3,500 a month right now,
+[   80.86s ->    84.00s] just based on how far it's been so far throughout the year, which is pretty good.
+[   84.00s ->    87.02s] And so again, I want to show you exactly what this strategy is.
+[   87.22s ->    88.68s] And it's a strangle strategy.
+[   89.10s ->    91.92s] I'll walk you through it very simply if you don't know what it is.
+[   92.00s ->    95.82s] But looking at the back test, you can see here that the performance is very consistent
+[   95.82s ->    97.62s] and very profitable over time.
+[   97.84s ->   102.56s] You can see here that we just have a really good win rate, about a 97% win rate.
+[  102.82s ->   107.08s] Very consistent, very reliable, and something we can use day in and day out
+[  107.08s ->   109.64s] and make it a reliable source of income.
+[  109.64s ->   113.74s] And so for those who don't know what the strangle is, I just showed you the back test,
+[  113.82s ->   115.86s] but let's walk through these specifics, okay?
+[  116.54s ->   117.60s] Let's say you have a stock.
+[  118.00s ->   120.78s] Okay, this stock is just minding its own business and trending up,
+[  120.86s ->   122.44s] which stocks do most of the time.
+[  122.96s ->   126.88s] A strangle sells a put down here and sells a call up here.
+[  126.94s ->   129.58s] If you don't know what that means, it means that this level,
+[  129.72s ->   131.72s] I'm betting the stock stays above this level,
+[  132.04s ->   135.04s] which means as long as the stock stays above this level, I make money.
+[  135.12s ->   136.76s] So the stock goes up, I make money.
+[  136.76s ->   138.36s] The stock goes sideways, I make money.
+[  138.44s ->   141.52s] If the stock goes down, but still stays above my level, I make money.
+[  141.68s ->   145.06s] This is so much better than stocks, which only makes money if it goes up.
+[  145.92s ->   148.56s] So that's from the selling put, but I also sell a call,
+[  148.66s ->   152.48s] which means as long as the market stays below this level, I make money.
+[  152.86s ->   154.90s] And this means it can go down and I'll make money.
+[  155.00s ->   156.30s] It can go sideways and I'll make money.
+[  156.34s ->   159.54s] It can go up as long as it stays below my level and I'll make money.
+[  159.86s ->   162.74s] So when we combine these two things together, it's called a strangle.
+[  162.74s ->   167.32s] And I profit when the market stays between these two levels.
+[  167.66s ->   169.12s] And so that's what a strangle is.
+[  169.22s ->   170.90s] It can go sideways and I'll make money.
+[  170.98s ->   174.78s] It can go up and stay below my level and make money and go down to stay above my level and
+[  174.78s ->   175.52s] I'll make money.
+[  175.66s ->   180.64s] So in this way, I can make money in so many different ways compared to a normal stock trader.
+[  180.74s ->   183.88s] So this is what gives me the really high win rate.
+[  184.04s ->   186.62s] So that's what the strangle strategy is.
+[  186.68s ->   189.96s] I'm going to show you how to actually enter it in the rules and then I'll show you it in the broker.
+[  189.96s ->   195.32s] So if we're diving in here, a strangle, the way that I do it is I like to show what's
+[  195.32s ->   200.08s] called skew my strangle, which means I like to change where my put in calls are.
+[  200.42s ->   205.14s] So you can see here if the stock is trending up, which more times than not, stocks move
+[  205.14s ->   205.44s] higher.
+[  205.62s ->   209.60s] Stocks are in an uptrend, especially when you're trading and looking at the overall market,
+[  209.68s ->   212.66s] like the S&P 500, it tends to trend higher.
+[  212.88s ->   218.00s] And if that's the case, then we should leave more room to the upside and less room to the
+[  218.00s ->   218.44s] downside.
+[  218.44s ->   222.32s] So our call should be higher and our put should be a bit lower.
+[  222.56s ->   222.88s] Why?
+[  223.06s ->   224.30s] Because it keeps going up.
+[  224.38s ->   227.74s] We don't want this call to level to get hit because if it does, then we lose.
+[  227.94s ->   231.98s] So we want to push our call higher and have our put a bit lower so that we can use this
+[  231.98s ->   232.52s] to make money.
+[  232.78s ->   235.00s] So the way that I structure this trade is like this.
+[  235.28s ->   240.40s] I sell one call at the five delta level.
+[  240.40s ->   244.62s] This pushes it out very far, which I'll show you here in a second on the broker.
+[  244.84s ->   249.48s] And then I sell one put at the 10 delta.
+[  249.70s ->   254.34s] This one's a bit higher, a bit closer to the stock so I can create more income, more premium,
+[  254.34s ->   259.94s] but also it's still on the safer side because markets tend to trend higher.
+[  259.94s ->   261.86s] So this is how you structure the trade.
+[  262.06s ->   267.50s] Again, 90 to 120 DTE is typically how far out you go for this trade.
+[  267.56s ->   270.60s] I'll show you what this looks like here in a broker so you can pick the right contracts
+[  270.60s ->   271.12s] here in a second.
+[  271.32s ->   273.24s] But I tend to lead more towards 120.
+[  273.64s ->   275.50s] So this is how the trade is structured.
+[  276.04s ->   277.46s] Next, how do we enter it?
+[  277.46s ->   279.36s] How do we know when to trade?
+[  279.62s ->   283.14s] The ideal market for a strangle is during a sideways market.
+[  283.64s ->   287.44s] So again, sideways, meaning that we're stuck in between a high and a low.
+[  288.14s ->   290.64s] We're bouncing up, up and down, but between two levels.
+[  290.94s ->   292.38s] This is the ideal market.
+[  292.38s ->   294.96s] But I'll do this in almost any market.
+[  295.38s ->   298.24s] Again, any bullish markets and sideways markets.
+[  298.50s ->   300.00s] Again, slower bullish ideally.
+[  300.14s ->   301.80s] But these are the markets that I traded in.
+[  302.12s ->   304.26s] And when I do, I enter on a weekly basis.
+[  304.68s ->   306.96s] So for instance, I'll do one trade a week.
+[  306.96s ->   309.82s] So for me, this looks like putting on a trade every single Wednesday.
+[  310.44s ->   315.82s] So that is how we do entries, ideally based on market, and then do it on a consistent frequency
+[  315.82s ->   318.90s] based on how much money that you have to use in your account.
+[  319.46s ->   321.14s] So that's structure, that's entry.
+[  321.26s ->   327.24s] Now for exits, what we do is we target, or at least what I target, is a 25% take profit.
+[  327.68s ->   330.00s] Now you might be wondering why so little.
+[  330.26s ->   335.58s] I do a 25% take profit because then I can close the trade faster, which means I have less
+[  335.58s ->   336.68s] total trades open.
+[  336.68s ->   341.50s] So if we're putting on a trade once a week, and if we close it at the 50% profit, that
+[  341.50s ->   342.84s] means I could have what?
+[  342.92s ->   347.30s] Like four or five trades open at a time, which means I have four or five trades that could
+[  347.30s ->   350.52s] potentially bring me a lot of risk if the market turns around.
+[  350.74s ->   355.04s] But by taking profit faster, I'm able to actually close these trades faster.
+[  355.12s ->   359.28s] Now only have two or three trades open at a time to reduce my risk.
+[  359.38s ->   361.72s] And it also gets me in and out of trades faster.
+[  361.72s ->   363.08s] So it's more capital efficient.
+[  363.80s ->   367.32s] Anyways, I also like to do a stop loss in case something goes wrong.
+[  367.64s ->   370.02s] A 300% stop loss on this trade.
+[  370.48s ->   373.68s] And this is what gets me around my 97% win rate.
+[  373.84s ->   375.46s] So this is how you structure the trade.
+[  375.58s ->   376.30s] This is how you enter.
+[  376.38s ->   377.26s] And this is how you exit.
+[  377.34s ->   380.04s] Now let me show you exactly what that looks like on the broker.
+[  380.26s ->   380.56s] My bad.
+[  380.56s ->   385.22s] If I go to the broker and I go to trade, again, you ideally want to do this on ES or I should
+[  385.22s ->   386.48s] say futures options.
+[  386.84s ->   389.06s] The reason being is you'll get way greater leverage.
+[  389.32s ->   391.32s] If you don't have access to futures options, no worries.
+[  391.38s ->   394.46s] This works just as well on SPY, Apple, things like that.
+[  394.78s ->   398.62s] Ideally, you want to stick to ETFs though, because those are just more consistent and more
+[  398.62s ->   399.62s] stable, right?
+[  399.68s ->   401.74s] Because it's a strangle profit between two levels.
+[  401.86s ->   405.92s] So if you have a very volatile stock like Tesla that moves like crazy, might not be the
+[  405.92s ->   406.08s] best.
+[  406.14s ->   407.16s] So stick to ETFs.
+[  407.40s ->   408.96s] They're more higher liquid anyways.
+[  408.96s ->   413.02s] So what I do is, again, this is the options chain.
+[  413.20s ->   415.88s] I look for the days that's closest to 120.
+[  416.44s ->   417.82s] So you can see here, 122.
+[  417.94s ->   418.66s] So I'll click that.
+[  419.08s ->   420.84s] On the right side are my puts.
+[  420.90s ->   422.08s] And I typically start with the put.
+[  422.46s ->   425.48s] So again, looking at my delta, I'm looking for a 10 delta.
+[  425.62s ->   428.12s] So that is minus 0.10 is what a 10 delta is.
+[  428.20s ->   429.16s] 0.10, 10 delta.
+[  429.62s ->   430.90s] So right here, I'm going to sell this.
+[  430.96s ->   432.68s] I'm going to sell a put at the 10 delta level.
+[  433.32s ->   436.42s] Next, I'm going to go to the other side of the chart, which is the call side.
+[  436.70s ->   438.04s] I'm going to do a 5 delta.
+[  438.04s ->   440.14s] So you see your delta 7, delta 5.
+[  440.46s ->   442.72s] I'm going to sell the 5 delta.
+[  443.24s ->   449.58s] Now, right now, this is going to bring in about a $54 credit, which translates into about
+[  449.58s ->   452.04s] a $2,738 return.
+[  452.70s ->   456.18s] You can see your max profit, about $2,732.
+[  456.18s ->   459.46s] Now, that is not the full profit, right?
+[  459.52s ->   464.62s] Because if I'm going to make that much, what I'm really doing is I'm having a 25% take profit.
+[  464.76s ->   469.68s] So I'm only going to make 25% of this amount, which gives me a return of about $700.
+[  470.44s ->   472.90s] But we don't really care how much money we're making.
+[  473.16s ->   477.12s] We care about being efficient with our money so we can actually make a good return.
+[  477.12s ->   482.36s] And so from that, if we look at the buying power, it takes me, or I should say I have
+[  482.36s ->   486.64s] to put up $5,700 to enter this trade.
+[  486.80s ->   490.98s] So I'm going to divide my $700 profit by $5,700.
+[  491.54s ->   494.24s] And this gives me a 12% return on my money.
+[  494.38s ->   495.24s] This is great, right?
+[  495.24s ->   497.84s] I get to close the trade every two weeks.
+[  497.96s ->   503.14s] And in a matter of two weeks, I'm making a 12% return on my money.
+[  503.22s ->   503.84s] That's insane.
+[  503.92s ->   505.08s] That's insanely good, right?
+[  505.44s ->   510.16s] And again, this is 100 times better than bank interest, 100 times better than a bond or a
+[  510.16s ->   511.38s] loan or something like that.
+[  511.70s ->   514.38s] Obviously, there is more risk than other types of assets.
+[  514.38s ->   516.96s] But still, it gives me about a 77% win rate.
+[  517.16s ->   522.40s] And when I take profit at 25%, my win rate boosts up higher to 90%, 95%.
+[  522.40s ->   528.00s] That is why the trade is so consistent because we're closing early and we're going very far
+[  528.00s ->   530.80s] out wide and it just results in a great return.
+[  531.30s ->   535.62s] So that is what it looks like, how we structure the trade, how we enter, how to place the trade
+[  535.62s ->   536.46s] on the broker.
+[  536.90s ->   540.52s] And so now we need to dive into the next part, which is how do we handle risk?
+[  540.52s ->   545.36s] Because yes, the upside is cool, but we always need to consider the downside, especially when
+[  545.36s ->   548.52s] it's an income stream and income flows that we want to rely on.
+[  549.22s ->   552.14s] And so if we're doing that from a risk management perspective,
+[  552.40s ->   557.36s] I actually just wrote a book about this called Never Worry About Volatility Again.
+[  557.68s ->   558.92s] It's on Amazon for $20.
+[  559.20s ->   563.00s] But because I love you guys on YouTube, I'm giving you a free instant download in the
+[  563.00s ->   563.88s] description down below.
+[  564.24s ->   567.48s] I don't know how long it will last, but I want to show you one of my favorite concepts
+[  567.48s ->   568.34s] from the book.
+[  568.40s ->   569.70s] Again, there's a lot of them.
+[  569.70s ->   573.88s] If you see here in this book, there's actually a checklist of everything you can do to massively
+[  573.88s ->   574.86s] reduce your risk.
+[  575.14s ->   578.14s] But my favorite one here is the Bollinger Band Strategy.
+[  578.14s ->   582.66s] So if I come down here, strategy number two is the Bollinger Band Approach.
+[  583.06s ->   587.22s] So again, it basically shows you that you can avoid entering new trades when the market
+[  587.22s ->   589.04s] is below or above the band.
+[  589.42s ->   592.36s] This is used to identify overextended moves.
+[  592.46s ->   595.60s] This allows me to get out before the market crashes.
+[  595.78s ->   597.84s] Now, let me show you exactly what this means.
+[  598.10s ->   602.26s] Again, there's a video training on that inside the book with more detail, but here's how we
+[  602.26s ->   602.64s] do it.
+[  603.08s ->   607.32s] So if we're on chart, again, whether it's trading view or your broker, whatever, go
+[  607.32s ->   611.97s] to indicators, add the Bollinger Band like that.
+[  612.41s ->   614.29s] Now, this is what most people use it like.
+[  614.45s ->   618.45s] But what I want to encourage you is to go into the settings and change the length from
+[  618.45s ->   619.63s] 20 to 200.
+[  621.05s ->   625.41s] And just like that, it's going to show you a more accurate understanding of what's happening
+[  625.41s ->   626.27s] in the market.
+[  626.41s ->   627.79s] And what do I mean by that?
+[  627.79s ->   632.79s] The blue highlighted zone between the green and the red line is going to show us where
+[  632.79s ->   635.29s] the market on average should be trading.
+[  635.59s ->   642.47s] What is healthy and normal for the market, a standard deviation approach to the market.
+[  643.07s ->   647.11s] Now, what we want to know is that when the market breaks out above these levels or gets
+[  647.11s ->   652.07s] close to the red line, that is a sign that the market is overextended and it's going to
+[  652.07s ->   652.49s] pull back.
+[  652.57s ->   655.07s] You can see here, it pulled back, it pulled back.
+[  655.07s ->   656.95s] We held around this red line for a while.
+[  656.95s ->   658.17s] We pulled back, right?
+[  658.51s ->   662.21s] This is a sign that we're actually going to pull back.
+[  662.27s ->   664.39s] And so what do we do in these red areas?
+[  664.49s ->   668.31s] If we're trading a strangle or really any option selling strategy and we get into these
+[  668.31s ->   673.07s] red zones, what we're going to do is we're going to slowly close out our positions so
+[  673.07s ->   674.87s] we can take risks off the table.
+[  675.25s ->   677.87s] What we can also do is we can purchase hedges.
+[  677.99s ->   680.03s] So we can do things like buying a put.
+[  680.39s ->   684.95s] A buying a put would make money as the market drops, which is help us profit from the downside
+[  684.95s ->   685.43s] too.
+[  685.79s ->   690.95s] So this is how we can avoid a lot of the risks with the strangle strategy is just by understanding
+[  690.95s ->   696.47s] when is the market overextended and getting out before the market decides to pull back
+[  696.47s ->   697.13s] against us.
+[  697.17s ->   699.75s] Because when it pulls back, we'll see a lot of losses.
+[  700.01s ->   700.71s] VIX will spike.
+[  700.97s ->   704.03s] That's just a lot of issues we don't want to deal with.
+[  704.29s ->   708.33s] So if you want to learn more about the tactics that you can use to decrease your volatility
+[  708.33s ->   710.57s] risk, check out the free book down below.
+[  710.57s ->   712.45s] Close the checklist and everything you need to know.
+[  712.75s ->   716.69s] Now, moving on into the next step here, we need to be able to automate this strategy
+[  716.69s ->   718.71s] so that we don't have to rely on it, right?
+[  718.73s ->   723.45s] Because if we're checking for risk management sections or entering of ourself, emotions are
+[  723.45s ->   724.33s] going to get involved.
+[  724.41s ->   727.53s] We're going to mess up the trade and we're not going to have the win rate and consistency
+[  727.53s ->   728.69s] that we're looking for.
+[  729.09s ->   732.73s] And so there are a lot of different strata, a lot of different softwares that you can use,
+[  732.73s ->   736.99s] but one of the best ones, and again, I'm biased because I made the platform, it's called
+[  736.99s ->   740.77s] the options auto trader, and the reason why it's the best is it's the only platform that
+[  740.77s ->   743.47s] allows you to automate futures options trades.
+[  743.89s ->   747.63s] And so again, when you use that tool, you just plug in the exact rules that I gave you
+[  747.63s ->   747.89s] here.
+[  748.19s ->   751.49s] You say, hey, every single Wednesday, I want to sell a call at five Delta.
+[  751.79s ->   755.81s] I want to sell a put at 10 Delta, and then I want to do it at 120 DTE.
+[  756.07s ->   761.31s] I want to enter when this happens once a week, and I want to exit at a 25% take profit and
+[  761.31s ->   762.57s] a 300% stop loss.
+[  762.57s ->   767.33s] You do that, and now it fully automates your entire trading, and so that's the way to do
+[  767.33s ->   767.55s] it.
+[  767.85s ->   774.21s] Anyway, guys, that is how I basically was able to retire my wife from being a full-time public
+[  774.21s ->   777.19s] school teacher, and now how we're able to actually go travel.
+[  777.47s ->   781.97s] Her school year is ending in a few months, and we're going to go spend two months in California
+[  781.97s ->   783.93s] because that's where her family is, and it's going to be great.
+[  784.01s ->   786.49s] It's going to be awesome, and I'm glad that I'm able to give that to her.
+[  786.77s ->   788.81s] Anyway, guys, I hope you put this into action.
+[  788.97s ->   791.39s] I know we can probably do some great stuff for you.
+[  791.39s ->   793.79s] If you do, please put a comment down below.
+[  793.91s ->   795.01s] I'd love to hear from you.
+[  795.07s ->   797.19s] Anyways, hope to see you guys, and that's the big one.

@@ -1,0 +1,285 @@
+[    0.00s ->     6.44s] hey guys welcome back to my channel and for those of you who are new thank you guys for uh tuning in
+[    6.44s ->    11.58s] um so i usually do a deep dive series in the past and i haven't done so in the last couple weeks as
+[   11.58s ->    19.20s] um work has been a little hectic um and uh some other obligations take care of but in the past
+[   19.20s ->    24.74s] what i've done is i would you know give you guys a breakdown of my portfolio and how we're doing
+[   24.74s ->    29.98s] and then we'll go through qqq to take a look at the overall market sentiment and then i'll
+[   29.98s ->    34.22s] take you guys through three of the trades three of the stocks that i traded that week um and the
+[   34.22s ->    40.26s] and the and the reasoning behind why i enter those trades what how much i collected how long the
+[   40.26s ->    46.60s] duration is walk you guys through my mindset and just the overall strategy i'll still do that in
+[   46.60s ->    50.98s] the future but for this week in particular i want to try to make this series going forward a little
+[   50.98s ->    58.02s] bit more flexible um a little bit more strategic in a sense if you guys tuned into the quick recap
+[   58.02s ->    64.50s] of the week i was alluding to the my worst microsoft trade where i lost like five thousand six thousand
+[   64.50s ->    71.92s] dollars on it yeah so today i'll be walking guys through how i lost close to six thousand dollars
+[   71.92s ->    81.00s] on my microsoft call credit spreads and to give you guys a recap of the overall strategy on this account
+[   81.00s ->    86.43s] so that you guys can get an understanding of the philosophy behind how we got from twenty four
+[   86.43s ->    92.47s] thousand dollars to a hundred thousand dollars in less than six five months the strategy is pretty
+[   92.47s ->    99.03s] simple in my opinion the basic assumption is that in the long term medium to long term right and you
+[   99.03s ->   104.67s] can define that however you will in this case it is 45 anything above 30 days is medium to long term
+[  104.67s ->   110.81s] anything below 30 days is short term in the long term the market is usually bullish
+[  110.81s ->   116.87s] um especially in a bull market now if you take your time frame for 10 years and the market is always
+[  116.87s ->   123.75s] bullish but no one really sells 10-year options so that point is a little bit moot and so because of
+[  123.75s ->   129.09s] that we only sell we predominantly sell put credit spreads to take advantage of the bullish position or the
+[  129.09s ->   135.20s] bullish market we sell based off of technical technical analysis you know moving averages support and
+[  135.20s ->   142.46s] resistance volume confirmation candlestick patterns um sometimes fibonacci extensions or retractions
+[  142.46s ->   153.29s] uh and then atrs you know bollinger bands occasionally and um we would sell 45 to 60 days put credit
+[  153.29s ->   160.01s] spreads for stocks and etfs like microsoft amazon spy qqq collect that juicy premium and just let it sit
+[  160.01s ->   165.29s] and let it expire um and more often than not as if you guys want to take a look at the statistics
+[  165.29s ->   171.77s] tune in i'll link it to the top right hand corner um we had a 96 win rate based off of that strategy
+[  171.77s ->   179.21s] on the put side where the market in the in the in that duration was just bullish um and so we won a
+[  179.21s ->   185.57s] lot of those trades and then in the short term the market is rather rather hard to predict or even day
+[  185.57s ->   190.27s] to days you basically gambling at that point and the whole point of this is that not to gamble i want
+[  190.27s ->   196.45s] to make this as passive as possible and so we try to sell calls uh when the market is overextended a
+[  196.45s ->   201.87s] little bit by but on a short-term basis seven to 14 days because usually speaking as you guys saw
+[  201.87s ->   208.33s] recently in the last month retractions are usually faster than growth so people sell off at a faster
+[  208.33s ->   213.93s] velocity right and we want to take advantage of those short-term falls by selling calls when the
+[  213.93s ->   220.71s] situation calls for it okay just to recap it's a long-term bullish position with a short-term
+[  220.71s ->   226.31s] bearish position when the situation on very specific situations we don't sell we try not to sell calls
+[  226.31s ->   234.09s] just because we can we sell calls uh when the situation allows us to right when it goes up as
+[  234.09s ->   240.23s] it's about to come down or when it starts to come down we assume or we believe that in the short term
+[  240.23s ->   245.95s] those levels those that price will fall back to a certain support or resistance or a moving average
+[  245.95s ->   251.69s] and we will take advantage of that pullback by selling calls okay so that's that's the strategy
+[  251.69s ->   258.90s] pretty simple and now let's talk a little bit more about this specific trade as to what we did
+[  258.90s ->   263.82s] on microsoft now let's take a look at the screen microsoft is one of my favorite stocks to trade it's
+[  263.82s ->   267.92s] usually been very very good for me and so in this case it betrayed me a little bit so i'm a little hurt
+[  267.92s ->   274.98s] but it's okay we'll learn from it we'll get better from it and so just to start off i entered a trade
+[  274.98s ->   283.96s] on microsoft by selling puts on 3-1 march 1st 2021 now march 1st 2021 is right here on the screen on
+[  283.96s ->   289.11s] this candlestick right here there was a previous resistance that microsoft broke through and then
+[  289.11s ->   293.95s] retracted uh kind of alluding to like you know when these falls they fall back to a certain level
+[  293.95s ->   300.27s] and so i saw that i was eyeing this 330 level 230 level right here into this 20 day 50 day moving
+[  300.27s ->   305.11s] average and i expected it or i thought that it would bounce up and off of it so i entered a trade
+[  305.11s ->   314.33s] for 40 day 45 day period below this 230 one atr below so i sold at 225 220 preemptively entering
+[  314.33s ->   318.55s] this position assuming that this will bounce up usually speaking that's a little bit riskier so i give
+[  318.55s ->   324.35s] myself 45 to 60 days of time and i also sold some 60 days out uh by the way on this on this uh in this
+[  324.35s ->   331.06s] position so that i can allow the market to kind of dip through it and then maybe have a chance of
+[  331.06s ->   336.14s] retesting that level and going up now the safest way to do it is obviously it's a segue is to wait for
+[  336.14s ->   340.90s] confirmation similar to like here you can sell here for example at a put level put right here because
+[  340.90s ->   345.18s] it kind of bounced off the level and into the 24 50 day moving average and it shot up all right this
+[  345.18s ->   350.24s] would be a good time for you to sell puts at 230 unfortunately speaking here because of the greeks
+[  350.24s ->   356.08s] uh this put credit spread here may not be as profitable here but here for example what i would
+[  356.08s ->   360.06s] do is i would sell here for like a 30 day to 45 day period instead of a 45 day to 60 day period
+[  360.06s ->   365.28s] um so because this is confirmed it's slightly it's less risky in my perspective and so i can take a
+[  365.28s ->   370.74s] little bit more risk by giving it a shorter amount of time but that's a little bit of a side note
+[  370.74s ->   374.94s] or segue let's get back to the uh put credit spreads so here on 331 i entered this trade
+[  374.94s ->   380.28s] based off of this 50 day moving average and then the uh anticipated bounce off of this resistance
+[  380.28s ->   386.28s] that should turn to support gave myself one atr room five five points below so i sold for 225 and
+[  386.28s ->   394.36s] 220s 45 days out expiry april 16th so this friday collected 116 dollars per spread for a five point
+[  394.36s ->   401.32s] spread which means that it's around a 22 percent uh roi for a credit to be buying power uh ratio
+[  401.32s ->   410.06s] i sold 16 of them collected 1820 coming out to uh 1820 for eight thousand dollar collateral
+[  410.06s ->   416.16s] we then as let's fast forward a little bit we then let this spread kind of expire right well i guess
+[  416.16s ->   423.42s] decay out um microsoft stayed flat here and then 30 days in 14 days left i started looking at calls
+[  423.42s ->   428.40s] and i'll get into this a little bit more but i kind of forgot a main part philosophy of this and
+[  428.40s ->   434.13s] i'll reiterate this at the end which i think is very important for this experiment so on 331 right
+[  434.13s ->   440.83s] here i saw this green candlestick i i thought that microsoft well one in my opinion uh wouldn't
+[  440.83s ->   446.99s] wouldn't blow by this 245 level here i saw this resistance here i also took into account the
+[  446.99s ->   451.05s] previous movements on microsoft microsoft here you can see right here it bounced up and down
+[  451.05s ->   457.85s] it's stagnated it channeled for a good four months five months six months right like you see all the
+[  457.85s ->   463.39s] way back here this status is 200 and 230 level for a good six months and so i took into account that
+[  463.39s ->   469.39s] i'm like okay well microsoft isn't very volatile right it goes it takes a lot for it to break past
+[  469.39s ->   474.27s] the fine levels it's a large cap it's it doesn't you know it doesn't do what tesla does it doesn't do
+[  474.27s ->   477.87s] what emphase does and doesn't do some of these small caps where it just goes up like game stop it just
+[  477.87s ->   482.49s] goes up and goes up and goes up and goes up and then it falls back apologies about the siren in the
+[  482.49s ->   489.27s] back um but for me so for me i took into account the historical information on microsoft and i was
+[  489.27s ->   495.53s] like okay i see that it bounced off the support it's a green day on 331 it's 14 days to expiry
+[  495.53s ->   501.53s] there's a resistance here so i'm expecting microsoft to i guess expecting i'm betting microsoft's
+[  501.53s ->   505.25s] going to do this i'm just going to go up it's going to hit this 245 level it's going to come back down
+[  505.25s ->   510.55s] similar to what you see here right like that that's what i was betting on and so i based off
+[  510.55s ->   515.83s] of that information where microsoft is not very volatile um it's bounce it's on its upward trend
+[  515.83s ->   525.03s] upward trend into a potential resistance here i was like let's sell some calls my entry criteria was
+[  525.03s ->   530.59s] just that simple right uh i'm anticipating that this was bounced off of this resistance so i'm going
+[  530.59s ->   537.84s] to get in ahead of the trade uh because a 14 day period is obviously not very long now i'll go
+[  537.84s ->   542.60s] into this a little bit you can kind of see the flaw in my in my thinking already here uh like i said i'm
+[  542.60s ->   548.54s] not a very good call side um credit spread seller i'm much better at selling puts but i'm glad you
+[  548.54s ->   553.06s] know i started i'm glad i'm selling calls again to uh to get better at it to flex that muscle
+[  553.06s ->   563.89s] and so what what i did was exactly that i entered on 331 for expiring a 416 i sold 250s and 252.5 so
+[  563.89s ->   571.23s] you see this orange line right here 250 252.5 i gave myself one atr above the 245 level one atr five
+[  571.23s ->   579.01s] points above my 245 level i collected 11 dollars and two for a 2.5 spread so it's like a four percent
+[  579.01s ->   587.55s] roi sold 24 of them collected 264 for a six thousand dollar collateral so there's a couple
+[  587.55s ->   591.23s] issues here and we'll dive a little deeper into that but i just want to give you guys the background
+[  591.23s ->   596.61s] the setup so essentially i collected a total of close to two thousand dollars somewhere in between
+[  596.61s ->   601.63s] two thousand twenty one hundred dollars for an eight thousand dollar collateral so that twenty two
+[  601.63s ->   607.23s] hundred sixty dollars uh basically accounted for ten percent growth on my on my call side on my put
+[  607.23s ->   610.71s] credit spreads so i made that put credit spreads into an iron condor essentially and i gained an
+[  610.71s ->   614.93s] additional ten percent on top of it which is honestly if you look at it from like a numbers
+[  614.93s ->   621.33s] perspective it's not that bad and if you see like how small how little that was from a from like a
+[  621.33s ->   626.85s] probability perspective perspective or a metric perspective it seemed like a very very safe trade
+[  626.85s ->   631.39s] um if you were to view it from that lens but i i don't um but if you were to take that metric and
+[  631.39s ->   636.55s] we'll dive in we'll talk about a little bit more as to why i think that's that that uh statistic is a
+[  636.55s ->   644.23s] little misleading um it seemed very safe in my mind in hindsight obviously not very safe so let's
+[  644.23s ->   649.03s] just finish through the setup what microsoft obviously did not react that way it shot up
+[  649.03s ->   659.16s] past 250 and then it ended up at 261 um on uh on friday and so what i did this week was um
+[  659.16s ->   664.72s] oh yeah and i forgot to allude this in the setup earlier so when i put credit spreads i usually i usually
+[  664.72s ->   669.20s] let it i usually close out of my spreads the week of uh to protect my earnings i don't usually by
+[  669.20s ->   672.34s] then they're like five dollars ten dollars and even if they're like seventy dollars or sixty dollars i
+[  672.34s ->   675.94s] just close out of it because i don't want to gamble the last week obviously the earnings can be great
+[  675.94s ->   680.30s] but um the volatility in the market you never know which way the market's gonna go up or down and i'm
+[  680.30s ->   684.92s] sure you guys have experienced this in the past where you guys um think the market's gonna go one
+[  684.92s ->   688.80s] way but it does end up going the other and so you lose a lot of money until credit spreads in general
+[  688.80s ->   692.36s] because your risk is always higher than what you received it's best not to gamble
+[  692.36s ->   697.78s] uh so usually the you for me i always close the week off because there's no point in doing that
+[  697.78s ->   704.39s] i protect myself um from greek appreciation essentially and then but on my call side what
+[  704.39s ->   708.67s] i do is i usually let expire because the reason for that is i collect so little on the call side and
+[  708.67s ->   716.13s] i pay pretty i pay a commission on td ameritrade at least the previous strategy um i i feel like it's
+[  716.13s ->   720.13s] more worthwhile for me to not close early and just let it expire because you think about it i
+[  720.13s ->   725.11s] collected eleven dollars on microsoft if i were to let it if i were to close on monday or tuesday of
+[  725.11s ->   729.79s] it might still be like four or five dollars so i've collected maybe a hundred bucks in total um and so
+[  729.79s ->   737.25s] it's just in my perspective it's a flawed view now in hindsight um it just seemed like the risk so low
+[  737.25s ->   742.91s] number one and number two um i'm not actually protecting much but that's the wrong viewpoint i'll show you
+[  742.91s ->   749.07s] guys why okay and so on monday usually speaking like i said i would close it out but microsoft was
+[  749.07s ->   753.41s] so strong that i'm sorry not close it out but microsoft was so strong that i was like okay maybe
+[  753.41s ->   758.89s] i should protect myself a little bit and so on monday i sold 200 i sold four options four legs
+[  758.89s ->   766.03s] of it one thousand dollar collateral um two hundred and ten dollars essentially for each leg two hundred
+[  766.03s ->   769.71s] nine dollars so i spent eight hundred thirty six dollars to close out a thousand dollar collateral
+[  769.71s ->   777.33s] and then on tuesday as microsoft continued to go up here continue to go up i sold then again
+[  777.33s ->   786.11s] another four um at 225 dollars so i spent another 900 to close it out and basically off of the two
+[  786.11s ->   794.05s] thousand dollar collateral there to close out i i sold 1736 i spent 1736 dollars to close it out now
+[  794.05s ->   798.95s] if you guys remember i collected 1820 so in this case i basically wiped out all my earnings right
+[  798.95s ->   804.78s] for for this one trade um and so yeah and then the rest i just basically let it expire because that
+[  804.78s ->   813.28s] was my strategy so i let the other 16 legs expire and then i lost four thousand dollars on that one
+[  813.28s ->   822.19s] on those um 16 legs okay so let's just recap uh how this trade ended up i collected 1820
+[  822.19s ->   828.13s] a credit plus 260 dollars of credit okay so i collected two thousand dollars worth of credit
+[  828.13s ->   835.82s] right give or take i then spent five thousand seven hundred and thirty six dollars to close out
+[  835.82s ->   841.72s] my put spreads my call spreads and then i spent six i spent 32 dollars to close my put spreads which
+[  841.72s ->   847.34s] is not much um because i closed out monday off okay so but i spent five thousand seven hundred and
+[  847.34s ->   855.92s] sixty thirty six dollars to close out my call spreads now if you take my total net profit or net loss in
+[  855.92s ->   862.10s] this case i lost thirty seven hundred and sixteen dollars three thousand seven hundred and sixteen
+[  862.10s ->   868.94s] dollars from going up from being up two thousand dollars and fifty two thousand and fifty two dollars
+[  868.94s ->   875.20s] to being down thirty seven hundred let's assume that i didn't even enter the call spreads at all
+[  875.20s ->   879.28s] i didn't right that that's the best case scenario i didn't enter the call trade at all
+[  879.28s ->   887.48s] i would have collected 1820 but now that i've entered this call trade i lost 3716 right so from
+[  887.48s ->   897.64s] that swing from 1820 to 3716 it was a swing of fifty five hundred dollars and 36 555 36 5,536
+[  897.64s ->   904.88s] that's how much money i lost on this one trade that is crazy right that is crazy that's how much money i
+[  904.88s ->   910.34s] lost by deciding to enter my on the call credit spread so if i had to reiterate if i had not
+[  910.34s ->   916.34s] entered it i would have made 1820 now that we're done with the background information let's let's go
+[  916.34s ->   922.46s] see let's do a deeper dive into what i did wrong and what lessons i can learn from it because that's
+[  922.46s ->   926.72s] really the most important part so let's let's just look at it from a pure numbers perspective
+[  926.72s ->   933.74s] i make predominantly i would say 95 98 of the money on the put side the call side i'm just adding a
+[  933.74s ->   937.38s] little bit on top just so that i can eke out a little bit more earnings here and there but it's
+[  937.38s ->   941.68s] not a predominantly large portion of it in this case it was 10 out of 10 was on the call side 90
+[  941.68s ->   947.24s] on the put side and so i need to understand that in order the calls are not for me to generate
+[  947.24s ->   953.36s] consistent income it is just when the situation calls for it i have to uh i can take advantage of
+[  953.36s ->   959.14s] it okay it's not like i'll reiterate it is not a it's not a way for me to make consistent income it
+[  959.14s ->   965.74s] is just a way for me to take advantage of current market situations or market momentums to to make
+[  965.74s ->   971.50s] a little bit more money okay but the whole point of this experiment is to be as passive as possible
+[  971.50s ->   975.98s] right i don't want to spend additional time and it's not honestly it's not worth it to risk
+[  975.98s ->   985.12s] my time or or you know my earnings on my put side for 10 percent increase like honestly that's just
+[  985.12s ->   990.12s] that's just wrong right and so i need to change my mindset as to what i'm not trying to learn i'm
+[  990.12s ->   994.50s] not trying to make calls a consistent income source calls are not going ever going to be consistent
+[  994.50s ->  1000.16s] income source on this experiment that's number one i can't be greedy no greed here hashtag no greed
+[ 1000.16s ->  1006.60s] my mindset now my strategy is very simple it is calls are just a topper it's a term i put credit
+[ 1006.60s ->  1013.88s] spreads into an iron condor when this but under very specific search situations that's it it is not
+[ 1013.88s ->  1018.46s] to make consistent income okay and so if you take keep that in mind keep that in the back of your
+[ 1018.46s ->  1028.24s] mind now let's take a look at why my entry criteria was way too lax so when i entered here i was assuming
+[ 1028.24s ->  1033.98s] that this would bounce off right this is and then so if you got to keep them into perspective the money
+[ 1033.98s ->  1041.82s] right i am risking six thousand dollars for 264 dollar gain it's like i just i just did this so poorly i just
+[ 1041.82s ->  1050.63s] did not manage my risk well at all i thought this was such high probability that i just misunderstood
+[ 1050.63s ->  1057.58s] the whole point of what i'm doing here i risked six thousand dollars for an for an additional gain
+[ 1057.58s ->  1065.41s] of 264 dollars here that is completely wrong by entering here what i was what i was betting on what
+[ 1065.41s ->  1070.07s] i was essentially gambling if you think about it i was gambling that the market will react in the
+[ 1070.07s ->  1075.79s] pattern that i was expecting it to and basing off a pattern in the past makes no makes no point
+[ 1075.79s ->  1081.29s] makes no sense because patterns form because of historical data right when you're in this area
+[ 1081.29s ->  1086.88s] here you can say with confidence that microsoft has a support and resistance at this level but once
+[ 1086.88s ->  1092.40s] it break past once it breaks past this level um and into a new unknown territory this part right here
+[ 1092.40s ->  1101.24s] in the past makes it has no implication and no effect on this area here at all and so by basing my
+[ 1101.24s ->  1107.92s] rationale and basing my strategy off of historical information here is flawed because 230 and 200 is
+[ 1107.92s ->  1116.48s] not going to affect 230 245 it's not it's not going to if it fell back to 230 sorry and 200 then yes it
+[ 1116.48s ->  1122.96s] makes sense for me to base it off but being here it absolutely not and so me so my thinking that this
+[ 1122.96s ->  1127.64s] would bounce off of this resistance because of the previous channel here it's just not correct
+[ 1127.64s ->  1133.18s] and so that assumption number one was wrong number two i'm gambling i'm gambling that this this pattern
+[ 1133.18s ->  1140.50s] here would form in the way that i want it to which is obviously again not right because there has been
+[ 1140.50s ->  1147.36s] no market movement here to indicate that this resistance uh that this is going to be a strong
+[ 1147.36s ->  1155.34s] resistance or or even a resistance at all at this point in time and so this entry criteria here was
+[ 1155.34s ->  1161.20s] way too lax and then we'll get into position sizing at the next point but here my entry criteria is way
+[ 1161.20s ->  1166.12s] too lax what i should have done instead of just looking at resistances what i should have done was
+[ 1166.12s ->  1171.04s] i should have there's something called a fibonacci extension which i will use in the future uh more
+[ 1171.04s ->  1178.26s] so you go to drawing tools you come here sorry come to percentage sign right here something called
+[ 1178.26s ->  1183.46s] fibonacci extension okay you take your high point to the low point here and this is your predicted
+[ 1183.46s ->  1191.52s] market move so at a 61.8 extension you're sitting at around 260 or 261 which is where the market is
+[ 1191.52s ->  1198.76s] i should not be looking at this area as a as a concrete number i should be looking at an area
+[ 1198.76s ->  1206.04s] further extended to make myself give myself more room and not to give myself a false positive right
+[ 1206.04s ->  1217.08s] i need to wait for the market to tell me that this is a resistance a defined level okay i should not
+[ 1217.08s ->  1223.87s] bet on it that's number one i need to wait for the market to tell me now number two what i did in the
+[ 1223.87s ->  1231.24s] past was like i said i let all my calls expire but that philosophy then again is kind of wrong especially
+[ 1231.24s ->  1237.74s] if the trade goes against you because this isn't a way that the risk to reward here is so heavily
+[ 1237.74s ->  1244.71s] skewed towards the risk there's no point for me to keep a bad asset because the way you should look
+[ 1244.71s ->  1253.15s] at it is i've already made 800 1800 i want to protect my earning right and so if anything can wipe
+[ 1253.15s ->  1259.49s] out my earning i should just get rid of that bad apple and so here i i gambled a little bit much i gambled
+[ 1259.49s ->  1266.43s] here way too much i should be like if this eats if this breaks past my level i'm out i'm completely
+[ 1266.43s ->  1271.07s] out i don't care i won't gamble it so it's something as simple as for example let's take a look at
+[ 1271.07s ->  1281.76s] um the 210 that i sold um on monday if i sold all 24 on 210 uh at 210 i would have saved a thousand
+[ 1281.76s ->  1288.48s] dollars so that's one sixth of my total uh cost that i i had uh i ended up having to pay i would have
+[ 1288.48s ->  1292.62s] saved a thousand dollars we'd be at 93 grand instead of 92 grand which is still 1.3 percent of
+[ 1292.62s ->  1298.32s] my account right and so that's that's the idea i don't this calls are not a way for me to generate
+[ 1298.32s ->  1304.58s] consistent income it is just a way for me to uh add a little bit on top but if that ever risks or has a
+[ 1304.58s ->  1309.40s] chance of eating into my profit i get rid of it i do not care i i don't want it i would rather just
+[ 1309.40s ->  1315.66s] not trade it at all right and i used to view calls as a way to hedge um but honestly speaking
+[ 1315.66s ->  1322.80s] 20 11 a leg total 264 dollars is not much of a hedge keeping cash is actually a better way to
+[ 1322.80s ->  1328.26s] hedge in my opinion um so that's what i've been doing recently ever since this debacle i just keep
+[ 1328.26s ->  1335.98s] cash it's not a way to hedge so i guess that's 2.2.5 selling calls is not really a hedge is it's just
+[ 1335.98s ->  1341.46s] again it's just a little bit of extra on top it's not anything else on top of that i can't view it as
+[ 1341.46s ->  1348.92s] anything else okay and so going forward that's kind of it uh if this ever goes south if it ever
+[ 1348.92s ->  1353.30s] goes like negative 50 or negative 25 for example i'm just out of the trade i don't want to be in
+[ 1353.30s ->  1359.96s] it because there's no point in me risking that trade at all okay um so first point again is my
+[ 1359.96s ->  1364.72s] entry criteria has to be a lot more lax my exit criteria is i also have to sorry my entry criteria
+[ 1364.72s ->  1369.66s] has to be a lot more strict my exit criteria have also have to be a lot more strict the main point is
+[ 1369.66s ->  1377.38s] because i have to make sure the money that i will earn for my put side stays protected that's the
+[ 1377.38s ->  1381.96s] most important part protect your winnings don't turn a losing trade into a winning to turn don't
+[ 1381.96s ->  1386.18s] turn a winning trade into a losing trade now this flows perfectly into my third point which is
+[ 1386.18s ->  1391.56s] position sizing remember how i said i opened up eight thousand dollars of put collateral and then
+[ 1391.56s ->  1395.96s] on top of that i made it into an iron condor on by opening up eight six thousand worth of collateral
+[ 1395.96s ->  1401.18s] on the call side this goes into the same philosophy i can't let a losing winning trade become a losing
+[ 1401.18s ->  1405.16s] trade so if i had collected eighteen hundred and twenty dollars i cannot risk more than eighteen
+[ 1405.16s ->  1409.26s] hundred and twenty dollars on my on my put side on my call side sorry i collected eighteen twenty on
+[ 1409.26s ->  1414.58s] the put side i cannot sell more collateral than eighteen twenty so let's assume so in this case i sold
+[ 1414.58s ->  1421.74s] six thousand which is three times as much as i should have okay and so let's let's assume that
+[ 1421.74s ->  1426.70s] in this case that in an alternate universe uh i was a little bit smarter a little bit wiser
+[ 1426.70s ->  1431.46s] i've done this a little bit more often right i i'm a better trader in general i probably would
+[ 1431.46s ->  1435.70s] have opened up seventeen fifty fifteen hundred twelve fifty i would never have risked eighteen
+[ 1435.70s ->  1440.98s] twenty or i would never have risked six thousand because then at that point i have a high probability
+[ 1440.98s ->  1444.68s] or i have a probability no i wouldn't say high probability i have a chance that this becomes a losing
+[ 1444.68s ->  1450.96s] trade i don't want that i want to make sure that i can maintain um my winnings
+[ 1450.96s ->  1457.98s] without risking it to become a losing trade the most important part i think that i've learned in
+[ 1457.98s ->  1461.90s] the past and i just forgot this lesson is that when you have a winning trade when you have winners
+[ 1461.90s ->  1467.74s] make sure they're winners take profit don't this goes for buying options this goes for selling
+[ 1467.74s ->  1471.84s] options it goes for everything and like finance or trading is that when you have a winner make sure
+[ 1471.84s ->  1478.44s] they're winners and don't ever let it become losers because you're greedy and the greed honestly is
+[ 1478.44s ->  1484.26s] the is the basis oh greed and ignorance honestly is that is is the reason that i'm in this predicament
+[ 1484.26s ->  1488.74s] i can't i went into this predicament and so in an alternate universe right i would let's assume
+[ 1488.74s ->  1495.68s] that i sold seventeen fifty which means that i would have i would have lost fourteen seventy uh which
+[ 1495.68s ->  1501.47s] means that my total profit yeah had i sold out on monday right i i just i didn't close it when it's
+[ 1501.47s ->  1508.27s] fifty percent of my of my total um collateral on my total so my total credit received um then i
+[ 1508.27s ->  1513.76s] would have lost i would have still made three hundred bucks i still would have made i will still would
+[ 1513.76s ->  1519.02s] have had a winning trade as opposed to having to pay thirty having to pay close to six thousand
+[ 1519.02s ->  1527.14s] dollars right and making it lose uh make it into a thirty seven hundred dollar loser okay and so
+[ 1527.14s ->  1532.66s] that swing is a two thousand dollar swing which is you know sorry like yeah actually you know four
+[ 1532.66s ->  1536.64s] thousand dollar swing sorry my math is terrible the four thousand dollar swing so instead of being at
+[ 1536.64s ->  1542.24s] 96 grade 92 grade i'd be at 96 grand so that's kind of that's kind of where i see it right like so
+[ 1542.24s ->  1547.62s] position sizing is very important i cannot risk as much i can't risk more than what i'm earning
+[ 1547.62s ->  1555.54s] goes back to my philosophy i'm making predominant my consistent income right the 96 win rate the
+[ 1555.54s ->  1561.42s] four thousand dollars per hour that we earned from the road to 100k series from 24k to 100k i'll link
+[ 1561.42s ->  1567.47s] it to to the top uh if you guys haven't seen it already i want to make this as passive as possible
+[ 1567.47s ->  1572.43s] right and then that's where the predominant of my income comes from it's on the put side so i can't
+[ 1572.43s ->  1580.03s] let my calls risk that put uh money and so in the future i won't and so i guess just to recap right
+[ 1580.03s ->  1584.09s] calls are just a topper not a way for me to make consistent income puts are the most important parts
+[ 1584.09s ->  1589.31s] that's where i get most of the money from especially in the in a in a bull market and so
+[ 1589.31s ->  1593.85s] with those three earnings learnings i think i i think our strategy is a lot better so i'm glad we
+[ 1593.85s ->  1599.19s] did this right i'm glad that we learned i'm glad that we uh messed up but i guess for me right i'm
+[ 1599.19s ->  1606.33s] okay with losing basically 57 5500 dollars if i learned something from it i can't just let i can't
+[ 1606.33s ->  1611.47s] just lose 5500 bucks and be like oh well so be it right i have to take a i have to look at why i did it
+[ 1611.47s ->  1616.39s] i have to look at it holistically uh constructively and be like what did i do wrong and these are the
+[ 1616.39s ->  1621.33s] three lessons i took from it i have to reiterate to myself right my philosophy i changed my philosophy
+[ 1621.33s ->  1627.67s] maybe um and then going on like i i do 100 believe that this will help me become a better trader
+[ 1627.67s ->  1633.11s] um and so hopefully in the future right i won't have to make another video saying that i messed up on
+[ 1633.11s ->  1641.24s] the call side again okay and um and so yeah hopefully that was helpful right i i i there's a
+[ 1641.24s ->  1647.16s] little bit of rambling i would say but i do think that this is something that i've always wanted to
+[ 1647.16s ->  1653.82s] learn how to do better um i'm glad i can share with you guys and so yeah it's a 5500 close to
+[ 1653.82s ->  1660.46s] 6 000 loss lesson that i took um i wish we didn't have to do it but at least i learned something
+[ 1660.46s ->  1665.76s] from it and i hope this was interesting to you guys um and uh going forward i'll try to do a
+[ 1665.76s ->  1670.48s] little bit more of these if you guys would like if you guys find this helpful to implement and you
+[ 1670.48s ->  1676.78s] guys can take parts or if not all of some of the things that i i i say here into your own trading that
+[ 1676.78s ->  1681.42s] would be awesome um and yeah i mean please leave comments down in the comment section below whether
+[ 1681.42s ->  1689.93s] or not you guys uh like this format and um yeah stay safe trading uh hope you guys are doing well
+[ 1689.93s ->  1694.99s] i look forward to hearing all about your credit spread selling journeys and uh you know don't
+[ 1694.99s ->  1699.17s] forget to like subscribe ring that notification bell and i'll share with your friends because um
+[ 1699.17s ->  1704.57s] that it means a lot to me i hope i can continue to grow this channel so i can provide um good content
+[ 1704.57s ->  1709.75s] for the youtube community um and continue our education together um and so yeah stay safe trading
+[ 1709.75s ->  1711.55s] until next time peace

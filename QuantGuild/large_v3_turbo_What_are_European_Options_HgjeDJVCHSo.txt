@@ -1,0 +1,121 @@
+[    1.58s ->     7.24s] Hey YouTube, welcome back to Math Monday. Today we're going to be talking about options,
+[    7.40s ->    12.28s] specifically European options. We're going to be discussing the two different types of
+[   12.28s ->    16.30s] European options, the different positions that you can take in either contract,
+[   16.66s ->    21.76s] and their payoff at maturity. So I know this is Math Monday, but I'm also considering adding
+[   21.76s ->    26.54s] Finance Fridays where we dedicate more time to these different types of topics, maybe option
+[   26.54s ->    31.40s] pricing, maybe bond pricing, etc. So if this is something you're interested in, be sure to
+[   31.40s ->    37.00s] leave a comment below, like this video, and let me know. So a European option is going to give
+[   37.00s ->    44.54s] the holder of the contract the right, but not the obligation, to buy or sell some underlying good
+[   44.54s ->    52.74s] at a pre-specified price at a pre-specified time in the future. So let's go ahead and talk about
+[   52.74s ->    58.02s] that statement because there's a lot going on. To help with this explanation, I am going to draw
+[   58.02s ->    67.06s] a timeline. So we are going to start at T0 and we are going to work our way up to capital T. Now you
+[   67.06s ->    74.98s] can think of T0 as some contemporaneous time or, you know, today or right now, and capital T as some
+[   74.98s ->    81.16s] time in the future, maybe a month out, a few months out, or even a few years out. This is the first
+[   81.16s ->    87.42s] parameter of our option contract, this capital T. It is going to determine the date in which we are going
+[   87.42s ->    94.78s] to be able to buy or sell the underlying security. The other parameter is going to be the strike price
+[   94.78s ->   101.34s] of the option contract. The strike price is going to determine the price in which we are buying or
+[  101.34s ->   107.42s] selling at in the future. And this is typically denoted as K. So when you're specifying a European
+[  107.42s ->   113.10s] option, you're going to have some time in the future in which you're going to exercise that contract
+[  113.10s ->   120.24s] at the strike price K. To further illustrate this option contract, let's consider the underlying in
+[  120.24s ->   125.78s] which we're buying and selling. Let's suppose we have some underlying equity. Let's say Apple, for
+[  125.78s ->   136.12s] example. And we'll say that Apple today is trading at $120 per share. Now at time T in the future, perhaps
+[  136.12s ->   144.72s] this is going to be one year in the future, we would like to purchase Apple at $120 per share. That would
+[  144.72s ->   155.02s] make our strike price K $120. This means there's going to be some cash flow at time capital T. So at
+[  155.02s ->   162.60s] time capital T, we are going to get some cash flow. But what does this cash flow look like? Well, it's going
+[  162.60s ->   170.56s] to be based on two things, it's going to be based on the price of Apple, and the strike price. Now we
+[  170.56s ->   178.44s] don't actually know what the price of Apple is going to be one year in the future. So for example, if Apple
+[  178.44s ->   189.34s] was $150, for example, so let's say in the future, Apple is $150, then we would have the right, but not
+[  189.34s ->   199.66s] obligation to buy Apple at $120. So that would mean if we bought Apple at $120, and immediately resold it for
+[  199.66s ->   212.75s] $150, we would be left with a $30 profit. But if Apple declines in value, let's say that Apple is trading at
+[  212.75s ->   224.52s] maybe $90 per share, then if we exercise, we would end up losing money, right? So minus $120, that would be
+[  224.52s ->   233.90s] negative $30. But remember, we have the right, not the obligation to buy Apple. Thus, we don't need to do
+[  233.90s ->   241.20s] anything, we can just let the option expire worthless. Now, what are the implications of this option
+[  241.20s ->   251.54s] contract? Well, if I held this option contract, then in one case, if Apple increases in value, I make
+[  251.54s ->   261.32s] money. In another case, if Apple declines in value, nothing happens. I don't make money, I don't lose
+[  261.32s ->   268.92s] money, I just don't exercise the contract. So what is the point of this, right? Like who would be on the
+[  268.92s ->   274.98s] other side of this contract, knowing that they're just in a position to either lose money or have nothing
+[  274.98s ->   283.60s] happen? Well, that is where the price of the option contract comes in. There is a fee that I will pay to have the
+[  283.60s ->   292.94s] right but not the obligation to buy or sell at some time in the future. And this opens the door to the entire field of
+[  292.94s ->   298.80s] the derivatives pricing. So it is a very deep sea, we're not going to cover any of it in this video. But just
+[  298.80s ->   306.08s] know that the price attached to an option is a very big question in the quantitative finance literature, that
+[  306.08s ->   313.80s] means in reality, the cash flow at time t is going to be independent of the price that we pay for the
+[  313.80s ->   322.80s] contract at the contemporaneous time or today t zero. So at t zero, we also have a cash flow. And this is going to be
+[  322.80s ->   332.30s] negative p, where p is the price of our option. So that means our profit from the option contract that
+[  332.30s ->   343.14s] we buy is going to be say $30 minus p. So in general, it will be the payout of the option, less the price
+[  343.14s ->   349.74s] that we paid for that particular option. There's actually a more general way we can write this. So if I
+[  349.74s ->   361.32s] was to go ahead here and quickly erase the cash flows at time capital T, we can consider Apple to be
+[  361.32s ->   373.42s] equal to s of t zero. This is the value of one share of Apple stock at time t zero. Now at time capital T,
+[  373.42s ->   383.18s] we don't know what Apple is going to be priced at, but we can represent it as s sub capital T. So s sub capital T
+[  383.18s ->   391.80s] is going to be the price of Apple stock at time t in the future. In this case, one year, we just saw two
+[  391.80s ->   400.18s] states of the world, one where we exercise the contract at maturity, where we made $30. And one
+[  400.18s ->   407.02s] where we chose not to do anything, as we would have lost money. There's a mathematical representation
+[  407.02s ->   414.40s] for this called a max function. So what we're going to do is we're going to take the price at time capital
+[  414.40s ->   428.51s] T of Apple and subtract our strike price and consider the maximum of this value with zero. If we plug in the
+[  428.51s ->   439.01s] numbers from before, then we can see that if Apple is 150, and we were to subtract 120, we would get 30
+[  439.01s ->   451.50s] and zero in our max function, in which case we would get the $30 output. And if we had the 90 in the other
+[  451.50s ->   465.03s] state of the world, then the max function would yield the max between negative 30 and zero, which is of
+[  465.03s ->   473.51s] course, going to be zero. So this is a mathematical way to determine whether or not we exercise the
+[  473.51s ->   481.23s] contract at expiration. This is the options payoff function. Now specifically, this is for a call option,
+[  481.23s ->   486.87s] but we'll get to that in a moment. For now, I just want to leave you with the idea that this is the
+[  486.87s ->   494.63s] payoff. If we wanted to find the profit, then we would actually take this max function, and we would
+[  494.63s ->   503.83s] end up subtracting the price that we paid for the option. So it would be max of S sub cap T minus K,
+[  503.83s ->   516.31s] and zero minus P, where P is the price we paid for our option. So in this case, here, this is the payoff
+[  516.31s ->   527.05s] function. And in this case here, this is our profit function. So as I mentioned, that is for the call
+[  527.05s ->   534.01s] options, specifically European call options. And we can visualize the price at expiration. So at that
+[  534.01s ->   540.97s] time capital T, as this max function on a chart, traditionally, these are referred to as the
+[  540.97s ->   548.99s] hockey stick diagram. So if I was to go here and draw these axes, I have X, which is going to be
+[  548.99s ->   557.97s] the stock price at time capital T. So this is going to be S sub capital T, the Y axis is going to be our
+[  557.97s ->   569.96s] payoff, then the function would look something like this, where this point here is K. So as you can see,
+[  569.96s ->   578.06s] it is zero all the way until the point that S sub cap T is greater than K, then we start to receive
+[  578.06s ->   585.52s] a payoff from the option. So this is specifically the payoff function for a European call. So this is a
+[  585.52s ->   593.50s] European call option, where we have the right to buy at some point in the future, time capital T at
+[  593.50s ->   601.22s] price K. There is another type of contract called a European put, where instead of the right to buy
+[  601.22s ->   608.12s] at some point in the future, it is the right to sell. And hopefully, relatively intuitively, we can
+[  608.12s ->   616.36s] simply flip the payoff function to represent this. So we can just say at time capital T for a put
+[  616.36s ->   628.86s] option, specifically a European put, we have the max between K minus S sub cap T and zero. And that is
+[  628.86s ->   635.04s] the payoff function for a European put. If we wanted the profit function, we would simply also subtract
+[  635.04s ->   648.54s] the price of that put contract. So I would just say max of K minus S sub T, zero minus P, where we have
+[  648.54s ->   657.80s] our payoff function once again, and this is our profit function. Once again, we can draw this hockey stick
+[  657.80s ->   665.84s] diagram for a put option. It's going to look something like this, where we have K here. But this time, it is
+[  665.84s ->   676.54s] going to be going backwards. Now, this y axis is still the payoff. And this x axis is still S sub cap T,
+[  676.54s ->   684.58s] where we're working with a European put. But in this case, you'll notice that the profit is actually
+[  684.58s ->   693.60s] bounded. The profit is bounded as the highest value that we can get for this profit function, or rather,
+[  693.60s ->   702.08s] this payoff function is going to be K. So the maximum profit here that we can receive, or the maximum
+[  702.08s ->   709.70s] payoff rather, is going to be K. So we looked at two examples here, we have the right to buy and the right
+[  709.70s ->   716.78s] to sell. But somebody is on the other side of that contract, meaning that somebody is actually letting
+[  716.78s ->   724.08s] you buy from them, or letting you sell to them. The person that is on the other side of that contract
+[  724.08s ->   730.38s] is considered to have a short position. So there are actually four charts for us to consider.
+[  730.38s ->   741.60s] I'm going to draw four down here. One, two, and then three, four. And I want to consider the four
+[  741.60s ->   748.34s] different charts, which refer to a long position, and a short position, and a European call and a
+[  748.34s ->   754.14s] European put. I'm going to create fixed columns and rows for long and short positions and call and put
+[  754.14s ->   760.72s] options. So I'm going to say that this column is going to be long positions, this column is short
+[  760.72s ->   770.32s] positions, this row is call options, and this row is put options. Now we've seen a long call and a long
+[  770.32s ->   781.90s] put. We know that a long call looks something like this. We know a long put looks something like this.
+[  781.90s ->   794.50s] And a short call and a short put are very simply these charts flipped on the x axis. So a short call
+[  794.50s ->   808.58s] is going to look like this. And then a short put is going to look like this. It is simply the other side
+[  808.58s ->   816.00s] of the contract. Thus, when the payoff is greater than zero, the payoff for the person in the short
+[  816.00s ->   824.56s] position is going to be negative. Let's draw these with respect to the profit now. So we know that when
+[  824.56s ->   830.88s] you are long a contract, you have to buy the contract. If I want to take a long position or have
+[  830.88s ->   836.54s] the right but not obligation to buy or sell in the future, that's going to cost me some certain amount
+[  836.54s ->   845.86s] of money P. Otherwise, I can achieve a profit or nothing without paying any price. So what I'm going
+[  845.86s ->   858.67s] to do is I'm going to say we shift this hockey stick diagram down by P. So this gap here is the price we
+[  858.67s ->   866.41s] pay for the option. This is the price we pay for a call option. That being said, the short position
+[  866.41s ->   875.59s] is actually going to be shifted up by this P. That is because they get the premium for taking the
+[  875.59s ->   882.75s] other side of the option. This is exactly why this exists in a marketplace at all. If there was no
+[  882.75s ->   888.81s] compensation for the risk of taking on perhaps losing a lot of money with respect to the spot in
+[  888.81s ->   894.99s] the future, nobody would take that contract or I hope nobody would take that contract. So this is where
+[  894.99s ->   901.71s] the profit function comes into play and it makes sense as to why anybody would agree to this
+[  901.71s ->   906.47s] arrangement in the first place. So when we're looking at the puts, a similar thing happens.
+[  906.47s ->   916.45s] We shift down, this gap here is P, and we also shift up, and this gap here is P. So with respect to
+[  916.45s ->   925.17s] the payoffs, we are shifting up and down depending on which side of the contract we are on. If we're
+[  925.17s ->   932.77s] long the call or long the put, we have to buy it. So we shift the payoff function down. If we are short,
+[  932.87s ->   938.69s] then we shift it up because we're receiving that money in exchange for potentially having to agree
+[  938.69s ->   945.37s] to these obligations in the future. That's going to do it for this Math Monday on European options.
+[  945.37s ->   949.95s] I hope you enjoy it. I know this topic can be a little tricky at first, especially when you're
+[  949.95s ->   954.31s] learning about the different sides of an option contract that you can partake in, whether it be
+[  954.31s ->   960.29s] long or short, but hopefully the visualizations made it a little easier to understand. If you have
+[  960.29s ->   965.33s] any questions, feel free to leave them in the comments below. If you have any suggestions for
+[  965.33s ->   971.57s] future videos, or if you would like Finance Fridays where we cover this and similar topics potentially in
+[  971.57s ->   976.59s] Excel, please be sure to let me know as well in the comments below. We just launched our first
+[  976.59s ->   983.09s] course, Introduction to Python on QuantGuild.com. Use code SUMMER2022 for a limited time to get $50
+[  983.09s ->   990.91s] off. But other than that, thank you so much for watching, and I will see you on Workshop Wednesday.

@@ -1,0 +1,86 @@
+[    0.00s ->     4.82s] So in this video, I'm going through credit spread basics and how to pick the right strike price.
+[    5.20s ->     9.40s] Okay, so if you know anything about credit spreads, your strike price is what determines everything.
+[    9.74s ->    14.84s] Your risk to reward, the amount of money you collect, and your theoretical win rate.
+[   14.94s ->    20.42s] So let's walk through how to pick the best strike price so you can make more money and win more often.
+[   20.76s ->    21.54s] Okay, here we go.
+[   21.88s ->    27.12s] When we're looking at it, the first thing we need to know, or at least what I look at, is what is the overall market trend?
+[   27.12s ->    31.32s] Well, if we just zoom out here, you can see, well, the market trend looks pretty neutral, right?
+[   31.58s ->    36.04s] It looks like it's staying at the highs here and hitting the lows here, so it's pretty neutral.
+[   36.48s ->    40.22s] And pretty neutral stock means that we don't really know which way it's going to go.
+[   40.58s ->    47.12s] So if we don't know which way it's going to go, then I'm going to zoom in a bit closer and look at, okay, based on a closer time frame, what does it look like?
+[   47.18s ->    49.12s] Well, it looks more like it's trending up, right?
+[   49.16s ->    56.00s] And we can do this by adding different types of indicators to our chart, like a moving average line or a Bollinger Band or something like that.
+[   56.00s ->    58.72s] But let's, by default, say that this looks like it's moving higher.
+[   58.88s ->    62.48s] If it's moving higher, we're going to sell put credit spreads.
+[   62.78s ->    70.22s] A put credit spread is where you place your strike price below the current stock price, and you make money as long as the stock stays above your level.
+[   70.96s ->    72.94s] So how do we pick the best one?
+[   73.16s ->    75.26s] Well, there are a ton of different ways to do it.
+[   75.26s ->    87.28s] Well, once we know the general direction the stock is going and what type of trade we want to put on, like a put credit spread versus a call credit spread, then we need to look at, okay, how far out are we going on the put credit spread?
+[   87.62s ->    89.84s] Well, again, it also comes down to your expiration date.
+[   89.92s ->    98.00s] So if you don't know what expiration date you're picking, make sure to watch my video on the channel on expiration dates because, again, that's going to explain it more.
+[   98.00s ->   101.28s] But anyways, let's go down here and say we're doing a three-week expiration.
+[  101.54s ->   102.46s] So, again, we're going to come down here.
+[  102.76s ->   105.66s] So three weeks, so it's going to be roughly 25 days.
+[  106.12s ->   107.14s] That's 18.
+[  107.86s ->   108.42s] Let's go 18.
+[  108.80s ->   109.68s] 18 days out.
+[  109.80s ->   113.04s] June 23rd is going to be the expiration date we're on.
+[  113.44s ->   113.82s] Okay, cool.
+[  113.88s ->   118.52s] Now, how do we know this is the put side how far out, which strike price we want to go?
+[  119.02s ->   122.40s] One way of determining that is by using what is known as delta.
+[  122.40s ->   127.26s] Okay, so our delta here, which is what you can change this column to, you can change it to delta.
+[  127.36s ->   129.26s] You should be able to do that on most brokers.
+[  129.72s ->   134.28s] You come down here, and your delta gives you your theoretical loss rate.
+[  135.04s ->   142.10s] For instance, if it's at 0.14, that means you have a 14% chance of losing on this trade.
+[  142.60s ->   148.22s] And so that means that if you flip it over, it means you have an 86% chance of winning with this trade.
+[  148.22s ->   153.70s] Now, you have to understand, the higher your win rate or the lower the delta, the less money you make
+[  153.70s ->   155.68s] because the less likely it is to get there.
+[  155.98s ->   158.80s] So you need to make sure you're weighing those pros and cons correctly.
+[  159.26s ->   161.10s] And so, again, make sure you're doing that.
+[  161.20s ->   166.82s] I cover that in my mistakes video on how to calculate that number if it's worth it
+[  166.82s ->   169.78s] based on the credit you collect and the win rate you have.
+[  170.40s ->   170.76s] Okay, cool.
+[  171.56s ->   172.66s] So, again, we can use delta.
+[  172.82s ->   176.00s] Most people like to stick around a 30 to 20 delta.
+[  176.34s ->   177.86s] So they'd be somewhere in this range.
+[  177.86s ->   179.70s] That's within one standard deviation.
+[  180.30s ->   183.18s] So most people stick around here, let's say, a 20 delta.
+[  183.30s ->   186.76s] So they do a 20 delta, and that means they'll sell this one and buy this one,
+[  187.24s ->   194.34s] which means they'll collect 14 cents at this trade, and they have roughly an 80% win rate.
+[  194.48s ->   199.64s] So they make around $14 with an 80% win rate, and they have a max loss of $86.
+[  200.12s ->   204.60s] Again, my default is 10 contracts, and then it goes up by five.
+[  204.64s ->   207.26s] So that's a bit different for most people, but that's how that works there.
+[  207.26s ->   210.42s] Anyways, that is how you structure that one is using delta.
+[  210.76s ->   213.06s] Next is purely using levels.
+[  213.28s ->   214.56s] So you can see our level here.
+[  214.64s ->   216.44s] We go, oh, wow, okay, so the market's coming up.
+[  216.48s ->   218.14s] It looks like there was support here at 416.
+[  218.32s ->   220.96s] Also, 420 has support that it broke above.
+[  220.96s ->   226.54s] So I think to be safe, 419 would be the support level I think it can stay above.
+[  226.82s ->   229.36s] It's usually more of a technical analysis approach.
+[  229.48s ->   230.54s] So 419 is my level.
+[  231.48s ->   239.16s] Come here to 419, and right there, now I collect $16 or $14, $15 per spread to put on this trade.
+[  239.26s ->   243.62s] And it looks like theoretically I'll have roughly an 88% win rate with this trade.
+[  244.69s ->   246.91s] Anyways, so that's kind of how that's sitting right there.
+[  246.99s ->   248.23s] You can use delta.
+[  248.51s ->   250.69s] You can use your levels.
+[  250.97s ->   257.91s] Or you can use what Tasty Live likes to use, which is collecting a third of the width of your spread.
+[  257.91s ->   263.91s] So, for instance, if we're doing a dollar spread, then that means you want to collect at least 30 to 33 cents.
+[  263.91s ->   269.97s] So that means for this trade right here, they would want to put on this trade here, 427, 426.
+[  270.33s ->   274.93s] The problem with this is that you're very close to being in the money.
+[  275.05s ->   281.23s] So if the trade dips even just a little, you're now going to be red, and you're going to be selling that at a loss.
+[  281.59s ->   289.49s] And so that's why I like to go out further around to this level, the 20 delta level, and kind of place trades like that.
+[  289.81s ->   293.03s] Or you can follow a strategy that has been backtested to work.
+[  293.03s ->   299.95s] I have my trading handbook strategy, which tells me to always go out 3% if the market's trending up.
+[  300.35s ->   315.54s] And so if I go out 3%, if the market's currently trading at 429.50.5, and I do times 0.97 for 3%, that's going to give me 416.6, so 417.
+[  315.54s ->   317.84s] So it's going to tell me to put the trade here.
+[  318.20s ->   328.06s] And now, based on this trade, I'm going to have, it tells me I have a probability of 81%, which means theoretically I'll have an 81% win rate.
+[  328.44s ->   333.02s] But in actuality, historically, I know my win rate with this is a 93% win rate.
+[  333.02s ->   337.28s] So anyways, this is how, again, you can place different strike prices.
+[  337.40s ->   341.74s] Again, if you want my free trading handbook, again, it's available to you right here.
+[  342.02s ->   343.48s] No email, no nothing required.
+[  343.62s ->   348.08s] Just simply click the link in my description, and it tells you and walks you through every single strategy I have,
+[  348.44s ->   354.02s] what market it works in, the entry rule step-by-step, and the backtest so you can see what it makes.
+[  354.42s ->   356.90s] All right, guys, I hope you enjoyed this video of the basics.
+[  357.00s ->   357.84s] I'll see you in the next one.
+[  357.84s ->   387.82s] All right, guys.

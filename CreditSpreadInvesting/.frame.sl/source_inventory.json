@@ -1,0 +1,382 @@
+{
+  "schema_version": "p7-source-inventory-v1",
+  "input": "/g/data/CreditSpreadInvesting/.READ5.1.md",
+  "input_scope": "explicit single source file; p7.md is the conversion specification and is not counted as a discovered transaction-knowledge input",
+  "instruction_file": {
+    "path": "/g/hedge/frame/p7.md",
+    "sha256": "75ac98a69191fd8bbe7625a74ffc06f0fc2a402a1c1e8f78eda594643f66d1a7",
+    "role": "conversion specification, not a discovered source"
+  },
+  "discovered": 1,
+  "file_status_counts": {
+    "processed": 1,
+    "ignored": 0,
+    "duplicate": 0,
+    "skipped": 0,
+    "failed": 0
+  },
+  "counts": {
+    "discovered": 1,
+    "processed": 1,
+    "ignored": 0,
+    "duplicate": 0,
+    "skipped": 0,
+    "failed": 0
+  },
+  "count_invariant": "discovered = processed + ignored + duplicate + skipped + failed",
+  "count_invariant_values": "1 = 1 + 0 + 0 + 0 + 0",
+  "source_logic_count": 14,
+  "strategy_file_count": 14,
+  "risk_only_rule_count": 6,
+  "risk_only_source_line_count": 10,
+  "skipped_candidate_count": 9,
+  "candidate_count": 34,
+  "candidate_status_counts": {
+    "processed": 14,
+    "risk_only": 6,
+    "skipped": 9,
+    "duplicate": 5
+  },
+  "candidate_kind_counts": {
+    "strategy": 14,
+    "risk_only": 6,
+    "skipped": 9,
+    "duplicate": 5
+  },
+  "files": [
+    {
+      "path": "/g/data/CreditSpreadInvesting/.READ5.1.md",
+      "sha256": "54a683436bc607979348b6b27cc623e34dff53ef11a30ec4fc64677d0f00f110",
+      "bytes": 5801,
+      "status": "processed",
+      "produced_refs": [
+        "/g/data/CreditSpreadInvesting/.frame.sl/strategy_l09_structure_reversal.py",
+        "/g/data/CreditSpreadInvesting/.frame.sl/strategy_l10_resistance_breakdown.py",
+        "/g/data/CreditSpreadInvesting/.frame.sl/strategy_l18_ma_pullback.py",
+        "/g/data/CreditSpreadInvesting/.frame.sl/strategy_l19_bearish_engulfing.py",
+        "/g/data/CreditSpreadInvesting/.frame.sl/strategy_l20_l24_evening_star.py",
+        "/g/data/CreditSpreadInvesting/.frame.sl/strategy_l26_engulfing_hammer_volume.py",
+        "/g/data/CreditSpreadInvesting/.frame.sl/strategy_l27_range_resistance_engulfing.py",
+        "/g/data/CreditSpreadInvesting/.frame.sl/strategy_l28_support_engulfing_volume.py",
+        "/g/data/CreditSpreadInvesting/.frame.sl/strategy_l29_ma50_morning_star.py",
+        "/g/data/CreditSpreadInvesting/.frame.sl/strategy_l30_trend_engulfing_ma_exit.py",
+        "/g/data/CreditSpreadInvesting/.frame.sl/strategy_l32_trend_hammer_breakout.py",
+        "/g/data/CreditSpreadInvesting/.frame.sl/strategy_l33_5m_support_breakdown.py",
+        "/g/data/CreditSpreadInvesting/.frame.sl/strategy_l34_spx_daily_support_break.py",
+        "/g/data/CreditSpreadInvesting/.frame.sl/strategy_l36_spx_daily_value_reversal.py",
+        "/g/data/CreditSpreadInvesting/.frame.sl/risk_modules.json",
+        "/g/data/CreditSpreadInvesting/.frame.sl/skipped.json"
+      ],
+      "produced_ref_names": [
+        "strategy_l09_structure_reversal.py",
+        "strategy_l10_resistance_breakdown.py",
+        "strategy_l18_ma_pullback.py",
+        "strategy_l19_bearish_engulfing.py",
+        "strategy_l20_l24_evening_star.py",
+        "strategy_l26_engulfing_hammer_volume.py",
+        "strategy_l27_range_resistance_engulfing.py",
+        "strategy_l28_support_engulfing_volume.py",
+        "strategy_l29_ma50_morning_star.py",
+        "strategy_l30_trend_engulfing_ma_exit.py",
+        "strategy_l32_trend_hammer_breakout.py",
+        "strategy_l33_5m_support_breakdown.py",
+        "strategy_l34_spx_daily_support_break.py",
+        "strategy_l36_spx_daily_value_reversal.py",
+        "risk_modules.json",
+        "skipped.json"
+      ],
+      "skipped_refs": [
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:4",
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:6",
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:8",
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:11",
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:14",
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:16",
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:17",
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:25",
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:39"
+      ],
+      "skipped_source_line_refs": [
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:4",
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:6",
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:8",
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:11",
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:14",
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:16",
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:17",
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:25",
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:39"
+      ],
+      "skipped_source_lines": [4, 6, 8, 11, 14, 16, 17, 25, 39]
+    }
+  ],
+  "non_empty_source_lines": [
+    1, 3, 4, 6, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
+    23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 36, 37, 39, 41
+  ],
+  "line_coverage": [
+    {
+      "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:1",
+      "kind": "risk_only",
+      "source_logic_id": "read51_risk_l001_atr_exit",
+      "produced_refs": ["/g/data/CreditSpreadInvesting/.frame.sl/risk_modules.json"]
+    },
+    {
+      "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:3",
+      "kind": "risk_only",
+      "source_logic_id": "read51_risk_l003_l021_l041_credit_trailing_stop",
+      "source_refs": [
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:3",
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:21",
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:41"
+      ],
+      "produced_refs": ["/g/data/CreditSpreadInvesting/.frame.sl/risk_modules.json"]
+    },
+    {
+      "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:4",
+      "kind": "skipped",
+      "source_logic_id": "read51_l004",
+      "produced_refs": ["/g/data/CreditSpreadInvesting/.frame.sl/skipped.json"]
+    },
+    {
+      "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:6",
+      "kind": "skipped",
+      "source_logic_id": "read51_l006",
+      "produced_refs": ["/g/data/CreditSpreadInvesting/.frame.sl/skipped.json"]
+    },
+    {
+      "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:8",
+      "kind": "skipped",
+      "source_logic_id": "read51_l008",
+      "produced_refs": ["/g/data/CreditSpreadInvesting/.frame.sl/skipped.json"]
+    },
+    {
+      "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:9",
+      "kind": "strategy",
+      "source_logic_id": "read5_1_l09_structure_reversal",
+      "produced_refs": ["/g/data/CreditSpreadInvesting/.frame.sl/strategy_l09_structure_reversal.py"]
+    },
+    {
+      "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:10",
+      "kind": "strategy",
+      "source_logic_id": "L10_RESISTANCE_BREAKDOWN",
+      "produced_refs": ["/g/data/CreditSpreadInvesting/.frame.sl/strategy_l10_resistance_breakdown.py"]
+    },
+    {
+      "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:11",
+      "kind": "skipped",
+      "source_logic_id": "read51_l011",
+      "produced_refs": ["/g/data/CreditSpreadInvesting/.frame.sl/skipped.json"]
+    },
+    {
+      "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:13",
+      "kind": "risk_only",
+      "source_logic_id": "read51_risk_l013_l015_l023_roll_credit_guard",
+      "source_refs": [
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:13",
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:15",
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:23"
+      ],
+      "produced_refs": ["/g/data/CreditSpreadInvesting/.frame.sl/risk_modules.json"]
+    },
+    {
+      "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:14",
+      "kind": "skipped",
+      "source_logic_id": "read51_l014",
+      "produced_refs": ["/g/data/CreditSpreadInvesting/.frame.sl/skipped.json"]
+    },
+    {
+      "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:15",
+      "kind": "duplicate",
+      "canonical_source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:13",
+      "source_logic_id": "read51_risk_l013_l015_l023_roll_credit_guard",
+      "produced_refs": ["/g/data/CreditSpreadInvesting/.frame.sl/risk_modules.json"]
+    },
+    {
+      "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:16",
+      "kind": "skipped",
+      "source_logic_id": "read51_l016",
+      "produced_refs": ["/g/data/CreditSpreadInvesting/.frame.sl/skipped.json"]
+    },
+    {
+      "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:17",
+      "kind": "skipped",
+      "source_logic_id": "read51_l017",
+      "produced_refs": ["/g/data/CreditSpreadInvesting/.frame.sl/skipped.json"]
+    },
+    {
+      "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:18",
+      "kind": "strategy",
+      "source_logic_id": "l18_ma_pullback_put_credit_spread",
+      "produced_refs": ["/g/data/CreditSpreadInvesting/.frame.sl/strategy_l18_ma_pullback.py"]
+    },
+    {
+      "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:19",
+      "kind": "strategy",
+      "source_logic_id": "L19_BEARISH_ENGULFING",
+      "produced_refs": ["/g/data/CreditSpreadInvesting/.frame.sl/strategy_l19_bearish_engulfing.py"]
+    },
+    {
+      "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:20",
+      "kind": "strategy",
+      "source_logic_id": "l20_l24_evening_star_breakdown",
+      "source_refs": [
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:20",
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:24"
+      ],
+      "produced_refs": ["/g/data/CreditSpreadInvesting/.frame.sl/strategy_l20_l24_evening_star.py"]
+    },
+    {
+      "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:21",
+      "kind": "duplicate",
+      "canonical_source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:3",
+      "source_logic_id": "read51_risk_l003_l021_l041_credit_trailing_stop",
+      "produced_refs": ["/g/data/CreditSpreadInvesting/.frame.sl/risk_modules.json"]
+    },
+    {
+      "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:22",
+      "kind": "risk_only",
+      "source_logic_id": "read51_risk_l022_any_leg_itm_exit",
+      "produced_refs": ["/g/data/CreditSpreadInvesting/.frame.sl/risk_modules.json"]
+    },
+    {
+      "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:23",
+      "kind": "duplicate",
+      "canonical_source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:13",
+      "source_logic_id": "read51_risk_l013_l015_l023_roll_credit_guard",
+      "source_refs": [
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:13",
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:15",
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:23"
+      ],
+      "produced_refs": ["/g/data/CreditSpreadInvesting/.frame.sl/risk_modules.json"]
+    },
+    {
+      "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:24",
+      "kind": "duplicate",
+      "canonical_source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:20",
+      "source_logic_id": "l20_l24_evening_star_breakdown",
+      "source_refs": [
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:20",
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:24"
+      ],
+      "produced_refs": ["/g/data/CreditSpreadInvesting/.frame.sl/strategy_l20_l24_evening_star.py"]
+    },
+    {
+      "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:25",
+      "kind": "skipped",
+      "source_logic_id": "read51_l025",
+      "produced_refs": ["/g/data/CreditSpreadInvesting/.frame.sl/skipped.json"]
+    },
+    {
+      "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:26",
+      "kind": "strategy",
+      "source_logic_id": "read5_1_l26_support_bullish_engulfing_hammer_dual_volume",
+      "produced_refs": ["/g/data/CreditSpreadInvesting/.frame.sl/strategy_l26_engulfing_hammer_volume.py"]
+    },
+    {
+      "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:27",
+      "kind": "strategy",
+      "source_logic_id": "L27_RANGE_RESISTANCE_BEARISH_ENGULFING",
+      "produced_refs": ["/g/data/CreditSpreadInvesting/.frame.sl/strategy_l27_range_resistance_engulfing.py"]
+    },
+    {
+      "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:28",
+      "kind": "strategy",
+      "source_logic_id": "read5_1_l28_support_bullish_engulfing_volume",
+      "produced_refs": ["/g/data/CreditSpreadInvesting/.frame.sl/strategy_l28_support_engulfing_volume.py"]
+    },
+    {
+      "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:29",
+      "kind": "strategy",
+      "source_logic_id": "l29_ma50_morning_star_retest",
+      "produced_refs": ["/g/data/CreditSpreadInvesting/.frame.sl/strategy_l29_ma50_morning_star.py"]
+    },
+    {
+      "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:30",
+      "kind": "strategy",
+      "source_logic_id": "L30_TREND_BULLISH_ENGULFING_MA_EXIT",
+      "produced_refs": ["/g/data/CreditSpreadInvesting/.frame.sl/strategy_l30_trend_engulfing_ma_exit.py"]
+    },
+    {
+      "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:31",
+      "kind": "risk_only",
+      "source_logic_id": "read51_risk_l031_profit_risk_filter",
+      "produced_refs": ["/g/data/CreditSpreadInvesting/.frame.sl/risk_modules.json"]
+    },
+    {
+      "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:32",
+      "kind": "strategy",
+      "source_logic_id": "L32_LONG_TERM_TREND_SUPPORT_HAMMER_BREAKOUT",
+      "produced_refs": ["/g/data/CreditSpreadInvesting/.frame.sl/strategy_l32_trend_hammer_breakout.py"]
+    },
+    {
+      "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:33",
+      "kind": "strategy",
+      "source_logic_id": "L33_5M_SUPPORT_BREAKDOWN",
+      "produced_refs": ["/g/data/CreditSpreadInvesting/.frame.sl/strategy_l33_5m_support_breakdown.py"]
+    },
+    {
+      "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:34",
+      "kind": "strategy",
+      "source_logic_id": "l34_spx_daily_support_break",
+      "produced_refs": ["/g/data/CreditSpreadInvesting/.frame.sl/strategy_l34_spx_daily_support_break.py"]
+    },
+    {
+      "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:36",
+      "kind": "strategy",
+      "source_logic_id": "l36_spx_daily_value_reversal",
+      "produced_refs": ["/g/data/CreditSpreadInvesting/.frame.sl/strategy_l36_spx_daily_value_reversal.py"]
+    },
+    {
+      "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:37",
+      "kind": "risk_only",
+      "source_logic_id": "read51_risk_l037_hold_itm_leg",
+      "produced_refs": ["/g/data/CreditSpreadInvesting/.frame.sl/risk_modules.json"]
+    },
+    {
+      "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:39",
+      "kind": "skipped",
+      "source_logic_id": "read51_l039",
+      "produced_refs": ["/g/data/CreditSpreadInvesting/.frame.sl/skipped.json"]
+    },
+    {
+      "source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:41",
+      "kind": "duplicate",
+      "canonical_source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:3",
+      "source_logic_id": "read51_risk_l003_l021_l041_credit_trailing_stop",
+      "produced_refs": ["/g/data/CreditSpreadInvesting/.frame.sl/risk_modules.json"]
+    }
+  ],
+  "registry_semantic_deduplication": {
+    "strategy_l20_l24_evening_star.py": {
+      "source_refs": [
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:20",
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:24"
+      ],
+      "canonical_source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:20"
+    },
+    "risk_credit_trailing_stop": {
+      "source_refs": [
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:3",
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:21",
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:41"
+      ],
+      "canonical_source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:3"
+    },
+    "risk_roll_credit_guard": {
+      "source_refs": [
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:13",
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:15",
+        "/g/data/CreditSpreadInvesting/.READ5.1.md:23"
+      ],
+      "canonical_source_ref": "/g/data/CreditSpreadInvesting/.READ5.1.md:13"
+    }
+  },
+  "coverage_check": {
+    "non_empty_source_line_count": 34,
+    "line_coverage_count": 34,
+    "all_non_empty_source_lines_covered": true,
+    "file_equation": "1 = 1 + 0 + 0 + 0 + 0"
+  }
+}

@@ -1,0 +1,226 @@
+[   10.16s ->    15.94s] You wouldn't be able to tell that this guy has 180 million dollars.
+[   15.94s ->    17.94s] He nailed it perfectly.
+[   17.94s ->    29.04s] And the reaction.
+[   29.04s ->    30.90s] Did I spend too much time on that intro?
+[   30.90s ->    33.02s] Eh, probably.
+[   33.02s ->    35.16s] This is Takashi Kotagawa.
+[   35.16s ->    38.16s] Kot-a-ga-wa.
+[   38.16s ->    39.16s] Kotagawa.
+[   39.16s ->    40.16s] I think that's how you pronounce it.
+[   40.16s ->    45.24s] He is one of the most famous intraday traders on the stock market who made millions of dollars
+[   45.24s ->    46.56s] in the early 2000s.
+[   46.56s ->    53.06s] To be specific, he traded from just 13,000 dollars to 153 million dollars.
+[   53.06s ->    54.80s] Are you serious right now?
+[   54.80s ->    58.22s] Yes, you heard me right, 153 million.
+[   58.22s ->    62.94s] And what's even crazier, he did all of this in the span of just 8 years.
+[   62.94s ->    63.90s] That's f***ing insane.
+[   63.90s ->    65.88s] How did he find the stocks to enter in?
+[   65.88s ->    67.78s] Did he use specific indicators?
+[   67.78s ->    69.00s] What strategy did he use?
+[   69.00s ->    73.36s] Well, I scavenged the internet for days looking for those exact answers.
+[   73.36s ->    74.36s] Days.
+[   74.36s ->    78.16s] And I found some secret site releasing his exact strategy.
+[   78.16s ->    79.86s] And I gotta say, it's pretty smart.
+[   79.86s ->    84.02s] Since I'm the awesome YouTuber I am, I'm gonna share it with you for absolutely free.
+[   84.02s ->    85.02s] Let's get straight to it.
+[   85.02s ->    90.48s] Now, I recently released a video like this about Larry Williams, who is also a professional
+[   90.48s ->    91.48s] trader.
+[   91.48s ->    94.40s] And I went over how he made his millions in trading as well.
+[   94.40s ->    95.44s] And you guys loved it.
+[   95.44s ->   100.66s] I think I'm gonna make this whole go over million dollar trader strategies video a series.
+[  100.66s ->   104.92s] Because I think that's one of the easiest ways to become successful at trading is by
+[  104.92s ->   108.42s] actually learning from people who were actually successful at it.
+[  108.42s ->   109.42s] Makes sense.
+[  109.42s ->   110.92s] So, I'm kinda excited about this.
+[  110.92s ->   113.46s] I think we can learn a lot from videos like this.
+[  113.46s ->   118.22s] So, to understand Takashi's strategy, we first have to understand what type of trader
+[  118.22s ->   119.22s] he was.
+[  119.22s ->   123.90s] Takashi had specific conditions he was looking for when trying to find stocks to enter in.
+[  123.90s ->   128.44s] He was mainly looking for stocks that were in a long term downtrend, and his goal was
+[  128.44s ->   133.22s] to find the exact bottom of that downtrend to then profit from a short term reversal.
+[  133.22s ->   137.78s] Now, as you may know, finding the bottom of a trend is a lot easier said than done.
+[  137.78s ->   139.24s] Actually, it's pretty hard.
+[  139.24s ->   143.46s] But with the help of his secret strategy, it raises the odds a ton of you finding the
+[  143.46s ->   144.74s] exact reversal point.
+[  144.74s ->   149.22s] So, knowing that Takashi liked downtrends, he really liked bear markets.
+[  149.22s ->   153.66s] As he actually stated in an interview, bear markets present the most opportunity.
+[  153.66s ->   158.12s] But he also traded in bull markets as well, he just fine tuned his strategy to whatever
+[  158.12s ->   162.40s] the current market sentiment was, which we'll go over how to do that in a little bit.
+[  162.40s ->   164.42s] But he mainly preferred bear markets.
+[  164.42s ->   170.12s] Now, in the articles I read, Takashi on average was in his trades for about 2-6 days.
+[  170.12s ->   174.54s] But often times, he would hold his position for a week or two, depending on the conditions
+[  174.54s ->   176.64s] of the market and how volatile it was.
+[  176.64s ->   179.60s] But what conditions was he specifically looking for?
+[  179.60s ->   183.00s] Well, Takashi actually said this in an interview himself.
+[  183.00s ->   189.50s] In the bear market of 2001 and 2002, I would only look at stocks at least 20% below the
+[  189.50s ->   194.32s] 25 day moving average, 35% being somewhat safe level to buy at.
+[  194.32s ->   196.66s] I also love Trading Lab's YouTube channel.
+[  196.66s ->   201.26s] Okay, he didn't say that, but if my YouTube channel was around when he traded, he might
+[  201.26s ->   202.82s] have probably said that.
+[  202.82s ->   206.98s] But he also mentioned there's a slight problem with this whole concept.
+[  206.98s ->   211.82s] Not all stocks are going to react the same, and the sensitivity of the rebound levels greatly
+[  211.82s ->   216.48s] depend on multiple factors, like market sentiment and the sector you're trading in.
+[  216.48s ->   222.66s] For example, a stock is way less likely to bounce at a key level if that day the market is insanely
+[  222.66s ->   224.48s] red and everything is dropping.
+[  224.48s ->   226.48s] It also depends on the sector.
+[  226.48s ->   232.20s] For example, stocks in the tech and biotech sectors are much more volatile than say stocks
+[  232.20s ->   236.74s] in the utilities sector, which are a lot less volatile and don't move as much.
+[  236.74s ->   242.16s] So he said a big part of his strategy was finding the right moving average threshold for specific
+[  242.16s ->   243.16s] conditions.
+[  243.16s ->   248.32s] For example, you would have a bigger gap on tech companies and a smaller gap on utility
+[  248.32s ->   249.32s] companies.
+[  249.32s ->   252.94s] So with this strategy, there's not really a one size fits all.
+[  252.94s ->   255.56s] This requires a bit of judgment from the trader.
+[  255.56s ->   260.22s] To help you out a bit, I did some research of my own and ranked the most volatile sectors
+[  260.22s ->   261.96s] to the least volatile sectors.
+[  261.96s ->   267.10s] Oil and biotech being the most volatile and utilities and consumer staples being the least
+[  267.10s ->   268.10s] volatile.
+[  268.10s ->   270.74s] So just keep this in mind when using this strategy.
+[  270.74s ->   275.50s] So now that we know all the conditions for using this strategy, let's move on to how to
+[  275.50s ->   277.56s] actually find the stocks themselves.
+[  277.56s ->   280.68s] But first, let me show you a site called Hankertrade.
+[  280.68s ->   281.68s] Ever heard of it?
+[  281.68s ->   285.74s] There are a lot of Forex and Cryptobroker that have extremely low spreads and low commissions.
+[  285.74s ->   289.66s] Some of the best on the market, which who doesn't like saving money on commissions?
+[  289.66s ->   293.92s] They also have an extremely friendly support team who will answer any type of question
+[  293.92s ->   294.92s] you have.
+[  294.92s ->   299.00s] And the best part, they are running a special promo where if you sign up with the link in
+[  299.00s ->   302.42s] my description, they will match whatever you first deposit.
+[  302.42s ->   306.80s] So if you put in $100, they will match that and give you $100.
+[  306.80s ->   308.86s] That sounds like a deal.
+[  308.86s ->   311.86s] Sign up with my link and make sure you use that special promo.
+[  311.86s ->   312.86s] It's free money.
+[  312.86s ->   314.78s] Alright, so how do we find the stocks themselves?
+[  314.78s ->   319.48s] Now, Tekashi didn't really explain this part, but I myself found a great way to do
+[  319.48s ->   320.48s] this.
+[  320.48s ->   321.48s] We're going to need to go on TradingView.
+[  321.48s ->   324.44s] I'll leave a link in my description if you don't yet use it.
+[  324.44s ->   326.58s] We're going to be using TradingView Stock Screener.
+[  326.58s ->   331.34s] I think you need TradingView Pro in order to use this, but if you don't have that or
+[  331.34s ->   336.04s] don't feel like paying for it, there are some free scanners out there you can use instead.
+[  336.04s ->   338.64s] But we'll be using TradingView for this example.
+[  338.64s ->   342.34s] Once you're on the screener, change the time frame to 4 hours.
+[  342.34s ->   345.62s] Go to the settings, make sure we're only looking at common stock.
+[  345.62s ->   351.36s] These exchanges, price change percentage is below negative 20, price is above $1, mark
+[  351.36s ->   356.42s] the current trading day, and price is below the 20 EMA by 20%.
+[  356.42s ->   361.42s] You can also filter out specific sectors if you want to trade stocks in a specific sector.
+[  361.42s ->   364.30s] This will give you a full list of stocks in our criteria.
+[  364.30s ->   368.88s] Now, Tekashi said himself he likes stocks that were gradually downtrending.
+[  368.88s ->   370.02s] No sharp movement.
+[  370.02s ->   374.94s] So often times from this biggest losers list, you'll have penny stocks that have sharp down
+[  374.94s ->   376.18s] movements like this.
+[  376.18s ->   378.08s] We want to disregard these stocks.
+[  378.08s ->   383.32s] What we are looking for is something like this, where the move is very gradual downwards.
+[  383.32s ->   387.50s] So just go through this list and try to find a couple stocks that are gradually moving
+[  387.50s ->   388.50s] downwards.
+[  388.50s ->   390.86s] Next, we need to figure out the market sentiment.
+[  390.86s ->   396.00s] There are multiple ways to do this, but the way that I personally do it is by using my private
+[  396.00s ->   398.00s] indicator tradinglab.ai.
+[  398.00s ->   402.76s] To do this, open the private indicator, I will also leave a link to that in the description
+[  402.76s ->   403.76s] as well.
+[  403.76s ->   407.94s] Let's look at the market sentiment of the whole stock market, not just the stock we're
+[  407.94s ->   408.94s] trading.
+[  408.94s ->   411.76s] An easy way to do this is by looking at the S&P 500.
+[  411.76s ->   415.72s] To do this, go to MT5 and type in US 500.
+[  415.72s ->   419.44s] We then want to get a current long term read on the market.
+[  419.44s ->   424.52s] So go to the timeframes and make it to one of the higher timeframes like the 4 hour.
+[  424.52s ->   426.76s] Once you have done that, check the trend table.
+[  426.76s ->   430.10s] It will instantly tell you how the current market is trending.
+[  430.10s ->   433.64s] If it's green and says strong long, the market is uptrending.
+[  433.64s ->   435.50s] If it's red, it's downtrending.
+[  435.50s ->   439.60s] This makes it insanely easy to check the current market sentiment and you don't have to fool
+[  439.60s ->   443.40s] around with a bunch of different tools, you just instantly get a read on the market.
+[  443.40s ->   447.64s] Remember all of this for later because we will be using it to optimize this strategy.
+[  447.64s ->   451.60s] It's even better if you get the specific sector for the stock you're looking at.
+[  451.60s ->   456.22s] For example, if you were looking at a company like Google, which is in the tech sector,
+[  456.22s ->   460.22s] we would only want to see the market sentiment of that specific sector.
+[  460.22s ->   466.98s] To do this, just find a tech sector fund like XLK, which is measuring only the tech stocks.
+[  466.98s ->   471.98s] You then would do the exact same process we just did, but just with XLK.
+[  471.98s ->   474.48s] Check the table and see how it's currently trending.
+[  474.48s ->   479.60s] So that's how you can find the stocks to trade, but what's the actual strategy itself?
+[  479.60s ->   481.22s] To do this, go back to trading view.
+[  481.22s ->   483.22s] So we now have the stocks we're looking at.
+[  483.22s ->   487.52s] It's in a gradual downtrend and we know the stock sector specific sentiment.
+[  487.52s ->   490.10s] We now want to add some indicators to our chart.
+[  490.10s ->   493.60s] Go to the indicators tab and type in EMA.
+[  493.60s ->   496.40s] Now Tekashi used very specific settings.
+[  496.40s ->   500.64s] So go to the settings of the EMA and change the length to 25.
+[  500.64s ->   505.32s] Next go back to the indicators tab and type in RSI and then add it to your chart.
+[  505.32s ->   509.18s] Then finally, we're going to add one more indicator and that is the MACD.
+[  509.18s ->   514.04s] We can keep all of these settings at default.
+[  514.04s ->   516.20s] So we now have the indicator set up.
+[  516.20s ->   521.54s] Now as said before, Tekashi was looking for a big gap between the current price and the
+[  521.54s ->   522.54s] EMA.
+[  522.54s ->   526.22s] So we want to go to a larger timeframe like the 4 hour.
+[  526.22s ->   530.12s] We can then measure the gap between the EMA and the current price.
+[  530.12s ->   535.04s] To do this, just go to the toolbar on the left, grab the measuring tool and mark from the EMA
+[  535.04s ->   536.04s] to the price.
+[  536.04s ->   542.68s] Now Tekashi said he would only look at stocks with a gap bigger than 20% and 35% being more
+[  542.68s ->   543.68s] safe.
+[  543.68s ->   546.48s] But this is when the trader's judgment starts to come into play.
+[  546.48s ->   550.98s] So say if we were looking at the trend table from before and it said bearish, meaning the
+[  550.98s ->   552.92s] current market is in a downtrend.
+[  552.92s ->   558.54s] We can start to shoot for larger percentage gaps like 30% or 35%.
+[  558.54s ->   562.86s] Let's say if the current market is bullish, we would shoot for smaller percentage gaps
+[  562.86s ->   565.76s] like 20% or 25%.
+[  565.76s ->   569.32s] This is also when the sector concept comes into play.
+[  569.32s ->   570.32s] Same thing.
+[  570.32s ->   574.96s] If you're in a more volatile sector like tech or biotech, you would shoot for a larger
+[  574.96s ->   575.96s] gap.
+[  575.96s ->   580.22s] If you're in a less volatile sector like utilities, you would shoot for smaller gaps.
+[  580.22s ->   582.14s] So we found a gradual downtrend.
+[  582.14s ->   585.04s] We measured the sectors and we found a suitable gap.
+[  585.04s ->   589.04s] We now move to the next part of the strategy, which is support and resistance.
+[  589.04s ->   592.76s] Go to a larger timeframe like the 4 hour or daily.
+[  592.76s ->   594.36s] Mark out all the key levels.
+[  594.36s ->   597.62s] You should only mark the very strong levels.
+[  597.62s ->   600.96s] So by the time you're done, your chart should look something like this.
+[  600.96s ->   604.30s] With very few lines only marking the major levels.
+[  604.30s ->   608.94s] It shouldn't look like this where you have tons of levels and marking weak levels.
+[  608.94s ->   611.06s] We only want the major level.
+[  611.06s ->   614.82s] We then want to wait for price to hit one of these major levels.
+[  614.82s ->   617.38s] Now again, this part takes some judgment.
+[  617.38s ->   622.16s] If you're in a bear market, price can easily hit one of these higher levels and break right
+[  622.16s ->   623.16s] through it.
+[  623.16s ->   626.24s] So we would want to wait for some of these lower, more major levels.
+[  626.24s ->   631.00s] But say if we're in a bull market, price is more likely to respect these levels and
+[  631.00s ->   634.20s] we can aim for some of these higher, less strong levels.
+[  634.20s ->   638.60s] So again, there's some traders judgment with the strategy, but I personally think that's
+[  638.60s ->   639.82s] why it works so well.
+[  639.82s ->   646.28s] Next, we want to also look at our RSI indicator and make sure the line is in the oversold area
+[  646.28s ->   648.08s] once price is by the support.
+[  648.08s ->   651.90s] So now that our chart is set up, we're going to wait for price to hit one of these levels
+[  651.90s ->   653.38s] and enter into a trade live.
+[  653.38s ->   654.38s] Okay.
+[  654.38s ->   657.38s] So it's been a couple days and price hit our level.
+[  657.38s ->   659.38s] So we're going to take a trade live.
+[  659.38s ->   662.26s] Price hit our level and we're happy with the current conditions.
+[  662.26s ->   664.38s] We're now going to go to a lower timeframe.
+[  664.38s ->   668.80s] Tekashi himself used the 15 minute timeframe for this specific part.
+[  668.80s ->   673.84s] What we are looking for is for price to start bouncing and we want confirmation that it's
+[  673.84s ->   674.84s] happening.
+[  674.84s ->   678.86s] So in this specific chart, you can see right before the correction, there was a big gap
+[  678.86s ->   680.82s] between the EMA and the price.
+[  680.82s ->   686.00s] We are also seeing an uptrend starting to form on the smaller timeframe, showing a bounce
+[  686.00s ->   689.58s] is starting to occur and the chart is starting to gain momentum.
+[  689.58s ->   694.92s] As some extra confirmation, we check our MACD and this is also showing signs that the market
+[  694.92s ->   698.68s] is getting ready to turn bullish by the histogram turning green.
+[  698.68s ->   703.34s] Once we get all this confirmation on the lower timeframe, we can now enter the trade.
+[  703.34s ->   708.06s] Now Tekashi said his take profit and stop loss would be dynamic depending on the current
+[  708.06s ->   709.14s] market conditions.
+[  709.14s ->   713.06s] So in a bear market, we would obviously want smaller take profits.
+[  713.06s ->   716.46s] In a bull market, we can have slightly larger take profits.
+[  716.46s ->   721.52s] So we enter the trade right here as it's starting to retest this now made support on
+[  721.52s ->   722.86s] the lower timeframe.
+[  722.86s ->   727.82s] What I found works really well is setting your take profit at the next highest resistance we
+[  727.82s ->   732.38s] marked on the higher timeframe and set your stop loss right below the current low.
+[  732.38s ->   735.90s] So we're now in the trade and we can wait to see what price does.
+[  735.90s ->   740.84s] A couple days passed and as you can see, this trade went perfectly as planned and price bounced
+[  740.84s ->   744.80s] exactly where we thought it would and hit or take profit with ease.
+[  744.80s ->   749.12s] I think this strategy works really well as the proof is in the pudding and Tekashi made
+[  749.12s ->   751.56s] his millions doing exactly this.
+[  751.56s ->   756.70s] And I think one of the major reasons it does work so well is because it goes off current market
+[  756.70s ->   757.70s] conditions.
+[  757.70s ->   761.64s] Not just a one size fits all strategy like most trading strategies on YouTube.
+[  761.64s ->   765.80s] Try it out, DM me on Instagram and share with me how it works for you.
+[  765.80s ->   767.86s] Thanks for watching and I'll see you guys next time.

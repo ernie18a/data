@@ -1,0 +1,84 @@
+[    0.35s ->     7.41s] Hey team, in this video I'm going to walk you through how to take a 1-1-2 trade and turn it into a triangle hedge
+[    7.41s ->    15.49s] which can give you up to $5,000 of downward protection and it even extends your profit over 1,000 points out.
+[   15.67s ->    17.55s] And so what in the world does this mean?
+[   17.61s ->    21.67s] Well, let me walk you through this with an example of a 1-1-2 that I have on right now.
+[   21.93s ->    26.81s] So right here is my long-term 1-1-2 as you can see here in my positions tab.
+[   26.81s ->    33.59s] You can see here I'm up roughly $3,100 so far this year, 3% on my account which is amazing using this strategy.
+[   34.01s ->    35.79s] So you can see here my 1-1-2 trade.
+[   35.85s ->    40.99s] I'm going to take this trade right here and I'm actually going to analyze it in the Analyze tab.
+[   41.33s ->    44.95s] I'm going to zoom out here and look at what our profit and graph looks like.
+[   45.01s ->    47.45s] This is what a normal 1-1-2 looks like.
+[   47.51s ->    48.99s] Again, these are both of the 1-1-2s.
+[   49.03s ->    52.65s] Let's remove these right here and just look at the long-term 1-1-2.
+[   53.07s ->    55.83s] This is what a 1-1-2 trade looks like.
+[   55.83s ->    65.07s] You can see here at expiration, if the ES futures expires in this range, I'll make roughly $3,000 or $4,000.
+[   65.79s ->    69.87s] If it expires normal or higher, I'll make roughly $1,000.
+[   70.29s ->    72.15s] Now that's it if it expires.
+[   72.23s ->    77.89s] Looking at this orange line, it tells us what our P&L will be throughout the duration of the trade.
+[   77.89s ->    84.39s] You can see here as the trade goes on, I'll be making roughly $600, which is where I'm at now.
+[   84.79s ->    88.13s] And then I'll be hitting that max profit as time goes on.
+[   88.41s ->    92.75s] But again, as time also goes on to the downside, I'll actually be losing more and more money.
+[   92.95s ->    96.59s] But let's say that I've now kind of hit a max profit.
+[   96.59s ->   104.03s] There's one way that most people, or Tom King, who kind of made this 1-1-2 trade a thing and kind of learned it,
+[  104.41s ->   109.71s] is what he does is he sells the two puts and he keeps on the put debit spread as a hedge.
+[  109.79s ->   115.71s] So let's say these two puts have now hit 90% profit, which is his level.
+[  116.05s ->   121.55s] Then he'll make the profit on this trade and keep on the put debit spread for profit to the downside.
+[  121.69s ->   122.39s] Now why is this?
+[  122.39s ->   123.65s] Well, look at the orange curve.
+[  123.99s ->   127.25s] Instead of the orange curve going down, which means throughout the duration of our trade,
+[  127.31s ->   129.03s] we actually lose money as it drops.
+[  129.35s ->   133.51s] Now with the put debit spread, as the trade goes on, we actually make more and more money.
+[  133.61s ->   137.71s] So this can help offset any losses from current 1-1-2 trades we have.
+[  138.07s ->   140.67s] And this is known as the put debit spread hedge.
+[  140.71s ->   143.25s] And this is how most 1-1-2 traders do it.
+[  143.57s ->   147.69s] However, something that I was looking at is what happens if you take the profit,
+[  147.69s ->   154.95s] not from the two naked puts that you sold here, but you take the profit from this one that you sold in the put debit spread.
+[  155.07s ->   155.31s] Why?
+[  155.61s ->   157.71s] Well, because you're accepting a higher profit.
+[  157.83s ->   163.11s] But not only that, you can see here that at expiration, we make money as long as it stays above,
+[  163.23s ->   168.03s] what is this, the $3,860 level as where we make profit.
+[  168.03s ->   175.25s] But we can extend this out further by simply closing out the short from the put debit spread.
+[  175.41s ->   182.35s] Now we get the same type of orange structure where as the market moves down, we actually continue to make more money.
+[  182.47s ->   185.91s] So we can see here that it's structured just like the put debit spread.
+[  185.91s ->   189.37s] And we hit a little max profit here of around $10,000.
+[  189.75s ->   194.67s] When we're actively in the trade, we can make up to $10,000 from this trade,
+[  194.75s ->   196.77s] mainly because of this long put that we have here.
+[  197.31s ->   201.63s] And we actually at expiration could make around $30,000.
+[  201.99s ->   203.13s] That's why this is an amazing trade.
+[  203.21s ->   207.05s] But not only that, instead of our downside being $3,860,
+[  207.29s ->   211.39s] our downside is now pushed all the way down to $3,340.
+[  211.39s ->   224.25s] That means that the market could crash over 1,000%, literally 1,000 and what is it, 600 points, 1,600 points before we actually start losing money.
+[  224.71s ->   227.09s] And so that's what's amazing about this hedge.
+[  227.19s ->   235.81s] And now again, this hedge should only be put on once the put debit spread, the one that you sold, hits at least a 75% profit.
+[  235.81s ->   243.63s] So once this put right here hits at least a 75% profit, then you want to sell it and convert it into that hedge.
+[  243.73s ->   248.69s] Why? Because that hedge, that triangle hedge is amazing because why it pushes our downside out really far,
+[  248.99s ->   255.11s] gives us the chance to make upwards of $10,000, which is way more than what we would have made where they put debit spread hedge.
+[  255.39s ->   261.15s] But we need at least 75% of profit on this to cover the loss from just holding this hedge.
+[  261.15s ->   268.17s] So again, if you make around an 80%, 90% profit on this trade with this minus one put or this naked put here,
+[  268.59s ->   272.49s] then you can cover the cost of this hedge and more to put it on.
+[  272.55s ->   278.37s] But I just wanted to showcase, if you're not aware, if you sell the naked put and the put debit spread,
+[  278.47s ->   281.49s] you not only extend your downside, but you give yourself way more profit.
+[  281.49s ->   291.85s] And if you have on three 1-1-2 trades plus one of these hedges, this hedge will help offset the stop losses from any 1-1-2 trades you have.
+[  291.93s ->   296.31s] So the 1-1-2 trades will have about a $4,000 loss if we have that.
+[  296.39s ->   304.85s] Like you see here, if it drops, we'll be having roughly an $8,000, $9,000, $10,000 profit, not even holding to expiration.
+[  304.85s ->   308.01s] Just the market dropping will give us that $10,000 profit.
+[  308.19s ->   311.61s] If it expires in this level, then we'll be having a $30,000 profit.
+[  311.71s ->   315.33s] But this shows you what you can be doing with the triangle hedge.
+[  315.45s ->   324.53s] So again, I will be having on a triangle hedge probably once a month with the 1-1-2 trades that I eventually hit that 75% profit target on.
+[  325.13s ->   327.73s] So what does this look like in an actual position?
+[  327.73s ->   335.57s] So I discovered that, but I haven't done it yet because I haven't actually had a trade yet this year hit that 75% profit level.
+[  335.69s ->   338.45s] But you can see here, here's the two that I sold right here.
+[  338.55s ->   340.83s] They're sitting at a 47% profit right now.
+[  341.11s ->   342.83s] Here is the put debit spread.
+[  343.27s ->   348.35s] And again, I'm waiting for this one that I sold in the put debit spread to hit at least a 75% profit.
+[  348.51s ->   350.31s] Right now it's at 50% profit.
+[  350.31s ->   360.35s] So once it gets to set to 75%, I'll be looking at around a $2,000 profit from this, which will cover the costs of having on this hedge and more.
+[  360.65s ->   366.75s] So I make a $2,000 profit from this trade and I have the hedge on to protect myself from that downside move.
+[  367.07s ->   372.87s] And so again, that is what I call the triangle hedge and is what you can do with the 1-1-2 trade.
+[  372.87s ->   381.67s] So for those who like the 1-1-1-2 trade, 1-1-2 trade, and also want to have a good hedge on the back end, this is what I would do.
+[  381.73s ->   387.85s] It's called the triangle hedge by taking off this naked put when it hits 75% or more.
+[  388.07s ->   389.33s] All right, guys, I hope this helps.
+[  389.45s ->   392.29s] I hope it explains and I hope it leads to you making more money.
+[  392.65s ->   398.63s] If you want to get access to my personal 1-1-2 trading plan, when I enter, why I enter, what days, what deltas,
+[  398.63s ->   404.25s] click the first link in the description down below and you will get a free PDF of my trading guide.
+[  404.57s ->   406.15s] All right, guys, see you in the next video.

@@ -1,0 +1,369 @@
+[    0.46s ->    14.58s] One of the most common, albeit misguided questions that you will find once you start getting involved in the trading space is something like, hey, are you even profitable as a trader?
+[   14.58s ->    23.04s] There is no easier way to signal that you are a beginner to this space in asking something like that.
+[   23.16s ->    29.36s] It is very similar to asking, hey, how much money did you make trading this past year?
+[   29.36s ->    31.64s] Or, hey, what was your return?
+[   31.74s ->    37.50s] It doesn't actually offer any meaningful information in a trading capacity.
+[   37.66s ->    46.32s] What we actually care about is not whether you are profitable or whether your strategy is profitable, but whether it is tradable.
+[   46.42s ->    48.88s] There's a very big difference between the two.
+[   49.30s ->    55.50s] One is a backwards looking measure and the other is a forward looking measure.
+[   55.50s ->    58.66s] In other words, I don't care where you've been.
+[   58.66s ->    60.02s] I care where you're going.
+[   60.16s ->    67.76s] Are you capable of making money or is that something that you were just able to do in one instance?
+[   67.90s ->    79.26s] Well, in this video, what we're going to do is we're going to talk about the difference between being profitable versus being tradable in the context of a trading strategy and why most strategies fail live.
+[   79.26s ->    87.40s] And the interesting part about this idea is that it doesn't just apply to algorithmic or quantitative trading.
+[   87.86s ->    90.68s] This idea applies to also discretionary trading.
+[   90.82s ->    96.28s] That is, both styles of trading profit from the same statistical mechanism.
+[   96.28s ->   111.04s] And that's what's so cool about the math in this context is logically the only way for traders to accumulate wealth in that capacity that is in that forward looking capacity is for this to be true.
+[  111.04s ->   119.28s] And mathematically, statistically, that's this idea of stability, which your strategy may not have access to.
+[  119.78s ->   126.26s] Unlike my Jupyter notebooks, which you will always have access to anytime there's a new Quant Guild video.
+[  126.40s ->   129.06s] I'll leave a link to this Jupyter notebook in the description below.
+[  129.06s ->   139.32s] I'll also post it to the Quant Guild library on GitHub, where you can find all of my Jupyter notebooks and associated YouTube videos, along with all of the source code for my Quant builds.
+[  139.44s ->   146.08s] At the top of this Jupyter notebook, you'll notice some related Quant Guild videos applying probability and statistics to finance and trading.
+[  146.54s ->   152.18s] This idea of time series analysis, retail versus institutional trading, trading versus investing.
+[  152.18s ->   165.80s] This idea of edge and accumulating positive expected value over time, quant versus discretionary trading, and of course, busting three trading myths that these trading gurus love to propagate.
+[  166.26s ->   173.86s] If you're unfamiliar with any of these ideas, I highly recommend you check these videos out first before tackling one like this.
+[  174.00s ->   176.70s] Moreover, these videos certainly take a lot of effort to create.
+[  176.70s ->   182.84s] So if you'd like to help support the channel so I can continue to create videos just like this one, please like, comment, subscribe, share.
+[  182.96s ->   184.22s] It helps me out tremendously.
+[  184.46s ->   185.84s] It is always greatly appreciated.
+[  186.08s ->   190.96s] And if you'd like to master your quantitative skills, check out quantguild.com.
+[  191.04s ->   195.92s] We have everything that you need for your journey to becoming a quant.
+[  195.92s ->   213.50s] Over 90 quant lessons, an adaptive practice engine that scales with your skill level, interview questions with fully worked solutions, trading games, courses from A to Z in math, coding, probability, and statistics with more on the way.
+[  213.90s ->   217.48s] And all that's included with Quant Guild membership.
+[  218.02s ->   220.66s] And you can get started right now for free.
+[  220.66s ->   227.82s] So if you'd like to help support the channel and master your quantitative skills, check out quantguild.com.
+[  228.00s ->   238.00s] Without further ado, let's get started here by talking about this idea of an entry signal, backtesting, edge, and P&L distributions.
+[  238.76s ->   247.42s] So if asking, hey, are you a profitable trader is more of a naive question, then what is a better question?
+[  247.42s ->   252.00s] Well, we don't want to just ask about arbitrary performance metrics.
+[  252.14s ->   254.12s] Hey, what's your sharp ratio?
+[  254.74s ->   257.36s] Hey, what's your sortino ratio?
+[  257.52s ->   263.24s] That falls into the same trap, and it's kind of the same backwards-looking measure.
+[  263.78s ->   267.36s] A better question is, hey, what's your edge?
+[  267.36s ->   277.88s] And the idea of an edge is getting at the underlying statistical mechanism that you are intending to profit from.
+[  278.14s ->   280.98s] Now, that's one piece of the puzzle.
+[  281.14s ->   289.34s] The other piece of the puzzle is whether or not that statistical mechanism is stable in a forward-looking capacity.
+[  289.34s ->   298.84s] And we're going to take a look at a whole bunch of charts and animations to really understand this idea of stability and what it means and literally what it looks like.
+[  299.34s ->   303.92s] But before that, we have to understand this idea of an edge.
+[  304.24s ->   310.18s] Now, all an edge is is an expected value that is positive.
+[  310.42s ->   312.12s] That's what it means to have an edge.
+[  312.22s ->   313.30s] A casino has an edge.
+[  313.48s ->   317.74s] That just means that the casino game has positive expectancy for the casino.
+[  317.74s ->   320.92s] We're not looking to win every single game.
+[  321.08s ->   323.26s] We're not looking to win every single trade.
+[  323.38s ->   334.02s] But if we trade a whole bunch of times and that edge is stable across all of those games, across all of those trades, then we will accumulate a profit.
+[  334.12s ->   336.12s] Now, this doesn't say anything about risk.
+[  336.54s ->   342.98s] Risk is quite literally the expected deviation from the expectation.
+[  342.98s ->   351.24s] That is what variance is, and that is typically what we measure volatility as in some sort of portfolio or trading strategy.
+[  351.46s ->   362.16s] But in any case, right, the reason why this idea of an expected value or an edge is so important is because it literally dictates the trajectory of our wealth path.
+[  362.16s ->   369.16s] Now, I'm not making a comment for those of you who have studied or are interested in stochastic processes.
+[  369.36s ->   377.02s] I'm not making a comment regarding ergodicity, whether or not markets or our trading strategy, bet sizing, whatever, are ergodic.
+[  377.10s ->   380.70s] In this particular case, I have a video dedicated to that topic.
+[  380.70s ->   383.98s] I'll leave a link to it in the description below if it interests you.
+[  384.06s ->   390.04s] But for now, we're just going to assume that we are operating in a reasonably ergodic capacity.
+[  390.04s ->   406.40s] That being said, by the law of total expectation, we can decompose our expected P&L on a trade-by-trade basis into the average winner times the probability that we win plus the average loser times the probability that we lose.
+[  406.40s ->   412.96s] And the reason why this is very useful is because this decomposition is going to give us two different distributions.
+[  412.96s ->   426.20s] It's going to give us a distribution of winning trade P&Ls, and it's going to give us a distribution of losing trade P&Ls, along with the corresponding probability of winning and losing.
+[  426.20s ->   444.94s] And what we're going to see is, if we have a strategy that is tradable, after some sort of back test, if we are to use that same strategy out of sample, either in a walk forward or in a strict out of sample capacity, we're going to see similar distributions.
+[  444.94s ->   456.42s] We're going to see a similar winning P&L distribution, a similar losing P&L distribution, and a similar probability of winning and probability of losing.
+[  456.78s ->   458.20s] So what do I have here?
+[  458.30s ->   470.66s] I have an animation of a trading strategy on NVIDIA from 2020 to 2023, and then that same strategy from 2024 all the way to the end of 2025.
+[  471.28s ->   474.52s] And we notice we get P&L distributions for each period.
+[  474.52s ->   478.54s] This is thanks to the law of total expectation.
+[  479.08s ->   493.34s] I can decompose this because winners and losers form a partition of the space into these two separate distributions, which, when combined, will yield the overall expectancy of the trading strategy or system.
+[  493.64s ->   495.86s] So let's take a look at some metrics now.
+[  495.86s ->   503.26s] The win rate in 2020 to 2023 of this strategy was roughly 57%.
+[  503.26s ->   510.38s] That's reasonable, but it's always going to be relative to the size of our average winner and average loser.
+[  510.38s ->   516.04s] And if we take a look here, the average winner actually outsizes the average loser.
+[  516.04s ->   522.96s] And since the win rate is larger than the loss rate, we are going to have positive expectancy.
+[  522.96s ->   524.74s] And that's exactly what we see here.
+[  524.74s ->   532.26s] Our expected value, our edge for this strategy on a trade-by-trade basis is 0.89.
+[  532.46s ->   533.14s] It's positive.
+[  533.60s ->   539.28s] So if we are to continue to trade this strategy, we would be accumulating wealth.
+[  539.48s ->   542.16s] This is a profitable strategy.
+[  542.16s ->   545.94s] Okay, but is it tradable?
+[  546.18s ->   553.76s] Let's take this back test and now trade it live throughout 2024 all the way to the end of 2025.
+[  554.24s ->   555.52s] What do we find?
+[  555.66s ->   562.36s] Well, that exact same strategy that was profitable is not tradable.
+[  562.36s ->   567.04s] If we take a look at the P&L distributions, they look completely different.
+[  567.58s ->   570.22s] They are not stable in any capacity.
+[  570.22s ->   576.14s] The win rate is roughly the same, but look at the average winner and the average loser.
+[  576.34s ->   578.04s] They change dramatically.
+[  578.66s ->   584.68s] And the reason why they change dramatically is because look at the overall shape of the P&L distributions.
+[  585.30s ->   592.94s] They are completely different than the P&L distributions in this sample period here, 2022, 2023.
+[  593.46s ->   598.48s] And what ends up happening then is since the average loser outpaces the average winner
+[  598.48s ->   603.66s] and the win rate doesn't compensate enough, we end up with negative expectancy.
+[  603.66s ->   607.90s] So our profitable strategy here is not tradable.
+[  607.90s ->   614.26s] It fails in a live trading setting because we lack stability.
+[  614.26s ->   622.68s] If it were the case that the distributions in an out-of-sample capacity or a walk-forward capacity
+[  622.68s ->   629.78s] resembled that of our back test, then we could have a reasonable degree of stability.
+[  630.48s ->   633.28s] And that would mean that it was tradable.
+[  633.42s ->   638.52s] Now, whether or not you actually wanted to trade it is going to come down to the overall
+[  638.52s ->   643.74s] risk-adjusted return, your max drawdown, these other metrics that you're also going to want
+[  643.74s ->   645.84s] to verify are reasonably stable.
+[  645.84s ->   649.72s] But what actually makes these distributions stable?
+[  649.94s ->   651.88s] It's not a magical thing.
+[  651.96s ->   654.60s] It turns into a data science problem.
+[  654.80s ->   661.78s] You're actually looking to trade some sort of structure, some sort of statistical inefficiency.
+[  662.58s ->   667.88s] And when you do that, when you establish a strategy in that capacity, whether it's in a quantitative
+[  667.88s ->   674.78s] or algorithmic capacity or a discretionary capacity, that's what induces stability.
+[  674.78s ->   680.46s] This is not something where you can just back test a strategy a million times until you find
+[  680.46s ->   685.16s] something that looks good and then deploy it in a walk-forward or live setting and then
+[  685.16s ->   685.84s] have it work.
+[  686.22s ->   690.68s] That's not how you actually go about developing a trading strategy.
+[  691.12s ->   696.94s] And that's not how you're going to induce stability in your strategy's P&L distribution.
+[  697.10s ->   699.34s] Now, what can you actually do?
+[  699.34s ->   704.72s] Well, you're going to want to actually design the trading strategy in a way that's economically
+[  704.72s ->   709.62s] meaningful, statistically meaningful, and you can do this using machine learning.
+[  709.82s ->   712.24s] You can use regimes, so on and so forth.
+[  712.50s ->   717.16s] We're going to talk about inducing stability using regimes and regime modeling.
+[  717.46s ->   722.72s] We'll talk about some common misconceptions with regime modeling in the context of volatility
+[  722.72s ->   728.24s] regimes, even Markov chains and hidden Markov models, and how this can aid in inducing
+[  728.24s ->   729.82s] P&L stability.
+[  729.82s ->   737.40s] The same entry signal may not produce a draw from the same underlying P&L distributions at
+[  737.40s ->   738.80s] any point in time.
+[  739.28s ->   742.60s] And that's because the markets are always changing.
+[  742.92s ->   748.64s] Everything is driven by so many combinations of different processes, available and visible
+[  748.64s ->   753.76s] processes, unavailable and hidden processes, so on and so forth.
+[  753.76s ->   760.50s] But that is exactly what induces the instability in our strategy here.
+[  760.66s ->   767.32s] Effectively, there are some underlying regime changes, latent processes changing, so on and
+[  767.32s ->   771.92s] so forth, that impact the shape of our P&L distributions.
+[  771.92s ->   778.94s] And if we are better able to model these P&L distributions under different conditions, that
+[  778.94s ->   785.44s] is maybe different volatility regimes, maybe different sentiment regimes, volume, so on and
+[  785.44s ->   792.44s] so forth, we are going to be able to better capture stable P&L distributions.
+[  792.64s ->   802.12s] What I mean by that is maybe the P&L distributions are more unstable in periods of high volatility, in
+[  802.12s ->   805.82s] periods of low volatility, whatever it may be.
+[  805.82s ->   809.50s] But then we don't have to trade during those periods.
+[  809.70s ->   812.44s] That is how we're looking for this stability.
+[  812.72s ->   818.26s] So what I'm going to do here is I'm going to create a volatility regime as the quadratic
+[  818.26s ->   824.12s] variation, the squared returns of the previous 20 days on a rolling basis.
+[  824.46s ->   827.04s] And I'm going to break it up into Tress Isle.
+[  827.04s ->   836.50s] So the 33rd percentile, 33rd to 66th, and 66th to 99th as the low, mid, and high volatility
+[  836.50s ->   837.94s] regime.
+[  838.32s ->   844.48s] And what I'm trying to do here is I'm trying to suggest, hey, the same entry signal under
+[  844.48s ->   851.02s] any one of these regimes is going to produce a fundamentally different P&L distribution.
+[  851.02s ->   859.20s] And if this is true, which it's a reasonable hypothesis to suggest, then I should see different
+[  859.20s ->   863.02s] shaped P&L distributions under each regime.
+[  863.28s ->   867.04s] Now, this is a good idea, but there's a catch.
+[  867.08s ->   873.92s] If we don't have stability in our regime, then we're not going to have stability in our downstream
+[  873.92s ->   875.44s] P&L distributions.
+[  875.44s ->   882.12s] And the way that we are designing our regime classification here is inherently unstable.
+[  882.68s ->   883.64s] Think about it like this.
+[  883.68s ->   889.96s] If we're operating in a period of very high volatility, then the 33rd percentile is going
+[  889.96s ->   896.64s] to contribute draws from a very high volatility period to our low vol distribution.
+[  897.22s ->   902.90s] And the same is true in a low vol period for our high vol distribution.
+[  902.90s ->   910.70s] So both of those distributions are going to be skewed by periods of very high volatility
+[  910.70s ->   914.12s] and periods of very low volatility.
+[  914.86s ->   921.76s] And in fact, we're going to be able to verify this below when we take a look at draws of volatility,
+[  921.76s ->   926.66s] that is this quadratic variation squared returns from each regime.
+[  926.86s ->   930.74s] But the mid vol period is going to be caught in the middle.
+[  930.74s ->   934.30s] And that's actually going to have the most stability.
+[  934.98s ->   936.60s] So that is my hypothesis.
+[  937.28s ->   939.28s] We should see this then in what?
+[  939.66s ->   943.68s] We should see this in our trading strategy, the P&L distributions.
+[  944.36s ->   952.52s] We should see instability in the low and high regime and maybe more reasonable stability in the mid vol regime.
+[  952.78s ->   956.72s] And then we should see this in the actual volatilities themselves.
+[  956.72s ->   959.06s] So let's take a look at this now.
+[  959.12s ->   964.04s] What I have here is backtesting this trading signal for that same sample period.
+[  964.04s ->   967.96s] We're going from 2020 to the end of 2023.
+[  968.68s ->   974.06s] And if I run this here, you're going to see now we get three different P&L distributions.
+[  974.06s ->   981.04s] I get one for the low, one for the mid, and one for the high volatility regime periods.
+[  981.48s ->   988.00s] Effectively, anytime I have a trade under the same entry signal rule set that I have above here,
+[  988.22s ->   992.42s] I am going to record the P&L for that regime if we're operating in it.
+[  992.82s ->   997.14s] And that is exactly what produces each of these P&L distributions.
+[  997.46s ->   998.90s] Now, what do you notice here?
+[  998.90s ->  1002.92s] In the low vol regime and the high vol regime, we actually have negative expectancy.
+[ 1004.42s ->  1004.82s] Okay.
+[ 1005.04s ->  1006.62s] What about the mid vol regime?
+[ 1006.76s ->  1009.36s] Well, I actually have positive expectancy here.
+[ 1010.14s ->  1010.52s] All right.
+[ 1010.56s ->  1011.24s] Very interesting.
+[ 1011.40s ->  1013.06s] Now, let's go out of sample.
+[ 1013.18s ->  1014.42s] This is our backtest period.
+[ 1014.60s ->  1016.60s] Let's take a look at trading it live.
+[ 1016.70s ->  1019.98s] We're going to go from 2024 to present now.
+[ 1020.28s ->  1021.90s] If I run this, what do we get?
+[ 1022.26s ->  1024.82s] Well, let's take a look at the P&L distributions.
+[ 1024.82s ->  1031.70s] Again, we have the same low, mid, and high volatility regimes, but what happens?
+[ 1031.86s ->  1035.20s] Well, we have negative expectancy again for this low regime.
+[ 1035.54s ->  1038.00s] The high regime actually flips.
+[ 1038.44s ->  1040.22s] It goes from negative to positive.
+[ 1040.46s ->  1042.30s] That's not stable.
+[ 1042.66s ->  1049.46s] But if we look at the mid volatility regime, we actually have a very similar expectancy.
+[ 1049.46s ->  1056.68s] We have 0.66, and in the mid vol regime here, we have 0.53.
+[ 1057.58s ->  1064.14s] So, this falls in line with what we had suggested earlier about the low and high volatility regimes
+[ 1064.14s ->  1071.20s] being more unstable than the mid vol regime, and that's by the nature that we designed our
+[ 1071.20s ->  1072.40s] volatility regimes.
+[ 1072.40s ->  1079.42s] We literally imposed that instability on the high and the low end, and that's why we're seeing these
+[ 1079.42s ->  1088.22s] large distribution distances between these P&L distributions in the highest and lowest volatility
+[ 1088.22s ->  1090.92s] regime relative to the mid regime.
+[ 1091.04s ->  1093.06s] If we take a look here, it's even more apparent.
+[ 1093.46s ->  1099.94s] If we look at the overall expected value and the win rate for the mid regime relative to the
+[ 1099.94s ->  1105.24s] counterparts in the high and low regime, they are dramatically different versus the mid regime,
+[ 1105.42s ->  1107.98s] which is more reasonably stable.
+[ 1108.28s ->  1114.00s] And this comes down to the overall stability of the regime itself.
+[ 1114.22s ->  1119.78s] So, now let's take a look at not just the P&L distribution, but let's take a look at the
+[ 1119.78s ->  1126.84s] volatility distribution for each regime to look at how stable that distribution is in and out of
+[ 1126.84s ->  1135.20s] And what we should find is that the high and low volatility regimes are the most unstable,
+[ 1135.50s ->  1142.94s] while the mid volatility regime is more stable, which would explain this more reasonably stable
+[ 1142.94s ->  1144.54s] P&L distribution.
+[ 1144.86s ->  1153.16s] This idea of regime stability is upstream of the P&L distribution, and this is where most of the work
+[ 1153.16s ->  1154.70s] is done.
+[ 1154.70s ->  1160.94s] This is a data science problem, and just like a data science problem, everybody wants to
+[ 1160.94s ->  1162.80s] work on the machine learning model.
+[ 1163.34s ->  1166.94s] Nobody wants to do the data cleaning, the feature engineering.
+[ 1167.40s ->  1169.84s] That isn't the fun part.
+[ 1169.98s ->  1176.48s] The fun part is training a model, evaluating its performance, and the same is true in trading.
+[ 1176.82s ->  1180.50s] Nobody wants to work on their regime model.
+[ 1180.70s ->  1182.42s] Nobody wants to ensure stability.
+[ 1182.42s ->  1186.52s] Everyone wants to backtest and look at the Sharpe ratio, right?
+[ 1186.62s ->  1188.12s] That's the fun part.
+[ 1188.28s ->  1192.10s] But in reality, this entire space is work.
+[ 1192.20s ->  1193.72s] It's not glamorous.
+[ 1194.06s ->  1199.74s] It's not just about backtesting, finding a high Sharpe, and combining all your Sharps together
+[ 1199.74s ->  1203.14s] for a Mega Alpha and then trading that Mega Alpha live.
+[ 1203.28s ->  1206.58s] Sure, that's the motto, and that's the goal.
+[ 1206.58s ->  1213.58s] But at the end of the day, it's still work, and you have to do the unfun stuff to get to
+[ 1213.58s ->  1214.32s] the fun stuff.
+[ 1214.50s ->  1220.48s] So when it comes to regime stability, again, this is upstream to the P&L distribution.
+[ 1220.86s ->  1226.58s] And if you don't have regime stability, you're not necessarily going to have P&L stability.
+[ 1226.58s ->  1234.82s] So what I have here is I have the exact same animation as before, but now instead of plotting
+[ 1234.82s ->  1239.32s] the P&L distributions, I'm going to plot the volatility distributions.
+[ 1239.32s ->  1245.88s] And what I want you to notice here is the high and the low volatility distributions are
+[ 1245.88s ->  1249.46s] necessarily going to be the most skewed.
+[ 1249.46s ->  1256.04s] And that's because as the market progresses from periods of low volatility to high volatility,
+[ 1256.36s ->  1260.12s] they're going to be subject to the most variation.
+[ 1260.12s ->  1266.80s] That is, the 33rd percentile in a very, very highly volatile period is going to contribute
+[ 1266.80s ->  1272.22s] data then to this low vol regime, which it otherwise would never see.
+[ 1272.36s ->  1275.36s] That's not really a low volatility, right?
+[ 1275.36s ->  1279.50s] And this comes directly from how we classified our regime model.
+[ 1279.64s ->  1282.74s] So it's not necessarily a great way to classify the model.
+[ 1282.84s ->  1288.46s] We're going to see the greatest degree of skewing in terms of the stability out of sample in
+[ 1288.46s ->  1292.74s] the low and the high vol distributions relative to the mid distribution.
+[ 1292.94s ->  1295.32s] So this is for 2020 to 2024.
+[ 1295.32s ->  1297.90s] I'm going to run it from 2024 to present now.
+[ 1297.90s ->  1307.05s] And what you'll find is the distribution for high and low are going to be dramatically different
+[ 1307.05s ->  1312.17s] from their backtest counterparts relative to the mid distribution.
+[ 1312.53s ->  1319.59s] And we can actually verify this by plotting the distributions over each other and using something
+[ 1319.59s ->  1326.45s] like the Kolbach-Libler divergence, a distribution distance measure to see exactly what the distance
+[ 1326.45s ->  1327.09s] is.
+[ 1327.09s ->  1334.55s] And if we take a look here, the mid volatility regime, just as we had hypothesized earlier,
+[ 1334.55s ->  1337.41s] has the lowest distribution distance.
+[ 1337.41s ->  1339.47s] It's the most stable.
+[ 1339.47s ->  1345.85s] And this makes sense economically for how we designed our regime model, right?
+[ 1345.87s ->  1352.01s] In terms of tressiles on a rolling basis versus if we take a look at the high and the low volatility
+[ 1352.01s ->  1355.61s] regime, it has the highest distribution distances.
+[ 1355.61s ->  1358.07s] And this makes sense, right?
+[ 1358.13s ->  1364.85s] As we progress to higher periods of volatility and lower periods of volatility, then the 66th
+[ 1364.85s ->  1371.75s] to the 99th percentile and the, you know, less than 33rd percentile are going to be the most
+[ 1371.75s ->  1377.53s] impacted on a rolling basis versus the mid vol regime, which is always going to have that
+[ 1377.53s ->  1384.37s] healthy balance of high and low volatility draws, which is exactly what you see here in both
+[ 1384.37s ->  1385.99s] sample periods.
+[ 1385.99s ->  1391.03s] This isn't just important for our regimes, but also for features and our features set, anything
+[ 1391.03s ->  1396.23s] that helps us classify an entry or exit signal, so on and so forth.
+[ 1396.23s ->  1404.13s] If those distributions upstream are unstable, then downstream our P&L distributions don't
+[ 1404.13s ->  1405.47s] have a shot.
+[ 1405.47s ->  1412.69s] I've had small hedge funds, 30 to $100 million come to me and we've discussed a bunch of their
+[ 1412.69s ->  1420.35s] different strategies, entry signals, P&L distributions, and sometimes they're not even aware of the stability
+[ 1420.35s ->  1425.31s] in their feature set that is inducing their profitability.
+[ 1425.31s ->  1432.65s] One of the first things that I ask them to do is take the entry signal or take the feature set producing
+[ 1432.65s ->  1439.99s] the entry signal and produce a PCA or produce a distribution, anything that I can see in a time-variant
+[ 1439.99s ->  1446.55s] capacity that shows me that there is stability in that variation across time.
+[ 1446.55s ->  1453.33s] And if that's true, that is why they're also going to have, then, stability in their P&L distributions
+[ 1453.33s ->  1455.55s] from one period to another.
+[ 1455.55s ->  1462.07s] And the most successful of the funds that I have discussed with have that stability, and
+[ 1462.07s ->  1464.15s] that, of course, is the overarching goal.
+[ 1464.27s ->  1469.29s] Now, you can use better ways to come up with regimes to help induce stability.
+[ 1469.49s ->  1471.59s] You can use Markov chains, hidden Markov models.
+[ 1471.69s ->  1474.19s] I've discussed those at length on this channel.
+[ 1474.19s ->  1481.85s] But one of the most common comments or criticisms that I get is that Markov chains, you know,
+[ 1481.91s ->  1482.69s] don't work.
+[ 1483.39s ->  1491.63s] And what that comes down to is a naive application of the Markov chain or the hidden Markov model.
+[ 1491.81s ->  1498.49s] If you produce a hidden Markov model for one period, and then you plot the distributions in
+[ 1498.49s ->  1505.41s] this capacity for each latent space that you've decided to use within that model, let's say you
+[ 1505.41s ->  1511.61s] use three states, and you do that across disjoint time periods, I'm willing to bet if it doesn't
+[ 1511.61s ->  1517.27s] work well, your distribution distances for each of those periods are going to be absolutely
+[ 1517.27s ->  1517.91s] massive.
+[ 1518.05s ->  1524.97s] And what that is, is the non-stationarity of the space, greatly misspecifying the parameterization
+[ 1524.97s ->  1531.43s] of your hidden Markov model, which is exactly why we turn to the literature and other approaches
+[ 1531.43s ->  1535.63s] to help us deal with this non-stationarity in practice.
+[ 1535.63s ->  1540.25s] Now, I have a video on neural networks for quantitative finance.
+[ 1540.87s ->  1546.69s] This is where I talk about the idea of learning a non-linear expectation that is effectively what
+[ 1546.69s ->  1548.99s] you are doing when you're training a machine learning model.
+[ 1548.99s ->  1556.75s] But the non-stationarity makes model parameter misspecification extremely likely across time.
+[ 1556.85s ->  1563.33s] What that means is you're not actually learning the correct expectation function, non-linear
+[ 1563.33s ->  1565.27s] expectation function.
+[ 1565.41s ->  1568.07s] Really, like I said, it's conditional.
+[ 1568.27s ->  1574.19s] You should be learning a conditional non-linear expectation function that could be conditional
+[ 1574.19s ->  1576.89s] on the regimes like we've seen here for volatility.
+[ 1576.89s ->  1579.55s] It could be based on a whole bunch of different things.
+[ 1579.77s ->  1584.15s] And, you know, machine learning does this effectively in an automatic way.
+[ 1584.41s ->  1589.81s] So there is plenty we can do in the literature to deal with this non-stationarity, to learn
+[ 1589.81s ->  1593.43s] more robust parameters, to build better models.
+[ 1593.63s ->  1601.41s] My old professors at Columbia for stochastics and time series, I greatly enjoyed those classes,
+[ 1601.55s ->  1603.27s] though they were a tremendous amount of work.
+[ 1603.63s ->  1606.17s] Just put out a great paper on this matter.
+[ 1606.17s ->  1612.75s] However, if there is interest in this topic, that is this modeling of, you know, non-stationary
+[ 1612.75s ->  1618.29s] dynamics using machine learning, I would love to do a video on the topic if there is interest.
+[ 1618.43s ->  1621.83s] I think it would be a cool extension to this video.
+[ 1622.05s ->  1622.87s] Too long didn't watch.
+[ 1622.93s ->  1624.11s] Here is your executive summary.
+[ 1624.27s ->  1629.01s] Asking if a trader is profitable is like asking if their portfolio did well last year.
+[ 1629.35s ->  1631.77s] It isn't asking the right question.
+[ 1631.77s ->  1637.63s] A trader's edge goes one step further, but the real trader is profitable in the long term.
+[ 1637.79s ->  1644.13s] Understand the time variant nature of their edge, whether in a discretionary or a quantitative
+[ 1644.13s ->  1644.93s] capacity.
+[ 1645.09s ->  1649.11s] They are profiting from the same statistical mechanism.
+[ 1649.11s ->  1653.23s] That is the stability in the underlying P&L distributions.
+[ 1653.41s ->  1657.45s] Now, distributions are not necessarily stable out of the box.
+[ 1657.45s ->  1663.03s] The space is highly non-stationary, which is why machine learning algorithms, when naively
+[ 1663.03s ->  1668.53s] applied, may perform well in sample, but extrapolate terribly.
+[ 1669.11s ->  1674.65s] This is exactly why we then look for structure wherever possible in an economic or statistical
+[ 1674.65s ->  1681.15s] capacity by using different regimes, volatility, volume, sentiment, so on and so forth.
+[ 1681.15s ->  1688.83s] If we lack stability in our specification of regimes, then we won't necessarily have downstream
+[ 1688.83s ->  1690.55s] stability either.
+[ 1690.93s ->  1693.69s] A difficult problem and a data science problem.
+[ 1693.83s ->  1696.47s] This is where most of the work is done.
+[ 1696.61s ->  1702.25s] Everyone wants to train a model or backtest their strategy, but the real work that makes
+[ 1702.25s ->  1708.79s] this stuff functional in practice is done in the feature engineering and the building out
+[ 1708.79s ->  1713.97s] of the strategy in an economic or statistically meaningful way.
+[ 1714.25s ->  1722.05s] Should we find stability in our P&L distribution in an out-of-sample or walk-forward capacity, then
+[ 1722.05s ->  1729.23s] we have a tradable strategy where we are not placing a trade blindly, but rather have an
+[ 1729.23s ->  1736.23s] actual idea of what data-generating distribution we are drawing from.
+[ 1736.23s ->  1740.07s] Some future topics, technical videos, and other discussions to look forward to.
+[ 1740.15s ->  1743.17s] I'd like to do a video on projects that made me a quant.
+[ 1743.65s ->  1749.63s] These are projects that I had on my first quant resume that got me in the door at a number
+[ 1749.63s ->  1750.73s] of firms.
+[ 1751.19s ->  1754.17s] If there's interest in a video like that, I would love to do one.
+[ 1754.47s ->  1758.87s] I really want to talk about non-Markovian models, fractional Brownian motion, Volterra
+[ 1758.87s ->  1763.41s] processes this idea of a covariance kernel impacting the increments.
+[ 1763.75s ->  1764.91s] A very niche topic.
+[ 1764.91s ->  1765.91s] I hope there's interest.
+[ 1766.03s ->  1768.27s] I'd love to do a video on that.
+[ 1768.65s ->  1774.15s] I would also like to discuss Poisson processes more in depth, this idea of waiting times.
+[ 1774.55s ->  1781.29s] I'd like to maybe even start a series of top three uses of different mathematical tools
+[ 1781.29s ->  1787.95s] and different subjects in quant finance, like maybe linear algebra, maybe calculus, and kind
+[ 1787.95s ->  1791.95s] of just go through my top uses of them for different problems.
+[ 1792.69s ->  1801.43s] I'd like to talk about the idea of risk-neutral pricing, the idea of the P versus the Q measure,
+[ 1802.15s ->  1806.31s] approximating pricing functionals using neural networks, reinforcement learning for delta hedging,
+[ 1806.41s ->  1811.05s] rough path theory, the SigVol model calibration and pricing, again, more niche topics.
+[ 1811.05s ->  1813.87s] Hopefully, there's some interest in those.
+[ 1813.87s ->  1820.53s] You know, I'd love to selfishly create videos on all of those topics, but it's going to come
+[ 1820.53s ->  1821.23s] down to interest.
+[ 1821.37s ->  1824.95s] So let me know in the comments below what you'd like to see next.
+[ 1825.11s ->  1828.95s] And, you know, we just crushed it with the latest quant build.
+[ 1828.95s ->  1835.29s] We built that live Markov regime switching model using interactive brokers and Python.
+[ 1835.45s ->  1839.31s] I'll leave a link in the description below to get started with interactive brokers if
+[ 1839.31s ->  1839.81s] you'd like.
+[ 1840.23s ->  1845.11s] I have this idea now for a live financial news sentiment feed and trading system.
+[ 1845.61s ->  1849.09s] If there's interest in a video like that or a quant build like that, let me know.
+[ 1849.15s ->  1850.07s] I think that would be awesome.
+[ 1850.19s ->  1856.07s] We can use interactive brokers to get live news data and then run a sentiment model on that
+[ 1856.07s ->  1860.03s] news data and then use it to inform our trading decisions.
+[ 1860.51s ->  1864.19s] And that's going to do it for this video on profitable versus tradable strategies.
+[ 1864.33s ->  1867.13s] Why most strategies fail live.
+[ 1867.25s ->  1868.05s] I hope you enjoyed.
+[ 1868.53s ->  1869.61s] I hope you learned something.
+[ 1869.91s ->  1875.53s] I have the flu right now, so I apologize for my voice, but nothing will keep me from teaching
+[ 1875.53s ->  1878.57s] quantitative finance to you guys.
+[ 1878.57s ->  1886.09s] That being said, I want to thank you so much for watching and I will see you in the next
+[ 1886.09s ->  1886.65s] video.

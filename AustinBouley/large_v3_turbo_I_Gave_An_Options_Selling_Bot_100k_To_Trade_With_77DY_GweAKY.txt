@@ -1,0 +1,80 @@
+[    0.00s ->     4.94s] Hey guys, I just created an options selling bot and I'm giving it $100,000 of my own money to
+[    4.94s ->     8.16s] trade with and I'm so excited to share the results because they're quite interesting.
+[    8.54s ->    11.86s] Anyways, we all know that options selling is amazing, consistent, and awesome. So I thought,
+[   12.00s ->    16.00s] what if we could finally automate it? And so that's exactly what I did and let's dive in
+[   16.00s ->    20.56s] and see what happened. For those who don't know what options selling is, let me explain quickly
+[   20.56s ->    24.96s] so that the rest of this video will make sense. Options is essentially betting that a stock will
+[   24.96s ->    31.08s] do something. So you can see here, this is the S&P 500. If I go down here to this level and bet
+[   31.08s ->    36.82s] that the stock stays above here, then I will receive money. I'm selling an option which gives
+[   36.82s ->    43.50s] me money and I get to keep all this money as long as the stock follows my bet or it stays above this
+[   43.50s ->    48.34s] level. That means if the stock goes up, I make money. If the stock stays flat, I make money. If
+[   48.34s ->    54.60s] the stock goes down but stays above my level, I'll make money. I'll lose money when it breaks my level
+[   54.60s ->    59.36s] and this is where I start to have those losses and then open to assignment risk. So anyways,
+[   59.48s ->    64.42s] as an option seller, I am betting that the stock will stay above a certain level and that's exactly
+[   64.42s ->    69.72s] what I did for this option selling bot. I picked a strategy where as long as the stock stays above
+[   69.72s ->    76.38s] a level that the auto trader picks based on what I tell the bot to do, then it will do it. So that's
+[   76.38s ->    81.18s] what option selling is and that's the strategy that I picked to automate. So let's look, a quick look
+[   81.18s ->    85.62s] at the performance and I'll show you how I set this up. So if we look into the performance here, let me
+[   85.62s ->    91.24s] make my face smaller. You can see here through the month of April, you can see here I collected
+[   91.24s ->    97.86s] $9,000. I made $9,000 is what I received in credit. I ended up keeping about 80% of that. So I made
+[   97.86s ->   103.96s] about $7,000 in April from this option spot by doing nothing. You can see all the trade orders here
+[  103.96s ->   109.04s] and what it did. Again, I'll walk through each one step by step here in a second. But if we even move
+[  111.18s ->   114.96s] out what it did the next month, again, we're not all the way through June yet. So I'm not going to
+[  114.96s ->   118.60s] show you the results of that, but maybe in a future video. If we show you through May here,
+[  118.64s ->   125.88s] you can see here the bot collected credit made me money of $7,900. And again, I made about 80%
+[  125.88s ->   133.84s] of that. So I made roughly $5,000 from the option spot in May by doing absolutely nothing. And so that's
+[  133.84s ->   139.14s] how awesome this option spot is, is it actually working. So let's dive into what it works. Okay. Now guys,
+[  139.14s ->   144.62s] this is the option spot. Again, I've been building it for seven months now. And so again, it tends to
+[  144.62s ->   150.24s] do well because of how long I built it. And this bot does option selling. Guys, option selling in and
+[  150.24s ->   154.58s] of itself is a very consistent strategy. So you automate it. It makes it even better. So let me show
+[  154.58s ->   159.06s] you exactly how I did this. This is the auto bot that I set up and I've been using for about three
+[  159.06s ->   166.64s] months now. You can see here that's made me about $15,700. You can see here, I currently have $6,000
+[  166.64s ->   170.30s] open. You can see my performance graph and everything like that. And you can see here
+[  170.30s ->   176.84s] that I'm using roughly $40,000 of buying power for this bot. You can see here all the current
+[  176.84s ->   186.12s] trades I have open. This one's sitting at $1,000 profit at $700, $800, $800, $500, $900, $800, $568. Again,
+[  186.18s ->   191.90s] this trade just entered last week. And then again, if we look at all my close trades so far, you can see
+[  191.90s ->   199.90s] here that they're doing pretty well. My close trade here, $1,000, $1,300, $1,400, $1,300, $1,300, $1,300, $1,000.
+[  200.02s ->   204.18s] Again, these are all using the 112 strategy. Like I said, that's an option selling approach.
+[  204.32s ->   209.42s] This is a very consistent strategy. So again, this is the bot and it automates the entire process. Now
+[  209.42s ->   213.24s] you may like Austin, okay, but you're a coder. You built all these lines of code. How did you do it?
+[  213.42s ->   217.92s] Well, let me show you how easy it is to create this bot so that I could let it run. I'm also doing the
+[  217.92s ->   223.89s] same thing on CL and it made about $1,000 there too. So again, you just connect your TastyTrade
+[  223.89s ->   229.39s] account, which is your broker account for your options. And then again, you can create an auto
+[  229.39s ->   234.31s] trader or pick one that I've pre-built in. So again, if you want the one that I'm using, just click here
+[  234.31s ->   238.55s] and you can pre-use it. But anyways, let me show you how to do this. So let's say you're going to
+[  238.55s ->   242.73s] create an auto trader. Let's say you're an option seller and you want to sell puts. So again, you can
+[  242.73s ->   246.25s] pick from different strategies like sell puts, one-on-ones, one-on-twos, selling strangles, selling calls,
+[  246.25s ->   250.01s] all these different strategies that are very consistent in and of themselves. Now we get to
+[  250.01s ->   253.69s] automate them. So again, if you do a one-on-twos strategy, you can do that as well. But let's
+[  253.69s ->   257.99s] say you're going to sell puts for ease of use. So sell puts. And now you get to pick what you want
+[  257.99s ->   263.73s] to do it on. Guys, this bot allows you to sell options on futures, on indexes like SPX and on ETS
+[  263.73s ->   267.65s] and stocks. That's how awesome it is. So let's say you just want to trade SPY and you can do it just
+[  267.65s ->   274.27s] like this. So SPY, 45 days until expiration. This is typical in about a $10. This is a very safe way to
+[  274.27s ->   279.01s] trade. You can do once a week, multiple times a week, whatever it is you want. Let's just say
+[  279.01s ->   284.01s] once a week on Wednesdays is what I want to do. Again, there's so many advanced entry rules like
+[  284.01s ->   287.25s] enter on red day and things like that to increase credit, but I'm not even going to do that right
+[  287.25s ->   291.89s] now. Take profits, stop loss, and early management. You can sell all these things to help you protect
+[  291.89s ->   297.81s] and safeguard your account. So again, let's say 50% take profit. So let's say I collect $100 of credit.
+[  297.91s ->   303.25s] Once I have a net realized profit of $50, which is 50% of that, then it'll close out the trade.
+[  303.25s ->   309.01s] And I can also put in stop loss amount, let's just say 200%. So if I make 50%, I exit for a winner.
+[  309.27s ->   315.09s] If I lose 200, I exit for a loss. And that's pretty much how simple that is. Next, I define
+[  315.09s ->   320.19s] what my buying power allocation is. So how much money I want the bot to trade with.
+[  321.03s ->   325.81s] Let's just say $10,000 is a good test, right? So I can do 10,000, 5,000, whatever it is I want.
+[  326.09s ->   331.99s] And then I can see here, you can see here my buying power per trade is going to be roughly 6,500.
+[  331.99s ->   339.33s] I'm going to make roughly $500 per trade. Even factoring in my, that factors in my take profit.
+[  339.43s ->   344.13s] So about a 50% take profit, I'm still going to make about 500. And then based on my 200% stop loss,
+[  344.21s ->   348.31s] this is the risk per trade. So again, this is how you set up the bot. If you're like,
+[  348.45s ->   352.39s] I don't get text, I don't get what you just did. It explains in clear English what it just did.
+[  352.45s ->   357.33s] This auto trader is instructed to automate a 45 DTE selling bot on SPY once a week on Wednesdays.
+[  357.33s ->   360.95s] So you're going to, you're going to take profit at 50%, stop off at 200, and we'll only trade with
+[  360.95s ->   365.17s] 10,000. So that's how easy it is to, to set up one of these bots. Again, I'm not going to save it
+[  365.17s ->   368.99s] because I don't need it. But again, just like that, my one, one, two bot has made me literally
+[  368.99s ->   374.31s] almost 5,000 a month for the last three months and in a row. And not only that, but literally over
+[  374.31s ->   378.83s] a hundred people are on this platform already. And everyone who's using one, one, two are freaking
+[  378.83s ->   383.53s] killing it. So if you guys are interested in checking out this options bot and how I've done it and how
+[  383.53s ->   386.97s] you can do it for yourself to connect your account and finally automate your office and selling
+[  386.97s ->   392.19s] strategies, then click the button down, down below to get started. It's optionsautotrader.com
+[  392.19s ->   396.81s] that you can get started. All right guys, I hope to see you inside. I am the founder and CEO of this
+[  396.81s ->   402.49s] new, uh, of this new, new, uh, new, new company. I'm so excited to be releasing it. So I hope you
+[  402.49s ->   406.65s] join. Welcome in. If you have any questions, let me know. All right guys, see you on the inside
+[  406.65s ->   408.81s] optionsautotrader.com slash start. See you there.

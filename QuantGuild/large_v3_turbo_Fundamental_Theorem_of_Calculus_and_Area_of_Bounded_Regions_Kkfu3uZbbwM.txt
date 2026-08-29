@@ -1,0 +1,133 @@
+[    2.46s ->     6.92s] Welcome back. Today, we're going to continue our journey to Quant5 on QuantGuild.com.
+[    7.06s ->    11.70s] I'm going to go ahead and get started here to get straight to the dashboard, already logged in.
+[   11.86s ->    15.78s] In our previous episode, we answered a bunch of probability questions and we're able to rank up
+[   15.78s ->    20.94s] to 53 in probability. Today, we're going to answer some math questions and hopefully increase our
+[   20.94s ->    26.02s] math rank. I'm going to go ahead and click the practice button here to get started. The first
+[   26.02s ->    36.20s] question, let capital F of x equal to the integral of 0 to x squared of sine of t dt. Find f prime of
+[   36.20s ->    41.66s] x using the fundamental theorem of calculus and the chain rule. It's a great question. We'll take
+[   41.66s ->    46.08s] this over to the iPad and solve it together. This is quite a fun question to start with. We are given
+[   46.08s ->    56.58s] that capital F of x is equal to the integral from 0 to x squared of sine of t dt. And we want to find
+[   56.58s ->    65.26s] the derivative of this function using the chain rule and the fundamental theorem of calculus.
+[   66.04s ->    72.66s] Well, let's recall the fundamental theorem of calculus. Fundamental theorem of calculus suggests
+[   72.66s ->    84.04s] the integral from a to b of f of x dx is equal to capital F of b minus capital F of a, where this capital F
+[   84.04s ->    97.89s] is referred to as the antiderivative or the integral of little f of x. That is our integrand.
+[   97.89s ->   105.61s] How can we use this to solve the question? How can we use this to solve the question? What is the
+[  105.61s ->   116.09s] derivative of the given function of an integral? Well, this is of the same form of the function
+[  116.09s ->   124.28s] that we are given. The fundamental theorem of calculus gives us an integral and relates it to
+[  124.28s ->   132.37s] the antiderivative of the integrand. What is the upside of this? Well, we're not looking for the
+[  132.37s ->   136.87s] solution to this integral, really. We're not at all. We're not looking to evaluate this function.
+[  137.25s ->   142.95s] We are looking for the derivative of that function. The derivative of that function. So,
+[  143.31s ->   150.85s] effectively, the left-hand side of the fundamental theorem of calculus here is the capital F of x that
+[  150.85s ->   157.58s] we are given in the problem statement. So, what does that mean? Well, let's just go ahead and take the
+[  157.58s ->   168.53s] derivative of both sides of this equation. If we do this, we will get d dx, the integral from a to b,
+[  169.43s ->   182.35s] f of x dx is equal to d dx, f of b minus f of a. And what you'll notice here is if we take the derivative
+[  182.35s ->   190.62s] of the antiderivative, what are we going to get? We're going to get the integrand. We're going to
+[  190.62s ->   195.76s] get the integrand. So, this is going to be equal to, well, if we differentiate, let's just remember
+[  195.76s ->   201.92s] this relationship here, if we differentiate the antiderivative, we're going to get the original
+[  201.92s ->   208.74s] function. And you better believe if we integrate that little f, we are going to get this capital F.
+[  208.74s ->   218.64s] That is the relationship here. So, when I apply this derivative, what am I left with? I'm simply
+[  218.64s ->   228.42s] just left with little f of x. So, this is going to be equal to little f of b minus little f of a.
+[  228.64s ->   237.92s] But are we done? Is this it? Well, this is it if we have a scalar bound of integration,
+[  237.92s ->   246.01s] but we don't. We don't. We have x squared in the upper limit of integration. So, we must also
+[  246.01s ->   253.11s] take the derivative of that and multiply it to the upper limit. That is this f of b.
+[  253.73s ->   258.41s] So, effectively, let's apply the fundamental theorem of calculus to this problem.
+[  259.09s ->   267.78s] And we will also use the chain rule with the upper limit. We know that this relationship is true.
+[  267.78s ->   277.32s] We just showed this is true. So, we are given that f of x is equal to the integral from 0 to x squared
+[  277.32s ->   291.11s] of sine of t dt. And we are looking for f prime of x, which is equal to d over dx, the integral from 0
+[  291.11s ->   300.13s] to x squared sine of t dt. But what does this look like? This is exactly what we showed here from the
+[  300.13s ->   307.59s] fundamental theorem of calculus. In this case, b is equal to x squared and a is equal to 0.
+[  308.76s ->   318.34s] Knowing this, we can jump straight to this result. f of b minus f of a. So, this is equivalent to
+[  318.34s ->   329.91s] little f of x squared minus little f of 0. But, but, but, but, this is a variable limit.
+[  329.91s ->   340.20s] And we must apply the chain rule and differentiate that as well. So, this is going to be f of x squared
+[  340.20s ->   353.30s] times the derivative of x squared. So, this is quite easy to evaluate now because we know what
+[  353.30s ->   359.50s] little f of x is. Little f of x is our integrand. That is, we have little f of x is equal to sine of
+[  359.50s ->   367.84s] x here. This is probably abusive notation with the x's, but please bear with me. Come on down here.
+[  367.84s ->   376.38s] This is going to be equivalent to sine of x squared. And the derivative of x squared is simply going to
+[  376.38s ->   385.24s] be 2x minus sine of 0. And I sure hope you remember your precalculus that that is in fact 0. Leaving the
+[  385.24s ->   395.96s] answer to be 2x sine of x squared. And that would be capital f prime of x. Using the chain rule and
+[  395.96s ->   401.04s] the fundamental theorem of calculus. Far fewer things more satisfying than getting a question
+[  401.04s ->   408.82s] correct on Quant Guild. 2x sine x squared. Boom. We are in fact correct. You can see the explanation
+[  408.82s ->   413.38s] down here. That is exactly how we went about solving it. Using the fundamental theorem of calculus
+[  413.38s ->   421.34s] and the chain rule. And we can move on to the next question. Find the area of the region bounded by y
+[  421.34s ->   428.28s] equals x squared and y equals 4. This is a great question and it starts to tee us up for more advanced
+[  428.28s ->   432.78s] probability questions when we start looking at different types of probability density functions
+[  432.78s ->   437.16s] and joint density functions. So, let's head on over to the iPad and solve this question together.
+[  437.16s ->   443.52s] This is a pretty cool question. I've drawn a graph of the two functions here y equals x squared and y
+[  443.52s ->   452.84s] equals 4. And as we can see they will intersect at two points and they will create a shaded region A.
+[  452.98s ->   457.74s] And that's what we're looking for. We're looking for the area of that shaded region. The first thing
+[  457.74s ->   464.38s] we need to figure out is where do these functions intersect. To do that we're going to set the functions
+[  464.38s ->   471.52s] equal to each other and see at what points do they intersect. Now, these functions are quite trivial
+[  471.52s ->   476.26s] so you could probably just see that if you plug in plus or minus 2 to x squared you'll end up with
+[  476.26s ->   483.26s] 4 and that's where they will intersect. But in general, how would we solve this if they weren't
+[  483.26s ->   489.78s] trivial? We just set these two equations equal to each other. So, I will say that x squared is equal
+[  489.78s ->   496.76s] to 4. This would imply if I solve for x, x is equal to plus or minus the square root of 4 which is equal
+[  496.76s ->   505.61s] to plus or minus 2 and that is in fact where these two functions intersect at plus or minus 2. So, how do
+[  505.61s ->   514.63s] we find the area now? The area of the shaded region? Well, now we can integrate. Now we can integrate.
+[  514.63s ->   521.47s] So, what we're going to do to find the area of the shaded region is we are going to say that a is equal
+[  521.47s ->   526.97s] to the integral and where are we going to integrate from? Well, we're going to integrate from negative 2
+[  526.97s ->   533.31s] all the way to positive 2. So, we're going to integrate from negative 2 all the way to positive 2
+[  533.31s ->   540.41s] and we want to take the absolute value of the difference in the functions. So, I'm going to say
+[  540.41s ->   548.99s] the function 4 minus x squared and these are just the functions that are effectively creating the
+[  548.99s ->   554.79s] bounds for our integration here. So, remember we don't have variable or functional bounds of
+[  554.79s ->   560.39s] integration. We are integrating from negative 2 to 2 but the function that we are integrating
+[  560.39s ->   567.23s] that is what is variable, right? And what makes it variable is the fact that we are fixing
+[  567.23s ->   575.21s] this y equals 4 and we are going to be taking the difference of x squared as we progress from
+[  575.21s ->   581.87s] negative 2 to positive 2. So, in other words, we start integrating from negative 2 and we know that
+[  581.87s ->   588.11s] the first function creating the shaded region here is y equals 4 and then the bottom function here
+[  588.11s ->   594.49s] is going to be x squared. So, that difference there is going to correspond to that area and as we
+[  594.49s ->   601.00s] integrate across the entire region, we are going to accumulate all of this area. So, that is how we
+[  601.00s ->   606.78s] can determine the bounds, I'm sorry, not the bounds of integration but the order of the functions that
+[  606.78s ->   617.00s] we are going to be subtracting. So, we have y equals 4 is greater than y equals x squared across this
+[  617.00s ->   625.20s] entire region negative 2 to 2. So, what that means is we can drop then the absolute value negative 2 to 2
+[  625.20s ->   634.74s] of 4 minus x squared dx and then if we go ahead and we just integrate if we go ahead and we just
+[  634.74s ->   643.06s] integrate this function we are going to get 4x evaluated from negative 2 to 2 minus and then we're
+[  643.06s ->   654.61s] going to have x cubed divided by 3 from negative 2 to 2 and then if we plug in 2 and negative 2 we get 4
+[  654.61s ->   664.53s] 4 times 2 minus 4 times negative 2 minus minus 2 cubed which is going to be 8 over 3 and this will be
+[  665.09s ->   679.70s] minus a minus 8 over 3. So, then what is this equal to? This is going to be equal to 8 plus 8 minus
+[  679.70s ->   692.90s] 8 over 3 plus 8 over 3. This will be equal to 16 minus 16 over 3. So, we got to put this in terms of
+[  692.90s ->   707.49s] 3 now. So, if we multiply 16 times 3 then we get 48 over 3 minus 16 over 3 and this is going to be equal to
+[  707.49s ->   717.09s] 32 divided by 32 divided by 3 in whatever units we are dealing with and that is how we can find the area
+[  717.73s ->   726.45s] of this shaded region here. So, to sum up the steps we figure out the functions that are creating this
+[  726.45s ->   731.97s] shaded region find the points of intersection. So, the functions are given to us explicitly y equals x squared and
+[  731.97s ->   738.77s] y equals 4. We find the points of intersection then we create this integral and we figure out the region
+[  738.77s ->   743.97s] that we are integrating and the bounds of integration here are fixed. We're going from negative 2 to 2
+[  743.97s ->   750.85s] because that encapsulates the entire shaded region on the x dimension. The y dimension however is variable
+[  750.85s ->   759.57s] because the y gap changes as we move across this x dimension. To account for that we take the difference in
+[  759.57s ->   766.29s] the y equals 4 and the y equals x squared and that difference accounts for the accumulation of area
+[  766.29s ->   772.13s] across that entire space. That's what we've done here. That's why we drop the absolute value and that's
+[  772.13s ->   780.37s] how we end up with 32 over 3 units. Back on quant guild we can see 32 over 3 units. I did forget the
+[  780.37s ->   785.81s] square on the iPad. I do apologize but fortunately I can get away with it here. We'll submit this answer.
+[  785.81s ->   793.49s] We will in fact get it correct and we do get the exact same explanation that we got when we solved
+[  793.49s ->   799.09s] it on the iPad. Here, very interestingly, it does reference symmetry. That's why our explanations are
+[  799.09s ->   804.85s] the best. I'll show you all the shortcuts tips and tricks and I'm here to walk through each of these
+[  804.85s ->   812.54s] questions with you. We're going to move on to the next one. A circular oil spill expands such that its
+[  812.54s ->   819.42s] radius increases at a constant rate of 0.5 m per minute. How fast is the area increasing when the
+[  819.42s ->   825.90s] radius is 10 meters? Let's head on over to the iPad and solve this one together. If we added some
+[  825.90s ->   831.82s] randomness, maybe impose some sort of joint density on this problem, it could be a great quant interview
+[  831.82s ->   837.02s] question. But for now, let's just go about solving it. I'll draw a little picture. Here's my perfectly
+[  837.02s ->   846.30s] circular oil spill. Changing at a rate of dr dt is equal to 0.5 m over minutes. So this is the rate in
+[  846.30s ->   856.14s] which the radius is going to be expanding and we are looking at the rate of change of the area when the
+[  856.14s ->   864.70s] r is equal to 10 m when the radius is equal to 10 m. So we know it's going to be expanding at a certain
+[  864.70s ->   874.30s] rate and we are asking a question about what is the change in the area. What is the rate of increase
+[  875.02s ->   884.13s] in the area at r is equal to 10 m? Well, what is the area? We have a perfectly circular oil spill,
+[  884.13s ->   894.40s] so hopefully it's apparent that a is in fact equal to pi r squared, simple area of a circle. We're going
+[  894.40s ->   903.68s] to differentiate this with respect to t. So d of a of d of t is equal to pi. And then if we take the
+[  903.68s ->   909.84s] derivative, we're going to get 2r. But of course, we're differentiating with respect to t. So we're
+[  909.84s ->   921.52s] left with this dr dt. Now we can just substitute in all of the information. So we know that r is equal to
+[  921.52s ->   929.92s] 10. That is our point of interest. We know the rate of change. This is equal to 0.5 m per minute.
+[  931.68s ->   947.79s] So that would imply that would imply that we get d a dt is equal to pi 2 times 10 times 0.5. And of course,
+[  947.79s ->   957.71s] I'm going to leave the units here, 10 m 0.5 m per minute. And this will leave us with 0.5 times 10 is
+[  957.71s ->   969.07s] 5 times 2 is 10, 10 pi m squared divided by minutes divided by minutes. You get the gist. This will be
+[  969.07s ->   977.15s] the rate of increase of the area when r is in fact equal to 10 m. Let's head on back over to the
+[  977.15s ->   982.99s] platform, see if that's an answer choice. And aha, we get answer choice B. I'm sorry, answer choice C.
+[  982.99s ->   991.47s] That was almost a problem. 10 pi m squared min submit. We do in fact get this one correct here.
+[  991.47s ->   995.55s] We get the explanation, which is exactly how we went about solving the problem.
+[  995.55s ->  1000.51s] Let's head on back over to our dashboard and we have increased our math rank by one point.
+[ 1001.23s ->  1007.23s] We are on our way to quant five on our way to quant five. I hope you enjoyed this video as we
+[ 1007.23s ->  1012.43s] continue our journey to quant five on quant guild.com mastering our quantitative skills.
+[ 1012.43s ->  1016.35s] In our next episode, we are going to be answering a whole bunch of finance questions,
+[ 1016.35s ->  1021.31s] a whole bunch of finance questions, and hopefully we can rank up our finance skills.
+[ 1021.31s ->  1026.11s] If we take a look at our performance overview, we are still at a hundred percent accuracy. I'm hoping
+[ 1026.11s ->  1030.03s] that we can keep this up the whole way along our journey, but some of these questions are going
+[ 1030.03s ->  1034.27s] to get quite challenging. We will see what we can do. We will see what we can do. Thank you so much
+[ 1034.27s ->  1047.23s] for watching and I will see you in the next video.

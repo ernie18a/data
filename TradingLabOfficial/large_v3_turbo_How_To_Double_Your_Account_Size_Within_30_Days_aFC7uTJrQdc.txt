@@ -1,0 +1,104 @@
+[    0.12s ->     4.12s] I spent the past few days testing this one specific strategy I found.
+[    4.12s ->     5.12s] The results?
+[    5.12s ->     6.32s] Well, they were pretty good.
+[    6.32s ->    10.88s] So good that you would double your account size within 30 days of trading with this strategy.
+[   10.88s ->    14.92s] And to prove that point, I'm going to show you the exact indicators this strategy uses,
+[   14.92s ->    18.28s] how to know when to enter a trade, how to know when to exit a trade, and at the end
+[   18.28s ->    22.20s] of the video, I'll tell you how this strategy can be improved and show you how this strategy
+[   22.20s ->    25.44s] performed when tested with 100 different trades.
+[   25.44s ->    26.44s] Let's get straight into it.
+[   26.44s ->    28.44s] To first get started, we have to hop on TradingView.
+[   28.44s ->    30.92s] If you don't have it already, I'll leave a link in the description.
+[   30.92s ->    33.08s] First, you're going to want to go to the indicators tab.
+[   33.08s ->    36.10s] Type in SSL channel and add this one right here.
+[   36.10s ->    39.06s] The second indicator is the Chaiken money flow indicator.
+[   39.06s ->    42.64s] Then the third and final indicator is a volatility oscillator.
+[   42.64s ->    45.88s] So now that we have all the indicators added, let's change the settings a bit.
+[   45.88s ->    50.48s] Go to the SSL channel indicator first, change both the periods from 10 to 20.
+[   50.48s ->    54.32s] Then I'm also going to change the colors to blue and yellow so they're easier to see
+[   54.32s ->    55.32s] on the chart.
+[   55.32s ->    56.32s] Was it blue?
+[   56.32s ->    57.32s] Yellow.
+[   57.32s ->    59.80s] Next, go to the settings of the Chaiken money flow indicator.
+[   59.80s ->    61.80s] You can keep these inputs at default.
+[   61.80s ->    64.76s] Just go to the style tab, change it from line to area.
+[   64.76s ->    68.44s] Then I'm also going to change the zero line from a dotted line to a solid line.
+[   68.44s ->    72.28s] Then finally, you can keep the settings for the volatility oscillator at default.
+[   72.28s ->    76.20s] Then just like that, we've optimized our indicator settings for this strategy.
+[   76.20s ->    79.24s] Now, let's go into detail on when to actually enter a trade.
+[   79.24s ->    81.80s] But first, I want to show you this really cool site I found.
+[   81.80s ->    83.64s] It's called Trader Edge.
+[   83.64s ->    88.12s] It's a really cool site if you want to manually backtest trading strategies and see the results
+[   88.12s ->    88.68s] instantly.
+[   88.68s ->    91.32s] For example, let's say we want to start with a thousand dollars.
+[   91.32s ->    93.72s] You can change the increments to dollars or percents.
+[   93.72s ->    97.24s] Then what you would do is go through each and every trade when the indicators give an
+[   97.24s ->   101.32s] entry signal and record if it was a winning trade or a losing trade on the website.
+[  101.32s ->   104.60s] Once you have the amount of trades you're happy with, you can check out some really cool
+[  104.60s ->   109.32s] statistics like the P&L, the win rate, most consecutive wins, most consecutive losses,
+[  109.32s ->   111.24s] and so many other neat statistics.
+[  111.24s ->   114.76s] If you find a good strategy, you can even save it to your strategy library.
+[  114.76s ->   119.80s] They are even running a really cool promo where the first 100 people to sign up for a free trial
+[  119.80s ->   126.04s] will get a free backtesting plan and a full course which is recorded at $350 of value.
+[  126.04s ->   130.76s] Plus, it's a free 7 day trial, so if you don't like the site, you can cancel any time.
+[  130.76s ->   133.08s] If you're interested, I'll leave a link in the description.
+[  133.08s ->   134.60s] Now let's get back to the strategy.
+[  134.60s ->   139.40s] So the whole idea behind the strategy is to get us in the best possible price in a confirmed
+[  139.40s ->   144.04s] uptrend, while trying to stay out of trades when the market is consolidating and moving sideways.
+[  144.04s ->   146.52s] So let's go over when to actually enter a trade.
+[  146.52s ->   151.16s] Then after that, I'll tell you how you can possibly improve this strategy to make it even better.
+[  151.16s ->   155.48s] First, you want a bullish cross on the SSL channel, which means you want the yellow line
+[  155.48s ->   157.72s] crossing above the blue line, like it is here.
+[  157.72s ->   161.80s] Next, you want the chalk and money flow indicator to be above the zero line, like this.
+[  161.80s ->   166.44s] Then finally, you want the volatility oscillator's white line to be above the upper band.
+[  166.44s ->   168.68s] If all of these rules are met, you enter a trade.
+[  168.68s ->   171.80s] So you're going to want to set your stop loss at a recent swing low.
+[  171.80s ->   174.68s] So one of the reasons why this strategy is so profitable,
+[  174.68s ->   177.56s] is because we let our winners ride in trending markets.
+[  179.32s ->   185.19s] A meme by this is, we will sell once the SSL channel gives us a bearish crossover,
+[  185.19s ->   187.67s] meaning the yellow line crosses below the blue line.
+[  187.67s ->   190.63s] So we aren't necessarily going to have an exact take profit.
+[  190.63s ->   193.99s] We're simply going to exit the trade when the market starts losing momentum.
+[  193.99s ->   195.67s] So let's see what happens with this trade.
+[  195.67s ->   198.15s] We have entered our trade and have our stop loss set up.
+[  198.15s ->   202.71s] Price goes up for a while, and then we see a bearish cross in the SSL channel right here.
+[  202.71s ->   204.15s] So we exit our position.
+[  204.15s ->   206.39s] Let's quickly go over how to do a short trade,
+[  206.39s ->   208.55s] then I'll tell you how this strategy can be improved,
+[  208.55s ->   211.03s] so we can raise the win rate just a little bit more.
+[  211.03s ->   213.99s] First, you want a bearish cross of the SSL channel,
+[  213.99s ->   216.31s] so the blue line crossing above the yellow line.
+[  216.31s ->   219.59s] Next, you want the chalk and money flow to be below the zero line.
+[  219.59s ->   224.31s] Then finally, you want the volatility oscillator white line to be below the lower band.
+[  224.31s ->   226.31s] If all these rules are met, enter a trade.
+[  226.31s ->   228.95s] Set your stop loss at the most recent swing high.
+[  228.95s ->   232.79s] Then you're going to exit the trade when the SSL channel makes a bullish cross,
+[  232.79s ->   235.51s] so when the blue line crosses below the yellow line.
+[  235.51s ->   238.95s] So we wait, and then a bullish cross occurs, so we exit the trade.
+[  238.95s ->   243.59s] Now, it's time to go into some tips on how to make this strategy even better.
+[  243.59s ->   246.39s] Now, I know everyone doesn't have the paid version of trading view,
+[  246.39s ->   249.03s] so a lot of you can't have more than 3 indicators.
+[  256.60s ->   261.00s] But if you can have more than 3, you should definitely add a 200 EMA to this strategy.
+[  261.00s ->   263.24s] This will significantly increase the win rate.
+[  263.24s ->   268.36s] Just add it to your chart, and you will only take long trades if the price is above the 200 EMA,
+[  268.36s ->   272.28s] and you will only take short trades when the price is below the 200 EMA.
+[  272.28s ->   277.48s] So, as an example, even though all the steps needed to the original strategy are met for a
+[  277.48s ->   282.12s] long trade here, you would not take this trade because price is below the 200 EMA.
+[  282.12s ->   285.16s] This will help out a lot in decreasing the amount of false signals.
+[  285.16s ->   289.40s] If you would like to completely maximize profits, incorporate support and resistances.
+[  289.40s ->   293.64s] So, say if you were to enter a trade because you got all 3 signals, but it was coming up to a
+[  293.64s ->   298.36s] key resistance, you might want to sell a little bit early or sell 50% of your shares,
+[  298.36s ->   301.88s] as price is likely to reverse at this point. That's just one example.
+[  301.88s ->   307.00s] You can also use some other key trading factors to really verify trades, like divergences,
+[  307.00s ->   311.88s] volume, or even trend lines. All of these will greatly increase the chance of a winning trade.
+[  311.88s ->   315.40s] As for the results of the strategy, I backtested just the original rules,
+[  315.40s ->   320.20s] without the extra tips to make the strategy better, so these results are just with the basic rules.
+[  320.20s ->   327.88s] Out of 100 trades, this strategy profited 279.58%, having 60 wins and 40 losses,
+[  327.88s ->   333.56s] giving a total win rate of 60%. This strategy also took 2 and a half months to enter 100 trades,
+[  333.56s ->   337.72s] which means theoretically, you would have doubled your account size within 30 days.
+[  337.72s ->   341.88s] If you would like to see some of the more advanced backtest results, like what it was tested on,
+[  341.88s ->   347.48s] the time frame, most consecutive wins, most consecutive losses, etc. I'll leave the backtest results to
+[  347.48s ->   352.12s] the strategy in my discord, I'll leave that link in my description. If you do use tradingview,
+[  352.12s ->   356.84s] I made a video of the 10 most epic hidden gems on their website. Some of them helped me tons in
+[  356.84s ->   361.08s] saving time and even increasing my win rate, so go check that out. Thanks for watching,
+[  361.08s ->   363.16s] and I'll see you guys next time.

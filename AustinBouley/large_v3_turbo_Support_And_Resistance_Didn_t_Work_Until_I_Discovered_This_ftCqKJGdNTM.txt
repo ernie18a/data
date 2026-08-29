@@ -1,0 +1,72 @@
+[    0.67s ->     5.47s] Hey guys, are you struggling to know where a stock will bounce or where it will fall?
+[    5.73s ->     9.79s] Are you trying to draw support and resistance lines which end up drawing so many you don't know what's going on?
+[    9.93s ->    16.47s] Or maybe you have a level that you think is a great level and then the market actually goes past and doesn't actually bounce or do anything at that level?
+[   16.77s ->    22.59s] Well, I'm going to show you something that I discovered that changed the way I see support and resistance forever and has led me to make a lot of money.
+[   22.67s ->    28.79s] If you stay to the very end, I'll actually show you my favorite candlestick pattern that has made me so much money over the last five years of trading.
+[   28.79s ->    34.57s] So let's walk through and deep dive into how to properly and accurately draw support and resistance levels.
+[   42.74s ->    46.60s] In order to draw a proper level, you need to draw a zone.
+[   46.76s ->    50.26s] That is right. The problem with support and resistance is they are generic levels.
+[   50.56s ->    54.22s] There's not just one price point where the market will respond to.
+[   54.52s ->    56.26s] Instead, it is a zone.
+[   56.62s ->    58.54s] And so what do I mean by that?
+[   58.62s ->    60.38s] Well, let's check out what's going on here.
+[   60.44s ->    63.68s] So if we draw up support and resistance lines, it goes like this.
+[   63.68s ->    66.64s] Resistance is areas where the market has topped out before.
+[   66.76s ->    71.70s] So you can see the market has topped out here before, making this a resistance level.
+[   71.86s ->    74.02s] So now here is one resistance level.
+[   74.22s ->    78.28s] Now let's draw a support level, which is where a stock has bounced before.
+[   78.52s ->    80.78s] So we can see here the stock has bounced here before.
+[   80.92s ->    81.38s] Okay, cool.
+[   81.74s ->    89.64s] So now that we know this, let's look and let's see how the market has responded to these two levels over history and over time.
+[   89.64s ->    98.22s] So what we can see here is this resistance level was kind of respected, but if we look at it, it did break above it slightly and then break above it again.
+[   98.36s ->   103.18s] So how would we have known that this was a false breakout instead of an actual breakout above resistance?
+[  103.62s ->   104.54s] The same thing here.
+[  104.72s ->   108.18s] We saw the support level get retested, but it broke above.
+[  108.56s ->   113.80s] And again, for some people, they would have tried to enter because they thought the market is going to break above and go higher.
+[  113.80s ->   115.54s] So how do we do this?
+[  115.80s ->   118.02s] Well, what we do is we draw zones.
+[  118.14s ->   120.70s] So again, we can do that by going in here to our charting.
+[  120.96s ->   124.68s] We can do parallel channels or whatever type of structure we want.
+[  136.00s ->   143.66s] I personally like going into the drawing channel and going into rectangles and drawing a beautiful little rectangle here.
+[  143.98s ->   145.18s] Now, why do I do this?
+[  145.24s ->   149.10s] Well, because like I said, support and resistance is not a single level.
+[  149.10s ->   156.96s] It's the idea that something important happened around this level historically, but it doesn't mean that it's going to happen exactly there every single time.
+[  157.32s ->   159.70s] So now I know that, hey, look, I'm breaking into the zone.
+[  159.82s ->   170.26s] This zone could potentially be a level where the market balances, where it rejects, something like that, where we don't have any hard, fast rules of if it breaks above a certain price point, then X happens.
+[  170.34s ->   172.32s] Because that's not how the market responds to things.
+[  172.58s ->   174.24s] The same thing here with this.
+[  174.24s ->   180.76s] If we go to the drawing tab here and we do the same thing, we add this rectangle and we draw this rectangle here.
+[  181.02s ->   189.24s] You see, if we would have done the rectangle instead, we would have seen that, hey, we're in this zone of where the market is kind of consolidating at.
+[  189.32s ->   196.02s] And so we know that, hey, the market is building up for something here because we are in the upper range of this breakout zone.
+[  196.02s ->   203.22s] So now that we're in the upper range, we're building momentum, building strength here, specifically I'm talking about right here where the market was in this zone.
+[  203.32s ->   204.12s] It's building strength.
+[  204.20s ->   205.26s] It's headed towards the upside.
+[  205.38s ->   206.96s] And then we broke to the upside.
+[  206.96s ->   213.82s] So, again, we can kind of enter in positions, know where our stop loss should be, and we give it the opportunity to run up in our favor.
+[  214.20s ->   218.02s] With this, for example, we know that the market is trending down.
+[  218.84s ->   222.52s] You can see here we have the high is getting lower and lower and lower.
+[  222.62s ->   224.22s] So this is known as a downtrend.
+[  224.22s ->   226.18s] So we have this downtrend here in the market.
+[  226.32s ->   230.42s] We get to this prior support level, which now becomes resistance.
+[  230.72s ->   232.38s] We can see here that we're breaking into it.
+[  232.44s ->   233.42s] We're breaking above it.
+[  233.46s ->   240.88s] Then we come back into it, showing that, hey, we're just really getting stuck in this level, showing that, hey, if we're stuck in this level, we're not fully breaking out of it.
+[  241.08s ->   244.80s] When we're having a downtrend, that shows us, hey, we're actually going to be going down further.
+[  245.28s ->   253.14s] And so, again, my number one key to drawing support and resistance levels is to treat them as zones, not respecting one level and be like, this is the level.
+[  253.14s ->   258.24s] Instead of being like, this is an area where we tend to hit resistance, where we tend to hit blockage, where we tend to bounce.
+[  258.56s ->   263.74s] And then using those levels to understand which way is it leaning more towards when we hit that zone.
+[  264.24s ->   271.94s] Now, what is a pattern that I absolutely love is doji candles and clear support and resistance zones.
+[  271.94s ->   273.04s] So, what do I mean by that?
+[  273.26s ->   279.00s] Well, if I draw a resistance at the all-time high here from the market, I draw this little zone here.
+[  279.72s ->   287.62s] We can see that when we have doji candles at strong zones, strong levels, we tend to see reversals.
+[  287.82s ->   289.10s] What is a doji candle?
+[  289.20s ->   299.78s] A doji candle is this right here, where we have a small body candle, which is where it's full color, small full color candle with long wigs, long lines that are coming off that body.
+[  299.78s ->   310.38s] And so, again, when we have a doji candle form in a resistance or support zone that is very strong, for instance, an all-time high, we tend to see a pullback.
+[  310.48s ->   311.86s] We tend to see a reversal.
+[  312.32s ->   315.54s] So, again, you can see here we had this doji candle, then we sold off.
+[  315.70s ->   318.86s] That's why I was able to take on call credit spreads, make some money to the downside.
+[  319.26s ->   320.84s] And then we can see the same thing here.
+[  320.84s ->   327.14s] Again, we didn't quite have a strong level, but you can see here the doji candle that follows, then seeing that upside move.
+[  327.40s ->   338.94s] So, pair support and resistance zones with doji candles, and you'll be able to have a good understanding using just the charts of whether the market will bounce, pullback, or continue in the trend.
+[  339.02s ->   340.40s] All right, guys, I hope this video helped you.
+[  340.50s ->   343.54s] If you liked it, smash that and subscribe button, and I will see you in the next video.

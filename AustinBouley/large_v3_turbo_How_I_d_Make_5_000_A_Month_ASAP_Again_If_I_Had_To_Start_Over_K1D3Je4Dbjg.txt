@@ -1,0 +1,81 @@
+[    0.00s ->     5.06s] In this video, I'm going to show you how I'd make $5,000 a month as an options trader if I had to
+[    5.06s ->     9.72s] start all over again. Now, honestly, it's just the same process that I use right now to make
+[    9.72s ->    14.92s] anywhere from $4,000 to $6,000 a month, but this process took me six years to learn and blowing up
+[   14.92s ->    19.18s] two accounts. I'm just going to give you everything so that you can skip that and not go
+[   19.18s ->    23.12s] through all the headaches. So here's what we're going to do. Three different steps you need to
+[   23.12s ->    27.34s] follow, and this is what I would do if I had to start today to make money fast. Okay, so number
+[   27.34s ->    35.90s] one is I would find or use a proven strategy that prints money in most markets. And so what do I
+[   35.90s ->    39.92s] mean by this? I mean, most of the time, the market is in an uptrend. If we look at the market, most
+[   39.92s ->    45.52s] times the market is trending up. So I would use a strategy that is designed to print money when the
+[   45.52s ->    50.56s] market moves higher. And so I'd look for a proven money printer strategy. So that could be simply
+[   50.56s ->    55.50s] buying clothes that makes money to the upside. It could be put selling. It could be anything like
+[   55.50s ->    62.00s] that just one solid strategy that has a very high win rate, ideally 80% plus, and has the ability to
+[   62.00s ->    68.66s] make you $1,000 or more per treat. Now for me, that is a 111 strategy. I love using the 111. This
+[   68.66s ->    72.00s] is what I recommend for all my coaching clients. It's the one that tends to be the most consistent
+[   72.00s ->    77.34s] and most profitable. Why? Well, the 111 is essentially a put selling strategy, meaning that
+[   77.34s ->    82.68s] you're betting that the stock will go higher or stay above a certain level. And you also the hedge
+[   82.68s ->    87.30s] built into it. That way it's consistently trending up. And if anything goes down or goes wrong,
+[   87.32s ->    92.00s] or the market goes sideways, while you have a hedge in there that will slow down and help you smooth out
+[   92.00s ->    98.16s] your recharge to the downside. So a 111, which is put selling plus put debit spread tends to be the
+[   98.16s ->   103.34s] most consistent strategy. Now, being the founder of the options auto trader, which is an options
+[  103.34s ->   108.86s] automation tool that literally automate thousands of trades every single day and does over a million
+[  108.86s ->   114.52s] dollars of trading volume, I see so much data. And of this data, I have found consistently the
+[  114.52s ->   120.78s] people who use a 111 strategy or a 112 strategy have had the highest success, the highest win rate
+[  120.78s ->   125.90s] and the most stable returns across all different types of market conditions. So you want a proven
+[  125.90s ->   130.98s] strategy, I don't care which one you use, they all work, you just need to pick one stick to it and
+[  130.98s ->   136.10s] master it. For me, that's the 111 strategy. Number two, what I'm going to do is I'm going to build
+[  136.10s ->   142.48s] something around the 111 to help protect me. Now, what does this mean? It means I am going to
+[  142.48s ->   147.30s] create a hedge or proven profit strategy should be something that profits when the market goes up.
+[  147.48s ->   152.64s] I also want a hedge, I want something to protect my downside. This took me way too long to learn and
+[  152.64s ->   157.90s] I see so many beginner options traders struggling with this too. They go, Oh, I found this one great
+[  157.90s ->   160.52s] strategy, they traded, they traded, they traded, they make money and they're doing great and they're
+[  160.52s ->   165.66s] happy until the market shifts, right? You have the 2025 tariff crash of COVID, you have
+[  165.66s ->   171.12s] volatility spikes, something happens and you end up losing thousands and it wipes out months of
+[  171.12s ->   174.84s] profits. And you're like, I thought this was working. And you keep trying to trade this one
+[  174.84s ->   179.88s] strategy in a market where it doesn't work. I'm a firm believer. And I've seen this across my own
+[  179.88s ->   184.36s] beliefs of six years, almost eight, eight years of trading now, plus all the data that I have of
+[  184.36s ->   192.40s] live options trades is that every strategy works when used in the right market. Okay. There's bullish
+[  192.40s ->   198.62s] markets, bearish markets, sideways markets. Okay. You need to use a strategy that's designed to
+[  198.62s ->   204.48s] profit in each one of those markets. So our proven printing strategy, this is our bullish strategy for
+[  204.48s ->   208.64s] when the market is headed higher, which is going to happen 80% of the time. And when the market does
+[  208.64s ->   213.68s] crash, we need a hedge to profit from the downside or a bearish strategy. So again, for this, you can
+[  213.68s ->   219.74s] simply just buy puts. Uh, you can do something like a put debit spread that that is the secret.
+[  219.74s ->   224.72s] Okay. This is what I call my four core bots philosophy or four core bots trading system,
+[  224.72s ->   230.40s] where you design, or you have an option strategy, like a playbook that you use in each different
+[  230.40s ->   234.28s] type of market. So when the market's trending up, you go, okay, let's use the bullish strategy
+[  234.28s ->   239.20s] playbook. All right. Let's use the bearish strategy playbook and all those things. So at the bare minimum,
+[  239.52s ->   243.82s] have a bullish strategy playbook and have a bearish strategy playbook. If you're new to options
+[  243.82s ->   248.98s] or you just want some help and you want me to actually give you my playbooks for each type of
+[  248.98s ->   253.96s] market, I actually have a coaching program where I guide you through exactly the best strategies for
+[  253.96s ->   257.88s] each market based on your goals. If you're interested, click the first link in the description
+[  257.88s ->   262.62s] down below, and you can book a call with me and we can see if you're a good fit. Anyways, after you
+[  262.62s ->   267.18s] have the proven printing strategy, which is for bullish markets in the hedge for bearish markets,
+[  267.46s ->   272.06s] that you can actually adjust to each market condition. Next, I would automate from day one.
+[  272.06s ->   277.54s] I know this sounds crazy, but the biggest issue that I ran into for so many years is dealing with
+[  277.54s ->   282.08s] trading emotions. And the reason why this is an issue is because you chase, you hope, you greed,
+[  282.20s ->   287.86s] you hold on the trades too long. It just doesn't work out. And so any way you can automate or remove
+[  287.86s ->   292.12s] the emotion is the easiest way to dealing with the emotion. Instead of learning to deal with it,
+[  292.12s ->   297.70s] which takes time and is hard, just remove it. And so that could look like setting alerts when it's
+[  297.70s ->   302.90s] time to exit so that you only look at the market when it's time to exit or enter. That could be
+[  302.90s ->   308.46s] something like using my tool, the options auto trader, which allows you to actually plug in your
+[  308.46s ->   313.22s] rules of what you want to do when and does it for you. Either way, whether it's alert systems or
+[  313.22s ->   319.30s] whatever it is, do your best to automate it and systematize it so that number one, it's just
+[  319.30s ->   325.12s] consistent. You know what to do in all situations and you remove the emotion. The more you can remove the
+[  325.12s ->   329.98s] emotion, the better. So many times I was sitting on the fence when I saw a stock take off and I knew
+[  329.98s ->   332.96s] I could have made money from it. I was planning on it, but I didn't get in because of emotions
+[  332.96s ->   337.48s] or I held too long and I had a large loss because I shouldn't have. That was all because of emotion.
+[  337.64s ->   343.12s] So the sooner you can automate or take off some of the emotion and remove it, the higher of the
+[  343.12s ->   347.44s] success rate you're going to have. And so those are some things that I see a lot of people struggling
+[  347.44s ->   353.50s] with. And as a side note, it took me a while to learn this, but I had to invest in myself to
+[  353.50s ->   356.78s] actually make this work. And I'll talk about investing in the market. I mean, I had to find
+[  356.78s ->   361.34s] mentors who were able to teach me these things. And so a lot of people has taught me a lot of
+[  361.34s ->   367.64s] things over the years. I'm so thankful to them. And so that's why I just find someone, find something
+[  367.64s ->   374.16s] to help give you that edge. Okay. So here is the 5k a month process and exactly what I do. Number one,
+[  374.44s ->   379.50s] use a proven strategy for bullish markets, a proven playbook. For me, that's the one, one,
+[  379.58s ->   383.40s] one strategy. If you're going to do hedging, which is what you should do so that you
+[  383.40s ->   388.04s] profit in bearish markets as well, you're going to do something like buying a put or a put debit
+[  388.04s ->   393.34s] spread. My favorite is the put debit spread this way and cap my wrist. I also kept my upside too.
+[  393.48s ->   398.70s] Yes, but I know what those numbers are. And so therefore my hedge will never overtake the profit
+[  398.70s ->   402.88s] of my bullish trade and then automate as soon as I can, whether I'm using things like trading view
+[  402.88s ->   408.54s] alerts or an actual automation software, that's how I do it. So that is how I'd make $5,000 a month
+[  408.54s ->   409.86s] quickly as an options trader.

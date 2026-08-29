@@ -1,0 +1,156 @@
+[    1.90s ->     6.94s] Coming up with a valid trading signal and then building some sort of system capable of
+[    6.94s ->    13.02s] algorithmically executing trades based on that signal value are only a few pieces of the puzzle.
+[   13.56s ->    19.52s] How much of your capital should you risk on any one trade within that system? In this video,
+[   19.56s ->    23.24s] we're going to look at the Kelly Criterion as a solution to this problem. As always,
+[   23.32s ->    27.04s] this Jupyter Notebook will be available in the description below. I will also post it to the
+[   27.04s ->    31.62s] Quant Guild Library on GitHub, where you can find all of my Jupyter Notebooks and associated YouTube
+[   31.62s ->    36.00s] videos. At the top of this notebook, you'll notice some related Quant Guild videos that will give you
+[   36.00s ->    41.26s] some more background and context for this topic. Moreover, if you're interested in mastering your
+[   41.26s ->    46.88s] quantitative skills or would like to take live classes with myself, check out quantguild.com.
+[   46.96s ->    51.84s] Let's begin by discussing this idea of the expected value of a trading system. If I have a trading
+[   51.84s ->    57.88s] system, let's call it capital T here, then what I'm suggesting is whether it's a sentiment signal or
+[   57.88s ->    64.68s] a momentum signal, every trade is governed by that system. So every trade, I'm going to call that tau,
+[   64.80s ->    70.78s] this little t, is a part of this trading system. Now, each trade is defined in a way that we have
+[   70.78s ->    77.40s] a net zero position on exit. So we're going to generate some sort of P&L. So each trade that we make
+[   77.40s ->    84.28s] in this system, capital T, is going to produce a profit or a loss. Now, this profit or loss itself
+[   84.28s ->    89.86s] is a random variable, but once we accumulate enough information empirically by trading with
+[   89.86s ->    96.42s] the system or backtesting it, we can produce the expected value of this trading system. I've decomposed
+[   96.42s ->   101.12s] the expected value of this trading system into a few different components, and this is the math
+[  101.12s ->   106.88s] notation for it, but I've also written it in plain English here. So for each trade, the expected P&L,
+[  106.88s ->   113.64s] or profit and loss, is broken up into the average winning trade value times the probability of
+[  113.64s ->   119.66s] winning a trade plus the average losing trade value times the probability of losing a trade. And this is
+[  119.66s ->   125.48s] given by the law of total expectation. But what are the implications in our wealth over a certain number
+[  125.48s ->   132.12s] of trades? Well, what I have here is I have a distribution, which is our P&L, and I have our wealth
+[  132.12s ->   139.30s] paths. If our expected value of the system is positive, then we're going to be able to accumulate
+[  139.30s ->   145.48s] wealth over time. If the expected value of the system was negative, then we would be losing wealth
+[  145.48s ->   150.94s] over time. It's very important to make the distinction that every single time we make a trade,
+[  150.94s ->   157.62s] we're drawing from this distribution. So if the trade was a winner, then we're going to draw from this
+[  157.62s ->   163.18s] density of wins to determine how much money we made on that trade. If the trade was a loser,
+[  163.18s ->   168.78s] we're going to draw from this loss distribution. And if the overall expected value is positive,
+[  168.78s ->   173.52s] then we'll accumulate that wealth over time, as seen in these two charts. There are a couple of
+[  173.52s ->   179.42s] really important things we need to consider in each of these cases here. The first is we're making
+[  179.42s ->   185.68s] bets of fixed size. So this chart on the left is considered a small wager. After a thousand trades,
+[  185.68s ->   190.52s] we only accumulate up to what looks like roughly 20,000 on the potential upside.
+[  191.20s ->   198.20s] Whereas when we do the large bet, we can accumulate looks like up to 60,000 on the upside. Of course,
+[  198.24s ->   202.78s] you don't get something for nothing. So when we increase the amount that we are betting on this
+[  202.78s ->   207.82s] right chart here, we're also increasing the probability that we go bankrupt before we accumulate
+[  207.82s ->   214.64s] that wealth. Very important ideas. Moreover, we're only actually going to experience one of these
+[  214.64s ->   219.92s] sample paths. We can't choose which one we're going to be on. It's based on luck. So it's possible
+[  219.92s ->   226.06s] that I'm very lucky in this large bet case, and I climb all the way up to roughly 60,000 in wealth.
+[  226.54s ->   231.94s] It's also equally possible that I end up losing all my money before I get to accumulate that wealth.
+[  232.50s ->   238.24s] Now on the other chart here where we make smaller bets, that probability of going bankrupt is less
+[  238.24s ->   243.50s] than the probability of going bankrupt on the large bet case. But of course, we don't have the same
+[  243.50s ->   248.88s] potential upside. So how much capital should we risk on each trade? Should we use a small fixed bet or a
+[  248.88s ->   253.70s] large fixed bet? Well, there are a couple of really big problems with this analysis before we even talk
+[  253.70s ->   258.96s] about bet sizing. The first is that we're estimating all of these quantities from data, and surely
+[  258.96s ->   264.24s] they're going to change over time. But we're going to talk about that in a moment. The bigger issue here
+[  264.24s ->   270.30s] is we're assuming that the amount of capital that we are risking on each trade is fixed. And this
+[  270.30s ->   274.74s] certainly is not the case. Think of it this way. If you had a million dollars to trade with,
+[  275.30s ->   279.52s] wouldn't you want to risk more capital per trade than if you had a thousand dollars to trade with?
+[  280.30s ->   284.70s] You wouldn't want to trade in lots of $20 if you had a million dollars. You would want to trade in
+[  284.70s ->   289.88s] lots of maybe $20,000. That just makes sense. But that changes the entire dynamics of the system.
+[  290.34s ->   294.36s] Really what we're doing is we're starting to tease out whether or not this system and our wealth paths
+[  294.36s ->   299.52s] are what's called ergodic. And we could dive into the technicals, but I would rather focus
+[  299.52s ->   307.36s] on the impact in the example above. Fundamentally, I haven't changed the example above. I'm operating
+[  307.36s ->   314.16s] in the same trading system. I still have a positive expected value. The only difference is how I am
+[  314.16s ->   321.74s] betting in the system. So on the left, I have these fixed increments, these fixed amounts allocated to
+[  321.74s ->   328.04s] each trade, just as we saw above in the small bet and the large bet case. They're fixed bets.
+[  328.86s ->   334.52s] But in reality, right, we're going to want to bet relative to our bank roll. But what happens if we
+[  334.52s ->   340.26s] bet relative to our bank roll? Well, we get these funky wealth paths on the right. More formally,
+[  340.94s ->   347.80s] the time average is not equivalent to the ensemble average. More intuitively, a few paths in the case
+[  347.80s ->   355.94s] that we bet relative to our bank roll will accumulate extraordinary wealth and drag the overall average
+[  355.94s ->   362.72s] up. But keep in mind, we walk only one of these sample paths. And a majority of these sample paths
+[  362.72s ->   370.64s] are below our initial capital, or even very close to zero by the time we reach 1000 trades. Long story
+[  370.64s ->   374.68s] short, why does this matter? We're operating in this environment. We're not operating in this
+[  374.68s ->   379.78s] environment. So if we have positive expected value, we need to ensure that we're accumulating wealth
+[  379.78s ->   386.32s] over time. And we're not being misled by statistics. Because a few sample paths here will accumulate
+[  386.32s ->   391.14s] extraordinary wealth. But remember, we're going to end up walking one of these at random. And if you
+[  391.14s ->   396.02s] were to choose out of a hat, which one we walked, we would end up walking one that actually lost money
+[  396.02s ->   401.60s] relative to how much we started with, even though there's positive expected value. Let's look at an
+[  401.60s ->   409.86s] example. So if I take the average wealth at the end of the 1000 trades with this trading system in the
+[  409.86s ->   417.58s] environment where we're betting relative to our bank roll, my average wealth is 1757. I started with
+[  417.58s ->   423.84s] 1000 bucks. So I made 757 on average. That's great. Let's trade with this system. Hold your horses,
+[  423.84s ->   431.54s] we got to hold our horses here. Because what is the probability of ending with more money than
+[  431.54s ->   436.48s] we started with? In other words, what is the probability that after we trade 1000 times,
+[  436.80s ->   445.52s] we end up with more than $1,000 by the 1000th trade? The probability of ending above $1,000
+[  445.52s ->   455.36s] after 1000 trades is 47%, less than half. Less than half of these paths are actually going to end
+[  455.36s ->   463.02s] above our initial capital. This is how we're being misled by the overall expected value of our trading
+[  463.02s ->   469.24s] system. An intuitive way to understand why the path that we would experience relative to the overall
+[  469.24s ->   476.22s] expected value of the trading system differs so drastically is by the flaw of averages. There is
+[  476.22s ->   481.84s] a very classic picture of somebody standing in a few inches of water, and then there's a massive drop
+[  481.84s ->   488.30s] off and a sign that says, you know, average depth seven feet, even though the average is seven,
+[  488.30s ->   496.08s] it's not informative, because there's one spot that drops off very, very, very deep. And the rest of it
+[  496.08s ->   501.64s] is very shallow. That is essentially what we're observing here is most of these paths accumulate
+[  501.64s ->   508.84s] negative wealth, but a few have extraordinary growth. And that is what's accounting for the positive
+[  508.84s ->   516.38s] expected value in that sense. So what should we do? How should we bet? Well, our goal is to maximize
+[  516.38s ->   522.40s] our wealth, specifically because we want to bet relative to our bank role, we want to maximize the
+[  522.40s ->   528.30s] geometric mean of returns over the arithmetic mean. This goes back to what I had stated earlier,
+[  528.30s ->   536.08s] we want to bet relative to our bank role. So we need to maximize this mathematical object in the
+[  536.08s ->   541.16s] expectation. Remember, we're dealing with randomness here, we're never going to be able to choose which
+[  541.16s ->   548.44s] path we walk, but we are going to be able to try to maximize the overall average path based on our
+[  548.44s ->   556.06s] betting strategy. And that's the best that we can do. So what is the solution to this betting problem?
+[  556.56s ->   563.96s] Well, that would be this Kelly criterion. If you solve this maximization problem, that is the
+[  563.96s ->   571.70s] expected value of your wealth path at n plus one, then you will get this value for how much you should
+[  571.70s ->   579.22s] allocate to each trade, how much you should risk on each trade. This is optimal in that sense.
+[  579.58s ->   584.78s] Not sure how to solve this maximization problem? Check out quantkilled.com. We got over 90 lessons in
+[  584.78s ->   589.66s] math, probability and finance that will help you learn the necessary skills to tackle complicated
+[  589.66s ->   595.98s] problems like this one. After solving this maximization problem, the Kelly criterion itself
+[  595.98s ->   601.90s] is a function of the probability of winning a trade, the probability of losing a trade,
+[  602.28s ->   609.38s] the net profit per unit risked, and that together is going to give you the fraction of your bank role
+[  609.38s ->   616.58s] that you should risk on each trade. Now, keep in mind, we are estimating those quantities from data.
+[  616.58s ->   620.16s] Just like I had mentioned earlier, that's one of the big problems with this, but we're going to get
+[  620.16s ->   626.40s] to that in a moment. Let's talk about trading now with the Kelly criterion. Remember, we're operating
+[  626.40s ->   631.88s] in this environment. We're not operating in this arithmetic environment. We're operating in this one.
+[  632.24s ->   638.62s] Let's see how the Kelly criterion changes our betting strategy and the wealth paths that we would
+[  638.62s ->   643.90s] experience. Now, both of these charts are risking a proportion of our bank role on each trade,
+[  643.90s ->   650.76s] but the Kelly criterion is maximizing the expected value of that log growth rate of our wealth path.
+[  651.34s ->   659.46s] And if I had to choose a sample path at random to walk, which would I prefer? Would I prefer a fixed
+[  659.46s ->   666.16s] proportion of our bank role and walk one of these at random? Or would I prefer to walk a Kelly criterion
+[  666.16s ->   672.06s] path at random? Well, if you gave me the option, probabilistically, I would certainly prefer to walk
+[  672.06s ->   678.72s] a Kelly criterion path. That is because it is optimal in the statistical sense. Let's look at
+[  678.72s ->   684.20s] some probabilities to reaffirm this. Remember above, when we looked at the probability of ending above
+[  684.20s ->   692.40s] our initial capital in the case where we have a fixed bank role allocated to each trade, we only survived
+[  692.40s ->   703.80s] above our initial capital roughly 47% of the time less than half. But in this case, if I walk a Kelly
+[  703.80s ->   712.96s] sample path, then 76% of the time, I'm going to walk a path that ends above the initial capital by the
+[  712.96s ->   720.62s] 1000th trade. This is substantial. This is significantly different than the instance where we have a fixed
+[  720.62s ->   727.96s] amount from our bank role, a non-optimal fixed amount allocated to each trade from our bank role.
+[  728.12s ->   734.38s] As you can see here, it substantially changes even the median final wealth. The median final wealth of
+[  734.38s ->   741.54s] the Kelly paths is 1,018 versus the case where we just have some other non-optimal fixed amount,
+[  741.66s ->   749.12s] which is 836. So given a trading system where I want to scale with the amount of capital available,
+[  749.12s ->   756.44s] I am going to allocate risk to each trade according to the Kelly criterion. What are some challenges and
+[  756.44s ->   762.02s] limitations of this betting strategy? Well, a reasonable question is, do you really know the
+[  762.02s ->   767.46s] decomposed expected value of your system? Can you actually assess the probability of winning a trade
+[  767.46s ->   773.24s] and losing a trade? Probably not. No, you can estimate them from back tests and live tradings, but these are
+[  773.24s ->   779.16s] also stochastic processes. What I've done here is I've simulated these values. We have a probability
+[  779.16s ->   786.40s] of winning that is going to fluctuate over time, along with the probability of losing. Same thing with
+[  786.40s ->   794.82s] the average trade sizes. We may win more in some cases when we win. We may lose more in some cases when
+[  794.82s ->   802.32s] we lose. And this is also going to oscillate randomly over time. I have a remark about how we should think
+[  802.32s ->   807.82s] about these quantities in different regimes. Likely you should estimate these quantities
+[  807.82s ->   813.08s] differently in different environments, volatile environments, different types of administrations
+[  813.08s ->   818.60s] and policy, inflation, interest rates, so on and so forth. Why should we care about this estimation
+[  818.60s ->   825.06s] error? Well, let's look at the exact same charts above our wealth path after a series of trades
+[  825.06s ->   832.79s] with an incorrect estimation for the Kelly criteria. Uh-oh. On the left here, we still have that
+[  832.79s ->   839.01s] nice Kelly criteria sample paths, right? I would want to walk one of these sample paths if I had to
+[  839.01s ->   847.65s] choose between these two charts. But on the right here, we're also observing a Kelly criterion path.
+[  848.27s ->   856.28s] This is an optimal bank roll according to the Kelly criteria, but we're estimating the quantities
+[  856.28s ->   861.24s] incorrectly. And this is what we're going to face in real life. If you try to estimate these quantities,
+[  861.24s ->   867.24s] they are noisy. They are not going to converge to a static value. And likely what you're going to
+[  867.24s ->   872.94s] input into the Kelly criterion as a function for the amount of your bankroll that you should risk on
+[  872.94s ->   879.00s] each trade is going to be incorrect. And look, we're kind of right back to where we started. Our goal is
+[  879.00s ->   886.40s] this chart on the left, but with estimation error, we have this chart on the right. Some closing thoughts
+[  886.40s ->   893.92s] for you. Challenges in reality. Returns are not ergodic. There are a variety of reasons for this.
+[  894.36s ->   902.04s] Estimating correct values for the inputs to the Kelly criterion is difficult. Even small estimation
+[  902.04s ->   910.80s] errors can yield massive discrepancies. Both of these are allocating risk to each trade based on the
+[  910.80s ->   917.38s] Kelly criterion. It's just the chart on the right is using estimated quantities, which surely will be
+[  917.38s ->   923.38s] incorrect. And look at the probability of ending above initial capital in the case where there's
+[  923.38s ->   930.18s] estimation error. If we estimate it accurately, it's 71%. That's great. If we estimate it inaccurately,
+[  930.36s ->   936.24s] that's 41%. That is not what we are going for. Some future topics I would like to cover,
+[  936.24s ->   941.12s] stochastic processes and topics in stochastic calculus. How do we estimate these quantities
+[  941.12s ->   947.60s] from data? What can we do to measure the uncertainty of our estimations? And I'd also like to talk about
+[  947.60s ->   954.56s] building more of like an adaptive trading bot, iteratively estimating this criterion as we update
+[  954.56s ->   959.50s] our estimates for parameters. If you'd like to see some of these topics, please leave a comment below.
+[  959.60s ->   963.72s] Let me know. That's going to do it for this video on how to trade with the Kelly criterion. I hope you
+[  963.72s ->   968.06s] enjoyed. I hope you learned something. If you liked it and want to see more like this video, please
+[  968.06s ->   973.16s] subscribe, like, leave a comment. Let me know. If you want to master your quantitative skills,
+[  973.54s ->   978.06s] check out quantkill.com. You can take live classes with myself. Other than that,
+[  978.56s ->   981.96s] thank you so much for watching and I will see you in the next video.

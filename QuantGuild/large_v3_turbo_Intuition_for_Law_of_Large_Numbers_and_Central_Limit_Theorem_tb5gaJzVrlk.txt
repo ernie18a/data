@@ -1,0 +1,136 @@
+[    1.34s ->     8.38s] We're back. It's about time. Graduate school's awesome. Today, we're going to speed run the law
+[    8.38s ->    13.04s] large numbers in the central limit theorem. Let's get started. All right, we're going to import
+[   13.04s ->    22.76s] mapplotlib.pyplot as plt, import numpy as mp, and then we're also going to import scipy.
+[   25.25s ->    32.53s] Let's simulate some uniform random variables. I'm going to say u is equal to mp.random.uniform.
+[   32.53s ->    38.47s] In this case, we're going to parameterize this function by a low and a high, lower bound,
+[   38.57s ->    44.63s] upper bound. It is a continuous distribution, just like the normal distribution. That is,
+[   44.73s ->    50.93s] there is an even probability of selecting any value between this range that we give it. We're going to
+[   50.93s ->    58.35s] give it zero and one, where each individual number has a zero probability of being selected. We're
+[   58.35s ->    62.53s] going to print this draw, and you'll see we're going to get, again, with equal probability,
+[   63.33s ->    69.69s] random number between zero and one. It's the so-called standard uniform random variable.
+[   70.55s ->    78.57s] You can also visualize this. Instead of simulating just one, I can also simulate 10,000. This is going
+[   78.57s ->    85.63s] to make you a vector of standard uniform random variables. If I plot this, we can say plt hist u,
+[   85.63s ->    93.65s] set bins to, say, 20 or so, run this, and you can see we get pretty much a horizontal line between
+[   93.65s ->    99.13s] zero and one. That is the unit interval here. Everything has an equal probability of being
+[   99.13s ->   105.65s] selected. That is why it's a flat line. That's a uniform random variable, specifically standard
+[  105.65s ->   113.56s] uniform. In this case, we're generating 10,000 of those guys. What about a normal? n is equal to
+[  113.56s ->   119.70s] np.random.normal. Instead of a lower and an upper bound. Here, we give a mean and standard deviation.
+[  120.42s ->   124.86s] So zero is going to be the mean. One is going to be the standard deviation. In this case, we're not
+[  124.86s ->   129.88s] bound by these numbers. This is not generating numbers between zero and one. This is going to
+[  129.88s ->   135.80s] generate numbers such that the mean is zero and the standard deviation is going to be one. So if I run
+[  135.80s ->   144.92s] this, you'll see I get 0.8, negative 0.3, so on and so forth. And if I was to do this, say, 10,000 times,
+[  145.72s ->   155.10s] and I was to plot this distribution, say bins is equal to 20 again, we get the bell curve that we are
+[  155.10s ->   161.28s] hopefully all familiar with. If not, welcome, bell curve. And we can even generate a nice plot,
+[  161.28s ->   172.85s] maybe a nicer looking plot. If we use seaborne, we can use a KDE plot, and we get something that
+[  172.85s ->   177.23s] looks like this, right? It's a pretty looking bell curve, okay? Maybe if I make this even bigger,
+[  177.29s ->   182.70s] it'll be even prettier. Nah, you get the idea, right? We like the bell curve. We like normal
+[  182.70s ->   187.68s] distributions. We know a lot about the normal distribution. We know that 68%, approximately
+[  187.68s ->   192.08s] 68% of the data is going to fall between plus or minus one standard deviation away from the mean,
+[  192.08s ->   199.50s] this case, the center mean, zero, right? Standard normal, the standard deviation is one. So 68%
+[  199.50s ->   204.96s] of the data is going to fall between plus or minus one, and then so on and so forth. That's the empirical
+[  204.96s ->   211.82s] rule, right? We could also conduct statistical tests using this distribution. Z tests, the T
+[  211.82s ->   217.92s] distribution will converge to a normal distribution, but we're getting ahead of ourselves here, okay?
+[  217.92s ->   226.53s] In general, I just wanted to show you uniform and normal distribution simulation or random variable
+[  226.53s ->   231.21s] simulation, right? We're drawing from those predefined, predetermined distributions. Not going to get into
+[  231.21s ->   234.39s] the mumbo-jumbo with the probability density function, the cumulative distribution function.
+[  234.71s ->   240.03s] Instead, we're going to talk about the implication and intuition of the law of large numbers, okay?
+[  240.41s ->   246.51s] So this is the sample average, all right? That is the sample average. It's literally taking an average.
+[  246.51s ->   250.47s] We all know how to take an average, or, you know, I hope we do. I probably wouldn't be watching this
+[  250.47s ->   255.89s] video if you didn't. This is how we take an average. N is the total number of values in our
+[  255.89s ->   262.85s] sample. So if we were to take the average of these 10,000 normal samples, we would do one over N,
+[  262.93s ->   268.01s] and we would sum all of them up. So essentially, it would be one over 10,000, and then we would sum
+[  268.01s ->   275.89s] everything up. So if I was to print the mean of N, what would we expect it to be? Expectation,
+[  276.09s ->   281.19s] mean, what would we expect it to be? Well, hopefully, if we're simulating this variable
+[  281.19s ->   289.30s] correctly, it's going to be close to zero. And lo and behold, it is, okay? So it is, in fact,
+[  289.36s ->   294.45s] close to zero, right? If we keep simulating these, we're going to get different means,
+[  294.45s ->   300.25s] right? Because we're creating 10,000 different random variables. But you'll notice something
+[  300.25s ->   308.59s] very similar about all of these draws. They're all close to zero. The law of large numbers
+[  308.59s ->   314.61s] essentially formalizes this. It's saying the limit as N approaches infinity, that is the sample size
+[  314.61s ->   320.17s] N of 10,000 approaches infinity, less the true population mean, which we may or may not know,
+[  320.17s ->   325.45s] in this case, we know it's zero, is going to be bound by some arbitrary positive epsilon.
+[  326.55s ->   330.87s] All right? If you remember your delta epsilon proves from calculus, your nightmare is not over.
+[  331.07s ->   337.25s] All right? This is an arbitrary positive epsilon. That is for any positive epsilon, okay? Epsilon
+[  337.25s ->   343.29s] representing a distance between the true population mean and the sample mean. We say in probability that
+[  343.29s ->   350.05s] this is going to be essentially certain, okay? Wow. Essentially certain. Okay. How can we
+[  350.05s ->   354.45s] kind of make this a little more concrete? Well, what I'm going to do is essentially what I did here,
+[  354.45s ->   360.53s] but I'm going to simulate it 1,000 times and pick an arbitrary epsilon. So I'm going to say epsilon
+[  360.53s ->   367.47s] is equal to 0.01, again, representing an arbitrary distance between the sample average as N approaches
+[  367.47s ->   374.95s] infinity and the true average X. We're going to say L is equal to an empty list, and I'm going to
+[  374.95s ->   382.73s] simulate 1,000 X bar Ns. So I'm going to say 4i in range 1,000. Again, this is just an arbitrary
+[  382.73s ->   387.57s] number. I can choose 100. I can choose 10,000. It doesn't matter. I'm saying 1,000. We're going
+[  387.57s ->   395.49s] to say N is equal to NP dot random dot normal 0, 1. I'm going to start with 10, okay? Nowhere near
+[  395.49s ->   400.87s] infinity. All right? We're generating 10 draws from a standard normal distribution.
+[  400.87s ->   408.65s] I can find X bar N to be the mean of N. And then if I wanted to, in probability, determine
+[  408.65s ->   416.09s] what this value is, then all I would have to do is check, subtract the true mean. In this
+[  416.09s ->   420.73s] case, it's 0. So we're left with the same expression. I just need the distance. So I'm
+[  420.73s ->   432.25s] going to say if NP dot absolute X bar N is less than epsilon, L dot append 1. Otherwise, it's
+[  432.25s ->   439.59s] not true. We're going to append 0. Then to get the expression in probability, I'm going
+[  439.59s ->   449.90s] to sum L and divide by the length of L, okay? So if this expression is true, as N approaches
+[  449.90s ->   457.36s] infinity, we should be bound by some arbitrary positive epsilon. Okay? In this case, I choose
+[  457.36s ->   461.74s] epsilon to be 0.01. Of course, we can't have infinity. In this case, N is 10. It is not
+[  461.74s ->   471.25s] infinity. Okay? It is not infinity. N is 10. So if I run this, right, we get 0.021. It's
+[  471.25s ->   479.76s] not close to 1, right? But 10 is not close to infinity. If I make this 100, 0.091. Make
+[  479.76s ->   498.02s] this 500. Okay. 5,000. It's pretty good. 10,000. It's getting there. 50,000. 0.98. 100,000.
+[  499.20s ->   505.68s] Hopefully, this is illustrating my point. For some arbitrary positive epsilon, as N approaches
+[  505.68s ->   511.28s] infinity in probability, we are certain that this difference is going to be bound by that
+[  511.28s ->   519.60s] epsilon. And it's going to be the case with 100% probability. Okay? This is the intuition
+[  519.60s ->   527.06s] slash simulation, essentially, of this law of large numbers. We are literally computing
+[  527.06s ->   533.94s] this probability right here. That's what we're doing right here. Okay? We are finding x bar
+[  533.94s ->   538.46s] N. We're determining if it's less than epsilon. And then we are creating this, essentially,
+[  538.46s ->   545.73s] indicator function here, which is 1, if that's the case, 0 if it's not. And then just computing
+[  545.73s ->   553.15s] the raw probability. And we can see as N becomes arbitrarily large, this approaches 1. That is
+[  553.15s ->   560.76s] the law of large numbers. Central limit theorem. What is it? All right. X bar N. That is a statistic,
+[  560.92s ->   566.36s] right? Statistics in randomness follow their own distribution. When we have a realization,
+[  566.36s ->   573.54s] of course, the value is known. So when I have these 100,000 draws from a normal distribution,
+[  573.54s ->   580.88s] and I compute x bar N, then it's not an unknown quantity, right? But we do this 1,000 times,
+[  580.98s ->   589.18s] right? The x bar N distribution is going to be governed by something. What is it going to be,
+[  589.50s ->   596.16s] right? Do we expect it to follow its original distribution, right? So if I create a distribution
+[  596.16s ->   605.29s] of the sample uniform means, is that going to be uniform itself? This is the bananas thing about
+[  605.29s ->   612.17s] the central limit theorem here with sufficient N, the sampling distribution, that is the distribution
+[  612.17s ->   621.86s] of sample means, is going to be normal. That is bananas. And it turns out that it doesn't matter
+[  621.86s ->   626.70s] what the governing distribution is. It could be uniform. It could be normal. Hell,
+[  626.70s ->   633.00s] it could be Poisson for all we care. But the distribution of sample means, that is every
+[  633.00s ->   637.38s] time we create a sample, take the mean, create a sample, take the mean, that distribution of means
+[  637.38s ->   642.02s] is always going to be normal. That's bananas. Let's take a look at what this actually looks like.
+[  643.03s ->   652.39s] If I say for I in range 1000, we're going to say U is equal to NP.random.uniform. This is the
+[  652.39s ->   657.49s] so-called standard uniform distribution. We're going to create 10,000 draws from this, and we're going
+[  657.49s ->   666.99s] to get our X bar N. In this case, it's going to be the mean of U. Okay. I'm going to create a vector
+[  666.99s ->   673.71s] of U bars. Okay. This is going to allow us to create a distribution of sample means, specifically
+[  673.71s ->   683.04s] 1000 sample means. We're going to say U bars.append, and we're going to append X bar N. Okay. So what do
+[  683.04s ->   695.70s] we get as a result of this? All right. If I run this, of course, helps to run your cells. If I run
+[  695.70s ->   703.92s] this, I get a vector of U bars. All right. This is nothing particularly crazy. All right. We're just
+[  703.92s ->   711.05s] saying we're going to do this a thousand times. We're going to generate 10,000 draws from a uniform
+[  711.05s ->   716.67s] distribution, zero to one standard uniform distribution. We're going to take the mean
+[  716.67s ->   724.33s] that's X bar N, and we're going to add it to this vector U bars. And all of these guys are essentially
+[  724.33s ->   732.11s] sample average. Now, what do we expect this distribution to look like? Maybe intuitively you
+[  732.11s ->   738.09s] would expect to also follow a uniform distribution, but it doesn't. It follows a normal distribution.
+[  738.09s ->   747.78s] That is absolutely bananas. PLT dot hist U bars bins is equal to 20 bananas, bananas. This is
+[  747.78s ->   755.32s] a uniform random variable. That is crazy. Absolutely bonkers. And if we were to do this for something
+[  755.32s ->   761.10s] else, if we did this for a normal distribution, zero one, 10,000, same thing. It's normal. What
+[  761.10s ->   774.03s] about Poisson? Poisson, zero to 10,000. We'll make this 10. Run this normal is absolutely bonkers.
+[  774.47s ->   781.19s] Okay. This is the central limit theorem in action here. All right. Why is this helpful? Okay. I'm
+[  781.19s ->   786.29s] going absolutely crazy over here. And most statistics students are going to be slamming their head
+[  786.29s ->   790.77s] against the wall because they're like, okay, that's, that's nice and dandy. But how is this helpful?
+[  790.77s ->   796.25s] How is the law? How is this expression helpful? How is this, how's knowledge of this helpful? How is
+[  796.25s ->   802.69s] knowledge of the distribution of sampling means being approximately normal helpful? Here's an example
+[  802.69s ->   812.07s] of how it's helpful. Okay. I have a trading strategy. All right. And I know that if I go long all the
+[  812.07s ->   820.75s] stocks in the top quantile and short all the stocks in the bottom quantile of sentiment based on my
+[  820.75s ->   825.85s] own proprietary sentiment measure, then I'm going to be profitable based on my back tests,
+[  826.29s ->   831.47s] based on my paper trading, I'm going to be profitable. Now, Elon Musk decided it was a good
+[  831.47s ->   838.33s] idea to throttle the API. Okay. So now instead of being able to amass all of the sentiment that I
+[  838.33s ->   845.07s] would like over a 24 hour period, I instead have to be very particular about it. Okay. So what I do
+[  845.07s ->   852.77s] then is I take a random sample of tweets over a 24 hour period. And instead of needing a mass amount,
+[  852.77s ->   858.79s] that is all of the tweets over a 24 hour period for a particular security, I am instead going to
+[  858.79s ->   866.61s] generate a sample average. Okay. So I'm going to generate a sample average. What do I know about a
+[  866.61s ->   874.73s] sample average? Boom. It has to follow a normal distribution. This allows me to conduct a hypothesis test
+[  874.73s ->   883.74s] on such a sentiment. So I take a random sample of tweets over a 24 hour period. I take a look at
+[  883.74s ->   889.20s] that and I say, okay, is this going to be positive or negative? That's a hypothesis test I can do with
+[  889.20s ->   895.60s] a normal distribution. If we didn't know this, then I would be flying blind. I would be flying
+[  895.60s ->   902.70s] completely blind. I would have no idea whether or not that stock in the top quantile or bottom quantile
+[  902.70s ->   909.34s] based on the sentiment from the previous day was significant or not. Okay. Because that random
+[  909.34s ->   916.36s] sample, if there's too much volatility, if the average is too low, all these things play into
+[  916.36s ->   924.24s] whether or not that should belong in that bucket. Okay. So hopefully this was a quick and dirty intro to
+[  924.24s ->   928.94s] the law, large numbers and central limit theorem. Hopefully the visualizations helped. Hopefully the
+[  928.94s ->   935.38s] practical example in trading helped solidify this idea. If you have any questions, please leave them
+[  935.38s ->   941.36s] below. Please send me an email if you would like to. Thank you so much for watching. And I'll see you
+[  941.36s ->   943.52s] in the next one. It's good to be back. Good to be back.

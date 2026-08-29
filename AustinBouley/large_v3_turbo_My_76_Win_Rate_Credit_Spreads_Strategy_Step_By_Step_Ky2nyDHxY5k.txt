@@ -1,0 +1,106 @@
+[    0.05s ->     9.45s] Hey guys, I want to walk you through an incredibly simple put credit spread strategy that can be used in the market right now today called the bullish play.
+[    9.97s ->    18.33s] Historically, it has a 76% win rate and an average annualized return of 53.62%.
+[   18.33s ->    27.79s] Outside of all, the numbers of strategy has even been backtested by a third party to prove that it consistently outperforms the market and will help you make money right now.
+[   27.79s ->    35.27s] So let me walk you through the exact strategy step by step, the criteria you want to look for to enter, and how to set up the trade.
+[   35.45s ->    40.59s] So this is coming from the free PDF that all you guys have since you're going through this course.
+[   40.73s ->    44.79s] It is linked right below these videos and you have access to it.
+[   45.03s ->    49.95s] Anyways, in this right here, it lays out the bullish play trading guide.
+[   50.25s ->    52.57s] So here are the entry rules for it.
+[   52.87s ->    57.27s] Hey guys, I just want to hop in here real quick and let you know about a free training that I'm doing here very soon.
+[   57.27s ->    65.19s] If you click the link down below, you can access it and learn how I make $3,000 to $5,000 every single month using the new mother credit spread trading strategy.
+[   65.25s ->    66.61s] I'm going to walk you through it step by step.
+[   66.67s ->    70.93s] So by the end of the training, you'll walk through knowing how to actually implement it and use it for yourself.
+[   71.03s ->    75.95s] So you can risk $25 to make $25 with a 75% win rate.
+[   76.03s ->    79.65s] So if that is interesting to you, please make sure to click the link down below and save your spot.
+[   79.97s ->    81.13s] All right, enjoy the rest of this video.
+[   81.79s ->    86.71s] First, I'm going to walk through it and then I'll display it on the stock chart so you can understand it.
+[   86.71s ->    91.61s] Okay, so stock price is greater than the 200-day moving average.
+[   91.61s ->    99.79s] We have a stock price that is less than three standard deviations of the 200-day moving average.
+[  100.19s ->   106.11s] We have the SMA being a 10 is greater than yesterday's SMA 10.
+[  106.11s ->   114.11s] And the stock price daily change is minus 0.15%.
+[  114.11s ->   117.95s] So all these numbers, blah, blah, blah, blah, fugazi, fugazi, whatever.
+[  118.09s ->   120.27s] Let's talk about the actual way to implement this.
+[  120.51s ->   126.81s] Okay, so first off, if you have this indicator on your trading view chart, which is completely free to do.
+[  126.93s ->   129.99s] You don't even need to pay anything for this.
+[  129.99s ->   132.95s] I gave it to you for free, a part of this program.
+[  133.27s ->   137.23s] But once you have it, you can actually install this indicator here.
+[  137.81s ->   141.59s] But basically, this middle line is the 200-day moving average.
+[  141.73s ->   145.55s] So the first thing is the stock needs to be above this gray line.
+[  145.69s ->   149.05s] So if we're looking at it from a checkpoints thing, this is check true.
+[  149.51s ->   155.01s] Next, the stock price is less than three standard deviations of that moving average.
+[  155.01s ->   156.55s] Where exactly is that level?
+[  156.85s ->   162.59s] Well, if I go here to the settings, you can see that if I enable the standard deviation high-low,
+[  163.03s ->   166.69s] three standard deviations above this yellow line.
+[  166.85s ->   172.49s] So I know that this trade is going to be good if it's above this gray line and below this yellow.
+[  172.67s ->   176.95s] This is my bullish momentum upward type of range.
+[  177.31s ->   181.67s] Okay, next, the SMA 10 is greater than yesterday's 10.
+[  181.67s ->   191.41s] So this short-term trend right here, we're simply looking that today's value of the 10-period moving average is greater than yesterday.
+[  191.55s ->   193.89s] It's essentially meaning that now it's trending up, right?
+[  193.95s ->   195.79s] Because if it's less than, then it's trending down.
+[  195.87s ->   197.95s] If it's more than, then it's trending up.
+[  198.29s ->   200.75s] And so right now, it's a bit neutral, kind of trending down.
+[  200.85s ->   204.17s] So this doesn't really meet that criteria, but this is what you look for, okay?
+[  204.55s ->   209.37s] Next is the stock's daily price change has to be greater than minus 0.15%.
+[  209.37s ->   213.53s] AKA, we're not looking to buy on a major down move most of the time.
+[  213.59s ->   216.29s] So we can buy on a down move, but not a major down move.
+[  216.33s ->   216.55s] Why?
+[  216.79s ->   222.01s] Because we have a major down move that's kind of signaling maybe a crash or furthering a crash.
+[  222.35s ->   227.65s] So again, if we have more than a minus 0.15% change on the day, then that trade is good.
+[  227.71s ->   231.91s] Once all those are met, that is the bullish trading criteria.
+[  231.91s ->   237.09s] Now, again, all those are automatically shown on the credit spreads algo when it matches
+[  237.09s ->   239.03s] the setups and criteria for you.
+[  239.13s ->   242.65s] It will display it here with everything you need to know about how to enter the trade.
+[  243.03s ->   245.37s] But again, that is how you look for it yourself.
+[  245.89s ->   249.85s] So that is the first way we can enter with the bullish strategy.
+[  250.05s ->   253.09s] Now, once all the criteria is met, how do we structure the trade?
+[  253.09s ->   257.43s] So again, we're going to go out nine days into the future.
+[  257.69s ->   260.27s] So we want to make sure that it lands on a Monday, Wednesday, or Friday.
+[  260.43s ->   266.65s] So if we add nine days to the current date for our expiration date, then we want to make
+[  266.65s ->   268.31s] sure that it ends on a Monday, Wednesday, or Friday.
+[  268.39s ->   271.29s] So for instance, today is October 5th.
+[  271.29s ->   274.83s] If I add nine days, that becomes October 14th.
+[  274.83s ->   280.87s] And again, October 14th is a Wednesday, I believe, should be Wednesday, should be Wednesday if
+[  280.87s ->   281.65s] I get my dates correctly.
+[  281.81s ->   285.91s] So October 14th will be my expiration date, if I'm doing that correctly.
+[  286.13s ->   289.79s] Okay, next, again, we have percentages that we target.
+[  289.89s ->   293.61s] But just for easy math, in general, we're looking to target a 25 delta.
+[  293.99s ->   297.89s] So we're looking to go 25 delta, which essentially means we're just going out pretty far from the
+[  297.89s ->   300.65s] stock price, roughly 1% away from the stock price.
+[  300.95s ->   304.19s] And we're going to enter a $1 wide trade.
+[  304.19s ->   306.83s] So that is kind of how we structure that.
+[  307.17s ->   311.11s] Again, this here is, for some reason, incorrect.
+[  311.51s ->   312.53s] I don't know why that's there.
+[  312.61s ->   314.39s] I will update that here in a second.
+[  315.03s ->   317.67s] But anyways, now for the recovering method.
+[  317.95s ->   322.07s] So you can see here that we can break the market down into uptrending here.
+[  322.45s ->   325.95s] And then also there's a period when the market gets down super low.
+[  326.05s ->   329.35s] It's now overextended, but to the bottom side, right?
+[  329.37s ->   333.17s] Like we've crashed too far that it's about time for a bounce.
+[  333.17s ->   334.51s] So you can see here when it comes back below.
+[  334.85s ->   336.27s] And so that's what we're looking for here.
+[  336.27s ->   341.25s] When we cross this bottom yellow line, then we can start entering bullish plays again.
+[  341.59s ->   341.71s] Why?
+[  341.83s ->   344.99s] Because this period here is all bearish underneath the 200 day.
+[  345.39s ->   346.79s] But here, this is all bearish.
+[  346.93s ->   351.43s] But if we can catch it below it, this is bullish when it's going to start bouncing, mathematically
+[  351.43s ->   352.15s] speaking.
+[  352.15s ->   354.89s] And so how we enter those trades is exactly the same here.
+[  354.95s ->   357.23s] Wait for price to be below that bottom yellow line.
+[  357.49s ->   359.75s] Again, minus three standard deviations.
+[  359.95s ->   365.21s] We're going to have the same expiration where the current date plus nine days round up to
+[  365.21s ->   366.51s] the next Monday, Wednesday, or Friday.
+[  366.51s ->   372.25s] If it lands on a Tuesday, Thursday, or a weekend, we're going to target for this one, the 35 delta.
+[  372.69s ->   374.49s] And so that's how we're going to put on this trade.
+[  374.49s ->   376.91s] And we're going to use a put credit spread trade.
+[  376.91s ->   380.83s] Again, I will have this all updated by the time this course is up.
+[  380.91s ->   384.13s] I'm sorry about these little mishaps here.
+[  384.41s ->   390.03s] Anyways, that is how we play the bullish play strategy in both bullish markets and recovering
+[  390.03s ->   390.53s] markets.
+[  390.81s ->   399.97s] And that combined of those two approaches together gives us a 76% historical win rate and an annualized
+[  399.97s ->   400.87s] return of 54%.
+[  400.87s ->   406.81s] So if you want to more than five X, even six X, the average market return by only trading
+[  406.81s ->   411.89s] two strategies or really one, then use this put credit spread trading strategy.
+[  412.11s ->   416.25s] Again, if you need help with anything, please let me know in the discord group chat, and
+[  416.25s ->   419.83s] I will hopefully instantly respond to your responder as quickly as I can.
+[  420.03s ->   423.75s] All right, guys, see you in the next lesson where we go over short play and call credit
+[  423.75s ->   424.41s] spread strategies.

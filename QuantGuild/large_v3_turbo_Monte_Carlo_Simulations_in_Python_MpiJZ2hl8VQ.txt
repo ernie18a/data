@@ -1,0 +1,40 @@
+[    0.46s ->     6.22s] Monte Carlo simulations. What are they and how are they useful to us? Well, I think the best
+[    6.22s ->    13.48s] way to illustrate what a Monte Carlo simulation is, is through an example. So let us consider
+[   13.48s ->    20.78s] a basketball player with a success rate for free throws of 70%. What are the odds that he makes at
+[   20.78s ->    29.46s] least 70 of 100 shots? Well, one way to do that is to find a basketball player in real life and
+[   29.46s ->    37.30s] see if he has a free throw shooting percentage of 70% and have him shoot 100 shots a large number
+[   37.30s ->    44.76s] of times and take the average of whether or not he successfully made at least 70 shots and come up
+[   44.76s ->    50.84s] with a probability. Now, that in essence is what a Monte Carlo simulation is. So let's build this
+[   50.84s ->    59.99s] out in Python and take a closer look. For starters, we'll import NumPy. And as I mentioned, we would
+[   59.99s ->    66.25s] have the basketball player shoot 100 free throws a large number of times. So in this case, our large
+[   66.25s ->    75.66s] number is just going to be 10,000. So we'll create a for loop running from 0 to 10,000. And we're going
+[   75.66s ->    83.48s] to have him shoot 100 shots every trial. So every iteration, he's going to be shooting 100 shots.
+[   87.48s ->    94.64s] Now, we need some way of recording within the trial if he made at least 70 shots. So we're going to create
+[   94.64s ->   101.98s] a list called shots made. And now that we have a way of recording whether or not he made the shot,
+[  102.02s ->   106.74s] we need to be able to randomly generate whether or not he made the shot. So we're going to use NumPy
+[  106.74s ->   112.52s] for this. We're going to say r is equal to np.random.random, which is going to generate a decimal
+[  112.52s ->   122.04s] between 0 and 1 inclusive. And if the random decimal is less than or equal to 0.7, well, since he had a
+[  122.04s ->   130.34s] free throw shooting percentage of 70%, he made it. So we will append one to the shots made list.
+[  130.84s ->   139.60s] On the flip side, if the percentage is greater than 0.7, I'm sorry, if the decimal is greater than 0.7,
+[  140.18s ->   149.60s] then he missed. So we will append a zero. Now, after he shoots all 100 shots, we need to determine if
+[  149.60s ->   155.92s] the sum of all the shots that he made is greater than or equal to 70. So we'll create an if statement
+[  155.92s ->   165.36s] outside of the 100 shots. And we'll say, if the sum of shots made is greater than or equal to 70,
+[  166.40s ->   172.32s] we need to append one to a list outside of all of the trials. So we'll create a new list called
+[  172.32s ->   183.58s] aggregate shots made. And we will append one if he made greater than or equal to 70 shots
+[  184.22s ->   190.70s] within that trial. And just as before, if he did not, then he obviously did not make the 70 shot
+[  190.70s ->   202.34s] minimum. So we will append zero. And that's pretty much it. So to find the probability of him making at
+[  202.34s ->   212.51s] least 70 out of 100 shots, all we have to do is print the average of the aggregate shots made list.
+[  216.64s ->   222.88s] And after running this, we get 0.556. And if you keep running it, you're going to get a couple of
+[  222.88s ->   232.08s] different, some margin of error. But as the number of trials increases, the probability converges to the
+[  232.08s ->   237.28s] true probability. And this makes sense if you think about it, right? So if he has a
+[  237.52s ->   245.84s] free throw shooting success rate of 70%, then he will make seven out of 10 free throws on average,
+[  245.84s ->   251.60s] implying that if this follows a standard normal distribution, 50% of the data approximately will
+[  251.60s ->   258.32s] be below the mean and 50% will be above. And that's exactly what we're seeing here. Approximately 55%
+[  258.32s ->   266.34s] of the time, he is making the 70 shot minimum. So this is just one example of an implementation of a
+[  266.34s ->   272.98s] Monte Carlo simulation. And what we're actually going to do in later videos is apply this concept to
+[  272.98s ->   279.30s] generating sample paths for geometric Brownian motion as seen in the previous video. So we're
+[  279.30s ->   284.34s] going to use that to assist in pricing different financial derivatives, and it is going to be pretty awesome.
+[  284.34s ->   290.98s] to keep it because we have a lot of attention. So let's see if we're gonna get to it.
+[  290.98s ->   293.30s] So let's go to the end of this video.
+[  293.30s ->   294.58s] Thank you.
+[  294.58s ->   297.30s] ...

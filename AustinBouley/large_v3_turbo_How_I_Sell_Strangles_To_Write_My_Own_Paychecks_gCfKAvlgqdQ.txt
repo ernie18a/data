@@ -1,0 +1,100 @@
+[    0.00s ->     5.20s] Hey IMP option traders I want to walk you through a monthly income strategy that I do at least once
+[    5.20s ->    10.62s] a month if not more and they're called the skewed strangles. Skewed strangles work well and neutral
+[   10.62s ->    15.64s] to uptrending markets. What does that mean? When the market's like in the middle here trading a
+[   15.64s ->    21.74s] bit range bound or when it's slowly going up that is when the strategy performs best. You can use
+[   21.74s ->    27.30s] it anytime you want but that is the ideal market conditions for the strategy and what in the world
+[   27.30s ->    33.80s] is a skewed strangle. Well a skewed strangle is where we cover both sides of the market. We just
+[   33.80s ->    38.32s] covered selling puts which is where we pick a level we think that the stock won't go below so
+[   38.32s ->    42.68s] it's something like this as long as the stock stays above this level we make money. Well a skewed
+[   42.68s ->    47.86s] strangle is where we do this where we sell a put and at the same time we sell a call where we pick
+[   47.86s ->    53.64s] a level we think the stock won't go above so something like this. So now as long as the market
+[   53.64s ->    59.30s] stays above this level but also below this level then we make money. So that's why we want the
+[   59.30s ->    64.66s] market to be a bit more neutral or if it is uptrending slowly uptrending. So that is how
+[   64.66s ->    71.72s] we trade strangles. Again this works well because it requires no more buying power than that of
+[   71.72s ->    79.00s] selling puts. When you sell a put the only the buying power you have is the same buying power if
+[   79.00s ->    86.04s] you sell a call. Why in the world is it like that? Well because brokers are smart enough to know
+[   86.04s ->    92.20s] that only one of your options can lose money right. It either goes up and you break the call to the
+[   92.20s ->    97.74s] upside or it goes down and you break the put to the downside. You can't lose on both options so it only
+[   97.74s ->   103.36s] requires one amount of buying power that being the highest level. Typically the put requires the most
+[  103.36s ->   110.16s] buying power. So that's why it's more advantageous to sell strangles sometimes than selling put. Selling
+[  110.16s ->   116.96s] puts is a great strategy. I do it but selling strangles has the opportunity for you to make
+[  116.96s ->   123.06s] more money on the same amount of buying power. Now the only issue is your win rate drops because now you
+[  123.06s ->   128.96s] have to stay below a certain level. As we know the market likes trending up and so by default we're
+[  128.96s ->   135.46s] going to hit that call side sometimes. So this is how I structure this trade. I do roughly 90 days out
+[  135.46s ->   142.10s] because this gives me the ability to collect the most money but also avoid gamma risk but also still
+[  142.10s ->   149.70s] have some decent theta. So 90 DTE is my sweet spot. Next I do a 10 delta put just like when I'm selling
+[  149.70s ->   158.52s] puts. So a 10 delta put. I also do a 5 delta call. Why is the delta call further away? Well because as we
+[  158.52s ->   165.50s] know the market likes to trend up so I want to put my call further away so that I can adjust for the
+[  165.50s ->   170.00s] market wanting to trend higher and I don't always hit it. If I had a 10 delta call it would get hit
+[  170.00s ->   175.20s] way more than the 5 delta call. So this is how I structure the strangle. I want to stay above the
+[  175.20s ->   181.82s] 10 delta put but also below the 5 delta call. Same exact profit and loss. I have a 25 profit target
+[  181.82s ->   188.42s] which means that if I collect a thousand dollars on this trade once I hit a $250 profit I close the
+[  188.42s ->   193.84s] trade and like selling puts I have a 400% stop loss which means that if I collect a thousand dollars
+[  193.84s ->   200.44s] once the trade is at 4,000 meaning that I have a $3,000 loss I will exit the trade early. This trade
+[  200.44s ->   206.80s] will have roughly a 90% win rate plus and I'm collecting more credit than I would by selling a
+[  206.80s ->   210.72s] put. This is an amazing strategy and let me show you the backtest because I don't want you to just take
+[  210.72s ->   217.28s] my word for it. Here's the delta pro. Let me make my face smaller. Here is the backtest exactly as I
+[  217.28s ->   222.18s] explained it. We have a 10 delta put, a 5 delta call. We're going further up to give ourselves more
+[  222.18s ->   229.16s] room to the upside. We're doing a 90 days until expiration. We have a 25% take profit and a 400%
+[  229.16s ->   238.26s] stop loss. You can see here we have a $1,100 return. Now as we know already this is higher than what it
+[  238.26s ->   244.32s] was when we were selling puts. Why? Because we collect more money when we do these trades. Not only that
+[  244.32s ->   250.34s] our win rates are roughly about the same in 98% win rate. So that's great and we're collecting a
+[  250.34s ->   255.86s] bit more. So that's awesome as well. And we also have 15 days until expiration which means that we
+[  255.86s ->   262.40s] make this $250 profit or roughly $440 profit in about two weeks of holding this trade. This is a
+[  262.40s ->   268.16s] two-week hold that on average we will make $400. So it's a great trade. But as always we need to ask
+[  268.16s ->   274.98s] yourself where does this fail? You can see here compared to the selling put strategy it was
+[  274.98s ->   280.98s] outperforming the market. This one is currently underperforming the market but it's because of
+[  280.98s ->   288.12s] some major crash periods like right here in 2018. Right here at the top of the end of 2018
+[  288.12s ->   296.36s] and the COVID 2020 crash. All these levels it failed and failed miserably. So how can we prevent that?
+[  296.36s ->   302.16s] Well like we did in selling puts we're going to be using this trending band which we'll unlock in
+[  302.16s ->   307.70s] the next course of the community site. And what this does is the trending band shows you when a
+[  307.70s ->   313.32s] crash is likely to happen. When we get near this top blue line a pullback is likely. So what does
+[  313.32s ->   317.66s] that mean? It means that we want to stay out of strangles because it's likely that our puts will
+[  317.66s ->   325.74s] get broken. The same thing to the downside. When the market is near this bottom blue line or hitting
+[  325.74s ->   330.12s] this bottom blue line we should stay out of strangles as well. Why? Because it's likely that
+[  330.12s ->   333.72s] the market will bounce and when it bounces it recovers quickly. Look at this shooting up. It
+[  333.72s ->   339.98s] will break our call side if that happens. So where is the ideal environment to sell these strangles?
+[  340.42s ->   345.82s] The ideal environment is inside this blue band. Not touching the blue but inside this blue band.
+[  346.20s ->   351.66s] This is where we'll have the highest success with selling strangles and at the same time avoid this
+[  351.66s ->   358.66s] crash this crash and this crash as long as you are trading within the band. So we can take a look at
+[  358.66s ->   365.00s] the 2018 period to give you an example. So during 2018 you can see here your call side would have
+[  365.00s ->   368.60s] been broken here because of how high it went up and then your put side would have been broken here
+[  368.60s ->   373.24s] leading to two losses. But instead if you were to stop trading it when it got outside of this range
+[  373.24s ->   379.34s] you would have avoided most of these losses. So that's one of the good things there. Now this one is a
+[  379.34s ->   383.56s] situation where you could not have avoided the loss. Thankfully it wasn't huge. If we can come
+[  383.56s ->   388.44s] back here you can see this was the pullback here in this area. It wasn't as big as this one or 2020.
+[  389.08s ->   392.46s] So again this is a loss that you couldn't have avoided because you can't avoid all losses.
+[  392.92s ->   398.44s] But still if we look at 2020 we would have stopped trading it and got out of positions when it broke
+[  398.44s ->   402.90s] above here. So we would have avoided this whole market crash and been able to make a lot of money.
+[  403.22s ->   407.42s] So if we would have avoided this crash and avoided this crash then our profit chart would have been way
+[  407.42s ->   413.28s] above the market and we would be making a very positive return. Now again if we're looking at
+[  413.28s ->   419.46s] this over a 10-year period it has 139% return over 10 years. That's roughly a 14% return a year.
+[  419.78s ->   423.10s] So you're still doubling the average market return by trading this one strategy.
+[  423.62s ->   430.18s] Now what is risk management? Because not only do we look at stop losses and take profits for risk
+[  430.18s ->   436.58s] management we also look at sizing. The same way we size with puts we want no more than 10% of our
+[  436.58s ->   442.72s] account to be in any one trade. So if we're going to have a $4,000 loss as our max loss case scenario
+[  442.72s ->   449.88s] when trading ES then we should have a $40,000 account when trading. So selling puts does require
+[  449.88s ->   453.62s] a larger account but if you don't have that yet because you're still building you're still adding
+[  453.62s ->   459.90s] money to it go to MES it's going to require a tenth of the price. So it will have a $400 max loss so
+[  459.90s ->   466.32s] that means you'll need a $4,000 account. So that is how you sell the strangles. Now how do you automate
+[  466.32s ->   470.20s] this strategy for people who are at work who want to spend time with their kids who want to focus on
+[  470.20s ->   474.30s] things that matter not be stuck to the screen after a long day of work or you're really just like I
+[  474.30s ->   477.96s] want to make sure that the stop losses are automated for me because believe it or not almost
+[  477.96s ->   482.90s] all brokers cannot do stop losses on strangles because it's a call and a put and they don't know
+[  482.90s ->   488.10s] how to handle it. So that's why I built this auto trader to do it for you and handle the stop loss.
+[  488.10s ->   491.72s] We're going to go in here to create a new auto trader. We're going to enter our tasty trade
+[  491.72s ->   496.66s] details. After successfully connecting our account we're going to do selling strangles as our strategy.
+[  497.42s ->   501.56s] From here we're going to do exactly as I set it up. Again you can set it up however you would like
+[  501.56s ->   506.58s] but I do a 10 delta put and a 5 delta call. We're selling both of these that's how a strangle is
+[  506.58s ->   510.96s] structured. We're going to go to ES because I have a larger account size. We're going to go to trade
+[  510.96s ->   516.50s] weekly one a week and then we're going to go to expiration 90 days. That's what I like to target.
+[  516.50s ->   522.38s] Again you can play with these numbers as you want. Our take profit percentage is going to be 25%
+[  522.38s ->   527.24s] and our stop loss is going to be 400%. Now it's going to monitor that for us. And as always what
+[  527.24s ->   532.42s] I love settings not only the buying power for this strategy but also making sure that it avoids the
+[  532.42s ->   538.14s] market crashes. This will keep me out of the both the upside and the downside risk of trading strangles.
+[  538.28s ->   543.86s] I enable safeguards and now this strategy is available. So now I have this auto trailer
+[  543.86s ->   550.04s] available to that sell strangles every single week based on our trading strategy. A 10 delta put,
+[  550.10s ->   557.34s] a 5 delta call, 400% stop loss, and 25% profit. So that is how you set up an automation that will
+[  557.34s ->   562.96s] automatically do this trade for you. It will enter it, exit, manage stop loss, and avoid crashes for
+[  562.96s ->   567.86s] you all in one place. So again this is the beta version of our auto trader that's going to be
+[  567.86s ->   572.64s] releasing very soon but I hope you're able to use and enjoy this strategy yourself in the meantime.

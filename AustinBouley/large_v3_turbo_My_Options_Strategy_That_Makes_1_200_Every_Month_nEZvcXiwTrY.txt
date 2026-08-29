@@ -1,0 +1,78 @@
+[    0.04s ->     5.32s] Hey guys, this video I want to show you how I make roughly $1,200 a month trading strangles in a way that nobody else does.
+[    5.38s ->    12.22s] I'm going to walk you through exactly how I do that so by the end of the video you can do exactly what I do and understand how and why it works.
+[   12.32s ->    19.58s] So again, right here I have on a strangle that's roughly making me $460 and again, that's a great return.
+[   19.70s ->    24.06s] I've been in the trade for roughly 32 days, but again, I made a mistake on this trade.
+[   24.06s ->    32.08s] I didn't even do it the best way that I'm going to show you here because I was busy and working and doing some other things that I didn't watch the market on time.
+[   32.36s ->    36.54s] But regardless, I'm still having a great return doing the same exact thing.
+[   36.60s ->    39.30s] So let me walk you through exactly how this strategy works.
+[   39.76s ->    44.50s] So for those who don't know what a strangle strategy is, let me walk you through what that is.
+[   44.92s ->    53.66s] Strangles is an option strategy where you sell what they call an a put that are out of the money and this allows you to make money when the stock stays between a certain value.
+[   54.08s ->    57.46s] So for instance, let's just say here we want to put up some levels.
+[   57.84s ->    68.18s] Let's say that the stock, we make money on this strangle if the stock both stays below 490 and above, let's say, 460.
+[   68.42s ->    71.06s] So this would be an example of a strangle.
+[   71.28s ->    74.98s] Again, when you're doing it the way that I do it, you are further out.
+[   75.08s ->    82.88s] But just for example here, this is how you would structure a strangle trade where you have an equal distance from the stock, both to the upside and downside.
+[   82.88s ->    86.56s] And as long as the stock stays between this, you make money.
+[   86.70s ->    88.80s] And so that's the beautiful part of the strategy.
+[   88.88s ->    92.18s] It's a very set and forget strategy that has a really high win rate.
+[   92.30s ->   100.80s] When you start making those regions very far, like you start doing stuff like this, where as long as the stock stays between these huge levels, then you make money.
+[  100.80s ->   107.68s] Now what most people do and what you're taught is to do strangles at the same delta, meaning that you're doing it at the same distance apart.
+[  108.04s ->   110.66s] So if you're $50 above, you're also $50 below.
+[  111.04s ->   112.52s] This is how a strangle is structured.
+[  112.68s ->   116.58s] This means that you expect the market to be neutral and trade range bound.
+[  116.58s ->   120.30s] Well, if you've ever looked at a market, the market never stays neutral.
+[  120.48s ->   122.06s] If so, it's very rare.
+[  122.38s ->   124.60s] Again, we see the market trending in phases.
+[  125.00s ->   136.54s] If you used a generic neutral strategy that traded the same high and same low, during this period, the stock would have broke through the high point and you would have hit a max loss and you would have had to exit the position.
+[  136.54s ->   147.34s] So again, the market trends, so our strangles should match that the market is trending and this is how I trade strangles unlike anybody else.
+[  147.64s ->   153.46s] I do what's called skewed strangles, where I know the market trends up over time.
+[  153.62s ->   161.10s] And so what I mean by that is, I, instead of doing the same distance away from the stock, I do something more like this.
+[  161.10s ->   167.52s] Where am I put, or the one on this side, on the bottom side is a bit closer, so that the one on the call side can be way up.
+[  167.80s ->   169.90s] Why do I structure it like this?
+[  170.16s ->   173.26s] Well, because the market, more times than not, goes up.
+[  173.32s ->   179.72s] So I want to give the market more room to go up so that I can still make profit even if the market goes up.
+[  179.76s ->   185.12s] Because when you lose on strangles is where these levels get broken, is where you start to lose on strangles.
+[  185.12s ->   191.10s] And so if I can make that where the market is trending, then I'll do really, really well.
+[  191.48s ->   194.46s] And another way that I do this is I can even strangle it to the downside.
+[  194.66s ->   202.12s] So for instance, if you think the market's likely to crash right now, then bring in this side a bit closer and bring in this side a bit further.
+[  202.52s ->   203.38s] And now guess what?
+[  203.42s ->   209.14s] Now you have a downside skewed strangle, which gives you more room to drop and you still make money.
+[  209.42s ->   211.36s] So again, that's how I look at this.
+[  211.36s ->   220.50s] I take moving averages like this whole moving average, and if the market is above it and trending up, I'll skew my strangle to the upside to give myself some more upside room.
+[  220.78s ->   227.26s] If I'm going down and below it, then I'll skew my strangle down to the downside to give myself more downside movement.
+[  227.68s ->   231.14s] And so again, this way, I can have a really high win rate on my credit spreads.
+[  231.24s ->   235.34s] But not only that, my high win rate comes from how I manage the trade.
+[  236.00s ->   241.12s] So most people are taught to manage a trade at 50% profit margin.
+[  241.36s ->   249.96s] So once your strangle gets to a 50% return, then you're going to take profit or you do a 3x stop loss.
+[  250.04s ->   250.92s] So what does this mean?
+[  251.18s ->   256.68s] Let's say that we enter this strangle and we're able, just for easy numbers, we enter the trade at $5.
+[  257.06s ->   263.36s] So we get paid $5, or in the options where we multiply by 100, we get paid $500 to put on this trade.
+[  263.36s ->   268.02s] Which means as long as the stock stays between our levels, we make $500.
+[  268.82s ->   273.20s] So where does my profit come in if I'm using this normal level?
+[  273.52s ->   278.30s] Well, that means that a 50% profit, if I make $250 of profit, I'm going to close the trade early.
+[  278.74s ->   285.44s] If I have a $1,500 loss, then I'm going to take that loss.
+[  285.44s ->   286.62s] So $1,500 loss.
+[  286.94s ->   293.32s] And so again, this isn't really a $1,500 loss because again, that's once it gets to 3x, I actually received $500 to put this trade on.
+[  293.44s ->   295.46s] So I'm only having about $1,000 loss.
+[  295.60s ->   299.64s] But still, roughly, I'm going to make about $250 for every $1,000.
+[  300.14s ->   303.54s] And this example that I'm giving, I don't know if this is actually a real way to do it.
+[  303.58s ->   304.66s] I'm just using easy numbers.
+[  304.66s ->   310.26s] But the way that I do it, that's unlike anybody else because people love profits, which is good.
+[  310.38s ->   315.34s] But if you can be more disciplined, you can make your win rate even higher and you can get out of trades faster.
+[  315.74s ->   321.30s] So instead of doing a 50% profit margin or profit target, I do a 25% profit target.
+[  321.62s ->   325.78s] This means that I cut the amount of time I'm in trades in half.
+[  325.96s ->   328.14s] I'm typically only in trades for 10 days.
+[  328.48s ->   331.58s] And my win rate goes up dramatically as well.
+[  331.58s ->   347.74s] So again, if I am entering a strangle and I get $500 to enter in, then that means that I get to take profit once I hit $125 in profit is when I get to take profit.
+[  348.08s ->   354.74s] And I still do my normal $1,500 stop loss, which would translate since I received $500, it would be about $1,000 loss.
+[  354.74s ->   366.74s] So again, the same loss on both sides, but in this instance, I make $125 instead of $250, but my win rate would go from roughly 85%, which is what this is, to 93%.
+[  367.44s ->   372.12s] And I prefer over 90% win rate trades where I can make a decent amount of money.
+[  372.44s ->   375.20s] And so that's exactly how I trade this strategy.
+[  375.20s ->   384.92s] Again, because of time decay over the weekend, I was able to collect a lot more on the strangle and I'll be closing it today to take more roughly around a 50% to 60% profit.
+[  385.38s ->   388.88s] But again, typically I take that 20% profit and I move on.
+[  388.96s ->   392.90s] So again, I messed up, but again, I still can do this and make a lot of money.
+[  393.00s ->   397.34s] So again, if you are in doubt and you aren't making money with strangles, what should you do?
+[  397.74s ->   399.26s] Skew your strangles.
+[  399.26s ->   411.46s] The market is almost never neutral and so you want to skew it in the direction of the trend and that will be how you dramatically increase your winning trades and stop having the same call side being broken over and over again.
+[  411.72s ->   413.06s] Anyways, I hope that made sense.
+[  413.12s ->   417.46s] If you enjoyed this video, please smash that subscribe button and I will see you in the next video.

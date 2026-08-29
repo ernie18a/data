@@ -1,0 +1,116 @@
+[    0.00s ->     6.00s] all right get this because i can barely believe it myself i'm at the gym and a quant comes up to me
+[    6.00s ->    12.00s] he works at jane street he saw the quant guild bracelet and we got to talking i told him about
+[   12.00s ->    17.28s] my background and quant guild he thought it was pretty cool and i started asking him about the
+[   17.28s ->    22.48s] projects he was working on over at jane street his background he got a phd in applied math
+[   23.28s ->    33.04s] and the topic came up of diversification and hedging and he didn't know how to explain
+[   33.04s ->    38.00s] the difference and maybe it was the leg day talking but i'm like are you serious you work
+[   38.00s ->    43.36s] at jane street and you can't explain do you have a phd in applied math and you work at jane street
+[   43.36s ->    46.72s] and you can't tell me the difference between diversification and hedging i said we're gonna
+[   46.72s ->    53.52s] fucking fix that today i'm going to record a lecture on diversification and hedging discussing
+[   53.52s ->    59.36s] the statistical and structural mechanisms at play and then i'm going to send it to you once it's
+[   59.36s ->    69.12s] posted so jane street quant at the gym this one is for you diversification is a statistical mechanism
+[   69.12s ->    76.32s] it is a statistical mechanism that is trying to reduce your portfolio volatility if you do that
+[   76.88s ->    83.28s] you are going to both reduce your volatility drag and improve your geometric returns and you're going
+[   83.28s ->    91.68s] to improve risk adjusted return metrics like the sharp ratio mechanically as long as two assets in
+[   91.68s ->    98.48s] your portfolio do not have perfect correlation then you're going to achieve a diversification benefit
+[   98.48s ->   103.92s] what does this look like graphically well here i have two stocks they are uncorrelated with each other
+[  103.92s ->   110.32s] on the right you see this correlation plot there is no trend i don't see a positive trend or a negative
+[  110.32s ->   117.68s] trend between the two returns they're completely uncorrelated these are two stocks in u.s equities
+[  117.68s ->   126.08s] and this orange line here is the combined portfolio and this is the mathematics showing that mechanically
+[  126.08s ->   133.44s] you're going to reduce your portfolio variance and improve risk adjusted return metrics that's exactly what we see
+[  133.44s ->   141.04s] here we see here we see that stock a has a sharp of 1.16 stock b of 0.96 but the portfolio sharp
+[  141.04s ->   151.42s] is 1.51 better risk adjusted return diversification benefit all right so let's just diversify our portfolio
+[  151.42s ->   160.14s] we'll just hold as many uncorrelated stocks as possible well the problem with that is the statistical mechanism
+[  160.78s ->   171.50s] is going to fail exactly when you need it in other words correlation structures in the real world they're
+[  171.50s ->   179.58s] non-stationary there's no convergence we don't have nice asymptotic convergence like in the classroom check it out here
+[  179.58s ->   187.42s] everything is going to be a statistic and as we sample more data points those statistics aren't going to
+[  187.42s ->   193.58s] converge to anything the law of large numbers in the central limit theorem do not apply in the real world
+[  193.58s ->   201.18s] what are the implications for us when we try to hold a diversified portfolio well when there is a market crisis
+[  201.18s ->   209.18s] and we need that diversification benefit for our risk adjusted return and our volatility drag watch what
+[  209.18s ->   216.94s] happens uncorrelated uncorrelated uncorrelated and then wham crisis everything is correlated but then it goes
+[  216.94s ->   224.06s] back to uncorrelated this is exactly the problem we face in practice the problem we face in practice is
+[  224.06s ->   231.58s] the correlation structures between any two assets in a portfolio are time varying if there's a market
+[  231.58s ->   238.70s] crisis then those correlation structures go to one they all move together highlighted here by these
+[  238.70s ->   244.30s] negative returns you can see these negative returns for stock a and stock b occur at the same time
+[  244.30s ->   255.23s] so our portfolio value goes down along with the rest of the ship real diversification real diversification
+[  255.23s ->   261.39s] is structural not statistical i don't need a back test to tell you whether or not i have
+[  261.39s ->   269.71s] structural diversification this is about physical and stochastic independence all right good risk
+[  269.71s ->   275.63s] allocators are effectively baseball players they're stepping up to the plate and they're observing where
+[  275.63s ->   284.03s] they can allocate risk and they're doing so in a way that is physically structurally diversified
+[  284.03s ->   289.87s] look at the implications of this when there is a market crisis instead of holding a stock and another
+[  289.87s ->   298.11s] stock i hold a stock and a sports market making algorithm check it out when there's a market crisis
+[  298.11s ->   304.83s] my sports market making algorithm doesn't care at all what is that doing to my portfolio it is ensuring
+[  304.83s ->   312.03s] that when the correlation structures go to one of an entire class of risky assets i actually have
+[  312.83s ->   322.67s] real diversification structural physical diversification that structural independence these unrelated assets
+[  323.39s ->   331.63s] are providing the same statistical benefit that we see mechanically here but they're doing so in a more
+[  331.63s ->   339.39s] productive way such that when there is a crisis we actually observe the benefit of diversification the
+[  339.39s ->   345.07s] repercussions in our portfolio being reduced volatility drag meaning a better compound annual growth rate
+[  345.07s ->   352.83s] better risk adjusted return metrics like a sharp ratio sortino ratio and of course more wealth in the long run now
+[  352.83s ->   366.19s] it certainly takes a lot of math probability and finance to draw that conclusion but apparently not enough from a phd program in mathematics if you're looking for a role in the industry as a
+[  366.19s ->   372.99s] as a trader a market maker a quant then you need to master your quantitative skills and actually learn
+[  373.63s ->   381.15s] what is necessary for this industry that's exactly why i built quant guild dot com quant guild has an adaptive
+[  381.15s ->   386.99s] practice engine that scales with your skill level so you can progress to more and more difficult topics in math probability
+[  386.99s ->   395.15s] finance courses from a to z in coding probability statistics math no fluff just everything you need
+[  395.15s ->   404.03s] to apply these concepts to the real world we also have lessons interview questions and master classes
+[  404.59s ->   409.87s] so if you're looking to master your quantitative skills for a role in the industry as a trader a market maker
+[  409.87s ->   418.59s] or a quant then check out quant guild dot com so if diversification is a statistical mechanism to improve
+[  418.59s ->   428.67s] our portfolio's metrics and of course our long run wealth what is hedging well all hedging is is trading uncertainty
+[  428.67s ->   435.79s] for certainty in the future whether or not you have a cash flow today for that particular contract
+[  435.79s ->   441.71s] guaranteeing that certainty is going to be based on the financial derivative that you are working with
+[  442.67s ->   450.43s] i have a really great example for you here in the context of a put option on stock let's suppose that
+[  450.43s ->   459.23s] you bought nvidia at 180 you're doing pretty well it's around 210 right now but you're afraid of losses below
+[  459.23s ->   467.07s] 180 how can you hedge that state of the world how can you trade that uncertainty for certainty well
+[  467.07s ->   475.47s] you can buy a put option and what i want you to notice is as the stock price of nvidia fluctuates then over
+[  475.47s ->   484.83s] time you have this put contract with a strike price of 180. if you're unfamiliar with options i have a free
+[  484.83s ->   491.79s] online one hour options master class that you can access i'll leave a link in the description below
+[  491.79s ->   499.15s] to it i walk through everything from the payoffs and profit diagrams to strategies and the idea of
+[  499.15s ->   503.79s] pricing with black shoals so if you're interested i'll leave a link to that in the description below
+[  503.79s ->   511.15s] but what i want you to notice here is if you have familiarity with these contracts that as time marches on
+[  511.15s ->   519.63s] the value of these derivatives these contracts are going to change over time there is no one price
+[  520.27s ->   528.03s] of that contract there is your cost basis which is what you paid for the contract but it's going to
+[  528.03s ->   535.87s] be marked to market every single day and what do you notice here about the relationship between the
+[  535.87s ->   543.79s] nvidia stock and this put contract well i don't know about you but they look pretty unrelated in the
+[  543.79s ->   552.35s] sense that there might be not a zero correlation but rather a negative correlation and it turns out
+[  552.35s ->   560.27s] that that negative correlation between nvidia and some sort of put contract is going to offer a structural
+[  560.83s ->   568.43s] diversification benefit this is the biggest idea that i can possibly convey to you in this video
+[  569.47s ->   576.83s] and that is that the diversification mechanism is statistical but if it's structural that relationship
+[  576.83s ->   585.87s] is never going to break down this is how you correctly correctly diversify a portfolio let me show you
+[  585.87s ->   594.11s] an example here this is hedging done correctly as structural diversification we know that this contract
+[  594.11s ->   600.03s] has a specified payout it doesn't matter if the market implodes tomorrow it doesn't matter if we go on a
+[  600.03s ->   607.31s] crazy bull run the contract traded uncertainty for certainty let's see what the impact is in terms of this
+[  607.31s ->   615.39s] negative correlation in a portfolio during a crisis watch what happens we can see wow there's a lot going on
+[  615.39s ->   623.47s] here but if we take a look at nvidia stock value over time during crisis it crashes hard but what happens
+[  623.47s ->   632.19s] to our portfolio value this blue line here this blue line here it does not crash hard and that's because
+[  632.19s ->   641.79s] the put value is going to offset that loss in that market crisis so we didn't have to worry about the put
+[  641.79s ->   649.31s] value value and nvidia having a correlation go to one together reducing our diversification benefit no
+[  649.31s ->   658.03s] instead they are not correlated with one another in that sense they're actually anti-correlated when one
+[  658.03s ->   665.71s] goes up the other goes down and that's not a statistical mechanism that is a structural mechanism that is
+[  665.71s ->   672.11s] specified by the contract the put contract itself it's guaranteed to have that payout regardless of
+[  672.11s ->   680.11s] if the market implodes or not that's why it is a structural benefit that is this idea of hedging we're
+[  680.11s ->   687.39s] not just going to hedge for no reason we're hedging with the intent of what reducing volatility drag
+[  687.39s ->   694.59s] improving compound annual growth rate improving our risk adjusted return metrics why else would you hedge
+[  694.59s ->   703.31s] hedge that literally makes no sense your entire purpose is to preserve and grow capital that is why you
+[  703.31s ->   711.79s] would implement a hedging scheme in the first place all right the way in which the future unfolds is uncertain
+[  711.79s ->   724.00s] and that is going to dictate how aggressive you hedge all right what are the impacts of appropriate hedging on a
+[  724.00s ->   734.32s] portfolio in the long run well this is a strategy that i cover in depth in my live class on quant guild
+[  734.32s ->   741.28s] you can apply to register effectively i am showing you how to run a personal hedge fund instead of running a
+[  741.28s ->   749.12s] hedge fund myself i figure i might as well help high net worth individuals manage their own money with an
+[  749.12s ->   758.32s] effective hedging strategy the impact being on your long run wealth you will observe a lower volatility
+[  758.32s ->   767.28s] drag better compound annual growth rates and better risk adjusted return metrics this is not teaching you
+[  767.28s ->   774.72s] to trade this is teaching you how to preserve and grow your capital and how to sleep soundly at night
+[  774.72s ->   780.32s] knowing if the market implodes tomorrow you're gonna have a shit ton of money while everyone else is
+[  780.32s ->   787.68s] running around with their heads on fire trying to sell for pennies on the dollar so if you're interested
+[  787.68s ->   795.46s] in applying to the next cohort i will leave a link in the description below all right so we can see here
+[  795.46s ->   803.62s] that the impact then of effective hedging is what we have far more money in periods of crisis than if we
+[  803.62s ->   809.22s] were to just passively buy and hold and take a look at our metrics we have an arbitrarily better
+[  809.94s ->   818.42s] risk-adjusted return and lower volatility drag meaning better compound annual growth all right so this is
+[  818.42s ->   828.42s] the idea of diversification and hedging and the interesting idea here is that hedging is actually
+[  829.30s ->   836.82s] making your portfolio receive a diversification benefit just in a structural way not a purely
+[  836.82s ->   842.34s] statistical way such that when there is a market crisis if you have that structural diversification
+[  842.90s ->   849.86s] in play then you're going to achieve the benefit instead of having all of the equities in your portfolio
+[  849.86s ->   855.46s] move together and go down with the sinking ship and that's going to do it for this video on
+[  855.46s ->   859.86s] diversification and hedging i hope you enjoyed i hope you learned something jane street quant that
+[  859.86s ->   867.06s] i met at the gym you better have watched to the end if you did text me banana if you enjoyed this
+[  867.06s ->   870.98s] video and you want to see more like it in the future please like comment subscribe share it helps
+[  870.98s ->   878.66s] me out tremendously it is always greatly appreciated check out quant guild.com to master your quantitative
+[  878.66s ->   894.58s] skills other than that i want to thank you so much for watching and i will see you in the next video

@@ -1,0 +1,192 @@
+[    0.16s ->     2.04s] Here's a recent trade I just finished.
+[    2.04s ->     8.40s] A huge 10% gain and massive profit helping out my portfolio so much.
+[    8.40s ->    10.68s] How did I know this chart was about to go up?
+[   10.68s ->    13.46s] Because of this candlestick pattern right here.
+[   13.46s ->    17.46s] And in this video I'm going to share my favorite candlestick patterns just like this
+[   17.46s ->    20.56s] one that I use on a daily basis.
+[   20.56s ->    25.22s] That way you can read and understand chart patterns, predict chart direction, become
+[   25.22s ->    29.24s] a more successful trader, and make plays just like this one.
+[   29.24s ->    33.90s] Let's get straight to it, shall we?
+[   33.90s ->    38.92s] One of my favorite and most used candlestick patterns I like to trade with is the engulfing
+[   38.92s ->    39.92s] candle.
+[   39.92s ->    41.92s] I've used it in many of my previous videos.
+[   41.92s ->    47.10s] It's such a strong candlestick because it can give you the exact point of when a reversal
+[   47.10s ->    48.52s] is about to happen.
+[   48.52s ->    50.48s] What is an engulfing candlestick?
+[   50.48s ->    53.12s] Well, it basically explains itself in the name.
+[   53.12s ->    57.98s] It's a candlestick in the opposite color of the previous candle and it simply engulfs
+[   57.98s ->    58.98s] it.
+[   58.98s ->    63.68s] The previous engulfing candle opens at or is lower than the previous candle's close
+[   63.68s ->    67.04s] and closes above the previous candle's open.
+[   67.04s ->    72.04s] So basically being bigger than the previous candle on both sides, making it look as if
+[   72.04s ->    73.04s] it's engulfing it.
+[   73.04s ->    74.24s] Let me show you an example.
+[   74.24s ->    79.22s] So here we found a pretty strong support where price bounced off it multiple times telling
+[   79.22s ->    80.88s] us it really respects it.
+[   80.88s ->    83.24s] We see the price comes back down to the support.
+[   83.24s ->    88.30s] We can expect it to bounce back up, but before entering we need a little more confirmation
+[   88.30s ->    91.02s] rather than just assuming the support will hold.
+[   91.02s ->    93.76s] That's when we see a bullish engulfing candle.
+[   93.76s ->    98.90s] It completely engulfs the previous red candle and is exactly at the support.
+[   98.90s ->   104.30s] This is an extremely bullish sign and we can be pretty confident the price will go up from
+[  104.30s ->   105.30s] here.
+[  105.30s ->   112.34s] Now it's also important to note that just because there is a bullish or bearish engulfing
+[  112.34s ->   117.10s] candle doesn't mean the price is going to reverse in that direction every time.
+[  117.10s ->   120.50s] You shouldn't be just trading purely off candlestick patterns.
+[  120.50s ->   124.68s] You should be using them as almost if they were hints on which way the market is about
+[  124.68s ->   127.22s] to go, not pure decision makers.
+[  127.22s ->   133.12s] You should be using other tools with candlestick patterns, like support and resistances, indicators,
+[  133.12s ->   135.00s] different strategies, etc.
+[  135.00s ->   139.02s] So just to be clear, just because you see a bullish engulfing candle doesn't mean the
+[  139.02s ->   143.72s] price will go up from there, but it can be a good indicator that the price will head in
+[  143.72s ->   144.72s] that direction.
+[  144.72s ->   146.80s] Let me show you a bearish example.
+[  146.80s ->   151.02s] So here we have the same type of setup, a strong resistance where the price respected it
+[  151.02s ->   155.62s] multiple times before, and we see the price comes back up and starts to slow down, giving
+[  155.62s ->   160.90s] us a bearish engulfing candle, completely engulfing the previous green candle.
+[  160.90s ->   166.24s] We see that it got rejected at the resistance and there was a bearish engulfing candle, indicating
+[  166.24s ->   168.24s] this is a good sign to go short.
+[  168.24s ->   170.34s] And look what happens, price goes down.
+[  170.34s ->   172.62s] Next, we have the momentum candle.
+[  172.62s ->   177.66s] The momentum candle is a lot easier to spot than the engulfing candle, purely because of
+[  177.66s ->   178.66s] its size.
+[  178.66s ->   183.52s] The momentum candle is simply a candle that is two to three times bigger than the previous
+[  183.52s ->   184.96s] candles before it.
+[  184.96s ->   190.32s] This candle can be insanely powerful, because most of the time, after it happens, the price
+[  190.32s ->   195.60s] will continue to go in that direction, making this point a great time to enter.
+[  195.60s ->   201.26s] The most efficient and effective way to use this candlestick pattern is in choppy markets,
+[  201.26s ->   203.10s] where the price is moving sideways.
+[  203.10s ->   208.34s] If you ever see a sideways market, then a huge momentum candlestick appears being two to three
+[  208.34s ->   210.40s] times bigger than the previous candles.
+[  210.40s ->   214.16s] You can be pretty certain that the price will continue in that direction.
+[  214.16s ->   215.16s] Why is that?
+[  215.16s ->   216.52s] Well, think of it like this.
+[  216.52s ->   221.14s] Whenever there is a sideways market like this, there are a lot of shorters stuck in their
+[  221.14s ->   222.14s] trades.
+[  222.14s ->   227.16s] They don't want to exit their trade yet because the price is moving sideways and it can honestly
+[  227.16s ->   228.96s] still move in either direction.
+[  228.96s ->   234.18s] They draw their support and resistance and set their stop losses right above the support.
+[  234.18s ->   239.18s] So that means there are going to be tons of traders setting stop losses all over this
+[  239.18s ->   240.18s] area.
+[  240.18s ->   244.74s] Meaning, if there is a sudden price movement and price hits this liquidation zone, all
+[  244.74s ->   250.18s] these stop losses will be hit, just adding fuel to the fire for this price to keep moving
+[  250.18s ->   251.18s] up.
+[  251.18s ->   255.22s] Also, when price breaks a choppy market like this, it'll usually start a trend in that
+[  255.22s ->   256.22s] direction.
+[  256.22s ->   258.46s] It's the same type of strategy with shorts.
+[  258.46s ->   262.74s] If there's a choppy sideways market and you see a huge red candle two to three times bigger
+[  262.74s ->   267.52s] than the candles before it, this is a great indicator to enter a short position because
+[  267.52s ->   270.98s] it's likely the price will continue to move downwards.
+[  270.98s ->   273.80s] Next we have the multiple candlestick pattern.
+[  273.80s ->   278.40s] This is one of my favorites as it usually holds pretty true on charts.
+[  278.40s ->   280.18s] And it's also pretty simple.
+[  280.18s ->   285.26s] All it is is when you have three or more candles that have wicks going one direction.
+[  285.26s ->   286.70s] The more candles, the better.
+[  286.70s ->   290.86s] I like to pair this candlestick pattern with support and resistances.
+[  290.86s ->   293.28s] So look at this chart, what do you see happening?
+[  293.28s ->   298.34s] Well for one, we have a key support where price bounces off multiple times.
+[  298.34s ->   303.82s] Then we have multiple candles with wicks going downwards, exactly at the support.
+[  303.82s ->   309.16s] As you can see, all these candles have downward wicks, telling us that sellers are trying to
+[  309.16s ->   315.44s] break this support, but buyers keep fighting them off and are winning multiple times, confirming
+[  315.44s ->   320.26s] that this is a key support and price has a good chance of bouncing upwards.
+[  320.26s ->   325.06s] As said before, the more candles, the better the probability the price will respect that
+[  325.06s ->   326.06s] pattern.
+[  326.06s ->   327.74s] Let's go over a short example.
+[  327.74s ->   329.68s] Price moved to the resistance.
+[  329.68s ->   334.20s] There are multiple candles with wicks heading upwards, telling us that price really doesn't
+[  334.20s ->   337.86s] want to move up from here, giving us a good short entry.
+[  337.86s ->   343.50s] So we enter here expecting price to reverse from this point and look what happens, it does.
+[  343.50s ->   345.00s] Next we have the doji candle.
+[  345.00s ->   350.90s] The doji candle is a candlestick with a very thin body and it has wicks on each side.
+[  350.90s ->   355.70s] Why this one is so important to understand is because it can be a great indicator on when
+[  355.70s ->   358.74s] the price is about to reverse in a direction.
+[  358.74s ->   363.76s] What this candle basically represents is the market is uncertain on which way it wants to
+[  363.76s ->   366.44s] go and is having resistance.
+[  366.44s ->   371.48s] Whenever there is uncertainty or resistance, the price will more often than not head in the
+[  371.48s ->   372.48s] opposite direction.
+[  372.48s ->   373.94s] Let's see an example.
+[  373.94s ->   376.48s] So here we have price moving down pretty hard.
+[  376.48s ->   380.76s] Then a green candle appears and it just so happens to be a doji candle.
+[  380.76s ->   385.22s] This is telling us that sellers are starting to be less confident and buyers are starting
+[  385.22s ->   389.24s] to enter, making this point a great potential place to enter.
+[  389.24s ->   394.32s] What I normally like to do with doji candles is after I see one, I'll wait for two or more
+[  394.32s ->   398.48s] candles the same color to confirm that the price will reverse.
+[  398.48s ->   403.94s] So in this example I see a green doji candle, I wait, see two more green candles heading
+[  403.94s ->   409.00s] upwards telling me I can be confident that the price will continue in that direction.
+[  409.00s ->   413.40s] So this is the point where I enter the trade and boom the price goes up from here.
+[  413.40s ->   417.28s] There are multiple different variations of the doji candle that you might see.
+[  417.28s ->   421.08s] There is the regular one which is the one that we just talked about in the last example.
+[  421.08s ->   426.14s] The long legged doji candle which is basically the same candle but just has larger wicks.
+[  426.14s ->   430.10s] The dragonfly which has a small body and a big bottom wick.
+[  430.10s ->   434.08s] Then the gravestone which has a small body and has a big upper wick.
+[  434.08s ->   437.90s] All of these tell the same exact story, a reversal in price.
+[  437.90s ->   440.96s] The next candlestick we'll be looking at is the hammer.
+[  440.96s ->   446.38s] The hammer is usually a candle that looks like this, a decent sized body and a long wick.
+[  446.38s ->   451.20s] What this candle is telling us is that sellers got the price all the way down in here, but
+[  451.20s ->   456.40s] the buyers absorbed all that selling pressure and raised the price all the way back up.
+[  456.40s ->   461.04s] This is usually an extremely bullish sign and can tell us that the market will continue
+[  461.04s ->   462.26s] to go in that direction.
+[  462.26s ->   466.82s] A candlestick that is very similar to the hammer is the shooting star.
+[  466.82s ->   471.62s] The shooting star is just like the hammer, but it has a small wick on the opposite side.
+[  471.62s ->   475.78s] You should be playing this just like the hammer, where if you see a shooting star candle like
+[  475.78s ->   479.72s] this, you can have a good suspicion that the price will start reversing.
+[  479.72s ->   482.66s] This next candlestick pattern is called the tweezer.
+[  482.66s ->   488.02s] This pattern is a red candlestick followed by a green candlestick, both having similar wicks
+[  488.02s ->   489.02s] on the bottom.
+[  489.02s ->   493.58s] If you see this pair, you can have a pretty good idea this chart is about to move upwards.
+[  493.58s ->   495.34s] Let's see an example.
+[  495.34s ->   498.26s] So here we can see price is about to hit this support.
+[  498.26s ->   502.70s] We see a red candle with a wick on the bottom, right at the support.
+[  502.70s ->   507.24s] Then we see a green candle that also has a wick heading downwards.
+[  507.24s ->   512.30s] This is telling us that the price is respecting this support and is now gaining some momentum
+[  512.30s ->   513.50s] upwards.
+[  513.50s ->   517.74s] This would be a great time to buy, and look what happens, price raises.
+[  517.74s ->   520.56s] It's the exact opposite for a bearish signal.
+[  520.56s ->   525.68s] So you want to see a green candlestick, then a red, both having wicks at the top.
+[  525.68s ->   529.14s] We see that exact pattern here, and boom, price falls.
+[  529.14s ->   534.06s] The last and final candlestick pattern I want to talk about is the marabozoo.
+[  534.06s ->   538.98s] The bullish marabozoo is going to be a big green candle without any wicks.
+[  538.98s ->   541.38s] So basically just a big green rectangle.
+[  541.38s ->   545.82s] The cool thing about this pattern is that it's a good indicator that price will keep
+[  545.82s ->   548.06s] heading in the same direction it's going.
+[  548.06s ->   552.76s] You will usually see this candle in the middle of a trend, confirming that the trend will
+[  552.76s ->   554.48s] keep moving upwards.
+[  554.48s ->   555.48s] Let's see an example.
+[  555.48s ->   557.74s] So here we saw a price reversal.
+[  557.74s ->   562.14s] Price is starting to head upwards, then we see a bullish marabozoo candle.
+[  562.14s ->   565.28s] Notice how the candle has no upper or lower wicks.
+[  565.28s ->   570.76s] This means that the lowest price of this candle was the exact same as it's opening price,
+[  570.76s ->   575.36s] and the highest point of this candle is the exact same as it's closing price.
+[  575.36s ->   580.38s] This is telling us that buyers have complete control, and we can almost certainly predict
+[  580.38s ->   582.82s] that price will continue to go upwards.
+[  582.82s ->   584.70s] And look what happens, it does.
+[  584.70s ->   589.64s] The bearish marabozoo is the same idea, a red candle with no wicks.
+[  589.64s ->   591.40s] Here we see the price had a reversal.
+[  591.40s ->   596.72s] We see a bearish marabozoo candle telling us sellers have control, and the price will probably
+[  596.72s ->   598.22s] keep moving downwards.
+[  598.22s ->   601.00s] We enter, making this a winning trade.
+[  601.00s ->   605.88s] Now it's time to give you a bonus tip for all those who made it to the end of the video.
+[  605.88s ->   609.74s] This is a way of me saying thanks for watching all the way to the end.
+[  609.74s ->   614.16s] Even though you should probably try to memorize these patterns, so when you see them you can
+[  614.16s ->   617.40s] have an idea of what the market is going to do in the back of your head.
+[  617.40s ->   622.54s] I completely understand that it's hard sometimes to look for them, or even remember what they
+[  622.54s ->   623.54s] look like.
+[  623.54s ->   628.08s] Well lucky for you, there is a way to make it so you can have your chart tell you exactly
+[  628.08s ->   633.00s] where a certain type of candlestick pattern occurs, which makes it really easy for you
+[  633.00s ->   636.80s] to spot them, and you don't even necessarily have to memorize them.
+[  636.80s ->   641.56s] To do this, just go to trading view, click the indicators tab, type in whatever candlestick
+[  641.56s ->   642.98s] pattern you want.
+[  642.98s ->   647.74s] So for this example, we'll do a bullish engulfing, simply click it, and trading view
+[  647.74s ->   653.56s] will notify you on the chart when the bullish engulfing candle appears, making it extremely
+[  653.56s ->   657.58s] easy to spot when it happens and you don't even have to look that hard.
+[  657.58s ->   662.84s] You can also add multiple candlestick patterns to your chart so you can identify when any of
+[  662.84s ->   663.84s] them occur.
+[  663.84s ->   667.28s] I hope you guys got some value out of this and you learned something new.
+[  667.28s ->   671.66s] If you did, I would really appreciate it if you took 5 seconds out of your day and liked
+[  671.66s ->   672.66s] this video.
+[  672.66s ->   678.04s] The one and only problem trading with candlestick patterns is false breakouts, where a certain
+[  678.04s ->   683.28s] candlestick pattern occurs, but the price actually does the exact opposite of what the
+[  683.28s ->   684.60s] pattern predicts.
+[  684.60s ->   688.86s] If you want to learn how to avoid situations like this, watch this video where I go over
+[  688.86s ->   691.66s] my secret strategy to avoid false breakouts.
+[  691.66s ->   695.22s] Thanks for watching, and I'll see you guys next time.

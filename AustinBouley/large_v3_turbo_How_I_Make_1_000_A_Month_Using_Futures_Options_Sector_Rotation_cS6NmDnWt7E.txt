@@ -1,0 +1,59 @@
+[    0.00s ->     4.86s] In this video, I'm going to walk you through how to make $1,000 a month using futures options and
+[    4.86s ->     8.88s] sector rotation. Most people don't know what that is and they're actually missing out. This is
+[    8.88s ->    12.58s] something that I think about and analyze a lot, but I don't talk about a lot. So this is going to
+[   12.58s ->    18.72s] be a very in-depth video. What we're talking about here is in order to get an option strategy to work
+[   18.72s ->    22.62s] well, you not only need a good strategy, meaning that it's been backtested and it's been proven
+[   22.62s ->    27.20s] with real money and it has a set of rules you can follow every single time, but you need to do it
+[   27.20s ->    32.70s] in the right market. And now I talk about trends when I talk about the right market a lot, but what
+[   32.70s ->    38.36s] I'm also looking at is sector rotation. As if you don't know what sector rotation is, there's a ton
+[   38.36s ->    45.34s] of deep in-depth financial articles and white papers written on this, but this is the most basic
+[   45.34s ->    52.38s] understanding of it. When the market is in a certain phase, there are certain sectors or areas of the
+[   52.38s ->    57.08s] market that perform better. For instance, as you can tell from this chart, when the market is at
+[   57.08s ->    63.52s] its bottom, finance and technology sectors tend to do well. When the market is rising and bullish,
+[   63.78s ->    69.24s] that's when technology and industrials and basic materials do well. When the market is at the top,
+[   69.34s ->    74.62s] that's when energy does well. And when the market's declining, that's when staples and healthcare does well.
+[   74.92s ->    80.28s] So there's different sectors of the market. The S&P 500 is actually comprised of 11 different sectors
+[   80.28s ->    86.20s] of the market. And so these sectors actually do well during different phases of the market.
+[   86.38s ->    91.78s] So instead of just looking at the trend, we can also look at where is the market currently,
+[   91.94s ->    97.56s] what phase, and then go to the sector that's performing the hottest. And so that's one way to
+[   97.56s ->   102.28s] do it is by looking at purely this sector rotation chart to be like, okay, the market is this meaning
+[  102.28s ->   108.90s] that these sectors are doing right now. Another way to do it is by going to a sector heat map like this,
+[  108.90s ->   114.98s] you can see it shows each different sector. So the technology, the financial, consumer discretionary,
+[  115.10s ->   121.22s] healthcare, industrials, and it shows how well they're doing as a whole. And if you want to,
+[  121.52s ->   126.60s] for instance, sell puts, be bullish on a sector, find the greenest sector. If you want to be bearish
+[  126.60s ->   131.36s] on a sector, find the reddest sector. If you want to do strangles, which is a neutral strategy,
+[  131.54s ->   137.54s] find the most neutral sector. And so this way you can target the best sectors in the market. So not
+[  137.54s ->   143.60s] only are you setting up the market to be in your favor, but you're setting up the underlying
+[  143.60s ->   149.04s] fundamentals of the economy in your favor as well. So this is something that I look at when I'm
+[  149.04s ->   154.06s] analyzing specific sectors and specifically specific stocks. And so how does this relate
+[  154.06s ->   159.06s] to futures options selling? Super simple. All of these sectors are different type of futures that
+[  159.06s ->   166.08s] can be traded. The overall market is going to be the ES futures. So we have ES for the overall market.
+[  166.08s ->   172.46s] If we're trading something like energy, that would be NG for natural gas. If we're trading more of a
+[  172.46s ->   179.80s] metal, that could be something like GC for gold or SI for silver. And if we're trading something like,
+[  179.84s ->   186.44s] let's say, say bonds or something for governmental, again, that's going to be a ZZ, a ZZ, sorry.
+[  186.66s ->   190.66s] And there's a lot of different sectors that we can take advantage of from this. Also energy being
+[  190.66s ->   195.12s] something like crude oil, something like that. And so now when the market is in different phases,
+[  195.12s ->   200.62s] us as futures options sellers, we can then adjust to what futures we're doing based on what market is
+[  200.62s ->   207.82s] hot. Now, remember, in order to be successful, you need to have the right strategy plus the right
+[  207.82s ->   213.24s] market. And so as long as you're aligning a quality strategy, for instance, the one, one, one strategy,
+[  213.60s ->   217.98s] the short put strategy, the something like that, and you're aligning it with a good market,
+[  217.98s ->   223.28s] like a good sector, a good trend, that's how you leverage returns. And not only that,
+[  223.28s ->   228.60s] if you have a good form of executing on the strategy, so a written game plan with entry rules,
+[  228.78s ->   233.46s] exit rules, conditions, or you simply just take that and you plug it in, you automate it instead,
+[  233.90s ->   239.22s] either way, you need to have a flawless execution of the system. That's how you make money as an
+[  239.22s ->   245.62s] option seller. Now let's dive into a real tangible example. So you can see how this actually works
+[  245.62s ->   251.44s] right now, where are we? Okay, if we're looking at the market, you can see here, we were in an
+[  251.44s ->   258.54s] uptrend, we hit a market top, we downtrend market bottom, now we're pushing back up. So we're in the
+[  258.54s ->   263.38s] middle market phase. So what does this tell you about the overall market? If we go to the market
+[  263.38s ->   269.30s] chart, you can see here, we're in the early bull market phase, which tells us that the market right
+[  269.30s ->   277.32s] now at this time in June is technology, industrials and basic metals. So if we look at this section,
+[  277.38s ->   284.00s] you can see technology, industrials and basic metals, which again, it's going to be around here
+[  284.00s ->   288.04s] materials, we don't really have it on this chart. Now you see, those are the strongest sectors right
+[  288.04s ->   292.68s] now. Those are the ones that are all greed. So how do I take advantage of this? I use a bullish
+[  292.68s ->   298.18s] strategy, my go to one, whatever that is, let's say you have a short put or a one, one, one,
+[  298.18s ->   305.88s] and you run it on those sectors. So that sector technology being the XLK ETF, or being the
+[  305.88s ->   311.68s] industrials, which again, we can see here under the sector map, the industrials is XLI, and you can
+[  311.68s ->   318.40s] run that strategy on XLI instead. So using these sectors, you can now combine the right strategy
+[  318.40s ->   324.26s] to have and put the odds in your favor. That is how you use futures options and sector rotation to make
+[  324.26s ->   328.96s] money to align not only the strategy, but with the market to make sure you're putting all the odds
+[  328.96s ->   330.48s] in your favor for success.

@@ -1,0 +1,107 @@
+[    0.34s ->     4.62s] So you're new to day trading, and you have a very small amount of money in your account,
+[    4.62s ->    10.30s] and you want to grow it as quickly as possible. I get it, not everyone has $10,000 to start
+[   10.30s ->    11.30s] out with.
+[   11.30s ->    15.06s] That's why in this video I'm going to show you how to trade with just a small starting
+[   15.06s ->    20.80s] amount of $100 and grow it efficiently into a thriving stock account. Let's dive straight
+[   20.80s ->    21.80s] into it.
+[   21.80s ->    25.38s] The very first topic we're going to talk about is how to get the most out of your risk
+[   25.38s ->    26.74s] to reward ratio.
+[   26.74s ->    31.06s] So here we have our chart. The red line is our main support. It's very strong, and price
+[   31.06s ->    36.40s] has bounced off it multiple times, making it very reliable, and will probably have similar
+[   36.40s ->    38.02s] tendencies in the future.
+[   38.02s ->    43.28s] The white line is acting as our resistance, and somewhat of a weak support. This is because
+[   43.28s ->    48.58s] you can see the price resisted off this line a couple times, and even bounced off it once
+[   48.58s ->    50.34s] making it a weak support.
+[   50.34s ->    55.36s] The green line is our profit mark. We got this line by going on the daily timeframe and finding
+[   55.36s ->    57.24s] a key level of resistance.
+[   57.24s ->    61.34s] Now that we know what all of these key levels are, think to yourself what you would do.
+[   61.34s ->    64.80s] Where would you enter the trade? Where would you set your stop loss? These are all some
+[   64.80s ->    67.12s] questions you should be asking yourself.
+[   67.12s ->    71.76s] What I see a lot of beginners doing is they will do the obvious, and that is they set the
+[   71.76s ->    76.92s] entry point right above the white line, and they set their stop loss below the strong support.
+[   76.92s ->    81.36s] Then of course, they set their take profit target at the strong resistance, giving them a
+[   81.36s ->    86.86s] 2.73 profit ratio. Now, as I'm saying this, you might be thinking, well, I don't see
+[   86.86s ->    91.88s] anything wrong with this strategy. The key concept this specific trader is missing is the concept
+[   91.88s ->    98.38s] of getting the most out of your risk reward ratio. This person is getting $2.73 for every
+[   98.38s ->   103.68s] dollar they risk. Which isn't bad, but it could be a lot better. Let me show you how.
+[  103.68s ->   108.70s] We are going to keep the exact same support, resistance, and take profit line. The only thing
+[  108.70s ->   112.14s] we are going to add to this strategy is a little bit of patience.
+[  112.14s ->   117.46s] One of my all time favorite quotes in trading is that trading is patient people taking money
+[  117.46s ->   122.94s] from inpatient people, and it's so goddamn true. Instead of entering when the price breaks
+[  122.94s ->   127.20s] through our white resistance line, we are going to wait for a pullback to happen and bounce
+[  127.20s ->   131.64s] off our line. You might be saying to yourself, why would we wait for a pullback if we are entering
+[  131.64s ->   138.00s] at the same exact price anyways? The answer is taking advantage of your risk to reward ratio.
+[  138.00s ->   142.28s] We are not able to set our stop loss below the white line because there's not enough
+[  142.28s ->   146.82s] key points to make this a strong enough support. Sure there's a couple, but not enough to
+[  146.82s ->   152.42s] make it a strong one. But if a pullback happens and bounces off the white line, we can now consider
+[  152.42s ->   158.12s] that line as a strong support and set our stop loss below that rather than the red line.
+[  158.12s ->   162.24s] Let me show you what I mean. So instead of entering when the price breaks through the white line,
+[  162.24s ->   167.44s] we are going to be patient and wait for a pullback to happen. We wait a bit and see a pullback
+[  167.44s ->   172.50s] occurs. This is extremely good news because one, the price respects this new level and
+[  172.50s ->   178.32s] bounces off, and two, creates a couple more key points making this a more reliable level.
+[  178.32s ->   183.00s] Why this is important is because we can now raise our stop loss below this level. We were
+[  183.00s ->   188.72s] not able to do that before because it was not strong enough. But now that we see its reliable,
+[  188.72s ->   193.24s] we can do so. We now have our stop loss below the white line. We are going to keep our take
+[  193.24s ->   196.42s] profit, the green line, at the exact same spot.
+[  196.42s ->   200.78s] Now the next thing you might be asking is, alright we moved our stop loss up, what's
+[  200.78s ->   205.70s] the big deal? The big deal is, now that we've raised our stop loss up a considerable amount,
+[  205.70s ->   213.10s] instead of having a 2.86 profit ratio, we now have a 6.1 profit ratio. Almost 3 times the
+[  213.10s ->   219.30s] amount we had before. So now we're getting $6.10 for every dollar we're risking compared
+[  219.30s ->   225.14s] to $2.86. Even though we're making the same amount of money as we were before, considering
+[  225.14s ->   229.58s] that we didn't move or take profit, we now have a way higher risk to reward ratio, which
+[  229.58s ->   234.42s] will help us out so much in the long run. I know it's a slightly confusing topic, but
+[  234.42s ->   238.52s] it's such a crucial thing to understand when you first start trading, and it will definitely
+[  238.52s ->   242.96s] pay off throughout your trading career. The next crucial tip I want you to understand
+[  242.96s ->   248.42s] is the powerful concept of knowing how much money to risk per trade. I see all these financial
+[  248.42s ->   253.44s] gurus on youtube or wall street bets telling you ways to double or triple your account
+[  253.44s ->   258.98s] within 24 hours. While the profits may seem very glorious and heavenly, profit percentage
+[  258.98s ->   263.80s] is not everything. It's all about the amount of successful, quality trades you make.
+[  263.80s ->   269.18s] So Trader1 is the youtube guru that I was talking about before. We gave them a starting balance
+[  269.18s ->   276.06s] of $100. They have a profit target of 20% per trade, which is one, not only risky, but you're
+[  276.06s ->   278.94s] going to find way less trades like that per month.
+[  278.94s ->   284.50s] So in this example I have them taking 6 trades per month. So this is saying if all 6 of these
+[  284.50s ->   290.12s] trades were successful, which I'm not even including any risk, and even finding 6 trades
+[  290.12s ->   295.50s] a month with 20% profit is pretty hard, but we'll give them the benefit of the doubt.
+[  295.50s ->   303.50s] This specific trader would have made $298. Then we have Trader2. We also gave them $100, but
+[  303.50s ->   308.78s] we're setting their profit target at 2%. This is not only way less risky, but this trader
+[  308.78s ->   315.22s] will be able to complete a lot more trades. So this trader was able to find 150 successful
+[  315.22s ->   320.18s] trades per month because the profit target was so much lower and doable.
+[  320.18s ->   327.62s] Even though Trader2's profit ratio was 10 times lower, they still made $1,950. The key
+[  327.62s ->   332.06s] concept I want you to take away from this is you shouldn't be worried about how high your
+[  332.06s ->   336.52s] profit percentage is. You should be worried about consistency and the amount of successful
+[  336.52s ->   338.04s] trades you can accomplish.
+[  338.04s ->   342.38s] My third and final concept I want to share with you guys to help you grow a small stock
+[  342.38s ->   345.46s] account has to do with risk. Let me explain.
+[  345.46s ->   350.42s] So going back to the trader who risks 20% of their account per trade, even though they would
+[  350.42s ->   356.68s] make 20% if they won, they're still risking 20% if they lost. If you're risking high percentages
+[  356.68s ->   361.34s] per trade, you're better off going to a casino and gambling because that's basically what you're
+[  361.34s ->   362.34s] doing.
+[  362.34s ->   367.10s] If you truly want to grow your account, you have to aim for longevity and consistent profits.
+[  367.10s ->   371.86s] The reason trading with high risk is a problem is because of consecutive losses. I don't
+[  371.86s ->   377.00s] care how good your trading strategy is, every strategy is going to have consecutive losses.
+[  377.00s ->   382.50s] If you have 5-7 losses in a row and you're risking 20% per trade, your portfolio is going
+[  382.50s ->   388.90s] to go down the gutter quick. This is exactly why it's recommended that you risk 1-2% per trade.
+[  388.90s ->   391.74s] Let me show you why. This is a trading simulator.
+[  391.74s ->   397.12s] So in this example, we're going to start with $1,000, have a win probability of 60%,
+[  397.12s ->   403.50s] have 2 wins for every loss, take 500 trades, and finally we're going to risk 20% per trade.
+[  403.50s ->   408.18s] The key stat we're looking at is the biggest max drawdown. If you take a look at this,
+[  408.18s ->   414.90s] if we were to risk 20% per trade, we have the potential to lose 90.4% of our portfolio.
+[  414.90s ->   421.54s] Gone. Which is absolutely crazy. Could you handle a 90.4% drop in your portfolio?
+[  421.54s ->   425.22s] And that's just with 20%. Let's see what 50% looks like.
+[  425.22s ->   432.82s] Now take a look at the drawdown. 100%. And the average is 99.7%. But take a look at if we
+[  432.82s ->   440.74s] just risked 2% per trade. The biggest amount we could lose is 15.5% of our account. Now if you want
+[  440.74s ->   445.30s] to double or triple your account within a week, you're not going to get there trading 1-2%,
+[  445.94s ->   450.26s] or even 10%. You have to risk a lot to get high returns like that.
+[  450.26s ->   454.82s] I realize that not everyone has the same risk tolerance. Some of you may have a higher risk
+[  454.82s ->   459.62s] tolerance than others. Some of you may have more money to risk. That's okay. But if you truly want
+[  459.62s ->   464.58s] to grow your account efficiently, are in the trading game to make consistent profits, and are in it for
+[  464.58s ->   469.70s] the long haul, it has been statistically proven that trading with 1-2% of your account is the
+[  469.70s ->   475.94s] best way to do that. If you're only risking 1-2%, you can handle a lot more consecutive losses compared
+[  475.94s ->   480.98s] to 20 or 50%. Which, if you're trading for the long term, you're going to have a period of time
+[  480.98s ->   486.42s] where you're going to get 5-9 bad trades in a row. When I'm trading, I want the math to work with me,
+[  486.42s ->   491.86s] not against me. That's exactly why I, and many others, use the 1-2% trading strategy.
+[  491.86s ->   497.38s] I just showed you 3 different tips to help you grow a small trading account. All I ask in return
+[  497.38s ->   502.02s] is if you take 2 seconds out of your day and like this video. If you want to grow a small trading
+[  502.02s ->   506.66s] account, you're going to need a good trading strategy. Well good thing for you, I made a video
+[  506.66s ->   512.02s] where I show you an insanely profitable trading strategy that is proven to work. Go check that out,
+[  512.02s ->   515.14s] thanks for watching, and I'll see you guys next time.

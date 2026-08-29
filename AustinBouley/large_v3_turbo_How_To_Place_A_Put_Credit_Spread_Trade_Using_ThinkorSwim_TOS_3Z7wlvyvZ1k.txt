@@ -1,0 +1,23 @@
+[    0.00s ->     5.10s] In this video, I'm going to walk you through how to place a put credit spread trade using the
+[    5.10s ->    10.00s] Thinkorswim platform, also known as TOS. So I'm going to walk through this using the 10%
+[   10.00s ->    14.96s] credit spreads broker walkthrough platform. So if I click here and I click on TD Ameritrade
+[   14.96s ->    19.64s] Thinkorswim, it's going to walk me through step by step exactly how to place a put credit spread.
+[   20.02s ->    26.14s] Number one, once you have the TOS platform up, click on the trade tab and enter the stock that
+[   26.14s ->    32.26s] you want to trade. So enter the stock here and click on the trade tab. Number two, click the
+[   32.26s ->    37.56s] strikes drop down section and click select all. So there's a strike section right here above the
+[   37.56s ->    43.34s] options chain. You want to click on it and select all. Next, you want to find the expiration date
+[   43.34s ->    47.80s] that you're looking for. All the expiration dates are listed on the left. What you want to do is find
+[   47.80s ->    51.16s] the one you're looking for. If you're a 10% credit spread member, it'll tell you what to look for
+[   51.16s ->    57.16s] right here. Next, step three is you want to change your spread. So by default, it's going to say in
+[   57.16s ->    61.88s] the options chain filter section here, it's going to say spread single. You want to change that to
+[   61.88s ->    66.76s] spread vertical because you're going to be placing a vertical credit spread trade. Next, you want to
+[   66.76s ->    71.82s] select the spread on the right side because they put credit spread on the right side of the options
+[   71.82s ->    76.14s] chain that says the strike prices you're looking for. So for instance, if you want to trade this
+[   76.14s ->    82.24s] strategy right now, you'll be looking for a 360-361. So that's what you're looking for. Those
+[   82.24s ->    86.82s] are the strike prices you're selling and buying. Next, once you click on that, again, you click on
+[   86.82s ->    92.80s] the bid section because you want to sell it, then you're going to see this red section on the order
+[   92.80s ->    96.76s] confirmation page. There's going to be places straight at the mid price slider, which is this
+[   96.76s ->   103.08s] right here. This little slider down here shows a mid price of at least 15 cents and whatever it shows
+[  103.08s ->   107.80s] where you can get in for that stock at. So that's going to put your mid price at around 20. So that
+[  107.80s ->   111.72s] means it's a good trade. You're going to click confirm and send, confirm and move on. So this
+[  111.72s ->   114.96s] is how you place a put credit spread trade on the Thinkorswim platform.

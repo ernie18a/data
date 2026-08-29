@@ -1,0 +1,121 @@
+[    0.66s ->     7.17s] Hey, YouTube, it's Roman. I'm back. And today what I want to do is talk about option Greeks
+[    7.17s ->    12.69s] and provide some intuition in the form of visualization of, you know, what we're actually
+[   12.69s ->    19.65s] doing when we say we're, you know, deriving the Greeks for some assumed model. I'm going to
+[   19.65s ->    26.21s] disregard model-free pricing for now, though that's kind of an emerging field where we use,
+[   26.21s ->    31.75s] you know, the volatility feature approach or some sort of neural network that may have
+[   31.75s ->    36.99s] access to a variety of models during training to produce a price. We're going to, like I said,
+[   37.07s ->    42.75s] disregard sort of the forefront of model-free pricing and just stick with the basic assumption
+[   42.75s ->    49.03s] that we're going to assume an underlying process and a model to price these options. So for example,
+[   49.29s ->    54.55s] within this video, we're going to be assuming that the underlying equity is following geometric
+[   54.55s ->    61.19s] Brownian motion and that we are pricing options in a Black-Scholes framework. So fortunately for us,
+[   61.19s ->    66.83s] we have a Python library capable of producing a Black-Scholes price, and that is the QFIN library.
+[   67.01s ->    73.49s] So after you run a pip install QFIN, we can say from QFIN.options import Black-Scholes call.
+[   74.21s ->    80.89s] And this is going to be a class that takes all of the parameters for an option in a Black-Scholes
+[   80.89s ->    85.51s] framework. So we're going to be taking the time to maturity, the risk-free rate, volatility,
+[   85.51s ->    90.13s] the underlying spot price, and the strike price, all five of those parameters.
+[   91.23s ->    96.55s] So what does this look like? Let's create an example option. So we'll say option A is equal to
+[   96.55s ->   103.29s] Black-Scholes call. And we're going to provide the spot price. So we'll just say it's 100.
+[  103.63s ->   109.49s] We're going to provide the volatility. So we'll say 30%. The strike price, which we'll also say is 100.
+[  109.49s ->   115.33s] The time to maturity in years, so we'll say one year. And then the risk-free rate, we'll just assume
+[  115.33s ->   123.53s] a zero rate. Now you'll notice that option A is actually a class. So we have access to the price
+[  123.53s ->   130.09s] by calling the price field. We say option A.price, and it'll give us the price of our option in a
+[  130.09s ->   137.39s] Black-Scholes framework. Now suppose we wanted to see how the option price changes with respect to
+[  137.39s ->   142.93s] the spot price. That is, we're fixing all of the other variables in this pricing equation.
+[  143.31s ->   147.61s] That's the volatility, the time to maturity, the strike price, and the risk-free rate.
+[  147.83s ->   153.65s] And we're going to let the underlying spot price vary. So we can actually plot this very easily. So
+[  153.65s ->   161.87s] for starters, I'm also going to import numpy as MP. And then I'm going to create a range of spots.
+[  161.87s ->   172.89s] So st for the spot at time t. We'll say mp.linspace. And we'll say from 60 to 110, generate 1,000 points.
+[  174.31s ->   180.53s] All right, very cool. Now we can actually create options for each of these prices. So I'm going to say
+[  180.53s ->   189.13s] options is equal to an empty list for i in range. And we'll do the length of s of t. We'll say
+[  189.13s ->   197.59s] options dot append, Black-Scholes call, and then s of t i for the spot price. And then we're fixing the
+[  197.59s ->   204.59s] rest of the parameters. So 30% volatility, 100 strike, one year till expiration, and zero rate.
+[  205.17s ->   213.27s] Then we will have a list of options. So we can actually get the price for each of these options
+[  213.27s ->   219.75s] by simply saying, let's just take the first one, for example. So at 60, we'll say options zero.
+[  220.67s ->   227.31s] That's going to yield the option class. Then we can say dot price. And that'll give us the price of the
+[  227.31s ->   235.03s] option. Like I said, we can go ahead and plot this. So we're going to import matplotlib, import matplotlib.py
+[  235.03s ->   244.23s] as PLT, run this guy. And then down here, we can create a list of option prices, or we can just
+[  244.23s ->   250.87s] iterate through the options. So let's do that. We'll say option prices is equal to an empty list
+[  250.87s ->   261.96s] for option in options. We're going to append the price of the option to that list. And then we can
+[  261.96s ->   269.16s] go ahead and plot this by saying plt.plot. And we're going to plot the range of spot prices and
+[  269.16s ->   277.84s] then the option prices on the y-axis. And here is our option pricing function. So on the x-axis,
+[  277.84s ->   286.54s] we have the underlying price. And on the y-axis, we have the option price. Now it's important to note
+[  286.54s ->   291.30s] that the chart that we're looking at right now is a two-dimensional representation where we're
+[  291.30s ->   298.54s] fixing the other four dimensions of this options price and looking at this slice through this
+[  298.54s ->   305.54s] multi-dimensional blob. Okay. So this chart is subject to change when the other fixed parameters
+[  305.54s ->   311.62s] also change. For this same interval, we're simply looking at a slice when all of the other values
+[  311.62s ->   317.52s] are fixed. So let's make this a little more concrete. Let's actually take a point on this chart
+[  317.52s ->   324.52s] and see what we're looking at. So let's say we wanted to look at when the spot price is at 85.
+[  325.02s ->   332.72s] So we're going to say that O is equal to Black-Scholes call. We'll pass 85 and then the rest of the
+[  332.72s ->   341.24s] parameters that we have fixed in this space. And then we'll say O.price. So if you look at this chart
+[  341.24s ->   346.52s] where we have the spot on the x-axis and the option price in the Black-Scholes framework on the y-axis,
+[  346.52s ->   354.02s] if we are to go from 85 up to the option price on the y-axis, you'll notice that it's going to be
+[  354.02s ->   361.12s] 5.0931, which is exactly what we get here. This is no surprise, right? This is exactly what this
+[  361.12s ->   367.24s] chart is plotting. So hopefully this makes it a little more concrete. All right. Now suppose you are
+[  367.24s ->   372.98s] an options market maker. All right. And you actually have this derivative in your portfolio.
+[  372.98s ->   383.04s] You have this option. You bought it at this, you know, price 5.0931. And the spot is currently
+[  383.04s ->   391.26s] 85. And let's just say in a perfect world, the implied volatility is also 30 percent and the strike
+[  391.26s ->   396.46s] is 100. And all of these other parameters are fixed in space too. Let's just assume that those are fixed.
+[  396.46s ->   405.00s] Okay. I'm going to ask a simple question. What can you expect this options value to change to
+[  405.00s ->   414.08s] when the underlying spot price increases by one? So essentially what I'm saying is what's going to
+[  414.08s ->   422.61s] happen to this options value when the spot goes from 85 to 86? That's exactly what the Greeks are for.
+[  422.77s ->   427.33s] That's exactly what we're going to do. Now, mathematically, what we're actually doing is taking
+[  427.33s ->   434.53s] the partial derivative of the model price with respect to the variable in question. So in this case,
+[  434.53s ->   441.15s] we are looking at delta. Delta is the partial derivative of the Black-Scholes call price
+[  441.15s ->   450.09s] with respect to the underlying asset. Fortunately, QFIN already has these built in to the option pricing
+[  450.09s ->   458.29s] model. The particularly keen viewer will notice that the partial derivative is a linear process
+[  458.29s ->   466.37s] where we have this nonlinear function, which means the partial derivative approximation for change is
+[  466.37s ->   472.39s] going to get worse the further away that we go from our initial point in question. And you're going to
+[  472.39s ->   479.49s] see all of this in a moment visually. So let's do this. Let's actually get the delta of the option.
+[  479.49s ->   487.91s] So we can say O dot delta. And the delta of the option is 0.3476. I'm going to round off to four
+[  487.91s ->   494.75s] decimal places. And what we can do is we can actually create a line on this chart to represent
+[  494.75s ->   504.95s] the delta function at this point. So let's do exactly this. We're going to say X is equal to MP dot Linspace
+[  504.95s ->   522.02s] 60 to 110. We'll do 1000 points. And then we're going to say Y minus 5.0931. That is the price at 85
+[  522.02s ->   540.26s] times X minus 85. And then we can just go ahead and add that 5 to the other side. So this is just
+[  540.26s ->   552.59s] point slope form of a line plus 5. Cool. And now we can actually plot this. So let's plot this and plot
+[  552.59s ->   565.96s] this. We'll do X and Y. And there we go. Now we have our linear approximation of change. So this is
+[  565.96s ->   574.22s] very cool where it all ties together in a visual sense. So what we did was we found delta at this
+[  574.22s ->   582.82s] point, 85, right? And we took this delta and created a line based on this point on our option pricing
+[  582.82s ->   589.78s] function. And we can see that the linear approximation for change gets worse the further
+[  589.78s ->   598.72s] you deviate away from that point. So if we were at 100, you can see that the gap between the two Y
+[  598.72s ->   607.36s] values is significantly larger than, say, if we were at 85.5 or 86, which is exactly the point of delta.
+[  607.36s ->   614.68s] And we can actually see this mathematically, quantitatively. To see this mathematically,
+[  614.68s ->   618.54s] what we can do is we can create two new options. So we'll just call this option A
+[  618.54s ->   626.66s] is equal to Black-Scholes call. And we'll do 86. And then we'll use the rest of our fixed parameters
+[  626.66s ->   636.14s] from before. And we will get the price. And then we can compute the error between the linear approximation
+[  636.14s ->   653.01s] and the true price by saying new price is equal to 0.3476 times the change from 85 to 86, which is one.
+[  653.37s ->   661.85s] I'm essentially just plugging into this line that we created up here. So I can do that as 86 minus 85,
+[  661.85s ->   670.95s] if that's more clear. And then I'm going to add the original price, 5.0931. And then I'm going to print
+[  670.95s ->   682.14s] this new price. And the pricing error or the hedging error is going to be the difference between these
+[  682.14s ->   694.08s] two. The absolute difference between these two. So we can say MP dot ABS OA dot price minus new price.
+[  695.86s ->   703.76s] And that is our pricing error. Not too shabby for a linear approximation. We can also see the other end
+[  703.76s ->   710.84s] of the spectrum by looking at the price at 100 and seeing this massive difference as well. So let's do
+[  710.84s ->   718.54s] exactly that. We'll say option B is equal to Black-Scholes call. We'll do 100, use the rest of
+[  718.54s ->   727.08s] our fixed parameters from before, and we will get a price. And then we can find the price based on this
+[  727.08s ->   737.60s] linear approximation at this 0.85. So we'll say new price now is equal to 0.3476. So our original delta
+[  737.60s ->   752.26s] value at 85 times 100 minus 85 plus 5.0931. And we will print this new price. And now we can print
+[  752.26s ->   762.10s] the error the same as before, but instead use option B. And that is a significantly larger error. I mean,
+[  762.10s ->   769.86s] that is just, you know, multiple times, multiple magnitudes of multiple orders of 10 rather larger
+[  769.86s ->   777.94s] than the original pricing error. And it's very easy to see visually. You know, you can see at 100 that
+[  777.94s ->   784.28s] this gap is significantly larger than the gap at, say, 86, which is practically tangent. So this is,
+[  784.36s ->   787.42s] again, not a surprise. This is exactly what we expected to see.
+[  787.42s ->   794.90s] So this idea that we did with the underlying equity value or the spot value of the equity
+[  794.90s ->   802.20s] can be extrapolated to the volatility, to the risk-free rate, to the time to maturity,
+[  802.20s ->   810.32s] and you're going to derive all of the Greeks. So delta is exactly what we did here with the
+[  810.32s ->   818.12s] underlying equity, where vega is doing this with the volatility, where theta is doing this with the
+[  818.12s ->   825.04s] time to maturity, rho is doing this with the risk-free rate, and the strike price is fixed. It doesn't
+[  825.04s ->   834.02s] change. So, you know, there is no Greek for the strike price. But then the next level to this
+[  834.02s ->   839.40s] is that you can compute the second order sensitivities, which is the rate in which the rate of change
+[  839.40s ->   845.22s] changes, which is a little more difficult to visualize. You would actually have to visualize
+[  845.22s ->   853.04s] the delta function first, and then you can essentially just redo this entire process just
+[  853.04s ->   858.78s] with the second order sensitivities. But this plot, instead of being the option price, it would be
+[  858.78s ->   867.63s] the option delta. And then you would find the tangency for the second order sensitivity with
+[  867.63s ->   875.79s] respect to the underlying, which is gamma. So this is a very, very deep sea, but this just scratches
+[  875.79s ->   882.71s] the surface and hopefully provides some visual intuition to the option Greeks. Thank you guys so
+[  882.71s ->   888.19s] much for watching. I hope you enjoyed. I'm going to be posting a research notebook on this topic on
+[  888.19s ->   894.29s] Quant Guild very shortly, so be on the lookout for that. Also, stay on the lookout for our new courses
+[  894.29s ->   900.41s] launching very soon. Introduction to Python and Introduction to Quant Finance. We're going to be
+[  900.41s ->   908.13s] building some incredible topics while leaving aside all of the fluff. We're going to be building these courses
+[  908.13s ->   915.13s] with just the essentials to get you in and out with the knowledge that you need to succeed. So thank you
+[  915.13s ->   921.79s] again for watching. If you have any questions, feel free to leave them in the comments below or shoot me an email if you have
+[  921.79s ->   926.95s] any suggestions for future videos or any topics that you'd like to see. Feel free to check those out.
+[  927.49s ->   931.83s] Check out QuantGuild.com. And other than that, I will see you in the next one.

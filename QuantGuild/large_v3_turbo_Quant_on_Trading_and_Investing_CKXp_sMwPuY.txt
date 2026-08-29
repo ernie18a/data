@@ -1,0 +1,694 @@
+[    0.46s ->    10.94s] This video has certainly been a long time in the making, but recently I've been motivated to create it because I've been seeing a lot of videos come up in my feed.
+[   10.94s ->    27.34s] You know, this trading signal has 100% accuracy or spot these moves before they occur or, you know, this signal generates 1,287% returns or, you know, whatever nonsense like that.
+[   27.34s ->    35.50s] And these titles and thumbnails are largely egregious, ridiculous, and they're just there to get clicks and they work.
+[   35.50s ->    44.24s] I mean, they get tens of thousands, hundreds of thousands of clicks sometimes, but the information that they're offering isn't actually relevant.
+[   44.40s ->    54.04s] So what I want to do in this video is I want this to be essentially the last video that you have to watch on trading and investing to understand the space.
+[   54.04s ->    63.26s] I want to provide a framework for decision making and understanding what other people are suggesting when they have some sort of signal or some sort of strategy.
+[   63.26s ->    92.20s] Now, this is no easy feat. Really, what I'm going to be doing is distilling a lot of the topics that I've discussed in previous videos over several months, along with my academic and professional experience and my day-to-day trading activities, into this video by discussing the ideas of risk and return, my perspective on the market, some of the literature on the topic, how I go about trading, how I go about investing, and how I analyze performance.
+[   92.20s ->   100.92s] In economics, we learn that there is no free lunch. This is the case in finance with trading and investing, but there certainly is a free Jupyter Notebook.
+[  101.02s ->   109.84s] This one will be available in the description below. I will also post it to the Quant Guild Library on GitHub, where you can find all of my Jupyter Notebooks and associated YouTube videos.
+[  110.28s ->   115.96s] At the top of this Jupyter Notebook, you'll find some related Quant Guild videos on topics I'm going to be discussing herein.
+[  115.96s ->   124.26s] Ideas like applying statistics to the market, why these statistics are incorrect, but that does not necessarily preclude us from generating P&L.
+[  124.70s ->   129.68s] So, if you'd like to do a deep dive into these topics, I highly recommend checking out these videos.
+[  129.92s ->   138.30s] Moreover, if you'd like to support the channel so I can continue to create videos just like this one, and if you'd like to master your quantitative skills, check out Quant Guild.com.
+[  138.30s ->   146.68s] Maybe you come from a background in business, economics, computer science, and you aren't too sure where to begin on your Quant journey, well then Quant Guild is for you.
+[  146.76s ->   153.88s] We have over 90 Quant lessons in math, probability, and finance, an adaptive practice engine that scales with your skill level,
+[  154.18s ->   161.52s] so you can progress to more and more difficult topics, trading games, interview questions with fully worked solutions, and more.
+[  161.52s ->   168.04s] So, if you'd like to support the channel and master your quantitative skills, check out QuantGuild.com.
+[  168.22s ->   174.52s] Without further ado, let's start with this idea of risk and return.
+[  174.64s ->   188.16s] When it comes to trading and investing, one of the most foundational assumptions in all of quantitative finance is that I cannot generate a return without exposing myself to some sort of risk.
+[  188.16s ->   196.86s] If I do generate a return without exposing myself to any risk, then I must earn the risk-free rate.
+[  196.98s ->   201.16s] That's a nice theoretical discussion, but how does this work in practice?
+[  201.80s ->   205.54s] Well, in reality, risk and return are both random variables.
+[  206.10s ->   209.24s] We don't know what they're going to be in the future.
+[  209.70s ->   212.30s] The best that we can do is some sort of expectation.
+[  212.30s ->   217.92s] So, typically, what we do is we look at expected return and we look at expected risk.
+[  218.44s ->   222.22s] And expected risk is really just a measure of return spread.
+[  222.42s ->   225.20s] That is the variance or the standard deviation.
+[  225.64s ->   231.02s] It's the expected deviation from the expected return or the mean return.
+[  231.44s ->   238.58s] So, this is how we're going to go about measuring risk and return for a particular investment.
+[  238.58s ->   242.88s] Okay, how do we actually get these quantities?
+[  243.84s ->   246.94s] Well, we can try to proxy them from historic data.
+[  247.38s ->   254.76s] We can look backwards at maybe the returns for Apple and we can compute the average return and the average standard deviation.
+[  256.14s ->   262.06s] Okay, but I thought historic data wasn't indicative of future performance.
+[  262.36s ->   263.78s] It certainly isn't.
+[  263.84s ->   268.08s] And this is a very difficult problem in finance to deal with.
+[  268.08s ->   271.94s] What is a reasonable measure of risk and return?
+[  272.12s ->   277.98s] Just because the quantity itself is difficult to measure doesn't mean we don't have a good interpretation of it.
+[  278.50s ->   281.78s] Think back to what I had just said a moment ago about the risk-free rate.
+[  281.98s ->   289.16s] If we assume no risk and we generate a return, we have to earn a risk-free rate.
+[  289.82s ->   297.02s] Why on earth would anybody expose themselves to risk if we can always just earn this risk-free rate?
+[  297.02s ->   302.22s] Well, that's because they're going to demand some sort of risk premium for that exposure.
+[  302.42s ->   307.98s] They're going to demand a higher expected return for taking on that risk.
+[  308.12s ->   314.12s] This is the balance that we always try to deal with when we go about allocating capital.
+[  314.28s ->   326.24s] We want to try to maximize our expected return and minimize our risk, our expected risk, our standard deviation throughout the life of that particular investment.
+[  326.24s ->   329.00s] Turns out this is a very tricky problem.
+[  329.38s ->   335.78s] Just because we can assume more risk, it does not mean that we are going to have a higher expected return.
+[  336.16s ->   345.88s] We can allocate capital in a very suboptimal way that actually increases our risk but decreases our expected return.
+[  345.88s ->   349.38s] This is the problem that we're dealing with in this space.
+[  349.38s ->   356.50s] So it's difficult to measure these quantities and even after we've measured them, it's very difficult to optimize a portfolio.
+[  356.98s ->   365.96s] It's very difficult to optimize trading and investing decisions to maximize expected return while minimizing the associated risk.
+[  366.44s ->   367.86s] Why is it difficult?
+[  368.06s ->   371.16s] Well, the entire system is time variant.
+[  371.16s ->   372.98s] Everything changes over time.
+[  372.98s ->   382.58s] So just because right now I'm measuring this blue dotted line and this red dotted line, it does not mean that these lines are going to be the same in a week.
+[  383.12s ->   390.02s] It all is based on how I'm producing these measures of risk and return.
+[  390.02s ->   392.60s] That is foundational to this space.
+[  392.74s ->   396.30s] If this is the case, how does this relate to trading signals?
+[  396.30s ->   401.82s] Well, I have an example here discussing a trading signal.
+[  402.46s ->   406.22s] You know, we see these videos saying, hey, this signal has 100% accuracy.
+[  406.22s ->   408.72s] This generates, you know, 10 million percent returns.
+[  409.08s ->   412.14s] But what's actually going to happen when you try to trade their signal?
+[  412.26s ->   419.54s] Well, really what we're looking at here is this idea of overfitting noise and stability in statistical quantities.
+[  419.70s ->   420.88s] They're two different ideas.
+[  420.88s ->   433.70s] OK, now in those types of videos, if they overfit their model to some sort of back test, then what can end up happening is you'll see a signal that looks like this.
+[  434.02s ->   435.94s] This is precisely what we would like to see.
+[  436.12s ->   441.40s] What I have here is the lowest signal values are highly correlated with negative returns.
+[  441.60s ->   445.74s] The highest signal value is highly correlated with positive returns.
+[  445.74s ->   448.24s] I can construct a market neutral strategy.
+[  448.42s ->   454.52s] I can trade a long, short portfolio and hopefully generate some alpha.
+[  455.58s ->   457.66s] But this is in the back test.
+[  457.84s ->   462.16s] If I deploy that signal in a live environment, it's going to look something like this.
+[  462.76s ->   467.76s] And that's because in those videos, they've just overfit their strategy to noise.
+[  467.88s ->   470.60s] That is, they've overfit it to their sample data.
+[  470.78s ->   474.30s] When you actually try to deploy it in the live market, it looks something like this.
+[  474.30s ->   476.02s] That is case one.
+[  476.32s ->   477.42s] That's not stability.
+[  477.60s ->   478.96s] That's overfitting noise.
+[  479.14s ->   480.58s] Case two is stability.
+[  481.32s ->   488.10s] Maybe they actually produce their back test correctly and they assume that it's stable.
+[  488.86s ->   490.96s] OK, they produce a nice signal.
+[  491.52s ->   495.46s] Returns are bucketed correctly on the long and short side.
+[  495.56s ->   498.68s] We see this roughly monotonic increasing relationship.
+[  499.32s ->   503.42s] But when we deploy it live, we still see this.
+[  503.42s ->   506.98s] That can absolutely be the case as well.
+[  507.30s ->   509.62s] And it doesn't have to be as aggressive as this.
+[  509.68s ->   513.96s] It might start out looking roughly like this and then degrade over time to this.
+[  514.22s ->   517.34s] And that's the nature of the system that we're working with.
+[  517.40s ->   522.94s] We might have a strategy that worked really well at one point and now it does not work well at all.
+[  523.44s ->   525.52s] Strategies pre-COVID that were killing it.
+[  525.64s ->   530.30s] Two plus sharp after COVID completely lost traction.
+[  530.30s ->   532.40s] So this happens over time.
+[  532.80s ->   535.96s] Remember, the entire system changes over time.
+[  536.42s ->   541.12s] You'll see a lot of models even try to include some sort of regime dynamic.
+[  541.62s ->   550.74s] And this can be effective, but it is not a trivial problem to automatically detect some sort of regime and fix this instability over time.
+[  551.14s ->   554.60s] So this is something we're constantly dealing with within the space.
+[  554.60s ->   557.28s] All right, now we understand this idea of stability.
+[  557.28s ->   562.52s] We can see we have some sort of signal that was constructed appropriately in a back test.
+[  562.76s ->   569.40s] But when we deploy it to the live market, we see that essentially the entire performance degrades.
+[  569.72s ->   576.06s] This is what we're dealing with when we go about trying to measure risk and return.
+[  576.58s ->   582.00s] Essentially, in a backwards looking sense, we are constructing a signal like this.
+[  582.00s ->   595.74s] And if we cling to that signal value in a live setting and we're trying to measure our portfolio risk and return, again, the expected risk and expected return, we may see something like this.
+[  595.88s ->   601.12s] Those values, those levels that we produce may not be valid over time.
+[  601.12s ->   608.64s] Maybe after new inflation data comes out, maybe after an earnings event, those levels change.
+[  608.74s ->   616.38s] And if you cling to those old values, just like this back test signal, then you're going to do very poorly in managing your portfolio.
+[  616.38s ->   619.52s] So you're going to have to adapt on the fly.
+[  619.68s ->   621.90s] That is the purpose of this discussion.
+[  622.02s ->   629.94s] Understanding that this entire space changes so quickly over time, you can't just cling to one model value.
+[  629.94s ->   640.32s] Okay, now that we understand this idea of instability, we can talk about risk and we can talk about different types of risk exposures.
+[  640.56s ->   643.98s] Remember, when it comes to risk and return, we're dealing with expectations.
+[  643.98s ->   647.80s] These are random quantities, so we don't know what they're going to be in the future.
+[  647.80s ->   657.94s] But theoretically, if we take some sort of risk, we should demand a higher expected return relative to a risk-free rate.
+[  657.94s ->   663.16s] And in equities, there's a lot of different types of exposure that we can have.
+[  663.44s ->   665.10s] I'm going to list three here.
+[  665.46s ->   669.40s] We have idiosyncratic industry and market exposure.
+[  669.88s ->   671.36s] What does this actually mean?
+[  671.46s ->   676.52s] Well, idiosyncratic exposure is anytime I hold an individual stock.
+[  676.88s ->   679.46s] So let's say that I hold a lot of Apple stock.
+[  679.46s ->   690.42s] I have a lot of exposure to Apple, and if they come out with a new product that absolutely kills it, then I get the benefit of having a lot of my capital allocated to Apple.
+[  691.14s ->   698.78s] But, of course, it's a double-edged sword because if there's some sort of CEO scandal or their product flops or whatever it may be,
+[  698.96s ->   708.26s] then I'm also at risk of losing money and more money on the downside should I have a lot of capital allocated to that one stock.
+[  708.26s ->   710.40s] So that's one type of risk.
+[  710.68s ->   712.48s] Another type of risk is industry risk.
+[  713.00s ->   717.22s] Same exact idea with holding just Apple, but what if I just hold all tech stocks?
+[  717.92s ->   727.08s] Yeah, if tech does really awesome, new technology, products, and tech is just ripping, then I'll get all the reward for assuming that risk.
+[  727.56s ->   728.88s] But, again, same thing.
+[  728.94s ->   729.88s] It's a double-edged sword.
+[  729.88s ->   736.26s] What if there's massive regulation or maybe there are unintended consequences of new technology?
+[  736.42s ->   739.94s] Then I'm also exposed to that potential downside.
+[  740.50s ->   743.72s] So that's idiosyncratic and industry risk.
+[  744.14s ->   745.62s] What about market risk?
+[  746.28s ->   749.48s] Well, market risk is about the broader market, broader economy.
+[  749.72s ->   750.96s] It's everything as a whole.
+[  750.96s ->   761.18s] So things that are going to greatly impact market risk, inflation, interest rates, government policy, things of that nature, all greatly impact market risk.
+[  761.28s ->   764.68s] So if we see some sort of rate cut, typically that's a bullish signal.
+[  764.94s ->   766.84s] We see some upward price movement.
+[  767.08s ->   775.32s] On the flip side, if we see higher inflation, maybe there's reluctancy to cut rates, then we will see some bearish price action.
+[  775.32s ->   783.42s] So that's the difference between all of the different exposures when we go about investing in some sort of stock or equity.
+[  783.72s ->   794.86s] The very interesting thing here is we can actually diversify away the two types of risk, idiosyncratic and industry risk, by holding a lot of different types of stocks in our portfolio.
+[  795.48s ->   799.42s] We're roughly diversified at 30-plus stocks across different sectors.
+[  800.12s ->   803.70s] Then really all we're doing is exposing ourselves to the market.
+[  803.70s ->   809.12s] I have an example of what this could look like here, where I have individual stocks.
+[  809.74s ->   812.48s] And here you can see some stocks do particularly well.
+[  812.90s ->   818.14s] You know, we don't know which path we're going to walk, but, you know, maybe one does particularly well.
+[  818.18s ->   820.00s] This almost doubles in price.
+[  821.31s ->   822.89s] And then some don't do too great.
+[  823.13s ->   825.51s] Some actually end below the initial starting point.
+[  825.93s ->   828.31s] And that's the idiosyncratic risk.
+[  828.73s ->   832.87s] You don't know the firm-specific trajectory that you're going to be on.
+[  832.87s ->   835.07s] It might be a bad year, might be a good year.
+[  835.43s ->   839.19s] So you get exposure on the upside and the downside for that particular firm.
+[  839.97s ->   846.07s] Okay, well, if you don't want to worry about the particular firm, then you can diversify that risk away.
+[  846.41s ->   849.61s] So maybe you just hold two different sectors.
+[  849.75s ->   851.13s] Maybe you just hold tech and healthcare.
+[  851.13s ->   855.51s] So here you can see I'm holding all tech stocks in this blue portfolio.
+[  855.91s ->   858.49s] I'm holding all healthcare stocks in this red portfolio.
+[  858.73s ->   862.97s] And effectively, I've diversified away the idiosyncratic risk.
+[  863.15s ->   868.53s] I'm leaving myself just exposed to the industry risk and the market risk.
+[  870.06s ->   873.26s] Okay, well, what if I don't want to worry about the industry risk?
+[  873.26s ->   878.58s] Then again, I can diversify that away and I can just be left with this market risk exposure.
+[  879.10s ->   885.86s] The thing is, if I invest in one stock, I am going to be exposed to all of this risk.
+[  886.02s ->   890.48s] I will be exposed to the idiosyncratic risk, the industry risk, and the market risk.
+[  890.94s ->   896.58s] And I'm going to be compensated with expected returns for taking on that risk.
+[  896.58s ->   902.70s] If I diversify one away, then I'm no longer going to be compensated for assuming that risk.
+[  902.78s ->   904.20s] I'm not assuming that risk anymore.
+[  904.32s ->   905.62s] I'm diversifying it away.
+[  906.14s ->   910.88s] And by diversifying it away, I'm also diversifying away any potential return.
+[  911.44s ->   918.38s] So if I get rid of the firm-specific risk, then I'm not going to be able to benefit as much on the upside.
+[  918.48s ->   921.98s] But I also won't lose as much on the downside.
+[  921.98s ->   927.32s] Same is true for industry risk, but I can't diversify away this market risk.
+[  927.78s ->   929.46s] It's a very important idea.
+[  929.62s ->   933.44s] Now, we get to choose what type of risks we are exposed to.
+[  934.06s ->   936.98s] So which exposures should we choose?
+[  937.94s ->   939.34s] Welcome to the space.
+[  939.74s ->   944.68s] This is why when somebody tells you they have a trading signal that generates 10,000% returns,
+[  944.82s ->   947.22s] that doesn't really make a lot of sense.
+[  947.22s ->   951.44s] Because if you look at it in terms of risk for return,
+[  952.12s ->   957.38s] then you're assuming the risk associated with that signal for whatever instrument they're trading
+[  957.38s ->   959.04s] and whatever signal they're trading.
+[  959.76s ->   963.84s] But the return is in terms of an expected value.
+[  963.96s ->   965.90s] It's a random quantity looking forward.
+[  966.38s ->   969.72s] So that's great if they overfit their backtest to data,
+[  969.96s ->   974.96s] but it says nothing of the performance in a forward-looking sense.
+[  974.96s ->   981.38s] And this is why I'm trying to harp on this idea of expected return relative to some sort of risk-free rate,
+[  981.48s ->   988.14s] because we're looking at these quantities in terms of an expectation that we can barely measure.
+[  989.06s ->   994.28s] Theoretically, we're going to be compensated for assuming exposures to these different types of risk,
+[  994.82s ->   996.94s] but nothing is concrete.
+[  997.28s ->   999.64s] So hopefully this sheds some light on the space.
+[  999.72s ->  1001.84s] We'll look at some more examples here too in a moment.
+[ 1001.84s ->  1006.90s] So we'll look at option contracts and different risks associated with option contracts as well.
+[ 1007.30s ->  1011.34s] Again, we get to choose what risks we're exposed to.
+[ 1012.16s ->  1015.10s] We don't necessarily know what the correct ones are.
+[ 1015.52s ->  1018.64s] Maybe it's better now to be exposed to idiosyncratic risk.
+[ 1018.72s ->  1021.42s] Maybe it's best to hold NVIDIA right now.
+[ 1022.12s ->  1024.80s] Maybe it's best to hold Alibaba right now.
+[ 1024.90s ->  1025.70s] Who knows?
+[ 1025.70s ->  1031.34s] That's the entire point of this space is we're trying to make optimal decisions in the face of uncertainty
+[ 1031.34s ->  1039.16s] to choose what exposures to have and when to try to accumulate this expected value over time,
+[ 1039.16s ->  1041.02s] this expected return.
+[ 1041.56s ->  1044.26s] And if we can do this in a positive capacity,
+[ 1044.26s ->  1047.18s] that is if we have some sort of edge in our decision-making process,
+[ 1047.34s ->  1048.84s] we will accumulate wealth.
+[ 1048.96s ->  1052.22s] Otherwise, at best, we'll break even or lose money.
+[ 1052.22s ->  1057.48s] Different financial instruments are going to offer different exposures to risk.
+[ 1057.90s ->  1059.52s] Now, just as I mentioned a moment ago,
+[ 1059.62s ->  1064.46s] we don't necessarily know what the correct exposure is correct at any given time.
+[ 1064.56s ->  1069.38s] There are strategies that we can use to accumulate this positive expected value,
+[ 1069.68s ->  1073.00s] but we don't necessarily know what's going to be correct.
+[ 1073.38s ->  1077.72s] In a moment, we'll talk about an example in gambling, poker, and trading.
+[ 1078.08s ->  1081.16s] But for now, just bear with this idea that different financial instruments
+[ 1081.16s ->  1083.06s] are going to offer different risk exposures.
+[ 1083.60s ->  1085.48s] So with an option contract, for example,
+[ 1085.62s ->  1090.76s] we know that holding that contract is going to give you the right but not obligation
+[ 1090.76s ->  1096.48s] to buy or sell a particular asset at a predetermined point in time in the future
+[ 1096.48s ->  1098.96s] for a price called the strike price.
+[ 1099.74s ->  1101.34s] So at some point in the future,
+[ 1101.44s ->  1106.14s] that contract is either going to expire worthless or it's going to be exercised.
+[ 1106.14s ->  1112.42s] And that contract has different risks associated with it throughout the life of holding it.
+[ 1112.92s ->  1117.90s] You have interest rate risk, you have volatility risk, you have time decay, you have directional risk.
+[ 1118.26s ->  1123.02s] Depending on if you're long or short that contract and the type of contract that it is,
+[ 1123.44s ->  1128.10s] these values may contribute to your exposure in a positive or negative way.
+[ 1128.60s ->  1134.42s] So for example, if I have an option contract and volatility increases and I'm long that contract,
+[ 1134.42s ->  1136.94s] then that contract value is going to increase.
+[ 1138.18s ->  1139.46s] Well, vice versa.
+[ 1139.72s ->  1140.84s] There's no free lunch here.
+[ 1140.98s ->  1147.38s] So if volatility decreases, then my contract is also going to decrease in value.
+[ 1147.50s ->  1154.10s] So that is what we talk about when we talk about this different type of exposure when it comes to option contracts.
+[ 1154.64s ->  1158.47s] So what's an example of trading with this particular type of exposure?
+[ 1158.47s ->  1163.47s] Well, let's suppose that volatility tends to decline after an earnings event.
+[ 1163.99s ->  1165.31s] This can be the case.
+[ 1165.93s ->  1172.91s] Well, what I can do is I can construct a strategy such that I am short this volatility risk, this vega value.
+[ 1173.31s ->  1181.57s] And if the implied volatility goes down, this volatility value goes down, all else equal, I'll make money.
+[ 1181.75s ->  1184.33s] And that's exactly what I have here as an example.
+[ 1184.33s ->  1188.03s] So I'm simulating paths of this option value.
+[ 1188.89s ->  1192.79s] And on average, the implied volatility is decreasing.
+[ 1193.11s ->  1196.63s] So you can see the average option value is actually decreasing.
+[ 1196.97s ->  1201.29s] So if I hold a net negative vega position and hedge away the other risk,
+[ 1201.41s ->  1206.99s] then I can collect that theoretical spread in option value.
+[ 1206.99s ->  1218.06s] That is one example of a trading strategy that involves this particular exposure relative to an option contract.
+[ 1218.32s ->  1227.26s] In fact, the last video that I put out was on building a volatility trading dashboard from scratch to analyze potential edge in these types of strategies.
+[ 1227.26s ->  1231.20s] So if you're curious, I highly recommend you go check that video out.
+[ 1231.60s ->  1238.18s] Or if you would just like to download the source code and play around with the tool, you can check it out on the Quant Guild library.
+[ 1238.52s ->  1250.10s] Now what we're going to do is talk about my perspective of the market, understanding this idea of risk and return, understanding this idea of exposure.
+[ 1250.30s ->  1255.64s] Regardless of the instrument that we're trading or investing in, we have this market exposure.
+[ 1255.64s ->  1264.40s] So if I have one stock in my portfolio, if I have an option contract or a tracking ETF, whatever it may be, I have this market exposure.
+[ 1264.58s ->  1268.82s] And I want to discuss how we should think about this exposure to the broader market.
+[ 1269.22s ->  1276.94s] Because I feel a lot of the time, the actual implications of what is going on is lost.
+[ 1277.00s ->  1280.66s] And we just kind of look at these numbers like interest rates or inflation.
+[ 1281.32s ->  1285.18s] And we don't think about the behavioral component that goes into it.
+[ 1285.64s ->  1289.32s] And this is where poor decision-making tends to occur.
+[ 1289.96s ->  1294.76s] So in general with the market, fear dominates and volatility reverts to a mean level.
+[ 1295.92s ->  1298.60s] There's plenty of academic literature to suggest this.
+[ 1298.88s ->  1303.82s] I'm not going to cite 100 studies, but I'll just share one, a classic one from Schiller.
+[ 1304.00s ->  1308.04s] That is, retailers and institutions have no idea what's going to happen.
+[ 1308.04s ->  1313.48s] And they always overestimate the probability of a crash, recession, whatever it is.
+[ 1314.38s ->  1317.08s] And what does overestimate really mean?
+[ 1317.16s ->  1324.04s] Well, this kind of brings it back to the original idea of is historic data indicative of future performance?
+[ 1325.35s ->  1330.55s] Not necessarily, but relative to that historic data, it's certainly overestimated.
+[ 1330.55s ->  1348.43s] So in this particular study, the probability of a crash, that is a crash observed in 1929 or 1987, a very severe drop, was overestimated by roughly 6 to 19 times higher than what historic data suggested.
+[ 1348.43s ->  1358.69s] And the reason I want to emphasize this is because trading activities are really akin to like rocking a boat, trading activities and volatility.
+[ 1358.89s ->  1365.75s] And I've used this example before on this channel, but imagine that you're on this like beautiful glass lake, right?
+[ 1366.61s ->  1373.23s] You're sitting on a boat and there are a ton of other people there sitting on their boats and the waters are nice and calm.
+[ 1373.23s ->  1382.79s] Okay, then somebody hops up, turns on their engine and starts driving away, starts getting pretty choppy.
+[ 1383.35s ->  1384.83s] Why is he driving away?
+[ 1385.47s ->  1387.53s] Maybe I should drive away too.
+[ 1387.95s ->  1390.05s] Why are those two guys driving away?
+[ 1390.43s ->  1392.49s] Maybe I should drive away too.
+[ 1393.07s ->  1395.17s] And so on and so on and so forth.
+[ 1395.23s ->  1398.05s] And that glass lake just became super, super choppy.
+[ 1398.05s ->  1404.85s] But super, super choppy doesn't last forever and eventually it normalizes back to the glass lake that it once was.
+[ 1405.59s ->  1410.81s] And that's a good analogy for what's happening within the markets when we see these types of drops.
+[ 1410.95s ->  1419.91s] So I have a time series of the S&P 500 here with vertical lines that outline the drops in one day that were greater than 10%.
+[ 1419.91s ->  1427.11s] And we see this one 1987, 1929, and this one in 2020.
+[ 1428.01s ->  1430.61s] And that was from the pandemic.
+[ 1430.87s ->  1439.81s] But really what I'm getting at here is this particular study is suggesting that the probability of that crash,
+[ 1439.81s ->  1449.35s] this type of massive crash within the next six months was overestimated by roughly 6 to 19 times what was suggested by historic data.
+[ 1449.35s ->  1455.59s] So if that's the case, you know, traders, again, whether they're retailers or institutions,
+[ 1455.59s ->  1459.61s] they don't necessarily know what's going to happen, but fear certainly drives decision making.
+[ 1460.45s ->  1466.87s] And when it comes to volatility and the leverage effect and this idea of a glass lake becoming super choppy,
+[ 1467.37s ->  1474.39s] we see that periods of high volatility tend to follow periods of high volatility.
+[ 1474.39s ->  1479.79s] And eventually it normalizes and reverts back to some sort of mean level.
+[ 1480.29s ->  1484.37s] But these spikes in volatility, they're not just isolated, right?
+[ 1484.47s ->  1487.73s] They have this sort of decay to them over time.
+[ 1487.91s ->  1488.75s] They're clusters.
+[ 1489.39s ->  1494.89s] So we see a combination of what's called volatility clustering and this so-called leverage effect.
+[ 1494.89s ->  1503.55s] That is, when returns drop, volatility increases disproportionately, this uncertainty measure.
+[ 1504.73s ->  1507.99s] And we don't necessarily know what's going to happen.
+[ 1508.19s ->  1510.79s] And it's the same thing as everyone turning their boats on and leaving.
+[ 1510.89s ->  1513.23s] We don't know why they're leaving, but maybe we should leave too.
+[ 1514.39s ->  1518.91s] Whenever this happens, it creates a ton of mispricings.
+[ 1518.91s ->  1525.17s] It creates so much opportunity for hedge funds, quant funds, whatever you want to talk about,
+[ 1525.69s ->  1528.95s] to come in and make a ton of money.
+[ 1529.19s ->  1531.61s] If you look at a bull market, a bull market's boring.
+[ 1532.09s ->  1532.63s] What do you do?
+[ 1532.71s ->  1533.49s] You buy and hold.
+[ 1533.57s ->  1535.21s] There's no opportunity for trading.
+[ 1535.43s ->  1541.27s] But in periods of extremely high volatility, goodness gracious, is there ample opportunity?
+[ 1541.27s ->  1542.29s] Because there's fear.
+[ 1542.63s ->  1546.37s] And when people are irrational, they're buying and selling irrationally.
+[ 1546.87s ->  1548.13s] And there's a ton of mispricing.
+[ 1548.13s ->  1552.89s] So, you know, NVIDIA is at 181 right now.
+[ 1553.81s ->  1557.83s] Earlier this year, it hit 90-something.
+[ 1560.98s ->  1567.22s] The present value of their potential cash flow in the future did not change all that much.
+[ 1567.68s ->  1570.34s] Severe mispricings from fear and tariffs caused that.
+[ 1570.46s ->  1574.58s] So, you know, when we look at these environments, we look at the broader market,
+[ 1574.58s ->  1581.42s] we want to keep this type of environment in mind that really fear dominates decision-making
+[ 1581.42s ->  1583.70s] and volatility is going to revert to a mean level.
+[ 1583.82s ->  1586.06s] So when there's blood in the water, you shouldn't be afraid.
+[ 1586.16s ->  1587.40s] You shouldn't sell for a loss.
+[ 1587.44s ->  1588.20s] You should buy more.
+[ 1588.54s ->  1591.94s] You should decrease your cost basis if possible.
+[ 1591.94s ->  1594.48s] And that is really the goal.
+[ 1594.48s ->  1601.06s] So when I look at market exposure, I'm really looking at these periods of high volatility,
+[ 1601.06s ->  1607.00s] what is severely mispriced and what I can catch on a very nice swing when that volatility
+[ 1607.00s ->  1608.42s] reverts back to the mean level.
+[ 1608.42s ->  1613.36s] So this is how I like to think of market exposure in general is fear dominates.
+[ 1613.80s ->  1615.68s] Volatility will return to a mean level.
+[ 1616.46s ->  1620.12s] Largely, this is based on the idea of volatility clustering and the leverage effect.
+[ 1620.54s ->  1624.18s] But this is the general gist of how to think of that market exposure.
+[ 1624.40s ->  1629.12s] We've covered a lot of ground here in understanding the trading and investing space.
+[ 1629.24s ->  1634.92s] We know why those videos titled, you know, 10,000 million percent returns are ridiculous.
+[ 1634.92s ->  1638.04s] We know that there's this instability over time.
+[ 1638.60s ->  1643.66s] We know that there's this idea of risk and reward and we're compensated in some way for
+[ 1643.66s ->  1645.56s] taking on certain types of risk.
+[ 1645.72s ->  1648.66s] We know we can do that in an optimal and suboptimal way.
+[ 1648.74s ->  1650.02s] We'll talk more about that later.
+[ 1650.44s ->  1655.22s] We talked about this market risk exposure that we are all subject to, how we go about
+[ 1655.22s ->  1662.22s] thinking about fear in the space and mispricings and opportunity to trade and invest when there
+[ 1662.22s ->  1665.46s] is a lot of fear and mispricings.
+[ 1665.78s ->  1670.88s] Now we need to talk about this idea of implied probability, because this is something that
+[ 1670.88s ->  1675.12s] you're going to see a lot, especially when it comes to market exposure.
+[ 1675.44s ->  1680.46s] You're going to see something like, oh, the, you know, traders are pricing this in at roughly
+[ 1680.46s ->  1685.04s] 90 percent or economists have this at roughly 75 percent.
+[ 1685.04s ->  1688.34s] And what these are, are probabilities, right?
+[ 1688.40s ->  1693.64s] The probability of this occurring, but those probabilities are measured in a forward looking
+[ 1693.64s ->  1694.08s] sense.
+[ 1694.80s ->  1697.14s] They're not actual probabilities.
+[ 1697.14s ->  1704.86s] There's a very big difference between an implied probability and an actual probability.
+[ 1705.06s ->  1709.00s] To understand why implied probability is different from actual probability.
+[ 1709.30s ->  1710.54s] I have two examples here.
+[ 1710.54s ->  1716.26s] I have a coin flip and the probability of heads, and I have this game known as the St. Petersburg
+[ 1716.26s ->  1716.72s] paradox.
+[ 1717.32s ->  1725.50s] If we look at the mean probability of the coin flip, as we increase the number of coin flips,
+[ 1726.02s ->  1730.14s] the mean converges to the true population mean.
+[ 1730.24s ->  1736.72s] In other words, if I continue to run this, you can see that this horizontal gray line is
+[ 1736.72s ->  1741.08s] what the blue line, that is the sample that we are observing, is going to converge to.
+[ 1742.06s ->  1743.58s] That's what convergence means.
+[ 1743.62s ->  1747.88s] When we talk about the law of large numbers, we're saying as we increase that sample size,
+[ 1748.20s ->  1752.28s] we're going to eventually converge to that population mean value.
+[ 1752.42s ->  1754.60s] So we know that a coin flip is 50-50.
+[ 1755.14s ->  1759.64s] And this isn't a formal proof, but I just simulated a thousand coin flips.
+[ 1759.64s ->  1764.60s] And you can see that that mean probability of landing on heads is certainly converging to that
+[ 1764.60s ->  1769.66s] theoretical gray dotted line, this gray dashed line of 0.5.
+[ 1770.81s ->  1773.97s] Okay, so this is an example of convergence.
+[ 1774.57s ->  1775.87s] That is probability.
+[ 1775.87s ->  1779.79s] In the frequentist sense, that is probability.
+[ 1780.09s ->  1788.71s] If I was to flip 10,000 coins, on average, if I simulated that 10,000 coins an infinite number
+[ 1788.71s ->  1792.63s] of times, I would see 5,000 heads and 5,000 tails.
+[ 1792.89s ->  1796.37s] This is what probability is in terms of the interpretation.
+[ 1796.79s ->  1802.63s] It's a proportion of outcomes if I was to do that same experiment a large number of times.
+[ 1802.87s ->  1804.33s] That's what we're looking at here.
+[ 1805.44s ->  1808.54s] Well, what about when we look at something like the St. Petersburg paradox?
+[ 1809.60s ->  1811.14s] There is no convergence here.
+[ 1811.64s ->  1816.74s] If I run this, you'll see this gray dashed line is at roughly 10 here.
+[ 1816.74s ->  1819.96s] If I run this again, now it's above 10.
+[ 1821.10s ->  1826.11s] If I keep running this, it's going to keep changing.
+[ 1829.24s ->  1833.56s] That's to say that this game does not converge to an actual value.
+[ 1834.24s ->  1840.10s] This is more akin to implied probability than coin flip convergence.
+[ 1840.82s ->  1844.00s] So when we think of implied probability, how should we think about it?
+[ 1844.00s ->  1852.53s] Well, if the implied probability of an event is 90%, all that's telling you is the money
+[ 1852.53s ->  1858.65s] thinks that it's going to happen based on the odds, based on the market, whatever people
+[ 1858.65s ->  1859.59s] are putting their money on.
+[ 1859.65s ->  1862.21s] They certainly think that that outcome is more likely.
+[ 1862.21s ->  1870.21s] It does not mean that if we had that particular outcome a thousand times, that 900 of them
+[ 1870.21s ->  1872.49s] mean that that outcome would occur.
+[ 1872.63s ->  1875.25s] That is the interpretation with a coin flip.
+[ 1875.37s ->  1879.57s] That is not the interpretation with an implied probability.
+[ 1879.57s ->  1888.35s] That is an incredibly important distinction to make because if rate cuts, let's say rate cuts
+[ 1888.35s ->  1894.77s] currently have an implied probability of roughly 60%, that means there's a lot of room.
+[ 1894.91s ->  1901.73s] There's some edge to trade if you think that maybe there's a misinterpretation in that implied
+[ 1901.73s ->  1902.47s] probability.
+[ 1902.63s ->  1907.29s] Maybe it was cited incorrectly and really it should be 80%.
+[ 1907.29s ->  1908.81s] Maybe it should be 40%.
+[ 1908.81s ->  1914.27s] If you have a discrepancy in what everybody thinks is the case and what actually is the
+[ 1914.27s ->  1916.53s] case, then you have some edge there.
+[ 1917.11s ->  1920.47s] But again, we're not talking about an iterative experiment.
+[ 1921.11s ->  1924.35s] We have something that isn't actually converging to a stable value.
+[ 1924.79s ->  1929.69s] But what it is telling us is where the money currently is.
+[ 1929.69s ->  1934.89s] And that is the most important part here because if you do have a discrepancy, then you can
+[ 1934.89s ->  1936.89s] have some edge and you can trade around it.
+[ 1936.89s ->  1942.73s] And in a statistical capacity, if you're right on average, you'll accumulate P&L and wealth.
+[ 1942.73s ->  1947.13s] This is the exact same idea as implied volatility.
+[ 1947.13s ->  1952.57s] When we back out implied volatility using the Black-Scholes model and current option prices
+[ 1952.57s ->  1956.49s] in the market, we're getting what traders are currently pricing volatility at.
+[ 1956.63s ->  1961.13s] We are not actually getting what the volatility is going to be in the future.
+[ 1961.13s ->  1964.09s] It's just what everybody thinks right now.
+[ 1964.41s ->  1971.21s] I have a very simple example here with American odds and in a sports betting case.
+[ 1971.77s ->  1977.07s] But really what we're doing here is the exact same thing that the Black-Scholes model is
+[ 1977.07s ->  1978.33s] doing for implied volatility.
+[ 1978.33s ->  1985.01s] If we have some sort of odds in a market, then what we're going to do is back out the implied
+[ 1985.01s ->  1990.63s] probability based on those odds and where the money is, and we're going to get what the
+[ 1990.63s ->  1994.49s] market currently thinks the most probable outcome is going to be.
+[ 1994.57s ->  1999.95s] But again, those probabilities aren't saying anything in terms of frequency of outcomes.
+[ 2000.51s ->  2003.63s] It's just what everybody thinks is going to be the case.
+[ 2004.11s ->  2005.39s] Maybe there's more certainty.
+[ 2005.39s ->  2006.43s] Maybe there's less certainty.
+[ 2006.43s ->  2011.63s] If there's 90% implied probability, then people really think the outcome is going to happen
+[ 2012.11s ->  2014.11s] because they're betting their money on it.
+[ 2014.11s ->  2020.43s] But it's not suggesting that if that particular event happened a thousand times, 900 of them would
+[ 2020.43s ->  2022.11s] be that particular outcome.
+[ 2022.67s ->  2025.15s] That distinction is very important.
+[ 2025.15s ->  2029.71s] What this does tell us is the impact of the potential outcome.
+[ 2029.71s ->  2032.03s] And this goes back to what I said a moment ago with rates.
+[ 2032.03s ->  2035.47s] And I have a nice chart here to illustrate this idea.
+[ 2035.47s ->  2040.75s] So let's say that the implied probability of a rate cut was 90%.
+[ 2042.81s ->  2046.65s] Okay, well, let's say they cut rates at this time here, this dotted line.
+[ 2046.65s ->  2049.05s] Look at that impact in the market.
+[ 2050.83s ->  2052.03s] It's not a lot of impact here.
+[ 2052.91s ->  2056.03s] But what if the rate cut was priced in at 60%?
+[ 2056.75s ->  2059.79s] Look at this jump when rates are actually cut.
+[ 2061.07s ->  2064.11s] That is the significance of this implied probability.
+[ 2064.11s ->  2070.19s] Because we are essentially correcting a belief when the event is actually realized.
+[ 2070.19s ->  2072.19s] We're either affirming it or correcting it.
+[ 2072.19s ->  2076.43s] So here, where there's more uncertainty, there's more room for impact.
+[ 2076.43s ->  2081.47s] And that's this idea of implied probability and why it's important to understand.
+[ 2081.47s ->  2084.91s] Because it's not a frequency interpretation like a coin flip.
+[ 2085.47s ->  2090.83s] There's a very big difference between a probability of heads and the implied probability of a rate cut.
+[ 2091.71s ->  2091.95s] Right?
+[ 2091.95s ->  2093.31s] There's no convergence.
+[ 2093.31s ->  2099.23s] It's based on unwinding where the money is in poly market.
+[ 2099.23s ->  2102.83s] For example, it's based on supply and demand for a particular contract.
+[ 2102.83s ->  2104.59s] We'll discuss that in a moment.
+[ 2104.59s ->  2112.35s] But how you should think about implied probabilities is the impact and exposure to that particular item.
+[ 2112.35s ->  2118.68s] So if I have market exposure, we know that a rate cut or lack thereof is going to greatly impact
+[ 2119.24s ->  2124.44s] the whatever vehicle for my investment I have exposure to.
+[ 2125.16s ->  2130.44s] If I have equity, if I have option, whatever contract I have, whatever instrument I'm trading,
+[ 2130.44s ->  2132.04s] we know that rate cuts can impact it.
+[ 2132.68s ->  2139.69s] So if it's priced in at 90%, then maybe if it gets cut, not so much of an impact.
+[ 2140.33s ->  2144.01s] But maybe if there's more uncertainty, there's going to be a massive impact and vice versa.
+[ 2144.01s ->  2149.53s] Because if there's a 90%, 90% implied probability of a cut and it doesn't cut,
+[ 2150.17s ->  2156.22s] then this is going to jump way down and vice versa for the 60% up here.
+[ 2156.22s ->  2161.42s] So just keep that in mind as you're operating with this implied probability space.
+[ 2161.42s ->  2165.66s] What I have here is an example of poly market, which is just
+[ 2166.30s ->  2169.50s] really a market for these implied probabilities.
+[ 2169.50s ->  2175.34s] And the contract's value has this binary outcome, one if true, zero if false.
+[ 2175.34s ->  2178.54s] That is the value of each one of these particular contracts.
+[ 2178.54s ->  2181.66s] And this is very similar to a Bernoulli random variable
+[ 2182.22s ->  2185.26s] that's being used to generate model probabilities.
+[ 2185.26s ->  2191.02s] But it's exactly the same as the idea of a non-convergent process that we talked about
+[ 2192.78s ->  2195.42s] in the case of the St. Petersburg paradox.
+[ 2195.42s ->  2198.46s] So when we come down here and we look at the rate cut,
+[ 2198.46s ->  2202.38s] really what we're dealing with is this non-convergent process.
+[ 2202.38s ->  2207.82s] Moreover, if we're considering the example in the S&P 500 that we talked about above,
+[ 2208.54s ->  2213.18s] where the implied probability that is, you know, traders and investors polled
+[ 2213.18s ->  2221.74s] had this six to 19 times higher probability than what was observed historically in a severe crash,
+[ 2222.70s ->  2227.02s] we know that that implied probability doesn't converge as well and it's wrong.
+[ 2227.02s ->  2234.54s] So when we look at this, this market overestimation of an implied probability of a severe crash,
+[ 2235.34s ->  2237.02s] look at the actual probability, right?
+[ 2238.06s ->  2239.50s] It's fundamentally different.
+[ 2239.50s ->  2245.34s] So when we actually go about making trading and investment decisions,
+[ 2245.34s ->  2251.82s] we want to keep this in mind that fear dominates, uncertainty dominates, volatility reverts to a mean level.
+[ 2252.78s ->  2259.58s] But also these measures of probability are not actually probabilities.
+[ 2259.58s ->  2260.94s] It's implied probabilities.
+[ 2261.90s ->  2268.94s] And these implied probabilities just tell us how much impact we can expect potentially in the price
+[ 2268.94s ->  2273.90s] of some sort of instrument in our portfolio, given something does or does not occur.
+[ 2273.90s ->  2280.94s] So if we have a 90% priced in rate cut and rates don't get cut, we're certainly going to feel that,
+[ 2280.94s ->  2284.62s] right? That's going to, that's going to be a massive drop relative to if, yeah,
+[ 2284.62s ->  2288.06s] the rate cuts actually realized and it's relatively smooth sailing.
+[ 2288.06s ->  2289.34s] Everyone was expecting that.
+[ 2290.14s ->  2295.58s] I want to briefly touch on psychology here, because in the, you know, algorithmic and quantitative
+[ 2296.14s ->  2302.70s] trading sense, we often hear this idea that, you know, this, um, this type of fear and uncertainty
+[ 2302.70s ->  2307.34s] is kind of like hedged away or it's like mitigated because everything is systematic.
+[ 2307.98s ->  2313.10s] And I just think, um, I just think that idea is kind of ridiculous because fundamentally
+[ 2313.90s ->  2315.58s] you still have risk exposure.
+[ 2315.58s ->  2319.50s] We're not talking about static arbitrage here where you're immediately buying low,
+[ 2320.06s ->  2322.22s] selling high or some sort of exchange arbitrage.
+[ 2322.22s ->  2323.74s] I'm not talking about anything like that.
+[ 2324.54s ->  2325.74s] Somebody's manning the helm.
+[ 2326.38s ->  2330.22s] Somebody is responsible for assuming that risk exposure.
+[ 2330.22s ->  2337.34s] And if a human is in charge of that system, then psychologically there is still a component
+[ 2337.34s ->  2338.54s] of fear to it.
+[ 2339.10s ->  2339.42s] Okay.
+[ 2339.42s ->  2341.10s] There absolutely is.
+[ 2341.10s ->  2346.06s] Making money does not feel as good as losing money feels bad.
+[ 2346.54s ->  2348.78s] That is objectively true.
+[ 2348.78s ->  2354.06s] So in terms of psychology, if we're trying to construct some sort of argument that, you know,
+[ 2354.06s ->  2361.02s] algorithms make the behavioral component of all of this moot, it's a ridiculous notion,
+[ 2362.06s ->  2365.74s] um, based on the behavioral finance and psychology literature.
+[ 2366.38s ->  2373.42s] So with that, we're really getting a good picture of the trading and investing space.
+[ 2373.42s ->  2377.26s] We're now ready to talk about how I trade and invest.
+[ 2377.82s ->  2382.94s] We have a very good understanding of the trading and investing space at this point.
+[ 2382.94s ->  2386.30s] We understand that we need to assume risk to generate a return.
+[ 2386.30s ->  2390.46s] We know that there's different types of risk that we can assume to generate different types of return.
+[ 2391.02s ->  2397.50s] We know that there's a lack of stability in the space for measures of that risk and return.
+[ 2397.50s ->  2402.94s] We know that there's a psychological component to this as well with what people are expecting
+[ 2402.94s ->  2408.30s] versus not expecting in terms of an implied probability of fear component that, you know,
+[ 2408.30s ->  2413.18s] typically fear will dominate mispricings for a brief while when volatility clusters,
+[ 2413.18s ->  2417.58s] then eventually it reverts to some sort of mean level and all is well in the world again.
+[ 2417.58s ->  2422.30s] So understanding all this, we can talk about how I trade and how I think about trading.
+[ 2422.30s ->  2427.26s] And to do this, we need to talk about this idea of edge, gambling, poker, and trading.
+[ 2427.26s ->  2433.58s] I've talked about this before on the channel, but nevertheless, it is critical to operating in
+[ 2433.58s ->  2439.66s] this space because the entire space separates winners who understand the idea of trading,
+[ 2439.66s ->  2443.10s] investing with edge versus losers who don't.
+[ 2443.10s ->  2447.10s] So we're going to talk about the idea of a game of chance versus a game of incomplete
+[ 2447.10s ->  2449.18s] information to hopefully hammer this idea home.
+[ 2450.14s ->  2455.50s] The idea of a game of chance is that there is no optimal decision to make in the face of uncertainty.
+[ 2455.50s ->  2461.02s] Statistically, if you continue to engage in that particular game, in that particular investment,
+[ 2461.02s ->  2466.86s] if it is a game of chance and you have a negative edge, you will lose all your money.
+[ 2466.86s ->  2471.10s] If you play something like roulette and you're not allowed to use some sort of
+[ 2471.10s ->  2476.14s] martingale betting strategy, then statistically you will lose money if you continue to play until
+[ 2476.14s ->  2478.46s] you are bankrupt. That is a game of chance.
+[ 2478.46s ->  2481.18s] That's why gambling should receive negative connotations.
+[ 2481.74s ->  2486.94s] You cannot, in a game of chance, generate P&L. There's no optimal decision to make.
+[ 2488.06s ->  2494.22s] In fact, if I was to take a reinforcement learning algorithm and try to teach an AI model
+[ 2494.22s ->  2499.50s] to learn to play a game of chance like roulette, it would learn nothing beyond the probability
+[ 2499.50s ->  2505.90s] mass function, and it would also lose a whole bunch of money. That is not true with the game of
+[ 2505.90s ->  2514.06s] incomplete information. We can teach an AI model to play poker and absolutely smoke everyone. We can
+[ 2514.06s ->  2521.58s] teach an AI model to optimally delta hedge and option portfolio. Poker and trading are games of
+[ 2521.58s ->  2529.26s] incomplete information where you can always act suboptimally. I can bet pre-flop my entire bank
+[ 2529.26s ->  2534.94s] roll. I can also buy low and sell high and accumulate an infinite amount of transaction
+[ 2534.94s ->  2543.42s] costs. I can always act suboptimally and acting suboptimally is so easy without relevant information
+[ 2543.42s ->  2548.70s] or appropriate information of understanding how to engage with the space that it seems like just
+[ 2548.70s ->  2554.22s] gambling. But it is not. It's because you're operating in a way that you're just accumulating
+[ 2554.22s ->  2561.26s] a ton of negative expected value versus those that understand the idea of expected value playing as
+[ 2561.26s ->  2568.62s] close to net zero positive EV as possible. And you're not going to just be gambling and accumulating
+[ 2568.62s ->  2572.78s] negative transaction costs or edge over time, but you're going to be making optimal decisions in
+[ 2572.78s ->  2578.46s] the face of uncertainty, accumulating that edge, and the rest is history in your wealth
+[ 2578.46s ->  2584.70s] path path and PNL. That is the point of the space. And that is how you can operate in an optimal
+[ 2584.70s ->  2590.78s] capacity. You can always operate suboptimally and lose money, but the goal is to act optimally.
+[ 2591.34s ->  2602.14s] So how do we act optimally? You need strategies, not strategy one. You need strategies plural. If you're
+[ 2602.14s ->  2607.34s] trading in some sort of discretionary capacity, that is, you are actually going to go in and manually
+[ 2607.34s ->  2611.82s] execute a trade rather than develop some sort of algorithmic system to do it for you. That's a
+[ 2611.82s ->  2619.82s] different type of strategy altogether. Regardless, you need strategies plural. We're not here to make
+[ 2619.82s ->  2626.62s] one trade and be done. Trading is not a part-time job. You need to accumulate EV over time.
+[ 2627.26s ->  2633.26s] You can't just walk in to a poker tournament and beat the pros. That's not going to happen, right? Same
+[ 2633.26s ->  2637.90s] thing is true with trading. You're not going to just make a ton of profitable trades because somebody
+[ 2637.90s ->  2642.78s] told you what to do. No, it comes down to statistics, repetition, and being able to
+[ 2642.78s ->  2647.18s] understand when there's EV on the table and when there's not. Sometimes you're going to be wrong.
+[ 2647.18s ->  2653.34s] So when I trade, I have a series of strategies that I'll look at based on my opinion of the market,
+[ 2653.34s ->  2659.26s] my opinion of news, and based on the current climate and activities that are going on. So with an
+[ 2659.26s ->  2664.46s] earnings event, if I think implied volatility is overstated, I'm going to look for negative
+[ 2664.46s ->  2669.82s] vega exposure. That's the exposure that I'm going to want access to. If I'm unwinding a long-term
+[ 2669.82s ->  2675.42s] investment, I'm going to sell calls above spot. If crypto is mid-range of a bull cycle, I'm going to
+[ 2675.42s ->  2679.58s] have directional exposure. Same thing is true if I see risk coming off the books or profit-taking
+[ 2679.58s ->  2686.70s] activities, then maybe I'm also going to want directional exposure. I'm not always correct when I
+[ 2686.70s ->  2693.02s] construct strategies and trade based on these ideas. I'm not, but I am correct on average.
+[ 2693.02s ->  2698.22s] And that's why I continue to make money. And this past week, I did this video on the
+[ 2698.22s ->  2703.58s] volatility trading dashboard. I mentioned it earlier really emphasizes that idea because
+[ 2703.58s ->  2707.26s] what it's doing is it's systematically running these regressions, looking at something called
+[ 2707.26s ->  2712.22s] the volatility risk premium. That is this idea of implied volatility being overstated and then
+[ 2712.78s ->  2720.14s] realizing at a lower value and you can capture that spread. Statistically, that framework that
+[ 2720.14s ->  2725.69s] we build in that video shows that there's some sort of edge there. But that doesn't mean that you're
+[ 2725.69s ->  2730.65s] going to make money every single time. Sometimes that negative vega exposure is going to crush you
+[ 2730.65s ->  2736.41s] and you're going to lose money. So I have an example here of how I would trade in this capacity. So
+[ 2736.41s ->  2740.57s] we're understanding that I have a series of strategies and I'm going to trade based on what's
+[ 2740.57s ->  2744.97s] happening in the market. I can't trade all the time. Sometimes nothing's happening. Bull markets
+[ 2744.97s ->  2750.25s] are boring. But if I see some sort of event, right? Like let's take a look at earnings here.
+[ 2750.25s ->  2757.45s] So here's an earnings event. Okay. Volatility spikes way high. Okay. Well, this goes back to what
+[ 2757.45s ->  2762.04s] we talked about with the option contract. This goes back to what we talked about with the option
+[ 2762.04s ->  2770.03s] contract exposure. I need that volatility exposure. If I think that volatility is going to decline,
+[ 2770.99s ->  2777.79s] that is one of the strategies that I've stated here, then I want to be net short that volatility.
+[ 2777.79s ->  2782.75s] I want to be short what's called vega. What about my other exposures? Well, I don't want to say
+[ 2782.75s ->  2786.75s] anything about the other exposures. So what I'm actually going to do is hedge all those other
+[ 2786.75s ->  2794.91s] exposures away. And if I'm correct and volatility realizes lower and implied volatility comes down,
+[ 2794.91s ->  2802.03s] then I can collect the profit difference between the contract price at this high volatility value
+[ 2802.03s ->  2806.59s] and the contract price at this lower volatility value holding all else equal. Again, I'm hedging
+[ 2806.59s ->  2813.79s] away that other risk. This is how I trade. I look for edge and then I try to accumulate that edge
+[ 2813.79s ->  2819.79s] over a series of trades. This is not one trade. This is not 10 trades. This is hundreds and hundreds of
+[ 2819.79s ->  2827.23s] trades. So if that's how I trade, how do I invest? Well, investing is fundamentally different because
+[ 2827.23s ->  2833.39s] I don't particularly care right now if it's going to go up or down. This is a long-term investment.
+[ 2833.39s ->  2840.03s] I'm going to allocate cash to some sort of market exposure or maybe another exposure for a longer
+[ 2840.03s ->  2846.75s] period of time. So maybe if I want Nvidia exposure for a long period of time, I will hold a larger
+[ 2846.75s ->  2854.43s] amount of Nvidia. If I want just market exposure, I'll just hold some sort of ETF or a diversified
+[ 2854.43s ->  2859.71s] portfolio of equities that I might rebalance periodically. So when it comes to investing
+[ 2859.71s ->  2866.19s] and how I allocate cash, there really is no such thing as timing. It's about time in.
+[ 2866.83s ->  2872.59s] So in terms of long-term investing, weekly allocations for that market exposure are productive.
+[ 2872.59s ->  2878.43s] You don't know if it's going to be up or down, sideways, whatever it is, but weekly allocations
+[ 2878.43s ->  2885.15s] can help decrease your cost basis. So instead of just lump sum dumping it in at some sort of
+[ 2885.15s ->  2890.99s] relative high, you know, you can actually decrease your cost basis by just allocating smaller amounts
+[ 2890.99s ->  2896.59s] of that lump sum over a couple of weeks. Just one way to go about the long-term investing.
+[ 2896.59s ->  2902.19s] Now, when the VIX spikes and there's a ton of fear, this is where I look for longer-term investments
+[ 2902.19s ->  2908.83s] and I will have some sort of lump sum allocation or larger allocations on a tighter time frame
+[ 2908.83s ->  2914.59s] because I know there's a severe amount of mispricings. So what does that actually look like?
+[ 2916.75s ->  2922.67s] Well, here I have a very simple example of the volatility of the S&P 500 and the difference between
+[ 2922.67s ->  2930.43s] a lump sum investment and incremental investments when volatility spikes. So the rule essentially here
+[ 2930.99s ->  2938.67s] is when volatility is above a certain threshold, I'm going to allocate increments of that lump sum
+[ 2938.67s ->  2946.99s] rather than just allocating that lump sum itself to the SPY ETF. And what you'll see here is in this
+[ 2946.99s ->  2956.43s] particular case, the total lump sum investment of $5,000 has a 1,284% return over this entire time
+[ 2956.43s ->  2963.87s] horizon. And the incremental investment actually has a higher average return. So it had a lower cost
+[ 2963.87s ->  2971.47s] basis. This is 1,333% return. These numbers are not wrong. They're not egregious. They're not outstanding
+[ 2971.47s ->  2979.05s] either. This is over the course of what? It's like 30 years or something like that, 30, 40 years. So
+[ 2979.77s ->  2985.85s] this is nothing that you should be too particularly shocked to see. This is if we bought somewhere in
+[ 2985.85s ->  2994.97s] the 80s. But the same argument can be constructed for closer time periods to the present 2000s, 2010s,
+[ 2994.97s ->  3001.85s] 2020s. Largely, this is just an anecdotal example of how you can go about allocating capital to ETFs
+[ 3001.85s ->  3006.81s] in an incremental capacity versus a lump sum capacity. And this is an anecdotal example of
+[ 3006.81s ->  3011.45s] where it outperforms. So when it comes to investing, you have a lot of different options,
+[ 3011.45s ->  3017.21s] but that is how I look to invest. I look to invest in weekly allocations specifically for that market
+[ 3017.21s ->  3022.09s] exposure. These are long-term investments. You can also look at specific exposures if I think something
+[ 3022.09s ->  3027.29s] like maybe tech is going to do particularly well in the next year or two. It's akin to sort of swing
+[ 3027.29s ->  3033.61s] trading, but over a longer, longer time horizon. If there's a massive spike and fear, I see a lot
+[ 3033.61s ->  3041.37s] of mispricings. I'll have some lump sum allocations or tighter allocations on a time basis. And then
+[ 3041.37s ->  3046.09s] here, we didn't really talk too much about this idea of generating cash, but this is going to go into
+[ 3046.09s ->  3052.81s] my performance metrics too. If you talk to somebody about performance metrics, you'll say,
+[ 3052.81s ->  3060.32s] hey, does your strategy beat the market? That is one of the most ridiculous commentaries I've ever
+[ 3060.32s ->  3066.32s] heard or comments about strategy performance. And it's because there's so many different measures
+[ 3066.32s ->  3073.20s] of performance. And beating the market is, is not just a, okay, I beat the market. So that's a good
+[ 3073.20s ->  3078.08s] strategy. It doesn't, it doesn't work like that. And I've seen people comment, hey, like this won't
+[ 3078.08s ->  3084.72s] even beat the market. It's like, that's, that's not the measure for success. That's not the only measure
+[ 3084.72s ->  3090.32s] for success, especially if you're trading or investing in a retail capacity. And we'll talk about
+[ 3090.32s ->  3096.24s] why now we can always look at something like the sharp ratio or the Sortino ratio to assess the
+[ 3096.80s ->  3103.92s] relative effectiveness of our strategy in terms of expected risk and expected return. But this gets
+[ 3103.92s ->  3108.24s] back to the original problem we were discussing at the start of this video is we know that these
+[ 3108.24s ->  3115.04s] values are not necessarily stable. So these ratios then necessarily will not have to be stable. And if
+[ 3115.04s ->  3119.92s] they're not stable, just because we see something that has a high Sortino or a high sharp ratio
+[ 3119.92s ->  3126.16s] does not mean that it's a good strategy. If you have a systematic trading strategy that is stable,
+[ 3126.72s ->  3133.36s] if you have a quant trading strategy that is stable, what you will see is this
+[ 3134.48s ->  3140.40s] back-tested signal value will appear very similar to what we see in the live market here. It's not the
+[ 3140.40s ->  3146.72s] case, but if we saw the bar chart, look something like this in the live trading setting, then that is
+[ 3146.72s ->  3155.28s] reasonably stable. And we may see the expected returns and the expected risk also be stable.
+[ 3155.28s ->  3161.28s] And if they're stable, then so will the sharp ratio and Sortino ratio be also stable. But this is not
+[ 3161.28s ->  3166.96s] necessarily the case. And that is also subject to change over time. Super important to understand that
+[ 3166.96s ->  3173.76s] in terms of a performance metric. These are not just the be-all end-all. This is actually very similar to
+[ 3173.76s ->  3178.24s] the idea of an implied probability. Just because that is the case does not mean that it's going to
+[ 3178.24s ->  3182.96s] be the case in a forward-looking sense. We're always dealing with this expectation. This expectation
+[ 3182.96s ->  3189.76s] doesn't converge to a level. And that's what we're going to be dealing with here. So if you ask me,
+[ 3189.76s ->  3193.76s] hey, Roman, are you going to lever up on a system that has a two plus sharp ratio? I will say,
+[ 3194.40s ->  3202.24s] no, I don't know anything about that system. How hard is it to trade? What kind of strategy class is it?
+[ 3202.24s ->  3207.68s] What am I actually exposing myself to? What is the maximum drawdown? All of these things are relevant,
+[ 3208.32s ->  3213.04s] right? Just because something has these statistics does not mean that this is going to be the case
+[ 3213.04s ->  3218.16s] when you deploy it live. There's all of these considerations. So in terms of performance, I don't
+[ 3218.16s ->  3222.56s] like clinging to these ratios, unless we're talking about some sort of institutional-grade
+[ 3222.56s ->  3228.32s] strategy with stability. We can entertain these values there. But I think a lot of retailers get hung
+[ 3228.32s ->  3232.48s] up on these values and it's like, wow, like that has a very high sharp ratio, high sortina ratio
+[ 3232.48s ->  3238.24s] without actually getting into the risk and return stability and what it actually means for the
+[ 3238.24s ->  3246.08s] trading strategy. So what do I consider in terms of performance metrics when I trade and invest?
+[ 3246.08s ->  3253.36s] This isn't right or wrong. This is what I consider. How did I go about generating those trading or
+[ 3253.36s ->  3260.80s] investing decisions? Were they generated actively, passively, algorithmically? When did I have access
+[ 3260.80s ->  3265.68s] to capital? I'm not talking about liquidity, whether or not I can get out of a trade. I'm saying,
+[ 3265.68s ->  3272.16s] what proportion of time was I in cash to make decisions with? Not a lot of folks are going to
+[ 3272.16s ->  3280.32s] consider that. If somebody outperforms me buy and hold, let's say that they make 20% and I make 15%,
+[ 3281.28s ->  3288.48s] but 50% of the time I was in cash and they were locked into an asset, fundamentally that's
+[ 3288.48s ->  3296.88s] completely different. I have to use that money. I have rent. I have to pay my bills. So as a trader,
+[ 3296.88s ->  3304.08s] I know that there's a suboptimal way to allocate my capital and I know that I can generate money
+[ 3304.08s ->  3309.44s] using that capital in different ways, but also I need to use the capital for different things.
+[ 3309.44s ->  3315.20s] So keeping that in mind is also important. It's also time to take profits at some point
+[ 3315.20s ->  3320.00s] and use that capital. Not a lot of people think about that. So outperforming the market and buy
+[ 3320.00s ->  3325.92s] and hold in that sense is not the measure for success. So I'll consider these types of ratios.
+[ 3325.92s ->  3329.92s] I'll look at my expected return, expected risk. I'll look at my probability of winning a trade,
+[ 3329.92s ->  3335.12s] probability of losing a trade. And over longer time horizons, I'll consider things like how much
+[ 3335.12s ->  3341.52s] cash did I have on hand? What proportion of time was I in cash? Things like that.
+[ 3341.52s ->  3348.56s] To summarize, this video was all about understanding trading and investing. You must assume a type of risk
+[ 3348.56s ->  3354.64s] to receive a return beyond the risk-free rate. We're not talking about static arbitrage here.
+[ 3354.64s ->  3359.60s] Simply, we need to choose whatever exposure we want exposure to. Statistically, if that exposure
+[ 3359.60s ->  3364.64s] at that particular point in time has edge, we will generate P&L over time and make money. Otherwise,
+[ 3364.64s ->  3369.60s] we're going to lose money or at best break even. We're operating with incomplete information. We can
+[ 3369.60s ->  3375.20s] always burn money. We can always act suboptimally and accumulate infinite transaction costs,
+[ 3375.20s ->  3381.04s] but that does not make it gambling. That does not make it gambling. Same thing in poker. I can always
+[ 3381.04s ->  3386.08s] bet a ton of money and fold. It does not necessarily make it gambling. It's a game of incomplete
+[ 3386.08s ->  3392.00s] information. Stability of strategies, risk measures, performance measures is never guaranteed and is
+[ 3392.00s ->  3397.52s] quite rare, even if you can find statistical inefficiencies in the market. So if you're trading in
+[ 3397.52s ->  3402.00s] an institutional capacity, you have some sort of strategy that works really well, it's not guaranteed to
+[ 3402.00s ->  3410.06s] work forever. Trading is a part-time job. No, it's not. Investing can be. Certainly choose whichever
+[ 3410.06s ->  3417.95s] you have sufficient knowledge and capacity for. Okay. That largely summarizes this video. I will say,
+[ 3417.95s ->  3424.59s] I hope this provides a useful framework for analyzing strategies that people propose and those videos
+[ 3424.59s ->  3432.35s] that give you a signal that has 100% accuracy. Some future topics of discussion, if there's interest,
+[ 3432.35s ->  3437.07s] time series analysis. This one, I think also is a long time in the making. I have this comment here,
+[ 3437.07s ->  3444.83s] why it doesn't work. Of course, time series analysis has its place. I've deployed production systems for
+[ 3444.83s ->  3452.11s] pricing and market making using time series analysis. The why it doesn't work is really my own personal
+[ 3452.11s ->  3457.95s] vendetta against it in an academic capacity. You know, when you take a time series analysis course,
+[ 3457.95s ->  3464.91s] whether you're an undergrad, in grad school, or even in some papers and seminars and some sort of PhD
+[ 3464.91s ->  3469.79s] program, the first thing that they're going to do is tell you that you're dealing with some process
+[ 3469.79s ->  3477.15s] that's stationary. That's not the case ever in real life. Even if that is not the case, it doesn't make
+[ 3477.15s ->  3482.51s] it useless. As I mentioned, you know, we deploy production systems using these techniques. So I'll get
+[ 3482.51s ->  3487.39s] around to talking about time series analysis, no doubt. I've heard some comments that would
+[ 3487.39s ->  3493.23s] like me to discuss this idea. Other topics, I'd like to talk about algorithmic investing systems
+[ 3493.23s ->  3498.59s] to generate cash and hold for drawdown. This goes back to that idea of how I invest, maybe at times
+[ 3498.59s ->  3503.71s] of high volatility, you know, putting more incrementally, incrementally putting more cash in
+[ 3503.71s ->  3509.07s] versus periods of low volatility. It could be an interesting topic for a video. I want to build more
+[ 3509.07s ->  3513.87s] trading tools and systems using interactive brokers. If you're unfamiliar with interactive
+[ 3513.87s ->  3517.63s] brokers, link in the description below to get started with them. I've been trading with them for
+[ 3518.91s ->  3523.71s] roughly 10 years, over 10 years, I think at this point, I'd have to actually go back and look, but
+[ 3524.43s ->  3529.31s] quite some time, they're the best broker that I've used to trade in a discretionary or algorithmic
+[ 3529.31s ->  3535.71s] capacity. Highly recommend them more videos on tools and systems in the future. Deriving option
+[ 3535.71s ->  3539.79s] pricing partial differential equations, I think is a very important idea. We talk about pricing a lot
+[ 3539.79s ->  3544.43s] on this channel, but we don't really talk about how to get to that partial differential equation
+[ 3544.43s ->  3550.75s] and then how all the solutions are connected. I mean, simulation, you could use Monte Carlo simulation,
+[ 3550.75s ->  3556.03s] you could use finite differences, you could solve it analytically. All these solutions are connected.
+[ 3556.03s ->  3560.59s] So we'd like to talk about that. Arch and Garch for modeling volatility, not sure how much interest
+[ 3560.59s ->  3567.39s] there would be in something like this. But I've done a lot of work on Arch and Garch models, so I'd be
+[ 3567.39s ->  3573.63s] happy to discuss if there's interest. And simulating stochastic processes is a personal favorite topic
+[ 3573.63s ->  3579.23s] of mine, so I'd be happy to talk about this also if there's interest. But that is going to do it for
+[ 3579.23s ->  3584.83s] this video. I hope you enjoyed. I hope you learned something. If you like this video and you want to see
+[ 3584.83s ->  3591.87s] more like it in the future, please like, subscribe, comment. It helps me out a lot. Check out quantguild.com
+[ 3591.87s ->  3598.59s] to master your quantitative skills. Other than that, thank you so much for watching and I will see you
+[ 3598.59s ->  3601.63s] in the next video.

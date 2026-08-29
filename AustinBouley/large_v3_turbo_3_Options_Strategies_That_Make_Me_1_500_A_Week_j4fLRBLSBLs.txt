@@ -1,0 +1,150 @@
+[    0.34s ->     4.76s] Here are the three option strategies that I trade every single week to help me make more
+[    4.76s ->     5.98s] than $1,000 a week.
+[    6.12s ->    10.08s] You can see here from my Tasty Trade account, if I comment over the last 60 days, you can
+[   10.08s ->    16.14s] see here I generated over $12,000 in options freemium, which equates to about $1,500 every
+[   16.14s ->    19.38s] single week, purely using three different strategies.
+[   19.52s ->    20.84s] So what are these three strategies?
+[   21.04s ->    22.90s] We need to understand what the market is.
+[   22.98s ->    25.38s] The market can do one of three things.
+[   25.44s ->    28.28s] It can either go up, it can go down, or it can go sideways.
+[   28.28s ->    31.86s] We should have an option strategy designed to make money in each one of those points.
+[   32.26s ->    36.28s] So when it comes to a bullish market, when the market is trending up, I run one specific
+[   36.28s ->    36.72s] strategy.
+[   37.04s ->    40.82s] When the market's bearish, I have another strategy that I run, and then just every single day
+[   40.82s ->    43.26s] I run what I call a daily income strategy.
+[   43.64s ->    46.92s] I run these three combined, because when you combine them, they work well, and you know
+[   46.92s ->    48.52s] exactly what to do at any given point.
+[   48.58s ->    52.64s] That's why a lot of traders lose money, because they don't know what strategy to trade at the
+[   52.64s ->    56.12s] right time, and so that's exactly what this video is going to teach you, so let's dive
+[   56.12s ->    56.54s] right in.
+[   56.54s ->    61.50s] So when we're looking at a stock chart, we need to be able to identify what the market
+[   61.50s ->    64.66s] is doing and what phase we're in, so we know what strategy to run.
+[   64.88s ->    69.02s] If we go to indicators, whether we're on our broker or a platform like this, like Trading
+[   69.02s ->    73.40s] You that I'm using, type in indicators and go into Bollinger Bands, and that's what we're
+[   73.40s ->    73.94s] going to use.
+[   74.48s ->    77.30s] This Bollinger Band indicator is preloaded like this.
+[   77.38s ->    81.20s] We want to go into the settings and actually make a quick change and change the default 20
+[   81.20s ->    86.32s] length to 200, and this makes it very clear what the market is doing at any given time.
+[   86.32s ->    91.28s] So this shows us the overall macro trends of the market, especially when we look at it
+[   91.28s ->    93.28s] on a daily timeframe.
+[   93.28s ->    99.12s] When the market or the stock or whatever we're looking at is in this range right here, this
+[   99.12s ->   100.32s] is a bullish range.
+[  100.32s ->   104.28s] This means the market is making higher highs and higher lows, so we're going to run a bullish
+[  104.28s ->   105.28s] strategy.
+[  105.28s ->   107.66s] When the market's down here, we're running a bearish strategy.
+[  107.66s ->   109.44s] This means when the market is headed down.
+[  109.58s ->   112.82s] When the market is down here, it means it's overextended to the downside.
+[  113.00s ->   116.52s] It's gone down too far too quickly that it's going to bounce up.
+[  116.58s ->   119.90s] So that means in here, we're running bullish strategies below this green line.
+[  120.18s ->   122.38s] Above this red line, it's the same, but the opposite.
+[  122.52s ->   125.30s] It means we've pushed up too far, too high, too quickly.
+[  125.40s ->   129.06s] So we're most likely going to pull back, and that's when we're going to run bearish strategy.
+[  129.22s ->   130.58s] Bearish, bullish, bearish, bullish.
+[  130.90s ->   133.44s] That's how we know at any given point what strategy to run.
+[  133.44s ->   138.16s] So over the last 60 days, as you just saw from my taste treat account, where I made over
+[  138.16s ->   143.62s] $12,000 in options premium, most of it has come from the bullish bot.
+[  143.80s ->   147.26s] At least $10,000 of it has come from the bullish bot.
+[  147.60s ->   152.00s] We've had no bearish bot running because the market has been bullish the last two months.
+[  152.50s ->   155.76s] Bullish has made all of it, and daily income has made a small portion as well.
+[  156.02s ->   159.40s] So now you may be wondering, Austin, what are these strategies that you're talking about?
+[  159.40s ->   163.04s] Let me break down each one of these strategies so that you know exactly how to implement them
+[  163.04s ->   164.06s] for yourself.
+[  164.92s ->   169.20s] So the bullish strategy is quite simply a put credit spread trade.
+[  169.58s ->   174.62s] A put credit spread trade is a very simple bullish strategy that has defined risk.
+[  174.94s ->   177.98s] This means whether I'm trading with a small account or a large account, I can change how
+[  177.98s ->   178.70s] I trade it.
+[  179.02s ->   184.00s] Now, I always love to do my put credit spreads either between 30 and 10 delta.
+[  184.38s ->   186.74s] This helps me know what my win rate will be.
+[  186.74s ->   190.54s] Without a 30 delta, that means I'm going to have roughly a 70% win rate.
+[  190.54s ->   193.88s] So if I'm okay with that, I can go there and collect higher premiums.
+[  194.06s ->   197.98s] If I want to do something with a higher win rate, I can go to 10 delta, which would give
+[  197.98s ->   201.60s] me roughly a 90% win rate, but I'd make less money.
+[  202.14s ->   205.98s] Either way, a put credit spread is the best way to go with a bullish strategy.
+[  206.12s ->   211.12s] You can also do something just as simple as selling a put, buying a call, or doing something
+[  211.12s ->   215.64s] more advanced like a 1-1-1 strategy, which I would do with a futures options approach.
+[  215.64s ->   219.96s] But with a simple put credit spread, the way that I structure it is I do a 10 delta for
+[  219.96s ->   224.76s] the put that I'm selling, and then I buy the 5 delta to define my risk.
+[  225.14s ->   227.92s] I manage this trade at a 50% take profit.
+[  228.16s ->   232.46s] The reason why I do this is because when I do put credit spread trades or any long-term
+[  232.46s ->   236.48s] trades, I'm going like 90 days out into the future, which means it's going to take me
+[  236.48s ->   239.06s] two weeks to a month to actually close that trade.
+[  239.40s ->   243.74s] And so if I'm putting on a new trade twice a week, I could have 50 trades open at a time,
+[  243.74s ->   245.44s] and I don't want that much risk.
+[  245.76s ->   251.24s] So that's why I'm keeping my take profit short at 50% so that I'm closing trades quickly so
+[  251.24s ->   254.80s] that I don't have as many trades open at one time so that I can decrease my risk.
+[  254.86s ->   257.58s] So that's why I have a smaller take profit running there.
+[  257.70s ->   263.48s] And for my stop loss, I'll do anywhere from 200 to 300% stop loss, typically like the default
+[  263.48s ->   267.52s] to 300%, but if you want less risk, you can easily go 200% as well.
+[  267.86s ->   271.64s] So that's the bullish strategy that I'm running inside of my accounts.
+[  271.64s ->   276.84s] Again, this bullish strategy is what's going to make up most of the weekly and or monthly
+[  276.84s ->   277.38s] income.
+[  277.48s ->   280.18s] It's going to come from this strategy right here.
+[  280.28s ->   284.06s] So make sure this is traded well and only traded in bullish markets.
+[  284.14s ->   289.28s] The bearish strategy, again, I've had no running with it quite yet, but the bearish strategy is
+[  289.28s ->   291.44s] quite simply the inverse of the put credit spread.
+[  291.58s ->   293.24s] It's a put debit spread.
+[  293.60s ->   297.92s] Now you might be wondering why a put debit spread over a call credit spread.
+[  298.24s ->   300.40s] Both of these make money when the market goes down.
+[  300.40s ->   306.50s] A call credit spread, though, would struggle because if the market drops, volatility will
+[  306.50s ->   307.02s] increase.
+[  307.16s ->   311.68s] So we not only want a strategy that will take advantage of the right market direction, but
+[  311.68s ->   313.68s] also of the volatility change.
+[  314.02s ->   318.98s] A put debit spread would make money when the market drops and make money when volatility
+[  318.98s ->   323.52s] increases, being a double whammy there to help us generate income quickly.
+[  323.76s ->   326.74s] So a put debit spread is the strategy that I run for that bearish.
+[  326.74s ->   328.62s] It's going to be a simple 30 delta.
+[  328.94s ->   332.60s] And then again, depending on how much I want to do, I can change the one that I'm that I'm
+[  332.60s ->   333.04s] selling.
+[  333.12s ->   335.76s] So I'm buying and then selling 30, 30, 30 delta buy.
+[  335.88s ->   340.16s] And then I do about 20 delta that I sell to define the risk.
+[  340.22s ->   342.84s] And this is a simple 14 to 30 day out trade.
+[  342.98s ->   347.24s] I typically do around 21 DTE just knowing that, hey, this crash will probably last about three
+[  347.24s ->   347.56s] weeks.
+[  347.56s ->   348.08s] Most do.
+[  348.30s ->   349.62s] So I like to run it about that.
+[  349.96s ->   352.10s] There's no take profit, no stop loss on it.
+[  352.10s ->   355.60s] The goal is to let this trade play out because it already has defined risk.
+[  355.60s ->   359.02s] So I know what my profit or loss will be given a situation.
+[  359.50s ->   363.64s] I can always, though, take 90% profit, 80 to 90% profit.
+[  363.78s ->   366.44s] This is what I may do if we're having a very hard crash.
+[  366.64s ->   370.44s] The reason why I do this is because we will only be able to collect so much profit, even
+[  370.44s ->   374.00s] if you're right on the trade, just due to the time left in the trade.
+[  374.12s ->   374.76s] It's called theta.
+[  375.18s ->   377.82s] And so you'll probably only be able to collect 80 to 90% of it.
+[  377.82s ->   381.32s] So if you've collected 80 to 90% of it and you still have a week or two left in the
+[  381.32s ->   383.42s] trade, it might be best just to close the trade.
+[  383.50s ->   385.58s] It'll take the max profit that you basically can.
+[  385.92s ->   389.88s] And then you have money to reinvest or basically just to take off some risk in the market.
+[  390.08s ->   395.32s] So these are the two strategies that are going to make me the most money from all these strategies
+[  395.32s ->   395.98s] combined.
+[  396.24s ->   399.10s] But the problem is these strategies do take a while.
+[  399.18s ->   401.36s] They take anywhere from two weeks to a month to close.
+[  401.36s ->   406.70s] And with that, traders can get in trouble by trading other short-term strategies because
+[  406.70s ->   407.92s] they have an itch to trade.
+[  408.06s ->   408.86s] They're watching the market.
+[  409.00s ->   409.94s] They're doing things like that.
+[  410.02s ->   415.18s] And because they're ADHD, there is another strategy that I like to use to make sure I
+[  415.18s ->   417.26s] have daily activity, daily trading volume.
+[  417.44s ->   421.78s] That's not going to make me super rich, but will help add a cherry on top outside the profits
+[  421.78s ->   423.80s] that I'm already making from the bullish and bearish thoughts.
+[  424.10s ->   425.96s] That's called my daily income strategy.
+[  426.18s ->   428.60s] It's basically a 1DTE ORB strategy.
+[  428.60s ->   431.50s] What this means is it waits for the first hour of the day.
+[  432.02s ->   436.88s] Whenever the market breaks the high from the first hour, it's then going to enter a 1DTE
+[  436.88s ->   438.26s] put credit spread trade.
+[  438.70s ->   444.74s] So again, it's a 1DTE put credit spread trade where it sells to 35 delta and then I buy $20
+[  444.74s ->   445.44s] below it.
+[  445.60s ->   449.42s] Again, you can change that based on the amount of risk that you want to take.
+[  449.88s ->   450.98s] So that's that trade.
+[  451.02s ->   457.22s] It's managed at a 40% take profit and has roughly a 50% stop loss in that trade.
+[  457.22s ->   461.40s] And these are the three strategies that I'm using every single week, every single month
+[  461.40s ->   463.04s] to help me generate income.
+[  463.36s ->   463.58s] Why?
+[  463.70s ->   465.40s] The bullish takes over bullish markets.
+[  465.58s ->   467.56s] Bearish helps me hedge during bearish markets.
+[  467.64s ->   472.50s] And daily income is that cherry on top to bring in that daily activity and daily cash flow.
+[  472.86s ->   474.14s] Anyways, that is the whole thing.
+[  474.24s ->   478.94s] If you want my actual trade plan for the daily income strategy, click the first link in the
+[  478.94s ->   483.62s] description in the YouTube channel and you'll be able to get access to my PDF version of
+[  483.62s ->   485.76s] this trade plan such that you can use it to start trading tomorrow.
+[  485.76s ->   487.32s] All right, guys, see you in the next video.

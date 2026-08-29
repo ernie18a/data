@@ -1,0 +1,196 @@
+[    0.24s ->     4.32s] There's one signal that tells you exactly when you should be entering a trade.
+[    4.32s ->     6.48s] And today I'm going to show you that signal.
+[    6.48s ->    12.08s] It shows up on almost every single chart and once you see it, you cannot unsee it.
+[   12.08s ->    16.40s] And once you get good at spotting it, you can make a ton of money.
+[   16.40s ->    18.24s] Now, I just released my telegram.
+[   18.24s ->    22.88s] I share all the plays I'm watching, useful trading tips, and a ton of value.
+[   22.88s ->    25.52s] The best part is it's completely free to join.
+[   25.52s ->    28.24s] If you want to check it out, I'll leave it in the pinned comment.
+[   28.24s ->    31.04s] Price almost never reverses in a clean sweep.
+[   31.04s ->    33.36s] Usually it does what's called a pullback.
+[   35.78s ->    42.74s] That pullback, that tiny hesitation, is the highest probability entry you could possibly have on a chart.
+[   42.74s ->    44.74s] Look, Bitcoin, 4 hour time frame.
+[   44.74s ->    47.06s] Uptrend, pullback, then the run.
+[   47.06s ->    49.86s] Gold, downtrend, pullback, then the run.
+[   49.86s ->    51.70s] Microsoft, same thing.
+[   51.70s ->    52.82s] It's everywhere.
+[   52.82s ->    53.78s] But here's the thing.
+[   53.78s ->    57.62s] Everyone knows pullbacks exist, but what everyone doesn't know
+[   57.62s ->    59.54s] is how to trade them correctly.
+[   59.54s ->    60.74s] I want you to picture this.
+[   60.74s ->    62.02s] Price has been falling.
+[   62.02s ->    64.18s] Suddenly, strong buying starts occurring.
+[   64.18s ->    65.54s] It rips upwards.
+[   65.54s ->    67.22s] You feel the buyers stepping in.
+[   67.22s ->    69.30s] Price is breaking previous highs.
+[   69.30s ->    71.62s] Massive green candles are forming.
+[   71.62s ->    72.58s] You want in.
+[   72.58s ->    74.34s] As the chart is going up.
+[   74.34s ->    75.38s] So, you buy.
+[   75.38s ->    79.30s] This is possibly one of the worst mistakes you can possibly make.
+[   79.30s ->    79.86s] Here's why.
+[   79.86s ->    82.42s] If you buy at the highs with a tight stop,
+[   82.42s ->    86.98s] there's a very good chance price pulls back before continuing up.
+[   86.98s ->    90.42s] Meaning, this pullback alone would stop you out.
+[   90.42s ->    92.90s] And right after doing so, it continues up.
+[   92.90s ->    97.14s] So, you were right about the idea of the trade, but you still ended up losing.
+[   97.14s ->    99.62s] So then you think, fine, I'll use a wider stop.
+[   99.62s ->   101.46s] Which is an even worse idea.
+[  101.46s ->   107.78s] Because now, if the trend fails, this time, your risk to reward is so blown out of proportion,
+[  107.78s ->   112.26s] so this time when you lose, your portfolio gets absolutely obliterated.
+[  112.26s ->   113.14s] You see the trap?
+[  113.14s ->   115.14s] Tight stop, you get shaken out.
+[  115.14s ->   116.98s] Wide stop, you get obliterated.
+[  116.98s ->   121.70s] This is exactly why 99% of traders aren't profitable.
+[  121.70s ->   126.02s] To solve this problem, you need to incorporate the pullback system.
+[  126.02s ->   130.98s] Why the pullback system works so well is because of one core idea.
+[  130.98s ->   132.58s] Buy low, sell high.
+[  132.58s ->   136.34s] Like, if cavemen used to trade, this is the exact phrase
+[  136.34s ->   138.02s] they would be writing on the walls.
+[  138.02s ->   141.94s] I know it sounds simple, but even with the simplicity of the statement,
+[  141.94s ->   144.26s] most traders ignore it completely.
+[  144.26s ->   146.42s] Pullbacks give you one major advantage.
+[  146.42s ->   149.46s] And that advantage is risk to reward.
+[  149.46s ->   152.74s] All the top traders in the world understand risk management.
+[  152.74s ->   154.18s] And all of them use it.
+[  154.18s ->   157.70s] You see, instead of chasing a trade while it's moving upwards,
+[  157.70s ->   160.98s] you should always wait for a pullback before entering.
+[  160.98s ->   164.42s] Because in all cases, all of them, you'll be entering lower,
+[  164.42s ->   168.18s] which if you're entering lower, you'll be able to use tighter stop losses,
+[  168.18s ->   170.74s] where being wrong almost costs nothing.
+[  170.74s ->   175.70s] And if you're also entering lower, that also means your take profits are bigger.
+[  175.70s ->   181.38s] So in all cases, you have smaller losses when you're wrong, bigger wins when you're right.
+[  181.38s ->   183.14s] That's the entire edge.
+[  183.14s ->   187.22s] But none of this matters if you don't know how to do it correctly.
+[  187.22s ->   191.46s] One of the very first things you learn as a trader is uptrends and downtrends.
+[  191.46s ->   193.30s] It's almost like the sippy cup of trading.
+[  193.30s ->   196.26s] A chart that makes higher highs and higher lows is an uptrend.
+[  196.26s ->   199.46s] A chart that makes lower lows and lower highs is a downtrend.
+[  199.46s ->   200.10s] Simple enough.
+[  200.10s ->   200.98s] Everybody knows this.
+[  200.98s ->   203.54s] Now, you may be thinking, why are you even going over this?
+[  203.54s ->   204.50s] I already know all this.
+[  204.50s ->   208.18s] Well, what if I told you you're probably doing all this completely wrong?
+[  208.18s ->   208.90s] Let me explain.
+[  208.90s ->   211.38s] So going back to our example, the chart does this,
+[  211.38s ->   213.30s] making higher highs and higher lows.
+[  213.30s ->   215.54s] And as we already stated, it's an uptrend.
+[  215.54s ->   217.78s] Okay, but then something interesting happens.
+[  217.78s ->   222.02s] The chart starts heading downwards, which in this process, price makes this low,
+[  222.02s ->   223.30s] and breaks right through it.
+[  223.30s ->   227.06s] And this exact point is where I see the majority of traders make the mistake.
+[  227.06s ->   231.06s] Since price broke this low, a lot of traders think we are now in a reversal
+[  231.06s ->   232.50s] and price is in a downtrend.
+[  232.50s ->   234.98s] So in return, they start looking for short trades,
+[  234.98s ->   237.06s] because they now think price is going to head lower.
+[  237.06s ->   241.06s] But what if I told you this chart is actually still fundamentally bullish?
+[  243.15s ->   247.71s] You see, sure price made this low, but this low is actually not a low at all,
+[  247.71s ->   249.07s] or at least a valid one.
+[  249.07s ->   249.47s] Why?
+[  249.47s ->   252.91s] Because price never broke the valid low, which is right here.
+[  252.91s ->   254.67s] I want to make this very clear.
+[  254.67s ->   258.51s] In order for a low to be validated, it needs to break the previous high.
+[  258.51s ->   262.99s] If you do not understand this part of the strategy, the strategy will not work.
+[  262.99s ->   264.51s] You are done.
+[  266.91s ->   267.63s] Fired.
+[  267.63s ->   272.03s] So say if price does break this high, we now know this is a valid low.
+[  272.03s ->   272.75s] Okay, good.
+[  272.75s ->   277.15s] So now price is in an uptrend, which means we should only look for bullish trades.
+[  277.15s ->   281.47s] The only time we should start looking for short trades is if price breaks this low.
+[  281.47s ->   282.59s] It can do anything right here.
+[  282.59s ->   285.39s] It can go up, down, sideways, literally anything.
+[  285.39s ->   288.51s] As long as it doesn't break this low, we are in an uptrend.
+[  288.51s ->   291.79s] Now say if instead of doing this, price did end up breaking upwards.
+[  291.79s ->   293.71s] Since price did break our previous high,
+[  293.71s ->   297.07s] our new low will be transferred from this point to this low.
+[  297.07s ->   299.31s] So let me show you a real chart example.
+[  299.31s ->   301.95s] Here we have higher highs and higher lows.
+[  301.95s ->   307.79s] This here is the valid low because this low was the low that broke the previous high.
+[  307.79s ->   310.67s] Later, price drops and closes beneath it.
+[  310.67s ->   314.19s] That is our signal that price is now in a downtrend.
+[  314.19s ->   315.95s] One rule you cannot skip.
+[  315.95s ->   321.71s] You must wait for this candle to actually close below the valid low, just like it did here.
+[  321.71s ->   327.47s] If a candle wicks through it, then pulls back, this is a trap and is not a valid break.
+[  327.47s ->   333.55s] I cannot repeat this enough. The candle must close below the low for our system to be valid.
+[  333.55s ->   336.83s] So in our example, the candle did close beneath the low.
+[  336.83s ->   340.75s] So we know we are in a start of a downtrend and it is valid.
+[  340.75s ->   342.91s] And now we can wait for a pullback.
+[  342.91s ->   345.31s] Now a pullback can technically form anywhere.
+[  345.31s ->   346.19s] That's the problem.
+[  346.19s ->   348.67s] We don't want to enter just because we see a pullback.
+[  348.67s ->   352.19s] And if you're just guessing which pullback to actually use, you're gambling.
+[  352.19s ->   353.71s] Which brings me to step two.
+[  353.71s ->   359.87s] From my experience, there's a specific zone where when it forms, price bounces from it over and over.
+[  359.87s ->   360.99s] Supply and demand level.
+[  360.99s ->   362.51s] It's a pretty simple idea.
+[  362.51s ->   365.71s] There are areas where big buyers or sellers load it up.
+[  365.71s ->   369.95s] When price returns to that zone, there's a very high chance it reacts.
+[  369.95s ->   373.63s] It's the same logic as support and resistance, just more efficient.
+[  373.63s ->   377.71s] To mark these zones, all you want to do is look for a sharp impulsive move.
+[  377.71s ->   380.59s] The candle that started that move is the zone.
+[  380.59s ->   381.39s] Sharp move up.
+[  381.39s ->   384.11s] The candle that started that move is the demand zone.
+[  384.11s ->   384.99s] Sharp move down.
+[  384.99s ->   387.63s] The candle that started that move is the supply zone.
+[  387.63s ->   393.63s] So going back to our example, usually in most cases, while price breaks the previous valid low
+[  393.63s ->   397.31s] or high, it usually does so in a very sharp manner.
+[  397.31s ->   400.75s] Which in this scenario, leaves behind a supply zone.
+[  400.75s ->   403.79s] Take the last candle before the move kicked off.
+[  403.79s ->   406.59s] Draw a rectangle from its high to its low.
+[  406.59s ->   408.99s] That box is our supply zone.
+[  408.99s ->   414.19s] Again, it's very important that this supply zone started a sharp move.
+[  414.19s ->   419.39s] If the drop was gradual and slowly dropped, it wouldn't be a valid supply zone.
+[  419.39s ->   423.39s] But in this case, the move was sharp, so we know we have a valid supply zone.
+[  423.39s ->   425.23s] Now it's time to enter the trade.
+[  425.23s ->   427.23s] We get the pullback we were waiting for.
+[  427.23s ->   429.07s] It enters into our supply zone.
+[  429.07s ->   431.95s] We set our stop loss slightly above the supply zone.
+[  431.95s ->   434.43s] We set our take profit at the previous low.
+[  434.43s ->   439.63s] Not only did we wait for a pullback, but we entered into a zone so strong
+[  439.63s ->   445.15s] that price does exactly as we thought it would and reverses exactly at this point.
+[  445.15s ->   447.87s] Resulting in a beautiful winning trade.
+[  447.87s ->   452.43s] Let's do one more example to really make sure you understand the strategy.
+[  452.43s ->   453.79s] Here, we have a downtrend.
+[  453.79s ->   456.51s] Price is making lower highs and lower lows.
+[  456.51s ->   461.47s] So where we currently are, where is the high that price needs to break in order for this
+[  461.47s ->   462.91s] to be considered an uptrend?
+[  462.91s ->   464.99s] Is it A, B, or C?
+[  464.99s ->   467.31s] I'll give you 5 seconds to think of your answer.
+[  470.94s ->   475.82s] Well, this high was the latest high that broke the most recent previous low.
+[  475.82s ->   480.62s] So C is the high that needs to be broken in order for price to be in an uptrend.
+[  480.62s ->   483.98s] Price starts going up and does indeed break the previous high.
+[  483.98s ->   488.86s] I also want you to note, it not only broke this high, but it closed above it.
+[  488.86s ->   490.46s] Which is very important.
+[  490.46s ->   494.30s] So now that price broke the previous high, we now know we're in an uptrend.
+[  494.30s ->   497.66s] And we should look for a spot to enter with our pullback system.
+[  497.66s ->   499.90s] Price spiked up pretty aggressively here.
+[  499.90s ->   502.62s] So we can take our first candle that started this spike,
+[  502.62s ->   505.26s] mark from the low to the high of this candle.
+[  505.26s ->   507.26s] This leaves us with our demand zone.
+[  507.26s ->   510.38s] Now all we have to do is wait for price to do a pullback,
+[  510.38s ->   512.54s] and enter when it reaches our demand zone.
+[  512.54s ->   515.82s] Once it does, set your stop loss below the demand zone,
+[  515.82s ->   518.06s] and set your take profit at the high.
+[  518.06s ->   519.90s] I also want you to realize something.
+[  519.90s ->   522.62s] This was an actual trade I took on NVIDIA.
+[  522.62s ->   527.18s] And if you look at our setup, the risk to reward is absolutely phenomenal.
+[  527.18s ->   529.02s] Our stop loss is super small.
+[  529.02s ->   532.30s] So if we do lose, it basically does nothing.
+[  532.30s ->   534.46s] And our take profit is massive.
+[  534.46s ->   538.06s] So if we win, our win is going to be ginormous.
+[  538.06s ->   540.62s] I entered this trade with $90,000.
+[  540.62s ->   544.94s] The stop loss is a 2% loss, which is only $1,800.
+[  544.94s ->   549.74s] But the take profit is a 20% win, which is $18,000.
+[  549.74s ->   553.74s] So we are risking only $1,800 to win $18,000.
+[  553.74s ->   558.38s] Which if you consistently do this and are patient enough for the levels to actually get hit,
+[  558.38s ->   563.34s] the edge is so great, which is exactly why this strategy works in the long run.
+[  563.34s ->   569.74s] So we enter the trade, wait patiently, and price hits our take profit for an $18,000 win.
+[  569.74s ->   571.42s] That's the pullback system.
+[  571.42s ->   573.50s] If you want to see more of the trades I take,
+[  573.50s ->   577.74s] I post a lot of my trade ideas like this NVIDIA one in my telegram.
+[  577.74s ->   579.74s] Again, it's completely free to join.
+[  579.74s ->   581.50s] You can get a ton of value in there.
+[  581.50s ->   583.34s] The link will be in my pinned comments.
+[  583.34s ->   585.02s] Start using the pullback system.
+[  585.02s ->   585.98s] You won't regret it.
+[  585.98s ->   597.66s] Thanks for watching, and I'll see you guys next time.

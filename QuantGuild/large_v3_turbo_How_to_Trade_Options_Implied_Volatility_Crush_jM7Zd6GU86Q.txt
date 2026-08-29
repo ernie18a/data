@@ -1,0 +1,322 @@
+[    0.46s ->     8.88s] When it comes to the trading of option contracts, a very popular strategy involves this idea of
+[    8.88s ->    14.78s] volatility crush. Essentially, we have some sort of event where there's uncertainty. You can think
+[   14.78s ->    21.08s] of something like an earnings call or the release of new economic information like inflation data
+[   21.08s ->    28.62s] or unemployment data. And the market has to go about pricing these contracts before the outcome
+[   28.62s ->    37.64s] of that event is known. Now, if we look backwards historically, the market tends to misprice the
+[   37.64s ->    45.66s] uncertainty associated with these events. And if this is true in a forward looking sense, we can
+[   45.66s ->    53.00s] construct a trading strategy around this mispricing to accumulate that edge over a series of trades
+[   53.00s ->    60.24s] over time and of course, generate P&L. That's what this video is all about this volatility crush
+[   60.24s ->    67.38s] option trading strategy. We're going to talk about how the strategy works, the interpretation of it,
+[   67.70s ->    72.58s] some common misconceptions, things to avoid when you're going about trying to implement it.
+[   72.58s ->    79.50s] We'll talk about mechanically why the price tends to decrease after these events occur. We'll head on
+[   79.50s ->    84.66s] over to Interactive Brokers, my live account and take a look at some trades that I placed last week
+[   84.66s ->    90.76s] on NVIDIA and Dell, both who reported earnings last week. We'll talk about how I would go about
+[   90.76s ->    96.40s] structuring a new trade in the context of this strategy. We're even going to take a look at some
+[   96.40s ->   102.20s] trading tools that I've built to go about identifying these types of trades and analyzing
+[  102.20s ->   107.18s] them. In fact, we're going to build those tools from scratch in the future on this channel.
+[  107.18s ->   111.64s] So stay tuned for that. As always, this Jupyter notebook will be available in the description
+[  111.64s ->   116.66s] below. I will also post it on the Quant Guild library on GitHub, where you can find all of my
+[  116.66s ->   121.32s] Jupyter notebooks and associated YouTube videos. At the top of this Jupyter notebook, you'll notice
+[  121.32s ->   127.36s] some related Quant Guild videos on the ideas of applied statistics in a trading setting, how to
+[  127.36s ->   133.44s] accumulate expected value over time, what it means to trade with an edge. If you're unfamiliar with
+[  133.44s ->   138.72s] any of those ideas, I highly encourage that you watch those videos before diving into something
+[  138.72s ->   143.40s] like this. Moreover, if you'd like to support the channel so I can continue to create videos
+[  143.40s ->   148.60s] just like this one, and if you'd like to master your quantitative skills, check out QuantGuild.com.
+[  148.88s ->   153.54s] Maybe you come from a background in business, economics, computer science, and aren't too sure
+[  153.54s ->   158.58s] where to begin on your quant journey. Well, then Quant Guild is for you. We have over 90 quant lessons
+[  158.58s ->   163.86s] in math, probability, and finance, an adaptive practice engine that scales with your skill
+[  163.86s ->   168.44s] levels so you can progress to more and more difficult topics, interview questions with fully
+[  168.44s ->   176.38s] worked solutions. Coming soon, classes in math, statistics, coding, all included in Quant Guild
+[  176.38s ->   180.42s] membership. So if you'd like to support the channel and master your quantitative skills,
+[  180.58s ->   187.34s] check out QuantGuild.com. Without further ado, let's start by discussing this idea of the
+[  187.34s ->   193.44s] volatility crush trading strategy. The basis for this strategy isn't all that difficult to
+[  193.44s ->   198.20s] understand. In fact, at length on this channel, we've discussed the idea that fear creates
+[  198.20s ->   205.42s] mispricings and opportunity. Look at institutional trading. When there's a giant bull market,
+[  206.06s ->   210.18s] there's not a lot of action. There's nothing to trade. But when there's a whole bunch of fear and
+[  210.18s ->   216.54s] volatility, that creates opportunity. Opportunity to generate P&L through making trading decisions when
+[  216.54s ->   222.02s] other people are panic buying and selling, you can execute some sort of strategy with an edge.
+[  222.58s ->   226.18s] And that's how you're going to want to take a look at a strategy just like this one. So
+[  226.18s ->   233.80s] volatility crush is this idea that from this uncertainty, from this fear, option prices tend
+[  233.80s ->   241.48s] to be inflated before the event is actually realized. Okay, if this is the case, then where does
+[  241.48s ->   248.72s] that show up? It shows up in the implied volatility. It's what traders are pricing the contract at based
+[  248.72s ->   254.88s] on the level of uncertainty. So we could get into all of the pricing in theory, sure, and I'd like to
+[  254.88s ->   261.24s] in another video. But for now, all we need to know is when implied volatility increases, all else equal,
+[  261.78s ->   267.34s] the option price increases in value. And vice versa. If implied volatility decreases,
+[  267.34s ->   273.94s] the option price decreases in value. And this is exactly what I show here in this chart. So here's
+[  273.94s ->   279.62s] an option contract with the same parameters. And the only thing I'm changing is the volatility,
+[  280.62s ->   286.12s] specifically the implied volatility. So if we take a look here, with a 60% implied volatility,
+[  286.44s ->   292.94s] the option is priced at roughly $12. If we go down to 50, roughly 10, and so on and so forth.
+[  292.94s ->   301.12s] So as volatility tends to decline, the option price declines. As implied volatility tends to rise,
+[  301.56s ->   308.56s] the option price rises. So this strategy is based on the idea that implied volatility is going to be
+[  308.56s ->   316.20s] at its highest right before the event actually occurs. And then after the event occurs, it is going
+[  316.20s ->   322.16s] to rapidly decline. It would be nice if it was as black and white as this, we can just take a short
+[  322.16s ->   328.08s] position in the option contract before the event. The event happens, volatility declines, and then
+[  328.08s ->   334.04s] we just cover our short position and we collect that, that theoretical difference, right? That would be
+[  334.04s ->   340.92s] fantastic. But it's not as black and white as that. And that's why understanding theoretical option
+[  340.92s ->   350.98s] pricing is so important. Because this relationship changes based on how other exposures change relative to
+[  350.98s ->   358.48s] your position. And I have a great example of this in a chart below. So this exact same volatility decline
+[  358.48s ->   364.84s] is going to occur, but along with a massive price movement. Now take a look at what happens to our
+[  364.84s ->   373.24s] option value. If the implied volatility was 60%, but then the spot price moves a significant amount,
+[  373.70s ->   380.88s] the option price didn't go down. Here, the option price actually went up. So you don't just have this
+[  380.88s ->   386.68s] one exposure with an option contract. You don't just have exposure to volatility. You have exposure
+[  386.68s ->   394.42s] to how the underlying asset moves. You have exposure to the passage of time, just to name a few. And those
+[  394.42s ->   401.34s] exposures greatly impact the overall P&L of the strategy based on what happens. This is why I went
+[  401.34s ->   406.80s] about building a series of tools to understand what happens in different scenarios and what to plan for and
+[  406.80s ->   413.34s] how to construct trades. Because if you don't understand the dynamics of your option position
+[  413.34s ->   418.96s] and what's going to happen in different states of the world, then you can't capitalize statistically on
+[  418.96s ->   425.96s] this idea of volatility crush. Because sometimes the underlying asset is going to move way too much.
+[  426.54s ->   430.92s] Sometimes it's not going to move at all. And you need to account for those different types of
+[  430.92s ->   436.44s] scenarios. And you need to figure out how you are going to trade out of them. Are you going to
+[  436.44s ->   442.62s] trade for a loss as soon as vol gets crushed? Are you going to try to hold it for the rest of the day?
+[  443.04s ->   449.42s] All of those things are decisions you have to make. All of those things are different levers you can pull
+[  449.42s ->   455.10s] as a trader to tinker with your overall P&L. So that's why it's so important to understand
+[  455.10s ->   460.56s] the option contract and how it's priced. Because if you don't understand your exposures,
+[  460.56s ->   467.80s] how can you possibly hope to understand how you're generating P&L? So I have here essentially
+[  467.80s ->   474.14s] why option pricing is important and two ways to go about understanding it. You could be a trader and
+[  474.14s ->   479.84s] trade a lot. Or you could understand theoretical option pricing. Both have pros and cons. So
+[  479.84s ->   486.12s] if you're just trying to understand it in the context of being a trader, this is going to be more
+[  486.12s ->   490.14s] in line with what the market expects. Because you're not making these crazy assumptions.
+[  490.14s ->   494.76s] You're not assuming continuous trading, no transaction costs, things like that.
+[  495.66s ->   501.40s] And certainly experience and P&L is going to be a strong motivator for your intuition. If you're
+[  501.40s ->   507.32s] wrong, you're going to feel that pretty darn quickly. Of course, the con here is lack of experience in the
+[  507.32s ->   514.10s] space, if you're just getting started, can lead to questions like, why did my option contract lose
+[  514.10s ->   521.12s] value? Why did it increase in value? And that's a terrible question to ask. Acquiring this experience
+[  521.12s ->   526.60s] can also be quite costly if you don't know what you're doing. So pros and cons to just looking at
+[  526.60s ->   532.54s] this through the lens of a trader. Now, what about the lens of some sort of quant, some sort of
+[  532.54s ->   540.22s] theoretical pricing researcher? Well, there's going to be a very strong understanding theoretically of
+[  540.22s ->   545.16s] where the P&L comes from. Increases and decreases in position value are very well understood.
+[  545.92s ->   552.72s] Moreover, you understand that these exposures don't actually evolve linearly. The Greeks themselves are
+[  552.72s ->   559.18s] linear approximations for those exposures. But when you have volatility crush, it can't save you from
+[  559.18s ->   564.68s] some sort of crazy delta exposure. And if you understand theoretical pricing, that's essentially what
+[  564.68s ->   570.52s] I'm showing you in this bar chart here, where your volatility crush isn't saving you from that delta
+[  570.52s ->   577.16s] exposure, then you understand the dynamics of that relationship quite well. Of course, the cons,
+[  577.48s ->   583.00s] you know, when it comes to just focusing on theoretical pricing is, you know, the lack of experience trading
+[  583.00s ->   587.76s] can lead to questions like, oh, well, why didn't my options value change how the Greeks implied it?
+[  587.76s ->   595.64s] You know, the Greeks don't function exactly as they're intended to. They're a model proxy. These assumptions
+[  595.64s ->   601.58s] create the model and explicitly relying on them is not what professional traders do. So if you're a researcher,
+[  601.74s ->   608.70s] you come from this theoretical pricing background, that is certainly not the most appropriate way to go about
+[  608.70s ->   614.46s] handling that type of exposure, especially in the context of hedging or trading some sort of strategy,
+[  614.46s ->   621.02s] just like this one. Fortunately for us, we aren't limited to just being a trader or just being a
+[  621.02s ->   628.66s] researcher, right? We can operate on both ends of the spectrum and get a really full picture of how our
+[  628.66s ->   634.98s] option value is going to increase or decrease relative to the positions we take in the market.
+[  635.30s ->   643.54s] So how should we go about thinking about this strategy? Well, effectively, all it is, is insurance for an
+[  643.54s ->   650.75s] event? We're just buying insurance for an event or selling insurance for an event? Statistically, if we
+[  650.75s ->   659.11s] look backwards, the insurance tends to be overpriced. So if we sell it, then on average, we should expect to
+[  659.11s ->   667.47s] collect some sort of theoretical spread based on the IV crush like this. Of course, that's backward
+[  667.47s ->   672.65s] looking. It doesn't say anything about the future. It's quite possible that I sell insurance, there's a
+[  672.65s ->   678.75s] massive price move. And now I owe a whole bunch of insurance to whoever's on the other side of that
+[  678.75s ->   685.55s] contract. It's a zero sum game. So when we go about trading this sort of strategy, we need to keep that
+[  685.55s ->   691.77s] in mind that just because it has worked out in the past does not mean for this one particular event
+[  691.77s ->   697.19s] that you're trading, that you're going to be able to capture that volatility crush, you may end up owing
+[  697.19s ->   701.03s] a whole bunch of money to somebody on the other side of that contract. Now that we have a general
+[  701.03s ->   706.73s] understanding of this strategy, how to interpret it, why pricing and understanding our different
+[  706.73s ->   714.41s] exposures is so important. What does it actually look like? Well, this brings us to the first trading
+[  714.41s ->   720.87s] tool that I've built that we're going to build on this channel together from scratch, the earnings trading
+[  720.87s ->   727.19s] dashboard. What you can do is connect to interactive brokers. If you'd like to get started with
+[  727.19s ->   731.57s] interactive brokers, I'll leave a link in the description below. I've been trading with them
+[  731.57s ->   739.97s] for over 10 years at this point. So highly recommend them their API is fantastic to work with. And that's
+[  739.97s ->   746.75s] what we're going to use for this build, I can go ahead and connect to interactive brokers, I can enter a
+[  746.75s ->   753.37s] ticker, and I can enter an earnings date, and the number of days until my option expires. So this is
+[  753.37s ->   760.89s] actually going to be my option that I was trading last week, I can click analyze IV crush. And then
+[  760.89s ->   766.85s] I'm going to get a whole bunch of useful information. So here I can see the pre earnings implied volatility
+[  766.85s ->   774.07s] and the post earnings implied volatility, and the percentage of IV crush. So this is literally in the
+[  774.07s ->   781.67s] market, what is happening when I showed you this chart. This is the idea of IV crush, the option price
+[  781.67s ->   789.27s] is going to decrease in value as the implied volatility declines, when the event is realized,
+[  789.27s ->   798.66s] there's no more uncertainty. So this is when we heard from Nvidia on their earnings, we can see that
+[  798.66s ->   806.70s] the IV crush actually worked in this sense, because if we took a short straddle position, we would have
+[  806.70s ->   814.28s] generated P&L. If we took a long straddle position, we would have lost money. And I'll show you how to
+[  814.28s ->   819.34s] construct this trade at interactive brokers in a moment. But I wanted to show you this tool first,
+[  819.34s ->   826.92s] because it's very, it's very easy to interpret the IV crush here. We can see what happens to IV. IV
+[  826.92s ->   835.36s] declined. And the pre earning straddle price was 466. The post earning straddle price was 352. And I also
+[  835.36s ->   840.34s] have the delta associated with the position and whatnot. But this is very easy for interpretation.
+[  840.34s ->   846.56s] Now, what about these charts down here, we can see that this green line is the implied volatility of
+[  846.56s ->   852.94s] Nvidia. And check it out after the earnings event, it takes a sharp decline. Right, but the stock price,
+[  853.04s ->   859.80s] this blue line didn't move all that much. So we're able to capture that volatility crush. Now,
+[  859.80s ->   867.28s] if the blue line moved an incredible amount, then we wouldn't be able to capture this effect,
+[  867.78s ->   874.31s] we would get something like this, and we would end up probably losing money on that trade. So this is a
+[  874.31s ->   880.55s] very easy way to go about understanding and interpreting the strategy in the context of
+[  880.55s ->   887.47s] historic events. So here it was an earnings event, but it could also have just been some sort of economic
+[  887.47s ->   893.17s] release, maybe inflation, unemployment data, or we could use another ticker and a different earnings
+[  893.17s ->   903.37s] date. But that is the purpose of this tool. Another cool component of this tool is the volatility index
+[  903.37s ->   910.55s] chart down here. So this is going to be the implied volatility on SPX options, S&P 500 options.
+[  910.55s ->   917.79s] And it can give us kind of the overall temperature of the market. 14, 15 is pretty cool. When things
+[  917.79s ->   923.95s] start to get over 20, 30, 40, the market certainly is heating up in terms of fear and uncertainty.
+[  924.45s ->   930.53s] And what that can lead to is even more statistical mispricings, especially in this context here. So
+[  930.53s ->   937.65s] you know, if this dynamic of a volatility crush is already statistically mispriced, and we kind of
+[  937.65s ->   947.79s] observe that here in this case of NVIDIA, if the VIX is, let's say 30, 40, then that effect can even
+[  947.79s ->   954.27s] get magnified. So more uncertainty, more fear can lead to, you know, more mispricings to capitalize on.
+[  954.39s ->   960.13s] So something to think about. Nevertheless, we will build this tool from scratch on this channel. So
+[  960.13s ->   964.83s] look forward to that. Otherwise, we'll head on over to Interactive Brokers, my live trading account,
+[  964.83s ->   969.91s] and talk about some trades that I've placed in the context of this Volcrust strategy last week.
+[  969.97s ->   973.91s] We're now on my live Interactive Brokers account, taking a look at trades I placed last week on
+[  973.91s ->   980.53s] NVIDIA and Dell. Keep in mind, I placed these trades for this video. I'm not always right. I'm not always
+[  980.53s ->   986.45s] wrong. But this is nowhere near financial advice. This is not how I would trade optimally. I have a model
+[  986.45s ->   991.11s] that I use to discern whether or not I should execute a trade in any capacity. I use that here.
+[  991.11s ->   997.93s] And that's why I ended up with a short call and a short straddle. So let's talk about these.
+[  998.43s ->  1002.65s] What is the difference between the two? Well, fundamentally, in terms of Volcrush,
+[ 1002.81s ->  1008.67s] I'm still looking for that same desired outcome. So let's look at the NVIDIA call first.
+[ 1009.43s ->  1016.07s] With that short NVIDIA call, I wanted negative directional exposure along with that negative
+[ 1016.07s ->  1023.23s] Vol exposure. So if volatility declined, I would make money. If the stock price declined,
+[ 1023.39s ->  1028.37s] I would make money. And if we take a look at what happened with that earnings event with NVIDIA,
+[ 1028.71s ->  1034.05s] both of those happened to be the case. The implied volatility dropped after the event,
+[ 1034.27s ->  1040.33s] and the stock price did as well. So I did make money on that short call position. I made about
+[ 1040.33s ->  1048.33s] 500 bucks. Okay. Sometimes I'm wrong. I'm not correct all the time, but I'm also not wrong all
+[ 1048.33s ->  1052.89s] the time. Statistically, I'm correct more than I'm incorrect in terms of proportion that I win and
+[ 1052.89s ->  1061.09s] lose. That's why I make money. Okay. So in the case of that NVIDIA call option, okay, I did make some
+[ 1061.09s ->  1069.45s] money. What about the Dell option? Well, here, I didn't want directional exposure. Okay. So instead of just
+[ 1069.45s ->  1076.05s] selling or buying a call or put option here, I'm actually constructing a strategy. This is a short
+[ 1076.05s ->  1084.47s] straddle. I'm essentially going to go short a call and a put option, and I'm going to have the
+[ 1084.47s ->  1090.95s] directional exposure hedged up until a certain point. And that's when I'm going to start to lose
+[ 1090.95s ->  1097.71s] money. Okay. And when it came to Dell, I did observe some implied volatility crush,
+[ 1097.71s ->  1105.75s] but the directional exposure was far greater than the amount that I earned in the IV crush.
+[ 1105.87s ->  1116.38s] This goes back to what I was showing you in this chart. The volatility crush in that Dell trade did
+[ 1116.38s ->  1121.90s] not save me from the directional exposure that I ended up having. In other words, the insurance for
+[ 1121.90s ->  1128.68s] that contract, I had to pay it out. I owed somebody. So it doesn't always work out in the case of
+[ 1128.68s ->  1133.58s] the NVIDIA trade that I showed you. In the case of the NVIDIA trade, I was able to capture on this
+[ 1133.58s ->  1140.58s] crush along with directional exposure. But in the case of the Dell trade, I was able to capitalize on
+[ 1140.58s ->  1146.82s] that crush, but the directional exposure killed me. Again, this is why understanding pricing is so
+[ 1146.82s ->  1153.92s] important because the implied volatility of Dell was like 189% or something ridiculous because we
+[ 1153.92s ->  1160.04s] didn't just have uncertainty from the earnings event. We also had uncertainty from the PCE numbers
+[ 1160.04s ->  1166.26s] that were going to be released Friday morning. So we had uncertainty end of day from the earnings,
+[ 1166.26s ->  1172.72s] which actually had the stock price at roughly like 130 or something. So I ended up selling these options at
+[ 1172.72s ->  1181.86s] 134. I think it ended up at 130. And then with PCE, it got hammered down to like 120. So that's why I ended
+[ 1181.86s ->  1186.80s] up losing all this money because I mean, I didn't end up losing all that much. It was like a hundred,
+[ 1187.06s ->  1193.12s] maybe like 110 bucks, but that's where the loss came from. So the, the vol crush didn't save me
+[ 1193.12s ->  1199.76s] from that directional exposure, which brings me to the next tool that we're going to build on this
+[ 1199.76s ->  1207.70s] channel. This is the volatility crush trade analyzer. So I can also connect to interactive brokers and I
+[ 1207.70s ->  1212.46s] can go about fetching data for this type of trade. So what I'm going to do is I'm going to enter,
+[ 1212.46s ->  1219.48s] let's say Dell. We're going to analyze this type of trade to see why I lost money. So we're going to
+[ 1219.48s ->  1227.22s] fetch this data. Okay. The current spot price is 122, but that's not what it was when I sold this option.
+[ 1227.22s ->  1237.34s] It was 134. So I'll throw in 134. The strike price was 134. The implied volatility was 189%.
+[ 1237.34s ->  1244.45s] The number of days till expiration was, I believe it was two. I'll hit price straddle, or I guess it
+[ 1244.45s ->  1252.83s] was one. Yeah, it was one. So 1057, I paid roughly a thousand 50 some odd dollars for that straddle.
+[ 1252.83s ->  1261.59s] So if I was to buy it, I paid 1057, but I was short it. So I received 1057. All right. Now I did end up
+[ 1261.59s ->  1266.77s] owing on this straddle because I needed to cover the position and covering the position costs what
+[ 1266.77s ->  1275.37s] 1100 and looks like 20, what is that? $23 or something like that. And that's because the new
+[ 1275.37s ->  1286.27s] spot was roughly 122 and the IV was like 140. So it ended up dropping, but that directional exposure
+[ 1286.27s ->  1294.97s] killed my straddle position. So I was able to sell it and collect what 1057. But after the event realized
+[ 1294.97s ->  1300.65s] the earnings event and the PCE event, the new straddle price was greater than the amount that
+[ 1300.65s ->  1305.95s] I had received in terms of premium. So I had to cover that position. I ended up owing money
+[ 1305.95s ->  1313.95s] and that's why I ended up losing money with that trade. So this is a, it's an extremely useful tool
+[ 1313.95s ->  1320.51s] because this shows you how much volatility crush you need to save you from a crazy movement. So
+[ 1320.51s ->  1327.85s] what if vol crushed down to like 30, that wouldn't have even saved me. So it's, it's a very,
+[ 1327.85s ->  1331.87s] very useful tool for that. So we'll also build this from scratch, but I also want to highlight how
+[ 1331.87s ->  1339.55s] important it is to understand pricing in this context, because this tool exemplifies why we need
+[ 1339.55s ->  1345.21s] to understand pricing because look at that crush that was from 189 down to 30. That didn't save my
+[ 1345.21s ->  1353.33s] PNL for this trade, but let's say that the spot price stayed at 130. Then I would have made plenty
+[ 1353.33s ->  1358.65s] of money on this trade. So a super useful tool, very helpful for analyzing different states of
+[ 1358.65s ->  1365.19s] the world and understanding what can, what could happen to your PNL. Um, if there's a crazy price
+[ 1365.19s ->  1370.89s] move or a crazy bull move now that we've seen a couple of live trades, we've seen both tools and
+[ 1370.89s ->  1377.29s] have a general understanding of how this strategy functions. Let's go about constructing a trade in this
+[ 1377.29s ->  1383.25s] capacity to execute on this volatility crush. Hopefully this goes without saying, but I'm going to say it
+[ 1383.25s ->  1389.29s] anyway, this is not financial advice. Do not take this as financial advice. I'm going to open up the
+[ 1389.29s ->  1396.91s] earnings calendar and I'm going to take a look at earnings on say Tuesday, September 2nd. Okay.
+[ 1396.91s ->  1404.79s] It's labor day today. So the market's closed, but Tuesday, September 2nd, we could see ZS has this,
+[ 1404.79s ->  1411.37s] this earnings event. So what I'm going to do is I'm going to open up the option trader on interactive
+[ 1411.37s ->  1421.25s] brokers. And I am going to enter that ticker into the panel up here, the upper left-hand corner,
+[ 1421.39s ->  1428.87s] ZS, and that's going to pull up the option chain. Now, if I wanted to take advantage of this volatility
+[ 1428.87s ->  1433.91s] crush trading strategy, then what I'd first do is take a look at the app, the money implied volatility.
+[ 1433.91s ->  1442.94s] Does it look inflated? 93.4%. That certainly looks relatively inflated. Let's construct a trade now
+[ 1442.94s ->  1449.00s] to hopefully capture this effect. What I'm going to do is construct a straddle. There are a lot of
+[ 1449.00s ->  1453.84s] different types of trades that you can construct here. You could take any sort of short volatility
+[ 1453.84s ->  1462.46s] position. Any, any position that leaves you with short Vega exposure is going to allow you to capture
+[ 1462.46s ->  1468.68s] this volatility crush effect. Now on this channel, I haven't actually talked specifically about
+[ 1468.68s ->  1476.90s] different types of strategies, butterflies, iron condors, straddles, the idea of linearity and payoff.
+[ 1477.86s ->  1481.52s] So if that's something you'd like to see in the future, please let me know. I'm uncertain,
+[ 1482.10s ->  1487.94s] but you know, just let me know in the comments below. Otherwise there are a lot of different
+[ 1487.94s ->  1492.76s] structures you can use to capture this, this volatility crush effect. So I'll show you one,
+[ 1492.76s ->  1499.72s] and that is this idea of a straddle. So if I sell an app, the money put and sell and app the money call,
+[ 1499.72s ->  1506.74s] then this is going to create a short straddle position. If I was to buy both of those, then that
+[ 1506.74s ->  1513.30s] would be a long straddle position. My objective here is to have the stock price stay between this leg
+[ 1513.30s ->  1519.00s] and this leg. If it exceeds either leg, then I'm going to have that crazy directional exposure,
+[ 1519.32s ->  1524.68s] just like with my Dell position that I showed you. And I'm going to be in for a world of hurt.
+[ 1525.08s ->  1530.28s] No amount of volatility crush is going to be able to save me. So what I've done here now is I've pulled
+[ 1530.28s ->  1535.70s] open this performance profile. Okay. And I've opened it in a new window that I'm going to, I'm going to
+[ 1535.70s ->  1543.70s] bring over here. And the reason I do this is because you'll get this, this performance sort
+[ 1543.70s ->  1548.88s] of analysis here. If you use interactive brokers, they're going to give you a profit probability.
+[ 1550.10s ->  1555.04s] Do not abide by this probability. I'm going to tell you that right now. This is not a probability
+[ 1555.04s ->  1559.62s] in the classical sense. This is an implied probability. This is a market implied probability.
+[ 1559.84s ->  1565.08s] It does not function how you intend it to. In fact, if you watched any of my previous videos,
+[ 1565.08s ->  1569.18s] how to trade, how to trade with an edge, how to trade with the Kelly criterion, how to trade option
+[ 1569.18s ->  1575.88s] implied volatility, any of those videos. If you try to use this as your probability of profit,
+[ 1575.94s ->  1582.50s] it will not function as intended. Very important to point that out. The best that you could possibly
+[ 1582.50s ->  1590.36s] do for some sort of, some sort of measure is to use historical trade profitability. And that's only
+[ 1590.36s ->  1595.00s] going to work if it's stable, but that's, that's a topic for another day. So if I wanted to capture
+[ 1595.00s ->  1599.86s] this volatility crush effect, I could go a net short straddle here. I could also construct some
+[ 1599.86s ->  1605.48s] sort of short like iron condor if I wanted to hedge this because theoretically my max loss is infinite
+[ 1605.48s ->  1609.70s] here. Of course, that's not actually going to be the case. It's not going to be an infinite quantity.
+[ 1609.70s ->  1615.20s] You're just going to owe a whole bunch of money if you have a crazy adverse price movement. So if you
+[ 1615.20s ->  1621.26s] want to hedge that away, then this really begs the question, do you want to be an insurance seller?
+[ 1621.26s ->  1628.88s] And if you have to sit behind this terminal and say, but what if, but what if it moves way too much,
+[ 1628.88s ->  1634.94s] then you shouldn't sell insurance. You should be buying insurance then if you're, if you're so
+[ 1634.94s ->  1639.42s] concerned about an adverse price move. So I wanted to create that distinction. I wanted to show you
+[ 1639.42s ->  1643.90s] how to construct a trade in this capacity. It would be some sort of combo order. And then you can just go
+[ 1643.90s ->  1651.10s] about executing this trade, um, in the trader workstation itself, but this is how you would go
+[ 1651.10s ->  1655.72s] about constructing it. You can also construct other strategies. So like I said, you have butterflies,
+[ 1655.72s ->  1661.74s] you have iron condors, you have, um, you could do strangles, um, a lot of different strategies. So
+[ 1661.74s ->  1665.68s] if we want to talk about these in the future, just let me know, but I figured I would show you how
+[ 1665.68s ->  1672.32s] to at least at a fundamental level work, the, the option trader, uh, in, in our interactive brokers
+[ 1672.32s ->  1677.56s] to capture this vol crush effect here. Let's take a look at how much money we could make. If I was able
+[ 1677.56s ->  1682.80s] to capture this volatility crush in different States of the world, based on the price movement.
+[ 1683.36s ->  1690.24s] So I'm going to sell this put sell this call. I'll look at the profile of this particular trade
+[ 1690.88s ->  1697.20s] and I'll break open my volatility crush trade analyzer. Now, keep in mind, these quotes are stale.
+[ 1697.20s ->  1702.56s] So there may be a discrepancy between this price and the price that I have in my trade analyzer.
+[ 1702.56s ->  1708.32s] It is a bank holiday. So what I've done here is I've fetched the data for ZS.
+[ 1708.32s ->  1713.60s] I've entered the strike price of 277.5. That's where we're constructing the straddle around.
+[ 1713.60s ->  1721.92s] I have the IV 93.4%. I could price this straddle. And now I could take a look at what happens in
+[ 1721.92s ->  1728.64s] different States of the world. So if the new spot prices, let's say 277 and vol drops to 70,
+[ 1728.64s ->  1736.08s] then I'm going to make roughly 500 looks like $42 on that particular trade. Okay. Remember these are
+[ 1736.08s ->  1742.64s] in lots of 100. So that is a positive state of the world, right? I don't have too much directional
+[ 1742.64s ->  1748.08s] exposure. There wasn't a crazy price movement after this event. Vol crushed. I was able to
+[ 1748.08s ->  1758.58s] capture that theoretical spread. That is exactly what we saw in this chart here, right? Now, what if
+[ 1759.30s ->  1765.46s] the spot price moved a significant amount? What if it dropped to like 245? Well, the new straddle price
+[ 1765.46s ->  1773.54s] is now 33.06. If I went short, then I would lose over a thousand bucks. So that is essentially what I'm
+[ 1773.54s ->  1777.94s] saying. This, this tool is very useful to analyze different States of the world and what happens,
+[ 1777.94s ->  1783.78s] not just with a spot price movement, but also a movement with implied volatility. All right,
+[ 1783.78s ->  1789.46s] let's talk about what not to do now. Okay. If you are afraid of that tail risk, you should not be an
+[ 1789.46s ->  1796.02s] insurance seller. All right. That should be abundantly clear. But if you're an insurance seller and you're,
+[ 1796.02s ->  1803.38s] you're consistently worried about this tail event occurring, then you are not going to be in a good
+[ 1803.38s ->  1810.74s] position. You're literally being paid to assume risk for that tail event. All right. So what I mean
+[ 1810.74s ->  1815.54s] is if you look at this and say, Oh, I want to trade Vol crush, but I don't want exposure to that tail
+[ 1815.54s ->  1822.18s] event. Let me just construct some sort of strangle instead of a straddle, right? Okay. Now I'm looking
+[ 1822.18s ->  1832.27s] at this and I look at the profile and the profile tells me what tells me that I have. Wow. Now is 73%
+[ 1832.27s ->  1838.99s] probability of profit. No, that is, that is not what's happening here. I see a lot of folks who
+[ 1838.99s ->  1846.03s] will structure trades with very high probabilities of profit first. That does not mean what you think
+[ 1846.03s ->  1852.91s] it means. That is, that is firstly, this, this is not the probability that you think that, you know,
+[ 1852.91s ->  1860.19s] from flipping a coin or some sort of, of data generating process that is static. This is a market
+[ 1860.19s ->  1866.83s] implied probability. This will change as the stock price moves. Okay. That's the first thing.
+[ 1867.47s ->  1875.39s] The second thing is if you have one loss from one tail event in this capacity, it will wipe out
+[ 1875.39s ->  1882.27s] dozens and dozens of profitable trades. All right. Something to keep in mind. Now, of course,
+[ 1882.27s ->  1887.55s] your capacity to generate money with this type of strategy is going to be based on whether or not you
+[ 1887.55s ->  1892.99s] have edge. If your expected winner times the probability of winning plus your expected loser
+[ 1892.99s ->  1897.79s] times, your probability of losing is positive. Then you'll be accumulating wealth. Otherwise you'll
+[ 1897.79s ->  1903.95s] be breaking even or losing money, but trading in this capacity, just because you don't want to lose money
+[ 1903.95s ->  1910.67s] is the furthest thing from optimal. So keep that in mind when it comes to this strategy is you are a
+[ 1910.67s ->  1916.11s] insurance seller. You are looking to capture that bull crush. Maybe you want directional exposure,
+[ 1916.11s ->  1923.47s] who knows, but if you are going to be paid for assuming that tail risk, don't expect to hedge it
+[ 1923.47s ->  1932.43s] away. All right. One poor trade outcome could wipe out dozens and dozens of prop profitable trades.
+[ 1932.43s ->  1938.51s] If you have some sort of probability profile, that's in the seventies, eighties, 90, some odd percent
+[ 1938.51s ->  1942.91s] to summarize. If you want to capitalize on volatility crush, then you are an insurance
+[ 1942.91s ->  1948.91s] seller. You're literally being paid to assume that tail risk. If you're worried about that tail risk,
+[ 1948.91s ->  1954.99s] then you should be an insurance buyer, not a seller. This is a strategy where statistically,
+[ 1954.99s ->  1960.59s] historically in a backward looking sense, we observe this mispricing and volatility crush.
+[ 1960.59s ->  1967.95s] It's not indicative of performance on any one trade or any trades in a forward looking sense.
+[ 1968.59s ->  1975.71s] Our goal is to accumulate eggs, this positive expected value over time, over a series of trades
+[ 1975.71s ->  1983.31s] and optimize our breakdown of expected value, this expected P and L by optimizing the probability of
+[ 1983.31s ->  1989.39s] a win and your average winner, less the probability of a loss and your average loser. There are a lot of
+[ 1989.39s ->  1995.39s] different levers that you can flip to go about optimizing this quantity. And that is going to discern
+[ 1995.39s ->  2001.79s] whether or not you're going to accumulate wealth or again, at best break even or even lose money.
+[ 2002.35s ->  2007.63s] In the future, we're going to be building from scratch that volatility crush trade analyzer along
+[ 2007.63s ->  2012.51s] with that earnings trading dashboard. So look forward to those builds. Let me know in the comments,
+[ 2012.51s ->  2018.83s] if you'd like to see more builds, just like those, maybe we'll do a video on different option strategies,
+[ 2018.83s ->  2024.59s] straddle strangles, iron condors, so on and so forth. Unsure what the level of interest in is
+[ 2025.79s ->  2031.31s] the level of interest in that type of content. But also very important how to derive and solve
+[ 2031.31s ->  2036.91s] the black trolls equation, understanding the different exposures in theoretical pricing,
+[ 2036.91s ->  2042.27s] clearly very important because that's going to greatly impact the pricing of our option contracts and
+[ 2042.91s ->  2046.99s] whether or not we're going to make or lose money. And that's going to do it for this video. I hope you
+[ 2046.99s ->  2052.27s] enjoyed. I hope you learned something. Again, please don't take anything in this video as financial advice.
+[ 2052.27s ->  2059.87s] In general, our goal is to optimize our expected value. We want to accumulate this edge over a series
+[ 2059.87s ->  2067.95s] of trades over time. And this volatility crush option trading strategy may be one way to do so.
+[ 2067.95s ->  2071.95s] With that, thank you so much for watching. If you'd like to see more content like this in the future,
+[ 2071.95s ->  2077.79s] please like, comment, subscribe. Let me know. Master your quantitative skills. Check out quantguild.com.
+[ 2077.79s ->  2089.47s] Other than that, I will see you in the next video.

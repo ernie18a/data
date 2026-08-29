@@ -1,0 +1,159 @@
+[    0.35s ->     6.23s] Hey guys, in this video I'm going to walk you through step-by-step how I trade strangles in a way where I avoid massive losses.
+[    6.63s ->    11.41s] I can do this with almost any size to count and how you can also do it to generate monthly income.
+[   11.53s ->    15.85s] By the end of this video, you'll know step-by-step what you need to do to get the same results that I am.
+[   15.91s ->    17.33s] So anyways, let's dive into the video.
+[   17.67s ->    20.43s] So if we're looking at this, what is a strangle to start off with?
+[   20.45s ->    25.19s] If you've never heard of a strangle before, simply you're betting that the stock will stay between two levels.
+[   25.47s ->    28.77s] So if we're just looking at the market here right now, what can we say?
+[   28.77s ->    32.25s] Well, we're like, okay, well, look, the market seems to top out around this area.
+[   32.37s ->    36.39s] So if I put a line right here, I bet the stock will stay below this.
+[   36.71s ->    38.51s] Okay, where do I think the stock will stay above?
+[   38.61s ->    42.21s] Well, it looks like it tends to bounce around here, at least it did last time, so I could put a level here.
+[   42.31s ->    42.47s] Cool.
+[   42.79s ->    44.01s] This is called a strangle.
+[   44.13s ->    52.01s] When you put a bracket up like this where you think the stock will stay between these two levels, if it does stay between those two levels, then you make money.
+[   52.29s ->    53.91s] If it doesn't, then you lose money.
+[   53.91s ->    58.45s] But just like any normal trade, you're going to have take-profit levels where you take profit early.
+[   58.77s ->    63.93s] And you can also have stop-loss levels, where if you lose more than you want to, it'll cut you out of the trading.
+[   64.09s ->    71.57s] So a strangle is really fun and really easy because we're making money by the stock, staying within a certain range.
+[   71.61s ->    74.85s] And when we do that, we collect money known as time decay.
+[   74.99s ->    78.07s] In order to set up a strangle, you need to sell a call.
+[   78.17s ->    79.73s] So the top level will be to sell a call.
+[   79.81s ->    81.29s] So you're going to sell a call at a strike price.
+[   81.37s ->    82.41s] I think the stock will stay below.
+[   82.71s ->    84.13s] Again, I'm getting into these specifics here.
+[   84.81s ->    86.63s] Then the bottom here is you're selling a put.
+[   86.85s ->    89.49s] So you're selling two options, which means you're collecting money.
+[   89.53s ->    90.79s] You're being given money.
+[   90.79s ->    95.53s] And as time goes on, you'll just naturally make that money because of time decay.
+[   95.91s ->    99.09s] So if that got too confusing or overwhelming, don't worry.
+[   99.17s ->   100.23s] I'll slow it down here in a second.
+[  100.33s ->   105.33s] But just know, as long as the stock stays between the two levels that you picked, you will make money.
+[  105.73s ->   107.37s] And so that's how I trade these.
+[  107.41s ->   112.15s] These are trades that last typically from a week to roughly three weeks.
+[  112.15s ->   115.99s] So that's our time frame to be in these trades based on our take profit and stop loss levels.
+[  116.31s ->   117.49s] And that's exactly how we do it.
+[  117.53s ->   123.01s] Now, if you want to know how I actually set up these trades and structure them, here's what you should trade them on.
+[  123.31s ->   125.41s] Trade it on SPY, which is SPY.
+[  125.53s ->   130.11s] If you trade a strangle on SPY, it's going to cost you $6,000 to do so in collateral.
+[  130.61s ->   133.77s] That's how much money you need to put on this trade.
+[  134.19s ->   136.35s] Again, that's going to be a cheaper form.
+[  136.41s ->   139.13s] And again, your broker account needs to be enabled for margin.
+[  139.13s ->   141.43s] Next, you can also do SPX.
+[  141.57s ->   151.61s] If you do one SPX strangle, that's a Y, SPX, it's going to require that you have $60,000 in margin because SPX is 10 times SPY.
+[  152.11s ->   156.43s] Now, again, if you want to do something else, you can do ESFutures, which is what I do.
+[  156.67s ->   166.97s] When you do the ESFutures, it requires roughly $6,000 as well, but you're making about the profit as you would on SPX because ES is very leveraged.
+[  166.97s ->   169.81s] So, anyways, these are what I would trade this strategy on.
+[  170.03s ->   172.05s] Now, how do I actually structure the trade?
+[  172.29s ->   177.37s] Well, I'm going to give you all these specifics right now, and then I'll explain what each one means and how you can understand it.
+[  177.71s ->   182.95s] So, number one, we need to go 45 days out until expiration.
+[  183.09s ->   185.03s] If you don't know what this means, don't worry, I'll explain it.
+[  185.03s ->   186.17s] 45 DTE.
+[  186.77s ->   192.41s] Next, we need to do a 10 Delta Put is what we're doing, 10 Delta Put.
+[  192.63s ->   194.71s] We need to do a 5 Delta Call.
+[  194.79s ->   196.01s] Don't worry, I'll explain this all in a second.
+[  196.29s ->   197.13s] 5 Delta Call.
+[  197.89s ->   201.05s] We need to manage our trade at a 50% profit.
+[  202.03s ->   203.03s] So, 50% profit.
+[  204.01s ->   207.97s] Or, we're going to take a 300% stop loss.
+[  208.35s ->   216.65s] Now, if you follow these just the way that I'm laying it out, you will have a 93% win rate, but you'll be stuck in a lot of crashes, which I'll show you here in a second.
+[  216.93s ->   223.23s] Now, before I explain these numbers, which I'll do here right after this, here is a backtest using this exact same criteria.
+[  223.23s ->   228.17s] I'm testing it on SPX, but again, this works on SPY and everything else that I just mentioned.
+[  228.51s ->   232.31s] So, you do a 10 Delta Put, which basically shows how far away from the stock you're going.
+[  232.71s ->   237.37s] And so, again, 10, you're going about there, and 5, you're going a bit further away because the market just naturally goes higher.
+[  237.43s ->   238.87s] So, you want more room to the upside.
+[  239.41s ->   241.79s] Anyways, 10 Delta and 5 Delta.
+[  242.01s ->   243.35s] We go 45 days out.
+[  243.41s ->   246.31s] We have a 50% max profit, and we have a 300% max loss.
+[  246.67s ->   250.71s] I take these trades on Tuesdays and Thursdays every week is what I've been doing recently,
+[  250.71s ->   253.31s] as I try to put on these trades at least twice a week.
+[  253.71s ->   256.15s] And then, again, if we look at this, it performs well.
+[  256.25s ->   259.29s] You can see here that we have a $400 profit per trade.
+[  259.61s ->   264.89s] We have a 93% win rate and a lot of other amazing factors that you can read here.
+[  265.17s ->   269.19s] Now, what we really need to ask about is not how amazing this is and how much money it's made,
+[  269.23s ->   274.31s] but what we always need to ask ourselves in any trading scenarios, where can this go wrong and where has it gone wrong?
+[  274.61s ->   275.83s] So, if we look at it, we can look here.
+[  275.83s ->   284.95s] We've had a crash in this period where it went from $134,000 in profit all the way down to, what is this, $107,000.
+[  285.01s ->   287.47s] So, it lost roughly $40,000 of profit here.
+[  287.75s ->   289.67s] Now, what about the 2020 COVID crash?
+[  289.85s ->   294.47s] It went from $133,000 of profit all the way down to roughly $40,000.
+[  294.63s ->   296.79s] So, it lost $100,000 of profit.
+[  297.13s ->   303.97s] So, obviously, these two big crashes would have decimated any trader who was trading strangles during this period,
+[  303.97s ->   305.19s] and that's what we want to avoid.
+[  305.35s ->   308.17s] So, before I explain this, can we avoid those crashes?
+[  308.41s ->   313.25s] Can we avoid things like this, which is the March 2020 crash?
+[  313.61s ->   316.75s] Yes, we can avoid major crashes like this.
+[  316.81s ->   321.77s] We cannot avoid them all, but we can avoid 90% of crashes by using one simple set of criteria,
+[  322.05s ->   324.55s] and that is what I call my trending band indicator.
+[  324.55s ->   329.47s] This is essentially or closely resembled by a Bollinger Band indicator,
+[  329.63s ->   333.49s] which means that as soon as the market breaks above two standard deviations,
+[  333.55s ->   334.91s] so the 200-period moving average.
+[  335.31s ->   336.07s] Here's an example.
+[  336.21s ->   338.77s] If I add the Bollinger Bands and I go into the settings, you can see what this is.
+[  338.99s ->   341.93s] A length of 200, a standard deviation of 2.2.
+[  342.17s ->   344.75s] Again, this is used to replicate the one that I made.
+[  345.13s ->   349.31s] So, again, you can see once it breaks above this level, the market has a really high chance of crashing.
+[  349.31s ->   354.19s] So, what we do is we exit all of our strangle positions when it breaks above.
+[  355.11s ->   360.55s] Then we enter 10 delta calls, a.k.a. we go out further for 10 delta calls.
+[  360.89s ->   366.55s] We profit on the way down, give the market 21 days after crossing below back into this range,
+[  366.85s ->   368.91s] 21 days to reset and recenter.
+[  369.15s ->   374.69s] Then we'll start trading strangles again, and that's how we avoid major losses like this.
+[  374.73s ->   379.07s] So, now we can trade strangles without the fear of being caught in these massive losses.
+[  379.07s ->   382.59s] And, again, we're not able to catch every single losing period like this.
+[  382.67s ->   384.79s] We would have not caught this because it didn't break above.
+[  385.09s ->   388.79s] But, again, if we look at this from the market, it wasn't that big of a turndown.
+[  388.91s ->   392.27s] It would have hurt your account a bit, but not as massive as something like this.
+[  392.59s ->   395.93s] Not only that, you can see here we could have avoided this crash down as well,
+[  396.05s ->   400.11s] which happened here, which, again, dropped almost $30,000 of profits lost.
+[  400.19s ->   402.09s] But now you won't have to because you have this band.
+[  402.17s ->   406.07s] And, again, you can replicate this with the Bollinger Band indicator
+[  406.07s ->   410.77s] using the settings that I just showed you, or you can click the link down below
+[  410.77s ->   413.91s] and get access to my indicator to get that,
+[  413.99s ->   416.43s] as well as other trending indicators all in one.
+[  416.51s ->   417.51s] You can learn more about that below.
+[  417.75s ->   420.03s] Anyways, how do we set up this trade exactly?
+[  420.17s ->   420.87s] What does this mean?
+[  420.97s ->   425.89s] 45 days until expiration means we're going 45 days out in time.
+[  426.23s ->   428.45s] So the current date is December 1st.
+[  428.45s ->   435.33s] That means I'm going out in time, so I'm picking a contract that is dated to expire roughly January 15th.
+[  435.33s ->   436.19s] That is my target.
+[  436.31s ->   438.39s] That's where I'm looking to enter in the trade.
+[  438.79s ->   440.53s] Next, I'm going to do a 10 Delta put,
+[  440.59s ->   444.69s] which means I'm going to go pretty far out or pretty far away from the stock price.
+[  444.87s ->   446.93s] At the moment, it's going to be something like this,
+[  446.97s ->   448.87s] and then a 5 Delta call is going to be way higher.
+[  448.97s ->   451.57s] So it's going to be a lot higher than where this is here.
+[  452.01s ->   457.53s] Delta just tells you how far away from the stock a current strike price is based on volatility.
+[  457.53s ->   459.83s] So a lot of numbers, but if you're using a broker,
+[  459.95s ->   463.15s] it will tell you exactly what the Delta is and how to do it.
+[  463.43s ->   464.93s] Next, 50% profit.
+[  465.11s ->   470.77s] So this means that if I get in a strangle trade and I collect just for easy numbers,
+[  470.89s ->   475.71s] $100, but you're typically collecting a lot more than that, $100.
+[  476.13s ->   478.39s] Then once the trade gets down to 50,
+[  478.79s ->   482.07s] then I'm going to close that trade because I've made my 50% profit.
+[  482.19s ->   484.47s] I made 100 to 50, which is a $50 difference.
+[  484.73s ->   486.15s] I made my $50 profit.
+[  486.15s ->   490.01s] Because again, as a strangle, I'm selling the strangle.
+[  490.23s ->   493.67s] So I make money as the price of the strangle drops in price.
+[  493.77s ->   497.45s] So again, if it drops down to 50, I take my 50% profit and move on.
+[  498.13s ->   501.91s] Now, what about my stop loss, a 300% stop loss?
+[  501.97s ->   503.13s] Well, what is three times 100?
+[  503.51s ->   509.61s] If the strangle starts trading at $300, then I'm going to exit my position.
+[  509.93s ->   511.99s] Now, what is my actual loss on this?
+[  511.99s ->   516.25s] Well, I got into the trade for $100 and I'm exiting the trade for $300.
+[  516.63s ->   523.93s] That means that I'm having an actual realized loss of $200 plus any commissions that I incurred.
+[  524.05s ->   525.79s] So that is how we structure the trade.
+[  525.85s ->   532.05s] And again, with this, clearly here, even if you don't manage these crazy losses like here and here,
+[  532.05s ->   535.75s] you still have a 93% win rate, historically speaking.
+[  535.83s ->   538.63s] So if you want a strategy that's more of a set it and forget it.
+[  538.73s ->   544.27s] I literally take five minutes max to put on these trades twice or two of them a week.
+[  544.33s ->   550.25s] And then I just hold them until the time hits where I either take profit or I hit my stop loss.
+[  550.65s ->   555.55s] And this is how I trade with a very high win rate and collect monthly income on a consistent basis.
+[  555.67s ->   557.71s] Now, remember, you will need a margin account.
+[  557.71s ->   560.55s] You will need a decent amount of money to start trading this.
+[  560.65s ->   564.55s] But once you have a good account size built up, this is a great strategy for you.
+[  564.73s ->   567.95s] If you want to learn more about these specifics of how I trade options and other things like that,
+[  568.03s ->   569.81s] check out my free course linked down below.
+[  570.21s ->   574.59s] Enter your email and you'll learn all my option strategies and tips for free.
+[  574.91s ->   575.25s] All right, guys.
+[  575.51s ->   576.49s] See you in the next video.

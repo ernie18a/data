@@ -1,0 +1,267 @@
+[    0.11s ->     6.57s] If you have a larger account and you're looking to generate consistent monthly income in a way where you don't have to constantly watch the market
+[    6.57s ->    12.05s] and you make money whether the market goes up, down, or goes nowhere, then this is the course for you.
+[   12.09s ->    19.91s] It's my Strangles course. I'm going to show you exactly how to sell Strangles, collect monthly income, and avoid market crashes
+[   19.91s ->    23.99s] so that you can do so consistently without worrying about super large losses.
+[   24.25s ->    29.13s] And so if you've ever followed Tasty Live Strangle approach and you've had a huge loss from that,
+[   29.13s ->    35.35s] I'm going to show you how you can avoid those and trade it in a way that leads to consistent monthly income
+[   35.35s ->    39.27s] instead of having fear and overwhelm with what Strangles are.
+[   39.37s ->    43.37s] So let me start with that and dive into who can trade these.
+[   43.43s ->    47.85s] Well, again, this is for an account size that is at least $20,000.
+[   48.17s ->    53.17s] I would not be trading Strangles under that amount with the ETFs that I'll be recommending.
+[   53.17s ->    57.21s] For instance, when you're trading SPY, which is the S&P 500 ETF, which is what this is,
+[   57.21s ->    62.41s] you need at least $6,000 to $10,000 to put on a single trade.
+[   62.51s ->    66.53s] And again, if you're putting at least one trade on a week is what you should be doing, if not more.
+[   66.65s ->    69.13s] The goal of trading Strangles is to trade small and trade often.
+[   69.71s ->    73.73s] So again, putting on one to two trades a week, you're going to need a decently sized account.
+[   74.13s ->    80.89s] Now, again, if you go for a cheaper ETF, like maybe QQQ, IWM, something a bit cheaper,
+[   80.89s ->    85.67s] or maybe even a cheaper stock like Apple, you can do Strangles, but you're going to be at higher risk
+[   85.67s ->    89.13s] because those move a lot faster than SPY does.
+[   89.45s ->    93.57s] So again, if you want the consistency, predictability, and safety that comes with SPY,
+[   93.71s ->    95.25s] you also need a larger account.
+[   95.33s ->    97.85s] If you don't have a larger account, then this probably won't work for you.
+[   98.21s ->    99.79s] Now, what are the broker requirements?
+[   99.79s ->   103.19s] Well, you need a $20,000 account somewhere in there, a bit more.
+[  103.95s ->   107.29s] And you need to have the highest level of margin enabled.
+[  107.67s ->   110.31s] So again, you need to go to your broker and enable that margin to get started.
+[  110.31s ->   114.23s] Anyways, now that we have the basis of what we need and who this is for, what it can do,
+[  114.57s ->   116.23s] what in the world are Strangles?
+[  116.33s ->   121.99s] Strangles are the idea that you can make money by placing areas around a stock.
+[  122.29s ->   124.49s] So for instance, what I mean by this is we can say,
+[  124.59s ->   126.49s] huh, where's the highest a stock can go?
+[  126.49s ->   131.03s] Well, at the moment, over the next 20 days, I think the stock won't go above this level.
+[  131.37s ->   135.15s] And I think the stock will stay above, just for instance, this level.
+[  135.55s ->   139.85s] So if you think the stock trading right here, right there, let me extend this out so you can see the top line.
+[  140.13s ->   143.11s] This stock won't go below this level, won't go above this level.
+[  143.23s ->   144.19s] You create a strangle.
+[  144.35s ->   146.83s] If the stock stays between these two levels, you make money.
+[  147.11s ->   150.25s] Which means that anytime throughout this period that you're trading this stock,
+[  150.51s ->   155.15s] if it goes up or down or sideways, whatever, as long as it closes between these two levels,
+[  155.15s ->   158.13s] no matter what it does, you make money.
+[  158.53s ->   161.77s] The only time you lose money is when it goes up really far and breaks this level
+[  161.77s ->   163.89s] or goes down really far and loses this level.
+[  164.43s ->   167.53s] We do this by selling a put on the bottom side.
+[  167.61s ->   170.59s] Again, the level we think the stock will stay above, we're selling a put there.
+[  171.09s ->   176.01s] The level we think the stock will stay below is where we sell our call.
+[  176.55s ->   177.73s] And so these two levels right here.
+[  177.83s ->   180.57s] So let's say that the stock goes up and breaks our call level.
+[  180.65s ->   183.01s] Well, if it does, now our put is in max profit.
+[  183.47s ->   186.21s] And so again, we have this loss, but this max profit.
+[  186.21s ->   190.71s] So then again, we still have a loss because this loss will be greater than the profit and vice versa.
+[  191.11s ->   194.69s] Again, I'll be showing you in this video how to actually manage these trades in a way
+[  194.69s ->   198.71s] where you can massively reduce your losses and not experience those losses all the time.
+[  199.07s ->   205.45s] But in general, strangles have a really high win rate because you're playing the average.
+[  205.59s ->   209.81s] You're playing just a mathematical probability of the stock typically trades in ranges.
+[  210.23s ->   211.27s] So this is what a strangle is.
+[  211.27s ->   216.61s] Typically, when you do an equal level, let me remove this drawing, is when you do an equal
+[  216.61s ->   217.95s] level between the stock.
+[  218.05s ->   222.69s] So let's say that I think it's going to stay $10 above and also do $10 below.
+[  222.97s ->   224.57s] So something that's equal on both sides.
+[  224.93s ->   230.01s] However, you can skew a strangle, which means that if you have bias for one direction, you
+[  230.01s ->   231.75s] can skew a strangle in that direction.
+[  232.19s ->   237.73s] So what I mean by that is, is let's say that we have, or I have a bias that I think the market
+[  237.73s ->   238.39s] will go down.
+[  238.47s ->   239.75s] You can see all this consolidation.
+[  239.75s ->   242.87s] I think the market will go down more likely than it's going to go up.
+[  243.31s ->   247.21s] So I'll move the call price in a bit closer thinking that it's not going to go as high.
+[  247.55s ->   252.25s] And when I do this, I collect way more money on this side, which allows me to go out further
+[  252.25s ->   255.91s] here and allow the stock to drop because of the more money I collect here.
+[  255.99s ->   260.21s] I can go out further, collect less money and still collect roughly the same, but now
+[  260.21s ->   263.51s] I'm directionally biased so that I think the market will drop further.
+[  263.65s ->   267.37s] And if it does, no, it won't hit this level because I moved it out further.
+[  267.37s ->   271.01s] And so that's what a skewed strangle is, and that's how I trade them.
+[  271.09s ->   274.07s] I trade skewed strangles based on the trend.
+[  274.17s ->   277.73s] So now that we've talked about what a strangle is, how that looks like, what a skewed strangle
+[  277.73s ->   281.51s] is, but which is basically just selling a call and selling a put at different levels.
+[  281.87s ->   284.53s] Now let's go in to what this actually looks like.
+[  284.53s ->   288.95s] So again, I'm going to give you the exact criteria that I use, which is a Tasty Live
+[  288.95s ->   289.49s] format.
+[  289.85s ->   293.93s] And then I add some criteria around that, that actually had some extra buffer, some margin
+[  293.93s ->   296.39s] for profit and increases my win rate.
+[  296.49s ->   299.23s] So what is the normal Tasty Live approach?
+[  299.23s ->   303.05s] If you don't know, you're going 45 days out and expiration.
+[  303.25s ->   304.49s] So 45 DTE.
+[  304.69s ->   308.53s] So you're looking to go 45 days out in your expiration of your contracts.
+[  308.75s ->   312.71s] What you're doing is what I like to do when I skew my strangle, what a Tasty Live mechanics
+[  312.71s ->   314.51s] is, is they go 16 Delta each.
+[  314.63s ->   317.01s] So a 16 Delta call, a 16 Delta put.
+[  317.37s ->   319.77s] Again, that's just playing an average because they're contrarian.
+[  319.93s ->   322.21s] They think the market goes sideways, which isn't true.
+[  322.31s ->   323.63s] The market trends in a direction.
+[  323.95s ->   325.35s] And I'll show you how to know that here.
+[  325.67s ->   329.23s] But again, if we look at this, if we know the direction, we know that we can go further
+[  329.23s ->   330.57s] out on the put side.
+[  331.37s ->   334.53s] I mean, well, because we're betting on the downside, but we're betting on the upside, which
+[  334.53s ->   338.57s] is what we do more times than not, because the market typically trends up, is we give
+[  338.57s ->   342.31s] our upside room more room and our downside room less room.
+[  342.45s ->   345.19s] And so again, it's just depending on the setup, which I'll explain here in a second.
+[  345.37s ->   350.27s] But in general, I'm going a five Delta call, which is how far away I'm going to the upside.
+[  350.63s ->   352.21s] And I do a 10 Delta put.
+[  352.41s ->   357.53s] So again, I have a really high win rate trade that's skewed in the trend, in the direction
+[  357.53s ->   358.33s] where I'm going.
+[  358.73s ->   360.27s] And so again, that's how I set this up.
+[  360.27s ->   366.65s] I'm going to manage the trade when I have a 50% profit or when I get to 21 days, either
+[  366.65s ->   368.95s] way, I'm going to, I'm going to manage this trade for a stop loss.
+[  369.07s ->   370.83s] I'm going to manage at 400%.
+[  370.83s ->   372.45s] So that's my stop loss.
+[  372.61s ->   376.95s] Now, again, these are the key ways to manage this trade.
+[  377.07s ->   380.33s] I put, I try to put on at least one trade every single week.
+[  380.43s ->   382.15s] That's how I do this on my larger account.
+[  382.31s ->   385.69s] Now, again, as you start trading with a larger and larger amount, you can actually do more
+[  385.69s ->   386.41s] fun things.
+[  386.53s ->   389.15s] For instance, you can trade and sub trading on spy or SPX.
+[  389.15s ->   394.91s] You can trade on the S&P 500 futures because their margin gives you way more favorable terms.
+[  395.27s ->   396.89s] Anyways, this is the criteria.
+[  397.03s ->   405.55s] 45 days out, 50% take profit management or manage at 21 days or a 400% stop loss.
+[  405.63s ->   407.63s] You're going to have a 10 Delta put and a 5 Delta call.
+[  407.95s ->   410.77s] When you set this up, which is exactly what I just showed you.
+[  410.83s ->   412.71s] This is exactly what it is on the SPX.
+[  412.81s ->   413.99s] We back tested this data.
+[  414.39s ->   417.03s] You can see here that it performs well.
+[  417.03s ->   419.87s] And periods of range-bound markets where SPY is range-bound right here.
+[  419.95s ->   421.71s] Look, I can show you exactly what SPY is doing.
+[  421.93s ->   424.17s] You can see here how SPY is going down and range-bound.
+[  424.29s ->   426.31s] This actually made money or did well.
+[  426.63s ->   430.55s] You can also see that like in these weird periods, it consistently trends higher.
+[  430.79s ->   433.43s] However, we look at this, where does strangles fail?
+[  433.51s ->   434.57s] Where do strangles fail?
+[  435.37s ->   438.47s] Fails during huge, unpredicted downturns.
+[  438.59s ->   441.91s] We can't predict every downturn, but we can predict the major ones.
+[  442.17s ->   443.15s] And what do I mean by that?
+[  443.15s ->   448.15s] Well, when we come in here and we look at this, one of the most recent major immediate
+[  448.15s ->   451.59s] turndowns was this one, this one, and this one.
+[  451.81s ->   455.63s] Is there a way that we could have stayed out of the market during these downturns, which
+[  455.63s ->   459.91s] hence would have increased our win rate, increased our profits, and decreased the amount that
+[  459.91s ->   460.65s] we would have lost?
+[  461.01s ->   461.99s] Yes, we can.
+[  462.27s ->   466.77s] It's the CSCT indicator right here, which will show you how to get for free at the end of
+[  466.77s ->   467.21s] this video.
+[  467.21s ->   473.01s] But if we look here and we add this setting enabled proprietary trading ban, it shows us
+[  473.01s ->   474.51s] the outer ranges that we follow.
+[  475.01s ->   480.15s] Here is my strangles strategy to reduce these huge losses.
+[  480.55s ->   480.77s] All right.
+[  481.05s ->   487.19s] If we look into this, when the market, when SPY breaks above our upper range, it's mathematically
+[  487.19s ->   490.77s] telling us we are the highest point we're ever going to be.
+[  490.85s ->   492.91s] The likelihood of a crash is really, really high.
+[  492.91s ->   493.67s] So what do we do?
+[  493.97s ->   499.85s] If we are in strangles currently and it breaks above the top blue line, exit all your positions
+[  499.85s ->   501.27s] for profit.
+[  501.35s ->   502.31s] Because, right, we're trending up.
+[  502.53s ->   505.49s] So more times than not, we're going to have a profit or something like that or very close
+[  505.49s ->   505.79s] to it.
+[  506.43s ->   508.37s] So we're going to exit out all our positions.
+[  508.55s ->   512.31s] And when it's above, we're going to put on no positions, except if you want to put on
+[  512.31s ->   516.93s] a position, put on a single 10 to 5 delta call.
+[  517.15s ->   517.55s] Why?
+[  517.75s ->   522.07s] Well, because once it breaks this level, there's a high likelihood that the market is crashing.
+[  522.07s ->   524.69s] So we don't want our put, which is going to lose money.
+[  524.77s ->   528.13s] We just want to trade the call, aka, what level will the stock stay below?
+[  528.53s ->   532.85s] And so we put on that call and then we let it move down as we make money from this process.
+[  532.85s ->   537.77s] And then we reenter after it kind of hits that bottom and resets after 21 days.
+[  537.91s ->   543.01s] So after the market drops through this line, we have 21 days to wait for the market to reset,
+[  543.13s ->   545.45s] get back to normal before we start entering strangles again.
+[  545.75s ->   550.11s] And this is how we stay out of huge market crashes like 2020 and other things like that to
+[  550.11s ->   553.09s] increase our win rate and decrease our losses.
+[  553.47s ->   558.21s] You can see right here, here is a prime example of how we can't predict everything.
+[  558.63s ->   564.05s] And this movement right here, what we can see is that we would not have been able to stay
+[  564.05s ->   564.45s] out of the market.
+[  564.53s ->   564.63s] Why?
+[  564.69s ->   568.09s] Because it did not break the top level for this.
+[  568.21s ->   569.27s] You see here, it didn't break.
+[  569.33s ->   571.13s] So we wouldn't have been out of our positions.
+[  571.33s ->   572.55s] So we would have lost here.
+[  572.55s ->   577.87s] But what we would have done is this, is we would have skewed our strangle to the downside,
+[  578.19s ->   581.11s] thus decreasing the losses we would have experienced.
+[  581.49s ->   582.27s] What do I mean by that?
+[  582.33s ->   585.99s] Well, when we start getting closer and closer to this range, we should start skewing our
+[  585.99s ->   590.11s] strangles the other way, aka having less upside and further downside.
+[  590.55s ->   594.49s] And so when we skew our strangles to the downside instead, because we're at the upper portion of
+[  594.49s ->   599.13s] this range, then we can actually increase our win rate because we're giving the stock more
+[  599.13s ->   602.79s] time to move in the direction we think it's going to go, which is that crash side.
+[  602.99s ->   606.95s] So that's something to be aware of is we can skew the strangles to the downside in those
+[  606.95s ->   607.33s] environments.
+[  607.77s ->   611.69s] Here's another time where the stock dropped a lot and strangles had a poor performance
+[  611.69s ->   612.97s] is when we broke above this.
+[  613.03s ->   616.95s] Well, like I said, when it breaks above, we close our positions, we enter five delta calls,
+[  617.09s ->   621.81s] and then we trade that way instead so that we don't have the put side that's breaking.
+[  622.03s ->   624.03s] So this is how we trade.
+[  624.03s ->   629.55s] This is how I should say how I trade strangles to avoid these market crashes, to increase
+[  629.55s ->   632.95s] my win rate, and to generate consistent monthly income.
+[  633.33s ->   635.29s] And so again, we do that by following the strategy.
+[  635.41s ->   641.99s] 45 days out, 50% profit management, 21 days management, 400% stop loss, a 10 delta and
+[  641.99s ->   643.03s] a five delta call.
+[  643.13s ->   646.57s] If we're anywhere in this, if we're closer to the top, I strangle it to the downside,
+[  646.69s ->   650.07s] aka I do a 10 delta call and a five delta put.
+[  650.13s ->   653.23s] So I get my put more room because it looks like it's going to move down lower soon.
+[  653.23s ->   656.21s] And so again, that's how I trade these.
+[  656.31s ->   657.39s] That's how I trade strangles.
+[  657.53s ->   660.81s] Now, that is the difference between using a backtest and not.
+[  660.87s ->   665.09s] You can see here the backtest performed roughly the same even with these different environments.
+[  665.71s ->   672.69s] But when we remove these huge crash periods like this and we actually have a smoother performance,
+[  672.85s ->   676.99s] that means we have less motion and we're outperforming the market.
+[  677.19s ->   681.11s] So again, alone with even these crashes, we have an 89% win rate.
+[  681.11s ->   686.49s] So again, when we can avoid these crashes, we only increase our win rate into the 90% territory,
+[  686.91s ->   689.05s] generating good amounts of money.
+[  689.19s ->   691.27s] So what are our sizing rules?
+[  691.37s ->   693.39s] So again, there are things we have to worry about.
+[  693.45s ->   694.11s] That is sizing.
+[  694.23s ->   698.57s] If we don't manage sizing correctly, we won't survive long enough to actually make money
+[  698.57s ->   702.31s] because just because we have a high win rate doesn't mean we can't have huge losses.
+[  702.31s ->   705.45s] And so we need to manage that size correctly.
+[  705.45s ->   710.69s] So the way that I like to manage sizes, I like to think about just a generic 10% trade rule.
+[  711.09s ->   711.31s] Why?
+[  711.57s ->   714.05s] Well, because strangles by default have a really high win rate.
+[  714.39s ->   720.13s] And so again, if I aim around a 10% management rule, then that's what I know that my stopwatch should be.
+[  720.93s ->   723.33s] And so again, this varies based on the positions that I have open.
+[  723.41s ->   727.97s] I'll vary between a 5% to a 10% max position size.
+[  728.35s ->   729.71s] And so what does that look like?
+[  729.71s ->   731.27s] Well, let me do the math for you.
+[  731.53s ->   734.31s] Let's say I have a $10,000 account.
+[  734.31s ->   738.93s] If I have a $10,000 account, what is my max loss?
+[  739.21s ->   744.33s] Well, if you can see here, $10,000 is my max or my account size.
+[  744.53s ->   746.77s] And then let's say I'm okay with risking 10%.
+[  746.77s ->   747.63s] What would that get me?
+[  747.69s ->   748.83s] That would get me to $1,000.
+[  749.31s ->   754.37s] So if $1,000 is the max risk I'm okay taking and I have a 400% stop loss,
+[  754.51s ->   757.61s] I'm not always going to get out a 400% stop loss.
+[  757.69s ->   760.67s] Sometimes it's going to execute out a 500% stop loss, something like that.
+[  760.67s ->   763.97s] So I like to exaggerate my stop loss to give me some more safety.
+[  764.31s ->   768.27s] So although I have a preset 400, 400% stop loss, I like to do a 500% stop loss.
+[  768.61s ->   774.39s] If I'm doing a 500% stop loss and I want to lose $1,000, how do I determine that?
+[  775.15s ->   779.71s] I determine this by doing 1,000 divided by 5 for 500% loss.
+[  779.85s ->   782.85s] That gives me $200 in credit is what I want to collect.
+[  782.85s ->   786.93s] So again, I want to stress this out too much, but that means I can do one strangle
+[  786.93s ->   790.09s] and collect $200 in credit.
+[  790.63s ->   794.53s] Or I can do two strangles and collect $100 in credit each.
+[  794.83s ->   800.21s] And so that's how I determine what my sizing is based on my risk.
+[  800.25s ->   805.17s] And again, that risk all comes down to the credit that I'm collecting and based on my account size.
+[  805.17s ->   810.37s] So based on this, with a $200 risk, I would have to be very careful with what I'm entering
+[  810.37s ->   813.39s] and be really far out to actually put on these trades.
+[  813.49s ->   815.55s] And so again, you want to make sure you're doing it with a decent account size.
+[  815.63s ->   818.61s] Like I said, 20,000 plus is a good account size for strangles.
+[  818.61s ->   822.99s] But once you manage sizing correctly, then the rest of the game is easy.
+[  823.09s ->   827.15s] You can easily oversize on these positions and destroy your account, but I don't want
+[  827.15s ->   827.99s] that to happen to you.
+[  828.11s ->   830.55s] So anyways, guys, thank you so much for watching.
+[  830.67s ->   833.57s] If you want to get this indicator for free, if you want to learn more about this, if you
+[  833.57s ->   837.77s] want to get strangle trade alerts like this, where it shows you step-by-step what skewed
+[  837.77s ->   841.21s] strangles you should enter based on the indicator that I just showed you.
+[  841.63s ->   846.79s] And if you want to get free access to that indicator for life, click over there on this page
+[  846.79s ->   850.69s] to the free trial link to start your free, free trial to 10% credit spreads.
+[  850.89s ->   855.25s] Once you do, whether you cancel your trial or continue or not, whatever, you still get
+[  855.25s ->   859.77s] to keep this indicator for life, which is going to help you follow the trend regardless of
+[  859.77s ->   860.43s] how you're trading.
+[  860.65s ->   862.57s] Also, congrats on watching all the way through.
+[  862.73s ->   869.43s] This is your exclusive coupon code to get 50% off our 10% credit spreads yearly program.
+[  869.55s ->   869.91s] That's right.
+[  869.95s ->   876.77s] You get coaching, you get a whole year of access to the indicator to this program.
+[  876.79s ->   883.49s] You get lifetime access to my swing trading software and so much more for 50% off.
+[  883.69s ->   889.65s] Typically, most people have to join the yearly program at $997, but you get to do it for half
+[  889.65s ->   890.31s] the price today.
+[  890.43s ->   895.89s] So anyways, put in the code CHRISTMAS50, click apply, and you'll get access for $498.
+[  896.59s ->   901.71s] This coupon code is only good until December 31st at midnight.
+[  902.05s ->   905.79s] After that time, this code will no longer be good.
+[  905.79s ->   907.45s] Thank you guys so much for watching this video.
+[  907.73s ->   910.55s] I hope that you take it, you start applying, you start making some money with it, understand
+[  910.55s ->   911.65s] how profitable this is.
+[  911.93s ->   917.17s] If you want to trade with traders just like me who are using this system today, then again,
+[  917.27s ->   920.73s] use this code, get 50% off, and I'll see you inside the program.

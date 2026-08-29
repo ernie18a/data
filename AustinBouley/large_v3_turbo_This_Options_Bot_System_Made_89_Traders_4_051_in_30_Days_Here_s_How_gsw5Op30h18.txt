@@ -1,0 +1,147 @@
+[    0.00s ->     7.64s] In the last 30 days, the average trader using the specific options bot system has made $4,051.
+[    8.36s ->    13.46s] That's right, over 100 people just now implemented this system into their trading and the results are crazy.
+[   14.18s ->    20.02s] Here's an example from someone who made $613 in their first 30 days, $26,000 in their first 30 days,
+[   20.36s ->    24.32s] and a $1,261 return in their first 30 days.
+[   24.52s ->    27.32s] Now, again, I'm not saying that's typical, that's average or whatever,
+[   27.32s ->    30.18s] but installing this system has changed a lot.
+[   30.32s ->    33.64s] Why? Because it removed the confusion and it gave them clarity
+[   33.64s ->    37.90s] so they know exactly what to do at any given point in time so they can make money as an option trader.
+[   37.98s ->    40.80s] So let me walk you through what this options bot system is.
+[   40.88s ->    43.62s] Number one, we need to understand what the market is doing.
+[   43.74s ->    46.86s] So when it says, what is the ban's, if you don't know what this is,
+[   46.86s ->    50.40s] this is a decision tree where you go, if this, then that's, you follow it through
+[   50.40s ->    52.20s] so you know exactly what decision to make.
+[   52.24s ->    55.14s] So first thing we start with is what is the ban zone?
+[   55.14s ->    59.96s] Now, I give all my coaching clients access to this proprietary trading indicator
+[   59.96s ->    65.78s] that I call the market analysis ban that it shows them which market we are in.
+[   65.92s ->    68.56s] So you can see here, this is what this ban looks like on a chart.
+[   68.78s ->    72.20s] When we're in the green zone, it means we're bullish and the market's trending upwards.
+[   72.58s ->    74.16s] When we're in the red, it's bearish.
+[   74.28s ->    77.00s] When we're overextended, it's overextended to the upside.
+[   77.14s ->    79.60s] When we're overextended down here, it's overextended to the downside.
+[   80.06s ->    81.94s] So that's what each one of these sections means.
+[   82.06s ->    83.92s] So right here, this is called extreme bullish.
+[   83.92s ->    84.72s] We're overextended.
+[   85.02s ->    86.50s] This green is called bullish.
+[   86.96s ->    89.64s] This is called neutral, where we have this light gray area.
+[   89.86s ->    91.04s] This is called bearish.
+[   91.14s ->    93.08s] And this is called extreme bearish.
+[   93.18s ->    95.18s] OK, we put all these together.
+[   95.28s ->    98.20s] We then now have five different outcomes that we can have.
+[   98.26s ->   100.94s] So we look at the ban and where is the market right now?
+[  101.12s ->   105.84s] We can see that it's currently in the pure green zone, which means we're in a bullish zone.
+[  106.42s ->   110.40s] So to take advantage of this, we go, OK, we're in the ban zone of bullish.
+[  110.52s ->   110.78s] Perfect.
+[  110.78s ->   112.50s] We pick bullish as our zone.
+[  112.66s ->   114.46s] Now, from here, we filter down.
+[  114.94s ->   116.44s] Where did we previously come from?
+[  116.52s ->   120.40s] Did we come from the extreme bullish zone or did we come from a neutral zone?
+[  120.48s ->   122.56s] So if we come back here, you can see how simple this is.
+[  122.76s ->   124.32s] We did not come from above here.
+[  124.58s ->   125.54s] We came from below.
+[  125.72s ->   128.20s] So since we're coming from below, that is a neutral zone.
+[  128.54s ->   130.22s] So we're coming from a neutral zone.
+[  130.56s ->   135.58s] Inside of this neutral zone, that tells us we are going to be 100% bullish on our trades.
+[  135.90s ->   136.54s] So that's awesome.
+[  136.54s ->   138.82s] And we know, OK, we're going full in with the trend.
+[  138.90s ->   139.54s] We're going to follow it.
+[  139.58s ->   140.76s] We're going to make money that way.
+[  140.92s ->   143.32s] If you have a futures account, F stands for futures.
+[  143.46s ->   146.28s] This is our go-to strategy, the 111 type of strategy.
+[  146.70s ->   152.68s] If you're a non-futures trader, you can go short put or put credit spread depending on your account size.
+[  152.76s ->   158.46s] So that's how easy it is to know that no matter where the market is or what it's doing, how we can handle it.
+[  158.46s ->   161.34s] Now, that's an example for this current market right now.
+[  161.48s ->   164.08s] But how do we adjust for every type of market?
+[  164.18s ->   165.60s] We're in extreme bullish zone.
+[  165.68s ->   168.00s] So let's say the market is overextended to the upside.
+[  168.36s ->   171.08s] Quite simply, we're going to be trading bullish.
+[  171.20s ->   175.94s] We're going to be making money to the upside because we don't want to not make money when the market is trending higher.
+[  176.26s ->   182.74s] But we're also going to have on some bearish trades so that in case the market turns around, we can have that protection.
+[  183.12s ->   184.38s] So here's a great example.
+[  184.38s ->   191.22s] You can see we're in this red zone, but the market is trending higher and we don't want to not make money when the market is trending higher.
+[  191.56s ->   192.90s] We also don't like fighting the trend.
+[  193.02s ->   197.06s] So we're going to be in 50% of our trades will be in bullish trades to make money to the upside.
+[  197.22s ->   202.40s] And we'll have 20% of our money inside bearish trades so that we can make sure that when the market rolls over,
+[  202.70s ->   209.64s] we can then close out the bullish trades and let the bearish trades run and profit, reset 30 days, and then get back in and start trading to the upside.
+[  210.04s ->   212.42s] So that's how that works for the extreme zone.
+[  212.42s ->   221.72s] Now, if we are in a bullish zone, but it came from up here, came from the red zone, came down, we're going to stick with our 100% bearish.
+[  221.80s ->   222.00s] Why?
+[  222.10s ->   226.10s] Because the market was overextended, it snapped, and now it's pulling back in.
+[  226.40s ->   227.92s] Oops, let me go back here.
+[  228.24s ->   234.66s] And so as you can see, every time we break into the red, we tend to have a snapback or some type of pullback that follows.
+[  235.08s ->   238.58s] And so just because we're in the green zone doesn't mean it's going to be good to trade.
+[  238.58s ->   242.12s] We want to make sure that it's coming from below so the trend continues higher.
+[  242.12s ->   246.24s] If the trend comes from below, that means the market's trending down and we don't want to do that.
+[  246.88s ->   247.74s] So that's the bullish zone.
+[  247.82s ->   252.64s] Now, for the neutral zone, when we're inside this middle range, this is where anything can happen.
+[  252.74s ->   255.78s] This is where we can either go bullish, bearish, or just stay flat and do nothing.
+[  256.20s ->   262.22s] And so there's a lot of different scenarios for when we're inside of the neutral zone, and that is looking at the current trend.
+[  262.30s ->   264.36s] Over the last 30 days, what is the trend?
+[  264.36s ->   266.26s] Now, this is super easy to assess.
+[  266.42s ->   269.60s] You go, okay, the market's here and 30, and where was it?
+[  269.64s ->   270.38s] Over the last 30 days.
+[  270.48s ->   274.92s] So if we go out back 30 days, you can see right here is June 12th.
+[  274.92s ->   278.16s] If we go back to simply just May 12th, you can see it's right here.
+[  278.44s ->   278.58s] Cool.
+[  278.64s ->   279.92s] Are we higher or lower?
+[  280.02s ->   282.50s] You can see from May 12th to now, we are higher.
+[  282.60s ->   285.96s] So that means we are in an uptrend inside the neutral zone.
+[  286.24s ->   287.90s] And so that's how we know what trend we're in.
+[  287.94s ->   290.12s] So it's super simple, so you always know what to do.
+[  290.12s ->   294.28s] So if we're in an uptrend, flat trend, downtrend, these are the game plans.
+[  294.68s ->   299.30s] A.K.A. we're playing all sides of the market in this type of scenario.
+[  299.74s ->   302.62s] We're playing both bullish, bearish, sideways, things like that.
+[  302.68s ->   307.20s] Now, the easiest way to explain this is by trading a strangle, basically when you're in this zone.
+[  307.36s ->   307.66s] Why?
+[  307.88s ->   309.94s] Because we don't know where the market's going to go.
+[  310.04s ->   311.48s] It can easily go down.
+[  311.58s ->   312.26s] It can go up.
+[  312.30s ->   312.96s] It can do whatever.
+[  313.46s ->   318.06s] And so we want to make sure we're able to capitalize from the movement, whether it just stays still or goes up.
+[  318.06s ->   318.90s] Because guess what?
+[  318.94s ->   321.98s] If the market stays flat with a strangle, we make money in this zone.
+[  322.20s ->   324.66s] If the market breaks higher, guess what?
+[  325.32s ->   329.72s] We can just cut this as a loser and then let this run and then we keep trading bullish.
+[  329.90s ->   330.10s] All right?
+[  330.56s ->   335.26s] Guys, if you like this system, if you like how detailed it is, click the first link down below.
+[  335.44s ->   340.24s] And I would love to schedule a one-on-one call with you to walk you through how this can be implemented for your trading
+[  340.24s ->   343.00s] and how you can completely automate it as well.
+[  343.00s ->   349.48s] So that not only are you following a proven system that adjusts to the market in real time, but it's completely automated for you.
+[  349.52s ->   352.82s] And if you want to do that, click the first link down below and I'd love to help you out.
+[  353.36s ->   356.04s] So now that we covered the neutral zone, let's talk about bearish.
+[  356.20s ->   356.38s] Okay?
+[  356.76s ->   362.30s] So when we're in the red zone, the market is trending down and that means that it is a bearish trade.
+[  362.62s ->   367.38s] So a bearish trade should be things like buying puts or buying a put debit spread, something like that.
+[  367.98s ->   369.94s] We're going to take advantage to the downside.
+[  369.94s ->   373.34s] And now this has the same type of setup as the bullish one.
+[  373.54s ->   376.96s] Where did it previously come from before it entered the bearish zone?
+[  377.24s ->   380.50s] These are important questions that regardless of whether you use this system or not,
+[  380.74s ->   384.44s] are things that you need to know when you're putting together your own options trading system.
+[  384.84s ->   388.54s] And so you can see right here, previously neutral zone, previously extreme zone.
+[  388.88s ->   392.40s] So if it previously came from the extreme zone and now bouncing up,
+[  392.60s ->   396.52s] we're obviously going to be 100% bullish because the market is rebounding.
+[  396.52s ->   401.08s] Now, if we came from up here and we're going down, obviously the market is continuously to downtrend.
+[  401.44s ->   403.44s] So that's where we're going to play the 100% bearish.
+[  403.56s ->   407.22s] So you can see previously neutral, we're playing a 100% bearish.
+[  407.32s ->   409.70s] If you don't want to play bearish trade, you can just be no position.
+[  409.82s ->   413.26s] That's a lot safer than being in a bullish at this point.
+[  413.34s ->   417.08s] And then if it's extreme bearish, that's aka for the market is bouncing to this.
+[  417.42s ->   420.34s] And again, futures, our go-to strategy is the one-on-one for bullish
+[  420.34s ->   423.10s] and non-future is going to be a short put or put credit spread.
+[  423.10s ->   426.98s] Now, if we're in the extreme bearish zone, that's when we start flipping over trades
+[  426.98s ->   429.44s] and we go with our free money bot as well,
+[  429.70s ->   432.90s] which again, we have bots that trigger in these specific scenarios.
+[  433.06s ->   433.70s] They don't happen.
+[  434.18s ->   436.68s] The market doesn't get to these extreme zones often,
+[  436.68s ->   440.96s] but when they do, you can set up strategies that have virtually a 100% win rate.
+[  441.34s ->   442.90s] And that's what we call our free money bots.
+[  443.34s ->   448.44s] Anyways, that is the four bot system that I have taught my clients
+[  448.44s ->   452.06s] that they've been using and been able to implement to generate consistent income.
+[  452.06s ->   455.46s] Why? Because it's not just predicated or determined
+[  455.46s ->   459.18s] or the outcome is based on one single strategy and one good market.
+[  459.32s ->   461.36s] It adjusts to what the market is doing.
+[  461.40s ->   463.40s] And it's super clear what to do at any point.
+[  463.48s ->   464.94s] And again, if you want help with this
+[  464.94s ->   467.02s] and you want this system installed in your system,
+[  467.16s ->   468.58s] click the first link down below.
+[  468.66s ->   471.78s] And I'd love to hop on a call with you to walk you through how this can work for you.

@@ -1,0 +1,46 @@
+[    0.46s ->     9.25s] and we are back welcome back today what i want to do is introduce a new game that i created
+[    9.25s ->    16.52s] on practicemarketmaking.com it's a market making game i call it roman's market making game
+[   16.52s ->    24.80s] inspired by trading prep this is going to allow you to practice as a market participant
+[   24.80s ->    35.86s] buying and selling at a bid or offer price or setting a mid price and a spread as a market maker
+[   35.86s ->    44.76s] so i made this all in html css javascript which was kind of a nightmare but it's hosted on github pages
+[   44.76s ->    51.56s] it's all open source i will leave a link to the website you can check it out mobile or computer
+[   51.56s ->    58.08s] browser and you can also check out the github with all of the code but the way that it works is
+[   58.08s ->    64.04s] actually pretty simple there are three dies and you will have hidden values for each dice
+[   64.04s ->    70.14s] and there will be some bid and offer as a market participant and using this incomplete information
+[   70.14s ->    75.01s] you have to determine whether or not you're going to buy or sell and then you're going to have some
+[   75.01s ->    81.20s] sort of realized outcome and pnl that you accumulate over time if you're a market maker things get a
+[   81.20s ->    87.48s] little more interesting you set mid and a spread and then market participants are going to buy and
+[   87.48s ->    93.40s] sell at your bid and offer you're going to accumulate a pnl and a spread that is collected
+[   93.40s ->   101.46s] but it may not be perfectly balanced so every realization you may if you set mid terribly have
+[  101.46s ->   107.70s] a terribly outsized proportion of buys to sells in which case you may not collect any spread and you
+[  107.70s ->   114.42s] may realize a loss or if you have a perfectly balanced set of buys and sells you may in fact
+[  114.42s ->   120.88s] just collect the spread and remain risk neutral so this is a fun game to essentially practice
+[  120.88s ->   127.21s] market making so let's go ahead and give this a shot every 15 seconds you're going to get a new
+[  127.21s ->   132.49s] bid offer and a new set of values and then it's going to realize the previous set so let's play this
+[  132.49s ->   139.23s] round we see three we see two hidden values i'm going to compute an expectation of 10 in my head
+[  139.23s ->   148.45s] we have a bid and an offer we can buy at 10 i will buy one at 10 and here i realize a loss so the
+[  148.45s ->   159.77s] realization was six i lost four dollars so i can play this again 13 offer 12 i'll buy 10 at 12 i have a
+[  159.77s ->   166.91s] slight edge and here i actually make money the realization was 16 my pnl is 40 there is no cap
+[  166.91s ->   173.99s] to the quantity this is simply a tool for you to practice so if you want to do an increment to 10
+[  173.99s ->   179.11s] if you want to manage your risk differently then you may do so so let's play another round here
+[  179.11s ->   187.01s] so i got an expected value of 13 and a half it looks like the bid and offer has been set to 18
+[  187.01s ->   195.69s] so this is just a clear sell and we accumulate some pnl so the bid and offer is going to reset
+[  195.69s ->   201.47s] every instance randomly that was extremely unlikely to see an 18 18 but here we have three and five
+[  201.47s ->   209.17s] i'm going to buy on the five and accumulate some more pnl three seven that's a very clear buy
+[  209.17s ->   219.14s] so on and so forth so you know you get the hang of this after playing it for a while i would like to
+[  219.14s ->   224.92s] eventually release more difficulties where i can condition on the observed values and center the
+[  224.92s ->   230.22s] randomness about the values that have been seen that's going to make it more difficult to compute
+[  230.22s ->   234.08s] the edge in your head and determine whether or not you're going to buy or sell or if you're going to
+[  234.08s ->   238.90s] take any action at all so let's look at making a market now we've acted as a market participant
+[  238.90s ->   245.06s] let's look at making a market so here we have an expected value of 11 and a half i'm going to set
+[  245.06s ->   254.73s] it to let's say 12 and have a one point spread you can see that we had 100 at the offer 12 and a half
+[  254.73s ->   261.09s] fortunately it went down and we had a realized pnl of 350 but otherwise we would have been outsized here
+[  261.09s ->   266.93s] entirely because we didn't sell anything so that was a terrible market to make so if we were to make
+[  266.93s ->   272.29s] a more accurate market that's not in balance let's take a look at this we have what looks like five and a
+[  272.29s ->   282.36s] half here so i'll make five and a half and then we get 50 50 so we have a balanced bid offer and
+[  282.36s ->   290.66s] here we just collect the spread so this is hopefully going to be a fun way to practice these types of
+[  290.66s ->   295.72s] problems in a moderately fast-paced setting again once you start to get the hang of this this becomes
+[  295.72s ->   301.16s] quite easy but again i would like to eventually release difficulties based on the feedback that i
+[  301.16s ->   306.00s] receive from all of you but i hope you enjoy it i will leave again all of the code for this app in
+[  306.00s ->   310.00s] the description below along with a link to it if you'd like to go ahead and play the game
+[  310.00s ->   314.50s] thanks so much for watching and i will see you in the next video

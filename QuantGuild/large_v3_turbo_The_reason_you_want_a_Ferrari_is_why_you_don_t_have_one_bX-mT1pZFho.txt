@@ -1,0 +1,119 @@
+[    0.00s ->     5.58s] The reason you want a Ferrari is why you don't have one.
+[    6.16s ->    14.08s] I've been thinking about this a lot recently, especially in the context of everything that I've done professionally
+[   14.08s ->    23.04s] in quantitative finance, as a quant researcher, down to what I'm doing with YouTube and my businesses.
+[   23.92s ->    27.74s] The reason you want a Ferrari is why you don't have one.
+[   27.74s ->    32.92s] It's not about chasing arbitrary wealth, and I see it all too often.
+[   33.68s ->    43.32s] The high schoolers that have a passion for M&A finance or making markets or quantitative trading, right?
+[   43.36s ->    51.44s] They don't actually know what goes into those roles, what excellence looks like in those fields.
+[   51.44s ->    58.08s] It's to obsess over the underlying structure, the math, probability, statistics, and an academic capacity.
+[   58.88s ->    66.77s] Applying it to the real world, those are things that you have to achieve excellence in in order to be successful.
+[   66.93s ->    68.41s] It's not a quick paycheck.
+[   68.65s ->    69.71s] It's not a fast payday.
+[   69.71s ->    78.69s] You don't take the money and run, and I fear that's what a lot of people intend with the financial services industry.
+[   79.09s ->    81.11s] It doesn't work that way anymore, guys.
+[   81.27s ->    82.21s] It does not.
+[   82.31s ->    83.49s] You go into investment banking.
+[   83.97s ->    86.31s] You go into quantitative trading.
+[   86.55s ->    87.57s] You get a role at Jane Street.
+[   87.57s ->    97.37s] You get a role at Citadel as an intern or an analyst, and to get there, you already need to be excellent.
+[   98.17s ->    99.45s] You need to network.
+[   99.93s ->   103.33s] It's not even necessarily about coming from a tier one school anymore.
+[  103.49s ->   109.95s] It's about being able to solve difficult problems in real time, putting the pieces of the puzzle together.
+[  110.51s ->   112.17s] It's not a quick payday.
+[  112.17s ->   114.19s] It is nowhere near a quick payday.
+[  114.29s ->   122.55s] In fact, if you take a look at the starting salaries for investment bankers relative to quants, it's not even close, right?
+[  123.83s ->   126.27s] The entire landscape has shifted.
+[  127.29s ->   139.31s] And the whole purpose of this video today is to emphasize this idea of prioritizing excellence, what it is that you want to do, figuring out what it is that you want to do,
+[  139.31s ->   147.63s] and pursuing that, and letting the wealth follow, you can make money doing anything.
+[  147.93s ->   149.15s] You can make money doing anything.
+[  149.55s ->   152.63s] And that is objectively true.
+[  153.07s ->   154.11s] That is objectively true.
+[  154.11s ->   172.44s] The proportion of wealth that you end up with at the end of the day is going to be relative to the combination of the difficulty of problems that you solve, solutions that you provide, and the amount of time you've been in this space.
+[  172.76s ->   174.80s] That's what it's going to come down to.
+[  176.95s ->   179.41s] You look at, I think a lot about sports.
+[  179.53s ->   182.29s] I think a lot about influencers, fame, and fortune.
+[  182.29s ->   186.02s] And you look at, like, a quarterback, right, in the NFL.
+[  186.18s ->   189.88s] They don't play a year and then, what, take the money and run.
+[  189.92s ->   190.86s] That's not why they're there.
+[  192.45s ->   196.73s] They're there to play football, to achieve excellence, right?
+[  198.08s ->   208.81s] You take a look at anybody who's achieved fortune or fame through an algorithm by accident, lottery ticket winners.
+[  209.53s ->   213.41s] And how does that often work out for them?
+[  213.41s ->   223.57s] You hear all of these stories of people who blow out after accumulating what would otherwise be an extreme amount of wealth for any average American.
+[  224.77s ->   226.87s] And you're like, how is that even possible?
+[  226.95s ->   231.59s] It's because they don't know what to do once they have it.
+[  232.35s ->   235.35s] It's not about prioritizing and achieving excellence.
+[  235.61s ->   236.95s] It's now I have all this wealth.
+[  237.05s ->   238.01s] What am I going to do?
+[  238.01s ->   247.75s] And that's a really big problem that I think a lot of people discount is once you have that capacity, once you have the money, right, what are you doing?
+[  248.51s ->   250.05s] What are you doing on a day-to-day basis?
+[  250.19s ->   254.49s] And this is what I'm trying to say is the reason you want the Ferrari is why you don't have one.
+[  254.49s ->   268.49s] And prioritizing excellence means you are doing the thing, whether it's playing football, whether it is making YouTube video lectures for quantitative finance, whether it is building some sort of product, some sort of app.
+[  269.03s ->   270.31s] The list goes on.
+[  270.87s ->   273.07s] That is what you are doing.
+[  273.53s ->   275.87s] The wealth follows that.
+[  275.87s ->   283.39s] It's not about prioritizing the goal, achieving the wealth, and then once you have it, what, you've made it to an arbitrary finish line?
+[  283.49s ->   286.03s] No, that's not going to work.
+[  286.11s ->   287.51s] That's why you don't have the Ferrari.
+[  288.09s ->   299.96s] You'll find anybody who has achieved this, this excellence, anybody who can buy that Ferrari in cash, isn't going to.
+[  300.38s ->   305.90s] That's not why they have the cash to buy the Ferraris, because they've prioritized excellence.
+[  306.58s ->   308.66s] They've prioritized doing the thing.
+[  309.10s ->   314.38s] I think there was a great clip from John Cena where he was even just talking about how he never wanted to be a world champion.
+[  315.28s ->   316.60s] He just wanted to wrestle.
+[  316.72s ->   318.68s] He wanted to do the thing, right?
+[  319.08s ->   324.70s] And you can go on about how it's hyper-competitive or the equilibrium isn't what it used to be.
+[  325.46s ->   329.30s] And fair enough, but do you want to do the thing anyway?
+[  329.86s ->   333.76s] Do you actually want to do it, even if it's hyper-competitive?
+[  333.76s ->   338.16s] Do you want to do it, even if you're not going to be, whatever that means, number one in the world?
+[  338.86s ->   340.14s] Why would we do anything?
+[  340.58s ->   342.34s] If what?
+[  342.68s ->   347.48s] Why bother if I can't be number one in the world or the best at this or the best at that?
+[  347.54s ->   348.50s] Nobody would do anything.
+[  349.18s ->   350.30s] Nobody would have a hobby.
+[  350.46s ->   353.26s] Nobody would have a job, right?
+[  354.30s ->   355.42s] Nobody would create.
+[  355.42s ->   360.00s] Why would I paint a painting when there are these Picassos, right?
+[  361.12s ->   375.04s] It's just such a terrible outlook to prioritize goal versus excellence and pursuing what it is that you want to do.
+[  375.10s ->   376.24s] You want to do the thing.
+[  376.24s ->   381.44s] And that's kind of the point of today's Fireside Chat.
+[  381.44s ->   384.78s] That is, it's not going to be a crazy long lecture.
+[  384.96s ->   391.88s] It's not going to be, you know, me dragging on about this idea of, you know, prioritizing wealth.
+[  392.02s ->   394.08s] It's like, oh, Roman, you know, you don't know what it's like.
+[  394.14s ->   395.02s] It's like, no, I do.
+[  395.26s ->   396.42s] You know, I worked as a quant.
+[  396.52s ->   400.78s] I took a 90-some-odd percent pay cut to pursue what it is that I wanted to do.
+[  400.78s ->   407.00s] And, you know, now I'm right back up there where I used to be, and I know what it looks like.
+[  407.14s ->   411.92s] You know, I know what it looks like, and I'm trying to share the perspective with you guys.
+[  413.30s ->   422.94s] And I hope it's useful because a lot of times, you know, we walk down roads thinking that it's the right direction, but it's not.
+[  423.08s ->   424.48s] And then you have to walk back.
+[  424.48s ->   431.40s] And that walk back can be particularly painful, if nothing else but necessary.
+[  432.62s ->   435.50s] But, you know, the obstacle is the way.
+[  435.98s ->   437.14s] There is no other way.
+[  437.30s ->   443.88s] You walk one sample path, and that sample path takes you to where you are today, and you're listening to this right now.
+[  444.28s ->   453.36s] So, you know, hopefully it provides a meaningful perspective to prioritize the thing over the end goal.
+[  453.36s ->   464.92s] And what you'll find is in prioritizing the thing, you're going to have significantly less stress because you've already succeeded in doing the thing.
+[  465.04s ->   468.00s] If you want to make videos, look, I'm succeeding right now.
+[  468.06s ->   471.56s] There's nothing anybody can do to take this away from me.
+[  471.62s ->   477.68s] I'm actively recording a lecture, and I'm posting it to YouTube with my thoughts about my personal and professional experience,
+[  477.68s ->   484.28s] how I consider the space, and, you know, this is the thing for me, right?
+[  484.92s ->   490.14s] Whether or not I can buy a Ferrari in cash, right, that's not my goal, right?
+[  490.16s ->   491.64s] My goal is to do the thing.
+[  491.64s ->   501.40s] And at the end of the day, if it facilitates that ability, I'm still not going to buy a Ferrari in cash because I want to sit behind this camera and record lectures for you guys.
+[  501.86s ->   507.24s] Fireside chats, quantitative lectures in front of Jupiter, notebooks in front of my iPad, working out math.
+[  507.48s ->   510.46s] That's the thing to prioritize, right?
+[  510.46s ->   523.32s] And I did this for years, for years, sporadically, probably about four or five years before I abandoned everything else.
+[  523.36s ->   524.96s] I said, this is the thing.
+[  525.26s ->   529.32s] This is the thing that I want to do, and I'm going to do it.
+[  529.64s ->   531.74s] And success is just in doing the thing.
+[  532.12s ->   538.74s] And here we are, you know, start of 2025, I think I had 5,000 subscribers over four or five years.
+[  538.74s ->   543.43s] There's 82,000 subscribers.
+[  543.93s ->   546.30s] That's, that's wild.
+[  547.04s ->   547.94s] That's wild.
+[  549.70s ->   550.18s] Wow.
+[  550.68s ->   551.94s] Just from doing the thing.
+[  553.19s ->   554.51s] Just from doing the thing.
+[  555.69s ->   570.03s] Accepting ephemeral, accepting the ephemeral consequences of dedicating yourself to the thing, whatever that looks like in a financial capacity, so on and so forth, to do the thing and prioritize excellence in the thing.
+[  570.03s ->   572.73s] And we're just getting started.
+[  573.41s ->   577.93s] So, like I said, I hope this provides meaningful perspective.
+[  578.53s ->   581.05s] The reason that you want a Ferrari is why you don't have one.
+[  582.33s ->   583.63s] Prioritize the thing.
+[  583.63s ->   587.47s] So, I'll stop.

@@ -1,0 +1,183 @@
+[    0.57s ->     5.01s] Hey guys, welcome to our three-part Optus Trading Masterclass and in today's lesson,
+[    5.09s ->     9.89s] if you stick with me, I'm going to show you exactly how to turn the 1-1-2 trade into a
+[    9.89s ->    14.31s] job replacing income, meaning that if you stay focused, you will learn exactly how to put on
+[   14.31s ->    19.57s] this trade, how to structure this trade, what it means, what it does, how to handle it when the
+[   19.57s ->    24.05s] market's going up, down, if it's at all-time highs like it is right now, you will know everything
+[   24.05s ->    29.37s] you need to know to turn this trade into an amount of money that should replace your 9-5 income.
+[   29.37s ->    34.29s] So let's dive into it. Here is my outline for today's lesson. We're going to go over the
+[   34.29s ->    39.29s] strategy step-by-step. I'm going to show you a back test to prove that this works and also shows
+[   39.29s ->    44.59s] you most importantly where this strategy fails because a lot of people do not show you that,
+[   44.85s ->    48.55s] but I'm going to show you where this fails so that you can know how to protect yourself against that
+[   48.55s ->    52.31s] time. Next, I'm going to show you a real trade example so you can see, okay, how do I put this
+[   52.31s ->    56.81s] trade on and everything like that so it makes more sense. I'm going to show you how to handle this
+[   56.81s ->    61.53s] trade when we're in a bullish market, when we're in a bearish market, and when we're at all-time
+[   61.53s ->    66.69s] highs like we are at in this market right now so that you can know how to respond to the market in
+[   66.69s ->    71.93s] our given situation. Next and last, you're going to learn how to automate it so that you can stop
+[   71.93s ->    75.77s] staring at the screen all day and have time with your family, your kids, your hobbies, focusing at
+[   75.77s ->    80.01s] work and not being distracted or worried that the market's going to crash and you won't be able to
+[   80.01s ->    84.63s] get out in time. So if you stay until the end of this video, not only will you master this strategy,
+[   84.63s ->    91.51s] but you'll also get my free 112 strategy PDF guide. You'll also get my when to trade what strategy
+[   91.51s ->    96.21s] guide, which will show you, hey, if the market is here, trade these types of strategies, and you'll
+[   96.21s ->   101.15s] also get free access to my private community. So if you want all those things and you want to master
+[  101.15s ->   105.99s] this trade and turn it into weekly or monthly income, then watch this. So let's dive right in.
+[  105.99s ->   112.39s] So a 112 trade makes money when the market stays above a certain level. What we do is we look at
+[  112.39s ->   118.07s] the market, this being the S&P 500, and we go, hmm, this is very far away from where the stock is.
+[  118.31s ->   123.93s] If we draw out a percentage factor, we're around, the market has to draw 12% before we get to this
+[  123.93s ->   128.51s] level. So it's a very safe level. We pick this level and we structure a trade around it. So that
+[  128.51s ->   133.81s] as long as the stock stays above this level, if it goes up, sideways, or down, as long as it stays
+[  133.81s ->   140.31s] above this level, we end up making money, upwards of $1,000 of profit per trade. So I want to show
+[  140.31s ->   144.99s] you how this works and how it's structured. But first, I wanted to show you the high overview of
+[  144.99s ->   149.95s] how this works. We're just picking a level far away from the stock. And as long as the stock does
+[  149.95s ->   154.73s] not get to that level, we will make money. And so here's what the back test on that looks like.
+[  154.77s ->   160.27s] Let me make my face a bit smaller. You can see here that if we put on this trade twice a week,
+[  160.27s ->   167.83s] we'll end up making $1.3 million in trading profits. That's right, $1.3 million in trading
+[  167.83s ->   173.25s] profits. And again, not only is the back test saying this, but you can see people like myself,
+[  173.45s ->   178.21s] like Tom King, like Sweet Bobby, like Joseph Puckett, other traders like that on YouTube,
+[  178.21s ->   183.59s] who are doing this exact same thing to generate monthly income. And I can tell you without a doubt,
+[  183.93s ->   189.25s] this is my favorite strategy. And it's generated me the most month so far this year,
+[  189.25s ->   194.23s] as well as almost on all my trading combined because of how wonderful it is.
+[  194.89s ->   199.73s] So this is the back test. And you can see here, there are parts in the market where it fails. Now,
+[  199.77s ->   204.51s] we need to ask, where is this failing so that we can prevent against it so we're not stuck in this
+[  204.51s ->   210.19s] market? Well, you can see here, right here at the beginning of 2018, the market crashed and the
+[  210.19s ->   215.45s] strategy had a quick pullback. Next, the market pulled back here in late 2018 and it pulled back as
+[  215.45s ->   222.71s] well. Then the market in 2020, as we can guess, what happened there, the market really pulled back,
+[  222.81s ->   228.47s] but still ended up generating $1.3 million in profit. So imagine what would have happened if
+[  228.47s ->   232.93s] we would have stayed out of these crash periods. Not only would we have better understanding and
+[  232.93s ->   238.09s] better emotions, but we'd also be able to make more. So how do we get out of the market during those
+[  238.09s ->   243.37s] phases? So the way that we stay out of the market during those phases, as we go to the indicator
+[  243.37s ->   249.63s] section of whatever charting platform we're using, we type in Bollinger Bands. So Bollinger Bands
+[  249.63s ->   254.93s] like this. We add it to our chart. We go into settings and make some adjustments. The length will
+[  254.93s ->   263.85s] be 200. The standard deviation will be 2.1. That's what I like to use. Next, just like that. And so what
+[  263.85s ->   270.53s] we can see here, every time a stock breaks to the upside and then comes back down, we need to get out
+[  270.53s ->   276.17s] of that trade. So you can see here, here's an example where we broke out of it. We went up and
+[  276.17s ->   280.83s] then as soon as we broke back down through it, we get out of the trade because a downtrend or crash is
+[  280.83s ->   285.75s] likely. Right here, we're still in trades because it hasn't come back down and crashed back through it
+[  285.75s ->   291.73s] yet. So this is still a good level. But again, you can see here, it did this here in 2020. It broke
+[  291.73s ->   296.53s] above and when it broke back through, that's when we get our long positions and it would have saved us
+[  296.53s ->   300.93s] from this massive crash. It would have saved us from this beginning downtrend. It would have saved
+[  300.93s ->   306.25s] us from here. All those points in the back test where this strategy would have underperformed,
+[  306.41s ->   311.67s] we are now able to get out if we use this Bollinger Band and we use the strategy where as long as it
+[  311.67s ->   316.17s] breaks above and then comes back through, we get out of all our long positions. That's how we save
+[  316.17s ->   322.17s] ourselves. So now that we know how the strategy performs, what the amount of money it makes, how we
+[  322.17s ->   327.23s] can stay out of the worst parts, let's talk about structuring this trade. So this is the strategy
+[  327.23s ->   332.75s] guide that you will get at the end of this video, but it is a 90 DTE ES trade, which means that we go
+[  332.75s ->   339.77s] 90 days into the future and we put on this trade, we can do it on futures, ES, MES, depending on your
+[  339.77s ->   346.15s] account size. We'll sell two short puts, we'll put on a put debit spread, we'll hold the trade until
+[  346.15s ->   352.21s] 90% profit, which is typically around a $1,000 profit. And we'll do a stop loss of four X,
+[  352.25s ->   359.19s] which is roughly a $4,000 loss. So now we have a win rate of in the 95% plus where we're going to
+[  359.19s ->   365.15s] make a thousand dollars or we are going to lose 4,000. But if we use our strategy to stay out of
+[  365.15s ->   369.91s] the market during crashes, like I just showed you, we are never, or never, it's just wrong,
+[  370.01s ->   376.05s] we're not never, but we're very hardly ever going to hit those stop loss levels because of how
+[  376.05s ->   380.97s] safe and consistent this approach is. And so again, crashes can still happen that we can't
+[  380.97s ->   386.87s] predict that we don't know about, but, um, the ones that we can do, we can help offset losses a lot.
+[  387.01s ->   391.87s] So that is the trading plan. You put it on once or twice a week. And then again,
+[  391.87s ->   395.79s] you hold until max profit or stop loss. So let's structure a live trade together.
+[  396.25s ->   401.21s] So as you can see here, all my current trades are one, one, two trades, and I'm up $1,800,
+[  401.21s ->   407.59s] $600 on this one, 700 on this one, 500 on this one that I actually just placed less than two weeks
+[  407.59s ->   411.65s] ago. So that's how amazing this trade is. Now let's go into structuring it. So I'm going to go
+[  411.65s ->   416.65s] on the trade tab trade table. Like I said, we're going 90 days out. So we're going to go 90 days
+[  416.65s ->   421.87s] out. So find the days of the strike price. It's closest to 90. So you have 95 here. That's going
+[  421.87s ->   427.45s] to be the closest. We're going to click into this level. Then we're going to sell the seven Delta
+[  427.45s ->   432.13s] puts. So we're going to scroll on here with Delta. If you don't see Delta, just click here and change
+[  432.13s ->   437.59s] the column. So I'm going to change it to Delta seven Delta. Click here, click on it twice and sell
+[  437.59s ->   445.31s] two. Now I'm selling two puts at seven. This is the 4,400 level. This means that the market can drop
+[  445.31s ->   453.53s] almost 800 points and I'll still make money. That's a huge drop. That's over a 10% drop and I'll still
+[  453.53s ->   458.25s] make money on this trade. It's actually almost a 20% drop. So again, you can see here that the
+[  458.25s ->   462.63s] market can drop a lot and I'll still make money. This is the level where I will start losing. Like
+[  462.63s ->   468.74s] I mentioned before, as long as the stock stays above a certain level, I make money. This is our
+[  468.74s ->   475.30s] level, the 4,400 level. You can see here when I place this trade, they're going to give me $1,600.
+[  475.86s ->   481.98s] This means that I make $1,600 by putting this trade on. Now I'm not going to keep all this money
+[  481.98s ->   486.08s] because I'm going to use some of the money they give me to put on a put debit spread.
+[  486.18s ->   489.36s] So you can see here the put debit spread I'm going to put on. It's going to be, I'm going to buy,
+[  489.48s ->   495.92s] oops, sell by the 25 and then sell the 23. So again, I'll just go to this one. It looks like I
+[  495.92s ->   499.64s] have two selected. So I'm just going to move my quantity down to one. All right. So it's like that
+[  499.64s ->   504.30s] one, one, two, that is where the one, one, two trade comes from. So just like that, I have a put debit
+[  504.30s ->   509.38s] spread. So now I'm giving up about $400 to put this trade on, right? So they were going to give me
+[  509.38s ->   517.76s] 1600, but I'm giving up about 400. So now my max profit is $1,200 for this trade with a 98% win
+[  517.76s ->   523.64s] rate. Do you guys see that? I'm going to make $1,200 with a 98% win rate. And now that we know how to
+[  523.64s ->   529.30s] stay out of the market before it crashes, that basically increases this to almost a hundred
+[  529.30s ->   534.46s] percent. So this is an amazing trade that we can put on. Now, just so that you know, if you're placing
+[  534.46s ->   538.26s] this trade, you cannot place it as one order. I just can't send this trade. If I go review and send
+[  538.26s ->   543.60s] order, it'll say not supported, rejected. And so I can't do that. So I have to go back to edit
+[  543.60s ->   548.20s] order and do each one separately. So again, let me just move this announcement. I have to sell these
+[  548.20s ->   553.20s] two puts as one trade and then come back and enter the put debit spread as my second trade and then
+[  553.20s ->   558.02s] group them together. And this is what it will look like on an actual trade. So now that you know what
+[  558.02s ->   564.22s] this trade looks like, how do we manage this trade in different type of markets when we're in a bullish
+[  564.22s ->   568.10s] market, when we're in a bearish market, and when we're at an all time high, why? Well,
+[  568.10s ->   572.66s] because if you can look at the market right now, it's pretty much skyrocketing to the upside and
+[  572.66s ->   579.04s] many people like Austin, is it safe to enter these one, one, two trades? And here is the plan. You can
+[  579.04s ->   585.46s] see here, we're pushing to new all time highs. And when we do that, the market is optimistic. So when
+[  585.46s ->   591.42s] we're pushing to all time highs, like we are right now, the market is optimistic and we never ever want
+[  591.42s ->   595.90s] to fight the trend. The trend is up. So we will trade with it. So the way that we're doing is we are
+[  595.90s ->   600.40s] entering in a one, one, two trade every single week. And then what we're doing is we're converting
+[  600.40s ->   604.18s] those one, one, twos into hedges. I will teach you more about that at the end of the video. So stay
+[  604.18s ->   609.58s] tuned. But when we convert it into hedges, this means that we get paid to put on protection to
+[  609.58s ->   615.26s] the downside, which means that if the market drops, we can make upwards of $30,000 and we got paid to put
+[  615.26s ->   620.06s] on that trade. And so that's what I love about the one, one, two trade of how versatile it is. So
+[  620.06s ->   627.50s] anyways, yes, you're still entering in one, one, two trades until the market rolls over and breaks
+[  627.50s ->   632.22s] this line. If it comes and rolls over and breaks through this line, then we're going to take our
+[  632.22s ->   636.94s] profits. We're going to close these trades and wait 21 days for the market to reset. Now you do
+[  636.94s ->   642.88s] have to understand the best time to enter one, one, two trades is during red days. So you can see here
+[  642.88s ->   647.58s] the last time we started pushing to do all time highs was here in 2020 when we broke. And then we
+[  647.58s ->   651.98s] started pushing to all time highs. You can see here that the market ripped up to rip up red day,
+[  652.10s ->   656.98s] rip up red day, rip up red day. So as soon as we have those red days, given that we haven't crashed
+[  656.98s ->   661.74s] below our line level, we're going to enter the trades. Those are the best time to enter those
+[  661.74s ->   666.24s] trades. So that is what we're watching. That is what we're looking at all time highs. You can still
+[  666.24s ->   671.02s] put on trades. You just got to be a bit more careful, put on hedges, convert your trades and,
+[  671.02s ->   677.26s] and, uh, and, uh, and the hedges and be aware of the market rolling over. So what happens if the market
+[  677.26s ->   681.92s] is just in a standard, um, uptrend where it's inside this range, but it's trending up, you just
+[  681.92s ->   686.68s] put on a one, one, two, like normal. What happens if the market is in this range, but trending down,
+[  686.68s ->   690.76s] like going down, we're going to do the one, one, two trades like normal, but we're going to try to
+[  690.76s ->   695.80s] do them on the strongest red days. We can when the market has dropped a lot, that's when we want to
+[  695.80s ->   701.94s] enter. Why? Well, because when the market drops a lot, VIX goes up, which allows us a better trade.
+[  702.54s ->   706.76s] Our wind rate, our wind rate goes up and the amount of money that we collect goes up as well.
+[  706.76s ->   711.14s] But again, I'll explain all of this inside my private community, which you get free access
+[  711.14s ->   716.64s] to by watching this video. Now, let me show you how you can automate this trade so that you no
+[  716.64s ->   722.36s] longer have to worry about getting in, getting out, using a stop loss, using a take profit,
+[  722.44s ->   725.90s] no longer have to worry about if the market is going to crash overnight. And while you're sleeping,
+[  725.98s ->   730.44s] you can't get out. It's going to handle all of this for you so that you can spend your time on
+[  730.44s ->   735.68s] the things that matter, like your family, like your work and like your hobbies. You don't need to be
+[  735.68s ->   742.08s] trapped on this screen. You need to be set free and have the ability to make income that your time
+[  742.08s ->   746.54s] isn't attached to. And when you're trading, it still requires your time, your energy and your
+[  746.54s ->   751.72s] stress. So when you set up an auto trader, it can do this for you and generate the same returns that
+[  751.72s ->   756.36s] I showed you as well as follow the rules that I showed you to get out before crashes. It can do
+[  756.36s ->   761.30s] that all for you. So let's let me walk you through how simple it is to create an auto trader of the
+[  761.30s ->   767.28s] 112 strategy. So I click on create a new auto trader and I enter in my tasty trade details.
+[  768.59s ->   774.01s] Once I have connected my account, then I can pick from some default strategies, but I'm going to
+[  774.01s ->   779.57s] create the 112 strategy from scratch. So if you like the Tom King's 112 approach, just click this and
+[  779.57s ->   785.45s] we'll load exactly how he trades it. But I'm going to start my 112 from scratch. So I'm going to do,
+[  785.45s ->   793.51s] like I said, the 2523 put debit spread, and I'm going to sell to seven Delta puts. I'm going to
+[  793.51s ->   797.53s] trade on ES, but I can select from so many different futures that I would like to trade.
+[  797.81s ->   805.27s] I want to enter a trade once a week on Wednesdays, and I want the expiration to be 90 days as we kind
+[  805.27s ->   811.29s] of set it. Next, I like the 90% profit target, and I like a stop loss of 400% like we've shown.
+[  811.29s ->   817.07s] And if I want, I can even have the 112 turned into a hedge for me. So let's just turn it into
+[  817.07s ->   822.11s] a normal PDS hedge. This means that after I reach a 90% profit and make money, it will turn the trade
+[  822.11s ->   827.13s] into a hedge so that if the market drops, I can make thousands of more dollars. So let's save this
+[  827.13s ->   833.81s] strategy. Let's say how much money I want to allocate to this strategy. Let's say $20,000.
+[  834.47s ->   840.45s] Now this is enable market safeguards. Remember how I told you we can avoid market crashes by waiting
+[  840.45s ->   845.99s] for the market to drop back through this measures that if the market drops back through, which means
+[  845.99s ->   852.87s] a crash or a downtrend is likely to start, it will get you out of the market for 21 days and not allow
+[  852.87s ->   857.95s] you to enter in any more positions and close your other one. So we can do that by saying enable that
+[  857.95s ->   864.19s] position. So just like that, I have set up and created an auto trader that will manage all this
+[  864.19s ->   868.31s] for me so that I don't have to be stuck to the screen. I can spend time with my family and still
+[  868.31s ->   873.65s] generate monthly income and provide for them. That is why this is called the I must provide auto trader
+[  873.65s ->   878.87s] because I may be busy, I may be stressed, but this should be generating money for me and my family on
+[  878.87s ->   884.37s] autopilot because that's how I'm a good steward of what I have and a good provider for my family. So just
+[  884.37s ->   888.85s] like that, I'm going to save the auto trader. And so just like that, you can see here, I have another one
+[  888.85s ->   893.79s] like it. And if we look at my dashboard, you can see here that I currently have an auto trader
+[  893.79s ->   900.99s] running with some symbols. So you can see here up $600, up $700, up $500, basically on all these
+[  900.99s ->   906.35s] trades. And that's so amazing guys, I'm able to do this automatically. So again, if you want access
+[  906.35s ->   912.99s] early access to this auto trader that is coming out on Monday, click the link down below. The link down
+[  912.99s ->   919.01s] below will not only give you early access to this auto trader, it will give you access to the 112 strategy
+[  919.01s ->   924.05s] trading guide. So you can learn all the nuances about it. And it will allow you to learn more
+[  924.05s ->   929.07s] about the 112 by being inside a private community, this school community here, when you click the link
+[  929.07s ->   935.03s] down below and join school, you will get the PDF, it will get early access to the auto trader, and you
+[  935.03s ->   940.31s] will get so many courses that will help you as an options trader all for free. That's right, all for
+[  940.31s ->   945.77s] free when you click the link down below and join this free school community. So guys, thank you so much
+[  945.77s ->   950.57s] for watching this video, I hope to see you in part two of this masterclass, where I go into another
+[  950.57s ->   956.85s] strategy that will really help you generate monthly income and kind of get away from that nine to five
+[  956.85s ->   961.73s] or if you're just looking for a way to supplement your income, so you no longer have to be scared of
+[  961.73s ->   968.29s] the next crash next market being fired anything like that. This is the series for you. So anyways, guys, I'm
+[  968.29s ->   973.63s] super excited that the auto trader will be launching on Monday, February 19. So again, if you are
+[  973.63s ->   978.17s] interested in the auto trader, the PDF or anything like that, click the link down below and I will
+[  978.17s ->   979.69s] see you inside the community.

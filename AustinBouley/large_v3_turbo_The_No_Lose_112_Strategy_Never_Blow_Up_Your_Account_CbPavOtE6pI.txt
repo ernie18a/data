@@ -1,0 +1,97 @@
+[    0.00s ->     8.00s] Hey guys, in this video I'm going to cover the no-lose 1-1-2 strategy, and when I mean no-lose, I'm not going to guarantee returns, I just mean you're going to win 99% of the time.
+[    8.06s ->    13.00s] So you're going to virtually have a no-lose strategy, and let me walk you through how this works.
+[   13.28s ->    21.02s] This is something I've been researching and looking into even when I started trading 1-1-2s, but especially this week because of Monday.
+[   21.16s ->    28.62s] Monday, the market dropped a lot, not only that, but VIX spiked up a lot, which increased our buying power usage and kicked us out of a lot of trades.
+[   28.62s ->    31.76s] And so I want to know, how can I prevent this from happening again?
+[   31.90s ->    35.12s] Are there any practices that I could have put in place?
+[   35.16s ->    37.30s] And the truth is, there was and there is.
+[   37.38s ->    42.80s] I thought about this before the market crashed, but again, you never truly understand it until you go through a crash event.
+[   42.92s ->    47.32s] So let's walk through how you can set up a 1-1-2 to almost never lose.
+[   47.94s ->    56.72s] All right, so a 1-1-2 strategy, if you don't know what it is, it's a very great strategy that allows us to take advantage of the market when it's going up and down.
+[   56.72s ->    62.38s] So for instance, we're going to have two short puts that we sell all the way, oops, my bad, trying to draw here.
+[   62.62s ->    65.80s] Two short puts that we're going to have all the way down here or something like that.
+[   65.94s ->    71.08s] We're going to have a put debit spread, and this creates a scenario where if the market goes up, we make money.
+[   71.50s ->    72.44s] So that's kind of the scenario.
+[   72.76s ->    79.06s] If the market slowly goes down into this range, we'll make probably three to four times what we normally make.
+[   79.26s ->    86.00s] And then if we start to break down below our short puts, we'll lose probably three to four times depending on how much it goes down.
+[   86.00s ->    93.68s] So this is a 1-1-2 trade structure, and it's a very reliable trade, except for when VIX spikes to infinity.
+[   94.22s ->    97.42s] And so again, if we look at that, that's where the recent issue has been.
+[   97.82s ->   103.34s] VIX spikes all the way up to roughly $65, $66 in the matter of a single day.
+[  103.60s ->   110.00s] Now, this was because of Japan, but regardless, that is what knocked us out of a lot of our 1-1-2 trades
+[  110.00s ->   115.42s] when the truth is it reset literally the same day and even the next couple days.
+[  115.78s ->   121.30s] And now if you were still holding on to the 1-1-2 you had, you would be up money or almost back to break even.
+[  121.80s ->   130.96s] So for all those who closed out of our positions, yes, we took some risk off the table, but so we would be back to break even.
+[  131.10s ->   132.38s] And so how can we do this?
+[  132.38s ->   135.88s] And so it all comes down to buying power.
+[  136.10s ->   138.12s] A lot of people were over leveraged.
+[  138.30s ->   143.80s] And so again, buying power is our ability to stay in a trade and see it through, right?
+[  143.94s ->   150.34s] If our buying power uses, because we're trading futures, that means buying power goes up as risk goes up, aka as VIX goes up.
+[  150.34s ->   161.30s] And so I saw my personal account, and again, I see trading stats of 1-1-2s of over 150 people, verified results.
+[  161.40s ->   170.04s] And what I saw is that the buying power required in this time went up 100% to 150%.
+[  170.04s ->   175.74s] That means that if you had 50% of your account in a trade, you would have had to close a position.
+[  176.48s ->   178.24s] So what does this mean for you?
+[  178.24s ->   186.82s] This means that the generic 50% rule helps mitigate risk, but it is not a one-size-fits-all approach.
+[  186.92s ->   201.52s] And so this is how I would recommend to look at sizing for 1-1-2s from here on out so that you can stay in those trades and then be back to break even and then make some money on these 1-1-2s instead of having to get stopped out like I did.
+[  201.90s ->   204.02s] So here is the game plan, all right?
+[  204.02s ->   213.00s] So if we're looking at VIX, you can see here it's almost never above 40, and we typically trade here around $10, $10 to $15 when the market is very low.
+[  213.44s ->   215.10s] So here's my game plan, right?
+[  215.14s ->   223.20s] If we're at $10 to $15, what I am going to be looking to do is only be using 25% of my buying power.
+[  223.32s ->   224.12s] Does this make sense?
+[  224.12s ->   228.54s] This is where VIX has the highest likelihood of increasing.
+[  228.92s ->   235.96s] What I mean by if we were trading here and then VIX went up to here, and this is why buying power increased by 100% to 150%.
+[  235.96s ->   242.40s] But if we're only using 25% of our buying power in this zone, we're not going to be affected by that.
+[  242.44s ->   247.46s] If it increases by 100%, well, now we're only using 50% of our account or even 150.
+[  247.58s ->   249.72s] We're only using 75% of our account.
+[  249.80s ->   257.28s] So we can hold through this trade, allow the volatility to reset, and then we'll be good on our 1-1-2s.
+[  257.28s ->   269.50s] So again, you'll make less money doing this, but if you only allocate 25% of your account to 1-1-1-2 trades, when VIX is this low, that's going to help save you a lot of money and allow you to stay in these trades longer.
+[  270.16s ->   275.98s] Now, if we're between 15 and maybe we can go like 30, again, this isn't a solid back-tested number.
+[  276.36s ->   279.48s] We can always go like 15 to 25, a $10 range.
+[  279.70s ->   283.12s] In this range, we could be 50% of our buying power.
+[  283.12s ->   283.48s] Why?
+[  283.76s ->   289.82s] Well, because the future span margin that we use calculates, in fact, is in the risk of the market already.
+[  290.20s ->   299.46s] So if I enter in a position around here, the risk is already built in to the pricing of what I'm doing for that trade.
+[  299.86s ->   305.96s] And so 50%, the likelihood of an increase in here is maybe only a 50% to 100% increase in buying power.
+[  306.04s ->   308.86s] And if I'm only using 50% of my account, well, then I'm good.
+[  308.86s ->   315.08s] And then again, anything above here, you can go up theoretically to 100%, right?
+[  315.16s ->   317.08s] Again, not something that I would recommend.
+[  317.66s ->   326.84s] So we can simply break it down into two levels, which is 50% above $15 or 25% of my account below $15.
+[  327.38s ->   330.58s] So if that's the way we're looking at it, that's how you can create a no-loose strategy.
+[  330.68s ->   336.06s] Now, you may be like, Austin, well, volatility is still an important factor, and I'm going to have stop losses, right?
+[  336.06s ->   339.12s] Well, actually, you can just remove your stop losses.
+[  339.38s ->   340.22s] So why?
+[  340.42s ->   343.80s] Well, again, this is going to knock you out of a lot of crazy events.
+[  344.14s ->   353.74s] So something that you could do is remove a stop loss, so go no stop loss, and instead just hold the trade through, and most of the times you'll be fine.
+[  354.26s ->   359.98s] Or if you really want to have a stop, have a stop at the break of your short strikes.
+[  360.72s ->   363.76s] So short strikes, I'll just do ST for short strikes.
+[  364.04s ->   365.32s] And so what does this look like?
+[  365.32s ->   366.98s] Well, let's go back to SPY here for an example.
+[  367.52s ->   369.84s] Let's say we're trading.
+[  369.94s ->   371.00s] We enter the trade right here.
+[  371.24s ->   372.44s] That put our short put here.
+[  372.76s ->   377.84s] That means that if the market comes down and breaks our short put level, then we exit the trade.
+[  378.16s ->   378.42s] Why?
+[  378.54s ->   386.52s] Because at expiration, we're only going to lose money if our put is below this level, or below our put level.
+[  386.96s ->   392.00s] And so, again, if it breaks our two short puts, that's when we can exit the position.
+[  392.00s ->   398.82s] But if you're just going from a purely no stop loss, you just increase your win rate up to 99%.
+[  398.82s ->   403.52s] Now, the only other risk factor of a 112 is the buying power increase.
+[  403.66s ->   410.18s] And so if you use VIX levels to determine how much buying power you're going to use, this helps you out a ton.
+[  410.18s ->   412.96s] So how do you do the no loss 112 strategy?
+[  413.12s ->   413.74s] Well, here it is.
+[  413.84s ->   415.58s] 112 strategy looks like this.
+[  415.88s ->   421.84s] You're going to buy a 25 delta, and then sell the 23 delta.
+[  421.94s ->   424.22s] This is going to be your put debit spread.
+[  425.02s ->   428.88s] You're going to sell two times seven delta.
+[  428.88s ->   432.06s] This are your short puts, SP for short.
+[  432.72s ->   436.98s] So, again, buy 25 delta, sell 23 delta, sell two of seven delta.
+[  437.40s ->   446.48s] And then, again, how you're going to size in is determined based on where VIX is trading and based on how much buying power allocation you can use.
+[  446.70s ->   451.60s] And then, again, if you don't have much money, you can do MES, which, again, you have to be aware of.
+[  451.60s ->   455.82s] You have all this volatility risk because there's less liquidity there, so you might have issues with that.
+[  456.00s ->   457.22s] Or you can do ES.
+[  457.76s ->   459.16s] And so, again, here are two ways to do it.
+[  459.40s ->   470.64s] If you still want to do this same type of structure but you don't have enough money, you can go on either ES or MES and do a 111 instead, which is going to lower your buying power by about 50%.
+[  471.20s ->   471.96s] All right, guys.
+[  472.08s ->   480.78s] I hope this helps, and I hope this makes sense of how you can structure the 112 based on buying power rules to kind of turn it into a no loss strategy or virtually no loss.
+[  480.78s ->   482.64s] There's nothing guaranteed in the market.
+[  482.92s ->   486.26s] But I hope this video helps and gives some direction on how to allocate your funds.
+[  486.58s ->   486.88s] All right, guys.
+[  486.92s ->   490.66s] If you enjoyed this video, please smash the subscribe button, and I'll see you in the next video.

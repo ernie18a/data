@@ -1,0 +1,214 @@
+[    0.00s ->     4.08s] If you guys have seen my recent videos, you guys know that I've been trading SPY credit spreads
+[    4.08s ->     9.34s] a lot more often recently. Credit spreads are my favorite tools to day trade with
+[    9.34s ->    14.70s] because I have to work a full-time job. It allows me to work around that time restriction where I
+[   14.70s ->    19.14s] have to go in the office at 830. It's just due purely to the fact that instead of needing to
+[   19.14s ->    23.92s] sell my options or my stocks to extract my gains, I can just let them expire, right? And it'd be a
+[   23.92s ->    29.06s] lot more hands-off for them. So today, we're going to take a look at my weekly results and the trades
+[   29.06s ->    35.70s] that I took this week in rapid succession. I took $1,000. I was able to make $810, which is an 81%
+[   35.70s ->    40.26s] profit, which is more than enough to feed my cats. Here are all the trades that I took this week,
+[   40.32s ->    46.60s] as you guys can see on my Thinkorswim platform. I only trade to SPY credit spreads on Monday all
+[   46.60s ->    51.34s] the way to Friday, March 6th through March 10th. The only day I didn't trade was Tuesday, which is
+[   51.34s ->    56.80s] the first day that Jerome Powell spoke to Congress. I don't like trading those super, super volatile
+[   56.80s ->    60.38s] days because it's really hard to find a good entry and the market could reverse just due to
+[   60.38s ->    66.58s] emotional sentiment on every word that Powell says. So on Monday, 407, 408 call credit spreads.
+[   67.00s ->    74.44s] I collected $37 of credit per spread. I traded 10 of these spreads for $370 of credit. I got stopped
+[   74.44s ->    80.90s] at $6 a spread, which means I made $31 per spread with $310 overall on this one trade.
+[   80.90s ->    89.54s] Another one on March 8th was 397, 396 put spreads, 10 of them, $1,000 collateral at $27 a spread. So
+[   89.54s ->    97.64s] credit $270. And I exited them at $15 a spread for a profit of $120. Then on March 9th, I took a 402,
+[   97.64s ->   104.00s] 403 call spread for $24 a spread. And that one was able to expire out of the money for a max profit of
+[  104.00s ->   112.50s] $240. And the last one was on March 10th, a 387, 386 put spread for $25 a spread. And I got stopped
+[  112.50s ->   119.28s] at $11 a spread for a profit of $140. Sum that all up. And it's a pretty solid week, $810 of profit.
+[  119.82s ->   124.20s] Some weeks are better. Some weeks are worse, but this is one of my better weeks. And I wanted to
+[  124.20s ->   127.56s] walk you guys through this week because I trade a lot of different strategies, both on the call
+[  127.56s ->   130.76s] sides and the put side. And I thought it'd be interesting to take a look at it. If you guys are
+[  130.76s ->   136.72s] interested in a tutorial of my system about how I day trade spy credit spreads, make sure you guys
+[  136.72s ->   141.94s] check out this video where I go really in detail about the strategy, how I enter trades, how I stock
+[  141.94s ->   146.84s] myself out with a lot of examples. So let's get to the technicals of it. And I'll walk you guys
+[  146.84s ->   150.60s] through each and every single one of these trades, some in more detail now. Friday, Thursday, Wednesday,
+[  150.78s ->   155.50s] Tuesday, Monday, right? And we're going to look at about why I took the side that it did and what
+[  155.50s ->   159.28s] indicators I'm looking at. This is my normal setup. But for simplicity's sake, we're just going to do it
+[  159.28s ->   164.28s] on one chart and we're going to drop it down accordingly. So we're going to zoom in again here
+[  164.28s ->   169.24s] and we're looking at these five days right here. So we're going to scroll back to Monday. There's
+[  169.24s ->   172.10s] going to be some conflicting information that you're going to have to discern, right? I think
+[  172.10s ->   175.78s] when you guys are trading, you guys see some bear signals, some bullish signals, and you guys
+[  175.78s ->   180.16s] have to kind of decide which one it is that you guys want to take. And so when I look at this, you can
+[  180.16s ->   186.06s] see that there are some bullish trends going in. There is a low to a higher low that formed on
+[  186.06s ->   190.76s] 3.2. And now it's inching up, right? It could potentially form a higher high.
+[  191.28s ->   198.14s] And that's a continuation of the short-term bull trend. Or it can reverse off of this 20-day
+[  198.14s ->   203.48s] moving average, which has historically acted as resistance and supports, right? You can see that
+[  203.48s ->   208.90s] this is a resistance here, resistance, support, right? Resistance, support, support. Overall,
+[  208.90s ->   215.12s] it's in a downtrend, right? The 200-period moving average is down. And so you have the long-term
+[  215.12s ->   220.10s] bear trend. You have a short-term bull trend with a lower high, with a higher low that formed.
+[  220.10s ->   223.94s] And now you're inching into this potential area of resistance. So what do you do here, right?
+[  223.94s ->   229.12s] On this day, you guys know, I took a 407, 408 call credit spread on a bear side. But now I've got to
+[  229.12s ->   234.98s] understand why, why I took that trade. So what I do is I just drop it down to another timeframe. We'll just go to one hour.
+[  234.98s ->   239.62s] We're looking at this one right here. This is Monday, Tuesday, Wednesday, Thursday, Friday.
+[  239.62s ->   244.74s] One thing that I like to note here is that the run-up of RSI is really, really, really hot on
+[  244.74s ->   250.02s] the one hour. RSI is overbought. It's at 77. So that could be an indication that it could reverse.
+[  251.46s ->   256.10s] But you can't just take that as a signal because you see back on Friday of the previous week,
+[  256.74s ->   261.30s] RSI is hot here, but it never reversed, right? It kept going down. And so what we're looking for is,
+[  261.30s ->   265.46s] hey, it could potentially reverse, but we got to look for the criteria of entry, right? If you guys
+[  265.46s ->   270.82s] are long-term viewers, I do this MAC principle, market trend area of interest and criteria of entry.
+[  271.38s ->   274.58s] And so we've entered an area of interest because we're at the 20-day period moving average,
+[  275.30s ->   281.56s] and RSI is really, really hot. And now we're just looking for a criteria of entry to allow us
+[  281.56s ->   284.76s] to enter this trade. So you drop it down to 30 minutes, you can see RSI is definitely going to
+[  284.76s ->   289.76s] be hot here. Definitely. So you can see right here, it's really, really hot. And one thing to also note
+[  289.76s ->   294.24s] that you're really far extended from any moving averages. So theoretically speaking, you should
+[  294.24s ->   299.28s] always retest the moving average to continue the trend. Calls seem very likely, but we're going to
+[  299.28s ->   304.08s] look for an entry for a call side play. And I like to trade on the five and the one. And so I drop it
+[  304.08s ->   309.84s] all the way down to five. And this is, RSI is also, again, really hot here. Makes sense, right?
+[  309.84s ->   314.80s] Because it's hot on the five for one hour. It's hot on the 30. It's running overbought on the five.
+[  314.80s ->   317.84s] And so I'm just looking, looking, looking, waiting. And again, what I'm looking for here,
+[  317.84s ->   323.12s] criteria of entry, is market structure or even candlestick patterns. Market structure indicates like a double top,
+[  323.12s ->   330.24s] higher, a high to a low to a lower high to a lower low, right? Or I'm looking for large body candlesticks,
+[  330.24s ->   334.32s] engulfing candlesticks with large volume, things like that. So I'm looking for those. I'm looking,
+[  334.32s ->   338.16s] I'm looking, I didn't find it. It's not good. I'm looking, I'm looking, nothing here, nothing here,
+[  338.16s ->   345.80s] nothing here. And around 815, around 820, I see this. And this is getting me intrigued, right? I'm like,
+[  345.80s ->   351.24s] okay, this is a large body with good volume. RSI is hot. It was hot. And so, okay, this could be a good
+[  351.24s ->   355.40s] potential, right? And remember, I have to go to work at 830 on this day. So I have to decide whether
+[  355.40s ->   360.84s] or not I want to take this trade. I don't have the luxury of letting this play out, right? At 9 or 915
+[  360.84s ->   365.64s] or 10 o'clock or 11 o'clock. Is this enough of an indicator for me to play? And I see here, this is
+[  365.64s ->   372.92s] a high, right? This is a top. It went down. It hit this thing again, right? And it basically indicated
+[  372.92s ->   377.80s] that this is a double top. Now, what I'm looking for is whether or not it's a double top or an
+[  377.80s ->   381.96s] extending wedge. And so this candlestick for me here, I'm looking for it to break past this low
+[  381.96s ->   387.54s] on this area. And on this next candlestick around 825, it did. Okay. And so for me,
+[  387.54s ->   392.18s] that's good enough. I don't, I have, I go to work at 830. So I have to leave. And so on this
+[  392.18s ->   398.02s] candlestick right here, I'm like, we're going in. And so I took this 407, 408 trade, basically at the
+[  398.02s ->   404.74s] money, which is great because it's $37 of credit. And so I went to work because I can't actively manage
+[  404.74s ->   410.26s] it. I set my stop loss at a hundred percent of my loss. But if I were able to manage a little
+[  410.26s ->   416.90s] better, what I would do is I would set it as this level at 407.42 plus one ATR, which is 0.45. So
+[  416.90s ->   420.98s] I set it at 408. So whenever it passes 408, I would, I would, I would get stopped out because I'm
+[  420.98s ->   425.14s] basically trading, I'm trading this double top here. Okay. And essentially what happens is you can
+[  425.14s ->   430.90s] see as the day went on, it sold off. And then every time I have a chance to, I move my stop loss up
+[  430.90s ->   434.34s] accordingly. Uh, make sure you guys check that video out. If you guys have, if you guys haven't
+[  434.34s ->   439.06s] seen it, but basically when it hits 50%, I set it to break even when it's 25%, I set it to 50,
+[  439.06s ->   445.78s] et cetera, et cetera. And I love 15, I guess a rebound here. And so at 405.36, I got stopped at
+[  445.78s ->   451.59s] at $6, uh, which is fine. Okay. So that's, that's Monday. You can see, you can see the logic there,
+[  451.59s ->   455.75s] right? I'm looking for a trend. I'm looking for an area and I'm looking for entries of criteria,
+[  455.75s ->   461.35s] which I found with this market structure, this break of market structure passes lower low. So if you guys
+[  461.35s ->   465.35s] like in-depth details like this, where I show you guys not only the trade, but the rationale and how
+[  465.35s ->   469.11s] I took these trades, make sure you guys, the channel, uh, so that you guys can see more of
+[  469.11s ->   472.31s] these concepts. I'm trying to provide you guys with as much of my thought process as possible.
+[  472.31s ->   476.15s] Make sure you guys subscribe, really help the channel a lot. This is Monday, Tuesday, and Wednesday.
+[  476.15s ->   481.03s] We didn't trade Tuesday. Wednesday is the day we trade. And now the situation has kind of changed.
+[  481.03s ->   485.67s] This is a very classic pattern, low to a high to a large low, right? And this shape,
+[  485.67s ->   490.71s] just remember it. It's a very common pattern. So now what that tells me here is that the market,
+[  490.71s ->   496.15s] at least in the short term is selling off. Okay. So when Wednesday opens, I can either,
+[  496.15s ->   499.91s] if I do trade on a bullish position, I probably have to be really, really quick,
+[  499.91s ->   503.19s] which means that I get in and out. If I'm trading the bear side, I can probably sit in the trade a
+[  503.19s ->   507.43s] little longer. Okay. And so we'll drop it down to one hour and Friday, Thursday, Wednesday. So
+[  507.43s ->   513.43s] looking right here, Tuesday, large sell off. Wednesday's right around here. But as opposed to
+[  513.43s ->   518.23s] Monday where it was RSI's running hot, RSI's cooled off significantly, right? On Wednesday,
+[  518.23s ->   524.47s] you're looking at RSI of like 40, as opposed to 70 something, or maybe a bullside play because RSI
+[  524.47s ->   528.47s] is running pretty cool, but we have to wait for an area for us to retest. But right now,
+[  528.47s ->   531.83s] there's no good areas, at least in my opinion, on the one hour, maybe there's 20 period moving
+[  531.83s ->   536.47s] average here or 50 period moving average apologies. But that's not that we don't know that yet.
+[  536.47s ->   544.84s] I'm looking for an area to trade in. And so, and so we're going to look at Wednesday and not that
+[  544.84s ->   549.80s] much. In that case, what I do is I drop it down to the one minute. And one minute is usually not
+[  549.80s ->   553.96s] my favorite time frame to trade at because one minute is, there's not much volume on the one
+[  553.96s ->   560.12s] minute. So usually the trends that hold don't hold too much. You can see that on the one minute,
+[  560.12s ->   564.92s] when it opens, the day shot up, we'll zoom in a little bit. So you opened up, went down,
+[  565.72s ->   569.56s] went up, it went down and went up. Again, you can see this 200 period moving average,
+[  569.56s ->   573.48s] 200 minute moving average, I guess, here is acting as resistance. It goes all the way down.
+[  574.44s ->   579.96s] And then a large buying on that, on that candlestick. So you can see a lot of buying power
+[  580.60s ->   586.60s] at 397, right? You can see this is a large engulfing candlestick, but also a large selling
+[  586.60s ->   592.53s] at 398. And correlate that to the five minute right here, zoom in again. And you can see this
+[  592.53s ->   595.89s] candlestick right here, because this 50 period moving average on the five basically is the 200
+[  595.89s ->   600.29s] period moving average on the one. You can see that kind of correlating. So around this time, I'm
+[  600.29s ->   604.21s] looking, I'm looking, I'm looking, I'm looking. And what I'm looking for again is a break of market
+[  604.21s ->   608.93s] structure. There's a low to a high, right? You can see this high is the same as previous, this high,
+[  608.93s ->   613.65s] high, high. And then it looked up and I'm like, okay, well, is this going to be a double top or is
+[  613.65s ->   618.37s] it going to be an ascending wedge? Or is this a fake out? I'm looking, I'm looking, I'm looking.
+[  618.37s ->   623.81s] And if it went down and boom, right around this time, I'm looking at him. I'm really interested
+[  623.81s ->   630.98s] now because it's entering an area where it could form a higher low. You can see there's a large
+[  630.98s ->   635.78s] volume here around this area and it's pushing it up. It comes back down. And if it forms a higher
+[  635.78s ->   640.34s] low than this area, then I'm good to go. So I'm interested, interested, interested. It looks like
+[  640.34s ->   647.38s] I can trade the 397, right? And so I entered right around here, right around 7, 720 is when I entered.
+[  647.38s ->   652.10s] I probably entered a little bit too early in all honesty, formed a lower low and it started
+[  652.10s ->   656.90s] shooting up. And you can see the reason why, right? It formed a low to high to a lower low.
+[  657.54s ->   660.90s] And now it seems like it's an ascending wedge, right? It's wedging into this area.
+[  662.18s ->   668.26s] You can also tell why I said it at 397 and not any other number because 397 is the low of the day.
+[  669.22s ->   673.46s] And there's a large buying power off of 397. I know that for a fact. And so instead of being really
+[  673.46s ->   677.78s] aggressive at 398, because I don't exactly know if this is going to hold, I went to 397.
+[  677.78s ->   681.22s] And the day played out, went up, I went up. Remember, I go to work around 830.
+[  681.78s ->   685.94s] It's going up, right? High to a low to a higher high to a low. It broke this top. I'm like, great.
+[  686.34s ->   691.38s] It wedged up and it broke it, right? But all of a sudden, you're looking at it at all times and
+[  691.38s ->   696.10s] you're like, hey, wait, what I would expect this to do is that it would test this area again,
+[  696.66s ->   701.14s] and then it would bounce up this way. You see where my cursor is? It would bounce up. But it didn't.
+[  701.14s ->   705.54s] It broke right down. And I'm like, this is weaker than I expected, right? And like I said,
+[  705.54s ->   709.86s] because that U-shape, that reversal pattern that we talked about, if I wanted to trade bull,
+[  709.86s ->   714.10s] I would have to be really, really quick. An exit that I wanted to take was around this 200 period
+[  714.10s ->   718.18s] moving average on the five, but it never hit it, right? And so if you go back down to the one,
+[  718.82s ->   723.38s] you can see that it's quite weak. And so now I'm looking, I'm trying to get out. I'm trying to get
+[  723.38s ->   726.10s] out. I'm trying to get out. I'm like, this is not what I'm looking for. I didn't sign up for this.
+[  726.10s ->   730.74s] Again, I go to work around 830. And so right around here, 825, I remember. It's going up.
+[  730.74s ->   736.42s] I'm like, okay, maybe as it goes up, it might form again, a higher high, or maybe into this 399
+[  736.42s ->   741.22s] levels. I'm looking at selling off at 399.6. But then it started getting really weak again. ATR is
+[  741.22s ->   745.22s] getting lower. And it doesn't seem like there's a lot of buying power. There's not a lot of volume.
+[  745.22s ->   748.42s] If you look at all the red candlesticks, all the red candlesticks has larger volume. And so it's just
+[  748.42s ->   755.01s] like not looking very good. So at 825, as it enters this area again, on one of these green candlesticks,
+[  755.01s ->   758.53s] I'm like, I'm just, I'm just going to get out. I sold it for a debit of 15. And so I made a,
+[  758.53s ->   762.85s] I made $12 on the trade. And if you look at, if you look at the reasoning, why, right? Because the
+[  762.85s ->   768.42s] market just looks really, really weak. You'll see this very, very obvious on the five. It goes up,
+[  768.42s ->   773.30s] it goes down from the lower high, but then it failed to form a higher high. It didn't form this thing.
+[  773.30s ->   778.74s] And so around 825, you can see it's struggling to get up there, struggling and struggling. And so I
+[  778.74s ->   782.66s] decided that I was just going to cut and take my profit. I wasn't just, I wasn't going to gamble.
+[  782.66s ->   787.38s] So I ate 25 on this candlestick. I'm like, I'm out. It's fine. I made $12 per spread. Good
+[  787.38s ->   791.54s] enough. And as you can see, like it went up, it went all the way back up to this level again. Like
+[  791.54s ->   799.06s] I, like I was hypothesizing and then it just sold off in the day. It ended the day at 397.27, right?
+[  799.06s ->   803.14s] Which means I would have, I would have made max profit if I had not sold out, but you never know
+[  803.14s ->   807.30s] what's going to happen. We'll keep talking about Thursday and Friday real quickly. Thursdays,
+[  807.30s ->   812.50s] I traded 402, 403 calls. Mainly again, if you look at market structure, it went up, it went down,
+[  812.50s ->   816.18s] it went up, double top, similar pattern, right? We won't talk too much about this. And essentially
+[  816.74s ->   821.70s] just rolled it all the way down. Super easy. Like if I was, if I was, I wish I can trade more
+[  821.70s ->   825.70s] actively. I wish I didn't have to work, but you can see there's a lot of entries here. You can enter
+[  825.70s ->   831.30s] right here for another, to upsize your position, you can upsize here. There's a lot of upsize potential,
+[  831.30s ->   835.94s] especially in these three areas right here. Once that 20 period moving average crosses the 50 period
+[  835.94s ->   839.54s] moving average. That's a great signal for you to enter again at 930. But again,
+[  839.54s ->   843.86s] I don't have the time. So I took that trade and I set my stop limits and just went all the way down.
+[  843.86s ->   847.94s] Super easy to trade. And then the last day, I think on Friday is probably the most interesting
+[  847.94s ->   854.26s] one. We'll just go down to Friday. It went up. RSI is really cold, oversold on close of Thursday.
+[  854.26s ->   858.26s] So I'm like, maybe, Hey, we can trade on, trade on the bull side. Again, if I'm trading on bull side,
+[  858.26s ->   863.44s] I got to be quick because the trend is down, right? If you, if again, remember Monday,
+[  863.44s ->   868.00s] Tuesday, Wednesday, Thursday, large sell-off on Friday, right? So trend is down. You're now
+[  868.00s ->   872.24s] forming a lower low. You've broken past this. And so highly likely that the downtrend continues
+[  872.24s ->   875.52s] because the sell-off is going to continue. And so on Friday, this is Friday, obviously,
+[  875.52s ->   878.56s] you didn't know Friday is going to happen, but you're thinking here on Thursday, it probably will
+[  878.56s ->   884.24s] go down. And so you go back to the five, because I was trading on the five. You go here, you're looking
+[  884.24s ->   890.48s] at it. And so we'll just scroll here. We came back down low, high up into this area, came back down,
+[  890.48s ->   895.60s] formed a lower high, right? And on this candlestick right here, because it formed as a wick. If you
+[  895.60s ->   899.92s] compare the wick here, the high of the wick and the low of the wick are higher than the previous wick.
+[  899.92s ->   905.92s] Again, I have to be quick because the 220 period moving average is acting as resistance. Ideally
+[  905.92s ->   909.12s] speaking, I probably could have been a little bit more patient. I was, I thought this was a good entry.
+[  909.12s ->   914.08s] So I waited till 725. I'm like, okay, it looks seem like it'll form a lower low here. And then again,
+[  914.08s ->   918.56s] I'm really cautious, right? I set my stop limit here, stop loss, my exit strategy right below that,
+[  918.56s ->   922.40s] one ATR below that. So basically around 387. If I ever formed a lower low, I'm out.
+[  923.12s ->   926.40s] And so essentially, because I don't want this to form this, right? You can see the pattern here,
+[  926.40s ->   930.96s] a line here, and a downward trend here. That's not what I'm looking for. And so it went up,
+[  930.96s ->   935.04s] it went down. I'm really active here. I don't want to break this level, because this looks like a
+[  935.04s ->   941.84s] descending wedge. And then all of a sudden, right, at 755, it went up. It went up, it went up, it went up.
+[  941.84s ->   944.56s] And so I started moving my stop losses, stop loss. It looked like it was doing really,
+[  944.56s ->   948.48s] really well, looking like it was doing really well. And then so my stop loss, because I'm trading more actively,
+[  948.88s ->   952.48s] at this point, I'm like, okay, as long as if it breaks ever breaks my 20 period moving average
+[  952.48s ->   957.04s] right here on the five, I'm out, I'm just going to get out of it, right? And as essentially what I
+[  957.04s ->   960.96s] tried to do, I set my stop limit at $11 as I continue to move up more actively. And I never,
+[  960.96s ->   966.08s] I never deviated. So I went to work at 830 again. And boom, within a couple that that trailing 20
+[  966.08s ->   972.08s] period moving average, because I'm trading bull into a bear momentum, I have to be quick. So I don't care
+[  972.08s ->   976.56s] how much profit I make, as long as I make profit. The idea there was, if the day was fast enough,
+[  976.56s ->   980.88s] I could maybe be trade two times in a day, because ultimate goal is I want to trade bear,
+[  980.88s ->   983.60s] because the trend is down, right? I'm just letting the market reset a little bit.
+[  984.24s ->   988.40s] But I didn't get there. And so theoretically, right, I got stopped out here. I mean, I made,
+[  988.40s ->   994.00s] I got stopped at $11. I made $14 for spread $140 on that day. But theoretically, what I would be
+[  994.00s ->   998.48s] looking to do is once a break of structure, I will be looking for a retest. And then most of
+[  998.48s ->  1002.08s] rates, maybe you can trade here, you can even trade here. And once I retested it,
+[ 1002.08s ->  1006.48s] you can just write it all the way down. But you can see, I traded in all different ways.
+[ 1006.48s ->  1010.00s] The principle remains the same. M-A-C, right? What's a trend? What's an area of interest?
+[ 1010.00s ->  1013.60s] And then what is a criteria of entry, right? A lot of times I trade candlesticks. And more
+[ 1013.60s ->  1017.36s] often than not, I trade market structure. What is the, what is the structure that I'm looking at?
+[ 1017.36s ->  1021.76s] Because it tells me a lot about the market, psychologically speaking. You can see the
+[ 1021.76s ->  1026.64s] rationale behind all four trades, but you can kind of understand my mindset, what I'm looking for,
+[ 1026.64s ->  1031.04s] how I decided to trade and why I decided to exit. Knowing what I'm trading, knowing what can cause
+[ 1031.04s ->  1035.04s] me to lose money. If you guys like this content, please do like and subscribe. If you have any
+[ 1035.04s ->  1038.64s] questions, please do comment down in the comments below. Stay safe in the market. The market is
+[ 1038.64s ->  1041.44s] crazy, especially with the bank run that's happening recently. Stay safe in the market.
+[ 1041.44s ->  1043.44s] Until next time. Peace.

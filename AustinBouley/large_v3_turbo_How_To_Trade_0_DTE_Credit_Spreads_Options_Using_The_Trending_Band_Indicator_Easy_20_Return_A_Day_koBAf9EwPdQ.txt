@@ -1,0 +1,59 @@
+[    0.11s ->     4.85s] Hey guys, what's up? I want to show you how to trade zero DTE credit spreads using the
+[    4.85s ->     9.19s] trending band indicator, which is using trend following. So again, guys, it's quite simple.
+[    9.29s ->    14.07s] Actually, all you need to do is pull up your favorite ETF. I prefer it's a highly liquid
+[   14.07s ->    19.87s] ETF, meaning that you should be looking at SPY, you should be looking at QQQ, you should
+[   19.87s ->    26.35s] be looking at DIA, IWM, TLT, maybe even things that are more liquid in the stock world like
+[   26.35s ->    34.29s] Apple, Microsoft, Amazon, a very liquid underlying a very liquid stock or ETF to trade. The more
+[   34.29s ->    39.33s] liquid it is, the better the strategy will work. What you want to do is you want to pull up the
+[   39.33s ->    42.91s] chart and you want to go to a one minute chart because again, we're going to be day trading
+[   42.91s ->    47.79s] these zero DTE options. What you want to do is you simply want to pull up this chart. Again,
+[   47.79s ->    53.33s] this is the trending band indicator. This is an indicator that I custom built. But if you don't
+[   53.33s ->    56.89s] have access to it, again, I'm going to link below in the description a way that you can add it to
+[   56.89s ->    62.59s] your trading view chart. But again, if you don't have it, you can simply recreate it by going into
+[   62.59s ->    67.25s] the Bollinger band settings. So coming onto your indicators and doing the Bollinger bands. So
+[   67.25s ->    70.89s] Bollinger bands like that. And then you need to make some adjustments. What you need to do is you
+[   70.89s ->    75.63s] need to come in here into settings. Again, this isn't the exact same of what I do. But again,
+[   75.63s ->    80.25s] it's going to be very close. Let's see if I can get it to pull up. Okay, let me refresh the screen.
+[   80.25s ->    85.59s] Trading view sometimes doesn't like me. All right, here we go. Yeah, it didn't even load up. Okay,
+[   85.67s ->    92.52s] Bollinger bands. Load this up. Let's hide this for now. Pull up the study. Okay, we're going to go
+[   92.52s ->    98.95s] to a length of 200. We're going to go to a standard deviation of one. Just like that. Now we have a
+[   98.95s ->   106.47s] rough approximation of what I had. Now again, what I had is based on historical volatility. This one is
+[  106.47s ->   111.55s] based on market movement. So again, two different things. But this is a rough approximation. It's just
+[  111.55s ->   116.31s] the Bollinger bands, the 200 period with the one standard deviation. I'm going to remove this
+[  116.31s ->   121.95s] though, and show you it with this. All right, so here we go. So this is the the 208 moving average,
+[  121.95s ->   127.03s] right? And then you have the one standard deviations. And then I've also added the minus four
+[  127.03s ->   131.99s] and the plus three standard deviations to show range. Anyways, enough about the indicator,
+[  132.11s ->   137.25s] how do we use it to profit on zero DTE credit spreads? So again, you come in here and you look at
+[  137.25s ->   141.71s] the chart when it's in the middle, you want to do nothing when it's in the gray line when it's in
+[  141.71s ->   146.51s] between the one standard deviation, the minus and plus one, then again, you want to do nothing when
+[  146.51s ->   152.03s] it breaks below, what you want to do is you want to put on a call credit spread. That means that
+[  152.03s ->   157.55s] you're making money to the downside when it breaks below this, this red line. If you can, you want to
+[  157.55s ->   163.47s] have a call credit spread with a strike price at this green line, wherever that is. But if you can't
+[  163.47s ->   168.03s] collect enough credit, then again, you should do it where this gray, where this gray line is. And
+[  168.03s ->   171.63s] that should be your plan. Again, when you're looking at this, the plan for the call credit
+[  171.63s ->   177.09s] spreads, or the downside move is waiting for a break below this red line, and then covering when
+[  177.09s ->   181.97s] it hits this bottom yellow line, or when it breaks back above either way, but your ideal target is this
+[  181.97s ->   187.81s] yellow line. Now, our reasons for put credit spreads are making money to the upside is when a stock
+[  187.81s ->   194.63s] balances at this yellow line and comes back up. That is one buy entry level. The next buy entry
+[  194.63s ->   199.51s] level is above the screen line. We buy above the screen line or sell a put credit spread above the
+[  199.51s ->   204.17s] screen line and hope to profit around the top yellow. So you can see here, we would have had a call
+[  204.17s ->   211.55s] credit spread, collected the profit here, entered a put credit spread and traded it up, and then
+[  211.55s ->   215.55s] entered another call credit spread and traded it down. And then when it starts closing above this
+[  215.55s ->   220.17s] yellow line, we'll put on a put credit spread and then trade that back up. So that's how you use
+[  220.17s ->   223.81s] it. The same thing here, you can see here, it crossed down below, covered here, came back up,
+[  223.87s ->   228.29s] crossed down below, covered here, crossed back up, covered down, and you can trade the call credit
+[  228.29s ->   232.79s] spread over and over and over on a day like this. Now, again, these are days that trend very well.
+[  232.87s ->   237.05s] You also have very choppy days, but you can see here, you put on a put credit spread, you close it
+[  237.05s ->   241.65s] right here, put credit spread, close it right here. You can see here that again, this will not work
+[  241.65s ->   246.57s] all the time, especially on super choppy days like this, where the market goes up and down and
+[  246.57s ->   250.27s] up and down and up and down, it may be a little harder, because this requires a lot of active
+[  250.27s ->   256.85s] management. But this is a very viable strategy that you can use for trading zero DTE credit spreads.
+[  257.15s ->   261.05s] So again, if you want to learn or actually implement this for yourself, click the link in
+[  261.05s ->   265.71s] the description below, get access to this trending band indicator and start trading it for zero DTE
+[  265.71s ->   270.77s] credit spreads. Again, your goal should be to collect a third of the width. So again, if you're putting
+[  270.77s ->   275.63s] on a credit spread, that is one width, which is a $1 wide width, collect at least 30 cents
+[  275.63s ->   280.41s] of credit. And once you collect that those 30 cents of credit, you should have the movement
+[  280.41s ->   285.55s] and in your favor and you stop losses to be able to profit. Now remember, your losses are
+[  285.55s ->   290.39s] going to be greater than your wins, but you should be able to win way more when using this
+[  290.39s ->   294.29s] approach. All right, guys, if you enjoyed this video, smash that thumbs up button, smash
+[  294.29s ->   297.65s] the subscribe button, and I'll see you in the future with other credit spread videos.

@@ -1,0 +1,152 @@
+[    0.46s ->    10.04s] I can show you two trading strategies with the exact same Sharpe ratio, but one will make you
+[   10.04s ->    17.36s] a millionaire and the other will get you fired. Most people think that the Sharpe ratio is just
+[   17.36s ->    26.22s] a measure of return per unit of risk. It isn't. It is a lossy compression of path information that
+[   26.22s ->    35.68s] may not even have any use, depending on how the path in question was constructed. In this video,
+[   35.92s ->    43.84s] we're going to deconstruct and understand the Sharpe ratio as a quant. And after watching,
+[   44.00s ->    50.16s] if you're still trading or making investment decisions with a single number, you aren't a
+[   50.16s ->    57.68s] quant or even a trader. You are a gambler that likes to justify your decisions with bad math.
+[   58.00s ->    65.42s] Let's get started by first taking a look at the paths you didn't walk. Whenever we use statistics
+[   65.42s ->    70.96s] to analyze a trading strategy or a portfolio, you can think of something like the mean average or
+[   70.96s ->    78.20s] expected return and the variance that is the expected square deviations about that mean return.
+[   78.20s ->    85.98s] We are observing properties of a path. Let's take a look at an animation to see what I mean
+[   85.98s ->    91.70s] by this. You're going to see two sample paths highlighted here on the left. You see one with
+[   91.70s ->    98.24s] a lower variance on the right one with a higher variance. They have the same target expected return
+[   98.24s ->   107.54s] of 30%. But what I want you to notice and understand is these statistics are a property of this single
+[  107.54s ->   113.54s] realization, not necessarily the underlying data generating distribution. What you're seeing
+[  113.54s ->   121.22s] in the background, all of these slightly opaque paths are other sample paths we could have walked
+[  121.22s ->   129.02s] coming from the same underlying data generating distribution. This is the first place that people
+[  129.02s ->   134.90s] tend to go wrong. The first place is in assuming that the expected return and the variance that you're
+[  134.90s ->   143.00s] observing in the path that you've already experienced is dictating where each draw is coming from. It
+[  143.00s ->   150.92s] certainly is not. These statistics are a property of the path that you've already observed. Let's assume
+[  150.92s ->   157.24s] for a moment that these data generating distributions are fixed and you had to bet the house. Remember,
+[  157.24s ->   165.98s] we don't get to choose which sample path we walk. Which chart would you prefer to bet on? The blue or the
+[  165.98s ->   172.42s] pink? Well, certainly with the higher volatility, you may have more upside potential, but this gets into
+[  172.42s ->   180.46s] the idea of volatility drag and how wealth is actually compounded in practice. Anytime you have an increase
+[  180.46s ->   188.70s] in volatility, it is going to erode your expected return. So if you had to ask me which one to bet the
+[  188.70s ->   195.32s] house on, which one has the highest probability of returning you your money back or more, I would say
+[  195.32s ->   203.08s] the blue chart. And that's because it has a higher expected return relative to volatility than the pink
+[  203.08s ->   207.72s] chart. But that, of course, is a classroom exercise, right? We're focusing on the data generating
+[  207.72s ->   214.80s] distribution and all of the paths that we could have walked. In reality, we've already experienced
+[  214.80s ->   222.66s] and we're only going to experience one. Are the statistics then that are an artifact of this sample
+[  222.66s ->   231.46s] path in each case unique? Well, certainly not. There's an infinite number of ways to produce
+[  231.46s ->   237.58s] these statistics from a path that we've observed in those single realizations above. In
+[  237.58s ->   245.20s] fact, in this simulation here, what you're observing is a series of paths in both the low variance and
+[  245.20s ->   254.88s] high variance setting that perfectly match these statistics, the 30%, 15%, 30%, 50% that we saw in
+[  254.88s ->   262.32s] the single path realizations above. This is exactly what I'm talking about. When I say lossy compression,
+[  262.32s ->   270.22s] these statistics are an artifact, a property of the sample path that we observe. But if I gave you
+[  270.22s ->   276.10s] these statistics, the expected return or the variance, you couldn't tell me which sample path
+[  276.10s ->   283.18s] produced those statistics. There's an infinite number of them, which is why these metrics are only as
+[  283.18s ->   291.28s] useful as the path that they were constructed from. In other words, you have no idea which one of these
+[  291.28s ->   298.24s] paths has any economic merit in a forward-looking sense for a trading strategy or a portfolio
+[  298.24s ->   306.28s] composition. Maybe they are entirely overfit to historical data. That is why I say it is a lossy
+[  306.28s ->   313.78s] compression. You have no idea what information is producing the original path to then produce for you
+[  313.78s ->   320.80s] these metrics, these statistics. If you're beginning to see the hidden dangers in these paths and
+[  320.80s ->   326.98s] statistics, you're beginning to think like a quant. If you'd like to move past a surface level
+[  326.98s ->   334.22s] understanding and master your quantitative skills for trading and market-making roles, check out
+[  334.22s ->   340.10s] quantguild.com. We have an adaptive practice engine that scales with your skill level so you can progress
+[  340.10s ->   349.18s] to more and more difficult topics with gamified rank-based progress. Over 100 hours of lecture content
+[  349.18s ->   359.26s] and much more to take you from student to practitioner as quickly as possible. If you'd like to master your
+[  359.26s ->   365.58s] quantitative skills, check out quantguild.com. Since we now understand this idea of a compression of
+[  365.58s ->   371.92s] information, that is, we can't recover the original path that produced these statistics, let's take a look
+[  371.92s ->   377.86s] at another compression that would have helped us answer which chart to bet the house on. And that compression
+[  377.86s ->   384.82s] is going to be the sharp ratio. We're going to take the ratio of the expected return to the variance and this is
+[  384.82s ->   392.50s] going to give us the sharp ratio. Now it's important to understand that the sharp ratio being a compression means that we
+[  392.50s ->   401.86s] can't recover the original expected returns and volatility or variance that gave us that sharp ratio to begin with. Why is this
+[  401.86s ->   409.22s] important? Because if we go upstream, this all goes back to the efficacy of the path? The
+[  409.22s ->   417.46s] efficacy of the path will dictate how useful the compression is. If the path is an overfit backtest,
+[  417.46s ->   425.86s] that's not very useful. If the path itself came from a giant composite of 500 million rows of a
+[  425.86s ->   433.78s] parquet file to tease out some alternative data to produce trading decisions to inform this equity
+[  433.78s ->   441.14s] curve, maybe it has some merit. Of course, by merit, I mean in a forward-looking sense. If you're to
+[  441.14s ->   449.94s] continue trading that strategy or portfolio, are you going to observe similar statistics, similar
+[  449.94s ->   457.78s] compressions as you've observed in the path that's already been realized. Naturally, the sharp ratio
+[  457.78s ->   463.30s] is going to tell us something about the shape of the path. We can see that here. This, on average,
+[  463.30s ->   470.34s] has a higher sharp ratio. It's a smoother ride than the paths on the right. But that's the geometry of the
+[  470.34s ->   476.82s] path. There are two things we care about here. The first is the geometry of the path. Sure, the sharp
+[  476.82s ->   483.78s] ratio tells us all about that. But in reality, we care about it in a forward-looking sense. This is why
+[  483.78s ->   491.54s] I'm harping on the path itself. If the path has absolutely no basis for continuing this performance
+[  491.54s ->   499.46s] into the future because you've overfit a backtest, then what use is this measure? This is the perfect
+[  499.46s ->   505.94s] segue into where the sharp ratio fails. There are two key components. One is the geometry,
+[  505.94s ->   513.22s] one is in the forward-looking sense. The first is the geometry. It is going to treat upside
+[  513.22s ->   520.98s] deviation and upside variation in the same way it treats downside variation, downside deviation from
+[  520.98s ->   526.66s] a mean level. Why is this important? Well, let's take a look at these two different trading strategies.
+[  526.66s ->   532.66s] The one on the right has a sharp ratio of 1.8. The one on the left has a sharp ratio of 1.5.
+[  532.66s ->   539.14s] What's the problem? The one on the left has almost double the expected return, 17.21%.
+[  540.02s ->   547.94s] Meanwhile, the one on the right has 8.65% expected return. So if we were assuming that
+[  547.94s ->   551.86s] both of these strategies were reasonably stable in a forward-looking sense,
+[  552.66s ->   557.94s] which would we choose? The one with a higher sharp ratio? Well, why would we do that? It has
+[  557.94s ->   563.46s] a significantly lower expected return relative to the other one. If the performance is expected
+[  563.46s ->   568.50s] into the future, then why wouldn't we choose the one with a higher expected return? But then
+[  569.14s ->   576.74s] why is the sharp ratio lower? That's because it's treating the upside deviation, these positive shocks,
+[  576.74s ->   584.26s] the same way it treats the downside deviation, the negative shocks, with respect to the theoretical
+[  584.26s ->   591.14s] trend line. In reality, we probably only want to penalize the ratio that is the denominator in the
+[  591.14s ->   600.18s] sharp ratio any time we observe negative deviations from that trend line. That is the Sortino ratio. If
+[  600.18s ->   607.14s] we observe both of those paths again, we can see now the one on the left actually has a higher score,
+[  607.14s ->   614.74s] a higher ratio. The Sortino ratio is only going to consider negative deviations relative to the
+[  614.74s ->   623.38s] expectation. So that is the first shortcoming of the sharp ratio with respect to the geometry of the
+[  623.38s ->   628.10s] path. But remember, I said there's two things we care about, not just the geometry of the path,
+[  628.10s ->   633.38s] how smooth the ride was to get there. And of course, what the overall outcome of the ride was,
+[  633.38s ->   639.38s] but is it stable in a forward looking sense? If we continue to trade that strategy or portfolio,
+[  640.18s ->   646.34s] will we realize similar compressions, similar statistics, performance metrics that we've seen
+[  646.34s ->   655.62s] in the path that's already been realized? This comes down to, again, the quality, the efficacy of the path
+[  655.62s ->   664.02s] and how it was constructed. This is the idea of stability in forward returns. Most of the time,
+[  664.02s ->   668.50s] you're not going to observe this stability. And there are two key reasons why that we're going to
+[  668.50s ->   672.34s] cover. This is typically what it looks like. You have some sort of back test, it performs reasonably
+[  672.34s ->   678.42s] well, you have a target sharp ratio, you deploy live, its performance decays, and of course disappoints.
+[  678.42s ->   685.54s] Why does this happen? Why does this compression fail us? Remember, it's going to be based on the
+[  685.54s ->   693.78s] quality of this path. Well, what happened with that path relative to the out of sample live performance?
+[  694.34s ->   702.66s] One of two things is happening. Either the path quality is intact and your back test is appropriate,
+[  702.66s ->   710.66s] you didn't overfit anything, and you've observed a regime change in the live market. There could be
+[  710.66s ->   716.82s] a structural break. That is entirely possible. It's certainly a research question as to why,
+[  716.82s ->   722.82s] and you should be able to investigate perhaps and answer that question, but it's going to look
+[  722.82s ->   728.58s] something like this. The data generating distribution that produced the returns that you saw in your back
+[  728.58s ->   734.34s] test has fundamentally changed, leading to that performance degradation. That could certainly
+[  734.34s ->   739.78s] be the case. Is it unlikely that you're going to experience that at the time of live deployment?
+[  739.78s ->   745.38s] Sure, but it certainly depends when and how violently does this structure break? Does it
+[  745.38s ->   749.62s] break every other month? Does it break once and then the strategy is no good? Is it
+[  749.62s ->   755.30s] coming from crowding out? Is there a whale no longer participating in the market? It could be for one of
+[  755.30s ->   765.22s] a variety of different reasons. Structures do break and this may be why your live performance is not going
+[  765.22s ->   773.70s] to emulate your back test. Maybe you did conduct your back test perfectly appropriately. Or, and what I
+[  773.70s ->   780.34s] would bet the house on, is that you have overfit your back test. You've likely data snooped, you have
+[  780.34s ->   787.86s] some survivorship bias, you have some look-ahead bias, you have very likely overfit your backtest to
+[  787.86s ->   794.02s] noise and haven't figured out why. This is either because you asked cloud or check gpt to run your
+[  794.02s ->   799.54s] backtest for you, then when you deploy it live you don't even understand the biases you're introducing
+[  799.54s ->   805.46s] and you don't understand the purpose of the backtest in general. Well, I have a very nice way to
+[  805.46s ->   812.18s] illustrate the idea of a backtest here to you for the stability of your forward-looking returns,
+[  812.18s ->   816.74s] your compressions, your expected returns, your variance, and of course your sharp ratio. And it
+[  816.74s ->   824.10s] comes down to this idea of an underfit, an overfit, and a robust model. The purpose of your backtest is
+[  824.10s ->   830.90s] to find a robust model. You are not trying to play connect the dots to produce a good equity curve.
+[  830.90s ->   836.42s] That is what leads to it breaking out of sample. That is what it means to overfit noise. Now of
+[  836.42s ->   841.94s] course you don't want an underfit model either. Error is going to be arbitrarily high, it's going to
+[  841.94s ->   848.90s] impact your PNL in a very negative way. Your goal is to find a robust model. What I have here is a nice
+[  848.90s ->   856.26s] simulation of the average error out of sample for each of these model classes. An underfit, an overfit,
+[  856.26s ->   863.86s] and a robust model. What I want you to observe is if we have a good, robust, stable model out of sample,
+[  863.86s ->   869.30s] it is going to have a reasonable error. It is certainly going to have an error. You are not going
+[  869.30s ->   876.42s] to have a crystal ball to predict returns. That is not the space that we work in. Instead, you're trying
+[  876.42s ->   883.54s] to build a robust model that is capable of reasonable predictions out of sample to make informed decisions
+[  883.54s ->   889.94s] with to have an edge. Now let's take a look at the error of the underfit and the overfit model.
+[  889.94s ->   896.10s] The overfit has terrible error. Why is that the case? Well, you've overfit noise. What do you expect
+[  896.10s ->   903.06s] to have happen in your PNL live? It's going to look exactly like this. It is going to decay. It's going
+[  903.06s ->   909.70s] to have insane performance degradation relative to your back test. This back test path, the efficacy of it,
+[  910.58s ->   915.86s] it's useless. It's overfit to noise. It doesn't indicate anything in a forward-looking sense in a
+[  915.86s ->   923.54s] robust capacity like we intended with this robust model. Moreover, if we underfit the model, we're
+[  923.54s ->   930.58s] likely not going to see exciting performance statistics in sample, and we're very unlikely
+[  930.58s ->   936.58s] to see those performance metrics, those performance statistics targets hit out of sample either. This is
+[  936.58s ->   941.86s] less of a concern because in sample, you're going to see bad performance statistics. That's not
+[  941.86s ->   947.30s] encouraging. You're not going to want to use an underfit model out of sample, but an overfit model
+[  947.30s ->   954.18s] with a sharp ratio of three, that is certainly going to be enticing. This all seems very complicated. So
+[  954.18s ->   960.82s] how should we think about the trading and quant trading space? Well, I like to think of it in terms of
+[  960.82s ->   967.62s] performance, not just performance metrics. What do I mean by this? Well, live strategy performance
+[  967.62s ->   973.22s] that is trading with actual capital, making informed decisions in the face of uncertainty,
+[  973.22s ->   980.82s] especially for an extended period of time is worth thousands of back tests. I want you to think of
+[  980.82s ->   989.06s] this like a batting average. If somebody had a good batting average years ago, does that mean they're
+[  989.06s ->   998.34s] going to be good at swinging pitches in real time today? Maybe. Moreover, what if they had a killer batting
+[  998.34s ->  1007.96s] average last season or even last week? Does that mean they're good in real time today? Maybe. It all comes
+[ 1007.96s ->  1016.04s] down to performance, model informed decision making, knowledge, and experience. It's certainly not all about
+[ 1016.04s ->  1021.08s] arbitrary performance metrics. It comes down to your strategy or strategy class, what it is you're
+[ 1021.08s ->  1027.72s] trying to do and your ability to continue to build models and make those informed decisions
+[ 1027.72s ->  1032.92s] in the face of uncertainty. That's going to do it for this video. Stop using the sharp ratio. Now that
+[ 1032.92s ->  1038.28s] you've watched this video, maybe just proceed with caution. I hope you enjoyed. I hope you learned
+[ 1038.28s ->  1042.52s] something. This video certainly took a lot of effort to put together. So if you enjoyed it and you want to see
+[ 1042.52s ->  1046.52s] more like it in the future, please like, comment, subscribe, share. It helps me out tremendously.
+[ 1046.52s ->  1051.96s] It is always greatly appreciated. If you'd like to master your quantitative skills, check out
+[ 1051.96s ->  1059.40s] quantguild.com. Other than that, I want to thank you so much for watching and I'll see you in the next video.

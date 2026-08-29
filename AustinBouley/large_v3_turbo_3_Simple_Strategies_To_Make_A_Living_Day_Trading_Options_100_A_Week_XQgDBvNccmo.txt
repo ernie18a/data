@@ -1,0 +1,74 @@
+[    0.00s ->     4.38s] Hey guys, what's up? It's the Impeccable Investor here and I wanted to go over a video that shows
+[    4.38s ->     9.52s] you how to make a living from day trading options. Now, there's a lot of things that you can do with
+[    9.52s ->    15.06s] day trading options. It's very risky. It's very high leverage. But if you follow the three simple
+[   15.06s ->    20.70s] strategies that I'm about to show you in this video, you can consistently make profit day
+[   20.70s ->    25.20s] trading options. So I'm going to show you exactly how that's done. Well, first, let's go over the
+[   25.20s ->    30.50s] most liquid stocks there are for options because you need to be able to get in and out of stocks.
+[   30.96s ->    37.26s] So your first one is going to be SPY, which is going to be the S&P 500 ETF. So we're looking at
+[   37.26s ->    43.64s] SPY for a lot of the trading system, but you also have other stocks to look for, which are the FANG
+[   43.64s ->    50.64s] stocks, F-A-A-N-G, Facebook, Amazon, Apple, Netflix, and Google. What does this mean for you? Well,
+[   50.64s ->    57.58s] it means as a day trader of options, you only have to watch five stocks each day. That is so
+[   57.58s ->    62.68s] amazing, right? You don't have to scan for stocks hoping that you're going to find the next winner
+[   62.68s ->    68.40s] for today. All you have to do is look at these same stocks over and over using the systems I'm
+[   68.40s ->    73.32s] about to show you. So the first approach to make money day trading options is going to be
+[   73.32s ->    79.68s] our statistical analysis approach, which is where you use the price action of the charts to show you
+[   79.68s ->    86.54s] where it's going. So for instance, I'm going to link a video up here to the 10% continuation rule
+[   86.54s ->    93.44s] or play. So as you can see here on Facebook, this was a 10% continuation play, which means you chart
+[   93.44s ->    99.68s] the bottom of this move and you chart the high of this move or high of pre-market. And this is our
+[   99.68s ->   105.58s] trading range. We have the assumption based on the 10% continuation rule that when this stock closes in
+[  105.58s ->   110.68s] the bottom 10% of its trading range, we know that once it breaks below the support, we're going to
+[  110.68s ->   116.36s] see that nice fall down. And that's exactly what we saw here on Facebook. So it gave us that 10%
+[  116.36s ->   122.74s] continuation play to make an easy 50% on contracts. Guys, I don't think you want to understand how much
+[  122.74s ->   130.16s] 50% is. If you invest $1,000, you make $500 in a single day. Guys, that is the amazing world of
+[  130.16s ->   135.18s] options, how much leverage you have. And guys, by entering here, your risk is here, which means
+[  135.18s ->   141.00s] that if it went back up, we would have had our risk cut at the highs of the day, which was right
+[  141.00s ->   147.40s] here. So this shows how well you can manage risk using a technical analysis approach. Now, outside of
+[  147.40s ->   152.96s] the technical analysis approach, we have two other approaches we need to look at. Oh my gosh.
+[  152.96s ->   159.22s] Um, let's see if we can get back to it here. Um, we have two different approaches we are going to
+[  159.22s ->   164.84s] look at. The first one is going to be the VWAP approach. So VWAP is volume weighted moving average
+[  164.84s ->   170.56s] price. So you just go into any platform you're using, whether that's tradingview.com, which is a
+[  170.56s ->   177.50s] browser-based system for free, or your brokerage, like this system right here, the thinkorswim platform.
+[  177.94s ->   182.56s] You can see here that it has VWAP, which is the middle line. You don't really need the upper or
+[  182.56s ->   188.42s] lowers. And we're going to look at that right now. So if you can see here, VWAP is this line that
+[  188.42s ->   194.44s] shows you where we are trading. So it's like a moving average, which takes the average of the
+[  194.44s ->   199.90s] last few prices, but it shows a lot more than that. So what I wanted to show you on that was
+[  199.90s ->   206.54s] one of our other stocks that we like to trade, which is Apple, AAPL. Well, you can see here that
+[  206.54s ->   211.36s] when you use different price actions in conjunction together, it works well. So as you can see,
+[  211.36s ->   216.46s] this price here in the morning is hugging VWAP, which means it's going up, back and down around
+[  216.46s ->   222.12s] a VWAP, which is forming what our technical patterns know as a triangle pattern. Then when
+[  222.12s ->   226.80s] it breaks, when it starts holding below VWAP, we know that it's bullish. The same thing happened
+[  226.80s ->   233.82s] here when we came up and when we kept getting rejected here at VWAP, we knew that it was going
+[  233.82s ->   239.86s] to the downside. And that's what we, again, we saw here. Now, VWAP also acts as support. As you can see
+[  239.86s ->   243.38s] here, it comes down to find support, to find support, to find support, resistance, support.
+[  243.70s ->   249.50s] This is another way to easily define support and resistance. Also another stock, remember our
+[  249.50s ->   254.94s] FANG stock, it works just really well on this. Here's a great example of it right here. You can
+[  254.94s ->   260.70s] see here how when it's holding below VWAP, it tends to go down. And then we have this push above
+[  260.70s ->   266.58s] VWAP, however you want to say it, for a continuation play. And then it came down and bounced and went
+[  266.58s ->   273.28s] higher. These are amazing ways to catch simple, easy, 10 to 20% plays in a day, playing the bounce
+[  273.28s ->   279.78s] and rejections of VWAP. Now getting onto one of my favorite ones, this is a day trading and swing
+[  279.78s ->   285.60s] trading approach where you don't really have to do any of the work. It's called the TTM trades. I'm
+[  285.60s ->   289.24s] going to get rid of VWAP now that we're going on to TTM trades. We're going to show the alerts here
+[  289.24s ->   295.82s] and we're going to get into it. So as you can assume here, red means it's a bearish trend. It's
+[  295.82s ->   301.94s] going down. Blue means that it's a bullish trend. It's going up. So as you can see here, you can use
+[  301.94s ->   307.48s] this on a day trading platform. You see that it's red. You enter puts, which make money on the way
+[  307.48s ->   312.58s] down. And when it turns blue, you make money on the way up. Well, when you use this in conjunction
+[  312.58s ->   317.50s] with support and resistance, it can work very well. But one of the ways that this works the best is
+[  317.50s ->   323.14s] going out to a longer term time frame, like a 30 minute time frame, or maybe even longer if you
+[  323.14s ->   328.16s] want. However, what I also like to do on this is 15 minutes because it shows long term trends. So
+[  328.16s ->   333.48s] where we're going to see that incredibly well is SPY, which is one of the stocks that you watch out
+[  333.48s ->   339.22s] for when day trading options. Remember, always watch SPY and FANG, Facebook, Amazon, Apple,
+[  339.34s ->   343.80s] Netflix, and Google. So as you can see here, we can see that it turns blue and we would have had this
+[  343.80s ->   350.06s] this nice run up right to here. And on SPY options, especially on weekly options, you can
+[  350.06s ->   357.94s] easily get a 75% gain. That means if you invest $100, you make $75 back over two days, right?
+[  358.18s ->   362.92s] And then you can also see here, it turns red, you stay invested until here. This is a nice,
+[  363.08s ->   370.34s] easy $120 profit on using same day expirations. So guys, if you want to learn more about options,
+[  370.34s ->   375.60s] I have this huge thing that's coming out to help you as an investor and or day trader,
+[  375.74s ->   381.54s] whoever you are. So make sure you hit that link below and go to my Instagram and follow me where
+[  381.54s ->   386.82s] I share everything in my stories, my live, my live stuff that I'm buying in the stock market
+[  386.82s ->   392.18s] and whatever else. I have a huge release coming up in the end of December and I want to make sure
+[  392.18s ->   397.58s] that you get alerted to it. So click below to get to sign up for the newsletter where you'll get
+[  397.58s ->   403.14s] weekly stuff and also Instagram. All right, guys, thank you so much for watching. These are your
+[  403.14s ->   408.92s] top three tips with the top five stocks you need to watch as an options day trader. You can honestly
+[  408.92s ->   413.98s] make a living at this. I know people who do and I did well for a while. You can go back through my
+[  413.98s ->   418.80s] old videos if you want to see. Well, I just decided that I want to pick more of an investing route.
+[  419.32s ->   421.50s] All right, guys, thank you so much. See you in the next video.

@@ -1,0 +1,35 @@
+[    0.43s ->     4.13s] Hey guys, what's up? In this video, we're going over credit spread basics, and I'm going to show
+[    4.13s ->     8.59s] you how to pick the best expiration date. Why is it hard to pick this? Because your expiration
+[    8.59s ->    14.25s] date will determine how far out you can go, how safe you can be, your win rate, and it also will
+[   14.25s ->    19.15s] help you know how much credit you can collect. It also changes, right? Because based on all these,
+[   19.29s ->    24.99s] your implied volatility and open interest also changes as well. So for instance, if you can see
+[   24.99s ->    33.23s] here for the contract expiring today, we're at an IV percentage of 26.7 versus 10 days from now,
+[   33.31s ->    39.99s] it's at 14%, so almost half. So that's how you can tell the difference here between different
+[   39.99s ->    45.11s] expiration dates. You also have weeklies and monthlies, et cetera. So if we're looking at this,
+[   45.21s ->    52.31s] let's take a deeper look. Number one, if it says W next to it, that's a weekly expiration. Those only
+[   52.31s ->    57.67s] become available about a week or two out. You can see here that around 39 days out,
+[   57.93s ->    63.09s] you stop seeing weeklies because you don't see them that often. Now, again, if there's nothing
+[   63.09s ->    67.63s] there, that's going to be a normal monthly expiration. And again, if you see Q, that's going
+[   67.63s ->    74.01s] to be a quarterly expiration. These are going to be more of like your leap contracts. Okay. So once we
+[   74.01s ->    78.27s] have that, now what expiration are we picking? Well, it depends on what strategy you're using.
+[   78.27s ->    83.45s] The strategy you're using should dictate the expiration that you're doing. For instance,
+[   83.59s ->    88.59s] the strategies that I have and that I give to you for free and my trading handbooks linked down in
+[   88.59s ->    93.93s] the description will actually tell you to go roughly two to three weeks out. So roughly around
+[   93.93s ->    99.43s] the three-week area. So that would be between June 23rd and June 30th. This area right here would be
+[   99.43s ->   106.43s] where you want to actually enter your trades. Why? Well, because that amount of time gives you enough
+[  106.43s ->   112.63s] leeway in the trade in order to not only make money, but to collect enough money to offset your
+[  112.63s ->   118.21s] losers and to actually have a decent win rate. Now, again, if you go out to around 40 days,
+[  118.27s ->   125.61s] so roughly around July 14th, that type of trading is for people who are more of trying to collect only
+[  125.61s ->   129.53s] theta. So what they're doing is they don't really care about the direction of the stock. They're entering
+[  129.53s ->   136.05s] a credit spread and then they're buying back around the 21-day mark. And so that's for that
+[  136.05s ->   141.11s] type of strategy. Mine's more of a swing trading type of strategy. And then you have the zero DTE
+[  141.11s ->   147.27s] people or the one DTE, which means one day until expiration as for people who are trying to day
+[  147.27s ->   151.01s] trade. So you need to understand what type of strategy am I using? Is it a day trading, swing
+[  151.01s ->   156.05s] trading, or more of a data collection type of strategy? And based on what it is, is how you kind
+[  156.05s ->   160.85s] of know which strike price or I should say expiration date you're going for. And so again,
+[  160.93s ->   167.25s] I highly recommend you stay around the three-week level just because that has been historically what
+[  167.25s ->   172.69s] works best. Again, for more of a directional type play, which is what I teach here on this channel.
+[  173.11s ->   176.97s] All right, guys, if you want to learn more, make sure to watch other videos on my channel. I have
+[  176.97s ->   181.59s] very in-depth credit spread training video. Or if you want to learn more about the strategies I use
+[  181.59s ->   185.27s] that work, make sure to click the trading handbooks link down below. All right, guys, see you in the
+[  185.27s ->   185.67s] next video.

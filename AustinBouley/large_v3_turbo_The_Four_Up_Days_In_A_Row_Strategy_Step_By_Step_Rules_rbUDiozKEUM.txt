@@ -1,0 +1,36 @@
+[    0.53s ->     5.37s] I'm going to walk you through the four updates strategies. This is going to show you step-by-step
+[    5.37s ->    12.57s] what to do and how to profit on the S&P 500 or SPY. Again, this comes from my SPY Trading Strategies
+[   12.57s ->    16.91s] PDF, which is completely free for you. If you click the link down below, it gives you access
+[   16.91s ->    22.81s] to 20 proven and profitable because they've been backtested strategies for SPY. Again, the one that
+[   22.81s ->    27.73s] we're going through today is strategy number five, the four updates in a row strategy. Again, this
+[   27.73s ->    34.03s] is from quantifiedstrategies.com who ran this test. Again, it's based on a trend following idea that
+[   34.03s ->    38.91s] trends tend to continue, that if there are four updates in a row, that shouldn't a fifth day
+[   38.91s ->    45.59s] continue. You can see here, here's the P&L graph from 1995 all the way to 2021. You can see here,
+[   45.63s ->    50.35s] it does pretty well. There are some periods where it doesn't do the best, but overall, it seems to
+[   50.35s ->    56.13s] be a profitable trading strategy. What are the rules for this strategy? Well, there are three
+[   56.13s ->    62.61s] simple rules. If it is Thursday, number one, and the close is higher than the previous close of the
+[   62.61s ->    68.95s] fourth time in a row, meaning that all the days prior have been positive, buy the close on Thursday
+[   68.95s ->    75.13s] and sell Fridays open. What does this mean? Well, let's look. Let's say Monday, Tuesday, Wednesday,
+[   75.59s ->    81.49s] Thursday. Perfect. Here is an example of, again, this trade would have gone against you,
+[   81.49s ->    86.75s] but this is a perfect trade setup. So Monday, it closed. The stock had a strong green day and it
+[   86.75s ->    92.03s] closed here. Tuesday, the stock gapped up and ran and it closed here. So it closed higher than this
+[   92.03s ->    97.35s] previous candle. Next, it went up to here on Wednesday. It kind of did this weird thing, but
+[   97.35s ->   103.19s] it ended up closing above the prior candle. So now we have three updates in a row. Then we're on
+[  103.19s ->   109.03s] Thursday where we had a very strong green candle and we pushed into this range here and we're also
+[  109.03s ->   115.31s] close above this level. So now we have four up candles in a row, but then again, it's Thursday,
+[  115.43s ->   120.53s] which is what that day is. So if it's Thursday and we have four up candles in a row, then on Thursday,
+[  120.73s ->   126.59s] within the last 30 minutes of trading, if it is above the previous candle, then again, you're going
+[  126.59s ->   133.15s] to do buy-in into that. And then you're going to close your trade Friday afternoon, right before the
+[  133.15s ->   137.85s] market closes. So again, this would have been a red trade, but again, you can see over time,
+[  137.85s ->   145.97s] it tends to do well. Let's see if we can find another instance of this trade. So we have Monday,
+[  146.17s ->   153.89s] Tuesday, Wednesday, Thursday, close above Friday. Yeah, I mean, I should really start planning out,
+[  154.75s ->   159.91s] like give you examples of this working. But again, that's kind of how the strategy plays out. You've
+[  159.91s ->   167.03s] got to have three or four up days in a row, and then you buy the close of that final up day,
+[  167.03s ->   171.43s] and then you hold it through the next day. This idea that trends just seem to continue.
+[  171.89s ->   175.93s] All right, guys, that is the four updates in a row strategy. If you want to print this out for
+[  175.93s ->   181.75s] yourself, so you kind of have the strategy in your toolbox, then again, you can scroll down in the
+[  181.75s ->   187.57s] description below and download your free SPY strategies PDF, or also look at any of the 20
+[  187.57s ->   192.99s] other strategies that have been backtested here. These cover swing traders, options traders,
+[  192.99s ->   197.77s] day traders, whatever you are, there's a strategy for you in here that has been backtested.
+[  198.15s ->   203.01s] All right, guys, if you enjoyed this video, this short video, please smash that thumbs up button,
+[  203.37s ->   207.33s] and then also hit the subscribe button, and I'll see you in the next video.

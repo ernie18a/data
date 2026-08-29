@@ -1,0 +1,50 @@
+[    0.00s ->     3.74s] If you're trading options, you're going to lose money. If you haven't yet, then you will.
+[    4.04s ->     6.74s] I want to walk you through one of my recent losses and what I learned,
+[    7.02s ->    10.84s] and hopefully something that you can apply that can easily save you hundreds of dollars down the
+[   10.84s ->    14.98s] line in losses you should never have. It's just by checking this one simple thing that I forgot
+[   14.98s ->    18.48s] to check, and I'm going to show you exactly how to do it in this video. But before we dive into
+[   18.48s ->    22.58s] that, let me walk you through the exact strategy I've been using that's helped me generate consistent
+[   22.58s ->    27.88s] returns and then where I went wrong. Okay, so what strategy I use is called the 60-minute
+[   27.88s ->    32.52s] orb strategy or 60-minute opening range breakout strategy. So step one of this is you're going to
+[   32.52s ->    37.90s] wait 60 minutes when the market opens to determine the high of day. So we're looking at this day right
+[   37.90s ->    43.24s] here, and again, you can see here's a real trade log of SPX on September 17th, my trade log from
+[   43.24s ->    49.48s] TastyTrade. I lost $420 on this trade. So I just want to show you that the proof is there. I did
+[   49.48s ->    55.22s] lose money. Anyways, you can see here the market opened at 9.30 a.m. What I do is I wait 60 minutes.
+[   55.22s ->    59.26s] This way, I'm not getting caught in the early morning activity and price action, and I'm not
+[   59.26s ->    63.72s] worrying about what's going on there or getting my emotions too involved quite yet. Instead, I wait
+[   63.72s ->    70.42s] an hour. So I go all the way down here to 10.30, and this charts out the first 60 minutes of the day.
+[   70.72s ->    75.66s] So after the first hour has passed, I'm going to look, I'm going to look, what was the high during
+[   75.66s ->    82.16s] this 60-minute time frame? And this right here becomes my high of day. So once my high of day gets
+[   82.16s ->    86.46s] formed, what I'm going to do is I'm going to wait for the market to break above it. Once the market
+[   86.46s ->    91.44s] breaks above it, then that signals my entry condition. So step number one is wait 60 minutes,
+[   91.56s ->    96.24s] start the high. Step number two is trade the breakout. Now, how do I trade this breakout?
+[   96.38s ->   100.32s] It's a simple put credit spread strategy. That spells breakout if you can't read my hand right.
+[  100.82s ->   105.08s] And then three, which again, handwriting terrible, we're going to do a put credit spread.
+[  105.32s ->   109.50s] This looks like doing a 1DTE trade. So we're going to go out one day in the future with the
+[  109.50s ->   114.64s] contracts. We're going to sell the 30 Delta contracts, and then we're going to buy $20
+[  114.64s ->   120.16s] below. And this creates our put credit spread. I do this every single day whenever the opportunity
+[  120.16s ->   124.98s] presents itself. And it's helped me make a lot of money so far in the last few months. I definitely
+[  124.98s ->   129.68s] recommend trying it if you haven't yet. Now, where did I go wrong? The market ended up breaking the
+[  129.68s ->   135.48s] high here. So I entered, which you can see here, entering at 1.04 PM Central Standard Time. And then
+[  135.48s ->   141.70s] literally nine minutes, no, it was 11 minutes later, exiting the trade. And so that's how quickly
+[  141.70s ->   148.54s] it went wrong for me. Now, what went wrong? The problem was I traded during a huge economic news
+[  148.54s ->   152.52s] called FOMC. If you've never heard of it, it's the Federal Open Market Committee. This is where they
+[  152.52s ->   157.32s] talk about interest rates, where they talk about everything that's going wrong with the money system
+[  157.32s ->   164.14s] right now in the US. And so because of that, it spiked up, got me in a trade, immediately spiked down,
+[  164.14s ->   169.60s] volatility did its thing, expanded, contracted. And next thing you know, I was out in 10 minutes for
+[  169.60s ->   175.60s] a huge loss. And the reason why this happened was because I just should have been aware of this news
+[  175.60s ->   181.08s] and stayed out of the market during the time that happened. If you are trading SPX 1DT or 0DT,
+[  181.14s ->   187.06s] you should not be trading the market, at least your typical standard strategy, when FOMC is going on,
+[  187.06s ->   191.42s] when this meeting is happening. Now, if you're trading with the direction of FOMC because you like
+[  191.42s ->   195.74s] scalping, that's a different story. But your normal average strategy should not be deployed.
+[  196.24s ->   200.94s] Now, how do you know what's coming up? You can go to federalreserve.co.gov.gov. Sorry,
+[  201.06s ->   208.00s] I said that wrong. Slash monetary policy FOMC calendars. And it shows it right, oops, click back.
+[  208.28s ->   212.18s] Let's go right here. And it shows all the meetings. Again, make sure you show it for 2025,
+[  212.18s ->   216.12s] the year that you're on. You can see here, September 17th, this is when I placed the trade,
+[  216.12s ->   222.04s] was that meeting. Now you can also look at future dates, October 29th, December 10th. These are
+[  222.04s ->   225.60s] going to be days you should not be trading a normal strategy on SPX. It's going to be a lot of
+[  225.60s ->   229.90s] volatility towards the end of day. This was a super beginner mistake. I tell people to watch out for
+[  229.90s ->   233.96s] this, but I personally didn't look out for it myself. So again, make sure you're watching this
+[  233.96s ->   239.80s] because it could have easily saved me $420. Anyways, as always, I'm here to help you learn options,
+[  239.90s ->   244.08s] no options, deploy the best strategy. That includes learning from both winners and losses. So I hope you
+[  244.08s ->   246.44s] enjoyed this video, and I'll see you in the next one.

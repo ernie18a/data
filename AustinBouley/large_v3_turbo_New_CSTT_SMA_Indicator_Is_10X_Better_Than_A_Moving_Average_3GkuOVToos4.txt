@@ -1,0 +1,85 @@
+[    0.08s ->     6.90s] Hey guys, I just created a brand new SMA simple moving average called the CSTT SMA.
+[    7.10s ->    11.56s] It is 10 times better than the normal moving average because it's based on both the long-term
+[   11.56s ->    16.72s] and short-term trend. Not only that, it has almost zero fake signals. It tells you where to buy,
+[   16.98s ->    23.12s] where to sell, and gives you confirmation signals so you know you're in the right trade.
+[   23.26s ->    26.46s] So if you want to learn how to do that, if you want to learn how this indicator works,
+[   26.46s ->    30.80s] I will show you step-by-step in this video how it works and how to use it to make money in this
+[   30.80s ->    35.72s] market right now. And I will even show you how to get free access if you stay all the way until the
+[   35.72s ->    40.92s] end of this video. All right, let's dive into it right now. So if you've ever traded with SMAs before
+[   40.92s ->    45.34s] or simple moving averages, you know that they're lines that tell you what's going on in the market.
+[   45.54s ->    51.58s] Here are two examples of SMA lines. Right here, this one that's moving and adapting quickly to the
+[   51.58s ->    59.50s] stock is the 10 period SMA, which means that this line is based on the past 10 candles, the average price
+[   59.50s ->    65.00s] of the past 10 candles. And what it does is it shows us our short-term trend. So again, you can see here
+[   65.00s ->    69.86s] it adapts quickly to the market. That's why it's the short-term trend. So you can make money with it,
+[   69.94s ->    74.72s] but you won't know when the long-term trends will dictate and change the trend on you. You also have this
+[   74.72s ->    79.90s] longer line right here. It's a bit more slow and a bit more less, or I should say less adaptive to
+[   79.90s ->    85.52s] the market. And this is our 200-day moving average line. This 200-day moving average line is what most
+[   85.52s ->    91.70s] people look at for long-term trend. And so the CSTT indicator has done a lot of things, but what it
+[   91.70s ->    97.60s] does is it combines both this 200-day SMA, the long-term trend, aka we're in a long-term uptrend,
+[   97.86s ->   104.02s] and combines it with the short-term trend to give you accurate trade alerts. So instead of just one
+[  104.02s ->   110.64s] normal SMA, it's two combined into one, yet gives you signals to enter, to buy, to sell. And even
+[  110.64s ->   115.20s] amazing is when to stay out, because how many times have trend traders been in a trade and then the
+[  115.20s ->   119.60s] market immediately reversed on them? And so now it warns you to stay out during those periods. So
+[  119.60s ->   127.46s] let's dive into that SMA now that you know what it's made up of. So here is the CSTT SMA. It shows
+[  127.46s ->   132.80s] you when to buy, when to sell, and when to close based on these colors. Blue means the market is bullish
+[  132.80s ->   138.34s] on both the short-term and long-term time frame. White means that it is bearish. The market is
+[  138.34s ->   144.36s] headed down on both a short-term and long-term time frame. And gray means to stay out. For
+[  144.36s ->   148.24s] instance, right here, the market was showing a difference between the short-term and long-term
+[  148.24s ->   153.32s] trend. When there's a difference, there's typically not going to be a solid trend and most likely a
+[  153.32s ->   157.14s] change, which is what we saw here. It turned gray, it started to slow down, and then we had the
+[  157.14s ->   161.62s] immediate reversal. So now you wouldn't have been stuck shorting and then getting stuck and losing here on
+[  161.62s ->   166.78s] this trade because the gray line would have told you, hey, there's no clear trend at this moment.
+[  166.78s ->   173.46s] So blue is buy, white is sell, and gray is stay out. So this is the CSTT indicator. And so we can
+[  173.46s ->   177.90s] see that here, right? You can see how we buy here, sell here. But what I want to show you is not only
+[  177.90s ->   182.00s] will it help you with trades, but let's say you're using other types of trades. Let's say you're using
+[  182.00s ->   185.86s] credit spreads. Let's say you're using strangles. Let's say you're selling puts, or maybe you're just
+[  185.86s ->   190.34s] selling stock or selling futures or buying stock or buying futures. Whatever your approach is,
+[  190.34s ->   195.00s] it can help you stay out during the most crazy times. And what do I mean by that? Well,
+[  195.22s ->   201.00s] most strategies in the market work, but the problem is black swan events. Oops, I just lost it. Most
+[  201.00s ->   208.42s] problems are black swan events like 2008 and 2020, where we just have these huge crashes, huge news
+[  208.42s ->   215.10s] out of nowhere. And so what we can see here is that those huge crashes lead to losses, right? Credit
+[  215.10s ->   221.88s] spreads work, strangles work, options work, stocks work. All of these things work, except for these
+[  221.88s ->   228.22s] huge crashes, which destroy the returns long-term. As you can see here, the CST EMA gets you out of
+[  228.22s ->   233.30s] these situations. It shows here that the trend is slowing down. Gray means stay out. And then it says,
+[  233.40s ->   238.54s] hey, white, you should probably short this move down. And then the 2020 crash happened. We can see the
+[  238.54s ->   243.48s] same thing. If we zoom all the way back to 2008, it would have got you out of this crash as well.
+[  243.48s ->   248.68s] You see gray, white saying, hey, we're about to see a huge change here. And that's what we did.
+[  248.74s ->   254.74s] This is 2018. So again, a lot of different things going on here. So in both an immediate trading result
+[  254.74s ->   261.70s] and staying out of crashes, the CST EMA is a great thing for you to use. So let's take a look at how
+[  261.70s ->   267.66s] you can use it right now today. So like I said, blue is buy and white is sell. So when it turns to blue,
+[  267.80s ->   273.46s] what we can do is we can buy the stock. We can sell a put credit spread. We can sell a put
+[  273.48s ->   279.40s] option. We can enter a skewed strangle. Or if it's white, we can do the same thing to the
+[  279.40s ->   284.90s] downside. We can enter, we can buy a put. We can short the stock. We can enter an inverse ETFs that
+[  284.90s ->   291.38s] make money on the way down. We can do a skewed strangle to the downside. We can do anything like
+[  291.38s ->   297.44s] that to capitalize on these moves. And so that's why it's so amazing because not only does it have this
+[  297.44s ->   301.86s] improved EMA because it's about the long-term and short-term trend. Because if you go in here
+[  301.86s ->   308.28s] into the settings, what you can do is you can actually identify and add confirmation signals.
+[  308.40s ->   312.96s] One of my favorite one is the super trend. Again, these are some of the best trend following
+[  312.96s ->   318.42s] indicators in the world that have all been put into one indicator so that you no longer have to
+[  318.42s ->   321.82s] pay trading view to add a bunch of indicators. Instead, you just add one and you get access to
+[  321.82s ->   327.42s] all of them. But I love the super trend. Why? Because look, it adds it here and now it shows me
+[  327.42s ->   332.34s] an additional level of confirmation of what's going on. If it's green, I know the market is
+[  332.34s ->   336.84s] trending up. So I know to avoid these white points in the market. You can see here when it turns white,
+[  336.90s ->   341.30s] which means sell. Well, now I know, hey, we're still long-term bullish. So I'm going to take the
+[  341.30s ->   345.20s] blue inside this green area and that's going to set me up for a really good trade. The same thing here.
+[  345.36s ->   349.14s] Look, it's in a red zone. And so when I get the white, no wonder it's sold off here. No wonder it's
+[  349.14s ->   353.26s] sold off really well here. That means if I entered a put, I could have like 10x my money
+[  353.26s ->   357.94s] just by entering a put because both we're in the red zone and the white signal is triggered.
+[  357.94s ->   362.58s] So you can add different confirmations like that in your settings. You can enable predictive
+[  362.58s ->   366.76s] channels, which shows you, hey, which way is the market trending? And based on what is trending,
+[  367.16s ->   372.22s] you add the color of the line in addition to it. So now that you know how amazing this is,
+[  372.26s ->   377.30s] that it's 10 times better than a normal SMA, which doesn't take in all these factors like you can see
+[  377.30s ->   383.60s] here. This is how you, you, you get access to it. So there's a link down below the third link in this
+[  383.60s ->   390.40s] description that says, Hey, you can get free access to my alerts. When you go and you start a free trial
+[  390.40s ->   396.12s] there, you will get this indicator for free. That's right. You will get lifetime access to this
+[  396.12s ->   401.62s] indicator. Even if you go and immediately cancel your subscription. Once you start a trial, go in
+[  401.62s ->   407.42s] to the membership site, go into the success path underneath there. You'll have access to all the
+[  407.42s ->   411.96s] resources, including this and this indicator. You can click with one click to add it to your
+[  411.96s ->   415.56s] trading view account. You can add it to your thinkorswim account, whatever you want. And
+[  415.56s ->   420.02s] now you have access to it for life. I would hope that you stay with us so that we can, because in
+[  420.02s ->   424.58s] that program, we use this indicator to trade on a daily basis. But if you don't, you still have
+[  424.58s ->   428.54s] lifetime access to it. Even if you choose to cancel your subscription. So anyways, that is the
+[  428.54s ->   433.06s] CSCT SMA and all the amazing features inside of it to help you trade. No matter if you're
+[  433.06s ->   436.98s] a stock trader, a future trader, or an options trader, it shows you the direction of the market
+[  436.98s ->   441.78s] and how to profit front. So anyways, guys, I hope to see you inside the program and I hope
+[  441.78s ->   442.50s] you liked this video.

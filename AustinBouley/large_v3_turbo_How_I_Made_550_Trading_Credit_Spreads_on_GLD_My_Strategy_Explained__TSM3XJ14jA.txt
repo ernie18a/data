@@ -1,0 +1,63 @@
+[    0.32s ->     4.24s] Hey guys, what's up? In this video, I want to walk you through how I made roughly $560
+[    4.24s ->     9.72s] trading GLD credit spreads or gold credit spreads. Now again, this is a very simple
+[    9.72s ->    13.96s] and reliable strategy, but I want to walk you through my thought process and why I put this
+[   13.96s ->    18.20s] trade on so that you can understand it and do it yourself so that you can make money and the
+[   18.20s ->    22.34s] market trading credit spreads as well. So anyways, here we go. You can see here on my broker,
+[   22.50s ->    29.20s] Tasty Trade, that I put on these GLD spreads. I sold them on April 10th and I bought them back
+[   29.20s ->    36.12s] on April 13th. You can see here I got some partial fills to buy back on April 13th, but that's fine.
+[   36.40s ->    45.10s] You can see here I made a $630 profit, but then when you factor in roughly $70 in trading commissions
+[   45.10s ->    51.80s] and fees, that puts me around a $560 profit or somewhere around there. So that is the trade
+[   51.80s ->    56.32s] that I put on. And again, now I want to walk you through the chart and the reasons behind that
+[   56.32s ->    62.50s] trade. So if I go over here, this is a trading view showing GLD, which is the Spider's Gold Trust.
+[   63.00s ->    67.76s] Again, guys, this is kind of the reason why I put this trade on. If we're looking at it,
+[   67.78s ->    72.48s] you can see here that the market long-term is kind of trading in a range. You can see here
+[   72.48s ->    80.14s] how we have support from 156 and then resistance at the highest point right here around, let's just
+[   80.14s ->    86.60s] be among average 188. Okay, cool. So we're looking at this trading range right here from high, high,
+[   86.70s ->    91.08s] high, low, low, low. So we know that we're trading in this range. We're starting to recover. We're
+[   91.08s ->    94.92s] starting to trend up. You can see here when we're trending up, what we do is we connect to these lows
+[   94.92s ->   100.60s] and that's how we know we're trending higher. Okay. So we are in this trading range. We are trading
+[  100.60s ->   107.34s] higher and it looks like we're forming a doji candle. So this is what I saw for the trade.
+[  107.34s ->   112.98s] I saw that the gold market was looking very strong towards this high. So I knew it had the
+[  112.98s ->   117.44s] potential to break, but I knew it probably wouldn't hold well. So I see that we push strong
+[  117.44s ->   122.24s] into this, but I don't want to try to push into it. I want to try to catch the dip to give me more
+[  122.24s ->   127.50s] downside protection. So I wait for it to sell off and then I see a doji candle form. If you don't
+[  127.50s ->   132.94s] know what a doji candle is, that is right here. This means small body and long wigs. This is indicative
+[  132.94s ->   137.30s] of a stock reversing. So for instance, if it comes down and a doji candle forms, it means
+[  137.30s ->   142.38s] we're going to see a push up. If it pushes up and a doji forms, then it's most likely going to drop
+[  142.38s ->   147.16s] and continue down. So what I did was I saw that I'm looking for a push up to the upside because
+[  147.16s ->   152.14s] of the way that the trend is continuing. I saw a doji candle form. So I entered here on this red
+[  152.14s ->   158.50s] doji candle day. So I entered on April 10th right here. Again, I think, uh, I believe it was the 180.
+[  158.74s ->   165.06s] I believe I did the, uh, the 180 strike price, uh, as my put credit spread for those who don't know
+[  165.06s ->   170.20s] what put credit spreads are. It simply means that I put on a certain option strategy, which is called
+[  170.20s ->   176.62s] a put credit spread where I make money in this trade. As long as GLD stays above the price that
+[  176.62s ->   181.80s] I selected, which was 180 stays above this by expiration date. So again, you can see here it
+[  181.80s ->   186.04s] stayed above this. So I made money, but let me walk you through the trade specifics. So you can see
+[  186.04s ->   191.24s] here, um, again, I was indicating a bounce. You can see here the next day we gapped up and pushed higher
+[  191.24s ->   196.60s] and the next day we gapped up and pushed higher. And the next day we gapped above this prior
+[  196.60s ->   200.86s] resistance that was made. And I was watching it looking for some more upside potential,
+[  201.16s ->   206.86s] but then you can see here that it just started to consult to, to, to consolidate and show a, um,
+[  206.86s ->   211.30s] doji candle for that day. Now, what happens when a doji candle forms near a high? Well,
+[  211.34s ->   216.86s] it reverses back down to the downside. And since the credit, um, uh, that I could collect was about
+[  216.86s ->   221.82s] three cents. I just decided to close out this trade. I bought it for roughly 18 or sold it for
+[  221.82s ->   226.80s] roughly 18 cents and bought it for roughly three cents and was able to make that profit. And so
+[  226.80s ->   230.60s] again, that's where that profit came from sold there. And the next day it just ended up crashing
+[  230.60s ->   234.70s] back down around that. Now, again, you can see here, this trade would have, it would have expired
+[  234.70s ->   238.82s] worthless because it stayed above this level. And so I would have made all, uh, all the money
+[  238.82s ->   243.32s] regardless, but I sold early cause it was only at three cents, which allowed me to take that money
+[  243.32s ->   247.96s] and reinvest it in another trade. Anyways, that was the reason for the gold trade. But the main
+[  247.96s ->   253.08s] reason why I found this gold trade and why I knew what to put on was because of this right here.
+[  253.08s ->   258.02s] Again, um, it is the, uh, 10% credit spreads trade ideas, algo, which is what I put together
+[  258.02s ->   262.92s] after five years of trading in the market, which tells you and gives you stocks that have credit
+[  262.92s ->   269.14s] spread recommendations that have over a 90% win rate and at least a 15% return on capital. You can see
+[  269.14s ->   274.18s] here gold came up and tells you exactly what to do. The strike price, the expiration and everything
+[  274.18s ->   279.94s] like that. I saw this, the math or the tech or the technical analysis made sense with the math.
+[  279.94s ->   285.12s] I put that trade on and that's how I made around $550 in roughly three days. So again,
+[  285.12s ->   289.32s] if you want access to this, or at least let's say you don't even want access to this, but you want
+[  289.32s ->   294.92s] free trades from it, simply click the link below. You'll get access to this site and you'll drop down
+[  294.92s ->   299.06s] and go here and say, want to test our alerts and you can get three free alerts. So anyways,
+[  299.06s ->   302.66s] guys, whether you sign up or not, you can get three free alerts right here. Anyways,
+[  302.66s ->   305.88s] I hope you enjoyed this video and the thought process and the breakdown behind this book.
+[  305.88s ->   310.66s] Credit spreads are one of is, are an amazing strategy, uh, strategy for this market and way
+[  310.66s ->   315.84s] to make money. Um, while the stock does nothing goes up or even goes down a bit, you can still make
+[  315.84s ->   319.86s] money. Anyways, guys, if you enjoyed this video, smash that thumbs up button and subscribe button,
+[  319.86s ->   320.98s] and I'll see you in the next video.

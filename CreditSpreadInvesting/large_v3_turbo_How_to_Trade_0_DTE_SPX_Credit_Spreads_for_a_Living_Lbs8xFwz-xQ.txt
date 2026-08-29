@@ -1,0 +1,115 @@
+[    0.00s ->     7.42s] In one day, I made 45% ROI with just one zero DTE credit spreads. So first, if you don't know what
+[    7.42s ->    11.40s] credit spreads are, make sure you check out this tutorial linked in the upper right hand corner.
+[   11.76s ->    16.50s] Pause this video, watch that, then come back. So first, let's take a look at the trade. I sold a
+[   16.50s ->    27.86s] credit spread on SPX, the S&P 500 index, put credit spread at 57.75, 57.70. So a five point spread.
+[   27.86s ->    36.44s] I traded six of this and I collected $155 of credit for every single one of these,
+[   36.64s ->    49.86s] which means that my total credit collected is $930. Now, at the end of the day, SPX ended out way
+[   49.86s ->    55.92s] out of the money, around like 5,800 or so. So we were out of the money, which means that we made
+[   55.92s ->    69.12s] max profit of $930. And we know this because anytime SPX ends above our sold put, which is
+[   69.12s ->    78.97s] the 57.75, so it's greater than 57.75, we'll make max profit. And if it's below 57.70, which is below
+[   78.97s ->    87.06s] our bottom leg, our protection leg, we'll take our max loss, which will be $3,000, 500 times six,
+[   87.78s ->    93.84s] minus 930, which will be $2,070, which is our max loss. Which means that we can calculate my
+[   93.84s ->    98.74s] return on investment since I made max profit of 930, which means that it will be 930 divided by
+[   98.74s ->   108.35s] 2070, which will equal 45%. Actually, just in an hour or so, I made 45% return on investment.
+[  108.35s ->   114.03s] This looks great and all, right? 930, 45%. But how do we actually trade this? And this is where
+[  114.03s ->   117.33s] we're going to talk about the strategy. And this will transform how you guys trade credit spreads.
+[  117.69s ->   122.45s] So in order to find these great trades, there is four simple steps that we have to follow
+[  122.45s ->   129.11s] that I like to call max. M stands for market trend. A stands for area of interest. C stands for
+[  129.11s ->   135.73s] criteria of entry. And S stands for stock loss. So what is M? M is us identifying the trend.
+[  135.73s ->   141.73s] Because we ultimately want to follow the trend. Whether it's an uptrend, downtrend, or going
+[  141.73s ->   147.23s] sideways. Once we know what the trend is, then we'll move on to the next step, which is finding
+[  147.23s ->   151.47s] an area to potentially trade at. But at a high level, what we're going to do is we're going to
+[  151.47s ->   155.67s] look for these areas of supports and resistances that have higher than average implied volatility.
+[  156.09s ->   160.63s] Once we identify these areas of high reward, we're going to move on to step number three,
+[  160.79s ->   164.55s] which is criteria of entry. All because it enters an area doesn't mean that we're going to take it.
+[  164.55s ->   168.91s] We need to make sure that there is a good reason to take that trade. This can be candlesticks
+[  168.91s ->   174.61s] patterns such as bullish engulfing candlesticks. Lastly, after we enter this trade, we're going to
+[  174.61s ->   179.49s] set our stop loss, which is our S. We want to give out as soon as we know that we've lost so that we
+[  179.49s ->   184.91s] can minimize our losses. So we're going to see these four principles in action by reviewing that trade
+[  184.91s ->   189.83s] that I took and applying these four principles. If you're enjoying the content right now, make sure you
+[  189.83s ->   194.37s] guys like and subscribe to the channel to make sure you never miss a video about building those passive
+[  194.37s ->   198.63s] income streams. First thing that we have to do is to look at M, which is market trend.
+[  199.33s ->   204.37s] So the trade that I took was on October 23rd. So we're going to jump over to October 22nd after
+[  204.37s ->   210.01s] hours to just see what the overall trend is. So you can see right here, the market is in a pretty
+[  210.01s ->   216.75s] obvious uptrend, right? Go from a low to a high, to a higher low, to a higher high, again, to a higher
+[  216.75s ->   222.37s] low, again, to a higher high. But the overall long-term trend is up. But we have to also identify what the
+[  222.37s ->   226.17s] short-term trend is. And what I like to do, I like to drop it down to the 30 minutes. And what you can
+[  226.17s ->   230.85s] see here is in the 30 minutes, the market is actually consolidating and running sideways to
+[  230.85s ->   238.53s] a certain extent. We go from a low to a high, to a low, to a high, the same high actually, and then to
+[  238.53s ->   244.01s] a lower low, to a higher low, again, to the same low, and now to a higher high. The long-term trend is
+[  244.01s ->   250.31s] up and the short-term trend is kind of stagnating, going sideways. But how do we know when to trade?
+[  250.65s ->   256.81s] So this is where we would then start identifying areas of interests. One thing I like to do again
+[  256.81s ->   260.43s] is to identify areas at a higher timescale, because these areas are usually more impactful.
+[  260.83s ->   265.83s] So here we will start drawing areas of resistances and supports. So the first thing you'll notice is
+[  265.83s ->   272.83s] that there's an area of potential support around 5770, right? Why this is the previous swing low
+[  272.83s ->   279.49s] that broke up to a higher high? And if it retraces, it could also potentially be another swing high.
+[  279.75s ->   287.78s] So this is an area of potential support around 5775. Our area of resistance would be at 5878,
+[  287.78s ->   296.47s] because that is the last high that we hit. We're going to draw two lines here. One and two. Okay.
+[  297.25s ->   301.81s] Now we're going to go drop it down to 30 to just reconfirm these levels. There's another area of
+[  301.81s ->   308.81s] potential support that would be around 5820 that can act as a short-term area of support. So if it
+[  308.81s ->   313.59s] ever retraces into here and it bounces up, then we can trade in the bullish direction. If it breaks
+[  313.59s ->   316.83s] this, we can potentially trade in a bearish direction. Now that we have the areas, let's talk
+[  316.83s ->   321.89s] about some criterias. And I kind of already alluded to it. If it enters these areas and it shows something
+[  321.89s ->   328.45s] like this, for example, right here, that is a very strong rejection of this 5880 level, which means
+[  328.45s ->   331.81s] that you can potentially trade in the bearish direction, right? Because this is a large
+[  331.81s ->   337.15s] candlestick. At the same time, this could also act as a bullish confirmation. I actually wouldn't take
+[  337.15s ->   340.73s] this trade because that candlestick's length isn't tall enough. Or even something right here, right?
+[  340.77s ->   346.13s] This is what we would call a hammer with another shooting star that ends up higher than the previous
+[  346.13s ->   351.39s] candle. So this can also be a confirmation of bullish intent. And so if you see this, you can
+[  351.39s ->   355.03s] potentially trade in the bullish direction. So these are three relatively solid examples of what
+[  355.03s ->   360.49s] criteria of entry could be. So now that we have this game plan, we're going to move on to the day
+[  360.49s ->   367.33s] of the trade, which is the 23rd, to see how we apply MAC, and then finally, S. So let's talk about
+[  367.33s ->   370.97s] this day. There's two trades that I would have taken. So let's talk about the trade that I took. And then
+[  370.97s ->   376.25s] also, as an example, the trade that I missed. Because I want to trade the trend, usually speaking,
+[  376.43s ->   381.33s] right, the trend is in an uptrend, I want to trade in the bullish direction. But as you can clearly see
+[  381.33s ->   386.09s] at the day open, the market is kind of in a bearish trend now, broke the previous support,
+[  386.13s ->   390.91s] and it continued all the way down into our level of potential support. And once it enters this 5780
+[  390.91s ->   396.65s] level, I'm actually interested in trading in a bullish direction. But I need to get is a criteria
+[  396.65s ->   403.49s] of entry, which is a bullish confirmation that the trend will continue up. So we're going to look at
+[  403.49s ->   408.15s] this trade. And this is the trade that I took. So at 11 o'clock, this is what we would call a hammer.
+[  408.15s ->   413.37s] This is a very good bullish signal in an area of support. Areas of supports and resistances
+[  413.37s ->   417.99s] usually accommodate and account for higher implied volatility. If you don't know what I'm talking
+[  417.99s ->   420.37s] about, make sure you guys check out this video linked in the upper right hand corner here where
+[  420.37s ->   426.25s] I explain in depth what that means. But here below is an implied volatility chart. So you can see one
+[  426.25s ->   431.89s] that the market is telling us that this is a potential support because implied volatility has spiked.
+[  432.23s ->   438.13s] But for me, I need one more candle to understand that this is a bullish trend. And what I like
+[  438.13s ->   444.97s] to do is I like to wait for the next candle to form right at 1130. So my criteria of entry, my C,
+[  445.39s ->   449.31s] right, because we already talked about T, which is up. We talked about A, which is this area of support.
+[  449.59s ->   455.87s] Now C is I want to see the second candlestick break above the high of the previous candle. So right
+[  455.87s ->   462.69s] here at 57.77. Once it breaks up above that, then I'm going to enter the trade. The market has
+[  462.69s ->   468.67s] confirmed to me to a certain extent that the bullish trend is starting. We're going to take
+[  468.67s ->   473.27s] this candle right here, this dryer, and we're going to drop it right above that. And we'll drop it down
+[  473.27s ->   478.83s] to the five. You can see that I basically traded right at the money, 57.75, 57.70, because I'm
+[  478.83s ->   485.03s] anticipating that the market is going to go up. And for that, I took on $155 of credit. Now, after we
+[  485.03s ->   490.57s] enter this trade, we have to then figure out what S is, what is our stock loss. So I like to trade a lot
+[  490.57s ->   495.41s] on the 30 for this pattern. So we'll go back to 30. I'm going to set my stop loss slightly below
+[  495.41s ->   500.45s] the candle that was formed. The formation about 57.72, I'm going to set it around 57.70.
+[  500.67s ->   505.35s] So if the market ever retraces back to 57.70, then I want to get stopped out and I want to exit this
+[  505.35s ->   510.39s] trade. And the reason behind that is really simple. I'm trading this uptrend here. The market doesn't
+[  510.39s ->   515.69s] necessarily have to respect the uptrend, right? I can be wrong. And so the fact that this is
+[  515.69s ->   520.31s] retracing back down, I don't feel comfortable that this upswing is going to happen. So I'm going to exit
+[  520.31s ->   525.15s] first, reevaluate and see whether or not the market is going to go up again. So you can see
+[  525.15s ->   529.55s] the risk and reward is actually pretty solid. If I were to lose around five points in this case,
+[  529.55s ->   535.17s] I'd probably lose maybe 50 bucks per spread, but I'm planning on making 160, give or take,
+[  535.83s ->   540.57s] right? So my risk to reward ratio is around one to three. But as you can see, the market went all the
+[  540.57s ->   544.25s] way up at the end of the day and I exited. So the result is really not that important. You'll end up
+[  544.25s ->   548.77s] losing some trades. You'll end up winning some trades, but the thought process and strategy behind it is
+[  548.77s ->   554.21s] the most important thing. We're going to do one more on the trade that I missed earlier in the
+[  554.21s ->   559.57s] morning. So we know for a fact that the market in the short term is consolidating. If it breaks past
+[  559.57s ->   565.25s] this area of support, then it could potentially be in a downtrend, right? It goes from a high to a low
+[  565.25s ->   571.21s] to a lower high, and now it's forming a lower low. So a good trade for us to take is that if the short
+[  571.21s ->   576.53s] term trend is now down because this area of support is broken, you see the same principles
+[  576.53s ->   582.91s] M, A, and C is if it breaks this area of support and starts dropping below it, you can enter this
+[  582.91s ->   588.85s] trade. So because this is a short term trend, I like to drop it down to the five. So here, right,
+[  589.01s ->   594.49s] it's still in this level area and it breaks right here. This is our criteria of entry because it broke
+[  594.49s ->   599.57s] the area of support and it's closing below. So after it's broken the support, we can then now trade on
+[  599.57s ->   604.25s] the bear side by entering a call credit spread basically right at the money. Why? Because at
+[  604.25s ->   608.41s] this point in time, we're anticipating that the trend will continue to go down. Therefore,
+[  608.53s ->   614.89s] we're allowed to be aggressive. What is our S, stop loss? One thing you would do is you would set
+[  614.89s ->   620.11s] it slightly above this candlestick right here. And I would say right around, if this is 52.21,
+[  620.23s ->   626.23s] I would just set it at 52.24. If it loses, you'll lose again like 50 bucks. If you win, you'll make
+[  626.23s ->   631.73s] maybe 150, maybe 200. And you can see the market then will continue all the way down.
+[  632.49s ->   637.39s] And then you would have made max profit on the day. If you guys have any questions, let me know
+[  637.39s ->   641.23s] down in the comment section below. If you want to see how you can apply the max principle to
+[  641.23s ->   644.83s] 1DTs, make sure you guys check out this video linked in the end screen right here.
+[  645.21s ->   647.05s] Until next time, stay safe in the market. Peace.

@@ -1,0 +1,82 @@
+[    0.37s ->     5.11s] Hey guys, if you don't know Tom King Trades, then you're probably not familiar with 1-1-2.
+[    5.21s ->    10.23s] But if you do know him, then you know that he's the pioneer of the 1-1-2 trading strategy.
+[   10.37s ->    14.01s] He wasn't the first, but he was the one who's made it the most popular, and he's taught
+[   14.01s ->    15.33s] so many great people about it.
+[   15.39s ->    18.29s] You can see here his YouTube channel, where he can do so many amazing things.
+[   18.59s ->    22.17s] If you're not yet subscribed to him, please go subscribe to him, because he is an amazing
+[   22.17s ->    23.87s] resource and teaches some awesome things.
+[   24.17s ->    28.77s] I, in fact, learned the 1-1-2 from him myself in the very beginning by just watching his
+[   28.77s ->    29.43s] YouTube videos.
+[   29.43s ->    31.91s] So again, if you want to learn more about it, go check that out.
+[   32.05s ->    36.05s] But for people who are busy and don't have time or don't like having to watch their trades
+[   36.05s ->    40.59s] 24-7 for the stop loss, for hedges, and for all that stuff, I created a way and spent the
+[   40.59s ->    46.77s] last eight months building a platform that would allow me to automate 1-1-2 to trades based
+[   46.77s ->    47.87s] on however you want to trade it.
+[   47.91s ->    52.39s] But in today's video, I'm going to show you how to automate a 1-1-2 trade based on the criteria
+[   52.39s ->    54.15s] that Tom King Trades does.
+[   54.23s ->    56.05s] So let's not dive into it.
+[   56.29s ->    58.41s] The platform is called the Options Auto Trader.
+[   58.41s ->    60.27s] This is what it took me eight months to build.
+[   60.59s ->    65.31s] And if you see here, let's just create an Auto Trader, which is basically a rules following
+[   65.31s ->    67.81s] bot that will trade the 1-1-2 for us.
+[   68.25s ->    70.15s] So first I click on Create an Auto Trader.
+[   70.47s ->    73.59s] From there, I click on Connecting My Broker Account.
+[   73.73s ->    75.45s] Again, I already have TC Trade connected.
+[   75.59s ->    76.75s] So I'm going to click on Select Account.
+[   77.39s ->    79.43s] I'm going to click on Create an Auto Trader.
+[   79.77s ->    82.19s] And now I can create any one of these strategies.
+[   82.59s ->    84.83s] Now again, Tom King Trades does the 1-1-2.
+[   84.83s ->    85.75s] So let's create that.
+[   85.81s ->    87.31s] He also does Strangles.
+[   87.47s ->    89.27s] But I'm not going to set that up in today's video.
+[   89.37s ->    90.63s] But that is an option.
+[   90.99s ->    91.85s] So let's go to 1-1-2.
+[   92.45s ->    94.03s] Next, I pick what I want to trade it on.
+[   94.27s ->    98.41s] He trades it on ES as his main trading asset.
+[   98.67s ->    99.95s] So I can set that to ES.
+[  100.29s ->   105.21s] And he does 120 days as a long-term 1-1-2.
+[  105.81s ->   108.47s] And so again, he kind of structures his differently.
+[  109.13s ->   111.89s] Again, based on his videos, you can see what he does.
+[  112.03s ->   114.01s] But it's something like a 30-25.
+[  114.43s ->   117.79s] And then he does either a 5-7 delta.
+[  118.13s ->   123.53s] This is a rough approximation of how he trades his long-term 1-1-2s just by watching his YouTube videos.
+[  124.64s ->   130.44s] Next, he enters typically once a month or once a week, depending on how he wants to enter.
+[  130.94s ->   132.42s] And so again, we can set that up here.
+[  132.50s ->   136.48s] We can either do once a week, every other week, once a month.
+[  136.48s ->   139.12s] For this example, I'll just do every other week.
+[  139.26s ->   141.92s] So once and then a week in between and then another time.
+[  142.00s ->   143.76s] And that's how often it will enter the trade.
+[  145.38s ->   148.24s] Next is my take profits and stop loss percentages.
+[  148.80s ->   151.86s] So Tom King likes to do a 95% take profit.
+[  152.10s ->   158.62s] That means when his short puts gets a 95% and he closes the short puts and he turns into a put debit spread hedge.
+[  158.96s ->   161.26s] As you can see right here, I can have that do it for me.
+[  161.30s ->   165.96s] Where it says once the trade hits the take profit, I can turn it into a put debit spread hedge.
+[  165.96s ->   167.80s] I can close the entire trade.
+[  167.92s ->   170.40s] I can turn it into a ratio hedge or the put debit spread hedge.
+[  170.50s ->   174.20s] But since we're trading it how Tom King does, we'll set this at put debit spread hedge.
+[  174.62s ->   176.42s] Next, stop loss is 300%.
+[  176.42s ->   178.60s] I believe it's the one that he uses.
+[  179.08s ->   182.10s] Again, you can go check out his program called Income Navigator.
+[  182.20s ->   183.14s] It's a wonderful program.
+[  183.26s ->   185.22s] It shares all his alerts for 1-1-2s.
+[  185.44s ->   187.44s] And I recommend you go check that out if you're interested.
+[  187.98s ->   190.50s] But if you want to automate it, this is the software for you.
+[  191.10s ->   192.12s] Anyways, just like this.
+[  192.18s ->   195.46s] Next, we set up how much money we want to allow this auto trader to trade with.
+[  196.22s ->   199.36s] So again, if we're doing ES, we need a bit of a larger account.
+[  199.46s ->   201.60s] So I'll just do 30,000 here for this example.
+[  203.48s ->   209.70s] So you can see just like that, we've kind of automated this system where it's a long-term 1-1-2.
+[  209.90s ->   215.76s] Where it's going to enter 120 DTE 1-1-2 on ES every two weeks on Wednesday.
+[  216.32s ->   218.24s] And it's going to manage everything for us.
+[  218.30s ->   219.82s] The take profit, the stop loss.
+[  219.82s ->   225.34s] It's going to check on the market every minute to make sure that our trades are secure, protected, and up-to-date.
+[  225.34s ->   227.26s] It's going to use stop losses.
+[  227.48s ->   230.14s] And it's going to automatically turn our trades into hedges for us.
+[  230.40s ->   233.18s] So just like that, we've automated Tom King's 1-1-2 strategy.
+[  233.30s ->   235.78s] His long-term one that he has the most success with.
+[  235.82s ->   237.20s] I don't think he's lost yet with it.
+[  237.42s ->   242.32s] And so if you would like to use this system, just click the link down below to request access to the Optus Auto Trader.
+[  242.52s ->   246.18s] And you can automate Tom King's entire 1-1-2 trade using this platform.
+[  246.58s ->   247.16s] All right, guys.
+[  247.24s ->   247.92s] See you in the next video.
+[  247.92s ->   263.60s] We'll see you in the next video.

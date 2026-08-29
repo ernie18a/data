@@ -1,0 +1,122 @@
+[    0.21s ->     4.07s] In this video, I want to talk to all the option sellers who are breakeven.
+[    4.19s ->     6.87s] I'm talking about you've been selling options for years now,
+[    6.95s ->    11.05s] and when you look at the total profit and loss, it's not as large as you think it should be.
+[   11.31s ->    15.13s] If that is the case, there are three things you need to change right now to fix that.
+[   15.43s ->    19.43s] Look, I've personally coached over 5,000 different options traders,
+[   19.85s ->    24.33s] and what I've found, and no, this is not a survey, it's not a study, it's not concrete data,
+[   24.33s ->    29.09s] but what I can say is based on my working with these people, about 50% of them are breakeven.
+[   29.45s ->    30.15s] What does that mean?
+[   30.49s ->    35.21s] It means that 50% of them go from having small wins, a small win, small win, small win, small win,
+[   35.27s ->    40.37s] for a while, a long run of winners, and they have one large loser that wipes out all their profits
+[   40.37s ->    44.97s] or kind of resets it, and so basically, they spend a year or two trading
+[   44.97s ->    48.69s] only to see very minimal profit or really breakeven progress,
+[   48.79s ->    52.17s] and if you factor in commissions and fees, they're actually probably losing money.
+[   52.29s ->    57.93s] And now, if that is you, no worries, I was there for a while, here are the three changes that I made.
+[   57.93s ->    61.97s] And again, making these will most likely help you get out of this rut.
+[   62.27s ->    64.27s] Now, here are some assumptions that I'm making about you.
+[   64.35s ->    67.85s] Number one, you have a good strategy, meaning you're selling options,
+[   68.01s ->    71.21s] and it has anywhere from a 75% to a 95% win rate.
+[   71.27s ->    72.97s] If you're in that category, you're good.
+[   73.03s ->    75.05s] You need to have a good strategy first and foremost.
+[   75.63s ->    78.23s] Number two, you're using good risk management.
+[   78.23s ->    80.83s] By that, I mean, of all the trades you have active,
+[   81.21s ->    85.25s] your buying power into option-selling strategies is no more than 50%.
+[   85.25s ->    90.71s] Ideally, you put 30% to 40% of your money into trades at any given one time.
+[   90.77s ->    92.45s] Why? You want to make sure your risk is managed.
+[   93.15s ->    95.79s] And then number three, you're currently selling options of breaking even.
+[   95.87s ->    98.15s] So if you have a good strategy, you have good risk management,
+[   98.49s ->   101.93s] then these three additions will help you get to consistently profitable.
+[  102.25s ->   104.39s] Now, if you don't have a good strategy or good risk management yet,
+[  104.47s ->   106.47s] go watch one of my other videos that will help you with that.
+[  106.47s ->   109.75s] So what is the first thing you can do is change your win rate.
+[  109.87s ->   113.87s] Okay, a lot of people try to go for a super high win rate, like 90% plus.
+[  114.19s ->   117.09s] But the problem is the higher your win rate, the larger your losses.
+[  117.09s ->   121.05s] It means that you're going to be picking up pennies in front of a steamroller.
+[  121.43s ->   125.57s] So what this looks like is you try to have small and small with the highest win rate possible.
+[  125.87s ->   130.63s] Then something happens, the market crashes, volatility spikes, and you have a huge loss.
+[  130.79s ->   131.75s] So let me show you this.
+[  132.21s ->   134.41s] This is the math of an expected return.
+[  134.41s ->   140.25s] Basically, take your win rate times how much you win minus how much you lose win rate times the amount of money you lose.
+[  140.33s ->   146.99s] So basically, if we have a 95% win rate strategy where we make $250 per trade, but we lose $4,000 when we lose,
+[  147.15s ->   148.81s] we're still going to be profitable, right?
+[  148.91s ->   153.17s] But long term, we're only going to make about $4,000 over the course of 100 trades.
+[  153.95s ->   157.03s] We have a lower win rate trade, but we keep the profit the same, right?
+[  157.03s ->   161.29s] So 90% win rate, $250 we make per trade, which is pretty good.
+[  161.89s ->   163.65s] And that means we lose 10% of the time.
+[  163.73s ->   165.09s] So we're losing more often.
+[  165.35s ->   172.95s] But if we lose $1,500, that brings our total profit and loss over 100 trades up to $7,500.
+[  172.95s ->   181.19s] We basically double our return, not only that, more than double by winning less, but reducing our risk more.
+[  181.19s ->   187.91s] This is the same exact strategy that I use, where I win about $250 when I win, and I lose about $1,500 when I lose.
+[  188.25s ->   190.95s] And that's why I'm very profitable over 100 trades.
+[  191.07s ->   193.95s] I'm not hitting break even because I don't have these large one-off losses.
+[  194.05s ->   197.65s] If you want to learn more about that strategy, I have another video on it, but it's super simple.
+[  198.05s ->   199.35s] So what is the action item here?
+[  199.77s ->   204.05s] Decrease your stop loss to 100% to 200% if you're using undefined risk strategies.
+[  204.05s ->   209.99s] So if you're selling a put or doing something like that where there's no defined risk, no spread aspect to it,
+[  210.31s ->   214.47s] make your stop loss be anywhere from 100% to 200% so that your stop loss is smaller.
+[  214.95s ->   218.73s] You'll have more losses, but it won't massively hit you and drain the account.
+[  219.51s ->   225.63s] Number two, if you're trading defined risk strategies like a spread over an iron condor, use an early management style.
+[  225.83s ->   232.93s] Use the spread to define your risk and then let that trade go on as long as it possibly can to give you more time to make money.
+[  232.93s ->   236.91s] Right, because when you cut it off, you're not allowing the market to move and things like that.
+[  237.13s ->   239.31s] Two things, move your stop loss, make it smaller.
+[  239.45s ->   244.61s] Or number two, define your risk with the spread and then let the trade go on for as long as possible.
+[  245.35s ->   247.55s] Solution number two is strategy and trend alignment.
+[  247.67s ->   248.69s] This is the biggest one.
+[  249.03s ->   254.31s] I see people who latch on to one amazing strategy and then they keep using it and then guess what?
+[  254.63s ->   257.45s] The market turns, something happens and they lose money.
+[  257.87s ->   261.73s] And because that's the case, people then give up on that strategy and they find a new one.
+[  261.73s ->   264.37s] Here's the thing, every single option strategy works.
+[  264.43s ->   265.09s] This is my opinion.
+[  265.27s ->   270.51s] Every option strategy is amazing and works, but it must be traded in the right market for it.
+[  270.87s ->   274.77s] So example, if you're selling puts, only sell puts in bullish markets.
+[  275.03s ->   281.51s] Okay, so my recommendation, pick some indicator, pick something to identify when the market is trending.
+[  281.71s ->   287.63s] A simple one, which I'll show you on the chart here in a second, is if it's above the 100 period, SMA will define that as bullish,
+[  287.63s ->   291.05s] which means you should be selling puts, put credit spreads, or long calls.
+[  291.81s ->   296.85s] Vice versa, if the market is below the 100 period SMA, then it's bearish.
+[  296.97s ->   300.63s] So it should be selling calls, doing call credit spreads, or doing long puts.
+[  300.83s ->   302.63s] So let me show you what this looks like.
+[  302.71s ->   303.91s] Okay, come to the chart.
+[  304.01s ->   306.45s] Let's put on a simple moving average like this.
+[  306.71s ->   308.45s] I believe this is a 100 period moving average.
+[  308.55s ->   309.13s] I could be wrong.
+[  309.23s ->   311.39s] 100 period means it looks back a length of 100.
+[  312.33s ->   314.63s] So if the market's above it, it's trending up.
+[  314.67s ->   316.39s] If the market's below it, it's trending down.
+[  316.49s ->   320.13s] So what we can do here, if it's above, we're only going to be running bullish strategies.
+[  320.25s ->   321.39s] So that'd be a put credit spread.
+[  321.65s ->   324.65s] If it's below here, we're only going to be running bearish strategies.
+[  324.65s ->   325.83s] Let's say a long put.
+[  326.13s ->   327.07s] So that's how simple it is.
+[  327.07s ->   331.05s] Now I have an amazing strategy, but I'm running it in the market I'm supposed to be running it in.
+[  331.39s ->   333.63s] So what's the action item from this solution?
+[  333.83s ->   336.97s] Pick an indicator or some way you want to determine trend.
+[  336.97s ->   341.53s] And what you'll do is you'll make sure you only trade the right strategy within the right market.
+[  341.87s ->   349.47s] That will save you a ton of money, a ton of losses, because if you're selling a put credit spread, a bullet strategy, and the market's trending down, you're not going to make money.
+[  349.53s ->   351.17s] That's big item number two.
+[  351.31s ->   352.45s] Go implement those two things.
+[  353.15s ->   354.47s] Number three is remove emotion.
+[  354.61s ->   358.13s] Okay, so if we've already have a good strategy, we have good risk management.
+[  358.39s ->   362.45s] Now we make sure that our stops or our losses are not massive.
+[  362.77s ->   365.81s] And then we make sure we're trading the right strategy in the right market.
+[  365.81s ->   368.67s] The only thing left is emotion, human error.
+[  368.93s ->   372.51s] Okay, so after we've implemented those two things, that's the only thing left.
+[  372.89s ->   383.95s] And so if we leverage something like an options automation tool, we can actually automate our options trading, remove emotion, decrease human error and losses, and increase consistency and profitability.
+[  384.63s ->   386.41s] This is just by far what we can do.
+[  386.45s ->   388.57s] And in today's world, there's so many options to do that.
+[  388.57s ->   395.57s] Now, obviously, I'm biased because I created and built a tool called the options auto trader, which allows you to automate any options strategy.
+[  395.81s ->   398.99s] Or you can even steal my proven bots that I'm using myself.
+[  399.09s ->   400.43s] You can just one click and use them.
+[  400.73s ->   407.71s] But this will help you increase the consistency, remove the emotion, and just allow your trades to be managed 24-7 all the time for you.
+[  407.91s ->   411.03s] That way you get out sooner, you get in at the right time and all that stuff.
+[  411.03s ->   415.87s] So the action behind there, go automate your options trading, whether you use the options auto trader or not.
+[  415.95s ->   417.29s] Although I'm biased, I think it's the best.
+[  417.73s ->   418.49s] Go automate.
+[  418.67s ->   420.95s] So good strategy, good risk management.
+[  421.39s ->   425.47s] Make sure that your losses are manageable, are good, are short, are small.
+[  425.85s ->   430.11s] And then make sure you are actually trading with the right trend and then set it all up in a box.
+[  430.11s ->   432.17s] So that's how simple it is.
+[  432.37s ->   440.85s] Again, if you want to join our community where I have over 10 different free trading courses on options on AI and trading and box and all that stuff,
+[  440.97s ->   443.13s] you can go to our free school community.
+[  443.25s ->   444.87s] First link in the description down below.
+[  445.17s ->   445.65s] All right, guys.
+[  445.71s ->   446.35s] See you in the next video.

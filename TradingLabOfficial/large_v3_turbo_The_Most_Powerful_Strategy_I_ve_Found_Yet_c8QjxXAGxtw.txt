@@ -1,0 +1,109 @@
+[    0.16s ->     4.80s] I just found a brand new strategy that I myself personally use all the time.
+[    4.80s ->     6.72s] It involves, drum roll please,
+[   14.14s ->    17.26s] If you don't know what fair value gaps are, well you're in for a treat.
+[   17.26s ->    20.70s] If you do know what fair value gaps are, well you're even luckier.
+[   20.70s ->    23.74s] Because I'm about to show you an amazing strategy using them.
+[   23.74s ->    27.50s] And most of the trades have a risk to reward ratio like this.
+[   29.92s ->    34.00s] And the crazy thing is, a good majority of the time it succeeds.
+[   34.00s ->    36.32s] What? Why have I not heard about this before?
+[   36.32s ->    39.36s] Well, you know me. I like to get straight to the point with these videos.
+[   39.36s ->    41.20s] Let's see how this strategy works.
+[   41.20s ->    45.92s] First off, we're trading EURUSD. This trading strategy will work in all markets,
+[   45.92s ->    49.12s] including stocks, crypto, forex, whatever you're trading.
+[   49.12s ->    53.52s] Also, as a quick side note, I just hit 100,000 subscribers recently,
+[   53.52s ->    57.60s] and I want to say from the bottom of my heart, thank you. Seriously, I love you guys.
+[   57.60s ->    62.80s] As a way to say thanks, Hankertrade has agreed to help host a forex trading competition with me.
+[   62.80s ->    63.84s] Which means…
+[   63.84s ->    65.28s] There's a prize pool, baby.
+[   65.28s ->    70.08s] I'm hosting a trading competition where the top two people with the highest percentage gain
+[   70.08s ->    75.36s] on their account after two weeks of trading will receive $1,000 cash each.
+[   75.36s ->    78.72s] So we are giving away a total of $2,000 to you guys.
+[   81.06s ->    86.02s] The only requirements is that you need to deposit a minimum of $100 on Hankertrade,
+[   86.02s ->    90.82s] follow both me and Hankertrade on Instagram, and of course get first or second place.
+[   90.82s ->    99.12s] That's it. If you do all of those things, you get a free $1,000. Hell, you could even use this strategy
+[   99.12s ->   102.96s] that I'm about to share with you to help you win it. Hankertrade is a great broker,
+[  102.96s ->   107.84s] and I've been using them for a long time. You can get up to 500x leverage, they have extremely low
+[  107.84s ->   114.56s] spreads starting at 0.0 pips, low commissions, negative balance protection, and they'll match
+[  114.56s ->   118.32s] 100% of whatever you deposit. So yeah, they're pretty awesome.
+[  118.32s ->   122.16s] If you're interested in joining the forex trading competition, I'll leave the sign up link in my
+[  122.16s ->   126.40s] description. It'll start once this video gets released. So yeah, enter now.
+[  128.16s ->   133.52s] It'll end in 2 weeks. You can also check out my discord where I'll be updating a live leaderboard
+[  133.52s ->   137.76s] of the competition. Good luck. Thanks again for 100k subscribers. Back to the strategy.
+[  137.76s ->   142.08s] So the very first step for the strategy is finding a key support resistance,
+[  142.08s ->   146.88s] depending on if you want to go long or short. For this example, we want to do a short trade.
+[  146.88s ->   151.60s] So we need to find a key resistance. You can do this by finding a recent swing high,
+[  151.60s ->   156.16s] or by going on a higher timeframe like the 1 hour and finding a key resistance there.
+[  156.16s ->   161.28s] So here, Precious made a recent swing high. It also had a pretty strong resistance on the 1 hour
+[  161.28s ->   166.16s] timeframe. So we mark a line on our chart to let us know there's a strong resistance right here.
+[  166.16s ->   170.40s] The next step to make this strategy a high probability setup is we want a fakeout.
+[  170.40s ->   175.04s] A fakeout is simply when price breaks your resistance or support and ends up being a false
+[  175.04s ->   180.08s] breakout and starts heading the opposite direction. The reason why we want a fakeout is this.
+[  180.08s ->   184.16s] There are going to be people entering long positions for this break of this recent high.
+[  184.16s ->   189.04s] So you know what they're going to do? Set stop losses down in this area. So if price does end up
+[  189.04s ->   193.92s] doing a false breakout, once price comes down, it'll hit all their stop losses, adding fuel
+[  193.92s ->   199.04s] to the fire, giving price momentum to keep heading downwards. Which is exactly what we want when
+[  199.04s ->   203.84s] going short. So we have a resistance, price starts coming back up towards it, but doesn't quite break
+[  203.84s ->   208.40s] it. So it's not considered a breakout. Price rejects then tries to break the resistance again.
+[  208.40s ->   213.28s] This time it does end up breaking the resistance, just barely though. Then it starts falling.
+[  213.28s ->   222.16s] This is the false breakout we are looking for. So that is step 2 completed. The next thing we're
+[  222.16s ->   227.12s] looking for is price to confirm it's heading downwards. How we confirm this is we want price
+[  227.12s ->   232.56s] to make two lower lows like this. If price ends up making two lower lows, we can confirm that there's
+[  232.56s ->   237.12s] a high probability of price to continue to head lower, considering this is the start of what's
+[  237.12s ->   242.32s] considered a downtrend. So here price had a false breakout, price makes a low, goes up a little bit,
+[  242.32s ->   247.12s] then makes another low. Look closely to what's happening. Price came to this resistance area,
+[  247.12s ->   251.92s] and not only that, but it also did a false breakout, which is an extremely bearish sign.
+[  251.92s ->   257.60s] Then on top of that, we made two lower lows. All of these signs are extreme indicators of price
+[  257.60s ->   261.52s] wanting to move downwards. Now you may be asking,
+[  261.52s ->   264.48s] Okay, price made two lower lows, but when do I enter?
+[  264.48s ->   269.92s] We are going to get our optimal entry from a fair value gap. A fair value gap is just when price makes
+[  269.92s ->   274.72s] a huge move in one direction, and doesn't give the buyers or sellers enough time to counteract
+[  274.72s ->   279.60s] the movement, creating an imbalance in the market. Price will naturally want to come back to this
+[  279.60s ->   284.48s] area to test it again. You can get this area by getting the big movement and going from the candle
+[  284.48s ->   290.08s] wick before the move, and the candle wick after the move, and this is the fair value gap area.
+[  290.08s ->   295.44s] Now what's cool is my private indicator has an option to where you can enable fair value gaps,
+[  295.44s ->   299.68s] and it will automatically showcase all the fair value gaps on the chart, so you don't have to
+[  299.68s ->   304.80s] do any of the work, and it does it all for you. It will also color code the fair value gaps to tell
+[  304.80s ->   309.60s] you if they are bullish or bearish. So that's what all these rectangles are on my chart, fair value
+[  309.60s ->   313.84s] gaps. If you are interested in the indicator, I'll leave a link in the description so you can go check
+[  313.84s ->   318.88s] it out and use it for yourself. So price did a false breakout, then made two lower lows, and you can
+[  318.88s ->   324.64s] also see on this second low, it made a bearish fair value gap, which is exactly what we are looking for.
+[  324.64s ->   329.52s] This will be your entry signal. Sometimes price will create multiple fair value gaps on the second
+[  329.52s ->   334.40s] low. If you want a short and it does this, always just aim for the entry of the highest fair value
+[  334.40s ->   339.04s] gap as this will give you the best entry. You will have cases where price doesn't make it there,
+[  339.04s ->   343.44s] and you will miss out on the trade, but you'll have a better risk to reward ratio by trading off
+[  343.44s ->   348.40s] the highest fair value gap. Anyways, so we have our fair value gap target. What I like to do is use the
+[  348.40s ->   354.16s] tool on trading view, the GAN box. Place it anywhere on your chart, click on it, and then go to the settings.
+[  354.16s ->   358.08s] Pause the video and make sure your settings match mine. Once you have the correct settings,
+[  358.08s ->   363.84s] display the GAN box exactly on the ends of the fair value gap. This will draw a line exactly in
+[  363.84s ->   369.28s] the middle of the fair value gap. This is our entry point. Price will often go to this 50% mark and
+[  369.28s ->   374.96s] reject here, so we wait for price to hit this line. The price ends up coming back up and hitting the fair
+[  374.96s ->   380.32s] value gap just as we expected. This is where we enter our trade. You can set your stop loss at the recent
+[  380.32s ->   384.96s] swing high, or if you want to be a little more risky, you can set it above the original resistance.
+[  384.96s ->   389.20s] I usually set it at the recent swing high. You'll get stopped out a little more, but the risk to
+[  389.20s ->   393.76s] reward ratio is way better. In the end, it's up to you. Then you're going to set your take profit
+[  393.76s ->   399.20s] at the low of the whole move. What makes this strategy so successful is the risk to reward ratio.
+[  399.20s ->   404.56s] With most of these styles of trades, you're going to have huge room for gains and little room for losses.
+[  404.56s ->   409.76s] So basically you only need 1 out of every 4 trades to be successful in order to make money with this
+[  409.76s ->   414.64s] strategy. Often times when price has a huge spike up like this and starts consolidating at the top,
+[  414.64s ->   419.84s] price will usually come down and mirror what the move did while it was going up. So it'll hesitate
+[  419.84s ->   424.64s] usually at the same exact spots it did while going up. The end goal is where the move started,
+[  424.64s ->   429.36s] which is where we will set or take profit. I also recommend to increase the win rate of the strategy
+[  429.36s ->   434.24s] to take profit at key hesitation levels. So here during the move up, price hesitated
+[  434.24s ->   439.76s] here and here. These are potential areas to sell a percentage of your position to get guaranteed
+[  439.76s ->   444.16s] profits rather than wait for price to make it all the way down here. As a quick hint,
+[  444.16s ->   448.72s] another way to find potential take profits is by going on a higher time frame and looking for
+[  448.72s ->   454.40s] bullish fair value gaps and use the GAN box tool again. These could also be good areas to take profit.
+[  454.40s ->   458.80s] It's really important to incorporate risk management when dealing with strategies like this.
+[  458.80s ->   463.76s] So we have our stop loss setup, our take profit setup, and we entered into a short trade.
+[  463.76s ->   468.16s] Price starts heading downwards right after hitting the fair value gap just like we expected.
+[  468.16s ->   473.36s] Then it hits our first take profit area and starts hesitating, also just like we expected.
+[  473.36s ->   479.84s] So we sell 25% of our position right here. Then we let price and its momentum do the rest of its magic.
+[  479.84s ->   484.40s] It starts heading downwards some more and hits our second take profit and starts hesitating again
+[  484.40s ->   490.16s] at our take profit area. So we sell another 25% of our position, this way we are guaranteeing these
+[  490.16s ->   494.96s] profits. Then finally price ends up hitting our final take profit and we exit the trade making
+[  494.96s ->   499.92s] an absolute killing off this one single trade. That's the thing with this strategy, you get
+[  499.92s ->   504.96s] these massive wins and because of all the precautions we take before entering the trade, it makes an
+[  504.96s ->   510.72s] extremely high probability setup. If you wanted to do a long trade, just do the complete opposite of
+[  510.72s ->   515.28s] everything we just did. Again, if you want to check out the indicator to help show fair value gaps,
+[  515.28s ->   520.80s] go to tradinglab.ai. And if you want a chance to use this strategy in a trading competition and win
+[  520.80s ->   526.96s] a free $1,000, sign up for it in the description. It starts right now. Good luck.

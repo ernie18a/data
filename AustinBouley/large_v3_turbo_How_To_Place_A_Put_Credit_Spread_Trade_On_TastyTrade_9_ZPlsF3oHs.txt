@@ -1,0 +1,20 @@
+[    0.14s ->     6.50s] I'm going to walk you through how to open up a credit spread trade using TastyTrade as your broker.
+[    6.66s ->     8.44s] So let's walk through this step by step.
+[    8.62s ->    16.66s] We're going to be using the 10% credit spreads broker walkthrough example so you can see exactly what you need to do step by step.
+[   16.74s ->    21.96s] So simply if we click here to place this trade, we go into TastyTrade and we can put on this trade.
+[   22.24s ->    25.12s] So what we need to do to put on the trade is simply this.
+[   25.34s ->    29.22s] We need to locate the expiration date that we are looking for, step one.
+[   29.22s ->    31.54s] So what expiration date are we looking for?
+[   31.64s ->    35.56s] If you're using the 10% credit spread system, it tells you the expiration date to look for.
+[   36.00s ->    39.68s] Next, if you're setting up a put credit spread, which is what we're doing in this section,
+[   39.86s ->    46.90s] what you need to do is you need to go in here and look at, okay, cool, I'm going to sell the 361 and buy the 360.
+[   47.02s ->    51.38s] You're going to be selling the strike price that is closest to the current stock price
+[   51.38s ->    54.46s] and you're going to be buying one that is further away.
+[   54.70s ->    56.40s] So that's how you set up the put credit spread.
+[   56.40s ->    58.70s] It tells you what strikes to sell and what's to buy.
+[   58.70s ->    63.50s] Next, and last but not least, you scroll down to the bottom of the page and you notice,
+[   63.86s ->    69.74s] okay, if the mid price, which is listed here, is greater than or equal to 0.15,
+[   69.98s ->    72.22s] which is the minimum credit you need to collect for this trade,
+[   72.58s ->    73.68s] then this is a good trade.
+[   73.76s ->    75.36s] You click review and send and move on.
+[   75.36s ->    81.42s] So that is how you quickly put on a put credit spread using the Tasty Trade Broker.

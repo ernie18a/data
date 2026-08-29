@@ -1,0 +1,178 @@
+[    1.07s ->     6.26s] Hey YouTube, it's Roman. We're back on the iPad today and what I'd like to do is
+[    6.26s ->    10.98s] talk about a linear algebra topic called linear independence. What I'd like to do
+[   10.98s ->    16.14s] is start from scratch and discuss the difference between vectors and matrices
+[   16.14s ->    23.06s] and then build this idea of a basis in a specific dimensional space and then we
+[   23.06s ->    26.64s] can move on to linear independence and the formal definition of linear
+[   26.64s ->    31.38s] independence and why it's so useful in practice. So let's get started with
+[   31.38s ->    36.18s] vectors. What is a vector? Well most of the time we can think of a vector as
+[   36.18s ->    42.72s] something with direction and magnitude and that may not be super clear at first
+[   42.72s ->    46.70s] if you haven't heard of this term before but if you're familiar with the x and y
+[   46.70s ->    51.60s] axes we can actually define this visually. So let's go ahead and start with just
+[   51.60s ->    59.04s] drawing our x and y axes like you know from school and we can plot a vector and
+[   59.04s ->    64.80s] one of the most simple vectors that you can plot is the vector 1 1. Now what do I
+[   64.80s ->    69.90s] mean by this? Well if we look at the coordinate system here and we find 1 1
+[   69.90s ->    77.68s] we can plot this point. Now that point is in coordinate space 1 comma 1 but we can
+[   77.68s ->    85.90s] also represent a vector that points to 1 1 as an arrow going in this particular
+[   85.90s ->    95.38s] direction and this would be represented in vector form as a column vector of 1 1.
+[   95.38s ->   100.58s] Seems simple enough but as my calc 3 professor would say we're missing a very
+[  100.58s ->   105.88s] crucial idea here and that is the idea of a central location for this particular
+[  105.88s ->   111.16s] vector. Now I said that a vector has direction and magnitude but I didn't say
+[  111.16s ->   116.26s] that it has a specific location. So what that means and it's a little weird to
+[  116.26s ->   125.17s] think about this at first but this vector 1 1 is the same as this vector 1 1 which
+[  125.17s ->   130.99s] is the same as this vector. They all have the same direction and magnitude they're
+[  130.99s ->   136.21s] just in different locations within this Euclidean space. So keep this in mind when
+[  136.21s ->   141.85s] we refer to vectors we are referring to something with magnitude and direction
+[  141.85s ->   146.59s] not necessarily a specific location. So we have this notion of direction just take a
+[  146.59s ->   151.11s] look at this graph we can see the arrow pointing in a specific direction so fair
+[  151.11s ->   156.15s] enough we have a some measure of direction but what about magnitude what is
+[  156.15s ->   162.15s] magnitude well magnitude is also called the norm and it is defined as follows so if we
+[  162.15s ->   168.99s] have this column vector 1 1 and we set this equal to x and most of the time so you don't
+[  168.99s ->   173.85s] get confused with other variables a little arrow is put over the top usually looking something
+[  173.85s ->   180.15s] like this so we have a vector x and if we wanted to measure the magnitude we would say the norm
+[  180.15s ->   192.63s] with two lines of x is equal to the square root of the elements summed and squared so we would say 1
+[  192.63s ->   206.07s] squared plus 1 squared in the case of 1 and 1 more generally speaking if we had some vector y is equal to x and z
+[  206.07s ->   216.68s] then the norm of y would be equal to the square root of x squared plus z squared.
+[  216.68s ->   221.24s] All right now we got to start talking about vector operations how can we add multiply
+[  221.24s ->   227.68s] etc with vectors well it's actually quite intuitive and quite easy so I'm going to
+[  227.68s ->   234.32s] quickly define two more vectors I'm going to say i is equal to 1 0 and then j is equal to
+[  234.32s ->   239.92s] 0 1 now these are actually very special vectors that we're going to talk about in a moment when
+[  239.92s ->   244.00s] we start moving on to linear independence but for now just bear with me we're going to look at addition
+[  244.00s ->   251.04s] and multiplication so addition is defined element wise so all we have to do is take each respective
+[  251.04s ->   261.92s] element of the vector and sum them together so quite intuitively i plus j would be 1 plus 0 0 plus 1
+[  261.92s ->   270.72s] which is equal to 1 1 now we also need to define some multiplication by a number and this again is
+[  270.72s ->   276.88s] also very easy we simply multiply the number to each element so this is a very special type of vector
+[  276.88s ->   287.09s] multiplication called scalar multiplication so if i say lambda is an element of the real numbers perhaps so
+[  287.09s ->   292.61s] if you don't want to use an arbitrary number you could just pick one like say 3 and we say that
+[  292.61s ->   306.69s] lambda i is equal to lambda times 1 and then lambda times 0 which is equal to lambda 0 so this is addition
+[  307.57s ->   314.61s] for vectors and scalar multiplication for vectors but what about multiplication among vectors themselves well
+[  314.61s ->   321.09s] there's actually a very specific type of multiplication that we do with vectors called the vector dot product
+[  321.09s ->   326.05s] and the dot product is actually going to yield some unique information about the vectors we're working
+[  326.05s ->   333.81s] with in respect to the angle of the vector with another vector so bear with me for a moment the dot product
+[  333.81s ->   352.93s] i dot j would be equal to the sum from i equals 1 to n of i sub i j sub i so we are multiplying each respective element
+[  353.65s ->   361.73s] of vector i and vector j with each other and then summing them all together so this would look like
+[  362.53s ->   368.77s] one times zero because we are taking the first element here and the first element here and multiplying them
+[  369.33s ->   380.37s] then we add zero times one and that is from this guy and this guy so quite clearly the dot product in this
+[  380.37s ->   386.85s] case yields zero this brings me to a very important point about the dot product the dot product is going
+[  386.85s ->   393.33s] to tell you whether or not vectors are orthogonal to one another that is if they are perpendicular
+[  393.33s ->   399.49s] that means the angle between the two vectors is 90 degrees and in fact when we look at linear
+[  399.49s ->   405.81s] independence we'll see that orthogonality implies linear independence so let me go ahead and draw these
+[  405.81s ->   410.61s] two vectors for you i said these were very special vectors which we are going to talk about in a moment
+[  410.61s ->   417.25s] but let me just start by making this point on orthogonality so if i was to go ahead and draw these x and y
+[  417.25s ->   433.12s] axes and i was to plot i which is at one zero x comma y so i and then j at zero comma one we get these two vectors
+[  433.12s ->   440.96s] so this is i and this is j and if you look here the angle between them is quite obviously 90 degrees
+[  440.96s ->   447.52s] but we can see with the dot product that it just affirms the statement that these two vectors are
+[  447.52s ->   455.76s] orthogonal to one another so we can see that orthogonality means that there is this 90 degree angle between
+[  455.76s ->   461.92s] two vectors so this is all well and good this is kind of a lot of information being thrown out at once
+[  461.92s ->   468.96s] but why do we care about this orthogonal condition here well when we're looking at vectors of different
+[  468.96s ->   476.40s] dimensionality whether we're looking at r2 which is euclidean space that is this two-dimensional axis here
+[  476.40s ->   482.64s] or maybe we're looking at r3 which is going to be an x y and a z axis or even higher dimensions
+[  482.64s ->   489.60s] then we really care about whether or not vectors are perpendicular to one another because it says
+[  489.60s ->   497.76s] something about the information that a vector is conveying to the space whether or not the contributions
+[  497.76s ->   504.08s] of the information are unique or not now if that sounds confusing don't worry we're going to break this down
+[  504.08s ->   511.36s] but for starters let's talk about a orthonormal basis in r2 in this euclidean space let's break down that
+[  511.36s ->   519.36s] word orthonormal ortho refers to orthogonal we know what that means 90 degree angle normal refers to the
+[  519.36s ->   527.12s] magnitude of the vectors that is there of unit length or the norm or the magnitude is equal to one
+[  527.84s ->   539.12s] so orthonormal just means the vectors are orthogonal and the norm is one okay so i and j form an orthonormal basis
+[  539.92s ->   550.96s] for r2 now what are the implications of this well any vector in r2 can be represented as a linear combination
+[  551.76s ->   561.12s] of i and j with some constants c1 and c2 so let's go ahead and take a look at what this actually means
+[  561.12s ->   571.76s] i'll pick some vector in r2 we can just go ahead and say this is a comma b this point here so it's an arbitrary
+[  571.76s ->   582.88s] point in two-dimensional space a comma b and this vector we will call it r is defined as a b now we
+[  582.88s ->   587.92s] can set a and b to whatever we like it can be literally whatever we want it could be any number
+[  587.92s ->   593.20s] in this two-dimensional space let me just kind of emphasize that it has to be a real number so for
+[  593.20s ->   598.64s] those mathematicians among you that want to be picky we can say that a comma b are an element of the
+[  598.64s ->   607.60s] the reals so now we have this vector r that has elements of the real numbers a and b that define
+[  607.60s ->   617.28s] its direction and magnitude how can we represent this vector as a linear combination of i and j
+[  617.28s ->   628.80s] are our basis vectors well it's really easy all we have to do is find some c1 multiplied by r i
+[  630.00s ->   643.12s] and then plus some c2 multiplied by r j to yield this vector r and if you actually just plug in our vectors
+[  643.12s ->   655.84s] and we see c1 times 10 plus c2 times 0 1 is equal to a b it doesn't take a rocket scientist to figure out that c1 should be a
+[  656.48s ->   667.12s] and c2 should be b and if we actually work this out we can see a 1 0 plus b 0 1 is equal to a b if we actually multiply
+[  667.12s ->   676.16s] these into our vectors we do in fact get our a b so when i talk about a basis for a particular
+[  676.16s ->   683.28s] dimensional space i'm saying that we can represent any point in that space so in this case we're in r2
+[  683.28s ->   691.12s] we're in euclidean space that is this x of y axis here we can represent any vector as a linear combination
+[  691.68s ->   698.16s] of these basis vectors i and j so that's going to bring us to the topic of today's video linear
+[  698.16s ->   703.92s] independence now i'm going to define linear independence abstractly at the highest level
+[  703.92s ->   708.16s] and we're going to break it down in euclidean space so that we can actually understand what's going on
+[  708.16s ->   714.64s] i'm going to say that we have two new vectors i'll say m and n are an element of r
+[  714.64s ->   726.16s] n and q1 and q2 are elements of the reals so you can think of m and n as the vectors that we were
+[  726.16s ->   733.20s] working with earlier i and j or you could think of them as just some arbitrary vectors um for some
+[  733.20s ->   739.36s] arbitrary length and q1 and q2 you could think of them as just numbers or you could think of them as
+[  739.36s ->   748.22s] an element of the reals so any you know non-complex number so okay we have these variables defined let's
+[  748.22s ->   755.02s] talk about linear independence formally linear independence means that for this equation q1
+[  755.02s ->   774.37s] q1 times m plus q2 times n this is equal to 0 if the only solution is q1 is equal to q2 which is equal to
+[  775.41s ->   787.41s] 0 so m and n are linearly independent if the only solution to this equation is that
+[  787.57s ->   794.85s] q1 is equal to q2 which is equal to 0. now it turns out there's a lot of ways we can define
+[  794.85s ->   799.73s] linear independence linear dependence but i think this one's probably going to be the the easiest
+[  799.73s ->   804.61s] one to just follow and talk about especially in two-dimensional space so let's break this down
+[  804.61s ->   812.21s] if we go here and we look at our euclidean space again and we draw our original vectors right we have
+[  812.21s ->   827.49s] our i and rj vectors well we know that i is equal to 1 0 and j is equal to 0 1 now if we consider this
+[  827.49s ->   839.90s] equation up here that we wrote for linear independence then we can write q1 i plus q2 j is equal to 0
+[  840.70s ->   850.78s] and if we go ahead and scroll down and we replace inj with their column vector counterparts we can see
+[  850.78s ->   860.86s] very quickly that we actually have a problem we can't find a non-zero number to get 0 to equal 1
+[  861.82s ->   869.10s] in either case so what do i mean by this i mean there's no number that we can find that zero is
+[  869.10s ->   876.70s] going to be not zero after multiplication and we run into the same problem here right so right away we
+[  876.70s ->   885.18s] could see that the only way for this equation to be true is if q1 is equal to q2 which is equal to
+[  885.18s ->   894.22s] zero which by our definition up here means that we have linearly independent vectors hopefully this
+[  894.22s ->   899.18s] is the part where you go hey roman what about linearly dependent variables what the heck does that
+[  899.18s ->   905.50s] look like well let's actually go ahead and take a look at an example of linearly dependent variables
+[  905.50s ->   911.34s] and we can look at a very trivial example by defining vectors m and n i'm going to say m is equal to
+[  911.90s ->   920.46s] one and two and then i'm going to say n is equal to two and four now right away you should be able to
+[  920.46s ->   931.02s] see that vector n is just a scalar multiple of vector m and if we were to plot this in our two-dimensional
+[  931.02s ->   943.23s] space then we would actually see that if we have let's see one and two so we have vector m and then
+[  943.23s ->   957.58s] we plot two and four and that is our vector n you can see what linear dependence looks like so these two
+[  957.58s ->   970.86s] vectors here m and n are linearly dependent meaning we can find a q1 and a q2 that are non-zero to make
+[  970.86s ->   978.38s] that original sum equivalent to zero more specifically if we were to write these vectors
+[  978.38s ->   988.06s] out then we would see that m right is equal to one two and if we have some q1 here and then we sum it
+[  988.06s ->   997.26s] with q2 times two four and we want to set this equal to zero well yeah we can make q1 and q2 zero that's the
+[  997.26s ->  1007.74s] trivial solution but we don't need to right we can say q1 is equal to negative two and q2 is equal to
+[ 1007.74s ->  1013.82s] one for example and if we do this and we do the multiplication then we could see we get negative
+[ 1013.82s ->  1024.62s] two negative four plus two and four and that is in fact equal to zero so we have a non-trivial solution
+[ 1024.62s ->  1031.50s] to this problem and that means that the vectors are linearly dependent and visually it looks like
+[ 1031.50s ->  1037.18s] this they are just two vectors that are stacked on one another now why is this important well i'm
+[ 1037.18s ->  1043.18s] going to give you two examples one that is motivated more by theory one by practice so if you recall
+[ 1043.18s ->  1048.94s] earlier we talked about an orthonormal basis what was the special property of an orthonormal basis or
+[ 1048.94s ->  1056.78s] these basis vectors that is that we can represent any vector in r2 as a linear combination of these
+[ 1056.78s ->  1063.34s] vectors that means that they span if you want to use a fancy word the entire space they can reach any
+[ 1063.34s ->  1070.77s] point within that space what about vectors that are linearly dependent what about the basis formed by
+[ 1070.77s ->  1080.45s] that vector well if you look the basis formed by this vector doesn't span all of r2 in fact it only spans
+[ 1081.25s ->  1089.57s] this line because any scalar value you multiply any of these vectors by whether it's m or n is only going
+[ 1089.57s ->  1095.73s] to yield another vector across that line to further illustrate this idea before moving on to the practical
+[ 1095.73s ->  1101.97s] example we can just look at a basis potentially formed by these vectors m and n so i'm going to take
+[ 1101.97s ->  1110.21s] one and two and i'm going to take two and four and i'm going to say hey let's see if we can find this vector
+[ 1110.85s ->  1125.82s] one zero okay well let's draw this space we know that we have m and we have n but what about this green
+[ 1125.82s ->  1133.26s] vector here let's just call this i once again how can we represent this as a linear combination of our
+[ 1133.26s ->  1142.06s] basis well we can't there's no combination no linear combination of m and n that will ever allow us to
+[ 1142.06s ->  1152.22s] yield this green vector n and what that looks like formally is q1 times m plus q2 times n is equal to
+[ 1152.22s ->  1165.18s] one zero and if we substitute one two and two four you can see that we can't find a q1 or q2 that is
+[ 1165.18s ->  1176.51s] going to make this number one and this number zero to satisfy that vector i moreover the information in
+[ 1176.51s ->  1182.83s] this basis is actually redundant we can see that anything we do is just contributing to this original
+[ 1182.83s ->  1190.43s] line right so m and n only contribute to vectors across that particular line and this bleeds over
+[ 1190.43s ->  1196.43s] into higher dimensions as well so more specifically let's consider that you're working on a credit model
+[ 1196.43s ->  1204.99s] okay and you have three features that you are trying to use to forecast some sort of interest rate so
+[ 1204.99s ->  1216.72s] let's say you have vectors x y and z and these are what is being fed into your model why do we care
+[ 1216.72s ->  1225.60s] about linear independence well if you think about it if x y and z are not linearly independent then let's
+[ 1225.60s ->  1235.20s] just take a look at the implication of this so we have some q1 times x plus some q2 times y plus some q2
+[ 1235.20s ->  1247.20s] q3 times z which is equal to zero and if we subtract over that third term we could see q1 x plus q2 y
+[ 1247.92s ->  1258.96s] is equal to negative q3 z and if we divide out that negative q3 we get negative q2 over q3 y is equal to
+[ 1259.68s ->  1271.76s] z q1 negative q3 x plus and if we just make this easier to read by saying d1 is equal to negative q1
+[ 1271.76s ->  1285.84s] over q3 d2 is equal to negative q2 over q3 then very quickly we see that d1 x plus d2 y is equal to z
+[ 1285.84s ->  1293.90s] z so effectively z is equivalent to a linear combination of x and y this implies we really
+[ 1293.90s ->  1299.10s] don't need z we don't need to go out and collect all this data for z and add it to the model because
+[ 1299.10s ->  1305.90s] we can just represent it as a linear combination of the vectors x and y so when building models you're
+[ 1305.90s ->  1310.46s] going to come across a whole bunch of different ideas you're going to come across you know maybe if
+[ 1310.46s ->  1315.50s] you're working in in a linear model maybe you have multi-colinearity and you're going to want to
+[ 1315.50s ->  1320.70s] consider more as to whether or not your features are linearly independent of one another maybe you're
+[ 1320.70s ->  1326.06s] going to want to change the basis you're working in that is principal component analysis there's
+[ 1326.06s ->  1332.54s] there's so much you can do in the modeling sense to deal with this idea of linear dependence and it's
+[ 1332.54s ->  1337.10s] something that's going to be a headache for a lot of your models this idea of linear dependence
+[ 1337.10s ->  1344.22s] multi-colinearity generally measured by a vif but this last um this last kind of couple statements
+[ 1344.22s ->  1349.98s] that i i gave you were covering a whole range of topics for future videos to um to discuss the
+[ 1349.98s ->  1355.74s] the implications of of all of those i want to thank you so much for watching this video on linear
+[ 1355.74s ->  1362.54s] independence i hope you enjoyed it this is more involved in the math space and what i'm thinking of
+[ 1362.54s ->  1369.50s] doing is starting a new series for mondays so not just posting only on wednesdays but i'd like to
+[ 1369.50s ->  1376.46s] also post on mondays math mondays and wednesdays will be workshop wednesdays so monday is going to be
+[ 1376.46s ->  1381.66s] dedicated to more of these mathematical topics we'll break out the ipad and walk through the math like
+[ 1381.66s ->  1387.10s] this and then wednesdays are going to be more programmatic in nature maybe we can even break out java
+[ 1387.10s ->  1391.58s] or c plus plus depending on what you'd like to see if this is something you'd like to see
+[ 1391.58s ->  1397.34s] be sure to leave it in the comments below let me know that this is a good idea other than that thank
+[ 1397.34s ->  1403.10s] you once again so much for watching be sure to subscribe and check out our latest course on
+[ 1403.10s ->  1417.10s] quantgill.com and i will see you in the next video

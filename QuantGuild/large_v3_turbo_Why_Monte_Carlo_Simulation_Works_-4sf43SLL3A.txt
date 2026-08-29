@@ -1,0 +1,230 @@
+[    0.46s ->     6.42s] One of my favorite tools and something that's used widely in all of quantitative finance is
+[    6.42s ->    11.94s] this idea of Monte Carlo simulation. You just can't seem to escape it. Whether you're trying
+[   11.94s ->    17.42s] to measure risk or you're trying to develop prices, it's used everywhere. In fact, if you
+[   17.42s ->    22.90s] look at my previous videos where I talk about the gambler's room problem, or I discuss if quant
+[   22.90s ->    29.16s] trading is considered gambling, I freely use Monte Carlo simulation in those videos to develop my
+[   29.16s ->    35.12s] statistics and probabilities, but I never discuss why I'm allowed to do that. Why does that
+[   35.12s ->    40.24s] work? Why am I certain that when I simulate those values, I'm going to produce the correct
+[   40.24s ->    45.00s] statistics and probabilities? In this video, that's exactly what I want to discuss. I want
+[   45.00s ->    49.30s] to develop some intuition, want to use some practical examples, and I want to show you
+[   49.30s ->    55.26s] how Monte Carlo simulation can be used to develop this idea of edge, even if you don't know the
+[   55.26s ->    59.76s] true theoretical distribution. As always, this Jupiter notebook will be available in the description
+[   59.76s ->    65.68s] below, as well as on the Quant Guild library on GitHub. Moreover, I'm very excited to announce
+[   65.68s ->    72.00s] a massive update to quantguild.com, over 90 lessons in math, finance, and probability, over
+[   72.00s ->    78.78s] 1,000 practice questions with gamified progress. You can see your improvement in your rank in each
+[   78.78s ->    85.52s] respective subject. And we've even launched live courses. You can take live classes with me on
+[   85.52s ->    91.22s] topics like pricing, stochastic calculus, even quantitative trading. So please check out
+[   91.22s ->    96.38s] quantguild.com to help support the channel so I can continue to make videos like this one.
+[   96.88s ->   101.28s] All right, let's talk about the law of large numbers. Before we talk about the law of large numbers,
+[  101.28s ->   108.00s] we need to come to some sort of mutual understanding as to what a random variable is. Whenever we're
+[  108.00s ->   113.10s] dealing with a random variable, I want you to think of two cases. There's one case where we're
+[  113.10s ->   119.00s] dealing with this theoretical distribution that's defined by some sort of probability mass or density
+[  119.00s ->   125.26s] function. In reality, what it is, it's a way to characterize the randomness of the random variable. So
+[  125.26s ->   131.48s] if you take a look at this bell curve here, this is characterizing the randomness of the variable x.
+[  132.04s ->   137.72s] Now, that's the theoretical distribution that x follows. It certainly does follow that
+[  137.72s ->   144.98s] distribution. If I was to continue to sample x from this distribution, we would see x is likely to
+[  144.98s ->   151.06s] be drawn from around the center where most of the mass is, and it's less likely to be drawn from the tails
+[  151.06s ->   157.68s] where there's less mass. And if we continue to simulate draws, what we're going to eventually see is
+[  157.68s ->   165.04s] that the draws, the empirical distribution lines up perfectly with this theoretical distribution. And that's
+[  165.04s ->   169.94s] really what convergence and distribution suggests. So if I run this, what I'm going to do is I'm going
+[  169.94s ->   176.56s] to sample different draws of x from the theoretical distribution. Now, anytime we're dealing with a
+[  176.56s ->   181.24s] random variable, it's tempting to want to treat it as just a regular old number because you see
+[  181.24s ->   187.38s] variable x like from calculus or any sort of algebra class, and you want to treat it as some sort
+[  187.38s ->   191.44s] of deterministic number or quantity. But keep in mind, when we're dealing with randomness,
+[  191.44s ->   196.54s] we're dealing with a distribution of possible outcomes that are weighted by some sort of
+[  196.54s ->   201.90s] likelihood. And in this case, the likelihood is defined by this normal distribution.
+[  202.84s ->   209.26s] Okay, so what happens as I continue to sample from this theoretical distribution? Well, we can see that,
+[  209.42s ->   213.62s] okay, it's likely to see points around the center, less likely to see points out towards the tails.
+[  213.86s ->   219.00s] And as we continue to sample, this is 10,000 samples from the theoretical distribution,
+[  219.00s ->   224.76s] we can see it's starting to converge to that theoretical distribution. That's precisely what
+[  224.76s ->   230.00s] we expect to see. So anytime we're dealing with a random variable, I want you to think of a
+[  230.00s ->   235.36s] distribution, not a single value, it's a set of possible values with some sort of probability
+[  235.36s ->   239.96s] likelihood weighting. It's very important to understand the difference between a theoretical
+[  239.96s ->   245.46s] and an empirical distribution. Anytime we're dealing with data in finance in real life,
+[  245.46s ->   251.80s] we're looking at an empirical distribution. Now, theoretically, the returns do follow some sort
+[  251.80s ->   258.02s] of distribution, but that distribution is likely time variant, and it's not well defined. In other
+[  258.02s ->   263.92s] words, if we're looking at the stock returns for let's say Nvidia, there is no red line that we know
+[  263.92s ->   269.98s] the distribution follows. Theoretically, there's some distribution governing those returns, but we don't
+[  269.98s ->   274.36s] know what it is. So we're only looking at the draws from that theoretical distribution,
+[  274.36s ->   280.36s] we don't have the red line. Now, in this example, we have both the theoretical distribution, which is
+[  280.36s ->   286.98s] the red line, and the empirical distribution that we can see matches up nicely with that theoretical
+[  286.98s ->   293.24s] distribution. The big difference in real life is we don't necessarily know if the empirical
+[  293.24s ->   299.30s] distribution will converge to a theoretical distribution, and that is likely due to the time
+[  299.30s ->   303.90s] variant nature of the distribution. But we're going to check out a cool animation in a moment to help
+[  303.90s ->   308.54s] solidify this idea. Okay, so we know anytime we're dealing with a random variable, we think
+[  308.54s ->   313.10s] distribution. And typically, when we're dealing with random variables, we're interested in quantities
+[  313.10s ->   319.64s] like the expectation and the variance, some measure of central tendency and spread. The reason for this
+[  319.64s ->   327.94s] is if we have a good measure for the expectation, then we can use that idea to help us generate PNL and
+[  327.94s ->   332.62s] profit in different settings. I'll give an example of this in a moment. But for now, let's talk about the
+[  332.62s ->   339.30s] basis for why we can generate those quantities, and that is the law of large numbers. So the law of
+[  339.30s ->   345.86s] large numbers is saying essentially in both forms, different convergence guarantees, but in both forms,
+[  345.94s ->   352.26s] in essence, what it's saying is, if we continue to draw independently from the same theoretical
+[  352.26s ->   358.88s] distribution, that is this red line or this pink line, and we try to compute a sample statistic,
+[  358.88s ->   364.06s] let's call it the mean, the expectation, the average, whatever you want to call it, then that
+[  364.06s ->   371.06s] sample empirical mean that we are computing will converge to the true population mean. That is a
+[  371.06s ->   376.66s] very, very powerful result that may not be immediately apparent. I've come up with a couple of different
+[  376.66s ->   382.18s] ways to help visualize this. So let's start talking about why Monte Carlo simulation works, and that is
+[  382.18s ->   387.64s] because of this law of large numbers here. So if you take a look at either of these two distributions,
+[  387.64s ->   394.06s] the mean is in the center. This vertical dashed line is the mean, and that is the mean of the
+[  394.06s ->   400.60s] theoretical distribution. What I'm going to do is I'm going to sample from that theoretical distribution
+[  400.60s ->   409.60s] a number of times. So here I do it 10, 50, 100, 500, 1,000, 5,000, and 10,000 times. What I'm going to do
+[  409.60s ->   416.86s] is I'm going to do the sampling on a different basis down here, but I want you to take a look at the
+[  416.86s ->   423.68s] empirical mean relative to the theoretical mean as the sample size increases. So I'm going to start
+[  423.68s ->   431.40s] at two and go up to 5,000. You can see the empirical mean is going to ping pong around this theoretical
+[  431.40s ->   440.08s] mean until the sample size is so large that it approaches the true theoretical mean. So what are
+[  440.08s ->   444.36s] we doing here? We're saying if we continue to sample from this theoretical distribution,
+[  444.36s ->   451.42s] and we do this for a large enough sample size and take the mean, then that mean is going to be
+[  451.42s ->   459.46s] equivalent in probability to the theoretical mean. A wildly powerful theorem because what if we don't
+[  459.46s ->   464.48s] know what the theoretical distribution's mean is? What if we can't compute it analytically or it's
+[  464.48s ->   470.76s] difficult to compute analytically? Well, we can just draw from that distribution and we can compute
+[  470.76s ->   477.66s] that statistic. That's exactly what Monte Carlo simulation is, and that is exactly why it works.
+[  477.82s ->   482.18s] Now that we know that the law of large numbers is the theoretical basis for Monte Carlo simulation,
+[  482.36s ->   488.09s] we can look at some interesting examples. The first is this idea of a dice roll. Now we can compute
+[  488.09s ->   493.51s] the expectation and the variance or standard deviation of a dice roll analytically, and I do so here,
+[  493.51s ->   500.25s] but we can also apply Monte Carlo simulation thanks to the law of large numbers, right? When I roll a dice,
+[  500.57s ->   506.57s] the probabilities are fixed. That is, the randomness is well defined, just as in the case of this pink
+[  506.57s ->   513.15s] or red distribution for our random variable x. So if that's the case, then I can just continue to roll
+[  513.15s ->   521.11s] the same die, say 10,000 times, and compute the empirical mean and the empirical variance. That is,
+[  521.11s ->   526.31s] I'm just going to take the average, right? And then I'm going to compute the variance of all of the
+[  526.31s ->   533.63s] dice rolls that I've recorded. And if I do this for enough samples or enough dice rolls, you can see
+[  533.63s ->   539.77s] that the values will actually converge to the true theoretical values that we computed here. Now that's
+[  539.77s ->   545.45s] a trivial example, right? This is easy. I know that I can compute the expectation variance of a dice roll.
+[  545.45s ->   553.11s] So how is this useful? Well, what if we didn't know the theoretical value, right? What if we needed simulation
+[  553.11s ->   558.85s] because there was no analytical solution? That's exactly where this technique shines. So what I want to do is I
+[  558.85s ->   563.79s] want to extend a simple dice roll example to this idea that we are a casino, and we're trying to price a new game
+[  563.79s ->   569.97s] of chance. So here's our new game of chance. Our game of chance is we roll a six-sided die. If it's odd, we're going to
+[  569.97s ->   575.65s] flip a weighted coin and then receive a payout. Otherwise, if the dice roll is even, we're going to
+[  575.65s ->   580.89s] flip a fair coin and then receive a payout. Now we can compute this analytically, but I want to deploy
+[  580.89s ->   586.95s] Monte Carlo simulation instead. One thing to note about this game is it's not changing every time we
+[  586.95s ->   592.97s] play it, right? It's the same fixed structure, just as in the case of a dice roll, the dice isn't changing
+[  592.97s ->   598.47s] every time I roll it. Or if I draw from this pink or red distribution, that distribution is not changing.
+[  598.47s ->   605.49s] So in this case, this game has a payout distribution, which is fixed theoretically.
+[  606.13s ->   610.79s] So if it's fixed theoretically, what I can do is I can just draw from that payout distribution
+[  610.79s ->   618.37s] and use the simulation to compute the expectation, just as we saw in this dice roll example.
+[  618.67s ->   623.19s] That's exactly what I do here. Now I do go one step further and I compute the theoretical
+[  623.19s ->   629.77s] mean just to ensure that it's converging correctly. But that is exactly what we see. We see that if I
+[  629.77s ->   636.35s] was to sample, that is play this game and record the payout, say 10,000 times, take the average,
+[  636.69s ->   642.37s] then it's going to converge to the theoretical mean, just as we expect, thanks to the law of large
+[  642.37s ->   649.47s] numbers. Why is this important? One word, edge the accumulation of positive expected value over time.
+[  649.47s ->   654.97s] In games of chance, you don't have any control over your expected value. In games of incomplete
+[  654.97s ->   660.49s] information like poker or trading, your actions and optimal actions in the face of uncertainty
+[  660.49s ->   665.79s] directly contribute to your expected value. And you want that to be positive so that you can make money.
+[  666.17s ->   671.71s] So in this case, if we're the house and we know that the expected value is 325, how do we price this
+[  671.71s ->   676.87s] game so we know we have an edge? Well, check this out. I have a couple of different wealth paths for the
+[  676.87s ->   682.21s] casino here, pricing the game in different circumstances. This is exactly what edge is.
+[  682.63s ->   690.15s] This is precisely what edge is. I price the fair value of this game at 325. If I price the game at
+[  690.15s ->   697.67s] 325 or lower, then I'm at risk of at best breaking even in the long run or losing money. So I want to
+[  697.67s ->   704.77s] price it higher than 325. That's edge. That ensures that if I have players that play this game iteratively,
+[  704.77s ->   710.43s] then they're paying more than the theoretical average of what the game is worth. And whether
+[  710.43s ->   715.95s] or not it's the same player or tens of thousands of players, right? I need that edge to be positive
+[  715.95s ->   721.59s] because likely this game isn't going to be played what? 10 times? 100 times? It's going to be played
+[  721.59s ->   727.57s] thousands and thousands of times. So that edge better be positive. Now that quantity, the number of
+[  727.57s ->   733.45s] players will dictate how much room you have, right? But that's a very important problem. And it's very
+[  733.45s ->   739.17s] canonical to this entire space. This is directly related to things like the gambler's room problem,
+[  739.53s ->   745.37s] target wealth ratios, things like that. This is all relevant to the space. And Monte Carlo simulation
+[  745.37s ->   752.13s] is something that you absolutely have to have and understand in your toolbox in order to operate in
+[  752.13s ->   757.83s] any capacity. In this example, we just looked at the expected value of the game. That is this fair value
+[  757.83s ->   762.51s] of the game. And we looked at pricing it so that we have some sort of edge, right? That's this green
+[  762.51s ->   769.37s] path. That's how I would choose to price this game. But we can extend simulation beyond just the quantity
+[  769.37s ->   775.09s] of the payout distribution. So in this case, right, the payout distribution is in dollars.
+[  775.35s ->   780.87s] That is the payout of the game. But what if I wasn't interested in dollars? I was interested in
+[  780.87s ->   787.15s] probabilities. Well, I can use this idea of Monte Carlo simulation and a Bernoulli random variable
+[  787.15s ->   794.95s] to converge to instead of a mean, say payout, or mean dice value, I can converge to a mean probability.
+[  795.43s ->   800.63s] And that's going to actually give me the probability of certain events occurring. So for example, what
+[  800.63s ->   806.41s] I've done here is I've used this idea of a Bernoulli random variable to develop a simulation of the
+[  806.41s ->   812.07s] probability of winning money, just playing one round of the game. So what I'm going to do is I'm
+[  812.07s ->   818.99s] going to play a large number of rounds. In this case, I play a thousand rounds. And after I play a
+[  818.99s ->   825.81s] thousand rounds, I'm going to record which games that I made money as a one and games that I lost
+[  825.81s ->   833.07s] money as a zero, I'm going to take all 1000 data points, add them up, divide by a thousand. And that's
+[  833.07s ->   838.29s] going to give me the probability that is precisely how you can use Monte Carlo simulation to develop
+[  838.29s ->   843.45s] probabilities. That is the recipe. And right here, you can see after a thousand iterations,
+[  843.45s ->   849.17s] the theoretical probability is 0.55. And we're starting to converge to that theoretical probability
+[  849.17s ->   856.75s] of winning money, playing the game, but it does not stop there. We can continue to ask very interesting
+[  856.75s ->   862.91s] questions about probabilities in these games of chance. And we can answer them using this
+[  862.91s ->   867.87s] structure of the Monte Carlo simulation with a Bernoulli random variable. And this is all thanks
+[  867.87s ->   874.03s] to the law of large numbers. And that's because a Bernoulli random variable, the expectation is the
+[  874.03s ->   878.91s] mean quantity that is that mean probability. So that's exactly what we're estimating with the
+[  878.91s ->   883.49s] Monte Carlo simulation. So here I have a different interesting question that's probability related.
+[  883.97s ->   892.77s] What is the probability of reaching $15,000 starting at $10,000 paying the fair price of $325 per this
+[  892.77s ->   898.49s] for this game? That is a very reasonable question, right? As a casino, you can do some very interesting
+[  898.49s ->   904.25s] risk analyses. You can do a lot of, you can answer a lot of really important questions using this
+[  904.25s ->   910.29s] framework. So here, what I've done is I've simulated paths that have gone bankrupt as red paths that have
+[  910.29s ->   915.99s] hit this 15,000 threshold as green. This is similar to the gambler's room problem. If you saw my
+[  915.99s ->   923.05s] previous video, and in this case, the approximate probability is 42.8%, that is not a great probability.
+[  923.05s ->   931.41s] I would certainly not play this game if it was $325. So that is an extension of just computing a
+[  931.41s ->   937.27s] standard statistic for a distribution is that you can actually come up with an indicator variable that
+[  937.27s ->   943.61s] is that Bernoulli and use the Monte Carlo simulation to develop a probability to answer those very
+[  943.61s ->   949.53s] interesting questions. And of course, one of the most commonplace applications is in the pricing of
+[  949.53s ->   956.17s] financial derivatives. And this combines essentially two ideas that we talked about earlier. The first is
+[  956.17s ->   961.67s] that we can estimate quantities of some sort of payout distribution. And the second is that we can
+[  961.67s ->   967.85s] estimate these probabilities thanks to some sort of indicator variable, as we saw with this gambler's
+[  967.85s ->   974.93s] rune style example. So all of this is thanks to the law of large numbers. And in any case, we can answer
+[  974.93s ->   981.39s] interesting questions about the derivative contract in the framework that we choose for the problem. So
+[  981.39s ->   988.09s] we're representing the contract that we're pricing as some sort of risk neutral expectation. And because
+[  988.09s ->   993.61s] we're dealing with an expectation, well, isn't that what we've just dealt with in this case above with the
+[  993.61s ->   999.33s] game of chance that we are pricing for a casino? And even in this case for a dice roll? Well,
+[  999.87s ->  1004.31s] yeah, that's exactly what we're dealing with here. Just in this case, the randomness is governed by a
+[ 1004.31s ->  1009.25s] geometric Brownian motion. But that geometric Brownian motion is just like a dice roll. Like that
+[ 1009.25s ->  1014.75s] die is not changing every time I roll it. The geometric Brownian motion, once it's parameterized,
+[ 1014.75s ->  1020.29s] I can just simulate a whole bunch of paths. And I'm going to get a fixed distribution at time cap T.
+[ 1020.29s ->  1027.57s] And then I can go about pricing this contract by just taking the discounted payoff and taking the
+[ 1027.57s ->  1032.83s] average. And that's, that's just the Monte Carlo simulation. The interesting thing is that payoff is
+[ 1032.83s ->  1038.93s] going to converge to the fair value. And the fair value here is the red line given by a Black-Scholes
+[ 1038.93s ->  1046.33s] framework. So the Monte Carlo simulation is an incredibly powerful tool, and it can be used to
+[ 1046.33s ->  1050.27s] develop the statistics, the expectation, variance, cuteness, kurtosis. It can be used to answer
+[ 1050.27s ->  1056.35s] interesting questions about your randomness. As we've seen in this example here, like the gambler's
+[ 1056.35s ->  1061.53s] rune style example, you can also answer questions like, what's the probability of my option expiring in
+[ 1061.53s ->  1067.59s] the money, out of the money? What's the probability of the underlying reaching this, this barrier
+[ 1067.59s ->  1072.79s] threshold? You can use it to answer a lot of interesting questions, but there are a lot of challenges,
+[ 1072.79s ->  1078.61s] especially in finance with deploying Monte Carlo simulation. So when we're talking about these
+[ 1078.61s ->  1083.37s] distributions, right, or random variables, we're not just talking about a stock price.
+[ 1084.01s ->  1088.63s] We're talking about a lot of different things. We could talk about trading signals. We could talk
+[ 1088.63s ->  1093.17s] about sentiment. We could talk about mean reversion, momentum indicators. We could talk about a lot of
+[ 1093.17s ->  1100.11s] different quantities, but I want to emphasize two very important cases. The first case we outlined
+[ 1100.11s ->  1106.37s] throughout this entire video, and that is the theoretical distribution is fixed. This red
+[ 1106.37s ->  1113.03s] distribution, pink distribution, our dye that we're rolling iteratively, this game that we're playing
+[ 1113.03s ->  1119.95s] iteratively, heck, even this geometric Brownian motion that we continue to simulate, all of those are
+[ 1119.95s ->  1128.57s] fixed. But in finance, we tend to see these distributions change over time. Now, this makes sense,
+[ 1128.57s ->  1133.75s] right? Because if you look at the return distribution of, say, NVIDIA at inception, right, maybe the first
+[ 1133.75s ->  1139.39s] couple months as a company, it certainly doesn't look anything like it does now during this AI craze,
+[ 1139.49s ->  1144.11s] right? And that's for good measure, right? So theoretically, it makes sense that these distributions
+[ 1144.11s ->  1150.11s] change over time. But what does this look like? Well, what I have here is I have a useful tool or a useful
+[ 1150.11s ->  1155.97s] animation to help visualize this idea. This orange line is acting like the true distribution,
+[ 1155.97s ->  1162.37s] the red or the pink that we saw above. And what I'm doing is I'm sampling from this distribution,
+[ 1162.37s ->  1168.51s] and I'm trying to approximate the theoretical distribution from the samples. So this is very
+[ 1168.51s ->  1174.39s] similar to what we saw above here, where if I continue to sample, I'd like to see convergence to
+[ 1174.39s ->  1182.35s] a theoretical distribution. But watch what happens over time as I continue to sample. That true
+[ 1182.35s ->  1187.37s] distribution is changing. And my empirical distribution is not doing a great job proxying
+[ 1187.37s ->  1195.47s] it. As time continues to march on, I'm continuing to try to match it. As you can see here, it stopped
+[ 1195.47s ->  1201.17s] changing, and it became easier to approximate. So this is precisely what we're dealing with in real
+[ 1201.17s ->  1208.69s] life, right? There's this idea of data drift, time variance, it's not a time invariant space. In real
+[ 1208.69s ->  1214.37s] life, these distributions change, just as we've seen here. The only challenging thing is we can't
+[ 1214.37s ->  1218.71s] just see the theoretical distribution, right? We're only seeing the empirical distribution.
+[ 1219.55s ->  1225.79s] And in this case, we're looking at it in a univariate sense, but it's a giant joint distribution,
+[ 1225.95s ->  1231.67s] right? It's not just independent of all these other factors. Returns isn't independent of inflation.
+[ 1231.67s ->  1239.95s] It's not independent of the current state of the job market of our administration. It's not
+[ 1239.95s ->  1244.33s] independent of any of those things. So it's a very difficult space to measure these quantities. So
+[ 1244.33s ->  1249.39s] I just wanted to leave you with that, this idea of challenges in finance, because if the distribution
+[ 1249.39s ->  1256.85s] is not fixed, and we try to deploy Monte Carlo simulation, then the value that we're going to get
+[ 1256.85s ->  1264.25s] is going to be enticing to use, but it may not be correct. Check out my video, expected stock returns
+[ 1264.25s ->  1271.33s] don't exist and how to trade. It's going to exemplify this idea. It's going to discuss the idea that just
+[ 1271.33s ->  1275.85s] because our model is wrong, it doesn't preclude us from generating money. But even still, we're
+[ 1275.85s ->  1280.73s] generating quantities that aren't actually converging to some sort of theoretical value. That's going to do
+[ 1280.73s ->  1285.21s] it for this video on why Monte Carlo simulation works. I hope you've enjoyed it. I hope you learned
+[ 1285.21s ->  1291.05s] something. Again, in the real world, we tend to face these distributions that are not fixed. Our
+[ 1291.05s ->  1296.83s] empirical distributions are going to proxy some sort of theoretical distribution that's changing over
+[ 1296.83s ->  1301.99s] time. But again, just because these models are wrong, it doesn't preclude us from making money or
+[ 1301.99s ->  1306.85s] making optimal decisions in the face of uncertainty. Certainly check out some of my previous videos if
+[ 1306.85s ->  1311.57s] you're curious about what I mean by that. Some future topics I'd like to discuss. I'd like to discuss
+[ 1311.57s ->  1316.85s] why the value at risk and other measures tend to fail and be unreliable. And this is based on that
+[ 1316.85s ->  1321.85s] idea of some sort of level that you're trying to approximate that doesn't actually exist and doesn't
+[ 1321.85s ->  1326.79s] have convergence guarantees. I'd also like to talk about different discretization schemes for
+[ 1326.79s ->  1331.77s] stochastic processes because some are very difficult to simulate. You know, just as I showed in this game
+[ 1331.77s ->  1337.17s] of chance, right, coming up with the theoretical expectation is possible. But sometimes the
+[ 1337.17s ->  1344.69s] theoretical or analytical value is not possible to develop. So we have to resort to simulation. And
+[ 1344.69s ->  1352.09s] this is particularly relevant in the rough volatility model family and pricing under such a model. And
+[ 1352.09s ->  1357.77s] there's this big important idea of having global path knowledge versus having a process that's adapted to
+[ 1357.77s ->  1363.87s] a filtration. But that's something that I'd like to discuss in a later video. Thank you so much for
+[ 1363.87s ->  1369.17s] watching. Again, I hope you enjoyed. Please check out QuantGuild.com. Check out the YouTube memberships to
+[ 1369.17s ->  1374.33s] help support this channel so I can continue to make videos like this one. Other than that, I will see you
+[ 1374.33s ->  1376.33s] in the next video.

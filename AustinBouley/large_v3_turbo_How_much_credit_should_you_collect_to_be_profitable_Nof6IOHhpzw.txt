@@ -1,0 +1,25 @@
+[    0.00s ->     3.30s] In this helped us video, I'm going over how much credit should you collect.
+[    3.56s ->     7.80s] Again, you can read it here or you can simply go into the algo and by default,
+[    7.90s ->    11.40s] let me refresh this page, it's going to show you how much credit you should collect.
+[   11.68s ->    15.34s] Again, this shows you how much credit you should collect based on the historical win rate
+[   15.34s ->    20.58s] to give you a positive long-term return. So again, what is the math behind this and how
+[   20.58s ->    24.66s] does it work? Well, let me walk you through it. For instance, when we know two important numbers,
+[   24.66s ->    30.06s] which is our credit we need to collect and our win rate, we can determine our long-term
+[   30.06s ->    34.12s] positive expectancy, or hopefully it has a positive expectancy, but our just long-term expectancy.
+[   34.68s ->    39.90s] So how this works is we pretend we're taking 100 trades. So out of 100 trades with a 90% win rate,
+[   40.02s ->    45.06s] we're going to win 90 trades. We're going to do 90 trades. How much money are we going to hopefully
+[   45.06s ->    50.22s] win per trade? Well, we're going to win 15 cents. Now we need to subtract our losing trades. Well,
+[   50.24s ->    54.14s] out of 100 trades, how many will we lose? Well, if we have a 90% win rate, then we're going to lose 10.
+[   54.14s ->    60.56s] How much do we lose each time we lose? Well, if we collect 15 cents, and so $1 wide, then we're
+[   60.56s ->    68.24s] going to lose 85 cents. So this shows us that we have a positive $500 outcome. Why? Because it equals
+[   68.24s ->    74.96s] five as our return, but each option represents 100 shares, so we multiply by 100. So we get a $500
+[   74.96s ->    81.66s] return after 100 trades with one spread with this. Now again, if we can change this by making even
+[   81.66s ->    88.60s] it's $17, that's going to lower this to 83. Is that right? Yeah, 83. And that gives us a positive
+[   88.60s ->    93.70s] seven return. But what if we only increase our accuracy by one? That also decreases this by one,
+[   93.82s ->    99.14s] which gives us a positive eight. So that's a positive $800 return. So this shows you the
+[   99.14s ->   104.78s] importance of picking high win rate trades and collecting as much credit as you can will long
+[  104.78s ->   112.78s] term positively benefit you. So that is why these are all calculated based on the win rate to generate
+[  112.78s ->   118.18s] a $500 return based on one spread. So again, that's what all these are determined by. But again,
+[  118.22s ->   123.24s] if you collect more credit than this, then again, you will be an even bigger winner. All right, guys,
+[  123.30s ->   127.70s] I hope this made sense. If you have any questions, open up the chat support box and let me know.
+[  127.70s ->   132.20s] If not, I hope to see you inside the discord and inside the next office hours call.

@@ -1,0 +1,105 @@
+[    0.00s ->     4.58s] I get this comment a lot. We trade well for a while, account grows, and then all of a sudden
+[    4.58s ->     8.12s] we start losing big and it blows up our account. At the end of this video, I'm going to show you
+[    8.12s ->    12.96s] a simple three-step process to help prevent this problem from occurring ever again. This is probably
+[   12.96s ->    17.00s] the most important thing you have to change in your trading if you want to make it sustainable.
+[   17.46s ->    21.44s] If you're new to the channel, I'm Credit Spread Investing. My mission here is to show you how to
+[   21.44s ->    27.50s] trade options and invest correctly so that we can find the financial independence to do what we love
+[   27.50s ->    33.16s] and ultimately quit our jobs if we want to. Why do we have a habit of blowing up our accounts?
+[   33.48s ->    39.48s] The reason behind all of these big losses is actually psychological. It's because of our fear
+[   39.48s ->    47.38s] of realizing an actual loss. And so we tend to stay in trades, especially losing trades,
+[   47.58s ->    50.96s] longer than we should. Comment down in the comment section below if this has happened to you. But
+[   50.96s ->    57.14s] how many times have you sat in a trade hoping for the trade to reverse in your favor and
+[   57.14s ->    61.86s] ultimately it continues to go in the opposite direction. You lose more and more and more money.
+[   62.14s ->    65.60s] I'm going to walk you through a couple of trades, whether it's selling options and buying options
+[   65.60s ->    70.20s] or even investing in a stock. And I'm going to show you guys at the end how to set up your trades
+[   70.20s ->    76.86s] correctly so you have proper loss management. So let's maybe start with the easiest one to
+[   76.86s ->    82.42s] understand when it comes to what I like to call fear of realizing losses. This is just obviously
+[   82.42s ->    86.70s] cherry-picked. But if you take a look at Rivian, Rivian is a really good example. Let's assume
+[   86.70s ->    93.50s] you bought in an IPO at $130 a share. And throughout the lifetime of Rivian, it's lost around 90-ish
+[   93.50s ->   100.82s] percent of its total value. And all the way down, you're thinking, when do I cut? Do I not cut? And
+[  100.82s ->   107.02s] there are known people where they just, to this day, is still holding Rivian, hoping that it will
+[  107.02s ->   111.44s] rebound. Because the whole time in your mind, you're probably thinking, Rivian's a good stock. It's a good
+[  111.44s ->   116.36s] company. I love their cars. Or I like the way the car looks. I can see the stock becoming, again,
+[  116.70s ->   121.98s] maybe a 10-bagger, maybe going up to like $1,400. I don't know. So you're holding, holding, holding,
+[  122.08s ->   128.14s] holding. Honestly, unfortunately, the stock right now is sitting down almost 90% of its total value
+[  128.14s ->   134.94s] at IPO. If you just invested in the S&P 500 over those three years or so, you would actually be up
+[  134.94s ->   143.96s] close to 82% on the S&P 500, you would have lost 90%. So which means that if you had cut your losses,
+[  144.48s ->   150.32s] let's assume right here, right where the blue line is in 2022 of January, and flipped it into an S&P 500
+[  150.32s ->   156.62s] ETF like Vu, you would actually be up and make back those losses and then some. One of the biggest
+[  156.62s ->   161.28s] downsides of sitting in these losing investments or trades is the opportunity cost of potentially
+[  161.28s ->   167.26s] making more money is now tied up in a losing stock. Let's hop over to thinkorswim and talk a
+[  167.26s ->   170.76s] little bit about options. So again, on this channel, I like to use some of my real trades
+[  170.76s ->   177.90s] to demonstrate this principle. On Wednesday, I took a trade on an SPX 5,505, 5,500 credit spread
+[  177.90s ->   183.92s] around lunchtime. And you can see around the time I entered, the market is going from a low to a high
+[  183.92s ->   188.18s] to maybe a higher low, and it's on an upswing. So I was like, hey, you know, I'm just going to take a
+[  188.18s ->   192.92s] trade. Because I believe one, the trend is bullish. And two, it seems like the day is very,
+[  193.02s ->   199.24s] very strong. So I took a 5,505, which is the low of the day, right? And 5,500 credit spread. So I
+[  199.24s ->   204.66s] got like 30 bucks for this for a 5.6% ROI, very, very little. I sold right around here around 1145.
+[  204.96s ->   212.90s] The market then subsequently decided to reverse down into a 5510. And then ultimately, I was saved.
+[  212.90s ->   219.02s] And so I went all the way down into this level. I think I was down like 300, 400%, right? Because I
+[  219.02s ->   223.34s] made 30 bucks on it. And so at this point, it's probably like 400. It would have cost me 400 bucks
+[  223.34s ->   227.62s] to close out or 300 bucks to close out. And ultimately, the market saved me, right? And so
+[  227.62s ->   231.52s] sometimes you get these instances where it didn't break the support and decide to bounce back up.
+[  231.64s ->   235.48s] So lucky me, that's not the important thing. The important thing is what happens if this went all
+[  235.48s ->   242.74s] the way down, right? My max loss at this point would have been 470 bucks per spread when I had
+[  242.74s ->   248.60s] the opportunity to make 30. So really poor loss management here because I didn't enclose a losing
+[  248.60s ->   254.36s] position because I had the belief that the market would continue to go up, which is honestly not the
+[  254.36s ->   257.60s] right way to trade. You guys can pause this video right here and think about all the times that this
+[  257.60s ->   263.24s] has happened to you. If you think about this, this is exactly why these big losses happen, right? I could
+[  263.24s ->   270.05s] have cut my loss at any point along this downswing, right? But I didn't because I didn't have good
+[  270.05s ->   274.81s] trade management, nor did I think about the trade setup. The same idea applies if I bought a call,
+[  275.27s ->   279.31s] right? If I bought a call here, it would have been even worse. But that's assuming the call here was
+[  279.31s ->   286.45s] worth hypothetically $200 by buying in at the money. The market then reversed and I held on to this $200
+[  286.45s ->   291.49s] option. And at the end of the day, it would have been worthless. So I would have lost 200 bucks on this
+[  291.49s ->   295.99s] one trade. I could have caught that option at any point in time and maybe saved myself 50 bucks to 100
+[  295.99s ->   302.99s] bucks. Let's take my trade as an example. The first thing we have to understand, the simple process is to
+[  302.99s ->   309.87s] understand how to enter this trade. I call it E. What my stop loss is, how much am I willing to risk on this
+[  309.87s ->   315.43s] trade, my maximum drawdown? And am I take profit? How am I going to exit this trade and how am I going to win?
+[  315.43s ->   323.61s] So E for entry, S for stop loss, and T for take profit, EST. Very simple three-step process for us
+[  323.61s ->   329.31s] to understand. On 1140, I decided to enter this trade, right? Because it broke this wedge structure.
+[  329.45s ->   332.43s] And again, this is why technical analysis is very important. If you guys want to start learning about
+[  332.43s ->   336.25s] technical analysis, make sure you guys click on this video link in the upper right-hand corner.
+[  336.49s ->   341.35s] So I entered this trade here and the market went up. So my entry here is very simple.
+[  341.35s ->   347.39s] Understanding market trend, which is up, I saw an area of resistance that was broken.
+[  348.51s ->   354.37s] And in condition of entry is that it broke and it ended and closed above area of resistance.
+[  354.93s ->   360.77s] What is my stop loss? So if I was trading this structure, how do I know that I want to exit this
+[  360.77s ->   366.59s] trade? So when I first entered this trade, my stop loss should be what I like to call 1 ATR below the
+[  366.59s ->   371.33s] candlestick. This candlestick right here, right? 1 ATR below that candle, it would be 50%,
+[  371.33s ->   378.35s] 65, 20. I'll just say right here. This will be when I would enter this trade. So you can see this
+[  378.35s ->   383.23s] in real time. I'll set an alert here. Now the market went down, didn't touch it. So I'm good.
+[  383.29s ->   387.91s] It rebounded and it went up. So once the move happens, you would then want to move that stop
+[  387.91s ->   393.95s] loss up as the move happens. So here I would move that stop loss up to below this candlestick
+[  393.95s ->   397.23s] right here, because now the move has gone up and I don't want to lose in this trade.
+[  397.23s ->   403.37s] And so as this market continues to go up, I would here, I would then move. Let's do it. Let's do it
+[  403.37s ->   407.27s] this way right now. It's here. This is my stop loss. Now, as it moves up, I want to then move it to
+[  407.27s ->   412.97s] below this candlestick. 1 ATR below that candlestick. I'll move it up. Now it continues to go up and you
+[  412.97s ->   418.27s] go, I'm still chilling. I'm still chilling. It's coming down now, right? I'm still chilling.
+[  419.37s ->   423.75s] I'm still chilling, right? It hasn't broken this bottom support here. And now it's getting a little
+[  423.75s ->   429.09s] finicky and boom, right when it breaks that, that's when I would exit. Because I was selling
+[  429.09s ->   435.09s] options, my take profit, I was aiming for full decay out 0%, 100%, which would be 30 bucks.
+[  435.51s ->   440.67s] E, I have my entry. I have my S, my stop loss, which initially was down below entry. And I
+[  440.67s ->   446.13s] continue to move it up to protect my earnings. That's stop loss. And then T, it is take profit,
+[  446.13s ->   453.19s] which for me would be zero. Now the same idea can be applied to buying that call option on this
+[  453.19s ->   458.21s] candlestick. This, this entry is exactly the same. The stop loss management will be exactly the same.
+[  458.61s ->   463.85s] And lastly, the take profit will be slightly different, right? Because for options, you would
+[  463.85s ->   468.71s] want to take profit. So let's zoom this out a little bit. I like to go to the 30 and this is on
+[  468.71s ->   474.57s] this, this is, it'll be on this day. So if you see this, right, you can see that this is a high to a low
+[  474.57s ->   479.35s] to a, to a potentially lower high. So this is an area of resistance right here, right? We can just
+[  479.35s ->   484.44s] create a low here. If it goes above that, we'll say something. And area of resistance, right? And
+[  484.44s ->   492.15s] so for me, potentially, I'll drop it down to one level lower right here. When I was trading here,
+[  493.51s ->   500.34s] my stop loss would have been here. So my stop loss would have been around 55, 20, right? So I'm
+[  500.34s ->   508.98s] risking around 10 points to make around 20 points. So an R risk of one to two, right? I'm risking 10 points
+[  508.98s ->   513.86s] to make 20 points. So even if you were buying the SPX, like index fund, that's, that's your trade,
+[  514.20s ->   520.36s] right? Whenever it hits an area of potential resistance, that is when I would want to sell
+[  520.36s ->   523.86s] out. When you enter this trade, you would look for yourself, stop loss here, and you would set
+[  523.86s ->   529.37s] your take profit. So when you buy an option, that would be the way that you trade it. The most
+[  529.37s ->   534.61s] important skill we have to learn as traders is that we have to be able to understand what our max
+[  534.61s ->   539.21s] loss should be. Think about how much money you're willing to lose, not how much money you can
+[  539.21s ->   543.35s] potentially make. Because if you can understand how much money you're willing to lose, and you're
+[  543.35s ->   548.23s] okay with it, you would then be able to realize that loss. I can tell you for a fact that I even
+[  548.23s ->   552.11s] feel that sometimes when I trading with larger amounts of money, that absolute value of the money
+[  552.11s ->   558.09s] really drives me insane. If you guys want to see how much money you can actually make by taking a very
+[  558.09s ->   565.53s] simple stop loss strategy of never risking more than you can make, make sure you guys click on
+[  565.53s ->   569.95s] the video in the end screen right here. If you guys like this video, make sure you guys like and
+[  569.95s ->   573.71s] subscribe. It'll really help the channel out. You guys are doing me a huge favor. Again, thank you
+[  573.71s ->   576.99s] guys so much for tuning in. Stay safe in the market. Until next time. Peace.

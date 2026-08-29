@@ -1,0 +1,100 @@
+[    0.38s ->     4.46s] In this video, I'm going to show you a strategy using the Hakanashi Indicator.
+[    4.46s ->     7.78s] It's great at finding trends and even better at finding reversals.
+[    7.78s ->    12.50s] I'm also going to be adding another indicator to this strategy to make it that much more
+[   12.50s ->    13.50s] effective.
+[   13.50s ->    14.50s] Let's get straight to it.
+[   14.50s ->    19.02s] For all the beginners out there or for the people who don't know what the Hakanashi Indicator
+[   19.02s ->    21.18s] is, let me give you a quick overview.
+[   21.18s ->    25.50s] So what we're looking at now looks as if it's just a normal chart, right?
+[   25.50s ->    29.14s] Well actually we're looking at the Hakanashi Indicator at work.
+[   29.14s ->    32.76s] Hakanashi actually means average bar in Japanese.
+[   32.76s ->    36.86s] So that's exactly what it's doing, finding the average in the candlesticks.
+[   36.86s ->    40.68s] So this is the real time chart and this is the Hakanashi chart.
+[   40.68s ->    45.74s] So just make sure in the back of your head you know the Hakanashi is not the real price.
+[   45.74s ->    47.26s] It's the average price.
+[   47.26s ->    51.22s] Instead of just looking at the Hakanashi candles, we're going to be looking at both the real
+[   51.22s ->    56.92s] time and the Hakanashi at the same time so we can read and understand the chart better.
+[   56.92s ->    61.92s] To do this just go to trading view, go to the indicators tab and type in Hakanashi.
+[   61.92s ->    66.30s] This will show both the real time candles above and the Hakanashi candlesticks right below
+[   66.30s ->    67.30s] it.
+[   67.30s ->    69.96s] Now that we have the indicator added, let's move on to the strategy.
+[   69.96s ->    73.88s] So when trading it's a lot harder to find trends than you might think.
+[   73.88s ->    78.50s] Not all trends are going to look this simple and just have all green candlesticks going up.
+[   78.50s ->    80.40s] Most of the time they're going to look like this.
+[   80.40s ->    85.94s] A strong trend going up, but having multiple pullbacks with red candlesticks, which also
+[   85.94s ->    88.58s] might give you false signals on when to sell.
+[   88.58s ->    90.76s] That's where the Hakanashi comes in.
+[   90.76s ->    94.16s] Instead of looking at this trend with a bunch of false signals that may get you to panic
+[   94.16s ->    96.16s] sell, we're going to be looking at the Hakanashi.
+[   96.16s ->   100.94s] In most cases it'll have all the same color candlesticks and a strong trend.
+[  100.94s ->   104.52s] This way it's easier to identify the trend in real time.
+[  104.52s ->   106.74s] That's exactly what the Hakanashi is for.
+[  106.74s ->   111.16s] It helps eliminate unwanted noise and shows a clearer version of the price movement.
+[  111.16s ->   113.58s] Let's move on to how to identify the trend.
+[  113.58s ->   116.30s] There are three simple rules you must follow.
+[  116.30s ->   122.08s] To identify an uptrend, the Hakanashi candlesticks must be green, they must have large bodies,
+[  122.08s ->   124.42s] and they have no lower wicks.
+[  124.42s ->   127.64s] In this example this would be a strong long trend.
+[  127.64s ->   131.80s] All the candles are green, they have large bodies, and they don't have lower wicks.
+[  131.80s ->   134.18s] It's the complete opposite for a downtrend.
+[  134.18s ->   138.64s] All the candlesticks must be red, have large bodies, and have no upper wicks.
+[  138.64s ->   142.40s] So we all know charts gain and lose momentum all the time.
+[  142.40s ->   147.68s] After a strong upwards trend, most of the time the chart will lose momentum and do a reversal
+[  147.68s ->   149.02s] in the opposite direction.
+[  149.02s ->   153.78s] Luckily, the Hakanashi is great at finding when that moment is about to happen.
+[  153.78s ->   158.52s] You can identify when a reversal is about to happen by this, a doji candle.
+[  158.52s ->   163.56s] A doji candle is a candlestick with wicks on both sides, has a small body, and it can
+[  163.56s ->   166.98s] be either color depending if you want to go long or short.
+[  166.98s ->   169.62s] So we're going to take advantage of what we just learned.
+[  169.62s ->   175.44s] The only rule you have to follow is you only enter after you see a doji candle, and you
+[  175.44s ->   179.74s] wait for two candles in the opposite direction with opposite features.
+[  179.74s ->   182.30s] Let me show you an example so you know what I mean.
+[  182.30s ->   185.02s] So here you can see the price is making a downtrend.
+[  185.02s ->   189.70s] Then we see the chart make a doji candle in the opposite color, which indicates that there
+[  189.70s ->   193.06s] is a very good chance the price will make a reversal.
+[  193.06s ->   199.04s] Then we wait for two green candles with only wicks on the top to appear to confirm the reversal.
+[  199.04s ->   203.64s] If the candle has a wick on the top and the bottom, we do not count that candle.
+[  203.64s ->   208.42s] Once the second candle with a wick only on the top appears, we enter the trade.
+[  208.42s ->   211.00s] So this right here will be our entry signal.
+[  211.00s ->   212.90s] Let me show you an example of a short.
+[  212.90s ->   217.72s] The market is in an uptrend, we wait to see a doji candle appear in the opposite color.
+[  217.72s ->   222.56s] We then wait for two large red candles to appear with only wicks on the bottom.
+[  222.56s ->   225.36s] Once we see the two candlesticks, we enter the trade.
+[  225.36s ->   229.10s] So that's the Hakanashi indicator explained simply in a nutshell.
+[  229.10s ->   233.52s] Now I'm going to show you how to add another indicator to this strategy to make it that
+[  233.52s ->   236.88s] much more effective and more importantly more profitable.
+[  236.88s ->   241.02s] The indicator we're going to be adding to the strategy is the stochastics indicator.
+[  241.02s ->   245.58s] I'm not going to be going too in depth with this indicator because one, it's very simple
+[  245.58s ->   249.20s] to use and two, I don't want this video to be too long.
+[  249.20s ->   253.68s] To describe it simply, the stochastics indicator is a lot like RSI.
+[  253.68s ->   257.84s] As in, if the lines are crossing above the top line, the market is being overbought.
+[  257.84s ->   262.48s] If the lines are crossing below the bottom line, the market is being oversold.
+[  262.48s ->   267.20s] So as an example, here are the lines of crossing below the bottom line indicating the market
+[  267.20s ->   270.72s] is oversold and it's likely to reverse upwards.
+[  270.72s ->   275.32s] Just like most indicators though, this indicator by itself isn't very good.
+[  275.32s ->   279.08s] But combined with other indicators, it's extremely powerful.
+[  279.08s ->   284.02s] To add this indicator, go to the indicators tab, type in stochastics and click this one
+[  284.02s ->   285.02s] right here.
+[  285.02s ->   290.02s] Now let me show you how to combine these two indicators to make a very powerful strategy.
+[  290.02s ->   293.94s] First things first, if we want to go long, we want to find a point in the chart where
+[  293.94s ->   299.72s] the Scholastic indicator is crossing below the bottom line and there is weak downwards momentum.
+[  299.72s ->   305.30s] We do not want to enter a trade if the Scholastic lines are crossing below the bottom line and
+[  305.30s ->   310.06s] there is strong downwards momentum, because odds are the price will keep on falling.
+[  310.06s ->   311.68s] Here's a perfect example.
+[  311.68s ->   314.60s] The Scholastic lines are crossing below the bottom line.
+[  314.60s ->   317.36s] There's a downtrend, but a very weak downtrend.
+[  317.36s ->   319.88s] We then wait for a doji candle to appear.
+[  319.88s ->   325.00s] Once it does, wait for two large body candlesticks with only wicks at the top, then we enter the
+[  325.00s ->   326.32s] trade.
+[  326.32s ->   328.32s] Here's one more example.
+[  328.32s ->   330.44s] Scholastic lines are crossing below the bottom line.
+[  330.44s ->   331.70s] There's a weak downtrend.
+[  331.70s ->   333.00s] Wait for the doji candle.
+[  333.00s ->   336.16s] Wait for two large green candles with only wicks on top.
+[  336.16s ->   337.16s] Enter the trade.
+[  337.16s ->   338.16s] Profit.
+[  338.16s ->   343.32s] I just showed you a profitable trading strategy using the Hakan Ashi and Scholastic indicator.
+[  343.32s ->   347.40s] All I ask in return is if you take two seconds out of your day and like this video.
+[  347.40s ->   351.76s] If you want to see one of the strategies I use when day trading, check out this video right
+[  351.76s ->   355.56s] here because this strategy works great on the 1 minute time frame.
+[  355.56s ->   357.28s] I'll see you guys next time.

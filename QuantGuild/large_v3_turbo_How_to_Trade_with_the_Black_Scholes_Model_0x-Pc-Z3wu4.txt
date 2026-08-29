@@ -1,0 +1,238 @@
+[    0.46s ->     7.65s] I have been looking to discuss trading using the Black-Scholes model for quite some time,
+[    7.75s ->    11.85s] especially in the context of market making and prop trading for that matter.
+[   12.59s ->    20.07s] But recently, I've been externally motivated by an enormous number of questions pertaining
+[   20.07s ->    23.01s] to implementing models for trading.
+[   23.67s ->    28.85s] A lot of my previous videos have talked about the statistics behind profitability in trading
+[   28.85s ->    35.07s] over time, and I want to continue with this idea because I keep getting confronted with
+[   35.07s ->    36.53s] questions about price prediction.
+[   37.35s ->    43.35s] And, you know, a lot of the underlying principles of price prediction in the context of the trading
+[   43.35s ->    50.07s] edge that I've discussed in previous videos still hold true in that ideology of price prediction.
+[   50.59s ->    56.09s] But the thing that many people seem to not understand, unless you have insider information
+[   56.09s ->    60.43s] and you're certain that the release of that information is going to yield positive or
+[   60.43s ->    64.17s] negative results, there is no such thing as price prediction.
+[   64.89s ->    72.01s] You're not going to predict the price of an asset tomorrow and today take out a second
+[   72.01s ->    77.57s] mortgage and lever up on deep out of the money options because, you know, that's not how
+[   77.57s ->    78.39s] this works.
+[   78.47s ->    80.17s] That's not how you make money in the long term.
+[   80.25s ->    81.01s] That's how you gamble.
+[   81.01s ->    85.75s] Anybody can go to a casino and place their money on black and maybe you double your money
+[   85.75s ->    92.29s] great, but in the long run, we all know that the casino is going to win because of the edge
+[   92.29s ->    93.05s] that they have.
+[   93.29s ->    96.19s] There are some betting theories in place that can counteract that.
+[   96.53s ->   100.09s] Casinos have limits, theory versus practice, so on and so forth.
+[  100.71s ->   106.07s] But what I want to do is I want to take what we've discussed in previous videos, this idea
+[  106.07s ->   111.87s] of trading with some sort of edge and apply it to trading using the Black-Scholes model.
+[  112.57s ->   119.19s] Because all the Black-Scholes model is doing is it's defining what the risk neutral price
+[  119.19s ->   120.91s] of that option would be.
+[  121.31s ->   127.01s] In essence, taking into account all possible states of the world going forward, assuming
+[  127.01s ->   130.71s] some underlying dynamics for the stock price.
+[  130.71s ->   134.81s] And it's telling you the fair price to pay today for this contract.
+[  135.41s ->   142.75s] And if there is a mispricing in the marketplace or your quote for that option contract falls
+[  142.75s ->   147.85s] outside of this fair price, then there may be some statistical arbitrage.
+[  148.09s ->   152.07s] So let's actually go ahead and take a look at what I mean by this.
+[  152.41s ->   157.63s] If we have any hope to trade with the Black-Scholes model, we need to start with some fundamentals.
+[  157.63s ->   162.73s] The Black-Scholes model is the solution to the Black-Scholes partial differential equation,
+[  162.93s ->   168.47s] which is derived from a hedge portfolio argument where the underlying asset dynamics are assumed
+[  168.47s ->   173.47s] to follow a geometric Brownian motion, and the derivative contract that is held within
+[  173.47s ->   177.75s] such a portfolio is in fact a European call option.
+[  178.17s ->   184.25s] All that is to say, and honestly speaking, after a lifelong background in mathematics myself,
+[  184.25s ->   189.83s] you do not need to understand what any of that is to be able to understand the Black-Scholes
+[  189.83s ->   192.49s] model itself and how to use it to trade.
+[  192.99s ->   200.73s] So what I have here on the screen is a very fancy representation of the formula for a European
+[  200.73s ->   201.53s] call price.
+[  202.13s ->   208.05s] And the particularly quanti among us will be able to make out a cumulative normal distribution
+[  208.05s ->   215.27s] function here, D1, D2 terms derived from the Black-Scholes equation, and the underlying asset
+[  215.27s ->   218.81s] dynamics that are a geometric Brownian motion.
+[  219.41s ->   225.31s] But if that means nothing to you, all you need to know is if you give me five inputs, I can give
+[  225.31s ->   226.89s] you the price of an option.
+[  227.23s ->   233.13s] Now, it's important to understand the price that I will give you is assuming the underlying
+[  233.13s ->   238.75s] asset dynamics follow a geometric Brownian motion, assuming a constant volatility, and a
+[  238.75s ->   242.97s] whole bunch of other assumptions that are implicit to such a formula to be able to derive
+[  242.97s ->   244.27s] a price, okay?
+[  244.73s ->   248.61s] There are things that are automatically wrong anytime you use a model.
+[  249.01s ->   250.23s] That's why we use models.
+[  250.23s ->   255.13s] If we didn't need a model and we just had the dynamics themselves, there would be no purpose
+[  255.13s ->   256.65s] in developing a model price.
+[  256.97s ->   259.07s] So it's very important to understand the distinction.
+[  259.07s ->   263.51s] But if you give me five inputs, I can give you an option price.
+[  263.97s ->   270.11s] You give me the underlying asset price, the strike price, the volatility, the interest rate,
+[  270.21s ->   275.15s] and the time until maturity, and I can tell you how much you should pay for that option.
+[  275.69s ->   280.55s] It's very important to understand that each option only has one P&L at expiration.
+[  281.03s ->   282.05s] What do I mean by this?
+[  282.19s ->   286.77s] Well, theoretically, given this parameter set, I pay $14.23 for this option.
+[  286.77s ->   293.33s] So should I pay $14.23 for this option, there are a significant number of states of the world
+[  293.33s ->   296.61s] that are going to result in me either making money or losing money.
+[  296.85s ->   302.27s] I've developed this nice chart to explain the terminal value of our option contract.
+[  302.81s ->   307.95s] So what I have here is this orange line is the strike price, the white line is the price path,
+[  308.35s ->   311.95s] and the red or green line represents the P&L.
+[  311.95s ->   317.87s] So what you'll see here is I'm long this contract, which means anytime this white path finishes above
+[  317.87s ->   324.85s] the orange line, I may make money should I exceed the value that I paid for the premium in the payoff.
+[  326.04s ->   331.24s] Otherwise, if it's below the line or below that value for the premium, I'm going to lose money.
+[  331.70s ->   335.00s] So every time I run this, you're going to see a different price path.
+[  335.00s ->   340.92s] I can only lose as much as I paid for the premium, where I have unlimited upside potential.
+[  341.36s ->   345.14s] So here I lose, here I lose, here I make a good amount of money.
+[  345.24s ->   347.56s] I make $46 and I paid $14.23.
+[  348.18s ->   352.92s] So this is an example of the terminal value of the option contract.
+[  353.52s ->   356.04s] We don't know which state of the world we're going to be in.
+[  356.46s ->   358.86s] That's why somebody is engaging in this transaction.
+[  359.02s ->   360.26s] They're betting against you.
+[  360.26s ->   365.34s] If you have another side of this option contract, that is, if you're long, someone else is short.
+[  365.72s ->   367.14s] If you're short, someone else is long.
+[  367.22s ->   368.74s] They're literally betting against you.
+[  369.10s ->   372.10s] So what we have here is possible states of the world.
+[  372.42s ->   378.10s] You don't know whether or not this white price path, which in this simulation is governed by a geometric
+[  378.10s ->   384.62s] brownie motion, is going to finish below the orange line or above the price that you paid for the premium.
+[  384.78s ->   386.22s] So here's one such example.
+[  386.56s ->   387.72s] I paid $14.23.
+[  387.72s ->   394.22s] It finished above the strike price, but I still post the loss because I didn't cover the premium
+[  394.22s ->   395.30s] I paid for the option.
+[  395.80s ->   401.90s] So we know we don't know where this price path is going to be in the future.
+[  402.62s ->   405.38s] So how much should we pay today for the option contract?
+[  405.52s ->   408.40s] Well, the theoretical value can be determined by the Black-Scholes model.
+[  409.04s ->   413.20s] It is essentially taking all of these price paths going forward.
+[  413.66s ->   416.90s] So every time I press the run button, I'm getting a different price path.
+[  416.90s ->   423.44s] Think of it as taking all of the possible places that this could end up, computing the P&L,
+[  424.16s ->   427.74s] discounting it back to right now, and taking the average.
+[  428.22s ->   431.54s] That is what the Black-Scholes model is essentially representing.
+[  431.72s ->   437.74s] It's representing the discounted expected P&L based on all possible states of the world,
+[  438.16s ->   441.56s] assuming the underlying asset is governed by a geometric brownie motion.
+[  441.56s ->   444.74s] That's how the price of the contract is decided.
+[  444.86s ->   448.24s] That's why probability and statistics is so important for quantitative finance,
+[  448.24s ->   450.64s] because that's the backbone of pricing.
+[  451.22s ->   456.68s] Now, of course, we don't know where it's going to be, but there's only going to be one realization.
+[  457.04s ->   458.96s] There's only going to be one realized price path.
+[  459.16s ->   461.36s] It's very important to understand the difference.
+[  461.36s ->   467.02s] The model is going to give us a price based on all four looking possible states of the world,
+[  467.46s ->   471.86s] whereas the actualization, the realization of the price path and the P&L,
+[  472.56s ->   473.82s] well, there's only one of those.
+[  474.10s ->   475.30s] And we don't know what it's going to be.
+[  475.38s ->   478.66s] We may make a significant amount of money, or we may lose money.
+[  478.80s ->   479.68s] We do not know.
+[  480.36s ->   484.50s] So if this is the case, then how do we make money using such theoretical pricing models?
+[  484.50s ->   491.14s] It seems hopeless if the underlying asset's dynamics are, in fact, governed by a geometric brownie motion,
+[  491.28s ->   494.34s] then we can't possibly predict where it's going to be in the future.
+[  494.58s ->   499.04s] It's a probability density function, and implicitly, it's random.
+[  499.18s ->   502.02s] You can't predict whether a coin is going to be heads or tails.
+[  502.50s ->   505.58s] You can't predict whether a die is going to roll five or six.
+[  506.04s ->   509.78s] So how do we make money using the Black-Scholes model
+[  509.78s ->   513.50s] if we know what the fair price of the contract is today?
+[  513.50s ->   518.80s] This is why probability and statistics is so important for quantitative finance,
+[  518.90s ->   523.58s] because supposing the assumptions that go into the Black-Scholes model are true,
+[  523.70s ->   527.80s] that is, the underlying asset is, in fact, governed by a geometric brownie motion,
+[  528.00s ->   530.40s] that is, volatility is constant, so on and so forth.
+[  530.88s ->   535.26s] Supposing that that is true, supposing that those assumptions are true,
+[  535.82s ->   539.86s] should we trade against the market value,
+[  540.36s ->   542.86s] some discrepancy between the theoretical value,
+[  542.86s ->   547.98s] then we can accumulate a positive expected value over time and, in fact, make money.
+[  548.32s ->   550.60s] What does this look like? Let me give you an example.
+[  551.22s ->   554.04s] So for this parameterization set that I gave you initially,
+[  554.18s ->   557.10s] we have 100, 100, 30%, 5%, 1.
+[  557.32s ->   559.34s] The call price is $14.23.
+[  559.84s ->   564.40s] I take this theoretical Black-Scholes model price into the market,
+[  564.40s ->   567.78s] and the market maker quits me $13.43 at $14.10.
+[  568.14s ->   574.26s] So I could buy the contract that has a theoretical value of $14.23 for $14.10.
+[  575.26s ->   576.18s] What does that tell you?
+[  576.58s ->   581.16s] Well, it tells you right away that there is some sort of mispricing.
+[  581.60s ->   587.44s] That is, the theoretical value of this contract is greater than the market's current value for the contract.
+[  587.44s ->   592.16s] Now, there's a variety of reasons why a market maker may shift his quotes upwards or downwards.
+[  592.32s ->   596.86s] We're going to digress from that, but I just want to make it apparent that I'm not just hand-waving that away.
+[  597.48s ->   599.44s] Here, we have some sort of theoretical mispricing.
+[  599.52s ->   603.90s] I'm using this as an example to illustrate how to make money using the Black-Scholes model.
+[  604.50s ->   608.98s] So here, clearly, the call price is undervalued in the market.
+[  608.98s ->   610.86s] The theoretical price is $14.23.
+[  611.26s ->   613.10s] The market maker is quoting $14.10.
+[  613.34s ->   618.82s] So now, I have some sort of edge here, calling this a trading edge, a trade edge.
+[  619.04s ->   623.18s] This is what's going to contribute to this positive expected value.
+[  623.54s ->   629.50s] What I mean to say is, we know that if I buy this contract at $14.10 right now,
+[  629.60s ->   633.02s] if I buy this contract at $14.10, there's no guarantee I make money.
+[  633.32s ->   638.55s] In fact, you can see here, as I continue to run this, here I lose money.
+[  638.55s ->   643.07s] This very well could be what happens when I buy the contract at $14.10.
+[  643.79s ->   649.59s] However, should I engage in this transaction a significant number of times,
+[  649.93s ->   652.75s] if I did this 10,000 times, 100,000 times,
+[  652.95s ->   655.45s] what you'll do is you'll take the average P&L,
+[  655.75s ->   661.63s] and you'll see that for a good fraction of them, you are going to, in fact, make money.
+[  661.83s ->   664.69s] You're going to see green bars more than you see red bars.
+[  665.05s ->   669.03s] In other words, you're going to have a positive expected trading value over time
+[  669.03s ->   671.37s] and you'll accumulate account equity.
+[  672.13s ->   673.09s] Don't believe me?
+[  673.23s ->   674.61s] Well, let's take a look at what happens.
+[  674.97s ->   678.75s] Here, I'm paying $14.10, sold in lots of $100,
+[  679.35s ->   681.59s] paying $14.10 for such an option,
+[  681.97s ->   685.23s] and I'm going to simulate this white price path,
+[  685.39s ->   686.59s] the geometric brownie emotion.
+[  687.07s ->   689.51s] I'm going to simulate it 100,000 times.
+[  689.99s ->   693.17s] So I simulate a geometric brownie emotion 100,000 times,
+[  693.17s ->   698.47s] and I take that green or red bar, the value of the P&L,
+[  698.81s ->   701.79s] after taking into account the premium that I paid for the option,
+[  702.07s ->   704.85s] and I add it to this list called P&Ls,
+[  705.05s ->   706.39s] and then I take the average,
+[  706.65s ->   710.67s] and what you'll see is that the average is positive.
+[  711.21s ->   717.31s] That is, even though I don't know where the geometric brownie emotion is going to end up,
+[  717.31s ->   722.91s] I do know that I'm getting a better price than the theoretical price,
+[  723.03s ->   727.97s] which means over time, I can capitalize statistically on this mispricing
+[  727.97s ->   730.91s] by accumulating this positive expected value.
+[  731.57s ->   736.79s] What does this look like in the context of actually engaging in an option transaction?
+[  737.55s ->   739.99s] Well, what I'm going to do now is I'm going to show you
+[  739.99s ->   743.85s] the outcome of your account trading this over time.
+[  743.85s ->   748.13s] So, really, this isn't time, but this is per option.
+[  750.56s ->   753.34s] So, you'll see every time that I run this,
+[  753.44s ->   759.12s] I'm going to get a different portfolio value for 10 option trades.
+[  760.58s ->   764.24s] Some go down, some go up, some go down, some go up,
+[  764.62s ->   767.44s] but because we have a positive expected value,
+[  767.64s ->   772.48s] as I engage in more of these option trades with this theoretical mispricing,
+[  772.74s ->   775.78s] what I'm going to do is I'm going to start to accumulate
+[  775.78s ->   779.88s] I'm going to start to accumulate account equity.
+[  779.88s ->   781.70s] So, there's 100 trades.
+[  783.07s ->   785.03s] There's 1,000 trades.
+[  785.98s ->   787.94s] There's 10,000 trades.
+[  789.22s ->   791.58s] There's 100,000 trades.
+[  791.94s ->   795.12s] And this is how you use the Black-Scholes model to make money.
+[  795.56s ->   799.24s] It's not, don't think small, it's not in the context of one trade.
+[  799.24s ->   805.02s] You need to trade a lot of contracts to be able to capitalize on this mispricing
+[  805.02s ->   808.92s] and this expected trade edge, this expected value over time.
+[  809.32s ->   810.50s] That is how you make money.
+[  810.60s ->   812.24s] That's how casinos make money in the long run.
+[  812.30s ->   816.60s] They need to survive the short term, survive the short run to make it to the long run.
+[  816.90s ->   820.04s] You make it to the long run, you can accumulate a significant amount of wealth.
+[  820.04s ->   825.06s] But, if you blow out in the short run, then there is no long run
+[  825.06s ->   827.26s] and you're not going to accumulate this expected value.
+[  827.70s ->   834.10s] Now, clearly right away, right, you know that you could lose money for the first 1,000 trades
+[  834.10s ->   839.30s] governed by this idea that this white line has no reason to just be above the strike price.
+[  839.66s ->   844.36s] This very well could be below and below and below and you could run out of money.
+[  844.54s ->   846.80s] That very well could happen before you get to the long run.
+[  847.16s ->   848.44s] But that is what we're doing.
+[  848.44s ->   849.60s] That's how this works.
+[  849.72s ->   854.46s] That's how trading works in general, specifically how to trade with this Black-Scholes model.
+[  855.34s ->   860.10s] Now, of course, if I go down here, I'm going to get some angry comments if I don't say,
+[  861.33s ->   864.85s] non-stationarity and parameterization and volatility is not constant over time
+[  864.85s ->   865.95s] and lacks clustering heuristics.
+[  866.09s ->   868.17s] There's no jumps, so on and so forth.
+[  868.79s ->   870.81s] The geometric bar in the emotion is not perfect.
+[  870.95s ->   872.49s] That's very well known.
+[  872.59s ->   873.65s] Look at a Heston model.
+[  874.07s ->   875.75s] Heston model has stochastic volatility.
+[  875.95s ->   878.07s] Volatility is stochastic.
+[  878.07s ->   879.89s] It's a stochastic process in itself.
+[  880.39s ->   886.53s] So what I'm trying to really just kind of throw an umbrella up before I catch a whole bunch of flack
+[  886.53s ->   890.85s] in the comment section is I'm trying to say that the Black-Scholes model is an imperfect model,
+[  891.01s ->   894.33s] but it's pretty darn good for what it's good for.
+[  894.33s ->   903.01s] And the whole idea of trading with such a model, whether you choose a Black-Scholes model or a stochastic volatility model or a jump diffusion model or whatever,
+[  903.11s ->   910.91s] whatever it is you choose to trade with, whatever it is you choose to engage with the market with or try to shed some light in the market with,
+[  910.91s ->   914.37s] you need to understand that you're making assumptions.
+[  914.37s ->   920.07s] You have to, in order to try to have any hope of figuring out what the heck is going on.
+[  920.31s ->   928.95s] If you didn't make assumptions, then you would just, you know, hopefully have the actual dynamics of what's going on and there would be no need for this.
+[  928.95s ->   932.45s] We wouldn't even be having this discussion right now, but this is the game.
+[  932.89s ->   936.13s] So if you want to get involved in this space, this is the game you're playing.
+[  936.49s ->   942.73s] You're going to have to understand how these models interact, the assumptions that go into them, violations of the assumptions,
+[  943.23s ->   946.27s] environments where the assumptions may be truer or more false,
+[  946.57s ->   950.95s] because all of these things play into whether or not you're going to accumulate a positive expected value.
+[  950.95s ->   964.74s] It's very easy for me to go in here and whoops, now there's negative drift to 50% and this is going to change the entire outcome of your trading strategy over time.
+[  965.66s ->   971.60s] If this doesn't make sense to you, then what you need to realize is even though the system's imperfect,
+[  971.76s ->   974.04s] there's a lot of different parameterizations that you could use.
+[  974.12s ->   978.42s] There's a lot of different things that you could use to kind of shed some light on what's going on.
+[  978.42s ->   982.74s] And, you know, hopefully in the long run, you can use it to make money.
+[  983.58s ->   987.32s] That being said, I hope you found this video useful.
+[  987.52s ->   988.48s] I hope it was enjoyable.
+[  988.96s ->   995.72s] I hope this sheds some light on how to use a Black Sholes model to accumulate positive account equity over time.
+[  996.54s ->  1004.10s] And with that being said, if you have any questions, feel free to drop them in the comment section below or join my discord where I tend to be more active.
+[ 1004.82s ->  1007.84s] But I hope you enjoyed and I will see you in the next one.

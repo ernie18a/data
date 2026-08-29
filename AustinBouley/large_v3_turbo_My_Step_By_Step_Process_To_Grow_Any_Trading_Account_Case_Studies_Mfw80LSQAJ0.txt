@@ -1,0 +1,82 @@
+[    0.00s ->     3.68s] Hey guys, this video I'm going to show you how to scale your credit spreads trading account.
+[    3.98s ->     7.50s] Now, this will be a short lesson because it's easier than you may think.
+[    7.58s ->     9.82s] Just like most things, it takes time.
+[   10.12s ->    15.16s] So, let's walk through the scaling process from starting to if you have a $5,000 account,
+[   15.26s ->    17.38s] $10,000, $50,000, $100,000 and plus.
+[   17.52s ->    19.54s] So, let's dive into scaling.
+[   19.80s ->    24.04s] So, if we start off at the very beginning, let's say we're at $2,000 to $5,000.
+[   24.04s ->    30.20s] Again, this new part right here will begin with no matter what account size you have,
+[   30.26s ->    32.18s] you want to follow the first steps here.
+[   32.50s ->    32.78s] Why?
+[   33.18s ->    39.42s] Well, because scaling requires confidence, requires trust in your system.
+[   39.74s ->    45.80s] You should not be scaling and trading a large amount of size or spreads using a strategy you are not familiar with.
+[   46.04s ->    50.18s] You may now know all the criteria and specifics because you've watched this course,
+[   50.18s ->    54.48s] but you don't have personal real experience trading it.
+[   54.72s ->    59.50s] So, you want to start off in the $2,000 to $5,000 section where I say one spread.
+[   59.90s ->    65.12s] Only ever trade one spread and follow the rules to a T.
+[   65.46s ->    66.54s] T rules.
+[   66.96s ->    68.50s] You know, just T rules, whatever.
+[   68.82s ->    72.54s] Anyways, so one spread and follow the rules to a T.
+[   72.66s ->    74.14s] That's what everyone should be doing.
+[   74.22s ->    76.66s] You should do this for at least a week.
+[   76.66s ->    83.44s] Again, if you have $2,000 to $5,000 in your account, you should only ever be trading like one spread to maybe four max.
+[   83.70s ->    89.38s] But when you're starting, you should only ever trade one spread and then slowly size up from there.
+[   89.66s ->    96.62s] That's what my best members and course people who have gone through this strategy and system have done.
+[   96.86s ->    99.38s] They've had like $100,000 accounts.
+[   99.66s ->   105.06s] They started with one spread, then went to two, then went to five, then went to 10, then went to 15, and now they're trading 40 spreads.
+[  105.06s ->   109.58s] So, I know these people, I've talked to them, I've done it myself, this works.
+[  109.88s ->   112.70s] So, start with one spread no matter what account size you have.
+[  113.38s ->   117.06s] Now, where are we sizing up to?
+[  117.16s ->   119.86s] Well, that depends on your account size.
+[  120.22s ->   125.50s] Please go back to the risk management and trade sizing lesson of this course.
+[  125.50s ->   129.68s] Why? Because that should tell you what your max sizing is.
+[  129.76s ->   140.78s] So, for instance, if my max sizing, because I have a 100K account, we'll say that's over here, is 40 spreads, then I need to slowly make my way from one to 40.
+[  140.84s ->   143.10s] I'm not going to jump overnight from one to 40.
+[  143.16s ->   143.98s] That's not how that works.
+[  143.98s ->   148.06s] I'm going to slowly jump over time to get it.
+[  148.10s ->   152.26s] Let's say 1 to 10 to 20 to 40.
+[  152.38s ->   153.54s] Again, you should jump more than that.
+[  153.62s ->   165.38s] It would be 1, 5, 10, 15, 20, 25, 30, 35, 40, and slowly progress as you can based on your account size and sizing rules that we covered in one of the last courses or one last module.
+[  165.38s ->   172.56s] So, now that we know that, this should be the same depending on your account size.
+[  172.64s ->   176.00s] Your account size should dictate where you're at.
+[  176.40s ->   179.82s] And I just want to slow this down for people who, you know, have larger accounts.
+[  179.92s ->   181.58s] You don't just jump straight to 40 spreads.
+[  181.92s ->   183.38s] You follow this little process.
+[  184.48s ->   187.84s] Now, as you start to scale, there are some things you want to consider.
+[  187.84s ->   198.34s] So, again, if you are anywhere less than $100,000, follow the strategy, follow the rules, slowly start to size up over time, and that's your plan.
+[  198.68s ->   203.58s] If you are here, if you are past $100,000, the rest will apply to you.
+[  203.82s ->   208.14s] You want to look into talking to a CPA to set up a business to trade in.
+[  208.36s ->   216.52s] If you are making a majority or a good portion of your money from trading using credit spreads, but you can be doing at an account size like this.
+[  216.52s ->   221.62s] This is how I generate $2,000 to $5,000 every single month is with an account size greater than this.
+[  222.28s ->   226.44s] And so, again, you can set up a business which will allow you to deduct some stuff.
+[  226.80s ->   228.70s] You can also take an IRS election.
+[  228.86s ->   234.02s] There's two different IRS elections which will allow you to say, hey, this is a full-time trader.
+[  234.34s ->   239.72s] And when you do that, you can deduct things like home expense, like commissions.
+[  239.72s ->   246.42s] When you love to deduct commissions off your taxes, those are things you can do when you've been elected a full-time trader.
+[  246.52s ->   251.48s] Which you can start doing when you're trading the proper size at $100,000 plus account size.
+[  252.20s ->   255.62s] So, those are the different things to consider when you're scaling.
+[  256.04s ->   263.78s] Also, around the $50,000 mark plus, again, I would recommend for $100,000 plus though, is you can consider trading SPX over SPY.
+[  264.16s ->   265.50s] Now, what does this mean?
+[  265.80s ->   271.22s] SPX simply means that it's the same thing as SPY but a different type of asset.
+[  271.22s ->   275.86s] It is the actual index versus SPY is the ETF based on the index.
+[  275.98s ->   277.68s] So, SPY is based off SPX.
+[  277.80s ->   278.84s] SPX is the index.
+[  279.24s ->   280.80s] Now, how and why does this work?
+[  280.82s ->   286.40s] But when you trade SPX in America and the U.S., you have tax advantages.
+[  286.52s ->   287.72s] That's a 60-40 tax.
+[  287.72s ->   295.88s] That means that 60% of the profits you made from trading SPX come from or are taxed at a lower tax bracket.
+[  295.98s ->   299.02s] It's taxed at the long-term tax bracket, which is a lot lower.
+[  299.42s ->   303.72s] And 40% is taxed at your normal income tax bracket, which is what all of us by will be taxed at.
+[  303.94s ->   306.88s] Now, you may be saying, Austin, why don't we all trade SPX then?
+[  306.88s ->   316.22s] Because it requires a large account size and the spread is large, so it's just more advantageous for people with larger accounts.
+[  316.30s ->   323.52s] Because once you have that tax you're offsetting, then it'll make up because you won't make as much money on SPX when you use this strategy.
+[  323.92s ->   326.78s] So, you want to offset that with the taxes that you're saving.
+[  327.16s ->   329.66s] So, once you reach past a $100K account, then you can.
+[  329.94s ->   333.88s] But again, I still have over a $100K account and I'm using SPY, no problem.
+[  333.88s ->   335.82s] So, anyways, that is it.
+[  336.06s ->   337.52s] That is how you scale your account.
+[  337.64s ->   339.82s] It's super easy, super simple, super straightforward.
+[  340.08s ->   340.86s] That's what I have for you.
+[  341.08s ->   342.72s] I hope you enjoyed this course.
+[  342.86s ->   345.68s] If you have any questions, let me know in the Discord group chat.
+[  345.90s ->   346.58s] See you guys later.

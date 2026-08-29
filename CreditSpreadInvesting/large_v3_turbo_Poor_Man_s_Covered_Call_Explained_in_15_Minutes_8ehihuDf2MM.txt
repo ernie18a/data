@@ -1,0 +1,160 @@
+[    0.00s ->     5.54s] One of the major drawbacks to selling covered calls is the fact that we need to have 100 shares
+[    5.54s ->    11.30s] of a specific stock to sell calls on. It's not the most capital efficient strategy, but there is a
+[   11.30s ->    16.08s] more efficient way to sell calls, and this is what we call a poor man's covered call, otherwise known
+[   16.08s ->    21.22s] as PMCC. So instead of buying 100 shares of a stock, we'll simulate that by buying a deep in
+[   21.22s ->    26.32s] the money leaps call, long dated high delta option. You can then sell short dated call
+[   26.32s ->    30.62s] options on top of it. That might be a lot, so let's break it down step by step. So that deep
+[   30.62s ->    36.36s] in the money leaps call option, what we're going to do is we're going to aim for a delta of 0.85 to 0.95.
+[   36.84s ->    42.90s] What that simulates is essentially owning around 85 to 95 shares of that particular stock. And with
+[   42.90s ->    49.02s] the fact that we're selling it really far out, long dated, means that most of the theta decay is going
+[   49.02s ->    57.44s] to be very, very slow. What that essentially means is that this one call option that's far out and very
+[   57.44s ->    64.00s] in the money is going to simulate almost a one-to-one move with the stock. Once we own that long dated
+[   64.00s ->    71.16s] leaps call, we can then start selling shorter DTE call options on top of it, similar to what we would
+[   71.16s ->    76.12s] do with covered calls. That is essentially what a poor man's cover call is. That can be a little bit
+[   76.12s ->    79.64s] confusing. So let's just demonstrate with an example. For the leaps call that we're buying,
+[   79.80s ->    85.20s] we want to be buying one that is around 1.5 to 2.5 years out. And we want to be buying it when it's
+[   85.20s ->    92.26s] at 0.85 to 0.95 delta. Let's use TSM as an example. Right now, TSM is around $280. So if we
+[   92.26s ->    98.58s] wanted to buy 100 shares of TSM to sell covered calls on, we'll spend close to $28,000. So in order
+[   98.58s ->   103.58s] to simulate that 100 shares, what we're going to do is we're going to go and buy a call that is very far
+[  103.58s ->   112.00s] out, right? 1.5 to 2.5 years. So we'll do maybe December 17, 2027. That's 759 days, a little bit
+[  112.00s ->   118.26s] more than two years. Now, what we're going to do is we're going to look for the 0.85 to 0.95 delta.
+[  119.32s ->   125.46s] And this is around 0.88. And what that simulates is we're going to be owning close to 89 shares of
+[  125.46s ->   132.40s] TSM. The further in the money you go, like 165, the higher the delta. So this will be 90 shares. So
+[  132.40s ->   141.28s] let's just do 165. In order to buy this one 165 call option that simulates 90 shares of TSM at its
+[  141.28s ->   147.80s] current price, we will be spending close to $13,000. You might think $13,000 is a lot of money and
+[  147.80s ->   154.34s] you're not wrong. But remember, we have to spend $28,000 to buy 100 shares right now, but we are
+[  154.34s ->   160.28s] actually only spending $13,000 to buy this one leap that simulates close to 90 shares. So we're
+[  160.28s ->   168.40s] actually quote unquote saving $15,000 or so. Once this leap is bought, we would be able to sell
+[  168.40s ->   173.58s] covered calls on it. So let's assume that right now we have this leaps and we are going to sell
+[  173.58s ->   181.32s] one 31 day out call option. And we're trying to generate maybe close to 0.5% a month. So I just do
+[  181.32s ->   191.24s] like this one. So 320. So if I sold this 320 call option, I would collect $215. The yield, just to
+[  191.24s ->   199.30s] reiterate, is the credit divided by the sale price. So it'll be 215 divided by 320 times 100, which will
+[  199.30s ->   204.38s] come out to be about 0.67%. And essentially, you would do this month after month. If your calls don't
+[  204.38s ->   209.50s] get assigned, you would generate income on the leaps call that again is simulating you owning 100 shares
+[  209.50s ->   215.34s] of TSM. Let's talk about the intricacies of PMCCs because that is why you guys subscribe to this
+[  215.34s ->   219.64s] channel because we go through the risks and the benefits to make sure you guys understand the
+[  219.64s ->   225.56s] trade-offs that is happening here. We have to first examine the outcomes of PMCCs. The first outcome
+[  225.56s ->   231.10s] is the easiest. It expires out of the money. So for example, if TSM does not reach above 320
+[  231.10s ->   238.66s] in about 31 days, then sell another call the next month, every single month. This is the tricky
+[  238.66s ->   249.26s] part of PMCCs. What happens if the stock continues to go up and your calls start getting under quote
+[  249.26s ->   254.64s] unquote attack, right? Because we know from our previous videos about the downsides of covered
+[  254.64s ->   259.32s] calls, I'll link in the upper right-hand corner right here, is that the market tends to always
+[  259.32s ->   264.96s] drift up. And so it's a higher likelihood that the delta that we're selling for, so in this case,
+[  264.96s ->   270.82s] the delta, which is 0.14, which gives us a 14% of being in the money, is actually underestimating
+[  270.82s ->   276.52s] the risk. Well, this 14% is actually more like 30%. So when that happens or when it gets close to it,
+[  276.70s ->   282.68s] there's two options. Number one is you roll. You can keep rolling that call option for a credit. So
+[  282.68s ->   287.86s] rolling just means you buy back this current option and you sell another one on top of it. So let's do an
+[  287.86s ->   293.34s] example. Let's assume that we have 10 days left on our option and we're selling like a 300 call
+[  293.34s ->   298.08s] 130. If I want to roll this out, what I would do is I would spend 130 to buy this option back and then
+[  298.08s ->   306.76s] I would sell a longer dated option. So again, 31 days, find the 300 option and I would collect 550.
+[  307.14s ->   313.62s] So 550 minus 130 means on this one roll, I will collect around $420 of income. That's how you would
+[  313.62s ->   320.22s] roll. You can also roll up or down. Rolling up just means I go from 300 to maybe 310, right? And here I
+[  320.22s ->   326.74s] would collect slightly less. So 345. So I'll maybe make around $200 or so, or I roll down to 290 and I
+[  326.74s ->   332.70s] collect even more close to maybe 600 bucks on this one roll. So that's how you would manage it. So
+[  332.70s ->   337.46s] theoretically, what would honestly happen in most cases is you would start rolling up, up, up, up,
+[  337.46s ->   344.08s] up, up. And my rule of thumb here is for calls. When you're rolling, do not let it get in the money.
+[  344.08s ->   349.16s] If it's getting close to your strike price, roll it out as soon as you can and as fast as possible.
+[  349.16s ->   354.62s] That way you can keep that gap as it continues to go up. That's the rolling strategy for cover
+[  354.62s ->   361.02s] calls. Number three is if it actually ends up going in the money and you can't actually roll
+[  361.02s ->   364.80s] for a credit, which means that essentially you'll probably get assigned on the call.
+[  365.80s ->   370.40s] Now assignment is very, very daunting, especially for beginners and poor man's cover calls. The
+[  370.40s ->   375.50s] strategy is probably more tailored to our smaller accounts and beginners anyways, but if it does happen
+[  375.50s ->   380.96s] and it will happen, this is what will happen. So let's assume right now TSM is actually at 310
+[  380.96s ->   386.84s] and we have this 300 call option. And this is the only one that we sold. So we collected 550 bucks.
+[  386.84s ->   395.06s] What would happen is our, our bought call, which we spent $1,390 on, will get exercised.
+[  395.64s ->   402.84s] You would choose to buy a hundred shares of TSMC at that 165 price point. You would then sell that
+[  402.84s ->   407.66s] hundred shares that we bought at 300, which means that you'll bring in $30,000, subtract about the
+[  407.66s ->   413.06s] $16,500 that you spent buying those shares, which means you make out $13,500. Then you subtract the
+[  413.06s ->   422.20s] 13,590 that you spent to buy that call option. So you're down negative 90, but you made $550 on the
+[  422.20s ->   428.90s] one call option. So essentially you made $460 on this one transaction. So again, that's a little bit
+[  428.90s ->   432.88s] complicated. And that is again, one of the risks that we'll talk a little bit more about poor man's
+[  432.88s ->   437.92s] covered call. So one of the things that we talk on this channel is the psychological part. Every time
+[  437.92s ->   442.02s] you sell a PMCC, you should expect assignment. Because you're on covered calls, it's more likely
+[  442.02s ->   445.62s] than not that you're going to get assigned, which means that you will have to sell a hundred shares
+[  445.62s ->   449.04s] of that stock at some point in time. Let me know if you guys have any comments or questions down in
+[  449.04s ->   453.08s] the comment section below, and I'll try and clarify even further. Now let's talk a little bit more
+[  453.08s ->   460.04s] about the covered call portion of the PMCC. I want to first bring us back to the risks of selling
+[  460.04s ->   464.00s] covered calls because selling covered calls is actually a lot harder than selling puts. And if
+[  464.00s ->   466.78s] you want to learn how to sell puts, make sure you guys check out this video. I'll link in the upper
+[  466.78s ->   472.16s] right-hand corner. It's a masterclass, 110 minutes on how to sell puts. And the reason for that is
+[  472.16s ->   478.70s] because when you're selling covered calls, your upside is capped. We went through this in depth in a
+[  478.70s ->   483.48s] separate video that I'll also link right here about the downsides to selling covered calls,
+[  483.64s ->   489.14s] aka the devil's bargain. The reason that it's called a devil's bargain is because if a stock
+[  489.14s ->   494.96s] were to appreciate and you were to sell a covered call, you are limiting your upside, which means that
+[  494.96s ->   500.40s] you are potentially losing out on that capital appreciation, otherwise known as equity risk premium.
+[  500.74s ->   507.14s] As an example, take that TSMC call option that we sold. We collected, for example, maybe 300 bucks on it.
+[  507.14s ->   514.09s] What happens if TSMC goes 10 points above our strike price? We actually lose out on $700 of
+[  514.09s ->   520.13s] gains. And so we are trading income for that potential upside. And that's usually a trade-off
+[  520.13s ->   525.35s] when we sell covered calls. And that is especially true when we sell covered calls very close to the
+[  525.35s ->   530.65s] money. And the reason that it hurts is because most of the gains in the market comes from capital
+[  530.65s ->   536.43s] appreciation, right? The stock growing. And so by cutting off that growth and selling covered calls,
+[  536.43s ->   541.91s] you're actually going to have a worse total return than if you just held the stock and did
+[  541.91s ->   545.79s] absolutely nothing. So that's the trade-off. Now, the reason you guys subscribe to this channel
+[  545.79s ->   550.71s] is because we talk about the risks and the trade-offs, and then we learn how to build our
+[  550.71s ->   555.75s] strategies around it. With that being said, there are two main ways to sell covered calls. The first
+[  555.75s ->   560.07s] one is that you focus a lot on the capital appreciation. You care a lot about the total returns,
+[  560.07s ->   566.63s] right? So the covered call acts as a slight income booster, not as the main driver. The second
+[  566.63s ->   571.77s] way is you accept the trade-off of losing out on the capital appreciation. You accept the devil's
+[  571.77s ->   578.13s] bargain. And all you care about is selling covered calls for income and getting in and out of your
+[  578.13s ->   584.54s] position as fast as possible. Both are fine, as long as you guys understand the trade-offs. So let's
+[  584.54s ->   589.34s] just talk about number one first. Our main goal when we sell covered calls is to get a little bit of
+[  589.34s ->   594.92s] income while letting our leaps in this case for PMCCs grow and appreciate because that's where most of
+[  594.92s ->   599.64s] our returns will come from. And from the devil's bargain paper, what you're going to do and what
+[  599.64s ->   606.52s] you're going to see is that we are trying to target 1.2 to 2.4% return annualized. So we are selling
+[  606.52s ->   612.46s] very, very, very far out of the money. Now take, for example, my public account. I have TSMC and I bought
+[  612.46s ->   621.33s] these back in March. So within a span of maybe eight months, I've already upped 52%, right? And TSMC
+[  621.33s ->   628.45s] has been a little bit beaten down recently. It will be very, very hard for me to replicate that 52%
+[  628.45s ->   634.67s] in terms of income, right? 52 divided by eight months means that I have to try and get 6% every
+[  634.67s ->   639.93s] single month. And so what we want to do when we're selling it with option number one, which is income as
+[  639.93s ->   648.45s] a topper is that we want to let TSMC appreciate as much as possible while adding a little bit of
+[  648.45s ->   652.89s] income on top of it. Like we said earlier, what we're trying to do is we're trying to just add
+[  652.89s ->   658.67s] at most 2.4% every single month. So the way that we would do this is this way. So we go to the
+[  658.67s ->   664.97s] auction chain, we sell for the same amount, we sell for 30 days out, and we look at yield, right? 2.4%
+[  664.97s ->   670.81s] annualized means you're trying to get around 0.2% every single month. Very, very little, right?
+[  671.03s ->   678.31s] So basically trying to sell it at 350 or 340. 340 is around a 2.6% and 350 is closer to 1.7%. So I
+[  678.31s ->   682.41s] would actually go ahead and just sell this 350. So you can see how far are the money? Again, the goal
+[  682.41s ->   686.97s] is not to make as much money as possible. The goal is to let the stock appreciate while just collecting
+[  686.97s ->   693.59s] a little bit on top. And so if TSMC, for example, at this very moment was at 50%, at the end of the year
+[  693.59s ->   700.53s] with my cover call income, I'll be at like 52.4%. And that 2.4% every single year will make a
+[  700.53s ->   705.57s] substantial difference over the decades of compounding. That is how you sell it with method
+[  705.57s ->   711.45s] number one. Now method number two is that you accept the trade-off. You accept the bargain,
+[  711.63s ->   717.29s] which is that I do not care about the capital appreciation. All I care about is income. Now in
+[  717.29s ->   723.03s] this case, all you have to do is sell it right at the money. So right now TSMC is at 280. You would go in
+[  723.03s ->   729.37s] and sell at 280 or 290. You collect close to 4.5% monthly yield. But the reason that I caution
+[  729.37s ->   735.49s] against this, especially for PMCCs, is because we don't actually own the shares. We have the leaps.
+[  735.83s ->   741.69s] If you get assigned on your calls, you have to exercise your leaps. And so you have that whole
+[  741.69s ->   745.81s] transaction that we talked about earlier on in this video, and that could get a little daunting.
+[  746.03s ->   749.85s] And so especially with PMCCs, what I would recommend is actually strategy number one is because it's just a
+[  749.85s ->   753.93s] lot easier, right? You just try to collect as much premium as possible. And if it gets close, like we talked
+[  753.93s ->   759.23s] about, roll it, keep rolling it. And so that the stock, when it drops, you'll be able to get out of it
+[  759.23s ->   763.95s] scot-free. If you're selling it very close to the money, as we do in scenario number two, it might be
+[  763.95s ->   769.11s] very hard for you to exit the position, which means that you might eventually have to get assigned
+[  769.11s ->   773.99s] and end up losing on the position, which is fine as long as you accept the trade-offs. We talk about
+[  773.99s ->   779.01s] all the trade-offs so that you guys can apply it to different scenarios, depending on what your
+[  779.01s ->   783.29s] overall goal is. You might be in your thirties looking to retire. So you might choose scenario
+[  783.29s ->   788.47s] number one, because you want to compound a little bit faster, but maybe you're in your sixties and
+[  788.47s ->   794.49s] you want to collect as much stable income as possible for your retirement income. Both are
+[  794.49s ->   799.99s] completely fine as long as you guys accept what the pros and cons are. And then lastly, let's touch upon
+[  799.99s ->   805.79s] what happens if the stock or leaps were to fall in value. So in both circumstances, in both scenarios,
+[  805.87s ->   810.55s] whether or not you're income farming as you are in scenario number two, or you're just providing
+[  810.55s ->   815.37s] just a little bit of income in the short term, your calls will be out of the money and you can
+[  815.37s ->   819.53s] continue to sell calls at whatever delta you guys are looking at, which means that you won't get
+[  819.53s ->   823.93s] assigned. So regardless of which scenario you are, that's actually not a bad thing, especially since
+[  823.93s ->   828.55s] your leaps are much cheaper than what it would be if you owned a hundred shares. So let's wrap this up
+[  828.55s ->   834.39s] with a summary of what a PMCC is. A PMCC is really just a more capital efficient way of selling covered
+[  834.39s ->   840.01s] calls, right? So instead of owning a hundred shares of that stock, you buy a leaps call that simulates
+[  840.01s ->   844.33s] owning that hundred shares. And then you sell covered calls on it to generate just a little bit of income
+[  844.33s ->   850.77s] to let that leaps appreciate, or you sell covered calls very aggressively and you try to farm that
+[  850.77s ->   856.53s] income. So maybe we'll just use an analogy to kind of bring this full circle. Think of this like
+[  856.53s ->   862.47s] buying a house. So instead of paying for that house all at once with straight cash, what you do
+[  862.47s ->   867.71s] is you put a down payment on the house and you have a mortgage. So view that down payment as the
+[  867.71s ->   874.11s] leaps call. You're simulating owning that house. And then you're able to start renting out the house
+[  874.11s ->   880.11s] or rooms on Airbnb or verbal. And that room starts generating you income. At the same time, your house
+[  880.11s ->   885.33s] should appreciate in value similar to how your leaps appreciate in value. That's about it. Let me know if
+[  885.33s ->   888.77s] you guys have any questions or comments down in the comment section below. I want to hear stories
+[  888.77s ->   893.85s] about how maybe you guys have sold PMCCs, how they've done some of the issues that you've had,
+[  893.95s ->   897.65s] whether or not you like them or don't like them. Big shout out and thank you to my channel members.
+[  897.79s ->   901.35s] You guys are the best. Thank you for supporting me the way that you guys do. And if you guys want to
+[  901.35s ->   904.17s] learn how to sell puts, again, I'll link it in the end screen right here. And if you guys want to
+[  904.17s ->   909.37s] learn my favorite strategy, here's another 110 minute masterclass on how to sell credit spreads.
+[  909.87s ->   912.33s] Okay. Until next time, stay safe in the market. Peace.

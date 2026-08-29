@@ -1,0 +1,391 @@
+[    0.46s ->     7.07s] Hey guys, Roman here, quantitative researcher and trader founder of Quant Guild. You all have
+[    7.07s ->    13.49s] been asking for it for quite some time. So today I'm incredibly stoked. We are finally going to be
+[   13.49s ->    21.17s] discussing the Kalman filter specifically for quantitative finance. I'm going to motivate the
+[   21.17s ->    27.83s] Kalman filter by first discussing the model development pipeline. Anytime in practice,
+[   27.83s ->    34.57s] we go about building a new model. We face a specification and parameterization problem.
+[   34.79s ->    42.75s] What exactly is that and how does it impact the interpretations of the models that we build
+[   42.75s ->    49.73s] and more importantly, the decisions that we make in the face of uncertainty? Once we understand
+[   49.73s ->    57.75s] that process, how can the Kalman filter help update our models, particularly when
+[   57.75s ->    66.33s] we observe new data, even in the context of a regime change? This is where the Kalman filter
+[   66.33s ->    75.07s] and extensions shine and exactly what we are going to cover in this video. Anytime we go about building
+[   75.07s ->    83.27s] a model in practice, we can never be certain that we have specified it correctly or parameterized it
+[   83.27s ->    92.03s] correctly. If we knew the true dynamics, we wouldn't need to build a model in the first place. The only
+[   92.03s ->    99.35s] thing in this space that is certain is access to my Jupyter notebooks. Anytime there's a new Quant Guild
+[   99.35s ->   104.15s] video, I'll leave a link to this Jupyter notebook in the description below. I'll also post it to the
+[  104.15s ->   109.73s] Quant Guild library on GitHub, where you can find all of my Jupyter notebooks and associated YouTube videos,
+[  109.73s ->   114.59s] along with all of the source code for my Quant builds. At the top of this Jupyter notebook,
+[  114.59s ->   119.99s] you'll notice some related Quant Guild videos applying probability and statistics to finance
+[  119.99s ->   125.93s] and trading. This idea of time series analysis, retail versus institutional trading, trading versus
+[  125.93s ->   133.11s] investing, this idea of expected value and accumulating expected value over a series of trades
+[  133.11s ->   140.91s] over time, quant versus discretionary trading, and of course, busting three trading myths that these
+[  140.91s ->   148.49s] trading gurus love to propagate. If you're unfamiliar with any of these ideas, I highly recommend you check
+[  148.49s ->   154.95s] these videos out first before tackling one like this. Moreover, these videos certainly take a lot of
+[  154.95s ->   158.61s] effort to create, so if you'd like to help support the channel so I can continue to create videos
+[  158.61s ->   163.85s] just like this one, please like, comment, subscribe, share. It helps me out tremendously. It is always
+[  163.85s ->   171.07s] greatly appreciated, and if you'd like to master your quantitative skills, check out QuantGuild.com.
+[  171.13s ->   176.13s] Maybe you come from a background in business, economics, computer science, and aren't too sure
+[  176.13s ->   182.23s] where to get started on your Quant journey. Maybe you're an aspiring Quant or a working professional
+[  182.23s ->   188.49s] looking to sharpen those technical skills or pivot into the Quant space. In any case,
+[  188.49s ->   195.55s] QuantGuild is for you. We have over 90 Quant lessons in math, probability, finance, an adaptive
+[  195.55s ->   201.23s] practice engine that scales with your skill level so you can progress to more and more difficult topics
+[  201.23s ->   212.01s] with gamified rank-based progress, over 100 hours of lecture content, topics that you would find in a
+[  212.01s ->   220.09s] master's in financial engineering program, but for a fraction of the price. So if you'd like to help support
+[  220.09s ->   229.33s] the channel and master your quantitative skills for trading and market-making roles, check out QuantGuild.com.
+[  229.33s ->   236.49s] Without further ado, let's get started by discussing this idea of the model specification and parameterization
+[  236.49s ->   244.81s] problem. Why do we face this problem in practice at all? Well, if we're trying to make informed decisions
+[  244.81s ->   253.21s] in the face of uncertainty, we need to build a model. Otherwise, without a crystal ball, we're just going
+[  253.21s ->   261.85s] to be guessing. And if we knew what the true dynamics were, then we wouldn't need to build a model in the
+[  261.85s ->   269.53s] first place. Now, typically, these models are going to be rooted in some sort of academic or economic
+[  269.53s ->   279.61s] theory. Our first objective is going to be to specify a model typically denoted as M. And most models that we
+[  279.61s ->   287.61s] select are going to be accompanied by parameters. They are parametric, meaning they have parameters that we are
+[  287.61s ->   296.17s] free to choose. And in general, because the number of parameters can change based on the model we select,
+[  296.17s ->   304.81s] I'm just going to specify theta here as our parameter vector. This is just going to contain one or more parameters
+[  304.81s ->   313.05s] for whatever model we choose M. And typically, we write it as something like this M of theta. I have some examples for you
+[  313.05s ->   320.25s] here. Here's a linear regression model, an AR1, an autoregressive model, a Garch model, an Ornstein-Ullenbach,
+[  320.25s ->   326.41s] a mean reversion model. And of course, theta is going to change for each of these, as they are all
+[  326.41s ->   333.69s] accompanied by different parameters. When it comes to the model specification problem, you can specify a
+[  333.69s ->   340.57s] model effectively, and you can specify a model ineffectively. On the left, what you're observing is an
+[  340.57s ->   348.17s] example of an effective model specification. I have an input feature X and an output target Y. We observe
+[  348.17s ->   354.81s] the relationship between these two features certainly does appear linear. We select a linear model and it
+[  354.81s ->   362.65s] certainly appears to capture those dynamics effectively. Whereas on the right, it doesn't appear to be an
+[  362.65s ->   370.01s] effective model specification. We can see there's some curvature. We can see that X and Y certainly don't
+[  370.01s ->   378.89s] have a linear relationship. So our linear model out of the box doesn't do a great job in capturing those
+[  378.89s ->   386.65s] dynamics. Now, it's really important to understand. It's not that it can't. We would need to do some
+[  386.65s ->   394.49s] feature engineering to accomplish this. The linear model is only linear in the parameterization. We can
+[  394.49s ->   403.45s] transform our features however we like, but it may be the case that we cannot capture these dynamics
+[  403.45s ->   411.93s] with a model that we specify. And we're observing exactly what that looks like here on the right. In
+[  411.93s ->   418.57s] some cases, no matter how we go about feature engineering or parameterizing our model, we may not
+[  418.57s ->   427.61s] be able to capture the desired dynamics. This is where academic and economic theory certainly play a role.
+[  427.61s ->   433.45s] We're not just going to be shooting in the dark trying to pick out of the hat effectively what model
+[  433.45s ->   443.53s] to use. We want to base it in what we observe in reality. This brings us to an example of model specification
+[  443.53s ->   455.61s] specifically for the VIX. Suppose we wanted to model or forecast implied volatility. How should we
+[  455.61s ->   463.21s] go about model specification? Again, we're not just going to pick a model out of a hat. We want a basis
+[  463.21s ->   472.01s] in the academic or economic theory for model specification. What is the VIX anyway? What is implied volatility?
+[  472.01s ->   478.89s] Well, this week, I actually recorded a video talking about the Goldman Sachs methodology for pricing
+[  478.89s ->   485.37s] variant swaps. And I talked about the connection between that pricing methodology from the Goldman Sachs
+[  485.37s ->   494.73s] desk note from their QuantStrats team in the 90s and how that relays into the VIX. Fortunately for us,
+[  494.73s ->   501.53s] there is a tremendous amount of well-documented academic literature about the dynamics that we observe
+[  501.53s ->   508.97s] in volatility in volatility in practice. It is typically denoted and proved to be a mean reverting
+[  508.97s ->   516.73s] process. So why is this important? Well, if we ignore this idea that it is a mean reverting process,
+[  516.73s ->   523.13s] we are going to inappropriately specify a model and inappropriately extrapolate dynamics
+[  523.13s ->   530.49s] in our forecast. What exactly does this look like? On the left, I have a linear model. On the right,
+[  530.49s ->   537.69s] I have a mean reverting model and I'm going to iteratively forecast the implied volatility. I'm
+[  537.69s ->   544.81s] going to iteratively forecast the VIX effectively for this time period. And what I want you to observe
+[  544.81s ->   554.81s] is how the model rooted in reality is never going to extrapolate to unrealistic or to extreme values.
+[  554.81s ->   562.57s] What I mean by this is if we go back to especially where the VIX spikes, if we specify a linear model
+[  562.57s ->   571.37s] arbitrarily, look at this forecast. It is terrible. It's effectively saying it can go out to infinity or
+[  571.37s ->   578.25s] when the slope becomes too negative, it can go out to negative infinity. Whereas what? The model on the
+[  578.25s ->   586.25s] right is rooted in academic economic theory. It knows there is a reversion element. It's going to
+[  586.25s ->   593.37s] oscillate around some long-term mean. Now that is certainly subject to change. However, we observe
+[  593.37s ->   604.01s] values always that are going to be reasonable within our forecast, even when the VIX spikes. That is why
+[  604.01s ->   613.29s] academic and economic theory is so important, especially in the context of model specification
+[  613.29s ->   620.73s] and extrapolation for making informed decisions in the face of uncertainty. If your model is proposing that
+[  620.73s ->   628.49s] extremes that can't actually occur may be a reality, that is a consequence of incorrect and effective
+[  629.05s ->   636.17s] model specification. In the context of the model development process, misspecification isn't the
+[  636.17s ->   644.73s] only thing that can yield extreme values like we observe here with this linear model specification.
+[  645.29s ->   651.85s] Even if we specify a model effectively, consider this mean reversion model here. We've
+[  651.85s ->   657.85s] based it on the academic economic literature. It's very well documented that volatility is a
+[  657.85s ->   669.77s] mean reverting process. We may still have extreme values implied by this model, even though we have specified it
+[  669.77s ->   679.37s] effectively. What do I mean by this? Well, this brings us to the notion of model parameterization. We've just
+[  679.37s ->   689.61s] selected our M. We've rooted it in theory. It's a mean reversion model, but it's a parametric model, meaning we
+[  689.61s ->   698.41s] have to select parameters theta. What should they be? Well, here I have an example for you of what it looks
+[  698.41s ->   707.93s] like to specify incorrect parameters versus correct parameters. Again, we're never going to have a
+[  707.93s ->   714.73s] perfectly correct model or perfectly correct parameterization. Without a crystal ball or without
+[  714.73s ->   720.17s] knowing the true dynamics of whatever it is you're trying to model, you're never going to be able to
+[  720.17s ->   727.13s] capture 100% of the variation. But herein, we can certainly create models and parameterizations that
+[  727.13s ->   734.33s] are more correct than others. And this is just one example of that. On the left here, you're observing
+[  735.13s ->   741.77s] effectively a mean reversion model with a violently incorrect parameterization. What I mean by that is
+[  741.77s ->   753.29s] it suggests that the probability of observing the VIX above 60 is going to be so arbitrarily small
+[  753.29s ->   764.46s] that it would take 65 billion years to observe that value. This is really no different than this
+[  764.46s ->   773.26s] extremely incorrect and effective specification proposing that implied volatility. This VIX value here
+[  773.26s ->   783.10s] may go out to positive infinity. It's just in the context of a model that is already specified and rooted
+[  783.10s ->   791.74s] in theory. So even though we've rooted our specification in theory, we can still have extremely incorrect
+[  791.74s ->   799.90s] incorrect values, incorrect probabilities, incorrect forecasts from the parameterization. On the right,
+[  799.90s ->   808.14s] you're observing a more correct parameterization. And what we can observe here is the probability
+[  808.14s ->   816.54s] effectively of observing the VIX above 60 is now not going to be just one in 65 billion years, but it's
+[  816.54s ->   827.50s] actually going to be once every say 4.2 years, certainly a more reasonable value. How does this impact
+[  827.50s ->   833.34s] our decision-making in the face of uncertainty? This is an extreme example, but it's a really important
+[  833.34s ->   843.42s] example because if we misspecify our model, then we are going to maybe consider realities that are not
+[  843.42s ->   853.34s] actually possible as seen in this case with the linear model. The same is true with our misparameterization.
+[  853.34s ->   860.70s] It may be the case that we are not considering a state of the world that actually should be considered.
+[  860.70s ->   867.58s] That's exactly what we see here. We incorrectly specify the parameters of our reversion model. We say, oh,
+[  867.58s ->   873.90s] it takes 65 billion years to observe this one instance. We're not even going to consider it when
+[  873.90s ->   879.98s] we go about making our decisions in the face of uncertainty. But in reality, we just parameterized
+[  879.98s ->   889.50s] our model very poorly. In reality, it is not as unlikely as the original incorrect parameterization
+[  890.14s ->   899.82s] makes it out to be. This is why model specification and parameterization are so important. It is upstream
+[  899.82s ->   908.06s] to the decision-making process. If you get probabilities, if you get an expected value, if you have a confidence
+[  908.06s ->   917.42s] interval, if you have some form of standard deviation around a rolling mean, you are conducting this
+[  917.42s ->   924.78s] specification and parameterization problem. And if your assumptions upstream are violently incorrect,
+[  924.78s ->   930.86s] not rooted in theory, you misparameterize your model, then all of those probabilities,
+[  930.86s ->   937.02s] all of those expected values, those confidence intervals, even any form of statistical test,
+[  937.02s ->   944.70s] is going to be wildly incorrect. To remedy this, we want to bring our models as close to reality
+[  944.70s ->   952.22s] as possible. We want the most informed probabilities and statistics that we are capable of producing,
+[  952.22s ->   958.22s] so we can actually go about making decisions about what the different possible states of the world we
+[  958.22s ->   967.98s] may be in are. So that's why we root our model selection in theory. But clearly, parameterization
+[  967.98s ->   974.38s] plays a big role in that as well. If our parameterization is poor, we're going to be making poor
+[  974.38s ->   980.86s] decisions. So how do we go about selecting parameters? Fortunately for us, there are a variety of
+[  980.86s ->   989.10s] techniques available. Method of moments, maximum likelihood estimation, the list goes on. All offer
+[  989.10s ->   997.18s] different classroom guarantees asymptotically, so on and so forth. But of course, that's in the classroom.
+[  997.18s ->  1007.18s] What about reality? Well, we can specify a model effectively, and maybe we even specify the parameters
+[ 1007.18s ->  1016.62s] effectively using one of these techniques. But that doesn't guarantee that it's going to be effective
+[ 1016.62s ->  1026.54s] forever. This brings us to the idea of when and why models break. The key question here is why did the
+[ 1026.54s ->  1035.02s] model break? Is it a model specification issue or a parameterization issue? The answer is probably both.
+[ 1035.02s ->  1041.58s] Likely, the model that you've selected is incapable of capturing all of the dynamics that you need.
+[ 1041.58s ->  1048.46s] And the parameterization was estimated with data that is stale. It's old. It doesn't actually reflect the
+[ 1048.46s ->  1054.38s] current data generating distribution. But there are going to be varying severities of this.
+[ 1055.02s ->  1063.18s] It may be that you just need a new parameterization. It may be that you need an entirely new model.
+[ 1063.98s ->  1071.82s] In which case, you may need both. I have an animation here to illustrate exactly what this looks like.
+[ 1071.82s ->  1079.34s] You're observing two linear models. And the only difference between the two is how the parameters
+[ 1079.34s ->  1087.50s] are being selected over time. What you're observing here is after there is a massive gap down on the left,
+[ 1087.50s ->  1096.54s] we're still informing the linear model with all of the data available to it. Is that appropriate?
+[ 1096.54s ->  1104.62s] Well, maybe not. What if after this massive gap down, the regime is completely different? It's not a downtrend
+[ 1104.62s ->  1112.14s] like this gap down suggests. No, it's just a new level with a new regime. And we're starting an uptrend.
+[ 1112.14s ->  1120.38s] This model is clearly incorrect. It's certainly misspecified, but it's also violently misparameterized.
+[ 1120.38s ->  1129.80s] Whereas, take a look at the model on the right. Over time, as the new regime produces more data,
+[ 1130.52s ->  1139.32s] it adapts its parameterization to this new regime. And it's producing a more reasonable forecast
+[ 1139.32s ->  1151.40s] relative to this old model. This is combining the ideas of model misspecification and missparameterization.
+[ 1151.40s ->  1158.04s] We can see that if we don't update our models when there is a regime change or our models aren't
+[ 1158.04s ->  1165.96s] dynamic to be capable of doing that on their own, we are subject to making poor decisions in the face
+[ 1165.96s ->  1172.20s] of uncertainty. In other words, after this massive gap down here, this model is still suggesting a
+[ 1172.20s ->  1181.48s] downtrend and it's going to continue to suggest a downtrend. Whereas really, it's just a new regime
+[ 1182.28s ->  1187.88s] with an uptrend. And if we have an adaptive parameter set for our model, like on the right,
+[ 1187.88s ->  1193.08s] we are capturing that information. So in other words, we can effectively
+[ 1194.60s ->  1199.72s] specify and parameterize a model. And that's really what you're seeing here is both of these
+[ 1199.72s ->  1206.92s] are doing a reasonable job, but eventually they're going to break. And we're going to need to do
+[ 1206.92s ->  1213.32s] something about it. Either the model is going to be capable of adapting to some extent on its own,
+[ 1214.12s ->  1221.48s] or it's just going to be stale and it's going to be providing poor information as a basis for your
+[ 1221.48s ->  1229.32s] decisions. That is the importance of understanding why your models break. You are going to need to
+[ 1229.32s ->  1237.08s] update your parameterization or your selection. If you don't, then you are going to be subjecting your
+[ 1237.08s ->  1245.16s] decision-making to violently incorrect probabilities and statistics like this 65 billion years,
+[ 1245.16s ->  1252.84s] when in reality, it should be roughly four. And this forecast here that suggests the VIX can go up
+[ 1252.84s ->  1260.28s] and above 100 in maybe one or two months. You are going to be subjecting your decision-making to states
+[ 1260.28s ->  1266.84s] of the world that are not actually possible. Or on the other side of that extreme, you are not going to
+[ 1266.84s ->  1274.04s] be considering states of the world that are actually possible if you don't update your models. This brings
+[ 1274.04s ->  1282.20s] us to the idea of the Kalman filter. In the context of updating our model, especially with the real world,
+[ 1282.20s ->  1288.44s] we want to not just root our decision-making in theory, but also update our models as we observe
+[ 1288.44s ->  1296.36s] new data. The Kalman filter is a modeling technique that does exactly that. It is going to both use
+[ 1296.36s ->  1304.44s] underlying dynamics, that is a specified parametric model like we've already discussed, and real world
+[ 1304.44s ->  1310.04s] observations, and it is going to act as a filter. We're effectively trying to discern
+[ 1310.60s ->  1319.08s] the true state based on a model rooted in theory and some noisy measurement. We're going to talk
+[ 1319.08s ->  1324.44s] about this in the context of the VIX example above. Just to make it as clear as possible,
+[ 1324.44s ->  1330.52s] we're going to walk through the different steps to really understand how to go about fitting a Kalman
+[ 1330.52s ->  1337.96s] filter model to some specified parametric model and newly observed data. Then we'll talk about it in
+[ 1337.96s ->  1344.76s] the context of a real world production grade example that I worked on in industry and then we'll extend
+[ 1344.76s ->  1352.28s] to the notion of dual filter models that actually not just update the forecast based on changing
+[ 1352.28s ->  1361.56s] regimes, but also the initial model parameterization. The Kalman filter relies on something known as the
+[ 1361.56s ->  1368.60s] Kalman gain. Effectively, we have a level of uncertainty in our model prediction and we are going to take
+[ 1368.60s ->  1373.96s] the ratio of that uncertainty with the uncertainty in the prediction itself plus the uncertainty in the
+[ 1373.96s ->  1381.56s] measurement that is of the actual data that we are observing. Now, just like any other model, the Kalman
+[ 1381.56s ->  1388.28s] filter as well is going to have a parameterization. We can specify these in a number of different
+[ 1388.28s ->  1395.64s] ways. Just keep that in mind. We are now effectively stacking a model on a model. We have our original
+[ 1395.64s ->  1401.24s] model rooted in theory. In this context, we're talking about the VIX still. We have a mean reverting model with a
+[ 1401.24s ->  1410.28s] parameterization, but now we're stacking the Kalman filter on top of that and it has parameters itself and it is also
+[ 1410.28s ->  1417.88s] subject to misparameterization. So let's just walk through a simple example here to really understand
+[ 1417.88s ->  1426.12s] this state space model. What I have here is the recursive equation for the Kalman filter and we're
+[ 1426.12s ->  1432.84s] going to walk through what each of these variables are. So X sub t is going to be the true state. All right,
+[ 1432.84s ->  1439.80s] our objective here is we're effectively observing some noisy measurement and we want to filter out the
+[ 1439.80s ->  1448.52s] noise by considering our model forecast and the data that actually comes in and this is going to do so
+[ 1448.52s ->  1455.08s] in a recursive capacity. Now in this context, I've already specified the different components of the
+[ 1455.08s ->  1466.44s] Kalman filter for the mean reversion model and that is going to be effectively F, B, Q, and R. So F is going to be
+[ 1466.44s ->  1474.28s] the decay factor, the speed of our mean reversion, B is going to be the long-term mean, Q is going to be
+[ 1474.28s ->  1483.08s] the process noise variance, and R is going to be the measurement error. So effectively when we observe
+[ 1483.08s ->  1490.36s] a trade price, we're suggesting that there is some measurement error about that and that is just for the
+[ 1490.36s ->  1499.32s] the context of this example. Now when it comes to combining the model forecast and the actual data
+[ 1499.32s ->  1505.64s] that we observe, we are going to have different levers that we can pull to pressure confidence on
+[ 1505.64s ->  1512.92s] either the model or the data we observe. And you're going to see very shortly an animation that illustrates
+[ 1512.92s ->  1521.96s] this beautifully. Effectively, you can think of this R as a lever. If R is large, the filter is going to
+[ 1521.96s ->  1534.68s] trust the model more. If R is small, it is going to trust the data more. Larger R is a smaller Kalman gain.
+[ 1535.24s ->  1546.76s] Smaller R is a larger Kalman gain. So we combine all of these pieces together and we get the estimated
+[ 1546.76s ->  1555.16s] state, the estimated true state of the VIX at this point in time. What does this actually look like?
+[ 1555.16s ->  1563.32s] Well, I have a great animation here of what the Kalman filter is doing. And I give you an example of what
+[ 1563.32s ->  1571.32s] it looks like to have a very sensitive selection, sensitive to data and a less sensitive selection,
+[ 1571.96s ->  1578.76s] less sensitive to data. This is going to correspond to a large R and a small R. What I want you to
+[ 1578.76s ->  1586.76s] notice here is as we observe trades coming in, we can see this gray distribution that is considered the
+[ 1586.76s ->  1594.84s] true data generating distribution. And our filter is attempting to model that expectancy. And it's
+[ 1594.84s ->  1603.48s] doing a pretty darn good job. Until when? Until we observe a jump. We observe a jump in that theoretical
+[ 1603.48s ->  1611.08s] distribution. Now, in the case that our filter adapts, we have a smaller R, we have a larger gain,
+[ 1611.08s ->  1616.44s] we can see that the uncertainty is certainly going to increase, but it is going to adapt very
+[ 1616.44s ->  1622.20s] aggressively to those new prints. And that's going to be the case for the model on the right,
+[ 1622.76s ->  1628.84s] but less so for the model on the left. What is happening here with our Kalman filter? Well,
+[ 1628.84s ->  1634.36s] on the right, we have more weight on the data that we observe and practice, less weight on the model
+[ 1634.36s ->  1640.68s] forecast. On the left, we have more weight on the model forecast, less weight on the data we observe.
+[ 1641.16s ->  1645.64s] Effectively, we don't get something for nothing. And we're going to continue to
+[ 1645.64s ->  1651.64s] talk about this idea of a no free lunch in a modeling context. But we can either choose to be
+[ 1651.64s ->  1659.96s] very reactive, very adaptive to new data points, as you see on the right, or we can say, hey, we're
+[ 1659.96s ->  1666.52s] rooting our model in theory, we shouldn't observe these, these are outliers, let's stick with the current
+[ 1666.52s ->  1673.08s] level. And what you're seeing here is effectively the consequence of being steadfast in that capacity,
+[ 1673.08s ->  1681.44s] holding the line, you can see the distribution on the left is not quick to jump, like the distribution
+[ 1681.44s ->  1689.36s] on the right, to these new data points, these outliers. And seemingly, as the animation plays
+[ 1689.36s ->  1695.04s] on, it was correct in doing so, because it maintains the level. Whereas on the right,
+[ 1695.04s ->  1700.64s] we are going to be making incorrect decisions for a little while until the model effectively has
+[ 1700.64s ->  1707.92s] whiplash and reverts back to the true level. This is the trade off. What if this created an entirely
+[ 1707.92s ->  1716.56s] new regime, we would certainly be there faster relative to this model, that is the best way to
+[ 1716.56s ->  1725.28s] visualize and understand the Kalman filter, it is critical to understand that the Kalman filter is
+[ 1725.28s ->  1735.68s] not updating the model parameterization. In other words, the Kalman filter is combining the model forecast
+[ 1735.68s ->  1742.40s] with observed data. In this context, we're talking about a mean reversion model that we've parameterized
+[ 1742.40s ->  1748.56s] using maybe some statistical technique, method of moments, maximum likelihood, however we choose to do
+[ 1748.56s ->  1758.16s] so. But once we perform that initial calibration, the Kalman filter is not updating that model. Maybe it
+[ 1758.16s ->  1765.60s] should, and likely it should. There are extensions to the Kalman filter that are capable of doing this.
+[ 1766.16s ->  1772.00s] You're effectively modeling then parameters as states as well, and you're going to update them just as you
+[ 1772.00s ->  1778.72s] do the level that we're observing here. But in this context, we're just observing a very standard Kalman
+[ 1778.72s ->  1786.96s] filter. In other words, should this regime change and our model is no longer producing effective forecasts,
+[ 1786.96s ->  1795.44s] just like we observed here due to misparameterization, then we're effectively just using the Kalman filter as a
+[ 1795.44s ->  1805.44s] bandaid. It is not a cure, which is why we want to consider extensions and more intricate state models
+[ 1805.44s ->  1814.00s] capable of updating then the model parameterization as we also observe new data so we can adapt to new
+[ 1814.00s ->  1822.56s] regimes not just in the context of the Kalman filter itself, but also the model providing the forecast.
+[ 1822.56s ->  1827.52s] What I would like to do now is I'd like to just give you a step-by-step example of developing a
+[ 1827.52s ->  1834.80s] Kalman filter specifically for the VIX. We're going to walk through all of the steps to produce this
+[ 1834.80s ->  1841.36s] Kalman filter model to really understand what it means to specify a model, a parameterization,
+[ 1841.36s ->  1849.20s] observe data, and then develop the Kalman gain to produce the output of this filter.
+[ 1849.20s ->  1854.88s] The first step is going to be offline model calibration. This is setting the laws of physics.
+[ 1854.88s ->  1861.04s] Our objective is to filter the VIX. This is just a simple applied example. So our laws of physics are
+[ 1861.04s ->  1868.00s] model rooted in theory is going to be a mean reversion model. We're going to use an Ornstein-Ullenback
+[ 1868.00s ->  1876.24s] and I'm going to discretize it as an AR1 model and I'm going to develop a parameterization. How do I go about
+[ 1876.24s ->  1884.64s] selecting the parameters for this model? Well, I can use a regression for this AR1 model to get
+[ 1884.64s ->  1892.88s] V and B and then I can back out kappa and theta. That's going to be the speed of reversion and the
+[ 1892.88s ->  1900.80s] long-term mean. And that's exactly what I do here. So this first step is all about building the model
+[ 1900.80s ->  1908.00s] component of our Kalman filter. And that is what I do here. So I select my Ornstein-Ullenback, my mean
+[ 1908.00s ->  1915.76s] reversion process based on the theory. I discretize it. I use an AR1 model and I go about regression
+[ 1915.76s ->  1922.24s] to develop these specific selections for that model's parameterization. Now, is that correct?
+[ 1923.28s ->  1929.20s] How much data should I use? These are questions. These are very important questions. Should I use
+[ 1929.76s ->  1935.92s] the entire history of the data available to me from inception? Should I use the last two years?
+[ 1935.92s ->  1943.85s] The last one year? There isn't a right or wrong here. If it was all coming from the same distribution,
+[ 1943.85s ->  1949.53s] then I'd want to use all of the data that I have available to me. But what if in reality,
+[ 1950.78s ->  1956.86s] I have something like this, where if I use all of the data, I'm just incorrectly informing the
+[ 1956.86s ->  1962.70s] parameters. In reality, I should use a shorter time window so I can more effectively capture the
+[ 1962.70s ->  1970.62s] dynamics of the spot data generating distribution. This is what we grapple with whenever we develop
+[ 1970.62s ->  1978.14s] models for the real world. And this is also why the extensions to the Kalman filter to update
+[ 1978.14s ->  1981.42s] these parameters dynamically are so effective.
+[ 1981.42s ->  1988.86s] We don't have to just continue to consider what window to use. We can use a statistically optimal
+[ 1988.86s ->  1998.38s] way to update that parameterization in a live online capacity. Step two, after we go about model
+[ 1998.38s ->  2007.02s] calibration in this simple Kalman filter model is to initialize the process. We need to start with
+[ 2007.02s ->  2014.14s] some value at t equals zero. X sub zero, this is usually the first available quote, or in our
+[ 2014.14s ->  2021.90s] context, a long-term mean. P zero is going to be the initial confidence in this best guess. It's the
+[ 2021.90s ->  2029.50s] initial covariance, but after what's known as a burn in period, because this is a state space model,
+[ 2029.50s ->  2035.10s] we are going to observe convergence in the Kalman gain. So as you can see here,
+[ 2035.98s ->  2041.66s] we have initial state estimate and initial uncertainty, which is quite high. But as we
+[ 2041.66s ->  2048.70s] continue to observe more data, as we pass that burn in period, we are going to observe convergence.
+[ 2049.42s ->  2056.57s] Okay. This brings us to step three. This is the recursive updating. This is the live
+[ 2057.21s ->  2064.41s] filter. Effectively, every step, every time we observe a quote, we are running through the model
+[ 2064.41s ->  2070.81s] guess. We already have our model. That's what we built here. This is our model that we've specified
+[ 2070.81s ->  2076.09s] the laws of physics. If you will, rooted in theory, we have a parameterization for it.
+[ 2076.09s ->  2082.81s] We can come up with a model guess, a forecast. And that's what we're doing here. We're projecting that
+[ 2082.81s ->  2092.41s] model forward one state, and we are going to predict the error covariance. And I say predict very loosely.
+[ 2092.41s ->  2100.97s] It's effectively a forecast. Once we have that model forecast, we have the projected state and the
+[ 2100.97s ->  2107.69s] projected error covariance. We can then use the observation as a correction. We're going to reconcile
+[ 2107.69s ->  2114.01s] the noisy measurement with the model's guess. This is just combining the data we observe
+[ 2114.01s ->  2122.01s] with our model's best guess. So we have what's known as the innovation. This is going to be the observed
+[ 2122.01s ->  2132.01s] data and the projection from our model. This is effectively how much did the market surprise my OU,
+[ 2132.01s ->  2141.69s] my mean reversion model. Then we compute the Kalman gain. And this is saying, which should we trust more?
+[ 2142.41s ->  2151.45s] If model uncertainty is high, we are going to trust the quote more. If the measurement noise is high,
+[ 2151.45s ->  2157.93s] then we are going to trust the model more. This is exactly what I had shown you
+[ 2157.93s ->  2167.64s] in this animation above here. On the left, we trust the model more. On the right, we trust the data more.
+[ 2171.63s ->  2179.07s] We're then going to update the state estimation. With the previous state and the Kalman gain,
+[ 2179.63s ->  2185.55s] we will update the error covariance. Effectively, because we have seen this new data point,
+[ 2185.55s ->  2194.33s] the uncertainty about the true spot is going to decrease. What I have here is an implementation of
+[ 2194.33s ->  2202.09s] all three of these steps on real VIX data. I'm treating the VIX quotes as noisy measurements,
+[ 2202.09s ->  2210.41s] and I'm using a Orenstein-Ollenbach discretized to an error one model as the model we're rooting as the
+[ 2210.41s ->  2218.09s] laws of physics of the VIX. So let's see exactly what this looks like. What you're observing here is
+[ 2218.09s ->  2228.01s] the Kalman filter effectively tracking all of the data. It is providing a forecast, not just based on
+[ 2228.01s ->  2236.17s] the data that it's observing, but also the model that has been calibrated to historic data, the mean
+[ 2236.17s ->  2241.53s] reversion model. So as you can see here, we've observed all of these points, but check it out.
+[ 2241.53s ->  2250.01s] These three dashed or these three dots here are effectively the forecast. And because it's combining
+[ 2250.01s ->  2256.89s] not just our model, but also our observations, it's suggesting, hey, there's some level this should
+[ 2256.89s ->  2263.93s] revert to in the long run. And what you see here is it's proposing that that reversion should be pulling
+[ 2263.93s ->  2271.37s] this data back up. And it certainly does. And even after the VIX has a tremendous spike,
+[ 2271.37s ->  2278.81s] we can see, hey, the Kalman filter is going to track that new data, but also it knows the laws
+[ 2278.81s ->  2283.53s] of physics. It knows that our model is rooted in theory. It's going to come back down. It's
+[ 2283.53s ->  2289.53s] a mean reversion model. And you can see that the forecast is now trying to drag it back down
+[ 2289.53s ->  2298.49s] to that long-term mean. So it's producing a very effective forecast, even as we observe
+[ 2299.21s ->  2306.09s] new and extreme data. This is just one example of an application of the Kalman filter where we have
+[ 2306.09s ->  2313.21s] a model rooted in theory. It's very easy to back out implied volatilities from option prices. It's
+[ 2313.21s ->  2321.37s] very easy to understand the VIX in the context of variant swaps. And we also can observe data.
+[ 2321.37s ->  2327.69s] That is effectively what is producing this filter and forecast. We're combining the model and the
+[ 2327.69s ->  2334.17s] observations together in the context of the Kalman filter framework. But this works anytime we have a
+[ 2334.17s ->  2342.25s] theoretical basis for a model and observations. Another place that this absolutely shines is in the
+[ 2342.25s ->  2350.25s] context of illiquid bond pricing. If we think about it, our model is just going about producing the
+[ 2350.25s ->  2359.05s] price of a bond. Nothing there is random per se. The model is to just discount the cash flows of the
+[ 2359.05s ->  2366.41s] bond, the coupon, however it's structured, back to present to compute the fair value. We do this with
+[ 2366.41s ->  2374.49s] what? Treasuries as a proxy with some sort of credit spread. And that credit spread is really what is
+[ 2374.49s ->  2379.85s] subject to change. If it's illiquid and it's not constantly trading, then we're going to need to
+[ 2379.85s ->  2388.33s] try to proxy it. How can we do this? Well, we can do this with the Kalman filter. We have a model. That's
+[ 2388.33s ->  2396.01s] how we go about producing bond prices anyway. Then we also have observations. We may observe a trade
+[ 2396.01s ->  2402.57s] every once in a while for this particular bond, but what if there are similar issuances. Well,
+[ 2402.57s ->  2411.21s] we can use that in the Kalman gain for a similar issuance. Then we can use the Kalman filter to
+[ 2411.21s ->  2419.37s] discern the current state, the current price of that illiquid bond. This is what I worked on a
+[ 2419.37s ->  2428.49s] very long time ago at Bloomberg. If you use bval go, the command, then you will see this model in
+[ 2428.49s ->  2436.81s] action. So this is a more generalized framework for the Kalman filter itself. Here, I don't just apply
+[ 2436.81s ->  2443.77s] it to the mean reversion model above in the context of our VIX example. Here, I have a more generalized
+[ 2443.77s ->  2449.29s] version where we talk about effectively the estimated state. Then we have the Kalman gain,
+[ 2449.29s ->  2455.69s] the observation. Remember, we're going to compute the innovation term. We have our sensitivity to the
+[ 2455.69s ->  2460.57s] actual observation that we can also include. And then the Kalman gain is going to, of course,
+[ 2460.57s ->  2469.45s] be a function of our error covariance matrix and our measurement error R. So what does this actually
+[ 2469.45s ->  2479.53s] look like in practice? What happens if we use this Kalman filter model to adapt to new levels?
+[ 2479.53s ->  2487.13s] Well, again, we are subject to more adaptive filtering or less adaptive filtering. However,
+[ 2487.13s ->  2494.89s] we choose to parameterize our Kalman filter model. We can also do so statistically. We don't have to
+[ 2494.89s ->  2504.09s] explicitly set those parameters. We can see effectively in the data what the optimal selection
+[ 2504.09s ->  2511.85s] would be. That minimizes some objective function. So what you're seeing here is effectively what we
+[ 2511.85s ->  2520.49s] saw above. On the left, we're observing a low Kalman gain. We have a higher R. We're going to ignore
+[ 2520.49s ->  2525.05s] the noise. So when the regime changes, we are slow to adapt. Whereas on the right,
+[ 2525.69s ->  2530.73s] we are going to be relatively quick to adapt. Now, how do we choose which one to use?
+[ 2532.03s ->  2536.99s] We can do so statistically. We can do this based on the data that we observe,
+[ 2536.99s ->  2541.07s] but that is certainly beyond the scope of this video. What I want you to notice is what it actually
+[ 2541.07s ->  2549.15s] looks like in the context of being adaptive. When the regime changes, the adaptive model is going
+[ 2549.15s ->  2553.71s] to adjust based on the new quotes that come in. It's going to increase uncertainty until
+[ 2554.43s ->  2561.63s] it stabilizes around that new level. And of course, the one with the lower gain is just going to take
+[ 2562.19s ->  2569.15s] a longer time to get there. The Kalman filter can be extended in a tremendous number of ways. I've
+[ 2569.15s ->  2574.75s] already mentioned the dual filter approach, and this is actually, if you want to check out the code,
+[ 2574.75s ->  2580.67s] an example of that, where we're actually going to update the model's initial parameterization
+[ 2580.67s ->  2585.87s] after this regime change, you can check out this code again, link in the description below
+[ 2585.87s ->  2591.23s] to this Jupyter notebook also posted to the quant guild library on GitHub. But even beyond the dual
+[ 2591.23s ->  2596.35s] filter approach, there are a tremendous number of extensions. We can try to discern different regimes
+[ 2596.35s ->  2601.71s] trending from reversion high to low volatility. We can include different models and different
+[ 2601.71s ->  2609.63s] parameterizations treat the parameters as effectively states that update alongside different models and
+[ 2609.63s ->  2618.67s] observations. We can do so many cool things with the Kalman filter. If you have interest in more videos
+[ 2618.67s ->  2626.67s] on this topic, extending to these ideas of determining and discerning regime, even implementing the Kalman
+[ 2626.67s ->  2634.99s] filter in a live quant build with interactive brokers, certainly let me know in the comments below.
+[ 2634.99s ->  2641.47s] I would be very keen to do more with the Kalman filter, whether it's theory actually breaking out the
+[ 2641.47s ->  2651.39s] iPad and working through the math itself to the actual implementation with the interactive brokers API.
+[ 2651.39s ->  2654.91s] Too long, didn't watch. Here's your executive summary. Anytime we're trying to make an informed
+[ 2654.91s ->  2660.99s] decision in the face of uncertainty, we have a model specification and parameterization problem.
+[ 2660.99s ->  2665.79s] Without a crystal ball, we need to build a model. If we don't have the true underlying dynamics,
+[ 2665.79s ->  2670.91s] we need to build a model. We don't want to just build any old model. We want to build a good model
+[ 2670.91s ->  2676.51s] that represents the true dynamics that we are going to observe that accurately reflects the different
+[ 2676.51s ->  2683.47s] states of the world that we may end up in. Model selection is rarely the issue.
+[ 2683.47s ->  2688.67s] We have a variety of models available to us. Typically, this is rooted in economic theory.
+[ 2688.67s ->  2695.15s] But in any case, a model may work, it may break, it may work again, so on and so forth. Model
+[ 2695.15s ->  2702.51s] parameterization for those parametric models that we choose behave in a similar way. And it can even
+[ 2702.51s ->  2708.99s] make it appear that your specification, the model that you chose, is incorrect or ineffective. It may just be
+[ 2708.99s ->  2716.91s] that your parameters are misspecified. In any case, a parameterization may work, it may break, it may
+[ 2716.91s ->  2722.91s] work again, so on and so forth. We'd like to move to a more dynamic modeling space where we don't just
+[ 2722.91s ->  2729.39s] consider a model rooted in theory, but also the data that we observe in practice. Effectively, we're
+[ 2729.39s ->  2737.95s] combining a model representation with the data that we observe. And the Kalman filter is what we are doing to
+[ 2737.95s ->  2744.03s] accomplish this, what we're using to accomplish this. We have different levers that we can pull,
+[ 2744.03s ->  2749.39s] either on our own or statistically, within the Kalman filter to trust the model more,
+[ 2749.39s ->  2756.83s] or trust the data more, which may be very useful, especially in the context of a regime change.
+[ 2756.83s ->  2763.07s] There are many extensions to the Kalman filter that I would love to cover in future videos. I'd love to dive
+[ 2763.07s ->  2768.83s] more into the formal mathematics, break out the iPad. I'd love to build a live implementation with
+[ 2768.83s ->  2775.95s] interactive brokers on market quotes. It's going to be largely based on your guys' interest. Let me
+[ 2775.95s ->  2781.87s] know in the comments below what you would like to see next. Some future topics, technical videos,
+[ 2781.87s ->  2785.71s] and other discussions to look forward to. I'd love to cover Fama French, Carhartt and factor
+[ 2785.71s ->  2790.83s] modeling in general, the Hawks process, Burton jump diffusion, market making models and simulations.
+[ 2790.83s ->  2796.99s] Since we've already covered the Poisson process, we can move into these different models that require
+[ 2796.99s ->  2802.83s] the jump diffusion. I'd love to get back into more qualitative videos as well. My first year as a
+[ 2802.83s ->  2809.87s] quant, why hedge funds are actually secretive. I'd love to even talk about more technical topics from
+[ 2809.87s ->  2817.07s] stochastic calculus, some more research topics, rough path theories, the SigVol model, so on and so
+[ 2817.07s ->  2822.91s] forth. But this is largely based on your guys' interest. So if you'd like to see any of these
+[ 2822.91s ->  2830.19s] topics, topics that aren't listed, more on the Kalman filter and implementations, certainly let me know
+[ 2830.19s ->  2837.15s] what you'd like to see in the comments below. And I have not forgotten about our quant builds. I would
+[ 2837.15s ->  2842.59s] love to do a live Kalman filter model with interactive brokers. I still would like to cover,
+[ 2842.59s ->  2848.83s] to some extent, a vol trading system, taking short vega positions, algorithmically hedging,
+[ 2848.83s ->  2856.59s] and talk about this idea of how to actually back test a trading strategy correctly. I see a lot of
+[ 2856.59s ->  2864.35s] approaches that are statistically incorrect, especially on social media. For all of our quant builds,
+[ 2864.35s ->  2869.39s] we use interactive brokers. I highly recommend them. I'll leave a link in the description below
+[ 2869.39s ->  2873.15s] if you'd like to get started with them. I've been with them for over 10 years at this point,
+[ 2873.15s ->  2880.99s] executing trades algorithmically in Java, Python, C++. Their API is phenomenal. And we use it in every
+[ 2880.99s ->  2887.87s] single one of my quant builds. On that note, that's going to do it for this video on the Kalman filter for
+[ 2887.87s ->  2893.79s] Quant Finance. I hope you enjoyed. I hope you learned something. This video certainly took a tremendous
+[ 2893.79s ->  2897.87s] effort to put together. So if you liked it and you want to see more like it in the future, please
+[ 2897.87s ->  2903.07s] like, comment, subscribe, share. Again, it helps me out tremendously. It is always
+[ 2903.07s ->  2910.51s] greatly appreciated. Check out QuantGuild.com to master your quantitative skills for trading and
+[ 2910.51s ->  2918.59s] market making roles. Other than that, I want to thank you so much for watching, and I will see you in the next video.

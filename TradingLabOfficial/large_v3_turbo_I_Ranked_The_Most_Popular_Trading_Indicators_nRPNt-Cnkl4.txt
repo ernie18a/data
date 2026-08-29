@@ -1,0 +1,94 @@
+[    0.24s ->     4.16s] Indicators. You love them, you hate them. Some of them work, some of them don't.
+[    4.16s ->     9.92s] The reality is, not all indicators are created equal. And most traders are using indicators
+[    9.92s ->    14.40s] that are literally designed to lose nowadays. Not necessarily designed to be wrong,
+[   14.40s ->    19.92s] designed to be late. And I can prove it. I've ranked every major trading indicator out there,
+[   19.92s ->    25.36s] S tier down to F tier, based on one thing. Does it actually make you money? I mean,
+[   25.36s ->    28.88s] that's what we all care about, right? And the one that lands at the very top,
+[   28.88s ->    34.64s] it's probably not what you think. Stay with me. MACD. Ooh, MACD. F tier. There it is,
+[   34.64s ->    39.84s] I said it. MACD is a lagging indicator, built on top of another lagging indicator. You're
+[   39.84s ->    45.52s] literally watching a delayed signal of a delayed signal. Think of your grandma Dolores. That's
+[   45.52s ->    52.80s] the MACD. Sorry, Dolores. In the 2022 bear market, MACD crossover signals were late by an average of 11
+[   52.80s ->    59.76s] days. 11 days. Meaning the market crashed for 11 days before the MACD signal told you to sell.
+[   59.76s ->    65.44s] Yeah, pretty useful. Do you know the amount of drawdown that could occur in 11 days? The answer?
+[   65.44s ->    71.52s] A lot. A lot can happen in 11 days. But here's the thing. The problem isn't just the MACD. There's a
+[   71.52s ->    79.87s] lot of indicators on this list with flaws. All of them besides one. Next, simple moving averages. A tier.
+[   79.87s ->    85.71s] Specifically talking about the higher timeframe moving averages. Like the 50 and 200 day or the
+[   85.71s ->    91.39s] 50 and 200 week moving averages. I want to be extremely clear about why these work. It's not
+[   91.39s ->    96.99s] because the math of the indicator is so sophisticated. It's actually quite the opposite. It works because
+[   96.99s ->   103.39s] it's taking into account actual averages of the market. And data based on averages is actually pretty
+[  103.39s ->   109.39s] useful when it comes to trading. Every single major institution uses these in some type of way.
+[  109.39s ->   114.43s] Pension funds, CTAs, hedge funds. When price hits the 200 day moving average,
+[  114.43s ->   120.43s] everyone sees it. That collective attention creates real buying or selling pressure. Charlie Munger,
+[  120.43s ->   126.83s] arguably one of the best traders to ever live, even said if all you ever did was buy high quality stocks
+[  126.83s ->   133.79s] on the 200 week moving average, you would beat the S&P 500 by a large margin over time. That strategy
+[  133.79s ->   139.71s] has been statistically proven to work. The problem is few people have that kind of discipline to wait
+[  139.71s ->   145.95s] for price to actually hit the 200 week moving average. I actually made a complete guide on how
+[  145.95s ->   151.95s] I use moving averages in my own personal strategy. And it's been working amazing. I just posted it in my
+[  151.95s ->   157.95s] telegram. It's open to everyone and completely free to join. I made it for the sole purpose of helping
+[  157.95s ->   162.91s] out my viewers. So yeah, I'll leave a link in my description if you want to check that out. But I use these
+[  162.91s ->   168.67s] every single week in my trading analysis and I'd highly recommend you do as well. Onto the next.
+[  168.67s ->   174.67s] Stochastics. D tier. This is basically MACD with some extra noise turned on. In a trending market,
+[  174.67s ->   180.19s] the stochastics indicator pins to the ceiling and stays there, which basically tells you nothing.
+[  180.19s ->   185.55s] In a choppy market, it boomerangs you in and out of your positions until your account balance looks
+[  185.55s ->   193.34s] like this. Stochastics actually worked very well in the 1980s, when humans were literally yelling at
+[  193.34s ->   199.66s] each other in the stock pit like a bunch of monkeys. Now 70% of trading is algorithmic. That math
+[  199.66s ->   205.10s] that made stochastics work in the 1980s doesn't necessarily work in today's market, because that
+[  205.10s ->   212.30s] math is being arbitraged away in milliseconds by automatic algorithms. Not that useful. Next, RSI.
+[  212.30s ->   218.46s] C tier. I like the RSI because it actually has some relative value. RSI measures momentum. That's it.
+[  218.46s ->   223.82s] The problem is most traders are taught to use it completely wrong. If I had to guess, you were
+[  223.82s ->   230.86s] probably told to use the RSI as follows. Buy when the RSI goes below the oversold area. Sell when the
+[  230.86s ->   237.26s] RSI goes above the overbought area. Which, if you've actually used it like this, you'd probably
+[  237.26s ->   243.50s] quickly figure out it doesn't work very well. Just because the RSI indicator is in the overbought,
+[  243.50s ->   249.10s] doesn't really mean anything. It just means the chart has high momentum. Which, even if the RSI is
+[  249.10s ->   255.42s] quote unquote overbought, the chart can easily keep going up. Go back to say 2022 for example.
+[  255.42s ->   261.98s] Crude oil stayed overbought on the RSI for 34 consecutive days, while the price just kept
+[  261.98s ->   269.42s] climbing. 34 days. Meaning, if you shorted crude oil just because the RSI said overbought, you'd get
+[  269.42s ->   277.34s] absolutely obliterated for 34 days. The only place RSI adds real value, in my humble opinion, is if you
+[  277.34s ->   283.82s] use it for divergence. For example, when price is making higher highs, but RSI is making lower highs,
+[  283.82s ->   289.42s] that's a signal worth paying attention to. This shows the chart is losing momentum, even though
+[  289.42s ->   295.74s] the price is still going up. Which can often lead to price crashing. Just like it did here. So if you
+[  295.74s ->   301.66s] use RSI divergences, it can be pretty useful. Otherwise, I'm not touching it. Next, Bollinger Bands.
+[  301.66s ->   307.02s] B tier. Great indicator, but here's where people get it wrong. Bollinger Bands don't tell you direction.
+[  307.02s ->   312.14s] They tell you volatility. They tell you when to start paying attention. You can almost think of
+[  312.14s ->   319.17s] them like a smoke alarm. That alarm going off doesn't tell you where the fire is, but it tells
+[  319.17s ->   324.21s] you the fire exists. You still need another signal to tell you which direction to run,
+[  324.21s ->   329.17s] but at least you know there's a fire. I said oh lord Jesus it's a fire. And then there's
+[  329.17s ->   335.81s] Donchian channels. A tier baby. This is the highest high and the lowest low over the last 20 trading
+[  335.81s ->   340.13s] sessions. It's as simple as that. When price breaks out of a Donchian channel, it means the
+[  340.13s ->   346.05s] market is doing something it hasn't done in a full month. That's a signal worth paying attention to.
+[  346.05s ->   351.65s] Whenever this happens, it probably means there's significant news, volatility, or something major
+[  351.65s ->   357.73s] is happening. Simple, clean, and if you use it correctly, can be extremely powerful. As my grandmother
+[  357.73s ->   365.17s] Dolores said, simple is always better. Always. How could I forget Fibonacci? B tier. There is zero
+[  365.17s ->   370.53s] economic justification for why Fibonacci levels should hold. None. The math behind it is not
+[  370.53s ->   376.85s] connected to market fundamentals in any rigorous way. And yet the levels still hold. Why? Because
+[  376.85s ->   383.41s] patterns. The Fibonacci sequence is a mathematical equation found all over in everyday life. Flower petals,
+[  383.41s ->   389.81s] sunflowers, hurricanes, the universe, and even your ear. Which a lot of people believe these
+[  389.81s ->   395.57s] same patterns are involved with human psychology around charts. My favorite way of using it, pause
+[  395.57s ->   400.61s] the video, copy these exact levels, this will leave you with this zone. Which I like to call
+[  404.26s ->   409.78s] Find a trend, grab your Fibonacci tool, mark from the low of the trend to the high of the trend. Once
+[  409.78s ->   414.58s] marked, it'll leave the golden zone. More often than not, price will retrace back to the golden
+[  414.58s ->   420.82s] zone and reverse at this exact point. It's actually pretty astonishing at how often this works. I'm
+[  420.82s ->   425.22s] telling you, go check it out for yourself, great indicator. In the moment you've all been waiting
+[  425.22s ->   432.18s] for, the only indicator to hit S tier on the tier list, volume. And honestly, it's not even close.
+[  432.18s ->   437.62s] Here's why volume is in a completely different category from every other indicator on this list.
+[  437.62s ->   443.06s] Every other indicator is just repackaging price data. They're all downstream of the same input.
+[  443.06s ->   449.22s] MACD, RSI, Stochastics, they're all lagging indicators. Volume is the only indicator that
+[  449.22s ->   455.22s] measures something different entirely. It measures actual conviction. It measures participation. But
+[  455.22s ->   461.14s] most importantly, it shows you in real time. See, if we look at this chart, price is moving upwards.
+[  461.14s ->   466.90s] We're making higher highs and higher lows. So if you were a price action trader and looking at price
+[  466.90s ->   472.90s] action and price action alone, you'd be sitting there thinking, this is a very strong uptrend. But the
+[  472.90s ->   479.06s] moment we look at the volume, it tells us a completely different story. Even though the price is going
+[  479.06s ->   485.14s] up, the volume is getting weaker. With every new high that price is making, there is less and less
+[  485.14s ->   491.62s] transactions happening. And the volume is getting smaller, which shows weakness. With this weakness,
+[  491.62s ->   497.86s] you could easily predict the price is about to fall because of the lack of volume, which is exactly what
+[  497.86s ->   502.90s] happens. The same exact thinking goes for the opposite scenario. If we have a strong downtrend,
+[  502.90s ->   508.02s] price making lower lows and lower highs, but we look at the volume and the volume is getting weaker
+[  508.02s ->   514.34s] as well, this is showing the sellers are getting exhausted. Each drop in price has less and less
+[  514.34s ->   520.18s] transactions, which means the selling is getting weaker, which often signals a bottom is forming,
+[  520.18s ->   525.30s] which again is exactly what happened. But the real takeaway from this video isn't the rankings,
+[  525.30s ->   530.58s] it's this. Most retail traders are layering indicator on top of indicator, all derived from
+[  530.58s ->   536.34s] the same data, all giving them slightly different versions of the same wrong delayed answer. It's
+[  536.34s ->   541.30s] purely just noise in my opinion. Now you know which indicators to trust, the harder question is
+[  541.30s ->   546.58s] knowing how to read them. If you want to know how I use indicators on the top of this tier list,
+[  546.58s ->   551.94s] I explain it in my telegram. Just click the link in my description, it's completely free to join.
+[  551.94s ->   557.06s] I'll see you in there.

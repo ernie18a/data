@@ -1,0 +1,174 @@
+[    0.04s ->     3.88s] Hey guys, what's up? In this training I'm going over this powerful credit spread trading strategy
+[    3.88s ->     8.42s] that makes $1,000 every single week and it's beginner friendly. Now again, if you can't tell
+[    8.42s ->    12.54s] I'm not in my normal spot because I'm at a hedge fund conference in Miami, Florida. I live in
+[   12.54s ->    17.68s] Houston. Anyways, so I haven't had the time to really put in depth step by step the type of
+[   17.68s ->    22.18s] training that I like to release you guys on Saturday. So this was going to be more a fly
+[   22.18s ->    26.80s] by our seat kind of deal. I'm recording this in the Airbnb. But anyways, let's dive in and jump
+[   26.80s ->    30.74s] into it. I'm going to give you behind the scenes of revealing the curtain the strategy that I've
+[   30.74s ->    35.82s] used and spent years and a lot of money to develop. Here we go step by step. Let's dive in. Before we
+[   35.82s ->    40.58s] get into it, if you already know what credit spreads are, that's awesome. If you don't, please, I mean,
+[   40.64s ->    45.04s] if you do, please bear with me as I quickly teach those who don't. Okay, cool. So if you've never
+[   45.04s ->    49.40s] heard of a credit spread, a credit spread is an options trading strategy that allows you to make
+[   49.40s ->    54.50s] money in multiple different ways. So for instance, let's say this is a stock right here. When you're
+[   54.50s ->    59.10s] trading stocks, you can only make money in one of two different ways. You buy the stock and the
+[   59.10s ->    63.10s] stock either goes up and you make money or it goes down and you lose money. Those are your only two
+[   63.10s ->    67.80s] options when trading stocks. Well, guess what? When you're trading options, you can give yourself way
+[   67.80s ->    73.74s] more options to make money. So for instance, let's say the stock is trending up like this. And I think
+[   73.74s ->    77.44s] in general, the stock's going to move higher. So I'm going to put on a put credit spread. Don't worry,
+[   77.44s ->    82.86s] I'm going to explain more what that is later and at this level. So basically, it means that if the stock
+[   82.86s ->    88.48s] goes up, I make money. If the stock stays flat or trades the same, I make money. If the stock goes
+[   88.48s ->    92.80s] down but doesn't break my level, I make money. So the only way I lose money is if the stock goes
+[   92.80s ->    98.26s] way down and passes my level and trades below that by the certain time. So anyways, stocks only have
+[   98.26s ->   103.82s] two ways of making money and options using credit spreads. You have three different ways to make
+[  103.82s ->   108.80s] money out of four. This dramatically increases your win rate and allows you to make money every single
+[  108.80s ->   112.52s] week. And when you treat this the way I'm about to show you in this video, not only will you be
+[  112.52s ->   116.14s] super consistent because you're following the strategy that actually works, but you'll be able
+[  116.14s ->   120.70s] to do this on repeat to almost create like a weekly paycheck. All right, so now let's break down.
+[  120.94s ->   125.80s] There are two different types of credit spread trades. There are call credit spreads and put
+[  125.80s ->   130.40s] credit spreads. I'm going to start with a put credit spread. A put credit spread is used when you think
+[  130.40s ->   135.74s] the market is going to move higher in general. That means you're hoping the stock goes up. Now a call
+[  135.74s ->   140.44s] credit spread is the reverse. It's hoping the stock goes down over time. So if I'm trading a put credit
+[  140.44s ->   146.02s] spread, let's just say put, and the stock is currently trading here, I go below the stock
+[  146.02s ->   151.02s] price. I think, okay, where's the stock not going to go below? And so I move the trade all the way
+[  151.02s ->   156.38s] down here. So let's say the stock price is currently here and I put my level here, which means that I
+[  156.38s ->   160.90s] make money if the stock goes up, the stock stays the same and stays above my level. That's how I put
+[  160.90s ->   165.58s] credit spread works. Now on the inverse, a call credit spread, let's say the stock is trading here,
+[  165.58s ->   170.50s] hopes for the stock to kind of stay down. So that means I put my level above the stock price. Right
+[  170.50s ->   174.72s] here, I put my level here, which means I make money if the stock goes down, I make money if the stock
+[  174.72s ->   179.34s] goes sideways, and I make money if the stock goes up, but stays below my level. Now, what is this
+[  179.34s ->   183.72s] sounding like? It sounds like you can now make money when the market goes up and down. So if you're
+[  183.72s ->   188.28s] excited for bullish markets, use a put credit spread. If you're kind of fearful for upcoming
+[  188.28s ->   193.08s] collapses, like maybe the banking crisis and all that going on, use a call credit spread. All right,
+[  193.08s ->   197.64s] so these are your different credit spreads, how they work, etc. We'll get in more into the
+[  197.64s ->   201.96s] details later. But I just want to talk about how those credit spreads work. Now let's go into the
+[  201.96s ->   207.68s] strategy in depth and how we place because you may be saying, okay, Austin, that's cool. But how
+[  207.68s ->   212.60s] exactly do we actually know what levels to place on? Right? Like I said, when you're trading these
+[  212.60s ->   217.72s] credit spreads, you need to know a level. And so how do we pick these levels? Well, most people like
+[  217.72s ->   222.52s] to come on to these charts and they look okay, technical analysis, right? Where's my where's my
+[  222.52s ->   226.80s] support levels? Where are my resistance levels? What are my trend lines? All these things. Guess
+[  226.80s ->   232.26s] what? Those can work. But I like to use a more consistent, easier approach that doesn't rely
+[  232.26s ->   237.82s] or doesn't count on me having to watch the charts all the time. Instead, I like to follow more of a
+[  237.82s ->   244.98s] general system. So anyways, what I like to do is in general, I come on here and I add a moving average
+[  244.98s ->   249.80s] line, which is what this is, the 200 period moving average. If the stock is above that, guess what?
+[  249.80s ->   254.26s] The market's bullish. It's more likely to go higher. If the stock is below it, it's more likely
+[  254.26s ->   258.72s] to go lower. So guess what? If it's below, you're typically trading call credit spreads. If it's
+[  258.72s ->   263.32s] above, you're trading put credit spreads. So that's kind of how that works. But because I want to give
+[  263.32s ->   268.46s] you everything step by step, like I'm teaching you as one of my coaching clients, even though I don't
+[  268.46s ->   273.16s] have coaching clients, I was saying if I was to coach you one-on-one, then how would that look? I'm
+[  273.16s ->   276.94s] going to show you exactly behind the scenes. Here we go. Let's dive into a strategy that I've been using
+[  276.94s ->   283.42s] that can make you literally 20 to 30% every single year on autopilot. Don't believe me? I'll show you
+[  283.42s ->   288.57s] the back test here towards the end. Okay, here we go. Actually, let me just show you quickly some
+[  288.57s ->   292.31s] proof. Here is my program right here. You can see here, I'm pulling up my trading platform on Tasty
+[  292.31s ->   296.55s] Trade. This is what I used to trade. You can see here, if I highlight all my trades in the last 30
+[  296.55s ->   301.57s] days, I can even go back further if you want. Let's go 60 days, whatever. You can see here the amount
+[  301.57s ->   305.75s] of money that's being made. Let's go. Let's stick with the 30 days go just to say, and I'm out of a
+[  305.75s ->   313.09s] month. You can see here on the 30-day mark, I've made $6,300. Again, if I subtract commissions,
+[  313.25s ->   319.45s] I'll say make a clean $6,000. That means every single week, I'm making what? I'm making roughly
+[  319.45s ->   324.67s] $1,250. Again, if you want to make that on a weekly basis, this is the strategy I'm using,
+[  324.79s ->   328.31s] and this is what you want to follow. All right, so let's dive in. I'll show you more of a backtest
+[  328.31s ->   332.79s] later. If you want to know what the strategy is in depth, you can actually click the link in the
+[  332.79s ->   336.65s] description below, and I'm going to walk you through this. This is a free handbook and trading
+[  336.65s ->   340.13s] guide that I put together that explains credit spreads, my philosophy, all this stuff, all for
+[  340.13s ->   344.47s] free. No email, no nothing required. Just click the link down there and get it. I'm going to follow
+[  344.47s ->   348.15s] it. I'm going to go right here, the True Turtle Strategy Trading Guide. Right here, these are the
+[  348.15s ->   352.41s] steps I'm going to follow for today. We're going to trade in between a range and do all these things,
+[  352.45s ->   356.59s] but I'm going to map this out for you. All right, here we go. First thing we do when we go on a chart.
+[  356.87s ->   361.25s] Well, first off, I created this trading ban indicator that is only available for my inner circle members,
+[  361.25s ->   365.63s] but again, I want to show you how to recreate it because again, I can't give you access to this
+[  365.63s ->   370.53s] because those are only for members, but if we want to get semi-close to what that is, let's do this.
+[  370.71s ->   375.81s] Let's go on to our chart, pull up in the indicators tab if we can do that. For some reason, we're not.
+[  378.14s ->   382.30s] Maybe I should disconnect from this. Sorry, guys. I'm not in my normal setup at all. I'm an Airbnb,
+[  382.82s ->   387.54s] probably not the best Wi-Fi either, but please deal with it. If you can work your way through this,
+[  387.60s ->   391.50s] this is going to be a great training. All right, so the Bollinger Bands is the first thing that we want to add.
+[  391.50s ->   402.08s] Let's do this. Hopefully, Bollinger Bands will add here in a second or not. We'll just see how bad
+[  402.08s ->   406.92s] this training can actually be. Bollinger Bands. Oh, there we go. They've added. Okay, cool.
+[  407.78s ->   411.06s] Bollinger Bands. Now, we're going to go into the settings. We're going to change the period to 200,
+[  411.18s ->   415.82s] and we're going to change the standard deviation to 1. All right, just like that, now we have these
+[  415.82s ->   420.52s] Bollinger Bands. This is, you can see here, if I pull up the band that I created, it's not exactly the
+[  420.52s ->   425.04s] same. You can see here, it's not exactly the same as the blue, but it gets you close enough,
+[  425.10s ->   430.86s] and it's free. Let's do that. Here it is. How this works is as soon as the stock, anything you're
+[  430.86s ->   439.30s] trading, particularly this works best on SPY, DIA, TLT, highly liquid ETFs. As soon as it breaks above
+[  439.30s ->   445.48s] this top band, this is known to be an uptrend. It breaks this top line. We're now in an uptrend.
+[  445.48s ->   449.38s] So that's how you know when to put on your positions. If the stock is above this every
+[  449.38s ->   454.06s] single week, just put on a put credit spread. So if the stock is above this, put on a put credit
+[  454.06s ->   458.42s] spread, but that's not the first step. First thing we know, okay, cool. Now we need a way for the
+[  458.42s ->   463.94s] stock to be above the green and yellow line. So for instance, this is just being above this top line
+[  463.94s ->   469.00s] on the Bollinger Bands settings that I set. Next, you want to determine your short strike price. What is
+[  469.00s ->   473.48s] the level we're going to use for this credit spread? Well, we take the current stock price,
+[  473.48s ->   482.46s] whatever that is, and multiply 97% or go 3% below the current price. So I hear the current price is
+[  482.46s ->   487.68s] 412.13, or at least that was the most recent close, 412.13. So I'm simply going to multiply
+[  487.68s ->   493.86s] that by 0.97 and round up to the nearest whole number. So as soon as I hear $399.76, we round up
+[  493.86s ->   500.60s] 400. That means my level that I'm placing is the 400 level. So right here, we go to the 400 level.
+[  500.60s ->   505.60s] This is the level I want the stock to stay above. And again, it always seems to work out well where
+[  505.60s ->   508.96s] it seems to play out with support and resistance levels. You see support here, it's below it. So
+[  508.96s ->   514.96s] now we have an extra level of safety. Anyways, as long as the stock stays above 400, by the end of
+[  514.96s ->   519.68s] this trade, we make money. Now you may be saying, okay, cool. Now I know my level. How do I know how
+[  519.68s ->   524.24s] long to stay in this trade for? Well, like I said, go grab your free trading handbook down below.
+[  524.58s ->   529.76s] It tells you right here, your expiration is the current date plus 12 round up to the nearest next
+[  529.76s ->   534.96s] Friday. So right here, it's May 11th as I record this video. So May 11th, then we're going to add
+[  534.96s ->   540.86s] 12 days. So that makes it what the 23rd, the 23rd. I don't know what the next Friday is, but whatever
+[  540.86s ->   546.36s] that next Friday is, that is your expiration date. Let's just say the 23rd happens to be a Friday.
+[  546.46s ->   551.32s] No, actually, it's going to be the 24th. Yes, the 24th, I believe. Don't correct my problem. But let's
+[  551.32s ->   556.76s] say the 24th is that next Friday. So now our expiration date is the 24th. Now what I'm going to do is I'm
+[  556.76s ->   561.10s] going to go to my broker. I guess we can just pull up tasty trades. It's already up. We're going to go
+[  561.10s ->   568.60s] to spy. We're going to go to trade. We're going to go to, I believe it's May 24th. We're going to
+[  568.60s ->   576.51s] go to 400 as our level. Okay. This isn't a Friday. 26 is the Friday. May 26 is the Friday. You can see
+[  576.51s ->   581.25s] here, I've actually already put on this trade with 20 spreads. Anyways, I'm going to sell the 20 and I'm
+[  581.25s ->   587.73s] going to buy the next level above it as, or below it as protection. And now I can get 12 cents to put on
+[  587.73s ->   591.83s] this trade. Now, again, as you can see here from this, we want to make sure we can at least collect
+[  591.83s ->   597.37s] 15 cents. If you can't collect 15 cents, it's not time to put this trade on yet. And so that's exactly
+[  597.37s ->   601.99s] what we're seeing here. It's not quite time to put this trade on yet. And so again, we're not going to
+[  601.99s ->   605.35s] put this trade on, but again, that's what you're going to do every single day. Whoops. You're going
+[  605.35s ->   612.79s] to simply come to the chart, do 97% or 3% below the current price. As long as the stock is above
+[  612.79s ->   617.63s] the Bollinger Band settings that I showed you. And if you can collect 15 cents, then you put on
+[  617.63s ->   621.63s] the trade. Now, why? Well, because if you want the trade to work out long-term for you based on the
+[  621.63s ->   626.15s] amount you stand to lose and the amount you stand to make, you want to make sure that you have at
+[  626.15s ->   631.57s] least 15 cents in credit. Okay. If you want to learn more about this strategy, there's not really
+[  631.57s ->   637.29s] much to know outside of the backtest because this works off basic common psychology and principles.
+[  637.77s ->   643.17s] The market trends in different, like it trends, it's either going up, down, or sideways. You know
+[  643.17s ->   647.75s] almost for certain that the market in general will trend higher if it's above this band. So we're
+[  647.75s ->   652.15s] just basically following the trend, following the big waves of the market and using credit spreads to
+[  652.15s ->   656.11s] capitalize on those trades. Now, now you may be saying, okay, cool. So that's how I enter. That's
+[  656.11s ->   660.25s] how I do all that. What about exit rules and stop loss rules and all that? Well, like I said,
+[  660.29s ->   664.33s] the trading handbook that I mentioned has it off. We scroll down here to the bottom, early exit rules.
+[  664.41s ->   669.91s] You can exit a position if you can buy a credit spread back for 5 cents or less. Why is this?
+[  669.91s ->   675.09s] Because if we can close the trade out for 5 cents, typically we want to hold these trades until
+[  675.09s ->   680.99s] expiration so we can collect the max profit or the max return. Typically we're able to do that.
+[  681.19s ->   685.61s] But let's say we have a week left in the trade. Well, we can collect and we can collect 5 cents or
+[  685.61s ->   690.77s] less. Let's say 3 cents. Then we're going to buy it back for 3 cents. Why? Well, because we still have
+[  690.77s ->   695.93s] a week left of trading. So we might as well take most of the profit that we can get from this trade
+[  695.93s ->   701.25s] and put that money, put that collateral that's now freed up into the next trade. So now we no
+[  701.25s ->   706.53s] longer have risk and having to hold for a week and hoping it stays above. Instead, we take most of
+[  706.53s ->   710.89s] the profit. And what we do is we roll that into the next trade and we keep doing that over and over
+[  710.89s ->   714.03s] and over. And we're saying, okay, cool. That's what happens when you're in a winning position. How do
+[  714.03s ->   720.09s] you exit a losing position? All right. Well, we hold these trades until expiration. Why? Well, because we
+[  720.09s ->   725.11s] have a really, really high win rate. If I go right here, if we show specifically SPY and I change it to the $1
+[  725.11s ->   729.61s] with, it runs the whole back, the whole back test on it. Talking right here, again, you can see I'm
+[  729.61s ->   737.11s] looking at the turtle strategy. That's a 95% win rate with an analyzed return of 30%. This is factored
+[  737.11s ->   742.13s] based on the fact that you hold the trades until expiration. That means you let it. So if the trade
+[  742.13s ->   746.17s] goes against you, you still hold. Now, the thing is, if the trade goes against you and let's say it's
+[  746.17s ->   752.05s] about to expire and the trade is in the negative, what can you do? Well, very simply this, if the trade is
+[  752.05s ->   758.23s] going against you on expiration day, and you can buy back that spread for less than what your max
+[  758.23s ->   763.15s] loss would be, then you might as well buy it back so that you lose less than what your max loss would
+[  763.15s ->   770.79s] be. And most times we're able to do that. We're able to close for maybe a 50 to 80% loss. But again,
+[  770.85s ->   778.49s] if we have a 95% win rate, where 95% of the time we're making $15, $16, and the other half we're losing
+[  778.49s ->   786.09s] 50 to $60, well, in the long run, we make a lot of money. And you can see here from the backtest
+[  786.09s ->   791.85s] that you can have multiple years where it's all green. So anyways, guys, this is how credit
+[  791.85s ->   796.43s] spreads work and following the trend with the credit spreads. If you have a hard time implementing
+[  796.43s ->   801.69s] this strategy, well, guess what? You can go check out my trade ideas algo, which is also linked below,
+[  801.93s ->   806.09s] and it'll tell you exactly what stock to buy and tell you the expiration date to follow,
+[  806.09s ->   810.97s] the exact levels to buy into, how much credit you want to collect if you actually want to make a
+[  810.97s ->   816.11s] consistent return, the annualized return and everything you ever wanted to know. Not only
+[  816.11s ->   819.81s] that is once you have your trades active, it actually tracks all your trades. So it tells you
+[  819.81s ->   824.43s] how much total return you've actually made your average return per trade. You can see here, I've
+[  824.43s ->   830.37s] so far since using this, I make about 12% return on every single trade. Who here would like to make 12%
+[  830.37s ->   835.57s] return on their money every single week? That is the beauty of this. And then anyways, guys,
+[  835.57s ->   839.55s] so if you want to learn more about this program, I would highly recommend at the bare minimum,
+[  839.71s ->   843.85s] go grab your free trading handbook. It's going to walk you through every strategy I use step-by-step
+[  843.85s ->   848.71s] how to use it and why. Anyways, I hope you enjoyed this video. I really enjoyed doing these step-by-step
+[  848.71s ->   854.41s] training. Sorry if you didn't quite enjoy this one or it was a bit haphazardly. I still hope you
+[  854.41s ->   858.57s] enjoyed it and learned something and press that subscribe button and thumbs up if you did. But again,
+[  858.59s ->   863.09s] I'm not in my normal environment. Again, I'm at a hedge fund conference. But coming next Saturday,
+[  863.09s ->   868.49s] I'll have a more researched, more in-depth, more planned out training for you that everyone
+[  868.49s ->   874.31s] typically loves. So please stay tuned next Saturday for that. Anyways, see you guys in the next video.
+[  874.47s ->   877.63s] So excited. Please smash that subscribe and thumbs up button and I'll see you later.

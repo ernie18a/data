@@ -1,0 +1,66 @@
+[    0.06s ->     7.24s] I'm going to walk you through how to know if the market is crashing or if it is a dip that's going to recover so that you can take advantage of.
+[    7.56s ->    13.66s] Too many times people see the market going down red, they enter a trade only for it to continue to crash and they're going to lose thousands of dollars.
+[   14.04s ->    15.68s] And I've done this tons of different times.
+[   15.78s ->    20.36s] Now, I cannot guarantee that you'll be able to predict the market perfectly every time because nobody can.
+[   20.42s ->    25.96s] But I want to show you some things that will help you understand if the market is going to bounce enough so you can capitalize on it.
+[   25.96s ->    36.28s] And this most recent downturn, I actually got into trades down here, and that's led to me making about a $1,174 return just from this small bounce.
+[   36.40s ->    38.54s] And so I want to show you exactly how I was able to do that.
+[   38.70s ->    45.70s] So there are some rules we need to follow when we're understanding is the market crashing or is it just dipping and going to recover soon?
+[   46.00s ->    49.30s] Number one, we need to understand what is the overarching trend?
+[   49.42s ->    51.22s] What is happening in the market?
+[   51.28s ->    55.72s] And so what we do by that is we go into a chart, for instance, trading view is what I'm looking at here.
+[   55.96s ->    62.00s] We go to the daily timeframe, the one day, and this shows us long-term what the market is doing.
+[   62.08s ->    66.84s] Right here, I'm looking at the S&P 500, and we can see that long-term, the market is going up.
+[   67.12s ->    69.72s] And so what we do is we connect all the bottoms.
+[   69.86s ->    73.44s] And so when we connect the bottoms, we tend to see where that trend is going.
+[   73.78s ->    77.56s] So if I connect the bottom here, you can see that the trend line is going up.
+[   77.56s ->    81.78s] This line is moving higher, which is showing me that we're in an uptrend.
+[   81.78s ->    86.14s] And if we're in an uptrend, more times than not, the market is going to bounce.
+[   86.26s ->    89.80s] So that's one way to know and give you certainty if the market's crashing or not.
+[   90.04s ->    97.32s] Now, if the market is already on a downtrend and it's continuing to move lower, then it's going to continue to move lower until it hits some point.
+[   97.42s ->   100.24s] And so those points are called support and resistance levels.
+[  100.60s ->   103.90s] So we also need to have a good understanding of what those levels are.
+[  104.22s ->   105.70s] So where do we draw support and resistance?
+[  105.82s ->   107.20s] We draw them at prior highs.
+[  107.20s ->   109.96s] So you can see here the market topped out here, topped out here, topped out here.
+[  110.60s ->   119.72s] No, it doesn't need to be a very precise, very specific level, just in general, a general area of where the market has had a hard time in the past.
+[  120.02s ->   121.28s] And so I'll do the highs here.
+[  121.54s ->   122.76s] I'll do the next size here.
+[  122.84s ->   125.08s] Again, we're not here yet, but the highs like this.
+[  125.14s ->   131.72s] And when I know that there's previous highs here and there were previous highs here, this now becomes my new level that I'm watching as support.
+[  131.86s ->   134.16s] And that's exactly what I draw here.
+[  134.16s ->   138.72s] When the market started to turn over here on this red day and this red day, I thought, you know what?
+[  138.78s ->   140.18s] There's prior support here.
+[  140.70s ->   143.82s] There's prior levels here where the market went more range bound.
+[  144.18s ->   148.18s] And that's how I had my guess that the market would pull back to this level and bounce around here.
+[  148.52s ->   153.90s] And so every time I'm looking at will a market bounce or not, there is one crucial thing I look at.
+[  153.98s ->   154.72s] And that is this.
+[  155.00s ->   157.66s] I look at a main pivotal area.
+[  158.06s ->   163.32s] And so this area that I looked at for this specific marker was this line right here.
+[  163.32s ->   166.20s] So the way that I draw these lines, they come here to the drawing tool.
+[  166.58s ->   167.80s] I can draw out a rectangle.
+[  168.22s ->   172.28s] And what I do from here is I draw a rectangle like this where that support zone is.
+[  172.60s ->   182.78s] And I say like this, as the market crashes down, if it comes into this zone and bounces back above it, I know that I'm probably going to have a higher likelihood of it bouncing and continuing higher.
+[  183.26s ->   187.64s] If we break below this zone, then I know, hey, the market's probably got some more room to go down.
+[  187.94s ->   189.60s] And that's how I understand the different levels.
+[  189.60s ->   192.24s] So what you do is you look at the overall trend.
+[  192.30s ->   199.60s] If the overall trend is up, you have a highly or a more higher chance or I should say a higher chance of it actually continuing after the bounce.
+[  200.00s ->   208.00s] If the market is at a pivotal support level and you draw out a zone and it goes into the zone and then bounces back above it, that's a very good sign.
+[  208.00s ->   209.48s] The market will continue trending up.
+[  209.62s ->   213.36s] If it breaks down below it, that's also a sign it's going to drop and you have plans there.
+[  213.54s ->   218.82s] And then once you do that, the next thing you're watching is that next resistance level, the part where it pulled back from.
+[  218.96s ->   220.52s] You want to see if it can break above it.
+[  220.60s ->   222.66s] If it can't, we're probably going to be returning back down.
+[  222.72s ->   224.64s] If it can't, we're probably going to be continuing back up.
+[  224.86s ->   225.98s] So those are the three stages I look at.
+[  226.04s ->   226.94s] What's the overall trend?
+[  227.30s ->   229.12s] What's the support zone that I'm looking to target?
+[  229.42s ->   230.40s] Are we balancing there?
+[  230.50s ->   233.38s] If so, can we get above that previous resistance level?
+[  233.38s ->   235.48s] And we just do that time over time.
+[  235.80s ->   241.68s] An uptrend is simply consisting of levels in areas where the market makes higher highs and higher lows.
+[  241.78s ->   246.34s] So what I mean by that is we come up, we bounce, we come up, we bounce, we come up, we bounce and does that over and over.
+[  246.54s ->   247.64s] And that's what an uptrend is.
+[  247.84s ->   252.76s] As soon as the support line doesn't hold and it breaks through it, that's when the trend changes and we move down.
+[  252.96s ->   254.04s] And that's when we do different strategies.
+[  254.16s ->   259.88s] But if you're looking to know how to know when the market is going to crash or when it's going to dip, this is the best way I do that.

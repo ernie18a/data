@@ -1,0 +1,183 @@
+[    0.46s ->     9.30s] And we are back. Welcome back. Today we're going to talk about control variants for variance
+[    9.30s ->    16.56s] reduction in simulation. Variance reduction is a very interesting topic. Right off the bat,
+[   16.56s ->    22.30s] you may say, hey, you know, if we have something we're trying to estimate using simulation,
+[   23.06s ->    28.84s] then clearly if we're trying to discern some sort of confidence interval for how confident we are
+[   28.84s ->    35.82s] in our estimation, you know that the standard error is somewhat proportional to the number of
+[   35.82s ->    42.58s] simulations that we run. So why don't we just jack up the simulation number? We go from 1,000,
+[   42.58s ->    49.96s] 10,000, 100,000, why not a million simulations, decrease the variance that way? Well, that's not
+[   49.96s ->    56.62s] always practical due to the cost computationally of that which we are trying to simulate. In fact,
+[   56.62s ->    62.50s] it may take way too long to reduce the variance that way, but there are other ways, for example,
+[   62.62s ->    70.24s] control variants to reduce the variance in whatever you are trying to estimate. Now control variants
+[   70.24s ->    78.24s] are not the only way to reduce variance in some sort of estimation of a parameter. However,
+[   79.44s ->    84.42s] it is a good way to get started with variance reduction. We're going to go over a toy example
+[   84.42s ->    89.34s] using an arithmetic Brownian motion. I'm going to connect it to some current literature in
+[   89.34s ->    95.94s] quantitative finance, and we'll talk a little bit about the implications of that. It may not be
+[   95.94s ->   101.36s] directly through control variants, but I think it is a reasonable introduction to the topic, and I think
+[  101.36s ->   107.46s] it's moderately interesting to connect it to a current stream of literature that aims to improve
+[  107.46s ->   113.34s] pricing efficiency. So let's go ahead and get started with this idea of control variants. What the heck is
+[  113.34s ->   119.15s] a control variant? Well, at a high level, what's going on here is we have some sort of simulation. So
+[  119.15s ->   126.28s] let's say we're trying to figure out an option price. Classically, we pick some sort of model
+[  126.28s ->   131.77s] to model the underlying dynamics of our stock price process. Maybe we choose an arithmetic Brownian
+[  131.77s ->   136.73s] motion, geometric, maybe we do some sort of jump diffusion model. You have your pick, some sort of
+[  136.73s ->   142.77s] stochastic volatility model, whatever it may be. Well, we simulate those price paths forward,
+[  142.77s ->   147.45s] compute a payoff, and then discount them back to the present average off that payoff. And we get our
+[  147.45s ->   159.15s] risk neutral price, if you will. Okay. In generating those price paths, we have a lot of other information
+[  159.15s ->   164.05s] available to us. We have the average price, we have the min price, the max price, so on and so forth.
+[  164.05s ->   176.78s] And that can be used as auxiliary information to aid in informing the final price of the option. Now,
+[  176.78s ->   182.22s] this will be a little more clear in a moment when we get to the actual applied example option pricing
+[  182.22s ->   187.34s] under arithmetic Brownian motion. But at a high level, what we're doing is we're using other variables,
+[  187.34s ->   196.22s] other information that we have any anyway within a simulation to aid in that final estimation.
+[  196.22s ->   201.26s] And it turns out when you use other information that happens to be highly correlated with the
+[  201.26s ->   207.50s] quantity of interest, you can achieve significant variance reduction. And what that does is it leads
+[  207.50s ->   216.88s] to more precise, keyword precise estimation. So let's take a look at this equation for a control
+[  216.88s ->   221.84s] variant here. This is actually a linear regression. And what we have here is we have this control
+[  221.84s ->   228.32s] variant. And it's important to know the control variant is not the quantity itself, but the expectation
+[  228.32s ->   233.52s] matches the quantity of interest. So let's take a look at what's going on here. Why is the quantity
+[  233.52s ->   240.80s] of interest? So you can say that that may be a European option price, for example, what have you.
+[  241.60s ->   246.80s] And then X is some sort of auxiliary variable that you're going to have that's highly correlated
+[  246.80s ->   257.82s] with the target quantity of interest. All right. Now, what you'll notice happens here is we have
+[  257.82s ->   266.46s] the expectation of X. So if we have some sort of model whose dynamics enable us to have in close form
+[  266.46s ->   275.66s] the expectation of, say, the stock's price at the maturity, then this is going to be extremely correlated
+[  275.66s ->   281.44s] with the target quantity of interest. And we're going to achieve variance reduction. If that's a
+[  281.44s ->   285.44s] little too complicated, then let's just take a look at what happens when we take the expectation
+[  285.44s ->   291.12s] of this top equation here. That's what's going on down here. So remember, Y is the target quantity of
+[  291.12s ->   296.40s] interest. I'm going to take the expectation of both sides. So when I take the expectation of both sides,
+[  296.40s ->   303.44s] I'm going to substitute C in for this Y. And you can see that the expectation of the control variant
+[  303.44s ->   309.44s] is going to be equal to the expectation of the target quantity of interest. And why is that?
+[  309.44s ->   314.64s] Well, when you take the expectation of the right hand side, what happens is due to the linearity
+[  314.64s ->   321.84s] of expectation, you can distribute the expectation through C is just a constant, we select that value,
+[  321.84s ->   326.56s] and you distribute the expectation through, it gets assigned to this X, it gets assigned to this
+[  326.56s ->   332.80s] expectation of X. Clearly, the expectation of X is just a constant as well. And they end up canceling
+[  332.80s ->   339.64s] each other out. This is what allows us to use the information from that auxiliary variable to
+[  339.64s ->   345.96s] inform the estimation of the target quantity of interest. Because the control variant itself,
+[  345.96s ->   353.88s] that value, is not the quantity of interest. But the expectation of that control variant is the
+[  353.88s ->   357.96s] same as the expectation of the target quantity of interest. In other words,
+[  357.96s ->   374.73s] C sub Cv is not C. But the expectation of C sub Cv is the expectation of C. How is C chosen? Well,
+[  374.73s ->   381.05s] we minimize the variance of the estimator through very simple optimization. You can go ahead and take
+[  381.05s ->   387.93s] the derivative, set it equal to zero if you like. Turns out C is going to be covariance of Yx divided by the
+[  387.93s ->   396.51s] variance of X. And of course, it's just a linear regression here. But if we had the covariance of Y and X
+[  396.51s ->   407.04s] and the variance of X, we would not need to do this because we would have the target quantities
+[  407.04s ->   413.60s] expectation. So we're going to need to use the sample covariance and the sample variance to estimate this
+[  414.40s ->   423.74s] constant C. And that's what we do after simulation. How does this reduce the variance? Well, if we take
+[  423.74s ->   430.30s] the variance of both sides here, we can see that the variance of the control variant is going to be
+[  430.30s ->   439.58s] equal to the variance of Y less C squared times the variance of X. But you'll notice here that if you
+[  439.58s ->   447.90s] substitute this quantity in here, that the more that the covariance, this is going to be, I believe this
+[  447.90s ->   460.52s] is going to be just the, yeah, the more that the two quantities are related, turns out that the more
+[  460.52s ->   468.28s] variance reduction you will achieve. So in other words, the more valuable the information is of X within
+[  468.28s ->   475.36s] each run of your simulation, the fewer simulations you have to run to achieve similar precision.
+[  479.60s ->   483.68s] And that's exactly what we have here. If you take the variance of both sides, you can see that you
+[  483.68s ->   488.96s] end up actually with a correlation term here. And this correlation term says that, you know,
+[  488.96s ->   494.88s] maximum variance reduction is achieved when correlation is one. Clearly correlation can't be one
+[  494.88s ->   500.72s] because you would have the target quantity of interest expectation anyway. But if they are highly
+[  500.72s ->   509.60s] correlated, you're going to achieve significant variance reduction. So that is the gist of control
+[  509.60s ->   515.20s] variance for variance reduction, we have this linear regression here, you're not limited to just one
+[  515.20s ->   521.68s] auxiliary variable, you could do a multi regression as well. So you could, you know, add a Z as well,
+[  521.68s ->   527.20s] if you like, you could do, you know, more than one auxiliary variable to decrease the variance as well.
+[  527.20s ->   535.12s] But this is just a very simple, hopefully simple example here in the context of pricing. And this
+[  535.12s ->   541.04s] is the general gist here is you can see that since variance is going to be positive, you know, variance
+[  541.04s ->   548.72s] is going to be the expected deviation away from the mean, you will go ahead and see that if you subtract
+[  548.72s ->   555.36s] some sort of constant times the variance, you're going to have less variance than the variance of the
+[  555.36s ->   565.02s] original target quantity of interest anyway. Okay. So how does this relate to a practical example,
+[  565.02s ->   569.66s] that was a lot of theory, for those of you interested in the theory, now we can go ahead and talk about
+[  569.66s ->   576.06s] a practical application and pricing options. So here, we're choosing an arithmetic Brownian motion,
+[  576.06s ->   580.22s] this is unnecessary, right? Like we have a closed form solution, but actually, we don't need to,
+[  581.26s ->   586.54s] we don't need to use control variance here. But this is a very intuitive example. And I think it's
+[  586.54s ->   592.54s] a, it's more fun than just seeing it applied to something random, like some sort of Q, a continuous
+[  592.54s ->   597.02s] time Markov chain or something like that. So let's just take a look at it in the context of option
+[  597.02s ->   607.34s] pricing under ABM. So we know that the call option at maturity has a payoff function of S of T minus K
+[  609.18s ->   616.68s] and zero, whichever one is larger, our hockey stick diagrams, if you will. And we know that the
+[  616.68s ->   622.76s] dynamics for the underlying asset are given under arithmetic Brownian motion by this equation here,
+[  622.76s ->   629.72s] where we have an initial asset price, we add some sort of drift scaled by time, and we add some sort
+[  629.72s ->   641.31s] of volatility scaled by sigma. And the volatility is just a standard Brownian motion. What we can do is we
+[  641.31s ->   648.11s] can add a control variable of control variant to aid in the estimation of this European call
+[  649.15s ->   653.63s] simulation. So we're trying to simulate the price of a European option, we are going to simulate a
+[  653.63s ->   659.31s] whole bunch of ABM price paths to maturity, calculate the payoff discounted to the present,
+[  659.31s ->   665.87s] we're going to get the average of that set of values. And that'll be the approximate price of the call.
+[  666.59s ->   670.67s] Now there's going to be variance. And what we want to do is reduce that variance. So we don't have to
+[  670.67s ->   677.87s] simulate as many price paths. What we can do is we can use the arithmetic average of the simulated prices
+[  677.87s ->   684.43s] because we know under arithmetic Brownian motion that the expected price at maturity is going to
+[  684.43s ->   693.52s] be the initial price plus mu times the maturity divided by two. That is going to be our control
+[  693.52s ->   700.96s] variant. Notice how the dynamics of the model that we've chosen, arithmetic Brownian motion, enable us to
+[  700.96s ->   707.90s] have this known value for the expectation at time cap T. Okay. That's very important. Now,
+[  707.90s ->   715.02s] is this kind of redundant? If we know this, do we really need to simulate price paths? Probably not,
+[  716.03s ->   724.04s] but bear with me. It's a toy example here because clearly if we have the expectation at time cap T,
+[  724.68s ->   729.80s] then this is completely redundant, right? But let's just take a look at what happens here.
+[  730.36s ->   733.72s] So what we're going to do is we're going to run this simulation. So I'm going to have the initial
+[  733.72s ->   739.40s] price, our strike price, time to maturity, a drift of volatility, certain number of simulations and
+[  739.40s ->   748.12s] time steps. So initial stock price of 100, a strike of 100, time to maturity of 252. We have 252 days.
+[  748.12s ->   754.20s] We're going to do daily time steps, 252 steps. We have a 10% drift, a 30% volatility, and we're going to do
+[  754.20s ->   761.56s] this 10,000 times. I'm going to go ahead and run this guy here and we get this interesting output.
+[  761.56s ->   767.64s] So let's go ahead and take a look at what's going on here. So we have our original payoff distribution.
+[  767.64s ->   776.36s] That's this blue distribution here. And this is the average payoff of the simulated prices,
+[  777.61s ->   780.49s] or these are the payoffs, I should say, of the simulated prices.
+[  782.22s ->   786.78s] You'll notice that the adjusted payoffs with the control variant has a tighter distribution.
+[  786.78s ->   793.26s] Now, that doesn't necessarily specify the payoffs. Remember, the control variant is not the payoff.
+[  793.26s ->   800.94s] If we go back up to this equation here, we can see that CCV, that value CCV,
+[  800.94s ->   807.82s] is the target quantity of interest less the information added by our auxiliary variable.
+[  807.82s ->   815.34s] So CV is not the value of the payoff itself. It is our control variant. And we know that if we take
+[  815.34s ->   820.30s] the expectation of our control variant, then we get the expectation, the estimated
+[  820.30s ->   825.50s] target quantity, that's what we're looking for. So when we come down here, that orange density is not
+[  825.50s ->   831.87s] the same. It's not the same as the blue density, in the sense that that is our control variant
+[  831.87s ->   840.12s] distribution. Okay, the original payoffs is the blue distribution. But you'll notice that the
+[  840.12s ->   847.72s] expectation is the same, but variance reduction is achieved. So how can we see this? Well,
+[  847.72s ->   855.56s] the original call price is going to be 25.14. The adjusted call price estimate with the control
+[  855.56s ->   860.60s] of area is 25.18. But you're going to get different values every single time you run it,
+[  860.60s ->   865.64s] and as you increment more simulations. So what's a good measure for the variance reduction that is
+[  865.64s ->   872.68s] achieved? Well, one way to look at that is to take a look at the confidence interval under the same
+[  872.68s ->   877.88s] alpha value. And in that sense, you just take a look at the standard error, and you can see the
+[  877.88s ->   883.48s] original standard error is 0.05, and the adjusted standard error after introducing the control
+[  883.48s ->   892.36s] of area is 0.02, which gives us approximately 75% variance reduction. So under the same alpha value,
+[  892.36s ->   899.64s] in other words, we are 99% confident that the price or the interval contains the true price,
+[  900.20s ->   908.44s] that interval is tighter, and it costs us the same amount of computational power. Now, that's a little
+[  910.57s ->   916.49s] that kind of ties this whole thing together here, I should say, is fixing all of those things,
+[  916.49s ->   920.89s] we have a tighter confidence interval. So using the same amount of compute, using the same amount of
+[  920.89s ->   926.49s] price paths, in addition to this control of area estimator here, we are going to get a tighter
+[  926.49s ->   930.57s] confidence interval, and we didn't have to increase the number of simulations, all we're doing is
+[  930.57s ->   935.93s] we're using the fact that there's this auxiliary variable that can contribute information to the
+[  935.93s ->   944.76s] target quantity of interest. And that is exactly what's going on here. So this is with an arithmetic
+[  944.76s ->   948.92s] Brownian motion, but how do we connect this to what's going on in the current body of literature,
+[  948.92s ->   955.56s] recent literature, I should say? Rough volatility models is a good example of when this might be
+[  955.56s ->   962.28s] useful, may not be explicitly in the same context here, because if there was a closed form solution,
+[  962.28s ->   968.60s] then again, we wouldn't need to do this. The actual auxiliary variable you may use, or the technique for
+[  968.60s ->   973.48s] variance reduction is probably different, but I wanted to connect it to something that is practical
+[  973.48s ->   982.92s] as well. So a rough volatility model, for example, it introduces a long range dependency. It's not
+[  982.92s ->   989.40s] Markovian in the structure, it is going to depend on the entire price path. So it's very expensive to
+[  989.40s ->   999.18s] simulate a single path of a rough volatility model. So the idea here is if you wanted to use a rough model to
+[  999.18s ->  1005.90s] approximate some sort of option price, whether it be some sort of vanilla or exotic product,
+[ 1005.90s ->  1013.26s] you're going to need some sort of variance reduction technique, because simulation is computationally
+[ 1013.26s ->  1021.42s] expensive. It's very expensive. And if you wanted to, I mean, think about how many options are on books
+[ 1021.42s ->  1028.70s] every single day that need pricing, efficiency is a big deal in this line of work. So something that has
+[ 1028.70s ->  1035.74s] a closed form solution, even though it may be, you know, less accurate, if you will, definitely has
+[ 1035.74s ->  1041.66s] more value in that context. So, you know, a rough volatility model may better characterize the dynamics
+[ 1041.66s ->  1047.26s] of the markets. But if you can't do it efficiently, you know, if you're pricing things that needed repricing
+[ 1047.26s ->  1055.42s] last week today, then it's not helpful. But you know, if you have some way to maybe increase the
+[ 1055.42s ->  1061.10s] efficiency of your estimations by doing variance reduction, then it can be particularly helpful.
+[ 1061.98s ->  1067.26s] You know, connection to the current literature is approximation of these models, these pricing
+[ 1067.26s ->  1073.66s] functionals using neural networks. So, you know, one way to do that is to essentially map, you know,
+[ 1073.66s ->  1079.42s] you're going to create a parameter set map of the model's inputs fit to a surface. And then you're going to
+[ 1079.42s ->  1085.34s] have some sort of surface as an output, and you're going to try to learn that relationship as a,
+[ 1085.98s ->  1093.96s] essentially just a map. And then, you know, since a neural network is just a function, you can actually
+[ 1093.96s ->  1101.00s] use that to, you know, efficiently price your options. And then you're actually using some sort
+[ 1101.00s ->  1106.36s] of optimization routine to try to maybe even fit that to a volatility surface to reprice,
+[ 1106.36s ->  1112.68s] so on and so forth. So I have other videos discussing that in more depth if you're interested,
+[ 1112.68s ->  1118.12s] but that is just the general gist of what's going on here is the the overarching theme is it is
+[ 1118.12s ->  1125.80s] computationally expensive to simulate these models. So what can we do? Well, you know, the there are
+[ 1125.80s ->  1132.04s] current streams of literature that aim to try to approximate these maps, approximate these pricing
+[ 1132.04s ->  1138.94s] functionals using volatility surfaces and the model parameter set. And the whole goal there is
+[ 1138.94s ->  1144.94s] efficiency. But efficiency is in the same context, if we simulate a whole bunch of paths,
+[ 1145.98s ->  1152.14s] then we need to simulate a lot of paths, because we need good estimation of parameters. And in this
+[ 1152.14s ->  1158.38s] sense, we need a good estimation of the option price. What is good? Well, why do we simulate a lot of
+[ 1158.38s ->  1164.70s] paths, simulate a lot of paths to hope to reduce the variance and find what that true price actually
+[ 1164.70s ->  1172.22s] is under a specific model framework. And that is why you would need variance reduction, specifically due to
+[ 1173.10s ->  1179.26s] efficiency. So efficiency is a very big problem. There's kind of this inverse relationship where
+[ 1179.26s ->  1185.34s] as complexity increases, efficiency decreases, and vice versa. Simplicity can be, you know,
+[ 1186.76s ->  1191.32s] it can be very useful. It can be very useful, especially if you have a closed form solution.
+[ 1191.32s ->  1196.04s] So that's kind of like the gist at a high level of variance reduction. Hopefully that's an interesting
+[ 1196.04s ->  1202.92s] link to the current streams of literature and finance. And I think that's going to do it for this
+[ 1202.92s ->  1210.96s] video on control variance and variance reduction. I hope you enjoyed. If you have any questions or
+[ 1210.96s ->  1217.12s] comments, please feel free to leave them in the comment section below. Join discord if you have anything you'd
+[ 1217.12s ->  1223.12s] like me to address directly. I tend to be more responsive there, but I hope you found this
+[ 1223.12s ->  1228.72s] interesting. I hope this was a fun toy example to illustrate variance reduction. Clearly it's a toy
+[ 1228.72s ->  1235.28s] example because if you have the, if you have the average stock price at maturity under a specific model,
+[ 1235.28s ->  1242.00s] then why on earth would you need the simulation in the first place? Nevertheless, toy example. Hope you
+[ 1242.00s ->  1246.16s] enjoyed it and I will catch you in the next video. Thanks for watching.

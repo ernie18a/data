@@ -1,0 +1,37 @@
+[    0.14s ->     6.64s] All righty, multi-threading. What is it and how can we build a quick example to illustrate the concept?
+[    6.84s ->    10.78s] So for starters, let's go ahead and import threading, which we're going to use in a moment,
+[   11.04s ->    16.58s] and then we're also going to import time. Let's create a class, and for this example,
+[   16.66s ->    22.30s] let's just call it CPU Painter. Now, it's going to have a function called paint wall,
+[   22.30s ->    31.68s] and it is going to wait two seconds, and it's going to print, when it's done, wall painted.
+[   32.16s ->    40.29s] In its constructor, we are going to make a simple call to that function, paint wall,
+[   40.43s ->    45.69s] so self.paint wall, and now we have a little class that is acting as a painter.
+[   45.83s ->    49.17s] So let's say we have four walls that want to get painted.
+[   49.17s ->    56.67s] Well, one way to paint all the walls is just by creating an instance of the CPU Painter four times.
+[   56.83s ->    62.17s] So we can do CPU Painter, CPU Painter, CPU Painter, and CPU Painter.
+[   62.73s ->    66.71s] If I run this, try and guess what's going to happen.
+[   66.79s ->    68.73s] So I'm going to run it, and let's watch.
+[   71.34s ->    73.20s] We wait two seconds, and we get wall painted.
+[   73.78s ->    79.24s] Another two seconds, wall painted, and at this point, you can see we're just simply waiting two seconds,
+[   79.32s ->    80.82s] and then the wall will be painted.
+[   80.82s ->    84.56s] Now, our computer is much more powerful than this,
+[   84.66s ->    89.00s] and we have no reason not to be painting all of these walls at the same time.
+[   89.82s ->    92.52s] And obviously, we're not painting walls.
+[   92.64s ->    98.54s] This is an analogy to a process occurring in a linear fashion,
+[   98.68s ->   102.64s] but what if we wanted it to occur concurrently with other processes?
+[  102.80s ->   104.72s] Now, this is where multithreading shines.
+[  104.72s ->   109.84s] So we're going to alter this class just a little bit, and we're going to create a thread.
+[  110.78s ->   118.94s] So T equals threading dot thread, and we're going to target the paint wall function.
+[  118.94s ->   124.28s] And within the constructor, we are going to start the thread.
+[  124.80s ->   126.24s] Now, what's happening here?
+[  126.30s ->   133.58s] We're creating a new thread that's targeting this function, and we're going to start the thread.
+[  133.76s ->   134.80s] Now, what does that mean?
+[  134.80s ->   145.02s] Instead of calling CPU Painter and going through originally, calling the paint wall function, waiting two seconds, printing wall painted, and then moving on,
+[  145.26s ->   153.29s] we're simply starting the thread, and it's going to run this function on its own thread.
+[  153.29s ->   156.67s] And it's going to do that for all four CPU painters.
+[  156.89s ->   158.87s] So let's take a look and watch what happens here.
+[  159.57s ->   163.49s] We run it, and boom, two seconds, all four walls are painted.
+[  163.67s ->   168.39s] Now, obviously, as I mentioned before, this is an analogy to concurrent processing.
+[  168.65s ->   176.17s] This really shines in applications where you may have one or more processes that could be or can be occurring at the same time.
+[  176.21s ->   181.67s] Maybe it's a query to a database, or a good example would also be an algorithmic trading,
+[  181.67s ->   186.13s] where you have a data feed that's persisted by some sort of connection to a brokerage house,
+[  186.27s ->   190.51s] and then analysis is being performed simultaneously with trade execution.

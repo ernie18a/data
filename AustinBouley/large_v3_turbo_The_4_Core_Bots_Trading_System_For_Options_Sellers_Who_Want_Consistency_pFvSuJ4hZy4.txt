@@ -1,0 +1,348 @@
+[    0.00s ->     4.88s] Hey guys, welcome to today's monthly live training. Super excited. This is the first
+[    4.88s ->     9.68s] of many. Every single month we'll be diving in deep into a specific topic, crucial for us as
+[    9.68s ->    14.96s] option sellers, specifically option sellers who want consistency in all markets using automation
+[   14.96s ->    19.48s] so that we can get our time back. In this training, we're going over the four core strategies that
+[   19.48s ->    25.18s] every options traders need. And so we're doing this or I'm doing this because I want to make
+[   25.18s ->    30.18s] sure that you guys understand this topic. This is the most crucial topic to this whole training
+[   30.18s ->    34.30s] program. It's what we're doing. So I want to make sure to talk about the basics, understand what's
+[   34.30s ->    37.98s] going on to make sure that you guys understand it. So diving into this training, just want to set some
+[   37.98s ->    42.44s] housekeeping rules real fast. Number one, there will be Q&A time at the end where I will allow you
+[   42.44s ->    47.58s] guys to unmute yourself if you want. But while we go through the presentation, make sure to take
+[   47.58s ->    54.54s] notes. Also, you can on Zoom, go to the Q&A tab and put your questions there. So there's a specific
+[   54.54s ->    59.20s] questions part in Zoom. Go find it and put in questions there as you have them. And I'll review
+[   59.20s ->    64.50s] that list at the end in addition to other questions that you guys have. Number two, this training is
+[   64.50s ->    68.74s] broken down into two parts. Number one, broken down into a teaching session where I'm going to teach
+[   68.74s ->    73.98s] something specific. And it's broken down into a market analysis section, aka where does the market
+[   73.98s ->    78.86s] look like it's going over the next 30 days? What are the best bots and allocation we can use to profit
+[   78.86s ->    83.42s] from it? So it's going to be super helpful. And then number three is this live training is being
+[   83.42s ->    88.76s] recorded. I will publish the replay in the circle community within 48 hours, given I can get it
+[   88.76s ->    92.32s] edited by then, which I should be able to. So by Friday, this training should be up.
+[   93.12s ->    97.46s] Sweet. Now that I covered that, let's do this. Let's dive in. Let me double check the comments,
+[   97.62s ->   102.28s] make sure I can see you guys chat. All right. We got everyone in here. I can see the chat. We are good
+[  102.28s ->   107.92s] to go. All eight people who registered are here. Sweet. Let's go over some options 101. For a lot of you
+[  107.92s ->   112.24s] guys, this may already be common knowledge, but I know a few of you guys are newer to options,
+[  112.24s ->   116.10s] so I want to make sure this is covered. Options 101, there are a lot of things we can do. In
+[  116.10s ->   121.32s] options, there are calls and there are puts. I'm going to break down each one. When we buy a call,
+[  121.54s ->   127.14s] it makes money as the stock goes up. This is what the profit graph looks like. This is what it is.
+[  127.18s ->   134.06s] When we buy a call and the market goes up, we make money. Now we can also sell a call, which makes
+[  134.06s ->   140.14s] money as the market drops. It does the inverse of it. So when we're selling a call, we're essentially
+[  140.14s ->   147.56s] betting that a stock will stay below a certain level. So when we sell options, specifically sell
+[  147.56s ->   152.60s] calls, we have a higher win rate because all we need to do is stay below a certain level.
+[  153.14s ->   158.78s] But when we buy a call, we actually need the market to go up for us to profit. So that's why selling
+[  158.78s ->   164.88s] helps a lot. Same thing with puts. When we buy a put, we make money as the market goes down. So buying a
+[  164.88s ->   169.74s] put, market goes down, make money. We can use this in certain situations, as I'll be explaining here
+[  169.74s ->   176.06s] later. And we have selling puts. When we sell a put, all we are doing is betting that the market
+[  176.06s ->   182.26s] will stay above a certain level. So above this level here, we make money. This is why options selling
+[  182.26s ->   186.30s] or selling puts is a lot better than buying puts because we have to be right on the direction when
+[  186.30s ->   190.88s] we buy puts to make money. But when we sell puts, it just needs to stay above a certain level,
+[  190.88s ->   196.86s] which gives us a really great win rate. So why sell options? Most of you here are already
+[  196.86s ->   201.88s] selling options, which is great. So you know, it's amazing. But here's a few reasons. Number one,
+[  202.32s ->   207.54s] NASDAQ, which is one of the larger exchanges in the US, it does literally a trillion plus dollars
+[  207.54s ->   212.36s] every single day in trading volume, says some of the most profitable and productive trading is
+[  212.36s ->   217.40s] accomplished through selling options for income. You can make money on the way up, on the way down,
+[  217.40s ->   224.06s] in any market. By selling options, you control all aspects of your capital, including risk outcomes
+[  224.06s ->   230.10s] on particular trades. Us with our goals becoming income engineers, which is engineering profit,
+[  230.36s ->   236.62s] engineering consistency, and engineering our risk to a level we are okay with is the whole thing that
+[  236.62s ->   240.98s] is what option selling allows us to do. And so that's why we sell options. But not only that,
+[  240.98s ->   247.72s] statistics and back tests and data has showed us that it outperforms the market is more consistent
+[  247.72s ->   252.44s] and has lower drawdowns. When we look at a over a 32 year study compared to the overall market.
+[  252.56s ->   257.86s] And last but not least, option selling is like insurance. Insurance is one of the most profitable
+[  257.86s ->   265.34s] businesses around because they collect premiums on people that they want to insure, they get to pick
+[  265.34s ->   269.90s] who they insure gave, they get to pick how much risk they take, and they get to profit monthly from it.
+[  269.90s ->   274.34s] We do the same thing as selling options, except instead of providing insurance for the house or
+[  274.34s ->   279.14s] for your car, provide insurance for the stock market, we can collect premium. And that's how
+[  279.14s ->   286.22s] we are able to generate income. Now, we aren't the only people to do this. So are people like Warren
+[  286.22s ->   293.14s] Buffett, who made $134 billion across his whole lifetime, with multiple billions of it coming from
+[  293.14s ->   298.58s] actually selling puts that he's made before entering his long term investment. So he knows the power of
+[  298.58s ->   304.36s] selling options as well. And basically, when we sell options, we become the house, we now allow
+[  304.36s ->   311.60s] anyone who has $25,000 or more to become an insurance company to collect premiums aka cash every month,
+[  311.60s ->   317.40s] or maybe even every day. And it can be done in a completely hands free way. So what are the three
+[  317.40s ->   321.86s] biggest options risks that we have to worry about? You may be like, this is awesome. But what's the
+[  321.86s ->   326.44s] downsides, we must always consider that the downsides and everything we're doing, especially as trading,
+[  326.44s ->   332.24s] our job isn't really traders, our job is to be risk managers. That's how we really survive these
+[  332.24s ->   335.98s] things. And so when we're talking about the three biggest risk, we have manipulation risk,
+[  336.56s ->   340.42s] volatility risk, and market crash risk. You may have heard this before, but I wanted to make sure
+[  340.42s ->   344.86s] we set the groundworks here before we dive into the further concept of four core strategies.
+[  345.28s ->   352.24s] Number one is manipulation risk. Okay, when you submit an order to the market, your order is publicly
+[  352.24s ->   358.62s] seen and available to anyone, which means market makers, hedge funds, institutions could go in
+[  358.62s ->   364.52s] there, see your order and manipulate it to get you out. Just like when a hunter like a lion sees its
+[  364.52s ->   369.28s] prey, it goes after it and it kills it. That's the same thing that's happening in the stock market
+[  369.28s ->   375.28s] every single minute of every single day. There are market makers, hedge funds that have that are
+[  375.28s ->   383.00s] looking at your order, slightly manipulating the market to allow your orders to trigger early,
+[  383.40s ->   387.66s] resulting in a loss for you, but a profit for them. And they're able to do this because they can
+[  387.66s ->   393.64s] see your orders. Now, in addition to that, there's what's called volatility risk, where us as option
+[  393.64s ->   400.22s] sellers, we are selling the risk in the market. If risk is higher, we get to make more premiums. But if
+[  400.22s ->   406.54s] risk is lower, we make less. And that's where we are at a lot of risk. Because if volatility goes up,
+[  406.82s ->   414.04s] we are going to lose just by the way that volatility works. And so volatility moving is a risk for us.
+[  414.06s ->   419.24s] And we need to find a way to mitigate that. And then last but not least, we have market crash risk,
+[  419.24s ->   424.44s] which is if the market were to crash as option sellers is amazing because it's leveraged, which
+[  424.44s ->   429.76s] means we get to make greater profits, but also at the same time, we make larger losses. And so
+[  429.76s ->   435.30s] with that, if the market were to crash, we could lose easily 1000s and 1000s of dollars. So option
+[  435.30s ->   439.64s] selling is still without a doubt, according to Warren Buffett, according to NASDAQ, according to
+[  439.64s ->   445.68s] studies, the greatest way to produce income, but we have three big risk factors we must consider. And so
+[  445.68s ->   451.16s] again, even if we get all those factors, right, we still have to deal with emotions that is fear and
+[  451.16s ->   456.86s] greed, us deciding should I stay in a trade? Should I get out? What should I do? All this stuff is called
+[  456.86s ->   463.26s] emotions and it wrecks with our trading plan. So what we do is we fix all of this by using
+[  463.26s ->   468.42s] automation. So that specifically being the options auto trader, we can get rid of manipulation risk,
+[  468.56s ->   474.64s] volatility risk and market crash risk, or at least reduce it substantially. And so we can fix manipulation
+[  474.64s ->   481.14s] risk using automation by what I call the brick wall. So remember, I said if a hunter sees its prey,
+[  481.14s ->   486.74s] it's going to attack it and kill it. Well, if the hunter cannot see the prey, it cannot kill it.
+[  486.98s ->   491.86s] The same way why Zeus have can have dangerous animals next to each other, but they can't see
+[  491.86s ->   496.64s] each other, so they're not going to kill each other. And so that's how that works. We put a brick wall
+[  496.64s ->   502.72s] between your orders and the market. That way market makers, hedge funds and institutions cannot see
+[  502.72s ->   508.12s] your orders and cannot manipulate the price to get you out early, thus resulting in a loss that you
+[  508.12s ->   512.66s] shouldn't have had in the first place. So we do the brick wall by keeping your orders on our server
+[  512.66s ->   517.16s] and only submitting them in the second they need to be submitted. This helps you save hundreds of
+[  517.16s ->   523.84s] dollars every month, if not more from manipulation risk. Number two is volatility risk, which we use
+[  523.84s ->   530.50s] a scale system. If volatility is low, our risk as option sellers is high. So you want to be in less
+[  530.50s ->   537.56s] trades and we want to scale our trading size based on where VIX is. So by enabling this scaling system,
+[  537.56s ->   542.68s] which is just one click of a button in the options auto trader, we can adjust how much buying power
+[  542.68s ->   548.86s] we're using based on where VIX is to cut down our losses and allow us to scale up when trading is
+[  548.86s ->   553.58s] in our favor. And we can do that automatically as well through the options auto trader. But not only
+[  553.58s ->   559.34s] that, we can also do market crash risk. The same way that newer cars have an automatic braking system
+[  559.34s ->   563.30s] that before they run into a wall or before they run into another car, the brakes start applying.
+[  563.30s ->   568.72s] Well, we have the same system inside the options auto trader, which is where if the market is
+[  568.72s ->   575.38s] overextended and starting to come back, we can get out of our trades, thus applying a braking system
+[  575.38s ->   580.10s] so that we take small losses and even close some profits before the market completely turns down.
+[  580.58s ->   585.98s] So again, this will not catch every market crash, but it will help you tremendously and cut down
+[  585.98s ->   590.84s] on a ton of losses you should have never had. And again, this is done through the indicator,
+[  590.84s ->   595.28s] which I'll be showing you specifically through the one that you get as a coaching client later
+[  595.28s ->   599.24s] when I get into the four core bot section. And last but not least, I did mention the additional
+[  599.24s ->   605.34s] emotional risk. Well, we fix this by adding rules. Our bots in the options auto trader are based on
+[  605.34s ->   611.36s] rules. We plug in the rules, do this, do this, do that. And it does it without us getting in the way
+[  611.36s ->   615.78s] and interfering and allowing our emotions and fear and greed to chase or to stay in the trades too long.
+[  615.78s ->   621.38s] So we set up the rules and it enters based on those rules, just like an assistant who has no
+[  621.38s ->   625.72s] emotions will only do what you tell it. It's pretty great. And again, we have other ways to
+[  625.72s ->   630.60s] control risk, like setting up buying power limits on the bot to make sure that it never overtrades
+[  630.60s ->   636.56s] us as individual traders can definitely overtrade. But if we, uh, with a, with a sound mind set that
+[  636.56s ->   641.40s] limit, then it's going to be set for life for that box that we make sure we stay within our trading
+[  641.40s ->   646.06s] limits. And we also get to fully see into the bot whenever we want to change something. So we know
+[  646.06s ->   652.96s] what's going on and how is it doing it? So it's fully transparent. So this process of using automation
+[  652.96s ->   659.76s] to help eliminate manipulation risk, market crash risk, volatility risk, and emotions is amazing. It will
+[  659.76s ->   666.08s] help you remove 90% of your risk, but here's the problem. Here's probably why you're here. Too many people
+[  666.08s ->   671.32s] are still losing money. Even with all these safeguards attached, they're losing way less than they used
+[  671.32s ->   678.50s] to, but they're still losing money. And that's because they really only rely on one strategy. Guys, there
+[  678.50s ->   684.76s] are four different types of markets, which means you should have four core bots. Okay. This is the story
+[  684.76s ->   691.88s] behind this is, um, around the most recent crash back in March, I was like, okay, what are the best
+[  691.88s ->   697.98s] options auto trader users doing across the 800 plus? Now people have their accounts plugged in
+[  697.98s ->   704.22s] anywhere accounts from 10,000 to 3 million plus account sizes of the people doing the best
+[  704.22s ->   710.14s] specifically in these hard markets. What are they doing? And the thing is, is they had three to four
+[  710.14s ->   717.42s] bots running where each bot was specifically designed to profit in different markets. So instead of relying
+[  717.42s ->   722.10s] on one bot, like attaching yourself to the one, one, two strategy or attaching yourself to the
+[  722.10s ->   727.42s] strangle strategy, they said, all of these strategies are great, but in their own respective
+[  727.42s ->   732.94s] markets. And so I understood that. And I was like, okay, let's condense this down into a system,
+[  732.94s ->   738.30s] into a plan. And that's what I was using that allowed me and really helped me to get through that
+[  738.30s ->   743.90s] tough period we were having by making money on the way down, offsetting losses and allowing my trades to
+[  743.90s ->   750.40s] recover because I had the plan, which was amazing. And so this is what I call the four core bots setup.
+[  750.88s ->   755.92s] So let's get into it. Number one, you need a bullish bot. You need a way to profit and uptrending
+[  755.92s ->   760.84s] markets. This is going to be things like your one, one, one strategy, your one, one, two strategy,
+[  760.98s ->   766.20s] your put selling strategy, or maybe even a put credit spread for smaller accounts, whatever it is,
+[  766.24s ->   771.48s] those are bullish strategies that work amazingly well, profit very fast. And I love them,
+[  771.48s ->   777.02s] but they need to be contained and only used in uptrending markets. We also have bearish bots,
+[  777.08s ->   782.68s] the profit and downtrending markets. When the market is going down, we should be using bots
+[  782.68s ->   786.28s] that take advantage of that. Those are going to be things like put debit spreads or just outright
+[  786.28s ->   789.84s] buying a put. Because as mentioned, if we buy a put, it profits as the market goes down,
+[  790.14s ->   796.22s] can easily go up 200, 300, 400, 500%. If done correctly and put debit spreads allows to define
+[  796.22s ->   801.34s] our risk, but give us a large payout to the downside, which work as well. We also have sideways
+[  801.34s ->   806.60s] bots. This is what I'm going to call my optional bot. If you have a large enough account size,
+[  806.80s ->   812.52s] we're talking closer to a hundred thousand or more, you can introduce sideways bots to kind of
+[  812.52s ->   818.60s] juice up returns and neutral markets. But if you're trading around 25 to $50,000, instead,
+[  818.84s ->   824.96s] you're going to want to stick to having a bullish and bearish bot just because you don't have the funds
+[  824.96s ->   830.86s] to properly allocate a sideways bot. So I personally use sideways bots. I love them. But if you're trading
+[  830.86s ->   835.50s] with a smaller account size under 50,000, stick to bullish and bearish, and then you'll just kind
+[  835.50s ->   840.42s] of run them together when you're in a neutral market instead, kind of creating the same type
+[  840.42s ->   847.16s] of profit outcome. And last but not least, I call this a mix of free money bots or fun bots,
+[  847.30s ->   853.04s] whatever you want to call them. They're F bots. Just kidding. That sounds wrong. But these bots are
+[  853.04s ->   859.20s] designed to have fun and scratch it. So what I discovered is I was always helping people build out
+[  859.20s ->   864.42s] strategies and things like that. And they would always be cool. This is amazing. But this zero
+[  864.42s ->   869.58s] DTE strategy is very fun and I want to do it. But the problem is that would pull them into a zero DTE
+[  869.58s ->   874.28s] strategy because they could see daily profits, but then they would get crushed. I'm like, okay,
+[  874.30s ->   878.96s] we can't rely on that as a main income source. That's why we're building out the bullish bots,
+[  879.08s ->   886.18s] the bearish bots, the sideways bots. And that is where 80 to 90% of your allocated money should go.
+[  886.18s ->   892.38s] And then you can have a small fun bot. We're on the side, like a zero DTE, one DTE, something like
+[  892.38s ->   897.74s] that, which is a high conviction trade. And you're doing that to make some money for fun. It's just
+[  897.74s ->   903.62s] scratching the edge. It's just the daily fun while your bullish, bearish and sideways bots are your
+[  903.62s ->   908.96s] consistent, reliable, long-term strategies. And so those are the buckets that I found work best
+[  908.96s ->   913.72s] and that I've been using myself. And so we're going to build out the bullish, the bearish,
+[  913.72s ->   917.72s] the sideways. And if you want to do a zero DTE strategy, or you want to use one of my personal
+[  917.72s ->   925.14s] fun bots, you can as well. So how do we know when to use each bot? So this is where I went in and I
+[  925.14s ->   930.46s] took some time. Again, this is built, like the base of it is built off an indicator that I built
+[  930.46s ->   936.36s] back in 2018. This indicator that I built in 2018 saved me from a lot of crashes and saved so many
+[  936.36s ->   943.24s] other traders. This indicator, I actually have sold over 15,000 people back in 2020. That was my main
+[  943.24s ->   948.36s] thing. Cause this indicator helps in so many ways, not just option selling, but also investing.
+[  948.84s ->   954.68s] But I tweaked it a bit, made it easier to read and easier to understand by adding colors and things
+[  954.68s ->   959.48s] like that. And that's what I call my market analysis indicator. And this indicator is only available to
+[  959.48s ->   964.14s] you guys as coaching clients, which is awesome. It's now available on trading view and thinkorswim,
+[  964.20s ->   969.58s] depending on what you trade on. But what it shows us is what trend in the market that we are in
+[  969.58s ->   975.74s] so that we know how to take advantage of it. So if we look at this, we have our middle zone. This
+[  975.74s ->   981.42s] middle zone is these gray outer lines. Again, we have a green zone in here and a red zone in here,
+[  981.42s ->   988.00s] but this is where most trading activity is going to happen. When we break out into the upper red,
+[  988.14s ->   994.26s] that means we're overextended. The market is likely to pull back and crash pretty hard. And so when it
+[  994.26s ->   999.14s] breaks into this zone, we're probably going to see it revert back down to the middle. Same thing with
+[  999.14s ->  1004.18s] the blow. If we go into this green zone here, it means we're too far down and we're probably going
+[ 1004.18s ->  1010.12s] to snap back up. Okay. If we look here, we broke into the green here and here and we snapped up,
+[ 1010.20s ->  1014.84s] broke into the green here, snapped up, broke into the green very far. Again, the further you go down,
+[ 1014.90s ->  1019.18s] it's like a rubber band. The further you stretch it, the faster it snaps. So you can see we stretch
+[ 1019.18s ->  1024.36s] down here very far and then we shot back up. Same thing here happens to the upside. If we get into
+[ 1024.36s ->  1028.90s] this upper range, we then pull back, upper range, pull back, upper range, kind of slow down. And then we
+[ 1028.90s ->  1035.26s] had that drop. And so those upper red and greens are our extreme zones where we know the market's
+[ 1035.26s ->  1040.58s] going to pull back in. And then inside of here is where we see our normal consistent trends.
+[ 1040.78s ->  1046.44s] So we see an uptrend here in this green zone. This red zone will be a consistent downtrend.
+[ 1046.90s ->  1051.24s] It will stay in the green zone a lot more than it'll stay in the red zone. Green zones,
+[ 1051.72s ->  1057.12s] uptrends tend to be nice and slow and downtrends tend to be faster. So your bearish boss will probably
+[ 1057.12s ->  1061.70s] only be running for two weeks to a month at a time, while the uptrending bots will run much
+[ 1061.70s ->  1067.90s] longer, multiple months, even a year or so in this instance right here. So that's how we kind of
+[ 1067.90s ->  1073.42s] understand where the market is trending. When we take those two things together, we use our bot
+[ 1073.42s ->  1078.44s] allocation matrix to be where at this part of the band, the last 30 days, the market has been trending
+[ 1078.44s ->  1083.62s] this way, which tells us what our allocation is. And so that is the four core bot strategy.
+[ 1083.62s ->  1090.76s] Now, the question then comes into, okay, cool. What if I have my bots allocated a certain way
+[ 1090.76s ->  1095.46s] and the trend changes? Great question. I want to make sure I answer this because this is very
+[ 1095.46s ->  1102.32s] important. Every 30 days, we go through a system of reevaluating the bots, looking at where the
+[ 1102.32s ->  1109.48s] market is now and making sure our bots align with the current market. So that's just a 30 day checkup
+[ 1109.48s ->  1115.86s] process, which is awesome. And it's a way to keep our accounts in line. There's this process that
+[ 1115.86s ->  1122.62s] huge hedge funds do. It's called portfolio rebalancing essentially. But studies have shown
+[ 1122.62s ->  1128.56s] that it helps you dramatically increase performance while decreasing risk by allocating on a consistent
+[ 1128.56s ->  1132.60s] basis. And so we're going to do the same thing with our bots. On a 30 day basis, we're going to
+[ 1132.60s ->  1137.12s] change how they're allocated based on where the market is. Some months, we may not have to change a
+[ 1137.12s ->  1142.14s] thing. Other months, we will have to adjust it. Now, if the trend changes, and when I mean trend
+[ 1142.14s ->  1148.96s] changes, this is exactly what I mean. I mean, if the market goes from one color band to another color
+[ 1148.96s ->  1155.94s] band. So if we go from the green to gray green, or we go from green to red or red to green, we make
+[ 1155.94s ->  1164.18s] a change, we should also go on and change our bots allocation. So that's the way you're going to want
+[ 1164.18s ->  1170.28s] to run it. Now, when these changes happen, what we're going to do is we're going to keep our current
+[ 1170.28s ->  1176.40s] trades on because ideally, there's a stop loss on them. So we're going to let them run in hopes that
+[ 1176.40s ->  1180.10s] hey, maybe this trend is just a quick change, we're going to let those trades run out because they could
+[ 1180.10s ->  1184.24s] win, which is going to be great. But we're going to turn the bot off so that we're no longer entering
+[ 1184.24s ->  1188.36s] let's say bullish trades. And now we're going to turn on our bearish trades. So we have these trades
+[ 1188.36s ->  1193.12s] hoping that they recover because a lot of times they just do. And then now we have our bearish bots that
+[ 1193.12s ->  1197.88s] are making money as the market goes down to help cover any losses. And that's how we kind of do it.
+[ 1197.90s ->  1203.06s] We shut off one bot, turn on the other. And that's how we keep shifting through these trends. And it's
+[ 1203.06s ->  1208.46s] awesome. Now the next question is what returns can I expect from this? I want to make sure to set proper
+[ 1208.46s ->  1215.06s] expectations here. Okay. On, let me first say, I realized I forgot to put this in here, which is very
+[ 1215.06s ->  1222.40s] important. I am not a financial advisor. I am not registered anything. I probably
+[ 1222.40s ->  1228.78s] it's not someone you should reference or refer to when you're talking to a tax expert either,
+[ 1228.86s ->  1234.26s] because I don't know taxes or a financial advisor. So if you want specific personalized advice
+[ 1234.26s ->  1240.44s] and a legal way, please go consult an expert. I am not. This is purely for education and teaching
+[ 1240.44s ->  1246.02s] how to properly implement the options auto trader software. So I hope everybody gets that. If you're
+[ 1246.02s ->  1249.62s] here, you probably understand that, but I just want to make it clear one time. So I cannot guarantee,
+[ 1249.62s ->  1254.08s] nor will I ever guarantee returns because I can't control the market. But when we're looking
+[ 1254.08s ->  1261.04s] at averages here, average returns, we're looking to expect is about a, it's about a 3% return with
+[ 1261.04s ->  1268.46s] futures per month. And if you're doing just like stocks and ETFs, you're looking for a 1% return a
+[ 1268.46s ->  1272.72s] month. Now, most of you might be saying, that's awesome. That's what I'm looking for, which is
+[ 1272.72s ->  1278.30s] great. You're the right person. If you're saying that's way too low, you're not doing the math,
+[ 1278.30s ->  1284.12s] a 3% return per month on average is a 36% return a year, almost a 40% return a year.
+[ 1284.48s ->  1291.10s] So that's the targets. Now, when the market is doing very good, I have easily seen five to 6%
+[ 1291.10s ->  1297.02s] returns on futures accounts and three to 4% returns on normal stock accounts. So when we're inside the
+[ 1297.02s ->  1303.06s] zone where the market is where it typically is 80% of the time up trending, we can do easy five,
+[ 1303.06s ->  1310.06s] 6% a month. But what happens here is now that we're adjusting for trend changes, we might still
+[ 1310.06s ->  1315.26s] lose money, but it's very, it's, it's, it's very small compared to what it used to be because sure
+[ 1315.26s ->  1318.78s] we have our trades that are losing, but we also have our bearish spots that are now making money
+[ 1318.78s ->  1323.74s] on it. Then we're able to see where the market bottoms out. We're able to get in and offset a
+[ 1323.74s ->  1328.32s] lot of losses and actually make profits in the same way. You can see here, I shut off my bullish
+[ 1328.32s ->  1333.96s] spots in this time, my bearish spots got turned on. And now that we're here, I'm back to profit,
+[ 1334.52s ->  1341.04s] right? I'm at a, uh, they just closed on Sunday and I got to a $2,000 profit from here to here.
+[ 1341.40s ->  1346.72s] So instead of losing thousands, I did have to hold a bit longer, but that process allowed me to not
+[ 1346.72s ->  1350.42s] lose money along the way. And so that's why I'm teaching this four core bots because I've actually
+[ 1350.42s ->  1354.60s] seen it play out in a real crazy market. And I want to make sure that you guys implement this too.
+[ 1354.60s ->  1358.78s] So I just want to make sure I set proper expectations. Uh, again, each month is going
+[ 1358.78s ->  1363.66s] to vary, but that is kind of what your target and your goal should be. Sweet. Now the next question
+[ 1363.66s ->  1369.42s] is, okay, it's cool that we can update this on a 30, on a 30 day basis and that we can actually
+[ 1369.42s ->  1375.04s] adjust when the trend changes, but is there a way to automate the allocation changes? And the truth is
+[ 1375.04s ->  1380.82s] not right now. So currently, as I mentioned, we, we follow a monthly checkup process or when the
+[ 1380.82s ->  1385.94s] market changes, what part of the band it's in, we change our allocation, but there are plans right
+[ 1385.94s ->  1391.16s] now in the process, I'm working on building it for options, profit, accelerator, coaching clients
+[ 1391.16s ->  1398.16s] only to have this automatic allocation adjustment, which means that you can say, Hey, during this type
+[ 1398.16s ->  1402.82s] of market, I want this allocation to this bot. I want this allocation to this bot, whatever. So
+[ 1402.82s ->  1406.84s] they can automatically change. This is a pretty in-depth feature though. So give it about a month or so,
+[ 1406.84s ->  1409.94s] but that's, what's coming for you, for you guys and only for you guys for being a part of this
+[ 1409.94s ->  1415.52s] program. So I hope you're excited for that. Okay. So that is the game plan. That is how the four
+[ 1415.52s ->  1420.80s] core bots work. Please go put any questions you have in the Q and a part of zoom. And we'll get
+[ 1420.80s ->  1426.98s] to that in just a second, but that was the training portion of this live session. Now I want to dive into
+[ 1426.98s ->  1433.70s] what, what we're looking at over the next 30 days. Okay. So over the next 30 days, stop a second. I hope
+[ 1433.70s ->  1437.78s] you enjoyed this training replay from one of my monthly live trainings inside of my coaching
+[ 1437.78s ->  1442.72s] program, um, which basically I help people not only automate their training to reduce a ton of
+[ 1442.72s ->  1448.06s] options risk, but also adjust to the market. So they consistently profit in all markets without
+[ 1448.06s ->  1453.50s] having one huge loss that wipes out months of profits. Okay. And just because of that, because
+[ 1453.50s ->  1457.36s] I taught you on this training and I know you learned a lot, I'm absolutely confident that you could
+[ 1457.36s ->  1463.20s] take everything we covered here today and on your own, go out and put it into action and get results.
+[ 1463.20s ->  1467.52s] You previously thought were not possible. I am certain just with the information we covered
+[ 1467.52s ->  1473.44s] on this training today that left your own resources, time and effort. You could make a go at this and in
+[ 1473.44s ->  1478.20s] a way that most people aren't be able to see results. And if that were your only option,
+[ 1478.20s ->  1483.56s] that would be something that you should absolutely do. But what if there was another option, an option
+[ 1483.56s ->  1489.06s] that allowed us to go at this together, a chance to go deeper than we can in one measly recorded
+[ 1489.06s ->  1495.40s] training. What if I played an active role in your results, took responsibility for your success and
+[ 1495.40s ->  1502.82s] had an obligation to ensure you got an outcome? How would that make things different? Well, do you think
+[ 1502.82s ->  1509.72s] that in that situation, I could empower you with any and all resources at my disposal to stand the deck in
+[ 1509.72s ->  1517.14s] your favor and make success almost guaranteed? If I had these shortcuts, support systems and
+[ 1517.14s ->  1522.52s] additional insights to go even deeper and more thoroughly into this to actually get you a result
+[ 1522.52s ->  1529.48s] that you want, desire and quite frankly deserve. If I had such an option, would you love to hear more
+[ 1529.48s ->  1535.56s] about it and what it could do for you? If yes, that is why it's with great pleasure. I introduce you to
+[ 1535.56s ->  1540.34s] the Oat Profit Accelerator program. Here's what you're going to get inside of this program. You're
+[ 1540.34s ->  1545.40s] going to get access to the Options Auto Trader, which is the software we use to automate any option
+[ 1545.40s ->  1549.50s] selling strategies so you can actually have consistency and remove your emotions. So you'll
+[ 1549.50s ->  1554.88s] be able to automate every options trading strategy in the book from selling puts to selling calls,
+[ 1555.02s ->  1561.38s] buying puts, buying calls, 1-1-2s, 1-1-1s, iron condors, strangles, straddles, credit spreads,
+[ 1561.48s ->  1565.34s] debit spreads, anything you want to automate, you can with this software and it's super easy.
+[ 1565.34s ->  1570.38s] Here's David saying here, there is no FOMO because the Options Auto Trader places the trade for you
+[ 1570.38s ->  1574.66s] within the rules you choose so you don't have to worry. Did I enter at the right time or miss out
+[ 1574.66s ->  1578.26s] on a trade? Guys, how many times have you felt like you've missed out on a trade or you didn't
+[ 1578.26s ->  1583.02s] do it right because your emotions got in the way? Well, no more is that a problem because of
+[ 1583.02s ->  1587.66s] automation. And he says by using the Options Auto Trader, you take emotions out of the equation
+[ 1587.66s ->  1592.14s] and by strictly following rules, you're able to be profitable. Give the Auto Trader a try. And so I'm
+[ 1592.14s ->  1595.98s] going to give you the software for free as a coaching client. But not only that, Bruce here
+[ 1595.98s ->  1601.24s] says this system is next level. He said for people outside the US like me, using the Auto Trader means
+[ 1601.24s ->  1606.56s] that I can trade without having to worry about what the market does while I'm asleep. Because
+[ 1606.56s ->  1611.22s] for him, they're in New Zealand and the markets close. And so now the Auto Trader system works for
+[ 1611.22s ->  1616.04s] him. So he literally gets to wake up to profits. Guys, if you never heard Warren Buffett, one of the
+[ 1616.04s ->  1620.18s] richest men in the world, say this, he said, if you can't find a way to make money while you sleep,
+[ 1620.18s ->  1624.22s] then you're going to be destined to work forever. And that's exactly why we need to use this system.
+[ 1624.52s ->  1628.68s] A system that only makes us money, but protects our accounts even overnight while we sleep.
+[ 1629.40s ->  1633.54s] And last minute, we have Steve here saying, I love this service. It takes the work out of
+[ 1633.54s ->  1637.54s] income generation from options selling. As we know, options selling can take a lot of time,
+[ 1637.62s ->  1642.20s] a lot of stress, a lot of time on the screen. But now with automation, we can remove that time.
+[ 1642.28s ->  1648.40s] So you're going to get access to my Options Auto Trader, a $5,000 value for free when you join
+[ 1648.40s ->  1652.86s] coaching. But not only that, you get access to our private bot library, which are the bots to use
+[ 1652.86s ->  1657.66s] in every type of market that are pre-built for your account size and what you need. I even have
+[ 1657.66s ->  1661.84s] a few bots in there that have 100% win rates that you can definitely go deploy right now as soon as
+[ 1661.84s ->  1666.64s] you join. And again, these are the same bots that helped Neil make over $1,300 in his first 30 days.
+[ 1666.74s ->  1671.84s] Ryan made $3,500 in his first 30 days. Roman made $100 in his first 30 days. He never traded
+[ 1671.84s ->  1677.66s] options before. David make $1,000 and Dean make $700 in his first 30 days. And this works for
+[ 1677.66s ->  1681.38s] everyone. Option traders with a strategy, option traders without a strategy because we give you
+[ 1681.38s ->  1685.68s] our proven bots. That works for people doing undefined risk trades, define risk trades, credit
+[ 1685.68s ->  1690.72s] trades, debit trades, calendar strategies, option traders, your trade stock options, ETF options,
+[ 1690.84s ->  1695.48s] futures options, index options, people who are new to options but still want passive income,
+[ 1695.84s ->  1699.56s] and someone who wants to sell options but hates the risk that comes with it.
+[ 1699.56s ->  1705.68s] And so you're going to get access to my options auto trader software, my private bot library that
+[ 1705.68s ->  1710.50s] nobody else has access to. And you're also going to get, I was like, what else do they need? They
+[ 1710.50s ->  1715.14s] probably need support. So not only do you get the resources you need, the tools designed to help
+[ 1715.14s ->  1719.86s] you profit, but you also get one-on-one support and setup. That means a one-on-one call with me to
+[ 1719.86s ->  1724.72s] get set up and going. One-on-one bot review to make sure your bots are set up correctly and in line
+[ 1724.72s ->  1729.86s] with your personal income and risk tolerance levels. Monthly bot and account checkup to make
+[ 1729.86s ->  1734.46s] sure that your account is always safe and good to go and in line with the market. Weekly office
+[ 1734.46s ->  1738.72s] hours coaching so you can jump on a call anytime you need help with us and a community groove chat.
+[ 1738.96s ->  1744.20s] So if you want access to the software, the bots and world-class support and a private community
+[ 1744.20s ->  1751.72s] with a ton of bonuses, that's a total value of $21,970. Let's talk. Okay. If you're interested
+[ 1751.72s ->  1754.88s] and want to see if this is a good fit for you, click the button down below to apply.
+[ 1755.24s ->  1760.78s] If you have more than 50,000 in your account and are tired of losses and a lack of consistency,
+[ 1760.78s ->  1765.78s] you knew that if you just had consistent results, it would be, it would be a world-class changer for
+[ 1765.78s ->  1769.08s] you. You know, you had more time with your family, less time on the screen, you have more peace of
+[ 1769.08s ->  1774.24s] mind, then click down below and apply. And I would love to talk, talk with you about it. And if you
+[ 1774.24s ->  1779.60s] have at least $2,000 to $10,000 to invest in yourself and your options trading, click the link down below to
+[ 1779.60s ->  1785.14s] apply. Our programs range from $2,000 to $10,000, depending on how much support you want and need.
+[ 1785.40s ->  1789.36s] And I would love to be able to help you out and figure out what is best for you. So click the
+[ 1789.36s ->  1793.60s] button down below to apply. If you're a good fit, we'll jump on and we'll truly want to help you and
+[ 1793.60s ->  1797.36s] see where you're a good fit. If we can't help you, we'll let you know, but if we can, we'll make sure
+[ 1797.36s ->  1803.10s] you go to the right place. So apply for a call down below. We only take five new coaching clients a month
+[ 1803.10s ->  1808.06s] because of how much attention we give each person. So book a time down below and claim your spot before
+[ 1808.06s ->  1814.02s] they're all gone. Now, if you're tired of one huge loss, wiping out months of profits and having no
+[ 1814.02s ->  1817.92s] free time when you thought you were supposed to be enjoying your retirement, or you want to turn
+[ 1817.92s ->  1824.80s] your $50,000 account into a reliable stream of passive income that prints $2,000 or more every
+[ 1824.80s ->  1831.04s] single month, apply for a call down below. And last but not least, just so you know, I can only handle
+[ 1831.04s ->  1835.92s] five new coaching clients a month because of how much energy I pour into everyone, how much I actually
+[ 1835.92s ->  1839.96s] review your accounts, get on calls with you and make sure you're set up to success. I like to make
+[ 1839.96s ->  1844.32s] sure you have all the resources to help guarantee what you're trying to do. And if you're serious,
+[ 1844.32s ->  1850.18s] or you're just interested in need more information, apply for a call down below. There's only five spots
+[ 1850.18s ->  1854.70s] per month. Do it right now. Guys, I hope you enjoyed this training. I hope you learned something. If
+[ 1854.70s ->  1858.84s] you're even a little curious, please click the apply button because I want to talk to you and see if we
+[ 1858.84s ->  1863.24s] can help you. If we can, we'll let you know. If we can't, we tell you we won't. We only work with people
+[ 1863.24s ->  1868.20s] who are a great fit, who can actually help. And so if that's you, please click apply and we'll let
+[ 1868.20s ->  1872.18s] you know. I guys hope you enjoyed the training and click down below and apply and I'll see you soon.

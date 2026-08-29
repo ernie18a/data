@@ -1,0 +1,219 @@
+[    0.00s ->    28.72s] Hey, IMP options traders. I'm going to walk through the famous 1-1-2 trade today and how you can use it to generate monthly income as well as three different hedges you can turn this trade into. So please stay tuned because I'm going to show you what this trade is, the back test to confirm it works, show you a real walkthrough of it in my broker, and then I will actually show you how to automate this trade. So diving in, what does this look like on the chart? Well, if you just watched the 1-1-1 trade, this is the big brother to that trade, the 1-1-2.
+[   28.72s ->    56.42s] Well, we're going to do the same thing. The base of this trade is simply selling puts. So I'm going to pick a level I don't think the market will go down to. So for instance here, as long as the market stays above this level, I make money. That's what the base of this trade is. We are selling two puts, and as long as the market stays above that, we make money. If the market goes up, we make money. If the market goes sideways, we still make money. If the market goes down, we make money, given we hold until expiration. That is how these trades work. So that is how this works as well.
+[   56.42s ->    69.66s] The only difference is we're selling two this time instead of when we're just selling one put. So we're selling two puts, then we're coming up a bit closer and creating a put debit spread, which gives us some downside protection.
+[   69.86s ->    80.64s] What is the benefit of this downside protection? Well, it means that if the market starts going against us, the market starts dropping, these puts are going to go down in value and lose us money.
+[   80.64s ->    90.06s] Well, they're actually going to go up in value, but we sold them. So we're going to be making a loss if the market goes down. However, these put debit spreads go up as the market drops.
+[   90.20s ->    97.20s] So this is going to slow our P&L loss so that we can stay in the position longer and see less volatility.
+[   97.20s ->   105.00s] However, this put debit spread right here compared to the number of puts that we have naked won't offset it completely.
+[  105.00s ->   112.76s] So you still will see a loss as the market moves down, but it will slow it down compared to just having two naked puts and no put debit spread.
+[  112.90s ->   119.92s] So now that we kind of know the setup of this trade, what does this trade look like and what are the rules that I follow for?
+[  119.92s ->   128.22s] Well, again, these are the rules that I personally follow. So many other people trade them in different ways, but the way that I'm going to trade it right now is just like this.
+[  128.22s ->   142.06s] I like to target a 90 DTE, which means 90 days until expiration. Why? Because it prevents gamma risk, the amount in option trades, the amount that the price will move during the trade so that my profit is more consistent.
+[  142.06s ->   152.40s] I still have a high amount of data I can collect. And it's just a good middle ground between 120 days and 45 days that tasty trade preaches.
+[  152.54s ->   161.30s] So 90 DTE is the strategy that I like. Then I'm going to do, I'm going to sell the two puts here at a seven delta.
+[  161.80s ->   165.46s] Again, this is what I personally do. You can go all the way down to five if you want.
+[  165.52s ->   168.18s] I'll show you what that looks like here in a second, seven delta puts.
+[  168.18s ->   175.12s] And then I'm going to do a put debit spread that is 25, 22 or 23, something like that.
+[  175.22s ->   182.00s] So 25, 22 put debit spread. If you stay tuned, I'll walk through this on a broker so it makes more sense.
+[  182.64s ->   186.34s] I target a 75% profit target. That's my minimum profit target.
+[  186.62s ->   193.90s] I will take more sometimes, but 75% is my minimum here as my profit target, which means that if I collect $1,000 for this trade,
+[  193.90s ->   198.00s] I will close it when I have a $750 unrealized profit.
+[  198.60s ->   207.24s] Now, 400% stop loss is going to be the same thing I use for all my trades, which means that if I have a $1,000 position that I get into,
+[  207.34s ->   210.60s] then once I have a $3,000 loss, I'm going to exit there.
+[  210.68s ->   214.02s] And that would be equivalent to a 400% loss.
+[  214.72s ->   216.10s] So this is how the trade is structured.
+[  216.10s ->   221.86s] And again, this trade has a 95% plus win rate, depending on how you structure it.
+[  221.90s ->   223.68s] But as always, don't take my word for it.
+[  223.94s ->   225.18s] Let's dive into the backtest.
+[  225.30s ->   228.74s] Here's the backtest exactly as I walked you through it.
+[  228.96s ->   231.16s] We sell two seven delta puts.
+[  231.60s ->   235.30s] We create a put debit spread at 25 delta and 23 or 22, doesn't really matter.
+[  236.14s ->   238.38s] We're going to do this backtest for 10 years.
+[  238.58s ->   241.26s] We're targeting the 90 days until expiration.
+[  241.44s ->   242.26s] This is trading daily.
+[  242.26s ->   245.90s] Again, not something you're going to actually do, but it gives us the best backtested results.
+[  246.40s ->   248.40s] We have a 75% max profit.
+[  248.52s ->   251.00s] Again, if you extend that out further, you're going to make more money.
+[  251.08s ->   253.04s] But I like 75% to be my minimum.
+[  253.64s ->   255.30s] And then a 400% stop loss.
+[  255.38s ->   256.52s] So what are our results?
+[  256.60s ->   258.36s] We see a $3 million.
+[  259.08s ->   260.16s] Oops, I messed that up.
+[  260.48s ->   261.36s] Too late now.
+[  261.96s ->   267.50s] We see a $3 million total return, which is insane.
+[  267.56s ->   270.44s] But also we're trading that every single day and no real person is going to do that.
+[  270.44s ->   274.34s] But still, an average profit of $1,200 per trade.
+[  274.34s ->   277.52s] Who here would like to make over $1,000 per trade single trade?
+[  278.00s ->   280.68s] Just like the 111, it only takes about a month.
+[  280.76s ->   284.18s] It takes 36 days in this trade to see that profit.
+[  284.68s ->   288.02s] So again, we hit that 75% profit target at about 30 days or a month.
+[  289.40s ->   292.46s] And then you can see here we have about 100% return on capital.
+[  292.60s ->   296.28s] Again, this isn't accurate because it doesn't know what the buying power is of this.
+[  296.52s ->   299.58s] It's going to be roughly around a 40% to 50% return on capital.
+[  299.58s ->   303.20s] Now, let's look at the backtest and compare it to the market.
+[  303.36s ->   305.30s] It will be outperforming the market.
+[  305.40s ->   309.54s] But the backtest doesn't know this complex trade, what the buying power is.
+[  309.58s ->   310.24s] So it looks different.
+[  311.12s ->   313.92s] Anyways, you can see the areas where it fails.
+[  313.96s ->   316.70s] When the market crashes or dips down hard.
+[  316.90s ->   320.82s] Now, when we dip down slow, we tend to do well.
+[  320.98s ->   323.90s] But when we have these hard crashes, that is when we fail.
+[  323.90s ->   328.84s] Why? Because volatility increases, our puts will increase in value, and then we're going
+[  328.84s ->   329.60s] to see a loss.
+[  329.68s ->   333.84s] Because when it slowly goes down, we have that hedge that protects us to the downside.
+[  334.06s ->   335.40s] And so that's why that hedge is good.
+[  335.82s ->   338.86s] And so again, how do we prevent these downside actions?
+[  339.00s ->   341.46s] Well, as always, we have our take profit.
+[  341.60s ->   342.68s] We have our stop loss.
+[  343.02s ->   344.38s] We have a, where is it?
+[  344.40s ->   346.34s] A 95% win rate.
+[  346.46s ->   348.26s] If we extend this out further, it'll be even better.
+[  348.34s ->   349.66s] Look, I'll show you what a five delta is here.
+[  349.68s ->   350.92s] I'll run that while I work on this.
+[  350.92s ->   355.28s] And now, how do we get out to avoid those little moves down?
+[  355.48s ->   360.26s] Well, you can see here, we can't avoid every move down, but we can give a good idea for
+[  360.26s ->   360.94s] when they're coming.
+[  361.34s ->   366.52s] So these trending band indicator, which you'll unlock in the next section of the classroom
+[  366.52s ->   370.38s] when you're active in this community, is the trending band indicator.
+[  370.74s ->   374.70s] And so what you'll see is when we hit this upper range, the market is likely to pull back
+[  374.70s ->   375.22s] or crash.
+[  375.48s ->   380.48s] So when we hit this top blue line or cross back below it, we're going to exit all our long
+[  380.48s ->   384.34s] positions, which a 1-1-2 is a long position, for 21 days.
+[  384.60s ->   388.28s] So you can see here, we would have exited for 21 days and avoided this small little pullback.
+[  388.28s ->   391.58s] But what we're really looking at is times like this.
+[  391.80s ->   396.00s] When the market goes above this blue line and hits it, and we stay up for 21 days, we
+[  396.00s ->   399.06s] would have stayed out of this COVID crash for the 1-1-2 trade.
+[  399.48s ->   400.50s] Here, we would have stayed out.
+[  400.76s ->   403.30s] This is something we wouldn't have been able to avoid.
+[  403.30s ->   410.10s] But what we can do to help us in periods like this, and in periods like this, when the market
+[  410.10s ->   416.12s] is downtrending, is when we are close to these upper ranges, instead of exiting our positions,
+[  416.18s ->   418.62s] we can just make sure to have a lot of hedges on.
+[  418.84s ->   424.90s] So that when the market does drop, we see a huge profit that covers all our losses and
+[  424.90s ->   425.22s] more.
+[  425.40s ->   428.58s] So what are the ways we can hedge a 1-1-2 trade?
+[  428.72s ->   431.02s] Well, let me bring up my broker to walk you through that.
+[  431.02s ->   432.32s] So here is my broker.
+[  432.50s ->   433.52s] Let's walk through a trade.
+[  433.64s ->   436.44s] So I go to the 90-day mark, which is what I like to target.
+[  436.96s ->   440.76s] We're going to do the, you can see I recently put one on, so it's close to it.
+[  440.98s ->   447.20s] But the 25 delta we're going to buy, the 22 we're going to sell, and then the 7 delta
+[  447.20s ->   449.82s] right here is the one that we are going to sell two of.
+[  450.18s ->   452.42s] So just like that, that is a 1-1-2 trade.
+[  452.54s ->   458.58s] It costs about $8,000 of our buying power to put on, a max profit of almost $4,000.
+[  459.04s ->   461.40s] Let's look at the curve to see what this actually looks like.
+[  461.46s ->   462.60s] This is what it looks like here.
+[  463.04s ->   470.18s] If the market continues where it is or goes up, we'll make about $1,160.
+[  471.54s ->   475.32s] If it goes down at expiration, we'll make about $4,000.
+[  475.66s ->   482.58s] So that's the beautiful part of this trade, and it has a 98% profit, or probability of
+[  482.58s ->   483.36s] a profit.
+[  483.50s ->   488.84s] Now, moving on, what exactly, how can we turn these trades into hedges?
+[  489.12s ->   492.78s] Well, like I said, we like to target a minimum of a 75% profit.
+[  492.90s ->   493.08s] Why?
+[  493.20s ->   498.06s] Because when our overall trade is at a 75% profit, we can start taking off some of the
+[  498.06s ->   503.34s] profits, so much so that those profits will cover the cost of the hedges we're putting
+[  503.34s ->   503.56s] on.
+[  503.98s ->   507.98s] So once this trade gets to a 75% profit, here are three ways we can hedge.
+[  507.98s ->   513.66s] Number one is the default put debit spread hedge, which is where we close these two short
+[  513.66s ->   519.60s] puts because they take up most of our buying power, and it leaves us with a $2,000 hedge.
+[  519.90s ->   522.60s] So if the market were to drop, we'd make $2,000.
+[  522.86s ->   527.60s] That could help cover the cost of another 112 that ends up losing money.
+[  528.02s ->   532.58s] And we also get most of our buying power back from getting rid of these, and that means that
+[  532.58s ->   533.92s] we can put on another trade.
+[  533.92s ->   538.56s] Now, again, this is a great way to do it, especially if we have a lot of 112s on, because
+[  538.56s ->   543.90s] all these 112s, as they hit that profit, we have on all these hedges for free, and now
+[  543.90s ->   545.22s] we have a $2,000 hedge.
+[  545.56s ->   551.26s] Now, the thing is, that's great, and I would keep this on if we are located somewhere in
+[  551.26s ->   554.12s] the middle portion of that band when we're not at high risk.
+[  554.12s ->   554.42s] Why?
+[  554.52s ->   559.00s] Because it's a very cheap hedge to have on, and it's a decent amount of downside profit.
+[  559.00s ->   564.90s] But if we are at the upper part of that range, that trending band, that's when the likelihood
+[  564.90s ->   568.68s] of us pulling back is the highest, and we want better hedges, and this is not the best
+[  568.68s ->   568.98s] hedge.
+[  569.40s ->   574.86s] So another thing we can do, and my favorite one to do, is this one, where we can close
+[  574.86s ->   577.58s] the short put from the put debit spread.
+[  577.58s ->   583.04s] If we close this one, now you can see that it not only extends our downside all the way
+[  583.04s ->   590.64s] down to $4,015, which means the market can drop nearly 900 points, 20%, 30% drop, and
+[  590.64s ->   591.78s] we still make money.
+[  592.12s ->   592.86s] And look at this.
+[  592.96s ->   599.20s] We'll make about $18,000, $19,000 if we crash really hard.
+[  599.44s ->   604.32s] If we don't, if we crash slowly, we'll still end up making $4,000 to $7,000.
+[  604.32s ->   610.88s] That's still way better than we would do with the normal put debit spread hedge that I just
+[  610.88s ->   611.64s] showed you.
+[  611.74s ->   615.86s] And so that's amazing, and that's something we can do when we put on this trade.
+[  615.94s ->   620.40s] And so this is an amazing hedge to put on when we are up at that upper range because it
+[  620.40s ->   625.80s] gives us the higher profit to help cover any loss that happens if a crash were to occur.
+[  626.48s ->   627.86s] Now, what is the other one?
+[  628.04s ->   632.22s] Well, the other one is hard to display by clicking this and enabling it, but essentially we're
+[  632.22s ->   636.64s] going to close this put and we're going to close one of these, creating a very wide hedge.
+[  636.80s ->   639.36s] So let me kind of clear this position and show you.
+[  639.42s ->   646.54s] Basically, if we do that, we're left with the $25 put that we bought and we close the other
+[  646.54s ->   651.30s] sold put here from the put debit spread and we close one of the seven deltas, which means
+[  651.30s ->   653.18s] we're left with one seven delta.
+[  653.18s ->   658.04s] This creates a very wide, very large put debit spread.
+[  658.58s ->   664.98s] So you can see here that's a wide put debit spread that can have a max profit of $22,000.
+[  665.50s ->   670.10s] And even if it doesn't, as the market's crashing, we could make anywhere from $5,000 to $7,000
+[  670.10s ->   670.92s] to $9,000.
+[  671.26s ->   673.06s] This is another great hedge.
+[  673.26s ->   676.88s] Again, I prefer to just take off this one put because it's easier and we have about the
+[  676.88s ->   677.64s] same max profit.
+[  677.72s ->   682.12s] But these are three different hedges that you can put on to prevent downside risk when you're
+[  682.12s ->   688.24s] trading near the upper band, which is where you are at the highest chance of a pullback
+[  688.24s ->   689.34s] or a crash.
+[  689.76s ->   695.40s] So that's kind of how we justify that and adjust hedges and positions based on where we are
+[  695.40s ->   696.24s] at in the market.
+[  696.72s ->   699.54s] But not only that, again, we have stop losses.
+[  699.74s ->   701.02s] We have take profits.
+[  701.56s ->   706.54s] We have different hedges we can turn our trades into, but also sizing.
+[  706.84s ->   710.18s] Do not put more than 10% of your account into any one trade.
+[  710.18s ->   715.82s] So you can see here that this trade takes about $10,000 of buying power.
+[  715.94s ->   720.84s] So ideally, you want around $50,000 to $100,000 in your account to put on just one of these
+[  720.84s ->   725.84s] trades so that you're not oversized, over leveraged, and you can handle the daily fluctuation
+[  725.84s ->   728.44s] of the profit and loss moving around.
+[  728.96s ->   735.10s] Anyways, 112 is one of my favorite trades I do every single week on multiple different
+[  735.10s ->   735.48s] assets.
+[  735.48s ->   739.40s] So again, I highly recommend that you use this trade yourself.
+[  739.56s ->   743.38s] Now, again, let me show you how to automate this trade because that's what makes it amazing.
+[  744.04s ->   746.72s] So we're going to click Create New Auto Trader.
+[  748.20s ->   750.44s] We're going to connect our Tasty Trade account.
+[  751.14s ->   754.32s] Once you have connected your account, you simply go into 112 Strategy.
+[  754.50s ->   757.14s] Now, Tom King is the inventor of the 112 Strategy.
+[  757.14s ->   761.18s] He does trade a bit differently than I do, but he was the one who created this.
+[  761.28s ->   765.18s] So if you want his defaults preloaded, just click on this and it'll load exactly how he
+[  765.18s ->   765.70s] trades it.
+[  766.74s ->   770.40s] But I like to do this here, a 112 trade to start from scratch.
+[  770.78s ->   776.76s] I like to do the 25, 23, and then I like to do the 7 Delta, but change that as you want.
+[  776.76s ->   778.95s] I do it on ES.
+[  779.03s ->   780.63s] If you have a smaller account, do it on MES.
+[  780.97s ->   783.45s] I like to target the 90 days until expiration.
+[  783.69s ->   785.57s] Every single week on Wednesday is fine.
+[  786.97s ->   790.29s] 75% max profit, 400% stop loss.
+[  792.81s ->   798.23s] And what's amazing is, first off, brokers alone do not know how to handle this complex
+[  798.23s ->   798.67s] order.
+[  799.35s ->   804.71s] And also, you have to submit it in two different orders, but this auto trader does that for
+[  804.71s ->   804.93s] you.
+[  805.13s ->   806.95s] But not only that, you can't set up a stop loss.
+[  806.95s ->   810.63s] So you have to continuously watch this trade to make sure you're managing risk.
+[  810.69s ->   813.95s] But the auto trader will handle the stop loss for you on the overall position.
+[  814.35s ->   820.27s] Not only that, not only can it handle this, but once it hits the 75% profit target, it
+[  820.27s ->   822.55s] can turn this trade into any hedge you want.
+[  822.55s ->   829.83s] The normal PDS hedge, which is just keeping these on and closing these, or the triangle
+[  829.83s ->   833.93s] hedge, which is getting rid of this put and closing for a profit, then creating that
+[  833.93s ->   834.73s] triangle profit.
+[  834.73s ->   838.27s] Or the fat bastard hedge, which is the huge put debit spread hedge.
+[  838.41s ->   841.67s] You can turn it into any one of those, or you can just close the whole trade.
+[  842.03s ->   843.57s] Just like that, you can do that.
+[  843.85s ->   847.37s] And it's amazing how simple this is and how it handles it all for you.
+[  847.41s ->   850.73s] I'm just going to say turn it into a triangle hedge because we're near the top right now.
+[  850.73s ->   854.73s] Buying power allocation.
+[  854.73s ->   856.87s] Just put in 50,000 is what I'm going to do.
+[  857.01s ->   861.41s] And then enable market crash so that it gets me out of crashes before they happen and also
+[  861.41s ->   866.19s] helps me not be in trades or enter new trades when we're crashing.
+[  866.63s ->   869.31s] Just like that, I have an auto trader and I saved it.
+[  869.31s ->   875.49s] I can turn it on if I want, but just like that, boom, auto trader, Austin Bully, 1112 trade,
+[  875.61s ->   881.97s] ES, 25 put, 23 put, 7 put, Delta, and everything I need about the trade is right here.
+[  882.07s ->   886.33s] So guys, this is the 112 trade, how to automate and how to use it for monthly income.
+[  886.57s ->   888.99s] This is one of the greatest strategies around.
+[  889.11s ->   892.39s] So if you're not using it, please use it because you'll make a lot of money with it,
+[  892.45s ->   894.15s] especially if you manage risk correctly.
+[  894.15s ->   896.09s] All right, guys, see you in the next video.
+[  896.21s ->   896.99s] Thanks so much for watching.

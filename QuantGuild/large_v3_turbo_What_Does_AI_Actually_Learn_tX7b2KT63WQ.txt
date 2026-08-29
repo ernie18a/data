@@ -1,0 +1,75 @@
+[    0.46s ->     8.07s] No tech fintech startup in their right mind in a post-large language model world would pursue
+[    8.07s ->    15.59s] funding without using AI in their product in some way, or even just throwing AI in their company
+[   15.59s ->    21.03s] name. Yet, when we go to interview at these shops like Citadel, Jane Street, Two Sigma,
+[   21.69s ->    28.09s] the technical questions don't place priority on machine learning and artificial intelligence. Sure,
+[   28.09s ->    33.87s] you may get a question about an optimization scheme or a model here and there, but typically
+[   33.87s ->    39.57s] the priority is on fundamental probability and statistics. Why is this the case? Well,
+[   39.97s ->    45.27s] in this video, what I want to do is I want to talk about what AI actually learns and make a
+[   45.27s ->    51.03s] connection to these foundational topics in probability and statistics. To accomplish this,
+[   51.07s ->    54.65s] we're going to look at a couple of simple examples, and then we're going to make the extension to the
+[   54.65s ->    58.69s] real world where we're going to talk about the stock market and facial recognition as
+[   58.69s ->    64.29s] two separate classes of problems. Now, as always, this Jupyter Notebook will be available in the
+[   64.29s ->    69.63s] description below. I will also post it to the Quant Guild Library on GitHub, where you can find all
+[   69.63s ->    74.79s] of my Jupyter Notebooks and associated YouTube videos. At the top of this Jupyter Notebook, you
+[   74.79s ->    80.03s] will notice some of my related videos applying probability statistics and, of course, artificial
+[   80.03s ->    86.07s] intelligence to a variety of topics in finance, which will all be particularly relevant for this
+[   86.07s ->    90.63s] video. Moreover, if you are interested in quantitative finance but you do not know where to start,
+[   90.71s ->    96.05s] check out quantguild.com. Maybe you have a background in business, economics, or even computer
+[   96.05s ->   102.97s] science and you want to learn the necessary skills but aren't too sure where to look, then Quant Guild is
+[  102.97s ->   108.39s] for you. It has an adaptive practice engine so that you can get up to speed on all of the topics in
+[  108.39s ->   115.03s] math, probability, and, of course, finance, guided lessons, applied trading games, and even live
+[  115.03s ->   121.45s] classes with myself if you are interested in taking a deep dive into different topics like the pricing
+[  121.45s ->   128.03s] of financial derivatives or generating quantitative trading signals. In addition to live courses, Quant Guild
+[  128.03s ->   135.29s] members will soon have the opportunity to enroll in live sessions weekly with myself where I'll do a deep
+[  135.29s ->   141.95s] dive into a particular topic, but more on that later. For now, let's dive right in and start talking
+[  141.95s ->   149.11s] about what it is AI actually learns by beginning with random variables and the different outcomes of
+[  149.11s ->   154.21s] different types of random variables. First things first, when we're dealing with these types of
+[  154.21s ->   160.85s] mathematical objects, that is, random variables, we typically denote them using letters just like from
+[  160.85s ->   167.43s] basic algebra. Here I say Y is the outcome of a dice roll, X is the average value of a trading
+[  167.43s ->   173.79s] signal, and it's tempting to treat these quantities just like we would any other variable from, say,
+[  173.93s ->   181.21s] calculus, but they're not just numbers in the classical sense, right? If I said X is equal to 3,
+[  181.31s ->   186.43s] then X certainly is just a number, but here X is the average value of a trading signal,
+[  186.43s ->   193.29s] and it's a random variable, or we are classifying it as such, and that means that it follows a
+[  193.29s ->   199.27s] distribution. So there's no need to get our wires crossed here. Anytime we define a variable as a
+[  199.27s ->   205.13s] random variable, what we need to do is we need to treat it as a set of possible outcomes, not just one
+[  205.13s ->   211.23s] outcome. The best way to do that is just think of a distribution. So anytime you see a variable that's
+[  211.23s ->   217.91s] defined as a random variable here, Y and X, just think distribution, and what is the distribution?
+[  218.13s ->   224.25s] Well, I have two examples here. One is the average value of our trading signal, and the other is just
+[  224.25s ->   231.19s] a dice roll. This is a discrete random variable, and this is a continuous random variable, and these are
+[  231.19s ->   238.87s] what we would call the theoretical distributions for X and Y. That is, we are certain that the randomness
+[  238.87s ->   245.77s] of X and Y are governed by this continuous distribution on the right and this discrete
+[  245.77s ->   252.55s] distribution on the left. The outcomes themselves all have different likelihoods of occurring. So
+[  252.55s ->   257.95s] on the left, if we look at the discrete outcomes, all of these bars are the same height. So each
+[  257.95s ->   264.29s] outcome is going to have the same likelihood of occurring. On the right, that's not necessarily
+[  264.29s ->   270.57s] the case. The outcomes in the center are going to be more likely than the outcomes in the tails.
+[  270.75s ->   274.99s] When it comes to dealing with these random quantities, there are a couple of really important
+[  274.99s ->   280.05s] ideas. The first being whether or not you are dealing with something that is actually random,
+[  280.69s ->   285.53s] or something that we are treating as random. And another is if you are dealing with the empirical
+[  285.53s ->   290.87s] distribution or the theoretical distribution. Let's start by looking at an example to tie all of
+[  290.87s ->   296.85s] these concepts together. So the empirical distribution is something that I record drawing
+[  296.85s ->   303.15s] from the theoretical distribution. So this is the theoretical distribution of dice rolls. If I was
+[  303.15s ->   310.11s] to roll five dice and record all of the outcomes, then that would be one instance of an empirical
+[  310.11s ->   314.87s] distribution. If I did it with a thousand dice, then I'd get a different empirical distribution,
+[  314.87s ->   322.99s] and so on and so forth. Now we hope, and in some cases, the empirical distribution will converge to
+[  322.99s ->   328.83s] the theoretical distribution. And if this is the case, then we can make informed decisions about the
+[  328.83s ->   334.93s] randomness. So I have a very simple example of this here. I roll five dice, I record the empirical
+[  334.93s ->   341.25s] distribution. Then I roll a thousand, I record the empirical distribution. I roll 10,000, record the
+[  341.25s ->   347.13s] empirical distribution. This is certainly converging to the same theoretical distribution that we see up
+[  347.13s ->   354.43s] here. And that is because each dice roll is independent. If I roll a dice, then the next dice
+[  354.43s ->   359.97s] roll is not influenced by that previous dice roll. And I'm also drawing from the same distribution. I'm not
+[  359.97s ->   366.77s] changing the weight of the dice in between rolls. So when we're dealing with randomness, right, we would
+[  366.77s ->   372.55s] like for the empirical distribution to converge to this theoretical distribution, because then we can
+[  372.55s ->   379.79s] make very informed decisions about the randomness that we are dealing with. Now, in reality, we don't
+[  379.79s ->   385.97s] typically have the theoretical distribution. So the dice roll is governed by this distribution, and I'm
+[  385.97s ->   390.71s] suggesting that my trading signal is governed by this distribution, but I don't have the theoretical
+[  390.71s ->   395.21s] distribution for my trading signal. The best that I can do is collect a whole bunch of data and
+[  395.21s ->   402.43s] approximate this theoretical distribution. That is the best that I can do. Now, the big problem with that is
+[  402.43s ->   408.85s] no matter how much I continue to sample, there's no guarantee that the data that I am collecting for the
+[  408.85s ->   414.59s] empirical distribution is going to converge to the theoretical distribution in the same way that it did for this
+[  414.59s ->   422.19s] dice roll example. It's entirely possible that I continue to collect data for this trading signal. And the data that
+[  422.19s ->   427.25s] I'm collecting is in fact time variant. So as time marches on, I'm going to be drawing from different
+[  427.25s ->   433.49s] shape distributions. And the empirical distribution is never actually going to match this beautiful bell curve,
+[  433.49s ->   439.41s] something to keep in mind and a very real challenge that we face when we try to develop these models.
+[  439.41s ->   444.97s] Another important note is we're typically treating quantities that aren't actually random as random
+[  444.97s ->   451.71s] variables. And what I mean by this is when I roll a dice, right, that outcome is not going to impact the next
+[  451.71s ->   453.75s] dice roll. But that's not

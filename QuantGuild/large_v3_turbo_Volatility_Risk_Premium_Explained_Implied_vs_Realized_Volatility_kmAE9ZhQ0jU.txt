@@ -1,0 +1,181 @@
+[    0.00s ->     6.02s] How many hedge funds did I meet with over the past year that were just trading some variation
+[    6.02s ->    11.46s] of short vol? You guys got to get more creative, come up with some more interesting strategies. But
+[   11.46s ->    18.84s] hey, if it ain't broke, don't fix it. Today, we're going to talk about the idea of the
+[   18.84s ->    26.22s] volatility risk premia, a phenomenon that hedge funds and quant funds use literally every single
+[   26.22s ->    33.36s] day to make money trading options. Trading is a business just like anything else. And this
+[   33.36s ->    40.16s] particular business is the business of selling insurance. No, I'm not talking about Geico or
+[   40.16s ->    47.30s] Progressive. I'm talking about selling portfolio insurance. And if selling insurance wasn't
+[   47.30s ->    56.86s] profitable, then boy, nobody would do it. That is this idea of the volatility risk premium. But to
+[   56.86s ->    65.10s] really understand functionally, what is going on, we need to understand two really important ideas.
+[   65.10s ->    72.06s] And that is this idea of realized volatility, and implied volatility. If we can understand these
+[   72.06s ->    77.36s] ideas, we can understand the volatility risk premium, and we can go make a bajillion dollars
+[   77.36s ->    87.10s] trading for our uncreative hedge fund. Let's start with this idea of realized versus implied volatility.
+[   87.10s ->    93.82s] volatility for the S&P 500 over the past 10 years. You can see that they track each other pretty
+[   93.82s ->   100.54s] closely, right? The blue line is implied volatility. And the green line is realized volatility. They look
+[  100.54s ->   108.53s] pretty much the same. But mathematically, they're derived in completely different ways. They literally
+[  108.53s ->   116.64s] have nothing to do with each other. Implied volatility is based on equilibrium option prices.
+[  116.64s ->   120.82s] What we're doing is we're taking the Black-Scholes model, and I don't want to hear none of this.
+[  121.42s ->   124.62s] I don't want to hear any of this. The Black-Scholes model is wrong. It doesn't do it. Yeah,
+[  124.62s ->   129.14s] I don't want to hear it. All right. What we're doing with the implied volatility in this particular
+[  129.14s ->   136.88s] case is we are backing out the volatility required by the Black-Scholes model to reproduce
+[  136.88s ->   145.30s] equilibrium market prices. It is the market's forward-looking measure of volatility today. Black-Scholes is not a
+[  145.30s ->   150.98s] prediction model. I have plenty of videos on this on my channel. I feel like sometimes I'm beating my
+[  150.98s ->   156.32s] head into a wall with you guys in the comments that Black-Scholes doesn't work. But I will digress
+[  156.32s ->   163.76s] for brevity and my own sanity. That is implied volatility. What about realized volatility? What
+[  163.76s ->   174.08s] is the difference? Realized volatility is this idea of taking actually observed returns and finding the
+[  174.08s ->   181.46s] statistical variance standard deviation. Those sound like two completely different ideas. Why do they
+[  181.46s ->   191.32s] track so closely? Well, one is simply a forward-looking measure of risk, and one is a realized measure of
+[  191.32s ->   199.00s] risk. But there's a problem with this realized measure of risk. For the particularly keen among us, we'll
+[  199.00s ->   210.20s] notice that realized volatility depends on variance. That's a statistic. If we take a look down here,
+[  210.20s ->   217.08s] we're going to talk about the fact that realized volatility is actually a latent process. In other words,
+[  217.08s ->   225.62s] we know it exists, but we can't directly observe it. Theoretically, the expectation of a random
+[  225.62s ->   231.70s] variable is given by this expression. We're integrating the probability density function over
+[  231.70s ->   238.50s] the support multiplied by x. This produces the average, the theoretical mean. Once we have that,
+[  238.50s ->   246.50s] we can find the variance, which is going to depend on that theoretical mean. Okay, once we find the variance,
+[  246.50s ->   252.42s] then we're going to be able to plug that into the realized volatility equation here, and we're going
+[  252.42s ->   262.65s] to get the realized volatility, and all is said and done, and everything's great. But no, the markets
+[  262.65s ->   270.81s] don't abide by a probability density function. Parameters in the financial markets, if you've ever tried to
+[  270.81s ->   282.25s] build a model, change frequently and violently. Your model breaks all the time. In fact, the real question
+[  282.25s ->   288.49s] here isn't the fact that, oh, you know, how do we use statistics to come up with the mean? The real
+[  288.49s ->   295.21s] question is, what is the efficacy of that mean in the first place? We're always going to be using data
+[  295.21s ->   300.97s] to approximate these values. If we had the true theoretical dynamics, we wouldn't need to use
+[  300.97s ->   306.01s] these equations. Understanding the application of probability and statistics in the real world and
+[  306.01s ->   311.45s] deviations from the classroom is literally the difference between a portfolio surviving to the
+[  311.45s ->   320.01s] long run and a trading strategy that you just overfit to noise. And it took me over 10 years to really
+[  320.01s ->   327.13s] figure out the difference. That's exactly why I built QuantGuild. It's the platform that I wish I had
+[  327.13s ->   333.93s] when I was getting started in the financial services industry for roles as a trader, market maker,
+[  333.93s ->   344.81s] a quant with over 100 hours of lecture content taught by myself, how I wish it was taught to me from
+[  344.81s ->   353.21s] first principles all the way to the post graduate level. We have an adaptive practice engine that
+[  353.21s ->   359.21s] scales with your skill level, gamified progress over 90 quant lessons, interview questions with fully
+[  359.21s ->   366.89s] worked solutions, and so much more. If you're looking to master your quantitative skills for roles in the
+[  366.89s ->   374.57s] financial services industry, then check out QuantGuild.com. Now, what you'll notice is even though we don't
+[  374.57s ->   381.29s] have the true theoretical dynamics, what we choose to approximate them as and how we approximate them
+[  381.29s ->   388.17s] is going to dramatically change our analysis. What I have for you here is an animation visualizing what
+[  388.17s ->   395.29s] happens when you change the rolling window that you use for the expectation for the subsequent
+[  395.93s ->   402.81s] variance. I want you to notice that if we have a very small window, then we have a very responsive
+[  403.37s ->   413.93s] realized volatility. If we have a very large window, we have a very slow and lagging realized volatility.
+[  414.65s ->   419.53s] We can see the blue implied volatility remains unchanged. Remember, there is no look back window
+[  419.53s ->   425.77s] or approximation from data here. This is literally going to be backing out the volatility required
+[  425.77s ->   432.01s] by the Black-Scholes pricing model to replicate the market equilibrium price of a particular option.
+[  432.01s ->   436.81s] But we're going to talk about that in a moment. More importantly, you can see here how the window
+[  436.81s ->   443.93s] size is going to dramatically change the lag on the realized variance. Here, the spike happens several
+[  443.93s ->   451.45s] months before it shows up in the realized volatility. Whereas if we make the window much smaller,
+[  452.17s ->   456.57s] it's going to be far more reactive to that spike, better matching the implied volatility
+[  456.57s ->   464.65s] contemporaneously. On the right, you're observing the statistical repercussions of this window size.
+[  465.21s ->   470.81s] Notice, when the window size is arbitrarily small, the realized variance is actually going to,
+[  470.81s ->   481.05s] on average, outpace the implied volatility or the implied variance. If we increase the window size,
+[  481.05s ->   487.45s] we can see that it is going to not only stunt the realized volatility here, this green plot,
+[  487.45s ->   493.77s] but statistically the relationship is going to be far more shallow. You are effectively going to have
+[  493.77s ->   502.49s] a lower realized volatility statistically relative to implied volatility. So which window do we choose?
+[  502.49s ->   511.82s] Welcome to quantitative research. So if that's realized volatility, and effectively I left you with that
+[  511.82s ->   519.42s] the analysis and interpretation is entirely up to us, and the efficacy of which hinges on whether or not
+[  519.42s ->   524.94s] we can make money for our portfolio, we better have something good to cling to here in the context of
+[  524.94s ->   531.66s] some sort of market structure that is justifying trading this particular strategy. And in this case,
+[  531.66s ->   536.06s] we actually do have a pretty good structure to trade this volatility risk premium that we're building
+[  536.06s ->   540.86s] towards. But we got to talk about this idea of implied volatility. So if realized volatility is based
+[  540.86s ->   547.50s] on what has happened, implied volatility is based on what the market thinks is going to happen. And we talked
+[  547.50s ->   553.18s] about this minimization problem here. If you're no good at calculus, then we can just take a look at
+[  553.18s ->   558.94s] this implied volatility surface. I have plenty of videos talking about pricing models, the implied
+[  558.94s ->   564.06s] volatility surface. If you're unfamiliar with the Black-Scholes model, if you're unfamiliar with what
+[  564.06s ->   569.42s] it's used for, no, you're not predicting anything. It is a pricing model. I feel like a lot of people
+[  569.42s ->   575.34s] don't actually quite understand what that means, but here we're taking a look at the implied volatility
+[  575.34s ->   582.62s] surface. That is a function of the Black-Scholes implied volatilities. I have a dedicated video on the
+[  582.62s ->   586.94s] implied volatility surface. If you're unfamiliar, I highly recommend you check it out. But essentially,
+[  586.94s ->   594.38s] what this is, is a collection of out-of-the-money options. And I have an entire options masterclass
+[  594.38s ->   599.82s] for free that you can watch on YouTube if you would like, where I go about talking about options if you
+[  599.82s ->   605.50s] are unfamiliar with them as a financial derivative. But here, what we're taking a look at
+[  605.50s ->   609.42s] is this implied volatility surface. It's a collection of out-of-the-money options,
+[  609.42s ->   615.34s] and we are backing out the implied volatilities for each contract. And if we visualize it,
+[  615.34s ->   621.98s] we can see that we have something that looks like a smile. And this smile is essentially telling us
+[  621.98s ->   630.22s] that prices for puts are arbitrarily higher than prices for, say, at-the-money or near-at-the-money
+[  630.22s ->   636.86s] calls or even out-of-the-money calls. Why might this be the case? Well, what did I start this video
+[  636.86s ->   645.88s] talking about? Insurance and portfolio insurance. And insurance is certainly a profitable business.
+[  646.60s ->   653.56s] And statistically, in order for it to be profitable, it has to be overpriced. Otherwise,
+[  653.56s ->   657.96s] nobody would be in the insurance business. Why would I sell you insurance if statistically,
+[  658.52s ->   664.84s] I am to lose money? So really, the question now is, what is the statistical relationship between
+[  664.84s ->   674.62s] this insurance and the realized payouts? How do we actually go about structuring and sizing trades?
+[  674.62s ->   681.02s] Which points do we select on the implied volatility surface to expose ourselves to risk too? Intraday,
+[  681.02s ->   691.06s] zero DTE style? 30 DTE? 60? 90? 45? Do we roll? When and how do we structure these trades?
+[  691.78s ->   697.38s] Yeah, welcome to the party. But what justifies the volatility risk premium? How can we just get the
+[  697.38s ->   704.26s] idea that statistically, implied volatility, this idea that the put options are going to be
+[  704.98s ->   710.26s] overpriced? Well, I'm just going to plot this regression equation. And as you can see here,
+[  710.26s ->   717.62s] I'm running this regression. I'm going to find this regression line. And what I'm doing is I'm
+[  717.62s ->   723.54s] regressing the forward realized volatility. We know what that is now, right? It is effectively
+[  723.54s ->   729.54s] just a latent process. We know that it exists. We can't directly observe it. And we are going to
+[  729.54s ->   734.58s] pick a window, choose a mean and come up with effectively variance, take the square root.
+[  734.58s ->   740.42s] And that's going to be our value at that particular point in time for realized volatility. And we're going
+[  740.42s ->   746.58s] to match that up with implied volatility. But implied volatility is a forward looking measure,
+[  746.58s ->   752.10s] realized is backward looking. So what I'm going to do is I'm going to match up the implied volatility
+[  752.10s ->   761.29s] today with what happens 30 days from now. What I want you to notice is if the market was always
+[  761.29s ->   770.58s] correct, every point would be on this line, Y equals X. But it's not. It's not. In fact,
+[  770.58s ->   775.30s] we can see statistically the regression equation is telling us what? Yeah, we have some outliers.
+[  775.30s ->   779.38s] We're not talking about those right now. Nobody knows when a crash or crisis is going to happen.
+[  779.38s ->   783.14s] That's why these are here. But if we take a look at this regression equation, statistically,
+[  783.14s ->   789.61s] what? Statistically implied volatility is what? Has a slope that is less than Y equals X, meaning that
+[  789.61s ->   800.22s] implied volatility is overstated. We need to reduce the implied volatility in order to get a realized
+[  800.22s ->   807.40s] volatility. That is the idea of the volatility risk premium. We're visualizing it here statistically
+[  807.40s ->   815.00s] via a regression. The idea is right now implied volatility is overstated on average.
+[  816.04s ->   821.88s] So we should sell volatility. We should take a short position. We should sell what? A straddle,
+[  821.88s ->   827.24s] a strangle. We should sell a naked call, a naked put. How do we take advantage of this?
+[  828.86s ->   834.62s] Welcome to the quant research party. Selling insurance is a profitable business.
+[  835.26s ->   842.54s] The strategy is simple in design, but it's difficult to implement in practice. If we were to just take a look
+[  842.54s ->   848.78s] at the two histograms here of realized volatility and implied volatility, you can see that there is
+[  848.78s ->   855.10s] certainly edge, right? The option implied volatility mean is literally shifted to the right.
+[  855.10s ->   861.50s] And if you take a look at just the raw VIX and realized SPX returns. I mean, it's going to be even
+[  861.50s ->   867.02s] more dramatic if you overlay them. That's what the literature does. And there's substantial edge, but
+[  867.82s ->   876.54s] it is simple in design, difficult to implement in practice. And nobody is going to handhold you through
+[  877.26s ->   889.10s] starting your VRP harvesting hedge fund. But there's a problem here. There's a really interesting problem
+[  889.10s ->   896.09s] here, but there's a problem here. If you've watched any of my more recent videos where I'm talking about
+[  896.09s ->   901.69s] volatility drag, deriving volatility drag. If you watch that one, you're, you're a real one. You're,
+[  902.25s ->   906.97s] you're going to be, you're going to be making a ton of money in the financial markets. If you enjoy that
+[  906.97s ->   913.13s] video and you're trying to understand how to derive these mathematical equations, those of you out there,
+[  913.13s ->   917.13s] you're the ones who are going to be making all the money. But in any case, if you've been watching my
+[  917.13s ->   921.37s] more recent videos, I'm talking about how I'm long black swan events. I'm talking about volatility drag.
+[  921.37s ->   927.37s] I'm talking about the compounding nature of, of returns. And I'm suggesting that portfolio insurance
+[  927.37s ->   936.73s] is actually what it's better to buy. It's better to buy in the context of geometric returns in the
+[  936.73s ->   944.01s] long run, five, 10, 15, 20 years. When there's a drawdown of 60%, I have a hedge. My drawdown is going
+[  944.01s ->   949.58s] to be 20% that I'm selling for 80 cents on the dollar. You're selling for 60 cents on the dollar,
+[  949.58s ->   959.64s] and I'm going to buy all your stuff. But hold on. Everything we just talked about in this lecture
+[  960.44s ->   966.04s] has been discussing how volatility is overpriced. Implied volatility is overpriced. What the market
+[  966.04s ->   973.32s] thinks is going to happen is overstated statistically. And finance tells us if something is overpriced,
+[  973.32s ->   978.57s] we should sell it. But I'm telling you in the context of volatility drag, I want to be long
+[  978.57s ->   984.41s] volatility. What the fuck am I talking about? Those are two completely competing objectives.
+[  984.41s ->   991.61s] One is selling portfolio insurance. One is buying portfolio insurance. So which is correct? How can
+[  991.61s ->   998.09s] they both be true at the same time? It really shouldn't be too much of a shock, but the answer is
+[  998.09s ->  1004.76s] timing. Let's take a look at this animation here. Wow. That's crazy. On the left, you could see
+[ 1005.32s ->  1011.16s] harvesting volatility was very profitable until boom, massive drawdown with no hedge in place for that
+[ 1011.16s ->  1018.12s] tail risk. You have a 31% drawdown. Well, look at my portfolio on the right here. My portfolio didn't
+[ 1018.12s ->  1026.20s] have a 30% drawdown. It only had an 18% drawdown when the market had a 49% drawdown. So my insured portfolio
+[ 1026.20s ->  1031.64s] is certainly paying off, right? When you're selling stuff for $0.51 on the dollar panicking,
+[ 1031.64s ->  1036.68s] I have what? $0.82 on the dollar. I'm going to buy all your stuff, right? And I'm going to compound
+[ 1036.68s ->  1041.40s] my returns significantly faster. Not only am I going to recover from that drawdown faster, but I'm going
+[ 1041.40s ->  1046.52s] to grow significantly faster. On the left-hand side here, this poor VRP hedge fund should have been
+[ 1046.52s ->  1053.08s] more creative. Completely devastated. 31% drawdown. But what I want you to notice is, what did I say?
+[ 1053.08s ->  1057.72s] I said, both can be true at the same time. They're still going to sell more volatility.
+[ 1057.72s ->  1064.44s] They're going to recover from this drawdown, this VRP hedge fund. I completely leveraged my hedge.
+[ 1064.44s ->  1070.36s] I got out of this really nasty market drawdown. Both are true at the same time. And that is exactly
+[ 1070.36s ->  1076.57s] what is producing these outlier points here. Effectively, when these outlier points occur,
+[ 1076.57s ->  1086.41s] I am going to roll down and monetize my convexity layer. I have that portfolio insurance. Totally cool
+[ 1086.41s ->  1092.57s] with it. I'm not going to be that guy that loses his house job and brokerage account because the
+[ 1092.57s ->  1098.73s] market crashes. I'm not going to be that guy. If it means I'm not making 20% when the market is making
+[ 1098.73s ->  1105.93s] 20% and I'm making 15% instead to finance the hedge, totally fine by me. I do not want to experience
+[ 1105.93s ->  1113.21s] a 30, 40, 50% drawdown and somebody offers me half of my house value in cash and says that's the best
+[ 1113.21s ->  1117.13s] that they can do. I don't want to experience that reality. So I'm going to have that hedge in place.
+[ 1117.13s ->  1122.33s] But what I want you to notice is when these outlier points occur, it is violating what we've observed
+[ 1122.33s ->  1129.78s] here statistically. That is what is making both true effectively at the same time. The difference
+[ 1129.78s ->  1136.74s] is timing and of course, portfolio construction and strategy. Though the individual contract
+[ 1136.74s ->  1147.18s] is a zero sum game, statistically, both portfolio insurance and selling portfolio insurance can be
+[ 1148.14s ->  1151.66s] profitable. That's going to do it for this video. I hope you enjoyed. I hope you learned something.
+[ 1151.66s ->  1155.34s] This video certainly took a tremendous effort to put together. So if you liked it and you want to see
+[ 1155.34s ->  1159.42s] more like it in the future, please like comment, subscribe, share. It helps me out tremendously.
+[ 1159.42s ->  1165.58s] It is always greatly appreciated. I'll leave a link in the description below. If you would like to access
+[ 1165.58s ->  1171.66s] this Jupyter notebook, I post all of my Jupyter notebooks and source code for my quant builds
+[ 1171.66s ->  1176.94s] on the quant guild library on GitHub. Everything is all open source. Again, I'll leave a link in the
+[ 1176.94s ->  1181.50s] description below if you would like to check that out. I'll also leave a link to interactive brokers
+[ 1181.50s ->  1185.26s] if you'd like to get started with them in the description below. I've been with them for over
+[ 1185.26s ->  1190.30s] 10 years in a trading and investing capacity, if you can believe it, and we use them for all of the
+[ 1190.30s ->  1195.10s] quant builds on this channel. And if you'd like to run this Jupyter notebook, the source code that's
+[ 1195.10s ->  1202.14s] available on the quant guild library, you're going to need access to interactive brokers for this market
+[ 1202.14s ->  1208.86s] data. Other than that, check out quant guild.com. If you'd like to master your quantitative skills
+[ 1209.50s ->  1215.82s] four roles in the financial services industry as a trader, market maker, or quant, thank you so much
+[ 1215.82s ->  1228.46s] for watching. And I'll see you in the next video.

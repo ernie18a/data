@@ -1,0 +1,50 @@
+[    0.40s ->     6.28s] Hey guys, welcome to the impeccable investor. Today we are going to rank the 5 best swing trade
+[    6.28s ->    11.46s] strategies. But before starting the video, make sure to subscribe to our channel and press the
+[   11.46s ->    17.84s] notification bell to never miss an update from us. Now coming back to today's topic, swing trade
+[   17.84s ->    23.14s] strategies are quite well known in stock marketing. For those of you who are not familiar with this,
+[   23.64s ->    27.60s] swing trading is a style of trading that attempts to capture gains in a stock,
+[   27.60s ->    34.48s] or any financial instrument, over a period of a few days to several weeks. Swing traders primarily
+[   34.48s ->    40.84s] use technical analysis to look for trading opportunities. These traders may utilize
+[   40.84s ->    46.84s] fundamental analysis in addition to analyzing price trends and patterns. Now let's have a look at the
+[   46.84s ->    54.34s] 5 best swing trading strategies. Number 5. RSI. Relative Strength Index. The RSI indicator is a
+[   54.34s ->    59.40s] technical trading tool that falls within the oscillator family. The RSI indicator is considered
+[   59.40s ->    66.38s] a leading indicator, which means that its signals typically come prior to a price event on the chart.
+[   66.96s ->    71.04s] The positive side of this is that we are able to attain early signals of our trades.
+[   71.60s ->    77.52s] But the downside is that many of these signals can be false or premature. Therefore, the RSI should
+[   77.52s ->    83.02s] always be used in a combination with another forex trading tool or technique for confirmation.
+[   83.76s ->    89.86s] In this lesson, we will dissect the RSI indicator and give some best practices for trading with it.
+[   89.94s ->    97.26s] Number 4. MACD. As a versatile trading tool that can reveal price momentum, the MACD is also useful in
+[   97.26s ->   103.34s] the identification of price trends and direction. The MACD indicator has enough strength to stand alone,
+[  103.34s ->   110.34s] but its predictive function is not absolute. Used with another indicator, the MACD can really ramp up
+[  110.34s ->   115.90s] the trader's advantage. If a trader needs to determine trend strength and direction of a stock,
+[  116.48s ->   123.60s] overlaying its moving average lines onto the MACD histogram is very useful. The MACD can also be viewed
+[  123.60s ->   130.00s] as a histogram alone. Number 3. Moving Average Trading Strategy. The moving average is one of the most
+[  130.00s ->   135.92s] widely used technical analysis tools out there. Moving averages basically calculate the average
+[  135.92s ->   141.70s] price of a certain number of periods in a given time frame to smooth out the price action and helps
+[  141.70s ->   147.44s] traders get a proper visual representation of the overall directional movement of an asset.
+[  148.08s ->   154.16s] In forex trading, moving averages are mainly used to generate trading signals. But the larger period
+[  154.16s ->   162.38s] moving averages such as 50 and 200 simple moving averages are also used to gauge potential support
+[  162.38s ->   168.36s] and resistance. When moving averages are used to generate directional movement-based signals to buy
+[  168.36s ->   174.40s] or sell a currency pair, the underlying concept is that traders believe that past price action will
+[  174.40s ->   180.50s] continue in the future and it can be profitable to follow a trend. On the other hand, when the moving
+[  180.50s ->   186.04s] averages are used to predict major support and resistance, it is based on the idea of self-fulfilling
+[  186.04s ->   192.00s] prophecy. Number 2. Triangle Breakout Strategy. An ascending triangle is a chart pattern used in
+[  192.00s ->   198.32s] technical analysis. It is created by price moves that allow for a horizontal line to be drawn along the
+[  198.32s ->   205.24s] swing highs and a rising trade line to be drawn along the swing lows. The two lines form a triangle.
+[  205.24s ->   211.80s] Traders often watch for breakouts from triangle patterns. The breakout can occur to the upside or
+[  211.80s ->   217.78s] downside. Ascending triangles are often called continuation patterns since the price will
+[  217.78s ->   222.92s] typically break out in the same direction as the trend that was in place just prior to the triangle
+[  222.92s ->   229.42s] forming. An ascending triangle is tradable in that it provides a clear entry point, profit target,
+[  229.42s ->   236.08s] and stop-loss level. An ascending triangle is generally considered to be a continuation pattern,
+[  236.08s ->   242.26s] meaning that the pattern is significant if it occurs within an uptrend or downtrend. Once the breakout from
+[  242.26s ->   248.44s] the triangle occurs, traders tend to aggressively buy or sell the asset depending on which direction the
+[  248.44s ->   255.58s] price broke out. Number 1. Heiken Ashi Candles. Heiken Ashi charts were developed by Munihisa Homa,
+[  255.58s ->   263.62s] a Japanese trader in the 1700s. They are spelled as Heiken Ashi, which means average bar in Japanese.
+[  263.62s ->   270.52s] The Heiken Ashi technique can be used in conjunction with candlestick charts when trading securities to
+[  270.52s ->   277.58s] spot market trends and project future prices. The Heiken Ashi technique averages price data to create a
+[  277.58s ->   283.70s] Japanese candlestick chart that filters out market noise. It's useful for making candlestick charts more
+[  283.70s ->   290.90s] readable and trends easier to analyze. The purpose of HA charts is to filter noise and provide a clearer
+[  290.90s ->   297.22s] visual representation of the trend. Heiken Ashi has a smoother look as it is essentially taking an
+[  297.22s ->   302.98s] average of the movement. So that's the end of our video guys. Did you find it helpful? If so, like and
+[  302.98s ->   308.82s] share this video and subscribe to our channel. Also, comment below what other videos you would like to see from us.
+[  308.82s ->   314.02s] See you next time and until then, goodbye!

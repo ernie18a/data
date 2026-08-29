@@ -1,0 +1,81 @@
+[    0.14s ->    27.74s] Hey guys, what's up? It's ABTrades and I wanted to make a video on how to set up your Thinkorswim account on TD Ameritrade with how to actively trade options on there so that you don't have to flip in between the trade tab and the other tab and blah, blah, blah, blah, blah, blah, but that you can see the options tab and you can immediately click buy and you're buying at the bid or the ask or a limit or market, etc.
+[   27.74s ->    33.18s] While you can also see the underlying stock or ETF or whatever you're trading the options under.
+[   33.78s ->    35.88s] So I'm going to go and I'm going to set this up.
+[   37.50s ->    39.44s] Actually, take this active trade away.
+[   40.50s ->    41.46s] I'm going to go to my settings.
+[   42.02s ->    42.94s] I'm going to go to default.
+[   44.50s ->    46.62s] Yes, I have my, oh, that is my default.
+[   46.88s ->    47.42s] Okay, no, it's not.
+[   49.02s ->    50.46s] So I'm going to bring it to the default.
+[   50.62s ->    53.00s] So this is what everyone starts with, right?
+[   53.50s ->    59.10s] So, again, what I do first is I'm going to pull up two tabs.
+[   59.20s ->    63.44s] So I go to this little square here and I pull up two, one right underneath each other.
+[   63.44s ->    67.32s] If you want them right next to each other, then instead of doing the up, the underneath, you go across.
+[   69.10s ->    74.40s] I personally like the up and down so I can see the horizontal, I can see the history of the stock movement.
+[   74.40s ->    83.66s] So on the bottom, well, it doesn't matter which way you do it, you can put it in any way you want, really.
+[   85.82s ->    90.16s] I like to make sure that they are the same time frame so that when I'm watching the options and whatnot.
+[   90.94s ->    96.54s] Now, the way that I'm going to set this up is I'm going to have the stock or the underlying here on bottom.
+[   96.82s ->   100.48s] And I'm going to have the options contract of it on top.
+[  100.48s ->   104.24s] So the way that it works is I want to be trading SPY.
+[  106.93s ->   108.85s] Yep, so we will be trading SPY.
+[  110.51s ->   113.85s] Then how am I going to get the options contract on here?
+[  114.29s ->   116.73s] All right, well, I'm going to pull up SPY on this one.
+[  117.03s ->   118.15s] I'm going to go to the Trade tab.
+[  118.49s ->   121.79s] I'm going to pull up the options contract that I want to trade.
+[  121.89s ->   124.17s] It has to be the contract that you are willing to trade.
+[  124.55s ->   125.89s] How do you know which contracts to trade?
+[  125.97s ->   127.73s] Well, I've made many videos over that.
+[  127.73s ->   134.35s] So I would personally be looking at either this one.
+[  135.34s ->   137.88s] Yeah, I'd be looking at this one or this one right here.
+[  138.34s ->   139.48s] But I'm going to go with this one.
+[  140.32s ->   144.65s] So I'm going to, what is it, left click?
+[  145.53s ->   146.01s] Whatever.
+[  146.39s ->   152.67s] To pull up the options on this specific contract, I go down to Add To.
+[  152.67s ->   156.03s] And I can add it to any watch list I want.
+[  156.11s ->   162.07s] So I'm going to add it to Equity Options because that is what this watch list is up right here at the moment.
+[  162.83s ->   167.01s] Okay, you can add it to anything or you can click Copy and you can manually add it or type it in.
+[  167.41s ->   168.49s] So now I'm going to go to Charts.
+[  169.03s ->   170.41s] And I can do it in any order I want.
+[  170.45s ->   174.85s] But I want my bottom to be the Equity or the ETF that I'm watching.
+[  174.85s ->   178.27s] And then on top, I want it to be the Options.
+[  178.47s ->   192.55s] So I'm going to pull up the Options of it so that I can have, at the same time, on the same time frame, watching the Options and watching the Stock to see how it's moving, etc., etc.
+[  192.91s ->   195.19s] Now, how do I actively trade the Options?
+[  195.19s ->   200.02s] I go to Active Trader, which is AT, and I pull this up.
+[  201.37s ->   202.51s] It doesn't have to be this big.
+[  203.83s ->   210.51s] So this allows me, if I click Buy, I automatically buy 10 contracts at the market with a market order.
+[  210.75s ->   215.33s] Or I can automatically sell my 10 contracts at an automatic order.
+[  215.43s ->   216.87s] It will tell me my P&L.
+[  216.95s ->   220.63s] It will tell me where I got my position at and my average price, etc., etc.
+[  220.63s ->   229.05s] But when we do Options Trading, we do not want to buy at market because the market maker will chip us off or chib us off.
+[  229.53s ->   232.05s] So I can get rid of Buy Market and Sell Market.
+[  232.77s ->   235.03s] And I can add Buy at the Ask.
+[  235.61s ->   236.77s] Buy at the Bid.
+[  237.85s ->   238.97s] Cancel all Buy.
+[  239.11s ->   239.99s] Cancel all Sell.
+[  240.65s ->   241.69s] Sell Ask.
+[  242.11s ->   242.93s] Sell Bid.
+[  243.17s ->   245.31s] But I'm not going to have all these.
+[  246.29s ->   248.47s] The asking is what people are offering.
+[  248.47s ->   251.93s] So if I want to get in quickly, I'm going to have the Buy Ask there.
+[  252.27s ->   255.97s] And if I want to sell quickly, I want to sell the bid because the bid is the people who's buying.
+[  256.53s ->   262.89s] So if I want to quickly and actively enter the stuff, move it up to the first line.
+[  265.58s ->   268.83s] And I can add that and I can click OK.
+[  269.25s ->   272.01s] So now I have Buy the Ask and Sell the Bid.
+[  272.29s ->   276.17s] So it's going to be a limit order at the ask or a limit order at the bid.
+[  276.47s ->   279.27s] So now this will be able to get me quickly in and quickly out.
+[  279.27s ->   290.61s] Will I lose some profit or lose some money because of the spread, which is the difference between the bid and the ask?
+[  290.73s ->   291.01s] Yes.
+[  291.05s ->   292.69s] But will this quickly get me in?
+[  292.83s ->   293.09s] Yes.
+[  293.13s ->   294.43s] Will it quickly get me out?
+[  294.81s ->   295.15s] Yes.
+[  295.51s ->   296.79s] Now, if you don't understand, ask and bid.
+[  296.83s ->   298.43s] I made another video over that.
+[  298.57s ->   301.53s] Or you can just YouTube and find somebody else if you don't like me.
+[  301.75s ->   302.75s] It's fine if you don't like me.
+[  302.75s ->   310.17s] But this is how I would set it up because someone asked me how to do that and I like to help people.
+[  310.79s ->   318.47s] So if you want to set up your chart to see the stock or whatever you're trading with the contracts you want to trade,
+[  318.55s ->   320.15s] you'll be able to actively trade it.
+[  320.37s ->   323.37s] If you're trading on the ThinkerFund platform, this is how you do it.
+[  324.19s ->   325.85s] Please like, comment, and subscribe, guys.
+[  325.85s ->   326.71s] See you all in the next video.

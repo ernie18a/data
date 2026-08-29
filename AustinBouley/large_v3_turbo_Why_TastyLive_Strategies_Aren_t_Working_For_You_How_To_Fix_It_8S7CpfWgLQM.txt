@@ -1,0 +1,260 @@
+[    0.00s ->     3.34s] I love Tasty Live, Tasty Trade, the whole group there.
+[    3.46s ->     5.68s] I've been learning from them for literally over five years now,
+[    5.76s ->     7.86s] and I recommend that people still go learn from them.
+[    8.20s ->    11.56s] But there are three big problems with what they teach.
+[   11.92s ->    15.44s] Yes, they follow data, but their data doesn't account for certain things
+[   15.44s ->    17.94s] that are crucial as an option seller.
+[   18.28s ->    20.02s] I've been trying their strategies for years,
+[   20.10s ->    22.64s] and I never had success until I tweaked these three things
+[   22.64s ->    24.84s] and the same thing for all the people that I've talked to.
+[   24.96s ->    29.16s] So let's dive into the three things that cause Tasty Live strategies
+[   29.16s ->    32.30s] to fail and how you can easily fix them, okay?
+[   32.58s ->    34.46s] So reason number one is simple, okay?
+[   34.48s ->    39.62s] If I dive into here, reason number one is 45 DTE is too short, okay?
+[   39.74s ->    43.88s] 45 DTE means days in the future, days until expiration.
+[   44.48s ->    46.80s] And so that means that if we're entering a trade,
+[   46.94s ->    49.10s] let's say March 1st,
+[   49.32s ->    51.60s] that means that we're going to pick an expiration date
+[   51.60s ->    54.52s] that is roughly April 15th.
+[   54.88s ->    57.62s] So again, we go 45 days out in the future.
+[   57.62s ->    59.58s] Now, why is this bad?
+[   59.64s ->    61.76s] Obviously, 45 days is a good level,
+[   62.12s ->    64.26s] but the further out in time you go,
+[   64.62s ->    66.30s] the DTE, the larger it is,
+[   66.52s ->    68.16s] there's so many benefits you get.
+[   68.28s ->    71.38s] Number one, you get the benefit of a bigger profit.
+[   71.46s ->    72.62s] You get a bigger payday.
+[   73.10s ->    73.42s] Why?
+[   73.60s ->    75.56s] Because the further out in time you go,
+[   75.80s ->    78.16s] the more theta there is for you to win,
+[   78.24s ->    79.90s] the more theta there is for you to collect.
+[   80.20s ->    82.06s] So you receive higher credits,
+[   82.36s ->    83.14s] higher premium,
+[   83.14s ->    87.04s] and as a result, more profit when you go out further in time.
+[   87.66s ->    91.52s] Number two, you can decrease your volatility risk,
+[   91.58s ->    93.24s] which a lot of you guys are now aware of,
+[   93.46s ->    97.16s] by over 50% just by going out further in time.
+[   97.48s ->    98.58s] What does that mean?
+[   99.04s ->   104.18s] Vega risk shows how much an option is impacted by volatility.
+[  104.18s ->   109.06s] And if we look at the vega of a 45 DTE contract
+[  109.06s ->   110.54s] versus the vega of,
+[  110.70s ->   114.02s] let's say a 90 or a 120 DTE contract,
+[  114.10s ->   116.14s] then the vega is literally in half.
+[  116.28s ->   120.44s] So we can reduce our risk by literally over 50%
+[  120.44s ->   122.70s] just by going out further in time.
+[  122.78s ->   125.46s] So I'm going to say VIX risk goes down as well.
+[  125.82s ->   126.54s] But not only that,
+[  126.60s ->   127.98s] the third and most amazing benefit
+[  127.98s ->   130.26s] is our win rate percentage goes up.
+[  130.26s ->   132.42s] Because when you're further out in time,
+[  132.74s ->   135.04s] not only do you have more time to be right on the trade,
+[  135.36s ->   136.22s] but number two,
+[  136.42s ->   137.80s] the strike prices you're picking
+[  137.80s ->   140.24s] are way further out of the money.
+[  140.60s ->   144.36s] And that means that your win rate goes up by default.
+[  144.50s ->   145.80s] You have more time to be right
+[  145.80s ->   147.74s] and you're further away from where the stock is.
+[  147.86s ->   150.78s] So just by moving your DTE from 45 days,
+[  150.92s ->   152.36s] keeping the same exact strategy,
+[  152.64s ->   155.30s] but now going to maybe a 90 DTE
+[  155.30s ->   157.72s] or to a 120 DTE,
+[  157.72s ->   161.04s] you can dramatically make more money
+[  161.04s ->   163.46s] as well as decreasing your risk.
+[  163.52s ->   165.48s] So if you want to make more decreased vega risk
+[  165.48s ->   166.76s] and have a higher win rate percentage,
+[  167.10s ->   171.24s] I recommend going from 45 DTE to a 90 or 120 DTE.
+[  171.50s ->   172.50s] Check that out yourself.
+[  172.64s ->   173.90s] But that is reason number one
+[  173.90s ->   175.90s] why tasty life strategies don't work.
+[  175.96s ->   177.50s] They're trying to do a 45 DTE,
+[  177.62s ->   178.74s] which is just too close.
+[  179.58s ->   181.14s] Next, reason number two
+[  181.14s ->   182.28s] that they don't work too well
+[  182.28s ->   185.46s] is they do a 21 DTE exit.
+[  185.88s ->   187.14s] And that doesn't really work.
+[  187.14s ->   189.54s] Now, if you don't know what a 21 DTE exit is,
+[  189.76s ->   192.60s] that means that when there's 21 days left in the trade,
+[  192.88s ->   194.88s] they close or roll the position.
+[  195.44s ->   196.36s] Here's the thing.
+[  196.70s ->   200.52s] If you get caught in a down market spiral,
+[  200.92s ->   203.10s] you could easily lose thousands,
+[  203.30s ->   205.30s] if not tens of thousands of dollars.
+[  205.66s ->   206.34s] And the thing is,
+[  206.42s ->   209.78s] sure, you could hold through the trade longer and roll,
+[  210.02s ->   211.16s] but the amount of emotions
+[  211.16s ->   212.88s] and the amount of losses you're going to have
+[  212.88s ->   215.02s] is going to lead you to make poor trading decisions.
+[  215.02s ->   221.42s] So I always recommend doing a 200 to 300% stop loss.
+[  221.64s ->   224.38s] This way, this is my forward set exit.
+[  224.52s ->   225.66s] This is what I will exit.
+[  226.02s ->   228.78s] And now that you know your actual loss number,
+[  228.94s ->   230.46s] you can now plan around it
+[  230.46s ->   231.56s] to make sure number one,
+[  231.60s ->   232.82s] you're not in too many trades
+[  232.82s ->   234.06s] and number three,
+[  234.06s ->   237.54s] to make sure that you're actually planning around it,
+[  237.60s ->   238.44s] which means you have hedges
+[  238.44s ->   240.30s] that will protect that amount of losses.
+[  240.86s ->   242.96s] And so a 21D, DD exit is cool
+[  242.96s ->   243.98s] because it gives you this idea of,
+[  244.28s ->   245.06s] I could never lose,
+[  245.14s ->   246.78s] so I keep rolling it in perpetuity,
+[  247.06s ->   248.68s] but that doesn't actually work, okay?
+[  248.76s ->   249.60s] When you roll,
+[  249.74s ->   250.94s] you're just taking a loss
+[  250.94s ->   251.96s] and you're moving that loss
+[  251.96s ->   253.04s] to a different time period.
+[  253.24s ->   254.94s] You still have the loss.
+[  255.24s ->   257.18s] So you might as well keep your losses smaller
+[  257.18s ->   258.64s] at a known amount,
+[  258.90s ->   261.56s] whether 200 to a 300% stop loss,
+[  261.56s ->   263.94s] and then from their account,
+[  264.06s ->   264.28s] you'd be like,
+[  264.32s ->   265.16s] okay, if all these trades,
+[  265.22s ->   266.44s] let's say you have five open trades,
+[  266.66s ->   268.94s] if they all hit my 200% stop loss,
+[  269.20s ->   272.58s] I know that I'm gonna lose $5,000.
+[  273.06s ->   273.46s] Great.
+[  273.70s ->   275.00s] Now that you know this,
+[  275.26s ->   276.72s] now you can, number one,
+[  276.92s ->   278.20s] make sure that's proportional
+[  278.20s ->   279.86s] to the amount of money you have in your account
+[  279.86s ->   281.22s] so you're not risking too much of your account.
+[  281.54s ->   282.36s] And number two,
+[  282.70s ->   284.84s] have hedges on that can cover
+[  284.84s ->   287.94s] or profit that much when the market crashes.
+[  288.38s ->   289.54s] So now you can not only
+[  289.54s ->   291.62s] make sure you're sizing correctly,
+[  291.62s ->   294.28s] but you can also make sure that you're hedging.
+[  294.68s ->   297.88s] So again, 21 DTEs in theory work,
+[  297.94s ->   299.70s] but they don't take into effect emotions.
+[  299.80s ->   301.14s] Your emotions are gonna go wild.
+[  301.24s ->   302.20s] You're just taking these losses
+[  302.20s ->   303.44s] and you're rolling them into the future,
+[  303.52s ->   304.50s] just still having losses.
+[  304.94s ->   306.52s] Instead, cut the losses,
+[  306.92s ->   307.50s] move on,
+[  307.76s ->   309.38s] know how much your losses can be
+[  309.38s ->   310.44s] and hedge against it.
+[  310.50s ->   312.56s] And this will bring so much safety,
+[  312.88s ->   313.36s] not only that,
+[  313.58s ->   314.16s] peace of mind.
+[  314.64s ->   317.92s] So number two is DTE exits don't work.
+[  318.32s ->   318.68s] Next,
+[  318.68s ->   319.92s] reason number three
+[  319.92s ->   321.68s] is Delta Neutral is flawed.
+[  321.98s ->   322.22s] Okay,
+[  322.26s ->   323.82s] if you have watched Tasty Live
+[  323.82s ->   324.66s] for any amount of time,
+[  324.92s ->   326.64s] you know they try to be Delta Neutral.
+[  326.88s ->   327.22s] By that,
+[  327.30s ->   329.26s] I mean they trade a lot of strangle type things
+[  329.26s ->   330.86s] where they play both the upside and the downside,
+[  330.98s ->   332.58s] where as long as the market stays between it,
+[  332.80s ->   333.62s] they make money.
+[  333.96s ->   335.24s] But the biggest problem
+[  335.24s ->   336.88s] is when we're trading markets
+[  336.88s ->   338.38s] like the S&P 500
+[  338.38s ->   339.64s] in general,
+[  339.88s ->   340.78s] they trend higher,
+[  340.94s ->   341.96s] they move higher.
+[  342.26s ->   343.36s] So if they move higher,
+[  343.64s ->   346.04s] why would I want equal tops and bottom?
+[  346.04s ->   346.76s] Because that means
+[  346.76s ->   347.56s] that I'm more likely
+[  347.56s ->   348.40s] to hit the top
+[  348.40s ->   349.34s] and lose.
+[  349.50s ->   350.88s] And I don't want to lose like that,
+[  350.96s ->   351.66s] especially when I know
+[  351.66s ->   353.14s] the market tends to trend higher.
+[  353.66s ->   354.62s] So what I do
+[  354.62s ->   356.94s] is I always skew my trades
+[  356.94s ->   357.84s] to the upside.
+[  358.28s ->   359.58s] And if you back test this,
+[  359.64s ->   360.86s] you have an even higher win rate.
+[  360.94s ->   361.98s] You'll be able to see this.
+[  362.32s ->   362.42s] Now,
+[  362.48s ->   363.52s] what do I mean by skewing?
+[  364.34s ->   365.34s] Instead of having,
+[  365.52s ->   366.20s] let's say,
+[  366.30s ->   367.26s] what Tasty Live does
+[  367.26s ->   368.26s] is a 16 Delta
+[  368.26s ->   369.36s] for both the put
+[  369.36s ->   370.30s] and the call.
+[  370.40s ->   372.04s] So you're having equal distance.
+[  372.30s ->   372.60s] So let's say
+[  372.60s ->   373.52s] the stock is trading here.
+[  373.52s ->   375.10s] You have equal distance between them.
+[  375.56s ->   375.96s] Instead,
+[  376.34s ->   377.18s] what I like to do
+[  377.18s ->   377.86s] is I like to do
+[  377.86s ->   379.12s] a 10 or 16 Delta,
+[  379.24s ->   379.86s] whatever put,
+[  379.94s ->   380.78s] so my normal put.
+[  381.12s ->   382.16s] And then I like to have
+[  382.16s ->   383.42s] a further out of the money
+[  383.42s ->   384.38s] Delta call.
+[  384.74s ->   385.34s] This way,
+[  385.56s ->   386.88s] I push my call higher.
+[  387.00s ->   388.68s] So if the stock is trading here now,
+[  388.94s ->   390.08s] I have the normal put,
+[  390.30s ->   391.34s] but I have a further
+[  391.34s ->   392.44s] out of the money call.
+[  392.78s ->   393.64s] Why do I do this?
+[  393.78s ->   394.54s] Because in general,
+[  394.66s ->   395.94s] the market trends higher
+[  395.94s ->   397.62s] and I want to account for that.
+[  397.70s ->   398.40s] So now when the market
+[  398.40s ->   399.50s] continues to trend higher,
+[  399.78s ->   401.28s] instead of it hitting my call
+[  401.28s ->   402.08s] and now I'm losing
+[  402.08s ->   402.96s] because I'm in the money,
+[  403.30s ->   404.70s] instead I have more room
+[  404.70s ->   405.30s] to the upside
+[  405.30s ->   407.10s] to give me that room.
+[  407.52s ->   409.06s] Delta neutral is great,
+[  409.16s ->   409.92s] but the problem is
+[  409.92s ->   411.98s] if you're trading a market
+[  411.98s ->   412.74s] or an asset
+[  412.74s ->   414.32s] that typically trends higher,
+[  414.74s ->   415.76s] that's not neutral.
+[  416.04s ->   417.90s] That is a trending stock.
+[  418.00s ->   419.22s] And so you need to adjust
+[  419.22s ->   420.66s] your Deltas accordingly
+[  420.66s ->   422.04s] to be able to do that.
+[  422.28s ->   422.92s] And so like I do,
+[  423.00s ->   424.02s] I like to have a higher call
+[  424.02s ->   425.00s] and then the same
+[  425.00s ->   425.88s] or maybe even a bit higher,
+[  425.98s ->   426.98s] but typically the same put
+[  426.98s ->   427.70s] that I typically want
+[  427.70s ->   428.12s] on a strangle,
+[  428.22s ->   429.06s] just a higher call.
+[  429.58s ->   431.18s] And so when you change it like that,
+[  431.18s ->   432.38s] that helps you make
+[  432.38s ->   433.76s] and do amazing things.
+[  433.94s ->   436.00s] So these are the three things
+[  436.00s ->   436.76s] that are probably
+[  436.76s ->   439.16s] holding you back
+[  439.16s ->   440.30s] if you are trading
+[  440.30s ->   441.28s] a tasty life strategy
+[  441.28s ->   442.08s] and you're just not seeing
+[  442.08s ->   443.22s] the consistency you want.
+[  443.56s ->   444.30s] So make sure you go
+[  444.30s ->   445.34s] further out in time,
+[  445.52s ->   445.74s] check,
+[  446.00s ->   447.14s] make sure you actually
+[  447.14s ->   447.90s] use a hard stop
+[  447.90s ->   449.30s] and you plan hedges around it.
+[  449.58s ->   450.30s] And number three,
+[  450.40s ->   450.86s] if you're trading
+[  450.86s ->   452.20s] a trending asset,
+[  452.64s ->   453.50s] make sure that you're
+[  453.50s ->   454.56s] not Delta neutral.
+[  454.96s ->   455.40s] All right, guys,
+[  455.52s ->   456.00s] please let me know
+[  456.00s ->   457.04s] your thoughts on this below
+[  457.04s ->   458.74s] and watch one of my other videos
+[  458.74s ->   459.82s] if you enjoyed this one.
+[  460.02s ->   460.38s] All right, guys,
+[  460.38s ->   461.16s] see you in the next one.

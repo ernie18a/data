@@ -1,0 +1,187 @@
+[    0.08s ->     5.32s] This exact strategy is what I use on a day to day basis and has been backtested thousands
+[    5.32s ->     6.32s] of times.
+[    6.32s ->     9.68s] And every month that I tested it, it has been profitable in the long term.
+[    9.68s ->    12.48s] The core of this strategy uses supply and demand.
+[   12.48s ->    17.32s] Demand is the start of a strong move upwards, supply is the start of a strong move downwards.
+[   17.32s ->    18.72s] The idea is pretty simple.
+[   18.72s ->    23.00s] You want to buy from zones where institutional buying and selling is occurring.
+[   23.00s ->    25.08s] You know, where the big bank boys are entering.
+[   25.08s ->    27.60s] Now finding these levels is extremely easy.
+[   27.60s ->    32.36s] You simply find the candle before the strong move and mark the low to the high of that
+[   32.36s ->    33.36s] specific candle.
+[   33.36s ->    38.06s] You then wait for price to come back to that zone, enter your position, then proceed to
+[   38.06s ->    39.64s] make millions of dollars.
+[   39.64s ->    41.24s] But there's a huge problem.
+[   41.24s ->    46.14s] For example, if we look at this chart, there's an area of demand here, here, and here.
+[   46.14s ->    47.36s] So which one do we use?
+[   47.36s ->    51.16s] Well, if you don't know the answer to that question, it could be the difference of you
+[   51.16s ->    53.54s] losing a trade and you winning one.
+[   53.54s ->    56.84s] So going back to our example, we had three different demand zones.
+[   56.84s ->    62.34s] Demand 1 and 2 are fake demand zones, persuading traders to enter there, when in reality they
+[   62.34s ->    67.60s] just become the liquidity and help move price to the real zone, zone 3, and that's where
+[   67.60s ->    69.30s] price actually reverses.
+[   69.30s ->    73.34s] Now you might be sitting there thinking, okay cool, so you basically just want to pick the
+[   73.34s ->    77.78s] lowest zone and that's the one that has the highest probability of going up.
+[   77.78s ->    82.60s] While yes, lower prices is usually a good thing when trading, the lowest zone isn't
+[   82.60s ->    84.72s] always necessarily the best one.
+[   84.72s ->    87.26s] For example, here on this chart, we have two zones.
+[   87.26s ->    92.06s] If we waited for price to come to this lower zone, we would have never gotten into the trade.
+[   92.06s ->    97.16s] Because price came down to the strong zone, zone 1, and it went upwards from here.
+[   97.16s ->   100.22s] So how do we decipher which zones to choose?
+[  100.22s ->   101.10s] The answer?
+[  101.10s ->   102.10s] Inducement.
+[  102.10s ->   109.97s] If you go on google and search the word inducement, you will find the definition, a thing that persuades
+[  109.97s ->   112.25s] or influences someone to do something.
+[  112.25s ->   116.83s] If we find inducement on our chart, it will raise the probability of finding the strongest
+[  116.83s ->   117.83s] zone.
+[  117.83s ->   119.91s] The easiest way to do that is by finding liquidity.
+[  119.91s ->   124.11s] The simplest form of liquidity is just equal highs or equal lows.
+[  124.11s ->   128.79s] Whenever there's equal lows like this, there will naturally be lows of stop losses below
+[  128.79s ->   129.79s] this level.
+[  129.79s ->   133.93s] The market is programmed to take out these stop losses, and then proceed to do the actual
+[  133.93s ->   135.83s] move and go up afterwards.
+[  135.83s ->   138.75s] So if we go to this example, we have two demand zones.
+[  138.75s ->   144.61s] At zone 1, we see right before the strong upwards move, price consolidated and made equal highs
+[  144.61s ->   145.61s] and equal lows.
+[  145.61s ->   149.53s] Meaning, there's tons of resting liquidity below this demand zone.
+[  149.53s ->   154.07s] So as price comes down to this zone, lots of traders will enter as they think this is
+[  154.07s ->   155.21s] a strong zone.
+[  155.21s ->   158.41s] Then proceed to set their stop losses below these lows.
+[  158.41s ->   163.33s] So often times price will do a little upwards move from here, but then will want to proceed
+[  163.33s ->   164.79s] to take out liquidity.
+[  164.79s ->   167.99s] And where better to do that other than these equal lows.
+[  167.99s ->   172.65s] So price will end up breaking this inducement zone and move to the real zone, zone number
+[  172.65s ->   173.65s] 2.
+[  173.65s ->   177.55s] But you may not always be lucky enough to get a clear example like this.
+[  177.55s ->   181.37s] Sometimes it will be a little bit more tricky to identify the true zone.
+[  181.37s ->   185.19s] Another way to find the strongest zone is by identifying breaks of structure.
+[  185.19s ->   190.11s] So in this example, zone 2 had so much strength that it broke the previous high.
+[  190.11s ->   194.87s] Meaning, there was tons of buying power from this demand zone to give it strength to break
+[  194.87s ->   196.15s] the previous high.
+[  196.15s ->   199.19s] So we can identify this as a strong zone.
+[  199.19s ->   202.61s] But that would completely change if we had a scenario like this.
+[  202.61s ->   207.41s] In this scenario, zone 2 actually didn't have enough strength to break the structure of
+[  207.41s ->   208.67s] the previous high.
+[  208.67s ->   210.79s] And actually failed while doing so.
+[  210.79s ->   215.73s] Well, zone 1 was the zone that actually had the institutional backing, giving it the power
+[  215.73s ->   217.35s] to break the previous high.
+[  217.35s ->   222.95s] So in this example, despite zone 1 being the higher demand zone, zone 1 is actually the
+[  222.95s ->   226.31s] stronger zone and is the one we would choose to enter a trade.
+[  226.31s ->   229.85s] The third trick in finding the true zone is fair value gaps.
+[  229.85s ->   232.67s] A fair value gap is simply just a three candle formation.
+[  232.67s ->   238.09s] Where price spikes up or down extremely fast and is untested by any wicks.
+[  238.09s ->   241.59s] The fair value gap is just the zone where price is untested.
+[  241.59s ->   242.59s] So right here.
+[  242.59s ->   246.89s] Price will eventually want to test this zone again, then move back up afterwards.
+[  246.89s ->   249.85s] So knowing this, we can use it to our advantage.
+[  249.85s ->   252.17s] For example, here we have two different demand zones.
+[  252.17s ->   255.33s] So again, we're forced to answer the age old question.
+[  255.33s ->   256.67s] Which zone do we choose?
+[  256.67s ->   261.75s] If we look closely, there is a fair value gap formed right above zone 2.
+[  261.75s ->   266.81s] And like I said before, price is naturally attracted to fair value gaps and will want
+[  266.81s ->   267.81s] to go to them.
+[  267.81s ->   270.95s] In order to do that, it would have to break through zone 1.
+[  270.95s ->   275.39s] So we can instantly remove the idea of zone 1 being a strong zone.
+[  275.39s ->   280.13s] As price will naturally want to come to this fair value gap and in order to do that, it
+[  280.13s ->   281.73s] has to break through zone 1.
+[  281.73s ->   285.27s] So now we have crafted a formula for finding powerful zones.
+[  285.27s ->   289.95s] Finding inducement zones made with equal highs and equal lows to generate liquidity.
+[  289.95s ->   292.11s] Zones that have strength from breaking structure.
+[  292.11s ->   294.99s] And finding inducement zones based off fair value gaps.
+[  294.99s ->   299.75s] If we combine all of these tricks, we will raise the probability of finding the best possible
+[  299.75s ->   300.75s] setups.
+[  300.75s ->   305.09s] So let's put all we've learned to the test and do a real life chart example.
+[  305.09s ->   307.31s] But before we get into that, let me show you something.
+[  307.31s ->   312.77s] I found a new broker, tripleafx.com, and this is no ordinary broker.
+[  312.77s ->   315.45s] They offer forex, stocks, and crypto.
+[  315.45s ->   316.45s] Yes, a 3 for 1.
+[  316.45s ->   320.15s] So no matter what silly little thing you trade, they have it.
+[  320.15s ->   322.49s] Best part is, they have 0% commissions.
+[  322.49s ->   327.37s] Yes, you heard me right, 0% commissions for all of your trades.
+[  327.37s ->   331.45s] So unlike most brokers where you have to pay fees for every single trade you take.
+[  331.45s ->   333.79s] I mean, really sit down and think about it.
+[  333.79s ->   338.03s] If you're taking hundreds of trades, those fees can really add up to where you're paying
+[  338.03s ->   340.67s] hundreds if not thousands of dollars.
+[  340.67s ->   342.67s] On here, it's absolutely free.
+[  342.67s ->   347.25s] Plus, they're available in 176 different countries and fully regulated.
+[  347.25s ->   350.89s] If you want to try them out, use the link in my description and you will get unlimited
+[  350.89s ->   353.83s] 0% commissions if you use my link.
+[  353.83s ->   354.83s] You're welcome.
+[  354.83s ->   359.83s] Now, this strategy will work for all timeframes, but I personally like to use it for the 1 hour
+[  359.83s ->   364.23s] or daily timeframe, as those supply and demand zones tend to hold the strongest.
+[  364.23s ->   368.97s] Here in this example, we have a clear uptrend, with price making higher highs and higher lows.
+[  368.97s ->   372.71s] So since we're in an uptrend, we only look for areas of demand.
+[  372.71s ->   377.71s] To find our areas of demand, we need to find the start of moves with strong impulses.
+[  377.71s ->   380.83s] So there's an area of demand here, here, and here.
+[  380.83s ->   385.51s] So we now have all of our potential demand zones, but not all of them are valid.
+[  385.51s ->   388.43s] If you were trading this chart, which one would you choose?
+[  388.43s ->   390.81s] Would it be zone 1, 2, or 3?
+[  390.81s ->   393.17s] Now right away, we can remove zone 1.
+[  393.17s ->   397.27s] The reason being is there's a fair value gap right above zone 2.
+[  397.27s ->   401.45s] And like I said before, price will naturally want to come to this fair value gap.
+[  401.45s ->   404.85s] And in order to do that, it'll have to break through zone 1.
+[  404.85s ->   407.45s] So we can instantly remove this as an option.
+[  407.45s ->   409.63s] That leaves us with two zones to choose from.
+[  409.63s ->   411.77s] Now which one do you think we should trade from?
+[  411.77s ->   413.81s] You may be thinking it's zone 3.
+[  413.81s ->   418.37s] Considering what I just said, there's also a fair value gap down here, meaning price would
+[  418.37s ->   421.35s] have to break through zone 2 in order to get to that.
+[  421.35s ->   424.61s] But if we look closely at our chart, something interesting is happening.
+[  424.61s ->   428.01s] As you can see, our previous high is marked out right here.
+[  428.01s ->   432.43s] And if we look closely, zone 3 didn't add the strength to break this high.
+[  432.43s ->   435.97s] The zone that did end up breaking this high was zone 2.
+[  435.97s ->   438.73s] Meaning zone 2 is actually our stronger zone.
+[  438.73s ->   443.47s] We then proceed to wait for price to come to the zone, enter as soon as it does, put your
+[  443.47s ->   448.15s] stop loss below the demand zone, and set your take profit at the recent high.
+[  448.15s ->   452.11s] Let the trade play out, and zone 2 was indeed our strongest zone.
+[  452.11s ->   453.15s] Here's another example.
+[  453.15s ->   455.93s] Here we have the start of a reversal to the downside.
+[  455.93s ->   459.79s] So this time we'll look for short trades and areas of supply.
+[  459.79s ->   464.33s] Now while looking at this chart, I immediately see two areas of supply.
+[  464.33s ->   466.47s] One right here, and one right here.
+[  466.47s ->   467.89s] Which one should we use?
+[  467.89s ->   472.89s] Well both of these zones broke the previous structure, so both of them passed that test.
+[  472.89s ->   477.75s] Zone 2 before creating its strong downwards move made these equal highs.
+[  477.75s ->   483.85s] And like I said before, whenever there's consolidation or equal highs, that will create liquidity above
+[  483.85s ->   489.29s] these equal highs, as traders will set their stop losses above them, and price will naturally
+[  489.29s ->   491.53s] want to take out these equal highs.
+[  491.53s ->   494.61s] Also there's a fair value gap above by zone 1.
+[  494.61s ->   498.73s] So that's a whole other reason on why not to use zone 2.
+[  498.73s ->   500.25s] So we choose zone 1.
+[  500.25s ->   505.53s] We see what price does, it hesitates at zone 2 because all these traders think this is
+[  505.53s ->   506.61s] the correct zone.
+[  506.61s ->   510.57s] But for the reasons I mentioned before, we know it's an inducement zone.
+[  510.57s ->   514.91s] Price then proceeds to break all these equal highs, grab all of this liquidity.
+[  514.91s ->   520.07s] We enter a short trade, set our stop loss above the area of supply, set our take profit at
+[  520.07s ->   522.87s] the lows, and get a beautiful winning trade.
+[  522.87s ->   524.75s] Let's do one last final example.
+[  524.75s ->   526.25s] Here we have a downtrend.
+[  526.25s ->   528.93s] Since we're in a downtrend, we'll look for areas of supply.
+[  528.93s ->   534.01s] Right when I look at this, I see an area of supply right here, here, here, and here.
+[  534.01s ->   538.29s] So we have a total of 4 areas of supply, but which one do we choose?
+[  538.29s ->   541.61s] All of them created a break of structure, so we're good in that regard.
+[  541.61s ->   544.53s] When first looking at this, I see something very interesting.
+[  544.53s ->   549.15s] We see equal highs at this area of supply, so we can instantly remove zone 1.
+[  549.15s ->   553.93s] As price will want to naturally take out this easy liquidity at these equal highs, and in
+[  553.93s ->   556.85s] order to do that, it has to break through zone 1.
+[  556.85s ->   559.01s] Zone 2 is an inducement zone.
+[  559.01s ->   563.29s] Lots of traders will enter here thinking this is the correct zone, but like I said before,
+[  563.29s ->   565.11s] there's equal highs here.
+[  565.11s ->   569.11s] And since this is an inducement zone, it'll add even more liquidity.
+[  569.11s ->   570.77s] So we'll take out zone 2.
+[  570.77s ->   572.47s] That leaves us with 2 zones.
+[  572.47s ->   574.11s] Which one do you think it is?
+[  574.11s ->   576.99s] If you guessed zone 3, you would be absolutely wrong.
+[  576.99s ->   582.55s] As again, there are equal highs here, creating natural liquidity, making zone 3 an inducement
+[  582.55s ->   583.55s] zone.
+[  583.55s ->   585.79s] So now we know zone 4 is the real zone.
+[  585.79s ->   587.35s] Let's see what price does.
+[  587.35s ->   589.47s] It breaks through zone 1 instantly.
+[  589.47s ->   592.11s] Coming to zone 2, the inducement zone hesitates.
+[  592.11s ->   596.11s] Then proceeds to grab all the liquidity, giving it fuel to head higher.
+[  596.11s ->   602.27s] It then goes to zone 3, grabs even more liquidity, then moves to the real zone, zone 4.
+[  602.27s ->   607.53s] We enter a short trade, set our stop loss above the supply zone, set our take profit at the
+[  607.53s ->   608.53s] lows.
+[  608.53s ->   611.57s] Watch the trade play out, and we get another winning trade.
+[  611.57s ->   614.11s] Liquidity breaks the structure in fair value gaps.
+[  614.11s ->   618.19s] Implement this in your trading, and watch your trading balance grow.

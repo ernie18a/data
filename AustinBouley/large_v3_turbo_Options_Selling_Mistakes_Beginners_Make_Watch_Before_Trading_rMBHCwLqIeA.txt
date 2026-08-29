@@ -1,0 +1,76 @@
+[    0.00s ->     4.84s] In this video, I'm going to walk through the biggest mistakes that most options traders make.
+[    5.14s ->    10.04s] And I'm speaking from personal experience because I have woken up to a $15,000 loss
+[   10.04s ->    13.90s] overnight because of something that could have easily been prevented. So I'm going to walk you
+[   13.90s ->    17.68s] through the three biggest things that you need to stop doing right now if you want to have
+[   17.68s ->    22.58s] consistency in your trading and actually generate income from your options trading.
+[   22.90s ->    27.88s] So let's dive in. The first mistake is that people do not understand market conditions.
+[   27.88s ->    31.74s] They're like, oh, I love trading a strangle or a spread or whatever. But they have a problem is
+[   31.74s ->    37.48s] they don't understand when that strategy actually makes money. And so there's a super simple way to
+[   37.48s ->    42.46s] know. There's no need to do chart drawings, guessing, hoping, whatever. Just go to your chart,
+[   42.80s ->    49.68s] go to indicators, add the indicator called the Bollinger Bands to your chart. It may look confusing
+[   49.68s ->    53.50s] at first. What we're going to do is we're going to go to the settings and we're going to change the
+[   53.50s ->    60.60s] link from 20 to 200. And when you do this maps out exactly what you should be doing in the moment
+[   60.60s ->    65.86s] you should be doing it. What do I mean by that? Super simple here. If the market is in this top
+[   65.86s ->    71.64s] zone between the middle line and the red line, this is bullish market territory, aka we're going to be
+[   71.64s ->    77.68s] hoping to make money to the upside. So put BL for bullish. Okay. Bullish is also down here. If it breaks
+[   77.68s ->    82.46s] below the lowest line, that means that it's bouncing and heading higher. This is also a
+[   82.46s ->    88.54s] bullish market. Now, if we're below these two lines right here between these is a bearish market
+[   88.54s ->    93.46s] and we're above this zone, the bearish market. So I might be giving you a lot here, but you need to
+[   93.46s ->    97.38s] understand the different phases of the market. There's bullish phases and there's bearish phases.
+[   97.72s ->   102.94s] And you make sure you're using an option strategy that pairs with and is meant to make money in that
+[  102.94s ->   107.16s] type of market. So once you know that, it's okay. What strategies do I do? Well, in a bearish
+[  107.16s ->   112.92s] market, super simple. You can just buy puts, or you can also do something like a call credit spread.
+[  113.06s ->   118.62s] My favorite is just buying puts outright. Now in a bullish market, what can we do? Depending on how
+[  118.62s ->   122.22s] fast the bullish market is, we can do something like a strangle. It's going to be for slower
+[  122.22s ->   128.80s] bullish markets. We can do things like a one, one X where you just sell puts, or we can do something
+[  128.80s ->   135.72s] like a put credit spread. All those are bullish strategies we can use. And now we know, Hey, looking at
+[  135.72s ->   139.96s] the market, it's in this phase of this space, which means I have my pick from these options
+[  139.96s ->   146.20s] or these strategies. And so that's exactly how you can understand market conditions because a lot of
+[  146.20s ->   150.94s] people are trading the wrong strategies during the wrong times. And that's why they're losing money.
+[  151.06s ->   155.28s] Not because it's a bad strategy because they're doing it in the wrong type of market.
+[  155.76s ->   160.50s] So after we've done that, the next thing I want to break down is mistake number two, which is people
+[  160.50s ->   166.84s] hedging, not enough or incorrectly. And now what do I mean by this? A lot of people like hedging
+[  166.84s ->   170.28s] their trades because they think it's safe and other people's don't hedge. But if you're selling
+[  170.28s ->   176.38s] options, number one, just hedge. Okay. Number two, I see a lot of people wasting money on hedges.
+[  176.38s ->   180.80s] They're hedging during any point of time. And if that's something you want to do, if you like
+[  180.80s ->   185.82s] risking money for the extra feeling of safety, that's fine. But there's certain parts in certain
+[  185.82s ->   191.46s] areas in the market when it's crucial to hedge and others when it's not. So if we look at this
+[  191.46s ->   196.56s] band shows where the market stays in range, if it breaks out above, it tends to pull back in. If it
+[  196.56s ->   202.34s] breaks out below, it tends to push back up. And so the thing is, if we are selling puts, which makes
+[  202.34s ->   208.20s] one to the upside, if we're down near this zone, our risk is very low because the chance of it dropping
+[  208.20s ->   215.34s] further, highly unlikely. The chance of it going higher, way more likely. Okay. And so that's what
+[  215.34s ->   220.42s] we're seeing here. When I talk about hedging, it means that if we are up here near this range,
+[  220.52s ->   228.54s] particularly within the vicinity of this top red line, specifically above it, this is when you hedge.
+[  228.70s ->   235.50s] If you are hedging down here, number one, it's too late to hedge. And number one, it's too late to
+[  235.50s ->   240.18s] hedge. And number two, you're going to be wasting money because the market's heading higher from here.
+[  240.62s ->   245.14s] And so because of that, you're going to waste money on hedges for no reason. And so you should only
+[  245.14s ->   249.88s] be hedging when the market is up here in this red zone. That way you're making sure that you're
+[  249.88s ->   254.24s] hedging at the right time. You're giving yourself protection for your account and you're not wasting
+[  254.24s ->   259.58s] money because hedges do cost money. All right, sweet. So that's that one. Now, mistake number
+[  259.58s ->   264.88s] three that I see a lot of people doing is not understanding volatility risk. What does this
+[  264.88s ->   270.86s] mean? When VIX spikes, we can be suffering as option sellers. Our trades, our strategies can be
+[  270.86s ->   276.64s] right. But if VIX just spikes, we'll immediately start losing due to how VIX works. And now there's
+[  276.64s ->   283.80s] two ways to reduce volatility risk. So I would say two ways to reduce VIX risk. And now again,
+[  284.08s ->   288.70s] most people don't know this and it's not talked about often, but this is something crucial. Okay.
+[  289.02s ->   296.90s] If you look at Vega, Vega is an options Greek that shows you the impact of volatility on the option.
+[  296.90s ->   302.84s] So if we go what, let's say something Tasty Lye would say, which is like a 45 DTE trade,
+[  303.16s ->   309.20s] and we're doing like a 16 Delta type of position, this in theory, again, I'm just going to give you
+[  309.20s ->   314.92s] a rough number, could be as much as a hundred when it comes to Vega. So it has basically a lot amount
+[  314.92s ->   320.94s] or a lot of risk when it comes to volatility. But there are two things we can do to decrease this
+[  320.94s ->   329.48s] risk a ton. Number one, going out further in time, if we go out to a 90 DTE point, instead of 45 DTE,
+[  329.60s ->   335.80s] so 90 DTE, and we even keep the Delta the exact same, that's going to drop our Vega rift by literally
+[  335.80s ->   343.84s] 25%. So Vega is going to come down from 100 down to 75. So that way, we reduce our risk a ton by keeping
+[  343.84s ->   349.16s] the trade the exact same, just going out further in time. And what else do we get by going out further
+[  349.16s ->   354.60s] in time, we also get to have a higher win rate. And we also get to make more money because we're
+[  354.60s ->   359.94s] collecting more premium upfront. So overall, going out further in time is amazing. But what's the other
+[  359.94s ->   365.60s] thing we can do? In addition to going further out in time to a 90 DTE, we can also lower the Delta.
+[  365.96s ->   372.04s] Instead of going to a 30 to a 16 Delta, we can push that to around a 10 Delta instead, and be around
+[  372.04s ->   378.54s] the 10 Delta range. And that's going to bring us down to 50. So these two things combined, it can
+[  378.54s ->   386.16s] decrease our Vega risk by 50%. Go to the options chain, I dare you check this out. A 45 DTE 16 Delta
+[  386.16s ->   393.14s] versus a 90 DTE 10 Delta, it will have basically half the Vega risk, which is insane. So if you want
+[  393.14s ->   399.52s] to reduce your volatility risk, because you're tired of seeing your account, huge losses overnight,
+[  399.90s ->   404.88s] this is exactly what you need to do. So again, as a recap, number one, trade the right strategies
+[  404.88s ->   409.96s] during the best markets, aka bullish shares or whatever. Number two, make sure that you're
+[  409.96s ->   414.66s] hedging at the right time that you're not losing money for no reason. And number three, make sure
+[  414.66s ->   420.20s] to employ VIX risk. All right, guys, if you want to learn more, check out the links in my description
+[  420.20s ->   422.82s] or check out my latest video here on the screen.

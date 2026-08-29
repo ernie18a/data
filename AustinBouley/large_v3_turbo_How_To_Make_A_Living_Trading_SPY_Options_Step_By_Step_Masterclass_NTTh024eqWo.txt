@@ -1,0 +1,118 @@
+[    0.00s ->     5.46s] I'm going to walk you through exactly how to make a living trading SPY options and I'm not
+[    5.46s ->     9.32s] going to leave anything to chance I'm going to give you the exact blueprint I use so that you
+[    9.32s ->    14.14s] will never be confused and you can do this for yourself on repeat so let's jump right into it
+[   14.14s ->    22.44s] all right so this is a chart of the S&P 500 ETF SPY SPY the first thing you need for this video
+[   22.44s ->    28.74s] is a broker platform or a charting platform of SPY right now I'm using tradingview.com you can
+[   28.74s ->    35.40s] use your broker Robin Hood Webull TD Ameritrade whatever it is that's your program next you need
+[   35.40s ->    41.26s] this trading handbook guide this is the step-by-step strategy that I'll be using for this video and I
+[   41.26s ->    46.58s] give it away completely for free all the years of research and studying that has gone into making
+[   46.58s ->    51.56s] these approaches and strategies is yours for free so go in the description down below and click it
+[   51.56s ->    57.28s] and join because this this is the program for you but again it's completely free just a PDF download
+[   57.28s ->    61.70s] anyways so once we have that we're going to be looking at SPY and now we need to add some
+[   61.70s ->    67.04s] some indicators to our chart to make this more obvious than what we're doing all right so first
+[   67.04s ->    70.16s] thing we're going to do is we're going to come into here we're going to go into the indicator section
+[   70.16s ->    77.10s] we're going to come over here and type in Bollinger Bands which is B-O-L-L-I-N-G-E-R Bollinger
+[   77.10s ->    82.18s] Bands right here we're going to add it to our chart we're going to make some customization to this
+[   82.18s ->    87.46s] so again if we go in here to the settings we're going to change the length to 200 standard deviation
+[   87.46s ->    92.78s] to one and this is going to give us a rough approximation of what we're trying to do here
+[   92.78s ->    98.96s] okay how do we read this chart what is going on here okay this essentially shows us which way the
+[   98.96s ->   104.68s] market is trending so essentially the market or the stock SPY is above this top blue line
+[  104.68s ->   109.84s] we're in an uptrend we're trending up so that means that as an option trader we want to be selling
+[  109.84s ->   115.94s] put credit spreads if the stock is below the bottom blue line we are trending down which means
+[  115.94s ->   121.54s] we want to as options traders be selling call credit spreads if we're in the middle here we're
+[  121.54s ->   125.12s] going to have a lot of volatility because the market's going to go back and forth back and forth
+[  125.12s ->   129.92s] so we're going to be trading put credit spreads but put credit spreads that are a bit further out
+[  129.92s ->   135.24s] of the money so that we're a bit more safe since anything can happen when we're inside these two
+[  135.24s ->   139.72s] lines okay cool now that we got that gist let's jump over to the trading handbook
+[  139.72s ->   144.60s] okay so again you can read more about the specifics investment thesis how this works whatever
+[  144.60s ->   149.14s] let's dive into the first strategy i'm going to be highlighting three from this pdf today
+[  149.14s ->   155.52s] number one is the squirrel strategy this is a neutral sideways market play so what is this this is when
+[  155.52s ->   161.20s] the market is with inside this little range right here the best way to do it is to trade a neutral
+[  161.20s ->   167.38s] sideways market strategy why well because when the market is within this band it's highly likely
+[  167.38s ->   172.48s] mathematically to stay within this range so we're not seeing a clear trend in any one way we're
+[  172.48s ->   177.60s] seeing up and down movement up and down movement when it's inside this range so how we're going to
+[  177.60s ->   182.54s] trade that is very simply by following these steps we're going to wait for it to be inside this which
+[  182.54s ->   187.78s] is plus and minus one standard deviation the 200 day moving average line so we get a close approximation
+[  187.78s ->   194.40s] with this next we need to determine our short strike price to set up this trade our short strike price is
+[  194.40s ->   200.70s] going to be 96 percent of the stock's close price so let's say that we're looking at the stock on this
+[  200.70s ->   208.08s] day right here and we're and we're inside this blue line and so the stock closed at roughly 401 20
+[  208.08s ->   214.20s] so if the stock closed let me drag this into view at 401 20 then we're going to calculate our short strike
+[  214.20s ->   220.04s] price by doing 0.96 and then rounding to the nearest whole number you can see here 385 all right so we're
+[  220.04s ->   227.58s] going to be going down to 385 and selling that level so if we're here 385 is right down here roughly
+[  227.58s ->   234.36s] this is 385 this is our level this means that as long as the stock stays above 385 we're going to make
+[  234.36s ->   239.54s] money on this trade what ended up happening well we ended up making money because it went in our favor
+[  239.54s ->   244.78s] but let's finish this thing next we need to also know what strike price we're buying because they put
+[  244.78s ->   249.90s] credit spread so we're going to sell the the 385 and then we're going to buy the one right below it
+[  249.90s ->   255.22s] so we're going to buy the 384 cool now we know the details behind our put credit spread next what is
+[  255.22s ->   260.40s] our expiration date we're going to take the current date plus 14 days and round to the next friday so
+[  260.40s ->   265.50s] again let's just take today for instance so we can start doing or let's just use an easy number for me
+[  265.50s ->   270.94s] let's say it's the 10th right if it's the 10th we're going to add 14 days so that means we're going to
+[  270.94s ->   276.76s] round up to the 24th if the 24th for instance is the 24th like today which is a monday then that
+[  276.76s ->   281.82s] means we're going to round to next friday or this next upcoming friday so that means we're going to
+[  281.82s ->   288.46s] be rounding to i believe like the 28th or the 29th something like that so our expiration day will be
+[  288.46s ->   294.08s] the 28th or the 29th whatever that next upcoming friday is next we're going to set this trade and our
+[  294.08s ->   298.36s] broker we're going to use the short strike of 385 we're going to buy the 384 we're going to go to an
+[  298.36s ->   303.84s] expiration date of july 28th and again we're going to ensure that we can collect at least 15 cents in
+[  303.84s ->   309.36s] credit if all these are set we're going to place the trade and move on this is a set it and forget
+[  309.36s ->   317.08s] it trade that has a 93% win rate and if we do this on repeat since 2007 we're going to have an
+[  317.08s ->   323.60s] annualized return of 10.84 so this is the beauty of following this approach this one strategy alone
+[  323.60s ->   329.82s] right here will make you a little over the average mark uh market return by setting trades that are
+[  329.82s ->   334.12s] set it and forget it in less than five minutes a week cool let's go jump to the next strategy though
+[  334.12s ->   338.82s] because we're not going to be limited by only trading when it's inside this range next we're
+[  338.82s ->   343.36s] going to be like okay what happens if the stock or spy is trading above this blue line well that means
+[  343.36s ->   348.04s] we've now entered an uptrend period this uptrend strategy is called the true turtle strategy right
+[  348.04s ->   352.20s] here this is our bullish and uptrending markets we're going to do is we're going to wait for the stock
+[  352.20s ->   356.92s] to get um above this blue line that we just mentioned right here for reference this is our
+[  356.92s ->   363.50s] best approximation of um the moving average deviations here we're going to create our short
+[  363.50s ->   369.00s] strike price which is 97 of the current stock so we're above it right now so we can use this as our
+[  369.00s ->   378.74s] approximation so you can see here it closed at 45420 45420 and we're doing 97 so that brings us down
+[  378.74s ->   385.50s] to 444.57 rounding to the nearest whole number is 441 so you can see right here it wants us to take
+[  385.50s ->   392.40s] the 441 as our short strike uh for our put credit spread so 441 right here and then we're going to
+[  392.40s ->   399.46s] buy the one right below it so the 440 so our put credit spread will be 441 440 next what is our
+[  399.46s ->   403.88s] expiration date well instead of doing 14 days out we're going to do 12 days out and then round it
+[  403.88s ->   410.16s] to the next friday so again today right here is the four uh the 24th so if we add 12 days it's
+[  410.16s ->   414.84s] going to be the 36 which does not exist in july so we got to jump to the next month so it's going to
+[  414.84s ->   421.48s] be roughly um we're looking at august um let's see if i can do math august 8th around there and
+[  421.48s ->   425.70s] we're going to round it to the next friday so it's going to be around august 10th or 11th or something
+[  425.70s ->   430.02s] like that sorry dates are not my forte anyways we're going to be doing around there let's just say
+[  430.02s ->   436.00s] august 10th for the sake of this video will be our expiration date cool next we're going to go to
+[  436.00s ->   439.36s] our broker we're going to set up this trade we're going to sell to open the short strike which is
+[  439.36s ->   444.74s] 411 we're going to buy to open the strike below that which is 440 we're going to use our strike
+[  444.74s ->   451.22s] price uh or our expiration date of august 10th slash 11th whatever it is and if we can collect 15 cents
+[  451.22s ->   455.78s] in credit we're going to put this trade on it set it and forget it trade with a 95% win rate
+[  455.78s ->   462.36s] that'll make us 34% annualized return that's going to 3x the average market return just by
+[  462.36s ->   467.50s] using this one simple approach on spy the backtest is here you can also click the link down in the
+[  467.50s ->   471.76s] description to see the backtest for yourself this is what me and my members are using every single
+[  471.76s ->   477.26s] week um again that program though is opening here very soon so if you want to get my personal alerts
+[  477.26s ->   483.28s] and our algo alerts that program opens on the 27th anyways last but not least the final strategy we
+[  483.28s ->   487.56s] can make money in sideways markets and uptrending markets but guess what we can also make money in
+[  487.56s ->   491.88s] downtrending markets when the market is headed down that is going to be right here the short play
+[  491.88s ->   497.32s] strategy this short play strategy has about the same rules as the other one but we're going to do
+[  497.32s ->   503.00s] a less time intensive approach so for instance once it breaks below this blue line we are now good to go
+[  503.00s ->   507.42s] to sell call credit spreads so what we're going to do is we're going to determine our short strike price
+[  507.42s ->   512.74s] which is going to be the current stock close price times a hundred and four percent or essentially
+[  512.74s ->   517.56s] four percent above the close price so let's say we're trading this right here you can see how we're
+[  517.56s ->   525.18s] here we're below okay we'll close here at 413.50 so you're going to go 413.50 if i can cite and then
+[  525.18s ->   532.40s] we're going to go 1.04 and that's going to give us 430 so 430 is going to be the call strike price
+[  532.40s ->   538.38s] that we use so i believe that was right here 430 is going to be right here cool so this is our call
+[  538.38s ->   543.80s] credit spread we don't want it to get above this level if it stays below this level we make money
+[  543.80s ->   548.08s] so just like before we're selling the 430 we go up one to the 431 and that's going to be the strike
+[  548.08s ->   554.70s] we buy next what is our expiration date the current date plus nine days so it's currently july 24th plus
+[  554.70s ->   560.58s] nine that's going to make it around august 2nd or 3rd um and so that's going to have to go up to the
+[  560.58s ->   564.20s] next friday it's going to be around august 5th august 6th let's just say august 6th for this video
+[  564.20s ->   570.27s] remember i don't know dates okay so now we're going to set this trade in our broker where we sell to
+[  570.27s ->   576.77s] open the uh shoot what do we determine uh 430 which means we're going to buy the 420 uh 431
+[  576.77s ->   583.59s] and then we're going to use an expiration date of august 6th or whatever i said it would be
+[  583.59s ->   588.27s] if we can collect 15 cents in credit we're going to put this trade on and that's exactly how we do it
+[  588.27s ->   593.87s] you have a 96 win rate and you'll make four percent every single year following this approach
+[  593.87s ->   598.31s] so we combine all these strategies together because we won't be doing them all the same time
+[  598.31s ->   604.35s] but different times we have a four percent return on the short play a a basically a 35 return on the
+[  604.35s ->   614.67s] trending play and a 10 or 11 return on the um neutral play so this gives us 11 plus 35 which is 46
+[  614.67s ->   623.53s] plus uh four so 46 plus four 40 return now you're making a 40 return every single year by trading the
+[  623.53s ->   629.09s] upside the downside and the neutral markets just by doing set it and forget it credit spread strategies
+[  629.09s ->   634.21s] again if you want access to this free pdf click the link down in the description if you're learning
+[  634.21s ->   638.21s] more about credit spreads you want entry and exit rules that's what this whole thing is for i talk
+[  638.21s ->   645.01s] about trade sizing exit rules and so much more so this is all for you for free again i'm giving this
+[  645.01s ->   649.83s] to you in hopes that you like it you make money with it like a thought like tons of other people have
+[  649.83s ->   655.91s] and then you like me enough to join my program which is opening up on july 27th all right guys i will
+[  655.91s ->   660.29s] see you in the next youtube video smash that subscribe button and thumbs up button see you later

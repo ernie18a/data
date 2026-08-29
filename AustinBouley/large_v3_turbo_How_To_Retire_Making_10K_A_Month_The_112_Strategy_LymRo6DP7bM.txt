@@ -1,0 +1,245 @@
+[    0.00s ->     5.76s] In this video, I'm going to show you how to retire making $10,000 per month using the simple 1-1-2
+[    5.76s ->    11.92s] strategy. I've done this for myself. Some months I've made $10,000 a month, some months I've done
+[   11.92s ->    16.38s] worse, and my average return was about $5,000 per month. But not only that, I've helped others do
+[   16.38s ->    21.44s] this as well, and I've helped hundreds of others make as much as $1,000 to $2,000 per month using
+[   21.44s ->    25.40s] this same strategy. So let's dive into what you'll be learning in this video. Quite simple, you'll
+[   25.40s ->    30.12s] learn a quick summary of what options are if you're new to that. You'll learn specifically what
+[   30.12s ->    35.36s] the 1-1-2 option strategy is. You'll learn the backtest. You'll see how it performs over time.
+[   35.44s ->    39.00s] You'll see how to trade it on a chart. We'll pull up a chart, and I'll show you how to break it down.
+[   39.22s ->    42.60s] I'll show you how to enter it in the broker so that by the time you get done with this video,
+[   42.66s ->    47.18s] you can actually implement it yourself. And I'll show you how to manage risk that comes with this.
+[   47.38s ->    52.22s] Then I'll show you how to scale your trading account based on how much money you have in it.
+[   52.22s ->    57.04s] And then I'll show you how to actually automate the entire strategy. So let's start off with part
+[   57.04s ->    61.28s] number one. What are options? So let's face smaller and let's dive in. This is going to be a quick
+[   61.28s ->    66.22s] recap for those who don't know, and then we'll get into the fun stuff. Okay. There are a bunch of
+[   66.22s ->    71.04s] different things that we can do with options. Options are essentially betting on a stock. So just like
+[   71.04s ->    76.14s] when you're betting on a football game where you say, hey, I bet this guy can run a certain number of
+[   76.14s ->    81.02s] yards, or I bet this golf player can hit a hole in one. Whatever it is, you're betting on something
+[   81.02s ->    85.28s] underlying and the same thing happens with options. We're betting on where a stock will move. So let's
+[   85.28s ->    90.44s] say a stock is trading like this, and we think the stock will continue higher. Well, then we can bet
+[   90.44s ->    95.78s] on this level down here and say, hey, I bet the stock will stay above this level. And if it does,
+[   95.86s ->   100.30s] I make money. So that means if the stock goes up, I make money. If the stock goes sideways, I make
+[  100.30s ->   105.88s] money. The stock goes down, but stays above my level, I make money. And this is what essentially
+[  105.88s ->   112.84s] selling puts are. We're betting that a stock will stay above a certain level. If it does,
+[  112.84s ->   120.62s] we make money. If it doesn't, we lose. And that's the basis of a 1-1-2. A 1-1-2 bets that the stock
+[  120.62s ->   126.34s] will stay above a certain level. This level we do here is about 10% to 20% away from where the stock is.
+[  126.88s ->   132.84s] And we also have a hedge. In case the market comes down, we'll have a hedge to trade with.
+[  132.84s ->   138.20s] So let's dive in into the next part of this lesson, which what exactly is the 1-1-2 option
+[  138.20s ->   145.28s] strategy. So the 1-1-2 is this, okay, it's structured like this, we buy one put contract,
+[  145.86s ->   151.02s] I'll explain all this more in a second here, we sell one put contract, and then we sell two put
+[  151.02s ->   157.04s] contract. This is where the 1-1-2 comes from. Just looking at the quantity of these contracts,
+[  157.16s ->   161.40s] you have a one, we have a one, and then we have a two. So when we structure this trade,
+[  161.40s ->   165.74s] this is what happens here. Let's say this is the stock, right? It's trending up, which is good.
+[  166.16s ->   171.64s] And then we have a profit graph like this. So you can see here, it looks like this, like this,
+[  171.86s ->   178.44s] like this, and it looks like this. So what does this show us? This shows us our profit graph. So
+[  178.44s ->   184.62s] profit is going to be anything right of this line, and losses will be anything left of this line.
+[  184.62s ->   191.88s] So if the market goes up, we're going to make this amount of profit, which in these trades equates to
+[  191.88s ->   199.73s] about $1,000. Now, if the market stays neutral, we're still going to be inside this profit zone,
+[  199.81s ->   203.09s] which is going to make us about $1,000. So this is awesome. This means if the market goes up,
+[  203.17s ->   209.11s] we'll make $1,000. If the market stays sideways, stays flat, we'll make $1,000. If the market goes
+[  209.11s ->   216.81s] down and goes inside this level, then we get about a 3x payoff. So we'll make about $3,000 instead of
+[  216.81s ->   223.03s] $1,000. So just like this $3,000, we get to make if the market goes down. And if the market drops 10
+[  223.03s ->   229.27s] to 20% down here, then we're in this zone, which is going to be depending on our stop loss about a
+[  229.27s ->   235.31s] $4,000 loss. And I'll show you here in a second. So this is why this trade is so great. Okay,
+[  235.31s ->   240.55s] because down here is like a 20% down mood, which almost never happened. So what we see here is
+[  240.55s ->   244.09s] that the market goes up, we make $1,000. If the market goes sideways, we make $1,000. If the market
+[  244.09s ->   250.27s] goes down, which is a downtrend, but we don't drop like a super fast crash, we make $3,000. And if we
+[  250.27s ->   254.99s] lose, we lose $4,000. Yes, this is a large loss. But compared to the amount of money that we make when
+[  254.99s ->   261.37s] we profit, it really plays out and does well. Now to prove this, here's a backtest I have from Option Omega.
+[  261.37s ->   267.87s] Again, I'm doing this on spy, we typically do a 112 trade on options futures, because it gives us the
+[  267.87s ->   273.69s] buying power requirements that we want. But I'll break that down here in a second. So again, spy,
+[  273.91s ->   280.11s] if we look at the return, we simply want to multiply this by 10, you can see here, it shows you our win
+[  280.11s ->   284.19s] rates, our drawdowns, and all those things. So you can see here, if we're getting about a 7% return,
+[  284.33s ->   289.11s] then again, if we multiply that by 10, then on an average year, we can make about a 60 to 70% return,
+[  289.11s ->   292.91s] which actually a lot of people aren't able to do when they properly trade these. Again,
+[  292.97s ->   296.97s] you need to manage risk, which I'll be talking about later. So you can see here, a very consistent
+[  296.97s ->   301.31s] strategy does have some risk will be discussing how to mitigate those times. But just like this over
+[  301.31s ->   309.65s] this period of about when we start here about 2015 2014. Okay, cool. It made a million in 2001 million
+[  309.65s ->   317.39s] and $200,000 for 1.2 million from this with an 86% win rate. So this is the strategy. It's consistent.
+[  317.39s ->   323.15s] It works more times than not. And so let me show you exactly how to break break down on a chart. So
+[  323.15s ->   328.81s] we've covered the basics here of the 112. We've covered the back test. Now let's look at it on
+[  328.81s ->   333.47s] on a chart and what we do with it on a chart. So again, I should have had this pulled up, but I
+[  333.47s ->   337.45s] didn't. So let's jump over to trading view real fast. Trading view is a charting platform that we can
+[  337.45s ->   344.77s] use. And I'll go to ES being the ES futures. Then the 112 is done on a futures account. That's where it
+[  344.77s ->   349.81s] works best. Sweet. So from here, what we're going to do is I'm just going to show you another
+[  349.81s ->   354.53s] breakdown. Again, if the market is trending, actually, let's first talk about that. This
+[  354.53s ->   361.77s] strategy works best when the market is trending up. So again, if the market is bullish, sideways,
+[  362.65s ->   368.87s] so that means we're staying between a major support and a major resistance advisor. And we also have a
+[  368.87s ->   376.39s] slow downtrend. So slow downtrend. This is when the strategy works best. And so if it's working best
+[  376.39s ->   381.19s] in this, this is when we want to trade. So we're looking at it from a charting perspective, we want
+[  381.19s ->   386.17s] to trade it when it's within a trending channel. So we look at this on a daily chart, you can see here
+[  386.17s ->   392.09s] that we're staying within this trending channel, and we're moving higher. This is a great time to trade
+[  392.09s ->   398.55s] 112. Okay, this is where they succeed and do well. This is also a slow downtrend right here. You can see
+[  398.55s ->   403.85s] here how we're slowly moving down, nothing crazy, slow and steady. This is also a great time to trade
+[  403.85s ->   409.45s] it because then we tend to get as mentioned before, as you can see here, we get that 3x payoff right when
+[  409.45s ->   414.53s] it comes into what's known as the bear trap, which I'll show you more about here in a second. But we get
+[  414.53s ->   420.23s] a higher payout when it slowly goes down. And so during this type of period, we can get that type of
+[  420.23s ->   427.49s] payoff. Now where we do bad in this is right here for like 2020 COVID crash right here, these strong
+[  427.49s ->   433.85s] crashes, this strong crash. Again, when we drop super quickly, that is where you're going to run
+[  433.85s ->   437.83s] into your issues. But if we have a slow up trend, slow down trend, neutral market, we're going to do
+[  437.83s ->   444.45s] great for this strategy. As can be saw on the backtest, these drops are like 2020 2018, things
+[  444.45s ->   450.29s] like that. So that's what we're looking at. Now let's dive into the next part. Now that you kind of
+[  450.29s ->   456.33s] seen it on the chart in the best type of markets to trade it in is my favorite part is how do we
+[  456.33s ->   460.53s] actually enter this trade on the broker and what type of credit are we looking for. So we come here
+[  460.53s ->   465.85s] to the broker, you can see here using these types of strategy about $531 a day. That's nice. But again,
+[  465.85s ->   470.29s] we're going to go to ES is what I'm going to show it on. Again, we talked more about account sizing in
+[  470.29s ->   474.63s] a second, I'll tell you what assets you can do it on based on your account size. But we're starting
+[  474.63s ->   479.91s] here, the 112 is really structured in a very certain way. And so again, if you want to take notes on this,
+[  479.95s ->   485.17s] you can but this is how the 112 is ideally structured. Now I structure it. Again, you do a 90
+[  485.17s ->   493.77s] to 120 DTE trade. Now why is this? This is quite simply because the further out in time you go,
+[  494.09s ->   499.81s] the more credit and the more profit you make, and the higher goal win rate, and the less the
+[  499.81s ->   506.15s] volatility. So overall, when you go further out, you really increase your win rate, you increase how
+[  506.15s ->   511.69s] much money you make and you limit risk. And so that's why we go out further out. Now the downside is
+[  511.69s ->   516.73s] we have to wait longer for trades to play out, we have to take longer for trades at their profit,
+[  516.77s ->   522.09s] their their profit target, but we get so many benefits from doing this. And that's why it's
+[  522.09s ->   528.19s] preferred to do these long term things. I personally go either 90 or 120 DTE or a mix of both. So this is
+[  528.19s ->   533.73s] the contracts we're looking at. Now, like I mentioned, we're buying a put, we're selling one put,
+[  533.73s ->   539.59s] and then we're selling two puts. And so for these levels, what we're doing here is we're doing a 25
+[  539.59s ->   547.05s] delta. So 25 delta, then we're doing a 23 delta. And then here we're doing I do a seven delta. Again,
+[  547.13s ->   552.29s] people typically on average between five and seven, I like to do seven because it boosts up my returns.
+[  552.29s ->   556.11s] If I want to be more safe, if I want to have a higher win rate, instead of collecting more,
+[  556.39s ->   562.09s] then I'll go more of the five, five delta side. But I like the seven delta to kind of boost up my profit
+[  562.09s ->   568.23s] potential here. So this is the how we structure the 112. And now how we manage this trade,
+[  568.29s ->   574.63s] because this is how we enter the trade, how we manage it is it's managed based on a 90% take
+[  574.63s ->   586.40s] profit. And we close the trade at a 300% loss. And that's 3300% loss. And then a take profit. And then
+[  586.40s ->   590.62s] again, we can turn these trades into hedges, which is a more advanced, but I'll show you briefly
+[  590.62s ->   595.04s] like the end of this. So that's how we manage. So if we're going to the broker, we're going to look
+[  595.04s ->   601.26s] for these exact metrics. Okay, so we're going to look for 90 to 120 DTE. So we have 92 108 122,
+[  601.46s ->   606.74s] I'll pick 122 for this example. Then we're going to look at delta. So make sure you're on the right
+[  606.74s ->   610.92s] side of this options chain and you click and make sure the broker shows delta. If it does,
+[  610.96s ->   615.62s] you'll come in here and you'll make sure that you select 2523 or the closest to it. So right here,
+[  615.62s ->   625.29s] we're gonna we'll buy the 25 delta, we'll sell the 23 delta. And then on seven, we can ideally look
+[  625.29s ->   630.49s] for seven with the most volume. So this one has the most volume at seven, I'll click on this. And
+[  630.49s ->   637.76s] I'll actually see if I can double click it and increase the quantity to two. Perfect. Now I have
+[  637.76s ->   641.88s] the one that I'm buying right here, the one that I'm selling and two that I'm selling right here.
+[  641.88s ->   649.48s] And so we're looking at this probability of profit 97%. That's literally insane. I'm gonna make
+[  649.48s ->   656.14s] 90 I have a 97% chance of making money on this trade. Awesome. Now, this is where we see two
+[  656.14s ->   662.32s] different numbers, we have a max profit, and we have a EXC, which is the extrinsic value of the credit
+[  662.32s ->   669.14s] that we're receiving. Okay. And so our profit breaks down to this, we see 2600. This is the small
+[  669.14s ->   673.14s] zone of profit that I showed you where if the market goes up, we stay in that zone. So this
+[  673.14s ->   679.86s] is 2600. And if we hit the bear trap, we have our max profit zone will make 5000. So if we come back
+[  679.86s ->   685.66s] to this example, you can see here for this exact trade, we set up this zone right here, instead of
+[  685.66s ->   694.72s] 1000, we'll make about 2600. So this here's 2600. This zone right here is 5000. So it's about 2x payoff on
+[  694.72s ->   702.58s] this one. And again, if we're doing a 300% stock loss, it's 300% on this. So this zone of loss is
+[  702.58s ->   709.30s] going to be minus this times three. So it's going to be roughly what $7,000 of a loss. So you see right
+[  709.30s ->   715.76s] here, we have plus 2600 plus 5000 or minus 7000. And so now you might be saying often that's a lot of
+[  715.76s ->   720.02s] risk. Yeah, we can change that based on what asset we're trading. But we'll talk about that in the
+[  720.02s ->   723.66s] count sizing. So don't worry, I just want to show you how to structure this trade. This is how it's
+[  723.66s ->   729.36s] structured. This is what it looks like. Ideally, you'll be collecting again, target credit. So if
+[  729.36s ->   734.00s] we're looking at where to target, so your target, I'm terrible at drawing on this, but target credit,
+[  734.36s ->   741.36s] the premium that you're looking to receive is going to be between 30 and $40. And if volatility is higher,
+[  741.36s ->   747.68s] you'll collect more. Obviously, if you can collect more, the better. Typically $30 to $40 is where
+[  747.68s ->   751.28s] you'll see most of the times you're collecting credit. If we look at this specific example,
+[  751.28s ->   757.00s] we're collecting $51, which is more than usual. So 51 is a great trade. So now you know that I'm
+[  757.00s ->   761.42s] actually gonna make some good money. You see that ID rank is a bit higher, meaning that volatility is
+[  761.42s ->   766.60s] higher, which is why I have this higher premium. Anyways, more premium here means more profit that
+[  766.60s ->   773.86s] I can collect. Awesome. So what do we do after we hit the take profit target, right? This is the
+[  773.86s ->   779.52s] trade, let's say the trades running, what do we do after this trade has been running, and we hit a 90%
+[  779.52s ->   784.80s] take profit, like we see the trade is at a 90% return. Well, what we do is we can do a lot of
+[  784.80s ->   790.16s] things. There's a lot of ways to hedge this trade. And so here are three ways to exit the trade correctly.
+[  790.68s ->   796.54s] And so number one is simple. So there's three ways. Number one, is we just close the entire trade.
+[  796.64s ->   802.68s] So at the 90% take profit, we'll just close out the entire trade, meaning we'll close the long put,
+[  802.68s ->   806.72s] we'll close the short put, and we'll close the two short puts. This is the simplest way to manage
+[  806.72s ->   811.32s] it, but it provides no downside protection. So this will lock in kind of the most profit because
+[  811.32s ->   816.68s] we take all our profit, and we actually need to realize that profit. Then we have two is that we
+[  816.68s ->   821.86s] can turn it into a put debit spread. So if you see here, we have plus one minus one minus two,
+[  822.14s ->   827.72s] what we get rid of the minus two here that we sell. So if we buy back these two puts, we're then left
+[  827.72s ->   834.54s] with a PDS or a put debit spread. And so for left for the put debit spread, this gives us again,
+[  834.56s ->   840.06s] if we're trading on ES, like the example I just showed you, this will give us about $3,000 of
+[  840.06s ->   846.98s] downside protection. So this means if the market were to crash, I'm able to then have $3,000 of
+[  846.98s ->   851.30s] protection that will get me so the market will crash, and this trade will make about 3000. So this
+[  851.30s ->   857.04s] is great. Why? Because we took off profit from this trade, we made money on the trade. And now
+[  857.04s ->   861.78s] we're left with a bit of a hedge. Now we don't have to give up a little bit of that profit to keep
+[  861.78s ->   865.80s] this hedge on. But still, we make a profit. And now we have a hedge to protect our other trades,
+[  865.82s ->   869.90s] which works great. This is one of the benefits of the 112 is that it can be turned into these hedges.
+[  870.80s ->   876.24s] And last but not least, we have a ratio hedge that can be done with it. And so this one is done
+[  876.24s ->   881.02s] by having, you know, we have 112 here by closing the middle one. And so we have a plus
+[  881.02s ->   887.36s] one and a minus two left here. So plus one minus two creates a ratio hedge. And this gives us a lot
+[  887.36s ->   891.78s] of downside protection as much as $20,000 of downside protection, but it takes up most of
+[  891.78s ->   896.70s] your profit. And so what you typically do is you is when you're trading this, you're putting on a
+[  896.70s ->   901.32s] trade every single week. So you could have like five trades open, right? And so with one of those
+[  901.32s ->   905.58s] trades, when you close the first trade, you'll turn it into a ratio hedge to give you a lot of downside
+[  905.58s ->   910.92s] protection and the rest of them, you'll either close out fully or you'll turn into a put debits
+[  910.92s ->   915.96s] for a hedge. So this way, you can have $20,000 of downside protection to protect your other
+[  915.96s ->   920.48s] trades. Like I mentioned, you can have a lot of loss when this trade goes against you. But now we
+[  920.48s ->   925.78s] have a hedge that will actually increase in value as as the hedge goes down. These are what you can
+[  925.78s ->   931.18s] do by turning the current trade by closing certain parts of it to turn it into a hedge. But again,
+[  931.18s ->   937.30s] you're always welcome. So your fourth option is to just buy a put a 30, a 30 DTE or whatever put
+[  937.30s ->   943.43s] 30 DTE to 14 DTE put. And this will also provide you down by protection as well. All right. So that
+[  943.43s ->   948.35s] is how we kind of look at it. Again, I know I just kind of covered risk, but how do we manage risk?
+[  948.67s ->   953.09s] And so the biggest way we do that is by turning our trade into hedges. And another big way is to
+[  953.09s ->   958.15s] trade with no more than 30% of our account futures options have a lot of risk because we're using a lot
+[  958.15s ->   963.93s] of buying power. And so when we do it that way, we don't want to exceed more than 30%. So if we have
+[  963.93s ->   970.71s] $100,000 account, you want to make sure that you have no more than 30k and active trades. So if each
+[  970.71s ->   975.83s] trade, again, if we go back to the thing, you can see here, this trade costs us about $8,000. So
+[  975.83s ->   981.87s] we'll use $8,000 for easy numbers. So we have $100,000 account, we should be using no more than
+[  981.87s ->   987.45s] than than 30k. So if we divide this by how much it costs to put on one trade, we then get a roughly
+[  987.45s ->   993.39s] four, I think, is it five? It's four. So we'll get four trades that we can have on at a single time.
+[  993.39s ->   997.96s] So I mean, that can have the four trades. So that's kind of what we're looking at. That's
+[  997.96s ->  1001.76s] how you determine your size. So now that we're kind of getting into that next section, let's
+[ 1001.76s ->  1006.49s] look at that, right? But yeah, we're going to be looking at how to scale your trading account
+[ 1006.49s ->  1011.85s] in size. So we were just looking at ES, which takes a lot of money takes $8,000, which is great
+[ 1011.85s ->  1017.83s] for larger accounts. So if your account is $50,000 plus, you you should be okay with it, ideally
+[ 1017.83s ->  1024.31s] more than 100,000 to be running these ES ones. So ES, if you're trading ES futures, again,
+[ 1024.45s ->  1031.43s] you're looking for 50k plus per your account size. And then again, depending on how much you have,
+[ 1031.67s ->  1036.18s] you'll be able to, you know, two to 10 trades if you really have a large account, right?
+[ 1036.96s ->  1043.04s] Now, a way to do this, if you want to do the same trade, you can do it on MES. And so MES is the
+[ 1043.04s ->  1050.98s] micro ES. And so it takes about $1,000 to place this trade. So about $1,000 to put on one trade,
+[ 1050.98s ->  1056.56s] which means that if you have a 5,000 count or more, then you can do this. Ideally, you want more
+[ 1056.56s ->  1061.66s] than 5,000. But I've seen people do it with around 5,000 and do fine. And that means, you know,
+[ 1061.70s ->  1065.80s] one to four trades kind of after you reach the point of four or five trades, then you probably
+[ 1065.80s ->  1071.64s] want to scale up and do an ES instead. But so ES for larger accounts, MES for smaller accounts,
+[ 1072.06s ->  1079.08s] ideally, you can go up to $100,000 and actively trading ES before you need to diversify. And if you're
+[ 1079.08s ->  1083.48s] looking to diversify, the one one two strategy is still an amazing strategy. But now we can just
+[ 1083.48s ->  1089.62s] diversify it across different asset classes by doing it on something like crude oil, or gold. And so
+[ 1089.62s ->  1094.26s] crude oil and gold are two options that I've used in the past, I just look for the ones that have the
+[ 1094.26s ->  1099.52s] highest IV rank. So the ones that have the highest volatility rank, because that means I'll collect the
+[ 1099.52s ->  1103.98s] most credit for those trades. So whichever one has the most credit, I'll switch back and forth and do
+[ 1103.98s ->  1108.78s] one one two is on either CL or GC. And this is after I have a significant amount of my account
+[ 1108.78s ->  1114.86s] already in ES. So again, whether you have $5,000, $100,000, $500,000, a million dollars in your
+[ 1114.86s ->  1119.42s] account, you can run this strategy, just pick the asset that best works for it. And make sure to keep
+[ 1119.42s ->  1124.94s] in mind 30% of your account should never be more than allocated to a single strategy. All right,
+[ 1124.96s ->  1128.12s] that's everything about the one one two that I have for you right now. But now I'm going to show you
+[ 1128.12s ->  1133.54s] the fun part is yes, this strategy helps you create a monthly income, it tends to be very
+[ 1133.54s ->  1137.96s] consistent, especially when you hedge your trades correctly. But again, there's automation tools that
+[ 1137.96s ->  1142.38s] we can now use to actually automate the strategy. So now we can get the income and get our free time
+[ 1142.38s ->  1147.04s] back as well, instead of having to manage these trades yourself. And one of my favorite platforms
+[ 1147.04s ->  1151.36s] right here is the options auto trader. And so let me show you how simple it is. So I'm going to click on
+[ 1151.36s ->  1156.68s] create an auto trader, super simple, I just click create, and then I plug in all the details that I just
+[ 1156.68s ->  1163.26s] discussed. So I'll say, Okay, I want to do a 112 strategy. So I'll click 112. I pick the symbol I
+[ 1163.26s ->  1167.64s] want to do it on, like I said, we have ES and MES futures here. And so again, if you're wondering,
+[ 1167.64s ->  1171.72s] how does this trade? Well, it connects to your broker account. So for instance, you connect to
+[ 1171.72s ->  1174.96s] your broker, you can connect, you know, tasty trade, finger swim, your trade station, all those
+[ 1174.96s ->  1179.26s] you just can you connect your broker, and this system will automate the trades based on your rules.
+[ 1179.56s ->  1184.02s] So creating these rules here, let's do the 112. And I know if you have a smaller account,
+[ 1184.02s ->  1190.14s] do MES, a larger account, do ES. So let's do ES for example. Next, like I mentioned,
+[ 1190.14s ->  1195.42s] we like to target 90 to 120 DTE. So let's put 100 here. And that will find the closest one to 100
+[ 1195.42s ->  1201.42s] DTE. I can see here, it's structured already with the 25 delta that I'm buying, the 23 delta that I'm
+[ 1201.42s ->  1206.32s] selling. And it says five delta that I'm selling to, but I like to do seven delta to increase my return
+[ 1206.32s ->  1211.62s] a bit. I'll stay and continue. Then from here, I say how often I want to enter the trade. This
+[ 1211.62s ->  1215.56s] again, is depending on my account size and how much funds I can do. So for now, I'll just say
+[ 1215.56s ->  1222.60s] once a week that I enter this trade. Next, I can do my take profit percentage of 90%. My stop loss of
+[ 1222.60s ->  1229.16s] 300%. And then I can turn this into a hedge. So this will at the take profit actually turn my trade
+[ 1229.16s ->  1233.48s] into a hedge for me automatically. So I don't need to handle that. So I can close the entire position,
+[ 1233.48s ->  1238.46s] I can turn it into a put debit spread hedge, or I can turn it into a ratio hedge. So put debit
+[ 1238.46s ->  1241.46s] spread is pretty standard right here. And so that's kind of how I can structure that. So
+[ 1241.46s ->  1245.18s] automatically turn it into a hedge at my take profit. And it says here, each trade takes about
+[ 1245.18s ->  1250.30s] $8,000. So how much money do you want this bot to use? I mean, so again, let's say, like I mentioned,
+[ 1250.38s ->  1257.02s] I have a $100,000 account. That means I should allocate about $30,000 to the spot 30% of my account,
+[ 1257.12s ->  1260.92s] right? And then also here on the safeguards, I know that I should have no more than four positions.
+[ 1260.92s ->  1264.00s] So I'll put four there, which means that I'll cap out at four position.
+[ 1264.90s ->  1270.20s] So continue that. And just like that, I've created a 112 bot, you can see here the bond power,
+[ 1270.38s ->  1274.24s] rough return risk per trade, depending on certain metrics. And then just like that,
+[ 1274.26s ->  1279.24s] you can see the settings, you can save and authorize and just like that. Now that 112 bot
+[ 1279.24s ->  1284.04s] has been created, it'll run for you, it will generate profit, manage your trades and do everything
+[ 1284.04s ->  1288.64s] about the 112 for you. And guess what, if you don't want to put in all, all those numbers,
+[ 1288.64s ->  1292.92s] so you can literally just click pick an auto trader, go to our retirement income bots right
+[ 1292.92s ->  1297.86s] here, this, this, the strategy examples, and the long term 112 is right here. So you can just click
+[ 1297.86s ->  1301.92s] start using this bot and it preloads all the settings for you. You just tell it how much money
+[ 1301.92s ->  1305.62s] you want to use. And just like that, you're good to go. So that's how simple it is to automate the
+[ 1305.62s ->  1311.98s] entire strategy. And that's exactly how I do it to make about $5,000 to $10,000 a month on pallet.
+[ 1312.10s ->  1316.84s] So that's how you can retire making $10,000 a month. Again, that's how you scale your trading.
+[ 1316.84s ->  1320.60s] That's how you do the trading. And this is the exact strategy, one of the best ones around.
+[ 1320.92s ->  1324.98s] And I recommend that you look into it, do it yourself, do do some paper trading and explore
+[ 1324.98s ->  1328.66s] it further. If you want to automate your trading, whether it's the 112 or a different strategy,
+[ 1328.78s ->  1332.16s] click the button down below to start your free trial. All right, guys, see you later.

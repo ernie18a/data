@@ -1,0 +1,91 @@
+[    0.21s ->     5.37s] after six years of trading as a swing trader blowing up my account twice I've
+[    5.37s ->    10.53s] learned a lot and one of those I built a trading indicator that perfectly helps
+[   10.53s ->    15.87s] you understand what market we're in and how to trade it and again I used to
+[   15.87s ->    20.07s] charge $997 for this but you know I'm tired of that I'm ready to give it to
+[   20.07s ->    23.61s] you guys for free so if you click the link down below I will give you free
+[   23.61s ->    28.09s] access to this for life anyways let me show you how to use it and how it
+[   28.09s ->    31.51s] actually tells you what the trend is and how to make money from it so if you're
+[   31.51s ->    35.41s] excited press the subscribe button and let's get this party started so if we
+[   35.41s ->    40.33s] look at this we can just from a brief understanding try to look at what is
+[   40.33s ->    44.47s] goal what is going on here and what we see is that when the stock is above this
+[   44.47s ->    51.01s] green line the stock is trending higher so if we zoom out here we can get a an
+[   51.01s ->    55.93s] overview of what is going on first off this middle line here is the 200 day
+[   55.93s ->    59.59s] moving average line or whatever period we said that I'll show you how to adjust
+[   59.59s ->    63.61s] that here soon but again whatever period we adjusted at right now is that you
+[   63.61s ->    68.35s] hunt 200 a moving average because I'm on the daily candles where each candle is a
+[   68.35s ->    74.55s] day and it's going back 200 periods not only that the green and red lines are one
+[   74.55s ->    80.83s] expected move or roughly one standard deviation of a move and again what this
+[   80.83s ->    85.55s] math and what this indicator shows us is quite simple if the stock is above the
+[   85.55s ->    90.11s] green line the markets momentum and strength is up that means the market is
+[   90.11s ->    94.43s] trending up why do we need to know this well one we can just trade it when it's
+[   94.43s ->    97.91s] trending up or two we can know what strategies to look for what a lot of
+[   97.91s ->   102.47s] youtubers and gurus don't tell you is that there are strategies that built for
+[  102.47s ->   106.79s] each specific type of market if you take one strategy and try to apply it in
+[  106.79s ->   110.75s] every market it's not going to work and that's why you why you lose money so if
+[  110.75s ->   114.21s] you were trying to trade a strategy and you're not making money it's not your fault
+[  114.21s ->   119.07s] you just weren't told that a strategy only works in a certain market so again
+[  119.07s ->   122.49s] we have bullish markets bearish markets sideways markets there's a strategy for
+[  122.49s ->   125.73s] each one of those so once you know that we're above the green line and we're in
+[  125.73s ->   129.77s] a bullish market we can look for bullish strategies like trending strategies
+[  129.77s ->   135.69s] like breakouts like try like triangle patterns like just things like that that
+[  135.69s ->   141.74s] are that are momentum and resistance base once we are below this red this red
+[  141.74s ->   145.34s] line all the momentum and the strength is pointing to the downside we are trending
+[  145.34s ->   149.78s] down what does that mean it means we're looking for downside plays short plays
+[  149.78s ->   154.34s] breakout plays under support breaking support things like that that's what
+[  154.34s ->   158.06s] we're that's what we are looking for again in general you can just buy when
+[  158.06s ->   161.84s] the stock crosses the green band and sell when it goes below the red band and
+[  161.84s ->   165.56s] you'll make money but again you can also you can also use this to pinpoint the
+[  165.56s ->   169.40s] best time to use different types of strategies okay so now that we know that
+[  169.40s ->   172.64s] above is green and down is bearish what does the middle mean well the middle is
+[  172.64s ->   176.12s] the gray zone that's why it's great right this is where the market jumps up
+[  176.12s ->   181.94s] and down gaps a lot overnight and does weird things because it's neutral there
+[  181.94s ->   185.54s] is no clear direction on the market when there's no clear directions called a
+[  185.54s ->   190.22s] sideways market so we're inside here you'll be looking for RSI divergent
+[  190.22s ->   194.18s] strategies you'll be looking for MACD divergent strategies you'll be looking for
+[  194.18s ->   198.62s] support and resistance place we'll be looking for sideways strategies so now
+[  198.62s ->   203.12s] once you have this indicator you can just follow it to trade or you can know how
+[  203.12s ->   206.54s] to use it to look for certain positions not only that we can come in here and
+[  206.54s ->   209.78s] here to the settings and change the length so let's say we change it from a
+[  209.78s ->   214.10s] two hundred to a fifty now we have a more adaptive approach we can see once it
+[  214.10s ->   217.62s] breaks out of a certain range that it's going to start returning back right you
+[  217.62s ->   221.22s] can see here it breaks above it comes down it breaks to the bottom it bounces so
+[  221.22s ->   225.98s] now we can also use this in another way to predict tops and bottoms so now we can
+[  225.98s ->   230.24s] buy the bounces sell the dip that I mean I sell the rips all all that different
+[  230.24s ->   234.68s] things we can do when we shorten up the time frame what I found that I like best
+[  234.68s ->   238.74s] is sticking with the 200 period moving average let's go to settings sticking
+[  238.74s ->   243.92s] with the 200 hundred period and staying there is a great assessment of trend but
+[  243.92s ->   249.34s] instead coming here and adjusting the time period so for instance the daily chart
+[  249.34s ->   252.92s] will show us the long-term trend but we want to see a shorter term trend we can go to
+[  252.92s ->   257.00s] the hour and now we can see short-term terms we can even move down even shorter
+[  257.00s ->   261.98s] to five minutes 15 minutes whatever and now we can see intraday trends and
+[  261.98s ->   267.26s] intraday plays you can see here the market gapped down close below this red line and
+[  267.26s ->   272.30s] then stayed below it and trended down all the way which is a great short place if
+[  272.30s ->   276.98s] you're if you're buying options naked options there's a great strategy to do
+[  276.98s ->   283.40s] stocks credit spreads whatever this is the best way to determine trend now let's
+[  283.40s ->   286.82s] talk about credit spread traders that that's my people that's my audience
+[  286.82s ->   291.38s] that's what I do this is built for you as a credit bridge trader I just wanted to
+[  291.38s ->   294.32s] highlight this is a trend following system that can be applied with anything
+[  294.32s ->   297.68s] but this right here specifically is built for credit spread traders why because if
+[  297.68s ->   301.64s] you go into the settings you can see here that there's this thing it's a show
+[  301.64s ->   306.50s] credit spread recommendation you can set the out of percentage that you want
+[  306.50s ->   309.98s] which I'll explain here in a second but you simply set that and now it tells you
+[  309.98s ->   314.78s] based on the trend again like uptrend downtrend sideways what type of credit
+[  314.78s ->   318.26s] spread to enter and what your level should be now again this is not back
+[  318.26s ->   323.36s] tested this is not promised this won't always may make you money but it's a good
+[  323.36s ->   328.10s] idea of what to look for for credit spreads so again remember if you want to
+[  328.10s ->   331.98s] put on credit spreads you want to do so in a very specific way okay so if the
+[  331.98s ->   336.38s] market is trending up above this green above this green line in general
+[  336.38s ->   339.86s] you want your percentage out of the money to be two to two point five percent
+[  339.86s ->   345.54s] if it's below the red line you want it to be above or out of the market about two
+[  345.54s ->   349.28s] to two point five percent now when you're in the middle when a lot can happen you
+[  349.28s ->   353.24s] want to give yourself some more room so stick to three three point five five five
+[  353.24s ->   357.32s] percent again this is just general rules to help you put on better credit
+[  357.32s ->   362.18s] spread trades and again it shows you the levels right right right here based on
+[  362.18s ->   368.48s] the as you can see here the percentage out of the money level that you set anyways
+[  368.48s ->   373.70s] guys I hope this helps you identify trend trending markets know what to do and
+[  373.70s ->   377.24s] also if you're a credits if you're a credit for trader put on credit spreads
+[  377.24s ->   380.90s] also if you're a credit if you're credit for trader click the first link down
+[  380.90s ->   384.26s] below and I'll give you free access to my credit spreads trading course that's
+[  384.26s ->   387.58s] right I give you guys a lot of stuff for free and all I ask is that you press
+[  387.58s ->   391.22s] subscribe and share this video with your friends alright guys I'll see you in the
+[  391.22s ->   393.64s] next video

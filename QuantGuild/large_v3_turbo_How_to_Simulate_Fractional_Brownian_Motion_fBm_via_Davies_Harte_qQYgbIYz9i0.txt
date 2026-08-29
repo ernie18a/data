@@ -1,0 +1,496 @@
+[    1.26s ->     6.51s] I'm very happy to report that these two sets are in fact not disjoint.
+[    7.09s ->    11.47s] That is the set of quants that are fractional brownie emotion enthusiasts
+[   11.47s ->    16.13s] and the set of quants that can bench over 315 pounds.
+[   16.29s ->    18.05s] I am certainly in that intersection
+[   18.05s ->    20.87s] and I am hopeful that many of my quant colleagues
+[   20.87s ->    24.73s] not only like to just pick up heavy things and put them back down again,
+[   24.73s ->    29.87s] but also are a big fan of generating fractional Gaussian processes.
+[   29.87s ->    34.17s] In this video, I want to talk about fractional brownie emotion.
+[   34.65s ->    37.73s] I want to talk about its place in modeling volatility
+[   37.73s ->    43.25s] and I also want to talk about the Davies Hart scheme for generating this process
+[   43.25s ->    48.99s] and how we can go about confirming that we are in fact generating this process correctly.
+[   49.27s ->    52.17s] So what the heck is fractional brownie emotion anyway?
+[   52.17s ->    57.79s] Well, traditionally Markovian models suggest that the next state of some sort of system
+[   57.79s ->    62.09s] only depends on the current state, however you choose to define that.
+[   62.09s ->    66.27s] That is, if we condition on all information from previous states,
+[   66.83s ->    71.53s] the probability or expectation or whatever it is we're trying to compute
+[   71.53s ->    75.01s] based on the current state in tandem with all that other information
+[   75.01s ->    78.47s] will yield the same probability or expectation.
+[   78.47s ->    81.65s] That is, this idea of a Markovian structure.
+[   81.65s ->    87.47s] It is, if we use old information from t minus 10 steps ago, 20 steps ago,
+[   87.47s ->    93.49s] it's not going to be useful in trying to come up with a value for the following state
+[   93.49s ->    97.33s] because all that information is already baked into this current state.
+[   97.41s ->   103.15s] That is, the current state is the only thing that governs a transition to a subsequent state.
+[  103.15s ->   107.13s] Now, in the context of a fractional brownie emotion,
+[  107.13s ->   109.75s] we actually have something that's a little more complicated.
+[  109.75s ->   113.29s] That is, there's this idea of a long-term dependency structure.
+[  113.29s ->   117.97s] So conditioning on that information from quite a while ago in the path
+[  117.97s ->   123.07s] will in fact change the information and transitions to the next state.
+[  123.19s ->   125.81s] We can't just condition on this idea of the current state.
+[  126.31s ->   129.93s] And that's where this non-Markovian structure comes into play.
+[  129.93s ->   135.53s] Researchers have suggested that log volatility tends to follow this fractional brownie emotion
+[  135.53s ->   140.89s] well with a Hurst parameter of 0.5, but we'll get into that in a moment.
+[  140.89s ->   144.85s] If you take a look at the way that fractional brownie emotion is defined,
+[  144.97s ->   151.27s] we have this idea of fractional Gaussian noise with a covariance structure that is gamma k
+[  151.27s ->   153.87s] and then this whole term here.
+[  154.25s ->   158.11s] And that's how you can define the covariance at each lag k
+[  158.11s ->   162.25s] and the fractional brownie emotion is subsequently the cumulative sum
+[  162.25s ->   165.39s] of that fractional Gaussian noise.
+[  165.39s ->   170.99s] So our goal is going to be to generate some fractional Gaussian noise correctly
+[  170.99s ->   175.05s] and then take the cumulative sum of that fractional Gaussian noise
+[  175.05s ->   178.67s] to achieve this fractional brownie emotion path.
+[  178.89s ->   181.03s] Before we go about simulating this process,
+[  181.21s ->   186.45s] I want to further motivate why we may choose to go about modeling volatility in this way.
+[  186.45s ->   189.69s] We certainly are not getting something for nothing.
+[  189.87s ->   197.11s] That is, the modeling of volatility in this manner means that we have a process that is entirely path dependent.
+[  198.01s ->   202.91s] So if we wanted to fit our model that incorporates this fractional brownie emotion
+[  202.91s ->   205.55s] to, say, a market implied volatility surface,
+[  205.55s ->   208.61s] that would be very computationally intensive
+[  208.61s ->   214.53s] because the only way to go about fitting that model to the implied volatility surface
+[  214.53s ->   217.49s] without any sort of analytical pricing solution,
+[  217.61s ->   220.11s] which certainly won't be available in this case,
+[  220.17s ->   222.69s] is to do so via Monte Carlo simulation.
+[  223.11s ->   228.51s] So we would have to simulate our entire path for volatility in this capacity.
+[  228.75s ->   230.63s] Then we would have to generate prices
+[  230.63s ->   234.95s] and we would have to do this for a grid on the implied volatility surface.
+[  234.95s ->   238.33s] And then, of course, once we do that, we have to alter our parameters
+[  238.33s ->   242.35s] because if we're trying to fit our model to an implied volatility surface,
+[  242.35s ->   245.59s] this is what's going on underneath the hood
+[  245.59s ->   249.27s] to help facilitate the model in producing prices.
+[  249.73s ->   251.67s] But it's computationally intensive.
+[  251.67s ->   254.61s] We're trying to back out parameters from that vol surface.
+[  254.93s ->   258.17s] So that problem is going to be computationally expensive.
+[  258.17s ->   262.05s] It's going to be pretty intractable and impractical to do in a live setting,
+[  262.05s ->   266.51s] which is why there's a stream of literature that aims at learning this map
+[  266.51s ->   271.93s] between the parameter space to the implied volatility surface.
+[  272.15s ->   273.71s] But I have videos on this.
+[  273.77s ->   275.39s] I have videos discussing this idea.
+[  276.17s ->   278.49s] I'm happy to create more in the future as well.
+[  278.67s ->   282.47s] But I wanted to discuss how it might be used in general
+[  282.47s ->   284.41s] and some challenges with that usage.
+[  284.59s ->   288.33s] That is, if we choose to go about modeling volatility in this capacity,
+[  288.33s ->   293.53s] sure, we might better capture the long-range dependency structure
+[  293.53s ->   297.45s] that we may see empirically in volatility.
+[  298.11s ->   300.93s] But again, we're not getting something for nothing here.
+[  301.05s ->   302.99s] If we better capture those dynamics,
+[  302.99s ->   306.15s] we're certainly paying with our computational cost.
+[  306.61s ->   310.29s] Now, of course, if we can train some sort of neural network model
+[  310.29s ->   312.67s] to learn that map in an optimal fashion,
+[  312.97s ->   316.51s] then calibration may become increasingly quick.
+[  316.51s ->   319.59s] And then, of course, with that, you may have some other issues.
+[  319.59s ->   323.47s] Like, you may not, in fact, have prices that are arbitrage-free.
+[  323.63s ->   324.85s] There's no security there.
+[  324.91s ->   326.57s] It's sort of a model-free approach,
+[  326.57s ->   328.33s] even though you're training it with the model.
+[  328.67s ->   331.47s] Just some things to consider in this space.
+[  331.85s ->   332.91s] Now that we got our motivation,
+[  333.09s ->   336.83s] let's discuss this scheme for simulating a fractional Brownian motion.
+[  336.95s ->   340.59s] What I've done is I've written it out in seven very simple steps.
+[  341.07s ->   344.35s] I have the math and the accompanying Python code.
+[  344.35s ->   348.41s] Let's dive right in and talk about how we can go about generating this process.
+[  348.61s ->   353.11s] So the inputs into this process are going to be h, t, and n.
+[  353.49s ->   354.87s] h is our Hurst parameter.
+[  355.39s ->   358.93s] t is our total time, which is typically normalized to one.
+[  359.05s ->   361.93s] You can think of this something as a geometric Brownian motion,
+[  362.07s ->   364.67s] where one is typically that one-year mark.
+[  365.31s ->   367.67s] n is going to be the number of time steps
+[  367.67s ->   370.41s] in between each point in this process.
+[  371.21s ->   375.47s] And as n increases, the granularity of this process will increase
+[  375.47s ->   380.15s] and better will match the empirical statistics to the theoretical ones.
+[  380.67s ->   381.63s] Nothing crazy there.
+[  382.65s ->   385.61s] Start to dive into this step-by-step process
+[  385.61s ->   388.51s] of generating a fractional Brownian motion.
+[  388.63s ->   391.97s] So step one is going to be to generate a time grid.
+[  391.97s ->   396.01s] This is obviously a discretization of a continuous time process.
+[  396.23s ->   401.05s] And that's exactly what we have here in the math and in the Python code.
+[  401.25s ->   403.83s] We are going to be generating n plus one points.
+[  404.01s ->   406.13s] Just as I said earlier, as n increases,
+[  406.51s ->   409.41s] the granularity of this process is going to increase as well.
+[  409.77s ->   410.69s] And it's very simple.
+[  410.81s ->   412.39s] We're going out to zero.
+[  412.61s ->   413.91s] We're going from zero to t.
+[  414.01s ->   415.83s] We're going to have n plus one points.
+[  415.83s ->   421.56s] Step two is going to be to define this auto covariance function
+[  421.56s ->   424.40s] of the fractional Gaussian noise.
+[  424.60s ->   427.72s] This is well-defined, so it's easy to implement in Python.
+[  427.88s ->   431.28s] We know that this auto covariance function is a function of k
+[  431.28s ->   435.60s] and any lag that's outside the scope of the process
+[  435.60s ->   437.54s] is just going to be zero.
+[  438.12s ->   440.98s] And we won't actually be using any lag
+[  440.98s ->   442.52s] that's outside the scope of the process.
+[  442.52s ->   446.76s] So I don't explicitly define anything that's outside that domain as zero.
+[  447.02s ->   450.18s] But if you needed to, I certainly would advise you do that.
+[  450.26s ->   452.32s] You can just use some sort of if statement here.
+[  452.88s ->   455.60s] But nevertheless, this is just going to be a lambda function
+[  455.60s ->   460.20s] that is going to define this auto covariance function of lag k.
+[  461.10s ->   463.70s] And that is going to govern the structure
+[  463.70s ->   466.08s] of the fractional Gaussian noise.
+[  467.31s ->   470.85s] Step three, this is probably one of the more esoteric concepts,
+[  470.85s ->   473.77s] but it's going to be to form this circulant vector
+[  473.77s ->   475.35s] of auto covariances.
+[  475.93s ->   478.37s] So essentially, all we're doing here is
+[  478.37s ->   481.07s] we are computing this vector of auto covariances
+[  481.07s ->   484.67s] from zero, one, all the way up to n,
+[  485.53s ->   487.89s] where again, n is the total number of steps
+[  487.89s ->   490.27s] that we are going to have in this process.
+[  491.20s ->   494.32s] And then we're going to back down from n all the way down to one.
+[  494.32s ->   499.62s] And then here I've noted that anything outside the scope
+[  499.62s ->   501.20s] of the process will in fact be zero
+[  501.20s ->   505.70s] as I failed to explicitly state in the definition
+[  505.70s ->   508.72s] of my Python function, but just an FYI.
+[  508.96s ->   511.92s] So forming this circulant vector is actually quite easy.
+[  512.04s ->   515.26s] All I've done is I've iterated through that lambda function
+[  515.26s ->   519.08s] from zero to n, because n plus one,
+[  519.16s ->   521.04s] we never actually get to, we just get to n.
+[  521.76s ->   524.24s] And I've concatenated that with iterating
+[  524.24s ->   527.20s] from n minus one to zero, and we never actually get there,
+[  527.26s ->   529.58s] we get to one, and that is going to match
+[  529.58s ->   531.14s] this vector perfectly.
+[  531.78s ->   534.36s] So up until this point, we really haven't done anything
+[  534.36s ->   535.52s] that's too crazy.
+[  535.72s ->   539.38s] All we've done is we've implemented a specific time grid,
+[  539.98s ->   543.04s] we've implemented this idea of an auto covariance function
+[  543.04s ->   545.06s] of this fractional Gaussian noise,
+[  546.02s ->   548.22s] and then we've also used that auto covariance function
+[  548.22s ->   551.00s] to develop this idea of the circulant vector.
+[  553.26s ->   555.18s] Once we have this circulant vector,
+[  555.54s ->   559.20s] the next step is going to be to compute the eigenvalues
+[  559.20s ->   561.62s] using a fast Fourier transform.
+[  562.16s ->   565.36s] We're only interested in the real positive eigenvalues.
+[  565.76s ->   568.42s] This is a covariance embedding after all,
+[  568.66s ->   571.66s] but it's really important that we consider
+[  571.66s ->   576.42s] how our function is going to scale by default,
+[  576.42s ->   579.40s] especially if we use something that's prepackaged in Python.
+[  579.40s ->   583.40s] This is a very common area of error
+[  583.40s ->   585.10s] in generating this process.
+[  585.80s ->   587.58s] So I've made that note here,
+[  587.94s ->   591.42s] and in Python, NumPy FFT is going to compute
+[  591.42s ->   594.04s] the unnormalized discrete Fourier transform,
+[  594.26s ->   596.00s] which is precisely what we're after.
+[  596.44s ->   597.74s] So that's what we're going to implement.
+[  597.86s ->   599.36s] So there's nothing that we have to consider
+[  599.36s ->   602.50s] in terms of scaling here when we go about step four.
+[  602.50s ->   605.36s] So what I've done here is I've just generated
+[  605.36s ->   607.76s] these real positive eigenvalues,
+[  607.96s ->   609.72s] and I'm just going to throw an error,
+[  609.96s ->   614.50s] erase this value error if anything looks like it's out of whack,
+[  614.62s ->   618.74s] and I may have generated this circulant vector incorrectly.
+[  620.37s ->   622.31s] Once we're done with step four,
+[  622.63s ->   624.11s] we can move on to step five
+[  624.11s ->   627.27s] where we're going to generate a complex Gaussian vector.
+[  627.27s ->   631.03s] So the vector of eigenvalues lambda
+[  631.03s ->   632.51s] that we get from step four,
+[  632.61s ->   634.89s] it's important to note that it will, of course,
+[  634.95s ->   636.47s] be larger than n.
+[  637.31s ->   639.67s] And that can be a little confusing
+[  639.67s ->   642.75s] when you go about trying to implement this scheme
+[  642.75s ->   645.85s] because the length will be 2n.
+[  646.09s ->   648.47s] We're going to truncate as needed to n.
+[  648.83s ->   650.09s] But I just wanted to make that note
+[  650.09s ->   651.53s] because otherwise it kind of just seems like
+[  651.53s ->   653.53s] you have these extra values laying around
+[  653.53s ->   655.43s] that you're not going to be using.
+[  655.43s ->   657.17s] And that is exactly correct.
+[  657.27s ->   658.01s] So what we're going to do is
+[  658.01s ->   660.63s] we're going to generate this vector z
+[  660.63s ->   664.23s] and the complex numbers of length to n.
+[  664.81s ->   666.49s] For start and end points,
+[  666.53s ->   671.47s] we are going to be using this standard normal distribution
+[  671.47s ->   675.11s] scaled by the corresponding eigenvalue.
+[  675.51s ->   678.35s] So you can just draw from the standard normal distribution
+[  678.35s ->   681.35s] and scale by the square root of the respective eigenvalues,
+[  681.35s ->   685.47s] or you can just treat it as the variance as we do here.
+[  685.91s ->   687.05s] Both are acceptable.
+[  688.17s ->   689.57s] For intermediate points,
+[  689.57s ->   693.15s] we are going to define anything from 1 to n,
+[  693.85s ->   696.65s] and that should be actually strictly less than n.
+[  709.56s ->   711.12s] So for intermediate points,
+[  711.12s ->   715.12s] because here we have z sub n defined in this capacity,
+[  715.12s ->   719.16s] so any intermediate point is going to be defined as
+[  719.16s ->   723.20s] two draws from standard normal distributions.
+[  723.20s ->   724.62s] These are IID draws.
+[  724.72s ->   727.66s] It's just going to be a series of IID draws
+[  727.66s ->   732.00s] in a complex setting.
+[  732.00s ->   734.20s] So what we're doing is we're taking one of the draws,
+[  734.78s ->   736.66s] multiplying it by an imaginary number.
+[  737.04s ->   738.72s] Then we're scaling the sum
+[  738.72s ->   742.28s] by the square root of the corresponding eigenvalue
+[  742.28s ->   743.32s] divided by two.
+[  743.94s ->   746.50s] That's exactly what's happening here for z sub k.
+[  747.24s ->   749.72s] Now it's very important that you define
+[  749.72s ->   752.34s] z sub 2n minus k
+[  752.34s ->   755.88s] as the conjugate of z sub k.
+[  757.34s ->   759.08s] I think seeing this in Python
+[  759.08s ->   761.12s] makes significantly more sense.
+[  761.66s ->   762.72s] So if we come down here,
+[  762.80s ->   766.48s] we see the overall length is 2 times n,
+[  766.94s ->   767.98s] just as we expected.
+[  768.38s ->   771.06s] We're going to generate this vector z
+[  771.06s ->   772.28s] to be that length,
+[  772.36s ->   774.12s] because that's the length that we are looking for.
+[  774.70s ->   776.62s] We're going to take the real parts.
+[  777.02s ->   778.82s] So again, we're going to ensure
+[  778.82s ->   779.88s] that these real parts
+[  779.88s ->   781.82s] are just going to be standard normals
+[  781.82s ->   784.14s] multiplied by the square root
+[  784.14s ->   785.82s] of the corresponding eigenvalues.
+[  786.58s ->   788.70s] Or we can use the eigenvalues
+[  788.70s ->   790.96s] as the variances within the draws.
+[  791.08s ->   792.30s] That's also acceptable.
+[  792.80s ->   797.30s] So that's going to be this z0 zn component.
+[  797.70s ->   799.50s] Then for any intermediate point,
+[  799.50s ->   801.20s] what we're going to do is we're going to iterate
+[  801.20s ->   803.64s] from 1 up to but not including n
+[  803.64s ->   805.18s] because n is already defined here.
+[  805.42s ->   807.56s] And we are going to take those draws
+[  807.56s ->   810.02s] from a standard normal distribution.
+[  810.02s ->   813.30s] We're going to turn it into a complex number.
+[  813.70s ->   816.24s] And we're going to scale that complex number
+[  816.24s ->   817.62s] by the square root
+[  817.62s ->   821.52s] of the corresponding eigenvalue divided by 2.
+[  822.49s ->   824.23s] So that's exactly what we have here.
+[  824.35s ->   825.95s] That's what we have right here.
+[  826.05s ->   827.51s] And the next step in the process
+[  827.51s ->   829.13s] is to just take the conjugate
+[  829.13s ->   832.73s] and assign it to the value m minus k
+[  832.73s ->   834.65s] where m is to n.
+[  835.01s ->   837.41s] And we have k which iterates from 1
+[  837.41s ->   839.93s] all the way up to but not including n.
+[  840.57s ->   843.05s] This is probably the most complicated part
+[  843.05s ->   845.49s] of the process right here.
+[  845.55s ->   847.31s] But I'm hoping that seeing the math
+[  847.31s ->   849.25s] and then seeing the code implementation,
+[  849.25s ->   850.55s] since the code implementation
+[  850.55s ->   852.97s] is strictly a linear flow,
+[  852.97s ->   856.39s] it makes it significantly easier to understand.
+[  858.44s ->   861.12s] I'm going to come on down to step six now.
+[  861.74s ->   863.86s] We're going to apply an inverse FFT
+[  863.86s ->   866.48s] to get fractional Gaussian noise.
+[  867.66s ->   871.04s] Now, this is where things become a little tricky
+[  871.04s ->   872.50s] if you're unfamiliar with the way
+[  872.50s ->   875.66s] that the IFFT works out of the box in Python.
+[  875.90s ->   877.86s] So in Python, if you use NumPy,
+[  877.98s ->   880.18s] IFFT is going to introduce a factor
+[  880.18s ->   884.30s] of 1 over m, which is the total path length of 2n,
+[  884.72s ->   886.18s] which is going to mess up the scaling
+[  886.18s ->   887.80s] and give incorrect variance
+[  887.80s ->   889.18s] of the fractional Gaussian noise.
+[  889.90s ->   891.74s] One of the very frustrating components
+[  891.74s ->   892.92s] of implementing this scheme
+[  892.92s ->   894.88s] is if you don't know this,
+[  895.24s ->   896.74s] then you're going to generate
+[  896.74s ->   897.80s] this entire process.
+[  897.80s ->   899.60s] You'll generate your fractional Gaussian noise.
+[  899.72s ->   901.36s] You'll generate your fractional Brownian motion.
+[  902.04s ->   904.28s] And none of the statistics empirically
+[  904.28s ->   906.66s] are going to match the theoretical statistics.
+[  906.66s ->   910.30s] Moreover, if you increase n,
+[  910.82s ->   914.66s] you're going to see that the statistics empirically
+[  914.66s ->   919.02s] are going to asymptotically converge to zero.
+[  919.84s ->   920.74s] And that makes sense
+[  920.74s ->   924.02s] because there's this scaling factor of 1 over m,
+[  924.26s ->   925.60s] which is going to be 2n,
+[  925.68s ->   927.58s] which is the number of time steps
+[  927.58s ->   929.68s] between zero and cap t.
+[  930.30s ->   932.68s] So it's very important that we scale them
+[  932.68s ->   935.04s] by the square root of m.
+[  935.04s ->   938.54s] We want to undo this scaling factor.
+[  940.41s ->   942.91s] Moreover, the scheme is assuming
+[  942.91s ->   944.51s] that there's unit variance.
+[  945.98s ->   946.24s] Okay?
+[  946.50s ->   951.73s] So we need to scale by t over n to the h.
+[  951.99s ->   954.61s] Sorry, this should be t over n to the h,
+[  954.69s ->   957.45s] not 2h, to have correct time scaling.
+[  957.85s ->   958.89s] The reason for this,
+[  958.95s ->   959.65s] so in other words,
+[  959.69s ->   961.33s] if we take a look at the expectation
+[  961.33s ->   962.17s] of the increment,
+[  962.17s ->   966.99s] we should be getting t over n to the 2h.
+[  967.65s ->   969.93s] If we're assuming unit variance,
+[  970.05s ->   971.65s] then we need to scale by
+[  971.65s ->   974.27s] the square root of this quantity
+[  974.27s ->   976.47s] such that when we multiply it with 1,
+[  976.53s ->   977.75s] we get what we're looking for.
+[  978.11s ->   979.89s] And that's exactly what we have here.
+[  979.97s ->   982.47s] We need to scale by the square root of this quantity,
+[  982.61s ->   985.57s] which is going to be t over n to the h.
+[  985.57s ->   988.11s] So this, again, should be t over n to the h.
+[  988.53s ->   990.47s] I will actually just go about correcting that
+[  990.47s ->   991.95s] while we're here.
+[  996.98s ->   998.14s] And that's going to ensure
+[  998.14s ->  1001.16s] that the expectation is, in fact, correct.
+[ 1001.30s ->  1004.08s] The expectation of this increment is, in fact, correct.
+[ 1004.72s ->  1006.24s] So how do we do this?
+[ 1006.30s ->  1007.10s] Well, what we're going to do
+[ 1007.10s ->  1010.14s] is we are going to apply this inverse FFT
+[ 1010.14s ->  1012.82s] to that Gaussian vector,
+[ 1013.00s ->  1014.24s] that complex Gaussian vector
+[ 1014.24s ->  1016.50s] that we created in step 5.
+[ 1016.90s ->  1019.36s] And we're going to take up to n.
+[ 1020.14s ->  1022.46s] Again, very similar to how we truncated
+[ 1022.46s ->  1023.94s] the vector of eigenvalues.
+[ 1024.30s ->  1026.46s] We will take up to n.
+[ 1026.90s ->  1029.76s] And then we will scale by this t over n to the h
+[ 1029.76s ->  1032.20s] because this is a variance term of sorts.
+[ 1032.30s ->  1033.12s] So we can achieve it,
+[ 1033.32s ->  1035.32s] the scaling by the square root of that quantity.
+[ 1036.74s ->  1038.26s] And then we're also going to multiply
+[ 1038.26s ->  1039.96s] by the square root of m
+[ 1039.96s ->  1042.46s] to correct the scaling from the IFFT,
+[ 1043.10s ->  1046.38s] a very important part of this process.
+[ 1047.52s ->  1049.26s] Step 7 is very simple.
+[ 1049.70s ->  1052.20s] We can obtain this fractional Brownian motion
+[ 1052.20s ->  1054.22s] by simply taking the cumulative sum
+[ 1054.22s ->  1058.46s] and concatenating an origin point of 0.
+[ 1059.48s ->  1063.12s] And that is going to be the entire scheme
+[ 1063.12s ->  1065.42s] to simulate this process
+[ 1065.42s ->  1067.22s] of a fractional Brownian motion.
+[ 1067.78s ->  1069.26s] Man, that's a lot of work.
+[ 1069.26s ->  1070.58s] That's a lot of work.
+[ 1070.82s ->  1072.32s] How do we know that we're correct?
+[ 1073.02s ->  1074.56s] We go through these seven steps,
+[ 1074.64s ->  1076.48s] we write it into a nice-looking function,
+[ 1076.48s ->  1078.04s] and we run it,
+[ 1078.18s ->  1079.70s] and we plot the path
+[ 1079.70s ->  1081.38s] of our fractional Brownian motion.
+[ 1081.94s ->  1084.72s] How do we know that this is, in fact,
+[ 1084.90s ->  1086.78s] the correct process?
+[ 1087.46s ->  1089.50s] It's very easy to make a mistake,
+[ 1089.68s ->  1091.74s] even very simply by accident,
+[ 1092.42s ->  1093.66s] in not knowing the way
+[ 1093.66s ->  1096.44s] that our variables are being scaled
+[ 1096.44s ->  1097.62s] underneath the hood.
+[ 1098.06s ->  1099.96s] Well, there's a couple of checks we can do.
+[ 1100.04s ->  1101.10s] So here's a rough check.
+[ 1102.04s ->  1104.44s] Rough is kind of a pun in this setting, too,
+[ 1104.54s ->  1106.06s] because it's typically deployed
+[ 1106.06s ->  1107.70s] in a rough volatility model.
+[ 1108.28s ->  1110.86s] But a rough check is to look at
+[ 1110.86s ->  1112.30s] the theoretical variance
+[ 1112.30s ->  1114.22s] of the fractional Gaussian noise
+[ 1114.22s ->  1116.64s] and the theoretical variance
+[ 1116.64s ->  1118.46s] of the fractional Brownian motion.
+[ 1119.02s ->  1120.78s] So if I go ahead and I run this,
+[ 1122.54s ->  1124.90s] I've selected 64 steps,
+[ 1125.46s ->  1126.78s] and you can see that I have
+[ 1126.78s ->  1128.44s] a relative error of roughly 10%
+[ 1128.44s ->  1130.82s] for the fractional Gaussian noise,
+[ 1131.14s ->  1133.50s] and I have a relative error
+[ 1133.50s ->  1134.92s] of negative 0.42%
+[ 1134.92s ->  1137.06s] for the fractional Brownian motion.
+[ 1137.50s ->  1139.50s] So remember, I'm looking at these two processes
+[ 1139.50s ->  1141.90s] to make sure that I didn't make a mistake
+[ 1141.90s ->  1144.92s] in the jump from the FGN to the FBM.
+[ 1145.56s ->  1147.48s] But this still seems like
+[ 1147.48s ->  1149.04s] a significant relative error.
+[ 1149.52s ->  1150.60s] But you have to remember
+[ 1150.60s ->  1153.38s] that the error is going to decrease
+[ 1153.38s ->  1155.76s] in M and N.
+[ 1156.46s ->  1158.80s] N here is the number of steps,
+[ 1158.92s ->  1161.06s] the granularity of the process up to T,
+[ 1161.54s ->  1163.58s] and M is the number of paths.
+[ 1163.94s ->  1165.80s] So what I'm going to do is keep M fixed,
+[ 1166.02s ->  1166.96s] but what you'll notice
+[ 1166.96s ->  1170.28s] as I increase the granularity of the process,
+[ 1170.90s ->  1173.78s] this relative error will, in fact, decrease.
+[ 1174.20s ->  1175.00s] So as you can see,
+[ 1175.06s ->  1178.08s] now we have minus 8.0, 3%,
+[ 1178.08s ->  1180.66s] and our fractional Brownian motion
+[ 1180.66s ->  1181.52s] is even closer.
+[ 1181.62s ->  1182.80s] If I make this 256,
+[ 1193.11s ->  1195.43s] we get even closer.
+[ 1195.61s ->  1197.73s] This is certainly shockingly close
+[ 1197.73s ->  1199.11s] to the theoretical variance,
+[ 1199.15s ->  1200.81s] and if we look at the fractional Brownian motion,
+[ 1201.03s ->  1203.05s] it's very, very close as well.
+[ 1203.39s ->  1205.71s] So that's just going to be a rough check
+[ 1205.71s ->  1207.33s] of the fractional variance
+[ 1207.33s ->  1208.45s] and the covariance structure
+[ 1208.45s ->  1210.95s] of the fractional gouge and noise
+[ 1210.95s ->  1212.17s] and the fractional Brownian motion.
+[ 1212.53s ->  1215.31s] Let's take a look at the heat map
+[ 1215.31s ->  1218.39s] of the empirical variance-covariance structure
+[ 1218.39s ->  1219.71s] of the fractional Brownian motion
+[ 1219.71s ->  1221.09s] relative to the theoretical
+[ 1221.09s ->  1223.03s] variance-covariance structure.
+[ 1224.03s ->  1224.25s] Okay?
+[ 1224.25s ->  1229.07s] Now, this chart is certainly beautiful,
+[ 1229.07s ->  1231.95s] and I'm very excited to share it with you.
+[ 1232.33s ->  1233.45s] If you take a look here,
+[ 1233.57s ->  1234.97s] what I've done is I've plotted
+[ 1234.97s ->  1237.43s] the theoretical covariance structure.
+[ 1237.95s ->  1241.92s] So I have the theoretical covariance structure
+[ 1241.92s ->  1244.26s] of the fractional Brownian motion
+[ 1244.26s ->  1246.30s] with the fixed parameter set given here,
+[ 1246.48s ->  1248.56s] and I have the empirical structure
+[ 1248.56s ->  1251.56s] that's generated from the fractional Brownian motion samples,
+[ 1251.56s ->  1255.72s] and you certainly get the exact same covariance structure.
+[ 1255.86s ->  1258.42s] You get a very, very small root mean squared error,
+[ 1258.66s ->  1261.30s] and if you want to further confirm this,
+[ 1261.40s ->  1263.12s] you can take a look at the way
+[ 1263.12s ->  1264.90s] that the fractional gouge and noise
+[ 1264.90s ->  1266.76s] and the fractional Brownian motion
+[ 1266.76s ->  1270.76s] decrease in the parameters M and N,
+[ 1271.22s ->  1272.68s] because, of course, this process
+[ 1272.68s ->  1276.32s] and the subsequent empirical covariance structure
+[ 1276.32s ->  1278.86s] is a function of those parameters.
+[ 1278.86s ->  1281.56s] So what we should see in the context
+[ 1281.56s ->  1284.46s] of the empirical and theoretical covariance structure
+[ 1284.46s ->  1288.24s] is we should see a 1 over,
+[ 1289.16s ->  1291.70s] it should be quadratic in M,
+[ 1291.82s ->  1294.90s] so 1 over, or not quadratic,
+[ 1295.14s ->  1298.00s] it should be 1 over the square root of M increase
+[ 1298.00s ->  1299.44s] for the root mean squared error
+[ 1299.44s ->  1302.40s] for the empirical covariance as M increases.
+[ 1303.00s ->  1304.74s] So essentially what that's going to do
+[ 1304.74s ->  1306.42s] is it's going to create a theoretical target.
+[ 1306.60s ->  1307.68s] If we've done this correctly,
+[ 1307.68s ->  1310.16s] we should see as paths increase,
+[ 1310.62s ->  1313.90s] we see relative error decrease by 1 over root M,
+[ 1314.08s ->  1316.02s] where that's our total path size.
+[ 1316.24s ->  1318.88s] So it's going to give us a way to assess
+[ 1318.88s ->  1321.52s] whether or not the improvement
+[ 1321.52s ->  1324.84s] is following the theoretical improvement.
+[ 1325.24s ->  1327.82s] So we can do this for both N and M.
+[ 1327.96s ->  1331.02s] So what I've done here is I've generated this for N,
+[ 1331.22s ->  1333.38s] which is the granularity of our process.
+[ 1333.38s ->  1337.32s] So I'm looking at the variance of the fractional Gaussian noise,
+[ 1337.54s ->  1341.40s] and I'm going to compare this to the theoretical improvement
+[ 1341.40s ->  1343.82s] as N increases in size.
+[ 1344.16s ->  1347.34s] And you can see that the empirical root mean squared error
+[ 1347.34s ->  1350.56s] does in fact decrease as N increases.
+[ 1350.76s ->  1351.84s] And in this case,
+[ 1351.90s ->  1353.80s] relative to the theoretical improvement,
+[ 1353.92s ->  1354.96s] it's doing better.
+[ 1354.96s ->  1357.26s] And similarly,
+[ 1357.70s ->  1359.46s] in the fractional Brownian motion,
+[ 1360.18s ->  1363.62s] the empirical root mean squared error improvement in M
+[ 1363.62s ->  1366.08s] relative to the theoretical improvement in M
+[ 1366.08s ->  1369.62s] is going to track this 1 over root M.
+[ 1369.78s ->  1372.22s] So not quadratic in M,
+[ 1372.52s ->  1373.94s] 1 over root M
+[ 1373.94s ->  1376.02s] in the context of the root mean squared error.
+[ 1376.02s ->  1377.32s] So as M increases,
+[ 1377.86s ->  1380.22s] that is going to be the theoretical improvement
+[ 1380.22s ->  1384.52s] in the root mean squared error of the covariance matrix.
+[ 1385.02s ->  1385.64s] And in this case,
+[ 1385.72s ->  1387.60s] the empirical root mean squared error
+[ 1387.60s ->  1392.40s] does appear to be doing a bit better at this point in M.
+[ 1392.72s ->  1394.10s] That's going to do it for this video.
+[ 1394.44s ->  1397.26s] I'm going to leave a link to this Jupiter notebook
+[ 1397.26s ->  1398.66s] in the description below
+[ 1398.66s ->  1400.02s] if you'd like to play around with it
+[ 1400.02s ->  1403.20s] and generate your own fractional Brownian motion,
+[ 1403.38s ->  1404.64s] fractional Gaussian noise.
+[ 1404.64s ->  1406.72s] I hope you enjoyed this video.
+[ 1406.82s ->  1409.48s] I'd like to discuss more on this topic.
+[ 1409.62s ->  1410.88s] So hopefully there's interest.
+[ 1411.02s ->  1413.88s] I can discuss other schemes for generating it.
+[ 1413.94s ->  1417.24s] I can discuss implementations of the rough model family.
+[ 1417.36s ->  1420.80s] I can discuss ways of approximating parameters
+[ 1420.80s ->  1423.80s] using neural networks on an implied volatility surface.
+[ 1424.24s ->  1425.68s] Lots of very cool stuff.
+[ 1426.22s ->  1428.04s] So I hope you enjoyed it.
+[ 1428.04s ->  1428.92s] I hope you learned something.
+[ 1429.14s ->  1430.34s] Thank you so much for watching
+[ 1430.34s ->  1433.34s] and I'll see you in the next video.

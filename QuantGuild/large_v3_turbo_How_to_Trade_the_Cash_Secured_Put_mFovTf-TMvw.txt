@@ -1,0 +1,186 @@
+[    0.16s ->     5.12s] in this video you're going to master the cash secured put you're going to understand the
+[    5.12s ->    10.32s] statistical mechanism as to how to profit with this style of trading you're going to see the
+[   10.32s ->    16.64s] downfalls and we're going to wrap up by placing a trade in the interactive brokers trader workstation
+[   16.64s ->    20.88s] link in the description if you'd like to get started with them to see how it works in a live
+[   20.88s ->    28.32s] trading environment let's start with this idea of what a european put contract is a cash secured put
+[   28.32s ->    34.72s] requires a put contract shocker european puts are going to give you the right but not obligation
+[   34.72s ->    40.88s] to sell an underlying asset at a predetermined price at some point in the future and here is
+[   40.88s ->    45.84s] the payoff function mathematically for what that looks like at that time in the future but let's
+[   45.84s ->    51.60s] actually look at the chart itself on the left here you're going to see a long put diagram you have
+[   51.60s ->    57.68s] the in the money region on the left here effectively the strike price is the price that you have the
+[   57.68s ->    63.92s] right to sell at so anything below the strike price you're going to be making money but somebody has
+[   63.92s ->    71.52s] to be on the other side of that contract and that is going to be the short put it is a mirror because
+[   71.52s ->    78.08s] derivatives are a zero-sum game somebody has to be on the other side of that contract either paying out
+[   78.08s ->    86.32s] the cash flow or receiving it now you'll notice on the short put side here that the two outcomes don't
+[   86.32s ->    93.12s] seem super favorable you either expire out of the money and there's no payoff or you expire in the
+[   93.12s ->    99.76s] money and you lose money so why would anybody take the short side of this contract well that's because
+[   99.76s ->   106.56s] they are going to collect a premium effectively if you want this long put payoff at some time in the
+[  106.56s ->   111.84s] future then you're going to have to pay someone to take the other side of the contract and i can't
+[  111.84s ->   117.12s] blame them because this does not look particularly attractive so if you're short a put you're
+[  117.12s ->   124.08s] effectively selling insurance that the underlying asset is going to go down and you're willing to
+[  124.08s ->   132.32s] protect somebody against that scenario with a cash secured put there are effectively three different
+[  132.32s ->   139.92s] outcomes what a cash secured put means is in the state of the world where you are assigned meaning the
+[  139.92s ->   147.20s] underlying asset expires in the money below the strike price you have enough cash to purchase the
+[  147.20s ->   152.96s] underlying asset at the strike price because remember a put contract is the right but not
+[  152.96s ->   159.44s] obligation to sell and that is if you hold the long put so if you're short you're buying and you're
+[  159.44s ->   166.16s] buying at the strike price and the result is you're going to buy 100 shares at the strike price should it
+[  166.16s ->   173.20s] expire in the money but once you have those shares you are not forced to realize a loss so it's a very
+[  173.20s ->   179.04s] important idea here and a very important component of the wheel trading strategy so let's take a look
+[  179.04s ->   183.28s] at these three different states of the world here what we have is three different stock charts
+[  184.00s ->   189.60s] and what you'll notice is the strike price is a horizontal line and we're going to take a look at the
+[  189.60s ->   194.88s] three different states of the world the first is the option expiring worthless you can see here the
+[  194.88s ->   202.16s] stock price is going to go ahead and meander and then at time capital t whenever the contract expires
+[  202.88s ->   208.32s] it expires above the strike price so that means that whoever was short this contract receives their
+[  208.32s ->   214.48s] premium and they are not forced to buy anything so effectively the strike price would be here
+[  215.95s ->   222.35s] or the strike price would be 100 and the underlying asset would be in this region here out of the money
+[  222.35s ->   228.91s] the second state of the world is the put expires in the money in which case the short leg is going to
+[  228.91s ->   235.23s] get assigned so if we end up expiring in the money the short leg is going to have to they have the
+[  235.23s ->   241.55s] obligation to purchase because this long leg is going to want to exercise their right they are going to
+[  241.55s ->   249.23s] want to sell at 100 when the market price is lower than 100 effectively capturing that profit difference
+[  249.23s ->   255.47s] and if you're short you still receive your premium but you are forced to buy you have an obligation
+[  256.03s ->   261.55s] now the third state of the world that not too many people talk about is this idea of an early close
+[  262.11s ->   267.47s] so just because you are short the contract at one point in time it doesn't mean you have to hold it
+[  267.47s ->   273.07s] to the end of the contract's life so what you're seeing here is initially i was short the contract
+[  273.07s ->   280.83s] but then i buy it back and what you'll notice is when i close it out early i actually realize a cash flow
+[  280.83s ->   286.83s] and it's positive you're free to close these positions whenever you would like and depending
+[  286.83s ->   292.43s] on where the underlying asset price is throughout the life of that contract will dictate whether or
+[  292.43s ->   300.27s] not when you close early you receive a positive cash flow or a negative cash flow to your account
+[  300.27s ->   305.31s] now keep in mind you're not going to get the full premium if you're closing the position early
+[  305.31s ->   311.95s] that's because you're effectively removing the obligation you're removing the obligation to
+[  313.07s ->   320.35s] buy the shares because the long put is going to have the right to sell you those shares so you have
+[  320.35s ->   327.39s] the obligation to buy so if you decide to close early then you are going to realize a cash flow but
+[  328.19s ->   334.83s] you will remove that obligation let's get into the more important stuff how do we make money with
+[  334.83s ->   341.39s] this strategy statistically what mechanism is at play well if you take a look at these diagrams here
+[  343.26s ->   349.34s] we're looking into the future at time capital t at expiration to figure out what the payoff is i don't
+[  349.34s ->   354.62s] have a crystal ball and if you do you should certainly let me know but we don't know what the price
+[  354.62s ->   359.74s] is going to be it's nice to know what states of the world we could end up in but what should we pay
+[  359.74s ->   366.62s] for this contract today this is where the black shoals model comes into play this is a model to
+[  366.62s ->   374.14s] explain not predict i have so many resources and i spent my entire professional career on pricing so if
+[  374.14s ->   379.18s] you want to get into the stochastic calculus if you want to check out all of my videos discussing pricing
+[  379.18s ->   384.06s] you're free to do so but we're going to take a look at it from a practical lens here and that is
+[  384.06s ->   389.90s] if you take this same hockey stick short payoff diagram that we saw above we can overlay the black
+[  389.90s ->   395.82s] tools pricing model on top of it and what you'll notice is as the underlying asset approaches
+[  395.82s ->   403.42s] expiration the black tools price is going to converge to that hockey stick diagram and that is not by
+[  403.42s ->   413.50s] accident all right that is a function of this model this model is an explainer there are five inputs into
+[  413.50s ->   419.74s] this black tools model to dictate spot price of an option today that's going to be the risk-free rate
+[  419.74s ->   425.50s] the volatility the spot price the time to maturity and the strike price and that is what is going to
+[  425.50s ->   432.86s] dictate this curve now it's important to understand that the equilibrium supply and demand dictates the
+[  432.86s ->   439.98s] options price and the black tools model is going to back out what is known as the implied volatility
+[  440.86s ->   450.46s] as implied volatility goes up option prices go up as implied volatility goes down option prices go down
+[  451.10s ->   456.62s] the reason why it's important to understand this mechanism is because this is how you are profiting
+[  457.34s ->   462.70s] you are trying to harvest what is known as the volatility risk premium statistically
+[  462.86s ->   470.86s] puts are overpriced that means that the implied volatility is artificially higher on the put side
+[  470.86s ->   477.66s] creating higher put prices relative to the call side this is because of fear nobody wants the market
+[  477.66s ->   484.94s] to blow out but nobody knows when it is going to so if i run a regression you'll notice that what the
+[  484.94s ->   490.86s] implied volatility and the actual realized volatility if you take a look at this gray dashed line that would
+[  490.86s ->   497.50s] be y equals x meaning implied equals realized but if i run the regression look the slope is shallower
+[  497.50s ->   505.50s] that means that there's statistical edge in each of these trades okay okay roman well then why doesn't
+[  505.50s ->   515.90s] everybody do this well a lot of people do and they'll cite 90 win rates 95 win rates hell even 100 win rates
+[  516.70s ->   527.10s] but just because it has positive ev in each trade it doesn't mean you are going to survive this chart
+[  527.10s ->   532.14s] here is probably my favorite animation one of my favorite animations that i've ever created i want you
+[  532.14s ->   537.74s] to take a look at this here's your equity curve trading something like a cash secured put check this out
+[  538.46s ->   543.34s] wow that looks pretty good smooth up into the right smooth up into the right smooth up into the right
+[  543.34s ->   550.38s] who wouldn't want to trade this strategy 92 win rate that's absolutely crazy let's run another
+[  550.38s ->   555.66s] simulation okay here's a different equity curve up into the right up into the right up into the right
+[  557.09s ->   563.73s] we're selling cash secured puts all day long why not okay well let's sell another cash secured put
+[  563.73s ->   571.25s] up into the right up into the right up okay okay oh no we are oh my goodness two tail events in
+[  571.25s ->   581.87s] one simulation all right when you are selling puts you are selling insurance and when you are an
+[  581.87s ->   588.51s] insurance seller you have to pay when the bottom blows out it's entirely possible that you watching
+[  588.51s ->   593.95s] right now if you were to sell insurance for the next year five years ten years you dodge these bullets
+[  593.95s ->   599.39s] but law of large numbers style if everyone who watched this video tried to trade this eventually
+[  600.03s ->   606.75s] you're gonna have to pay out so statistically yeah it is profitable but you're in the business of
+[  607.79s ->   614.75s] managing tail risk then if you're selling these contracts in this capacity right so it's really
+[  614.75s ->   619.15s] important to understand that just because you have a high win rate it doesn't mean you can't blow your
+[  619.15s ->   625.23s] account out look one trade blew our account below zero it's an absorbing state you're not coming back from
+[  625.23s ->   631.07s] that all right it's really important to understand these dynamics so just because there is edge
+[  631.71s ->   637.79s] supposedly in each trade it doesn't mean that the time average is going to converge to some beautiful
+[  638.75s ->   645.87s] upward trend in your equity curve the entire system is non-ergotic you're going to have this tail risk
+[  645.87s ->   651.95s] if you're unfamiliar with these topics in applied math probability statistics and you're interested in
+[  651.95s ->   657.31s] mastering your quantitative skills check out quant guild.com we have an adaptive practice engine
+[  657.31s ->   662.91s] that scales with your skill level so you can practice math finance probability all in one place
+[  662.91s ->   669.23s] it's a self-contained ecosystem there are lessons courses interview questions depending where you're at
+[  669.23s ->   676.83s] in your quant journey whether you're a hobbyist or you're looking to target industry roles as a quant
+[  677.63s ->   683.23s] quant guild will help you get there i'll leave a link in the description below check out quant guild.com
+[  683.23s ->   687.47s] to master your quantitative skills what we're going to do now is we're going to head on over to
+[  687.47s ->   693.07s] interactive brokers i'm going to show you how to place a cash secured put trade we're going to take a
+[  693.07s ->   698.19s] look at the options trader we're going to take a look at the implied volatility and we're going to take a
+[  698.19s ->   705.07s] look at the implied volatility skew which shows us that puts are relatively overpriced for the same spread
+[  705.07s ->   710.51s] relative to the at the money contract and that's because they are going to cite a higher implied
+[  710.51s ->   716.27s] volatility and that is going to exhibit and practice this idea of the volatility risk premium
+[  716.27s ->   719.63s] all right here we are in the trader workstation again i'll leave a link to get started with
+[  719.63s ->   723.39s] interactive brokers in the description below if you would like they're the only broker i use i've been
+[  723.39s ->   728.67s] with them for over 10 years if you can believe it in a trading and investing capacity and we use them
+[  728.67s ->   734.51s] and their api for all of my quant builds we're going to head on over to the options trader here
+[  735.07s ->   739.79s] and we're going to use nvidia as an example so i'm going to click on nvidia you can type
+[  739.79s ->   744.99s] in any ticker you would like in that upper left hand corner and what you'll see now is an options
+[  744.99s ->   749.95s] chain and i have a video discussing how to read the options chain i also have videos getting
+[  749.95s ->   755.63s] interactive brokers market data subscriptions set up for live data feeds i'll leave links to those
+[  755.63s ->   761.15s] description i'll leave links to those videos in the description below if you'd like to check those out
+[  761.15s ->   766.59s] so how do we go about trading this cash secured put effectively with this options trader well the
+[  766.59s ->   771.15s] first thing i want to do is show you the implied volatility smile or skew so i'm going to head on over
+[  771.15s ->   777.95s] to analytics iv viewer plus term structure and this is going to create a nice pop-up window for us here
+[  777.95s ->   785.23s] and if you type in the symbol you are going to get a smile for your underline and that's exactly what
+[  785.23s ->   791.39s] we see here what we're looking at is the volatility on the left annualized and the strike for the
+[  791.39s ->   798.67s] contract right here on the x-axis now at the money right this is going to be where the spot currently
+[  798.67s ->   804.43s] is trading and it's currently trading around 218 and on the left you're going to have out of the money
+[  804.43s ->   809.15s] puts and on the right you're going to have out of the money calls and what do you notice about the
+[  809.15s ->   815.07s] implied volatility the implied volatility on the left is significantly higher than the implied
+[  815.07s ->   822.19s] volatility on the right and this is exactly what i had said earlier right i said that fear right is
+[  822.19s ->   828.51s] going to drive the prices up arbitrarily for that tail risk people are afraid of the bottom blowing
+[  828.51s ->   833.23s] out they want to overpay for protection behaviorally this makes a lot of sense psychologically this makes
+[  833.23s ->   837.47s] a lot of sense in the context of smoothing equity returns it's subject for discussion whether or not
+[  837.47s ->   841.87s] you're overpaying whether or not being long that convexity is going to protect you but that's not
+[  841.87s ->   846.35s] really what we're talking about here what you'll notice is if implied volatility is higher what did
+[  846.35s ->   852.67s] i say that does to option prices drives the prices up so people are going to overpay in equilibrium for
+[  852.67s ->   858.27s] this and that is what is going to create this relationship here where the implied a forward-looking
+[  858.27s ->   863.87s] measure of fear right relative to the realized volatility a proxy for realized volatility because we
+[  863.87s ->   868.91s] can't directly observe it is going to have this shallow relationship and the distance is going to
+[  868.91s ->   877.63s] effectively be the edge in each trade so understanding that how can we actually place this cash secured put
+[  877.63s ->   883.79s] well if i head on back over to the options trader here then you're going to be able to see my net
+[  883.79s ->   891.07s] liquidation value of my cash i have 50 000 in cash all right well what does that do for me well that means
+[  891.07s ->   897.79s] that i have 50 000 of cash that i can use to purchase some sort of stock right but instead
+[  897.79s ->   902.91s] of purchasing the stock directly what i'm going to do is i'm going to sell a put contract so i'm
+[  902.91s ->   910.19s] going to open up this options trader i'm going to select nvidia and i'm going to choose then an
+[  910.19s ->   916.27s] expiration for this put contract so the maturity i'll select is 23 days out you're free to select
+[  916.27s ->   922.51s] whatever you like and this is effectively the game where are you going to choose to sell your put
+[  922.51s ->   930.91s] contract where are you okay being forced having the obligation to buy with that cash in your account
+[  930.91s ->   938.19s] if you take a look at this options chain here we're currently trading around 217 so let's say that i
+[  938.19s ->   943.79s] am going to be willing to buy at roughly 200 i'm going to scroll on up to a strike price of 200 and if i
+[  943.79s ->   949.71s] want to sell this contract i'm going to have the obligation then if it expires in the money to buy
+[  950.35s ->   956.99s] at a price of 200 but keep in mind when i buy the spot price is going to be below that it could be 195
+[  956.99s ->   964.19s] it could be 190 it could be 180 so on and so forth right that is what it means to be selling insurance
+[  964.19s ->   969.23s] that is what it means to be collecting this premium that is what a cash secured put is so if i head on
+[  969.23s ->   974.67s] over to the strategy builder i can add this leg remember you are going to sell at the bid buy at
+[  974.67s ->   980.91s] the ask so i'm going to click on sell here and it's in a lot of 100 so if it expires in the money
+[  980.91s ->   987.23s] then i have to buy 100 chairs at 200 that is the strike price that's twenty thousand dollars i had
+[  987.23s ->   993.63s] fifty thousand in cash hence cash secured put i have enough cash to purchase these shares should it
+[  993.63s ->   999.07s] expire in the money so if i wanted to actually place this trade what would i do well i could take
+[  999.07s ->  1002.59s] that exact same contract i could drag it over to my terminal here so what i'm going to do is i'm going
+[ 1002.59s ->  1008.75s] to take this this contract i'm going to drag it over and you're going to see then the put contract
+[ 1008.75s ->  1014.19s] with the expiration and the strike price i can right click it and i can choose to buy or sell i'm going
+[ 1014.19s ->  1019.23s] to sell the put in this case and it's going to create an order once it creates the order you're going
+[ 1019.23s ->  1026.11s] to be free to choose your quantity and the quantity that you select should be relative to the cash that
+[ 1026.11s ->  1033.47s] you have in your account so remember this is a cash secured put we don't want to sell more puts than
+[ 1033.47s ->  1040.83s] we can actually afford in the worst state of the world so here keep in mind i have 50 000 in cash so if
+[ 1040.83s ->  1046.91s] i sell one that's twenty thousand dollar obligation if i sell two that is a forty thousand dollar obligation
+[ 1046.91s ->  1052.11s] remember a strike price of 200 if i hit transmit here what am i what am i going to get i'm going
+[ 1052.11s ->  1058.83s] to collect my premium of 258 dollars times two contracts so roughly 500 bucks just for selling
+[ 1058.83s ->  1066.27s] the right but not obligation to sell to me at 223 days from now so transmit this comes up override
+[ 1066.27s ->  1072.67s] transmit that order is fulfilled and that is a cash secured put those three states of the world now
+[ 1072.67s ->  1079.07s] we are free to realize either we are going to get assigned and we have to purchase at 200 or we are
+[ 1079.07s ->  1084.27s] going to let the contract expire worthless in which case we'll collect our 500 bucks or we'll choose to
+[ 1084.27s ->  1091.39s] close this early based on some sort of pnl so if i wanted to close this early what you'll see here is
+[ 1091.39s ->  1098.67s] i sold this for 258 right but now the contract is trading at 269 if i wanted to close this early i would
+[ 1098.67s ->  1106.11s] realize a negative cash flow there because i received 250 258 for two contracts if i want
+[ 1106.11s ->  1110.67s] to close this and not have the obligation anymore i have to buy it back and i'm going to have to buy
+[ 1110.67s ->  1115.79s] it back more expensive that is that third state of the world so everything is handled automatically
+[ 1115.79s ->  1119.63s] except closing the position early that is going to be at your discretion if you want to collect
+[ 1119.63s ->  1124.99s] theta a little bit if you want to collect a little bit of vega depending on which direction
+[ 1124.99s ->  1129.07s] volatility moves but the greeks are certainly subject for another discussion along with the
+[ 1129.07s ->  1134.59s] formal wheel strategy that is going to do it for this video on how to trade the cash secured put
+[ 1134.59s ->  1139.07s] i hope you enjoyed it i hope you learned something this video certainly took a tremendous effort to put
+[ 1139.07s ->  1143.15s] together so if you liked it and you want to see more like it in the future please like comment
+[ 1143.15s ->  1149.47s] subscribe share it helps me out tremendously it's always greatly appreciated check out interactive brokers
+[ 1149.47s ->  1152.75s] link in the description below to get started with them and if you'd like to master your
+[ 1152.75s ->  1159.31s] quantitative skills check out quant guild dot com but other than that i want to thank you so much
+[ 1159.31s ->  1163.31s] for watching and i'll see you in the next video

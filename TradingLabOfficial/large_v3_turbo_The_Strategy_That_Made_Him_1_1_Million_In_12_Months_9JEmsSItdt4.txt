@@ -1,0 +1,144 @@
+[    0.00s ->     9.36s] This is Larry Williams, a professional trader who turned $10,000 into $1.1 million in just 12 months of trading.
+[    9.42s ->    14.64s] Which, if you do the math, that is 11,300% in 12 months.
+[   14.90s ->    16.70s] God damn!
+[   17.00s ->    19.88s] Now, if you're like me, you're thinking, how did he do it?
+[   19.98s ->    23.68s] Well, I decided to look for the answer of that specific question.
+[   23.90s ->    28.32s] Scavenging the internet for the strategy he used to get those massive gains.
+[   28.32s ->    30.78s] And, oh boy, did I find something.
+[   30.94s ->    34.56s] I found the exact trading strategy he used to make those gains.
+[   34.82s ->    38.30s] And, I gotta say, Larry's an absolute G for making this.
+[   38.34s ->    39.84s] Because, it works insanely well.
+[   39.94s ->    41.60s] And, I'm gonna share it with you guys.
+[   41.74s ->    42.56s] Let's get straight to it.
+[   42.66s ->    48.40s] So, the strategy he used to make these gains is called the LW Volatility Breakout Strategy.
+[   48.48s ->    50.28s] LW for Larry Williams.
+[   50.48s ->    51.04s] Makes sense.
+[   51.04s ->    55.82s] So, this specific strategy basically forms around one specific indicator.
+[   56.14s ->    58.42s] And, that indicator is...
+[   58.42s ->    61.54s] The Dungeon Channels Indicator.
+[   61.74s ->    66.04s] To add it to your chart, go to the Indicators tab and type in Dungeon Channels.
+[   66.14s ->    67.86s] Click this one right here.
+[   68.24s ->    71.48s] Now, the Dungeon Indicator by itself is pretty nice.
+[   71.52s ->    75.44s] But, in order for it to work just how we want it, we gotta change the settings.
+[   75.50s ->    79.04s] Go to the settings of the indicator and change this link to 96.
+[   79.04s ->    84.06s] Then, I'm also gonna go to the Styles tab and change the colors of the lines to red.
+[   84.16s ->    85.22s] So, they're easier to see.
+[   85.30s ->    87.32s] Also, something very important.
+[   87.46s ->    92.46s] All of these settings, I'm about to tell you, are for specifically the 5-minute time frame.
+[   92.60s ->    96.06s] As, that's the time frame Larry used for this specific strategy.
+[   96.20s ->   100.68s] If you want to use a different time frame, please do your own testing with different indicator values.
+[  100.78s ->   103.80s] So, this is what the Dungeon Indicator looks like by itself.
+[  103.92s ->   105.14s] There are gonna be three lines.
+[  105.14s ->   109.26s] The middle line, which basically acts as a mean reversion point for the market.
+[  109.42s ->   113.68s] Which means, the price will always be naturally attracted to this line.
+[  113.78s ->   115.04s] Almost kinda like a magnet.
+[  115.10s ->   117.74s] You can also use it to tell the momentum of the chart.
+[  117.86s ->   120.18s] So, if price is above the line, it's bullish.
+[  120.34s ->   122.46s] If price is below the line, it's bearish.
+[  122.54s ->   124.72s] Next, is the upper and lower band.
+[  124.82s ->   128.14s] These bands can act as both support and resistances.
+[  128.14s ->   131.38s] And, often times, price will hit these and reject.
+[  131.52s ->   134.68s] But, we can also use them as breakout points.
+[  134.80s ->   139.70s] As, if price breaks this upper band, often times, price will continue to head upwards.
+[  139.96s ->   142.52s] Which is exactly how Larry used it.
+[  142.60s ->   143.72s] That's a little foreshadowing.
+[  143.80s ->   146.88s] But, there is a small problem with this strategy.
+[  147.02s ->   148.82s] Actually, it's a pretty big problem.
+[  148.92s ->   149.52s] Let me explain.
+[  149.64s ->   154.48s] You see, so normally how you use this indicator is once price breaks this upper band,
+[  154.48s ->   158.68s] you enter a long, set your stop loss right below this middle line, and set your take
+[  158.68s ->   161.74s] profit to something like a 2 to 1 risk to reward ratio.
+[  161.90s ->   163.30s] And, you get a winning trade.
+[  163.40s ->   168.86s] But, if the market is consolidating like this and moving sideways, this is when we start
+[  168.86s ->   170.66s] seeing problems with this strategy.
+[  170.76s ->   175.84s] Because, when the market is consolidating, this upper and lower band are going to be very,
+[  175.98s ->   178.32s] very close together, like they are here.
+[  178.40s ->   184.22s] Which means, they are a lot more likely to break, even from a small, tiny, inchy move that
+[  184.22s ->   186.20s] doesn't have a lot of momentum behind it.
+[  186.20s ->   190.22s] Which, in the end, would give you a false signal, and you would lose out on the trade.
+[  192.61s ->   195.93s] So, we need to find a way to stop this from happening.
+[  195.93s ->   200.73s] So, we only enter in high quality trades that have a lot of momentum behind them.
+[  200.73s ->   203.97s] In order to do that, we need to add two more confirmations.
+[  203.97s ->   206.03s] But, before that, have you tried?
+[  206.03s ->   209.44s] Hankertrade!
+[  209.44s ->   213.14s] Hankertrade is one of my favorite brokers of all time, because of these reasons.
+[  213.14s ->   218.18s] Some of the absolute lowest fees on the market, their spreads go as low as 0.0 pips, and if
+[  218.18s ->   222.18s] you're an absolute maniac, you can use up to 500x leverage with them.
+[  222.18s ->   223.18s] 500x!
+[  223.18s ->   227.30s] They also have negative balance protection, in case, you know, you blow up your account.
+[  227.30s ->   229.38s] I'm talking to you, 500x leverage people.
+[  229.38s ->   233.06s] And, to put the cherry on top, they have a 100% deposit bonus.
+[  233.06s ->   236.82s] So, whatever you initially deposit, they will match up to 25 grand.
+[  236.82s ->   240.74s] Plus, if you click the link in my description, it not only gives you all of those benefits,
+[  240.74s ->   243.14s] but it also helps me out. So, click it.
+[  243.14s ->   244.26s] Um, where was I?
+[  244.26s ->   248.34s] We need to add two more confirmation indicators to get higher probability trades.
+[  248.34s ->   252.98s] So, the first confirmation indicator we're going to be adding is the LWTI,
+[  252.98s ->   255.46s] or the Larry Williams Large Trade Index.
+[  255.46s ->   260.26s] Once you have it added, go to the settings of the indicator and change the period to 25.
+[  260.26s ->   264.42s] The higher this number is, the more long-term trends it'll look for.
+[  264.42s ->   268.98s] If you're looking for confirmation for shorter-term trends, a smaller number is better.
+[  268.98s ->   272.18s] I found 25 works the best at a 5 minute time frame.
+[  272.18s ->   275.46s] Then, you're going to want to change the smoothing period to 20.
+[  275.46s ->   279.62s] Then, for the final indicator, add a simple volume indicator.
+[  281.78s ->   283.62s] I know, I know, pretty boring.
+[  283.62s ->   286.74s] But, this will help us a ton with avoiding false signals.
+[  286.74s ->   290.82s] Go to the settings of the volume indicator and change the MA length to 30.
+[  290.82s ->   295.94s] Then, go to the styles tab and enable the volume moving average and change the color to white.
+[  295.94s ->   301.06s] This volume indicator will help us identify when the market actually has momentum behind it,
+[  301.06s ->   302.50s] and not just a small move.
+[  302.50s ->   307.46s] The strategy itself is pretty simple, and I'm going to teach you just how to do it.
+[  307.46s ->   312.02s] Then, at the end, I'll give you a secret trick to make it perform even better.
+[  312.02s ->   314.74s] First, again, make sure you're on the 5 minute time frame.
+[  314.74s ->   316.82s] For a long trade, you want to do this.
+[  316.82s ->   320.90s] First, you want price to come up and touch this upper red line.
+[  320.90s ->   325.78s] Once that happens, the next step is you want the LWTI indicator to be green.
+[  325.78s ->   328.98s] If it is red, you would not enter into the trade.
+[  328.98s ->   332.74s] Then, finally, you want the volume bars to be above the white line,
+[  332.74s ->   334.82s] and you also want them to be green.
+[  334.82s ->   339.62s] If they aren't above the white line or not green, you would not enter into the trade.
+[  339.62s ->   342.34s] This is going to be showing the market is not consolidating,
+[  342.34s ->   344.50s] and there's enough volume to enter the trade.
+[  344.50s ->   350.34s] All three of these criteria need to be met at the exact same time in order for you to enter the trade.
+[  350.34s ->   351.94s] So, you would enter here.
+[  351.94s ->   354.50s] Now, the stop loss kind of depends on the setup.
+[  354.50s ->   358.42s] Usually, you would set your stop loss right below the middle orange line,
+[  358.42s ->   361.30s] but there are some scenarios where you would not do that.
+[  361.30s ->   366.10s] For instance, when the upper band and the orange line have a huge gap like this,
+[  366.10s ->   370.10s] where if you did set your stop loss here, the stop loss would be huge.
+[  370.10s ->   375.14s] If this is the case, you would just set your stop loss at the recent swing low like this.
+[  375.14s ->   378.58s] But, for the most part, you'll be setting it right below the middle line.
+[  378.58s ->   383.54s] Once you have your stop loss, set your take profit at a 2 to 1 risk to reward ratio.
+[  383.54s ->   385.94s] And, just like that, you have a profitable trade.
+[  385.94s ->   391.14s] Let's do a short example, and then I'll give you the secret trick to make the strategy even better.
+[  391.14s ->   393.38s] First, you want price to hit the lower band.
+[  393.38s ->   396.58s] Check the LWTI indicator and make sure it's red.
+[  396.58s ->   400.26s] Then finally, you want the volume again to be above the white line,
+[  400.26s ->   402.98s] but this time, you want the bars to be red.
+[  402.98s ->   406.66s] Enter here, set your stop loss right above the middle orange line,
+[  406.66s ->   410.26s] and set your take profit at a 2 to 1 risk to reward ratio.
+[  410.26s ->   412.90s] And, just like that, you have another winning trade.
+[  412.90s ->   416.58s] Now, it's time to go over the secret trick.
+[  416.58s ->   422.26s] Another small problem I found with this strategy is when it's near a major support or resistance.
+[  422.26s ->   425.22s] For example, here all of the requirements were met.
+[  425.22s ->   428.50s] Price touched the upper band, the LWTI indicator is green,
+[  428.50s ->   431.14s] and the volume is above the line and also green.
+[  431.14s ->   435.06s] So, we entered our trade like normal, and set our take profit and stop loss.
+[  435.06s ->   438.34s] But, if you look here, it was actually a losing trade.
+[  438.34s ->   443.38s] If we take a closer look and zoom out, you can see again, all of our criteria was met,
+[  443.38s ->   447.06s] but it was met right at a clear strong resistance level.
+[  447.06s ->   451.86s] So, yeah, we got all of our signals, but since this was such a strong level,
+[  451.86s ->   453.14s] price bounced here.
+[  453.14s ->   457.78s] So, in order to fix this, you would go on a higher time frame, like the one hour.
+[  457.78s ->   460.90s] Then, you would set all your major support and resistance levels.
+[  460.90s ->   465.22s] Once you have that done, do not enter trades close to those major levels.
+[  465.22s ->   469.06s] So, in the trade I was talking about before, so sure our criteria was met,
+[  469.06s ->   472.82s] but since it was close to this resistance level, we would have skipped this trade.
+[  472.82s ->   478.26s] Actually, what I found works really well is if price is currently breaking a resistance level,
+[  478.26s ->   483.30s] then all the indicator requirements were met, this would be a great time to enter,
+[  483.30s ->   487.14s] as there's a ton of confluence and bullish momentum in this trade.
+[  487.14s ->   491.14s] So, yeah, if you pair this strategy with basic support and resistances,
+[  491.14s ->   494.98s] or even supply and demand, it works absolutely great.
+[  494.98s ->   499.94s] If you guys want to learn how to draw the perfect supply and demand zones for this strategy,
+[  499.94s ->   506.02s] watch this video because I basically tell you specifically on how to draw the best zones possible.
+[  506.02s ->   510.98s] Thanks for watching, and I'll see you guys next time.

@@ -1,0 +1,149 @@
+[    0.00s ->     4.82s] Hey guys, welcome to the series which is how to trade blank stock for a living.
+[    5.20s ->     7.98s] In today's video we're going over how to trade SPY for a living.
+[    8.14s ->    13.14s] So again guys, we're going to kind of walk you through the characteristics, the thing that SPY does
+[   13.14s ->    15.84s] so you can like actually trade this stock with success.
+[   16.24s ->    21.72s] And so again, I want to break down again how to swing trade SPY, how I do it,
+[   21.78s ->    26.60s] and some special features you should watch out for and know about when trading SPY.
+[   26.60s ->    30.70s] So anyways, when looking at SPY, SPY is sourced off the S&P 500.
+[   30.94s ->    33.16s] So this is the overall market ETF.
+[   33.40s ->    38.28s] So again, you're going to be getting typically small percentage gains on this stock
+[   38.28s ->    40.54s] because again, it is diversified.
+[   40.64s ->    45.30s] It's tracking over 500 different stocks in the market in all 11 different sectors.
+[   45.78s ->    48.10s] And so it is a very diversified ETF.
+[   48.22s ->    53.54s] I'm not saying you can't make great gains, but you can see here one of its largest runs it's just been on
+[   53.54s ->    58.00s] it made about 100% return over about a year and a half or so.
+[   58.10s ->    59.82s] So again, that's a really good return.
+[   60.22s ->    65.32s] And again, if you're saying a 100% return is not good, then maybe this video is not for you
+[   65.32s ->    66.54s] because it's not a get rich quick overnight.
+[   66.78s ->    70.78s] But I do want to help you get rich consistently if possible.
+[   71.56s ->    74.40s] So anyways, let's talk about some things for SPY.
+[   74.50s ->    78.12s] So again, the first thing we need to discuss is very simple support and resistance levels.
+[   78.50s ->    80.86s] So SPY loves its support and resistance levels.
+[   80.86s ->    84.66s] So again, resistance is going to be where it previously topped out at.
+[   84.92s ->    87.26s] Support levels are going to be where it's previously bottomed out at.
+[   87.34s ->    88.80s] So again, here are some right here.
+[   89.12s ->    90.34s] We can even go in closer.
+[   90.50s ->    96.06s] We have a resistance here right here and we have another support at this level right here.
+[   96.10s ->    99.72s] You can see that it hit this low and then it came back down and it hit this low again.
+[  100.10s ->   102.48s] So what is another thing we need to know about when we're trading SPY?
+[  102.72s ->   106.34s] Well, we need to know about the 200-day moving average and that's what this line is right here.
+[  106.34s ->   111.24s] So the 200-day moving average, again, this can be pulled up on any trading charting platform you're using.
+[  111.74s ->   113.60s] Again, you just go into the indicators.
+[  113.76s ->   114.92s] You click on moving average.
+[  115.10s ->   117.08s] You go and you change the length to 200.
+[  117.36s ->   123.00s] This makes it a 200-day moving average given you're on the one where each candle represents one day.
+[  123.12s ->   124.66s] So it's a 200-day moving average.
+[  124.72s ->   125.84s] And why do we need to know this?
+[  125.94s ->   128.76s] Well, first off, it acts as a very strong support level.
+[  129.12s ->   131.48s] So again, the stock tends to bounce off on it.
+[  131.48s ->   134.88s] But also, it shows the direction of this stock.
+[  135.24s ->   139.74s] When the market is above or when SPY is above this line, it tends to be a bullish market,
+[  140.10s ->   142.28s] meaning that the momentum and the strength is to the upside.
+[  142.68s ->   146.02s] When the stock is below this line, it tends to be a bearish market,
+[  146.12s ->   148.64s] meaning that the market is headed towards the downside.
+[  148.88s ->   153.22s] So again, that helps give us a rough understanding of which direction the market is in
+[  153.22s ->   154.74s] or what trend the market is in.
+[  155.04s ->   157.14s] And so that can kind of help us understand something else.
+[  157.14s ->   163.30s] Now, something that SPY does a lot or something I want to point out is SPY is known for Doji Candles.
+[  163.40s ->   168.82s] I don't know if it's known in the world, but when I trade it, I always, always, always look for Doji Candles
+[  168.82s ->   170.54s] because it tends to respect those levels.
+[  170.92s ->   172.64s] Now, what do I mean by a Doji Candle?
+[  172.88s ->   174.04s] Well, again, I'm going to zoom out.
+[  174.12s ->   177.02s] We're just going to do a historical look on Doji Candles here.
+[  177.36s ->   179.14s] So again, let's find a good period.
+[  179.36s ->   180.50s] Yeah, I guess we'll start here.
+[  181.36s ->   185.90s] You can see here Doji Candles at support and resistance levels are strong.
+[  185.90s ->   189.60s] You can see here that we bumped into the 200-day moving average.
+[  189.76s ->   192.52s] We formed this really, really big Doji Candle.
+[  192.62s ->   194.36s] Then we kind of trended up after that.
+[  194.66s ->   197.24s] We had a Doji Candle here at a prior resistance level.
+[  197.32s ->   198.28s] Then we trended down.
+[  198.62s ->   203.18s] We had, again, you can see here Doji Candles galore, which is long wicks and small bodies,
+[  203.24s ->   205.82s] but they're not happening at any support or resistance level.
+[  205.90s ->   207.20s] So it's not really taking effect.
+[  207.50s ->   209.78s] What we look for is we look for a support level.
+[  209.84s ->   211.78s] You can see here that we have support level.
+[  212.06s ->   214.00s] We have the 200-day moving average line.
+[  214.00s ->   218.20s] We have a Doji Candle, and then the next day we look for a strong green candle,
+[  218.46s ->   219.42s] which, again, you can see here.
+[  219.72s ->   221.48s] And then, again, it kind of trended up after that.
+[  222.34s ->   224.14s] So, again, you can just kind of see this throughout history.
+[  224.48s ->   225.64s] Here's another great example.
+[  225.74s ->   228.72s] You can see here where it formed some minor trends here.
+[  228.78s ->   230.84s] This was really fun to trade back in the day.
+[  231.24s ->   232.24s] I say back in the day.
+[  232.36s ->   232.76s] When was this?
+[  232.76s ->   235.36s] This was probably 2019, 2018, something like that.
+[  235.86s ->   238.70s] We can see here where a Doji Candle formed at resistance.
+[  238.82s ->   239.30s] It trended down.
+[  239.38s ->   241.36s] A Doji Candle formed, and then it trended up.
+[  241.56s ->   243.06s] A Doji Candle formed, it trended down.
+[  243.06s ->   244.36s] A Doji Candle formed, it trended up.
+[  244.40s ->   245.62s] A Doji Candle formed, it trended down.
+[  245.96s ->   249.52s] This was actually got in here because, again, I was trading this up and down.
+[  249.60s ->   250.34s] I got in here.
+[  250.62s ->   254.46s] And then, again, my stop loss did get hit because, again, it just – this was a false breakout
+[  254.46s ->   256.52s] because, again, not everything is 100% accurate.
+[  256.72s ->   261.70s] But Doji Candles at support and resistance levels for the S&P 500 are very strong.
+[  261.70s ->   266.82s] You can see here this is a bigger Doji Candle, but it is one followed by a strong green candle,
+[  266.94s ->   267.76s] and then we have a run up.
+[  268.16s ->   271.14s] So, again, you can see here that Doji Candles are very important.
+[  271.14s ->   274.82s] You can see here, Doji, Doji, Doji, Doji, all near our all-time high level and then coming down.
+[  275.24s ->   279.72s] Again, Doji Candles are just very important to watch out for, especially near support and resistance levels.
+[  280.06s ->   281.28s] It's something that SPY loves.
+[  281.62s ->   286.14s] And so, again, that is one aspect to understand how the market works here on SPY.
+[  286.52s ->   289.62s] Another one that – this specifically works for the S&P 500.
+[  289.62s ->   295.82s] Yes, this is a trading strategy, but this is one that works amazingly well on the S&P 500.
+[  295.98s ->   298.04s] It mainly works well on futures.
+[  298.32s ->   301.98s] And so, because the S&P 500 has a future, it works well.
+[  302.10s ->   307.52s] And so, again, this will not work well with individual stocks, but it's called the MACD divergence play.
+[  307.66s ->   312.34s] So, again, all you need to do is add the MACD, which is Moving Average Convergence Divergence Indicator.
+[  312.34s ->   316.04s] Again, this is another free one that can be added to almost any chart.
+[  316.86s ->   320.20s] And what you're doing is you're looking for converging levels.
+[  320.54s ->   325.46s] And what I mean by that is you can see here how the highs on SPY are getting higher.
+[  325.56s ->   328.06s] So, you can see here that this little line is going up.
+[  328.12s ->   331.20s] You can see here that the Moving Average lines are going down.
+[  331.28s ->   333.66s] This is what we mean by a divergence.
+[  334.18s ->   337.26s] You can see here that this line is diverting from this line.
+[  337.36s ->   339.12s] This is going up while this is going down.
+[  339.12s ->   341.24s] This indicates a reversal.
+[  341.42s ->   346.24s] You can see here that we got that reversal right here as we saw that the low was higher and then it kind of crashed down.
+[  346.60s ->   350.48s] So, again, this works for both for the upside and the downside.
+[  351.04s ->   353.74s] And so, again, you can just look for these Moving Average Convergence Divergence.
+[  353.84s ->   358.16s] You can even do it on an hourly chart if you want to swing trade on a closer time frame.
+[  358.48s ->   360.98s] Again, if we can kind of look at that, let's see if we can find a good example.
+[  362.52s ->   363.82s] This may be a good example.
+[  364.26s ->   365.32s] This is one example.
+[  365.74s ->   366.62s] Again, it's a bit too chubby.
+[  366.62s ->   369.44s] We can see here how these are coming down.
+[  369.52s ->   371.24s] It's at a level of support, which is good.
+[  371.48s ->   374.36s] You can see here this is converging up, showing that the momentum is increasing.
+[  374.86s ->   376.74s] And, again, we kind of have that break out to the upside.
+[  376.88s ->   377.74s] So, that is one example.
+[  378.10s ->   379.72s] Another example of the long term.
+[  381.22s ->   384.16s] Yeah, so this is just a good example overall of how this works.
+[  384.50s ->   388.78s] Here is an example right here of how it's going up in this period, but this period is going down.
+[  388.78s ->   392.86s] This just shows that the Moving Average Convergence divergence works well, especially on SPY.
+[  393.18s ->   394.60s] And so, I just wanted to make sure I pointed that out.
+[  394.60s ->   398.20s] In this series, when we're talking about how to swing trade certain stocks for a living,
+[  398.28s ->   403.66s] I want to point out characteristics and strategies that work well with that stock so that if you want to use that stock, it can actually work well.
+[  403.96s ->   406.94s] Now, again, if you're someone who's like, okay, cool, but I want a proven strategy.
+[  407.34s ->   408.96s] Well, again, I am going to plug this.
+[  409.02s ->   410.48s] This is called the Impeccable Stock Software.
+[  410.60s ->   413.34s] It is a software that I made for trend trading and swing trading.
+[  413.70s ->   417.28s] Again, it gives you a game plan based on the math of that stock.
+[  417.28s ->   422.04s] And what I wanted to point out is you can actually make about a 16% return every single year.
+[  422.44s ->   422.64s] Guess what?
+[  422.70s ->   430.58s] That is two, almost three times what the average market does every single year just by swing trading the stock over and over and over.
+[  430.96s ->   437.28s] Again, if you do the compounded return, which means you invest all the money you made and lost, again, you can average about a 20% return compounded.
+[  437.28s ->   441.60s] Again, if you want to see the past trade performance, again, you can see that here.
+[  441.84s ->   445.20s] You make 7%, 3%, 1%, again, on all these trade alerts in the past.
+[  445.46s ->   447.44s] You can also see the losses and how well those do.
+[  448.76s ->   450.28s] But again, you can see the performance.
+[  450.42s ->   454.54s] Again, if you want to follow the game plan and get results like this for the S&P 500,
+[  454.92s ->   458.68s] I would highly recommend that you check out the Impeccable Stock Software.
+[  458.78s ->   461.90s] There's a 100% free trial, no credit card required.
+[  461.90s ->   468.48s] I would check this out and just start following the alerts, whether with real money or with paper trading to see if you like it.
+[  468.76s ->   470.64s] Anyways, guys, thank you so much for watching this video.
+[  470.74s ->   473.64s] I hope this gives you some insight on how to better swing trades by.
+[  474.06s ->   476.12s] Good luck, and I'll see you in the next video.

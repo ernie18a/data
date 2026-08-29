@@ -1,0 +1,1379 @@
+[    1.94s ->     7.14s] Trading is about optimal decision making in the face of uncertainty. No doubt this requires a
+[    7.14s ->    13.02s] combination of knowledge and experience. But if we're going to take a swing at a pitch,
+[   13.36s ->    18.38s] are we going to take a swing at a low probability ball? No, we're going to take a swing at a high
+[   18.38s ->    24.34s] probability one that we can knock out of the park. And that's exactly the purpose of this tool.
+[   24.34s ->    29.96s] In this video, we're going to build my earnings events trading dashboard. This is going to allow
+[   29.96s ->    37.14s] us to observe historic earnings events, analyze the implied volatility crush effect and assess the
+[   37.14s ->    42.30s] overall temperature of the market to see if we're observing something similar in an earnings event
+[   42.30s ->    47.58s] right now that we can possibly trade and help us assess whether or not we should take a swing
+[   47.58s ->    52.44s] at that pitch. I'll give a demonstration of this tool in a moment, but if you're unfamiliar with
+[   52.44s ->    57.92s] the general strategy of implied volatility crush, I have a video dedicated to the topic. I will leave
+[   57.92s ->    62.68s] a link to it in the description below. And the trades that I placed in that video were informed
+[   62.68s ->    69.54s] using this tool. I highly encourage you to code this tool from scratch so you can work on your own
+[   69.54s ->    74.66s] extensions. But of course, if you just want access to the project source code, so you can run the tool
+[   74.66s ->    80.16s] right away. I will leave a link to the project source code in the description below. I will also post
+[   80.16s ->    85.10s] it to the Quant Guild library on GitHub, where you can find all of my Jupyter notebooks and associated
+[   85.10s ->    90.74s] YouTube videos, along with all of the source code for my quant builds. Moreover, these videos certainly
+[   90.74s ->    94.88s] take a lot of effort to create. So if you'd like to help support the channel so I can continue to create
+[   94.88s ->   100.16s] videos just like this one, please like, comment, subscribe, share. It helps me out tremendously. It is
+[  100.16s ->   107.26s] greatly appreciated. And if you'd like to master your quantitative skills, check out quantguild.com. Maybe you
+[  107.26s ->   112.64s] come from a background in business, economics, computer science, physics, and aren't too sure where to get
+[  112.64s ->   117.72s] started on your quant journey. Maybe you're an aspiring quant or a working professional looking
+[  117.72s ->   123.64s] to sharpen those quantitative skills for a technical interview. In any case, Quant Guild is for you. We
+[  123.64s ->   129.48s] have over 90 quant lessons in math, probability, finance, an adaptive practice engine that scales
+[  129.48s ->   135.06s] with your skill level so you can progress to more and more difficult topics with gamified rank-based
+[  135.06s ->   142.06s] progress, interview questions with fully worked solutions, trading games coming soon, courses from A to Z
+[  142.06s ->   148.88s] in math, coding, probability and statistics, data science, and more, all from the ground up. And
+[  148.88s ->   154.20s] all that's included with Quant Guild membership. And you can get started right now for free. So if
+[  154.20s ->   160.54s] you'd like to help support the channel and master your quantitative skills, check out quantguild.com.
+[  160.80s ->   165.22s] Without further ado, let's get started with a demonstration of the tool that we're going to be
+[  165.22s ->   172.04s] building in this video. Of course, this tool is going to require data. To access the data necessary
+[  172.04s ->   177.56s] for this tool, we're going to be using interactive brokers. I'll leave a link in the description below
+[  177.56s ->   182.00s] if you'd like to get started with interactive brokers. I've been trading with them in an algorithmic
+[  182.00s ->   187.92s] capacity for over 10 years at this point. I highly recommend them and their API. They are the only broker
+[  187.92s ->   193.66s] that I use. So how does this dashboard work? Let's suppose that you just downloaded my source code
+[  193.66s ->   198.68s] and you've run it in Python and you want to connect to interactive brokers. Well, what you're going to
+[  198.68s ->   203.98s] have to do is you are going to have to come over here to the upper right hand corner of your trader
+[  203.98s ->   211.08s] workstation and click configure. Once you click configure, you're going to head on over to API, head on
+[  211.08s ->   217.82s] over to settings, and you're going to need to enable active X and socket clients, disable the read only
+[  217.82s ->   224.82s] API if you want to be able to place orders from your system, and of course verify the socket port here
+[  224.82s ->   234.32s] is in fact 7497 for paper trading or 7496 for live trading. Now, a very important note in all of my
+[  234.32s ->   242.74s] quant builds is the volatility must be in terms of daily units if you're looking to scale by the square root
+[  242.74s ->   249.12s] of 252. Now, you can choose whether or not you scale your volatility units. That's going to be entirely up to
+[  249.12s ->   255.16s] you, but I know some people have reported crazy volatilities in the hundreds, and that's because you're using
+[  255.16s ->   262.32s] the wrong volatility unit. So if you go on over to volatility and analytics, you can set your vol units to be
+[  262.32s ->   269.34s] either daily or annual. So once you've set them correctly here, you can hit apply. Okay, now we can
+[  269.34s ->   276.32s] head on back over to my event trading dashboard, we can successfully connect to interactive brokers,
+[  276.32s ->   282.76s] and now we can analyze an earnings event. So what I'm going to do is I'm going to use the event that I
+[  282.76s ->   290.52s] traded earlier this year on Nvidia. So here I have Nvidia, I have the earnings date of August 27th,
+[  290.52s ->   296.60s] and the days to expiration for the particular option contract that I was looking at. So now
+[  296.60s ->   302.08s] if I hit analyze IV crush, what's going to happen is I'm going to get a whole bunch of information
+[  302.08s ->   308.04s] and some pretty cool charts down below. So let's go over exactly what it is that I'm looking at.
+[  308.14s ->   313.44s] We're trying to assess whether or not we want to take a swing at a pitch. What I mean is we're trying
+[  313.44s ->   318.60s] to assess whether or not we want to take a short Vega position in Nvidia. So what am I looking at here?
+[  318.60s ->   324.00s] Well, I get the current metrics, the stock price, the VIX, and the current implied volatility.
+[  324.70s ->   330.88s] And below, I'm going to get an IV crush analysis for the event that I entered here. This is what has
+[  330.88s ->   336.82s] happened previously. I can see the pre-earnings implied volatility, the post-earnings implied volatility,
+[  336.82s ->   343.70s] and the percentage of IV crush. Since this is negative, if I had a short Vega position, I would have
+[  343.70s ->   347.96s] in fact made money. And if you go back to my video on implied volatility crush, you'll see, yeah,
+[  347.96s ->   352.88s] I made a couple hundred bucks on Nvidia. So let's take a look at the spot versus strike analysis.
+[  353.06s ->   359.56s] We're going to assume that the closing price is the spot of our straddle. This is very useful in
+[  359.56s ->   364.40s] the context of assessing whether or not there was too much volatility post the earnings event
+[  364.40s ->   370.66s] to capture that Vega profit. And if we take a look, the post-earnings spot price, the average,
+[  370.66s ->   378.24s] the next day was 180.53. That is nowhere near the volatility that was implied by the move in the
+[  378.24s ->   384.30s] straddle contract. And if we take a look at the straddle pricing, we can look at the P&L. We can see
+[  384.30s ->   391.20s] the pre-earnings call and put value, the post-earnings call and put value, and of course, the change in
+[  391.20s ->   396.84s] value and the change in the overall straddle value. And because it was negative, if we took a short
+[  396.84s ->   403.40s] position, then we would in fact have made money capturing that implied volatility crush effect.
+[  403.64s ->   409.34s] And that is exactly what we see in the charts below here. In the charts below here, what do we see?
+[  409.74s ->   415.34s] We see that implied volatility was this green line, and then post the earnings event the next day,
+[  415.40s ->   423.12s] it dropped all the way down here. It dropped from what? 43.5% all the way down to 32.1%.
+[  423.12s ->   430.50s] We can capture that volatility crush. And of course, the price did not move nearly at all. It went from
+[  430.50s ->   437.24s] what? 181.6 to 180.53. We are very able to capture that implied volatility crush effect,
+[  437.82s ->   442.38s] capture that profit, and then exit our position. And of course, we can use that knowledge and
+[  442.38s ->   448.38s] experience to look for similar opportunities in the future. Now, keep in mind, trading is a game of
+[  448.38s ->   454.86s] expected value. Nobody knows what the outcome of your pitch is going to be. You may strike out,
+[  455.08s ->   460.40s] you may knock it out of the park. Nobody knows, you must size your bets correctly. And you must
+[  460.40s ->   466.92s] execute upon the general strategy. Effectively. This goes into the idea of optimal bet sizing,
+[  467.32s ->   472.24s] acting optimally in the face of uncertainty. I have plenty of videos on this topic. If you're going
+[  472.24s ->   476.88s] to trade in a discretionary capacity, if you're going to trade to try to accumulate wealth,
+[  476.88s ->   484.14s] you must act with positive expected value. You cannot make outsized trades on any one trade
+[  484.14s ->   489.76s] just because you think this looks similar to what has happened. No, that's not what it means to
+[  489.76s ->   497.66s] accumulate expected value. So this is a tool. This is a tool to assess what has happened and in what
+[  497.66s ->   503.94s] type of market climate. You can see the VIX around the earnings date was relatively stable. It didn't
+[  503.94s ->   509.62s] move all that much. It was below 15. But then what happened actually a few days later, this was around
+[  509.62s ->   516.08s] the same time as the rates discussion in August. If you're unaware of what's happening in the broader
+[  516.08s ->   522.40s] market, then you are going to be subject to much worse odds in some sort of trade that you're trying
+[  522.40s ->   529.34s] to profit from. So if you just execute a trade without any concern for the macro regime, the overall
+[  529.34s ->   534.54s] market temperature, then the probability of you making out on that trade is going to be completely
+[  534.54s ->   540.48s] different than if you are aware of those dynamics. So when we look at something like this VIX chart,
+[  540.66s ->   545.60s] this is informing us of the overall market temperature. Was it flat? Was it increasing?
+[  545.78s ->   551.64s] Was it decreasing? What is the general market saying in terms of uncertainty? You can see after the
+[  551.64s ->   558.28s] discussion on rates, yeah, the VIX spiked up, right? It spiked up a point and a half versus the week
+[  558.28s ->   565.14s] before during the earnings event for NVIDIA, it had no necessarily impact on the outcome. So this is a
+[  565.14s ->   571.08s] very useful chart to help us also assess the current regime that we are trading in. Of course, there are
+[  571.08s ->   577.84s] a ton of ways that we can enhance and improve this event trading dashboard. I have videos on Markov
+[  577.84s ->   583.96s] chains and hidden Markov models for identifying some sort of latent regime. And if we incorporate those
+[  583.96s ->   590.98s] states directly into this tool, we can help ourselves identify states that have a higher likelihood of
+[  590.98s ->   597.56s] capturing that implied volatility crush profit. In other words, we can enhance our edge by integrating
+[  597.56s ->   603.14s] those tools directly into this dashboard. So I certainly encourage you work through building this
+[  603.14s ->   608.08s] dashboard on your own. I certainly encourage you check out those videos and see how you can combine
+[  608.08s ->   614.92s] those tools to help enhance your edge. In any case, we're now ready to get started building this project
+[  614.92s ->   621.98s] from scratch in Python. All right, let's get started with this quant build. I got VS code open. I got my
+[  621.98s ->   628.72s] copilot AI LLM off. We're going to be writing all of this code the old fashioned way. Be a shame if we
+[  628.72s ->   634.40s] learn something. So let's go ahead and start with importing everything that we are going to need. So
+[  634.40s ->   641.38s] we're going to need tkinter for our UI. So I'm going to say import tkinter as tk. I'm going to need some
+[  641.38s ->   651.06s] things from tkinter. I'm going to need tk message box and scrolled text for our log. I'm going to import
+[  651.06s ->   662.97s] threading for our IV API. Import time so we can handle those requests from the server. Import pandas as pd
+[  662.97s ->   671.15s] to handle the data. I will import numpy as mp to again handle the data for our plots. I will say
+[  671.15s ->   680.49s] import matplotlib.pyplot as plt. I also need to be able to update the figures on the user interface.
+[  680.49s ->   693.94s] So I'm going to import matplotlib.backends.backend tk ag and I will import figure canvas tk ag or I
+[  693.94s ->   704.25s] should say from backend import figure canvas tk ag and then I will say from ibapi.client. We can
+[  704.25s ->   711.79s] import eclient. This is going to allow us to make requests to the server and of course we need the
+[  711.79s ->   720.07s] server to be able to respond to us with those requests. So I will say from ibapi.wrapper import
+[  720.07s ->   727.81s] ewrapper and that is where the server will respond with those requests. From ibapi.contract import
+[  727.81s ->   733.51s] contract this will allow us to create specific security requests. So for our earnings event
+[  733.51s ->   738.95s] we're going to query data for say nvidia apple. This is how we will tell the server which security
+[  738.95s ->   748.85s] to request data for. Then I will say from date time we can import date time and time delta. This is going
+[  748.85s ->   756.33s] to help us with our plots and formatting the dates. Now I also need to import warnings and I will be
+[  756.33s ->   768.13s] suppressing those warnings within ignore. Filter warnings, ignore. I'm going to be using python
+[  768.13s ->   785.95s] 3.10 for this. Let me switch to my global or I'll use 3.12. Now I'll use 3.10. Okay. There we go.
+[  786.25s ->   793.00s] Warnings, filter warnings. Great. All right. Terrific. So these are all of our imports. Now we need to go
+[  793.00s ->   799.76s] about creating the main class that is going to interact with the trader workstation server
+[  799.76s ->   806.12s] that is interactive brokers. This is how we're going to request the data and store the data from
+[  806.12s ->   813.94s] the server. So I'm going to create class ibapp and this is going to take both the ewrapper and the eclient
+[  813.94s ->   822.34s] as a parent class. So this ibapp class is going to be responsible for asking the server for data via a
+[  822.34s ->   831.06s] request and then managing the response from the server. So I'll say def init self self dot connected
+[  831.06s ->   837.58s] will default to faults because of course we don't start connected to the server. Then I will say
+[  837.58s ->   844.52s] historic data is equal to an empty dictionary. That is where I'm going to store all of the data
+[  844.52s ->   851.08s] from the server. And of course we need to initialize the superclass. So I will say eclient dot init
+[  851.08s ->   860.16s] and I will use this as the eclient and this as the wrapper. So effectively what I'm doing here is I'm
+[  860.16s ->   867.54s] saying, Hey, this ibapp class is going to be a subclass and implementation of the wrapper, which receives
+[  867.54s ->   873.56s] data from the trader workstation and an implementation of the client. So it can make requests. All right.
+[  873.56s ->   879.96s] That is the purpose of this class. Now we need to handle errors from the server. I'm going to implement
+[  879.96s ->   891.80s] an error function. Def error, self rec ID, error code, error string, and of course just arbitrary arguments.
+[  892.32s ->   903.56s] We will say if the error code is equal to 2176 and we have fractional share in the error string,
+[  903.56s ->   912.76s] dot lower. Then we can go ahead and ignore. We don't particularly care if we have a fractional
+[  912.76s ->   920.44s] share error. We're trying to request this historical data. Okay. So we can print, of course, this error
+[  920.44s ->   936.07s] with the error code, make this a formatted print statement, print the error code. So we have the error
+[  936.07s ->   942.53s] code. And of course the error string. That is, if it's not a fractional share error, we're going to print
+[  942.53s ->   955.22s] it. And if we have args, then we will print the additional information. So that is the error
+[  955.22s ->   962.08s] function. This is the function that is going to be pinged from the server. If we have an error in our
+[  962.08s ->   967.10s] request, or if there's an error in some sort of response, this is where all that information will
+[  967.10s ->   972.56s] go. And of course, we also have the request ID. We could also print the request ID that caused
+[  972.56s ->   986.12s] this error. Maybe I'll do that as well. So we have rec ID. Then we have the error and the error
+[  986.12s ->   998.78s] message. All right, cool. Now we need to create a new function to tell this class that we've
+[  998.78s ->  1003.68s] successfully connected to the server. So what's going to happen is, again, this class is responsible
+[ 1003.68s ->  1009.68s] for managing server requests and responses, but we don't start off connected right away. At the
+[ 1009.68s ->  1014.50s] bottom of this application, we're actually going to call the connect function to make that connection
+[ 1014.50s ->  1022.14s] request. But until we get there, we need a way to mark that flag as connected once the server does
+[ 1022.14s ->  1030.34s] respond with data. And to do that, I'm going to say def next valid ID. And in this case, I'm going to
+[ 1030.34s ->  1037.46s] create this next valid order ID function self order ID. And when I connect successfully to the server,
+[ 1037.94s ->  1043.94s] it's going to respond with the next order ID that I can use. So it's going to hit this function next
+[ 1043.94s ->  1052.22s] valid ID. That means that if this function is called, I'm going to set connected to true, because the only
+[ 1052.22s ->  1061.90s] case that this is called is when the server responds with a valid order number. Now I could also use the
+[ 1061.90s ->  1068.50s] connect AC function. In fact, I encourage you to look at the IB API documentation and see if you can
+[ 1068.50s ->  1073.82s] implement that specific function on your own. That's a very nice exercise. And it's very simple, you just
+[ 1073.82s ->  1079.60s] have to find specifically in the wrapper what that function is called. And then instead of putting self
+[ 1079.60s ->  1087.27s] dot connected true, print connected to IB here, you can move it over to that connect AC function. But in any
+[ 1087.27s ->  1094.03s] case, this will certainly work. This is where the server has successfully responded to our client here with
+[ 1094.03s ->  1101.45s] data. So we will mark connected as true. Now we need to manage a historical data request. To manage a historical
+[ 1101.45s ->  1109.19s] data request, I'm going to create a new function def historical data, I'll say self rec ID bar. And in this
+[ 1109.19s ->  1119.08s] function, I'll say if rec ID is not in self dot historical data, then what does that mean? If it's not in
+[ 1119.08s ->  1127.12s] self dot historical data, I need to create a new key value pair. This is a dictionary. And I want to store the data
+[ 1127.12s ->  1134.40s] based on the request ID. In other words, if I'm requesting Nvidia price information, or VIX information, or implied
+[ 1134.40s ->  1140.94s] volatility information, each request is going to have a unique ID. And I want to store that in this
+[ 1140.94s ->  1149.72s] dictionary. So what I'll say is self dot historical data, the key is going to be the rec ID. And the value
+[ 1149.72s ->  1157.40s] is going to start as an empty list. Now I can populate this empty list with data. I'll say self dot historical
+[ 1157.40s ->  1167.81s] data, I'll find that rec ID, and I'm going to append the bar data that I requested, I'll say date is going
+[ 1167.81s ->  1185.56s] to go to bar dot date, I'll say open is going to go to bar dot open, high to bar dot high, low to bar dot low,
+[ 1185.56s ->  1199.27s] close to bar dot close, and volume to bar dot volume. So this historical data function is going
+[ 1199.27s ->  1207.63s] to be responsible for creating the key value pair in the dictionary. Again, in this IB app class, we have
+[ 1207.63s ->  1213.15s] this dictionary, we're going to create the key value pair for the request ID, this could be for the
+[ 1213.15s ->  1219.45s] implied volatility or the price information. And then we're going to store the bar dot date bar dot
+[ 1219.45s ->  1225.47s] open, the open high, low close, and date information, of course, with the volume in the historical data
+[ 1225.47s ->  1233.61s] dictionary. And the key is going to be that request ID. Now when the historical data request is complete,
+[ 1233.61s ->  1242.79s] we have a historical data and function. This historical data and function is going to have a request ID,
+[ 1243.15s ->  1253.20s] a start and an end. And effectively, we're just going to print historical data received for rec ID,
+[ 1253.92s ->  1261.60s] and we will just put the request ID. This will help us figure out if we maybe have an error in our query
+[ 1261.60s ->  1269.44s] for historical data. So for example, if our data requests is for request ID one, and we don't ping this
+[ 1269.44s ->  1276.72s] historical data and request, and instead, request ID one goes to this error function, we know there was
+[ 1276.72s ->  1282.48s] an issue specifically with that data request, and then we can handle it accordingly. So if there's no
+[ 1282.48s ->  1289.68s] issue, then we're going to successfully add all the data to the dictionary. And it's going to hit this
+[ 1289.68s ->  1295.12s] historical data and function, after all of this is done, and we've successfully queried all the data.
+[ 1295.12s ->  1302.24s] And that's what we're going to use for our charts. So that is essentially everything that we need
+[ 1302.24s ->  1308.96s] for this IB app class for this particular controller. Again, this is responsible specifically for
+[ 1309.52s ->  1315.20s] receiving data from the server and making requests to the server. It's a place that the server can
+[ 1315.20s ->  1322.72s] interact with our clients from. That is precisely what this IB app is. Now we can focus on the earnings
+[ 1322.72s ->  1328.72s] trading dashboard itself for the main user interface of this application, where we're kind of going with
+[ 1328.72s ->  1335.36s] this is we're going to have a main window, that's going to be our TK inter application. And within
+[ 1335.36s ->  1340.24s] the window, we're going to have a whole bunch of sections for labeled frames. And that's going to
+[ 1340.24s ->  1346.64s] allow us to populate each section with the appropriate metrics, the appropriate widgets for that
+[ 1346.64s ->  1351.76s] specific section. So for example, we have the current metrics, right, the current spot price,
+[ 1351.76s ->  1359.84s] the current implied volatility, so on and so forth. Then we had the IV crush analysis for the date range
+[ 1359.84s ->  1364.88s] that we entered into our application. Of course, above that, we had our connection panel, so on and so
+[ 1364.88s ->  1370.96s] forth. So that's where we're heading, we need to build a class capable of producing that user interface.
+[ 1370.96s ->  1379.74s] So to do that, I'm going to say class earnings trading dashboard. And in the constructor,
+[ 1381.31s ->  1387.71s] I'm going to take a root window. So I'm going to be able to wherever I create this earnings trading
+[ 1387.71s ->  1394.27s] dashboard UI, I'm going to provide it a new instance of a window, and that window is going to be populated
+[ 1394.27s ->  1400.67s] by this earnings trading dashboard. Okay, so I'm going to say self dot root is equal to root. So
+[ 1401.55s ->  1407.87s] in this class, whenever I refer to the root window, I'm referring to that main window that I provide to
+[ 1407.87s ->  1415.47s] the constructor in this class, wherever I create the instance of this class, I'll say the title is
+[ 1415.47s ->  1425.42s] earnings trading dashboard, specifically for IV crush analysis, we could also do this for maybe some
+[ 1426.06s ->  1432.06s] some earnings announcement drift, so on and so forth. That could be another project down the line,
+[ 1432.06s ->  1438.70s] if there's interest, I can set the geometry that is the height and width of this window, I'll make it 1600
+[ 1438.70s ->  1446.99s] by 1000 by default. And that's going to be the main frame of the application. Now I need to go about
+[ 1447.79s ->  1455.23s] creating variables for the data that is to be stored in this user interface. So this is going to be
+[ 1456.56s ->  1466.35s] the main window. Now I need data storage. So I'm going to do self dot stock data is equal to none,
+[ 1467.07s ->  1476.32s] self dot VIX data is equal to none, self dot IV data is equal to none, self dot earnings data,
+[ 1476.96s ->  1482.96s] or earnings date rather is equal to none. And then self dot ticker is equal to none. And this is all
+[ 1482.96s ->  1490.80s] going to be provided by both the user and the server. So all of this is going to be updated dynamically.
+[ 1491.44s ->  1498.72s] For the connection specifically, I'm going to say self dot IB app is equal to IB app. This is going to be
+[ 1500.10s ->  1506.66s] an instance of the class we created up here. This will allow us to create the initial connection.
+[ 1507.54s ->  1514.90s] Okay. So within this earnings trading dashboard, I'm also going to have a connected flag
+[ 1515.86s ->  1519.14s] dedicated to specifically this user interface. So
+[ 1520.56s ->  1527.12s] this self dot connected flag is pertaining to this earnings trading dashboard class,
+[ 1527.12s ->  1532.40s] the instance of this class that we create. And of course, this connected flag pertains
+[ 1532.40s ->  1542.69s] specifically to this class and that instance. Okay. As far as option pricing parameters go,
+[ 1542.69s ->  1547.65s] we really just need a risk free rate. And we can just leave this as 5% for right now,
+[ 1547.65s ->  1554.53s] that should be fine. And we're also going to want to define a twin axis for of course,
+[ 1554.53s ->  1559.41s] the price and the implied volatility. So I will define this as none for now.
+[ 1559.41s ->  1568.37s] And now I'm going to call self dot setup UI. This is going to be a function that is going to be
+[ 1568.37s ->  1575.81s] populating the root window that we provide this instance of our earnings trading dashboard when we
+[ 1575.81s ->  1585.15s] create it. So now we need to build this setup UI function to populate the root window. So let's do
+[ 1585.15s ->  1589.71s] that. Right. But before we do that, we need to create some helper functions. So I'm going to start by
+[ 1589.71s ->  1595.39s] creating a function that's going to create an equity contract. I'll say, create equity contract
+[ 1596.35s ->  1602.45s] self dot symbol. And what I'm going to do is I'm going to say contract is equal to contract. This is
+[ 1602.45s ->  1609.49s] from interactive brokers API. And I'm going to say contract dot symbol is equal to what it's equal to
+[ 1609.49s ->  1616.93s] the symbol that we give this function dot upper the security type I'm going to fix as a stock,
+[ 1621.14s ->  1633.73s] the exchange. I am going to say is smart and the currency is U S dollars. And I will return that
+[ 1633.73s ->  1642.75s] final contract after we build it within this function. Okay. Terrific. So this is really only
+[ 1642.75s ->  1650.43s] going to be for equities, right? But now we also need to create a contract for the VIX, right? So
+[ 1650.43s ->  1656.19s] the left chart in our application was the stock price path and the associated implied volatility.
+[ 1657.33s ->  1662.61s] We can get both pieces of information from a historic data request using the contract that
+[ 1662.61s ->  1668.45s] we create from this function. So the user just has to give us a symbol, then the rest of the parameters
+[ 1668.45s ->  1673.73s] are fixed and we can request that data. But what about the VIX data? How do we get the VIX data? Well,
+[ 1673.73s ->  1680.53s] we need to create a VIX contract. I'll say def create VIX contract self. We don't need a ticker
+[ 1680.53s ->  1691.14s] here. This is going to be essentially the implied volatility of SPX options, right? That is precisely
+[ 1691.14s ->  1697.94s] what the VIX measures. So what we're going to do is use that as a temperature, a gauge of market
+[ 1697.94s ->  1703.62s] temperature. And that can help us make decisions in a forward looking sense to assess whether or not in a
+[ 1703.62s ->  1709.22s] backward looking sense, we saw a similar regime and similar dynamics in some sort of implied
+[ 1709.22s ->  1714.34s] volatility crush trade. And of course, we can also extend this if you've seen any of my previous quant
+[ 1714.34s ->  1723.62s] builds to regression analysis, trying to actually quantify this idea of a volatility risk premium.
+[ 1723.62s ->  1728.82s] That is the fact that volatility is systematically overpriced. We can use regression analysis and we've
+[ 1728.82s ->  1733.30s] built a dashboard in the past. I'll leave a link to that quant build in the description below if you'd like
+[ 1733.30s ->  1739.06s] to check it out. But if you would like to quantify the edge more systematically in that way, we can do
+[ 1739.06s ->  1745.86s] that. And that uses two different volatility regimes, a low and high regime based on a, an intersection
+[ 1745.86s ->  1751.22s] of the regression line. It's a very cool project, highly recommend you check that out. And it's a good
+[ 1751.22s ->  1756.34s] way to extend this project, especially in the context of Markov chains and hidden Markov models. So
+[ 1757.30s ->  1763.38s] in any case, we want to get the VIX data. So I'm going to say contract dot symbol is equal to VIX.
+[ 1764.54s ->  1773.50s] I will say the security type is an index, right? It is not an equity. I will say the exchange is of course,
+[ 1773.50s ->  1786.08s] SIBO and the currency is USD. Then I will return that contract. So that is how we are going to get the
+[ 1786.08s ->  1791.20s] equity contract and the VIX contract. We can just call those functions and we will get the correct
+[ 1791.20s ->  1799.20s] contract object to pass to our IB app, which we can then send to interactive brokers to receive data.
+[ 1800.43s ->  1810.19s] Now we need to create our function to set up our UI. The first thing we want to do is establish the main
+[ 1810.19s ->  1818.19s] frame within the root. So I'm going to say the main frame is equal to TTK dot frame self dot root,
+[ 1818.75s ->  1824.75s] and I'll throw a little bit of padding on it just so it looks nice. And I will give it a grid layout.
+[ 1824.75s ->  1834.99s] So I'll say for this grid layout, we have row zero, column zero, and I will make it sticky in TK West, TK
+[ 1835.79s ->  1846.34s] East, TK North and TK South. All right. So that is the placement of this particular frame in the root
+[ 1846.34s ->  1855.68s] of our application. Now let's configure some parameters about the grid weights. I'll say self dot
+[ 1855.68s ->  1869.94s] dot root dot column, config zero, weight one, and self dot root dot row, configure zero weights, one,
+[ 1873.57s ->  1886.75s] and then mainframe dot column, configure one, weight one, mainframe dot row, configure eight and weights,
+[ 1886.75s ->  1896.06s] one. All right. And it'll be more apparent why we're giving these rows and columns the weights
+[ 1896.06s ->  1901.90s] that we are once we build out each individual section. But bear with me, you can always tinker
+[ 1901.90s ->  1908.94s] with these if you like. Now let's start by creating each label frame so that we can create each section
+[ 1908.94s ->  1915.42s] of that user interface. So for starters, we need to create the connection frame. The connection frame
+[ 1915.42s ->  1924.06s] is going to be a label frame. So I'm going to call it con frame, TK dot label frame, and I'm going to
+[ 1924.06s ->  1932.66s] place it in the mainframe. I'll give it the label of interactive brokers connection, and I will give it
+[ 1932.66s ->  1946.54s] some slight padding. Okay. I'm going to give it a grid layout here. Con frame dot grid row zero,
+[ 1946.54s ->  1952.86s] column zero, that is how we're going to place it, we'll give it a column span of two, we will make it
+[ 1952.86s ->  1965.17s] sticky, TK dot west TK dot east, and I will give it some padding on the y axis, zero comma 10, more than
+[ 1965.17s ->  1973.01s] sufficient there. Now I'm going to add a whole bunch of labels and inputs. So I'm going to have a label for
+[ 1973.01s ->  1978.29s] the host, a label for the port, and then of course buttons for connect and disconnect.
+[ 1978.29s ->  1984.13s] To accomplish this, I am going to create a new label object. I'm going to place it in the connection
+[ 1984.13s ->  1991.33s] frame. The text is going to be host. Now notice I'm not storing this in a variable, right? The
+[ 1991.33s ->  1997.89s] connection frame has a label frame that is being stored in this con frame variable, which will allow
+[ 1997.89s ->  2004.53s] me to place other widgets in it like this label, right? But here, I don't need to save this label's
+[ 2004.53s ->  2011.17s] information. It just needs to exist in the connection frame. So I have the host, I'm going to place it,
+[ 2012.77s ->  2018.93s] right? So effectively, I want you to notice here, right? This con frame is a widget,
+[ 2018.93s ->  2025.49s] ttk dot label frame, that is in fact a widget. To place it, I need to call some sort of pack or grid
+[ 2025.49s ->  2030.69s] layout like I have here. And effectively, what I'm doing is I'm skipping this step entirely.
+[ 2031.41s ->  2037.73s] And instead of doing this step where I do assignment, and this step where I call the
+[ 2037.73s ->  2043.41s] grid or pack, I'm just going to do it in one step and have it exist in the con frame. So I'm just
+[ 2043.41s ->  2050.78s] going to say dot grid, I'm going to place it in row zero, column zero, and I will give it some padding
+[ 2050.78s ->  2058.14s] on the x because of course, this is the host label. And now I can create the host input field.
+[ 2059.02s ->  2066.70s] Self dot host var is going to be the host variable for the string for the input. So I'll say tk dot
+[ 2066.70s ->  2077.98s] string bar, the value is going to be 127.0.0.1, our local host, and the form is the exact same situation
+[ 2077.98s ->  2082.70s] as the label. It doesn't matter if we have a variable to track that particular object,
+[ 2082.70s ->  2089.10s] we just need to place it on the frame and have it be back connected to this string var. So when I
+[ 2089.10s ->  2095.34s] create this entry, I'm going to place it in the connection frame, I'll say the text variable is
+[ 2095.34s ->  2103.18s] equal to self dot host var, and I will make it with 15. That should be plenty of room. And then I'm
+[ 2103.18s ->  2109.98s] going to place it where? Well, the same row as the host label row zero, but column one, and I'll have
+[ 2109.98s ->  2123.92s] padding xp 0, 10. Okay. And the same is true with the host, as is the port. All I have to do here is
+[ 2123.92s ->  2133.60s] change the label from what host the port, the value here from the local host to 7497, the default port for
+[ 2133.60s ->  2143.23s] interactive brokers. I'll change the host var to port var. I'll update the port bar here. And of course,
+[ 2143.23s ->  2153.30s] I need to change the rows and the columns here. So I want to put this in column two. So the port label
+[ 2153.30s ->  2162.05s] will be in column two. And that would mean that I want the text field to be in column three. So now I
+[ 2162.05s ->  2172.21s] have the host label in column zero, the host input in column one, the port label in column two, and the
+[ 2172.21s ->  2182.46s] port entry in column three. Fantastic. Now we can create our button. I am going to say for our connection
+[ 2182.46s ->  2197.17s] button self dot connect button is equal to TTK dot button con frame text is equal to connect and command
+[ 2197.17s ->  2206.21s] is equal to self dot connect IB. All right. We're going to have to create that self dot connect IB function,
+[ 2206.21s ->  2214.61s] which is going to call the connect function in the earnings trading dashboards IB app object instance.
+[ 2214.61s ->  2220.45s] That is an instance of this class that will allow us to interact with the trader workstation.
+[ 2223.06s ->  2227.86s] Now I need to add it to the frame, right? I need to call a grid or a pack. So I'm going to say self dot
+[ 2227.86s ->  2235.54s] connect button dot grid, and I'm going to throw it in row zero, but column four, this will be all the
+[ 2235.54s ->  2241.54s] way at the end. I'll have some padding on the X zero 10, and I'm going to do the same thing with the
+[ 2241.54s ->  2250.58s] disconnect button. All right. So I'm going to say self dot disconnect button is equal to TTK dot button.
+[ 2251.22s ->  2257.06s] I'm going to throw it in the connection frame. The text is going to be, of course, disconnect.
+[ 2257.94s ->  2264.34s] The command here is going to be self dot disconnect IB, which we also have to create and the state is
+[ 2264.34s ->  2271.06s] going to be disabled. All right. Because of course we don't want to be able to disconnect
+[ 2271.70s ->  2279.90s] if we are not yet connected, should be disabled. And then we are going to need to, of course,
+[ 2279.90s ->  2285.10s] give it a layout. So I'm going to say self dot disconnect button dot grid. This is going to be
+[ 2285.10s ->  2291.10s] next to the connection button. So we will put it in row zero. We will put it in column five,
+[ 2291.74s ->  2298.86s] and that's going to do it for this connection label frame. This is everything that we need.
+[ 2298.86s ->  2305.42s] This is going to be in columns zero, one, two, three, four, five, all the way across host label,
+[ 2305.42s ->  2311.02s] host entry, port label, port entry. Then of course we have connect and disconnect buttons,
+[ 2311.02s ->  2318.70s] and the entries are going to be linked to the, the associated string variables. So when we actually
+[ 2318.70s ->  2324.94s] need to pass information to the server, the connect IB and disconnect IB functions,
+[ 2324.94s ->  2331.42s] they will be accessing these self dot port and self dot host variables. Now we need to create the
+[ 2331.42s ->  2347.10s] label frame for the earnings analysis. I'm going to say earnings frame is equal to ttk dot label frame.
+[ 2347.82s ->  2351.66s] And I'm going to say, let's throw this in the main frame, right? We're no longer working in the
+[ 2351.66s ->  2356.62s] connection frame. We have our main frame, right? The root of the application, the main frame,
+[ 2356.62s ->  2361.34s] we have our connection frame at the top. Now we're going to go into the earnings analysis
+[ 2361.90s ->  2365.34s] label frame. So we're going to say, this is going to exist in the main frame.
+[ 2366.06s ->  2376.38s] This is going to be the earnings analysis setup. I'll give it some padding. I'll give it a value of five.
+[ 2377.10s ->  2383.10s] And now I need to give it a layout. I'll say grid row is equal to one, because remember,
+[ 2383.10s ->  2388.46s] we're moving down. Now we have our connection frame. Now we're moving down to the earnings frame.
+[ 2389.63s ->  2396.11s] This is going to be still in column zero. We'll give it a column span of two. And we will say that
+[ 2396.11s ->  2404.64s] it's sticky to the west and to the east. And we will give it some padding on the y axis.
+[ 2406.64s ->  2415.92s] Okay, so that is our earnings frame. Now we need to create the labels and the entries for the ticker,
+[ 2415.92s ->  2423.87s] the earnings date and the days to expiration. What does that look like? Well, it looks just like
+[ 2424.67s ->  2432.10s] these labels and entries that we created above. So I'm going to copy this. Effectively, I'm copying the
+[ 2432.10s ->  2439.30s] label for the port, the port variable and the entry. I will copy it. Come on down here.
+[ 2440.83s ->  2445.66s] And I'm going to paste it and make some modifications. So I'm going to paste it here.
+[ 2446.78s ->  2453.90s] And what we're going to do is you can press shift tab to back tab out if you have some sort of tabbing
+[ 2453.90s ->  2461.82s] issue. Now I'm going to modify this so that it works with our earnings frame. So let's start with this
+[ 2461.82s ->  2467.02s] ticker, right? Instead of being in the connection frame, where should this be? Well, it should be in
+[ 2467.02s ->  2472.06s] the earnings frame. What row should this exist in? Well, this is a new frame. So we're going to have
+[ 2472.06s ->  2479.98s] it exist in row zero column zero five padding on the x is totally fine. The default value we will leave
+[ 2479.98s ->  2485.90s] as NVIDIA. And we will use the default earnings date as well for the demonstration that I gave you at
+[ 2485.90s ->  2493.58s] the start of this video. And for the string var, I will call it ticker var. The entry is also going to
+[ 2493.58s ->  2501.66s] exist in the earnings frame. Instead of self dot port var, I should be using self dot ticker var.
+[ 2503.17s ->  2512.29s] And the width itself, I guess this should be width not widget width. This should be 1015.
+[ 2512.29s ->  2520.85s] Totally fine either way. And the location is going to be in column one. Okay, so effectively,
+[ 2520.85s ->  2528.93s] what we have here now is we have our label, our entry, and the variable that tracks the data in that
+[ 2528.93s ->  2533.73s] entry. That is the purpose of these three lines of code specifically for the ticker.
+[ 2533.73s ->  2542.22s] Now we do have to go up here because it looks like I did make a mistake in the in the host and port
+[ 2542.22s ->  2550.75s] entries. I call this widget. This really should be width. This should be width and this should be width.
+[ 2552.62s ->  2559.06s] Okay, cool. Now that that's all resolved, we can move on, rinse and repeat,
+[ 2559.62s ->  2566.26s] with the date and days to expiration for our option. So effectively here, we're in row zero,
+[ 2566.26s ->  2573.62s] column zero, row zero, column one, I can copy this label and entry. And then what do the exact same
+[ 2573.62s ->  2581.06s] thing. But now instead of for the ticker, I will do it for the date. This is going to be the earnings
+[ 2581.06s ->  2587.25s] date. This is going to exist in the earnings frame. So we're all good there. Where should we place it?
+[ 2587.25s ->  2592.85s] Well, we should place it in column two, right? This is going to be next to the ticker entry.
+[ 2593.41s ->  2602.06s] And then instead of a ticker VAR, I'm going to have a earnings date VAR. And the default value will
+[ 2602.06s ->  2614.77s] be 2025 08 27, the earnings date for NVIDIA. The entry that tracks the earnings date variable that the
+[ 2614.77s ->  2623.01s] user enters into the form is not going to be ticker VAR. It's going to be earnings date VAR. A width of
+[ 2623.01s ->  2628.29s] 10 is totally fine. Maybe we can make it even a little bit bigger if we like a little bit wider.
+[ 2628.85s ->  2636.37s] And what column should this exist in column three? That is where this entry will exist padding X,
+[ 2636.37s ->  2643.94s] totally sufficient. And we're all good with the earnings date label and entry. And now we can do
+[ 2643.94s ->  2656.43s] the exact same thing for the expiration of the option. So days to expiry grid, we will say column,
+[ 2656.43s ->  2667.79s] what column four, the default value we can put as 30 instead of earnings date VAR, what tracks the days
+[ 2667.79s ->  2678.82s] to expiration? We could say days to expiration VAR, and then we can link that to the entry here days to
+[ 2678.82s ->  2690.86s] expiration VAR. And of course we need to put this in column five. Very cool. So that should do it.
+[ 2690.86s ->  2696.46s] And of course we can tinker with the width here, depending on our preference for the user interface,
+[ 2696.46s ->  2702.14s] but this is everything we need to effectively receive the input from the user to figure out
+[ 2702.14s ->  2709.50s] what we should be fetching from the server in terms of pricing and implied volatility data.
+[ 2709.50s ->  2715.50s] We're going to be querying a range of data around this specific earnings date. That's going to be
+[ 2715.50s ->  2721.34s] our objective. So now that we have all of the information we need from the user, we can create
+[ 2721.34s ->  2730.14s] a button to effectively analyze the event. And what I'm going to do is I'm going to create a button
+[ 2730.14s ->  2738.46s] called self dot analyze button. I'll make it equal to a TTK button. I'm going to put it in this earnings
+[ 2738.46s ->  2744.62s] frame. Remember we have the main frame, the main frame of our application. Then we have this connection
+[ 2744.62s ->  2751.02s] frame at the top. And of course we also have this underneath the connection frame, the earnings
+[ 2751.02s ->  2755.90s] frame where the user is going to enter all of the earnings date information. So in there,
+[ 2755.90s ->  2761.82s] we also have this analyze button and this analyze button is going to have the text of analyze IV crush.
+[ 2763.66s ->  2773.54s] The command that we have to create is self dot analyze, self dot analyze IV crush. So we're going to
+[ 2773.54s ->  2780.34s] have to create that function ourselves and we're going to want to leave it as disabled state is equal to
+[ 2781.06s ->  2790.58s] disabled, at least until we successfully connect. We don't want to be able to request an analysis of
+[ 2790.58s ->  2799.92s] IV crush. If we're not connected to the server, I'm going to place this where row zero column six,
+[ 2800.80s ->  2809.87s] that is the column right after our entry for days to expiration. And that's going to do it for that
+[ 2809.87s ->  2817.15s] section. Now we're ready to move on to the current metrics section. So this section is the inputs for
+[ 2817.15s ->  2821.95s] the application to fetch the historical earnings event. Now we're ready to move on to query for the
+[ 2821.95s ->  2828.27s] current metrics. So for the current metrics section, it's really nothing crazy. We just need some labels
+[ 2828.91s ->  2834.59s] and to update the labels once we fetch the data from the server. So this is going to be the current
+[ 2834.59s ->  2841.07s] metrics section. Again, keep in mind what we're working with here. We have the main window, the
+[ 2841.07s ->  2848.43s] connection frame, the earnings analysis inputs frame, and now we have the current metrics frame.
+[ 2850.48s ->  2853.68s] So this metrics frame is also going to be, of course, a label frame.
+[ 2858.19s ->  2862.59s] And in this label frame, we're going to place it in the main frame. The text is going to be
+[ 2863.39s ->  2871.39s] for the frame current metrics, the padding we will say is five. And for the metrics frame,
+[ 2871.39s ->  2879.47s] I'm going to place this where row two column zero, I will make the column span two. So it has enough
+[ 2879.47s ->  2885.87s] space. I will make it sticky to the west and sticky to the east. And I will add some padding on the y
+[ 2885.87s ->  2893.39s] axis just as before. And that is going to be my label frame for the current metrics. Now,
+[ 2893.95s ->  2901.95s] all I need to do is create a few labels for the stock price, the VIX level, and the current implied
+[ 2901.95s ->  2910.85s] volatility. So I'm going to say TTK label. I'm going to throw this in the metrics frame. And in this
+[ 2910.85s ->  2917.62s] metrics frame, I'm going to have the text stock price, and I'm going to place this in row zero
+[ 2918.90s ->  2926.45s] and column zero. I will give it some slight padding on the x axis and that will do it.
+[ 2930.19s ->  2937.47s] And that will do it for the label. Now I need the label variable that I can update with pricing
+[ 2937.47s ->  2942.51s] information. So I'm going to say self dot stock price label. And keep in mind here,
+[ 2943.07s ->  2952.11s] now I'm actually assigning this to the label object. That way I can update the text. I'm going
+[ 2952.11s ->  2958.67s] to place this in the metrics frame. Initially, I'm going to have no text until I query data,
+[ 2958.67s ->  2964.59s] I will make the font Arial, I'll make it 10. And I'll make it bold, just to distinguish between
+[ 2965.15s ->  2971.31s] the label for the stock price and the actual stock price I query. And of course, I am going to pack
+[ 2971.31s ->  2976.83s] this, I will say, or not pack this, I'll give it a grid layout. I'll say stock price label dot grid.
+[ 2977.90s ->  2983.18s] I'm going to throw it in row zero, throw it in column one, give it some padding on the x,
+[ 2983.18s ->  2989.44s] I will say zero and 20. And now I'm going to do the same thing, but for the VIX and the current
+[ 2989.44s ->  2995.62s] implied volatility. So I can actually just copy this and paste it twice. I'll do it one at a time,
+[ 2995.62s ->  3001.30s] though. And I'll say, yeah, we need to create it in the metrics frame instead of a stock price,
+[ 3001.30s ->  3008.58s] right? We are going to do the VIX level. And I will place this in what we have column zero,
+[ 3008.58s ->  3016.96s] column one, we'll place this in column two. And then instead of stock price label,
+[ 3017.68s ->  3024.50s] this should be what VIX level label, then I will say VIX level label dot grid.
+[ 3025.46s ->  3031.22s] And I can leave NA until I can populate it with data. And of course, where am I going to place it,
+[ 3031.22s ->  3038.18s] I have the original label for the VIX, put that in column two, that means that the actual value that
+[ 3038.18s ->  3044.18s] we query from the server should exist in column three, side by side by side, right, column zero,
+[ 3044.18s ->  3055.65s] column one, column two, column three. And then we can do this exact same thing. But for not the VIX,
+[ 3055.65s ->  3063.49s] implied volatility, I'm going to put this in column four, then instead of the VIX level label, what will
+[ 3063.49s ->  3073.33s] I have, I will have a current IV label. And I am going to use that current IV label in this grid layout
+[ 3073.33s ->  3083.57s] for column five. So that is going to effectively be my current metrics section. Now we're ready to move
+[ 3083.57s ->  3093.81s] on to the IV crush analysis frame. The IV crush analysis frame is just going to contain the pre earnings
+[ 3093.81s ->  3099.65s] implied volatility, the post earnings implied volatility and the percentage of implied volatility
+[ 3099.65s ->  3110.51s] crush. So this is going to look roughly the same as the current metric section. So for this specific earnings
+[ 3110.51s ->  3118.54s] event, I'm going to create a new frame, a new label frame here. And it's going to exist in the main frame.
+[ 3118.54s ->  3125.74s] Again, we have our main frame, our connection frame at the top, our earnings frame, then our current metrics
+[ 3125.74s ->  3132.62s] frame. Now we have our IV crush frame. This is an IV crush analysis of the earnings event that we've already
+[ 3132.62s ->  3140.46s] entered in our form into the user interface. So this exists in the main frame, the text for this label frame
+[ 3140.46s ->  3148.46s] will be IV crush analysis, again, for that specific earnings event, the padding will be five, and the frame will
+[ 3148.46s ->  3157.90s] exist in what row? Grid row three, column zero, and the column span we will leave as two, of course, sticky on the east and
+[ 3157.90s ->  3166.27s] west. So that there is horizontal room and it's sticky to the sides correctly. And the padding Y, of course,
+[ 3166.27s ->  3175.84s] we will leave the same as before. Okay. So now what do we need to do? Well, we need to effectively, instead of
+[ 3175.84s ->  3184.48s] displaying stock price, VIX level and current IV, we need to display the pre event IV, the post event IV,
+[ 3184.48s ->  3192.64s] and the percentage of IV crush. I'm going to copy these three labels and, or, or I should really say
+[ 3192.64s ->  3199.20s] these, these six labels, the stock price, the VIX level and the current IV. And of course the variables
+[ 3199.20s ->  3205.20s] that we're using to store the correct information. I'm just going to copy those and I'm going to paste
+[ 3205.20s ->  3216.22s] them right underneath because all I got to do now is change each one of these such that they fit in the
+[ 3216.22s ->  3226.80s] crush frame and they display the pre events IV, the post event IV and the percentage of IV crush.
+[ 3229.71s ->  3235.79s] So I'm going to take the crush frame here. I am going to put all of these in the crush frame.
+[ 3237.66s ->  3241.50s] That is going to be my first step here. I put all of these labels in the crush frame.
+[ 3243.12s ->  3247.20s] Once I've done that, I can just change the labels. So instead of stock price,
+[ 3247.20s ->  3257.06s] I'm dealing with the pre earnings IV. Instead of VIX level, I'm dealing with the post earnings IV.
+[ 3258.30s ->  3268.66s] Instead of the IV crush or instead of the, I should say, instead of the current IV,
+[ 3268.66s ->  3275.98s] I'm dealing with the percentage of IV crush. Okay. Now I need to change the variable names that are
+[ 3275.98s ->  3282.06s] tracking the data that are to be displayed within the label. So instead of the stock price label,
+[ 3282.06s ->  3288.78s] I should have a pre IV label. And that is going to be in this grid layout here. Now what's the cool
+[ 3288.78s ->  3295.74s] thing? Well, I don't need to change the grid layout for these labels because these exist now in which
+[ 3295.74s ->  3302.46s] frame, they don't exist in the metrics frame, like they did here. These exist in the metrics frame
+[ 3302.46s ->  3308.94s] that we defined here. And it goes from what rows, row zero, everything's in row zero, but we have
+[ 3308.94s ->  3314.22s] column zero column one, column two, column three, column four, column five. Well, that is effectively
+[ 3314.22s ->  3320.22s] what we're going to do here in this new frame crush frame. So we don't have to touch the grid
+[ 3320.22s ->  3326.06s] layout at all. We just have to fix the labels tracking the variables and, or the variables
+[ 3326.06s ->  3331.98s] tracking the labels and of course the text. So we fixed the text. Now we're fixing the variables
+[ 3331.98s ->  3343.07s] tracking the labels. So we have pre IV label. Now we need post IV label. And of course we need IV crush
+[ 3343.07s ->  3358.24s] label. Fantastic. And NA is totally sufficient initially. And if we wanted to, we could change the
+[ 3358.24s ->  3368.16s] foreground color of the IV crush percentage to red. So it kind of indicates that crush effect.
+[ 3368.16s ->  3374.88s] So I'm going to change the foreground color of this crush label to red, just specifically to handle that,
+[ 3374.88s ->  3381.44s] that idea to essentially signify that there was some sort of percentage decline after the event,
+[ 3381.44s ->  3393.97s] after the event occurs. Very good. So that is going to do it for the IV crush analysis label frame,
+[ 3394.69s ->  3399.97s] and we're making really good progress. So now we can create the frame for the spot versus the strike.
+[ 3404.32s ->  3409.97s] So I need to create again, a new label frame, spot strike frame,
+[ 3409.97s ->  3418.85s] ttk dot label frame. I'm going to throw this in the main frame. The text is going to be spot versus strike
+[ 3419.57s ->  3432.00s] analysis, give it some padding, and I'm going to give it a grid layout. And remember, this is going to be
+[ 3432.00s ->  3437.84s] a new frame in our main frame. So we have our connection frame, we have our earnings setup frame,
+[ 3437.84s ->  3443.76s] we have our current metrics frame, we have our IV crush analysis frame. Now we have this spot versus
+[ 3443.76s ->  3451.79s] strike frame, this is going to exist in row four, column zero, I will make the column span two,
+[ 3452.51s ->  3461.07s] I will again, make it sticky to the west and to the east. And I will make the padding the same on the y
+[ 3461.07s ->  3471.30s] axis. So it looks like every other label frame. Okay, well, what are we displaying here,
+[ 3471.30s ->  3476.34s] we're displaying the strike price of the straddle, we're going to assume it's closed spot, which is
+[ 3477.63s ->  3483.54s] relatively reasonable for the position that we would take. We can also make this a function of an
+[ 3483.54s ->  3488.50s] input. So if you wanted to extend this, so that the user could input a specific spot,
+[ 3489.46s ->  3494.90s] or a specific strike price for their straddle, I certainly encourage you to do so. In any case,
+[ 3495.98s ->  3501.26s] we're just going to treat the close as the strike price, then we're going to look at the pre earning
+[ 3501.26s ->  3507.90s] spot at close. So those will be equivalent. And then we're going to look at the post earnings spot,
+[ 3507.90s ->  3514.22s] the next day average to see if the implied volatility indicating the price move for the
+[ 3514.22s ->  3518.62s] earnings event was over or understated. Effectively, this is going to tell us, hey,
+[ 3518.62s ->  3525.26s] was there too much volatility for us to capture in the post earnings event move? Did we sell insurance
+[ 3525.26s ->  3531.34s] and did somebody cash out on us? Were we able to collect that profit from this overstatement of
+[ 3531.34s ->  3538.74s] volatility or not? Okay, well, to do this, I am effectively going to do the exact same thing that
+[ 3538.74s ->  3544.58s] I just did for the pre IV label, post IV label and IV crush. I'm going to copy these three
+[ 3546.11s ->  3553.60s] and I'm going to paste them in this new frame. And now I'm just going to modify everything for this
+[ 3553.60s ->  3559.68s] spot versus strike frame. So where does this exist? It doesn't exist in the crush frame anymore.
+[ 3559.68s ->  3566.88s] It exists in the spot versus strike frame. So I'm going to go ahead and make those changes there.
+[ 3567.84s ->  3577.30s] The labels are going to be what we have strike price. We have the pre earning spot, the close,
+[ 3580.72s ->  3591.52s] and we have the post earning spot as the next day average. Cool. So now the labels are updated.
+[ 3591.52s ->  3597.12s] The frame is updated that we're placing this information in the grid layout is still sufficient,
+[ 3597.12s ->  3602.88s] right? Because we are placing it across the columns. We have one row and multiple columns for all these
+[ 3602.88s ->  3610.88s] labels. Fantastic. Now we just need to update the labels that actually track the values of these items.
+[ 3610.88s ->  3627.07s] So we have the strike price label. We have then the pre spot label. And of course we have the post spot
+[ 3627.79s ->  3640.96s] label. All right. Very good. So now we can move on to the option pricing frame. This is where we're going
+[ 3640.96s ->  3648.32s] to put in the at the money straddle pricing and P and L pre earnings event and post earnings event.
+[ 3648.32s ->  3656.46s] So this is going to be the options pricing frame. I'm going to create this as a new label frame. So I have
+[ 3656.46s ->  3666.02s] option frame is equal to TTK dot label frame. This is going to be in the main frame. The text will be
+[ 3666.90s ->  3679.92s] at the money straddle pricing and P and L the padding. We can make it the same as the others. We'll do five.
+[ 3679.92s ->  3691.30s] This frame is going to be row five now beneath the strike versus spot label frame, connection frame,
+[ 3691.30s ->  3700.78s] earnings frame, current metrics. Then we had the spot for strike now, or the IV, then spot for strike. And
+[ 3700.78s ->  3709.02s] now we have the option pricing frame and row five. So row five, again, we'll put this in column zero
+[ 3709.02s ->  3716.13s] column span two. So it's wide enough. We'll make it sticky to the east and west. And we will give it
+[ 3716.13s ->  3729.63s] some padding on the Y axis zero comma 10. Okay. Well, now we need to include a whole bunch of labels
+[ 3730.19s ->  3738.08s] for all of this information. So we're going to do this by copying and pasting all of this label
+[ 3738.08s ->  3745.12s] information and making changes because we're going to create effectively two rows of information. So I'm
+[ 3745.12s ->  3757.15s] going to copy these three labels, come down here, paste them and work off of these three like we did
+[ 3757.15s ->  3763.92s] last time, but now with this options frame. So we don't operate in the strike frame anymore. So I'm
+[ 3763.92s ->  3771.12s] going to replace, replace, replace, replace, replace, and replace. Instead of the strike price,
+[ 3771.12s ->  3776.96s] what do we need to display the pre earnings call, right? That's the call leg of our straddle.
+[ 3778.83s ->  3787.09s] I need the pre earnings put that is, or I'll do pre and post earnings call, post earnings call.
+[ 3788.13s ->  3797.31s] And of course the call change. So the change in call value. So that's going to be my first row of
+[ 3797.31s ->  3803.23s] data. Effectively, I have the pre earnings call value, the post earnings call value and the call
+[ 3803.23s ->  3810.78s] change in value. Now I need to update what? Well, the rows and columns are totally cool because we're
+[ 3810.78s ->  3819.70s] operating in this new label frame. Now we need to update the variables tracking the label values.
+[ 3819.70s ->  3835.14s] So I have this pre call label. Then I have this post call label and I have this call loss label.
+[ 3835.14s ->  3843.14s] And of course this, this call loss label here. So this is going to be pre earnings call value,
+[ 3843.14s ->  3848.34s] the label and the value for the label that we're tracking, the post earnings call label and the
+[ 3848.34s ->  3853.38s] value for the label we're tracking. Same thing with the call change in value. And we're going to assume
+[ 3853.38s ->  3861.30s] that it is of course a loss here. Now I should say when we've been copying this information over,
+[ 3861.78s ->  3868.58s] the foreground is staying as red whenever we've copied that label over for the percentage IV crush.
+[ 3869.22s ->  3873.86s] So it's up to us whether or not we want to include it. So for the percentage IV crush,
+[ 3873.86s ->  3879.30s] I think it's reasonable for the post earning spot. It could be reasonable if it declines,
+[ 3879.30s ->  3883.54s] but we don't know what that's going to be. We could make a conditional on the data, but I'm just
+[ 3883.54s ->  3891.07s] going to remove it altogether from that specific label, the post spot label. And I'm also going to
+[ 3891.07s ->  3897.47s] just remove it from the call change label, even though it could of course be negative, it's going to
+[ 3897.47s ->  3904.19s] depend on that IV crush effect. So where we have it up here is, is probably reasonable in terms of the
+[ 3904.19s ->  3911.55s] decline of implied volatility, but everywhere else subject for discussion. Likely we should make it
+[ 3911.55s ->  3919.55s] conditional on what we actually observe. So in any case, right, that is pretty much all of the call
+[ 3919.55s ->  3924.99s] information. Now we just need to do it for puts. And the only thing that we have to change between
+[ 3924.99s ->  3932.19s] these three labels is the row and the fact that they're puts instead of calls. So it's actually really
+[ 3932.19s ->  3938.75s] easy. I'll just copy these three, these, these six labels, these three chunks of code here,
+[ 3938.75s ->  3946.72s] I'll paste it. And instead of operating with what calls I'm operating with puts. So I have a put,
+[ 3948.26s ->  3956.18s] I have a put, I have a put change. And then instead of a call loss label, what is this going to be?
+[ 3956.18s ->  3971.62s] A put loss label. This is going to be a post, not call label, a post put label. This is a pre put label.
+[ 3975.10s ->  3981.66s] Effectively, we're just translating everything from calls to puts here. And the columns are actually
+[ 3981.66s ->  3989.10s] going to align perfectly. So right now we have calls going across, we have, you know, the call label,
+[ 3989.10s ->  3994.22s] call label, call label, call label, call label going across. Now we're doing the same thing with
+[ 3994.22s ->  4000.94s] puts, we just want to put that information one row down. So instead of the put labels being in row zero,
+[ 4000.94s ->  4006.67s] I'm just going to put them in row one. And then or I'll put them in row zero. No, no, sorry,
+[ 4006.67s ->  4018.22s] this is row one. Yeah, everything's in row one, row one, row one, row one, row one, row one, and row one.
+[ 4018.22s ->  4029.87s] And that will be the call and put values, pre and post the earnings event. So now we can actually
+[ 4029.87s ->  4035.79s] look at the straddle totals. So we can look at the straddle total value, pre earning and post earning,
+[ 4035.79s ->  4042.51s] and of course, the change in value, and the value of a long and short straddle position. So let's go
+[ 4042.51s ->  4048.94s] ahead and do this now. Effectively, this is the exact same thing as we just did with the puts, we're just
+[ 4048.94s ->  4056.46s] going to do it with the straddle value. So now instead of row one, everything's going to exist in
+[ 4056.46s ->  4062.46s] what one row down row two. So we have the call information, the put information, and now we have
+[ 4062.46s ->  4073.78s] the straddle information. So this is going to be pre earnings straddle, post earnings straddle, straddle
+[ 4073.78s ->  4087.97s] change. Pre straddle label should be lowercase straddle. So we have this idea of the pre straddle label,
+[ 4089.46s ->  4110.08s] we have the post straddle label, and of course, the straddle loss label after the event. All right, great.
+[ 4110.08s ->  4116.96s] So this right now shares all of the correct columns with the call and puts, but of course, it's in the same
+[ 4116.96s ->  4122.48s] row as the puts, we want to put it one row down. So instead of row one, this will be row two.
+[ 4123.71s ->  4134.14s] And then this will be row two, this will be row two, this will be row two, and this will be row two,
+[ 4134.14s ->  4141.10s] and this will be row two. So effectively, right, the only thing that we've really done is we've created
+[ 4142.62s ->  4153.15s] this options frame, we've created these label values and labels for pre earnings post earnings call and
+[ 4153.15s ->  4161.55s] the change the overall change after the event. The same with the puts just below the calls, and then
+[ 4161.55s ->  4167.15s] the same with the straddle, which combines both the column put position, and that'll be below the puts.
+[ 4168.90s ->  4177.63s] Now we can add PNL analysis. What does the PNL analysis look like? Well, we'll add it to the
+[ 4177.63s ->  4188.56s] option frame. And all I'm going to do is I am going to add, I'll add another row and I'll make it
+[ 4189.60s ->  4196.88s] two separate columns. So this is going to look a little different than the previous rows because
+[ 4196.88s ->  4201.84s] the previous rows and columns were symmetric. Now I'm just going to do it with the long straddle
+[ 4201.84s ->  4210.22s] and the short straddle PNL. So I'm still going to copy and paste these two labels. The only difference
+[ 4210.22s ->  4219.66s] here is now I'm going to place them in separate spots. I'm going to put this in row three, column zero,
+[ 4220.38s ->  4233.04s] and I'm going to put this in row three, column one. This will exist in row three, column three.
+[ 4233.76s ->  4243.60s] So there's a little bit of space. And then I will put this in row three, column four. That should be
+[ 4243.60s ->  4256.98s] fine. And now I'm going to increase the column span so that it spans to column widths. And then
+[ 4257.70s ->  4263.30s] I need to change all of this information. So it's placed now correctly in the options frame,
+[ 4263.30s ->  4270.02s] but instead of post earning straddle, this is the long straddle PNL. And then this is going to be the
+[ 4271.14s ->  4280.66s] short straddle PNL. The label as NA is totally fine because we need to wait for information from the
+[ 4280.66s ->  4287.14s] server so that we can price it using the Black-Scholes equation. Now I'm going to call this the long
+[ 4289.54s ->  4306.00s] PNL label, long PNL label, and I'll call this the short PNL label, be the short PNL label.
+[ 4310.24s ->  4316.80s] Awesome. And now we're ready to move on to the Greeks frame. So this is where we are going to
+[ 4316.80s ->  4324.40s] look at the pre-event delta, the change in delta, the pre-event vega, and the change in vega.
+[ 4324.96s ->  4330.24s] At this point, we're almost done with the user interface and we can then begin to go about
+[ 4330.24s ->  4337.36s] about building the functionality. So for this Greeks frame, right, we just need to create a new label
+[ 4337.36s ->  4346.22s] frame. And this label frame will exist in the main frame. Of course, this is going to be the
+[ 4346.22s ->  4355.34s] Greeks analysis. The padding is going to be five, just as before. We will place it in row six,
+[ 4356.14s ->  4364.86s] column zero. We'll give it a column span of two, make it sticky to the west and east.
+[ 4366.66s ->  4378.66s] Pad Y, we will do zero comma 10. Fantastic. Now we need our pre-earnings delta, post-earnings delta,
+[ 4378.66s ->  4385.54s] and the delta change. This follows the exact same format as everything that we've had above here
+[ 4385.54s ->  4389.94s] with the pre-earnings call, the post-earnings call, and the call change. So I can just copy that
+[ 4391.73s ->  4401.25s] just as before, and I can paste it down here. Now I'm working with the Greeks.
+[ 4402.42s ->  4411.73s] So I have pre-earnings delta, post-earnings delta, and of course, the change in delta,
+[ 4411.73s ->  4419.55s] the delta change. The columns that they exist in are totally sufficient. It's the exact same layout
+[ 4419.55s ->  4425.63s] that we had for the change in call, the change in put, the change in straddle value. Now we can do
+[ 4425.63s ->  4435.58s] it for delta. So instead of pre-call label, this is pre-delta label, pre-delta label. Then we have
+[ 4436.22s ->  4444.82s] post-delta label, post-delta label, and we have the delta change label.
+[ 4448.59s ->  4453.39s] Very good. And the grid layout is totally fine. But where do these currently exist?
+[ 4454.19s ->  4459.39s] We're currently placing them in the option frame. That's no good. We have all of the call,
+[ 4459.39s ->  4463.71s] put, and straddle information in there. We want to put this in the Greeks frame.
+[ 4466.54s ->  4469.98s] Greeks frame, Greeks frame, Greeks frame, Greeks frame, Greeks frame, Greeks frame.
+[ 4471.86s ->  4479.14s] Very good. And we're going to do this exact same thing, but with the vega next. So the vega is,
+[ 4479.14s ->  4484.34s] again, this is the exact same situation for displaying the vega. We're just going to be
+[ 4484.34s ->  4489.94s] placing it on the row below. So the columns remain exactly the same. We're just fixing it
+[ 4489.94s ->  4502.86s] to be row one. That's the road beneath row zero, row one, row one, row one, row one, row one, row one.
+[ 4505.12s ->  4512.35s] These now exist, these vega labels, they exist in the Greeks frame in the correct spot,
+[ 4512.35s ->  4518.67s] but we need the correct variables to keep track of the information. So instead of pre-delta label,
+[ 4518.67s ->  4531.65s] we have pre-vega label. Instead of post-delta label, we have post-vega label. And of course,
+[ 4531.65s ->  4545.15s] we have the vega change label. Wonderful. And that's going to be everything in our Greeks section.
+[ 4545.71s ->  4549.95s] So effectively, what we've done here in this user interface so far, and of course,
+[ 4549.95s ->  4554.43s] we're going to have to build the section for the status and the plots, and then we're going to be
+[ 4554.43s ->  4561.95s] all wrapped up. But effectively, we have the main text sections for the user interface here. We have
+[ 4561.95s ->  4567.95s] our connection frame. So we have our main panel at the top. We have our connection frame. Then we have
+[ 4567.95s ->  4573.47s] our earnings analysis frame where we enter the date. We enter the expiration, the ticker, the current metrics
+[ 4574.35s ->  4580.35s] of the ticker that we entered in the current market, the IV crush analysis section, the spot versus
+[ 4580.35s ->  4587.55s] strike change, the options pricing section. And we also have the Greeks frame. Okay. So that's going
+[ 4587.55s ->  4594.91s] to allow us to analyze the model and the model values before and after the earnings event. All right.
+[ 4595.79s ->  4601.95s] So now what we're going to want to do is we're going to want to create a status section along with our
+[ 4602.75s ->  4608.11s] text frame for the logger. So we can receive information updates from our application. So
+[ 4608.11s ->  4614.26s] this is going to be the status. I'm going to call this the status frame, make this a label frame,
+[ 4615.22s ->  4622.99s] throw this in the main frame. We'll call this status, give it a padding of five.
+[ 4629.41s ->  4637.17s] Of course, this is going to have a grid layout just as before. We'll throw this in row. We're
+[ 4637.17s ->  4644.75s] on row seven now, I believe, if I'm not mistaken. Yep. We put the Greeks frame in row six. We're on row
+[ 4644.75s ->  4653.86s] seven. We want to give this a column span. So a column zero, a column span of two, we'll make it sticky
+[ 4653.86s ->  4664.66s] to the west and to the east. And of course we want to give it padding on the y axis. Okay. Now we just
+[ 4664.66s ->  4673.92s] need to add the text for the logger to this section. I will say self dot status text is equal to
+[ 4674.48s ->  4682.32s] scrolled text dot scrolled text. And I will throw this in the status frame. I will give it a height of,
+[ 4683.20s ->  4690.48s] let's say six and a width of 80. You can tinker with this to make it whatever you would like.
+[ 4690.48s ->  4698.40s] And I will also give this a grid layout. So we will say status text dot grid, throw this in row zero,
+[ 4698.40s ->  4704.96s] column zero, we'll just place it directly in the center of this status frame. And of course,
+[ 4704.96s ->  4713.98s] we will make it sticky to the east and west. So it has that horizontal room. Of course, the status
+[ 4713.98s ->  4724.45s] frame, I will say column configure, and I will give column zero a weight of one. Of course, that's just
+[ 4724.45s ->  4734.21s] going to contain the scrolled text for our logger. Now we can create our, our frame for the plot. And this
+[ 4734.21s ->  4742.29s] is going to be the last frame that we actually have to create. So all we have to do now is create this,
+[ 4744.05s ->  4753.20s] this plot frame. So I will call ttk dot label frame. And I'm going to place this in the main
+[ 4753.20s ->  4760.80s] frame. This is the bottom. So this is the last sub frame in our main frame. Of course, this is going
+[ 4760.80s ->  4767.28s] to say Ivy crush visualization, we get a nice visualization of what's going on, padding five,
+[ 4768.00s ->  4774.56s] and the plot frame, I will give it a grid layout row, I will put it in row eight. Now column zero,
+[ 4775.12s ->  4781.84s] column span, I will make it two just as before. And I'm going to make it sticky to
+[ 4782.80s ->  4792.16s] everywhere north, south, east and west. So tk dot west, tk dot east, tk dot north and tk dot south.
+[ 4796.42s ->  4804.98s] Cool. All right. So now we can configure the columns for the plot frame. I'll give column zero a weight of
+[ 4804.98s ->  4815.22s] one, I will give row zero or row configure row zero a weight of one. And now I can create the actual
+[ 4815.22s ->  4825.62s] plots for this section. So I'll say self dot fig is going to contain what axis one and axis two.
+[ 4826.74s ->  4832.42s] So we have the figure we have axis one axis two, this is going to be equal to plt dot subplots.
+[ 4833.66s ->  4840.78s] This will have one and two. And I will make this a fig size of, and of course, you can tinker with
+[ 4840.78s ->  4853.23s] your figure size, I'll make this 16 and six. That looks good. And then we need to create the actual
+[ 4854.27s ->  4859.95s] figure canvas that we are going to be drawing these on. So I'm going to say self dot canvas
+[ 4860.99s ->  4866.43s] is equal to figure canvas tk ag, this is where we're going to place the figure and of course the
+[ 4866.43s ->  4876.93s] plot frame. Then I can call self dot canvas dot get tk widget and I will say dot grid and we will place
+[ 4876.93s ->  4887.09s] this in row zero column zero and I will make this sticky of course to west, east, north and south.
+[ 4889.23s ->  4894.19s] So effectively all we're doing here is we're creating that last label frame for our plots.
+[ 4897.89s ->  4906.29s] So that last frame and we're going to be creating just as we did before placing so creating this label
+[ 4906.29s ->  4912.69s] frame, placing it underneath all of the other frames that we created with the associated metrics.
+[ 4912.69s ->  4918.13s] We'll give it some weight in the column and row space and then we'll create the actual figure
+[ 4918.13s ->  4927.94s] and the axes from PLT subplots. Then once we have our subplots that we can draw data on, we can create
+[ 4927.94s ->  4934.90s] this figure canvas tk ag object here, which takes the frame that we're going to plot on along with the
+[ 4934.90s ->  4941.70s] figure. And that figure is created here from our PLT subplots. And then I am going to place it so we get
+[ 4941.70s ->  4948.82s] the tk widget. So I say canvas dot get widget. That is literally how we display it. We're going to say dot grid,
+[ 4948.82s ->  4954.74s] row zero, column zero, and we'll make it sticky everywhere. So as we expand, minimize, expand, whatever,
+[ 4954.74s ->  4962.66s] it remains tight to the application window there. So that's actually going to do it for our user
+[ 4962.66s ->  4969.86s] interface. We're now ready to move on to the core functionality of this app. So this is where things get
+[ 4969.86s ->  4973.22s] fun, right? We can actually start to build some functionality here. Let's start by building a
+[ 4973.22s ->  4978.98s] simple function to log messages to the text area that we created in our user interface. So I'm going
+[ 4978.98s ->  4989.14s] to say def log message, self message, and I'm going to say timestamp is equal to datetime dot now. I'm going
+[ 4989.14s ->  4999.98s] to format it as hours and then minutes and then seconds. And I'm just going to insert this to the end of the
+[ 5000.54s ->  5007.74s] status text. So I'll say self dot status text dot insert at tk dot end. So all the way at the bottom,
+[ 5007.74s ->  5021.65s] we will insert the timestamp and whatever message we have from this function. And I'll also do a new line.
+[ 5025.74s ->  5036.45s] I'm going to want to say status dot text, self dot status text dot c tk dot end. Essentially,
+[ 5037.09s ->  5041.97s] every time I log a message, I don't want to be stuck having to scroll down, right? That's what
+[ 5041.97s ->  5047.09s] this dot c function is going to do. It's very useful. And I know I'm always going to have white
+[ 5047.09s ->  5052.61s] space at the bottom, because whenever I log a message, I have this new line character, you can
+[ 5052.61s ->  5057.09s] remove it if you like, you'll never have white space at the bottom. But that's how I like to know I'm at
+[ 5057.09s ->  5063.09s] the bottom of my logger. So in any case, I'm going to call self dot root update idle tasks
+[ 5066.05s ->  5075.70s] to update that UI. Yeah, that looks good. Cool. So that's our logger. Now we need to create a
+[ 5075.70s ->  5083.52s] function to connect to interactive brokers. I'm going to call this function def connect IB.
+[ 5084.32s ->  5089.28s] This is what matches our button that we created above. So when we click that button,
+[ 5089.28s ->  5098.56s] it's going to call this function. I'm going to try to get the host from the host variable that we
+[ 5098.56s ->  5105.28s] created. I'll try to get the port variable from the port variable we created. But check this out.
+[ 5105.28s ->  5115.04s] What is the port variable? The port variable is a string var port needs to be passed as an integer
+[ 5115.04s ->  5121.60s] to interactive brokers. I'm going to say int to cast the input to an integer self dot log message
+[ 5124.91s ->  5137.07s] connecting to IB at host and port. Fantastic. Now I'm going to create a new function here in
+[ 5137.07s ->  5141.63s] called connect thread. And this is where I'm actually going to try to run the connection. So I'm going to
+[ 5141.63s ->  5151.95s] say try self dot IB app dot connect. So remember, we've already created an instance of the IB app in
+[ 5151.95s ->  5158.83s] our dashboard. We've already done that. And the constructor right here, I can use the e-wrapper
+[ 5160.24s ->  5164.88s] or not the e-wrapper, the e-client to request a connection. And I'm going to request it on its own
+[ 5164.88s ->  5172.16s] thread. So I'll say dot connect, host import from the user, I'll give it a master client ID of
+[ 5172.16s ->  5179.20s] zero self dot IB app dot run. Totally cool. See if this works. I'm going to accept a general exception
+[ 5179.20s ->  5186.72s] as e, and I will just self dot log message. If there's an error, I will say there's a connection
+[ 5186.72s ->  5198.34s] error and I will print whatever that is as the general exception. So this is the function that
+[ 5198.34s ->  5202.82s] we're going to implement threading for. We're not just going to call this directly, right? So what we're
+[ 5202.82s ->  5209.10s] going to do is we're going to use this with threading to attempt to create a connection.
+[ 5209.10s ->  5220.26s] So I'll say thread is equal to threading dot thread. And I'm going to say target is equal to
+[ 5220.98s ->  5236.37s] connect thread. Damon is equal to true. So we will continue and I will say thread dot start.
+[ 5236.37s ->  5247.41s] All right. So hopefully it connects. Let's wait for a connection. I will say for I in range 100
+[ 5248.94s ->  5258.54s] if self dot IB app dot connected. Keep in mind, this is not the connection flag in our user interface.
+[ 5258.54s ->  5269.07s] This is from the server. It's responding to the IB app implementation in our event trading dashboard.
+[ 5269.71s ->  5273.95s] So it's literally the server that is telling us if we're connected or not here.
+[ 5274.83s ->  5281.57s] Okay. That is precisely what's happening. So if we're connected, try to get the server version.
+[ 5281.57s ->  5293.63s] I'll say server is equal to self dot IB app dot server version. And if the server version is not
+[ 5293.63s ->  5301.54s] none, so we've received the server version and the server version is greater than zero really should
+[ 5301.54s ->  5315.31s] call this server version. So if the server responds with the version and the version is non zero,
+[ 5315.31s ->  5334.27s] then we can break, we can accept and pass. Within this loop, we can just call a time dot sleep. Cool.
+[ 5335.15s ->  5341.39s] So if we end up with a connection here, then we no longer have to sit through this for loop, right?
+[ 5341.39s ->  5347.71s] That's what we're saying when we break effectively here. If, if the server does connect on this thread,
+[ 5347.71s ->  5351.47s] because right, we're running this thread, the target's going to be this function.
+[ 5352.96s ->  5356.96s] And as we continue through, right, we're going to run this loop and wait.
+[ 5357.68s ->  5363.68s] And if as we're waiting, we end up connecting this loop breaks and we just continue to move on.
+[ 5365.94s ->  5372.42s] Now we need to handle the case where we do connect and where we don't connect. So if we do connect,
+[ 5376.03s ->  5382.59s] then that flag will be triggered. I'll say, try server version is equal to self dot IB app
+[ 5383.39s ->  5393.34s] dot server version. If server version is not none, just as we had above and server version is greater
+[ 5393.34s ->  5402.77s] than zero, we can enable everything in our application. Self dot connected is what it is now true.
+[ 5402.77s ->  5409.01s] The connected flag in our user interface, the server here has effectively responded with, yeah,
+[ 5409.01s ->  5413.01s] we're connected. So that's what we're going to do. We're going to tick connected there in
+[ 5413.57s ->  5421.26s] self dot connect button. We need to make that disabled. We don't want to be able to connect
+[ 5421.26s ->  5427.34s] while we're connected self dot disconnect button dot config. We need to make this state normal.
+[ 5427.34s ->  5439.30s] We should now be able to disconnect. We should also now be able to analyze our IV crush. And I want to
+[ 5439.30s ->  5453.63s] log a message that we have successfully. So that's a lot of S's successfully connected to IB server version.
+[ 5453.63s ->  5463.65s] And then I'll just throw in the server version just for our logger. Okay. Else. I want to log what that
+[ 5463.65s ->  5475.82s] there was an issue connected, but server version on available, right? Cause that's effectively what
+[ 5475.82s ->  5483.12s] we have here. We've connected. We tried to get the server version and we have an issue with the server
+[ 5483.12s ->  5489.04s] version in this else block here. Okay. This except block is very similar. We're going to accept an
+[ 5489.04s ->  5497.04s] exception as E and effectively what I'm saying here is what there's a connection, but a server check
+[ 5497.04s ->  5505.04s] failed. So we'll say self dot log message. We have connected to the server, but server version
+[ 5506.38s ->  5514.00s] check failed. And I'm going to put in the exception that we observe and I'll make this a formatted print
+[ 5514.00s ->  5532.53s] statement. Great. Else. What else? We did not connect log failed to connect to interactive brokers. Good.
+[ 5533.09s ->  5548.98s] And of course the overall exception is what try except exception as E self dot log message failed to
+[ 5549.78s ->  5556.93s] or not really failed. We got a connection error and we'll just log the exception that
+[ 5556.93s ->  5563.57s] we observe. So that is going to be the connect function. What about the disconnect function? It is
+[ 5563.57s ->  5568.69s] much simpler right here. We're creating a thread we're passing through. We're ensuring that we connect
+[ 5568.69s ->  5575.65s] once we connect, we're handling the state of our user interface, so on and so forth. What about the
+[ 5576.99s ->  5582.91s] disconnect function? Well, it's as easy as disconnect, disconnect IB self.
+[ 5584.54s ->  5592.86s] I will try to self dot IB app dot disconnect that comes directly from the E client. Now I will say
+[ 5592.86s ->  5600.14s] self dot connect is equal to faults. I will say self dot connect button. This is me updating all of the UI
+[ 5600.70s ->  5607.18s] config state is equal to normal, right? I want to be able to connect again. I don't want to be able to
+[ 5607.18s ->  5615.42s] disconnect. So the state is going to be disabled. I don't want to analyze volatility if I'm disconnected.
+[ 5615.42s ->  5623.20s] So I'm going to disable that as well. And I'm going to want to clear everything. So I'm going to create
+[ 5623.20s ->  5629.52s] a function to clear all of the results that I've analyzed if I tried to, and I will also log that I
+[ 5629.52s ->  5658.99s] am disconnected. Great. If we have any sort of exception, I will log it as such. Good. And it's
+[ 5658.99s ->  5663.95s] really as straightforward as that. It's a lot easier to disconnect than it is to connect. We're just going
+[ 5663.95s ->  5671.52s] to be turning everything off. Um, self dot connect. I think that should be self dot connected. Make sure
+[ 5671.52s ->  5685.15s] we use the correct flag up here too. Yeah, we did self dot connected. Okay, great. Let's clear all of
+[ 5685.15s ->  5696.69s] the results. Now we'll create a function to clear everything. Okay. Scroll on down. Def clear analysis
+[ 5699.20s ->  5710.05s] analysis results. I will say self dot x one dot clear self dot x two dot clear. Very easy for
+[ 5710.05s ->  5718.21s] matplotlib. Thank you very much. If self dot x one twin is not none, and we have our implied volatility data,
+[ 5718.21s ->  5730.18s] right? I am going to try to remove it. I will accept an error and pass. I will get an error if
+[ 5730.18s ->  5736.02s] there's nothing to remove. Otherwise self dot x one twin will be equal to nothing. I am clearing
+[ 5736.02s ->  5744.29s] everything. I do not care if it exists. I'm going to redraw the clear canvas. I will say self dot canvas
+[ 5744.29s ->  5761.18s] stock draw and I'm going to update all of the labels, all of the information in our risk metrics and our
+[ 5761.18s ->  5767.34s] iv crush in our option pricing display and in our straddle display. So we have quite a few things to
+[ 5767.34s ->  5774.38s] update here. Self dot stock price label dot config. And I'm going to make the text equal to
+[ 5775.18s ->  5784.86s] an a and the foreground equal to black. So really all this is, is, is just updating the text in our
+[ 5784.86s ->  5792.46s] user interface to remove all of the data that we queried. That's what this clear function is doing.
+[ 5792.46s ->  5798.38s] So I'm going to copy this dot config because it's going to be the same for everything except for the
+[ 5798.38s ->  5802.94s] iv crush label. If we want it to be, we could change the foreground color, but I'm just going to do this
+[ 5802.94s ->  5807.66s] for every label. Remember each of these panels has a whole bunch of information to display.
+[ 5807.66s ->  5813.42s] So we're going to want to, we're going to want to reset all of it. Self dot VIX
+[ 5814.38s ->  5824.14s] level label. We are going to reset self dot current IV label reset. This is the what section? This is the
+[ 5824.14s ->  5839.86s] metric section. Now we have the IV crush section. So we have self dot pre-IV label reset self dot post IV
+[ 5841.58s ->  5852.51s] label reset self dot IV crush label reset. Now we have the, so that's our IV crush display. Now we have the option pricing display
+[ 5853.90s ->  5868.19s] self dot. I think it's called loss. Yeah. Call loss label reset self dot pre put label reset
+[ 5868.75s ->  5878.43s] self dot post put label reset self dot put loss label reset. Good. Now we do it for straddles self dot pre straddle
+[ 5878.43s ->  5916.30s] and that's everything in our straddle pricing. Now we need to do our PNL. So we do self dot long PNL reset self dot short PNL reset and we need to do the same for our strike and spot label self dot strike label
+[ 5916.30s ->  5929.22s] reset self dot PNL reset self dot PNL reset self dot PNL reset. Same thing for the Greeks. So this is going to be
+[ 5930.53s ->  5942.32s] spot strike. Good. IV crush. We can make this red if we want to for the IV crush percentage. Remember post the earnings event. We made it red.
+[ 5943.86s ->  5949.14s] Should probably be conditional on the implied volatility, but we could do it. We could do that later.
+[ 5951.66s ->  5957.10s] Okay. Last but not least is the Greeks and I need to do the pre
+[ 5957.98s ->  5966.86s] delta. I need to do the post delta. I need to do the delta change. I need to do the pre vega.
+[ 5967.66s ->  5981.74s] I need to do the post vega. I need to do the vega change. Great. Now I need to reset the stock VIX and IV data, but that's easy.
+[ 5981.74s ->  5994.96s] Stock data is equal to none. Self dot VIX data is equal to none. And self dot IV data is equal to none. Cool.
+[ 5997.14s ->  6011.58s] If has attribute self IB app, we are going to kill it. We are going to say self dot IB app dot historical data
+[ 6012.70s ->  6032.19s] dot clear. And effectively we can just log that we torched all of all of our data. So all we really did
+[ 6032.19s ->  6038.27s] here was reset all of the labels in our user interface, clear the canvas and delete all of
+[ 6038.27s ->  6045.39s] the data from the historical data dictionary in our IB app implementation, our controller.
+[ 6046.19s ->  6056.46s] And of course, clear the data from our UI. It's really straightforward. We really didn't do anything
+[ 6056.46s ->  6069.34s] particularly interesting there. Um, now we need to create, I think we should do the pricing functions.
+[ 6069.34s ->  6076.30s] So we're going to use the black souls pricing functions to come up with the implied volatility
+[ 6076.30s ->  6082.54s] crush. And, you know, I think there's a lot of confusion from people who watch my videos,
+[ 6082.54s ->  6087.66s] implementing the black souls model in the context of trading these options. They say like,
+[ 6087.66s ->  6093.10s] oh, it's wrong. It's wrong. It's wrong. It's wrong. It's like, yes, it's, it's a model. And it assumes
+[ 6093.10s ->  6098.94s] all these things and volatility is constant. That is literally what lets us back out implied volatility
+[ 6098.94s ->  6105.26s] and use it as a measure of change in option value. I feel like there, there's kind of this like missed
+[ 6105.26s ->  6111.50s] mark. If you're kind of just suggesting, oh, it's, you know, the model's wrong. It's like, yes,
+[ 6111.50s ->  6117.34s] the model's wrong. We're using that to inform a linear approximation of change in portfolio
+[ 6117.34s ->  6123.50s] value to capture an implied volatility crush effect. I, I don't know how else to explain it
+[ 6123.50s ->  6130.30s] to those folks who, you know, just want to, I guess, preach the fact that the model is incorrect
+[ 6130.30s ->  6135.42s] because it makes assumptions like every other model that exists. If we knew the true dynamics,
+[ 6135.42s ->  6141.34s] we wouldn't need a model, but I'll digress. Um, in any case, that's literally what IV is, right?
+[ 6141.34s ->  6145.18s] IV is the volatility required to input into the black tools function to produce
+[ 6146.14s ->  6152.96s] a price that we observe in the market, but I'll digress, or this is going to be a very long video.
+[ 6152.96s ->  6159.52s] So let's begin by creating all of these pricing functions, um, in this, in this next section here.
+[ 6159.52s ->  6165.84s] So really we did all the, the legwork. We have our user interface, we have connection, disconnect,
+[ 6165.84s ->  6171.60s] disconnect, clear. Now we need to start populating everything. So let's start with these pricing
+[ 6171.60s ->  6179.28s] functions. Let's go ahead and create these pricing functions. I'll say deaf black shoals call self.
+[ 6179.28s ->  6185.28s] We need to take the spot, the strike, the time to maturity, the risk free rate, and the volatility.
+[ 6185.84s ->  6192.80s] And I need to calculate D one and D two, but I also need a normal CDF. So I will say
+[ 6193.44s ->  6203.62s] from scipy dot stats, let's import norm. And then I will compute D one as MP dot log S over K.
+[ 6204.42s ->  6226.62s] And then I will add R plus point five times Sigma squared times T divided by Sigma times MP dot square root
+[ 6226.62s ->  6241.20s] T. D two is equal to D one minus Sigma times MP dot square root T. And the call price is going to be equal
+[ 6241.20s ->  6252.48s] to S times the normal CDF, the cumulative distribution function of D one, of course, minus K times the
+[ 6252.48s ->  6267.87s] discounted rate times the expiration of the normal CDF of D two. And then we can return that call price.
+[ 6270.48s ->  6281.46s] Great. Now we can move on to the put, which is exactly the same. We could use put call parity here too.
+[ 6282.42s ->  6294.59s] But instead, this is going to be what, K of really, I'm just going to take this second one here.
+[ 6304.35s ->  6310.59s] We have the same D one and the same D two. The only difference here is we have negative D one and
+[ 6310.59s ->  6318.96s] negative D two. We're swapping the order because it's a put. So this is now not call price. This is
+[ 6318.96s ->  6329.89s] put price. It's the only difference in the column put formula. We could just use a linear approximation.
+[ 6329.89s ->  6335.57s] If we wanted to be lazy for the Delta and the Vega, just do a small change in the volatility or the
+[ 6335.57s ->  6342.53s] spot, keeping everything else constant. We should probably do it explicitly. Don't want to cut corners
+[ 6342.53s ->  6355.41s] for you guys. So I'll say calculate Delta self S K T R Sigma and the option type will dictate our signs.
+[ 6358.00s ->  6366.00s] Fortunately for us, Delta is really easy to calculate because it is just the same thing as the D one in
+[ 6366.00s ->  6376.00s] the black Scholes function. We just return whether it's, it's positive D one or negative D one. It's the
+[ 6376.00s ->  6383.36s] cumulative distribution function of a standard normal of positive D one. If it's a call negative D one,
+[ 6383.36s ->  6391.60s] if it's a put. So if option type is equal to a call, then we are going to return normal that CDF D one.
+[ 6392.56s ->  6401.28s] Otherwise we are going to return negative normal that CDF negative D one. Fortunately for us, the Vega
+[ 6401.28s ->  6408.72s] position is going to be a position is going to be the same. So we can just go ahead and say def calculate
+[ 6408.72s ->  6421.70s] Vega. And this is going to be self S K T R Sigma. And from scipy stats, I'm just going to use the same
+[ 6423.10s ->  6435.20s] D one as before I will return S times normal PDF in this case, because we're going to partially
+[ 6435.20s ->  6445.04s] differentiate the entire formula with respect to Sigma. This is how we get Vega. I'm going to use
+[ 6445.04s ->  6456.13s] D one multiply this by the square root of T divide by 100. So that is going to be our Vega value. So
+[ 6456.13s ->  6463.25s] for a 1% change in volatility, that is the expected change in our option price. Awesome. Now we're ready
+[ 6463.25s ->  6470.53s] to actually build a function to analyze the implied volatility crush. We have all of the pricing functions
+[ 6470.53s ->  6479.76s] that we need. We can now go ahead and build the main function. So def analyze IV crush here in,
+[ 6479.76s ->  6486.16s] we're going to have to check to see if we're connected first. So if self doc, if not connected,
+[ 6486.16s ->  6498.86s] right, or not self dot IB connected. So either the client that is our user interface object, or the IB
+[ 6498.86s ->  6506.43s] app object, which will be receiving the fresher information, if either of those are not connected,
+[ 6506.43s ->  6517.33s] then we need to show some sort of error using a message box that we are not connected. And we can't
+[ 6517.33s ->  6524.69s] get data for the analysis. So I will return here. We're done with this function if we can't access
+[ 6524.69s ->  6533.62s] interactive brokers. All right, what if we can, what if we are connected to the server, then we need to get
+[ 6533.62s ->  6542.19s] what the ticker from the user. So I'm going to say self dot ticker var dot get, I'll put everything to
+[ 6542.19s ->  6554.35s] uppercase, and I need to get the earnings date string from the earnings date variable.
+[ 6557.07s ->  6562.91s] That will tell me what I'm querying data around, right, I want to get days before and after the
+[ 6562.91s ->  6567.63s] earnings event. So I'm going to get that from the dashboard from the user interface that we just
+[ 6567.63s ->  6580.46s] built out. All right, I am going to try, assuming they entered the date correctly, to format it as
+[ 6580.46s ->  6603.38s] year by month by day, so that I can request data from the server. If they didn't enter it correctly,
+[ 6603.38s ->  6615.46s] I'm going to get a value error. And I will show an error that we have an invalid date format. We need
+[ 6615.46s ->  6634.51s] to use year, year, year, year, month, month, day, day. Otherwise, we return. Otherwise, we can log a
+[ 6634.51s ->  6640.99s] message that we are starting the IV crush analysis for the sticker around earnings on and we can also
+[ 6640.99s ->  6651.65s] include self dot earnings date. Very useful. We can call the clear function because we're about to paint
+[ 6651.65s ->  6659.34s] a whole bunch of new information on the on the user interface on the canvas. Now I'm going to create
+[ 6659.34s ->  6667.58s] my start and end date. My start date is going to be self dot earnings date minus time delta 10 days.
+[ 6669.01s ->  6687.92s] The end date is going to be the earnings date plus time delta 10 days. Okay, I think we just need the
+[ 6687.92s ->  6697.17s] end date actually. All right, we'll leave it there for now. Start date end date self dot IB app dot historical
+[ 6697.17s ->  6703.49s] data. Do we have anything saved in our dictionary? Well, if we do, we're going to clear it. That should
+[ 6703.49s ->  6714.96s] be cleared here as well. Okay, now let's query some information from the server. How do we do this? Well,
+[ 6714.96s ->  6724.03s] we already have our IB app created in our earnings trading dashboard. It's right here. So I can call
+[ 6724.03s ->  6732.19s] self dot IB app and I can use it to make a request based on what the user provided to the ticker and
+[ 6732.19s ->  6748.30s] as the earnings date. So I will say self dot log message querying stock price data for self dot ticker.
+[ 6750.58s ->  6758.02s] Okay, the stock contract is going to be equal to self dot create equity contract self dot ticker.
+[ 6758.02s ->  6763.86s] Remember, we created that function earlier on where we could pass a ticker to the function and it will
+[ 6763.86s ->  6775.65s] return a contract for interactive brokers. If one is in self dot IB app dot historical data, which it will
+[ 6775.65s ->  6786.82s] not be, then we are going to delete it. But otherwise, otherwise, we can use it to handle our request.
+[ 6786.82s ->  6793.71s] This is unnecessary. But if for whatever reason, the server responds with data late or this or that or
+[ 6793.71s ->  6798.99s] whatever, we're going to delete it here. Okay, we've already tried to clear it here. And we've
+[ 6798.99s ->  6805.39s] already tried to clear it here. But we're going to try to clear it again, explicitly, if the server
+[ 6805.39s ->  6812.22s] somehow responds with it late. Let's request now the necessary historical data, I'm going to try to
+[ 6813.02s ->  6824.67s] create a self dot IB app dot historical data requests, the rec ID is going to be one,
+[ 6825.39s ->  6833.15s] the contract is going to be the stock contract, the end date time will be the end date that I had above
+[ 6833.95s ->  6850.80s] dot ST RFT time, we will make it the valid format of year, month, day, hour, minute,
+[ 6850.80s ->  6860.80s] seconds. I think that's correct. Time is always very confusing. Year, month, day, hour, minute,
+[ 6860.80s ->  6872.90s] seconds. I think that's correct. Okay. Duration string, we will make this three weeks. The bar size,
+[ 6872.90s ->  6878.64s] we will make one day. And of course, you can make this whatever you want, depending on what you're
+[ 6878.64s ->  6894.35s] trying to analyze. Scroll on down here. What to show? Trades, of course. Use RTH? Sure. Format date?
+[ 6895.60s ->  6902.16s] Sure. Keep up to date? No, we don't need to keep it up to date. Should we have chart options? Leave them
+[ 6902.16s ->  6916.99s] empty. We will accept a general exception. And we will log a message. Error requesting stock data,
+[ 6916.99s ->  6934.99s] and we will log the exception. We can show a message box too, I guess. And we can just say
+[ 6934.99s ->  6942.59s] failed to request stock data. Show the exception to the user. That's probably fine. And return it.
+[ 6942.59s ->  6954.94s] Okay. We can now wait for data. Kind of like we did above with the connection. So effectively,
+[ 6954.94s ->  6964.69s] what I'm going to say is like timeout is equal to 15. Start time is equal to time dot time. We'll get
+[ 6964.69s ->  6977.39s] the current time. While one is not in self dot app, I'd be app dot historical data. And we still have
+[ 6977.39s ->  6991.50s] time to wait. Then we can just sleep. So we can just wait for the data to come in. And after we do that,
+[ 6991.50s ->  6996.06s] for this particular timeout window, yeah, we could use a loop like before, but I also wanted to use
+[ 6996.06s ->  7002.00s] a while loop here. I mean, it's kind of cool, I think, to see two different ways of doing it. You
+[ 7002.00s ->  7007.76s] could use a for loop and break like we did earlier, or you could just use a while loop here. The while
+[ 7007.76s ->  7013.84s] loop is effectively waiting for the key to be in the historical data. Above with the for loop, we're just
+[ 7014.40s ->  7021.84s] incrementing by what point one 100 times for our sleep. And we can break if we see a connection
+[ 7021.84s ->  7027.12s] here, we're trying to check to see if the key exists. And effectively, it's the same thing. But
+[ 7028.00s ->  7033.60s] cool to see, I think, two different ways to go about waiting for data from the server. In any case,
+[ 7033.60s ->  7041.28s] if one is not in the historical data after we wait this period, then what that means is we didn't get
+[ 7041.28s ->  7047.87s] anything. So we failed to get stock price data. And that's a problem. We're just going to return.
+[ 7051.57s ->  7058.61s] So if one exists, what does that mean? That means this request with an ID one was successful. We
+[ 7058.61s ->  7066.53s] receive data to our historical data callback function, and it stored it in our dictionary with
+[ 7066.53s ->  7075.42s] a request ID of one. Great. So if this doesn't kill the function, we can then progress to the next step.
+[ 7075.50s ->  7085.06s] Which is processing the stock data and requesting VIX data. So I'll say stock data is equal to PD dot
+[ 7085.06s ->  7091.54s] data frame. I'm going to create a data frame of the data that we have in our historical data dictionary.
+[ 7095.90s ->  7106.48s] The dates will, of course, equal PD dot to date time stock data date makes it so much easier to work
+[ 7106.48s ->  7113.20s] with dates and date ranges to create masks, so on and so forth. We'll say stock data dot set index.
+[ 7114.08s ->  7121.12s] The date is the index in place true. That means we are going to assign this directly to this stock data
+[ 7121.12s ->  7131.18s] variable self dot stock data is equal to stock data. Yup, because this was local and we want to assign it to
+[ 7131.18s ->  7138.24s] the to the field in this class. And then I want to log the message that we were successful. So we
+[ 7138.88s ->  7148.56s] received how much data the length of stock data stock price data points. Wonderful.
+[ 7150.51s ->  7156.83s] All right. Now we can log that we are what querying VIX data. We're moving on to the next step.
+[ 7160.34s ->  7166.58s] We need our VIX contract, which we get from our VIX contract function, create VIX contract. We don't
+[ 7166.58s ->  7172.74s] need any arguments because it's just going to return the correct parameters or the correct arguments in
+[ 7172.74s ->  7177.78s] the contract for this particular security, which is, of course, the index, the VIX.
+[ 7177.78s ->  7187.86s] If two is in self dot IB app, which it should not be, but if it's in the historical data, right,
+[ 7188.50s ->  7202.51s] then we need to delete that as a key. If it doesn't exist, it shouldn't exist. We cleared it before,
+[ 7202.51s ->  7208.67s] but if for whatever reason data came in late, we're going to clear it there and we are going to try to
+[ 7208.67s ->  7217.23s] make another request. This is effectively the exact same request as above. I'm going to copy it.
+[ 7219.12s ->  7229.84s] I'm going to come on down here, going to paste it. What is the difference? Request one request.
+[ 7229.84s ->  7236.08s] ID one is the stock data. Two is the VIX data. I don't want to use the stock contract. I want to use
+[ 7236.08s ->  7248.69s] the VIX contract and that should, that should do it. The only thing that we need to change is
+[ 7251.78s ->  7257.38s] the exception. We don't actually need VIX data, right, to analyze the IV crush. It's just a nice
+[ 7257.38s ->  7261.70s] ad. So maybe you don't have market data for it, for whatever reason. We don't have to kill it right
+[ 7261.70s ->  7270.46s] here. We can just log that we had an error requesting VIX data and we can actually continue with the
+[ 7270.46s ->  7276.62s] analysis. And we'll just put in maybe like a chart of the straddle instead, if you have trouble accessing
+[ 7277.26s ->  7286.56s] the VIX data. Okay. So now we can effectively wait for the VIX data. So what we're going to do here
+[ 7286.56s ->  7295.78s] is we're going to say the start time just as before is equal to time.time. And while two is not in
+[ 7295.78s ->  7304.26s] self.ibapp.historicaldata, this is what we did before, right? If we have some sort of wait time left
+[ 7305.14s ->  7313.30s] from whatever time we allotted via this timeout, then let's just wait. time.sleep is equal to 0.1.
+[ 7314.18s ->  7322.98s] And yeah, if two is in self.ibapp.historicaldata, we've successfully received VIX data. And this is
+[ 7322.98s ->  7331.54s] great because I can say VIX data is equal to PD dot data frame. I'll pass the IB app dot historical data
+[ 7332.62s ->  7338.30s] to that data frame. I'll create a new data frame using the open high, low, close volume and date.
+[ 7338.94s ->  7346.46s] I will say the VIX data date is going to be equal to PD dot to date time.
+[ 7346.46s ->  7360.22s] This will be of course VIX data date and the VIX data index is going to be of course then the date
+[ 7360.22s ->  7371.63s] and we will do that in place. Then we can apply this to the self dot VIX data, the field in our trading
+[ 7371.63s ->  7388.35s] dashboard class. And we can log the message that we received, the length of the VIX data, quantity of
+[ 7389.23s ->  7398.34s] VIX data points. Great. Otherwise what? We didn't get any data, but it doesn't matter. We can still
+[ 7398.34s ->  7403.54s] continue with the analysis because we just need the implied volatility data. So VIX data is not available.
+[ 7403.54s ->  7409.78s] That's totally cool. I'm just going to say self dot VIX data is equal to none and we can move on.
+[ 7413.17s ->  7435.41s] Last but not least, we need to query the implied volatility data. If three is in self dot IV app dot
+[ 7435.41s ->  7441.89s] historical data, then again, we need to delete it. I don't know how it got there since we cleared
+[ 7441.89s ->  7449.36s] everything earlier, but if we had a delayed request or whatever, we need to delete it. Now we can once
+[ 7449.36s ->  7459.04s] again, make the same market data request. I will use the request that we created above here for the VIX
+[ 7459.76s ->  7467.20s] because again, we can continue just with pricing information. I am going to use request ID three
+[ 7467.20s ->  7478.29s] here. I'm going to use the stock contract again because I want implied volatility data. I'm going to
+[ 7478.29s ->  7493.22s] get then not trades, but option implied volatility. I will then do the same waiting scheme
+[ 7494.40s ->  7502.58s] as the Y loop. I have here. I'll copy it. I'll come down here. I will paste it. And I will say,
+[ 7502.58s ->  7509.62s] while three is not in the keys for my historical data, I'm waiting on that implied volatility data.
+[ 7509.62s ->  7517.34s] And if it comes, the loop is going to break. If not, I'm going to wait the entire period. And then
+[ 7517.34s ->  7529.44s] if three is in self dot IV app dot historical data, then I can now process this implied volatility data.
+[ 7529.44s ->  7532.56s] So let's go ahead and handle this implied volatility data. It's a little different from
+[ 7532.56s ->  7535.36s] the stock price data. We're going to have to do a couple of different things.
+[ 7535.36s ->  7542.80s] I'll say IV data is equal to PD dot data frame. Just as before, I'm actually going to get the
+[ 7545.41s ->  7555.90s] data directly here. I'm going to update the date such that it is a pandas date, time to date, time
+[ 7557.30s ->  7564.98s] IV data. So the date seek series is now a date, time series and pandas makes it much easier to work
+[ 7564.98s ->  7574.22s] with the IV data. We're going to set the index to the date column and we will do this in place.
+[ 7575.26s ->  7581.74s] So effectively, you know, when I, when I set the index here, I am just telling it how to index the
+[ 7581.74s ->  7588.06s] open high, low, close volume for the entire series. This goes for the VIX. This goes for the stock price
+[ 7588.06s ->  7593.66s] as well. And all that's happening here is I'm saying, Hey, we have a dictionary of data. Let's turn it into
+[ 7593.66s ->  7599.66s] a data frame. So we have series. These are the columns. These are different series and I'm going
+[ 7599.66s ->  7606.14s] to take the date series and turn it into a pandas date, time object. And then what I'm going to do
+[ 7606.14s ->  7612.62s] is I am going to set that as the main index for the data frame so that when I go to plot it, I can
+[ 7612.62s ->  7627.39s] just plot the close, for example, by the index, the date. What is the raw IV? Well, the raw IV is just
+[ 7627.39s ->  7639.55s] going to be the close and I'm going to look to scale it. So effectively, if the raw IV dot max is greater
+[ 7639.55s ->  7653.34s] than let's say five, I am going to convert it to a decimal value divided by 100. I'll say the IV data,
+[ 7653.34s ->  7666.03s] the implied vol is then equal to this daily vol as a decimal, the daily IV. And I'm going to log what
+[ 7666.03s ->  7676.98s] that I have received length of IV data, IV data points, and I have converted from daily percentage
+[ 7676.98s ->  7698.53s] to annualized vol. All right. Depending on how you have your implied volatility configured is going
+[ 7698.53s ->  7705.97s] to depend on how you handle your implied volatility here. If it's daily, you are going to need to scale
+[ 7705.97s ->  7716.40s] this by 252. If it's not, then you are good to go and you can use it as annual vol. Okay. Just make sure
+[ 7716.40s ->  7726.42s] that you're using the correct units for the volatility such that when you actually look at the IV crush,
+[ 7726.42s ->  7732.90s] you're not looking at some sort of, you know, 1000, uh, implied volatility because you scaled,
+[ 7732.90s ->  7738.34s] you know, 40 by two, the square root of two 52, make sure that you are using the correct units of
+[ 7738.34s ->  7742.66s] volatility. It's going to depend on, you know, whatever you like, but in this case here, we can
+[ 7742.66s ->  7748.74s] even handle or try to handle dynamically. If you've queried it in terms of daily units, we can try to put
+[ 7748.74s ->  7756.26s] it back into annual units. Um, but again, this is going to depend on how you have your TWS configured.
+[ 7756.26s ->  7767.10s] So this part, I need you to also review the vol values you observe. Don't just blindly copy the
+[ 7767.10s ->  7771.18s] section. I don't know how you have your TWS configured. So make sure you're observing the
+[ 7771.18s ->  7779.10s] correct values. In any case, otherwise, we're just going to say the IV data is the implied vol data.
+[ 7779.10s ->  7786.80s] This is equal to the raw IV. And in this case, we could, we could annualize it, um, here as well.
+[ 7786.80s ->  7792.64s] This is just going to be whether or not we're observing it as like percentage versus decimal.
+[ 7793.28s ->  7800.56s] Um, and then we're going to turn it into a decimal value and then scale it if we have to. So it's just
+[ 7800.56s ->  7806.16s] going to depend on how you're receiving it from trader workstation. So then here, I'm going to log
+[ 7806.16s ->  7825.30s] the message. What received length IV data, IV data points, annualized volt. All right. Why didn't I
+[ 7825.30s ->  7833.20s] scale these by two 52? Well, if I go to my trader workstation, like I did at the start of this video,
+[ 7833.20s ->  7842.24s] you will see that my vol units are in terms of annual vol. So I don't need to scale it. If my vol was
+[ 7842.24s ->  7849.92s] daily, then I would have to either convert it from percentage to decimal or use the raw vol and scale
+[ 7849.92s ->  7857.76s] it by MP dot square root two 52. And I would have to do that here. And I would have to do that here,
+[ 7858.72s ->  7864.56s] but mine is in terms of annual vol. And I, I, if you're just trying to follow along here,
+[ 7864.56s ->  7870.64s] you can leave yours in terms of annual vol as well. But if you want to leave it in terms of daily vol,
+[ 7870.64s ->  7881.97s] you have to scale by two 52 there. Okay. So the IV data for this particular earnings trading dashboard
+[ 7881.97s ->  7889.73s] UI will equal now this data that we've prepared. And we have this annualization factor of one
+[ 7890.77s ->  7898.14s] and I can print this or log this, but it really doesn't matter because I didn't annualize it here.
+[ 7898.14s ->  7904.38s] Um, effectively, even this is, is just kind of a little redundant because I didn't do the conversion.
+[ 7904.38s ->  7909.74s] I'm assuming that it's coming in, in terms of annual vol. You just have to know how you have your,
+[ 7909.74s ->  7929.09s] your TWS configured. So I am effectively just going to log that we have successfully pre-processed the
+[ 7929.81s ->  7936.53s] implied volatility data. And if not, then I'm just going to say that we don't have it available to us.
+[ 7949.55s ->  7958.03s] All right. Fantastic. So that is going to do it for this portion. This is how we request the data.
+[ 7958.03s ->  7963.71s] Now we need to actually perform analysis on the data that we receive. So I'll say self dot perform
+[ 7967.90s ->  7978.80s] IV crush analysis, and we can now write this function to perform the IV crush analysis.
+[ 7980.42s ->  7987.22s] So we're really almost done now. We just have one or two more functions to build. We just got to perform
+[ 7987.22s ->  7994.90s] the IV crush analysis, update all of the labels, and then draw the data visualizations and we'll be
+[ 7994.90s ->  8009.57s] ready to run the app. So let's start by logging that we are going to be performing
+[ 8009.57s ->  8021.33s] this IV crush analysis. Looks like I forgot to include self here. Okay. The earnings date here in
+[ 8021.33s ->  8028.85s] is just going to be the earnings date from the user interface. And we're going to want to get the
+[ 8028.85s ->  8033.65s] pricing information around the date. So what I'm going to do is I'm just going to get the pre earnings
+[ 8033.65s ->  8045.94s] date as the earnings date minus time delta of one day and the post earnings date as the earnings date
+[ 8045.94s ->  8055.46s] plus the time delta of again, one day. And then the stock dates themselves are going to be from the
+[ 8055.46s ->  8066.18s] stock data index, right? We pre process the stock data above, we made the date a date time panda series,
+[ 8066.18s ->  8073.38s] and we're going to get that index right here. And now we can actually use this mask, this idea of a mask
+[ 8073.38s ->  8083.30s] to essentially find the pricing information for that window we are interested in. So the pre date actual
+[ 8084.42s ->  8094.26s] is going to be the last trading date before the earnings date. So this is like on or earning on or
+[ 8094.26s ->  8101.39s] before the the date of the earnings. So I will say stock dates and I'm going to create this mask
+[ 8102.19s ->  8110.35s] stock dates where we have any time that is less than or equal to the earnings date, we will take the max
+[ 8110.35s ->  8119.02s] that is the date that is closest possible to the earnings. And it could even be on that earnings
+[ 8119.02s ->  8125.02s] date. And we're going to get the the data specifically for that that time period, or I should say the date
+[ 8125.02s ->  8136.06s] specifically for that, that time period. Okay. Now, if the length of that data, so effectively, I'm saying
+[ 8136.06s ->  8147.52s] if the length of that data for this particular mask is in fact, greater than zero, that is what we're
+[ 8147.52s ->  8164.30s] going to use, we're going to use the max date here. Otherwise, we can use the min date. That looks good.
+[ 8165.74s ->  8171.18s] And we're going to do the same thing for the post date. Okay, it's just going to be greater than
+[ 8171.18s ->  8181.06s] instead. So the post date actual is equal to the same mask, but instead of less than or equal to,
+[ 8181.06s ->  8188.10s] it's going to be greater than. So this is after the earnings date. So we will do dot min, right?
+[ 8188.98s ->  8195.22s] Effectively, what you can think of this as is let's think of this like a timeline, you have this earnings
+[ 8195.22s ->  8204.11s] event, right? You have before the event occurs. So it's leading up to the event, we want the max
+[ 8204.11s ->  8212.53s] time leading up to this event. That's the pre date actual. That's what we have here. So leading up,
+[ 8212.53s ->  8220.05s] we want the max leading up to that event date, then we have the post after the event, we want the min
+[ 8220.05s ->  8226.61s] closest possible to that date. So in terms of time left to right, we want to get the max before the
+[ 8226.61s ->  8232.21s] event and the min after the event. That's how we can do this pre and post game analysis. And this is
+[ 8232.21s ->  8240.21s] exactly the same, right? If the length of this stock dates with this particular mask is greater than zero.
+[ 8240.21s ->  8255.63s] Otherwise we are going to get the, I believe this would be the dot max. Then that would be the,
+[ 8255.63s ->  8261.23s] the dot max. Okay. So again, think of it like a timeline. We're going to create this mask and we're
+[ 8261.23s ->  8265.47s] going to look for the max date closest to the earnings date for the pre and the min date closest
+[ 8265.47s ->  8274.83s] to the earnings date after notice it is not greater than or equal to, it has to be after the earnings date.
+[ 8275.92s ->  8285.57s] Okay. Cause we're doing this analysis on market close. Cool. So that's the pre date. That's the post date.
+[ 8287.39s ->  8302.11s] We can log the earnings date. We can log the pre and post date now. So I will call this the earnings date.
+[ 8309.28s ->  8320.51s] The pre date will be the predate actual and the post date will be the
+[ 8320.51s ->  8341.15s] post date actual. We can of course format that maybe a little nicer dot STR will do year month day.
+[ 8341.15s ->  8357.38s] And then we can use that formatting for each of the pre and post. And of course the earnings event itself.
+[ 8361.95s ->  8370.75s] Now we need to use these dates to find the relevant pricing information, the implied volatility information
+[ 8371.63s ->  8377.95s] and the VIX information. Effectively, what we have here is the date of the earnings event,
+[ 8379.26s ->  8386.62s] the date after the earnings event, and we have pricing information indexed by date. So we can just
+[ 8386.62s ->  8396.46s] get that pricing information for each of the pre and the post earnings event. Cool. The pre stock price
+[ 8396.46s ->  8404.59s] is then going to be equal to what self dot stock data dot loc. We're going to get the post date actual,
+[ 8405.15s ->  8416.45s] find the open. We are go, or this is really the, um, no, we need the predate. So this is going to be the
+[ 8416.45s ->  8425.28s] predate actual and we want the close. This is the last price that we observe before the earnings event
+[ 8425.28s ->  8434.50s] takes place. This is the pre stock price. So we get the close, the earnings event occurs. We need to get
+[ 8434.50s ->  8448.03s] the open. So we use the post date. We find the open and we get the post stock price. We get the post close
+[ 8456.27s ->  8479.06s] and we get the close. Then we could take the average. All right. What do we do here? We use the earnings
+[ 8479.06s ->  8487.95s] date that the user gave us to find the pre and post earnings day from the time series of data that was
+[ 8487.95s ->  8496.83s] given to us from interactive brokers. So we're going to effectively find the last possible price
+[ 8497.71s ->  8504.99s] for the stock before the earnings date. Then we're going to find after the earnings happens, the opening
+[ 8504.99s ->  8509.23s] price. So we're getting the price closest to the earnings event on either side of the earnings
+[ 8509.23s ->  8515.23s] event as registered by the market. At this point, we can log a whole bunch of information. I'm just
+[ 8515.23s ->  8523.39s] going to log the overnight earnings gap to open and the close to average. So I'm going to say self dot
+[ 8524.11s ->  8537.30s] log message. I will be effectively logging the overnight earnings gap to open. And this is going to be
+[ 8537.30s ->  8555.71s] the overnight gap to open is the post open minus the pre close, which is just going to be the
+[ 8555.71s ->  8569.15s] pre stock price. And then we are going to divide that by the pre close. And then we're going to
+[ 8569.15s ->  8578.54s] multiply the whole thing by 100. So effectively, we're getting the last seam price in the market,
+[ 8578.54s ->  8584.30s] the earnings event happens, and we're going to compute the overnight gap to open the percent change
+[ 8584.30s ->  8590.46s] from the close to the open after the earnings event occurs. We can also compute the total move
+[ 8591.18s ->  8598.54s] relative to the post stock price in the pre close. So this is the close average. So we could use the
+[ 8598.54s ->  8605.18s] post close or the post average. In this case, I'm just going to use the post close so we can compute the
+[ 8605.18s ->  8613.50s] close to close total move as a percentage. So I will just say total move is equal to,
+[ 8614.78s ->  8625.90s] say post close minus pre stock price divided by pre stock price times 100. And then I will log that
+[ 8625.90s ->  8639.07s] as well as the total move percentage close to close. And that'll be the total move.
+[ 8640.99s ->  8645.95s] This is where you can, you know, really check out a whole bunch of of interesting measures,
+[ 8645.95s ->  8652.59s] how things changed before and after the earnings event also in terms of a volatility, um, and whatnot.
+[ 8652.59s ->  8659.78s] But in this case, I'm just going to log these two, um, these two quantities, you can choose to log
+[ 8659.78s ->  8664.18s] whatever you like, but we're going to be updating the dashboard with so much information.
+[ 8664.18s ->  8669.78s] I'm just going to leave it at this point. Um, with these two, these two measures, the overnight gap to
+[ 8669.78s ->  8675.86s] open and the total move. Now we're ready to actually update all of this information on our user interface.
+[ 8675.86s ->  8685.55s] So I will say self dot stock price label config, and I'm going to make the text equal to
+[ 8687.55s ->  8701.12s] formatted string. And I will say post stock price. I'll update now the VIX data. So if the VIX data
+[ 8701.12s ->  8710.08s] is not none, then I am going to make the VIX dates equal to self dot VIX data dot index,
+[ 8711.25s ->  8720.96s] the pre VIX date is equal to the VIX dates. And of course, we're going to use the same window here,
+[ 8720.96s ->  8727.44s] the same mask that we had earlier as the pre earnings date. Um, we will get the latest possible
+[ 8727.44s ->  8736.08s] point up to the earnings dates. If the length of this particular mask is greater than zero.
+[ 8736.72s ->  8752.19s] Otherwise we are just going to get the men and the post VIX date is going to be the same thing,
+[ 8752.19s ->  8758.91s] but now we're getting what the item closest to the earnings event on the other side of it. So this is
+[ 8758.91s ->  8764.75s] after the earnings event occurs. So it's going to be the min if the length of the VIX dates for this
+[ 8764.75s ->  8782.38s] particular mask is greater than zero. Otherwise we will get the max. So really anytime we're using
+[ 8782.38s ->  8787.58s] this mask, we're just creating a vertical line for that earnings event. And we're saying, Hey,
+[ 8787.58s ->  8793.18s] let's get the closest data before and the closest data after that's why we're using this men and max.
+[ 8793.82s ->  8804.13s] And if it yields anything, then great. That means we have data there. If not, let's get the next best
+[ 8804.13s ->  8815.92s] point, which is going to be the max and the min. Okay. The prefix value itself. Now that we have these
+[ 8815.92s ->  8835.09s] dates is going to be given by the previous date, the close and the post VIX is going to be given by
+[ 8835.09s ->  8850.54s] the post VIX date and the close. We could do the open here. It's entirely up to us for consistency.
+[ 8851.34s ->  8861.26s] I'm just going to plot the close. Okay. And you know, here, what we can do is we can log it if we so
+[ 8861.26s ->  8882.08s] choose to do so. So we can log that the pre earnings VIX is this and the pre and the post VIX
+[ 8882.72s ->  8906.18s] is that, um, otherwise, you know, we can just set the, the VIX label to be not available. Remember,
+[ 8906.18s ->  8913.06s] we don't need the VIX data for this analysis. Technically. We just want the pricing data for the
+[ 8913.86s ->  8919.86s] black souls function and the implied volatility crush. We would need the implied volatility data
+[ 8919.86s ->  8926.34s] in order to do that. Um, but of course, if we have that data, then here we can just plot in terms of
+[ 8926.34s ->  8938.05s] the config, a formatted string. We'll do the post VIX after the earnings event. We'll plot the, the post
+[ 8938.05s ->  8952.35s] fix level there. All right. Very good. That is the VIX level label. And that should be it for this
+[ 8953.15s ->  8958.59s] section on the, the VIX data. Awesome. We're now ready to move on to the implied volatility data,
+[ 8958.59s ->  8962.83s] and it's going to operate in a very similar capacity here. So, you know, effectively,
+[ 8962.83s ->  8969.47s] what we're going to do is just say, if the self dot IV data is not none, then we've queried it
+[ 8969.47s ->  8977.74s] successfully and we need to access the dates. So I'll say IV dates is equal to self dot IV data dot
+[ 8977.74s ->  8985.50s] index. That's where we, of course, push the pandas datetime object to the IV data frame index.
+[ 8985.50s ->  8993.74s] And again, I'm going to create this pre IV date as the IV dates with this mask pre earnings IV dates
+[ 8993.74s ->  9002.62s] less than or equal to the pre earnings date. I want the max possible value. And if the length of such a
+[ 9002.62s ->  9020.69s] mask is greater than zero, I'm good to go. Otherwise I want the min value. Cool. I do the same with the
+[ 9020.69s ->  9032.85s] post IV date. If the IV dates are greater than zero, then I do dot min. And if the length of IV
+[ 9032.85s ->  9045.17s] dates is greater than zero for this mask, then I will set it as the min. Otherwise I will do the max
+[ 9045.17s ->  9056.26s] and that should be the correct pre and post date. Now I can get the pre IV as the IV data dot look,
+[ 9056.26s ->  9063.86s] I'm going to find the pre IV dates and the implied volatility. And I will do the same with the post
+[ 9063.86s ->  9080.85s] IV and the post date, post IV date and the implied volatility. Cool. I can plot this or I can not plot
+[ 9080.85s ->  9091.02s] it yet. I'm going to log it. So I've, I'll just log that I have the pre earnings IV as pre IV.
+[ 9091.02s ->  9107.95s] And I will log that I have the post IV as the post ID as the post IV. And now I can set the label as well.
+[ 9107.95s ->  9126.62s] Um, so I can do, I need to calculate the bulk crush. So I will say IV crush is equal to pre IV minus post IV
+[ 9128.24s ->  9137.12s] divided by pre IV times 100. That is my percent change in volatility. Now I can set that IV crush label.
+[ 9137.84s ->  9143.84s] Um, so effectively I'm going to say self dot current IV label is going to be configured as
+[ 9145.46s ->  9156.93s] we have text F I have the post IV. Yep. That's going to be the current IV label and the current metric section
+[ 9157.65s ->  9169.12s] self dot, um, we need to do the pre IV label. So we will configure that to have the text of
+[ 9170.80s ->  9186.64s] the pre IV value. The post IV label will have the text of the post IV value. And I think that should be
+[ 9186.64s ->  9193.89s] it. Nope. We need the IV crush as well. Self dot IV crush label dot config text is equal to,
+[ 9194.61s ->  9204.24s] and this is going to be the IV crush. Fantastic. So that's all of the labels there. Um, I can then
+[ 9204.24s ->  9213.20s] look to work on the pricing for the call, put straddle, and then update the labels associated with the
+[ 9213.20s ->  9220.16s] pricing information. So we now need to calculate option prices. So I'm going to say, try, let's try
+[ 9220.16s ->  9231.12s] days to expiry is equal to int, um, self dot days to expiration bar dot get. So this is in our entry form
+[ 9231.12s ->  9237.92s] in our user interface, we will accept a value error and just set days to expiration equal to 30. If that's
+[ 9237.92s ->  9250.00s] the case. Um, it's, I think it's reasonable to do this because the duration of the contract is just
+[ 9250.00s ->  9260.48s] going to impact the actual value of the bulk crush. It's not going to impact the relative performance
+[ 9260.48s ->  9267.84s] in terms of Vega. So yeah, the option value, if we fix it to 30 is going to be wrong, but we're just
+[ 9267.84s ->  9273.52s] approximating the Vega effect anyway on the option. So I don't think it matters all that much. Um, if
+[ 9273.52s ->  9278.96s] anything, your theta effect is going to be, it's going to help you if the expiration should be shorter.
+[ 9278.96s ->  9283.28s] Um, but again, I'll digress from this so that we can continue. So I'll just say days to expiration
+[ 9283.28s ->  9292.42s] bar dot set 30. If we have to default it, cause the user did something wrong. Okay. So now what we
+[ 9292.42s ->  9299.06s] can do is we can just start to compute these option pricing, um, or these option prices, I should say
+[ 9299.62s ->  9308.66s] time to expiry is equal to days to expiry divided by 365. And the, at the money strike is just going to be
+[ 9309.38s ->  9316.18s] equal to the pre-stock price. This is for simplicity, a good extension. You can try to work on yourself
+[ 9316.74s ->  9324.58s] is to try to write code to allow the user to enter their straddle strike price. Um, I'm just going to
+[ 9324.58s ->  9330.02s] use the pre-stock price for simplicity. Again, we're just looking to capture that net Vega effect to see
+[ 9330.02s ->  9336.42s] if the earnings event allowed you to capture the premium or not. And that could be because the
+[ 9336.42s ->  9342.58s] option expired that week or, um, not necessarily even capture the premium, but capture the implied
+[ 9342.58s ->  9350.77s] volatility crush effect in terms of your short Vega position. So now we can just go ahead and calculate
+[ 9350.77s ->  9357.41s] these prices. The pre-call price is equal to self dot black Scholes call. I need to use the pre-stock
+[ 9357.41s ->  9362.85s] price. You got the money strike price. You got the money strike price, the time to expiration, the risk-free
+[ 9362.85s ->  9376.83s] rate and the volatility, which is going to be dictated by the, what the pre IV. Now we need to do the
+[ 9376.83s ->  9386.19s] pre-pre-put price. This is equal to self dot black Scholes put. We have the pre-stock price. We have
+[ 9386.19s ->  9398.75s] effectively the exact same parameterization, the exact same arguments as the black Scholes call.
+[ 9411.02s ->  9420.29s] And we're going to do the same for the post call price. We'll call self dot black Scholes call. And then
+[ 9420.29s ->  9428.32s] the only thing that changes is the IV. We're going to use the post IV and we're going to use the post
+[ 9428.32s ->  9437.86s] stock price, post stock price. And that is also going to be true for the post put price. We'll do
+[ 9437.86s ->  9450.37s] the black Scholes put and we're going to use the post IV and the post, the post stock price.
+[ 9453.41s ->  9459.25s] Everything else remains the same. Yeah. We can decrement the time to expiration by a day if we want
+[ 9459.25s ->  9466.62s] to, to account for a theta value, but I'll leave that up to you. If you wanted to consider the, uh,
+[ 9466.62s ->  9472.10s] the change in time in terms of the theta value of your contract, feel free to do so.
+[ 9477.94s ->  9484.82s] The pre straddle price is equal to the pre call price plus the pre put price. The post straddle price
+[ 9486.32s ->  9498.05s] is equal to the post call price plus the posts foot price. Cool. Now let's compute the price changes.
+[ 9501.10s ->  9508.30s] Dollar change in call is the post call price less the pre call price. The put change in dollars
+[ 9510.62s ->  9519.73s] is equal to the post put price less the pre put price. And of course the straddle change in dollars
+[ 9519.73s ->  9530.24s] is equal to the post straddle price minus the pre straddle price. Very good. That means the long
+[ 9530.24s ->  9540.38s] straddle P and L is equal to the straddle change in dollar and the short straddle P and L is equal to
+[ 9540.38s ->  9551.87s] negative the straddle change in dollar. We now need to calculate the delta. So the pre call delta
+[ 9554.94s ->  9561.90s] is equal to self dot calculate delta. We need to give it the pre stock price. We need to give it the,
+[ 9561.90s ->  9568.86s] at the money strike price. We need to give it the time to expiration, the volatility connection lost.
+[ 9568.86s ->  9575.97s] Oh, no, we need to give it the pre IV. All right, market data connection reestablished.
+[ 9575.97s ->  9581.17s] All right, nice. We're back online. We need to give it the pre IV here because this is the delta before.
+[ 9581.17s ->  9587.41s] So this is the pre call delta before the earnings event. So we give it the pre IV and the option type
+[ 9587.41s ->  9593.25s] is just going to be a call. So I'm going to leave it as a default argument. That should be good for the
+[ 9593.25s ->  9599.09s] pre called delta. What about the pre put delta? It's the exact same thing, but we have an argument then
+[ 9599.09s ->  9608.66s] for the option type. So the pre, not pre call, sorry, the pre put delta is equal to self dot calculate
+[ 9608.66s ->  9617.68s] delta. We're going to do the exact same thing, but we also need to tell it that it is in fact a put,
+[ 9617.68s ->  9633.98s] not a call. Pre call delta. Yeah, that looks good. Now we need to do the, the straddle delta. So the
+[ 9633.98s ->  9642.43s] pre straddle delta is equal to the pre call delta plus the pre put delta. And now we can do the same
+[ 9642.43s ->  9651.52s] thing for posts. So the post call delta is equal to the calculate delta function, but now with the
+[ 9651.52s ->  9656.88s] post information. So it's the exact same thing we did with the black shoals. We use the post implied
+[ 9656.88s ->  9663.36s] volatility and the post stock price. Now we're using the post implied volatility and the post stock price.
+[ 9667.81s ->  9672.96s] Same thing for the put, we just needed an argument that we are working with a put.
+[ 9680.13s ->  9688.51s] And this is going to be the post straddle delta, which is the post call delta plus the post put delta.
+[ 9691.82s ->  9697.89s] Now we can calculate the change in delta, the delta of the delta. It's going to be the post straddle delta
+[ 9698.93s ->  9706.59s] minus the pre straddle delta. Good. And we're going to do the same thing now with vega. So the vega is
+[ 9706.59s ->  9718.58s] going to be the pre call vega, which is equal to self dot calculate vega. And here we're just going
+[ 9718.58s ->  9727.30s] to use the pre stock price. We will use the at the money strike price. We will use the time to
+[ 9727.30s ->  9735.90s] expiration that was given to us by the user, the risk free rate and the pre implied volatility.
+[ 9737.44s ->  9741.76s] And we will do the same thing for it really doesn't matter if we do it for the put.
+[ 9741.76s ->  9749.20s] It's the same vega. So I'm just going to use two times the call. So I will say in this case,
+[ 9753.02s ->  9759.62s] the pre straddle vega is equal to two times the pre call vega.
+[ 9759.62s ->  9769.54s] And then the post call vega is going to be the exact same thing as this, but with the post implied
+[ 9769.54s ->  9777.14s] volatility and the post stock price. So post IV and of course the post stock price.
+[ 9779.41s ->  9785.01s] Good. And that means the post straddle is of course going to be the post straddle vega
+[ 9785.57s ->  9795.38s] is two times the post call vega. And then we can compute the vega change
+[ 9796.77s ->  9806.21s] as just the post vega for the straddle less the post vega for the or the pre vega for the straddle.
+[ 9810.16s ->  9816.88s] Awesome. And now we're ready to actually update all of the labels. And then we just have to draw
+[ 9816.88s ->  9822.16s] the figure on the canvas and we'll be all set. You know, I just realized here that we have been
+[ 9822.16s ->  9830.16s] writing this option pricing code in this conditional statement. So we have self dot IV data is not none.
+[ 9830.96s ->  9838.88s] And really what we should have been doing this entire time is writing from this log outside of
+[ 9838.88s ->  9845.44s] the if statement. So what I'm going to do is I'm going to highlight all of this code and I am going to
+[ 9845.44s ->  9852.48s] press shift tab and I'm just going to tab it out one level. And that is going to be the intended
+[ 9852.48s ->  9860.64s] effect. Essentially what I'm saying is I don't need this pricing information to occur only if
+[ 9861.36s ->  9869.20s] IV data is not none. I'm going to have that outside here. And of course I can include some sort of
+[ 9869.20s ->  9877.52s] like conditional statement here to handle a case where it is none. But in this case, we're just
+[ 9877.52s ->  9885.20s] going to leave that where it lies and continue to move on here. So again, we just kind of tabbed out
+[ 9885.20s ->  9892.56s] from this pre earnings IV post earnings IV log message. This is right where we calculate the IV crush
+[ 9892.56s ->  9899.20s] percentage. And from there, we can just continue to march on down where we were computing all of our
+[ 9899.76s ->  9909.15s] option prices or all of the option pricing information. Okay, so not too big of a change there.
+[ 9909.71s ->  9916.99s] But now we're just going to start to update all of the labels. So I'm going to say self dot pre call
+[ 9916.99s ->  9925.10s] label dot config. And in this case, I'm going to say text is equal to we'll have a formatted string here,
+[ 9925.10s ->  9932.94s] pre call price. And I'm going to round it to two decimals. We're going to be doing this a lot. So I'm
+[ 9932.94s ->  9939.18s] just going to copy this dot config statement and do this for all of the labels. So self dot post call
+[ 9939.18s ->  9951.55s] label config, we're going to use the post call price, then we have self dot or I guess we can do a custom
+[ 9951.55s ->  9960.59s] color now. So we can say call color is equal to green. If the call change in dollar is greater than
+[ 9960.59s ->  9968.11s] zero, otherwise, we'll make it red. And then we'll say the call loss label. And we will paste the dot
+[ 9968.11s ->  9977.90s] config there. And we'll make the foreground color equal to the call color conditional. That's great.
+[ 9977.90s ->  9982.78s] And we're just going to do the same thing going down for the put and the straddle and everything
+[ 9982.78s ->  9989.82s] else. So I'm going to copy this, I'll paste this, we'll make this the pre put, we'll make this the
+[ 9990.78s -> 10000.45s] pre put price. So pre put price. This is the pre put label. This is the post put label.
+[10001.33s -> 10010.19s] This is the post put price. Instead of a call color here, we're going to do the put color.
+[10011.55s -> 10018.59s] And this is going to be the put change in dollar. And then instead of call loss, we are going to have
+[10018.59s -> 10027.84s] put loss label. And this is going to be the puts loss or the push the put change dollar. This should
+[10027.84s -> 10037.78s] also be the call change dollar here, call change dollar. And then this should be the put color.
+[10039.98s -> 10048.74s] Cool. We'll update the straddle prices in the exact same way. So here, instead of pre put label,
+[10048.74s -> 10058.00s] it's pre straddle label. This is the posts, post straddle label, this is going to be the straddle
+[10058.00s -> 10064.77s] color. And of course, this is going to be the straddle dollar change. This is going to be the
+[10064.77s -> 10077.68s] straddle dollar change. This is going to be the straddle color. This should be the straddle loss
+[10077.68s -> 10083.95s] label and then of course instead of the post put price it's going to be the post straddle price
+[10085.15s -> 10095.28s] and not the pre-put price but the pre straddle price great now we have to update the pnl
+[10095.92s -> 10104.64s] for the long straddle and the short straddle those labels so the long color is going to equal green
+[10105.60s -> 10112.08s] if the long straddle pnl is greater than zero otherwise it will be red and the short color is
+[10112.08s -> 10123.04s] just going to be the same thing so if the short pnl is greater than zero um we'll make it green
+[10123.04s -> 10132.11s] otherwise we'll make it red okay and it looks like i have n here instead of pnl so let me just go ahead
+[10132.11s -> 10141.10s] and find this so i've defined it as short straddle nl this should be pnl and then i'm going to come
+[10141.10s -> 10146.54s] down here and make this also pnl all right so that's the only place that we made those
+[10147.74s -> 10154.14s] that definition for short straddle pnl so maybe you caught this earlier um but up here roughly
+[10154.14s -> 10160.06s] line 670 we defined it as the negative change in dollar for the straddle so we're going to come
+[10160.06s -> 10167.02s] on down here and use that to decide the color of that label and then what i'm going to do is i am
+[10167.02s -> 10178.06s] going to effectively update the label now with the pnl numbers and that and that color so long pnl label
+[10178.06s -> 10184.62s] dot config i could paste the dot config again so i'll copy it and i'll paste it instead of the straddle
+[10184.62s -> 10190.46s] change in dollar it's going to be the long straddle pnl and i could also add a dollar sign before it if i
+[10190.46s -> 10195.74s] want to to make it a little more interpretable i can also add the percent change i'm just going to
+[10195.74s -> 10203.26s] leave it in terms of the pnl and i'm also going to add this foreground color of the long color
+[10207.58s -> 10217.09s] same with the short color short pnl dot config and i'll just paste the config and i will make this the
+[10217.09s -> 10229.02s] short pnl short shadow pnl and then this will be the short color all right very cool and then the
+[10229.02s -> 10237.14s] strike price label is just going to be i mean no color we can just make this the at the money strike
+[10237.14s -> 10245.55s] price that we had earlier we could do the same idea here with the uh pre and post spot so we have the
+[10245.55s -> 10254.75s] pre spot color as black um and the post spot color as green or red um based on the movement so i'm just
+[10254.75s -> 10262.51s] going to make the post spot color equal to green if the post stock price is greater than the pre stock
+[10262.51s -> 10272.99s] price otherwise we'll leave it as red and the labels are just going to be what self dot pre spot is going
+[10272.99s -> 10282.40s] to be configured as and i'll just copy this config it's going to be the pre stock price and the
+[10282.40s -> 10291.36s] foreground color we can just make it as let's just say black to default and then the post um stock the
+[10291.36s -> 10298.24s] post spot price we want that to take on the color right of the movement based on whether or not it moved
+[10298.24s -> 10307.14s] up or down will make it green or red and that's going to be the the post stock price here cool
+[10309.66s -> 10318.11s] we also need to update the greeks um again we could use colors here um it's going to be entirely
+[10318.11s -> 10325.63s] up to us i'm just going to leave it in terms of or i'll just make the absolute change red or green so
+[10325.63s -> 10334.96s] the delta color is going to be green if what the absolute value of the post straddle delta is less
+[10334.96s -> 10343.68s] than the absolute value of the pre straddle delta otherwise we'll make it red and we can say self dot
+[10344.24s -> 10352.72s] pre delta label we will configure it um no color for this one this is not a change this is the pre
+[10352.72s -> 10364.32s] delta specifically for the straddle and then we're going to do the post delta the post delta label
+[10367.98s -> 10375.94s] and we will make this we will configure it with the color so here we're going to rock the delta color
+[10380.14s -> 10395.09s] and this is going to be the post straddle delta the change in our delta i'm sorry no we don't want
+[10395.09s -> 10401.65s] to use the delta color here we only want to use it for the um absolute change right that's the delta
+[10401.65s -> 10411.94s] color yeah and that's going to be the delta change so if the absolute change in our delta is
+[10412.90s -> 10419.81s] um negative it'll be red if it's positive it'll be green and now we'll just do the same thing with
+[10420.53s -> 10427.65s] vega and then all we have to do is create our visualizations and we're done so vega color is equal
+[10427.65s -> 10440.03s] to red if the vega change is less than zero otherwise it'll be green the pre vega label
+[10441.07s -> 10452.74s] we are going to configure it with no color and then i am going to make the pre straddle vega the value
+[10452.74s -> 10463.44s] for that label same thing with the post vega label i am going to do the same thing the post vega
+[10464.99s -> 10482.77s] the post straddle vega and then the vega change label i am going to effectively throw in the vega change
+[10483.41s -> 10487.49s] and i will consider the foreground color as the vega color that we have here
+[10487.49s -> 10498.56s] and that's all of the labels to update on the dashboard that i can see now it's time to create
+[10498.56s -> 10511.12s] the visualizations and we need to build this function so i'm going to say def create visualizations
+[10513.23s -> 10520.03s] and now we can start to build the charts for our window and this is not going to take nearly as long
+[10520.03s -> 10525.79s] as what we had just done so once we build these charts we are going to be all wrapped up and we
+[10525.79s -> 10532.51s] will be ready to test our application let's go ahead and wrap up by creating this last function to plot
+[10532.51s -> 10539.55s] the price path the implied volatility path and the vix path and we can go ahead and debug our application
+[10539.55s -> 10545.71s] because no doubt we made a mistake along the way in any case let's go ahead and wrap up here so we're
+[10545.71s -> 10554.03s] going to clear this axis we are going to clear this one as well and we will say if self dot x1 twin
+[10554.59s -> 10565.57s] is not none we are going to try to remove it effectively we're just clearing our data here
+[10566.82s -> 10579.33s] and if we get an exception we'll pass in any case we will set this equal to none great let's start by
+[10579.33s -> 10588.77s] plotting some information this is going to be plot one this is stock price and iv around earnings so
+[10588.77s -> 10595.17s] i'm going to say earnings window is equal to pd dot date range the start is going to be self dot
+[10595.17s -> 10602.05s] earnings date minus the time delta of five days so we're going to go five days back you can make this
+[10602.05s -> 10607.65s] whatever you want assuming you've queried enough data from interactive brokers the end date is going to be
+[10607.65s -> 10616.75s] the earnings date of course plus a time delta of five the frequency is naturally going to be days
+[10617.39s -> 10624.51s] and that is our earnings window the window for our stock is going to be dictated by the data frame and
+[10624.51s -> 10630.75s] the index so the window for the stock that we are going to plot is equal to self dot stock data
+[10630.75s -> 10637.87s] we're going to access specifically this window of self dot stock data dot index where it's greater than
+[10637.87s -> 10655.10s] or equal to the earnings date less the time delta of five days and of course where we observe less than
+[10655.10s -> 10665.49s] or equal to the earnings date plus a time delta of five days this is just saying plus or minus five days
+[10665.49s -> 10675.63s] around the earnings window okay now we can plot everything self dot x1 dot plot we're going to do
+[10675.63s -> 10683.39s] on the x-axis the window of the stock the index that is the date the window stock the associated close for
+[10683.39s -> 10693.81s] those dates around the earning window we will style it nicely we will give it a good line width we will
+[10693.81s -> 10708.27s] give it a label of stock price we will add a vertical line for the event date itself that occurs on the
+[10708.27s -> 10717.17s] earnings date we will make that red we'll make it dashed for interpretability we'll make it a little
+[10717.17s -> 10735.79s] transparent and we will label it the earnings date we're going to set the x label to be of course the date
+[10735.79s -> 10745.79s] date we are going to set the y label to be the stock price in dollars right because that's the currency
+[10745.79s -> 10769.26s] for our contract we can make that blue let's set the label color for the tick on the y-axis to be blue
+[10769.26s -> 10789.66s] and let's set the overall title of the plot to be stock price around earnings now we're going to
+[10789.66s -> 10795.50s] have a twin axis here with implied volatility right so just keep that in mind let's also add a grid i
+[10795.50s -> 10799.42s] think it looks nicer with the grid you can choose to remove it i'm going to let the alpha value of the
+[10799.42s -> 10805.90s] grid be 0.3 so it's relatively see-through and i'm going to put the legend in the upper left hand corner
+[10809.98s -> 10819.74s] okay we're also going to plot the implied volatility but on a twin y axis so this is going to be on a
+[10819.74s -> 10829.54s] twin y axis we will say if self.iv data is not none and the length of the iv data is in fact greater than
+[10829.54s -> 10839.38s] zero the window for the iv is equal to self.iv data and of course this is going to match the exact same
+[10839.38s -> 10850.59s] window that we had above so i'm going to copy this i'm going to paste it in here and instead of stock
+[10850.59s -> 10864.54s] data i am going to be using the iv data but it's the same window okay so we're using the iv index the
+[10864.54s -> 10871.50s] iv data and the iv index that's going to be my window iv and now i'm going to say if the length of the window
+[10871.50s -> 10880.22s] of the window iv is in fact greater than zero we can just say self.axe twin week is equal to self.axe1.twin
+[10880.22s -> 10897.23s] axis and now i can say iv percentage is equal to window iv implied vol and we're going to scale that by 100
+[10897.23s -> 10903.31s] we're going to actually bring it to a percent and i will finally be able to plot this now as axe one
+[10903.87s -> 10910.11s] twin dot plot window iv dot index right that's our date range we have the iv percentage
+[10910.75s -> 10920.67s] and of course we can style this nicely we'll give it a nice line width the label will be the implied
+[10920.67s -> 10933.04s] i'm going to plot i'm going to label it as the annualized implied volatility then i can say
+[10935.14s -> 10947.73s] let's set this twin to have a y label of implied volatility this is annualized annualized implied
+[10947.73s -> 10955.28s] volatility for that date range can make it look nice if we give it a color we'll make it green
+[10955.28s -> 10974.59s] and i will set the tick params on the y axis as well to have the color green and then axe one twin
+[10976.37s -> 10999.84s] i'll put the legend in the upper right okay that'll do it for the that'll do it for the
+[10999.84s -> 11011.06s] the implied volatility data now we're ready to plot the vix data so for the vix data it's roughly the
+[11011.06s -> 11018.46s] same thing as well we have that same window right so if there is vix data then we need a window for
+[11018.46s -> 11025.89s] the vix self dot vix data and this is going to be the same mask that we had earlier i'll just copy this
+[11027.33s -> 11034.13s] and i am going to paste it down here and i'm going to use the vix data instead of the iv data
+[11035.01s -> 11040.21s] and then i can just go ahead and plot all this information on that second axis right this is not
+[11040.21s -> 11049.82s] a twin axis now this is just going to be a second axis self dot axe2 dot plot window vix dot index window
+[11050.46s -> 11058.30s] vix close so that's the date and the vix close we'll make this in purple and we'll give it a nice
+[11058.30s -> 11067.68s] line width and the label of course will be the vix the vertical line we will add as well to this plot
+[11067.68s -> 11075.84s] for the earnings date so x is equal to self dot earnings state the color we can make it red we'll
+[11075.84s -> 11091.22s] make it dashed dashed and then the alpha will make it a little transparent the label will be the earnings
+[11091.22s -> 11115.81s] date we will set the x label to date set the y label to vix level set the title to vix around the earnings
+[11115.81s -> 11126.16s] date and then set the grid to be the same style as the other pro other plot for for consistency there
+[11126.88s -> 11136.48s] and then we will also display the legends wherever wherever it sees fit all right if there isn't any
+[11136.48s -> 11145.28s] vix data to show we could technically plot the straddle prices as well to show the comparison so
+[11145.28s -> 11151.44s] for whatever reason if we don't query vix data we could instead of displaying the vix path we could
+[11151.44s -> 11157.92s] show the straddle the net change in straddle position as a chart i would certainly encourage
+[11157.92s -> 11164.24s] you to do that if you are interested i'll leave it as essentially an extension so here effectively it
+[11164.24s -> 11175.25s] would just be else and then within this plot the straddle charts instead with the relative value the
+[11175.25s -> 11180.53s] relative value change and pre versus post and really all of the heavy lifting is done for you
+[11180.53s -> 11186.45s] because you know we know what the implied volatility is we we wrote all the pricing functions we know the
+[11186.45s -> 11192.29s] pre and post stock price we know what the straddle was priced at before and after it shouldn't be too
+[11192.29s -> 11197.65s] difficult to come up with the straddle points and actually plot those charts which would be a nice
+[11197.65s -> 11205.41s] extension if we don't have access to vix data but other than that assuming that we do have access to
+[11205.41s -> 11213.73s] vix data then we can just format the charts so that the dates are displayed in a nice nice fashion so i'll
+[11213.73s -> 11225.97s] say axis one tick parameters we will say axis is equal to x we will have a rotation of 45 degrees and
+[11229.06s -> 11236.90s] i need to pass here if i'm gonna have a else statement there so the axe one will have a 45 degree rotation
+[11236.90s -> 11244.66s] for the dates so they're interpretable and then if self dot vix data is not none then we will also rotate
+[11244.66s -> 11253.46s] those axis um those dates as well so we'll do tick params axis is equal to x and we will do a rotation
+[11253.46s -> 11261.14s] of again 45 degrees and now we can just do self dot fig dot tight layout and we can just do self dot
+[11261.14s -> 11269.78s] canvas dot draw and we will effectively be drawing all of those charts on our canvas and that is going to
+[11269.78s -> 11275.94s] do it for this create visualizations function we are now ready to tie all of the pieces together look
+[11275.94s -> 11282.34s] at this we've written almost a thousand lines of code together with no ai this is just like the good
+[11282.34s -> 11291.14s] old days learning how it was intended to be so let's go ahead now and create our main load function and we can
+[11291.14s -> 11297.14s] debug our app and see if everything works let's create this main load function now i'm going to back
+[11297.14s -> 11303.38s] out of the class we are effectively done writing code in that earnings trading dashboard so now what
+[11303.38s -> 11311.22s] we're going to do is say death main and we are going to say root is equal to tk dot tk remember in our
+[11311.22s -> 11319.14s] constructor what do we have here we have to pass a root a tk window root so we can draw all of these assets
+[11319.14s -> 11324.10s] on top of it all of these widgets that's exactly what we're doing here we're going to create this root
+[11324.10s -> 11331.54s] then i will say app is equal to earnings trading dashboard i'm going to pass it this root from tk
+[11331.54s -> 11341.06s] dot tk that's exactly what it's expecting and i will call root dot main loop now i can say if name is
+[11341.06s -> 11350.34s] equal to main let's go ahead and run this main load function and that is going to do it now let's give it
+[11350.34s -> 11357.70s] a run and see how it works all right moment of truth here i click run and it looks like i have an error
+[11357.70s -> 11372.54s] on line 599 so let's go there on line 599 it would appear that i have an unmatched parentheses
+[11373.42s -> 11380.78s] but that is not the issue it looks like i am using quotes in a formatted string so i need to use a
+[11380.78s -> 11396.03s] a i need to do this more correctly here i need to format this with single quotes instead so it doesn't
+[11396.03s -> 11409.49s] look to close out the quotes of the string in my formatted string statement okay give it another run
+[11410.37s -> 11417.84s] whoa look at that she ran correctly it looks like all of the labels populated correctly let's go ahead
+[11417.84s -> 11424.32s] and see if we can connect to interactive brokers see if my interactive broker server is still up
+[11425.20s -> 11431.84s] looks like i'm getting unable to connect client id is already in use up looks like i have my other
+[11431.84s -> 11443.44s] client running still let me go ahead and close this i will close this let me go ahead and close
+[11443.44s -> 11456.02s] the other client all right now let's give this another shot give this a run we got the dashboard
+[11456.02s -> 11461.78s] up here let me connect looks like we've connected successfully let's see what happens when i click
+[11461.78s -> 11466.90s] analyze iv crush all right looks like we're getting a whole bunch of information here
+[11467.62s -> 11472.66s] and it looks like yep i'm getting the stock price the vix level the current iv
+[11472.66s -> 11481.81s] i have my pre-earnings iv and my post earnings iv and the percentage of iv crush okay looks like i'm
+[11481.81s -> 11493.28s] getting a couple of errors here when it comes to the perform iv crush function see what we got here
+[11495.02s -> 11501.90s] the calculate delta is missing one positional argument sigma so let's go to the call delta and
+[11501.90s -> 11514.08s] the put delta and see what we got going on there this is on line 672 so let's go over to line 672 here
+[11514.88s -> 11525.33s] and it looks like it is expecting the call as an argument let's see how we defined the delta
+[11525.97s -> 11530.85s] in terms of the option type we have one two three four five parameters with the option type
+[11530.85s -> 11541.63s] it should be defaulting it should be defaulting to a call let's see what we provided the function
+[11544.67s -> 11561.01s] ah we're missing the we're missing a an argument we're missing the risk-free rate so we need to add
+[11561.01s -> 11570.35s] self dot risk-free rate as well after the time to expiration so i will add that now
+[11570.35s -> 11583.65s] to that delta function the pre delta functions and the post delta functions all right that should do it
+[11584.29s -> 11590.85s] let's go ahead and restart this guy here and see what else we come up with so i'm gonna run this guy
+[11590.85s -> 11598.46s] again analyze the iv crush all right we got some good information here it looks like we're querying
+[11598.46s -> 11608.30s] everything correctly um i think if we look at our terminal here um we're coming up with this unknown
+[11608.30s -> 11618.94s] color read it looks like that should be red um that occurs maybe on line 724 it would appear so let's go
+[11618.94s -> 11631.60s] over to line 724 and yep i write it as read here so we'll leave that as as red let's give this another
+[11631.60s -> 11646.74s] another go give this a run give this a connect analyze iv crush all right and it looks like now we're getting
+[11646.74s -> 11653.46s] somewhere we're getting the delta as well it looks like the implied volatility needs to be scaled to be in
+[11653.46s -> 11661.30s] terms of a percentage unit so we can make that change and it looks like the post earnings iv is incorrect
+[11661.30s -> 11671.14s] here it should be significantly lower than the pre-earnings iv so we can remedy that in a moment but
+[11671.14s -> 11679.06s] before we do that let's go ahead and fix this error here it looks like we have an error in terms of the
+[11679.06s -> 11699.82s] the line width this is on line 780 i just spell it wrong 780 is line width there it is line width
+[11701.60s -> 11711.95s] give this another run let's see if we can get it to the charts give this a connects give this an analyze
+[11711.95s -> 11718.35s] iv crush would you look at that all right we are getting the correct chart information
+[11719.07s -> 11725.79s] we're getting the correct vol information this is exactly the same chart we saw in the demo at the
+[11725.79s -> 11736.99s] start of the video and now we just have to fix this pre and post earnings iv and that should be
+[11736.99s -> 11742.19s] everything if we take a look here looks like the pre earnings call and the post earnings call
+[11742.83s -> 11750.99s] are both reasonable and the long and short straddle pnl are in the correct direction right the long
+[11750.99s -> 11757.55s] straddle pnl lost money the short straddle pnl made money we just have to scale the vol in terms of the
+[11757.55s -> 11766.03s] correct units so i've observed the main source of the error it comes from where we create the date
+[11766.03s -> 11774.67s] masks for our pre and post implied volatility and for the pre and post vix around the earnings date
+[11774.67s -> 11779.39s] so what we've done here is effectively what we're trying to do is apply a mask where we have this
+[11779.39s -> 11786.51s] vertical line and we're going to look for the vix data closest before the earnings event and after
+[11786.51s -> 11791.39s] the earnings event and the same with the implied volatility data but what i had forgotten to do is
+[11791.39s -> 11798.67s] change the the pre to the post when we're looking for the closest data on the other side of the earnings
+[11798.67s -> 11806.19s] event so for the vix this was on line 618 or you know around 618 for your program where we look at the
+[11806.19s -> 11810.51s] previous date and the post vix date this needs to be greater than or equal to and this should
+[11810.51s -> 11818.51s] be the post earnings date and the same thing for this mask over here this is for the post earnings
+[11818.51s -> 11827.41s] date cool and then we need to apply the same fix down here for the ivs for the implied volatility
+[11827.41s -> 11834.05s] so this is going to be greater than or equal to the post earnings date and this is going to be
+[11834.05s -> 11843.33s] greater than or equal to the post earnings date fantastic now if we go about running this guy here
+[11843.33s -> 11851.63s] we should see the correct values that we saw at the start of this video if i hit analyze iv crush
+[11851.63s -> 11859.55s] then yep we get the stock price the correct fix level the correct implied volatility and in fact
+[11859.55s -> 11866.69s] we realize the correct long short straddle pnl the correct changes in call and put value the correct
+[11866.69s -> 11873.15s] end of day spot price the average spot price and the correct percentage of iv crush it doesn't
+[11873.15s -> 11880.49s] actually matter if the implied volatility is scaled by 100 in terms of a percentage the proportion in
+[11880.49s -> 11887.29s] terms of the change is going to be the same right it's just a linear operation so that is effectively
+[11887.29s -> 11893.05s] the earnings event trading dashboard we built it together from scratch almost a thousand lines of
+[11893.05s -> 11898.93s] code just like the good old days i will leave it to you if you would like to clean this up a little bit
+[11898.93s -> 11905.93s] add some more colors if you want to round these decimals you can round them to maybe two places
+[11905.93s -> 11912.61s] format them in terms of a percentage so on and so forth but in any case that is going to do it
+[11912.61s -> 11923.92s] for this video we wrote 1 000 almost a thousand lines of code to build this to build this event
+[11923.92s -> 11930.04s] trading dashboard and that's going to do it for this video on how to build an earnings event trading
+[11930.04s -> 11935.96s] dashboard i hope you enjoyed i hope you learned something this video certainly took a lot of effort
+[11935.96s -> 11943.56s] to create so please like comment subscribe share it helps me out tremendously it is always greatly
+[11943.56s -> 11949.48s] appreciated join our discord if you want to connect with me and other quants and the quant guild community
+[11949.48s -> 11956.66s] check out quantguild.com if you'd like to master your quantitative skills other than that thank you
+[11956.66s -> 11960.66s] so much for watching and i will see you in the next video

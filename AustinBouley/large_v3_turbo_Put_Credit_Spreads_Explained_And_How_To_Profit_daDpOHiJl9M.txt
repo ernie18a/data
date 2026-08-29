@@ -1,0 +1,75 @@
+[    0.00s ->     4.72s] My name is Austin and I am here with 10% Credit Spreads. My whole goal is to teach you how to make
+[    4.72s ->     9.48s] 10% a month for free. I give you all the strategies step by step and hope that one day you join me
+[    9.48s ->    14.56s] in my Inner Circle program. All right, let's jump right into it here. This is how I put credit
+[   14.56s ->    19.10s] spread works. It makes money based on three different scenarios. Number one, the market goes
+[   19.10s ->    24.66s] up, you make money. Number two, the market stays the exact same. And number three, the market goes
+[   24.66s ->    28.82s] down just a tiny bit. So that's a lot more of a chance of winning. You have a higher chance of
+[   28.82s ->    32.76s] winning than buying a stock where if it goes up, you make money. If it goes down, you lose. Instead,
+[   32.84s ->    36.14s] if it makes up, you make money. If it goes sideways, you make money. If it goes down a bit, you make
+[   36.14s ->    40.62s] money. That's the beauty of put credit spreads. Let me explain how this works and why it works.
+[   40.68s ->    43.84s] The first thing I want to show you is how to set up a put credit spread because that will help you
+[   43.84s ->    48.38s] understand how this works. So first off, we go to a stock. If you're sitting here, I'm trading
+[   48.38s ->    52.06s] credit spreads on a small account to show that it's possible. I also trade put credit spreads
+[   52.06s ->    56.70s] on a six-figure account. So again, you can do it on anything you want. But again, we're going to go
+[   56.70s ->    60.68s] here. We have to have options enabled on the broker platform we're using because this is an
+[   60.68s ->    65.56s] option strategy. You can go to builder if you want. But again, I want to show you how to do it
+[   65.56s ->    70.22s] step by step. But if you go to builder here, you select an up move and you have put credit spread
+[   70.22s ->    76.22s] right here. But we're going to do this ourselves. So let's reset this here, get out of builder and
+[   76.22s ->    81.88s] let's set this up. So let's say we're going about, let's say set seven days out on our expiration.
+[   82.38s ->    84.88s] And what we're going to do here is we're going to switch over to the put side because they put
+[   84.88s ->    89.14s] credit spread. And now again, typically, if you ever heard of puts, puts make money or
+[   89.14s ->    93.88s] puts go up in value as the market drops. And that is still true. However, when you sell
+[   93.88s ->    98.30s] something to open, it does the opposite. So now since we're selling a put credit spread,
+[   98.36s ->   101.76s] we sell to open this, which I'll explain here in a second. That means that when the market
+[  101.76s ->   106.20s] goes down, we lose money. When the market goes up, we make money. So it's the reverse when
+[  106.20s ->   110.84s] we're selling first. All right, here we go. Let's set up a put credit spread. You typically
+[  110.84s ->   114.32s] go out of the money, which means that this is where the stock is currently trading.
+[  114.32s ->   120.68s] Anything above this on a put is in the money. Anything below it is out of the money. So
+[  120.68s ->   125.22s] let's go around here. So what we do to set up a put credit spread trade is we sell a first
+[  125.22s ->   129.60s] strike. And this, how do we pick the strike? Well, the strike is picked based on where we
+[  129.60s ->   136.64s] think SPY will stay above by this expiration date. Let's say I think SPY currently trading
+[  136.64s ->   143.78s] at 393 will stay above 383 by March 27th. So in seven days. So that's it. Then what I'm going
+[  143.78s ->   148.64s] to do is I'm going to sell my 38. I'm going to sell the 383 strike price. So right here,
+[  148.68s ->   156.22s] let me add this. So here we go. Sell 383. Okay, there we go. Sell 383. And then what we're
+[  156.22s ->   160.58s] going to do is we're going to come because if we just sell a 383 put, we have this max
+[  160.58s ->   166.12s] profit, we have unlimited loss. And so we don't want unlimited loss. Instead, we want to actually
+[  166.12s ->   171.20s] cap our losses in case the trade goes against us. So what we do with that is we buy another
+[  171.20s ->   175.66s] put below that. I like to say a $1 strike, which means I just pick the next strike below
+[  175.66s ->   179.82s] it. But you can technically pick a few strikes out is going to increase your max profit. It's
+[  179.82s ->   185.32s] also going to increase your max loss as well. But I like to stay and I recommend staying
+[  185.32s ->   190.34s] within one width. So you can see here if I sold the 383 or I'm selling that one, I'm going
+[  190.34s ->   195.02s] to buy the 382. So I'm going to buy this one come in here and I can collect a credit of 17
+[  195.02s ->   200.06s] cents. Now let me just tell you the rules for it work if we're working out here is that if
+[  200.06s ->   205.08s] you're collecting 17 cents, since each option is equivalent to controlling 100 shares, you're
+[  205.08s ->   210.96s] actually being paid $17. They're paying you $17 to put this trade on. So you're giving somebody
+[  210.96s ->   215.36s] else insurance and they're paying you the $17 to put this trade on. And what happens is
+[  215.36s ->   221.80s] if the stock, if SPY stays above your first strike above 383 by March 27th, which means
+[  221.80s ->   228.50s] on March 27th at the end of the closing day for that trading day, if it's above 383, you
+[  228.50s ->   234.30s] will get to keep the whole $17 and nothing else happens. You get $17 for free. If not,
+[  234.36s ->   237.76s] if it goes below 383, then you're going to hear what is called assignment risk, which
+[  237.76s ->   241.96s] where these options are going to be assigned to the person who bought them from you or sold
+[  241.96s ->   250.02s] them to you, who bought from you. Sorry. Anyways, so how that works is you're putting up the difference
+[  250.02s ->   256.00s] here. So 383 to 382, that's a $1 difference. Now remember options represent 100 shares each.
+[  256.00s ->   263.78s] So this $1 difference gives us a max loss of $100. However, what's amazing is that we get
+[  263.78s ->   270.16s] we collect $17. So although we have a risk of $100, we get to add the set the 17 back giving
+[  270.16s ->   276.92s] us an $83 max loss. So that's how you calculate your max loss and your max profit. So we can
+[  276.92s ->   281.12s] come in here, you can see it's giving us it's saying 17 credit here, but it's expecting us
+[  281.12s ->   286.20s] to collect $20. So if we collect 20, then we have an $80 risk and our breakeven is 382.80.
+[  286.54s ->   291.26s] So that is how you set up a put credit spread. Now, what exactly does this mean for you? Well,
+[  291.28s ->   295.36s] I wrote a blog article on this to explain in depth. So if you like reading more, go check,
+[  295.44s ->   299.76s] go check this out. But with the chart right here, this is what it looks like when we sell the first
+[  299.76s ->   306.50s] put contract and then we buy the next put contract, which defines our risk. We make money as the stock
+[  306.50s ->   310.78s] goes up. So this is the stock price. As the stock goes up, we continue to make money, the same profit.
+[  311.24s ->   315.58s] If it stays neutral, which means that because what typically happens is the stock price is right
+[  315.58s ->   320.42s] here and we're selling the first strike way out of the money. So we have this. So if the stock goes
+[  320.42s ->   325.40s] up, we make money. If it stays neutral and trades around this area, we make money. If it goes down a
+[  325.40s ->   330.46s] bit, we even make money. And I typically on my credit spreads go out about two to 3% below that
+[  330.46s ->   335.64s] current market price. So that means the stock can drop up to 3% and I'm still making money.
+[  335.64s ->   340.74s] Again, when you trade with the trend, it's way easier. Anyways, that's how you make money with
+[  340.74s ->   344.62s] put credit spreads. If it goes against you, you're going to hit that max loss. Now, typically,
+[  345.00s ->   350.68s] if it's trading around at the money, when it's near expiration time, you can typically buy back
+[  350.68s ->   356.78s] for less than your max loss. Therefore, you're not going to realize that full max loss. Anyways,
+[  357.22s ->   363.34s] the bare minimum is put credit spreads to make money on the way up, neutral, and even slightly down.
+[  363.34s ->   367.16s] You set them up by selling the first put and buying a put below it for protection.
+[  367.62s ->   370.30s] And that is how it works. Right, guys, I hope this made sense. If so,
+[  370.42s ->   372.60s] please smash the subscribe button and I'll see you in the next video.

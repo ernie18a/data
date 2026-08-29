@@ -1,0 +1,63 @@
+[    0.00s ->     4.48s] Hey guys, welcome to this video. We're going over how much money you need to collect on your credit
+[    4.48s ->     9.36s] spreads based on your win rate. So guys, this is very important because if you know your win rate,
+[    9.42s ->    14.38s] then you can know how much you want to collect or vice versa. How much you collect is going to be
+[   14.38s ->    19.56s] comparable to what your win rate is when you're trading credit spreads. So let's break this down
+[   19.56s ->    24.08s] real quick and then I'll actually give you some tips on how I do it. So there's an idea behind
+[   24.08s ->    29.56s] or with credit spreads, if you've never heard it before, called picking up pennies in front of a
+[   29.56s ->    35.48s] steamroller. All right, because as a credit spread trader, you can have a very, very high win rate
+[   35.48s ->    41.32s] going super far out of the money. Meaning that if the stock never reaches that level, you make money
+[   41.32s ->    46.54s] and if you're going way out, the stock may never hit that level. So there's a 99% chance of you making
+[   46.54s ->    55.02s] those $2. But the problem is when that stock does go below the $2, when does go or goes below your
+[   55.02s ->    61.02s] strike price, you're going to have a very huge loss and it's going to take out 15 to even 20 of your
+[   61.02s ->    64.94s] wins. And so that's the idea of picking up pennies in front of a steamroller. You want to make sure
+[   64.94s ->    70.40s] you're collecting enough money so that when that loss does occur, considering it's the full max loss
+[   70.40s ->    74.60s] and you have no management in place, but if you experience the full max loss, you don't want it to
+[   74.60s ->    79.42s] take out every single win you've had. And so again, that's why we are discussing this because a lot of
+[   79.42s ->    85.50s] traders do not understand, specifically credit spread traders, do not get the idea of making
+[   85.50s ->    90.46s] sure that your winners and max loss offset each other based on your win rate. All right, so that's
+[   90.46s ->    94.10s] just what I wanted to talk about. And so how we determine this type of level is called long-term
+[   94.10s ->    99.12s] expectancy. So when we're talking about this, we need to determine, okay, if I'm going to win this
+[   99.12s ->   103.40s] amount of times and when I win, I'm going to win this much. And if I lose, I'm going to lose this much,
+[  103.46s ->   109.26s] how much am I going to make long-term? So it's the idea of if you flip a coin, you statistically have a
+[  109.26s ->   118.27s] 50% chance of flipping heads, right? Let's say on heads, you make $20 and on tails, you make $30.
+[  118.71s ->   123.05s] Should you take that trade? Should you continue flipping that coin? And that is what long-term
+[  123.05s ->   127.97s] expectancy shows you based on your win rate, based on how much you'll win. And then the amount that
+[  127.97s ->   134.43s] you win, your win amount size and your win loss size or your loss amount size, what your long-term
+[  134.43s ->   139.09s] return will be. And so that's exactly how that is calculated here. It's your win rate
+[  139.09s ->   146.25s] times your win size minus your loss rate, which is essentially one minus your win rate times your
+[  146.25s ->   152.23s] loss size. So for example, if you have an 85% win rate on your trades and for your average winner,
+[  152.35s ->   158.33s] you're making $30 and for your average loser, you're making 10, then that means that you have
+[  158.33s ->   165.37s] an 85% chance of making 30 minus your loss rate, which is one minus 0.85 to get your $10. That means
+[  165.37s ->   171.05s] you have a long-term expectancy of 24, which is very good. Any positive number is good. Anything
+[  171.05s ->   177.33s] above or five or above is what I shoot for. All right. So here we go. What should you be trying
+[  177.33s ->   182.71s] to collect based on your win rate? So if I can zoom in here, get a good little look at this chart.
+[  183.37s ->   188.33s] I put this together here. This is what your long-term expectancy looks like based on your credit
+[  188.33s ->   193.69s] collected. So now when we're looking here, we can look and identify based on our long-term expectancy
+[  193.69s ->   198.77s] and what we're doing here. So this top line is our long-term expectancy. Zero means that long-term
+[  198.77s ->   202.79s] we're going to break even. We're going to have a positive expectation of five, a positive expectation
+[  202.79s ->   208.35s] of 10, or a positive expectation of 15. Again, the higher the positive expectation, the better,
+[  208.47s ->   213.45s] but anything above zero is obviously good long-term. Your win rate, how often you win your trades,
+[  213.45s ->   218.99s] and then the credit collected. So let's say you're putting on a put credit spread. Again, this applies
+[  218.99s ->   225.83s] to a $1 with credit spread. That's what I did the math for. Let's say you're able to collect 30 cents
+[  225.83s ->   231.11s] on a $1 with credit spread. If you come down to 30 cents, you can see here that there are a couple
+[  231.11s ->   236.55s] things can happen. Number one, it means that you have a long-term expectancy of 10 and you have a
+[  236.55s ->   244.01s] rough win rate of 80%. But again, you can also move that around, right? If you come up around here,
+[  244.01s ->   249.23s] you're getting closer to 30% and that would be roughly a 90% win rate. So you can see here how
+[  249.23s ->   253.25s] it changes based on what you're doing, but basically just identify. Let's say, okay, cool. I can collect
+[  253.25s ->   259.57s] 15 cents on this trade. Okay. If I can collect 15 cents, that's going to give me roughly a 90% win
+[  259.57s ->   264.65s] rate. And so that's again, how you can use your credit collected or vice versa. Let's say you're
+[  264.65s ->   269.53s] trading a swing trading strategy. Let's say you researched on YouTube, a swing trading strategy
+[  269.53s ->   274.95s] and, or let's say you back tested one either way, but you're using a strategy, a strategy that you
+[  274.95s ->   279.63s] know, the historical win rate up. Well, go to the historical win rate. Okay. Let's say it's a
+[  279.63s ->   284.39s] roughly a 70% win rate. Okay, cool. If I want to make money, I need, I need to collect at least
+[  284.39s ->   293.31s] over here, at least 35, um, 35 cents, um, on this credit spread to make money long-term, or maybe I have
+[  293.31s ->   298.67s] a 80% win rate on this trade. I need to collect at least 25 cents. That's going to allow me to go out
+[  298.67s ->   302.71s] further. So anyways, guys, this isn't a very important concept to make sure you understand
+[  302.71s ->   307.21s] based on your win rate that you are collecting enough money. If you're not the longterm, you're
+[  307.21s ->   310.57s] going to lose the money and it's just not going to work out well because you're going to have a loss
+[  310.57s ->   314.29s] and it's going to take out way more of your wins than you want it to. All right, guys, if you're
+[  314.29s ->   320.55s] learning how I do this and how I have a 90% win rate while collecting 15, even 20 cents with my
+[  320.55s ->   326.75s] strategy. Again, uh, I share everything linked below. There's a free PDF to access all the strategies
+[  326.75s ->   331.65s] that I put together. You get them all for free. So click below and check them out. Uh, if you don't
+[  331.65s ->   334.67s] want to do it yourself, if you want my alerts and straight to your phone, you can click that
+[  334.67s ->   337.21s] in the description as well. All right, guys, see you in the next video.

@@ -1,0 +1,16 @@
+[    0.66s ->     5.68s] In this video, we're going to walk through how to put on a call credit spread trade using the
+[    5.68s ->    10.82s] TastyTrade broker. So for this, we're going to be using and following the step-by-step system
+[   10.82s ->    15.04s] in the 10% credit spreads broker walkthrough section. So for instance, if I click here,
+[   15.34s ->    19.64s] then I click on TastyTrade, it's going to walk me through how to set up this call credit spread
+[   19.64s ->    26.30s] for TastyTrade. So step one, we need to locate the expiration date. What date are we looking for
+[   26.30s ->    29.80s] once we're on the trade tab? So once we know that, which is listed here,
+[   29.80s ->    35.18s] if you're a 10% credit spreads member, next step two is set up a call credit spread. So you need,
+[   35.28s ->    39.80s] you need to know what strike am I selling and which strike am I buying? When you're doing a call
+[   39.80s ->    43.60s] credit spread, you want to sell the strike that is closest to the current stock price, and you want
+[   43.60s ->    49.14s] to buy the one that is further away. So for instance, sell the 456 and buy the 457. Next,
+[   49.22s ->    54.70s] you want to go and say, place the trade at the mid price is greater or equal to 0.12. So when you
+[   54.70s ->    60.62s] scroll down on the TastyTrade platform, you'll see there's a mid price listed down there. That
+[   60.62s ->    64.18s] mid price, you're looking forward to be above the minimum credit you want to collect, or that will
+[   64.18s ->    68.74s] show you how much credit you can collect right now. If it matches what you want, and if you are
+[   68.74s ->    73.28s] comfortable with, then you simply click review and send. And that's your three steps, simple process
+[   73.28s ->    76.54s] to placing a call credit spread trade on TastyTrade.

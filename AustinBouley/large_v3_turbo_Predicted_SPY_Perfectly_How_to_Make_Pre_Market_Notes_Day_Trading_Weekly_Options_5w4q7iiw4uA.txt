@@ -1,0 +1,63 @@
+[    0.37s ->     4.87s] Hey guys, what's up? It's ABTrades here and we're going to redo this video. I'm sorry for the 50
+[    4.87s ->     9.65s] people who have already watched this YouTube video, but apparently the sound quality was bad
+[    9.65s ->    13.79s] and I realized why, so I want to make sure that I improve it this time. If you've never been to
+[   13.79s ->    19.09s] this channel, I am ABTrades and I teach people how to day trade options. I do daily watch list
+[   19.09s ->    24.59s] videos, I do tutorial videos, strategy videos, and everything that you want to watch out for
+[   24.59s ->    30.19s] when day trading options. Alright guys, today is how to make pre-market notes. The notes that
+[   30.19s ->    35.85s] you will see come from the premium group chat, which is the second link below, but I also always
+[   35.85s ->    42.77s] post the spy notes as well as the news notes every morning in the free chat. If you want to join that
+[   42.77s ->    48.19s] free chat, click the first link below. Alright guys, so we're going to go over the notes for today.
+[   48.59s ->    54.41s] So looking here starting out, it said Fed Chair Powell testifying at 9 should give some more
+[   54.41s ->    61.11s] volatility until 9.30. So if we look here at the chart, 9 starts around right here, we get this
+[   61.11s ->    67.23s] volatility, this huge move until around 9.30. That's from the notes. You can find the news there
+[   67.23s ->    76.03s] from forexfactory.com under the calendar section and under USD News because we are US dollar and not
+[   76.03s ->    84.89s] Canada or Britain or whatever others that are there. So we got the news from there. Now let's
+[   84.89s ->    91.25s] take a look at what we actually said about spy. So I said, support at 278, 275, blah, blah, blah, blah,
+[   91.25s ->    97.83s] looking for gap bill pre-market, followed by a quick spike up because of short sellers exiting above 29,
+[   98.19s ->   103.83s] then fall back down through 279 and make its way lower to 278. So basically we're looking for short
+[  103.83s ->   108.41s] those to push it above 279 and all the way back down. We're looking for it to drop below 279,
+[  108.47s ->   118.79s] short entry down to 278. We'll go long above 279, 25, 279, 50. So let's look at spy here. So why did we
+[  118.79s ->   125.03s] come up with those notes? Well, because look, we got rejected here at 20, uh, at, at 280.30. Then we had
+[  125.03s ->   130.45s] this fall back down. We had this gap here. We see that the top of this gap here is at the whole number
+[  130.45s ->   137.25s] level of $29. So that's what we're watching out for around 29, 25 is where these previous lows were.
+[  137.25s ->   142.43s] And we were seeing some consolidation here. So we know that we're going to go long there up to,
+[  142.63s ->   149.81s] up to 280, 30. So looking here, we got that spike above in the morning, above 279, which we,
+[  149.91s ->   157.01s] which we were looking at, we were going to get long above 29, 25. It never got above 25. It got up to
+[  157.01s ->   162.19s] 29, 23. We got this reversal. We said that we were looking forward to drop back below 29,
+[  162.19s ->   169.93s] which is happenstance that the EMA was also there. So we had this double support here of the EMA in 279.
+[  170.03s ->   175.25s] We dropped below it like we were expecting. And we got that flushed down to 278, like we wanted.
+[  175.49s ->   182.37s] Then we had the RSI divergence back up, and then we got above 270, 25. And that was a long entry. But
+[  182.37s ->   189.33s] again, we're just focusing on the first hour to two of the day. So looking at the rest of the notes
+[  189.33s ->   196.11s] here, SPX is the same thing as SPY. So it's just different levels. IWM, the same thing as SPY. So
+[  196.11s ->   201.13s] don't expect those levels. The next one, AMD, support zone, watch for a break to the downside or
+[  201.13s ->   206.81s] upside. So if we're looking here at AMD, we want to make sure that we're looking at that. AMD here,
+[  206.81s ->   212.23s] I just want to show you why so that you understand how to make your own pre-market notes. So if you can
+[  212.23s ->   217.25s] see here, from the past on the 15-minute chart, if you look past the past few days, we have a high
+[  217.25s ->   225.17s] here at around 2440. We also have a low here of around 2386, 2380. So we know this is our support
+[  225.17s ->   228.99s] and this is our zone. So this is a support zone. As you can see, when we got above it, we built some
+[  228.99s ->   233.35s] support and we came up and then we came down. And now we saw pre-market that we were in the support
+[  233.35s ->   238.57s] zone. So we're watching for either a breakup or a breakdown. We actually got the breakdown on it.
+[  238.61s ->   242.53s] And if we looked down at the one minute, it was a nice flush through in the morning. You can see
+[  242.53s ->   246.87s] here, we got below this level. We built some support and then we fell through on AMD. Good
+[  246.87s ->   253.47s] trade to watch out for. Next, Facebook, found some support at 162 with a triple top at 166,
+[  253.61s ->   260.71s] short at 166.65.64, depending on when it starts reversing long above 166. So let's look at Facebook
+[  260.71s ->   266.23s] here. So if you can see here, we had this downtrend, right? Like Facebook, we found some support. We
+[  266.23s ->   271.39s] were bouncing. We were looking to fill this gap here. We can see that the gap starts in play at
+[  271.39s ->   277.81s] around 164. So you're looking for Facebook here to get up to 164 and we're going to short that
+[  277.81s ->   283.93s] region. 164 or waiting until it started to reverse. It got a few cents from 164 and then it started to
+[  283.93s ->   290.07s] reverse. And then we saw that flush back down, down to 160.40, which is the next low that we were
+[  290.07s ->   294.81s] targeting. So we were a few cents off on the entry, a few cents off on the low, but hey,
+[  295.17s ->   300.17s] good play anyways. And I hope you understand this is because it's a gap fill, right? We have this
+[  300.17s ->   304.17s] downtrend that we're coming into. We have this gap fill. We're looking to fill the gap. If it fills
+[  304.17s ->   310.29s] the gap, we go long. If it fills the gap and drops, then we go short. Last one to cover is Tesla. So
+[  310.29s ->   316.15s] looking here at Tesla, finally above 300, finding a base above it, possible bounce on this level and
+[  316.15s ->   322.07s] continuation higher. So knowing on a daily perspective that 300 is a super strong level
+[  322.07s ->   327.17s] as a whole number and for past previous price history, we were getting above free market. We
+[  327.17s ->   331.17s] were building a base. We were looking for it because when you have a resistance, you come
+[  331.17s ->   336.77s] above and you more times than not come back to retest this level as a support. So if you can see
+[  336.77s ->   341.19s] here, we came back down, we retested this level as support, and then we took off the rest of the day
+[  341.19s ->   346.91s] on Tesla. So guys, that was the play. I hope it makes sense. Understanding levels, 15 minute
+[  346.91s ->   351.15s] charts, and everything you need to do to make your own pre-market notes and pin it down
+[  351.15s ->   355.87s] perfectly. So we pinned down SPY and a few other stocks almost perfectly today. Again, you never
+[  355.87s ->   361.27s] do it almost perfectly every day, but a part of your trading ritual should be making notes
+[  361.27s ->   365.89s] every single morning. Thank y'all for watching. Please like, comment, and subscribe.

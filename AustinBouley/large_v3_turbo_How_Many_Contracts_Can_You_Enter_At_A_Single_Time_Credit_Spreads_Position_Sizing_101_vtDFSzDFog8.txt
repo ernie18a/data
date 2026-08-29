@@ -1,0 +1,90 @@
+[    0.00s ->     3.52s] Guys, in this video, we're going over how many contracts can you trade at a single time.
+[    3.60s ->     7.68s] We're going to base this all on math so that you have a proven system and a proven rule book to
+[    7.68s ->    11.74s] follow when you're trading vertical credit spreads. So let's dive into it right now.
+[   12.06s ->    16.20s] All right. So when we're looking at vertical credit spreads, we have to be aware of what
+[   16.20s ->    21.60s] our win rate is or have a reliable way to predict that. Why? Well, because when we're trading credit
+[   21.60s ->    26.14s] spreads, we have a higher risk than we do a return. And when we have that, that means that
+[   26.14s ->    30.62s] we need to have a very high win rate in order to make money long term. And that's why we're all
+[   30.62s ->    34.36s] trading, right? Because we want to make money consistently. And the way to do that is by
+[   34.36s ->    39.46s] knowing your win rate and then by using that to determine everything else in your trading. So
+[   39.46s ->    43.80s] let's look at some numbers real quick and then we'll get into the rules for the system.
+[   44.32s ->    49.70s] Okay. So when we're trading credit spreads, we need to understand what our break even win rate is and
+[   49.70s ->    57.86s] see what we can get to above that. So for instance, let's say that I'm trading a 91% win rate strategy.
+[   57.86s ->    65.32s] That means I need at least a 10 to one risk to reward strategy to break even, but I need to be
+[   65.32s ->    71.96s] more than that to actually make money. So let me simplify this. Okay. Let's say that my strategy
+[   71.96s ->    83.09s] has a 95% win rate, 95% win rate. I collect 15 cents in credit to put on this trade. And let's say it's
+[   83.09s ->    93.55s] a $1 wide. So that means my risk is 85 cents. All right. Pretty simple math here. So we have a 95%
+[   93.55s ->   100.77s] win rate. This is roughly about a 20 delta where we have a 15 cent credit, and then we have a risk
+[  100.77s ->   107.39s] of 85 cents. Okay. So now let's look at what is our risk to reward for this? Well, let's see.
+[  107.47s ->   113.33s] We're just going to do 15 or you can do 0.15 if you want to be specific divided by 0.85. My bad
+[  113.33s ->   120.41s] when you do a reverse 0.85 divided by 0.15. That means that the return goes into it about let's
+[  120.41s ->   127.15s] round up to six times. So we have a risk to reward of six to one. Now, again, for most traders,
+[  127.15s ->   130.67s] you're probably hearing you want to risk to return of one to three or better, which means that
+[  130.67s ->   136.47s] you're risking $1 to make $3. And that's typically how it works. But when you're treating a strategy
+[  136.47s ->   141.25s] like that, you have a 20 to 30, maybe even 40% win rate. But when you're treating credit
+[  141.25s ->   146.83s] spreads, you have a 95% win rate. So your risk is flipped. That means we're risking $6 to roughly
+[  146.83s ->   152.27s] make $1. So let's see, where does this line up? Well, $6 to risk $1. That means that we need
+[  152.27s ->   157.29s] at least an 83% win rate to break even. I hope this kind of explains stuff now. You can kind
+[  157.29s ->   161.71s] be like, okay, what's the average credit that I'm collecting? Okay, cool. What's the average
+[  161.71s ->   165.25s] risk that I'm putting on? Okay, cool. And then divide them by each other. Now, we'll show
+[  165.25s ->   168.87s] you your risk reward, which will show you what win rates you need to break even.
+[  169.13s ->   175.25s] So that's the first set of numbers we need to know. What is the win rates that we are getting
+[  175.25s ->   180.67s] or that we mathematically have based on our risk to reward? Well, based off our risk to reward,
+[  180.75s ->   186.81s] we have between an 83% to 91% win rate. Purely math speaking, we're not even looking at the
+[  186.81s ->   191.41s] stock or anything like that to know trend and all that stuff. Just mathematically speaking,
+[  191.41s ->   195.87s] if you have a 6 to 1 risk to reward and it's structured correctly, you'll have roughly about
+[  195.87s ->   202.05s] an 85% win rate. Cool. Let's take that one step further. If we have an 85% win rate, we're just
+[  202.05s ->   207.29s] going to take that on average, right? Because we have roughly between, we're a 6 to 1. So we're
+[  207.29s ->   212.97s] somewhere in here. So it's between 83 and 91. So let's say 85. So we're at an 85% win rate,
+[  212.97s ->   219.05s] mathematically speaking. The question is, how many consecutive losers can you have in a row?
+[  219.23s ->   224.79s] If you've never looked at this chart, this is what it shows. We have an 85% win rate. We will
+[  224.79s ->   233.95s] 100% have a losing trade. Duh. We have a 89% chance of having two losers in a row. We have a 28%
+[  233.95s ->   239.75s] chance of having three losers in a row. We have a 5% chance of having four losers in a row. And we have
+[  239.75s ->   246.73s] a 1% chance of having five losers in a row. 0% chance of having six losers in a row. So again,
+[  246.79s ->   254.65s] if our win rate is 85%, we can expect on average to have roughly one to three losers in a row.
+[  254.79s ->   259.29s] That's like very consistent math here. Now again, as we get into four or five, it seems like to be
+[  259.29s ->   264.87s] very unlikely, right? A 1% chance of having five losers in a row, a 5% chance of having four losers
+[  264.87s ->   269.79s] in a row. So again, understanding that you can know your odds are very low. So let's just say,
+[  269.91s ->   275.19s] let's just take 5% because that is a higher percentage compared to one. Let's say, okay,
+[  275.25s ->   280.25s] let's say, okay, so we can have four losers in a row that is possible at the 85% win rate level.
+[  280.69s ->   286.61s] Okay, cool. So we can have five losers in a row. How much am I okay with my account going down in value
+[  286.61s ->   294.73s] from a string of losers? Hmm, let's see. This is gonna be based on your risk preference. Let's say
+[  294.73s ->   301.57s] I'm okay with a total account value dropping of 20%. Okay, cool. So if I know that I'm okay with
+[  301.57s ->   309.37s] experiencing a string of losers that results in a 20% loss, minus 20%, how much of my account can I put
+[  309.37s ->   315.95s] in every single one trait? Well, if with a max string of losers we can have here that has a high
+[  315.95s ->   321.15s] chance is four max losers to about roughly about 5%, then that means we're going to take our number,
+[  321.67s ->   328.39s] we're okay with a minus 20% loss, and divide that by, sorry, I forget that four or five, four, okay,
+[  328.73s ->   336.15s] I was confused by the 5% is what the, anyways, four, here we go, that gives us a 5% is the max that we
+[  336.15s ->   343.51s] can lose in any single one trait. So this is our max loss per trade on our account. What does this
+[  343.51s ->   348.49s] mean? Well, when you set up a credit spread trade, it tells you how much money you're going to lose if
+[  348.49s ->   355.15s] you lose. So for instance, our max loss here is 85 cents. So this is $85. So that means that we can
+[  355.15s ->   361.73s] determine our max risk from this. Let's say we're trading a, let's do easy math, Austin, a $10,000 account.
+[  361.73s ->   368.71s] Okay, $10,000 account. And we have a max risk per trade of 5%, which we determined from here.
+[  368.95s ->   375.51s] So we're going to do 5% of $10,000. So again, we're going to move zero over two, multiply two,
+[  375.55s ->   383.14s] that's gonna be a $500 max loss. Okay, cool. $500 max loss per trade. So if we want to put on this
+[  383.14s ->   389.26s] trade right here, where we collect 15 cents and have an 85% risk, how many spreads or how many
+[  389.26s ->   396.04s] contracts can I buy? Well, we're going to take our $85 risk and divide that by the max loss we can
+[  396.04s ->   403.32s] have per trade. So 500 divided by 85. 500 is the max risk we can take. So how many contracts can we
+[  403.32s ->   410.40s] take? We can take 5.8. So let's just round to the six. We can take, we can enter in six contracts
+[  410.40s ->   418.23s] into this position and never hit our max loss, right? Like, I mean, we will hit our max loss.
+[  418.23s ->   423.79s] If we hit four losers in a row, we will hit the max loss we are okay with. But again, that helps you
+[  423.79s ->   428.65s] determine your contract sizing. Why is this important? Well, because although credit spreads
+[  428.65s ->   434.27s] have a very high win rate, you will lose. And when you lose, most likely it's because you're hitting a
+[  434.27s ->   438.67s] string of losers. Why is this? Well, because credit spreads are very consistent, very reliable,
+[  438.77s ->   442.39s] especially the way that I trade with my inner circle members, we're trading with the trend.
+[  442.77s ->   448.77s] And so whenever the trade does not work out in our favor, it's because it's going the other direction.
+[  449.17s ->   454.27s] And so, or there's a black swan event. And so if that happens, there's typically a string of losers
+[  454.27s ->   460.51s] to follow, roughly two or three strings of losers. And so if that happens, we need to know our odds and
+[  460.51s ->   465.33s] our numbers and all that is right here. So based on the win rates that we have, based on everything
+[  465.33s ->   473.61s] we do, I advise anywhere from a five, as we see here, 5% to a 10% max loss on any trade. Now, again,
+[  473.93s ->   478.31s] this is going to be based on your comfort level. Do not exceed 10. You can go below five, but do not
+[  478.31s ->   483.85s] exceed 10. I say around five to 6% per trade. Again, people who are trying to grow their account
+[  483.85s ->   489.31s] quickly because they have a smaller account, they're around a 10%, around five. But again, use this
+[  489.31s ->   494.39s] percentage on your account size to determine what your max loss per trade should be, and use that
+[  494.39s ->   498.45s] to determine the amount of contracts you go into. Because the thing is, if you want these numbers
+[  498.45s ->   502.31s] to work out, if you want your trades to work out, you need to make sure that you're not stressing
+[  502.31s ->   505.95s] yourself out and over leveraging yourself, which is very easy in the options world.
+[  506.39s ->   513.37s] So know your numbers, size accordingly, and trade the plan. All right, guys, thank you so much for
+[  513.37s ->   516.29s] watching this video. If you enjoyed something or learned something, please hit that thumbs up
+[  516.29s ->   520.37s] button and subscribe button. I make videos just like this to help you become a better credit
+[  520.37s ->   521.91s] spread trader. See you in the next video.

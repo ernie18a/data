@@ -1,0 +1,32 @@
+[    0.00s ->     4.84s] In this video, I'm going to walk you through how to close a credit spread trade on the Tasty
+[    4.84s ->    11.16s] Trade platform. And again, this will work on both the application for your desktop as well as the
+[   11.16s ->    16.58s] mobile app and the web browser. So when we're looking here, you can see all our trade orders
+[   16.58s ->    22.04s] in our positions tab. So regardless of what you're clicked on, you can see the positions tab is right
+[   22.04s ->    28.70s] here to show all your open trades. Once we have your open trades here, then you can click in and
+[   28.70s ->    33.60s] start to experience more things. If you're seeing all these shown like this, simply go in here and
+[   33.60s ->    38.56s] group by and group by the order chain to see all your vertical credit spread trades. And this is how
+[   38.56s ->    43.20s] you can exit what you want to exit. So let's say right here, I have this vertical credit spread
+[   43.20s ->    48.90s] trade that I entered for 28 cents, and it's currently trading at seven cents. So it's a $420 profit with
+[   48.90s ->    54.56s] 20 spread contracts. So with that, let's say I want to close this trade, I can simply click on the
+[   54.56s ->    59.52s] vertical or simply just click on each one individually. And then from there, all I have
+[   59.52s ->    65.60s] to do is simply click my control button on if I'm on my Mac computer, but if you're on a Windows
+[   65.60s ->    71.36s] computer, just simply right click and you can open up this little section right here, this section will
+[   71.36s ->    77.46s] allow us to close our position, and we can close a full position. Just like that, we're taken to this
+[   77.46s ->    83.30s] tab where we set up on our trade the exact opposite of what we're doing. When we are selling a credit
+[   83.30s ->    88.24s] spread, or I should say buying back to close our position, we're doing the inverse of what we did
+[   88.24s ->    94.74s] when we bought or when we sold it up front. So what we did was we sold the first strike at the level
+[   94.74s ->    99.94s] that we want it to be at, and then we bought the next one for our protection. So now this time, we're
+[   99.94s ->   106.58s] going to buy this one and then sell that one. So we can see right here, we are buying the 396 on this
+[  106.58s ->   112.64s] bottom order, and we are selling the 394 to close out that position. Same way here, you can see our
+[  112.64s ->   118.62s] our limit price, the limit price that we are looking to set to exit at, we click review and
+[  118.62s ->   125.22s] send, and that is how we do it to close out a credit spread trade order. Simply go to the positions tab
+[  125.22s ->   130.40s] and manage from there. You can also do it from the trade tab as well by going into the trade tab. You
+[  130.40s ->   135.50s] can see here I have a TLT position on. You can see here, right here, I have two on. I can simply click
+[  135.50s ->   141.70s] into here, and instead of clicking on the bid, I can click on the ask to undo it, and then click on the
+[  141.70s ->   148.90s] bid price, the opposite side that it's on, on this side, to undo this trade order. I'm buying 20 instead
+[  148.90s ->   153.70s] of selling, and I can set up a trade just like that as well. Now again, like most brokers, it's easier
+[  153.70s ->   158.36s] just to go to your positions tab and click on close this trade. So again, you can just do that, and then
+[  158.36s ->   162.76s] click on close the trade, and that's exactly how that works. All right, guys, I hope this helps. If you
+[  162.76s ->   167.52s] have any questions about closing a trade on TastyTrade, and it's time sensitive, please reach out to
+[  167.52s ->   171.54s] support for they are quick. If you have any other questions, though, please make sure to comment
+[  171.54s ->   173.80s] down below, and I'll make sure to get to your questions.

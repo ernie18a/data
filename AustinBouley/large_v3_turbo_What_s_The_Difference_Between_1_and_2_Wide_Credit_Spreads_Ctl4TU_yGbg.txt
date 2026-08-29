@@ -1,0 +1,88 @@
+[    0.00s ->     5.38s] In this short video, I want to go over what is the difference between a $1 wide and a $2 wide
+[    5.38s ->    11.04s] vertical credit spread. How does it differ in your return and your risk and your win rate? Because it
+[   11.04s ->    15.12s] does change with each one of these things, even though you have the same overall idea for your
+[   15.12s ->    19.26s] trade. All right, let me walk you through this because this is a recent question that came up
+[   19.26s ->    23.92s] in my 10% credit spreads inner circle program. And so again, I kind of walked them through and I
+[   23.92s ->    27.24s] thought it'd be great to have a video for you guys as well. So let's go through this. Okay,
+[   27.24s ->    31.72s] so first off, what is a credit spread for those who don't know? Well, simply just real quick,
+[   31.80s ->    36.56s] a credit spread is placing a bet on a stock. For instance, if let's say the stock is trading here,
+[   36.84s ->    41.42s] well, the stock is trading here and it looks like it's going to head higher, you're going to place
+[   41.42s ->    45.66s] a bet where you think, okay, I think the stock is going to stay above this level within the next two
+[   45.66s ->    50.56s] weeks. And so that's your bet. As long as the stock stays above that level, no matter what it does,
+[   50.82s ->    54.70s] then you make money. That's essentially what a vertical credit spread is. You do that by combining
+[   54.70s ->    60.42s] two options. Anyways, let's walk through the difference between a $1 Y and a $2 Y. When you
+[   60.42s ->    64.88s] structure a credit spread, you have two different types of options orders, right? So let's say we're
+[   64.88s ->    69.42s] doing a put credit spread, which would have been this example, which means that you're placing a
+[   69.42s ->    74.84s] level below the current stock price, hoping for the stock price to in general move higher. So when you
+[   74.84s ->    80.62s] have that, what you're looking for is to set up a credit spread where you sell one level and then
+[   80.62s ->    86.58s] you buy the next level. Why is this? So you sell this one and you buy this one. Why is this? Well,
+[   86.62s ->    90.92s] because when you sell, you get a credit. When you sell something that's closest to the stock,
+[   90.96s ->    95.68s] you get a larger credit. Then you buy the one below it to define your risk. If you just sell an option
+[   95.68s ->   101.06s] and you have unlimited risk, so you buy it. So anyways, that would look like, for instance,
+[  101.14s ->   107.96s] let's say we're just making up numbers. Let's say this is, I think it's going to stay above the 400 level.
+[  107.96s ->   114.42s] So the first option I sell will be the 400 strike price option. So I'm going to sell the $400 put
+[  114.42s ->   121.90s] and then for a $1 wide spread, which is what most spreads are, I'm going to then buy back the $3.99.
+[  122.86s ->   129.66s] So $3.99, just like that. This is a $1 wide spread. Why is it a $1 wide spread? Because again,
+[  129.76s ->   135.28s] the difference between $400 and $3.99 are two levels is $1. And so again, that also defines our risk.
+[  135.28s ->   143.04s] So for instance, if we have a $1 wide, which is this, the $439, let's say we collect in credit.
+[  143.24s ->   150.52s] So let's just say CR for credit. Credit, we collect $0.15. Okay, cool, $0.15. So if this is the amount of money
+[  150.52s ->   155.48s] we stand to make, which is the credit, so if this trade stays above $400, then we make $0.15.
+[  155.48s ->   162.49s] But how much do we stand to lose? So if I just say lose here or loss, like that, then again,
+[  162.93s ->   170.77s] we have the $1 is our width. So that means $1 is the overall amount of risk that we have on the table.
+[  170.93s ->   175.07s] Why? Well, because if this thing expires worthless, meaning that the stock goes, I mean,
+[  175.43s ->   179.87s] and the money, which means that the stock goes below the 400 level, then guess what?
+[  179.87s ->   186.41s] This right here, this option gets executed. So I have to sell 100 shares at the $400 level,
+[  186.57s ->   190.81s] but then my $3.99 is going to protect me. So I'm going to buy back. So that means I'm risking
+[  190.81s ->   196.45s] $1 per share because there's a difference of $1. So since there's a difference of $1, I'm going to put
+[  196.45s ->   201.67s] one. But then also when I put this trade on, I immediately get a 15 cent credit. So that's 15
+[  201.67s ->   208.17s] cent credit. So this is my max risk. I put up $100, but I received 15 cents in credit. So that was
+[  208.17s ->   216.01s] credited to my account, which gives me a max loss of 0.85. So that means if this trade goes against
+[  216.01s ->   220.99s] me, I'm going to lose 85 cents. If this trade goes in my favor, I'm going to make 15 cents.
+[  221.15s ->   227.07s] So that's how it's structured for a $1 wide spread. So let's look at a $2 wide. How does this differ?
+[  227.43s ->   231.65s] Well, let's say a $2 wide right here. So we're going to start off with our same level. We still think
+[  231.65s ->   237.25s] it's going to stay above 400. So we're going to sell the 400 level. And now we're going to make it a $2
+[  237.25s ->   244.43s] wide. So a $2 wide would have a bot strike price of $3.98. So instead of $3.99, we're going $3.98
+[  244.43s ->   249.13s] because the $2 difference between here. Now, how does this change our credit? And how does this
+[  249.13s ->   254.43s] change our loss? Well, in a credit aspect, it actually is a little different. And that's going
+[  254.43s ->   259.37s] to be what is important to be discussed here in this video. So credit, so you'd be like, okay,
+[  259.49s ->   264.55s] if it's a dollar wide, I'm collecting 15 cents, and it's $2 wide, how much credit do you think you
+[  264.55s ->   270.53s] should collect? Most people think it's 30 cents. That's actually not correct. If it's trading at
+[  270.53s ->   277.35s] 15 cents for a $1 wide, your credit on a $2 wide is going to be roughly around 25 cents.
+[  277.85s ->   282.67s] Why is this? Well, it's the law of diminishing returns. And I'll explain that here in a second,
+[  282.67s ->   288.15s] but it's roughly around 25 cents. Now, how does this affect our loss? Well, instead of one minus 15,
+[  288.15s ->   293.01s] we're going to be doing two because that's a width of our spread minus the credit we collected 25
+[  293.01s ->   300.21s] like that. And that's going to give us a total risk of $1 and 75 cents. Okay. So you'd be like,
+[  300.27s ->   305.11s] okay, yeah, I'll send $1 is way more than $1 and 75 cents is way more than 85 cents. But is that
+[  305.11s ->   311.65s] comparable? Well, let's look at the math real quick. Okay. So we need to look at what is our return
+[  311.65s ->   317.37s] on our risk. That is how we determine return with credit spreads. So what's our return for the $1 wide?
+[  317.37s ->   323.93s] Well, it's 15 cents divided by a risk, which is 85 cents. That gives us a 17.6% return. So that
+[  323.93s ->   330.47s] means with this trade right here, we have a potential of making a 17.6% return on our risk.
+[  330.47s ->   335.57s] That is how we determine your profitability with credit spreads. Now let's do the same thing for
+[  335.57s ->   341.59s] the $2 wide. So we're going to collect 25 cents and we're going to have a risk of 175. That gives us
+[  341.59s ->   351.52s] a 14.3% return. 14.3% return. What are you seeing here? The $1 wide has a higher percentage
+[  351.52s ->   359.70s] return than a $2 wide. A $2 wide is at 14.3 and a $1 wide is a 17.6%. And this just happens as you
+[  359.70s ->   366.56s] continue extending the width of your spread. So for instance, if we go to a $3 wide, the average return
+[  366.56s ->   372.52s] would probably be around 11%. And it would just continuously go down. And that's just how it works
+[  372.52s ->   377.52s] in the credit spread world. Just with the way that the options are structured is the wider your spreads
+[  377.52s ->   383.84s] go out, the lower of a potential return you are going to make. And so that is very important for your
+[  383.84s ->   389.76s] overall win rate, because that's going to determine what your win rate needs to be based on your average
+[  389.76s ->   396.00s] return that determines what your win rate should be, right? So with this, I could have a win rate of
+[  396.00s ->   403.30s] around 85% or 14% return. I would need a win rate of maybe closer to 90 in order to hit those
+[  403.30s ->   408.16s] profitable returns over time. And so again, the difference between the $1 wide and the $2 wide
+[  408.16s ->   413.30s] is very simple. Again, the $1 wide is going to have a higher return, but the $2 wide is going to have a
+[  413.30s ->   418.42s] bit of a lower return. Now where the $2 wide has its advantage is this. This is what the $2 wide has over
+[  418.42s ->   424.60s] the $1 wide and why I trade the $2 wides. Well, think about it. Let's say my size is getting larger.
+[  424.60s ->   429.78s] For instance, I trade a six figure account. It's a little over $100,000 that I'm trading.
+[  430.26s ->   435.56s] If I'm trading a $1 wide spread to get in, I'm going to need to put on 50 to 60 credit spread
+[  435.56s ->   441.72s] trades. If I'm paying, let's say $2 total in commissions for each spread, that means I'm
+[  441.72s ->   449.04s] paying $120 in commission. So let's say at the $1 wide, I need to put on 60 trades and then at $2
+[  449.04s ->   456.50s] for commission costs, that puts me at around $120 that I'm paying in commissions just to get in and
+[  456.50s ->   461.90s] out of this trade. Okay, now how would it work with the $2 wides? Well, with the $2 wides, I'm having
+[  461.90s ->   467.98s] the same risk. So instead of putting on 60 trades, I only put on 30 trades. So 30 trades right here
+[  467.98s ->   477.66s] times two, like that, gives me 60. So now I have less of the commission costs. Since I have less
+[  477.66s ->   483.26s] commissions, that kind of adds to my overall return. So again, when you factor in the commission costs,
+[  483.58s ->   489.34s] roughly $1 and $2 wides are going to be roughly the same, but as you start to size up, $2 wides are
+[  489.34s ->   494.52s] actually more favorable. Anyways, if you understand this, if you like this, I hope you did. Smash that
+[  494.52s ->   497.98s] thumbs up button and that subscribe button because I have a lot of videos like this, helping you
+[  497.98s ->   502.82s] understand credit spreads and helping you become a better credit spread trader. Anyways, guys,
+[  502.92s ->   505.42s] thank you so much for watching. I will see you in the next video.

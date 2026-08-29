@@ -1,0 +1,75 @@
+[    0.24s ->     5.18s] In this video, I'm going to show you how I made $1,000 off of one trade that lasted a
+[    5.18s ->     9.52s] little less than 30 days. This is a trade that I take all the time. I want to walk you through
+[    9.52s ->    14.70s] the indicator I use, the strategy I use step-by-step, and some real trade examples by
+[   14.70s ->    19.52s] logging into my broker. So let's dive into it. First off, here is the actual trade. If I go to
+[   19.52s ->    24.68s] my TastyTrade broker, you can see here I entered the trade on August 20th, which aligns right here
+[   24.68s ->    31.14s] this point on the chart, and I exited the trade right here on September 15th. You can see right
+[   31.14s ->    37.28s] here on that core lines with that on the chart right there as well, resulting in a $1,025 profit.
+[   37.44s ->    44.22s] When we factor in commissions and fees, I made $1,012.28. So let's dive in. How do I do this?
+[   44.28s ->    49.00s] First off, the indicator. Go to the indicator section, and I'm going to show you how I do this.
+[   49.00s ->    54.32s] This is an indicator that everybody has access to, but hardly anybody uses this way. Whether using
+[   54.32s ->    59.38s] Yahoo Finance, TradingView, your broker, you should be able to go to indicators, type in
+[   59.38s ->    65.52s] Bollinger Band, B-O-L-L-I-N-G-E-R, Bands, and this is what you'll see by default. This is how everyone
+[   65.52s ->    70.46s] uses it, but if you change the settings just a little bit, you can actually make a huge difference
+[   70.46s ->    77.30s] in how you read it. If you change the length from 20, which it is by default, to 200, this gives you
+[   77.30s ->    83.74s] an understanding of the overall market trend, aka if we are within this top range right here,
+[   83.74s ->    89.56s] the market is bullish. So let me try this out. This is a bullish zone. If we are in this zone,
+[   89.64s ->    95.34s] we are bearish. And so what does this mean? This means that when the market's trading in this zone,
+[   95.34s ->   101.08s] I'm in a long-term bullish market, so I should be using bullish strategies. And so that's how I
+[  101.08s ->   106.94s] aligned what strategy I'm using with what type of markets. Since we're in this zone, the strategy that
+[  106.94s ->   114.68s] I used based on this indicator was the 1-1-1 strategy to trade and make this profit. If you've
+[  114.68s ->   119.26s] never heard of the 1-1-1 strategy before, let me walk through exactly how it works. You're going to
+[  119.26s ->   124.40s] be trading this on futures options, which is what I did here, ES1. You can also do this on stock options,
+[  124.40s ->   129.50s] but it works best on futures options. What you're going to do is you're going to go 90 days out in
+[  129.50s ->   133.72s] the future. So you can go to a 90 DTE. And don't worry, I'll go to my broker here. I'll show you
+[  133.72s ->   138.16s] exactly how to structure this trade. And when we get to it next, I want to chart out the strategy
+[  138.16s ->   145.10s] first. So we go to a 90 DTE trade. From there, we're going to create a put debit spread. So PDS,
+[  145.18s ->   150.76s] put debit, which means we're going to buy a put, and then we're going to sell a put. And that's going
+[  150.76s ->   159.82s] to create a put debit spread. Now we do this by buying the 25 Delta and then selling the 23 Delta.
+[  160.02s ->   165.74s] This creates our put debit spread. That is our hedge, our downside protection. But we also
+[  165.74s ->   172.24s] sell a put further out of the money to make sure that we profit on this trade, which tends to be a
+[  172.24s ->   177.10s] 10 Delta. So again, there's three trade likes. There's one put option, one put option, one put
+[  177.10s ->   181.84s] option. This is why the trade is known as a 111 trick. That's how the trade is structured. Again,
+[  181.88s ->   186.12s] I'll show you that here in a second. And that's exactly what I entered at this point and allowed
+[  186.12s ->   190.52s] the trade to ride up. So you can see here, the market was trending higher. Let me move this text
+[  190.52s ->   195.50s] out of the way. Actually, delete it. What was happening is the market was moving higher and it
+[  195.50s ->   200.32s] recently pulled back from hitting this high. Now again, what's cool about this indicator is not only
+[  200.32s ->   204.66s] does it show you the trend, but also show you some resistance levels as we push to new all-time highs.
+[  204.66s ->   207.94s] You can see here, we push into this level. We pull back, we push, we pull back, we push,
+[  208.02s ->   212.56s] we pull back. So we pull back from the zone at the bottom part. That's when I entered the trade,
+[  212.84s ->   216.28s] knowing that we're probably going to ride this back up bull if we got closer to the zone again.
+[  216.58s ->   221.60s] That's when I close it for the thousand dollar profit. So that is how you structure the trade.
+[  221.68s ->   226.94s] Now, how do we manage the trade? We're going to close it at a 50% take profit. So as soon as we
+[  226.94s ->   232.58s] hit 50% or whenever I want to assume that I take profit, and then I can have roughly a 300 to 200%
+[  232.58s ->   237.88s] stop loss, whatever I like to run with. Typically, I do a 300% stop loss. This is how I manage the
+[  237.88s ->   242.74s] trades. That's the strategy. So we've gone over the indicator to know what the right market is for
+[  242.74s ->   246.18s] this strategy. Again, we're only going to trade this one-on-one strategy when we're above this.
+[  246.54s ->   250.42s] Ideally, look for dip buys like this. That's the strategy. Now let's go into a trade example.
+[  250.80s ->   255.04s] Let's say we were to place this trade right now. I'm going to go into the trade tab. I'm going to go
+[  255.04s ->   260.86s] into futures. ES is what I like to trade this on. So slash ES. This is my go-to. Now again,
+[  260.86s ->   264.04s] if you have a smaller account, you can do it on MES or Spire, something like that.
+[  264.48s ->   267.72s] First thing we do is go 90 days out into the future. So we're going to go 90 days,
+[  267.96s ->   271.50s] which is again, is closest to right here. You can see I do have a couple of positions open already,
+[  271.88s ->   276.38s] but we're going to pretend like I don't. So the first thing we do is we're going to create our
+[  276.38s ->   282.52s] put debit spread. This is our hedge that protects and helps us generate money when the market drops
+[  282.52s ->   287.16s] so that we don't have a huge loss that we would if we just had the short put. So the put debit
+[  287.16s ->   292.10s] spread is going to be, we're going to buy the 25 Delta and we're going to sell the 23 Delta.
+[  292.32s ->   298.40s] This creates a put debit spread, which gives me a max profit of $2,000 and a max loss of about 400.
+[  298.58s ->   304.52s] Meaning if the market drops, I'll make 2000. If not, I'll lose 400. Now in general, the market's
+[  304.52s ->   307.96s] going to trend higher. So this put debit spread will lose money, which is why it's a hedge.
+[  308.24s ->   311.70s] So we're going to go further out to the 10 Delta mark. We're going to sell this option
+[  311.70s ->   318.52s] so that we actually have a profit. So now you can see here, my max profit is 4,200. But what I'm
+[  318.52s ->   323.34s] actually going to be looking for is this. This is going to be what my actual profit is. Extrinsic value,
+[  324.24s ->   331.88s] $1,700. So this trade, if the market continues to trend higher, will make me $1,700. You can see here,
+[  332.02s ->   338.14s] 95% chance of winning. So the odds are really in my favor here, which is break. Now, as always,
+[  338.14s ->   344.72s] as mentioned, we have a 50% take profit. So although this is my max profit, $1,700, I'm only
+[  344.72s ->   351.70s] going to make 50% of that, which means my profit is going to come out to about $850 on this trade.
+[  352.10s ->   358.52s] Now, I have to put about $7,000 to put on this trade. So that means $850 profit divided by 7,000.
+[  358.78s ->   365.04s] That means I'm going to make a 12% return on my money in less than 30 days. That's typically how I run
+[  365.04s ->   369.40s] this strategy. You can see here under my positions that these are all the strategies I have. Again,
+[  369.44s ->   373.82s] they're not grouped together to make it too easy. But you can see here all the 1-1-1 trades that I
+[  373.82s ->   380.90s] have open that's right now making me over $2,168, aka a 30% return on the money that I have invested
+[  380.90s ->   385.72s] right now, which is not bad at all. So that is the 1-1-1 strategy. And that's how we do it.
+[  385.78s ->   389.56s] Step number one, the indicator. We only trade it during this uptrending market. Step two,
+[  389.62s ->   393.58s] we do the 1-1-1 strategy when it's in this zone. And then that's exactly how we set it up. If you
+[  393.58s ->   396.86s] enjoyed this video, please hit the subscribe button and I'll see you in the next one.

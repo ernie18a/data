@@ -1,0 +1,261 @@
+[    0.32s ->     1.58s] Let's get straight to the point.
+[    1.58s ->     3.84s] The markets are manipulated against you.
+[    3.84s ->     8.04s] Every single day the market is manipulated in some type of way, and it's meant for the
+[    8.04s ->    11.10s] average retail investor like you and me to lose money.
+[   11.10s ->    14.24s] If you are losing money, it's by design, not by luck.
+[   14.24s ->    18.68s] While your balance is going down, billionaires and hedge funds are making millions.
+[   18.68s ->    20.84s] How do these hedge funds manipulate markets?
+[   20.84s ->    23.34s] How can I tell when a market is being manipulated?
+[   23.34s ->    27.52s] How do I take advantage of these manipulated markets so I myself can make money?
+[   27.52s ->    31.64s] Well, those are all good questions, and it's exactly what we're going to be talking about.
+[   31.64s ->    34.36s] Let's get straight to it.
+[   34.36s ->    38.14s] Market Manipulation The act of artificially inflating or deflating
+[   38.14s ->    43.14s] the price of a security or otherwise influencing the behavior of the market for personal gain.
+[   43.14s ->    48.54s] There are tons of styles of manipulation, and the scary part is, some of the ways are completely
+[   48.54s ->    49.54s] legal.
+[   49.54s ->    53.46s] The first style of market manipulation is one that almost everybody knows about, but it's
+[   53.46s ->    57.82s] important I cover it because you do need to know to the extent of what's going on.
+[   57.82s ->    62.88s] News Manipulation This is one of the most common types of
+[   62.88s ->    68.00s] market manipulation, and it's happening almost every single day right in front of your eyes.
+[   68.00s ->    72.14s] You getting on your computer, going on reddit, and making up a story and creating a thread
+[   72.14s ->    76.92s] of why company XYZ is such a bad company is market manipulation.
+[   76.92s ->    81.86s] You being down 30% because the stock you recently invested in went down, then you thinking you
+[   81.86s ->    87.60s] can go on stock twits and make a false story so others invest in that company is market manipulation.
+[   87.60s ->    93.66s] But this is purely just level 1 for market manipulation, and is usually a lot easier to spot than higher
+[   93.66s ->    94.66s] levels.
+[   94.66s ->    98.42s] Hedge funds will use techniques that are a lot more subtle and harder to spot.
+[   98.42s ->   100.72s] So let's say there's a billion dollar hedge fund.
+[  100.72s ->   105.66s] It wants to buy a ton of shares from a company that's $20 per share, but they'd think it's
+[  105.66s ->   106.66s] worth 40.
+[  106.66s ->   110.66s] The thing is, they can't just go out there and accumulate millions of shares all at once,
+[  110.66s ->   114.94s] because it would affect the market drastically, making the price have a huge spike.
+[  114.94s ->   119.44s] That's the one thing these massive investors and hedge funds have to think about all the
+[  119.44s ->   120.44s] time.
+[  120.44s ->   123.98s] Since they're dealing with huge amounts of money, they not only have to think about company
+[  123.98s ->   127.86s] valuations, but also how their entries will affect the market.
+[  127.86s ->   129.98s] This is usually how the strategy goes.
+[  129.98s ->   134.40s] When the market of a particular stock that they are targeting is very weak, the hedge funds
+[  134.40s ->   136.48s] will slowly accumulate shares.
+[  136.48s ->   139.36s] They do this in sessions, not all at once.
+[  139.36s ->   143.46s] This way, they still get the huge amount of shares they want without affecting the market
+[  143.46s ->   144.46s] too much.
+[  144.46s ->   149.80s] Let's fast forward in time and say that specific stock they invested in is now worth $40.
+[  149.80s ->   155.00s] The hedge fund knows that this company is not that good, and a $40 stock price is pretty
+[  155.00s ->   159.24s] much as high as it's going to get in the near future, so they want to exit their position.
+[  159.24s ->   163.54s] Unlike you and me where we can simply just sell our shares right then and there, hedge funds
+[  163.54s ->   166.18s] again have to do a more advanced approach.
+[  166.18s ->   171.54s] They have so many shares that there are simply not enough buyers to fill all their sell orders
+[  171.54s ->   173.46s] at the specific price they want.
+[  173.46s ->   177.72s] If they want to sell all their shares at a high price, they are going to need more buyers.
+[  177.72s ->   183.30s] So how can they dump millions of shares of stock at a great price unnoticed in a few weeks
+[  183.30s ->   185.26s] and get away with it?
+[  185.26s ->   186.26s] Manipulation.
+[  186.26s ->   187.78s] This is how they do it.
+[  187.78s ->   190.62s] But first, let's go over this video's sponsor, Capitalize.
+[  190.62s ->   191.62s] Now, I know what you're thinking.
+[  191.62s ->   193.54s] Oh no, not another ad.
+[  193.54s ->   195.96s] But this one may just help your investing game.
+[  195.96s ->   200.02s] So as we all know during the making of this video, the stock market is going down.
+[  200.02s ->   204.66s] Instead of trying to figure out the exact bottom, a great strategy for long term investors
+[  204.66s ->   206.12s] is dollar cost averaging.
+[  206.12s ->   210.60s] It's basically when you invest a fixed dollar amount on a regular basis, regardless of what
+[  210.60s ->   212.26s] the current market is doing.
+[  212.26s ->   216.38s] Capitalize can automate this process for you by making an automatic trading bot.
+[  216.38s ->   222.00s] Just simply go to the strategy creator, type buy 5,000 USD worth of Apple after 30 days
+[  222.00s ->   227.12s] from entry starts, then set the strategy on a loop, and every 30 days, the bot will automatically
+[  227.12s ->   229.72s] buy 5,000 dollars worth of Apple.
+[  229.72s ->   230.98s] It's really that simple.
+[  230.98s ->   233.42s] And this is really just the tip of the iceberg with this.
+[  233.42s ->   237.46s] You can code any bot you would like, and it can get extremely advanced, and the best
+[  237.46s ->   240.10s] part is, you don't need any coding experience.
+[  240.10s ->   243.34s] If you're interested in creating a bot, I'll leave a link in my description back to
+[  243.34s ->   244.34s] the video.
+[  244.34s ->   248.42s] So we went over how the average investor would manipulate the market, but how do hedge funds
+[  248.42s ->   249.42s] manipulate the market?
+[  249.42s ->   254.14s] They do it the same type of way as you and I would in the example I used before, by going
+[  254.14s ->   258.92s] on reddit and giving a fake catalyst, but they sort of have a billionaire version of it.
+[  258.92s ->   262.94s] They do have the same idea though, create some FOMO, fear of missing out, and get people
+[  262.94s ->   266.88s] to think that this $40 stock is going to be the next Amazon.
+[  266.88s ->   270.12s] They're going to make you think that if you don't enter right at this very moment,
+[  270.12s ->   272.52s] you're going to miss out on huge gains.
+[  272.52s ->   277.02s] Except instead of just making a little post on reddit, they have a greater source to spread
+[  277.02s ->   278.52s] misinformation.
+[  278.52s ->   279.52s] News outlets.
+[  279.52s ->   284.46s] When the pandemic hit, it was a huge hit to the economy, and a lot of media stations.
+[  284.46s ->   288.20s] More than 70 local news outlets closed due to the crisis.
+[  288.20s ->   295.20s] It's an estimate that a staggering 2100 newspapers, or one in four, have closed in the US since
+[  295.20s ->   296.20s] 2005.
+[  296.20s ->   301.10s] But as all this chaos breaks out, hedge funds and private equity firms look at this as
+[  301.10s ->   306.24s] an opportunity, buying up all these dying news outlets and using them to send out catalysts
+[  306.24s ->   307.84s] for their own investments.
+[  307.84s ->   313.00s] Hedge funds or private equity firms now control half of US daily newspapers, and you know what
+[  313.00s ->   314.20s] they do with them?
+[  314.20s ->   315.20s] Spread FOMO.
+[  315.20s ->   317.70s] This almost acts as a snowball effect.
+[  317.70s ->   318.70s] Think about it.
+[  318.70s ->   320.90s] The huge media outlet creates the FOMO story.
+[  320.90s ->   325.68s] Then all these retail investors jump on the bandwagon, creating almost a snowball effect.
+[  325.68s ->   330.08s] In a way, the retail investor is doing all the work for the hedge fund, because after
+[  330.08s ->   334.82s] they enter their position, they start spreading the FOMO news themselves to all their friends
+[  334.82s ->   339.26s] or even the internet, because they want the stock to go up from where they entered.
+[  339.26s ->   342.96s] And it basically just keeps getting recycled from one investor to the next.
+[  342.96s ->   347.24s] All this news is going to bring huge amounts of volume, so the hedge fund can sell their
+[  347.24s ->   351.64s] position as quickly and most importantly, at the price they want.
+[  351.64s ->   356.28s] They don't care if the stock goes up 20% from all the fake news, they really only care
+[  356.28s ->   358.46s] about exiting their position at this point.
+[  358.46s ->   359.46s] And guess what?
+[  359.46s ->   363.40s] When everyone starts to realize that this company is not going to be the next Amazon,
+[  363.40s ->   367.78s] the hedge fund is already out of their position and made a huge amount of profit, while all
+[  367.78s ->   372.92s] the other retail investors are still in their position and got burned, losing tons of money.
+[  372.92s ->   376.70s] But this is not the only type of manipulation, oh no.
+[  376.70s ->   380.28s] There are much more slimy and dark techniques that firms use.
+[  380.28s ->   382.78s] One of them is what we're going to call the pump and dump.
+[  382.78s ->   388.12s] You know, a lot of times when I was short at my hedge fund and I was positioned short,
+[  388.12s ->   395.74s] meaning I needed it down, I would create a level of activity beforehand that could drive
+[  395.74s ->   396.74s] the futures.
+[  396.74s ->   399.12s] It doesn't take much money.
+[  399.12s ->   403.52s] Similarly if, or if I were long and I would want to make things a little bit rosy, I would
+[  403.52s ->   407.28s] go in and take a bunch of stocks and make sure that they are higher.
+[  407.28s ->   410.98s] Maybe commit $5 million in capital to do it and I could affect it.
+[  410.98s ->   414.04s] What you're seeing now is maybe, it probably is a bigger market now, maybe you need $10
+[  414.04s ->   416.16s] million in capital to knock this stuff down.
+[  416.16s ->   421.26s] But it's a fun game and it's a lucrative game and you can move it up and then fade it.
+[  421.26s ->   423.52s] That often creates a very negative feel.
+[  423.52s ->   427.16s] So let's say you take a longer term view intraday and you say, listen, I'm going to boost the
+[  427.16s ->   430.16s] futures and then when the real sellers come in, real market comes in, they're going to
+[  430.16s ->   433.62s] knock it down and it's going to create a negative view.
+[  433.62s ->   438.70s] That's a strategy very worth doing when you're valuing on a day to day basis and I would encourage
+[  438.70s ->   444.18s] anyone who's in the hedge funding to do it because it's legal and it is a very quick
+[  444.18s ->   447.10s] way to make money and very satisfying.
+[  447.10s ->   450.62s] Instead of like the previous example where the hedge funds are worried about their entry
+[  450.62s ->   454.00s] affecting the market, in this example they do it on purpose.
+[  454.00s ->   458.62s] They enter such a large position where it can actually affect the market and basically
+[  458.62s ->   460.08s] make the chart look good.
+[  460.08s ->   463.52s] Making other investors roll in, while the hedge funds exit.
+[  463.52s ->   467.70s] One of the most well known and popular versions of this was with Jordan Belfort and the Wolf
+[  467.70s ->   468.70s] of Wall Street.
+[  468.70s ->   473.12s] Where he would get investors to invest in really crappy companies that were really over inflated
+[  473.12s ->   476.26s] and he would sell into them, making millions of dollars.
+[  476.26s ->   480.04s] So how can you tell when a market is being manipulated like this?
+[  480.04s ->   482.86s] Well in the 90s it was a lot easier to spot.
+[  482.86s ->   487.98s] Because private equity firms would just invest tons of money all at once creating huge candles
+[  487.98s ->   488.98s] like this.
+[  488.98s ->   494.20s] But hedge funds nowadays are getting a lot more sneaky and creative to create these pumps.
+[  494.20s ->   497.58s] What they will most commonly do is what's called wash trades.
+[  497.58s ->   501.98s] Wash trades are basically trades that will cancel each other out to artificially create volume.
+[  501.98s ->   506.70s] So what these hedge funds will do is go to one broker, buy 500,000 shares, then go to
+[  506.70s ->   511.04s] another broker and sell 500,000 shares, canceling the orders out.
+[  511.04s ->   515.42s] So they didn't lose or make any money, and they aren't risking any money either.
+[  515.42s ->   519.68s] Where in the 90s if a hedge fund artificially made the price go up by investing a ton of
+[  519.68s ->   524.66s] money all at once, there is risk involved, because the stock could potentially drop right
+[  524.66s ->   525.84s] after they entered.
+[  525.84s ->   531.42s] Using this technique they have no risk whatsoever, but still have the ability to manipulate the
+[  531.42s ->   532.42s] market.
+[  532.42s ->   533.42s] How so?
+[  533.42s ->   538.14s] Well when you buy 500,000 shares, then sell 500,000 shares, it won't move the price.
+[  538.14s ->   541.36s] But what it will do is create huge amounts of volume.
+[  541.36s ->   546.30s] And as we all know, tons of scanners and indicators use volume as an important metric.
+[  546.30s ->   551.02s] So whenever volume has a huge increase, that's just more and more investors seeing that specific
+[  551.02s ->   552.60s] stock on their watch list.
+[  552.60s ->   556.34s] And what happens when a ton of investors see a stock on their watch list?
+[  556.34s ->   561.36s] More activity, creating even more activity, and more activity, creating another snowball
+[  561.36s ->   563.30s] effect, pumping the stock up.
+[  563.30s ->   568.36s] So hedge funds manipulated the market by artificially creating volume, to get it seen by many other
+[  568.36s ->   569.36s] investors.
+[  569.36s ->   573.68s] And at this point the hedge fund is already in a position, but they let the retail investors
+[  573.68s ->   576.96s] do all the work for them, so they don't have to risk as much.
+[  576.96s ->   580.92s] Which is a pretty common trend with most of these manipulation tactics.
+[  580.92s ->   584.94s] They almost start to push the snowball down the hill, then let the others keep rolling
+[  584.94s ->   586.48s] it, taking all the risk.
+[  586.48s ->   589.48s] So how can you tell when this type of manipulation is happening?
+[  589.48s ->   592.08s] Well, it's pretty simple actually, let me show you.
+[  592.08s ->   595.88s] If you ever are looking at your chart, and you see a huge amount of volume coming out of
+[  595.88s ->   598.92s] nowhere, creating a new crazy high for volume.
+[  598.92s ->   603.20s] But then you look at the candlesticks, and the price really wasn't affected at all.
+[  603.20s ->   605.68s] And there's just a really small candle sitting there.
+[  605.68s ->   610.26s] This more often than not, is a hedge fund or firm trying to manipulate the market.
+[  610.26s ->   614.48s] I should also be clear, just because this happens, doesn't always mean the market is
+[  614.48s ->   616.32s] going to go up every time.
+[  616.32s ->   619.56s] Sometimes investors won't take the bait, and the stock won't move at all.
+[  619.56s ->   622.50s] But it's important to have this in the back of your head when trading.
+[  622.50s ->   626.74s] If you see a huge amount of volume come out of thin air, and there's just a small candle,
+[  626.74s ->   628.74s] it's a good chance there's manipulation occurring.
+[  628.74s ->   633.92s] And the scary thing about this type of market manipulation, is that it's completely legal.
+[  633.92s ->   635.00s] Has this ever happened to you?
+[  635.00s ->   638.54s] You're in a position with a specific company that you really like.
+[  638.54s ->   642.10s] They have nice earnings, good management, and the chart looks really good.
+[  642.10s ->   645.44s] You set your stop loss pretty low, so it doesn't get stopped out.
+[  645.44s ->   649.62s] But at the same time, you want some type of protection if the stock randomly decides to drop
+[  649.62s ->   650.62s] a huge amount.
+[  650.62s ->   654.54s] Well, fun fact, a lot of traders are doing the exact same thing.
+[  654.54s ->   658.94s] You get on the next morning and see there was a huge drop in price, where the price dropped
+[  658.94s ->   663.94s] a ton hitting your really low stop loss, making you sell all your position.
+[  663.94s ->   667.86s] But right after the price went below your stop loss, it bounced right back up to where it
+[  667.86s ->   668.86s] was before.
+[  668.86s ->   673.44s] You check your news screener, and there was no bad news or any reason for the stock to fall.
+[  673.44s ->   675.28s] It just randomly fell out of nowhere.
+[  675.28s ->   676.28s] You're extremely confused.
+[  676.28s ->   680.74s] This, more often than not, is a form of market manipulation.
+[  680.74s ->   684.58s] Hedge funds have a lot of information that the average investor doesn't have.
+[  684.58s ->   688.42s] One of them is they can see exactly where everyone's stop losses are.
+[  688.42s ->   692.42s] What hedge funds will normally do is create a huge short position, making price fall a
+[  692.42s ->   694.02s] pretty decent amount.
+[  694.02s ->   697.84s] But most importantly, what they're doing is if they see an area where there's a huge
+[  697.84s ->   702.10s] amount of stop losses, they'll do everything within their power to get the price down to
+[  702.10s ->   703.52s] those stop losses.
+[  703.52s ->   708.08s] Once they do, the stop losses do the rest of the work for them, just adding fuel to the
+[  708.08s ->   710.80s] fire and making the price go down even more.
+[  710.80s ->   715.38s] Once it reaches the bottom, they exit their short position and enter a long position, while
+[  715.38s ->   720.24s] the market heads back up towards where it was before, letting them profit from both a short
+[  720.24s ->   721.52s] and a long trade.
+[  721.52s ->   726.02s] Now what's so scary about this type of manipulation is that it's very hard to predict.
+[  726.02s ->   730.42s] It can happen at any time, and you can't really tell when it's going to happen.
+[  730.42s ->   735.26s] And sadly enough, there's not much you can do here, other than not panic sell or not
+[  735.26s ->   737.20s] initially staying in a trade too long.
+[  737.20s ->   741.20s] There's not much else you can do, which kind of sucks, I know.
+[  741.20s ->   744.42s] But there is some sort of way you can tell when it's happening.
+[  744.42s ->   748.76s] It's almost the exact opposite of the pump example I was talking about before.
+[  748.76s ->   753.26s] If you see a huge red candle, but there is very little amount of volume, these are some
+[  753.26s ->   756.94s] of the characteristics of market manipulation to the downside.
+[  756.94s ->   762.24s] After the whole GameStop and AMC situation, market manipulation is at an all time high.
+[  762.24s ->   765.82s] And it's not because more and more hedge funds are doing it, it's because of you,
+[  765.82s ->   767.34s] the average investor.
+[  767.34s ->   771.92s] After the GameStop situation, retail investors started taking the strategy of just blindly
+[  771.92s ->   774.04s] following random traders and news.
+[  774.04s ->   780.02s] What's happening is big institutions are paying influencers, using bots, or media companies,
+[  780.02s ->   783.02s] and making companies look much bigger than they really are.
+[  783.02s ->   787.82s] The problem is, a lot of people nowadays will just trust another person's due diligence
+[  787.82s ->   789.52s] and just blindly follow them.
+[  789.52s ->   794.02s] What's even worse is, after they enter the trade, they end up becoming extremists about
+[  794.02s ->   797.24s] the stock and start spreading fake news themselves.
+[  797.24s ->   801.74s] And the only way you can avoid this is by doing your own due diligence and research.
+[  801.74s ->   806.74s] It's the only way you yourself can make sure to stay safe and know in the back of your
+[  806.74s ->   810.36s] head, no matter what happens, you know this is a good investment.
+[  810.36s ->   814.46s] It's almost impossible to completely stay away from market manipulation.
+[  814.46s ->   818.84s] But there are some practices that can improve your chances of making sure you don't get
+[  818.84s ->   821.00s] affected by it as much.
+[  821.00s ->   825.70s] Don't trust anyone, not me, not a guy with a million subs on YouTube, not a random person
+[  825.70s ->   826.70s] on Reddit.
+[  826.70s ->   829.38s] Do your own research, you can only trust yourself.
+[  829.38s ->   833.38s] I'm not saying don't follow anyone, but if somebody says a stock is good, you can
+[  833.38s ->   836.20s] use it with a grain of salt and do your own research.
+[  836.20s ->   840.62s] If you see a lot of people saying a stock is going to go up, stay away from it.
+[  840.62s ->   843.06s] Look for the volume patterns like we talked about before.
+[  843.06s ->   846.20s] It can be a great way to see if manipulation is occurring.
+[  846.20s ->   851.26s] Sell the news and sell the hype, don't stay in expecting the stock to go up after the news.
+[  851.26s ->   856.30s] If you try to do these things, you won't completely avoid market manipulation, but you will definitely
+[  856.30s ->   858.66s] decrease your chance of being a victim of it.
+[  858.66s ->   862.52s] Now don't get me wrong, market manipulation is not always a bad thing.
+[  862.52s ->   866.56s] If hedge funds can make money from it, so can you, and you probably already have.
+[  866.56s ->   870.34s] It can be a good generator of money, but it's also a risky one.
+[  870.34s ->   873.86s] And as we all know, we want to limit our risk as much as possible.
+[  873.86s ->   876.04s] So maybe you don't take my advice at all.
+[  876.04s ->   879.60s] Maybe you still want to blindly follow others and try to make money that way.
+[  879.60s ->   880.60s] You do you.
+[  880.60s ->   884.42s] I think it's important to note that all of you should know what's actually going on
+[  884.42s ->   887.94s] in the market, and you should know in the back of your head what's happening.
+[  887.94s ->   892.28s] In the end, it's your decision on what you will do, but it's important to stay informed.
+[  892.28s ->   897.10s] If you want to learn how to predict markets and predict which way the price will go, watch
+[  897.10s ->   901.66s] this video, where I go over tons of different candlestick patterns that you can use to help
+[  901.66s ->   904.28s] predict which direction the market will head.
+[  904.28s ->   906.66s] Thanks for watching, and I'll see you guys next time.

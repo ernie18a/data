@@ -1,0 +1,28 @@
+[    0.00s ->     4.04s] walk you through how to place a credit spread order on the TD Ameritrade platform.
+[    4.52s ->    10.20s] So for this example, we will be using the trade algo alert right here, SPY, this strategy. And
+[   10.20s ->    15.94s] again, you can use this for the text, email, and Discord alerts as well. But again, what we do is
+[   15.94s ->    21.00s] we go to our TD Ameritrade platform, we log in, we click on the trade account. Under trade, we
+[   21.00s ->    26.52s] scroll down to options, we click options, and now we are here. So once we're under the trade options
+[   26.52s ->    31.56s] tab, the first one we want to do is select our strategy. So we come here and again, on every
+[   31.56s ->    35.76s] alert, it will tell you if it is a put credit spread or a call credit spread. This one right
+[   35.76s ->    42.62s] here is a put credit spread. So we come into here, we go on to order type, we go on to vertical put
+[   42.62s ->    48.18s] spread. If it was a call, we do vertical call spread, but a vertical put spread. Next, we want
+[   48.18s ->    53.34s] to look up the symbol the alert is telling us to do. So for instance, the alert here is SPY, SPY.
+[   53.34s ->    58.10s] So we come in here into the underlying symbol type in SPY and then click on open options chain.
+[   58.92s ->    64.90s] Now, in order to see what we want to see, we're going to move the strikes from 10 to all. So once
+[   64.90s ->    69.70s] we've done that, then we want to come back to our alert and look at what is our expiration date,
+[   69.92s ->    74.24s] our expiration date is March 10, 2023. So we're going to come in here and we're going to put
+[   74.24s ->    81.14s] expiration March 10, 2023. Next, we need to know what expirations or what strike prices should we be
+[   81.14s ->    87.10s] following? This one's a 383, 382. That means we're going to sell the 383 and buy the 382 of the put
+[   87.10s ->    92.88s] contracts. So we simply come in here and find 383, 382. So I scroll, scroll, scroll, scroll. We have
+[   92.88s ->   100.52s] right here 383, 382. So I'm simply going to click on this. We're going to click on the bid price
+[  100.52s ->   106.26s] because that's the price you sell for right here. Now I have the contract set up and everything here.
+[  106.26s ->   113.46s] I can see that I'm going to be selling to open the 383 and buying to open the 382. You can see
+[  113.46s ->   118.66s] here a net credit of one penny. I can have my time enforcement. If again, if you're trading today,
+[  118.90s ->   124.52s] then like if you can place the order and immediate real time, then again, you can place day if the
+[  124.52s ->   128.00s] market is open. If you're more trading full time and you're trading, putting on the straight after
+[  128.00s ->   133.50s] hours, simply go into good till cancel with your premium order price. And that can be what you do.
+[  133.50s ->   137.74s] Now, again, this is not a trade you want to put on right now because the net credit of 0.01 or a
+[  137.74s ->   143.16s] penny. Again, you want to try to collect 15 cents or more. And that is the goal for every single
+[  143.16s ->   148.42s] trade. This trade has been open for a week now. So again, the trade is almost closed and that's why
+[  148.42s ->   154.84s] it's around a penny. But that is how you place a vertical call spread or a credit spread on TD Ameritrade.

@@ -1,0 +1,89 @@
+[    0.02s ->     4.82s] I've carefully curated a trading strategy where I've backtested thousands of trades.
+[    4.92s ->     9.78s] After hours of testing and backtest after backtest, I think I've finally curated the
+[    9.78s ->    15.90s] perfect strategy. And this is the exact strategy I'll be using in 2025. And I'm sharing it with
+[   15.90s ->    22.24s] you for absolutely free. First things first, hop on your charting platform. I'll be using
+[   22.24s ->    26.50s] TradingView. If you don't yet have it, I'll leave a link in my description. Next. For the strategy,
+[   26.50s ->    32.30s] I'll be using the 15 minute timeframe. So click that. Now this strategy includes five steps and
+[   32.30s ->    38.00s] all five of these steps are crucial in the success of this strategy. Meaning if you skip or mess up
+[   38.00s ->    42.82s] just one of these steps, the strategy will go up in flames and you'll lose all of your money.
+[   43.02s ->    48.08s] I'm never going to financially recover from this. So make sure you follow these steps to a T.
+[   48.70s ->    54.40s] Now watch this drive. The first step of our strategy is to identify our trend. The market is filled with
+[   54.40s ->    59.92s] uptrends and downtrends. Our job as a successful trader we are is to identify these trends and make
+[   59.92s ->    64.52s] sure we're trading with them and not against them. This will usually be pretty easy to spot.
+[   64.62s ->    69.70s] If a chart is making lower lows and lower highs, it's a downtrend. If the chart is making higher lows
+[   69.70s ->    74.86s] and higher highs, it's an uptrend. If it's not obvious whether we're in an uptrend or downtrend,
+[   74.96s ->    80.30s] that probably means you're looking at a consolidating market and you shouldn't touch it with a six foot
+[   80.30s ->    85.82s] pull. You don't want to be like this. This is disgusting. Here we have a chart. Price has been
+[   85.82s ->    91.10s] making lower highs and lower lows for the past couple of days, consistently breaking the previous
+[   91.10s ->    96.10s] low. So it's pretty easy to tell we're in a downtrending market. With that information, we're going to
+[   96.10s ->   101.06s] assume it'll continue on that path and keep that downwards pressure. So we're going to look for a
+[  101.06s ->   105.70s] short trade to capitalize on it. Now that we know we're in a downtrend, we're going to zoom in on our
+[  105.70s ->   110.74s] chart. If we analyze this most recent price movement, we can see price recently broke this
+[  110.74s ->   116.36s] low and is starting to correct a bit, which brings us to our next step, finding a discount zone. To do
+[  116.36s ->   121.80s] this, go to the left-hand side toolbar, click this arrow and switch to the GAM box tool. This should
+[  121.80s ->   126.30s] give you something that looks like this. I can see what they're doing, what he's doing. I can see it.
+[  126.34s ->   132.02s] I feel it. I can, I can, he's cooking. Go to the settings of the tool, uncheck all of these values
+[  132.02s ->   138.52s] besides 0, 0.5, and 1. I'll also be changing the color of these values to white, so it's not
+[  138.52s ->   143.14s] disgusting looking. Next, uncheck the left labels and the right labels, then uncheck all of these
+[  143.14s ->   148.24s] time levels. After all of this, you should get something that looks like this. Perfect. If we go
+[  148.24s ->   153.56s] back to our example, price broke all of these lows and is in a downtrend. If we go to current time,
+[  153.72s ->   159.42s] price recently broke this low and is starting to correct. Step two is identifying our discount zone.
+[  159.42s ->   163.82s] To do this, mark from the low that broke the recent low to the previous swing high.
+[  163.96s ->   168.18s] This will give us our discount zone. Price will naturally want to go to these zones.
+[  168.40s ->   172.86s] Since we're in a downtrend and looking for short trades, we only want to look for trades in this
+[  172.86s ->   178.20s] upper discount zone. Meaning, if there are any setups in this lower zone, we would ignore them.
+[  178.24s ->   183.78s] Our third step is to identify liquidity on the chart. This is arguably the most important step,
+[  183.86s ->   188.70s] as liquidity is what gives our trade fuel to move. But before we get into liquidity,
+[  188.70s ->   195.66s] let me show you something. I found a new broker, AAAFX.com. And this is no ordinary broker. They
+[  195.66s ->   201.82s] offer Forex, stocks, and crypto. Yes, a three for one. So no matter what silly little thing you trade,
+[  202.06s ->   209.52s] they have it. Best part is they have 0% commissions. Yes, you heard me right, 0% commissions for all of
+[  209.52s ->   214.80s] your trades. So unlike most brokers where you have to pay fees for every single trade you take, I mean,
+[  214.80s ->   219.64s] really sit down and think about it. If you're taking hundreds of trades, those fees can really
+[  219.64s ->   224.92s] add up to where you're paying hundreds, if not thousands of dollars. On here, it's absolutely
+[  224.92s ->   230.68s] free. Plus they're available in 176 different countries and fully regulated. If you want to try
+[  230.68s ->   236.44s] them out, use the link in my description and you will get unlimited 0% commissions. If you use my link,
+[  236.44s ->   241.82s] you're welcome. Liquidity in its simplest form is just a high or a low. Traders will naturally set
+[  241.82s ->   247.54s] stop losses above the zone, creating liquidity. So if price ever comes back to the zone, it'll
+[  247.54s ->   252.84s] naturally hit all these traders stop losses, grabbing all of this liquidity to fuel the trade
+[  252.84s ->   258.90s] to head lower. So to put it as simply as I can, liquidity in its simplest form is basically a fake
+[  258.90s ->   265.14s] out. Here on our chart, price made a low, a high, then another low. Meaning the high can be a perfect
+[  265.14s ->   271.22s] point for a liquidity graph, as there will naturally be tons of stop losses from traders above this high.
+[  271.22s ->   276.54s] Not only that, but this liquidity is in our discount zone. Remember the market will always
+[  276.54s ->   282.42s] need some form of liquidity before the real move happened. Next is step number four, and this is
+[  282.42s ->   288.28s] supply and demand. Demand is the start of a strong move upwards. Supply is the start of a strong move
+[  288.28s ->   294.16s] downwards. An easy way to mark your supply and demand zones is by finding the first candle of said move
+[  294.16s ->   298.76s] and marking from the bottom of the candle to the high of the candle. So here we have a strong move
+[  298.76s ->   304.74s] upwards. We find the first candle of this move, grab a rectangle tool and mark from the low to the high
+[  304.74s ->   310.60s] of this candle. This is our area of demand. So now we know tons of traders bought very strongly
+[  310.60s ->   316.40s] at this price, and we can expect if price ever comes back down to this demand zone again, traders
+[  316.40s ->   322.36s] will have the same exact mindset and want to buy at this price again. Same goes for an area of supply.
+[  322.36s ->   327.32s] Find a strong downwards move, mark from the low to the high of the candle that started that move,
+[  327.32s ->   331.66s] price will naturally want to come back to this area of supply, then fall afterwards.
+[  331.66s ->   337.50s] So if we go back to our example, price started a strong downwards move from this point. So we grab
+[  337.50s ->   343.20s] a rectangle tool, mark from the bottom to the top of that candle that started this downwards move.
+[  343.28s ->   348.28s] This will give us our area of supply. Important thing to note though, is that our area of supply
+[  348.28s ->   354.94s] is above our liquidity and is also in our discount zone. Then finally, moving on to our fifth and final
+[  354.94s ->   359.94s] step is to enter the trade. So in order to enter our trade, we have to make sure three things are
+[  359.94s ->   364.96s] true. First, we need price to break our point liquidity, which price has done. Next, we want
+[  364.96s ->   369.96s] price to enter our area of supply, which price has also done. Then finally, we want all of this to
+[  369.96s ->   376.32s] happen in our discount zone, which it has. We enter the trade as soon as price enters our supply zone,
+[  376.50s ->   381.90s] set our stop loss above the area of supply, set our take profit at the low. And after setting up this
+[  381.90s ->   388.48s] trade, it gave us a risk reward of 7.47, which is absolutely beautiful. Another side note,
+[  388.58s ->   393.62s] with this strategy, you'll often get beautiful risk rewards, just like we did here. But a rule
+[  393.62s ->   400.74s] to follow is that if our risk reward is under 2.5, we do not take the trade. So only take trades with
+[  400.74s ->   406.42s] the risk reward that is higher than 2.5. We let the trade play out and get an easy winning trade.
+[  406.54s ->   411.32s] Let's do an example for a long trade, shall we? First, we do our first step and identify the trend.
+[  411.32s ->   416.30s] Price is making higher lows and higher highs and is making breaks of structure to the upside.
+[  416.42s ->   421.46s] So we're in an uptrend and we're only looking for long trade. Next, we grab our GAM box tool
+[  421.46s ->   426.82s] and mark from the most recent low to the most recent high to view our discount zone. Since
+[  426.82s ->   432.68s] we're only taking long trades, this time our discount zone is at the bottom half of this GAM
+[  432.68s ->   437.88s] box tool. So we're only looking for trades in this bottom half. Next, we mark our points of liquidity.
+[  437.88s ->   443.26s] There's a low right here, which is also in our discount zone, which is a perfect point of
+[  443.26s ->   449.12s] liquidity. Next, mark our area of demand, which is the start of this uptrend starting from this
+[  449.12s ->   454.88s] candle. And also note this area of demand is in our discount zone. Wait for price to come to this
+[  454.88s ->   460.18s] area of demand, set our stop loss below the area of demand, and set our take profit at the recent
+[  460.18s ->   465.84s] high. Let the trade play out and we get a beautiful winning trade. This is the exact strategy I'll be using
+[  465.84s ->   471.78s] in 2025. And there's a reason for that because of how well it works in the market. Don't let emotions
+[  471.78s ->   476.84s] like fear and greed cloud your judgment. If you follow each and every one of these steps and follow
+[  476.84s ->   480.52s] this exact trading plan, you will succeed in 2025.
+[  480.52s ->   483.24s] I'm really rich. I'll show you that in a second.

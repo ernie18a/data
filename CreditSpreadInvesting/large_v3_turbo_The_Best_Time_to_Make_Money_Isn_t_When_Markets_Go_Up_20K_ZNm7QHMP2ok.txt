@@ -1,0 +1,126 @@
+[    0.00s ->     3.52s] The market has been absolutely wild recently.
+[    3.94s ->     9.56s] It's gone down because of the war, and now it's back up, even though the war isn't technically over.
+[    9.86s ->    16.54s] And in our last episode, we talked about how to sell push or trade options in a down market.
+[   16.72s ->    24.42s] So today, I'm going to tell you guys how well this portfolio has done in that downswing, as well as the subsequent recovery.
+[   24.42s ->    32.64s] Just to demonstrate how powerful it can be if you stick to a simple but consistent strategy that allowed me to retire after 10 years in corporate.
+[   32.90s ->    35.72s] So let's first take a look at our portfolio.
+[   36.02s ->    47.88s] And this portfolio started around a year ago with around $80,000, and now we're sitting at $141,000 by predominantly just selling puts and getting assigned when they need to be assigned.
+[   47.88s ->    56.40s] And if you just dive a little deeper, right, you can see at the bottom of the war, we were sitting close to $120,000.
+[   56.82s ->    62.82s] And right now, we're at $141,000, resulting in our account being at all-time highs.
+[   63.10s ->    69.46s] Now, the crazy part is, if you look at our year-to-date performance, we are actually still significantly outperforming the S&P 500.
+[   69.94s ->    76.30s] 4.22% compared to our 10.55%, and this isn't even going to include today, where we're up close to 3%.
+[   76.30s ->    78.80s] The question here is, how do we go about doing this?
+[   78.86s ->    87.60s] And what we did during this downswing matters a lot more to our overall profitability than what we did during this upswing.
+[   87.76s ->    88.84s] So let's talk about it.
+[   89.46s ->    96.88s] So we're going to first head on over to Premium Insights to take a look at how well our options selling performance has done year-to-date.
+[   96.88s ->   101.90s] And you can see, year-to-date, we're up close to $5,376.
+[  102.84s ->   114.20s] Otherwise, close to a 7.3% return on our invested capital, which is in line with our 1.5% monthly re-yield each and every single month.
+[  114.24s ->   115.94s] And it's only been around four months.
+[  115.94s ->   127.78s] Now, if you just look at the last 30 days, right, which is from the bottom of the market to the top of the market, we are up close to $2,100 in realized profits.
+[  128.04s ->   133.32s] And we're still not accounting for the $1,700 of open premium on the options that haven't closed.
+[  133.32s ->   144.86s] So if you take a look at our income or our cash flow, you can see that in March, when the market went down, we collected a lot of money during that one month, close to $2,500.
+[  145.42s ->   152.16s] And as April continued to go up, we reverted back to the mean, which is close to $1,200 a month, right, right in line with our average.
+[  152.72s ->   160.00s] And to take this one step further, our overall yield, we're targeting it on 1.5% to 2.5% monthly yield.
+[  160.00s ->   163.38s] So you can see on that one month, we're at 2.3% yield.
+[  163.50s ->   167.46s] And as the market has gone to all-time highs, we're now back to 1.1%.
+[  167.46s ->   172.70s] This should be technically a little higher because we have covered calls that we're selling at 0.2% to 0.5%.
+[  172.70s ->   187.22s] And if you just take a look at the last three months, you can see we've collected $4,500 in cash secured puts and only $581 in covered calls, which is these two options way down here.
+[  187.22s ->   194.38s] So now that we understand how the performance has done, let's talk a little bit about how we got these gains.
+[  194.84s ->   203.06s] So first thing first, I want you guys to understand the way we make money selling options is when we harvest what we call volatility risk premium.
+[  203.22s ->   209.34s] And that is a fancy way of saying when implied volatility is greater than realized volatility.
+[  209.34s ->   215.66s] So we like to track this using an index called VIX, which is an overall volatility index.
+[  216.14s ->   223.10s] And we talked about this in our masterclass, but when VIX is low, we actually do not want to be selling a lot of options.
+[  223.62s ->   224.06s] Why?
+[  224.46s ->   232.54s] Because when VIX ultimately goes up, even if your stock does not move, your option prices will go up and we will end up losing money.
+[  232.54s ->   239.82s] Vice versa is when VIX is high, there is a strong likelihood that eventually VIX will regress to the norm.
+[  240.18s ->   242.14s] Beginning the year, VIX is very, very low.
+[  242.64s ->   243.56s] The war started.
+[  244.30s ->   248.18s] VIX spiked around 30, 31, and now it's back down to 18.
+[  249.02s ->   253.30s] Same thing happened during these, I guess, tariff announcements.
+[  254.34s ->   256.48s] Same thing with Liberation Day here.
+[  256.88s ->   259.58s] VIX will spike and ultimately always come back down.
+[  259.58s ->   262.82s] It's just a matter of when, not if.
+[  263.42s ->   268.04s] And so when VIX spikes, our option prices go up, right?
+[  268.10s ->   271.30s] And so when we sell our options, we collect more money.
+[  271.44s ->   278.00s] If we head back to Premium Insights, you can see during like really calm months, I'm actually not collecting too much money.
+[  278.10s ->   279.88s] I'm collecting around $1,000 a month.
+[  280.12s ->   287.12s] But when VIX spikes, I can collect a lot more and I can deploy my capital much more aggressively.
+[  287.12s ->   294.46s] This time around, when the market fell and VIX spiked, I started selling cash secure puts on Microsoft.
+[  294.82s ->   302.38s] And you can see just from Microsoft right now, I've collected a total of $2,075, around a 5.3% return.
+[  302.38s ->   308.92s] I started at $3,060, I immediately rolled that up to $3,075 because I realized I wasn't close enough to the money.
+[  309.46s ->   312.44s] And I rolled that up to $3,070, $3,075, $3,090, right?
+[  312.48s ->   317.62s] You can see all that money combined, all within three weeks was a 5% return.
+[  318.56s ->   322.48s] Microsoft has fallen all the way down to like $3,060.
+[  322.48s ->   329.90s] And so when it got close to $3,060 or all the way down, when VIX was high and Microsoft was low,
+[  330.26s ->   335.22s] this is a really good opportunity for us to come in and try and acquire great companies at great prices.
+[  335.66s ->   336.48s] And so what do you do?
+[  336.58s ->   341.08s] You go and sell cash secured puts right at the money or slightly below the money
+[  341.08s ->   345.82s] because the downside risk is actually a lot less than what it used to be.
+[  345.82s ->   351.20s] And so if it continues to go down, there is a higher likelihood that Microsoft may recover.
+[  351.20s ->   355.74s] And on top of that, when VIX is high, even if Microsoft doesn't move, right?
+[  355.84s ->   360.62s] And the overall market returns back to normal, you will win on your option.
+[  360.74s ->   363.78s] And in this case, VIX dropped and Microsoft went up.
+[  363.98s ->   366.88s] Therefore, I'm able to collect a lot of money very, very quickly.
+[  367.06s ->   368.66s] Which gets us to the second point.
+[  368.92s ->   374.28s] When the market does drop, we do not want to panic and close out our existing options,
+[  374.44s ->   376.88s] the ones that we opened up when VIX is low.
+[  377.18s ->   379.22s] I have IPKR puts on my account.
+[  379.22s ->   384.32s] And if you look at the year to date, you can see IBKR was around $75.
+[  384.84s ->   388.66s] And boom, it went all the way down to $63.69.
+[  389.38s ->   393.00s] And now it's back up to $81.71 at its peak.
+[  393.18s ->   398.90s] If you take a look at our wheel here and you take a look at IBKR,
+[  399.12s ->   403.96s] we had these $70 put options already open in our account.
+[  404.24s ->   405.34s] We made money on them.
+[  405.62s ->   405.86s] Why?
+[  406.02s ->   407.34s] Because we didn't close them.
+[  407.34s ->   411.92s] If we did close them, at its bottom, we were down like $600.
+[  412.86s ->   415.24s] And if you close that, you can see we've only collected $1,300.
+[  415.94s ->   418.74s] So if I close that, I lose half of my premium already.
+[  419.12s ->   420.16s] Another example is this.
+[  420.20s ->   422.02s] I have this example on our channel a lot.
+[  422.86s ->   423.88s] Take a look at this TSMC.
+[  424.02s ->   426.12s] So I got assigned back in March of 2025.
+[  426.56s ->   431.74s] March of 2025 went from a peak of $220 all the way down to $146.
+[  431.74s ->   434.12s] Now it's back at $403.57.
+[  434.76s ->   438.56s] So just from the capital gains alone, I'm up 120%.
+[  438.56s ->   444.48s] And this is one of the reasons why if you are able to acquire great companies at great price points,
+[  444.84s ->   450.42s] when the market falls, taking advantage of fear, the upside is large.
+[  450.50s ->   452.20s] And that's hopefully what happens with Microsoft.
+[  452.42s ->   453.96s] Which leads me to the third point.
+[  454.44s ->   458.84s] When these companies fall to great price points, the risk isn't getting assigned.
+[  459.10s ->   460.72s] The risk is not getting assigned.
+[  460.72s ->   464.38s] And so Microsoft right now, I may not be able to acquire 100 shares at Microsoft.
+[  464.82s ->   469.50s] So how do we mitigate against that risk about not getting assigned and having a stock run up?
+[  469.62s ->   472.90s] I like to take the credit that I collect from selling options.
+[  473.28s ->   475.84s] And I like to buy the underlying equity.
+[  476.28s ->   478.20s] Similar to like dividend reinvestment, right?
+[  478.28s ->   478.56s] Dripping.
+[  479.04s ->   480.30s] I'll make a separate video about this.
+[  480.36s ->   483.96s] So let me know down in the comment section below if you guys want a deep dive into that strategy.
+[  484.14s ->   486.40s] And of course, subscribe to be able to see that video.
+[  486.58s ->   488.20s] What I like to do in this case,
+[  488.20s ->   492.36s] especially when VIX spikes and the stock drops to a really, really good price,
+[  492.36s ->   496.18s] is I take all of the credit that I collected and I buy the stock.
+[  496.42s ->   498.00s] So take a look at Microsoft right here.
+[  498.12s ->   502.68s] And every single dollar here is using money that I've collected either from selling Microsoft options,
+[  502.94s ->   506.08s] NVIDIA options, IoT options, Netflix options.
+[  506.08s ->   512.44s] And from this, you can see the stocks that I've bought have already appreciated 13.4%.
+[  512.44s ->   516.30s] This helps mitigate against the risk of us not getting assigned.
+[  516.44s ->   521.74s] At least I have some stock, some equity to at least appreciate if I don't get assigned.
+[  521.96s ->   523.24s] We got to come up with a name for the strategy.
+[  523.36s ->   526.92s] So you guys let me know down in the comment section below what you think a good name for this is,
+[  527.32s ->   528.56s] since dividend is called dripping.
+[  528.56s ->   538.10s] We want our equity to appreciate, especially in these very volatile and very, quote unquote, fairly priced zones.
+[  538.34s ->   539.76s] So let's just wrap this up.
+[  540.04s ->   543.50s] Number one, sell more options when VIX is high.
+[  543.76s ->   545.24s] Be more conservative when VIX is low.
+[  545.46s ->   550.00s] Number two, do not buy back your options that are in the money because it'll ruin your P&O.
+[  550.00s ->   556.50s] And number three is you want to use credit that you collected to buy the underlying equity because in this case,
+[  557.38s ->   562.96s] when the stock market has dropped, it allows you to buy in a dollar cost average at a better price point
+[  562.96s ->   568.10s] so that you don't miss out on the equity appreciation if your option doesn't get assigned.
+[  568.28s ->   570.78s] If you have any questions, let me know in the comment section below.
+[  571.16s ->   574.56s] If you like the video, make sure you guys like and subscribe to the channel.
+[  574.74s ->   577.28s] And if you guys want to try out Premium Insights, link is down below.
+[  577.28s ->   580.00s] If you guys want to watch the masterclass on how to sell puts and credit spreads,
+[  580.08s ->   581.46s] I'll link you to the end screen right here.
+[  581.60s ->   583.76s] And like always, until next time, peace.

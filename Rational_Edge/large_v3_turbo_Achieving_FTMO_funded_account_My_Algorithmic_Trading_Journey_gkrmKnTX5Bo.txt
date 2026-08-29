@@ -1,0 +1,44 @@
+[    0.09s ->     6.49s] so today I'm gonna show you how I pass both phase 1 and phase 2 of FTMO
+[    6.49s ->    13.61s] challenge so I began the challenge end of April and it took me only 14 days to
+[   13.61s ->    21.21s] pass the first phase so you see here the great equity curve and it's awesome but
+[   21.21s ->    27.05s] in this case the risk was a little bit higher than the normal so it took me
+[   27.05s ->    34.79s] just a few days but it was fine after a few days I changed the risk and reduced
+[   34.79s ->    41.69s] the risk a little bit so yeah that's it you can see the volume and also the
+[   41.69s ->    51.20s] profit by symbol but it took me probably a week because the first few days it was
+[   51.20s ->    58.40s] like losing trades and then from 1st of May it took me exactly 12 days to
+[   58.40s ->    66.30s] complete the challenge I did it probably 95% algorithmic way and 5%
+[   66.30s ->    71.40s] discretionary trading because I had to close mainly the position because I
+[   71.40s ->    77.52s] didn't had at that time an algo that was closing all the position when my profit
+[   77.52s ->    83.94s] target was hit so I had to do it manually and also probably some other trades I to
+[   83.94s ->    96.18s] close it finally so this was the first and then this is this one was the
+[   96.18s ->   108.16s] verification and yeah it was not that good it took me exactly 101 days so from the
+[  108.16s ->   114.44s] one is so before probably two three days later I started this one exactly started
+[  114.44s ->   122.42s] and then it took me 101 days to pass that challenge so for my portfolio of
+[  122.42s ->   127.70s] algorithms it wasn't the best period you can see it here I was very very close to
+[  127.70s ->   135.37s] the max drawdown and I was probably $200 away from the max loss and that's not good but I did some mistakes because I didn't fix the risk on each assets as I needed because the problem is that I have three
+[  135.37s ->   143.62s] algos on Nasdaq and for each of those algos I had too much risk I had too much risk so it wasn't balanced that well and also that was the first problem
+[  143.62s ->   175.19s] and the second thing it was Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin Bitcoin
+[  175.19s ->   186.00s] usd loss and i'll show you later like the exact amount and why that happened so my algo didn't
+[  186.00s ->   194.37s] perform that well on btc i got it like it's fine sometimes it happened but the main problem it was
+[  194.37s ->   206.18s] the fees and the swap fees on bitcoin during those 101 day ftmo changed the rules on commission and
+[  206.18s ->   217.86s] okay so you can see it here i paid close to 2k on swaps and 400 usd on fees so that's close to
+[  219.99s ->   228.87s] five percent of the account only on commission i'm not sure but i think like 600 or 700 were only on
+[  228.87s ->   237.35s] bitcoin because they changed the rules during those days and yeah anyway i passed the ftmo verification
+[  239.11s ->   245.75s] around here i reduced the risk here and also probably this week i removed the algo on bitcoin
+[  245.75s ->   253.51s] because i with those type of commission that ftmo is offering now is not profitable anymore it's around
+[  254.31s ->   264.47s] 15 usd for each trade then i can show you the certificate here now i'm this is my nickname i have
+[  264.47s ->   272.39s] it also on darwinx so yeah i don't like to show my personal details i was showing you before the report
+[  273.03s ->   284.50s] this is the mt5 report and the thing is after one other day i can collect some of the data because i was
+[  284.50s ->   293.22s] copying all of those trades also on darwinx where i showed you on the previous video the performance
+[  293.22s ->   303.46s] and it was very good also because the condition it was a little bit different and i didn't trade on
+[  303.46s ->   312.28s] bitcoin on the next so the performance is going to be much better for sure and actually now september
+[  312.28s ->   316.60s] 27th i reached the gold status on the arena i
+[  317.16s ->   324.44s] how i can improve my algo and how i can get better and increase the margin overall
+[  325.48s ->   332.12s] so this is the profit and loss plus commission plus swaps on i'm just doing quick visual
+[  333.00s ->   340.53s] this is of the data and most of the time i paid insane amount of fees on
+[  343.54s ->   353.22s] bdc and also probably nasdaq for my portfolio the main goal now is to increase the share ratio and also to
+[  353.22s ->   363.32s] reduce the commissions so the goal with this channel is to showing you how to do algorithmic trading and how
+[  363.32s ->   371.00s] to monetize it from that and also i'm showing you the proof so i'm trying to be transparent as i can the
+[  371.00s ->   379.36s] idea is to give you the real data driven insights so it's not just the hype and if you want to see
+[  379.36s ->   386.80s] the strategy breakdowns and even tips on how to build your own algorithm system you can leave a comment
+[  386.80s ->   397.28s] and subscribe see you next time

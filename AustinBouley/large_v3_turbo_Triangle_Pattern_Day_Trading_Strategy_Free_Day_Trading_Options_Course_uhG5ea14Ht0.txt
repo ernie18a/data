@@ -1,0 +1,175 @@
+[    0.54s ->     1.54s] Hey guys, what's up?
+[    1.54s ->     5.66s] It's ABTrades and I run a YouTube channel to teach people how to day trade options.
+[    5.66s ->    10.78s] I've received a lot of questions recently about the best course that one can buy to
+[   10.78s ->    15.46s] learn how to day trade options so I thought I just might as well release a bunch of videos
+[   15.46s ->    18.46s] that would teach you exactly what would be taught in a course.
+[   18.46s ->    23.90s] So this is day three of the seven day strategy release where I'm showing you strategies that
+[   23.90s ->    26.02s] people make you pay money for.
+[   26.02s ->    30.24s] So we talked about RSI dot dot divergence already and we talked about MACD divergence
+[   30.24s ->    33.98s] and you can view those by going back on the YouTube channel.
+[   33.98s ->    38.40s] And if you want to continue to see what I'm doing, please subscribe and turn on those alerts
+[   38.40s ->    41.12s] so you can see when new videos come out.
+[   41.12s ->    45.30s] Also please like and comment so I know what y'all are liking the videos and what else y'all
+[   45.30s ->    46.30s] want.
+[   46.30s ->    48.82s] Alright, so today we're talking about the triangle pattern.
+[   48.82s ->    52.14s] So the triangle pattern is probably one of my favorite setups.
+[   52.14s ->    59.36s] It does not occur as much as I would like but it gives you a very well defined risk to
+[   59.36s ->    60.36s] reward ratio.
+[   60.36s ->    65.50s] It shows you where to get in and where to get out and it also has a bunch of different
+[   65.50s ->    67.26s] setups that you can look for.
+[   67.26s ->    72.12s] There's a symmetrical triangle, there's an ascending triangle and there's a descending triangle.
+[   72.12s ->    73.66s] So let's look at it.
+[   73.66s ->    78.42s] So one thing I did want to point out is that after a stock has run up so much and then it
+[   78.42s ->    84.64s] starts to consolidate into a triangle which I will talk about more in a second.
+[   84.64s ->    90.48s] If it runs up way too much too fast and it consolidates into a triangle, the triangle will
+[   90.48s ->    95.64s] not break out to the upside because it's already run way too much and it's overextended.
+[   95.64s ->   100.64s] You can see the same thing happen on Apple one time but I just want to show y'all that there
+[  100.64s ->   103.64s] are caveats to all the strategies I'm showing you.
+[  103.64s ->   108.02s] However, in the long run they all work out and have a good percentage chance of working
+[  108.02s ->   109.86s] out if you stick to rules.
+[  109.86s ->   110.86s] Alright?
+[  110.86s ->   113.26s] So if we look here, we have a triangle setup.
+[  113.26s ->   120.36s] A triangle setup is defined as having a previous move, this move previous being to the upside.
+[  120.36s ->   121.36s] Okay?
+[  121.36s ->   128.08s] And then accompanying that move to either the upside or downside, we have price starting to consolidate
+[  128.08s ->   130.68s] into a range.
+[  130.68s ->   135.58s] So if you can see here, connecting the consolidation points, it almost looks like it's consolidating
+[  135.58s ->   137.84s] into a triangle into one point.
+[  137.84s ->   140.06s] So that is where you get the triangle name from.
+[  140.06s ->   145.50s] So there's ascending which is where you have it hitting up against a solid resistance point
+[  145.50s ->   150.30s] while the lows are getting lower so it starts to pull up and it gets into this resistance
+[  150.30s ->   157.06s] and so you enter in the point of the triangle and then you let it run to the breakout top.
+[  157.06s ->   161.20s] Which of course you're watching volume to confirm the breakout and a bunch of other things but
+[  161.20s ->   162.52s] I'll explain that more.
+[  162.52s ->   168.26s] And then your second type is where you're pressing up against a support while your lows are getting
+[  168.26s ->   172.02s] lower and you're consolidating in between this tight range.
+[  172.02s ->   175.68s] You enter here for a put and then you let it run to the downside.
+[  175.68s ->   182.22s] And then your second or your third one is what is known as a symmetrical triangle where
+[  182.22s ->   187.16s] it's coming from either down, consolidating, and then moving back down to the downside
+[  187.16s ->   190.76s] or coming up, consolidating in between the price points.
+[  190.76s ->   195.84s] The reason why this works so much is because price cannot stay consolidated within a few cents
+[  195.84s ->   196.84s] for long.
+[  196.84s ->   199.80s] The reason being is we're trading big name blue chip stocks.
+[  199.80s ->   202.10s] These stocks cannot trade within a few cents.
+[  202.10s ->   205.36s] That's just not how it works, especially with all the volume that's coming through.
+[  205.36s ->   208.14s] So if you can see here on SPY, we have a previous run up.
+[  208.14s ->   211.74s] So we hit the first requirement that we're having a previous trend.
+[  211.74s ->   214.14s] It's moving in a certain direction.
+[  214.14s ->   217.62s] The second, we start to consolidate within a triangle.
+[  217.62s ->   221.70s] It can be any of those three I just showed you, the ascending, the descending, or a symmetrical
+[  221.70s ->   223.14s] triangle.
+[  223.14s ->   226.28s] This instance, it's a symmetrical triangle.
+[  226.28s ->   231.54s] The reason why I did not enter on this trade, even though if we go back and you look at it,
+[  231.54s ->   236.64s] look how far that ran, I didn't enter because I knew that the Fed share was speaking.
+[  236.64s ->   239.82s] So in addition to stuff, you also have to watch news.
+[  239.82s ->   243.10s] And I did not want to trade because the Fed share, it could have gone straight down.
+[  243.10s ->   244.10s] I don't know.
+[  244.10s ->   245.38s] So that's why I stayed out.
+[  245.38s ->   249.32s] But we also have another symmetrical triangle here.
+[  249.32s ->   252.16s] We're having a previous run to the downside.
+[  252.16s ->   255.94s] And then we start to consolidate in between here.
+[  255.94s ->   261.68s] And when you start to consolidate, you want to see the volume start to decrease because
+[  261.68s ->   264.60s] people aren't trading in between a tight range.
+[  264.60s ->   269.76s] But when volume starts to pick up, then you know that the breakout is confirmed to the downside.
+[  269.76s ->   274.02s] This is not the best trade setup in the world.
+[  274.02s ->   275.02s] But again, it's one.
+[  275.02s ->   276.60s] And we can go back through.
+[  276.60s ->   283.08s] The amazing thing about this triangle setup is, as I will show you, you can predict how
+[  283.08s ->   288.08s] far it will run and how much money you can make from it.
+[  288.08s ->   293.78s] So for instance, you can trade it on a 15-minute time frame, a one-day time frame, and you can
+[  293.78s ->   294.94s] trade it on any stocks.
+[  294.94s ->   298.86s] Like the RSI and MACD divergence primarily work on SPY only.
+[  298.86s ->   301.48s] But triangle patterns work on every single stock.
+[  301.48s ->   307.32s] And that's if you want to look and connect with me on the Discord group that I have linked
+[  307.32s ->   308.82s] in the description.
+[  308.82s ->   312.36s] We mainly only trade triangle patterns because of how great they are.
+[  312.36s ->   314.34s] So for instance here, we are running up.
+[  314.34s ->   317.82s] We start to consolidate in price within here.
+[  317.82s ->   318.82s] Volume starts to slow down.
+[  318.82s ->   322.24s] And as we get into this corner, volume starts to pick up.
+[  322.24s ->   325.40s] We break down to the downside and we run.
+[  325.40s ->   327.54s] So that will run to the downside.
+[  327.54s ->   331.16s] But there are so many other examples that we can show you.
+[  331.16s ->   333.16s] Like here is another one.
+[  333.16s ->   334.16s] We run to the upside.
+[  334.16s ->   336.00s] We start to consolidate here.
+[  336.00s ->   339.10s] And then we break straight down to the downside.
+[  339.10s ->   341.16s] How do we anticipate the runs?
+[  341.16s ->   344.78s] From the bottom to the top, this length.
+[  344.78s ->   351.78s] So the length of this run here, which is, let's say, this is about $13.67.
+[  351.78s ->   354.78s] So it's about a dollar move, right?
+[  354.78s ->   360.78s] So from the bottom to the top of the triangle is what you would expect on the breakout.
+[  360.78s ->   366.40s] So if this is $266, then we should expect around $265 highs, right?
+[  366.40s ->   369.40s] So we should expect around here.
+[  369.40s ->   373.40s] Again, we didn't get that whole move, but still it gives you something to expect.
+[  373.40s ->   378.40s] The reason why I also love these is because your risk to reward is also set up all in
+[  378.40s ->   379.40s] your favor.
+[  379.40s ->   381.40s] Let's see if I can find another good setup.
+[  381.40s ->   384.08s] If not, I know a great setup on Apple.
+[  384.08s ->   388.36s] So, for example, here's one just on a shorter time frame.
+[  388.36s ->   389.36s] Why?
+[  389.36s ->   392.02s] Because we have this previous run to the downside.
+[  392.02s ->   393.44s] We form a bottom here.
+[  393.44s ->   394.44s] There's a green.
+[  394.44s ->   395.44s] We form a bottom here.
+[  395.44s ->   396.44s] We start to bounce.
+[  396.44s ->   399.72s] And then we fall through the support while forming lower lows.
+[  399.72s ->   402.70s] You may not call this the best triangle, but hey, it works.
+[  402.70s ->   404.32s] The volume is starting to consolidate.
+[  404.32s ->   407.92s] And then right here on the breakout, volume shoots up, right?
+[  407.92s ->   409.86s] And then we have a nice run to the downside.
+[  409.86s ->   414.94s] A lot of the times, a triangle pattern will break through and will come back up and retest
+[  414.94s ->   416.58s] its previous support before running again.
+[  416.58s ->   418.62s] And you can see what happened here.
+[  418.62s ->   425.62s] Now let's go to Apple because I have a great setup here that was amazing on, I guess it
+[  425.62s ->   427.23s] was Friday.
+[  427.23s ->   434.17s] So if you can see here, this is the example of a descending triangle pattern where we're
+[  434.17s ->   438.09s] having it bounce up against us support, but the lows are getting lower.
+[  438.09s ->   443.17s] So if you can see here, we are meeting the requirement that's coming from a previous trend.
+[  443.17s ->   447.85s] Two, we're starting to consolidate M in between into a triangle.
+[  447.85s ->   452.17s] And three, we break out to the upside with increased volume because the volume starts to
+[  452.17s ->   454.13s] pick up more and more.
+[  454.13s ->   458.17s] So what is so great about this triangle setup and why do I like to trade it?
+[  458.17s ->   461.01s] One, it's very recognizable.
+[  461.01s ->   464.25s] You can see it and you have like, you can see it.
+[  464.25s ->   465.25s] It's a triangle.
+[  465.25s ->   467.25s] It's consolidating in price.
+[  467.25s ->   473.87s] Also, if you're going to enter, because when you have it, a triangle is more times than
+[  473.87s ->   475.57s] not a continuation pattern.
+[  475.57s ->   480.53s] So if we're trading to the downside and we consolidate, we're most likely, more times
+[  480.53s ->   483.65s] than not, going to see a continuation to the downside, right?
+[  483.65s ->   490.45s] So if you enter here in the middle of the triangle on a put, where is my risk?
+[  490.45s ->   493.29s] My risk is up to hitting this line again.
+[  493.29s ->   497.59s] So my risk is this and then my reward is down here.
+[  497.59s ->   503.57s] So imagine this reward, all this reward for this risk.
+[  503.57s ->   505.23s] That is why I like triangle setups.
+[  505.23s ->   506.95s] My risk is defined.
+[  506.95s ->   512.35s] I know that if I'm wrong and it starts to reverse where I am getting out at, but I know that
+[  512.35s ->   519.09s] also I have a lot more reward in my favor, alright?
+[  519.09s ->   522.45s] So this is a prime example of a triangle setup on Apple.
+[  522.45s ->   525.11s] Again, it works in almost everything.
+[  525.11s ->   529.67s] It does not show up all the time, but it does show up a lot.
+[  529.67s ->   536.97s] I know there's someone in the group chat, I believe it's Dr. C, who trades primarily MU
+[  536.97s ->   542.33s] triangles all the time, and it looks like my internet does not want to work with me.
+[  542.33s ->   545.99s] But I hope you all understand the concept that we have an ascending triangle and we have
+[  545.99s ->   549.59s] a descending triangle and we have an asymmetrical triangle.
+[  549.59s ->   554.93s] The reason why it works so well is because price on a stock, let's see if I can move and maybe
+[  554.93s ->   555.93s] show.
+[  555.93s ->   556.93s] Bummer.
+[  556.93s ->   563.35s] The reason why it works so well is because price cannot consolidate for too long.
+[  563.35s ->   568.81s] We're trading big name blue chip stocks at a price in the $100, $200, $300, or Amazon
+[  568.81s ->   569.59s] in the thousands.
+[  570.11s ->   572.71s] Or 1,000, but you know what I mean.
+[  573.25s ->   578.33s] And a price cannot stay in between, cannot fluctuate in between 20 cents.
+[  578.33s ->   583.67s] So, obviously, volume when it comes in will cause it to break out in a direction.
+[  583.67s ->   587.01s] When you're looking and you're seeing a trending day, either trending to the upside or trending
+[  587.01s ->   591.75s] to the downside, you see it start to consolidate within a triangle or even a rectangle, you know
+[  591.75s ->   594.27s] that it cannot stay that way forever.
+[  594.27s ->   594.67s] Triangle patterns are my favorite.
+[  594.67s ->   600.67s] And if I did not explain it to the extent that you want, just go on my YouTube channel,
+[  600.67s ->   601.67s] search for triangle patterns.
+[  601.67s ->   604.21s] I have made multiple, multiple videos about it.
+[  604.21s ->   605.91s] Again, guys, thank you for tuning in.
+[  605.91s ->   609.97s] Please like, please comment, and please subscribe because I want y'all to enjoy this content
+[  609.97s ->   611.83s] and I want to know what y'all like about it.
+[  612.49s ->   615.53s] Again, this was day three, so see y'all tomorrow for day four.

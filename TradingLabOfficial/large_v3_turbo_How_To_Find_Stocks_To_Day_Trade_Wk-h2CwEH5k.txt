@@ -1,0 +1,166 @@
+[    0.16s ->     3.52s] What makes a stock a great potential candidate to day trade?
+[    3.52s ->     8.64s] This stock went up 300% in just a couple of hours, while most blue chip stocks you would
+[    8.64s ->    11.52s] have to wait multiple years for that to take place.
+[   11.52s ->    15.68s] Problem is, usually when you see these 300% plays, you're late to the party.
+[   15.68s ->    20.84s] So how do we find these stocks that make these massive moves like this before they even happen?
+[   20.84s ->    25.40s] So we can take advantage of it, reap the benefits, and get incredible gains.
+[   25.40s ->    29.72s] Well to understand how to find big gainers, we first have to understand volume.
+[   29.72s ->    34.28s] Volume is the total quantity of shares traded by traders for a specific stock.
+[   34.28s ->    37.16s] So the more buyers and sellers, the higher the volume.
+[   37.16s ->    40.80s] Volume can be a great indication if a stock is hot or not.
+[   40.80s ->    43.52s] Think of it as almost the amount of eyes watching a stock.
+[   43.52s ->    46.02s] The more people watching it, the bigger the spikes.
+[   46.02s ->    49.74s] As a day trader, you'll quickly realize price movement is your friend.
+[   49.74s ->    53.16s] That's why day traders like volume so much, because when there's a lot of volume, the
+[   53.16s ->    56.78s] price will move a lot more, giving us more opportunities for trading plays.
+[   56.78s ->    60.34s] While if you trade a stock with little to no volume, it's not going to be moving as
+[   60.34s ->    65.45s] much, resulting in fewer amounts of opportunities.
+[   65.45s ->    69.69s] Not only that, traders like volume for liquidity reasons, as if you're a buyer and you want
+[   69.69s ->    73.41s] to sell your position at a specific point, you can only sell that position if there's
+[   73.41s ->    74.41s] another buyer.
+[   74.41s ->    75.85s] It doesn't just poof out of midair.
+[   75.85s ->    78.69s] There needs to be someone else on the other side of the transaction.
+[   78.69s ->    82.65s] When there are low amounts of volume, it might be hard for you to find another buyer, resulting
+[   82.65s ->    84.85s] it being harder for you to exit your position.
+[   84.85s ->    89.41s] So we now know the impact volume has on a stock, but what creates the actual movement
+[   89.41s ->    90.41s] of a stock?
+[   90.41s ->    92.21s] Well, there's actually a few factors.
+[   92.21s ->    93.27s] One is scarcity.
+[   93.27s ->    95.81s] I'm sure you've all heard the good old supply and demand.
+[   95.81s ->   100.23s] If there is a low supply of something and a lot of demand for it, that'll increase the
+[  100.23s ->   101.51s] price, right?
+[  101.51s ->   104.79s] So we identified that volume is the demand in a type of way.
+[  104.79s ->   106.87s] But how do we identify the supply?
+[  106.87s ->   107.87s] The answer?
+[  107.87s ->   108.87s] The float.
+[  108.87s ->   112.93s] The float is the total amount of shares available for public investors to buy and sell.
+[  112.93s ->   118.09s] Some companies like Amazon have 450 million shares out there in circulation, while other
+[  118.09s ->   122.07s] companies like some penny stocks only have a couple million shares out there.
+[  122.07s ->   123.45s] Every stock is going to be different.
+[  123.45s ->   127.37s] You can get this number by going on Yahoo Finance, searching the ticker symbol, click the
+[  127.37s ->   130.81s] statistics tab, then scroll down a bit till you see the float section.
+[  130.81s ->   133.65s] That's the amount of shares available right now.
+[  133.65s ->   138.05s] Now if we go back to the supply and demand example, if we want the price to rise, we want
+[  138.05s ->   142.65s] high amounts of volume, which is the demand, and low amounts of supply, which is the float.
+[  142.65s ->   147.21s] So in most cases for day trading, the lower the float, the better, as the less shares
+[  147.21s ->   150.71s] out there creates more scarcity, meaning bigger price movements.
+[  150.71s ->   155.31s] When I'm day trading, I like to find stocks that have a 20 million share float or lower.
+[  155.31s ->   157.11s] Like I said before, the lower, the better.
+[  157.11s ->   160.85s] If it has anything more than 20 million, I won't day trade it.
+[  160.85s ->   164.47s] Unless it's a really slow day and there aren't a lot of options out there.
+[  164.47s ->   169.03s] If you ever find a stock that has a massive amount of volume, a low flow, and it's a
+[  169.03s ->   172.89s] top gainer, you will quickly see why this is a day trader's dream.
+[  172.89s ->   176.93s] Because the amount of volatility from this is like nothing you have ever seen before.
+[  176.93s ->   180.49s] You will literally have single candles that make 10% moves.
+[  180.49s ->   183.09s] So when day trading, those should really be your filters.
+[  183.09s ->   184.91s] Lots of volume and a low flow.
+[  184.91s ->   186.53s] That's how moves like this exist.
+[  186.53s ->   191.71s] Now filters are important and all, but what's even more important is a catalyst, news.
+[  191.71s ->   196.61s] News is such a huge part of day trading, as a company with insanely great news has a greater
+[  196.61s ->   197.97s] chance of blowing up.
+[  197.97s ->   201.67s] Maybe they found a cure to a specific type of cancer, maybe they just made a partnership
+[  201.67s ->   205.39s] with another big company, or maybe they just crushed their earnings for that quarter.
+[  205.39s ->   210.23s] All of these news catalysts would result in a huge spike in price for that specific stock.
+[  210.23s ->   213.67s] Companies will release news articles every single trading day in the morning, sometimes
+[  213.67s ->   216.69s] as early as 4 in the morning to as late as 9 am.
+[  216.69s ->   218.47s] This is Eastern Standard Time by the way.
+[  218.47s ->   223.37s] For the most part, the most important news articles will come out at around 7am to 9am.
+[  223.37s ->   226.37s] They will also usually come out at round numbers.
+[  226.37s ->   230.63s] So there will be a batch of news articles that come out at 7am, then another batch of articles
+[  230.63s ->   232.93s] at 7.30, then some more at 8.
+[  232.93s ->   233.93s] You get the idea.
+[  233.93s ->   235.87s] Now, not all news articles are good.
+[  235.87s ->   238.71s] Sometimes companies will release an article and say something like,
+[  238.71s ->   243.59s] Best Buy just announced it will repaint all of its parking space lines in its parking lot.
+[  243.59s ->   246.15s] A bit exaggerated, but you get the point.
+[  246.15s ->   249.05s] Not all news articles are going to result in huge spikes.
+[  249.05s ->   253.09s] Our goal is to find the news article as early as possible, decipher if it's a good news
+[  253.09s ->   257.77s] article or not, then enter and hopefully make a trade like this one, where we get in before
+[  257.77s ->   260.11s] everyone else even realizes the news.
+[  260.11s ->   261.41s] Now, I know what you're thinking.
+[  261.41s ->   263.05s] How do we find these news articles?
+[  263.05s ->   266.05s] Ah yes, how wise of you to be thinking that.
+[  266.05s ->   267.69s] Well, there's a few ways actually.
+[  267.69s ->   271.59s] Some brokers will have a news section on their platform and show all the recent news articles
+[  271.59s ->   272.71s] that just came out.
+[  272.71s ->   277.77s] But I don't really like this strategy, because most of the time 95% of it is just fluff,
+[  277.77s ->   281.29s] and not very important articles, resulting in no price movement.
+[  281.29s ->   283.19s] Another option is to use a stock screener.
+[  283.19s ->   288.21s] So say if it's 8.57am and it's about to turn 9, sometimes I'll open my stock screener
+[  288.21s ->   290.21s] and watch the top gainers of the morning.
+[  290.21s ->   294.83s] Considering it automatically refreshes, I'll wait till it turns 9 o'clock, scroll down a bit,
+[  294.83s ->   299.17s] and maybe I see a new ticker symbol pop up that wasn't there before, and it just spiked
+[  299.17s ->   300.17s] up 10%.
+[  300.17s ->   304.79s] You can then simply go to Yahoo Finance, which is completely free, search the ticker symbol,
+[  304.79s ->   308.19s] then hopefully there's a news article that came out in the past 10 minutes, and you can
+[  308.19s ->   310.55s] hop on that train before it leaves the station.
+[  310.55s ->   314.35s] Then this 10% gain might turn into a 50% gain, who knows.
+[  314.35s ->   317.17s] You can also do the same thing with relative volume.
+[  317.17s ->   320.91s] Relative volume tells us how many shares have been traded in relation to how many shares
+[  320.91s ->   322.17s] are usually traded.
+[  322.17s ->   327.23s] So if a stock has a relative volume of 60, that means the volume right now is 60 times higher
+[  327.23s ->   331.09s] than normal, which in most cases means it has a good news catalyst.
+[  331.09s ->   334.65s] Now these strategies are nice, don't get me wrong, and it definitely has worked for
+[  334.65s ->   335.65s] me before.
+[  335.65s ->   337.91s] The thing is, it's not very consistent.
+[  337.91s ->   341.87s] For one, you're just hoping a new stock pops up on your screener, and sometimes that
+[  341.87s ->   342.87s] doesn't even happen.
+[  342.87s ->   346.95s] Then two, you're hoping you find it soon enough to where you can search the ticker symbol
+[  346.95s ->   349.73s] and find the news article before it even blows up.
+[  349.73s ->   354.67s] The problem with that is, if you're finding stocks that are already up 10%, most of the time,
+[  354.67s ->   358.23s] you're already late, and the news article has already done its work, and that's the
+[  358.23s ->   359.57s] peak of the price movement.
+[  359.57s ->   363.91s] So we need to find stocks with high amounts of volume, low flow, find their news article
+[  363.91s ->   368.79s] as soon as they come out, and not just any articles, but good news articles, to hopefully
+[  368.79s ->   371.47s] enter before everyone else does.
+[  371.47s ->   375.33s] One way I've found great success with this is using a news scanner.
+[  375.33s ->   380.43s] Just like a stock scanner, a news scanner is constantly refreshing finding the best news.
+[  380.43s ->   384.75s] So instead of finding the price movement first, then searching up the news article, we get
+[  384.75s ->   388.73s] the news article first, and enter before the price has even moved.
+[  388.73s ->   391.33s] Now there's a lot of different news screeners out there.
+[  391.33s ->   393.15s] Some are free, but not as good.
+[  393.15s ->   394.43s] Some are great, but cost money.
+[  394.43s ->   395.71s] There's a lot of options.
+[  395.71s ->   398.67s] This is up to you to find the right one based off your needs.
+[  398.67s ->   401.85s] But if you want some help, I'll put the one I use in the description.
+[  401.85s ->   404.93s] What I like about this one is all the features it provides.
+[  404.93s ->   409.39s] So instead of searching for ticker symbols, it'll have a live feed of all the articles
+[  409.39s ->   410.39s] that are released.
+[  410.39s ->   415.07s] So you can get on during key moments like we were talking about before, like 8am or 9am,
+[  415.07s ->   417.75s] and see if there are good news articles that pop up.
+[  417.75s ->   421.19s] What's even cooler is you can add filters to this scanner.
+[  421.19s ->   426.43s] So say if you only want stocks priced between $1 and $20, stocks that have volume of 100k or
+[  426.43s ->   431.55s] more, and have a float of under $20 million, this scanner will only show you news articles
+[  431.55s ->   436.55s] of stocks with those specific requirements, which is so damn powerful.
+[  436.55s ->   438.99s] And we really just scraped the surface with the filters.
+[  438.99s ->   440.41s] There are so many more.
+[  440.41s ->   445.23s] So you can watch the scanner at key times, have your filters enabled, if you see one pop
+[  445.23s ->   449.21s] up, check it out, read the article, and decipher how good the news is.
+[  449.21s ->   451.15s] The better the news, the better the spike.
+[  451.15s ->   455.11s] The next thing you might be wondering is how do you tell if a news article is good?
+[  455.11s ->   459.45s] Well the more you trade, the better you get at identifying articles on how good they are.
+[  459.45s ->   463.75s] But for all the beginners out there, this is the list I've made rating popular keywords
+[  463.75s ->   465.07s] from best to worst.
+[  465.07s ->   469.55s] If you see these keywords in the title of the article, it's most likely a good news article.
+[  469.55s ->   471.79s] The better the keyword, the better the article.
+[  471.79s ->   476.13s] So you can add this video to a playlist or save the video or whatever, and just come back
+[  476.13s ->   478.49s] to the screenshot if you want to rely on that.
+[  478.49s ->   482.51s] But doing this whole strategy with finding great news articles and getting in plays like
+[  482.51s ->   486.69s] this before they happen has worked wonders for me, so I thought I'd share with you guys.
+[  486.69s ->   490.71s] I should also note, all these top gainers might not be from news.
+[  490.71s ->   495.05s] Sometimes stocks will spike up huge amounts because they broke a key resistance level, sometimes
+[  495.05s ->   496.95s] for literally no reason at all.
+[  496.95s ->   501.77s] So you really could use that low float slash volume strategy and just trade the top gainers
+[  501.77s ->   503.37s] off technical analysis.
+[  503.37s ->   506.61s] That's completely fine too, and sometimes I even do that.
+[  506.61s ->   511.63s] But I found trading stocks with a low float, high volume, and a great news catalyst gives a
+[  511.63s ->   517.19s] lot more consistent gains, and you truly feel a lot better and safer when day trading a stock
+[  517.19s ->   518.99s] that has a good news catalyst.
+[  518.99s ->   522.97s] It's almost like trading a stock that has a magnet above it pulling it up, so you can
+[  522.97s ->   524.45s] be more confident when trading.
+[  524.45s ->   528.41s] So you know how to find the stocks when day trading, but you also need to know how to trade
+[  528.41s ->   529.41s] them correctly.
+[  529.41s ->   531.83s] Well luckily for you, I did the testing for you.
+[  531.83s ->   538.25s] I tested a trading strategy with 100 trades and it profited 130% in just 2 months.
+[  538.25s ->   542.69s] So yeah, it's pretty good, go check that out, thanks for watching, and I'll see you guys
+[  542.69s ->   543.19s] next time.

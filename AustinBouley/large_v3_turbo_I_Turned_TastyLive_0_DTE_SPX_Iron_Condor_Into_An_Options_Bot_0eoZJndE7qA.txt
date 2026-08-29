@@ -1,0 +1,103 @@
+[    0.13s ->     6.63s] Your win rates go way up. You're at 95% winners basically across the board, 90 to 95% winners.
+[    7.05s ->    13.55s] You just saw, and if you've been watching Tasty Live for any amount of time, they've been backtesting zero DTE options, specifically on SPX.
+[   13.81s ->    18.77s] And they found a strategy that is over a 90% win rate, sometimes even 95, 97%.
+[   18.77s ->    23.41s] And I'm going to walk through exactly how they structure this trade and how it works so that you can do it too.
+[   23.41s ->    32.39s] And then we stay until the end, I'll show you exactly how to automate the entire process so that if you have a busy day, job, work, life, whatever, you can automate it and still make a zero DTE income.
+[   32.57s ->    35.19s] So let's dive in. How does this strategy work?
+[   35.45s ->    38.65s] Well, what we do is we find the beginning of the day.
+[   38.71s ->    43.63s] So first off, we go to SPX, which is the S&P 500 index.
+[   43.97s ->    46.85s] And so again, we can look at this on any charting platform.
+[   47.27s ->    53.09s] But for the sake of this, I'm using TradingView, but you can also use your broker.
+[   53.09s ->    57.25s] So what they do is at the beginning of the day, they look at where the market opens.
+[   57.35s ->    59.51s] So you can see here, it opened around here.
+[   59.65s ->    62.81s] And what they do is they go 20 points wide.
+[   63.01s ->    67.57s] So they go above where it started by 20 points and below where it started by 20 points.
+[   67.63s ->    68.87s] So what does this look like?
+[   69.15s ->    75.47s] Well, if the market opened at 54.57 and we add 20 to that, that's 54.77.
+[   75.93s ->    78.93s] So we're going to go up here to 54.77.
+[   78.93s ->    84.22s] 54.77, sorry, I'm bad at charting out these levels quickly.
+[   84.64s ->    87.72s] 44.77, all right, so that's a 20 point wide move.
+[   88.18s ->    90.66s] Next, we also do the 20 point wide move to the downside.
+[   91.12s ->    95.62s] So you can see here, if we opened at 54.57 and we subtract 20, that gives us down to 37.
+[   95.88s ->    97.18s] So I'm going to have to move this a bit.
+[   97.68s ->    99.94s] 37 would bring me down to here.
+[  100.28s ->   101.82s] So these would be my two levels.
+[  101.82s ->   106.70s] This is where I want the market to stay between in order to make money for this iron condor.
+[  106.70s ->   112.16s] Iron condors are strategies that are structured in a way where the market has to stay in between two levels.
+[  112.24s ->   113.50s] And if it does, you make money.
+[  113.84s ->   117.84s] So what you do is at the beginning of the day, you do plus 20 and minus 20.
+[  117.90s ->   120.62s] And this is how you set up your iron condor.
+[  120.86s ->   122.46s] And then you let it trade throughout the day.
+[  123.08s ->   128.26s] Now, depending on the take profit percentage you have, you can actually have a higher win rate.
+[  128.54s ->   133.70s] So if you look to have a 10% take profit, you will have like a 97% win rate.
+[  133.70s ->   142.18s] If you look to do like a 20% win rate, I mean, take profit, you'll have like a 90% win rate.
+[  142.44s ->   145.34s] And then again, it goes down as you try to take more profit.
+[  145.64s ->   150.52s] As for stop loss and stuff, you just let the trade go on because SPX is cash settled.
+[  150.66s ->   152.46s] So you won't be assigned any shares.
+[  153.70s ->   156.86s] And with the iron condor, your risk is already defined.
+[  157.22s ->   158.80s] So you can actually make that a lot better.
+[  159.24s ->   162.30s] And so, yeah, that's exactly how you trade this and how you do this.
+[  162.30s ->   166.42s] So if you want to do this as a trader just every single morning, structure the trade just like this.
+[  166.66s ->   170.64s] And you should be seeing a 90 to 95% win rate on these trades, which is awesome.
+[  170.98s ->   178.02s] But let's look into how to automate this entire process in case you're busy and you don't have time to stare at the screen 24-7.
+[  178.54s ->   182.08s] So this is a brand new automation tool called the Options Auto Trader.
+[  182.22s ->   187.24s] I am biased because I built it and it's working for literally so many people, including myself.
+[  187.24s ->   191.08s] But let me show you how to use this to automate your options selling.
+[  191.22s ->   193.44s] So first on, click Create an Auto Trader.
+[  193.86s ->   195.64s] Then connect your broker account.
+[  196.16s ->   205.68s] Then we're going to create an Auto Trader and structure this strategy so that it matches the backtesting and rules that Tasty Live has found works best.
+[  206.00s ->   208.12s] So first off, we're going to trade an iron condor.
+[  208.22s ->   209.84s] So we're going to click on the iron condor strategy.
+[  210.40s ->   211.68s] Next, let's structure it.
+[  211.68s ->   214.62s] Okay, so they traded on SPX, so we can do that.
+[  214.94s ->   216.92s] The next is going to be a zero DTE trade.
+[  217.16s ->   219.90s] We're going to structure this for a dollar away.
+[  220.24s ->   221.94s] And again, this is exactly as they structure.
+[  222.04s ->   225.18s] They do it $20 away, you know, $20, $20.
+[  225.48s ->   227.52s] And then each outside of that is $20 wings.
+[  227.78s ->   229.88s] So that means $40 away, $20, $20, $20, $40.
+[  229.98s ->   233.86s] So this is exactly how the trade is structured if you were to go in and place it by yourself.
+[  233.86s ->   243.54s] So if you're somebody who just doesn't understand options and all these weird like delta levels and strike selections and you're afraid you're going to mess up, well, this will place it perfectly for you every time.
+[  245.18s ->   246.66s] Next, how often do you want to enter?
+[  246.78s ->   251.52s] Well, multiple times a week on Monday, Tuesday, Wednesday, Thursday, and Friday.
+[  252.04s ->   254.14s] So that's kind of how you can structure those trades.
+[  254.76s ->   256.64s] We're going to enter in the morning session.
+[  256.64s ->   265.44s] And then again, if we want to set any requirements on how much credit we want to collect, so that we'll only enter a trade if we'll collect a certain amount of money, you could do that here.
+[  265.52s ->   266.12s] Again, I'm not.
+[  266.20s ->   267.94s] I'm just going to let the trade go on as is.
+[  268.62s ->   269.62s] Next, take profit.
+[  269.76s ->   271.48s] Well, let's say we want to have that higher win rate.
+[  271.52s ->   272.84s] So we only want to do a 10%.
+[  272.84s ->   275.20s] Again, if you want to do 20 or 25, that's fine.
+[  275.52s ->   277.56s] But I'll just do 10% here for this example.
+[  278.28s ->   280.90s] Stop loss, we're not going to have an early management.
+[  280.90s ->   283.78s] Well, we can't manage early because it's only a zero DTE option.
+[  284.22s ->   285.14s] So we'll leave that as is.
+[  285.44s ->   286.60s] Again, it's going to stay a short year, but yeah.
+[  287.02s ->   289.72s] Okay, buying power allocation, how much money do we want to trade with?
+[  289.76s ->   294.18s] Well, we can do this with about, I don't know, $2,000, maybe $1,000.
+[  295.00s ->   298.14s] I'll just start off with $2,000.
+[  298.82s ->   305.90s] Now, you can see here, based on all the numbers, it says here that approximately it takes $1,000 per trade.
+[  306.08s ->   309.00s] I'll make about $75 per trade.
+[  309.42s ->   311.54s] And then, again, I'll have a decent risk.
+[  312.04s ->   313.38s] This isn't the actual risk.
+[  313.44s ->   316.26s] This is a lot higher than what it actually is because it's a defined risk trade.
+[  316.64s ->   318.34s] But, again, something like this.
+[  318.70s ->   321.60s] And so, again, this is exactly how you automate the entire process.
+[  321.72s ->   324.92s] And I click save the auto trader and then set it live.
+[  325.02s ->   328.34s] Again, I'm not going to do that, but it's exactly how you automate this entire process.
+[  328.68s ->   330.78s] Now, if you're someone who's like, Austin, I don't get this.
+[  330.78s ->   332.12s] It's like I'm not an options person.
+[  332.46s ->   344.94s] Well, if you want to go through this process, you just simply connect your account, click on Pick an Auto Trader, click on Zero DTE Strategies, and you can preload the Iron Gondor strategy as Tasty Live recommends it.
+[  345.06s ->   347.52s] And you can trade it with SBX, Spy, ES, whatever.
+[  348.08s ->   350.90s] And so, again, just like that, then you put in the amount of money you want to buy.
+[  350.98s ->   352.40s] And I've preloaded everything for you.
+[  352.42s ->   354.02s] So, let's say you will have a $2,000 account.
+[  354.64s ->   357.54s] And just like that, it's already been pre-set up for you.
+[  357.60s ->   358.70s] So, that's how awesome that is.
+[  359.30s ->   365.38s] Guys, I've been using this Auto Trader to trade 112 options strategies.
+[  365.90s ->   367.98s] And, literally, it's been doing very well for me.
+[  367.98s ->   371.92s] You can see here over the last three months, I'm up about $17,000, $18,000.
+[  372.48s ->   375.60s] And I currently have $8,000 in open profit.
+[  375.76s ->   386.96s] So, if you guys are looking to trade options, sell options, and you want to automate the process because you're busy, then click the link down below to get started or watch my demo and masterclass on how to get it done.
+[  387.24s ->   389.74s] All right, guys, I hope you enjoyed this video, and I'll see you in the next one.

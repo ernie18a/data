@@ -1,0 +1,136 @@
+[    0.00s ->    10.76s] Want to learn how I make $323 every single Friday trading strangles without fearing a market crash or the market turning against me, turning my trade into a huge loss?
+[   10.92s ->    16.98s] I'm going to walk you through this video step by step, exactly how I trade strangles in a way that is easy to understand.
+[   17.08s ->    26.30s] So that even if you're an absolute beginner, you walk away from this video knowing exactly how to do this and do so in a way where you avoid crashes and huge losses.
+[   26.30s ->    32.34s] So let me walk you through the strategy step by step so you can know exactly how to place it and start making money today.
+[   32.82s ->    34.06s] First off, what is a strangle?
+[   34.20s ->    38.42s] A strangle is a way to make money when a stock does anything.
+[   38.60s ->    39.34s] Let me explain.
+[   39.48s ->    42.56s] Let's say we have a stock going up a little bit like this.
+[   42.94s ->    47.28s] A strangle is betting that the stock will stay between two different price points.
+[   47.34s ->    49.34s] Let's say you go down here and you go down here.
+[   49.58s ->    52.18s] You think the stock will stay between these two levels.
+[   52.50s ->    54.64s] If they do, you make money.
+[   54.64s ->    58.38s] That means that if the stock goes down but stays above your level, you make money.
+[   58.46s ->    60.78s] The stock goes up but stays below your level, you make money.
+[   60.86s ->    64.42s] The stock goes sideways or up a bit, you still make money.
+[   64.50s ->    68.38s] So as long as the stock stays between your levels, you make money.
+[   68.48s ->    74.16s] If they break one of your levels, let's say they go above, this trade still makes money but then this trade loses.
+[   74.48s ->    79.26s] If it goes down to this side, this trade wins because it's staying below it but this trade loses.
+[   79.26s ->    83.74s] So again, you can still make a lot of money with a strangle strategy.
+[   84.48s ->    84.70s] Why?
+[   85.00s ->    90.54s] Well, because 90% of the time, the market is trading between some levels and you know this.
+[   90.60s ->    92.34s] You've seen the market trade range bound.
+[   92.42s ->    93.64s] You've seen the market trend up.
+[   93.88s ->    96.16s] You know that you can stay in between certain levels.
+[   96.26s ->   100.12s] And so if I show you how to set this up, you can have a really high win rate.
+[  100.56s ->   102.08s] So let me walk you through the strategy.
+[  102.14s ->   104.84s] I'm going to show you the specifics of how it works and how to set it up.
+[  104.84s ->   108.82s] And then I'm going to show you how I actually avoid crashes and what I look at for that.
+[  108.94s ->   113.98s] So we're going to be setting up this strategy by targeting a 45 days until expiration.
+[  114.10s ->   117.24s] That means we're looking for our contract to expire in roughly 45 days.
+[  117.38s ->   121.30s] We'll be trading this on SPY or SPX depending on your account size.
+[  121.34s ->   123.92s] If you have a smaller account size, you'll want to be on SPY.
+[  124.18s ->   126.50s] If you have a larger account size, you can do SPX.
+[  127.18s ->   132.00s] SPX as well as the ES Futures have tax advantages that you can take advantage of.
+[  132.00s ->   135.14s] Now, we also look to target a 10 delta put.
+[  135.24s ->   139.72s] So that's showing us how far away we want our put to be, this lower level to be.
+[  139.98s ->   141.44s] I'll explain that here in a bit.
+[  141.70s ->   142.78s] We have a 5 delta call.
+[  142.84s ->   145.72s] That shows us how high our level is going above the stock.
+[  146.18s ->   152.84s] Next, when we take profit, we're looking to take profit at a 50% profit target or at 21 days.
+[  153.00s ->   156.22s] So we're entering the trade for 45 days out.
+[  156.28s ->   159.12s] As time goes on, our expiration gets closer and closer and closer.
+[  159.12s ->   163.54s] As we get to a 21-day expiration where we're getting closer, then we're going to close
+[  163.54s ->   166.06s] out that trade and then we're going to put on the next one.
+[  166.12s ->   167.52s] But a 50% profit looks like this.
+[  167.56s ->   170.02s] Let's say for this trade, we get $100.
+[  171.18s ->   174.08s] That means that, let's say we make a $50 profit.
+[  174.22s ->   178.86s] Once our trade gets into the $50 profit, we're going to take that and move on.
+[  178.94s ->   180.08s] That is our take profit.
+[  180.18s ->   185.30s] Once we get 50% of the original money that we collected, then we move on to the next trade.
+[  185.36s ->   186.52s] So that is our profit target.
+[  186.52s ->   188.60s] Next, we have a 400% stop loss.
+[  188.70s ->   189.64s] What does that mean?
+[  189.68s ->   193.26s] It means that if we enter at $100, we're going to do 400% of that.
+[  193.34s ->   195.14s] So let's say it gets to 400.
+[  195.32s ->   199.42s] So if the trade gets to 400, then that means that we're going to exit as a stop loss.
+[  199.48s ->   200.32s] So that is a what?
+[  200.60s ->   202.06s] A $300 difference.
+[  202.14s ->   207.50s] If we enter at 100 and exit at 400, it's a $300 difference or a $300 loss.
+[  207.50s ->   211.78s] So that means a $300 loss for a $50 profit.
+[  212.16s ->   214.46s] That's what we're looking at for our risk to reward scenario.
+[  214.80s ->   220.64s] Now, let me show you using these same key factors what a back test looks like over the last 10 years.
+[  220.90s ->   223.48s] This is E-Delta Pro, a back testing site.
+[  223.56s ->   229.48s] So if I plug in everything I just showed you, a 10 Delta put, a 5 Delta call, a 45 days expiration,
+[  229.48s ->   234.22s] 50% max profit or exit at 21 days, a 400% stop loss.
+[  234.56s ->   235.08s] Look at this.
+[  235.14s ->   236.94s] We have an 88% win rate.
+[  237.04s ->   237.66s] That's huge.
+[  237.74s ->   241.24s] We have 100% return on our capital, which is also amazing.
+[  241.70s ->   243.42s] Now, let's look at the key factor.
+[  243.80s ->   246.06s] Where does this strategy fail?
+[  246.14s ->   249.30s] That's something you should be asking yourself with every single strategy you trade.
+[  249.42s ->   250.92s] Where does this fail?
+[  251.34s ->   255.54s] Well, you can see here it goes sideways and down trending markets.
+[  255.66s ->   256.42s] Okay, good to know.
+[  256.68s ->   259.04s] It fails here when the market crashes.
+[  259.36s ->   262.52s] Okay, we have a crash here, a crash here, and a crash, a major one here.
+[  262.84s ->   267.20s] And the market or our profit from the strategy takes a huge dip.
+[  267.44s ->   269.96s] You can see here we had $26,000 in profits.
+[  270.34s ->   273.08s] Then after the crash, we go into the negative.
+[  273.08s ->   276.72s] So we lost $30,000 from this crash.
+[  276.72s ->   281.74s] So, yes, you can see here outside of crash periods, this trends up and has a very good performance.
+[  281.92s ->   286.42s] But how can we make money during crashes too or even just avoid the crashes?
+[  286.54s ->   287.56s] Well, let me show you that.
+[  287.68s ->   291.72s] So if we look at this, this is called trend following.
+[  292.44s ->   294.44s] I have an indicator linked down below.
+[  295.08s ->   297.68s] We'll show you when the market's trending in certain directions.
+[  297.78s ->   301.80s] So what I know here is that when the line is blue, the market's trending up.
+[  301.80s ->   307.98s] So when it's trending up, I can put on these trades, these strangle trades, because I know
+[  307.98s ->   309.92s] that my trade will do well.
+[  310.06s ->   314.38s] If it starts to turn white, I know the market's starting to flip over and go against me over
+[  314.38s ->   318.94s] high likelihood that the market will start trending down, which is where a majority of
+[  318.94s ->   320.14s] these strangle trades lose.
+[  320.50s ->   324.46s] So again, when the market, when the line is blue, I put on strangle trade and strangle
+[  324.46s ->   325.38s] trade and strangle trade.
+[  325.54s ->   329.72s] When it reverses, when it turns white, I take all my profits from those trades.
+[  329.72s ->   334.00s] I pull back and I let the market crash or downtrend or whatever happens.
+[  334.12s ->   336.42s] Then when it turns blue again, I can re-enter.
+[  336.58s ->   339.80s] So that's how amazing this is, is the idea of trend following.
+[  340.06s ->   343.82s] Again, I've also covered this in another video where you can use the Bollinger Band to show
+[  343.82s ->   345.60s] you when to get in and out of trades.
+[  345.72s ->   351.32s] But if you're tired of guessing, of using these methods and using your bias to put on a trade,
+[  351.62s ->   352.52s] click the link down below.
+[  352.62s ->   355.34s] I will give you this indicator for free when you join our program.
+[  355.44s ->   359.70s] Not only do you get this indicator for free, but you also get a free trial to a bunch of
+[  359.70s ->   363.58s] traders who are trading this same strategy and we use it with credit spreads.
+[  363.92s ->   368.10s] We use it with cash secured puts and we use it with skewed strangles, which I just taught
+[  368.10s ->   368.26s] you.
+[  368.34s ->   371.96s] So again, if you don't want to do any of the hard work and you want us to show you exactly
+[  371.96s ->   376.76s] where to buy and sell based on the trend, the skewed strangles here is for you.
+[  377.06s ->   381.50s] Regardless of if you joined the free trial or not, which is limited down below, you can
+[  381.50s ->   386.10s] implement these rules here and stay out of crashes and make a lot of money and generate
+[  386.10s ->   387.92s] consistent money every single Friday.
+[  387.92s ->   389.32s] Let me show you how you do that.
+[  389.60s ->   394.62s] So again, let's say that each one of these periods is a single week, Monday to Friday
+[  394.62s ->   396.40s] of a trading period.
+[  396.54s ->   398.88s] So you can see here we have all these things.
+[  399.04s ->   405.52s] Now, when we do the strategy as we do it, we enter 45 days out and we exit at 21 days
+[  405.52s ->   406.94s] at the latest.
+[  407.06s ->   413.56s] That means every roughly four to three or three to four weeks we are expiring or we have a
+[  413.56s ->   415.84s] contract that we're taking off with a profit.
+[  415.84s ->   420.48s] And so with that, we're going to put on at least one strangle every single week so that
+[  420.48s ->   421.74s] we put on a strangle here.
+[  421.82s ->   424.76s] And then in four weeks that Friday, we're going to make the money.
+[  424.84s ->   427.82s] We put on a strangle here that next Friday, we're going to make money.
+[  427.88s ->   430.46s] We put on a strangle here that next Friday, we're going to make money.
+[  430.52s ->   434.78s] So you can see here as we put on one strangle every single week, it's going to slowly start
+[  434.78s ->   440.14s] to roll into having that that weekly income where every single Friday a contract or a strangle
+[  440.14s ->   445.50s] expires and we put on money or at least we close the trade and we put and we collect money so when
+[  445.50s ->   450.30s] you start putting on at least one trade every single week then you can start generating weekly
+[  450.30s ->   454.94s] income this is not a passive approach you do have to put on a trade every single week and that's
+[  454.94s ->   459.82s] what generates the weekly income every single friday and again this is this is what i'm doing
+[  460.54s ->   465.90s] on the es futures you can also do on spy and spx it's a great strategy so again i hope you learned
+[  465.90s ->   471.90s] something if you want to dig more into this or get strangle alerts as you're learning so you can
+[  471.90s ->   476.14s] trade and learn at the same time then click the link down below uh to start your free trial of
+[  476.14s ->   479.90s] our program anyways guys see you in the next video

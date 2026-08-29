@@ -1,0 +1,191 @@
+[    0.56s ->     6.42s] Hey guys, what's up? It's Austin B. again with Options Traders, and today I wanted to go over a question that someone in the group chat asked.
+[    7.86s ->     9.50s] Let's go over the question real quick.
+[   12.14s ->    23.44s] Handle name Serang, I'm sorry, I probably mispronounced that badly, but he said maybe Austin B. needs to give some tips on how slash when exactly to buy or sell.
+[   23.44s ->    34.68s] Well, maybe taking the last two days as example, both were plus or minus 100% would have been possible in the last two days depending on your timing.
+[   35.24s ->    39.42s] So the question seems to be how and when exactly do you know to buy and sell?
+[   41.24s ->    45.30s] So he said the past two days, so this is Thursday.
+[   45.94s ->    49.34s] So Thursday we have a prevailing downtrend.
+[   49.34s ->    56.40s] We consolidate into this triangle, which I made a video of yesterday talking about this triangle pattern.
+[   56.92s ->    60.38s] Now where's your entry? It's on the break below this line, okay?
+[   61.28s ->    64.74s] Break below this little trend line here of the symmetrical triangle.
+[   65.26s ->    71.00s] Now however, if you're not comfortable with that because it's super close to a support line, wait for the break through the support.
+[   71.00s ->    76.34s] So you have the confirmation of the push of the triangle plus the confirmation of the push through the support,
+[   76.34s ->    79.94s] and then that's obviously your indication of the downtrend.
+[   80.34s ->    82.20s] Now the real question is where do I get out?
+[   82.46s ->    84.20s] Do I get out at this support level?
+[   84.44s ->    85.90s] Do I get out at this support level?
+[   86.02s ->    86.84s] Where's my target?
+[   87.52s ->    91.86s] Now I believe that yes, you roughly do need a price target.
+[   92.36s ->    98.48s] You also need to be able to keep, you need to hold on to your winners as long as you can.
+[   98.56s ->   101.36s] You need to maximize the amount of money you get from your winners.
+[  101.78s ->   103.00s] So how do you do that?
+[  103.00s ->   106.94s] Based on your strategy, you can develop that.
+[  107.30s ->   113.96s] So I'm going to tell you how I develop my exit strategy for my personal strategy, which is the triangle breakout.
+[  114.98s ->   115.32s] Okay?
+[  115.54s ->   122.34s] So when you use the strategy that I use, of course, if this doesn't work for you, find your own and develop your own.
+[  122.34s ->   128.66s] But the triangle breakout, I get it right on the breakout as fast as I can on this breakout.
+[  129.20s ->   129.54s] Why?
+[  129.64s ->   136.58s] Because my risk is if it goes back up and crosses above this line, I sell as fast as I can to cut my losses.
+[  137.24s ->   139.90s] Now how do I maximize my gains?
+[  140.24s ->   144.42s] I hold it until I show an obvious reversal.
+[  144.42s ->   148.44s] Now what indicates a reversal of trend?
+[  148.58s ->   150.06s] I know that I talked about this before.
+[  150.22s ->   152.02s] It's the EMA line.
+[  152.36s ->   157.82s] The EMA line is indicative or indicates when a trend is reversing.
+[  158.46s ->   159.88s] So here we can see we go.
+[  160.00s ->   161.62s] We had some consolidation here.
+[  161.68s ->   165.94s] We had no real push up to this exponential moving average line.
+[  166.28s ->   167.52s] Then we broke straight through.
+[  168.14s ->   169.66s] Then we're having some consolidation.
+[  169.66s ->   174.60s] Then we're trying to break back up, but we never got to that line, and we pushed back down.
+[  175.44s ->   181.44s] And then we start to, as we break this, that would be your exit point.
+[  181.82s ->   191.72s] Or if you want it to be safer, obviously my exit point, it's better to exit a position and options when you're day trading as it goes in your favor.
+[  192.24s ->   197.12s] Because when it's going up, nobody wants to be on the other side of your put.
+[  197.12s ->   199.12s] Nobody wants to buy that put from you.
+[  199.66s ->   203.22s] So it's best to sell it in the move of the direction.
+[  203.52s ->   212.28s] So I saw that we're having some consolidation here, and then we're really having some push here, which in my head means that we're starting to slow down.
+[  212.44s ->   213.88s] The momentum is slowing down.
+[  214.16s ->   217.60s] Because as you can see, the green candles here were a bit smaller.
+[  218.18s ->   220.54s] And in this one, we're actually starting to push up.
+[  220.54s ->   232.50s] So I got in, I would have sold right at this line here, because we're having a flush through, thus it's going red, thus it's going down.
+[  232.86s ->   234.84s] Therefore, people are thinking about puts.
+[  234.96s ->   237.82s] And when people want to buy puts, you're selling straight into that.
+[  237.92s ->   240.10s] You get filled practically immediately.
+[  240.10s ->   243.86s] So that was the one good play.
+[  244.02s ->   250.42s] You only need one good play a day, or three good plays a week, or two good plays a week, to really just make your week.
+[  250.78s ->   253.56s] So really, that would have been your trade, and you could have been done.
+[  253.56s ->   259.12s] And this was like, I don't know exactly, but I think it was like a 200, 100% move.
+[  259.42s ->   260.82s] Something crazy like that.
+[  261.38s ->   262.32s] So let's look.
+[  262.52s ->   265.42s] Of course, you could have caught that, but that shot up way too fast.
+[  266.08s ->   267.04s] You didn't know.
+[  267.18s ->   268.30s] Blah, blah, blah, blah, blah, blah.
+[  268.30s ->   269.24s] It doesn't really matter.
+[  269.86s ->   272.46s] Now, we go into today.
+[  272.46s ->   276.52s] So, SPX, I've talked about Max Payne before.
+[  276.70s ->   279.30s] You can go and look on my YouTube channel about Max Payne.
+[  279.30s ->   288.64s] But SPY opened the day at around 261.
+[  289.08s ->   298.92s] Max Payne, you do not solely base your trading off Max Payne, but Max Payne did have an indication for SPY to close around the 264 level today.
+[  299.80s ->   303.48s] Okay, so that means we're three points away from the 264 level.
+[  303.96s ->   307.52s] Therefore, that means that there must be some significant moves.
+[  307.52s ->   316.10s] Okay, outside of news, which I don't pay attention to, but someone in the group mentioned it, Buffett bought a bunch of shares of Apple.
+[  316.40s ->   323.46s] And since the S&P 500 has made 2% of Apple, that is one of the driving forces for this.
+[  323.80s ->   326.24s] But that doesn't matter because you didn't really know that.
+[  326.32s ->   328.42s] You're just trading the pattern, right?
+[  328.80s ->   334.18s] So we know that we need to get up at least to this 264 level for Max Payne to be right.
+[  334.18s ->   335.32s] It's not always right.
+[  335.40s ->   337.30s] Obviously, it closed at 266.
+[  337.60s ->   338.70s] You didn't know that.
+[  338.94s ->   347.34s] That's just something we're using in our quiver to help us add all these sums together to get the best trade or the trade that is most in our favor.
+[  347.92s ->   351.18s] Okay, so yes, we have a gap down, but it doesn't prevail.
+[  351.42s ->   354.54s] We bounce off this and we continue to show a nice strong push up.
+[  354.54s ->   359.42s] Now, after this push up, this isn't by 2 minutes, but if we go in the 1 minute, it's very clear.
+[  360.64s ->   361.00s] Oops.
+[  362.96s ->   365.72s] 1 minute, very clear triangle pattern.
+[  365.98s ->   367.46s] We have a previous trend.
+[  367.66s ->   371.90s] We're going up and then we're hitting and we're bouncing in between.
+[  372.08s ->   373.96s] We're squeezing into this corner.
+[  374.68s ->   381.06s] The EMA line, the candles are holding above this EMA line, thus indicating a further continuation in this pattern.
+[  381.06s ->   385.62s] You would have entered around here and let's just go from there.
+[  386.92s ->   388.74s] Oh, that's not right here.
+[  389.28s ->   391.90s] So, let's just say you don't get filled immediately.
+[  392.12s ->   395.50s] You get filled somewhere around this area.
+[  396.16s ->   402.86s] Okay, unless you were ballsy enough, which I'm sure I would have hopefully, but I was at work.
+[  402.92s ->   403.76s] I just got back from work.
+[  403.82s ->   404.76s] That's why this video is late.
+[  404.76s ->   413.98s] Okay, entered in here because it's my best risk to reward because I'm only risking it to go down to here to close my position for a small loss.
+[  414.04s ->   417.18s] If I get in here, then I'm risking this much, but whatever.
+[  417.36s ->   418.10s] It works out.
+[  418.28s ->   421.76s] So, we have this trade, a symmetrical triangle, breakout, a continuation.
+[  422.68s ->   423.52s] Now, where do you exit?
+[  424.34s ->   426.48s] You exit, you want to maximize your profit.
+[  426.48s ->   431.52s] So, you exit when it shows indication of a trend reversal.
+[  432.12s ->   434.62s] So, because we are trading trends-ish.
+[  434.80s ->   435.34s] Well, I am.
+[  435.42s ->   436.26s] I don't know what you do.
+[  437.60s ->   440.97s] So, if we get in here, okay, we're moving.
+[  441.07s ->   441.99s] We're supposed to slide down.
+[  442.07s ->   444.73s] Oh, we bounce perfectly off this EMA line.
+[  445.09s ->   448.93s] Now, if it would have broke through, we would have sold and it would have been about break-even.
+[  449.13s ->   450.19s] Okay, but that's fine.
+[  450.51s ->   451.11s] It bounced.
+[  451.57s ->   453.29s] We have this continuation upward.
+[  453.29s ->   459.47s] Yes, it's consolidating, but if we look at the time, it's lunchtime.
+[  460.19s ->   470.21s] Okay, and if you also track it, we seem to be hitting the same resistance level while we're forming higher lows.
+[  470.77s ->   473.09s] That is an ascending uptrend pattern.
+[  473.09s ->   483.69s] It's an ascending uptrend, or it's called an ascending triangle breakout, where we hit the same resistance forming higher lows.
+[  483.85s ->   486.05s] We hit it about three times, and then we explode.
+[  486.93s ->   488.37s] So, that's what happened here.
+[  488.77s ->   493.17s] This would not be considered a trend reversal, even though it broke below this.
+[  493.47s ->   493.77s] Why?
+[  493.85s ->   495.59s] Because it was not a significant push through.
+[  495.93s ->   497.99s] We did not have that significant push through.
+[  497.99s ->   501.91s] So, like, for instance, this would have been a curve, and then it would have pushed through, right?
+[  503.45s ->   505.57s] I want to see if I can get a good example of this.
+[  505.89s ->   506.37s] Here we go.
+[  506.47s ->   507.13s] Like, look here.
+[  507.37s ->   513.31s] So, if you would have gotten in here for some reason, and you want to cut it, look how fast it pushed through this.
+[  513.37s ->   515.81s] That is obvious that we're reversing.
+[  516.21s ->   519.55s] This one, you see up here, we're lightly touching this line.
+[  519.63s ->   522.81s] We're not pushing through it hard, and we're forming higher lows.
+[  523.67s ->   527.41s] An uptrend means that you have higher lows and higher highs.
+[  527.41s ->   531.71s] So, we're not having high – well, we are having higher highs.
+[  532.01s ->   533.87s] This is higher than that one, but barely.
+[  534.19s ->   535.53s] And we're still having the higher lows.
+[  535.87s ->   536.67s] Thus, we hold.
+[  537.09s ->   540.65s] And then we go, and we continue to have this breakout.
+[  541.23s ->   544.03s] And then where would my exit have been?
+[  544.41s ->   549.51s] It would have been – it bounced off here, and then we had a strong red candle push through this.
+[  549.95s ->   552.07s] That would have been your exit.
+[  552.23s ->   552.45s] Why?
+[  552.45s ->   557.51s] Because you don't know, for all you know, we're already way over max pain.
+[  558.37s ->   563.59s] Thus, we're just going to be returning back to the max pain level of 2640 on the SPX chart.
+[  564.11s ->   564.39s] Okay?
+[  564.73s ->   566.35s] So, that makes sense.
+[  566.49s ->   567.83s] Push through, you sell there.
+[  568.31s ->   568.61s] Okay?
+[  568.87s ->   571.19s] Look at that huge run that you made.
+[  571.19s ->   578.91s] Even if you traded it from here to here and then waited for this breakout and got it from here to here, that's still awesome gains.
+[  579.11s ->   581.23s] But we want to maximize our profits.
+[  581.67s ->   589.37s] So, from here to here, stating why you get in – why you get in here, it's the perfect risk-to-reward ratio.
+[  589.37s ->   594.27s] Your risk is so low for a huge reward, especially if you get in here.
+[  594.45s ->   596.69s] You're risking just a little breakout.
+[  597.01s ->   597.19s] Okay?
+[  597.93s ->   601.57s] For this huge reward, of course, this doesn't always happen.
+[  601.91s ->   604.17s] You don't always get a run this big all day.
+[  604.69s ->   605.77s] But it does happen.
+[  605.91s ->   608.37s] And you want to make sure you maximize your profits on this.
+[  608.71s ->   613.37s] From here to here, I'm just guessing off the top of my head, but I'm thinking around 600%.
+[  613.37s ->   619.67s] Because, look, right here at this breakout, contracts on SPX were $1.
+[  621.32s ->   627.60s] When we got to here, or in this area, contracts were about $800 to $900.
+[  628.24s ->   634.32s] So, imagine you putting in $100 into this trade and selling it for $900 or $800.
+[  634.44s ->   637.18s] Let's just go $800 for the shorter side.
+[  637.58s ->   641.88s] That is a profit of $700 for the day.
+[  641.88s ->   645.46s] That is more than most people make working all day.
+[  645.64s ->   650.56s] And you made it just by sitting around and watching this move, trading a simple pattern.
+[  651.00s ->   655.28s] Again, if this didn't work, you cut your loss, you lose 5% to 10%.
+[  655.28s ->   656.04s] Okay, whatever.
+[  656.20s ->   659.80s] You know the next time you take this trade, and in the long run, it will succeed more.
+[  660.20s ->   663.30s] Now, your strategy, you have to make sure it works over the long run.
+[  663.58s ->   665.16s] But now, how do you know where to enter?
+[  665.28s ->   667.64s] You enter where your risk-to-reward is the best.
+[  668.18s ->   669.10s] Now, where do you exit?
+[  669.10s ->   673.82s] You exit when there's an obvious reversal happening.
+[  674.02s ->   678.90s] If you're trading long-term trends, you're looking for a reversal, something that's changing.
+[  679.76s ->   679.90s] Okay?
+[  680.06s ->   684.30s] And in me, the show changing, it is this EMA line and a strong push through it if I'm trading
+[  684.30s ->   687.16s] a call, and a strong push above it if I'm trading a put.
+[  687.24s ->   687.94s] That is my exit.
+[  688.54s ->   688.74s] Okay?
+[  689.54s ->   693.62s] Now, if you're scalping, you just have to have a feel for the market, a feel for what's
+[  693.62s ->   695.60s] happening, and you have to pull the trigger on that.
+[  695.60s ->   702.56s] But from the past two days, I hope, Serang, that answers your question of the best places
+[  702.56s ->   707.58s] to enter and the best places to exit and how to maximize your profit and minimize your loss.
+[  707.88s ->   708.20s] All right, guys.
+[  708.22s ->   709.16s] I hope you learned something.
+[  709.58s ->   711.84s] Please subscribe to this channel if you thought it was useful.
+[  712.18s ->   715.54s] If you didn't like the video, dislike it, and then leave me a comment why.
+[  715.54s ->   719.52s] If you want to talk to me, just join the group chat.
+[  719.68s ->   721.48s] I'd love to be a part of your success.
+[  722.02s ->   724.66s] And everyone in the group has done so well this week, and I'm just so happy.
+[  725.32s ->   727.40s] And good luck trading these markets, guys.

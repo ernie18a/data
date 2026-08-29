@@ -1,0 +1,84 @@
+[    0.18s ->     8.10s] I'm pretty sick of the ambiguity socially in what is right and wrong, so what I've done is I've
+[    8.10s ->    13.86s] constructed a mathematical argument for the way that I see it. I want to talk about dealing with
+[   13.86s ->    19.48s] the natural variances of life, this idea of judgment and why I think judgment-free zones
+[   19.48s ->    24.76s] are the stupidest thing I've ever heard of, and talk about this idea of making decisions
+[   24.76s ->    30.42s] that have positive expected value, and when all else fails, if you violently disagree, just look
+[   30.42s ->    37.02s] at the asymptotics of this situation and decide for yourself. What are we looking at here? We're
+[   37.02s ->    42.70s] looking at a utility function over time. Sometimes you're going to be doing better than other times,
+[   42.70s ->    49.32s] life is certainly a roller coaster, but we generally have an expectation of what today,
+[   49.32s ->    56.96s] next week, next month are going to look like, but we are going to deviate from that expectation,
+[   56.96s ->    65.16s] and this gets into the idea of our expected deviations from what we expect. Every now and
+[   65.16s ->    70.80s] again, life likes to cluster these crazy events all at once, and what we never possibly thought
+[   70.80s ->    76.96s] could all happen in one weekend, you break up with your girl, you lose your job, the list goes on,
+[   76.96s ->    86.54s] you plunge right through the bottom side of that expected variance. So what do you do? Well, I say
+[   86.54s ->    95.62s] math or drugs. You have a decision to make, positive expected value or negative expected value. I'm not
+[   95.62s ->   104.60s] here to judge what drives you through the bottom side of your variance. That is unique to the individual.
+[  104.60s ->   110.00s] The hardest thing that you've gone through is the hardest thing that you've gone through. The hardest
+[  110.00s ->   116.02s] thing you're going through right now is the hardest thing that you're going through right now. Anyone who
+[  116.02s ->   124.38s] says otherwise is absolutely outrageous. That's not what we're here to pass judgment on. What we're here
+[  124.38s ->   132.78s] to pass judgment on is now what you do after experiencing that downside variation. Oh, but Roman,
+[  132.78s ->   139.50s] why should we judge? What does it matter if an action is positive or negative EV? What does that
+[  139.50s ->   146.60s] even mean? And how is it relevant to our utility function anyway? Well, life is a zero sum game.
+[  147.42s ->   154.70s] And to maximize your utility, you need to maximize the expected value of your actions. If you don't know
+[  154.70s ->   161.20s] what that means, let's look at a casino. A casino has the house edge. We all know this. Who's on the
+[  161.20s ->   168.54s] other side of every single game? It's the player. It's a zero sum game. If you add up the expected
+[  168.54s ->   175.58s] value between the two parties, you get zero. The casino statistically is going to accumulate all of
+[  175.58s ->   183.56s] the player's wealth over time. But what happens when a player has a big win? Let's take a look at the
+[  183.56s ->   193.79s] wealth paths. We can see the player. Wow, has a big win. And the casino has a huge loss. But is the casino
+[  193.79s ->   201.61s] going to engage in a tremendous number of actions that have negative expected value after that big loss?
+[  201.91s ->   209.81s] Or are they just going to remain with their edge and continue to engage with players that have
+[  209.81s ->   215.87s] the other side of the other side of that edge? Of course, the latter. What's going to happen over
+[  215.87s ->   222.01s] time? The casino is going to continue to accumulate wealth. Eventually, all the players' wealths will
+[  222.01s ->   231.45s] diminish to zero. Life is a zero sum game. Do you want to be the player? Or do you want to be the
+[  231.45s ->   239.27s] house? So who's the counterparty? If life is a zero sum game like a casino, you have two parties. You have
+[  239.27s ->   249.41s] the casino and you have the player. So in your life, who is the counterparty? Well, the counterparty is
+[  249.41s ->   256.67s] yourself. If you engage in actions that have negative expected value, you are literally taking
+[  256.67s ->   263.99s] positive expected value from yourself. Don't believe me? Let's look at a chart. How you could spend your
+[  263.99s ->   269.25s] time. You can go to the gym or you could do drugs. You could run or you could party. You could
+[  269.25s ->   276.53s] study or you can gamble. Clearly, the right is going to be negative EV and the left is going to be
+[  276.53s ->   285.43s] positive EV. You are literally the counterparty in this transaction. And the transaction is every single
+[  285.43s ->   293.89s] action you choose to take. This is my favorite part. Roman, drugs are positive EV. Partying, gambling,
+[  293.89s ->   301.38s] gambling. These are our actions that have positive expected value for me. This is why we need to be
+[  301.38s ->   309.44s] capable of judgment. Like I said, judgment free is the stupidest thing I've ever heard of. And I'm sick
+[  309.44s ->   315.66s] of the social ambiguity and what is right, positive expected value, and what is wrong, negative expected
+[  315.66s ->   321.74s] value. If you violently disagree with me, we can just observe the asymptotics. That's a fancy word.
+[  321.74s ->   326.70s] What does that mean? Let's look at the extreme outcomes of each of the actions. I think drugs
+[  326.70s ->   332.94s] are positive EV. So you exploit that behavior. You hammer out that action. You're 50 broke, single,
+[  332.94s ->   341.16s] and hooked on coke. I think the gym is negative EV. Okay, you exploit that action. You're 45, you're rich,
+[  341.28s ->   348.00s] but you can't walk to the mailbox without getting out of breath. Whereas if you think the gym is
+[  348.00s ->   355.54s] positive EV, you're 50 healthy, you're 50 healthy and married to an attractive partner. Why do we need
+[  355.54s ->   362.74s] judgment? We're looking at these asymptotics. Do you deem this to be arbitrarily positive or arbitrarily
+[  362.74s ->   374.56s] negative? Likewise with this or this. This is why we need to be capable of judgment. We need to be
+[  374.56s ->   380.80s] capable of making our own judgments because if you cannot, how can you live for yourself and be
+[  380.80s ->   389.78s] confident in the decisions that you make? You want to accumulate utility and that is subject to your
+[  389.78s ->   396.72s] own discretion, what you deem to give yourself utility. If you cannot pass judgment on what you
+[  396.72s ->   404.32s] believe to be arbitrarily positive actions or arbitrarily negative actions, then how can you ever hope
+[  404.32s ->   413.80s] to make progress in this utility function recovering from this downside deviation? Moral of the story,
+[  413.80s ->   424.21s] the main point of this video is we all experience downside variation in our lives. There is no judgment
+[  424.21s ->   432.37s] in that. No judgment at all. But how we deal with it and the actions that we take after that downside
+[  432.37s ->   442.13s] variation. They should be based on your own judgments and there is a right or wrong. There are actions that
+[  442.13s ->   449.13s] have positive expected value and will lead you to recover your utility function faster and over time
+[  449.13s ->   455.87s] accumulating the eggs just like a casino. And there are actions that will leave you with negative expected
+[  455.87s ->   463.39s] value. And of course, this will lead to a downtrend in your utility function over time, just like we observed
+[  463.39s ->   473.31s] in the asymptotics. Wherever you may be at this current point in time in your utility function, I encourage
+[  473.31s ->   482.51s] you to make your own judgments, your own decisions, and to maximize the expected value of your actions.
+[  482.51s ->   488.03s] across this situation and to the completeness of each other and the likelihood widely nuances, if you
+[  488.03s ->   490.85s] want to make one stretch aньeczika signified, take the action as a result of having an diagnosis of
+[  490.85s ->   492.27s] theJohnny Cu costume of the exact Π2 gel to 하는데太郎by…
+[  492.27s ->   493.81s] 19277 …
+[  494.65s ->   495.61s] and again, thank you.
+[  496.05s ->   499.07s] so much for this flexibility coming in your
+[  499.07s ->   499.85s] 一起 and again.
+[  499.85s ->   500.27s] 907 …
+[  500.27s ->   501.75s] …
+[  501.75s ->   502.51s] …
+[  502.51s ->   503.71s] …
+[  503.71s ->   504.59s] …
+[  504.63s ->   505.75s] …
+[  505.75s ->   507.21s] It's
+[  507.21s ->   507.61s] kel.
+[  508.05s ->   509.03s] ki
+[  509.03s ->   509.07s] …
+[  509.07s ->   510.07s] …
+[  510.07s ->   511.21s] …
+[  511.47s ->   512.01s] …

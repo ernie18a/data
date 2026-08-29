@@ -1,0 +1,212 @@
+[    0.46s ->     8.32s] Welcome back. Today we're going to talk about some historical social sentiment data from
+[    8.32s ->    15.16s] Financial Modeling Preps API. And I've written an article about this recently. So if you've
+[   15.16s ->    20.42s] seen that, this is going to be essentially a walkthrough of what we're doing in that article,
+[   20.76s ->    25.88s] just with a person telling you what's going on instead of you reading it word for word.
+[   26.24s ->    30.40s] All this code is posted in gists. So if you would like to see the code,
+[   30.40s ->    35.02s] there will be a link in the description below to the article, which has all the code therein.
+[   35.94s ->    42.16s] But this API I've been using recently to test a whole bunch of different social sentiment
+[   42.16s ->    46.80s] relationships with financial variables. And I really enjoy it. It's very easy to use.
+[   48.02s ->    52.14s] Highly recommend you check it out. There will be a link in the description if you're interested
+[   52.14s ->    58.22s] in accessing it. But they got a ton of data. So if we head on over to the documentation,
+[   58.22s ->    65.10s] you can see all this stuff over here. We have news, everything from news to analyst price targets
+[   65.10s ->    72.52s] to M&A, institutional ownership. I mean, tons and tons of stuff. Now, I will say the only downside
+[   72.52s ->    78.20s] to their social sentiment in terms of their historical social sentiment is they no longer
+[   78.20s ->    85.76s] have access to Twitter. Obviously, since the recent situation with Elon Musk, they shut down the
+[   85.76s ->    90.88s] academic version of their API. They shut down a whole bunch of access points. And there's only
+[   90.88s ->    99.82s] enterprise availability to a certain capacity every month. So the Twitter sentiment has been
+[   99.82s ->   105.92s] throttled. But a lot of research shows that the relationship between the stock tweets and Twitter
+[  105.92s ->   114.28s] sentiment are strongly, positively, linearly correlated. Not to say that they can be substituted with one
+[  114.28s ->   122.12s] another. But you know, also not to say that that isn't also reasonable. But nevertheless, we're going
+[  122.12s ->   126.70s] to walk through essentially what I did in that article. What am I comparing? What relationship are
+[  126.70s ->   133.04s] we analyzing? And kind of where can we give from here? So let's just hop over to Jupiter and another
+[  133.04s ->   141.46s] tab. So here, I am essentially analyzing the contemporaneous stock return for large cap stocks,
+[  141.46s ->   148.16s] large cap firms with the contemporaneous social sentiment. Okay, so what does that mean? So what
+[  148.16s ->   154.80s] I'm going to do is I'm going to use financial modeling preps API. So FMP's API to query the historical
+[  154.80s ->   160.76s] stock twits social sentiment. All right. And the way I'm going to do that is I'm just going to do it
+[  160.76s ->   166.92s] with a loop. And I'm going to query a certain number of pages going back approximately a year or so,
+[  166.92s ->   171.68s] I believe. And that's this function that I wrote here. This is a helper function that I wrote
+[  171.68s ->   177.90s] for accessing their API. This is something that I'm considering baking into my Python package QFIN.
+[  178.00s ->   181.38s] So if there's general interest, let me know. I can bake in a whole bunch of these helper functions.
+[  181.96s ->   189.72s] But that's an ongoing project. Okay. Clearly, I have not posted my API key. You would have to use
+[  189.72s ->   195.28s] your API key here to access this data. But essentially, what's going on here is we're creating this helper
+[  195.28s ->   202.20s] function, and I'm creating a blank data frame, and I'm going to iteratively append the new social
+[  202.20s ->   209.04s] sentiment data to this data frame, essentially every query to this particular endpoint for social
+[  209.04s ->   216.74s] sentiment. All right. So using that function, what I'm going to do is I'm going to pass a whole bunch
+[  216.74s ->   221.90s] of tickers. So these are just arbitrary large cap tickers. I track GPT, generate this list for me.
+[  221.90s ->   228.78s] Obviously, you can use the R3000, you can use the S&P 500, whatever cross-section of equities you would
+[  228.78s ->   234.90s] like to use, you can use. I'm just using this as an example. And then what we end up with, once we
+[  234.90s ->   241.52s] actually go through and we run this historic sentiment query here, is a data frame that looks
+[  241.52s ->   253.35s] something like this. Okay. So we have, as you could tell, duplicate dates, right? That's because the posts
+[  253.35s ->   260.81s] aren't daily. They're more granular than that in terms of time, but I do cast it to a date.
+[  261.65s ->   266.07s] So if we wanted to do some intraday analysis, we definitely could because it is, like I said,
+[  266.07s ->   271.69s] more granular than just the daily level, but I've aggregated to the daily level because I'm
+[  271.69s ->   276.75s] interested in looking at the social sentiment on the day with the returns on the day. Okay.
+[  277.43s ->   284.43s] Moreover, what you should probably do in terms of a trading strategy is analyze the pre-market
+[  284.43s ->   289.67s] sentiment. That is so that the strategy itself is tradable. And then you would do this analysis
+[  289.67s ->   295.49s] in that tradable sense. In this context, I'm just going to do this as an example with contemporaneous
+[  295.49s ->   301.71s] return because it makes my analysis much easier. And I've already done this for pre-trading. If you
+[  301.71s ->   307.89s] read my paper, you know, we already find this relationship exists. So nevertheless, that's what
+[  307.89s ->   312.67s] we're doing here. This is what we end up with. We end up with a data frame of Twitter sentiment and
+[  312.67s ->   316.71s] stock twits sentiment. Surprise, surprise, Twitter sentiment zero because we don't have that data,
+[  316.71s ->   325.64s] but stock twits, we still have that data coming in. Okay. Now it should be noted that I don't know
+[  325.64s ->   332.54s] the actual measure that's being used to construct this, this social sentiment. Okay. I do know that
+[  332.54s ->   340.30s] there is a positive skew to social sentiment and a negative skew to, um, to news sentiment. So that's
+[  340.30s ->   346.08s] important to know, right? So in general, um, social media is going to be arbitrarily more positive than
+[  346.08s ->   352.06s] say news. I mean, rationally, that just makes sense, right? Because you make more money on negative news
+[  352.06s ->   357.00s] stories than you would on positive news stories. It creates more of a buzz. Um, but that's an
+[  357.00s ->   361.82s] interesting heuristic, um, that we are going to essentially digress from and move on with this
+[  361.82s ->   365.78s] analysis. But it should be noted that I don't know formally how these are constructed and I'm working
+[  365.78s ->   372.24s] with FMP to try to figure out, um, like more specifically what data is being used to construct
+[  372.24s ->   376.72s] this, this sentiment signal here, but we can take this as an arbitrary measure of social sentiment
+[  376.72s ->   382.80s] at a particular time. Okay. Uh, and we just essentially reduced it to that day. So we don't
+[  382.80s ->   386.20s] know what time this, this social sentiment is recorded for. This could be during market hours,
+[  386.20s ->   390.78s] before market hours, there could be some bias here. Obviously a lot of look ahead bias. If we're
+[  390.78s ->   397.56s] looking at data, uh, past 9am and we're, we're trying to trade at market open, um, you know,
+[  397.56s ->   401.66s] we, we could have a situation in that context. Now, again, that's besides the point of this analysis,
+[  401.66s ->   406.26s] we're just trying to see if there's even any relationship at all between the social sentiment
+[  406.26s ->   413.40s] and the subsequent stock returns for that day for that particular firm. Okay. So what I ended up doing
+[  413.40s ->   418.84s] is I just run this mega query here, um, for all of the tickers and I do it. You can see it's
+[  418.84s ->   424.44s] infection for all the large cap tickers. I pickle it. So essentially I just serialized that particular
+[  424.44s ->   429.42s] list. So I don't have to re query everything. I have a list of data frames as a result. Okay.
+[  429.42s ->   438.30s] So that is the, the workflow here. Uh, I come on down here and what I'm looking to do now is process
+[  438.30s ->   444.26s] all of these data frames. So what do I mean by process? Well, I'm going to do a group by mean
+[  444.26s ->   451.52s] on date and symbol. All right. So every date, every day, I'm going to group all of the returns
+[  451.52s ->   457.40s] into that day, into that symbol, into that particular bucket of returns. So let's say
+[  457.40s ->   464.28s] January second, third, whatever it is. Um, you give me a particular day. I look at the symbol
+[  464.28s ->   471.60s] and I average all of the returns on that particular, um, particular day, or rather I average all the
+[  471.60s ->   479.38s] sentiment, sorry, on that particular day. So what that looks like is we can see here, 11, 23, 11, 23,
+[  479.60s ->   486.86s] 11, 23. Um, that is Apple sentiment, right? At different hours, essentially throughout the day
+[  486.86s ->   493.26s] for 11, 23. So what I'm going to do is I'm going to collapse all of these down into one row and I'm
+[  493.26s ->   500.84s] going to average the sentiment from all of these posts. Okay. So that's the fundamental idea there.
+[  500.84s ->   506.62s] That's a group by mean by date and symbol. And that's exactly what we have here, a group by mean,
+[  506.62s ->   512.78s] I'm going to reset the index and append it to a process data frame set. And then essentially I'm
+[  512.78s ->   519.20s] just going to construct a concatenated data frame, a pool data frame of dates and symbols. Uh, so I
+[  519.20s ->   527.46s] can append the returns, um, or rather really merge the returns by symbol and dates onto the concatenated
+[  527.46s ->   534.32s] data frame here. All right. I'm not using words. I'm not using any fancy pricing data. I probably
+[  534.32s ->   539.62s] should be. Um, but I'm going to use Y finance because it's really easy and it's free and everyone
+[  539.62s ->   544.78s] has access to it. Um, so what I'm going to do is I'm going to take my large cap tickers and I'm going
+[  544.78s ->   551.78s] to define my start and end period for the pricing information. Uh, that is the return information that
+[  551.78s ->   557.70s] I'm trying to get here. So I'm going to go ahead and retrieve all that from Y finance. Then I get
+[  557.70s ->   565.32s] this nice data frame here, the stacked data frame of, of tickers, um, by adjusted close, close open,
+[  565.46s ->   571.30s] et cetera. Um, and then I have the, the date of the price, right? So I can construct daily returns
+[  571.30s ->   576.70s] with this stock data, close minus stock data, open over open, right? That's going to be the daily
+[  576.70s ->   584.50s] return. Uh, and then I'm going to reshape the particular data, um, such that we can index by
+[  584.50s ->   591.02s] date and symbol. This is so that I can merge it with the original sentiment data. Okay. So this is
+[  591.02s ->   597.87s] just bringing two datas together, do two data sets together. Okay. And that's exactly what this merge
+[  597.87s ->   604.05s] is here. Funny enough, that was an interview question. The difference between a, uh, PD.concat and
+[  604.05s ->   610.93s] PD.merge. Um, one of them is going to essentially merge two data's together. One of them is, you know,
+[  611.51s ->   616.71s] going to concatenate two data's together. Okay. So that's the difference. You may not be preserving
+[  616.71s ->   623.01s] the column space in the, uh, in the merge is essentially what I'm getting at. So when you merge
+[  623.01s ->   627.59s] two data sets together, you can bring in new information, new features. When you concatenate,
+[  627.59s ->   633.43s] you're preserving the column space. You're not adding new features. Um, if you, if you didn't
+[  633.43s ->   639.25s] know, um, but I did get that correct. So fantastic. All right. Anyways, that's exactly what we have
+[  639.25s ->   645.33s] here, right? Because remember in our original sentiment, um, concatenated data frame, we did
+[  645.33s ->   651.31s] not have, um, any pricing information, right? You can see this, we have our date, we have our symbol,
+[  651.31s ->   656.57s] and then we have all of the sentiment information. And then the particular timestamp, right? That I
+[  656.57s ->   661.31s] extracted the date from, but we don't have any returns. But now if we scroll on down here,
+[  661.63s ->   665.83s] right? To where we merged it all together, we did not preserve the column space. That is,
+[  666.19s ->   671.71s] we have now a whole bunch of pricing information as well, right? We have our daily return and that
+[  671.71s ->   678.28s] is exactly what we're looking for. Okay. All right. So now let's look at a scatterplot of sentiment and
+[  678.28s ->   684.89s] return. Okay. So this is a really interesting scatterplot. This is something that we would kind of hope to
+[  684.89s ->   691.99s] see actually in an initial analysis. Now, something that you might, um, more intuitively expect to see
+[  691.99s ->   697.61s] in a scatterplot is something that's, uh, positively linearly correlated. That is, uh, scatter of points
+[  697.61s ->   702.23s] that are kind of just going arbitrarily up together, right? Or maybe arbitrarily down together, whatever
+[  702.23s ->   708.19s] your, um, your prior is on this particular scatterplot. Um, but this is something that we would kind of
+[  708.19s ->   713.19s] expect to see in the sense of, of trying to derive some sort of social sentiment trading strategy.
+[  713.93s ->   721.57s] Um, particularly because you could see that around neutrality, we have kind of, uh, a set of positive
+[  721.57s ->   727.05s] and a set of negative returns because there is general confusion as to the classification of whether
+[  727.05s ->   732.43s] or not that day should be positive or negative. So this is actually kind of encouraging in a sense,
+[  732.43s ->   737.93s] because if this was just noise, we would expect, you know, just a, a gaussian cloud of points,
+[  737.93s ->   743.89s] essentially, right? There was no information to be extracted, but here we can see around neutral
+[  743.89s ->   749.99s] sentiment. That is that 0.5 measure. We have positive, arbitrarily positive returns and arbitrarily
+[  749.99s ->   756.11s] negative returns. Now you might be saying, Hey, um, you know, that's all nice and good, but why are the
+[  756.11s ->   761.97s] returns when sentiment's positive, not arbitrarily positive? And when the returns are, or when the sentiment's
+[  761.97s ->   766.11s] negative, the returns aren't arbitrarily negative. And the answer to that is it's all relative.
+[  766.49s ->   773.11s] So what we're trying to do is a time variant quantile breakdown of the sentiment. So we could
+[  773.11s ->   780.25s] see if in general, one bucket is higher than another in a long, short setting. Um, there are
+[  780.25s ->   784.27s] other aspects we have to consider that is portfolio turnover, market frictions, whatever, blah, blah,
+[  784.31s ->   790.15s] blah. Um, this is a very high level model. I am not mom. I mean, I'm using Y finance for pricing data,
+[  790.15s ->   794.45s] you know, so bear with me. This is just a preliminary analysis before you would want to do
+[  794.45s ->   800.87s] some sort of deep dive back test. But nevertheless, I get started with a time invariant signal. This is
+[  800.87s ->   806.81s] a lazy man's quantile, uh, distribution, quartile distribution. So what I do is I set N equal to four.
+[  807.39s ->   812.61s] Okay. And I'm going to create a bucket. I'm going to do a Q cut on sentiment, and I'm going to look at
+[  812.61s ->   818.85s] the average daily return in each bucket. That's what this bar chart is. Okay. So what I'm doing is I'm
+[  818.85s ->   822.11s] taking the entire time series across all the symbols. This is a horrible way of doing it.
+[  822.25s ->   826.85s] Okay. This is, this makes almost like no sense in terms of distribution matching and whatever,
+[  826.97s ->   831.47s] blah, blah, blah. Um, this makes no sense, but essentially what I'm doing to see if there's a
+[  831.47s ->   837.29s] monotonic relationship between the trading signal, which is our sentiment and the stock returns,
+[  837.29s ->   846.08s] I'm going to do a quartile cut. I'm going to bucket into four buckets sentiment. That's the lowest
+[  846.08s ->   851.76s] 25th percentile. Then the next bucket goes to the 50th percentile, then to the 75th percentile,
+[  851.80s ->   857.52s] then to the 100th percentile. So that's essentially what we're looking at here is if we bucket the
+[  857.52s ->   862.54s] social sentiment, what is the average return in that bucket? And we see something here that's
+[  862.54s ->   868.40s] kind of encouraging. No, not really. Um, it is kind of encouraging to some capacity, maybe,
+[  868.40s ->   874.58s] um, strictly because if you went short, the bottom 50% and long, the top 50%, you'd make money.
+[  874.58s ->   879.54s] You can see that here just by adding up these two legs and adding up these two legs,
+[  879.54s ->   884.78s] but this isn't what we would want to see in a trading signal. We would want to see a monotonic
+[  884.78s ->   890.66s] relationship, um, between signal and, um, that is if we really actually find alpha, if we find
+[  890.66s ->   896.64s] an inefficiency, we should see a strong monotonic relationship, right? So what I do then is, is a
+[  896.64s ->   902.70s] more intense analysis. That is really what I'm doing is I'm doing this, this, um, quantile cut,
+[  902.70s ->   907.78s] this, this quartile cut, rather this Q cut, right? We can do N equals five, 10, seven, whatever you
+[  907.78s ->   915.18s] want. I'm doing this Q cut then every single day. Okay. And I'm doing a Q cut on sentiment and then
+[  915.18s ->   921.92s] I'm doing a group by mean on the particular bucket for the daily return. And then I'm appending that
+[  921.92s ->   934.41s] to a dictionary or rather a, um, a list of the, um, of the buckets returns. Okay. Okay. So what does
+[  934.41s ->   941.07s] that mean? I'm doing a group by bucket. So every single bucket, zero, one, two, three. So right.
+[  941.15s ->   946.47s] We have bucket zero, bucket one, bucket two, bucket three. I'm going to do a group by mean on bucket and
+[  946.47s ->   954.17s] daily return. So that means I'm going to essentially have a vector that lives in R4 of the mean daily
+[  954.17s ->   965.01s] return for each bucket. Then I'm going to append that to a set of datas right here. Okay. And then
+[  965.01s ->   973.99s] last but not least, we're going to take the mean across all of those vectors in the column space.
+[  973.99s ->   978.29s] That is, we're going to squash down, take the mean in terms of squashing down. That is,
+[  978.59s ->   983.39s] we're going to take the average of all the returns in the zeroth bucket, take the average of all the
+[  983.39s ->   987.71s] returns in the first bucket, take the average, all the returns in the second bucket, so on and so
+[  987.71s ->   993.73s] forth. Um, and hopefully we see a, Oh, look at that, a strong monotonic relationship between the,
+[  993.79s ->  1000.07s] uh, the sentiment signal and the pricing information. Is this a shocker? Not really. There's a lot of
+[ 1000.07s ->  1005.47s] evidence in the academic literature, um, that suggests this sort of relationship should exist,
+[ 1005.47s ->  1010.49s] um, even in a predictive capacity. This is contemporaneous. So this is not tradable, but
+[ 1010.49s ->  1015.21s] this is, um, this is not something that we should be surprised of. Honestly, we should be more surprised
+[ 1015.21s ->  1020.36s] if we didn't see this relationship, especially because we're using contemporaneous data. Okay.
+[ 1021.53s ->  1026.27s] So this is exactly what we want to see. What's, what sort of a portfolio can we construct? Well,
+[ 1026.27s ->  1032.99s] let's go every day long the top bucket and short the bottom bucket. That is not based on this
+[ 1032.99s ->  1038.79s] particular, uh, time variant series or time invariant series, but that is every day. We'll
+[ 1038.79s ->  1044.17s] do a Q cut and we'll go long the top quartile, uh, you know, and then short the bottom quartile.
+[ 1044.59s ->  1051.14s] And this is the subsequent social sentiment trading strategy. It looks pretty good. Sharp at 2.3 ish.
+[ 1051.72s ->  1056.92s] We annualize the return, annualize the volatility for the portfolio here. Um, and it does a pretty
+[ 1056.92s ->  1061.18s] good job. Now this is contemporaneous. We wouldn't be able to trade on this. We would have to do more
+[ 1061.18s ->  1067.66s] analysis, um, in order to, to do so, to make it tradable. Okay. And then here's a joint plot of
+[ 1067.66s ->  1073.86s] both of those beautiful charts. So where do we get from here? Um, first off, thank you to FMP,
+[ 1073.86s ->  1080.82s] um, for sponsoring this video. Thank you for the, um, access to, to your amazing API. I highly encourage
+[ 1080.82s ->  1084.94s] that you check out their financial data API. It's a super easy to use. And like I said,
+[ 1084.94s ->  1090.92s] if there's general interest, I can make tools, um, for that API for everyone. Okay. Um, but where do,
+[ 1090.98s ->  1094.52s] where do we go from here? Right. What are, what are we supposed to do in terms of, um,
+[ 1094.88s ->  1101.78s] a contemporaneous signal with the relationship it has to the subsequent stock return for the day?
+[ 1102.10s ->  1108.30s] Well, there's a lot of directions, right? The first thing that you would want to consider is perhaps you
+[ 1108.30s ->  1113.46s] can develop a model that is predictive of social sentiment. Then, you know, if you can use
+[ 1113.46s ->  1121.58s] contemporaneous social sentiment to trade on stocks, you can use your model to predict
+[ 1121.58s ->  1126.34s] contemporaneous social sentiment. And then boom, you use that to determine your bins. And then you
+[ 1126.34s ->  1131.62s] use that to determine what equities you trade. That's an option. Um, something else you can do
+[ 1131.62s ->  1136.76s] directly right now is maybe you would say, Hey, um, this is a contemporaneous relationship.
+[ 1136.92s ->  1141.80s] What is the decay for this contemporaneous relationship? Do the returns hold for a one day
+[ 1141.80s ->  1147.00s] window, two day window. What's my port, what's my portfolio turnover? How many assets should I expect
+[ 1147.00s ->  1154.76s] to keep in a portfolio? Does the signal, um, switch often for particular assets? Um, you know,
+[ 1154.76s ->  1158.86s] all of these are good questions to consider. And they're all topics for future articles and videos
+[ 1158.86s ->  1164.00s] for me, depending on interest. Um, you know, one, one article that I'm currently working on right now
+[ 1164.00s ->  1169.68s] is this idea of social sentiment and analyst, uh, price target spread. So taking a look at the
+[ 1169.68s ->  1176.56s] relationship is social, the social sentiment, um, correlate with the way that analysts set
+[ 1176.56s ->  1180.68s] their price targets or vice versa, right? This is in terms of a general correlation. There's
+[ 1180.68s ->  1185.92s] no causal analysis going on here. All of this is statistical. All of this is general correlation.
+[ 1185.92s ->  1191.38s] There is no such, um, interpretation in the setting. Um, even in a predictive sense that not
+[ 1191.38s ->  1196.88s] necessarily, um, that any of it is causeless, namely just statistical relationships, right? We're
+[ 1196.88s ->  1202.48s] not doing any sort of regression discontinuities, any sort of like anything to discern causality.
+[ 1202.48s ->  1207.12s] We're just trying to examine statistical relationships right now to see if we can even get a ball going
+[ 1207.12s ->  1211.68s] in a direction. Um, but that's going to do it for this video. I hope you enjoyed this walkthrough
+[ 1211.68s ->  1218.80s] of using FMP's API to query social sentiment. Uh, join it with pricing information, whether you get that
+[ 1218.80s ->  1223.44s] from Y finance, you get that from words, you get that from anywhere else. Uh, and then taking a look at how
+[ 1223.44s ->  1230.48s] we can create a time invariant and a time variant signal, um, based on a Q cut, obviously the time
+[ 1230.48s ->  1234.80s] variant signal is more complicated in the sense that we're doing it on a daily basis. And then
+[ 1234.80s ->  1240.48s] we're taking the average, um, for each bucket in the entire time series. Um, but this is exactly
+[ 1240.48s ->  1246.08s] what we would hope to see in a promising trading strategy. Uh, and then subsequently our beautiful
+[ 1246.08s ->  1249.52s] portfolio. So if you have any questions about this, feel free to leave them in the comments below.
+[ 1249.52s ->  1253.68s] You can always shoot me an email room and at quantkill.com. Uh, check out once again,
+[ 1253.68s ->  1258.56s] FMP's API, I'll leave a link in the description. If you're interested, check out our medium, uh,
+[ 1258.56s ->  1262.16s] check out quantkill.com. We just launched our algorithmic trading course,
+[ 1262.16s ->  1267.76s] developing an algorithmic trading system, uh, solely in Python. Um, other than that,
+[ 1268.72s ->  1272.16s] thanks so much for watching and, uh, I'll see you in the next one.

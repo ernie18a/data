@@ -1,0 +1,150 @@
+[    1.87s ->     6.05s] Banks are just casinos with extra steps. In this video, we're going to talk about the business
+[    6.05s ->    11.01s] function of both institutions, and we're going to see exactly how it is a casino makes money
+[   11.01s ->    17.07s] in randomness and how a bank makes money making a market. We'll talk about the probability and
+[   17.07s ->    22.53s] statistics involved, and we'll take a look at some animations to really understand how this works.
+[   22.63s ->    27.51s] Pretty much every asset in this industry comes with some sort of premium. The only assets in
+[   27.51s ->    32.25s] this space that I know of that don't are my Jupyter notebooks. This Jupyter notebook will be
+[   32.25s ->    36.41s] linked in the description below. I will also post it to the Quant Guild library on GitHub where you
+[   36.41s ->    41.27s] can find all of my Jupyter notebooks and associated YouTube videos along with all of the source code
+[   41.27s ->    45.59s] for my quant builds. At the top of this Jupyter notebook, you'll notice some related Quant Guild
+[   45.59s ->    50.95s] videos applying probability and statistics to finance and trading. This idea of time series
+[   50.95s ->    56.31s] analysis, retail versus institutional trading, trading versus investing, the idea of accumulating
+[   56.31s ->    62.47s] expected value or an edge over a series of trades over time, and of course, the difference between
+[   62.47s ->    68.23s] Quant and discretionary trading and acting with some sort of optimal policy function. I highly
+[   68.23s ->    73.51s] recommend you check these videos out as they're extremely relevant to this idea of banks operating
+[   73.51s ->    77.85s] as a casino. Moreover, these videos certainly take a lot of effort to create, so if you'd like to help
+[   77.85s ->    81.45s] support the channel so I can continue to create videos just like this one, please like, comment,
+[   81.45s ->    86.25s] subscribe, share. It helps me out tremendously. It is always greatly appreciated. And if you'd like
+[   86.25s ->    92.25s] to master your quantitative skills, check out quantguild.com. We have an absolutely massive
+[   92.25s ->    97.93s] update rolling out towards the end of October. A lot of exciting things to look forward to.
+[   97.93s ->   103.69s] Without further ado, let's get started with this idea of a casino and see exactly how it is they make
+[  103.69s ->   110.01s] money in randomness. We've all heard of this idea of the house edge, but what is it exactly,
+[  110.01s ->   116.25s] and how does it ensure that a casino is going to continue to make money in the long run? Nobody
+[  116.25s ->   120.57s] knows what the outcome of any one game is going to be. If I spin a roulette wheel, I don't know if
+[  120.57s ->   126.89s] it's going to be red, black, or green, and neither does the casino. We need some way to be able to evaluate
+[  126.89s ->   135.13s] these games that involve randomness, and this is exactly where probability and statistics come into play.
+[  135.13s ->   141.21s] From probability and statistics, we have this idea of an expected value. The equation for an expected
+[  141.21s ->   146.73s] value is given to us here by the law of total expectation. It's actually really easy to compute
+[  146.73s ->   153.05s] our edge or the house edge. All we need is the probability of winning, the probability of losing,
+[  153.05s ->   159.69s] the average payoff if we win, and the average payoff if we lose. We throw all those pieces together and we
+[  159.69s ->   165.37s] get the overall expected value. I can apply this to a whole bunch of casino games now. I can apply this
+[  165.37s ->   172.25s] to roulette, craps, and slots, and the criteria for making money is very simple. If the expected value
+[  172.25s ->   178.01s] or our edge is greater than zero, we're going to make money in the long run so long as people play
+[  178.01s ->   183.45s] on the other side of that game. If you take a look at the expected value for the house for each one of
+[  183.45s ->   189.93s] these games, you're going to find that it is positive. We get 5.26 percent for roulette, 1.4 percent for
+[  189.93s ->   196.81s] craps, and 2 to 15 percent for slots. So it's certainly good to be the house. But what exactly
+[  196.81s ->   202.41s] does this look like if we have a whole bunch of players interacting with these games in our casino?
+[  202.41s ->   209.21s] How can we expect our wealth path to evolve over time? And how do we expect players' wealth paths
+[  209.21s ->   213.61s] to evolve over time? Let's simulate a bunch of players playing roulette craps and slots at our
+[  213.61s ->   219.13s] casino and see the evolution of both the player wealth path and the casino wealth path over a
+[  219.13s ->   224.01s] series of plays of each of these games. What we'll find here in this particular simulation is that
+[  224.01s ->   229.21s] roulette was our best performing game. Every single one of the players that played roulette went bankrupt
+[  229.21s ->   236.33s] before the 100th play, so we ended up tapping out and nobody was left to take money from as the casino.
+[  236.33s ->   241.61s] Looks like slots was the second best performing game and craps was the worst performing game.
+[  241.61s ->   247.05s] Being the casino is not without drawdown and losses. You can see actually for the first
+[  247.05s ->   253.61s] almost 80 plays, craps was actually negative. The casino was losing money on craps, but it's
+[  253.61s ->   259.69s] diversified. Games are independent. There's no correlation structure. Craps is independent of slots.
+[  259.69s ->   265.29s] Slots is independent of roulettes. The casino is diversified in that it's accumulating eggs,
+[  265.29s ->   270.97s] not for just one game, but for a series of games. Not for just one counterparty, but a whole bunch of
+[  270.97s ->   277.45s] players. And that is precisely what we see here. So all of these paths actually combine to form
+[  277.45s ->   284.41s] the total casino wealth path here. You can see it accumulated almost $20,000 in these 100 plays
+[  284.41s ->   292.01s] alone. That is crazy and that is exactly what the house edge is. Every single play, statistically,
+[  292.01s ->   297.69s] players are disadvantaged and they're going to lose money if they continue to engage in that game.
+[  297.69s ->   302.73s] If we take a look at the proportion of players that went bankrupt by the 100th play in each of these
+[  302.73s ->   309.85s] games. In roulette, 100% of the players are bankrupt. In craps, 80% and in slots, 90%.
+[  310.73s ->   316.49s] Certainly good to be the casino. And that is how they make money. They make money by taking it from
+[  316.49s ->   323.13s] their counterparties. People who are actively engaging in these casino games. Casinos have
+[  323.13s ->   328.97s] risk exposure. Anytime you engage in a system that is random or uncertain, you're going to have risk
+[  328.97s ->   334.09s] and you're going to need to manage it. So how does a casino manage their risk? Well, they have table
+[  334.09s ->   340.41s] limits. They cap max bets to limit potential losses per play. This is also to avoid any sort of
+[  340.41s ->   345.45s] statistical advantage that players could have like Martin Galing roulette. Position limits. We restrict
+[  345.45s ->   351.45s] the total exposure across all tables and games. Bankroll management. We maintain sufficient capital
+[  351.45s ->   358.17s] reserves to pay out counterparties if we have a streak of bad luck. Diversification. We have multiple
+[  358.17s ->   364.89s] games. We don't just have roulette. Surveillance. We monitor good players, cheating and fraud. You'll get
+[  364.89s ->   370.25s] kicked out of a casino if you start to do too well. Insurance. Maybe you have coverage
+[  370.25s ->   379.13s] for large payouts or jackpots. In any case, the casino makes money by accumulating edge, accumulating
+[  379.13s ->   386.49s] positive expected value. And in doing that, they have to manage these risks that come along with that
+[  386.49s ->   393.05s] exposure. So casinos make money by accumulating expected value over a series of plays. Banks,
+[  393.05s ->   398.81s] how do they make money? Well, they make money by accumulating expected value over a series of trades.
+[  398.81s ->   407.05s] They make money making a market. Banks act as market makers quoting prices to clients. This is where
+[  407.05s ->   412.97s] pricing comes in. This is the same idea as probability and statistics from the casino.
+[  412.97s ->   418.41s] We're just applying it now to trying to derive the price of some sort of financial contract.
+[  418.41s ->   422.41s] Typically, we'll look at something like an option contract or an exotic contract,
+[  422.41s ->   427.37s] and we're going to look to make a market on it. So I pick some sort of pricing model. I go about
+[  427.37s ->   434.01s] calibrating it to liquid instruments. I extrapolate an exotic price, and then I bake in some liquidity
+[  434.01s ->   441.13s] credit model adjustments for profit. And I can quote a two way for that particular contract.
+[  441.13s ->   448.73s] My objective here is to accumulate the positive expected value by quoting that bid ask spread.
+[  448.73s ->   455.93s] I am trying to quote a spread. And then as soon as I engage in a transaction, I have a counterparty.
+[  455.93s ->   462.81s] I'm hedging away that risk to try to collect that spread. That is my goal. Effectively,
+[  462.81s ->   470.89s] what we're doing is we're always buying low and selling high or selling high and buying back
+[  470.89s ->   478.17s] lower immediately hedging and trying to collect on that spread that we're quoting. We're going to do
+[  478.17s ->   484.25s] this a very large number of times. And if we can do this effectively such that we don't accumulate
+[  484.25s ->   491.53s] too many transaction costs, we're going to be able to make a whole bunch of money. This is the business
+[  491.53s ->   497.13s] function of a bank. This is not engaging in speculative trading. This is literally a business
+[  497.13s ->   503.93s] function. You are making a market. And when you make that market, your payoff is collecting that
+[  503.93s ->   509.53s] spread. That is effectively how you make money. And that is your reward for serving that business
+[  509.53s ->   514.65s] function. Instead of simulating players in a casino, we can simulate trades on a trading desk. At our bank,
+[  514.65s ->   519.85s] we have a fixed income desk, Forex, equities, options. I gave you an example earlier about how to go
+[  519.85s ->   525.37s] about quoting a price for an exotic option and then going about hedging it to collect on that spread.
+[  525.37s ->   530.65s] The way that each desk is going to go about serving that business function is going to slightly differ,
+[  530.65s ->   534.57s] but the overall principle remains the same. We're looking to collect on that spread,
+[  534.57s ->   539.53s] collect and accumulate that theoretical expected value. And if we can do this effectively,
+[  539.53s ->   545.45s] then we can make a whole bunch of money for our bank, just like the casino. What we can see here is
+[  545.45s ->   551.37s] each one of these desks is going to accumulate that positive expected value. And all of them in
+[  551.37s ->   558.09s] aggregate are going to contribute to the overall bank wealth path, just like we saw above when each
+[  558.09s ->   564.81s] one of the casino games contributed in a positive way to the total casino wealth path. Just like the
+[  564.81s ->   570.81s] business function of a casino, a bank or market maker is not without risk. For example, if you're
+[  570.81s ->   576.33s] hedging and the market moves aggressively away from your position, you could be forced to rehedge.
+[  576.33s ->   581.29s] Depending on the direction of your position, you could accumulate a loss and you'll definitely
+[  581.29s ->   586.49s] accumulate transaction costs. If you do this too often, then you're going to eat away at the
+[  586.49s ->   592.25s] theoretical spread you're trying to profit from and you'll end up losing money. So this is not a
+[  592.25s ->   599.05s] risk-free profit. This is a business function and you need to act optimally to accumulate the expected
+[  599.05s ->   605.05s] value over a series of trades for your desk. So you're not without risk. We gave an example in the
+[  605.05s ->   610.01s] context of hedging, what are some other risks that we need to be aware of and how do we manage them as
+[  610.01s ->   616.25s] a bank? Well, we need to set trade size limits, meet capital requirements, diversify your portfolio,
+[  616.25s ->   622.49s] hedge dynamically, and of course, limit counterparty exposure. Remember, whether we're operating as a
+[  622.49s ->   630.49s] casino or a bank, we are trying to accumulate this edge, this positive expected value over a series of
+[  630.49s ->   639.13s] plays or a series of trades. We don't want an outsized bet on any one game or any one trade.
+[  639.13s ->   644.17s] We can lose all of that money and it's going to take us a while to recoup those losses. That's not
+[  644.17s ->   650.57s] where we profit. We profit from making independent bets with positive expected value, reasonably sized
+[  650.57s ->   657.29s] bets so we can accumulate all of that wealth. That is how the casino makes money and that is exactly how
+[  657.29s ->   662.01s] the bank makes money. Some closing thoughts and future topics. Here's your executive summary.
+[  662.01s ->   667.37s] Key similarities between banks and casinos. Effectively, banks are casinos with extra steps.
+[  667.37s ->   673.29s] Both earn profits from the spread. Banks earn from the bid-ask spread and the casino earns from the
+[  673.29s ->   679.29s] house edge. They're both looking for a high volume of small transactions. That's going to be the key to
+[  679.29s ->   685.77s] profitability here. We're not looking for oversized positions. You can accumulate tremendous losses in the
+[  685.77s ->   691.05s] short run and you may not even make it to the long run if you make these outsized bets, even if you have
+[  691.05s ->   698.81s] this positive expectancy. Both face tail risk in that sense from extreme events or market moves.
+[  698.81s ->   705.37s] Key differences between banks and casinos. Banks make money in risk neutrality. Counterparty outcome
+[  705.37s ->   712.41s] is hedged. We're looking to profit on that spread. Unlike casinos, they make money in the randomness by
+[  712.41s ->   719.69s] taking expected value, taking money from their counterparty. In terms of risk, banks face
+[  719.69s ->   726.97s] different and probably worse systematic risk relative to a casino as casinos operate independent
+[  726.97s ->   732.73s] games. They're not just stochastically independent, they're physically independent. When you spin a roulette
+[  732.73s ->   739.21s] wheel versus rolling a die, you have physical independence. That always implies stochastic independence.
+[  739.21s ->   744.49s] So the risks that they face are fundamentally different and are the ways they go about managing
+[  744.49s ->   749.53s] them. Some future topics, technical videos and other discussions to look forward to. I would like
+[  749.53s ->   754.73s] to do this video on advanced Markov chains, absorbing states, communication classes, ergodicity,
+[  754.73s ->   760.41s] stationary distributions, something you would see in a class on stochastic processes, break out the iPad,
+[  760.41s ->   764.89s] work a whole bunch of problems. This is definitely different from what we usually do. If you'd like to see
+[  764.89s ->   770.33s] this, let me know in the comments below. I'd also like to do videos on stochastic processes, maybe
+[  770.33s ->   776.49s] dedicated videos for Brownian motion, arithmetic, geometric Brownian motion, and then build to that
+[  776.49s ->   782.09s] idea of deriving the Black-Scholes equation, getting to that PDE, looking at analytical and numerical
+[  782.09s ->   788.09s] solutions. I know I also want to talk about this Kalman filter and non-stationarity. This is a big problem
+[  788.09s ->   794.65s] in quant modeling. I'd also like to maybe talk about more qualitative topics like most popular quant models
+[  794.65s ->   800.81s] for informed trading, buy side versus sell side quants, things like that. Again, very different
+[  800.81s ->   805.45s] from what we usually do. If you're interested in any of these topics, please let me know in the comments
+[  805.45s ->   810.97s] below. I'd also like to continue with our quant builds. I have this idea for a Kalman filter model
+[  810.97s ->   816.01s] with regime dynamics. Since we've already covered Markov chains and hidden Markov models, I think this is
+[  816.01s ->   820.89s] something we can do as soon as we cover Kalman filters. I also have this idea of an automated
+[  820.89s ->   824.89s] delta neutral trading system. I've actually continued to build the infrastructure for this
+[  824.89s ->   830.25s] system so we can look forward to that quant build in the near future. And that's going to do it for
+[  830.25s ->   836.17s] this video explaining why banks are casinos just with extra steps. I hope you enjoyed. I hope you
+[  836.17s ->   840.01s] learned something. If you liked this video and you want to see more like it in the future, please like,
+[  840.01s ->   844.65s] comment, subscribe, share. Again, it helps me out tremendously. It is greatly appreciated.
+[  844.65s ->   850.33s] I have been recording a tremendous amount of videos lately for the quant courses that are
+[  850.33s ->   855.37s] going to be released at the end of October. Over 20 hours of content in the first course.
+[  855.37s ->   861.29s] Very excited to release that one on quantguild.com. Lots to look forward to on that platform. A lot of
+[  861.29s ->   866.33s] really cool collaborations coming out soon. So stay tuned for that. I'll leave a link in the description
+[  866.33s ->   871.13s] below to our discord. If you'd like to connect with me and other quants in the quant guild community,
+[  871.13s ->   876.01s] check out quantguild.com to master your quantitative skills and stay tuned for that massive October
+[  876.01s ->   881.85s] update. Other than that, thank you so much for watching and I will see you in the next video.

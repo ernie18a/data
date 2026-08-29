@@ -1,0 +1,68 @@
+[    0.08s ->     8.32s] today i'm gonna share with you my results on darun x0 currently i'm up from the beginning of
+[    8.32s ->    19.28s] the year mid-january around 17 with a max drawdown of 6.56 and currently i'm managing 70k
+[   20.40s ->    28.32s] i started with 30 in may and then other 30 since then this is the performance
+[   29.20s ->    38.32s] month over month the beginning of the year it was pretty tough so i had minus 3.2 minus 1.5
+[   38.96s ->    48.96s] and then i got back most of the performance but why this happened i had only three algos now i'm
+[   48.96s ->    58.53s] managing around 10 algos on different asset class and also different strategies at the beginning
+[   58.53s ->    68.27s] of the year with only three algos the market it was pretty tough so my performance wasn't that good
+[   68.27s ->    75.79s] on that part of the year but then i got this performance so it's much better now september
+[   75.79s ->    87.44s] 17th i'm currently number 82 out of like 9 000 it's very good i'm on the top one percent and
+[   88.00s ->    97.76s] i'm very close to achieving the gold darwinia because i need to reach 20 percent of profit
+[   99.30s ->   112.51s] then this this is the rating for september and it's quite good i am like 90.25 and also this is the
+[  112.51s ->   121.87s] next capital that darinx is going to allocate to me so it's like the next allocation maybe it's going to
+[  121.87s ->   130.51s] change i i don't know because now it's 17 september so it could change easily but that's for the moment
+[  130.51s ->   141.01s] and it's good and this is the parameter i'm looking for and it's the sharp ratio 1.57 it's very good the
+[  141.01s ->   153.63s] analyzed return of 27.24 also the good the next things i like to analyze is the worst day to the
+[  153.63s ->   163.63s] best day so that's the ratio and i'm close to three to one the worst day it was 2.99 and it was during
+[  163.63s ->   171.79s] trump's tariff so it's fine it happened and and my algos managed that pretty good so
+[  172.19s ->   183.39s] minus 2.99 so like minus three percent and the best day actually it was 8.37 that's good so this ratio
+[  183.95s ->   192.91s] is perfect also the weekly is even better and the monthly also is like around three to one so those
+[  192.91s ->   202.69s] are good parameters and those are the analysis of the drawdown and yeah it happened when i had only
+[  202.69s ->   212.85s] three three ago so the worst one so it's fine so those are the asset allocation is like where you trade
+[  212.85s ->   224.11s] most and here you can see that most of the time is index or commodities because most of my algos are on
+[  224.83s ->   236.35s] xu usd so gold and of the for the index i have nasdaq snp and dust and also i have two i goes on
+[  238.45s ->   252.83s] usd jpy and actually so those are other parameters you can see here the weekly performance and now i can see i
+[  252.83s ->   261.31s] never checked that before and i can see that from this distribution on wednesday and friday my algos
+[  261.79s ->   268.59s] didn't perform that well but overall i know that most of the time most of the day of the week is
+[  268.59s ->   276.75s] going to perform very well and this is only the performance from the beginning of the year i tested
+[  276.75s ->   288.37s] all of the algos and put them together in a portfolio on strategy quant i analyzed that for
+[  288.37s ->   298.13s] over seven years so that's the thing that gave me the confidence to start this portfolio on darwin x zero
+[  299.01s ->   307.25s] here are all of the other parameters this is kind of interesting so it's the correlation not between the
+[  307.25s ->   317.28s] trades you took but between you and other people this is my ticker and i'm very very close to this
+[  319.31s ->   334.13s] dude here and also to this one and all of those and darwin x zero is gonna decrease the leverage on you
+[  334.13s ->   343.41s] the darwin risk so is the leverage is applying to your portfolio and actually is 1.16 that's kind of good
+[  343.41s ->   351.57s] is gonna increase the position i took give me a little bit more risk so that's it for my darwin x zero
+[  351.57s ->   361.33s] account and yeah since january is going very very well i know that like in this period here i stopped
+[  361.33s ->   369.89s] trading i closed the signal account because the performance it was so good they said okay maybe
+[  369.89s ->   377.33s] let's stop trading for a while and get the allocation but it was a mistake because i had the
+[  377.97s ->   385.17s] algos active on other account and it made very good profit i learned from that and i'm not gonna stop
+[  385.17s ->   395.09s] trading when i see very good profit on this account my goal is to reach the goal status like i showed you
+[  395.09s ->   404.53s] before because you cannot attract investor capital and some people you can see from the all darwin
+[  405.17s ->   413.01s] some people are managing like 3 million like 5 million or two some of them trade since 2015 some of
+[  413.01s ->   422.53s] those people reach the same goal at least like 1 million 2 million or maybe like 500 000 euro just
+[  422.53s ->   431.41s] in a few years like one two or three so that's something i'm looking for and i think i can easily
+[  431.41s ->   440.45s] reach that now this is quant analyzer this is the report of my portfolio i have nine algos i add two
+[  440.45s ->   452.61s] august so i'm actually at 11 august most of them are on nasdaq gold and use the jpy i also have like
+[  452.61s ->   460.61s] bitcoin here but is only on ftmo the overall performance here it looks crazy because it's very
+[  460.61s ->   468.37s] stable you can think that it could be overfitted and actually it is but i know that is not going to
+[  468.37s ->   481.73s] replicate the same performance so this drawdown here 3500 actually this year it was around 4500 so i knew
+[  481.73s ->   489.84s] that it was easy to get out of this type of performance i managed to reduce the risk on each
+[  489.84s ->   499.33s] type of i goes so the drawdown it was good for the account i'm managing like in ftmo and darwinx
+[  500.53s ->   509.78s] so those are the performance over the years and it's profitable every single years this is the yearly
+[  509.78s ->   519.22s] pnl and this is not updated the last update i did i think it was on may a quant analyzer is great
+[  519.22s ->   525.30s] because you can build this type of let's say analytics for all of your trades i do
+[  526.42s ->   534.98s] 8 000 trades and quant analyzer is gonna build all of those type of metrics for you to
+[  535.86s ->   543.30s] understand if there is something to change something to improve and also those type of parameters
+[  543.30s ->   552.90s] are very good you need to analyze all those data to see if that's something you can trust or it's not
+[  552.90s ->   561.94s] okay so now i took the performance from darwinx and let's analyze it on quant analyzer this is going to be
+[  563.23s ->   572.37s] a little different from the one you saw before because darwinx is gonna decrease the risk and adjust it so
+[  572.93s ->   580.77s] it doesn't seem that good because i also change risk and at the beginning it was much higher so
+[  581.33s ->   590.27s] it's gonna be a little different this is the equity line of the portfolio without the sub equities the
+[  590.27s ->   597.63s] next thing i want to show you is the sub equities only and those are the performance on different other
+[  597.63s ->   607.79s] asset classes and the best things to do is not only having one i go on one asset but is having more asset
+[  607.79s ->   624.82s] class as once so the overall profit it's very good and that's the thing i'm looking for this is the trade
+[  624.82s ->   634.26s] analysis yeah that's it for today and this is the last screenshot of my portfolio with the sub equities
+[  634.26s ->   644.21s] also and yeah the overall performance so that's it see you in the next video i hope you find that
+[  644.21s ->   652.85s] interesting and also like transparency because you see here everything you can leave a comment if you
+[  652.85s ->   662.69s] like subscribe also and leave a like and yeah you can ask me something how i build a portfolio thanks for
+[  662.69s ->   672.53s] watching and see you in the next one

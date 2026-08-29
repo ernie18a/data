@@ -1,0 +1,83 @@
+[    2.03s ->     5.03s] Hey everyone, it's Austin Bully again with Options Traders.
+[    5.15s ->     9.41s] Today I wanted to go over what Max Payne is, or at least that's what it's called on this
+[    9.41s ->    16.23s] website, but what it's really called is Option Pinning or Option Payne.
+[   17.25s ->    26.22s] So to give you a definition of what Option Pinning is, so Option Pinning refers to price
+[   26.22s ->    29.72s] action in stocks as they come into option expiration.
+[   29.72s ->    34.72s] It is often viewed as dark magic, but simply put, it is when certain traders and market
+[   34.72s ->    40.04s] makers have an incentive to keep an underlying stock at around a certain price.
+[   40.80s ->    43.38s] So I'm going to explain what that is exactly, okay?
+[   44.58s ->    49.10s] So if we can see, we can put in the ticker symbol on this website, which will be linked
+[   49.10s ->    50.66s] below at the bottom of this video.
+[   51.20s ->    55.62s] The reason why I'm not showing my face this time is because I cannot show my face over
+[   55.62s ->    56.70s] the website.
+[   56.98s ->    58.16s] It just doesn't work well.
+[   58.38s ->    60.08s] It keeps going in and out.
+[   60.20s ->    61.00s] So I'm just going to talk.
+[   62.70s ->    64.14s] So you put in any ticker.
+[   64.72s ->    66.40s] So let's put in Apple, for instance.
+[   66.78s ->    72.78s] You put in what the expiration date is of the options, and you click, of course, Submit.
+[   73.48s ->    76.04s] And then, so it comes into this.
+[   76.52s ->    82.40s] So basically, Option Pinning, so you have market makers that control the market, okay?
+[   82.40s ->    87.44s] The job of the market maker is to make sure that the majority of people lose money.
+[   87.44s ->    93.64s] The majority of people lose money, and other people are making money somehow, and it helps
+[   93.64s ->    94.24s] them out, okay?
+[   94.24s ->    96.34s] I'm not a market maker.
+[   96.34s ->   100.98s] I've never read up on their job position or what exactly they do.
+[  101.04s ->   104.22s] I just know that they control the movements of stocks, okay?
+[  104.22s ->   111.08s] So when we pull up the expiration date of a specific ticker on here, it shows us where the majority
+[  111.08s ->   114.48s] of puts are and where the majority of calls are at, okay?
+[  114.48s ->   120.18s] And then, of course, for the option makers to make the majority of people lose money in
+[  120.18s ->   122.90s] options, they want to make the majority wrong.
+[  123.28s ->   127.28s] So if the majority of people have puts here and the majority of people have calls here,
+[  127.98s ->   134.94s] then if they can get the stock to finish around this price range, then the majority of people
+[  134.94s ->   137.08s] will lose money, and somehow that's good for them.
+[  137.08s ->   145.60s] So if we can see here, predicted on 420, which is this upcoming Friday for Apple, it's predicting
+[  145.60s ->   150.08s] a range around here from 162.50 to 177.50.
+[  150.08s ->   158.54s] Of course, it's a pretty large spread in regards to Apple, but if you look at SPY, for example,
+[  160.90s ->   161.72s] let's see here.
+[  163.20s ->   171.20s] We have, obviously, we have, since SPY, the S&P 500 index has been doing a lot of crazy
+[  171.20s ->   174.98s] things, we have options, calls, and everywhere.
+[  174.98s ->   182.70s] But again, this is the general location where if the stock ends up at this price, then the
+[  182.70s ->   184.46s] majority of people will lose money.
+[  185.22s ->   187.60s] That's just what the market makers are looking at.
+[  188.44s ->   193.66s] Again, this is not a proven strategy, so do not trade primarily based off this.
+[  194.08s ->   197.26s] It's just something good to look at, to get a reference of something.
+[  197.66s ->   203.42s] I will be actually testing out the strategy more as in seeing how effective it is.
+[  203.42s ->   206.30s] Oops, I just, did I pull up my platform?
+[  206.52s ->   206.96s] Yes, I did.
+[  207.52s ->   208.88s] Oops, don't want to pull that up.
+[  209.18s ->   213.30s] Okay, so let's go to SPX real quick.
+[  213.92s ->   216.16s] So let's take a closer look.
+[  216.58s ->   217.42s] Let's go to the 5-9.
+[  217.50s ->   224.40s] Okay, so on 4-4, which I don't know what day that was, I just know it was a while back.
+[  224.48s ->   225.94s] It was nine days ago.
+[  225.94s ->   231.44s] So last Friday was this on SPX.
+[  231.80s ->   237.72s] Nine days before that, I don't know what day that was exactly, but on April 4th, I researched
+[  237.72s ->   248.88s] on this website where SPY, I think it was, would close for the day for 4-13, which was this
+[  248.88s ->   258.78s] past Friday, and it said it would close in between 2-65 and 2-66, no, what was it?
+[  259.34s ->   263.32s] It was 2-65-50 and 2-64-50.
+[  263.66s ->   264.94s] Those were the exact numbers.
+[  265.02s ->   270.24s] It says it would close between, if I remember correctly, it closes a little bit higher than
+[  270.24s ->   277.10s] than that, but the cool part was, is going into the day, we were up here.
+[  277.22s ->   284.36s] So we were up at 2-67-50, and in order for the market makers to move the stock correctly,
+[  284.46s ->   289.70s] so the majority of people lost money, the stock, or the S&P 500, had to drop.
+[  291.05s ->   298.29s] The market makers made it, or what we are assuming, made the S&P 500 drop into this price range
+[  298.29s ->   300.13s] so that the majority of people will lose money.
+[  300.13s ->   301.91s] Now, how would that help you?
+[  302.19s ->   308.89s] If you know you are way above a specific price where it should close, again, this is not 100%
+[  308.89s ->   313.17s] guaranteed, so that's why we're going to look into studying this more, but I just thought
+[  313.17s ->   313.99s] it was interesting.
+[  315.33s ->   318.41s] If you're way above a specific range, it should close.
+[  319.05s ->   324.65s] Maybe we could go into thinking about a put if the technicals line up correctly.
+[  324.97s ->   329.85s] If also we are way below a certain range on that Friday, maybe we can go to look into
+[  329.85s ->   330.27s] calls.
+[  330.63s ->   334.31s] Again, this is just something I thought was interesting, and option pinning may be a strategy
+[  334.31s ->   336.61s] that we can pursue further.
+[  337.25s ->   341.05s] I know I have not heard of it until someone in the group chat called it out and was like,
+[  341.11s ->   342.37s] hey, what do you think about this?
+[  342.87s ->   345.43s] And again, that is why we have group chats.
+[  345.49s ->   350.09s] That is why we can be able to connect with like-minded individuals who learn and grow and
+[  350.09s ->   350.87s] mentor each other.
+[  351.23s ->   351.75s] All right, guys.
+[  351.75s ->   354.93s] I hope you all learned something about option pinning and how it may be able to help in your
+[  354.93s ->   355.99s] optional trading success.

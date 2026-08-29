@@ -1,0 +1,72 @@
+[    0.18s ->    14.66s] How's it going, everybody? Today, what I want to do is continue talking about algorithmic trading system development, but more specifically, I want to talk about building a web-based front end for this algorithmic trading system.
+[   15.30s ->    22.10s] And to do this, we're going to use what we learned in my tutorials on web application development in Python.
+[   22.10s ->    35.02s] And as you can see by my Atom environment, I've combined both of those projects from those series, the algorithmic trading system tutorials and the web application tutorials.
+[   35.26s ->    41.12s] Both of the Python scripts, along with the HTML templates, are now in this single environment.
+[   41.12s ->    54.22s] And I'm going to be showing you how we can combine both of these to make a relatively basic, but something you can definitely build on, web application dashboard for your trading system.
+[   55.80s ->    59.94s] Okay, so fortunately, most of the hard work is actually already done.
+[   60.42s ->    62.60s] We've built our algorithmic trading system.
+[   62.72s ->    67.28s] We've connected to our brokerage house through the IB gateway using IB's API.
+[   67.28s ->    75.96s] And we've also built a basic web application with Ajax and JavaScript to constantly query updates from this URL rule.
+[   76.64s ->    84.96s] So all we really need to do is modify this code so that we can display the relevant information from our trading system in our web browser.
+[   86.96s ->    97.44s] So all we're going to do in our algorithmic trading script, if you haven't already, is we're going to remove the loop at the bottom and the instance of the trading application that we've created.
+[   97.44s ->   104.80s] Because we are going to be importing this script into our script that persists the instance of Flask.
+[  105.44s ->   112.68s] And that's where most of the work is going to be done displaying the relevant information to the user on the web browser.
+[  113.72s ->   116.20s] So we're all done with our algorithmic trading script.
+[  116.30s ->   117.70s] So I'm going to go ahead and close that.
+[  117.70s ->   125.52s] And now what we need to do is import the trading application class into our main Flask script here.
+[  125.72s ->   130.06s] So I'm going to say import algo trading as a T.
+[  130.86s ->   133.56s] And I'm also going to import threading.
+[  135.45s ->   138.63s] Okay, so now let's talk about why we need to import threading.
+[  138.63s ->   151.90s] So if we go back to our algo trading script and check out the trading application class, you'll notice that we create and persist the trading application on its own thread.
+[  151.90s ->   160.20s] And if we go back to our main Flask script here, we are simply just running the instance of Flask.
+[  160.30s ->   161.16s] And we don't want to do that.
+[  161.24s ->   165.12s] We want to persist it on its own thread so both can operate simultaneously.
+[  165.12s ->   169.64s] And to do this, all we're going to have to do is create a new thread.
+[  169.92s ->   174.20s] So I'm going to say T is equal to threading dot thread.
+[  174.58s ->   180.64s] And I'm going to target the application dot run function, the same function that we're calling right here.
+[  181.60s ->   184.06s] And then all I have to do is start the thread.
+[  184.20s ->   187.98s] So I'm going to remove this and I'm going to say T dot start.
+[  187.98s ->   201.80s] Okay, so now that we have successfully persisted Flask on its own thread, we're going to create an instance of our trading application class.
+[  201.80s ->   208.10s] So I'm going to say trading app is equal to A T dot trading application.
+[  209.30s ->   215.20s] And to start displaying the information that we want to display to the user through the web browser,
+[  215.20s ->   223.76s] all we've got to do is figure out what fields in the trading app instance we want to update in the web browser.
+[  224.02s ->   228.12s] And what I mean by this is if we look at the algo trading script, right,
+[  228.32s ->   232.32s] and we scroll down to our trading application class,
+[  232.86s ->   237.76s] you'll notice that it is a subclass of both the API controller and the API socket.
+[  238.82s ->   242.50s] So if we go to our API socket, there's not a lot of relevant information.
+[  242.50s ->   244.98s] This is for sending requests to the server.
+[  245.52s ->   249.02s] But the API controller is for receiving data from the server.
+[  249.16s ->   255.38s] So if you'll notice here from our previous video, we created a tick option computation callback function.
+[  256.18s ->   263.40s] And as options data flows through the data stream to our trading application class,
+[  263.56s ->   265.80s] we're storing it in these lists.
+[  265.80s ->   274.14s] So what we can actually do is use these lists to display the delta, the option price, or the underlying asset price
+[  274.14s ->   280.44s] to the user on the front end using Flask and Jinja along with Ajax and JavaScript.
+[  282.36s ->   284.28s] So let's actually go ahead and do this.
+[  284.34s ->   287.98s] I'm going to head back over to our main Flask script here.
+[  287.98s ->   295.96s] And in our URL rule for update decimal, you'll notice we regenerate a random decimal
+[  295.96s ->   302.54s] and display it to the random decimal model.html through the Jinja variable X.
+[  302.70s ->   306.56s] And if you need a refresher, this is our random decimal model.
+[  306.56s ->   311.90s] And the reason we created the random decimal model is because in our home page,
+[  312.10s ->   319.22s] we actually use the random decimal model to replace this entire div tag with new information
+[  319.22s ->   322.60s] using Ajax and our JavaScript here.
+[  322.60s ->   325.30s] So we can modify this.
+[  325.56s ->   333.38s] So instead of creating a new random decimal, we are just receiving the latest price,
+[  333.58s ->   339.56s] the latest underlying asset price, or the latest option delta from our trading application.
+[  339.86s ->   342.10s] And this is a very, very simple modification.
+[  342.10s ->   352.94s] And you could even just alter this back half of the random decimal assignment by saying tradingapp.deltas.
+[  353.30s ->   358.60s] And what this is going to do is it's going to be displaying the entire list of deltas
+[  358.60s ->   364.04s] as it continues to grow and append more and more information to the user on the front end
+[  364.04s ->   368.06s] through this Jinja variable here in this random decimal model
+[  368.06s ->   372.46s] that updates this home.html template here through Ajax.
+[  372.96s ->   376.06s] And you can go through and reset all the logic.
+[  376.30s ->   379.76s] You can, you know, instead call this option prices or option deltas,
+[  379.76s ->   383.38s] whatever information you're displaying to the user on the front end.
+[  383.86s ->   388.54s] But if you go ahead and actually run this entire configuration with this simple modification,
+[  389.08s ->   395.40s] you're going to be displaying the relevant trading information to the user on the front end.
+[  396.12s ->   401.26s] And that's opening the door to every other variable that you could want to display.
+[  401.26s ->   406.34s] If you want to display OpenPNL or trades or whatever you want to display to the user,
+[  406.34s ->   408.92s] you can through this process.
+[  410.34s ->   415.46s] So I'm going to go ahead and run this and I'll meet you in the web browser so we can see our results.
+[  416.44s ->   423.36s] So here we are on our web browser and you'll notice that the trading application appends the new deltas to the list
+[  423.36s ->   429.42s] and Ajax keeps pulling that list from the trading application to update the HTML.
+[  429.42s ->   430.63s] So here we are on our web browser and we'll see you in the web browser and we'll see you in the web browser and we'll see you in the web browser and we'll see you in the web browser and we'll see you in the web browser and we'll see you in the web browser and we'll see you in the web browser and we'll see you in the web browser and we'll see you in the web browser and we'll see you in the web browser and we'll see you in the web browser and we'll see you in the web browser and we'll see you in the web browser and we'll see you in the web browser and we'll see you in the web browser and we'll see you in the web browser and we'll see you in the web browser and we'll see you in the web browser and we'll see you in the web browser and we'll see you in the web browser and we'll see you in the web browser and we'll see you in the web browser and we'll see you in the web browser and we'll see you in

@@ -1,0 +1,165 @@
+[    1.26s ->     7.86s] Is quad trading gambling? When I first started studying math and statistics, I heard this idea
+[    7.86s ->    15.00s] being thrown around left and right. Trading is just another form of gambling. And as I got more
+[   15.00s ->    21.56s] involved in this space, I started to reject the premise more and more. In this video, what I want
+[   21.56s ->    27.84s] to do is I want to talk about the idea of gambling, why it has negative connotations, why it should
+[   27.84s ->    34.32s] have negative connotations in this idea of games of chance versus games of incomplete information
+[   34.32s ->    39.68s] and how games of incomplete information are actually quite similar to this idea of trading
+[   39.68s ->    45.70s] or quant trading or any form of algorithmic trading and what we can learn from gambling
+[   45.70s ->    51.96s] in those games of incomplete information. First, let's discuss this idea of a game of chance. Now,
+[   52.02s ->    57.76s] a game of chance, I'm painting with broad strokes here, is anytime you make a wager on an outcome,
+[   57.84s ->    63.12s] with a fixed probability, you're playing a game of chance. So you can construct some sort of game
+[   63.12s ->    67.74s] with a coin flip where you're betting on heads and tails, you can construct some sort of game with
+[   67.74s ->    73.48s] a dice roll where you're betting on the outcome of the dice roll, or you could even go to a casino
+[   73.48s ->    79.22s] and play something like roulette. In any of those cases, you're playing a game of chance. Now,
+[   79.62s ->    85.52s] in its purest form, I consider this to be gambling. And I also consider this to be where all of the
+[   85.52s ->    90.98s] negative connotations should go, and for good reason. So first, let's take a look at something
+[   90.98s ->    97.86s] like roulette. What I've done here is I've simulated a bunch of wealth paths of playing roulette from the
+[   97.86s ->   104.40s] perspective of the casino. So anytime you make a bet in roulette, there's a fixed payout structure,
+[  104.54s ->   111.58s] but of course, it's not purely 50-50. You still have the zeros. So in this case, if you're to simulate
+[  111.58s ->   117.04s] the wealth from the casino's perspective, these are a bunch of different potential outcomes.
+[  117.52s ->   123.88s] So you can see five sample paths here. You have this blue and gold path, which accumulate a lot
+[  123.88s ->   128.72s] more wealth relative to this green and pink path. And even in this case, if you take a look at the
+[  128.72s ->   135.48s] green path, the casino actually lost money, even though it has this edge. The theoretical edge is
+[  135.48s ->   140.96s] plotted as a red dashed line. So this is what is meant when it says the house always wins.
+[  140.96s ->   148.56s] This is why. Because this is a thousand games, the casino in the worst path that was generated from
+[  148.56s ->   156.14s] this simulation is almost net zero. Where it's best path, it's up quite a significant amount over
+[  156.14s ->   165.24s] the theoretical value. So these games of chance, they are in favor of the house. If you're a player
+[  165.24s ->   172.16s] playing these games of chance, you're gambling on an outcome where if you iteratively play this game,
+[  172.16s ->   179.26s] you are essentially destined to lose all of your money. And that's because the house has this
+[  179.26s ->   184.72s] theoretical edge. So over time, you're going to just accumulate loss until you eventually run out
+[  184.72s ->   190.56s] of money. Whereas the house, if it was able to play indefinitely or extend itself credit,
+[  190.56s ->   196.94s] it would theoretically never run out of money from this perspective. So this is why gambling tends
+[  196.94s ->   201.70s] to have negative connotations. And rightfully so, because if I choose to engage in roulette and I
+[  201.70s ->   206.74s] continue to play, eventually I'm going to run out of money unless I choose to stop at some sort of
+[  206.74s ->   213.24s] threshold. But that turns into the gambler's ruin problem. That's a video topic for another day.
+[  213.50s ->   217.84s] So if that's a game of chance and I consider that to be gambling, then what do I consider
+[  217.84s ->   223.74s] poker? Well, isn't poker the pinnacle of gambling? If somebody said they were a poker player,
+[  223.84s ->   228.96s] wouldn't you just interchangeably call them a gambler? Yes and no. So what I'm trying to say
+[  228.96s ->   235.52s] here is in the context of a game of chance, there is no optimal decision to make. If I bet on green
+[  235.52s ->   241.26s] or bet on red or bet on black and roulette, nobody would tell me, oh, that's a great move.
+[  241.26s ->   248.94s] It's a great move. No, because the outcome is purely random according to some sort of fixed
+[  248.94s ->   254.76s] probability mass function. But in the context of something like poker, you might say, wow,
+[  254.82s ->   263.36s] that's a great bluff or wow, that's a great fold or that's a good call. And when we start to think
+[  263.36s ->   270.32s] about how that actually carries some weight, we're kind of moving away from this idea of purely just a
+[  270.32s ->   276.94s] game of chance. And we're moving into this space of optimal decision making in uncertainty. And
+[  276.94s ->   282.22s] that's what is meant in this context of a game of incomplete information. Sure, you can call it
+[  282.22s ->   288.30s] gambling because you're placing money on uncertain outcomes. Fair enough. But really, I'm trying to
+[  288.30s ->   294.38s] focus on this idea of optimal decision making in uncertainty. You have an environment in which it
+[  294.38s ->   299.56s] is inherently uncertain. You have incomplete information about it. And you have to act.
+[  300.06s ->   304.68s] If you get dealt a hand of cards, you have to decide, are you going to fold? Are you going to
+[  304.68s ->   309.90s] call? Are you going to raise? You have decisions to make, you don't have all of the information,
+[  309.90s ->   315.42s] and the environment is inherently random. That's what I'm talking about when I talk about a game of
+[  315.42s ->   320.52s] incomplete information relative to a game of chance. One of my favorite ways to understand this
+[  320.52s ->   325.58s] idea is to borrow a concept from reinforcement learning called the Bellman equation. Now,
+[  325.74s ->   332.16s] reinforcement learning is a field of artificial intelligence concerned with training AI agents
+[  332.16s ->   339.24s] to make optimal actions in an environment. So they're choosing how to act in an environment,
+[  339.24s ->   345.48s] and that environment may be inherently random. So to accomplish this, we can deploy the Bellman
+[  345.48s ->   350.36s] equation. Essentially, we provide it the state of the environment. So in poker, we could
+[  350.36s ->   357.38s] think of something like hands, the flop, our opponents, our bankroll. We also provide it a set
+[  357.38s ->   364.60s] of actions we can call, we can raise, we can check, we can fold. And based on these actions, we're going
+[  364.60s ->   370.88s] to see some sort of reward in the form of making money or losing money. And that's our reward function.
+[  370.88s ->   376.32s] If we have all of these well defined, then we can put all these pieces together and come up with some
+[  376.32s ->   381.34s] sort of solution to that Bellman equation, theoretically, and we are going to be able
+[  381.34s ->   388.90s] to discern what action to take in this phase of uncertainty based on the current state. So when we
+[  388.90s ->   396.24s] deploy this as a solution to that problem, we are learning something, right? If I was to try to deploy
+[  396.24s ->   404.14s] this to roulette instead of poker, my agent, my AI agent wouldn't learn anything. It's not going to
+[  404.14s ->   411.10s] learn, hey, it's better to bet on black here, better to bet on green here. It's purely a game of chance.
+[  411.20s ->   418.86s] There is no optimal decision to make. But in the context of poker, betting your entire bankroll preflop
+[  418.86s ->   424.16s] is probably suboptimal. Otherwise, you would see a lot of people do it on the tour. But you certainly
+[  424.16s ->   429.80s] don't see that. So that's a very interesting way, I think, to also understand this problem space is
+[  429.80s ->   435.54s] when you're dealing with games of incomplete information, you are responsible for your own
+[  435.54s ->   444.30s] edge versus a game of chance where the house gets to set the edge for themselves and for you,
+[  444.52s ->   450.88s] the player. Trading just like poker is a game of incomplete information. You have a series of actions
+[  450.88s ->   457.54s] that you can take. And you're faced with a whole bunch of uncertainty. Now, trading is certainly
+[  457.54s ->   463.88s] much more chaotic, you have a lot of information affecting your environment, you have just to name
+[  463.88s ->   469.70s] a few macro factors, inflation, interest rates, you have administration or administrations in the
+[  469.70s ->   476.00s] international markets, the US government policy regulation, you have things like industry trajectory,
+[  476.00s ->   483.64s] technology advancements, adoptions of products, firm specific trajectories, a firm's cash flows,
+[  483.80s ->   489.70s] their CEO earnings, their products that they're developing. And the only thing that is certain
+[  489.70s ->   497.88s] in this space is that your interpretation and your model is incorrect. And even if it is even close
+[  497.88s ->   504.58s] to correct, then it is subject to change at any given time. Hopefully, you've been watching my
+[  504.58s ->   509.50s] videos for quite some time, I always harp on this idea that your model is incorrect, but it does not
+[  509.50s ->   515.14s] preclude you from making money. You can check out my video how to trade or how to trade option implied
+[  515.14s ->   521.78s] volatility that goes into more depth into that idea. But theoretical edge in this capacity certainly
+[  521.78s ->   527.96s] exists in tandem with the model interpretation. Otherwise, why would you use that model if there was
+[  527.96s ->   533.40s] not even any theoretical edge in a perfect laboratory? If you can't make money, then how on earth are you
+[  533.40s ->   538.70s] going to make money in the real world? Building off this idea, we can start to consider this idea of
+[  538.70s ->   544.20s] experience. So we have a model which we know is incorrect. But as a trader, you experience the true
+[  544.20s ->   550.04s] environment all of the time, you start to get an idea of how you want to act optimally in the face of
+[  550.04s ->   555.44s] different types of uncertainty. If uncertainty is extremely high, maybe you choose to hedge, maybe you
+[  555.44s ->   562.04s] double down depending on a variety of different factors. Now, in this same vein, you'll often hear that
+[  562.04s ->   567.98s] historic data has no impact on future events. So we should maybe disregard it or not use it. And
+[  567.98s ->   572.38s] maybe we shouldn't use it for trading and what have you. And I'll say there's some truth to that
+[  572.38s ->   577.92s] in discerning different levels of statistical quantities. But in this argument, what I'm saying
+[  577.92s ->   585.26s] is that historic data is certainly useful to learn information about behavior and optimal behavior
+[  585.26s ->   592.02s] in uncertainty. Extending this argument into the academic literature, if you take a look at any of
+[  592.02s ->   599.72s] Hans Buehler's work, he deploys this Bellman equation to learn to hedge optimally. And there's a great
+[  599.72s ->   603.98s] note called deep Bellman hedging, I'll leave it in the description below for you to check out. But
+[  603.98s ->   611.52s] if this data didn't merit any experiential learning, then that algorithm would not have learned any
+[  611.52s ->   616.56s] information, it would have just been a game of chance. And that's certainly not the case. Now
+[  616.56s ->   622.50s] that we've established that your decisions impact your theoretical edge, and that there is structure
+[  622.50s ->   628.76s] to learn in these random environments, we can start to look at the different decision levers available
+[  628.76s ->   635.40s] to us and draw some very interesting analogies. So in poker, for example, we can call raise fold.
+[  636.00s ->   641.10s] In trading, we can hedge hold or increase our position size. Those are very, very
+[  641.10s ->   648.06s] similar actions to take in each game of uncertainty. Moreover, you have bet sizing and trade sizing,
+[  648.06s ->   654.00s] and you're going to have to decide if you are going to increase the stakes, what those stakes are going
+[  654.00s ->   660.32s] to be. Now, this is learned through experience. And in the context of AI, you can simulate these
+[  660.32s ->   666.06s] environments or use historic data to train an AI agent in this capacity. But that's exactly the purpose
+[  666.06s ->   672.78s] of this video and why I'm so opposed to the idea that trading and even poker to some extent is just
+[  672.78s ->   680.86s] pure gambling because the wager and the probabilities are not tied to a fixed expected value. And something
+[  680.86s ->   687.02s] like roulette, that is certainly the case, the house has the edge. But in poker and trading,
+[  687.02s ->   693.66s] your actions determine whether or not you have a positive edge and whether or not you can accumulate
+[  693.66s ->   700.70s] that expected value over time in the form of P&L. Once we accept the fact that our optimal decision
+[  700.70s ->   707.50s] making in the face of this uncertainty is entirely in our own hands, we're faced with a lot of challenges
+[  707.50s ->   715.26s] because in the human aspect, we have emotion, we're concerned about losing money, we're not necessarily as
+[  715.26s ->   720.78s] happy gaining money as we are upset when we lose money. There's a lot of psychological literature to
+[  720.78s ->   727.18s] support this idea. In the context of quant trading too, though, just because you implement something
+[  727.18s ->   733.42s] that is algorithmic and not emotional, it does not mean that it's arbitrarily better because you're
+[  733.42s ->   739.42s] probably going to be trading with some sort of fixed set of rules that are certainly going to change
+[  739.42s ->   745.10s] over time. So if you do deploy some sort of algorithm to make trading decisions for you,
+[  745.74s ->   753.64s] it may not be able to adapt to the environment fast enough for you to make those optimal decisions in
+[  753.64s ->   759.80s] uncertainty. If you're sitting behind the desk buying, selling, that's very adaptive. You can
+[  759.80s ->   764.52s] immediately increase, decrease your position, size, whatever it is. If you're going with a low touch
+[  764.52s ->   771.24s] system, then you don't have that capacity. Maybe some sort of blend of the two could exist and it
+[  771.24s ->   777.40s] certainly does, but it's just very important to consider. There's fundamentally things flawed with
+[  777.40s ->   781.56s] all of these approaches. Algorithmic and quant trading isn't just arbitrarily better than
+[  781.56s ->   787.64s] discretionary trading, it's different. And these strategies that you deploy are going to change over
+[  787.64s ->   793.88s] time, certainly. So this is an ever-changing landscape, but what does that mean for our theoretical
+[  793.88s ->   799.00s] edge? Well, we're taking the action and we are impacting our theoretical edge.
+[  799.00s ->   805.08s] So even if you come up with some sort of strategy and trade it perfectly, maybe theoretically there
+[  805.08s ->   811.56s] is edge, but you just got a whole bunch of bad luck, you could certainly end up as this green path.
+[  811.56s ->   816.84s] And all of these have a positive drift, but there's nothing saying that you can't have positive expected
+[  816.84s ->   822.84s] value and a streak of terrible luck and lose a whole bunch of money either. So it's a very difficult
+[  822.84s ->   828.36s] environment to discern whether or not you are trading in an effective way, whether or not you're trading
+[  828.36s ->   833.48s] strategy actually has an edge, whether or not it's you and you're making these trades in a
+[  833.48s ->   838.84s] discretionary capacity and you're just concerned and not timing it correctly in this or that or that,
+[  838.84s ->   843.72s] or maybe it's the regime and there's structural changes in your strategies, alpha has decayed and
+[  843.72s ->   850.12s] whatnot and this and that, but it's the same thing in an algorithmic capacity too. So should we exhibit
+[  850.12s ->   854.76s] behavior and action in an optimal capacity in the face of uncertainty, then we should see
+[  854.76s ->   860.04s] theoretically, we should see some sort of accumulation of positive expected value over
+[  860.04s ->   866.04s] time in the form of positive PNL, but that does not preclude us from also losing money if it is in
+[  866.04s ->   872.44s] fact positive. So is quant trading gambling? Well in this video I've argued that the idea and negative
+[  872.44s ->   878.84s] connotation of gambling should be associated with a game of chance that is outcomes that are purely
+[  878.84s ->   886.84s] probabilistic in that you have no action to take to affect the theoretical edge. So something like
+[  886.84s ->   892.44s] roulette, one party sets that edge, that party is the house, you're subject to that edge when you play
+[  892.44s ->   898.52s] the game, versus something like trading or poker, when you play those games you are subject to setting
+[  898.52s ->   905.24s] your own edge based on how you act in different states of uncertainty. It's very important to keep this
+[  905.24s ->   911.32s] stuff in mind as you enter the trading space. It's non-trivial, it's very difficult to quantify edge,
+[  911.32s ->   916.84s] quantify if your strategy is even productive, if you've been terribly lucky or terribly unlucky,
+[  917.48s ->   923.80s] but one thing that I wanted to close this video out with is this idea of of technical trading and
+[  923.80s ->   928.84s] technical analysis. A lot of folks will draw lines on charts, they'll use moving averages, they'll use
+[  928.84s ->   935.88s] standard deviations, support and resistance levels, liquidity levels, what have you. And I want to
+[  935.88s ->   943.48s] suggest that you know that type of trading can't be proven or disproven. Just like any other trading
+[  943.48s ->   950.44s] strategy, maybe it works really really well at one point in time for whatever reason and you make a ton
+[  950.44s ->   957.40s] of money, but it doesn't work in a systematic capacity. When you back test some sort of moving average
+[  957.40s ->   963.72s] crossover strategy, it does terribly, but you know, oh, it worked for me during this time. And that's
+[  963.72s ->   969.72s] certainly the case. That's why there is no, oh, I can just prove that technical analysis doesn't work
+[  969.72s ->   976.76s] or drawing a line on a chart doesn't work because it certainly can work and very, very well for specific
+[  976.76s ->   982.84s] securities at specific points in time. And over time, maybe more and more people trade that and that
+[  982.84s ->   990.04s] goes away. Or maybe it comes back as less people trade that strategy. So it's important to understand
+[  990.04s ->   996.12s] and keep in mind that this landscape changes. And the only thing that is certain is your models wrong.
+[  996.12s ->  1002.20s] But as we've said this entire time, that certainly does not preclude you from making money. That's going
+[ 1002.20s ->  1007.08s] to do it for this video on quant trading and gambling. I hope you've enjoyed it. I hope you learned
+[ 1007.08s ->  1012.68s] something. If you'd like to see more videos like this one in the future, please subscribe, like,
+[ 1012.68s ->  1018.68s] leave a comment, feel free to join our discord, ping me in general, let me know your thoughts.
+[ 1019.72s ->  1025.40s] And other than that, thanks so much for watching. I'll see you in the next video.

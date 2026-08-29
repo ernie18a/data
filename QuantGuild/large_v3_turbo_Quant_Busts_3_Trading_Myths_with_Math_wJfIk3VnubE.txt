@@ -1,0 +1,285 @@
+[    0.46s ->     7.87s] trading is an industry with way too much misinformation and outright fraud news outlets
+[    7.87s ->    14.51s] they just want your attention brokers want your commission and trading gurus will try to sell you
+[   14.51s ->    21.81s] on that one strategy that actually works when in reality everyone is just preying on people that
+[   21.81s ->    28.41s] don't understand the math behind trading and how the space actually works in this video what i'm
+[   28.41s ->    33.95s] going to do is bust three trading myths as a professional quantitative researcher and trader
+[   33.95s ->    41.67s] the only remedy that i can see to this misinformation and outright fraud is education so in this video what
+[   41.67s ->    48.05s] we're going to do is we are going to tackle these three trading myths and disprove all of them with
+[   48.05s ->    54.89s] math trading is not a get rich quick scheme guaranteed returns are never true unlike access to a jupiter
+[   54.89s ->    58.97s] notebook with a new quant guild video which is always true this jupiter notebook will be linked
+[   58.97s ->    63.19s] in the description below i will also post it to the quant guild library on github where you can find
+[   63.19s ->    68.47s] all of my jupiter notebooks and associated youtube videos along with all of the source code for my
+[   68.47s ->    72.95s] quant builds at the top of this jupiter notebook you'll notice some related quant guild videos
+[   72.95s ->    78.73s] applying probability and statistics to finance and trading this idea of time series analysis retail
+[   78.73s ->    83.77s] versus institutional trading trading versus investing this idea of expected value and
+[   83.77s ->    88.69s] accumulating expected value over time and of course the difference between quantitative and
+[   88.69s ->    93.35s] discretionary trading if you're unfamiliar with any of these ideas i highly recommend that you check
+[   93.35s ->    98.89s] these videos out first before tackling one like this moreover these videos certainly take a lot of
+[   98.89s ->   102.55s] effort to create so if you'd like to help support the channel so i can continue to create videos
+[  102.55s ->   107.71s] just like this one please like comment subscribe share it helps me out tremendously it is always greatly
+[  107.71s ->   113.29s] appreciated and if you'd like to master your quantitative skills check out quant guild.com
+[  113.29s ->   117.59s] maybe you come from a background in business economics computer science maybe you're an aspiring
+[  117.59s ->   123.63s] quant or a working professional looking to sharpen your quantitative skills in any case quant guild is for
+[  123.63s ->   130.41s] you we have over 90 quant lessons in math probability finance an adaptive practice engine that scales with
+[  130.41s ->   135.55s] your skill level so you can progress to more and more difficult topics with gamified rank-based
+[  135.55s ->   141.45s] progress interview questions with fully worked solutions trading games coming soon courses from
+[  141.45s ->   148.17s] a to z from the ground up in math probability statistics coding data science and all that's
+[  148.17s ->   152.95s] included with quant guild membership and you can get started right now for free so if you'd like to
+[  152.95s ->   159.33s] help support the channel and master your quantitative skills check out quant guild.com this brings us to
+[  159.33s ->   168.79s] the first myth that trading is gambling and the market is random trading is not gambling and the market is
+[  168.79s ->   174.73s] not random to understand why this is the case we need to discuss the difference between a random and an
+[  174.73s ->   180.21s] uncertain system then we can talk about the difference between a game of chance and a game of incomplete
+[  180.21s ->   188.39s] information when it comes to a random or an uncertain system the outcome of any event is unknown this is where
+[  188.39s ->   195.75s] they're similar but where they differ is in the likelihood of those outcomes a random system has
+[  195.75s ->   201.79s] predefined probabilities that do not change for each outcome that might occur you can think of something
+[  201.79s ->   208.71s] like craps you can think of something like roulette the probability of red green and black in roulette do not
+[  208.71s ->   216.97s] change that is a random system an uncertain system you can think of things like poker or the stock market
+[  216.97s ->   225.57s] the likelihood of events occurring over time certainly change and that is the fundamental difference
+[  225.57s ->   231.91s] between the two systems so if the outcomes are unknown then how do we evaluate performance well
+[  231.91s ->   240.03s] typically we look at expected value or this idea of edge here is the equation for the expected value or
+[  240.03s ->   246.25s] edge in the context of a random or an uncertain system and this tells us effectively
+[  246.25s ->   252.85s] how our wealth path is going to evolve over time whether we're going to be accumulating wealth
+[  252.85s ->   261.27s] or losing it let's look at an example of edge or expected value in a random system that is roulette
+[  261.27s ->   266.53s] there's nothing that a player can do besides martin galing roulette which is of course going to be
+[  266.53s ->   274.07s] banned at any casino you play at to influence the overall edge of the game in other words we've all heard of
+[  274.07s ->   280.09s] this house edge if any player plays roulette statistically eventually they are going to lose
+[  280.09s ->   285.71s] all of their money and i have a simulation here where you can actually see what happens to a couple
+[  285.71s ->   291.03s] of different players who continue to play roulette you can see most of them go bankrupt except for this
+[  291.03s ->   298.25s] one lucky guy here who actually made almost double his initial bankroll and this is where the idea of
+[  298.25s ->   304.71s] expected value comes into play we don't know what the outcome of any one spin of the roulette wheel
+[  304.71s ->   310.73s] is going to be the outcomes themselves are random but the expected value tells us something about the
+[  310.73s ->   317.95s] overall trajectory of our wealth path so as you can see here i actually compute it for american roulette
+[  317.95s ->   326.05s] and each play has a negative expected value of negative five dollars and 26 cents this means on average
+[  326.05s ->   332.95s] every single player that plays is going to lose that amount of money now if they're losing it then
+[  332.95s ->   338.95s] who's gaining it well that's going to be the casino that is exactly this idea of a house edge this is a
+[  338.95s ->   345.93s] game of chance this is gambling there's nothing that any of these players can do to influence that
+[  345.93s ->   354.33s] expected value they have a fixed negative edge against them and they will always lose all of their money
+[  354.33s ->   361.43s] if they continue to play this game the only optimal decision to make is to not play so this is a random
+[  361.43s ->   369.31s] system this is a game of chance this is gambling why is the market not random and why is trading not
+[  369.31s ->   377.43s] gambling well to understand why we need to look at this idea of expected value why is this guaranteed
+[  377.43s ->   386.73s] by the casino in other words mathematically why do we know the house has this fixed negative edge this is of a great
+[  386.73s ->   392.33s] deal of interest to us because if this was positive then if we kept playing roulette we would just continue to make
+[  392.33s ->   402.71s] money so what guarantees that this edge is negative well that is going to be effectively the law of large numbers this is the
+[  402.71s ->   407.39s] strong law of large numbers here we're not going to focus on the mathematics we're going to look at a
+[  407.39s ->   412.97s] simulation to understand exactly what's going on here so the law of large numbers is essentially saying
+[  412.97s ->   420.75s] if we continue to spin the roulette wheel then we are guaranteeing probabilistic convergence in a frequentist sense
+[  420.75s ->   427.57s] to each of the outcomes that are defined theoretically in other words if i continue to spin this roulette wheel
+[  427.57s ->   435.55s] the proportion of red black and green that i see is going to converge to the theoretical probability
+[  435.55s ->   441.41s] with probabilistic certainty that is exactly the simulation that you're seeing here you can see these
+[  441.41s ->   448.51s] bars are the relative frequencies that we are observing green red and black and at infinity it's going to
+[  448.51s ->   455.83s] converge to the theoretical values in other words the probabilities of seeing red black and green
+[  455.83s ->   463.25s] are not going to change over time they are going to be fixed and as we continue to spin the roulette wheel
+[  463.25s ->   471.07s] they are going to converge to this value they are going to converge to this net negative expectation
+[  471.07s ->   478.73s] for the player this is what ensures the house edge and this is what ensures a fixed negative edge against the
+[  478.73s ->   484.77s] players the probability of winning and losing as a player converges to those theoretical values
+[  484.77s ->   490.61s] and when we plug them into the expected value equation then we are guaranteed to get this expected
+[  490.61s ->   498.85s] value that is less than zero in other words players will statistically always lose all of their money
+[  498.85s ->   504.61s] just like how we don't know the outcome of any one spin of the roulette wheel we don't know what the outcome
+[  504.61s ->   512.77s] of any one trade is going to be so we can apply this equation the expected value equation to trading and if it is
+[  512.77s ->   518.61s] positive we will be accumulating wealth and if it is negative we will be accumulating losses
+[  518.61s ->   527.65s] just as we see here now the key difference between an uncertain and a random system is that a random system
+[  527.65s ->   535.33s] has fixed probabilities just as we saw above here with the law of large numbers these probabilities will converge
+[  535.33s ->   545.01s] along with the fixed negative expected value but in an uncertain system this is not true this is why when
+[  545.01s ->   553.17s] we apply probability and statistics to finance and trading we are often very wrong this is because
+[  553.17s ->   562.53s] the market is not random there is no convergence i have a simulation here to show you exactly what's going on
+[  562.53s ->   570.53s] with this idea of an earnings event so let's say that the market is implying a 60 probability of an up movement
+[  570.53s ->   580.53s] post an earnings event and a 40 probability of a down movement the problem is we can't just simulate that earnings event
+[  580.53s ->   588.53s] 10 000 times like we can with the roulette wheel i can spin the same roulette wheel 10 000 times and see what happens
+[  588.53s ->   596.13s] see all of the outcomes and record the probabilities but i can't do that with an earnings event what you're seeing
+[  596.13s ->   604.13s] here is i'm effectively simulating the same earnings event 10 000 times and what you're observing here is
+[  604.69s ->   611.41s] wow if we actually had a time machine and we could do that there is no convergence to the market implied
+[  611.41s ->   619.33s] probabilities they converge to completely different probabilities and this is literally the difference
+[  619.33s ->   625.09s] between the random system something like roulette and an uncertain system that is in an uncertain system
+[  625.65s ->   633.57s] we don't have fixed probabilities fixed likelihoods for the outcomes of events that we observe they are
+[  633.57s ->   639.73s] most certainly going to change over time and our objective is to come up with the best models possible
+[  639.73s ->   646.85s] to model the likelihoods and probabilities of these uncertain events this is exactly what makes the
+[  646.85s ->   654.37s] trading space so elusive because the probability of me winning a trade or losing a trade doesn't converge
+[  654.37s ->   663.41s] my past performance isn't necessarily indicative of future outcomes moreover i dictate the trajectory of my
+[  663.41s ->   669.65s] wealth path my actions that i take directly influence my probability of winning
+[  669.65s ->   678.05s] a trade or my probability of losing a trade and my overall expected value i can always act suboptimally
+[  678.05s ->   684.21s] i can always accumulate an infinite number of transaction costs that doesn't make it gambling i can just be a
+[  684.21s ->   691.41s] terrible trader that is the fundamental difference between a game of chance like roulette where i just need
+[  691.41s ->   698.45s] luck to make money and a game of incomplete information like trading or poker in a game of incomplete
+[  698.45s ->   707.01s] information i control my expected value my edge my optimal actions in the face of uncertainty are going
+[  707.01s ->   715.33s] to dictate the trajectory of my wealth path just as you see it here if i accumulate wealth over time
+[  715.33s ->   722.85s] then i'm optimizing my expected value if i'm losing it over time then i am doing exactly the opposite that is
+[  722.85s ->   729.41s] the difference between a game of incomplete information a game of chance and a random versus
+[  729.41s ->   737.49s] an uncertain system so myth one trading is gambling and the market is random busted this brings us to myth
+[  737.49s ->   745.89s] two you only need to be correct 50.5 of the time to be profitable this one drives me absolutely crazy
+[  745.89s ->   754.45s] because i see guru traders talk about their 90 100 win rate strategies and that means literally nothing
+[  754.45s ->   763.41s] you can still lose an incredible amount of money with a 95 win rate and how that works is expected
+[  763.41s ->   769.09s] value if you take a look at this equation the outcome whether or not you have positive or negative
+[  769.09s ->   778.29s] expected value is not dictated solely by the probability that you win your win rate it is a combination of
+[  778.29s ->   785.73s] the probability that you win and your bet size i have a simple animation here to show you exactly
+[  785.73s ->   796.37s] what's going on i have a 50.5 win rate strategy and a 30 win rate strategy but if we operate both which
+[  796.37s ->   804.37s] one actually performs well the 30 win rate strategy is consistently performing it is the most stable
+[  804.37s ->   811.73s] and it's achieving the results that are intended by the strategy versus the 50.5 win rate strategy which
+[  811.73s ->   819.81s] what accumulates losses all the way down to a blown out account so a win rate has literally nothing to do
+[  819.81s ->   827.17s] with the success of your strategy it's a combination of your win rate and your bet size this is what
+[  827.17s ->   835.33s] dictates your expected value it can be the case that you have a 90 win rate strategy and you still are
+[  835.33s ->   843.41s] operating with negative ev you have a negative edge and you're going to lose all of your money so this is
+[  843.41s ->   849.57s] the second myth i talked about bet sizing but what about this idea of ergodicity well this gets
+[  849.57s ->   856.53s] into the idea of optimal bet sizing and whether or not your system is in fact ergodic this is where
+[  856.53s ->   862.53s] things get confusing because you can have positive expected value but that doesn't mean that you're
+[  862.53s ->   869.33s] going to make money on average let's see an example of this i'm going to plot two different systems i'm
+[  869.33s ->   875.73s] going to have an ergodic system and a non-ergodic system and what i want you to notice is the slope of
+[  875.73s ->   881.81s] the expected value line in both cases it's positive right this red line here is positive that's the
+[  881.81s ->   888.45s] slope of the expected value line in the ergodic system but in the non-ergodic system what happens
+[  888.45s ->   895.57s] the slope is also positive but what is the the main difference between the two well let's look at the
+[  895.57s ->   902.53s] proportion of profitable traders in both systems both have positive expected value if we look at the
+[  902.53s ->   910.53s] ergodic system we can see okay almost 60 of the traders are profitable 44 are unprofitable but
+[  910.53s ->   917.09s] they're very close to that expected value line if they continue to trade with positive expected value
+[  917.09s ->   923.57s] in this ergodic system they will accumulate wealth okay but what about the non-ergodic system well let's
+[  923.57s ->   931.09s] look at the proportion of profitable traders only 20 of them were profitable but they were operating with
+[  931.09s ->   938.45s] positive expected value what happened it looks like 80 of the traders are unprofitable this is because
+[  938.45s ->   946.61s] the expected value in a non-ergodic system is dominated by a few very lucky sample paths that
+[  946.61s ->   955.33s] accumulate a lot of wealth in other words the average case for a non-ergodic system is not the same
+[  955.33s ->   964.21s] as the expected value that means that if i was to trade with positive ev in a non-ergodic system on
+[  964.21s ->   971.25s] average i can still lose money so clearly whether or not we're operating in an ergodic or non-ergodic
+[  971.25s ->   977.82s] system is going to be very important how do we know how should we size our bets well fortunately i have
+[  977.82s ->   983.90s] a video on this topic and optimal bet sizing i will leave a link to it in the description below if you would
+[  983.90s ->   992.22s] like to check it out so this is the second myth that what you need to be correct 50.5 of the time
+[  992.22s ->  1000.46s] to be profitable absolutely busted this brings us to our final myth myth three that trading strategies
+[ 1000.46s ->  1008.38s] are fixed always work and that nobody shares profitable strategies all of these are false
+[ 1008.38s ->  1013.58s] statements none of these make any sense if you involve yourself in the trading space
+[ 1013.58s ->  1021.26s] and let me explain why trading is quite literally a full-time job there is no such thing as a golden
+[ 1021.26s ->  1026.86s] goose strategy something that just indefinitely prints money i can program it into a system turn it
+[ 1026.86s ->  1035.98s] on and it will always be trading with positive ev strategies require constant monitoring and optimization
+[ 1035.98s ->  1044.46s] you have to eventually retire dead strategies or even revive them when they are once again profitable
+[ 1044.46s ->  1052.22s] this is not a trivial task this is a full-time job academic models in the quantitative finance literature
+[ 1052.22s ->  1059.42s] can certainly help in understanding where your returns are coming from but they're often also misleading so
+[ 1059.42s ->  1067.02s] it's a very intricate space to operate in but in any case regardless of the type of trader that you are
+[ 1067.02s ->  1074.14s] whether you're a discretionary trader a market maker a quant trader your objective is to maximize
+[ 1074.14s ->  1079.98s] your risk adjusted return we're not just looking at expected value now we are also concerned with the
+[ 1079.98s ->  1087.90s] amount of risk associated with each trade so our objective is to maximize literally this equation here
+[ 1087.90s ->  1096.86s] our risk adjusted return according to some sort of function pi pi star is the optimal function that is
+[ 1096.86s ->  1105.90s] going to maximize our risk adjusted return pi star is a function a collection of actions that we choose
+[ 1105.90s ->  1114.14s] to take based on our environment it is not just a trading strategy this is built from a combination of
+[ 1114.14s ->  1124.62s] knowledge and experience nobody no broker no news outlet no guru trader can gift you a pi star function
+[ 1124.62s ->  1131.50s] this is why i always say to master your quantitative skills so you can make your own informed decisions
+[ 1131.50s ->  1137.02s] in the face of uncertainty to better understand this idea of a pi star function and this idea of trading
+[ 1137.02s ->  1143.10s] strategies being dynamic that is they aren't fixed and they don't always work let's look at two examples
+[ 1143.10s ->  1148.94s] we're going to look at a price path or an equity curve with an effective policy function and one
+[ 1148.94s ->  1154.94s] with an ineffective policy function and that policy function is going to be our pi or our pi star what
+[ 1154.94s ->  1160.62s] i'm going to do here is i'm going to run this animation and you can think of this period of two
+[ 1160.62s ->  1167.42s] years of trading as a back test in some sort of quant trading sense you can think of it as a discretionary
+[ 1167.42s ->  1174.94s] trader trading for two years with his account in that sense in any case after this two-year period we're
+[ 1174.94s ->  1182.54s] curious about the forward-looking performance maybe there is a regime change is that discretionary trader
+[ 1182.54s ->  1187.98s] acting with an optimal policy in other words does he actually know how to trade in different
+[ 1187.98s ->  1195.34s] environments in the quant trading sense did we overfit our model to noise or did we actually find a
+[ 1195.34s ->  1201.50s] statistical inefficiency that we can capture in either of those cases you can see if we have an
+[ 1201.50s ->  1208.22s] effective policy function then we're going to see stable performance in a forward-looking sense this is
+[ 1208.22s ->  1215.82s] because we are actively and dynamically updating our strategies we are updating our pi star function
+[ 1215.82s ->  1223.74s] we're continuing to learn we're continuing to experience this is not a one and done a set and forget
+[ 1223.74s ->  1231.18s] we are retiring quant strategies dead alphas and we are only trading stable ones maybe we even revive
+[ 1231.18s ->  1236.46s] dead ones that are now stable again our trading model if we're a discretionary trader is robust
+[ 1237.02s ->  1243.90s] to out of sample performance and different regimes just as we see here in any case whether we're a
+[ 1243.90s ->  1251.50s] quant trader a discretionary trader we are looking for a pi star function a policy function that allows us to
+[ 1251.50s ->  1261.26s] not only perform past tense we also need to perform presently and in a forward-looking sense and that
+[ 1261.26s ->  1267.58s] optimal policy function is not fixed and that is really the purpose here is understanding that hey
+[ 1268.22s ->  1274.70s] this is literally a job this is a full-time job i am going to be making these adjustments continuously
+[ 1274.70s ->  1282.14s] every day i don't just find one strategy that works and i'm done it is all probabilistic and i'm going
+[ 1282.14s ->  1289.18s] to continue to refine and update my edge if i don't what's going to happen is something like this
+[ 1289.18s ->  1296.86s] with an ineffective policy function if i am trading a strategy with alpha decay from crowding if i'm
+[ 1296.86s ->  1302.54s] overfitting a backtest to noise if i'm a discretionary trader and i'm clinging to that one
+[ 1302.54s ->  1308.86s] technical strategy that is not performing well in this regime then my out of sample performance is
+[ 1308.86s ->  1317.26s] going to be terrible this is an ineffective policy so it all comes down to a policy function are you
+[ 1317.26s ->  1325.50s] acting optimally in the face of uncertainty this is not a fixed strategy this is a collection of actions
+[ 1325.50s ->  1331.90s] that dictates your overall risk-adjusted return this is how we need to look at the space not just in
+[ 1331.90s ->  1337.90s] terms of our simple performance in a backward looking sense we need to consider it in a forward
+[ 1337.90s ->  1343.18s] looking sense because that is going to dictate whether we are actually learning whether we're
+[ 1343.18s ->  1350.86s] going to continue to act optimally or if we're going to just continue to accumulate negative ev as
+[ 1350.86s ->  1357.90s] we see here with an ineffective policy function this brings us to the last component of this myth and
+[ 1357.90s ->  1363.90s] that is the idea that nobody shares profitable trading strategies and i must admit i find this
+[ 1363.90s ->  1369.10s] one quite fun because it really shows you very quickly whether or not you're dealing with someone
+[ 1369.10s ->  1376.14s] that understands this space or not i see this all the time in my youtube comment section nobody shares a
+[ 1376.14s ->  1382.78s] profitable strategy the edge is going to get crowded out this that the other and i find it funny because
+[ 1383.34s ->  1390.94s] they're not dealing with anywhere near the capital sufficient to crowd the alpha and even if they
+[ 1390.94s ->  1397.26s] could even if they had the capital would they be deploying the exact same system to take advantage of
+[ 1397.26s ->  1405.34s] the same statistical inefficiency to crowd out that alpha to crowd out that edge that is precisely my point
+[ 1405.34s ->  1413.82s] here is saying that sharing a component of a positive ev strategy a component of an optimal policy function
+[ 1413.82s ->  1420.62s] your pi star is going to crowd out the edge is utterly outrageous now if we're talking about
+[ 1420.62s ->  1426.62s] quantitative like trading quantitative research specifically then yes you can have your alpha
+[ 1426.62s ->  1431.90s] crowded in an institutional case when you're dealing with that infrastructure and capital which is why
+[ 1431.90s ->  1437.26s] a lot of times you'll see people on non-competes you'll see people on garden leave so they don't just
+[ 1437.26s ->  1444.78s] go to another firm and deploy capital to that strategy but on youtube if i'm sharing a general class of
+[ 1444.78s ->  1450.94s] strategies with you that you can combine all together in a pi star function to make optimal decisions and
+[ 1450.94s ->  1458.46s] improve your edge no you're not going to crowd out my or someone else's edge largely i like to think about this
+[ 1458.46s ->  1466.14s] in the same way that i think about asking someone to teach me to play baseball i can tell you the
+[ 1466.14s ->  1473.50s] strategy is to hit the fastball but if you can't swing the bat and connect with the ball i can't help
+[ 1473.50s ->  1481.18s] you this is why not everyone is a baseball player and not everyone should be a trader not everyone can bear
+[ 1481.18s ->  1487.34s] risk that's what it means to be a trader and not everyone can make optimal decisions of in the face of
+[ 1487.34s ->  1494.30s] uncertainty even if that means cutting losses and changing a strategy this is not a get rich quick
+[ 1494.30s ->  1500.54s] scheme you must have knowledge and experience along with a tolerance for losing money i can share with
+[ 1500.54s ->  1507.50s] you general classes of strategies that work every single day in different capacities mean reversion
+[ 1507.50s ->  1514.54s] overstated volatility momentum sentiment but nobody's gonna sit there and trade for you nobody's gonna tell
+[ 1514.54s ->  1523.34s] you when to enter exit or why or how to manage your risk or when it's time to cut those losses so when somebody
+[ 1523.34s ->  1530.46s] says hey you know nobody shares profitable trading strategies what they really should be saying is nobody is
+[ 1530.46s ->  1538.54s] going to trade for you yes that is that is largely true i have a great example of this in the context of poker and this is also why
+[ 1538.54s ->  1546.30s] technical analysis can't be disproven outright and this goes into what we discussed earlier in an uncertain
+[ 1546.30s ->  1553.02s] system versus a random system we can't just run a simple back test on a technical indicator to see if
+[ 1553.02s ->  1561.34s] it works or not it's going to be a component of your pi star function to aid in decision making and this
+[ 1561.34s ->  1567.42s] really gets at the heart of the trading space everything's uncertain and you always have to adjust and update
+[ 1567.42s ->  1573.42s] your assumptions and strategies that is why it's a full-time job let's look at this example with
+[ 1573.42s ->  1580.22s] poker and pocket aces so i'm playing texas hold'em against five people and i have pocket aces i have a
+[ 1580.22s ->  1587.26s] pair of aces in my whole cards so what are the implications of this well the general strategy that
+[ 1587.26s ->  1592.70s] i can share with you if you want to think of it like a general strategy similar to the trading space mean
+[ 1592.70s ->  1598.70s] reversion overstated vol momentum sentiment whatever it is the general strategy that i can share with you here is
+[ 1598.70s ->  1606.70s] hey unconditionally you have less than a 50 chance of winning which means more than half the time you should fold
+[ 1606.70s ->  1614.70s] now that doesn't necessarily mean that that is going to be your optimal decision to make this is up to your pi star function
+[ 1614.70s ->  1621.58s] so what i have here is an animation of my player wealth path making optimal decisions at the table
+[ 1621.58s ->  1626.86s] bluffing effectively knowing who i'm playing against whether they play too tight or too loose
+[ 1626.86s ->  1632.78s] in any case my raw theoretical probability of winning is actually less than 50 percent but
+[ 1632.78s ->  1639.66s] my pi star function my optimal decisions at the table actually induced what a 60 40 and i'm able to
+[ 1639.66s ->  1645.50s] accumulate much more wealth than i should with the theoretical pocket aces this is because i'm
+[ 1645.50s ->  1651.26s] forcing people to fold when they actually had the better hand and this is done through that pi star
+[ 1651.26s ->  1657.74s] function my optimal betting my bluffing knowing who i'm playing against how they play how many chips
+[ 1657.74s ->  1665.74s] they have left how many chips i have left so on and so forth so when it comes to a trading strategy
+[ 1665.74s ->  1672.62s] this is why it is not fixed we have an optimal policy function a general set of actions and we
+[ 1672.62s ->  1679.66s] need to continue to update that policy function based on our environment just as we see here we
+[ 1679.66s ->  1685.82s] can't just operate with a fixed strategy with pocket aces what always raise this amount no it's going to
+[ 1685.82s ->  1691.90s] depend on who we're sitting at the table with and that's exactly true for all of these different
+[ 1691.90s ->  1699.02s] classes of trading strategies they are going to enhance your edge they're not going to just make
+[ 1699.02s ->  1707.10s] it positive outright and on this channel i've shared a variety of of profitable strategies with you
+[ 1707.10s ->  1714.22s] cross-sectional social sentiment i have a seminar on this strategy that was deployed in a quant trading
+[ 1714.22s ->  1720.94s] context and it's one of my least popular videos selling overvalued vol this is how a lot of hedge
+[ 1720.94s ->  1727.66s] funds make money mean reversion to a calibrated volatility surface people don't just go out and
+[ 1728.46s ->  1735.26s] trade a fixed version of these strategies it's about enhancing your edge and in this exact same
+[ 1735.26s ->  1741.66s] context when i've shared these strategies people demand my pnl i've i've shared this in one of my
+[ 1741.66s ->  1747.34s] previous videos and they're still largely dissatisfied with it so again you know regardless of how you
+[ 1747.34s ->  1753.42s] operate in this space we need to understand what is true and what is not true this entire space is
+[ 1753.42s ->  1759.50s] not random it's uncertain trading is not gambling being correct a proportion of the time does not
+[ 1759.50s ->  1766.62s] matter it comes down to expected value and of course people can share wisdom experience knowledge
+[ 1766.62s ->  1773.74s] with you that's not going to make your overall expected value positive and there is no such thing
+[ 1773.74s ->  1782.46s] as this golden goose strategy to make it positive so that is myth three certainly busted too long
+[ 1782.46s ->  1788.06s] didn't watch here is your executive summary myth one trading is gambling and the market is random
+[ 1788.06s ->  1794.94s] busted trading is not gambling it's not a game of chance there is no fixed negative edge against the
+[ 1794.94s ->  1802.14s] players or traders in that system and the market is not random it is uncertain there are no fixed
+[ 1802.14s ->  1810.78s] probabilities that converge myth two you only need to be correct 50.5 of the time to be profitable
+[ 1810.78s ->  1818.06s] certainly busted this is not true it depends on your bet sizing and whether or not you are dealing with
+[ 1818.06s ->  1827.26s] an ergodic system myth three trading strategies are fixed always work and nobody shares profitable
+[ 1827.26s ->  1832.78s] trading strategies i can tell you exactly how i make money it does not mean that it is going to
+[ 1832.78s ->  1841.02s] continue to work or that you can execute on it or that you will crowd out my edge some future topics
+[ 1841.02s ->  1845.66s] technical videos and other discussions to look forward to i'm always trying to figure out what's
+[ 1845.66s ->  1850.78s] next so if you have an opinion either way please leave it in the comments below i'd like to talk about
+[ 1850.78s ->  1856.22s] advanced markov chains absorbing states communication classes ergodicity stationary distributions
+[ 1856.22s ->  1861.66s] things you would see in a course on stochastic processes i want to talk about brownian motion
+[ 1861.66s ->  1868.22s] arithmetic geometric brownian motion this idea of an additive versus multiplicative process and in that
+[ 1868.22s ->  1874.86s] same vein discuss this derivation of the black trolls equation the subsequent pde and how to solve it
+[ 1874.86s ->  1882.22s] analytically versus numerically and the connection between the two i know we also need to tackle this idea of
+[ 1882.22s ->  1888.54s] kalman filters and non-stationarity this is a big problem in quantitative finance and our quant models
+[ 1888.54s ->  1895.98s] in general really suffer from this idea i also want to talk maybe more qualitatively about some of the
+[ 1895.98s ->  1903.26s] most popular models in quant finance for informed trading and maybe even the difference between buy side
+[ 1903.26s ->  1910.14s] versus sell side quants don't worry i haven't forgotten about the quant builds this week we built the
+[ 1910.14s ->  1915.98s] earnings event trading dashboard i would like to continue maybe with a live kalman filter model
+[ 1915.98s ->  1922.86s] after we cover it of course theoretically we can implement it in some sort of system maybe even for
+[ 1922.86s ->  1927.66s] trading with interactive brokers we could include because we've covered markov chains and hidden markov
+[ 1927.66s ->  1933.34s] models regime dynamics as well if you'd be interested in that leave a comment below and of course we're
+[ 1933.34s ->  1939.58s] building towards this automated delta neutral trading system which i would like to build after we've derived
+[ 1939.58s ->  1945.26s] the black trolls equation i think that will be nice to see come all together that's going to do it for
+[ 1945.26s ->  1950.70s] this video busting three trading myths with math i hope you enjoyed i hope you learned something this
+[ 1950.70s ->  1954.70s] video certainly took a lot of effort to put together so if you enjoyed it and you want to see more like
+[ 1954.70s ->  1959.58s] it in the future please like comment subscribe share again it helps me out tremendously it is always
+[ 1959.58s ->  1965.42s] greatly appreciated check out quant guild.com to master your quantitative skills if you'd like to connect with me and
+[ 1965.42s ->  1970.46s] other quants in the quant guild community check out our discord link in the description below other than
+[ 1970.46s ->  1975.42s] that thank you so much for watching and i will see you in the next video

@@ -1,0 +1,93 @@
+[    0.37s ->    15.57s] Hey guys, what's up? It's AB Trades, and I've had multiple requests from people explaining what the Greeks are and options and how to understand them. Things like Delta, Theta, Gamma, Vega, blah, blah, blah, blah, blah, stuff like that.
+[   15.57s ->    34.42s] The reason why I have no idea what these are, except for Theta really, is because they do not affect me. Maybe I should pay attention to them more, but when you're holding stocks, when you're holding options contracts for at max an hour or two, you're not really affected by these things.
+[   34.42s ->    47.08s] However, people have asked me to do it, and since I want to help, I'm going to provide a link to what I'm reading from. I'm going to show you how to find it on the Thinkerspun platform, and I'm going to read the definitions for you.
+[   47.08s ->    61.98s] Okay, this will do two things. Two things. First, help me learn something new. Two, help you learn something new, and show you that me, being the trader I am, I don't know everything, and I don't care to know everything.
+[   62.32s ->    68.94s] I know what I'm good at, and I focus on that. Day trading options, I really only need to focus on Theta or maybe even Delta.
+[   68.94s ->    77.98s] Okay, but I will show you how you can determine it, and how you can determine what a contract price will be if all these things happen.
+[   78.42s ->    80.04s] All right, so let's get into the video.
+[   81.96s ->    91.02s] So, on this swab, how to understand option Greeks, it said to gauge the likelihood that an option you're considering will expire in the money.
+[   91.02s ->    96.94s] Delta. Delta. D. Direction. Okay, which direction is this option going?
+[   96.94s ->   105.40s] If it's going up, if the direction is up, most likely the percentage of your contract being in the money will be an increased Delta, right?
+[  107.20s ->   112.06s] Estimate how much Delta will change when the stock changes price. Gamma.
+[  113.16s ->   115.84s] Don't really know what that is? Don't really care. You can read up more on that.
+[  116.44s ->   122.32s] This is also another video to show. If you have no idea what something is, you have two of the most useful resources in life.
+[  122.86s ->   124.38s] Google and YouTube.
+[  124.38s ->   129.10s] Also, if I sound a little crazy, that's because I'm super tired. It's 11, 17 p.m.
+[  129.38s ->   138.34s] But, I have not been posting videos as much as I should because I've been lazy, and I'm actually in the, you know, the mindset to do it, so I'm doing it now.
+[  139.65s ->   140.49s] Sorry for being crazy.
+[  140.49s ->   147.33s] To get a feel of how much value an option might lose each day as it approaches expiration is theta.
+[  147.59s ->   149.65s] Theta. T. Time. Time decay.
+[  150.69s ->   155.31s] Understand how sensitive an option might be to large price swings and an underlying stock.
+[  155.61s ->   156.91s] Vega. Volatility.
+[  157.47s ->   160.03s] Not necessarily volatility, but it's close enough to it.
+[  160.03s ->   167.93s] Simulate the effect of interest rates, interest rate changes on an option, rho, rate of change.
+[  168.37s ->   169.35s] I don't know, something like that.
+[  170.44s ->   170.60s] Okay.
+[  171.06s ->   173.44s] Greeks include delta, gamma, theta, rega, rho.
+[  173.86s ->   176.04s] Measure the different factors that affect an option price.
+[  176.40s ->   178.78s] They're calculated by theoretical price.
+[  179.28s ->   182.16s] Blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah.
+[  182.16s ->   183.92s] You can read up all this on what you want.
+[  183.92s ->   186.82s] So basically, this shows time value.
+[  187.00s ->   189.14s] This shows the time erosion of theta.
+[  189.78s ->   199.50s] So as you can see here, I picture it as, you know, in high school, they showed you what a bell curve looks like.
+[  199.76s ->   203.40s] Well, flip a bell curve over, and that's what it basically looks like.
+[  203.40s ->   214.02s] So theta barely chips away at the value of the contract until when you hit the 45-day mark, which means the contract is 45 days out from expiration.
+[  214.02s ->   219.88s] It starts to rapidly lose value, and it loses value quicker and quicker as it gets closer and closer to expiration.
+[  219.88s ->   231.80s] So just FYI, if you're trying to swing a stock using options, buying contracts, you should buy at least a month out, maybe even 45 days out,
+[  231.92s ->   238.36s] so that you experience the least amount of theta decay on the contract, and you can make the most money from your swing trade.
+[  240.46s ->   240.78s] Vega.
+[  241.36s ->   244.88s] Vega measures the implied volatility of a stock that affects the options, okay?
+[  244.88s ->   252.78s] So implied volatility is how much people are buying and selling, the movement of the stock.
+[  252.86s ->   255.22s] If the movement is crazy, the volatility will increase.
+[  255.26s ->   256.20s] The volatility will increase.
+[  256.26s ->   258.02s] The options contracts will also increase.
+[  258.30s ->   259.38s] That is known as Vega.
+[  260.22s ->   263.70s] A drop in Vega will typically cause both options to lose value and increase.
+[  263.80s ->   264.52s] Yeah, I just said that.
+[  266.20s ->   267.22s] No idea what ROE is.
+[  267.30s ->   270.62s] As interest rates increase, call options generally increase.
+[  270.62s ->   274.60s] And as interest rates increase, value of put options usually decreases.
+[  276.12s ->   276.86s] That's cool.
+[  276.98s ->   278.14s] Never heard about that in my life.
+[  279.69s ->   279.97s] Okay.
+[  280.67s ->   282.63s] Now let's go into the real life application of this.
+[  283.78s ->   289.16s] So if I want to go to a trade tab, so I can see the options table here, you go into layout,
+[  289.72s ->   296.30s] and you go into this one where it shows delta, gamma, theta, vega, and bid.
+[  296.44s ->   302.08s] All these things are very useful for people who are selling to open because that is what is mainly affecting this.
+[  302.08s ->   311.60s] Also, if you're swing trading, you want to look at delta for the direction, see the percentage, your probability of profit.
+[  312.18s ->   317.70s] Also, theta, you want to see how much decay you will be facing if you hold it out and whatnot.
+[  317.70s ->   333.76s] So as you can see here on this one, on the weekly option, 172.5 call, theta, they get is 0.05.
+[  334.18s ->   336.70s] So the volatility is super low, right?
+[  337.14s ->   345.88s] Theta, every day the contracts are decreasing by 0.42 cents, right?
+[  345.88s ->   356.36s] So if the stock does not move tomorrow, this option contract will go from 147 to 105 because of theta.
+[  356.48s ->   365.52s] Theta slowly decays, and this is a lot higher than let's say if we go out 155 days, right?
+[  365.94s ->   369.16s] See, so theta is, what was it?
+[  369.24s ->   370.88s] It was 0.42.
+[  370.88s ->   379.98s] Here it is 0.05 because, as we saw the curve, theta progressively gets larger and larger as we get closer to expiration.
+[  380.14s ->   383.44s] Since this is one day from expiration, the theta is pretty high.
+[  384.10s ->   385.92s] Gamma, don't really know.
+[  386.30s ->   387.54s] Okay, the direction of the stock.
+[  387.82s ->   398.22s] So delta, for every $1 move that Boba makes, the contract will increase in price by 46 cents or $46.
+[  398.22s ->   411.30s] So if this goes to 172.99, this will now be worth 1.8, increased by 46, so 1.9.
+[  413.08s ->   419.20s] Again, it will probably increase more if it has a sharp spike up because then the volatility will increase.
+[  419.68s ->   422.18s] Volatility increasing will also increase the contract price.
+[  422.18s ->   426.86s] How do you know what a contract price can be with all the movements of these weird variables?
+[  427.92s ->   432.32s] Instead of going to the layout, you go to this thing called Theo Price and Mark, okay?
+[  432.76s ->   434.96s] And you click here, and you put in.
+[  435.26s ->   445.02s] Okay, if I hold the options contract for this long, if the stock price moves up 3 cents, if the volatility increases by 0.25,
+[  445.02s ->   455.14s] then it will show what the current price is, and if all that happens, what it will be now.
+[  455.52s ->   461.80s] So for instance, let's say calls, I'm expecting it to go up, so I'm expecting it to go, what, 50 cents?
+[  462.32s ->   463.26s] That's going to take forever.
+[  464.08s ->   464.64s] Yeah, why not?
+[  464.70s ->   467.33s] 50 cents, okay?
+[  467.33s ->   475.76s] Okay, and I also expect it to, the volatility to increase by 0.5, okay?
+[  476.44s ->   482.14s] That means if that happens, this contract will go from 57 cents to 72 cents, okay?
+[  482.20s ->   487.38s] It just helps you to understand all these things in action and if it really does happen.
+[  489.21s ->   491.95s] All right, I hope you all learned something from this video.
+[  492.03s ->   494.65s] If you want to learn more, Google it, YouTube it.
+[  494.65s ->   497.85s] You can basically Google and get a college degree, but not really.
+[  499.35s ->   501.59s] And I will include the links below, and have fun.
+[  501.69s ->   502.65s] I hope you all learned something.
+[  502.77s ->   503.61s] Please like, comment, and subscribe.
+[  503.75s ->   504.37s] See you all in the next video.

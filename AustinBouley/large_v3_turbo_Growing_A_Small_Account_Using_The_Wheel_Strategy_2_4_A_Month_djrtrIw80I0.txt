@@ -1,0 +1,160 @@
+[    0.00s ->     3.86s] Are you curious how you can use the wheel strategy to grow your small account consistently?
+[    4.18s ->     8.12s] Well, I'm going to show you exactly how to do that in this video as well as the best stocks to do it on.
+[    8.42s ->    12.20s] However, what most people don't tell you is where the wheel strategy fails.
+[   12.28s ->    16.24s] The biggest pitfall, I'm going to show you what that is and how to avoid it so that you make more consistently
+[   16.24s ->    18.76s] and don't have to fear underperforming the market.
+[   18.92s ->    20.10s] So let's dive into it.
+[   20.20s ->    22.52s] To explain the wheel strategy, it's simply this.
+[   22.58s ->    25.70s] No matter what the market does, your job is to do one thing.
+[   25.76s ->    28.32s] It's either to sell a put or to sell a call.
+[   28.32s ->    34.66s] So how this works is if you have 100 shares of stock already, you are wanting to sell calls against that.
+[   34.74s ->    36.14s] That is called a covered call.
+[   36.46s ->    41.22s] So for instance, if you have a stock that you're holding, 100 shares, and you sell a call against that,
+[   41.44s ->    44.38s] your call is being protected by the stock.
+[   44.46s ->    49.44s] So if your call does get assigned away from you, the shares are taken from you as well.
+[   49.64s ->    50.68s] And then you can enter and put.
+[   50.80s ->    54.82s] So all you need to know, do you have 100 shares of stock?
+[   55.10s ->    57.98s] If yes, then you're going to sell calls.
+[   57.98s ->    60.36s] If no, then you're going to sell puts.
+[   60.52s ->    62.88s] So let's start off saying you own no shares.
+[   63.04s ->    70.24s] So if you own no shares, you're just going to go out of the money and place puts or you're going to sell puts over and over and over
+[   70.24s ->    73.24s] and collect money from selling puts, which make money to the upside.
+[   73.80s ->    79.20s] Now, over time, the market's going to go against one of your puts and you're going to be given 100 shares.
+[   79.20s ->    83.70s] So if the market goes against a put that you selected, it's going to go against you.
+[   83.82s ->    87.94s] And when the stock goes against the level you picked for the put, then you're going to get 100 shares.
+[   88.32s ->    92.52s] Now, once you have 100 shares, you enter this category where you sell calls.
+[   92.62s ->    95.22s] So as the stock is being held, you're going to sell calls against it.
+[   95.38s ->    96.22s] And then you're going to make money.
+[   96.28s ->    98.82s] And then eventually, the call is going to be called away from you.
+[   98.82s ->   100.78s] The shares are going to be taken from you as well.
+[  100.92s ->   102.00s] And they're going to be entering puts.
+[  102.10s ->   104.74s] So it's basically just a playback between selling puts and selling calls.
+[  104.84s ->   110.80s] So I put the selling calls with the whole purpose of collecting money, collecting an income, hopefully on a consistent basis.
+[  111.18s ->   116.94s] So you can either one, grow your small account or two, generate a consistent income from the market.
+[  117.24s ->   122.02s] And so I probably explained it a little too complex for a lot of new people starting out.
+[  122.02s ->   127.40s] But essentially, your whole goal is to sell options with the goal to collect money and keep it.
+[  127.44s ->   130.44s] So you can grow your account or build up your portfolio.
+[  130.70s ->   133.90s] So that's what the wheel strategy is.
+[  133.96s ->   135.64s] Now, let's look at some historical performance.
+[  135.96s ->   143.62s] If we look at 45 days out, for those who don't know, an options contract has a certain expiration date, how far out in time you're going.
+[  144.00s ->   147.44s] And so if you go 45 days out in time, here is your performance.
+[  147.44s ->   149.92s] If I zoom in here, check this out, guys.
+[  149.92s ->   153.74s] Guys, 45 days, the blue line is the normal market.
+[  154.18s ->   160.78s] Every single wheel strategy, no matter what delta, no matter which way you set it up, would have underperformed the market.
+[  161.26s ->   164.98s] You can see here, even if you managed early, it would have underperformed the market.
+[  165.26s ->   170.30s] If you held until expiration, no matter what you did, it would have underperformed the market.
+[  170.68s ->   172.92s] So is the wheel strategy something you should be doing?
+[  173.04s ->   173.82s] Also, look here.
+[  173.82s ->   183.06s] If we use a closer expiration to collect more money more often, then what we're going to do is we're still going to underperform the market.
+[  183.38s ->   186.06s] Now, what about a zero DTE wheel strategy?
+[  186.50s ->   187.04s] Guess what?
+[  187.42s ->   189.48s] Underperform the market.
+[  189.48s ->   198.16s] So we see all these backtests, reliable, third-party backtested results of the wheel strategy, showing that it underperforms the market.
+[  198.54s ->   201.34s] Where and why does that go wrong and how do we prevent it?
+[  201.38s ->   203.00s] Well, that's what I'm showing you in today's video.
+[  203.78s ->   206.86s] Where the market completely underperforms is this.
+[  207.04s ->   209.14s] It's when you're doing covered calls.
+[  209.46s ->   212.74s] So like I said, if you don't have any shares, you're going to be selling puts.
+[  213.00s ->   218.94s] When you're selling puts in a bullish market, you're just going to, by default, naturally underperform the market.
+[  218.94s ->   220.28s] So what does that mean?
+[  220.32s ->   228.12s] If the market's shooting up straight up like this, you're going to make a lot of money with put credit spreads, but not as much as you would have if you just had the 100 shares, right?
+[  228.30s ->   232.98s] Because if you would have bought 100 shares here and the market would have gone up, you would have made 87%.
+[  232.98s ->   239.34s] Now, when you're selling puts, you're going to make a good bit of money, but you're probably only going to make 40% of that.
+[  239.58s ->   247.46s] Because, again, puts help you make advantage or take advantage of the market when it's doing things like this, where it's indecisive, where it's going more range bound,
+[  247.46s ->   249.00s] where it's kind of dropping a bit.
+[  249.06s ->   251.42s] But when you have a strong uptrend, you're going to miss out on those profits.
+[  251.52s ->   253.50s] So that's one reason why it underperforms.
+[  253.78s ->   256.78s] The other reason is during these down moves.
+[  256.82s ->   258.66s] Like you can see here, the market is moving lower.
+[  258.96s ->   263.96s] If you're owning shares, if you're owning stock during these periods and the market is going down,
+[  264.24s ->   270.06s] what's going to happen is your shares are going to lose roughly 24% of their value.
+[  270.06s ->   278.24s] If your shares lose 24% and your calls don't make at least 24%, which is very unlikely over this short-term time frame,
+[  278.60s ->   281.66s] then you're going to be losing money.
+[  282.06s ->   286.04s] And so because of the two factors that you're not making as much during bullish periods
+[  286.04s ->   294.06s] and you are losing less, but you're still losing during these down periods because of the stock,
+[  294.48s ->   296.26s] that's why it underperforms the market.
+[  296.26s ->   301.44s] So if you want to use a wheel type of approach in this market to generate returns,
+[  301.44s ->   304.18s] but you don't want these downsides, this is how you do it.
+[  304.40s ->   307.62s] You simply come onto your chart and you add a simple indicator.
+[  307.92s ->   310.08s] You can use any moving average you like.
+[  310.20s ->   313.46s] Just for instance, I'll use a whole moving average since a lot of you haven't heard of it,
+[  313.72s ->   315.62s] but there are a ton of different moving averages.
+[  315.80s ->   319.14s] You can use a simple, an exponential, anything you want.
+[  319.48s ->   321.66s] Now, while you're going here to the settings, I'm just going to play with it a bit.
+[  321.90s ->   323.08s] I believe I like going 50.
+[  323.20s ->   324.44s] Let's see where that plays out.
+[  324.86s ->   325.36s] Yeah, 50.
+[  325.36s ->   325.74s] Here we go.
+[  326.10s ->   328.30s] So the way is this is how it's going to work.
+[  328.64s ->   333.86s] When this line right here is pointing up, when the whole moving average line is moving up,
+[  334.12s ->   335.54s] I'm going to be selling puts.
+[  336.02s ->   338.98s] When the whole line is moving down, I'm going to be selling calls.
+[  339.14s ->   342.44s] I'm not going to get into shares unless I really want to.
+[  342.78s ->   346.30s] So again, the whole goal is to sell options to create income.
+[  346.38s ->   349.38s] So if I'm selling options or selling puts when the market's going up,
+[  349.40s ->   351.00s] I'm going to make more money consistently.
+[  351.00s ->   353.56s] If I'm selling calls when the market's going down,
+[  353.74s ->   356.50s] I'm going to actually be able to make more money consistently as well.
+[  356.86s ->   358.68s] So here is the game plan.
+[  358.80s ->   362.84s] Here's my alternative to the real strategy that makes more money.
+[  362.84s ->   367.80s] Number one, we need to be selling puts when the line is going up.
+[  367.80s ->   369.62s] When the line is going up, we sell puts.
+[  369.70s ->   371.06s] We make money to the upside.
+[  371.06s ->   375.42s] As soon as the market reverses, as soon as this line starts heading down,
+[  375.74s ->   378.62s] what you want to do is you want to sell a call and then wait.
+[  378.98s ->   382.90s] You don't want to continually enter in calls because then the market's going to reverse against you
+[  382.90s ->   384.20s] and you're going to lose on those calls.
+[  384.48s ->   386.70s] What you want to do is you just sell one call when it reverses,
+[  387.02s ->   389.08s] wait for a bit when that call finishes,
+[  389.46s ->   392.26s] then start entering puts again so you can ride that trend back up.
+[  392.68s ->   394.70s] And so again, when you do this type of wheel approach,
+[  394.74s ->   396.02s] you'll be collecting income more.
+[  396.34s ->   399.44s] You won't have to worry about the stocks ruining your downside potential.
+[  399.44s ->   401.40s] Now, you may be saying, okay, that's cool, Austin.
+[  401.48s ->   405.62s] I can make a lot of money from the options income by focusing on a moving average
+[  405.62s ->   406.76s] in the way that you showed me.
+[  407.00s ->   410.54s] But how do I take advantage of that huge stock growth that you mentioned?
+[  410.96s ->   415.46s] Well, you can add my CSCT indicator, which is linked down in the description below.
+[  415.70s ->   419.34s] And when you add the trending band indicator to it,
+[  419.36s ->   421.66s] because it has a ton of amazing trending indicators on it,
+[  421.98s ->   426.02s] once it breaks below this bottom line, that's when you want to buy up your shares.
+[  426.08s ->   427.34s] That's when you want to buy up the stock.
+[  427.34s ->   430.76s] If you buy up the stock here, this is mathematically the lowest price it will be.
+[  431.02s ->   434.40s] And then you can jump in on these huge rides to the upside.
+[  434.86s ->   437.00s] So again, you can see here, boops, rides up.
+[  437.12s ->   438.16s] This side rides up.
+[  438.48s ->   440.38s] When it breaks below these levels, it rides up.
+[  440.42s ->   443.12s] So if you want to find the best time to buy stock,
+[  443.18s ->   446.36s] in addition to the way I showed you to sell options, this is the way to do it.
+[  446.58s ->   449.48s] This is my upgraded and advanced wheel strategy
+[  449.48s ->   451.54s] to help you grow a small account consistently.
+[  451.96s ->   454.80s] Now, again, I've been showing you this showcase on Spy,
+[  455.02s ->   456.44s] which is going to help you do it.
+[  456.44s ->   458.88s] But again, if you're growing a small-sized account,
+[  458.96s ->   461.00s] you may not have enough money to do this on Spy.
+[  461.30s ->   463.14s] So what are some other good alternatives?
+[  463.58s ->   465.50s] Well, you can use cheaper ETFs,
+[  465.56s ->   468.94s] or you can use individual names like Apple stock.
+[  469.00s ->   470.34s] You can see the same thing happens here.
+[  470.52s ->   472.72s] When we break below this bottom range, we trend up.
+[  472.76s ->   474.64s] When we break below this bottom one, we trend up.
+[  474.68s ->   475.94s] This is a great time to buy stock.
+[  476.24s ->   478.02s] Also, the same moving average technique.
+[  478.02s ->   479.88s] When the moving average is trending up,
+[  480.08s ->   480.96s] you're going to be selling puts.
+[  481.00s ->   483.10s] As soon as it revolves, you're going to be taking one call,
+[  483.10s ->   484.12s] and you're going to be waiting on it.
+[  484.42s ->   486.44s] But again, Apple is a great one that's cheaper,
+[  486.54s ->   492.50s] that will require about $14,000 to do the wheel strategy on as one option.
+[  492.62s ->   496.42s] But again, there are so many different great stocks and things to do it on
+[  496.42s ->   497.54s] that are cheap.
+[  497.62s ->   498.78s] For instance, the FANG stocks.
+[  498.96s ->   500.64s] Amazon is also now cheaper, too.
+[  500.96s ->   502.68s] So this is going to be another great one to do it on as well.
+[  502.74s ->   504.66s] You can see here when it recovers here, when it recovers here,
+[  504.88s ->   507.20s] there's a nice, strong bounce and recovery,
+[  507.42s ->   509.12s] which is a great stock position.
+[  509.74s ->   511.98s] Anyways, guys, this is my upgraded wheel strategy.
+[  512.10s ->   513.04s] I hope you enjoyed it.
+[  513.08s ->   514.82s] Please smash that subscribe button if you did,
+[  515.00s ->   516.88s] and I will see you in the next video.

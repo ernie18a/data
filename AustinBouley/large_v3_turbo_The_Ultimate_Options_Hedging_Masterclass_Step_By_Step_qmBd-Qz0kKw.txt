@@ -1,0 +1,253 @@
+[    0.00s ->     4.04s] Hey guys, hedging is very important for your positions especially when you're selling premium
+[    4.04s ->     7.98s] meaning that you're selling puts, selling strangles, selling 1-1-2s, doing ratio spreads
+[    7.98s ->    13.62s] all those things can lead to a lot of risk when the market crashes as it did over the last week
+[   13.62s ->    20.14s] and so I recorded this video on a weekly zoom call that I do with my members with the options
+[   20.14s ->    25.76s] auto trader and we went through hedging and how a 1-1-2 can be hedged in various different ways
+[   25.76s ->    32.18s] with the ratio hedge, with the debit spread hedge, with buying a put and how that affects your overall
+[   32.18s ->    37.12s] performance and what that looks like when the trade expires but also how it affects your performance
+[   37.12s ->    41.18s] while you're in the trade so if you're someone who's new to hedging or maybe you just want to
+[   41.18s ->    46.58s] understand hedging better and how to flatten out that P&L curve so when the market drops you don't
+[   46.58s ->    51.70s] see a big loss that's exactly what I cover in this video so I hope you enjoy and if you like it smash
+[   51.70s ->    58.08s] that subscribe button all right guys see you on the other side this 1-1-2 trade is amazing but this
+[   58.08s ->    64.16s] green thing we see right here is our profit at expiration right this is what we see when the
+[   64.16s ->    72.40s] trade expires this orange line is what our trade looks like when we're in the trade and so what we
+[   72.40s ->    77.42s] want to do here when we're hedging is we want to look at this graph and we want to go how can we make
+[   77.42s ->    84.46s] this orange line drop down at a slower pace right because we can see here the orange line goes up
+[   84.46s ->    89.48s] if if we go up which is great but how can we make it slow down to the downside here so that we can
+[   89.48s ->    95.86s] actually profit more and so that's why you have typically all these whoops all these 1-1-2s that
+[   95.86s ->   102.18s] stack on top of each other and then they build into a massive thing here but then that leads to a huge
+[  102.18s ->   108.40s] drop off to the downside which is why when you add a ratio hedge that can profit in this zone
+[  108.40s ->   116.54s] then that flattens out this orange curve at this at this period and so I'll jump back here to a second
+[  116.54s ->   121.00s] so I can show you how to hedge this but I'll give you an example from ES
+[  121.00s ->   136.21s] ES futures we look at this and you can see here how this orange curve is all my put debit spread
+[  136.21s ->   144.67s] hedges that I have for ES right now you can see it's flips right where the orange curve goes up as we
+[  144.67s ->   150.19s] move down and so you can see here that means my profit and loss while I'm in the while I'm in the
+[  150.19s ->   156.45s] trade although if it expired here I would lose money as I'm in the trade I'm making money and so
+[  156.45s ->   162.39s] I need something that's structured like this to offset the other orange curve right I need a curve
+[  162.39s ->   168.35s] that's going up to offset a down curve and so that's what you should be thinking about when you're hedging
+[  168.35s ->   175.19s] and so if I go back to this MES example dang I wish it would save that let's reset this up here
+[  175.19s ->   188.78s] um let's just do this 25 23 I'm sure it moved since then but okay here we go um going back to
+[  188.78s ->   193.72s] the curve so if we take this trade here where the orange is curving down there's a couple ways to do
+[  193.72s ->   200.04s] this we can do a ratio hedge and put debit spread or we can just buy a long put and um you know just
+[  200.04s ->   207.12s] for the sake of this uh we'll we'll go through each example here um so if I had this and I want to put
+[  207.12s ->   215.45s] on a ratio hedge I can do the 30 delta that I buy 30 delta that's gonna be right here I'm gonna buy
+[  215.45s ->   224.12s] this one oh I'm probably gonna max out I'm only allowed four legs um yeah I can't do it so let's
+[  224.12s ->   231.75s] pretend like this is the bottom of the ratio spread and let's add two more so now you can see how this is
+[  231.75s ->   237.97s] going to change it a bit okay so let's say this is a sim since this is simulating our ratio spread
+[  237.97s ->   244.15s] so now you can see here because we have the ratio spread on we're paying a lot of money to have this
+[  244.15s ->   249.83s] downside protection right but if we can see here so that means our profit if the market goes up is
+[  249.83s ->   255.59s] only 41 which means we might want to have another one one one two on one one two on so that we can have
+[  255.59s ->   260.41s] some more profit to the upside here but if you look at this orange line it's very flat and actually
+[  260.41s ->   265.19s] kind of green when you start to move into this zone do you see that you see how the orange line
+[  265.19s ->   272.59s] here plateaus instead of going down when we do the normal one one two um that's like I mentioned before
+[  272.59s ->   280.13s] a race yeah much more subtle exactly so you can see here it kind of stays flat and goes up until it
+[  280.13s ->   288.37s] goes down um so this is how a ratio hedge um paired with a one one two can can actually level out your
+[  288.37s ->   296.59s] trades now this is what it looks like for an equal distance between a ratio and one one one two now
+[  296.59s ->   301.17s] if you have two this curve will go down a bit more if you have three it'll go down more and then four
+[  301.17s ->   307.69s] it'll go down more so having one ratio hedge to two one one twos would still be a flatter curve than
+[  307.69s ->   312.27s] a normal one one two and so that would be a good hedge does that make sense you're trying to flatten
+[  312.27s ->   318.83s] this curve out so you can stay in this trade longer and then see this up this upside profit
+[  318.83s ->   324.51s] of two to three maybe four thousand five thousand dollars and so your goal is to flatten this curve
+[  324.51s ->   331.29s] and so let's actually just double the one one two to see what happens if we have one ratio spread for
+[  331.29s ->   341.30s] one one one two um so I click on this and this and this and I go up one two oh actually doubled it on
+[  341.30s ->   355.30s] the other side okay okay go up go another one sorry go here and go two more okay here we go now this
+[  355.30s ->   365.24s] stimulates having a um one ratio hedge on and having two uh one one twos and we can see here now we get
+[  365.24s ->   371.52s] more profit to the upside instead of 41 here on the upside we get about 300 300 which is good
+[  371.52s ->   376.94s] we still have a really nice profit tint here but what we're looking at is this orange line you can
+[  376.94s ->   381.26s] see this orange line still stays very flat from where we are now you can see here we're trading at
+[  381.26s ->   389.52s] 53 58 this orange line does doesn't really start to come down hard until 47 20 right that gives us
+[  389.52s ->   396.94s] six hundred dollars move to the downside which again as we've seen can happen but it's much more
+[  396.94s ->   404.30s] smoother than a normal one one two so that's what you can look at with a ratio hedge and a one one two
+[  404.30s ->   409.28s] now let's just go back to the one one two and then we'll put another hedge with and see what that looks
+[  409.28s ->   418.28s] like so um by 25 23 and two of the sets is this helping you guys is this making sense with with the
+[  418.28s ->   423.86s] hedges and stuff like that should I keep going through each example I see Don checking his head I think it
+[  423.86s ->   429.94s] helps okay cool um so let's go back to the one one two here so again this is what a normal one one
+[  429.94s ->   435.58s] two looks like you can see here as soon as the market drops this thing goes off a off of a cliff
+[  435.58s ->   443.40s] kind of you can see there when we match it with a ratio spread it very well spreads out that that
+[  443.40s ->   456.28s] immediate downside risk now let's pair that with a um um put debit spread um so I come here I'm trying
+[  456.28s ->   460.64s] to see the best way to structure this put debit spreads since I've only allowed four legs um
+[  460.64s ->   473.04s] actually let's just double this one let's say that I'm putting on a put debit spread where I'm
+[  473.04s ->   478.50s] buying the 30 delta and then I'm selling another one of this does that make sense to you guys this was
+[  478.50s ->   487.85s] my put debit spread buy sell just that I can increase this and then have that so this is a um
+[  487.85s ->   498.88s] hundred and fifty is that right 150 yeah 150 point why put debit spread from here to here and then
+[  498.88s ->   508.25s] this is my my my one one two okay now let's look at the curve so because the put debit spread costs a
+[  508.25s ->   516.81s] lot less money to put on um we have more profit here we have 188 dollar profit with one put debit spread
+[  516.81s ->   524.67s] compared to one ratio uh I mean uh one one one two compared to when we did the one ratio and the one
+[  524.67s ->   529.97s] one one two we had only a 41 dollar profit we have a bit more profit now because the put debit spread
+[  529.97s ->   537.53s] costs less but also makes less but it still does its job if we look at this before the the one one two
+[  537.53s ->   544.83s] from where we got in which is here it quickly went off right now we're very much of a smoother orange
+[  544.83s ->   551.41s] line and that's the whole goal the hedge to smooth out that orange line so that regardless of where
+[  551.41s ->   557.77s] it's going while we're in the trade we make money and so that's kind of what you're looking at here
+[  557.77s ->   566.03s] is having this is this making sense of how you want to hedge it um so you can either do again this is
+[  566.03s ->   573.31s] just based on what we've seen here uh do two one one twos to one ratio hedge or you can do one put
+[  573.31s ->   581.19s] debit spread to one um one one two uh in in our in our current market what i mean by that is where
+[  581.19s ->   587.77s] the chance of the market dropping is seems to be high and that risk seems higher you can do that now
+[  587.77s ->   593.53s] again the market's dropped a lot so can it drop more of course is it likely less likely than before
+[  593.53s ->   600.81s] at all-time highs but this is just ways to to hedge it so this is this is what it looks like to do a put
+[  600.81s ->   607.07s] debit spread hedge now let's look into just buying a put because we can do that as always um and then
+[  607.07s ->   612.27s] again we just do far out of the money puts with that so i'm just going to decrease this back to a
+[  612.27s ->   620.93s] one one two and get oops get rid of this fella okay now we're back to a normal one one two all right
+[  620.93s ->   626.17s] we have this long-term one one two and then something you can do again if i'm going to buy a put
+[  626.17s ->   632.67s] i'm not going to buy a put on something this far out why because options that far out don't move
+[  632.67s ->   639.65s] much especially when you buy them now what options move the most zero dte we don't want to buy an option
+[  639.65s ->   645.25s] every day for maybe some zero dte profit because then we're just paying out a lot of money and so
+[  645.25s ->   651.69s] that's why you'll want to do like a seven day or a 14 day out of the money put now soon you'll be able
+[  651.69s ->   656.89s] to set this up with the options auto trader to automate buying a put so you can do this but let's
+[  656.89s ->   663.67s] just pull up an example here we we can test both of where we would buy a far out of the money seven
+[  663.67s ->   670.68s] delta put and so i actually want to go here and change open interest to show you how much these out
+[  670.68s ->   684.45s] of the monies um changed um hopefully it shows me yeah here we go perfect awesome um actually what i'm
+[  684.45s ->   690.20s] looking for i don't think that's an accurate change price yeah oh it's because we're basing it off
+[  690.20s ->   699.72s] this yeah it's because the prices are so off uh today um anyways you can just see here that we had
+[  699.72s ->   710.06s] basically almost a hundred percent gain essentially in these changes um even look at the low and the high
+[  710.06s ->   717.26s] yeah the low compared to the high so down 20 i'm not giving you a good example but um actually i
+[  717.26s ->   724.11s] want to open interest okay anyways um so we go out here and we can buy 10 deltas here and so you can
+[  724.11s ->   731.87s] see here we're bringing in 49 dollars in credit and so we could even use just a tenth of that to help
+[  731.87s ->   737.05s] hedge and do that on a consistent basis and still be fine so we're looking at let's just i'm just making
+[  737.05s ->   742.11s] up the tenth number because you know tithe tithing is tenth so it's two tenths i don't know could be
+[  742.11s ->   749.39s] wrong i hope it's not sack religious but uh 4.9 so let's look at around five dollars so a hedge like
+[  749.39s ->   757.19s] this you could buy this put right here and so now your credit drops but let's see what it does here
+[  757.19s ->   764.69s] you can see it just like that that alone really spreads out this and still gives you profit you see
+[  764.69s ->   773.92s] this buying a put like that where now because like i said the put duration is so short that if it were
+[  773.92s ->   780.50s] to drop it's gonna go up quickly um because of how much premium it has and just like that now you can
+[  780.50s ->   786.88s] see here it's pushing it now again that that put profit can't offset the whole one one two loss because
+[  786.88s ->   792.28s] the one one two has infinite loss but it still covers it for a very long time and you can see here that
+[  792.28s ->   799.84s] that kicks in and so something like this where every seven days you're putting on a new long put
+[  799.84s ->   805.72s] or something similar you can see here will give you a lot of downside protection and so what i wanted
+[  805.72s ->   812.02s] to show you here is it doesn't matter what hedge you use um it just matters your whole goal the goal
+[  812.02s ->   817.00s] of hedging is to flatten out that orange line or even something like this make that orange line flat
+[  817.00s ->   822.72s] and then go up that would be even better but you're trying to balance a flat orange line with
+[  822.72s ->   828.12s] profit on this side and minimal downside on this side of the stock does does that all make sense
+[  828.12s ->   833.73s] what the goal of hedging is um yeah i'm on mic now instead of texting
+[  833.73s ->   845.85s] um well let's see so on the so on the put you bought seven to fourteen days at this one is how many
+[  845.85s ->   856.30s] days out on this one um august 9th uh seven days seven days okay and then so you were saying between
+[  856.30s ->   862.50s] a seven delta a 10 delta and then you ended up picking like an actual number um is that because
+[  862.50s ->   869.06s] the spreads are so wide right now or because of volatilities so i don't i don't have it down to a
+[  869.06s ->   874.46s] science on the long puts of what you should buy i was just thinking from a personal preference of
+[  874.46s ->   879.98s] like okay with this one one two i'm collecting 49 of credit or something similar let's say you
+[  879.98s ->   887.92s] collected for uh you know for 47 50 and so how much of that money am i okay to give up for a head
+[  887.92s ->   893.42s] you know okay so i was like 10 percent of something i would give up for that so i was like okay so 10
+[  893.42s ->   900.74s] percent of the credit that i made which is 47 uh 447 would be around 470 and so i just looked for
+[  900.74s ->   904.88s] our contract around that which was here with six dollars but it's really hard to tell because the
+[  904.88s ->   910.74s] price are so jacked um but here let's say this is 460 so this is closer to it we're talking about a
+[  910.74s ->   917.56s] very far money this is a five delta um and you can see let's see the curve it still really helps
+[  917.56s ->   926.60s] flatten out this curve yeah and we're just letting these expire right uh the puts yeah yeah i mean
+[  926.60s ->   933.50s] the puts you can let expire or you can literally just uh close them out and profit from them either
+[  933.50s ->   940.52s] way okay i just i just didn't want to make the mistake of just you know letting it roll out you
+[  940.52s ->   946.38s] know at seven days instead of closing it right before end of market or something because if closing
+[  946.38s ->   950.52s] it out is going to be more profitable than just letting it expire then it's something that i would
+[  950.52s ->   963.65s] have to stay up on yeah i mean it's just it's going to be most profitable if i is this oh this is the
+[  963.65s ->   971.01s] oh this is put on buying um buying a put gives you you know the right to sell at a certain point
+[  971.01s ->   977.19s] and so what's essentially going to happen here um is you know you have the right to sell it here
+[  977.19s ->   984.47s] but it's actually trading here um so that's where your profit difference comes in and so either you
+[  984.47s ->   993.05s] let it expire and the broker does this for you um or you can just close it out before and um
+[  993.05s ->  1001.41s] since this asks the options auto trader won't let you um close out or or it won't let you keep on a
+[ 1001.41s ->  1006.91s] trade that's in the money that's at risk of assignment like this so this trade if you have this
+[ 1006.91s ->  1011.71s] running through the options auto trader will close it 30 minutes before the expiration date
+[ 1011.71s ->  1017.39s] um which will help you lock in that profit without having to fear that that assignment and then change
+[ 1017.39s ->  1023.61s] over um so both will be about the same profit but you know it just depends on how you want to handle
+[ 1023.61s ->  1028.91s] it um but yeah so you know you can still just buying a put you can see here gives you that
+[ 1028.91s ->  1036.89s] and so again seven days isn't that far out either if you're like okay well i'm in let's
+[ 1036.89s ->  1044.93s] just do the math here right one one two trades take if if you're targeting an 80 to 90 profit target
+[ 1044.93s ->  1052.01s] take takes about half the the duration to get to that profit so i say that because for me it's about
+[ 1052.01s ->  1056.75s] 45 days because i trade 90 but for you you're at 120 so that means it's going to take about 60 days
+[ 1056.75s ->  1063.01s] to get to that and so the question is here if we have to do a new put like this every seven days
+[ 1063.01s ->  1069.15s] um it's going to be a lot that means you're going to be paying a lot um right right 60 days you need
+[ 1069.15s ->  1074.55s] to cover so that'd be 10 of them um so again you have to factor that in as well so if you just want
+[ 1074.55s ->  1078.11s] to get rid of this one and be like okay let's do it every 14 days well this is where you kind of get
+[ 1078.11s ->  1084.35s] to play around with it um so you can go and check out 14 days right or even 21 days again the further
+[ 1084.35s ->  1090.67s] out we go the less of that curve we'll have so let's actually just for my curiosity let's go to 30 days
+[ 1090.67s ->  1094.45s] because that would mean we need two two of them right we wouldn't need one and then once that
+[ 1094.45s ->  1099.87s] expires another one um so we only need two of them so let's go out to the same five delta level
+[ 1099.87s ->  1109.64s] have a rough comparison five delta here so we're looking at about 10 11 dollars in credit if this
+[ 1109.64s ->  1118.68s] is right um so 11 times two is about 22 so you'd be giving up about half of your profit um from the
+[ 1118.68s ->  1125.64s] 112 to hedge this and so again it just all comes down to how much is hedging worth it for you um but
+[ 1125.64s ->  1132.44s] anyways so if we look at this you can see here obviously we don't get that superstar growth but
+[ 1132.44s ->  1139.28s] we really do still slow down this this immediate move because you know with just the 112 we have that
+[ 1139.28s ->  1146.18s] straight down here but it very much slows down and gives us time to be in in the trade and again as
+[ 1146.18s ->  1152.26s] time goes on this orange line will move higher and higher and higher um but at the immediate if
+[ 1152.26s ->  1158.42s] the market were to drop now we still have a very slow slow move down and so again that that would
+[ 1158.42s ->  1163.48s] be pushing the trade out so that you can do only two of them so that you can keep more of your profit
+[ 1163.48s ->  1170.82s] um but again you know that's only factors in that you have one one one two you know you could
+[ 1170.82s ->  1176.10s] definitely do a one one two every week and then now that new one one two that you're doing each week
+[ 1176.10s ->  1183.22s] is paying for a new hedge um with the partial profits you know what i mean um yeah and and that's
+[ 1183.22s ->  1191.00s] kind of where i was looking at with this is that uh you know if if i made if i made the money on on the
+[ 1191.00s ->  1198.02s] opening of the position then why not use the credit towards the hedge and so you know kind of
+[ 1198.02s ->  1204.02s] leverage you know one trade leverages the other for protection and so on and so forth but it was
+[ 1204.02s ->  1211.86s] just more of the question of you know what's what would be worthwhile um especially in you know in a
+[ 1211.86s ->  1218.72s] day like today where i entered it kind of what looks like maybe a little bit of a break on you know
+[ 1218.72s ->  1226.64s] a double down red day so yeah yeah for sure and here's here's an example of a of a one one two
+[ 1226.64s ->  1234.00s] with 14 days out you still get this really nice curve um and now you have two weeks of protection
+[ 1234.00s ->  1241.38s] um yeah so i mean something like like this uh you put on a new one on one and then you use that
+[ 1241.38s ->  1249.70s] profit upon on a new for uh 14 day and they all start stacking so i say that to say like um like we
+[ 1249.70s ->  1254.46s] can even you know let's see what happens if we increase the one one two oops i'm in the wrong period
+[ 1254.46s ->  1262.07s] um so let's say we only have on one like let's see how well one put protects two of these um
+[ 1262.07s ->  1270.51s] but yeah i mean you have the right idea is yeah take the credit that you're receiving take a portion
+[ 1270.51s ->  1278.87s] of it and be like okay i will never see 10 of this money because it's just my insurance 10 10 10 of my
+[ 1278.87s ->  1283.41s] trading profits goes to to the to this insurance and i don't feel bad because that's what happens
+[ 1283.41s ->  1291.59s] yeah so so a 14 day put can cover two of them you can see here we have a flat curve it doesn't start
+[ 1291.59s ->  1299.05s] really dipping down to 44 so that's literally a thousand point drop that were covered um just by
+[ 1299.05s ->  1305.81s] having this one put on um right so yeah just having so you can even have on the auto trader you know
+[ 1305.81s ->  1315.53s] a one one two running uh 120 day once a week and then also enter in a 14 day um put um every week
+[ 1315.53s ->  1321.29s] as well um okay and then you'll and then you'll just match it you know what i mean um sure yeah
+[ 1321.29s ->  1328.28s] okay so so for every one one two you just throw in an extra 14 day yeah you just throw an extra 14
+[ 1328.28s ->  1334.72s] day okay yeah for every new one one two you just throw uh you just throw in a new extra 14 day
+[ 1334.72s ->  1345.07s] yeah okay yeah and uh we can also see how this plays out um i wish i could highlight this one
+[ 1345.07s ->  1352.50s] um something else that needs to be considered is how it plays out with ball with volatility do you
+[ 1352.50s ->  1359.92s] know how to see that on on here or do you want to show i don't okay yeah so we we we can see here
+[ 1359.92s ->  1366.46s] that this shows us based on the current market what would happen right now today um but we can
+[ 1366.46s ->  1373.60s] change settings okay so like i mentioned as time goes on this orange curve will also go up on this
+[ 1373.60s ->  1378.70s] side but also go down a bit whoops um so we can actually take a look there way to close this
+[ 1378.70s ->  1386.81s] um i just want more room to see um so we can we can change things here and so one of those we can go
+[ 1386.81s ->  1393.83s] out in time you see each day i go forward i can see how my profit curve changes you can see there
+[ 1393.83s ->  1399.13s] that i just passed the 14 day mark for that trade probably that it really becomes worthless
+[ 1399.13s ->  1406.92s] and you can see there yeah it really starts to flatten out because my hedge is basically gone
+[ 1406.92s ->  1416.20s] um don't know what that is oh yeah it's expired it doesn't know what to do with it yeah so basically
+[ 1416.20s ->  1422.40s] at the point that this expires obviously that distance goes away um but let's just reset back to
+[ 1422.40s ->  1427.48s] today um what i want to show you here is how volatility changes it right so right now volatility
+[ 1427.48s ->  1433.54s] is really high so when we're in a period when the market's at at all at all time highs we need to
+[ 1433.54s ->  1440.62s] know what's going to happen to our portfolio this graph um when volatility increases and so what you
+[ 1440.62s ->  1445.70s] do is you just simply bump up the volatility and you can see how your orange line changes so you're
+[ 1445.70s ->  1450.48s] going to bump them up on all because this changes each and individual option and we need to see how they
+[ 1450.48s ->  1458.44s] all combine go up um and so you can see here if volatility goes up 12 percent right now we can see
+[ 1458.44s ->  1463.76s] what this new curve look looks like obviously our green profit will be the same but we can see what
+[ 1463.76s ->  1472.58s] this does and you can see here that the put doesn't do quite enough to offset um the volatility spike
+[ 1472.58s ->  1480.74s] from the 112 loss um you can see the 112 still has a loss again it does help flatten out here
+[ 1480.74s ->  1487.04s] but for this immediate move it still kind of does that and so we're talking about though like
+[ 1487.04s ->  1494.36s] a 12 percent move and a day is what would happen here so unlikely especially since volatility is so high
+[ 1494.36s ->  1500.20s] right now um this probably won't happen um when we're at an all-time high level that's when you want
+[ 1500.20s ->  1507.82s] to consider looking at this um but right now it's not a concern right now what you what you really are
+[ 1507.82s ->  1513.60s] curious about is volatility decreasing because that's where that's where we're at volatility so
+[ 1513.60s ->  1521.60s] high that it's more likely to decrease than increase and so we look here at a decreasing well our trade
+[ 1521.60s ->  1527.28s] just gets a lot better so this shows us that this trade structure is better which most often selling
+[ 1527.28s ->  1533.64s] is when volatility decreases and so you can see there that also to factor in okay what happens
+[ 1533.64s ->  1539.44s] in the shifts of volatility um right now that's not really our concern because of all because volatility
+[ 1539.44s ->  1544.64s] is so high but when we're at a point of like all-time highs like like we were earlier um then you want
+[ 1544.64s ->  1550.14s] to start looking at the volatility exposure but okay regardless i think one this is a personal
+[ 1550.14s ->  1555.94s] preference again you can make your own decisions and play with this um but yeah a 14 delta i mean a 14
+[ 1555.94s ->  1565.65s] dte put um really does cover this well um like the move today a 2.5 move or something it was and
+[ 1565.65s ->  1570.67s] and a single day i think it was around three or something that's like one percent of trading days
+[ 1570.67s ->  1576.77s] um something like that doesn't happen often and when it does like obviously um either you're prepared
+[ 1576.77s ->  1584.52s] for it or you're not and you get stopped out or um or it's what the market typically is which is
+[ 1584.52s ->  1591.48s] smoother one percent move days and and if that happens then something like this is purely fine um
+[ 1591.48s ->  1599.70s] but you know as trades are overlapping and time goes on then it also gets safer right um sure because
+[ 1599.70s ->  1605.52s] you'll have other one one two trades that will be more in the profit to cushion but yeah we're just
+[ 1605.52s ->  1611.40s] talking for an immediate trade right now if you put this on this is kind of the risk but yeah okay
+[ 1611.40s ->  1624.55s] yeah that's great thank you of course any other questions we've just hit an hour i know we've been
+[ 1624.55s ->  1628.31s] on todd for a while but it's hitting on hedges which i know a lot of you guys had questions about
+[ 1628.31s ->  1629.11s] uh
+[ 1629.11s ->  1634.61s] you
+[ 1634.61s ->  1639.41s] i just want to
+[ 1639.41s ->  1639.61s] you
+[ 1639.61s ->  1641.61s] you
+[ 1641.61s ->  1642.11s] you
+[ 1642.11s ->  1643.77s] you
+[ 1643.77s ->  1644.15s] you
+[ 1644.15s ->  1646.19s] you
+[ 1646.19s ->  1646.71s] you
+[ 1646.71s ->  1648.23s] you
+[ 1648.23s ->  1648.57s] you
+[ 1648.57s ->  1650.27s] you
+[ 1650.27s ->  1650.99s] you
+[ 1650.99s ->  1652.19s] you
+[ 1652.19s ->  1652.59s] you
+[ 1652.59s ->  1653.13s] you

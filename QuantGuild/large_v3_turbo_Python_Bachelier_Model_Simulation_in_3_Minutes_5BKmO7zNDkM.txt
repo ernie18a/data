@@ -1,0 +1,30 @@
+[    0.11s ->     5.45s] Hey YouTube, it's Roman. Today I want to code a Bachelier model simulation in Python in under three minutes.
+[    5.59s ->     9.91s] So let's get started. We're going to first import NumPy to induce randomness.
+[   10.21s ->    15.37s] Then we are going to import MapPlotLib for visualization.
+[   17.08s ->    21.24s] Okay, so now we're going to create our function, Bachelier Sim.
+[   21.40s ->    25.70s] We need the spot forward. We need a volatility term.
+[   25.70s ->    31.90s] We need a time to simulate to. We need the number of steps to take in between.
+[   32.66s ->    35.36s] And we need the number of simulations we want to run.
+[   35.76s ->    37.86s] So we're going to create n simulations.
+[   39.14s ->    43.24s] And we are going to add our price paths to this array.
+[   43.98s ->    50.40s] And we are going to say prices is equal to the spot forward.
+[   50.40s ->    56.28s] Then we need to create a DT, which is going to be equally spaced based on the steps parameter.
+[   56.66s ->    59.34s] Then we're going to create a time index that starts at zero.
+[   59.80s ->    73.84s] And we can say while T index plus DT is less than cap T, we are going to add DT to the time index.
+[   73.84s ->    91.84s] And we are going to append a new price, which is based on the previous price, plus sigma times mp.random.normal, standard normal distribution, multiplied by DT, and then the square root.
+[   92.64s ->    96.22s] And that was from our analytical solution to the Bachelier model from the previous video.
+[   96.66s ->    99.64s] We know this innovation from the definition of Brownian motion.
+[   99.64s ->   106.92s] So now we can append this particular path to the paths list.
+[  107.88s ->   115.09s] And then we can return the paths at the end of the function.
+[  116.31s ->   118.41s] So let's go ahead and visualize this.
+[  119.35s ->   123.63s] Paths is equal to Bachelier sim 0.3.
+[  124.23s ->   129.42s] We'll do one year, 252 days, and then we'll simulate it 100 times.
+[  129.42s ->   137.80s] And then we can visualize it by saying for path in the paths list, plt.plot path.
+[  139.03s ->   140.63s] And there you have it.
+[  140.73s ->   144.91s] That is a Bachelier model simulation in under three minutes.
+[  145.15s ->   152.45s] If you haven't seen my previous videos on Brownian motion and the analytical solution to the Bachelier call price,
+[  152.45s ->   158.41s] that will probably solidify the math side of things.
+[  158.41s ->   165.51s] And then this is the implementation in Python to create the actual driftless arithmetic Brownian motion simulation.
+[  165.75s ->   167.67s] So thank you so much for watching.
+[  167.85s ->   169.89s] If you have any questions, leave them in the comments below.
+[  170.17s ->   171.69s] And I will see you in the next one.

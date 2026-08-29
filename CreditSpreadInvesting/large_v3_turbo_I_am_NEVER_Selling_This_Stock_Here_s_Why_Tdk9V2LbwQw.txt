@@ -1,0 +1,150 @@
+[    0.00s ->     3.32s] Welcome back to the channel. Today, we'll be giving you guys an update on the put selling
+[    3.32s ->     8.62s] only portfolio. And we're going to deep dive into one of my favorite stocks right now.
+[    9.34s ->    13.68s] And at the end, I'll give you guys a little update on the option play here or maybe the
+[   13.68s ->    16.56s] lack of an option play here. So make sure you guys stick around for that.
+[   16.78s ->    23.00s] So what is the stock that we're talking about? It is TSMC, otherwise known as Taiwan Semiconductor
+[   23.00s ->    28.76s] Manufacturing Company. TSMC was founded by Morris Chang, otherwise known as the godfather
+[   28.76s ->    35.42s] of semiconductors. After working 25 years at TI, he realized that there was a gap in the industry.
+[   35.94s ->    42.10s] A lot of companies can afford to design the chips. However, not many companies can afford
+[   42.10s ->    47.36s] to build the chips because building out a factory and learning how to build these chips
+[   47.36s ->    53.60s] is a very capital intensive endeavor. And so Morris decided when he went back to Taiwan
+[   53.60s ->    60.66s] that TSMC is going to be a pure foundry play, which means that they will manufacture chips for
+[   60.66s ->    66.66s] everyone and they will never compete with their customers. AMD will send the designs for their
+[   66.66s ->    73.68s] highest end GPU. TSMC will take that design and make them their chips so that AMD can sell it to
+[   73.68s ->    79.34s] their customers. And because of this philosophy, he basically revolutionized the industry and created
+[   79.34s ->    85.54s] what we call fabulous companies. Companies like Qualcomm, Broadcom, AMD, NVIDIA, where all they do
+[   85.54s ->    93.58s] is design chips because they know that TSMC will be there to make the chips for them. And this philosophy
+[   93.58s ->   102.60s] has done wonders for TSMC. As of today, they are the world's leading manufacturer of semiconductors.
+[  102.60s ->   109.60s] They have around 70% of the global market share. Their closest competitor, Samsung, only has around
+[  109.60s ->   117.18s] 10%. Their chips go into products that you probably use on a daily basis. Products like your iPhone,
+[  117.36s ->   125.08s] your MacBook, even AirPods, and even more advanced GPUs that are used for AI in the cloud that powers
+[  125.08s ->   131.96s] products like ChatGPT and Gemini, and even military use cases such as drones and missiles. And some of
+[  131.96s ->   140.38s] their customers are household brand names like Apple, AMD, NVIDIA, Microsoft, Sony, and so much more.
+[  140.92s ->   147.00s] So even if we just stop right here, you can kind of see how impactful and how important TSMC is. And
+[  147.00s ->   152.22s] this is why TSMC is one of my stocks that I will buy and probably hold forever. But I want to dive even
+[  152.22s ->   156.76s] deeper because I want to show you what a great business looks like. Remember, we want to go back
+[  156.76s ->   163.80s] to our philosophy. We want to acquire great companies at fair prices. And TSMC, hopefully after
+[  163.80s ->   168.80s] today, you'll see why this is such a great company. And like we talked about in our 90-minute master
+[  168.80s ->   173.54s] class, I'll link at the upper right-hand corner right here, every great company has competitive
+[  173.54s ->   179.64s] advantages. So let's explore a couple of TSMCs. The first one is that this industry is a high
+[  179.64s ->   187.18s] barrier-to-entry industry. A single leading-edge fab or factory is estimated to cost close to $20
+[  187.18s ->   194.70s] to $30 billion. On average, TSMC has been spending close to $35 billion a year just on capital
+[  194.70s ->   201.02s] expenditures. And for even more context, one ASML lithography machine, which is used to make these
+[  201.02s ->   207.80s] leading-edge chips, each one of these lithography machines costs $200 million plus. And each fab needs
+[  207.80s ->   214.62s] multiple of these. So not every company is willing to invest that much money into fabs,
+[  214.96s ->   221.82s] into increasing capacity. Because even though they make the factory, it doesn't guarantee that
+[  221.82s ->   227.48s] they can scale and make these chips at scale. Intel, for example, is having trouble scaling their
+[  227.48s ->   232.42s] leading-edge processes to match what TSMC has so that they can sell that to their customers.
+[  232.90s ->   236.58s] Samsung's having trouble with the 3-nanometer process. They can't get it to a good yield.
+[  236.58s ->   242.28s] And SMIC, which is funded and backed by the Chinese government, can't get past the 7-nanometer
+[  242.28s ->   248.02s] hurdle. Investing so much money into a fab is actually a pretty risky proposal. And this is
+[  248.02s ->   252.86s] actually why you can see it's a high barrier of entry. On top of that, there's also a high
+[  252.86s ->   258.56s] technological barrier of entry too. Not everyone can actually make these chips at scale. TSMC can
+[  258.56s ->   264.86s] because they have accumulated decades of knowledge and processes that other companies just can't copy.
+[  264.86s ->   268.54s] Which leads us to the next competitive advantage, which is technological edge.
+[  269.50s ->   274.90s] TSMC is always at the cutting edge. They are always the first to market with the newest and
+[  274.90s ->   280.14s] best, which means that they are actually the bottleneck. They are the limited supply in a market that has
+[  280.14s ->   286.26s] very high demand. Apple, for example, reserved 50 plus percent of TSMC's 2-nanometer capacity
+[  286.26s ->   293.04s] years in advance just so that they can have it over their rivals. And this limited supply is actually
+[  293.04s ->   298.90s] one of TSMC's larger strengths. One, because it takes a long time to build a factory. But two,
+[  299.04s ->   304.20s] they also have something called pricing power. Because there's no viable alternative, TSMC can
+[  304.20s ->   311.66s] increase prices and the customer has no choice but to accept it. Apple just can't go over to Samsung
+[  311.66s ->   317.12s] or Intel because those companies don't have the ability to do so. Which means that TSMC actually
+[  317.12s ->   323.44s] can protect their margins even if costs rise. It's a really good thing. And another benefit of having
+[  323.44s ->   328.18s] such a large technological edge over their competitors is that their customers, in order to
+[  328.18s ->   334.70s] compete with each other, take for example, Google Pixel versus Apple iPhone or Microsoft Surface versus
+[  334.70s ->   341.78s] Apple MacBook, they are forced to get the best products possible. And because TSMC is the only one that
+[  341.78s ->   348.40s] can make the best chips, they by nature have to go to them. So you can see that TSMC's market share
+[  348.40s ->   355.56s] continues to grow and Samsung, their closest competitor, continues to lose customers to TSMC.
+[  355.86s ->   361.20s] This is why TSMC's market share continues to grow. TSMC's dominance at the leading edge,
+[  361.36s ->   368.12s] the most advanced chips, is one of the main reasons why I foresee TSMC's dominance to continue to grow
+[  368.12s ->   372.14s] even in the future. So with those competitive advantages, you can see kind of a flywheel
+[  372.14s ->   377.98s] forming. The technological edge leads to more and more customers, which leads them to have more
+[  377.98s ->   384.74s] revenue, which in terms allows them to invest more money in R&D to increase that edge in technology
+[  384.74s ->   391.20s] to further widen the gap with their competitors, as well as reinvest into introducing more capacity,
+[  391.30s ->   396.40s] such as building out additional factories. And you can see this playing out today. TSMC has created
+[  396.40s ->   402.66s] new fabs in Arizona. And because of how well it's done, they're further expanding and investing more
+[  402.66s ->   410.10s] money to create more fabs in Arizona. This flywheel is one of the main reasons as to why TSMC's business
+[  410.10s ->   418.08s] is so strong, so robust, even projecting out a couple of years in the future. So if you guys like thorough
+[  418.08s ->   422.84s] and precise content like this, make sure you guys like and subscribe to the channel. They'll really help
+[  422.84s ->   427.46s] you out. All right. So now let's sum it all up and take a look at how these competitive advantages
+[  427.46s ->   433.34s] actually show up from a financial standpoint. So first, we want to start off with total revenue.
+[  433.94s ->   443.14s] And you can see right now, TSM is at $112 billion a year. That is up from $40 billion just five years
+[  443.14s ->   452.56s] ago, right? 162.65% increase over the last five years, which means that on average, right, the
+[  452.56s ->   460.48s] trending 12 months is up 39.5%. On average, three years, 21.87% every single year over the last five years,
+[  460.58s ->   466.64s] 22.5% over the last five years. And the best part about this, you can see this growth is accelerating.
+[  466.64s ->   475.62s] That's compared to the 14.7 and 15.7 over the 10 and 15 year average. This you can see is this growing
+[  475.62s ->   482.95s] demand for chips, as well as their ability to increase prices. Now, let's take a look at their
+[  482.95s ->   490.47s] ability to turn this revenue into profit. So if we're going to look at net profit margin, the net profit
+[  490.47s ->   497.29s] margin hovers between 38% to around 44%, right, which is amazing. Right now, it's sitting at 42.5%.
+[  497.29s ->   506.78s] 99%, which means that for every $100 they make, they pocket $42.92. Again, same story. Last 12 months,
+[  506.88s ->   513.66s] 40%. On average, 41.2% over the last three years. Over the last five years, 40%. In 10 years, 37 and 36.
+[  513.76s ->   518.82s] You can see their margins actually have increased over the last five years, which means that they're able
+[  518.82s ->   524.20s] to increase price and decrease cost, right? It is a great sign for a great business means that they have
+[  524.20s ->   529.34s] pricing power because they're able to control their margins. And you can see this kind of summarized
+[  529.34s ->   536.82s] right here by looking at their total net income over the last 12 months. Net income over the last
+[  536.82s ->   543.36s] five years has increased by 197%, which is more than the revenue, which again, it makes sense because
+[  543.36s ->   553.00s] the margins have increased. And you can see last 12 months, 58% increase in margins, 24%, 26% higher
+[  553.00s ->   558.09s] than the previous of 10 years and 15 years. You can see the summarized right here in their revenue
+[  558.09s ->   564.93s] metrics or the total business metrics. Revenue is 21%. Net income is 24%. Free cash flow is 23%.
+[  564.93s ->   569.41s] If you look at the five-year metrics, 22, 26, and 52%. Amazing.
+[  569.41s ->   574.63s] And compared to some of their competitors, you can see the only one that they're really losing to
+[  574.63s ->   580.31s] is NVIDIA. And NVIDIA is really an outlier, as you'll see later on in a couple minutes.
+[  580.71s ->   587.59s] They have $48 billion in net income, and yet they're basically growing at the same speed
+[  587.59s ->   594.39s] as Broadcom. AMD is negative. They're growing around the same rate as Taiwan over the last five years.
+[  594.55s ->   599.07s] Micron is around the same as TSM, but over the last three years, they're negative.
+[  599.41s ->   604.09s] So you can see how well TSM is doing from a business perspective. Last thing I want to do
+[  604.09s ->   608.81s] is to expand this comparison out even a little bit compared to some of the larger companies that
+[  608.81s ->   614.17s] aren't semiconductors. There's a bubble chart of all of the largest companies. Google, Microsoft,
+[  614.35s ->   620.59s] Apple, NVIDIA. Y-axis is net revenue growth, and the X-axis is net income growth. So you want to be as
+[  620.59s ->   625.83s] high up on both as possible. So you can see with NVIDIA, they are growing insane over the last three
+[  625.83s ->   631.21s] years. They're really the outlier, right? You can see Amazon and Bursar Hathaway has insane net income
+[  631.21s ->   638.17s] growth, but relatively slow net revenue growth. If you were to remove NVIDIA from the comparison and
+[  638.17s ->   644.47s] just look at the rest of the company, you can see that TSM is at the high end of both. They're only
+[  644.47s ->   648.99s] losing to four companies in terms of net income growth, and they're only losing to three companies
+[  648.99s ->   654.63s] in terms of net revenue growth. They are so far ahead of all the rest of the company
+[  654.63s ->   660.71s] that you see, including Meta, Wells Fargo, Microsoft, Alphabet, UNH, Johnson & Johnson,
+[  660.87s ->   667.37s] Walmart. Most of these companies are extremely highly valued, right? They have very high valuation
+[  667.37s ->   675.91s] metrics. TSMC's PE has hovered around 30 to around even as low as 11 back in 2023.
+[  675.91s ->   681.19s] And the reason for that is because TSMC is historically a manufacturing company and
+[  681.19s ->   686.61s] manufacturing companies have very low margins. On average, it's been around 20 PE for the last 10
+[  686.61s ->   692.31s] years. Now it's at 22, so slightly higher than average. But if you were to look at this comparison
+[  692.31s ->   699.97s] here, right? TSM is at 22.47. NVIDIA is at 52.3. Broadcom is at 86.4. And you can see earlier that
+[  699.97s ->   705.59s] they are around a quarter of the size in terms of revenue. AMD's at 92, Microsoft's at 29.8.
+[  706.37s ->   711.19s] And if you were to expand this out to other companies, you can see, for example, Microsoft's
+[  711.19s ->   722.67s] PE is at 37.72. Google's PE is at 27.3. Meta's PE is at 27.7. Apple's PE is at 38.8.
+[  722.67s ->   728.91s] TSMC's PE ratio is less than all of them combined. And they have higher margins than most, and they
+[  728.91s ->   735.31s] have better revenue and income growth than most, which means that you're paying less for a better
+[  735.31s ->   742.25s] business. And this is why in our public account, right? I have close to $56,000 worth of TSMC in
+[  742.25s ->   746.97s] this account, right? That's more than half of my total account value. So like I said previously,
+[  746.97s ->   752.51s] I had 200 shares of TSMC assigned when I was selling puts on it back in March. And if you
+[  752.51s ->   755.17s] guys want to know how to sell puts the way that I do, make sure you guys check out that
+[  755.17s ->   757.91s] video that I'll link in the upper right-hand corner right here. But these are the stocks
+[  757.91s ->   762.25s] that I got assigned. And you can see that I didn't even sell it, right? I held it because
+[  762.25s ->   767.03s] this is a company that I want to get assigned on. It's a company that I have a very high confidence
+[  767.03s ->   773.85s] in, a very bullish sentiment. And as of today, these stocks are up 48.8%. And if I didn't have
+[  773.85s ->   779.19s] more than 55% of our account in this one stock, I would actually be selling puts continuously right
+[  779.19s ->   784.41s] at the money, trying to get assigned as much as possible, aiming for that 1.5 to 2.5% a month.
+[  784.73s ->   788.73s] But because we have so much, I don't want to continue to have that much of an allocation. So
+[  788.73s ->   792.99s] I have it and I just held it. And this is where I kind of want to touch on selling calls. Now,
+[  793.03s ->   795.55s] if you guys want to learn how to sell calls the way I do, make sure you guys let me know down in
+[  795.55s ->   800.57s] the comments section below, and I'll consider making maybe a smaller masterclass. But one of the
+[  800.57s ->   805.23s] drawbacks about selling calls is that you're limiting your upside. So as you can see right
+[  805.23s ->   813.44s] here, I had a 50% upside swing on TSMC. But if I were to sell a call at maybe 1%, 2% a month,
+[  813.70s ->   822.94s] I'm risking 50% to make 2%. That's not a very good risk to reward ratio. And this is why I tend to not
+[  822.94s ->   829.00s] sell calls unless I'm trying to exit a position. And as of right now, TSMC is a stock that hopefully
+[  829.00s ->   834.16s] you guys can see that I'm planning on holding for the foreseeable future. The only time I would
+[  834.16s ->   839.62s] probably consider selling TSMC or selling a call on TSMC is when the thesis changes. Maybe they lose
+[  839.62s ->   844.12s] one of their competitive advantages. Maybe the demand for chips continues to sink because of,
+[  844.24s ->   848.22s] for example, quantum computing. Or maybe one of the headwinds is just geopolitics. Maybe the
+[  848.22s ->   853.08s] friction with China gets too intense. That's the only time I'll consider maybe exiting my position,
+[  853.26s ->   858.12s] which is the only time that I'll consider selling a call at TSMC, which I would do then
+[  858.12s ->   863.24s] right at the money. Again, I want to reiterate, I don't like selling calls just to get 1% or 2%
+[  863.24s ->   866.98s] of income because you're capping your upside. So hopefully you guys enjoyed that video.
+[  867.22s ->   871.06s] If you guys want to continue to learn more about stocks, finding great businesses,
+[  871.20s ->   876.28s] as well as following along with this public portfolio, make sure you guys like and subscribe
+[  876.28s ->   880.46s] to the channel. And like always, if you guys have any questions or comments, let me know down in the
+[  880.46s ->   886.26s] comments section below. So if you guys want to watch another episode on how I analyze IPO stock,
+[  886.26s ->   889.08s] make sure you guys check out this video that I'll link in the end screen right here.
+[  889.74s ->   895.34s] And I'll also link that put selling masterclass in here as well. And like always, stay safe.
+[  895.58s ->   896.66s] See you guys next time. Peace.

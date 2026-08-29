@@ -1,0 +1,170 @@
+[    0.00s ->     2.48s] And so, yeah, I started with a small account.
+[    3.12s ->     3.64s] Five grand.
+[    3.82s ->     4.46s] Five grand, yeah.
+[    4.76s ->     8.42s] And, you know, I just started selling a couple naked strangles and a $5,000 account.
+[    8.70s ->    10.26s] And I was making, I'm like, this is easy.
+[   10.80s ->    12.02s] I can't believe I found this.
+[   12.20s ->    15.92s] Like, you know, it was more challenging to be able to be successful implementing these
+[   15.92s ->    18.14s] strategies with a smaller account, like a Tasty Bite account.
+[   18.38s ->    22.68s] And, you know, I had $90,000 and I went in with the account and I said, I'm going to
+[   22.68s ->    23.12s] do this.
+[   23.50s ->    28.48s] I'm about to break down the interview that you just saw and explain exactly the strategy
+[   28.48s ->    35.50s] that he used to turn $5,000 into $130,000 and if it was a fluke or if it can be repeated.
+[   35.94s ->    39.64s] Also, if you stay tuned, after I break down the strategy and show you step-by-step how
+[   39.64s ->    44.36s] to use it, I'm also going to share where this strategy can fail and how you can prevent that
+[   44.36s ->    47.00s] from happening so that you don't have a failure with this strategy.
+[   47.32s ->    48.50s] All right, let's dive into it.
+[   48.78s ->    52.58s] This interview was from a Tasty Live Rising Star interview, which is where they take traders
+[   52.58s ->    57.12s] who have a promising strategy and performance and they showcase what they've done.
+[   57.12s ->    61.86s] Now, again, in most of these videos, Tom, the interviewer, talks way too much and we
+[   61.86s ->    64.36s] don't get as much of the strategy as we would like.
+[   64.64s ->    69.52s] So I'm taking my over five years of options trading experience and taking what these people
+[   69.52s ->    73.42s] said and breaking it down to a step-by-step strategy so you can see what they did.
+[   73.52s ->    74.98s] So let's dive into this one.
+[   75.18s ->    78.08s] Okay, this dude's main strategy is called short strangles.
+[   78.16s ->    82.40s] If you have no idea what a short strangle is, I will explain it to you in plain and simple
+[   82.40s ->    82.78s] English.
+[   82.78s ->    87.94s] A short strangle is simply dicting or betting that a stock will stay between two levels.
+[   88.34s ->    90.52s] So let's say we have a stock that's trading like this.
+[   90.78s ->    93.78s] You're betting the stock will stay below this level and above this level.
+[   93.94s ->    95.32s] If you're right, you make money.
+[   95.42s ->    96.62s] If not, you lose money.
+[   96.68s ->    98.36s] That's how simple the strategy is.
+[   98.40s ->   101.38s] So that's all he's doing and he's mainly doing it on what?
+[  101.44s ->   102.68s] You need to know what he's trading on.
+[  102.98s ->   105.24s] He's trading on futures options.
+[  105.60s ->   108.72s] So futures options mainly would be something like ES.
+[  108.72s ->   109.56s] Why ES?
+[  109.88s ->   115.08s] Because it's super popular, it's liquid, it's tradable, and it's the S&P 500 futures.
+[  115.40s ->   120.78s] So this is what he trades around 60 to 70% of his trades come from, the ES futures.
+[  121.04s ->   128.02s] He also trades the rest in random currencies and he also trades commodities and stuff like
+[  128.02s ->   128.26s] that.
+[  128.38s ->   132.96s] So that's what he's trading, the strategy he's trading, and those are what he's trading it
+[  132.96s ->   133.26s] on.
+[  133.54s ->   136.04s] Now let's talk about the specific rules that he...
+[  136.04s ->   139.90s] All right, when you put on a short strangle, which is an option strategy, what you do is
+[  139.90s ->   141.20s] you need to select a few things.
+[  141.48s ->   146.14s] You need to select levels, aka what level is the stock going to stay below, what levels
+[  146.14s ->   150.96s] is the stock going to stay above, and what is my expiration date?
+[  151.04s ->   153.96s] How long in the future do I think this trade should be structured?
+[  154.30s ->   155.64s] And let's walk through those levels.
+[  155.64s ->   159.90s] Number one, days until expiration, also shortened as DTE.
+[  159.90s ->   166.08s] And our days until expiration, what happens is he goes out and does a typical tasty mechanic
+[  166.08s ->   168.60s] style, which is 45 days out.
+[  168.92s ->   174.88s] So again, with 45 days out, that means he takes the current date, he adds 45 days, and
+[  174.88s ->   179.64s] whatever the nearest expiration date is, that's the one that he goes into for that options chain
+[  179.64s ->   180.84s] and looks in more detail.
+[  181.30s ->   185.08s] This specific trader likes to have a higher credit collected.
+[  185.34s ->   188.12s] That means when he puts this trade on, he likes to make a lot of money.
+[  188.12s ->   193.20s] And what I mean by that is he targets a 20 to 30 delta.
+[  193.54s ->   194.48s] What does this tell you?
+[  194.66s ->   197.24s] This tells you how far out this trader is going.
+[  197.62s ->   201.42s] So for instance, when the stock's trading at a certain level, let's say in this example,
+[  201.50s ->   207.14s] the stock's trading here, a 30 delta would be close to the stock price, a 20 delta would
+[  207.14s ->   209.44s] be down here, and a 10 delta would be down here.
+[  209.68s ->   214.72s] So the further away from the stock you are, the lower your delta is because it's less likely
+[  214.72s ->   216.08s] the stock will reach that level.
+[  216.08s ->   220.90s] However, the closer you are to the stock price, the more credit you can collect.
+[  221.04s ->   221.16s] Why?
+[  221.30s ->   222.38s] Because options are insurance.
+[  222.72s ->   228.42s] The higher likelihood that the stock will hit that level, the more money it will pay out.
+[  228.74s ->   234.54s] So he likes to stay around this level here where he's close to the stock price, but not
+[  234.54s ->   237.56s] too close, but also not super far out where he can be super safe.
+[  237.78s ->   240.78s] He's around a 20 to 30 delta in a normal environment.
+[  240.78s ->   244.86s] However, in a lower volatility environment, what does he do?
+[  245.12s ->   247.62s] He trades 30 to 40 delta in low vol.
+[  248.10s ->   249.98s] So that is actually really, really close.
+[  250.06s ->   252.72s] A 40 delta is like right up here near the stock price.
+[  253.06s ->   256.12s] So why is he doing this in a low vol environment?
+[  256.52s ->   260.56s] For the sake of this video, we don't know what he personally defines as a low volatility
+[  260.56s ->   261.16s] market.
+[  261.16s ->   265.54s] What we do know in general, if the VIX is below 20, that's a low volatile market.
+[  265.82s ->   269.94s] Now, again, it can vary for each stock, but let's just say when VIX is below 20, he likes
+[  269.94s ->   271.44s] to use a 30 to 40 delta.
+[  271.80s ->   275.04s] And so that means he's really coming close to that stock price.
+[  275.10s ->   280.72s] Now, he does that because in low volatility, it's hard to collect as much money.
+[  280.98s ->   284.18s] However, like we mentioned before, the closer you go to the stock price, the more money you
+[  284.18s ->   284.62s] collect.
+[  284.62s ->   286.26s] So he likes to collect more.
+[  286.42s ->   291.36s] So when the volatility is lower, a 20 to 30 delta would be giving him less money.
+[  291.46s ->   296.04s] So he moves it up closer to the strike price or to the stock price to collect more money.
+[  296.58s ->   298.22s] Okay, so now we know how he enters trades.
+[  298.32s ->   299.12s] How does he exit?
+[  299.26s ->   300.14s] What's his stop loss rules?
+[  300.24s ->   303.98s] What is he doing here to turn 5,000 into $130,000?
+[  304.98s ->   307.36s] Well, his stop loss rule is very simple.
+[  307.44s ->   310.02s] His stop loss does not exist.
+[  310.26s ->   312.14s] Okay, he does not use stop loss.
+[  312.14s ->   315.68s] Instead, he likes to manage his positions and look at what's going on, what's happening
+[  315.68s ->   317.00s] in the market.
+[  317.34s ->   318.46s] How do I want to adjust?
+[  318.76s ->   324.46s] This is really weird and can have a lot of downside because short strangles do not have
+[  324.46s ->   325.34s] defined risk.
+[  325.58s ->   328.58s] They have unlimited risk if you don't trade it correctly.
+[  329.04s ->   334.00s] So without a stop loss, he has the chance to lose out on a lot of money.
+[  334.32s ->   338.44s] But I must say his case is special as he did mention in the interview that guess what?
+[  338.80s ->   341.14s] He spends all his time watching the market.
+[  341.14s ->   345.92s] So if you're someone who can't do that, the strategy may not be for you or you may want
+[  345.92s ->   347.36s] to put in some stop loss rules.
+[  347.74s ->   351.74s] But again, because he watches the market 24-7, he doesn't have to put in hard stops.
+[  351.82s ->   352.52s] That's what he does.
+[  352.86s ->   354.80s] Now let's talk about delta exposure.
+[  354.96s ->   357.12s] So that's a delta sign, hopefully, and exposure.
+[  357.60s ->   358.84s] So we're talking about delta exposure.
+[  359.00s ->   361.44s] What he does is he likes to stay delta neutral.
+[  361.90s ->   367.00s] If not, he actually stays a little bit of a short delta because we all know that's synthetically
+[  367.00s ->   371.90s] long, so that means in general he's going long the market and the market's more bullish than
+[  371.90s ->   372.20s] not.
+[  372.50s ->   374.54s] So of course you're going to make money with this approach.
+[  374.70s ->   376.68s] But it also depends on when you're trading this.
+[  376.98s ->   379.22s] So now let's get into the specifics here.
+[  379.60s ->   381.96s] Is this actually possible for you today?
+[  382.06s ->   383.34s] Can you use this strategy?
+[  383.80s ->   385.34s] Let me answer this in two ways.
+[  385.34s ->   391.76s] Number one, is it possible to turn $5,000 into $130,000 using this strategy?
+[  392.24s ->   395.26s] Yes, but it will take a ton of years.
+[  395.38s ->   396.98s] It will take a lot of time.
+[  397.32s ->   403.24s] The specifics here is what he did is he started with $5,000, traded a short strangle, and blew
+[  403.24s ->   403.88s] up his account.
+[  404.16s ->   405.10s] Again, this is like I was mentioning.
+[  405.22s ->   407.82s] If you don't have a stop loss, you're going to blow up your account.
+[  408.12s ->   409.58s] So what he did is he went to work.
+[  409.58s ->   415.22s] He saved up $90,000, then used the $90,000 to turn it into $130,000.
+[  415.38s ->   417.46s] So he really only made a 50% return.
+[  417.58s ->   418.32s] That's all he did.
+[  418.40s ->   421.84s] And he lost $5,000 when he blew up his account originally.
+[  422.52s ->   426.54s] Was I giving you clickbait saying $5,000 to $130,000?
+[  426.68s ->   427.52s] Honestly, maybe.
+[  427.66s ->   427.96s] Probably.
+[  428.12s ->   428.56s] Yes, I did.
+[  428.82s ->   432.88s] But I'm just using it because Tasty Live used it, and that's what their interview said.
+[  432.96s ->   435.20s] And so I want to just use it from the interview.
+[  435.20s ->   441.64s] But anyways, so he did not turn $5,000 to $130,000 using the strategy.
+[  442.06s ->   444.84s] However, this is a profitable strategy.
+[  444.94s ->   445.54s] You can use it.
+[  445.58s ->   453.16s] I would say add some stop loss rules, like a 200% or 100% stop loss rule, and it'll do
+[  453.16s ->   453.96s] a lot better.
+[  454.38s ->   461.70s] However, you have to understand that he's really close with his deltas, and he doesn't have
+[  461.70s ->   462.00s] a stop.
+[  462.20s ->   463.78s] So that's where this can go wrong.
+[  463.78s ->   468.52s] If you're trading a highly volatile stock with a lot of news, it can easily break this
+[  468.52s ->   470.02s] way or easily break down.
+[  470.66s ->   474.76s] This is resulting in max loss types of scenarios.
+[  475.24s ->   477.54s] We do not want those max loss scenarios.
+[  478.06s ->   480.48s] So how do you prevent this from happening?
+[  480.62s ->   481.80s] How do you trade this better?
+[  482.12s ->   483.64s] Well, number one, have a stop loss.
+[  483.70s ->   485.22s] 100% to 200% should work.
+[  485.58s ->   488.16s] And also, stick to a 20% to a 30% delta.
+[  488.16s ->   493.74s] Or if the market is in a low volatile period, don't trade.
+[  494.12s ->   495.14s] Or guess what?
+[  495.46s ->   497.52s] Just stay at the same level.
+[  497.78s ->   502.18s] Because the more you move up, the higher of a likelihood that a one-time event will affect
+[  502.18s ->   503.38s] you and it'll turn into a loss.
+[  503.74s ->   508.60s] Anyways, guys, this is my review of the interview to give you step-by-step what the strategy
+[  508.60s ->   510.50s] is instead of hearing Tom talk forever.
+[  510.78s ->   512.42s] So I hope this was more beneficial to you.
+[  512.52s ->   515.76s] If you enjoyed it, let me know in the comments and I'll do more videos just like that.
+[  515.88s ->   518.08s] Because I know when I watch those videos, they're encouraging.
+[  518.48s ->   520.70s] But Tom talks forever and I just want to hear the guy talk.
+[  520.96s ->   522.12s] Anyways, guys, see you in the next video.

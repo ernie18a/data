@@ -1,0 +1,418 @@
+[    0.00s ->     4.82s] Most people in quantitative trading spend months optimizing things that barely matter.
+[    5.34s ->    11.80s] Myself included, I did many things that actually never gave me any edge or any result,
+[   12.06s ->    16.42s] but it felt really productive, like optimizing things, etc, etc.
+[   16.52s ->    19.98s] But in Trinity, a small number of actions can create most of the result.
+[   20.48s ->    23.96s] The best quant, in my opinion, understands the leverage point.
+[   24.54s ->    27.92s] And today, with AI, leverage has become even more powerful.
+[   27.92s ->    31.76s] You can have a leverage multiplier with AI.
+[   32.18s ->    36.36s] I'm going to explain some concepts that I think are very important,
+[   36.60s ->    39.98s] not only for trading-related things.
+[   40.10s ->    42.14s] You can apply this to almost everything.
+[   42.42s ->    46.38s] But today, we're going to see how I'm applying those concepts,
+[   46.74s ->    50.64s] because the main concepts are leverage point and operator principle.
+[   50.98s ->    55.10s] So today, we're going to see how this applies to quant trading.
+[   55.10s ->    58.58s] For example, why I'm saying leverage point are important.
+[   58.76s ->    61.60s] This is like a random page on internet I found.
+[   62.06s ->    65.36s] So let's start with the presentation of this video,
+[   65.74s ->    68.22s] so you can understand the main concept here.
+[   68.62s ->    71.56s] So the 80-20 rule of quant trading,
+[   71.82s ->    76.62s] the main goal is to find the leverage point that actually moved the results,
+[   76.80s ->    79.28s] and of course, using AI to amplify them.
+[   79.28s ->    82.94s] So the most effort is motion and not progress.
+[   83.32s ->    87.84s] A lot of work feel productive while it's not producing anything.
+[   88.20s ->    91.52s] It's no real output, like a changing strategy every week,
+[   91.86s ->    95.14s] overfitting something that actually doesn't have any edge,
+[   95.42s ->    98.00s] or watching infinite tutorials or YouTube video,
+[   98.20s ->   102.44s] or optimizing something like a code that actually doesn't have any edge.
+[  102.44s ->   106.86s] You think you're investing well your time, but actually you're not.
+[  107.12s ->   110.08s] Effort and results are rarely linear.
+[  110.46s ->   112.84s] You have to understand that, of course,
+[  112.92s ->   116.30s] you could spend like 100 hours trying to build some type of alpha.
+[  116.82s ->   121.00s] In the end, if you find something that has the same correlation
+[  121.00s ->   124.24s] with the other strategies, it doesn't make any sense,
+[  124.32s ->   125.28s] because you lost time.
+[  125.52s ->   130.28s] That's why I'm showing you the Pareto principle and the leverage point.
+[  130.28s ->   134.20s] With the Pareto principle, you understand the math behind,
+[  134.54s ->   136.38s] and you can find this on Wikipedia.
+[  136.72s ->   141.36s] This is a math concept that you can apply to complex systems,
+[  141.70s ->   144.44s] like economy or other things like this.
+[  144.66s ->   147.68s] The example here, it was like the richest people
+[  147.68s ->   151.46s] are almost the 20% of the people in the world
+[  151.46s ->   156.06s] that own 80% of the wealth in the entire world.
+[  156.32s ->   158.92s] Okay, so that's like an average.
+[  158.92s ->   164.00s] Okay, it could be 5% and 95% or maybe 10% and 90%.
+[  164.00s ->   167.94s] But I think if you apply this concept to trading
+[  167.94s ->   170.10s] and to your own progress,
+[  170.30s ->   174.44s] you can see an insane improvement of your progress.
+[  174.72s ->   178.78s] Okay, so the basic concept here is a small share of inputs.
+[  179.18s ->   183.48s] A small share of input tends to drive the majority of outcomes.
+[  183.48s ->   188.00s] So the goal here is to find those 20%.
+[  188.00s ->   191.38s] The main goal of this video is to explain to you
+[  191.38s ->   195.40s] that you should understand how to find this 20%.
+[  195.40s ->   202.14s] So what is the 20% of input you should work on to receive the 80% results?
+[  202.30s ->   206.86s] In this case, we're going to analyze the few inputs that carry the system.
+[  206.86s ->   211.74s] Okay, so in this case, one solid research framework or one clean data set,
+[  211.94s ->   214.04s] risk management and consistent execution.
+[  214.66s ->   217.86s] But the main goal is to find the leverage point.
+[  218.08s ->   223.24s] This is connected together because like the 20% of the Pareto principle,
+[  223.24s ->   225.88s] it's actually a leverage point.
+[  226.16s ->   229.78s] Okay, so each input in the 20% means
+[  229.78s ->   237.15s] a disproportionately large outcome compared to the effort.
+[  237.39s ->   243.95s] Here it says, a small improvement can create a greater proportion outcome.
+[  244.31s ->   245.93s] If you have a proportion one-to-one,
+[  246.29s ->   248.71s] you invest one hour of your time
+[  248.71s ->   251.31s] and you get an hour back from something else.
+[  251.31s ->   255.67s] For example, you invest one hour and then you get a result
+[  255.67s ->   258.65s] that could have cost you 10 hours or even more.
+[  258.95s ->   262.36s] It's not just time, it's everything.
+[  262.74s ->   266.78s] So your goal should be find those leverage points first
+[  266.78s ->   268.92s] and then everything else is the details.
+[  269.28s ->   270.10s] That's like what I can say.
+[  270.42s ->   272.90s] Probably you heard this phrase before,
+[  273.08s ->   275.36s] but this is actually very powerful
+[  275.36s ->   278.70s] because when you understand this, everything else, it doesn't matter.
+[  278.70s ->   282.50s] So there is the Pareto principle works also on the other side.
+[  282.88s ->   285.72s] Like you could do 80% of the work
+[  285.72s ->   288.78s] and receive only 20% of the outcome.
+[  289.12s ->   291.82s] Okay, so you don't want to focus on those things.
+[  292.06s ->   294.36s] But let's get back to the leverage point
+[  294.36s ->   296.84s] and then the research process.
+[  297.34s ->   301.70s] So one of those leverage points in trading is actually research process.
+[  301.94s ->   305.08s] Okay, so that's why I'm saying all of this
+[  305.08s ->   307.40s] because if you watched my last video,
+[  307.80s ->   311.18s] you saw that I built an entire workflow,
+[  311.64s ->   313.92s] an institutional workflow to find alpha.
+[  314.26s ->   317.76s] Okay, because I was spending probably hundreds of hours
+[  317.76s ->   319.86s] just to build my own edge.
+[  320.00s ->   323.76s] That's something reasonable, but not reasonable with the AI.
+[  324.22s ->   328.88s] So now you have something that you can pay like 20 euro a month.
+[  328.98s ->   331.96s] That's nothing compared to the output you get back.
+[  331.96s ->   332.98s] So this is leverage.
+[  333.24s ->   336.84s] This is an insane leverage point using those AI agent.
+[  337.16s ->   339.76s] The research process replace random experimentation
+[  339.76s ->   344.02s] with structured hypothesis testing and fast iteration loops.
+[  344.38s ->   345.76s] Speed of learning is the edge.
+[  346.18s ->   348.66s] I can test like 20 different strategies,
+[  349.06s ->   351.60s] like actual difference, not just different parameters.
+[  352.08s ->   356.44s] I can test, for example, like RSI
+[  356.44s ->   358.62s] or maybe something mini reverse.
+[  359.24s ->   360.54s] And then at the same time,
+[  360.58s ->   363.04s] I can test like some trend following
+[  363.04s ->   365.34s] and see what did work for this asset.
+[  365.90s ->   367.18s] That's the main goal.
+[  367.40s ->   369.32s] Speed of learning is the edge.
+[  369.54s ->   371.52s] The goal is to find alpha quickly.
+[  371.76s ->   373.94s] The research process, that's a big leverage point.
+[  374.40s ->   375.38s] Of course, data quality.
+[  375.72s ->   378.54s] You cannot find something that has a low quality
+[  378.54s ->   384.99s] that is not comparable to your own broker liquidity.
+[  384.99s ->   386.33s] What I mean by this,
+[  386.69s ->   388.79s] you cannot test something on realtics data
+[  388.79s ->   391.05s] with up 40% of quality.
+[  391.39s ->   396.66s] So I'm sure that this is not going to perform as well
+[  396.66s ->   399.60s] in real market data, like live trading.
+[  399.96s ->   401.48s] Can't happen because of the quality.
+[  401.68s ->   402.30s] It was too low.
+[  402.72s ->   406.24s] You cannot trust something with this low quality.
+[  406.66s ->   407.10s] Risk management.
+[  407.24s ->   410.74s] Most profitable system fail on risk, not on a signal.
+[  410.74s ->   412.44s] Signal could be really good,
+[  412.44s ->   416.08s] but then the risk management is not good for the whole system.
+[  416.36s ->   418.40s] Maybe you have something with high correlation
+[  418.40s ->   421.04s] and even if the signal is good,
+[  421.24s ->   422.60s] but it doesn't mean,
+[  422.80s ->   425.72s] it doesn't have any sense to add up risk for no reason,
+[  425.90s ->   428.74s] just because you didn't know enough about risk management.
+[  429.32s ->   431.62s] And then consistency,
+[  431.86s ->   434.32s] like one decent strategy run consistently,
+[  434.70s ->   436.88s] outperform consistently switching system.
+[  436.88s ->   440.07s] And also the compounding,
+[  440.13s ->   443.41s] you have to understand that compounding punishes results.
+[  443.77s ->   443.89s] Okay.
+[  444.01s ->   444.73s] But this is different.
+[  445.03s ->   446.49s] This is about a portfolio
+[  446.49s ->   450.17s] that increase also the risk year by year.
+[  450.33s ->   451.35s] That's a little different.
+[  451.45s ->   452.71s] It's like the visibility.
+[  452.97s ->   453.29s] Of course,
+[  453.35s ->   454.53s] this is also a leverage point.
+[  454.63s ->   455.17s] In my case,
+[  455.49s ->   457.37s] my YouTube channel is a leverage point
+[  457.37s ->   461.95s] because I spent probably less than 25 hours in total.
+[  461.95s ->   464.13s] And I already found people
+[  464.13s ->   466.41s] that I could easily work with,
+[  466.47s ->   467.51s] with very high skills
+[  467.51s ->   469.07s] and also other people
+[  469.07s ->   471.29s] that could help me achieve
+[  471.29s ->   473.65s] like bigger amount of capital under management
+[  473.65s ->   475.39s] and achieve even more.
+[  475.59s ->   475.93s] Of course,
+[  476.31s ->   477.89s] that's like what I was saying before.
+[  478.19s ->   479.61s] AI is a leverage multiplier.
+[  479.93s ->   482.13s] So the goal guys is to understand
+[  482.13s ->   483.89s] that AI is like,
+[  484.29s ->   485.13s] you think about AI,
+[  485.25s ->   485.87s] like something,
+[  486.13s ->   486.25s] some,
+[  486.33s ->   486.97s] maybe someone
+[  486.97s ->   489.95s] that has like an insane amount of skills.
+[  489.95s ->   492.07s] But like you have to understand
+[  492.07s ->   495.51s] that you should know the process.
+[  495.95s ->   497.47s] You should know what to do
+[  497.47s ->   500.59s] and then leverage what you're doing with AI.
+[  501.21s ->   502.51s] So faster coding,
+[  502.91s ->   503.67s] paper summaries,
+[  503.89s ->   504.65s] research ideas,
+[  505.23s ->   506.95s] like faster hypothesis tests
+[  506.95s ->   508.75s] and quicker infrastructure.
+[  509.19s ->   509.31s] Okay.
+[  509.61s ->   511.03s] That's the main thing.
+[  511.33s ->   512.59s] I think for you right now,
+[  512.95s ->   514.41s] one of the biggest leverage point
+[  514.41s ->   517.19s] that of course it helped me a lot
+[  517.19s ->   518.89s] this time in this exact moment,
+[  518.89s ->   520.39s] it was to explain
+[  520.39s ->   522.17s] to one of the AI,
+[  522.27s ->   522.89s] like Claude,
+[  523.59s ->   524.47s] my situation,
+[  524.93s ->   526.79s] the amount of money I'm managing,
+[  527.13s ->   528.25s] all my strategies,
+[  528.45s ->   529.15s] like my portfolio.
+[  529.71s ->   530.33s] And then of course,
+[  530.39s ->   532.05s] never show personal data,
+[  532.41s ->   533.49s] just be generic.
+[  533.97s ->   535.85s] And then has the AI
+[  535.85s ->   537.97s] acting as a portfolio manager,
+[  538.15s ->   538.79s] headphone manager,
+[  539.25s ->   540.27s] et cetera, et cetera, et cetera.
+[  540.65s ->   542.69s] So the more context you give,
+[  543.07s ->   545.03s] the better output you're going to receive.
+[  545.35s ->   547.23s] That's the basic concept of prompting.
+[  547.23s ->   549.21s] And so like the AI,
+[  549.67s ->   550.39s] like in this case,
+[  550.51s ->   552.49s] Opus came out with like a list,
+[  552.89s ->   556.01s] a roadmap of leverage point for me
+[  556.01s ->   558.25s] in my exact moment.
+[  558.39s ->   560.41s] Most of those things I already knew.
+[  560.81s ->   564.41s] So I knew like probably 60% of the things
+[  564.41s ->   565.95s] the AI told me,
+[  566.15s ->   568.49s] but of course you have to really understand
+[  568.49s ->   569.25s] those things.
+[  569.35s ->   569.57s] Okay.
+[  569.67s ->   571.33s] That I was losing time on something
+[  571.33s ->   572.51s] like that.
+[  572.57s ->   575.41s] It didn't give me any like better output.
+[  575.41s ->   578.49s] And so I came out with this tool here.
+[  578.83s ->   581.73s] Another big thing is to be really organized.
+[  581.97s ->   582.91s] In this case, guys,
+[  583.01s ->   585.43s] this is my strategies portfolio.
+[  585.67s ->   588.15s] It's the portfolio of all of my algorithms.
+[  588.51s ->   589.69s] I'm not trading all of them.
+[  589.81s ->   591.45s] I'm trading the live portfolio.
+[  591.69s ->   593.47s] It has like 10 of those strategy,
+[  593.69s ->   595.63s] but those are all of these strategies
+[  595.63s ->   597.45s] I found over the years.
+[  597.63s ->   598.31s] So for example,
+[  598.53s ->   600.71s] this is a QQQ trading strategies
+[  600.71s ->   602.53s] that's tested from 2020
+[  602.53s ->   604.97s] with one minute open high low close.
+[  605.13s ->   606.51s] It doesn't make sense here,
+[  606.83s ->   609.05s] but I'm going to explain you later
+[  609.05s ->   611.21s] how this tool work.
+[  611.51s ->   612.67s] I have all of the strategies
+[  612.67s ->   613.93s] and the metrics.
+[  614.45s ->   615.09s] As you can see,
+[  615.77s ->   617.51s] this is the asset.
+[  617.75s ->   619.03s] That's the name of the algorithm.
+[  619.37s ->   622.35s] It's tested from 2018 till almost now.
+[  622.83s ->   623.93s] And all of the parameters.
+[  624.49s ->   625.37s] In this case is
+[  625.37s ->   627.79s] one minute open high low close,
+[  628.07s ->   629.21s] 98% quality,
+[  629.21s ->   630.79s] but I'm going to show you
+[  630.79s ->   631.57s] a very basic.
+[  631.89s ->   632.01s] Okay.
+[  632.29s ->   632.47s] Yeah.
+[  632.83s ->   633.39s] In this case,
+[  633.75s ->   635.33s] I can see that this is,
+[  635.53s ->   636.09s] in this case,
+[  636.31s ->   639.43s] you can see 94% ticks real.
+[  639.67s ->   640.63s] So real ticks data.
+[  641.03s ->   641.53s] So yeah,
+[  641.69s ->   642.53s] that's pretty much it.
+[  642.91s ->   645.09s] And when you are disorganized,
+[  645.23s ->   645.49s] okay,
+[  646.09s ->   647.67s] for the AI to help you
+[  647.67s ->   649.47s] is going to be way more easier
+[  649.47s ->   651.15s] compared to someone else
+[  651.15s ->   652.63s] that doesn't have this structure.
+[  652.87s ->   653.03s] Okay.
+[  653.29s ->   654.05s] So yeah.
+[  654.33s ->   655.53s] And what I did here,
+[  655.83s ->   657.09s] it was the analysis.
+[  657.09s ->   657.57s] Okay.
+[  657.79s ->   661.21s] So it took all of my trading algorithm
+[  661.21s ->   662.95s] that I'm trading live right now
+[  662.95s ->   665.43s] and then compare them all together.
+[  665.75s ->   666.27s] Well,
+[  666.33s ->   667.93s] the output of those.
+[  668.25s ->   668.55s] Okay.
+[  668.63s ->   670.75s] So the trades report basically,
+[  670.75s ->   674.19s] and then it built different type of analysis.
+[  674.19s ->   676.83s] Like this is like the correlation hit map.
+[  676.97s ->   677.27s] Okay.
+[  677.67s ->   679.31s] So you see here an insane amount of strategies
+[  679.31s ->   680.93s] because it's dividing all of them
+[  680.93s ->   682.47s] by long and short trades.
+[  682.63s ->   683.77s] Then this is the correlation.
+[  683.95s ->   685.69s] It's very dark in the middle
+[  685.69s ->   687.97s] because it is matching with the same strategy.
+[  688.25s ->   689.49s] There is a different engine.
+[  689.73s ->   691.49s] I'm not going to show you all of the engine,
+[  691.65s ->   692.35s] but there is an engine
+[  692.35s ->   695.43s] that is taking the HTML link
+[  695.43s ->   697.63s] and then copy that
+[  697.63s ->   699.27s] and build this folder here
+[  699.27s ->   700.59s] for each strategy.
+[  701.09s ->   703.71s] And then the analysis is building this
+[  703.71s ->   704.85s] and the equity line,
+[  705.27s ->   707.65s] the baseline versus the new one, et cetera.
+[  707.77s ->   709.99s] And then this is the selection log.
+[  710.25s ->   711.63s] That's the one I want to show you
+[  711.63s ->   714.45s] because the main goal of this leverage point
+[  714.45s ->   715.45s] was to find,
+[  715.91s ->   717.67s] and now I'll explain to you
+[  717.67s ->   718.93s] why this is a leverage point.
+[  719.15s ->   722.31s] Because I was actually searching for new alpha.
+[  722.65s ->   722.93s] Okay.
+[  723.07s ->   726.11s] When I had already many different strategies,
+[  726.31s ->   727.13s] like in this case,
+[  727.19s ->   728.55s] you see six strategies.
+[  728.75s ->   729.09s] Okay.
+[  729.19s ->   732.45s] That I can easily aggregate to my portfolio.
+[  732.63s ->   732.93s] Okay.
+[  732.93s ->   735.55s] And see an improvement of my own portfolio.
+[  735.81s ->   735.97s] Okay.
+[  735.97s ->   739.01s] So that's why this is a leverage point.
+[  739.13s ->   741.35s] I already had many strategies.
+[  741.55s ->   741.87s] Okay.
+[  742.13s ->   744.79s] With very low correlation with my portfolio
+[  744.79s ->   746.29s] that I wasn't using.
+[  746.53s ->   746.69s] Okay.
+[  746.93s ->   748.63s] Freeze alpha generator.
+[  748.95s ->   750.71s] So like a strategy that work,
+[  750.85s ->   752.33s] but you're not using it.
+[  752.33s ->   752.67s] Okay.
+[  752.71s ->   753.61s] It doesn't make any sense.
+[  753.81s ->   755.97s] So that's why Claude told me
+[  755.97s ->   757.39s] about this leverage point.
+[  757.39s ->   760.21s] And actually that's something that makes sense.
+[  760.39s ->   761.07s] And of course,
+[  761.13s ->   762.97s] like I realized that in person,
+[  763.11s ->   764.29s] like without the AI,
+[  764.29s ->   767.51s] but then the AI helped me with the roadmap.
+[  767.83s ->   767.93s] Okay.
+[  768.11s ->   771.81s] And then I think about how I could get this thing done.
+[  771.91s ->   772.15s] Okay.
+[  772.49s ->   773.61s] And I quit this idea.
+[  774.13s ->   775.95s] So basically here is telling me
+[  775.95s ->   777.51s] which type of strategy
+[  777.51s ->   779.97s] and how much is going to increase
+[  779.97s ->   781.87s] the overall portfolio performance.
+[  782.17s ->   782.69s] In this case,
+[  783.03s ->   785.73s] if I'm adding this min reverse on your USD
+[  785.73s ->   789.67s] is going to give my portfolio
+[  789.67s ->   793.81s] increase of the share ratio of 0.2.
+[  793.81s ->   794.81s] That's pretty good.
+[  794.93s ->   795.19s] Okay.
+[  795.47s ->   798.29s] Just adding these strategies as it is.
+[  798.35s ->   798.63s] Okay.
+[  798.97s ->   801.25s] So that's why it's like a big leverage point.
+[  801.45s ->   803.93s] I don't have to put any more effort
+[  803.93s ->   806.69s] to achieve this increment in my share ratio.
+[  806.83s ->   807.93s] Same thing for QQQ.
+[  808.19s ->   809.71s] Same thing for all of those.
+[  809.81s ->   809.95s] Okay.
+[  810.13s ->   811.21s] And then it's telling me
+[  811.21s ->   814.11s] which one should I work on even more.
+[  814.29s ->   815.51s] So that's the thing.
+[  816.05s ->   817.83s] That's also is important to understand
+[  817.83s ->   820.19s] that AI is a leverage multiplier
+[  820.19s ->   822.05s] because aim AI at noise
+[  822.05s ->   824.05s] and you just get faster noise.
+[  824.05s ->   826.69s] So it means that's leverage on both sides.
+[  827.01s ->   828.11s] If you put leverage on something,
+[  828.45s ->   830.93s] you're going to achieve your own goal faster.
+[  831.37s ->   833.43s] But if you're not using AI
+[  833.43s ->   837.03s] on the 20% that gives you the 80%,
+[  837.03s ->   839.11s] you're going to put a lot of effort
+[  839.11s ->   840.29s] because you got leverage
+[  840.29s ->   842.41s] on something that is not going to give you
+[  842.41s ->   843.43s] the 80% result,
+[  843.79s ->   845.39s] but actually only the 20%.
+[  845.39s ->   847.55s] So that's very important to understand
+[  847.55s ->   850.11s] what are your own leverage point.
+[  850.53s ->   851.45s] That's not just trading.
+[  851.67s ->   852.89s] This is the final action plan,
+[  853.21s ->   854.55s] your highest leverage activity,
+[  854.83s ->   857.23s] and then eliminate the low leverage noise,
+[  857.23s ->   860.13s] like watching your performance
+[  860.13s ->   861.61s] after each trade.
+[  861.87s ->   861.97s] Okay.
+[  862.07s ->   863.69s] Why you are watching that?
+[  863.91s ->   864.77s] It doesn't make any sense.
+[  865.03s ->   866.57s] Watching the daily P&L.
+[  866.93s ->   868.75s] Maybe you can watch it once every day,
+[  868.83s ->   869.69s] but not every hour.
+[  869.87s ->   870.03s] Okay.
+[  870.09s ->   871.11s] That doesn't make any sense.
+[  871.27s ->   872.47s] Or maybe on YouTube,
+[  872.77s ->   873.45s] Guru's video.
+[  873.71s ->   874.07s] That thing,
+[  874.13s ->   875.11s] it doesn't make any sense.
+[  875.55s ->   877.15s] And then eliminate low leverage noise,
+[  877.47s ->   879.59s] aim AI at the bottleneck.
+[  879.71s ->   879.87s] Okay.
+[  880.17s ->   880.43s] Coding,
+[  880.85s ->   881.51s] research summary,
+[  881.89s ->   882.27s] automation,
+[  882.61s ->   883.21s] brainstorming,
+[  883.37s ->   885.75s] where it removes a real constraint.
+[  885.93s ->   886.17s] Okay.
+[  886.47s ->   888.53s] And then repeat consistently.
+[  888.99s ->   890.13s] Compounding only works
+[  890.13s ->   892.25s] if you stay consistent long enough.
+[  892.35s ->   893.77s] The goal isn't to work more,
+[  893.99s ->   896.31s] it's to find the few things that matter.
+[  896.53s ->   896.77s] Okay.
+[  896.97s ->   899.23s] If you're still working the same time
+[  899.23s ->   899.97s] you were working,
+[  899.97s ->   901.81s] like five years ago,
+[  902.07s ->   903.19s] that's not good.
+[  903.47s ->   903.53s] Okay.
+[  903.53s ->   904.15s] That's a sign
+[  904.15s ->   905.29s] that you're not working
+[  905.29s ->   906.13s] on the leverage point.
+[  906.57s ->   908.49s] That's my little idea
+[  908.49s ->   910.59s] that I realized recently
+[  910.59s ->   911.91s] because I also was spending
+[  911.91s ->   912.75s] a lot of time
+[  912.75s ->   914.35s] on things that doesn't matter.
+[  914.73s ->   915.47s] So in current trading
+[  915.47s ->   916.97s] and honestly in life,
+[  917.31s ->   918.33s] leverage is everything.
+[  918.59s ->   920.17s] Leverage beats intensity.
+[  920.51s ->   920.99s] Leave a comment.
+[  920.99s ->   922.83s] And if you have any idea,
+[  923.01s ->   924.23s] like new leverage point
+[  924.23s ->   925.65s] or maybe something
+[  925.65s ->   927.33s] that I didn't mention here.
+[  927.77s ->   928.49s] And of course,
+[  928.55s ->   929.15s] you're going to find
+[  929.15s ->   929.69s] in the comment
+[  929.69s ->   930.59s] down below
+[  930.59s ->   931.75s] the prompt
+[  931.75s ->   932.77s] I used
+[  932.77s ->   934.61s] to get my own
+[  934.61s ->   935.94s] roadmap.
+[  936.42s ->   937.10s] So see you.

@@ -1,0 +1,139 @@
+[    0.46s ->     7.54s] it's the journey not the destination that matters i'm sure we've all heard this
+[    7.54s ->    13.54s] at one point in our lives ironically probably when it was not useful to us when we're coming up
+[   13.54s ->    20.88s] in school when we're a young professional but this wisdom is not lost it is not misguided if
+[   20.88s ->    27.42s] we take a look at this quote from marcus aurelius it rings of this ideology peace must be found in
+[   27.42s ->    36.82s] the imperfect present there is a lot of math that explains why this is the case and once i fully
+[   36.82s ->    43.66s] understood exactly what was going on with my own expectations it allowed me to better optimize for
+[   43.66s ->    52.24s] the journey and appreciate it alongside the goals that i achieve and it comes down to two key
+[   52.24s ->    58.90s] components the math of adaptation how we go about our day progressing and achieving goals
+[   58.90s ->    68.40s] and the consequences of that adaptation let's start with this idea of our expectations within a day so
+[   68.40s ->    74.64s] we have a day here we get up in the morning and we don't know what's going to happen but we do have
+[   74.64s ->    82.32s] some expectations you couldn't have a good day or a bad day without your own expectations we all have
+[   82.32s ->    88.56s] expectations for how the day is going to go if we're going to make any progress so on and so forth
+[   89.12s ->    95.68s] so what does this actually look like over time well over time we're going to have expectations so maybe
+[   95.68s ->   104.24s] we're going to progress over time slowly and we're going to start to see a trend in our expectations what
+[  104.24s ->   111.92s] makes for a good day or a bad day well relatively speaking this is going to be what we think is
+[  111.92s ->   118.32s] going to happen and what actually happens is going to be a different story all together sometimes you
+[  118.32s ->   125.44s] crush the day sometimes everything falls into place and everything happens as you intend it and
+[  125.44s ->   134.00s] you're going to have an awesome day other times it falls in line with expectations and then every now and
+[  134.00s ->   140.96s] again it feels like the universe hates you and you realize an outcome that is extremely negative
+[  142.00s ->   148.16s] this is what is meant by having a good day or a bad day without some sort of benchmark without
+[  148.16s ->   155.52s] some sort of expectation there is nothing to compare it to we always will form our own expectations
+[  155.52s ->   163.04s] in every facet of life whether it's academically professionally socially the list goes on this dynamic
+[  163.04s ->   172.00s] is going to hold for all of those different facets of your life now when we take a look at something
+[  172.00s ->   179.36s] like this what should our objective be should it be to minimize the distance between our expectations
+[  179.36s ->   185.84s] and what actually happens we really can't control necessarily in a day everything that is going to make
+[  185.84s ->   191.04s] it good or bad so what should we do with our expectations should we throw it out of the window
+[  191.04s ->   197.28s] where should we go from here well interestingly and this is the part that a lot of people miss we
+[  197.28s ->   205.92s] actually develop our own expectations about how far a day can get away from what we expect to have happen
+[  205.92s ->   213.36s] and in statistics this is known as variance so what does this actually look like well we have our expectation
+[  213.36s ->   220.08s] of what we think might happen in a day but we know based on experience we're not always going to hit
+[  220.08s ->   229.52s] that target so implicitly we always assign our own measure of spread that is distance away from what
+[  229.52s ->   237.92s] we think is going to happen and this is effectively what variance is it is expected deviations from our
+[  237.92s ->   245.04s] original expectations so what does that actually look like visually well i'm going to have some expectations
+[  245.04s ->   253.42s] for the day and maybe i'm expecting you know some progress over time here but i know that i'm not
+[  253.42s ->   258.86s] always going to hit that target i know that some days are going to be better than others some days are
+[  258.86s ->   267.90s] going to be more in line with what i expected and some days are going to be worse now understanding that
+[  267.90s ->   274.22s] the outcome every single day is going to vary from your expectations means you are going to implicitly assign a
+[  274.22s ->   280.62s] window that is a window around what you expect to have happen so it's going to look something like
+[  280.62s ->   295.17s] this what that means is as you go about your days and you realize these outcomes relative to your
+[  295.17s ->   302.45s] benchmark expectation that is those green dots it isn't going to be too much of a shock to you if you
+[  302.45s ->   310.45s] fall within this window because you are anticipating some variability from your expectation this is quite
+[  310.45s ->   322.61s] literally how life works what is the impact of either going beyond your upside variance window or below
+[  323.33s ->   331.73s] your downside variance window well that is going to shock your expectations most certainly right because
+[  331.73s ->   336.70s] you have your expectations you have your expectations for the day and then you have this window around
+[  336.70s ->   344.62s] what you think can happen on the upside your good days and the downside your bad days but that in
+[  344.62s ->   351.10s] itself is an expectation you can blow through the upside of that window and you can also blow through the
+[  351.10s ->   359.18s] downside of that window this is a very important idea to understand because this is exactly what is going to
+[  359.18s ->   366.30s] shock your expectations in a day if you implicitly and we all do this you implicitly think something
+[  366.30s ->   373.18s] is going to happen in a day and you think it can't get much better or much worse than this and it does you
+[  373.18s ->   380.30s] are going to be left with the bill a great example of blowing through the upside or the downside of your
+[  380.30s ->   388.22s] variance window is a regime change i have an example here and we can think of it in the context of a career
+[  388.22s ->   394.94s] we'll also look at it in the context of maybe some sort of exercise program and an injury you can look at this
+[  394.94s ->   400.86s] through the lens of one of a million different things because you can apply this to any facet of your life
+[  401.42s ->   409.42s] but what you're observing here is a thousand days of progress you can see this variance window is going to
+[  409.42s ->   416.54s] constantly adjust with my expectations for how the day is going to go and over a thousand days i make a
+[  416.54s ->   425.18s] tremendous amount of progress and all of the sudden we have a massive regime change i look to quit my job
+[  425.74s ->   434.14s] and if you take a look at the expectations and you take a look at the variance window my new level is
+[  434.14s ->   444.06s] blowing through the downside variance window this is a function of the regime change itself if you
+[  444.06s ->   449.10s] don't want to think of it in terms of progress in your career you can think of it in terms of progress
+[  449.10s ->   454.38s] exercising let's say you make a whole bunch of progress then you have a tremendous injury and that
+[  454.38s ->   459.98s] is going to blow you through your downside variance window you are going to have something that shocks
+[  459.98s ->   464.38s] your expectation and injury you're not going to bake that into your day-to-day expecting to get
+[  464.38s ->   473.42s] injured and then you're operating at this new level here so how do we think about progress in this
+[  473.42s ->   481.42s] capacity and what does this have to do with the journey over the destination well the purpose of
+[  481.42s ->   488.38s] understanding this framework is the fact that we implicitly have expectations and then we implicitly have
+[  488.94s ->   498.94s] expected deviations from those expectations and the important thing to note is you will always dynamically
+[  498.94s ->   507.66s] adjust those after you quit your job after an injury your variance window doesn't stay up here and you
+[  507.66s ->   516.94s] don't just keep having really really bad days you are going to adjust it might take more time depending on
+[  516.94s ->   522.70s] what it is that caused you to blow through the downside of your variance window i'm not saying it's fun
+[  522.70s ->   528.54s] i'm not saying it's easy i'm not saying it's an enjoyable process at all but what i am saying is this
+[  528.54s ->   536.54s] variance window will come down and eventually your expectations are going to fall in line with this new
+[  536.54s ->   549.20s] regime and so will your new variance window this is the mathematics of progress progress is non-linear
+[  549.20s ->   558.08s] what looks like regression is the way that's an old stoic quote the obstacle is the way this is how you
+[  558.08s ->   565.20s] are progressing towards the end goal whatever it may be you are going to have gaps up blowing through the
+[  565.20s ->   570.72s] upside of your variance window and gaps down blowing through the downside of your variance window but
+[  570.72s ->   578.64s] you will adjust biologically we cannot help it we love homeostasis we love developing expectations and
+[  578.64s ->   589.28s] expected deviations from those expectations okay why is this about the journey then relative to the
+[  589.28s ->   599.28s] destination this gets into the consequences of adaptation we adapt to our goals over time if you're 17
+[  599.28s ->   606.40s] years old 18 19 21 22 whatever and you're in college or you're approaching college and you want to
+[  606.40s ->   613.76s] be a trader at citadel or you want to be a managing director at goldman sachs you want to go to a
+[  613.76s ->   621.76s] prestigious university whatever it is that is going to carry a tremendous amount of weight for you in
+[  621.76s ->   631.52s] terms of achieving that outcome now but you're going to adapt to that goal over time in order to achieve
+[  631.52s ->   642.32s] any of those things the journey is long and treacherous anything worthwhile is if it's easily accessible
+[  642.32s ->   651.66s] you likely aren't going to want it as an outcome or look to achieve it what do i mean by this in terms
+[  651.66s ->   659.58s] of these types of goals well let's say you are 17 18 years old and you're looking to be a trader at
+[  659.58s ->   672.62s] citadel day one day two day three of your progress is nowhere near what it looks like at day 2000 and by
+[  672.62s ->   678.94s] the time you get to day 2000 i want you to keep in mind that your variance window is always going to
+[  678.94s ->   686.14s] adjust maybe over this time period you had a few different regime changes maybe you've blown through
+[  686.14s ->   692.14s] the upside and had some tremendous winds blown through the downside and had to adjust accordingly
+[  692.14s ->   702.19s] the list goes on but my point is when you're starting off here the goal is way up here that's day
+[  702.19s ->   711.15s] three once you get to day 2000 the goal falls within your variance window and it's no longer going to
+[  711.15s ->   721.38s] carry the same amount of weight as it did days one two and three the reason why i'm highlighting this
+[  721.38s ->   725.78s] as a very important idea and we can apply it to a whole bunch of different things and we will in a
+[  725.78s ->   732.66s] moment the reason why i'm highlighting this as an important idea is because 100 of the time is spent on the
+[  732.66s ->   740.58s] journey to that goal if you do not enjoy the journey and i'm not just talking about arbitrary happiness
+[  740.58s ->   748.19s] or leisure i'm talking about peace then you will what's the point of the goal what what is the point
+[  748.19s ->   753.63s] of the goal when you get to the goal you're going to finally let yourself be happy absolutely not it's
+[  753.63s ->   760.03s] going to fall within your expectation at that point at that point it is literally baked into your
+[  760.03s ->   767.07s] expectation of what's to happen implicitly that is the fundamental idea of the journey over the
+[  767.07s ->   773.47s] destination you must find a tremendous amount of peace in the journey because by the time you
+[  773.47s ->   779.89s] get to your destination you've already adjusted dynamically you've set your expectations your
+[  779.89s ->   786.85s] window around your expectations and the goal now falls within what you expect it is not going to carry the
+[  786.85s ->   793.17s] same weight this applies to so many things i want to be a black belt in brazilian jujitsu when you're a
+[  793.17s ->   798.93s] white belt and you're attending your third class you're stoked at the idea of being a black belt but
+[  798.93s ->   806.37s] after your 30th competition as a purple belt and you're seven years in then you're 10 12 years in
+[  807.09s ->   813.73s] it's not going to carry the same amount of weight it is going to fall within your expectations of an
+[  813.73s ->   821.09s] outcome for the day the same is true with wanting to be a managing director at goldman sachs
+[  821.97s ->   829.81s] the years of study and then the years of dedication professionally to be able to achieve that position
+[  829.81s ->   836.37s] once you achieve that position it falls within expectations and now you have to fulfill that role
+[  836.37s ->   845.57s] and of course the same is true with being a trader at citadel the journey is 100 percent of the time
+[  845.57s ->   852.93s] toward your goal and once you achieve that goal you're still on a journey either working with your
+[  852.93s ->   859.25s] goal now you're a black belt and you have a brand new journey are you going to continue to progress
+[  859.25s ->   865.89s] in ranks are you going to profess you're a managing director at goldman sachs you don't just what take
+[  865.89s ->   875.01s] the payday and leave no now you fulfill the role the journey is not going to be easy fun without a
+[  875.01s ->   883.89s] tremendous amount of work the purpose is to find peace in the journey and find peace in the imperfect
+[  884.45s ->   892.85s] present that is exactly the idea here the goals you can almost think of this as a train ride and as
+[  892.85s ->   899.49s] you're on the train you're going to pass all of these goals if you don't enjoy being on that train then
+[  899.49s ->   906.37s] you should probably get off at the next stop and find a train a bus a plane a car that you do want to
+[  906.37s ->   915.89s] be on you must enjoy the journey it will also increase the likelihood of your goal because when
+[  915.89s ->   923.57s] you have tremendous downside variation you're going to want to stay on that train bus plane car you get
+[  923.57s ->   931.73s] the picture the thing that i want to prioritize here as well is we often set goals without concern for
+[  931.73s ->   937.97s] the journey to that goal or even the journey thereafter we want to achieve an ivy league
+[  938.61s ->   945.09s] education in an undergraduate capacity well you're going to have to put in a tremendous amount of work
+[  945.73s ->   952.69s] extracurricularly in the classroom to be able to achieve admissions to that university if you have no
+[  952.69s ->   958.13s] peace throughout that journey and you don't enjoy it once you achieve that goal you're not going to have
+[  958.13s ->   963.49s] any peace still because it's going to be the same journey you're going to have to put in a tremendous
+[  963.49s ->   970.29s] amount of work in the classroom and extracurricularly to continue to progress at an ivy league institution
+[  970.29s ->   975.97s] the same is true with the prestigious job if you don't enjoy the journey of study and professional
+[  975.97s ->   981.97s] dedication to achieve that goal of being a managing director at goldman sachs well you're not going to
+[  981.97s ->   988.05s] enjoy the outcome of that goal either because you are still on a journey and that is exactly the purpose
+[  988.05s ->   997.49s] of this video is to prioritize and appreciate the journey to find peace in the imperfect present
+[  997.49s ->  1001.89s] that's going to do it for this video on the journey over the destination i hope you enjoyed i hope you
+[ 1001.89s ->  1009.25s] learned something i hope you like my model remember all models are wrong but some are useful if you enjoy
+[ 1009.25s ->  1013.49s] this video and you want to see more like it in the future please like comment subscribe share it helps me
+[ 1013.49s ->  1019.09s] out tremendously it is always greatly appreciated if you'd like to help support the channel and master
+[ 1019.09s ->  1025.65s] your quantitative skills check out quant guild.com check out interactive brokers if you're looking to
+[ 1025.65s ->  1032.13s] invest or trade i've been with them for over 10 years in an investing and trading capacity we use their api
+[ 1032.13s ->  1037.09s] for all of my quant builds on this channel i'll leave a link in the description below to go ahead and get
+[ 1037.09s ->  1053.73s] started with them other than that i want to thank you so much for watching and i'll see you in the next video

@@ -1,0 +1,134 @@
+[    0.00s ->     1.36s] This is...
+[    1.36s ->    10.34s] Holy shit, you guys did it.
+[   10.40s ->    12.26s] You got episode 2 to 5,000 likes.
+[   12.34s ->    16.00s] Now, I know, I know, it reached 5,000 likes a couple weeks ago,
+[   16.10s ->    20.18s] and you guys have been absolutely spamming me with comments to release episode 3.
+[   20.66s ->    21.62s] Part 3, please.
+[   21.72s ->    22.88s] Waiting for episode 3.
+[   22.94s ->    23.76s] Episode 3.
+[   24.02s ->    25.02s] Left me hanging there.
+[   25.02s ->    27.44s] It reached where are 5,000 likes, and you plus part 3.
+[   27.46s ->    29.54s] It reached 5,000 likes, where's episode 3?
+[   29.54s ->    31.02s] Real place to stop order at 5,000 likes.
+[   31.16s ->    32.40s] Episode 3, please.
+[   33.02s ->    34.10s] Well, here it is.
+[   34.10s ->    38.00s] Now, if there was ever a crucial video to watch, this is the one.
+[   38.06s ->    41.70s] This is probably going to be the most important video out of the whole series,
+[   41.88s ->    46.22s] because it's going to be going over the absolute core of how the markets are structured.
+[   46.84s ->    47.70s] See what I did there?
+[   47.94s ->    51.30s] I said core, and I zoomed in to the apple.
+[   52.66s ->    53.30s] Moving on.
+[   53.42s ->    57.82s] Now, by watching this one video, it's actually going to drastically put you ahead of the competition,
+[   57.82s ->    62.08s] because most traders skip this step entirely, or some don't even know about it.
+[   62.08s ->    67.04s] Hell, I've seen some quote-unquote professional traders even go against this rule.
+[   67.18s ->    70.60s] So, I cannot stress this enough, you did a good job by clicking this video.
+[   70.72s ->    75.28s] This is basically the foundation of everything I'm going to teach you in future episodes.
+[   75.46s ->    77.82s] Let's not waste any time, let's get straight into it.
+[   77.82s ->    89.59s] Now, as you guys already know, or I'm assuming you know, the market is made up of highs and lows.
+[   89.77s ->    91.27s] Kind of like a roller coaster.
+[   91.75s ->    97.28s] The market is always fluctuating.
+[   97.42s ->   102.20s] Our job as a trader is identifying how the market is currently fluctuating.
+[  102.32s ->   105.12s] If it's currently going up, down, or consolidating.
+[  105.32s ->   106.48s] Now, you may be thinking,
+[  106.48s ->   109.70s] Trading while you absolute idiot, can you not see?
+[  109.86s ->   113.22s] You can just look at the chart and tell if the market is moving up or down.
+[  113.34s ->   114.72s] First off, that was kind of mean.
+[  114.88s ->   116.58s] Second off, I'm going to have to ask you to calm down.
+[  116.68s ->   119.54s] This is actually the part where most traders make the mistake.
+[  119.70s ->   122.24s] Looking back at a chart, it's very easy to say,
+[  122.32s ->   124.10s] oh yeah, price is uptrending here.
+[  124.22s ->   127.06s] Then, it started to consolidate, and then started downtrending.
+[  127.12s ->   127.74s] Easy peasy.
+[  133.92s ->   137.76s] Yes, a monkey with a computer can look back at a chart and tell what it did.
+[  137.84s ->   138.94s] No offense to monkeys.
+[  138.94s ->   144.24s] But if you've ever traded live, you've probably realized it's a lot harder to tell
+[  144.24s ->   148.22s] if it's an uptrend, downtrend, or consolidating while live trading.
+[  148.34s ->   150.82s] And if you don't know what direction the market is trending,
+[  151.12s ->   155.00s] well, you're really just guessing at that point, and you're bound to lose in the long run.
+[  155.08s ->   159.52s] But what if I told you that I have a secret formula and a step-by-step guide
+[  159.52s ->   162.42s] to easily identify what type of market you're in?
+[  162.48s ->   163.84s] That would be pretty cool, right?
+[  164.04s ->   164.88s] Well, here it is.
+[  164.96s ->   166.92s] But first, let's talk about today's sponsor.
+[  166.92s ->   168.68s] Hank O' Trade
+[  168.68s ->   172.95s] If you don't know, Hank O' Trade is a forex program.
+[  173.01s ->   177.35s] So if you've ever wanted to trade currencies like the dollar, the euro, or the yen,
+[  177.57s ->   178.61s] this is how you would do it.
+[  178.71s ->   182.27s] Trading currencies in forex is seriously one of the best ways to trade.
+[  182.41s ->   185.99s] A lot of traders actually think it's the best way to trade because the markets are a
+[  185.99s ->   190.49s] lot more stable and easier to predict, which is always a good thing when you're a trader.
+[  190.67s ->   193.97s] So if you want to trade these currencies, Hank O' Trade is the way you would do it.
+[  194.03s ->   198.03s] They are also running a special promotion where if it's your first time depositing,
+[  198.03s ->   202.69s] and you sign up with the link in my description, they will match whatever you first deposit.
+[  202.85s ->   205.45s] So if you deposit, say, $183.
+[  205.83s ->   208.87s] Kind of a weird amount to deposit, but hey, you do you.
+[  208.99s ->   216.29s] Once you deposit that $183, they will match that and give you an extra $183 to trade with.
+[  216.35s ->   216.95s] They're awesome.
+[  216.95s ->   218.53s] I'll leave the link in the description.
+[  218.75s ->   220.59s] Thank you for sponsoring this video, Hank O' Trade.
+[  220.75s ->   221.77s] Let's get back to the video.
+[  221.77s ->   225.99s] So one of the very first things you learn as a trader is highs and lows.
+[  226.25s ->   231.83s] If the market is making higher highs like this and lower highs like this, the market is trending up.
+[  231.93s ->   237.65s] If the market is making lower lows and lower highs like this, the market is trending downwards.
+[  237.95s ->   238.53s] Pretty simple.
+[  238.53s ->   240.99s] So say if the chart does something like this.
+[  241.09s ->   242.35s] It makes an upwards movement.
+[  242.51s ->   247.63s] Now, if we go by what we just learned, we'll see that the chart is making higher highs and higher lows.
+[  247.71s ->   250.47s] So we can call this an uptrend, which it is.
+[  250.57s ->   251.35s] So far, so good.
+[  251.45s ->   253.59s] But then something interesting happens.
+[  253.75s ->   257.79s] The chart will start moving downwards, making this low like this.
+[  257.93s ->   261.89s] Now, this exact point is where I see the masses make the mistake.
+[  262.07s ->   262.75s] Not even joking.
+[  262.97s ->   265.01s] I've seen professional traders make this mistake.
+[  265.01s ->   272.17s] A lot of traders, when they see price make this low right here, they think the chart is now in a reversal because it made this low.
+[  272.27s ->   274.35s] And they think it's going to start heading downwards.
+[  274.65s ->   278.43s] So a lot of traders, they'll enter a short right at this breaking point.
+[  278.61s ->   280.61s] This is a crucial mistake.
+[  280.73s ->   283.85s] What if I told you this chart is still fundamentally bullish?
+[  284.13s ->   288.97s] You see, sure price made this low right here, but this is not a valid low.
+[  289.11s ->   289.45s] Why?
+[  289.61s ->   293.33s] Because price never broke the higher low, which is right here.
+[  293.33s ->   298.55s] In order for price to turn bearish, price needs to break this point, which it never does.
+[  298.65s ->   301.35s] The chart is bullish until that break happens.
+[  301.63s ->   309.93s] So here is usually where the shorters will enter their trade and end up running into trouble because the chart will head upwards after this, making them lose the trade.
+[  310.05s ->   311.61s] Now, you might be a little confused.
+[  311.83s ->   313.55s] So let's really clear this up.
+[  313.55s ->   317.05s] A low is only validated if price makes a high.
+[  317.17s ->   319.65s] Okay, so in this example, we have this.
+[  319.77s ->   325.47s] This low is only an official low once price breaks this point, which is the high.
+[  325.57s ->   330.71s] If price just does this and doesn't cross that high mark, this is not an official low.
+[  330.71s ->   336.31s] So here we cross, we now have a valid high or low, and now we're starting to make higher highs.
+[  336.39s ->   339.43s] So we now know this chart is an official uptrend.
+[  339.53s ->   344.15s] And now that we have that bias in the back of our head, we can now take bullish only trades.
+[  344.29s ->   348.37s] It will only be considered a downtrend if price breaks this point.
+[  348.43s ->   350.23s] It can do anything after this point.
+[  350.37s ->   353.59s] It can go up, down, sideways, anything after this point.
+[  353.67s ->   356.33s] As long as it doesn't break this low, it's an uptrend.
+[  356.33s ->   362.33s] So continuing with our example, if price does something like this, you may get confused and think this is a low.
+[  362.43s ->   368.79s] If you remember from the core idea of what I said earlier, we only consider it a low if it breaks the prior high.
+[  368.89s ->   372.69s] So in order for this to be an official low, it has to break this point.
+[  372.83s ->   377.73s] So say if it does break this point, our new low point to break is moved from here to here.
+[  377.91s ->   379.21s] This is our new low.
+[  379.31s ->   383.41s] So now for price to be considered a downtrend, it now has to break this point.
+[  383.49s ->   384.85s] And then the process continues.
+[  384.85s ->   386.41s] Let's do a bearish example.
+[  386.55s ->   388.99s] Price is making lower highs and lower lows.
+[  389.15s ->   393.79s] We only consider this point a high if it breaks the low, which it did.
+[  393.91s ->   396.09s] So the price action is in a downtrend.
+[  396.35s ->   402.93s] And the only way for it to be considered a reversal and to be considered an uptrend is if price breaks this point.
+[  403.13s ->   408.31s] So if price does this, a lot of new traders will think this is a break and the chart is now uptrending.
+[  408.31s ->   412.71s] But this high is not validated because we didn't break this low.
+[  412.77s ->   417.31s] And we have not crossed the actual valid high point yet, which is right here.
+[  417.37s ->   420.05s] Until we do, we are still in a downtrend.
+[  420.11s ->   423.63s] So in this example, you should only be taking short trades.
+[  423.73s ->   428.99s] Once price breaks this point, we are now officially in an uptrend and you can start taking bullish trades.
+[  428.99s ->   435.57s] It might seem a little confusing at first, but if you're having trouble, just rewind the video a couple times to really get this idea down.
+[  435.57s ->   440.77s] I promise, once you understand the structure technique, it really becomes second nature seeing it on charts.
+[  440.97s ->   442.71s] And you don't really even have to think about it.
+[  442.75s ->   445.01s] It's an extremely important part of trading.
+[  445.23s ->   450.13s] And if you master this, you're really passing a lot of traders by knowing just this simple technique.
+[  450.21s ->   452.07s] You guys seem to be really liking the series.
+[  452.31s ->   455.53s] So if this video gets a lot of love, I'll release an episode four.
+[  455.63s ->   460.49s] And as you guys already know, we are going to get more and more advanced as the series moves forward.
+[  460.49s ->   463.27s] Thanks for watching, and I'll see you guys next time.

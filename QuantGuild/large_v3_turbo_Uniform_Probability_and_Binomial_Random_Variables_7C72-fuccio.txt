@@ -1,0 +1,243 @@
+[    0.46s ->     8.41s] it's not rocket science the best way to improve your quantitative problem solving abilities is to
+[    8.41s ->    14.33s] practice solving quantitative problems whether you're preparing for some sort of technical
+[   14.33s ->    22.47s] interview or your job as a quant the best way to improve your proficiency in solving questions that
+[   22.47s ->    29.95s] are open-ended or unstructured and require tools from math probability and finance is to present
+[   29.95s ->    36.17s] yourself with a lot of different types of questions and get an idea for how these different tools are
+[   36.17s ->    42.45s] applied in different settings and that'll enable you to attack and solve a whole mess of different
+[   42.45s ->    49.17s] problems most people have it all wrong you're not trying to memorize some set of interview questions
+[   49.17s ->    55.57s] and you know hopefully the interviewer is going to ask you one of those questions from that pool that
+[   55.57s ->    63.29s] you've studied that's not the right approach you need to practice solving quantitative questions in
+[   63.29s ->    68.57s] an unstructured capacity and learn all of these different topics such that when you're presented
+[   68.57s ->    76.11s] with something of a question like you have a simulation and it has a fail rate of you know p
+[   76.11s ->    84.15s] percent what is the expected number of simulations required to see the first whatever you know that
+[   84.15s ->    88.93s] that's geometric random variable and you can attack it as such so it's not about memorizing
+[   88.93s ->    95.35s] problems specifically for attacking interview questions moreover when you actually get to the job
+[   95.35s ->   101.51s] it's not about memorizing specific formulas and applying them either it's completely unstructured
+[  101.51s ->   106.47s] and open-ended so you better have a good idea of what these tools are but how do you learn them
+[  106.47s ->   110.21s] that's why we're going to use quant guild we're going to get started with a fresh account
+[  110.21s ->   115.07s] starting at quant one we're going to work our way all the way up to quant five we're going to learn
+[  115.07s ->   122.19s] a whole bunch about math probability and finance and of course we can always visit the lesson section
+[  122.19s ->   128.51s] if we need a refresher in any of the topics but without further ado let's get started the journey to
+[  128.51s ->   134.75s] quant five begins with but a single practice problem and we are going to start with probability we are
+[  134.75s ->   139.31s] going to answer a bunch of probability questions in this video and hopefully we will rank up
+[  139.31s ->   145.11s] and improve our rank and progress one step further to that quant five so i'm going to click on
+[  145.11s ->   150.17s] probability here and we are presented with this question if x is a continuous random variable with
+[  150.17s ->   155.65s] probability density function f of x is equal to one over eight for x in zero to eight what is the
+[  155.65s ->   163.27s] probability that it is between two and six of course the inclusive is arbitrary because this is a
+[  163.27s ->   171.47s] continuous random variable now this is not about when you go about solving these questions it is not
+[  171.47s ->   178.77s] about trying to just throw what you can recall from a statistics course at the problem no no it is about
+[  178.77s ->   184.13s] trying to figure out the underlying structure of the tools that you are applying to this problem
+[  184.13s ->   189.57s] in order to solve it now most problems are going to have a variety of different solutions and i will
+[  189.57s ->   195.81s] present but one and then we will take a look at the explanation which may or may not mirror my choice
+[  195.81s ->   200.73s] in attacking the problem so i'm going to break out the ipad and we are going to go about solving this
+[  200.73s ->   206.33s] first question together so x here is a random variable the problem is giving us a probability
+[  206.33s ->   215.01s] density function i've defined it here as f of x this is our pdf and what this is saying is we can
+[  215.01s ->   222.55s] essentially characterize the randomness of this variable by this function okay given that we can
+[  222.55s ->   229.47s] characterize the randomness of this random variable x what is the probability that is between the values
+[  229.47s ->   237.76s] two and six let's talk about three different ways we can solve this problem okay the first one the first
+[  237.76s ->   244.26s] one is just using the idea of an integral we can integrate over the region of interest that is this
+[  244.26s ->   252.72s] region two to six of our probability density function and find the overall probability that the random
+[  252.72s ->   262.71s] variable x is between two and six if its randomness is characterized entirely by this pdf so what does this
+[  262.71s ->   274.13s] look like well i'm just going to take the integral from two to six of f of x dx if we plug in f of x that is we
+[  274.13s ->   283.87s] know between two and six that falls into this region here we just have one eighth dx we can factor out that
+[  283.87s ->   291.73s] one eighth we are left with one eighth the integral from two to six dx and of course this is just going
+[  291.73s ->   302.89s] to be x evaluated at six and two one over eight x six and two and this will be equal to one over eight
+[  302.89s ->   310.77s] times six minus two which is equal to four over eight which is in fact the probability that two is
+[  310.77s ->   315.55s] less than or equal to x which is less than or equal to six so if you're familiar with the idea of a
+[  315.55s ->   320.89s] probability density function you can attack it in this capacity by just simply integrating over the
+[  320.89s ->   328.95s] probability density function and specifying the specific region that is we might have more than one
+[  328.95s ->   334.01s] region here of course in this case we just have zero to eight but we need to make sure that we're
+[  334.01s ->   338.83s] integrating over the correct region so in this case we just have the one eighth but you might need to
+[  338.83s ->   345.53s] break this integral up into more than one piece depending on the probability density function now of
+[  345.53s ->   350.83s] course you can solve this using a cumulative distribution function as well so that's the second
+[  350.83s ->   359.79s] way that we could attack this problem okay we could take the pdf turn it into the cdf and then take the
+[  359.79s ->   371.60s] increment six minus two okay so this is another way to get the exact same answer how do we do this
+[  371.60s ->   378.26s] well to turn the pdf into a cdf what we're going to do is we are going to integrate okay so if we recall
+[  378.26s ->   389.31s] here if this is our pdf then to turn it into a cdf we are simply going to integrate from negative
+[  389.31s ->   395.65s] infinity all the way to some value s and that is going to be capital f of s and this here is our
+[  395.65s ->   402.98s] cumulative distribution function so let's go about doing this what does this actually look like here
+[  402.98s ->   410.56s] okay well very simply all we're going to do is we are going to integrate from negative infinity
+[  410.56s ->   420.86s] all the way to s of f of x dx and this is going to be equal to our capital f of s which is our
+[  420.86s ->   426.98s] cumulative distribution function now you may say hey what in the heck is going on with this negative
+[  426.98s ->   434.30s] infinity here well this is general we know that our probability density function is not defined anywhere
+[  434.30s ->   440.50s] outside of the interval zero to eight more specifically it's defined as zero outside of that interval so
+[  440.50s ->   446.44s] there's no probability mass anywhere else so what i'll do is i can simply restrict this to the
+[  446.44s ->   458.48s] integral from zero to s of one over eight dx and this is going to be our cumulative distribution function
+[  458.48s ->   466.36s] so let's just go ahead and solve this integral explicitly so this is going to be equal to one over
+[  466.36s ->   475.24s] eight times x from zero to s so of course here when we plug in zero we get zero and we are just going
+[  475.24s ->   484.62s] to be left with s divided by eight which is equal to capital f of s so this is in fact our cumulative
+[  484.62s ->   492.10s] distribution function so now we went from this guy to this guy what do i mean by the increment of
+[  492.10s ->   500.04s] f six minus two well if we know that we are accumulating probability mass from left to right
+[  500.04s ->   504.80s] in our cumulative distribution function then we can just take the difference to find this
+[  504.80s ->   513.58s] this interval the probability of this interval more generally what i should say is if i have so given
+[  513.58s ->   526.50s] a cdf f of f of s just for the sake of of this problem since we're already using f of s so given
+[  526.50s ->   534.44s] a cdf the probability and of course this is for some sort of random variable in this case i'll just call
+[  534.44s ->   544.36s] it y the probability that y is between two different values maybe i'll call it s2 and s1
+[  544.36s ->   553.04s] this probability is not just given by the integral which we've seen in the first way to evaluate this
+[  553.04s ->   558.22s] problem but so it's also given by the increment in the cumulative distribution function so this
+[  558.22s ->   576.72s] probability is equivalent to f of y s2 minus f of y s1 okay well doesn't that make this really easy
+[  576.72s ->   583.86s] we have f of s already so if this is the case what is our s2 and what is our s1 well s2 is six
+[  583.86s ->   592.08s] and s1 is two so let's just plug in six and two here so using this guy which we just solved for
+[  592.08s ->   600.14s] if i take f of six minus f of two well what happens when i plug in six here i get
+[  600.14s ->   608.25s] six over eight and then when i plug in two i do minus two over eight and this is also equal to
+[  608.25s ->   615.91s] four over eight so that is another way to solve this problem you can solve it with the probability
+[  615.91s ->   621.07s] density function and integrating over that region or you could solve for the cumulative distribution
+[  621.07s ->   628.17s] function and then increment the cumulative distribution function across an arbitrary s1 and s2
+[  628.17s ->   634.13s] in this case that is going to be the two and six from the problem this is all well and good but what
+[  634.13s ->   639.81s] if we know nothing of probability density functions and cumulative distribution functions can we still
+[  639.81s ->   646.05s] solve this probability question the answer is yes we just need to take more of an intuitive and
+[  646.05s ->   652.15s] logical approach so what i'm going to do here for our third approach is i'm going to start by drawing a
+[  652.15s ->   660.51s] picture and we know this random variable x only has probability mass between zero and eight and we
+[  660.51s ->   665.95s] know that probability mass is evenly distributed throughout the entire region so i'm going to mark
+[  665.95s ->   672.93s] out zero and eight and by evenly distributed throughout this region what i mean is no single point
+[  672.93s ->   679.65s] throughout this region is going to have a higher likelihood of being selected for random variable x than
+[  679.65s ->   684.99s] any other point it is its probability is evenly distributed throughout this entire region
+[  684.99s ->   692.07s] so knowing this we are interested in the probability that this random variable is between
+[  692.07s ->   699.29s] two and six well let's mark out the interval of interest what does it mean to be between two and six
+[  699.29s ->   707.60s] well if i mark out two and i mark out six i can shade this region here and that is the region
+[  707.60s ->   717.76s] of favorable outcomes that is for x to be between two and six well x can also take on values outside of
+[  717.76s ->   725.94s] this region so the probability is simply just going to be the ratio of favorable outcomes to total outcomes
+[  725.94s ->   732.08s] what are the total outcomes well i'll just kind of draw that here it's everything between zero and eight
+[  732.08s ->   741.05s] so how do we quantify this we can't just quantify this as red squiggle over black squiggle right
+[  741.05s ->   746.57s] we need to quantify this in some way and to do that we're just going to use the distance between the
+[  746.57s ->   754.57s] interval points so what are the interval points for the red region well it's just going to be six and two
+[  754.57s ->   761.77s] six minus two is four that is the distance of the region of interest that is the favorable outcomes
+[  761.77s ->   770.74s] and the distance between total outcomes is just going to be eight minus zero which of course is
+[  770.74s ->   778.08s] eight so if we take that ratio of favorable outcomes four divided by total outcomes eight which is going
+[  778.08s ->   787.62s] to be equal to if you will red squiggle over black squiggle we also get four over eight so here are three
+[  787.62s ->   792.66s] different ways we can solve this problem one using our knowledge of probability density functions
+[  793.22s ->   799.46s] one using our knowledge of cumulative distribution functions and one taking a more intuitive and
+[  799.46s ->   806.10s] graphical approach now of course in problem three we're not talking about probability triplets we're not
+[  806.10s ->   812.26s] talking about this idea of having a sample space and event space of course that under a lot it's the
+[  812.26s ->   818.58s] underlying structure of probability that enables us to solve it in this way but of course we can go to
+[  818.58s ->   823.86s] our lesson section to formally review that if we would like nevertheless this is still an intuitive
+[  823.86s ->   829.54s] result approaches one through three yield four over eight as a solution back on quant guild submitting
+[  829.54s ->   837.14s] four over eight for probability question number 117 yields the correct solution and the explanation is
+[  837.14s ->   845.54s] actually using a general formula for uniform distributions and this is synonymous with approach
+[  845.54s ->   853.30s] two if you recall on approach two we took the increment s2 s1 and this is another way of expressing that
+[  853.30s ->   861.70s] increment a good exercise would be to prove this to yourself in general all right let's move on to the
+[  861.70s ->   868.66s] next question when two fair dice are rolled what is the probability that the sum is either 7
+[  869.30s ->   876.34s] or 11 a classic question from basic probability here what we're going to do is we're going to look at
+[  876.34s ->   885.06s] two random variables these random variables are just simply fair dice and here we have x as die one
+[  885.06s ->   891.38s] and here we have y as die two what i've started to do is i've started to build a table of outcomes there's a
+[  891.38s ->   895.78s] couple of different ways you could approach this you could approach this as defining some random
+[  895.78s ->   902.98s] variable z as being the sum of x and y and then you have some sort of weighted probability mass function
+[  902.98s ->   908.58s] or you can just approach it in a similar way to approach three in the previous problem and that is
+[  908.58s ->   915.62s] favorable outcomes to total outcomes that's going to be the easiest way to attack this problem so what
+[  915.62s ->   919.94s] we're going to do is we're going to start by looking at a table of outcomes so here we can see when
+[  919.94s ->   929.41s] dice one that is x takes on the value of one dice two or y can take on the value of one or it could
+[  929.41s ->   937.17s] take on the value of two or it could take on the value of three and so on of course this is going to
+[  937.17s ->   943.41s] repeat itself in structure of course the next time it won't be one but it will be twos going down the line
+[  944.05s ->   952.37s] and that is going to account for all total possible outcomes of dice one and dice two now what of
+[  952.37s ->   958.77s] their sum well that's something that we can approach let's start by determining the total number of
+[  958.77s ->   967.57s] outcomes well how do we do this we know that each outcome can be represented as a pair of x and y's so we
+[  967.57s ->   981.25s] know pair x and y is going to be in this set of one one one two one three eventually we're going to end
+[  981.25s ->   990.45s] up with six comma six but how many total outcomes are there this turns into just a very simple counting
+[  990.45s ->   997.89s] problem and from my discrete math courses a long long time ago my professor wrote out underscores
+[  997.89s ->  1003.65s] whenever i was trying to count something and he said hey how many total possible options are there
+[ 1003.65s ->  1011.73s] for the first selection in this case we know x can take on six possible values okay what of y
+[ 1012.53s ->  1015.89s] y can also take on six possible values we'll multiply these guys together
+[ 1016.45s ->  1026.47s] we get 36 total possible values so this is going to be our sample space sample space
+[ 1027.59s ->  1035.11s] size so this is the cardinality of the sample space or the size of our sample space if you want to get
+[ 1035.11s ->  1044.39s] into some notation this is equal to omega and 36 is going to be equal to the cardinality of omega
+[ 1046.55s ->  1053.83s] well without the crazy probability jargon simply this is the total possible number of outcomes
+[ 1053.83s ->  1060.71s] of rolling two dice there's 36 total possibilities so now what are we interested in we are interested
+[ 1060.71s ->  1067.11s] in the probability that the sum is seven or the probability that the sum is 11. so let's start with
+[ 1067.11s ->  1084.44s] the easy one what is the set of outcomes such that x plus y is equal to 11. well we know six and five
+[ 1084.44s ->  1093.75s] make 11. this is our x and this is our y and this is a symmetric problem but nevertheless we also know that
+[ 1093.75s ->  1107.56s] x could be five and y could be six okay so i'm going to go ahead and i'm going to call this s2 and the
+[ 1107.56s ->  1115.08s] cardinality of s2 is just going to be what it's how many different pairs there are in this set we're
+[ 1115.08s ->  1124.76s] counting favorable outcomes here this is this second portion so s2 is going to be two we can make 11 two
+[ 1124.76s ->  1137.25s] ways one and two okay what about seven how many different ways can we make seven well we could do
+[ 1137.25s ->  1151.03s] one and six we can do two and five three and four okay well four and four clearly doesn't work so now
+[ 1151.03s ->  1160.39s] these are x's and these are our y's right these are x's these are our y's one six two five three four
+[ 1161.89s ->  1167.81s] okay now we're going back the other way so now x is going to take on four and then we have three
+[ 1170.55s ->  1179.62s] then we're going to have five and two then we're going to have six and one okay and that is going
+[ 1179.62s ->  1194.21s] to be our set that is going to be our set such that x plus y is equal to seven what is the cardinality
+[ 1194.21s ->  1203.49s] of this set if i say the set is equal to s1 then the cardinality of s1 is going to clearly be six okay we
+[ 1203.49s ->  1213.27s] have almost all of our pieces now we are interested in the probability that the two dice are summing to
+[ 1213.27s ->  1225.83s] seven or summing to 11. this is an or or means that we are going to just add the cardinality of the two
+[ 1225.83s ->  1233.99s] sets and we are just going to subtract out any of the overlap is there any overlap between these two
+[ 1233.99s ->  1242.76s] sets six and five five and six do we see that anywhere in s1 i don't see any five and six and five
+[ 1243.40s ->  1248.28s] so it looks like we can simply just add the cardinality of the two sets together so what does
+[ 1248.28s ->  1257.09s] this actually look like well we say that the probability that x plus y is equal to seven
+[ 1258.05s ->  1268.60s] this is again just a set or x plus y is equal to 11 is just going to be equal to the cardinality of
+[ 1268.60s ->  1276.28s] the set one plus the cardinality of the set two where this is s1 and this is s2 divided by our total
+[ 1276.28s ->  1281.24s] number of possible outcomes which is the cardinality of the sample space and if we don't care about all
+[ 1281.24s ->  1286.52s] that jargon we know there's two ways to make 11 and six ways to make seven so i'm going to go ahead
+[ 1286.52s ->  1296.31s] and just plug in two plus six i'm sorry it would be six plus two actually divided by 36 and we end up with
+[ 1296.31s ->  1303.35s] eight over 36. using our knowledge of probability and favorable outcomes to total number of outcomes we
+[ 1303.35s ->  1311.75s] found that the probability that the sum of two fair dice being either 7 or 11 is 8 over 36 this is
+[ 1311.75s ->  1319.43s] equivalent to the approach used in the first problem we tackled together that is the approach number three
+[ 1319.43s ->  1325.99s] where we took more of an intuitive logical graphical approach to that continuous random variable finding
+[ 1325.99s ->  1333.03s] the favorable outcomes to total number of outcomes and we just applied that idea in the context of
+[ 1333.03s ->  1340.79s] two fair dice now of course we use some knowledge of sets unions and intersections and if we needed a
+[ 1340.79s ->  1347.51s] refresher we can always go back to that lesson section to review if we take a look at the explanation
+[ 1347.51s ->  1354.07s] we can see that we are using the idea of favorable outcomes to total number of outcomes which is the
+[ 1354.07s ->  1362.23s] exact approach that we used to solve this problem onto the next if x follows a binomial distribution with
+[ 1362.23s ->  1369.43s] n equals a and p equals 0.5 what is the probability of obtaining exactly four successes this is a
+[ 1369.43s ->  1375.11s] great question we're actually going to be using a random variable and a probability mass function
+[ 1375.11s ->  1380.47s] to solve this question to answer this question we're going to use something called a binomial
+[ 1380.47s ->  1385.27s] distribution and we're going to define x as a binomial random variable parameterized by n and p
+[ 1386.15s ->  1399.09s] n is typically the total number of trials and p is the probability of success it's very important that
+[ 1399.09s ->  1406.69s] these trials are independent as well there can't be any sort of dependency structure so a binomial
+[ 1406.69s ->  1412.77s] random variable is actually just a series of independent bernoulli random variables what is a bernoulli random
+[ 1412.77s ->  1418.45s] variable well why is a bernoulli random variable parameterized by p and you can think of something like a
+[ 1418.45s ->  1425.73s] coin flip or just a binary outcome zero and one so you could have let's say a whole bunch of different bernoulli trials
+[ 1425.73s ->  1432.77s] so here we have four one two three four we could have heads tails heads heads
+[ 1432.77s ->  1440.45s] another way of parameterizing heads you could say that heads is one and tails is zero so heads is effectively
+[ 1440.45s ->  1451.27s] a success entails as a failure and you could just rewrite this as one zero one zero and when we sum up
+[ 1451.27s ->  1461.99s] all of these outcomes we are going to actually get a binomial random variable so a binomial random variable
+[ 1461.99s ->  1470.07s] is simply just a series of bernoulli random variables that is they're summed together okay so whenever we have
+[ 1470.79s ->  1474.39s] bernoulli random variables think of something like a coin flip and i asked you hey what's the
+[ 1474.39s ->  1479.75s] probability of two heads in a row most people even before studying probability and statistics we just
+[ 1479.75s ->  1487.19s] know okay we take 0.5 and we multiply it by 0.5 and we get 0.25 and you know that's our probability
+[ 1487.19s ->  1492.63s] okay so we're we're essentially multiplying the probability of success together right and that's that's
+[ 1492.63s ->  1499.99s] where this p to the k power comes from in this probability formula here for a binomial random
+[ 1499.99s ->  1507.59s] variable so p to the k is just the probability of seeing k successes well what about this 1 minus p to
+[ 1507.59s ->  1513.91s] the n minus k well you are also going to need to see failures because you're going to have how many
+[ 1513.91s ->  1518.71s] failures well if you have k successes and you have n trials you're clearly going to have n minus k
+[ 1518.71s ->  1527.35s] failures so if n is eight and you see four successes then you have four successes well how many must have
+[ 1527.35s ->  1535.86s] failed eight minus four which is of course going to be the remaining four okay so that's where these
+[ 1535.86s ->  1543.78s] two terms come from but what about this n choose k term this is a combinatorics situation here where does
+[ 1543.78s ->  1549.94s] this come from well the binomial random variable doesn't care about order it only cares about the
+[ 1549.94s ->  1556.10s] total number of outcomes so for example for a binomial random variable if i had let's say three trials
+[ 1557.44s ->  1564.40s] one zero zero for trial one two and three is effectively equivalent to zero one zero we don't really
+[ 1564.40s ->  1572.00s] care about the order here so this is counting the total possible ways that the configuration of n
+[ 1572.00s ->  1578.24s] trials and k successes could occur and that is accounting for all of the probability mass
+[ 1579.20s ->  1586.08s] that x could be equal to k so that's where this comes from now you're never really going to be asked
+[ 1586.08s ->  1593.60s] a question or have to solve a problem in the context of just plugging into this formula if if you did that
+[ 1593.60s ->  1599.92s] would be fantastic because this is a a closed form very explicit solution to the probability that x is
+[ 1599.92s ->  1605.36s] equal to k you know you can answer questions that are a little general if you assume independence like
+[ 1605.36s ->  1619.00s] you know what is you know the probability or the the probability probability of blank out of blank
+[ 1619.88s ->  1626.76s] this is a great general way to kind of look at a binomial random variable so the probability of
+[ 1628.50s ->  1647.24s] four successful free throws out of eight okay what about 500 successful simulations out of 1000.
+[ 1648.88s ->  1655.52s] so i mean this is just a general way to look at a binomial random variable very rarely will you just
+[ 1655.52s ->  1661.68s] apply it in this this context here you're more likely going to have a more complicated question like
+[ 1661.68s ->  1686.66s] what are or what is the total number of trials n that maximizes the probability of seeing say
+[ 1689.62s ->  1696.68s] i could just keep this general k blank this is an entirely different question it's still a binomial
+[ 1696.68s ->  1705.20s] random variable but here this is a this is a calculus problem now we have to maximize the probability of
+[ 1705.20s ->  1715.44s] seeing k whatever k free throws made k free throws failed k simulation successes so hopefully this is is
+[ 1715.44s ->  1722.00s] giving you a little intuition as to how you can make these questions just much much harder because now
+[ 1722.00s ->  1728.32s] okay you don't just have what you don't just have to plug into plug into this guy here right you actually
+[ 1728.32s ->  1734.96s] have to do calculus you have to take a a derivative with respect to something right you have to take it
+[ 1734.96s ->  1740.80s] with respect to whatever it is you're maximizing and set it equal to zero and and solve it turns into
+[ 1740.80s ->  1746.96s] a calculus problem very quickly but don't worry we'll level up our math another day okay so this is how it
+[ 1746.96s ->  1752.08s] can get more complicated fortunately for us it's very simple because all we have to do is take a look
+[ 1752.08s ->  1761.91s] at what the probability of seeing four successes out of eight we already know n and p n is 8 p is 0.5 so
+[ 1763.57s ->  1772.05s] 8 4 this is going to be 0.5 this is going to be 0.5 if i write this out explicitly we know that
+[ 1773.19s ->  1780.95s] we have some sort of random variable x that is distributed bin 8.5 we are looking for the
+[ 1780.95s ->  1789.51s] probability that x is equal to 4 this is equal to n choose k so we know our n is 8 our k is 4 then we
+[ 1789.51s ->  1798.39s] have 1 minus p which is 0.5 raised to the n minus k which is 8 minus 4 times 0.5 that is p raised to the
+[ 1798.39s ->  1808.87s] 4 if we reduce this we get 8 choose 4 0.5 to the 4 0.5 to the 4 and of course we add the exponents when
+[ 1808.87s ->  1820.82s] we multiply so we get 8 choose 4 0.5 to the 8 and that is going to be our solution to this problem
+[ 1820.82s ->  1829.22s] fortunately for us we see 8 choose 4 0.5 to the 8 we submit this guy and we get the answer correct for
+[ 1829.22s ->  1836.79s] probability question number 113 i think we can go and take a look at our rank and we've improved
+[ 1837.67s ->  1842.95s] we've improved our rank by three points we are well on our way to progressing to the next level of
+[ 1842.95s ->  1850.15s] probability questions i hope you've enjoyed this video even solving a question a day can significantly
+[ 1850.15s ->  1858.47s] improve your quantitative problem solving abilities especially if you solve a question in each domain
+[ 1858.47s ->  1864.95s] every single day of course quant guild will be here to track your progress over time and increase and
+[ 1864.95s ->  1871.75s] decrease your rank relative to your problem solving capacity and you can always revisit any question
+[ 1871.75s ->  1877.11s] at any time in the history or bookmark section i look forward to next time where we will continue
+[ 1877.11s ->  1883.59s] our journey to quant 5 by answering questions in a different domain that is math and finance thank you
+[ 1883.59s ->  1891.03s] so much for watching and i will see you in the next video

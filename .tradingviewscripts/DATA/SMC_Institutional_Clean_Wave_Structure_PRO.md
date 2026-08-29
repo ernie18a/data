@@ -1,0 +1,202 @@
+<!-- tradingview-pine-id: PUB;4a57aca020744f088dee5ee52d5a78b2 -->
+<!-- tradingviewscripts-format: 1 -->
+# SMC Institutional Clean Wave & Structure PRO
+
+Source: https://www.tradingview.com/script/Jd991JTf-SMC-Institutional-Clean-Wave-Structure-PRO/
+
+## Description
+
+SMC Institutional Clean Wave & Structure PRO
+
+SMC Institutional Clean Wave & Structure PRO is a refined technical analysis indicator engineered to provide institutional order flow insights, precise market structure tracking, and uncluttered visual clarity on both light and dark trading themes. It replaces unnecessary chart noise with clean dynamic trend wave fills, smart consolidation candle color detection, and confirmed structure shifts.
+
+Key Features Overview
+
+1. Dynamic Single Trend Wave & Background Fill
+Provides a smooth continuous structural trend wave. Renders vibrant green during bullish expansion phases and solid red during bearish contraction phases with a soft, unobtrusive background fill.
+
+2. Smart Consolidation Candle Engine
+Automatically highlights price action state. Bullish candles render in bright green, bearish candles in red, while tight consolidation or inside bar candles dynamically shift to a distinct grayish-white color to quickly highlight market compression.
+
+3. Clean Market Structure Shifts (BOS & CHoCH)
+Tracks key market structure breakouts. Identifies initial trend reversals as Change of Character (CHoCH) and structural extensions as Break of Structure (BOS), rendered with centered non-overlapping labels.
+
+4. Confirmed Major Swing BUY & SELL Badges
+Highlights major institutional high and low pivots with confirmed BUY and SELL badges. Pivot sensitivity and badge styling can be customized independently.
+
+5. Target Standard Deviation Level (-2.5 SD)
+Calculates real-time structural volatility and projects a dynamic -2.5 Standard Deviation Target line to help anticipate key potential market reaction levels.
+
+Settings Overview
+
+Trend Wave Settings
+- Show Trend Wave Line: Toggle wave line and fill display.
+- Colors & Opacity: Adjust trend line colors and background opacity.
+
+Candle Engine Settings
+- Enable Smart Candle Color Engine: Toggle adaptive candle colors.
+- Custom Colors: Define unique colors for bullish, bearish, and inside bars.
+
+Structure Settings
+- Show BOS & CHoCH Shifts: Toggle structure labels.
+- Structure Sensitivity: Fine-tune pivot detection rules for cleaner charts.
+
+Signal Badges
+- Show Confirmed BUY / SELL Badges: Toggle buy and sell markers.
+- Signal Swing Sensitivity: Adjust lookback periods for pivot signals.
+
+Standard Deviation Settings
+- Show -2.5 SD Target Line: Toggle volatility target line.
+- Custom Style: Adjust line thickness, color, and line style options.
+
+Disclaimer
+This script is built strictly for educational, analytical, and charting enhancement purposes. It does not offer financial advice or guaranteed trading results. Practice strict risk management.
+
+---
+
+## Source Code
+
+````pine
+// This Pine Script® code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © Dark_Ace_Master
+
+//@version=6
+// ==============================================================================================
+//  S M C   I N S T I T U T I O N A L   C L E A N   W A V E   &   S T R U C T U R E   P R O
+// ==============================================================================================
+
+indicator("SMC Institutional Clean Wave & Structure PRO", "Clean Wave Matrix PRO", overlay = true, max_lines_count = 500, max_boxes_count = 100, max_labels_count = 500)
+
+// ----------------------------------------------------------------------------------------------
+// 1. INPUTS & CONFIGURATION PANEL
+// ----------------------------------------------------------------------------------------------
+
+// A. Dynamic Single Trend Wave & Shadow
+g_wave           = "===== DYNAMIC TREND WAVE & FILL ====="
+show_wave        = input.bool(true, "Show Trend Wave Line", group=g_wave)
+wave_len         = input.int(21, "Wave Period", minval=5, maxval=100, group=g_wave)
+wave_width       = input.int(2, "Wave Line Thickness", minval=1, maxval=5, group=g_wave)
+c_bull_wave      = input.color(#00e676, "Bullish Wave Color", group=g_wave)
+c_bear_wave      = input.color(#ff1744, "Bearish Wave Color", group=g_wave)
+fill_opacity     = input.int(90, "Background Shadow Fill Opacity (0-100)", minval=50, maxval=100, group=g_wave)
+
+// B. Smart Candle Coloring Engine
+g_candle         = "===== SMART CANDLE COLORING ====="
+show_candles     = input.bool(true, "Enable Smart Candle Color Engine", group=g_candle)
+c_bull_candle    = input.color(#00c853, "Bullish Candle Color", group=g_candle)
+c_bear_candle    = input.color(#d50000, "Bearish Candle Color", group=g_candle)
+c_inside_candle  = input.color(#b2dfdb, "Consolidation / Inside Candle Color", group=g_candle)
+
+// C. Structure Shifts (BOS & CHoCH)
+g_smc            = "===== MARKET STRUCTURE (BOS & CHoCH) ====="
+show_smc         = input.bool(true, "Show BOS & CHoCH Shifts", group=g_smc)
+smc_sens         = input.int(7, "Structure Sensitivity", minval=2, maxval=30, group=g_smc)
+c_bos            = input.color(#0288d1, "BOS Color", group=g_smc)
+c_choch          = input.color(#7b1fa2, "CHoCH Color", group=g_smc)
+smc_txt_size     = input.string("small", "Structure Label Size", options=["tiny", "small", "normal"], group=g_smc)
+
+// D. Confirmed Major Swing Signals (BUY / SELL)
+g_sig            = "===== MAJOR SWING SIGNALS ====="
+show_sig         = input.bool(true, "Show Confirmed BUY / SELL Badges", group=g_sig)
+sig_sens         = input.int(10, "Signal Swing Sensitivity", minval=3, maxval=50, group=g_sig)
+c_buy_bg         = input.color(#00c853, "BUY Badge Fill", group=g_sig)
+c_buy_txt        = input.color(#ffffff, "BUY Badge Text Color", group=g_sig)
+c_sell_bg        = input.color(#d50000, "SELL Badge Fill", group=g_sig)
+c_sell_txt       = input.color(#ffffff, "SELL Badge Text Color", group=g_sig)
+
+// E. Standard Deviation Level (-2.5 SD Next Target)
+g_sd             = "===== TARGET STANDARD DEVIATION LEVEL ====="
+show_sd          = input.bool(true, "Show -2.5 SD Next Target Line", group=g_sd)
+sd_len           = input.int(20, "SD Calculation Period", minval=5, maxval=100, group=g_sd)
+c_sd_line        = input.color(#ff9100, "-2.5 SD Line Color", group=g_sd)
+sd_style         = input.string("Dashed", "SD Line Style", options=["Solid", "Dashed", "Dotted"], group=g_sd)
+sd_width         = input.int(2, "SD Line Thickness", minval=1, maxval=5, group=g_sd)
+
+// Helper Functions
+line_style_enum(s) => s == "Solid" ? line.style_solid : s == "Dashed" ? line.style_dashed : line.style_dotted
+txt_size_enum(s) => s == "tiny" ? size.tiny : s == "small" ? size.small : size.normal
+atr_val = ta.atr(14)
+
+// ----------------------------------------------------------------------------------------------
+// 2. DYNAMIC TREND WAVE & FILL ENGINE
+// ----------------------------------------------------------------------------------------------
+float trend_wave = ta.alma(close, wave_len, 0.85, 6)
+bool is_uptrend = close >= trend_wave
+
+color active_wave_col = is_uptrend ? c_bull_wave : c_bear_wave
+
+plot_w = plot(show_wave ? trend_wave : na, "Dynamic Trend Wave", color=active_wave_col, linewidth=wave_width)
+plot_p = plot(show_wave ? close : na, "Price Anchor", color=color.new(#ffffff, 100))
+
+fill(plot_w, plot_p, color=show_wave ? color.new(active_wave_col, fill_opacity) : na, title="Wave Background Fill")
+
+// ----------------------------------------------------------------------------------------------
+// 3. SMART CANDLE COLORING (INSIDE BAR DETECTION)
+// ----------------------------------------------------------------------------------------------
+bool is_inside = high <= high[1] and low >= low[1]
+bool was_inside = high[1] <= high[2] and low[1] >= low[2]
+
+color candle_col = (is_inside or was_inside) ? c_inside_candle : (close >= open ? c_bull_candle : c_bear_candle)
+
+barcolor(show_candles ? candle_col : na)
+
+// ----------------------------------------------------------------------------------------------
+// 4. MARKET STRUCTURE ENGINE (BOS & CHOCH)
+// ----------------------------------------------------------------------------------------------
+ph_smc = ta.pivothigh(high, smc_sens, smc_sens)
+pl_smc = ta.pivotlow(low, smc_sens, smc_sens)
+
+var float last_ph = na
+var float last_pl = na
+var int trend_dir = 0
+
+if not na(ph_smc)
+    last_ph := ph_smc
+
+if not na(pl_smc)
+    last_pl := pl_smc
+
+if show_smc and not na(last_ph) and ta.crossover(close, last_ph)
+    string lbl_text = trend_dir == -1 ? "CHoCH" : "BOS"
+    color lbl_col = trend_dir == -1 ? c_choch : c_bos
+    line.new(bar_index - 5, last_ph, bar_index, last_ph, color=lbl_col, style=line.style_dashed, width=1)
+    label.new(bar_index, last_ph, lbl_text, color=color.new(#ffffff, 100), textcolor=lbl_col, style=label.style_label_down, size=txt_size_enum(smc_txt_size))
+    trend_dir := 1
+    last_ph := na
+
+if show_smc and not na(last_pl) and ta.crossunder(close, last_pl)
+    string lbl_text = trend_dir == 1 ? "CHoCH" : "BOS"
+    color lbl_col = trend_dir == 1 ? c_choch : c_bos
+    line.new(bar_index - 5, last_pl, bar_index, last_pl, color=lbl_col, style=line.style_dashed, width=1)
+    label.new(bar_index, last_pl, lbl_text, color=color.new(#ffffff, 100), textcolor=lbl_col, style=label.style_label_up, size=txt_size_enum(smc_txt_size))
+    trend_dir := -1
+    last_pl := na
+
+// ----------------------------------------------------------------------------------------------
+// 5. CONFIRMED MAJOR SWING SIGNALS (BUY / SELL)
+// ----------------------------------------------------------------------------------------------
+ph_sig = ta.pivothigh(high, sig_sens, sig_sens)
+pl_sig = ta.pivotlow(low, sig_sens, sig_sens)
+
+if show_sig and not na(ph_sig)
+    int idx = bar_index - sig_sens
+    label.new(idx, high[sig_sens] + (atr_val * 0.3), "SELL", color=c_sell_bg, textcolor=c_sell_txt, style=label.style_label_down, size=size.small)
+
+if show_sig and not na(pl_sig)
+    int idx = bar_index - sig_sens
+    label.new(idx, low[sig_sens] - (atr_val * 0.3), "BUY", color=c_buy_bg, textcolor=c_buy_txt, style=label.style_label_up, size=size.small)
+
+// ----------------------------------------------------------------------------------------------
+// 6. TARGET STANDARD DEVIATION LEVEL (-2.5 SD)
+// ----------------------------------------------------------------------------------------------
+float sd_mean = ta.sma(close, sd_len)
+float sd_val = ta.stdev(close, sd_len)
+float sd_target = sd_mean - (sd_val * 2.5)
+
+var line line_sd = na
+
+if show_sd and barstate.islast
+    line.delete(line_sd)
+    line_sd := line.new(bar_index - 30, sd_target, bar_index + 10, sd_target, color=c_sd_line, style=line_style_enum(sd_style), width=sd_width)
+    label.new(bar_index + 10, sd_target, "Next -2.5 SD Target", color=color.new(#ffffff, 100), textcolor=c_sd_line, style=label.style_label_left, size=size.small)
+````

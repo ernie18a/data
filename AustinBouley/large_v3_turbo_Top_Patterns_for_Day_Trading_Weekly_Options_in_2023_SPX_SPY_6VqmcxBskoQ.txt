@@ -1,0 +1,88 @@
+[    0.53s ->     4.87s] Hey guys, it's Austin Booley again. Of course, we're going to do another recap of today
+[    4.87s ->    11.65s] because somebody in the group chat was just like, it's most important that we see your
+[   11.65s ->    17.47s] technical analysis or breakdown, not necessarily other stuff. Of course, I will be posting other
+[   17.47s ->    21.75s] stuff on this channel, but it's going to be mainly focused on technicals and how we know
+[   21.75s ->    27.77s] where a stock is going to move. So this was yesterday's movement. This is the Tastyworks
+[   27.77s ->    32.99s] platform. If you all don't know, it's not the best charting platform. Obviously, the
+[   32.99s ->    38.41s] best for that is Thinkorswim on the TD Ameritrade platform, but I really like how simple this
+[   38.41s ->    44.11s] is. My trading style is based off simplicity, so the simpler and cleaner my charts are, the
+[   44.11s ->    53.53s] better I like it. So I was going to do a play-by-play on the SPX today. SPX is an index. If you're
+[   53.53s ->    57.35s] trading on Robinhood, you will not be able to find this. However, if you want to be able
+[   57.35s ->    62.57s] to trade options on it, go to SPY, Robinhood has SPY, and they move the exact same way
+[   62.57s ->    70.64s] because they track or the SPY tracks SPX. All right. Dang it. Now I need to readjust.
+[   70.64s ->    77.52s] Okay. So let's go play-by-play here. So obviously, I knew we were going to have a gap down in the
+[   77.52s ->    85.26s] morning because SPX is not update with the over or the pre-market hours. That's why I have
+[   85.26s ->    91.70s] the ES here, which is the S&P 500 futures. So at night, let's see if we can pull up something.
+[   92.10s ->    96.18s] At night, this is what happens. We have normal and crash. So of course, we saw this crash last
+[   96.18s ->   103.36s] night, so we knew we were going to open up a lower. Here we go. So SPX, we knew we were going
+[  103.36s ->   111.94s] to gap down. So the first candle opened, gap down. It's opened here. It went down. It touched this
+[  111.94s ->   120.94s] little support here, this major support. Red is major. And then it bounced up. Okay. I'll go back
+[  120.94s ->   126.40s] and show a bigger timeframe of where I got this support from. But it bounced straight off this
+[  126.40s ->   131.88s] support. I am not into trading the mornings as much. I will be in the group chat and talking about
+[  131.88s ->   139.54s] it. But I'm not into trading it because most of the cash switches hands in the first 15 minutes.
+[  139.60s ->   144.92s] And the first 15 minutes of the day is so crazy. And it does not determine the overall effect of
+[  144.92s ->   151.28s] the market for that day. So if we look into the first 15 minutes, where's the first 15 minutes?
+[  152.54s ->   157.94s] The first 15 minutes is here. So the first 15 minutes is here. So obviously, if you look at just
+[  157.94s ->   162.14s] the first 15 minutes, you think we're going to be trending up on the day. We ended up having
+[  162.14s ->   169.22s] huge red days. That's not what happened here. So I like to wait till I can see a confirmation of
+[  169.22s ->   175.24s] some pattern or something I can find. So as we can see yesterday, we had a huge gap up. Did I buy a
+[  175.24s ->   181.08s] call immediately? No, I did not. Because I like to see a confirmation something conform. And this time
+[  181.08s ->   187.02s] we had a triangle breakout pattern to the upside, followed by another triangle to previous resistance.
+[  187.02s ->   192.32s] I covered that in the last video. Okay. This time we had the same thing. We had another triangle
+[  192.32s ->   199.62s] breakout. One way to view this was a triangle breakout, which is how someone viewed it. I also
+[  199.62s ->   205.88s] saw, which is not the most reliable pattern, but this is what I saw. I saw the head and shoulders.
+[  206.16s ->   211.10s] Okay. So as you can see, we have a shoot up. We have a shoulder here. We have the head here. And we have
+[  211.10s ->   217.02s] a shoulder here. This is the neckline. Your entry is on the break of the neckline. But of course,
+[  217.54s ->   225.36s] both patterns work. Whichever one you saw, it worked either way. Triangle or head and shoulders.
+[  225.72s ->   231.86s] So we had the triangle breakout form in the morning, almost exactly like yesterday, except it was a gap
+[  231.86s ->   237.62s] up. So we had a move up. Today was a gap down. And I said in the group chat, I was like, guys,
+[  237.62s ->   242.92s] we should be expecting a spike up because we had a gap down. And the shorts will be covering their
+[  242.92s ->   248.48s] position. When shorts cover, they have to buy to cover. So it's going to have a spike up. So
+[  248.48s ->   251.94s] we're going to have a spike up. And then we're going to continue downward. So of course, we saw
+[  251.94s ->   259.66s] the spike up. We saw some consolidation. And we saw the break. SPX contracts. I picked up some out
+[  259.66s ->   268.26s] of the money here puts at $2.60 a contract right here. We saw this break lower. I saw this little
+[  268.26s ->   272.90s] consolidation here. And I was like, guys, we're going to look for a further continuation lower.
+[  273.02s ->   277.70s] This is not where it's bouncing. Why did I know that? Because I always stress in the group chat,
+[  277.76s ->   281.60s] make sure you trade the same stocks over and over so that you can understand their patterns or in this
+[  281.60s ->   287.58s] instance, an index over and over. Why? Because I know Monday. Monday, look, we saw the same pattern.
+[  289.66s ->   298.62s] Long red day. But in between the red day, we had to see some consolidation here. We saw a consolidation
+[  298.62s ->   305.58s] here for a break lower. And then especially what looked like what we saw today is we saw this little
+[  305.58s ->   311.46s] rising wedge or bull. I don't know what you want to call it. But it's this little wedge pattern here,
+[  311.60s ->   317.32s] which basically means a continuation of a downtrend. Okay. So I remember Friday seeing two of these
+[  317.32s ->   323.40s] little wedge or one, two, three of these wedge wedges for a break lower. So because I know my stocks are well,
+[  323.46s ->   327.72s] I knew that that's what happens when it's trending down. So I said, guys, we're going to have this little
+[  327.72s ->   333.34s] consolidation here. As we saw, it's not a bounce. It's going to go back down. It didn't go down as far as I
+[  333.34s ->   339.46s] thought, but it hit our support. And then it went up. And of course, it's respecting this. I thought we were
+[  339.46s ->   344.60s] forming up for another triangle breakdown. As you can see, it was forming. I thought we're going to
+[  344.60s ->   349.90s] break straight through. However, we were going into 1030. The reason why I don't trade between 1030
+[  349.90s ->   356.78s] and around 130 is because of volume. You see how we just, we had some great moves here in the morning
+[  356.78s ->   361.98s] and at night, which is always, well, evening, which is the best times to trade. But the morning is just
+[  361.98s ->   369.06s] very, very, very flat, which is not good for me. I'm more of a directional trader. So as we see here,
+[  369.12s ->   376.30s] we have this little bounce between these support and resistance lines. Then here, so much fun. This
+[  376.30s ->   384.20s] is when the Fed chair Powell decided to speak. And every time he speaks, the market seems to be read.
+[  384.20s ->   390.32s] The past few times after the accusation of email stuff or whatever, every time Powell speaks,
+[  390.32s ->   395.84s] whether it's good or not, it has a super red day. So obviously, I knew that going in, but I wanted
+[  395.84s ->   400.64s] to confirm it's going to be a red day. Oh, sorry. I picked up the contracts here at 268 contracts,
+[  400.64s ->   408.60s] sold at $7 a contract here. Here, it was $10 a contract and it went up to $30 a contract.
+[  408.60s ->   418.76s] Sorry. Yes, $30 a contract here, $10 a contract to $30 a contract. So we had this break straight
+[  418.76s ->   423.76s] through this resistance level or the support level. And then we had this little triangle.
+[  423.76s ->   428.70s] Like guys, remember the pennant and we had a break lower straight to this support. You know,
+[  428.70s ->   432.62s] this is a support cause it came here, it bounced, it went down and it validated it. So I thought
+[  432.62s ->   437.42s] we're going to see a break lower to this level, but we end, but we ended up holding for this great
+[  437.42s ->   441.68s] little weekend. Um, now if we want to know what this looks like after market, you just go to ES and
+[  441.68s ->   446.64s] you can see that it's just holding because it's Friday and nobody wants to do anything, which makes
+[  446.64s ->   451.30s] sense. It's the weekend. Enjoy the weekend. But that is what happened today. That is how we saw a
+[  451.30s ->   457.56s] break. Even if you just came and you wanted to trade the morning session, 260 contract is $7 to $7 a
+[  457.56s ->   468.26s] contract. Let's look at the percentage game. Okay. So that's 169% on that trade. Now, if we want to
+[  468.26s ->   476.10s] look here, $10 to $30, that's obviously a 300% game. Well, 200% game. I brought water this time.
+[  476.10s ->   488.38s] Last video, I didn't have water. Okay. Well, my throat was bad. Um, so that is what we saw this
+[  488.38s ->   493.72s] time. Um, I hope y'all understand the breakdown, how basically what I always trace, I trade SPX and
+[  493.72s ->   500.08s] SPY over and over. I also like Facebook. Obviously it's in my Austin's babies watch list. Um,
+[  500.08s ->   506.54s] I really love the triangle break. Uh, I love support, resistance, EMA and triangle breakouts. I could
+[  506.54s ->   512.46s] trade that all day, every day. And I focus on the first two hours of the day and the last two hour,
+[  512.62s ->   518.22s] two hours of the day, because those are the most volatile times. So I can get in and out of stocks
+[  518.22s ->   525.70s] easily. If you guys want to join a options traders group chat, that is also below. And, um, of course,
+[  525.70s ->   531.18s] if you want to subscribe, that would be great. Uh, I have new, new videos. Um, it's usually based on
+[  531.18s ->   536.00s] what the people in the group chat want to see. So if you want your opinion to be heard, either leave a
+[  536.00s ->   542.02s] comment, like it, or just go to the, uh, the group chat. Thank y'all. Hopefully you understand my
+[  542.02s ->   546.96s] technical analysis and y'all can have success trading in these markets. Bye.

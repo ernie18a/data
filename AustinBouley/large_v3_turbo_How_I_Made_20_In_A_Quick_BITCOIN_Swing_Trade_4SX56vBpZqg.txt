@@ -1,0 +1,117 @@
+[    0.00s ->     4.90s] Alright guys, so I'm going to walk you through exactly how I made 20% on Bitcoin.
+[    5.50s ->     9.68s] So if you don't know already, I am not a huge Bitcoin person.
+[    9.84s ->    13.70s] For all those who've asked me about Bitcoin, I said stay away or swing traded.
+[   13.90s ->    17.94s] So why did I buy Bitcoin? How did I do it?
+[   17.98s ->    22.26s] Let me walk you through the exact process so that you can replicate this for yourself.
+[   22.68s ->    28.86s] Anyways, for those who don't know, the algorithm and the indicator that I always use is called the trending band indicator.
+[   28.86s ->    32.18s] And if you're not watching on YouTube and you're on podcasts, it's completely fine.
+[   32.22s ->    34.86s] I'm going to walk you through exactly what it looks like and how it works.
+[   34.98s ->    38.50s] So again, we have a middle gray line on the stock chart.
+[   38.66s ->    41.18s] This is the 200-day moving average.
+[   41.28s ->    47.06s] You can add this on any platform, whether a free trading view chart, typically on Yahoo Finance too.
+[   47.40s ->    52.84s] And it's an indicator that shows the moving average over the last 200 days.
+[   52.88s ->    56.66s] So it takes the last 200 days and it averages it and that's how it gets its value.
+[   56.66s ->    65.88s] So we have a middle gray line that goes through the chart and then we have green and red lines slightly above and below that 200-day moving average or that middle line.
+[   66.28s ->    74.06s] And basically what that shows is if the stock is above the green line, then it's a buy because the stock is trending higher and the momentum is moving up.
+[   74.44s ->    80.00s] Now, if it goes down, if it goes below the red line, then it shows that momentum and trend is going down.
+[   80.14s ->    82.02s] So it's best to sell those stocks.
+[   82.02s ->    86.42s] All right, so now that you have an idea of how this works, when a stock is above the green line, you buy.
+[   86.52s ->    87.96s] When it's below the red line, you sell.
+[   88.04s ->    89.42s] When it's inside, it's doing nothing.
+[   89.94s ->    93.32s] All right, so now that we have that idea, let's walk through this further.
+[   93.32s ->    99.32s] I have the Bitcoin USD chart up for Coinbase, I think.
+[   99.80s ->   108.48s] And what we can see here is that when Bitcoin rises, when it gets above the green band, the Bitcoin actually pushes higher.
+[  108.66s ->   112.56s] And it actually uses the green band as a support level.
+[  112.56s ->   123.10s] You can see here that Bitcoin was rising up in January 21, then towards the end, I mean, in the beginning of January, and then midway, it kind of dipped.
+[  123.26s ->   128.04s] It bounced on the top green line of the trending band indicator, and then it pushed up higher.
+[  128.46s ->   130.96s] And so that kind of just shows how trend works, right?
+[  131.00s ->   136.32s] It pushes up, it consolidates, it holds, and then it pushes higher.
+[  136.48s ->   139.00s] So that's what's happening here on Bitcoin.
+[  139.00s ->   146.34s] And what I was noticing was that Bitcoin was back in between the green and red lines, which means we're waiting for it to either go up or below.
+[  146.82s ->   151.00s] And so I saw at the same time a triangle pattern building.
+[  152.02s ->   159.58s] And if you don't know what a triangle pattern is, it just means that the highs of the stock are getting lower and the lows of the stock are getting higher.
+[  159.72s ->   165.54s] So the stock is squeezing into what is known as a triangle or a flag or whatever you want to call it.
+[  165.54s ->   169.00s] And this typically indicates that it's going to break higher.
+[  169.36s ->   175.26s] Now, what we ended up seeing here was that I was looking to buy above the break of this triangle.
+[  175.54s ->   181.48s] I was looking to get above the green band because we know that it performs well when it gets above that.
+[  181.96s ->   183.54s] But again, I got in early.
+[  183.64s ->   187.50s] I got in right here before we actually broke above the green line,
+[  187.50s ->   193.84s] which was in, it looks like January, around January 19th, 21, 2021.
+[  195.04s ->   196.86s] And so that's when I got in.
+[  196.92s ->   200.52s] I got in around, it looks like it was around $37,500.
+[  201.26s ->   203.18s] It was roughly the price of a Bitcoin.
+[  203.48s ->   205.16s] I only purchased like 0.05.
+[  205.28s ->   207.80s] It was just a fun little swing trade right there.
+[  208.10s ->   211.16s] And what happened was is if you followed me on Instagram,
+[  211.38s ->   213.40s] I said, guys, I'm purchasing Bitcoin right here.
+[  213.48s ->   214.16s] This is why.
+[  214.16s ->   217.12s] And I'm holding for a month to two months.
+[  217.22s ->   222.00s] So I closed out my Coinbase account as in like I logged out and I didn't look back in it.
+[  222.08s ->   226.04s] Next thing I know, I heard Bitcoin and Tesla news.
+[  226.18s ->   228.28s] And if for those who don't know what happened yesterday,
+[  228.76s ->   229.96s] or I guess today's, what is today?
+[  230.04s ->   230.36s] Tuesday.
+[  230.70s ->   232.70s] So for when you listen to this podcast on Thursday,
+[  232.84s ->   237.10s] a few days ago, Tesla owned by Elon Musk decided
+[  237.10s ->   241.12s] that they were going to start accepting Bitcoin purchases for Teslas.
+[  241.12s ->   244.40s] And to do that, they need some Bitcoin reserves on file.
+[  244.80s ->   248.50s] So I think they purchased roughly about 1.5 billion Bitcoin.
+[  248.64s ->   249.02s] I don't know.
+[  249.12s ->   250.48s] I could be wrong on that exact number.
+[  250.78s ->   253.90s] But a lot of Bitcoin, which drove the price up dramatically.
+[  254.38s ->   257.68s] And so I looked at it and I was okay with the profit and I took it.
+[  257.90s ->   259.18s] So let me walk you through here.
+[  259.24s ->   264.80s] So I bought at roughly, right, 37 and I sold at roughly 46,000.
+[  264.90s ->   269.18s] So almost a $10,000 per coin increase.
+[  269.18s ->   270.60s] But again, I didn't have a whole coin.
+[  271.02s ->   273.70s] So I made roughly 20% on that investment.
+[  274.08s ->   276.16s] Now you may be like, Austin, why did you sell right there?
+[  276.26s ->   277.80s] Why did you think it was going to go higher?
+[  278.26s ->   282.18s] And okay, guys, so the trending band identifies what is healthy for a stock?
+[  282.26s ->   283.32s] What is normal for a stock?
+[  283.40s ->   285.48s] And that's why when it gets above the green band,
+[  285.54s ->   287.64s] we know it's healthy and we know it's continuing higher.
+[  287.82s ->   291.18s] But we also have yellow bands on the very bottom
+[  291.18s ->   292.92s] and on the very top of the chart,
+[  293.00s ->   296.04s] which calculates how high can the stock go?
+[  296.28s ->   297.78s] How low can the stock go?
+[  297.78s ->   301.02s] So when Bitcoin or a stock hits this bottom yellow line,
+[  301.16s ->   302.48s] we know it's going to bounce here.
+[  302.58s ->   304.20s] When it hits the top yellow line,
+[  304.26s ->   306.96s] we know it's going to drop there.
+[  307.30s ->   311.58s] And so when I saw Bitcoin being how it got shot up on news
+[  311.58s ->   313.92s] and it was right here around this price,
+[  314.08s ->   315.94s] I saw that it was hitting the top yellow line
+[  315.94s ->   320.28s] and I knew that a better or more likely than not,
+[  320.34s ->   322.44s] we're going to see the stock come down a bit more.
+[  322.50s ->   323.98s] We're going to see Bitcoin come down a bit more.
+[  324.28s ->   325.60s] And so that's why I sold right there.
+[  325.60s ->   327.52s] So that was about a month hold, like I was saying.
+[  327.58s ->   328.86s] I was saying I was going to look for about a month
+[  328.86s ->   329.44s] to a two month hold.
+[  329.80s ->   331.52s] And it looks like it played out well.
+[  331.92s ->   333.18s] Again, this is how it works.
+[  333.54s ->   335.74s] In retrospect, what you would have wanted to do
+[  335.74s ->   339.46s] is wait for the Bitcoin to get above the green band.
+[  339.58s ->   341.58s] What I did was called pre-attackulation
+[  341.58s ->   344.32s] and I pre-attacked the stock.
+[  344.44s ->   345.30s] So don't do that.
+[  345.36s ->   346.48s] No pre-attackulation.
+[  346.96s ->   348.82s] Just focus on buying the stock
+[  348.82s ->   350.64s] when it gets above the green band.
+[  350.72s ->   352.26s] You can see here, you would have been fine.
+[  352.52s ->   353.36s] You would have been fine.
+[  353.36s ->   355.40s] So focus on that using the system.
+[  355.54s ->   356.62s] If you want to learn more about that,
+[  356.72s ->   357.60s] click the link below
+[  357.60s ->   360.00s] and you can grab your free trial
+[  360.00s ->   362.02s] to the software that does all this for you.
+[  362.30s ->   363.56s] And you can even add this to your chart.
+[  363.86s ->   364.20s] All right, guys.
+[  364.26s ->   365.18s] Thank you so much for watching.
+[  365.34s ->   367.22s] See you on the next podcast next Thursday.
+[  367.46s ->   369.24s] We'll get into some more helpful stuff
+[  369.24s ->   370.46s] like the top stocks and more.
+[  370.74s ->   371.18s] All right, guys.
+[  371.28s ->   372.10s] Thank you so much for watching.
+[  372.22s ->   372.88s] See you then.

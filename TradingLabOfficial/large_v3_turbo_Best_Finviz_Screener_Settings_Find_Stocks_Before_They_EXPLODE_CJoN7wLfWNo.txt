@@ -1,0 +1,193 @@
+[    0.24s ->     1.56s] Let me paint you a picture.
+[    1.56s ->     5.22s] You just woke up, you brushed your teeth, got your coffee, and now you're doing your
+[    5.22s ->    10.56s] morning stock preparation, spending hours scrolling through tens if not hundreds of
+[   10.56s ->    15.76s] different stocks, trying to find that one gem that'll make you profitable that morning.
+[   15.76s ->    20.00s] Have you ever wondered if there's a magical way to completely filter out thousands of
+[   20.00s ->    24.40s] stocks so you can only see the ones that fit your exact requirements?
+[   24.40s ->    27.96s] Maybe you're only looking for bounce plays, maybe you're looking for breakouts, maybe
+[   27.96s ->    33.04s] you're looking for gradual gainers, sharp gainers, longs, shorts, well lucky for you,
+[   33.04s ->    34.04s] there is a way.
+[   34.04s ->    38.52s] And in this video, I'm going to share with you my stock screener settings that I use every
+[   38.52s ->    43.46s] morning before I trade, so I can filter out all the noise and only go through stocks that
+[   43.46s ->    45.48s] I'd be genuinely interested in.
+[   45.48s ->    50.46s] This will save you tons of time, will give you a better watchlist, and if you do it correctly,
+[   50.46s ->    53.40s] this in itself will make you a more profitable trader.
+[   53.40s ->    56.40s] Well, let's not waste any time, let's get straight into it.
+[   56.40s ->    58.62s] First things first, you're going to need a screener.
+[   58.62s ->    62.44s] There are tons of different screeners out there, but some are better than others.
+[   62.44s ->    64.30s] But for the most part, they're all the same.
+[   64.30s ->    68.24s] If you don't have one yet, I'd definitely suggest getting one if you're looking to get
+[   68.24s ->    71.82s] in day trading seriously or even trading at all.
+[   71.82s ->    76.32s] It's an important tool to have in your arsenal and can be the difference maker of you making
+[   76.32s ->    77.32s] money or not.
+[   77.32s ->    81.50s] I'll be using Finviz for these examples, but most screeners will do just fine.
+[   81.50s ->    86.72s] I would normally be using Trading View Scanner, but Trading View Scanner costs money and Finviz
+[   86.72s ->    87.72s] is free.
+[   87.72s ->    91.30s] So I thought for you guys, we should be using Finviz for these examples.
+[   91.30s ->    92.72s] I'll leave a link in the description.
+[   92.72s ->    95.76s] Alright, so I don't know what type of trader you are.
+[   95.76s ->    97.68s] You might be a riskier trader than me.
+[   97.68s ->    99.80s] You might be a more passive trader.
+[   99.80s ->   101.06s] Everyone is going to be different.
+[  101.06s ->   105.78s] That's why I'm going to give you multiple different presets that I use so we can include
+[  105.78s ->   107.50s] all types of traders.
+[  107.50s ->   111.12s] I guess what I'm trying to say is, don't feel like you have to copy my settings for
+[  111.12s ->   112.12s] verbatim.
+[  112.12s ->   114.86s] Change them to whatever trading style fits you best.
+[  114.86s ->   119.18s] It's important rather than just copying my settings, you understand the thought process
+[  119.18s ->   120.18s] behind it.
+[  120.18s ->   124.74s] Also, make sure you watch this whole video because I will be leaving multiple different
+[  124.74s ->   129.66s] screener settings and one of them is an absolute gem that works wonders for me.
+[  129.66s ->   133.96s] I'm also not going to be explaining each and every setting and why I'm using it because
+[  133.96s ->   138.20s] I have a bunch of different presets and if I explained each and every one of them, this
+[  138.20s ->   140.26s] video would be an hour long.
+[  140.26s ->   145.18s] If you want more information or have a question of why I selected a specific setting, ask it
+[  145.18s ->   147.18s] in the comments and I'll try to answer.
+[  147.18s ->   151.18s] Alright, the first strategy we're going to be doing is for stocks that we want to buy
+[  151.18s ->   152.18s] and hold.
+[  152.18s ->   155.96s] These aren't short term trades, these aren't day trades, they are trades that we can be
+[  155.96s ->   158.40s] confident in and not sell.
+[  158.40s ->   163.14s] Most of these charts should look like this, where they have steady and consistent growth.
+[  163.14s ->   167.10s] So you want to go to Finviz and then go to the screener tab and this will take you to
+[  167.10s ->   168.10s] the screener.
+[  168.10s ->   170.66s] The first setting we want to change is market cap.
+[  170.66s ->   175.10s] We only want to be looking at stocks with over a 50 million market cap.
+[  175.10s ->   178.30s] This will filter out any and all penny stocks.
+[  178.30s ->   182.36s] Next we only want to see stocks that are above the 20 day moving average.
+[  182.36s ->   188.96s] We want to see a beta over 1.5, EPS growth over the next 5 years should be over 10%, return
+[  188.96s ->   194.54s] on equity set to over 15%, then we want the current ratio over 1.5.
+[  194.54s ->   199.24s] Another cool thing about Finviz is that you can get more details about a specific filter
+[  199.24s ->   201.68s] if you don't necessarily know what it means.
+[  201.68s ->   206.34s] So for example, if you don't know what current ratio is, you can hover over it and see that
+[  206.34s ->   208.84s] it's assets divided by liabilities.
+[  208.84s ->   213.46s] So if you're wondering why I selected something, just hover over it and it'll explain what that
+[  213.46s ->   215.26s] specific filter means.
+[  215.26s ->   219.98s] As you can see, after adding all these filters, we get a nice little list of stocks.
+[  219.98s ->   224.46s] Now I should also mention right now, not all these stocks down here are going to be good
+[  224.46s ->   225.46s] plays.
+[  225.46s ->   228.18s] That's an important concept to understand with screeners.
+[  228.18s ->   231.46s] You should treat them as filters, not absolute trades.
+[  231.46s ->   236.72s] This should be used just as a simplified list, so you don't have to look at 6,000 different
+[  236.72s ->   237.72s] stocks.
+[  237.72s ->   242.02s] What I normally would do is take this list, go through each and every chart, look up the company
+[  242.02s ->   245.00s] if I don't know it already and see if I like it.
+[  245.00s ->   246.86s] If I do, I'll enter a position.
+[  246.86s ->   251.84s] So as you can see with all these settings, most of them are slow and steady gainers going
+[  251.84s ->   252.84s] up.
+[  252.84s ->   255.86s] You can also see that we have 18 stocks in this list.
+[  255.86s ->   257.64s] Maybe that's too big of a list for you.
+[  257.64s ->   260.56s] Well, you can simply make your settings more extreme.
+[  260.56s ->   264.82s] So instead of having an EPS of 10%, you can set it to 20%.
+[  264.82s ->   267.60s] Now you can see we only have 12 stocks to look at.
+[  267.60s ->   269.06s] That's the cool thing about screeners.
+[  269.06s ->   271.62s] You can customize them to whatever your needs are.
+[  271.62s ->   274.82s] You can also select which data you want to look at.
+[  274.82s ->   277.06s] So maybe you want to see the stock's performance.
+[  277.06s ->   279.68s] Well, you can just click this tab to do so.
+[  279.68s ->   283.16s] So you can get some really good information with these tabs.
+[  283.16s ->   287.34s] You can also hover over the stock's ticker and it'll show you a quick example of what
+[  287.34s ->   288.58s] the chart looks like.
+[  288.58s ->   292.04s] So you don't have to sit here and open each and every one on TradingView.
+[  292.04s ->   296.64s] So what I normally do is I hover over each and every one to see if I like the general
+[  296.64s ->   301.88s] style of the chart, then I'll open it up on TradingView to do some more in depth technical
+[  301.88s ->   302.88s] analysis.
+[  302.88s ->   306.32s] The next preset we'll be looking at is for oversold bounce plays.
+[  306.32s ->   308.20s] Here's the strategy for this one.
+[  308.20s ->   313.06s] We're looking for stocks that probably dropped too much and the market just overreacted.
+[  313.06s ->   318.08s] So what we want are plays like this, where there's a recent drop and the price is starting
+[  318.08s ->   319.12s] to correct itself.
+[  319.12s ->   322.46s] So we can enter or at least watch for a bounce play.
+[  322.46s ->   327.54s] These are usually really nice because bounce plays usually make big movers and big movers
+[  327.54s ->   329.14s] bring in a lot of profit.
+[  329.14s ->   332.42s] And most of the time you're getting the stock for a pretty good price.
+[  332.42s ->   338.00s] So for this we want the stock price to be over $5, we then want the RSI to be oversold
+[  338.00s ->   342.28s] and this will give us only stocks that the market probably overreacted on.
+[  342.28s ->   347.80s] Next, we want to set the change to up, saying that it recently just started going back up.
+[  347.80s ->   352.32s] Then we want to set the relative volume to over 2, which is basically saying that we want
+[  352.32s ->   356.10s] to see stocks that have 2 times the volume it usually does.
+[  356.10s ->   360.40s] So with these settings, we're looking for oversold stocks that are recently going up
+[  360.40s ->   363.16s] and a lot more people are entering than usual.
+[  363.16s ->   368.08s] We got a nice set of stocks, where if we go through them, almost all of them just recently
+[  368.08s ->   370.88s] went down and are starting to correct a bit.
+[  370.88s ->   375.10s] One recommendation I would have with this style of trading is to be a little patient.
+[  375.10s ->   378.58s] You don't want to catch a falling knife, not all of these will bounce back up.
+[  378.58s ->   382.00s] Some of them will act like they want to correct, but then just keep falling.
+[  382.00s ->   386.22s] So I'd suggest just putting these on a watch list, watch them for a bit, wait for some
+[  386.22s ->   388.14s] confirmation, then enter.
+[  388.14s ->   390.56s] You can make some really good plays with this preset.
+[  390.56s ->   393.48s] This next preset is looking for breakouts.
+[  393.48s ->   397.98s] Breakouts can be really nice because once they are confirmed, most of the time they skyrocket.
+[  397.98s ->   402.10s] It's a really nice list to have just to watch every now and then for a potentially
+[  402.10s ->   403.10s] good gainer.
+[  403.10s ->   408.04s] What we are looking for are stocks like these, where it just now got to a new high and is
+[  408.04s ->   409.54s] ready to keep going.
+[  409.54s ->   413.38s] So for this strategy, we want the chart to be in a strong uptrend.
+[  413.38s ->   418.60s] To make sure we're getting that, we want the price to be above the 20 day, 50 day,
+[  418.60s ->   420.38s] and 200 day moving average.
+[  420.38s ->   424.52s] Next, we want the stock to be at a new high from the past 50 days.
+[  424.52s ->   428.00s] We also want return on equity to be over 20%.
+[  428.00s ->   432.50s] This is just saying that we want the company to be investing shareholders money efficiently.
+[  432.50s ->   437.44s] We also want the debt to equity ratio under 1, so we know the company doesn't have a
+[  437.44s ->   438.94s] lot of debt and liabilities.
+[  438.94s ->   445.14s] The final setting we want is the average volume set to over 100k, so we know this stock is
+[  445.14s ->   448.44s] seeing some interest from people and is pretty liquid.
+[  448.44s ->   452.94s] You should get charts that look like this, going up and creating new 50 day highs.
+[  452.94s ->   457.02s] The play for these is just to watch them for a bit, maybe see if they're breaking a key
+[  457.02s ->   460.50s] resistance and giving some confirmation, and then you can enter.
+[  460.50s ->   465.62s] Again, not all of these are winners, it's up to you to decide which charts look good.
+[  465.62s ->   469.06s] Maybe you're a short trader, and don't like trading long that often.
+[  469.06s ->   471.48s] Well, these next settings are for you.
+[  471.48s ->   473.10s] These are short plays.
+[  473.10s ->   476.50s] Most of the charts will look like this, price with a downward movement.
+[  476.50s ->   479.10s] The first setting we want to change is market cap.
+[  479.10s ->   482.32s] We only want to look at stocks over 300 million.
+[  482.32s ->   485.64s] We want the float short set to high at 20%.
+[  485.64s ->   489.96s] This is basically saying there are a lot of other short traders shorting these stocks at
+[  489.96s ->   490.96s] the moment.
+[  490.96s ->   496.20s] Next, we want an average volume of over 500k, saying that we want a big downwards movement
+[  496.20s ->   502.22s] and a lot of traders entering, giving us liquidity to exit the trade whenever we want.
+[  502.22s ->   506.94s] Then we want a relative volume over one, so saying we want a volume higher than what it
+[  506.94s ->   508.32s] normally is.
+[  508.32s ->   513.34s] Then we want the current volume over 500k, and boom, you got a couple of stocks that have
+[  513.34s ->   516.24s] some great potential to enter a short position.
+[  516.24s ->   521.36s] What's cool about this one is the float setting, so when entering this trade, you can be confident
+[  521.36s ->   524.92s] there are others hopping on the same exact strategy you're doing.
+[  524.92s ->   529.58s] The next preset we'll be taking a look at is bounce plays off moving averages.
+[  529.58s ->   533.80s] So it should look something like this, where price came down and is looking to bounce off
+[  533.80s ->   538.24s] the moving average using it as a support, and it's heading upwards.
+[  538.24s ->   542.86s] To do this, we want our price to be above the 20 day moving average, but we also want
+[  542.86s ->   546.26s] the price to be below the 50 day moving average.
+[  546.26s ->   552.12s] Then we want an average volume of over 400k, telling us this stock has a lot of activity,
+[  552.12s ->   556.42s] and then we want the relative volume over 1, telling us it's higher than normal.
+[  556.42s ->   559.64s] Then we want a current volume of over 2 million.
+[  559.64s ->   564.06s] As you can see, it gave us a lot of different charts that went down recently, but are looking
+[  564.06s ->   567.48s] to bounce off the moving average, and to start heading upwards.
+[  567.48s ->   570.30s] The next preset is for all my dividend traders out there.
+[  570.30s ->   576.08s] We'll be trying to find undervalued stocks that are looking to grow, but they also pay dividends.
+[  576.08s ->   581.54s] First things first, we want large market cap stocks, so we'll set it to over 10 billion.
+[  581.54s ->   587.76s] Next we want a positive dividend yield of over 0%, telling us all these stocks pay dividends.
+[  587.76s ->   593.06s] Next we want a PE ratio of under 20, saying it's potentially undervalued.
+[  593.06s ->   599.22s] Then we want an EPS growth for the next 5 years at over 5%, telling us the company is growing.
+[  599.22s ->   605.40s] We want a payout ratio of under 50%, we want a low PEG giving us stocks that are undervalued.
+[  605.40s ->   608.54s] Then we want an EPS growth next year of over 5%.
+[  608.54s ->   613.28s] It's going to give you a nice list, a lot of these charts will look different, some
+[  613.28s ->   615.72s] will be going up, some will be going down.
+[  615.72s ->   619.26s] It's just important to realize that with these settings, we're looking for undervalued
+[  619.26s ->   622.00s] stocks that have growth and pay dividends.
+[  622.00s ->   627.78s] This next and final preset is going to be showing you companies with insane growth and earnings.
+[  627.78s ->   630.90s] All these companies will most likely be a really good buy.
+[  630.90s ->   635.42s] We want to be trading with the trend on this one, so we want the price to be above the 200
+[  635.42s ->   636.42s] day moving average.
+[  636.42s ->   641.92s] We also want an average volume of over 400k, telling us there's a lot of activity.
+[  641.92s ->   646.22s] We then want an EPS growth for the year to be over 25%.
+[  646.22s ->   650.30s] We also want it to be over 25% for the quarter and the next year.
+[  650.30s ->   653.98s] Then we also want sales for the quarter to be over 25%.
+[  653.98s ->   657.32s] This in itself will give us some really strong companies.
+[  657.32s ->   661.66s] Then we want companies that are not oversold, with an RSI over 50.
+[  661.66s ->   666.24s] And there you go, it's going to give you some strong companies with great earnings recently.
+[  666.24s ->   669.42s] Which most of the time means they are going to be doing really good.
+[  669.42s ->   674.60s] If you got absolutely any value from this video, I'd really appreciate it if you took 5 seconds
+[  674.60s ->   676.16s] out of your day and liked it.
+[  676.16s ->   680.72s] Maybe you need a trading strategy to know when to enter or exit some of these stocks.
+[  680.72s ->   686.46s] Well, try this one out, where I made 130% profit within just 2 months of trading.
+[  686.46s ->   689.80s] Thanks for watching, and I'll see you guys next time.

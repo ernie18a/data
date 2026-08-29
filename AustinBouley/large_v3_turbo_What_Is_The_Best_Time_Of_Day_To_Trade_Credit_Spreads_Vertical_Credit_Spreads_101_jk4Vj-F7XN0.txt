@@ -1,0 +1,58 @@
+[    0.29s ->     4.57s] Hey guys, welcome to this video. I'm going to talk about the best time of day to buy
+[    4.57s ->     9.29s] credit spreads or to sell credit spreads. And at the very end, if you stay till it,
+[    9.33s ->    13.35s] I'm going to show you exactly how to sell credit spreads, even if you work full time
+[   13.35s ->    18.33s] and do not have time during the day to place a trade. All right. So again, when we're looking
+[   18.33s ->    22.51s] at credit spreads, if you're a credit spread trader, this is a directional play. I don't
+[   22.51s ->    26.99s] know why we're getting there right now. This is a directional credit spread play, which means that
+[   26.99s ->    31.45s] we're betting on a certain direction. So for instance, we pick a level, let's say this is
+[   31.45s ->    38.31s] our level. And our goal is to have the stock stay above this price by our expiration date. So this
+[   38.31s ->    44.19s] means that we make money if the stock goes up, we make money if the stock stays flat, we make money
+[   44.19s ->    48.51s] if the stock goes down and just can't go below our level. And so that is the beauty of a credit
+[   48.51s ->    53.69s] spread, right? You typically make more money. Now, how and what time of day do you put on a credit
+[   53.69s ->    56.89s] spread? Well, I have a lot of videos walking you through how to put on credit spread trades
+[   56.89s ->    63.67s] for different brokers, but the time of day is very simple. I personally like to target end
+[   63.67s ->    68.47s] of day because again, I like to base a lot of my trades and a lot of my strategies off
+[   68.47s ->    74.23s] the market close. What was the close price for that day? And again, I know ideally around
+[   74.23s ->    79.27s] what the close price is when I'm within an hour of the trading day. And so I personally
+[   79.27s ->    85.57s] like to trade credit spreads towards the end of the day. However, what is the ideal best
+[   85.57s ->    90.47s] time? That 100% depends up to you and your strategy. You can buy it first thing in the
+[   90.47s ->    93.81s] morning when the market opens. You can buy it in the middle of the day when you're on
+[   93.81s ->    98.65s] your lunch break. You can buy it towards market close like I do. There is no statistical
+[   98.65s ->   103.65s] advantage. All that it's based on is your strategy. What is your approach? Are you just placing
+[  103.65s ->   108.85s] a credit spread based on a delta? You can do that at any time. Are you placing a trade based
+[  108.85s ->   113.55s] on a trend following strategy you use? Okay, well, then you need to identify when is this going to
+[  113.55s ->   119.73s] trend? When has it broken out? Once it does, then you enter. So again, you may be a strategy
+[  119.73s ->   124.31s] base. And if it's so, you're waiting on a specific breakout to happen. Or you may be waiting
+[  124.31s ->   129.27s] towards market close because you've used a backtested strategy. And since backtested strategies
+[  129.27s ->   135.81s] are based on market close prices, you want to buy towards the end of the day. That's exactly what
+[  135.81s ->   141.47s] I do. The trades that I created are based on market close. So if I can enter those trades closer
+[  141.47s ->   146.27s] to the market close price, then I'm going to be more accurate and more consistent with the strategy
+[  146.27s ->   154.01s] that I use. Now, that is the answer. I'm sorry it's so broad. It's so, you know, like there's no
+[  154.01s ->   160.45s] definite answer on it. But the best time to trade or sell a credit spread is anytime. If you have time,
+[  160.59s ->   165.63s] sell a credit spread. Now that comes into the final tip I was going to tell you is what happens
+[  165.63s ->   171.83s] if you don't have time to place a credit spread trade during the trading day, right? You may work
+[  171.83s ->   176.81s] full-time. You may, like you have meetings during the day. You just can't look at the market. Your
+[  176.81s ->   180.27s] internet blocks it. Let's say you're a school teacher. Sometimes internet blocks things in
+[  180.27s ->   184.49s] schools. Or maybe you're just a full-time parent and you're running to meetings. You're trying to
+[  184.49s ->   189.99s] get kids, places, whatever. You just can't place a trade. Well, that is the idea of limit orders.
+[  190.31s ->   194.69s] You can set limit orders in your broker to say, hey, I like this level. Or my strategy says,
+[  194.69s ->   198.95s] I'm going to sell this level, but I wasn't able to hit it today. What you do is you get out your
+[  198.95s ->   203.63s] phone while you're going to bed or when you wake up first thing in the morning. The market does not
+[  203.63s ->   208.99s] have to be open to do this. You go on your phone onto your broker app and you say, hey, put a limit
+[  208.99s ->   217.49s] order in for this price for a credit spread. Target this price to get in at and just place the trade.
+[  217.59s ->   222.63s] Make sure it's a good to cancel order and that trade will stay open until it gets hit. Now again,
+[  222.63s ->   227.29s] if it doesn't get hit, then the next night you can readjust position, see if you want to reenter,
+[  227.43s ->   233.53s] see if you want to change price. But again, you can enter at any time of the day, even if the
+[  233.53s ->   238.79s] market's not open just by setting a limit order. So this will help everyone who works full time,
+[  239.45s ->   242.73s] has a family, whatever, because you can place it at night. You can place it while you're eating
+[  242.73s ->   247.51s] dinner. You can place it first thing in the morning before you leave for work. Or if you're trading full
+[  247.51s ->   251.85s] time, guess what? It doesn't matter what time you enter our credit spread. As long as you enter and you
+[  251.85s ->   255.53s] have a good reasoning for doing so. Whether that be based off a strategy, based off Delta,
+[  255.69s ->   259.23s] based off whatever, make sure you're placing it based off your strategy. If you want to learn more
+[  259.23s ->   263.47s] about the strategies that I use, I give them all the way for free. I back tested these things over
+[  263.47s ->   269.33s] 15 years. It's taken me over four years to develop this type of approach. Again, you can have a 95%
+[  269.33s ->   273.71s] win rate with these strategies and you can learn about them. No email, no nothing required. I
+[  273.71s ->   278.83s] share the Google Doc linked below. So that is for you. But again, if you want the alerts and straight to
+[  278.83s ->   283.01s] your phone to know what to do, when, and why, and you want to have my help with that, again,
+[  283.01s ->   287.01s] you can learn more about the Inner Circle program linked below as well. All right, guys, see you in
+[  287.01s ->   291.27s] the next video. Smash that subscribe button because I have a lot more to teach you about credit spreads.

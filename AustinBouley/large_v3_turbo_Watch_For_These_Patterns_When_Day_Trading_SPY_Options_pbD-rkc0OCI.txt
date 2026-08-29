@@ -1,0 +1,120 @@
+[    0.00s ->     4.96s] Hey guys, what's up? It's Austin Booley again, and today we're going to talk about how I trade SPY,
+[    5.04s ->    12.28s] how I day trade SPY options. Again, SPY is based off the S&P 500, which if you want to look at is
+[   12.28s ->    20.10s] SPX. This is what SPY is, or this is what the S&P 500 is, and SPY is the ETF that tracks that.
+[   20.48s ->    25.68s] So they have the same patterns, but SPI has the most volume in regards to options,
+[   25.68s ->    30.70s] so I can make sure that I'm in and out quickly. Okay, so today was an amazing day in the markets.
+[   31.32s ->    38.52s] Everything was definitely green, but it was mainly in regards to the news that the trade war is over,
+[   39.10s ->    42.66s] and that they solved all their problems. I don't know, I didn't really read on it. That's just what
+[   42.66s ->    52.46s] I heard today. Again, I don't do much research on the news. I do technical analysis. So that's,
+[   52.46s ->    59.86s] let me show y'all what I saw today and how I traded it. Again, I made, okay, I know y'all
+[   59.86s ->    64.92s] probably want to see like a profit post or something, but I haven't been trading an account
+[   64.92s ->    70.38s] with real money for like the past like week. Yes, I have traded with real money. Yes, I do trade with
+[   70.38s ->    77.18s] real money, but I turned 18, so I had to open up my own account, and I took my money out of my
+[   77.18s ->    82.34s] parents' account. So right now I'm in the transferring phase of that. I should be up with my own money,
+[   82.46s ->    87.70s] soon in about a day or two, and I will start showing you profit and where I got in and
+[   87.70s ->    94.40s] where I got out specifically. But for today, I paper traded, so I'm going to show y'all exactly
+[   94.40s ->   100.66s] what I saw. So of course, you have to understand this is the 15-minute chart, and this is what
+[  100.66s ->   107.92s] happened today. So I'm going to go in and show you right up to pre-market because I did not
+[  107.92s ->   113.36s] know what was going to happen. I just want to show y'all what I saw. So I like trend line,
+[  113.48s ->   118.32s] support, and resistance line. So as you can see here, I have a major support line here,
+[  118.32s ->   123.44s] and I have a major resistance line here. Okay, so I know we're bouncing in between this. As we can
+[  123.44s ->   128.24s] see, it went down to these lows, and it went back up, right? So it went down to these lows
+[  128.24s ->   133.74s] again. So of course, I'm going to expect this, but I want to know exactly where. So I drew a line
+[  133.74s ->   142.01s] connecting all my major points here because like this, and that's where I got this trend line from.
+[  142.27s ->   145.89s] Okay, I'm going to extend this to the right just so that we can see it when I go back. All right,
+[  145.93s ->   151.79s] so that's the first trend line I connected this morning. Okay, now we're going to go back in closer
+[  151.79s ->   158.07s] into a closer time frame, the 10-day 2-minute. Okay, I'm going to get rid of this day because I did not
+[  158.07s ->   163.09s] know what the day was going to bring. Okay, and I saw that we were making higher lows in pre-market.
+[  163.51s ->   172.53s] So I connected these lines here just like that, and then let's see what happened on the day.
+[  172.89s ->   181.91s] So I have my trend line here, and extended out. I'm looking at the 260 area, but I saw that the
+[  181.91s ->   187.03s] highs here, the high from, well, not the high, of course, the high here of yesterday was here,
+[  187.03s ->   193.39s] but we had a lot of consolidation yesterday on SPY around this 259 area. So I knew that in easy
+[  193.39s ->   200.11s] target spots, if we were trending up, trending, we were making a trend line higher lows, that 259 would
+[  200.11s ->   206.31s] be a great spot to take profits at. But of course, I wanted to make sure that when it opened, it did
+[  206.31s ->   211.69s] not go below this trend line and start to fall. So I waited. So let's see exactly what happened here.
+[  211.69s ->   217.87s] So the day opened, let me see if I can get a bit closer. Okay, so the day opened, it tried
+[  217.87s ->   222.95s] to drop below this trend line for a bit, and then it pushed straight up, straight through
+[  222.95s ->   230.04s] the EMA line. Okay, I forgot I also had another trend line here. I had, let me show you it was
+[  230.04s ->   241.13s] from, nope, it was from, so I saw that we had a little pre-market, a little, okay, so we had
+[  241.13s ->   244.97s] a little pre-market resistance here. Okay, so it dropped down, and it tried to break this
+[  244.97s ->   251.39s] a little high. So if y'all study a lot of the patterns, this is an ascending up, an ascending
+[  251.39s ->   257.09s] triangle pattern, which is basically just we're having a trend line. We're basically approaching
+[  257.09s ->   261.35s] this resistance. It keeps bouncing and bouncing and bouncing. Slowly, we get so tight that we
+[  261.35s ->   266.53s] have to break out. Of course, a breakout can be in either direction, but the ascending triangle
+[  266.53s ->   270.53s] usually means up, but not always. Nothing is certain in the markets. If it was certain,
+[  270.53s ->   276.17s] would be profiting every single day, well, every single time, but that doesn't happen.
+[  276.73s ->   280.75s] So I saw that we had a resistance here, and I saw that we had a support here, and in the
+[  280.75s ->   284.93s] morning, it bounced off this little trend line here, and it broke. So I was like, all right,
+[  284.93s ->   293.81s] I'm going to take an entry position here. The contract I took was a 257 strike. It was
+[  293.81s ->   303.60s] a call, and I got it for $1.80. Let's see. So I entered here. The reason why I entered here
+[  303.60s ->   308.02s] and I didn't wait for the break above resistance is because it could have been a fake out down,
+[  308.10s ->   313.50s] okay? So I wanted to make sure that if we had some consolidation up here, which there ended
+[  313.50s ->   319.00s] up being consolidation at this resistance line, that I didn't get freaked out, okay? So I entered
+[  319.00s ->   323.42s] here. I waited. It broke above the EMA. It pulled back right near that EMA, and it started pushing
+[  323.42s ->   329.26s] up again. So I entered here with that balance off the EMA, and I entered, and we showed some
+[  329.26s ->   334.44s] consolidation here. Thankfully, I was already up. It was validating. It was staying above
+[  334.44s ->   343.00s] the EMA line. None of these candles closed below the EMA lines. Even though I was not making
+[  343.00s ->   349.50s] any money and a bit negative, it still did not break the trend. It was still showing an uptrend.
+[  350.76s ->   357.28s] So remember, my target is 259 from the resistance the previous day. So it goes up. It drops,
+[  357.54s ->   364.42s] holds the EMA line, and it goes up to here. And we have this little, what is called a shooting star.
+[  365.62s ->   371.76s] It's just the type of candle patterns that you see. You have a shooting star, a doji, a hammer,
+[  371.76s ->   376.04s] an upside down, a down hammer. All these little candles here that have a long wick and a short
+[  376.04s ->   382.72s] little body, like this here, a doji, they all show indecision that there's about to be a reversal of
+[  382.72s ->   388.56s] pattern. So it went up. It briefly touched, got close to the 259 area, which I was targeting.
+[  389.20s ->   395.90s] It showed this little indecision candle here, and that's where I exited. I exited for a, so I got in
+[  395.90s ->   405.42s] at 180, and I sold at $2.60 per contract. So if we look at that, $2.60 a contract divided by my entry
+[  405.42s ->   416.14s] at $1.80, 44%. I trade with roughly $500 per position just to minimize risk. So that would have
+[  416.14s ->   425.74s] been a $220 gain. Of course, it is not because I was just paper trading. Sadly, we've had a great week.
+[  425.74s ->   430.86s] This week, this week, and it's sad that the time that I'm switching accounts is the day that we're
+[  430.86s ->   437.10s] having a lot of amazing stuff. So of course, we have this dip at the 259 area, and we have this
+[  437.10s ->   444.47s] previous resistance here. So since we have this previous resistance, let me see if I can, if y'all
+[  444.47s ->   449.91s] don't know me by now, I like my stuff to be exact. Okay, so we have this break here. It goes, it bounces
+[  449.91s ->   458.07s] off this support, and it breaks above the EMA, and then it started to continue up.
+[  459.40s ->   464.20s] We hit this trend line that I drew. If you remember me drawing, I connected the higher,
+[  464.92s ->   473.08s] the lower highs from the previous days, and it gave us that. So right there, someone,
+[  473.08s ->   478.68s] I know someone who entered there and exited there, which was a great trade. They made 300%. No,
+[  479.00s ->   487.80s] yeah, 200% good for them. I wish I would have done that, but that was not my trade. I showed what I
+[  487.80s ->   495.64s] did. So that was a great one. Obviously, I had someone who else traded the, this acted as a reason.
+[  495.64s ->   501.74s] Since they pulled back, they traded a put there. But overall, we're having the stair stepping up,
+[  501.74s ->   510.50s] which is basically mean higher highs, lower, lower high, higher highs, higher lows, higher highs,
+[  510.50s ->   517.06s] higher lows, higher highs, higher lows, barely, but higher lows, and then the continue upward. Of
+[  517.06s ->   523.06s] course, they had this continue push. We can see here that this area here is obviously the consolidation
+[  523.06s ->   529.22s] phase. We have consolidation because look at the volume. I mean, it is a lot, don't get me wrong,
+[  529.22s ->   536.18s] but it did die out. We have huge volume here to push and make moves, and then it dies down a bit
+[  536.18s ->   540.42s] because the market goes to lunch, and then we have a huge push here. So that's why we have this huge
+[  540.42s ->   545.86s] push here. So, of course, if you didn't get it here and you wanted to, and you like to trade the
+[  545.86s ->   552.58s] aftermarket hours, the way that I would have traded that is obviously you're connecting these lows here,
+[  552.58s ->   559.24s] and then you're bringing this down, and you see that you're setting up for a triangle break.
+[  559.24s ->   563.24s] And, of course, you're waiting for the direction that your main line is pointing up here. You have
+[  563.24s ->   569.64s] the break. You have this volume bar start to pick up. Volume starts to pick up. When volume picks up,
+[  569.64s ->   574.04s] add a breakout. You know something is going to happen. So you have this break, and it trades the
+[  574.04s ->   579.24s] rest of the way. Of course, you never know what's going to happen. My entry and exit was perfect for me
+[  579.24s ->   583.48s] because that's what I understood. That's what I saw, what I knew was going to happen. But, of course,
+[  583.48s ->   589.40s] if I would have held that contract up there, it traded up near $6 at the end of the day. So,
+[  589.40s ->   600.04s] $6 divided by 1.8, you're looking at, well, 230%. So, not bad. Not bad at all. But, of course,
+[  600.92s ->   606.92s] we don't know how long it's going to take. Let me take you to the Trade tab. This Trade tab,
+[  606.92s ->   611.80s] let's see if it's still up. Yes. Okay. So, this Trade tab shows what exactly happened with the
+[  611.80s ->   615.32s] options. So, I don't know if you all know this, but you all can actually check out the options
+[  615.32s ->   620.92s] because the options, of course, are contracts that trade in prices. So, price fluctuates just
+[  620.92s ->   626.44s] like a stock so that we can see the movement of a particular option. I traded the 257 call,
+[  627.40s ->   633.16s] which is not here. Let's just take a look at the 261. If I right-click here, I can do copy. I can
+[  633.16s ->   638.12s] copy the name of this call and then I can go to charts and I can just paste that in there.
+[  644.73s ->   653.13s] So, this is what the contract moved today. Okay. So, where I entered about here went up about 82%,
+[  653.93s ->   661.05s] which makes sense. I mean, I made 44, but I was more conservative. Okay. But, if you look at this
+[  661.05s ->   671.77s] contract, you could have bought it this morning at about 0.2. So, $20 a contract, right? Not bad,
+[  671.77s ->   678.97s] $20 a contract. You get two contracts. You're paying $40 for these two contracts. So, if it goes to zero
+[  678.97s ->   685.66s] for some reason, you'll lose 40 bucks. But, if we look at it, if you grab that and since you're only
+[  685.66s ->   697.42s] holding $40, I'm sure you could have held through this, you would have been up 1,311%. So, 1,311%
+[  698.22s ->   706.89s] or 10, let's just say 12 times your 40 bucks, 12 times 40, just so I don't mess up the math,
+[  706.89s ->   716.97s] $480. So, turning $40 into 480 or turning $400 into $4,800. This is obviously the way that the
+[  716.97s ->   724.73s] contract moved. In my opinion, I would have traded SPY up to that resistance level for 267% gain and
+[  724.73s ->   729.21s] waited for the bounce and waited for that triangle breakout. Remember that I previously mentioned.
+[  731.05s ->   736.73s] There we go, triangle break, catching it there. So, you have a 260% on the first one,
+[  736.73s ->   742.89s] and then you trade that evening and you get 300% for that 500% gain. That's personally what I would
+[  742.89s ->   752.74s] have done if I was more active. But, sadly, I have school. So, that is what I saw today. That is how
+[  752.74s ->   758.82s] I traded SPY. I hope you all understand support and resistance lines, how I drew that out. And, again,
+[  758.82s ->   764.90s] there's an option to score chat in at the bottom. We were very active today because the market was
+[  764.90s ->   770.34s] active. But, if you have any questions, just ask down there. And, I hope you all enjoyed the video
+[  770.34s ->   773.06s] and good luck trading in these markets.
+[  773.06s ->   775.12s] Thank you.
+[  778.50s ->   780.50s] Thank you.

@@ -1,0 +1,50 @@
+[    0.11s ->     5.07s] Hey guys, welcome to this video. I'm going to walk you through how I made roughly $650 trading
+[    5.07s ->     9.63s] SPY credit spreads. Now again, this is a very simple and very reliable strategy, but I want
+[    9.63s ->    13.47s] to walk you through not only how I did this trade, but walking through my thought process
+[   13.47s ->    16.83s] and everything that went into this trade so that you can do it for yourself as well.
+[   17.21s ->    21.35s] All right guys, so jumping into it, you can see here in my history on Tasty Trade, which is the
+[   21.35s ->    26.77s] broker that I'm using, you can see here I opened the trade on April 4th, and then I closed the
+[   26.77s ->    33.45s] trade on April 17th, roughly, well what was it, if my expiration was April 21st, then roughly
+[   33.45s ->    39.47s] four days before the expiration, but I closed it early. And you can see here I locked in a $730
+[   39.47s ->    46.43s] gain, but again I had about $72 in commission costs just for the number of spreads that I was trading,
+[   46.55s ->    52.27s] so that puts me around a $650, $660 profit. Now again, let's walk through why this trade was taken.
+[   52.27s ->    58.21s] Okay, so here if I go into trading view right here for charting, you can see here that this is the
+[   58.21s ->    65.07s] S&P 500 or SPY. Again, what we can see here, SPY has a lot going on for it, but again, if we zoom out,
+[   65.13s ->    69.87s] again, you can see here 2020 crash and everything going on, the market can be identified in certain
+[   69.87s ->    74.45s] phases. Right here is an uptrending market. Again, this uptrending line was broken, so then we have
+[   74.45s ->    80.59s] a downtrending market. And now we have this downtrending line. You can see here downtrends are connected
+[   80.59s ->    85.83s] by the top highs. You can see here high, high, high, high, all connected. Then you can see it was broken,
+[   86.07s ->    91.63s] which means we're now being put into an uptrend. We connect uptrends from the bottoms. You can see here
+[   91.63s ->    96.19s] we are in an uptrend, so we have the idea going into this trade that the market is in an uptrend
+[   96.19s ->   100.61s] and is going to hold this line. So again, you can see here that the market made a very strong push-up
+[  100.61s ->   105.07s] to the upside, showing that it was bullish, but again, the best time to enter credit spreads,
+[  105.15s ->   108.31s] especially put credit spreads, because put credit spreads make money on the way up,
+[  108.31s ->   113.25s] is again, is to enter on red day. So I saw this very strong red day, knowing that the market was
+[  113.25s ->   120.99s] in a bullish market. I went out to roughly, I believe it was 397, 399. I put my strike around
+[  120.99s ->   126.17s] here, because that's where this, for multiple reasons, but math-wise, that's where this trend
+[  126.17s ->   130.03s] line was. This trend, let me just remove this one so it doesn't confuse. This trend line is where
+[  130.03s ->   134.35s] support was holding, and so if it came back down, it would have bounced around this level. So I did a
+[  134.35s ->   141.91s] 397, roughly 398, put credit spread. That means that I make money as long as SPY stays above this
+[  141.91s ->   149.65s] level by the end of expiration. So you can see here, I bought it on a strong red day. You can see here,
+[  149.69s ->   154.09s] we kind of consolidated and then pushed up higher, and then on this green day right here, I closed out
+[  154.09s ->   161.99s] the trade on April 17th. So again, this was roughly a 15% gain on this trade, on my return
+[  161.99s ->   168.21s] on capital, and what, about from April 4th to April 17th, so in about two weeks. So again, in two
+[  168.21s ->   173.61s] weeks, I made roughly 15%, and that all comes down to the idea of understanding trends. The trend is
+[  173.61s ->   178.03s] your friend. So if I am trading with the trend, I'm going to make money more times than not, especially
+[  178.03s ->   183.41s] if you're trading put credit spreads, and you put your levels near very strong support levels. You have a
+[  183.41s ->   189.37s] very low chance of it actually playing out in your favor or going against you when you trade with
+[  189.37s ->   195.47s] that trend. So that's one of the reasons I put the trade on. The trade was also mathematically the best
+[  195.47s ->   200.55s] trade to put on at that current moment. I know that because, again, if you go here, again, if you want
+[  200.55s ->   204.87s] any of my alerts that I send out, you can actually go to this website, which is linked in the description,
+[  205.23s ->   209.25s] and get three free alerts from me where you can actually make some money without having to do
+[  209.25s ->   213.85s] anything. But again, if we check out the alert system, I basically came here to the Trade Ideas
+[  213.85s ->   220.21s] Algo, which uses math to find credit spread trades that have over a 90% win rate, historical win rate,
+[  220.31s ->   227.03s] not a delta-based win rate. A historical win rate has been proven to work and has over a 15% return
+[  227.03s ->   232.93s] on capital. You can see the trade came up. I simply placed that trade, and that's how I knew
+[  232.93s ->   239.35s] to put it on. And again, all these things coincided as well with the trend with support and everything
+[  239.35s ->   244.65s] else. So it was a great trade making $650 in a matter of two weeks. Now, again, if you want to learn
+[  244.65s ->   250.31s] to do stuff like that, just click the link in my description about getting the three free trades.
+[  250.39s ->   253.77s] Whether you sign up or not, at least you get three free trades, so who cares? All right, guys,
+[  253.87s ->   257.15s] see you in the next video. If you enjoyed this breakdown, if you want to see more of it,
+[  257.47s ->   261.21s] smash that subscribe button and thumbs up button and let me know in the comments. All right,
+[  261.21s ->   262.13s] see you in the next video.

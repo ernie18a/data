@@ -1,0 +1,161 @@
+[    0.16s ->     4.04s] Imagine you were a brand new trader, fresh out the womb, and you wanted to learn how
+[    4.04s ->    10.10s] to make money trading stocks like the big boys.
+[   10.10s ->    15.26s] But you wanted just one place, one video series to learn absolutely everything.
+[   15.26s ->    17.34s] No bullshit, just pure knowledge.
+[   17.34s ->    22.70s] A to Z, every topic, a complete blueprint on how to learn the market from a complete
+[   22.70s ->    23.70s] beginner's perspective.
+[   23.70s ->    25.86s] Well, that's what you're watching right now.
+[   25.86s ->    27.14s] Yeah, you clicked it.
+[   27.14s ->    31.54s] I posted a video a couple weeks ago titled how to start trading stocks as a complete
+[   31.54s ->    32.54s] beginner.
+[   32.54s ->    36.40s] In that video, I said if it got a thousand likes, I would make this a complete series
+[   36.40s ->    39.42s] and teach you guys everything I know from start to end.
+[   39.42s ->    43.26s] And let's just say you guys got the video to a thousand likes.
+[   43.26s ->    46.18s] Actually you got the video to a thousand likes within 20 minutes.
+[   46.18s ->    49.24s] So that shows you guys have a huge interest in this video series.
+[   49.24s ->    52.42s] So I'm a man of my word and that's why I'm making this video.
+[   52.42s ->    54.48s] This is part two of this series.
+[   54.48s ->    58.56s] Let's not waste any time, let's get straight to it.
+[   58.56s ->    62.04s] First things first, we need to go over some common trading terminology.
+[   62.04s ->    63.04s] Lingo, if you will.
+[   63.04s ->    67.80s] Us traders have these common vocab words that mean specific trading terms.
+[   67.80s ->    75.94s] It's almost like a secret handshake in a way.
+[   75.94s ->    79.98s] But if you're a new trader, you definitely have to know what these terms mean, especially
+[   79.98s ->    83.38s] if you're going to watch this series, because I'm going to say them all the time.
+[   83.38s ->    84.80s] First term is long.
+[   84.80s ->    89.74s] To put it very, very simply, when you're long on a stock, that means you make money as the
+[   89.74s ->    91.16s] chart is going up.
+[   91.16s ->    94.16s] So if you buy a stock at $10, that means you're in a long position.
+[   94.16s ->    96.16s] If it goes to 20, you made money.
+[   96.16s ->    97.16s] Pretty simple.
+[   97.16s ->    98.16s] Okay, that makes sense.
+[   98.16s ->   101.16s] The complete opposite of that is short.
+[  101.16s ->   104.16s] A short is when you make money as the chart is going down.
+[  104.16s ->   107.16s] Again, I'll try to explain this as simple as possible.
+[  107.16s ->   109.16s] Essentially, what you're doing is this.
+[  109.16s ->   110.16s] Save the prices at $10.
+[  110.16s ->   114.16s] You then ask your broker, hey, can I borrow five shares of stock at $10?
+[  114.16s ->   116.16s] I promise I'll give it back.
+[  116.16s ->   117.16s] They say, yeah, sure.
+[  117.16s ->   118.16s] Why not, homie?
+[  118.16s ->   121.16s] So you now have $50 worth of short shares.
+[  121.16s ->   122.16s] 5 times 10.
+[  122.16s ->   124.16s] So what you want is price to go down.
+[  124.16s ->   131.16s] Because if the price goes down to, say, $5, you can then buy back five shares at $5, totaling
+[  131.16s ->   132.16s] $25.
+[  132.16s ->   135.16s] So you got the five shares of stock cheaper than what you borrowed them for.
+[  135.16s ->   139.16s] You then do a little switcheroo, give the shares back to your broker, just like you said
+[  139.16s ->   142.16s] you would, and then you can keep the rest of the profit.
+[  142.16s ->   146.16s] So in this scenario, you would have made $25 as the chart was going down.
+[  146.16s ->   147.16s] Hopefully that makes sense.
+[  147.16s ->   151.16s] So big picture, long positions, you make money as the chart is going up.
+[  151.16s ->   153.16s] Short positions, you make money as the chart is going down.
+[  153.16s ->   155.16s] Next is bulls and bears.
+[  155.16s ->   159.16s] If you're completely new, you've probably have heard traders say this before, and you
+[  159.16s ->   162.16s] thought to yourself, why are there animals in the stock market?
+[  162.16s ->   163.16s] Yeah, it's weird.
+[  163.16s ->   165.16s] I don't know, but it's the lingo.
+[  165.16s ->   169.16s] So basically, if you're a bull, that means you think the market is going to go up in the
+[  169.16s ->   171.16s] future, or you take long trades.
+[  171.16s ->   174.16s] So oftentimes you'll hear, oh, there's good market news today.
+[  174.16s ->   175.16s] I'm bullish.
+[  175.16s ->   180.16s] If you're a bear, that means you think the market is going to go down, or you take short
+[  180.16s ->   181.16s] trades.
+[  181.16s ->   184.16s] An easy way to remember this is when a bull charges at you, they swing their horns upwards.
+[  184.16s ->   187.16s] When a bear claws at you, it goes downwards.
+[  187.16s ->   189.16s] See, you're a professional trader already.
+[  189.16s ->   192.86s] Next, we'll talk about the spread.
+[  192.86s ->   195.86s] And this is when it starts getting really juicy.
+[  195.86s ->   198.86s] But before we get into that, let's talk about today's sponsor, Hankertrade.
+[  198.86s ->   202.84s] If you're a new trader and haven't heard of Hankertrade, you need to look at the
+[  202.84s ->   203.84s] market.
+[  203.84s ->   207.84s] They are who I use as my personal Forex broker, and there's a reason for that.
+[  207.84s ->   210.67s] One, they're pretty hot.
+[  210.67s ->   212.67s] All jokes aside, they're awesome.
+[  212.67s ->   216.67s] Low fees, low spreads, which is what we're about to go over in this video, and they make
+[  216.67s ->   218.67s] it extremely easy to execute orders.
+[  218.67s ->   223.67s] The reasoning why I think they are so good for beginner traders is because they basically
+[  223.67s ->   225.67s] help fund your account when first starting out.
+[  225.67s ->   229.67s] If you use the link in my description, Hankertrade will match whatever you first deposit.
+[  229.67s ->   233.67s] So if you put in, say, $100, they will literally give you $100.
+[  233.67s ->   235.67s] I've never seen another broker do that.
+[  235.67s ->   236.67s] They're awesome.
+[  236.67s ->   237.67s] I'll put a link in my description.
+[  237.67s ->   238.67s] Go check them out.
+[  238.67s ->   243.67s] Alright, let's go back to the juicy information and cover what a spread actually is.
+[  243.67s ->   245.67s] In trading, there's basically two main prices.
+[  245.67s ->   247.67s] The bid and the ask.
+[  247.67s ->   251.67s] The bid and ask refer to the prices at which buyers and sellers are willing to trade the
+[  251.67s ->   252.67s] stock.
+[  252.67s ->   257.67s] The bid price is the highest price that a buyer is willing to pay for a stock, while
+[  257.67s ->   262.67s] the ask price is the lowest price that a seller is willing to accept for the same stock.
+[  262.67s ->   269.67s] For example, if a stock has a bid price of $10 and an ask price of $11, this means that
+[  269.67s ->   274.67s] a buyer is willing to pay up to $10 for the stock, while a seller is willing to sell that
+[  274.67s ->   276.67s] same stock for at least $11.
+[  276.67s ->   281.67s] The difference between the bid and the ask is called the spread, which represents everything
+[  281.67s ->   282.67s] in the middle.
+[  282.67s ->   286.67s] Often times when you watch professional traders during live streams, they'll have this moving
+[  286.67s ->   289.67s] data on their screen, and it'll make them look really cool and professional.
+[  289.67s ->   294.67s] Well, this data is actually called level 2 data, and these moving numbers are the bids
+[  294.67s ->   295.67s] and asks.
+[  295.67s ->   297.67s] So these numbers on the left are the bids.
+[  297.67s ->   302.67s] So you can see here, the highest price someone is willing to buy the stock is this price.
+[  302.67s ->   305.67s] And this number is the amount of shares they want to buy.
+[  305.67s ->   307.67s] The numbers on the right are the ask price.
+[  307.67s ->   312.67s] So this number right here is the lowest amount someone is willing to sell this stock at.
+[  312.67s ->   315.67s] The amount between these two numbers is the spread.
+[  315.67s ->   318.67s] While we're on this topic, let's talk about the different types of orders.
+[  318.67s ->   322.67s] So when purchasing or selling a stock, there are different ways you can do it.
+[  322.67s ->   323.67s] I'm going to go over four.
+[  323.67s ->   327.67s] There are more order types than this, but these are the main four you should know.
+[  327.67s ->   330.67s] There's market, limit, stop, and stop loss.
+[  330.67s ->   334.67s] A market order is you basically saying, I want the stock right now.
+[  334.67s ->   339.67s] No matter what the ask price is, you want the broker to instantly buy the stock at whatever
+[  339.67s ->   341.67s] the stock is at right now.
+[  341.67s ->   344.67s] The pros of a market order is that you know for sure you'll be in the trade no matter
+[  344.67s ->   345.67s] what.
+[  345.67s ->   349.67s] But the con of that pro is you're essentially paying a premium because you're buying that
+[  349.67s ->   352.67s] stock for whatever the ask price is right now.
+[  352.67s ->   356.67s] A limit order is you basically saying, if the stock hits this price, I want to buy it.
+[  356.67s ->   359.67s] So say for example, a share of stock is at $50.
+[  359.67s ->   362.67s] You can put a buy limit order for $40.
+[  362.67s ->   367.67s] This means your broker will only purchase that stock once the price goes down to $40.
+[  367.67s ->   370.67s] Once it hits 40, it'll purchase it automatically.
+[  370.67s ->   374.67s] The pros of a limit order is that you're essentially getting the stock at a cheaper price.
+[  374.67s ->   379.67s] But the con of that pro is you may not get filled because there are going to be some scenarios
+[  379.67s ->   384.67s] where the price doesn't go down to your limit order and you'll miss out on the trade.
+[  384.67s ->   385.67s] Next is a stop order.
+[  385.67s ->   388.67s] A stop order is kind of the opposite of a limit order.
+[  388.67s ->   393.67s] Essentially, a buy stop order is you saying you only want to enter a trade if the stock
+[  393.67s ->   395.67s] goes up to a certain price.
+[  395.67s ->   400.67s] For example, if you have a stock consolidating or moving sideways in a range and the top of
+[  400.67s ->   406.67s] this range is at $50 and you only want to enter into the stock once it breaks that range
+[  406.67s ->   407.67s] at $55.
+[  407.67s ->   410.67s] You would create a buy stop order for $55.
+[  410.67s ->   415.67s] Once the price breaks this range and reaches $55, your broker will then purchase the stock.
+[  415.67s ->   420.67s] Next is the fourth and final order type which is the stop loss order.
+[  420.67s ->   422.67s] And this is arguably the most important one.
+[  422.67s ->   427.67s] Unlike the three other orders where it enters you into a trade, a stop loss takes you out
+[  427.67s ->   428.67s] of a trade.
+[  428.67s ->   430.67s] So say the price is at $50.
+[  430.67s ->   435.67s] You're in the trade but you say to yourself, if the price ever goes down to $40, I don't
+[  435.67s ->   437.67s] want to be in the trade anymore.
+[  437.67s ->   440.67s] Well, what you would do is set your stop loss at $40.
+[  440.67s ->   445.67s] If price ever goes down to that point, your broker will automatically exit for you.
+[  445.67s ->   446.67s] So little recap.
+[  446.67s ->   448.67s] Market order is you want to buy the stock right now.
+[  448.67s ->   451.67s] No matter what the price is, you want to enter instantly.
+[  451.67s ->   456.67s] A limit order is you want to enter if price ever goes down to a certain price.
+[  456.67s ->   459.67s] A stop order is the opposite of a limit order.
+[  459.67s ->   462.67s] You want to enter if price ever goes up to a certain price.
+[  462.67s ->   467.67s] And the stop loss is you want to exit if price ever goes down to your stop loss.
+[  467.67s ->   470.67s] Now, like I said, it can get a little bit more complicated than this.
+[  470.67s ->   474.67s] But for the sake of this video, these are the four order types you should know.
+[  474.67s ->   478.67s] These are the absolute basics, but it's kind of one of those things that's a little boring,
+[  478.67s ->   481.67s] but also one of those things we had to go over.
+[  481.67s ->   485.67s] To be honest, if this series was an A to Z series, we haven't really even passed B yet.
+[  485.67s ->   491.67s] My goal with this series is to slowly get more and more advanced as we progress throughout the series.
+[  491.67s ->   496.67s] So that way, by the time we get to the Z video, you're basically Einstein when it comes to trading.
+[  496.67s ->   501.67s] So since you guys smashed that thousand like goal last video, let's make this video's goal 5,000 likes.
+[  501.67s ->   509.67s] If we get this video to 5,000 likes, I will upload episode 3 and we'll get a little bit more advanced and start looking at some actual setups.
+[  509.67s ->   511.67s] Thanks for watching and I'll see you guys next time.

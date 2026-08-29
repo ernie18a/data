@@ -1,0 +1,714 @@
+[    0.00s ->     4.18s] Hey guys, welcome back to my YouTube channel. I don't typically do this but I'm so excited to
+[    4.18s ->     9.98s] bring on Joseph Puckett today. I've been watching his YouTube videos for a while now and I really
+[    9.98s ->    15.22s] enjoy what he does as in he's just sharing what he does. He's 100% transparent on his trades
+[   15.22s ->    20.04s] and it's great to see. He started off as a 112 trader which I know a lot of you guys on here are
+[   20.04s ->    24.98s] but then he also transitioned more into ratio spreads and I can't wait for him to talk about
+[   24.98s ->    30.32s] that. So first off Joseph just welcome and thank you for being here but what would you like to
+[   30.32s ->    35.06s] share about trading journey and stuff I guess? Awesome. Thanks Austin man. I appreciate it. I've
+[   35.06s ->    42.22s] been watching your videos and your content as well and I'm excited you know to just share what I can
+[   42.22s ->    48.34s] with your audience. I have to start by saying this. This is not financial advice. Don't do what I'm
+[   48.34s ->    52.36s] doing. I'm crazy y'all. I'm crazy. In fact when you look at some of my positions you might be like
+[   52.36s ->    59.30s] thinking yeah he's freaking crazy. There are so many ways to trade. So many ways to make money in
+[   59.30s ->    67.32s] the markets and you know I started in 2020 like a lot of people during the pandemic. I had a great job
+[   67.32s ->    73.10s] but I wanted more. I wanted more for myself. So I was like you know what I want to start investing.
+[   73.48s ->    79.68s] So I started investing by buying Apple shares. I thought I like Apple. Everything I got is Apple.
+[   79.68s ->    85.18s] I got multiple iPhones. I got multiple Macs. I got everything right. The iPads, Apple Watch. I was
+[   85.18s ->    89.86s] like you know what I'm gonna buy some Apple stock. So I did and then I learned about covered calls.
+[   90.02s ->    94.82s] So I started selling covered calls against Apple stock. I started my account with like $20,000
+[   94.82s ->   100.96s] and then I was adding more every month. Every month with every paycheck I've added to my account in
+[  100.96s ->   106.16s] I don't know a year and a half almost something like that. It's just been you know profits but I
+[  106.16s ->   112.20s] started wheeling Apple and I had a lot of success. Why? Well after the COVID crash everything went
+[  112.20s ->   117.52s] straight up right. I was like shit this is easy. This is too easy man. I'm printing money. I was
+[  117.52s ->   123.02s] texting my wife being like baby I'm gonna quit my job. I'm gonna quit my job. I only have $50,000 to
+[  123.02s ->   132.66s] my name but I think I can do this. No. I had to save more, invest more, learn more. You know I switched
+[  132.66s ->   141.78s] to wheeling the TQQQ. Triple Q's. It's a triple leveraged NASDAQ ETF. This was back in 2021.
+[  142.82s ->   149.64s] I had a lot of success. Had a lot of success. What happened in 2022? The NASDAQ went down what 30
+[  149.64s ->   157.08s] something percent something like that from January 1st to December 31st. Oh my god 2022 sucked and I
+[  157.08s ->   166.96s] thank goodness that I got out of my TQQQ wheel. Like I had TQQQ ETF shares at like 120 something
+[  166.96s ->   175.98s] like average price. TQQQ got down to like $16. Like if I had held that position I would have lost
+[  175.98s ->   180.92s] like 80 percent of my account. So I thank goodness that I got out of that. So I kept learning and I
+[  180.92s ->   186.06s] kept searching online and I love YouTube and I found so many people on YouTube talking about selling
+[  186.06s ->   193.68s] options and that led me to Tasty Trade. Tasty Trade's YouTube channel and man I learned so much
+[  193.68s ->   200.32s] from Mike and his whiteboard from you know the doctor what's his name and all of his options basics
+[  200.32s ->   205.94s] videos watching the live streams the tasty live streams. So you know what these people are on to
+[  205.94s ->   212.72s] something here. What's really cool about selling options is when we sell options we can be wrong
+[  212.72s ->   217.82s] and still make money versus if I were to say you know what I think the stock market's going to go
+[  217.82s ->   225.20s] up. I'm going to buy you know x amount number or dollar amount of SPY SPY S&P 500 or the Q's triple
+[  225.20s ->   231.88s] Q's for NASDAQ. I'm just going to put all my money in and hope that it goes up. That's fine too and
+[  231.88s ->   238.60s] honestly honestly that's what most people should just do is just invest in something like the SPY
+[  238.60s ->   246.34s] you know the SP500 and just put money in every week or every two weeks or every month consistently
+[  246.34s ->   252.52s] dollar cost averaging in. Honestly if I would have done that over the past four years that I've been
+[  252.52s ->   257.58s] trading hell I'd probably be about the same place where I'm at now. Maybe even better maybe even
+[  257.58s ->   264.22s] better. So long story short I found Tasty Trade and their videos about selling premium. I was okay this
+[  264.22s ->   269.88s] is interesting. It's all based on probabilities right. If you buy a stock or an ETF it's a 50-50
+[  269.88s ->   274.12s] chance. It's either going to go up or go down. But let's say I'm bullish on something I think it's
+[  274.12s ->   280.36s] going to go up. Well I could just sell a put on it further out of the money give myself a 70-80-90%
+[  280.36s ->   286.08s] chance of profit even if I'm wrong. Even if the asset goes down against me but if it never breaches my
+[  286.08s ->   291.70s] short strike on the short put that I sold I keep all that premium assuming I held it to expiration.
+[  291.70s ->   299.00s] How amazing is that? So basically instead of being a gambler which most traders are and trust me I am
+[  299.00s ->   305.84s] too. I'm a degenerate. I trade too big. I do. I trade way too freaking big and it's killed me for
+[  305.84s ->   311.00s] the past two years. A year and a half really. It's really hurt me. I've made really great money but
+[  311.00s ->   315.40s] then I've lost it all and then some and then I've made really great money and then I've lost it all and
+[  315.40s ->   322.16s] then some and I'm really having to teach myself or to train myself to stop trading so damn big
+[  322.16s ->   327.40s] to stop trading actual futures contracts because I love to do it and I've made a ton of money doing
+[  327.40s ->   332.86s] it but then I lost it all and then some in April when the market had a huge sell-off in April 2024.
+[  334.06s ->   338.02s] So long story short to summarize I've only been doing this for about four years.
+[  338.02s ->   344.16s] I've only felt really good about my strategies for about the past year. My biggest problem is I keep
+[  344.16s ->   349.18s] getting in my own way. I keep getting in my own way and trading too big and buying too many features
+[  349.18s ->   354.08s] thinking I know it's gonna go up and then we have a 5% sell-off or a 10% sell-off and I lose
+[  354.08s ->   360.16s] tens of thousands of dollars. It's really really frustrating but keep keeping going. I learned a ton
+[  360.16s ->   365.18s] from Tasty. I learned a ton from other YouTubers and then I found Tom King of Income Navigators.
+[  365.18s ->   371.80s] You know Tom King and Igor of Income Navigators they're really the only paid discord that I would
+[  371.80s ->   378.48s] ever endorse. I learned so much from Tom King's videos and I'm so thankful for him. I met him.
+[  378.60s ->   382.92s] We talked on the phone. We talked via Zoom. I was a part of their community for a couple months and I
+[  382.92s ->   388.36s] decided I want to do my own thing but I kind of wish I just stayed in their community because I think
+[  388.36s ->   393.54s] it would have helped me helped hold myself more accountable to not being a degenerate trader like I
+[  393.54s ->   401.76s] became. So I made over $400,000 in about four months this year and then in one week I gave all
+[  401.76s ->   407.48s] that money back to the market. All of that money back to the market. Why? Not because I was selling
+[  407.48s ->   414.18s] one-one-twos or put ratio spreads. It was because I was actively trading large size of contracts. I was
+[  414.18s ->   420.58s] making five, ten, fifteen, twenty thousand dollars a day. I had 95% winning days in a row for like two
+[  420.58s ->   428.54s] months. Like I barely lost. But then I got in at the high of a mid-April 2024 with a pretty large size
+[  428.54s ->   433.82s] and then I added in for two or three days and I watched it go down for the whole week. All of my
+[  433.82s ->   439.54s] gains for the year were erased in one week and I'm just thankful. I thank goodness that I was able to
+[  439.54s ->   446.12s] start again on April 22nd of this year. Since then, I'm up 65 grand in the past just over three months.
+[  446.12s ->   452.04s] That's about $20,000 a month. I was up more. But then I dug myself a hole a couple weeks ago as
+[  452.04s ->   457.06s] we've had a 10% sell-off in the NASDAQ. I'm thankful though that I was not nearly as big as
+[  457.06s ->   462.72s] I would have been and I was able to lock in and protect a lot of my gains and I'm trading much
+[  462.72s ->   469.20s] smaller. I'm sticking to my trade plan. What it all boils down to is capital management and capital
+[  469.20s ->   476.58s] preservation and risk management. I suck at all of those things. So I have my Discord,
+[  476.80s ->   480.76s] the Trade With Joseph Discord. It's now free. There's no charge or anything like that. I just
+[  480.76s ->   486.42s] want to build a community of traders. Honestly, the main reason I'm still keeping it going and I'm
+[  486.42s ->   493.02s] still posting every day and every week is to help keep myself in check. If I know there's 642 people,
+[  493.16s ->   497.38s] whatever there are members in that, if I know there's a couple thousand followers on my YouTube
+[  497.38s ->   501.36s] that I watch my infrequent YouTube videos, I'm not posting as much on YouTube anymore because
+[  501.36s ->   506.14s] honestly, I don't make a lot of money on YouTube and I get to do what I want, right? I choose what
+[  506.14s ->   511.40s] I'll do with my time. But if I know people are watching me in the Discord, if I know people watch
+[  511.40s ->   515.92s] me on the YouTube, I feel like it's helping hold myself accountable to not being a dumbass. So
+[  515.92s ->   522.98s] hashtag don't be a dumbass. That's what I would say JP would be if I didn't know there were hundreds
+[  522.98s ->   529.12s] of people watching me. Futures are amazing. I'm so glad that I moved on from wheeling individual
+[  529.12s ->   536.30s] stocks to then wheeling the T-triple-Qs and thank goodness I got out at like $80 or $90 a share.
+[  536.50s ->   540.74s] My cost base was like $120. I was thinking, this is the end of the world. I suck as a trader. And then
+[  540.74s ->   544.88s] it went all the way down to $16 a share. I was like, you know what? I'm glad I got out. I'm thankful
+[  544.88s ->   549.10s] I did that. But then I found futures and selling options on futures and learning from Tom King and
+[  549.10s ->   555.28s] Igor and others on the YouTubes about selling options on futures. That's when the light bulb
+[  555.28s ->   561.34s] really clicked. The light bulb really clicked for me. So long story short, in the past 10 minutes,
+[  561.38s ->   565.70s] I don't know if I've really said much at all, except I'm still a work in progress. I'm still
+[  565.70s ->   571.44s] learning. I'm still soaking up as much as I can from YouTube University, right? All the other YouTubers
+[  571.44s ->   577.90s] out there that I'm trying to learn from and see what they're trying, see what is tested and proven,
+[  577.90s ->   581.82s] but also see what they're testing, right? They might be in the testing phase on something.
+[  582.34s ->   589.52s] So it led me to the 1-1-2 trade, which I know a lot of your followers like to do. That's the main
+[  589.52s ->   598.46s] trade that is taught by Mr. King and others out there. I love the 1-1-2 trade. What I learned
+[  598.46s ->   604.94s] though, or what I feel like over time, is I started to move more towards just pure racial spreads
+[  604.94s ->   613.44s] like 1-3 or 1-4 put racial spreads. I got into a debate or a conversation, I should say,
+[  613.48s ->   619.06s] not a debate or an argument, it was a conversation with a trade with Joseph Discord member. He was
+[  619.06s ->   624.92s] like, Joseph, your 1-3 racial spreads, they're dangerous. I prefer 1-1-2s. I was like, all right,
+[  625.18s ->   630.70s] tell me more. Well, there's only two naked puts. I was like, all right, follow me here.
+[  630.70s ->   637.78s] A 1-3, so one long put by three short puts, no matter if they're at different strikes or the
+[  637.78s ->   642.18s] same strike, which is what I prefer. I prefer one long put closer to where the market's currently
+[  642.18s ->   648.20s] trading, and then three or more further out of the money puts. Guess what? There's only two naked
+[  648.20s ->   653.82s] puts there. He was like, oh, okay, I get it now. So like, it seems more dangerous, but it's really
+[  653.82s ->   659.96s] not. The only reason I prefer pure racial spreads like a 1-3 or more put racial spread instead of a
+[  659.96s ->   670.96s] 1-1-2 is it makes a beautiful potential max profit tint that's like huge versus a 1-1-2 type trade or
+[  670.96s ->   678.12s] like a 2-2-1 or a 4-4-1, which is like a hedge type trade. It like caps the potential upside. If we
+[  678.12s ->   683.94s] have a huge down move, it's like capped like this. Why I prefer my racial spreads is there's a much
+[  683.94s ->   688.82s] larger potential profit tint. Yeah. I mean, that's what I initially learned from you when you
+[  688.82s ->   694.96s] were into 1-1-2 is you would turn your 1-1-2 into a ratio hedge by closing the short put of the put
+[  694.96s ->   698.78s] debit spread. And I was like, oh my gosh, that's a great idea. And you just see that curve. Like you
+[  698.78s ->   703.98s] have like, especially if you're trading ES, it's like a $20,000 to $30,000 profit in that max zone.
+[  703.98s ->   710.96s] And so I definitely see the appeal to wanting to do the ratio spreads. But I guess my question is
+[  710.96s ->   717.06s] just to clarify. So you went from 1-1-2s and then to ratio spreads. And like, how does your game plan
+[  717.06s ->   723.30s] differ between those? Well, you know, what it boils down to is probability of profit.
+[  723.98s ->   730.82s] They both have similar probability of profit. They both bring in similar initial credits. They both use
+[  730.82s ->   737.22s] similar buying powers. But what I like is that, that potential profit hump in the ratio spread
+[  737.22s ->   743.22s] tint, the pure ratio spread tint without a 1-1 here, just a one and then three or more way further
+[  743.22s ->   751.68s] out. So that's how I evolved. And trust me, I am still a work in progress. You know, when it comes to
+[  751.68s ->   756.34s] my trading strategies and things that I'm still evolving and learning and growing and doing,
+[  756.34s ->   761.64s] you know what I've learned? The less I've messed with it, the better off I am.
+[  762.32s ->   768.58s] So sticking with a strategy, you know, a lot of people strategy hop, they try this. Oh my gosh,
+[  768.58s ->   773.06s] this is a silver bullet. This is the magic bullet, whatever. This is what's gonna make me a millionaire
+[  773.06s ->   779.64s] and I can quit my job. And then the first time that it like fails or hurts them, like, shit, this
+[  779.64s ->   784.58s] sucks. I'm moving on. I'm gonna find another. And that's kind of what I've done over the past few
+[  784.58s ->   788.08s] years. You know, I've tried different things. I've chased the shiny objects. I've chased the
+[  788.08s ->   794.90s] pretty things where I think I can win. What I'm trying to do now is stick with my plan, stick with
+[  794.90s ->   800.52s] my trade, stick with my strategies. There's so many ways to make money in the markets. There's some
+[  800.52s ->   805.46s] people who think I'm crazy. I was going back and forth with an email exchange with a Trade with
+[  805.46s ->   809.02s] Joseph member. He was like, I'm afraid to put this in the discord. I just wanted to email you. I was
+[  809.02s ->   814.34s] like, that's cool, man. He's like, man, I just don't know. I just don't know if I could ever do
+[  814.34s ->   819.92s] this. I don't like the nakedness. I don't like, you know, the unlimited potential loss. I was like,
+[  819.96s ->   824.38s] dude, just do credit spreads. Not that I'm giving financial advice. I'm not giving financial advice,
+[  824.52s ->   829.54s] but just do defined risk credit spreads, you know? And I went through a stint in May where I was
+[  829.54s ->   834.36s] basically defining the risk of all of my racial spreads. I turned them into what I call broken
+[  834.36s ->   840.78s] wing butterflies on steroids. So not just a one, two, one, which is what a typical broken wing
+[  840.78s ->   846.44s] butterfly. I would do like a one, three, two, still defined risk, but I would get a lot more
+[  846.44s ->   852.34s] potential credit in the middle. I was like, man, just do credit spreads. Put credit spreads are
+[  852.34s ->   858.40s] probably the safest strategy that most people could do. Yes, they can lose money. What I found though,
+[  858.40s ->   863.68s] is the more naked I am, the more profit I make over time. So that's why I'm still comfortable
+[  863.68s ->   870.40s] being more naked. So that's kind of how I've evolved from the one, one, two to now one by three
+[  870.40s ->   876.84s] or even more put ratio spreads to give myself the chance for potentially more profit in a five,
+[  877.00s ->   882.64s] 10, 15% down move. But basically the same tell credit if we just go up, up, up. Now here's another
+[  882.64s ->   888.62s] thing I've evolved. I've also started selling more on the call side. The call side on equities
+[  888.62s ->   897.28s] scares me, right? It does because equity markets tend to go up over time. S&P, NASDAQ, even Russell.
+[  897.48s ->   902.42s] Russell's been kind of flat to down for a while, but man, Russell's broken out over the past two
+[  902.42s ->   907.86s] weeks, right? 10% in two weeks is insane. Like literally 1% every day for 10 trading days.
+[  908.62s ->   915.00s] Russell has freaking broken out, right? But most equity markets go up over time. So fighting the
+[  915.00s ->   920.42s] upside is kind of a challenge for me, but I'm glad that I have some on today. You know, NASDAQ is down
+[  920.42s ->   926.38s] 1% today. S&P is down a half a percent today. I don't track Russell in my watches because I don't
+[  926.38s ->   934.26s] trade it. My accounts are down about 1% today, a little under 1% today. So I'm still tracking with
+[  934.26s ->   939.36s] the market. I'm still tracking with the market, but I have much higher probability of profit because
+[  939.36s ->   944.68s] I'm selling options instead of just buying a stock or an ETF and hoping that it goes up. But that's
+[  944.68s ->   949.52s] another thing that I've done to evolve is I've started to sell some on the call side. But like
+[  949.52s ->   958.84s] on my NASDAQ trades, you'll see two to three or more put trades than call. Now on commodities like
+[  958.84s ->   965.90s] gold, bonds, and crude oil, I feel more comfortable doing both sides of those markets, you know, call
+[  965.90s ->   972.84s] side and put side because those tend to trade in ranges, but they can certainly break out up or down.
+[  972.84s ->   977.90s] They certainly can. And boy, can they move. So I want to be very careful with commodities
+[  977.90s ->   984.94s] because they won't necessarily go up over time. I mean, from 2010 through 2020, gold lost 50% of
+[  984.94s ->   990.14s] its value slowly, but surely over that freaking decade, over that decade, gold was that like 2000
+[  990.14s ->   994.28s] and it got to like 1000 by like 2020 or whatever. I'm just, I'm just coming up with these numbers from
+[  994.28s ->  1000.32s] top of my head, but I know it lost about 50% over 10 years. I do not think, and I have to do some
+[ 1000.32s ->  1005.38s] research. I do not think there's ever been a 10 year stretch of an equity market losing 50%.
+[ 1005.38s ->  1011.90s] I can almost guarantee that's never happened over a 10 year period where like the S&P 500 lost half of
+[ 1011.90s ->  1017.52s] its market value. I can almost guarantee this never happened. I bet every 10 year period, no matter what
+[ 1017.52s ->  1022.52s] year you start from and in from the equity markets have ended higher. We did have the lost decade from
+[ 1022.52s ->  1031.56s] 2000 to 2010 where we did about 40% or so, but then we rallied. So over that 10 year period, we were flat,
+[ 1031.96s ->  1039.32s] right? We were flat, but that is so rare. That is so rare. Most of the time equities go up. So I want to be
+[ 1039.32s ->  1045.98s] very careful selling call side ratio spreads, which I'm doing now on NASDAQ. It's helped me over the past
+[ 1045.98s ->  1050.84s] couple of weeks. NASDAQ's down over 10% in the past two weeks. So I'm thankful that I had some call
+[ 1050.84s ->  1054.90s] side stuff on. If I didn't have any call side stuff on, my accounts would be a little bit smaller than
+[ 1054.90s ->  1061.16s] they are today, but I want to be very careful not to go too big on the call side because naked calls
+[ 1061.16s ->  1067.82s] scare me way more than naked puts. I don't know why. I don't know why. It's the same risk. It's the
+[ 1067.82s ->  1072.32s] same thing, but I just feel like I'm okay if the markets come down a little because I feel like they
+[ 1072.32s ->  1078.06s] will revert higher versus if they're going up, up, up, up, up, they can go to the freaking moon
+[ 1078.06s ->  1081.78s] and there's nothing I can do about it. And if I still have those naked calls on, that does scare
+[ 1081.78s ->  1088.58s] me, but I do have some naked call ratio spreads on NASDAQ and I have pretty balanced double ratio
+[ 1088.58s ->  1095.34s] spreads on bonds, gold and crude oil. That's what I call the double ratio spread, or I mean, I call it
+[ 1095.34s ->  1101.30s] the strangle on steroids. So it's not just a strangle selling short puts, selling short calls. I have some
+[ 1101.30s ->  1108.68s] long options in there with more three, four or five more short options on either side. And it gives
+[ 1108.68s ->  1115.46s] me a nice, beautiful profit humps on either the call side or the put side. So I've evolved to doing
+[ 1115.46s ->  1121.02s] strangles and then I've evolved to doing double ratio spreads, ratio spread on the puts, ratio spread on
+[ 1121.02s ->  1126.10s] calls. It gives me nice, beautiful potential profit humps on either end, what I call strangle on
+[ 1126.10s ->  1130.92s] steroids. Other people call it the Batman trade. So that's something else that I'm doing now on
+[ 1130.92s ->  1136.44s] commodities. The beautiful thing about selling calls on commodities is calls are typically priced
+[ 1136.44s ->  1142.46s] about the same as puts. That is not the case on equities. If I looked at the NASDAQ, like a 10
+[ 1142.46s ->  1149.96s] delta call versus a 10 delta put, the 10 delta put will have way more premium than the 10 delta call,
+[ 1150.04s ->  1156.14s] even though it has the same risk or the same probability. So there's a lot of put skew in equity
+[ 1156.14s ->  1161.98s] markets. What I found in commodity markets is there's not a lot of skew either way to calls or
+[ 1161.98s ->  1168.02s] puts. They're priced about the same. So that's why I'm okay or more comfortable selling strangles or
+[ 1168.02s ->  1174.56s] double ratio spreads on commodities like bonds, gold, and crude oil versus matching the same number of
+[ 1174.56s ->  1180.00s] short calls and call ratio spreads on NASDAQ, for example, to match my NASDAQ put ratio spreads.
+[ 1180.00s ->  1186.12s] So I hope that answers your question, how I've evolved. Oh, I also love the wheel. I love
+[ 1186.12s ->  1191.58s] wheeling futures. I do wheeling futures. A lot of people think you can't wheel futures. Yes,
+[ 1191.60s ->  1197.42s] you can. You know, stocks and ETFs don't have expiration dates, right? Spy doesn't have an
+[ 1197.42s ->  1201.82s] expiration date. Yes, the options on spy have an expiration date. But if I just bought 100 shares
+[ 1201.82s ->  1207.84s] of spy today and never did anything to it, if I looked at my account in 30 years, shit, that would
+[ 1207.84s ->  1213.58s] be worth a ton of money, like a lot of money, right? But it doesn't expire. If I buy a future
+[ 1213.58s ->  1219.32s] on the S&P, that expires every three months, right? So I'd have to roll it. I'd have to close
+[ 1219.32s ->  1223.48s] the current open one and open a new one if I want to. So a lot of people think you can't wheel
+[ 1223.48s ->  1229.66s] futures, but you can. I have really enjoyed wheeling gold in my IRA and in my main account,
+[ 1230.16s ->  1236.02s] wheeling the micro ES in all of my accounts. I'm now currently wheeling the micro NASDAQ in my main
+[ 1236.02s ->  1239.20s] account because I'm wanting to stay smaller. So I'm doing the micro instead of the big boy.
+[ 1239.50s ->  1245.78s] But I've also wheeled big boy NASDAQ, big boy gold, big boy crude oil. I've wheeled all those
+[ 1245.78s ->  1250.76s] different things by selling puts until I'm assigned a future, then selling cover calls until they're
+[ 1250.76s ->  1255.40s] called away. So that's another thing that I've evolved in, which is very different than what
+[ 1255.40s ->  1262.08s] most traders on YouTube teach because it's a lot more risky. It's a lot more risky when I'm selling
+[ 1262.08s ->  1266.82s] at the money puts on something that I'm okay owning. I'd rather sell an at the money put on
+[ 1266.82s ->  1271.54s] something and get paid to buy it than just buy the future outright and then start selling cover
+[ 1271.54s ->  1277.94s] calls against it. So that's another thing that I've evolved doing is wheeling. But if people out
+[ 1277.94s ->  1284.18s] there are watching, if you do not like seeing red on your screen, don't freaking try to wheel.
+[ 1284.58s ->  1289.32s] Don't try to wheel y'all, especially selling at the money puts. Now, if you're selling 16 delta puts
+[ 1289.32s ->  1293.78s] or something like that, like further out of the money, higher probability profit. Okay. Then
+[ 1293.78s ->  1298.44s] you'll probably be a little bit better, but I'm just telling you, you're going to have way more
+[ 1298.44s ->  1303.92s] fluctuations in your account. And a lot of people can't stomach it. I can, I can stomach fluctuations
+[ 1303.92s ->  1311.16s] in my account. It doesn't like freak me out. It does upset me when there's massive fluctuations in
+[ 1311.16s ->  1319.16s] my account. And it was my fault. Every time I've gotten in trouble, every time was because I went
+[ 1319.16s ->  1327.60s] too big size, size matters. I don't care what she says. Y'all size matters, especially when it comes
+[ 1327.60s ->  1334.36s] to trading. I'm just telling y'all, Oh, it's fun making five, 10, $15,000 a day. You know, it's not
+[ 1334.36s ->  1339.50s] fun. Senior account go down 30, 40, 50 grand in a day. And I've been there, done that several times
+[ 1339.50s ->  1344.60s] over the past year and a half. And what I keep remembering is like the little angel in my ear,
+[ 1344.84s ->  1351.56s] the good, the good angel, you know, saying, Joseph, don't trade too big. There's a trade tomorrow.
+[ 1351.92s ->  1358.12s] There's a lot of time left. You don't have to make your entire monthly goal in a day. So that has been
+[ 1358.12s ->  1365.02s] my biggest struggle is size, size. If we trade small and trade often, like our friends at Tasty
+[ 1365.02s ->  1370.52s] Trade say, which I don't really follow a lot of Tasty Trade methodologies. I don't like 20 Delta
+[ 1370.52s ->  1375.06s] Strangles. That's a little too high risk for me. I like my shorts to start around a seven Delta,
+[ 1375.64s ->  1380.24s] but I'm including some longs at around 12 to 16 Delta. So I've got some potential upside if it
+[ 1380.24s ->  1385.94s] moves against me in either direction. I'm not a huge fan of like Tasty Trades methodology, 45 DTE,
+[ 1386.28s ->  1391.24s] close at 21, 20 Delta Strangles, blah, blah, blah. I'm sure it works for a lot of people. It doesn't
+[ 1391.24s ->  1394.88s] work for me. I like to play further out of the money. I like to play further out of the money,
+[ 1394.98s ->  1400.42s] start my shorts at around a seven-ish Delta instead of a 20 Delta. So I hope that answers
+[ 1400.42s ->  1405.62s] your question. That was a very, very long answer, but my evolution, and I'm happy to look at my
+[ 1405.62s ->  1408.72s] accounts and, you know, take it. Yeah, for sure. The last question I had,
+[ 1408.80s ->  1413.36s] though, is so you went from 1-1-2s to ratio spreads, and then you started kind of putting ratio
+[ 1413.36s ->  1418.50s] spreads on both sides, you know, just like that Strangles on steroids is what you call it.
+[ 1418.50s ->  1423.04s] And that kind of helps really give you some protection because if the market goes down,
+[ 1423.12s ->  1427.46s] then you have that call side. But outside of that, do you have any other hedging methods that
+[ 1427.46s ->  1434.62s] you use to kind of protect all those short puts? Well, I made a bunch of videos in May and early
+[ 1434.62s ->  1440.22s] June about free long puts, free long puts, free long puts. The beautiful thing about put ratio spreads
+[ 1440.22s ->  1445.34s] to hedge to the downside, most people don't talk about hedging to the upside. They want to talk about
+[ 1445.34s ->  1451.32s] if the market falls 10% over the next month. I mean, NASDAQ has fallen over 10% in two weeks.
+[ 1451.74s ->  1457.68s] And yes, it's hurt me. Why? Because I was too big. I was too big. Now I'm still up for the year,
+[ 1457.84s ->  1462.96s] but I'm really frustrated with myself that over the past two weeks, I've lost about 40 to $50,000
+[ 1462.96s ->  1468.80s] of my account, which is around 10%. So guess what? If I had just been invested in NASDAQ,
+[ 1468.92s ->  1473.98s] then I'd be down 10%. So like, it's basically the same thing, but I'm really upset with myself that I
+[ 1473.98s ->  1479.34s] allowed myself to put myself in that position. But hedging is typically people worry about the
+[ 1479.34s ->  1483.46s] downside and they worry to the upside. What's beautiful about put ratio spreads, whether
+[ 1483.46s ->  1488.08s] you're doing the one, one, two, that Mr. King and Igor and others teach online, whether you do just
+[ 1488.08s ->  1493.86s] pure ratio spreads, like one by three, one by four, even one by two, one by two ratio spreads have much
+[ 1493.86s ->  1499.90s] less risk because there's only one naked put instead of, you know, two or more. What's really cool about
+[ 1499.90s ->  1507.00s] that is once the short options that we sold either on the call side or the put side, and I've got a,
+[ 1507.14s ->  1511.70s] I've got a couple free long calls now that I've gotten over the past two weeks. I have some free
+[ 1511.70s ->  1516.00s] long calls in NASDAQ. Now they're far out of the money, but it is NASDAQ call ratio spreads.
+[ 1516.46s ->  1523.88s] And I made so much on the short calls when the market fell to where they eroded in value. The options
+[ 1523.88s ->  1532.76s] I sold eroded in value tremendously fast to where I could then take off those short calls or if on the
+[ 1532.76s ->  1541.18s] put side, take off those short puts and leave the long put or long call on what's beautiful about that
+[ 1541.18s ->  1550.44s] is, is I got paid to buy that long put. I got paid to buy that long call on the upside. So the main way
+[ 1550.44s ->  1557.70s] that I hedge now is just to leave the free long puts on that were, that were a part of put ratio
+[ 1557.70s ->  1563.88s] spreads after I take off the shorts and leave some, if not all of the free long calls on once I'm able
+[ 1563.88s ->  1570.70s] to remove some of the short calls, take off that risk. You know, it stinks to see a huge red position.
+[ 1570.70s ->  1576.26s] Like I don't like seeing, Oh, this long put that you've had for 61 days. And so it's 30 days left to go.
+[ 1576.26s ->  1583.96s] It's down 85%. It's down $3,000. Like that annoys me. It hurts my OCD. I do prefer seeing green on my
+[ 1583.96s ->  1591.00s] screen and not red, but by leaving the free long options that I got paid to buy as a part of my
+[ 1591.00s ->  1595.70s] ratio spreads, primarily on the put side, but also on the call side, that's the way that I hedge.
+[ 1596.08s ->  1602.40s] You know, the best way to hedge is to remove size for one. And I did that today. I did that today.
+[ 1602.40s ->  1606.28s] I don't know if you saw on the discord, but I posted the discord. I trimmed most of my positions
+[ 1606.28s ->  1613.64s] by about a third today. Why we have the FOMC tomorrow, federal open, uh, federal reserve
+[ 1613.64s ->  1618.26s] open market committee and Jerome Powell is speaking tomorrow afternoon after they say that they're
+[ 1618.26s ->  1622.78s] going to hold interest rates steady, most likely, but they're probably going to hint at a rate cut
+[ 1622.78s ->  1629.36s] in September and or November. I'm worried about that. I'm worried about earnings. You know,
+[ 1629.36s ->  1634.96s] we have a lot of earnings, Microsoft, Apple alpha. No alphabet was last week, Facebook,
+[ 1635.18s ->  1639.82s] meta, whatever. I think we have a lot of earnings this week. That'll be volatility. So I removed about
+[ 1639.82s ->  1647.88s] a third of my position sizing over the past two days. That's a hedge to me by removing size.
+[ 1647.88s ->  1655.98s] That's a hedge, but the true way to hedge is to buy something by a put. If you fear the downside
+[ 1655.98s ->  1660.92s] or buy a call, maybe you've got some short calls and you're worried about your calls,
+[ 1661.06s ->  1665.14s] your short calls being threatened, buying a call. So that's a way to hedge to the upside.
+[ 1665.62s ->  1670.16s] I'm not a huge fan of buying options. I'm just not, I'm not a huge fan of buying options. I probably
+[ 1670.16s ->  1675.52s] need to get over it. I need to get over it. Now, some people might say, JP, when you leave the free
+[ 1675.52s ->  1682.16s] long puts on or the free long calls on after you remove the short options, you are paying something
+[ 1682.16s ->  1687.14s] for that trade because you're giving up potential credit. If you were just to sell that long option
+[ 1687.14s ->  1691.90s] back to the market, maybe it's worth a hundred bucks. Maybe you bought it for a thousand and
+[ 1691.90s ->  1697.36s] it's lost 90% of its value because the market went the opposite way, which is fine. So you are paying
+[ 1697.36s ->  1703.44s] something for that, I guess you'd say. But for me, I just don't like buying options. I don't like
+[ 1703.44s ->  1709.46s] buying. I like to sell and I like to collect premium. So that's something I still probably need
+[ 1709.46s ->  1715.34s] to get over. I need to be like, you know what, JP, buy a freaking put. You've collected $10,000
+[ 1715.34s ->  1723.10s] of premium selling options. Put 500 more towards a put, you know, maybe a 90 day out four or five
+[ 1723.10s ->  1727.82s] Delta put on NQ or something like that. Spending a little bit of the credit that I brought in
+[ 1727.82s ->  1732.54s] to buy some protection. It's just like I insure my house. I'm living in a nice, beautiful house
+[ 1732.54s ->  1739.20s] here in Huntsville, Alabama. I insure my house. Shit. I insure my phone. Why? Why do I spend
+[ 1739.20s ->  1741.78s] $10,000 or $12,000 a month? I don't even know how much it is. I don't even know how much
+[ 1741.78s ->  1748.08s] it is. I just pay it. I insure a thousand dollar device. Shouldn't I insure a half a
+[ 1748.08s ->  1753.58s] million dollar account? Probably. So that's to me something I need to continue to work
+[ 1753.58s ->  1759.56s] on. I struggle with the idea of paying for insurance for my portfolio, but boy, do I wish
+[ 1759.56s ->  1761.08s] I had some on over the past two weeks.
+[ 1761.94s ->  1767.92s] Is there an ideal level that you look for? Like if I have this many ratio spreads on, I should
+[ 1767.92s ->  1772.26s] have this many long puts. Ideally, I, the free ones, but do you, but do you look for
+[ 1772.26s ->  1773.02s] a ratio like that?
+[ 1773.96s ->  1778.46s] No. And what I've forgotten to say a few minutes ago was back in May and June, I was really
+[ 1778.46s ->  1781.70s] big on building a wall of free long puts. You know what I did towards the end of June?
+[ 1781.72s ->  1786.44s] I took them all off. I sold them back to the markets. I wish I left some of them on. I
+[ 1786.44s ->  1790.30s] wish I left some of them on. I just didn't like seeing all that red on my screen, even though
+[ 1790.30s ->  1795.28s] I had made money by buying those puts. So I closed them all in June. You know, the market
+[ 1795.28s ->  1801.48s] was going up, up, up, up, up, up, up, up. And I closed them all in June. So really what
+[ 1801.48s ->  1809.20s] I should probably do is never, ever, ever get rid of a long option that I got paid to
+[ 1809.20s ->  1813.86s] buy. Whether it's a long put to the downside, even if it's two, 3000 points away, unlike
+[ 1813.86s ->  1819.22s] the NASDAQ, that would be a lot on ES. Let's say it's like a thousand points away on ES, you
+[ 1819.22s ->  1826.84s] know, 20% away or three, 4,000 points away on NASDAQ, which is about 20% move. Even if
+[ 1826.84s ->  1831.96s] they're crazy for all the money, I just need to leave them on because if we have a nice
+[ 1831.96s ->  1837.50s] five, 10 or 15% pullback, those might make a little bit of money. The thing is most of
+[ 1837.50s ->  1843.28s] them will still expire worthless. A vast majority of them will still expire worthless, but it will
+[ 1843.28s ->  1849.08s] help smooth out my return curve. I could close some, you know, once they make a little bit
+[ 1849.08s ->  1853.54s] of money, I could take some off. The problem is over the past few weeks, I didn't have any
+[ 1853.54s ->  1859.36s] on zero because I took them all off in June towards the end of June. I just thought the
+[ 1859.36s ->  1863.40s] market was going to keep going up, up, up. I kind of wish I left about 10 or so of those
+[ 1863.40s ->  1868.44s] on. So right now I don't have any free long puts. I have a couple of free long calls, but
+[ 1868.44s ->  1873.50s] I'm working to build my free long puts up to give me that downside protection. And I'm
+[ 1873.50s ->  1877.60s] going to start buying some hedges. I'm going to start buying some hedges, you know, probably
+[ 1877.60s ->  1884.84s] long-term, 120 to 180 days out, low Delta, three-ish Delta, something like that. Very,
+[ 1884.90s ->  1891.38s] very low, very low probability of profit. And I'm just going to pretend like it's home insurance.
+[ 1891.56s ->  1896.18s] I pay home insurance every month for my house. Why not pay a little bit of insurance to insure
+[ 1896.18s ->  1903.66s] my portfolios? So, you know, asking me about hedges is probably not the wisest thing to
+[ 1903.66s ->  1910.12s] do because JP is crazy. I'm crazy. I trade big and I don't hedge a lot. I've made a ton
+[ 1910.12s ->  1915.16s] of money when things went my way, but I've also given most, if not all of my gains back
+[ 1915.16s ->  1919.18s] multiple times over the past two years. And I'm getting freaking tired of it. I'm getting
+[ 1919.18s ->  1924.78s] sick and tired of the roller coaster that I put myself in. You know what? My long-term high
+[ 1924.78s ->  1931.58s] probability trades have never failed me. It's when I went too big buying actual stocks,
+[ 1931.76s ->  1937.70s] ETFs, or actual futures contracts and holding on, not using a stop loss, trading like an
+[ 1937.70s ->  1944.12s] idiot. And it's killed me. So that's my strategy moving forward. Long-term high probability
+[ 1944.12s ->  1949.54s] trades primarily put ratio spreads on NASDAQ. A little call, ratio spreads mixed in just for
+[ 1949.54s ->  1954.60s] some diversification. And I like double ratio spreads on gold, bonds, and crude oil. You're
+[ 1954.60s ->  1959.00s] just kind of playing both sides of this market, staying very far out of the money and keeping
+[ 1959.00s ->  1963.78s] my buying power in check so I don't go too crazy. So I've got some free capital available
+[ 1963.78s ->  1969.66s] to take advantage of nice moves that go against my current positions. I can place new trades.
+[ 1969.66s ->  1978.54s] Consistency and time in the market, to me, I think is better than timing the market, right? So many
+[ 1978.54s ->  1984.64s] people think, ah, I'm not going to invest until market pulls back. Okay. To what level? What
+[ 1984.64s ->  1990.04s] percentage? Like when? Like when are you going to decide to buy? I'm going to tell you something
+[ 1990.04s ->  1996.86s] that I don't think it's a bad thing to share, but I want to keep the details generic. I have a family
+[ 1996.86s ->  2004.34s] member. I have a family member who is in his seventies. He's in his seventies. Never worked a
+[ 2004.34s ->  2009.98s] day in his life. Never worked a day in his life. There's some mental stuff there or whatever.
+[ 2010.72s ->  2018.56s] My grandfather, grandmother, my family, I need to keep this more generic. His parents, his parents
+[ 2018.56s ->  2027.16s] knew that he would probably need support long-term and they invested for him. They invested for him.
+[ 2027.84s ->  2033.50s] $100 here, $500 there, $1,000 there, whatever. Primarily high dividend stocks. You know, my
+[ 2033.50s ->  2039.84s] grandpa loved, um, Alcoa, you know, tobacco. Cause that was our family business. Our family business
+[ 2039.84s ->  2045.70s] was stocking gas stations, right? So like we had a family business that was a warehouse and we sold
+[ 2045.70s ->  2050.50s] candy bars, cigarettes, dip, all that kind of stuff. Like whatever you could see at a gas station,
+[ 2050.66s ->  2056.46s] our family used to sell, right? So my grandfather loved the tobacco stocks. He loved banks. Oh,
+[ 2056.46s ->  2060.44s] he loved all the banks because they paid really good dividends. They were pretty stable. He even
+[ 2060.44s ->  2067.04s] bought preferred shares and stuff. So long story short, I have a family member who's never earned
+[ 2067.04s ->  2072.62s] a penny in his life. Okay. Never earned a penny in his life, but because his parents invested and he
+[ 2072.62s ->  2076.36s] maintained invested, reinvesting those dividends. And he had a financial advisory helped him.
+[ 2076.92s ->  2082.05s] Austin, he's worth over $8 million today in the market alone, in the market alone.
+[ 2082.05s ->  2090.83s] Yeah. He's not selling options on futures. He's not day trading or scalping. Man, I wish I could figure
+[ 2090.83s ->  2095.81s] out what the cost basis is of his investments. I'm telling you, dude, it's probably not 50 grand.
+[ 2096.19s ->  2101.73s] I don't know. It depends on how much my grandfather would have saved or invested. I'm guessing it's not
+[ 2101.73s ->  2107.69s] a hundred grand. There's over $8 million in his account today. So going back to what I said 30
+[ 2107.69s ->  2113.91s] minutes ago, most people should not sell options on futures, should not try to day trade shit. Most
+[ 2113.91s ->  2119.71s] people should never try to day trade. Trust me. I'm great at it until I suck at it, right? I'll have
+[ 2119.71s ->  2125.23s] nine winning days in a row and then I'll give it all back in one day like an idiot. Most people should
+[ 2125.23s ->  2131.21s] just dollar cost average and save and invest into something like the S&P 500 SPY. I do feel like
+[ 2131.21s ->  2139.19s] that we can have an edge. We can sell options, high probability options, bring in credit, even if
+[ 2139.19s ->  2143.95s] we're wrong, can still make money. I do feel like that gives me an edge. I do feel like that's one
+[ 2143.95s ->  2149.57s] reason why my IRAs are beating the S&P by two to three times what the S&Ps earned this year.
+[ 2149.57s ->  2155.41s] My main account isn't. My main account's not beating the S&P. Why? Because I was an idiot
+[ 2155.41s ->  2161.35s] several times over the past six months. So I was making good money, but then I give it all back,
+[ 2161.47s ->  2165.81s] make good money, give it all back. And I'm just so tired of that roller coaster. And I feel like I'm
+[ 2165.81s ->  2171.33s] going to do so much better for myself and for my family. If I stop thinking, you know, I need to make
+[ 2171.33s ->  2177.93s] two, three, four to $5,000 a day, day trading. No, let me have my $1,500 a day of daily theta just
+[ 2177.93s ->  2183.89s] working. Some days will be down. Like today, I'm down. I'm down right now. You know, NASDAQ's
+[ 2183.89s ->  2192.47s] off 1.2%. S&P's down 0.58%. I'm down a little over 1%. So kind of in between NASDAQ and S&P.
+[ 2192.59s ->  2197.39s] It's not the end of the world. It sucks. I don't like being down 1% on a day. But you know what I
+[ 2197.39s ->  2204.77s] can tell you is if I was actively trading, I'd be down a lot more. Did I answer your questions?
+[ 2204.77s ->  2209.43s] Yeah, that did. Yeah, I really appreciate it. And no, I agree, because I kind of followed the
+[ 2209.43s ->  2213.35s] same journey. I think everybody does where you kind of jump into the day trading world. And you're
+[ 2213.35s ->  2216.95s] like, this is so fun and fascinating. And then you're like, Oh, wait, this does not work.
+[ 2218.03s ->  2223.03s] And yeah, so I mean, but I but I also love the process of even though I'm like actively doing
+[ 2223.03s ->  2226.95s] one one two is I still have money and spy that like, I'll never touch. It's been there for like
+[ 2226.95s ->  2232.93s] three years. And that's money just like it's there. And so yeah, I think most people like 99% of
+[ 2232.93s ->  2238.19s] people, right? Just invest in the S&P 500. And you'll do better than almost everyone else.
+[ 2238.85s ->  2243.25s] But for those who like that, who like having an edge and do want to kind of put their money
+[ 2243.25s ->  2247.81s] to work and and a better way, I do agree that like, if we do one one twos or ratio spreads
+[ 2247.81s ->  2253.51s] with like, really high probability out of the money puts, then we can have a great win rate
+[ 2253.51s ->  2257.99s] given our emotions are under control, right? And so that's something I definitely want to work
+[ 2257.99s ->  2262.77s] on. And I mean, I think we talked a lot about like theory, or you discussed like theory and
+[ 2262.77s ->  2267.71s] idea. So I would really love maybe like five minutes or so 10 minutes go over like your actual
+[ 2267.71s ->  2274.43s] portfolio. Yeah, man. Um, you know what, I don't give a shit. I don't care if people can see my
+[ 2274.43s ->  2278.71s] account numbers. I'm gonna take off privacy. Like I don't care. Y'all can see my account numbers,
+[ 2278.71s ->  2284.35s] right? I don't care. Like, what are you gonna do? Good luck hacking me hackers. Good luck. I
+[ 2284.35s ->  2289.31s] shouldn't say that, should I? So here's my accounts today. And this hurts. I'm down $6,000
+[ 2289.31s ->  2296.69s] right now. So that's a little over 1%. Well, my main market is NASDAQ, and it's down 1.33%. So
+[ 2296.69s ->  2301.19s] like, this is not freaking me out right now. This is not freaking me out. And I'm really, really
+[ 2301.19s ->  2307.79s] thankful that I have my buying power in check. I took off a lot of my positions. Right now I'm only
+[ 2307.79s ->  2315.31s] using, oh shoot, you can't see this. Um, hold on. Stop sharing new share. I want to show
+[ 2315.31s ->  2320.43s] my, uh, not P and L graph. Hold on a second. Capital requirements window. Let's see if I
+[ 2320.43s ->  2326.59s] can do this real quick. Share stream window. I'm not familiar with this platform. Let's see
+[ 2326.59s ->  2334.75s] here. Can I see? I'll just clip this part out. That's okay. It's real. Oh no, it's not. Let
+[ 2334.75s ->  2344.25s] me. Oh, here we go. Here we go. So here is my current, uh, buying power utilization, 66.5%,
+[ 2344.25s ->  2354.93s] 66.5%. But look how much is in S gov, you know, that's a treasury bond ETF spy. Um, Bitcoin is very,
+[ 2355.01s ->  2363.03s] very small. So if we take those out on futures, I'm using very, very little buying power, very,
+[ 2363.03s ->  2367.69s] very, very little buying power. And I have a lot of dry powder. I have a lot of dry powder that I
+[ 2367.69s ->  2373.83s] could use. Um, so I just wanted to show that real quick. Let me close that window and let's go back
+[ 2373.83s ->  2380.65s] to sharing tasty trade. So, you know, looking at some of my strategies, looking at some of my
+[ 2380.65s ->  2388.23s] strategies, I really like how tasty trade, um, lets us view the potential profit and loss, uh, graph
+[ 2388.23s ->  2394.81s] profit and loss charts. Um, the only problem is I can't easily do that, uh, kind of back and forth,
+[ 2394.81s ->  2399.49s] but I'm playing both sides of the markets. Like, let me just look at my trading account
+[ 2399.49s ->  2404.97s] and sort it by days to expiration. There we go. Let's just take a look at all my positions real
+[ 2404.97s ->  2409.75s] quick and my main trading account. So Austin, I'm jealous of you, man. You're saying you've got
+[ 2409.75s ->  2414.95s] some share spies that you bought three years ago. That's amazing. I just started buying spy shares
+[ 2414.95s ->  2420.59s] again a couple of weeks ago. They're currently down 2%, not a big deal, right? Not a big deal
+[ 2420.59s ->  2427.29s] down 1.9%. I'm adding a one or two shares a week and I'm selling covered strangles. I'm selling
+[ 2427.29s ->  2432.81s] covered strangles against my spy shares. So right now my covered strangle is basically a break-even,
+[ 2433.27s ->  2438.69s] right? Basically a break-even. Am I okay buying a hundred more shares at 535 if the market falls?
+[ 2438.99s ->  2444.77s] Yes. I'm okay. Averaging into a spy position. Now, once I have around 300 shares because
+[ 2444.77s ->  2448.01s] I like selling options on features, I'm going to have to be very careful on selling puts,
+[ 2448.33s ->  2453.35s] but I can keep selling calls. But basically I'm selling covered strangles on spy, bringing
+[ 2453.35s ->  2457.97s] in a couple hundred dollars a week. This is $311 that I brought in, bringing in a couple
+[ 2457.97s ->  2464.03s] hundred dollars a week. Last week I closed my cover strangle for a small loss of around
+[ 2464.03s ->  2470.83s] 50 bucks. And then I sold this one for 311, right? I sold this one. Why? The put was getting
+[ 2470.83s ->  2476.03s] very, very close to in the money. It was a 545. But if I had held it, it expired yesterday.
+[ 2476.03s ->  2481.45s] I would have been okay. It expired yesterday and spy closed over 545 yesterday. Right now
+[ 2481.45s ->  2486.93s] we're trading it just under 541. But I decided to roll it last week, move my strikes further
+[ 2486.93s ->  2493.15s] out. So I'm wheeling spy, but I'm not going to let my calls call them away. I'm jealous of
+[ 2493.15s ->  2497.33s] you, man. I wish I had some spy shares that I bought three years ago. I don't. I just started
+[ 2497.33s ->  2501.73s] buying these a couple of weeks ago. So I'm doing the covered strangle strategy on spy,
+[ 2501.93s ->  2507.07s] but I will not let my shares get called away. So let's say we have a huge rally in the next three
+[ 2507.07s ->  2511.01s] days. Not likely. We're not going to go up 3% in the next three days. But let's say this,
+[ 2511.07s ->  2515.99s] this calls got challenged. My call got challenged. I would just close it for a loss and then sell
+[ 2515.99s ->  2521.83s] another for the next week and just move on. I'm wheeling the micro NASDAQ. I sold this put on
+[ 2521.83s ->  2529.39s] micro NASDAQ at the money 19 three yesterday. I brought in $582. Well, look, we're trading at
+[ 2529.39s ->  2536.83s] 18 nine right now. Holy smokes. That's $400. I wanted to own some micro NASDAQ. I want to own
+[ 2536.83s ->  2541.31s] some micro NASDAQ so I can have some long, more long deltas and be a little bit more directional.
+[ 2541.31s ->  2548.69s] I like the micros, the micro NASDAQ or the micro ES or the micro gold. Keep in mind, micro gold
+[ 2548.69s ->  2553.63s] options do not assign to the future. They expire to cash. So it's really hard to wheel
+[ 2553.63s ->  2559.83s] micro gold and tasty trade doesn't even sell micro gold options. But anyways, if I had just
+[ 2559.83s ->  2565.39s] bought, let's do some quick math. If I had just bought micro NASDAQ yesterday when I was trading
+[ 2565.39s ->  2570.69s] at 19 three, let's take a quick look at the chart. Let's change it to like a five minute
+[ 2570.69s ->  2577.31s] chart. Hold on a second. A five minute chart. Bada bing, bada boom. Here we go, baby.
+[ 2577.31s ->  2584.17s] Okay. There we go. And I don't care about seeing this so big. Oh no. I just want to move this
+[ 2584.17s ->  2588.07s] down a little and move this down a little. Oh, come on. Tasty trade. Tasty trades charting
+[ 2588.07s ->  2596.02s] kind of sucks. Yeah. But I don't want to switch to a trading view. So yesterday, yesterday, see,
+[ 2596.16s ->  2600.34s] I mean, we were trading around 19 three. We had a huge dip and then a nice V shaped recovery.
+[ 2600.34s ->  2608.20s] We sold off, um, after hours, nice pop pre-market, boom, gone straight down since the open, right?
+[ 2608.26s ->  2615.76s] The market opened here at eight 30 central little pop it pop. We're down 350 points, right? No,
+[ 2615.84s ->  2622.90s] almost 400 points. Almost right down 400 points in the past two hours. Okay. If I had just bought
+[ 2622.90s ->  2637.02s] NASDAQ here, instead of selling a 19 three put 19 three, I will be down $360, $360 times two is seven
+[ 2637.02s ->  2645.36s] 20. If I had just bought a NASDAQ future, I will be now at $720 right now. Micro NASDAQ. However,
+[ 2645.88s ->  2651.98s] because I brought in premium with a higher probability of profit, I'm only down three 90. See,
+[ 2651.98s ->  2658.20s] this is why I like selling options, even though I'm wrong. In this case, I'm not making money. I'm
+[ 2658.20s ->  2663.30s] down $390, right? This millisecond. I'm still not worried about this strike and I'm okay taking
+[ 2663.30s ->  2669.48s] assignment here. And then I will start selling cover calls against it. But because I sold an option to
+[ 2669.48s ->  2674.94s] start this position, I'm only down three 90 instead of seven 20. So hopefully that makes sense. So I'm
+[ 2674.94s ->  2680.76s] wheeling micro NASDAQ. I got some double ratio spreads, double ratio spreads. What does this look like?
+[ 2680.76s ->  2684.30s] Let's take a look at the analysis. This is like, I'm not going to do every single one of these,
+[ 2684.38s ->  2689.18s] but let's just look at a crude oil double ratio spread real quick. Now crude oil has fallen a lot
+[ 2689.18s ->  2694.20s] since I put these trades on. Okay. Crude oil. If we take a look at the chart on crude oil real quick,
+[ 2694.40s ->  2700.34s] let's take a look at the daily chart or maybe the four hour chart. Let's take a look at the four
+[ 2700.34s ->  2706.98s] hour shit or shoot. Sorry. Austin, I cuss a little. And if that upsets your fans, honestly,
+[ 2706.98s ->  2711.22s] I'm not sorry. I'm sorry. I'm not, I'm not, I cuss a little, y'all. I love Jesus,
+[ 2711.46s ->  2717.40s] but also cuss a little. So if we look, gold has fallen a ton, has fallen a ton over the past two,
+[ 2717.48s ->  2723.66s] three weeks, right? This was three weeks ago, right? Gold was trading at 82.54. Now it's at 73.80.
+[ 2723.90s ->  2729.24s] Oh my gosh. Right. Gold, excuse me. Crude oil has fallen a bunch over the past several weeks.
+[ 2729.46s ->  2735.22s] Well, I opened this position eight days ago. So that what was eight days ago? Let's go back to the
+[ 2735.22s ->  2743.50s] chart, change it to daily real quick. One, two, three, four, five, six, seven, eight. So we were
+[ 2743.50s ->  2750.32s] trading around 78 ish, 77 ish, something like that. When I put this trade on 78 ish, now we're at 73.85.
+[ 2750.90s ->  2756.14s] This doesn't look so bad zoomed out when you zoom in. I mean, this is just a straight move down all
+[ 2756.14s ->  2765.86s] month. Oh, July. Well, because I'm also selling on the call side, look, my call side is profitable.
+[ 2766.38s ->  2773.04s] The problem is the put side is way less profitable or losing more money. So my overall position is down
+[ 2773.04s ->  2780.42s] $840, $840, right? The second I brought in $2,400, but see, there's still an 86% probability profit.
+[ 2780.42s ->  2785.22s] And if I go back to the analysis tab, just to show you all why I love the double ratio spreads
+[ 2785.22s ->  2791.12s] instead of just a strangle, see how, if the market continues to fall, and this is at expiration,
+[ 2791.52s ->  2796.68s] okay? This is at expiration. This, this graph is four, but let's say the market continues to fall.
+[ 2797.14s ->  2802.50s] I can potentially make even more money. Now there's still unlimited risks of downside because I have
+[ 2802.50s ->  2809.58s] nakedness. I've got five naked puts. I've got five naked calls, right? But I really prefer this type of
+[ 2809.58s ->  2815.66s] structure instead of just a normal strangle. You know, if I go to like, say I like 60 to 90 days,
+[ 2816.04s ->  2821.16s] so I would probably do something around 79 days. I like to start my shorts at around a seven Delta.
+[ 2821.48s ->  2828.50s] So if I were to do a seven Delta, that's 58. Right now we're trading at 73 and then seven Delta on the,
+[ 2828.50s ->  2835.28s] hold on, the put side, that would bring in about almost $400. What's a seven Delta on the call side?
+[ 2835.28s ->  2844.30s] Seven Delta. Um, no, that's not Delta. Hold on. Seven Delta is up here. You silly goose. That's
+[ 2844.30s ->  2847.94s] what I tell my kids when they're annoying me. All right. Delete the leg. I was looking at the wrong
+[ 2847.94s ->  2855.98s] thing. Seven Delta is selling for about 290. So in this case, crude oil has some put skew. The fear is
+[ 2855.98s ->  2862.68s] to the downside. The short put is able to collect more premium than a short call. But what does this
+[ 2862.68s ->  2868.80s] look like on the analysis tab? What does this look like? Why is this not working curve? And then
+[ 2868.80s ->  2874.08s] let's look at just this order. So if I look at just this order, see how it's just a flat line
+[ 2874.08s ->  2882.52s] compared to my double ratio spreads. I have a flat line, but a potential to make a little bit more of
+[ 2882.52s ->  2887.56s] the market rallies or a potential to make a little bit more of the market falls. They're basically
+[ 2887.56s ->  2896.40s] the same trade. This two by seven double ratio spread on crude oil is basically a five by five
+[ 2896.40s ->  2900.66s] short strangle, but because I have some long options here. Now here's another thing that I
+[ 2900.66s ->  2907.48s] could do. If I was really risky, you know what I could do? I could close one or both of these long
+[ 2907.48s ->  2915.12s] puts right now. I could lock in this gain of $590. However, that would mean all seven of my short puts
+[ 2915.12s ->  2920.62s] are naked and that would just tremendously add a ton of risk to the trade. But that's something I
+[ 2920.62s ->  2925.84s] have done, man. I have, I've trimmed some or all of my long options that were part of my double ratio
+[ 2925.84s ->  2930.70s] spreads or even just normal ratio spreads. If I still like the strike, I mean, look, dude, my short
+[ 2930.70s ->  2936.90s] here still has an 86% probability of profit, right? So an 86% probably profit. So that's something else
+[ 2936.90s ->  2941.30s] that I could do to potentially profit more from this trades. I could close some of these longs. But if I did
+[ 2941.30s ->  2947.42s] that, if I close these longs, that would just add a ton of risk to my trade. So I'm trying to not
+[ 2947.42s ->  2952.30s] over trade. I'm trying to just leave these on. So I've put this on eight days ago. I've added to it
+[ 2952.30s ->  2957.88s] once. So now it's at basically max size. I really don't need to add more to this. I just need to let
+[ 2957.88s ->  2963.52s] the probabilities play out. There's an 86% probability of profit. And going back to the analysis tab,
+[ 2963.68s ->  2969.96s] we're still in great shape. If we expired here, then I would just keep the $2,400 of credit that I brought
+[ 2969.96s ->  2976.00s] in to sell this trade. So that's a double ratio spread on crude oil. NASDAQ, put ratio spreads.
+[ 2976.68s ->  2985.50s] This has been on for 43 days. It's not really up 53%. I've sold more, closed some. I actively trade
+[ 2985.50s ->  2990.50s] my put ratio spreads. This is my current position. So I'm long one, 19,000, which is in the money.
+[ 2990.96s ->  2998.56s] And I'm short 5172. This overall trade has a 92% probability of profit. This overall trade that I
+[ 2998.56s ->  3002.12s] currently have on, again, I've traded in and out of all my put ratio spreads, especially if they've
+[ 3002.12s ->  3007.90s] been open for a month and a half. I've sold puts on down days. Then I've taken some off on up days.
+[ 3008.04s ->  3013.70s] So I actively kind of manage my ratio spreads, but I brought in $5,800 for this trade. What does the
+[ 3013.70s ->  3022.14s] analysis look like on this ratio spread? Let's look at just this ratio spread. Zoom out, click the
+[ 3022.14s ->  3028.68s] green thingy or white thingy. Here we go, baby. So here we are. We're trading just in the money,
+[ 3029.14s ->  3034.86s] just in the money, past my long put. If we go all the way down to my short puts, holy snikies,
+[ 3035.74s ->  3041.78s] my short puts are around here, right? What is it? 17250, right? Right around here. The max potential
+[ 3041.78s ->  3049.28s] profit of this trade, assuming 52 days from now on July. No, that's not right. On September 20th,
+[ 3049.28s ->  3054.52s] on September 20th, we closed at exactly 17250. This trade would make 40 grand. Now,
+[ 3054.56s ->  3059.00s] if we fell to 17250 today, my P&L theoretical would be minus 20 grand. Like that would suck
+[ 3059.00s ->  3064.80s] if it happened today, but it's not likely to happen today. So the P&L zero line, the P&L zeros,
+[ 3064.88s ->  3071.22s] the kind of the orange line. I'm really happy with this trade. I'm really, really happy with this
+[ 3071.22s ->  3076.00s] trade. This one by five put ratio spread. I'm not going to go through all of these, but I've got double
+[ 3076.00s ->  3081.34s] ratio spreads on bonds that started eight days ago. Double ratio spread on gold started eight days
+[ 3081.34s ->  3088.52s] ago. Those are profitable. The crude oil one, not profitable, right? They're probably washing each
+[ 3088.52s ->  3094.90s] other out at this time. Fine. All I really care about is the probabilities of profit. Do I have a
+[ 3094.90s ->  3099.44s] high probability of profit? If I have a high probability of profit, I'm not stressing the fact
+[ 3099.44s ->  3104.62s] that I'm down $7,700 a day. Shit, that got down a lot more since I started sharing my screen. But
+[ 3104.62s ->  3110.38s] anyways, I'm down $7,500. You know, why? Because the markets are down. The markets that I trade are
+[ 3110.38s ->  3117.80s] down. Equity markets are down. Crude oil is down. So what if I shrink all these? Probabilities of profit.
+[ 3118.46s ->  3126.02s] If I'm seeing 70% or higher, 80% or higher, 90% or higher, I'm not freaking out when I see my
+[ 3126.02s ->  3133.66s] probabilities of profit are so high. Okay. So, you know, let's compare a 1-1-2. Now, most people
+[ 3133.66s ->  3140.18s] don't do 1-1-2s on the ES. I mean, that's like they do ES. Like, this is why I evolved to pure
+[ 3140.18s ->  3145.62s] racer spreads. And dude, the 1-1-2 is an amazing trade. And I like 1-1-1s. That's a nice way to
+[ 3145.62s ->  3151.92s] kind of hedge. It's not a hedge because, you know, there's still risks and downsides. But I like 2-2-2-3-3-3-4-4-4
+[ 3151.92s ->  3157.32s] or 2-2-1-3-3-3-1. Like, there's lots of different ways that you can buy, put debit
+[ 3157.32s ->  3163.50s] spreads, pay for it by selling further out of the money short options. Let's compare like a
+[ 3163.50s ->  3171.26s] traditional 90-day expiration 1-1-2 trade. Okay. Which is an amazing trade, by the way. Most people
+[ 3171.26s ->  3177.66s] like to start their two shorts at around a five delta. I, when I was doing 1-1-2s, did seven to
+[ 3177.66s ->  3181.54s] 10 delta, especially on the equity markets because I was comfortable with it. But let's just look at a
+[ 3181.54s ->  3190.04s] five delta starting there with the two shorts and then starting the long at around a 25 to 30 delta.
+[ 3190.82s ->  3198.56s] I believe most 1-1-2 traders start around 25 delta and make it 25 to 50 points wide. Let me do this as
+[ 3198.56s ->  3206.54s] one. So here we go. This needs to be two. Hold on. All right. So this is a 1-1-2 trade. This is a
+[ 3206.54s ->  3214.82s] 1-1-2 trade. Brings in about $1,100. Almost $1,200. That's 99.5% probability profit. That is sexy as hell.
+[ 3215.52s ->  3221.76s] Max profit potential, $3,600. Okay. If we take a look at the analysis curve, what does this trade
+[ 3221.76s ->  3229.16s] look like? Let me zoom out. And then here we go. So here we go. If the market just goes up, up, up, up,
+[ 3229.16s ->  3235.34s] up, up, up. All I would make is this just under $1,200, right? If the market falls though, I could
+[ 3235.34s ->  3244.40s] potentially make at expiration $3,600. Breakeven is all the way down here at around a 44.60. 44.63
+[ 3244.40s ->  3252.16s] will be my breakeven. Okay. Beautiful trade. Beautiful trade. But look, the T0 line is still
+[ 3252.16s ->  3258.64s] pretty damn steep. If we were to fall 100 points, you know, it's still pretty steep, but beautiful
+[ 3258.64s ->  3263.46s] trade. Okay. What I don't love is how it's capped here. Let me do a similar trade. Let me try to
+[ 3263.46s ->  3267.32s] remember this. $1,100. I mean, this is a really nice trade. That's almost 20% return on margin.
+[ 3268.26s ->  3273.64s] But let me try to do a similar trade that Joseph would do. I like to start my shorts at around a
+[ 3273.64s ->  3280.56s] seven delta. Somewhere around here. Oh, come on. Click and drag. Here we go. Somewhere around here.
+[ 3281.78s ->  3287.56s] Three shorts. Here's the problem with the way that I trade my ratio spreads. My long put is going to be
+[ 3287.56s ->  3291.80s] further out of the money. It's not going to be a 30 delta or 25 delta. It's going to be more like
+[ 3291.80s ->  3297.66s] probably a 16-ish delta, 12 to 16 delta. All right. This is very similar trade. Let me try to make it
+[ 3297.66s ->  3308.30s] match. This is about, oh crap. This is wrong. So the buying power on this trade, if I didn't have any
+[ 3308.30s ->  3312.78s] other NASDAQ positions on, would be a lot higher than this. Why is it only 1,500? Because I have other
+[ 3312.78s ->  3317.60s] positions on it. That's what's beautiful about futures and options on futures is they use span margin. It takes
+[ 3317.60s ->  3324.56s] into account other trades. So in this case, I'm bringing in about the same credit. But look at the
+[ 3324.56s ->  3334.68s] max potential profit. $16,000. Look at this, baby. Look at this, baby. This beautiful profit tip again
+[ 3334.68s ->  3342.88s] at expiration. If the market fell, if the S&P 500 fell, you know, 200 points over the next week. Now this
+[ 3342.88s ->  3348.24s] is today, so I'd have to change this to daily view. So if I go out to further out in time, see how it's
+[ 3348.24s ->  3355.28s] smoothing out the T0 line as I go further out in time. Let's say the market crashed today and we went
+[ 3355.28s ->  3362.36s] down 5%, 250 points. Shoot, this position could be down 1,500 bucks, right? 1,500 bucks. That sucks.
+[ 3362.36s ->  3370.66s] But what I like is this beautiful, huge profit tip. Similar credit, similar probabilities of profit,
+[ 3371.18s ->  3378.46s] similar buying power. This is why I prefer 1x3 ratio spreads, but there's less likelihood that
+[ 3378.46s ->  3385.28s] I'll hit this. What was the 25 delta? 25 delta would have been about 52.25. If I were to move this up to
+[ 3385.28s ->  3393.54s] 52.25, to have the same long put, come on, baby. 52.25, like, damn it. Why don't this not work? Here
+[ 3393.54s ->  3401.76s] we go. 5,200. See, look, now I'm in a debit. Now I'm in a debit, even with my short puts here. So I'd
+[ 3401.76s ->  3408.18s] have to move this up slightly to bring in a similar credit. Okay. Look, very similar. Oh man, this is
+[ 3408.18s ->  3414.06s] actually a nice trade. Am I about to put this on? But I don't trade ES. I might primarily trade NASDAQ.
+[ 3414.06s ->  3420.64s] All right, look, dude. Similar credit, similar slightly lower pop. This buying power is wrong.
+[ 3420.74s ->  3430.02s] It's because I have other futures on. Look, breakeven, similar, my man. So a 1.1.2, starting with
+[ 3430.02s ->  3436.96s] the one long put at 52.25, brought in about $1,100 with like $3,500 in max profit potential.
+[ 3437.52s ->  3443.36s] This 1x3, oh, and the breakeven was around 46 something. So this moved my breakeven up slightly.
+[ 3444.62s ->  3449.88s] Max profit, though, of around $3,500. This ratio spread tent, max profit potential of around
+[ 3449.88s ->  3455.22s] $18,000. Not likely. We would have to close at exactly this strike. But what if we closed
+[ 3455.22s ->  3461.72s] around here? Or what if we closed past my short strikes? See, my P&L expected. Much higher
+[ 3461.72s ->  3471.22s] than a 1.1.2. And again, I'm not knocking the 1.1.2 trades. I just prefer 1x3 ratio spreads.
+[ 3471.22s ->  3479.12s] Similar credit, similar properties of profit, similar buying power, but much higher potential
+[ 3479.12s ->  3485.58s] profit at expiration. And I know people keep saying, JP, this is only at expiration. Your
+[ 3485.58s ->  3490.70s] beautiful curve. Your beautiful curve is only at expiration. If I look at just my NASDAQ trades
+[ 3490.70s ->  3497.40s] here, my NQZ4 trades, zoom out, click a little white thing over here. This is at expiration.
+[ 3497.40s ->  3502.74s] Wait, why does this look like this? Okay. Oh, because I have some calls. I have some calls
+[ 3502.74s ->  3506.02s] and we're trading way down here. Hold on. Hold on. Where are we trading? Oh my God. We're
+[ 3506.02s ->  3512.60s] trading way down here. Holy smokes right here. So I've brought in $15,000 of credit, all these
+[ 3512.60s ->  3521.22s] various positions, puts and calls. If the market goes down, down, down, down, down, see, I could
+[ 3521.22s ->  3528.44s] potentially make a hundred grand if I was holding all these positions at expiration. Not likely. It's
+[ 3528.44s ->  3535.56s] not likely at all. In fact, I rarely expect to ever hit the tent. The main reason I'd like having some
+[ 3535.56s ->  3542.38s] long options instead of just short naked puts is if I'm wrong, it helps offset me being wrong.
+[ 3543.06s ->  3547.70s] And if I had plenty of buying power available, you know, I could do right now. I'm not going to do it
+[ 3547.70s ->  3551.94s] because JP is trying to be a better trader. He's trying not to trade too big. He's trying not to be
+[ 3551.94s ->  3557.54s] a degenerate dumbass. Okay. But you know what I could do right now, Austin? I can close this long put
+[ 3557.54s ->  3565.32s] right now and lock in a $9,200 game, leave my nakeds on. Yes, they're down, uh, 6,000. They're
+[ 3565.32s ->  3573.38s] down 6,000, but they have an 87% probability profit. I could do that, but I'm not, I'm not going to do
+[ 3573.38s ->  3580.14s] that. Let me refresh my buying power. I'm not gonna, I'm not going to do that, but I could, I could trim
+[ 3580.14s ->  3588.12s] some of these, uh, long options for a profit leaving some, if not all of my nakeds on it
+[ 3588.12s ->  3594.96s] increases my risk, but dude, 86% probability profit. I'll take that every day. So double
+[ 3594.96s ->  3601.74s] ratio spreads on gold bonds, crude oil, and I've got some NASDAQ, uh, put ratio spreads,
+[ 3601.82s ->  3605.70s] which I trimmed today. I trimmed them. I don't know if you saw on the discord, because I know
+[ 3605.70s ->  3610.40s] you're in the discord too, but I trimmed most of my put ratio spreads in NASDAQ by about
+[ 3610.40s ->  3616.86s] 25 to 35% this morning. I'm glad that I did because NASDAQ's down 1.39% right this second.
+[ 3617.10s ->  3621.74s] Okay. But notice I've got some on the call side. I've got some on the call side. I've been doing
+[ 3621.74s ->  3625.84s] well on the call side the past couple of weeks, and I will take this off sooner rather than later.
+[ 3626.30s ->  3632.92s] I've got a free long call up here, right here, baby. Free long call. There's only a 2% probability
+[ 3632.92s ->  3638.00s] of profit, but hell, I got paid to buy this call because I sold three or more short calls to more than
+[ 3638.00s ->  3643.62s] pay for it. And I took it off. This trade's been open for 39 days. So you know what? I could sell
+[ 3643.62s ->  3650.22s] this back to the market and bring in $145 back into my account, but I kind of just want to stockpile
+[ 3650.22s ->  3658.12s] all of my free long options. Why? Why get rid of it? I made more on the short calls to more than pay
+[ 3658.12s ->  3663.12s] for this long call. I'm just going to leave it on. What I wish that I still had was some of the free
+[ 3663.12s ->  3669.38s] long puts that I had accumulated in May and June before this 10% sell-off in NASDAQ.
+[ 3669.84s ->  3672.24s] So dude, I don't know if I'm answering your questions or not.
+[ 3672.32s ->  3672.86s] Oh, it was awesome.
+[ 3672.94s ->  3676.56s] These are all my positions. Hopefully that helps. What am I doing to my IRAs, my smaller accounts?
+[ 3677.44s ->  3683.58s] I'm doing put ratio spreads on MES, micro ES, put ratio spreads. I took this one off today to
+[ 3683.58s ->  3690.44s] remove some risk. I'm also wheeling micro ES, so I'm down pretty substantially. But hey, at least I made
+[ 3690.44s ->  3695.08s] some money on my cover calls. That's okay. I could close these right now and sell some more cover
+[ 3695.08s ->  3699.28s] calls for next week. I'm just going to let these ride through tomorrow, let them expire, and I'll
+[ 3699.28s ->  3705.16s] sell more cover calls. And my wife's IRA, another reason why I love Tasty Trade is she allows me to
+[ 3705.16s ->  3711.38s] trade her account. We literally filled out one form and we emailed it into Tasty Trade. And like two
+[ 3711.38s ->  3716.92s] hours later, it was showing in my accounts. So I can actively trade or monitor my wife's accounts.
+[ 3716.92s ->  3722.58s] So in her case, wheeling micro ES, I'm not long any futures yet. I've just sold this put. It's down.
+[ 3723.10s ->  3727.70s] You know, if I had just bought an MES future at $5,500, whenever I'm wheeling something,
+[ 3727.98s ->  3732.68s] I always sell it at the money. I sell it at whatever the strike is. So when I sold this put
+[ 3732.68s ->  3738.46s] six days ago, ES was probably trading right around $5,500. I could confirm that by looking at the
+[ 3738.46s ->  3746.71s] chart. One, two, three, four, five, six. Boom. Oh no, it's $5,600. Maybe was it this day? I don't know.
+[ 3746.71s ->  3752.29s] But anyways, I typically, when I'm wheeling something, sell at the money. So for example,
+[ 3752.35s ->  3756.71s] if I didn't have anything on, I would go seven days out and sell this put right here. Bring in
+[ 3756.71s ->  3763.17s] $270, 68% probability profit. It's taking $2,200 of buying power. I can sell this put right now,
+[ 3763.23s ->  3768.95s] which by the way, because this is in an IRA, this is twice the buying power versus if it was in my
+[ 3768.95s ->  3773.61s] trading account. Boom. See my trading account, I could sell the same put for only $1,400.
+[ 3773.61s ->  3783.01s] But in my wife's IRA, it's twice. So if I had just bought an MES future of 5,500 and we're down
+[ 3783.01s ->  3795.35s] what? 43 points. What's 43 times five, 43 times five to 15. I would be down $215. If I had just
+[ 3795.35s ->  3802.71s] bought an MES future at the time that I sold this put, instead, I'm only down 166. By selling options
+[ 3802.71s ->  3806.01s] and bringing in premium, it's increasing my probabilities of profit. But that's what I'm
+[ 3806.01s ->  3811.85s] doing. And my wife's IRA is selling put ratio spreads in the micro ES. I'm starting to build
+[ 3811.85s ->  3818.75s] up a long-term position in JEPQ. JEPQ has around a 9% dividend. It beats the S&P 500 since inception
+[ 3818.75s ->  3825.53s] if dividends were reinvested. So I'm slowly building up a JEPQ position, just like I'm slowly in my main
+[ 3825.53s ->  3832.33s] account, building up a SPY position, building up a SPY position. So dude, did I show you what you
+[ 3832.33s ->  3836.45s] wanted to see? Yeah, that's awesome. I think people are going to learn a lot from this, not only learning
+[ 3836.45s ->  3841.89s] like the theory, but also like seeing it in action. And so yeah, with that, I know you do a lot and
+[ 3841.89s ->  3845.49s] you just mentioned you don't do YouTube as much, but I still know you post because I like to watch
+[ 3845.49s ->  3850.51s] your videos. But where can people go to find out more about you? And I'll make sure to put all these
+[ 3850.51s ->  3856.79s] links below. Yeah, man. So I'm on YouTube. It's trade with Joseph. Uh, my handle is at
+[ 3856.79s ->  3865.55s] Joseph D pocket. So youtube.com slash Joseph D pocket. Um, I post about once or so a week. I was
+[ 3865.55s ->  3870.53s] posting every day for a while, but dude, I've realized I don't really want to be a YouTube
+[ 3870.53s ->  3877.75s] personality or finance YouTube or whatever. It's just not worth the stress. And really, I feel like
+[ 3877.75s ->  3882.69s] I was trading much bigger. I know what I said earlier by having the trade with Joseph
+[ 3882.69s ->  3887.29s] discord, which is now free. So check that out at trade with Joseph.com free discord. There's
+[ 3887.29s ->  3891.53s] no charge trade with Joseph.com. We've got about 600 members in there and I want to see
+[ 3891.53s ->  3895.49s] it keep growing and being more active. I'm learning. We've got some traders in the group that have
+[ 3895.49s ->  3900.05s] been trading for 20, 30, 40 years. I'm watching what they're doing. I'm thinking, okay, they've
+[ 3900.05s ->  3905.05s] lived, they've survived three decades doing this shit. I should probably learn something for
+[ 3905.05s ->  3909.51s] them. So I'm learning, I'm learning. So please check us out. It's free. There's no cost trade
+[ 3909.51s ->  3914.45s] with Joseph.com. There's a little link there to join the free discord, youtube.com slash
+[ 3914.45s ->  3921.01s] Joseph D pocket. It's trade with Joseph. Um, but man, I don't want to be a YouTube or whatever.
+[ 3921.01s ->  3928.68s] And I honestly feel like because I was making videos every day and sharing my success that
+[ 3928.68s ->  3935.24s] that caused me to overtrade, man. Remember back in April, you know, March, February, when I was
+[ 3935.24s ->  3940.70s] making five, 10, $15,000 a day, you can go back and watch my videos. I was killing it until the
+[ 3940.70s ->  3947.06s] third week of April, 2024. We had about an 8% sell off of NASDAQ. I had about 10 NASDAQ futures at the
+[ 3947.06s ->  3952.94s] high. I added five on Tuesday. I added five on Wednesday. I added five on Thursday. I ended up
+[ 3952.94s ->  3961.30s] with 33 NASDAQ futures. Now, if I had held that position for literally one week, I would have been
+[ 3961.30s ->  3966.92s] okay. However, if the market didn't go back up in my favor, like five or 600 points the next week,
+[ 3967.00s ->  3975.58s] if the next five or 600 points were down, it would have wiped out my account. And that sickens me.
+[ 3975.86s ->  3982.20s] It sickens me to think about it. So I feel like not posting as frequently on YouTube is not having
+[ 3982.20s ->  3986.50s] me be stressed. Hey, look how great I am. Look at my green. Look at all this green on the screen,
+[ 3986.50s ->  3994.58s] baby. Stay green. Happy trading. Stay green. I made $10,000 today. No, I'm not going to do that
+[ 3994.58s ->  4000.48s] anymore. Well, number one, I'm not trading that size ever again, ever again, man. This
+[ 4000.48s ->  4007.56s] is my money. This is my wife's money. This is my kid's money. I can't be gambling. I can't be buying
+[ 4007.56s ->  4013.30s] 15, 20 NASDAQ futures and scalping in and out like crazy. Like I was doing, I was making hundreds of
+[ 4013.30s ->  4018.28s] trades a week, man, hundreds of trades a week. And I was killing it until I gave it all back.
+[ 4018.48s ->  4024.46s] If I could go back in time and say, Joseph, please just stick with long-term high probability trades.
+[ 4024.78s ->  4031.56s] My accounts over the past four years, since I've been trading, my accounts would easily be double
+[ 4031.56s ->  4042.66s] the size they are now. Double. So word to the wise, most people just save and invest into a passive
+[ 4042.66s ->  4047.88s] ETF like SPY. Dude, you know, most hedge funds can't beat SPY more than two years in a row.
+[ 4048.02s ->  4051.80s] Like they might beat them one year in a row. Some will beat them two years in a row. There's like,
+[ 4052.10s ->  4057.16s] it's like 5% or something of hedge funds can beat the S&P 500 returns over a three or more year period.
+[ 4057.58s ->  4063.20s] Less than 5%, I believe is the last stat that I heard. Most of y'all watching this video should
+[ 4063.20s ->  4069.04s] not be selling options, should not be trading futures. Most of y'all watching this video should be
+[ 4069.04s ->  4074.44s] saving and investing as much as you can into something like the SPY, S&P 500, just dollar
+[ 4074.44s ->  4080.94s] cost average, like my family member. You know, his parents saved and invested for him 70 years ago,
+[ 4081.02s ->  4087.56s] 60 years ago, 50 years ago, 40 years ago. They've been dead for 20 years, almost 2006. Almost 20 years
+[ 4087.56s ->  4094.22s] since my grandma died. My grandpa passed away first, but my grandma died in 2006. Since then,
+[ 4094.22s ->  4101.32s] shoot, his accounts have doubled since then. And he's just in long-term investments. A lot of high
+[ 4101.32s ->  4106.22s] dividend stocks. They really still like high dividend stocks like Alcoa and a couple other
+[ 4106.22s ->  4111.02s] high dividend stocks and preferred shares. He really likes preferred shares. Preferred shares
+[ 4111.02s ->  4115.46s] have less fluctuation, but higher dividends. They also get more protection in the event of a
+[ 4115.46s ->  4121.66s] bankruptcy, whatever, blah, blah, blah. You know what? My family member who has never made a dollar
+[ 4121.66s ->  4127.16s] in his life is now worth over $8 million. You know what? He's never done. He's never sold an option.
+[ 4128.86s ->  4134.72s] I love selling options. And man, I'm going to be doing this until I'm dead. Seriously. I freaking love
+[ 4134.72s ->  4139.56s] it. My problem is, is I get sucked in. Like I'm looking at this NASDAQ move right now.
+[ 4139.56s ->  4147.08s] Uh, MACD on the five minute is about to have a positive cross. We've sold off from 324 to 920.
+[ 4147.26s ->  4154.08s] We've sold off 400 points in the past three hours. We're about to have a positive MACD cross.
+[ 4154.70s ->  4160.44s] Old JP. I'm talking to old JP from three months ago. 10 NASDAQ futures. I'm buying them, baby. I'm
+[ 4160.44s ->  4164.20s] buying those 10 NASDAQ futures. Just looking for a 15 to 20 point move. I'm not looking for a 100 point
+[ 4164.20s ->  4168.48s] move. I'm not looking to get back to 300 points higher from where we were. That's old JP.
+[ 4168.48s ->  4177.22s] You know what? Last week I was on vacation. I didn't actively trade at all. Yes. We had some
+[ 4177.22s ->  4183.14s] wild swings last week, but ended up the week really good. You know why? Because I didn't
+[ 4183.14s ->  4189.60s] touch my damn accounts. I didn't touch them. I just let the long-term high probability trades do
+[ 4189.60s ->  4195.76s] their thing. So that's my biggest challenge is I am addicted to the markets, man. I freaking love it.
+[ 4195.76s ->  4202.92s] I love watching the markets. I love trading. The biggest challenge that I have is getting up and
+[ 4202.92s ->  4208.96s] walking away. When I typically don't do much at all, if I'm just letting my positions work,
+[ 4209.52s ->  4214.98s] it's fine. It's when I'm more active that I dig a hole for myself. And it's embarrassing to admit
+[ 4214.98s ->  4220.62s] that. But I bet I'm not the only person watching this video or whatever. I bet I'm not the only person
+[ 4220.62s ->  4226.18s] that I can ever admit to going too big. Yeah. I love trading. I'm going to be doing this stuff
+[ 4226.18s ->  4232.94s] until I die. But what I want to get to a point of is 30 minutes a week, not even 30 minutes a day.
+[ 4233.10s ->  4238.54s] I want to spend about 30 minutes a week looking at all my positions. Do I need to make any adjustments?
+[ 4238.68s ->  4242.66s] Do I need to trim anything? Do I have any short puts as part of ratio spreads? They're up 80,
+[ 4242.86s ->  4247.74s] 85% or so. And I can take those off and leave the long options on whether they're puts or calls.
+[ 4247.74s ->  4254.14s] 30 to 60 minutes a week is my new goal. Instead of trading four or five, six hours a day,
+[ 4254.44s ->  4259.40s] what if I was just trading four hours a month? That's my new goal.
+[ 4261.93s ->  4264.99s] All right. Well, thank you so much for being on here, Joseph. You shared a lot and I'm so excited
+[ 4264.99s ->  4269.41s] to release this video because I think people will learn a lot from it. Yeah. I'll make sure to put
+[ 4269.41s ->  4273.45s] all those links down below to his YouTube, to his Discord. Really join it. It's very active in there.
+[ 4273.45s ->  4278.83s] I love just reading it. And so, yeah, thank you once again. And thanks for being here.

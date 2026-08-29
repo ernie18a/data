@@ -1,0 +1,160 @@
+[    0.21s ->     5.83s] Hey, YouTube, it's Roman. I am back, and today I want to talk about solving stochastic differential equations.
+[    6.31s ->    12.31s] Mainly, I really want to walk you through the geometric bryony of motion analytical solution step-by-step
+[   12.31s ->    17.11s] and hopefully make it very clear because I know it can be a very challenging subject
+[   17.11s ->    20.25s] if you're just diving into the world of stochastic differential equations.
+[   21.09s ->    24.37s] So without further ado, let's go ahead and get started.
+[   24.93s ->    29.73s] So if we have this stochastic differential equation, geometric bryony of motion,
+[   30.21s ->    36.49s] we are going to have to solve it a little bit differently from the way we would solve ordinary differential equations
+[   36.49s ->    41.37s] because we have this randomness induced by the Brownian motion term,
+[   43.36s ->    47.00s] and that means we're going to have to rely on some results from stochastic calculus.
+[   48.06s ->    54.34s] But before we get there, I want to talk about how we can go about solving this using Ito's Lemma.
+[   54.94s ->    60.42s] So Ito's Lemma, hopefully you're familiar, and if you're not, I actually have a video on Ito's Lemma
+[   60.42s ->    64.86s] talking more in depth about it, so I would highly encourage you to check that video out.
+[   65.80s ->    72.98s] But if you haven't seen it, if we want to represent the differential of a time-dependent function of a stochastic process,
+[   73.26s ->    76.08s] then we can apply Ito's Lemma.
+[   76.08s ->    86.04s] So if we have y, this function, y, of a time-dependent, it's a time-dependent function of a stochastic process, right?
+[   86.08s ->    88.60s] So this is our stochastic process, and this is our function y.
+[   88.60s ->    97.22s] Then we can represent the change as the partial with respect to time multiplied by the time differential
+[   97.22s ->   103.30s] plus the partial with respect to the process times the process differential plus one-half.
+[  103.52s ->   112.28s] This whole term is the second-order term of the second-order derivative with respect to the process times the differential of the process squared.
+[  112.28s ->   114.52s] This should be very familiar.
+[  114.76s ->   117.68s] This should look very similar to a Taylor series expansion.
+[  118.30s ->   119.28s] That's because it is.
+[  119.66s ->   127.60s] But the higher-order dt terms, that is anything dt squared and higher, converge to zero as a result from stochastic calculus.
+[  127.90s ->   132.20s] So just something to keep in mind that this is a precise solution.
+[  134.73s ->   137.87s] Okay, so now that we have that tool in our toolbox, we have Ito's Lemma,
+[  137.87s ->   142.17s] so we can find this differential of a time-dependent function of a stochastic process.
+[  142.49s ->   148.23s] We can go through and perform a log transformation on the stock price process.
+[  148.93s ->   157.67s] Now, I know a lot of ordinary differential equations, and forget about stochastic differential equations,
+[  157.91s ->   164.01s] but a lot of these higher-level maths introduce just seemingly terms out of nowhere.
+[  164.01s ->   168.25s] So, you know, some of you may be wondering, you know, where the heck does this come from?
+[  168.43s ->   170.23s] Where the heck does this log transformation come from?
+[  170.29s ->   171.25s] Why do we have to do this?
+[  171.37s ->   172.81s] Well, you know, bear with me.
+[  172.89s ->   175.89s] You'll see why it's productive momentarily.
+[  176.09s ->   180.17s] But for now, just kind of accept that it's being introduced,
+[  180.53s ->   184.97s] and we're going to use it to help us solve this stochastic differential equation.
+[  184.97s ->   196.04s] If you'll notice, G of S of T, this function, is actually a time-dependent function of a stochastic process,
+[  196.16s ->   199.58s] where the stochastic process is our stock price process.
+[  200.14s ->   201.94s] Therefore, we can apply Ito's Lemma.
+[  202.26s ->   207.80s] So, essentially, we're taking equation two, and we're just substituting the stock price process everywhere we see X.
+[  208.00s ->   216.18s] So, you'll notice it's literally identical, except instead of X of T, you'll see S of T in all of these different spots.
+[  217.65s ->   218.21s] Okay, cool.
+[  218.39s ->   225.33s] Well, we know the function, G, so we can find these partial derivatives relatively easily, right?
+[  225.33s ->   228.89s] We take the partial derivative with respect to time, boom, no time terms, that's zero.
+[  229.25s ->   235.11s] Take the partial derivative with respect to the stock price process, boom, that's one over S of T, basic derivative of a log.
+[  235.25s ->   240.97s] Take the second order derivative with respect to the stock price process, negative one over S of T squared.
+[  241.33s ->   246.09s] You have this, take the derivative, you get the negative on the outside, because this is S of T to the negative one.
+[  246.09s ->   249.91s] Then you increment by one, and then you get that squared term.
+[  250.31s ->   250.69s] Okay, cool.
+[  252.58s ->   257.86s] So, now we need to find this dS of T squared term.
+[  257.98s ->   263.88s] Fortunately, we know it follows geometric Brownian motion, and this is the stochastic differential equation that we're trying to solve.
+[  263.88s ->   268.54s] And this is where things start to get a little confusing if you're unfamiliar with stochastic calculus.
+[  268.74s ->   274.64s] So, in stochastic calculus, if you have dt squared, that's going to be equivalent to zero.
+[  274.80s ->   276.30s] It's going to converge very quickly to zero.
+[  276.30s ->   282.38s] If you have dwt squared, that's actually going to be equal to dt.
+[  282.82s ->   289.54s] And if you have a product of dwt and dt, that's going to be equal to zero.
+[  289.88s ->   294.84s] So, if we square this term, we know that we get three new terms.
+[  294.98s ->   302.62s] We get this term squared, we get this term squared, and then we have two times the product of both of these terms.
+[  302.94s ->   303.12s] Right?
+[  303.12s ->   305.04s] Some basic stuff here.
+[  306.25s ->   313.03s] But you'll notice, if we square this term, dt squared is zero, as I just said, from stochastic calculus.
+[  313.15s ->   314.43s] So, boom, that term goes away.
+[  315.03s ->   321.37s] If we take the product of these two terms and multiply it by two, we get dwt times dt.
+[  321.81s ->   322.93s] That goes to zero.
+[  323.05s ->   324.31s] Boom, that term goes away.
+[  324.67s ->   326.67s] So, we're just left with this last term.
+[  327.43s ->   330.67s] Sigma squared, dwt squared, S of T squared.
+[  330.67s ->   335.29s] But as I just said, dwt squared is dt.
+[  335.93s ->   342.81s] So, if you go down here, you'll see we get sigma squared, S of T squared, dwt squared, which turns into dt.
+[  343.01s ->   352.52s] So, we get this nice, solid, very concise representation of the S of T squared because everything else cancels out thanks to stochastic calculus.
+[  352.52s ->   354.72s] All right, awesome.
+[  354.86s ->   360.86s] So, now we can substitute in these values into equation four.
+[  361.56s ->   365.86s] So, if we do that, you'll notice we get something very, very nice happening.
+[  366.30s ->   368.78s] We have all of the S of T's canceling out.
+[  369.28s ->   371.26s] So, that's great, right?
+[  371.26s ->   382.70s] We have this one over S of T, that's the partial with respect to the process, the second order partial with respect to the process, and then that zero for the partial with respect to time.
+[  383.79s ->   387.55s] So, if we distribute, then we cancel out all of the S of T's.
+[  387.59s ->   388.49s] That's what's happening here.
+[  388.49s ->   395.11s] So, all we're doing is distributing the one over S of T and the negative one over S of T squared, and then we get this next line here.
+[  396.36s ->   405.26s] Then we can just group and factor out the dt, and we get mu minus one-half sigma squared dt plus sigma dwt under that real-world measure.
+[  407.05s ->   408.29s] All right, that's great.
+[  408.43s ->   416.85s] Now, what's also really cool about this representation is the solution is pretty easy to find because now we can just integrate both sides.
+[  417.41s ->   419.35s] So, let's do exactly that.
+[  419.35s ->   422.27s] If we scroll down here, let's integrate both sides.
+[  422.37s ->   426.85s] If you'll notice up here, we defined that T was going to be across this interval.
+[  426.95s ->   429.79s] You can think of this as just a time step, T zero to cap T.
+[  430.21s ->   432.61s] So, we're going to use those for our limits of integration.
+[  434.56s ->   438.71s] So, down here, we can integrate both sides very easily.
+[  438.83s ->   448.19s] We take the integral with respect to this function, with respect to time, with respect to the Brownian motion, and then we can solve pretty easily.
+[  448.19s ->   459.47s] So, we integrate this D of G term here, and all we're going to be left with is G from cap T less S of T zero, right?
+[  459.47s ->   462.29s] So, this is fundamental theorem of calculus stuff.
+[  462.37s ->   463.93s] This is very trivial.
+[  463.93s ->   470.69s] And then, if we go and we integrate this side, you can see we don't have any T terms.
+[  470.69s ->   475.31s] So, all we got to do, again, is add that T and then subtract.
+[  475.31s ->   479.57s] So, we do cap T minus T zero, very, very simple integration.
+[  480.43s ->   482.21s] And then, this is where it gets a little more interesting.
+[  482.51s ->   484.09s] So, we have this Brownian motion term.
+[  484.09s ->   498.00s] And very simply, if we integrate across the exchange in Brownian motions, then all we're really doing is we're taking the difference from the current point in time and the starting point in time.
+[  498.26s ->   503.30s] So, we can just substitute in T and T zero and take the difference in the Brownian motions.
+[  503.30s ->   507.64s] So, we can take that sigma out because it's not random.
+[  507.76s ->   508.50s] It's just a constant.
+[  509.44s ->   514.74s] And then, we have this Brownian motion, cap T less Brownian motion, T zero.
+[  514.84s ->   518.86s] So, you can just think of this as the Brownian motion at the starting point, which is usually zero.
+[  519.50s ->   523.24s] And then, you have this step in time, which is the Brownian motion.
+[  525.19s ->   525.79s] All righty.
+[  525.85s ->   526.23s] Terrific.
+[  526.23s ->   533.79s] So, if you look at this equation five here, we actually have the representation of G.
+[  535.14s ->   538.84s] It's just the log transform of the stock price, right?
+[  538.90s ->   540.84s] So, we can actually substitute that in.
+[  540.88s ->   542.04s] Remember from equation three.
+[  543.02s ->   544.24s] It's just the log transformation.
+[  544.24s ->   556.35s] So, if we actually substitute that in, then we get log of S cap T less log of S sub T zero is equal to all this nonsense on the right side.
+[  557.29s ->   562.25s] And this is from basic rules of logarithms, right?
+[  562.29s ->   565.67s] If we have log less a log, then we can just take the fraction.
+[  566.73s ->   572.23s] And now, if we want to find S sub cap T, we can just raise both sides.
+[  572.81s ->   576.24s] We just take the exponential of both sides like this.
+[  577.17s ->   579.65s] And then, that cancels that out.
+[  579.73s ->   584.65s] So, it's just S sub T over S sub T zero is equivalent to E to all that nonsense.
+[  584.65s ->   589.15s] And then, we can just multiply the S of T zero over.
+[  589.71s ->   595.65s] And we have this very nice closed form solution to our stochastic differential equation.
+[  597.27s ->   598.95s] So, why is this important?
+[  599.11s ->   600.13s] Why do we want to do this?
+[  600.23s ->   604.55s] Well, this is actually very productive for simulating price processes.
+[  604.55s ->   616.27s] So, if we wanted to go ahead and establish, say, like a price of an exotic option, there's a lot of different articles that I've written in the past.
+[  616.41s ->   619.05s] I've talked about Monte Carlo simulation in the past as well.
+[  619.05s ->   625.53s] But if we wanted to derive the price of an exotic option, no matter what, we need to assume a model, right?
+[  625.57s ->   629.43s] You'll see some literature on model free prices and this and that.
+[  629.61s ->   632.73s] And that's more of like the higher level cutting edge stuff.
+[  632.87s ->   643.11s] You know, like John Hull, he published an article in 2021 about using neural networks trained on a variety of different stochastic processes to develop prices.
+[  643.11s ->   648.79s] But, you know, there's nothing constraining the price output to an arbitrage free setting.
+[  648.93s ->   655.29s] So, again, that's more of like a higher level academic research style stuff that may not be productive in practice.
+[  655.29s ->   657.73s] It may increase the speed in pricing, his approach.
+[  658.01s ->   659.17s] But I digress.
+[  659.33s ->   665.47s] The point is, if you have an exotic option and you want to develop a price, it's an extrapolation exercise.
+[  665.47s ->   670.77s] So, what you need to do is you need to assume a model, say, perhaps geometric Brownian motion.
+[  671.51s ->   679.81s] No quant in the right mind would assume geometric Brownian motion because we have other models available to us now that fit market dynamics better.
+[  680.09s ->   681.01s] But bear with me.
+[  681.23s ->   683.29s] Bear with me as usual.
+[  683.73s ->   684.93s] It's a deep sea, guys.
+[  685.55s ->   691.19s] But if we wanted to price an exotic option, we need to assume a model, an underlying model.
+[  691.73s ->   694.95s] So, perhaps we want to assume geometric Brownian motion.
+[  694.95s ->   715.09s] Then, if we wanted to price these path-dependent options, these exotic options, what we can do is we can simulate forward paths, and then we can find the payoff of the option at the terminal time, and then we can discount that back to the present.
+[  715.09s ->   729.17s] So, this is Feynman-CAC stuff that establishes that link between the stochastic differential equations and the numerical solution to pricing.
+[  729.51s ->   732.97s] So, that's just an example of what we might want to do.
+[  732.97s ->   740.66s] Yeah, so, this has just been an introduction video to solving SDEs.
+[  740.78s ->   745.40s] It's going to be the first of, hopefully, many math videos related to quant subjects.
+[  745.90s ->   753.36s] If you have any questions, I know this was a pretty quick walkthrough, and there's an assumption of some prior knowledge in this space.
+[  753.48s ->   757.80s] If something is not clear, if something doesn't make sense, I'm happy to explain it.
+[  757.80s ->   759.78s] I can recommend a book as well.
+[  759.98s ->   761.64s] This is a very popular book.
+[  762.20s ->   765.20s] It's called Mathematical Modeling and Computation and Finance.
+[  765.90s ->   769.98s] It's a very good book if you're interested in this sort of thing.
+[  770.44s ->   776.22s] It walks you through just tremendous examples, very, very clear, with code in MATLAB and Python.
+[  776.50s ->   778.42s] So, I highly recommend that book.
+[  778.78s ->   780.40s] I'm not getting kicked back.
+[  780.74s ->   781.38s] I wish I was.
+[  781.38s ->   785.76s] But, yeah, so, thank you for watching.
+[  785.86s ->   788.26s] If you have any questions, feel free to leave them in the comments.
+[  788.94s ->   793.96s] If you have any suggestions or requests for future videos, also happy to listen to those.
+[  794.12s ->   795.02s] But, until next time.

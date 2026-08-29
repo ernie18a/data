@@ -1,0 +1,217 @@
+[    0.46s ->     7.93s] We often hear of these high-speed trading algorithms, but what is it that they actually
+[    7.93s ->    15.39s] do? Hey guys, Roman here, quantitative researcher and trader, founder of QuantGuild, and today I
+[   15.39s ->    21.87s] want to explain this idea of algorithmic market making. This is exactly how large financial
+[   21.87s ->    29.33s] institutions use probability and statistics to make money in the real world. This is often
+[   29.33s ->    36.15s] left outside of the classroom when we study these topics in an academic setting. We're
+[   36.15s ->    40.65s] going to take a look at a dice market, and if we can make a market there, we can extend
+[   40.65s ->    48.01s] that idea to any source of randomness or uncertainty. And that's exactly why we can see pretty much
+[   48.01s ->    55.45s] everything is tradable these days, not just stocks or options, but even your favorite sports
+[   55.45s ->    62.21s] team winning or the weather next week. We're going to discuss the math that makes all of
+[   62.21s ->    67.49s] these markets. Depending on the events you're looking to trade, your location may restrict
+[   67.49s ->    73.69s] access to that market. Unlike my Jupyter notebooks, which everyone has access to regardless of
+[   73.69s ->    78.21s] their location. I'll leave a link to this Jupyter notebook in the description below. I'll also
+[   78.21s ->    82.55s] post it to the QuantGuild library on GitHub, where you can find all of my Jupyter notebooks
+[   82.55s ->    87.55s] and associated YouTube videos, along with all of the source code for my Quant builds.
+[   87.55s ->    91.47s] At the top of this Jupyter notebook, you'll notice some related QuantGuild videos applying
+[   91.47s ->    96.31s] probability and statistics to finance and trading. This idea of time series analysis,
+[   96.31s ->   102.31s] retail vs. institutional trading, trading vs. investing, this idea of accumulating positive
+[  102.31s ->   108.39s] expected value over time, the difference between Quant and discretionary trading, and of course,
+[  108.39s ->   114.35s] busting three trading myths that these trading gurus love to propagate. If you're unfamiliar
+[  114.35s ->   120.27s] with any of these ideas, I highly recommend you check these videos out first before tackling one
+[  120.27s ->   124.79s] like this. Moreover, these videos certainly take a lot of effort to create, so if you'd like to help
+[  124.79s ->   129.13s] support the channel so I can continue to create videos just like this one, please like, comment,
+[  129.23s ->   134.07s] subscribe, share. It helps me out tremendously. It is always greatly appreciated, and if you'd like to
+[  134.07s ->   140.15s] master your quantitative skills, check out QuantGuild.com. Maybe you come from a background in business,
+[  140.15s ->   146.11s] economics, computer science, and aren't too sure where to get started on your Quant journey. Maybe
+[  146.11s ->   152.01s] you're an aspiring Quant or a working professional looking to sharpen those technical skills. In any case,
+[  152.17s ->   158.19s] QuantGuild is for you. We have over 90 Quant lessons in math, probability, finance, an adaptive
+[  158.19s ->   163.79s] practice engine that scales with your skill level so you can progress to more and more difficult
+[  163.79s ->   171.23s] topics with gamified rank-based progress, interview questions with fully worked solutions, trading
+[  171.23s ->   180.41s] games, courses from A to Z in math, coding, probability statistics, and more on the way. And all that's
+[  180.41s ->   186.81s] included with QuantGuild membership, and you can get started right now for free. So if you'd like to help
+[  186.81s ->   193.29s] support the channel and master your quantitative skills, check out QuantGuild.com. Without further ado,
+[  193.29s ->   201.05s] let's get started by discussing this idea of making a market for a dice. What is a market maker anyway?
+[  201.21s ->   207.59s] Well, when you go on Robinhood and you buy a stock or an options contract, you need somebody to take
+[  207.59s ->   214.01s] the other side of that trade. And that somebody is a market maker. They are serving a business function
+[  214.01s ->   221.41s] as a liquidity provider. They quote prices, mainly the bid and the ask or offer. The bid is the price
+[  221.41s ->   229.09s] that you can sell to them at. And the ask or offer is the price that you can buy from them at. And they
+[  229.09s ->   235.73s] are taking the other side of whatever trade you place. Let's take a look at an example in the context
+[  235.73s ->   245.01s] of this dice market. So for example, a trader wants to go long 1000 shares at $3 per share, where a share
+[  245.01s ->   252.53s] here is just going to be a dice roll. Who's going to take the other side of that trade? Well, that's
+[  252.53s ->   261.25s] going to be our market maker. So they're going long 1000 shares. That means our market maker is short 1000
+[  261.25s ->   268.85s] shares. A dice is going to be rolled and the outcome of six is realized. So who makes money in
+[  268.85s ->   275.81s] this case? Well, our trader is long, and they were long at $3. The realization is six. So they make
+[  275.81s ->   284.29s] the difference. And that's going to be $3 per share for their 1000 shares, or $3,000. Now, the question
+[  284.29s ->   292.77s] is, how do we determine the price that that trader can transact at within this market that is quite
+[  292.77s ->   300.85s] literally the job of a market maker? If they do this effectively, they quote effective prices,
+[  300.85s ->   307.25s] then our market makers wealth path over time should look something like this. They don't get to pick
+[  307.25s ->   314.61s] the sample path that they walk. But the overall expected value or the trajectory of their wealth path
+[  315.17s ->   324.69s] is positive. And if they're quoting prices in an ineffective way, then the overall trajectory of
+[  324.69s ->   333.57s] their wealth path is going to look something like this. So how do we dictate the prices that we're willing
+[  333.57s ->   341.97s] to quote traders in this dice market? Well, clearly, there's going to be a positive difference between the
+[  341.97s ->   349.09s] ask and the bid. Otherwise, our traders could make a risk free profit always buying low and selling high
+[  349.09s ->   355.49s] just directly back to us as the market maker. So if there is a positive spread there, a reasonable
+[  355.49s ->   362.61s] question to ask is what is the mid point? Maybe that can help us dictate how we quote our prices.
+[  362.61s ->   368.61s] So this is going to be known as the mid price in the context of our dice market. I'm going to ask
+[  368.61s ->   377.57s] a simple question, what is our best guess for the outcome of our dice roll? Let's make that our mid
+[  377.57s ->   383.09s] price, I'm going to call it theta. And what I'm going to do is look at this error function, the mean
+[  383.09s ->   391.49s] squared error. And that's going to tell me how effective my guess theta is. And what this then turns
+[  391.49s ->   401.25s] into is a minimization problem, I want to pick the best data possible to produce the lowest error. And if I
+[  401.25s ->   407.49s] visualize this for you, you can see we get something that looks like a nice quadratic here. And the lowest
+[  407.49s ->   414.45s] point on this function is going to correspond with the theta input that produces the lowest error. In other
+[  414.45s ->   424.85s] words, functionally, it is our best guess for the value theta, our mid price, the outcome of a dice roll,
+[  424.85s ->   433.81s] it turns out that this value, our best guess for the outcome of a dice roll is 3.5. But a dice can't land on
+[  433.81s ->   441.25s] 3.5. Where did this value come from? If we take the average of our dice roll, that is all of the possible
+[  441.25s ->   450.05s] outcomes, we actually get that exact same value 3.5. And this isn't a coincidence. If I look to solve
+[  450.05s ->   456.21s] this formal minimization problem, and I apply the necessary calculus, take the derivative, set it equal
+[  456.21s ->   463.41s] to zero, treat the expectation as the constant that it is. In the context of this problem, I find that our
+[  463.41s ->   471.09s] optimal choice of theta, that mid price that produces the smallest error, as we just saw here,
+[  471.09s ->   478.29s] is equivalent to the expectation of our dice roll. And in this case, we said the expectation, the mean or
+[  478.29s ->   485.89s] the average is what? 3.5. So that is the formal math behind what is going on. Instead of applying
+[  485.89s ->   491.41s] the calculus directly, you can take a look at this animation, which is numerical minimization. It's
+[  491.41s ->   497.89s] applying the exact same idea to go about finding this idea of the lowest error. Effectively, we are just
+[  497.89s ->   504.21s] riding the roller coaster down until we find the best possible mid price that produces the lowest
+[  504.21s ->   511.65s] error. How do we know that this is the correct mid price? Well, the outcome of a dice roll is fully
+[  511.65s ->   519.73s] specified by its probability mass function. In other words, the probability of rolling a 1, 2, 3, 4,
+[  519.73s ->   528.53s] 5, or 6 is fixed. It will never change throughout the life of our dice market. And what that means is
+[  528.53s ->   534.37s] all of our probability statistics and distributions are going to converge. And that's exactly what you're
+[  534.37s ->   541.73s] observing here in this animation. As I continue to roll a fair dice, I'm going to take the cumulative
+[  541.73s ->   550.61s] mean and it is going to converge with probabilistic certainty to that theoretical mean of 3.5, which we
+[  550.61s ->   559.41s] computed above. And that is our mid price. Our goal now as a market maker is to quote a bid and an ask
+[  559.41s ->   568.21s] or offer around this mid price. So how do we do this in a way that we are certain statistically that we are
+[  568.21s ->   575.49s] going to accumulate wealth over a series of trades? Well, I'm going to apply the law of total expectation.
+[  575.49s ->   583.33s] I'm going to assume an equal volume on either side of the spread, and I can apply the expectation
+[  583.33s ->   590.85s] directly to the difference between the outcome of a dice roll and the price that we end up transacting
+[  590.85s ->   597.25s] at. When selling at the ask, the profit is going to be the difference between the ask and the realization.
+[  597.25s ->   602.21s] And when buying at the bid, the profit is going to be the difference between the realization
+[  602.77s ->   609.41s] and the price that we paid at the bid. And it turns out that the expected profit per trade
+[  609.41s ->   617.89s] is going to be the ask minus the bid divided by two. In other words, it will be the spread over two.
+[  617.89s ->   623.81s] So what does this mean? Well, if we can increase the spread, then we're going to have
+[  623.81s ->   632.05s] the highest possible expected value per trade. So let's just make the spread incredibly wide,
+[  632.05s ->   638.05s] and we'll accumulate a tremendous amount of wealth. And it's going to look exactly like
+[  638.05s ->   647.20s] the process that we had observed earlier. Our wealth path would then look something like this.
+[  647.20s ->   651.44s] We'll accumulate a whole bunch of wealth. Well, what happens if we make the spread
+[  651.44s ->   659.76s] tremendously wide? Let's take a look at this simulation. That doesn't look anything like
+[  659.76s ->   665.92s] the chart from earlier. We only had two trades in this market with our really wide spread.
+[  665.92s ->   672.48s] But theoretically, if we increase the spread, we should be making more money. What happened here
+[  672.48s ->   681.52s] in this market? Well, remember, we are a liquidity provider. If the spread is too large around some
+[  681.52s ->   687.92s] sort of fair price, nobody is going to transact with us. So in reality, if we're trying to look
+[  687.92s ->   695.36s] at this as some sort of optimization problem to maximize our expected profit per trade, in reality,
+[  695.36s ->   701.36s] it's not a linear problem. We can't just increase the spread. At some point, nobody is going to
+[  701.36s ->   706.88s] transact with us. And that's exactly what we saw in the animation above. In reality, it's going to
+[  706.88s ->   713.12s] look something like this, where there is a sweet spot between the spread being too wide and being
+[  713.12s ->   719.28s] too tight. In illiquid markets, the spread will be wider. In highly liquid markets, the spread will be
+[  719.28s ->   725.52s] extremely tight. And a lot of markets are extremely liquid now due to the algorithmic capacity of market
+[  725.52s ->   732.40s] making, applying all of the ideas that we've discussed so far. If that is too much, then we
+[  732.40s ->   738.48s] can just take a look at this animation and see what happens when spreads get tighter. We're going to have
+[  738.48s ->   745.44s] more trades. As we can see, we have a significant number of more trades relative to this example where
+[  745.44s ->   754.48s] we quoted a spread that was way too wide within our dice market. So when it comes to making a market
+[  754.48s ->   759.12s] market, effectively, how are we accumulating wealth as the market maker? Well, effectively,
+[  759.12s ->   766.32s] all we're doing is buying low and selling high every single time relative to that mid price,
+[  766.32s ->   773.28s] which is the theoretical fair price, the mid price. And if we do this, we can see what happens.
+[  773.28s ->   779.76s] We're going to be accumulating that difference. It's going to be the spread over two. That is our
+[  779.76s ->   785.92s] expected P and L. If we have an equal volume on either side of the spread at any given time.
+[  785.92s ->   792.56s] And this is our market maker P and L for a series of trades. Keep in mind, you are not without risk
+[  792.56s ->   800.16s] as a market maker. You are just subject to different risks. So we understand now the idea of making a
+[  800.16s ->   806.08s] market for a dice. We find this mid price quote, a spread around it that is of a reasonable size,
+[  806.08s ->   812.64s] and we can then accumulate this wealth over a series of trades. But how does this extend to
+[  812.64s ->   817.92s] something like making a market for an options contract? Well, things are a little bit different
+[  817.92s ->   826.08s] here in the dice market. The realization occurred instantaneously. We transacted and then rolled a
+[  826.08s ->   832.72s] dice and then we settled up. But when it comes to making a market for an options contract, that contract
+[  832.72s ->   839.60s] has a maturity at some point in the future, we're not just realizing some sort of payoff. As we see
+[  839.60s ->   846.72s] here on the left, this payoff is realized at time capital T in the future. And that's exactly what we
+[  846.72s ->   853.44s] see on this chart here on the right. We can see a time capital T that's when we settle up and we don't
+[  853.44s ->   861.36s] know which sample path we're going to end up walking. So the question now is how do we come up with the
+[  861.36s ->   870.56s] mid price to quote a spread around to make a market for these options contracts? It turns out nothing
+[  870.56s ->   877.20s] changes from our dice market example. If we apply the fundamental theorem of asset pricing, it says
+[  877.20s ->   883.36s] that the fair price of our derivatives contract today is just going to be a discounted risk neutral
+[  883.36s ->   891.12s] expectation. It's an average, just like the average of our dice roll. That is going to be our mid price.
+[  891.12s ->   900.08s] But now we have to figure out how to come up with this average value. It turns out we need to pick a
+[  900.08s ->   906.08s] model. We can pick a geometric Brownian motion, a Heston, a rough Bergami. We have a lot of different
+[  906.08s ->   913.44s] models to choose from. And this becomes a pricing problem. Now, there are a lot of different moving
+[  913.44s ->   917.52s] pieces here. We're dealing with risk neutral dynamics. We have the replication argument from
+[  917.52s ->   923.52s] black trolls. That is a complete market relative to an incomplete market with imperfect hedging. But
+[  923.52s ->   929.44s] we're not going down that rabbit hole here. All we're saying is relative to our dice market example,
+[  929.44s ->   935.92s] we're dealing with an expectation and we're going to pick a model to come up with that expected value.
+[  935.92s ->   941.76s] We're going to select a model that makes sense for the market that we are making. So in the context
+[  941.76s ->   949.04s] of equity options, we may choose a Heston stochastic volatility model. But now that we've selected a
+[  949.04s ->   955.12s] model, we need to pick parameters, right? There's a lot going on here. What do I choose for my value of
+[  955.12s ->   963.28s] data or my initial variance? So on and so forth. Well, these dynamics are given to us by the market.
+[  963.28s ->   969.60s] We have as many choices for a risk neutral measure as we would like. So which do we choose? Well,
+[  969.60s ->   976.16s] we're just going to calibrate the model directly to the market. And that is going to be the risk
+[  976.16s ->   982.00s] neutral measure that we choose. So effectively, this turns into a calibration problem. You can see
+[  982.00s ->   988.08s] this flat surface here is the initial selection of our model parameters. In this case, it'll be a
+[  988.08s ->   993.68s] Heston model. And as I calibrate the model parameters to the market volatility surface,
+[  993.68s ->   998.48s] I am going to have maybe some error, some play between the calibrated surface and the market
+[  998.48s ->  1005.60s] surface. But I will then derive the risk neutral dynamics. Now that we have selected a model and
+[ 1005.60s ->  1012.80s] calibrated it to this set of liquid instruments, this implied volatility surface here, we can simulate
+[ 1012.80s ->  1018.56s] our mid price. That is going to be the risk neutral discounted expectation of the payoff
+[ 1018.56s ->  1025.28s] of our contingent claim by the fundamental theorem of asset pricing. And if that is a little too
+[ 1025.28s ->  1031.92s] complicated, we can just look at this animation here. By the law of large numbers, I can continue to
+[ 1031.92s ->  1038.40s] simulate paths for the model that we selected after we've calibrated it. And what you're going to observe
+[ 1038.40s ->  1044.40s] here is if I continue to observe the payoff at that time capital T in the future, discount it back to
+[ 1044.40s ->  1052.88s] the present, take the average, I'm going to get similar convergence to what we saw in the dice market
+[ 1052.88s ->  1060.80s] example with the mean of the dice. And that is exactly what we're seeing here. Given the dynamics of
+[ 1060.80s ->  1067.92s] the model, they are fixed for that parameter set. And we are certain that the price will then converge
+[ 1067.92s ->  1075.04s] to the theoretical price under those parameters by the law of large numbers, depending on the market
+[ 1075.04s ->  1080.80s] that we're making. If it's highly liquid or it's a custom tailored product for a client, we may need
+[ 1080.80s ->  1086.88s] to make adjustments to this theoretical price that we found after calibration and selecting a model
+[ 1087.52s ->  1094.72s] that are beyond just the profit that we would like from the bid and the ask spread itself. And that's
+[ 1094.72s ->  1102.16s] to say we also need to consider adjustments for counterparty risk, liquidity, and all of this
+[ 1102.16s ->  1110.32s] relative to our original profit margin and the discounted risk neutral expected price given by this
+[ 1110.32s ->  1117.44s] simulation. And if we do this in an effective way, you can see theoretically we will accumulate this
+[ 1117.44s ->  1126.00s] spread over a series of trades in the form of positive trajectory in our wealth path, trading P and L.
+[ 1126.00s ->  1133.44s] There are several catches here. However, first is what if our model is not effectively capturing the
+[ 1133.44s ->  1140.16s] dynamics that we could observe in a forward looking sense? In other words, what if it's not the correct
+[ 1140.72s ->  1147.92s] mid price or guaranteed theoretical convergence only to that model's price? It doesn't mean that the
+[ 1147.92s ->  1153.36s] model is correct. For example, after calibration, what if we realize something that looks like this
+[ 1154.32s ->  1163.84s] instead of the previous example, we're actually going to be accumulating losses. And this is because
+[ 1163.84s ->  1171.60s] we've selected an ineffective model. So that's one catch. What about the other that I mentioned at the
+[ 1171.60s ->  1177.84s] start of this section, making a market for an options contract that is in our dice market, the realization
+[ 1177.84s ->  1188.08s] occurred instantly, but here the payoff isn't realized until time capital T in the future. Well, this gets into the
+[ 1188.08s ->  1196.40s] idea of hedging. When we make a market, we are not just going to sit around and wait for the payoff. The
+[ 1196.40s ->  1202.64s] portfolio replication argument given by Black-Scholes says theoretically, if we had perfect hedging,
+[ 1202.64s ->  1208.08s] then the cost of that initial portfolio should be equivalent to then the price of the financial
+[ 1208.08s ->  1214.56s] derivative. And if you recall, we're quoting a spread around that fair price. So we're constantly going to
+[ 1214.56s ->  1222.64s] be theoretically buying low and selling high. And our hedges then are going to eat away at the profit
+[ 1222.64s ->  1229.36s] from our spread. And that's exactly what I'm showing here. The reality of making a market, you're going
+[ 1229.36s ->  1234.80s] to have imperfect hedging, and that's going to eat away at your profits. The more effectively that you
+[ 1234.80s ->  1241.20s] can hedge, the better you can then capture that spread as a liquidity provider. And there's a lot in
+[ 1241.20s ->  1245.60s] the literature that suggests there are different ways to deploy reinforcement learning to do this.
+[ 1245.60s ->  1250.32s] Hans Buehler has some incredible work, even with Blanca Hervath, on this topic that I highly
+[ 1250.32s ->  1255.44s] encourage you check out if the subject interests you. Too long didn't watch here is your executive
+[ 1255.44s ->  1259.68s] summary. In the face of structured randomness, you can think of something like a dice roll market or
+[ 1259.68s ->  1265.36s] uncertainty, the markets themselves. We can apply probability and statistics to make money
+[ 1265.36s ->  1272.40s] systematically. Now, we can never predict the outcome of any one trade or any one random variable.
+[ 1272.40s ->  1277.36s] Our goal is to make money on average. When distributions are fixed, the expected value,
+[ 1277.36s ->  1283.68s] the mean, the average gives us a best guess in a realization in the mean squared error out of sample
+[ 1283.68s ->  1290.16s] sense. Should we transact then around that mid price, quote a bid, ask offer, we will accumulate a
+[ 1290.16s ->  1298.00s] positive drift, even with an entirely random outcome. Now, in reality, distributions change.
+[ 1298.00s ->  1304.08s] Probabilities, statistics, distributions do not converge. However, the same principles hold,
+[ 1304.08s ->  1311.52s] but we need to select a model, calibrate it to the market, and then simulate prices. That is our fair
+[ 1311.52s ->  1316.64s] price. Fundamental theorem of asset pricing suggests that. And we can then quote a price around that to
+[ 1316.64s ->  1323.36s] accumulate the same positive drift. Now, unlike the dice market where realizations occur instantly,
+[ 1323.36s ->  1329.68s] we will have to hedge throughout the life of our position to collect that theoretical spread.
+[ 1329.68s ->  1335.76s] Theoretically, continuous hedging with no transaction costs result in the simulated price of our contract,
+[ 1335.76s ->  1340.64s] so our position would be net zero. But remember, we're transacting at the bid and the ask. We're
+[ 1340.64s ->  1347.92s] constantly buying low and selling high statistically, giving us an edge to accumulate. So in reality,
+[ 1347.92s ->  1354.08s] due to market frictions, transaction costs, so on and so forth, the efficacy of our hedge will dictate
+[ 1354.08s ->  1360.80s] how effectively we collect that theoretical profit from the spread. Some future topics,
+[ 1360.80s ->  1366.80s] technical videos and other discussions to look forward to. I'd like to develop this idea of a quant
+[ 1366.80s ->  1372.16s] roadmap, how I would go about studying. If I had to start all over again, I think there's some interest
+[ 1372.16s ->  1376.64s] in this topic, so let me know in the comments below if that is the case. I'd also like to cover some
+[ 1376.64s ->  1382.72s] projects that I consider may be a quant, how I received my first quant offer. I'd also like to get
+[ 1382.72s ->  1388.64s] into more advanced Markov chains, something you might see in a stochastic processes class. Definitely
+[ 1388.64s ->  1394.56s] more niche, non-Markovian models, this idea of reinforcement learning for delta hedging, approximating
+[ 1394.56s ->  1401.36s] pricing functionals and rough path theory and applications of path signatures. I'd also like
+[ 1401.36s ->  1405.76s] to get back to our quant builds. I know it's been quite some time, but I've been toying with a lot
+[ 1405.76s ->  1411.68s] of different ideas for builds from A to Z. These are multi-hour videos. They certainly take a tremendous
+[ 1411.68s ->  1417.84s] effort to create. So if you have any ideas or would like to see any of these built from scratch,
+[ 1417.84s ->  1424.00s] again, let me know in the comments below. It certainly helps me figure out what videos to create next.
+[ 1424.00s ->  1428.48s] And that's going to do it for this video explaining algorithmic market making. I hope you enjoyed. I
+[ 1428.48s ->  1432.72s] hope you learned something. This video certainly took a tremendous effort to put together, so if you
+[ 1432.72s ->  1436.80s] enjoyed it and you want to see more like it in the future, please like, comment, subscribe, share. Again,
+[ 1436.80s ->  1441.68s] it helps me out tremendously. I'll leave a link in the description below. If you'd like to join our
+[ 1441.68s ->  1446.32s] discord to connect with me and other quants in the Quant Guild community, if you'd like to master your
+[ 1446.32s ->  1455.04s] quantitative skills, check out quantguild.com. Other than that, thank you so much for watching and I will see you in the next video.
+[ 1455.04s ->  1467.92s] Thank you.

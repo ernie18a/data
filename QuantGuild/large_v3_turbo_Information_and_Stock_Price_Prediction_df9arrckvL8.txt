@@ -1,0 +1,177 @@
+[    0.46s ->     7.03s] everyone wants to talk about neural networks machine learning data science topics nobody
+[    7.03s ->    15.11s] wants to do basic basic statistics basic exploratory data analysis and i understand
+[   15.11s ->    22.01s] where most of these folks are coming from really i i do and you know nobody wants to do data
+[   22.01s ->    27.27s] cleaning pre-processing we want to get to the fun stuff right predicting stock returns analyzing
+[   27.27s ->    34.51s] signals optimizing signals building systems to deploy our signals but at the end of the day
+[   34.51s ->    41.83s] it really all does come down to to basic statistics as to whether or not your trading strategy is going
+[   41.83s ->    49.41s] to be effective in a live situation in this video what i want to do is i want to introduce the idea
+[   49.41s ->    56.03s] of a neural network as a complicated model complicated i i say loosely of course and
+[   56.03s ->    61.33s] it's really a model that's going to be able to learn a relationship between a set of inputs and
+[   61.33s ->    67.53s] a set of outputs but it is one of many models we could select a neural network is you know something
+[   67.53s ->    72.21s] that is very popular these days is you know we see in large language models neural networks are
+[   72.21s ->    77.53s] deployed quite aggressively but coming from traditional statistics we have basic machine
+[   77.53s ->    83.39s] learning models like a linear regression that we can also use what i want to do is i want to pin
+[   83.39s ->    89.27s] these models against each other and i want to see the results in a very simple setting of trying to
+[   89.27s ->    95.75s] use yesterday's return to predict today's return okay we're going to be looking at the s p 500
+[   95.75s ->   105.37s] going to be learning from a set of data and then we are going to be testing on a different set of data
+[  105.37s ->   108.79s] we're going to do time series train test splits for those of you who are concerned but we'll get there
+[  108.79s ->   114.67s] when we get there we're going to start by looking at our data i'm going to simply plot a histogram of
+[  114.67s ->   120.35s] our returns and i'm going to look at a scatter plot of yesterday's return relative to today's return
+[  120.35s ->   127.99s] so let's get started we're going to start by visualizing the distribution of s p 500 returns and
+[  127.99s ->   132.15s] you'll see it's centered about zero that's something that we would expect perhaps we have some spikes out
+[  132.15s ->   136.79s] to the side some some outliers but more or less it's going to be centered about zero it's going to
+[  136.79s ->   142.49s] exhibit some excess kurtosis it's a stylized fact of the market among a whole set of stylized facts
+[  142.49s ->   148.87s] that we can expect to see when we visualize empirical returns and what i'm also going to do is take a look
+[  148.87s ->   155.23s] at a scatter plot of yesterday's return relative to today's return for returns going back five years
+[  155.23s ->   160.87s] and what you're going to see is you're going to see this sort of just ball of points all right now
+[  160.87s ->   168.13s] why is this important this is like some of the most basic statistics that you can do if i was to
+[  168.13s ->   177.00s] condition on yesterday's return being let's say zero what can i expect today's return to be remember
+[  177.00s ->   181.76s] so yesterday's return was zero what can i expect today's return to be well i'm drawing a vertical
+[  181.76s ->   187.42s] line at zero that's what the conditional expectation is essentially doing and it's looking at all of the
+[  187.42s ->   195.07s] points that are around zero and saying hey what do we tend to expect what do we tend to expect to have
+[  195.07s ->   200.43s] happen in the s&p 500 returns given yesterday was in fact zero well if you look at these points
+[  200.43s ->   208.17s] they're not all above zero they're not all below zero they're just pretty evenly distributed in a cluster
+[  208.17s ->   214.33s] about zero and yeah sure you have some points that are you know outside or well below but what this
+[  214.33s ->   224.61s] is saying in a very basic visualization is there is nothing that tends to happen it is simply going
+[  224.61s ->   230.69s] to be random and this is this makes sense right and the reason why this makes sense is because
+[  230.69s ->   236.29s] if we only look at yesterday's price and then we look at today's price that is yesterday's return
+[  236.29s ->   242.67s] and today's return do we have sufficient information to really be able to predict the return
+[  242.67s ->   249.17s] absolutely absolutely not right all we have is pricing information whether or not return
+[  249.17s ->   255.07s] increased or decreased relative to the previous day that is what is being plotted here on the x and y
+[  255.07s ->   260.43s] axis but we know nothing of the macro environment what happened to interest rates what happened to
+[  260.43s ->   266.25s] inflation where was there any news we didn't do any natural language processing we didn't do any image
+[  266.25s ->   272.29s] recognition we didn't do any video recognition we didn't do anything in a quantitative capacity
+[  272.29s ->   278.69s] to try to analyze signal all we're doing is looking at yesterday's return relative to today's return
+[  278.69s ->   285.79s] there's nowhere near sufficient information to predict that sort of chaos clearly there's nowhere near and
+[  285.79s ->   293.37s] you know this isn't conjecture just look at this ball of points if i said okay you know yesterday's
+[  293.37s ->   300.73s] return was was 0.25 tomorrow's return could be anything from 0.025 to negative 0.025
+[  300.73s ->   305.61s] and maybe there's even an outlier that's not being displayed here because i've limited the uh the
+[  305.61s ->   313.85s] range of the x and y axes here so the point of looking at these these basic basic data visualizations
+[  313.85s ->   321.27s] is given that we just are looking at pricing information in this context clearly there's no
+[  321.27s ->   328.99s] relationship to learn between the input being the previous day's return and the output being today's
+[  328.99s ->   336.95s] return and if there was even some correlation we would see it in this visualization right so there
+[  336.95s ->   342.19s] would be some sort of set of scatter points that are going up into the right or down into the right
+[  342.19s ->   347.83s] or you know however you would like to to classify the correlation as a strong moderate weak linear
+[  347.83s ->   355.97s] correlation there's nothing of the sort in this setting so the whole purpose of of this initial data
+[  355.97s ->   360.19s] visualization is to suggest before we get into the modeling and we look at the linear regression and
+[  360.19s ->   366.65s] the neural network we don't have any sufficient information to predict returns if we could predict
+[  366.65s ->   374.01s] market returns based on yesterday's return i would be you know in greece right now on my yacht i would not
+[  374.01s ->   381.99s] be here talking about this this scatter plot of of lagged returns okay that is exactly my point we have
+[  381.99s ->   387.63s] insufficient information to predict the future return based on the previous return so when we
+[  387.63s ->   394.69s] actually go about developing these models what can we expect to have happen well clearly i'm not going
+[  394.69s ->   400.63s] to learn anything or my model's not going to learn anything and it's not going to be predictive out of
+[  400.63s ->   406.73s] sample in any capacity that's to say i could have the greatest neural network structure in existence
+[  406.73s ->   412.91s] and if i take those lagged returns and i throw them into my neural network then the prediction that
+[  412.91s ->   418.75s] it's going to create for returns say tomorrow are going to be quite poor and that's because we don't
+[  418.75s ->   424.65s] have sufficient information to actually model that problem now whether i have the coolest neural network
+[  424.65s ->   429.79s] in the world or i'm just using a basic linear regression both models are going to fail in a similar
+[  429.79s ->   436.07s] capacity even if they're you know pre-processed correctly if you will and the training and testing splits are
+[  436.07s ->   441.11s] correct the model's not going to be robust out of sample and that's because there is no trend
+[  441.11s ->   448.59s] to extract i don't need to show you more than one picture to realize that there is no relationship
+[  448.59s ->   457.49s] between the previous day's return and today's return that is just observed visually by this chart
+[  457.49s ->   463.17s] if there was a relationship we would see it graphically here now of course as you add more information
+[  463.17s ->   470.27s] there may be a general relationship that emerges you know it wouldn't be crazy to suggest that as
+[  470.27s ->   477.29s] interest rates are cut or maybe inflation beats expectations we see some sort of you know relationship
+[  477.29s ->   482.97s] between return and and that outcome you know if inflation was to go down and you know everybody
+[  482.97s ->   487.37s] thought it was going to increase then maybe return is going to go up you know that could be a
+[  487.37s ->   493.95s] contemporaneous response but remember we're looking here in a lagged capacity right this is predictive
+[  493.95s ->   498.97s] we're not looking at contemporaneous variables we're looking at something that is purely predictive and
+[  498.97s ->   505.79s] in this case there is no correlation so regardless of the model that we select we expect it to perform
+[  505.79s ->   513.13s] quite poorly so let's walk through the modeling process for a neural network it's really the same as
+[  513.13s ->   519.13s] as a linear regression and then talk about the results of the linear regression relative to the
+[  519.13s ->   525.61s] neural network and talk about how it all comes down to information what we'll do here is break up our data
+[  525.61s ->   530.33s] into a training set and a testing set if you've seen a train test split before this is nothing new to
+[  530.33s ->   535.29s] you if you've never heard of this idea then simply all we're doing is we're taking the data that we have
+[  535.29s ->   542.25s] and we're breaking it up into two sets one set that our model is going to try to learn from and another set
+[  542.25s ->   546.97s] that our model is going to test itself on and the reason we want to do this is because we don't want
+[  546.97s ->   553.77s] to overfit our data when we learn from data we're going to go out and we are going to test that model
+[  553.77s ->   560.33s] on data it's never seen before so why don't we just mimic this when we actually go about developing
+[  560.33s ->   565.37s] our model that's why we do the train and test split to see how robust our model is out of sample now
+[  565.37s ->   570.57s] of course we're dealing with chronological data so we can't randomly shuffle samples in this data
+[  570.57s ->   575.77s] we are going to do a time series train test split and that's exactly what i have here
+[  575.77s ->   580.73s] so i'm going to break this up into four tensors i'm going to have the input tensor and i'm going
+[  580.73s ->   587.69s] to have the output tensors in the training and testing capacities since now we have the training and
+[  587.69s ->   595.53s] testing data split up we can go about developing our models developing models is quite simple once
+[  595.53s ->   601.69s] you've done all of the hard work pre-processing and cleaning your data and separating it into
+[  601.69s ->   605.69s] training and testing splits maybe even a validation split depending on what you're trying to do
+[  606.33s ->   611.61s] but here what i have is a simple linear regression i am going to fit the linear regression that is i'm
+[  611.61s ->   617.21s] telling the line of best fit the linear regression to learn from the training data i'm going to compute
+[  617.21s ->   621.69s] the overall error of that training data and then i'm going to compute the error of that model
+[  622.49s ->   628.49s] when i test it on the testing data so if i look at the mean squared error of the training data i get
+[  628.49s ->   636.89s] 0.99 if this model was robust and these splits were reasonable then i can expect similar performance
+[  636.89s ->   643.53s] out of sample but my model is not robust there's no information to glean remember i'm just overfitting
+[  643.53s ->   650.33s] noise when i learn from this training set and if you need further convincing just look at this
+[  650.33s ->   657.61s] mean squared error of the testing set that is i have a 33.50 mean squared error of the testing set
+[  658.57s ->   668.09s] so this linear regression model is learning nothing from the training set and doesn't that make sense
+[  668.81s ->   676.17s] there's nothing to learn if i look at this blob of data there's no correlation between the lagged
+[  676.17s ->   682.70s] return and the future return in fact it would be quite concerning if if it did learn something
+[  682.70s ->   687.58s] and we would have to figure out what is going on with our model and why it's behaving in that way
+[  687.58s ->   694.86s] because there is nothing to learn here and we we can see this time and time again by just shuffling the
+[  694.86s ->   700.38s] split of our data learning from the training set and then testing on the testing set we're always going to
+[  700.38s ->   707.02s] get a reasonable mean squared error in the training set that is we're overfitting to the noise in our
+[  707.02s ->   712.22s] training set and then we're not learning from the data so when we go about testing on our testing set
+[  712.78s ->   722.46s] we do extremely poorly at 33.50 is extremely large relative to the 0.999 okay and and this is clearly an
+[  722.46s ->   729.58s] example of overfitting but i want to connect this idea of overfitting to sufficient information for predicting
+[  730.14s ->   737.18s] the response variable that we are trying to model and that is we don't have any information about
+[  737.18s ->   742.70s] things that could be relevant to the return on it on a given day even in a lagged setting what if i took
+[  742.70s ->   748.70s] all of the news articles from yesterday and i threw it into the model wouldn't that be arbitrarily better
+[  748.70s ->   754.62s] maybe what if i took all the macro variables from yesterday we're missing so much relevant information
+[  755.18s ->   762.54s] that explains variation in our response variable that is the return for tomorrow that if our model
+[  762.54s ->   769.18s] actually learned something simply from the lagged price that would be just absolutely absurd and
+[  769.18s ->   773.50s] there's probably more of an issue in your model construction or your interpretation of the response
+[  773.50s ->   780.14s] then than anything else all right now we have our neural network this is the exact same thing all right
+[  780.14s ->   786.14s] instead of just using a line of best fit i'm going to use a neural network to try to learn from the
+[  786.14s ->   794.65s] previous return that is the lagged return for the relative future day the future days return and all
+[  794.65s ->   799.69s] i'm going to do is i'm going to say hey use the training set of data learn the relationship between
+[  799.69s ->   805.05s] the input the previous day's return and the output today's return and see if you can come up with some
+[  805.05s ->   809.69s] sort of relationship and then test it out of sample on our testing set see how you do it's the exact
+[  809.69s ->   815.21s] same problem instead of using a line of best fit we're going to use a neural network and if you scroll
+[  815.21s ->   822.89s] on down here you know we can see that the mean squared error for the neural network is 0.952 this might
+[  822.89s ->   829.85s] suggest that it actually overfits the noise better than the line of best fit and that very well may be
+[  829.85s ->   838.41s] the case but in fact it performs worse out of sample we have 33.75 as the mean squared error on
+[  838.41s ->   846.33s] the testing set so when we take our model whether it be the linear regression or the neural network we
+[  846.33s ->   852.41s] fit it to the training data and we test it out of sample to see how robust the model is in both
+[  852.41s ->   861.21s] settings they perform extremely poorly and this literally folks comes down to basic basic statistics
+[  861.21s ->   868.89s] and exploratory data analysis understanding what you have as information to predict a response variable
+[  868.89s ->   878.01s] all going back to this idea of this noisy blob of points that we visualized earlier so when we compare
+[  878.01s ->   884.49s] the results we can see okay you know the linear regression generates a reasonable in sample mse
+[  884.49s ->   888.97s] and so does the neural network and then out of sample has an egregious error and you know you can
+[  888.97s ->   895.45s] even kind of see anecdotally that yeah the neural network does overfit the noise better and it does
+[  895.45s ->   901.61s] you know perform worse out of sample and it performs worse in a robust sense and that's because neural
+[  901.61s ->   907.85s] networks can overfit your data and noise very very easily so you have to figure out when you're going
+[  907.85s ->   912.49s] to stop training them typically you use some sort of you know train test validation split and then
+[  912.49s ->   918.09s] you'll you'll have some sort of arbitrary cutoff as the validation error begins to to increase but
+[  918.09s ->   923.29s] that's a a video for another day on optimizing performance the whole point of this video is to
+[  923.29s ->   932.41s] discuss the model that is a neural network in the context of prediction with insufficient information
+[  932.41s ->   937.77s] and that's what we've seen here we've seen okay if i just look at a data set of returns whether
+[  937.77s ->   942.65s] it be for market returns some sort of you know etf whatever whether it be for a specific equity
+[  943.53s ->   950.33s] we do not have sufficient information in a predictive capacity and you don't need to throw
+[  950.33s ->   954.57s] the kitchen sink at i could use the most basic linear regression which has an analytical solution
+[  954.57s ->   960.41s] for the mean squared error we can just optimize it analytically and then get our optimal coefficients
+[  960.41s ->   966.33s] and use it right away out of sample it performs very poorly i could do stochastic gradient descent
+[  966.33s ->   972.17s] and fit my neural network to the training data and have it get a even smaller in sample msc to the
+[  972.17s ->   978.25s] neural network or i'm sorry to the linear regression but as you can see you you don't have robust out of
+[  978.25s ->   985.69s] sample performance so my point in this video is to suggest that in the context of of modeling returns and
+[  985.69s ->   994.81s] this is something i feel is overlooked especially when you start to learn about data analytics and and basic
+[  994.81s ->  1002.89s] statistics for data science machine learning neural networks is you know no matter no model no matter how
+[ 1002.89s ->  1009.21s] complicated it is is going to generate predictive power from from nothing you need relevant information
+[ 1010.01s ->  1015.85s] for the item that you're trying to predict this is where the economic interpretation becomes extremely
+[ 1015.85s ->  1022.41s] useful nobody wants to do that part because that's that's the part that's work that's the part that
+[ 1022.41s ->  1028.49s] is that makes you a a researcher a quantitative researcher a a phd student is you're going out you're
+[ 1028.49s ->  1034.41s] collecting relevant data maybe data that nobody else thought could be relevant right maybe you're looking
+[ 1034.41s ->  1039.77s] at ceo expressions in interviews and that is something that is relevant in the cross section
+[ 1039.77s ->  1047.05s] and has some sort of capacity to explain variation in data that is where all of the work is done and
+[ 1047.05s ->  1054.81s] that's where unique predictors are found and implemented and that's how quant strategies are developed
+[ 1055.53s ->  1059.69s] you're not going to generate predictive power from nothing using the same factors that everybody else
+[ 1059.69s ->  1067.61s] has been using for for all time there's no way that your bollinger bands have predictive power there
+[ 1067.61s ->  1074.73s] there's no way so i hope this video was informative i hope this sort of started to shed some some some
+[ 1074.73s ->  1082.09s] light on the idea of how we go about modeling in a quantitative capacity relative to the response variable
+[ 1082.09s ->  1088.73s] that we're looking to predict also relative to the context of model complexity how you know just because
+[ 1088.73s ->  1093.37s] we increase model complexity it doesn't necessarily mean we're going to get better results that is
+[ 1093.37s ->  1099.61s] not necessarily to say that it isn't worthwhile to increase model complexity because suppose we have
+[ 1099.61s ->  1105.85s] a larger number of variables in our data set that we're aiming to use to predict some sort of response
+[ 1105.85s ->  1113.05s] variable like future returns we may need more complicated models to identify the relationships that we
+[ 1113.05s ->  1118.33s] desire to aid in the prediction of that response variable so a linear regression might not be
+[ 1118.33s ->  1122.73s] effective if we don't know the relevant transformations of the data that are required to identify
+[ 1123.37s ->  1128.97s] those relationships but that will be a video for another day thank you so much for watching i hope
+[ 1128.97s ->  1134.01s] you enjoyed and i will see you in the next video

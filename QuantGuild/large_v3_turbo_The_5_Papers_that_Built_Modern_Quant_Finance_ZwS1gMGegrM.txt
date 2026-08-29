@@ -1,0 +1,214 @@
+[    0.46s ->     6.88s] Hey guys, Roman here, quantitative researcher and trader, founder of QuantGuild. Today,
+[    7.00s ->    12.50s] we're going to talk about the five papers that built modern quantitative finance from a forgotten
+[   12.50s ->    19.62s] PhD thesis to the market price of risk, the mathematical backbone of options markets,
+[   19.62s ->    27.48s] and the computational breakthroughs that enable us to price these instruments in seconds. If you
+[   27.48s ->    36.26s] want to understand the why behind the how, these are the papers that you need to know. As always,
+[   36.38s ->    39.80s] this Jupyter notebook will be linked in the description below. I will also post it to the
+[   39.80s ->    44.32s] QuantGuild library on GitHub, where you can find all of my Jupyter notebooks and associated YouTube
+[   44.32s ->    49.22s] videos, along with all of the source code for my quant builds. At the top of this Jupyter notebook,
+[   49.22s ->    54.92s] you'll notice some related QuantGuild videos actually implementing the results of these papers
+[   54.92s ->    60.12s] in a variety of different ways. How to trade with the Black-Scholes model, Heston stochastic
+[   60.12s ->    65.18s] volatility and fast Fourier transforms, Brownian motion for Quant Finance, the main driver of
+[   65.18s ->    71.92s] many of these results, how physics accidentally proves the Black-Scholes model, the difference
+[   71.92s ->    78.98s] between exposure to priced risk and alpha, and of course, if you're interested in my background,
+[   78.98s ->    85.60s] a video discussing my life as a quant. Moreover, these videos certainly take a tremendous effort
+[   85.60s ->    89.28s] to put together, so if you'd like to help support the channel so I can continue to create videos
+[   89.28s ->    94.12s] just like this one, please like, comment, subscribe, share. It helps me out tremendously. It is always
+[   94.12s ->   100.08s] greatly appreciated. And if you'd like to master your quantitative skills, check out QuantGuild.com.
+[  100.18s ->   106.52s] We have an adaptive practice engine that scales with your skill level, over 90 quant lessons in math,
+[  106.52s ->   114.60s] probability, and finance, courses from A to Z in stats, coding, mathematics, with more on the way,
+[  114.82s ->   120.46s] and all that's included with QuantGuild membership. And you can get started right now for free.
+[  120.86s ->   127.88s] So if you'd like to help support the channel and master your quantitative skills, check out QuantGuild.com.
+[  127.88s ->   136.50s] Without further ado, let's get started by talking about Bachelier's Theory de la Speculation.
+[  136.52s ->   140.98s] Now, I will never be a French mathematician for a variety of reasons. First and foremost,
+[  141.18s ->   147.12s] I am not French, but Louis Bachelier was. He studied at the Sorbonne under the legendary Henry
+[  147.12s ->   154.62s] Poincare, and yes, it is in fact that Poincare. He revolutionized our understanding of uncertainty
+[  154.62s ->   161.90s] and randomness in the financial markets. He actually introduced the notion of Brownian motion
+[  161.90s ->   170.30s] even years before Einstein formalized it in physics. Now, imagine that you revolutionize
+[  170.30s ->   178.42s] an entire industry, but your genius is so before the necessary time that you graduate from your
+[  178.42s ->   185.24s] program after coming up with this dissertation with an honorable distinction rather than a very
+[  185.24s ->   192.96s] honorable distinction. His research was ignored largely for a very many number of years before
+[  192.96s ->   201.42s] eventually it was uncovered and he was recognized as the father of financial mathematics. What I have
+[  201.42s ->   208.30s] here is an animation that is effectively exhibiting the key results of his research. That is, we have this
+[  208.30s ->   214.84s] idea from heat dynamics and probability where probability is going to spread out over time. We're looking at a
+[  214.84s ->   220.52s] simulation of arithmetic Brownian motion paths, and what I want you to notice is as I continue to play
+[  220.52s ->   228.24s] this animation, uncertainty actually starts relatively contained around the initial spot price, and then as
+[  228.24s ->   235.24s] time progresses, we notice that the variance of the distribution is going to increase, and that is
+[  235.24s ->   241.50s] exactly what we see here. If I'm to go frame by frame, we can see the distribution tightening as we go back to
+[  241.50s ->   249.72s] the origin. And then as we continue to go out in this animation, as time progresses, uncertainty is going
+[  249.72s ->   257.10s] to increase. He not only formalized this idea in the financial markets, but he even came up with a
+[  257.10s ->   266.28s] remarkably accurate pricing formula under this arithmetic structure that is an echo to the work that is to
+[  266.28s ->   275.88s] follow in black shoals. Now, of course, with these arithmetic paths, we can have negative values for the price
+[  275.88s ->   282.92s] process, which we can't observe in practice for something like an equity. But when oil prices went
+[  282.92s ->   291.16s] negative over COVID, some desks referred back to the Bachelier model so that they could in fact accurately price
+[  291.16s ->   298.28s] price, instruments with negative values. It's hard to understate the genius of this thesis. This was
+[  298.28s ->   305.68s] 1900. Actually, I couldn't just hop on Stack Overflow and simulate Brownian Motion with NumPy. He didn't even
+[  305.68s ->   311.48s] know Brownian Motion was yet a thing. Portfolio replication in the context of a complete and risk
+[  311.48s ->   319.18s] neutral market didn't exist yet. Feynman-Cack connecting the stochastic representation to a closed
+[  319.18s ->   325.44s] form solution in that risk neutral portfolio replication sense wasn't even a thing. And he
+[  325.44s ->   333.16s] had already developed a remarkably consistent first of its kind model. We have him to thank for founding
+[  333.16s ->   339.98s] this entire stream of literature of financial mathematics. Years later, financial economists were
+[  339.98s ->   347.06s] wrestling with this idea of portfolio diversification. In the 50s, Markowitz had already founded portfolio
+[  347.06s ->   356.52s] theory and the idea that the only free lunch in economics was diversification. And Sharp in 1964
+[  356.52s ->   363.84s] builds on that theory. And yes, this is William Sharp of the Sharp Ratio, which I'm sure we all have
+[  363.84s ->   371.64s] heard of. He asks, what actually determines the prices of assets in a market where everyone is
+[  371.64s ->   379.24s] optimizing their portfolios? This would lead to the capital asset pricing model building on portfolio
+[  379.24s ->   388.20s] theory. Markowitz's work in 1964, his paper introduced the concept that only systematic or market risk
+[  388.20s ->   397.74s] should be rewarded because idiosyncratic risk, firm-specific risk can be diversified away. This would lead
+[  397.74s ->   407.94s] to the idea of beta and alpha, which every quant is actively chasing today. What I have here is an
+[  407.94s ->   416.06s] animation for you of the practical implications of Sharp's work. This is looking at only one price risk
+[  416.06s ->   422.94s] factor. But this founded the entire body of literature for further work. Fama French, three-factor,
+[  422.94s ->   429.50s] five-factor, factor zoos, so on and so forth. What you're observing here is on the left, a portfolio
+[  429.50s ->   436.88s] outperforms the market with a sharp ratio of roughly 2.5. On the right, we have another portfolio that
+[  436.88s ->   444.06s] outperforms the market with a sharp ratio of roughly 2.5. In Sharp's perfect world, with the capital asset
+[  444.06s ->   451.72s] pricing model, both portfolios should be just a form of leveraged market returns. But in practice,
+[  451.72s ->   457.88s] the market does not perfectly account for all of the returns available to us. The market is not
+[  457.88s ->   463.76s] perfectly efficient. And what you're seeing here is on the left, the portfolio that outperforms the
+[  463.76s ->   469.84s] market is just taking on extra market exposure. That is what you're seeing here. The returns are
+[  469.84s ->   476.70s] highly correlated. Everything about this portfolio outperforming the market is just a leveraged version
+[  476.70s ->   482.50s] of the market itself. There is no outperformance in that sense. It's only exposure to the market
+[  482.50s ->   489.62s] factor. But the portfolio on the right here has absolutely nothing to do with the market exposure.
+[  490.24s ->   495.30s] If the market were to tank, this portfolio would tank alongside with it, and this one would continue
+[  495.30s ->   503.16s] to outperform. It is earning purely alpha. Now, in this model, we're only looking at one priced risk
+[  503.16s ->   510.90s] factor, this market risk. In reality, there are other forms of risk that are compensated in the cross
+[  510.90s ->   518.56s] section. And that is exactly what makes this work so important, so foundational. This is effectively
+[  518.56s ->   525.76s] telling us, are the returns that we're observing in our portfolio a result of exposure to the market,
+[  525.76s ->   535.62s] or another price risk factor, or is it some form of unexplainable skill, or taking advantage of a
+[  535.62s ->   544.10s] structural inefficiency, a mispricing. A very important work in the quantitative finance literature.
+[  544.40s ->   550.54s] By the 70s, a tremendous amount of work had already been done in portfolio theory and asset pricing,
+[  550.54s ->   557.80s] but the world was about to be changed forever. And that is, of course, by Block and Scholls in 1973,
+[  557.80s ->   564.54s] with their paper, The Pricing of Options and Corporate Liabilities. Now, the innovation came
+[  564.54s ->   570.38s] from the portfolio replication argument. Instead of trying to forecast the underlying asset prices,
+[  570.48s ->   575.78s] what they did was come up with this replication argument. In the assumptions of no arbitrage,
+[  575.78s ->   580.52s] continuous trading, frictionless markets, the price of the option must be equal to
+[  580.54s ->   587.70s] the cost of setting up and maintaining a hedge. What this did is it translated the world from
+[  587.70s ->   595.40s] one of risk, the so-called P measure, to one that is in fact riskless. If a change in the underlying
+[  595.40s ->   603.24s] asset occurs, you are perfectly hedged. If your portfolio then earns no risk, you must earn the risk-free
+[  603.24s ->   612.24s] rate. This innovation not only changed the way that we approach pricing, but it also gave us,
+[  612.24s ->   618.90s] of course, the incredible Black-Scholls implied volatility measure. That is, we could invert
+[  618.90s ->   624.80s] the Black-Scholls model, the solution to the Black-Scholls equation, to figure out in a forward-looking
+[  624.80s ->   632.06s] way how traders were pricing volatility today. What I have here is an example of the implications of the
+[  632.06s ->   638.28s] Black-Scholls model. The model itself assumes a geometric Brownian motion, and there's only one
+[  638.28s ->   644.94s] source of randomness in the stock price process itself, meaning that volatility is, in fact,
+[  645.50s ->   653.22s] constant. So if I was to simulate the geometric Brownian motion and price and option under the Black-Scholls
+[  653.22s ->   662.44s] framework, I would have to select the same volatility for every strike and every time to maturity. Now,
+[  662.52s ->   670.28s] the problem with that, as we are going to discuss in the next piece of literature, is that in reality,
+[  670.44s ->   677.18s] the volatility surface is not flat. Now, that doesn't mean that we can't use the Black-Scholls model
+[  677.18s ->   685.20s] to invert the volatility for every point on this grid, but what it does mean is that the inversion
+[  685.20s ->   692.62s] isn't going to yield a flat surface. It is, in fact, going to have some form of a skew or a smile,
+[  692.86s ->   698.80s] and, of course, the term structure relative to the maturity. Now, what you're seeing here in this
+[  698.80s ->   705.92s] simulation on the right is this idea of the risk neutrality. We have the P measure, where in
+[  705.92s ->   713.74s] expectation, we are bearing risk holding this underlying asset. We have a drift of roughly 18%
+[  713.74s ->   721.82s] in this example, but if we have risk neutral dynamics, then in expectation, we are just going to be
+[  721.82s ->   729.72s] earning the risk-free rate. That is what makes this market complete. There is only one source of
+[  729.72s ->   735.64s] randomness. So when we take a look at these two measures, the only difference is,
+[  735.64s ->   740.78s] in expectation, we are going to be earning the risk-free rate. That is what it means
+[  740.78s ->   747.36s] to operate under the Q measure. Now, that's certainly some nice theory, but the real-world
+[  747.36s ->   754.54s] implications of this paper are absurd, to say the least, not just in the implied volatility measure
+[  754.54s ->   761.78s] that we get or even applying this model to real options, but that is in the context of market
+[  761.78s ->   770.78s] making. Years later, Feynman-Cack in physics would connect parabolic PDEs, that is the Black-Scholes
+[  770.78s ->   776.62s] equation, which is just a transformed version of the heat equation, to the risk neutral price
+[  776.62s ->   782.44s] guaranteed by the fundamental theorem of asset pricing. What does that mean for trading desks?
+[  782.90s ->   790.78s] Well, we can use this portfolio replication argument in more intricate models to derive a mid-price.
+[  790.78s ->   798.32s] Then we can bake in adjustments. We can adjust for counterparty risk, liquidity, profit, then quote
+[  798.32s ->   807.28s] our prices to a client. Once we transact, we hedge. And on average, if we hedge effectively,
+[  807.62s ->   814.60s] then what will we end up with? That is the expected price, that mid-price. But remember,
+[  814.60s ->   821.88s] we didn't transact at the mid-price. We transacted at the bid or the ask offer. That is how we collect
+[  821.88s ->   828.26s] the spread as a market maker. That is the absurd implication of the Black-Scholes model. And that is
+[  828.26s ->   836.56s] one of the reasons why it was so innovative. Now, the options markets at this point in history had a
+[  836.56s ->   843.84s] big problem. And that is that the new math presented by the Black-Scholes model was underestimating
+[  843.84s ->   850.20s] tail risk. What I mean by that is, for a collection of strikes and maturities, the implied volatility
+[  850.20s ->   858.78s] surface is not actually flat. Moreover, if we assume log normality in the underlying return process,
+[  858.78s ->   865.42s] we are going to be grossly underestimating tail risk due to the excess kurtosis that we observe
+[  865.42s ->   871.26s] in practice. That is the leptocurtic nature of return distribution, those fat tails. That's
+[  871.26s ->   877.58s] because distributions aren't actually fixed. They are time variant. They change over time. The
+[  877.58s ->   884.32s] likelihood and probability of severe moves on either side of the return distribution are grossly
+[  884.32s ->   892.70s] underestimated by normality. This would lead Dupierre in 1994 to produce the local volatility model.
+[  892.70s ->   900.52s] In his paper, pricing with a smile and the subsequent Dupierre equation that would allow us
+[  900.52s ->   908.80s] in a very simplified way to extend the Black-Scholes model with a deterministic function of maturity and
+[  908.80s ->   915.42s] strike to produce volatilities that are consistent with the liquid instruments that we observe in the
+[  915.42s ->   920.80s] market. And that is, of course, going to be the purpose of this local volatility model,
+[  920.80s ->   926.88s] this deterministic function. What we can do is calibrate it to our set of liquid instruments,
+[  926.88s ->   934.18s] the observed implied volatilities, and then we can extrapolate prices by simulation and a variety of
+[  934.18s ->   941.62s] other techniques. That is exactly what you see here. I calibrate a local volatility model to a set of
+[  941.62s ->   949.50s] liquid instruments, and then I go about pricing an exotic option by simulating the underlying stock price
+[  949.50s ->   955.34s] process, and then in expectation computing the payoff, bringing it back to the present via discounting,
+[  955.48s ->   962.38s] and that will produce then my fair price for that instrument. Now, Bruno is actually the head of
+[  962.38s ->   968.16s] quant research at Bloomberg, where I received my first quant research role. We attended the
+[  968.16s ->   973.78s] Bachelier Conference together virtually. We worked on a variety of different interesting topics. He is a
+[  973.78s ->   983.02s] brilliant mind, but also a spectacular guy. Big tennis fan. So, I have to include his work in this list.
+[  983.02s ->   989.30s] With the broader market now aware of these dynamics and a variety of models being made available to
+[  989.30s ->   995.36s] tackle these problems, that is, stochastic volatility models like a Heston, other types of models that
+[  995.36s ->  1001.12s] capture dynamics like jumps, you have a jump diffusion model, Martin's jump diffusion model, so on and so
+[ 1001.12s ->  1010.20s] forth, the question now becomes one of an efficiency to effectiveness trade-off. That is, you're always
+[ 1010.20s ->  1016.94s] going to have the ability to add complexity to your model, but you're going to be sacrificing efficiency
+[ 1016.94s ->  1023.90s] in some form, and the best models are going to be able to optimize both of those. But in this context,
+[ 1023.90s ->  1030.12s] I have to highlight what is arguably my favorite work in the entire financial mathematics literature,
+[ 1030.12s ->  1039.96s] car madden of 1999 and the option valuation process using the fast Fourier transform. If efficiency is a
+[ 1039.96s ->  1044.64s] concern in one domain because we don't have an analytical solution, can we transform the problem
+[ 1044.64s ->  1052.00s] into another domain where an analytical solution is available and then just transform it back into
+[ 1052.00s ->  1059.80s] the domain of interest? This is exactly what car madden does. They take the option pricing
+[ 1059.80s ->  1066.44s] function and they apply a fourier transform. And if the characteristic function of the underlying stock
+[ 1066.44s ->  1075.88s] price process is known, which many times it is, we can just make that substitution, solve for the equation
+[ 1075.88s ->  1083.48s] in that transform domain, and then bring it back into the original domain of interest to get the option
+[ 1083.48s ->  1093.32s] prices. This is such a simple idea and it is overwhelming how incredible it is because
+[ 1093.32s ->  1101.08s] this completely bypasses the necessity of simulation. And what I have here is just an animation that is
+[ 1101.64s ->  1111.16s] just a very small testimonial to this efficiency gain. Instead of having to simulate the process
+[ 1111.16s ->  1117.56s] and then simulate the process again and simulate the process again to try to calibrate the parameters
+[ 1117.56s ->  1125.64s] of the model to liquid instruments, if we know the characteristic function, we can just solve it outright
+[ 1125.64s ->  1131.64s] using a Fourier transform and an inverse Fourier transform, which is very, very fast. Effectively,
+[ 1131.64s ->  1138.52s] it is the difference between solving for this risk-neutral conditional expectation or solving for this
+[ 1138.52s ->  1145.00s] Fourier transform and inversion. It is a tremendous result. Here on the right, you are seeing a
+[ 1145.00s ->  1151.88s] Heston volatility surface that is being constructed via this Fourier transform technique. And this
+[ 1151.88s ->  1159.00s] efficiency gain tees up entire streams of literature that look to approximate pricing functionals with
+[ 1159.00s ->  1165.56s] neural networks and so on and so forth to improve the efficiency gains of this type of calibration.
+[ 1165.56s ->  1171.64s] This is by far probably my favorite paper of the financial mathematics literature, and it's just
+[ 1171.64s ->  1177.00s] because of the the sheer simplicity of it. If you can't solve for it here, just transform,
+[ 1177.00s ->  1183.48s] solve for it there, and then bring it back. An absolutely incredible paper and incredible result.
+[ 1183.48s ->  1188.68s] Too long didn't watch. Here is your executive summary. In 1900, Bachelet would write his dissertation on the
+[ 1188.68s ->  1195.64s] pricing of options contracts. But his genius would largely go unknown for decades until his work was
+[ 1195.64s ->  1200.92s] rediscovered and he was accredited with being the father of financial mathematics. And we celebrate him
+[ 1200.92s ->  1209.24s] now with the Bachelet Conference. Financial economists later on would then be wrestling with portfolio theory.
+[ 1209.24s ->  1215.16s] Markowitz would found the study in the 50s and this notion that diversification was
+[ 1215.16s ->  1222.04s] the only free lunch in economics. And Sharp extended his work by acknowledging that there was a skill
+[ 1222.04s ->  1228.52s] to this thing. We can measure this idea of priced risk. In a perfect world, we have CAPM, but
+[ 1228.52s ->  1235.40s] in the real world, we have inefficiencies. We have different facets of priced risk. This gave birth to
+[ 1235.40s ->  1242.04s] factor models, three factor, five factor, Fama French, factor zoos, so on and so forth. Of course,
+[ 1242.04s ->  1250.63s] this idea of beta and alpha. Black-Scholes would then go on to change the world with their portfolio
+[ 1250.63s ->  1256.47s] replication argument. This would give us a measure of implied volatility, that is volatility in a
+[ 1256.47s ->  1264.79s] forward-looking sense, but also a consistent way to generate prices that is in a complete market with
+[ 1264.79s ->  1271.67s] one source of randomness. And Feynman-Cack from physics would later on confirm, unintentionally,
+[ 1271.67s ->  1278.07s] that the price produced by the Black-Scholes model was the same price guaranteed by the fundamental
+[ 1278.07s ->  1284.23s] theorem of asset pricing. Now, of course, the assumptions of the Black-Scholes model are
+[ 1284.23s ->  1289.99s] not correct in the real world, but some assumptions are certainly more violent than others. And in 1987,
+[ 1289.99s ->  1296.55s] the markets would feel the full effect of this new math when tail risk was grossly mispriced,
+[ 1296.55s ->  1302.95s] which led to the pricing with A Smile Dupierre's local volatility model, the simplest extension to
+[ 1302.95s ->  1310.15s] the Black-Scholes model that made volatility, the term itself, a function of strike and maturity.
+[ 1310.15s ->  1316.15s] This would allow calibration to liquid instruments and the extrapolation of exotic prices in an internally
+[ 1316.15s ->  1324.55s] consistent way. At this point in time, everybody was familiar with these dynamics, and the question
+[ 1324.55s ->  1332.15s] turned into one of an efficiency to effectiveness trade-off. And a Quant Guild favorite, Karmaddon, found a way
+[ 1332.15s ->  1340.07s] when the characteristic function is known explicitly for your underlying stock price process, that we can
+[ 1340.07s ->  1345.35s] transform the pricing problem from one domain into another using a Fourier transform, solve it
+[ 1345.35s ->  1350.87s] explicitly there, and then bring it back instantaneously producing prices. And this tees up
+[ 1350.87s ->  1357.27s] an entire stream of literature producing efficient ways to calibrate these models from traditional
+[ 1357.27s ->  1364.07s] financial mathematics to the observed volatilities that we see in the market for liquid instruments. And
+[ 1364.07s ->  1371.27s] then we can use, of course, those models to extrapolate prices. Some future topics, technical videos and
+[ 1371.27s ->  1378.71s] other discussions to look forward to. I would like to create this video on projects that made me a Quant,
+[ 1379.43s ->  1385.35s] projects that went on my first ever resume when I was applying to Quant Jobs. If there is interest,
+[ 1385.35s ->  1392.23s] a discussion on my first year as a Quant, getting back to more technical videos, this idea of the Kalman
+[ 1392.23s ->  1399.75s] filter, non-Markovian models, Poisson processes, top three uses of different subjects like linear algebra,
+[ 1399.75s ->  1406.15s] in Quant finance, maybe more formally talking about the idea of risk-neutral measures, rough path theory,
+[ 1406.15s ->  1412.95s] SigVol models, calibration and pricing, certainly more advanced, more niche topics. If there is interest,
+[ 1412.95s ->  1418.31s] certainly let me know in the comments below. And I have not forgotten about our Quant builds,
+[ 1418.31s ->  1425.43s] some of my favorite videos to create. I have this idea of how to backtest a trading strategy with
+[ 1425.43s ->  1431.75s] interactive brokers. We can kind of walk through the logic and discuss pitfalls where we tend to
+[ 1431.75s ->  1438.55s] overfit in the ensemble sense or in the time series sense. I'll leave a link in the description below.
+[ 1438.55s ->  1441.75s] If you'd like to get started with interactive brokers, I highly recommend them. I've been using
+[ 1441.75s ->  1449.51s] them for over 10 years. If you can believe it, their API is incredible. And that's going to do it
+[ 1449.51s ->  1455.67s] for this video on the five papers that built modern Quant finance. I hope you enjoyed. I hope you learned
+[ 1455.67s ->  1459.59s] something. This video certainly took a tremendous effort to put together. So if you enjoyed it and
+[ 1459.59s ->  1463.11s] you want to see more like it in the future, please like comment, subscribe, share. Again,
+[ 1463.11s ->  1467.83s] it helps me out tremendously. It is always greatly appreciated. I'll leave a link in the description
+[ 1467.83s ->  1473.11s] below. If you'd like to join our discord where you can connect with me and other quants in the quant guild
+[ 1473.11s ->  1478.47s] community, check out quant guild.com to master your quantitative skills. Other than that,
+[ 1478.47s ->  1483.75s] I want to thank you so much for watching and I will see you in the next video.

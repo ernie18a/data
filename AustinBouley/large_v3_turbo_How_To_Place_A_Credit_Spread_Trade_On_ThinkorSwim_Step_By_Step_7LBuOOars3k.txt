@@ -1,0 +1,27 @@
+[    0.00s ->     3.74s] In this video, I'm going to walk you through how to place a credit spread trade order on
+[    3.74s ->     9.92s] the Thinkorswim platform for TD Ameritrade. You simply follow all the recommendations in one of
+[    9.92s ->    14.30s] the alerts. So for instance, I'm going to use a trade idea algo alert for this example. We're
+[   14.30s ->    17.80s] going to use this one. This is going to be our Tigger Simple SPY. This is what we're going to
+[   17.80s ->    22.22s] look up. This is going to be our expiration date, March 10th. And these are going to be our details.
+[   22.36s ->    28.46s] They put credit spread where we're selling the 383 and buying the 382. So let's jump into the
+[   28.46s ->    33.44s] Thinkorswim platform and do this. So first thing we do is we want to type in our symbol SPY. So we do
+[   33.44s ->    38.46s] that and we get our symbol right here. Next thing we do is we move to the trade tab. So on the trade
+[   38.46s ->    44.04s] tab is where we'll see all the info. Next, we want to find our expiration date. So we want to scroll
+[   44.04s ->    50.74s] down to our expiration date, which is March 10th, 2023. I click here on March 10th, 2023. Then I
+[   50.74s ->    55.36s] come here to what type of strategy I'm using. By default, it's set to single, but you want to come
+[   55.36s ->    60.42s] in here and click on vertical. Vertical is the same thing as a credit spread or a spread is a
+[   60.42s ->    67.28s] vertical. Next, I want to scroll down and find the 383, 382 on the put side. So I scroll down and I
+[   67.28s ->    74.02s] look at the strike prices to find 383, 382. Right here, 382, 383. You can see right here, I'm going
+[   74.02s ->    79.14s] to click on the bid order. So again, 382, 383, click on the bid order because that's where you sell.
+[   79.44s ->    83.40s] Right here, it's going to pop up and it's going to show me I want to sell this. I'm going to collect a
+[   83.40s ->    87.78s] credit of roughly 2 cents. You want to make sure you're collecting a credit. If you're not collecting
+[   87.78s ->    93.00s] a credit, then it's not a credit spread. So again, you have here a credit spread where you are
+[   93.00s ->   100.48s] selling. You can see minus 10 of the 383 and plus 10 of the 382. By default, it's going to fill it in
+[  100.48s ->   108.74s] with 10 contracts. Again, you can lower that amount to roughly one if you're placing your first trade
+[  108.74s ->   113.96s] or however many you want to do. Just like that. Again, that is how you place your order. If you're
+[  113.96s ->   120.62s] placing the order in real time or during the market hours, you can use day. If not, if you're placing
+[  120.62s ->   126.12s] it, you can use good till cancel if you're placing the trade after hours. That is how you place the
+[  126.12s ->   132.34s] trade. Again, you want to make sure you collect a minimum of 15 cents of credit or else the trade
+[  132.34s ->   137.36s] will not work out in your favor long term. So that's the best way to do it. Again, this is 2 cents
+[  137.36s ->   141.24s] because the trade has been open for about a week now. So again, this trade should be closed soon.
+[  141.52s ->   145.36s] But that is how you place a credit spread trade order on the Thinkorswim platform.

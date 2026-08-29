@@ -1,0 +1,771 @@
+[    0.00s ->     4.74s] So let's talk technical analysis. In this video, you're going to be learning about how to read
+[    4.74s ->     9.20s] candlesticks, how to understand market structure, interpret the data that you're reading, and more
+[    9.20s ->    14.50s] importantly, how to set up your trades so you guys can maximize your reward and minimize your risk.
+[   14.86s ->    18.84s] You'll be able to take a look at this chart and see what I can see. The market structure,
+[   18.98s ->    23.06s] is it an uptrend, is it a downtrend? You'll be able to find the areas that support some resistances
+[   23.06s ->    27.22s] that will allow you to have the best chance to win. You'll be able to read the candlestick
+[   27.22s ->    31.44s] patterns that will allow you to determine if there's bullish or bearish intent. And more
+[   31.44s ->    37.92s] importantly, you'll be able to find the correct entries to allow you to minimize your risk by
+[   37.92s ->    43.54s] setting up the correct stop losses, as well as maximize your reward by figuring out the optimal
+[   43.54s ->    48.62s] take profit. I'll be using a lot of my own examples from stock trading and options trading because
+[   48.62s ->    54.48s] that's predominantly what I trade, but know that this theory or these skills can be used for other
+[   54.48s ->    58.40s] markets like Forex and futures. Now, if you guys like content like this, make sure you guys like
+[   58.40s ->    63.28s] the video. And this course did take a long time to make, so if you guys can consider subscribing to
+[   63.28s ->    67.86s] the channel, that would really help me out. If you guys have any questions at any point in time,
+[   68.32s ->    72.02s] let me know down in the comments section below. And if you guys ever need to pause the video,
+[   72.18s ->    77.80s] come back, revisit a different section, all of the timestamps are below. All right, so let's get
+[   77.80s ->    83.80s] started. First things first, what exactly is technical analysis? Most people think that technical
+[   83.80s ->    88.30s] analysis is really about predicting the future. You see a candlestick pattern, a chart formation,
+[   88.40s ->    92.32s] you go, the stock will have to go up or down from here. But that's actually the wrong way to look at
+[   92.32s ->    99.28s] it. TA is really about learning how to stack the probabilities in your favor by really understanding
+[   99.28s ->   104.28s] your risk and reward. And you're going to hear a lot about risk and reward in this video. There's
+[  104.28s ->   110.22s] actually academic studies that have proven technical analysis worth. In 1992, there's a study that
+[  110.22s ->   115.72s] showed that simple trading rules like moving averages and breakouts produce better returns
+[  115.72s ->   123.46s] than random chance. In 2000, a research paper from MIT found that some chart patterns like head and
+[  123.46s ->   129.08s] shoulders that we'll talk about later in this video and double bottoms really do carry statistical
+[  129.08s ->   137.70s] significance. And even more recently, in 2007, Park and Irwin reviewed about 100 studies and found that
+[  137.70s ->   145.76s] more than half showed TA was profitable in a lot of different markets. TA isn't necessarily just a
+[  145.76s ->   151.74s] crystal ball to predict the future. It's about giving you a framework, a strategy so that you can
+[  151.74s ->   159.20s] understand your risk and reward. And this combined with emotional discipline and experience is what's
+[  159.20s ->   165.14s] going to give you an edge in the market. So let's start with the very basics, the building blocks of
+[  165.14s ->   172.86s] TA. And that is the candlestick. A candlestick will tell you how much price has moved within a certain
+[  172.86s ->   178.42s] timeframe. And every candlestick that you see on the chart right here are made up of two parts, a body
+[  178.42s ->   184.36s] and a wick. The body will tell you the difference between the open price and the closed price within
+[  184.36s ->   191.58s] a certain timeframe. And the wicks will tell you how far or how high and how low price has moved within
+[  191.58s ->   196.78s] that certain timeframe. Let's take an example, this bull candle right here. It price opened at $95,
+[  197.14s ->   204.04s] it went to a low of 93, and then pushed up to a high of 100 and then closed at 98. So the body will
+[  204.04s ->   209.76s] show you that the price opened at $95 and it closed at 98. And the wick will tell you that it went all the
+[  209.76s ->   216.50s] way on to 93 and all the way up to 100. It will tell you how much prices move within that certain timeframe,
+[  216.50s ->   222.06s] while the body will show you what the difference between the open prices and the closed price. Now
+[  222.06s ->   229.18s] let's take a look at the bear candle. The bear candle will have the same part, body and wick. The
+[  229.18s ->   237.14s] only difference now is that the candle is going to be red because price closed lower than where it
+[  237.14s ->   243.56s] opened. So in this case, price opened at 98, it went to a high of 100, it fell down to a low of 93,
+[  243.56s ->   250.20s] and it closed at 95. So let's understand why prices go up or down. And it ultimately comes
+[  250.20s ->   255.83s] out this one concept called supply and demand. So let's take for example, there's a Rolex on eBay
+[  255.83s ->   261.67s] that I really want to buy for 10 grand. Now I really want that Rolex, right? So I'll put in the bid for
+[  261.67s ->   269.49s] 10 grand. Someone else might come in and go, I want it for 10.5. I'll be like, okay, maybe I want it
+[  269.49s ->   275.19s] for 10.75. Someone else will come in for 11. And we'll keep raising the price up, up, up, up, up,
+[  275.19s ->   280.69s] because we both want it. At some point in time, one of us will bow out, right? And let's say it's
+[  280.69s ->   286.05s] at 12 grand. And the seller will sell to me at 12 grand. But you can see in this example, price has
+[  286.05s ->   292.87s] gone up from 10k to 12k because there is more demand than there is supply. In this market, you can see
+[  292.87s ->   298.93s] that the buyers are in control because the buyers are pushing the price up. Now on the inverse,
+[  299.11s ->   302.91s] let's talk about maybe another situation. I'm looking to sell a Pokemon card, right? A vintage
+[  302.91s ->   310.35s] Charizard, maybe for $100. Put it on eBay, but no one is actually buying it at $100. A week later,
+[  310.39s ->   317.49s] I drop it at 99. A week later, I'll drop it at 98, maybe 97. And then at 95, someone steps in and buys
+[  317.49s ->   326.41s] it. And you can see that price dropped from $100 to $95 because there was no demand at 199, 98. And
+[  326.41s ->   333.89s] finally, there was demand at 95. Supply is greater than demand. And sellers are in control of the
+[  333.89s ->   340.11s] market. So prices rise when demand is greater than supply. And that shows you that buyers are in control
+[  340.11s ->   347.73s] of the market. Prices fall when there is greater supply than demand. Therefore, sellers are in
+[  347.73s ->   351.93s] control of the market. Supply and demand, you'll hear these words a lot in this video. That will
+[  351.93s ->   356.79s] be the driving force behind a lot of what we talk about later on. All right, so let's take a look
+[  356.79s ->   361.63s] at a couple of candlesticks of differing sizes, wicks, and bodies. Let's take a look at this first
+[  361.63s ->   367.83s] one right here. You can see the body is relatively large and the wick is relatively short. Market started
+[  367.83s ->   372.95s] here, price got pushed down, but it got bought all the way back up and pushed all the way up
+[  372.95s ->   380.03s] to this point right here. And this is a very large body. So what does this tell us? This tells us
+[  380.03s ->   385.05s] that there is far greater demand than there is supply, right? Buyers are in control of the market,
+[  385.19s ->   390.05s] therefore pushing price up. And this is a very bullish signal, right? People are scooping up shares
+[  390.05s ->   394.13s] because they really, really want to buy this stock. Now let's take a look at the second one.
+[  394.13s ->   400.39s] Very large wicks, but a very small body. What does this tell us? Price went down. It was shot all the
+[  400.39s ->   405.99s] way up. There was a decent amount of strength there. And then the weakness came in and price sold off
+[  405.99s ->   415.10s] to be slightly above where it opened. Now, is this bullish or bearish? If you take a look at this candle,
+[  415.10s ->   421.02s] you would look at green. You might go, it's bullish. But in actuality, this is actually a pretty bearish
+[  421.02s ->   428.68s] signal because the buyers were not able to control the price and sellers stepped in to push price all
+[  428.68s ->   436.50s] the way down. So let's take a look at this next one right here. This one has smaller wicks and a
+[  436.50s ->   443.12s] smaller body. So this is a bullish or bearish signal. Price opened here, it sold off, but then
+[  443.12s ->   449.40s] buyers stepped in to push the price up and it closed higher than it was before. In this case, this is a
+[  449.40s ->   457.20s] more bullish signal because price was able to stabilize above the close price and all the
+[  457.20s ->   463.16s] weakness that we see on the wicks was bought up and the buyers were able to regain control and push
+[  463.16s ->   467.66s] the price up. So this is a relatively bullish signal. And again, you can tell every candlestick
+[  467.66s ->   473.08s] is telling a story. So let's take a look at the bear side. Is this a bullish or bearish signal? Let's
+[  473.08s ->   478.68s] take a look and I'll give you guys a couple seconds to think about it and then we'll go through it right
+[  478.68s ->   485.20s] now. So in this case, price fell all the way down to here. So there's a lot of weakness even though
+[  485.20s ->   491.12s] there's a higher wick here. Price got pushed up, there was no more buyers, sellers decided to step
+[  491.12s ->   496.70s] in and control the price and price fell all the way down way below where it opened. So this is a
+[  496.70s ->   501.74s] bearish signal. The body is relatively large and so this shows a lot of selling power during this
+[  501.74s ->   506.80s] time frame. Now let's take a look at this. Is this a bearish signal or bullish signal? Very long
+[  506.80s ->   512.24s] wicks, relatively small body. Pretty similar to the previous one, only in this case the body is red.
+[  512.88s ->   518.20s] So price ended up lower even though price was pushed all the way up but the sellers regained
+[  518.20s ->   524.44s] control and took over and pushed price all the way down. This is actually an extremely bearish signal
+[  524.44s ->   529.86s] and this is what we will call a shooting star which we'll learn later on in this video. Now let's
+[  529.86s ->   535.44s] take a look at this one. Thin wicks compared to this one before and a thin body. Does this tell us
+[  535.44s ->   540.70s] bear or bull? And when I see this one, this should show you that there's just actually a lot of
+[  540.70s ->   545.74s] indecision in the market. Why? Price pushed up, price pushed down, the wicks are equal sizes on both
+[  545.74s ->   550.98s] ends. So the buyers and sellers are fighting for control. Even though it ended up slightly lower,
+[  551.14s ->   556.36s] it doesn't indicate that there's a lot of selling power because neither one was able to push price all
+[  556.36s ->   561.74s] the way down or all the way up. So the way you see here or here. So this is a relatively indecisive
+[  561.74s ->   567.78s] candlestick, very close to what you'll learn later on on a doji. You can't necessarily look at just the
+[  567.78s ->   572.26s] color of the candlestick to determine whether or not something is bearish or bullish. You have to look
+[  572.26s ->   580.42s] at the candlesticks, the wicks and the bodies in context to other candlesticks to understand what
+[  580.42s ->   584.84s] has happened during that time frame. And hopefully this demonstrates the principle of supply and demand,
+[  584.84s ->   589.88s] sellers in control or buyers in control so that you guys can really understand and interpret what is
+[  589.88s ->   595.64s] happening during that specific time frame using candlesticks as the unit of measure. Now that you
+[  595.64s ->   601.96s] know how to read a single candlestick and interpret it, let's take a look at some of the most common
+[  601.96s ->   607.14s] candlestick patterns that you'll see traded. The goal here is not to memorize these shapes. It's really to
+[  607.14s ->   612.56s] understand the psychology behind the movements so that you can interpret it in real time when you guys see this
+[  612.56s ->   617.18s] in your charts. And the first thing that we'll talk about is the hammer. And the hammer is basically
+[  617.18s ->   622.72s] named hammer because it looks like a hammer, right? A long wick with a body at the top.
+[  623.52s ->   633.66s] Now this is basically a bullish reversal pattern. Price rejected a low and pushed all the way up and
+[  633.66s ->   640.16s] closed higher, right? Which means that sellers were able to push the price down, the buyers were able to
+[  640.16s ->   644.48s] buy up that weakness and push the price even higher. So this is a very, very powerful pattern,
+[  644.88s ->   653.72s] especially when it's an area of support or demand. The next one here is what we would call a shooting
+[  653.72s ->   660.28s] star. It's basically the opposite of a hammer. The widths are really tall up here and the body is at
+[  660.28s ->   664.62s] the bottom. This is basically the inverse of a hammer because there's a lot of strength that came in,
+[  664.78s ->   669.18s] right? Buyers were in control. And then the sellers took over and continued to sell off
+[  669.18s ->   674.88s] and the price fell until it fell lower than where it opened. This is a very bearish signal,
+[  675.34s ->   679.92s] a bearish reversal pattern. This one right here is what we were alluding to earlier. This is what
+[  679.92s ->   685.08s] we would call a doji. It's an indecision candlestick because the wicks are basically the same size on
+[  685.08s ->   690.88s] both sides and the market didn't open or close any higher. It closed at the same price as it opened.
+[  691.40s ->   697.26s] Therefore, there's a lot of indecision with buyers and sellers fighting it out on that specific
+[  697.26s ->   701.62s] candlestick. Let's combine a couple candlesticks so that you can see how two candlesticks combined
+[  701.62s ->   706.84s] can tell a whole different story. Let's take a look at what we would call here a bearish engulfing
+[  706.84s ->   714.30s] candlestick. The market was able to push itself up and form a higher high on that time. So it was a
+[  714.30s ->   719.60s] green candlestick. With a subsequent candlestick afterwards, the body became really, really large
+[  719.60s ->   726.34s] and the market started selling off. And this is a very bearish sign because not only was the price not
+[  726.34s ->   733.16s] able to close up higher, it fell and it fell very fast and it fell at a much larger, it fell to a
+[  733.16s ->   738.46s] lower price than what it was previously. This is what we call a bearish engulfing because the body
+[  738.46s ->   744.32s] engulfs the previous candlestick. On the other side, if you look at a bullish engulfing candlestick,
+[  744.32s ->   750.72s] it's the same idea. Price closed lower on the previous time frame, but the market bought up that
+[  750.72s ->   757.90s] weakness and closed higher. Again, the body is very, very big, which shows a lot of bullishness,
+[  758.00s ->   763.31s] a lot of strength. And this is what we call a morning start. You have a bearish candlestick,
+[  764.01s ->   769.77s] an indecision candlestick, and a bullish candlestick. What this shows us is that the market sold off.
+[  770.45s ->   775.41s] There's a lot of indecision. The market was fighting to find a winner and the winner was found on this
+[  775.41s ->   781.95s] green candlestick here. This is bullish because it closed up higher than what it was two periods ago.
+[  782.89s ->   787.92s] Indicating that the buyers have stepped in to control the market. On the flip side,
+[  788.16s ->   793.20s] this is what we call an evening start, right? It's a bearish intent. You can see that the market
+[  793.20s ->   797.86s] tried pushing it up, indecision stepped in, which means that there's not enough buyers to continue
+[  797.86s ->   802.48s] the upward momentum. And then the buyers ran out and the sellers stepped in and controlled the market.
+[  803.16s ->   807.50s] Again, this is a very bearish signal and usually indicates maybe a reversal pattern.
+[  807.50s ->   813.58s] Here we have what we call the three white soldiers or three soldiers. It's basically three
+[  813.58s ->   819.60s] candlesticks that have wicks that are higher than the previous ones. You can see this one wick is down
+[  819.60s ->   826.88s] here, but this one starts up higher. It ends up higher. This one ends up higher and then the top
+[  826.88s ->   833.74s] wick ends up higher as well. It shows us that the sellers are not able to push the price lower than the
+[  833.74s ->   840.66s] previous candlestick, which means that there is sustained buying power or sustained strength in
+[  840.66s ->   844.94s] this movement, which is again, a very bullish signal. Now, if you flip it to the other side,
+[  845.02s ->   849.10s] this is what we call the three black crows. It's just the inverse, right? Three candlesticks where
+[  849.10s ->   853.28s] the wicks are lower than the previous candlesticks. And it indicates that the buyers are not able to
+[  853.28s ->   859.20s] regain control and the sellers are still in control. Buyers try pushing the price up, but sellers
+[  859.20s ->   864.32s] maintain control and push the price down on all three subsequent candlesticks. And again,
+[  864.32s ->   869.20s] this is a very bearish signal. So these are just some candlestick patterns that I like to use, that I
+[  869.20s ->   874.08s] like to look for. You'll find what works for you. You'll find what resonates with you, but just remember,
+[  874.64s ->   880.16s] the psychology behind these candlesticks are a lot more important than the actual candlesticks themselves.
+[  880.16s ->   883.36s] Now I'm going to head over to the chart and want to try and locate some of these patterns.
+[  883.36s ->   891.68s] For example, right here, you can see this might be a hammer right here, but this might be an evening
+[  891.68s ->   898.80s] star right here, right up down in a large body. This could be here a bearish engulfing, a bearish
+[  898.80s ->   907.84s] engulfing of another three soldiers. A doji's right here. This is a mini, mini, mini hammer, a bearish engulfing
+[  907.84s ->   913.20s] candlestick. Let me know down below if you find any other ones. We're just going to do this
+[  913.20s ->   919.52s] for a couple of stocks. So instead of maybe we hop over to S&P 500 and we'll consider going on a daily.
+[  919.52s ->   924.83s] Let's just go to the one hour, for example, and we're going to look right here. This is definitely
+[  924.83s ->   933.63s] a large body candlestick. Right here is a bullish engulfing. This is kind of like the morning star
+[  933.63s ->   940.67s] where it's reversing upwards. This is a shooting star right here. See if there's a doji somewhere.
+[  940.67s ->   947.39s] This is a doji right here. You see right here. Yeah. This is sort of like a hammer, but a lot
+[  947.39s ->   952.03s] smaller than this one. Let's go to another one. Let's go to, let's see, we're going to see your
+[  952.03s ->   956.59s] stock. Tesla, for example, because it's also a lot less, a lot more volatile. So you probably see a lot
+[  956.59s ->   962.03s] more large body candlesticks. And maybe instead of the hour, let's go down to the five minutes,
+[  962.03s ->   968.03s] right? We're day trading now. And let's zoom in on a previous day. This right here could be considered
+[  968.03s ->   972.59s] a bullish engulfing candlestick, right? There's some indecision here. And then it popped up,
+[  972.59s ->   980.00s] large bodied. This is like a three black crow right here. This is sort of like the morning star,
+[  980.00s ->   986.72s] but didn't really form. There's a doji, maybe a bullish engulfing here. There's a really large
+[  986.72s ->   991.92s] doji right here where my cursor is. That's pretty impressive. This is a engulfing, a bearish engulfing
+[  991.92s ->   996.96s] candlestick right here. Instead of five minutes, let's do a 30 minute. And we'll zoom in maybe on
+[  996.96s ->  1002.06s] a couple of 30 minutes. Let's see. This could be a bearish engulfing candlestick. This is definitely
+[ 1002.06s ->  1008.54s] a hammer. You can see how large the wick is. This is what we would call a morning star. Really easy
+[ 1008.54s ->  1016.46s] to identify this one. The three white soldiers, three black crows. This could be considered
+[ 1016.46s ->  1022.51s] a another hammer, another bullish engulfing candlestick with three white soldiers.
+[ 1024.85s ->  1030.85s] We keep going. This is a shooting star right here into a bearish engulfing, which is a good sign
+[ 1031.49s ->  1037.65s] for a short play. Another three black crows. See a lot of bearish thing. This is a large body
+[ 1037.65s ->  1043.92s] candlestick. Maybe a doji here, right? That in itself really isn't that important. I'll take you to the next
+[ 1043.92s ->  1048.40s] step about how to use it and when to use these patterns and what they mean and how they can help
+[ 1048.40s ->  1053.04s] you improve your trading. You can tell, like when you look at charts, these patterns don't form as
+[ 1053.04s ->  1057.12s] cleanly as we were doing when we were in practice. Sometimes the wicks are kind of large. Sometimes
+[ 1057.12s ->  1061.76s] the wicks are kind of short. Sometimes the bodies don't exactly form. Maybe it's not large enough.
+[ 1061.76s ->  1066.16s] Maybe it's not small enough. That's a very important point because these patterns that you're learning,
+[ 1066.16s ->  1072.48s] these candlesticks will not show up cleanly every single time. And so intuition, as well as being able
+[ 1072.48s ->  1076.16s] to interpret the market flow on the day is going to be very important. And so that's going to be the
+[ 1076.16s ->  1081.36s] next couple of steps I want to learn in this course. So now that we know how to understand
+[ 1082.16s ->  1088.00s] candlesticks, let's take it to the next level. You want to learn when to be looking out for these
+[ 1088.00s ->  1094.32s] candlesticks. And so in order to do that, we have to understand market structure, which is understanding
+[ 1094.32s ->  1099.92s] the trend of the market. Is it an uptrend, downtrend, or if it's going sideways or consolidating? And
+[ 1099.92s ->  1104.88s] there's a very easy way for us to understand that. I call this the ABCD pattern. And I'll show you
+[ 1104.88s ->  1109.84s] guys on the screen. A very easy way for us to tell if something's in an uptrend is to see where the
+[ 1109.84s ->  1114.96s] highs and lows of the market are. So for example, you can see this is a low to a high, which is our A to
+[ 1114.96s ->  1121.28s] our B. And B will be our high to our C, which is our higher low. And then C to our D, which is our higher
+[ 1121.28s ->  1127.84s] high. You can keep doing this, a high to another low, to a high to a low to a high, right? You keep going this,
+[ 1127.84s ->  1134.00s] you see this, right? Okay. So you'll see that this is an A, B, C, D, E, F, G, H pattern, right? A, B, C,
+[ 1134.00s ->  1139.04s] D, E. So this tells you that the market during this period is an uptrend. So let's take a look at
+[ 1139.04s ->  1145.52s] where Costco is right now. High to a low, to a high, same high, to maybe a higher high, to a higher low.
+[ 1145.52s ->  1151.20s] And it's kind of just here. So A to B to C to D. So here you will probably say that the market is going
+[ 1151.20s ->  1156.40s] sideways. It's channeling, it's consolidating, waiting for the next big move. You can also do this for like
+[ 1156.40s ->  1161.20s] currency pairs. So again, what we want to do here is practice. So we'll take a look at this and see
+[ 1161.20s ->  1165.92s] if we can determine the trend on this currency pair, which is USD, Japanese Yami. What we do is you look
+[ 1165.92s ->  1172.40s] for the low here, and it goes all the way up to a high. So that's A to B, and it fell back down to a C,
+[ 1173.20s ->  1177.52s] which is a higher low, and now it's pushed up to a higher high. So you can see the trend here in this
+[ 1177.52s ->  1183.20s] currency pair for right now is in an uptrend. And the psychology behind this is really interesting,
+[ 1183.20s ->  1188.96s] right? It went from a low, buyers remained in control, and the sellers started selling it off.
+[ 1189.76s ->  1195.52s] But it wasn't able to push it past the previous low, which means that the buyers then regained
+[ 1195.52s ->  1199.44s] control and pushed it even higher. This is the uptrend that we're talking about, because it's
+[ 1199.44s ->  1204.40s] going higher and higher and higher. But here's another example. USD and Japanese Yen on this time
+[ 1204.40s ->  1211.92s] period is the inverse. It starts from a high, it went down to a low, it pushed it up to another high,
+[ 1211.92s ->  1218.32s] right? A, B, C. But it wasn't high enough, it was a lower high, and then the market sold off to a
+[ 1218.32s ->  1225.68s] lower low. A, B, C, D. So Japanese Yen, USD pair during January all the way up to February here
+[ 1226.56s ->  1233.52s] is in a downtrend. And you can see it continues to draw A, B, another downtrend C, and this is still
+[ 1233.52s ->  1239.92s] in a downtrend. The logic is it's not exactly the same. Market started high, sellers took control,
+[ 1239.92s ->  1245.76s] buyers tried pushing it higher, but it failed, and it pushed it lower. Buyers tried again and
+[ 1245.76s ->  1251.74s] pushed it lower. So this again is in a downtrend. Again here, it tried going higher, and it failed,
+[ 1251.74s ->  1256.86s] and it went even lower. From the psychology that higher highs, higher lows, or lower highs and lower
+[ 1256.86s ->  1263.66s] lows will allow us to determine the trend of the market. We can do it one more. One minute,
+[ 1263.66s ->  1273.60s] right? And you can see some uptrend to a lower high, higher low, higher high, sorry, and the market
+[ 1273.60s ->  1279.20s] moved down to a low, and then the market didn't break any higher, went down, right? In inverse,
+[ 1279.20s ->  1286.32s] so it's A, B, C, D. It formed a higher low, but it wasn't able to form a higher high here, went down,
+[ 1286.32s ->  1291.20s] now it's a higher low. So now it's in a downtrend, and it kept going in a downtrend, until maybe,
+[ 1291.20s ->  1299.20s] see I'm just drawing this out. See still downtrend, all the way down here, right? So A, B, C, D, E, F, G,
+[ 1299.20s ->  1304.88s] H, I, J, K, L, right? Like you can just tell, market buyers came back, sellers sold off, buyers
+[ 1304.88s ->  1310.48s] came back, sellers sold off, buyers came back, sellers sold off, buyers tried, sold off, sold off. This is
+[ 1310.48s ->  1316.00s] the power here. And at the end of the day, you can see buyers stepped in, pushed it high to the same
+[ 1316.00s ->  1323.12s] previous high, then try forming a higher low, almost did it, and now it's trying really hard
+[ 1323.12s ->  1328.96s] to form a higher high. And then we'll see, if we're day trading, the day afterwards, if this forms a
+[ 1328.96s ->  1335.44s] higher high. But you can see how powerful this is to understand which trend is happening on whatever
+[ 1335.44s ->  1340.00s] time frame that you're looking at. Now, you can kind of tell there's a little bit more to this than
+[ 1340.00s ->  1347.41s] just understanding the trend leads us to the next step, which is understanding where these higher
+[ 1347.41s ->  1353.33s] lows and higher highs might form. And this is where we call supports and resistances or areas of supply
+[ 1353.33s ->  1358.69s] and demand. One thing you'll notice is that when we look for these, uh, these trends that you have
+[ 1358.69s ->  1365.01s] your low to your high to your higher low to your higher high, sometimes it doesn't look necessarily
+[ 1365.01s ->  1373.38s] like this, right? Sometimes it looks more like this and then this. But this higher low, the way you
+[ 1373.38s ->  1381.54s] look at it is to find the lowest point on the chart. In this case, it'll be this point. You draw it there.
+[ 1381.54s ->  1388.83s] And then this part here is just consolidation waiting for an upswing to the higher high right here.
+[ 1388.83s ->  1393.20s] Right. And you saw that with some of the other examples that we just went through for like the
+[ 1393.20s ->  1399.28s] sly example on the 30 minutes, but this will help you identify what the low and highs of the days are
+[ 1399.28s ->  1404.64s] is by understanding these areas, which leads us to the next part. When we look at these higher highs
+[ 1404.64s ->  1412.48s] and higher lows, you can see that they form these areas of reversals or supports, right? And these areas
+[ 1412.48s ->  1424.19s] right here are what we call areas of supports is where price jumps up and resistances is where price falls,
+[ 1424.19s ->  1431.07s] right? So from a low to a high, it hit a resistance fell back down to a low into a higher low, which is our
+[ 1431.07s ->  1436.56s] area of support, which then go up to a high, which is then a resistance. And you can see this pattern
+[ 1436.56s ->  1442.90s] continued down, right? And this is another higher low. So it's a support. These are actually the next
+[ 1442.90s ->  1447.30s] step in understanding market structure is these areas of ports and resistances, otherwise known as
+[ 1447.94s ->  1459.33s] demand and supply. So demand and supply. Supports will typically want to push price up and resistances
+[ 1459.33s ->  1464.69s] will try to push price down. So the reason that price rejects an area of resistance is because
+[ 1464.69s ->  1468.93s] people are usually trying to take profit there. They're selling off their shares and realizing their
+[ 1468.93s ->  1475.49s] gains. And then price bounces off in areas of support, otherwise known as demand, because then people
+[ 1475.49s ->  1481.89s] think that this is a good price to get back into the market, therefore buying up shares and pushing
+[ 1481.89s ->  1487.89s] price further up. Learning how to identify these areas of supports and resistances is a very important
+[ 1487.89s ->  1493.33s] skill. I want to demonstrate that right now by going back to the charts. So you can see price rejected
+[ 1493.33s ->  1498.61s] right around here. So this is what we and then fell back down. This right here will be an area of resistance.
+[ 1498.61s ->  1507.17s] Price rejected off of this part, so this will be an area of support. And you see price rose back up and
+[ 1507.17s ->  1511.41s] then we tried fighting around this area and then it ultimately started falling back down. So you can see
+[ 1511.41s ->  1516.61s] this is also an area of resistance. And by drawing this out, you can see as I'm drawing it through the
+[ 1516.61s ->  1522.53s] wicks, trying to touch the wicks as many times as possible. One, two, three, four, five, maybe six. You can see
+[ 1522.53s ->  1528.53s] that here is also an area of resistance, right? Price came up, came back down, came back up and sold off.
+[ 1529.25s ->  1534.53s] Now you'll see something really cool here. This right here is an area of support, right? And if you
+[ 1534.53s ->  1542.13s] guys remember, this right here, this is a previous area of resistance, right? And if you see what
+[ 1542.13s ->  1552.75s] happens, it becomes an area of support. Resistances and supports tend to be intermingled with each
+[ 1552.75s ->  1557.87s] other. This area of resistance now is an area of support, which you can see it touches once, twice and
+[ 1557.87s ->  1563.23s] three times area of support. We'll talk about our trading system later on, the exact trading system
+[ 1563.23s ->  1569.71s] that I use called MAX that leverages these areas of support and resistances. But you can tell that
+[ 1569.71s ->  1578.00s] price action tends to follow where supply and demand tends to be. So you can see, we'll get rid of this
+[ 1578.00s ->  1582.48s] drawing set and we'll go to maybe a different day in a different time. We'll do a couple more.
+[ 1583.98s ->  1591.38s] We'll go to 30 minutes, maybe back here. And you can see here is an area and we'll draw and we'll figure
+[ 1591.38s ->  1597.54s] out a couple more areas of supply and demand. So here is an area of resistance. And when you're drawing
+[ 1597.54s ->  1602.34s] these areas of supports and demands, you want it to touch as many of the widths as possible.
+[ 1603.14s ->  1608.98s] So I'll draw it like this. So one touch, two touch, three touch, four touch. That is an area of resistance.
+[ 1608.98s ->  1615.78s] So sold off and it went back up, touched it again, fell off, touched it again, fell off. And then here
+[ 1615.78s ->  1621.78s] it formed a higher, a lower high. So this would be the new area of resistance. And area of support,
+[ 1623.17s ->  1627.65s] you guys probably can already tell, it's somewhere around here. So if you wanted to touch as many
+[ 1627.65s ->  1636.70s] wicks as possible, price rejected off this resistance, came back up, rejected off again,
+[ 1636.70s ->  1642.94s] came back up, rejected off again. And then it formed a lower high market, which shows selling
+[ 1642.94s ->  1647.18s] power, right? Because the buyers weren't able to push it further up, wasn't able to get higher than
+[ 1647.18s ->  1654.32s] what it was before. And let's see what happens. We'll extend this triangle, this area a little bit
+[ 1654.32s ->  1660.40s] further. The market stagnated in this area and broke down, right? So you can see if we were to do this
+[ 1660.40s ->  1670.66s] from a larger, a little larger timeframe, from A to B to C, which is lower high, to A, D all the way
+[ 1670.66s ->  1675.63s] down here, well actually all the way down here, right? So you can see what I was talking about
+[ 1675.63s ->  1681.79s] earlier. A lot of times these A, B, C, D patterns don't always happen very smoothly, right? A, B, C,
+[ 1682.43s ->  1686.59s] and then this area right here consolidated for quite a while until it broke down.
+[ 1686.59s ->  1690.43s] And then if you were to continue right here, like you saw earlier, this will be an area of support.
+[ 1690.43s ->  1696.19s] You see this bullish engulfing candlestick, push it up into this area of resistance right here,
+[ 1697.07s ->  1705.06s] sold off, try to push the market, try pushing it even lower, area of resistance right here,
+[ 1705.86s ->  1712.42s] pushed it up, pushed it back down into this area of support. Market rejected it up and it broke past the
+[ 1712.42s ->  1717.84s] previous high and now it went all the way up. So that's just an idea, that's just one example.
+[ 1717.84s ->  1721.60s] We can do one more, we can do like a currency, probably USD versus Swiss francs,
+[ 1722.72s ->  1727.60s] and we'll do somewhere, we'll do right here, right? Here's an area of resistance,
+[ 1727.60s ->  1734.54s] or area of support all the way down here, right? Went all the way up to an area of resistance,
+[ 1734.54s ->  1739.42s] you can see this price slowed down right around here, and then price fell back down,
+[ 1739.42s ->  1745.26s] here, lower high, came back down to this area of support, you can see how it stagnated.
+[ 1745.26s ->  1752.30s] Price failed to reject and failed to bounce off this area of support and broke back down into this
+[ 1752.30s ->  1756.54s] new area of support. This area of support then became an area of resistance, you can see right here,
+[ 1756.54s ->  1763.10s] you'll see later on, but this is what we call a wedge into this area. Area of support formed a high
+[ 1763.74s ->  1768.38s] to a higher low, to a high, to a higher low, and broke past this area of support,
+[ 1769.10s ->  1773.82s] and then now it's into an uptrend into this new area of resistance right here,
+[ 1776.69s ->  1780.85s] and then we'll see what happens. Market then fell back into this area of support, you see,
+[ 1781.41s ->  1787.65s] stagnated, and then rejected off of this area of resistance again, fell back into this area of
+[ 1787.65s ->  1794.37s] support, and then now into this area of resistance, and back down, and then broke past the area of support.
+[ 1795.60s ->  1800.88s] Okay, so that's another example, we can do another one, maybe euro versus Hong Kong dollar,
+[ 1802.61s ->  1810.38s] maybe in the, on the daily now, let's go to the daily, you can see A, B, C, D, E, F, G, right,
+[ 1812.66s ->  1819.54s] zoom in here, A, B, C, this is, this is our new low, this is our support level, rounds back up,
+[ 1819.54s ->  1824.58s] this is our new support level right here, balanced up our new support level here, balanced up into
+[ 1824.58s ->  1831.46s] resistance, you see that resistance right here, broke past our previous support, now it's for,
+[ 1831.46s ->  1836.74s] it's probably going to form a lower high, and it formed a lower high here, and if you see, if you
+[ 1836.74s ->  1843.18s] focus on this one right here, which is really cool, you see that this area right here coincides directly
+[ 1843.18s ->  1849.98s] with the previous resistance. Market broke up, fell back down, pushed itself up, tried retesting, and
+[ 1849.98s ->  1855.66s] tried to form a higher low, retested this area resistance, and then now it's struggling to find
+[ 1856.38s ->  1861.58s] a higher high, it's just another example. Okay, we'll go through multiple more examples just after
+[ 1861.58s ->  1865.98s] we learn how to set the trade, but you can kind of see how, by learning how to read momentum, market
+[ 1865.98s ->  1871.82s] structure, and price action, you can get a pretty good understanding of how the market is trending,
+[ 1871.82s ->  1876.78s] and where high value areas are going to be. The one final thing before we get to the really juicy
+[ 1876.78s ->  1880.94s] part, which is learning how to actually set up our trades, and we're going to be talking briefly about
+[ 1880.94s ->  1888.74s] indicators. There are a lot of indicators out there. My personal style of trading is that I don't use too
+[ 1888.74s ->  1893.78s] many indicators. If you watch other YouTubers or talk to other people, everybody kind of has their own
+[ 1893.78s ->  1899.14s] style, everybody has their own indicators that they like to trust, my advice to you is just find
+[ 1899.14s ->  1904.26s] indicators that resonates with you, really understand them, learn them, and then learn how to use them.
+[ 1904.26s ->  1907.94s] If there's other indicators that you guys want to learn about or you guys want to use, let me know
+[ 1907.94s ->  1913.94s] down in the comment section below. Okay, so my trading setup is actually very simple. I don't use too many.
+[ 1913.94s ->  1923.87s] I just like to use moving averages to help me confirm the trends that I'm seeing. So I like to set up with the
+[ 1924.75s ->  1932.56s] 20, 50, and 200 day moving average. So for this 20, let's go here and change it to 20. We'll keep it the
+[ 1932.56s ->  1938.16s] same color. And then for here, let's make it 50, and then we'll make it a different color. Let's make
+[ 1938.16s ->  1943.44s] this green. And then for the 200 degree moving average, I actually like to use exponential. There's
+[ 1943.44s ->  1949.82s] a slight difference. 200 exponential moving average just means that the days are weighted slightly
+[ 1949.82s ->  1953.02s] different ones. Simple moving average just means that everything is weighted the same.
+[ 1954.46s ->  1959.50s] As for volume, I like to know average volume on the day to know if something is over the average
+[ 1959.50s ->  1965.41s] volume or not over the average volume. ATR is actually one of my most used. It stands for average
+[ 1965.41s ->  1970.53s] true range. I'll talk a little bit more about that too. And then RSI, I don't use often. I usually don't
+[ 1970.53s ->  1975.41s] include this in my chart, but it is one that I consult occasionally. All right, so you can see this right
+[ 1975.41s ->  1981.41s] here. I'm going to click apply and you'll see them on my chart right now. Cool. So let's just look at
+[ 1981.41s ->  1985.09s] this. You have three lines on here. These are your moving averages. The blue one is your 20 period
+[ 1985.09s ->  1990.69s] moving average. The green one is your 50 period moving average. And the red one is your 200 exponential
+[ 1990.69s ->  1996.77s] moving average. I'm currently on the day, so this is a 20 day, 50 day, and 200 day moving average.
+[ 1997.57s ->  2003.17s] So what do these moving averages tell us? Moving averages are basically lagging indicators,
+[ 2003.17s ->  2010.13s] letting us know what the trend is on that period. If it's a positive slope, like you see right here
+[ 2010.13s ->  2016.08s] on Microsoft, it means that the trend is an uptrend. Over the last 20 periods, it has been an uptrend.
+[ 2016.08s ->  2020.56s] Over the last 50 period, it's been an uptrend. And over the last 200 period, it's been an uptrend.
+[ 2020.56s ->  2025.12s] Nothing that we can't tell from the ABCD pattern that we learned, but it does help you confirm.
+[ 2025.12s ->  2028.56s] And you can kind of see right here, down here, you can see the 200 period moving average is kind of
+[ 2028.56s ->  2033.60s] turning negative because there's a lot of selling power here and potentially meaning that in the long term,
+[ 2033.60s ->  2039.28s] or in the future, it could turn. But again, it's not a predictive indicator, it is a lagging indicator.
+[ 2039.28s ->  2044.00s] So for us using the ABCD pattern, you might actually see that it's probably in a short market
+[ 2044.00s ->  2048.80s] faster than the indicators will indicate, right? And just to reconfirm, you can see down here,
+[ 2048.80s ->  2054.96s] these are all negative slopes right back here. The 20 period, the 50 period, and even the 200 period
+[ 2054.96s ->  2061.36s] are all negative. You can see it's low to higher low, lower high, back down to our area of resistance,
+[ 2061.36s ->  2067.92s] back up to our area of support and then broke it back down to a lower low. Again,
+[ 2067.92s ->  2073.44s] the indicators are showing you what you're seeing with price action. It just helps you confirm.
+[ 2074.74s ->  2079.70s] One thing that's cool about moving indicators is that they can also act as areas of supports and
+[ 2079.70s ->  2084.74s] resistances. You can kind of tell when there's momentum, the 20 period moving average can sometimes
+[ 2084.74s ->  2089.78s] act as area of supports. Same thing with the 50 period moving average, and more importantly,
+[ 2090.82s ->  2094.98s] the 200 period moving average. So for example, if you go to the weekly, you'll see the 200 period
+[ 2094.98s ->  2100.10s] moving average back here, we'll zoom in, access support, support, every time I touched it,
+[ 2101.06s ->  2105.54s] and then you can even see back here, access support. There's two main purposes just to summarize,
+[ 2105.54s ->  2110.82s] one to indicate trends, and two areas of supports and resistances. Let's move on to average volume.
+[ 2110.82s ->  2115.30s] Average volume, I'd just like to add to know if there are certain days where there's more volume,
+[ 2115.30s ->  2119.38s] more people buying and selling. And so for example, on this day, right around the 200 period moving
+[ 2119.38s ->  2124.02s] average, sorry, this week, you can see there's a lot more volume than on average. Same thing with this
+[ 2124.02s ->  2129.22s] one right here, which means that this move upwards is probably a very convincing move upwards. And we'll
+[ 2129.22s ->  2134.18s] talk a little bit more about this later on when we're setting up our trades and learning when to enter
+[ 2134.18s ->  2139.62s] the right trade. ATR, let's talk a little bit about ATR. ATR is actually one of my favorite indicators.
+[ 2139.62s ->  2145.62s] It stands for average true range. It tells you basically the average volatility of the stock or
+[ 2145.62s ->  2153.22s] this market over the last 14 periods. So you can see here, ATR is really low, right? Why is that?
+[ 2153.22s ->  2158.82s] ATR is very low because these candlesticks here are very small, very short. This means that there's
+[ 2158.82s ->  2163.06s] not a lot of price moving during this time. It could be price consolidation, it could be an area of
+[ 2163.06s ->  2167.94s] support that or some resistance, buyers and sellers trying to fight it. But it tells you on this period,
+[ 2168.66s ->  2174.74s] this stock is not that volatile. But you can see right here on this 200 period moving average area,
+[ 2175.78s ->  2180.10s] candlesticks got a lot bigger, right? So what does ATR do? It starts shooting up because there's a lot
+[ 2180.10s ->  2186.10s] more volatility here. And after the move has happened, you can see that candlesticks got small,
+[ 2187.06s ->  2194.34s] volatility or average true range, ATR, average movement, fell. And obviously the periods change. If you
+[ 2194.34s ->  2198.42s] change it to a different timeframe, all of this information kind of changes a little bit as well.
+[ 2198.42s ->  2204.18s] Again, these are all period based. So this is a 14 period ATR, very small movements, ATR sank to the
+[ 2204.18s ->  2209.54s] bottom, larger movements, ATR rose, right? It's a very good indicator. I'll teach you guys how to use it
+[ 2210.10s ->  2215.86s] later on in this video. Now, lastly is RSI. RSI basically tells you if something is overbought
+[ 2216.66s ->  2225.20s] or oversold. So if you see right here, we have two lines, 30 and 70. Anything above 70 in the red
+[ 2225.20s ->  2232.00s] usually indicates that something is being overbought. There's a lot of momentum, maybe too much momentum
+[ 2232.00s ->  2236.80s] potentially indicating that the stock can sell off in the short term. Obviously, none of these
+[ 2236.80s ->  2240.88s] indicators are going to be 100% correct. You can kind of tell, even though it's in the red,
+[ 2240.88s ->  2244.72s] the market never sold off, right? It just means that the market, in this case, it's a momentum
+[ 2244.72s ->  2249.12s] market. So it kept going up, even though it's in the red. Same thing down here, it's in the blue,
+[ 2249.12s ->  2253.92s] which means that it's below 30, which means that it could be oversold, indicating that this could
+[ 2253.92s ->  2259.12s] potentially be a good long opportunity. Again, these are not 100% predictive. These are just
+[ 2259.12s ->  2264.56s] giving you more information to help you make better judgments. Now, obviously aware of advice,
+[ 2264.56s ->  2269.84s] never trust an indicator as your only source of information, because if it were that easy,
+[ 2269.84s ->  2276.00s] then everyone would do it. There's also a lot more other indicators like MACDs, Bollinger Bands,
+[ 2276.00s ->  2280.80s] right? There's a lot more. If you just go here to studies, right? You go to edit studies. There's
+[ 2280.80s ->  2287.23s] all of these right here. There's so many. Historical volatility, right? Histograms,
+[ 2287.23s ->  2292.35s] I don't know, half of these, honestly speaking. What my recommendation is, is find indicators that
+[ 2292.35s ->  2298.43s] work for you, learn them, really internalize them, and then learn how to use them, right? Understand
+[ 2298.43s ->  2302.51s] their pros and their cons, because there are obviously downsides to every single indicator
+[ 2302.51s ->  2307.87s] they're using. Now that we talk about indicators, one last thing, time period. Time frame on which
+[ 2307.87s ->  2313.71s] you're looking at the charts is extremely important. You have to understand your objectives when you're
+[ 2313.71s ->  2319.47s] trading. For example, if I'm day trading, I'm not going to be looking at daily charts or even
+[ 2319.47s ->  2323.79s] four-hour charts. So for example, if I'm looking, if I'm day trading, I'm looking at four-hour charts,
+[ 2323.79s ->  2327.63s] the market's going to be over in two candlesticks. I'm not getting enough information. Even on the one
+[ 2327.63s ->  2334.75s] hour, I get one, two, three, four, five, six, seven. But on the flip side, if I'm trying to swing
+[ 2334.75s ->  2341.07s] trade, maybe 30-day credit spreads or 60-day leaps, if I'm on the two-minute, then this is way too much
+[ 2341.07s ->  2345.87s] information, right? Like I don't need this much information to make decisions. And so a good
+[ 2345.87s ->  2350.43s] rule of thumb, at least for me, is that when I'm trading like longer-term options, for example,
+[ 2350.43s ->  2354.99s] 30-day DTEs, I like to start on the dailies to get better information, maybe even weeklies.
+[ 2355.63s ->  2360.11s] Trading weeklies, maybe I'm on the four hours down to the one hour. And if I'm on the day trading,
+[ 2360.11s ->  2365.39s] then I'm on 30s and below because I need more information, usually. And five is actually my
+[ 2365.39s ->  2369.79s] preferred when I'm day trading. Really understand your objective because the information that you're
+[ 2369.79s ->  2374.91s] looking at will change depending on what timeframe you're looking on. Same thing with your indicators,
+[ 2374.91s ->  2379.95s] depending on what timeframe you are, your indicators will change. Now that we have all of the basics out
+[ 2379.95s ->  2387.23s] of the way, let's talk about how to leverage technical analysis to set up our trip. My strategy here,
+[ 2387.23s ->  2396.11s] my system is called MACS, M-A-C-S. M stands for market trend, A stands for area of interest,
+[ 2396.11s ->  2402.43s] C stands for criteria of entry, and S stands for stock loss. We learned how to identify the trend,
+[ 2402.43s ->  2408.51s] right? Either it's uptrend, downtrend, or it's consolidating, running sideways. A is an area of
+[ 2408.51s ->  2413.39s] interest. These are our areas of supports and resistances, moving averages, we didn't talk about
+[ 2413.39s ->  2420.51s] this, but like trend lines. It's an area where we are interested in trading. C is a criteria of entry,
+[ 2420.51s ->  2425.79s] it could be the candlestick patterns that we talked about, it could be crossovers on the moving averages,
+[ 2425.79s ->  2431.87s] it could also be RSI like we saw earlier. It's just an indicator or a signal for me to want to enter
+[ 2431.87s ->  2438.11s] this trade. Now S stands for stock loss. Every single time we set a trade, we have to set a stock loss
+[ 2438.11s ->  2443.95s] and our subsequent take profit to understand what our risk and reward are. Let's give an example.
+[ 2444.67s ->  2450.51s] So let's just take a look at J&J first and let's assume that we want to trade long-term dated options
+[ 2450.51s ->  2455.95s] or just play long-term stocks, trying to swing trade essentially. So what we're going to do first
+[ 2455.95s ->  2459.15s] is we're going to start on weekly and I'm going to get, and I got rid of all the studies here just
+[ 2459.15s ->  2463.23s] so that I can show you guys how to trade with just price action. And then we can add a little couple
+[ 2463.23s ->  2469.71s] more indicators just to show how flexible this method is. But let's just jump back to maybe here.
+[ 2471.07s ->  2475.87s] So let's first indicate what the trend is, from a high to a low, now to a lower high,
+[ 2477.25s ->  2485.49s] and now it's back down here, right? So it's going here. So you can go in the short term,
+[ 2485.49s ->  2492.96s] this market is in potentially a downtrend, but it caught onto here. So maybe it's stagnating,
+[ 2492.96s ->  2498.72s] maybe it's consolidating. Either way, let's draw out our areas of supports and resistances.
+[ 2498.72s ->  2506.19s] This is an area of resistance. It's an area of support. It's an area of support. So we'll come
+[ 2506.19s ->  2518.64s] here. I'm going to draw here. Okay. And now it's forming a low. Would I, let's do it this way. Would
+[ 2518.64s ->  2527.12s] I take a trade right here? The answer here would be no, because why the trend is potentially down,
+[ 2527.12s ->  2531.04s] right? You have a lower high into an area of support. So what you would expect
+[ 2531.04s ->  2535.76s] is for it to break further down, right? A, B, C, D. There's no guarantee that the support is going to
+[ 2535.76s ->  2542.78s] hold. So what I would do here is I would just wait. I will wait, wait, wait, wait, wait, wait,
+[ 2542.78s ->  2548.30s] wait, wait, wait, wait, and boom. Now that it's formed, now that it's in this area of resistance,
+[ 2548.30s ->  2553.10s] right? Went to a high, the B now, right? Now it's going to wait. I'm waiting to enter a trade. Boom,
+[ 2553.10s ->  2557.66s] boom, boom, boom. And I'm waiting for a higher low to form, or maybe even this area of support.
+[ 2557.66s ->  2561.82s] So you know, this area of support here is still going to be true. Just wait, hold, hold, hold.
+[ 2561.82s ->  2566.70s] You can see how trading is a lot of it is just waiting because in theory, everything is clean,
+[ 2566.70s ->  2572.70s] but in actuality, the market's quite random. So it's not as clean as it is in practice.
+[ 2573.58s ->  2578.94s] So now it's back in this area of support. So I'm maybe interested in trading now. So now I'm waiting,
+[ 2578.94s ->  2584.86s] I'm waiting, I'm waiting, I'm waiting for bullish signal. This isn't bullish at all. This is pretty
+[ 2584.86s ->  2589.10s] bullish. So you could trade if you think that this is the right pattern for your setup. This
+[ 2589.10s ->  2595.50s] could be a good entry. This next entry here is a hammer, and that could be a very good one. What
+[ 2595.50s ->  2599.98s] I want to do is I wait for this hammer and I wait for one more candle. And on this candlestick open,
+[ 2599.98s ->  2604.78s] this is where I would enter the trade. Now that I entered the trade, I need a little bit of help
+[ 2604.78s ->  2610.14s] of setting my stop loss. And here's, this is where I'm going to add one of our favorite studies.
+[ 2610.70s ->  2616.61s] Wouldn't add ATR. I'll point out before I say anything, you see these two candlesticks right
+[ 2616.61s ->  2621.25s] here, this bullish engulfing and this hammer. These are both higher in volume than average,
+[ 2621.25s ->  2626.05s] which is a good sign because that's, again, another criteria of entry is that you want people to buy in.
+[ 2626.05s ->  2631.52s] And so this is a good confirmation that there's a lot of bullish. So now that I've entered at 148,
+[ 2631.52s ->  2639.41s] let's set our stop loss, our S. So our ATR is 5. So we're going to do 148 minus 5, which is 143.
+[ 2640.05s ->  2647.41s] And this is where our stop loss is going to be. Now, where is my next pick profit? Our pick profit is
+[ 2647.41s ->  2654.21s] probably going to be somewhere around this area of resistance, right? Because as price action goes up,
+[ 2654.21s ->  2660.13s] it is probable that this area isn't going to cause us to sell out. So I would say right around the
+[ 2660.13s ->  2665.25s] middle of this range right here, maybe around this candlestick right here, 162 will be our take
+[ 2665.25s ->  2671.89s] profit. So think about it. We entered at 148, we have a five point stop loss. And when we're taking
+[ 2671.89s ->  2680.82s] profit at 162, that's around a 14 point upswing or a five point loss. That's a three to one risk ratio.
+[ 2680.82s ->  2686.26s] Right? Three to one. You're risking $1 to make $3. So that's your trade setup. We'll see what happens.
+[ 2686.90s ->  2690.82s] Boom. So I would exit right here, 162 on this candlestick right here. I wouldn't play this
+[ 2690.82s ->  2697.22s] swing high because we know that this is a consolidating market with potentially a higher
+[ 2697.22s ->  2701.70s] high. I would just play it up to the swing high right here to this area of resistance and just
+[ 2701.70s ->  2706.54s] call it a day. Now that you know you're in this area of resistance, and you're looking like,
+[ 2706.54s ->  2710.86s] hey, I might be able to short the market. What would allow me to short the market here?
+[ 2710.86s ->  2714.14s] You know it's consolidating. You know there's an area of resistance. What would allow you to
+[ 2714.14s ->  2718.62s] short the market? Here is a bullish engulf, a bearish engulfing candlestick. So theoretically,
+[ 2718.62s ->  2726.02s] you could take this trade. Let's assume that I did. Same idea here. I enter at 163. I have a six
+[ 2726.02s ->  2734.43s] point stop loss now. My ATR is now six. So 163 plus six, it'll be 169. So around 170. And I'm going to
+[ 2734.43s ->  2740.03s] take profit work down here. Right? Because we know that it hasn't formed a higher high. I want to wait
+[ 2740.03s ->  2748.75s] so it may be right around this swing high right here. So 148. So I'm risking 63 to 170. Seven points
+[ 2748.75s ->  2758.03s] to make 163 to 148. Which is around 15 points. That's a one to two risk ratio. Right? I'm risking
+[ 2758.03s ->  2762.11s] this much to make this much. And we'll see what happens. Right? Right when it hits this level right
+[ 2762.11s ->  2767.15s] here. 148. I take profit. I'm out. I don't need to take the end of it. I don't need to take out the
+[ 2767.15s ->  2772.51s] low of the day. I'm out. And again, if you want to trade swing highs again, you know this is a very
+[ 2772.51s ->  2776.67s] bullish candle right here. Right? You're in this area of support again. Very bullish candle. You know
+[ 2776.67s ->  2780.99s] you're consolidating. So what are you going to do? I would enter right here 151. Same thing. What's my
+[ 2780.99s ->  2788.83s] what's my take top loss? Six, six and a half. So 151 minus six and a half is around 145 right down here.
+[ 2788.83s ->  2796.56s] Right? And I'm going to risk it all the way up to same. 160, 151 all the way to 162. I'm risking six points
+[ 2797.36s ->  2803.52s] to make around another 12 points. That's one to two, one to one, one, one point seven five.
+[ 2804.61s ->  2807.49s] And the market hasn't touched it, hasn't touched it. And right on this candlestick right here,
+[ 2807.49s ->  2814.21s] I exit. Boom. Right? That's your trick. So now that it's swung higher, right? Now you know you broke
+[ 2814.21s ->  2819.95s] out of this pattern. There's a couple other ways to trade this again, right? It really depends on your
+[ 2819.95s ->  2826.83s] strategy. You know, for example, now it's A to a B. Now it's now broke past this area of support. I would
+[ 2826.83s ->  2832.88s] actually redraw this area of support. You can theoretically play the swing high here, right?
+[ 2832.88s ->  2836.40s] So you know, for example, that it broke past this area of support. So you could say, hey,
+[ 2836.40s ->  2839.44s] I want to enter as it breaks past this area of support and play the swing high.
+[ 2840.24s ->  2843.68s] I don't like to trade that way. I hate playing swing highs because I don't really know where to
+[ 2843.68s ->  2848.16s] take profit sometimes, right? You got to go back really far to see if there's another support or
+[ 2848.16s ->  2853.12s] area of support or resistance right around here, maybe, right? But I just don't like to do it,
+[ 2853.12s ->  2858.08s] but people do. Same idea. If you were to play the swing high here, you enter at 170,
+[ 2858.72s ->  2863.76s] 8 here at 6, you might minus 6, and you play it all up to the swing high to 180. Area of resistance
+[ 2863.76s ->  2868.66s] right here. And you're done. You're out. You can see how beautiful price action is if you understand
+[ 2868.66s ->  2874.91s] market structure. This is just plainly building off a market structure. That's it. We can do another
+[ 2874.91s ->  2881.15s] example, right? We can do Microsoft, for example. Now in this case, let's add in our indicators.
+[ 2881.15s ->  2887.97s] Let's assume that I like to trade at the 200-period moving average because that's an area of support.
+[ 2888.61s ->  2892.13s] I don't have enough data here, but let's assume that here we know that it's in a downtrend because
+[ 2892.13s ->  2897.17s] your moving averages are sloping down. 20 or 50 moving averages are sloping down.
+[ 2897.17s ->  2902.77s] So what I want to do is I want to look for a bullish maybe reversal pattern because I'm looking
+[ 2902.77s ->  2908.05s] and I want to trade off of the support on this 200-period moving average. So what you would do,
+[ 2908.05s ->  2912.53s] for example, right here is look at potentially this trade right here. You see there's a bullish engulfing.
+[ 2912.53s ->  2918.93s] So on this candle, you would enter the trade on 111 and your ATR is 17. So you're 241 minus 17.
+[ 2918.93s ->  2926.13s] So that's around 224. We'll be right down here. It's pretty low actually. And where might take profit be?
+[ 2926.69s ->  2932.29s] You need to take profit at 20-period moving average because you think this is a very resistance.
+[ 2932.29s ->  2938.69s] Let's assume that you did that. 20-period moving average is 252, which is around a 10-point.
+[ 2938.69s ->  2945.47s] So you're risking 10 points. You're risking 17 points to make 10 points. So that's not a great trade.
+[ 2945.47s ->  2952.51s] So you probably wouldn't take this trade unless you widen up your take profit. So now maybe you look,
+[ 2952.51s ->  2957.07s] you choose to widen up your take profit to 265 because this is the previous swing low, right?
+[ 2957.63s ->  2965.63s] So 265. Now your take profit is 20 points versus a 17-point stop loss. That's a one-to-one,
+[ 2965.63s ->  2971.63s] a much better trade. Let's do another one. 20-period moving average here. What you're looking,
+[ 2971.63s ->  2975.87s] you're looking, I want to enter, I want to enter, but none of these are very bullish confirmations,
+[ 2975.87s ->  2980.27s] right? This is a large engulfing. This body never broke past it. You have three black crows here.
+[ 2980.27s ->  2987.07s] So maybe you can do that, but then you're hitting your resistances or maybe not. Boom. So this is where
+[ 2987.07s ->  2992.59s] I think you can enter, right? Look at market structure. Zoom out just a little bit. After
+[ 2992.59s ->  2996.19s] every single move, you have to recalibrate your trend. You know, before it was A, B, C, D,
+[ 2996.83s ->  3002.75s] between the support, now it's a D, and it might form an E. We don't know, right? We might form a lower
+[ 3002.75s ->  3010.75s] high. It might form something. In this case, it formed a higher low and then pushed up to a higher high.
+[ 3010.75s ->  3018.32s] So it became A, B, C, D. Now we're definitely in an uptrend. This trade you probably wouldn't be able to
+[ 3018.32s ->  3023.76s] catch, in all honesty, the bullish engulfing candlestick using the weekly time frame,
+[ 3023.76s ->  3027.28s] but there is another way. I'll show you guys shortly after, but you probably wouldn't be able
+[ 3027.28s ->  3034.06s] to catch this. However, you could theoretically enter this trade maybe on this candlestick right
+[ 3034.06s ->  3041.82s] here at 276. The bullish engulfing candlestick with big volume, that is your C. Great. Next candle open,
+[ 3041.82s ->  3048.82s] let's go in. You can see right here, now the RSI is at 17. We do the same exact thing,
+[ 3048.82s ->  3057.30s] 280 minus 17 is 263. So right at the bottom of this previous resistance. And in this case,
+[ 3057.30s ->  3062.10s] let's do a quick exercise. Let's assume that we do not actually have another high on Microsoft.
+[ 3062.10s ->  3068.26s] And Microsoft is an all-time high, and this is just going to push up higher and swing higher,
+[ 3068.26s ->  3072.98s] theoretically. So how do I set my take profit? I'm going to show you guys a couple ways.
+[ 3073.54s ->  3078.18s] The first one, I'm going to do it the way that I like to do it, the easiest way, which is I'll set my
+[ 3078.18s ->  3083.54s] trailing stop loss instead of a take profit. I'm going to trail my stop loss with this 20 period
+[ 3083.54s ->  3089.25s] moving average, and whenever it crosses that 20 period moving average, then I'm out. On this candlestick
+[ 3089.25s ->  3096.93s] right here, I'm out. I would probably make a decent amount of money from like 268 all the way out to
+[ 3096.93s ->  3108.75s] 320. So 40, 40 bucks for a 17 point stop loss. So almost a 1 to 2, slightly more. The other way
+[ 3108.75s ->  3115.23s] could be you ride this wave until you see signs of weakness. So which would be, let's go all the
+[ 3115.23s ->  3119.47s] way back here, no weakness, no weakness. This is not really weakness, right? You don't see any bearish
+[ 3119.47s ->  3127.15s] signals. This is very bullish, no bearish. Doji is the hammer, not really bearish yet,
+[ 3127.15s ->  3133.31s] not really bearish, right here. This is a bearish sign. This is a shooting star, right? And so I'll
+[ 3133.31s ->  3140.11s] exit on this candle right here. And so that way you can exit a little bit earlier, but you would
+[ 3140.11s ->  3146.94s] probably never be able to time the top. I'd probably exit somewhere around 340. You eek out a national,
+[ 3146.94s ->  3152.70s] maybe $13 on this one trade. Cool. Another way people like to trade is unless they use RSI. So
+[ 3152.70s ->  3160.38s] whenever RSI crosses to be oversold, or overbought above 70, then they exit. So they would exit right
+[ 3160.38s ->  3167.97s] around here, which is 320. Very similar to where it would be if we had the moving average on the 20.
+[ 3167.97s ->  3172.05s] Okay? But that is just one way you can trade if you don't necessarily have a good take profit level.
+[ 3172.05s ->  3177.01s] All that people use is Fibonacci extensions. There's a lot of ways. The same costs apply, stop loss,
+[ 3177.01s ->  3182.77s] take profits, trends, areas, resistances, and criteria of interest. Now, remember the comment
+[ 3182.77s ->  3186.69s] that I said, you probably wouldn't be able to enter this trade on the weekly candle, because this is
+[ 3186.69s ->  3191.73s] really hard for you to enter on this candle. You probably enter on this candle, but there is a way.
+[ 3191.73s ->  3197.09s] So I'm going to use on-demand to simulate back to this time frame, and I'll show you how we would do it.
+[ 3197.09s ->  3201.33s] So we're going to go to the day, and we're going to zoom in right here. This is the area, right? We're going
+[ 3202.05s ->  3207.49s] high to a low, to high in an area of resistance. Slightly higher, but I usually just don't consider
+[ 3207.49s ->  3213.65s] that. And now it's forming into this area right here. This is an area of potential support maybe,
+[ 3213.65s ->  3219.89s] but you can tell from the market perspective that this might be an area of support. You see some buying
+[ 3219.89s ->  3225.25s] power coming in, and the price is consolidating here. You see ATR is falling down. If you want to trade
+[ 3225.25s ->  3230.05s] the higher low, this is possible right here. I personally wouldn't, because this isn't a very,
+[ 3230.05s ->  3238.77s] this isn't a very bullish signal, but let's assume that you did. 251 minus ATR of 6, because you've
+[ 3238.77s ->  3245.25s] entered on the daily instead of weekly, so you use the daily ATR. So 6, so 250. 2 minus 6 will be 246.
+[ 3245.25s ->  3251.25s] You'll be right down here, and you would probably trade it up to the swing high at 273. But I probably
+[ 3251.25s ->  3255.25s] wouldn't. It's not very bullish, so we'll just keep going. We'll just wait and wait and wait. And then
+[ 3255.25s ->  3259.89s] this one, this one right here, this is very bullish. This is a bullish engulfing candlestick with
+[ 3259.89s ->  3264.21s] more volume. This is a good sign. So here I would enter this trade on the next candlestick opens,
+[ 3264.21s ->  3270.85s] which would be right here, 255. And then I would have a stop, I would have an ATR, stop loss. Again,
+[ 3270.85s ->  3276.37s] 6. But now we're on the daily chart, so we're using daily ATR. So 256 minus 6 would be 250.
+[ 3277.09s ->  3283.54s] And then I would probably swing it up to the swing high around 255. Right around, probably here. So I would
+[ 3283.54s ->  3292.02s] make, I would risk around $6 to make around $14. So about a 1 to 2. Pretty good trade. So let's do
+[ 3292.02s ->  3296.90s] one more. We'll go back to SPX. We'll try to day trade this just to show you guys how this is done
+[ 3296.90s ->  3306.37s] on a smaller timescale as well. SPX now. And let's go down to 30. And let's day trade this area that we
+[ 3306.37s ->  3312.13s] saw previously. Let's go here. Okay, maybe you're thinking this is resistance. You can either go up or down,
+[ 3312.13s ->  3315.97s] right? But you see this bullish engulfing candlestick here. And you're like, oh, maybe I can
+[ 3315.97s ->  3319.89s] enter it on a bullish subtry. Again, this is probably not a trade that you want to want to
+[ 3319.89s ->  3324.85s] take. Because why? You are entering at 6.48. You take profits all the way down to here.
+[ 3325.73s ->  3331.33s] But your risk is up to here. You wouldn't take this trade. Remember, always remind yourself of the
+[ 3331.33s ->  3334.69s] risk and reward. That's why technical analysis is helpful because it allows you to understand what
+[ 3334.69s ->  3341.68s] is doable and what isn't. Now let's trade what we were talking about previously. You want to trade this
+[ 3341.68s ->  3348.64s] break of structure, right? You're going an A to a B to a C. And if this breaks, this could be a swing
+[ 3348.64s ->  3355.52s] lower. Now, what would I do? I would look for bearish intent. So this one right here is pretty
+[ 3356.32s ->  3363.25s] bearish. And this one right here is very bearish. I would then swing low and then straight on this
+[ 3363.25s ->  3369.09s] candlestick right here. So it would be 6.30 minus 1 ATR, which would be 10. 6.40,
+[ 3369.09s ->  3374.05s] 6.440 would be right here. And then where would my next swing low be? Let's zoom out.
+[ 3375.86s ->  3383.82s] What might take profit be? Let's go to our time frame. And you can see maybe the next potential
+[ 3383.82s ->  3390.43s] area of support might be around here. 6,400. The concept here is that previous areas of
+[ 3390.91s ->  3395.71s] supports can become resistances and resistances can become supports. So what you would do here is you
+[ 3395.71s ->  3407.02s] would trade probably from here all the way down to 6,400, which means that you are risking making 30
+[ 3407.02s ->  3413.58s] bucks and risking around 10 bucks or one to three. That's pretty good. Obviously, I, the market broke
+[ 3413.58s ->  3421.50s] down further to 6,343, but most people would, most people I think would take this trade. You can always
+[ 3421.50s ->  3427.26s] have one runner run. So for example, if you had five short shares here or five puts, you would sell
+[ 3427.26s ->  3432.38s] four or three and have two of them run, see if they can get any lower. Just to show you that TA isn't
+[ 3432.38s ->  3436.70s] perfect. You're going to lose a lot of trades because of TA. Let's do, let's do an example.
+[ 3436.70s ->  3440.94s] Let's do this. You're in a downtrend, right? Pretty obvious downtrend. So now you think that the market's
+[ 3440.94s ->  3445.82s] going to continue to go down. A, B, C, D, E, F, G. Now this is an area of potential resistance,
+[ 3445.82s ->  3451.42s] right? You're forming a high, a lower high, 50 period moving average into a potential higher
+[ 3451.42s ->  3455.18s] low. And the market seems to be selling off. So I'm going to take this entry right here. This
+[ 3455.18s ->  3459.10s] entry looks pretty good. Large, bullish, large engulfing candlesticks. So I'm going to enter
+[ 3459.10s ->  3466.06s] on this candlestick right here, 6349. I'm going to subtract, uh, ATR of five. So I add it to 6340,
+[ 3466.06s ->  3472.96s] 6370 plus five. So 6375. So right here, if I'm looking just at this, right? It's highly likely it's
+[ 3472.96s ->  3479.84s] going to break down. Now, what happens next? It breaks up and I get stopped out. It happens,
+[ 3479.84s ->  3486.29s] but take profit is here. Stop loss is here. Not every trade you enter will win. That is just
+[ 3486.29s ->  3490.13s] the ultimate truth. You can, you can look for the best setups. The market, unfortunately,
+[ 3490.13s ->  3494.93s] is going to be random. Sometimes it is going to make you lose. Even though this trade, this trade
+[ 3494.93s ->  3499.41s] setup looked really good, right? You see a bullish engulfing, a bearish engulfing candlestick. And the
+[ 3499.41s ->  3503.57s] next one is next on next candlestick open. You're like, I'm going to short the market.
+[ 3503.57s ->  3508.45s] You went short market at immediately rebounded and you lost. It happens. And we're just going
+[ 3508.45s ->  3514.77s] to do a couple more just to really emphasize this point. A TA is not going to make you perfect.
+[ 3514.77s ->  3519.41s] Other people probably won't tell you this, but trading is really about how you manage your losses.
+[ 3519.41s ->  3524.45s] So let's just, for example, let's go back to J and J right here. J and J, we already mapped out.
+[ 3524.45s ->  3528.37s] We won't do too much. Let's assume that here you want to trade this resistance right here. And you're like,
+[ 3528.37s ->  3533.66s] Hey, let's zoom in right here. And you're right here. You're going to hold. This is actually in
+[ 3533.66s ->  3539.90s] this new resistance, right? This previous high. I see this red candlestick here is relatively large.
+[ 3541.02s ->  3544.70s] Our size is pretty high. I'm going to try and short the market here. So on this candle opening,
+[ 3544.70s ->  3553.92s] you short it. 160. 160 plus six is 167. So you're up here. And the next candle, it breaks up,
+[ 3553.92s ->  3558.88s] it breaks up and you're out right on this candlestick right here and you lose, right? There's nothing in
+[ 3558.88s ->  3564.24s] inherently wrong with the trade that you just took. You saw a confirmation. You waited for
+[ 3564.24s ->  3569.84s] an area of resistance. I know there's a strong upswing here, but your hypothesis was that this
+[ 3569.84s ->  3575.28s] is going to reject off the resistance. Completely fair. But unfortunately, the market had other
+[ 3575.28s ->  3581.20s] thoughts and you, it rejected and you lost. The worst thing you can do here is if you move that stop loss
+[ 3581.20s ->  3585.92s] up, a lot of us don't like taking losses. And this is why we're working really hard to run TA. I
+[ 3585.92s ->  3591.92s] understand that. But even with TA, you will lose. It's just part of the game. Let's do another one.
+[ 3591.92s ->  3596.46s] Let's just go to a random chart, right? Let's just go to ABGO. You say right here, you see,
+[ 3596.46s ->  3600.70s] this is a previous resistance. And then now it's bouncing up into 200 period moving average.
+[ 3600.70s ->  3606.30s] Resistances can turn to supports. It's great. And so you're around 200 period moving average right
+[ 3606.30s ->  3612.30s] here and you go, Hey, maybe I can enter this trade. This is a relatively bullish candlestick.
+[ 3612.30s ->  3616.70s] 200 period moving average, 50 period moving average into an area of support, resistance
+[ 3616.70s ->  3620.78s] that could turn to support. So you're like, Hey, this might bounce up. It's an uptrend. Let's go
+[ 3620.78s ->  3628.14s] bullish. Completely fair. So this candle may not be the most bullish, but it is still a large price
+[ 3628.14s ->  3635.02s] projection off of the 180 price level. So you go, let's go candle open at 188. Let's go long.
+[ 3635.02s ->  3644.42s] Your ATR is around 20, 188 minus 20, 168. So down here. And let's see what happens. Boom.
+[ 3644.42s ->  3649.62s] Immediately two candlesticks afterwards, you lose. Let's assume here you're like, Hey, this is the
+[ 3649.62s ->  3653.30s] trade I was actually looking for right here. 160. Here's your support. Large bullish engulfing
+[ 3653.30s ->  3658.90s] candlestick. Great. Great signal. I'm going to enter the next candlestick. Next candlestick opens right
+[ 3658.90s ->  3665.95s] here. 171. Let's go long. 184. And I want to play this swing up to this previous high right here,
+[ 3665.95s ->  3674.50s] 250. So I'm going to risk around another 20, 24 or this 240, right? So that's, that's a pretty good
+[ 3674.50s ->  3681.30s] risk, risk to reward. And guess what happens? Just when you win, you never really know. Sometimes you
+[ 3681.30s ->  3686.66s] enter a little early, right? Sometimes you enter perfectly. TA is not going to be perfect. We can
+[ 3686.66s ->  3695.33s] do another one. Let's just do A and B for example. Let's assume that you're trying to trade a higher high,
+[ 3695.33s ->  3699.49s] right? This is an area of resistance into an area of support, right? A to a B to a C to a
+[ 3699.49s ->  3704.45s] D right now forming an E. Trend is up. You're doing this 50 period moving average into an
+[ 3704.45s ->  3709.09s] area of resistance that can turn to support. That's great. This looks pretty positive.
+[ 3710.05s ->  3713.89s] This right here is a great pattern, right? We learned about this. This is what we call the
+[ 3713.89s ->  3718.13s] morning star, right? Really bullish and goal, bullish reversal patterns when you enter this trade
+[ 3718.13s ->  3726.03s] on the next candle open. 164 minus 14. Play to swing high of maybe 220. Pretty good trade. What happens
+[ 3726.03s ->  3732.75s] next? Boom. You lose. The move didn't happen and you lost. There are a lot of times where in the
+[ 3732.75s ->  3737.39s] market you will lose. That is unfortunately true, right? And we'll talk more about the psychological
+[ 3737.39s ->  3742.75s] part of it, but this is just to prove to you that no matter what happens, TA is not infallible. You
+[ 3742.75s ->  3749.15s] will end up losing trades even if the setup looks great. I know that was a lot of charting, a lot of
+[ 3749.15s ->  3752.51s] explanations. So if you guys need to revisit that part and just run through it a couple of times,
+[ 3752.51s ->  3758.03s] make sure you do. Obviously some of those were cherry picked, other ones were done live, but I
+[ 3758.03s ->  3762.03s] want to simulate as much as I can in a live environment. That is actually what's going to
+[ 3762.03s ->  3768.91s] happen when you trade because the charts or the live charts is not going to be good. So if you need
+[ 3768.91s ->  3774.35s] to revisit that section, feel free to. It is there for you. And if you guys want more examples of my
+[ 3774.35s ->  3781.39s] trades using the same exact methodology, here's a playlist of some of my trades. I trade predominantly
+[ 3781.39s ->  3785.95s] credit spreads because I don't know, it just vibes with me better. I've also done lead, I've also
+[ 3785.95s ->  3792.83s] done single options. Let me know if those interest you. I can post more of those, but overall you can
+[ 3792.83s ->  3798.91s] see the consistency in the way that I trade, especially as time has gone on. Again, very
+[ 3798.91s ->  3804.51s] important point I want to stress. TA is not perfect, right? It is just a framework. You can see even when
+[ 3804.51s ->  3809.23s] we win trades, we have a framework and even when we lose trades, we have a framework. The last couple of
+[ 3809.23s ->  3814.03s] trades that we went through pretty quickly, when we lost, those are probably the most important
+[ 3814.03s ->  3821.47s] trades that we went through. Do not move those stop losses. I'll repeat this in the end of this
+[ 3821.47s ->  3827.23s] video when I talk about my experience and tips, but do not move those stop losses. That's going to
+[ 3827.23s ->  3832.99s] ruin your P&L 100% of the time. Speaking of losses, I want to stress why that's so important by walking
+[ 3832.99s ->  3839.31s] you through how to become profitable. We're just playing straight now. As an example, if I win
+[ 3841.49s ->  3850.93s] $150 every single time I win and I lose $100 every time I lose. That's about a 1 to 1.5. Let's say
+[ 3850.93s ->  3859.79s] that I win five times and I lose five times. I have a win rate of 50%, which is not great, but it's not bad.
+[ 3861.20s ->  3869.84s] I would end up making $750 and I would end up losing $500, which means my ultimate P&L at the end
+[ 3869.84s ->  3878.58s] of a 50 trades or 10 trades will be $250 positive. What happens if I up this loss because I move my stop
+[ 3878.58s ->  3890.10s] loss up to $200. Let's say I win more often and I lose less often because I'm increasing my lower,
+[ 3890.10s ->  3897.22s] I'm increasing my lower limit, right? So I should lose less often. So now my new math comes out to be
+[ 3897.78s ->  3907.06s] this equals $900 and now I'm losing $800. So I'm actually only up $100 as opposed to what I was before,
+[ 3908.10s ->  3916.10s] which would be $250. I'm worse off by $150. So this is why it's important for us to control our losses.
+[ 3916.10s ->  3920.74s] Let's assume that this is what a lot of people end up doing here. A lot of people end up going,
+[ 3920.74s ->  3926.58s] hey, I don't like to lose. So when people win, they win very little. They win $100. When they lose,
+[ 3926.58s ->  3931.54s] they lose a lot. They lose $300. As a great trader, you guys win seven times and you lose three times.
+[ 3931.54s ->  3936.74s] You guys can see this one, you made $700 and this one you win $900, right? You lose. Overall,
+[ 3936.74s ->  3942.98s] your P&L here is negative $200. You might win more, but you end up winning very little every time you
+[ 3942.98s ->  3950.50s] win and you lose a lot every time you lose. Ideally, what we want to do is actually this. Let's assume
+[ 3950.50s ->  3958.75s] we maintain that two to one risk to reward. So we win, we make $200 and when we lose, we lose $100.
+[ 3958.75s ->  3965.15s] Let's assume that we had a really bad month. I only went three times and I lose seven times. It happens.
+[ 3965.15s ->  3973.79s] We have bad months. In this case, I make $600 and I lose $700. I only end up losing $100 on a very
+[ 3973.79s ->  3981.63s] bad month. I only went 30%. This here is the most important thing we have to control. How big our
+[ 3981.63s ->  3987.15s] losses are. How many losses, not as important, but how big our losses are. If you have some very large
+[ 3987.15s ->  3991.39s] losses, this is how you blow up your count. If you have many large losses, this is how you end the game.
+[ 3991.39s ->  3996.27s] If you have many little losses, this is how you end up becoming consistently profitable over time.
+[ 3996.27s ->  3999.63s] The trade setups that we look at are very important. We never take trades that are like
+[ 3999.63s ->  4003.63s] one-to-one or anything less than one-on-one because it doesn't make any sense for us to do that.
+[ 4003.63s ->  4010.11s] We want to try and find our edge by making sure that our risk is worth the reward. And this is exactly
+[ 4010.11s ->  4016.27s] why TA is important because it allows you to set up your trades in a way where your risk and your reward
+[ 4016.27s ->  4020.43s] are well-known so that you know what you're doing before you enter the trade.
+[ 4021.23s ->  4026.75s] Okay. And just real quickly, I'm including a resource document in the description below,
+[ 4026.75s ->  4031.63s] all the tools that I've used in my trading career, keep things simple, brokerage account,
+[ 4031.63s ->  4037.15s] charting platform, journaling app, or just the notebook. But if you guys ever have any questions
+[ 4037.15s ->  4042.27s] or need resources, just click on the link below. We will have to practice these skills in real life,
+[ 4043.07s ->  4047.15s] which means that my recommendation is if you're brand new, you learn how to, you learn how to trade
+[ 4047.15s ->  4052.53s] by starting with paper trade, fake money. Thinkorswim, for example, the platform that we're
+[ 4052.53s ->  4057.97s] just using has this feature called on demand. You can go back and simulate trades and trade with fake
+[ 4057.97s ->  4062.61s] money to make sure you guys understand the concepts in its entirety. My advice here is if you're paper
+[ 4062.61s ->  4069.17s] trading, trade it like as if it were your own real money. Try to simulate following the strategy,
+[ 4069.17s ->  4073.01s] simulate taking losses and taking profits so that you can get used to the mechanics
+[ 4073.57s ->  4078.85s] and reading the charts as you would in a real trading environment. Once you guys feel you're
+[ 4078.85s ->  4086.53s] ready, you guys can trade in the real market. And here is the tip. Trade with just a little bit amount
+[ 4086.53s ->  4093.33s] of money, right? Trading is a very difficult skill. You have to learn how to trade. And I promise you,
+[ 4093.33s ->  4098.13s] when you go from paper trading to real trading, it will feel entirely different because now you're
+[ 4098.13s ->  4105.17s] dealing with real money, your own money, and you will feel a lot more emotional stress because you
+[ 4105.17s ->  4113.23s] are dealing with real money. Practice small, start small, which leads to the most important tip
+[ 4113.95s ->  4118.35s] for beginners and actually everybody who trades is that you have to journal. Journal is like film
+[ 4118.35s ->  4124.99s] study when it comes to sports. Every time you take a trade, write it down, figure out what you did well,
+[ 4124.99s ->  4128.91s] what you didn't do well, figure out whether or not you saw the right patterns, if you're trading the right
+[ 4128.91s ->  4133.55s] setups, try to write down everything that you can so that you can learn from your mistakes.
+[ 4134.19s ->  4138.67s] This channel, Credit Spread Investing, I actually started it as a way for me to journal. I did video
+[ 4138.67s ->  4146.91s] journals. But even today, every time I day trade, I write it down in my notebook and I reflect on what
+[ 4146.91s ->  4153.95s] I do well and what I don't do well. That is how you improve. Trading is a skill and especially for
+[ 4153.95s ->  4158.83s] beginners, the most important thing is to remember this is a marathon, not a sprint. This comes to the
+[ 4158.83s ->  4163.15s] final section and this is going to be a little bit more unedited. I want to give you guys a little
+[ 4163.15s ->  4169.63s] bit about my experience trading for the last maybe almost decade. Technical analysis is not going to
+[ 4169.63s ->  4175.63s] make you profitable overnight. There is no such thing as a foolproof strategy that is always going to
+[ 4175.63s ->  4182.11s] let you win. Technical analysis is really just the building blocks and foundations for us to try and
+[ 4182.11s ->  4187.55s] find an edge in the market by finding the right setups, being able to minimize our risks and maximize
+[ 4187.55s ->  4194.67s] our rewards like we saw in this video. But that's just the technical side of it, right? Finding these
+[ 4194.67s ->  4201.39s] setups. And even then you can tell from the from the practice session that we did here that a lot of times
+[ 4201.39s ->  4209.15s] in reality, the setups are not as clean as you would want it. A lot of it comes down to our experience.
+[ 4209.15s ->  4216.22s] A lot of it comes down to our decision making. In theory, everything is very clean, right? But in reality,
+[ 4216.22s ->  4226.38s] in practice, we have to be able to notice and find these patterns and come up with an entry and exit
+[ 4226.38s ->  4232.86s] plan as fast as possible. And that is no easy tasks. That's why experience and discretion is on
+[ 4232.86s ->  4237.82s] the most important tool and the edge that you guys will have to build throughout your trading career
+[ 4237.82s ->  4242.06s] that will allow you to become consistently profitable. That is the goal. We don't want
+[ 4242.06s ->  4247.82s] one-time wonders. We want to be able to do this for a career. And honestly, I honestly think that you
+[ 4247.82s ->  4254.14s] guys can do it. I've done it. It took me a long time to do it. It took me about seven years. But once you
+[ 4254.14s ->  4262.06s] build the experience up, it is absolutely doable. Which leads me to, I guess, the ultimate maybe tip that I
+[ 4262.06s ->  4268.78s] want to give you guys. Trading is an emotional endeavor. It is probably one of the hardest things
+[ 4268.78s ->  4275.18s] that I've had to learn, maybe ever. And you guys will come across these situations too, and you guys
+[ 4275.18s ->  4278.78s] can refer back to this video and be like, yeah, I felt the same way. But I'll give you guys a couple
+[ 4278.78s ->  4283.74s] of examples. Even with TA in our setups, you set your stop losses and you set your take profits, right?
+[ 4283.74s ->  4290.22s] And you have high confidence in this trick. What happens if the market immediately reverses and sells off
+[ 4290.22s ->  4296.26s] into your stop loss? There's a lot of times where in my trading career where I go, oh,
+[ 4296.82s ->  4301.14s] I still have confidence in the move, right? This confidence, this move looks so bullish.
+[ 4301.14s ->  4306.02s] I'm going to move my stop loss. I'll move it down. So I increase my risk. Market keeps dropping. I
+[ 4306.02s ->  4310.26s] further increase my risk. I keep dropping it. I don't actually want to realize the loss. I don't want
+[ 4310.26s ->  4315.54s] to take the L. And research has shown that taking losses is probably one of the hardest things for humans
+[ 4315.54s ->  4320.82s] to do. And for me, that is absolutely true, right? Because the moment you close that trade,
+[ 4320.82s ->  4325.62s] your bank account goes negative. And then ultimately you take a very fat L because you can't hang out
+[ 4325.62s ->  4329.54s] any longer. Or on the flip side, it goes up to your take profit and you look at the charts again,
+[ 4329.54s ->  4336.50s] you go, oh, I can probably make more money on it, right? I think it will hit a higher high.
+[ 4336.50s ->  4343.46s] So I'll move my take profit up to another level and we'll see it run. I have high confidence.
+[ 4344.26s ->  4348.50s] But what ends up happening is the market may move up a little bit, but then it falls right back down,
+[ 4348.50s ->  4353.22s] right? And then you go, well, I could have made more money. I'll exit the next time it hits my
+[ 4353.22s ->  4357.54s] take profit, my initial take profit, and then I'll exit the trade. But then the market never does.
+[ 4357.54s ->  4361.38s] And so you turn a winning trade into a losing trade. You weren't willing to realize the gains in
+[ 4361.38s ->  4366.18s] the beginning. And I've done this many, many times in my trading career. And I'm sure anyone who has
+[ 4366.18s ->  4371.70s] ever traded will come across that situation, that exact situation. Trading is really about
+[ 4371.70s ->  4376.34s] discipline. It's about trying to find consistency, trying to figure out how to deal with the emotional
+[ 4376.34s ->  4380.66s] distress or this emotional turmoil that comes with trading. The psychology of trading,
+[ 4380.66s ->  4386.58s] learning how to manage your own emotions is probably more than half the battle. Greed and fear
+[ 4386.58s ->  4390.90s] will dictate your actions more often than you can. And this is why ultimately trading is so difficult.
+[ 4390.90s ->  4395.62s] It is a very hard skill to learn. It is a skill that will take time, it will take effort,
+[ 4395.62s ->  4400.02s] and it will take discipline. There has been so many studies that have proven
+[ 4400.02s ->  4404.98s] trading is a very hard thing to do. There's a study in 2000 that showed that most day traders
+[ 4404.98s ->  4413.31s] around the world, they actually underperform the market. An even more recent paper showed that 99%
+[ 4413.31s ->  4421.47s] of all day traders fail to make consistent profit. I'm not saying this to scare you. I'm telling you this
+[ 4421.47s ->  4427.71s] so that you don't get sold on the hype when someone else inevitably comes to you and sells you on the
+[ 4427.71s ->  4434.03s] dream that by buying his course or her course, or by following the system, you will be profitable.
+[ 4434.59s ->  4439.87s] It is not that easy. And I don't want to scare you. I'm trying to be as honest and transparent as
+[ 4439.87s ->  4446.75s] possible. This skill took me years and years and years to learn. And even today, I am still learning,
+[ 4446.75s ->  4452.43s] I'm still growing. I'm still trying to improve my edge each and every day, each and every single
+[ 4452.43s ->  4457.87s] time I trade. Hopefully that section was helpful. Let me know. I do want to make a
+[ 4459.62s ->  4463.62s] how to become a good trader series. Again, let me know down in the comments below if you guys have
+[ 4463.62s ->  4468.50s] any thoughts, your own experiences. Love to hear from you guys. So that about wraps up this course.
+[ 4469.22s ->  4475.94s] I'm going to link a form in the description below to ask for some feedback on this video,
+[ 4475.94s ->  4478.98s] as well as what you guys want to see from the future of this channel. So if you guys can fill
+[ 4478.98s ->  4482.82s] that out, that would really help the channel out. And if you guys like the video, learn something,
+[ 4482.82s ->  4489.22s] do consider liking the video. And if you guys like content like this, this again, took a long time
+[ 4489.22s ->  4493.54s] to make. Hopefully try to be as transparent as possible. Hopefully it was helpful. Make sure you
+[ 4493.54s ->  4499.68s] guys subscribe to the channel. I guess you guys can have the best information on the internet. Oh,
+[ 4499.68s ->  4504.16s] and lastly, this is a brand new office. I love this office. If you guys ever need interior design help,
+[ 4504.16s ->  4509.92s] Regina helped me here. I'll link her contact information down below as well. Again, if you
+[ 4509.92s ->  4513.84s] guys have any questions, let me know down in the comments below. If you guys have anything you guys
+[ 4513.84s ->  4518.72s] want to comment on, again, drop it down below. But thank you guys so much for taking the time.
+[ 4518.72s ->  4524.80s] I know this is a very long course. Hope you guys learned something. And if you guys want to learn how
+[ 4524.80s ->  4529.12s] to trade credit spreads, if you guys want to learn how to sell options, which is what I did for many,
+[ 4529.12s ->  4534.00s] many years and was allowed to retire early by 11 new technical analysis, make sure you guys click
+[ 4534.00s ->  4538.16s] on these two videos in the end screen right here. And if you guys want to see more of my trades,
+[ 4538.16s ->  4542.16s] I'll link that playlist in the upper right hand corner, click on it. And until next time,
+[ 4542.16s ->  4544.16s] stay safe in the market. Peace.

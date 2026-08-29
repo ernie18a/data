@@ -1,0 +1,155 @@
+[    0.46s ->     7.28s] From building Python libraries to operating as a technical reviewer for quant finance books,
+[    7.28s ->    13.90s] all the way to building and deploying my own live trading systems, I certainly have worked on a lot
+[   13.90s ->    18.74s] of quant projects over the years. But in this video today, I want to talk about the projects
+[   18.74s ->    24.04s] that I built when I was coming up as a student that helped me stand out during the interview
+[   24.04s ->    30.96s] process, specifically for quant research and market making roles. I've open sourced all of
+[   30.96s ->    36.16s] the projects that we're going to discuss herein, except for my trading system. So if you'd like
+[   36.16s ->    42.54s] to build your own versions and extensions for your quant resume, you are certainly free to do so. I
+[   42.54s ->    47.04s] will leave a link to all of the source code in the description below. I will also post it to the
+[   47.04s ->    52.92s] Quant Guild library as usual, where you can find all of my Jupyter notebooks, associated YouTube videos,
+[   53.08s ->    58.60s] and all of the source code for my quant builds. If you're looking for a place to learn the necessary
+[   58.60s ->    65.00s] math probability and finance required to build projects like this, look no further than quantguild.com.
+[   65.08s ->    70.18s] We have over 90 quant lessons, an adaptive practice engine that scales with your skill level,
+[   70.18s ->    75.96s] so you can progress to more and more difficult topics with gamified rank-based progress, even courses
+[   75.96s ->    82.92s] from A to Z in coding, probability math, with more on the way, and all of that's included with Quant Guild
+[   82.92s ->    89.62s] membership. We even have master classes and live classes taught by me to get you interview and
+[   89.62s ->    96.24s] industry ready. So if you're looking to master your quantitative skills, check out quantguild.com.
+[   96.28s ->   102.92s] Without further ado, let's discuss the first project on this list, QFin, a Python library for
+[  102.92s ->   108.92s] mathematical finance. When I was an undergraduate student, I was absolutely obsessed with
+[  108.92s ->   115.62s] stochastic processes and pricing. Some things never change, I certainly still am, but this was one of
+[  115.62s ->   122.98s] the first projects that I built as an undergraduate student. This is effectively a Python library for
+[  122.98s ->   130.34s] pricing. It has a few simple stochastic processes built in, arithmetic, geometric Brownian motion, even a
+[  130.34s ->   137.76s] stochastic variance process. And you can use this right out of the box. Everything is open source. I've stopped
+[  137.76s ->   144.34s] contributing to it a while ago. However, if you would like to use this library on your own to simulate
+[  144.34s ->   151.46s] these processes, you can just run a pip install QFin. It is hosted on PyPy. All of the documentation
+[  151.46s ->   159.12s] gives you examples of simulations using different stochastic processes. It even has the ability to price
+[  159.12s ->   166.90s] different exotic options. Let me give you a quick example of how to use this in Google Colab. First,
+[  166.90s ->   172.64s] you're going to want to run a pip install. So I'm just going to say pip install QFin. That will
+[  172.64s ->   178.76s] install the library to your environment. I've already installed it here on Colab. Now, how do I
+[  178.76s ->   184.92s] actually implement this package? Well, let's just head on over to my documentation. We can see if we'd
+[  184.92s ->   191.36s] like to simulate an arithmetic Brownian motion, I can just import it from stochastics. So that's what
+[  191.36s ->   198.26s] I'll do. I'll say from QFin dot stochastics, import arithmetic Brownian motion. Now that I have that
+[  198.26s ->   204.86s] module, let me create an instance. I'll say ABM is equal to arithmetic Brownian motion. And this is going
+[  204.86s ->   212.34s] to take a parameter set. In this case, I'm going to give it a volatility of 30%. Now, how do I actually
+[  212.34s ->   219.24s] simulate this process? Well, if we go back to the documentation here, we can see we just specify our
+[  219.24s ->   226.24s] initial price, the number of steps, our time step, and effectively the terminal time for this process.
+[  226.78s ->   233.22s] And it will implicitly use an Euler Maruyama discretization to produce this path. So that
+[  233.22s ->   241.18s] is what I'm going to do here. Going to say ABM dot simulate, and I will run this guy here. And there
+[  241.18s ->   247.20s] we go. It has given me the arithmetic Brownian motion. If I want to, I can then use this for
+[  247.20s ->   253.68s] visualization, or even pricing. During quant interviews, I had a lot of discussions about
+[  253.68s ->   261.76s] this project that I've built, not just understanding how to deploy a Python package, but what it means to
+[  261.76s ->   268.66s] be a contributor and a maintainer. It is not something that very many people have exposure to
+[  268.66s ->   276.50s] as students. So it did spark a lot of discussions. And it certainly made me a very interesting candidate
+[  276.50s ->   282.46s] during the interview process. This brings us to the second project. While I was studying continuous
+[  282.46s ->   288.58s] time stochastic processes, I didn't forget about their discrete counterparts. I loved everything about
+[  288.58s ->   295.44s] Markov chains. I loved solving problems in my textbook using Markov chains, figuring out when to use an
+[  295.44s ->   301.36s] absorbing state, if it was irreducible, all of those different things that make Markov chains so fun to
+[  301.36s ->   306.16s] work with. But of course, we have to leave the classroom eventually and model the real world.
+[  306.16s ->   313.50s] And I became particularly interested in modeling risk of mortgage backed securities. In fact, I have
+[  313.50s ->   320.42s] a video on this channel that discusses the theory of Markov chains from scratch, and then applies it in
+[  320.42s ->   325.94s] that way. This is effectively the project that I built in that context to bridge the gap between
+[  325.94s ->   333.22s] theory and practice. And it taught me a very important lesson. What you're seeing here is a streamlit
+[  333.22s ->   342.08s] dashboard. I have in LaTeX, all of the mathematics explained very clearly. So if you're interested in the
+[  342.08s ->   348.14s] Chapman Kolmogorov equation, if you're interested in understanding steady state probabilities and long run
+[  348.14s ->   353.94s] equilibrium, and this idea of an absorbing state, I even linked back to the Chapman Kolmogorov
+[  353.94s ->   360.26s] equations video that I made a very, very long time ago, you can check out this dashboard. But let me
+[  360.26s ->   366.20s] show you how it works. We have a Markov chain model, we're trying to model default risk. What I'm looking
+[  366.20s ->   373.46s] at here is data from Fannie Mae, I can set the look back period for parameterization. And once I get my
+[  373.46s ->   379.82s] data, I can effectively upload it. So that's what I'm going to do here, going to upload this data as an
+[  379.82s ->   384.78s] example. And it's going to compute for me automatically portfolio summary statistics,
+[  384.78s ->   390.90s] it's going to compute for me this transition matrix, I'm going to estimate the transition state
+[  390.90s ->   396.54s] probabilities using maximum likelihood estimation. And then effectively, I will normalize to ensure
+[  396.54s ->   403.42s] that I don't have any probabilities that sum to any values greater than one, or less than one. And we
+[  403.42s ->   410.62s] end up with this probability transition matrix here, then we can come on down here and actually use the
+[  410.62s ->   416.78s] transition matrix as a transition probability calculator. So you can find say, the probability
+[  416.78s ->   424.30s] of going from 30 days delinquent to 90 days delinquent in who knows, maybe 11 months, and then it will run
+[  424.30s ->   432.78s] that for you. And you will get the probability here. And that is exactly how this data dashboard works.
+[  432.78s ->   439.82s] I am literally taking a Markov chain model, automatically parameterizing it from data from
+[  439.82s ->   445.18s] Fannie Mae. And then I'm going to use that to construct a transition matrix using a maximum
+[  445.18s ->   452.94s] likelihood estimation and a fixed look back period. And then I can produce expectations and probabilities.
+[  452.94s ->   460.30s] As you can see here, I even have this idea of an absorbing state transition and an expected loss,
+[  460.30s ->   466.30s] according to the model that I fit. This was one of the most important projects that I've ever built,
+[  466.30s ->   471.98s] because this allowed me to have very high level conversations with portfolio managers, managing
+[  471.98s ->   478.38s] directors on the idea of modeling uncertainty. Effectively, we're dealing with a model specification
+[  478.38s ->   484.70s] and parameterization problem. We don't know what the true dynamics are. Otherwise, we wouldn't need
+[  484.70s ->   491.10s] to build a model. So we're going to have to select a model. Which model should we choose? Once we choose
+[  491.10s ->   498.70s] that model, we have to pick parameters. So in this case, I've selected a Markov chain model. How do I choose
+[  498.70s ->   506.06s] the parameters? Well, I'm using data from Fannie Mae and maximum likelihood estimation. And I have a look back
+[  506.06s ->   516.22s] period here of three months. Is that correct? This is exactly what modeling is. We are always at risk of
+[  516.22s ->   523.50s] misparameterization due to non-stationarity and even model misspecification. Understanding these ideas
+[  523.50s ->   530.14s] early on really enabled me to excel in building models for the real world, which is why I consider
+[  530.14s ->   538.30s] it to be such a staple in my student portfolio. This brings us to project three, the Gaussian
+[  538.30s ->   544.86s] cookbook. This is something that I have been working on for years, and I really even only recently
+[  544.86s ->   551.34s] published it. It's open sourced. It's available on GitHub. I even have some notes on this particular
+[  551.34s ->   558.46s] project that I've posted to SSRN. All of this will be linked in the description below. But this is
+[  558.46s ->   566.06s] effectively a cookbook of different simulation schemes to construct a desired stochastic process.
+[  566.06s ->   573.10s] What you're seeing here on the hero is effectively the Volterra process. Volterra integral, which is a
+[  573.10s ->   580.86s] causal representation of a Gaussian process, a subset of Gaussian processes. I did a video this week actually
+[  580.86s ->   586.30s] on this particular process. So if you're interested in it, it's discretization, how we can use it to
+[  586.30s ->   592.14s] effectively emulate a particular covariance structure. You can check out that video. I'll
+[  592.14s ->   596.78s] leave a link to it in the description below. But on this website, you're going to find a whole
+[  596.78s ->   604.30s] bunch of what I call recipes, recipes for simulating Gaussian processes. We have a Brownian motion,
+[  604.30s ->   610.22s] a Brownian bridge, a fractional Brownian motion, and of course, the Volterra process where you can
+[  610.22s ->   617.18s] specify your own Volterra kernel. The fractional Brownian motion is going to use a Davies Hart scheme.
+[  617.18s ->   622.78s] Effectively, the Cohernan law of expansion for the Brownian bridge and Brownian motion. You can view
+[  622.78s ->   629.02s] any of the recipes herein. You can check out the math behind its construction. You can check out the
+[  629.02s ->   635.74s] Python implementation. I have a continuous and discrete time variation of different recipes,
+[  635.74s ->   641.26s] and you can even head on over to the simulation where you can actually observe convergence
+[  641.26s ->   646.22s] empirically to the theoretical structure. You can check this out here. Wow, look at that. That's
+[  646.22s ->   650.62s] pretty cool. We increase the number of time steps. We increase the number of KL terms,
+[  650.62s ->   657.26s] and it is certainly going to become more like that theoretical covariance. This is just one example of the
+[  657.26s ->   662.54s] Brownian bridge. You can play around with any of these processes. For example, with the fractional
+[  662.54s ->   669.18s] Brownian motion, you are going to have that nice Hurst parameter. You can set it to a higher value to
+[  669.18s ->   676.62s] observe smoother paths. You can set it to a lower value to observe rougher paths, just like the
+[  676.62s ->   683.42s] literature suggests. This project has and continues to spark amazing discussions with quant researchers
+[  683.42s ->   689.82s] involved in this stream of literature. It has helped students become more aware of the space,
+[  689.82s ->   695.74s] what's out there beyond just a standard geometric Brownian motion, and the challenges of modeling
+[  695.74s ->   701.90s] reality. It doesn't just come down to building a model capable of fitting askew, but what about the
+[  701.90s ->   708.06s] efficiency concerns? If you can fit it, but it takes a day or two to fit, that's not going to be a very
+[  708.06s ->   715.02s] useful model. This is where lifting comes into play, neural network approximation, so on and so forth.
+[  715.02s ->   721.42s] This is a favorite topic of mine. I constantly allude to this in my future videos section. So if you would
+[  721.42s ->   726.46s] like to see videos on these topics, certainly let me know in the comments below. It's not going to take
+[  726.46s ->   734.30s] much to convince me. This brings us to the fourth project, and that is my medium blog. Before I fell in
+[  734.30s ->   742.86s] love with lecturing to you guys on YouTube, writing was my primary medium of expression for technical topics.
+[  742.86s ->   753.32s] In fact, I think this blog goes back almost 10 years. My first article was written in 2018
+[  753.32s ->   760.44s] on algo trading system development, and there is a lot of cool stuff in here related to quantitative
+[  760.44s ->   767.88s] finance, machine learning, data science, stochastic processes, so on and so forth. Over the years,
+[  767.88s ->   775.08s] my articles have exchanged a number of hands to the extent where I was getting emails and invitations to
+[  775.08s ->   781.96s] discussions based on topics I've written about and even interviews. I highly recommend starting a blog,
+[  781.96s ->   789.96s] if nothing else, just to learn technical topics. When you actually have to discuss things in your own words,
+[  790.52s ->   796.76s] that is really where you see where your knowledge gaps lie. And that's how you can increase the value
+[  796.76s ->   805.00s] of your stock. Anytime a knowledge gap is filled, or you learn something new, your stock has just gone up.
+[  805.00s ->   812.04s] This brings us to the fifth and final project. And let me tell you, it certainly was the most difficult to
+[  812.04s ->   820.28s] build that is my volatility trading system. I was facing a tremendous number of very difficult computer
+[  820.28s ->   825.32s] science problems. I would talk them out with my software engineering friends, we would whiteboard
+[  825.32s ->   831.16s] sketch things out, I was hitting my head against the wall for a very long time to the point where I have
+[  831.16s ->   838.36s] this beautiful end to end product. Now, I'll give you just a simple example where I do not propagate
+[  838.36s ->   846.36s] tickers in an algorithmic way. I'll just use it to automatically place an order for say, Amazon here.
+[  846.36s ->   854.52s] So I'm going to go ahead and run this, I get a cool splash screen. And here is the system. What I'm going
+[  854.52s ->   867.35s] to do is add a ticker. In this case, I'm going to use Amazon. That's going to create an instance of the
+[  867.35s ->   877.11s] trading system for that particular security. And now what I'm going to do is just look to parameterize
+[  877.11s ->   882.95s] this model. There are a variety of different ways that I can do this, which is what makes it so cool.
+[  882.95s ->   887.99s] But for the sake of you not just seeing me click a button and have it propagate with a whole bunch
+[  887.99s ->   894.55s] of orders, I'll show you how it works. I get to allocate effectively a position size, a certain number
+[  894.55s ->   901.59s] of levels. So I'll just say for this case, five, one and one, then I get to set a volatility floor.
+[  901.59s ->   908.79s] This is effectively using internally an equation to deduce a floor for mean reversion. So what I'm
+[  908.79s ->   914.95s] going to do here is I'm just going to set it to weekly, I will go ahead and I got to select Amazon
+[  914.95s ->   922.23s] for this parameterization, I'll do five, maybe one, one, I'll do weekly, I'll save those settings.
+[  922.23s ->   929.67s] And it's even going to allow me to calculate my PNL per this particular trade for this name.
+[  929.67s ->   936.47s] So I can type an entry price. Right now it's trading about 244. The current implied volatility is
+[  936.47s ->   944.63s] roughly 41%, maybe 42%. Click analyze trade. And here is what it gives me. It gives me an estimated
+[  944.63s ->   951.03s] floor of 229, a max cash allocation to this particular position and my profits per level.
+[  951.83s ->   959.27s] A very, very cool system. Then once I enable it, I am effectively going to be placing a trade
+[  959.27s ->   965.51s] or partially placed it. And now I'm in on the trade. This project has gone through a number of
+[  965.51s ->   971.11s] iterations over the years, as I've become exposed to more trading strategies and risk management
+[  971.11s ->   977.27s] techniques. I've altered this project in a variety of ways. But when I was coming up as a student,
+[  977.27s ->   984.55s] it shaped the way that I thought about risk and assuming risk. If we are traders, we are active
+[  984.55s ->   993.35s] risk takers. Our ability to seek risk, manage it in an effective way, and accumulate expected value
+[  993.35s ->  1000.63s] over time is directly related to our understanding of the models that we build, our ability to interpolate,
+[ 1000.63s ->  1008.87s] and extrapolate, which is why I tell everyone to master their quantitative skills. Those are the
+[ 1008.87s ->  1014.95s] projects that made me a quant. I hope you enjoyed. I hope you learned something. As I continued into my
+[ 1014.95s ->  1021.27s] professional career from being a student, I got an opportunity to work on a variety of interesting
+[ 1021.27s ->  1028.87s] institutional grade projects from pricing to trading all the way to generative machine learning and
+[ 1028.87s ->  1034.95s] implications in the financial maths literature. If you'd like to see videos on those topics, certainly
+[ 1034.95s ->  1042.79s] let me know in the comments below. Check out quantguild.com to master your quantitative skills.
+[ 1042.79s ->  1048.87s] Other than that, I want to thank you so much for watching and I will see you in the next video.

@@ -1,0 +1,233 @@
+[    0.50s ->    18.62s] Hey, YouTube, it's Roman. Today I want to talk about linear regression. So this video is going to pretty much cover every aspect of just a standard linear regression, least squares regression, however you would like to call it.
+[   18.62s ->    30.62s] And then towards the end of the video, I'm going to leave you with some thought provoking questions that are going to play nicely into the next topic of discussion for the next video.
+[   30.62s ->    39.62s] So let's go ahead and get started. So I have a new toy here. I got my iPad hooked up to the computer. I'm pretty excited to give it a go.
+[   39.62s ->    49.62s] So let's just start with some context. I'm going to create a scatter plot here. So on the X axis, I am going to have company sentiment.
+[   49.62s ->    57.64s] And then on the Y axis, I'm going to have stock price for the following day.
+[   57.64s ->    71.64s] Now, if you've watched my video on time series analysis and unit roots, you'll notice that if we're operating in the stock price space, then we have this inherent issue with using price and the price space.
+[   71.64s ->    78.64s] But let's just ignore that for now and consider only this for a linear regression and explainability of that regression.
+[   78.64s ->    86.15s] So in this scatter plot, let's consider that we have some points that look something like this.
+[   86.15s ->    97.69s] So we have this pretty strong positive linear correlation between company sentiment and stock price.
+[   97.69s ->   106.74s] Thus, we can try our best here to fit a line to these points.
+[  106.74s ->   114.44s] And that would be considered the line of best fit for this data.
+[  114.44s ->   125.44s] Now, we'll dive into mathematically what that means in a moment, but you can just look at it graphically and say like, hey, that line looks like, you know, it kind of fits the data to the best of its capacity.
+[  125.44s ->   131.44s] Now, we know a line is simply just Y equals MX plus B.
+[  131.44s ->   149.05s] In the context of this model, we would say Y, that is the stock price, is equal to some beta times the company sentiment plus some alpha, where that alpha is going to be our Y intercept.
+[  149.05s ->   154.75s] So I'm going to put that here and then we have some error associated with it.
+[  154.75s ->   159.75s] Perhaps the error is distributed normally for modeling purposes, perhaps distributed differently in nature.
+[  159.75s ->   163.75s] But in general, we can say that some true model looks like this.
+[  163.75s ->   178.65s] And our goal is going to be to model what we are observing via a linear regression by saying Y hat is equal to beta X plus alpha.
+[  178.65s ->   192.65s] So we are going to be trying to find alpha and beta to yield this line of best fit for the data which corresponds to company sentiment and stock price as seen in this scatter chart here.
+[  192.65s ->   195.65s] So why do we care about this at all?
+[  195.65s ->   199.65s] Well, perhaps we are going to be able to derive more company sentiments.
+[  199.65s ->   212.65s] And if we have some model like this, we can make a predictive argument for where the price is going to be in some timeframe based on this scatter plot, whatever data was used to construct the scatter plot.
+[  212.65s ->   221.65s] So that's why we would like to build this regression as a predictive model in some cases, sometimes for explainability purposes.
+[  221.65s ->   225.65s] But let's start to dive a little bit more into the mathematics of this.
+[  225.65s ->   231.65s] So when we look at Y hat equals beta X plus alpha, we're looking at this equation here.
+[  231.65s ->   233.65s] What are we actually doing?
+[  233.65s ->   248.32s] Well, we're looking at the collection of company sentiments and we're weighting the company sentiments by some unbiased estimator beta plus some constant that we're going to solve for alpha.
+[  248.32s ->   267.63s] So we would say that Y hat is going to be a vector and we are going to have Y hat 1, Y hat 2, all the way to Y hat n, where the dimensionality of this guy is n by 1.
+[  267.63s ->   273.63s] And we can yield this vector by taking some beta.
+[  273.63s ->   278.63s] So beta is an element of the real numbers.
+[  278.63s ->   280.63s] Similarly, alpha is as well.
+[  280.63s ->   281.63s] They're simply one by one.
+[  281.63s ->   283.63s] They're numbers.
+[  283.63s ->   287.63s] And then we have this vector X.
+[  287.63s ->   293.02s] And this vector X is going to consist of our company sentiments.
+[  293.02s ->   297.02s] So we have X1, X2, all the way to Xn.
+[  297.02s ->   301.02s] So this guy is also going to be n by 1.
+[  301.02s ->   305.02s] Now, as you can see, this is starting to get a little crowded, right?
+[  305.02s ->   308.02s] We have our beta or alpha, which are supposed to just be numbers.
+[  308.02s ->   318.02s] And then we also have this vector Y hat of our predictions for stock price based on our inputs given by company sentiment, this X vector here.
+[  318.02s ->   321.02s] There's got to be a more concise way that we can write this.
+[  321.02s ->   322.02s] And there actually is.
+[  322.02s ->   326.02s] We're going to use matrices to help us write this in a more compact manner.
+[  326.02s ->   333.02s] And that's also going to aid in our analytical solution to the beta and alpha values themselves.
+[  333.02s ->   336.02s] So let's go ahead and actually do this in matrix form.
+[  336.02s ->   344.56s] So I'm going to define a matrix X as this right here, n by 2.
+[  344.56s ->   347.56s] Now, why am I saying n by 2?
+[  347.56s ->   351.56s] We have a collection of company sentiments that's n by 1.
+[  351.56s ->   353.56s] The feature space is simply just the company sentiment.
+[  353.56s ->   361.56s] Well, the reason I'm doing this is because we can actually include the constant, the alpha, in this matrix as well.
+[  361.56s ->   365.56s] It's also going to help us clean up the equation for Y hat.
+[  365.56s ->   368.56s] So bear with me for a moment.
+[  368.56s ->   371.56s] In our first column, we're just going to have ones.
+[  371.56s ->   382.56s] And these ones are going to pertain to that constant alpha via the dot product of another vector that contains the value for beta and the value for alpha.
+[  382.56s ->   384.56s] We'll do that in a second.
+[  384.56s ->   390.56s] So the first column is going to be all ones for this constant because for every observation, the constant is going to be the same.
+[  390.56s ->   399.56s] And then if we look at the second column, we're going to have X1, X2, all the way to Xn.
+[  399.56s ->   403.56s] So that is the equivalent of this guy here.
+[  403.56s ->   405.56s] That's our X vector.
+[  405.56s ->   423.88s] OK, so we have this data matrix X and we also need to develop a matrix to compute the dot product of the beta and alpha values with this data matrix to find our Y hats.
+[  423.88s ->   435.83s] So we are going to say lowercase b is going to be defined as a two by one vector.
+[  435.83s ->   441.83s] And we are going to have alpha and beta contained in this vector.
+[  441.83s ->   452.12s] This is going to allow us now to concisely represent Y hat as the dot product between X and B.
+[  452.12s ->   459.12s] Now, if you recall from linear algebra, we look at the dimensionality, we have M by two and two by one.
+[  459.12s ->   468.12s] Thus, these twos cancel out and Y is going to be or Y hat rather is going to be N by one, just like we have up here.
+[  468.12s ->   469.12s] We have N by one.
+[  469.12s ->   475.47s] So this is a much more concise way of representing that original equation using matrices.
+[  475.47s ->   485.47s] Plus, it's going to help us in our solution as we as we progress to find what the actual values of alpha and beta are in this B vector.
+[  485.47s ->   492.47s] Now, if you're still not convinced, let's actually go ahead and compute one of the values for Y hat based on this matrix equation.
+[  492.47s ->   497.47s] So let's set up this product here. We're going to have, I'm just not going to complete this matrix.
+[  497.47s ->   504.47s] We're going to have one X one, one X two, so on and so forth, all the way to X N.
+[  504.47s ->   511.47s] So this is X. And then B is going to be alpha beta.
+[  511.47s ->   523.47s] So if we have X one and one and we take this dot product, then we know that our output is going to be N by one, just like we said here.
+[  523.47s ->   530.27s] So we know this is N by one. We know this is two by one. We know this is N by two.
+[  530.27s ->   539.27s] So if we actually compute this first element here, then what we're doing is we're going to take one times alpha.
+[  539.27s ->   546.27s] So this guy times this guy plus beta times X one.
+[  546.27s ->   562.06s] And that is going to be equal to alpha plus beta X one, which is the same thing as Y hat one, which is what we have here.
+[  562.06s ->   565.06s] And we're just going to go ahead and do that and times.
+[  565.06s ->   575.06s] So that is why we are representing the original equation in matrix form, because we can arrive at the same exact conclusion just very concisely.
+[  575.06s ->   585.06s] So the whole goal of linear regression is to minimize the error between the points that we observe and the line that we are drawing through these points.
+[  585.06s ->   596.57s] So if we scroll up here, we can take a look at the error as the distance between each of these points and the corresponding line.
+[  596.57s ->   606.57s] OK, now we want to consider the distance itself, not whether or not the relative value to the line is positive or negative.
+[  606.57s ->   614.57s] Thus, we can square each of the distances so that we are certain that they are positive and then sum them up.
+[  614.57s ->   618.57s] Now that is called the sum of squared errors.
+[  618.57s ->   627.57s] So if we were to come up with an error vector, we could say E is equal to Y minus Y hat.
+[  627.57s ->   633.57s] Well, we know Y is our true values for our stock prices, and that is going to be n by one.
+[  633.57s ->   640.57s] And Y hat is also n by one, thus E is capable of being computed element wise, of course.
+[  640.57s ->   647.57s] And then we also have an n by one vector, which is going to be equal to the individual errors.
+[  647.57s ->   656.57s] So we have Y one minus Y hat one, Y two minus Y hat two, so on and so forth.
+[  656.57s ->   659.57s] Y n minus Y hat n.
+[  659.57s ->   661.57s] So that is going to be our error vector.
+[  661.57s ->   667.57s] If we wanted to compute the sum of squared error based on this error vector, very simply,
+[  667.57s ->   677.57s] all we would have to do is say S S E is equal to the summation of I equals one to n of E
+[  677.57s ->   679.57s] sub I squared.
+[  679.57s ->   691.18s] And this is going to be equal to Y one minus Y hat one squared plus Y two minus Y hat two squared
+[  691.18s ->   697.18s] plus all the way to Y n minus Y hat n squared.
+[  697.18s ->   706.18s] And that is going to be the sum of squared error based on the betas and alphas that we have chosen for this particular Y hat.
+[  706.18s ->   713.18s] Once again, we can actually use linear algebra to succinctly represent the sum of squared error.
+[  713.18s ->   723.18s] And we can do that by saying instead of this summation here, we're actually just going to take the vector of errors
+[  723.18s ->   727.18s] E and dot it with itself transposed.
+[  727.18s ->   732.66s] So this is actually the same thing as saying E transpose E.
+[  732.66s ->   736.66s] Now I'm going to show you computationally here Y.
+[  736.66s ->   744.66s] So if we substitute in for E transpose E the corresponding vectors.
+[  744.66s ->   753.66s] So let's just say we have this vector here, right, that we have the collection of individual observations of Y
+[  753.66s ->   756.66s] and the associated predictions Y hat.
+[  756.66s ->   760.66s] E transpose is simply that rotated horizontally.
+[  760.66s ->   766.91s] So we have Y one minus Y hat one.
+[  766.91s ->   773.91s] And then in the second index, we have Y two minus Y hat two and so on and so forth.
+[  773.91s ->   790.62s] And then we have the original column vector of Y one minus Y one hat Y two minus Y two hat and so on all the way to Y n minus Y hat n.
+[  790.62s ->   800.16s] And if we were to compute this, this, this dot product here, these, these two errors in the dot product, then what are we doing?
+[  800.16s ->   810.16s] Well, all we're going to be doing is taking the product of this guy and this guy and then summing it with the product of this guy and this guy and so on and so forth.
+[  810.16s ->   834.12s] So we're going to end up with Y one minus Y hat one squared plus Y two minus Y hat two squared all the way until Y n minus Y hat n squared, which is equal to this right here.
+[  834.12s ->   850.12s] OK, so now that we know that this is equal to this, thus the sum of squared errors is equal to E transpose E, which is equal to the same thing as this summation.
+[  850.12s ->   857.12s] Well, now we know what our goal is. Our goal is to minimize this error.
+[  857.12s ->   865.12s] So what we can say is our goal mathematically is to minimize the sum of squared error.
+[  865.12s ->   876.12s] In other words, we want to minimize the distance of all of the points from our scatter plot to this line that we're trying to draw through the scatter plot.
+[  876.12s ->   879.12s] Now, if you've ever taken a calculus class, I think you know where this is going.
+[  879.12s ->   886.12s] We're going to be taking the derivative and setting it equal to zero to find this this minimum.
+[  886.12s ->   892.12s] Now, what are we actually capable of modifying in this equation?
+[  892.12s ->   903.12s] Well, if we go back up and we look at this this matrix equation here, we have this guy that represents the estimates based on our alphas and betas.
+[  903.12s ->   915.12s] Well, we know the only thing that we can change is this B vector here that contains our alphas and betas because everything else is an observation.
+[  915.12s ->   925.12s] Right. So we observe these X sub is we observe the true prices, the true stock prices, Y.
+[  925.12s ->   930.12s] So we can only change alpha and beta in that equation.
+[  930.12s ->   941.12s] Thus, we are going to partially differentiate the sum of squared error with respect to the B vector and set it equal to zero.
+[  941.12s ->   951.12s] And that's going to look like this. We're going to say the partial derivative with respect to the B vector of the sum of squared error is equal to zero.
+[  951.12s ->   956.41s] Now, let's actually go ahead and solve this guy. I'm going to start by substituting for what we know.
+[  956.41s ->   965.41s] So we know the sum of squared error is equal to E transpose E, but we also know that E is equal to Y minus Y hat.
+[  965.41s ->   970.41s] So I'm going to without rewriting the partial derivative and equals to zero.
+[  970.41s ->   976.41s] I'm just going to keep passing down until we run out of things that we know we can substitute in for.
+[  976.41s ->   986.41s] So we know the sum of squared error is E transpose E. Thus, we also know that it is Y minus Y hat transpose Y minus Y hat.
+[  986.41s ->   996.41s] And we also know that Y hat is equal to X B from earlier. That's how we defined our estimates in matrix form.
+[  996.41s ->  1005.41s] So I can just say Y minus X B transpose times Y minus X B.
+[ 1005.41s ->  1011.41s] And now I'm actually going to rewrite the partial derivative with respect to B is equal to zero.
+[ 1011.41s ->  1016.41s] So after making all our substitutions, this is where we end up right here.
+[ 1016.41s ->  1018.41s] Now we actually get to do a little bit of math.
+[ 1018.41s ->  1028.41s] I'm going to start by transposing that set. And what that's going to look like is it's just going to be Y transpose minus B transpose X transpose.
+[ 1028.41s ->  1034.41s] If you recall, when you transpose a dot product, you have to reverse the order and then transpose both of the matrices.
+[ 1034.41s ->  1043.41s] And then we can simply just take Y minus X B and we still have this partial derivative and we are still equal to zero.
+[ 1043.41s ->  1050.41s] Now we can FOIL. So we have Y transpose Y. So that's this one here.
+[ 1050.41s ->  1057.23s] Then we have minus X B and then we also have this Y transpose term.
+[ 1057.23s ->  1061.23s] Now we have to be careful here because we know Y is M by one.
+[ 1061.23s ->  1067.23s] That means Y transpose is going to be one by N. So we're going to put Y transpose in front.
+[ 1067.23s ->  1075.13s] That way the dimensions all line up and we have one by N, M by two, two by one.
+[ 1075.13s ->  1083.13s] And then we can do these inner terms here. So minus B transpose X transpose Y.
+[ 1083.13s ->  1087.13s] And kind of the same deal here. We know that X is N by two.
+[ 1087.13s ->  1092.13s] So X transpose is two by N and Y is N by one. So that is fair game.
+[ 1092.13s ->  1101.13s] And then lastly, we have these guys. So we have plus because we have two minuses here.
+[ 1101.13s ->  1107.13s] Plus B transpose X transpose X B.
+[ 1107.13s ->  1113.64s] And this whole thing is still under that partial derivative with respect to B.
+[ 1113.64s ->  1120.64s] And we're still equal to zero. Now I want you to notice something about these two terms in the middle here.
+[ 1120.64s ->  1129.18s] OK, if you if you look at them carefully, you'll realize that they're both yielding the same result of a one by one.
+[ 1129.18s ->  1134.60s] In fact, all of these are yielding a one by one as they should be.
+[ 1134.60s ->  1139.60s] But more importantly, the components are exactly the same, just transposed.
+[ 1139.60s ->  1142.60s] So those two values are actually exactly the same.
+[ 1142.60s ->  1148.60s] So what we can do is we can say partial derivative with respect to B.
+[ 1148.60s ->  1152.60s] Y transpose. Whoops, let me get rid of that ruler.
+[ 1152.60s ->  1155.60s] Y transpose Y minus two.
+[ 1155.60s ->  1157.60s] Now we can choose either one of these.
+[ 1157.60s ->  1160.60s] I'm going to choose the one with just plain old B.
+[ 1160.60s ->  1169.60s] So minus two Y transpose X B plus B transpose X transpose X B.
+[ 1169.60s ->  1175.37s] And now we can go ahead and partially differentiate.
+[ 1175.37s ->  1182.37s] So if we partially differentiate with respect to the B vector and there is no B, just like from ordinary calculus,
+[ 1182.37s ->  1185.37s] we are just going to call that a constant and get rid of it.
+[ 1185.37s ->  1189.37s] So Y transpose Y, there's no B. We're going to go ahead and get rid of that.
+[ 1189.37s ->  1194.37s] You can also think of it as Y being our true stock price observations.
+[ 1194.37s ->  1199.37s] Thus, we can't modify anything to change the error in that capacity.
+[ 1199.37s ->  1201.37s] So that's going to be zero.
+[ 1201.37s ->  1206.37s] Now, if we partially differentiate this guy with respect to B, then there's only one B.
+[ 1206.37s ->  1210.37s] So you can think of that as kind of differentiating Y equals X.
+[ 1210.37s ->  1215.37s] So if you take the derivative of X with respect to X, you're going to get one.
+[ 1215.37s ->  1217.37s] So we are just going to get rid of that.
+[ 1217.37s ->  1220.37s] We have minus two Y transpose X.
+[ 1220.37s ->  1224.37s] And then we have this guy here, which is a little more complicated, but also not really.
+[ 1224.37s ->  1227.37s] We have two Bs and we can look at that as a B squared.
+[ 1227.37s ->  1230.37s] So you can just look at it as like B times B.
+[ 1230.37s ->  1233.37s] Thus, we can go ahead and get rid of B transpose.
+[ 1233.37s ->  1238.37s] And then we're going to take that two, put it out in front, just like we would if it was X squared.
+[ 1238.37s ->  1243.37s] And we would have plus two X transpose X B.
+[ 1243.37s ->  1247.82s] And of course, this is all equal to zero.
+[ 1247.82s ->  1248.82s] Almost done here.
+[ 1248.82s ->  1259.82s] Now we're going to add Y transpose X to both sides and we will get X transpose X B is equal to Y transpose X.
+[ 1259.82s ->  1267.82s] And if you recall from linear algebra, we can easily get rid of this guy by multiplying both left sides of the equation
+[ 1267.82s ->  1270.82s] by the inverse of X transpose X.
+[ 1270.82s ->  1274.82s] So we have X transpose X inverse.
+[ 1274.82s ->  1282.33s] X transpose X B is equal to X transpose X inverse.
+[ 1282.33s ->  1287.33s] Y transpose X, these guys turn into the identity.
+[ 1287.33s ->  1292.33s] And now we have our solution.
+[ 1292.33s ->  1300.90s] B is equal to X transpose X inverse Y transpose X.
+[ 1300.90s ->  1302.90s] And we're done.
+[ 1302.90s ->  1305.90s] That is the solution to our linear regression.
+[ 1305.90s ->  1309.90s] Now, as I alluded to in the beginning of the video, I wanted to leave you with a thought provoking question.
+[ 1309.90s ->  1321.90s] As a machine learning engineer, data scientist, a quant, what have you, we're trained not to overfit our models to our sample data,
+[ 1321.90s ->  1330.90s] because if we overfit to our sample data, then we're not developing the most robust model as its performance may deteriorate on unseen data.
+[ 1330.90s ->  1331.90s] What do I mean by this?
+[ 1331.90s ->  1333.90s] Let's go back to our original scatter plot.
+[ 1333.90s ->  1335.90s] I'm actually going to go ahead and redraw it for us here.
+[ 1335.90s ->  1349.90s] So if we have a scatter plot, perhaps with company sentiments again on the X axis, and we have the stock price on the Y axis.
+[ 1349.90s ->  1360.90s] Instead of all of those points from the beginning of the video and that scatter plot, let's say we have one, two, three, four, five.
+[ 1360.90s ->  1366.48s] And let's go ahead and draw what, you know, just we'll eyeball it, our line of best fit.
+[ 1366.48s ->  1367.48s] Maybe it looks like this.
+[ 1367.48s ->  1368.48s] Okay.
+[ 1368.48s ->  1373.80s] Well, this is our least squares, our linear regression.
+[ 1373.80s ->  1375.80s] This is our line of best fit.
+[ 1375.80s ->  1376.80s] Right.
+[ 1376.80s ->  1384.80s] But we're not actually sure what the entirety of the population of this scatter plot looks like.
+[ 1384.80s ->  1385.80s] Right.
+[ 1385.80s ->  1388.80s] So maybe in the future, I'm going to put these in green.
+[ 1388.80s ->  1391.80s] Maybe in the future, we observe even more points.
+[ 1391.80s ->  1400.80s] And though the relationship is still positive and still linear, the line of best fit actually changes quite a bit.
+[ 1400.80s ->  1403.80s] And we actually have something that fits the data.
+[ 1403.80s ->  1405.80s] I'm going to do that in yellow.
+[ 1405.80s ->  1409.50s] Much better, say, like that.
+[ 1409.50s ->  1413.27s] Now, what are the consequences of this?
+[ 1413.27s ->  1432.27s] Well, if you were a statistician or a quant or any sort of machine learning engineer and you came up with this red line that fit the blue points and you said, hey, based on this model, we're trying to figure out what to do with this company sentiment that we observe right here.
+[ 1432.27s ->  1442.20s] And we don't know what the stock price is yet, but we want to use this model to help us kind of figure out statistically what it was going to be.
+[ 1442.20s ->  1455.29s] And if we use the red line, we go all the way up, we go here, we go over, then we would get our stock price estimate based on that that linear regression, that linear model.
+[ 1455.29s ->  1461.29s] Now, the problem is we know the green dots are the more more samples.
+[ 1461.29s ->  1466.29s] They're a better approximation of what the true distribution of the data looks like.
+[ 1466.29s ->  1471.29s] Thus, the yellow line actually fits better and provides a better prediction.
+[ 1471.29s ->  1481.29s] So if we have the yellow line, then instead of this being our approximation, we would get a better approximation right here.
+[ 1481.29s ->  1487.29s] So we're actually overestimating the stock price based on this red line.
+[ 1487.29s ->  1497.80s] So now this begs the question, you know, is there a way that we can improve this linear models statistical probabilistic estimating capacity?
+[ 1497.80s ->  1509.80s] And the answer to that is yes, via regularization, L1, L2 regularization corresponding to lasso and rigged regression, respectively.
+[ 1509.80s ->  1513.80s] And that is going to be a video for a future day.
+[ 1513.80s ->  1515.80s] I want to thank you guys so much for watching.
+[ 1515.80s ->  1518.80s] I hope you enjoyed this linear regression tutorial.
+[ 1518.80s ->  1522.80s] Please feel free to leave any questions or comments in the description below.
+[ 1522.80s ->  1525.80s] If you have anything specific, you can always feel free to shoot me an email.
+[ 1525.80s ->  1531.80s] If you have any suggestions for future videos, please, again, leave them in the comments, shoot me an email.
+[ 1531.80s ->  1539.80s] I've really enjoyed all of the suggestions thus far, and I'll do my best to get to all of them and continue building on these topics.
+[ 1539.80s ->  1541.80s] Please subscribe. It helps me out a lot.
+[ 1541.80s ->  1545.80s] Otherwise, I will see you guys in the next video.
+[ 1545.80s ->  1547.80s] I'll see you guys in the next video.

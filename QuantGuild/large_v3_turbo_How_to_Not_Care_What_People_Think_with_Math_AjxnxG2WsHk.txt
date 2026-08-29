@@ -1,0 +1,95 @@
+[    0.00s ->     7.54s] You shouldn't care what other people think of what you do or say, but why is that easier said
+[    7.54s ->    14.28s] than done? Well, there's plenty of math that explains what's going on here, and I'll use
+[   14.28s ->    22.38s] myself as an example, and I'll illustrate the framework that I use to reject the idea of social
+[   22.38s ->    29.12s] validation that really enables me to live my life however I like and produce the type of content
+[   29.12s ->    37.94s] that I want to. Here I am, Roman. I want to lead, teach, and inspire. That's exactly what I consider
+[   37.94s ->    45.00s] myself doing every single time I make a video lecture for you guys, and there are thousands of
+[   45.00s ->    53.44s] people listening to these lectures. Most of them are silent. Some of them leave kind comments,
+[   53.44s ->    61.39s] amazing. This is a great talk, so on and so forth, and then of course you get the small fraction of
+[   61.39s ->    69.49s] folks that leave the hateful comments. Maybe they're internet trolls. The list goes on, but why
+[   69.49s ->    79.05s] do these negative comments significantly outweigh the positive comments or even the silence of the
+[   79.05s ->    85.91s] majority? There's plenty of math that explains what's going on here. We have a bias towards
+[   85.91s ->    94.03s] negativity. When I was formerly a quant and we were focusing on trading news articles, if you visualize
+[   94.03s ->   101.09s] the distribution of sentiment in these news articles, we're talking about hundreds of millions of news
+[  101.09s ->   108.59s] articles. On average, they were tremendously negative. The entire distribution is just shifted
+[  108.59s ->   116.55s] to the negative side. Why is this the case? Negative news gets attention, and the only way
+[  116.55s ->   122.23s] those outlets are paid is with attention. You're not going to be as likely to click into a positive
+[  122.23s ->   129.63s] news article as you are a negative news article made evident by that distribution. So why do we have
+[  129.63s ->   136.99s] this bias towards negativity? Well, let's take a biological approach. Let's take a biological approach
+[  136.99s ->   146.90s] to understand this bias. If we are standing by a bush and we hear rustling, there is effectively one of
+[  146.90s ->   153.62s] two outcomes that partitions the entire sample space of possible outcomes from that rustling. Either
+[  153.62s ->   161.56s] it's nothing, and it doesn't matter if we check, it doesn't matter if we do nothing, or it's a tiger,
+[  161.56s ->   169.98s] and if you didn't check that rustling, you're going to get eaten. Now, 99.9999 whatever percent of the
+[  169.98s ->   178.98s] time, it's going to be nothing. But that very, very small fraction of the time where it could be the
+[  178.98s ->   187.80s] tiger is devastating. Let's take a look at the expected value of this rustling. We can break it up
+[  187.80s ->   195.22s] into the expected value of nothing happening or the expected value of the tiger. Well, if nothing
+[  195.22s ->   203.18s] happens, it really doesn't matter if we check that rustling or not. It literally does not matter. We can
+[  203.18s ->   212.84s] waste energy checking on the rustling or not. However, if there is a tiger, and we don't check out that rustling
+[  212.84s ->   224.20s] in the bushes, this is really, really, really bad. So, in general, we are better off fearing the tiger. I
+[  224.20s ->   232.86s] say better off arbitrarily, fearing the tiger. Wasting the energy to check on that rustling in the very,
+[  232.86s ->   243.84s] very small, unlikely case that there is a tiger in those bushes. But we selectively choose
+[  243.86s ->   256.00s] what to expose ourselves to in terms of tail risk. We choose to get in a car. We choose to go on
+[  256.00s ->   262.70s] airplanes, even though the tail risk can be more devastating than even quitting your job to start
+[  262.70s ->   271.96s] a business. So, why is this the case? Well, you can't live your life afraid of that tail risk. You
+[  271.96s ->   277.36s] wouldn't be able to do anything. You couldn't go to the grocery store. You couldn't go on a trip with
+[  277.36s ->   283.94s] your family. But you're still willing to expose yourself to that tail risk, aren't you? You're
+[  283.94s ->   288.54s] willing to get in a car. You're willing to go on an airplane. You're willing to leave your house,
+[  289.40s ->   297.78s] right? But, oh, the irony. We're willing to expose ourselves to that tail risk in order to
+[  297.78s ->   307.51s] go somewhere or go on vacation. But what is the downside risk of quitting your job? Is it going
+[  307.51s ->   314.65s] bankrupt? Losing all your money? Being homeless on the side of the street? Is that really what the
+[  314.65s ->   322.03s] tail risk is? The tail risk for driving a car is dying in a car accident or a plane crash. You're
+[  322.03s ->   328.17s] willing to expose yourself to that, but you're not willing to expose yourself to potential downside
+[  328.17s ->   335.43s] variation where you can rebuild? That makes almost no sense to me. But we're always better off
+[  335.43s ->   345.93s] fearing the tiger. And socially, in the cross-section, everybody is afraid of this tiger. And we are very
+[  345.93s ->   352.59s] eager to tell each other to fear the tiger. How many times have I heard at various contracts over
+[  352.59s ->   357.65s] the years, oh, you know, it's going to be hard if you leave this workplace to get another job,
+[  357.75s ->   365.09s] make a lateral move, move up. They feel that way about themselves. That's what's keeping them
+[  365.09s ->   373.48s] in their current role. Understanding first this idea of tail risk and the irony that everybody
+[  373.48s ->   381.80s] subjects themselves to potential severe tail risk on a daily basis selectively whilst just what?
+[  382.30s ->   389.40s] Ignoring tail risk that they can rebuild from? It makes almost no sense to me. This is the first
+[  389.40s ->   399.28s] component of demanding social validation, understanding that the tiger could exist. But this doesn't just
+[  399.28s ->   407.56s] apply to the idea of the tiger. This applies socially too. And putting these two pieces together paints the
+[  407.56s ->   417.54s] entire picture. If I'm standing here, and I observe people running away, it could be one of two things. It could
+[  417.54s ->   429.31s] be nothing. Or maybe it could be a fire. Most of the time, it's probably going to be nothing. 99.9999% of the time, it's
+[  429.31s ->   436.03s] going to be nothing. But in that very small fraction of the time where they're running away, these other
+[  436.03s ->   443.89s] people, it very well could be a fire. And that would be devastating to me, just like the rustling in the
+[  443.89s ->   452.97s] bushes. If I don't check for a fire after observing them running away, I'm arbitrarily worse off not
+[  452.97s ->   460.57s] fearing that fire. Because if I don't check, and it doesn't matter, then nothing happens. But if I don't
+[  460.57s ->   469.23s] check, and there is a fire, well, that is really, really bad. So socially, in this context, when we
+[  469.23s ->   477.29s] observe other people, as a herd doing something, we are better off following in their footsteps to some
+[  477.29s ->   488.00s] capacity. We're always better fearing the fire. So like I said earlier, this is generally how we think
+[  488.00s ->   495.22s] about risk, but really, really bad doesn't hold in general. The tail risk of a car crash or a plane
+[  495.22s ->   503.06s] crash is nowhere near the tail risk of failing a business that you start. But you're still willing to
+[  503.06s ->   512.56s] subject yourself to tail risk selectively. Both of these play into why we require social validation
+[  512.56s ->   520.48s] and the repercussions of going against the grain. The two key facets of social validation that I've
+[  520.48s ->   529.20s] found are the tiger and social judgment. These are the two examples that I gave you above, and they play
+[  529.20s ->   537.24s] into each other in a very effective way to keep you with the herd. Let's start with the tiger.
+[  539.07s ->   545.71s] I'm afraid of the tiger, so I won't do it. I'm afraid of getting in the car and crashing, so I won't do it.
+[  545.97s ->   551.29s] I'm afraid of getting on a plane and the plane crashing, so I won't do it. I'm afraid of quitting my
+[  551.29s ->   559.79s] job and starting a business, so I won't do it. Oh, again, the irony of selecting the tail risk
+[  559.79s ->   566.49s] you expose yourself to. Most will warn you of the tiger. If you're at a workplace and you're
+[  566.49s ->   571.45s] considering quitting, going against the grain and starting your own organization, all of your
+[  571.45s ->   576.61s] colleagues and superiors are certainly going to reject that idea, because what about the tiger?
+[  577.80s ->   583.04s] That justifies them staying with the current organization in their current role.
+[  583.04s ->   591.97s] You are unintentionally making a statement about what it is they're doing by opting to leave.
+[  593.12s ->   600.34s] The tiger is the first facet of social validation. It takes a tremendous amount of courage to not fear
+[  600.34s ->   607.62s] the tiger, to be willing to accept that tail risk. Even if it really isn't as significant as a car crash
+[  607.62s ->   614.26s] or a plane crash, the list goes on, you can rebuild from a failed business. You can't rebuild after a
+[  614.26s ->   624.33s] fatal car crash or a fatal plane crash. That's the first step. Overcoming the fear of the tiger. When
+[  624.33s ->   631.83s] they see that you are no longer afraid of the tiger, this is when they will begin to judge you.
+[  631.83s ->   641.53s] It is only half the battle. No longer fearing the tiger. He's just a insert arbitrary insult. What a
+[  641.53s ->   649.43s] insert arbitrary insult. That's just a insert arbitrary insult. Now you ask yourself, what if
+[  649.43s ->   659.80s] they're right? But wait a second, you got over the tiger. Why does this still carry weight? This goes
+[  659.80s ->   668.79s] back to the second example that we discussed. When you observe people running away, why are you more
+[  668.79s ->   677.15s] likely to follow that behavior? Because of the exposure to this tail risk. It is still tail risk,
+[  677.25s ->   686.07s] just in a different capacity. In one, there is no social context. In the latter, there is social
+[  686.07s ->   694.13s] context. So once you have gotten over the fear of the tiger and you've made a decision, you're still
+[  694.13s ->   705.26s] subject to the tiger in a social context. You receive these insults. What if they're right? That
+[  705.26s ->   715.08s] is the potential for the fire. This is the next tiger that you have to get over. Rejecting social
+[  715.08s ->   723.64s] validation is much easier when you understand this framework. Essentially, how can you expect
+[  723.64s ->   730.00s] a baby not to cry, right? Your colleagues, your coworkers, your superiors, your peers, your friends,
+[  730.06s ->   738.34s] your family, they're scared of the tiger and they're scared of the fire. When you overcome the fear of the
+[  738.34s ->   745.45s] tiger, that is literally half of the battle. Half of the battle in rejecting the need,
+[  745.45s ->   754.63s] to be validated socially. The other half comes from rejecting the people that are still afraid of
+[  754.63s ->   766.46s] the tiger. Jealous that you aren't anymore. Don't be afraid of the tiger. Don't let those who still are
+[  766.46s ->   767.86s] bother you.

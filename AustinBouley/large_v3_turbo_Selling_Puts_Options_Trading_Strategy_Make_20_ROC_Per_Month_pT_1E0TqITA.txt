@@ -1,0 +1,240 @@
+[    0.49s ->     6.35s] Hey, if you're looking for a way to generate monthly income with a larger account without
+[    6.35s ->    10.45s] having to deal with crashes, large losses, and you want to do so in a way that isn't
+[   10.45s ->    13.05s] hard to manage, like you think of a strangle, you think of a struggle, you think of all
+[   13.05s ->    16.89s] these trades, and there's so many complex things going on, if you just want one simple
+[   16.89s ->    23.13s] type of trade to grow your account or generate income on a consistent basis, this is the
+[   23.13s ->    23.55s] course for you.
+[   23.59s ->    26.83s] I'm going to be diving deep into cash-secured push.
+[   26.83s ->    30.85s] The idea that you're betting that a stock will stay above a certain level, and if it
+[   30.85s ->    32.39s] does, you make money.
+[   32.83s ->    37.23s] Unlike a credit spread, when you bet above this level, you can go way further away from
+[   37.23s ->    41.65s] the stock, which gives you a way higher win rate and allows you to collect more money at
+[   41.65s ->    42.81s] the same time.
+[   43.11s ->    48.47s] Now, again, this is for larger accounts because it does require a decent amount of money to
+[   48.47s ->    50.81s] cover these contracts.
+[   51.07s ->    55.73s] So, for instance, when you're doing a contract on SPY, it requires roughly $6,000 to $10,000
+[   55.73s ->    58.11s] to put one of these trades on.
+[   58.43s ->    61.99s] And if you're trying to do one trade every single week, then again, if you're going to
+[   61.99s ->    68.29s] have two trades on at a time before they recycle over, then you're going to need at least $20,000
+[   68.29s ->    70.75s] to execute this trading strategy correctly.
+[   71.35s ->    76.03s] Anyways, this, like I said, is a broker requirement, which you need around $20,000 to do.
+[   76.11s ->    79.91s] You need margin enabled, and you need your broker to allow you to sell puts.
+[   79.91s ->    84.01s] So, now that we've covered the fundamentals of what you need, let me walk you through
+[   84.01s ->    85.33s] how this works.
+[   85.91s ->    88.23s] So, again, what are cash-secured puts?
+[   88.37s ->    91.71s] Cash-secured puts are basically betting that a stock will stay above a certain level.
+[   92.15s ->    95.23s] So, let's say that I think that the stock will stay above this level.
+[   95.51s ->    97.17s] If it does, I make money.
+[   97.51s ->    99.25s] And so, again, that's how amazing that is.
+[   99.33s ->   100.97s] But not only that, we can take it this far out.
+[  101.15s ->   107.91s] Imagine being super far away from the stock price, like 6% away, and still making money.
+[  107.91s ->   113.83s] This means that if the stock drops 6%, you're still able to make money because it's closing
+[  113.83s ->   114.83s] above your level.
+[  115.01s ->   117.17s] And so, that's what I wanted to share with you guys.
+[  117.23s ->   120.05s] It's called a cash-secured put, where you're just selling a single put.
+[  120.21s ->   124.39s] You collect all the money you get, and then you get to manage it from there.
+[  124.45s ->   125.99s] And you don't have different contracts.
+[  126.29s ->   127.59s] You don't have anything like that.
+[  127.63s ->   131.15s] You have one contract, one put contract, and that's the only thing you have to manage.
+[  131.43s ->   134.61s] So, it's very simple and has a super high win rate.
+[  134.61s ->   139.31s] So, again, let me walk you through what the specifics of this trade are.
+[  139.77s ->   145.03s] You're going to be selling puts, and you're going to be doing so at a 22 days until expiration.
+[  145.17s ->   150.81s] You're looking to manage trades or sell trades that have 22 days until they are expiring.
+[  151.11s ->   154.33s] So, when you're looking at the options chain, it shows you the date and shows you how much
+[  154.33s ->   155.51s] time left in days.
+[  155.87s ->   158.55s] And so, again, you're looking for the one that's closest to 22 days.
+[  158.55s ->   163.07s] 22, 23, 24 in that area is where you want to be selling puts.
+[  163.15s ->   165.15s] Now, again, we'll be doing this on SPY.
+[  165.25s ->   170.63s] You can also do this on SPX and the ES futures if you want a greater tax advantage as well
+[  170.63s ->   171.95s] as capital efficiency.
+[  172.27s ->   174.31s] So, again, 22 days out.
+[  174.61s ->   176.41s] You'll be doing a 15 delta.
+[  176.83s ->   181.89s] This shows you how far from the stock you're going, which, again, in most markets, you're
+[  181.89s ->   187.11s] going roughly 5% to 6% to even more away from the stock price.
+[  187.17s ->   191.95s] You have a really high win rate with that, and we're going to be managing at 50%.
+[  191.95s ->   198.57s] So, that means we're going to hold until expiration unless we can take a 50% profit.
+[  198.75s ->   202.93s] So, we're going to have a 50% profit, or we're going to hold until expiration, which
+[  202.93s ->   204.31s] I'm going to call EXP for now.
+[  204.97s ->   206.57s] Now, how do we manage our stop loss?
+[  206.65s ->   207.63s] This is obviously a take profit.
+[  207.73s ->   208.79s] How do we manage a stop loss?
+[  208.79s ->   211.97s] That is going to be a 400% stop loss.
+[  212.07s ->   214.35s] So, let's say we enter the trade at $1.
+[  214.59s ->   219.25s] When it gets to $4, that's when we'll exit the trade and have a loss of $300.
+[  219.67s ->   221.11s] So, that's what we're looking at.
+[  221.19s ->   223.65s] This is how the trade is set up.
+[  223.87s ->   229.71s] Now, if I plug all these details into a back tester and pull it up for SPX, I will see the
+[  229.71s ->   230.91s] exact data that I'm seeing.
+[  231.25s ->   233.13s] A 94% win rate.
+[  233.21s ->   233.63s] That's right, guys.
+[  233.63s ->   235.31s] You have a 94% win rate.
+[  235.57s ->   237.75s] However, that's not what we're really looking at.
+[  237.75s ->   242.15s] We want to look at, okay, obviously, in most uptrending markets, this thing performs
+[  242.15s ->   243.35s] very, very well.
+[  243.59s ->   248.85s] But what we want to understand and look at is where does cash-secured puts fail?
+[  249.21s ->   252.51s] Where does the strategy underperform the market and lose a lot of money?
+[  252.97s ->   258.55s] Well, during crash periods is one where our profit went from $262,000 all the way down
+[  258.55s ->   261.43s] to $120,000 or $90,000, $80,000.
+[  261.43s ->   267.13s] So, it lost over $200,000, basically, or around there for this P&L.
+[  267.23s ->   268.67s] So, that's very important to know.
+[  269.03s ->   272.37s] We need to make sure we stay out during crashes, at least major ones.
+[  272.81s ->   277.25s] Also, indecisive and slow-down trending markets, it does not perform well.
+[  277.49s ->   280.77s] When we're trading a strangle, it performs well because we're also selling a call and
+[  280.77s ->   284.45s] collecting that premium, but we only have the put here in this instance.
+[  284.61s ->   287.43s] So, we have to be aware of slow-down trending markets.
+[  287.43s ->   289.69s] So, let me show you how to be aware of that.
+[  290.37s ->   293.79s] Again, we can see that all in the CSCT indicator, which I'll show you at the end of this video
+[  293.79s ->   294.81s] how to get for free.
+[  295.29s ->   301.67s] But again, when the market is pushing into this upper range, that is when a crash is highly
+[  301.67s ->   302.31s] likely.
+[  302.43s ->   306.19s] So, that's when we want to stay out of our positions, especially put positions because
+[  306.19s ->   308.87s] those make money to the upside, again, when we're selling them.
+[  309.29s ->   313.87s] So, if we come over here, here's a point of failure where I just mentioned how the market
+[  313.87s ->   318.75s] had a very big loss, especially with the cash-secured put strategy.
+[  319.21s ->   323.23s] And so, when we do that, you can see here that it crashed and we would have lost, what was
+[  323.23s ->   324.85s] it, around $180,000?
+[  325.55s ->   328.21s] Well, with this, we now don't have to lose anything.
+[  328.41s ->   328.63s] Why?
+[  328.75s ->   333.25s] Well, because when the market pushes in above this range, when it starts pushing up above
+[  333.25s ->   337.21s] this upper range, we exit all our cash-secured put.
+[  337.21s ->   340.47s] So, if you have a cash-secured put, you want to exit the trade.
+[  340.47s ->   346.31s] Now, you're able to exit the trade, which allows you to stay out during this huge crash.
+[  346.43s ->   347.99s] So, what you do is you get out of the market.
+[  348.11s ->   350.17s] If you really want to, you can put on a call.
+[  350.47s ->   354.35s] You can sell a call around this level to make money from the downside.
+[  354.73s ->   358.07s] But what you're doing is when it gets above this level, you exit the trade.
+[  358.45s ->   360.97s] You wait for it to cross down below this blue line.
+[  361.33s ->   366.51s] And then, from there, you wait 21 days for the market to adjust and see where it's going
+[  366.51s ->   366.95s] from there.
+[  366.95s ->   370.17s] Then, you can start picking up your cash-secured strategy again.
+[  370.47s ->   372.69s] You can see here that saves you from crashes like this.
+[  373.03s ->   375.05s] And, again, it saves you from a crash like this.
+[  375.09s ->   379.29s] It would not save you from a period like this or the recent period where it's slowly downtrending
+[  379.29s ->   380.57s] because it never broke above.
+[  380.99s ->   387.17s] But it covers our major losses, our huge outlier losses that lead to the greatest losers we're
+[  387.17s ->   392.83s] able to avoid because of these mathematical levels that we can see on the CSCT indicator
+[  392.83s ->   395.41s] under the proprietary trending ban section.
+[  395.41s ->   398.11s] See, right here, the proprietary trending ban is what we're looking at.
+[  398.11s ->   402.04s] Now, another advanced way of doing it is looking at the minor trend.
+[  402.26s ->   403.78s] What is our short-term trend?
+[  403.86s ->   407.20s] So, again, this ban shows our upper levels.
+[  407.56s ->   412.34s] But if we want to get out of the sideways market, the downward sideways market that also ends
+[  412.34s ->   414.66s] in losses, we will trade less often.
+[  414.66s ->   422.04s] But what we can do is we can remove the upper bands and then only look at this blue-white-gray line.
+[  422.40s ->   428.48s] So, what I mean by this is when it turns blue, that's when we can enter cash-secured puts using
+[  428.48s ->   430.26s] the same criteria that I just gave you.
+[  430.50s ->   436.08s] When it turns white, you can stay out of the position or actually start to close your position.
+[  436.08s ->   443.10s] So, that way, you stay out of down-trending moves like this where a few of the smaller losses come
+[  443.10s ->   443.60s] into play.
+[  443.90s ->   447.22s] So, you'll never be able to eliminate all your losses and you're trading less often so you won't
+[  447.22s ->   450.36s] make as much money, but you do get to avoid these periods.
+[  450.48s ->   452.16s] So, you get to pick how you play this.
+[  452.52s ->   456.20s] Overall, even if you do not do anything, it's a great strategy.
+[  456.28s ->   458.14s] You have a 94% win rate.
+[  458.14s ->   462.88s] And as you start to weave in these trend-following techniques, indicators, and methods, you'll
+[  462.88s ->   467.28s] be able to bump up your win rate and avoid most of the major losses, which is what I recommend
+[  467.28s ->   470.02s] when it breaks above these upper levels.
+[  470.44s ->   475.26s] So, that's what I'm looking at for this market and that's what I'm understanding here.
+[  475.50s ->   477.64s] That's how I trade cash-secured puts.
+[  477.70s ->   482.76s] I will admit, I trade strangles more often than cash-secured puts, but they are still a very
+[  482.76s ->   485.82s] great and viable trading strategy.
+[  485.82s ->   491.22s] So, that is the difference between looking at this here as we can actually piece together
+[  491.22s ->   492.70s] these major losing periods.
+[  492.82s ->   496.76s] You can see this major losing period here we would have gotten out of.
+[  497.16s ->   500.78s] And so, this one we would have gotten out of as well, but all these minor ones we would
+[  500.78s ->   502.76s] have been in because we can't avoid everything.
+[  503.24s ->   507.78s] So, again, with that, we would have skyrocketed our return and done a lot better.
+[  507.88s ->   510.96s] But anyways, that's what we're looking at from a return perspective.
+[  510.96s ->   514.46s] You can see here that's a 188% return on capital.
+[  514.46s ->   516.82s] And that's a really great trade.
+[  516.82s ->   521.86s] So, if you're looking for a trade on a larger account, this should be one that you look into.
+[  522.64s ->   525.38s] Now, what about sizing information, right?
+[  525.56s ->   528.50s] We're only as good as how well we size.
+[  528.58s ->   531.44s] Because if we size up too large, we're going to take a huge loss and wipe out our entire
+[  531.44s ->   533.20s] account and we can no longer have fun trading.
+[  533.36s ->   535.84s] So, we need to make sure we size correctly.
+[  535.84s ->   540.62s] And the way that we size here is by using the 5% to 10% rule.
+[  540.88s ->   543.34s] Again, if you're newer, go to the lower side.
+[  543.42s ->   544.60s] Go to the 5% range.
+[  544.66s ->   545.78s] So, let me show you how this works.
+[  545.82s ->   551.48s] So, if we have a $20,000 account and we're new, so we're using the 5% trading rule, that
+[  551.48s ->   552.96s] means I'm going to do 5% here.
+[  553.02s ->   554.62s] And this shows us how much I should risk per trade.
+[  554.84s ->   557.88s] That's going to come out to roughly $1,000.
+[  558.42s ->   561.98s] So, now we have $1,000 as the max risk I can take.
+[  562.28s ->   564.04s] Now, what is my stop loss?
+[  564.08s ->   566.12s] My stop loss is 400%.
+[  566.12s ->   570.80s] So, if my stop loss is 400%, then how should I manage this?
+[  570.88s ->   576.18s] Well, it's going to be 1,000 divided by, let me just pull up an EC calculator here.
+[  576.18s ->   581.66s] It's going to be 1,000, oops, not dashes, 1,000 divided by 4 as a 400%.
+[  581.66s ->   587.32s] That shows me that I need to enter in a credit spread around the $250 range.
+[  587.32s ->   591.32s] It's what I should be entering in at based on my risk.
+[  591.66s ->   593.02s] And so, that's what I'm looking at.
+[  593.12s ->   598.98s] And so, again, if I can only enter in for around $100, but I need to put on around $200,
+[  599.22s ->   601.86s] then that means that to have that same risk, I should do two.
+[  602.76s ->   608.56s] I need to sell two puts where I collect $100 each so that my total credit that I'm collecting
+[  608.56s ->   609.40s] is around $200.
+[  609.86s ->   612.16s] And now I know my max risk is around here.
+[  612.42s ->   615.20s] But again, if I only sell one spread, then my risk is a lot less.
+[  615.26s ->   616.24s] So, that's fine too.
+[  616.24s ->   622.20s] It's okay to size down, especially as you're learning how these work, how Theta Decay takes
+[  622.20s ->   625.08s] into account different factors and things like that.
+[  625.16s ->   627.74s] So, anyways, now how do we manage these trades?
+[  628.00s ->   630.38s] Well, there's different ways to manage these positions.
+[  630.74s ->   634.44s] So, let's say that we have a trade on and it starts to go against me.
+[  634.74s ->   635.54s] What do I do?
+[  635.54s ->   643.66s] Well, you can roll down the put option and wait and give yourself time for the trade to
+[  643.66s ->   644.32s] go in your favor.
+[  644.32s ->   646.82s] However, I don't like to do that.
+[  646.92s ->   649.24s] I just like to take my loss and move on to the next trade.
+[  649.32s ->   650.66s] It's great for a mental reset.
+[  651.18s ->   653.94s] So, again, I prefer that I have that mental reset.
+[  654.06s ->   656.92s] But you can also roll out your puts or roll down your puts.
+[  657.22s ->   658.38s] You can roll out in time.
+[  658.46s ->   662.08s] You can also roll down if you want so that you can hopefully start to break even and collect
+[  662.08s ->   662.50s] a credit.
+[  662.62s ->   663.88s] But most times, you know, you can't.
+[  663.88s ->   668.64s] So, again, my recommendation is to just take the stop loss.
+[  668.76s ->   673.94s] Now, again, guys, if you want access to this indicator, to traders that are trading the
+[  673.94s ->   678.08s] exact way that I just taught you so that you can learn from them, take trades with them
+[  678.08s ->   678.86s] and everything like that.
+[  678.88s ->   681.72s] And you also want coaching from me on a weekly basis.
+[  681.72s ->   686.48s] You can get a free trial, exclusive free trial link over there down in the description
+[  686.48s ->   687.46s] somewhere on this page.
+[  687.58s ->   689.06s] You can join for free.
+[  689.42s ->   693.52s] And again, even if you cancel your trial and you don't continue after, you will still keep
+[  693.52s ->   694.78s] this indicator for life.
+[  694.86s ->   695.26s] That is right.
+[  695.34s ->   698.58s] You get this indicator and the tools that I will give you for free.
+[  698.70s ->   700.72s] You get to keep them even if you cancel your trial.
+[  700.80s ->   703.78s] But I don't know why you would because you're going to love our program because we're all
+[  703.78s ->   708.22s] trading like this to help each other become better traders and using proof of reliable
+[  708.22s ->   710.00s] systems so we don't rely on our biases.
+[  710.48s ->   712.26s] All right, guys, thank you so much for watching this video.
+[  712.64s ->   712.92s] Congrats.
+[  713.00s ->   716.58s] You're watching this video during the Christmas special, which means that you can get access
+[  716.58s ->   723.04s] to our 10% credit spreads yearly program, typically priced at $997 for 50% off.
+[  723.04s ->   725.04s] I've never done an offer like this before.
+[  725.14s ->   727.24s] And so trust me, you won't want to miss out.
+[  727.38s ->   728.62s] So again, what do you get?
+[  728.68s ->   733.64s] You get the yearly plan, which includes access to our alerts for both credit spreads, cash
+[  733.64s ->   735.00s] secured puts and strangles.
+[  735.08s ->   738.40s] So the cash secured puts one is probably the one you want to focus on because again, that's
+[  738.40s ->   739.18s] what we just covered.
+[  739.30s ->   744.76s] It also gives you access to our private discord community, weekly coaching, and so much more
+[  744.76s ->   745.90s] to help you become a better trader.
+[  746.06s ->   751.38s] Not only that, you get access to the CSCT indicator for life that I mentioned or that we used in this
+[  751.38s ->   755.16s] training video, you get access to my swing trading software for life as well.
+[  755.48s ->   758.98s] Again, that's a $5,000 value that you get access to for free.
+[  759.04s ->   762.56s] So if you're learning how to research stocks and you want to make better long-term investment
+[  762.56s ->   764.06s] decisions, that will do that for you.
+[  764.50s ->   767.36s] And bonus number three is you have 48 weeks of coaching with me.
+[  767.48s ->   770.62s] So again, all that is 50% off, typically $997.
+[  770.62s ->   776.84s] But when you use code CHRISTMAS50, you can get it for only $498.51.
+[  777.20s ->   782.50s] So if that is something you are interested, please click the link down to the side over
+[  782.50s ->   787.32s] there, which is only up for Christmas and use the CHRISTMAS50 coupon code.
+[  787.56s ->   791.46s] Now, again, this is only good until December 31st at midnight, then it's going away.
+[  791.58s ->   793.06s] So anyways, I hope you take advantage of this.
+[  793.12s ->   798.56s] If you're a serious trader who wants to trade these strategies to do so profitably in 2024.
+[  798.56s ->   800.32s] All right, guys, see you later.
+[  800.48s ->   801.64s] Good luck and don't miss out.

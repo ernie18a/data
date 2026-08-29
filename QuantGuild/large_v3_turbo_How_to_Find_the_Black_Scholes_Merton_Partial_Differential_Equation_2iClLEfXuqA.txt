@@ -1,0 +1,312 @@
+[    1.46s ->     7.47s] Hey YouTube, it's Roman. Today I want to talk about the Black-Scholes-Merton partial differential equation.
+[    7.95s ->    14.19s] I'm going to be running through the derivation technically, subtly explaining some of the different steps that I'm going through
+[   14.19s ->    20.21s] while providing a qualitative explanation of each of the variables and what they mean.
+[   20.75s ->    30.13s] And I think that is going to nicely tie into a future video on the solution to the partial differential equation to produce an options price.
+[   30.13s ->    34.87s] Back on the iPad today, let's go ahead and get started and develop this notion of a portfolio.
+[   35.19s ->    40.45s] So I'm going to say our portfolio pi is going to consist of an equity derivative.
+[   40.63s ->    44.45s] You can think of this as a call option. And we're going to represent that by D.
+[   45.11s ->    50.15s] Now D is a function of the underlying S in time.
+[   50.85s ->    56.29s] And then we're also going to be short the underlying. So we're going to say minus S.
+[   56.29s ->    60.17s] So in this initial construction, we have our portfolio here.
+[   60.41s ->    65.93s] We have the value of our equity derivative, and then we have the equity itself.
+[   66.21s ->    69.37s] So we have a long position in the derivative.
+[   69.79s ->    72.47s] We have a short position in the underlying stock.
+[   72.67s ->    77.57s] And this combination here is our portfolio pi.
+[   78.55s ->    82.09s] Let's see if we can work some magic to remove the randomness from this portfolio.
+[   82.09s ->    88.15s] Now, what do I mean by that? Well, first, we need to assume that the underlying equity follows some sort of model.
+[   88.25s ->   100.09s] So we're just going to go with geometric Brownian motion, which is given by DSS mu DT plus sigma DWT, where WT is a standard Brownian motion.
+[  100.09s ->   109.37s] Okay. So the only randomness from this portfolio is induced by the equity and this Brownian motion here.
+[  109.71s ->   111.51s] Everything else is deterministic.
+[  111.91s ->   123.17s] So our goal is going to be to see if we can create a combination of this equity derivative and equity to remove this Brownian motion term.
+[  123.37s ->   127.93s] To accomplish this, let's look at a small change in our original portfolio.
+[  127.93s ->   135.67s] So we can do that by specifying mathematically D pi, which represents a small change in that original portfolio.
+[  136.03s ->   139.83s] Now we have to consider a small change in each of the components of that portfolio.
+[  140.27s ->   145.07s] So I'm going to say D, D is a function of S and T, less DS.
+[  145.55s ->   149.83s] So we're looking at a small change in our short position of the underlying equity,
+[  150.07s ->   154.29s] and we're looking at a small change in our long position of our equity derivative.
+[  154.75s ->   156.85s] Fortunately for us, we've seen DS before.
+[  156.85s ->   162.87s] We assume geometric Brownian motion, thus DS is given by this guy right here.
+[  162.87s ->   167.17s] If we were to multiply this S to both sides of the equation.
+[  168.06s ->   175.34s] Now, if we look at our equity derivative pricing function, we can see that it is a function of S.
+[  175.74s ->   177.62s] That is the underlying equity.
+[  177.76s ->   181.04s] And we assume that the underlying equity follows a geometric Brownian motion.
+[  181.04s ->   196.61s] So we can see that this Brownian motion term is inducing randomness in our portfolio via our short position in the equity itself and the long position in our equity derivative.
+[  196.61s ->   200.07s] So we know DS, what the heck is DD?
+[  200.67s ->   206.69s] Well, Eto's Lemma allows us to find the differential of a time-dependent function of a stochastic process.
+[  206.69s ->   216.77s] Thus, we can actually rewrite DD as the partial derivative of D with respect to time,
+[  217.45s ->   219.51s] multiplied by a time differential,
+[  219.97s ->   229.47s] plus the partial derivative of D with respect to the underlying S times the differential of S,
+[  229.47s ->   236.51s] plus one-half the partial derivative with respect to S,
+[  236.93s ->   240.23s] this time the second-order partial derivative,
+[  241.61s ->   245.21s] multiplied by the differential of S squared.
+[  245.69s ->   248.45s] I want to pull it back in for a second and say,
+[  248.55s ->   250.59s] I know that this may look a little scary.
+[  250.71s ->   252.59s] It may look like a pretty big derivation,
+[  252.59s ->   258.77s] but you don't necessarily have to completely understand Eto's Lemma and its derivation in its entirety
+[  258.77s ->   261.43s] to understand its application in this setting.
+[  261.79s ->   267.17s] All we're saying is Eto's Lemma allows us to find this part of the equation,
+[  267.55s ->   272.33s] which is the differential of our equity derivative pricing function.
+[  272.79s ->   277.45s] So we're saying a small change in our equity derivative value
+[  277.45s ->   280.89s] is given by this guy here,
+[  281.23s ->   283.53s] which is given to us by Eto's Lemma.
+[  283.77s ->   286.35s] Now that we know what makes up a change in our equity derivative,
+[  286.59s ->   288.73s] I want to highlight two aspects of that change.
+[  289.17s ->   291.61s] Mainly, I want to highlight this term and this term,
+[  291.89s ->   295.23s] because those are the only two terms that are inducing randomness
+[  295.23s ->   298.61s] in the change of our equity derivative's value.
+[  298.61s ->   302.15s] We know that the only other source of randomness in this portfolio
+[  302.15s ->   307.33s] is also given by our equity position via geometric Brownian motion.
+[  307.45s ->   312.31s] Starting with the second term here, I want to consider ds squared.
+[  312.73s ->   315.89s] So if you recall earlier, we followed geometric Brownian motion,
+[  316.33s ->   321.49s] which is given by ds s mu dt sigma dw t.
+[  322.07s ->   326.61s] And if we are to multiply both sides of the equation by s,
+[  326.61s ->   328.91s] then we're actually given ds.
+[  328.91s ->   339.33s] So we can find ds squared easily by saying mu dt s plus sigma dw t s squared.
+[  339.79s ->   345.00s] Now we can very simply just FOIL and find all of these terms.
+[  345.42s ->   349.48s] So our first term is going to be mu dt s squared.
+[  349.48s ->   357.97s] The second term is going to be 2 mu dt s squared sigma dw t.
+[  358.37s ->   366.30s] And then the last term is going to be sigma dw t s squared.
+[  366.68s ->   368.46s] Just like I brought in Eto's lemma,
+[  368.52s ->   370.42s] I'm going to bring in some rules from stochastic calculus.
+[  370.42s ->   376.66s] Interestingly enough, dt squared is equal to dt dw t,
+[  377.08s ->   378.08s] which is equal to 0.
+[  378.86s ->   382.12s] And dw t squared is equal to dt.
+[  382.78s ->   384.74s] So if we consider these rules here,
+[  385.02s ->   387.16s] we see the squared goes to this dt.
+[  387.42s ->   388.28s] This guy goes away.
+[  388.80s ->   391.10s] We see dt times dw t.
+[  391.46s ->   392.42s] This guy goes away.
+[  392.42s ->   395.48s] And we'll see this square goes to dw t.
+[  396.14s ->   402.28s] Thus, we're left with sigma squared dt s squared.
+[  402.98s ->   408.78s] So that is going to be the same thing as ds squared.
+[  409.30s ->   412.04s] I want to keep the scope of the goal in mind,
+[  412.48s ->   414.40s] especially after going through some math.
+[  414.58s ->   417.14s] So we still want to create a risk neutral portfolio,
+[  417.48s ->   419.80s] but we haven't actually done anything yet.
+[  419.80s ->   423.02s] We're still trying to find the portfolio differential.
+[  423.70s ->   427.02s] And we used Eto's lemma and some tools from stochastic calculus
+[  427.02s ->   429.74s] to help us develop some of the components
+[  429.74s ->   432.52s] to that change in equity derivative term
+[  432.52s ->   435.52s] that we otherwise wouldn't have been able to find.
+[  435.74s ->   437.48s] Having solved for ds squared,
+[  437.66s ->   440.58s] we can rewrite the small change in our equity derivative
+[  440.58s ->   445.04s] as dd as a function of the underlying end time
+[  445.04s ->   448.58s] is equal to the partial derivative of d
+[  448.58s ->   450.84s] with respect to t times the time differential
+[  450.84s ->   453.84s] plus the partial derivative of d
+[  453.84s ->   455.64s] with respect to the underlying
+[  455.64s ->   457.74s] times the differential of the underlying
+[  457.74s ->   462.10s] plus one-half the second-order partial derivative
+[  462.10s ->   464.32s] with respect to the underlying.
+[  464.88s ->   467.86s] But this time, instead of ds squared,
+[  468.14s ->   469.70s] we know what ds squared is.
+[  469.80s ->   472.66s] It is sigma squared dt s squared.
+[  472.66s ->   477.56s] And I'm going to write that as sigma squared s squared dt.
+[  478.20s ->   481.56s] So now we can start to turn our attention
+[  481.56s ->   484.44s] towards this second term here
+[  484.44s ->   488.06s] because using our knowledge of stochastic calculus,
+[  488.06s ->   491.62s] we were able to determine that the only term
+[  491.62s ->   495.64s] in our equity differential that's receiving randomness
+[  495.64s ->   499.30s] induced by geometric Brownian motion is this guy here.
+[  499.30s ->   501.90s] This is actually deterministic.
+[  502.38s ->   505.50s] We know what the spot price is of the underlying asset
+[  505.50s ->   506.88s] whenever we want.
+[  507.18s ->   508.66s] You can always hop on Yahoo Finance
+[  508.66s ->   512.52s] and figure out what the price of some arbitrary asset is.
+[  513.06s ->   515.86s] And then this is also deterministic in nature.
+[  516.00s ->   518.82s] So the only portion of our equity derivative
+[  518.82s ->   522.08s] that is receiving randomness via geometric Brownian motion
+[  522.08s ->   524.98s] is going to be this second term here.
+[  525.30s ->   527.62s] This is where things start to get very cool.
+[  527.62s ->   529.78s] So if you recall our original portfolio,
+[  530.44s ->   535.70s] pi is equal to ds t less s.
+[  535.96s ->   538.88s] So we have this long position equity derivative
+[  538.88s ->   541.88s] and we have the corresponding short position in the equity.
+[  542.26s ->   545.10s] And that is going to be our portfolio pi.
+[  545.78s ->   548.22s] Well, if I was to say to you,
+[  548.70s ->   552.16s] hey, how many shares do you have to hold in your portfolio?
+[  552.54s ->   556.12s] You would say, hey, Roman, I don't have to hold anything.
+[  556.12s ->   558.76s] I can hold whatever I'd like to whenever I want.
+[  558.88s ->   559.74s] I can hop on E-Trade.
+[  560.02s ->   561.96s] I can sell my Microsoft shares.
+[  562.16s ->   563.90s] I can short Microsoft shares.
+[  564.00s ->   566.40s] I could do, you know, whatever it is I'd like to do.
+[  566.78s ->   571.10s] And that's my main point at this stage in this proof
+[  571.10s ->   575.34s] is all of the math that we've done up until this point
+[  575.34s ->   578.86s] has just been contingent on these two components of our portfolio,
+[  578.86s ->   581.72s] not the quantity of these two components.
+[  581.72s ->   586.30s] You're free to short however many shares of stock you would like.
+[  586.88s ->   590.34s] So in order to denote that in this portfolio's construction,
+[  590.68s ->   592.82s] instead of just saying minus s,
+[  593.14s ->   594.88s] I'm going to say minus ps,
+[  595.50s ->   598.96s] where p represents the amount of shares that we're shorting.
+[  599.40s ->   601.78s] Now consider the portfolio differential.
+[  601.78s ->   605.08s] If we were to rewrite the portfolio differential,
+[  605.26s ->   612.52s] d pi is equal to d d s t minus p d s,
+[  612.66s ->   614.38s] because p is just a constant.
+[  614.52s ->   617.00s] So we're allowed to distribute that differential through.
+[  617.56s ->   620.02s] Take a look at what happens.
+[  620.48s ->   624.02s] We only have randomness induced by d s,
+[  624.14s ->   626.00s] the geometric Brownian motion term.
+[  626.00s ->   631.78s] But where is d s in the differential of our portfolio?
+[  632.56s ->   635.24s] Well, it only occurs in two places.
+[  635.66s ->   643.04s] If you look, d d s t is given here by all three of these terms.
+[  643.86s ->   646.74s] And the only place that d s occurs
+[  646.74s ->   651.52s] in the equity derivatives differential is right here.
+[  653.38s ->   656.80s] Similarly, in our short position of the equity,
+[  656.80s ->   658.92s] the only place that d s occurs,
+[  659.16s ->   662.86s] and it's the only component, is right here.
+[  663.71s ->   667.43s] But we have the freedom to choose a p.
+[  669.12s ->   671.46s] So if we have the freedom to choose a p,
+[  671.84s ->   673.84s] and p is already negative,
+[  673.96s ->   676.08s] given we have a short position in this equity,
+[  676.60s ->   681.60s] what if we chose p to be the partial derivative of d
+[  681.60s ->   683.00s] with respect to the underlying?
+[  683.00s ->   686.04s] Then, if we were to do that,
+[  686.72s ->   689.30s] both of the d s's would cancel out.
+[  689.84s ->   692.98s] The notion of removing randomness
+[  692.98s ->   695.18s] caused from geometric Brownian motion
+[  695.18s ->   696.66s] via the underlying asset
+[  696.66s ->   699.06s] is a delta hedge.
+[  699.12s ->   699.74s] That's what it's called.
+[  699.80s ->   700.82s] It's called a delta hedge.
+[  700.96s ->   702.50s] So essentially what we're doing
+[  702.50s ->   705.80s] is we're developing a delta hedge in our portfolio.
+[  706.36s ->   708.00s] Let's just go ahead and do it mathematically.
+[  708.00s ->   709.48s] We're going to hold p shares.
+[  709.48s ->   712.34s] So we're going to define p as the partial derivative
+[  712.34s ->   715.38s] of d with respect to the underlying,
+[  716.00s ->   718.98s] which is synonymous with what the literature calls delta.
+[  720.10s ->   722.48s] And delta is a known value.
+[  722.48s ->   726.10s] So we can hold delta shares of the stock.
+[  726.52s ->   728.64s] And that implies that our portfolio differential
+[  728.64s ->   731.30s] is now going to consist of,
+[  731.68s ->   732.88s] again, from Ito's lemma,
+[  732.98s ->   735.06s] we have the partial derivative of d
+[  735.06s ->   737.62s] with respect to t times the time differential,
+[  738.04s ->   739.94s] plus the partial derivative
+[  739.94s ->   742.46s] with respect to the underlying
+[  742.46s ->   745.46s] times this differential of the underlying,
+[  745.82s ->   749.24s] plus one half the second order partial derivative
+[  749.24s ->   753.78s] with respect to the underlying sigma squared s squared dt.
+[  754.52s ->   759.72s] And that is going to be our d dst.
+[  760.76s ->   763.70s] And we also have our equity component.
+[  764.24s ->   767.14s] So we're going to say less p ds
+[  767.14s ->   768.84s] given by this guy here.
+[  769.02s ->   772.30s] But p is now defined as the partial derivative of d
+[  772.30s ->   774.24s] with respect to the underlying.
+[  775.43s ->   779.61s] So we are less the partial derivative of d
+[  779.61s ->   782.79s] with respect to the underlying times ds.
+[  783.13s ->   787.82s] And this is our equity component, ds.
+[  788.00s ->   789.26s] If this is the case,
+[  789.76s ->   794.21s] these two terms are exactly the same and cancel out.
+[  794.91s ->   798.19s] Thus, we're left with d pi
+[  798.19s ->   801.19s] is equal to partial derivative of d
+[  801.19s ->   803.37s] with respect to t times the time differential,
+[  803.73s ->   806.67s] plus one half second order partial derivative
+[  806.67s ->   813.44s] with respect to the underlying of sigma squared s squared dt.
+[  815.50s ->   818.94s] And our increment in portfolio value,
+[  819.10s ->   821.80s] our small change in portfolio value,
+[  822.20s ->   823.98s] is effectively risk neutral.
+[  824.34s ->   828.72s] By holding delta shares of stock in our short position,
+[  829.12s ->   832.68s] we are effectively constructing a risk neutral portfolio.
+[  833.10s ->   835.42s] That means that the change in our portfolio
+[  835.42s ->   837.96s] is no longer random.
+[  838.18s ->   839.14s] It's deterministic.
+[  839.14s ->   841.54s] If the change in our portfolio value
+[  841.54s ->   843.00s] is no longer random
+[  843.00s ->   844.70s] and we no longer have any risk,
+[  845.04s ->   847.86s] we can't possibly be earning a rate of return
+[  847.86s ->   850.34s] greater than the risk-free rate of return.
+[  850.92s ->   852.78s] Therefore, it's fair to say
+[  852.78s ->   856.32s] that d pi, that small change,
+[  856.42s ->   858.66s] is equivalent to the risk-free rate
+[  858.66s ->   860.98s] times our portfolio value
+[  860.98s ->   863.28s] times some small change in time.
+[  863.28s ->   865.90s] And making this final substitution,
+[  865.90s ->   868.90s] we can say r pi dt,
+[  869.80s ->   872.26s] substituting this in for d pi,
+[  873.38s ->   876.56s] is equal to two of our components left over
+[  876.56s ->   878.16s] from Ito's lemma.
+[  883.70s ->   885.40s] And if you notice now,
+[  885.68s ->   889.00s] these dt terms cancel from both sides
+[  889.00s ->   891.28s] and we are simply left with
+[  891.28s ->   893.94s] r pi is equal to
+[  893.94s ->   897.00s] partial derivative of d with respect to time,
+[  897.00s ->   900.32s] plus one half the second order partial derivative
+[  900.32s ->   902.38s] with respect to the underlying
+[  902.38s ->   904.78s] sigma squared s squared.
+[  905.40s ->   910.12s] And this is the Black-Scholes-Merton PDE.
+[  910.44s ->   912.34s] So at a high level, what did we do?
+[  912.58s ->   914.54s] Well, if we scroll all the way back up here,
+[  915.04s ->   916.94s] we constructed a portfolio
+[  916.94s ->   919.24s] that consisted of a long position
+[  919.24s ->   920.36s] and an equity derivative
+[  920.36s ->   921.44s] and a short position
+[  921.44s ->   922.64s] and the corresponding equity.
+[  922.64s ->   927.28s] Then we assumed some model for that equity
+[  927.28s ->   929.48s] and that allowed us to find
+[  929.48s ->   931.10s] this portfolio differential.
+[  931.70s ->   933.28s] Now, this portfolio differential
+[  933.28s ->   936.34s] is actually a stochastic differential equation.
+[  937.06s ->   939.40s] And to solve the stochastic differential equation,
+[  939.64s ->   941.66s] we need to remove the randomness
+[  941.66s ->   944.22s] that's induced by Brownian motion.
+[  944.22s ->   947.88s] And we do that by cleverly holding
+[  947.88s ->   950.44s] delta shares of stock.
+[  951.20s ->   953.52s] By cleverly holding delta shares of stock,
+[  953.72s ->   956.78s] we notice that the randomness cancels out
+[  956.78s ->   958.52s] and we are left with
+[  958.52s ->   961.46s] an ordinary partial differential equation.
+[  961.98s ->   964.08s] And now we can use all of our tools
+[  964.08s ->   965.46s] that we know and love
+[  965.46s ->   967.76s] to help us solve this partial differential equation.
+[  968.02s ->   969.66s] It also just so happens that
+[  969.66s ->   973.86s] this equation is a very well-known form,
+[  973.86s ->   976.34s] thus we have an analytical solution available to us.
+[  976.72s ->   978.30s] This isn't always the case
+[  978.30s ->   980.30s] with stochastic differential equations.
+[  980.68s ->   982.02s] Sometimes you may have to use
+[  982.02s ->   983.74s] numerical methods to solve.
+[  984.18s ->   985.24s] But in this case,
+[  985.30s ->   986.52s] in the case of a Black-Scholes-Merton,
+[  986.92s ->   988.66s] we do know the analytical solution.
+[  989.10s ->   990.76s] I want to thank you guys so much for watching.
+[  990.84s ->   992.00s] I really appreciate it.
+[  992.26s ->   993.14s] Please subscribe.
+[  993.22s ->   994.22s] It helps me out a lot.
+[  994.42s ->   995.52s] If you have any questions,
+[  995.68s ->   997.20s] please leave them in the comments below.
+[  997.66s ->   998.58s] Anything specific,
+[  998.70s ->  1000.18s] always feel free to email me.
+[ 1000.36s ->  1001.96s] I'm happy to help however I can.
+[ 1001.96s ->  1003.98s] I really appreciate
+[ 1003.98s ->  1005.44s] all of the video suggestions.
+[ 1005.66s ->  1006.44s] Please keep them coming
+[ 1006.44s ->  1007.38s] and I'll do my best
+[ 1007.38s ->  1009.36s] to try to make it to all of them.
+[ 1011.64s ->  1013.58s] It's a very deep sea,
+[ 1014.08s ->  1015.72s] the option pricing sea,
+[ 1015.80s ->  1016.52s] but it's very interesting.
+[ 1016.64s ->  1017.16s] There's a lot of
+[ 1017.16s ->  1019.06s] very cool emerging techniques,
+[ 1019.32s ->  1020.98s] especially in the deep learning space
+[ 1020.98s ->  1023.04s] surrounding some of this stuff
+[ 1023.04s ->  1024.36s] that builds on the foundation
+[ 1024.36s ->  1025.98s] of our knowledge
+[ 1025.98s ->  1027.44s] for mathematical finance,
+[ 1027.44s ->  1029.10s] rather than just kind of like
+[ 1029.10s ->  1030.36s] wiping the slate clean
+[ 1030.36s ->  1031.64s] and, you know,
+[ 1031.66s ->  1034.56s] just taking a pure ML
+[ 1034.56s ->  1035.64s] deep learning approach.
+[ 1036.10s ->  1037.18s] We're kind of building
+[ 1037.18s ->  1038.90s] on the foundation of these models
+[ 1038.90s ->  1041.08s] to help with speed,
+[ 1041.22s ->  1042.22s] to help with accuracy
+[ 1042.22s ->  1043.02s] in some settings.
+[ 1043.82s ->  1046.70s] So it's some very interesting stuff.
+[ 1047.38s ->  1049.22s] But thank you so much for watching
+[ 1049.22s ->  1050.44s] and I will see you
+[ 1050.44s ->  1051.46s] in the next video.
+[ 1051.46s ->  1051.50s] I'll see you in the next video.

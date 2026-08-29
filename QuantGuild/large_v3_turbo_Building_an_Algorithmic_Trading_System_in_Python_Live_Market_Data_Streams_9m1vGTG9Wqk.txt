@@ -1,0 +1,56 @@
+[    0.82s ->     6.90s] Alrighty, so in today's video, what I want to do is build on the idea of algorithmic trading
+[    6.90s ->    13.62s] by requesting a live market data stream from Interactive Brokers. Now, to do this, we're going
+[   13.62s ->    19.22s] to need a little more help from Interactive Brokers API. So I'm going to go ahead and import
+[   19.22s ->    27.70s] from ibapi.contracts the contract class. And what this is going to allow me to do is it's going to
+[   27.70s ->    37.26s] allow me to specify what security to stream data for. In the context of this example, I'm going to
+[   37.26s ->    44.62s] be streaming options data. Now, you are required to have an account minimum of $2,000 in addition to
+[   44.62s ->    51.42s] purchasing the respective market data subscriptions from Interactive Brokers. But assuming you have all
+[   51.42s ->    58.62s] that set up, I'm going to use this contract on the spider as our example. And what we're going to
+[   58.62s ->    65.90s] need is the symbol of the underlying assets. So in this case, it's spider spy, the security type,
+[   65.90s ->    73.02s] which is an option, the exchange it's trading on, it's a smart exchange. In this case, the currency is
+[   73.02s ->    81.58s] obviously US dollars, the rights or the contract right, which is a call in this case, the strike price,
+[   81.58s ->    91.14s] which is 395. And the last trading date for the contract, which is June 30. So these are all the
+[   91.14s ->    98.42s] parameters that we need to specify when requesting a live market data stream from Interactive Brokers.
+[   98.42s ->   104.26s] To do this, we can go ahead and create an instance of the contract class. So I'm going to do that here,
+[  104.26s ->   110.58s] contract is equal to contract. And now we're just going to go ahead and assign all of the parameters
+[  110.58s ->   118.98s] that we just spoke about. So I'm going to set the symbol equal to spy, I'm going to set the security type
+[  120.22s ->   134.14s] to an option, which is denoted as OPT. I'm going to set the exchange as smart. I'm going to set the currency
+[  135.46s ->   148.40s] as US dollars, going to set the right to a call, going to set the strike price to 395.
+[  148.40s ->   161.38s] And last but not least, I'm going to set the last trade dates or contract month to 2020 0630, which is
+[  161.38s ->   172.13s] June 6th, sorry, June 30th, 2020. Now we have to submit our market data request to Interactive Brokers.
+[  172.13s ->   178.93s] And to accomplish this, all we have to do is call the request market data function. That's a part of our
+[  178.93s ->   186.37s] API socket subclass of eClient. And to do that, all we got to do is say self.rec market data.
+[  187.17s ->   193.33s] And the parameters that this function takes are a request ID so that we can update or cancel this
+[  193.33s ->   199.41s] streaming request. And I'm just going to use an arbitrary 1000. It takes the contract that we want
+[  199.41s ->   206.62s] to stream data for. So in this case, it's the contract we just created. And for a tick type,
+[  206.62s ->   212.35s] I'm just going to leave it blank. And we don't want it to be a snapshot. We want it to be
+[  212.99s ->   220.67s] a live data stream. So I'll specify false and false. And we have no predetermined options or settings
+[  220.67s ->   228.56s] assigned to this stream. So I'm just going to create a blank stream rule set. We've effectively created
+[  228.56s ->   235.76s] our request for market data for this contract. And now what we need is a place for that data to go.
+[  235.76s ->   242.72s] And we can do that by creating a callback function in the eWrapper subclass API controller.
+[  242.72s ->   252.48s] And the callback function responsible for receiving options data is called tick option computation.
+[  252.48s ->   258.48s] And this tick option computation function has a variety of parameters that's returned by the server.
+[  258.48s ->   264.00s] And I'm just going to go ahead and list them off one by one. So we have the request ID. So in this case,
+[  264.00s ->   271.57s] the server will return 1000 because that was our request ID, the tick type, the implied volatility,
+[  272.91s ->   285.55s] the delta of the option, the option price, the dividend, the options gamma, the options vega,
+[  286.51s ->   291.63s] the options theta, and the underlying asset price of the option.
+[  292.35s ->   298.99s] So the first thing that we're going to want to do is call the constructor of the superclass
+[  299.87s ->   307.50s] tick option computation and feed it the parameters returned from the server. So we'll go ahead and do
+[  307.50s ->   318.66s] that for all of our parameters. And now we can do whatever we'd like with the data that's returned
+[  318.66s ->   324.34s] from the server. So I'm just going to go ahead and print the underlying asset price. So I'm going to say
+[  324.34s ->   333.74s] underlying price, and then I'll print the underlying price. And I'm also going to go ahead and print
+[  333.74s ->   344.27s] the option price. So I'm going to say option price, whoops, price, and I'll print the option price.
+[  346.21s ->   351.25s] We effectively have everything we need now to create and stream market data from interactive
+[  351.25s ->   356.53s] brokers specifically for this option contract. And now I'm just going to go ahead and create an
+[  356.53s ->   363.65s] instance of the trading application class. And I've already booted up my interactive
+[  363.65s ->   368.77s] brokers gateway so that my Python script can connect to that client to my interactive
+[  368.77s ->   375.17s] brokers account. And when I run this, you'll notice that the market data has successfully started
+[  375.17s ->   381.49s] streaming. And we get the option price and the underlying asset price. And if we go ahead and
+[  381.49s ->   388.29s] look back at the spider from Yahoo Finance, the data is relatively similar. The last price for the
+[  388.29s ->   394.21s] option was 0.01. And interactive brokers gives us a very specific price, in this case, extending out a
+[  394.21s ->   402.13s] very many number of decimal places to ensure that we have the correct option price. So this is just
+[  402.13s ->   409.41s] laying the groundwork for everything that we can do with live market data streams. And we can create a
+[  409.41s ->   414.37s] rule set saying if the option price dips below a certain value, we buy, if it exceeds a certain
+[  414.37s ->   419.73s] value, we sell. And that goes for the underlying asset as well. So there are a variety of trading
+[  419.73s ->   427.73s] strategies and different portfolio configurations that you can establish and rule sets to follow with
+[  427.73s ->   442.05s] this live market data streaming capability.

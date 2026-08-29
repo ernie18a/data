@@ -1,0 +1,171 @@
+[    1.26s ->     8.93s] What's the difference between you gambling at a casino and you trading in the market?
+[    9.83s ->    16.03s] Well, nothing, if you don't understand and correct the mistakes that we're going to rank
+[   16.03s ->    17.53s] in today's video.
+[   17.71s ->    21.83s] Up first, this idea of trading signals being one-to-one.
+[   22.13s ->    27.99s] In other words, you see a trading signal, you enter into a long or a short position
+[   27.99s ->    32.57s] into whatever contract, and you exit with a profit.
+[   33.15s ->    38.79s] You see this all the time on YouTube, TikTok, Instagram, people and their strategies with
+[   38.79s ->    43.27s] 100% win rates, signals that can never fail.
+[   43.27s ->    48.41s] Clearly, nobody has any idea how this space actually functions.
+[   49.03s ->    51.05s] The closest cousin is poker.
+[   51.61s ->    56.71s] Is there one set of rules that you can follow to always win at poker?
+[   57.47s ->    58.59s] Absolutely not.
+[   59.07s ->    60.99s] Nothing is one-to-one.
+[   61.47s ->    67.21s] Everything is statistical at best, making signals being one-to-one.
+[   67.71s ->    70.59s] An S-tier rookie mistake.
+[   70.59s ->    77.07s] Following the notion of this space being statistical at best, we have this idea of asymptotics.
+[   77.39s ->    79.87s] What do I mean by asymptotics?
+[   79.87s ->    86.57s] Well, if you lack the necessary math, probability, statistics, and finance to function in this
+[   86.57s ->    92.59s] space, and you'd like to master the necessary quantitative skills for trading and market-making
+[   92.59s ->    95.19s] roles, check out QuantGuild.com.
+[   95.25s ->   101.79s] We have over 100 hours of lecture content, an adaptive practice engine, and much more to
+[  101.79s ->   106.75s] take you from student to practitioner as quickly as possible.
+[  106.75s ->   113.37s] But in any case, when I talk about asymptotics here, I'm talking about statistical convergence,
+[  113.77s ->   117.59s] the law of large numbers, the central limit theorem, statistics.
+[  118.35s ->   121.91s] We love to impose structure on our trading strategies.
+[  122.45s ->   123.91s] What is your average win rate?
+[  124.37s ->   127.53s] What is the P&L in your average winner, your average loser?
+[  128.21s ->   129.73s] But what's the problem?
+[  129.73s ->   134.89s] We're imposing statistics as if there is a data-generating distribution.
+[  135.59s ->   139.47s] Hate to break it to you, but there is no data-generating distribution.
+[  140.21s ->   142.67s] Everything is quite literally path-dependent.
+[  142.81s ->   144.89s] There is no distribution.
+[  145.23s ->   152.41s] This is just a composite of an unfathomable number of deterministic decisions that produce
+[  152.41s ->   155.03s] the P&L that you see at the end of the day.
+[  155.03s ->   160.01s] It's a whole bunch of dimensions collapsing into a single number.
+[  160.61s ->   163.47s] If you don't understand this, you're already at a loss.
+[  164.21s ->   167.53s] Asymptotics has earned itself a place on the A tier.
+[  167.69s ->   172.07s] Almost as insulting as dismissing asymptotics is dismissing economics.
+[  172.65s ->   175.83s] What is going on in the broader market as a whole?
+[  176.25s ->   177.79s] Monetary and fiscal policy.
+[  177.93s ->   180.41s] Do you know what's going on with inflation?
+[  180.41s ->   185.67s] What is the Fed thinking about doing with respect to interest rates?
+[  186.19s ->   193.33s] Being blind about the overall market regime is just like throwing your money on black or
+[  193.33s ->   195.73s] red and hoping for the best outcome.
+[  195.81s ->   197.93s] It doesn't matter what kind of strategy you have.
+[  198.35s ->   204.55s] If you take no consideration to the direction the wind is blowing, you are just going to be
+[  204.55s ->   206.63s] at the mercy of the roulette wheel.
+[  206.63s ->   211.01s] Still, economics has earned itself a place on the B tier.
+[  211.17s ->   216.29s] As a big poker player myself, resulting is something I have a lot of experience managing.
+[  216.91s ->   222.77s] This is the idea of letting the outcome speak for the decision-making process.
+[  223.53s ->   228.99s] This means you may have weighed a variety of different states of the world and the likelihood
+[  228.99s ->   230.53s] of those outcomes.
+[  230.71s ->   235.39s] Maybe you made an incredibly informed decision in the face of uncertainty.
+[  235.39s ->   238.23s] In fact, that's all you can do.
+[  238.33s ->   240.45s] That's all anyone can do.
+[  240.57s ->   244.09s] Nobody has the true probability mass or density function.
+[  244.21s ->   249.05s] Nobody knows what the actual probabilities of each state of the world are.
+[  249.21s ->   255.93s] But once you make that informed decision, if you let the outcome simply speak for the quality
+[  255.93s ->   266.23s] of that decision, you are resulting and you can crash a strategy just by observing a few outliers.
+[  266.69s ->   270.65s] Resulting has earned its place on the A tier.
+[  270.77s ->   274.87s] Once you've heard about it in the news, it's probably too late.
+[  274.87s ->   283.57s] Everybody sees gold go up to $5,000 and people are buying call options and dumping all of their
+[  283.57s ->   286.67s] excess cash into gold instead of treasuries.
+[  287.45s ->   288.59s] And what happens?
+[  288.77s ->   292.55s] It immediately plunges a week later along with silver.
+[  292.81s ->   295.79s] And then, oh, we panic sell at the bottom and then it recovers.
+[  296.35s ->   298.89s] This is a tale as old as time.
+[  299.01s ->   299.77s] Chasing trends.
+[  299.87s ->   302.13s] Once you've heard about it in the news, it's too late.
+[  302.13s ->   307.03s] I don't see anybody eager to buy Ethereum or Bitcoin at the current level.
+[  307.03s ->   314.95s] But once it gets back to $100,000, $120,000 and maybe $4,000, respectively, I'm sure we're
+[  314.95s ->   317.53s] going to see everybody chasing the trend again.
+[  318.35s ->   321.99s] This has earned itself a spot on the C tier.
+[  322.19s ->   326.39s] It is way too easy for retailers to buy options contracts.
+[  326.53s ->   332.11s] The fact that you can download an app and buy an option before your deposit even clears
+[  332.11s ->   333.83s] is outrageous.
+[  334.07s ->   340.33s] What's even more outrageous is buying something when you have no idea how it functions.
+[  340.91s ->   342.89s] An option is not an equity.
+[  343.09s ->   344.81s] You can't buy it and hold it.
+[  344.89s ->   346.01s] There's a maturity.
+[  346.45s ->   347.61s] It's a zero-sum game.
+[  347.71s ->   352.77s] It's going to expire worthless or it's going to expire in the money.
+[  353.01s ->   357.69s] If you pour your entire portfolio value into an option and you think it's an investment,
+[  357.69s ->   360.61s] you are in for a world of hurt.
+[  361.29s ->   364.95s] The big mistake we're talking about here is letting your options expire.
+[  365.41s ->   371.33s] Likely, you should just be collecting some theta, some vega, maybe some delta, and then
+[  371.33s ->   372.91s] getting rid of that position.
+[  373.07s ->   377.23s] You should be running a strategy, not just holding naked options.
+[  377.93s ->   383.09s] Options expiring has earned itself a place on the D tier.
+[  383.09s ->   387.73s] Up next, one that I hold near and dear to my heart, lottery tickets.
+[  387.89s ->   389.27s] No, not scratch-offs.
+[  389.87s ->   391.23s] No, not the Powerball.
+[  391.35s ->   398.33s] I'm talking about buying garbage, small caps, and meme coins in hopes that it pays out big
+[  398.33s ->   400.29s] for your portfolio.
+[  401.05s ->   404.19s] It goes against all modern economic theory.
+[  404.77s ->   412.05s] In fact, if you consult the academic literature and you observe the cross-sectional effect of
+[  412.05s ->   416.71s] bearing this idiosyncratic exposure, it is negative.
+[  417.49s ->   419.77s] It is quite literally negative.
+[  420.41s ->   426.17s] You should not be compensated in the cross-section at all, theoretically, for bearing that risk.
+[  426.31s ->   432.55s] But due to this lottery ticket effect, everybody accepts this negative cross-sectional return
+[  432.55s ->   435.01s] in hopes of a massive payout.
+[  435.63s ->   436.55s] Don't do this.
+[  437.45s ->   441.35s] Lottery tickets has earned its spot on the D tier.
+[  441.35s ->   447.95s] Do you know when the perfect time is to use leverage on a retail portfolio?
+[  449.09s ->   449.53s] Never.
+[  450.09s ->   453.17s] Leverage has earned itself a spot on the C tier.
+[  453.33s ->   458.15s] I want to say if I had a dollar for every backtest somebody has proposed to me, I would
+[  458.15s ->   459.55s] be able to retire right now.
+[  459.63s ->   465.29s] But more realistically, it would probably be around like 10, maybe 15 bucks.
+[  465.29s ->   466.81s] Then I could retire right now.
+[  466.81s ->   474.01s] Backtesting, a very powerful statistical technique, if you do it correctly, but you're probably
+[  474.01s ->   475.11s] not doing it correctly.
+[  475.27s ->   480.15s] You probably have no idea the biases that you are inducing in your backtests.
+[  480.59s ->   485.83s] Lookahead bias, data snooping bias, survivorship bias, just to name a few.
+[  486.27s ->   490.73s] You're likely overfitting a model and parameterization to historical data.
+[  490.73s ->   497.87s] And if you're not, ask yourself, what economic basis is there for that structure, for that
+[  497.87s ->   501.31s] inefficiency, for that strategy that you're trading?
+[  501.65s ->   502.71s] Is it beta?
+[  503.29s ->   504.25s] Is it alpha?
+[  504.99s ->   510.65s] That is something that you should be able to answer because it is widely misapplied and
+[  510.65s ->   514.43s] has probably led to more blown accounts than anything else.
+[  515.05s ->   520.13s] Backtesting has earned itself its place on the S tier.
+[  520.13s ->   526.29s] Whenever you build a trading strategy, you're going to be selecting a model and a parameterization.
+[  526.89s ->   533.69s] Your objective then is to optimize an expected value function, an optimal policy function if
+[  533.69s ->   535.83s] you want to get even more general.
+[  536.59s ->   542.69s] Classical calculus says in order to optimize such a function, we need it to be sufficiently
+[  542.69s ->   547.25s] smooth, even for numerical optimization.
+[  547.25s ->   556.11s] So why on earth are you going to induce a cusp, a stop loss in your model?
+[  556.45s ->   558.65s] A quarter point down, a half a point down.
+[  558.77s ->   561.11s] So it's two to one risk reward.
+[  561.11s ->   567.13s] Is that because some guy on YouTube who cites the central limit theorem, who's never studied
+[  567.13s ->   569.83s] probability and statistics told you to do that?
+[  569.89s ->   571.57s] Well, we talked about asymptotics.
+[  571.57s ->   573.11s] That doesn't work in real life.
+[  573.11s ->   576.35s] Same thing is true with stop losses.
+[  577.01s ->   584.49s] They are an arbitrary value to scale you out of a trade that has no basis necessarily in
+[  584.49s ->   587.55s] optimizing a model and parameterization.
+[  587.73s ->   595.99s] If you actually have a robust model and parameterization, you should be able to perturb the parameter space.
+[  595.99s ->   602.55s] You'll observe a slight decay in out-of-sample performance, but that means you have a robust model.
+[  603.35s ->   610.65s] If you're just trading with a stop loss at an arbitrary value and you can't explain why, you probably shouldn't be doing that.
+[  610.95s ->   614.97s] Stop losses have earned themselves a place on the B tier.
+[  615.09s ->   620.63s] Last but certainly not least, we have the greatest retail sin of them all.
+[  620.63s ->   626.27s] This one is devastating.
+[  626.69s ->   634.77s] It's akin to asking somebody's max squat bench and deadlift and then taking their word for it.
+[  634.85s ->   636.79s] What do you expect them to do?
+[  636.91s ->   648.97s] Throw on fake plates and take videos to show you that they're not lying, to plug in values on an Excel sheet and show you a time series of their portfolio returns.
+[  648.97s ->   661.93s] There are a thousand better questions that you could ask to gain more information about what they're trading, how they're trading, what type of strategy class they use.
+[  662.07s ->   666.83s] The list goes on, but this is a common trap.
+[  667.01s ->   670.85s] People love to post their overfit backtests on X.
+[  670.85s ->   683.47s] People love to brag about their P&L, their win rates, even though we already talked about the fact that there's no statistical convergence or basis for them indefinitely.
+[  684.51s ->   696.35s] Asking whether or not you are a profitable trader and then seeking mentorship or advice has earned itself a spot on the S tier.
+[  696.35s ->   700.27s] There are a lot of mistakes that make trading gambling.
+[  700.79s ->   702.99s] We talked about a number of them herein.
+[  703.37s ->   709.81s] At the end of the day, success is going to come down to a combination of knowledge and experience.
+[  709.95s ->   714.35s] Nobody wants to hear it, but that takes a tremendous amount of work.
+[  714.45s ->   718.27s] You can download an app today and you can start trading.
+[  718.45s ->   720.09s] Why should you make money?
+[  720.09s ->   727.15s] If you pick up a football for the first time today, you're not going to have the knowledge and experience of an NFL quarterback.
+[  727.77s ->   734.23s] You're not going to be able to make those informed decisions in the face of uncertainty, who to throw the ball to, when to run.
+[  734.75s ->   735.63s] What about poker?
+[  736.19s ->   745.33s] If you start playing poker today and you don't even know the hands, how on earth can you make an informed decision with all of that uncertainty?
+[  745.33s ->   752.75s] Which is why you must continue to learn and why you should master your quantitative skills.
+[  752.93s ->   754.61s] That's going to do it for this tier list today.
+[  754.71s ->   755.41s] I hope you enjoyed.
+[  755.55s ->   756.51s] I hope you learned something.
+[  757.01s ->   759.67s] This video certainly took a tremendous effort to put together.
+[  759.79s ->   763.73s] So if you enjoyed it and you want to see more like it in the future, please like, comment, subscribe, share.
+[  763.85s ->   765.27s] It helps me out tremendously.
+[  765.43s ->   766.85s] It's always greatly appreciated.
+[  766.85s ->   777.33s] Let me know in the comments below if there's any big mistakes that I missed or if you disagree with any of the characterizations of these mistakes or their rankings.
+[  777.53s ->   784.29s] Other than that, I want to thank you so much for watching and I'll see you in the next video.

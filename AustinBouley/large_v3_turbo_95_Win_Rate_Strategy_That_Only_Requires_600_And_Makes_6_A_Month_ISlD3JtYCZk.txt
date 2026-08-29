@@ -1,0 +1,62 @@
+[    0.00s ->     4.02s] Hey guys, this video I'm going to walk you through a strategy that I place every single week
+[    4.02s ->    11.38s] that has a 95% win rate, only costs $600 to put on, and can make you anywhere from 5% to 6%
+[   11.38s ->    16.32s] every single month. And not only that, it works as the market's trending up, going sideways,
+[   16.56s ->    21.58s] and even going down upwards of 10%. The market can crash and you would still make money. So
+[   21.58s ->    25.88s] let me walk you through the strategy. And if you stay until the end, I'll actually place a live
+[   25.88s ->    30.60s] trade with you. In this video, we'll be trading futures options. Now, most people do this on
+[   30.60s ->    35.74s] slash ES, which is the S&P 500 futures. But for people who have smaller accounts, which is what
+[   35.74s ->    40.48s] this video is tailored for, we're going to use the same thing, but it's called MES, which is
+[   40.48s ->    45.84s] micro futures. And so again, this requires less money from us. It also means we make less money,
+[   45.84s ->    51.92s] but for smaller accounts, it allows us to sell options, make income, and do it even if we have
+[   51.92s ->    56.12s] a small account. So we're going to go to MES. We're going to go into the table. We're going to
+[   56.12s ->    61.08s] look for 60 days out. So you can see here, we have two 60 days out. This one's in the AM and this
+[   61.08s ->    66.72s] one's normal. So we're going to go to a normal expiration of 60 days out. Now, again, I have the
+[   66.72s ->    71.22s] PDF linked down below, but this is how we set up this trade. It's called a 1-1-1 trade, which
+[   71.22s ->    75.76s] essentially is we set up one option across the board. They're all puts. So we're going to go to the 30
+[   75.76s ->    81.64s] Delta and we're going to buy a put. We're going to go to the 28 Delta and sell a put. This creates a put
+[   81.64s ->    89.96s] debit spread, which essentially means that when the market gets below 4,740, this option structure
+[   89.96s ->    94.98s] will start making money. So if the market drops, we make money using this approach. Now, what we
+[   94.98s ->   101.32s] also do is we go to the 10 Delta with the highest open interest and we sell this. So this allows us
+[  101.32s ->   106.72s] to collect an income, which means that we collect money and we are going to make money regardless of
+[  106.72s ->   111.86s] what happens as long as the market stays above the 4,450 level. To give you a better understanding
+[  111.86s ->   117.14s] of what this looks like, let's go to the analysis page and we can see what it looks like in any given
+[  117.14s ->   123.12s] situation. So if we see here, what happens is this put debit spread allows us to make money to the
+[  123.12s ->   128.60s] downside and the put that we sell allows us to make money to the upside. So no matter how high the
+[  128.60s ->   136.40s] market goes, we will always make $66. The market drops past or put debit spread level. These two
+[  136.40s ->   146.18s] options will make $141. As long as the market stays above $4,440, we will make money. And again,
+[  146.24s ->   152.22s] that's an almost 400 point drops. That's going to be a very huge drop, almost a 10% drop that's going
+[  152.22s ->   157.42s] to happen in the market in order for us to still make money. So the market could drop up to 10%.
+[  157.42s ->   165.60s] That's why we have a 95% win rate on this trade and why this trade is so amazing. Sorry, let me reset
+[  165.60s ->   170.60s] the profit graph. And so this trade is so amazing for that reason because so much can happen to it
+[  170.60s ->   177.66s] where we're going to make $66. Oops, I kind of threw it off. $66 if we're right. And if it even drops
+[  177.66s ->   185.24s] further, we'll make more. Now this trade requires $583. So almost $600 to put this trade on. And if the
+[  185.24s ->   191.68s] market continues going up, we'll make $66. So on average, we're going to make $66. We could even
+[  191.68s ->   198.08s] make more, but let's just say we make 66 using roughly $600. That's an 11% return, but we're doing
+[  198.08s ->   203.50s] this trade for 60 days. This is a 60 day trade. So that means there's two months in that period. So
+[  203.50s ->   210.06s] we're going to make 5.5% return every single month by putting on this trade. It only costs $600.
+[  210.06s ->   216.32s] we make 66. It's a great trade for small accounts who want to generate income and do so consistently
+[  216.32s ->   221.98s] and reliably. And so again, this is a go-to strategy. Now you may be asking, how do we manage
+[  221.98s ->   227.18s] this trade? Well, you can see by default, we're going to make $66. When we get close to this profit
+[  227.18s ->   232.88s] around $60 profit, we're going to close that trade early and we'll move on to the next trade. So again,
+[  232.92s ->   238.92s] we have roughly a 90% take profit level on this. And our stop loss is going to be at roughly
+[  238.92s ->   245.38s] this profit level. You can see here, max profit is $140. So when we get to a loss of about $150,
+[  245.92s ->   250.32s] then we'll actually close the trade out early. And so that's how we do a stop loss and I take
+[  250.32s ->   254.96s] profit on this. You'll have about a 90% win rate unless you hold to expiration of a 95,
+[  255.34s ->   258.16s] but that's how we structure the trade. If you want to learn more about the strategy,
+[  258.26s ->   263.42s] you can actually go down below. Now, if I want to place this trade live, what I'm going to do is I
+[  263.42s ->   268.56s] just split this up into two orders. I have to put that I'm selling and the put debit spread. So I
+[  268.56s ->   272.96s] need to do these trades set separately. So one order, I'm going to sell the puts and on the next
+[  272.96s ->   278.10s] order, I'm going to do the put debit spread. So I go here to the table. I'm going to remove all my
+[  278.10s ->   282.86s] orders. I'm going to go here to the $10. I'd like to sell the put first because this brings in an
+[  282.86s ->   288.40s] income. This brings in money. You can see here, this bring in $82 if I put on this trade. So again,
+[  288.44s ->   293.34s] that's what I do. I sell this first. I wait for that to fill. Then I go here to my put debit spread.
+[  293.34s ->   301.06s] I set up the $30 and the $28. This will cost me $16 to put on. So I received $80.82 by selling the
+[  301.06s ->   306.64s] puts and I'm giving up $16 for this downside protection. And that gives me my max profit
+[  306.64s ->   312.56s] around $66 normally. And then if it goes down, I hit my profit target from the put debit spread.
+[  312.66s ->   316.70s] So I'm making even more money. So that is how this trade is structured. You put that together.
+[  316.98s ->   321.70s] You can structure them into a trade where you group the trade together. It'll look like this and
+[  321.70s ->   325.38s] that you can manage it from there. This is one of my most reliable and consistent strategies
+[  325.38s ->   331.24s] that has so far made me a few thousand in the first part of this year. We're only 15 days into
+[  331.24s ->   335.60s] this year and it's made me a lot of money. So I recommend that you do the strategy every single
+[  335.60s ->   340.10s] week. If you can, it's a great strategy. If you want to learn more, once again, grab your free
+[  340.10s ->   343.44s] trading guide below. All right, guys, I will see you in the next video.

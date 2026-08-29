@@ -1,0 +1,59 @@
+[    2.58s ->     8.22s] Hey YouTube, it's Roman. Today I want to talk about my top five Python tricks, concepts, tools,
+[    8.36s ->    12.96s] whatever you want to call it, in five minutes. So let's go ahead and get started. All right. Now
+[   12.96s ->    18.44s] these are in no particular order, but number one is going to be slice notation. So slice notation
+[   18.44s ->    25.98s] means that we can refer to any index of say a string, a list, maybe a pandas series, a data
+[   25.98s ->    32.18s] frame, uh, using brackets and a start and an end index. So if I wanted to say, get the first three
+[   32.18s ->    38.48s] characters of this string, slice notation is awesome. I can just do X with some brackets.
+[   38.48s ->    46.36s] I can start at index zero or specify nothing to also start at zero and then go to three and that
+[   46.36s ->    53.54s] will return the first three letters of that string. Similarly, I have a vector here Y that is of the
+[   53.54s ->    58.74s] length 100. And we can actually print this out here in the console. If I wanted to get the back
+[   58.74s ->    65.96s] 50 elements of this particular vector, then I can just do Y open brackets and then start at minus 50
+[   65.96s ->    72.54s] and then take everything else after. And that will return to me the last 50 elements in that vector.
+[   72.94s ->    78.36s] So that is number one, slice notation. Coming in at number two is going to be splitting strings. Now
+[   78.36s ->    82.58s] this is something that I use pretty much all the time, especially when working with files and file
+[   82.58s ->    88.10s] paths. And perhaps I have a giant set of file paths that I'm trying to work with. This is something that
+[   88.10s ->    93.36s] I use all the time. So what we can do is we can say X dot split, and then we can choose how we want
+[   93.36s ->    98.54s] to split up this particular string. So I want to split it up by spaces. Then if we run this, you can
+[   98.54s ->   105.68s] see it's going to return a list of strings, each with the word that is separated by a space in the
+[  105.68s ->   112.38s] original string. Splitting strings is awesome, especially with slice notation. So combining number one and
+[  112.38s ->   118.36s] number two now, let's take a look at this file string here. If I call file dot split and I split
+[  118.36s ->   125.86s] by the slash, you can see it's going to return a list of all of those strings based on that file path.
+[  126.24s ->   131.06s] And if I wanted to actually get the file itself with its extension, then what I can do is add the
+[  131.06s ->   136.52s] slice notation and call minus one. And that's going to return to me the file with this extension. So
+[  136.52s ->   142.20s] number two is splitting strings and works great when combining with number one. Number three is going
+[  142.38s ->   148.66s] to be data frame queries using pandas, and I can't even express how often I use this feature. So
+[  148.66s ->   153.86s] what we have here is a data frame, and I have one column, which is the standard normal distribution
+[  153.86s ->   159.84s] samples, where each observation is a random sample from a standard normal distribution. Now, theoretically,
+[  159.84s ->   165.12s] 50% of the values will be over zero and 50% will be under zero based on the standard normal
+[  165.12s ->   169.98s] distribution from statistics. But if we wanted to actually check to see how many values were greater
+[  169.98s ->   175.68s] than zero, we can do a query by saying data frame, and then opening a set of brackets,
+[  175.84s ->   184.00s] then calling that same data frame, referencing the standard normal distribution samples column,
+[  184.38s ->   189.80s] and then checking where it's greater than zero. And that is going to return all of the samples that
+[  189.80s ->   196.20s] are greater than zero. Then we can check the length of this guy and see what the length of it is
+[  196.20s ->   202.70s] compared to its theoretical length. And we have 10,000 samples and 5,173 are greater than zero.
+[  202.86s ->   208.68s] So as we sample more, that's going to converge to the theoretical value. And this is my number three
+[  208.68s ->   215.62s] Python trick. Number four is going to be optimization. Now, optimization is an enormous topic in data
+[  215.62s ->   220.68s] science, machine learning, artificial intelligence, and it's definitely a must have in your toolbox.
+[  220.68s ->   226.06s] So what I have here is a cost function that we want to find the value for x that we can plug in
+[  226.06s ->   232.82s] to get the smallest possible output. So if I was to just call this cost function and provide an arbitrary
+[  232.82s ->   238.36s] x, let's say 10, you can see that the cost function returns 84. So we want to make that output as small
+[  238.36s ->   243.94s] as possible. Instead of guessing all day, we can actually use Python, SciPy, and least squares to do this.
+[  244.40s ->   248.00s] Looking at the cost function itself, it's very simple. We know if we plug in four to x squared,
+[  248.00s ->   254.46s] we're going to get 16, thus the minimum 16 minus 16 or zero. But say we didn't have a parameterization
+[  254.46s ->   258.56s] that we could intuitively plug into this cost function. Maybe there are tons and tons of parameters
+[  258.56s ->   264.32s] like in a neural network. Then what we can do is we can call these squares, provide the cost function,
+[  264.92s ->   269.76s] and then an initial guess. So in this case, I'll put five. And you can see that it's going to output
+[  269.76s ->   275.76s] the total number of iterations that it took to find the minimum. And then we can actually get the minimum
+[  275.76s ->   280.94s] input parameter, in this case four, which matches our intuition. So number four is optimization.
+[  281.44s ->   286.38s] Last but certainly not least is serialization. So serialization is going to allow us to save an
+[  286.38s ->   290.64s] image of an object after it's been instantiated. So I just have a dummy class here called person.
+[  291.06s ->   295.96s] And what I'm going to do is create an object of this class, P1 is equal to person. And then I'm going
+[  295.96s ->   305.00s] to give it the name Roman. And we can go ahead and save this object by saying with open p1.pkl
+[  305.00s ->   315.16s] wb as f pickle.dump. And we're going to dump p1 as the file f. After saving the file, we're obviously
+[  315.16s ->   324.82s] going to want to load it. So what we can do is we can say with open p1.pkl, and then rb as f pickle.load
+[  324.82s ->   332.38s] f. And then we can assign this to a variable, say p2. And then if we go ahead and do p2.name,
+[  332.48s ->   337.72s] it should be Roman. And lo and behold, we have Roman. So number five is serialization.
+[  338.14s ->   342.30s] That's going to do it for my top five Python tricks in five minutes. Thank you so much for
+[  342.30s ->   346.40s] watching. If you have any comments or questions, if you want to leave your favorite tips and tricks
+[  346.40s ->   350.80s] for Python in the comments below, please do. If you have any specific questions, you can always
+[  350.80s ->   356.20s] shoot me an email, roman.quantguilt.com. Other than that, I'll see you in the next one.

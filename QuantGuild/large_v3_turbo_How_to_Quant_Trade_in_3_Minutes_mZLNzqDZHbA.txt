@@ -1,0 +1,40 @@
+[    1.34s ->     5.94s] Hey guys, Roman here, quantitative researcher and trader, founder of QuantGuild. Today,
+[    6.04s ->    10.72s] I'm going to explain how to quant trade in three minutes. We've all heard it before,
+[   11.02s ->    15.78s] past performance isn't indicative of future performance. Well, if that's the case,
+[   15.96s ->    22.22s] why do we consider historic data at all? The truth is, we all have access to the same data.
+[   22.32s ->    28.24s] There is no hedge fund, no quant fund in the world with a crystal ball. I'm not talking about
+[   28.24s ->    34.04s] information that is insider exclusive or even costs a premium. I'm simply saying nobody knows
+[   34.04s ->    40.82s] what's going to happen. When it comes to this data that we have on or before the present moment,
+[   41.32s ->    47.46s] some are just better at making sense of it than others. In other words, if it's the fourth quarter
+[   47.46s ->    53.20s] and the games on the line were in the red zone, whose hands would you prefer the ball in? Mine
+[   53.20s ->    59.52s] or Tom Brady's? This brings us to the model specification and parameterization problem.
+[   59.52s ->    65.66s] This is where the experience comes into play. In other words, who would you prefer specify and
+[   65.66s ->    72.50s] parameterize your trading model? Tom Brady or myself? What I've done here is I've selected a
+[   72.50s ->    78.16s] simple linear regression model and I've parameterized it using historic implied and realized volatility
+[   78.16s ->    84.46s] data. My goal is to produce an expectation and observe if there's any edge. And I do find an
+[   84.46s ->    90.50s] edge here. I find historically implied volatility is overstated relative to realized volatility. If I
+[   90.50s ->    96.24s] can isolate that pure volatility and take a short position, I can accumulate that edge over a series
+[   96.24s ->   103.18s] of trades. As you see here in my wealth path, all edge is, is effectively an expected value. And in
+[  103.18s ->   109.44s] the context of random variables, it is the best guess that we can produce. In the classroom,
+[  109.44s ->   115.20s] if we're observing a sequence of data that comes from the same distribution, we are going to observe
+[  115.20s ->   122.30s] statistical convergence. What I mean by this is our expected value over time is the same. It comes from
+[  122.30s ->   128.56s] the same population data generating distribution. If this was the case in practice and our model was
+[  128.56s ->   134.96s] always correct, it would be very easy to specify a trading strategy. Anytime the market price was
+[  134.96s ->   139.82s] above expectation, we would just take a short position. And if the market price was below
+[  139.82s ->   145.46s] expectation, we would just take a long position. This is effectively mean reversion. And what you're
+[  145.46s ->   151.90s] seeing here is if our model's expectation is correct, this purple dashed line, and we just abide by this
+[  151.90s ->   158.26s] simple trading strategy, we would be able to accumulate a significant amount of wealth over a
+[  158.26s ->   164.82s] series of trades. Now, of course, our model is not going to be specified and parameterized
+[  164.82s ->   170.78s] perfectly. Over time, the space is highly non-stationary. What this means for our model is
+[  170.78s ->   175.64s] eventually it's going to break. And that's exactly what you're observing here. You're observing a
+[  175.64s ->   183.60s] structural break in the data. If we continue to use the same misspecified or misparameterized model
+[  183.60s ->   191.28s] for our trading decisions, we are effectively going to wipe out all of our gains. Our job as traders
+[  191.28s ->   196.20s] and investment professionals isn't to sit around and trade a fixed model and parameterization like
+[  196.20s ->   202.22s] this top row here. No, it's to adapt to the market, identify structural breaks, and restructure your
+[  202.22s ->   207.68s] model altogether. Sure, in the short run, you may accumulate losses as you're trying to adapt to the
+[  207.68s ->   212.76s] market. But if you restructure your model effectively, you will go back to accumulating
+[  212.76s ->   219.42s] gains. How often and when is going to be dictated by your trading strategy? Is it an alpha? Are you
+[  219.42s ->   224.80s] trading price risk? So on and so forth. And that's quant trading in three minutes. I hope you enjoyed it.
+[  224.80s ->   228.06s] I hope you learned something. I'll leave a link to this Jupiter notebook in the description below.
+[  228.14s ->   232.92s] I'll also post it to the Quant Guild library on GitHub. Check out quantguild.com to master your
+[  232.92s ->   238.24s] quantitative skills. Other than that, thank you so much for watching and I will see you in the next video.

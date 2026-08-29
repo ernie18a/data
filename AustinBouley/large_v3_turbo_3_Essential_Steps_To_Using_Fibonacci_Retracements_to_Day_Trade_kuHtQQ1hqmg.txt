@@ -1,0 +1,57 @@
+[    0.27s ->     6.23s] Welcome to this video. Today we're going to discuss Fibonacci retracements. You may not know
+[    6.23s ->    11.27s] what this is, but this helps you determine where to get in on trends. So for instance,
+[   11.53s ->    17.43s] like here on SPY, if the stock is downtrending, you can see a move to the downside. Fibonacci
+[   17.43s ->    22.75s] retracements shows you where you can get in at a safe price to catch the rest of that move down.
+[   22.99s ->    28.23s] It helps you predict pullbacks and rallies, whether you're in an uptrend or a downtrend.
+[   28.23s ->    34.61s] The example today will be a Fibonacci retracement from a downtrend. So here are the three steps you
+[   34.61s ->    39.89s] need to know in order to properly use Fibonacci retracements. The first step is you need to
+[   39.89s ->    45.05s] identify what is happening here. You need to identify the trend. That is step one. So if you
+[   45.05s ->    50.63s] can see here, the trend is what's happening. So if you can see here, this is on the one minute chart.
+[   50.91s ->    56.49s] What's happening so far on SPY is we're moving down and now we're pushing back up. What does that push
+[   56.49s ->    61.27s] back up mean? If we're going down first and now we're trying to push back up, that means we're in
+[   61.27s ->    68.43s] a downtrend rallying up as our potential to reverse and head back down. So what you do with
+[   68.43s ->    73.55s] the Fibonacci retracement, if it's a downtrend, you start at the high and you go to the low. And that's
+[   73.55s ->    79.35s] how you market here. If it's an uptrend, you start at the low and you go to the high of the most recent
+[   79.35s ->    85.93s] move. So the most recent move is right here. If I can zoom in for you. Our most recent move is a
+[   85.93s ->    91.47s] start from the high to the low here. All right. So this is the day that Trump tweeted and a lot of
+[   91.47s ->    95.51s] news happened. And then we got this huge jump. People are like, you can never predict this stuff
+[   95.51s ->   100.85s] because the market is random and blah, blah, blah, blah. Well, it's not. Okay. Mathematically,
+[  101.15s ->   106.99s] technically speaking, you can have an advantage of knowing what to trade if you follow the technical
+[  106.99s ->   113.33s] setups. So remember, step one is identifying the trend and watching for that pullback or reversal.
+[  113.67s ->   118.35s] So if you're having a nice uptrend and it starts to pull back some, then you would draw the Fib
+[  118.35s ->   122.27s] retracement from the bottom to the low, and then you would see where it bounced. All right. So our
+[  122.27s ->   128.03s] key levels here to watch out for on the Fibonacci retracement, this is step two, watch for key levels.
+[  128.37s ->   136.97s] So our key levels here is going to be right here, which is the 78.6%, 61.8%, 50, 38%.
+[  136.99s ->   145.19s] 28.2% and 23.6%. Now our strongest levels are going to be right here at 61.8%, 50% and 38.2%. Those will
+[  145.19s ->   149.63s] be your strongest levels of reversal. So if you can see here, the downtrend is coming and then it's
+[  149.63s ->   154.17s] going to predict where it's going to start hitting that resistance to reverse. Now remember, if it makes
+[  154.17s ->   158.39s] it all the way back up to here, then we're most likely not going to see that move back down.
+[  158.79s ->   164.73s] But this is just helping you understand trend continuation. So step two is identifying these
+[  164.73s ->   169.89s] levels and watching for it to hit those levels. So if you're seeing here where we came up, we
+[  169.89s ->   177.63s] actually hit this strong level of 78.6% twice. So it came up here, we hit it once, we formed that
+[  177.63s ->   185.19s] perfect doji, then we kind of came back down, hit it again, and then fell through. Now that is step
+[  185.19s ->   190.67s] two is watching for those key levels. Now step three to get it on point is make sure you wait for
+[  190.67s ->   195.79s] confirmation. So if you can see here, if you were first trading this move, you would have seen that
+[  195.79s ->   201.57s] we had a rejection here, one, two, and then a three. So it looks like it's actually breaking up.
+[  201.93s ->   206.85s] Well, what if you would have thought that this was the initial rejection point and still we started
+[  206.85s ->   211.77s] to move back down? Because it is that 50% retracement, which is super strong. Well, you would have
+[  211.77s ->   216.83s] entered below this next line, which is the 38.2%, right? To give you some confirmation that it's
+[  216.83s ->   221.23s] headed down. Well, you would have actually made some profit on the way down before you saw it
+[  221.23s ->   227.07s] heading back up. So if you wanted, you could have entered on a put right here. Let me zoom in a bit.
+[  227.77s ->   234.63s] You could have entered a put right here at the 38.2% rank and then sold when it crossed back above
+[  234.63s ->   239.61s] this 23.6% and still made a profit. And again, you could have done the same thing here and then it
+[  239.61s ->   244.79s] would have been about break even, right? So again, it's not 100%, but it does help you determine
+[  244.79s ->   249.79s] overall trend. Because as you can see here, the trend is moving down. We kind of hit this
+[  249.79s ->   255.85s] resistance. After we break through this 100%, I mean the 0%, you know. All right, so those are the
+[  255.85s ->   262.41s] three steps. One is identify the trend that is happening. Two, watch for key levels. And three,
+[  262.57s ->   268.39s] watch for confirmation. Now a fourth little step that's not really needed, but is very, very helpful
+[  268.39s ->   275.31s] is looking at fib projections or fib extensions. So if I remove this drawing and I do it in reverse,
+[  275.45s ->   283.07s] if I go from the low to the high here, I can see exactly where we're projected to be. So at the
+[  283.07s ->   293.59s] 100, the 106.8 level, the 206.1.8 level, again, there's many more in here, but that's where we're
+[  293.59s ->   298.81s] projected to see it move. And you can see here, we actually got that nice run down to this level,
+[  299.13s ->   305.49s] got that bounce, and then fell through back down to this level. So remember, fib projections or fib
+[  305.49s ->   310.93s] extensions can help you determine where the trend will continue to to give you a profit target.
+[  311.29s ->   316.23s] All right, guys. So please follow the three steps. Understand that fib retracements are used for
+[  316.23s ->   321.37s] entries and fib extensions are used for profit targets. Thank you so much for watching. Please like,
+[  321.37s ->   325.37s] comment, and subscribe. Please hit that thumbs up button if you like the content. There's many more
+[  325.37s ->   329.43s] to come. Welcome to our Study Saturday video.

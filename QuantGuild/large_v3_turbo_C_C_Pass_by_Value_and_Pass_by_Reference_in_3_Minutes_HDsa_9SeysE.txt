@@ -1,0 +1,76 @@
+[    0.14s ->     5.08s] Pass by value and pass by reference in C C++ very closely related to pointers
+[    5.08s ->    11.74s] We can actually use pointers for pass by reference and we can also use a more C++ style way of doing things
+[   11.74s ->    15.02s] So let's go ahead and take a look at what I mean by value and reference
+[   15.02s ->    17.12s] I'm going to create a function called void swap
+[   17.12s ->    20.02s] It's going to take a double A and a double B
+[   20.02s ->    25.02s] And the whole goal of this function is going to be to swap the values of A and B
+[   25.02s ->    29.38s] So I'm going to create a temp double and I'm going to assign it to A
+[   29.38s ->    32.28s] I'm going to reassign A to the value of B
+[   32.28s ->    35.48s] And then assign B to the value of temp
+[   35.48s ->    39.62s] So in the main function now I'm going to create two doubles
+[   39.62s ->    43.98s] Double A is equal to 1 and double B is equal to 0
+[   43.98s ->    47.48s] And I'm going to call this swap function
+[   47.48s ->    48.76s] I'm going to pass A and B
+[   48.76s ->    53.86s] And then I'm going to print out the values of A and B
+[   53.86s ->    57.04s] Now if this swap function were created correctly
+[   57.04s ->    59.94s] We would hope to see that A takes on the value of 0
+[   59.94s ->    62.22s] B takes on the value of 1
+[   62.22s ->    65.20s] And we print 0 and 1 in the console
+[   65.20s ->    66.58s] So let's go ahead and run this
+[   66.58s ->    70.48s] And you'll notice we don't get 0 and 1 but we get 1 and 0
+[   70.48s ->    74.56s] So our swap function isn't swapping the values of A and B
+[   74.56s ->    76.26s] Why is that?
+[   76.36s ->    80.30s] Well, right now we are passing A and B by value
+[   80.30s ->    84.20s] Which means a copy of A and B is being created on the stack
+[   84.20s ->    88.22s] And then the operations within the scope of the swap function are being completed
+[   88.22s ->    91.24s] Before those automatic variables are destroyed
+[   91.24s ->    96.72s] What we're actually trying to do is directly address the values of A and B in memory
+[   96.72s ->    98.34s] To do this we can use a pointer
+[   98.34s ->   100.48s] So we can do double asterisk
+[  100.48s ->   101.38s] We use a star
+[  101.38s ->   103.24s] Here and here
+[  103.24s ->   106.94s] And now we're passing the pointers to doubles in memory
+[  106.94s ->   110.92s] So we can dereference these pointers and assign their value
+[  110.92s ->   114.21s] Just as in our previous video
+[  114.21s ->   120.00s] And now if we run this
+[  120.00s ->   123.74s] We can see that we effectively swap the values of A and B in memory
+[  123.74s ->   125.34s] Because we get 0 and 1
+[  125.34s ->   128.84s] So we're effectively reassigning A to B and B to A
+[  128.84s ->   132.32s] What's more of a C++ way of doing this?
+[  132.32s ->   135.86s] Well, the dereferencing of pointers can get relatively confusing
+[  135.86s ->   138.96s] So we can get rid of these stars and just use an ampersand
+[  138.96s ->   141.44s] Then we're going to be passing by reference directly
+[  141.44s ->   143.78s] So throw an ampersand here
+[  143.78s ->   145.90s] Throw one here
+[  145.90s ->   148.06s] And then if we run this
+[  148.06s ->   153.38s] We will also have effectively swapped the values of A and B
+[  153.38s ->   156.24s] So when we started our swap function didn't work
+[  156.24s ->   157.82s] That's because we were passing by value
+[  157.82s ->   161.14s] And now we have two different ways of passing by reference
+[  161.14s ->   162.30s] Thanks for watching
+[  162.30s ->   163.30s] I'm going to be watching
+[  163.30s ->   164.30s] I'm going to be watching
+[  164.30s ->   165.30s] I'm going to be watching
+[  165.30s ->   166.30s] I'm going to be watching
+[  166.30s ->   167.30s] I'm going to be watching
+[  167.30s ->   168.30s] I'm going to be watching
+[  168.30s ->   169.30s] I'm going to be watching
+[  169.30s ->   170.30s] I'm going to be watching
+[  170.30s ->   171.30s] I'm going to be watching
+[  171.30s ->   172.30s] I'm going to be watching
+[  172.30s ->   173.30s] I'm going to be watching
+[  173.30s ->   174.30s] I'm going to be watching
+[  174.30s ->   175.30s] And I'm going to be watching
+[  175.30s ->   176.30s] I'm going to be watching
+[  176.30s ->   177.30s] I'm going to be watching
+[  177.30s ->   178.30s] And I'm going to be watching
+[  178.30s ->   179.30s] I'm going to be watching
+[  179.30s ->   180.30s] I'm going to be watching
+[  180.30s ->   181.30s] I'm going to be watching
+[  181.30s ->   182.30s] I'm going to be watching
+[  182.30s ->   183.30s] I'm going to be watching
+[  183.30s ->   184.30s] I'm going to be watching
+[  184.30s ->   185.30s] I'm going to be watching
+[  185.30s ->   186.30s] I'm going to be watching
+[  186.30s ->   187.30s] I'm going to be watching
+[  187.30s ->   188.30s] I'm going to be watching

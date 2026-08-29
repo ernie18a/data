@@ -1,0 +1,48 @@
+[    0.00s ->     4.30s] Hey y'all. Today we'll be walking through how to open up your first credit spread on the
+[    4.30s ->     8.28s] Thinkorswim mobile platform so that you can trade on the go or whenever you don't have
+[    8.28s ->    12.28s] access to your computer. First and foremost, this goes without saying, open up the app on your phone
+[   12.28s ->    16.96s] and then you'll see the trade icon on the bottom taskbar. Click on that and this will take you
+[   16.96s ->    21.54s] directly to the ticker selection screen. First, type in the ticker that you want to trade. It
+[   21.54s ->    26.98s] could be a stock or an ETF and then click on the option chain directly next to the stock or ticker
+[   26.98s ->    31.00s] that you've typed in and want to select. Here, this will take you to the option chain for that
+[   31.00s ->    35.98s] specific ticker. In this example, we're going to go with Netflix. Directly below the stock price
+[   35.98s ->    40.06s] at the top of your screen, you'll see that options are bolded. This means that you're on the right
+[   40.06s ->    45.64s] screen. In this screen, you can switch to chart, news, or profile if you want to to kind of, you
+[   45.64s ->    50.90s] know, to kind of move around, see the chart, read the news. However, for this example, we're just
+[   50.90s ->    54.46s] going to stay directly on this options screen to show you how to open up your first credit spread.
+[   54.46s ->    60.85s] And in order to trade spreads, you have to make sure to click on spread located directly below
+[   60.85s ->    66.43s] IV as indicated on the screen and select vertical to trade credit spreads. There's a lot of other
+[   66.43s ->    70.93s] options, but for now, we'll just only click vertical. Next, you'll see directly below that
+[   70.93s ->    77.19s] the actual option chain with a lot of dates. Select the date that you want the spread to expire on. It'll
+[   77.19s ->    82.89s] drop down the current credit spread pairs. Next, find and click on the strike prices that you want
+[   82.89s ->    88.23s] to trade. If you're selling a put credit spread, click on the bid column on the put side. And for
+[   88.23s ->    93.93s] a call credit spread, the bid column on the call side. In this example, we're going to select 4950,
+[   93.93s ->    99.81s] 500 Netflix puts. Next, you'll see the purchase screen for us to adjust the quantity and limit price.
+[   99.81s ->   106.11s] Double check the information and make sure that the cell is toggled and the box is red. If you're buying a
+[  106.11s ->   112.49s] debit spread, the box will be green and the buy will be toggled. Next, adjust the quantity to the desired
+[  112.49s ->   117.79s] quantity. In this example, we're just going to sell one and then adjust the limit price to the desired
+[  117.79s ->   123.65s] price that you want to collect your credit for. The limit price will initially be set as the average
+[  123.65s ->   129.61s] between the bid and the ask price. After adjusting your limit price, you'll see on the bottom, the cost of
+[  129.61s ->   134.49s] the trade has changed. This is how much you'll receive or pay for a trade. So for a credit spread,
+[  134.49s ->   140.53s] we'll be receiving money. So in this case, the limit price is 175 in this example. However,
+[  140.53s ->   146.35s] we're only receiving 174 of credit as indicated by the bracket around the 174. Underneath that,
+[  146.35s ->   151.19s] you'll see the dollar of a commission, which is taken out of our total. So it's 175 minus 1,
+[  151.29s ->   157.13s] which equals $174 due to that $1 commission that TD will charge us to get this trade filled.
+[  157.13s ->   161.53s] Now click review if everything looks good. And then it'll take you to one final screen for you
+[  161.53s ->   165.97s] to confirm that everything is correct before placing the order. Here, you'll see the order
+[  165.97s ->   171.62s] details, including your max profit and max loss on this one trade. Double check all the relevant
+[  171.62s ->   177.40s] information, including the strike price and the dates and click send to send this order in to see
+[  177.40s ->   181.80s] if there's a taker. You'll see the confirmation message pop up on the screen. There's a chance that
+[  181.80s ->   187.36s] the order goes unfilled as you see with this example here. If it gets filled immediately,
+[  187.38s ->   192.02s] you'll see that you won't see it in the working tab on the screen right now. It will instead show up
+[  192.02s ->   195.92s] on the filled tab next to it. If you want to get this order filled immediately, you'll have to
+[  195.92s ->   200.72s] readjust it. If not, you can always just leave it and wait for it to fill until the market closes.
+[  201.02s ->   204.92s] There's a possibility that no one takes your order, which means that the order will just expire.
+[  205.52s ->   209.46s] Here in this example, we'll show you how to adjust it. Click on the working order that you see on
+[  209.46s ->   215.26s] the screen and you'll see a couple options here. Click on the cancel and replace order option right below
+[  215.26s ->   221.16s] cancel order. You'll see the same review screen that you saw earlier. Here you can readjust your
+[  221.16s ->   226.10s] quantity or limit price like you did previously. We'll readjust our limit price down to see if we
+[  226.10s ->   229.92s] can get this order to fill. If it doesn't fill, we'll keep lowering the limit price until someone
+[  229.92s ->   235.40s] takes our order. Once the order is successfully filled, you'll see it disappear from the working
+[  235.40s ->   241.32s] tab and show up on the fill tab. That's it. After all that, you've opened up your first credit
+[  241.32s ->   246.70s] spread on the thinkorswim mobile platform. Now stay safe, go out there and happy trading.

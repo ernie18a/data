@@ -1,0 +1,140 @@
+[    0.02s ->     8.62s] Hey guys, what's up? It's AB Trades and today I wanted to go over a video of the top three methods, strategies, slash patterns that I use to make money in the stock market.
+[    8.74s ->    21.68s] Again, there are a bajillion different ways to make money and different strategies that you can use, but these are the three most popular ones that I use for myself and I know that a lot of other experienced traders also use for themselves as well.
+[   21.68s ->    32.08s] So the three patterns will be the triangle pattern, the horizontal pattern, and the continuation pattern.
+[   32.44s ->    34.64s] So to start off, we're going to go over the triangle pattern.
+[   34.98s ->    39.88s] So I'm going to use examples from the most recent periods that I could find in stocks.
+[   40.50s ->    46.86s] So the first one that popped into me for a triangle pattern was Tesla on Thursday.
+[   46.86s ->    52.64s] As you can see here, we had this huge move in the pre-market because of earnings.
+[   53.14s ->    56.12s] And then we run up and we're kind of consolidating into this small corner.
+[   56.50s ->    59.96s] Then in the morning, we open and we drop and we start to consolidate within a triangle.
+[   61.20s ->    71.96s] Now again, the triangle pattern is so strong because big name blue chip stocks that have a lot of volume, especially a lot of attention from the previous day,
+[   71.96s ->    77.36s] are rarely ever going to stay within the same small little price range here.
+[   77.68s ->    86.24s] So you see that the price is starting to consolidate in between one area, in between, it looks like, 331 and 327.
+[   86.54s ->    89.84s] Okay, that is a small range for something to be stuck in.
+[   90.08s ->    91.96s] So it will explode some way.
+[   92.24s ->    94.92s] And you can also see VWAP is pushing through the middle.
+[   95.22s ->    98.70s] When VWAP is pushing through the middle, you know something's going to happen.
+[   98.70s ->   102.36s] There's going to be a break out either to the upside or to the downside.
+[  102.88s ->   110.58s] Now with a triangle, it's more times than not a continuation pattern, meaning that if you have an uptrend and you consolidate in a triangle,
+[  111.00s ->   113.42s] more times than not, it's going to break out to the upside.
+[  114.42s ->   115.40s] And the same thing with downside.
+[  115.88s ->   118.64s] So, sorry, all my notes are on my phone of examples.
+[  119.10s ->   120.88s] Another example would be BA.
+[  120.88s ->   126.80s] Okay, so if you can see here in the morning, we had a nice little push up.
+[  127.14s ->   130.36s] We broke through VWAP and started trending down.
+[  130.50s ->   134.18s] Okay, so as you can see here in the morning, we had a little gap down.
+[  134.30s ->   137.94s] We pushed up to test the pre-market highs or the pre-market levels here, right?
+[  138.22s ->   140.32s] And then, of course, we couldn't, so we started downtrending.
+[  140.32s ->   144.58s] So this is where the triangle pattern comes into more of a continuation play.
+[  144.86s ->   146.06s] We're pushing down.
+[  146.20s ->   150.10s] We consolidate into a small price range.
+[  150.30s ->   155.72s] This is known as the descending triangle because we have it pushing up against the same resistance level,
+[  156.10s ->   158.18s] and then it's slowly uptrending.
+[  158.50s ->   163.90s] So we're slowly uptrending, but we're pushing up against this level here with the continuation,
+[  164.98s ->   167.58s] and then the EMA, and then we push down.
+[  167.58s ->   171.52s] So that is one top pattern I look for.
+[  171.62s ->   171.80s] Why?
+[  172.20s ->   173.44s] For a few reasons.
+[  173.62s ->   175.08s] It's a continuation pattern.
+[  175.46s ->   181.62s] I don't have to be on first thing in the morning watching to see this pattern.
+[  181.90s ->   188.10s] This pattern happens in between the best times, in between 9.30 and around 1.30.
+[  188.42s ->   192.62s] That is, again, for my market time, a central standard time,
+[  192.62s ->   201.00s] because usually the stock market needs to set up, find which way it's going, consolidate a bit,
+[  201.08s ->   206.54s] and then shoot up, which means I have time to catch a triangle pattern.
+[  207.88s ->   212.60s] Also, you usually know the expected move based on the base of the triangle.
+[  212.98s ->   218.22s] So based off here, my expected move would be down to about here, which would have been fine.
+[  218.22s ->   221.20s] Also, you have amazing risk to reward.
+[  221.34s ->   225.36s] So let's say you take the trade here for a put, which means you're going to make money on the way down,
+[  225.68s ->   227.36s] and it goes up to here.
+[  227.68s ->   233.22s] Then easy, you stop out for a small loss, but if not, you let it run so you know where your stop is.
+[  233.58s ->   237.40s] Okay, so our next pattern, it will be the horizontal pattern.
+[  237.40s ->   245.04s] Again, all these things that I'm mentioning works well on a longer time frame, like a daily or a four-hour chart,
+[  245.48s ->   250.48s] but for this, I'm focusing on the intraday trading.
+[  250.90s ->   255.52s] So on BABA here, on Tuesday, we made a low.
+[  255.88s ->   260.08s] So, of course, a low for intraday is going to mention that we're going to draw a line
+[  260.08s ->   265.42s] to see if it crosses below that line or not, and we also made a high here.
+[  265.42s ->   269.56s] So that's what we are looking for going into the next day.
+[  269.84s ->   271.08s] This is a horizontal pattern.
+[  271.46s ->   276.98s] So then in the Wednesday morning, no, this is Tuesday aftermarket,
+[  277.22s ->   281.80s] we push up to this previous resistance level here, and we get rejected,
+[  282.02s ->   284.72s] which means we went up, we tried to test to break above.
+[  285.00s ->   289.40s] Of course, it was during pre-market, no volume was there, so there was nothing to push it over,
+[  289.58s ->   291.46s] and then we started dropping back again.
+[  291.46s ->   299.62s] Now, Wednesday, a pre-market, we came down here, and we were testing the support level, okay?
+[  299.94s ->   307.56s] And even though we dropped below, volume here picked up, and when volume picks up in pre-market,
+[  307.72s ->   314.12s] you know that is a valid support level, because usually there is no volume in after or pre-market.
+[  314.12s ->   320.48s] So when you see volume bars and you see a little reversal, you know that that's support or resistance level is very valid.
+[  320.98s ->   325.08s] So we started bouncing off here, so you could have played a call,
+[  325.16s ->   328.98s] because you know that this is a horizontal pattern here playing in between this.
+[  329.48s ->   334.48s] We bounced off here, and then when we came up here, so two things why I like this pattern.
+[  335.20s ->   337.70s] You know when to get in, you know to wait for a bounce.
+[  337.70s ->   341.56s] If you get in here, then this is your stop, and then this is your target.
+[  341.68s ->   345.96s] So you know where you're stopping out beforehand, and you know where you're going to take profit.
+[  346.42s ->   352.74s] And also, if we're doing the same thing with a put, we see here, we go up, we start to get rejected here,
+[  353.02s ->   357.32s] we buy a put, we stop out here, and our target is all the way down here.
+[  357.62s ->   360.80s] So that's something just to mention for the horizontal pattern.
+[  360.80s ->   366.68s] Now, another pattern that we've been seeing a lot of in the stock market recently is what I call the,
+[  366.84s ->   368.30s] well, I mean, again, it's not my pattern.
+[  368.50s ->   374.88s] I learned it from S&B Capital, which is a proprietary trading firm based out of New York.
+[  375.32s ->   382.66s] And they, I don't know what they call it, but I call it the 10% rule, even though it's not a rule.
+[  382.80s ->   385.80s] But first example that I'm going to show you of it is Netflix.
+[  387.85s ->   388.39s] Where's Netflix?
+[  388.39s ->   395.59s] Okay, so if I go back here of last Friday, so Thursday, Friday, right here.
+[  397.21s ->   405.95s] Okay, so basically how this 10% thing works is when you have a huge trending day where the market or stock
+[  405.95s ->   410.69s] trends in one direction, like it trends the whole day up or it trends the whole day down.
+[  411.41s ->   412.97s] So for example, Netflix.
+[  413.11s ->   416.13s] It started here, and it trended basically the whole day down.
+[  416.13s ->   421.01s] Okay, and then it closed on the bottom 10% of the range.
+[  421.09s ->   425.33s] Okay, so when you close on the bottom part of your range.
+[  425.33s ->   427.61s] Okay, so let's see.
+[  427.61s ->   432.15s] Okay, so right, this is my range for the day.
+[  432.15s ->   435.55s] The range here was about 4.25%.
+[  435.55s ->   438.67s] Okay, so 4.25%.
+[  438.67s ->   440.73s] Yes, 1%.
+[  440.73s ->   444.07s] Okay, that's close to the bottom 10% of the range.
+[  444.15s ->   445.25s] We are closing at the bottom.
+[  445.25s ->   454.85s] What that usually means on most cases, again, no trading strategy is perfect, but when something
+[  454.85s ->   460.61s] closes on the bottom range when it was trending down or vice versa, if it's trending up and
+[  460.61s ->   465.51s] it closes near the top, then it will most likely go up the next day.
+[  465.51s ->   467.81s] But in this instance, for Netflix, we trended down.
+[  467.93s ->   473.05s] We closed in the bottom portion of the range, and then we solved the continuation of that
+[  473.05s ->   474.17s] drop the next day.
+[  475.37s ->   476.47s] Let's go to Facebook.
+[  479.14s ->   479.92s] Let's see.
+[  480.08s ->   483.62s] That's, again, a support and resistance play because we know that there's support there.
+[  483.76s ->   484.88s] We have blah, blah, blah, blah.
+[  485.16s ->   488.58s] Again, I don't need to mention all that because you'll see it in the future.
+[  489.56s ->   489.92s] Here we go.
+[  490.00s ->   490.90s] It's the same thing.
+[  491.26s ->   496.38s] So Facebook, we seem to have trended down, and then we closed in the bottom portion of
+[  496.38s ->   497.00s] the range.
+[  497.44s ->   499.42s] This is not on the very bottom portion.
+[  499.60s ->   503.84s] I would have liked to see it close around here, but, again, that doesn't really matter
+[  503.84s ->   509.22s] because, yes, we closed on the bottom portion, and also we closed below a support level, which
+[  509.22s ->   514.96s] means this will act as a new resistance, which is what we saw the whole pre-market and aftermarket
+[  514.96s ->   521.36s] up Friday and Monday, we saw it just getting rejected at this resistance level, and then
+[  521.36s ->   523.08s] it showed the continuation down.
+[  525.16s ->   529.06s] Now we're going to go to Apple to show one last example of this.
+[  530.00s ->   533.64s] Obviously, Apple had its earnings and whatnot.
+[  533.88s ->   534.38s] It did great.
+[  536.40s ->   539.82s] We trended up.
+[  539.82s ->   543.54s] We had this huge spike up from earnings.
+[  544.04s ->   550.52s] We just staircased it up a bit, and we closed within the very top portion of the range.
+[  551.22s ->   554.12s] That is indicative that the next day it will continue.
+[  554.98s ->   558.22s] Did it stop off, and did it drop below?
+[  558.68s ->   560.16s] Yes, it did drop down.
+[  560.28s ->   564.22s] It doesn't go straight up, but you have to understand that there are a lot of traders
+[  564.22s ->   569.84s] who don't have access to trading during pre-market and aftermarket, or they don't even see the
+[  569.84s ->   572.00s] pre-market and aftermarket movement.
+[  572.44s ->   578.96s] So if they see it closing in the very top percent of the range, and then they see it open around
+[  578.96s ->   582.52s] that same price range, they're just going to think of it going to continue.
+[  582.88s ->   586.98s] You have to think about the psychological aspect of trading as well and what all the other traders
+[  586.98s ->   587.36s] are thinking.
+[  587.36s ->   595.26s] But so, again, that would have been a resistance level, and as you see, this is going to be
+[  595.26s ->   600.82s] a continuation most likely, and then after we bounce and we show some support here and
+[  600.82s ->   604.92s] we break through this, it's just a clear indication of the continuation upward.
+[  605.36s ->   611.80s] Again, the three day trading patterns that I focus on is the horizontal pattern, the 10%
+[  611.80s ->   615.86s] or continuation pattern, and triangle patterns.
+[  615.86s ->   618.48s] Again, I hope you all enjoy this and learn something from it.
+[  618.76s ->   619.82s] Please like, comment, and subscribe.
+[  619.96s ->   620.66s] See you all in the next video.

@@ -1,0 +1,76 @@
+[    0.11s ->     4.75s] Hey guys, what's up? It's ABTrades and I run a YouTube channel where I teach people how to day trade options.
+[    5.19s ->    11.83s] Today we are on day four of the free day trading options course where I'm going to talk about option Greeks and what they are.
+[   12.25s ->    16.61s] Now, first disclaimer is I don't know everything about Greeks.
+[   16.71s ->    20.93s] I'm not an expert on options Greeks, nor do I really understand them at all.
+[   22.63s ->    23.99s] Just wanted to throw that out there.
+[   24.05s ->    26.21s] However, I will do my best at explaining for y'all,
+[   26.21s ->    31.95s] and I will include this website that I'm going to use for reference in the description below if you want to learn more.
+[   32.43s ->    37.13s] Second, I have already posted three videos, so go back and watch those if you haven't watched them yet.
+[   37.21s ->    39.95s] And if you want to watch the more to come on this free options course,
+[   40.13s ->    42.83s] please subscribe and turn on the alerts to get notified.
+[   43.53s ->    47.83s] All right, so when it comes to options Greeks, let's look at our options table first.
+[   49.41s ->    51.09s] Oh, whoops, I'm still in demand.
+[   52.54s ->    54.30s] Whoops, sorry guys, my fault.
+[   54.76s ->    56.06s] Getting out of demand now.
+[   57.30s ->    62.18s] So when we come to our table, and remember I usually say volume and open interest.
+[   62.92s ->    69.56s] Again, the reason why I don't understand Greeks the best is because they're mainly for net sellers.
+[   69.78s ->    74.08s] One means you're selling a contract instead of buying it to collect time decay, which is theta,
+[   74.20s ->    75.60s] which I'm about to explain what that is.
+[   76.38s ->    81.14s] So you come here, you adjust to delta, gamma, theta, vega, which are the Greeks.
+[   81.14s ->    91.38s] So delta, d, direction, theta, t, time, vega, v, volatility, or volume, and gamma is based off delta.
+[   91.56s ->    92.82s] That's why it's next to delta.
+[   94.99s ->    96.91s] Again, I will do my best at explaining this.
+[   97.55s ->   100.31s] Delta is the direction of the stock.
+[  100.31s ->   105.87s] So if a stock moves $1, delta shows you how much that stock will increase in price.
+[  106.19s ->   115.77s] Or if the stock or SPY decreases by $1, it shows you how much that contract will increase, decrease in price for the call contract.
+[  115.87s ->   116.01s] You know?
+[  116.25s ->   118.07s] And it shows how much is moving per dollar.
+[  118.07s ->   121.13s] And if I'm wrong, I'm sorry, but I included that disclaimer at first.
+[  121.45s ->   123.25s] Again, this is from my understanding of it.
+[  124.39s ->   125.61s] Theta is time decay.
+[  125.73s ->   126.75s] That's why it's negative.
+[  127.31s ->   137.19s] Again, as you get closer to the expiration date of the contract, it starts to lose more premium or more value of the contract.
+[  137.89s ->   146.49s] For instance, if we go out 44 days from expiration and we look at the theta, it's 0.07.
+[  146.49s ->   151.09s] That means every day the contract loses $7, okay?
+[  151.55s ->   159.57s] But if we come up to expiration in two days, the value that the contract is losing each day is $34.
+[  160.09s ->   162.89s] But if you come up to now, it's 20...
+[  162.89s ->   167.95s] Well, okay, well, this day is a lie because it's Wednesday and it doesn't record right.
+[  168.21s ->   176.21s] But again, $34 versus $7, theta starts to increase at around 45 days till expiration, which is what these days are.
+[  176.21s ->   181.19s] We talked about that in the previous videos, is when theta starts to hit heavy.
+[  181.19s ->   185.63s] But it hits the most when it starts to get close to its expiration date.
+[  185.85s ->   190.99s] That's why I like to stay away, say, between two to four days from expiration.
+[  191.47s ->   191.91s] Why?
+[  192.03s ->   198.17s] So I can get full advantage of delta as well as full advantage or less advantage of theta.
+[  198.81s ->   203.41s] So again, delta also increases as you get closer to expiration.
+[  203.41s ->   212.11s] So delta, like I'll say if the stock moves, it's saying I have the ability to make $50 per contract if it moves the way I want it to move, right?
+[  212.35s ->   213.49s] So that's amazing.
+[  213.75s ->   215.15s] Delta is higher.
+[  215.25s ->   216.81s] But then theta is also higher.
+[  217.01s ->   221.23s] So the contract loses more value each day as a give and take.
+[  221.71s ->   222.99s] Vega is volatility.
+[  223.33s ->   227.55s] So how much the stock will increase if the volatility of the contracts increases.
+[  227.55s ->   233.71s] So volatility is, of course, volume and how much, blah, blah, blah, blah, blah, hard to explain.
+[  234.11s ->   237.29s] But again, let's consult Investopedia, the best place in the world.
+[  237.59s ->   239.91s] Remember, guys, I am not an expert and I taught myself.
+[  240.53s ->   242.23s] So again, I'm a day trader.
+[  242.37s ->   243.51s] I don't think this is necessary.
+[  243.71s ->   246.59s] I just think you need to fully understand theta to be successful.
+[  247.07s ->   248.95s] Delta would be the next best thing to understand.
+[  249.13s ->   250.31s] And after that, I think you're fine.
+[  250.31s ->   253.45s] However, I will include this so you can understand it better.
+[  254.07s ->   258.67s] Again, delta is sensitive to price or the direction of the price.
+[  259.11s ->   260.31s] Vega is volatility.
+[  260.71s ->   261.99s] Gamma is sensitive to delta.
+[  262.27s ->   263.95s] And theta is sensitive to time decay.
+[  264.65s ->   265.39s] Blah, blah, blah, blah, blah.
+[  265.49s ->   266.71s] Read this if you want more.
+[  266.99s ->   268.55s] Guys, I'm sorry I can't explain better.
+[  268.81s ->   272.59s] But I truly don't understand this to the extent in which I think I can teach it.
+[  273.13s ->   280.01s] If I'm teaching something, I like to consider myself an expert or I like to know a lot about it before I teach someone else.
+[  280.41s ->   282.23s] I fully, I don't understand it.
+[  282.23s ->   285.13s] But again, I hope I was able to explain it enough for you.
+[  285.81s ->   287.77s] And if not, this will be linked in the description.
+[  288.01s ->   289.25s] Thank you all for watching.
+[  289.41s ->   293.37s] I promise tomorrow's video will be more informative as I will know more.
+[  293.77s ->   294.29s] All right, guys.
+[  294.53s ->   295.63s] See you all tomorrow for day five.

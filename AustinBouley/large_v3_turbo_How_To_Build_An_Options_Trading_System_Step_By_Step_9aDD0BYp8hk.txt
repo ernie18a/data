@@ -1,0 +1,250 @@
+[    0.00s ->     2.96s] The reason you're struggling could be a consistent options trader
+[    2.96s ->     5.22s] is because you don't have an options trading system.
+[    5.60s ->     7.80s] And no, I'm not talking about an options strategy.
+[    7.94s ->     9.38s] I'm talking about an options trading system.
+[    9.54s ->    10.72s] There is a huge difference.
+[   11.04s ->    14.54s] Okay, if you want consistency, you want to know what to do at any given point.
+[   14.62s ->    17.60s] If you want to enter a trade and actually have the trade plan listed out
+[   17.60s ->    20.80s] so that if a crash happens, a volatility spike happens, whatever happens,
+[   20.86s ->    22.48s] number one, this is the video for you.
+[   22.52s ->    25.48s] And number two, it's because you need an options trading system.
+[   25.58s ->    27.80s] So what exactly is an options trading system?
+[   27.80s ->    30.24s] I know you guys hate math, but this is the math behind it.
+[   30.46s ->    34.46s] An options trading system equals number one, the right strategy,
+[   34.74s ->    40.64s] plus number two, the right market, plus number three, the right mindset.
+[   41.06s ->    45.30s] Okay, in order for a system to work, it needs to be a playbook
+[   45.30s ->    48.38s] where you know when this happens, I do this at this time.
+[   48.56s ->    51.38s] I'm going to walk you through the exact playbook that I use
+[   51.38s ->    54.42s] so you can walk away just implementing a proven system
+[   54.42s ->    56.84s] or at least knowing what one looks like so you can build your own.
+[   56.84s ->    59.34s] Okay, so let's bring down each one of these components.
+[   59.76s ->    63.92s] An options trading system is made up of the right strategy, right market, right mindset.
+[   64.40s ->    67.04s] A right strategy is classified as this, okay?
+[   67.42s ->    72.16s] A right strategy is something that number one has a set of rules, okay?
+[   72.42s ->    75.78s] If your strategy does not have a set of rules, it's not a strategy.
+[   75.94s ->    78.20s] It's called discretion and it's the reason why you're losing
+[   78.20s ->    80.86s] because every time it's slightly different, you convince yourself,
+[   80.94s ->    82.06s] emotions get in the way, whatever.
+[   82.20s ->    84.22s] It needs to be a set of rules.
+[   84.22s ->    87.56s] Another way to say this is it needs to be mechanical, okay?
+[   87.66s ->    90.74s] You need to know every single time I put on a trade, I do this.
+[   90.96s ->    91.78s] Here's one for me.
+[   91.90s ->    94.04s] One of my favorite trades is the 1-1-1 trade.
+[   94.34s ->    97.06s] Every time I put on this trade, it's the exact same thing.
+[   97.30s ->   100.60s] For me, I traded on ES, so I know every time I trade ES.
+[  100.98s ->   105.32s] Every time I go close to 120 DTE into the future, 120 days out,
+[  105.76s ->   108.86s] I pick my strike prices by doing a 25 delta I buy,
+[  108.86s ->   114.02s] 23 delta I sell, and then I sell a 10 delta, just like that.
+[  114.18s ->   115.56s] Every single time, same setup.
+[  115.88s ->   120.98s] I have a take profit, 25%, and a stop loss of 200%.
+[  120.98s ->   123.70s] This is the basic gist of a strategy.
+[  123.96s ->   124.92s] It must be mechanical.
+[  125.12s ->   127.52s] I must know the exact thing I'm doing every single time.
+[  127.60s ->   129.18s] If you're not doing the same thing every time,
+[  129.44s ->   131.28s] that's why you're having inconsistent results.
+[  131.38s ->   132.64s] How can you expect to have consistency
+[  132.64s ->   136.20s] if you're not putting in the same inputs into the equation every time, okay?
+[  136.20s ->   140.12s] So number one is have to set rules of mechanicals for your strategy.
+[  140.28s ->   142.02s] Number two to have the right strategy
+[  142.02s ->   144.78s] is you need to make sure that it's been backtested.
+[  145.04s ->   149.82s] You need to know over the last 10, 20, 30 years, can this make money?
+[  149.96s ->   151.06s] So you need to backtest.
+[  151.22s ->   153.68s] Not only that, you need what's called forward test.
+[  154.02s ->   157.10s] And this can be done by using real money, which is what I recommend,
+[  157.58s ->   159.88s] or if you don't want to risk money, use paper trading.
+[  160.02s ->   162.92s] Either way, start doing the trades live,
+[  163.30s ->   165.14s] understanding the real market order flow,
+[  165.14s ->   168.42s] and actually do it for a month or two to see if it actually works.
+[  168.78s ->   170.26s] So in order to have a right strategy,
+[  170.58s ->   172.76s] you need to have a set of rules, a mechanical system.
+[  172.96s ->   176.08s] It needs to be backtested and it needs to work with real money.
+[  176.44s ->   178.56s] This for me is my 1-1-1 strategy.
+[  178.96s ->   182.38s] And again, this is my go-to strategy for bullish markets.
+[  182.44s ->   184.56s] And I'll explain here how an option system
+[  184.56s ->   186.46s] helps you understand what each market is.
+[  186.54s ->   188.74s] But if you want my personal help to build out
+[  188.74s ->   191.94s] your own mechanical systems or still one of mine,
+[  192.22s ->   193.42s] book a call with me down below.
+[  193.42s ->   196.46s] I'd love to help you implement exactly what I'm teaching here in this video.
+[  196.70s ->   199.48s] So that is how you pick a right strategy.
+[  199.66s ->   202.76s] Now, from right strategy, we also need to do it in the right market
+[  202.76s ->   205.28s] because a lot of you guys I know are losing money.
+[  205.46s ->   206.62s] And it's where like, you're like,
+[  206.68s ->   209.52s] I'm making money like for a month or two and I'm having win, win, win.
+[  209.52s ->   211.30s] And then one large loss wipes it out.
+[  211.30s ->   215.52s] And the reason that happens is because the market shifts, trend change,
+[  215.74s ->   219.02s] something happens, and that strategy stops working.
+[  219.38s ->   219.52s] Okay?
+[  219.86s ->   223.62s] Because the reason being is because every single strategy in the world works.
+[  223.70s ->   226.14s] It just, it only works in a particular type of market.
+[  226.28s ->   226.52s] Okay?
+[  226.52s ->   229.34s] So the one-on-one strategy that I like so much is great.
+[  229.68s ->   231.34s] It only really works in bullish markets.
+[  231.80s ->   234.68s] Like buying puts works during bear markets.
+[  234.80s ->   234.94s] Okay?
+[  235.24s ->   238.22s] So every option strategy you've ever tried has worked.
+[  238.48s ->   241.00s] And so if you've done it and it's worked and then it stopped working,
+[  241.00s ->   243.28s] it's not the strategy that stopped working.
+[  243.36s ->   244.84s] It's the market that stopped working.
+[  245.26s ->   247.24s] So once we have a right strategy,
+[  247.36s ->   248.16s] something that's mechanical,
+[  248.48s ->   250.82s] rules-based, has been backlisted and done with live money.
+[  250.92s ->   251.50s] We know it works.
+[  251.76s ->   252.78s] Then we have the right strategy.
+[  252.78s ->   254.10s] Now we move on to the right market.
+[  254.32s ->   256.86s] When does this strategy succeed?
+[  257.16s ->   260.50s] Now, the best way to know that is actually to backtest the strategy.
+[  260.68s ->   260.82s] Okay?
+[  261.18s ->   262.76s] Fun fact, when you backtest a strategy,
+[  262.86s ->   265.00s] it shows you how it performs over time.
+[  265.20s ->   266.70s] And if you see something like this,
+[  266.74s ->   269.28s] you'll tend to see periods in that backtest
+[  269.28s ->   271.88s] where the chart is underperforming and overperforming.
+[  271.92s ->   273.50s] So maybe it does well at this and then kind of flattens,
+[  273.54s ->   275.10s] maybe it goes down a bit and then it succeeds again.
+[  275.42s ->   275.66s] Okay?
+[  275.84s ->   278.00s] And so then you go to the backtest chart and you go,
+[  278.14s ->   280.22s] okay, where and what points,
+[  280.22s ->   281.56s] why was it trending up here?
+[  281.56s ->   283.14s] And why did it do really well here?
+[  283.48s ->   285.62s] What type of markets were these?
+[  285.92s ->   287.90s] And you then get to reverse engineer
+[  287.90s ->   291.18s] what type of markets does this strategy work best in?
+[  291.46s ->   293.60s] And so for me, if you backtest the 1-1-1,
+[  293.78s ->   295.66s] you will see that when the market is trending up,
+[  295.70s ->   296.60s] it does very well.
+[  296.82s ->   298.44s] When the market goes flat and goes down,
+[  298.50s ->   299.18s] it goes like this,
+[  299.22s ->   300.86s] and then it trends up very well again.
+[  301.14s ->   302.24s] So what does this tell me?
+[  302.46s ->   304.50s] This tells me that when the market is in an uptrend,
+[  304.62s ->   306.54s] I need to use the 1-1-1 strategy.
+[  306.54s ->   309.92s] So I need to pair the right strategy.
+[  309.98s ->   310.82s] I think it disappeared.
+[  311.18s ->   314.50s] The right strategy with the right market.
+[  315.00s ->   315.88s] And so for instance,
+[  315.94s ->   316.70s] if we're doing the 1-1-1,
+[  316.80s ->   319.34s] I make sure it's paired with an uptrending market.
+[  319.44s ->   320.26s] Now, how do I do this?
+[  320.50s ->   322.70s] The easiest way to tell the difference between markets
+[  322.70s ->   324.64s] is something called the 200-day moving average.
+[  325.00s ->   325.92s] So if you go to your chart,
+[  326.00s ->   327.98s] this works for any charting platform you're using,
+[  328.04s ->   329.68s] whether it's your broker, Yahoo Finance,
+[  329.88s ->   330.56s] anything like that.
+[  330.62s ->   332.70s] Go to the moving average simple line,
+[  332.70s ->   334.42s] go to the settings of it,
+[  334.66s ->   337.04s] change the length from whatever it is to 200.
+[  337.72s ->   338.56s] And this will show you,
+[  338.64s ->   339.96s] if the market is above this line,
+[  340.04s ->   340.46s] it's bullish,
+[  340.54s ->   341.84s] if the market's below it, it's bearish.
+[  342.10s ->   343.34s] Obviously, the better way to tell it,
+[  343.46s ->   344.98s] but this is the most general way.
+[  345.34s ->   346.64s] And so if the market's above this,
+[  346.68s ->   348.30s] and I want to be doing a 1-1-1 strategy,
+[  348.40s ->   349.12s] and the market's below it,
+[  349.14s ->   350.60s] I'll be using a bearish strategy.
+[  350.92s ->   352.20s] So to build out my system,
+[  352.26s ->   354.66s] I need the right strategy in the right market.
+[  355.10s ->   357.16s] And so this will probably lead you to believe,
+[  357.28s ->   357.58s] okay, cool,
+[  357.62s ->   359.46s] if I have the right strategy in the right market,
+[  359.54s ->   360.40s] how else could I fail?
+[  360.54s ->   361.46s] You, the human,
+[  361.46s ->   363.10s] the person executing the trade
+[  363.10s ->   365.42s] is the next failure point in this series, okay?
+[  365.82s ->   368.16s] And so that's where the right mindset comes into play.
+[  368.24s ->   369.66s] You need to be able to manage your emotions
+[  369.66s ->   371.10s] so that you're not chasing,
+[  371.48s ->   372.78s] not going off FOMO,
+[  373.04s ->   375.26s] not entering in too early, too late,
+[  375.56s ->   377.96s] not holding trades longer than you should.
+[  378.22s ->   379.48s] You just should be able to,
+[  379.72s ->   380.48s] like a robot,
+[  380.68s ->   382.72s] take these mechanical rules step-by-step
+[  382.72s ->   384.36s] and actually execute them.
+[  384.74s ->   386.68s] Now, what I found is that
+[  386.68s ->   389.46s] although having mechanical systems helps you,
+[  389.70s ->   391.26s] emotions still get in the way, okay?
+[  391.26s ->   392.54s] Not all of us are robots.
+[  392.74s ->   394.20s] And so the best way to do this
+[  394.20s ->   395.38s] is actually to automate
+[  395.38s ->   398.02s] and to take that mechanical set of rules
+[  398.02s ->   399.30s] and to plug it into a system
+[  399.30s ->   400.60s] that will automate it for you.
+[  400.94s ->   402.54s] And automation is the quickest way
+[  402.54s ->   403.48s] to remove emotions
+[  403.48s ->   405.18s] and to bring about consistency.
+[  405.70s ->   407.32s] And so if you've been struggling with emotions
+[  407.32s ->   408.38s] and struggling with consistency,
+[  408.56s ->   409.64s] consider automation.
+[  409.64s ->   411.86s] And so an options trading system,
+[  411.86s ->   413.32s] if we redefine it here,
+[  413.46s ->   416.02s] is simply the right strategy.
+[  416.18s ->   418.24s] So remember it equals the right strategy
+[  418.24s ->   420.34s] and we've gone over the characteristics of that,
+[  420.66s ->   422.56s] but it's also the right market.
+[  422.56s ->   425.52s] So the right market that worked for that strategy
+[  425.52s ->   429.20s] plus automation if we want to remove the execution risk.
+[  429.74s ->   431.88s] Now, this will probably lead you to be like Austin.
+[  432.44s ->   434.70s] The right market varies based on the strategy.
+[  434.86s ->   435.32s] You're right.
+[  435.32s ->   437.62s] There are three main types of markets
+[  437.62s ->   438.68s] if you don't know this.
+[  439.06s ->   440.86s] We have bullish markets, okay?
+[  441.32s ->   443.42s] We have bearish markets that go down
+[  443.42s ->   444.84s] and we have sideways markets
+[  444.84s ->   447.68s] where the market just stays in between a high and a low.
+[  448.02s ->   450.32s] So the fact that we have three different markets
+[  450.32s ->   454.00s] should mean that we need three different strategies
+[  454.00s ->   455.98s] for the right different market.
+[  456.42s ->   458.38s] So that means for the bullish strategy,
+[  458.48s ->   460.36s] I'm gonna have a set of mechanical plans,
+[  460.44s ->   462.36s] a playbook that I'm going to run
+[  462.36s ->   463.56s] when the market is bullish.
+[  463.56s ->   464.78s] So I'm gonna have a playbook.
+[  465.00s ->   467.08s] For the bear market, I'm going to have a playbook.
+[  467.42s ->   469.54s] For the sideways market, I'm going to have a playbook.
+[  469.84s ->   471.72s] And that allows me to know at any given point,
+[  471.82s ->   473.56s] any given market, how I can make money
+[  473.56s ->   474.92s] and how I can do so consistently.
+[  475.54s ->   478.30s] Now, actually, if you're one of my coaching clients,
+[  478.30s ->   480.52s] you can actually go inside of our program,
+[  480.60s ->   482.04s] go into the Thorcore Bot section
+[  482.04s ->   485.18s] and you can see the game plan for each different market.
+[  485.26s ->   487.04s] Whether it's a bullish market, this is the game plan.
+[  487.12s ->   489.12s] These are the strategies we use, the templates
+[  489.12s ->   490.62s] that you can know exactly what to do.
+[  490.76s ->   492.56s] The bearish playbook, the sideways playbook,
+[  492.56s ->   493.84s] and then this extra playbook.
+[  494.18s ->   495.16s] So what I want you to do
+[  495.16s ->   496.96s] is if you want to build an options trading system,
+[  496.96s ->   498.76s] you need to have a proven playbook
+[  498.76s ->   500.50s] for each type of market.
+[  500.60s ->   502.28s] That way you go, okay, what market are we in?
+[  502.32s ->   502.92s] We're in this, cool.
+[  503.04s ->   504.02s] I run this set of rules.
+[  504.12s ->   505.22s] I make money, good to go.
+[  505.54s ->   508.24s] And so that's what an options trading system is.
+[  508.48s ->   510.42s] It's knowing what to do at any given point.
+[  510.50s ->   512.72s] And bonus point, if you put automation on top
+[  512.72s ->   514.02s] where you're like, we're in this market,
+[  514.10s ->   515.06s] we execute this spot.
+[  515.06s ->   517.48s] We're in this market, we execute this spot.
+[  517.82s ->   519.30s] If you want my set of playbooks
+[  519.30s ->   521.00s] for every type of market, click the link down below.
+[  521.00s ->   522.48s] I'd love to be able to help you out.
+[  522.80s ->   524.64s] But an options trading system is simply there.
+[  524.94s ->   527.46s] So again, remember, if you want success,
+[  527.52s ->   529.44s] you need to have a system, you need to have a playbook,
+[  529.60s ->   530.50s] you need to know what you're doing
+[  530.50s ->   531.40s] for every type of market.
+[  531.48s ->   532.90s] It's a bullish market, pick a playbook,
+[  533.34s ->   535.76s] bearish market, build a playbook.
+[  535.88s ->   538.06s] And then for any other type of market you want to build,
+[  538.26s ->   538.74s] do that as well.
+[  538.80s ->   540.46s] Remember, right strategy, right market,
+[  540.62s ->   543.38s] and right mindset, or bonus on top, automation.
+[  543.54s ->   544.42s] I hope you enjoyed this video.
+[  544.62s ->   545.10s] See you next time.

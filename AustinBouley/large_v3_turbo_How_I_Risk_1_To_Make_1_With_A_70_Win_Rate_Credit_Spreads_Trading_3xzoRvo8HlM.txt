@@ -1,0 +1,166 @@
+[    0.53s ->     4.99s] Hey guys, what's up in this training video? I'm going to walk you through what credit spreads are,
+[    5.27s ->    11.03s] how they work, and how to implement step-by-step a strategy that can give you a 71% win rate
+[   11.03s ->    16.79s] while risking one to make one. So if you know anything about probabilities, this is a no-brainer
+[   16.79s ->    21.45s] trade that you should be taking every single day. Why? Well, because 7 out of 10 times you're going
+[   21.45s ->    26.51s] to make a dollar, 3 out of 10 times you're not. So you're going to end up making a lot of money.
+[   26.51s ->    31.55s] So let's walk through how this works step-by-step. So number one, we need to understand credit spreads
+[   31.55s ->    36.37s] for those who don't. So simply put, let's say we're going to trade a put credit spread. This
+[   36.37s ->    41.61s] means that we want a stock to stay above a certain level. So let's say the stock, this is a stock
+[   41.61s ->    47.17s] trading, and we say, hmm, it looks like the stock should stay above this level. Well, we simply put
+[   47.17s ->    52.45s] on a credit spread trade where the stock is supposed to stay above this level. If it does, we make money.
+[   52.45s ->    56.25s] So what does this mean? It means that if the stock goes up, we make money. It means the
+[   56.25s ->    59.75s] stock stays the same, we make money. It means that the stock goes down but doesn't break
+[   59.75s ->    64.03s] our level, we make money. The only way we lose money is if the stock goes below the level
+[   64.03s ->    68.67s] that we pick. Still, this gives a high chance of making money. Why? Because we don't really
+[   68.67s ->    72.55s] need to be correct on direction. We should be correct on the general idea of where it should
+[   72.55s ->    77.91s] go. The same thing works for a call credit spread, but in reverse. So again, we pick a level
+[   77.91s ->    82.99s] we think the stock will stay below. So if the stock is trading like this, we pick a
+[   82.99s ->    86.83s] level, we think, hey, I think it's going to top out here and it won't cross above. And
+[   86.83s ->    90.65s] so we make money when the stock goes down with the call credit spread, when the stock stays
+[   90.65s ->    95.45s] the same, or when the stock goes up but stays below our level. We only lose money when the
+[   95.45s ->   100.71s] stock goes above the level that we picked. So again, we put credit spreads. These should
+[  100.71s ->   106.91s] be traded in bullish markets. We have call credit spreads and these should be traded in more
+[  106.91s ->   110.91s] of a bearish market because that's how they generally make money. So we don't need to
+[  110.91s ->   114.85s] know direction with credit spreads trading. We don't need to know advanced charting. We
+[  114.85s ->   118.53s] don't need to know all this. We should have a general idea of where things will go. And
+[  118.53s ->   125.45s] we can use simple indicators like moving averages to tell us this. So there's no guessing, no wondering.
+[  125.45s ->   130.21s] We just go, hmm, is the stock above this indicator or not? Okay, this is the trade I'm going to put
+[  130.21s ->   136.25s] on. Anyways, we'll walk more through that in this video later on. Okay, cool. So now,
+[  136.25s ->   140.41s] how do we collect certain credit and actually set up these trades? Well, when we set up a
+[  140.41s ->   145.45s] trade, what we're doing is we're selling one option at a level. So let's use a put credit
+[  145.45s ->   151.21s] spread for example. So we're selling an option at, let's say, let's say the stock is trading
+[  151.21s ->   162.61s] here, here being $400. I think the stock will stay above $395. Okay? So this is my level that
+[  162.61s ->   166.33s] I want the stock to stay above. Well, how do I actually set up this credit spread
+[  166.33s ->   174.05s] trade? Well, I would sell the strike price at $395 and then I would buy the strike price
+[  174.05s ->   179.65s] right underneath it at $394. Why? Well, because the way that credit spreads work when you sell
+[  179.65s ->   184.39s] an option, you receive money. When you buy an option, you give up money. So the strike prices
+[  184.39s ->   190.35s] closest to the stock price will have more credit. So just in general, let's say I collect, by selling
+[  190.35s ->   197.05s] this one, I would collect $1.50. So that means someone would pay me $1.50 to put this trade on
+[  197.05s ->   204.49s] and for this strike, I would have to pay, let's say, $1.10 to put this trade on and so the difference
+[  204.49s ->   209.51s] is what I get to keep. So I would get to keep $0.40. Now that may not seem much, but when we're in the
+[  209.51s ->   215.57s] options world, you multiply everything by 100 to get your real value. So I would make $40 to put on
+[  215.57s ->   222.55s] this trade. So I make $40 as long as the stock stays above $395. So that is how you structure a
+[  222.55s ->   229.23s] call credit spread trade. Now let's talk about some specifics. Okay? What does $0.40 actually mean?
+[  229.61s ->   235.53s] All right. Well, let's do this little chart here where we have this little line shows where the
+[  235.53s ->   240.87s] stock can go. Let's say the stock is currently trading here. This is where the stock is trading.
+[  241.37s ->   245.89s] This is where my strike price is, right? The stock can go, I guess it can't go to infinite,
+[  246.01s ->   251.43s] but it can go to $0 here and it can go to an infinite amount of price here, right? Okay. So we have
+[  251.43s ->   255.77s] the put credit spread strike price here and this is where the stock's currently trading. We want the
+[  255.77s ->   262.03s] stock to stay above it. So how do we know what different credits mean and our probability with it?
+[  262.03s ->   268.21s] Well, in the middle here, because a credit spread, the credit you collect, shows the likelihood that
+[  268.21s ->   273.47s] you're going to make money with that trade. So for instance, if we're in the middle here,
+[  273.51s ->   278.33s] if we're at our strike price, what is the probability that the credit spread stays above
+[  278.33s ->   284.81s] our level if it's at the strike price? Well, as anything in the market, it's 50-50. Why? Because
+[  284.81s ->   290.17s] it has an equally light likelihood chance of staying above or also staying below because it's in the
+[  290.17s ->   296.15s] middle. So in the middle here where your strike price is, the credit spread will be trading at 50
+[  296.15s ->   302.66s] cents. What if the credit spread is, or what if the stock went down to zero? Where would the credit
+[  302.66s ->   307.96s] spread be trading? Would it have a likelihood or a good chance of coming back to being at the strike
+[  307.96s ->   312.86s] price? No, it'd be virtually zero. So the credit you would collect would be around zero because it's
+[  312.86s ->   319.32s] super far away from the strike price. Now, what about moving up further and further?
+[  353.49s ->   360.98s] All right, let's walk through some simple credit spread probabilities. All right, let's walk through
+[  360.98s ->   372.11s] some simple credit spread probabilities. So let's say that we have a, let's walk through some simple
+[  372.11s ->   377.43s] credit spread probabilities. So again, a stock can only go as low as zero, but it can technically go an
+[  377.43s ->   382.41s] infinite amount of price. So let's say this is where a stock's theoretical price can look like.
+[  382.45s ->   389.15s] It can go down to zero or it can go to infinity. Sweet. Cool. Let's say we selected our put strike
+[  389.15s ->   394.07s] price right here. Let's just give this a random value. Let's say it's 400. We think the stock will
+[  394.07s ->   401.23s] stay above and the stock's currently trading here. Let's say it's 407. Okay. So we have the stock price.
+[  401.31s ->   405.61s] This shows where the stock price can go. This shows our strike price. And now let's talk about
+[  405.61s ->   413.10s] probabilities based on credit collected. I'm going to keep this super simple. Okay. If the stock is
+[  413.10s ->   419.98s] trading at 400, what is the likelihood that the credit spread is going to end up above the strike
+[  419.98s ->   426.00s] price or below the strike price? Well, like anything in the market, it's 50-50. When we are at the strike
+[  426.00s ->   431.44s] price, there's a 50% chance that it goes above, also a 50% chance that it goes below. So there's a 50%
+[  431.44s ->   437.40s] chance. That means that the credit spread for $1.00 will be trading at 50 cents. So this is where it'll
+[  437.40s ->   444.04s] be trading. Now, what if the stock goes down to zero? What is the likelihood that will be above the
+[  444.04s ->   450.34s] strike price by expiration? Super unlikely, right? Like it is virtually impossible for the stock to go
+[  450.34s ->   459.36s] from zero to get above 400 by our expiration date. So since the probability of it actually making money
+[  459.36s ->   464.40s] for us is unlikely, it's going to be almost 0% chance here. So that means it's going to be trading
+[  464.40s ->   471.60s] at roughly $1.00 because it's not going to happen. If it's not going to happen, then you're going to
+[  471.60s ->   476.04s] have to pay out or lose your money on your credit spread. So the credit spread will be trading at a
+[  476.04s ->   482.24s] max loss of $1.00. Here in the middle, it'll be trading at 50 cents. So can you guess what it would be
+[  482.24s ->   487.98s] trading at infinity when the stock is 100% certain that it's going to be above your strike price?
+[  487.98s ->   493.64s] Well, if it's 100% certain, then that means that it's going to be trading at zero. Why? Because
+[  493.64s ->   499.32s] zero is how you win. You make money when the credit spread decreases in price, aka moves away from your
+[  499.32s ->   505.30s] strike price, and that's how you make money. So what does, if this spread is trading at, let's say,
+[  505.72s ->   512.18s] 35 cents, what does that tell us about the probability roughly of this trade? Well, it tells us
+[  512.18s ->   517.42s] there's a 35% chance that it expires in the money. So what we do is we take the width,
+[  517.42s ->   526.30s] $1 minus 35 to get the opposite. So it gives us 65. That means there's a 65% chance that this stock
+[  526.30s ->   533.08s] will expire out of the money, expire worthless for us. That's a rough math of probability. Now,
+[  533.18s ->   539.96s] why does this matter? Well, if you know anything about what I've done in the past, I created a free
+[  539.96s ->   546.40s] course called 84% win rate course that walks you through how you can follow the trend on stocks like
+[  546.40s ->   551.38s] this. And when you follow the trend and you go 3% out of the money, what you can do is you can trade
+[  551.38s ->   557.32s] credit spreads and do so with an 84% win rate, risking $3 to make $1. Well, what happens if instead
+[  557.32s ->   563.36s] of going 3% out, we move the strike price closer? And if we move the strike price closer, we have a
+[  563.36s ->   568.84s] less odds of winning. But as you can see here, we collect more, right? Because the further away we go,
+[  568.84s ->   574.12s] the less money we collect. So we're collecting $0.35 around here, but around here, which let's say
+[  574.12s ->   579.52s] is roughly 3% out, we're only collecting $0.15. So is it better to collect $0.15 and have a higher
+[  579.52s ->   585.98s] win rate or collect $0.35 and have a lower win rate? Well, that's the strategy I'm walking you
+[  585.98s ->   591.02s] through here today. Okay. So first off, we're still using trend following ideas. If you want to learn
+[  591.02s ->   594.50s] more about what I look for in trend following, you can go check out my free course linked in the
+[  594.50s ->   598.48s] description. But essentially here, we're going to go to indicators. We're going to add a moving
+[  598.48s ->   604.22s] average, a simple moving average. So right here, moving average simple. We'll go here. We can change
+[  604.22s ->   610.32s] it to anything we want, but I like the 50 MA just to give me a general idea. Here we go. If the stock
+[  610.32s ->   615.52s] is above the 50 moving average, then the market's considered bullish. If it's below, it's considered
+[  615.52s ->   619.78s] bearish. So what do we know about credit spreads? Well, if it's above this line, we'll be trading put
+[  619.78s ->   623.12s] credit spreads. If it's below the line, we'll be trading call credit spreads, just in general.
+[  623.12s ->   628.60s] All right. So now that we do that with this new strategy, we're going to go 1% out of the
+[  628.60s ->   635.30s] money. So again, the stock closed here at roughly, where did it close? It closed at 44924. So
+[  635.30s ->   640.76s] 449. Let me bring this in just a second. 44929. And we're going to go 1% out of the money.
+[  640.82s ->   647.64s] That's going to be 0.99. That's going to give us 444.79. We can't trade a strike price. It has
+[  647.64s ->   653.96s] decimal points. So we're just going to round to the nearest whole number. So $445 is the put credit
+[  653.96s ->   657.60s] spread strike we're going to sell. Then we're going to buy the one right below it. So the 444.
+[  658.02s ->   663.94s] So that's how we would structure this credit spread trade. We would simply sell the right
+[  663.94s ->   672.44s] here 445 and buy the 444. And as long as the stock stays above this level by our expiration
+[  672.44s ->   677.22s] date, we make money. Boom. So that's how you look at and structure this trade. Let's talk
+[  677.22s ->   685.02s] about these specifics though. So we look at the closed price. We take and go 1% out. So
+[  685.02s ->   690.60s] we're going to multiply that by 0.99. And then round to the nearest whole number. And then our
+[  690.60s ->   697.76s] expiration date is simply going to be plus seven days to what the current date is and
+[  697.76s ->   702.06s] then round to the next Friday. This is how you figure out your expiration date. So for
+[  702.06s ->   709.08s] today, for example, it is September 6th. So September 6th plus 7 gets us 13. So September
+[  709.08s ->   715.08s] 13th, which again would be next Wednesday. But we're going to round up to that next Friday.
+[  715.24s ->   720.48s] So that would be two more days I think. So that would be the 15th. So that means that if today
+[  720.48s ->   727.26s] is September 6th, then that means that our expiration date we're picking will be September 15th. So
+[  727.26s ->   732.20s] that is kind of a look at how we pick our expiration date. This is our expiration date. We now know
+[  732.20s ->   737.68s] how to pick our strike prices, which for this example is going to be 445, 444. So now we know
+[  737.68s ->   742.20s] how to set up these trades. Okay, cool. So we're setting up this trade right here. We will be
+[  742.20s ->   749.38s] collecting around 25 to 30 cents roughly depending on volatility. All right. Let's take the low end.
+[  749.38s ->   755.20s] Let's say when we set up this trade, it's trading at 25 cents. What does this mean? Well, we are
+[  755.20s ->   760.86s] deploying and using the same rules from the 84% win rate course, which means that we enter during
+[  760.86s ->   765.28s] trending markets as I just discussed, right? If the market's above this, we're doing a put credit
+[  765.28s ->   769.82s] spread. If it's below, we're doing a call credit spread. But also we look at exit rules, which means
+[  769.82s ->   774.88s] that when the stock breaks our short strike price right here, our short strike price, then we close
+[  774.88s ->   779.20s] the trade out early. Why? Well, because it prevents us from assignment risk and a lot
+[  779.20s ->   783.74s] of crap that can happen in the middle here. So instead, we just sell here. Again, we know
+[  783.74s ->   787.18s] what the price point will be at this level. It will be theoretically 50 cents. It's typically
+[  787.18s ->   792.68s] around 45 though. So around 45 to 50 cents, we'll be able to close the trade out. So that
+[  792.68s ->   799.68s] means we stand to make $25 and we are risking, well, again, we'll be able to sell it at, let's
+[  799.68s ->   805.44s] say, 50. That means we're risking 25. So for rough numbers, we're risking a dollar to make
+[  805.44s ->   814.08s] a dollar and we have roughly a 70% win rate. Okay, cool. So we know this. We know the structure
+[  814.08s ->   819.32s] of the trade. We know our math. Now what is the long-term expected return? How does this
+[  819.32s ->   824.96s] work and how does it compare to using a win rate that's a bit higher? Okay. Well, our
+[  824.96s ->   831.00s] long-term win rate is our win rate. So 70 times the amount we win per trade minus the amount
+[  831.00s ->   835.70s] we lose, 30. Again, we do this out of 100 trades, so 100 times 70%. That's where the 70 number
+[  835.70s ->   842.08s] is coming from. So 70 times 1 times or minus the amount we lose, I mean the number of times
+[  842.08s ->   848.68s] we lose times the amount we lose. So this is simply 70 minus 30. And what does this give
+[  848.68s ->   856.64s] us? About a positive 40. Wonderful. Let's look at the other strategy. 84% win rate. Okay,
+[  856.64s ->   862.30s] so we win 84 times out of 100. How much do we win when we win? Well, we win a dollar. So
+[  862.30s ->   868.04s] how much do we lose? Well, we lose 16 times. So we lose way less than this one. But we lose
+[  868.04s ->   872.76s] 3 dollars for every time we lose. What is the math on this? Well, I don't really want
+[  872.76s ->   877.04s] to try to do that math in my head right now, so we'll just do the math. 84 times 1 minus
+[  877.04s ->   889.72s] 16 times 3. That gives us 36. 36. So long-term, which one is better? Well, obviously, we have
+[  889.72s ->   895.80s] a $40 expected return here and a $36 expected return here. But again, at the end of the day,
+[  895.80s ->   900.14s] it comes down to, this is not a huge difference. Yes, if you're speaking mathematically, which
+[  900.14s ->   904.04s] one works best? It's this one that's closer to the money. But you also have to consider
+[  904.04s ->   908.56s] your emotions. Do you want to have a 70% win rate? Or do you want to have an 84% win rate?
+[  908.90s ->   913.52s] Are you okay with, do you want to lose less? Or do you want to lose more? This is a personal
+[  913.52s ->   917.40s] choice. I just wanted to walk you through how credit spreads work, how the system works, how
+[  917.40s ->   922.44s] moving your strike price affects your probability of winning and the amount of credit you collect.
+[  922.44s ->   931.32s] And so again, this is the strategy though. 99%, 7 days, round to the next Friday, collecting around
+[  931.32s ->   938.62s] 25 cents. This is the 70% win rate strategy that I put together. So again, if you are trying to trade
+[  938.62s ->   942.58s] credit spreads, if you want a 70% win rate, if you want to make a long-term positive return, this is
+[  942.58s ->   946.48s] the strategy for you. So anyways, guys, I hope you enjoyed this training. That's all I really have for
+[  946.48s ->   950.60s] you today is how to, well, I mean, all I really have to do. I just put together a huge in-depth
+[  950.60s ->   955.16s] training for you. But anyways, I hope you enjoyed it. If you learned anything from it, smash that
+[  955.16s ->   958.98s] subscribe button and share this with a friend who's trying to trade credit spreads but having
+[  958.98s ->   964.70s] a hard time. This should explain it all. Anyways, if you still have any questions, put the comment
+[  964.70s ->   969.14s] down below. I respond to all my comments or at least I read them all. So again, I would love
+[  969.14s ->   972.60s] to help you if I can. All right, guys, see you in the next training video.

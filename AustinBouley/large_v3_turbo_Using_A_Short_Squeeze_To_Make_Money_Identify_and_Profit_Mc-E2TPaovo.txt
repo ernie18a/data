@@ -1,0 +1,42 @@
+[    0.38s ->     4.38s] Alright guys, in this video we're discussing short squeeze. What is a short squeeze? Alright
+[    4.38s ->     7.62s] guys, let me just explain the bare essence of this and what I do, I'm going to have to
+[    7.62s ->    11.82s] explain some stock trading terminology. So when you go long on a stock, you have to buy
+[   11.82s ->    16.10s] to enter and you have to sell to exit your position. So when you buy, you're increasing
+[   16.10s ->    19.58s] buying, which means you're making the stock go up more. When you sell it, you're bringing
+[   19.58s ->    24.98s] it down, but that's how you get out. When you short a stock, it's the complete opposite
+[   24.98s ->    28.70s] of going long a stock. In order to enter the trade, you have to sell it, which is making
+[   28.70s ->    32.30s] the stock go down because you're making money on the way down. When you buy it, that's
+[   32.30s ->    37.80s] making it go up and that's how you exit your position. So a shorting is the exact opposite
+[   37.80s ->    43.06s] of going long. You have to sell to enter and you have to buy to exit. When you buy to exit
+[   43.06s ->    48.30s] a short, it means that the price is going up. So when you have a bunch of people going short
+[   48.30s ->    53.50s] on a stock because they think it's going to drop and then something is released like nudes
+[   53.50s ->    57.88s] or bounces off support or something happens, all these people who are going short know
+[   57.88s ->    60.88s] that it's about to go up, which means they're going to lose money because shorting means
+[   60.88s ->    65.60s] you make money on the way down. They all have to buy the stock to get out of their position.
+[   65.60s ->    69.44s] All the buying, all at one time, leads to a massive influx of buying, which makes the
+[   69.44s ->    76.72s] stock soar up. Let's look at an example here. EP Energy Corp Class A price, right here.
+[   76.72s ->    81.88s] If you understand, this is the short interest of the stock. Short interest is something that
+[   81.88s ->    86.88s] shows how many people are going short, like the percentage of people short on the stock,
+[   86.88s ->    91.48s] right? So if you're looking at like Apple or something, there's going to be a large percentage
+[   91.48s ->    95.88s] of Apple, especially when it's trending up, who have the stock long. So it's going to be
+[   95.88s ->   100.26s] long interest, right? However, short interest is really high, right? Like this is saying that
+[  100.26s ->   106.88s] at this point here, we have about 15,000 shares short, right? You don't want 15,000 shares short.
+[  106.88s ->   111.88s] That means 15,000 people are going to have to buy as quickly as they can to cover their position.
+[  111.88s ->   117.88s] So as you see here, this is what is known as a downtrend, right? As discussed, we're having
+[  117.88s ->   125.88s] lower highs followed by lower lows. So these people seeing that we're pushing into a lower
+[  125.88s ->   131.28s] high start to short sell here, right? They start to make money on the way down. As it starts
+[  131.28s ->   136.88s] to sell off, obviously they don't realize there's a bunch of dojis here. And as we discussed, dojis
+[  136.88s ->   141.88s] that are indicative of a reversal, especially when you have multiple of them and at a support
+[  141.88s ->   148.88s] level, the price started going up. When the price started going up, these 15,000
+[  148.88s ->   153.88s] shares short started to get scared, right? So then in order for them to get out of their
+[  153.88s ->   159.88s] short position, 15,000 shares had to buy back. When you're talking about a $2, $3, $3 stock
+[  159.88s ->   165.88s] and you need 15,000 shares to buy back, that's huge. That much buying all at one time causes
+[  165.88s ->   169.88s] a stock to soar. And this is what's known as a short squeeze. A short squeeze can happen
+[  169.88s ->   174.88s] a lot. Like we see a short squeeze on SPY and on ES, specifically on these big name stocks
+[  174.88s ->   179.88s] that we're trading. We see a short squeeze when the stock starts to drop and it looks like
+[  179.88s ->   188.88s] it's going down. Then we have news, some financial catalyst, something that makes SPY or one of
+[  188.88s ->   193.88s] these big name stocks go up. Then all the shorts have to exit, causing a huge push to the upside.
+[  193.88s ->   197.88s] Again, guys, that is what short squeeze is. So if you've ever seen the chat, me mentioned,
+[  197.88s ->   202.88s] hey, we're about to go through short squeeze on some stock. Understand that that means it's
+[  202.88s ->   207.88s] supposed to be going down, but something has pushed it up, a catalyst or something. And now all the shorts
+[  207.88s ->   210.88s] are going to have to exit, which leads to a massive influx of buying.

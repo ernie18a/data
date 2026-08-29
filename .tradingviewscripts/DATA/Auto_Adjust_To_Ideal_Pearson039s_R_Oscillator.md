@@ -1,0 +1,154 @@
+<!-- tradingview-pine-id: PUB;IhPzNIl5MSJ2uxuBq68jX0Yok7nKxWq4 -->
+<!-- tradingviewscripts-format: 1 -->
+# Auto Adjust To Ideal Pearson&#039;s R Oscillator
+
+Source: https://www.tradingview.com/script/qstlq23r-Auto-Adjust-To-Ideal-Pearson-s-R-Oscillator/
+
+## Description
+
+This is meant to be a partner indicator to "Linear Regression - Auto Adjust To Ideal Pearson's R (Min & Max)" which can be found under my profile on the scripts I have made.
+
+It's important the the ideal Pearsons R + and - ideal ranges are the same as the other script so you can visualize the results better and what is going on.  I set them to default to 0.85 for strong confidence levels.
+
+This simply graphs what the Pearsons's R Long Term Trend (Red) and Short Term Trend (Green) are doing.  I noticed that they tend to oscillate in predictable ways.
+
+The white line signifies low confidence level in a trend and usually means there is sideways trading going on. 
+
+If you are unfamiliar with Pearson's R then below will help:
+
+[*]+ Pearsons R means there is a downtrend
+[*]- Pearsons R means there is an uptrend
+
+[*]The closer the value is to 1 the more sure it's a downtrend.
+[*]The closer the value is to -1 the more sure it's an uptrend.
+
+For this reason I colored the bottom lines 'green' to indicate buying zones and 'red' for the top lines to indicate potential shorting zones.
+
+If you look at this indicator in replay mode in tandem with my other indicator you will see they work well together to help you identify long term trends.
+
+The default values are 48 and 360 for the minimum allowed length of a trend and maximum length.  If you find the script is to slow you can change these but make sure you do it for the values on the other script as well so they line up.
+
+As always the code is open source.
+
+---
+
+## Source Code
+
+````pine
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// Credit given to @midtownsk8rguy for some original source code parts (I was given permission to do so). I simply modified to add Pearson's R and the ability to always draw lines matching a certain Pearson's R.
+// © x11joe and DEAD_HUNTER*
+
+//@version=4
+study("Auto Adjust To Ideal Pearson's R Oscillator",overlay=false)
+deviations = input(    2.0, "Deviation(s)" , input.float  , minval=0.1, step=0.1)
+var int tempPeriod = na
+minPeriod = input(48,"Min Period",input.integer)//24 would be 48 hours (2 days) on the 2 hour.
+stepBy    = input(12,"Step By (Speeds Up Calculation, MUST be multiple of min and max)",input.integer)
+maxPeriod = input(360,"Max Period",input.integer)//168 would be 2 weeks or 14 days on the 2 hour.
+pearsonsIdealPositive = input(0.85,"Pearson's Ideal Value +",input.float)
+pearsonsIdealNegative = input(-0.85,"Pearson's Ideal Value -",input.float)
+
+showMidLineCrosses = input(true,"Show Midline Crosses",input.bool)
+showUpperLineCrosses = input(true,"Show Upperline Crosses",input.bool)
+showLowerLineCrosses = input(true,"Show Lowerline Crosses",input.bool)
+
+//Initially Define the variables
+var int periodMinusOne = na
+var float Ex = na
+var float Ey = na
+var float Ex2 = na
+var float Ey2 = na
+var float Exy = na
+var float ExT2 = na //Sum of X THEN Squared
+var float EyT2 = na //Sum of Y THEN Squared
+var float PearsonsR = na
+var float ExEx = na
+var float slope = na
+var float linearRegression = na
+var float intercept = na
+var float deviation = na
+var float startingPointY = na
+
+//Loop through the max period back to find situations in which the Pearson's is either -8.0 or 8.0
+var int perfectPeriod = na
+var float maxPearsons = na
+var float maxStartingPointY = na
+var float maxLinearRegression = na
+var float maxDeviation = na
+
+for k=maxPeriod to minPeriod by stepBy
+    periodMinusOne := k-1
+    Ex := 0.0, Ey := 0.0, Ex2 := 0.0,Ey2 := 0.0, Exy := 0.0, for i=0 to periodMinusOne
+        closeI = nz(close[i]), Ex := Ex + i, Ey := Ey + closeI, Ex2 := Ex2 + (i * i),Ey2 := Ey2 + (closeI * closeI), Exy := Exy + (closeI * i)
+    ExT2 := pow(Ex,2.0) //Sum of X THEN Squared
+    EyT2 := pow(Ey,2.0) //Sym of Y THEN Squared
+    PearsonsR := (Exy - ((Ex*Ey)/k))/(sqrt(Ex2-(ExT2/k))*sqrt(Ey2-(EyT2/k)))
+    ExEx := Ex * Ex, slope = Ex2==ExEx ? 0.0 : (k * Exy - Ex * Ey) / (k * Ex2 - ExEx)
+    linearRegression := (Ey - slope * Ex) / k
+    intercept := linearRegression + bar_index * slope
+    deviation := 0.0
+    for i=0 to periodMinusOne
+        deviation := deviation + pow(nz(close[i]) - (intercept - slope * (bar_index[i])), 2.0)
+    deviation := deviations * sqrt(deviation / periodMinusOne)
+    startingPointY := linearRegression + slope * periodMinusOne
+    perfectPeriod:=k
+    if(k==maxPeriod)
+        maxPearsons:=PearsonsR
+        maxStartingPointY:=startingPointY
+        maxLinearRegression:=linearRegression
+        maxDeviation := deviation
+    if(PearsonsR>=pearsonsIdealPositive or PearsonsR<=pearsonsIdealNegative)
+        break//exit the loop early and a line is chosen.
+
+var bool maxDowntrend = na
+var bool currentDownTrend = na
+
+var label pearsonsRLabel = na
+var label pearsonsRMaxLabel = na
+
+var showMidPriceCrossMarker = false
+var showUpperPriceCrossMarker = false
+var showLowerPriceCrossMarker = false
+
+medianChannelPrice = startingPointY-(startingPointY-linearRegression)
+upperChannelPrice = startingPointY-(startingPointY-(linearRegression+deviation))
+lowerChannelPrice = startingPointY-(startingPointY-(linearRegression-deviation))
+
+//Display Midline Crosses Down or Up from previous closes
+if(showMidLineCrosses)
+    if(close>medianChannelPrice and close[1]<medianChannelPrice or close<medianChannelPrice and close[1]>medianChannelPrice)
+        showMidPriceCrossMarker := true
+    else
+        showMidPriceCrossMarker := false
+else
+    showMidPriceCrossMarker := false
+
+if(showUpperLineCrosses)
+    if(close>upperChannelPrice and close[1]<upperChannelPrice or close<upperChannelPrice and close[1]>upperChannelPrice)
+        showUpperPriceCrossMarker := true
+    else
+        showUpperPriceCrossMarker := false
+else
+    showUpperPriceCrossMarker := false
+
+if(showLowerLineCrosses)
+    if(close>lowerChannelPrice and close[1]<lowerChannelPrice or close<lowerChannelPrice and close[1]>lowerChannelPrice)
+        showLowerPriceCrossMarker := true
+    else
+        showLowerPriceCrossMarker := false
+else
+    showLowerPriceCrossMarker := false
+
+plot(series=(showMidPriceCrossMarker == true) ? PearsonsR : na ,style=plot.style_cross,color=color.yellow,transp = 0,linewidth=4)
+plot(series=(showUpperPriceCrossMarker == true) ? PearsonsR : na ,style=plot.style_cross,color=color.red,transp = 0,linewidth=4)
+plot(series=(showLowerPriceCrossMarker == true) ? PearsonsR : na ,style=plot.style_cross,color=color.green,transp = 0,linewidth=4)
+
+plot(PearsonsR, color=color.green, linewidth=2)
+plot(maxPearsons, color=color.red, linewidth=2)
+hline(0, linestyle=hline.style_dashed, color=color.white)
+hline(pearsonsIdealNegative, linestyle=hline.style_dashed, color=color.lime)
+hline(pearsonsIdealPositive, linestyle=hline.style_dashed, color=color.red)
+hline(1, linestyle=hline.style_solid, color=color.red)
+hline(-1, linestyle=hline.style_solid, color=color.green)
+````

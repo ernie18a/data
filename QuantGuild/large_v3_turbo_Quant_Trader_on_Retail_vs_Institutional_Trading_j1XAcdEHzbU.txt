@@ -1,0 +1,424 @@
+[    1.26s ->     6.73s] I've long wanted to create a video on retail and institutional trading.
+[    6.73s ->    26.05s] As a quantitative researcher and trader, I see a lot of misunderstandings and just general lack of knowledge about the space, the difference between retail and institutional trading, the difference between the business function of institutions and the goals of those institutions relative to a retailer.
+[   26.51s ->    28.83s] And at this point, I have to talk about it.
+[   28.83s ->    31.87s] So in this video, what we're going to do is we're going to talk about retail trading.
+[   32.01s ->    35.53s] We'll talk about my year to date P&L as a quant trader.
+[   35.65s ->    39.67s] So you can see what that actually looks like as somebody who has done this professionally.
+[   39.99s ->    42.99s] We'll talk about the institutional trading side of things.
+[   42.99s ->    44.17s] We'll talk about the sell side.
+[   44.29s ->    45.63s] We'll talk about the buy side.
+[   45.79s ->    49.29s] We'll talk about what I do with my money and how I think about the market.
+[   49.51s ->    52.69s] And then we'll wrap up with some closing thoughts and future topics.
+[   52.87s ->    55.93s] As always, this Jupiter notebook will be available in the description below.
+[   55.93s ->    61.87s] You can also find it on the QuantGuild library where I post all of my Jupiter notebooks and associated YouTube videos.
+[   62.47s ->    67.85s] And if you're interested in mastering your quantitative skills, check out QuantGuild.com.
+[   68.27s ->    71.00s] Let's start with talking about retail trading.
+[   71.00s ->    91.20s] Retailers are really anybody who is engaging in the market in a discretionary capacity, whether they're using their own algorithms or trading on their own accord without some sort of institutional backing or institutional technology or serving some sort of business function in that capacity.
+[   91.20s ->    96.94s] The way to think about retail trading is that this distribution is highly skewed.
+[   96.94s ->   111.88s] So it's a combination of extremely uninformed traders and some informed traders, maybe retired professionals or people who are more savvy and have more information than the common man who is engaging in these trading activities.
+[  111.88s ->   122.20s] One thing to keep in mind, if you're engaging in the market as a retailer is the market doesn't care if you extract money from it.
+[  122.36s ->   125.44s] It doesn't care if you lose money to it.
+[  125.86s ->   128.20s] It doesn't have the capacity to care.
+[  128.30s ->   138.48s] The amount of capital that you're working with, if you extract hundreds of thousands of dollars, heck, even millions of dollars in particularly liquid instruments, nobody is going to bat an eye.
+[  138.48s ->   151.56s] There's this misconception that your liquidity for larger orders and people with better information, that's true if you buy high and sell low or sell low and buy high, that's always going to be true.
+[  151.78s ->   158.44s] But if you're engaging in the market, that type of activity, it flies completely under the radar.
+[  158.54s ->   161.22s] You don't have any scalability issues with your capital.
+[  161.80s ->   163.04s] Nobody's out to get you.
+[  163.12s ->   167.44s] This is purely your decision making that is going to drive your P&L.
+[  167.44s ->   178.28s] The biggest problem with retailers in the trading space is you're assuming risk any time you enter a trade and the outcome is inherently uncertain.
+[  178.44s ->   182.40s] If you have edge, then over time, statistically, you will make money.
+[  182.50s ->   184.04s] If you don't, over time, you'll lose money.
+[  184.18s ->   185.98s] So what is not edge?
+[  186.28s ->   192.50s] Well, if you enter a trade and you have some sort of drawdown and you sell because you're scared, that's not edge.
+[  192.50s ->   205.84s] If you have an outlook because you think that this event or something is going to happen and there's going to be some sort of price action that increases your position value, that can be edge.
+[  205.84s ->   208.14s] It's not about intelligence.
+[  208.44s ->   212.56s] It's really about statistics and your ability to assume risk.
+[  213.06s ->   217.50s] And a lot of traders that I know, they're not the smartest people.
+[  217.68s ->   222.74s] And they don't have to be because they need to be able to understand the idea of edge.
+[  222.86s ->   227.98s] When is an appropriate time to take a risk and when is it not an appropriate time to take a risk?
+[  227.98s ->   234.92s] I had a friend who he's an orthopedic surgeon and he sees these, you know, 20 some odd year old crypto millionaire gurus.
+[  234.98s ->   237.04s] He doesn't know anything about the finance space.
+[  237.14s ->   238.58s] And he talks to me.
+[  238.60s ->   239.56s] He's like, I'm a smart guy.
+[  239.56s ->   240.94s] Like I can, I can figure this out.
+[  240.98s ->   241.58s] I have a lot of money.
+[  241.60s ->   243.06s] Like I could just probably retire.
+[  243.12s ->   245.76s] I'm like, it doesn't work like that.
+[  245.80s ->   254.44s] The people who are portraying themselves as these, you know, millionaires may have dumped all of their money into a meme coin that popped 10,000%.
+[  254.44s ->   258.38s] But that's equivalent to just, just gambling, right?
+[  258.40s ->   260.54s] We don't actually know what that looks like.
+[  260.84s ->   263.88s] We don't actually have the capacity to trade like that.
+[  263.88s ->   272.14s] It's the reason why traders don't just, what, take out a giant loan, place it all on one trade and then retire the next week.
+[  272.80s ->   274.74s] That's, that's not how this space functions.
+[  274.74s ->   279.38s] It's about operating in a statistical capacity, trading when you have edge.
+[  279.52s ->   283.40s] And the truth is most people shouldn't trade.
+[  283.40s ->   291.02s] Most people can't assume that risk and create some sort of trade that has edge.
+[  291.24s ->   294.50s] And that can be due to lack of information.
+[  294.50s ->   297.32s] That can be due to lack of capacity.
+[  297.32s ->   301.80s] But even still, a large amount of traders just shouldn't trade.
+[  302.14s ->   303.42s] They should be investing.
+[  303.42s ->   308.48s] Their goal likely is to accumulate wealth over time anyway.
+[  308.48s ->   315.76s] So they would be better off just buying an ETF, buy SPY, and hold it for 30 years.
+[  315.82s ->   321.68s] You'll have an insane amount of wealth relative to just day trading doge or something in that capacity.
+[  321.86s ->   326.58s] So this is how I would go about thinking about the retail trading space.
+[  326.66s ->   329.28s] Let's talk about my year-to-date P&L.
+[  329.28s ->   333.34s] So I trade in an algorithmic and a discretionary capacity.
+[  333.56s ->   337.12s] Discretionary trades are trades that I place because I believe I have some sort of edge.
+[  337.52s ->   339.50s] No system is doing that for me.
+[  339.58s ->   342.44s] I'm actually going out and I'm placing that trade.
+[  343.12s ->   348.94s] In an algorithmic capacity, I have a system that's going to execute trades based on a preset rule.
+[  348.94s ->   352.66s] And I will turn that system on and off at different times.
+[  353.18s ->   356.56s] This P&L excludes crypto and long-term investments.
+[  357.20s ->   361.26s] So I'm not talking about crypto and I'm not talking about my long-term retirement portfolio.
+[  361.66s ->   367.28s] I'm talking specifically about my algorithmic and discretionary trades.
+[  367.48s ->   369.14s] I trade with interactive brokers.
+[  369.36s ->   372.16s] If you want to get started, click the link in the description below.
+[  372.16s ->   380.42s] So what I've done here is I've plotted my portfolio value from the start of this year till now, rebased at $100,000.
+[  380.52s ->   383.78s] I'm not about to reveal my entire portfolio value.
+[  383.92s ->   386.18s] So I've rebased it starting at $100,000.
+[  386.72s ->   391.90s] And you can see how my portfolio did up until this point in time in late August.
+[  392.00s ->   396.32s] At the start of this year, I was primarily trading in an algorithmic capacity.
+[  396.32s ->   399.70s] So I would run this system on a daily basis.
+[  399.70s ->   404.70s] And with this new administration, things were, things were rocky.
+[  404.94s ->   410.04s] So, you know, my initial portfolio value dipped and shot back up to like $120,000.
+[  410.64s ->   413.54s] And I started to lose money pretty consistently here.
+[  413.70s ->   415.20s] So I switched my strategy.
+[  415.32s ->   419.26s] I started selling vol and it picked up quite a bit.
+[  419.38s ->   426.26s] So I went from $100,000 down to about $80,000 up to almost $130,000.
+[  426.26s ->   429.52s] And then I got killed.
+[  429.76s ->   430.56s] I won't forget.
+[  431.16s ->   436.56s] I set my system when I left the house in the morning.
+[  437.36s ->   440.74s] And by the afternoon, I went to the gym and I was doing leg extensions.
+[  441.68s ->   445.14s] And I got a notification on my phone that I was being liquidated.
+[  445.30s ->   446.56s] I got crushed.
+[  446.56s ->   452.28s] So I went from $130,000 down to about, at the lowest here, $70,000.
+[  453.08s ->   459.70s] And since then, the waters have been pretty calm and the environment has made itself very clear.
+[  460.16s ->   462.76s] Vol is incredibly cheap right now.
+[  463.48s ->   467.18s] And, you know, I was able to climb back up to about $130,000.
+[  467.30s ->   471.46s] But over the course of, geez, this is what, almost 80 days here.
+[  471.46s ->   475.22s] So these are some violent swings in portfolio value.
+[  475.74s ->   489.18s] And the actual measure for performance, if you were to look at, like, a Sharpe ratio or Sortino ratio, this would be appropriate maybe for, like, some sort of back test with a fixed strategy if you're doing some sort of institutional grade strategy.
+[  489.18s ->   496.14s] But this is kind of nonsense in this sense because I'm trading in a whole bunch of different capacities.
+[  496.32s ->   500.14s] So I could be like, hey, my Sharpe ratio is 0.88 or my Sortino is 0.97.
+[  500.54s ->   503.52s] If I was a different kind of guy, I would just show you this.
+[  503.60s ->   505.14s] I'd be like, hey, this was my portfolio.
+[  505.38s ->   509.38s] I started at $70,000 and it climbed to $130,000.
+[  509.62s ->   511.48s] And my Sharpe is 6.28.
+[  511.60s ->   513.28s] My Sortino is 14.8.
+[  513.34s ->   518.24s] This is if I only showed you my trading activity from, what, $60,000 to $140,000.
+[  518.24s ->   520.28s] But I'm not going to lie to you.
+[  520.38s ->   522.56s] This is my performance year to date.
+[  522.86s ->   525.50s] I did pretty well and I got killed.
+[  526.08s ->   528.18s] But, you know, I'm going to keep trading.
+[  528.58s ->   532.16s] And I was able to make most of it back and then some.
+[  532.28s ->   537.96s] So from the start of this year, I'm up about roughly 30% of my initial principle.
+[  538.46s ->   541.02s] And I'm going to keep trading in this capacity year end.
+[  541.18s ->   547.30s] If there's interest in the future, maybe I'll do a kind of just like a year in review, go over my entire portfolio.
+[  547.30s ->   550.18s] So maybe I'll include crypto and long-term assets too.
+[  550.72s ->   553.52s] But this is going to be largely based on interest.
+[  553.82s ->   556.72s] Moreover, these performance metrics are random variables themselves.
+[  557.46s ->   564.12s] So over any sort of trading system, you're really just going to be averaging the performance of these performance ratios.
+[  564.86s ->   568.70s] And that average or expectation isn't going to converge to a fixed value.
+[  568.94s ->   571.22s] The entire space is time variant.
+[  571.22s ->   576.24s] And I've seen guru traders who talk about, like, the central limit theorem.
+[  577.00s ->   582.98s] And they don't even know the difference between convergence and probability or almost sure convergence.
+[  583.42s ->   585.96s] So they don't even know what they're talking about.
+[  586.50s ->   593.60s] And they'll cite these theorems to try to gain some sort of traction or suggest they know something that other people don't.
+[  593.60s ->   595.96s] And it's always frustrating to see.
+[  596.26s ->   600.78s] So, you know, whenever you're operating the space, understand that your strategy may work.
+[  600.88s ->   602.08s] Then it may not work.
+[  602.14s ->   603.20s] Then it may work again.
+[  603.36s ->   604.22s] There's no convergence.
+[  604.54s ->   608.42s] There's no guarantee of profitability in any capacity.
+[  608.42s ->   610.86s] It's about edge and trading with edge.
+[  610.86s ->   618.50s] In the retail trading space, you know, a reasonable question is, can retailers trade institutional-grade strategies?
+[  619.70s ->   626.04s] Secrecy is kind of key in these hedge funds and quant funds, but it's not always indicative of performance or skill.
+[  626.14s ->   628.52s] In fact, hedge funds haven't been doing particularly well.
+[  629.00s ->   630.02s] And that's not a surprise.
+[  630.16s ->   631.40s] They don't do well in bull markets.
+[  631.58s ->   635.18s] Hedge is in the name of the fund, right?
+[  635.18s ->   646.64s] So just because their strategies are secrets or, you know, they're not publicly making available their trading activities, it's not indicative of performance or skill.
+[  646.76s ->   649.30s] Like I said, traders don't have to be the smartest people in the room.
+[  649.74s ->   655.60s] They just have to assume risk and understand when is a good time to double down and when is a good time to cut your losses.
+[  656.26s ->   659.98s] So a reasonable question is, can retailers trade institutional-grade strategies?
+[  660.36s ->   661.56s] I say yes and no.
+[  661.56s ->   665.58s] The reason I say yes and no is because my question is, who is going to build your infrastructure?
+[  666.40s ->   668.10s] Who is going to assume the risk?
+[  668.52s ->   671.88s] And who is going to optimize your trading strategies?
+[  672.24s ->   681.28s] I'm never going to trade on a platform that runs back tests for me or is going to deploy my strategy live for me.
+[  681.38s ->   683.18s] I'm building that infrastructure myself.
+[  683.70s ->   689.64s] So in a retail trading capacity, I want to emphasize what to watch out for.
+[  689.64s ->   693.08s] Because information in this space is weaponized.
+[  693.60s ->   696.14s] Look at platforms that automate processes for you.
+[  696.40s ->   698.42s] They automate the backtesting process.
+[  699.24s ->   708.64s] You probably have to subscribe to be able to access, what, better tick data or, like, more pro backtests or optimization schemes.
+[  709.14s ->   713.06s] Why the heck are you optimizing your backtests in that capacity?
+[  713.14s ->   714.12s] You're overfitting noise.
+[  714.12s ->   718.39s] Because careful of platforms that automate processes for you.
+[  718.45s ->   719.53s] They just want your subscriptions.
+[  720.63s ->   722.87s] News in any format, they just want your attention.
+[  722.99s ->   723.87s] They don't know anything.
+[  723.97s ->   726.95s] You see, is it the Motley Fool or something?
+[  727.03s ->   728.87s] That's like, these three stocks will make you rich.
+[  728.97s ->   738.81s] It's absolutely insane what people are willing to sell in terms of news and information as if they know something that you don't.
+[  738.81s ->   741.63s] That's never the case at all.
+[  742.31s ->   746.51s] Moreover, brokers and apps make trading way too easy.
+[  747.27s ->   749.33s] If you download, is it Coinbase?
+[  749.51s ->   755.19s] I think if you download Coinbase and you make a deposit, you can trade before your deposit clears.
+[  755.79s ->   757.77s] That is absurd.
+[  758.71s ->   759.53s] That is absurd.
+[  759.69s ->   761.03s] They just want your commission.
+[  761.57s ->   763.77s] They're making money every single time you trade.
+[  763.89s ->   764.95s] And they want you to trade.
+[  764.95s ->   770.13s] So, these are things to keep in mind when you're operating in this space.
+[  770.31s ->   780.93s] And the reason why in all of my videos I harp on mastering your quantitative skills is because you need to be able to make these decisions for yourself.
+[  781.39s ->   784.37s] I don't care if you go to Quant Guild to master your quantitative skills.
+[  784.53s ->   789.13s] I don't care if you, you know, go and get a degree in math and that's how you master your quantitative skills.
+[  789.17s ->   791.29s] Or you self-study or whatever it is.
+[  791.29s ->   795.63s] But master your quantitative skills so you can make your own decisions.
+[  795.77s ->   803.21s] And you can understand that when people are selling you information in this capacity, it's largely meaningless.
+[  803.51s ->   810.31s] So, just be careful when you're dealing with these platforms that automate things, news, brokers, whatever it is.
+[  810.53s ->   816.95s] And focus on mastering your quantitative skills, mastering your understanding of the market so you can make your own decisions.
+[  817.23s ->   818.47s] Let's talk about the sell side.
+[  818.81s ->   820.15s] Talk about institutional trading.
+[  820.15s ->   827.45s] Typically, folks will start on the sell side and work to navigate to the buy side where speculative trading can be more lucrative.
+[  827.65s ->   833.93s] So, we just talked about retail trading and the idea that, you know, you're not operating in an institutional capacity.
+[  833.93s ->   836.49s] Now, you're operating at some sort of bank or hedge fund.
+[  837.15s ->   839.97s] And there's a big difference between the sell side and the buy side.
+[  840.19s ->   843.57s] The sell side is looking to quote a two-way.
+[  843.71s ->   846.83s] It's looking to make a market and collect a spread.
+[  846.83s ->   851.47s] Most of this is automated these days, especially in a high-frequency capacity.
+[  852.27s ->   853.99s] And I have here an animation.
+[  854.35s ->   864.55s] Essentially, this is a simulation of a market maker quoting mid, bid and ask, bid and offer, and accumulating P&L based on the people who are transacting with them.
+[  864.55s ->   873.57s] This is where the idea of edge comes in, in an institutional capacity.
+[  874.21s ->   877.25s] Their mid price doesn't have to be perfect.
+[  877.43s ->   879.29s] There's no such thing as price prediction.
+[  879.43s ->   881.91s] What you're trying to do is predict an expected level.
+[  881.91s ->   889.09s] And if your expected level is good enough, then you can quote a spread around that expected level and you can profit from it.
+[  889.13s ->   891.59s] Now, you're not immune to risk.
+[  891.59s ->   898.81s] If you're a market maker, you just have different types of risk relative to some sort of buy side trader or some sort of retail trader.
+[  899.37s ->   906.21s] So, if you're operating in a market making capacity, you're trying to execute this business function for an institution.
+[  907.74s ->   909.26s] What kind of risk are you subject to?
+[  909.26s ->   911.66s] Well, you have to buy and sell.
+[  912.16s ->   913.76s] So, you have inventory risk.
+[  914.16s ->   920.88s] If you're getting hit on bids without getting your ask lifted, then you're going to have some sort of buy or sell pressure in one direction.
+[  921.22s ->   925.48s] And you're subject to making or losing money in both cases.
+[  926.32s ->   927.34s] Adverse selection.
+[  928.14s ->   931.08s] What looks like easy P&L is just a trader with better information.
+[  931.22s ->   932.22s] This happens sometimes.
+[  932.64s ->   937.22s] What looks like somebody just, you know, engaging in the market in a very naive capacity.
+[  937.22s ->   940.54s] Maybe they're just loading up on deep out of the money calls.
+[  940.62s ->   941.44s] You're like, I'll take this.
+[  941.52s ->   942.38s] I'll take this all day.
+[  942.50s ->   944.52s] And then there's a huge price movement.
+[  945.08s ->   947.60s] They have better information, maybe insider information.
+[  948.10s ->   949.44s] It's a different type of risk.
+[  949.60s ->   951.08s] Technical errors happen.
+[  951.52s ->   953.18s] You know, look at hedge funds and banks.
+[  953.28s ->   957.00s] There are sometimes millions of dollars lost due to these technical errors.
+[  957.16s ->   959.32s] Why would they share that information?
+[  959.86s ->   961.14s] They would never share this information.
+[  961.14s ->   965.78s] So millions of dollars are lost every day due to these technical errors.
+[  966.78s ->   969.80s] But you hear about the really big ones, ones that sink ships.
+[  970.20s ->   977.36s] So volatility, counterparty risk, all of these are different types of risk if you're operating in a market-making capacity.
+[  977.60s ->   981.54s] So when you're operating on the sell side, you're operating in a market-making capacity.
+[  981.54s ->   984.42s] You're trading, but you're buying and selling.
+[  984.52s ->   986.60s] You're quoting both sides of the trade.
+[  986.60s ->   998.08s] And this is where time series analysis and different types of models where you're trying to produce an expected level, a mid-price level, so you can quote some sort of spread, is useful.
+[  998.30s ->  1007.42s] This is just about the only case that I would suggest that time series analysis or producing some sort of expected level is useful in that capacity.
+[ 1007.58s ->  1013.32s] Otherwise, I have a lot to say about time series analysis, but that is definitely a topic for another day.
+[ 1013.32s ->  1018.26s] That being said, just because you are a market-maker does not mean that you're not trading in a discretionary capacity.
+[ 1018.44s ->  1022.86s] You have different levers that you can pull on this side of the market.
+[ 1023.26s ->  1030.76s] That's going to change maybe your skew or maybe who's going to transact with you on either side of the spread.
+[ 1030.98s ->  1032.40s] So just keep that in mind.
+[ 1032.52s ->  1041.56s] Their goal is still to accumulate P&L, just like everyone else, but they are serving a business function, and Edge operates differently in that way.
+[ 1041.56s ->  1049.12s] Let's talk about the buy side now, and I'm just going to focus on one aspect of the buy side, that is this quant trading aspect.
+[ 1049.84s ->  1060.58s] There's a lot of different types of discretionary trading that might occur, prop trading or whatever it is, but we'll just talk about this one type of trading that's focused on signal construction.
+[ 1061.08s ->  1063.64s] This is more of like a quant trading argument.
+[ 1063.64s ->  1068.62s] So what we have here is an example of a quantitative trading signal.
+[ 1069.16s ->  1079.50s] So maybe you're doing something with CEO facial expressions, and you're coming up with some sort of score for their sentiment.
+[ 1079.72s ->  1084.36s] Maybe it's positive, negative, whatever it is, and perhaps there's signal there.
+[ 1084.36s ->  1099.00s] Maybe you're using tweets, maybe you're using news articles, and you use machine learning, artificial intelligence, whatever you want to call it, to extract a sentiment score and link each of those sentiment scores to an equity ticker.
+[ 1100.01s ->  1110.97s] Okay, you do this for a time series of scores, and you can construct a signal, and you can analyze its returns in the cross section by doing something like this.
+[ 1110.97s ->  1117.85s] What we've done here is we've done a quantile plot of the signal relative to the average returns for that signal.
+[ 1117.97s ->  1124.09s] So the lowest bucket here is the lowest signal value, and the highest bucket here is the highest signal value.
+[ 1124.23s ->  1127.35s] And what I can do now is I can construct a long-short portfolio.
+[ 1127.57s ->  1130.93s] So I can go long this bucket, and I could go short this bucket.
+[ 1131.59s ->  1136.33s] And what you'll see here is this is not some sort of perfect, you know, up and to the right chart,
+[ 1136.33s ->  1143.43s] but there is some alpha here in the sense that if we construct this long-short portfolio, we're going to generate some P&L.
+[ 1143.93s ->  1152.35s] And you could do some sort of alpha regressions to actually measure this, but beyond the scope of this video, if there's interest, I'll talk about that in a more technical capacity in the future.
+[ 1153.23s ->  1156.43s] But this is really what we mean when we're talking about the buy side.
+[ 1156.59s ->  1161.25s] So what we're actually doing is we're engaging in the market in this speculative capacity.
+[ 1161.25s ->  1164.43s] We're assuming that what we're doing has some sort of edge.
+[ 1164.69s ->  1166.73s] If it didn't, then we wouldn't be trading.
+[ 1167.29s ->  1171.19s] So this is the core function of the buy side in that sense.
+[ 1171.63s ->  1174.89s] And then really, it's just relationships and competing for capital.
+[ 1175.07s ->  1181.13s] So I have this strategy, here are the back tests, and now I need to raise capital so I can deploy it to this strategy.
+[ 1181.77s ->  1184.41s] A lot of different challenges you face, scalability issues.
+[ 1184.41s ->  1192.85s] If you have some sort of signal that functions, then as you increase the amount of capital allocated to it, the signal will dissipate.
+[ 1193.01s ->  1196.25s] This is how the signal decays as it scales.
+[ 1196.53s ->  1198.17s] And it's something that you have to deal with.
+[ 1198.23s ->  1199.57s] It's not a trivial problem.
+[ 1199.77s ->  1203.21s] Anyone who says it is doesn't understand the space.
+[ 1203.67s ->  1206.91s] I mean, just look at what happened with Jane Street.
+[ 1207.05s ->  1208.49s] I think that was even just this year.
+[ 1209.61s ->  1211.29s] Just look into that whole thing.
+[ 1212.03s ->  1214.31s] It's kind of ridiculous, right?
+[ 1214.31s ->  1223.73s] So in the buy side, when you're operating in this way, your goal is to generate P&L through some sort of discretionary trading decisions.
+[ 1223.73s ->  1225.71s] This could be algorithmic trading.
+[ 1225.87s ->  1227.05s] This could be signal-driven.
+[ 1227.27s ->  1229.71s] It could be just based on a trader, letting them trade.
+[ 1230.03s ->  1231.39s] So keep that in mind.
+[ 1231.45s ->  1233.31s] This is a different institutional function altogether.
+[ 1234.13s ->  1238.73s] That being said, these institutions won't generate a lot of money in a bull market.
+[ 1238.95s ->  1244.23s] Remember, I've talked on this channel about pricing being the most important thing in all of quantitative finance.
+[ 1244.31s ->  1246.11s] Financial engineering, whatever.
+[ 1246.69s ->  1249.55s] And that's because mispricings drive P&L.
+[ 1249.77s ->  1251.35s] Volatility drives mispricings.
+[ 1251.49s ->  1252.59s] And bull markets are boring.
+[ 1253.07s ->  1257.67s] Look at hedge fund performance right now as just an anecdotal example of that.
+[ 1257.93s ->  1259.09s] The waters have been calm.
+[ 1259.35s ->  1264.03s] How are they doing relative to when the waters were extremely choppy earlier this year?
+[ 1264.03s ->  1271.55s] It's just another anecdotal example of volatility driving mispricings and capacity to generate P&L.
+[ 1273.17s ->  1280.41s] I want to kind of wrap up here talking about what I do with my money or what a quant would do with their money.
+[ 1281.41s ->  1287.45s] Um, the first thing to keep in mind here is that not all quants have the same skill set, right?
+[ 1287.53s ->  1293.47s] So I have a very strong software engineering background, but I also have a very strong financial mathematics background.
+[ 1294.57s ->  1298.05s] And not every quant is going to have a software engineering background.
+[ 1298.21s ->  1300.75s] Not every quant is going to have a financial mathematics background.
+[ 1300.97s ->  1304.67s] Heck, they might not even have a background in machine learning or artificial intelligence.
+[ 1304.67s ->  1308.75s] So, you know, quant research, development, trading are different roles.
+[ 1308.87s ->  1309.77s] Those are different quants.
+[ 1310.73s ->  1313.95s] Quants will have different risk appetites institutionally and professionally.
+[ 1314.11s ->  1317.23s] When you're dealing with your own capital, things are very different.
+[ 1317.35s ->  1320.05s] You have to eat and you have to pay rent.
+[ 1320.79s ->  1322.65s] It's a very different space.
+[ 1323.45s ->  1325.63s] Your breadth of knowledge plays a big role in this too.
+[ 1325.91s ->  1329.43s] You know, if you're a quant and you have a PhD in physics, that's great.
+[ 1329.89s ->  1332.63s] But did you ever take macroeconomics?
+[ 1332.63s ->  1336.85s] Like, these are things that you have to think about as you function in the space.
+[ 1337.27s ->  1338.71s] So breadth of knowledge is important.
+[ 1339.21s ->  1344.05s] Finance, economics, technology, different sectors change the entire dynamics of the game.
+[ 1344.55s ->  1348.17s] Qualitative skills, reading in between the lines, things like that, you can't teach.
+[ 1348.87s ->  1354.75s] You can't teach when is the right time to double down or when is the right time to cut your losses.
+[ 1355.35s ->  1357.37s] Like I said, this isn't an intelligence thing.
+[ 1357.47s ->  1360.95s] This is an experience thing and the ability to assume risk.
+[ 1360.95s ->  1377.26s] When I trade, I'm always aware that whatever system I'm using, whether it's discretionary, algorithmic, or just investing in the market, I have this linear combination of my overall portfolio value that I'm dealing with.
+[ 1377.26s ->  1382.48s] And what I mean by that is I have, let's say, these three strategies.
+[ 1382.48s ->  1386.50s] Let's say discretionary trading, algorithmic trading, and just dumping my money in the market.
+[ 1387.44s ->  1389.62s] Well, I only have a certain amount of capital.
+[ 1389.96s ->  1398.42s] And I can only allocate a fraction of that capital to each strategy or maybe all of it to one strategy at any given time.
+[ 1398.42s ->  1404.68s] So people will say, oh, like, you know, if you did well on this trade, why not just sell half and then do something else?
+[ 1405.16s ->  1407.26s] Like, like, yes, that's an option.
+[ 1407.44s ->  1410.34s] And that can be looked at as some sort of hedge.
+[ 1410.76s ->  1413.32s] But we're dealing with these weights.
+[ 1413.32s ->  1424.56s] And if I'm confident that allocation elsewhere is the right decision, why would I sell half of that position?
+[ 1425.18s ->  1428.58s] I would sell all of it and put it into this new position.
+[ 1430.50s ->  1431.64s] It's a linear combination.
+[ 1431.76s ->  1435.58s] If I want to reduce the risk and exposure, then, yeah, I can sell half and put it over here.
+[ 1435.58s ->  1439.94s] But this is what we're always dealing with in this space is where do we allocate and why?
+[ 1440.20s ->  1444.60s] So, you know, you can look at it in the same perspective as an institution.
+[ 1444.98s ->  1447.02s] They don't trade one strategy.
+[ 1447.72s ->  1449.74s] Desks trade different strategies.
+[ 1450.06s ->  1451.76s] Teams trade different strategies, right?
+[ 1452.70s ->  1457.86s] The hedge fund isn't just going long, short, one quant trading strategy.
+[ 1458.34s ->  1461.32s] So these are all things to think about in the space.
+[ 1461.38s ->  1462.64s] So what I have here is an example.
+[ 1462.64s ->  1467.90s] I have these three systems and I have different weights allocated to each system.
+[ 1468.34s ->  1471.20s] And my goal is to optimize my P&L.
+[ 1471.50s ->  1475.00s] So these are the three wealth paths that I might take.
+[ 1475.32s ->  1480.22s] And here is the optimal weighting given these three systems.
+[ 1480.38s ->  1482.20s] So it's the min variance portfolio.
+[ 1482.44s ->  1488.78s] Apparently, it's 15% to discretionary trading, 75% to algorithmic and whatever the rest of the market.
+[ 1488.78s ->  1494.78s] But like I talked about earlier in this video, these are not stable values.
+[ 1495.02s ->  1496.76s] These are estimated from data.
+[ 1497.12s ->  1499.76s] These are not converging to some sort of fixed value.
+[ 1499.88s ->  1505.38s] So when I run this optimization, it's giving me weights, but they're wrong.
+[ 1505.76s ->  1508.78s] It's not telling me how to optimally deploy my capital.
+[ 1509.18s ->  1512.34s] I can't trade in an algorithmic capacity all the time.
+[ 1512.34s ->  1515.86s] I don't want to trade in an algorithmic capacity all the time.
+[ 1516.12s ->  1520.96s] I will want to in certain regimes, in certain environments where I believe there's edge.
+[ 1521.18s ->  1522.74s] And then I'll turn that system on.
+[ 1523.14s ->  1524.66s] But I'm not going to leave it on all the time.
+[ 1524.80s ->  1527.56s] So, you know, the same is true in a discretionary trading capacity.
+[ 1527.66s ->  1528.70s] Sometimes there's no trades.
+[ 1529.20s ->  1530.58s] Sometimes I don't want to make a trade.
+[ 1530.68s ->  1532.82s] Other times I'm like, this is a great trade.
+[ 1532.88s ->  1533.80s] There's definitely eggs here.
+[ 1533.94s ->  1537.04s] So things to keep in mind as you're operating in the space, right?
+[ 1537.04s ->  1543.58s] So I can optimize for the perfect weights of how I should allocate my capital, but I don't
+[ 1543.58s ->  1549.14s] get to dictate the current market conditions or if it better suits me to run any particular
+[ 1549.14s ->  1549.70s] strategy.
+[ 1549.86s ->  1553.98s] Essentially, what I'm saying is throughout this entire time, I don't get to dictate what
+[ 1553.98s ->  1559.34s] I'm trading in an algorithmic way, a discretionary way, or if I'm just dumping my capital in the
+[ 1559.34s ->  1560.08s] market portfolio.
+[ 1560.60s ->  1563.70s] It's going to change based on different times.
+[ 1564.00s ->  1566.60s] I mean, that's just how it's going to function, right?
+[ 1567.36s ->  1568.32s] Volatility is going to increase.
+[ 1568.42s ->  1569.72s] Volatility is going to decrease.
+[ 1570.28s ->  1572.66s] Uncertainty is going to, you know, dissipate.
+[ 1573.68s ->  1574.64s] Things like that.
+[ 1575.06s ->  1580.55s] So the expected value for each strategy will also vary at different points in time.
+[ 1580.63s ->  1583.99s] It's not a global optimization problem is really what I'm getting at here.
+[ 1584.15s ->  1587.17s] This is a very time variant space.
+[ 1587.33s ->  1588.15s] Nothing is static.
+[ 1588.29s ->  1589.15s] Everything is moving.
+[ 1589.15s ->  1593.99s] And you're trying to come up with these measures that are largely meaningless as you're
+[ 1593.99s ->  1597.77s] trying to make decisions in a trading capacity over time.
+[ 1597.77s ->  1600.84s] So what do I do with my money?
+[ 1600.96s ->  1603.90s] I trade in a discretionary capacity when it suits me.
+[ 1604.22s ->  1610.36s] I turn on my trading systems when it suits me and leave my cash in the S&P 500 when it
+[ 1610.36s ->  1610.72s] suits me.
+[ 1610.72s ->  1616.30s] And the edge will change based on different regimes, timing, administrations, macroeconomic
+[ 1616.30s ->  1621.18s] conditions, whether or not rates are going to be cut, inflation data, things like that
+[ 1621.18s ->  1626.84s] is always going to change my point of view, my perspective, and what I believe my edge
+[ 1626.84s ->  1629.32s] is going to be in any one of these cases.
+[ 1629.32s ->  1633.66s] When it comes to retail and institutional trading, some closing thoughts for you.
+[ 1634.24s ->  1635.38s] They're fundamentally different.
+[ 1635.54s ->  1637.50s] Understand the difference between the spaces.
+[ 1638.12s ->  1641.30s] You can make and lose money in either environment.
+[ 1641.46s ->  1643.54s] This isn't about intelligence, right?
+[ 1643.98s ->  1647.94s] Sure, there's a certain level of intelligence that goes into some sort of modeling capacity
+[ 1647.94s ->  1650.38s] or some sort of system development.
+[ 1650.78s ->  1651.82s] You need to know how to code.
+[ 1651.82s ->  1658.94s] You need to know mathematics, sure, but to be able to assume risk is a completely different
+[ 1658.94s ->  1659.88s] skill set altogether.
+[ 1660.28s ->  1666.90s] Another thing to keep in mind is that institutions and hedge funds, they blow out all the time.
+[ 1667.14s ->  1668.12s] They run out of money.
+[ 1668.46s ->  1669.68s] They will go bankrupt.
+[ 1670.66s ->  1677.34s] And you should know the difference between Citadel and a new quant hedge fund that's just
+[ 1677.34s ->  1682.46s] coming up or whatever, has some small amount of capital allocated to it under management.
+[ 1683.00s ->  1688.28s] And the difference between like Microsoft and a new tech startup, you know, a lot of
+[ 1688.28s ->  1693.72s] times people will think that like, oh, the institutions have this immunability and that's
+[ 1693.72s ->  1694.84s] just not the case, right?
+[ 1694.96s ->  1698.92s] Like tech startups go under every day, all the time.
+[ 1699.10s ->  1700.98s] They go back to working at their FAANG jobs.
+[ 1701.44s ->  1704.10s] These quant hedge funds, the exact same thing.
+[ 1704.16s ->  1706.76s] They're startups and they go under all the time.
+[ 1706.76s ->  1707.76s] They don't know anything you don't.
+[ 1707.84s ->  1709.58s] They have the same struggles as every other trader.
+[ 1709.72s ->  1712.08s] So, you know, I hope this sheds some light on the space.
+[ 1712.98s ->  1717.14s] In some future videos, what I'd like to talk about is I'm going to continue to talk about
+[ 1717.14s ->  1719.88s] financial mathematics, financial engineering, quantitative finance content.
+[ 1720.08s ->  1722.72s] I'm going to continue to produce technical content.
+[ 1723.00s ->  1725.60s] That's, you know, my favorite content to produce.
+[ 1726.20s ->  1728.88s] I know in the previous couple of weeks, I talked about finite differences.
+[ 1729.20s ->  1734.40s] I talked about the fast Fourier transform, specifically that seminal work, Car Madden.
+[ 1734.40s ->  1736.18s] And I love talking about that.
+[ 1736.24s ->  1737.02s] So that will never change.
+[ 1737.10s ->  1741.24s] But I'd also like to get more involved in spaces like this and more of a qualitative
+[ 1741.24s ->  1741.94s] capacity.
+[ 1741.94s ->  1747.18s] So, you know, depending on interest, I never know how much to share, but personal experiences
+[ 1747.18s ->  1752.16s] that I've had academically and professionally, maybe a weekly market review, some sort of quant
+[ 1752.16s ->  1752.74s] podcast.
+[ 1752.84s ->  1756.84s] I've been toying with this idea, starting to put together some potential guests.
+[ 1756.84s ->  1760.86s] Um, I'd also like to continue with maybe some how to's.
+[ 1760.98s ->  1765.50s] I have this idea for a volatility trading dashboard and other algorithmic systems that
+[ 1765.50s ->  1769.48s] I can just build in sort of like an hour, two hour long YouTube video workshop.
+[ 1769.80s ->  1773.28s] So if you'd like to see any of these in the future, please let me know, like, comment,
+[ 1773.42s ->  1777.40s] subscribe, just give me an idea of, of what you'd like to see going forward.
+[ 1777.48s ->  1780.86s] That's going to do it for this video on retail and institutional trading.
+[ 1781.00s ->  1781.90s] I hope you enjoyed it.
+[ 1781.90s ->  1782.92s] I hope you learned something.
+[ 1782.92s ->  1787.70s] If you'd like to see more topics like this in the future, please let me know in the comments.
+[ 1787.82s ->  1789.04s] It certainly helps me out a lot.
+[ 1789.40s ->  1794.90s] Other than that, thank you so much for watching and I will see you in the next video.

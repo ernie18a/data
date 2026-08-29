@@ -1,0 +1,437 @@
+[    0.46s ->     7.19s] pretty much everything is a stochastic process i'm not just talking about your stock price path
+[    7.19s ->    12.35s] or your return series or measures of historic volatility that you're visualizing as a time
+[   12.35s ->    18.99s] series but pretty much everything in this quant finance space is in fact a stochastic process so
+[   18.99s ->    24.11s] you can talk about your portfolio you can talk about the trading decisions that you're making
+[   24.11s ->    29.21s] as some sort of decision process you can talk about your probabilities of winning and losing
+[   29.21s ->    35.47s] trades you can talk about the expected value of your trading strategy over time all of these are
+[   35.47s ->    44.11s] in fact stochastic processes now why is this such an important idea well i've seen on youtube and
+[   44.11s ->    49.33s] other sources traders who don't have a quant background cite ridiculous things like the
+[   49.33s ->    55.93s] central limit theorem or the law of large numbers and they preach this idea of convergence if you
+[   55.93s ->    62.81s] just follow your trading strategy and your trading strategy is good then you know as you keep
+[   62.81s ->    68.03s] flipping the coin eventually it's going to converge to that expected value and you're going to accumulate
+[   68.03s ->    75.37s] that positive expected value over time that's simply not how this space works that's why we study
+[   75.37s ->    82.57s] these processes that's why we have pricing models if it were that simple then we wouldn't need any
+[   82.57s ->    89.05s] these processes in general we could just model them as random variables with fixed distributions but in
+[   89.05s ->    96.97s] fact that's not how any of this stuff evolves through time so motivating this video and the need to
+[   96.97s ->   101.69s] understand stochastic processes and simulating stochastic processes not just from a modeling
+[  101.69s ->   109.53s] standpoint but also as a necessary standpoint to understand the space i want to talk today about the
+[  109.53s ->   115.45s] cohern and love expansion of the brownian bridge we're going to talk about the solution in continuous
+[  115.45s ->   121.53s] time we'll talk about the discrete time solution as well we'll go about discretizing these solutions
+[  121.53s ->   126.09s] for simulation i'll show you the gaussian cookbook where you can go about interacting with these
+[  126.09s ->   133.13s] simulations on your own and then we'll close out the video and talk about some future topics and
+[  133.13s ->   138.81s] implications and pricing now that we have motivation to study these processes and understand this
+[  138.81s ->   144.33s] theorem let's set up the space and then we'll talk about the application of the theorem so for starters
+[  144.33s ->   149.21s] we're going to say that we have a stochastic process x sub t in this l2 probability space
+[  150.41s ->   157.30s] so we have some sort of sample some sort of sample space we have a sigma algebra and a probability measure
+[  158.02s ->   164.66s] and all we're saying here is if it's in this l2 space that x of t is square integrable that's just what
+[  164.66s ->   171.54s] this l2 probability space is the set of all processes that are in fact square integrable it's a hilbert space
+[  171.54s ->   176.50s] but that's not the point of this video here we're just going to say that this pretty much just means
+[  176.50s ->   183.46s] that if we take the expected value of x of t squared we get something that is finite and this
+[  183.46s ->   190.50s] is equivalent to suggesting that the covariance function for all s and t in our interval of interest
+[  190.50s ->   203.26s] we'll say from a to b is also going to be finite okay so that's not too bad that's just simply
+[  203.26s ->   208.70s] suggesting that it is square integrable the stochastic process for the purpose of this video we're also
+[  208.70s ->   214.70s] going to consider that the expected value of this process is just going to be mean zero and we will
+[  214.70s ->   223.10s] also say unsurprisingly that case of x s sub t is going to be this covariance function so it's going to
+[  223.10s ->   232.86s] be the expected value of x sub t times x sub s and this is just the definition of covariance of course
+[  232.86s ->   238.46s] because we have mean zero it's just going to be the product of these two variables at the index
+[  238.46s ->   245.42s] indices s and t so what's the purpose of this theorem well the purpose is to decompose the process
+[  245.42s ->   254.06s] x sub t into an infinite series of the product between a gaussian vector and its eigenvalues and
+[  254.06s ->   259.26s] eigenfunctions so what does this look like we're saying if we apply this theorem we should be able to
+[  259.26s ->   266.62s] find a representation of x sub t which is equal to this infinite series from k is equal to one of this
+[  266.62s ->   278.78s] gaussian z sub k multiplied by an eigenfunction evaluated at the time t so this decomposition here
+[  279.42s ->   285.02s] might be a little confusing because we don't see any eigenvalues being represented here
+[  285.74s ->   293.26s] in fact we could generate z sub k in one of two ways we can generate z sub k using the eigenvalues that
+[  293.26s ->   299.82s] we solve for or we could generate a standard normal and then scale this series by the square root of
+[  299.82s ->   305.82s] the eigenvalues so essentially what i'm saying is in this representation we're saying that z sub k
+[  307.02s ->   316.30s] is distributed by a normal distribution mean zero with a variance of the corresponding eigenvalue
+[  317.26s ->   326.18s] now this is equivalent this representation here is equivalent to the representation here
+[  326.18s ->   337.24s] where we say x sub t is equal to this infinite series representation but now we're multiplying by the
+[  337.24s ->   344.52s] square root of the eigenvalue along with the eigenfunction and we're saying that z sub k is just going to be
+[  344.52s ->   351.96s] a plain old standard normal random variable so these two are in fact equal and they're saying
+[  351.96s ->   356.52s] the same thing the only difference is whether or not we're going to generate that gaussian vector using
+[  356.52s ->   363.72s] the eigenvalues as the variance or if we're going to scale the entire representation by the square root
+[  363.72s ->   370.12s] of the eigenvalues which is going to yield the gaussian vector with that variance in any case i'm hoping this
+[  370.12s ->   379.40s] isn't too hard to see another way to look at this is if we have z sub k distributed as a standard normal gaussian
+[  379.96s ->   386.52s] and we just take z sub k multiplied by the square root of the eigenvalue then we take the variance of
+[  386.52s ->   393.80s] this quantity then this would be equivalent to this is a constant so we take it out and square it then we
+[  393.80s ->   403.40s] have lambda k and we're left with the variance of z sub k and the variance of z sub k in this case is
+[  403.40s ->   411.86s] just going to be one so we're left with lambda k that's how we end up with the correct variance structure
+[  412.66s ->   420.74s] in this instance and of course the other way to do this is just by plugging in lambda k directly into
+[  420.74s ->   429.32s] this representation then if we were to just take the variance of z sub k we would just simply get
+[  429.96s ->   436.84s] lambda k so that's why these two representations are equivalent but this is essentially the decomposition
+[  436.84s ->   443.64s] that we are after so how do we find these eigenfunctions the eigenvalues well we have to set
+[  443.64s ->   450.20s] up and solve this integral eigenvalue problem and this integral eigenvalue problem is going to be the
+[  450.20s ->   459.35s] integral over some sort of region a to b of the covariance function as a product with the eigenfunctions
+[  461.43s ->   470.52s] integrated over that region and we're setting up this integral to be equivalent to the eigenvalues
+[  470.52s ->   478.23s] multiplied by the eigenfunctions so this is the integral eigenvalue problem and in this case what
+[  478.23s ->   483.91s] we're going to do is we are going to set up our region a to b we'll just select a unit region
+[  483.91s ->   490.23s] zero to one and we're going to go about solving this integral eigenvalue problem for the eigenfunctions
+[  490.23s ->   497.11s] and then we can go about solving for the eigenvalues and we can arrive at this decomposition here this
+[  497.11s ->   504.31s] infinite series decomposition now of course this is continuous time and if we want to discretize the
+[  504.31s ->   511.59s] continuous time solution we certainly can but we're going to have to truncate this infinite series
+[  511.59s ->   519.67s] representation and the accuracy of our discretization is going to depend on the spectral decay of
+[  519.67s ->   527.99s] this eigen decomposition so really what i'm suggesting is depending on where the variance
+[  528.63s ->   536.71s] cuts off in this series of eigenvalues we're going to need more or less terms for a more accurate
+[  536.71s ->   542.79s] representation obviously in a computational setting we can't have an infinite number of terms so we're
+[  542.79s ->   548.71s] going to have to truncate at maybe 500 and hopefully that is sufficient of course you're also subject to
+[  548.71s ->   555.03s] accuracy errors if you're trying to measure some sort of covariance empirically with the granularity of
+[  555.03s ->   560.87s] some sort of time step along with the number of sample paths but this will be more clear when we
+[  560.87s ->   565.99s] get to the simulation portion i just wanted to touch on this that this is a continuous time
+[  565.99s ->   572.39s] representation and we don't have the capacity to simulate anything to infinity so we're going to
+[  572.39s ->   578.87s] need to truncate um when we go about simulating and discretizing this solution um moreover if we
+[  578.87s ->   585.83s] wanted to just operate in discrete time we certainly could and really this problem is analogous to just
+[  585.83s ->   593.21s] a classic matrix decomposition so the discrete time version of this problem if you will is much
+[  594.01s ->   599.93s] easier i'll say with with air quotes in that we just have the covariance matrix and we need to
+[  599.93s ->   607.61s] diagonalize the covariance matrix and that's easily done via eigen decomposition um so really in the
+[  607.61s ->   613.61s] continuous time sense i'm going to create kind of like a little chart here of continuous time i'll change
+[  613.61s ->   626.42s] the color make it green continuous time and then discrete time so here's kind of the analogy of the
+[  626.42s ->   634.62s] structures we're dealing with so in continuous time we have this covariance function and in discrete time
+[  634.62s ->   651.24s] we typically just deal with this covariance matrix the integral eigenvalue problem this is really just
+[  651.24s ->   661.05s] the matrix diagonalization problem so this is just going to be an eigen decomposition of that covariance
+[  661.05s ->   671.77s] matrix matrix and the infinite series representation so this x sub t is equal to the infinite series of
+[  671.77s ->   682.36s] the gaussian we'll say that this is standard normal so we'll have the square root of the eigenvalues
+[  682.36s ->   695.99s] as well multiplied by the eigenfunctions this is analogous to let's say we have this decomposition in
+[  695.99s ->   707.62s] discrete time x sub t is equal to q lambda to the one half times z sub t where z sub t is just this
+[  708.42s ->   716.14s] standard normal gaussian so this is the continuous to discrete time analogy so essentially what i'm
+[  716.14s ->   721.26s] saying here is we have this covariance function in discrete time we have the covariance matrix so
+[  721.26s ->   726.46s] continuous time covariance function discrete time covariance matrix we have this integral eigenvalue
+[  726.46s ->   731.66s] problem in continuous time in discrete time we have this matrix diagonalization problem
+[  731.66s ->   737.66s] and in continuous time when we get the solution to this integral eigenvalue problem we arrive at this
+[  737.66s ->   744.14s] infinite series this decomposition of the process and of course you're going to have to truncate
+[  744.14s ->   751.82s] when you discretize to simulate say sample paths but in the discrete time sense it's a lot easier and
+[  751.82s ->   755.98s] it's probably a lot easier to even see why this decomposition works because we're trying to
+[  755.98s ->   762.30s] simulate this process with a desired covariance structure for example and all we're doing is
+[  762.30s ->   769.50s] we're taking a standard gaussian and we are maintaining the direction preserved by the eigenvectors
+[  769.50s ->   777.74s] and we are scaling by the variance captured according to the eigenvalues and that's pretty much what's
+[  777.74s ->   785.99s] happening in continuous time too it's just the discrete time analog so you know one pretty i think one
+[  785.99s ->   790.95s] pretty simple way to look at why this works is to look at just the covariance of the discrete time
+[  790.95s ->   800.23s] composition decomposition so if i was to take the covariance of x sub t then i know that this is the
+[  800.23s ->   810.23s] decomposition so i can just represent x sub t as q lambda one half z sub t and now this is just taking
+[  810.23s ->   817.75s] the covariance which is quite easy all i got to do is take q out take lambda to the one half out and then
+[  817.75s ->   827.05s] i have the covariance of z and then i have lambda to the one half you can transpose it but it's a diagonal
+[  827.05s ->   836.26s] matrix matrix and then i have q transpose but the covariance of z sub t is i right it's just standard
+[  836.26s ->   848.78s] normal vector so i have q lambda to the one half lambda to the one half qt okay this just turns into
+[  850.55s ->   859.56s] q lambda qt but this is just diagon decomposition so we end up with the original covariance matrix gamma
+[  861.03s ->   866.07s] and that is the covariance structure of the process that we were after anyway so that's why this
+[  866.07s ->   872.71s] decomposition works we could go through the the continuous time proof but i'd rather start by
+[  872.71s ->   878.23s] setting up and solving this integral eigenvalue problem in continuous time because i don't think
+[  878.23s ->   883.51s] it's as intuitive as just looking at this in discrete time it's very similar in structure what
+[  883.51s ->   888.47s] we've just gone over here but we're going to move now to setting up this integral eigenvalue
+[  888.47s ->   893.03s] problem for the brownian bridge we'll define brownian motion define the brownian bridge and then we'll
+[  893.03s ->   897.83s] set up and solve this this problem let's start by defining brownian motion then we'll talk about the
+[  897.83s ->   903.67s] brownian bridge and we'll set up this problem and solve it so the brownian motion the brownian motion is
+[  903.67s ->   913.67s] characterized by a at time zero the brownian motion is zero b the brownian motion is almost surely continuous
+[  914.98s ->   929.61s] c the increments of brownian motion are independent and d the increments of brownian motion
+[  929.61s ->   936.57s] are distributed normally with a mean of zero and a variance of the time step this is going to be for
+[  936.57s ->   947.24s] all for all relevant indices and this shouldn't be too much of a surprise because brownian motion really
+[  947.24s ->   954.36s] is just classified as this idea of you know if we have randomness over time then the increment from
+[  954.36s ->   960.76s] zero to one is going to be much less so the variance is much less than the increment from zero to 100
+[  960.76s ->   969.16s] so essentially what we're doing is if we look at the increment from zero to one of the brownian motion
+[  969.16s ->   977.00s] we're drawing from this normal distribution with a mean zero and a variance of one so once we make
+[  977.00s ->   983.48s] that draw we're going to have a point in space right so it's just a standard normal distribution from zero to
+[  983.48s ->   992.68s] one but what if we stepped out to 100 right then the increment from zero to 100 would be distributed
+[  992.68s ->  1001.78s] normally so we would have another normal distribution for that entire jump but with a variance of 100
+[ 1001.78s ->  1008.98s] so you're going to have a much wider range of possible points for example out at 100 than you would at say
+[ 1008.98s ->  1013.86s] one and that makes sense right because that's the uncertainty over time and then you're going to
+[ 1013.86s ->  1018.10s] accumulate all of those increments and that's going to be your brownian motion you'll have all these
+[ 1018.10s ->  1023.94s] paths and the variance is going to increase as time continues to march on if that's the brownian
+[ 1023.94s ->  1031.62s] motion now let's talk about the brownian bridge so the brownian bridge is defined as b sub t
+[ 1032.87s ->  1040.47s] where we have a classic brownian motion such that at time cap t we are back at the origin zero
+[ 1040.47s ->  1049.59s] another way of defining this is saying that b sub t is equal to w sub t less t over cap t w sub cap t
+[ 1051.03s ->  1058.79s] so we're always going to be accumulating towards that end point that end anchor point w cap t equals zero
+[ 1058.79s ->  1064.71s] what does this look like graphically well graphically kind of looks like a bridge so we have time cap t
+[ 1064.71s ->  1069.59s] we have our origin here and we are going to be generating paths all the way out to cap t and we're going to
+[ 1069.59s ->  1078.79s] be back at that anchor point zero so at time cap t our w sub cap t for every single process is going to
+[ 1078.79s ->  1086.23s] yield zero so if we generate another path maybe we have a path that looks like this it's going to end
+[ 1086.23s ->  1093.59s] up right here another path here another path here another path here another path here so one way that
+[ 1093.59s ->  1104.36s] you could use this hypothetically is let's say that you have some sort of price at night so at close you
+[ 1104.36s ->  1109.64s] have some sort of stock price and at open you have another price so let's say we start here and then we
+[ 1109.64s ->  1116.44s] jump up to here you could use a piecewise linear interpolation of the prices so this is let's say 4 pm
+[ 1116.44s ->  1124.28s] and this is 9 30 a.m there's like a little jump you could model it as a jump or you could also model
+[ 1124.28s ->  1129.40s] it as some sort of bridge process where there is a lot of randomness between those two points
+[ 1130.28s ->  1136.84s] hypothetically you could do something like this so this is the brownian bridge this is how the brownian
+[ 1136.84s ->  1142.84s] bridge is classified now let's see how we can use the cohern and a lot of expansion to decompose this
+[ 1142.84s ->  1149.32s] process b sub t for simulation there's a pretty simple recipe we can follow to go about solving for
+[ 1149.32s ->  1161.42s] this continuous time decomposition that is number one define a valid process x sub t in this case b sub
+[ 1161.42s ->  1168.62s] t our brownian bridge is in fact a valid process step two is going to be to determine the covariance
+[ 1168.62s ->  1183.78s] kernel and that's just our covariance function which for the brownian bridge is quite well defined
+[ 1184.10s ->  1191.91s] as the min of s and t so that's the brinean motion component and the bridge component is just going
+[ 1191.91s ->  1202.55s] to be less this product of s and t normalized by the time zero to cap t step three is going to be to
+[ 1202.55s ->  1223.48s] establish and solve the integral eigenvalue problem step four solve the integral eigenvalue problem
+[ 1224.20s ->  1235.90s] step five which is optional is we can normalize so we can normalize the eigenfunctions such that they
+[ 1235.90s ->  1242.94s] are orthonormal with respect to the l2 in our product and all that is suggesting is that the integral over
+[ 1242.94s ->  1251.38s] our selected region of our eigenfunction squared is going to be equal to one and then step six is just
+[ 1251.38s ->  1261.58s] going to be to define the decomposed process and in this case we are going to be able to define it as
+[ 1261.58s ->  1269.26s] x sub t is equal to this infinite series representation of a gaussian multiplied by the square root of the
+[ 1270.06s ->  1281.13s] eigenvalues for the respective eigenfunction all the way out to infinity so these are the steps this is the
+[ 1281.13s ->  1297.61s] the general i'll call this the general recipe in continuous time for decomposing such a process
+[ 1297.61s ->  1304.65s] using the current law of theorem let's go about actually doing and solving for this integral eigenvalue
+[ 1304.65s ->  1313.94s] problem to find this decomposition now so let's move on to a new page and let's go through this for the
+[ 1313.94s ->  1346.73s] brownian bridge step one we're well defined b sub t check step two we know the covariance kernel boom check
+[ 1346.73s ->  1352.41s] this is this is the easy part we we just need to set up the process that we are going to decompose and to
+[ 1352.41s ->  1357.61s] do that we need the covariance structure we need the process so we've defined the brownian bridge we
+[ 1357.61s ->  1361.61s] know that the covariance structure is well defined we can call this case of b if we'd like to be more
+[ 1361.61s ->  1368.81s] specific i think here i called it case of x so this should be probably case of b come on down here step
+[ 1368.81s ->  1378.10s] three we got to establish this integral eigenvalue problem so if you recall the integral eigenvalue problem
+[ 1378.10s ->  1391.69s] is the integral from a to b case of x of s t of e sub k s d s is equal to lambda sub k e sub k t so we have
+[ 1391.69s ->  1398.57s] our eigenvalues our eigenfunctions and we have this integral eigenvalue problem here and we need to pick
+[ 1398.57s ->  1405.61s] a region now i'll just pick the unit region so i will say that a is going to be zero b is going to be
+[ 1405.61s ->  1412.73s] equal to one so this implies that cap t is also going to be equal to one so if we set up this integral
+[ 1412.73s ->  1421.61s] eigenvalue problem we are going to get the integral from zero to one of the covariance function which is
+[ 1421.61s ->  1436.66s] going to be the min of s and t less s over t or less less s times t over cap t times the eigenfunction
+[ 1440.10s ->  1445.22s] integrated over that region and this is going to be equivalent to the eigenvalue scaling the
+[ 1445.22s ->  1449.94s] corresponding eigenfunction this is certainly a beast let's go about tackling it step by step i want
+[ 1449.94s ->  1456.18s] to be as explicit as possible in each step of the solution so for starters we have to deal with this
+[ 1456.18s ->  1463.06s] min function we're going to break up this integral into the sum of two smaller integrals where in one
+[ 1463.06s ->  1470.65s] case we have an s component and in the other a t component so what do i mean the min function is just
+[ 1470.65s ->  1480.01s] a piecewise function that's going to choose s or t depending on whether or not t or s is smaller so if
+[ 1480.01s ->  1485.29s] this is the case then what i'm going to do is i'm just going to break up this integral from zero to one
+[ 1485.29s ->  1492.81s] into two regions i'm going to have a region where t is smaller and a region where s is smaller so we're
+[ 1492.81s ->  1498.97s] going to go from t to one we're going to go from zero to t and in this case s will be smaller and in
+[ 1498.97s ->  1505.13s] this case t will be smaller so if we apply the min function to these regions so we have this region
+[ 1505.77s ->  1514.81s] zero to t the min is going to be s and then t to one if we apply this min then we are going to get
+[ 1515.94s ->  1523.78s] t this is equivalent to breaking up an integral into two smaller integrals where you just have two
+[ 1523.78s ->  1528.34s] disjoint components of the domain that you're integrating over so what does that look like
+[ 1528.34s ->  1532.82s] graphically pretty much what we're doing is we're saying if i have some function here let's call
+[ 1532.82s ->  1541.30s] this f of x and i'm integrating this function from let's say zero to five then the integral from
+[ 1541.30s ->  1550.84s] zero to five of f of x dx is going to be this shaded region but this is equivalent to the integral from
+[ 1550.84s ->  1565.02s] zero to three plus the integral from three to five so if i have this region here this red shaded region
+[ 1565.98s ->  1572.94s] and this purple shaded region i can sum the red and purple region to get the blue region the original
+[ 1572.94s ->  1583.29s] blue region that is exactly what we're doing by breaking up the integral into two components s and t so
+[ 1584.92s ->  1593.88s] let's write that out this will break up into the integral from zero to t this is the s component
+[ 1594.52s ->  1604.12s] and we also have to consider the corresponding eigenfunction so e sub k s d s now we also need to
+[ 1604.12s ->  1610.52s] consider the other region from t to one and this is going to be the t component we consider that
+[ 1610.52s ->  1619.26s] eigenfunction as well now we need to also subtract out the second component of that covariance kernel
+[ 1619.26s ->  1627.34s] for the brownian bridge and that's this product of s and little t normalized by cap t remember cap t is
+[ 1627.34s ->  1634.46s] spoken for right so we have this region from zero to one so a is zero b is one that means that cap t or
+[ 1634.46s ->  1640.38s] terminal time is also going to be one so we can actually discard that term altogether subtract out
+[ 1640.38s ->  1650.26s] the integral from zero to one of s t e k s d s this is equivalent to the eigenvalue scaling the corresponding
+[ 1650.82s ->  1657.38s] eigenfunction now let's go about establishing an ordinary differential equation that we can then use to
+[ 1657.38s ->  1664.58s] solve for the eigenfunctions and corresponding eigenvalues to start we're going to differentiate both sides
+[ 1664.58s ->  1673.30s] with respect to little t so i'm going to have d dt of both sides of the equation and we are going to
+[ 1673.30s ->  1679.86s] differentiate each one of these integrals individually so they make more sense so for starters we have d dt
+[ 1679.86s ->  1688.74s] of this integral from zero to little t of s times the eigenfunction and that's this this first integral
+[ 1688.74s ->  1696.42s] here that we're going to be looking at now when you differentiate an integral that has only a variable
+[ 1696.42s ->  1703.54s] limit so what i mean is you don't see t anywhere else in this integral besides the limit of integration
+[ 1703.54s ->  1709.78s] all you have to do is evaluate the integrand at that limit of integration so the integrand
+[ 1709.94s ->  1716.90s] is just this functional component here and i'm going to plug in that limit of integration t everywhere i
+[ 1716.90s ->  1723.86s] see a variable in that integrand and then i'm done so this is just going to be equal to t
+[ 1724.74s ->  1734.33s] the eigenfunction evaluated at t there's no other t in this integral expression so that's going to be the
+[ 1734.33s ->  1740.33s] derivative so we are effectively done with this first integral now we're going to look at the second
+[ 1740.33s ->  1754.92s] integral and we're going to have d dt of this integral from t to one of t times the eigenfunction
+[ 1756.81s ->  1763.53s] and here you'll notice that we have another t term so what i said for the first integral still holds but
+[ 1763.53s ->  1771.03s] now we have to apply the product rule because i can take this t out of the integral because it's not
+[ 1771.03s ->  1777.19s] an integral with respect to t it's an integral with respect to s now i can just differentiate like
+[ 1777.19s ->  1784.31s] normally and treat these as two separate functions essentially this is a g of x and this little t is
+[ 1784.31s ->  1795.05s] an f of x so i can apply the product rule to f and g and this is going to be equal to if we take the
+[ 1795.05s ->  1805.69s] derivative of t so i'll call this my f i'll call this integral my g then we need f prime times g plus
+[ 1805.69s ->  1814.79s] g prime times f so what is f prime well f prime is one we take the derivative of t with respect to t
+[ 1814.79s ->  1824.86s] we get one and then g is just going to be the integral component now we need to take the derivative
+[ 1824.86s ->  1831.66s] of g well i just said in this first representation here if the only variable
+[ 1832.62s ->  1838.22s] that we are differentiating and integral with respect to is in its limit of integration then we
+[ 1838.22s ->  1844.30s] just evaluate the integrand at that limit of integration so we're going to add this g prime
+[ 1844.30s ->  1852.82s] component and the g prime component is just going to be negative e sub k evaluated at t
+[ 1854.63s ->  1860.55s] in that lower limit of integration now we just need to multiply by f which is that original t so
+[ 1860.55s ->  1868.55s] this is just the product rule being applied to two functions f and g the only thing is the function g is
+[ 1868.55s ->  1875.83s] just an integral with a variable limit so this is going to be the derivative of the second integral
+[ 1876.55s ->  1887.61s] now the third integral is actually much easier it's going to be d dt the integral from zero to one of st
+[ 1888.49s ->  1895.18s] then we have our eigenfunction and when we differentiate this you'll notice we can just take this t out
+[ 1900.20s ->  1910.04s] and there's no other t variable in the integral so we can just get rid of the t and call it zero to one of s times the
+[ 1910.04s ->  1922.97s] the eigenfunction so these are our three solutions one two three to differentiation and differentiating
+[ 1922.97s ->  1932.33s] this side of the equation is just very easy because lambda k is a constant and e sub k just take
+[ 1933.05s ->  1938.09s] the derivative with respect to t to set up this differential equation so now we can glue all these
+[ 1938.09s ->  1949.34s] pieces together so we get if you notice here we get t times our eigenfunction and then we have
+[ 1949.34s ->  1956.34s] minus t times our eigenfunction so these will actually cancel out then we can sum the remaining
+[ 1956.34s ->  1969.98s] components so we get the integral from t to one of that eigenfunction plus the integral from zero to one
+[ 1971.24s ->  1982.54s] s the eigenfunction is equal to lambda sub k e prime of t terrific so that's after differentiating once
+[ 1983.18s ->  1994.46s] now let's just differentiate again so i'm gonna apply this derivative again and we get the same
+[ 1994.46s ->  2001.02s] situation here we just have a variable in the limit of integration so we'll just substitute t into the
+[ 2001.02s ->  2009.37s] integrand and we'll get e sub k evaluated at t if we differentiate this integral with respect to t
+[ 2010.09s ->  2016.01s] well there's no t so this goes away and then we just differentiate this side again and we have a
+[ 2016.01s ->  2021.45s] second derivative of our eigenfunction so this is equivalent to oh this is negative because it's the
+[ 2021.45s ->  2033.24s] lower limit negative e sub k of t which is equal to lambda sub k e prime prime of t and this is going to be
+[ 2033.24s ->  2042.20s] our ode to solve what is the characteristic equation of this second order differential equation well we're
+[ 2042.20s ->  2054.90s] going to have lambda k r squared minus zero r minus i should say plus one is equal to zero that is the
+[ 2054.90s ->  2061.06s] characteristic equation does not take a rocket scientist to see that we end up with r squared
+[ 2061.06s ->  2067.86s] is equal to negative one divided by lambda k and unfortunately when we take the square root of
+[ 2067.86s ->  2074.50s] both sides of both sides of this equation here we are going to get that r is equal to we have plus or minus
+[ 2074.50s ->  2086.18s] the square root of one i should say negative one over lambda k so we are dealing with a complex root to this
+[ 2086.90s ->  2095.78s] characteristic equation this is going to imply that the general solution of this differential equation
+[ 2096.34s ->  2116.04s] is going to take the form of e sub k is equal to a sine of t divided by square root of lambda k plus b times cosine
+[ 2117.00s ->  2127.08s] of t divided by the square root of lambda k and i'm just getting the square root of lambda k from this
+[ 2127.08s ->  2135.32s] original term here um you know keep in mind that you're just taking the complex components and you are
+[ 2135.32s ->  2147.16s] multiplying that coefficient by the original functional t so it's going to be t scaled by this eigenvalue this
+[ 2147.16s ->  2154.12s] corresponding eigenvalue for this eigenfunction and the other component of this
+[ 2154.12s ->  2161.64s] um complex number is um complex number is just going to be zero so the there's no there's no real component
+[ 2161.64s ->  2172.68s] right this is just an imaginary component so really a is actually supposed to be c1 e to the lambda t
+[ 2172.68s ->  2183.80s] and b is supposed to be c2 e to the lambda t but lambda is the real component of the characteristic
+[ 2183.80s ->  2190.84s] equation's roots and there is no real component so it's zero but e to the zero is one so we're just going
+[ 2190.84s ->  2198.12s] to be removing this exponential term and we're going to be left with some arbitrary constants c1 and c2
+[ 2198.12s ->  2203.96s] which i'm just calling here a and b and and likely you'll see it written as a and b instead of the
+[ 2203.96s ->  2211.08s] product of these two when you don't have the real component so our general solution is going to be
+[ 2211.08s ->  2223.96s] given by a sine t over square root of lambda k plus b cosine t square root of lambda k and again this is
+[ 2223.96s ->  2233.96s] just saying hey you just multiply the function value evaluating the eigenfunction at t multiply that by
+[ 2233.96s ->  2242.04s] the corresponding imaginary component of the characteristic equations root and that's how we
+[ 2242.04s ->  2253.48s] get this t over root lambda k that's coming directly from this characteristic equation we can now start to
+[ 2253.48s ->  2261.96s] look toward the boundary conditions and we can just take the original formulation of this integral eigenvalue
+[ 2261.96s ->  2275.51s] problem and we can evaluate it at the boundary zero so i'm just going to copy this bring it on down here
+[ 2279.75s ->  2291.29s] and i'm going to be looking at where t is equal to zero so i'm just going to plug in zero everywhere i see a t
+[ 2295.38s ->  2307.70s] and the integral from zero to zero is zero anything multiplied by zero is zero so all i get is zero is
+[ 2307.70s ->  2317.32s] equal to lambda k multiplied by the corresponding eigenfunction but it's equal to zero so scaling is
+[ 2317.32s ->  2326.71s] arbitrary i can get rid of it and this is going to imply that the eigenfunction evaluated at zero
+[ 2326.71s ->  2345.13s] zero is zero so i can use this now in the general solution the e sub k of t is equal to a sine of t over root lambda k
+[ 2345.93s ->  2356.97s] plus b cosine of t over root lambda k if this is true then when i plug in zero here i should get zero
+[ 2357.61s ->  2370.92s] so i'm gonna get e sub k zero is equal to a sine of zero plus b cosine of zero sine of zero is just gonna be what
+[ 2372.12s ->  2385.62s] sine of zero is zero right but cosine of zero is one so this is going to imply that e sub k of zero is equal to b
+[ 2385.62s ->  2395.10s] but that is that can't be the case it has to be equal to zero so what does that mean it means b must be
+[ 2395.10s ->  2404.28s] zero b must be zero so using this first condition we find that b must be zero and we're left with e sub k
+[ 2404.28s ->  2418.82s] of zero is equal to a sine i'm sorry not of zero of t this is our new general equation okay we still need to
+[ 2418.82s ->  2426.02s] figure out lambda k and we still need to figure out a so let's now look to the condition for one
+[ 2431.24s ->  2436.60s] you can take this original representation too i'll just copy it again or i still have it on my clipboard
+[ 2436.60s ->  2449.80s] i should be able to paste it cool and let's look at the case where t is equal to one zero to one one to
+[ 2449.80s ->  2460.38s] one that's one well the integral from one to one is just going to be zero there's no mass to integrate
+[ 2460.38s ->  2471.43s] in that region and check this out if we take a look at these two integrals they're equivalent because t
+[ 2471.43s ->  2479.35s] here is one we have zero to one and zero to one so we're subtracting the same integral quantity so we
+[ 2479.35s ->  2493.72s] just end up with what we end up with and this is at t is equal to one we end up with zero is equal to
+[ 2493.72s ->  2503.46s] lambda k e sub k of one and again scaling is arbitrary so we just get that e sub k of one must
+[ 2503.46s ->  2517.61s] in fact be zero from our second battery cool let's take our general equation and see what we can do
+[ 2521.78s ->  2544.73s] so e sub k of one must equal zero let's plug in one okay but this has to equal zero all right interesting
+[ 2545.69s ->  2552.73s] now trivially we could say a is equal to zero but that's that's not going to be the case because the
+[ 2552.73s ->  2559.21s] eigenfunction is not trivially zero it's non-zero that's the purpose of of using these eigenfunctions
+[ 2559.93s ->  2568.49s] so what do we do here well we need to figure out where the function sine can be zero in this case
+[ 2568.49s ->  2573.77s] this is where we can go about solving for our eigenvalues so really what we need to ask ourselves
+[ 2573.77s ->  2579.13s] is since a can't be zero otherwise the eigenfunction is just going to be zero that's not the the
+[ 2579.13s ->  2585.69s] definition of it's a non-zero function by definition so we need to figure out what these eigenvalues are
+[ 2585.69s ->  2599.83s] to make sine zero so where is sine going to be zero well if we remember from good old pre-calculus
+[ 2602.97s ->  2614.82s] sine is going to be zero only at multiples of pi so this is going to be zero pi or two pi
+[ 2615.54s ->  2623.62s] this is going to be pi sine will be non-zero elsewhere so what we need to do is we need to figure out
+[ 2625.78s ->  2632.50s] what lambda is such that we get some sort of multiple of pi so really we're just saying that
+[ 2632.50s ->  2643.46s] we have one over root lambda k is equal to k pi and if we solve for this then we're going to multiply
+[ 2643.46s ->  2655.14s] over we get lambda k is equal to one over k pi squared and these are our corresponding eigenvalues
+[ 2656.18s ->  2664.20s] so in other words the only way that this can be true the only way that we can have this condition
+[ 2665.32s ->  2671.72s] be true such that the eigenfunction is not trivially zero is with eigenvalues
+[ 2672.60s ->  2683.34s] for the corresponding eigenfunction equivalent to one over k pi squared where again k is this indexing of
+[ 2684.14s ->  2690.54s] arbitrary eigenfunctions and eigenvalues and their corresponding eigenvalues so that's going to leave
+[ 2690.54s ->  2696.70s] us with this solution we're going to get e sub k of t is equivalent to a sine of
+[ 2697.66s ->  2705.91s] one divided by the square root of lambda k which in this case is going to be equal to
+[ 2707.03s ->  2714.95s] one divided by k pi squared we can take the square root of both and then and then flip it and we end
+[ 2714.95s ->  2728.95s] up with a sine of k pi oh that's a t not a one t fantastic so this is going to be our solution here
+[ 2729.67s ->  2739.59s] and now we can normalize if we like and we can normalize with respect to the l2 inner product such that
+[ 2739.59s ->  2747.27s] the integral from zero to one so this region of the eigenfunction squared is equivalent to one and this
+[ 2747.27s ->  2757.85s] just implies that we have the integral from zero to one of a squared sine squared k pi t or i should say
+[ 2760.06s ->  2770.01s] s ds equal to one and we can take that a squared out we can use the fact that sine squared
+[ 2770.01s ->  2779.05s] x is equal to one minus cosine of two x divided by two a classic trig identity so this is going to be
+[ 2779.05s ->  2794.07s] equal to then the integral from zero to one of the one minus cosine of two pi k s divided by two ds
+[ 2794.95s ->  2804.15s] set this equal to one and then here we can just solve this for a and this integral looks far worse
+[ 2804.15s ->  2813.62s] than it actually is um you actually just end up with this this goes to zero this component goes to zero
+[ 2814.18s ->  2828.23s] and you're just left with this integral so you have a squared the integral from zero to one of one half ds
+[ 2828.23s ->  2837.62s] minus the integral from zero to one of cosine of two pi k s divided by two but in this case right
+[ 2837.86s ->  2848.14s] we're just doing multiples of two pi so we're going to end up with just zero if we try to integrate
+[ 2848.14s ->  2853.82s] cosine in this fashion really we're just integrating from above the x-axis and below the x-axis
+[ 2854.46s ->  2862.30s] so they're just going to cancel out we're going to end up with zero in both cases um so that's just
+[ 2862.30s ->  2879.34s] going to yield it's going to yield nothing um actually it's it's not even yeah since it's cyclical
+[ 2879.34s ->  2887.22s] it's just going to yield it's going to yield nothing so then we get a squared um of one half
+[ 2888.18s ->  2896.97s] minus zero because this is zero is equal to one and that's just going to imply that a is equal to
+[ 2896.97s ->  2907.05s] two the square root of two wonderful now that we've normalized the eigenfunctions to be orthonormal
+[ 2907.05s ->  2915.54s] with respect to that in our product we can write the solution as ek t equal to root t
+[ 2915.54s ->  2933.27s] of then we have sine of k pi t awesome it feels like we may have forgotten the plot but i promise
+[ 2933.27s ->  2940.15s] that's not the case we are defining the brownian bridge in terms of the infinite series of its
+[ 2940.15s ->  2948.31s] eigenfunctions scaled by its corresponding eigenvalue eigenvalues multiplied by a gaussian vector and in
+[ 2948.31s ->  2957.99s] this case we have now that bt the stochastic process is equal to the square root of 2 times this infinite
+[ 2957.99s ->  2968.60s] series of a gaussian and in this case we are going to just be looking at the standard normal gaussian
+[ 2969.40s ->  2976.52s] so that we can multiply by the corresponding eigenvalues which if you recall the eigenvalues
+[ 2977.16s ->  2986.36s] is going to be the eigenvalues are going to be 1 divided by k pi squared however we do not want to
+[ 2986.36s ->  2992.52s] multiply by the eigenvalues because we want the gaussian to have a variance of what a variance of
+[ 2992.52s ->  2999.88s] the eigenvalue for the corresponding eigenfunction not a variance of the square of the
+[ 2999.88s ->  3008.54s] eigenvalue so we need to take the square root of this and we end up with 1 over k pi so we're
+[ 3008.54s ->  3015.34s] going to scale this by 1 over k pi and then we have our eigenfunction which is sine of k pi t
+[ 3017.64s ->  3027.72s] and this is going to be the kernel of expansion of the brownian bridge so in conclusion the continuous
+[ 3027.72s ->  3037.80s] time solution to this integral eigenvalue problem is just this infinite series of a gaussian multiplied
+[ 3037.80s ->  3048.23s] by the corresponding eigenfunction and eigenvalue index k is equal to 1 to infinity scaled by the
+[ 3048.23s ->  3059.37s] square root of the eigenvalue and z sub k is going to be our standard normal our standard normal and that
+[ 3059.37s ->  3066.09s] is the solution to the integral eigenvalue problem now it shouldn't come as too much of a surprise that
+[ 3066.09s ->  3071.61s] many stochastic processes will not have a continuous time solution we were very fortunate in that many
+[ 3071.61s ->  3077.37s] of the necessary terms cancelled out a lot of those integrals will become intractable and we won't be able
+[ 3077.37s ->  3085.37s] to establish an ordinary differential equation or second second order differential equation that is solvable in any capacity
+[ 3085.93s ->  3091.93s] so we have a discrete time solution in this context as well but what i've done here is i've gone to the
+[ 3091.93s ->  3100.33s] gaussian cookbook this is just a passion project for gaussian process enthusiasts like myself where i have
+[ 3100.33s ->  3107.21s] a list of recipes for simulating processes from these different types of decompositions and expansions and
+[ 3107.21s ->  3112.09s] relevant articles and resources so what i've done here is i've created one for the brownian bridge
+[ 3113.05s ->  3118.65s] and you'll notice that this is the expansion that we have just solved for and outlines the general
+[ 3118.65s ->  3124.01s] recipe of course it doesn't walk through quite yet each of the steps i will have to go back in and
+[ 3124.01s ->  3129.69s] implement that but this is going to be the discretization of that continuous time process so
+[ 3129.69s ->  3137.69s] in python what we've done here is we've represented this expansion in terms of a certain number of steps
+[ 3137.69s ->  3144.41s] between zero and one we've represented a certain number of terms in the spectral decomposition
+[ 3144.41s ->  3152.09s] so that is the k how many eigenvalues are we using and we've also taken a look at the number of paths
+[ 3152.09s ->  3158.25s] that we can generate to match the empirical covariance to the theoretical covariance structure
+[ 3158.25s ->  3164.09s] so this is the discrete discretization and in the continuous time sense error comes from the
+[ 3164.09s ->  3173.21s] truncation of the spectral decomposition along along with the number of paths that have been simulated
+[ 3173.21s ->  3177.45s] along with the granularity of the process now that's a lot of words let's go to the simulation
+[ 3177.45s ->  3181.61s] because that's where the cool stuff is so here this is the brownian bridge i have the continuous
+[ 3181.61s ->  3188.73s] time discretization here and what you'll see is we're only using 50 terms and we have five sample
+[ 3188.73s ->  3194.41s] paths this is the theoretical covariance this is the empirical covariance so what happens when we
+[ 3194.41s ->  3200.25s] increase the number of terms and we increase the number of sample paths well we're going to converge
+[ 3200.25s ->  3206.09s] by the law of large numbers assuming we are sampling from the correct distribution to the theoretical
+[ 3206.09s ->  3210.41s] covariance structure and that's exactly what will happen i just don't have the capacity to simulate
+[ 3210.41s ->  3219.21s] enough paths computationally in this very simple github pages hosted uh website but this is the
+[ 3219.21s ->  3225.85s] discretization of the continuous time solution now just as we said before we can do it in discrete time
+[ 3225.85s ->  3231.93s] as well now i said that many processes won't have a continuous time solution that's true so if we look
+[ 3231.93s ->  3236.97s] in discrete time what we're going to have here is we're just going to do the exact same thing we just did
+[ 3236.97s ->  3242.01s] but numerically and instead of solving this integral eigenvalue problem analytically like we
+[ 3242.01s ->  3249.05s] just did painfully uh line by line we can just establish this covariance matrix because the the
+[ 3249.05s ->  3254.17s] covariance matrix is is very well defined we know the covariance structure that we're after for
+[ 3254.17s ->  3259.85s] many of the processes that we desire to simulate so all we have to do is establish this covariance matrix
+[ 3259.85s ->  3266.09s] diagonalize it construct a gaussian vector and take the product that's so much easier that's significantly
+[ 3266.09s ->  3271.13s] easier so all i've done here is i've implemented the discretization of the brownian bridge so it's a
+[ 3271.13s ->  3277.77s] discrete time version of the uh current and love expansion in some sense but you know what we've
+[ 3277.77s ->  3285.53s] done here now in this in this simulation is it's not for a discretization of a continuous time solution
+[ 3286.17s ->  3292.65s] it's the discrete time solution so what we're doing is we're implementing this solution for discrete time
+[ 3292.65s ->  3300.17s] we have a fixed interval that we're looking to generate these uh paths for and that's exactly
+[ 3300.17s ->  3303.77s] what we're doing in the discrete sense so what i can do is i can change it from the continuous sense
+[ 3303.77s ->  3310.65s] to the discrete sense and this is now what we're looking to do we're looking to discretize this um
+[ 3310.65s ->  3314.89s] actually this equation is wrong i have to go back and change it what we're doing is we are
+[ 3315.85s ->  3322.65s] looking to compute this eigen decomposition and construct this process by dotting the eigenvectors
+[ 3322.65s ->  3329.21s] and eigenvalues with a gaussian vector so when we do that we're going to end up with time steps and
+[ 3329.21s ->  3337.05s] sample paths but we don't have this expansion term to truncate so in terms of the spectral decomposition
+[ 3337.05s ->  3344.01s] we're not truncating an infinite series to some sort of finite um discretization we're
+[ 3344.73s ->  3350.73s] literally discretizing the solution in the sense that like we have the total number of time steps
+[ 3350.73s ->  3354.73s] that we're after and we're just trying to simulate the density for those time steps we're not trying
+[ 3354.73s ->  3361.93s] to take this continuous time solution and discretize it so they're two sides of similar coins but they're
+[ 3361.93s ->  3367.69s] they're not precisely the same i certainly encourage the viewer who is interested in more of a formal write-up
+[ 3367.69s ->  3373.69s] of this theory in the context of brownian motion and the brownian bridge in a continuous time in
+[ 3373.69s ->  3379.85s] a discrete time setting to check out this note that i've written on recipes for simulating stochastic
+[ 3379.85s ->  3386.65s] processes so what i've done here is i've outlined this karen and the law of theorem along with some
+[ 3386.65s ->  3392.41s] intuition and general recipes for continuous and discrete time processes and i've applied it to
+[ 3392.41s ->  3399.13s] the brownian motion i've also applied it to the brownian bridge and i show that you can essentially
+[ 3399.13s ->  3405.05s] converge to the theoretical covariance structures applying these general recipes they're just useful
+[ 3405.05s ->  3411.53s] discretizations for either the continuous time solutions or the discrete time solutions so what
+[ 3411.53s ->  3419.13s] are the implications of this in finance and pricing well if you can't simulate your stochastic
+[ 3419.13s ->  3424.09s] process correctly then you're not going to be quoting prices correctly based on your model and
+[ 3424.09s ->  3430.41s] its assumptions and you may exhibit arbitrage you may exhibit a whole mess of issues undervaluing
+[ 3430.41s ->  3437.85s] overvaluing different components of of your price so on and so forth so it's very important to
+[ 3437.85s ->  3442.89s] understand this foundational theory because if i can't simulate a stochastic process correctly and keep
+[ 3442.89s ->  3448.97s] in mind many many many of the models that we choose to use will not have analytically tractable
+[ 3448.97s ->  3455.21s] solutions in continuous time so we're going to have to use we're going to resort to numerical techniques
+[ 3455.21s ->  3462.25s] like monte carlo simulation to generate our prices but if we can't simulate these processes correctly
+[ 3462.25s ->  3467.93s] decompose them and simulate them correctly then how could we ever hope to quote accurate prices we don't
+[ 3467.93s ->  3474.17s] want to offer prices that are inaccurate or over and under value different components of the contract or
+[ 3474.17s ->  3480.09s] even offer arbitrage that would be an absolute mess so our models in the finance sense need to be
+[ 3480.09s ->  3486.97s] consistent we need to ensure that we're stating as little about the true distribution as possible
+[ 3487.61s ->  3494.49s] and and again so on and so forth that is just the the purpose of all of this study in in stochastic
+[ 3494.49s ->  3499.77s] processes is if we if we can't simulate a brownian bridge if we can't understand the continuous time and
+[ 3499.77s ->  3507.05s] the discrete time solutions in the context of the the expansion or the the diagonalization of a
+[ 3507.05s ->  3514.01s] covariance matrix in the discrete sense then how are we ever going to hope to simulate say a volterra
+[ 3514.01s ->  3522.97s] process for our rough burgumi model we certainly need this foundational theory in order to be able to
+[ 3522.97s ->  3528.89s] extend to more complicated models that may be able to capture better intricacies or or fit more
+[ 3528.89s ->  3534.89s] complicated empirical things like maybe we have a joint calibration problem and things like that if
+[ 3534.89s ->  3540.41s] if we can't understand it with a simple brownian bridge we certainly won't be able to extend it
+[ 3540.41s ->  3545.85s] understand it in in the more complicated sense especially when speed and and accuracy and all
+[ 3545.85s ->  3550.09s] of those things start to matter as well with that i hope you enjoyed this video i hope you learned
+[ 3550.09s ->  3556.73s] something i know this was a very long and technical video but if you enjoyed it please leave a like
+[ 3556.73s ->  3561.77s] subscribe leave a comment let me know if you want more content like this in the future if we want
+[ 3561.77s ->  3568.41s] to talk about very technical aspects of the quant finance space then this is what it looks like and
+[ 3568.41s ->  3575.85s] this is quite an elementary um quite an elementary solution to something that is is very well defined so
+[ 3575.85s ->  3581.53s] we're really just scratching the surface here we haven't brought in a large variety of techniques
+[ 3581.53s ->  3588.57s] available to us from four ea transforms to different discretization schemes so let me know if that's
+[ 3588.57s ->  3593.53s] something you'd like to see more of in the future um other than that thank you again so much for watching
+[ 3593.53s ->  3598.57s] and i will see you in the next video
